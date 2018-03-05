@@ -1,0 +1,114 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Xamarin.Android
+metadata:
+  description: "Xamarin.Android macht das komplette Android SDK für .NET-Entwickler verfügbar."
+  author: conceptdev
+  ms.author: crdun
+  ms.date: 02/17/2018
+  ms.topic: landing-page
+  ms.openlocfilehash: 95b576880adef44c3a3c4b601d7ce04498d351da
+  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 02/27/2018
+abstract:
+  description: "Xamarin.Android macht das komplette Android SDK für .NET-Entwickler verfügbar. Erstellen Sie vollständig native Android-Apps mit C# oder F# in Visual Studio."
+  menu:
+    items:
+    - href: ~/android/samples/
+      text: Android-Beispiele
+    - href: https://developer.xamarin.com/releases/android/
+      text: Anmerkungen zu dieser Version
+    - href: https://developers.google.com/
+      text: Entwicklerdokumentation von Google
+    - href: /visualstudio/
+      text: Visual Studio
+sections:
+- title: Erste Schritte
+  items:
+  - type: paragraph
+    text: Erfahren Sie, wie Sie Ihre ersten Android-Apps mit Xamarin und C# erstellen.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://docs.microsoft.com/media/common/i_setup.svg
+      text: Setup
+      href: ~/android/get-started/installation/index.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
+      text: Hello, Android (Hallo, Android)
+      href: ~/android/get-started/hello-android/hello-android-quickstart.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
+      text: Multiscreen-Apps
+      href: ~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
+- title: "Führungslinien"
+  items:
+  - type: grid
+    style: columns
+    className: column50
+    items:
+    - type: list
+      style: cards
+      className: cardsB
+      items:
+      - href: ~/android/get-started/index.md
+        html: "Tutorials für die ersten Schritte mit Xamarin.Android. Stellen Sie sicher, dass alles korrekt installiert ist, und erstellen Sie Ihre ersten Mac-Apps."
+        image:
+          src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
+          href: ~/android/get-started/index.md
+        title: Erste Schritte
+      - href: ~/android/user-interface
+        html: "Erfahren Sie mehr über den vollständigen Satz von Widgets zur Steuerung der Benutzeroberfläche, der für Android verfügbar ist."
+        image:
+          src: ~/media/icons/i_user-interface.svg
+          href: ~/android/user-interface/
+        title: "Benutzeroberfläche"
+      - href: ~/android/deploy-test/
+        html: Anweisungen zum Erstellen und Bereitstellen Ihrer Apps in Google Play und Tipps, um sie vorab zu testen!
+        image:
+          src: ~/media/icons/i_deploy-test.svg
+          href: ~/android/deploy-test/
+        title: Bereitstellung und Testen
+      - href: ~/android/wear/
+        html: "Erstellen von Apps für Android Wear."
+        image:
+          src: ~/media/icons/i_android-wear.svg
+          href: ~/android/wear/
+        title: Android Wear
+    - type: list
+      style: cards
+      className: cardsB
+      items:
+      - href: ~/android/app-fundamentals/
+        html: "Alles, was Sie zum Erstellen von Android-Apps wissen müssen, z.B. Arbeiten mit Dateien, Images, Datenbanken und mehr."
+        image:
+          src: ~/media/icons/i_app-build.svg
+          href: ~/android/app-fundamentals/
+        title: Application Fundamentals (Anwendungsgrundlagen)
+      - href: ~/android/platform/
+        html: Arbeiten mit Android-Plattformfeatures wie Fingerabdruckauthentifizierung und den neuesten Features in Android 8.0 Oreo.
+        image:
+          src: ~/media/icons/i_platform.svg
+          href: ~/android/platform/
+        title: Plattformfeatures
+      - href: ~/android/internals/
+        html: "Weitere Informationen zu Xamarin.Android-Interna und Unterstützung bei Features wie Lokalisierung und Eingabehilfen."
+        image:
+          src: https://docs.microsoft.com/en-us/media/common/i_advanced.svg
+          href: ~/android/internals/
+        title: "Weiterführende Konzepte und Interna"
+- title: Referenz
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: API
+      html: <p><a href="https://developer.xamarin.com/api/root/monodroi-lib/">Android-API-Dokumentation</a></p><p><a href="https://docs.microsoft.com/en-us/dotnet/api/?view=xamarinandroid-7.1">Basisklassenbibliothek</a></p>
+    - title: Proben
+      html: <p><a href="https://developer.xamarin.com/samples/android/all/">Android-Beispiele</a></p>
+    - title: Arbeitsmappen
+      html: <p><a href="https://developer.xamarin.com/workbooks#android">Android-Workbooks</a></p>

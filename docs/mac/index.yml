@@ -1,0 +1,104 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Xamarin.Mac
+metadata:
+  description: "Xamarin.Mac macht das komplette macOS SDK für .NET-Entwickler verfügbar."
+  author: conceptdev
+  ms.author: crdun
+  ms.date: 02/17/2018
+  ms.topic: landing-page
+  ms.openlocfilehash: a81c5b6fe71f178f2def0e6bbacac56db229a39a
+  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 02/27/2018
+abstract:
+  description: "Xamarin.Mac macht das komplette macOS SDK für .NET-Entwickler verfügbar. Erstellen Sie vollständig native Apps in Visual Studio für Mac."
+  menu:
+    items:
+    - href: ~/mac/samples/
+      text: Mac-Beispiele
+    - href: https://developer.xamarin.com/releases/mac/
+      text: Anmerkungen zu dieser Version
+    - href: https://developer.apple.com/documentation/
+      text: Entwicklerdokumentation von Apple
+    - href: /visualstudio/mac/
+      text: "Visual Studio für Mac"
+sections:
+- title: Erste Schritte
+  items:
+  - type: paragraph
+    text: Erfahren Sie, wie Sie Ihre ersten Mac-Apps mit Xamarin und C# erstellen.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://docs.microsoft.com/media/common/i_setup.svg
+      text: Setup
+      href: ~/mac/get-started/installation.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_xplat-code.svg
+      text: Hallo, Mac
+      href: ~/mac/get-started/hello-mac.md
+- title: "Führungslinien"
+  items:
+  - type: grid
+    style: columns
+    className: column50
+    items:
+    - type: list
+      style: cards
+      className: cardsB
+      items:
+      - href: ~/mac/get-started/index.md
+        html: "Tutorials für die ersten Schritte mit Xamarin.Mac. Stellen Sie sicher, dass alles korrekt installiert ist, und erstellen Sie Ihre ersten Mac-Apps."
+        image:
+          src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
+          href: ~/mac/get-started/index.md
+        title: Erste Schritte
+      - href: ~/mac/user-interface
+        html: "Erfahren Sie mehr über den vollständigen Satz von Steuerelementen für die Benutzeroberfläche, der für macOS in AppKit verfügbar ist."
+        image:
+          src: ~/media/icons/i_user-interface.svg
+          href: ~/mac/user-interface/
+        title: "Benutzeroberfläche"
+      - href: ~/mac/deploy-test/
+        html: Anweisungen zum Erstellen und Bereitstellen Ihrer Apps im App Store und Tipps, um sie vorab zu testen!
+        image:
+          src: ~/media/icons/i_deploy-test.svg
+          href: ~/mac/deploy-test/
+        title: Bereitstellung und Testen
+    - type: list
+      style: cards
+      className: cardsB
+      items:
+      - href: ~/mac/app-fundamentals/
+        html: "Alles, was Sie zum Erstellen von Mac-Apps wissen müssen, z.B. Arbeiten mit Dateien, Images, Datenbanken und mehr."
+        image:
+          src: ~/media/icons/i_app-build.svg
+          href: ~/mac/app-fundamentals/
+        title: Application Fundamentals (Anwendungsgrundlagen)
+      - href: ~/mac/platform/
+        html: Arbeiten mit Mac-Plattformfeatures wie Storyboards, OpenTK und den neuesten Features in MacOS.
+        image:
+          src: ~/media/icons/i_platform.svg
+          href: ~/mac/platform/
+        title: Plattformfeatures
+      - href: ~/mac/internals/
+        html: "Weitere Informationen zu Xamarin.Mac-Interna und Unterstützung bei Features wie Eingabehilfen."
+        image:
+          src: https://docs.microsoft.com/en-us/media/common/i_config-tools.svg
+          href: ~/mac/internals/
+        title: "Weiterführende Konzepte und Interna"
+- title: Referenz
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: API
+      html: <p><a href="https://developer.xamarin.com/api/root/monomac-lib/">Mac-API-Dokumentation</a></p><p><a href="https://docs.microsoft.com/en-us/dotnet/api/?view=xamarinmac-3.0">Basisklassenbibliothek</a></p>
+    - title: Proben
+      html: <p><a href="https://developer.xamarin.com/samples/mac/all/">Mac-Beispiele</a></p>
+    - title: Arbeitsmappen
+      html: <p><a href="https://developer.xamarin.com/workbooks#mac">Mac-Workbooks</a></p>
