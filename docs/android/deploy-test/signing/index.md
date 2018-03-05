@@ -1,0 +1,164 @@
+---
+title: Signieren des Android-Anwendungspakets
+ms.topic: article
+ms.prod: xamarin
+ms.assetid: 8E3EFBB2-F8AD-C126-5F32-7FD140791E53
+ms.technology: xamarin-android
+author: mgmclemore
+ms.author: mamcle
+ms.date: 01/26/2018
+ms.openlocfilehash: 20a28d475e58a58a98abe21203e9841b7824fe48
+ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 02/27/2018
+---
+# <a name="signing-the-android-application-package"></a>Signieren des Android-Anwendungspakets
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+In diesem Abschnitt wird der von Visual Studio bereitgestellte integrierte Workflow zur Veröffentlichung zum Signieren des APK beschrieben. Unter [Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)](~/android/deploy-test/release-prep/index.md) wurde der **Archiv-Manager** verwendet, um die App zu erstellen und zum Signieren und Veröffentlichen in ein Archiv abzulegen. In diesem Abschnitt wird erklärt, wie eine Android-Signierungsidentität und ein neues Signaturzertifikat für Android-Anwendungen erstellt werden und die archivierte App *ad hoc* auf dem Datenträger veröffentlicht wird.
+Das resultierende APK kann ohne Verwendung eines App Stores auf Android-Geräten quergeladen werden.
+
+Unter [Zur Veröffentlichung aktivieren](~/android/deploy-test/release-prep/index.md#archive) stellte das Dialogfeld **Verteilungskanal** zwei Möglichkeiten für die Verteilung dar. Wählen Sie **Ad-Hoc** aus:
+
+[ ![Dialogfeld „Verteilungskanal“](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png)
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+In diesem Abschnitt verwenden wir den integrierten Veröffentlichungsworkflow von Visual Studio für Mac, um das APK (Android-Anwendungspaket) zu signieren. Unter [Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)](~/android/deploy-test/release-prep/index.md) haben wir den **Archiv-Manager** verwendet, um die App zu erstellen und zum Signieren und Veröffentlichen in ein Archiv abzulegen. In diesem Abschnitt erfahren wir, wie wir eine Android-Signierungsidentität und ein neues Signaturzertifikat für Android-Anwendungen erstellen und die archivierte App *ad hoc* auf dem Datenträger veröffentlichen können. Das resultierende APK kann ohne Verwendung eines App Stores auf Android-Geräten quergeladen werden.
+
+Unter [Zur Veröffentlichung aktivieren](~/android/deploy-test/release-prep/index.md#archive) stellte das Dialogfeld **Signieren und verteilen...** zwei Möglichkeiten für die Verteilung dar. Wählen Sie **Ad-Hoc** aus, und klicken Sie auf **Weiter**:
+
+[ ![Dialogfeld „Signieren und verteilen“](images/xs/01-select-ad-hoc-sml.png)](images/xs/01-select-ad-hoc.png)
+
+-----
+
+<a name="newcertvs" />
+<a name="newcert" />
+<a name="newcertxs" />
+
+## <a name="create-a-new-certificate"></a>Erstellen eines neuen Zertifikats
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Nachdem **Ad-Hoc** ausgewählt wurde, öffnet Visual Studio wie im nächsten Screenshot gezeigt die Seite **Signierungsidentität** des Dialogfelds. Um das .APK zu veröffentlichen, muss es zunächst mithilfe eines Signaturschlüssels (auch als Zertifikat bezeichnet) signiert werden.
+
+Ein vorhandenes Zertifikat kann verwendet werden, indem Sie auf die Schaltfläche **Importieren** klicken und dann mit [APK signieren](#signapkvs) fortfahren. Andernfalls klicken Sie auf die Schaltfläche **+**, um ein neues Zertifikat zu erstellen:
+
+[ ![Ad-Hoc-Signierungsidentität](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png)
+
+Das Dialogfeld **Create Android Key Store** (Android-Schlüsselspeicher erstellen) wird angezeigt. Verwenden Sie dieses, um ein neues Signaturzertifikat zu erstellen, das zum Signieren von Android-Anwendungen verwendet werden kann. Geben Sie wie im folgenden Dialogfeld gezeigt die erforderlichen Informationen (rot umrandet) ein:
+
+[ ![Dialogfeld „Create Android Key Store“ (Android-Schlüsselspeicher erstellen)](images/vs/03-create-android-key-store-vs-sml.png)](images/vs/03-create-android-key-store-vs.png)
+
+Das folgende Beispiel veranschaulicht die Art von Informationen, die angegeben werden müssen. Klicken Sie auf **Erstellen**, um das neue Zertifikat zu erstellen:
+
+[ ![Erstellen eines neuen Zertifikats](images/vs/04-key-store-example-vs-sml.png)](images/vs/04-key-store-example-vs.png)
+
+Die resultierende Keystore-Datei befindet sich an folgendem Speicherort:
+
+**C:\\Benutzer\\*BENUTZERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\alias\\alias.keystore**
+
+Die oben genannten Schritte können z.B. einen neuen Signaturschlüssel an folgendem Speicherort erstellen:
+
+**C:\\Benutzer\\*BENUTZERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\chimp\\chimp.keystore**
+
+> [!NOTE]
+> **Hinweis:** Achten Sie darauf, die resultierende Keystore-Datei an einem sicheren Speicherort zu speichern &ndash; sie ist nicht in der Projektmappe enthalten. Wenn Sie Ihre Keystore-Datei verlieren (z.B. weil Sie einen anderen Computer verwenden oder Windows neu installiert haben), können Sie Ihre App nicht mit demselben Zertifikat wie vorherige Versionen signieren.
+
+Weitere Informationen zur Keystore-Datei finden Sie unter [Finding your Keystore's MD5 or SHA1 Signature (Suchen der MD5- oder SHA1-Signatur Ihrer Keystore-Datei)](~/android/deploy-test/signing/keystore-signature.md).
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+Nachdem Sie auf **Ad-hoc** geklickt haben, öffnet Visual Studio für Mac das Dialogfeld **Android-Signierungsidentität**, wie im nachfolgenden Screenshot gezeigt. Um das .APK zu veröffentlichen, muss es zunächst mithilfe eines Signaturschlüssels (auch als Zertifikat bezeichnet) signiert werden. Wenn ein Zertifikat bereits vorhanden ist, klicken Sie auf die Schaltfläche **Vorhandenen Schlüssel importieren**, um es zu importieren. Fahren Sie dann damit fort, [das APK auf andere Weise zu signieren](#signapkxs), und klicken Sie auf die Schaltfläche **Neuen Schlüssel erstellen**, um ein neues Zertifikat zu erstellen: 
+
+[ ![Dialogfeld „Android-Signierungsidentität“](images/xs/02-android-signing-identity-sml.png)](images/xs/02-android-signing-identity.png)
+
+Das Dialogfeld **Neues Zertifikat erstellen** wird dazu verwendet, ein neues Signaturzertifikat zu erstellen, das zum Signieren von Android-Anwendungen verwendet werden kann. Klicken Sie auf **OK**, nachdem Sie die erforderlichen Informationen eingegeben haben:
+
+[ ![Dialogfeld „Neues Zertifikat erstellen“](images/xs/03-create-new-certificate-sml.png)](images/xs/03-create-new-certificate.png)
+
+Die resultierende Keystore-Datei befindet sich an folgendem Speicherort:
+
+**~/Bibliothek/Developer/Xamarin/Keystore/alias/alias.keystore**
+
+Die oben genannten Schritte können z.B. einen neuen Signaturschlüssel an folgendem Speicherort erstellen:
+
+**~/Bibliothek/Developer/Xamarin/Keystore/chimp/chimp.keystore**
+
+
+> [!NOTE]
+> **Hinweis:** Achten Sie darauf, die resultierende Keystore-Datei an einem sicheren Speicherort zu speichern &ndash; sie ist nicht in der Projektmappe enthalten. Wenn Sie Ihre Keystore-Datei verlieren (z.B. weil Sie einen anderen Computer verwenden oder Ihren Mac neu installiert haben), können Sie Ihre App nicht mit demselben Zertifikat wie vorherige Versionen signieren.
+
+Weitere Informationen zur Keystore-Datei finden Sie unter [Finding your Keystore's MD5 or SHA1 Signature (Suchen der MD5- oder SHA1-Signatur Ihrer Keystore-Datei)](~/android/deploy-test/signing/keystore-signature.md).
+
+-----
+
+<a name="signapkvs" />
+<a name="signingxs" />
+
+## <a name="sign-the-apk"></a>Signieren des APKs
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Wenn Sie auf **Erstellen** klicken, wird ein neuer Schlüsselspeicher (der ein neues Zertifikat enthält) gespeichert und wie im folgenden Screenshot gezeigt unter **Signierungsidentität** aufgelistet. Um eine App in Google Play zu veröffentlichen, klicken Sie auf **Abbrechen**, und wechseln Sie zu [Publishing to Google Play (Veröffentlichen in Google Play)](~/android/deploy-test/publishing/publishing-to-google-play/index.md).
+Um *ad-hoc* zu veröffentlichen, wählen Sie die für die Signierung zu verwendende Signierungsidentität aus, und klicken Sie auf **Speichern unter**, um die App für die unabhängige Verteilung zu veröffentlichen. Beispielsweise wird im folgenden Screenshot die Signierungsidentität **chimp** (zuvor erstellt) ausgewählt:
+
+[ ![Beispiel für Signierungsidentität](images/vs/05-save-as-vs-sml.png)](images/vs/05-save-as-vs.png)
+
+Als Nächstes zeigt der **Archive Manager** den Veröffentlichungsfortschritt an. Wenn der Veröffentlichungsprozess abgeschlossen ist, öffnet sich das Dialogfeld **Speichern unter**, um nach einem Speicherort zum Speichern der erstellten .APK-Datei zu fragen:
+
+[ ![Dialogfeld „Speichern unter“](images/vs/06-save-as-dialog-vs-sml.png)](images/vs/06-save-as-dialog-vs.png)
+
+Navigieren Sie zum gewünschten Speicherort, und klicken Sie auf **Speichern**. Wenn das Kennwort für den Schlüssel unbekannt ist, erscheint das Dialogfeld **Signierungskennwort**, um nach dem Kennwort für das ausgewählte Zertifikat zu fragen:
+
+[ ![Dialogfeld „Signierungskennwort“](images/vs/07-signing-password-vs-sml.png)](images/vs/07-signing-password-vs.png)
+
+Nachdem der Signierungsvorgang abgeschlossen ist, klicken Sie auf **Ordner öffnen**:
+
+[ ![Schaltfläche „Ordner öffnen“](images/vs/08-open-folder-vs-sml.png)](images/vs/08-open-folder-vs.png)
+
+Dadurch öffnet Windows Explorer den Ordner, der die erstellte APK-Datei enthält. Jetzt hat Visual Studio die Xamarin.Android-Anwendung in ein APK kompiliert, das zur Verteilung bereit ist.
+Der folgende Screenshot zeigt ein Beispiel der für die Veröffentlichung bereiten App **MyApp.MyApp.apk**:
+
+[ ![APK wird in Windows Explorer angezeigt](images/vs/09-generated-app-vs-sml.png)](images/vs/09-generated-app-vs.png)
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+
+Wie hier gezeigt, wurde ein neues Zertifikat zum Schlüsselspeicher hinzugefügt. Um eine App in Google Play zu veröffentlichen, klicken Sie auf **Abbrechen**, und wechseln Sie zu [Publishing to Google Play (Veröffentlichen in Google Play)](~/android/deploy-test/publishing/publishing-to-google-play/index.md).
+Andernfalls klicken Sie auf **Weiter**, um die App wie im folgenden Beispiel gezeigt *ad-hoc* (für eine unabhängige Verteilung) zu veröffentlichen:
+
+[ ![Dialogfeld „Signieren und verteilen“](images/xs/04-select-identity-sml.png)](images/xs/04-select-identity.png)
+
+Das Dialogfeld **Als Ad-hoc veröffentlichen** bietet eine Zusammenfassung der signierten App, bevor sie veröffentlicht wird. Wenn diese Informationen korrekt sind, klicken Sie auf **Veröffentlichen**.
+
+[ ![Als Ad-hoc veröffentlichen](images/xs/05-publish-ad-hoc-sml.png)](images/xs/05-publish-ad-hoc.png)
+
+Das Dialogfeld **APK-Ausgabedatei** speichert das APK am angegebenen Pfad. Klicken Sie auf **Speichern**.
+
+![Dialogfeld „APK-Ausgabedatei“](images/xs/06-output-apk-file.png)
+
+Als Nächstes geben Sie das Kennwort für das Zertifikat (das Kennwort, das im Dialogfeld **Neues Zertifikat erstellen** verwendet wurde) ein, und klicken Sie auf **OK**: 
+
+![Eingeben des Kennwort des Zertifikats](images/xs/07-signing-certificate.png)
+
+Das APK wird mit dem Zertifikat signiert und am angegebenen Speicherort gespeichert. Klicken Sie auf **Im Finder anzeigen**:
+
+[ ![Dialogfeld „Publication Succeeded“ (Veröffentlichung erfolgreich)](images/xs/08-app-is-ready-sml.png)](images/xs/08-app-is-ready.png)
+
+Hierdurch öffnet sich der Finder für den Speicherort der signierten APK-Datei:
+
+[ ![APK wird im Finder angezeigt](images/xs/09-show-in-finder-sml.png)](images/xs/09-show-in-finder.png)
+
+Das APK kann im Finder kopiert und an das endgültige Ziel gesendet werden. Es wird empfohlen, das APK vor der Verteilung auf einem Android-Gerät zu installieren und auszuprobieren. Weitere Informationen zum Veröffentlichen eines *Ad-Hoc*-APK finden Sie unter [Unabhängiges Veröffentlichen](~/android/deploy-test/publishing/publishing-independently.md).
+
+-----
+
+
+<a name="nextsteps" />
+
+## <a name="next-steps"></a>Nächste Schritte
+
+Nachdem das Anwendungspaket für die Veröffentlichung signiert wurde, muss es veröffentlicht werden. In den folgenden Abschnitten werden verschiedene Möglichkeiten zum Veröffentlichen einer Anwendung beschrieben.
