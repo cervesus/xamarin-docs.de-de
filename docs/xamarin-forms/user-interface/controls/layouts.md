@@ -10,7 +10,7 @@ ms.author: dabritch
 ms.date: 01/12/2016
 ms.openlocfilehash: ecea0f55360fcde7a50c52bb33c45a2c5fff5eeb
 ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 02/28/2018
 ---
@@ -22,7 +22,7 @@ _Xamarin.Forms-Layouts werden verwendet, um die Steuerelemente der Benutzeroberf
 
 ## <a name="layouts"></a>Layouts
 
-Die [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) Klasse in Xamarin.Forms ist ein spezialisierter Untertyp des anzeigen, die als Container für andere Layouts oder Sichten fungiert. Es enthält in der Regel Logik, um die Position und Größe von untergeordneten Elementen in Xamarin.Forms Anwendungen festzulegen.
+Die [`Layout`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) Klasse in Xamarin.Forms ist ein spezialisierter Untertyp des anzeigen, die als Container für andere Layouts oder Sichten fungiert. Es enthält in der Regel Logik, um die Position und Größe von untergeordneten Elementen in Xamarin.Forms Anwendungen festzulegen.
 
  [ ![](layouts-images/layouts-sml.png "Xamarin.Forms Layout Typen")](layouts-images/layouts.png "Xamarin.Forms-Layout-Typen")
 
