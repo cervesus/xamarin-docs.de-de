@@ -9,7 +9,7 @@ ms.author: chape
 ms.date: 04/14/2017
 ms.openlocfilehash: 1341cde32778358fbeb7b65045616d5d81623d37
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 02/27/2018
 ---
@@ -27,7 +27,7 @@ Es ist schwierig, diese entwickeln `SKMatrix` Transformation arbeiten ausschlie�
 
 Ein dreidimensionales Koordinatensystem Fügt einer dritten Achse z konzeptionell aufgerufen, die Z-Achse wird im rechten Winkel auf dem Bildschirm. Koordinaten in 3D-Bereich mit drei Zahlen angegeben werden: (X, y, Z). In der 3D Koordinatensystem verwendet in diesem Artikel ansteigenden Werten von X nach rechts und zunehmenden Y-Werte ausfallen, wie zwei Dimensionen. Zunehmende positive Z-Werte stammen aus dem Bildschirm. Der Ursprung ist der oberen linken Ecke, wie 2D Grafiken. Sie können als XY-Ebene mit der Z-Achse im rechten Winkel auf dieser Ebene des Bildschirms vorstellen.
 
-Dadurch wird eine linke Koordinatensystem aufgerufen. Wenn Sie zeigen die Zeigefinger für Ihre linken in Richtung der positiven X Koordinaten (rechts) und dem mittleren Finger in Richtung der zunehmenden Y-Koordinaten (unten), klicken Sie dann die Thumb-Punkte in der Richtung des zu erhöhenden Z-Koordinaten & #x 2014; Erweitern Sie im Bildschirm.
+Dadurch wird eine linke Koordinatensystem aufgerufen. Wenn Sie zeigen die Zeigefinger für Ihre linken in Richtung der positiven X Koordinaten (rechts) und dem mittleren Finger in Richtung der zunehmenden Y-Koordinaten (unten), klicken Sie dann die Thumb-Punkte in der Richtung des zu erhöhenden Z-Koordinaten &#x2014; Erweitern Sie im Bildschirm.
 
 In der 3D-Grafik basieren die Transformationen auf eine 4 x 4-Matrix. So sieht die 4 x 4-Identitätsmatrix aus:
 
@@ -109,7 +109,7 @@ Die Drehung um die Z-Achse ist im 2D Grafiken identisch:
 |    0       0     0  1  |
 </pre>
 
-Die Richtung der Drehung wird durch die Eignung des Koordinatensystems impliziert. Dies ist ein Linkshändig System, wenn Sie den Ziehpunkt einer Hand Links für ansteigenden Werten für eine bestimmte Achse & #x 2014; zeigen auf der rechten Seite für die Drehung um die x-Achse Bild-ab für die Drehung um die y-Achse, und Sie für die Drehung um die Z-Achse & #x 2014; die Kurve der anderen Finger zeigt dann die Richtung der Drehung für positive Winkel an.
+Die Richtung der Drehung wird durch die Eignung des Koordinatensystems impliziert. Dies ist ein Linkshändig System, wenn Sie den Ziehpunkt einer Hand Links für ansteigenden Werten für eine bestimmte Achse &#x2014; zeigen auf der rechten Seite für die Drehung um die x-Achse Bild-ab für die Drehung um die y-Achse, und Sie für die Drehung um die Z-Achse &#x2014; die Kurve der anderen Finger zeigt dann die Richtung der Drehung für positive Winkel an.
 
 `SKMatrix44` hat die statische generalisiert [ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/) und [ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/) Methoden, mit denen Sie auf die Achse angeben, die die Drehung erfolgt:
 
@@ -442,7 +442,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-Die `OnAppearing` Außerkraftsetzung definiert drei Xamarin.Forms `Animation` Objekte zum Animieren der `xRotationDegrees`, `yRotationDegrees`, und `zRotationDegrees` Felder mit unterschiedlichen Raten. Beachten Sie, dass die Zeiträume dieser Animationen Primzahlen & #x 2014 eingestellt sind. 5 Sekunden, 7 Sekunden und 11 Sekunden & #x 2014; Damit die gesamte Kombination nur jede 385 Sekunden oder mehr als 10 Minuten wiederholt:
+Die `OnAppearing` Außerkraftsetzung definiert drei Xamarin.Forms `Animation` Objekte zum Animieren der `xRotationDegrees`, `yRotationDegrees`, und `zRotationDegrees` Felder mit unterschiedlichen Raten. Beachten Sie, dass die Zeiträume dieser Animationen Primzahlen & #x &#x2014; eingestellt sind. 5 Sekunden, 7 Sekunden und 11 Sekunden &#x2014; Damit die gesamte Kombination nur jede 385 Sekunden oder mehr als 10 Minuten wiederholt:
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
