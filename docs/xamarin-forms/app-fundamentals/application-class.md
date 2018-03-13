@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: d7965c5d4d65dd6bf7aa4128f467acd3e2d39e60
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c383808d443685c1561113e418aed62467f1d5bd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-class"></a>App-Klasse
 
@@ -98,7 +98,7 @@ if (Application.Current.Properties.ContainsKey("id"))
 Überprüfen Sie immer auf das Vorhandensein des Schlüssels, vor dem Zugriff, um zu verhindern, dass unerwartete Fehler auf.
 
 > [!NOTE]
-> **Hinweis:** der `Properties` Wörterbuch kann nur primitive Typen für den Speicher serialisieren. Andere Typen speichern möchten (z. B. `List<string>`) kann fehlschlagen, im Hintergrund.
+> Die `Properties` Wörterbuch kann nur primitive Typen für den Speicher serialisieren. Andere Typen speichern möchten (z. B. `List<string>`) kann fehlschlagen, im Hintergrund.
 
 <!-- bugzilla 28657 -->
 
@@ -196,7 +196,7 @@ public class MainActivity :
 ```
 
 > [!NOTE]
-> **Hinweis:** besteht eine neuere [ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md) Basisklasse, die verwendet werden kann, Android Material Entwurf besser zu unterstützen.
+> Es ist eine neuere [ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md) Basisklasse, die verwendet werden kann, Android Material Entwurf besser zu unterstützen.
 > Dies wird die Standardvorlage für Android in Zukunft werden, aber Sie können befolgen [diese Anweisungen](~/xamarin-forms/platform/android/appcompat.md) Ihrer vorhandenen Android-apps zu aktualisieren.
 
 

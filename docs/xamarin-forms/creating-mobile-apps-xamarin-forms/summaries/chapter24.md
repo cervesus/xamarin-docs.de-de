@@ -3,14 +3,15 @@ title: Zusammenfassung der Kapitel 24. Seitennavigation
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b8eac45c52093dea23c08a19d219fa0bbd8d55ab
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3390a298cd8d9967f0aea2bd9fb5a90830714ba5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>Zusammenfassung der Kapitel 24. Seitennavigation
 
@@ -99,7 +100,7 @@ Wenn eine bestimmte modale Seite zu mehrmals navigiert werden kann, sollte es In
 
 Die [ **ViewGalleryType** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryType) Beispiel veranschaulicht die Verwendung einer `TableView` auf Menüelemente Liste. Jedes Element zugeordnet ist ein `Type` Objekt für eine bestimmte Seite. Wenn dieses Element ausgewählt ist, wird das Programm Seite instanziiert und darauf navigiert.
 
-[![Dreifacher Screenshot der Katalog Ansichtstyp](images/ch24fg21-small.png "TableView Auflisten von Menüelementen")](images/ch24fg21-large.png "TableView Auflisten von Menüelementen")
+[![Dreifacher Screenshot der Katalog Ansichtstyp](images/ch24fg21-small.png "TableView Auflisten von Menüelementen")](images/ch24fg21-large.png#lightbox "TableView Auflisten von Menüelementen")
 
 Die [ **ViewGalleryInst** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryInst) Beispiel unterscheidet sich insofern, dass Sie im Menü Instanzen von jeder Seite statt mit Typen enthält. Dadurch werden die Informationen über jede Seite beibehalten, aber alle Seiten müssen beim Programmstart instanziiert werden.
 

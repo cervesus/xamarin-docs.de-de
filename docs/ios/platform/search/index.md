@@ -7,11 +7,11 @@ ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 2d802a96fcc8dad1d610b99a1cddffdc4398da38
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6ec8cb9b6fdb391afcb8f9baaa641da5aec38f6d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="new-search-apis"></a>Neue Such-APIs
 
@@ -21,7 +21,7 @@ Suche wurde in iOS 9 hervorragende neue Möglichkeiten, um den Zugriff auf Infor
 
 Darüber hinaus erleichtern die neue Such-APIs Suche in Ihrer app ohne die vorherige Implementierung Suchabfrage zu integrieren. Aus diesem Grund Ansprüche Apple an, dass es sich normalerweise um ein paar Stunden zu einer iOS 9-app-Inhalte universell mithilfe der App suchen zu lassen dauert.
 
-[ ![](images/intro01.png "Ein Beispiel für iOS 9-app-Inhalte universell durchsuchbaren mithilfe der App-Suche")](images/intro01.png)
+[![](images/intro01.png "Ein Beispiel für iOS 9-app-Inhalte universell durchsuchbaren mithilfe der App-Suche")](images/intro01.png#lightbox)
 
 App-Suche besteht aus drei separaten-APIs:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 0d7b4c5a539470a3544d0117251f40fd6bd37f2b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 778e70f6817b71e5910aa85425d46261dfe9c803
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-property-lists"></a>Arbeiten mit Eigenschaftenlisten
 
@@ -24,7 +24,7 @@ Visual Studio für Mac verfügt über eine grafische plist-Editor, der erleichte
 
 Die Eigenschaftenliste Informationen ( `Info.plist`) ist eine erforderliche iOS-Datei, die Informationen zur Anwendungskonfiguration an das System bereitstellt. Visual Studio für Mac des benutzerdefinierten `Info.plist` Features im Editor links im Editor-Fenster auf drei Bereiche, die durch die Registerkarten am unteren gesteuert:
 
- [ ![](property-lists-images/tabs.png "Die Datei "Info.plist"-Editor-Registerkarten unten links im Editor-Fenster")](property-lists-images/tabs.png)
+ [![](property-lists-images/tabs.png "Die Datei "Info.plist"-Editor-Registerkarten unten links im Editor-Fenster")](property-lists-images/tabs.png#lightbox)
 
 Jeder Bereich steuert verschiedene Eigenschaften, wie im folgenden erläutert:
 
@@ -57,11 +57,11 @@ Diese werden in den nächsten Abschnitten ausführlicher beschrieben.
 Dieser Abschnitt enthält wichtige Informationen, die die Anwendung beschreibt.
 Die **Bezeichner** gespeicherten übereinstimmen hier die Paket-ID, die in iTunes Connect (für App-Store-apps) und auch in der Liste der iOS-Portal-App-IDs Bereitstellung und die Entwicklung und die Verteilung von Zertifikaten eingegeben werden.
 
- [ ![](property-lists-images/image24.png "iOS-Anwendung-Ziel")](property-lists-images/image24.png)
+ [![](property-lists-images/image24.png "iOS-Anwendung-Ziel")](property-lists-images/image24.png#lightbox)
 
 ### <a name="device-deployment"></a>Gerätebereitstellung
 
- [ ![](property-lists-images/deployment.png "Gerätebereitstellung")](property-lists-images/deployment.png)
+ [![](property-lists-images/deployment.png "Gerätebereitstellung")](property-lists-images/deployment.png#lightbox)
 
 Das Gerät **Bereitstellung** Info Abschnitte werden selektiv angezeigt, abhängig von der Auswahl in der **Geräte** Dropdownliste in der **Anwendung Ziel** obigen Abschnitt. Die **Hauptbenutzeroberfläche** Dropdown-Menü festgelegt ist, um **MainStoryboard** in Storyboard datengesteuerten Anwendungen. Wenn die Benutzeroberfläche vollständig in Code geschrieben ist, und dies kann leer gelassen werden.
 
@@ -73,7 +73,7 @@ Das Gerät **Bereitstellung** Info Abschnitte werden selektiv angezeigt, abhäng
 
 Die **Status Leiste Stile** Abschnitt ist eine grafische Benutzeroberfläche zum Bearbeiten einer Anwendungsverzeichnis `UIStatusBarStyle`:
 
- [ ![](property-lists-images/status.png "Statusleiste-Stile")](property-lists-images/status.png)
+ [![](property-lists-images/status.png "Statusleiste-Stile")](property-lists-images/status.png#lightbox)
 
  <a name="Icons" />
 
@@ -89,11 +89,11 @@ Informationen zum Verwenden von Symbole, Bilder und Grafiken in Ihrer Datei "Inf
 
 Die `Info.plist` enthält spezielle Abschnitte für die Maps-Integration und backgrounding Modi angeben. Auswählen der Optionen, die Sie unterstützen möchten wird die Anwendung für Sie die erforderlichen Eigenschaften hinzugefügt.
 
- [ ![](property-lists-images/maps.png "Maps-Integration")](property-lists-images/maps.png)
+ [![](property-lists-images/maps.png "Maps-Integration")](property-lists-images/maps.png#lightbox)
 
 Weitere Informationen zum Arbeiten mit Karten finden Sie in der Xamarin [iOS Maps](~/ios/user-interface/controls/ios-maps/index.md) Handbuch.
 
- [ ![](property-lists-images/bging.png "Hintergrundmodi")](property-lists-images/bging.png)
+ [![](property-lists-images/bging.png "Hintergrundmodi")](property-lists-images/bging.png#lightbox)
 
 Weitere Informationen zu Hintergrundmodi, finden Sie in der Xamarin [Backgrounding in iOS](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md) Handbuch.
 
@@ -101,7 +101,7 @@ Weitere Informationen zu Hintergrundmodi, finden Sie in der Xamarin [Backgroundi
 
 Im erweiterten Bereich steuert die Dokumenttypen und URL-Schemas, die von der Anwendung unterstützt.
 
- [ ![](property-lists-images/image34.png "Erweiterte Bedienfeld")](property-lists-images/image34.png)
+ [![](property-lists-images/image34.png "Erweiterte Bedienfeld")](property-lists-images/image34.png#lightbox)
 
  <a name="Document_Types" />
 
@@ -116,7 +116,7 @@ Finden Sie in der Dokumentation auf [Registrieren der Datei Typen Ihrer App unte
 
 In einigen Fällen muss eine Anwendung unterstützen, öffnen einen benutzerdefinierten Dateityp. Wir möchten z. B. mit einer benutzerdefinierten Erweiterung Bilddateien öffnen *.xam*. Um einen benutzerdefinierten Dateityp angeben, wir Erstellen einer benutzerdefinierten UTI - Universal Typbezeichner - mit den `UIExportedTypeDeclarations` Schlüssel. Der folgende Screenshot zeigt, wie eine benutzerdefinierte UTI für die Erweiterung .xam erstellt wird:
 
- [ ![](property-lists-images/uti.png "UTIs-Editor")](property-lists-images/uti.png)
+ [![](property-lists-images/uti.png "UTIs-Editor")](property-lists-images/uti.png#lightbox)
 
 Nur als exportierte UTIs Geben Sie die benutzerdefinierte UTIs spezifisch für Ihre app die *importiert Typ UTIs* ( `UIImportedTypeDeclarations` Schlüssel) benutzerdefinierte Typen unterstützt, aber nicht im Besitz der Anwendungsstatus angeben.
 
@@ -126,7 +126,7 @@ Weitere Informationen finden Sie unter benutzerdefinierte UTIs, finden Sie in de
 
 Ein URL-Schema-Name (auch als "Protokoll" bezeichnet) ist der erste Teil der URL. Beispielsweise `http://` und `https://` sind allgemeine URL-Schemas. Sie haben die Möglichkeit zum Erstellen eines benutzerdefinierten URL-Schemas für Ihre Anwendung. Benutzerdefinierte URL-Schemas werden verwendet, um die Kommunikation und Senden von Daten mit anderen Anwendungen hin und her. Der folgende Screenshot veranschaulicht die Erstellung eines neuen benutzerdefinierten URL-Schemas aufgerufen `monkeys://`:
 
- [ ![](property-lists-images/url.png "Benutzerdefinierte URLs")](property-lists-images/url.png)
+ [![](property-lists-images/url.png "Benutzerdefinierte URLs")](property-lists-images/url.png#lightbox)
 
 
 
@@ -136,15 +136,15 @@ Weitere Informationen zum Implementieren von benutzerdefinierten URL-Schemas fin
 
 Die **Quelle** auf der Registerkarte die `Info.plist` Datei ermöglicht, benutzerdefinierte Werte hinzugefügt oder bearbeitet werden soll. Visual Studio für Mac enthält eine Liste der am häufigsten verwendeten Eigenschaften:
 
- [ ![](property-lists-images/image31.png "Hinzufügen einer neuen Eigenschaft in einer Dropdownliste")](property-lists-images/image31.png)
+ [![](property-lists-images/image31.png "Hinzufügen einer neuen Eigenschaft in einer Dropdownliste")](property-lists-images/image31.png#lightbox)
 
 Für bekannte Eigenschaften Visual Studio für Mac wird eine Liste der gültigen Werte wie der folgende Screenshot veranschaulicht:
 
- [ ![](property-lists-images/image32.png "Wählen Sie einen Wert aus einer Liste der bekannten Wert")](property-lists-images/image32.png)
+ [![](property-lists-images/image32.png "Wählen Sie einen Wert aus einer Liste der bekannten Wert")](property-lists-images/image32.png#lightbox)
 
 Visual Studio für Mac erkennt auch den Eigenschaftentyp wie gezeigt:
 
- [ ![](property-lists-images/image33.png "Die verfügbaren Eigenschaftentypen")](property-lists-images/image33.png)
+ [![](property-lists-images/image33.png "Die verfügbaren Eigenschaftentypen")](property-lists-images/image33.png#lightbox)
 
 Überprüfen Sie die Apple [App Verwandte Ressourcen](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html) Links für Weitere Informationen zu optionalen Eigenschaften.
 

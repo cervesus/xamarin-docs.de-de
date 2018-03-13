@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/06/2017
-ms.openlocfilehash: bea8480c66a2ecf499375636c98511ca55ce7693
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e9936bb523db8ba8777df94a03bf12f9fa718fca
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-beam"></a>Android Beam
 
 Android Balken ist eine neue Near Field Communication (NFC)-Technologie in Android 4, die Clientanwendungen ermöglicht, Informationen über NFC in der Nähe freigeben.
 
-[![Diagramm zur Veranschaulichung zwei Geräte in der Nähe, Informationen gemeinsam nutzen](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png)
+[![Diagramm zur Veranschaulichung zwei Geräte in der Nähe, Informationen gemeinsam nutzen](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 
 Android Balken funktioniert, indem Nachrichten über NFC übertragen, wenn zwei Geräte im Bereich befinden. Geräte ca. 4cm voneinander können Daten mithilfe von Android Balken freigeben. Eine Aktivität auf einem Gerät erstellt eine Nachricht und gibt an, eine Aktivität (oder Aktivitäten), können verarbeiten, legt es. Wenn die angegebene Aktivität im Vordergrund ist und die Geräte im Bereich werden, wird Android Balken die Nachricht mit dem zweiten Gerät per Push übertragen. Priorität wird aufgerufen, die die Nachrichtendaten enthält, auf dem Gerät empfangen.
 
@@ -30,7 +30,6 @@ Android unterstützt zwei Arten von Einstellung Nachrichten mit Android Balken:
 
 In beiden Fällen zum Senden von Daten mit Android Balken, eine Anwendung sendet eine `NdefMessage`, verpacken die Daten in mehreren `NdefRecords`. Werfen wir einen Blick auf die wichtigsten Punkte, die behoben werden müssen, bevor Android Balken ausgelöst werden kann. Erstens arbeiten wir mit dem Rückruf-Stil zum Erstellen einer `NdefMessage`.
 
-<a name="Creating_a_Message" />
 
 ## <a name="creating-a-message"></a>Erstellen einer Nachricht
 
@@ -66,7 +65,6 @@ public NdefRecord CreateMimeRecord (String mimeType, byte [] payload)
 }
 ```
 
-<a name="Receiving_a_Message" />
 
 ## <a name="receiving-a-message"></a>Empfangen einer Nachricht
 
@@ -79,7 +77,7 @@ NdefMessage msg = (NdefMessage) rawMsgs [0];
 
 Ein vollständiges Codebeispiel, das Android Balken, ausgeführt wird, im folgenden Screenshot gezeigt verwendet finden Sie unter der [Android Balken Demo](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/) in der Beispiel-Katalog.
 
-[![Beispiel-Screenshots aus der Android Balken-demo](android-beam-images/24.png)](android-beam-images/24.png)
+[![Beispiel-Screenshots aus der Android Balken-demo](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
 
 

@@ -3,22 +3,22 @@ title: Application Fundamentals (Anwendungsgrundlagen)
 description: "Kernkonzepte für die Anwendung"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
+ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 9e4e7705e1ca29b6abf716a48ae3fa0e7c1a19ec
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c5b823370e5b65fbcf9ba366cb89c05e003b1a89
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="application-fundamentals"></a>Application Fundamentals (Anwendungsgrundlagen)
 
 Dieser Abschnitt enthält eine Anleitung für einige der häufiger Aufgaben Dinge oder Konzepte, denen Entwickler beim Entwickeln von mobilen Anwendungen berücksichtigen müssen.
 
-##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[Erstellen von Cross-Platform-Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
+##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[Erstellen von plattformübergreifenden Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
 
 Durch Auswählen von Xamarin, und halten einige Dinge beachten Sie beim Entwerfen und Entwickeln von mobilen Anwendungen, können Sie enormen Code alle mobilen Plattformen gemeinsam nutzen, verkürzen Sie die Zeit auf dem Markt, nutzen vorhandene Talent, für den mobilen Zugriff Nachfrage erfüllen, und plattformübergreifende Komplexität zu reduzieren. &nbsp;In diesem Dokument werden wichtige Richtlinien bietet folgende Vorteile für Hilfsprogramm und Produktivität bemerken.
 
@@ -41,7 +41,7 @@ Richtlinien für die gebietsschemabasierte-apps vorgenommen werden, können in m
 
 Portable Class Library-Projekte können beim Erstellen und Verteilen von Assemblys, die freigegebenen Code zur Ausführung auf mehreren Plattformen enthalten. Zum Erstellen eines Portable Class Library (oder "PCL") Wählen Sie zunächst die Plattformen abzielen, Sie schreiben Code für eine Teilmenge von .NET Framework, die im Profil definierten für diese Plattformen verfügbar ist. Dieses Dokument beschreibt das Erstellen und Verwenden von PCLs mit Xamarin.
 
-##  <a name="shared-projectscross-platformapp-fundamentalsshared-projectsmd"></a>[Gemeinsam genutzte Projekte](~/cross-platform/app-fundamentals/shared-projects.md)
+##  <a name="shared-projectscross-platformapp-fundamentalsshared-projectsmd"></a>[Freigegebene Projekte](~/cross-platform/app-fundamentals/shared-projects.md)
 
 Gemeinsam genutzte Projekte können Sie die gemeinsamen Code schreiben, der durch eine Reihe von verschiedenen Anwendungsprojekte verwiesen wird. Der Code wird als Teil jeder verweisenden Projekts kompiliert und kann Compilerdirektiven können Sie die Übernahme von Clientplattform-spezifische Funktionen in der gemeinsamen Codebasis enthalten. In diesem Artikel wird erläutert, wie freigegebene Projekte funktionieren und wie Sie erstellen und mit Xamarin-Projekten zu verwenden.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: bd6d47f98435cc68ecf4156423526c31dbac09da
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c923208b7ca4d41914504b4b0aa0687db1d49f01
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="inspecting-live-applications"></a>Überprüfen des Live-Anwendungen
 
@@ -27,11 +27,11 @@ Aktive app Inspektion ist für Enterprise-Kunden zur Verfügung.
 
 
 
-[ ![](inspect-images/mac-heres-the-button.png "Klicken Sie auf die Schaltfläche "prüfen", in der IDE-Symbolleiste")](inspect-images/mac-heres-the-button.png)
+[![](inspect-images/mac-heres-the-button.png "Klicken Sie auf die Schaltfläche "prüfen", in der IDE-Symbolleiste")](inspect-images/mac-heres-the-button.png#lightbox)
 
 Ein neue Xamarin-Inspektor-Client-Fenster wird mit einer neuen REPL-Eingabeaufforderung geöffnet.
 
-[ ![](inspect-images/inspector-0.7.0-map-inspect-small.png "Ein neue Xamarin-Inspektor-Client-Fenster wird geöffnet, mit einer neuen REPL-Eingabeaufforderung")](inspect-images/inspector-0.7.0-map-inspect.png)
+[![](inspect-images/inspector-0.7.0-map-inspect-small.png "Ein neue Xamarin-Inspektor-Client-Fenster wird geöffnet, mit einer neuen REPL-Eingabeaufforderung")](inspect-images/inspector-0.7.0-map-inspect.png#lightbox)
 
 Nachdem dieses Fenster angezeigt wird, müssen Sie eine interaktive C#-Eingabeaufforderung, die Sie verwenden können, um auszuführen und C#-Anweisungen und Ausdrücke auswerten. Was ist dies eindeutig, dass der Code im Kontext des Zielprozesses ausgewertet wird. In diesem Fall zeigen wir den Code für iOS-Anwendung angezeigt.
 

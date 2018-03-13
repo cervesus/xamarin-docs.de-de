@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/07/2017
-ms.openlocfilehash: 0240dd5e381694a31ba9ebb12dd166ca0ef54750
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 557521bc3bce41b9023acbf31a344a57cb63d2a1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sirikit"></a>SiriKit
 
@@ -223,7 +223,7 @@ _Objective-C-Ausnahme ausgelöst wird.  Name: NSInternalInconsistencyException U
 - SiriKit Konfigurationsdaten **Entitlements.plist**.
 - **Entitlements.plist** konfiguriert ist, der **Projektoptionen > Erstellen > iOS Bundle Signing**.
 
-  [![-Projektoptionen mit, dass die Berechtigungen richtig festgelegt.](sirikit-images/set-entitlements-sml.png)](sirikit-images/set-entitlements.png)
+  [![-Projektoptionen mit, dass die Berechtigungen richtig festgelegt.](sirikit-images/set-entitlements-sml.png)](sirikit-images/set-entitlements.png#lightbox)
 
 - (für die Bereitstellung der Geräte) App-ID besitzt SiriKit aktiviert und Bereitstellungsprofil heruntergeladen.
 

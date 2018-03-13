@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 4e640979305a568649c59f6c75033296153b99de
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 838a11f078d735759eda1d45a082ccbad51e2779
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-in-ios"></a>Tippen Sie in iOS
 
@@ -23,7 +23,7 @@ Steuerelemente in `UIKit` – diese Unterklassen aus UIControl – sind dies der
 
 Jedoch viele Ansichten in `UIKit` verfügen nicht über die Fingereingabe, die standardmäßig aktiviert. Es gibt zwei Methoden, Fingereingabe auf ein Steuerelement zu aktivieren. Die erste Möglichkeit besteht darin das Kontrollkästchen Benutzer Interaktion aktiviert Pad-Eigenschaft des iOS-Designer zu prüfen, wie im folgenden Screenshot gezeigt:
 
- [ ![](touch-in-ios-images/image1.png "Aktivieren Sie das Kontrollkästchen Benutzer Interaktion aktiviert Pad-Eigenschaft des iOS-Designer")](touch-in-ios-images/image1.png)
+ [![](touch-in-ios-images/image1.png "Aktivieren Sie das Kontrollkästchen Benutzer Interaktion aktiviert Pad-Eigenschaft des iOS-Designer")](touch-in-ios-images/image1.png#lightbox)
 
 Wir können auch einen Controller legen Sie die `UserInteractionEnabled` Eigenschaft auf "true", auf eine `UIView` Klasse. Dies ist erforderlich, wenn die Benutzeroberfläche im Code erstellt wird.
 
@@ -81,7 +81,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 
 Multi-Touch ist standardmäßig auf die Steuerelemente nicht aktiviert. Multi-Touch kann in der iOS-Designer aktiviert werden, wie der folgende Screenshot veranschaulicht:
 
- [ ![](touch-in-ios-images/image2.png "Multi-Touch in der iOS-Designer aktiviert")](touch-in-ios-images/image2.png)
+ [![](touch-in-ios-images/image2.png "Multi-Touch in der iOS-Designer aktiviert")](touch-in-ios-images/image2.png#lightbox)
 
 Es ist auch möglich, legen Sie Multi-Touch programmgesteuert durch Festlegen der `MultipleTouchEnabled` Eigenschaft wie in der folgenden Zeile des Codes dargestellt:
 

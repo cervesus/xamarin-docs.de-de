@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b5d3a03324e73b06bd3defe7e6610163c3d1b26d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c021550e17cf8206d59102856a11c72000ad06aa
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-progress-indicators"></a>Arbeiten mit Fortschrittsanzeigen
 
@@ -21,7 +21,7 @@ _Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Statusanzeigen innerh
 
 Es gibt möglicherweise Zeiten, wenn Ihre app Xamarin.tvOS neuen Inhalte zu laden oder einen Vorgang langwierige Verarbeitung ausführen muss. Während dieser Zeiten sollten Sie ein Indikator für die Aktivität oder Statusanzeige angezeigt, damit die Benutzer wissen, dass die app immer noch ausgeführt wird, und geben einen Hinweis auf hinsichtlich der Länge der auszuführenden Aufgabe darstellen.
 
-[ ![](progress-indicators-images/intro01.png "Beispiel-Statusanzeigen")](progress-indicators-images/intro01.png)
+[![](progress-indicators-images/intro01.png "Beispiel-Statusanzeigen")](progress-indicators-images/intro01.png#lightbox)
 
 <a name="About-Activity-Indicators" />
 
@@ -57,19 +57,19 @@ Die einfachste Möglichkeit zum Arbeiten mit Statusanzeige in einer app Xamarin.
 1. In der **Lösung Pad**, doppelklicken Sie auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. Ziehen Sie eine **Aktivität Indikator** aus der **Toolbox** und legen Sie sie in der Sicht: 
 
-    [ ![](progress-indicators-images/activity01.png "Ein Indikator für die Aktivität")](progress-indicators-images/activity01.png)
+    [![](progress-indicators-images/activity01.png "Ein Indikator für die Aktivität")](progress-indicators-images/activity01.png#lightbox)
 1. In der **Registerkarte "Widget"** von der **Eigenschaften Pad**, können Sie verschiedene Eigenschaften des Indikators Aktivität wie z. B. anpassen seine **Stil** und **Verhalten**: 
 
-    [ ![](progress-indicators-images/activity02.png "Die Registerkarte "Widget" ")](progress-indicators-images/activity02.png)
+    [![](progress-indicators-images/activity02.png "Die Registerkarte "Widget" ")](progress-indicators-images/activity02.png#lightbox)
 1. Ziehen Sie eine **Bearbeitung** aus der **Toolbox** und legen Sie sie in der Sicht: 
 
-    [ ![](progress-indicators-images/activity03.png "Eine Status-Ansicht")](progress-indicators-images/activity03.png)
+    [![](progress-indicators-images/activity03.png "Eine Status-Ansicht")](progress-indicators-images/activity03.png#lightbox)
 1. In der **Registerkarte "Widget"** von der **Property Explorer**, können Sie verschiedene Eigenschaften der Sicht ausgeführt wie z. B. Anpassen der **Stil** und **Fortschritt**(% abgeschlossen): 
 
-    [ ![](progress-indicators-images/activity04.png "Die Registerkarte "Widget"")](progress-indicators-images/activity04.png)
+    [![](progress-indicators-images/activity04.png "Die Registerkarte "Widget"")](progress-indicators-images/activity04.png#lightbox)
 1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie in C#-Code auf sie reagieren können. Zum Beispiel: 
 
-    [ ![](progress-indicators-images/activity05.png "Weisen Sie einen Namen")](progress-indicators-images/activity05.png)
+    [![](progress-indicators-images/activity05.png "Weisen Sie einen Namen")](progress-indicators-images/activity05.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -77,19 +77,19 @@ Die einfachste Möglichkeit zum Arbeiten mit Statusanzeige in einer app Xamarin.
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. Ziehen Sie eine **Aktivität Indikator** aus der **Toolbox** und legen Sie sie in der Sicht: 
 
-    [ ![](progress-indicators-images/activity01-vs.png "Ein Indikator für die Aktivität")](progress-indicators-images/activity01-vs.png)
+    [![](progress-indicators-images/activity01-vs.png "Ein Indikator für die Aktivität")](progress-indicators-images/activity01-vs.png#lightbox)
 1. In der **Registerkarte "Widget"** von der **Eigenschaften-Explorer**, können Sie verschiedene Eigenschaften des Indikators Aktivität wie z. B. Anpassen der **Stil** und **Verhalten**: 
 
-    [ ![](progress-indicators-images/activity02-vs.png "Die Registerkarte "Widget"")](progress-indicators-images/activity02-vs.png)
+    [![](progress-indicators-images/activity02-vs.png "Die Registerkarte "Widget"")](progress-indicators-images/activity02-vs.png#lightbox)
 1. Ziehen Sie eine **Bearbeitung** aus der **Toolbox** und legen Sie sie in der Sicht: 
 
-    [ ![](progress-indicators-images/activity03-vs.png "Eine Status-Ansicht")](progress-indicators-images/activity03-vs.png)
+    [![](progress-indicators-images/activity03-vs.png "Eine Status-Ansicht")](progress-indicators-images/activity03-vs.png#lightbox)
 1. In der **Registerkarte "Widget"** von der **Property Explorer**, können Sie verschiedene Eigenschaften der Sicht ausgeführt wie z. B. Anpassen der **Stil** und **Fortschritt**(% abgeschlossen): 
 
-    [ ![](progress-indicators-images/activity04-vs.png "Die Registerkarte "Widget"")](progress-indicators-images/activity04-vs.png)
+    [![](progress-indicators-images/activity04-vs.png "Die Registerkarte "Widget"")](progress-indicators-images/activity04-vs.png#lightbox)
 1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie in C#-Code auf sie reagieren können. Zum Beispiel: 
 
-    [ ![](progress-indicators-images/activity05-vs.png "Weisen Sie einen Namen")](progress-indicators-images/activity05-vs.png)
+    [![](progress-indicators-images/activity05-vs.png "Weisen Sie einen Namen")](progress-indicators-images/activity05-vs.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 -----
@@ -134,7 +134,7 @@ In diesem Artikel wurden behandelt, Entwerfen und Arbeiten mit Statusanzeigen in
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiele für tvos. außerdem wurden](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvos. außerdem wurden Handbücher für interaktive Workflowdienste-Schnittstelle](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [App-Programmierhandbuch für tvos. außerdem wurden](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

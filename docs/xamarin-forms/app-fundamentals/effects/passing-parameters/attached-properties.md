@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: df1287d2389d7645ee3f17b166af790f79aa70e1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 585d0422b4dc2b35fc8ba50ed82d2d34e53a784e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Übergeben von Parametern Auswirkungen als angefügte Eigenschaften
 
@@ -29,7 +29,7 @@ Der Prozess zum Erstellen von Effekt-Parameter, die auf Änderungen zur Laufzeit
 Parameter können dann mit Ergebnis übergeben werden, indem Sie das entsprechende Steuerelement angefügte Eigenschaften und Eigenschaftswerte, hinzufügen. Darüber hinaus können Parameter zur Laufzeit geändert werden, indem Sie einen neuen Wert der angefügten Eigenschaft angeben.
 
 > [!NOTE]
-> **Hinweis**: eine angefügte Eigenschaft ist eine besondere Art von bindbare Eigenschaft, die in eine Klasse jedoch auf andere Objekte angefügt und erkennbaren in XAML definiert wird, als Attribute, die eine Klasse und einen Eigenschaftsnamen, die durch einen Punkt getrennt enthalten. Weitere Informationen finden Sie unter [angefügte Eigenschaften](~/xamarin-forms/xaml/attached-properties.md).
+> Eine angefügte Eigenschaft ist eine besondere Art von bindbare Eigenschaft, die in eine Klasse jedoch auf andere Objekte angefügt und erkennbaren in XAML definiert wird, als Attribute, die eine Klasse und einen Eigenschaftsnamen, die durch einen Punkt getrennt enthalten. Weitere Informationen finden Sie unter [angefügte Eigenschaften](~/xamarin-forms/xaml/attached-properties.md).
 
 Die beispielanwendung für veranschaulicht eine `ShadowEffect` , der vom angezeigte Text einen Schatten hinzugefügt eine [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) Steuerelement. Darüber hinaus kann die Farbe des Schattens zur Laufzeit geändert werden. Das folgende Diagramm veranschaulicht die Zuständigkeiten aller Projekte in der beispielanwendung, sowie die Beziehungen zwischen ihnen:
 

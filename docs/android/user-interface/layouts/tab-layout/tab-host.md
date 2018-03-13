@@ -3,27 +3,26 @@ title: Registerkartenlayout mit TabHost
 description: "Dieser Artikel bietet eine grobe Übersicht der der TabHost, eine ältere API verwendet, um in einer Anwendung Xamarin.Android im Registerkartenformat Layouts zu erstellen."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1CFF590A-AC86-C3B3-36CA-A70248BC7F97
+ms.assetid: 77B890A4-27A6-41DF-81BA-22C6116A8FB2
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/25/2017
-ms.openlocfilehash: ff61ca0a2bca466da3e33c93a17944915328b70c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e27557c65d2b3049457640a3492d090c5fa26a43
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="tab-layout-with-tabhost"></a>Registerkartenlayout mit TabHost
 
 _Dieser Artikel bietet eine grobe Übersicht der der TabHost, eine ältere API verwendet, um in einer Anwendung Xamarin.Android im Registerkartenformat Layouts zu erstellen._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Übersicht
 
 > [!NOTE]
-> **Hinweis:** `TabHost` eine alten API, die von Google veraltet ist. Entwicklern wird empfohlen, die im Registerformat mithilfe Anwendungen erstellen, die [ActionBar](~/android/user-interface/controls/action-bar.md). Die `ActionBar` in allen Android-Version verfügbar ist. Es wurde erstmals in Android 3.0 (API-Ebene 11) und portiert wurde wieder Android 2.2 (API-Ebene 8) und Android 2.3 (API-Ebene 10) in der [V7 AppCompat Bibliothek](http://developer.android.com/tools/support-library/features.html#v7-appcompat), steht auf Xamarin.Android über die [Xamarin Android-Unterstützungsbibliothek – V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) Paket.
+> `TabHost` ist eine alte API, die von Google als veraltet markiert wurden. Entwicklern wird empfohlen, die im Registerformat mithilfe Anwendungen erstellen, die [ActionBar](~/android/user-interface/controls/action-bar.md). Die `ActionBar` in allen Android-Version verfügbar ist. Es wurde erstmals in Android 3.0 (API-Ebene 11) und portiert wurde wieder Android 2.2 (API-Ebene 8) und Android 2.3 (API-Ebene 10) in der [V7 AppCompat Bibliothek](http://developer.android.com/tools/support-library/features.html#v7-appcompat), steht auf Xamarin.Android über die [Xamarin Android-Unterstützungsbibliothek – V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) Paket.
 
 Die `TabHost` ist die ältere, ursprünglichen-API für den Benutzer im Registerkartenformat InterfacesIt erstellen für Xamarin.Android Anwendungen am besten geeignet, Android 2.2 und 2.3 Android unterstützt müssen und kann nicht **ActionBarSherlock**.
 Die folgenden fünf Komponenten sind mit allen Beteiligten die `TabHost` API:
@@ -44,7 +43,6 @@ Das folgende Diagramm zeigt, wie alle diese Komponenten miteinander in Beziehung
 
 Die Registerkarteninhalt möglicherweise Aktivitäten oder Ansichten. Ansichten sind relativ einfache und einfache, aber möglicherweise viele nicht verknüpfte Code co-Habitating in der Aktivität. Dies führt in eine schlechte Trennung von Anliegen und eine sehr großer-Klasse, die schwer zu verwalten ist. Im Gegensatz dazu Aktivitäten Systemressourcen erfordern jedoch ein modularer Ansatz mit der Logik für jede Registerkarte in seinem eigenen distinct Klasse gekapselte ermöglichen.
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

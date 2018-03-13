@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 63bc1f0ed13fe65b36e95978da9ccc2ea8d4481c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8812c6a234e05e4d651effbeb83a7bcad38dc683
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-web-markup"></a>Suche mit Web-Markup
 
@@ -20,12 +20,12 @@ Für apps, die Zugriff auf ihre Inhalte über eine Website bereitstellen (nicht 
 
 Wenn Ihre iOS-app bereits mobile deep Links unterstützt und Ihre Website deep Links zu Inhalten innerhalb Ihrer app, Apple präsentiert _Applebot_ Webcrawler indizieren dieser Inhalt und automatisch ihre Cloud-Index hinzugefügt werden:
 
-[ ![](web-markup-images/webmarkup01.png "Übersicht über die Cloud-Index")](web-markup-images/webmarkup01.png)
+[![](web-markup-images/webmarkup01.png "Übersicht über die Cloud-Index")](web-markup-images/webmarkup01.png#lightbox)
 
 Apple werden die Ergebnisse im Spotlight-Suche und Safari Suchergebnissen Oberfläche.
 Wenn auf der Benutzer tippt führt eine der folgenden (und die app installiert haben) und dann auf den Inhalt in der app ausgeführt werden:
 
-[ ![](web-markup-images/webmarkup02.png "Verknüpfen von einer Website in den Suchergebnissen angezeigter Deep")](web-markup-images/webmarkup02.png)
+[![](web-markup-images/webmarkup02.png "Verknüpfen von einer Website in den Suchergebnissen angezeigter Deep")](web-markup-images/webmarkup02.png#lightbox)
 
 ## <a name="enabling-web-content-indexing"></a>Aktivieren die Inhaltsindizierung Web
 
@@ -154,7 +154,7 @@ Die gleiche Informationen kann im Schema.org des JSON-LD-Format dargestellt werd
 
 Der folgende Code zeigt ein Beispiel Metadaten aus Ihrer Website, die umfangreiche Suchergebnisse für den Endbenutzer bereitstellen:
 
-[ ![](web-markup-images/deeplink01.png "Rich-Suchergebnissen über strukturierte Daten Markup")](web-markup-images/deeplink01.png)
+[![](web-markup-images/deeplink01.png "Rich-Suchergebnissen über strukturierte Daten Markup")](web-markup-images/deeplink01.png#lightbox)
 
 Apple unterstützt derzeit die folgenden Schematypen von schema.org:
 

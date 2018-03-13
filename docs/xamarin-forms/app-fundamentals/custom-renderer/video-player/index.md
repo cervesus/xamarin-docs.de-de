@@ -2,16 +2,16 @@
 title: Implementieren einen video player
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
+ms.assetid: 0CE9BEE7-4F81-4A00-B9B3-5E2535CD3050
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e818bc3fa9793f093c10ac2617c5a822d08213d4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a889be5ee31f667117d2c36859e667980f0e6610
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="implementing-a-video-player"></a>Implementieren einen video player
 
@@ -27,7 +27,7 @@ In der [ **VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-fo
 
 Video-Player erfordern *Transportsteuerelemente*, die Schaltflächen zum Wiedergeben und Anhalten des Videos sind und eine Positionierung Balken-, wird der Fortschritt durch das Video und ermöglicht es dem Benutzer schnell mit einem anderen Speicherort zu fortfahren. `VideoPlayer` können Sie entweder die Transport-Steuerelemente und Positionierung Leiste bereitgestellt, die von der Plattform (wie unten gezeigt), oder Sie können angeben, benutzerdefinierte Steuerelemente und Positionierung Balken. Hier ist das Programm, die unter iOS, Android und universellen Windows-Plattform ausgeführt wird:
 
-[![Web-Video abspielen](web-videos-images/playwebvideo-small.png "Web Video abspielen")](web-videos-images/playwebvideo-large.png "Web Video abspielen")
+[![Web-Video abspielen](web-videos-images/playwebvideo-small.png "Web Video abspielen")](web-videos-images/playwebvideo-large.png#lightbox "Web Video abspielen")
 
 Natürlich können Sie das Telefon seitwärts für eine größere Ansicht deaktivieren.
 

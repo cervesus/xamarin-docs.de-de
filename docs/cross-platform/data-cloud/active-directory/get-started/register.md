@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 52d06dc6125f91f98e8f3ee8b4f91ad7b52347a3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 776a60701e01a81856b0a85e7136c57b97cff101
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="step-1-register-an-app-to-use-azure-active-directory"></a>Schritt 1. Registrieren einer app zur Verwendung von Azure Active Directory
 
@@ -19,11 +19,11 @@ ms.lasthandoff: 02/27/2018
 
 2. Nach der Anmeldung, wechseln Sie zu der **Active Directory** Abschnitt (1), und wählen Sie das Verzeichnis, in dem die Anwendung (2) zu registrieren werden sollen,
 
-  [ ![](register-images/01.-active-directory-in-azure-portal-sml.jpg "im Abschnitt, und wählen Sie das Verzeichnis, in dem die Anwendung registriert werden sollen")](register-images/01.-active-directory-in-azure-portal.jpg)
+  [ ![](register-images/01.-active-directory-in-azure-portal-sml.jpg "im Abschnitt, und wählen Sie das Verzeichnis, in dem die Anwendung registriert werden sollen")](register-images/01.-active-directory-in-azure-portal.jpg#lightbox)
 
 3. Klicken Sie auf **hinzufügen** um die neue Anwendung erstellt haben, und wählen Sie dann **eine von meinem Unternehmen entwickelte Anwendung hinzufügen**
 
-  [ ![](register-images/02.-add-new-application-sml.jpg "Fügen Sie eine von meinem Unternehmen entwickelte Anwendung hinzu")](register-images/02.-add-new-application.jpg)
+  [ ![](register-images/02.-add-new-application-sml.jpg "Fügen Sie eine von meinem Unternehmen entwickelte Anwendung hinzu")](register-images/02.-add-new-application.jpg#lightbox)
 
 4. Geben Sie auf dem nächsten Bildschirm Ihre app einen Namen (z. b. XAM-DEMO).
   Stellen Sie sicher, dass die Auswahl **systemeigene Clientanwendung** als Typ der Anwendung.

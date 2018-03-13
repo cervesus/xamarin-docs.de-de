@@ -4,14 +4,15 @@ description: Erfahren Sie, wie Grafiken SkiaSharp animieren
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: c91cb064ea3973294c3a9dd8e07f3c4b0627fe34
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e18ef7c77c1d5c93d53882233c65a56e5567fcd7
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="basic-animation"></a>Grundlegende Animation
 
@@ -141,7 +142,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die Methode berechnet eine maximale basierend auf der Größe des Anzeigebereichs, und eine minimale Radius basierend auf den maximalen Radius. Die `scale` Wert wird animiert zwischen 0 und 1 und 0 (null) an, damit die Methode, die zum Berechnen verwendet ein `xRadius` und `yRadius` , die Bereiche zwischen `minRadius` und `maxRadius`. Diese Werte dienen zum Zeichnen und Ausfüllen einer Ellipse, die:
 
-[![](animation-images/pulsatingellipse-small.png "Dreifacher Screenshot der Seite animiertes Ellipse")](animation-images/pulsatingellipse-large.png "dreifacher Screenshot der Seite animiertes Ellipse")
+[![](animation-images/pulsatingellipse-small.png "Dreifacher Screenshot der Seite animiertes Ellipse")](animation-images/pulsatingellipse-large.png#lightbox "dreifacher Screenshot der Seite animiertes Ellipse")
 
 Beachten Sie, dass die `SKPaint` -Objekt wird erstellt, einem `using` Block. Wie viele SkiaSharp Klassen `SKPaint` leitet sich von `SKObject`, die sich daraus ableitet `SKNativeObject`, implementiert die [ `IDisposable` ](https://developer.xamarin.com/api/type/System.IDisposable/) Schnittstelle. `SKPaint` überschreibt die `Dispose` Methode, um nicht verwaltete Ressourcen freizugeben.
 
@@ -244,7 +245,7 @@ public class ExpandingCirclesPage : ContentPage
 
 Das Ergebnis ist, dass das Bild bei Verwendung sieht `t` gleich 0, als wenn `t` gleich 1 ist, und die Kreise erscheinen, um den Vorgang fortzusetzen, erweitern eine unbegrenzte Zeitdauer aufbewahrt:
 
-[![](animation-images/expandingcircles-small.png "Dreifacher Screenshot der Seite erweitern Kreise")](animation-images/expandingcircles-large.png "dreifacher Screenshot der Seite Kreise erweitern")
+[![](animation-images/expandingcircles-small.png "Dreifacher Screenshot der Seite erweitern Kreise")](animation-images/expandingcircles-large.png#lightbox "dreifacher Screenshot der Seite Kreise erweitern")
 
 
 ## <a name="related-links"></a>Verwandte Links

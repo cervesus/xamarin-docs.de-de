@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: fd31413b777e1179e7f4faf6f91f91bc6c41e82b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6561ff70997af05ed4df6b7bfe0ba6345fb44d9d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-segmented-controls"></a>Arbeiten mit segmentierte Steuerelemente
 
@@ -21,7 +21,7 @@ _Dieser Artikel umfasst das Entwerfen von und Arbeiten mit segmentierte Steuerel
 
 Ein segmentiertes Steuerelement bietet es sich um eine Reihe von linearen Elemente, von die jedes ein Symbol oder Text enthalten kann, und wird verwendet, um eine Gruppe von verwandten Auswahlmöglichkeiten für dem Benutzer bereitstellen.
 
-[ ![](segmented-controls-images/segment01.png "Segment beispielsteuerelementen")](segmented-controls-images/segment01.png)
+[![](segmented-controls-images/segment01.png "Segment beispielsteuerelementen")](segmented-controls-images/segment01.png#lightbox)
 
 Apple hat die folgenden Vorschläge für die Arbeit mit segmentierte Steuerelemente:
 
@@ -57,36 +57,36 @@ Erneut, können nicht gemischt werden Text und Symbole für ein gegebenes Segmen
 
 Die einfachste Möglichkeit zum Arbeiten mit der Segment-Steuerelemente in einer app Xamarin.tvOS werden diese Benutzeroberfläche der Anwendung, die mit der iOS-Designer hinzufügen.
 
-[[ide name="xs"]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 1. In der **Lösung Pad**, doppelklicken Sie auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. Ziehen Sie eine **Segment Steuerelement** aus der **Toolbox** und legen Sie sie in der Sicht: 
 
-    [ ![](segmented-controls-images/segment02.png "Ein Segment-Steuerelement")](segmented-controls-images/segment02.png)
+    [![](segmented-controls-images/segment02.png "Ein Segment-Steuerelement")](segmented-controls-images/segment02.png#lightbox)
 1. In der **Registerkarte "Widget"** von der **Eigenschaft Pad**, können Sie verschiedene Eigenschaften des Steuerelements Segment wie z. B. anpassen seine **Stil** und **Zustand**: 
 
-    [ ![](segmented-controls-images/segment03.png "Die Registerkarte "Widget"")](segmented-controls-images/segment03.png)
+    [![](segmented-controls-images/segment03.png "Die Registerkarte "Widget"")](segmented-controls-images/segment03.png#lightbox)
 1. Verwenden der **Segmente** Feld zum Steuern der Anzahl der Segmente im Controller.
 1. Wählen Sie ein gegebenes Segment aus der **Segment Dropdownliste** die einzelnen Eigenschaften anpassen, wie z. B. **Titel** oder **Image** und steuern, ob ein gegebenes Segment ist  **Aktiviert** oder **ausgewählte** Wenn das Steuerelement angezeigt wird.
 1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie in C#-Code auf sie reagieren können. Zum Beispiel: 
 
-    [ ![](segmented-controls-images/segment04.png "Weisen Sie einen Namen")](segmented-controls-images/segment04.png)
+    [![](segmented-controls-images/segment04.png "Weisen Sie einen Namen")](segmented-controls-images/segment04.png#lightbox)
 1. Speichern Sie die Änderungen.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
     
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. Ziehen Sie eine **Segment Steuerelement** aus der **Toolbox** und legen Sie sie in der Sicht: 
 
-    [ ![](segmented-controls-images/segment02-vs.png "Ein Segment-Steuerelement")](segmented-controls-images/segment02-vs.png)
+    [![](segmented-controls-images/segment02-vs.png "Ein Segment-Steuerelement")](segmented-controls-images/segment02-vs.png#lightbox)
 1. In der **Registerkarte "Widget"** von der **Property Explorer**, können Sie verschiedene Eigenschaften des Steuerelements Segment wie z. B. Anpassen der **Stil** und **Zustand**: 
 
-    [ ![](segmented-controls-images/segment03-vs.png "Die Registerkarte "Widget"")](segmented-controls-images/segment03-vs.png)
+    [![](segmented-controls-images/segment03-vs.png "Die Registerkarte "Widget"")](segmented-controls-images/segment03-vs.png#lightbox)
 1. Verwenden der **Segmente** Feld zum Steuern der Anzahl der Segmente im Controller.
 1. Wählen Sie ein gegebenes Segment aus der **Segment Dropdownliste** die einzelnen Eigenschaften anpassen, wie z. B. **Titel** oder **Image** und steuern, ob ein gegebenes Segment ist  **Aktiviert** oder **ausgewählte** Wenn das Steuerelement angezeigt wird.
 1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie in C#-Code auf sie reagieren können. Zum Beispiel: 
 
-    [ ![](segmented-controls-images/segment04-vs.png "Weisen Sie einen Namen")](segmented-controls-images/segment04-vs.png)
+    [![](segmented-controls-images/segment04-vs.png "Weisen Sie einen Namen")](segmented-controls-images/segment04-vs.png#lightbox)
 1. Speichern Sie die Änderungen.
     
 -----
@@ -240,7 +240,7 @@ In diesem Artikel wurden behandelt, Entwerfen und Arbeiten mit segmentierte Steu
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiele für tvos. außerdem wurden](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvos. außerdem wurden Handbücher für interaktive Workflowdienste-Schnittstelle](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [App-Programmierhandbuch für tvos. außerdem wurden](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

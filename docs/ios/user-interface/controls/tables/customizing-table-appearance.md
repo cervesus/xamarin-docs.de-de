@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 12314e6ec5951a5a094ed8b0a5536b450853c5fb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a3f8ca8f4502b9585536815aef81f66cacd214f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-tables-appearance"></a>Anpassen der Darstellung einer Tabelle
 
@@ -29,7 +29,7 @@ Es gibt vier Formatvorlagen:
 
 Diese Screenshots zeigen, wie jeder Produktart angezeigt wird:
 
- [ ![](customizing-table-appearance-images/image7.png "Diese Screenshots zeigen, wie jeder Produktart angezeigt wird")](customizing-table-appearance-images/image7.png)
+ [![](customizing-table-appearance-images/image7.png "Diese Screenshots zeigen, wie jeder Produktart angezeigt wird")](customizing-table-appearance-images/image7.png#lightbox)
 
 Im Beispiel **CellDefaultTable** enthält den Code, um diese Bildschirme zu erstellen. Der Zellenstil festgelegt ist, der `UITableViewCell` -Konstruktor wie folgt:
 
@@ -60,7 +60,7 @@ Zellen können die folgenden Zubehör rechts von der Sicht hinzugefügt haben:
 
 Dies ist das aussehen:
 
- [ ![](customizing-table-appearance-images/image8.png "Beispiel-Zubehör")](customizing-table-appearance-images/image8.png)
+ [![](customizing-table-appearance-images/image8.png "Beispiel-Zubehör")](customizing-table-appearance-images/image8.png#lightbox)
 
 Diese Zubehör von angezeigt, Sie festlegen können, die `Accessory` Eigenschaft in der `GetCell` Methode:
 
@@ -119,7 +119,7 @@ So ändern Sie den visuellen Stil einer Tabelle Sie benutzerdefinierte Zellen da
 
 Das CellCustomTable-Beispiel implementiert eine `UITableViewCell` Unterklasse, die definiert ein benutzerdefiniertes Layout des `UILabel`s und einer `UIImage` mit verschiedenen Schriftarten und Farben. Die resultierenden Zellen aussehen wie folgt:
 
- [ ![](customizing-table-appearance-images/image9.png "Benutzerdefinierte Zelle Layouts")](customizing-table-appearance-images/image9.png)
+ [![](customizing-table-appearance-images/image9.png "Benutzerdefinierte Zelle Layouts")](customizing-table-appearance-images/image9.png#lightbox)
 
 Die benutzerdefinierte Zellenklasse besteht nur drei Methoden:
 

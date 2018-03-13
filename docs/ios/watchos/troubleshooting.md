@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 9c9032b3206fa35d264bd69c94b7882e877b334f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce850b7890265b82774534ca0daaf25bed7e0c2d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="watchos-troubleshooting"></a>WatchOS Problembehandlung
 
@@ -61,7 +61,7 @@ Diese Seite enthält zusätzliche Informationen und problemumgehungen für Featu
 - Kann nicht hinzugefügt werden, zwei `WKNotificationControllers` an einem Storyboard.
     Problemumgehung: Die `notificationCategory` Element in das Storyboard XML ist immer mit dem gleichen eingefügt `id`. Um dieses Problem umgehen, zwei (oder mehr) Benachrichtigung Controller hinzufügen, die Storyboarddatei in einem Text-Editor öffnen und dann manuell ändern, die `id` Element eindeutig sein.
 
-    [ ![](troubleshooting-images/duplicate-id-sml.png "Öffnen das Storyboard in einem Text-Editor-Datei und ändern Sie manuell das Id-Element, um eindeutig sein.")](troubleshooting-images/duplicate-id.png)
+    [![](troubleshooting-images/duplicate-id-sml.png "Öffnen das Storyboard in einem Text-Editor-Datei und ändern Sie manuell das Id-Element, um eindeutig sein.")](troubleshooting-images/duplicate-id.png#lightbox)
 
 - Möglicherweise ein Fehler "die Anwendung verfügt über keine integrierte" beim Versuch, die app zu starten. Dieser Schritt erfolgt nach einem **Bereinigen** Wenn das Startup-Projekt auf das Erweiterungsprojekt Überwachung festgelegt ist.
     Die Korrektur besteht darin, wählen Sie **erstellen > Rebuild All** und starten Sie die app dann erneut.

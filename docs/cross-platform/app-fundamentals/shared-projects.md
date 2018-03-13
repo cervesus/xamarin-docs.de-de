@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 0ab1daa9ce76900067f374cda58040354688c7be
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e77c5653171ec6c69608858805de28843fc0db56
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="shared-projects"></a>Gemeinsam genutzte Projekte
 
@@ -25,20 +25,8 @@ Sie unterstützen Compilerdirektiven, sodass Sie bedingt einschließen, können 
 Wenn Sie in der Vergangenheit-Datei verknüpfen zur gemeinsamen Verwendung Code zwischen Projekten verwendet haben, funktioniert freigegebene Projekte auf ähnliche Weise aber mit deutlich verbesserter IDE-Unterstützung.
 
 
-# <a name="requirements"></a>Anforderungen
 
-Freigegebene Projekt Support in Xamarin Studio 5 und Visual Studio 2013 Update 2 (siehe Hinweis) hinzugefügt wurde.
-
-> [!IMPORTANT]
->  Microsoft hat diese neuen Projekttyp - veröffentlicht **freigegebene Projekte ([Preview für Visual Studio-Erweiterung herunterladen](http://visualstudiogallery.msdn.microsoft.com/315c13a7-2787-4f57-bdf7-adae6ed54450))** – Geben Sie für Visual Studio 2013 Update 2 (April 2014). Verweisen auf Microsofts [Windows Phone 8.1](http://blogs.msdn.com/b/visualstudio/archive/2014/04/08/building-windows-phone-8-1-apps-in-html.aspx) und [Microsoft Store](http://msdn.microsoft.com/en-us/library/windows/apps/dn609832.aspx#CrossPlatform) Docs detaillierte Informationen zur Funktionsweise mit diesen Plattformen.
-
-
-
-
- <a name="Walkthrough" />
-
-
-# <a name="what-is-a-shared-project"></a>Was ist ein freigegebenes Projekt?
+## <a name="what-is-a-shared-project"></a>Was ist ein freigegebenes Projekt?
 
 Im Gegensatz zu den meisten anderen Projekttypen weisen ein freigegebenes Projekt keine Ausgabe (in Form von DLL), stattdessen wird der Code kompiliert, in jedes Projekt, die darauf verweist. Dies wird im folgenden Diagramm illustriert – vom Konzept her ist der gesamte Inhalt des freigegebenen Projekts "in den kopiert" jedes verweisenden Projekt und kompiliert, als wäre er ein Teil war.
 
@@ -54,9 +42,7 @@ Beachten Sie, dass andere Projekte Android-Anwendung können nicht auf Android-A
 
 
 
-<a name="Xamarin_Studio_Walkthrough" />
-
-# <a name="visual-studio-for-mac-walkthrough"></a>Exemplarische Vorgehensweise für Visual Studio für Mac
+## <a name="visual-studio-for-mac-walkthrough"></a>Exemplarische Vorgehensweise für Visual Studio für Mac
 
 
 Dieser Abschnitt führt Sie durch die Schritte zum Erstellen und verwenden ein freigegebenes Projekt mit Visual Studio für Mac Finden Sie die zu [freigegebenen Projekt Beispiel](#Shared_Project_Example) Abschnitt, um ein vollständiges Beispiel.
@@ -109,15 +95,13 @@ Die **Optionen** unterhalb - Projekt angezeigt wird **Namen** und die **Default 
 
 
 
-<a name="Visual_Studio_Walkthrough" />
-
-# <a name="visual-studio-walkthrough"></a>Visual Studio: Exemplarische Vorgehensweise
+## <a name="visual-studio-walkthrough"></a>Visual Studio: Exemplarische Vorgehensweise
 
 
 In diesem Abschnitt führt Sie durch die Schritte zum Erstellen und verwenden ein freigegebenes Projekt mit Visual Studio. Finden Sie die zu [freigegebenen Projekt Beispiel](#Shared_Project_Example) Abschnitt, um eine vollständige Implementierung.
 
 
-## <a name="creating-a-shared-project"></a>Erstellen eines freigegebenen Projekts
+### <a name="creating-a-shared-project"></a>Erstellen eines freigegebenen Projekts
 
 
 Zum Erstellen eines neuen Projekts für Shared, navigieren Sie zu **Datei > Neues Projektmappen...**  , und wählen Sie einen Namen für das Projekt und Projektmappe.
@@ -145,7 +129,7 @@ Hinzufügen eines Verweises auf ein freigegebenes Projekt erfolgt die gleiche We
 Sobald das freigegebene Projekt von einer anderen Bibliothek oder einer Anwendung verwiesen wird, können Sie erstellen Sie die Projektmappe und zeigen Sie alle Fehler im Code. Wenn das freigegebene Projekt verwiesen wird, durch _zwei oder mehr_ andere Projekte, ein Menü wird angezeigt, in der oberen linken Ecke Source Code-Editor, um festzustellen, welche Projekte die aktuellen Codedatei verweisen.
 
 
-## <a name="shared-project-properties"></a>Eigenschaften des freigegebenen Projekts
+### <a name="shared-project-properties"></a>Eigenschaften des freigegebenen Projekts
 
 
 Wenn Sie ein freigegebenes Projekt gibt es weniger Einstellungen im Eigenschaftenbereich als andere Projekttypen auswählen. Da freigegebene Projekte (eigenständig) nicht kompiliert werden, kann nicht Ausgabe- oder Compiler-Optionen, Projektkonfigurationen, Signieren von Assemblys oder benutzerdefinierten Befehlen festgelegt werden. Der Code in einem freigegebenen Projekt erbt effektiv, dass diese Werte nach Belieben einen auf verwiesen wird.
@@ -161,10 +145,9 @@ Die **Eigenschaften** Bereich sehen Sie unten – die **Stamm-Namespace** ist di
 
 -----
 
- <a name="Shared_Project_Example" />
+<a name="Shared_Project_Example"/>
 
-
-# <a name="shared-project-example"></a>Beispiel für freigegebenen Projekts
+## <a name="shared-project-example"></a>Beispiel für freigegebenen Projekts
 
 Die [Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky) Beispiel von der beiden iOS, Android und Windows Phone-Anwendungen verwendeten verwendet ein freigegebenes Projekt den gemeinsamen Code enthalten. Sowohl die `SQLite.cs` und `TaskRepository.cs` Quellcodedateien verwenden die Compiler-Direktiven (z. b. `#if __ANDROID__`) an verschiedene Ausgaben für jede Anwendung zu erzeugen, die darauf verweisen.
 
@@ -186,10 +169,9 @@ Nachfolgend finden Sie die Ausführung von Anwendungen.
 
  ![](shared-projects-images/example.png "iOS, Android, Windows Phone-Beispiele")
 
- <a name="Summary" />
 
 
-# <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Zusammenfassung
 
 Dieses Dokument beschrieben, wie freigegebene Projekte funktionieren, wie sie erstellt und verwendet werden können in Visual Studio für Mac und Visual Studio, und eine einfache beispielanwendung, die ein freigegebenes Projekt in Aktion veranschaulicht eingeführt.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 3d5b4b0d3e6e9388906efa3bff2db0ea38fa8605
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9c6bbf27d4c8227d96e372e91e1ccf2c9e841ff8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-navigation-controllers"></a>Arbeiten mit Navigation Controller
 
@@ -20,7 +20,7 @@ _Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Navigationsleisten in
 
 Navigationsleisten können an den Anfang Ansichten einen Titel und eine optionale Schaltflächen Navigationsleiste angezeigt hinzugefügt werden. In der Regel werden sie verwendet, wenn der Benutzer eine Hauptseite, wie eine Tabellenansicht, Auflistung oder ein Menü zu einer Unteransicht mit den Details des ausgewählten Elements navigiert.
 
-[ ![](navigation-bars-images/navbar01.png "Beispiel-Navigationsleiste")](navigation-bars-images/navbar01.png)
+[![](navigation-bars-images/navbar01.png "Beispiel-Navigationsleiste")](navigation-bars-images/navbar01.png#lightbox)
 
 Zusätzlich zu den Titel (die im mittleren Bereich angezeigt wird), Navigationsleisten kann eine oder mehrere Schaltflächen Navigationsleiste enthalten (`UIBarButtonItem`) auf der linken und rechten Seite des Balkens.
 
@@ -42,16 +42,16 @@ Die einfachste Möglichkeit zum Arbeiten mit Navigationsleisten in einer app Xam
 1. In der **Lösung Pad**, doppelklicken Sie auf `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. Ziehen Sie eine **Navigationsleiste** aus der **Toolbox** und legen Sie sie in der Ansicht am oberen Rand des Bildschirms: 
 
-    [ ![](navigation-bars-images/navbar02.png "Eine Navigationsleiste")](navigation-bars-images/navbar02.png)
+    [![](navigation-bars-images/navbar02.png "Eine Navigationsleiste")](navigation-bars-images/navbar02.png#lightbox)
 1. Doppelklicken Sie auf die **Navigationsleiste** auswählen **Navigationselement**. In der **Widget** auf der Registerkarte die **Eigenschaften Pad**, können Sie festlegen, die **Titel**: 
 
-    [ ![](navigation-bars-images/navbar03.png "Festlegen des Titels")](navigation-bars-images/navbar03.png)
+    [![](navigation-bars-images/navbar03.png "Festlegen des Titels")](navigation-bars-images/navbar03.png#lightbox)
 1. Als Nächstes können Sie hinzufügen, eine oder mehrere **Leiste Schaltfläche Elemente** an beiden Enden des Balkens: 
 
-    [ ![](navigation-bars-images/navbar04.png "Ein Balkenbereichsdiagramm Schaltflächenelement")](navigation-bars-images/navbar04.png)
+    [![](navigation-bars-images/navbar04.png "Ein Balkenbereichsdiagramm Schaltflächenelement")](navigation-bars-images/navbar04.png#lightbox)
 1. Zum Schluss über das Netzwerk nach der **Leiste Schaltfläche Elemente** Aktionen in der **Ereignisse** auf der Registerkarte die **Eigenschaften-Explorer**: 
 
-    [ ![](navigation-bars-images/navbar05.png "Ein Balkenbereichsdiagramm Schaltfläche Elementaktion")](navigation-bars-images/navbar05.png)
+    [![](navigation-bars-images/navbar05.png "Ein Balkenbereichsdiagramm Schaltfläche Elementaktion")](navigation-bars-images/navbar05.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 
@@ -61,16 +61,16 @@ Die einfachste Möglichkeit zum Arbeiten mit Navigationsleisten in einer app Xam
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. Ziehen Sie eine **Navigationsleiste** aus der **Toolbox** und legen Sie sie in der Ansicht am oberen Rand des Bildschirms: 
 
-    [ ![](navigation-bars-images/navbar02-vs.png "Eine Navigationsleiste")](navigation-bars-images/navbar02-vs.png)
+    [![](navigation-bars-images/navbar02-vs.png "Eine Navigationsleiste")](navigation-bars-images/navbar02-vs.png#lightbox)
 1. Doppelklicken Sie auf die **Navigationsleiste** auswählen **Navigationselement**. In der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**, Sie können festlegen, die **Titel**: 
 
-    [ ![](navigation-bars-images/navbar03-vs.png "Festlegen des Titels")](navigation-bars-images/navbar03-vs.png)
+    [![](navigation-bars-images/navbar03-vs.png "Festlegen des Titels")](navigation-bars-images/navbar03-vs.png#lightbox)
 1. Als Nächstes können Sie hinzufügen, eine oder mehrere **Leiste Schaltfläche Elemente** an beiden Enden des Balkens: 
 
-    [ ![](navigation-bars-images/navbar04-vs.png "Ein Balkenbereichsdiagramm Schaltfläche Elemente")](navigation-bars-images/navbar04-vs.png)
+    [![](navigation-bars-images/navbar04-vs.png "Ein Balkenbereichsdiagramm Schaltfläche Elemente")](navigation-bars-images/navbar04-vs.png#lightbox)
 1. Zum Schluss über das Netzwerk nach der **Leiste Schaltfläche Elemente** Aktionen in der **Ereignisse** auf der Registerkarte die **Eigenschaften-Explorer**: 
 
-    [ ![](navigation-bars-images/navbar05-vs.png "Ein Balkenbereichsdiagramm Element Aktionen")](navigation-bars-images/navbar05-vs.png)
+    [![](navigation-bars-images/navbar05-vs.png "Ein Balkenbereichsdiagramm Element Aktionen")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 
@@ -147,7 +147,7 @@ In diesem Artikel wurden behandelt, Entwerfen und Arbeiten mit Navigationsleiste
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiele für tvos. außerdem wurden](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvos. außerdem wurden Handbücher für interaktive Workflowdienste-Schnittstelle](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [App-Programmierhandbuch für tvos. außerdem wurden](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

@@ -7,18 +7,17 @@ ms.assetid: 23F57634-2EF9-5C15-C710-B3E19A5AF7E1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/14/2017
-ms.openlocfilehash: 2e54bfc4bea3955dc80a747c4ecce485b78ada1d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 136484644779ac40e661f50ff19cf15884c864c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="jelly-bean-features"></a>Gelee Bean-Funktionen
 
 _Dieses Dokument bietet eine grobe Übersicht der neuen Funktionen für Entwickler, die in Android 4.1 eingeführt wurden. Zu diesen Funktionen gehören: Erweiterte Benachrichtigungen, Updates für Android Balken zum Freigeben von großer Dateien, Updates multimedia, Peer-zu-Peer-Netzwerkermittlung, Animationen, neue Berechtigungen._
 
-<a name="Overview" />
 
 
 ## <a name="overview"></a>Übersicht
@@ -31,21 +30,18 @@ Unterstützung wurde für die Verwendung von Network Service Discovery, dass je 
 
 Schließlich wurden mehrere neue Berechtigungen in Android 4.1 hinzugefügt.
 
- <a name="Requirements" />
 
 
 ## <a name="requirements"></a>Anforderungen
 
 Xamarin.Android Anwendungsentwicklung mit Gelee Bean Xamarin.Android erfordert 4.2.6 oder höher sowie Android 4.1 (API Level 16) installiert sein, über den Android SDK Manager wie im folgenden Screenshot gezeigt:
 
-[![Wählen im Android SDK Manager Android 4.1](jelly-bean-images/image1.png)](jelly-bean-images/image1.png)
+[![Wählen im Android SDK Manager Android 4.1](jelly-bean-images/image1.png)](jelly-bean-images/image1.png#lightbox)
 
- <a name="What's_New" />
 
 
 ## <a name="whats-new"></a>Neues
 
- <a name="Animations" />
 
 
 ### <a name="animations"></a>Animationen
@@ -79,7 +75,6 @@ animator.Start();
 
 Als die `TimeAnimator` wird ausgeführt, es wird aufgerufen `ITimeAnimator.ITimeListener`, melden die dann wie lange der Animator wurde ausgeführt wird und wie lange es als seit der letzten Ausführung die Methode wurde aufgerufen wurde.
 
- <a name="Application_Stack_Navigation" />
 
 
 ### <a name="application-stack-navigation"></a>Navigation in der Anwendung Stapel
@@ -98,7 +93,6 @@ Für komplexere Szenarien gibt es neue Methoden für die Activity-Klasse, die ve
 -   `OnCreateNavigateUpTaskStack` – Diese Methode wird überschrieben, wenn es ist notwendig, haben vollständige Kontrolle über wie synthetische Stapel erstellt wird.
 
 
- <a name="Camera" />
 
 
 ### <a name="camera"></a>Kamera
@@ -149,19 +143,16 @@ button.Click += (sender, args) => mediaActionPlayer.Play(MediaActionSoundType.Sh
 mediaActionPlayer.Release();
 ```
 
- <a name="Connectivity" />
 
 
 ### <a name="connectivity"></a>Konnektivität
 
- <a name="Android_Beam" />
 
 
 #### <a name="android-beam"></a>Android Beam
 
 Android Balken wird eine Basis NFC-Technologie, die zwei Android-Geräte, die miteinander kommunizieren kann. Android 4.1 bietet eine bessere Unterstützung für die Übertragung großer Dateien. Bei Verwendung der neuen Methode `NfcAdapter.SetBeamPushUris()` Android wird zwischen alternativen Transportmechanismen (z. B. Bluetooth) wechseln, um eine schnelle Übertragungsrate zu erreichen.
 
- <a name="Network_Services_Discovery" />
 
 
 #### <a name="network-services-discovery"></a>Dienste-Netzwerkermittlung
@@ -173,14 +164,12 @@ Zum Erstellen eines Diensts, die von anderen Diensten genutzt werden, kann die `
 
 Ermittlung für das Netzwerk und die Implementierung der Dienste `Nsd.DiscoveryListener` übergeben `NsdManager.discoverServices()`.
 
- <a name="Network_Usage" />
 
 
 #### <a name="network-usage"></a>Analysieren der Netzwerkverwendung
 
 Eine neue Methode `ConnectivityManager.IsActiveNetworkMetered` ermöglicht einem Gerät überprüft, ob er mit einer getakteten Netzwerken verbunden ist. Diese Methode kann zum Verwalten von Datennutzung durch Benutzer genau darüber informiert, dass teure Gebühren für Data-Vorgänge können verwendet werden.
 
- <a name="WiFi_Direct_Service_Discovery" />
 
 
 #### <a name="wifi-direct-service-discovery"></a>WiFi Direct-Dienstermittlung
@@ -195,14 +184,12 @@ In Gelee-Bean `WifiP2pManager` ermitteln können, Geräte, die entweder in der N
 -   `SetUpnpServiceResponseListener()` – Diese Methode wird zum Registrieren von Rückrufen, aufgerufen werden soll, auf den Erhalt einer Antwort auf Anforderungen zur Ermittlung Upnp verwendet.
 
 
- <a name="Content_Providers" />
 
 
 ### <a name="content-providers"></a>Inhaltsanbieter
 
 Die `ContentResolver` Klasse hat eine neue Methode empfangen `AcquireUnstableContentProvider`. Diese Methode ermöglicht einer Anwendung, eine "instabil" Inhaltsanbieter abzurufen. Normalerweise stürzt ab, wenn eine Anwendung eine Inhaltsanbieter und diese Inhaltsanbieter bereitstellt, daher wird die Anwendung. Mit dieser Methodenaufruf wird eine Anwendung nicht stürzt ab, wenn Inhaltsanbieter stürzt ab. Stattdessen `Android.OS.DeadObjectionException` aus auf den Inhaltsanbieter aufrufen, um eine Anwendung zu informieren, die der Inhaltsanbieter verschwunden ist ausgelöst. Ein "instabil" Inhaltsanbieter ist nützlich, bei der Interaktion mit Inhaltsanbietern aus anderen Anwendungen – ist es weniger wahrscheinlich, dass dienstupgrade fehlerhaften Code aus einer anderen Anwendung einer anderen Anwendung auswirkt.
 
- <a name="Copy_and_Paste_With_Intents" />
 
 
 ### <a name="copy-and-paste-with-intents"></a>Kopieren und Einfügen mit Intents
@@ -214,14 +201,11 @@ Die `Intent` Klasse haben jetzt eine `ClipData` zugeordnetes Statusobjekt über 
 -   **URI** – Dies kann einen beliebigen URI, z. B. ein HTTP-Lesezeichen vorliegt oder der URI, der eine Inhaltsanbieter sein.
 
 
- <a name="Isolated_Services" />
 
 
 ### <a name="isolated-services"></a>Isolierte Services
 
 Ein isolierter Dienst ist ein Dienst, der unter seinem eigenen speziellen Prozess ausgeführt wird und verfügt über keine Berechtigungen selbst. Der nur Kommunikation mit dem Dienst ist, wenn der Dienst gestartet, und Binden an ihn über die Dienst-API. Es ist möglich, einen Dienst als isolierte deklarieren, indem die Eigenschaft `IsolatedProcess="true"` in der `ServiceAttribute` , die eine Dienstklasse erweitert.
-
- <a name="Media" />
 
 
 ### <a name="media"></a>Medien
@@ -245,7 +229,6 @@ Die folgenden neuen Klassen enthalten Standardmechanismen und die Benutzeroberfl
 -   `MediaRouterActionProvider` und `MediaRouteButton` – diese Klassen bieten eine konsistente Benutzeroberfläche für die Auswahl und Wiedergeben von Medien.
 
 
- <a name="Notifications" />
 
 
 ### <a name="notifications"></a>Benachrichtigungen
@@ -255,26 +238,25 @@ Android 4.1 ermöglicht Anwendungen, mehr Flexibilität und Kontrolle Anzeige vo
 -   `Notification.BigPictureStyle` – Dies ist eine Hilfsklasse, die Benachrichtigungen generiert, die ein Bild enthalten wird. Die folgende Abbildung zeigt ein Beispiel für eine Benachrichtigung über ein großes Bild:
 
 
- [ ![Beispiel-Screenshot einer BigPictureStyle-Benachrichtigung](jelly-bean-images/image2.png)](jelly-bean-images/image2.png)
+ [![Beispiel-Screenshot einer BigPictureStyle-Benachrichtigung](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
 
 -   `Notification.BigTextStyle` – Dies ist eine Hilfsklasse, die Benachrichtigungen generiert, die mehrere Textzeilen, z. B. E-mail hat. Ein Beispiel für dieses neue Benachrichtigung-Format kann im folgenden Screenshot angezeigt werden:
 
 
- [ ![Beispiel-Screenshot einer BigTextStyle-Benachrichtigung](jelly-bean-images/image3.png)](jelly-bean-images/image3.png)
+ [![Beispiel-Screenshot einer BigTextStyle-Benachrichtigung](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
 
 -   `Notification.InboxStyle` – Dies ist eine Hilfsklasse, die Benachrichtigungen, die eine Liste von Zeichenfolgen, z. B. Ausschnitte aus einer e-Mail-Nachricht enthalten generieren, wie in diesem Screenshot gezeigt:
 
 
- [ ![Beispiel-Screenshot einer Notification.InboxStyle-Benachrichtigung](jelly-bean-images/image4.png)](jelly-bean-images/image4.png)
+ [![Beispiel-Screenshot einer Notification.InboxStyle-Benachrichtigung](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
 
 Es kann bis zu zwei Aktionsschaltflächen am unteren Rand eine Meldung hinzugefügt werden, wenn die Benachrichtigung normalen oder größere-Stil verwendet wird.
 Ein Beispiel hierfür werden im folgenden Screenshot sehen, in denen die Aktionsschaltflächen am unteren Rand der Benachrichtigung angezeigt werden:
 
- [ ![Beispiel-Screenshot des Aktionsschaltflächen unterhalb eine Meldung angezeigt wird](jelly-bean-images/image5.png)](jelly-bean-images/image5.png)
+ [![Beispiel-Screenshot des Aktionsschaltflächen unterhalb eine Meldung angezeigt wird](jelly-bean-images/image5.png)](jelly-bean-images/image5.png#lightbox)
 
 Die `Notification` Klasse neue Konstanten, die Ihnen Entwickler an einen der fünf Prioritätsstufen für eine Benachrichtigung können empfangen hat. Diese können festgelegt werden, auf eine Benachrichtigung mit der `Priority` Eigenschaft.
 
- <a name="Permissions" />
 
 
 ### <a name="permissions"></a>Berechtigungen
@@ -290,7 +272,6 @@ Die folgenden neuen Berechtigungen wurden hinzugefügt:
 
 Eine wichtige Änderung beachten `READ_EXTERNAL_STORAGE` – derzeit diese Berechtigung von Android automatisch erteilt wird. Zukünftige Versionen von Android benötigen eine Anwendung diese Berechtigung vor angefordert werden, die Berechtigung erteilt.
 
- <a name="Summary" />
 
 
 ## <a name="summary"></a>Zusammenfassung

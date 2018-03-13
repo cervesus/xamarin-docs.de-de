@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/16/2017
-ms.openlocfilehash: a95b49fa3f090339773233dada46a14e69c8bb43
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 798bb2b15534a620acbe76080e171af1a548ac25
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-platform-specifics"></a>iOS-Plattform-Besonderheiten
 
@@ -180,10 +180,10 @@ Die `Page.On<iOS>` Methode gibt an, dass dieser plattformspezifische nur auf iOS
 
 Das Ergebnis ist, dass der Inhalt der Seite auf einen Bereich des Bildschirms positioniert werden kann, die für alle iPhones sicher ist:
 
-[![](ios-images/safe-area-layout.png "Abgesicherten Bereich Layout Handbuch")](ios-images/safe-area-layout-large.png "abgesicherten Bereich Layout-Handbuch")
+[![](ios-images/safe-area-layout.png "Abgesicherten Bereich Layout Handbuch")](ios-images/safe-area-layout-large.png#lightbox "abgesicherten Bereich Layout-Handbuch")
 
 > [!NOTE]
-> **Hinweis**: abgesicherte Bereich definiert, die von Apple dient in Xamarin.Forms Festlegen der [ `Page.Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/) -Eigenschaft, und überschreibt alle vorherigen Werte dieser Eigenschaft, die festgelegt wurden.
+> Von Apple definierte abgesicherte Bereich dient in Xamarin.Forms Festlegen der [ `Page.Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/) -Eigenschaft, und überschreibt alle vorherigen Werte dieser Eigenschaft, die festgelegt wurden.
 
 Abgesicherte Bereich kann angepasst werden, durch das Abrufen von dessen [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/) Wert mit der `Page.SafeAreaInsets` Methode aus der [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) Namespace. Können dann als geändert werden erforderlich neu zugewiesen, und wählen Sie die `Padding` Eigenschaft in der Page-Konstruktor oder [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing()/) außer Kraft setzen:
 
@@ -385,7 +385,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 Das Ergebnis ist, die ein angegebenes `UpdateMode` wird angewendet, um die [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/), die steuert, wann Elementauswahl auftritt:
 
-[![](ios-images/picker-updatemode.png "Auswahl einer UpdateMode plattformspezifischen")](ios-images/picker-updatemode-large.png "Picker UpdateMode Plaform-Specific")
+[![](ios-images/picker-updatemode.png "Auswahl einer UpdateMode plattformspezifischen")](ios-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Plaform-Specific")
 
 <a name="set_status_bar_visibility" />
 
@@ -468,7 +468,7 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 Das Ergebnis ist, eine [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) können deaktivieren verzögern Content Fingereingaben daher empfangen, die in diesem Szenario die [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) empfängt die Bewegung statt über das [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) auf der Seite der [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
 
-[![](ios-images/scrollview-delay-content-touches.png "ScrollView Verzögerung Inhalt berührt plattformspezifischen")](ios-images/scrollview-delay-content-touches-large.png "ScrollView Delay Content Touches Plaform-Specific")
+[![](ios-images/scrollview-delay-content-touches.png "ScrollView Verzögerung Inhalt berührt plattformspezifischen")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
 
 ## <a name="summary"></a>Zusammenfassung
 

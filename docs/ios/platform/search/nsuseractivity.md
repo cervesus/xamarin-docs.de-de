@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: de37fd1e014938edcacec187ceeed572e573b379
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8376ce2ccff6732fa0c89d6030b9af36d29c5085
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-nsuseractivity"></a>Suche mit NSUserActivity
 
@@ -20,7 +20,7 @@ Sie können Sie Aktivitäten in bestimmte Teile Ihrer app zu erstellen, die dann
 
 Für iOS 9, neue `NSUserActivity` (öffentlich und privat) indiziert und vom Spotlight-Suche und Safari durchsucht werden können. Markieren Sie zunächst eine `NSUserActivity` als indizierbaren durchsuchbar und Hinzufügen von Metadaten kann die Aktivität in den Suchergebnissen auf das iOS-Gerät aufgelistet werden.
 
-[ ![](nsuseractivity-images/apphistory01.png "Übersicht über die App-Verlauf")](nsuseractivity-images/apphistory01.png)
+[![](nsuseractivity-images/apphistory01.png "Übersicht über die App-Verlauf")](nsuseractivity-images/apphistory01.png#lightbox)
 
 Wenn der Benutzer ein Suchergebnis, die an eine Aktivität aus Ihrer app gehört auswählt, die app wird gestartet, und die Aktivität von beschrieben die `NSUserActivity` neu gestartet wird, und dem Benutzer angezeigt.
 
@@ -58,7 +58,7 @@ Der Typbezeichner der Aktivität wird verwendet, für die Erstellung einer `NSUs
 
 Zum Erstellen der erforderlichen Aktivität Typ-IDs zur Unterstützung dieses Verhalten Bearbeiten der **"Info.plist"** Datei, und wechseln Sie zu der **Quelle** anzeigen. Hinzufügen einer `NSUserActivityTypes` Taste, und Erstellen von Bezeichnern in folgendem Format:
 
-[ ![](nsuseractivity-images/type01.png "Die NSUserActivityTypes Schlüssel und die erforderlichen Bezeichner in der Plist-editor")](nsuseractivity-images/type01.png)
+[![](nsuseractivity-images/type01.png "Die NSUserActivityTypes Schlüssel und die erforderlichen Bezeichner in der Plist-editor")](nsuseractivity-images/type01.png#lightbox)
 
 Im obigen Beispiel wird eine neue Aktivität Typbezeichner für die Suche Aktivität erstellt (`com.xamarin.platform`). Wenn Sie Ihre eigenen apps zu erstellen, ersetzen Sie den Inhalt von der `NSUserActivityTypes` array mit der Aktivität-Datentypbezeichner, die spezifisch für die Aktivitäten Ihrer app unterstützt.
 
@@ -87,7 +87,7 @@ activity.BecomeCurrent();
 
 Wir konnten Sie weitere Details hinzufügen durch Festlegen der `ContentAttributeSet` Eigenschaft unsere `NSUserActivity` wie folgt:
 
-[ ![](nsuseractivity-images/apphistory02.png "Außerdem Details suchen (Übersicht)")](nsuseractivity-images/apphistory02.png)
+[![](nsuseractivity-images/apphistory02.png "Außerdem Details suchen (Übersicht)")](nsuseractivity-images/apphistory02.png#lightbox)
 
 Mithilfe einer `ContentAttributeSet` können Sie umfangreiche Suchergebnisse, die der Endbenutzer mit ihnen interagieren verleiten erstellen.
 
@@ -114,7 +114,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 Beachten Sie, dass dies dieselbe Methode Außerkraftsetzung zur Reaktion auf die Übergabe von Anforderungen verwendet wird. Jetzt klickt der Benutzer auf einen Link aus dieser app in den Ergebnissen der Spotlight-Suche unserer app wird in den Vordergrund gebracht (oder gestartet wurde, wenn nicht bereits ausgeführt werden) und der Inhalte, die Navigation oder die Funktion durch diesen Link dargestellt wird angezeigt werden:
 
-[ ![](nsuseractivity-images/apphistory03.png "Wiederherstellen der vorherigen Zustand aus der Suche")](nsuseractivity-images/apphistory03.png)
+[![](nsuseractivity-images/apphistory03.png "Wiederherstellen der vorherigen Zustand aus der Suche")](nsuseractivity-images/apphistory03.png#lightbox)
 
 <a name="indexing" />
 

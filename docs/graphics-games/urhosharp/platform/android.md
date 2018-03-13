@@ -1,17 +1,17 @@
 ---
 title: "UrhoSharp Android-Unterstützung"
-description: Bestimmte Android-Setup und Funktionen
+description: "Bestimmte Android-Setup und Funktionen für UrhoSharp."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8409BD81-B1A6-4F5D-AE11-6BBD3F7C6327
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 5100fd4ac573021e088a88446f5f6559d49c4972
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f99b8d2d9f779bc0cf14d76c110d9769ec49ad53
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="urhosharp-android-support"></a>UrhoSharp Android-Unterstützung
 
@@ -21,11 +21,11 @@ Während Urho eine portable Klassenbibliothek ist, und ermöglicht die gleiche A
 
 In den nachfolgenden Seiten wird angenommen, dass `MyGame` ist eine Unterklasse von der `Application` Klasse.
 
-# <a name="architectures"></a>Architekturen
+## <a name="architectures"></a>Architekturen
 
 **Unterstützte Architekturen**: X86 Armeabi, Armeabi v7a
 
-# <a name="create-a-project"></a>Erstellen eines Projekts
+## <a name="create-a-project"></a>Erstellen eines Projekts
 
 Erstellen eines Android-Projekts, und fügen Sie der UrhoSharp NuGet-Paket.
 
@@ -33,7 +33,7 @@ Hinzufügen von Daten, die Ihre Medienobjekte auf enthält die **Bestand** Verze
 
 ![Projekt Setup](android-images/image-3.png "Daten hinzufügen, enthält die Ressourcen in das Verzeichnis Bestand")
 
-# <a name="configure-and-launching-urho"></a>Konfigurieren und starten Sie Urho
+## <a name="configure-and-launching-urho"></a>Konfigurieren und starten Sie Urho
 
 Hinzufügen von using-Anweisungen für die `Urho` und `Urho.Android` Namespaces, und fügen Sie diesen Code für das Initialisieren von Urho sowie das Starten der Anwendungsstatus hinzu.
 
@@ -45,7 +45,7 @@ UrhoSurface.RunInActivity<MyGame>();
 
 Dadurch wird eine Vollbild-Aktivität mit dem Spiel als ein Inhalt geöffnet.
 
-# <a name="custom-embedding-of-urho"></a>Benutzerdefinierte Einbetten von Urho
+## <a name="custom-embedding-of-urho"></a>Benutzerdefinierte Einbetten von Urho
 
 Sie können auch mit dem Fehlen eines Urho werden über den Bildschirm für die gesamte Anwendung, und um es als eine Komponente der Anwendung verwenden, erstellen Sie eine `SurfaceView` über:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9073d64c43c6817b45dca02b870fcfe093ebf46d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 446db5c04849ac6fa320f3fe3b7e22b3d10bf9cf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="building-modern-macos-apps"></a>Erstellen von modernen MacOS Apps
 
@@ -24,7 +24,7 @@ _Dieser Artikel behandelt einige Tipps, Funktionen und Techniken, die ein Entwic
 
 Ein modernes Erscheinungsbild gehören eine moderne Fenster und Symbolleisten Darstellung wie z. B. der unten gezeigten Beispiel-app:
 
-[ ![](modern-cocoa-apps-images/content08.png "Ein Beispiel für eine moderne Mac app-Benutzeroberfläche")](modern-cocoa-apps-images/content08.png)
+[![](modern-cocoa-apps-images/content08.png "Ein Beispiel für eine moderne Mac app-Benutzeroberfläche")](modern-cocoa-apps-images/content08.png#lightbox)
 
 <a name="Enabling-Full-Sized-Content-Views" />
 
@@ -64,7 +64,7 @@ namespace MacModern
 
 Diese Funktion kann ebenfalls in Xcodes Benutzeroberflächen-Generator aktiviert werden, indem Sie die Fenster auswählen, und überprüfen **vollständige Größe Inhaltsansicht**:
 
-[ ![](modern-cocoa-apps-images/content01.png "Die Haupt-Storyboard in Xcodes Benutzeroberflächen-Generator bearbeiten")](modern-cocoa-apps-images/content01.png)
+[![](modern-cocoa-apps-images/content01.png "Die Haupt-Storyboard in Xcodes Benutzeroberflächen-Generator bearbeiten")](modern-cocoa-apps-images/content01.png#lightbox)
 
 Wenn Sie eine vollständige Ansicht der Größe Inhalt zu verwenden, muss der Entwickler kann den Inhalt unter den Titel und Tool-Leiste Bereichen zu versetzen, sodass bestimmte Inhaltstypen (wie Beschriftungen) darunter Folie nicht.
 
@@ -145,11 +145,11 @@ topConstraint.Active = true;
 
 Eine normale MacOS Fenster umfasst einen Standard-Titelleiste am oberen Rand des Fensters ausgeführt, zusammen wird. Wenn das Fenster auch eine Symbolleiste enthält, wird es unter dieser Bereich der Titelleiste angezeigt:
 
-[ ![](modern-cocoa-apps-images/content02.png "Eine standard-Mac-Symbolleiste")](modern-cocoa-apps-images/content02.png)
+[![](modern-cocoa-apps-images/content02.png "Eine standard-Mac-Symbolleiste")](modern-cocoa-apps-images/content02.png#lightbox)
 
 Wenn mithilfe einer optimierten Symbolleiste Titelbereichs nicht mehr angezeigt wird, und der Symbolleiste in der Titelleiste Position nach oben, inline-mit den Schaltflächen im Fenster schließen, minimieren und maximieren:
 
-[ ![](modern-cocoa-apps-images/content03.png "Eine optimierte Mac-Symbolleiste")](modern-cocoa-apps-images/content03.png)
+[![](modern-cocoa-apps-images/content03.png "Eine optimierte Mac-Symbolleiste")](modern-cocoa-apps-images/content03.png#lightbox)
 
 Der optimierte Symbolleiste aktiviert ist, durch Überschreiben der `ViewWillAppear` Methode der `NSViewController` und somit zu suchen, wie im folgenden:
 
@@ -171,7 +171,7 @@ Dieser Effekt wird normalerweise zum _Shoebox Anwendungen_ (ein Fenster-apps), w
 
 Je nach Entwurf der app möchte der Entwickler auch zur Ergänzung der Titelleiste Bereich mit einer Zubehör-View-Controller, die unter dem Titel/Symbolleiste Bereich bereitstellen kontextabhängig steuert, die dem Benutzer basierend auf der Aktivität sie rechts angezeigt werden. die zurzeit an:
 
-[ ![](modern-cocoa-apps-images/content04.png "Ein Beispiel für Zubehör-View-Controller")](modern-cocoa-apps-images/content04.png)
+[![](modern-cocoa-apps-images/content04.png "Ein Beispiel für Zubehör-View-Controller")](modern-cocoa-apps-images/content04.png#lightbox)
 
 Die Zubehör-View-Controller werden automatisch unscharf und vom System ohne Eingriffe angepasst.
 
@@ -180,13 +180,13 @@ Um ein Zubehör-View-Controller hinzuzufügen, führen Sie folgende Schritte aus
 1. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei `Main.storyboard`, um sie zur Bearbeitung zu öffnen.
 2. Ziehen Sie eine **Custom View-Controller** in das Fenster Hierarchie: 
 
-    [ ![](modern-cocoa-apps-images/content05.png "Hinzufügen einer neuen benutzerdefinierten-View-Controller")](modern-cocoa-apps-images/content05.png)
+    [![](modern-cocoa-apps-images/content05.png "Hinzufügen einer neuen benutzerdefinierten-View-Controller")](modern-cocoa-apps-images/content05.png#lightbox)
 3. Layout der Zubehörs Ansicht UI: 
 
-    [ ![](modern-cocoa-apps-images/content06.png "Entwerfen die neue Sicht")](modern-cocoa-apps-images/content06.png)
+    [![](modern-cocoa-apps-images/content06.png "Entwerfen die neue Sicht")](modern-cocoa-apps-images/content06.png#lightbox)
 4. Verfügbarmachen die Zubehörs Ansicht als ein **Steckdose** und alle weiteren **Aktionen** oder **Steckdosen** für ihre Benutzeroberfläche: 
 
-    [ ![](modern-cocoa-apps-images/content07.png "Hinzufügen den erforderlichen Ausgang")](modern-cocoa-apps-images/content07.png)
+    [![](modern-cocoa-apps-images/content07.png "Hinzufügen den erforderlichen Ausgang")](modern-cocoa-apps-images/content07.png#lightbox)
 5. Speichern Sie die Änderungen.
 6. Zurück zu Visual Studio für Mac Änderungen synchronisiert.
 
@@ -248,7 +248,7 @@ Da MacOS jetzt vollständig lokalisiert wird, die `Left` und `Right` `NSLayoutAt
 
 Darüber hinaus möglicherweise das System MacOS Zubehör-View-Controller für die app-Fenster hinzufügen. Geben Sie beispielsweise Folgendes ein, um das Fenster im Registerkartenformat erstellt, in dem mehrere Windows die App in einem Fenster "virtuelle" zusammengeführt werden:
 
-[ ![](modern-cocoa-apps-images/content08.png "Ein Beispiel für einen Macintosh-Fenster im Registerkartenformat")](modern-cocoa-apps-images/content08.png)
+[![](modern-cocoa-apps-images/content08.png "Ein Beispiel für einen Macintosh-Fenster im Registerkartenformat")](modern-cocoa-apps-images/content08.png#lightbox)
 
 In der Regel Entwickler müssen eingeschränkten Aktion verwenden im Registerformat Windows in ihren apps Xamarin.Mac schalten, das System automatisch wie folgt behandeln:
 
@@ -430,7 +430,7 @@ Darüber hinaus Apple empfiehlt die Verwendung von Ebene gesichert Ansichten im 
 
 Ebene sichern kann aktiviert werden, durch Festlegen der `WantsLayer` des eine `NSView` auf `true` oder innerhalb Xcodes Schnittstelle-Generator unter der **Ansicht Effekte Inspektor** durch Überprüfen **Core Animation Ebene**:
 
-[ ![](modern-cocoa-apps-images/content09.png "Die Ansicht Effekte Inspektor")](modern-cocoa-apps-images/content09.png)
+[![](modern-cocoa-apps-images/content09.png "Die Ansicht Effekte Inspektor")](modern-cocoa-apps-images/content09.png#lightbox)
 
 <a name="Redrawing-Views-with-Layers" />
 
@@ -792,7 +792,7 @@ Apple vorschlagen auf folgende Weise:
 
 Apple bereitgestellt hat mehrere Funktionen in Xcodes Benutzeroberflächen-Generator, der Entwickler zum unterstützen der Lokalisierung beim Entwerfen oder bearbeiten die Benutzeroberfläche einer Anwendung verwenden kann. Die **Textrichtung** Teil der **Attribut Inspektor** ermöglicht es dem Entwickler zum Bereitstellen von Hinweisen auf wie Richtung verwendet und auf eine SELECT-Anweisung textbasierten Sicht aktualisiert werden soll (z. B. `NSTextField`):
 
-[ ![](modern-cocoa-apps-images/content10.png "Die Textrichtung-Optionen")](modern-cocoa-apps-images/content10.png)
+[![](modern-cocoa-apps-images/content10.png "Die Textrichtung-Optionen")](modern-cocoa-apps-images/content10.png#lightbox)
 
 Es gibt drei mögliche Werte für die **Textrichtung**:
 
@@ -851,7 +851,7 @@ var button2 = NSButton.CreateButton (myTitle, myImage, () => {
 
 MacOS moderne apps können eine neue dunkel Schnittstelle Darstellung zu verwenden, die für Image erstellen, bearbeiten oder eine Präsentation apps gut funktioniert:
 
-[ ![](modern-cocoa-apps-images/content11.png "Ein Beispiel für eine dunkle Mac-Fenster-Benutzeroberfläche")](modern-cocoa-apps-images/content11.png)
+[![](modern-cocoa-apps-images/content11.png "Ein Beispiel für eine dunkle Mac-Fenster-Benutzeroberfläche")](modern-cocoa-apps-images/content11.png#lightbox)
 
 Dies kann erfolgen, indem Sie eine Codezeile hinzufügen, bevor das Fenster angezeigt wird. Zum Beispiel:
 
@@ -898,7 +898,7 @@ Storyboards ermöglichen den Entwickler, nicht nur Entwurfsmuster für die einze
 
 Domänencontroller, dass der Entwickler zum Zusammenfassen von Elementen in eine Einheit der Zusammensetzung und Segues abstrakt und entfernen Sie die typischen "Kleben Code" erforderlich, um in der gesamten Hierarchie Ansicht verschieben:
 
-[ ![](modern-cocoa-apps-images/content12.png "Bearbeiten die Benutzeroberfläche in Xcode des Benutzeroberflächen-Generator")](modern-cocoa-apps-images/content12.png)
+[![](modern-cocoa-apps-images/content12.png "Bearbeiten die Benutzeroberfläche in Xcode des Benutzeroberflächen-Generator")](modern-cocoa-apps-images/content12.png#lightbox)
 
 Weitere Informationen finden Sie unter unsere [Einführung in Storyboards](~/mac/platform/storyboards/index.md) Dokumentation.
 

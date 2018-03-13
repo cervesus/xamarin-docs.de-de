@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/13/2017
-ms.openlocfilehash: 524d551a96dd1352d86671238a63c103cef9b0c5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 83841e62d863bf4be4edef5c0b6b7d486f192f4d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="background-tasks"></a>Hintergrundaufgaben
 
@@ -30,7 +30,7 @@ Bevor die Erörterung der Möglichkeiten, die ein Entwickler einer WatchOS app D
 
 Betrachten Sie das folgende Beispiel:
 
-[ ![](background-tasks-images/update00.png "Wie ein Benutzer zwischen ihrer iPhone und ihre Apple Watch tagsüber verschoben werden können")](background-tasks-images/update00.png)
+[![](background-tasks-images/update00.png "Wie ein Benutzer zwischen ihrer iPhone und ihre Apple Watch tagsüber verschoben werden können")](background-tasks-images/update00.png#lightbox)
 
 1. In am Morgen während des Wartens in der Zeile für einen Kaffee durchsucht der Benutzer die aktuellen News auf ihrer iPhone mehrere Minuten dauern.
 2. Vor dem Verlassen der Café, überprüfen sie schnell Wetter mit einem Komplikation auf ihre Zifferblatt der Uhr.
@@ -43,7 +43,7 @@ Aufgrund der "kurzer Blick" (weniger als drei Sekunden) Charakter wie ein Benutz
 
 Mithilfe der neuen APIs Apple noch Bestandteil in WatchOS 3, kann die app planen, für eine _Aktualisierung im Hintergrund_ und haben Sie die gewünschte Informationen bereit, bevor der Benutzer fordert. Nehmen Sie das Beispiel weiter oben erläuterten Weather Problemen:
 
-[ ![](background-tasks-images/update01.png "Ein Beispiel für das Wetter-Komplikation")](background-tasks-images/update01.png)
+[![](background-tasks-images/update01.png "Ein Beispiel für das Wetter-Komplikation")](background-tasks-images/update01.png#lightbox)
 
 1. Die app-Zeitpläne vom System zu einem bestimmten Zeitpunkt reaktiviert werden. 
 2. Die app Ruft die Information, dass es benötigen, um das Update zu generieren.
@@ -52,7 +52,7 @@ Mithilfe der neuen APIs Apple noch Bestandteil in WatchOS 3, kann die app planen
 
 Wie oben erwähnt, reaktiviert WatchOS System die app mithilfe einer oder mehrerer Aufgaben, von denen kann einen sehr eingeschränkten Pool zur Verfügung:
 
-[ ![](background-tasks-images/update02.png "Das System WatchOS aktiviert wird, die app mithilfe einer oder mehrerer Aufgaben")](background-tasks-images/update02.png)
+[![](background-tasks-images/update02.png "Das System WatchOS aktiviert wird, die app mithilfe einer oder mehrerer Aufgaben")](background-tasks-images/update02.png#lightbox)
 
 Apple vorschlagen daran, die meisten dieser Task (da es einer beschränkten Ressource für die app ist) auf diesem gedrückt, bis die app aktualisiert selbst beendet ist.
 
@@ -86,7 +86,7 @@ namespace MonkeyWatch.MonkeySeeExtension
 
 Wenn die Anwendung die angegebene Aufgabe abgeschlossen ist, wird der Vorgang ausgeführt, das System durch die Markierung wurde:
 
-[ ![](background-tasks-images/update03.png "Die Aufgabe zurückgibt, das System durch die Markierung wurde")](background-tasks-images/update03.png)
+[![](background-tasks-images/update03.png "Die Aufgabe zurückgibt, das System durch die Markierung wurde")](background-tasks-images/update03.png#lightbox)
 
 <a name="New-Background-Tasks" />
 
@@ -107,7 +107,7 @@ Diese Aufgaben werden in den folgenden Abschnitten im Detail behandelt werden.
 
 Die `WKApplicationRefreshBackgroundTask` ist eine allgemeine Aufgabe, die geplant werden kann, um die app zu einem späteren Zeitpunkt reaktiviert haben:
 
-[ ![](background-tasks-images/update04.png "A WKApplicationRefreshBackgroundTask woken at a future date")](background-tasks-images/update04.png)
+[![](background-tasks-images/update04.png "A WKApplicationRefreshBackgroundTask woken at a future date")](background-tasks-images/update04.png#lightbox)
 
 Innerhalb der Runtime der Aufgabe, die app führen Sie beliebige lokale Verarbeitung z. B. Update eine Zeitachse Komplikation oder einige erforderliche Daten mit fetch kann eine `NSUrlSession`.
 
@@ -118,7 +118,7 @@ Innerhalb der Runtime der Aufgabe, die app führen Sie beliebige lokale Verarbei
 
 Das System sendet eine `WKURLSessionRefreshBackgroundTask` Wenn die Daten wurde heruntergeladen und von der Anwendung verarbeitet werden:
 
-[ ![](background-tasks-images/update05.png "Die WKURLSessionRefreshBackgroundTask, wenn die Daten, dessen Download abgeschlossen ist")](background-tasks-images/update05.png)
+[![](background-tasks-images/update05.png "Die WKURLSessionRefreshBackgroundTask, wenn die Daten, dessen Download abgeschlossen ist")](background-tasks-images/update05.png#lightbox)
 
 Eine app ist nicht weiterhin ausgeführt, während Daten im Hintergrund heruntergeladen werden. Stattdessen die app plant die Anforderung für Daten, und klicken Sie dann er angehalten wurde, und das System behandelt das Herunterladen der Daten, die app nur reawakening, wenn der Download abgeschlossen ist.
 
@@ -128,17 +128,17 @@ Eine app ist nicht weiterhin ausgeführt, während Daten im Hintergrund herunter
 
 In WatchOS 3 fügte Apple Docks, in denen Benutzer ihre bevorzugten apps anheften und schnell darauf zugreifen können. Wenn der Benutzer auf der Seite auf der Apple Watch drückt, wird ein Katalog von angeheftete app Momentaufnahmen angezeigt. Der Benutzer kann Wischen Sie nach links oder rechts an die gewünschte app suchen, und tippen Sie dann die app zum Ersetzen der Momentaufnahme mit der ausgeführten app-Benutzeroberfläche starten.
 
-[ ![](background-tasks-images/update06.png "Ersetzen die Momentaufnahme mit der ausgeführten apps-Schnittstelle")](background-tasks-images/update06.png)
+[![](background-tasks-images/update06.png "Ersetzen die Momentaufnahme mit der ausgeführten apps-Schnittstelle")](background-tasks-images/update06.png#lightbox)
 
 In regelmäßigen Abständen Momentaufnahmen der Benutzeroberfläche der Anwendung benötigte (durch Senden einer `WKSnapshotRefreshBackgroundTask`) und mithilfe dieser Momentaufnahmen Docks ausfüllt. WatchOS ermöglicht es der app auf dessen Inhalt und die Benutzeroberfläche zu aktualisieren, bevor diese Momentaufnahme erstellt wird.
 
 Momentaufnahmen sind in WatchOS 3 sehr wichtig, da sie als sowohl beim Preview und starten Sie Bilder für die app funktionieren. Wenn der Benutzer auf eine app im Dock hat, wird er in den Vollbildmodus zu erweitern, geben Sie den Vordergrund und start ausgeführt, daher ist es zwingend erforderlich, dass die Momentaufnahme auf dem neuesten Stand sein:
 
-[ ![](background-tasks-images/update07.png "Wenn der Benutzer auf eine app im Dock hat, werden sie in den Vollbildmodus erweitert.")](background-tasks-images/update07.png)
+[![](background-tasks-images/update07.png "Wenn der Benutzer auf eine app im Dock hat, werden sie in den Vollbildmodus erweitert.")](background-tasks-images/update07.png#lightbox)
 
 Das System erneut, das eine `WKSnapshotRefreshBackgroundTask` , damit die app (durch das Aktualisieren von Daten und der Benutzeroberfläche) vorbereiten kann, bevor die Momentaufnahme erstellt wird:
 
-[ ![](background-tasks-images/update08.png "Die app kann vorbereiten, indem Sie die Daten und die Benutzeroberfläche zu aktualisieren, bevor die Momentaufnahme erstellt wird")](background-tasks-images/update08.png)
+[![](background-tasks-images/update08.png "Die app kann vorbereiten, indem Sie die Daten und die Benutzeroberfläche zu aktualisieren, bevor die Momentaufnahme erstellt wird")](background-tasks-images/update08.png#lightbox)
 
 Wenn die app kennzeichnet die `WKSnapshotRefreshBackgroundTask` abgeschlossen, das System wird automatisch eine Momentaufnahme der Benutzeroberfläche der Anwendung.
 
@@ -150,7 +150,7 @@ Wenn die app kennzeichnet die `WKSnapshotRefreshBackgroundTask` abgeschlossen, d
 
 Darüber hinaus, wenn der Benutzer eine Benachrichtigung über die app erhält und tippt, um die app wechselt in den Vordergrund zu bringen, muss die Momentaufnahme auf dem neuesten Stand sein, da er als auch der Startbildschirm fungiert:
 
-[ ![](background-tasks-images/update09.png "Der Benutzer erhält eine Benachrichtigung aus der app, und tippt, um die app wechselt in den Vordergrund bringen")](background-tasks-images/update09.png)
+[![](background-tasks-images/update09.png "Der Benutzer erhält eine Benachrichtigung aus der app, und tippt, um die app wechselt in den Vordergrund bringen")](background-tasks-images/update09.png#lightbox)
 
 Wenn es mehr als einer Stunde seit der Benutzer mit einer app WatchOS interagiert hat, werden kann auf den Standardzustand zurückgeben. Der Standardstatus kann bedeuten, dass unterschiedliche Dinge an andere apps, und basierend auf den Entwurf einer App kann es möglicherweise keinen Standardstatus überhaupt.
 
@@ -162,13 +162,13 @@ Wenn es mehr als einer Stunde seit der Benutzer mit einer app WatchOS interagier
 
 In WatchOS 3, Apple Watch-Konnektivität mit der im Hintergrund aktualisieren-API über das neue integriert hat `WKWatchConnectivityRefreshBackgroundTask`. Mit dieser neuen Funktion kann eine iPhone-app übermitteln, neue Daten mit seinem Pendant Watch-app während die app WatchOS im Hintergrund ausgeführt wird:
 
-[ ![](background-tasks-images/update10.png "IPhone-app kann neue Daten mit seinem Pendant Watch-app übermitteln, während die app WatchOS im Hintergrund ausgeführt wird")](background-tasks-images/update10.png)
+[![](background-tasks-images/update10.png "IPhone-app kann neue Daten mit seinem Pendant Watch-app übermitteln, während die app WatchOS im Hintergrund ausgeführt wird")](background-tasks-images/update10.png#lightbox)
 
 Initiieren ein Komplikation Push, wird Kontext der App, senden eine Datei oder Benutzerinformationen aus der iPhone-app aktualisieren die Apple Watch-app im Hintergrund aktiviert.
 
 Wenn die Watch-app über reaktiviert ist eine `WKWatchConnectivityRefreshBackgroundTask` müssen sie die standard-API-Methoden zu verwenden, um die Daten aus der iPhone-app zu erhalten.
 
-[ ![](background-tasks-images/update11.png "Der Datenfluss WKWatchConnectivityRefreshBackgroundTask")](background-tasks-images/update11.png)
+[![](background-tasks-images/update11.png "Der Datenfluss WKWatchConnectivityRefreshBackgroundTask")](background-tasks-images/update11.png#lightbox)
 
 1. Stellen Sie sicher, dass die Sitzung aktiviert hat.
 2. Überwachen Sie die neue `HasContentPending` Eigenschaft so lange wie der Wert ist `true`, dem die app ist immer noch Daten für die Verarbeitung. Als sollte vor, die app der Aufgabe festzuhalten, bis alle Daten verarbeitet wurden.
@@ -180,7 +180,7 @@ Wenn die Watch-app über reaktiviert ist eine `WKWatchConnectivityRefreshBackgro
 
 Platzieren alle Teile des der neuen API zum Hintergrund Aufgaben gemeinsam, würde eine Reihe von Interaktionen wie folgt aussehen:
 
-[ ![](background-tasks-images/update12.png "Der Hintergrund-API-Lebenszyklus")](background-tasks-images/update12.png)
+[![](background-tasks-images/update12.png "Der Hintergrund-API-Lebenszyklus")](background-tasks-images/update12.png#lightbox)
 
 1. Die app WatchOS plant zunächst einen Hintergrund Aufgabe werden wurde aktiviert bei als bestimmten Zeitpunkt in der Zukunft.
 2. Die app wird vom System und einen Task gesendet.
@@ -196,7 +196,7 @@ Es ist wichtig, dass eine app WatchOS innerhalb dieses Ökosystem bittet verhäl
 
 Betrachten Sie das folgende Szenario:
 
-[ ![](background-tasks-images/update13.png "Eine app WatchOS beschränkt, der zahlreiche freigegebene Ressourcen für das system")](background-tasks-images/update13.png)
+[![](background-tasks-images/update13.png "Eine app WatchOS beschränkt, der zahlreiche freigegebene Ressourcen für das system")](background-tasks-images/update13.png#lightbox)
 
 1. Der Benutzer startet eine app WatchOS 13:00 Uhr.
 2. Die app plant eine Aufgabe zum reaktiviert und zum Herunterladen neuen Inhalts in einer Stunde 2:00 Uhr.
@@ -213,7 +213,7 @@ Beispiel verwendet dieses Dokument die gefälschte MonkeySoccer Sport-app, die f
 
 Betrachten Sie das folgende typische Verwendungsszenario:
 
-[ ![](background-tasks-images/update14.png "Das typische Verwendungsszenario")](background-tasks-images/update14.png)
+[![](background-tasks-images/update14.png "Das typische Verwendungsszenario")](background-tasks-images/update14.png#lightbox)
 
 Favoriten des Benutzers verfügen spielt eine big Übereinstimmung von 19:00 Uhr, 9:00 Uhr, damit die app erwarten, dass des Benutzers die Bewertung regelmäßig überprüft werden, und er entscheidet sich für ein Intervall von 30 Minuten aktualisieren.
 
@@ -262,7 +262,7 @@ Das System eine `NSError` Wenn die angeforderte Aufgabe zu planen konnte.
 
 Übernehmen Sie danach eine genauere Betrachtung der 5-Minuten-Fenster die erforderlichen Schritte zum Aktualisieren der Bewertung angezeigt:
 
-[ ![](background-tasks-images/update15.png "Die 5-Minuten-Fenster, die mit die erforderlichen Schritte zum Aktualisieren der Bewertung")](background-tasks-images/update15.png)
+[![](background-tasks-images/update15.png "Die 5-Minuten-Fenster, die mit die erforderlichen Schritte zum Aktualisieren der Bewertung")](background-tasks-images/update15.png#lightbox)
 
 1. Um 7:30:02 Uhr wird die app vom System aktiviert und erhält die Update-Hintergrund-Aufgabe. Die erste Priorität werden die neuesten Ergebnisse vom Server abrufen. Finden Sie unter [Planen einer NSUrlSession](#Scheduling-a-NSUrlSession) unten.
 2. Auf 7:30:05 die app die ursprüngliche Aufgabe abgeschlossen ist, das System die app in den Ruhezustand versetzt, und zum Herunterladen von der angeforderten Daten im Hintergrund fortgesetzt.
@@ -529,7 +529,7 @@ Darüber hinaus weist er auch der Momentaufnahme-Task, dass die app nicht auf de
 
 Wie im obigen Beispiel des Fensters fünf Minuten, die die app MonkeySoccer gedauert um seine Ergebnisse zu aktualisieren hat, indem Sie effizient und mithilfe der neuen WatchOS 3 Hintergrundaufgaben, wird bei die app nur insgesamt 15 Sekunden lang aktiv war: 
 
-[ ![](background-tasks-images/update16.png "Die app hat nur für insgesamt 15 Sekunden aktiv")](background-tasks-images/update16.png)
+[![](background-tasks-images/update16.png "Die app hat nur für insgesamt 15 Sekunden aktiv")](background-tasks-images/update16.png#lightbox)
 
 Dies verringert die Auswirkungen, die die app auf der Apple Watch-Ressourcen verfügbar sind und Akkulaufzeit haben und außerdem erhält die app besser funktioniert mit anderen apps, die auf der Apple Watch ausgeführt wird.
 
@@ -617,7 +617,7 @@ Verwendet die `RemainingComplicationUserInfoTransfers` Eigenschaft von der `WCSe
 
 In WatchOS 3 fügte Apple Docks, in denen Benutzer ihre bevorzugten apps anheften und schnell darauf zugreifen können. Wenn der Benutzer auf der Seite auf der Apple Watch drückt, wird ein Katalog von angeheftete app Momentaufnahmen angezeigt. Der Benutzer kann Wischen Sie nach links oder rechts an die gewünschte app suchen, und tippen Sie dann die app zum Ersetzen der Momentaufnahme mit der ausgeführten app-Benutzeroberfläche starten.
 
-[ ![](background-tasks-images/dock01.png "Das Andocken")](background-tasks-images/dock01.png)
+[![](background-tasks-images/dock01.png "Das Andocken")](background-tasks-images/dock01.png#lightbox)
 
 Das System wird in regelmäßigen Abständen Momentaufnahmen der Benutzeroberfläche der Anwendung akzeptiert und diese Momentaufnahmen zum Auffüllen von Dokumente verwendet wird. WatchOS ermöglicht es der app auf dessen Inhalt und die Benutzeroberfläche zu aktualisieren, bevor diese Momentaufnahme erstellt wird.
 
@@ -676,7 +676,7 @@ Bei der Arbeit mit Updates von Momentaufnahmen werden die folgenden Vorschläge 
 
 Apple empfehlen die folgenden für die Arbeit mit Datenfluss:
 
-[ ![](background-tasks-images/update17.png "Flussdiagramm der App-Daten")](background-tasks-images/update17.png)
+[![](background-tasks-images/update17.png "Flussdiagramm der App-Daten")](background-tasks-images/update17.png#lightbox)
 
 Ein externes Ereignis (z. B. Überwachung Connectivity) aktiviert, wird die app. Dies erzwingt, dass die app ihre Datenmodell aktualisieren (die den aktuellen Status der apps darstellt). Daher der Datenmodell Änderung die app müssen die Komplikationen aktualisieren eine neue Momentaufnahme anfordern, starten Sie möglicherweise einen Hintergrund `NSURLSession` zum Abrufen von mehr Daten, und planen weiter im Hintergrund aktualisiert.
 

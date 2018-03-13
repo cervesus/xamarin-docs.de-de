@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: a963922dfdc07164b7c20f84be4f0b87440bff13
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a7947c40d80c0ff8cb35dab54a11907280335d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="listview-parts-and-functionality"></a>ListView-Komponenten und Funktionen
 
-<a name="overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -31,41 +30,36 @@ Ein `ListView` besteht aus folgenden Teilen:
 
 Diese Screenshots verwenden einen grundlegenden `ListView` -Steuerelement anzeigen, wie schnell durchführen eines Bildlaufs und Abschnittsindex gerendert werden:
 
-[![Screenshots der apps mit einfachen alte Zeilen, für die schnelle Durchführen eines Bildlaufs und Abschnittsindex](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png)
+[![Screenshots der apps mit einfachen alte Zeilen, für die schnelle Durchführen eines Bildlaufs und Abschnittsindex](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png#lightbox)
 
 Die Elemente, aus denen eine `ListView` werden im folgenden ausführlicher beschrieben:
 
-<a name="Rows" />
 
 ## <a name="rows"></a>Zeilen
 
 Jede Zeile verfügt über eine eigene `View`. Die Sicht kann entweder eine der integrierten in definierten Ansichten `Android.Resources`, oder eine benutzerdefinierte Ansicht. Jede Zeile kann dasselbe Ansichtslayout verwenden, oder sie können alle unterschiedlich sein. Es gibt Beispiele in diesem Dokument des integrierten Layouts und andere erläutern, wie Sie benutzerdefinierte Layouts definieren.
 
-<a name="Adapter" />
 
 ## <a name="adapter"></a>Adapter
 
 Die `ListView` Steuerelement erfordert eine `Adapter` formatierten angeben `View` für jede Zeile. Android bietet integrierte Adapter und Sichten, die verwendet werden können, oder benutzerdefinierte Klassen können erstellt werden.
 
-<a name="Fast_Scrolling" />
 
 ## <a name="fast-scrolling"></a>Schnelle Durchführen eines Bildlaufs
 
 Wenn eine `ListView` enthält viele Zeilen von Daten durchführen eines Bildlaufs Fast kann aktiviert werden, können Benutzer auf einen beliebigen Teil der Liste navigieren. Die schnelle Bildläufe "Bildlaufleiste" kann optional aktiviert (und angepasste in API-Ebene 11 und höher) sein.
 
-<a name="Section_Index" />
 
 ## <a name="section-index"></a>Abschnittsindex
 
 Beim Durchführen eines Bildlaufs durch lange Listen, bietet die optionale Abschnittsindex dem Benutzer Feedback auf welcher Teil der Liste der aktuell angezeigten. Es eignet sich nur auf lange Listen, in der Regel in Verbindung mit der schnell durchführen eines Bildlaufs.
 
-<a name="Classes_Overview" />
 
 ## <a name="classes-overview"></a>Übersicht über Klassen
 
 Die primären Klassen, die zur Anzeige verwendet `ListViews` werden hier angezeigt:
 
-[![UML-Diagramm zur Veranschaulichung der Beziehungen zwischen ListView-Steuerelement und die zugehörigen Klassen](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png)
+[![UML-Diagramm zur Veranschaulichung der Beziehungen zwischen ListView-Steuerelement und die zugehörigen Klassen](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png#lightbox)
 
 Der Zweck der einzelnen Klassen wird im folgenden beschrieben:
 

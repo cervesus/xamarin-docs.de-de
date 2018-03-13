@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e5ff4e3732476415ff32e98b8281f3cb6e03e332
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7111c1716ef3a8869f8b2401a7653d9e9941977b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="manual-camera-controls"></a>Manuelle Kamera-Steuerelemente
 
@@ -26,7 +26,7 @@ Diese Steuerelemente können auch nützlich sein, wenn wissenschaftliche oder ge
 
 Ob Videos oder Bilder, die Verwendung der Kamera auf iOS-Gerät zu machen, ist der Prozess zur Aufzeichnung dieser Abbilder weitgehend identisch. Dies gilt, verwenden die standardmäßige automatische Kamera Steuerelemente oder solche, die die neue manuelle Kamera Steuerelemente nutzen:
 
- [ ![](intro-to-manual-camera-controls-images/image1.png "Übersicht über die AVFoundation Capture-Objekte")](intro-to-manual-camera-controls-images/image1.png)
+ [![](intro-to-manual-camera-controls-images/image1.png "Übersicht über die AVFoundation Capture-Objekte")](intro-to-manual-camera-controls-images/image1.png#lightbox)
 
 Eingabe stammt aus einer `AVCaptureDeviceInput` in einer `AVCaptureSession` über eine `AVCaptureConnection`. Das Ergebnis ist entweder Ausgabe als noch Image oder als Videostreams. Der gesamte Prozess wird gesteuert, indem ein `AVCaptureDevice`.
 
@@ -280,11 +280,11 @@ Dadurch, dass der Endbenutzer Steuerelemente den Fokus direkt benötigen, kann e
 
 Beispielsweise kann eine professionelle Fotografen weicher den Fokus von einem Bild zu erzielen eine [Bokeh Effekt](http://en.wikipedia.org/wiki/Bokeh):
 
-[ ![](intro-to-manual-camera-controls-images/image2.png "Ein Effekt Bokeh")](intro-to-manual-camera-controls-images/image2.png)
+[![](intro-to-manual-camera-controls-images/image2.png "Ein Effekt Bokeh")](intro-to-manual-camera-controls-images/image2.png#lightbox)
 
 Oder erstellen Sie eine [Fokus Pull Auswirkungen](http://www.mediacollege.com/video/camera/focus/pull.html), z. B.:
 
-[ ![](intro-to-manual-camera-controls-images/image3.png "Die Auswirkung der Fokus Pull")](intro-to-manual-camera-controls-images/image3.png)
+[![](intro-to-manual-camera-controls-images/image3.png "Die Auswirkung der Fokus Pull")](intro-to-manual-camera-controls-images/image3.png#lightbox)
 
 Für Wissenschaftlern oder einen Writer des medizinische Anwendungen sollten die Anwendung programmgesteuert Linse für Experimente bewegen. In beiden Fällen der neuen API ermöglicht es, dass der Benutzer oder die Anwendung die Steuerung über den Fokus zum Zeitpunkt der Image erstellt wird.
 
@@ -292,7 +292,7 @@ Für Wissenschaftlern oder einen Writer des medizinische Anwendungen sollten die
 
 Erläutert die Details der Steuerung des Fokus in einer IOS 8-Anwendung. Werfen wir einen kurzen Blick auf die Funktionsweise der Fokus in einem iOS-Gerät:
 
-[ ![](intro-to-manual-camera-controls-images/image4.png "Funktionsweise der Fokus in einem iOS-Gerät")](intro-to-manual-camera-controls-images/image4.png)
+[![](intro-to-manual-camera-controls-images/image4.png "Funktionsweise der Fokus in einem iOS-Gerät")](intro-to-manual-camera-controls-images/image4.png#lightbox)
 
 Im hellen wechselt in den objektiv auf dem iOS-Gerät und konzentriert sich auf ein Bild-Temperatursensor. Der Abstand der Linse Sensor steuert, in dem die als zentraler Punkt (dem Bereich, in dem das Bild der besten angezeigt wird), in Beziehung zu der Sensor ist. Desto Linse ist von der Sensor, Abstand Objekte scheint besten und näher, in der Nähe von Objekten besten scheint.
 
@@ -358,7 +358,7 @@ Wie im obigen Code sehen können, muss das Gerät erfassen für die Konfiguratio
 
 Mit den allgemeinen AV erfassen Setupcode eingerichtet ist eine `UIViewController` an die Anwendung Storyboard hinzugefügt und wie folgt konfiguriert werden können:
 
-[ ![](intro-to-manual-camera-controls-images/image5.png "Eine UIViewController kann Anwendungen Storyboard hinzugefügt und konfiguriert, wie hier gezeigt.")](intro-to-manual-camera-controls-images/image5.png)
+[![](intro-to-manual-camera-controls-images/image5.png "Eine UIViewController kann Anwendungen Storyboard hinzugefügt und konfiguriert, wie hier gezeigt.")](intro-to-manual-camera-controls-images/image5.png#lightbox)
 
 Die Ansicht enthält die folgenden Hauptelemente:
 
@@ -491,10 +491,10 @@ Führen Sie Folgendes ein, um die View-Controller für manuelle Fokus Steuerelem
   
 1. Mit der Kamera im Auto-Modus wird automatisch die Schieberegler bewegen, wie die Kamera passt den Fokus an:
 
-    [![](intro-to-manual-camera-controls-images/image6.png "Der Schieberegler werden automatisch verschoben, wie die Kamera des Fokus in diesem Beispiel-app passt")](intro-to-manual-camera-controls-images/image6.png)
+    [![](intro-to-manual-camera-controls-images/image6.png "Der Schieberegler werden automatisch verschoben, wie die Kamera des Fokus in diesem Beispiel-app passt")](intro-to-manual-camera-controls-images/image6.png#lightbox)
 1. Tippen Sie auf das Segment gesperrt, und ziehen Sie die Schieberegler, um die Position des Fokus manuell anzupassen:
 
-    [![](intro-to-manual-camera-controls-images/image7.png "Die Position des Fokus anpassen manuell")](intro-to-manual-camera-controls-images/image7.png)
+    [![](intro-to-manual-camera-controls-images/image7.png "Die Position des Fokus anpassen manuell")](intro-to-manual-camera-controls-images/image7.png#lightbox)
 1. Beenden Sie die Anwendung.
 
 
@@ -506,7 +506,7 @@ Offenlegung bezieht sich auf die Helligkeit der ein Bild im Verhältnis die Hell
 
 Manuelle Offenlegung-Steuerelemente verwenden, kann der Benutzer ein Bild von unrealistisch hell, dunkel und moody annehmen:
 
-[ ![](intro-to-manual-camera-controls-images/image8.png "Ein Beispiel für ein Bild, die Offenlegung von unrealistisch hell zu dunkel und moody anzeigt")](intro-to-manual-camera-controls-images/image8.png)
+[![](intro-to-manual-camera-controls-images/image8.png "Ein Beispiel für ein Bild, die Offenlegung von unrealistisch hell zu dunkel und moody anzeigt")](intro-to-manual-camera-controls-images/image8.png#lightbox)
 
 Erneut, kann dies erfolgen automatisch mit programmgesteuerte Kontrolle für wissenschaftliche Anwendungen oder über manuelle Steuerelemente, die von der Benutzeroberfläche von Anwendungen bereitgestellt. In beiden Fällen geben Sie neue iOS 8 Offenlegung-APIs eine präzisere Kontrolle über die Kamera Offenlegung Einstellungen.
 
@@ -514,7 +514,7 @@ Erneut, kann dies erfolgen automatisch mit programmgesteuerte Kontrolle für wis
 
 Erläutert die Details der Steuern der Datenanzeige im ein IOS 8-Anwendung. Werfen wir einen kurzen Blick auf die Funktionsweise der Offenlegung von:
 
-[ ![](intro-to-manual-camera-controls-images/image9.png "Funktionsweise der Offenlegung")](intro-to-manual-camera-controls-images/image9.png)
+[![](intro-to-manual-camera-controls-images/image9.png "Funktionsweise der Offenlegung")](intro-to-manual-camera-controls-images/image9.png#lightbox)
 
 Die drei grundlegenden Elemente, die zur Steuerung der Offenlegung zusammentreffen sind:
 
@@ -527,7 +527,7 @@ Die drei grundlegenden Elemente, die zur Steuerung der Offenlegung zusammentreff
 
 Bevor Sie mehr erfahren wie manuelle Offenlegung funktioniert, es ist eine gute Idee, um zu verstehen, wie kontinuierliche automatisch Offenlegung arbeitet in einem iOS-Gerät.
 
-[ ![](intro-to-manual-camera-controls-images/image10.png "Funktionsweise der Offenlegung von kontinuierlichen automatisch in einem iOS-Gerät")](intro-to-manual-camera-controls-images/image10.png)
+[![](intro-to-manual-camera-controls-images/image10.png "Funktionsweise der Offenlegung von kontinuierlichen automatisch in einem iOS-Gerät")](intro-to-manual-camera-controls-images/image10.png#lightbox)
 
 Zuerst wird der automatische Offenlegung-Block, weist den Auftrag zur Berechnung der ideale Offenlegung und wird fortlaufend Metering Statistiken eingezogen. Er verwendet diese Informationen zum Berechnen der optimalen Mischung von ISO "und" Auslöser Geschwindigkeit die Szene auch leuchtet abgerufen. Dieser Zyklus wird die Schleife AE genannt.
 
@@ -535,7 +535,7 @@ Zuerst wird der automatische Offenlegung-Block, weist den Auftrag zur Berechnung
 
 Als Nächstes sehen wir uns wie gesperrten Offenlegung funktioniert in iOS-Geräte.
 
-[ ![](intro-to-manual-camera-controls-images/image11.png "Wie gesperrten Offenlegung funktioniert in iOS-Geräte")](intro-to-manual-camera-controls-images/image11.png)
+[![](intro-to-manual-camera-controls-images/image11.png "Wie gesperrten Offenlegung funktioniert in iOS-Geräte")](intro-to-manual-camera-controls-images/image11.png#lightbox)
 
 Erneut, müssen Sie die automatische Offenlegung-Block, der versucht, eine optimale IOS- und Duration-Werte zu berechnen. In diesem Modus wird jedoch der AE Block vom Modul Metering Statistiken getrennt.
 
@@ -589,7 +589,7 @@ Wie im obigen Code sehen können, muss das Gerät erfassen für die Konfiguratio
 
 Mit den allgemeinen AV erfassen Setupcode eingerichtet ist eine `UIViewController` an die Anwendung Storyboard hinzugefügt und wie folgt konfiguriert werden können:
 
-[ ![](intro-to-manual-camera-controls-images/image12.png "Eine UIViewController kann Anwendungen Storyboard hinzugefügt und konfiguriert, wie hier gezeigt.")](intro-to-manual-camera-controls-images/image12.png)
+[![](intro-to-manual-camera-controls-images/image12.png "Eine UIViewController kann Anwendungen Storyboard hinzugefügt und konfiguriert, wie hier gezeigt.")](intro-to-manual-camera-controls-images/image12.png#lightbox)
 
 Die Ansicht enthält die folgenden Hauptelemente:
 
@@ -791,13 +791,13 @@ Führen Sie Folgendes ein, um die View-Controller für die manuelle Anzeigesteue
   
 1. Mit der Kamera im Auto-Modus werden automatisch die Schieberegler verschieben, wie die Kamera Offenlegung passt:
 
-    [![](intro-to-manual-camera-controls-images/image13.png "Die Schieberegler werden automatisch verschoben, wie die Kamera Offenlegung passt")](intro-to-manual-camera-controls-images/image13.png)
+    [![](intro-to-manual-camera-controls-images/image13.png "Die Schieberegler werden automatisch verschoben, wie die Kamera Offenlegung passt")](intro-to-manual-camera-controls-images/image13.png#lightbox)
 1. Tippen Sie auf das Segment gesperrt, und ziehen Sie den Schieberegler Zeitunterschied die Verschiebung des automatischen Offenlegung manuell anzupassen:
 
-    [![](intro-to-manual-camera-controls-images/image14.png "Die Verschiebung des automatischen Offenlegung anpassen manuell")](intro-to-manual-camera-controls-images/image14.png)
+    [![](intro-to-manual-camera-controls-images/image14.png "Die Verschiebung des automatischen Offenlegung anpassen manuell")](intro-to-manual-camera-controls-images/image14.png#lightbox)
 1. Tippen Sie auf das benutzerdefinierte-Segment, und ziehen Sie die Dauer und ISO-Schieberegler, um die Offenlegung manuell zu steuern:
 
-    [![](intro-to-manual-camera-controls-images/image15.png "Ziehen Sie die Dauer und ISO-Schieberegler manuell Steuerelement Gefährdung")](intro-to-manual-camera-controls-images/image15.png)
+    [![](intro-to-manual-camera-controls-images/image15.png "Ziehen Sie die Dauer und ISO-Schieberegler manuell Steuerelement Gefährdung")](intro-to-manual-camera-controls-images/image15.png#lightbox)
 1. Beenden Sie die Anwendung.
 
 
@@ -807,7 +807,7 @@ Der obige Code zeigt, wie die Einstellungen für die Offenlegung zu überwachen,
 
 Whitepaper Saldo Steuerelemente ermöglichen Benutzern das Gleichgewicht der Colosr in einem Bild zu machen realistischere Aussehen anpassen. Verschiedene Lichtquellen haben andere Farbe Temperaturen sowie die verwendeten Kameraeinstellungen zum Erfassen eines Abbilds angepasst werden müssen, um diese Unterschiede zu berücksichtigen. Können Benutzer steuern, ob das weißen Guthaben können sie erneut, professionelle Anpassungen vorzunehmen, die die automatische Routinen nicht unterstützen künstlerische Effekte erzielen.
 
-[ ![](intro-to-manual-camera-controls-images/image16.png "Ein Beispiel-Image mit manuellen weiß Saldo Korrekturen")](intro-to-manual-camera-controls-images/image16.png)
+[![](intro-to-manual-camera-controls-images/image16.png "Ein Beispiel-Image mit manuellen weiß Saldo Korrekturen")](intro-to-manual-camera-controls-images/image16.png#lightbox)
 
 Sommerzeit verfügt beispielsweise über eine bläuliches Umwandlung, während Wolfram elektrisches Licht Farbton für die cachevorbereitung, gelb Orange aufweisen. ("Kalte" Farben müssen verwirrend, höhere Farbe Temperaturen als "warmen" Farben. Farbe Temperaturen sind ein physisches Measure, nicht Perzeptive ein.)
 
@@ -821,7 +821,7 @@ Erläutert die Details zum Steuern des weißen Saldo ein IOS 8-Anwendung. Werfen
 
 In der Studie von Gefühl Farbe die [CEI 1931 RGB Farbe, Speicherplatz und CEI 1931 XYZ Farbraum](http://en.wikipedia.org/wiki/CIE_1931_color_space) sind die erste mathematisch Farbräumen definiert. Sie können in 1931 wurden durch die Internationale Kommission auf Beleuchtung (CIE) erstellt.
 
-[ ![](intro-to-manual-camera-controls-images/image17.png "Die CEI 1931 RGB-Farbspektrum und CEI 1931 XYZ Farbspektrum")](intro-to-manual-camera-controls-images/image17.png)
+[![](intro-to-manual-camera-controls-images/image17.png "Die CEI 1931 RGB-Farbspektrum und CEI 1931 XYZ Farbspektrum")](intro-to-manual-camera-controls-images/image17.png#lightbox)
 
 Im obigen Diagramm uns alle Farben Tabellenlayout, aus Blau hellgrün hellen rot angezeigt. Mit einem X und Y-Wert, kann einen beliebigen Punkt im Diagramm gezeichnet werden, wie in der Abbildung weiter oben gezeigt.
 
@@ -900,7 +900,7 @@ Das Gerät erfassen muss für die Konfiguration gesperrt werden, bevor eine Änd
 
 Mit den allgemeinen AV erfassen Setupcode eingerichtet ist eine `UIViewController` an die Anwendung Storyboard hinzugefügt und wie folgt konfiguriert werden können:
 
-[ ![](intro-to-manual-camera-controls-images/image18.png "Eine UIViewController kann Anwendungen Storyboard hinzugefügt und konfiguriert, wie hier gezeigt.")](intro-to-manual-camera-controls-images/image18.png)
+[![](intro-to-manual-camera-controls-images/image18.png "Eine UIViewController kann Anwendungen Storyboard hinzugefügt und konfiguriert, wie hier gezeigt.")](intro-to-manual-camera-controls-images/image18.png#lightbox)
 
 Die Ansicht enthält die folgenden Hauptelemente:
 
@@ -1111,13 +1111,13 @@ Führen Sie Folgendes ein, um die View-Controller für manuelle weiß Saldo Steu
 1. Speichern Sie die Änderungen der codieren, und führen Sie die Anwendung.
 1. Mit der Kamera im Auto-Modus werden automatisch die Schieberegler verschieben, wie die Kamera weißen Saldo passt:
 
-    [![](intro-to-manual-camera-controls-images/image19.png "Die Schieberegler werden automatisch verschoben, wie die Kamera weißen Saldo passt")](intro-to-manual-camera-controls-images/image19.png)
+    [![](intro-to-manual-camera-controls-images/image19.png "Die Schieberegler werden automatisch verschoben, wie die Kamera weißen Saldo passt")](intro-to-manual-camera-controls-images/image19.png#lightbox)
 1. Tippen Sie auf das Segment gesperrt, und ziehen Sie die Temp "und" Farbton Schieberegler, um den weißen Saldo manuell anzupassen:
 
-    [![](intro-to-manual-camera-controls-images/image20.png "Ziehen Sie die Temp "und" Farbton Schieberegler, um den weißen Saldo manuell anzupassen")](intro-to-manual-camera-controls-images/image20.png)
+    [![](intro-to-manual-camera-controls-images/image20.png "Ziehen Sie die Temp "und" Farbton Schieberegler, um den weißen Saldo manuell anzupassen")](intro-to-manual-camera-controls-images/image20.png#lightbox)
 1. Platzieren Sie mit dem gesperrt-Segment ausgewählter die physischen Karten bei sich am Anfang der Kamera grauen aus, und tippen Sie auf die grau Karte-Schaltfläche, um auf der Welt grau weißen ausgleichen:
 
-    [![](intro-to-manual-camera-controls-images/image21.png "Tippen Sie auf die grau Karte-Schaltfläche, um auf der Welt grau weißen ausgleichen")](intro-to-manual-camera-controls-images/image21.png)
+    [![](intro-to-manual-camera-controls-images/image21.png "Tippen Sie auf die grau Karte-Schaltfläche, um auf der Welt grau weißen ausgleichen")](intro-to-manual-camera-controls-images/image21.png#lightbox)
 1. Beenden Sie die Anwendung.
 
 Der obige Code zeigt, wie die weißen Netzwerklastenausgleich-Einstellungen im automatischen Modus wird die Kamera zu überwachen oder verwenden Schieberegler, um den weißen Saldo zu steuern, wenn es in den Modus gesperrt ist.
@@ -1128,7 +1128,7 @@ Die Klammern erfassen wird auf Grundlage der Einstellungen von den oben aufgefü
 
 Einfach ausgedrückt, ist erfassen Klammern eine große Menge noch Bilder mit einer Vielzahl von Einstellungen aus Bild Bild.
 
-[ ![](intro-to-manual-camera-controls-images/image22.png "Funktionsweise von Klammern zu erfassen.")](intro-to-manual-camera-controls-images/image22.png)
+[![](intro-to-manual-camera-controls-images/image22.png "Funktionsweise von Klammern zu erfassen.")](intro-to-manual-camera-controls-images/image22.png#lightbox)
 
 Mithilfe von Klammern erfassen in iOS 8, kann eine Anwendung Voreinstellung verwenden, eine Reihe von manuellen Kamera Steuerelemente, einen einzelnen Befehl und der aktuellen Szene haben eine Reihe von Bildern für jede der manuellen Voreinstellungen zurückgeben.
 
@@ -1187,7 +1187,7 @@ Mit diesen Informationen Denken Sie daran werfen wir einen Blick auf ein Beispie
 
 Mit den allgemeinen AV erfassen Setupcode eingerichtet ist eine `UIViewController` an die Anwendung Storyboard hinzugefügt und wie folgt konfiguriert werden können:
 
-[ ![](intro-to-manual-camera-controls-images/image23.png "Eine UIViewController kann Anwendungen Storyboard hinzugefügt und konfiguriert, wie hier gezeigt.")](intro-to-manual-camera-controls-images/image23.png)
+[![](intro-to-manual-camera-controls-images/image23.png "Eine UIViewController kann Anwendungen Storyboard hinzugefügt und konfiguriert, wie hier gezeigt.")](intro-to-manual-camera-controls-images/image23.png#lightbox)
 
 Die Ansicht enthält die folgenden Hauptelemente:
 
@@ -1345,10 +1345,10 @@ Führen Sie Folgendes ein, um die View-Controller für Klammern Capture anschlie
 1. Speichern Sie die Änderungen der codieren, und führen Sie die Anwendung.
 1. Eine Szene Frame aus, und tippen Sie auf die Schaltfläche "erfassen Klammer":
 
-    [![](intro-to-manual-camera-controls-images/image24.png "Rahmen Sie eine Szene, und tippen Sie auf die Schaltfläche "erfassen Klammer"")](intro-to-manual-camera-controls-images/image24.png)
+    [![](intro-to-manual-camera-controls-images/image24.png "Rahmen Sie eine Szene, und tippen Sie auf die Schaltfläche "erfassen Klammer"")](intro-to-manual-camera-controls-images/image24.png#lightbox)
 1. Streichen Sie nach rechts nach links, um die drei Grafiken genommene Klammern erfassen finden Sie unter:
 
-    [![](intro-to-manual-camera-controls-images/image25.png "Streichen Sie nach rechts nach links, um die drei Grafiken genommene Klammern erfassen finden Sie unter")](intro-to-manual-camera-controls-images/image25.png)
+    [![](intro-to-manual-camera-controls-images/image25.png "Streichen Sie nach rechts nach links, um die drei Grafiken genommene Klammern erfassen finden Sie unter")](intro-to-manual-camera-controls-images/image25.png#lightbox)
 1. Beenden Sie die Anwendung.
 
 

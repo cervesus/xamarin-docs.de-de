@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: d18cf055bb206099eecea0d9f417af571f3819e0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 8b266640bb0e1aa2bc584197e5fd7cbf4ab48e88
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="device-orientation"></a>Geräteausrichtung
 
@@ -31,7 +31,7 @@ Dieser Artikel führt Sie durch das Erstellen von apps, die Ausrichtung von Ger�
 Wenn Sie Xamarin.Forms verwenden, ist das unterstützte Verfahren zum Steuern des Geräts auf die Einstellungen für jedes einzelne Projekt verwenden.
 
 > [!NOTE]
-> **Hinweis**: As Of Xamarin.Forms 1.5.0 ein Fehler wird verhindert, dass bei der benutzerdefinierten Renderer basierende Versuche zur Steuerung der Ausrichtung liegt fehlschlägt. Finden Sie unter [in dieser Diskussion](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)dieser Diskussion in die Xamarin-Foren für Weitere Informationen.
+> Ab Xamarin.Forms 1.5.0, liegt ein Fehler wird verhindert, dass, versucht Renderer basierende benutzerdefinierte Ausrichtung zu Fehlern zu steuern. Finden Sie unter [in dieser Diskussion](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)dieser Diskussion in die Xamarin-Foren für Weitere Informationen.
 
 ### <a name="ios"></a>iOS
 
@@ -123,7 +123,7 @@ Beachten Sie, dass Windows Phone-Landscape Ansichten in beiden unterstützt (wie
 Xamarin.Forms bietet keine systemeigene Ereignisse für Ihre app Ausrichtung Änderungen im freigegebenen Code benachrichtigen. Allerdings die `SizeChanged` -Ereignis für die `Page` wird ausgelöst, wenn der Breite oder der Höhe des der `Page` Änderungen. Wenn die Breite des der `Page` ist größer als die Höhe des Geräts wird im Querformat. Weitere Informationen finden Sie unter [zeigen Sie ein Bild, das basierend auf Bildschirmausrichtung](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/).
 
 > [!NOTE]
-> **Hinweis**: Es wird eine vorhandene, kostenlose NuGet-Paket für den Empfang von Benachrichtigungen über Änderungen der Ausrichtung im freigegebenen Code. Finden Sie unter der [GitHub-Repository](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) für Weitere Informationen.
+> Es wird eine vorhandene, kostenlose NuGet-Paket für den Empfang von Benachrichtigungen über Änderungen der Ausrichtung im freigegebenen Code. Finden Sie unter der [GitHub-Repository](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) für Weitere Informationen.
 
 Alternativ ist es möglich, überschreiben die [ `OnSizeAllocated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnSizeAllocated(System.Double,System.Double)/) Methode auf eine `Page`, Einfügen von jedes Layout ändern Logik vorhanden. Die `OnSizeAllocated` Methode wird aufgerufen, wenn ein `Page` erhält eine neue Größe, die Whenver ausgeführt wird, wird das Gerät gedreht. Beachten Sie, dass die grundlegende Implementierung der `OnSizeAllocated` führt wichtige Layout-Funktionen, daher ist es wichtig, die grundlegende Implementierung in der Überschreibung aufrufen:
 
@@ -176,7 +176,7 @@ Es ist möglich, Design-Schnittstellen, die mithilfe der integrierten Layouts, d
 Die oben genannten Regeln gelten auch beim Implementieren von Schnittstellen für mehrere Bildschirmgrößen und sind im Allgemeinen Best Practices betrachtet. Der Rest dieses Handbuchs werden spezifische Beispiele reaktionsfähig Layouts mit den einzelnen primären Layouts in Xamarin.Forms erläutert.
 
 > [!NOTE]
-> **Hinweis**: aus Gründen der Übersichtlichkeit in den folgenden Abschnitten veranschaulichen, wie Sie reaktionsfähig verwenden nur eine Art von Layouts zu implementieren `Layout` zu einem Zeitpunkt. In der Praxis ist es oft einfacher zum Mischen von `Layout`s erzielen Sie eine gewünschte Layout verwenden, einfacher oder intuitivste `Layout` für jede Komponente.
+> Aus Gründen der Übersichtlichkeit in den folgenden Abschnitten veranschaulichen, wie Sie reaktionsfähig verwenden nur eine Art von Layouts zu implementieren `Layout` zu einem Zeitpunkt. In der Praxis ist es oft einfacher zum Mischen von `Layout`s erzielen Sie eine gewünschte Layout verwenden, einfacher oder intuitivste `Layout` für jede Komponente.
 
 ### <a name="stacklayout"></a>StackLayout
 

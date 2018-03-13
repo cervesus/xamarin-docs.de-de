@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 8b1715c8e7c3e9bb296577acd3d09a0f22488250
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5f27c1acefa63ee26184b8997594630e24cb0acc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authentication-and-authorization"></a>Authentifizierung und Autorisierung
 
@@ -48,7 +48,7 @@ Die mobile app eShopOnContainers kommuniziert mit der Identity-Microservice, die
 -   Zugreifen auf eine Ressource mit IdentityServer erfolgt durch die mobile Anwendung anfordern einer *Zugriff* -Token, das Zugriff auf eine API-Ressource ermöglicht. Clients anfordern von Zugriffstoken und an die API weitergeleitet werden. Zugriffstoken enthalten Informationen über den Client und der Benutzer (falls vorhanden). -APIs verwenden, die Informationen dann beim Autorisieren des Zugriffs auf ihre Daten.
 
 > [!NOTE]
-> **Hinweis**: ein Client muss mit IdentityServer registriert werden, bevor es Token anfordern kann.
+> Ein Client muss mit IdentityServer registriert werden, bevor es Token anfordern kann.
 
 ### <a name="adding-identityserver-to-a-web-application"></a>Hinzufügen von IdentityServer zu einer Webanwendung
 

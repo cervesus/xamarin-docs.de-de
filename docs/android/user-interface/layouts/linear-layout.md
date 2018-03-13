@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 3cc5db39280c72f0de9dbdae07a49b56416c90a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fc6bc9e1d4625f8f45887b0a144a31383046b296
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="linearlayout"></a>LinearLayout
 
@@ -116,11 +116,10 @@ Die [ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.A
 
 Führen Sie die Anwendung aus. Sie sollten Folgendes angezeigt:
 
-[ ![Screenshot der app, die erste LinearLayout horizontal angeordnet, die zweite vertikal](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png)
+[![Screenshot der app, die erste LinearLayout horizontal angeordnet, die zweite vertikal](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png#lightbox)
 
 Beachten Sie, wie die XML-Attribute für jede Ansicht Verhalten definieren. Probieren Sie verschiedene Werte für `android:layout_weight` basierend auf die Gewichtung der einzelnen Elemente finden Sie unter wie die Bildschirmfläche verteilt wird. Finden Sie unter der [allgemeine Layoutobjekte](http://developer.android.com/guide/topics/ui/declaring-layout.html) Dokument Weitere Informationen dazu, wie [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) behandelt die `android:layout_weight` Attribut.
 
-<a name="References" />
 
 ## <a name="references"></a>Verweise
 

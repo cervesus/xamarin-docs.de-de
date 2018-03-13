@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 9579acc6c070bf692b0db1bd444a31c9ea4aa7ca
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 47f90af1ed68e6c3aea5710b7181b4787fc0895c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="architecture"></a>Architektur
 
@@ -22,13 +22,12 @@ Sie können unter Verwendung der [System](http://msdn.microsoft.com/en-us/librar
 
 Auf Android-Geräten die meisten der System-Einrichtungen wie Audio, Grafiken und Telefonie OpenGL stehen nicht direkt in systemeigenen Anwendungen, sie sind nur verfügbar, über die Android-Laufzeit Java-APIs befinden, die in einem der der [Java](https://developer.xamarin.com/api/namespace/Java.Lang/). * Namespaces oder der [Android](https://developer.xamarin.com/api/namespace/Android/). * Namespaces. Die Architektur ist ungefähr wie folgt:
 
-[![Diagramm der Mono und Grafiken über den Kernel und unter .NET/Java + Bindungen](architecture-images/architecture1.png)](architecture-images/architecture1.png)
+[![Diagramm der Mono und Grafiken über den Kernel und unter .NET/Java + Bindungen](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
 
 Xamarin.Android Entwickler Zugriff auf die verschiedenen Funktionen im Betriebssystem durch Aufrufe in .NET APIs, die sie kennen (für den Zugriff auf niedriger Ebene) oder mithilfe der Klassen, die verfügbar gemacht werden, in der Android-Namespaces die Brücke an die Java-APIs bereitstellt, die von verfügbar gemacht werden die Android-Laufzeit.
 
 Weitere Informationen wie die Android-Klassen mit dem Android-Runtime-Klassen kommunizieren finden Sie unter der [API-Entwurf](~/android/internals/api-design.md) Dokument.
 
-<a name="Application_Packages" />
 
 ## <a name="application-packages"></a>Anwendungspakete
 
@@ -44,7 +43,6 @@ Android-Anwendungspakete sind ZIP-Container mit einem *.apk* Dateierweiterung. A
 Xamarin.Android Anwendungen auch enthalten *Android Aufrufwrappern* Android verwalteten Code aufrufen können.
 
 
-<a name="Android_Callable_Wrappers" />
 
 ## <a name="android-callable-wrappers"></a>Android Callable Wrapper
 
@@ -67,7 +65,6 @@ Globale Verweise können explizit freigegeben werden, indem Aufrufen [Java.Lang.
 Beim Freigeben von Aufrufwrappern verwaltet, wenn die Instanz versehentlich kann, können Sie zwischen Threads freigegeben werden, als die Instanz freigeben Verweise von anderen Threads auswirkt, muss sorgfältig ausgenutzt werden. Maximale aus Sicherheitsgründen nur `Dispose()` Instanzen, die über zugewiesen wurden `new` *oder* von Methoden die *wissen* immer neue Instanzen und nicht zwischengespeicherten-Instanzen, die möglicherweise zuordnen Führen Sie die versehentliche Instanz freigeben zwischen Threads.
 
 
-<a name="Managed_Callable_Wrapper_Subclasses" />
 
 ## <a name="managed-callable-wrapper-subclasses"></a>Verwaltet von Unterklassen Callable Wrapper
 
@@ -76,7 +73,6 @@ Verwaltete Aufrufwrapper Unterklassen sind, in dem die "interessante" anwendungs
 Wie verwaltet callable Wrapper, verwaltet Aufrufwrapper Unterklassen enthalten auch einen globalen Verweis, über die [Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/) Eigenschaft. Ebenso wie globale Verweise mit verwalteten callable Wrapper, explizit durch Aufrufen freigegeben werden können [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/).
 Im Gegensatz zum verwalteten callable Wrapper *datenverschiebungsmechanismus* sollten erstellt werden, bevor das Freigeben von solchen Instanzen als *Dispose()*-Verknüpfung der Instanz wird die Zuordnung zwischen den Java-Instanz unterbrochen (einer Instanz von einer Android Callable Wrapper) und die verwaltete Instanz.
 
-<a name="Java_Activation" />
 
 ### <a name="java-activation"></a>Java-Aktivierung
 
@@ -182,7 +178,6 @@ I/mono-stdout( 2993): [Managed: Value=]
 Nur *Dispose()* von Aufrufwrapper Unterklassen verwaltet, wenn Sie wissen, dass die Java-Objekt nicht mehr verwendet werden wird, oder die Unterklasse keine Instanzdaten enthält und *(IntPtr, JniHandleOwnership)* Konstruktor wurde angegeben.
 
 
-<a name="Application_Startup" />
 
 ## <a name="application-startup"></a>Anwendungsstart
 

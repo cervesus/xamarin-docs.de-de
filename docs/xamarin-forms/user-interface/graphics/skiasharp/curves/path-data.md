@@ -4,14 +4,15 @@ description: Definieren von Textzeichenfolgen im Scalable Vector Graphics-Format
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: feb4c5f4c7e7ad3fc5f762786001be9aa57ae718
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: cc21f789d96f9375655766916f80c6f3f524c29d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="svg-path-data"></a>SVG-Pfaddaten
 
@@ -216,7 +217,7 @@ public class PathDataHelloPage : ContentPage
 
 Der Pfad füllt den Zeichenbereich, der bei der Anzeige im Querformat günstiger aussieht:
 
-[![](path-data-images/pathdatahello-small.png "Dreifacher Screenshot, der den Pfad Daten-Hello-Seite")](path-data-images/pathdatahello-large.png "dreifacher Screenshot, der den Pfad Daten-Hello-Seite")
+[![](path-data-images/pathdatahello-small.png "Dreifacher Screenshot, der den Pfad Daten-Hello-Seite")](path-data-images/pathdatahello-large.png#lightbox "dreifacher Screenshot, der den Pfad Daten-Hello-Seite")
 
 Die **Pfad Daten Cat** Seite ähnelt. Der Pfad und Paint-Objekte werden als Felder in definiert die [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) Klasse:
 
@@ -287,7 +288,7 @@ public class PathDataCatPage : ContentPage
 
 Hier wird das Programm auf allen drei Plattformen ausgeführt:
 
-[![](path-data-images/pathdatacat-small.png "Dreifacher Screenshot der Seite Pfad Daten Cat")](path-data-images/pathdatacat-large.png "dreifacher Screenshot von der Seite "Pfad Daten Cat"")
+[![](path-data-images/pathdatacat-small.png "Dreifacher Screenshot der Seite Pfad Daten Cat")](path-data-images/pathdatacat-large.png#lightbox "dreifacher Screenshot von der Seite "Pfad Daten Cat"")
 
 Normalerweise, wenn ein `SKPath` Objekt als ein Feld definiert ist, müssen die Kontur des Pfads in den Konstruktor oder eine andere Methode definiert werden. Bei Verwendung von SVG-Pfaddaten jedoch haben Sie angezeigt, dass der Pfad vollständig in der Field-Definition angegeben werden kann.
 
@@ -424,7 +425,7 @@ public class PrettyAnalogClockPage : ContentPage
 
 Eine Besonderheit wird jedoch mit der zweiten Seite vorgenommen. Da die Uhr aktualisiert wird alle 16 Millisekunden der `Millisecond` Eigenschaft von der `DateTime` Wert kann potenziell dazu genutzt werden, um ein Sweep Zweitens hand statt in einem animieren, die in diskrete Sprünge verschoben aus zweiter zweiten. Dieser Code, nicht jedoch die datenverschiebung zu sein. Stattdessen wird der Xamarin.Forms [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) und [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) Animation Beschleunigungsfunktionen für eine andere Art der Verschiebung. Diese Beschleunigungsfunktionen dazu führen, dass der zweite Zeiger zum Verschieben in einen wird ruckartiger Weise & #x 2014; zurückzusetzen ein kleines, bevor es verschoben werden, und klicken Sie dann leicht zu stark behandeln das Ziel, einen Effekt, leider nicht in dieser statischen Screenshots reproduzieren:
 
-[![](path-data-images/prettyanalogclock-small.png "Dreifacher Screenshot der Seite ziemlich analogen Uhr")](path-data-images/prettyanalogclock-large.png "dreifacher Screenshot der Seite ziemlich analogen Uhr")
+[![](path-data-images/prettyanalogclock-small.png "Dreifacher Screenshot der Seite ziemlich analogen Uhr")](path-data-images/prettyanalogclock-large.png#lightbox "dreifacher Screenshot der Seite ziemlich analogen Uhr")
 
 
 ## <a name="related-links"></a>Verwandte Links

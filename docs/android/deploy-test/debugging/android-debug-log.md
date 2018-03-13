@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 99b9ed9e3c71766f483f7b00996137aae7a247d1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 26ac42e4b7acbe19dee746130fc335fdf18ffc46
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-debug-log"></a>Android-Debugprotokoll
 
@@ -36,7 +36,6 @@ Sobald das Toolfenster angezeigt wird, kann das physische Gerät aus dem Kombina
 Über dieses Toolfenster haben Sie Zugriff auf Folgendes: eine Tabelle mit Protokolleinträgen, ein Kombinationsfeld zur Geräteauswahl, eine Möglichkeit zum Löschen von Protokolleinträgen, ein Suchfeld und die Schaltflächen „Wiedergabe“, „Anhalten“ und „Pause“. 
 
 
-<a name="Accessing_from_the_Command_Line" />
 
 ## <a name="accessing-from-the-command-line"></a>Zugreifen über die Befehlszeile
 
@@ -52,7 +51,6 @@ Wenn mehrere Geräte angeschlossen sind, muss das Gerät identifiziert werden. B
 
 Weitere Befehle können gefunden werden, indem nur **adb** ausgeführt wird.
 
-<a name="Writing_to_the_Debug_Log" />
 
 
 ## <a name="writing-to-the-debug-log"></a>Schreiben in das Debugprotokoll
@@ -75,7 +73,6 @@ W/myapp   (11103): this is a warning message
 E/myapp   (11103): this is an error message
 ```
 
-<a name="Interesting_Messages" />
 
 ## <a name="interesting-messages"></a>Interessante Nachrichten
 

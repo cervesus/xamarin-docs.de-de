@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 5fab7579be256e478c69b76b5e41b8c1b0568ba6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: 9bebc33affef4a1a25667039dfcdbe345dbd2cd6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="api-design"></a>API-Entwurf
 
@@ -25,7 +25,6 @@ Die Low-Level-Laufzeit für die Kommunikation mit Objective-C-Code ist in der [M
 ## <a name="design-principles"></a>Entwurfsprinzipien
 
 Es gibt einige unserer Entwurfsprinzipien für die Bindung Xamarin.iOS (diese gelten auch für Xamarin.Mac Mono-Bindungen für Objective-C unter OS X):
-
 
 - Führen Sie die Framework-Entwurfsrichtlinien
 - Damit Entwickler Unterklasse Objective-C-Klassen:
@@ -78,15 +77,14 @@ Xamarin.iOS umfasst eine Reihe von Assemblys, die bilden die *Xamarin.iOS Profil
 
 ### <a name="major-namespaces"></a>Major-Namespaces 
 
- <a name="MonoTouch.ObjCRuntime" />
+<a name="MonoTouch.ObjCRuntime" />
 
 #### <a name="objcruntime"></a>ObjCRuntime
 
 Die [ObjCRuntime](https://developer.xamarin.com/api/namespace/ObjCRuntime/) Namespace ermöglicht Entwicklern, die Bereichen zwischen C#- und Objective-c zu überbrücken.
 Dies ist eine neue Bindung, die speziell für iOS, basierend auf der Erfahrung von Kakao- und Gtk # entworfen.
 
- <a name="MonoTouch.Foundation" />
-
+<a name="MonoTouch.Foundation" />
 
 #### <a name="foundation"></a>Foundation
 
@@ -100,10 +98,7 @@ Obwohl dieser Namespace Bindungen für die zugrunde liegenden Foundation Objecti
 
 - Verschiedene Hilfs-APIs sind hier, damit Entwickler zum Binden von Drittanbietern Objective-C-APIs, andere iOS-APIs oder APIs, die derzeit keine Xamarin.iOS gebunden sind verfügbar.
 
-
 Weitere Informationen zum Binden von APIs finden Sie unter der [Xamarin.iOS Bindung Generator](~/cross-platform/macios/binding/binding-types-reference.md) Abschnitt.
-
- <a name="NSObject" />
 
 
 ##### <a name="nsobject"></a>NSObject
@@ -116,7 +111,6 @@ Während Mono Garbagecollection für alle Objekte bereitstellen, wird die `Found
 
 Wenn Ihr Typ deterministischen Abschluss ausführen muss, überschreiben die [NSObject.Dispose(bool)-Methode](https://developer.xamarin.com/api/type/Foundation.NSObject/%2fM%2fDispose) dem Dispose-Parameter ist "Bool disposing", und legen Sie es "true" bedeutet, dass die Methode Dispose da aufgerufen wird der Benutzer explizit aufgerufene Dispose () für das Objekt. Wenn der Wert "false" ist, bedeutet dies, dass die Methode Dispose (Bool disposing) aus den Finalizer im Finalizer-Thread aufgerufen wird. []()
 
-<a name="Categories" />
 
 ##### <a name="categories"></a>Kategorien
 
@@ -185,20 +179,18 @@ class Rotation_IOS6 {
 }
 ```
 
-<a name="PreserveAttribute" />
 
 ##### <a name="preserveattribute"></a>PreserveAttribute
 
 PreserveAttribute ist ein benutzerdefiniertes Attribut ab, das Teilen Mtouch – Bereitstellungstool Xamarin.iOS – einen Typ oder ein Member eines Typs beibehalten, während der Phase, wann die Anwendung verarbeitet wird, um die Größe zu verringern.
 
-Jeder Member, die von der Anwendung nicht statisch ist kann entfernt werden. Daher wird dieses Attribut verwendet, um Elemente zu markieren, sind nicht statisch verwiesen, aber, die von der Anwendung weiterhin benötigt werden.
+Jeder Member, der nicht statisch durch die Anwendung verknüpft ist, muss entfernt werden. Daher wird dieses Attribut verwendet, um Elemente zu markieren, sind nicht statisch verwiesen, aber, die von der Anwendung weiterhin benötigt werden.
 
-Z. B. Wenn Sie Typen dynamisch instanziieren, können Sie den Standardkonstruktor Ihrer Typen beibehalten möchten. Wenn Sie XML-Serialisierung verwenden, empfiehlt es sich um die Eigenschaften der Typen beizubehalten.
+Wenn Sie beispielsweise Typen dynamisch instanziieren, sollten Sie den Standardkonstruktor Ihrer Typen beibehalten. Wenn Sie die XML-Serialisierung verwenden, sollten Sie die Eigenschaften Ihrer Typen beibehalten.
 
 Sie können dieses Attribut auf alle Member eines Typs oder auf den Typ selbst anwenden. Wenn Sie den gesamten Datentyp beibehalten möchten, können Sie die Syntax [beibehalten (AllMembers = "true")] für den Typ.
 
- <a name="MonoTouch.UIKit" />
-
+<a name="MonoTouch.UIKit" />
 
 #### <a name="uikit"></a>UIKit
 
@@ -206,8 +198,7 @@ Die [UIKit](https://developer.xamarin.com/api/namespace/UIKit/) -Namespace enth�
 
 C#-Delegaten dienen häufig ausgeführte Vorgänge. Finden Sie unter der [Delegaten](#Delegates) Abschnitt, um weitere Informationen.
 
- <a name="OpenGLES" />
-
+<a name="OpenGLES" />
 
 #### <a name="opengles"></a>OpenGLES
 
@@ -219,8 +210,6 @@ OpenGLES-2.0-Funktionalität steht über den ES20.GL-Typ, dokumentiert [hier](ht
 
 OpenGLES-3.0-Funktionalität steht über den ES30.GL-Typ, dokumentiert [hier](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES30.GL/) Typ.
 
- <a name="Binding_Design" />
-
 
 ### <a name="binding-design"></a>Binden von Entwurf
 
@@ -230,8 +219,6 @@ Ebenso wie P/Invoke ein hilfreiches Tool zum Aufrufen von systemeigenen Biblioth
 
 Die Diskussion in den nächsten Abschnitten ist nicht erforderlich für Benutzer, die Xamarin.iOS Anwendungen erstellen, aber ermöglicht es Entwicklern, verstehen, wie Aufgaben fertig sind, und hilft ihnen beim Erstellen komplexer Anwendungen.
 
-
- <a name="Types" />
 
 
 #### <a name="types"></a>Typen
@@ -254,16 +241,13 @@ Es werden einige der Methoden in `NSArray`, für die Sonderfälle, in denen Sie 
 
 Darüber hinaus wird in der **klassische API** statt Verfügbarmachen von `CGRect`, `CGPoint` und `CGSize` aus der CoreGraphics-API, ersetzt die mit der `System.Drawing` Implementierungen `RectangleF`, `PointF`und `SizeF` wie sie hilfreich sein würde erhalten Entwickler vorhandenen OpenGL-Code, der OpenTK verwendet. Bei Verwendung des neue 64-Bit- **einheitliche API**, sollte die CoreGraphics-API verwendet werden.
 
- <a name="Inheritance" />
-
+<a name="Inheritance" />
 
 #### <a name="inheritance"></a>Vererbung
 
 Der Entwurf Xamarin.iOS-API ermöglicht Entwicklern systemeigene Objective-C-Typen auf die gleiche Weise erweitert, dass sie einen C#-Typ, verwenden das Schlüsselwort "Override" in einer abgeleiteten Klasse sowie verketten Sie die grundlegende Implementierung, die mit dem "Basis" c#-Schlüsselwort auftreten würde.
 
 Dieser Entwurf ermöglicht Entwicklern von Umgang mit Objective-C-Selektoren als Teil ihrer Entwicklungsprozess zu vermeiden, da das gesamte Objective-C-System bereits in den Bibliotheken Xamarin.iOS eingebunden ist.
-
- <a name="Types_and_Interface_Builder" />
 
 
 #### <a name="types-and-interface-builder"></a>Typen und Benutzeroberflächen-Generator
@@ -279,8 +263,7 @@ public partial class void MyView : UIView {
 }
 ```
 
-
- <a name="Delegates" />
+<a name="Delegates" />
 
 
 #### <a name="delegates"></a>Delegaten
@@ -302,15 +285,13 @@ In Objective-C-Klassen, sehen Sie, dass Klassen, mit denen diese programmiersche
 
 In Xamarin.iOS sind drei sich gegenseitig ausschließende Mechanismen zum Binden an diese Delegaten angeboten:
 
-1.  [Über Ereignisse](#Events) .
-2.  [Stark typisierte über eine `Delegate`Eigenschaft](#StrongDelegate) .
-3.  [Lose typisierte über eine `WeakDelegate`Eigenschaft](#WeakDelegate) .
-
+1.  [Über Ereignisse](#Via_Events).
+2.  [Stark typisierte über eine `Delegate` Eigenschaft](#StrongDelegate)
+3.  [Lose typisierte über eine `WeakDelegate` Eigenschaft](#WeakDelegate)
 
 Betrachten Sie beispielsweise die [UIWebView](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html) Klasse. Diese Verteilung an einen [UIWebViewDelegate](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html) -Instanz, die zugewiesen ist die [Delegieren](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate) Eigenschaft.
 
- <a name="Via_Events" />
-
+<a name="Via_Events" />
 
 ##### <a name="via-events"></a>Über Ereignisse
 
@@ -320,7 +301,6 @@ Für viele Arten Xamarin.iOS erstellt automatisch einen entsprechenden Delegaten
 -  Die [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:) -Methode zugeordnet ist die [UIWebView.LoadFinished](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadFinished/) Ereignis.
 -  Die [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:) -Methode zugeordnet ist die [UIWebView.LoadError](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadError/) Ereignis.
 
-
 Dieses einfache Programm zeichnet z. B. die Start- und Endzeiten beim Laden einer Webs anzeigen:
 
 ```csharp
@@ -329,8 +309,6 @@ var web = new UIWebView (new CGRect (0, 0, 200, 200));
 web.LoadStarted += (o, e) => startTime = DateTime.Now;
 web.LoadFinished += (o, e) => endTime = DateTime.Now;
 ```
-
- <a name="Via_Properties" />
 
 
 ##### <a name="via-properties"></a>VIA-Eigenschaften
@@ -353,6 +331,7 @@ void SetupTextField (UITextField tf)
 
 Die `UITextField`des `ShouldReturn` Eigenschaft in diesem Fall wird als Argument akzeptiert ein Delegat, der einen booleschen Wert zurückgibt, und bestimmt, ob das Textfeld mit der zurück-Schaltfläche gedrückt wird etwas tun sollten. In unserem-Methode zurückgegeben werden wir *"true"* an den Aufrufer, aber wir die Tastatur auch aus dem Bildschirm entfernen (Dies geschieht, wenn das Textfeld ruft `ResignFirstResponder`).
 
+<a name="StrongDelegate"/>
 
 ##### <a name="strongly-typed-via-a-delegate-property"></a>Stark typisierte über einen Delegaten-Eigenschaft
 
@@ -389,8 +368,9 @@ Dieses Muster wird auch verwendet, um Verhalten für bestimmte Steuerelemente, z
 
 Das Muster wird auch verwendet, um die Daten bei Bedarf für einige Steuerelemente bereitzustellen. Z. B. die [UITableView](https://developer.xamarin.com/api/type/UIKit.UITableView/) Steuerelement ist ein leistungsstarkes Tabelle-Rendering-Steuerelement – und das Aussehen und die Inhalte werden von einer Instanz von driven eine [UITableViewDataSource](https://developer.xamarin.com/api/type/UIKit.UITableView/DataSource)
 
+<a name="WeakDelegate"/>
 
-Lose typisierte über die Eigenschaft WeakDelegate @###
+### <a name="loosely-typed-via-the-weakdelegate-property"></a>Lose typisierte über die WeakDelegate-Eigenschaft
 
 Zusätzlich zu den stark typisierten Eigenschaft ist auch eine schwach typisierte Delegat, der ermöglicht den Entwickler, die Dinge unterschiedlich binden, falls gewünscht.
 Ein stark typisiertes Everywhere `Delegate` -Eigenschaft verfügbar gemacht wird, bei der Bindung des Xamarin.iOS, ein entsprechendes `WeakDelegate` Eigenschaft ist ebenfalls verfügbar gemacht.
@@ -423,7 +403,7 @@ web.WeakDelegate = new Notifier ();
 Beachten Sie, einmal die `WeakDelegate` Eigenschaft zugewiesen wurde, die `Delegate` Eigenschaft wird nicht verwendet werden. Darüber hinaus, wenn Sie die Methode in einer geerbten Klasse, die Sie [Exportieren] möchten implementieren, müssen Sie eine öffentliche Methode erleichtern.
 
 
-## <a name="mapping-of-the-objective-c-delegate-pattern-to-c35"></a>Zuordnen des Musters für den Delegaten Objective-C, K &#35;
+## <a name="mapping-of-the-objective-c-delegate-pattern-to-c35"></a>Zuordnung des Delegaten Objective-C-Musters in C&#35;
 
 Wenn Sie finden Sie unter Objective-C-Beispiele, in denen sieht wie folgt aus:
 
@@ -440,7 +420,7 @@ foo.Delegate = new SomethingDelegate ();
 Xamarin.iOS enthält bereitgestellten Delegatklasse, stark typisierte Klassen, die die Objective-C zugeordnet. Informationen zu ihrer Verwendung werden Sie Unterklasse erstellen und überschreiben die Methoden, die durch die Implementierung des Xamarin.iOS definiert werden. Weitere Informationen zu deren Funktionsweise finden Sie unter dem Abschnitt "Modelle" weiter unten.
 
 
-##### <a name="mapping-delegates-to-c35"></a>Zuordnen von Delegaten zu C &#35;
+##### <a name="mapping-delegates-to-c35"></a>Zuordnen von Delegaten zu C#&#35;
 
 UIKit verwendet Objective-C-Delegaten im Allgemeinen in zwei Formen.
 
@@ -575,12 +555,12 @@ public class AppController : UIApplicationDelegate {
 Die Vorteile sind, besteht keine Notwendigkeit, die in Objective-C-Header-Dateien gefunden, die Auswahl, die Typen der Argumente oder die Zuordnung zu C#-vorzudringen und, dass Sie Intellisense in Visual Studio für Mac, zusammen mit starken Typen erhalten
 
 
-#### <a name="xib-outlets-and-c35"></a>XIB Steckdosen und k &#35;
+#### <a name="xib-outlets-and-c35"></a>XIB Steckdosen und C&#35;
 
 > [!IMPORTANT]
 > Dieser Abschnitt erklärt die IDE-Integration mit Steckdosen bei Verwendung von XIB Datendateien. Wenn Sie die Xamarin-Designer für iOS verwenden, dies wird alle ersetzt durch Eingabe eines Namens unter **Identität > Name** im Abschnitt "Eigenschaften" von der IDE, wie unten dargestellt:
 >
-> [![](images/designeroutlet.png "Ein Name-Element in der iOS-Designer eingeben")](images/designeroutlet.png)
+> [![](images/designeroutlet.png "Ein Name-Element in der iOS-Designer eingeben")](images/designeroutlet.png#lightbox)
 >
 >Weitere Informationen zu den iOS-Designer, überprüfen Sie die [Einführung in die iOS-Designer](~/ios/user-interface/designer/introduction.md#how-it-works) Dokument.
 

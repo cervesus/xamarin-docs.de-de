@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: a5711b5ac8332ac518ba5b639f05de557229af6e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1491e6ec36a9ced9460e083769b2148386d1d518
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-and-mac"></a>iOS und Mac
 
@@ -56,7 +56,7 @@ Xamarin ermöglicht Ihnen die systemeigene Bibliotheken in Ihren apps Bindungen 
 
 Zur Unterstützung von 32 und 64-Bit-Code transparent in c# und f# werden neue Datentypen eingeführt.   Weitere Informationen finden sie hier Informationen.
 
-##  <a name="building-32-and-64-bit-apps32-and-64md"></a>[Erstellen von 32 und 64-Bit-apps](32-and-64.md)
+##  <a name="building-32-and-64-bit-apps32-and-64indexmd"></a>[Erstellen von 32 und 64-Bit-apps](32-and-64/index.md)
 
 Was Sie wissen müssen zur Unterstützung von 32- und 64-Bit-Anwendungen.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: dda7597456421aa4ae401f56ed6cfc7983df29c5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64961e9c45c28ede4cc84f7b978da565be4426d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Remote-Benachrichtigungen mit Google Cloud Messaging
 
@@ -53,7 +53,7 @@ Zum Empfangen von Nachrichten von Google Cloud Messaging, die [Google Play-Diens
 
 In Visual Studio mit der Maustaste **Verweise > NuGet-Pakete verwalten...** ; in Visual Studio für Mac, mit der rechten Maustaste **Pakete > Pakete hinzufügen...** . Suchen Sie nach **Xamarin Google Play-Dienste - GCM** und installieren Sie dieses Paket in der **ClientApp** Projekt: 
 
-[ ![Installieren Google Play-Dienste](remote-notifications-with-gcm-images/1-google-play-services-sml.png)](remote-notifications-with-gcm-images/1-google-play-services.png)
+[![Installieren Google Play-Dienste](remote-notifications-with-gcm-images/1-google-play-services-sml.png)](remote-notifications-with-gcm-images/1-google-play-services.png#lightbox)
 
 Bei der Installation **Xamarin Google Play-Dienste - GCM**, **Xamarin Google Play-Dienste - Basis** wird automatisch installiert. Wenn Sie eine Fehlermeldung erhalten, ändern Sie des Projekts *Minimum Android Ziel* außer auf einen Wert festlegen **kompilieren Sie mit der SDK-Version** , und wiederholen Sie die Installation von NuGet. 
 
@@ -76,7 +76,7 @@ Alternativ können Sie einen Android-Emulator Android 2.2 oder höher, anstatt e
 
 In [Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md), wir für unsere GCM-fähige Anwendung einen Paketnamen angegeben (diese Paketname dient auch als die *Anwendungs-ID* , unsere API-Schlüssel und die Absender-ID zugeordnet ist). Wir öffnen Sie die Eigenschaften für die **ClientApp** Projekt, und legen Sie den Paketnamen in dieser Zeichenfolge. In diesem Beispiel legen wir den Paketnamen zu `com.xamarin.gcmexample`:
 
-[ ![Der Paketname festlegen](remote-notifications-with-gcm-images/2-package-name-sml.png)](remote-notifications-with-gcm-images/2-package-name.png)
+[![Der Paketname festlegen](remote-notifications-with-gcm-images/2-package-name-sml.png)](remote-notifications-with-gcm-images/2-package-name.png#lightbox)
 
 Beachten Sie, dass die Client-app nicht mehr um ein Token für die Registrierung von GCM zu erhalten, wenn diese Paketname, das nicht *genau* entsprechen den Paketnamen, die wir in der Google-Entwicklerkonsole eingegeben. 
 
@@ -192,7 +192,7 @@ Dieser Code überprüft das Vorhandensein von Google wiedergeben Services-APK un
 
 Wir vollständig neu erstellen und Ausführen der app. Daraufhin sollte einen Bildschirm, der dem folgenden Screenshot ähnelt: 
 
-[ ![Google Play-Dienste zur Verfügung steht](remote-notifications-with-gcm-images/3-first-screen-sml.png)](remote-notifications-with-gcm-images/3-first-screen.png)
+[![Google Play-Dienste zur Verfügung steht](remote-notifications-with-gcm-images/3-first-screen-sml.png)](remote-notifications-with-gcm-images/3-first-screen.png#lightbox)
 
 Wenn Sie dieses Ergebnis nicht erhalten, stellen Sie sicher, dass auf Ihrem Gerät wird und dass die Google wiedergeben Services APK installiert ist die **Xamarin Google Play-Dienste - GCM** Paket hinzugefügt wird Ihre **ClientApp** Projekt wie beschrieben weiter oben. Wenn Sie einen Build-Fehlermeldung erhalten, versuchen Sie es, bereinigen die Projektmappe, und das Projekt erneut erstellen. 
 
@@ -271,11 +271,11 @@ namespace ClientApp
 
 1.  Melden Sie sich bei der [Konsole der Google Cloud](https://console.cloud.google.com/) , und wählen Sie den Projektnamen Ihres aus der Pull-Menü. In der **Projekt Info** Bereich, der für das Projekt angezeigt wird, klicken Sie auf **wechseln Sie in den projekteinstellungen**:
 
-    [![XamarinGCM Projekt auswählen](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png)
+    [![XamarinGCM Projekt auswählen](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png#lightbox)
 
 2.  Auf der **Einstellungen** Seite, suchen Sie nach der **Projektnummer** &ndash; Dies ist die Absender-ID für Ihr Projekt:
 
-    [![Projektnummer angezeigt](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png)
+    [![Projektnummer angezeigt](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png#lightbox)
 
 Wir beginnen möchten unsere `RegistrationIntentService` unserer app gestartet wird, ausgeführt wird. Bearbeiten **MainActivity.cs** und Ändern der `OnCreate` Methode so, dass unsere `RegistrationIntentService` wird gestartet, nachdem es das Vorhandensein von Google Play-Dienste überprüft: 
 
@@ -548,7 +548,7 @@ In dieser Konsolen-app erstellen wir eine JSON-Nutzlast, die die benachrichtigun
 
 Suchen Sie nach der **Json.NET** Packen und im Projekt zu installieren: 
 
-[ ![Installieren des Pakets Json.NET](remote-notifications-with-gcm-images/4-add-json.net-sml.png)](remote-notifications-with-gcm-images/4-add-json.net.png)
+[![Installieren des Pakets Json.NET](remote-notifications-with-gcm-images/4-add-json.net-sml.png)](remote-notifications-with-gcm-images/4-add-json.net.png#lightbox)
 
 
 #### <a name="add-a-reference-to-systemnethttp"></a>Hinzufügen eines Verweises auf System.Net.Http
@@ -630,7 +630,6 @@ Dieser Test-app-Server sendet die folgende JSON-formatierte Meldung an GCM:
 GCM, werden wiederum diese Meldung, um Ihre Client-app weitergeleitet. Erstellen Sie **MessageSender** und eine Konsolenfenster, in dem wir es über die Befehlszeile ausführen können, zu öffnen.
 
 
-<a name="tryit" />
 
 ### <a name="try-it"></a>Probieren Sie es aus!
 
@@ -666,11 +665,11 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 Darüber hinaus sollten Sie feststellen, dass ein neuer Benachrichtigungssymbol in der Taskleiste angezeigt wird: 
 
-[ ![Symbol "Notiication" wird auf Gerät angezeigt.](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png)
+[![Symbol "Notiication" wird auf Gerät angezeigt.](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
 
 Wenn Sie auf der Taskleiste anzeigen von Benachrichtigungen öffnen, sehen Sie unsere remote-Benachrichtigung:
 
-[ ![Meldung wird angezeigt.](remote-notifications-with-gcm-images/6-notification-in-tray-sml.png)](remote-notifications-with-gcm-images/6-notification-in-tray.png)
+[![Meldung wird angezeigt.](remote-notifications-with-gcm-images/6-notification-in-tray-sml.png)](remote-notifications-with-gcm-images/6-notification-in-tray.png#lightbox)
 
 Herzlichen Glückwunsch, Ihre app hat seine erste remote-Benachrichtigung erhalten!
 

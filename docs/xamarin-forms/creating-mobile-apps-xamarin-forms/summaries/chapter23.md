@@ -3,14 +3,15 @@ title: Zusammenfassung der Kapitel 23. Trigger und Verhaltensweisen
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 72158cac683e46a37d2cbd537cdfd72bea78a336
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9a53cddcf216efd2bb86c838e280d599ff26c191
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>Zusammenfassung der Kapitel 23. Trigger und Verhaltensweisen
 
@@ -99,7 +100,7 @@ Die [ `DataTrigger` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataT
 
 Die [ **GenderColors** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/GenderColors) Beispiel erfordert die [ **SchoolOfFineArt** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/SchoolOfFineArt) -Bibliothek und legt die Farben der Namen der Studenten Blau oder Folgendes ein: rosa basierend auf den `Sex` Eigenschaft:
 
-[![Dreifacher Screenshot des Geschlecht Farben](images/ch23fg04-small.png "Geschlecht Farben")](images/ch23fg04-large.png "Geschlecht Farben")
+[![Dreifacher Screenshot des Geschlecht Farben](images/ch23fg04-small.png "Geschlecht Farben")](images/ch23fg04-large.png#lightbox "Geschlecht Farben")
 
 Die [ **ButtonEnabler** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ButtonEnabler) Beispiel legt die `IsEnabled` Eigenschaft ein `Entry` auf `False` Wenn die `Length` Eigenschaft der `Text` Eigenschaft von der `Entry`gleich 0 ist. Beachten Sie, dass die `Text` -Eigenschaft wird initialisiert, um eine leere Zeichenfolge; der Standardwert ist `null`, und die `DataTrigger` wäre nicht voll funktionsfähig.
 
@@ -170,7 +171,7 @@ Die [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-b
 
 Die [ **RadioLabels** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioLabels) Textzeichenfolgen für dessen Optionsfeld verwendet. Die [ **RadioStyle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioStyle) -Beispiel verwendet einen `Style` für den Unterschied zwischen den checked und unchecked-Schaltflächen aussehen. Die [ **RadioImages** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioImages) Beispiel verwendet die geschachtelten Bilder für die Optionsfelder:
 
-[![Dreifacher Screenshot der Sender Bilder](images/ch23fg17-small.png "Radio Schaltflächensymbole")](images/ch23fg17-large.png "Radio Bilder")
+[![Dreifacher Screenshot der Sender Bilder](images/ch23fg17-small.png "Radio Schaltflächensymbole")](images/ch23fg17-large.png#lightbox "Radio Bilder")
 
 Die [ **TraditionalRadios** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalRadios) Beispiel zeichnet herkömmlichen angezeigten Optionsfelder mit einem Punkt in einem Kreis.
 
@@ -187,4 +188,4 @@ Das Programm reagiert auch auf Änderungen in Hochformat-und Querformat mithilfe
 - [Kapitel 23 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch23-Apr2016.pdf)
 - [Kapitel 23-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23)
 - [Arbeiten mit Triggern](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.Forms-Verhalten](~/xamarin-forms/app-fundamentals/behaviors/creating.md)
+- [Xamarin.Forms-Verhaltensweisen](~/xamarin-forms/app-fundamentals/behaviors/creating.md)

@@ -7,19 +7,17 @@ ms.assetid: 22EE5FBD-3240-4308-AF76-EF45D72936DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/22/2018
-ms.openlocfilehash: cf2211a572d45b7c29018d00f36cb8408484483f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 30b1cb280c2817f55d73e10ff8b4d7942011bf2c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbar"></a>Symbolleiste
 
 _Die Symbolleiste ist eine Aktion Leiste-Komponente, die bietet mehr Flexibilität als der Standard-Aktionsleiste: an einer beliebigen Stelle in der app platziert werden und seine Größe kann geändert werden, können sie ein Farbschema aus, die von der app-Design unterscheidet. Darüber hinaus kann jede app-Bildschirm mehrere Symbolleisten verfügen._
 
-
-<a name="overview" />
  
 ## <a name="overview"></a>Übersicht
 
@@ -27,7 +25,7 @@ Ein Schlüssel Designelement einer Android-Aktivität ist eine *Aktionsleiste*. 
 
 Die `Toolbar` Widget (eingeführt in Android 5.0 Lollipop) kann als eine Generalisierung der Aktion Leiste Schnittstelle betrachtet werden &ndash; die Aktionsleiste ersetzen soll. Die `Toolbar` überall in einem app-Layout verwendet werden kann, und es viel mehr als eine Aktionsleiste anpassbar ist. Der folgende Screenshot zeigt den angepassten `Toolbar` Beispiel in diesem Handbuch erstellt: 
 
-[![Beispiel-Screenshot, der eine Symbolleiste mit bearbeiten, speichern und Menüelemente "Überlauf"](images/01-toolbar-sml.png)](images/01-toolbar.png)
+[![Beispiel-Screenshot, der eine Symbolleiste mit bearbeiten, speichern und Menüelemente "Überlauf"](images/01-toolbar-sml.png)](images/01-toolbar.png#lightbox)
 
 Es gibt einige wichtige Unterschiede zwischen der `Toolbar` und der Aktionsleiste: 
 
@@ -72,7 +70,6 @@ Dieser Leitfaden behandelt, die am häufigsten verwendeten `Toolbar` Szenarien:
 -   Mithilfe der **Android Unterstützungsbibliothek v7 AppCompat** Bibliothek (genannt *AppCompat* im Rest dieses Handbuchs) bereitzustellende `Toolbar` in früheren Versionen von Android. 
 
  
-<a name="requirements" />
  
 ## <a name="requirements"></a>Anforderungen
 

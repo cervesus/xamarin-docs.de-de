@@ -3,14 +3,15 @@ title: Zusammenfassung der Chapter 1. Wie ist Xamarin.Forms angebracht?
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c0f3313fa3c4d1075be7deeb871e303006c533e8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b60a45cc998743d34d5cadb7750f35e7b965579
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Zusammenfassung der Chapter 1. Wie ist Xamarin.Forms angebracht?
 
@@ -44,7 +45,7 @@ Die aktuelle Xamarin.Forms-Projektmappenvorlagen enthalten keine Projekte von Vo
 
 Der Großteil einer Xamarin.Forms-Programm ist in einer PCL oder ein SAP vorhanden. Alle Plattformen besteht eine kleine Anwendung-Stub, der in der PCL aufruft. Die Xamarin.Forms-APIs zuordnen in native Steuerelemente für jede Plattform, sodass jede Plattform des Merkmal Erscheinungsbilds verwaltet:
 
-[![Dreifacher Screenshot der Plattform visuelle Elemente, die Freigabe](images/ch01fg03-small.png "Xamarin.Forms Controls on Each Platform")](images/ch01fg03-large.png "Xamarin.Forms Controls on Each Platform")
+[![Dreifacher Screenshot der Plattform visuelle Elemente, die Freigabe](images/ch01fg03-small.png "Xamarin.Forms Controls on Each Platform")](images/ch01fg03-large.png#lightbox "Xamarin.Forms Controls on Each Platform")
 
 Die Screenshots von links nach rechts um ein iPhone, einem Android-Telefon und einem Windows 10 Mobile-Telefon anzeigen. Auf jedem Bildschirm enthält die Seite eine Xamarin.Forms [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) für die Anzeige von Text, einen [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) zum Initiieren von Aktionen, eine [ `Switch` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) für Wählen einen Wert ein bzw. aus und ein [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) zum Angeben eines Werts in eine Breite Palette. Alle vier dieser Ansichten sind untergeordnete Elemente des eine [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) auf eine [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/).
 

@@ -7,11 +7,11 @@ ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0b3471f607bbde6560af597b6b901e6fbd1ec0b0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 25220f37433037b55f13c4de5a07c0c09173a269
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="handoff"></a>Übergabe
 
@@ -19,7 +19,7 @@ _In diesem Artikel deckt arbeiten mit Übergabe in einem Xamarin.iOS-app zu übe
 
 Apple Übergabe in iOS 8 und OS X Yosemite (10.10), einen gemeinsamen Mechanismus für den Benutzer zum Übertragen von Aktivitäten, die Schritte auf einem ihrer Geräte bereitzustellen, auf ein anderes Gerät mit derselben app oder eine andere Anwendung mit der gleichen Aktivität eingeführt.
 
-[ ![](handoff-images/handoff02.png "Ein Beispiel für eine Übergabe-Operation")](handoff-images/handoff02.png)
+[![](handoff-images/handoff02.png "Ein Beispiel für eine Übergabe-Operation")](handoff-images/handoff02.png#lightbox)
 
 In diesem Artikel wird nutzen einen kurzen Blick auf die Aktivität, die in einer app Xamarin.iOS Freigabe aktivieren und die Übergabe Framework im Detail behandelt:
 
@@ -45,7 +45,7 @@ Für eine Aktivität zu einer anderen Geräten des Benutzers über übergeben we
 
 Auf dem empfangenden Gerät wird der Benutzer eine Benachrichtigung, dass eine Aktivität für die Fortsetzung verfügbar ist. Wenn der Benutzer entscheidet, die Aktivität auf das neue Medium zu fortfahren, die angegebene app gestartet wird (wenn nicht bereits ausgeführt wird) und die Nutzlast aus der `NSUserActivity` wird verwendet, um die Aktivität zu starten.
 
-[ ![](handoff-images/handoffinteractions.png "Einen Überblick über die Aktivitäten des Benutzers fortgesetzt")](handoff-images/handoffinteractions.png)
+[![](handoff-images/handoffinteractions.png "Einen Überblick über die Aktivitäten des Benutzers fortgesetzt")](handoff-images/handoffinteractions.png#lightbox)
 
 Nur apps, die Freigabe des gleichen Entwicklers Team-ID und reagieren auf einen bestimmten _Aktivitätstyp_ für die Fortsetzung geeignet sind. Eine app definiert die Aktivität-Typen, die er unter unterstützt die `NSUserActivityTypes` -Schlüssel des seine **"Info.plist"** Datei. Angesichts wählt ein fortgesetzt Gerät zu die app die Fortsetzung, die basierend auf der Team-ID, Aktivitätstyp und optional die _Aktivitätstitel_.
 
@@ -114,21 +114,21 @@ Führen Sie folgende Schritte aus:
 3. Wenn Sie dies noch nicht getan haben, klicken Sie auf **Bezeichner** und eine ID für Ihre app zu erstellen (z. B. `com.company.appname`), andernfalls Bearbeiten Ihrer vorhandenen ID an.
 4. Sicherstellen, dass die **iCloud** Dienst für die angegebene ID Punkte überprüft wurden: 
 
-    [ ![](handoff-images/provision01.png "Aktivieren Sie den iCloud-Dienst für die angegebene ID")](handoff-images/provision01.png)
+    [![](handoff-images/provision01.png "Aktivieren Sie den iCloud-Dienst für die angegebene ID")](handoff-images/provision01.png#lightbox)
 5. Speichern Sie die Änderungen.
 4. Klicken Sie auf **Provisioning Profile** > **Entwicklung** und erstellen Sie ein Bereitstellungsprofil für Sie Neuentwicklungen app: 
 
-    [ ![](handoff-images/provision02.png "Erstellen Sie eine neue Entwicklungen Bereitstellungsprofil für die app")](handoff-images/provision02.png)
+    [![](handoff-images/provision02.png "Erstellen Sie eine neue Entwicklungen Bereitstellungsprofil für die app")](handoff-images/provision02.png#lightbox)
 5. Herunterladen Sie und installieren Sie das neue Bereitstellungsprofil oder verwenden Sie Xcode herunterladen und installieren das Profil.
 6. Bearbeiten Sie Ihre Xamarin.iOS Projektoptionen, und stellen Sie sicher, dass Sie das Bereitstellungsprofil verwenden, das Sie soeben erstellt haben: 
 
-    [ ![](handoff-images/provision03.png "Wählen Sie das soeben erstellte Bereitstellungsprofil")](handoff-images/provision03.png)
+    [![](handoff-images/provision03.png "Wählen Sie das soeben erstellte Bereitstellungsprofil")](handoff-images/provision03.png#lightbox)
 7. Als Nächstes bearbeiten Ihrer **"Info.plist"** Datei, und stellen Sie sicher, dass Sie die App-ID verwenden, mit denen die provisioning-Profil erstellt wurde: 
 
-    [ ![](handoff-images/provision04.png "Festlegen von App-ID")](handoff-images/provision04.png)
+    [![](handoff-images/provision04.png "Festlegen von App-ID")](handoff-images/provision04.png#lightbox)
 8. Führen Sie einen Bildlauf zu der **Hintergrundmodi** Abschnitt, und überprüfen Sie die folgenden Elemente: 
 
-    [ ![](handoff-images/provision05.png "Aktivieren Sie die erforderlichen hintergrundmodi")](handoff-images/provision05.png)
+    [![](handoff-images/provision05.png "Aktivieren Sie die erforderlichen hintergrundmodi")](handoff-images/provision05.png#lightbox)
 9. Speichern Sie die Änderungen auf alle Dateien.
 
 Mit diesen Einstellungen vorhanden kann die Anwendung jetzt die Übergabe Framework-APIs zuzugreifen. Ausführliche Informationen zu Bereitstellung, finden Sie unter unsere [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md) und [Bereitstellung der App](~/ios/get-started/installation/device-provisioning/index.md) Handbüchern.
@@ -155,7 +155,7 @@ Beispielsweise Kegel zum Erstellen einer Beispielapp aufgerufen **MonkeyBrowser*
 
 Zum Erstellen der erforderlichen Aktivität Typ-IDs zur Unterstützung dieses Verhalten Bearbeiten der **"Info.plist"** Datei, und wechseln Sie zu der **Quelle** anzeigen. Hinzufügen einer `NSUserActivityTypes` Taste, und erstellen Sie die folgenden Bezeichner:
 
-[ ![](handoff-images/type01.png "Die NSUserActivityTypes Schlüssel und die erforderlichen Bezeichner in der Plist-editor")](handoff-images/type01.png)
+[![](handoff-images/type01.png "Die NSUserActivityTypes Schlüssel und die erforderlichen Bezeichner in der Plist-editor")](handoff-images/type01.png#lightbox)
 
 Vier neue Aktivität Typ-IDs, jeweils einen für die Registerkarten im Beispiel erstellten **MonkeyBrowser** app. Wenn Sie Ihre eigenen apps zu erstellen, ersetzen Sie den Inhalt von der `NSUserActivityTypes` array mit der Aktivität-Datentypbezeichner, die spezifisch für die Aktivitäten Ihrer app unterstützt.
 
@@ -610,15 +610,15 @@ Als Beispiel für die Übergabe in einem Xamarin.iOS-app verwenden, haben wir en
 
 Auf jeder Registerkarte gelangt der Benutzer eine neue URL und datenabzweigungen der **Go** Schaltfläche, ein neues `NSUserActivity` für diese Registerkarte, die die URL enthält, die der Benutzer derzeit durchsucht wird erstellt:
 
-[ ![](handoff-images/handoff01.png "Übergabe-Beispielanwendung")](handoff-images/handoff01.png)
+[![](handoff-images/handoff01.png "Übergabe-Beispielanwendung")](handoff-images/handoff01.png#lightbox)
 
 Wenn eine andere von den Geräten des Benutzers verfügt die **MonkeyBrowser** app installiert, mit dem gleichen Benutzerkonto iCloud angemeldet ist, wird auf dem gleichen Netzwerk und in der Nähe zu den oben genannten Geräte, die Übergabe-Aktivität wird auf der Startseite angezeigt Bildschirm (in der unteren linken Ecke):
 
-[ ![](handoff-images/handoff02.png "Die Übergabe-Aktivität, die auf dem Startbildschirm in der unteren linken Ecke angezeigt")](handoff-images/handoff02.png)
+[![](handoff-images/handoff02.png "Die Übergabe-Aktivität, die auf dem Startbildschirm in der unteren linken Ecke angezeigt")](handoff-images/handoff02.png#lightbox)
 
 Wenn der Benutzer nach oben auf das Symbol "Übergabe" zieht, die app wird gestartet, und der Benutzeraktivität angegeben wird, der `NSUserActivity` wird auf das neue Gerät fortgesetzt werden:
 
-[ ![](handoff-images/handoff03.png "Die Fortsetzung auf das neue Gerät Benutzeraktivität")](handoff-images/handoff03.png)
+[![](handoff-images/handoff03.png "Die Fortsetzung auf das neue Gerät Benutzeraktivität")](handoff-images/handoff03.png#lightbox)
 
 Wenn die Benutzeraktivität erfolgreich gesendet wurde ein anderes Apple Gerät, das Gerät senden des `NSUserActivity` erhalten einen Anruf an den `UserActivityWasContinued` Methode auf seine `NSUserActivityDelegate` , damit es weiß, dass die Aktivitäten von Benutzern zu einem anderen erfolgreich übertragen wurden das Gerät.
 

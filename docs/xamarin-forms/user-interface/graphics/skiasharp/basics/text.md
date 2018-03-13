@@ -4,14 +4,15 @@ description: "Informationen Sie zur Bestimmung der Größe des gerenderten Textz
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9a8cfac8911b1a8a13a4b6f149d02cd2f2c78453
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1cb6b6fcd8a9d02910842eb3eba966fce281d977
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="integrating-text-and-graphics"></a>Integrieren von Text und Grafiken
 
@@ -113,7 +114,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Danach wird der Rest der Methode selbsterklärend. Erstellt eine andere `SKPaint` Objekt für den Rahmen und ruft `DrawRoundRect` zweimal. Der zweite Aufruf verwendet, ein Rechteck, das von einem anderen 10 Pixel vergrößert wird. Der erste Aufruf gibt einen Eckradius von 20 Pixel; die zweite hat einen Eckradius 30 Pixel, damit sie parallel zu sein scheinen:
 
- [![](text-images/framedtext-small.png "Dreifacher Screenshot der Seite Text eingebunden")](text-images/framedtext-large.png "dreifacher Screenshot der Seite Text eingebunden")
+ [![](text-images/framedtext-small.png "Dreifacher Screenshot der Seite Text eingebunden")](text-images/framedtext-large.png#lightbox "dreifacher Screenshot der Seite Text eingebunden")
 
 Aktivieren Sie Ihr Smartphone oder seitwärts Simulator, um den Text und die Frame-Größe anzuzeigen.
 
@@ -121,7 +122,7 @@ Wenn Sie nur einige Text auf dem Bildschirm zentriert müssen, können Sie dies 
 
 Text selbst kann ähnlich wie eine grafische Option behandelt werden. Eine einfache Möglichkeit ist zum Anzeigen der Gliederung von Textzeichen anstelle der normalen gefüllte Anzeige:
 
-[![](text-images/outlinedtext-small.png "Screenshot der Seite beschriebenen Text dreifach")](text-images/outlinedtext-large.png "dreifach Screenshot der Seite beschriebenen Text")
+[![](text-images/outlinedtext-small.png "Screenshot der Seite beschriebenen Text dreifach")](text-images/outlinedtext-large.png#lightbox "dreifach Screenshot der Seite beschriebenen Text")
 
 Dies erfolgt durch einfaches Ändern von normalen `Style` Eigenschaft der `SKPaint` Objekt von der Standardeinstellung von `SKPaintStyle.Fill` zu `SKPaintStyle.Stroke` verwenden und eine Strichbreite angeben. Die `PaintSurface` Handler, der die **beschriebenen Text** Seite zeigt, wie dies funktioniert:
 

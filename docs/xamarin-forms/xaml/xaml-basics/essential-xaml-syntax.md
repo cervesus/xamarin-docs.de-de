@@ -3,16 +3,16 @@ title: Teil 2. Grundlegende XAML-Syntax
 description: "XAML ist hauptsächlich für das Instanziieren und Initialisieren von Objekten. Aber häufig Eigenschaften müssen festgelegt werden, um komplexe Objekte, die einfach als XML-Zeichenfolgen dargestellt werden können, und in einigen Fällen müssen durch eine Klasse definierte Eigenschaften festgelegt werden, auf eine untergeordnete Klasse. Diese beiden Anforderungen erfordern die wesentlichen Features der XAML-Syntax von Eigenschaftenelemente und angefügte Eigenschaften."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: f99d4b177f5957b2e5f8c22171fe92799af8505a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 77ed7c49a901a877d822c2274263bcb8dbe19ac6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Teil 2. Grundlegende XAML-Syntax
 
@@ -253,7 +253,7 @@ Die `Grid.Row` und `Grid.Column` Einstellungen 0 sind nicht erforderlich, aber i
 
 Hier ist es auf allen drei Plattformen illustriert:
 
-[ ![](essential-xaml-syntax-images/griddemo.png "Rasterlayout")](essential-xaml-syntax-images/griddemo-large.png "Rasterlayout")
+[![](essential-xaml-syntax-images/griddemo.png "Rasterlayout")](essential-xaml-syntax-images/griddemo-large.png#lightbox "Rasterlayout")
 
 Ausschließlich von der Syntax Beurteilung diese `Grid.Row`, `Grid.Column`, `Grid.RowSpan`, und `Grid.ColumnSpan` Attribute angezeigt werden, um statische Felder oder Eigenschaften sein `Grid`, aber Interessanterweise `Grid` nichts mit dem Namen ist nicht definiert `Row`, `Column`, `RowSpan`, oder `ColumnSpan`.
 
@@ -310,7 +310,7 @@ Die `AbsoluteLayout` Klasse definiert zwei angefügte Eigenschaften, die mit dem
 
 Und hier ist:
 
-[ ![](essential-xaml-syntax-images/absolutedemo-large.png "Absolute Layout")](essential-xaml-syntax-images/absolutedemo-large.png "Absolute Layout")
+[![](essential-xaml-syntax-images/absolutedemo-large.png "Absolute Layout")](essential-xaml-syntax-images/absolutedemo-large.png#lightbox "Absolute Layout")
 
 Für etwa so aussehen können Sie die Kenntnisse der Verwendung von XAML Frage. Sicherlich, der Wiederholung und Ordnungsmäßigkeit von der `LayoutBounds` Rechteck wird vorgeschlagen, die besser im Code realisiert werden kann.
 

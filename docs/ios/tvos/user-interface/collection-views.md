@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: f0201e114f55e0610aceb68f98fae60a801afc68
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f943d6b88d2fd7f38759fb32ecb612e102266657
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-collection-views"></a>Arbeiten mit Auflistungsansichten
 
@@ -20,7 +20,7 @@ _Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Auflistungsansichten 
 
 Auflistungsansichten ermöglichen eine Gruppe von Inhalt mithilfe von beliebigen Layouts angezeigt werden sollen. Mithilfe der integrierten Unterstützung, ermöglichen sie die einfache Erstellung Raster-ähnliches oder linearen Layouts beim unterstützen auch benutzerdefinierte Layouts.
 
-[ ![](collection-views-images/collection01.png "Beispiel-Auflistungsansicht")](collection-views-images/collection01.png)
+[![](collection-views-images/collection01.png "Beispiel-Auflistungsansicht")](collection-views-images/collection01.png#lightbox)
 
 Die Auflistungsansicht verwaltet eine Auflistung von Elementen, die mit einem Delegaten und einer Datenquelle Eingreifen des Benutzers und den Inhalt der Auflistung bereitstellen. Da die Auflistungsansicht auf ein Subsystem Layout, die unabhängig von der die Sicht selbst ist basiert, kann die Darstellung von die Auflistungsansicht Daten auf dynamische Bereitstellung ein anderes Layout leicht ändern.
 
@@ -103,36 +103,36 @@ Führen Sie wir Folgendes:
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` Datei und in der iOS-Designer zu öffnen.
 1. Die vorhandene Sicht ein Bild anzeigen, eine Bezeichnung und eine Schaltfläche hinzu, und konfigurieren Sie sie wie folgt aussehen: 
 
-    [ ![](collection-views-images/collection02.png "Beispiel-layout")](collection-views-images/collection02.png)
+    [![](collection-views-images/collection02.png "Beispiel-layout")](collection-views-images/collection02.png#lightbox)
 1. Zuweisen einer **Namen** der Image-Ansicht und die Bezeichnung in der **Registerkarte "Widget"** von der **Eigenschaften-Explorer**. Zum Beispiel: 
 
-    [ ![](collection-views-images/collection03.png "Der Name der Einstellung")](collection-views-images/collection03.png)
+    [![](collection-views-images/collection03.png "Der Name der Einstellung")](collection-views-images/collection03.png#lightbox)
 1. Ziehen Sie anschließend eine Auflistung-View-Controller auf das Storyboard: 
 
-    [ ![](collection-views-images/collection04.png "Eine Auflistung-View-Controller")](collection-views-images/collection04.png)
+    [![](collection-views-images/collection04.png "Eine Auflistung-View-Controller")](collection-views-images/collection04.png#lightbox)
 1. Steuerelement ziehen über die Schaltfläche mit dem Auflistung View-Controller, und wählen Sie **Push** im Popupmenü: 
 
-    [ ![](collection-views-images/collection05.png "Wählen Sie im Popupmenü Push")](collection-views-images/collection05.png)
+    [![](collection-views-images/collection05.png "Wählen Sie im Popupmenü Push")](collection-views-images/collection05.png#lightbox)
 1. Wenn die app ausgeführt wird, wird dies stellen die Auflistungsansicht angezeigt werden, sobald der Benutzer die Schaltfläche klickt.
 1. Wählen Sie die Auflistungsansicht, und geben Sie die folgenden Werte in der **Registerkarte "Layout"** von der **Eigenschaften-Explorer**: 
 
-    [ ![](collection-views-images/collection06.png "Im Eigenschaften-Explorer")](collection-views-images/collection06.png)
+    [![](collection-views-images/collection06.png "Im Eigenschaften-Explorer")](collection-views-images/collection06.png#lightbox)
 1. Steuert die Größe der einzelnen Zellen und die Rahmenlinien zwischen den Zellen und äußeren Rand der Auflistungsansicht.
 1. Wählen Sie die Collection-View-Controller, und legen Sie die Klasse den `CityCollectionViewController` in der **Registerkarte "Widget"**: 
 
-    [ ![](collection-views-images/collection07.png "Legen Sie die Klasse den CityCollectionViewController")](collection-views-images/collection07.png)
+    [![](collection-views-images/collection07.png "Legen Sie die Klasse den CityCollectionViewController")](collection-views-images/collection07.png#lightbox)
 1. Wählen Sie die Auflistungsansicht, und legen Sie die Klasse den `CityCollectionView` in der **Registerkarte "Widget"**: 
 
-    [ ![](collection-views-images/collection08.png "Legen Sie die Klasse den CityCollectionView")](collection-views-images/collection08.png)
+    [![](collection-views-images/collection08.png "Legen Sie die Klasse den CityCollectionView")](collection-views-images/collection08.png#lightbox)
 1. Wählen Sie die Zelle der Auflistung anzeigen, und legen Sie die Klasse den `CityCollectionViewCell` in der **Registerkarte "Widget"**: 
 
-    [ ![](collection-views-images/collection09.png "Legen Sie die Klasse den CityCollectionViewCell")](collection-views-images/collection09.png)
+    [![](collection-views-images/collection09.png "Legen Sie die Klasse den CityCollectionViewCell")](collection-views-images/collection09.png#lightbox)
 1. In der **Registerkarte "Widget"** sicher, dass die **Layout** ist `Flow` und **Scroll Richtung** ist `Vertical` für die Auflistungsansicht: 
 
-    [ ![](collection-views-images/collection10.png "Die Registerkarte "Widget"")](collection-views-images/collection10.png)
+    [![](collection-views-images/collection10.png "Die Registerkarte "Widget"")](collection-views-images/collection10.png#lightbox)
 1. Wählen Sie die Zelle der Auflistung anzeigen, und legen seine **Identität** auf `CityCell` in der **Registerkarte "Widget"**: 
 
-    [ ![](collection-views-images/collection11.png "Legen Sie die Identität auf CityCell")](collection-views-images/collection11.png)
+    [![](collection-views-images/collection11.png "Legen Sie die Identität auf CityCell")](collection-views-images/collection11.png#lightbox)
 1. Speichern Sie die Änderungen.
     
 
@@ -143,34 +143,34 @@ Führen Sie wir Folgendes:
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` Datei und in der iOS-Designer zu öffnen.
 1. Die vorhandene Sicht ein Bild anzeigen, eine Bezeichnung und eine Schaltfläche hinzu, und konfigurieren Sie sie wie folgt aussehen: 
 
-    [ ![](collection-views-images/collection02vs.png "Konfigurieren Sie das layout")](collection-views-images/collection02vs.png)
+    [![](collection-views-images/collection02vs.png "Konfigurieren Sie das layout")](collection-views-images/collection02vs.png#lightbox)
 1. Zuweisen einer **Namen** der Image-Ansicht und die Bezeichnung in der **Registerkarte "Widget"** von der **Eigenschaften-Explorer**. Zum Beispiel: 
 
-    [ ![](collection-views-images/collection03vs.png "Im Eigenschaften-Explorer")](collection-views-images/collection03vs.png)
+    [![](collection-views-images/collection03vs.png "Im Eigenschaften-Explorer")](collection-views-images/collection03vs.png#lightbox)
 1. Ziehen Sie anschließend eine Auflistung-View-Controller auf das Storyboard: 
 
-    [ ![](collection-views-images/collection04vs.png "Eine Auflistung-View-Controller")](collection-views-images/collection04vs.png)
+    [![](collection-views-images/collection04vs.png "Eine Auflistung-View-Controller")](collection-views-images/collection04vs.png#lightbox)
 1. Steuerelement ziehen über die Schaltfläche mit dem Auflistung View-Controller, und wählen Sie **Push** im Popupmenü: 
 
-    [ ![](collection-views-images/collection05vs.png "Wählen Sie im Popupmenü Push")](collection-views-images/collection05vs.png)
+    [![](collection-views-images/collection05vs.png "Wählen Sie im Popupmenü Push")](collection-views-images/collection05vs.png#lightbox)
 1. Wenn die app ausgeführt wird, wird dies stellen die Auflistungsansicht angezeigt werden, sobald der Benutzer die Schaltfläche klickt.
 1. Wählen Sie die Auflistungsansicht und klicken Sie in der **Registerkarte "Layout"** von der **Eigenschaften-Explorer** Geben Sie die **Breite** als _361_ und  **Höhe** als _256_ 
 1. Steuert die Größe der einzelnen Zellen und die Rahmenlinien zwischen den Zellen und äußeren Rand der Auflistungsansicht.
 1. Wählen Sie die Collection-View-Controller, und legen Sie die Klasse den `CityCollectionViewController` in der **Registerkarte "Widget"**: 
 
-    [ ![](collection-views-images/collection07vs.png "Legen Sie die Klasse den CityCollectionViewController")](collection-views-images/collection07vs.png)
+    [![](collection-views-images/collection07vs.png "Legen Sie die Klasse den CityCollectionViewController")](collection-views-images/collection07vs.png#lightbox)
 1. Wählen Sie die Auflistungsansicht, und legen Sie die Klasse den `CityCollectionView` in der **Registerkarte "Widget"**: 
 
-    [ ![](collection-views-images/collection08vs.png "Legen Sie die Klasse den CityCollectionView")](collection-views-images/collection08vs.png)
+    [![](collection-views-images/collection08vs.png "Legen Sie die Klasse den CityCollectionView")](collection-views-images/collection08vs.png#lightbox)
 1. Wählen Sie die Zelle der Auflistung anzeigen, und legen Sie die Klasse den `CityCollectionViewCell` in der **Registerkarte "Widget"**: 
 
-    [ ![](collection-views-images/collection09vs.png "Legen Sie die Klasse den CityCollectionViewCell")](collection-views-images/collection09vs.png)
+    [![](collection-views-images/collection09vs.png "Legen Sie die Klasse den CityCollectionViewCell")](collection-views-images/collection09vs.png#lightbox)
 1. In der **Registerkarte "Widget"** sicher, dass die **Layout** ist `Flow` und **Scroll Richtung** ist `Vertical` für die Auflistungsansicht: 
 
-    [ ![](collection-views-images/collection10vs.png "Registerkarte "%tdas Widget"")](collection-views-images/collection10vs.png)
+    [![](collection-views-images/collection10vs.png "Registerkarte "%tdas Widget"")](collection-views-images/collection10vs.png#lightbox)
 1. Wählen Sie die Zelle der Auflistung anzeigen, und legen seine **Identität** auf `CityCell` in der **Registerkarte "Widget"**: 
 
-    [ ![](collection-views-images/collection11vs.png "Legen Sie die Identität auf CityCell")](collection-views-images/collection11vs.png)
+    [![](collection-views-images/collection11vs.png "Legen Sie die Identität auf CityCell")](collection-views-images/collection11vs.png#lightbox)
 1. Speichern Sie die Änderungen.
     
 
@@ -806,17 +806,17 @@ public override void ViewWillAppear (bool animated)
 
 Wenn Sie beim Erstellen und die Anwendung ausführen, wird die Hauptansicht alles vorhanden mit dem Standard-Ort angezeigt:
 
-[ ![](collection-views-images/run01.png "Der Hauptbildschirm")](collection-views-images/run01.png)
+[![](collection-views-images/run01.png "Der Hauptbildschirm")](collection-views-images/run01.png#lightbox)
 
 Wenn der Benutzer auf die **wählen Sie eine Ansicht** Schaltfläche, die Auflistungsansicht wird angezeigt:
 
-[ ![](collection-views-images/run02.png "Die Auflistungsansicht")](collection-views-images/run02.png)
+[![](collection-views-images/run02.png "Die Auflistungsansicht")](collection-views-images/run02.png#lightbox)
 
 Jeder Ort, den hat seine `CanSelect` -Eigenschaftensatz auf `false` angezeigt abgeblendet ist und der Benutzer wird nicht in der Lage, den Fokus auf den sie festgelegt. Wenn der Benutzer ein Element hervorgehoben (Stellen sie in den Fokus hat) der Titel angezeigt wird und sie können den Effekt Parallax Besonderheit Neigung das Bild in 3D.
 
 Klickt der Benutzer ein Bild auswählen, wird die Auflistungsansicht wird geschlossen, und die Hauptansicht wird erneut angezeigt, mit dem neuen Image:
 
-[ ![](collection-views-images/run03.png "Ein neues Image auf dem Startbildschirm")](collection-views-images/run03.png)
+[![](collection-views-images/run03.png "Ein neues Image auf dem Startbildschirm")](collection-views-images/run03.png#lightbox)
 
 <a name="Creating-Custom-Layout-and-Reordering-Items" />
 
@@ -837,7 +837,7 @@ In diesem Artikel wurden behandelt, Entwerfen und Arbeiten mit Auflistungsansich
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiele für tvos. außerdem wurden](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvos. außerdem wurden Handbücher für interaktive Workflowdienste-Schnittstelle](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [App-Programmierhandbuch für tvos. außerdem wurden](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

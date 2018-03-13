@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1b0b1db6bf73b03eed99c5ede038d07bb3ccf284
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 23aa944b88fe3e743b6b29810c29d1843f2efc29
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="api-design"></a>API-Entwurf
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -23,7 +22,6 @@ Bindungen für verschiedene Android-APIs ermöglichen Entwicklern das Erstellen 
 
 Den Kern der Xamarin.Android es ist ein Interop-Modul, Bridges die C#-Welt mit der Außenwelt Java und bietet Entwicklern den Zugriff an die Java-APIs von C#- oder andere .NET-Sprachen:.
 
-<a name="Design_Principles" />
 
 ## <a name="design-principles"></a>Entwurfsprinzipien
 
@@ -64,7 +62,6 @@ Dies sind einige der für die Bindung Xamarin.Android unsere Entwurfsprinzipien
     - Bereitstellen eines Mechanismus, um beliebige Java-Bibliotheken aufrufen ( [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)).
 
 
-<a name="Assemblies" />
 
 ## <a name="assemblies"></a>Assemblys
 
@@ -72,11 +69,9 @@ Xamarin.Android umfasst eine Reihe von Assemblys, die bilden die *MonoMobile Pro
 
 Die Bindungen für die Android-Plattform sind in enthalten die `Mono.Android.dll` Assembly. Diese Assembly enthält die gesamte Bindung für verbrauchende Android-APIs und zur Kommunikation mit der Android-Runtime-VM.
 
-<a name="Binding_Design" />
 
 ## <a name="binding-design"></a>Binden von Entwurf
 
-<a name="Collections" />
 
 ### <a name="collections"></a>Auflistungen
 
@@ -112,7 +107,6 @@ if (goodSource.Count != 4) // false
     throw new InvalidOperationException ("should not be reached.");
 ```
 
-<a name="Properties" />
 
 ### <a name="properties"></a>Eigenschaften
 
@@ -127,7 +121,6 @@ Java-Methoden werden in den Eigenschaften, wenn dies angebracht transformiert:
 -  Eigenschaften sind *nicht* generiert, wenn die Eigenschaft ein Array sein würde.
 
 
-<a name="Events_and_Listeners" />
 
 ### <a name="events-and-listeners"></a>Ereignisse und die Listener
 
@@ -177,7 +170,6 @@ Wir möchten Hinzufügen von Überladungen für andere Methoden und Ctors die De
 
 Alle Listener Schnittstellen implementieren die [ `Android.Runtime.IJavaObject` ](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/) -Schnittstelle, aufgrund der Details zur Implementierung der Bindung, damit die Listenerklassen müssen diese Schnittstelle implementieren. Dies kann geschehen, indem Sie die Listener-Schnittstelle implementieren, auf eine Unterklasse von [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) bzw. alle anderen Java-Objekt, z. B. eine Android-Aktivität umbrochen.
 
-<a name="Runnables" />
 
 ### <a name="runnables"></a>Runnables
 
@@ -188,7 +180,6 @@ Die `Runnable` Schnittstelle enthält nur die "void" Methode [run()](https://dev
 
 Es bleibt die [IRunnable](https://developer.xamarin.com/api/type/Java.Lang.IRunnable/) Überladungen vorhanden, statt diese zu ersetzen, da mehrere Typen die Schnittstelle implementieren und daher können direkt als Runnables übergeben werden.
 
-<a name="Inner_Classes" />
 
 ### <a name="inner-classes"></a>Interne Klassen
 
@@ -227,7 +218,6 @@ class CubeWallpaper : WallpaperService {
 
 Hinweis wie `CubeWallpaper.CubeEngine` geschachtelt ist `CubeWallpaper`, `CubeWallpaper` erbt von der enthaltenden Klasse des `WallpaperService.Engine`, und `CubeWallpaper.CubeEngine` verfügt über einen Konstruktor nimmt den deklarierenden Typ-- `CubeWallpaper` in diesem Fall – alle als oben angegeben.
 
-<a name="Interfaces" />
 
 ### <a name="interfaces"></a>Schnittstellen
 
@@ -254,7 +244,7 @@ Die *Parcelable* Schnittstelle Konstanten befinden sich in der [Android.OS.Parce
 
 
 > [!NOTE]
-> **Hinweis:** Xamarin.Android 1.9 ab, Java-Schnittstelle Konstanten sind <em>dupliziert</em> in dem Bestreben, die zur Vereinfachung Portieren von Java-code. Dadurch wird die um Portierung von Java-Code zu verbessern, die benötigt [android Anbieter](http://developer.android.com/reference/android/provider/package-summary.html) Konstanten-Schnittstelle.
+> Beginnen mit dem Xamarin.Android 1.9, Java-Schnittstelle Konstanten sind <em>dupliziert</em> in dem Bestreben, die zur Vereinfachung Portieren von Java-code. Dadurch wird die um Portierung von Java-Code zu verbessern, die benötigt [android Anbieter](http://developer.android.com/reference/android/provider/package-summary.html) Konstanten-Schnittstelle.
 
 Zusätzlich zu den oben erwähnten Typen stehen Ihnen vier weitere Änderungen:
 
@@ -277,7 +267,6 @@ Bisher mussten Sie so portieren Sie diesen Ausdruck in c# alle Schnittstellen be
 
 Zum Schluss-Typen eine *Consts* suffix z. B. *Android.OS.ParcelableConsts* nun veraltet, außer die neu eingeführte InterfaceConsts Typen geschachtelt sind. Diese werden Xamarin.Android 3.0 entfernt.
 
-<a name="Resources" />
 
 ## <a name="resources"></a>Ressourcen
 
@@ -323,7 +312,6 @@ public class Resource {
 
 Verwenden Sie dann `Resource.Drawable.icon` zu verweisen die `drawable/icon.png` -Datei oder `Resource.Layout.main` zu verweisen die `layout/main.xml` -Datei oder `Resource.String.first_string` Verweis auf die erste Zeichenfolge in der Wörterbuchdatei `values/strings.xml`.
 
-<a name="Constants_and_Enumerations" />
 
 ## <a name="constants-and-enumerations"></a>Konstanten und Enumerationen
 

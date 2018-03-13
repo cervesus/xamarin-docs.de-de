@@ -3,16 +3,16 @@ title: Zuordnung
 description: Xamarin.Forms nutzt die systemeigene APIs-Zuordnung auf jeder Plattform.
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
+ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 98e6cade952e656046c6c0981a0b73ff0894c9d6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 2f0ad800ed1ab3a336f10dd4431e234ac4ff9675
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="map"></a>Zuordnung
 
@@ -28,7 +28,7 @@ Nachdem es konfiguriert wurde, die `Map` funktioniert genau wie jedes andere Xam
 
 Das Kartensteuerelement wurde in verwendet das [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/) Beispiel, das im unten dargestellt wird.
 
- [ ![Zuordnungen in der Stichprobe MobileCRM](map-images/maps-zoom-sml.png "Zuordnung Steuerelement Beispiel")](map-images/maps-zoom.png "Zuordnung Steuerelement-Beispiel")
+ [![Zuordnungen in der Stichprobe MobileCRM](map-images/maps-zoom-sml.png "Zuordnung Steuerelement Beispiel")](map-images/maps-zoom.png#lightbox "Zuordnung Steuerelement-Beispiel")
 
 Kartenfunktion kann weiter verbessert werden, indem Sie erstellen eine [Zuordnen von benutzerdefinierten Renderers](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
 
@@ -103,7 +103,7 @@ Befolgen Sie diese Anweisungen verwenden, fügen Sie den API-Schlüssel in der *
 Ohne einen gültigen API-Schlüssel wird der Maps-Steuerelement als graues Feld unter Android angezeigt.
 
 > [!NOTE]
-> **Hinweis**: Denken Sie daran, generieren Sie einen anderen Schlüssel mithilfe der Keystore-Datei, die verwendet wird, wie die endgültigen Produktversion von jeder Anwendung, die hochgeladen wird zum Google Play Store. Die schlüsselgenerierung für die Entwicklung und Debuggen funktioniert nicht, und die app von Google Play heruntergeladen werden Kartenanzeige zerstört. Beachten Sie dabei außerdem die Taste, wenn der app erneut generieren **Paketname** ändert.
+> Denken Sie daran, generieren Sie einen anderen Schlüssel mithilfe der Keystore-Datei, die verwendet wird, wie die endgültigen Produktversion von jeder Anwendung, die hochgeladen wird zum Google Play Store. Die schlüsselgenerierung für die Entwicklung und Debuggen funktioniert nicht, und die app von Google Play heruntergeladen werden Kartenanzeige zerstört. Beachten Sie dabei außerdem die Taste, wenn der app erneut generieren **Paketname** ändert.
 
 Sie müssen auch auf die entsprechende Berechtigungen zu aktivieren, indem Sie mit der rechten Maustaste auf das Android-Projekt, und wählen **Optionen > Erstellen > Android-Anwendung** und zu laufen Folgendes:
 
@@ -185,7 +185,7 @@ slider.ValueChanged += (sender, e) => {
 };
 ```
 
- [ ![Zuordnungen mit Zoom](map-images/maps-zoom-sml.png "Zuordnung Steuerelement Zoom")](map-images/maps-zoom.png "Zuordnung Steuerelement Zoom")
+ [![Zuordnungen mit Zoom](map-images/maps-zoom-sml.png "Zuordnung Steuerelement Zoom")](map-images/maps-zoom.png#lightbox "Zuordnung Steuerelement Zoom")
 
 ### <a name="map-pins"></a>Map-Pins
 
@@ -253,4 +253,4 @@ Nach der Konfiguration der Maps-API kann verwendet werden, um Zuordnungen mit Pi
 
 - [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/)
 - [Zuordnen von benutzerdefinierten Renderers](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
-- [Xamarin.Forms-Beispiele](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://developer.xamarin.com/samples/xamarin-forms/all/)

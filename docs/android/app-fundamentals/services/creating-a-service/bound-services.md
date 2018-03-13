@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: topgenorth
+ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: a299969e6251bcea59ea2ec52db90d59cf0461ad
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 04307eab1bc8dc28fa69315809e254c920fb6d56
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Bound Services in Xamarin.Android
 
@@ -36,7 +36,7 @@ Dieses Diagramm veranschaulicht, wie die Aktivität, Dienst-Verbindung, Binder u
 
 Diese Anleitung wird beschrieben, wie Erweitern der `Service` Klasse zum Implementieren eines gebundenen Diensts. Es befasst sich auch implementieren `IServiceConnection` und Erweitern von `Binder` damit einen Client mit dem Dienst kommunizieren kann. Eine Beispiel-app begleitet dieses Handbuch, die eine Lösung mit einer einzelnen Xamarin.Android Projekt mit der Bezeichnung enthält  **[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)**  . Dies ist eine sehr einfache Anwendung die veranschaulicht, wie einen Dienst implementiert und wie Sie eine Aktivität zu binden. Der gebundene-Dienst hat eine sehr einfache API mit nur eine Methode, `GetFormattedTimestamp`, womit eine Zeichenfolge, die dem Benutzer mitteilt, wenn der Dienst gestartet wurde und wie lange er ausgeführt wurde. Die app kann auch der Benutzer manuell Aufheben der Bindung und mit dem Dienst verbunden.
 
-[![Screenshot der Anwendung auf einem Android-Telefon](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png)
+[![Screenshot der Anwendung auf einem Android-Telefon](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png#lightbox)
 
 ## <a name="implementing-and-consuming-a-bound-service"></a>Implementieren und Verarbeiten einer gebundenen-Diensts
 

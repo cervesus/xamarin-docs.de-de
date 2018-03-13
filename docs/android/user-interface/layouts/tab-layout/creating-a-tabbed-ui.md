@@ -8,25 +8,24 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 99a35705c408d16f5b4b0e71e53dd453ae377341
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2dd397e824ce7735be4421c3f258852de3f77ecb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="walkthrough---creating-a-tabbed-ui-with-tabhost"></a>Exemplarische Vorgehensweise – erstellen einer Benutzeroberflächenautomatisierungs mit Registerkarten mit TabHost
 
 _Dieser Artikel leitet Sie durch Erstellen einer Benutzeroberfläche im Registerkartenformat Xamarin.Android mithilfe der TabHost-API._
 
 > [!NOTE]
-> **Hinweis:** `TabHost` eine alten API, die von Google veraltet ist. Entwicklern wird empfohlen, die im Registerformat mithilfe Anwendungen erstellen, die [ActionBar](~/android/user-interface/controls/action-bar.md). Die `ActionBar` in allen Android-Version verfügbar ist. Es wurde erstmals in Android 3.0 (API-Ebene 11) und portiert wurde wieder Android 2.2 (API-Ebene 8) und Android 2.3 (API-Ebene 10) in der [V7 AppCompat Bibliothek](http://developer.android.com/tools/support-library/features.html#v7-appcompat), steht auf Xamarin.Android über die [Xamarin Android-Unterstützungsbibliothek – V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) Paket.
+> `TabHost` ist eine alte API, die von Google als veraltet markiert wurden. Entwicklern wird empfohlen, die im Registerformat mithilfe Anwendungen erstellen, die [ActionBar](~/android/user-interface/controls/action-bar.md). Die `ActionBar` in allen Android-Version verfügbar ist. Es wurde erstmals in Android 3.0 (API-Ebene 11) und portiert wurde wieder Android 2.2 (API-Ebene 8) und Android 2.3 (API-Ebene 10) in der [V7 AppCompat Bibliothek](http://developer.android.com/tools/support-library/features.html#v7-appcompat), steht auf Xamarin.Android über die [Xamarin Android-Unterstützungsbibliothek – V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) Paket.
 
 Dieser Artikel leitet Sie durch Erstellen einer Benutzeroberflächenautomatisierungs mit Registerkarten im Xamarin.Android mithilfe der `TabHost` API. Dies ist eine ältere API, die in allen Versionen von Android verfügbar ist. In diesem Beispiel wird eine Anwendung mit drei Registerkarten, mit der Logik für die einzelnen Registerkarten, die in einer Aktivität verkapselt erstellt.
 Der folgende Screenshot ist ein Beispiel für die Anwendung, die wir erstellen:
 
 ![Beispiel-Screenshot der app mit mehreren Registerkarten](creating-a-tabbed-ui-images/image02.png)
 
-<a name="Creating_the_Application" />
 
 ## <a name="creating-the-application"></a>Erstellen der Anwendung
 
@@ -61,7 +60,7 @@ Erste aktualisieren wir die Layoutdatei **Resources/Layout/Main.axml** , die die
 
 Das folgende Bildschirmfoto zeigt das Layout im Xamarin-Designer:
 
-[![Screenshot des Layouts TabHost im Xamarin-Designer](creating-a-tabbed-ui-images/image04-sml.png)](creating-a-tabbed-ui-images/image04.png)
+[![Screenshot des Layouts TabHost im Xamarin-Designer](creating-a-tabbed-ui-images/image04-sml.png)](creating-a-tabbed-ui-images/image04.png#lightbox)
 
 Die TabHost benötigen zwei untergeordnete Ansichten darin: eine `TabWidget` und ein `FrameLayout`. Position der `TabWidget` und `FrameLayout` vertikal innerhalb der `TabHost`, eine `LinearLayout` verwendet wird. Die FrameLayout ist, in dem der Inhalt für jede Registerkarte geht also leer, da die `TabHost` wird jede Aktivität zur Laufzeit automatisch eingebettet. Es gibt mehrere Regeln, die beachtet werden müssen, wenn es darum geht, das Layout im Registerkartenformat Benutzeroberflächen erstellen:
 
@@ -203,7 +202,6 @@ Führen Sie die Anwendung aus. Ihre Anwendung sollte am Anfang des in dieser exe
 Das ist alles! Wir haben eine Anwendung im Registerkartenformat erstellt, die den Benutzer eine einfache Möglichkeit navigieren Sie zu unterschiedlichen Teilen einer Anwendung gewährt.
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

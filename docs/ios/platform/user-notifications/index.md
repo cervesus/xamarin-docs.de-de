@@ -3,16 +3,16 @@ title: Benutzer Benachrichtigungen Framework
 description: Dieser Artikel umfasst alle von den Verfahren, die Benachrichtigung der Benutzer von iOS 10 und wie Sie Ihre Verwendung in einer app Xamarin.iOS erweitert wurden.
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
+ms.assetid: 223FCE25-A3E6-4255-BCFC-0E3136F4E987
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/01/2016
-ms.openlocfilehash: 473f9b4d4fa2a034c7f39ce309fb3f921d809a10
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1ab0a4add92db21c352dbaeadc71a3ff1e3d0cf9
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="user-notifications-framework"></a>Benutzer Benachrichtigungen Framework
 
@@ -29,7 +29,7 @@ Der neue Benutzer Benachrichtigung Benutzeroberflächen-Framework ermöglicht di
 
 In diesem Artikel stellt alle von den Verfahren, die Benutzerbenachrichtigungen wurden für iOS 10 verbessert und bietet eine kurze Einführung in die sie mithilfe des neuen Benutzers benachrichtigungsframeworks implementieren.
 
-## <a name="advanced-user-notificationsiosplatformuser-notificationsadvanced-user-notificationsmd"></a>[Fortgeschrittene Benutzerbenachrichtigungen](~/ios/platform/user-notifications/advanced-user-notifications.md)
+## <a name="advanced-user-notificationsiosplatformuser-notificationsadvanced-user-notificationsmd"></a>[Erweiterte Benutzerbenachrichtigungen](~/ios/platform/user-notifications/advanced-user-notifications.md)
 
 Dieser Artikel hat einen tieferen Einblick in das neue Benutzerbenachrichtigungen-Framework und wie Sie vollständige in einem Xamarin.iOS-app nutzen.
 

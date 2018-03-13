@@ -7,21 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 18c53ed6428eff911420c696d45b341d8e0fa5c1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1bf481e4999365f4afc52cb9dda83c6e627950e1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-listviews-appearance"></a>Anpassen der Darstellung einer ListView
 
-<a name="overview" />
 
 ## <a name="overview"></a>Übersicht
 
 Die Darstellung einer ListView wird durch das Layout der angezeigten Zeilen vorgegeben. So ändern Sie die Darstellung einer `ListView`, verwenden Sie eine andere Zeilenlayout.
 
-<a name="Built-in_Row_Views" />
 
 ## <a name="built-in-row-views"></a>Integrierte Zeilenansichten
 
@@ -53,11 +51,11 @@ Es gibt zwölf integrierte Sichten, die mit verwiesen werden können **Android.R
 
 Jede Zeilenansicht integrierten verfügt über einen integrierten Stil zugeordnet. Diese Screenshots zeigen, wie jede Ansicht angezeigt wird:
 
-[![Screenshots TestListItem, SimpleSelectableListItem SimpleListitem1 und SimpleListItem2](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png)
+[![Screenshots TestListItem, SimpleSelectableListItem SimpleListitem1 und SimpleListItem2](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png#lightbox)
 
-[![Screenshots SimpleListItemActivated1, SimpleListItemActivated2 SimpleListItemChecked und SimpleListItemMultipleChecked](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png)
+[![Screenshots SimpleListItemActivated1, SimpleListItemActivated2 SimpleListItemChecked und SimpleListItemMultipleChecked](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png#lightbox)
 
-[![Screenshots SimpleListItemSingleChoice, TwoLineListItem ActivityListItem und SimpleExpandableListItem](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png)
+[![Screenshots SimpleListItemSingleChoice, TwoLineListItem ActivityListItem und SimpleExpandableListItem](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png#lightbox)
 
 Die **BuiltInViews/HomeScreenAdapter.cs** -Beispieldatei (in der **BuiltInViews** Lösung) enthält den Code, um die nicht erweiterbare Liste Element Bildschirme zu erstellen. Die Ansicht wird festgelegt, der `GetView` Methode wie folgt:
 
@@ -88,7 +86,6 @@ view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableLi
 Dann zum Festlegen der Eigenschaften für die Ansicht "" und die untergeordnete Ansicht verweisen auf den Standard `Text1` und `Text2` Bezeichner zu steuern, wie oben gezeigt. Der SimpleExpandableListItem Screenshot (siehe oben) enthält ein Beispiel einer einzeiligen Gruppe (SimpleExpandableListItem1) und einer zweizeiligen untergeordnete Ansicht (SimpleExpandableListItem2). Klicken Sie alternativ die Ansicht "" kann für zwei Zeilen (SimpleExpandableListItem2) konfiguriert werden und für eine Zeile (SimpleExpandableListItem1), kann die untergeordnete Ansicht konfiguriert werden oder beide Gruppe Ansicht und untergeordnete Ansicht kann die gleiche Anzahl von Zeilen haben. 
 
 
-<a name="Accessories" />
 
 ## <a name="accessories"></a>Zubehör
 
@@ -102,7 +99,7 @@ Zeilen können Zubehör rechts der Ansicht zur Angabe des Auswahlstatus hinzugef
 
 Die zuvor erwähnten Zubehör sind in den folgenden Bildschirmen, in der entsprechenden Reihenfolge dargestellt:
 
-[![Screenshots der SimpleListItemChecked SimpleListItemSingleChoice und SimpleListItemMultipleChoice mit Zubehör](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png)
+[![Screenshots der SimpleListItemChecked SimpleListItemSingleChoice und SimpleListItemMultipleChoice mit Zubehör](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png#lightbox)
 
 Zum Anzeigen eines diese Zubehör übergeben Festlegen der erforderlichen Layout-Ressourcen-ID an den Adapter klicken Sie dann manuell den Auswahlzustand für die erforderlichen Zeilen. Diese Codezeile veranschaulicht das Erstellen und Zuweisen einer `Adapter` mit einer der für diese Layouts:
 
@@ -112,7 +109,6 @@ ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListI
 
 Die `ListView` selbst unterstützt verschiedene Modi, unabhängig von den Accessor, der angezeigt wird. Um Verwirrung zu vermeiden, verwenden Sie `Single` Auswahlmodus mit `Checked` und `SingleChoice` Zubehör und `Multiple` Modus mit der `MultipleChoice` Stil. Der Auswahlmodus wird gesteuert, indem die `ChoiceMode` Eigenschaft von der `ListView`.
 
-<a name="Handling_API_Level" />
 
 ### <a name="handling-api-level"></a>Behandeln von API-Ebene
 
@@ -137,7 +133,6 @@ lv.ChoiceMode = Android.Widget.ChoiceMode.Single; // Single
 */
 ```
 
-<a name="Selecting_Items_Programmatically" />
 
 ### <a name="selecting-items-programmatically"></a>Programmgesteuertes auswählen von Elementen
 
@@ -165,7 +160,6 @@ for (var i = 0; i < sparseArray.Size(); i++ )
 Console.WriteLine();
 ```
 
-<a name="Creating_Custom_Row_Layouts" />
 
 ## <a name="creating-custom-row-layouts"></a>Erstellen von benutzerdefinierten Zeile Layouts
 
@@ -188,7 +182,6 @@ Dieses Beispiel unterscheidet sich von den vorherigen Beispielen auf vielfältig
 
 Diese Änderungen werden im folgenden beschrieben, beginnend mit der Aktivität und die benutzerdefinierte Zeilenansicht erstellen, und klicken Sie dann die Änderungen an den Adapter und die Aktivität, um die Berichte Rendern abdecken.
 
-<a name="Adding_a_ListView_to_an_Activity_Layout" />
 
 ### <a name="adding-a-listview-to-an-activity-layout"></a>Ein Aktivitätslayout für die hinzugefügt eine Listenansicht
 
@@ -220,7 +213,6 @@ Da `HomeScreen` erbt nicht mehr von `ListActivity` keine Standardansicht, daher 
 
 Der Vorteil der Verwendung einer `Activity` über ein benutzerdefiniertes Layout (anstelle von einer `ListActivity`) liegt in der Möglichkeit, zusätzliche Steuerelemente auf dem Bildschirm z. B. die Überschrift hinzufügen `TextView` in diesem Beispiel.
 
-<a name="Creating_a_Custom_Row_Layout" />
 
 ### <a name="creating-a-custom-row-layout"></a>Erstellen eines benutzerdefinierten Zeile Layouts
 
@@ -267,7 +259,6 @@ Eine andere AXML Layoutdatei ist erforderlich, die benutzerdefinierte Layout fü
 
 Während eine benutzerdefinierte Zeilenlayout viele verschiedene Steuerelemente enthalten kann, Durchführen eines Bildlaufs Leistung kann von komplexen Entwürfe betroffen sein, und mit Bildern (vor allem wenn sie über das Netzwerk geladen werden). Finden Sie Google Artikel Weitere Informationen zur Rückgabe von fortlaufenden Leistungsprobleme.
 
-<a name="Referencing_a_Custom_Row_View" />
 
 ### <a name="referencing-a-custom-row-view"></a>Verweisen auf eine benutzerdefinierte Zeilenansicht
 
@@ -309,7 +300,6 @@ public class HomeScreenAdapter : BaseAdapter<TableItem> {
 }
 ```
 
-<a name="Referencing_the_Custom_ListView_in_the_Activity" />
 
 ### <a name="referencing-the-custom-listview-in-the-activity"></a>Verweisen auf benutzerdefinierte ListView in der Aktivität
 
@@ -343,10 +333,9 @@ void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 
 Der resultierende Bildschirm sieht wie folgt:
 
-[![Screenshot des resultierenden CustomRowView](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png)
+[![Screenshot des resultierenden CustomRowView](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
 
 
-<a name="Customizing_the_Row_Selector_Color" />
 
 ### <a name="customizing-the-row-selector-color"></a>Die Farbe der Zeile Auswahl anpassen
 
@@ -386,10 +375,9 @@ android:background="@drawable/CustomSelector"
 
 Eine ausgewählte Zeile und die entsprechende `Toast` Nachricht sieht wie folgt:
 
-[![Eine ausgewählte Zeile in Orange ändert, Toast-Nachricht, die Namen der ausgewählten Zeile anzeigen](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png)
+[![Eine ausgewählte Zeile in Orange ändert, Toast-Nachricht, die Namen der ausgewählten Zeile anzeigen](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
 
 
-<a name="Preventing_Flickering_on_Custom_Layouts" />
 
 ### <a name="preventing-flickering-on-custom-layouts"></a>Verhindern von Flackerns in benutzerdefinierten Layouts
 

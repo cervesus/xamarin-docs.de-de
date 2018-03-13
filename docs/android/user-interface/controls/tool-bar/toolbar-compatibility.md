@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: d4d6e93bf3a755d9b48c9e096de87b4c89f2831f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a17ad79d3f3b537332494fc368c878f2733d5db2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbar-compatibility"></a>Symbolleiste-Kompatibilität
 
-<a name="overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -36,7 +35,6 @@ So ändern Sie eine Anwendung, um die Version AppCompat Symbolleiste verwenden:
 Jeder dieser Schritte wird in den folgenden Abschnitten ausführlich erläutert.
 
 
-<a name="android_version" />
 
 ## <a name="set-the-minimum-and-target-android-version"></a>Legen Sie den niedrigsten und den Android-Zielversion
 
@@ -44,23 +42,20 @@ Zielframework für der app muss festgelegt sein, auf API-Ebene 21 oder höher, o
 
 Legen Sie das Zielframework auf API-Ebene 21 oder höher, und legen Sie die Android-API-Ebene projekteinstellungen auf die minimale Android-Version, die die app zu unterstützen. Weitere Informationen zum Festlegen von Android-API-Ebenen, finden Sie unter [Grundlegendes zu Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md). In der `ToolbarFun` Beispiel, die mindestens erforderliche Android-Version ist festgelegt auf KitKat (4.4 für API-Ebene). 
 
-<a name="install_nuget" />
 
 ## <a name="install-the-appcompat-nuget-package"></a>Installieren Sie das AppCompat NuGet-Paket
 
 Als Nächstes fügen Sie der [Android Unterstützungsbibliothek v7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) Paket zum Projekt. In Visual Studio mit der Maustaste **Verweise** , und wählen Sie **NuGet-Pakete verwalten...** . Klicken Sie auf **Durchsuchen** , suchen Sie nach **Android Unterstützungsbibliothek v7 AppCompat**. Wählen Sie **Xamarin.Android.Support.v7.AppCompat** , und klicken Sie auf **installieren**: 
 
-[![Screenshot der V7 Appcompat-Paket ausgewählt in NuGet-Pakete verwalten](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png)
+[![Screenshot der V7 Appcompat-Paket ausgewählt in NuGet-Pakete verwalten](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png#lightbox)
 
 Wenn dieses NuGet installiert ist, mehrere andere NuGet-Pakete werden ebenfalls installiert Falls noch nicht vorhanden (z. B. **Xamarin.Android.Support.Animated.Vector.Drawable**, **Xamarin.Android.Support.v4**, und **Xamarin.Android.Support.Vector.Drawable**). Weitere Informationen zum Installieren von NuGet-Pakete finden Sie unter [Exemplarische Vorgehensweise: einschließlich eines NuGet in Ihrem Projekt](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough). 
 
-<a name="appcompat_theme" />
 
 ## <a name="use-an-appcompat-theme-and-toolbar"></a>Verwenden Sie ein Design AppCompat und Symbolleiste
 
 AppCompat-Bibliothek enthält mehrere `Theme.AppCompat` Designs bereit, die auf einer beliebigen Version von Android unterstützt durch die AppCompat-Bibliothek verwendet werden können. Die `ToolbarFun` Beispiel-app-Design stammt aus `Theme.Material.Light.DarkActionBar`, die nicht auf Android-Versionen als Lollipop verfügbar ist. Aus diesem Grund `ToolbarFun` muss angepasst werden die AppCompat Entsprechung für das Design `Theme.AppCompat.Light.DarkActionBar`. Darüber hinaus da `Toolbar` ist nicht verfügbar auf Android-Versionen älter als Lollipop, wir muss AppCompat-Version verwenden `Toolbar`. Deshalb müssen Layouts verwenden `android.support.v7.widget.Toolbar` anstelle von `Toolbar`. 
 
-<a name="update_layouts" />
 
 ### <a name="update-layouts"></a>Aktualisieren von Layouts
 
@@ -91,7 +86,6 @@ Bearbeiten Sie **Resources/layout/toolbar.xml** und Ersetzen Sie den Inhalt durc
 
 Beachten Sie, dass die `?attr` Werte sind nicht mehr mit dem Präfix `android:` (Bedenken Sie, dass die `?` Notation verweist auf eine Ressource in das aktuelle Design). Wenn `?android:attr` wurden weiterhin verwendet Hier würden Android Wert des Attributs verweisen, von der Plattform, der derzeit ausgeführten anstatt von der AppCompat-Bibliothek. Da in diesem Beispiel verwendet die `actionBarSize` von der Bibliothek AppCompat definiert die `android:` Präfix wird gelöscht. Auf ähnliche Weise `@android:style` geändert wird, um `@style` , damit die `android:theme` -Attribut auf ein Design in der Bibliothek AppCompat festgelegt ist &ndash; der `ThemeOverlay.AppCompat.Dark.ActionBar` Design wird hier verwendet statt `ThemeOverlay.Material.Dark.ActionBar`. 
 
-<a name="update_style" />
 
 ### <a name="update-the-style"></a>Aktualisieren Sie die Formatvorlage
 
@@ -113,7 +107,6 @@ Bearbeiten Sie **Resources/values/styles.xml** und Ersetzen Sie den Inhalt durch
 Die Elementnamen und übergeordneten Design in diesem Beispiel werden nicht mehr mit dem Präfix `android:` da AppCompat-Bibliothek verwendet wird. Darüber hinaus wird das übergeordnete Design geändert, auf die AppCompat-Version von `Light.DarkActionBar`. 
 
 
-<a name="update_menus" />
 
 ### <a name="update-menus"></a>Aktualisieren von Menüs
 
@@ -180,7 +173,6 @@ Auf ähnliche Weise bearbeiten **Resources/menu/edit_menus.xml** und Ersetzen Si
 
 Wie dieser Namespace Schalter bieten Unterstützung für die `showAsAction` Attribut auf Android-Versionen vor der API-Ebene 11? Das benutzerdefinierte Attribut `showAsAction` und aller seiner möglichen Werte sind in der app enthalten, wenn die AppCompat NuGet installiert ist. 
 
-<a name="subclass" />
 
 ## <a name="subclass-appcompatactivity"></a>Unterklasse AppCompatActivity
 
@@ -208,7 +200,7 @@ Abschließend ändern Sie die Minimum Android Ebene, auf den vor Lollipop-Wert, 
 
 Erstellen Sie die app, und führen Sie es auf einem vorab Lollipop-Gerät oder Android-Emulator. Der folgende Screenshot zeigt die AppCompat-Version des **ToolbarFun** auf einem Nexus 4 KitKat (API-19) ausführen: 
 
-[![Vollständigen Screenshot der app, die auf einem Gerät KitKat ausgeführt wird, werden beide Symbolleisten angezeigt.](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png)
+[![Vollständigen Screenshot der app, die auf einem Gerät KitKat ausgeführt wird, werden beide Symbolleisten angezeigt.](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png#lightbox)
 
 Wenn die AppCompat-Bibliothek verwendet wird, Designs müssen nicht umgeschaltet werden basierend auf der Android-Version &ndash; die Bibliothek AppCompat ermöglicht eine konsistente benutzererfahrung in allen unterstützten Android-Versionen. 
 

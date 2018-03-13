@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 44775853a29a384216af308a607cfddd18c9c192
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b7c850d0ea06d69c3601081c1e9cde193903eb27
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="spinner"></a>Spinner
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 02/27/2018
 
 Im ersten Teil dieses Lernprogramms erstellen Sie eine einfache "Spinner" Widget, das eine Liste der Planeten anzeigt. Wenn ein Planet aktiviert ist, zeigt eine Toast-Nachricht das ausgewählte Element aus:
 
-[![Beispiel Screenshots HelloSpinner-app](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png)
+[![Beispiel Screenshots HelloSpinner-app](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
 
 Starten Sie ein neues Projekt mit dem Namen **HelloSpinner**.
 
@@ -120,7 +120,7 @@ Wenn ein Element ausgewählt ist, der Absender ist eine Umwandlung in einen [ `S
 
 Führen Sie die Anwendung ein; Es sollte wie folgt aussehen:
 
-[![Bildschirmabbildung von Beispiel "Spinner" bei Mars-Funktion als Planeten ausgewählt](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png)
+[![Bildschirmabbildung von Beispiel "Spinner" bei Mars-Funktion als Planeten ausgewählt](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png#lightbox)
 
 ## <a name="spinner-using-keyvalue-pairs"></a>Mithilfe von Schlüssel-/Wertpaaren "Spinner"
 
@@ -188,10 +188,9 @@ private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventAr
 
 Führen Sie die Anwendung ein; der Toast sollte wie folgt aussehen:
 
-[![Beispiel einer Planeten Auswahl anzeigen Temperatur](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png)
+[![Beispiel einer Planeten Auswahl anzeigen Temperatur](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
    
   
-<a name="Resources" />
 
 ## <a name="resources"></a>Ressourcen
 

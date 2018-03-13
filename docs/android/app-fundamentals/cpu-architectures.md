@@ -7,12 +7,12 @@ ms.assetid: D4BC889D-9164-49BB-9B7B-F6C4E4E109F1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 6139b5e27e9689da6366a2107acc14a6adcfc928
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 3df6dc72eaed74ad335596d55db8b1295b16f3c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cpu-architectures"></a>CPU-Architekturen
 
@@ -32,7 +32,7 @@ Normalerweise explizit wählen Sie eine Architektur (oder -Architekturen) Wenn d
 
 Doppelklicken Sie in Visual Studio auf **Eigenschaften** unterhalb des Projekts in **Projektmappen-Explorer** , und wählen Sie die **Android Options** Seite. Klicken Sie auf die **Verpackung** Registerkarte, und überprüfen Sie, ob **freigegebenen Laufzeit** deaktiviert ist (dies ausschalten können Sie explizit auswählen, welche ABIs unterstützen). Klicken Sie auf die **erweitert** Registerkarte und klicken Sie unter **erweiterte Eigenschaften**, überprüfen Sie die Architekturen, die Sie unterstützen möchten:
 
-[ ![Auswählen von Armeabi und Armeabi v7a](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png)
+[![Auswählen von Armeabi und Armeabi v7a](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -40,7 +40,7 @@ Normalerweise explizit wählen Sie eine Architektur (oder -Architekturen) Wenn d
 
 In Visual Studio für Mac, suchen Sie das Projekt in der **Lösung** aufzufüllen, klicken Sie auf das Symbol "Zahnrad" neben Ihrem Projekt aus, und wählen Sie **Optionen**. In der **Projektoptionen** Dialogfeld klicken Sie auf **Android erstellen**. Klicken Sie auf die **allgemeine** Registerkarte, und überprüfen Sie, ob **Verwenden von freigegebenen Mono / Runtime** deaktiviert ist (dies ausschalten können Sie explizit auswählen, welche ABIs unterstützen). Klicken Sie auf die **erweitert** Registerkarte und klicken Sie unter **ABIs unterstützt**, überprüfen Sie die ABIs für die Architekturen, die Sie unterstützen möchten:
 
-[ ![Auswählen von Armeabi und Armeabi v7a](cpu-architectures-images/xs/01-abi-selections-sml.png)](cpu-architectures-images/xs/01-abi-selections.png)
+[![Auswählen von Armeabi und Armeabi v7a](cpu-architectures-images/xs/01-abi-selections-sml.png)](cpu-architectures-images/xs/01-abi-selections.png#lightbox)
 
 -----
 
@@ -66,7 +66,7 @@ Um mehrere CPU-Architekturen abzielen, können Sie mehrere ABI (auf Kosten der g
 Sie müssen keine wählen **arm64 v8a** oder **x86_64** für 64-Bit-Geräte; 64-Bit-Unterstützung ist nicht erforderlich, um die Ausführung Ihrer Anwendung auf 64-Bit-Hardware. Z. B. die 64-Bit-ARM-Geräten (z. B. die [Nexus 9](http://www.google.com/nexus/9/)) können für die konfigurierten apps ausführen `armeabi-v7a`. Der wichtigste Vorteil von 64-Bit-Unterstützung aktiviert werden, damit Ihre app mehr Arbeitsspeicher können.
 
 > [!NOTE]
-> **Hinweis:**: Unterstützung für 64-Bit-Common Language Runtime ist derzeit eine experimentelle Funktion. Denken Sie daran, dass 64-Bit-Laufzeiten gelten *nicht* erforderlich, um Ihre Anwendung auf 64-Bit-Geräten auszuführen. 
+> Unterstützung für 64-Bit-Common Language Runtime ist derzeit eine experimentelle Funktion. Denken Sie daran, dass 64-Bit-Laufzeiten gelten *nicht* erforderlich, um Ihre Anwendung auf 64-Bit-Geräten auszuführen. 
 
 ## <a name="additional-information"></a>Zusätzliche Informationen
 

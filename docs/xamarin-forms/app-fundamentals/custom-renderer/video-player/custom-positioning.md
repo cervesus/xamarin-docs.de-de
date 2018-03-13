@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d4446d30491ee796ca93eadf2e107fc9d74748df
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e7f2ad9e94d68007b1b7d0cca212cd51515a0108
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-video-positioning"></a>Benutzerdefinierte video Positionierung
 
@@ -472,7 +472,7 @@ Aus diesem Grund die `Position` Eigenschaft der `VideoPlayer` gebunden werden ka
 
 Die ersten drei Punkten (· ·) verbirgt die `ActivityIndicator`; er ist der gleiche wie im vorherigen **Custom-Transporteigenschaften** Seite. Beachten Sie die beiden `Label` Elemente anzeigen die `Position` und `TimeToEnd` Eigenschaften. Mit den Auslassungspunkten zwischen diesen beiden `Label` Elemente Blendet Sie aus den beiden `Button` Elemente angezeigt, der **Custom-Transporteigenschaften** Seite für die Wiedergabe, Pause und beenden. Die Code-Behind-Logik entspricht auch der **Custom-Transporteigenschaften** Seite.
 
-[![Benutzerdefinierte Positionierung](custom-positioning-images/custompositioning-small.png "benutzerdefinierte Positionierung")](custom-positioning-images/custompositioning-large.png "benutzerdefinierte Positionierung")
+[![Benutzerdefinierte Positionierung](custom-positioning-images/custompositioning-small.png "benutzerdefinierte Positionierung")](custom-positioning-images/custompositioning-large.png#lightbox "benutzerdefinierte Positionierung")
 
 Dies schließt die Erläuterung der `VideoPlayer`.
 

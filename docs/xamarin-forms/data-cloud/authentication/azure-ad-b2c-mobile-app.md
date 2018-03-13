@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 3a7d89d9b0f383d365b18364e5d902ee0642f395
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c28ddc09b07066de67f5c974cf5c2128726c6932
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="integrating-azure-active-directory-b2c-with-azure-mobile-apps"></a>Integrieren von Azure Mobile Apps in Azure Active Directory B2C
 
@@ -21,7 +21,7 @@ _Azure Active Directory B2C ist eine Cloud-identitätsverwaltungslösung für ku
 ![](~/media/shared/preview.png "Diese API ist derzeit Vorabversion")
 
 > [!NOTE]
-> **Hinweis**: die [Microsoft-Authentifizierungsbibliothek](https://www.nuget.org/packages/Microsoft.Identity.Client) noch in der Vorschau ist, aber für die Verwendung in einer produktiven Umgebung geeignet ist. Allerdings kann es aktuelle werden Änderungen an der API, internen Cache-Format und andere Mechanismen der Bibliothek, die sich auf Ihrer Anwendung auswirken kann.
+> Die [Microsoft-Authentifizierungsbibliothek](https://www.nuget.org/packages/Microsoft.Identity.Client) noch in der Vorschau ist, aber für die Verwendung in einer produktiven Umgebung geeignet ist. Allerdings kann es aktuelle werden Änderungen an der API, internen Cache-Format und andere Mechanismen der Bibliothek, die sich auf Ihrer Anwendung auswirken kann.
 
 ## <a name="overview"></a>Übersicht
 
@@ -72,7 +72,7 @@ Für einen authentifizierungsworkflow verwalteten Client-sollte wie folgt die Az
 
 Der folgende Screenshot zeigt diese Konfiguration:
 
-[![](azure-ad-b2c-mobile-app-images/client-flow-config-sml.png "Die Konfiguration von Azure Active Directory B2C")](azure-ad-b2c-mobile-app-images/client-flow-config.png "Azure Active Directory B2C-Konfiguration")
+[![](azure-ad-b2c-mobile-app-images/client-flow-config-sml.png "Die Konfiguration von Azure Active Directory B2C")](azure-ad-b2c-mobile-app-images/client-flow-config.png#lightbox "Azure Active Directory B2C-Konfiguration")
 
 Die Richtlinie verwendet wird, in der Azure Active Directory B2C Mandanten sollte auch konfiguriert werden, sodass die Antwort-URL auf den gleichen benutzerdefinierten URL-Schema festgelegt ist, gefolgt von `://auth/`. Der folgende Screenshot zeigt diese Konfiguration:
 
@@ -158,7 +158,7 @@ Für einen authentifizierungsworkflow verwalteten Server-sollte wie folgt die Az
 
 Der folgende Screenshot zeigt diese Konfiguration:
 
-[![](azure-ad-b2c-mobile-app-images/server-flow-config-sml.png "Die Konfiguration von Azure Active Directory B2C")](azure-ad-b2c-mobile-app-images/server-flow-config.png "Azure Active Directory B2C-Konfiguration")
+[![](azure-ad-b2c-mobile-app-images/server-flow-config-sml.png "Die Konfiguration von Azure Active Directory B2C")](azure-ad-b2c-mobile-app-images/server-flow-config.png#lightbox "Azure Active Directory B2C-Konfiguration")
 
 Die Richtlinie in der Azure Active Directory B2C Mandanten auch konfiguriert werden sollte, damit die Antwort-URL festgelegt ist, an die Adresse des Azure-Mobile-App verwendet, gefolgt von `/.auth/login/aad/callback`. Der folgende Screenshot zeigt diese Konfiguration:
 

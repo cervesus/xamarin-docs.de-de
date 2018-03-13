@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: 053696ebf37e73e3b121e2aa52b80b7ea1b8ed64
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f870cda73625197fb15bf19be1cdabbd675124d6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Layout für Tablet und Desktop-apps
 
@@ -41,7 +41,7 @@ Um die Bedienung einer angenehmeren starten und sicherzustellen, dass die Auflö
 Vor iOS 9 alle apps gedauert hat, um den gesamten Bildschirm auf dem Gerät, aber einige iPads können jetzt ausführen [Teilen Bildschirm Multitasking](~/ios/platform/multitasking.md).
 Dies bedeutet, dass Ihre app einfach nur eine flache Spalte auf dem Bildschirm, 50 % der Breite des Bildschirms oder den gesamten Bildschirm einnehmen kann.
 
-[ ![](tablet-images/ipad-sml.png "iPad Split Bildschirm Beispiel")](tablet-images/ipad.png "iPad Split-Bildschirm-Beispiel")
+[![](tablet-images/ipad-sml.png "iPad Split Bildschirm Beispiel")](tablet-images/ipad.png#lightbox "iPad Split-Bildschirm-Beispiel")
 
 Geteiltem Bildschirm Funktionalität bedeutet, dass Sie berücksichtigen sollten, Ihre app auch bei weniger als 320 Pixel breit ist, oder so weit wie 1366 Pixel breit und ordnungsgemäß funktionieren.
 
@@ -63,7 +63,7 @@ Zur Unterstützung von Tablets und Desktopcomputer, auf denen Windows ausgeführ
 
 Apps auf Windows-Tablets und PCs können auf beliebige Dimensionen darüber hinaus ausgeführt Vollbildmodus verändert werden.
 
-[ ![](tablet-images/splitscreen-sml.png "Die Fenster teilen Bildschirm Beispiel")](tablet-images/splitscreen.png "Bildschirm Beispiel die Fenster teilen")
+[![](tablet-images/splitscreen-sml.png "Die Fenster teilen Bildschirm Beispiel")](tablet-images/splitscreen.png#lightbox "Bildschirm Beispiel die Fenster teilen")
 
 
 <a name="optimize" />

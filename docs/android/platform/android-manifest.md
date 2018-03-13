@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 0f270111ad4e10f035a3cb695564d789f40097fd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: aa2d2ce6cabe9c394b9807ca3d6328da5b4ba311
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-the-android-manifest"></a>Arbeiten mit der Android-Manifest
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -24,7 +23,6 @@ ms.lasthandoff: 02/27/2018
 **AndroidManifest.xml** wird generiert, als Teil des Buildprozesses und den XML-Code in gefunden **Properties/AndroidManifest.xml** zusammengeführt wird, mit XML, das aus benutzerdefinierten Attributen generiert wird. Das resultierende zusammengeführt **AndroidManifest.xml** befindet sich in der **Obj** Unterverzeichnis; z. B. dem er sich am **obj/Debug/android/AndroidManifest.xml** für Debug-Builds . Die Zusammenführung ist trivial: benutzerdefinierte Attribute innerhalb des Codes zum Generieren von XML-Elementen, verwendet und *fügt* diese Elemente in **AndroidManifest.xml**. 
 
 
-<a name="The_Basics" />
 
 ## <a name="the-basics"></a>Die Grundlagen
 
@@ -60,7 +58,6 @@ In diesem Beispiel wird die folgende XML-Fragment hinzuzufügende **AndroidManif
 Die `[Activity]` Attribut hat keine Auswirkungen auf `abstract` Typen; `abstract` Typen werden ignoriert.
 
 
-<a name="Activity_Name" />
 
 ### <a name="activity-name"></a>Name der Aktivität
 
@@ -83,7 +80,6 @@ Dieses Beispiel erzeugt die folgende XML-Fragment:
 
 *Hinweis*: Verwenden Sie die `Name` Eigenschaft nur Gründen der Abwärtskompatibilität als solche umbenennen Typ Nachschlagen zur Laufzeit verlangsamen kann. Wenn Sie die legacy-Code, der erwartet, der Standardname der Typ der Aktivität verfügen dass auf der Grundlage des lowercased-Namespaces und Klassennamen finden Sie unter [Android Callable Wrapper Naming](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming) Tipps zur Verwaltung von Kompatibilität. 
 
-<a name="Activity_Title_Bar" />
 
 ### <a name="activity-title-bar"></a>Aktivität-Titelleiste
 
@@ -104,7 +100,6 @@ Dieses Beispiel erzeugt die folgende XML-Fragment:
           android:name="md5a7a3c803e481ad8926683588c7e9031b.MainActivity" />
 ```
 
-<a name="Launchable_from_Application_Chooser" />
 
 ### <a name="launchable-from-application-chooser"></a>Ausführbare in Anwendung-Auswahl
 
@@ -130,7 +125,6 @@ Dieses Beispiel erzeugt die folgende XML-Fragment:
 ```
 
 
-<a name="Activity_Icon" />
 
 ### <a name="activity-icon"></a>Symbol "Codeaktivität"
 
@@ -155,7 +149,6 @@ Dieses Beispiel erzeugt die folgende XML-Fragment:
 </activity>
 ```
 
-<a name="Permissions" />
 
 ### <a name="permissions"></a>Berechtigungen
 
@@ -178,11 +171,9 @@ Erstellen Sie in der Version die Version des Manifests (am **obj/Debug/android/A
 
 
 
-<a name="Advanced_Features" />
 
 ## <a name="advanced-features"></a>Erweiterte Funktionen
 
-<a name="Intent_Actions_and_Features" />
 
 ### <a name="intent-actions-and-features"></a>Beabsichtigte Aktionen und Funktionen
 
@@ -214,7 +205,6 @@ Dieses Beispiel erzeugt die folgende XML-Fragment:
 </activity>
 ```
 
-<a name="Application_Element" />
 
 ### <a name="application-element"></a>Application-Element
 
@@ -243,7 +233,6 @@ Die `Application` Element ist nicht die einzige Möglichkeit zum Konfigurieren v
 Es gibt viele anwendungsweite-Attribute, die Sie in konfigurieren können die `<application>` Element; Weitere Informationen zu diesen Einstellungen finden Sie unter der [öffentlichen Eigenschaften](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/#Public_Properties) Teil [ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/). 
 
 
-<a name="List_of_Custom_Attributes" />
 
 ## <a name="list-of-custom-attributes"></a>Liste benutzerdefinierter Attribute
 

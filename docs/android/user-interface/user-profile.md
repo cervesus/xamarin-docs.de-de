@@ -2,16 +2,16 @@
 title: Benutzerprofil
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1C58E12B-4634-4691-BF59-D5A3F6B0E6F7
+ms.assetid: 6BB01F75-5E98-49A1-BBA0-C2680905C59D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/21/2017
-ms.openlocfilehash: 53ac30abea05095583fcac5ddc315f93ce7024f2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf8230c5832104fd17b14532f1d32822a1fc0097
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="user-profile"></a>Benutzerprofil
 
@@ -38,13 +38,11 @@ if (cursor.MoveToFirst ()) {
 
 Mit Android 4 (API-Ebene 14) ein neues `ContactsContact.Profile` Klasse über den ContactsContract-Anbieter verfügbar ist. Die `ContactsContact.Profile` Zugang zu einem persönlichen Profil für den Besitzer eines Geräts, die Kontaktdaten, z. B. Name und Phone Besitzer des Geräts umfasst.
 
-<a name="Required_Permissions" />
 
 ## <a name="required-permissions"></a>Erforderliche Berechtigungen
 
 Zum Lesen und Schreiben von Daten, Anwendungen anfordern müssen die `Read_Contacts` und `Write_Contacts` Berechtigungen bzw. Darüber hinaus zum Lesen und bearbeiten das Benutzerprofil, Anwendungen müssen anfordern der `Read_Profile` und `Write_Profile` Berechtigungen.
 
-<a name="Updating_Profile_Data" />
 
 ## <a name="updating-profile-data"></a>Aktualisieren von Profildaten
 
@@ -60,7 +58,6 @@ ContentResolver.Update (ContactsContract.Profile.ContentRawContactsUri,
     values, null, null);
 ```
 
-<a name="Reading_Profile_Data" />
 
 ## <a name="reading-profile-data"></a>Lesen von Profildaten
 
@@ -78,7 +75,6 @@ if (cursor.MoveToFirst ()) {
 }
 ```
 
-<a name="Navigating_to_the_People_App" />
 
 ## <a name="navigating-to-the-people-app"></a>Navigieren zur App Personen
 
@@ -92,7 +88,7 @@ StartActivity (intent);
 
 Bei der Ausführung des obigen Codes lädt die Kontakte-app das Benutzerprofil, wie im folgenden Screenshot gezeigt:
 
-[![Screenshot der Kontakte-app, die das Benutzerprofil John Doe anzeigen](user-profile-images/15-people-app.png)](user-profile-images/15-people-app.png)
+[![Screenshot der Kontakte-app, die das Benutzerprofil John Doe anzeigen](user-profile-images/15-people-app.png)](user-profile-images/15-people-app.png#lightbox)
 
 Arbeiten mit dem Benutzerprofil ist jetzt etwa dem interagieren mit anderen Daten in Android und bietet ein höheres Maß an Gerät Personalisierung.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 6df47bd54611feedd0d355a976a055d62f37afeb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1ad37cb4a794ac47e0e2f184a730949f14e85572
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 Übersicht über die Benutzeroberfläche
 
@@ -146,7 +146,7 @@ Wie Sie Ihre Anwendung für iOS 7 vorbereitet haben, können Sie neu Unteransich
 
  `TopLayoutGuide` und `BottomLayoutGuide` dienen als Referenz für, in denen Ansichten beginnen oder beenden, sollten, damit der Inhalt nicht durch ein transparentes überlappenden ist `UIKit` Leiste, wie im folgenden Beispiel gezeigt:
 
- [ ![](ios7-ui-images/clipped.png "Beispielinhalte nicht überlappenden ein transparentes UIKit Strich")](ios7-ui-images/clipped.png)
+ [![](ios7-ui-images/clipped.png "Beispielinhalte nicht überlappenden ein transparentes UIKit Strich")](ios7-ui-images/clipped.png#lightbox)
 
 Diese APIs können verwendet werden, um eine Sicht Verschiebung vom oberen oder unteren Rand des Bildschirms berechnen und Platzierung von Inhalt entsprechend anpassen:
 
@@ -166,7 +166,7 @@ public override void ViewDidLayoutSubviews ()
 
 Wir können den Wert oben festzulegenden berechneten unsere `ImageView`der Verschiebung aus dem oberen Rand des Bildschirms, sodass das gesamte Bild angezeigt wird:
 
- [ ![](ios7-ui-images/good2.png "Beispiel ImageViews Verschiebung vom oberen Rand des Bildschirms")](ios7-ui-images/good2.png)
+ [![](ios7-ui-images/good2.png "Beispiel ImageViews Verschiebung vom oberen Rand des Bildschirms")](ios7-ui-images/good2.png#lightbox)
 
 Finden Sie in der [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates) ein funktionierendes Beispiel.
 
@@ -179,15 +179,15 @@ Der Verschiebungswert wird dynamisch generiert, nachdem der Hierarchie, also bei
 
 Diese API gibt an, welche Ränder einer Sicht in den Vollbildmodus, unabhängig von Balken Lichtdurchlässigkeit erweitert werden soll. In iOS 7 Navigation und Symbolleisten angezeigt werden in den Ebenen oberhalb des Controllers-Ansicht – im Gegensatz zu in vorherigen iOS-Versionen, in denen haben nicht sie den gleichen Platz einnehmen. Die iOS 7 Fotos Anwendung veranschaulicht die `UIViewController.EdgesForExtendedLayout` Wert `UIRectEdge.All`. Diese Einstellung füllt alle vier Seiten in der Ansicht mit Inhalt, den überlappenden und Vollbild-Effekt zu erstellen:
 
- [ ![](ios7-ui-images/photos.png "Beispiel EdgesForExtendedLayout")](ios7-ui-images/photos.png)
+ [![](ios7-ui-images/photos.png "Beispiel EdgesForExtendedLayout")](ios7-ui-images/photos.png#lightbox)
 
 Tippen Sie auf das Bild entfernt die Balken und zeigt die Image-Vollbild:
 
- [ ![](ios7-ui-images/photos2.png "EdgesForExtendedLayout der Balken entfernt")](ios7-ui-images/photos2.png)
+ [![](ios7-ui-images/photos2.png "EdgesForExtendedLayout der Balken entfernt")](ios7-ui-images/photos2.png#lightbox)
 
 Da Vollbild-Inhalt, der Standardwert ist, müssen für iOS 6 konfigurierte Anwendungen Teil der Ansicht abgeschnitten, wie in der folgende Screenshot:
 
- [ ![](ios7-ui-images/clipped.png "Für iOS 6 konfigurierten Apps müssen Teil der Ansicht abgeschnitten, wie in diesem screenshot")](ios7-ui-images/clipped.png)
+ [![](ios7-ui-images/clipped.png "Für iOS 6 konfigurierten Apps müssen Teil der Ansicht abgeschnitten, wie in diesem screenshot")](ios7-ui-images/clipped.png#lightbox)
 
 Ändern der `UIViewController.EdgesForExtendedLayout` Eigenschaft für dieses Verhalten passt. Wir können angeben, dass die Sicht alle Ränder, nicht ausfüllen, damit unser Ansicht anzeigen von Inhalt in die bedeckte durch Navigation oder Symbolleisten (auf jedem Ausrichtung) vermieden werden:
 
@@ -199,7 +199,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 
 In dieser app sehen, dass die Sicht erneut positioniert wird, sodass das gesamte Bild angezeigt wird:
 
- [ ![](ios7-ui-images/good.png "Beispiel mit dem gesamten Image sichtbar")](ios7-ui-images/good.png)
+ [![](ios7-ui-images/good.png "Beispiel mit dem gesamten Image sichtbar")](ios7-ui-images/good.png#lightbox)
 
 Beachten Sie, dass während der Auswirkungen der `TopLayoutGuide/BottomLayoutGuide` und `EdgesForExtendedLayout` APIs ähneln, werden sie zum Füllen verschiedene Ziele vorgesehen. Ändern der `EdgesForExtendedLayout` Einstellung vom Standardwert abgeschnittene Sichten kann möglicherweise gelöst werden, in Anwendungen für iOS 6, aber ein guten iOS 7-Entwurf sollten berücksichtigt den Vollbildmodus ästhetischen, und geben Sie eine Vollbild-Videowiedergabe, Vertrauensstellungen der vertrauenden Seite auf `TopLayoutGuide` und `BottomLayoutGuide`ordnungsgemäß Inhalt einfügen, die vorgesehen ist, in einen komfortablen Ort für den Benutzer bearbeitet werden.
 

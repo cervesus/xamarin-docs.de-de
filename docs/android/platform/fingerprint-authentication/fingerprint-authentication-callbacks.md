@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/06/2017
-ms.openlocfilehash: 371ffae8e14a630cb548f4a9ee2bf0bd06f7284c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: acecc53e8429ac3ca963053fe7a1786937d37ae3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="responding-to-authentication-callbacks"></a>Reagieren auf Authentifizierungsrückrufen
 
@@ -27,7 +27,7 @@ Wenn eine `CryptoObject` verwendet wurde, beim Aufrufen von `Authenticate`, es w
 
 
 > [!NOTE]
-> **Hinweis:** es wird empfohlen, die Rückruf-Klasse relativ gemäßigte Gewichtung beibehalten und frei von anwendungsspezifische Logik. Die Rückrufe sollten als eine "Datenverkehr kopieren" zwischen der Android-Anwendung und die Ergebnisse vom Fingerabdruck Scanner fungieren.
+> Es wird empfohlen, die Rückruf-Klasse relativ gemäßigte Gewichtung und frei von anwendungsspezifische Logik. Die Rückrufe sollten als eine "Datenverkehr kopieren" zwischen der Android-Anwendung und die Ergebnisse vom Fingerabdruck Scanner fungieren.
 
 ## <a name="a-sample-authentication-callback-handler"></a>Ein Beispiel Rückruf Authentifizierungshandler
 

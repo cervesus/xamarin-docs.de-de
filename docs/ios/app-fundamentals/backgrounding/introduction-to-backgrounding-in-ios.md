@@ -6,11 +6,11 @@ ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e46520122b54fabfe27f73370e2ab736a349f7f4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c4eed99533ba1aca1bd5ba23078866909330b542
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>Einführung in Backgrounding in iOS
 
@@ -27,7 +27,7 @@ Bevor wir uns in den Code für die hintergrundverarbeitung in iOS beschäftigen,
 
 Der Lebenszyklus der iOS-Anwendung ist eine Sammlung von Anwendungsstatus und Methoden zum Navigieren zwischen ihnen. Eine Anwendung Übergänge zwischen Zuständen basierend auf das Verhalten des Benutzers und die backgrounding Anforderungen der Anwendung. Die Verschiebung wird durch das folgende Diagramm veranschaulicht:
 
- [ ![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "Status der Anwendung und Delegaten Anwendungsmethoden-Diagramm")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png)
+ [![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "Status der Anwendung und Delegaten Anwendungsmethoden-Diagramm")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png#lightbox)
 
 -  **Nicht ausgeführt** -Anwendung wurde noch nicht auf dem Gerät gestartet.
 -  **Wird ausgeführt/aktiv-** -die Anwendung auf dem Bildschirm, und Code im Vordergrund ausgeführt wird.
@@ -52,7 +52,7 @@ Bei einer statusänderung von eine app iOS über darüber informiert die Anwendu
 
 Das folgende Diagramm veranschaulicht, wie die Anwendung Zustände und Lebenszyklusmethoden zusammenpassen:
 
- [ ![](introduction-to-backgrounding-in-ios-images/image2.png "Dieses Diagramm veranschaulicht, wie die Anwendung Zustände und Lebenszyklusmethoden zusammenpassen")](introduction-to-backgrounding-in-ios-images/image2.png)
+ [![](introduction-to-backgrounding-in-ios-images/image2.png "Dieses Diagramm veranschaulicht, wie die Anwendung Zustände und Lebenszyklusmethoden zusammenpassen")](introduction-to-backgrounding-in-ios-images/image2.png#lightbox)
 
 ## <a name="user-controls-for-backgrounding-in-ios"></a>Benutzersteuerelemente für Backgrounding in iOS
 
@@ -62,7 +62,7 @@ iOS 7, um mehr Kontrolle über ein backgrounded Anwendungsstatus Benutzern mehre
 
 Der App Switcher ist eine wichtige Steuerelement-Funktion, die unter iOS 7 eingeführt. Er wird gestartet, Doppeltippen der **Home** aus, und zeigt die Anwendungen, deren Prozesse aktiv sind:
 
- [ ![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "Verschieben zwischen apps, die mithilfe der App wechseln")](introduction-to-backgrounding-in-ios-images/app-switcher-.png)
+ [![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "Verschieben zwischen apps, die mithilfe der App wechseln")](introduction-to-backgrounding-in-ios-images/app-switcher-.png#lightbox)
 
 Mithilfe der App wechseln, können Benutzer über Snapshots aller backgrounded erfolgreichen und ausgesetzten Anwendungen blättern. Tippen Sie auf eine Anwendung in den Vordergrund gestartet. Streichen entfernt die Anwendung aus den Hintergrund der Prozess wird beendet. Es dauert eine genauere Betrachtung der App Switcher in der [iOS Application Lifecycle Demo](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md) im nächsten Abschnitt.
 
@@ -77,7 +77,7 @@ iOS 7 erhöht, dass Benutzerkontrolle über den Lebenszyklus der Anwendung ermö
 
 Benutzer können diese Einstellung ändern, navigieren Sie zur <span class="uiitem">Einstellungen > Allgemein > App zu aktualisieren, Hintergrund</span> und backgrounding Bearbeitungsrechte für eine ausgewählte Anwendung. Wenn die App zu aktualisieren, im Hintergrund auf off festgelegt ist, wird die Anwendung sofort beim Eintritt in des Hintergrunds angehalten und sämtliche hintergrundverarbeitung gehindert werden:
 
- [ ![](introduction-to-backgrounding-in-ios-images/settings-.png "Einstellungen für die App-Aktualisierung im Hintergrund")](introduction-to-backgrounding-in-ios-images/settings-.png)
+ [![](introduction-to-backgrounding-in-ios-images/settings-.png "Einstellungen für die App-Aktualisierung im Hintergrund")](introduction-to-backgrounding-in-ios-images/settings-.png#lightbox)
 
 Entwickler können den Status der Hintergrundanwendung aktualisieren Überprüfen der `BackgroundRefreshStatus` API. Ein Beispiel finden Sie in der [überprüfen im Hintergrund aktualisieren Einstellung Rezept](https://developer.xamarin.com/recipes/ios/multitasking/check_background_refresh_setting/).
 

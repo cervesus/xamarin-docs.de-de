@@ -1,5 +1,6 @@
 ---
 title: Steuerelementreferenz
+description: Eine Beschreibung aller visuellen Elemente, die zum Erstellen einer Xamarin.Forms-Anwendung verwendet werden soll.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F
@@ -7,33 +8,31 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 0e348759164668a223e19fb6355b3b8d758395a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e1e6234f0eadcbcbecc8d58a4774db88606be290
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="controls-reference"></a>Steuerelementreferenz
 
-Xamarin.Forms nutzt die systemeigene Steuerelemente für jede Zielplattform.
-Dies bedeutet, dass Anwendungen können [portablen Klassenbibliotheken](~/cross-platform/app-fundamentals/pcl.md) oder [gemeinsam genutzte Projekte](~/cross-platform/app-fundamentals/shared-projects.md) aufnehmen soll diese freigegebenen Code, und klicken Sie dann stellen bestimmte Plattform-Anwendungen, die den Code gemeinsamen Nutzen.
+_Eine Beschreibung aller visuellen Elemente, die zum Erstellen einer Xamarin.Forms-Anwendung verwendet werden soll._
 
-Es gibt vier wichtigsten Steuerelement Gruppen verwendet, um die Benutzeroberfläche einer Xamarin.Forms-Anwendung zu erstellen:
+Die visuelle Oberfläche einer Xamarin.Forms-Anwendung wird von Objekten erstellt, die die systemeigenen Steuerelemente für jede Zielplattform zuordnen. Dadurch können Clientplattform-spezifische Anwendungen für iOS, Android und universellen Windows-Plattform mit Xamarin.Forms-Codes in einer [Portable Class Library](~/cross-platform/app-fundamentals/pcl.md), eine [Standardbibliothek des .NET](~/cross-platform/app-fundamentals/net-standard.md), oder eine [ Freigegebene Projekt](~/cross-platform/app-fundamentals/shared-projects.md).
+
+Vier Hauptsteuerelement Gruppen verwendet, um die Benutzeroberfläche einer Xamarin.Forms-Anwendung erstellen, werden in den folgenden vier Artikeln gezeigt:
 
 - [**Seiten**](pages.md)
 - [**Layouts**](layouts.md)
 - [**Ansichten**](views.md)
 - [**Cells**](cells.md)
 
-Zur Laufzeit, jedes Steuerelement in die entsprechende systemeigene zugeordnet werden, ist dem, was gerendert wird.
+Im Allgemeinen nimmt eine Xamarin.Forms-Seite den gesamten Bildschirm ein. Diese Seite enthält in der Regel ein Layout, die Ansichten und möglicherweise andere Tastaturlayouts stimmen enthält. Zellen sind spezielle Komponenten, die in Verbindung mit verwendet [ `TableView` ](views.md#tableView) und [ `ListView` ](views.md#listView).
 
-In diesem Abschnitt als Referenz zeigt viele der UI-Steuerelemente für die Verwendung mit Xamarin.Forms dient und beigefügt ist die [FormsGallery Beispiel](https://developer.xamarin.com/samples/FormsGallery/), die grundlegende Verwendung jedes Steuerelements veranschaulicht.
-Die Beschreibungen zudem einen Link zu der [API-Dokumentation](https://developer.xamarin.com/api/namespace/Xamarin.Forms/).
-
-
+In den vier Artikeln auf [ **Seiten**](pages.md), [ **Layouts**](layouts.md), [ **Ansichten** ](views.md), und [ **Zellen**](cells.md), jede Art von Steuerelement wird mit Links zu ihrer API-Dokumentation, einen Artikel beschreiben Verwendungsmöglichkeiten (falls vorhanden) und eine oder mehrere Beispielprogramme (sofern vorhanden) beschrieben. Jede Art von Steuerelement auch beiliegen einen Screenshot der Seite aus der [ **FormsGallery** ](https://developer.xamarin.com/samples/FormsGallery/) Beispiel Geräte unter iOS, Android und universelle Windows-Plattform ausgeführt wird. Unterhalb jeder Screenshot sind Links zu den Quellcode für die C#-Seite, die entsprechende XAML-Seite, und (wenn zutreffend) der C#-Code-Behind-Datei für die Verwendung von XAML-Seite.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Introduction to Xamarin.Forms (Einführung in Xamarin.Forms)](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
-- [Xamarin.Forms-Katalog (Beispiel)](https://developer.xamarin.com/samples/FormsGallery/)
-- [API-Dokumentation](https://developer.xamarin.com/api/namespace/Xamarin.Forms/)
+- [Xamarin.Forms FormsGallery-Beispiel](https://developer.xamarin.com/samples/FormsGallery/)
+- [API-Dokumentation](https://developer.xamarin.com/api/root/Xamarin.Forms/)

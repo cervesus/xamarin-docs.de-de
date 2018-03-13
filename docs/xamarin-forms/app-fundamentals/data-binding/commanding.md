@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 0bc039385a6b2077c3b5fa5114b35b586a14a150
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b75bc7e4ccf53e82ff107c867c5ba01813960ea5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="the-command-interface"></a>Die Befehlsschnittstelle
 
@@ -279,7 +279,7 @@ Hier wird die Funktionsweise erläutert: der erste Benutzer drückt die **neu** 
 
 Die iOS-Bildschirm auf der linken Seite zeigt das Layout, bevor ein gültiges Alter eingegeben wird. Der Android- und uwp-Bildschirme zeigen die **Absenden** Schaltfläche aktiviert, nachdem ein Alter festgelegt wurde:
 
-[![Person Eintrag](commanding-images/personentry-small.png "Person Eintrag")](commanding-images/personentry-large.png "Person Eintrag")
+[![Person Eintrag](commanding-images/personentry-small.png "Person Eintrag")](commanding-images/personentry-large.png#lightbox "Person Eintrag")
 
 Die Anwendung verfügt nicht über Funktion zum Bearbeiten vorhandener Einträge und die Einträge werden nicht gespeichert werden, wenn Sie die Seite verlassen.
 
@@ -531,7 +531,7 @@ Die 11 Schaltflächen für die 10 Ziffern und das Dezimaltrennzeichen gemeinsam 
 
 Hier wird die Anwendung in Aktion:
 
-[![Decimal Tastatur](commanding-images/decimalkeyboard-small.png "Decimal Tastatur")](commanding-images/decimalkeyboard-large.png "Decimal Tastatur")
+[![Decimal Tastatur](commanding-images/decimalkeyboard-small.png "Decimal Tastatur")](commanding-images/decimalkeyboard-large.png#lightbox "Decimal Tastatur")
 
 Beachten Sie, dass die Schaltfläche für das Dezimaltrennzeichen in alle drei Screenshots deaktiviert ist, da die eingegebene Nummer bereits ein Dezimaltrennzeichen enthält. 
 

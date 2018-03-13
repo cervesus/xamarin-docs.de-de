@@ -7,12 +7,12 @@ ms.assetid: A6090101-67C6-4BDD-9416-F2FB74805A87
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 36cabddc2439d64ad2d1135bbd0d453a7f411750
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: d8b44fb7f0e60db407271fd84899489bf8e65694
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---saving-the-activity-state"></a>Exemplarische Vorgehensweise – speichern den Status der Aktivität
 
@@ -22,7 +22,7 @@ _Die Theorie zustandsspeicherung in der Aktivitätenlebenszyklus Handbuch wurde 
 
 Öffnen Sie nun die **ActivityLifecycle_Start** Projekt (in der [ActivityLifecycle](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle) Beispiel), erstellen es und führen Sie es. Dies ist ein sehr einfaches Projekt, das verfügt über zwei Aktivitäten zur Veranschaulichung der Aktivitätenlebenszyklus und wie die verschiedenen Lebenszyklusmethoden aufgerufen werden. Beim Starten der Anwendung den Bildschirm `MainActivity` wird angezeigt: 
 
-[ ![Bildschirm der Aktivität A](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png)
+[![Bildschirm der Aktivität A](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png#lightbox)
 
 ### <a name="viewing-state-transitions"></a>Anzeigen von Zustandsübergängen
 
@@ -48,7 +48,7 @@ Wenn wir klicken Sie auf die **starten Aktivität B** Schaltfläche wir finden S
 
 Folglich *Aktivität B* gestartet wurde und die angezeigten anstelle von *Aktivität A*: 
 
-[ ![Bildschirm der Aktivität B](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png)
+[![Bildschirm der Aktivität B](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png#lightbox)
 
 Wenn wir klicken Sie auf die **wieder** Schaltfläche *Aktivität B* zerstört wird und *Aktivität A* fortgesetzt wird: 
 
@@ -62,7 +62,7 @@ Wenn wir klicken Sie auf die **wieder** Schaltfläche *Aktivität B* zerstört w
 ```
 ### <a name="adding-a-click-counter"></a>Hinzufügen eines Click-Leistungsindikators
 
-Als Nächstes werden wir die Anwendung zu ändern, sodass wir verfügen über eine Schaltfläche, die zählt, und zeigt die Anzahl der Häufigkeit, mit die darauf geklickt wird. Zunächst fügen wir eine `_counter` Instanzvariable auf `MainActivity`: 
+Als Nächstes werden wir die Anwendung zu ändern, sodass wir verfügen über eine Schaltfläche, die zählt, und zeigt die Anzahl der Häufigkeit, mit die darauf geklickt wird. Zunächst fügen wir eine `_counter` Instanzvariable auf `MainActivity`:
 
 ```csharp
 int _counter = 0;
@@ -105,11 +105,11 @@ clickbutton.Click += (object sender, System.EventArgs e) =>
 
 Wenn wir erstellen, und führen Sie die app erneut, eine Schaltfläche "Neu" angezeigt wird, inkrementiert und zeigt den Wert des `_counter` bei jedem klicken:
 
-[![Touch-Anzahl hinzufügen](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png)
+[![Touch-Anzahl hinzufügen](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png#lightbox)
 
 Aber wenn wir das Gerät im Querformat drehen, wird diese Anzahl verloren:
 
-[ ![Um Querformat drehen, legt die Anzahl die zurück auf NULL fest](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png)
+[![Um Querformat drehen, legt die Anzahl die zurück auf NULL fest](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png#lightbox)
 
 Untersuchen die Anwendungsausgabe, sehen Sie, die *Aktivität A* wurde angehalten, beendet, gelöscht, neu erstellt, neu gestartet und dann fortgesetzt, während die Rotation von Hochformat, Querformat: 
 
@@ -152,7 +152,7 @@ if (bundle != null)
 
 Erstellen Sie, führen Sie die app erneut aus, und klicken Sie mehrmals auf die zweite Schaltfläche. Wenn wir das Gerät im Querformat drehen, wird die Anzahl die beibehalten.
 
-[ ![Zeigt den Bildschirm drehen, Anzahl der vier beibehalten](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png)
+[![Zeigt den Bildschirm drehen, Anzahl der vier beibehalten](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png#lightbox)
 
 
 Werfen wir einen Blick auf das Ausgabefenster, um festzustellen, was passiert ist:

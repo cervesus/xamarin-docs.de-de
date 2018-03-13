@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c096e211bc29e94dbff0202c50ca69780cb6849e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a9e3842611aab86d23a2b0c2a832efce18c22465
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="multi-touch-finger-tracking"></a>Multi-Touch-Finger-Überwachung
 
@@ -184,7 +184,7 @@ public override void TouchesCancelled(NSSet touches, UIEvent evt)
 
 Diese Verarbeitung zu, ermöglicht die [FingerPaint](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint) Programm zum Nachverfolgen von einzelnen Finger und zeichnen die Ergebnisse auf dem Bildschirm:
 
-[ ![](touch-tracking-images/image01.png "Nachverfolgen von einzelnen Finger und zeichnen die Ergebnisse auf dem Bildschirm")](touch-tracking-images/image01.png)
+[![](touch-tracking-images/image01.png "Nachverfolgen von einzelnen Finger und zeichnen die Ergebnisse auf dem Bildschirm")](touch-tracking-images/image01.png#lightbox)
 
 Sie haben nun gesehen, wie Sie einzelne Finger auf dem Bildschirm nachverfolgen und diese zu unterscheiden.
 

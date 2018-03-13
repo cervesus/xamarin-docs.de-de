@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: b606773b44d32b724fe7f4dfa2ef18fe34b85cae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 170131a2449b37acfa411eeca54f7aa921b0d9e4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-text-input"></a>Arbeiten mit Texteingabe
 
@@ -62,7 +62,7 @@ Wenn der einfache Modus festgelegt ist, kann der Benutzer auswählen:
 - Scribble, oder
 - aus einer vordefinierten Liste, die die Anwendung bereitstellt.
 
-[ ![](text-input-images/plain-scribble-sml.png "Diktieren Scribble, oder aus einer vordefinierten Liste, das die app bereitstellt.")](text-input-images/plain-scribble.png)
+[![](text-input-images/plain-scribble-sml.png "Diktieren Scribble, oder aus einer vordefinierten Liste, das die app bereitstellt.")](text-input-images/plain-scribble.png#lightbox)
 
 Das Ergebnis wird immer zurückgegeben, als ein `NSObject` , die umgewandelt werden kann, um eine `string`.
 
@@ -106,4 +106,4 @@ Sobald sie drücken Sie die **Fertig** Schaltfläche der Text zurückgegeben wer
 ## <a name="related-links"></a>Verwandte Links
 
 - [Apple Text und Bezeichnungen Doc](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/TextandLabels.html)
-- [Einführung in die WatchOS 3](~/ios/watchos/platform/introduction-to-watchos3/index.md)
+- [Einführung in watchOS 3](~/ios/watchos/platform/introduction-to-watchos3/index.md)

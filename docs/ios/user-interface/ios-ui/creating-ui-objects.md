@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 035956f5c39a77c625a6f4cb92cbfa67a42f2402
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e7a61dcf2cf2fabf575e30ef402121db3bea7912
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-user-interface-objects"></a>Erstellen von Benutzeroberflächenobjekten
 
@@ -42,17 +42,17 @@ Um eine Benutzeroberfläche erstellen, in der iOS-Designer zu starten, doppelkli
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
- [ ![](creating-ui-objects-images/image2b.png "Toolbox mit Leerstellen auffüllen")](creating-ui-objects-images/image2b.png)
+ [![](creating-ui-objects-images/image2b.png "Toolbox mit Leerstellen auffüllen")](creating-ui-objects-images/image2b.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
- [ ![](creating-ui-objects-images/image2b-vs.png "Toolbox Pad - Visual Studio")](creating-ui-objects-images/image2b.png)
+ [![](creating-ui-objects-images/image2b-vs.png "Toolbox Pad - Visual Studio")](creating-ui-objects-images/image2b.png#lightbox)
  
 -----
 
 Wenn ein Steuerelement aktiviert ist, auf der Entwurfsoberfläche der **Eigenschaften Pad** zeigt die Attribute für dieses Steuerelement. Die **Widget > Identität > Name** Feld, das im folgenden Screenshot aufgefüllt wird, dient als die *Steckdose* Name. Wie Sie das Steuerelement in C#-verweisen können sieht folgendermaßen aus:
 
- [ ![](creating-ui-objects-images/image3b.png "Eigenschaften-Widget mit Leerstellen auffüllen")](creating-ui-objects-images/image3b.png)
+ [![](creating-ui-objects-images/image3b.png "Eigenschaften-Widget mit Leerstellen auffüllen")](creating-ui-objects-images/image3b.png#lightbox)
 
 Eine Vertiefung in der iOS-Designer verwenden, finden Sie in der [Einführung in die iOS-Designer](~/ios/user-interface/designer/introduction.md) Handbuch.
 
@@ -64,27 +64,27 @@ Um ein Storyboard in Xcode zu öffnen, mit der rechten Maustaste das Kontextmen�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
- [ ![](creating-ui-objects-images/imagexcode.png "Kontextmenü für die Storyboard - Xcode")](creating-ui-objects-images/imagexcode.png)
+ [![](creating-ui-objects-images/imagexcode.png "Kontextmenü für die Storyboard - Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](creating-ui-objects-images/imagexcode-vs.png "Kontextmenü für die Storyboard - Xcode")](creating-ui-objects-images/imagexcode-vs.png)
+[![](creating-ui-objects-images/imagexcode-vs.png "Kontextmenü für die Storyboard - Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
 
 -----
 
 Steuerelemente auf der Entwurfsoberfläche aus gezogen werden können die **Objektbibliothek** unten dargestellt:
 
- [ ![](creating-ui-objects-images/image5a.png "Xcode-Objektbibliothek")](creating-ui-objects-images/image5a.png)
+ [![](creating-ui-objects-images/image5a.png "Xcode-Objektbibliothek")](creating-ui-objects-images/image5a.png#lightbox)
 
 Beim Entwerfen der Benutzeroberflächenautomatisierungs mit dem Benutzeroberflächen-Generator müssen Sie erstellen eine **Nachrichtenplattform** für jedes Steuerelement, das Sie in c# verweisen möchten. Dies erfolgt durch das Einschalten der **Assistant Editor** über das Center **Editor** Schaltfläche auf der Xcode-Symbolleisten-Schaltfläche:
 
- [ ![](creating-ui-objects-images/image6a.png "Assistenten-Editor-Schaltfläche")](creating-ui-objects-images/image6a.png)
+ [![](creating-ui-objects-images/image6a.png "Assistenten-Editor-Schaltfläche")](creating-ui-objects-images/image6a.png#lightbox)
 
 Klicken Sie auf ein Benutzerobjekt-Schnittstelle. Klicken Sie dann **Steuerelement Drag &** in die .h-Datei. Um ** Steuerelement ziehen **, halten Sie die STRG-Taste und halten Sie über die Benutzer-Schnittstellenobjekt, das Sie für den Ausgang (oder die Aktion) erstellen. Halten Sie STRG gedrückt und Sie in der Headerdatei ziehen. Fertig stellen unten ziehen die `@interface` Definition. Mit einer Beschriftung Steckdose einfügen oder Steckdose-Auflistung, sollte eine blaue Linie angezeigt werden, wie im folgenden Screenshot dargestellt.
 
 Beim Freigeben des auf werden Sie aufgefordert, einen Namen für den Ausgang anzugeben, die verwendet werden soll, erstellen Sie eine C#-Eigenschaft, die auf die verwiesen werden kann, im Code:
 
- [ ![](creating-ui-objects-images/image8a.png "Erstellen eine Steckdose")](creating-ui-objects-images/image8a.png)
+ [![](creating-ui-objects-images/image8a.png "Erstellen eine Steckdose")](creating-ui-objects-images/image8a.png#lightbox)
 
 Weitere Informationen wie Xcodes Benutzeroberflächen-Generator in Visual Studio für Mac integriert, finden Sie in der [Xib Codegenerierung](~/ios/internals/xib-code-generation.md#generated) Dokument.
 
@@ -118,7 +118,7 @@ public override void ViewDidLoad () {
 
 Wenn auf die Entwurfsoberfläche View-Controller hinzugefügt werden, werden zwei entsprechende C#-Dateien im Projekt erstellt. In diesem Beispiel `ControlsViewController.cs` und `ControlsViewController.designer.cs` automatisch erstellt wurden:
 
- [ ![](creating-ui-objects-images/image9b.png "Partielle ViewController-Klasse")](creating-ui-objects-images/image9b.png)
+ [![](creating-ui-objects-images/image9b.png "Partielle ViewController-Klasse")](creating-ui-objects-images/image9b.png#lightbox)
 
 Die `MainViewController.cs` Datei soll *Codes*. Dies ist, wenn die `View` Lebenszyklusmethoden wie z. B. `ViewDidLoad` und `ViewWillAppear` werden implementiert und in dem Sie Ihre eigenen Eigenschaften, Felder und Methoden hinzufügen können.
 

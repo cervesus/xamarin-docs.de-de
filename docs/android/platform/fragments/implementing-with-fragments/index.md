@@ -8,23 +8,22 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: ebb53398edba64e255f1a534556836df8734ba6f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2ed67eac51f6edcfda16caf73e4667c49124082c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-with-fragments"></a>Mit Fragmenten implementieren
 
 _Fragmente, Android 3.0 eingeführt. Fragmente sind eigenständige, modulare Komponenten, mit denen die Komplexität beim Schreiben von Anwendungen, die auf Bildschirmen mit unterschiedlichen Größen ausgeführt werden können, bewältigt werden kann. Dieser Artikel führt Sie durch wie Fragmente verwenden, um Xamarin.Android Anwendungen zu entwickeln und wie Fragmente auf vorab Android 3.0-Geräten unterstützt._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Übersicht
 
 In diesem Abschnitt werden protokollsuchen Gewusst wie: Erstellen einer Anwendung, die eine Liste der hohen spielt und ein Anführungszeichen in jeder ausgewählten Play angezeigt werden. Dieser app nutzt Fragmente, damit wir unsere UI-Komponenten zentral definieren können, aber verwenden diese auf verschiedenen Formfaktoren arbeiten. Die folgenden Screenshots zeigen z. B. die Anwendung auf einem Tablet 10" sowie auf einem Telefon ausgeführt:
 
-[![Screenshots der Beispiel-app, die unter dem Tablet oder Telefon](images/intro-screenshot-sml.png)](images/intro-screenshot.png)
+[![Screenshots der Beispiel-app, die unter dem Tablet oder Telefon](images/intro-screenshot-sml.png)](images/intro-screenshot.png#lightbox)
 
 Dieser Abschnitt befasst sich mit die folgenden Themen:
 
@@ -34,13 +33,11 @@ Dieser Abschnitt befasst sich mit die folgenden Themen:
 
 - **Verwenden das Android Supportpaket** &ndash; implementiert das Paket für Android unterstützt, und klicken Sie dann einige kleinere Änderungen an die Aktivitäten in der Anwendung ermöglicht unter älteren Versionen von Android ausgeführt wird.
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>Anforderungen
 
 Diese exemplarische Vorgehensweise erfordert Xamarin.Android 4.0 oder höher. Es sind auch erforderlich, um das Android Supportpaket zu installieren, da in der Fragmente-Dokumentation beschrieben.
 
-<a name="Introduction" />
 
 ## <a name="introduction"></a>Einführung
 

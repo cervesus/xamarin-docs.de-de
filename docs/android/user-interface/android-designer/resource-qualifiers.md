@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/29/2018
-ms.openlocfilehash: 56fee71f2ed36b682d323bae1225430ff991f140
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bff6d917fc4ce65daed329f15d6648bbfe0dd069
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>Ressourcenqualifizierer und zu den Visualisierungsoptionen
 
 _In diesem Thema wird erläutert, wie Ressourcen definiert werden, die verwendet wird, nur, wenn die Qualifiziererwerte abgeglichen werden wird. Ein einfaches Beispiel ist eine Sprache qualifiziert Zeichenfolgenressource. Eine Zeichenfolgenressource kann mit anderen alternativen Ressourcen, die definiert, um für zusätzliche Sprachen verwendet werden als Standard definiert werden. Alle Ressourcentypen können qualifiziert werden, einschließlich des Layouts selbst._
 
-<a name="Custom_Device_Configurations" />
 
 ## <a name="custom-device-configurations"></a>Benutzerdefinierte Konfigurationen
 
@@ -30,11 +29,11 @@ Am unteren Rand der Selektor Gerät Menü ist ein **anpassen** option wie folgt:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Gerät Selektor Menü](resource-qualifiers-images/vs/01-device-selector-sml.png)](resource-qualifiers-images/vs/01-device-selector.png)
+[![Gerät Selektor Menü](resource-qualifiers-images/vs/01-device-selector-sml.png)](resource-qualifiers-images/vs/01-device-selector.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Gerät Selektor Menü](resource-qualifiers-images/xs/01-device-selector-sml.png)](resource-qualifiers-images/xs/01-device-selector.png)
+[![Gerät Selektor Menü](resource-qualifiers-images/xs/01-device-selector-sml.png)](resource-qualifiers-images/xs/01-device-selector.png#lightbox)
 
 -----
 
@@ -43,11 +42,11 @@ Auswählen von **anpassen** wird ein Dialogfeld angezeigt, die Sie zum Durchsuch
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![AVD Manager](resource-qualifiers-images/vs/02-device-definitions-sml.png)](resource-qualifiers-images/vs/02-device-definitions.png)
+[![AVD Manager](resource-qualifiers-images/vs/02-device-definitions-sml.png)](resource-qualifiers-images/vs/02-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![AVD Manager](resource-qualifiers-images/xs/02-device-definitions-sml.png)](resource-qualifiers-images/xs/02-device-definitions.png)
+[![AVD Manager](resource-qualifiers-images/xs/02-device-definitions-sml.png)](resource-qualifiers-images/xs/02-device-definitions.png#lightbox)
 
 -----
 
@@ -57,11 +56,11 @@ Z. B. Auswahl der **Nexus 5** Definition und auf **Klon...**  zeigt das folgende
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Klon-Gerät](resource-qualifiers-images/vs/03-clone-sml.png)](resource-qualifiers-images/vs/03-clone.png)
+[![Klon-Gerät](resource-qualifiers-images/vs/03-clone-sml.png)](resource-qualifiers-images/vs/03-clone.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Klon-Gerät](resource-qualifiers-images/xs/03-clone-sml.png)](resource-qualifiers-images/xs/03-clone.png)
+[![Klon-Gerät](resource-qualifiers-images/xs/03-clone-sml.png)](resource-qualifiers-images/xs/03-clone.png#lightbox)
 
 -----
 
@@ -70,11 +69,11 @@ In der nächste Screenshot wird der Name geändert, um **Nexus 5 benutzerdefinie
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Benutzerdefinierte Geräteeinstellungen](resource-qualifiers-images/vs/04-custom-sml.png)](resource-qualifiers-images/vs/04-custom.png)
+[![Benutzerdefinierte Geräteeinstellungen](resource-qualifiers-images/vs/04-custom-sml.png)](resource-qualifiers-images/vs/04-custom.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Benutzerdefinierte Geräteeinstellungen](resource-qualifiers-images/xs/04-custom-sml.png)](resource-qualifiers-images/xs/04-custom.png)
+[![Benutzerdefinierte Geräteeinstellungen](resource-qualifiers-images/xs/04-custom-sml.png)](resource-qualifiers-images/xs/04-custom.png#lightbox)
 
 -----
 
@@ -83,11 +82,11 @@ Sobald Sie auf **Clone Device** (Gerät klonen) klicken, wird die neue Gerätede
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Aktualisierte Device-Definitionen](resource-qualifiers-images/vs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/vs/05-updated-device-definitions.png)
+[![Aktualisierte Device-Definitionen](resource-qualifiers-images/vs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/vs/05-updated-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Aktualisierte Device-Definitionen](resource-qualifiers-images/xs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/xs/05-updated-device-definitions.png)
+[![Aktualisierte Device-Definitionen](resource-qualifiers-images/xs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/xs/05-updated-device-definitions.png#lightbox)
 
 -----
 
@@ -96,11 +95,11 @@ Beachten Sie, dass jedes benutzerdefiniertes Gerätedefinition mit ein grünes S
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Benutzerdefinierte Gerät wird in der Geräteliste angezeigt.](resource-qualifiers-images/vs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/vs/06-nexus-5-custom.png)
+[![Benutzerdefinierte Gerät wird in der Geräteliste angezeigt.](resource-qualifiers-images/vs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/vs/06-nexus-5-custom.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Benutzerdefinierte Gerät wird in der Geräteliste angezeigt.](resource-qualifiers-images/xs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/xs/06-nexus-5-custom.png)
+[![Benutzerdefinierte Gerät wird in der Geräteliste angezeigt.](resource-qualifiers-images/xs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/xs/06-nexus-5-custom.png#lightbox)
 
 -----
 
@@ -109,16 +108,15 @@ Auswählen der Gerätekonfiguration von diesem ändert das Layout, um die Anpass
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Benutzerdefinierte Gerät verwendet](resource-qualifiers-images/vs/07-custom-in-use-sml.png)](resource-qualifiers-images/vs/07-custom-in-use.png)
+[![Benutzerdefinierte Gerät verwendet](resource-qualifiers-images/vs/07-custom-in-use-sml.png)](resource-qualifiers-images/vs/07-custom-in-use.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Benutzerdefinierte Gerät verwendet](resource-qualifiers-images/xs/07-custom-in-use-sml.png)](resource-qualifiers-images/xs/07-custom-in-use.png)
+[![Benutzerdefinierte Gerät verwendet](resource-qualifiers-images/xs/07-custom-in-use-sml.png)](resource-qualifiers-images/xs/07-custom-in-use.png#lightbox)
 
 -----
 
 
-<a name="resource_qualifier_options" />
 
 ## <a name="resource-qualifier-options"></a>Qualifizierer Ressourcenoptionen
 
@@ -126,11 +124,11 @@ Auswählen der Gerätekonfiguration von diesem ändert das Layout, um die Anpass
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Qualifizierer Ressourcenoptionen](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png)
+[![Qualifizierer Ressourcenoptionen](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Qualifizierer Ressourcenoptionen](resource-qualifiers-images/xs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt.png)
+[![Qualifizierer Ressourcenoptionen](resource-qualifiers-images/xs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt.png#lightbox)
 
 -----
 
@@ -144,7 +142,6 @@ Dieses Dialogfeld zeigt Pulldownliste Menüs für die folgenden ressourcenqualif
 Aller mithilfe dieser Menüs Pulldownliste wird geöffnet, in dem Sie auswählen und konfigurieren Sie (wie weiter erläutert) ressourcenqualifizierer können, neue Dialogfelder.
 
 
-<a name="Language_and_Region" />
 
 ### <a name="language"></a>Sprache
 
@@ -152,11 +149,11 @@ Die **Sprache** Pulldownmenü Listet nur die Sprachen, die Ressourcen definiert 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Sprache/Region hinzufügen](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png)
+[![Sprache/Region hinzufügen](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Sprache/Region hinzufügen](resource-qualifiers-images/xs/09-add-language-region-sml.png)](resource-qualifiers-images/xs/09-add-language-region.png)
+[![Sprache/Region hinzufügen](resource-qualifiers-images/xs/09-add-language-region-sml.png)](resource-qualifiers-images/xs/09-add-language-region.png#lightbox)
 
 -----
 
@@ -169,7 +166,7 @@ Beim Klicken auf **Sprache/Region hinzufügen...** , **Sprache auswählen** Dial
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Liste der Sprachen](resource-qualifiers-images/xs/10-languages-sml.png)](resource-qualifiers-images/xs/10-languages.png)
+[![Liste der Sprachen](resource-qualifiers-images/xs/10-languages-sml.png)](resource-qualifiers-images/xs/10-languages.png#lightbox)
 
 -----
 
@@ -182,7 +179,7 @@ In diesem Beispiel haben wir **fr (Französisch)** für die Sprache und **BE** (
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Sprache und Region ausgewählt](resource-qualifiers-images/xs/11-language-region-added-sml.png)](resource-qualifiers-images/xs/11-language-region-added.png)
+[![Sprache und Region ausgewählt](resource-qualifiers-images/xs/11-language-region-added-sml.png)](resource-qualifiers-images/xs/11-language-region-added.png#lightbox)
 
 -----
 
@@ -190,7 +187,6 @@ In diesem Beispiel haben wir **fr (Französisch)** für die Sprache und **BE** (
 Beachten Sie, dass wenn Sie eine neue Sprache hinzufügen, aber neue Ressourcen werden nicht erstellt werden, für die sie die hinzugefügte Sprache wird nicht mehr auf das nächste Mal angezeigt werden Sie das Projekt zu öffnen.
 
 
-<a name="ui_mode" />
 
 ### <a name="ui-mode"></a>Benutzeroberflächen-Modus
 
@@ -198,7 +194,7 @@ Beim Klicken auf die **Benutzeroberflächen-Modus** Pulldownmenü, eine Liste de
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Benutzeroberflächen-Modus-Menü](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png)
+[![Benutzeroberflächen-Modus-Menü](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
 
 Unterhalb dieser Liste sind die Modi Nacht **nicht Nacht** und **Nacht**, gefolgt von der layoutausrichtungen **von links nach rechts** und **von rechts nach links** (für Informationen zu **von links nach rechts** und **von rechts nach links** Optionen finden Sie [LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
 Die letzten Elemente im die **Qualifizierer Ressourcenoptionen** Dialogfeld werden die **runden Bildschirme** (zur Verwendung mit Android Dach) oder **nicht runden Bildschirme** (Informationen zu runden und nicht-Round-Bildschirme, finden Sie unter [Layouts](https://developer.android.com/training/wearables/ui/layouts.html)).
@@ -206,7 +202,7 @@ Weitere Informationen zu Android-UI-Modi finden Sie unter [UiModeManager](https:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Benutzeroberflächen-Modus-Menü](resource-qualifiers-images/xs/12-ui-mode-sml.png)](resource-qualifiers-images/xs/12-ui-mode.png)
+[![Benutzeroberflächen-Modus-Menü](resource-qualifiers-images/xs/12-ui-mode-sml.png)](resource-qualifiers-images/xs/12-ui-mode.png#lightbox)
 
 Unterhalb dieser Liste sind die Modi Nacht **nicht Nacht** und **Nacht**, gefolgt von der layoutausrichtungen **von links nach rechts** und **von rechts nach links**. Weitere Informationen zu Android-UI-Modi finden Sie unter [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
 Informationen zu **von links nach rechts** und **von rechts nach links** Optionen finden Sie [LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
@@ -215,12 +211,11 @@ Informationen zu **von links nach rechts** und **von rechts nach links** Optione
 
 Das letzte Element in der **Qualifizierer Ressourcenoptionen** Dialog ist die **Round Bildschirm** Menü. Dieses Menü können Sie entweder auswählen **runden Bildschirme** (zur Verwendung mit Android Dach) oder **rechteckigen Bildschirme**:
 
-[ ![Round-Bildschirm-Menü](resource-qualifiers-images/xs/13-round-screen-sml.png)](resource-qualifiers-images/xs/13-round-screen.png)
+[![Round-Bildschirm-Menü](resource-qualifiers-images/xs/13-round-screen-sml.png)](resource-qualifiers-images/xs/13-round-screen.png#lightbox)
 
 -----
 
 
-<a name="Action_Bar" />
 
 ## <a name="action-bar-settings"></a>Aktionsleiste-Einstellungen
 
@@ -232,7 +227,7 @@ Die **Leiste Aktionseinstellungen** Symbol links neben das Pinselsymbol (Design-
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Aktionsleiste-Einstellungen](resource-qualifiers-images/xs/13b-action-bar-sml.png)](resource-qualifiers-images/xs/13b-action-bar.png)
+[![Aktionsleiste-Einstellungen](resource-qualifiers-images/xs/13b-action-bar-sml.png)](resource-qualifiers-images/xs/13b-action-bar.png#lightbox)
 
 -----
 
@@ -246,7 +241,6 @@ Dieses Symbol wird ein Dialogfeld Popover, die eine Möglichkeit bietet, wählen
 -   **Registerkarten** &ndash; Navigationsmodus Registerkarte. Anstelle von statischen Titeltext enthält dieser Modus eine Reihe von Registerkarten für die Navigation innerhalb der Aktivität.
 
 
-<a name="Themes" />
 
 ## <a name="themes"></a>Designs
 
@@ -254,11 +248,11 @@ Die **Design** Dropdown-Menü zeigt alle der im Projekt definierten Designs. Aus
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Weitere Designs Liste](resource-qualifiers-images/vs/15-theme-menu-sml.png "mehr Designs-Liste")](resource-qualifiers-images/vs/15-theme-menu.png)
+[![Weitere Designs Liste](resource-qualifiers-images/vs/15-theme-menu-sml.png "mehr Designs-Liste")](resource-qualifiers-images/vs/15-theme-menu.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Weitere Designs-Liste](resource-qualifiers-images/xs/14-theme-menu-sml.png)](resource-qualifiers-images/xs/14-theme-menu.png)
+[![Weitere Designs-Liste](resource-qualifiers-images/xs/14-theme-menu-sml.png)](resource-qualifiers-images/xs/14-theme-menu.png#lightbox)
 
 -----
 
@@ -271,12 +265,11 @@ Wenn ein Design ausgewählt ist, wird der Entwurfsoberfläche aktualisiert, um d
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Design "hell" ist jetzt verfügbar](resource-qualifiers-images/xs/15-light-theme-sml.png)](resource-qualifiers-images/xs/15-light-theme.png)
+[![Design "hell" ist jetzt verfügbar](resource-qualifiers-images/xs/15-light-theme-sml.png)](resource-qualifiers-images/xs/15-light-theme.png#lightbox)
 
 -----
 
 
-<a name="Android_Version" />
 
 ## <a name="android-version"></a>Android-Version
 
@@ -293,7 +286,7 @@ Die Sammlung von Widgets in der Toolbox verfügbaren richtet sich nach der Frame
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Liste der Android-Versionen](resource-qualifiers-images/xs/16-android-version-sml.png)](resource-qualifiers-images/xs/16-android-version.png)
+[![Liste der Android-Versionen](resource-qualifiers-images/xs/16-android-version-sml.png)](resource-qualifiers-images/xs/16-android-version.png#lightbox)
 
 Framework-Zielversion kann festgelegt werden, in den projekteinstellungen unter der **Projektoptionen > Erstellen > Allgemein** Abschnitt. Weitere Informationen zu Framework-Zielversion, finden Sie unter [Grundlegendes zu Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md).
 

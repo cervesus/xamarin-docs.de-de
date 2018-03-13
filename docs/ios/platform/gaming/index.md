@@ -3,16 +3,16 @@ title: iOS-APIs spielen
 description: "Dieser Artikel behandelt die neuen Gaming-Erweiterungen bereitgestellt, die von iOS 9, die verwendet werden können, um Ihr Xamarin.iOS Spiels Grafiken und audio Features zu verbessern."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
+ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 6c735c68ee61032d8dfe3a74e6858bc058c6fa47
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d0a66d4cfdb3050c7ad791d24e24d6917a031ee1
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="ios-gaming-apis"></a>iOS-APIs spielen
 
@@ -21,7 +21,7 @@ _Dieser Artikel behandelt die neuen Gaming-Erweiterungen bereitgestellt, die von
 Apple hat mehrere technologische Verbesserungen an der Gaming-APIs in iOS 9, die zur Implementierung von Spiel Grafiken und Audio in einem Xamarin.iOS-app zu vereinfachen.
 Dazu gehören sowohl einfache Entwicklung über allgemeine Frameworks und nutzen die Leistungsfähigkeit von dem iOS-Gerät GPU für verbesserte Geschwindigkeit und Grafik bietet.
 
-[ ![](images/flocking01.png "Ein Beispiel für eine Anwendung flocking")](images/flocking01.png)
+[![](images/flocking01.png "Ein Beispiel für eine Anwendung flocking")](images/flocking01.png#lightbox)
 
 Dies schließt GameplayKit, ReplayKit, Modell-e/a, MetalKit und Metall Leistung Shader zusammen mit der neuen, verbesserten Funktionen von Metall, SceneKit und SpriteKit.
 
@@ -56,7 +56,7 @@ Beispiel: ein 2D Feind, suchen Sie nach ihrem Weg durch eine Maze oder ein 3D Ze
 
 Beachten Sie in der folgenden Schritte aus:
 
-[ ![](images/gkpathfindpath.png "Ein Beispiel Pathfinding-Karte")](images/gkpathfindpath.png)
+[![](images/gkpathfindpath.png "Ein Beispiel Pathfinding-Karte")](images/gkpathfindpath.png#lightbox)
 
 Mit Pathfinding kann eine Möglichkeit, über die Zuordnung dieses C#-Code finden:
 
@@ -367,7 +367,7 @@ public override void ViewWillLayoutSubviews ()
 
 Wann ausgeführt, die etwas animierte _"Boids"_ wird Schwefel halten, um unsere Finger tippen:
 
-[ ![](images/flocking01.png "Wenig animierte Boids wird um die Finger Taps Schwefel halten.")](images/flocking01.png)
+[![](images/flocking01.png "Wenig animierte Boids wird um die Finger Taps Schwefel halten.")](images/flocking01.png#lightbox)
 
 ### <a name="other-apple-examples"></a>Weitere Beispiele für das Apple
 

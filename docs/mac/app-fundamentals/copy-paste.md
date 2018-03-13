@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 115f3340c5678c0ead06cf773e193fbdc4ba3d07
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ba937a6eae7f0f74bcf044f1248d49a421e82de5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="copy-and-paste"></a>Durch Kopieren und Einfügen
 
@@ -27,7 +27,7 @@ In diesem Artikel wird es zwei Hauptmethoden zum Verwenden der Zwischenablage in
 1. **Standarddatentypen** -da Montagefläche-Vorgängen in der Regel zwischen zwei nicht verknüpfte apps durchgeführt werden, weiß weder app die Arten von Daten, die von den anderen unterstützt. Zur Maximierung der des Potenzial für die Freigabe der Zwischenablage kann mehrere Darstellungen eines angegebenen Elements (über einen standardmäßigen Satz von allgemeinen Datentypen) enthalten, dies kann die verbrauchende app Version auswählen, die für ihre Anforderungen am besten geeignet ist.
 2. **Benutzerdefinierte Daten** – zur Unterstützung von kopieren und einfügen, komplexe Daten innerhalb Ihrer Xamarin.Mac können, definieren Sie einen benutzerdefinierten Datentyp, der von der Zwischenablage verarbeitet wird. Z. B. einen Vektor zeichnen app dem Benutzer ermöglicht, kopieren und Einfügen von komplexen Formen, die mehrere Datentypen und Punkten bestehen.
 
-[![Beispiel für die ausgeführte app](copy-paste-images/intro01.png "Beispiel für die ausgeführte app")](copy-paste-images/intro01-large.png)
+[![Beispiel für die ausgeführte app](copy-paste-images/intro01.png "Beispiel für die ausgeführte app")](copy-paste-images/intro01-large.png#lightbox)
 
 In diesem Artikel wird beschrieben, die Grundlagen der Arbeit mit der Zwischenablage in einer Anwendung Xamarin.Mac zur Unterstützung von kopieren und einfügen. Wird mit hoher vorgeschlagen, dass Sie über arbeiten die [Hello, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Benutzeroberflächen-Generator](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) und [Steckdosen und Aktionen](~/mac/get-started/hello-mac.md#Outlets_and_Actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die in diesem Artikel verwendet werden.
 
@@ -50,14 +50,14 @@ Führen Sie folgende Schritte aus:
 1. Starten Sie Visual Studio für Mac, und klicken Sie auf die **neues Projekt...**  Link.
 2. Wählen Sie **Mac** > **App** > **Kakao App**, klicken Sie dann auf die **Weiter** Schaltfläche: 
 
-    [![Erstellen eines neuen Kakao app-Projekts](copy-paste-images/sample01.png "Erstellen eines neuen Kakao app-Projekts")](copy-paste-images/sample01-large.png)
+    [![Erstellen eines neuen Kakao app-Projekts](copy-paste-images/sample01.png "Erstellen eines neuen Kakao app-Projekts")](copy-paste-images/sample01-large.png#lightbox)
 3. Geben Sie `MacCopyPaste` für die **Projektname** und alles andere als Standardeinstellung beibehalten. Klicken Sie auf Weiter: 
 
-    [![Der Name des Projekts festlegen](copy-paste-images/sample01a.png "festlegen den Namen des Projekts")](copy-paste-images/sample01a-large.png)
+    [![Der Name des Projekts festlegen](copy-paste-images/sample01a.png "festlegen den Namen des Projekts")](copy-paste-images/sample01a-large.png#lightbox)
 
 4. Klicken Sie auf die **erstellen** Schaltfläche: 
 
-    [![Bestätigen die neue projekteinstellungen](copy-paste-images/sample02.png "neue projekteinstellungen bestätigen")](copy-paste-images/sample02-large.png)
+    [![Bestätigen die neue projekteinstellungen](copy-paste-images/sample02.png "neue projekteinstellungen bestätigen")](copy-paste-images/sample02-large.png#lightbox)
 
 ### <a name="add-an-nsdocument"></a>Hinzufügen einer NSDocument
 
@@ -265,7 +265,7 @@ Mit diesem Dokument vorhanden erstellen wir die Benutzeroberfläche für die app
 
 Doppelklicken Sie auf die **Main.storyboard** Datei, die sie in Xcode geöffnet. Als Nächstes fügen Sie auch eine Symbolleiste und ein Bild hinzu, und konfigurieren Sie sie wie folgt:
 
-[![Bearbeiten die Symbolleiste](copy-paste-images/sample04.png "Bearbeiten der Symbolleiste")](copy-paste-images/sample04-large.png)
+[![Bearbeiten die Symbolleiste](copy-paste-images/sample04.png "Bearbeiten der Symbolleiste")](copy-paste-images/sample04-large.png#lightbox)
 
 Fügen Sie eine Kopie, und fügen Sie **Image Symbolleistenelement** auf der linken Seite der Symbolleiste. Wir verwenden diese Verknüpfungen kopieren und Einfügen aus dem Menü Bearbeiten. Als Nächstes fügen Sie vier **Symbolleiste Bildobjekte** auf die rechte Seite der Symbolleiste. Wir werden diese verwenden, um das Bild auch mit einigen Standardbilder aufzufüllen.
 
@@ -273,7 +273,7 @@ Weitere Informationen zum Arbeiten mit Symbolleisten finden Sie unter unsere [Sy
 
 Als Nächstes sehen wir verfügbar zu machen die folgenden Steckdosen und Aktionen für unsere Symbolleistenelemente und das Bild auch:
 
-[![Erstellen von Steckdosen und Aktionen](copy-paste-images/sample05.png "erstellen Steckdosen und Aktionen")](copy-paste-images/sample05-large.png)
+[![Erstellen von Steckdosen und Aktionen](copy-paste-images/sample05.png "erstellen Steckdosen und Aktionen")](copy-paste-images/sample05-large.png#lightbox)
 
 Weitere Informationen zum Arbeiten mit Steckdosen und Aktionen finden Sie unter der [Steckdosen und Aktionen](~/mac/get-started/hello-mac.md#Outlets_and_Actions) Teil unserer [Hello, Mac](~/mac/get-started/hello-mac.md) Dokumentation.
 

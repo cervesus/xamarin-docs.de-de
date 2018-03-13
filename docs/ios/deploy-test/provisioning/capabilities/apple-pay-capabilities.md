@@ -8,15 +8,15 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 88db45135104f14ca3a4b18e466e95288853a6df
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cc2c12ce2826f0b66cdf49a9a4df84d7f67f7713
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="apple-pay-capabilities"></a>Apple Pay-Funktionen
 
-_Zum Hinzufügen von Funktionen zu einer Anwendung ist oft eine zusätzliche Bereitstellungseinrichtung erforderlich. In diesem Leitfaden werden die erforderlichen Einstellungen für die Apple Pay-Funktionen erläutert._
+_Um Funktionen einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitstellungseinrichtung erforderlich. In diesem Leitfaden werden die erforderlichen Einstellungen für die Apple Pay-Funktionen erläutert._
 
 Apple Pay ermöglicht Benutzern das Bezahlen physischer Güter über das iOS-Gerät. Dieser Abschnitt beschreibt, wie alle erforderlichen Komponenten für Apple Pay in Apple Developer Center erstellt werden.
 
@@ -79,8 +79,8 @@ Eine Händler-ID wird verwendet, um Apple Pay wissen zu lassen, dass Sie Zahlung
 7.  Führen Sie einen Bildlauf zum unteren Rand dieses erweiterten Abschnitts aus, und klicken Sie auf **Bearbeiten**.
 8.  Scrollen Sie nach unten zu Apple Pay, und klicken Sie auf die Schaltfläche **Bearbeiten**:  
     
-    
     ![Bearbeiten der Details für Apple Pay-App-ID](apple-pay-capabilities-images/image39.png)
+
 9.  Wählen Sie die Händler-ID aus, die mit dieser App-ID verwendet wird, und klicken Sie auf **Fortfahren**:  
     
     ![Auswählen der Händler-ID für die App-ID](apple-pay-capabilities-images/image40.png)

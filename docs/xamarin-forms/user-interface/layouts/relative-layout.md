@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: ad621fa093379d5ad2dd81c81ce42dcaaa9bd923
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3d915191e24b5238d5165237f6ede74635b31e08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
 `RelativeLayout` wird auf die Position und Größe von Ansichten relativ zu den Eigenschaften der Ansichten Layout oder gleichgeordnetes Element verwendet werden. Im Gegensatz zu `AbsoluteLayout`, `RelativeLayout` verfügt nicht über das Konzept der gleitenden Anker und keine Funktionen zum Positionieren von Elementen relativ zum unteren oder rechten Rands des Layouts. `RelativeLayout` Positionieren von Elementen außerhalb seiner eigenen Grenzen unterstützt.
 
-[ ![](relative-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](relative-layout-images/layouts.png "Xamarin.Forms Layouts")
+[![](relative-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](relative-layout-images/layouts.png#lightbox "Xamarin.Forms Layouts")
 
 ## <a name="purpose"></a>Zweck
 
@@ -76,7 +76,7 @@ Beachten Sie die folgenden Aspekte des oben genannten Layouts aus:
 - Des Feld `y` Koordinate ist definiert als die Hälfte der Höhe des übergeordneten Elements, und 100 an.
 
 > [!NOTE]
-> **Hinweis**: aufgrund der Art und Weise Einschränkungen definiert werden, es ist möglich, stellen Sie komplexe Layouts in c# als durch XAML-Code angegeben werden können.
+> Aufgrund der Art und Weise, die Einschränkungen definiert sind, ist es möglich, stellen Sie komplexe Layouts in c# als durch XAML-Code angegeben werden können.
 
 Sowohl der obigen Beispiele Definieren von Einschränkungen als `RelativeToParent` &ndash; , also ihre Werte sind relativ zum übergeordneten Element. Es ist auch möglich, relativ zu einer anderen Ansicht Einschränkungen zu definieren. Dies ermöglicht eine intuitivere (für den Entwickler) Layouts und den Zweck des Codes Layout mehr sofort erkennbar machen kann.
 

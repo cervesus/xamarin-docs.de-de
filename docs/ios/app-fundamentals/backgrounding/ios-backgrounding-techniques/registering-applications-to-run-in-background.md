@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: dddd1ad4ae70b97f17ba71a7e96b553759e35695
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5fcb41f4f60adc8ca5be761c2b9a7449387a89d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="registering-applications-to-run-in-the-background"></a>Registrieren von Anwendungen im Hintergrund ausgeführt.
 
@@ -34,7 +34,7 @@ Registrierten apps können in verschiedene Kategorien fallen:
 
 Anwendungen können registriert werden, durch Festlegen der **Hintergrundmodi erforderlich** Eigenschaft in der Anwendungsverzeichnis *"Info.plist"*. Zum Registrieren einer Anwendung kann so viele Kategorien benötigt wird:
 
- [ ![](registering-applications-to-run-in-background-images/bgmodes.png "Festlegen der hintergrundmodi")](registering-applications-to-run-in-background-images/bgmodes.png)
+ [![](registering-applications-to-run-in-background-images/bgmodes.png "Festlegen der hintergrundmodi")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
 Eine schrittweise Anleitung zum Registrieren einer Anwendung für Updates der Hintergrund-Speicherort, finden Sie unter der [Hintergrund Speicherort Exemplarische Vorgehensweise](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md).
 
@@ -42,7 +42,7 @@ Eine schrittweise Anleitung zum Registrieren einer Anwendung für Updates der Hi
 
 Eine andere Eigenschaft, die festgelegt werden kann, in *"Info.plist"* ist die *Anwendung wird nicht ausgeführt, im Hintergrund*, oder `UIApplicationExitsOnSuspend` Eigenschaft:
 
- [ ![](registering-applications-to-run-in-background-images/plist.png "Deaktivieren im Hintergrund ausgeführt wird")](registering-applications-to-run-in-background-images/plist.png)
+ [![](registering-applications-to-run-in-background-images/plist.png "Deaktivieren im Hintergrund ausgeführt wird")](registering-applications-to-run-in-background-images/plist.png#lightbox)
 
 Dies ist genaue die gleiche Wirkung wie das Festlegen der App zu aktualisieren, im Hintergrund Einstellung Off in iOS 7 und höher, außer es kann nur auf der Seite Entwickler geändert werden und ist für iOS 4 und höher verfügbar. Die Anwendung sofort nach der Eingabe Hintergrund angehalten und wird nicht in der Lage, Verarbeitungsvorgänge ausführen.
 

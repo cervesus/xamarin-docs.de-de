@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 951de7c134e6882d621b015456d5d40a7cf2b8d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6512387738217259067e7b9ae8076f73b4fbeb07
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>Erstellen von neuen plattformspezifischen-Bibliotheksprojekte für NuGet
 
@@ -27,11 +27,11 @@ Mehrere Assemblys erstellt und in einem einzelnen NuGet-Paket integriert. NuGet-
 
 2. Wählen Sie **Bibliothek für mehrere Plattformen** aus der **mehrere Plattformen > Bibliothek** Abschnitt:
 
-  [ ![](platform-specific-images/mulitplatform-library-sml.png "Konfigurieren von Multi-Plattform-Bibliothek für einer einzelnen Codebasis")](platform-specific-images/multiplatform-library.png)
+  [![](platform-specific-images/mulitplatform-library-sml.png "Konfigurieren von Multi-Plattform-Bibliothek für einer einzelnen Codebasis")](platform-specific-images/multiplatform-library.png#lightbox)
 
 3. Geben Sie einen **Namen** und **Beschreibung**, und wählen Sie **Clientplattform spezifische**:
 
-  [ ![](platform-specific-images/specific-configure-sml.png "Konfigurieren Sie die plattformspezifischen-Bibliothek für iOS und Android")](platform-specific-images/specific-configure.png)
+  [![](platform-specific-images/specific-configure-sml.png "Konfigurieren Sie die plattformspezifischen-Bibliothek für iOS und Android")](platform-specific-images/specific-configure.png#lightbox)
 
 4. Durchlaufen Sie den Assistenten. Die folgenden Projekte werden der Projektmappe hinzugefügt:
 
@@ -42,7 +42,7 @@ Mehrere Assemblys erstellt und in einem einzelnen NuGet-Paket integriert. NuGet-
 
 5. Mit der rechten Maustaste auf das NuGet-Projekt, und wählen Sie **Optionen**, öffnen Sie dann die **NuGet-Paket > Metadaten** Abschnitt, und geben Sie die [erforderlichen Metadaten](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md) (als sowie ggf. optional Metadaten):
 
-  [ ![](platform-specific-images/specific-metadata-sml.png "Geben Sie die erforderlichen Metadaten")](platform-specific-images/specific-metadata.png)
+  [![](platform-specific-images/specific-metadata-sml.png "Geben Sie die erforderlichen Metadaten")](platform-specific-images/specific-metadata.png#lightbox)
 
 6. Auch in der **Projektoptionen** geöffnete Fenster die **Verweisassemblys** Abschnitt, und wählen Sie die PCL-Profile, die die freigegebene Bibliothek über "Köder And Switch" unterstützt:
 
@@ -67,4 +67,4 @@ Dieser Screenshot zeigt den Inhalt von einem plattformspezifischen NuGet, die IO
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Metadaten-Handbuch](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)
+- [Leitfaden zu Metadaten](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)

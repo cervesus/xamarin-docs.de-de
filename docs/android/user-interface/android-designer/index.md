@@ -7,17 +7,17 @@ ms.assetid: E38C9AD9-56AA-B983-8B21-E1F466C4DB36
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.openlocfilehash: c06dab9bf280a2543585d36147c7c3311f6445ad
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: 90dc37612f36eb914c3aaa140200762945ac4516
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-designer"></a>Android Designer
 
 _In diesem Artikel werden die Funktionen des Designers Xamarin.Android behandelt. Es umfasst Designer Grundlagen, wie der Designer verwenden, um das visuelle Layout Widgets und Bearbeiten von Eigenschaften angezeigt. Es zeigt auch, wie den Designer mit Benutzeroberflächen und Ressourcen in verschiedenen Konfigurationen, z. B. Designs, Sprachen und Gerätekonfigurationen, funktioniert und wie um alternative Ansichten wie quer- und Hochformat zu entwerfen._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -37,7 +37,6 @@ In diesem Artikel Umfragen viele Funktionen des Designers Xamarin.Android. Es wi
 9.  Wie die Entwurfstools Material zum Material Design-kompatibler apps erstellen.
 
 
-<a name="Sections" />
 
 ## <a name="sections"></a>Abschnitte
 
@@ -52,7 +51,6 @@ In diesem Artikel Umfragen viele Funktionen des Designers Xamarin.Android. Es wi
  [Material Design-Features](~/android/user-interface/android-designer/material-design-features.md)
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

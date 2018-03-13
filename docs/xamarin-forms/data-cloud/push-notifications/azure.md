@@ -5,32 +5,35 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: A1EF400F-73F4-43E9-A0C3-1569A0F34A3B
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: cccbe64f69b926ced77403bcf85540ef1060dbac
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f0f767179a9280d7a6c6d7ce8125696d5e664cba
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>Senden von Pushbenachrichtigungen von Azure Mobile Apps
 
 _Azure Benachrichtigungshubs stellen eine skalierbare pushinfrastruktur für das Senden von Pushbenachrichtigungen mobile von beliebigen Back-Ends an beliebige mobile Plattformen die Komplexität von einem Back-End-müssen für die Kommunikation mit verschiedenen plattformbenachrichtigungssysteme Geschäftslogikkomponenten bei. In diesem Artikel wird erläutert, wie Azure-Benachrichtigungshubs zum Senden von Pushbenachrichtigungen von einer Instanz von Azure Mobile Apps zu einer Xamarin.Forms-Anwendung verwendet wird._
 
-## <a name="overview"></a>Übersicht
+> [!VIDEO https://youtube.com/embed/le2lDY22xwM]
+
+**Azure Push von Benachrichtigungs-Hub und Xamarin.Forms, [Xamarin University](https://university.xamarin.com/)**
 
 Eine Pushbenachrichtigung wird verwendet, um Informationen, z. B. eine Nachricht von einem Back-End-System zu einer Anwendung auf einem mobilen Gerät auf die Anwendung Engagement und Nutzung erhöhen zu übermitteln. Die Benachrichtigung kann jederzeit, am gesendet werden, selbst wenn der Benutzer nicht die entsprechende Anwendung aktiv verwenden.
 
 Back-End-Systeme senden Pushbenachrichtigungen an mobile Geräte über Platform Notification Systems (PNS), wie im folgenden Diagramm dargestellt:
 
-[![](azure-images/pns.png "Plattformbenachrichtigungssysteme")](azure-images/pns-large.png "Plattformbenachrichtigungssysteme")
+[![](azure-images/pns.png "Plattformbenachrichtigungssysteme")](azure-images/pns-large.png#lightbox "Plattformbenachrichtigungssysteme")
 
 Um eine Pushbenachrichtigung zu senden, kontaktiert das Back-End-System das plattformspezifische PNS zum Senden einer Benachrichtigung an einen Client-Anwendungsinstanz. Hierdurch werden erheblich die Komplexität der Back-End beim plattformübergreifende Pushbenachrichtigungen erforderlich sind, da der Back-End-jede Clientplattform-spezifische PNS-API und Protokoll benötigt.
 
 Azure Notification Hubs vermeiden diese Komplexität, indem Sie dabei die Details der verschiedenen plattformbenachrichtigungssysteme ermöglicht eine plattformübergreifende Benachrichtigung mit einem einzigen API-Aufruf gesendet wird, wie im folgenden Diagramm dargestellt:
 
-[![](azure-images/notification-hub.png)](azure-images/notification-hub-large.png)
+[![](azure-images/notification-hub.png)](azure-images/notification-hub-large.png#lightbox)
 
 Zum Senden einer Pushbenachrichtigung Codieren der Back-End-System nur Kontakte Azure Notification Hub, der wiederum mit der verschiedenen plattformbenachrichtigungssysteme kommuniziert, verringern daher die Komplexität der Back-End, sendet Pushbenachrichtigungen an.
 
@@ -44,7 +47,7 @@ Azure Mobile Apps haben integrierten Unterstützung für die Verwendung von Noti
 
 Die beispielanwendung veranschaulicht eine Todo List-Anwendung, deren Daten in einer Azure-Mobile Apps-Instanz gespeichert ist. Jedes Mal, wenn der Azure-Mobile Apps-Instanz ein neues Element hinzugefügt wird, wird eine Pushbenachrichtigung an die Xamarin.Forms-Anwendung gesendet. Die folgenden Screenshots zeigen jede Plattform, die die empfangene Pushbenachrichtigung anzeigen:
 
-[![](azure-images/screenshots.png "Beispiel-Anwendung empfängt eine Pushbenachrichtigung")](azure-images/screenshots-large.png "Beispielanwendung, die eine Pushbenachrichtigung empfangen")
+[![](azure-images/screenshots.png "Beispiel-Anwendung empfängt eine Pushbenachrichtigung")](azure-images/screenshots-large.png#lightbox "Beispielanwendung, die eine Pushbenachrichtigung empfangen")
 
 Weitere Informationen zu Azure Notification Hubs, finden Sie unter [Azure Notification Hubs](https://azure.microsoft.com/documentation/articles/notification-hubs-push-notification-overview/) und [Hinzufügen von Pushbenachrichtigungen an Ihre app Xamarin.Forms](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push/).
 
@@ -118,7 +121,7 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 Bei der Registrierung von iOS-Anwendung mit APNS müssen sie die Typen von Pushbenachrichtigungen angeben, die sie erhalten sollen. Die `RegisterUserNotificationSettings` Methode registriert die Arten von Benachrichtigungen, die die Anwendung erhalten kann, mit der `RegisterForRemoteNotifications` Methode, die zum Empfangen von Pushbenachrichtigungen von APNS registrieren.
 
 > [!NOTE]
-> **Hinweis**: wegen eines Fehlers beim Aufrufen der `RegisterUserNotificationSettings` Methode führt dazu, im Push-Benachrichtigungen, die automatisch von der Anwendung empfangen werden.
+> Wegen eines Fehlers beim Aufrufen der `RegisterUserNotificationSettings` Methode führt dazu, im Push-Benachrichtigungen, die automatisch von der Anwendung empfangen werden.
 
 <a name="ios_registration_response" />
 
@@ -146,7 +149,7 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
 Diese Methode erstellt eine einfache Benachrichtigungsvorlage des Meldung als JSON und das Gerät, um die Vorlage für Benachrichtigungen über den Notification Hub registriert.
 
 > [!NOTE]
-> **Hinweis**: die `FailedToRegisterForRemoteNotifications` Außerkraftsetzung sollten implementiert werden, um Situationen, z. B. keine Netzwerkverbindung zu bewältigen. Dies ist wichtig, da der Benutzer die Anwendung beim start möglicherweise offline.
+> Die `FailedToRegisterForRemoteNotifications` Außerkraftsetzung sollten implementiert werden, um Situationen, z. B. keine Netzwerkverbindung zu bewältigen. Dies ist wichtig, da der Benutzer die Anwendung beim start möglicherweise offline.
 
 <a name="ios_process_incoming" />
 
@@ -177,7 +180,7 @@ public override void DidReceiveRemoteNotification(
 Die `userInfo` Wörterbuch enthält die `aps` Schlüssel, dessen Wert ist die `alert` Wörterbuch mit den übrigen Benachrichtigungsdaten. Dieses Wörterbuch wird abgerufen, mit der `string` benachrichtigungsmeldung in einem Dialogfeld angezeigt wird.
 
 > [!NOTE]
-> **Hinweis**: Wenn eine Anwendung nicht ausgeführt wird, wenn eine Pushbenachrichtigung eingeht, wird die Anwendung gestartet, aber die `DidReceiveRemoteNotification` -Methode die Benachrichtigung wird nicht verarbeitet werden. Rufen Sie stattdessen die benachrichtigungsnutzlast und entsprechend reagieren, aus der `WillFinishLaunching` oder `FinishedLaunching` überschreibt.
+> Wenn eine Anwendung nicht ausgeführt wird, wenn eine Pushbenachrichtigung eingeht, wird die Anwendung gestartet, aber die `DidReceiveRemoteNotification` -Methode die Benachrichtigung wird nicht verarbeitet werden. Rufen Sie stattdessen die benachrichtigungsnutzlast und entsprechend reagieren, aus der `WillFinishLaunching` oder `FinishedLaunching` überschreibt.
 
 Weitere Informationen zu APNS, finden Sie unter [Pushbenachrichtigungen in iOS](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md).
 
@@ -330,7 +333,7 @@ public class FirebaseNotificationService : FirebaseMessagingService
         intent.AddFlags(ActivityFlags.ClearTop);
         var pendingIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.OneShot);
 
-        var notificationBuilder = new Notification.Builder(this)
+        var notificationBuilder = new NotificationCompat.Builder(this)
             .SetSmallIcon(Resource.Drawable.ic_stat_ic_notification)
             .SetContentTitle("New Todo Item")
             .SetContentText(messageBody)

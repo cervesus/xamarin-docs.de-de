@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/17/2017
-ms.openlocfilehash: e26fcb81bb99e5a49d16731777171b4efa4163c6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 739ee4ebeb3176d23ab1eb911baaab31a26252c4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-platform-specifics"></a>Android-Plattform-Besonderheiten
 
@@ -54,7 +54,7 @@ Die `Application.On<Android>` Methode gibt an, dass diese plattformspezifische n
 
 Das Ergebnis ist, dass die Bildschirmtastatur Bereich Betriebsmodus kann festgelegt werden Eingabe, wenn eine Eingabe Steuerelement den Fokus hat:
 
-[![](android-images/pan-resize.png "Bildschirmtastatur funktioniert Modus plattformspezifischen")](android-images/pan-resize-large.png "Soft Keyboard Operating Mode Plaform-Specific")
+[![](android-images/pan-resize.png "Bildschirmtastatur funktioniert Modus plattformspezifischen")](android-images/pan-resize-large.png#lightbox "Soft Keyboard Operating Mode Plaform-Specific")
 
 <a name="fastscroll" />
 
@@ -98,7 +98,7 @@ listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScro
 
 Das Ergebnis ist, schnell einen Bildlauf durch die Daten in einem [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) kann aktiviert werden, die ändert der Größe des Ziehpunkts Scroll:
 
-[![](android-images/fastscroll.png "ListView FastScroll plattformspezifischen")](android-images/fastscroll-large.png "ListView FastScroll Plaform-Specific")
+[![](android-images/fastscroll.png "ListView FastScroll plattformspezifischen")](android-images/fastscroll-large.png#lightbox "ListView FastScroll Plaform-Specific")
 
 <a name="enable_swipe_paging" />
 
@@ -244,7 +244,7 @@ Die `Application.Current.On<Android>` Methode gibt an, dass diese plattformspezi
 
 Das Ergebnis ist, die [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) und [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) Page-Ereignisse wird nicht ausgelöst werden, auf die Anwendung anhalten und fortsetzen bzw. und, auch wenn die Bildschirmtastatur wurde angezeigt wird, wenn die Anwendung wurde angehalten, es wird auch angezeigt, wenn die Anwendung wird fortgesetzt:
 
-[![](android-images/keyboard-on-resume.png "Lebenszyklus Ereignisse plattformspezifischen")](android-images/keyboard-on-resume-large.png "Lebenszyklus Ereignisse plattformspezifischen")
+[![](android-images/keyboard-on-resume.png "Lebenszyklus Ereignisse plattformspezifischen")](android-images/keyboard-on-resume-large.png#lightbox "Lebenszyklus Ereignisse plattformspezifischen")
 
 ## <a name="summary"></a>Zusammenfassung
 
@@ -253,7 +253,7 @@ Dieser Artikel veranschaulicht, wie die Android-Plattform-Einzelheiten zu nutzen
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Erstellen der Plattform-Besonderheiten](~/xamarin-forms/platform/platform-specifics/creating.md)
+- [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 - [AndroidSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)
 - [AndroidSpecific.AppCompat](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/)

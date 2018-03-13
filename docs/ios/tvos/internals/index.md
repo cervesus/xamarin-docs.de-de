@@ -3,16 +3,16 @@ title: "tvos. außerdem wurden Besonderheiten"
 description: "Xamarin.tvOS gemeinsam die gleichen DNA als unser Produkt Xamarin.iOS, damit die erweiterte Dokumente, die wir für unsere iOS Produkt erstellt haben unser Produkt tvos. außerdem wurden fast identisch sind."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: B245062F-1DD9-4BE5-8E11-728BA3C8AD4C
+ms.assetid: 8C076FED-9C03-44DE-9723-0E20272DD16B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: 6adba454ac153186c05715f4baa3261212e7b18b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fee2843840f7f6dac461cd4e3426fb8b296b30bf
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="tvos-internals"></a>tvos. außerdem wurden Besonderheiten
 
@@ -53,7 +53,7 @@ Dieser Leitfaden behandelt das Hinzufügen von Codierungen zu einem Xamarin.iOS-
 
 ###  <a name="mtouchiosdeploy-testmtouchmd"></a>[mtouch](~/ios/deploy-test/mtouch.md)
 
-Hinweise und Informationen zu mtouch.exe, das Befehlszeilentool, das das Projekt in eine Anwendung verwendet werden kann von iOS erstellt wurde.
+Gibt Hinweise und Informationen zu „mtouch.exe“, dem Befehlszeilentool, das Ihr Projekt in eine von iOS nutzbare Anwendung kompiliert.
 
 ###  <a name="linking-native-librariesiosplatformnative-interopmd"></a>[Verknüpfen von systemeigenen Bibliotheken](~/ios/platform/native-interop.md)
 

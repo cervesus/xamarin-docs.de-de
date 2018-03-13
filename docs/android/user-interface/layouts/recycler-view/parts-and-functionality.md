@@ -6,12 +6,12 @@ ms.assetid: 54F999BE-2732-4BC7-A466-D17373961C48
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: b1ddcca25fd83a806e8383a5717462b518b46d0b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 89679f7d825422ab34dd77b31a7a3fde60f36e99
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="recyclerview-parts-and-functionality"></a>RecyclerView Teile und Funktionalität
 
@@ -57,7 +57,7 @@ Wenn Sie nicht erweitern `ItemDecoration` und `ItemAnimator`, `RecyclerView` sta
 
 `RecyclerView` die Ansicht ein Element nicht für jedes Element in der Datenquelle reserviert ist. Stattdessen es weist nur die Anzahl der Element-Sichten, die auf den Bildschirm passen, und diese Layouts Element als der Benutzer einen Bildlauf wiederverwendet. Wenn die Ansicht ausgeblendet zuerst einen Bildlauf, durchläuft er des wiederverwendungsprozesses in der folgenden Abbildung veranschaulicht:
 
-[ ![Diagramm zur Veranschaulichung die sechs Schritte der Wiederverwendung anzeigen](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png)
+[![Diagramm zur Veranschaulichung die sechs Schritte der Wiederverwendung anzeigen](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png#lightbox)
 
 1.  Wenn eine Sicht führt einen ausgeblendet Bildlauf und nicht mehr angezeigt wird, wird eine *Ausschuss Ansicht*.
 
@@ -75,7 +75,6 @@ Wenn Sie nicht erweitern `ItemDecoration` und `ItemAnimator`, `RecyclerView` sta
 Zusätzlich zu den Elementansicht Wiederverwendung `RecyclerView` verwendet auch einen anderen Optimierung der Effizienz: Inhaber anzeigen. Ein *Ansicht Inhaber* ist eine einfache Klasse von Caches Verweise angezeigt werden. Jedes Mal, die der Adapter eine Element-Layout-Datei vergrößert wird erstellt auch einen entsprechenden Inhaber der Ansicht. Verwendet der Inhaber der Ansicht `FindViewById` um Verweise auf die Ansichten in der Datei vergrößerte Elementlayout abzurufen. Diese Verweise werden verwendet, um neue Daten in den Ansichten laden, jedes Mal, wenn das Layout wiederverwendet werden, um neue Daten anzeigt wird.
  
 
-<a name="layoutmanager" />
 
 ### <a name="the-layout-manager"></a>Der Layout-Manager
 
@@ -96,7 +95,6 @@ Klicken Sie zum Angeben des Layout-Managers instanziieren Sie den ausgewählten 
 
 Weitere Informationen zum Layout-Manager finden Sie unter der [RecyclerView.LayoutManager-Klassenreferenz](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html).
 
-<a name="viewholder" />
 
 ### <a name="the-view-holder"></a>Der Inhaber der Ansicht
 
@@ -109,7 +107,6 @@ Die Sicht besitzt eine Klasse, die Sie definieren, für die Zwischenspeicherung 
 Ein ausführliches Beispiel eine `ViewHolder` Implementierung erhält [ein einfaches RecyclerView Beispiel](~/android/user-interface/layouts/recycler-view/recyclerview-example.md).
 Weitere Informationen zu `RecyclerView.ViewHolder`, finden Sie unter der [RecyclerView.ViewHolder-Klassenreferenz](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html).
 
-<a name="adapter" />
 
 ### <a name="the-adapter"></a>Der Adapter
 
@@ -118,7 +115,7 @@ Da die Datenquelle anwendungsspezifischen ist, müssen Sie Adapterfunktionalitä
 
 In der folgende Zeichnung wird veranschaulicht, wie der Adapter Inhalt in einer Datenquelle über Sicht sind die Urheberrechtsinhaber für einzelne Sichten in jedem Zeilenelement in ordnet die `RecyclerView`:
 
-[ ![Diagramm zur Veranschaulichung ViewHolders-Datenquelle mit Adapter](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png)
+[![Diagramm zur Veranschaulichung ViewHolders-Datenquelle mit Adapter](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png#lightbox)
 
 Der Adapter lädt jedes `RecyclerView` Zeile mit Daten für eine bestimmte Zeilenelement. Für die Zeilenposition *P*, z. B. sucht der Adapter die zugeordneten Daten an der Position *P* innerhalb der Datenquelle und kopiert diese auf die Zeile Datenelement an Position *P* in der `RecyclerView` Auflistung.
 In dem oben abgebildeten, z. B. der Adapter verwendet den Inhaber der Ansicht nachgeschlagen werden die Verweise für die `ImageView` und `TextView` an dieser Position, daher keine wiederholten Aufrufen müssen `FindViewById` für diesen Ansichten als der Benutzer führt einen Bildlauf durch die Auflistung und Sichten wird wiederverwendet.
@@ -134,7 +131,6 @@ Wenn Sie einen Adapter implementieren, müssen Sie die folgenden überschreiben 
 Der Layout-Manager ruft diese Methoden beim Positionieren von Elementen in ist die `RecyclerView`. 
 
 
-<a name="datachanges" />
 
 ### <a name="notifying-recyclerview-of-data-changes"></a>Benachrichtigen RecyclerView von Datenänderungen
 

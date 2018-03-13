@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: bac9402df544a57cceb98e816e268eb2dcb99c72
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8eed2d6b825a6e6dd7e956bf901246b9a630081a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-wear"></a>Hello, Abnutzung
 
@@ -30,11 +30,11 @@ Erstellen Sie ein neues **Android Dach Anwendung**:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Erstellen einer neuen Android Dach Anwendung klicken Sie im Dialogfeld "Neues Projekt"](hello-wear-images/vs/new-solution-sml.png)](hello-wear-images/vs/new-solution.png)
+[![Erstellen einer neuen Android Dach Anwendung klicken Sie im Dialogfeld "Neues Projekt"](hello-wear-images/vs/new-solution-sml.png)](hello-wear-images/vs/new-solution.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Erstellen einer neuen Android Dach-Anwendung im Dialogfeld "neue Projektmappe"](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png)
+[![Erstellen einer neuen Android Dach-Anwendung im Dialogfeld "neue Projektmappe"](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png#lightbox)
 
 -----
 
@@ -47,13 +47,13 @@ Diese Vorlage enthält, die automatisch die **Wearable Bibliothek für Xamarin A
 
 Sicherstellen, dass **mindestens Android Ziel** festgelegt ist, um **Android 5.0.x (Lollipop)** oder höher: 
 
-[![Festlegen des Zielframeworks für Android 5.0 in Visual Studio](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png)
+[![Festlegen des Zielframeworks für Android 5.0 in Visual Studio](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Stellen Sie sicher, das Zielframework auf festgelegt ist **Android 5.0.x (Lollipop)** oder höher:
 
-[ ![Festlegen des Zielframeworks für Android 5.0 in Visual Studio für Mac](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png)
+[![Festlegen des Zielframeworks für Android 5.0 in Visual Studio für Mac](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
 
 -----
 
@@ -144,11 +144,11 @@ Das Gerät mit Android Dach sollte in der Pulldownmenü Gerät angezeigt werden.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Auswählen einer Dach AVD in Visual Studio-Gerät-Menü](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png)
+[![Auswählen einer Dach AVD in Visual Studio-Gerät-Menü](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Ein AVD Dach auswählen in Visual Studio für Mac-Geräts im Menü](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png)
+[![Ein AVD Dach auswählen in Visual Studio für Mac-Geräts im Menü](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
 
 -----
 
@@ -160,11 +160,11 @@ Wenn Sie einen Emulator Überwachung verwenden, dauert es eine Weile, um die app
 
 Nachdem die app erfolgreich bereitgestellt hat, sollte auf dem Bildschirm des Geräts Abnutzung einen Bildschirm wie folgt angezeigt:
 
-[![Startbildschirm von Abnutzung-app](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png)
+[![Startbildschirm von Abnutzung-app](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
 
 Tippen Sie auf die **CLICK ME!** Schaltfläche in der Abnutzung Gerät und zum finden Sie die Erhöhung der Anzahl mit jeder tippen:
 
-[![Screenshot der Dach app 3 Klicks](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png)
+[![Screenshot der Dach app 3 Klicks](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
 
 
 ## <a name="next-steps"></a>Nächste Schritte

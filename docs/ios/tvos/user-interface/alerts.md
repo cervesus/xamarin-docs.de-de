@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 593e17096d92d9a9764545149991817fa616e2fc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6dabba30c5242d6e7e9ef42a4025f87826a5b89e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-alerts"></a>Arbeiten mit Warnungen
 
@@ -21,7 +21,7 @@ _Dieser Artikel behandelt die Arbeit mit UIAlertController eine Warnmeldung, die
 
 Wenn Sie müssen ein Eingreifen des Benutzers tvos. außerdem wurden erhalten oder Fragen Sie die Berechtigung zum Ausführen einer destruktiven Aktion (z. B. das Löschen einer Datei), können Sie eine Warnmeldung mit stellen die `UIAlertViewController`:
 
-[ ![](alerts-images/alert01.png "Ein Beispiel für UIAlertViewController")](alerts-images/alert01.png)
+[![](alerts-images/alert01.png "Ein Beispiel für UIAlertViewController")](alerts-images/alert01.png#lightbox)
 
 Wenn zusätzlich zum Anzeigen einer Meldung, Sie hinzufügen können, Schaltflächen und Textfelder auf eine Warnung, dass der Benutzer auf Aktionen reagiert und Feedback.
 
@@ -31,7 +31,7 @@ Wenn zusätzlich zum Anzeigen einer Meldung, Sie hinzufügen können, Schaltflä
 
 Wie bereits erwähnt, werden Warnungen verwendet, die Aufmerksamkeit des Benutzers abrufen und informieren Sie ihn über den Status Ihres Feedbacks app oder Anforderung. Warnungen müssen einen Titel vorhanden ist, können sie optional eine Nachricht und eine oder mehrere Schaltflächen und Textfeldern aufweisen.
 
-[ ![](alerts-images/alert04.png "Eine Beispiel-Warnung")](alerts-images/alert04.png)
+[![](alerts-images/alert04.png "Eine Beispiel-Warnung")](alerts-images/alert04.png#lightbox)
 
 Apple hat die folgenden Vorschläge für die Arbeit mit Warnungen an:
 
@@ -118,11 +118,11 @@ Die `AddAction` Methode fügt die angegebene Aktion aus, um die `UIAlertViewCont
 
 Zusätzlich zum Hinzufügen von Aktionen (Schaltflächen) auf die Warnung aus, können Sie die Warnung, die der Benutzer Informationen wie Benutzer-IDs und Kennwörter Auffüllen kann Textfelder hinzufügen:
 
-[ ![](alerts-images/alert02.png "Textfeld in einer Warnung")](alerts-images/alert02.png)
+[![](alerts-images/alert02.png "Textfeld in einer Warnung")](alerts-images/alert02.png#lightbox)
 
 Wenn der Benutzer das Textfeld "auswählt, wird die standardmäßige tvos. außerdem wurden Tastatur ihnen ermöglicht, einen Wert für das Feld eingeben angezeigt:
 
-[ ![](alerts-images/alert03.png "Eingeben von text")](alerts-images/alert03.png)
+[![](alerts-images/alert03.png "Eingeben von text")](alerts-images/alert03.png#lightbox)
 
 Der folgende Code zeigt eine OK/Cancel-Warnung mit einem einzelnen Textfeld für die Eingabe eines Werts zu ändern:
 

@@ -4,14 +4,15 @@ description: "Untersuchen Sie die Auswirkung und Animationen, die mit der SkiaSh
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: c87f9a561ac2f7a8c3da1c1e4ab839431073fcb9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 146093e15651316e84947e2bd81eeee3bf55cedb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-rotate-transform"></a>Die Rotationstransformation
 
@@ -57,7 +58,7 @@ using (SKPaint textPaint = new SKPaint
 
 Der Text wird außerhalb des Bildschirms gedreht, da Drehung im erübrigt die linke obere Ecke des Zeichenbereichs, für die meisten Winkel an diesem Programm festgelegt wird:
 
-[![](rotate-images/basicrotate-small.png "Dreifacher Screenshot der Seite grundlegende Drehen")](rotate-images/basicrotate-large.png "dreifacher Screenshot der Seite grundlegende drehen")
+[![](rotate-images/basicrotate-small.png "Dreifacher Screenshot der Seite grundlegende Drehen")](rotate-images/basicrotate-large.png#lightbox "dreifacher Screenshot der Seite grundlegende drehen")
 
 Sehr häufig sollten Sie ein Element einer angegebenen Dreh-und Angelpunkt mit diesen Versionen von zentraler Drehen der [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/System.Single/System.Single/) und [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/System.Single/System.Single/) Methoden:
 
@@ -85,7 +86,7 @@ using (SKPaint textPaint = new SKPaint
 
 Jetzt wird der Text gedreht, um den Punkt verwendet, um den Text einzufügen, der die horizontale Mitte der Basislinien-der Text ist:
 
-[![](rotate-images/centeredrotate-small.png "Dreifacher Screenshot der Seite zentriert Drehen")](rotate-images/centeredrotate-large.png "dreifacher Screenshot der Seite zentriert drehen")
+[![](rotate-images/centeredrotate-small.png "Dreifacher Screenshot der Seite zentriert Drehen")](rotate-images/centeredrotate-large.png#lightbox "dreifacher Screenshot der Seite zentriert drehen")
 
 Wie bei der zentriert Version von den `Scale` -Methode, die zentriert Version von den `RotateDegrees` Aufruf ist eine Verknüpfung:
 
@@ -139,7 +140,7 @@ Im Prinzip werden die beiden Transformationen angewendet, in der Reihenfolge sta
 
 Es gibt in der Regel mehrere Möglichkeiten, Drehung und Übersetzung zu kombinieren. Die **Text gedreht** -Seite erstellt der folgende angezeigt:
 
-[![](rotate-images/rotatedtext-small.png "Dreifacher Screenshot der Seite Text gedreht")](rotate-images/rotatedtext-large.png "dreifacher Screenshot der Seite Text gedreht")
+[![](rotate-images/rotatedtext-small.png "Dreifacher Screenshot der Seite Text gedreht")](rotate-images/rotatedtext-large.png#lightbox "dreifacher Screenshot der Seite Text gedreht")
 
 So sieht die `PaintSurface` Handler, der die [ `RotatedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) Klasse:
 
@@ -363,7 +364,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die Uhr ist sicherlich funktionsfähig, obwohl die Hände stattdessen einfach gehalten sind:
 
-[![](rotate-images/uglyanalogclock-small.png "Screenshot der Seite mit den problematischen analogen Uhr Text dreifach")](rotate-images/uglyanalogclock-large.png "Triple screenshot of the Ugly Analog page")
+[![](rotate-images/uglyanalogclock-small.png "Screenshot der Seite mit den problematischen analogen Uhr Text dreifach")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
 
 
 ## <a name="related-links"></a>Verwandte Links

@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/30/2018
-ms.openlocfilehash: 4728b50446033c02d33ccf8273f1dc2e50d66906
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b8642a1c96ee525fbd6950616fbc6da0ad0e2337
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>Exemplarische Vorgehensweise – mit lokalen Benachrichtigungen in Xamarin.Android
 
 _In dieser exemplarischen Vorgehensweise veranschaulicht, wie lokale Benachrichtigungen in Xamarin.Android Anwendungen verwendet wird. Es veranschaulicht die Grundlagen zum Erstellen und veröffentlichen eine lokale Benachrichtigung. Wenn der Benutzer die Benachrichtigung im Infobereich klickt, wird er eine zweite Aktivität gestartet._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -26,16 +25,14 @@ In dieser exemplarischen Vorgehensweise erstellen wir eine Android-Anwendung, di
 
 Die folgenden Screenshots veranschaulicht einige Beispiele für diese Anwendung:
 
-[![Beispiel-Screenshots mit der Benachrichtigung](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png)
+[![Beispiel-Screenshots mit der Benachrichtigung](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png#lightbox)
 
 
-<a name="walkthrough" />
 
 ## <a name="walkthrough"></a>Exemplarische Vorgehensweise
 
 Zunächst sehen wir erstellen ein neues Android-Projekt mit der **Android-App** Vorlage. Wir nennen Sie dieses Projekt **LocalNotifications**. (Wenn Sie nicht mit dem Erstellen von Projekten Xamarin.Android vertraut sind, finden Sie unter [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md).)
 
-<a name="add-v4-support" />
 
 ### <a name="add-the-androidsupportv4app-component"></a>Fügen Sie der Android.Support.V4.App-Komponente hinzu
 
@@ -53,7 +50,6 @@ Darüber hinaus wir müssen unbedingt klar, auf dem Compiler, die wir verwenden 
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 ```
 
-<a name="define-id" />
 
 ### <a name="define-the-notification-id"></a>Definieren Sie die Benachrichtigungs-ID
 
@@ -63,7 +59,6 @@ Wir benötigen eine eindeutige ID für unsere Benachrichtigung. Ermöglicht das 
 private static readonly int ButtonClickNotificationId = 1000;
 ```
 
-<a name="add-code" />
 
 ### <a name="add-code-to-generate-the-notification"></a>Fügen Sie Code aus, um die Benachrichtigung generiert wird, hinzu.
 
@@ -117,7 +112,6 @@ In der `OnCreate` -Methode, weisen Sie dieses `ButtonOnClick` Methode, um die `C
 button.Click += ButtonOnClick;
 ```
 
-<a name="second-activity" />
 
 ### <a name="create-a-second-activity"></a>Erstellen Sie eine zweite Aktivität
 
@@ -174,36 +168,33 @@ Wir müssen auch erstellen, ein Layout Ressource für **SecondActivity**. Fügen
 </LinearLayout>
 ```
 
-<a name="add-icon" />
 
 ### <a name="add-a-notification-icon"></a>Fügen Sie einem Symbol hinzu.
 
 Zum Schluss fügen Sie ein kleines Symbol, das im Infobereich angezeigt wird, wenn unsere Benachrichtigung gestartet wird. Sie können kopieren [dieses Symbol](local-notifications-walkthrough-images/ic-stat-button-click.png) zu Ihrem Projekt oder ein eigene benutzerdefinierte Symbol "erstellen". Den Namen der Symboldatei **ic\_Stat\_Schaltfläche\_click.png** und kopieren Sie sie in der **Ressourcen und Ausgaben möglich** Ordner. Denken Sie daran, verwenden Sie **hinzufügen > Vorhandenes Element...**  auf dieses Symboldatei im Projekt enthalten.
 
-<a name="run-app" />
 
 ### <a name="run-the-application"></a>Ausführen der Anwendung
 
 Wir erstellen, und führen Sie die Anwendung. Die erste Aktivität, die mit dem folgenden Screenshot vergleichbarer sollte angezeigt werden:
 
-[ ![Screenshot der ersten Aktivität](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png)
+[![Screenshot der ersten Aktivität](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png#lightbox)
 
 Wie Sie die Schaltfläche klicken, sollten Sie das kleine Symbol für die Benachrichtigung im Infobereich angezeigt feststellen:
 
-[ ![Symbol "Benachrichtigung" angezeigt wird.](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png)
+[![Symbol "Benachrichtigung" angezeigt wird.](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png#lightbox)
 
 Wenn Sie nach unten Streifen und verfügbar öffnen Sie die Benachrichtigung machen, sollte die Benachrichtigung angezeigt werden:
 
-[ ![Benachrichtigungsmeldung](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png)
+[![Benachrichtigungsmeldung](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png#lightbox)
 
 Wenn Sie klicken Sie auf die Benachrichtigung, es verschwinden sollte und andere Aktivität gestartet werden sollte &ndash; in etwa dem folgenden Screenshot suchen:
 
-[ ![Screenshot der zweiten Aktivität](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png)
+[![Screenshot der zweiten Aktivität](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
 
 Herzlichen Glückwunsch! An diesem Punkt auf der Sie Android lokalen Benachrichtigung dieser exemplarischen Vorgehensweise abgeschlossen haben, und Ihnen ein funktionierendes Beispiel, das Sie verwenden können. Es gibt viele weitere Benachrichtigungen als wir hier gezeigt haben daher ggf. Weitere Informationen sehen Sie sich [Google Dokumentation auf Benachrichtigungen](http://developer.android.com/guide/topics/ui/notifiers/notifications.html) und das Android [Benachrichtigungen](http://developer.android.com/design/patterns/notifications.html) -Entwurfshandbuch.
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

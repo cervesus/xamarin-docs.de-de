@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: e09ac502298296277d9264bcd18f1ce1cbbf0c55
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 53309be2712f14c79b84c2eabb519b86dd73a404
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-controltemplate"></a>Erstellen eines ControlTemplate-Objekts
 
@@ -100,7 +100,7 @@ Diese Methode ersetzt die aktive [ `ControlTemplate` ](https://developer.xamarin
 ![](creating-images/aqua-theme.png "Aqua-Steuerelementvorlage")
 
 > [!NOTE]
-> **Hinweis**: auf einem `ContentPage`, die `Content` Eigenschaft zugewiesen werden kann und die `ControlTemplate` Eigenschaft kann auch festgelegt werden. Wenn dies geschieht, wenn die `ControlTemplate` enthält eine `ContentPresenter` Instanz, den Inhalt zugewiesen der `Content` Eigenschaft vorgelegte der `ContentPresenter` innerhalb der `ControlTemplate`.
+> Auf einem `ContentPage`, die `Content` Eigenschaft zugewiesen werden kann und die `ControlTemplate` Eigenschaft kann auch festgelegt werden. Wenn dies geschieht, wenn die `ControlTemplate` enthält eine `ContentPresenter` Instanz, den Inhalt zugewiesen der `Content` Eigenschaft vorgelegte der `ContentPresenter` innerhalb der `ControlTemplate`.
 
 ### <a name="setting-a-controltemplate-with-a-style"></a>Festlegen einer ControlTemplate mit einer Formatvorlage
 
@@ -148,7 +148,7 @@ Zusätzlich zur Erstellung [ `ControlTemplate` ](https://developer.xamarin.com/a
 
 Beim Hinzufügen einer [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) auf Seitenebene, eine [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) hinzugefügt wird die [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), und klicken Sie dann die `ControlTemplate` Instanzen enthalten sind in der `ResourceDictionary`.
 
-## <a name="creating-a-controltemplate-in-c35"></a>Erstellen eine ControlTemplate in C &#35;
+## <a name="creating-a-controltemplate-in-c35"></a>Erstellen einer ControlTemplate in C&#35;
 
 Definieren einer [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) auf der Anwendungsebene eine `class` muss erstellt werden, die darstellt, die `ControlTemplate`. Die Klasse muss abgeleitet werden, aus der [Layout](~/xamarin-forms/user-interface/layouts/index.md) für die Vorlage verwendet wird, wie im folgenden Codebeispiel gezeigt:
 

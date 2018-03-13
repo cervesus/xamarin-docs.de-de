@@ -3,16 +3,16 @@ title: "Proaktive Vorschläge"
 description: "In diesem Artikel wird gezeigt, wie proaktive Vorschläge in einer WatchOS 3-app auf Laufwerk Engagement verwendet werden, durch den Wechsel des Systems proaktiv hilfreiche Informationen automatisch für den Benutzer anzuzeigen."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
+ms.assetid: 10CC9F16-963C-44F1-8B98-F09FB2310DFF
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ca2476eef120c7d86b939934ec4b286e871d6a78
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f9711cc39662a7e77d926551a0d2b49363d8ec4d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="proactive-suggestions"></a>Proaktive Vorschläge
 
@@ -61,7 +61,7 @@ Alle diese Funktionen haben eines gemeinsam, verwenden jedoch alle `NSUserActivi
 
 Wie bereits erwähnt, `NSUserActivity` hilft das System, welche Informationen zu verstehen, der Benutzer aktuell mit auf dem Bildschirm arbeitet. `NSUserActivity` ist ein Lightweight-Status-caching-Mechanismus, um die Aktivität des Benutzers zu erfassen, während sie durch die app navigieren. Betrachten z. B. die Restaurant-app ein:
 
-[ ![](proactive-suggestions-images/activity02.png "Die Restaurant-app")](proactive-suggestions-images/activity02.png)
+[![](proactive-suggestions-images/activity02.png "Die Restaurant-app")](proactive-suggestions-images/activity02.png#lightbox)
 
 Mit der folgenden Aktivitäten:
 
@@ -71,7 +71,7 @@ Mit der folgenden Aktivitäten:
 
 Führen Sie eine genauere Betrachtung der letzten Seite:
 
-[ ![](proactive-suggestions-images/activity03.png "Die Nutzlast NSUserActivity")](proactive-suggestions-images/activity03.png)
+[![](proactive-suggestions-images/activity03.png "Die Nutzlast NSUserActivity")](proactive-suggestions-images/activity03.png#lightbox)
 
 Hier wird die app erstellen eine `NSUserActivity` und verfügt über wurde mit Informationen, um den Status später neu zu erstellen. Die app ist auch einige Metadaten wie Name und Adresse der Standort enthalten. Mit dieser Aktivität erstellt wird kann die app iOS wissen, dass es den aktuellen Status des Benutzers darstellt.
 

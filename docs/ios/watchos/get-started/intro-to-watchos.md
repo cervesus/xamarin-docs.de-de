@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 55d692fa92dd08dd9c0887ed10013589afc98ec6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2276b67fc29f2752e4b178168a12e6e980b788d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-watchos"></a>Einführung in watchOS
 
@@ -29,11 +29,11 @@ Eine WatchOS app-Lösung beinhaltet 3-Projekte:
 
 Der Code in der Erweiterung ausgeführt wird, auf dem iPhone WatchOS 1-apps – der Apple Watch ist tatsächlich eine externe anzeigen. WatchOS 2 und 3-apps werden auf der Apple Watch vollständig ausgeführt. Dieser Unterschied wird im folgenden Diagramm dargestellt:
 
-[ ![](intro-to-watchos-images/arch-sml.png "Der Unterschied zwischen WatchOS 1 und WatchOS 2 (und höher) ist in diesem Diagramm angezeigt.")](intro-to-watchos-images/arch.png)
+[ ![](intro-to-watchos-images/arch-sml.png "Der Unterschied zwischen WatchOS 1 und WatchOS 2 (und höher) ist in diesem Diagramm angezeigt.")](intro-to-watchos-images/arch.png#lightbox)
 
 Unabhängig davon, welche Version von WatchOS gerichtet ist wird in Visual Studio für Mac Lösung eine vollständige Lösung etwa wie folgt aussehen:
 
-[ ![](intro-to-watchos-images/projectstructure-sml.png "Die Lösung mit Leerstellen auffüllen")](intro-to-watchos-images/projectstructure.png)
+[![](intro-to-watchos-images/projectstructure-sml.png "Die Lösung mit Leerstellen auffüllen")](intro-to-watchos-images/projectstructure.png#lightbox)
 
 Die *übergeordnete App* in einer WatchOS Lösung ist eine reguläre iOS-app. Dies ist das einzige Projekt in der Projektmappe, die sichtbar ist **auf dem Telefon**. Anwendungsfälle für diese app würde Lernprogramme, Verwaltungsbildschirme und mittlerer Ebene filtern, Cacheing usw. enthalten. Allerdings ist es möglich, dass der Benutzer zum Installieren und Ausführen der Watch-app/Erweiterungs ohne **jemals** müssen die übergeordnete app geöffnet haben, also wenn Sie für die einmalige Initialisierung oder Verwaltung, Ausführung die übergeordneten Anwendung müssen so programmieren Sie Ihre Überwachung App/Erweiterung, den Benutzer, die.
 
@@ -139,4 +139,4 @@ Sehen Sie sich die Dokumentation von Apple an:
 - [Erste Watch-App-video](http://blog.xamarin.com/your-first-watch-kit-app/)
 - [Überwachen-Kit-Handbuch des Apple entwickeln.](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html)
 - [Apple WatchKit Tipps](https://developer.apple.com/watchkit/tips/)
-- [Einführung in die WatchOS 3](~/ios/watchos/platform/introduction-to-watchos3/index.md)
+- [Einführung in watchOS 3](~/ios/watchos/platform/introduction-to-watchos3/index.md)

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 71f3774c12add26e818b0859cf90c17ab6358538
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 716189fbf1518e9100a78cc5ae64e9e63a24c949
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="displaying-images"></a>Anzeigen von Bildern
 
@@ -25,7 +25,7 @@ Visual Studio für Mac unterstützt auch ein besonderes Verzeichnis mit dem Name
 
 Diese bildschirmabbildung zeigt die **Buildvorgang** Optionen werden angezeigt, wenn eine Datei geklickt wird:
 
- [ ![](image-images/image30a.png "Erstellen Sie im Menü Aktion")](image-images/image30a.png)
+ [![](image-images/image30a.png "Erstellen Sie im Menü Aktion")](image-images/image30a.png#lightbox)
 
 Visual Studio für Mac werden in der Regel, wählen Sie den richtigen **Buildvorgang** automatisch, aber Sie sollten diese Einstellungen beachtet werden, insbesondere dann, wenn Sie Dateien in Ihrem Projekt verschieben.
 
@@ -33,15 +33,15 @@ Visual Studio für Mac werden in der Regel, wählen Sie den richtigen **Buildvor
 
 Um eine Bilddatei dem Projekt hinzuzufügen, zunächst mit der rechten Maustaste des Projekts und wählen Sie **Dateien hinzufügen...**
 
- [ ![](image-images/image31a.png "Hinzufügen von Dateien im Menü")](image-images/image31a.png)
+ [![](image-images/image31a.png "Hinzufügen von Dateien im Menü")](image-images/image31a.png#lightbox)
 
 Wählen Sie das Bild (oder Bilder) in das Standarddialogfeld eingeschlossen werden sollen. Die Standardeinstellung Buildvorgang Bilder werden **BundleResource** – dieser Wert nicht überschrieben werden, sofern Sie keinen bestimmten Grund haben.
 
- [ ![](image-images/image32a.png "Dateien-Dialogfeld "hinzufügen"")](image-images/image32a.png)
+ [![](image-images/image32a.png "Dateien-Dialogfeld "hinzufügen"")](image-images/image32a.png#lightbox)
 
 Das Bild wird hinzugefügt werden, auf das Projekt und geladen und im Code angezeigt werden kann. Diese bildschirmabbildung zeigt ein Bild, ein Projekt für iOS-Anwendung hinzugefügt:
 
- [ ![](image-images/image33a.png "Bild in-Projekt")](image-images/image33a.png)
+ [![](image-images/image33a.png "Bild in-Projekt")](image-images/image33a.png#lightbox)
 
 ### <a name="what-is-the-resources-directory"></a>Was ist die Ressourcen-Verzeichnis?
 
@@ -61,11 +61,11 @@ Ressourcenverzeichnis muss daher mit dem Namen, und alle Dateien sollte die Buil
 
 Um ein Image mithilfe des Designers anzuzeigen, ein Bild anzeigen als Container verwendet werden sollte und ein einzelnes Bild oder eine Animation des Images anzeigen. Die **Image Ansicht** Symbol aus der Toolbox wird unten gezeigt:
 
- [ ![](image-images/image35a.png "ImageView in Toolbox")](image-images/image35.png)
+ [![](image-images/image35a.png "ImageView in Toolbox")](image-images/image35.png#lightbox)
 
 Ziehen Sie die **Image Ansicht** aus der **Toobox** auf die View-Controller. Klicken Sie anschließend unter ** Anzeigen > Image ** die Dropdown-Liste stellt eine Liste aller verfügbaren Images-Dateien im Projekt bereit. Wählen Sie eins der Image-Ansicht hinzuzufügen.
 
- [ ![](image-images/image36a.png "ImageView in Toolbox")](image-images/image36.png)
+ [![](image-images/image36a.png "ImageView in Toolbox")](image-images/image36.png#lightbox)
 
 ### <a name="displaying-the-image-programmatically"></a>Das Bild anzeigen programmgesteuert
 

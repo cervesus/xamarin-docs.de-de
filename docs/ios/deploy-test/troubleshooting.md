@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 83ba2df0c50d37476ae5c06b4234cdc0ad063332
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 174d1cf974c39420b932d494d5b28c62d7fd1eb1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="troubleshooting"></a>Problembehandlung
 
@@ -22,7 +22,7 @@ Das Hinzufügen von Codesignaturen und Bereitstellen von Code mit iOS kann mühs
 
 * Große Entwicklerteams sollten nicht die im Folgenden dargestellte Schaltfläche „Fix issue“ (Problem beheben) in Xcode verwenden:
 
-    [![](troubleshooting-images/fixissue.png "Das Dialogfeld „Problem beheben“")](troubleshooting-images/fixissue.png)
+    [![](troubleshooting-images/fixissue.png "Das Dialogfeld „Problem beheben“")](troubleshooting-images/fixissue.png#lightbox)
 
     Über diese Schaltfläche werden neue Bereitstellungsprofile und Zertifikate erstellt. Bestenfalls wird immer dann ein Bereitstellungsprofil erstellt, wenn ein Teammitglied auf die Schaltfläche klickt, was lediglich zu einer unübersichtlichen Verwaltung von Profilen führt. Im schlimmsten Fall werden jedoch die Zertifikate aller Personen im Unternehmen widerrufen, sodass deren Apps nicht mehr funktionieren.
 

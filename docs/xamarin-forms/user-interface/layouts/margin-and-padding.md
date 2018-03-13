@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 7bab512ef11f8e0f553a00f0240d82f860fe2676
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 461430ba27b5d6008338019e5feaebed7b09d4cb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="margin-and-padding"></a>Rand und Abstand
 
@@ -27,7 +27,7 @@ Rand und Abstand sind verwandte Layout-Konzepte:
 
 Das folgende Diagramm veranschaulicht die beiden Konzepte:
 
-[![](margin-and-padding-images/margins-and-padding-sml.png "Seitenränder und Textabstand Konzepte")](margin-and-padding-images/margins-and-padding.png "Seitenränder und Textabstand-Konzepte")
+[![](margin-and-padding-images/margins-and-padding-sml.png "Seitenränder und Textabstand Konzepte")](margin-and-padding-images/margins-and-padding.png#lightbox "Seitenränder und Textabstand-Konzepte")
 
 Beachten Sie, dass [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) Werte sind additiv. Wenn zwei benachbarte Elemente einen Rand von 20 Pixel angeben, wird der Abstand zwischen den Elementen daher 40 Pixel sein. Darüber hinaus Rand und Abstand sind additiv, wenn beide angewendet werden, dass der Abstand zwischen einem Element und alle Inhalte, die der Rand und Abstand sein wird,.
 
@@ -63,7 +63,7 @@ var stackLayout = new StackLayout {
 ```
 
 > [!NOTE]
-> **Hinweis**: `Thickness` Werte können negativ sein, die in der Regel schneidet oder overdraws des Inhalts.
+> `Thickness` Werte können negativ sein, die in der Regel schneidet oder overdraws des Inhalts.
 
 ## <a name="summary"></a>Zusammenfassung
 

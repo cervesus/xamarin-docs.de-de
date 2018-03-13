@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 590e39deb7972df9e45064bb1a96e533a1fc9856
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5604477ff182711a63ba2b0e6bbcbbcc082a76ed
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-an-amazon-simpledb-service"></a>Verarbeiten einer Amazon SimpleDB-Diensts
 
@@ -141,7 +141,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 Die `SelectAsync` Methode akzeptiert eine `SelectRequest` Instanz als Parameter, der angibt, eine `Select` Abfrageausdruck in seinem `SelectExpression` Eigenschaft. Das Format des Abfrageausdrucks ist ähnlich wie das Format der SQL-standard `SELECT` Anweisung. Weitere Informationen zu den Abfrageausdruck, finden Sie unter [wählen Sie zum Erstellen von Amazon SimpleDB Abfragen](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/UsingSelect.html) des Amazon-Website.
 
 > [!NOTE]
-> **Hinweis**: Achten Sie darauf, dass Sie die zitieren Regeln befolgt, beim Erstellen des Abfrageausdrucks. Weitere Informationen finden Sie unter [zitieren Regeln auswählen](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html) des Amazon-Website.
+> Achten Sie darauf, dass die zitieren Regeln befolgt, beim Erstellen des Abfrageausdrucks. Weitere Informationen finden Sie unter [zitieren Regeln auswählen](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html) des Amazon-Website.
 
 Die `SelectAsync` Methode gibt eine Antwort mit einer Auflistung von Elementen und die zugehörigen Attribute, die mit den Abfrageausdruck übereinstimmen. Diese Auflistung wird dann zum konvertiert eine `List` von `TodoItem` Instanzen für die Anzeige.
 

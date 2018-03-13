@@ -8,15 +8,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/23/2017
-ms.openlocfilehash: f8680cde2e5536495f33d571adea9980020a72fa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 02a425c8276524accc088b53c1099e7c2e28d828
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tabbed-layouts"></a>Im Registerkartenformat Layouts
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -45,7 +44,6 @@ Die `ActionBar` -API ist einfacher und wohl bietet eine bessere benutzererfahrun
 Die `TabHost` -API kompatibel ist, in allen Versionen von Android jedoch aufwändiger verwendet und ist nicht konsistent mit dem aktuellen [Android Richtlinien zur Benutzeroberfläche](http://developer.android.com/design/index.html). Entwickler sind davon abgeraten, diese API verwenden und sollte die neuere ActionBar für Xamarin.Android-Anwendungen zu fördern. 
 
 
-<a name="Introducing_ActionBarSherlock" />
 
 ## <a name="actionbarsherlock"></a>ActionBarSherlock
 
@@ -55,7 +53,7 @@ Bevor die ActionBar-API mehr auf Android 2.2, Entwickler wurden, sollte das neue
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [TabHost (Übersicht)](tab-host.md)
+- [TabHost-Übersicht](tab-host.md)
 - [TabHost Exemplarische Vorgehensweise](~/android/user-interface/layouts/tab-layout/creating-a-tabbed-ui.md)
 - [ActionBar](http://developer.android.com/guide/topics/ui/actionbar.html)
 - [NuGet-Paket für Android, unterstützen Bibliothek v7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)

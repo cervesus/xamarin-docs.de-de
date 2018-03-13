@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/02/2018
-ms.openlocfilehash: c02ad78cc15f2d71f19d605f7a4d6889bbe3ca01
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec8d000f235a8e0da5198e425f9f1e630b2c662a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-touch-in-android"></a>Exemplarische Vorgehensweise – mit Touch in Android
 
 Lassen Sie uns finden Sie unter der Konzepte aus dem vorherigen Abschnitt in einer Anwendung verwenden. Es wird eine Anwendung mit vier Aktivitäten erstellt. Die erste Aktivität wird ein Menü oder eine Übersicht, die die anderen Aktivitäten zur Veranschaulichung der verschiedenen APIs gestartet wird. Der folgende Screenshot zeigt die Hauptaktivität:
 
-[![Beispiel-Screenshot mit Touch Me-Schaltfläche](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png)
+[![Beispiel-Screenshot mit Touch Me-Schaltfläche](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png#lightbox)
 
 Die erste Aktivität, Touch-Beispiel zeigt wie Sie Ereignishandler für die Ansichten berühren. Die Bewegung Erkennungsmodul-Aktivität wird gezeigt, wie Unterklasse `Android.View.Views` und Ereignisse behandeln, als auch gezeigt, wie zwei-Finger-Gesten zu behandeln. Der dritte und letzte Aktivität **benutzerdefinierte Geste**, wird zeigen die Verwendung benutzerdefinierter Gesten. Um leichter zu verfolgen und aufnehmen, müssen wir in dieser exemplarischen Vorgehensweise in Abschnitte mit jeder Abschnitt, wobei schwerpunktmäßig auf eine der Aktivitäten zusammensetzen.
 
@@ -25,7 +25,7 @@ Die erste Aktivität, Touch-Beispiel zeigt wie Sie Ereignishandler für die Ansi
 
 -   Öffnen Sie das Projekt **TouchWalkthrough\_starten**. Die **Activity\_main** als gehen alle festgelegt ist &ndash; es ist Aufgabe der Touch-Verhalten der Aktivität implementiert. Wenn Sie die Anwendung auszuführen, und klicken Sie auf **berühren Beispiel**, sollte die folgende Aktivität gestartet:
 
-    [![Screenshot der Aktivität mit Touch beginnt angezeigt](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png)
+    [![Screenshot der Aktivität mit Touch beginnt angezeigt](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
 -   Nun, da wir bestätigt haben, dass die Aktivität wird gestartet, öffnen Sie die Datei **TouchActivity.cs** und fügen Sie einen Handler für das `Touch` -Ereignis für die `ImageView`:
 
@@ -63,11 +63,11 @@ Beachten Sie, dass wir behandeln im obigen Code die `Move` und `Down` Aktion als
 
 Jedes Mal, wenn der Benutzer Fingereingaben der `ImageView`, `Touch` Ereignis wird ausgelöst, und unsere Ereignishandler zeigt an **berühren beginnt** auf dem Bildschirm, wie im folgenden Screenshot gezeigt:
 
-[![Screenshot der Aktivität mit Touch beginnt](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png)
+[![Screenshot der Aktivität mit Touch beginnt](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
 Solange der Benutzer betrifft die `ImageView`, **berühren beginnt** angezeigt werden die `TextView`. Wenn der Benutzer ist nicht mehr durch berühren der `ImageView`, die Nachricht **berühren endet** angezeigt werden die `TextView`, wie im folgenden Screenshot gezeigt:
 
-[![Screenshot der Aktivität mit Touch endet](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png)
+[![Screenshot der Aktivität mit Touch endet](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
 
 
 ## <a name="gesture-recognizer-activity"></a>Geste Erkennungsmodul-Aktivität
@@ -234,11 +234,11 @@ Nun wollen wir uns die Bewegung Erkennungsmodul Aktivität implementiert wird. D
 -   Jetzt führen Sie die Anwendung, und starten Sie die Bewegung Erkennungsmodul-Aktivität.
     Zunächst sollte der Bildschirm der folgende Screenshot aussehen:
 
-    [![Geste Erkennungsmodul Startbildschirm mit Android-Symbol](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png)
+    [![Geste Erkennungsmodul Startbildschirm mit Android-Symbol](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
 
 -   Jetzt Tippen Sie auf das Symbol, und ziehen Sie es auf dem Bildschirm. Wiederholen Sie dann die zwei-Finger-Zoom-Aktion. Irgendwann kann Ihren Bildschirm im folgenden Screenshot aussehen:
 
-    [![Gesten Symbol "verschieben" auf dem Bildschirm](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png)
+    [![Gesten Symbol "verschieben" auf dem Bildschirm](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
 
 An diesem Punkt sollten Sie erteilen selbst ein Pat auf der Rückseite: Sie haben zwei-Finger-Zoom nur in einer Android-Anwendung implementiert! Nehmen Sie eine kurze Unterbrechung vorliegt und Sie können auf die dritte und letzte Aktivität in dieser exemplarischen Vorgehensweise zu verschieben, auf &ndash; mithilfe von benutzerdefinierten Gesten.
 
@@ -341,17 +341,17 @@ Im Rahmen dieser exemplarischen Vorgehensweise, die Bibliothek Gesten bereits mi
 
 -   Führen Sie die Anwendung, und die benutzerdefinierte Aktion Erkennungsmodul Aktivität gestartet. Es sollte etwa wie das folgende Bildschirmfoto aussehen:
 
-    [![Screenshot mit mir Image überprüfen](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png)
+    [![Screenshot mit mir Image überprüfen](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
 
     Zeichnen Sie nun ein Häkchen auf dem Bildschirm, und die Bitmap angezeigt wird, sollte etwa wie in der nächsten Screenshots aussehen:
 
-    [![Gezeichnet Häkchen](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png)
-    [![erkannt Häkchen](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png)
+    [![Gezeichnet Häkchen](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
+    [![erkannt Häkchen](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
     Zeichnen Sie schließlich eine Scribble auf dem Bildschirm. Das Kontrollkästchen sollte wieder auf das ursprüngliche Image ändern, wie im folgenden Screenshots gezeigt:
 
-    [![Auf dem Bildschirm Scribble](android-touch-walkthrough-images/image22.png)](android-touch-walkthrough-images/image22.png)
-    [![ursprungsabbild wird angezeigt.](android-touch-walkthrough-images/image23.png)](android-touch-walkthrough-images/image23.png)
+    [![Auf dem Bildschirm Scribble](android-touch-walkthrough-images/image22.png)](android-touch-walkthrough-images/image22.png#lightbox)
+    [![ursprungsabbild wird angezeigt.](android-touch-walkthrough-images/image23.png)](android-touch-walkthrough-images/image23.png#lightbox)
 
 Sie haben jetzt einen Überblick über die Vorgehensweise beim Integrieren von Touch- und Gesten in einer Android-Anwendung mit Xamarin.Android.
 

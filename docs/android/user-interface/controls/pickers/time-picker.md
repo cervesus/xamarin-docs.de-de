@@ -8,18 +8,18 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 4b3299ad138b5cd74ce77cac1da49d21a833fe1a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 93a2effd42432d13767dad05a47548aebc9a0b93
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="time-picker"></a>/ Zeitauswahl
 
 Um die Möglichkeit für den Benutzer auf eine Uhrzeit auswählen, können Sie [TimePicker](https://developer.xamarin.com/api/type/Android.Widget.TimePicker/). Android-apps in der Regel verwenden `TimePicker` mit [TimePickerDialog](https://developer.xamarin.com/api/type/Android.App.TimePickerDialog/) für die Auswahl eines Zeitwerts &ndash; Dadurch wird eine konsistente Oberfläche verschiedene Geräte und Anwendungen sichergestellt. `TimePicker` ermöglicht Benutzern, wählen Sie die Uhrzeit im 24-Stunden-Format oder im 12-Stunden AM/PM-Modus.
 `TimePickerDialog` ist eine Hilfsklasse, die kapselt die `TimePicker` in einem Dialogfeld.
 
-[![Beispiel-Screenshot, der die Zeit-Auswahldialogfeld in Aktion](time-picker-images/01-example-screen-sml.png)](time-picker-images/01-example-screen.png)
+[![Beispiel-Screenshot, der die Zeit-Auswahldialogfeld in Aktion](time-picker-images/01-example-screen-sml.png)](time-picker-images/01-example-screen.png#lightbox)
 
 ## <a name="overview"></a>Übersicht
 
@@ -36,11 +36,11 @@ Die beispielanwendung für diese Anleitung richtet Android 4.1 (API-Ebene
 
 In diesem Beispiel erweitert `DialogFragment`; die Unterklasse Implementierung `DialogFragment` (aufgerufen `TimePickerFragment` unten) hostet, und zeigt eine `TimePickerDialog`. Wenn zuerst die Beispiel-app gestartet wird, zeigt er eine **PICK Zeit** Komponentengruppen einer `TextView` , die zum Anzeigen der ausgewählten Uhrzeit verwendet werden:
 
-[![Bildschirm der ersten Beispiel-app](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png)
+[![Bildschirm der ersten Beispiel-app](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png#lightbox)
 
 Beim Klicken auf die **PICK Zeit** Schaltfläche, die Beispiel-app gestartet wird die `TimePickerDialog` wie in diesem Screenshot dargestellt:
 
-[![Screenshot des Dialogfelds-Zeitauswahl "Standard" von der app angezeigt wird](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png)
+[![Screenshot des Dialogfelds-Zeitauswahl "Standard" von der app angezeigt wird](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
 
 In der `TimePickerDialog`, eine Uhrzeit auswählen, und klicken Sie auf die **OK** Schaltfläche Ursachen der `TimePickerDialog` zum Aufrufen der Methode [IOnTimeSetListener.OnTimeSet](https://developer.xamarin.com/api/member/Android.App.TimePickerDialog+IOnTimeSetListener.OnTimeSet/p/Android.Widget.TimePicker/System.Int32/System.Int32/System.Int32/).
 Diese Schnittstelle wird implementiert, indem Sie das Hosten `DialogFragment` (`TimePickerFragment`, siehe nachfolgende Ausführungen). Klicken auf die **"Abbrechen"** Schaltfläche bewirkt, dass das Fragment und das Dialogfeld geschlossen werden.
@@ -56,7 +56,6 @@ Diese Schnittstelle wird implementiert, indem Sie das Hosten `DialogFragment` (`
 In diesem Beispiel wird der dritten Technik, was erfordert, dass die Aktivität erneut verwenden ein `Action<DateTime>` -Handler die `DialogFragment`.
 
 
-<a name="start" />
 
 ## <a name="start-an-app-project"></a>Starten Sie ein App-Projekt
 
@@ -123,13 +122,12 @@ namespace TimePickerDemo
 
 Wenn Sie erstellen und dieses Beispiel ausführen, sehen Sie einen Startbildschirm im folgenden Screenshot ähnelt:
 
-[![App-Startbildschirm](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png)
+[![App-Startbildschirm](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png#lightbox)
 
 Auf der **PICK Zeit** Schaltfläche führt keine Aktion da die `DialogFragment` wurde noch nicht implementiert zum Anzeigen der `TimePicker`.
 Der nächste Schritt ist zum Erstellen dieser `DialogFragment`.
 
 
-<a name="extend_dialogfragment" />
 
 ## <a name="extending-dialogfragment"></a>Erweitern von DialogFragment
 
@@ -169,7 +167,6 @@ public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetLis
 
 Dies `TimePickerFragment` Klasse ist unterteilt in kleinere Teile und im nächsten Abschnitt erläutert.
 
-<a name="details" />
 
 ### <a name="dialogfragment-implementation"></a>DialogFragment-Implementierung
 
@@ -230,7 +227,6 @@ Dies `TimePickerFragment` Klasse ist unterteilt in kleinere Teile und im nächst
     ```
 
 
-<a name="time_picker_fragment" />
 
 ## <a name="displaying-the-timepickerfragment"></a>Anzeigen der TimePickerFragment
 
@@ -262,17 +258,16 @@ timeSelectButton.Click += TimeSelectOnClick;
 Wenn die **PICK Zeit** Schaltfläche geklickt wird, `TimeSelectOnClick` wird aufgerufen, die zum Anzeigen der `TimePicker` Dialogfeld Fragment an den Benutzer.
 
 
-<a name="try-it" />
 
 ## <a name="try-it"></a>Probieren Sie es aus!
 
 Erstellen Sie die App, und führen Sie sie aus. Beim Klicken auf die **PICK Zeit** Schaltfläche, die `TimePickerDialog` wird in das Standardzeitformat angezeigt, für die Aktivität (in diesem Groß-/Kleinschreibung, 12 Stunden AM/PM-Modus):
 
-[![In AM/PM-Modus wird die Zeit-Dialogfeld angezeigt.](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png)
+[![In AM/PM-Modus wird die Zeit-Dialogfeld angezeigt.](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
    
 Beim Klicken auf **OK** in der `TimePicker` im Dialogfeld der Handler aktualisiert der Aktivitätssymbols `TextView` mit den ausgewählten Zeitpunkt und wird dann beendet:
 
-[![A/M Zeit wird in der Aktivität TextView angezeigt.](time-picker-images/04-after-time-dialog-sml.png)](time-picker-images/04-after-time-dialog.png)
+[![A/M Zeit wird in der Aktivität TextView angezeigt.](time-picker-images/04-after-time-dialog-sml.png)](time-picker-images/04-after-time-dialog.png#lightbox)
 
 Fügen Sie die folgende Zeile des Codes für `OnCreateDialog` sofort nach dem `is24HourFormat` deklariert und initialisiert wird:
 
@@ -282,12 +277,11 @@ is24HourFormat = true;
 
 Diese Änderung erzwingt, dass das Flag, das an die `TimePickerDialog` Konstruktor werden `true` damit, 24-Stunden-Modus nicht das Uhrzeitformat der hosting-Aktivität verwendet wird. Wenn Sie erstellen und führen die app erneut aus, klicken Sie auf die **PICK Zeit** Schaltfläche, die `TimePicker` wird jetzt im 24-Stunden-Format angezeigt:
 
-[![TimePicker Dialogfeld im 24-Stunden-format](time-picker-images/05-24hr-time-dialog-sml.png)](time-picker-images/05-24hr-time-dialog.png)
+[![TimePicker Dialogfeld im 24-Stunden-format](time-picker-images/05-24hr-time-dialog-sml.png)](time-picker-images/05-24hr-time-dialog.png#lightbox)
 
 Da der Handler aufruft [DateTime.ToShortTimeString](https://msdn.microsoft.com/en-us/library/system.datetime.toshortdatestring%28v=vs.110%29.aspx) So drucken Sie die Zeit für der Aktivitätssymbols `TextView`, die Zeit wird im 12-Stunden-AM/PM-Standardformat noch gedruckt.
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d878f922b74ea3e95fd0e1ebce9e7445063a2946
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f4a18bf8f35d1a6c615c819ea90433d1eb123422
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="updating-an-application-in-the-background"></a>Aktualisieren einer Anwendung im Hintergrund
 
@@ -44,7 +44,7 @@ IOS 6 benötigt eine Anwendung im Vordergrund eingeben Zeit zum Laden neue Inhal
 
 Bearbeiten Sie zum Implementieren der abrufen im Hintergrund *"Info.plist"* und überprüfen Sie die **Aktivieren von Hintergrundmodi** und **abrufen im Hintergrund** Kontrollkästchen:
 
- [ ![](updating-an-application-in-the-background-images/fetch.png "Bearbeiten Sie der Datei "Info.plist", und prüfen Sie die Kontrollkästchen Aktivieren von Hintergrundmodi und Fetch-Hintergrund")](updating-an-application-in-the-background-images/fetch.png)
+ [![](updating-an-application-in-the-background-images/fetch.png "Bearbeiten Sie der Datei "Info.plist", und prüfen Sie die Kontrollkästchen Aktivieren von Hintergrundmodi und Fetch-Hintergrund")](updating-an-application-in-the-background-images/fetch.png#lightbox)
 
 Im nächsten Schritt in der `AppDelegate`, überschreiben die `FinishedLaunching` Methode, um das Intervall für die minimale Fetch festgelegt. In diesem Beispiel können wir das Betriebssystem entscheiden, wie häufig neue Inhalte abgerufen werden sollen:
 
@@ -106,7 +106,7 @@ In iOS 6 eine eingehende Pushbenachrichtigungen weist auf das System die Benachr
 
 Bearbeiten Sie zum remote-Benachrichtigungen zu implementieren, *"Info.plist"* und überprüfen Sie die **Aktivieren von Hintergrundmodi** und **Remote Benachrichtigungen** Kontrollkästchen:
 
- [ ![](updating-an-application-in-the-background-images/remote.png "Hintergrundmodus legen Sie zum Aktivieren von Hintergrundmodi und Remote-Benachrichtigungen")](updating-an-application-in-the-background-images/remote.png)
+ [![](updating-an-application-in-the-background-images/remote.png "Hintergrundmodus legen Sie zum Aktivieren von Hintergrundmodi und Remote-Benachrichtigungen")](updating-an-application-in-the-background-images/remote.png#lightbox)
 
 Legen Sie anschließend die `content-available` Flag für die Pushbenachrichtigung selbst auf 1. Dies ermöglicht die Anwendung neue Inhalte abgerufen werden sollen, ehe Sie die Warnung kennen:
 
@@ -153,7 +153,7 @@ Der größte Unterschied zwischen den normalen und automatische Benachrichtigung
 
 Allerdings können APNs automatische Benachrichtigungen "Programme", zusammen mit einer normalen Remote Benachrichtigung oder Keep-alive-Antwort. Da reguläre Benachrichtigungen nicht Rate beschränkt sind, können sie gespeicherte, um automatische Benachrichtigungen vom APNs an das Gerät mithilfe von Push übertragen verwendet werden, wie das folgende Diagramm veranschaulicht:
 
- [ ![](updating-an-application-in-the-background-images/silent.png "Reguläre Benachrichtigungen können gespeicherte automatische Benachrichtigungen vom APNs an das Gerät mithilfe von Push übertragen verwendet werden, wie in diesem Diagramm veranschaulicht")](updating-an-application-in-the-background-images/silent.png)
+ [![](updating-an-application-in-the-background-images/silent.png "Reguläre Benachrichtigungen können gespeicherte automatische Benachrichtigungen vom APNs an das Gerät mithilfe von Push übertragen verwendet werden, wie in diesem Diagramm veranschaulicht")](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
 > **Hinweis**: Apple vertraut zu machen, Entwicklern das automatische Pushbenachrichtigungen zu senden, wenn die Anwendung erfordert, und lassen den APNs Planen ihrer Bereitstellung.

@@ -3,16 +3,16 @@ title: "Einführung in die tvos. außerdem wurden 9"
 description: "In diesem Artikel werden alle neuen und geänderten-APIs und in tvos. außerdem wurden 9 verfügbaren Funktionen für Entwickler Xamarin.tvOS eingeführt."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
+ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: c1fafe85fb7f5c30dca0dff6fe3dff5172e0b9aa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55e83658e09bc7e5c12bb3ef3f508497651ec46c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-tvos-9"></a>Einführung in die tvos. außerdem wurden 9
 
@@ -91,7 +91,7 @@ Siri Remote ist in den folgenden Ländern verfügbar:
 
 Alle anderen Ländern werden der Apple TV-Remote angezeigt, die die Schaltfläche "Siri" mit einer Schaltfläche "Suchen", die von der Standardbildschirm für die Suche mit Texteingabe ersetzt für die Suche wird:
 
-[ ![](tvos9-images/remote02.png "Siri Remote")](tvos9-images/remote02.png)
+[![](tvos9-images/remote02.png "Siri Remote")](tvos9-images/remote02.png#lightbox)
 
 Weitere Informationen finden Sie unter unsere [Siri Remote und Bluetooth-Controller](~/ios/tvos/platform/remote-bluetooth.md) Dokumentation.
 
@@ -155,7 +155,7 @@ Weitere Informationen finden Sie unter unsere [arbeiten mit Navigationsbereich u
 
 Die Apple TV-Startbildschirm zeigt alle apps, die installiert werden und bietet eine Möglichkeit, die Benutzereinstellungen zugreifen:
 
-[ ![](tvos9-images/home01.png "Der Startbildschirm")](tvos9-images/home01.png)
+[![](tvos9-images/home01.png "Der Startbildschirm")](tvos9-images/home01.png#lightbox)
 
 Der Benutzer navigiert ein Raster mit app-Symbole Fingereingabe auf Siri Remote mit Fokus, wählen Sie eine app, und starten Sie ihn verwenden. Das Symbol "App" wird die Ihres ersten Wahrscheinlichkeit der Ausführung eine hervorragende Eindruck für Ihre potenziellen Benutzer und sollte Ihre app Zweck auf einen Blick vermitteln.
 
@@ -169,7 +169,7 @@ Weitere Informationen finden Sie unter unsere [arbeiten mit Symbolen und Bilder]
 
 Wenn der Benutzer die app Xamarin.tvOS auf die Zeile nach oben auf dem Bildschirm Apple TV-Startseite aufgegeben hat, wird ein großes oben Regal Bild angezeigt, wenn es sich bei Ihrer app vom Benutzer ausgewählt wird. Dieses Bild sollte markieren Sie die Funktionen der app, oder geben Sie direkte Links zum jeweiligen Inhalt.
 
-[ ![](tvos9-images/topshelf01.png "Oberes Regal")](tvos9-images/topshelf01.png)
+[![](tvos9-images/topshelf01.png "Oberes Regal")](tvos9-images/topshelf01.png#lightbox)
 
 Die oberen Regal Image kann entweder als eine einzelne statische bereitgestellt `.png` oder `.lsr` Dateien, oder es kann dynamisch erstellt werden zur Laufzeit als eine einzelne Zeile mit den Fokus erhalten kann Elemente.
 

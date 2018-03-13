@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: d2298cf3edcadcc8a4d781e3e121852886fbf1d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 05443bb341b2355c9e7a72f46b70214fb169e598
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="garbage-collection"></a>Garbage Collection
 
@@ -21,7 +21,7 @@ Xamarin.Android verwendet Mono [einfache Generationen-Garbage Collectors](http:/
 -   Wichtigen Auflistungen (sammelt Gen1 und LOB space Heaps). 
 
 > [!NOTE]
-> **Hinweis:** In Abwesenheit einer expliziten Auflistung über [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) Auflistungen sind *bedarfsgesteuert*, basierend auf Heapzuordnungen. *Dies ist keiner verweiszählung System*; Objekte *nicht gesammelt werden, sobald es keine ausstehenden Verweise sind*, oder wenn ein Bereich verlassen hat. Der globale Katalogserver wird ausgeführt, wenn nicht genügend Arbeitsspeicher für neue Zuordnungen kleinere Heap ausgeführt wurde. Wenn keine Zuordnungen vorhanden sind, wird er nicht ausgeführt.
+> Bei Abwesenheit einer expliziten Auflistung über [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) Auflistungen sind *bedarfsgesteuert*, basierend auf Heapzuordnungen. *Dies ist keiner verweiszählung System*; Objekte *nicht gesammelt werden, sobald es keine ausstehenden Verweise sind*, oder wenn ein Bereich verlassen hat. Der globale Katalogserver wird ausgeführt, wenn nicht genügend Arbeitsspeicher für neue Zuordnungen kleinere Heap ausgeführt wurde. Wenn keine Zuordnungen vorhanden sind, wird er nicht ausgeführt.
 
 
 Kleinere Sammlungen sind billig und häufige und werden verwendet, um die zuletzt zugeordnete und inaktive Objekten zu sammeln. Kleinere Sammlungen werden nach jedem einige MB von zugeordneten Objekten ausgeführt. Kleinere Sammlungen möglicherweise manuell durchgeführt werden, durch den Aufruf [GC. Sammeln von (0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32/) 
@@ -29,7 +29,6 @@ Kleinere Sammlungen sind billig und häufige und werden verwendet, um die zuletz
 Wichtige Sammlungen sind teuer und weniger häufig und werden verwendet, um alle inaktiven Objekten freizugeben. Wichtige Sammlungen werden ausgeführt, sobald Arbeitsspeicher für die aktuelle Heapgröße (vor dem Ändern der Größe der Heap) ausgeschöpft ist. Wichtige Sammlungen möglicherweise manuell durchgeführt werden, durch den Aufruf [GC. Sammeln von ()](https://developer.xamarin.com/api/member/System.GC.Collect/) oder durch Aufrufen von [GC. Sammeln von (Int)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32) mit dem Argument [GC. MaxGeneration](https://developer.xamarin.com/api/property/System.GC.MaxGeneration/). 
 
 
-<a name="Cross-VM_Object_Collections" />
 
 ## <a name="cross-vm-object-collections"></a>Cross-VM-Auflistungen
 
@@ -67,7 +66,6 @@ Mono-/ Auflistungen sind, in dem das Fun geschieht. Verwaltete Objekte werden no
 
 All dies ist erforderlich, eine Instanz eines Objekts Peer live wird als entweder verweist das Endergebnis zu verwaltetem Code (z. B. in gespeicherten eine `static` Variable) oder von Java-Code verwiesen wird. Darüber hinaus wird die Lebensdauer des systemeigenen Peers hinter andernfalls würde erweitert live, während der systemeigene Peer nicht entladbarer, bis Native Peer und den verwalteten Peer entladbare sind.
 
-<a name="Object_Cycles" />
 
 ## <a name="object-cycles"></a>Objekt-Zyklen
 
@@ -77,7 +75,6 @@ Alle Objekte, die Darstellung in beide virtuellen Computer werden verfügen übe
 
 Lebensdauer eines Objekts, zu verkürzen [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/) aufgerufen werden soll. Dies wird manuell "die Verbindung für das Objekt zwischen den zwei VMs freigegeben werden und des globale Verweis und somit ermöglicht die Objekte schneller gesammelt werden getrennt". 
 
-<a name="Automatic_Collections" />
 
 ## <a name="automatic-collections"></a>Automatische Sammlungen
 
@@ -135,7 +132,6 @@ Die Standardeinstellung ist **Tarjan**. Wenn Sie eine Regression finden, Umstän
 Es gibt mehrere Möglichkeiten, mit denen dem globalen Katalogserver zu Arbeitsspeicher-Nutzung und Sammlung von Zeiten zu minimieren.
 
 
-<a name="Disposing_of_Peer_instances" />
 
 ### <a name="disposing-of-peer-instances"></a>Freigeben von Peer-Instanzen
 
@@ -148,7 +144,7 @@ Es ist häufig erforderlich, die das GC-Hilfe. Leider *GC. AddMemoryPressure()* 
 
 
 > [!NOTE]
-> **Hinweis:** müssen sein *extrem* Sie vorsichtig, wenn der disposing `Java.Lang.Object` Unterklasse-Instanzen.
+> Sie muss *extrem* Sie vorsichtig, wenn der disposing `Java.Lang.Object` Unterklasse-Instanzen.
 
 Um die Möglichkeit einer beschädigten Speicher zu minimieren, beachten Sie die folgenden Richtlinien beim Aufrufen von `Dispose()`.
 
@@ -243,7 +239,6 @@ class MyClass : Java.Lang.Object, ISomeInterface
 }
 ```
 
-<a name="Reduce_Referenced_Instances" />
 
 ### <a name="reduce-referenced-instances"></a>Reduzieren Sie Instanzen auf die verwiesen wird
 
@@ -316,7 +311,6 @@ class BetterActivity : Activity {
 }
 ```
 
-<a name="Minor_Collections" />
 
 ## <a name="minor-collections"></a>Kleinere Sammlungen
 
@@ -329,7 +323,6 @@ Wenn die Anwendung eine "Arbeitszyklus verfügt" in der dasselbe fortlaufend aus
 -  Eine Gruppe von Anforderungen über das Netzwerk aktualisieren/app-Daten synchronisiert werden sollen.
 
 
-<a name="Major_Collections" />
 
 ## <a name="major-collections"></a>Wichtige Sammlungen
 
@@ -344,14 +337,12 @@ Wichtige Sammlungen sollte nur manuell, falls überhaupt aufgerufen werden:
 -   Einer überschriebenen [Android.App.Activity.OnLowMemory()](https://developer.xamarin.com/api/member/Android.App.Activity.OnLowMemory/) Methode. 
 
 
-<a name="Diagnostics" />
 
 ## <a name="diagnostics"></a>Diagnose
 
 Um nachzuverfolgen, wenn globale Verweise erstellt und zerstört werden, legen Sie die [debug.mono.log](~/android/troubleshooting/index.md) Systemeigenschaft enthalten [ *Gref* ](~/android/troubleshooting/index.md) und/oder [ *gc*](~/android/troubleshooting/index.md). 
 
 
-<a name="Configuration" />
 
 ## <a name="configuration"></a>Konfiguration
 

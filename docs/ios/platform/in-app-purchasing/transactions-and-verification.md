@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 332ce13b08f3d021553be5747b21b05d62aba6ea
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 21f8c6738c00d5738c02962ee95b415e3855d740
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="transactions-and-verification"></a>Transaktionen und Überprüfung
 
@@ -148,7 +148,7 @@ Da die Produkte Remote übermittelt werden, ist es auch möglich, weitere Produk
    
    
    
- [ ![](transactions-and-verification-images/image38.png "Preise abrufen für Server bereitgestellte Produkte")](transactions-and-verification-images/image38.png)   
+ [![](transactions-and-verification-images/image38.png "Preise abrufen für Server bereitgestellte Produkte")](transactions-and-verification-images/image38.png#lightbox)   
    
    
    
@@ -170,7 +170,7 @@ Da die Produkte Remote übermittelt werden, ist es auch möglich, weitere Produk
 
 Da der Remoteserver Weise überprüfen erfordert, ob eine inhaltsanforderung gültig ist (ie. für bezahlt wurde), die Empfangsinformationen zum entlang für die Authentifizierung übergeben. Der Remoteserver leitet diese Daten in iTunes für die Überprüfung und bei erfolgreicher Ausführung enthält den Produktinhalt in der Antwort an die Anwendung.   
    
- [ ![](transactions-and-verification-images/image39.png "Server bereitgestellte Produkte kaufen")](transactions-and-verification-images/image39.png)   
+ [![](transactions-and-verification-images/image39.png "Server bereitgestellte Produkte kaufen")](transactions-and-verification-images/image39.png#lightbox)   
    
  1. Fügt die app ein `SKPayment` an die Warteschlange. Bei Bedarf der Benutzer wird aufgefordert, ihre Apple-ID und aufgefordert, die Zahlung zu bestätigen.   
    

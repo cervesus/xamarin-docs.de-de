@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 0117364f02302add1f8788de1a79e4c4210fd07b
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 4363258a9047ee4e2de4f53595a6eedc5dfe5861
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="accessibility-on-macos"></a>Zugriff auf macOS
 
@@ -30,7 +30,7 @@ AppKit verwendet die `NSAccessibility` Protokoll APIs verfügbar zu machen, mit 
 Xamarin.Mac verwendet die Xcode-Benutzeroberflächen-Generator Storyboard-Dateien zu bearbeiten.
 Informationen über Eingabehilfen kann bearbeitet werden, der **Identität Inspektor** Wenn ein Steuerelement aktiviert ist auf der Entwurfsoberfläche angezeigt (wie im folgenden Screenshot gezeigt):
 
-[![Hinzufügen von Eingabehilfen in Xcodes Benutzeroberflächen-Generator](accessibility-images/xcode.png "Barrierefreiheit in Xcodes Benutzeroberflächen-Generator hinzufügen")](accessibility-images/xcode-large.png)
+[![Hinzufügen von Eingabehilfen in Xcodes Benutzeroberflächen-Generator](accessibility-images/xcode.png "Barrierefreiheit in Xcodes Benutzeroberflächen-Generator hinzufügen")](accessibility-images/xcode-large.png#lightbox)
 
 ### <a name="code"></a>Code
 
@@ -80,7 +80,7 @@ Der Bildschirm "Einstellungen" (falls auf der linken unteren Ecke erforderlich) 
 
 Nach der Aktivierung wird der Inspektor angezeigt, als ein unverankertes Fenster, das auf dem Bildschirm verschoben werden kann. Der folgende Screenshot zeigt den Inspektor neben einem Beispiel-app für Mac ausgeführt wird. Wie das Fenster der Mauszeiger bewegt wird, werden der Inspektor alle zugegriffen werden kann Eigenschaften der einzelnen Steuerelemente angezeigt:
 
-[![Beispiel für Eingabehilfen Inspektor ausführen](accessibility-images/accessibility-example.png "Beispiel von Eingabehilfen-Inspektor ausgeführt wird")](accessibility-images/accessibility-example-large.png)
+[![Beispiel für Eingabehilfen Inspektor ausführen](accessibility-images/accessibility-example.png "Beispiel von Eingabehilfen-Inspektor ausgeführt wird")](accessibility-images/accessibility-example-large.png#lightbox)
 
 Weitere Informationen finden Sie unter der [Barrierefreiheit für OS X-Handbuch](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html).
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8787913c04b11a84828cd98960407f0cc27aa391
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 86a7690d4cf7291a4e44507a6250e3469c8f7ed2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-split-view-controllers"></a>Arbeiten mit Split-View-Controller
 
@@ -21,7 +21,7 @@ _Dieser Artikel umfasst das Entwerfen und Arbeiten mit Split-View-Controller inn
 
 Ein Split-View-Controller präsentiert und verwaltet eine Master "und" Detail-View-Controller Seite-an-Seite, auf dem Bildschirm zur gleichen Zeit. Split-View-Controller verwendet werden, persistent, den Fokus erhalten kann Inhalt in die Masteransicht (dem kleineren Bereich auf der linken Seite) dargestellt und im Zusammenhang Details in der Detailansicht (dem größeren Bereich auf der rechten Seite).
 
-[ ![](split-views-images/intro01.png "Beispiel geteilte Ansicht")](split-views-images/intro01.png)
+[![](split-views-images/intro01.png "Beispiel geteilte Ansicht")](split-views-images/intro01.png#lightbox)
 
 <a name="About-Split-View-Controllers" />
 
@@ -31,7 +31,7 @@ Wie bereits erwähnt, verwaltet ein Split-View-Controller einer Master- und Deta
 
 Darüber hinaus kann die Master-View-Controller ausgeblendet oder angezeigt wurde nach Bedarf: 
 
-[ ![](split-views-images/intro02.png "Die Master-View-Controller ausgeblendet")](split-views-images/intro02.png)
+[![](split-views-images/intro02.png "Die Master-View-Controller ausgeblendet")](split-views-images/intro02.png#lightbox)
 
 Geteilte Ansichten Controller werden häufig verwenden, um eine Liste von Inhalten, die filterbar die Kategorien in der Master-Ansicht und den gefilterten Ergebnissen in der Detailansicht angezeigt. Dies wird in der Regel als einer Tabellenansicht auf der linken Seite angezeigt und ein [Auflistungsansicht](~/ios/tvos/user-interface/collection-views.md) auf der rechten Seite.
 
@@ -54,18 +54,18 @@ Die einfachste Möglichkeit zum Arbeiten mit Split-View-Controller in einer app 
 1. In der **Lösung Pad**, doppelklicken Sie auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. Ziehen Sie eine **Split-View-Controller** aus der **Toolbox** und legen Sie sie in der Sicht: 
 
-    [ ![](split-views-images/activity01.png "Ein Split-View-Controller")](split-views-images/activity01.png)
+    [![](split-views-images/activity01.png "Ein Split-View-Controller")](split-views-images/activity01.png#lightbox)
 1. Standardmäßig wird der iOS-Designer in der Master-Ansicht ein Controller für die Navigation und eine View-Controller installiert. Wenn dies nicht der app-Anforderungen passt, löschen Sie diese einfach.
 1. Wenn Sie die Standardeinstellung Masteransicht entfernen, ziehen Sie die neue View-Controller auf der Entwurfsoberfläche angezeigt: 
 
-    [ ![](split-views-images/activity02.png "Eine View-Controller")](split-views-images/activity02.png)
+    [![](split-views-images/activity02.png "Eine View-Controller")](split-views-images/activity02.png#lightbox)
 1. Steuerelement klicken und ziehen Sie aus der Split-View-Controller auf die neue Master-View-Controller. 
 1. Wählen Sie **Master** aus der **Popupmenü**: 
 
-    [ ![](split-views-images/activity03.png "Wählen Sie im Popupmenü Master")](split-views-images/activity03.png)
+    [![](split-views-images/activity03.png "Wählen Sie im Popupmenü Master")](split-views-images/activity03.png#lightbox)
 1. Entwerfen Sie den Inhalt der Master und Detailansichten: 
 
-    [ ![](split-views-images/activity04.png "Beispiellayout für")](split-views-images/activity04.png)
+    [![](split-views-images/activity04.png "Beispiellayout für")](split-views-images/activity04.png#lightbox)
 1. Weisen Sie **Namen** in der **Registerkarte "Widget"** von der **Eigenschaften aufgefüllt** mit UI-Steuerelemente in C#-Code arbeiten.
 1. Die Änderungen zu speichern und zurück zu Visual Studio für Mac.
 
@@ -74,18 +74,18 @@ Die einfachste Möglichkeit zum Arbeiten mit Split-View-Controller in einer app 
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. Ziehen Sie eine **Split-View-Controller** aus der **Toolbox** und legen Sie sie in der Sicht: 
 
-    [ ![](split-views-images/activity01-vs.png "Ein Split-View-Controller")](split-views-images/activity01-vs.png)
+    [![](split-views-images/activity01-vs.png "Ein Split-View-Controller")](split-views-images/activity01-vs.png#lightbox)
 1. Standardmäßig wird der iOS-Designer eine Navigation und View-Controller in der Master-Ansicht hinzufügen. Wenn dies nicht der app-Anforderungen passt, löschen Sie diese einfach.
 1. Wenn Sie die Standardeinstellung Masteransicht entfernen, ziehen Sie die neue View-Controller auf der Entwurfsoberfläche angezeigt: 
 
-    [ ![](split-views-images/activity02-vs.png "Eine View-Controller")](split-views-images/activity02-vs.png)
+    [![](split-views-images/activity02-vs.png "Eine View-Controller")](split-views-images/activity02-vs.png#lightbox)
 1. Steuerelement klicken und ziehen Sie aus der Split-View-Controller auf die neue Master-View-Controller. 
 1. Wählen Sie **Master** aus der **Popupmenü**: 
 
-    [ ![](split-views-images/activity03-vs.png "Wählen Sie im Popupmenü Master")](split-views-images/activity03-vs.png)
+    [![](split-views-images/activity03-vs.png "Wählen Sie im Popupmenü Master")](split-views-images/activity03-vs.png#lightbox)
 1. Entwerfen Sie den Inhalt der Master und Detailansichten: 
 
-    [ ![](split-views-images/activity04.png "Content-layout")](split-views-images/activity04.png)
+    [![](split-views-images/activity04.png "Content-layout")](split-views-images/activity04.png#lightbox)
 1. Weisen Sie **Namen** in der **Registerkarte "Widget"** von der **Eigenschaften-Explorer** mit UI-Steuerelemente in C#-Code arbeiten.
 1. Speichern Sie die Änderungen.
     
@@ -179,7 +179,7 @@ In diesem Artikel wurden behandelt, Entwerfen und Arbeiten mit Split-View-Contro
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiele für tvos. außerdem wurden](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvos. außerdem wurden Handbücher für interaktive Workflowdienste-Schnittstelle](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [App-Programmierhandbuch für tvos. außerdem wurden](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

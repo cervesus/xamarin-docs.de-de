@@ -6,17 +6,13 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 165313fb0150c2d9832566d5bc32842722b0a039
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6ca5b4d70669909b952752f7d600fcac37e9f557
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>Welche Supportoptionen für Xamarin verfügbar sind?
-
-## <a name="overview"></a>Übersicht
-- [Zusammenfassung der Supportoptionen](#Summary_of_Support_Options)
-- [Detaillierte Vorschläge](#Detailed_Recommendations)
 
 ## <a name="summary-of-support-options"></a>Zusammenfassung der Supportoptionen
 
@@ -46,6 +42,8 @@ Wie gezeigt auf die [Xamarin Supportseite](https://www.xamarin.com/support), sin
 </table>
 
 Das Supportteam von Xamarin wird jede dieser Optionen zu überwachen.  Es wird empfohlen, allen Benutzern das beitragen, ihre durchdachtes Fragen und Berichte zu nutzen und Hilfe Kenntnisse Xamarin-Entwickler-Community wachsen.  Achten Sie für vermuteten Mängel übermitteln Fehler zeigt an, wenn möglich, stellen Sie sicher, dass die Probleme durch das Technikerteam Xamarin formal nachverfolgt werden.
+
+<a name="Visual_Studio_email_support_incidents_for_Xamarin_topics"/>
 
 ### <a name="visual-studio-email-support-incidents-for-xamarin-topics"></a>Visual Studio-e-Mail-Supportfälle für Xamarin-Themen
 

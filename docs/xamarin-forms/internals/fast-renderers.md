@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 92a11ebe983840270d3679fd11f5faa0b8222cfe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 956fa919ef9aa994fea92a9a64ca1325819f3ffc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="fast-renderers"></a>Schnelle Renderer
 
@@ -40,7 +40,7 @@ Forms.SetFlags("FastRenderers_Experimental");
 ```
 
 > [!NOTE]
-> **Hinweis**: schnelle Renderer gelten nur für app Compat Android Back-End, damit diese Einstellung auf Pre-app/Compat Aktivitäten ignoriert.
+> Schnelle Renderer gelten nur für app Compat Android Back-End, daher wird diese Einstellung auf Pre-app/Compat Aktivitäten ignoriert.
 
 Verbesserte Leistung beim variiert für jede Anwendung, die je nach Komplexität des Layouts. Leistungsverbesserungen der X2 sind z. B. möglich, beim Durchführen eines Bildlaufs durch einen [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) enthält Tausende von Zeilen mit Daten, die, in denen die Zellen in jeder Zeile werden Steuerelemente, die schnelle Renderern verwendet werden, was dazu führt das glatter Durchführen eines Bildlaufs.
 

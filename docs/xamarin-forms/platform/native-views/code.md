@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 55864073aecb48176d650da6edefad24c3248767
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0c4014ecda0501e9309a17901c439444e4b48e86
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="native-views-in-c"></a>Systemeigene Ansichten in c#
 
@@ -24,7 +24,7 @@ Jedes Xamarin.Forms-Steuerelement, das ermöglicht `Content` , um die festgelegt
 
 Führen Sie den folgenden Screenshots vor plattformspezifische Ansichten hinzugefügt, um eine Xamarin.Forms [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/):
 
-[![](code-images/screenshots-sml.png "Enthält plattformspezifische Ansichten StackLayout")](code-images/screenshots.png "StackLayout enthält plattformspezifische Ansichten")
+[![](code-images/screenshots-sml.png "Enthält plattformspezifische Ansichten StackLayout")](code-images/screenshots.png#lightbox "StackLayout enthält plattformspezifische Ansichten")
 
 Die Möglichkeit zum Hinzufügen von plattformspezifischen Ansichten zu einem Layout Xamarin.Forms wird durch zwei Erweiterungsmethoden auf jeder Plattform aktiviert:
 
@@ -64,7 +64,7 @@ Das Beispiel setzt voraus, dass die `stackLayout` und `contentView` Instanzen zu
 Das folgende Codebeispiel veranschaulicht das Hinzufügen einer `TextView` auf eine [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) und ein [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
 
 ```csharp
-var textView = new TextView (Forms.Context) { Text = originalText, TextSize = 14 };
+var textView = new TextView (MainActivity.Instance) { Text = originalText, TextSize = 14 };
 stackLayout.Children.Add (textView);
 contentView.Content = textView.ToView();
 ```
@@ -188,7 +188,7 @@ public class CustomControl : TextView
 Eine Instanz dieser Sicht hinzugefügt wird eine [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
-var customControl = new CustomControl (Forms.Context) {
+var customControl = new CustomControl (MainActivity.Instance) {
   Text = "This control has incorrect sizing - it doesn't occupy the available width of the device.",
   TextSize = 14
 };

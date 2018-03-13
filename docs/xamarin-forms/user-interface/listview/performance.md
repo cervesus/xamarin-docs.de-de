@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 2acaef5fd42b867e88fb9b81d401ea752480124a
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 81d4aec3153a4cb7bbb0f3577c5a67acd430f279
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="listview-performance"></a>ListView-Leistung
 
@@ -45,7 +45,7 @@ public enum ListViewCachingStrategy
 ```
 
 > [!NOTE]
-> **Hinweis**: die universelle Windows-Plattform (UWP) ignoriert die [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) cachingstrategie, da sie verwendet stets die Zwischenspeicherung zur Verbesserung der Leistung. Aus diesem Grund standardmäßig verhält sich wie die [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) cachingstrategie angewendet wird.
+> Die universelle Windows-Plattform (UWP) ignoriert die [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) cachingstrategie, da sie verwendet stets die Zwischenspeicherung zur Verbesserung der Leistung. Aus diesem Grund standardmäßig verhält sich wie die [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) cachingstrategie angewendet wird.
 
 ### <a name="retainelement"></a>RetainElement
 
@@ -101,14 +101,14 @@ Auf IOS- und Android müssen Zellen benutzerdefinierte Renderern verwendet werde
 Wenn eine [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) verwendet eine [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) Auswählen einer [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), die [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) Zwischenspeichern Strategie ist nicht im cache `DataTemplate`s. Stattdessen eine `DataTemplate` für jedes Datenelement in der Liste ausgewählt ist.
 
 > [!NOTE]
-> **Hinweis**: die [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) cachingstrategie ist eine Voraussetzung in Xamarin.Forms-2.4 eingeführt, die bei einer [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) wird gebeten, wählen Sie eine [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) , da jedes `DataTemplate` muss die gleiche zurückgeben [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) Typ. Angenommen, ein [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) mit einer `DataTemplateSelector` , können entweder die zurückgeben `MyDataTemplateA` (, in dem `MyDataTemplateA` gibt eine `ViewCell` vom Typ `MyViewCellA`), oder `MyDataTemplateB` (, in denen `MyDataTemplateB`gibt eine `ViewCell` des Typs `MyViewCellB`), wenn `MyDataTemplateA` wird zurückgegeben, sie muss zurückgeben `MyViewCellA` oder eine Ausnahme ausgelöst.
+> Die [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) cachingstrategie ist eine Voraussetzung in Xamarin.Forms-2.4 eingeführt, die bei einer [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) wird gebeten, wählen Sie eine [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), da jedes `DataTemplate` muss die gleiche zurückgeben [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) Typ. Angenommen, ein [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) mit einer `DataTemplateSelector` , können entweder die zurückgeben `MyDataTemplateA` (, in dem `MyDataTemplateA` gibt eine `ViewCell` vom Typ `MyViewCellA`), oder `MyDataTemplateB` (, in denen `MyDataTemplateB`gibt eine `ViewCell` des Typs `MyViewCellB`), wenn `MyDataTemplateA` wird zurückgegeben, sie muss zurückgeben `MyViewCellA` oder eine Ausnahme ausgelöst.
 
 ### <a name="recycleelementanddatatemplate"></a>RecycleElementAndDataTemplate
 
 Die [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) cachingstrategie basiert auf der [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) cachingstrategie Leuchten Sie außerdem, dass bei einer [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) verwendet eine [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) Auswählen einer [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), `DataTemplate`s werden zwischengespeichert, nach dem Typ des Elements in der Liste. Aus diesem Grund `DataTemplate`s pro Elementtyp nicht einmal pro Instanz einmal ausgewählt werden.
 
 > [!NOTE]
-> **Hinweis**: die [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) cachingstrategie hat eine erforderliche Komponente, die die `DataTemplate`s zurückgegebenes der [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) verwenden, müssen die [ `DataTemplate` ](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) Konstruktor, akzeptiert eine `Type`.
+> Die [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) cachingstrategie hat eine erforderliche Komponente, die die `DataTemplate`s zurückgegebenes der [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) verwenden, müssen die [ `DataTemplate` ](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) Konstruktor, akzeptiert eine `Type`.
 
 ### <a name="setting-the-caching-strategy"></a>Die Zwischenspeicherstrategie festlegen
 

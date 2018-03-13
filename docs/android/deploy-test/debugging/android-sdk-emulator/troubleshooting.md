@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 51cc7a4700e8cb3ece556b0ada841d70d5f2bb8b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 486df3bbee3f8af511140e2d287f9f95571c7b3d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-sdk-emulator-troubleshooting"></a>Behandlung von Problemen des Android SDK-Emulators
 
@@ -83,7 +83,7 @@ Um dieses Problem zu beheben, schauen Sie sich folgenden Artikel an: [How to Use
 
 Wenn Sie es vorziehen, keine Leistungswarnungen zu erhalten, können Sie diese deaktivieren. Klicken Sie in Visual Studio auf **Extras > Optionen > Xamarin > Android-Einstellungen**, und deaktivieren Sie die Option **Warn if AVD acceleration is not supported (HAXM)** (Warnen, wenn AVD-Beschleunigung nicht unterstützt wird (HAXM)):
 
-[![Deaktivieren von Warnungen zu AVD-Beschleunigung](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png)
+[![Deaktivieren von Warnungen zu AVD-Beschleunigung](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -110,13 +110,11 @@ Dieses Dialogfeld wird angezeigt, wenn der Emulator aus unbekannten Gründen nic
 
 -----
 
-<a name="solutions" />
 
 ## <a name="solutions-to-common-problems"></a>Lösungen für häufige Probleme
 
 Viele häufig auftretende Probleme mit dem Android SDK Emulator können behoben werden, indem Sie die Konfigurationen Ihres Computers ändern oder zusätzliche Software installieren. Im folgenden Abschnitt werden diese Probleme sowie mögliche Lösungen beschrieben.
 
-<a name="deployment" />
 
 ### <a name="deployment-issues"></a>Probleme bei der Bereitstellung
 
@@ -142,7 +140,6 @@ Wenn Sie eine Fehlermeldung erhalten, dass das APK auf dem Emulator nicht instal
 5. Wenn der Emulator nicht in dieser Liste angezeigt wird, starten Sie den **Android SDK Manager**, wenden Sie alle Updates an, und versuchen Sie erneut, den Emulator zu starten.
 
 
-<a name="haxm-issues" />
 
 ### <a name="haxm-issues"></a>Probleme mit HAXM
 
@@ -162,7 +159,6 @@ HAXM kann mit anderen Technologien, die die Virtualisierung verwenden, in Konfli
 
 - **Antivirussoftware** &ndash; Wenn Sie eine Antivirussoftware ausführen, die die hardwareunterstützte Virtualisierung verwendet, wie etwa Avast, deaktivieren oder deinstallieren Sie diese Software, starten Sie den Computer neu, und versuchen Sie erneut, den Android SDK Emulator zu starten.
 
-<a name="bios" />
 
 #### <a name="incorrect-bios-settings"></a>Falsche BIOS-Einstellungen
 

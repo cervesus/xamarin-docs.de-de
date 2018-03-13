@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 6e8a37816e28120392f550376807e91fb3b5d458
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cee93f082386e78a643b8c07dd48d0196e8ecd6c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="the-path-fill-types"></a>Die Typen der Pfad ausfüllen
 
@@ -164,7 +164,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 In der Regel wird die Pfad-Fülltyp betrifft nur fortgesetzt werden kann und keine Striche, doch die beiden `Inverse` Modi Auswirkungen auf Flächen und Konturen. Für fortgesetzt werden kann, die beiden `Inverse` Typen Bereiche füllen oppositely, damit Sie der Bereich außerhalb der Stern gefüllt ist. Für Striche, die beiden `Inverse` Typen Farbe alles mit Ausnahme der Kontur. Verwendung dieser Füllungstypen inverse kann einige ungerade Effekte erzeugt, wie der iOS-Screenshot veranschaulicht:
 
-[![](fill-types-images/fivepointedstar-small.png "Dreifacher Screenshot der Seite Five-Pointed Stern")](fill-types-images/fivepointedstar-large.png "dreifacher Screenshot der Seite Five-Pointed Stern")
+[![](fill-types-images/fivepointedstar-small.png "Dreifacher Screenshot der Seite Five-Pointed Stern")](fill-types-images/fivepointedstar-large.png#lightbox "dreifacher Screenshot der Seite Five-Pointed Stern")
 
 Die Android- und Windows mobile-Screenshots zeigen die üblichen gerade-ungerade und winding Effekte, aber die Reihenfolge der Kontur und Füllung wirkt sich auch auf die Ergebnisse.
 
@@ -217,7 +217,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Es handelt sich um eine interessante Image mit einem Minimum von Code erstellt:
 
-[![](fill-types-images/overlappingcircles-small.png "Dreifacher Screenshot der Seite überlappende Kreise")](fill-types-images/overlappingcircles-large.png "dreifacher Screenshot der Seite überlappende Kreise")
+[![](fill-types-images/overlappingcircles-small.png "Dreifacher Screenshot der Seite überlappende Kreise")](fill-types-images/overlappingcircles-large.png#lightbox "dreifacher Screenshot der Seite überlappende Kreise")
 
 
 ## <a name="related-links"></a>Verwandte Links

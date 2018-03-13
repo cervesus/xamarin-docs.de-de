@@ -7,18 +7,17 @@ ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: 84ef87f5ed84fcd0a9aa2504c52a0fec17404e1f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 6d31e2a22c63f8d46893dd1928b561e1a06b19b4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="troubleshooting-bindings"></a>Problembehandlung von Bindungen
 
 _Dieser Artikel beschreibt mehrere häufige Fehler, die auftreten können, während der Generierung Bindungen wird zusammen mit möglichen Ursachen und Vorschläge zur Problembehebung._
 
-<a name="OVERVIEW" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -38,7 +37,6 @@ Nach der Aktivierung der Diagnoseausgabe an, das Xamarin.Android Bindung-Projekt
 
 Es kann auch nachweisen hilfreich, zu dekompilieren, die Bibliothek für Android aus, und untersuchen Sie die Typen und Methoden, die Xamarin.Android versucht zu binden. Dieser Vorgang wird später in diesem Handbuch ausführlicher beschrieben.
 
-<a name="DECOMPILING_AN_ANDROID_LIBRARY" />
 
 ## <a name="decompiling-an-android-library"></a>Dekompilieren eine Bibliothek für Android
 
@@ -59,9 +57,8 @@ Nachdem Sie die Bibliothek für Android dekompiliert haben, überprüfen Sie den
 - **`import` Anweisungen für die Unreferenzierte Bibliotheken** &ndash; identifizieren die nicht referenzierte Bibliothek, und fügen Sie diese Abhängigkeiten zum Projekt Xamarin.Android Bindung mit einer **Buildvorgang** von **ReferenceJar**  oder **EmbedddedReferenceJar**.
 
 > [!NOTE]
-> **Hinweis:** dekompilieren einer Java-Bibliothek ist möglicherweise nicht zulässig oder unterliegen rechtlichen Grundlage örtlich anwendbaren Gesetzen oder die Lizenz, unter dem die Java-Bibliothek veröffentlicht wurde. Bei Bedarf eingetragen Sie werden die Dienste von einer rechtliche Professional vor dem Versuch, dekompilieren einer Java-Bibliothek, und überprüfen den Quellcode einfügen.
+> Dekompilieren einer Java-Bibliothek ist möglicherweise nicht zulässig oder unterliegen rechtlichen Grundlage örtlich anwendbaren Gesetzen oder die Lizenz, unter der die Java-Bibliothek veröffentlicht wurde. Bei Bedarf eingetragen Sie werden die Dienste von einer rechtliche Professional vor dem Versuch, dekompilieren einer Java-Bibliothek, und überprüfen den Quellcode einfügen.
 
-<a name="INSPECTING_API_XML" />
 
 ## <a name="inspect-apixml"></a>Überprüfen Sie die API. XML
 
@@ -71,19 +68,16 @@ Als Teil der Erstellung eines Projekts für die Bindung, Xamarin.Android generie
 
 Diese Datei enthält eine Liste aller Java-APIs, die Xamarin.Android Bindung versucht wird. Der Inhalt dieser Datei können identifizieren fehlender Typen oder Methoden, die doppelte Bindung. Auch Prüfung dieser Datei mühsam und zeitaufwändig ist, bieten sie Hinweise auf die Bindungsprobleme verursachen könnte. Beispielsweise **api.xml** kann offenlegen, dass eine Eigenschaft einen ungeeigneten Typ zurückgeben ist oder, es zwei gibt dieser Freigabe verwalteter gleichnamigen Typen.
 
-<a name="KNOWN_ISSUES" />
 
 ## <a name="known-issues"></a>Bekannte Probleme
 
 In diesem Abschnitt werden einige der allgemeinen Fehlermeldungen oder Symptome aufgeführt, die meine auftreten, wenn Sie versuchen, eine Bibliothek für Android zu binden.
 
-<a name="PROBLEM_JAVA_VERSION_MISMATCH" />
 
 ### <a name="problem-java-version-mismatch"></a>Problem: Java-Versionskonflikt
 
 In einigen Fällen Typen nicht generiert werden oder unerwartete abstürzen können auftreten, weil Sie verwenden eine neuere und ältere Version von Java-im Vergleich zu, was mit die Bibliothek kompiliert wurde. Kompilieren Sie erneut die Android-Bibliothek mit der gleichen Version des JDK, die Ihr Projekt Xamarin.Android verwendet wird.
 
-<a name="PROBLEM_AT_LEAST_ONE_JAVA_LIBRARY_IS_REQUIRED" />
 
 ### <a name="problem-at-least-one-java-library-is-required"></a>Problem: mindestens eine Java-Bibliothek ist erforderlich
 
@@ -93,7 +87,6 @@ Die Fehlermeldung "mindestens eine Java-Bibliothek ist ein Pflichtfeld,", obwohl
 
 Stellen Sie sicher, dass die Buildaktion auf festgelegt ist `EmbeddedJar`. Da es sich um mehrere Buildvorgänge für. JAR-Dateien (z. B. `InputJar`, `EmbeddedJar`, `ReferenceJar` und `EmbeddedReferenceJar`), der Generator für die Bindung kann nicht automatisch zu erraten, welcher Typ in der Standardeinstellung verwendet. Weitere Informationen zu den Buildvorgängen, finden Sie unter [erstellen Aktionen](~/android/platform/binding-java-library/index.md).
 
-<a name="PROBLEM_BINDING_TOOLS_CANNOT_LOAD_THE_JAR_LIBRARY" />
 
 ### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>Problem: Binden von Tools kann nicht geladen werden die. JAR-Bibliothek
 
@@ -104,7 +97,6 @@ Die Bindung Library-Generator kann nicht geladen der. JAR-Bibliothek.
 Einige. JAR-Bibliotheken, die Code Verbergung (über Tools, z. B. Proguard) verwenden, können von der Java-Tools geladen werden. Da unserem Werkzeug Verwendung von Java-Reflektion und der technischen Bibliothek ASM Bytecode vornimmt, können diese abhängigen Tools verborgenen Bibliotheken ablehnen, Android Laufzeittools übergeben werden können. Dieses Problem zu umgehen, werden von Hand diese Bibliotheken anstelle des Generators für die Bindung binden.
 
 
-<a name="PROBLEM_MISSING_C_TYPES_IN_GENERATED_OUTPUT_" />
 
 ### <a name="problem-missing-c-types-in-generated-output"></a>Problem: Fehlende C#-Typen in der generierten Ausgabe.
 
@@ -253,8 +245,6 @@ Die Lösung zu finden, manuell laden die **.so** Bibliothek mit einem Aufruf von
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 ```
-
-<a name=summary />
 
 ## <a name="summary"></a>Zusammenfassung
 

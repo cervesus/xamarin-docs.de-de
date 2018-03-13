@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: fe58aa8ffb74a9b6e937be5a7f1dde0432794405
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5eccb36b3c6a437ddc1ec055e779d8f78460643e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvos. außerdem wurden Quick Start Guide
 
@@ -34,7 +34,7 @@ Darüber hinaus seit Xamarin.tvOS apps in c# und .NET geschrieben werden, kann g
 
 In diesem Artikel wird dienen als Einführung in die grundlegenden Konzepte, die zum Erstellen einer Apple TV-App mithilfe von Xamarin.tvOS und Visual Studio werden Sie durch den Prozess der Erstellung einer grundlegenden benötigt **Hello tvos. außerdem wurden** app, die zählt, wie oft eine Schaltfläche enthält geklickt wurde:
 
-[ ![](hello-tvos-images/run05.png "Beispiel-app ausführen")](hello-tvos-images/run05.png)
+[![](hello-tvos-images/run05.png "Beispiel-app ausführen")](hello-tvos-images/run05.png#lightbox)
 
 Die folgenden Konzepte beschrieben:
 
@@ -51,21 +51,21 @@ Führen Sie zum Einstieg wir Folgendes:
 
 1. Starten Sie Visual Studio für Mac:
 
-    [ ![](hello-tvos-images/setup01.png "Visual Studio für Mac")](hello-tvos-images/setup01.png)
+    [![](hello-tvos-images/setup01.png "Visual Studio für Mac")](hello-tvos-images/setup01.png#lightbox)
 2. Klicken Sie auf die **neue Projektmappe...**  Link in die linke obere Ecke des Bildschirms zum Öffnen der **neues Projekt** (Dialogfeld).
 3. Wählen Sie **tvos. außerdem wurden** > **App** > **einzelne Ansicht App** , und klicken Sie auf die **Weiter** Schaltfläche:
 
-    [ ![](hello-tvos-images/setup02.png "Wählen Sie einzelne Sicht App")](hello-tvos-images/setup02.png)
+    [![](hello-tvos-images/setup02.png "Wählen Sie einzelne Sicht App")](hello-tvos-images/setup02.png#lightbox)
 4. Geben Sie `Hello, tvOS` für die **Anwendungsnamen**, geben Sie Ihre **Organisations-ID** , und klicken Sie auf die **Weiter** Schaltfläche:
 
-    [ ![](hello-tvos-images/setup04.png "Geben Sie Hello tvos. außerdem wurden")](hello-tvos-images/setup04.png)
+    [![](hello-tvos-images/setup04.png "Geben Sie Hello tvos. außerdem wurden")](hello-tvos-images/setup04.png#lightbox)
 5. Geben Sie `Hello_tvOS` für die **Projektname** , und klicken Sie auf die **erstellen** Schaltfläche:
 
-    [ ![](hello-tvos-images/setup03.png "Enter HellotvOS")](hello-tvos-images/setup03.png)
+    [![](hello-tvos-images/setup03.png "Enter HellotvOS")](hello-tvos-images/setup03.png#lightbox)
 
 Visual Studio für Mac neue Xamarin.tvOS-app erstellen und Anzeigen der Standarddateien, die Projektmappe für Ihre Anwendung hinzugefügt werden:
 
- [ ![](hello-tvos-images/project01.png "Die Standardansicht für Dateien")](hello-tvos-images/project01.png)
+ [![](hello-tvos-images/project01.png "Die Standardansicht für Dateien")](hello-tvos-images/project01.png#lightbox)
 
 Visual Studio für Mac verwendet **Lösungen** und **Projekte**, in die genaue genauso wie Visual Studio. Eine Projektmappe ist ein Container, der mindestens ein Projekt enthalten kann. Projekte sind z.B. Anwendungen, unterstützende Bibliotheken, Testanwendungen usw. In diesem Fall hat Visual Studio für Mac für Sie eine Projektmappe und ein Anwendungsprojekt erstellt.
 
@@ -253,11 +253,11 @@ Müssen Sie die Xamarin-Designer für iOS verwenden, um die Benutzeroberfläche 
 
 Um erstellen Ihre Benutzeroberfläche zu starten, doppelklicken Sie nun auf die `Main.storyboard` in der Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung in der iOS-Designer zu öffnen:
 
-[ ![](hello-tvos-images/designer01.png "Die Datei „Main.storyboard“ in Projektmappen-Explorer")](hello-tvos-images/designer01.png)
+[![](hello-tvos-images/designer01.png "Die Main.storyboard-Datei im Projektmappen-Explorer")](hello-tvos-images/designer01.png#lightbox)
 
 Dieser Designer starten und wie folgt aussehen:
 
-[ ![](hello-tvos-images/designer02.png "Der Designer")](hello-tvos-images/designer02.png)
+[![](hello-tvos-images/designer02.png "Der Designer")](hello-tvos-images/designer02.png#lightbox)
 
 Weitere Informationen zu den iOS-Designer und deren Funktionsweise finden Sie in der [Einführung in die Xamarin-Designer für iOS](~/ios/user-interface/designer/introduction.md) Handbuch.
 
@@ -267,57 +267,57 @@ Führen Sie folgende Schritte aus:
 
 1. Suchen Sie die **Toolbox**, die rechts neben der Entwurfsoberfläche angezeigt werden soll:
 
-    [![](hello-tvos-images/designer03.png "Der Toolbox")](hello-tvos-images/designer03.png)
+    [![](hello-tvos-images/designer03.png "Der Toolbox")](hello-tvos-images/designer03.png#lightbox)
 
     Wenn Sie ihn hier nicht finden, navigieren Sie zu **Ansicht > füllt > Toolbox** Anzeigen dieses Fehlerprotokolls.
 2. Ziehen Sie eine **Bezeichnung** aus der **Toolbox** auf die Entwurfsoberfläche:
 
-    [ ![](hello-tvos-images/designer04.png "Ziehen Sie eine Bezeichnung aus der Toolbox")](hello-tvos-images/designer04.png)
+    [![](hello-tvos-images/designer04.png "Ziehen Sie eine Bezeichnung aus der Toolbox")](hello-tvos-images/designer04.png#lightbox)
 3. Klicken Sie auf die **Titel** Eigenschaft in der **Eigenschaft Pad** und ändern Sie die Schaltfläche Titel in `Hello, tvOS` und legen Sie die **Schriftgrad** 128 sein:
 
-    [ ![](hello-tvos-images/designer05.png "Festlegen Sie des Titels auf Hello tvos. außerdem wurden, und legen Sie den Schriftgrad auf 128")](hello-tvos-images/designer05.png)
+    [![](hello-tvos-images/designer05.png "Festlegen Sie des Titels auf Hello tvos. außerdem wurden, und legen Sie den Schriftgrad auf 128")](hello-tvos-images/designer05.png#lightbox)
 4. Ändern Sie die Bezeichnung, damit alle Wörter sichtbar sind, und platzieren Sie es im oberen Bereich des Fensters zentriert:
 
-    [ ![](hello-tvos-images/designer06.png "Die Größe und zentrieren die Bezeichnung")](hello-tvos-images/designer06.png)
+    [![](hello-tvos-images/designer06.png "Die Größe und zentrieren die Bezeichnung")](hello-tvos-images/designer06.png#lightbox)
 5. Die Bezeichnung müssen jetzt auf dessen Position eingeschränkt werden, damit er wie vorgesehen angezeigt wird. unabhängig von der Größe des Bildschirms an. Zu diesem Zweck klicken Sie auf die Bezeichnung bis auf die *T geformten Handle* angezeigt wird:
 
-    [ ![](hello-tvos-images/designer07.png "Das Handle T geformten")](hello-tvos-images/designer07.png)
+    [![](hello-tvos-images/designer07.png "Das Handle T geformten")](hello-tvos-images/designer07.png#lightbox)
 6. Die Bezeichnung horizontal zu beschränken, wählen Sie das Quadrat Center, und ziehen ihn auf der vertikalen gestrichelte Linie:
 
-    [ ![](hello-tvos-images/designer08.png "Wählen Sie das Quadrat center")](hello-tvos-images/designer08zoom.png)
+    [![](hello-tvos-images/designer08.png "Wählen Sie das Quadrat center")](hello-tvos-images/designer08zoom.png#lightbox)
 
      Die Bezeichnung aktivieren Orange.
 7. Wählen Sie den Ziehpunkt T am oberen Rand die Bezeichnung, und ziehen Sie am oberen Rand des Fensters:
 
-    [ ![](hello-tvos-images/designer09.png "Ziehen Sie den Ziehpunkt am oberen Rand des Fensters")](hello-tvos-images/designer09.png)
+    [![](hello-tvos-images/designer09.png "Ziehen Sie den Ziehpunkt am oberen Rand des Fensters")](hello-tvos-images/designer09.png#lightbox)
 8. Klicken Sie dann auf die Breite und klicken Sie dann auf die Höhe *Bone Handle* wie unten gezeigt:
 
-    [ ![](hello-tvos-images/designer10.png "Die Breite und die Höhe Bone-handles")](hello-tvos-images/designer10.png)
+    [![](hello-tvos-images/designer10.png "Die Breite und die Höhe Bone-handles")](hello-tvos-images/designer10.png#lightbox)
 
      Wenn jede *Bone Handle* ist geklickt haben, wählen Sie Breite und Höhe bzw. feste Dimensionen festlegen.
 9. Abschließend sollte die Einschränkungen ähnlich denen in der Registerkarte "Layout" das Auffüllzeichen Eigenschaften aussehen:
 
-    [ ![](hello-tvos-images/designer11.png "Beispiel-Einschränkungen")](hello-tvos-images/designer11.png)
+    [![](hello-tvos-images/designer11.png "Beispiel-Einschränkungen")](hello-tvos-images/designer11.png#lightbox)
 8. Ziehen Sie eine **Schaltfläche** aus der **Toolbox** und platzieren Sie es unter der Bezeichnung.
 9. Klicken Sie auf die **Titel** Eigenschaft in der **Eigenschaft Pad** und ändern Sie die Schaltfläche Titel in `Click Me`:
 
-    [ ![](hello-tvos-images/designer12.png "Ändern Sie den Titel Schaltflächen, Click Me")](hello-tvos-images/designer12.png)
+    [![](hello-tvos-images/designer12.png "Ändern Sie den Titel Schaltflächen, Click Me")](hello-tvos-images/designer12.png#lightbox)
 10. Wiederholen Sie die Schritte 5 bis 8 oben, um die Schaltfläche im Fenster tvos. außerdem wurden zu beschränken. Allerdings anstatt zu ziehen das T-Handle an den Anfang des Fensters (wie in Schritt &#7;), ziehen Sie es an das Ende der Bezeichnung:
 
-    [ ![](hello-tvos-images/designer14.png "Beschränken Sie die Schaltfläche """)](hello-tvos-images/designer14.png)
+    [![](hello-tvos-images/designer14.png "Beschränken Sie die Schaltfläche """)](hello-tvos-images/designer14.png#lightbox)
 11. Ziehen Sie eine andere Bezeichnung unter der Schaltfläche, seine Größe ändern, um die gleiche Breite wie die erste Bezeichnung, und legen seine **Ausrichtung** auf **Center**:
 
-    [ ![](hello-tvos-images/designer15.png "Ziehen Sie eine andere Bezeichnung unter der Schaltfläche, Größe, um die gleiche Breite wie die erste Bezeichnung sein, und legen Sie die Ausrichtung auf Center")](hello-tvos-images/designer15.png)
+    [![](hello-tvos-images/designer15.png "Ziehen Sie eine andere Bezeichnung unter der Schaltfläche, Größe, um die gleiche Breite wie die erste Bezeichnung sein, und legen Sie die Ausrichtung auf Center")](hello-tvos-images/designer15.png#lightbox)
 12. Legen Sie diese Bezeichnung zum Zentrieren und Heften Sie ihn in die Position und Größe wie die erste Bezeichnung und Schaltfläche:
 
-    [ ![](hello-tvos-images/designer16.png "Heften Sie die Bezeichnung in Position und Größe")](hello-tvos-images/designer16.png)
+    [![](hello-tvos-images/designer16.png "Heften Sie die Bezeichnung in Position und Größe")](hello-tvos-images/designer16.png#lightbox)
 13. Speichern Sie die Änderungen an der Benutzeroberfläche.
 
 Beim Ändern der Größe und Verschieben von Steuerelementen, um wurden, Sie sollten aufgefallen, dass der Designer Sie Snap hilfreiche Hinweise kann auf der Grundlage von [Apple TV-Richtlinien für menschliche Benutzeroberfläche](https://developer.apple.com/tvos/human-interface-guidelines/). Diese Richtlinien hilft Ihnen hochwertige Anwendungen zu erstellen, die ein vertraut Aussehen und Verhalten für Apple TV-Benutzer verfügen sollen.
 
 Wenn Sie, in Suchen der **Dokumentgliederung** Abschnitt, beachten Sie, wie das Layout und die Hierarchie der Elemente, aus denen unsere Benutzeroberfläche angezeigt werden:
 
-[ ![](hello-tvos-images/designer17.png "Im Dokumentgliederungsfenster-Abschnitt")](hello-tvos-images/designer17.png)
+[![](hello-tvos-images/designer17.png "Im Dokumentgliederungsfenster-Abschnitt")](hello-tvos-images/designer17.png#lightbox)
 
 Von hier aus können Sie auswählen, Elemente bearbeiten, oder ziehen Elemente der Benutzeroberfläche neu anordnen, bei Bedarf. Wenn ein Element der Benutzeroberfläche von einem anderen Element abgedeckt wird, wurde, können Sie es z. B. an das Ende der Liste, um erleichtern das oberste Element im Fenster ziehen.
 
@@ -339,16 +339,16 @@ In dieser beispielanwendung wird die Schaltfläche geklickt wird möchten wir _e
 1. Wählen Sie in Xamarin iOS-Designer die Schaltfläche "View-Controller" ein.
 2. Wählen Sie in das Auffüllzeichen Eigenschaften der **Ereignisse** Registerkarte:
 
-    [![](hello-tvos-images/event1.png "Die Registerkarte "Ereignisse"")](hello-tvos-images/event1.png)
+    [![](hello-tvos-images/event1.png "Die Registerkarte "Ereignisse"")](hello-tvos-images/event1.png#lightbox)
 3. Suchen Sie das TouchUpInside-Ereignis, und weisen Sie ihm einen Ereignishandler namens `Clicked`:
 
-    [![](hello-tvos-images/event2.png "Das TouchUpInside-Ereignis")](hello-tvos-images/event2.png)
+    [![](hello-tvos-images/event2.png "Das TouchUpInside-Ereignis")](hello-tvos-images/event2.png#lightbox)
 4. Wenn Sie drücken **EINGABETASTE**, die **ViewController**cs-Datei wird geöffnet, schlägt die Speicherorte für einen Ereignishandler im Code. Verwenden Sie die Pfeiltasten auf der Tastatur, um den Speicherort festzulegen:
 
-    [![](hello-tvos-images/event3.png "Festlegen des Speicherorts")](hello-tvos-images/event3.png)
+    [![](hello-tvos-images/event3.png "Festlegen des Speicherorts")](hello-tvos-images/event3.png#lightbox)
 5. Dadurch wird eine partielle Methode erstellt, wie unten dargestellt:
 
-    [![](hello-tvos-images/event4.png "Die partielle Methode")](hello-tvos-images/event4.png)
+    [![](hello-tvos-images/event4.png "Die partielle Methode")](hello-tvos-images/event4.png#lightbox)
 
 Wir können nun beginnen, Hinzufügen von Code für die Schaltfläche, um die Funktion zu ermöglichen.
 
@@ -359,10 +359,10 @@ Wenn die Schaltfläche geklickt wird, sollten die Bezeichnung aktualisieren basi
 1. Öffnen Sie das Storyboard aus, und wählen Sie die Bezeichnung im unteren Bereich des View-Controller.
 2. Wählen Sie in das Auffüllzeichen Eigenschaften der **Widget** Registerkarte:
 
-    [![](hello-tvos-images/name1.png "Wählen Sie die Registerkarte "Widget"")](hello-tvos-images/name1.png)
+    [![](hello-tvos-images/name1.png "Wählen Sie die Registerkarte "Widget"")](hello-tvos-images/name1.png#lightbox)
 3. Klicken Sie unter **Identität > Name**, hinzufügen `ClickedLabel`:
 
-    [![](hello-tvos-images/name2.png "Set ClickedLabel")](hello-tvos-images/name2.png)
+    [![](hello-tvos-images/name2.png "Set ClickedLabel")](hello-tvos-images/name2.png#lightbox)
 
 Wir können jetzt starten, aktualisieren die Bezeichnung!
 
@@ -370,7 +370,7 @@ Wir können jetzt starten, aktualisieren die Bezeichnung!
 
 Bei Auswahl der `ViewController.designer.cs` in der **Projektmappen-Explorer** können, finden Sie unter wie die der `ClickedLabel` Bezeichnung und der `Clicked` Ereignishandler zugeordnet haben eine **Ausgang** und  **Aktion** in c#:
 
-[ ![](hello-tvos-images/accesscontrol.png "Ausgänge und Aktionen")](hello-tvos-images/accesscontrol.png)
+[![](hello-tvos-images/accesscontrol.png "Ausgänge und Aktionen")](hello-tvos-images/accesscontrol.png#lightbox)
 
 Möglicherweise auch feststellen, dass `ViewController.designer.cs` ist eine partielle Klasse so, dass Visual Studio für Mac nicht ändern `ViewController.cs` würde die, die wir auf die Klasse vorgenommenen Änderungen überschrieben.
 
@@ -386,7 +386,7 @@ Mit unserer Benutzeroberfläche erstellt und der UI-Elemente, die verfügbar gem
 
 In der vorliegenden Anwendung jedes Mal, wenn die erste Schaltfläche geklickt wird, werden wir unsere Bezeichnung, um wie viele Male anzuzeigen, klicken auf die Schaltfläche, aktualisieren. Um dies zu erreichen, müssen wir öffnen die `ViewController.cs` Datei für die Bearbeitung durch Doppelklick im die **Lösung Pad**:
 
-[ ![](hello-tvos-images/code01.png "Die Lösung mit Leerstellen auffüllen")](hello-tvos-images/code01.png)
+[![](hello-tvos-images/code01.png "Die Lösung mit Leerstellen auffüllen")](hello-tvos-images/code01.png#lightbox)
 
 Zunächst muss zum Erstellen einer Variablen auf Klassenebene in unserer `ViewController` Klasse, um die Anzahl der Klicks nachverfolgen, die aufgetreten sind. Bearbeiten Sie die Klassendefinition, sodass sie danach folgendermaßen aussieht:
 
@@ -440,7 +440,7 @@ Sobald wir eine Anwendung erstellen, können wir auswählen, welche Art von Buil
 
 Wählen Sie den Typ des Builds von der **Konfiguration Selektor** auf die linke obere Ecke der Visual Studio für Mac-Bildschirm:
 
-[ ![](hello-tvos-images/run01.png "Wählen Sie den Typ des Builds")](hello-tvos-images/run01.png)
+[![](hello-tvos-images/run01.png "Wählen Sie den Typ des Builds")](hello-tvos-images/run01.png#lightbox)
 
 ### <a name="building-the-application"></a>Erstellen der Anwendung
 
@@ -458,15 +458,15 @@ Um die Anwendung ausführen, haben wir drei Optionen:
 
 Erstellen der Anwendung (sofern er noch nicht bereits erstellt), Start im Debugmodus befindet, die tvos. außerdem wurden Simulator startet, und die app starten und Hauptschnittstelle Fenster angezeigt wird:
 
-[ ![Die Beispiel-app-Startbildschirm](hello-tvos-images/run03.png)](hello-tvos-images/run03.png)
+[![Die Beispiel-app-Startbildschirm](hello-tvos-images/run03.png)](hello-tvos-images/run03.png#lightbox)
 
 Aus der **Hardware** Menü die Option **anzeigen Apple TV Remote** damit Sie den Simulator steuern können.
 
-[ ![](hello-tvos-images/run04.png "Wählen Sie anzeigen, Apple TV-Remote")](hello-tvos-images/run04.png)
+[![](hello-tvos-images/run04.png "Wählen Sie anzeigen, Apple TV-Remote")](hello-tvos-images/run04.png#lightbox)
 
 Remote den Simulator verwenden, wenn Sie auf die Schaltfläche "mehrmals die Bezeichnung" klicken, sollten mit der Anzahl aktualisiert werden:
 
-[ ![](hello-tvos-images/run05.png "Die Bezeichnung mit aktualisierten count")](hello-tvos-images/run05.png)
+[![](hello-tvos-images/run05.png "Die Bezeichnung mit aktualisierten count")](hello-tvos-images/run05.png#lightbox)
 
 Herzlichen Glückwunsch! Wir viele immense hier behandelt, aber wenn Sie dieses Lernprogramm von Anfang bis Ende ausgeführt, Sie verfügen jetzt über ein gutes Verständnis der die Bestandteile einer app Xamarin.tvOS als auch die Tools zu ihrer Erstellung verwendet.
 

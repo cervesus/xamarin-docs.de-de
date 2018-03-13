@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/29/2017
-ms.openlocfilehash: e3416b0551bafcd7ab87b21eafbe56b733f359a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cfbe2df23317ee3ad11c9970ab892ddcc251b9d6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="installing-xamarinios-on-windows"></a>Installieren von Xamarin.iOS unter Windows
 
@@ -34,7 +34,7 @@ Dieser Artikel umfasst die Schritte zum Installieren und Konfigurieren der Xamar
 
 Das folgende Diagramm zeigt eine einfache Übersicht über den Xamarin.iOS-Entwicklungsworkflow:
 
-[![Der Xamarin.iOS-Entwicklungsworkflow](images/xma2.png)](images/xma2.png)
+[![Der Xamarin.iOS-Entwicklungsworkflow](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
 >  Visual Studio startet einen separaten MSBuild-Prozess zum Erstellen der Projekte. Dieser Prozess stellt eine neue Verbindung mit dem Mac her. Dadurch bestehen tatsächlich zwei SSH-Verbindungen zwischen Windows und Mac während des Build-Prozess von Visual Studio. Bei der Verbindungsherstellung über die [Befehlszeile](~/ios/get-started/installation/windows/connecting-to-mac/index.md) wird nur der eine MSBuild-Prozess erstellt. Zur Vereinfachung des Diagramms werden die gesamten Verbindungen durch einen Pfeil dargestellt.
@@ -44,7 +44,7 @@ Das folgende Diagramm zeigt eine einfache Übersicht über den Xamarin.iOS-Entwi
 Mit Xamarin.iOS für Visual Studio können Entwickler Erstaunliches vollbringen: Sie erstellen und debuggen iOS-Anwendungen auf einem Windows-Computer mithilfe der Visual Studio-IDE. Aber Xamarin.iOS für Visual Studio kann das nicht alleine vollbringen: iOS-Anwendungen können nicht ohne den Compiler von Apple erstellt, und sie können auch nicht ohne die Zertifikate und Tools zur Codesignierung von Apple bereitgestellt werden. Daher wird für eine Installation von Xamarin.iOS für Visual Studio eine Verbindung mit einem Mac OS X-Computer im Netzwerk benötigt, der diese Tasks ausführt. Sobald die Xamarin-Tools konfiguriert sind, wird der Prozess so nahtlos wie möglich ausgeführt.
 
 
-<a name="system-requirements">
+<a name="system-requirements"/>
 
 ### <a name="system-requirements"></a>Systemanforderungen
 
@@ -72,13 +72,9 @@ Die Xamarin-Tools können nicht mit Express-Editionen von Visual Studio verwende
 
 **Der Windows-Computer muss den Mac über das Netzwerk erreichen können.**
 
-<a name="appleaccount" />
-
 ### <a name="apple-developer-account"></a>Apple-Entwicklerkonto
 
 Zum Bereitstellen von Anwendungen auf einem Gerät oder um sie an den App Store zu übermitteln, ist ein Apple-Entwicklerkonto erforderlich. Die relevanten Entwicklerzertifikate und Bereitstellungsprofile müssen auf dem Mac im Netzwerk erstellt und installiert werden, bevor Xamarin.iOS für Visual Studio arbeiten kann. Im Artikel zu [Device Provisioning (Gerätebereitstellung)](~/ios/get-started/installation/device-provisioning/index.md) finden Sie Schritte zum Abrufen eines Zertifikats für die Entwicklung und zum Bereitstellen eines Geräts.
-
-<a name="features" />
 
 ## <a name="features"></a>Features 
 
@@ -100,6 +96,7 @@ Xamarin.iOS für Visual Studio ermöglicht das Erstellen, das Bearbeiten und das
 
 ## <a name="configuring-your-mac"></a>Konfigurieren Ihres Mac
 
+<a name="installation"/>
 
 ### <a name="installation"></a>Installation
 
@@ -148,7 +145,7 @@ Für die iOS-Entwicklung ist es wichtig, dass der Mac-Computer mit den entsprech
 
 Sobald Ihr Mac konfiguriert ist, ist es Zeit, Ihren Windows-Computer einzurichten.
 
-<a name="windowsinstallation">
+<a name="windowsinstallation"/>
 
 ## <a name="windows-installation"></a>Windows-Installation
 
@@ -159,7 +156,7 @@ Xamarin kann im Rahmen Ihrer Visual Studio 2017- oder 2015-Installation installi
 Nachdem der Installationsvorgang abgeschlossen ist, sind noch einige zusätzliche Schritte erforderlich, damit alles funktioniert:
 
 - [Verbinden von Visual Studio mit dem Mac](#connectingtomac): Visual Studio muss mit dem Mac-Buildhost verbunden sein, bevor Xamarin.iOS-Projekte erstellt werden können.
-- [Konfigurieren der Visual Studio-Symbolleiste](#Visual_Studio_Toolbar_Overview): Mit der Symbolleiste können Sie problemlos auf Xamarin.iOS-Funktionen in Visual Studio zugreifen.
+- [Konfigurieren der Visual Studio-Symbolleiste](#toolbar): Mit der Symbolleiste können Sie problemlos auf Xamarin.iOS-Funktionen in Visual Studio zugreifen.
 
 <a name="connectingtomac" /> 
 
@@ -171,19 +168,19 @@ Um eine Verbindung zu Ihrem Mac herzustellen, führen Sie die folgenden Schritte
 
 - Navigieren Sie zu **Tools > Optionen**, und wählen Sie unter **Xamarin** **iOS-Einstellungen** aus:
 
-  [![Der Bildschirm „iOS-Einstellungen“](images/image2.png)](images/image2.png)
+  [![Der Bildschirm „iOS-Einstellungen“](images/image2.png)](images/image2.png#lightbox)
 
 - Wenn die Bereitstellung des Mac ordnungsgemäß [konfiguriert](#configuration) wurde, um die **Remoteanmeldung** zu ermöglichen, sollten Sie nun Ihren Mac in der Liste auswählen können:
 
-  [![Das Dialogfeld „Remotehost“](images/xma3.png)](images/xma3.png)
+  [![Das Dialogfeld „Remotehost“](images/xma3.png)](images/xma3.png#lightbox)
 
 - Es erfolgt daraufhin die Aufforderung zur Eingabe der Anmeldeinformationen Ihres Mac-Hosts:
 
-  [![Das Anmeldedialogfeld](images/xma4.png)](images/xma4.png)
+  [![Das Anmeldedialogfeld](images/xma4.png)](images/xma4.png#lightbox)
 
 - Wenn Sie eine Verbindung hergestellt haben, wird das „Verbindung erfolgreich“-Symbol neben dem Computernamen angezeigt:
 
-  [![Das Dialogfeld für den Remotehost mit dem Symbol für „Verbindung erfolgreich“ neben dem Computernamen](images/image6.png)](images/image6.png)
+  [![Das Dialogfeld für den Remotehost mit dem Symbol für „Verbindung erfolgreich“ neben dem Computernamen](images/image6.png)](images/image6.png#lightbox)
 
 Sie werden bei jedem Starten von Visual Studio erneut verbunden.
 
@@ -197,7 +194,7 @@ Die folgenden Schritte können durchgeführt werden, wenn die iOS-Symbolleiste n
 
 Um die Symbolleiste zu konfigurieren, öffnen Sie zuerst das **Ansicht > Symbolleisten**-Menü, und stellen Sie sicher, dass der **iOS**-Eintrag ausgewählt ist. Wählen Sie das Menüelement aus, wie in diesem Screenshot gezeigt—es sollte ausgewählt sein, um anzugeben, dass die Symbolleiste angezeigt wird:
 
-[![„Symbolleisten > iOS“ auswählen](images/image31.png)](images/image31.png)
+[![„Symbolleisten > iOS“ auswählen](images/image31.png)](images/image31.png#lightbox)
 
 ### <a name="visual-studio-2015"></a>Visual Studio 2015
 
@@ -208,11 +205,11 @@ Klicken Sie auf die Menüschaltfläche rechts von der Standardleiste:
 - Wählen Sie **Schaltflächen hinzufügen oder entfernen** aus.
 - Wählen Sie **Projektmappenplattformen** aus.
 
-[![Projektmappenplattform auswählen](images/image35.png)](images/image35.png)
+[![Projektmappenplattform auswählen](images/image35.png)](images/image35.png#lightbox)
 
 Die **Standard**- und die **iOS**-Symbolleisten sollten jetzt diesem Screenshot entsprechen:
 
-[![Die Standard- und iOS-Symbolleisten sollten jetzt diesem Screenshot entsprechen](images/image36.png)](images/image36.png)
+[![Die Standard- und iOS-Symbolleisten sollten jetzt diesem Screenshot entsprechen](images/image36.png)](images/image36.png#lightbox)
 
 Nachdem die Symbolleistenkonfiguration abgeschlossen ist, können Sie damit beginnen Xamarin iOS für Visual Studio zu verwenden.
 

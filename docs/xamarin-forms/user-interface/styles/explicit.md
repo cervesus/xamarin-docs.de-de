@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 43a1a5ee6a8bd9d53f6fd44be935ae7573db6812
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1fbc12288527c053a24041aa6c49cc1a4abdde55
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="explicit-styles"></a>Explizite Stile
 
@@ -64,7 +64,7 @@ Das folgende Codebeispiel zeigt *explizite* Formatvorlagen, die in XAML deklarie
 
 Die [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) definiert drei *explizite* Formatvorlagen, die auf der Seite angewendet werden [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) Instanzen. Jede `Style` dient zum Anzeigen von Text in einer anderen Farbe beim auch die Schriftart Größe und horizontalen und vertikalen Layoutoptionen festlegen. Jede `Style` wird angewendet auf einen anderen `Label` durch Festlegen seiner [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) Eigenschaften mithilfe der `StaticResource` Markuperweiterung. Daraus ergibt sich die Darstellung in den folgenden Screenshots dargestellt:
 
-[![](explicit-images/explicit-styles.png "Beispiel für explizite Stile")](explicit-images/explicit-styles-large.png "explizite Formatvorlagen-Beispiel")
+[![](explicit-images/explicit-styles.png "Beispiel für explizite Stile")](explicit-images/explicit-styles-large.png#lightbox "explizite Formatvorlagen-Beispiel")
 
 Darüber hinaus die endgültige [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) verfügt über eine [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) angewendet, aber überschreibt auch die [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/) -Eigenschaft auf einen anderen `Color`Wert.
 
@@ -95,7 +95,7 @@ In diesem Beispiel wird die *explizite* [ `Style` ](https://developer.xamarin.co
 
 Weitere Informationen zum Erstellen von Formaten in einer Anwendungsverzeichnis [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), finden Sie unter [globalen Formatvorlagen](~/xamarin-forms/user-interface/styles/application.md).
 
-## <a name="creating-an-explicit-style-in-c35"></a>Erstellen eine explizite Formatvorlage in C &#35;
+## <a name="creating-an-explicit-style-in-c35"></a>Erstellen eine explizite Formatvorlage in C&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) Instanzen können auf einer Seite hinzugefügt werden [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) Auflistung in c# durch Erstellen eines neuen [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), und klicken Sie dann durch Hinzufügen der `Style` auf Instanzen der `ResourceDictionary`, entsprechend der folgende Codebeispiel:
 

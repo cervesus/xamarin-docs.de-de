@@ -3,14 +3,15 @@ title: Zusammenfassung der Kapitel 27. Benutzerdefinierte Renderer
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0c1dc9ba5cf382551a1142110c68d16421db07e4
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6d7c2b17e9596b7d2dd26aaf77cf13f7f8086cd5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>Zusammenfassung der Kapitel 27. Benutzerdefinierte Renderer
 
@@ -66,7 +67,7 @@ Die [ `HelloViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-sample
 
 Alle der `ViewRenderer` ableitungen enthalten eine `ExportRenderer` Attribut auf Assemblyebene, die ordnet die `HelloView` -Klasse mit den jeweiligen `HelloViewRenderer` Klasse. Wie Xamarin.Forms Renderern in den einzelnen plattformprojekten sucht sieht folgendermaßen aus:
 
-[![Dreifacher Screenshot Hello Sicht](images/ch27fg02-small.png "benutzerdefinierten Renderern")](images/ch27fg02-large.png "benutzerdefinierten Renderern")
+[![Dreifacher Screenshot Hello Sicht](images/ch27fg02-small.png "benutzerdefinierten Renderern")](images/ch27fg02-large.png#lightbox "benutzerdefinierten Renderern")
 
 ## <a name="renderers-and-properties"></a>Renderern und Eigenschaften
 
@@ -89,7 +90,7 @@ Die `OnElementPropertyChanged` Außerkraftsetzung kann daher übertragen der `Co
 
 Die [ **EllipseDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/EllipseDemo) Klasse zeigt mehrere dieser `EllipseView` Objekte:
 
-[![Dreifacher Screenshot der Ellipse Demo](images/ch27fg03-small.png "EllipseView benutzerdefinierten Renderern")](images/ch27fg03-large.png "EllipseView benutzerdefinierten Renderern")
+[![Dreifacher Screenshot der Ellipse Demo](images/ch27fg03-small.png "EllipseView benutzerdefinierten Renderern")](images/ch27fg03-large.png#lightbox "EllipseView benutzerdefinierten Renderern")
 
 Die [ **BouncingBall** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/BouncingBall) abprallt ein `EllipseView` deaktiviert die Seiten des Bildschirms.
 

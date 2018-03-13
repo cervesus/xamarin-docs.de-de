@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: edc724eb73b314c0accd3e8775b9b26b6eac16d9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fc1aaffe4e31b596d57b5de30c87217ffba3772e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="picker"></a>Datumsauswahl
 
@@ -20,11 +20,11 @@ _Die Auswahl einer Ansicht ist ein Steuerelement für die Auswahl eines Text aus
 
 Ein [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) zeigt eine kurze Liste mit Elementen, in dem der Benutzer auswählen kann. Allerdings eine [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) keine Daten angezeigt, wenn er erstmals angezeigt wird. Stattdessen den Wert des seine [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Title/) Eigenschaft wird als Platzhalter für IOS- und Android-Plattformen dargestellt:
 
-[![](images/picker-initial.png "Erste Auswahl einer Anzeige")](images/picker-initial-large.png "erste Auswahl anzeigen")
+[![](images/picker-initial.png "Erste Auswahl einer Anzeige")](images/picker-initial-large.png#lightbox "erste Auswahl anzeigen")
 
 Wenn die [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) Gewinne Fokus, seine Daten angezeigt wird und der Benutzer ein Element auswählen kann:
 
-[![](images/picker-selection.png "Auswählen eines Elements Datumsauswahl")](images/picker-selection-large.png "Datumsauswahl Auswählen eines Elements")
+[![](images/picker-selection.png "Auswählen eines Elements Datumsauswahl")](images/picker-selection-large.png#lightbox "Datumsauswahl Auswählen eines Elements")
 
 Nach Auswahl des ausgewählten Elements wird angezeigt, die [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/):
 
@@ -38,4 +38,4 @@ Es gibt zwei Verfahren zum Auffüllen einer [ `Picker` ](https://developer.xamar
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Datumsauswahl](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)
+- [Auswahl](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)

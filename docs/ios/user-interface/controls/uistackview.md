@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 20246E87-2A49-438A-9BD7-756A1B50A617
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 4555906512ecc36e3387f1b2483753e7f50a51ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 82bcd29a201be01bc8123e313e5a76b82668cb85
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="stack-view"></a>Stapelansicht
 
@@ -25,11 +26,15 @@ Der Stapel Ansichtssteuerelement (`UIStackView`) nutzt die Funktionen von Automa
 
 Das Layout der alle Unteransichten an eine Stapelansicht angefügt vom Entwickler definierten Eigenschaften wie z. B. Achse "," Verteilung "," Ausrichtung "und" Abstand Grundlage verwaltet werden:
 
-[ ![](uistackview-images/stacked01.png "Stapel Layout-Diagramm")](uistackview-images/stacked01.png)
+[![](uistackview-images/stacked01.png "Stapel Layout-Diagramm")](uistackview-images/stacked01.png#lightbox)
 
 Bei Verwendung einer `UIStackView` in einer app Xamarin.iOS Definieren der Entwickler kann den Unteransichten entweder in eine Storyboard in der iOS-Designer oder durch Hinzufügen und Entfernen von Unteransichten in C#-Code.
 
 Dieses Dokument besteht aus zwei Teilen: einen schnellen Einstieg können Sie Sie implementieren, die Ihre erste Stapel anzeigen und dann einige weitere technische Details zur Funktionsweise.
+
+> [!VIDEO https://youtube.com/embed/p3po6507Ip8]
+
+**UIStackView, von [Xamarin University](https://university.xamarin.com/)**
 
 ## <a name="uistackview-quickstart"></a>UIStackView-Schnellstart
 
@@ -39,11 +44,11 @@ Als eine kurze Einführung in die `UIStackView` -Steuerelement, werden wir erste
 
 Starten Sie ein neues Projekt für Xamarin.iOS und Bearbeiten der **Main.storyboard** Datei in Xcodes Benutzeroberflächen-Generator. Ziehen Sie zuerst ein einzelnes **vertikale Stapelansicht** auf die **Modellansichtcontroller**:
 
-[ ![](uistackview-images/quick01.png "Ziehen Sie eine einzelne vertikalen Stapelansicht auf die View-Controller")](uistackview-images/quick01.png)
+[![](uistackview-images/quick01.png "Ziehen Sie eine einzelne vertikalen Stapelansicht auf die View-Controller")](uistackview-images/quick01.png#lightbox)
 
 In der **Attribut Inspektor**, die folgenden Optionen festlegen:
 
-[ ![](uistackview-images/quick02.png "Festlegen der Optionen Stapelansicht")](uistackview-images/quick02.png)
+[![](uistackview-images/quick02.png "Festlegen der Optionen Stapelansicht")](uistackview-images/quick02.png#lightbox)
 
 Ort:
 
@@ -61,17 +66,17 @@ Bei der Arbeit mit einem Stapelansicht können Sie vorstellen, der die **Ausrich
 
 Weiterhin Layout der app-Schnittstelle durch eine Bezeichnung, ImageView, zwei Schaltflächen und eine horizontale Stapelansicht hinzufügen, sodass sie die folgenden ähnelt:
 
-[ ![](uistackview-images/quick03.png "Layout der Benutzeroberfläche der Stapel anzeigen")](uistackview-images/quick03.png)
+[![](uistackview-images/quick03.png "Layout der Benutzeroberfläche der Stapel anzeigen")](uistackview-images/quick03.png#lightbox)
 
 Konfigurieren Sie die horizontale Stapelansicht mit den folgenden Optionen aus:
 
-[ ![](uistackview-images/quick04.png "Konfigurieren Sie die Optionen für horizontale Stapelansicht")](uistackview-images/quick04.png)
+[![](uistackview-images/quick04.png "Konfigurieren Sie die Optionen für horizontale Stapelansicht")](uistackview-images/quick04.png#lightbox)
 
 Da wir nicht das Symbol, das jedes "Punkt" stellt möchten, in die Bewertung für die Streckung Wenn es hinzugefügt wird, die horizontale Stapelansicht legen wir haben die **Ausrichtung** auf **Center** und  **Verteilung** auf **gleichermaßen füllen**.
 
 Schließlich Folgendes verknüpfen **Steckdosen** und **Aktionen**:
 
-[ ![](uistackview-images/quick05.png "Der Stapel anzeigen Steckdosen und Aktionen")](uistackview-images/quick05.png)
+[![](uistackview-images/quick05.png "Der Stapel anzeigen Steckdosen und Aktionen")](uistackview-images/quick05.png#lightbox)
 
 ### <a name="populate-a-uistackview-from-code"></a>Auffüllen einer UIStackView aus Code
 
@@ -168,7 +173,7 @@ Sie können mit allen erforderlichen Elemente der Benutzeroberfläche und Code a
 
 Wenn der Benutzer tippt der **erhöhen Bewertung** Schaltfläche, eine andere "Star" wird hinzugefügt, auf dem Bildschirm (bis zu maximal 5):
 
-[ ![](uistackview-images/intro01.png "Führen Sie die Beispiel-app")](uistackview-images/intro01.png)
+[![](uistackview-images/intro01.png "Führen Sie die Beispiel-app")](uistackview-images/intro01.png#lightbox)
 
 Die "Sterne" werden automatisch zentriert und in der horizontalen Stapelansicht gleichmäßig verteilt werden. Wenn der Benutzer tippt der **verringern Bewertung** Schaltfläche, einen "Stern" wird entfernt (bis keine bleiben).
 

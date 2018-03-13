@@ -3,22 +3,20 @@ title: Objektive Sharpie
 description: "Dieser Abschnitt enthält eine Einführung in die Ziel-Sharpie, Xamarin Befehlszeilentool verwendet, um das Erstellen einer Bindung an eine Bibliothek für Objective-C automatisieren"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
+ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 02eebb7d8f579a207b6777771dbea223d30211cc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bcb7be862537a002e5a80462702ed1f2f8497cda
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="objective-sharpie"></a>Objektive Sharpie
 
 _Dieser Abschnitt enthält eine Einführung in die Ziel-Sharpie, Xamarin Befehlszeilentool verwendet, um das Erstellen einer Bindung an eine Bibliothek für Objective-C automatisieren_
-
-<style type="text/css"> .Terminal Blau {Color: rgb(10,96,254);} .terminal Grün {Color: rgb(12,156,26);} .terminal Magenta {Farbe: rgb(152,12,103);} </style>
 
 - [Übersicht über](#overview) & [Verlauf](#history)
 - [Erste Schritte](get-started.md)
@@ -28,7 +26,7 @@ _Dieser Abschnitt enthält eine Einführung in die Ziel-Sharpie, Xamarin Befehls
 - [Vollständige Exemplarische Vorgehensweise](~/ios/platform/binding-objective-c/walkthrough.md)
 - [Releaseverlauf](releases.md)
 
-#<a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht
 
 Objektive Sharpie ist ein Befehlszeilentool helfen beim Bootstrapping für des ersten Durchlaufs einer Bindung.
 Es funktioniert, indem die Analyse der Headerdateien einer systemeigenen Bibliothek zuordnen die öffentliche API in der [Bindungsdefinition](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file) (dieser Prozess, die zuvor manuell erstellt wurde).
@@ -40,7 +38,7 @@ Objektive Sharpie verwendet Clang Analyse der Headerdateien, damit die Bindung a
 
 
 
-#<a name="history"></a>Versionsgeschichte
+## <a name="history"></a>Versionsgeschichte
 
 Wir haben entwickelt wurde und Verwenden der Ziel-Sharpie intern über Xamarin für den letzten drei Jahren. Als Beweis der Leistungsfähigkeit des Ziels Sharpie APIs, die in Xamarin.iOS und Xamarin.Mac nach iOS 8, Mac OS X 10.10 eingeführt und WatchOS 2.0 wurden vollständig mit Ziel Sharpie einem Bootstrapping unterzogen. Xamarin basiert stark auf Ziel Sharpie intern zum Erstellen von eigenen Produkten.
 

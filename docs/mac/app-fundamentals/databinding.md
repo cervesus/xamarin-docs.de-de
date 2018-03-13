@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 2c01a36eabb15fbe9b975c91328dfa7cfd651896
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: b7ffd069a8c99c2cdfd0ecb58fe7ef762e5a46f3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="data-binding-and-key-value-coding"></a>Datenbindung und Schlüssel-Wert-Codierung
 
@@ -24,7 +24,7 @@ Bei der Arbeit mit c# und .NET in einer Anwendung Xamarin.Mac haben Sie Zugriff 
 
 Mithilfe von Schlüssel-Wert-Codierung und Datenbindungsmethoden in Ihrer Anwendung Xamarin.Mac, können Sie den Umfang des Codes, die Sie schreiben und verwalten, die zum Auffüllen von und Arbeiten mit UI-Elemente, erheblich verringern. Sie haben außerdem den Vorteil, dass weitere Entkopplung Ihre Daten sichern (_Datenmodell_) von der Vorderseite enden Benutzeroberfläche (_Model-View-Controller_), was zu einfacher zu verwalten, eine flexiblere Anwendung Entwurf.
 
-[![Ein Beispiel für die ausgeführte app](databinding-images/intro01.png "ein Beispiel für die ausgeführte app")](databinding-images/intro01-large.png)
+[![Ein Beispiel für die ausgeführte app](databinding-images/intro01.png "ein Beispiel für die ausgeführte app")](databinding-images/intro01-large.png#lightbox)
 
 In diesem Artikel werden die Grundlagen der Arbeit mit Schlüssel-Wert zu codieren und die Datenbindung in einer Anwendung Xamarin.Mac eingegangen. Wird mit hoher vorgeschlagen, dass Sie über arbeiten die [Hello, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Benutzeroberflächen-Generator](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) und [Steckdosen und Aktionen](~/mac/get-started/hello-mac.md#Outlets_and_Actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die in diesem Artikel verwendet werden.
 
@@ -421,7 +421,7 @@ Mit unseren Datenmodell definiert sehen wir uns ein einfaches Beispiel für die 
 
 Zunächst sehen wir fügen Sie einen neuen **View Controller** auf unserer **Main.storyboard** -Datei im Benutzeroberflächen-Generator, und benennen Sie die Klasse `SimpleViewController`: 
 
-[![Hinzufügen eines neuen Sicht Controllers](databinding-images/simple01.png "Hinzufügen eines neuen Ansicht-Controllers")](databinding-images/simple01-large.png)
+[![Hinzufügen eines neuen Sicht Controllers](databinding-images/simple01.png "Hinzufügen eines neuen Ansicht-Controllers")](databinding-images/simple01-large.png#lightbox)
 
 Anschließend zurück zu Visual Studio für Mac, bearbeiten Sie die **SimpleViewController.cs** Datei (das Projekt automatisch hinzugefügt wurde) und Verfügbarmachen von einer Instanz von der `PersonModel` , dass wir unser Formular zum Binden von Daten ist. Fügen Sie den folgenden Code hinzu:
 
@@ -461,27 +461,27 @@ public override void ViewDidLoad ()
 
 Nachdem wir unser Formular erstellen müssen, doppelklicken Sie auf die **Main.storyboard** Datei, um ihn zur Bearbeitung in der Benutzeroberflächen-Generator zu öffnen. Layout das Formular an in etwa wie folgt aussehen:
 
-[![Bearbeiten das Storyboard in Xcode](databinding-images/simple02.png "bearbeiten das Storyboard in Xcode")](databinding-images/simple02-large.png)
+[![Bearbeiten das Storyboard in Xcode](databinding-images/simple02.png "bearbeiten das Storyboard in Xcode")](databinding-images/simple02-large.png#lightbox)
 
 An Daten binden Sie das Formular, um die `PersonModel` , die wir über verfügbar gemachte der `Person` Schlüssel, gehen Sie folgendermaßen vor:
 
 1. Wählen Sie die **Mitarbeiternamen** Textfeld und wechseln Sie in der **Bindungen Inspektor**.
 2. Überprüfen Sie die **Binden an** und wählen Sie **einfache View-Controller** aus der Dropdownliste aus. Geben Sie anschließend `self.Person.Name` für die **Schlüsselpfad**: 
 
-    [![Der Schlüsselpfad eingeben](databinding-images/simple03.png "Schlüsselpfad eingeben")](databinding-images/simple03-large.png)
+    [![Der Schlüsselpfad eingeben](databinding-images/simple03.png "Schlüsselpfad eingeben")](databinding-images/simple03-large.png#lightbox)
 3. Wählen Sie die **Beruf** Textfeld, und Überprüfen der **Binden an** und wählen Sie **einfache View-Controller** aus der Dropdownliste aus. Geben Sie anschließend `self.Person.Occupation` für die **Schlüsselpfad**:  
 
-    [![Der Schlüsselpfad eingeben](databinding-images/simple04.png "Schlüsselpfad eingeben")](databinding-images/simple04-large.png)
+    [![Der Schlüsselpfad eingeben](databinding-images/simple04.png "Schlüsselpfad eingeben")](databinding-images/simple04-large.png#lightbox)
 4. Wählen Sie die **Mitarbeiter ist ein Manager** Kontrollkästchen, und überprüfen Sie die **Binden an** und wählen Sie **einfache View-Controller** aus der Dropdownliste aus. Geben Sie anschließend `self.Person.isManager` für die **Schlüsselpfad**:  
 
-    [![Der Schlüsselpfad eingeben](databinding-images/simple05.png "Schlüsselpfad eingeben")](databinding-images/simple05-large.png)
+    [![Der Schlüsselpfad eingeben](databinding-images/simple05.png "Schlüsselpfad eingeben")](databinding-images/simple05-large.png#lightbox)
 5. Wählen Sie die **Anzahl von Mitarbeitern verwalteten** Textfeld, und Überprüfen der **Binden an** und wählen Sie **einfache View-Controller** aus der Dropdownliste aus. Geben Sie anschließend `self.Person.NumberOfEmployees` für die **Schlüsselpfad**:  
 
-    [![Der Schlüsselpfad eingeben](databinding-images/simple06.png "Schlüsselpfad eingeben")](databinding-images/simple06-large.png)
+    [![Der Schlüsselpfad eingeben](databinding-images/simple06.png "Schlüsselpfad eingeben")](databinding-images/simple06-large.png#lightbox)
 6. Wenn der Mitarbeiter, die kein Manager ist, möchten wir die Anzahl der Mitarbeiter verwaltet Bezeichnung und Text-Feld ausblenden.
 7. Wählen Sie die **Anzahl von Mitarbeitern verwaltet** Bezeichnung, erweitern Sie die **Hidden** Turndown und überprüfen Sie die **Binden an** und wählen Sie **einfache View-Controller** aus der Dropdownliste aus. Geben Sie anschließend `self.Person.isManager` für die **Schlüsselpfad**:  
 
-    [![Der Schlüsselpfad eingeben](databinding-images/simple07.png "Schlüsselpfad eingeben")](databinding-images/simple07-large.png)
+    [![Der Schlüsselpfad eingeben](databinding-images/simple07.png "Schlüsselpfad eingeben")](databinding-images/simple07-large.png#lightbox)
 8. Wählen Sie `NSNegateBoolean` aus der **Wert Transformer** Dropdownliste:  
 
     ![Auswählen der NSNegateBoolean-Key-Transformations](databinding-images/simple08.png "NSNegateBoolean-Key-Transformation auswählen")
@@ -491,11 +491,11 @@ An Daten binden Sie das Formular, um die `PersonModel` , die wir über verfügba
 
 Wenn das Ausführen der Anwendung, die Werte aus den `Person` Auffüllen-Eigenschaft automatisch unser Formular:
 
-[![Zeigt ein automatisch ausgefülltes Formular](databinding-images/simple09.png "ein automatisch ausgefülltes Formular anzeigen")](databinding-images/simple09-large.png)
+[![Zeigt ein automatisch ausgefülltes Formular](databinding-images/simple09.png "ein automatisch ausgefülltes Formular anzeigen")](databinding-images/simple09-large.png#lightbox)
 
 Alle Änderungen, die der Benutzer stellt dem Formular werden zurückgeschrieben werden die `Person` Eigenschaft in die View-Controller. Z. B. durch Aufheben der Auswahl **Mitarbeiter ist ein Manager** Updates der `Person` Instanz von unserer `PersonModel` und die **Anzahl von Mitarbeitern verwalteten** Bezeichnung und Textfeld werden automatisch (über ausgeblendet die Datenbindung):
 
-[![Ausblenden von der Anzahl von Mitarbeitern für nicht-Abteilungsleiter](databinding-images/simple10.png "zum Ausblenden von der Anzahl von Mitarbeitern für nicht-Abteilungsleiter")](databinding-images/simple10-large.png)
+[![Ausblenden von der Anzahl von Mitarbeitern für nicht-Abteilungsleiter](databinding-images/simple10.png "zum Ausblenden von der Anzahl von Mitarbeitern für nicht-Abteilungsleiter")](databinding-images/simple10-large.png#lightbox)
 
 <a name="Table_View_Data_Binding" />
 
@@ -505,7 +505,7 @@ Nun mit den Grundlagen der aus dem Weg zum Binden von Daten, betrachten wir eine
 
 Zunächst sehen wir fügen Sie einen neuen **View Controller** auf unserer **Main.storyboard** -Datei im Benutzeroberflächen-Generator, und benennen Sie die Klasse `TableViewController`:
 
-[![Hinzufügen eines neuen Sicht Controllers](databinding-images/table01.png "Hinzufügen eines neuen Ansicht-Controllers")](databinding-images/table01-large.png)
+[![Hinzufügen eines neuen Sicht Controllers](databinding-images/table01.png "Hinzufügen eines neuen Ansicht-Controllers")](databinding-images/table01-large.png#lightbox)
 
 Als Nächstes ermöglicht das Bearbeiten der **TableViewController.cs** Datei (, unsere Projekt automatisch hinzugefügt wurde), und machen Sie ein Array (`NSArray`) der `PersonModel` Klassen, dass wir unser Formular zum Binden von Daten ist. Fügen Sie den folgenden Code hinzu:
 
@@ -572,7 +572,7 @@ public override void AwakeFromNib ()
 
 Nachdem wir unsere Tabellenansicht erstellen müssen, doppelklicken Sie auf die **Main.storyboard** Datei, um ihn zur Bearbeitung in der Benutzeroberflächen-Generator zu öffnen. Layout der Tabelle, die in etwa wie folgt aussehen:
 
-[![Layouts mit einer neuen Tabellenansicht](databinding-images/table02.png "Layouts einer neuen Tabellenansicht")](databinding-images/table02-large.png)
+[![Layouts mit einer neuen Tabellenansicht](databinding-images/table02.png "Layouts einer neuen Tabellenansicht")](databinding-images/table02-large.png#lightbox)
 
 Wir müssen eine **Array Controller** gebundene Daten mit unserer Tabelle bereitstellen möchten, gehen Sie folgendermaßen vor:
 
@@ -581,7 +581,7 @@ Wir müssen eine **Array Controller** gebundene Daten mit unserer Tabelle bereit
     ![Auswählen eines Controllers Array aus der Bibliothek](databinding-images/table03.png "Auswählen eines Controllers Array aus der Bibliothek")
 2. Wählen Sie **Array Controller** in der **Schnittstellenhierarchie** und wechseln Sie zu der **Attribut Inspektor**:  
 
-    [![Auswählen des Attribute Inspektors](databinding-images/table04.png "auswählen des Attribute-Inspektors")](databinding-images/table04-large.png)
+    [![Auswählen des Attribute Inspektors](databinding-images/table04.png "auswählen des Attribute-Inspektors")](databinding-images/table04-large.png#lightbox)
 3. Geben Sie `PersonModel` für die **Klassenname**, klicken Sie auf die **Plus** Schaltfläche, und fügen Sie drei Schlüssel hinzu. Nennen Sie diese `Name`, `Occupation` und `isManager`:  
 
     ![Hinzufügen der erforderlichen Schlüsselpfade](databinding-images/table05.png "erforderlichen Schlüsselpfade hinzufügen")
@@ -595,22 +595,22 @@ Nachdem wir unsere Tabellenansicht auf den Array-Controller binden müssen, füh
 
 1. Wählen Sie die Tabellenansicht und die **binden Inspektor**:  
 
-    [![Auswählen des Bindung Inspektors](databinding-images/table07.png "den Inspektor Bindung auswählen")](databinding-images/table07-large.png)
+    [![Auswählen des Bindung Inspektors](databinding-images/table07.png "den Inspektor Bindung auswählen")](databinding-images/table07-large.png#lightbox)
 2. Unter den **Tabelleninhalte** Turndown select **Binden an** und **Array Controller**. Geben Sie `arrangedObjects` für die **Controller Schlüssel** Feld:  
 
     ![Definition des Controller-Schlüssels](databinding-images/table08.png "Definition des Controller-Schlüssels")
 3. Wählen Sie die **Ansicht Tabellenzelle** unter der **Mitarbeiter** Spalte. In der **Bindungen Inspektor** unter der **Wert** Turndown select **Binden an** und **Zelle Tabellenansicht**. Geben Sie `objectValue.Name` für die **modellieren Schlüsselpfad**:  
 
-    [![Festlegen der Modell-Schlüsselpfad](databinding-images/table09.png "Modell Schlüsselpfad festlegen")](databinding-images/table09-large.png)
+    [![Festlegen der Modell-Schlüsselpfad](databinding-images/table09.png "Modell Schlüsselpfad festlegen")](databinding-images/table09-large.png#lightbox)
 4. `objectValue` der aktuelle `PersonModel` in das Array durch den Array-Controller verwaltet wird.
 5. Wählen Sie die **Ansicht Tabellenzelle** unter der **Beruf** Spalte. In der **Bindungen Inspektor** unter der **Wert** Turndown select **Binden an** und **Zelle Tabellenansicht**. Geben Sie `objectValue.Occupation` für die **modellieren Schlüsselpfad**:  
 
-    [![Festlegen der Modell-Schlüsselpfad](databinding-images/table10.png "Modell Schlüsselpfad festlegen")](databinding-images/table10-large.png)
+    [![Festlegen der Modell-Schlüsselpfad](databinding-images/table10.png "Modell Schlüsselpfad festlegen")](databinding-images/table10-large.png#lightbox)
 6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode zu synchronisieren.
 
 Wenn wir die Anwendung ausführen, wird die Tabelle mit dem Array der aufgefüllt `PersonModels`:
 
-[![Ausführen der Anwendung](databinding-images/table11.png "Ausführen der Anwendung")](databinding-images/table11-large.png)
+[![Ausführen der Anwendung](databinding-images/table11.png "Ausführen der Anwendung")](databinding-images/table11-large.png#lightbox)
 
 <a name="Outline_View_Data_Binding" />
 
@@ -620,7 +620,7 @@ Datenbindung anhand einer Gliederungsansicht ist vergleichbar mit der Bindung f�
 
 Zunächst sehen wir fügen Sie einen neuen **View Controller** auf unserer **Main.storyboard** -Datei im Benutzeroberflächen-Generator, und benennen Sie die Klasse `OutlineViewController`: 
 
-[![Hinzufügen eines neuen Sicht Controllers](databinding-images/outline01.png "Hinzufügen eines neuen Ansicht-Controllers")](databinding-images/outline01-large.png)
+[![Hinzufügen eines neuen Sicht Controllers](databinding-images/outline01.png "Hinzufügen eines neuen Ansicht-Controllers")](databinding-images/outline01-large.png#lightbox)
 
 Als Nächstes ermöglicht das Bearbeiten der **OutlineViewController.cs** Datei (, unsere Projekt automatisch hinzugefügt wurde), und machen Sie ein Array (`NSArray`) der `PersonModel` Klassen, dass wir unser Formular zum Binden von Daten ist. Fügen Sie den folgenden Code hinzu:
 
@@ -690,7 +690,7 @@ public override void AwakeFromNib ()
 
 Nachdem wir unsere Gliederungsansicht erstellen müssen, doppelklicken Sie auf die **Main.storyboard** Datei, um ihn zur Bearbeitung in der Benutzeroberflächen-Generator zu öffnen. Layout der Tabelle, die in etwa wie folgt aussehen:
 
-[![Erstellen die Gliederungsansicht](databinding-images/outline02.png "die Gliederungsansicht erstellen")](databinding-images/outline02-large.png)
+[![Erstellen die Gliederungsansicht](databinding-images/outline02.png "die Gliederungsansicht erstellen")](databinding-images/outline02-large.png#lightbox)
 
 Wir müssen einen **Struktur-Controller** zum Bereitstellen von gebundener Daten in unserer Gliederung, gehen Sie folgendermaßen vor:
 
@@ -699,7 +699,7 @@ Wir müssen einen **Struktur-Controller** zum Bereitstellen von gebundener Daten
     ![Auswählen eines Struktur-Controllers aus der Bibliothek](databinding-images/outline03.png "einen Struktur-Controller aus der Bibliothek auswählen")
 2. Wählen Sie **Struktur-Controller** in der **Schnittstellenhierarchie** und wechseln Sie zu der **Attribut Inspektor**:  
 
-    [![Auswählen des Attribut-Inspektors](databinding-images/outline04.png "den Inspektor Attribut auswählen")](databinding-images/outline04-large.png)
+    [![Auswählen des Attribut-Inspektors](databinding-images/outline04.png "den Inspektor Attribut auswählen")](databinding-images/outline04-large.png#lightbox)
 3. Geben Sie `PersonModel` für die **Klassenname**, klicken Sie auf die **Plus** Schaltfläche, und fügen Sie drei Schlüssel hinzu. Nennen Sie diese `Name`, `Occupation` und `isManager`:  
 
     ![Hinzufügen der erforderlichen Schlüsselpfade](databinding-images/outline05.png "erforderlichen Schlüsselpfade hinzufügen")
@@ -717,22 +717,22 @@ Nachdem wir unsere Gliederungsansicht an den Struktur-Controller binden möchten
 
 1. Wählen Sie die Gliederungsansicht und klicken Sie in der **binden Inspektor** auswählen:  
 
-    [![Auswählen des Bindung Inspektors](databinding-images/outline07.png "den Inspektor Bindung auswählen")](databinding-images/outline07-large.png)
+    [![Auswählen des Bindung Inspektors](databinding-images/outline07.png "den Inspektor Bindung auswählen")](databinding-images/outline07-large.png#lightbox)
 2. Klicken Sie unter der **Gliederung ' Inhalt anzeigen '** Turndown select **Binden an** und **Struktur-Controller**. Geben Sie `arrangedObjects` für die **Controller Schlüssel** Feld:  
 
     ![Festlegen des Controllers an](databinding-images/outline08.png "Festlegen des Controllers an")
 3. Wählen Sie die **Ansicht Tabellenzelle** unter der **Mitarbeiter** Spalte. In der **Bindungen Inspektor** unter der **Wert** Turndown select **Binden an** und **Zelle Tabellenansicht**. Geben Sie `objectValue.Name` für die **modellieren Schlüsselpfad**:  
 
-    [![Eingeben der Modell-Schlüsselpfad](databinding-images/outline09.png "Modell Schlüsselpfad eingeben")](databinding-images/outline09-large.png)
+    [![Eingeben der Modell-Schlüsselpfad](databinding-images/outline09.png "Modell Schlüsselpfad eingeben")](databinding-images/outline09-large.png#lightbox)
 4. `objectValue` der aktuelle `PersonModel` im Array von der Struktur-Controller verwaltet werden.
 5. Wählen Sie die **Ansicht Tabellenzelle** unter der **Beruf** Spalte. In der **Bindungen Inspektor** unter der **Wert** Turndown select **Binden an** und **Zelle Tabellenansicht**. Geben Sie `objectValue.Occupation` für die **modellieren Schlüsselpfad**:  
 
-    [![Eingeben der Modell-Schlüsselpfad](databinding-images/outline10.png "Modell Schlüsselpfad eingeben")](databinding-images/outline10-large.png)
+    [![Eingeben der Modell-Schlüsselpfad](databinding-images/outline10.png "Modell Schlüsselpfad eingeben")](databinding-images/outline10-large.png#lightbox)
 6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode zu synchronisieren.
 
 Wenn wir die Anwendung ausführen, wird die Gliederung mit unserer Array von aufgefüllt `PersonModels`:
 
-[![Ausführen der Anwendung](databinding-images/outline11.png "Ausführen der Anwendung")](databinding-images/outline11-large.png)
+[![Ausführen der Anwendung](databinding-images/outline11.png "Ausführen der Anwendung")](databinding-images/outline11-large.png#lightbox)
 
 ### <a name="collection-view-data-binding"></a>Auflistung Ansicht-Datenbindung
 
@@ -860,7 +860,7 @@ For more information on working with Collection Views, please see our [Collectio
 
 Einen Fehler in Ihrem datenbindungen treffen, kann dazu führen, ein _Native stürzt ab_ in nicht verwaltetem Code und dazu führen, dass Ihre Anwendung Xamarin.Mac zu vollständig mit Fehlern eine `SIGABRT` Fehler:
 
-[![Beispiel eines Dialogfelds native Absturz](databinding-images/debug01.png "Beispiel für einen systemeigenen Absturz (Dialogfeld)")](databinding-images/debug01-large.png)
+[![Beispiel eines Dialogfelds native Absturz](databinding-images/debug01.png "Beispiel für einen systemeigenen Absturz (Dialogfeld)")](databinding-images/debug01-large.png#lightbox)
 
 Es gibt in der Regel vier Hauptursachen für systemeigene Abstürze während der Datenbindung:
 
@@ -873,15 +873,15 @@ Es gibt in der Regel vier Hauptursachen für systemeigene Abstürze während der
 
 Wir verursacht einen systemeigenen Absturz in unserer Datenbindung, damit wir zeigen können, wie Suchen und zu beheben. Ändern Sie im Benutzeroberflächen-Generator, wir unsere Bindung der ersten Bezeichnung in der Auflistungsansicht-Beispiel aus `Name` auf `Title`:
 
-[![Bearbeiten den Bindungsschlüssel des](databinding-images/debug02.png "Bindungsschlüssel des bearbeiten")](databinding-images/debug02-large.png)
+[![Bearbeiten den Bindungsschlüssel des](databinding-images/debug02.png "Bindungsschlüssel des bearbeiten")](databinding-images/debug02-large.png#lightbox)
 
 Sehen wir die Änderung speichern, wechseln Sie zu Visual Studio für Mac mit Xcode synchronisieren, und führen Sie die Anwendung zurück. Wenn die Auflistungsansicht angezeigt wird, die Anwendung stürzt vorübergehend mit einem `SIGABRT` Fehler (entsprechend der **Anwendungsausgabe** in Visual Studio für Mac) seit der `PersonModel` macht eine Eigenschaft mit dem Schlüssel `Title`:
 
-[![Beispiel für einen Bindungsfehler](databinding-images/debug03.png "Beispiel für einen Bindungsfehler")](databinding-images/debug03-large.png)
+[![Beispiel für einen Bindungsfehler](databinding-images/debug03.png "Beispiel für einen Bindungsfehler")](databinding-images/debug03-large.png#lightbox)
 
 Wenn wir einen zu den Anfang des Fehlers in Bildlauf der **Anwendungsausgabe** sehen wir die Taste, um das Problem zu lösen:
 
-[![Suchen das Problem im Fehlerprotokoll](databinding-images/debug04.png "suchen das Problem in das Fehlerprotokoll an")](databinding-images/debug04-large.png)
+[![Suchen das Problem im Fehlerprotokoll](databinding-images/debug04.png "suchen das Problem in das Fehlerprotokoll an")](databinding-images/debug04-large.png#lightbox)
 
 Diese Zeile ist uns mitteilen, die den Schlüssel `Title` ist nicht vorhanden, auf das Objekt, das wir zu binden. Wenn wir ändern die Bindung zurück, in `Name` Schnittstelle-Generator speichern, Synchronisierung, neu erstellen und ausführen, wird die Anwendung erwartungsgemäß ohne Probleme ausgeführt.
 

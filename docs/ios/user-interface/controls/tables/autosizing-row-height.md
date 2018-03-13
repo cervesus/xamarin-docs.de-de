@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c5deb294aac679d60535f3f3bd6c9745e8bff358
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c8d66ff8199d451ce7469fa893b7673589c9e320
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="auto-sizing-row-height"></a>Automatische Größenanpassung Zeilenhöhe
 
@@ -23,25 +23,25 @@ iOS 11 wurde hinzugefügt, die Möglichkeit für Zeilen, um automatisch zu erwei
 
 Öffnen das Storyboard für die Tabelle an, dass Sie die Zeile Auto-Größe für die in der iOS-Designer haben möchten. Wählen Sie die Zelle *Prototyp* und Entwerfen des Layouts der Zelle. Zum Beispiel:
 
-[ ![](autosizing-row-height-images/table01.png "Die Zelle Prototypentwurf")](autosizing-row-height-images/table01.png)
+[![](autosizing-row-height-images/table01.png "Die Zelle Prototypentwurf")](autosizing-row-height-images/table01.png#lightbox)
 
 Fügen Sie für jedes Element im Prototyp Einschränkungen, um die Elemente in der richtigen Position zu halten, während die Tabellenansicht für Drehung oder anderen iOS-Gerät Bildschirmgrößen angepasst wird. Anheften von z. B. die `Title` nach oben, links und rechts neben der Zelle *Inhaltsansicht*:
 
-[ ![](autosizing-row-height-images/table02.png "Den Titel oben, links und rechts neben der Inhaltsansicht Zellen anheften")](autosizing-row-height-images/table02.png)
+[![](autosizing-row-height-images/table02.png "Den Titel oben, links und rechts neben der Inhaltsansicht Zellen anheften")](autosizing-row-height-images/table02.png#lightbox)
 
 Im Fall von Beispieltabelle kleine `Label` (unter der `Title`) ist das Feld, die verkleinert und vergrößert werden, um erhöhen oder verringern Sie die Zeilenhöhe kann. Um diesen Effekt zu erreichen, fügen Sie die folgenden Einschränkungen zum Anheften einer der Links, rechts, oben und unten auf der die Bezeichnung hinzu:
 
-[ ![](autosizing-row-height-images/table03.png "Diese Einschränkungen zu einer der Links, rechts, oben und unten auf der Bezeichnung anheften")](autosizing-row-height-images/table03.png)
+[![](autosizing-row-height-images/table03.png "Diese Einschränkungen zu einer der Links, rechts, oben und unten auf der Bezeichnung anheften")](autosizing-row-height-images/table03.png#lightbox)
 
 Nachdem wir die Elemente in die Zelle vollständig eingeschränkt haben, müssen wir, um zu verdeutlichen, welches Element gestreckt werden soll. Legen Sie hierzu die **Content Küsse Priorität** und **Content Komprimierung Widerstand Priorität** nach Bedarf in die **Layout** Abschnitt Pad Eigenschaften:
 
-[ ![](autosizing-row-height-images/table03a.png "Layoutabschnitt Pad Eigenschaften")](autosizing-row-height-images/table03a.png)
+[![](autosizing-row-height-images/table03a.png "Layoutabschnitt Pad Eigenschaften")](autosizing-row-height-images/table03a.png#lightbox)
 
 Legen Sie das Element, das zu erweiternde damit eine **niedrigeren** Küsse Priority-Wert, und ein **niedrigeren** Komprimierung Widerstand Priority-Wert.
 
 Wir als nächstes wählen Sie den Prototyp für die Zelle, und geben Sie ihm eine eindeutige **Bezeichner**:
 
-[ ![](autosizing-row-height-images/table04.png "Erteilen den Prototyp für die Zelle einen eindeutigen Bezeichner")](autosizing-row-height-images/table04.png)
+[![](autosizing-row-height-images/table04.png "Erteilen den Prototyp für die Zelle einen eindeutigen Bezeichner")](autosizing-row-height-images/table04.png#lightbox)
 
 Bei unserem Beispiel `GrowCell`. Diesen Wert verwenden später, wenn die Tabelle zu füllen.
 
@@ -50,19 +50,19 @@ Bei unserem Beispiel `GrowCell`. Diesen Wert verwenden später, wenn die Tabelle
 
 Für jedes Element des unsere Zelle Prototyps, weisen eine **Namen** , die sie für C#-Code verfügbar machen. Zum Beispiel:
 
-[ ![](autosizing-row-height-images/table05.png "Weisen Sie einen Namen für die bereitzustellenden C#-Code")](autosizing-row-height-images/table05.png)
+[![](autosizing-row-height-images/table05.png "Weisen Sie einen Namen für die bereitzustellenden C#-Code")](autosizing-row-height-images/table05.png#lightbox)
 
 Als Nächstes fügen Sie eine benutzerdefinierte Klasse für die `UITableViewController`, `UITableView` und `UITableCell` (Prototype). Zum Beispiel: 
 
-[ ![](autosizing-row-height-images/table06.png "Hinzufügen einer benutzerdefinierten Klasse für die UITableViewController, die UITableView und die UITableCell")](autosizing-row-height-images/table06.png)
+[![](autosizing-row-height-images/table06.png "Hinzufügen einer benutzerdefinierten Klasse für die UITableViewController, die UITableView und die UITableCell")](autosizing-row-height-images/table06.png#lightbox)
 
 Um sicherzustellen, dass alle erwarteten Inhalt in unsere Bezeichnung angezeigt wird, legen Sie schließlich die **Zeilen** Eigenschaft `0`:
 
-[ ![](autosizing-row-height-images/table06.png "Die Zeilen-Eigenschaft auf 0 festgelegt.")](autosizing-row-height-images/table06a.png)
+[![](autosizing-row-height-images/table06.png "Die Zeilen-Eigenschaft auf 0 festgelegt.")](autosizing-row-height-images/table06a.png#lightbox)
 
 Fügen Sie über die Benutzeroberfläche definiert den Code, um automatische Höhe der Zeilengröße aktivieren wir hinzu.
 
-##<a name="enabling-auto-resizing-height"></a>Aktivieren der automatischen Größenänderung Höhe
+## <a name="enabling-auto-resizing-height"></a>Aktivieren der automatischen Größenänderung Höhe
 
 In beiden unsere Tabellenansicht Datasource (`UITableViewDatasource`) oder Quelle (`UITableViewSource`), wenn wir eine Zelle in der Warteschlange entfernen zu verwendenden der `Identifier` , die wir in den Designer definiert. Zum Beispiel:
 
@@ -106,7 +106,7 @@ Diese Schätzung verfügt nicht über genau ist, werden nur eine grobe Schätzun
 
 Mit diesem Code werden Wenn die app ausgeführt wird, wird jede Zeile verkleinern und basierend auf der Höhe der letzte Bezeichnung in der Zelle Prototyp vergrößert. Zum Beispiel:
 
-[ ![](autosizing-row-height-images/table07.png "Eine Beispieltabelle ausführen")](autosizing-row-height-images/table07.png)
+[![](autosizing-row-height-images/table07.png "Eine Beispieltabelle ausführen")](autosizing-row-height-images/table07.png#lightbox)
 
 
 ## <a name="related-links"></a>Verwandte Links

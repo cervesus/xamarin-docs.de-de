@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/01/2017
-ms.openlocfilehash: 396ed31cba336976342a8dfb26f31eeda20cf494
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fe76c93afc149553e44b5e8fa29a21767becf5c5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="navigation-bar"></a>Navigationsleiste
 
 Android 4 eingeführt, ein neues System Benutzer Schnittstelle Feature Namens eine *Navigationsleiste*, stellt Steuerelemente für die Seitennavigation auf Geräten, die keine Hardwaretasten für enthalten **Home**, **zurück** , und **Menü**.
 Der folgende Screenshot zeigt die Navigationsleiste über ein Gerät Nexus Primzahlen:
 
- [ ![Beispiel für ein Android-Navigationsleiste](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png)
+ [![Beispiel für ein Android-Navigationsleiste](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)
 
 Mehrere neue Flags sind verfügbar, die steuern, die Sichtbarkeit der Navigationsleiste und seiner Steuerelemente sowie die Sichtbarkeit der System-Leiste, die in Android 3 eingeführt wurde. Die Flags werden definiert, der `Android.View.View` -Klasse und sind nachfolgend aufgeführt:
 
@@ -31,7 +31,7 @@ Diese Flags können auf einer beliebigen Ansicht in der Ansichtshierarchie angew
 
 Das folgende Beispiel zeigt eine einfache Anwendung, in denen Änderungen durch Klicken auf die Schaltflächen der `SystemUiVisibility`:
 
- [ ![Screenshots veranschaulicht sichtbar, flaches und SystemUiVisibility ausgeblendet](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png)
+ [![Screenshots veranschaulicht sichtbar, flaches und SystemUiVisibility ausgeblendet](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png#lightbox)
 
 Der Code zum Ändern der `SystemUiVisibility` wird die Eigenschaft eine `TextView` click-Ereignishandler von einzelnen Schaltflächen wie unten dargestellt:
 

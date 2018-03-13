@@ -3,14 +3,15 @@ title: Zusammenfassung der Kapitel 26. Benutzerdefinierte layouts
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: dbddaaf2f4a5ad9d7161013f2ae11466b953e20c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9447f9fb47a3de0f278a89d45d657158be9b70b9
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>Zusammenfassung der Kapitel 26. Benutzerdefinierte layouts
 
@@ -98,9 +99,9 @@ Diese Methode ist jetzt als veraltet markiert und ersetzt durch:
 Jede Klasse, die abgeleitet `Layout` oder `Layout<T>` müssen überschreiben `OnSizeRequest` oder `OnMeasure`. Dies ist, in dem eine Layoutklasse eine eigene Größe bestimmt, welche die in der Regel auf die Größe der untergeordneten, die sie basiert durch den Aufruf abruft `GetSizeRequest` oder `Measure` in den untergeordneten Elementen. Vor und nach dem Aufruf `OnSizeRequest` oder `OnMeasure`, `GetSizeRequest` oder `Measure` macht Anpassungen basierend auf den folgenden Eigenschaften:
 
 - [`WidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/)Der Typ `double`, wirkt sich auf die `Request` Eigenschaft `SizeRequest`
-- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/)Der Typ `double`, wirkt sich auf die `Request` Eigenschaft `SizeRequest`
-- [`MinimumWidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumWidthRequest/)Der Typ `double`, wirkt sich auf die `Minimum` Eigenschaft `SizeRequest`
-- [`MinimumHeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumHeightRequest/)Der Typ `double`, wirkt sich auf die `Minimum` Eigenschaft `SizeRequest`
+- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) Der Typ `double`, wirkt sich auf die `Request` Eigenschaft `SizeRequest`
+- [`MinimumWidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumWidthRequest/) Der Typ `double`, wirkt sich auf die `Minimum` Eigenschaft `SizeRequest`
+- [`MinimumHeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumHeightRequest/) Der Typ `double`, wirkt sich auf die `Minimum` Eigenschaft `SizeRequest`
 
 ### <a name="infinite-constraints"></a>Unbegrenzte Einschränkungen
 
@@ -159,7 +160,7 @@ Die [ `UniformGridLayout` ](https://github.com/xamarin/xamarin-forms-book-sample
 
 Die [ **PhotoGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoGrid) demonstriert `UniformGridLayout`:
 
-[![Dreifacher Screenshot des Rasters Foto](images/ch26fg08-small.png "Uniform Rasterlayout")](images/ch26fg08-large.png "Uniform Rasterlayout")
+[![Dreifacher Screenshot des Rasters Foto](images/ch26fg08-small.png "Uniform Rasterlayout")](images/ch26fg08-large.png#lightbox "Uniform Rasterlayout")
 
 ### <a name="overlapping-children"></a>Überlappende untergeordnete Elemente
 
@@ -174,7 +175,7 @@ Für überlappende Kinder werden untergeordnete Elemente am Ende der Auflistung 
 
 Die [ `OverlapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs) -Klasse in der [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) Library definiert eine angefügte Eigenschaft können daher einer der und geben Sie die Renderreihenfolge seiner untergeordnete Elemente, die zusätzlich zu den anderen angezeigt werden. Die [ **StudentCardFile** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile) Beispiel veranschaulicht dies:
 
-[![Dreifacher Screenshot der Student Karte Datei Raster](images/ch26fg10-small.png "überlappende Layout Kinder")](images/ch26fg10-large.png "überlappende Layout untergeordnete Elemente")
+[![Dreifacher Screenshot der Student Karte Datei Raster](images/ch26fg10-small.png "überlappende Layout Kinder")](images/ch26fg10-large.png#lightbox "überlappende Layout untergeordnete Elemente")
 
 ### <a name="more-attached-bindable-properties"></a>Bindbare Eigenschaften angefügt
 

@@ -7,28 +7,19 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: 2f29851f9de410183c6f35d19486e7da8017566a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d3a39070e17729e99614e26e0a8892c6314512af
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-mobile-development"></a>Einführung in die Entwicklung mobiler Anwendungen
 
-
 Das Erstellen mobiler Anwendungen kann so einfach sein: Öffnen Sie die IDE, schreiben Sie etwas, führen Sie einen kurzen Test durch, und senden Sie das Ergebnis dann an einen App Store. All dies ist an einem Nachmittag erledigt. Es kann jedoch sehr komplex sein, weil gründliche Vorabentwürfe, Nutzbarkeitstests, QA-Tests auf tausenden Geräten, ein vollständiger Beta-Lebenszyklus und anschließend die Bereitstellung mit einer Reihe verschiedener Methoden nötig ist.
-
-Diese Anleitung ist eine umfangreiche, einführende Prüfung der Erstellung einer mobilen Xamarin-Anwendung und schließt Folgendes ein:
-
-1.   [ **Einführung in Xamarin**](#Introduction_to_Xamarin): Eine Liste der Funktionen der Xamarin-Plattform
-1.   [ **Wie funktioniert Xamarin?**](#How_Does_Xamarin_Work) – Eine kurze Übersicht darüber, wie C# mithilfe von Xamarin unter iOS und Android verwendet werden kann.
-1.   [ **Erste Schritte**](#Sample_App) Hier erhalten Sie weitere Informationen und können eine Xamarin-App für iOS, Android oder alle anderen Plattformen erstellen, die Xamarin.Forms verwenden.
-
 
 Dieses Dokument soll Ihnen die Xamarin-Plattform näherbringen. Weitere Informationen über den *Prozess* zur Erstellung mobiler Anwendungen vom Entwurf bis zum Test finden Sie unter [Introduction to the Mobile Software Development Lifecycle (Einführung in die Entwicklung von Software für Mobilgeräte)](~/cross-platform/get-started/introduction-to-mobile-sdlc.md).
 
 Lesen Sie sich bitte die [Systemanforderungen](~/cross-platform/get-started/requirements.md#mac) durch, um sicherzustellen, dass Sie Xamarin installieren können.
-
 
 ## <a name="introduction-to-xamarin"></a>Einführung in Xamarin
 

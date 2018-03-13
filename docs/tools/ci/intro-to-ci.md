@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 94d88246090208913c4b340eaed221ab64b78f19
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2a8849a75f3c26a83a030700878a3195fde7515f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Einführung in die fortlaufende Integration mit Xamarin
 
@@ -33,13 +33,13 @@ Erneut, bewirkt, dass mit continuous Integration die Act Commit der Änderungen 
 
 Das folgende Diagramm veranschaulicht diesen Prozess:
 
-[![](intro-to-ci-images/intro01-small.png "Dieses Diagramm veranschaulicht diesen Prozess")](intro-to-ci-images/intro01.png)
+[![](intro-to-ci-images/intro01-small.png "Dieses Diagramm veranschaulicht diesen Prozess")](intro-to-ci-images/intro01.png#lightbox)
 
 Mobile apps stellen individuelle Herausforderungen für die fortlaufende Integration vor. Apps erfordern Sensoren z. B. GPS- oder Kamera, die nur auf physischen Geräten verfügbar sind. Darüber hinaus Simulatoren Emulatoren sind nur eine Schätzung der Hardware und möglicherweise zu verbergen oder Probleme verdecken. Letztlich ist es zum Testen einer mobilen app auf echter Hardware sicher sein, dass sie tatsächlich Kunden bereit ist.
 
 Die [App Center Test](https://docs.microsoft.com/en-us/appcenter/test-cloud) behebt dieses Problem durch das Testen von apps direkt auf Hunderten von physischen Geräten. Entwickler schreiben automatisierter Akzepte Tests, die leistungsstarke Testen der Benutzeroberfläche ermöglichen. Nachdem diese Tests App Center hochgeladen wurden, kann die CI-Server diese dort ausführen automatisch als Teil einer CI-Prozess wie im folgenden Diagramm dargestellt:
 
-[![](intro-to-ci-images/intro02-small.png "Nachdem diese Tests App Center hochgeladen wurden, kann der CI-Server werden automatisch als Teil einer CI-Prozess ausführen, wie in diesem Diagramm angezeigt")](intro-to-ci-images/intro02.png)
+[![](intro-to-ci-images/intro02-small.png "Nachdem diese Tests App Center hochgeladen wurden, kann der CI-Server werden automatisch als Teil einer CI-Prozess ausführen, wie in diesem Diagramm angezeigt")](intro-to-ci-images/intro02.png#lightbox)
 
 # <a name="components-of-continuous-integration"></a>Komponenten von Continuous Integration
 
@@ -72,7 +72,7 @@ Eine vollständige Zusammenfassung aller Funktionen von Application Lifecycle Ma
 
 Git kann ausgeführt werden, vollständig über einen Webbrowser oder über [GUI Clients](http://git-scm.com/downloads/guis) , die unter Linux, Mac OS x und Windows ausgeführt. Es ist kostenlos für öffentlichen Repositorys; Private-Repositorys erfordern eine [kostenpflichtigen Plan](https://github.com/pricing).
 
-Visual Studio 2015 und Visual Studio für Mac bieten systemeigene Unterstützung für Git; für Visual Studio 2013 und frühere Versionen, Microsoft bietet eine [herunterladbare Erweiterung für Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c). Wie oben bereits erwähnt, kann Visual Studio Team Services und TFS Git für die anstelle der TFVC-Versionskontrolle verwenden.
+Visual Studio 2015 und Visual Studio für Mac bieten systemeigene Unterstützung für Git; für frühere Versionen, Microsoft bietet eine [herunterladbare Erweiterung für Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c). Wie oben bereits erwähnt, kann Visual Studio Team Services und TFS Git für die anstelle der TFVC-Versionskontrolle verwenden.
 
 
 ### <a name="subversion"></a>Subversion
@@ -102,7 +102,7 @@ Mit Team Foundation Server konfigurieren Sie einen Buildcomputer für bestimmte 
 
 Das folgende Diagramm veranschaulicht diese Topografie:
 
-[![](intro-to-ci-images/intro03-small.png "Dieses Diagramm veranschaulicht diese Topografie")](intro-to-ci-images/intro03.png)
+[![](intro-to-ci-images/intro03-small.png "Dieses Diagramm veranschaulicht diese Topografie")](intro-to-ci-images/intro03.png#lightbox)
 
 Es ist auch möglich, einen lokalen TFS-Server zu einem Visual Studio Team Services-Projekt verknüpfen, sodass VSTS-Builds auf den lokalen Server delegiert werden. Weitere Informationen finden Sie unter [bereitstellen und Konfigurieren eines Buildservers](http://msdn.microsoft.com/en-us/library/ms181712.aspx) auf MSDN.
 
@@ -110,13 +110,13 @@ Es ist auch möglich, einen lokalen TFS-Server zu einem Visual Studio Team Servi
 
 Wenn Sie Jenkins verwenden, um Ihre apps zu erstellen, können Sie Speichern Ihres Codes in Visual Studio Team Services oder Team Foundation Server und weiter Jenkins CI Builds verwendet. Wenn Sie einen Code push an das Teamprojekt Git-Repository oder wenn Sie Code in TFVC einchecken, können Sie einen Build Jenkins auslösen. Weitere Informationen finden Sie unter [Jenkins mit Visual Studio Team Services](https://www.visualstudio.com/en-us/docs/marketplace/integrate/service-hooks/services/jenkins).
 
-[![](intro-to-ci-images/intro04-small.png "Wenn Sie Jenkins verwenden, um Ihre apps zu erstellen, können Sie Speichern Ihres Codes in Visual Studio Team Services oder Team Foundation Server und weiter Jenkins CI Builds verwendet")](intro-to-ci-images/intro04.png)
+[![](intro-to-ci-images/intro04-small.png "Wenn Sie Jenkins verwenden, um Ihre apps zu erstellen, können Sie Speichern Ihres Codes in Visual Studio Team Services oder Team Foundation Server und weiter Jenkins CI Builds verwendet")](intro-to-ci-images/intro04.png#lightbox)
 
 ### <a name="git-and-jenkins"></a>Git und Jenkins
 
 Eine andere häufige CI-Umgebung kann OS X-Basis vollständig sein. Dieses Szenario müssen Sie Git für die quellcodeverwaltung und Jenkins mit dem für den Buildserver. Beide werden auf einem einzelnen Mac OS X-Computer mit Visual Studio für Mac installiert ausgeführt. Dies ist vergleichbar mit der Visual Studio Team Services + Jenkins-Umgebung, die im vorherigen Abschnitt erläutert:
 
-[![](intro-to-ci-images/intro05-small.png "Dies ist vergleichbar mit der Visual Studio Team Services + Jenkins-Umgebung, die im vorherigen Abschnitt erläuterten")](intro-to-ci-images/intro05.png)
+[![](intro-to-ci-images/intro05-small.png "Dies ist vergleichbar mit der Visual Studio Team Services + Jenkins-Umgebung, die im vorherigen Abschnitt erläuterten")](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
 > **Hinweis: Jenkins ist [nicht unterstützt von Xamarin](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md).**

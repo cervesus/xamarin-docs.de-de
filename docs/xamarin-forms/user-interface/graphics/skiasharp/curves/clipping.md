@@ -4,14 +4,15 @@ description: Verwenden Sie Pfade zu Clip-Grafiken auf bestimmte Bereiche und Reg
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: b1c5b64725a163e15f07d2aecaea4e56b7ecec2e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bb99984f93f494cfb5ad3d37ccb25f0b91d0b489
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="clipping-with-paths-and-regions"></a>Clipping mit Pfaden und Regionen
 
@@ -98,7 +99,7 @@ canvas.ClipPath(keyholePath);
 
 Die `PaintSurface` Handler dann zurückgesetzt, die Transformationen mit einem Aufruf von `ResetMatrix` zu erweitern, um die vollständige Höhe des Bildschirms die Bitmap gezeichnet. Dieser Code wird davon ausgegangen, dass die Bitmap quadratische, ist also diese bestimmte Bitmap. Die Bitmap wird nur innerhalb des Bereichs, der durch den Beschneidungspfad definierten gerendert:
 
-[![](clipping-images/monkeythroughkeyhole-small.png "Dreifacher Screenshot, der die Affe über die Seite "Keyhole"")](clipping-images/monkeythroughkeyhole-large.png "dreifacher Screenshot, der die Affe über die Seite "Keyhole"")
+[![](clipping-images/monkeythroughkeyhole-small.png "Dreifacher Screenshot, der die Affe über die Seite "Keyhole"")](clipping-images/monkeythroughkeyhole-large.png#lightbox "dreifacher Screenshot, der die Affe über die Seite "Keyhole"")
 
 Des Freistellungspfads ist beim aktiviert die Transformationen unterliegen die `ClipPath` Methode wird aufgerufen, und nicht zu den Transformationen faktisch Wenn ein Objekt (z. B. eine Bitmap) angezeigt wird. Beschneidungspfad ist Teil der Canvas-Zustand, der mit gespeichert wird die `Save` Methode und wiederhergestellt, mit der `Restore` Methode.
 
@@ -165,7 +166,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Was bleibt, ist die Schnittmenge des diese vier Kreise:
 
-[![](clipping-images//fourcircleintersectclip-small.png "Dreifacher Screenshot der Seite vier Kreis Intersect Clip")](clipping-images/fourcircleintersectclip-large.png "dreifacher Screenshot der Seite vier Kreis Intersect Clip")
+[![](clipping-images//fourcircleintersectclip-small.png "Dreifacher Screenshot der Seite vier Kreis Intersect Clip")](clipping-images/fourcircleintersectclip-large.png#lightbox "dreifacher Screenshot der Seite vier Kreis Intersect Clip")
 
 Die [ `SKClipOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKClipOperation/) -Enumeration hat nur zwei Member:
 
@@ -175,13 +176,13 @@ Die [ `SKClipOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCli
 
 Wenn Sie die vier ersetzen `SKClipOperation.Intersect` Argumente in der `FourCircleIntersectClipPage` -Klasse mit `SKClipOperation.Difference`, sehen Sie Folgendes:
 
-[![](clipping-images//fourcircledifferenceclip-small.png "Dreifacher Screenshot der Seite vier Kreis Intersect Clip Unterschied Vorgang")](clipping-images/fourcircledifferenceclip-large.png "dreifacher Screenshot der Seite vier Kreis Intersect Clip Unterschied-Vorgang")
+[![](clipping-images//fourcircledifferenceclip-small.png "Dreifacher Screenshot der Seite vier Kreis Intersect Clip Unterschied Vorgang")](clipping-images/fourcircledifferenceclip-large.png#lightbox "dreifacher Screenshot der Seite vier Kreis Intersect Clip Unterschied-Vorgang")
 
 Vier überlappende Kreise wurden aus Clippingbereichs entfernt.
 
 Die **Clip Vorgänge** Seite veranschaulicht den Unterschied zwischen diesen beiden Operation mit nur einem Paar von Kreisen. Der erste Kreis auf der linken Seite mit Standard-Clip-Operation des Clippingbereichs hinzugefügt `Intersect`, während die zweite Kreis auf der rechten Seite mit Clip-Operation, die die Beschriftung erkennbar Clippingbereichs hinzugefügt wird:
 
-[![](clipping-images//clipoperations-small.png "Dreifacher Screenshot der Seite Clip Vorgänge")](clipping-images/clipoperations-large.png "dreifacher Screenshot der Seite Clip-Vorgänge")
+[![](clipping-images//clipoperations-small.png "Dreifacher Screenshot der Seite Clip Vorgänge")](clipping-images/clipoperations-large.png#lightbox "dreifacher Screenshot der Seite Clip-Vorgänge")
 
 Die [ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Klasse definiert zwei `SKPaint` -Objekte als Felder aus, und klicken Sie dann den Bildschirm einrichten in zwei rechteckige Bereiche unterteilt. Diese Bereiche sind unterschiedlich, je nachdem, ob das Telefon im Hochformat oder Querformat. Die `DisplayClipOp` Klasse zeigt den Text und ruft dann `ClipPath` mit den Pfaden zwei Kreis, um jede Clip-Operation zu veranschaulichen:
 
@@ -282,7 +283,7 @@ public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperat
 
 Der folgende Screenshot zeigt basierend auf der sechs bereichsvorgängen Clipping-Bereiche. Der linken Kreis entspricht der Region, die die `Op` Methode aufgerufen wird, und der richtige Kreis entspricht der Region, die zum Übergeben der `Op` Methode:
 
-[![](clipping-images//regionoperations-small.png "Dreifacher Screenshot der Seite Bereichsvorgängen")](clipping-images/regionoperations-large.png "dreifacher Screenshot der Seite Bereichsvorgänge")
+[![](clipping-images//regionoperations-small.png "Dreifacher Screenshot der Seite Bereichsvorgängen")](clipping-images/regionoperations-large.png#lightbox "dreifacher Screenshot der Seite Bereichsvorgänge")
 
 Sind diese alle Möglichkeiten einer Kombination aus diesen zwei Kreise? Betrachten Sie das resultierende Bild, das eine Kombination aus drei Komponenten, die selbst in angezeigt werden die `Difference`, `Intersect`, und `ReverseDifference` Vorgänge. Die Gesamtanzahl der Kombinationen wird zwei und die dritte Potenz oder acht. Die beiden, die fehlen sind die ursprünglichen Region (die Ergebnisse des Aufrufs von nicht `Op` überhaupt) und einer Region vollständig leer.
 
@@ -423,7 +424,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die `DrawRegion` Aufruf füllt den Bereich in Orange ändert, während die `DrawPath` aufrufen, die den ursprünglichen Pfad in Blau dargestellt, für den Vergleich Striche:
 
-[![](clipping-images//regionpaint-small.png "Dreifacher Screenshot der Seite Region Paint")](clipping-images/regionpaint-large.png "dreifacher Screenshot der Seite Region Paint")
+[![](clipping-images//regionpaint-small.png "Dreifacher Screenshot der Seite Region Paint")](clipping-images/regionpaint-large.png#lightbox "dreifacher Screenshot der Seite Region Paint")
 
 Die Region ist ganz klar eine Reihe von diskreten Koordinaten.
 
@@ -509,7 +510,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Es tatsächlich scheint eine vier – Leaf Clover allerdings handelt es sich um ein Bild, die sonst schwer zu ohne Clipping gerendert werden kann:
 
-[![](clipping-images//fourleafclover-small.png "Dreifacher Screenshot der Seite vier--Endknoten Clover")](clipping-images/fourleafclover-large.png "dreifacher Screenshot der Seite vier--Endknoten Clover")
+[![](clipping-images//fourleafclover-small.png "Dreifacher Screenshot der Seite vier--Endknoten Clover")](clipping-images/fourleafclover-large.png#lightbox "dreifacher Screenshot der Seite vier--Endknoten Clover")
 
 
 ## <a name="related-links"></a>Verwandte Links

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 482358b0ccbedf926cd9182065a1eb8f4c12683c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e57f19d1eb66e22badb418d4584f5654904c7ade
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="style-inheritance"></a>Stil-Vererbung
 
@@ -62,10 +62,10 @@ Der folgende Code zeigt *explizite* formatieren Vererbung in einer XAML-Seite:
 
 Die `baseStyle` Ziele [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) Instanzen, und legt die [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) und [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) Eigenschaften. Die `baseStyle` nicht direkt für alle Steuerelemente festgelegt ist. Stattdessen `labelStyle` und `buttonStyle` erben, zusätzliche bindbare Eigenschaftswerte festlegen. Die `labelStyle` und `buttonStyle` gelten dann für die [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) Instanzen und [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) Instanz durch Festlegen ihrer [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) Eigenschaften. Daraus ergibt sich die Darstellung in den folgenden Screenshots dargestellt:
 
-[![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png)
+[![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
 > [!NOTE]
-> **Hinweis**: eine implizite Formatvorlage aus einem expliziten Stil abgeleitet werden, aber ein expliziter Stil kann nicht in einem impliziten Stil abgeleitet werden.
+> Eine implizite Formatvorlage aus einem expliziten Stil abgeleitet werden, aber ein expliziter Stil kann nicht in einem impliziten Stil abgeleitet werden.
 
 ### <a name="respecting-the-inheritance-chain"></a>Die Vererbungskette ressourcenbezogene
 
@@ -106,7 +106,7 @@ Diese Vererbungskette wird in das folgende Codebeispiel veranschaulicht:
 
 In diesem Beispiel `labelStyle` und `buttonStyle` Ebene Ressourcen sind zwar `baseStyle` ist eine Seite-Level-Ressource. Allerdings while `labelStyle` und `buttonStyle` Vererben `baseStyle`, es ist nicht möglich, dass `baseStyle` zu vererben `labelStyle` oder `buttonStyle`, da ihre jeweiligen Positionen in der Hierarchie anzeigen.
 
-## <a name="style-inheritance-in-c35"></a>Stil-Vererbung in C &#35;
+## <a name="style-inheritance-in-c35"></a>Stil-Vererbung in C&#35;
 
 Der entsprechende C#-Seite, in dem [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) Instanzen wird direkt zugewiesen der [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) Eigenschaften der Steuerelemente erforderlich, wird im folgenden Codebeispiel gezeigt:
 
@@ -160,7 +160,7 @@ Stile können von anderen Formatvorlagen Duplizierung zu reduzieren, und aktivie
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Verwendung von XAML-Markuperweiterungen](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [XAML-Markuperweiterungen](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Grundlegende Formate (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 - [Arbeiten mit Formatvorlagen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
 - [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)

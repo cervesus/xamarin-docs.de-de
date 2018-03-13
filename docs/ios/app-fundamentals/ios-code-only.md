@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5e4b0e7bbad94976b23e58d4248cb2ea1a6f2b0f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b50c4bbef1510b739c4f7da7d732a4f4c66f13f3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Erstellen von iOS-Benutzeroberflächen in Code
 
@@ -24,7 +24,7 @@ Die Benutzeroberfläche einer iOS-App ist, wie eine Storefront – die Anwendung
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem Fenster, den Ansichten, Unteransichten und dem Ansichtscontroller, die die Benutzeroberfläche auf den Gerätebildschirm bringen: 
 
-[ ![](ios-code-only-images/image9.png "Dieses Diagramm veranschaulicht die Beziehungen zwischen den Fenster, Ansichten, Unteransichten und View Controller")](ios-code-only-images/image9.png)
+[![](ios-code-only-images/image9.png "Dieses Diagramm veranschaulicht die Beziehungen zwischen den Fenster, Ansichten, Unteransichten und View Controller")](ios-code-only-images/image9.png#lightbox)
 
 Diese Ansicht Hierarchien können erstellt werden, mithilfe der [Xamarin-Designer für iOS](~/ios/user-interface/designer/index.md) in Visual Studio ist es jedoch grundlegende Kenntnisse über die vollständig im Code arbeiten können. Dieser Artikel führt Sie durch einige grundlegende Punkte einrichten und ausgeführt wird, mit der reinen Entwicklung der Benutzeroberfläche.
 
@@ -32,7 +32,7 @@ Diese Ansicht Hierarchien können erstellt werden, mithilfe der [Xamarin-Designe
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem Fenster, den Ansichten, Unteransichten und dem Ansichtscontroller, die die Benutzeroberfläche auf den Gerätebildschirm bringen: 
 
-[ ![](ios-code-only-images/image9.png "Dieses Diagramm veranschaulicht die Beziehungen zwischen den Fenster, Ansichten, Unteransichten und View Controller")](ios-code-only-images/image9.png)
+[![](ios-code-only-images/image9.png "Dieses Diagramm veranschaulicht die Beziehungen zwischen den Fenster, Ansichten, Unteransichten und View Controller")](ios-code-only-images/image9.png#lightbox)
 
 
 Diese Ansicht Hierarchien können erstellt werden, mithilfe der [Xamarin-Designer für iOS](~/ios/user-interface/designer/index.md) in Visual Studio für Mac ist es jedoch grundlegende Kenntnisse über die vollständig im Code arbeiten können. Dieser Artikel führt Sie durch einige grundlegende Punkte einrichten und ausgeführt wird, mit der reinen Entwicklung der Benutzeroberfläche.
@@ -49,13 +49,13 @@ Diese Ansicht Hierarchien können erstellt werden, mithilfe der [Xamarin-Designe
 Erstellen Sie zunächst ein iOS-Projekt in Visual Studio mit dem iPhone **leeres Projekt** Vorlage, die weiter unten gezeigte das hinzuzufügende Controller und Ansichten erweitert werden.
 
 
-[ ![](ios-code-only-images/blankapp-vs.png "Dialogfeld "Neues Projekt"")](ios-code-only-images/blankapp-vs.png)
+[![](ios-code-only-images/blankapp-vs.png "Dialogfeld "Neues Projekt"")](ios-code-only-images/blankapp-vs.png#lightbox)
 
 
 Die leere Projektvorlage fügt 4 Dateien zum Projekt hinzu:
 
 
-[ ![](ios-code-only-images/empty-project.png "Projektdateien")](ios-code-only-images/empty-project.png)
+[![](ios-code-only-images/empty-project.png "Projektdateien")](ios-code-only-images/empty-project.png#lightbox)
 
 
 1. **AppDelegate.cs** -enthält eine `UIApplicationDelegate` -Unterklasse, die `AppDelegate` , dem wird verwendet, um iOS-Anwendungsereignisse behandeln. Das Anwendungsfenster wird erstellt, der `AppDelegate`des `FinishedLaunching` Methode.
@@ -76,16 +76,16 @@ Die folgenden Schritte begleiten Sie das Storyboard aus einer Anwendung entferne
 
 1. Verwenden Sie die einzelne Ansicht App-Vorlage so erstellen Sie eine neue iOS-Projekt:
     
-    [ ![](ios-code-only-images/single-view-app.png "Verwenden Sie die einzelnen Ansicht App-Projektvorlage")](ios-code-only-images/single-view-app.png)
+    [![](ios-code-only-images/single-view-app.png "Verwenden Sie die einzelnen Ansicht App-Projektvorlage")](ios-code-only-images/single-view-app.png#lightbox)
 
 1. Löschen der `Main.Storyboard` und `ViewController.cs` Dateien. Führen Sie **nicht** Löschen der `LaunchScreen.Storyboard`. Die View-Controller sollte gelöscht werden, da es der Code-behind für den Controller Sicht handelt, in das Storyboard erstellt wird:
 1. Stellen Sie sicher, dass **löschen** über das Popup-Dialogfeld:
     
-    [ ![](ios-code-only-images/delete.png "Wählen Sie im Popup-Dialogfeld Löschen")](ios-code-only-images/delete.png)
+    [![](ios-code-only-images/delete.png "Wählen Sie im Popup-Dialogfeld Löschen")](ios-code-only-images/delete.png#lightbox)
 
 1. Löschen Sie in der Datei "Info.plist", die Informationen in den **Bereitstellungsinformationen > Hauptbenutzeroberfläche** Option:
     
-    [ ![](ios-code-only-images/main-interface.png "Löschen Sie die Informationen in die Main-Interface-option")](ios-code-only-images/main-interface.png)
+    [![](ios-code-only-images/main-interface.png "Löschen Sie die Informationen in die Main-Interface-option")](ios-code-only-images/main-interface.png#lightbox)
 
 1. Zum Schluss fügen Sie folgenden Code zu Ihrem `FinishedLaunching` Methode in der AppDelegate-Klasse:
         
@@ -176,7 +176,7 @@ public class AppDelegate : UIApplicationDelegate
 
 Jeder Controller verfügt über eine zugeordnete Ansicht aus zugänglich ist die `View` Eigenschaft. Der obige Code ändert der Ansicht `BackgroundColor` Eigenschaft `UIColor.LightGray` , damit es sichtbar ist, werden wie folgt:
 
- [ ![](ios-code-only-images/image1.png "Die Ansicht im Hintergrund ist eine sichtbare hellgrau")](ios-code-only-images/image1.png)
+ [![](ios-code-only-images/image1.png "Die Ansicht im Hintergrund ist eine sichtbare hellgrau")](ios-code-only-images/image1.png#lightbox)
 
 Wir legen konnte `UIViewController` als Unterklasse der `RootViewController` auf diese Weise ebenfalls, einschließlich Domänencontrollern von UIKit als auch wir uns schreiben. Z. B. der folgende Code Fügt eine `UINavigationController` als die `RootViewController`:
 
@@ -214,7 +214,7 @@ public class AppDelegate : UIApplicationDelegate
 
 Hierdurch wird den Controller in den Navigationsbereich Controller geschachtelt werden, wie unten dargestellt:
 
- [ ![](ios-code-only-images/image2.png "Der Controller in den Navigationsbereich Controller geschachtelt")](ios-code-only-images/image2.png)
+ [![](ios-code-only-images/image2.png "Der Controller in den Navigationsbereich Controller geschachtelt")](ios-code-only-images/image2.png#lightbox)
 
 ## <a name="creating-a-view-controller"></a>Erstellen eines Domänencontrollers anzeigen
 
@@ -224,11 +224,11 @@ Fügen Sie eine neue Klasse mit dem Namen `CustomViewController` wie unten darge
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](ios-code-only-images/customviewcontroller.png "Fügen Sie eine neue Klasse mit dem Namen CustomViewController")](ios-code-only-images/customviewcontroller.png)
+[![](ios-code-only-images/customviewcontroller.png "Fügen Sie eine neue Klasse mit dem Namen CustomViewController")](ios-code-only-images/customviewcontroller.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![](ios-code-only-images/new-file.png "Fügen Sie eine neue Klasse mit dem Namen CustomViewController")](ios-code-only-images/new-file.png)
+[![](ios-code-only-images/new-file.png "Fügen Sie eine neue Klasse mit dem Namen CustomViewController")](ios-code-only-images/new-file.png#lightbox)
 
 -----
 
@@ -245,6 +245,8 @@ namespace CodeOnlyDemo
     }
 }
 ```
+
+<a name="Initializing_the_View"/>
 
 ## <a name="initializing-the-view"></a>Initialisieren die Ansicht
 
@@ -302,11 +304,11 @@ Window.RootViewController = navController;
 
 Wenn die Anwendung lädt nun, die `CustomViewController` innerhalb eines Controllers Navigation geladen wird:
 
- [ ![](ios-code-only-images/customvc.png "Die CustomViewController wird innerhalb eines Controllers Navigation geladen.")](ios-code-only-images/customvc.png)
+ [![](ios-code-only-images/customvc.png "Die CustomViewController wird innerhalb eines Controllers Navigation geladen.")](ios-code-only-images/customvc.png#lightbox)
  
 Klicken auf die Schaltfläche wird _Push_ eine neue View-Controller auf den Navigationsstapel:
 
-[ ![](ios-code-only-images/customvca.png "Eine neue View-Controller zu leisten Navigationsstapel")](ios-code-only-images/customvca.png)
+[![](ios-code-only-images/customvca.png "Eine neue View-Controller zu leisten Navigationsstapel")](ios-code-only-images/customvca.png#lightbox)
 
 ## <a name="building-the-view-hierarchy"></a>Erstellen die Hierarchie anzeigen
 
@@ -352,7 +354,7 @@ Wenn wir erstellen die `UITextField`, legen wir den `Frame` -Eigenschaft seine P
 
 Die Anwendung mit der `UITextField` eingeschlossen wird unten gezeigt:
 
- [ ![](ios-code-only-images/image4.png "Die Anwendung mit der UITextField enthalten")](ios-code-only-images/image4.png)
+ [![](ios-code-only-images/image4.png "Die Anwendung mit der UITextField enthalten")](ios-code-only-images/image4.png#lightbox)
 
 Wir können hinzufügen eine `UITextField` für das Kennwort in ähnlicher Weise nur diesmal legen wir die `SecureTextEntry` Eigenschaft auf "true", wie unten dargestellt,:
 
@@ -380,7 +382,7 @@ public class CustomViewController : UIViewController
 
 Festlegen von `SecureTextEntry = true` Blendet Sie aus den im eingegebenen Text die `UITextField` vom Benutzer wie unten dargestellt:
 
- [ ![](ios-code-only-images/image4a.png ""True" Blendet den Text, der vom Benutzer eingegebenen SecureTextEntry festlegen")](ios-code-only-images/image4a.png)
+ [![](ios-code-only-images/image4a.png ""True" Blendet den Text, der vom Benutzer eingegebenen SecureTextEntry festlegen")](ios-code-only-images/image4a.png#lightbox)
 
 ### <a name="adding-the-button"></a>Die Schaltfläche hinzufügen
 
@@ -403,7 +405,7 @@ View.AddSubview(submitButton);
 
 Mit diesem Ort ist wird jetzt der Anmeldebildschirm angezeigt, wie unten dargestellt:
 
- [ ![](ios-code-only-images/image5.png "Anmeldebildschirm")](ios-code-only-images/image5.png)
+ [![](ios-code-only-images/image5.png "Anmeldebildschirm")](ios-code-only-images/image5.png#lightbox)
 
 Anders als in früheren Versionen von iOS, ist die Schaltfläche Standardhintergrund transparent. Ändern der Schaltfläche `BackgroundColor` eigenschaftenänderungen dies:
 
@@ -419,7 +421,7 @@ submitButton.Layer.CornerRadius = 5f;
 
 Mit diesen Änderungen wird die Ansicht sieht wie folgt aus:
 
-[ ![](ios-code-only-images/image6.png "Führen Sie ein Beispiel der Ansicht")](ios-code-only-images/image6.png)
+[![](ios-code-only-images/image6.png "Führen Sie ein Beispiel der Ansicht")](ios-code-only-images/image6.png#lightbox)
  
 ## <a name="adding-multiple-views-to-the-view-hierarchy"></a>Hinzufügen mehrerer Ansichten zu der Hierarchie anzeigen
 
@@ -452,7 +454,7 @@ submitButton.TouchUpInside += (sender, e) => {
 
 Nachstehend ist die Navigation dargestellt:
 
-[ ![](ios-code-only-images/navigation.png "In diesem Diagramm wird die Navigation veranschaulicht.")](ios-code-only-images/navigation.png)
+[![](ios-code-only-images/navigation.png "In diesem Diagramm wird die Navigation veranschaulicht.")](ios-code-only-images/navigation.png#lightbox)
 
 Beachten Sie, dass standardmäßig bei der Verwendung eines Controllers Navigation iOS der Anwendung eine Navigationsleiste und eine zurück-Schaltfläche, die durch den Stapel zurück verschieben können gibt.
 
@@ -477,7 +479,7 @@ Hierzu jedoch nicht funktioniert, wenn die Ansicht wird für durchlaufen ist ein
 
 Wenn der Benutzer das Gerät auf Querformat dreht, führen Sie die Steuerelemente nicht entsprechend, ändern, wie der folgende Screenshot veranschaulicht:
 
- [ ![](ios-code-only-images/image7.png "Wenn der Benutzer das Gerät auf Querformat dreht, führen Sie die Steuerelemente nicht entsprechend ändern")](ios-code-only-images/image7.png)
+ [![](ios-code-only-images/image7.png "Wenn der Benutzer das Gerät auf Querformat dreht, führen Sie die Steuerelemente nicht entsprechend ändern")](ios-code-only-images/image7.png#lightbox)
 
 Eine Möglichkeit, dieses Problem zu beheben ist durch Festlegen der `AutoresizingMask` Eigenschaft für jede Sicht. In diesem Fall möchten wir die Steuerelemente horizontal gestreckt, damit wir jede festgelegt wäre `AutoresizingMask`. Im folgende Beispiel wird für `usernameField`, aber die gleiche müsste auf jede Gadget in der Ansichtshierarchie angewendet werden soll.
 
@@ -487,7 +489,7 @@ usernameField.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 
 Jetzt Wenn wir das Gerät oder den Simulator drehen, wird angepasst alles, was den zusätzlichen Speicherplatz, wie unten dargestellt:
 
- [ ![](ios-code-only-images/image8.png "Alle Steuerelemente werden gestreckt, um den zusätzlichen Platz ausfüllen")](ios-code-only-images/image8.png)
+ [![](ios-code-only-images/image8.png "Alle Steuerelemente werden gestreckt, um den zusätzlichen Platz ausfüllen")](ios-code-only-images/image8.png#lightbox)
 
 ## <a name="creating-custom-views"></a>Erstellen benutzerdefinierter Ansichten
 
@@ -592,7 +594,7 @@ submitButton.TouchUpInside += delegate
 
 Wenn wir die Anwendung auszuführen, und tippen Sie auf die Schaltfläche "Absenden", wird nun die neue Ansicht durch einen Kreis angezeigt:
 
- [ ![](ios-code-only-images/circles.png "Die neue Ansicht durch einen Kreis wird angezeigt.")](ios-code-only-images/circles.png)
+ [![](ios-code-only-images/circles.png "Die neue Ansicht durch einen Kreis wird angezeigt.")](ios-code-only-images/circles.png#lightbox)
 
 ## <a name="creating-a-launch-screen"></a>Erstellen einen Startbildschirm
 

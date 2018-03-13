@@ -3,16 +3,16 @@ title: "In der Android-App verknüpfen"
 description: "Diese Anleitung wird erläutert, wie Android 6.0 app-Verknüpfung, eine Technik unterstützt, die mobile-apps So reagieren Sie auf die URLs auf Websites ermöglicht. Es wird erläutert, welche app-Verknüpfung ist, wie app-Verknüpfung in einer Anwendung für Android 6.0 implementiert und eine Website zum Erteilen von Berechtigungen an die mobile Anwendung für eine Domäne zu konfigurieren."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
+ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 726890e48407dd26f52c5aeaecf4eab51dcc5182
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 78fef780728ba1c2a3b9978504058f7a386b0e7d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="app-linking-in-android"></a>In der Android-App verknüpfen
 
@@ -84,7 +84,7 @@ Android überprüft jeden Host, der durch die beabsichtigte Filter für die digi
 Android-app-Verknüpfung 6.0 erfordert, dass Android überprüfen Sie, ob die Zuordnung zwischen der Anwendung und die Website vor dem Festlegen der Anwendung als Standardprogramm für den URI. Diese Überprüfung erfolgt, wenn zunächst die Anwendung installiert wird. Die *digitale Ressourcen Links* Datei ist eine JSON-Datei, die von der relevanten Webdomain(s) gehostet wird.
 
 > [!NOTE]
-> **Hinweis:** der `android:autoVerify` Attribut muss festgelegt werden, durch den beabsichtigten Filter &ndash; andernfalls Android wird die Überprüfung nicht ausführen.
+> Die `android:autoVerify` Attribut muss festgelegt werden, durch den beabsichtigten Filter &ndash; andernfalls Android wird die Überprüfung nicht ausführen.
 
 Die Datei wird durch den Webmaster der Domäne an der Position eingefügt **https://domain/.well-known/assetlinks.json**.
 

@@ -4,14 +4,15 @@ description: "Ermitteln der verschiedenen Pfad Auswirkungen, mit die Pfade für 
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 4344559c85ad637ad198b3afc28b17e694a14f82
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 60d60939c0f7bd3961400a3e8d769fdfa17184a2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="path-effects"></a>Pfad Effekte
 
@@ -48,7 +49,7 @@ Die Enden der betroffen sind der `StrokeCap` Eigenschaft `SKPaint`. Für Breite 
 
 Die **gepunktet Text animiert** Seite ähnelt der **beschriebenen Text** Seite, die im Artikel beschriebenen [ **Integrieren von Text und Grafiken** ](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md) in Es zeigt beschriebenen Textzeichen durch Festlegen der `Style` Eigenschaft von der `SKPaint` -Objekt `SKPaintStyle.Stroke`. Darüber hinaus **gepunktet Text animiert** verwendet `SKPathEffect.CreateDash` erteilen kann dies eine punktierte Darstellung und das Programm auch eine Animation der `phase` Argument die `SKPathEffect.CreateDash` Methode, um die Punkte scheinen Reisen den Textqualifizierer eingeschlossen, Zeichen. So sieht die Seite im Querformat:
 
-[![](effects-images/animateddottedtext-small.png "Dreifacher Screenshot der Seite gepunktet Text animiert")](effects-images/animateddottedtext-large.png "dreifacher Screenshot der Seite animiert gepunktet Text")
+[![](effects-images/animateddottedtext-small.png "Dreifacher Screenshot der Seite gepunktet Text animiert")](effects-images/animateddottedtext-large.png#lightbox "dreifacher Screenshot der Seite animiert gepunktet Text")
 
 Die [ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Klasse zunächst werden einige Konstanten definieren, und überschreibt auch die `OnAppearing` und `OnDisappearing` Methoden für die Animation:
 
@@ -156,7 +157,7 @@ Es ist möglich, passen Sie die Länge des Strichmuster an die Länge des Pfads 
 
 Die **Punkt / Bindestrich Umwandlung** Programm erstellt eine Animation des eigentlichen Musters des Bindestrich, sodass Bindestriche scheint Teilen in Punkten, wieder zum Formular Bindestriche kombinieren:
 
-[![](effects-images/dotdashmorph-small.png "Dreifacher Screenshot der Seite Punkt Dash Umwandlung")](effects-images/dotdashmorph-large.png "dreifacher Screenshot der Seite Punkt-Dash-Umwandlung")
+[![](effects-images/dotdashmorph-small.png "Dreifacher Screenshot der Seite Punkt Dash Umwandlung")](effects-images/dotdashmorph-large.png#lightbox "dreifacher Screenshot der Seite Punkt-Dash-Umwandlung")
 
 Die [ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) -Klasse überschreibt die `OnAppearing` und `OnDisappearing` Methoden ebenso wie das vorherige Programm hat, aber die Klasse definiert die `SKPaint` Objekt als Feld:
 
@@ -396,7 +397,7 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 Die `PaintSurface` Ereignishandler erstellt eine Bézier-Kurve, die Schleifen, um sich selbst und greift auf die Auswahl, um zu ermitteln, welche `PathEffect` sollte verwendet werden, um es mit Strichen zu zeichnen. Die drei Optionen – `Translate`, `Rotate`, und `Morph` – werden von links nach rechts angezeigt:
 
-[![](effects-images/1dpatheffect-small.png "Dreifacher Screenshot der Seite Pfad Auswirkungen 1D")](effects-images/1dpatheffect-large.png "dreifacher Screenshot der Seite Pfad Auswirkungen 1D")
+[![](effects-images/1dpatheffect-small.png "Dreifacher Screenshot der Seite Pfad Auswirkungen 1D")](effects-images/1dpatheffect-large.png#lightbox "dreifacher Screenshot der Seite Pfad Auswirkungen 1D")
 
 Die im angegebenen Pfad die `SKPathEffect.Create1DPath` Methode immer gefüllt wird. Die im angegebenen Pfad die `DrawPath` Methode schraffiert ist immer, wenn die `SKPaint` Objekt hat seine `PathEffect` -Eigenschaft auf einen 1D Pfad Effekt festgelegt. Beachten Sie, dass die `pathPaint` Objekt hat keine `Style` Einstellung, die normalerweise standardmäßig `Fill`, jedoch der Pfad unabhängig davon schraffiert ist.
 
@@ -408,7 +409,7 @@ Das Rechteck in die `Morph` Beispiel ist 50 Pixel breit und eine `advance` von 5
 
 Wenn die `advance` Arguments ist kleiner als die Größe des Pfads, und dann die replizierten Pfade können sich überschneiden. Dies kann dazu führen, dass einige interessante Effekte werden. Die **verknüpften Kette** Seite zeigt eine Reihe von überlappende Kreise, die anscheinend mit eine Kette verknüpfte ähneln denen in der unterschiedliche Form von einer Oberleitung hängt:
 
-[![](effects-images/linkedchain-small.png "Dreifacher Screenshot der Seite verknüpften Kette")](effects-images/linkedchain-large.png "dreifacher Screenshot der Seite verknüpften Kette")
+[![](effects-images/linkedchain-small.png "Dreifacher Screenshot der Seite verknüpften Kette")](effects-images/linkedchain-large.png#lightbox "dreifacher Screenshot der Seite verknüpften Kette")
 
 Sehr nahe suchen, und Sie sehen, dass dies tatsächlich Kreise sind nicht. Jeder Link in der Kette ist zwei Bögen, Größe, und also sie für die Verbindung mit benachbarten Links scheint positioniert.
 
@@ -547,7 +548,7 @@ Dieses Programm definiert, den im verwendete Pfad `Create1DPath` haben seine (0,
 
 Die **Förderband** Seite erstellt einen Pfad, der aussieht wie ein längliche Förderband transportiert die mit einem gekrümmten nach oben und unten wird dies auf die Dimensionen des Fensters angepasst. Dass der Pfad mit einem einfachen schraffiert ist `SKPaint` 20 Pixel breit und Grau, und klicken Sie dann erneut mit einem anderen gezeichnet `SKPaint` -Objekt mit einem `SKPathEffect` Objekt auf einen Pfad ähnelt ein wenig Bucket verweisen:
 
-[![](effects-images/conveyorbelt-small.png "Dreifacher Screenshot der Seite "Fließband"")](effects-images/conveyorbelt-large.png "dreifacher Screenshot der Seite "Fließband"")
+[![](effects-images/conveyorbelt-small.png "Dreifacher Screenshot der Seite "Fließband"")](effects-images/conveyorbelt-large.png#lightbox "dreifacher Screenshot der Seite "Fließband"")
 
 Der (0, 0) des Pfads Bucket ist das Handle, das dies der Fall bei der `phase` Argument animiert wird, scheinen die Buckets um Förderband, vielleicht scooping oben Wasser am unteren und Dump-Sicherungen es aus der oben drehen.
 
@@ -796,7 +797,7 @@ Wenn Sie sorgfältig die Ergebnisse betrachten, sehen Sie sich, dass das rote un
 
 Die `PaintSurface` Handler endet mit einem Aufruf des abgerundeten Rechtecks einfach zu zeichnen, sodass Ihnen die Abweichung mit dem roten und blauen schraffierte Linien angezeigt:
 
-[![](effects-images/hatchfill-small.png "Dreifacher Screenshot der Seite Schraffur füllen")](effects-images/hatchfill-large.png "dreifacher Screenshot der Seite Schraffur ausfüllen")
+[![](effects-images/hatchfill-small.png "Dreifacher Screenshot der Seite Schraffur füllen")](effects-images/hatchfill-large.png#lightbox "dreifacher Screenshot der Seite Schraffur ausfüllen")
 
 Die Android Bildschirm nicht tatsächlich, aussehen: die Skalierung des Screenshots der schmale rote Linien und thin Leerzeichen in scheinbar breiter rote Linien konsolidiert und breiter Leerzeichen verursacht hat.
 
@@ -850,7 +851,7 @@ public class PathTileFillPage : ContentPage
 
 In der `PaintSurface` Handler, der `SKPathEffect.Create2DPath` Aufrufe legt die horizontale und vertikale Zwischenräume 64, die dazu führen, dass die quadratischen 80-Pixel-Kacheln überlappen. Glücklicherweise ähnelt der Pfad ein Puzzle-Stück, Vernetzung ordentlich mit angrenzenden Kacheln:
 
-[![](effects-images/pathtilefill-small.png "Dreifacher Screenshot der Seite Pfad Kachel auszufüllen")](effects-images/pathtilefill-large.png "dreifacher Screenshot der Seite Pfad Kachel auszufüllen.")
+[![](effects-images/pathtilefill-small.png "Dreifacher Screenshot der Seite Pfad Kachel auszufüllen")](effects-images/pathtilefill-large.png#lightbox "dreifacher Screenshot der Seite Pfad Kachel auszufüllen.")
 
 Die Skalierung von der ursprünglichen Screenshot bewirkt, dass einige Verzerrung, insbesondere auf dem Android-Bildschirm.
 
@@ -923,7 +924,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Verwenden Sie diesen Effekt mit Verlauf oder füllen, die basierend auf der `Style` Eigenschaft von der `SKPaint` Objekt. Hier ist es auf allen drei Plattformen:
 
-[![](effects-images/anotherroundedheptagon-small.png "Dreifacher Screenshot der Seite eine andere gerundet Siebeneck")](effects-images/anotherroundedheptagon-large.png "dreifacher Screenshot der Seite "einen anderen gerundet Siebeneck"")
+[![](effects-images/anotherroundedheptagon-small.png "Dreifacher Screenshot der Seite eine andere gerundet Siebeneck")](effects-images/anotherroundedheptagon-large.png#lightbox "dreifacher Screenshot der Seite "einen anderen gerundet Siebeneck"")
 
 Sie sehen, dass diese abgerundeten Siebeneck an das frühere Programm identisch ist. Wenn Sie überzeugt Weitere, die die Eckradius ist tatsächlich 100 anstatt 50 angegeben wird, der `SKPathEffect.CreateCorner` Aufruf, Sie können kommentieren Sie die letzte Anweisung im Programm und ausführliche Informationen finden Sie eine 100-Radius-Kreis überlagert, in der Ecke klicken.
 
@@ -942,7 +943,7 @@ Das letzte Argument handelt es sich um einen Ausgangswert verwendet, um die pseu
 
 Die **Jitter experimentieren** Seite ermöglicht Ihnen das Experimentieren mit unterschiedlichen Werten im Verlauf eines Rechtecks:
 
-[![](effects-images/jitterexperiment-small.png "Screenshot der Seite Jitter Experiment dreifach")](effects-images/jitterexperiment-large.png "Triple screenshot of the JitterExperiment page")
+[![](effects-images/jitterexperiment-small.png "Screenshot der Seite Jitter Experiment dreifach")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
 
 Das Programm ist Straightfoward. Die [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml) Datei instanziiert zwei `Slider` Elemente und ein `SKCanvasView`:
 
@@ -1068,7 +1069,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hier wird es im Querformat auf allen drei Plattformen ausgeführt:
 
-[![](effects-images/jittertext-small.png "Screenshot der Seite Text Jitter dreifach")](effects-images/jittertext-large.png "Triple screenshot of the JitterText page")
+[![](effects-images/jittertext-small.png "Screenshot der Seite Text Jitter dreifach")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
 
 ## <a name="path-outlining"></a>Gliedern von Pfad
 
@@ -1169,11 +1170,11 @@ public partial class TapToOutlineThePathPage : ContentPage
 
 Der Kreis gefüllt und gezeichnet werden, wie zu erwarten:
 
-[![](effects-images/taptooutlinethepathnormal-small.png "Dreifacher Screenshot der normalen tippen, Gliederung Pfad Seite")](effects-images/taptooutlinethepathnormal-large.png "dreifacher Screenshot der normalen tippen, Gliederung der Path-Seite")
+[![](effects-images/taptooutlinethepathnormal-small.png "Dreifacher Screenshot der normalen tippen, Gliederung Pfad Seite")](effects-images/taptooutlinethepathnormal-large.png#lightbox "dreifacher Screenshot der normalen tippen, Gliederung der Path-Seite")
 
 Tippen Sie auf dem Bildschirm `outlineThePath` auf festgelegt ist `true`, und die `PaintSurface` Ereignishandler erstellt ein neuer `SKPath` -Objekt und verwendet diesen als der Zielpfad in einem Aufruf von `GetFillPath` auf die `redThickStroke` Paint-Objekt. Dieser Zielpfad dann gefüllt und mit Gestrichelt `redThinStroke`, wodurch Folgendes:
 
-[![](effects-images/taptooutlinethepathoutlined-small.png "Dreifacher Screenshot der grundsätzliche tippen, Gliederung Pfad Seite")](effects-images/taptooutlinethepathoutlined-large.png "dreifacher Screenshot der grundsätzliche tippen, Gliederung der Path-Seite")
+[![](effects-images/taptooutlinethepathoutlined-small.png "Dreifacher Screenshot der grundsätzliche tippen, Gliederung Pfad Seite")](effects-images/taptooutlinethepathoutlined-large.png#lightbox "dreifacher Screenshot der grundsätzliche tippen, Gliederung der Path-Seite")
 
 Die zwei roten Kreise zeigen deutlich, dass der ursprüngliche Pfad für zirkuläre in zwei zirkuläre Konturen konvertiert wurde.
 
@@ -1237,7 +1238,7 @@ Sie haben bereits gesehen, wie die `GetFillPath` Methode `SKPaint` können einen
 
 Eine offensichtliche Verwendung von `CreateSum` besteht im Definieren einer `SKPaint` Objekt, das füllt eines Pfads mit einem Pfad und den Pfad mit einem anderen Pfad Effekt Konturen. Dies wird dargestellt, der **Katzen im Frame** Beispiel, das ein Array von Katzen innerhalb eines Rahmens mit gewellte Kanten anzeigt:
 
-[![](effects-images/catsinframe-small.png "Dreifacher Screenshot der Seite Katzen im Frame")](effects-images/catsinframe-large.png "dreifacher Screenshot der Seite Katzen im Frame")
+[![](effects-images/catsinframe-small.png "Dreifacher Screenshot der Seite Katzen im Frame")](effects-images/catsinframe-large.png#lightbox "dreifacher Screenshot der Seite Katzen im Frame")
 
 Die [ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs) Klasse beginnt, indem Sie mehrere Felder definieren. Sie möglicherweise erkennen, dass das erste Feld aus der [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) -Klasse aus den [ **SVG-Pfaddaten** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) Artikel. Der zweite Pfad basiert auf einer Zeile und Bogen nach dem Muster des Ausbuchten des Frames:
 
@@ -1405,7 +1406,7 @@ public class DashedHatchLinesPage : ContentPage
 
 Als Sie bereits ermittelt haben, die schraffierte Linien sind nicht genau mit dem inneren Bereich beschränkt, und in diesem Beispiel immer beginnen auf der linken Seite mit einem ganzen Bindestrich:
 
-[![](effects-images/dashedhatchlines-small.png "Dreifacher Screenshot der Seite gestrichelte Schraffur Linien")](effects-images/dashedhatchlines-large.png "dreifacher Screenshot der Seite gestrichelte schraffierte Linien")
+[![](effects-images/dashedhatchlines-small.png "Dreifacher Screenshot der Seite gestrichelte Schraffur Linien")](effects-images/dashedhatchlines-large.png#lightbox "dreifacher Screenshot der Seite gestrichelte schraffierte Linien")
 
 Nun, da Sie Auswirkungen Pfad zwischen einfachen Punkte und Bindestriche enthalten und ungewöhnliche Kombinationen gesehen haben, verwenden Sie Ihre Vorstellungskraft hinzugefügt, und finden Sie unter erstellen können.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 6d2a454665691c028fe8307940a5662a98ab9c98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f35256529d6d72a3f5e563dc88b9d5883a9724d4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="appearance-api"></a>API-Darstellung
 
@@ -32,7 +32,7 @@ Es gibt zwei Möglichkeiten, um eine benutzerdefinierte Darstellung anzuwenden:
 
 Die beispielanwendung Darstellung zeigt alle drei Methoden, wie in den folgenden Screenshots dargestellt:
 
- [ ![](introduction-to-the-appearance-api-images/appearance01.png "Die Darstellung-beispielanwendung für veranschaulicht alle drei Methoden")](introduction-to-the-appearance-api-images/appearance01.png)
+ [![](introduction-to-the-appearance-api-images/appearance01.png "Die Darstellung-beispielanwendung für veranschaulicht alle drei Methoden")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
 Der Proxy für die Darstellung wurde ab iOS 8 um TraitCollections erweitert.
  `AppearanceForTraitCollection` kann verwendet werden, um die standarddarstellung für ein bestimmtes Merkmal Auflistung festgelegt. Erfahren Sie mehr Informationen finden Sie in der [Einführung in Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) Handbuch.
@@ -87,11 +87,11 @@ sg1.TintColor = UIColor.Magenta;
 
 Legen Sie alternativ den Wert in das Auffüllzeichen Eigenschaften des Designers: 
 
-[ ![](introduction-to-the-appearance-api-images/propertiespadtint.png "Eigenschaften mit Leerstellen auffüllen Farbton")](introduction-to-the-appearance-api-images/propertiespadtint.png)
+[![](introduction-to-the-appearance-api-images/propertiespadtint.png "Eigenschaften mit Leerstellen auffüllen Farbton")](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
 
 Die folgende Abbildung veranschaulicht, die dies den Farbton für nur auf das Steuerelement, mit dem Namen "sg1" festlegt.
 
- [ ![](introduction-to-the-appearance-api-images/image53.png "Den Farbton einzelnes Steuerelement festlegen")](introduction-to-the-appearance-api-images/image53.png)
+ [![](introduction-to-the-appearance-api-images/image53.png "Den Farbton einzelnes Steuerelement festlegen")](introduction-to-the-appearance-api-images/image53.png#lightbox)
 
 Viele Steuerelemente, die auf diese Weise festgelegt wäre vollständig ineffizient, daher können wir stattdessen die statische festlegen `Appearance` Eigenschaft für die Klasse selbst. Dies wird im Code unten gezeigt:
 
@@ -101,7 +101,7 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 Die folgende Abbildung veranschaulicht beide segmentierte Steuerelemente jetzt mit der Darstellung auf Magenta festgelegt:
 
- [ ![](introduction-to-the-appearance-api-images/image54.png "Festlegen des Darstellung Steuerelement Farbtons")](introduction-to-the-appearance-api-images/image54.png)
+ [![](introduction-to-the-appearance-api-images/image54.png "Festlegen des Darstellung Steuerelement Farbtons")](introduction-to-the-appearance-api-images/image54.png#lightbox)
 
 `Appearance` Eigenschaften sollte festgelegt werden einem frühen Zeitpunkt im Lebenszyklus Anwendung, z. B. in der AppDelegate `FinishedLaunching` -Ereignis oder in einem ViewController, damit die betroffenen Steuerelemente angezeigt werden.
 

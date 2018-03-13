@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: d258d993d8452c0c93c53d875d81683a294f80d3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dc728e5817a7d1d61d7745120bca7f05641ce76f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="global-styles"></a>Die globalen Formatvorlagen
 
@@ -60,7 +60,7 @@ Das folgende Codebeispiel zeigt eine XAML-Seite anwenden der `buttonStyle` auf d
 
 Daraus ergibt sich die Darstellung in den folgenden Screenshots dargestellt:
 
-[![](application-images/application-styles-1.png "Die globalen Formatvorlagen Beispiel")](application-images/application-styles-1-large.png "globalen Formatvorlagen-Beispiel")
+[![](application-images/application-styles-1.png "Die globalen Formatvorlagen Beispiel")](application-images/application-styles-1-large.png#lightbox "globalen Formatvorlagen-Beispiel")
 
 Weitere Informationen zum Erstellen von Formaten auf einer Seite [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), finden Sie unter [explizite Stile](~/xamarin-forms/user-interface/styles/explicit.md) und [impliziten Stilen](~/xamarin-forms/user-interface/styles/implicit.md).
 
@@ -98,9 +98,9 @@ Stile in der Ansichtshierarchie haben Vorrang vor den definierten höher einrich
 
 Die ursprüngliche `buttonStyle`, auf Anwendungsebene definiert ist, wird überschrieben, indem die `buttonStyle` Instanz auf Seitenebene definiert. Darüber hinaus wird die Formatvorlage der Seite durch die Steuerungsebene überschrieben `buttonStyle`. Aus diesem Grund die [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) Instanzen sind mit blauem Text angezeigt, wie in den folgenden Screenshots dargestellt:
 
-[![](application-images/application-styles-2.png "Überschreiben von Stilen Beispiel")](application-images/application-styles-2-large.png "überschreiben Formatvorlagen-Beispiel")
+[![](application-images/application-styles-2.png "Überschreiben von Stilen Beispiel")](application-images/application-styles-2-large.png#lightbox "überschreiben Formatvorlagen-Beispiel")
 
-## <a name="creating-a-global-style-in-c35"></a>Erstellen eine globale Formatvorlage in C &#35;
+## <a name="creating-a-global-style-in-c35"></a>Erstellen einer globalen Formatvorlage in C&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) Instanzen der Anwendungsverzeichnis hinzugefügt werden können [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) Auflistung in c# durch Erstellen eines neuen [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), und klicken Sie dann durch Hinzufügen der `Style` um Instanzen der `ResourceDictionary`, als Im folgenden Codebeispiel gezeigt:
 

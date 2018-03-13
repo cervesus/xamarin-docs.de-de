@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c59ddde44b0e47122865c55a7964707f106d2691
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e46038b21327fe8847d2c04ee1ba16960f6a059b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Arbeiten mit Tabellen in der iOS-Designer
 
@@ -40,7 +40,7 @@ Ein `UITableView` mit Prototyp Inhalt ist in der Regel dafür konzipiert, eine L
 
 Das StoryboardTable-Beispiel enthält eine einfache Master / Detail-app, die beide Arten von UITableView in einem Storyboard verwendet. Der übrige Teil dieses Abschnitts wird beschrieben, wie eine kleine to-Do-Liste-Beispiel zu erstellen, die nach Abschluss des Vorgangs aussieht:
 
- [ ![Beispiel-Bildschirme](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png)
+ [![Beispiel-Bildschirme](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png#lightbox)
 
 Ein Storyboard die Benutzeroberfläche erstellt werden, und beide Seiten einer UITableView verwendet. Verwendet den Hauptbildschirm *Prototyp Inhalt* Layout der Zeile, und an das Detail Bildschirm verwendet *statischer Inhalte* ein Dateneingabeformular mithilfe von benutzerdefinierten Zelle Layouts zu erstellen.
 
@@ -48,7 +48,7 @@ Ein Storyboard die Benutzeroberfläche erstellt werden, und beide Seiten einer U
 
 Erstellen Sie eine neue Projektmappe in Visual Studio mithilfe **(erstellen) in neues Projekt… > einzelne Ansicht App(C#)**, und nennen Sie es _StoryboardTables_.
 
- [ ![Erstellen Sie ein Dialogfeld "Neues Projekt"](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png)
+ [![Erstellen Sie ein Dialogfeld "Neues Projekt"](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 
 Die Lösung wird mit einigen C#-Dateien öffnen und eine `Main.storyboard` Datei, die bereits erstellt. Doppelklicken Sie auf die `Main.storyboard` Datei, die sie in der iOS-Designer zu öffnen.
 
@@ -75,24 +75,24 @@ Die erste Änderung an der Storyboard wird durch das Löschen der vorhandenen De
 2.  Ziehen Sie eine **Navigation Controller** und ein **Tabelle Modellansichtcontroller** auf das Storyboard aus der Toolbox. 
 3.  Erstellen Sie eine Segue aus der Stamm-View-Controller auf der zweiten Tabelle-View-Controller, die soeben hinzugefügt wurde. Erstellen die Segue Steuerelement + ziehen *aus der Detailzelle* auf die neu hinzugefügte UITableViewController. Wählen Sie die Option **anzeigen*** unter **Segue Auswahl**. 
 4.  Wählen Sie die neue segue Sie erstellt haben, und weisen Sie ihm einen Bezeichner zu verweisen, die dies segue im Code. Klicken Sie auf die Segue, und geben Sie `TaskSegue` für die **Bezeichner** in der **Eigenschaften Pad**, wie folgt:    
-  [ ![Im Eigenschaftenbereich segue benennen](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png) 
+  [![Im Eigenschaftenbereich segue benennen](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
 5. Als Nächstes konfigurieren Sie die beiden Ansichten für die Tabelle, indem Sie sie auswählen und mithilfe der Eigenschaften. Achten Sie darauf, Ansicht und nicht die View-Controller auswählen – können Sie bei Auswahl der Dokumentgliederung.
 
 6.  Ändern Sie die Stamm-View-Controller werden **Content: dynamische Prototypen** (die Ansicht auf der Entwurfsoberfläche wird etikettiert werden **Prototyp Content** ):
 
-    [ ![Die Content-Eigenschaft festlegen, um dynamische Prototypen](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png)
+    [![Die Content-Eigenschaft festlegen, um dynamische Prototypen](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
 7.  Ändern Sie die neue **UITableViewController** werden **Content: statische Zellen**. 
 
 
 8. Neue UITableViewController muss der Klassenname und ein Bezeichner festgelegt haben. Wählen Sie die View-Controller und den Typ _TaskDetailViewController_ für die **Klasse** in der **Eigenschaften Pad** – Dies erstellt eine neue `TaskDetailViewController.cs` Datei in der Projektmappe Mit Leerstellen auffüllen. Geben Sie die **StoryboardID** als _Detail_, wie im folgenden Beispiel veranschaulicht. Dies wird später verwendet werden, um diese Ansicht in C#-Code zu laden:  
 
-    [ ![Festlegen der Storyboard-ID](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png)
+    [![Festlegen der Storyboard-ID](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
 
 9. Storyboard-Entwurfsoberfläche sollte jetzt wie folgt aussehen (der Stamm-View-Controller Navigation Elementtitel geändert wurde "Mühsam Board"):
 
-    [ ![Entwurfsoberfläche](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png)  
+    [![Entwurfsoberfläche](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png#lightbox)  
 
 
 
@@ -106,11 +106,11 @@ Nachdem die Ansichten und segues werden konfiguriert, die Elemente der Benutzero
 
 Wählen Sie zunächst die Prototyp Zelle in der Master-View-Controller und Festlegen der **Bezeichner** als _Taskcell_, wie unten gezeigt. Dies wird später im Code verwendet werden, um eine Instanz dieser UITableViewCell abzurufen:
 
- [ ![den zellenbezeichner festlegen](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png)
+ [![den zellenbezeichner festlegen](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png#lightbox)
 
 Auf diese Weise müssen Sie als Nächstes erstellen eine Schaltfläche, die neue Vorgänge hinzufügen, wie unten gezeigt:
 
-[ ![Schaltfläche-Element in der Navigationsleiste](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png)
+[![Schaltfläche-Element in der Navigationsleiste](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
 
 Führen Sie folgende Schritte aus: 
 
@@ -123,7 +123,7 @@ Führen Sie folgende Schritte aus:
 
 Die Detailansicht erforderlich viel mehr Arbeit. Anzeigen von Tabellenzellen müssen auf die Ansicht gezogen und dann mit den Bezeichnungen, Text-Ansichten und Schaltflächen aufgefüllt werden. Der folgende Screenshot zeigt die Benutzeroberfläche nicht mehr benötigen, mit zwei Abschnitten. Ein Abschnitt verfügt über drei Zellen, drei Bezeichnungen, zwei Textfelder und ein wechseln, während im zweite Abschnitt über eine Zelle mit zwei Schaltflächen hat:
 
- [ ![Layouts für Auftragsdetails anzeigen](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png)
+ [![Layouts für Auftragsdetails anzeigen](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png#lightbox)
 
 Die Schritte zum Erstellen des Layouts abgeschlossen sind:
 
@@ -137,7 +137,7 @@ Wählen Sie die Tabellenansicht, und öffnen Sie die **Eigenschaft Pad**. Aktual
 Wählen Sie im oberen Abschnitt und unter **Eigenschaften > Tabellenabschnitt** ändern **Zeilen** auf _3_, wie unten gezeigt:
 
 
- [ ![den oberen Abschnitt festlegen auf drei Zeilen](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png)
+ [![den oberen Abschnitt festlegen auf drei Zeilen](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png#lightbox)
 
 Für jede Zelle öffnen die **Eigenschaften Pad** und festlegen:
 
@@ -152,7 +152,7 @@ Legen Sie im zweiten Abschnitt **Zeilen** auf _1_ und ziehen Sie den unteren Zie
 -  **Festlegen des Hintergrunds**: _Löschen der Farbe_ .
 -  Ziehen Sie zwei Schaltflächen auf die Zelle, und legen Sie ihre Titel entsprechend (d. h. _speichern_ und _löschen_), wie unten gezeigt:
 
-   [ ![Festlegen von zwei Schaltflächen im unteren Abschnitt](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png)
+   [![Festlegen von zwei Schaltflächen im unteren Abschnitt](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
 
 An diesem Punkt können Sie auch Einschränkungen auf die Zellen und Steuerelemente, um sicherzustellen, dass ein Layout für adaptive festlegen möchten.
 
@@ -342,7 +342,7 @@ AddButton.Clicked += (sender, e) => CreateTask ();
 
 Somit ist das Storyboard-Beispiel – die fertige app sieht folgendermaßen aus:
 
-[ ![Fertige app](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png)
+[![Fertige app](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png#lightbox)
 
 Das Beispiel veranschaulicht:
 
@@ -356,4 +356,4 @@ Das Beispiel veranschaulicht:
 ## <a name="related-links"></a>Verwandte Links
 
 - [StoryboardTable (Beispiel)](https://developer.xamarin.com/samples/monotouch/StoryboardTable/)
-- [Einführung in die Storyboards](~/ios/user-interface/storyboards/index.md)
+- [Einführung in Storyboards](~/ios/user-interface/storyboards/index.md)

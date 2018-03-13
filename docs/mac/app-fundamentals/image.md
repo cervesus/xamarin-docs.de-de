@@ -3,16 +3,16 @@ title: Bilder
 description: "In diesem Artikel wird das Arbeiten mit Bildern und Symbolen in einer Anwendung Xamarin.Mac behandelt. Erstellen und Verwalten der Images erforderlich, um das Symbol für Ihre Anwendung erstellen und Verwenden von Bildern in C#-Code und Xcodes Benutzeroberflächen-Generator beschrieben."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: f12b2af0c9325796db63fcd65af135f54277ece0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d8098afea87765166db8318b76adf250818a0a6f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="images"></a>Bilder
 
@@ -34,7 +34,7 @@ Es gibt mehrere Möglichkeiten dieses Abbilds verwendete Ressourcen in einer Anw
 
 Darüber hinaus bietet MacOS einen Satz von vordefinierte Images, die in der gesamten Anwendung verwendet werden kann.
 
-[![Führen Sie ein Beispiel für die App](image-images/intro01.png "führen Sie ein Beispiel der app")](image-images/intro01-large.png)
+[![Führen Sie ein Beispiel für die App](image-images/intro01.png "führen Sie ein Beispiel der app")](image-images/intro01-large.png#lightbox)
 
 In diesem Artikel werden die Grundlagen der Arbeit mit Bildern und Symbolen in einer Anwendung Xamarin.Mac eingegangen. Wird mit hoher vorgeschlagen, dass Sie über arbeiten die [Hello, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Benutzeroberflächen-Generator](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) und [Steckdosen und Aktionen](~/mac/get-started/hello-mac.md#Outlets_and_Actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die in diesem Artikel verwendet werden.
 
@@ -59,18 +59,18 @@ Wie bereits erwähnt, ein **Asset Kataloge Image legt** enthalten alle Versionen
     ![Auswählen der Assets.xcassets](image-images/imageset01.png "der Assets.xcassets auswählen")
 2. Mit der rechten Maustaste auf die **Inventarliste** , und wählen Sie **neue Bildersatz**: 
 
-    [![Hinzufügen eines neuen Image Satzes](image-images/imageset02.png "einen neuer Satz hinzufügen")](image-images/imageset02-large.png)
+    [![Hinzufügen eines neuen Image Satzes](image-images/imageset02.png "einen neuer Satz hinzufügen")](image-images/imageset02-large.png#lightbox)
 3. Wählen Sie die neue Image und der Editor wird angezeigt: 
 
-    [![Auswählen der neuen Bildersatz](image-images/imageset03.png "den neuen Satz von Image auswählen")](image-images/imageset03-large.png)
+    [![Auswählen der neuen Bildersatz](image-images/imageset03.png "den neuen Satz von Image auswählen")](image-images/imageset03-large.png#lightbox)
 4. Hier können wir für jeden der verschiedenen Geräten und Lösungen erforderlich in Bildern ziehen. 
 5. Doppelklicken Sie auf die neue Bildersatz **Namen** in der **Inventarliste** zu bearbeiten: 
 
-    [![Bearbeiten das Bild Satzname](image-images/imageset04.png "bearbeiten das Bild Satzname")](image-images/imageset04-large.png)
+    [![Bearbeiten das Bild Satzname](image-images/imageset04.png "bearbeiten das Bild Satzname")](image-images/imageset04-large.png#lightbox)
     
 Eine spezielle **Vektor** Klasse hinzugefügt wurden **Image legt** , die uns ermöglicht, enthalten eine _PDF_ Vektorbild in die Casset stattdessen auch einzelne Bitmapdateien am formatiert die verschiedenen Lösungen. Mit dieser Methode an, Sie geben Sie eine einzelnen Vektor-Datei für die  **@1x**  Auflösung (formatiert als Vektor PDF-Datei) und die  **@2x**  und  **@3x**  Versionen der Datei zum Zeitpunkt der Kompilierung generiert und in der Anwendung-Paket enthalten.
 
-[![Festlegen, welches Bild-Editor-Benutzeroberfläche](image-images/imageset05.png "festlegen, welches Bild-Editor-Benutzeroberfläche")](image-images/imageset05-large.png)
+[![Festlegen, welches Bild-Editor-Benutzeroberfläche](image-images/imageset05.png "festlegen, welches Bild-Editor-Benutzeroberfläche")](image-images/imageset05-large.png#lightbox)
 
 Angenommen, Sie enthalten eine `MonkeyIcon.pdf` Datei wie der Vektor, der eine Asset-Katalog mit einer Auflösung von 150px x 150px, Bitmap für die folgenden Objekte im endgültigen app-Paket hinzugefügt werden, würde bei der Kompilierung:
 
@@ -115,7 +115,7 @@ Vor der Verwendung einer Bilddatei in der Xamarin.Mac-Anwendung (entweder im C#-
     ![Hinzufügen einer Datei](image-images/add01.png "Hinzufügen einer Datei")
 2. Aus der **Hinzufügen von Dateien** wählen Sie im Dialogfeld die Bilder dem Projekt hinzufügen-Dateien wählen `BundleResource` für die **Außerkraftsetzung Buildvorgang** , und klicken Sie auf die **öffnen** Schaltfläche:
 
-    [![Auswählen der zu hinzuzufügenden Dateien](image-images/add02.png "Auswählen der zu hinzuzufügenden Dateien")](image-images/add02-large.png)
+    [![Auswählen der zu hinzuzufügenden Dateien](image-images/add02.png "Auswählen der zu hinzuzufügenden Dateien")](image-images/add02-large.png#lightbox)
 3. Wenn die Dateien nicht bereits Bestandteil der **Ressourcen** Ordner, Sie werden gefragt, ob Sie möchten **Kopie**, **verschieben** oder **Link** Dateien. Auszuwählen, das alle Farben in der Regel, die Ihren Anforderungen **Kopie**:
 
     ![Auswählen der Aktion hinzufügen](image-images/add04.png "Add-Aktion auswählen")
@@ -164,13 +164,13 @@ Um ein Bild im Benutzeroberflächen-Generator zu verwenden, führen Sie folgende
      ![Eine Bildressource in der Projektmappe Pad](image-images/ib00.png "können eine Bildressource in der Projektmappe mit Leerstellen auffüllen")
 2. Doppelklicken Sie auf die **Main.storyboard** Datei, um ihn zur Bearbeitung in der Benutzeroberflächen-Generator zu öffnen: 
 
-     [![Bearbeiten die Haupt-Storyboard](image-images/ib01.png "Haupt-Storyboard bearbeiten")](image-images/ib01-large.png)
+     [![Bearbeiten die Haupt-Storyboard](image-images/ib01.png "Haupt-Storyboard bearbeiten")](image-images/ib01-large.png#lightbox)
 3. Ziehen Sie ein Element der Benutzeroberfläche, die Bilder auf der Entwurfsoberfläche akzeptiert (z. B. eine **Image Symbolleistenelement**): 
 
      ![Bearbeiten von Symbolleistenelement](image-images/ib02.png "Symbolleistenelement bearbeiten")
 4. Wählen Sie das Bild, das Sie hinzugefügt haben die **Ressourcen** Ordner in der **ImageName** Dropdownliste: 
 
-     [![Auswählen eines Bildes für ein Symbolleistenelement](image-images/ib03.png "Auswählen eines Bildes für ein Symbolleistenelement")](image-images/ib03-large.png)
+     [![Auswählen eines Bildes für ein Symbolleistenelement](image-images/ib03.png "Auswählen eines Bildes für ein Symbolleistenelement")](image-images/ib03-large.png#lightbox)
 5. Das ausgewählte Bild wird in der Entwurfsoberfläche angezeigt werden: 
 
      ![Das Bild angezeigt wird, in dem Symbolleisten-Editor](image-images/ib04.png "das Bild angezeigt wird, in dem Symbolleisten-Editor")
@@ -205,7 +205,7 @@ Basierend auf den Entwurf der app MacOS kann es möglicherweise vorkommen, dass 
 
 Um diesen Effekt zu erzielen, wechseln die _Rendermodus_ von Ihrer Imagemedienobjekt auf **Vorlagenimage**:
 
-[![Festlegen eines vorlagenimages](image-images/templateimage01.png "Festlegen eines vorlagenimages")](image-images/templateimage01-large.png)
+[![Festlegen eines vorlagenimages](image-images/templateimage01.png "Festlegen eines vorlagenimages")](image-images/templateimage01-large.png#lightbox)
 
 Weisen Sie die Xcode-Schnittstelle-Generator Standardimage-Medienobjekt an ein Benutzeroberflächensteuerelement:
 
@@ -337,7 +337,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 Beispielausgabe:
 
-[![Ein Beispiel für das Anzeigen eines Bilds in eine app](image-images/tables01.png "ein Beispiel für das Anzeigen eines Bilds in einer app")](image-images/tables01-large.png)
+[![Ein Beispiel für das Anzeigen eines Bilds in eine app](image-images/tables01.png "ein Beispiel für das Anzeigen eines Bilds in einer app")](image-images/tables01-large.png#lightbox)
 
 Weitere Informationen zum Arbeiten mit Tabellensichten finden Sie unter unsere [Tabellensichten](~/mac/user-interface/table-view.md) Dokumentation.
 
@@ -440,7 +440,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 Beispielausgabe:
 
-[![Ein Beispiel für ein Bild angezeigt wird, in einer Gliederungsansicht](image-images/outline01.png "ein Beispiel für ein Bild in einer Gliederungsansicht angezeigt wird")](image-images/outline01-large.png)
+[![Ein Beispiel für ein Bild angezeigt wird, in einer Gliederungsansicht](image-images/outline01.png "ein Beispiel für ein Bild in einer Gliederungsansicht angezeigt wird")](image-images/outline01-large.png#lightbox)
 
 Weitere Informationen zum Arbeiten mit Gliederung Ansichten finden Sie unter unsere [Gliederung Ansichten](~/mac/user-interface/outline-view.md) Dokumentation.
 
@@ -458,4 +458,4 @@ Dieser Artikel hat eine ausführliche Übersicht über das Arbeiten mit Bildern 
 - [Tabellenansichten](~/mac/user-interface/table-view.md)
 - [Gliederung-Ansichten](~/mac/user-interface/outline-view.md)
 - [Mac OS X-Richtlinien für menschliche Benutzeroberfläche](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
-- [Informationen zu hoher Auflösung für OS X](https://developer.apple.com/library/content/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Introduction/Introduction.html)
+- [Informationen über hohe Auslösung für OS X](https://developer.apple.com/library/content/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Introduction/Introduction.html)

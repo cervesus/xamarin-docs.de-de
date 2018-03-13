@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 21e35b056293e422b577b0ee8b51e8c43dbbf07d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ccee60b5d953987e858ef592d005cec9803b8b96
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-storyboards"></a>Einführung in die Storyboards
 
@@ -20,7 +20,7 @@ _Dieser Artikel bietet eine Einführung in das Arbeiten mit Storyboards in einer
 
 Storyboards ermöglichen es Ihnen, eine Benutzeroberfläche für Ihre app Xamarin.Mac entstehen, enthält nicht nur die Definitionen und Steuerelemente, aber enthält auch die Links zwischen verschiedenen Fenstern (über segues) und Ansichtszustände.
 
-[ ![](images/intro01.png "Ein Beispiel für die Benutzeroberfläche in Xcode")](images/intro01.png)
+[![](images/intro01.png "Ein Beispiel für die Benutzeroberfläche in Xcode")](images/intro01.png#lightbox)
 
 Dieser Artikel bietet eine Einführung in das Storyboards verwenden, um eine Xamarin.Mac-app-Benutzeroberfläche zu definieren.
 
@@ -36,11 +36,11 @@ Mithilfe von Storyboards können aller eine Xamarin.Mac-app-Benutzeroberfläche 
 
 Wie bereits erwähnt, ein Storyboard definiert alle für die einer bestimmten app aufgeschlüsselt nach Funktionsbereich eine Übersicht über die Benutzeroberfläche der _View Controller_. In Xcodes Benutzeroberflächen-Generator, jedes dieser Controller befindet sich in einem eigenen _Szene_.
 
-[ ![](images/intro02.png "Ein Beispiel-View-controller")](images/intro02.png)
+[![](images/intro02.png "Ein Beispiel-View-controller")](images/intro02.png#lightbox)
 
 Jede Szene stellt einer angegebenen Ansicht und Controller-Paar Ansicht mit einem Satz von Linien (so genannte Segues), die jede Szene in der Benutzeroberfläche, also mit ihren Beziehungen zu verbinden. Einige Segues definieren, wie eine View-Controller enthält eine oder mehrere untergeordnete Ansichten oder View-Controller. Andere Segues Übergänge zwischen View-Controller (z. B. das Anzeigen eines Popover oder eines Dialogfelds) definieren. 
 
-[ ![](images/intro03.png "Ein Beispiel segue")](images/intro03.png)
+[![](images/intro03.png "Ein Beispiel segue")](images/intro03.png#lightbox)
 
 Der wichtigste zu beachten ist, dass jede Segue den Datenfluss eine Form von Daten zwischen dem angegebenen Element der Benutzeroberfläche der Anwendung darstellt.
 
@@ -50,7 +50,7 @@ Der wichtigste zu beachten ist, dass jede Segue den Datenfluss eine Form von Dat
 
 View-Controller definieren die Beziehungen zwischen einer bestimmten Ansicht der Informationen innerhalb einer app für Mac und des Datenmodells, die diese Informationen bereitstellt. Jedes oberster Ebene Szene in das Storyboard stellt eine View-Controller in der Xamarin.Mac-app-Code dar.
 
-[ ![](images/intro04.png "Ein Beispiel für verzögert View-controller")](images/intro04.png)
+[![](images/intro04.png "Ein Beispiel für verzögert View-controller")](images/intro04.png#lightbox)
 
 Auf diese Weise ist jeder View-Controller eine unabhängige, wiederverwendbare Kopplung visuelle Darstellung von den Informationen (Ansicht) und die Logik und die Informationen zu steuern.
 
@@ -115,8 +115,8 @@ Dieser Artikel hat einen kurzen Blick auf das Arbeiten mit Storyboards in einer 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Hello, Mac (Beispiel)](https://developer.xamarin.com/samples/mac/Hello_Mac/)
+- [„Hallo, Mac“-Beispiel](https://developer.xamarin.com/samples/mac/Hello_Mac/)
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
 - [Arbeiten mit Fenstern](~/mac/user-interface/window.md)
-- [OS X Human Richtlinien zur Benutzeroberfläche](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Einführung in Windows](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

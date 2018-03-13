@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2017
-ms.openlocfilehash: 66bf9c215e3d30687fa8037220b8b35409ca285d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 49e7c00feb697d25d61a5e09b051c41945c260c6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="nuget-projects-nugetizer-3000"></a>NuGet-Projekte (Nugetizer 3000)
 
@@ -21,14 +21,18 @@ _Erstellen Sie automatisch NuGet-Pakete zum Freigeben von Code plattformübergre
 Es ist möglich, zum automatischen Erstellen von NuGet-Pakete zum Freigeben von Code plattformübergreifend mithilfe der _Nugetizer 3000_. Dies ermöglicht die ist möglich, Erstellen von NuGet-Pakete aus vorhandenen Bibliotheksprojekte oder durch Erstellen eines neuen **Bibliotheksprojekt für mehrere Plattformen**.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
 Die Nugetizer 3000 ist im Lieferumfang von Visual Studio für Mac 6.2.
+
+[![](images/mulitplatform-library-sml.png "Erstellen Sie neue Zeitfenster für die Bibliothek für mehrere Plattformen")](images/mulitplatform-library.png#lightbox)
+
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-<a name="to-use-the-nugetizer-3000-in-visual-studio-please-download-and-run-the-vsix-installerhttpbitlynugetizer-2017"></a>Um die Nugetizer 3000 in Visual Studio verwenden, geben Sie [herunterzuladen, und führen Sie das VSIX-Installationsprogramm](http://bit.ly/nugetizer-2017).
+
+Um die Nugetizer 3000 in Visual Studio verwenden, geben Sie [herunterzuladen, und führen Sie das VSIX-Installationsprogramm](http://bit.ly/nugetizer-2017).
+
 -----
 
-
-
-[ ![](images/mulitplatform-library-sml.png "Erstellen Sie neue Zeitfenster für die Bibliothek für mehrere Plattformen")](images/mulitplatform-library.png)
+## <a name="building-nuget-packages"></a>Erstellen von NuGet-Pakete
 
 Nach der Konfiguration gibt jedem Build des Projekts ein vollständiges NuGet-Paket, der zum Freigeben von Code intern mit anderen apps verwendet oder in hochgeladen werden kann [NuGet.org](https://www.nuget.org).
 

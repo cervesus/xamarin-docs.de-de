@@ -4,14 +4,15 @@ description: "Verwendung von XAML-Markuperweiterungen bilden eine wichtige Funkt
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 7aea7b1536efc952378c6a1df63640af191f1ebe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1c5c4c30a7e506e19fc4dc0728fb55851ec4911f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Teil 3. Verwendung von XAML-Markuperweiterungen
 
@@ -298,7 +299,7 @@ So sieht die letzte vollständige XAML-Datei mit drei Schaltflächen, die Zugrif
 
 Die Screenshots überprüfen, einheitliches Aussehen und die Formatvorlage plattformabhängige:
 
-[ ![](xaml-markup-extensions-images/sharedresources.png "Gestalteten Steuerelementen")](xaml-markup-extensions-images/sharedresources-large.png "gestalteten Steuerelementen")
+[![](xaml-markup-extensions-images/sharedresources.png "Gestalteten Steuerelementen")](xaml-markup-extensions-images/sharedresources-large.png#lightbox "gestalteten Steuerelementen")
 
 Zwar am häufigsten verwendeten definieren die `Resources` Auflistung am oberen Rand der Seite ", sollten Sie bedenken, die `Resources` Eigenschaft wird definiert, indem `VisualElement`, und Sie können `Resources` Auflistungen in andere Elemente auf der Seite. Versuchen Sie es z. B. mit dem Hinzufügen der `StackLayout` in diesem Beispiel:
 
@@ -436,7 +437,7 @@ Sowohl diese Namespacedeklarationen befinden sich die **StaticConstantsPage** Be
 
 Die Größe der resultierenden `BoxView` relativ zu dem Bildschirm ist plattformabhängig:
 
- [ ![](xaml-markup-extensions-images/staticconstants.png "Steuerelemente, die mithilfe von X: statische Markuperweiterung")](xaml-markup-extensions-images/staticconstants-large.png "Steuerelementen mithilfe von X: Static-Markuperweiterung")
+ [![](xaml-markup-extensions-images/staticconstants.png "Steuerelemente, die mithilfe von X: statische Markuperweiterung")](xaml-markup-extensions-images/staticconstants-large.png#lightbox "Steuerelementen mithilfe von X: Static-Markuperweiterung")
 
 ## <a name="other-standard-markup-extensions"></a>Andere Standard Markuperweiterungen
 
@@ -552,7 +553,7 @@ Die wichtigste Lektion, Sie von diesem Beispiel ergreifen, ist vielleicht die Sy
 
 Hier wird das Programm ausgeführt wird:
 
-[ ![](xaml-markup-extensions-images/relativelayout.png "Relative Layouts mit den Einschränkungen")](xaml-markup-extensions-images/relativelayout-large.png "Relative Layout mithilfe von Einschränkungen")
+[![](xaml-markup-extensions-images/relativelayout.png "Relative Layouts mit den Einschränkungen")](xaml-markup-extensions-images/relativelayout-large.png#lightbox "Relative Layout mithilfe von Einschränkungen")
 
 ## <a name="summary"></a>Zusammenfassung
 

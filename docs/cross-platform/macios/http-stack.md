@@ -8,13 +8,15 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 06/12/2017
-ms.openlocfilehash: d4fce635b26b0c367e836e4ec41d4f51a10b9c35
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: eff096b1dca15b9b11038a599987f632bca2352f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
-# <a name="httpclient-stack-selector"></a>HttpClient-Stack-Selektor
+# <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient-Stapel und SSL/TLS-Implementierung Selektor für iOS/macOS
+
+## <a name="httpclient-stack-selector"></a>HttpClient-Stack-Selektor
 
 Für Xamarin.iOS Xamarin.tvOS und Xamarin.Mac verfügbar: steuert die `HttpClient` Implementierung zu verwenden. Ein "HttpClient" sein, indem ist die Standardeinstellung weiterhin `HttpWebRequest`, während Sie jetzt optional zu einer Implementierung wechseln können, die native iOS, tvos. außerdem wurden oder MacOS-Transporte verwendet (`NSUrlSession` oder `CFNetwork` je nach Betriebssystem). Der Vorteil ist, kleinere Binärdateien und schnellere Downloads, der Nachteil besteht darin, dass die Ereignisschleife ausgeführt werden, damit asynchrone Vorgänge ausgeführt werden muss.
 
@@ -22,7 +24,7 @@ Projekte verweisen müssen die **System.Net.Http** Assembly.
 
 <a name="Selecting-a-HttpClient-Stack" />
 
-## <a name="selecting-a-httpclient-stack"></a>Auswählen eines Stapels "HttpClient"
+### <a name="selecting-a-httpclient-stack"></a>Auswählen eines Stapels "HttpClient"
 
 Die von Ihrer Anwendung verwendeten "HttpClient" anpassen:
 
@@ -30,19 +32,19 @@ Die von Ihrer Anwendung verwendeten "HttpClient" anpassen:
 2. Wechseln Sie zu der **erstellen** Einstellungen für das Projekt (z. B. **iOS-Build** für eine app Xamarin.iOS).
 3. Aus der **"HttpClient" Implementierung** Dropdownliste, wählen Sie die "HttpClient" Geben Sie als eines der folgenden: **verwaltet**, **CFNetwork** oder **NSUrlSession**.
 
-[ ![Wählen Sie "HttpClient" Implementierung von verwalteten CFNetwork oder NSUrlSession](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png)
+[![Wählen Sie "HttpClient" Implementierung von verwalteten CFNetwork oder NSUrlSession](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png#lightbox)
 
 <a name="Managed" />
 
-## <a name="managed-default"></a>Verwaltete (Standard)
+### <a name="managed-default"></a>Verwaltete (Standard)
 
 Der verwaltete Handler ist der vollständig verwalteter HttpClient-Handler, der mit früheren Version von Xamarin geliefert wurde.
 
-### <a name="pros"></a>IT-Spezialisten:
+#### <a name="pros"></a>IT-Spezialisten:
 
  - Er verfügt über die meisten kompatibel Featuresatz mit Microsoft .NET und ältere Versionen von Xamarin.
 
-### <a name="cons"></a>Nachteile:
+#### <a name="cons"></a>Nachteile:
 
  - Es ist nicht vollständig in der Apple-Betriebssysteme integriert und auf TLS 1.0 beschränkt ist.
  - Es ist in der Regel sehr viel langsamer Dinge, wie die Verschlüsselung als systemeigene APIs.
@@ -50,16 +52,16 @@ Der verwaltete Handler ist der vollständig verwalteter HttpClient-Handler, der 
 
 <a name="CFNetwork" />
 
-## <a name="cfnetwork"></a>CFNetwork
+### <a name="cfnetwork"></a>CFNetwork
 
 Der Handler CFNetwork basierende basiert auf dem systemeigenen `CFNetwork` Framework in iOS 6 und höher verfügbar.
 
-### <a name="pros"></a>IT-Spezialisten:
+#### <a name="pros"></a>IT-Spezialisten:
 
  - Systemeigene APIs verwendet für eine bessere Leistung und geringer Größe ausführbarer.
  - Unterstützung für neuere Standards wie TLS 1.2.
 
-### <a name="cons"></a>Nachteile:
+#### <a name="cons"></a>Nachteile:
 
  - Erfordert iOS 6 oder höher.
  - Für WatchOS nicht verfügbar.
@@ -67,22 +69,21 @@ Der Handler CFNetwork basierende basiert auf dem systemeigenen `CFNetwork` Frame
 
 <a name="NSUrlSession" />
 
-## <a name="nsurlsession"></a>NSUrlSession
+### <a name="nsurlsession"></a>NSUrlSession
 
 Der Handler NSURLSession basierende basiert auf dem systemeigenen `NSURLSession` Framework in iOS 7 und höher verfügbar.
 
-### <a name="pros"></a>IT-Spezialisten:
+#### <a name="pros"></a>IT-Spezialisten:
 
  - Systemeigene APIs verwendet für eine bessere Leistung und geringer Größe ausführbarer.
  - Für die aktuellsten Standards, z. B. TLS 1.2 unterstützt.
 
-### <a name="cons"></a>Nachteile:
+#### <a name="cons"></a>Nachteile:
 
  - Erfordert iOS 7 oder höher.
  - Einige "HttpClient" Features/Optionen sind nicht verfügbar.
 
-
-## <a name="programmatically-setting-the-httpmessagehandler"></a>Programmgesteuertes Festlegen der HttpMessageHandler
+### <a name="programmatically-setting-the-httpmessagehandler"></a>Programmgesteuertes Festlegen der HttpMessageHandler
 
 Neben der oben gezeigten Projektweite-Konfiguration, können Sie auch Instanziieren einer `HttpClient` und fügen die gewünschte `HttpMessageHandler` durch den Konstruktor, wie im folgenden Codeausschnitte veranschaulicht:
 
@@ -104,7 +105,7 @@ Dies ermöglicht es zu einem anderen `HttpMessageHandler` von Was deklariert wir
 <a name="Selecting-a-SSL-TLS-implementation" />
 <a name="Apple-TLS" />
 
-# <a name="ssltls-implementation-build"></a>Implementierung von SSL/TLS-build
+## <a name="ssltls-implementation-build"></a>Implementierung von SSL/TLS-build
 
 SSL (Secure Sockets Layer) und dessen Nachfolger – TLS (Transport Layer Security) bieten Unterstützung für HTTP und andere Netzwerkverbindungen über `System.Net.Security.SslStream`. Xamarin.iOS, Xamarin.tvOS oder des Xamarin.Mac `System.Net.Security.SslStream` Implementierung rufen Sie eine Apple systemeigene SSL/TLS-Implementierung anstatt die verwaltete Implementierung von Mono bereitgestellt. Systemeigene Apple-Implementierung unterstützt TLS 1.2.
 
@@ -114,7 +115,7 @@ SSL (Secure Sockets Layer) und dessen Nachfolger – TLS (Transport Layer Securi
 
 <a name="App-Transport-Security" />
 
-# <a name="app-transport-security"></a>App-Transportsicherheit
+## <a name="app-transport-security"></a>App-Transportsicherheit
 
 Apple _App Transportsicherheit_ (ATS) erzwingt, sichere Verbindungen zwischen Internet-Ressourcen (z. B. die app-Back-End-Server) und Ihre app. ATS wird sichergestellt, dass die gesamte Internetkommunikation entsprechen, um die Verbindung secure bewährte Methoden um versehentlichen Offenlegung vertraulicher Informationen entweder direkt über Ihre app oder eine Bibliothek, die es benötigt, ist das verhindern.
 
@@ -141,8 +142,6 @@ Der folgende Codeausschnitt zeigt ein Beispiel der `MtouchTlsProvider` Einstellu
 ```xml
 <MtouchTlsProvider>Default</MtouchTlsProvider>
 ```
-s
-
 
 ## <a name="related-links"></a>Verwandte Links
 

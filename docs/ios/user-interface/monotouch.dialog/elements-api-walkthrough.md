@@ -7,11 +7,11 @@ ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 19e20015d1872cbaea21dd8b8e5431981e463c33
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 19e1ab4000e473aa773bf75015ff520a1f9a96d8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---creating-an-application-using-the-elements-api"></a>Exemplarische Vorgehensweise – erstellen einer Anwendung mithilfe der API-Elemente
 
@@ -19,7 +19,7 @@ _In diesem Artikel baut auf den Informationen in der Einführung MonoTouch Dialo
 
 In dieser exemplarischen Vorgehensweise verwenden wir die MT. D-API-Elemente einen Master / Detail-Stil der Anwendung zu erstellen, eine Aufgabenliste anzeigt. Wenn der Benutzer wählt die <span class="ui"> + </span> Schaltfläche in der Navigationsleiste wird eine neue Zeile zur Tabelle für die Aufgabe hinzugefügt werden. Auswählen der zeilenupdates wird auf dem Detailbildschirm navigieren, die uns so aktualisieren Sie die Beschreibung der Aufgabe und das Fälligkeitsdatum zulässt, wie unten gezeigt:
 
- [ ![](elements-api-walkthrough-images/01-task-list-app.png "Auswählen der zeilenupdates wird zu den Detailbildschirm navigieren, die zum Aktualisieren der Beschreibung der Aufgabe und das Fälligkeitsdatum ermöglicht")](elements-api-walkthrough-images/01-task-list-app.png)
+ [![](elements-api-walkthrough-images/01-task-list-app.png "Auswählen der zeilenupdates wird zu den Detailbildschirm navigieren, die zum Aktualisieren der Beschreibung der Aufgabe und das Fälligkeitsdatum ermöglicht")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
  <a name="Elements_API_Walkthrough" />
 
@@ -72,7 +72,7 @@ public override bool FinishedLaunching (UIApplication app,
 
 Der obige Code erstellt eine Instanz von einem `RootElement` und übergibt ihn in die `DialogViewController`. Die `DialogViewController` verfügt immer über einen `RootElement` am Anfang der Hierarchie. In diesem Beispiel wird die `RootElement` wird erstellt, mit der Zeichenfolge "Aufgabenliste" die als Titel des Controllers für die Navigation Navigationsleiste dient. An diesem Punkt würde Ausführen der Anwendung den Bildschirm unten dargestellt werden:
 
- [ ![](elements-api-walkthrough-images/02-to-do-list-screen-.png "Ausführen der Anwendung wird den hier gezeigten Bildschirm vorgelegt.")](elements-api-walkthrough-images/02-to-do-list-screen-.png)
+ [![](elements-api-walkthrough-images/02-to-do-list-screen-.png "Ausführen der Anwendung wird den hier gezeigten Bildschirm vorgelegt.")](elements-api-walkthrough-images/02-to-do-list-screen-.png#lightbox)
 
 Sehen wir, wie mithilfe des MonoTouch.Dialog hierarchischen Struktur von `Sections` und `Elements` weitere Bildschirme hinzufügen.
 
@@ -148,11 +148,11 @@ Es verwendet ein `RootElement` , damit MonoTouch.Dialog würde automatisch einen
 
 Der Task Detailbildschirm selbst besteht aus zwei Abschnitten; den folgenden Abschnitten enthält ein einzelnes Element. Das erste Element wird erstellt, aus einer `EntryElement` eine bearbeitbare Zeile für der Aufgabe bereitstellen `Description` Eigenschaft. Wenn das Element ausgewählt ist, erhält eine Tastatur für die Textbearbeitung, wie unten dargestellt:
 
- [ ![](elements-api-walkthrough-images/03-create-task.png "Wenn das Element ausgewählt ist, wird eine Tastatur für die Textbearbeitung angezeigt, wie gezeigt")](elements-api-walkthrough-images/03-create-task.png)
+ [![](elements-api-walkthrough-images/03-create-task.png "Wenn das Element ausgewählt ist, wird eine Tastatur für die Textbearbeitung angezeigt, wie gezeigt")](elements-api-walkthrough-images/03-create-task.png#lightbox)
 
 Der zweite Abschnitt enthält eine `DateElement` , mit der uns die Verwaltung der Aufgabe `DueDate` Eigenschaft. Auswahl des Datums automatisch lädt eine Datumsauswahl wie gezeigt:
 
- [ ![](elements-api-walkthrough-images/04-date-picker.png "Auswahl des Datums automatisch lädt eine Datumsauswahl als")](elements-api-walkthrough-images/04-date-picker.png)
+ [![](elements-api-walkthrough-images/04-date-picker.png "Auswahl des Datums automatisch lädt eine Datumsauswahl als")](elements-api-walkthrough-images/04-date-picker.png#lightbox)
 
 Sowohl die `EntryElement` und `DateElement` Fällen (oder für ein bestimmtes Element im MonoTouch.Dialog-Dateneingabe), werden automatisch alle Änderungen an den Werten beibehalten. Wir können dadurch veranschaulichen, bearbeiten das Datum und und dann weiter navigieren hin-und zwischen dem Stamm Bildschirm und verschiedene Aufgabendetails, in denen die Werte in den Bildschirmen der Detail beibehalten werden.
 

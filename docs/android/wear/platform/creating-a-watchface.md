@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 004f7c815a1629310ba4c0f4c6f4219581a12366
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fb3a2a9e60bda2a99a719bf75d23c29d42a94bdb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-watch-face"></a>Erstellen ein Schriftbild an überwachen
 
@@ -22,11 +22,11 @@ _Dieses Handbuch erläutert, wie einen benutzerdefinierte Überwachung Gesicht-D
 
 In dieser exemplarischen Vorgehensweise wird ein grundlegende Überwachung Gesicht-Dienst erstellt, um die Grundlagen der Erstellung einer benutzerdefinierten Android Dach überwachen-Symbol zu veranschaulichen. Die anfängliche Überwachung Gesicht Dienst zeigt eine einfache digitale Überwachung, in dem die aktuelle Uhrzeit in Stunden und Minuten angezeigt: 
 
-[![Zifferblatt digitale Watch](creating-a-watchface-images/01-initial-face.png "Beispiel-Screenshot, der dem Zifferblatt der anfänglichen digitale Watch")](creating-a-watchface-images/01-initial-face.png)
+[![Zifferblatt digitale Watch](creating-a-watchface-images/01-initial-face.png "Beispiel-Screenshot, der dem Zifferblatt der anfänglichen digitale Watch")](creating-a-watchface-images/01-initial-face.png#lightbox)
 
 Nachdem diese Zifferblatt digitale Watch entwickelt und getestet wird, wird mehr Code um das upgrade auf eine ganz Zifferblatt mit drei Händen analogen Watch anspruchsvolle hinzugefügt: 
 
-[ ![Zifferblatt analogen Watch](creating-a-watchface-images/02-example-watchface.png "Beispiel-Screenshot, der dem Zifferblatt der endgültigen analogen Watch")](creating-a-watchface-images/02-example-watchface.png)
+[![Zifferblatt analogen Watch](creating-a-watchface-images/02-example-watchface.png "Beispiel-Screenshot, der dem Zifferblatt der endgültigen analogen Watch")](creating-a-watchface-images/02-example-watchface.png#lightbox)
 
 Sehen Sie sich Gesicht Services gebündelt und als Teil einer Abnutzung-app installiert werden. In den folgenden Beispielen `MainActivity` enthält lediglich den Code aus der Abnutzung app-Vorlage, damit der Überwachung Gesicht Dienst verpackt und als Teil der app auf die intelligente Überwachung bereitgestellt werden kann. Aktiviert ist, wird diese app ausschließlich als Mittel zum Abrufen des Überwachung Gesicht-Diensts in der Abnutzung Gerät (oder -Emulator) geladen dienen zum Debuggen und testen. 
 
@@ -47,11 +47,11 @@ Erstellen ein neues Android Dach Projekt mit der Bezeichnung **WatchFace** (Weit
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Dialogfeld "Neues Projekt"](creating-a-watchface-images/03-wear-project-vs-sml.png "Dach App auswählen, klicken Sie im Dialogfeld "Neues Projekt"")](creating-a-watchface-images/03-wear-project-vs.png)
+[![Dialogfeld "Neues Projekt"](creating-a-watchface-images/03-wear-project-vs-sml.png "Dach App auswählen, klicken Sie im Dialogfeld "Neues Projekt"")](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Dialogfeld "Neues Projekt"](creating-a-watchface-images/03-wear-project-xs-sml.png "Dach App auswählen, klicken Sie im Dialogfeld "Neues Projekt"")](creating-a-watchface-images/03-wear-project-xs.png)
+[![Dialogfeld "Neues Projekt"](creating-a-watchface-images/03-wear-project-xs-sml.png "Dach App auswählen, klicken Sie im Dialogfeld "Neues Projekt"")](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
 
 -----
 
@@ -60,11 +60,11 @@ Legen Sie den Paketnamen auf `com.xamarin.watchface`:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Packen Sie die namenseinstellung](creating-a-watchface-images/04-package-name-vs.png "legen den Paketnamen com.xamarin.watchface fest")](creating-a-watchface-images/04-package-name-vs.png)
+[![Packen Sie die namenseinstellung](creating-a-watchface-images/04-package-name-vs.png "legen den Paketnamen com.xamarin.watchface fest")](creating-a-watchface-images/04-package-name-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Packen Sie die namenseinstellung](creating-a-watchface-images/04-package-name-xs.png "legen den Paketnamen com.xamarin.watchface fest")](creating-a-watchface-images/04-package-name-xs.png)
+[![Packen Sie die namenseinstellung](creating-a-watchface-images/04-package-name-xs.png "legen den Paketnamen com.xamarin.watchface fest")](creating-a-watchface-images/04-package-name-xs.png#lightbox)
 
 -----
 
@@ -72,13 +72,13 @@ Legen Sie den Paketnamen auf `com.xamarin.watchface`:
 
 Darüber hinaus einen Bildlauf nach unten, und aktivieren Sie die **INTERNET** und **WAKE_LOCK** Berechtigungen: 
 
-[ ![Erforderliche Berechtigungen für](creating-a-watchface-images/05-required-permissions-vs.png "Berechtigungen INTERNET aktivieren "und" WAKE_LOCK")](creating-a-watchface-images/05-required-permissions-vs.png)
+[![Erforderliche Berechtigungen für](creating-a-watchface-images/05-required-permissions-vs.png "Berechtigungen INTERNET aktivieren "und" WAKE_LOCK")](creating-a-watchface-images/05-required-permissions-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Legen Sie die mindestens Android-Version auf **Android 5.1 (API-Ebene 22)**. Zudem ermöglichen die **Internet** und **WakeLock** Berechtigungen:
 
-[ ![Erforderliche Berechtigungen für](creating-a-watchface-images/05-required-permissions-xs.png "Berechtigungen Internet aktivieren "und" WakeLock")](creating-a-watchface-images/05-required-permissions-xs.png)
+[![Erforderliche Berechtigungen für](creating-a-watchface-images/05-required-permissions-xs.png "Berechtigungen Internet aktivieren "und" WakeLock")](creating-a-watchface-images/05-required-permissions-xs.png#lightbox)
 
 -----
 
@@ -91,24 +91,24 @@ Im nächsten Schritt heruntergeladen [preview.png](creating-a-watchface-images/p
 
 Starten Sie den NuGet-Paket-Manager (in Visual Studio mit der Maustaste **Verweise** in der **Projektmappen-Explorer** , und wählen Sie **NuGet-Pakete verwalten...** ). Das Projekt aktualisieren, um die aktuellste stabile Version des **Xamarin.Android.Wear**: 
 
-[ ![Hinzufügen von NuGet Package Manager](creating-a-watchface-images/06-add-wear-pkg-vs-sml.png "Xamarin.Android.Wear Paket hinzufügen")](creating-a-watchface-images/06-add-wear-pkg-vs.png)
+[![Hinzufügen von NuGet Package Manager](creating-a-watchface-images/06-add-wear-pkg-vs-sml.png "Xamarin.Android.Wear Paket hinzufügen")](creating-a-watchface-images/06-add-wear-pkg-vs.png#lightbox)
 
 Als Nächstes If **Xamarin.Android.Support.v13** ist installiert, deinstallieren Sie es:
 
-[ ![Entfernen von NuGet Package Manager](creating-a-watchface-images/07-uninstall-v13-sml.png "Xamarin.Support.v13 entfernen")](creating-a-watchface-images/07-uninstall-v13.png)
+[![Entfernen von NuGet Package Manager](creating-a-watchface-images/07-uninstall-v13-sml.png "Xamarin.Support.v13 entfernen")](creating-a-watchface-images/07-uninstall-v13.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Starten Sie den NuGet-Paket-Manager (in Visual Studio für Mac, mit der Maustaste **Pakete** in der **Lösung Bereich** , und wählen Sie **Pakete hinzufügen...** ). Das Projekt aktualisieren, um die aktuellste stabile Version des **Xamarin.Android.Wear**: 
 
-[ ![Hinzufügen von NuGet Package Manager](creating-a-watchface-images/06-add-wear-pkg-xs-sml.png "Xamarin.Android.Wear Paket hinzufügen")](creating-a-watchface-images/06-add-wear-pkg-xs.png)
+[![Hinzufügen von NuGet Package Manager](creating-a-watchface-images/06-add-wear-pkg-xs-sml.png "Xamarin.Android.Wear Paket hinzufügen")](creating-a-watchface-images/06-add-wear-pkg-xs.png#lightbox)
 
 -----
 
 
 Erstellen und Ausführen der app auf einem Abnutzung Gerät oder Emulator (Weitere Informationen hierzu finden Sie unter der [Einstieg](~/android/wear/get-started/index.md) Handbuch). Der folgende Bildschirm für die app sollte auf dem Gerät Abnutzung angezeigt werden:
 
-[ ![App-Screenshot](creating-a-watchface-images/08-app-screen.png "App-Bildschirm auf Abnutzung Gerät")](creating-a-watchface-images/08-app-screen.png)
+[![App-Screenshot](creating-a-watchface-images/08-app-screen.png "App-Bildschirm auf Abnutzung Gerät")](creating-a-watchface-images/08-app-screen.png#lightbox)
 
 An diesem Punkt verfügt grundlegende Abnutzung-app nicht Überwachungsfenster Gesicht Funktionalität, da es keinen noch eine Überwachung Gesicht dienstimplementierung bereitstellt. Dieser Dienst wird als Nächstes hinzugefügt werden. 
 
@@ -117,7 +117,7 @@ An diesem Punkt verfügt grundlegende Abnutzung-app nicht Überwachungsfenster G
 
 Android Abnutzung implementiert beobachten gesichtsabbildungen über die `CanvasWatchFaceService` Klasse. `CanvasWatchFaceService` stammt aus `WatchFaceService`, die selbst stammt aus `WallpaperService` wie im folgenden Diagramm dargestellt: 
 
-[ ![Vererbung Diagramm](creating-a-watchface-images/09-inheritance-diagram-sml.png "CanvasWatchFaceService Vererbung-Diagramm")](creating-a-watchface-images/09-inheritance-diagram.png)
+[![Vererbung Diagramm](creating-a-watchface-images/09-inheritance-diagram-sml.png "CanvasWatchFaceService Vererbung-Diagramm")](creating-a-watchface-images/09-inheritance-diagram.png#lightbox)
 
 `CanvasWatchFaceService` enthält eine geschachtelte `CanvasWatchFaceService.Engine`; instanziiert einen `CanvasWatchFaceService.Engine` -Objekt, das von dem Zifferblatt der Uhr zeichnen die eigentliche Arbeit übernimmt. `CanvasWatchFaceService.Engine` stammt aus `WallpaperService.Engine` wie in der Abbildung oben gezeigt. 
 
@@ -317,11 +317,11 @@ Legen Sie diese Datei Buildaktion auf **AndroidResource**:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Buildvorgang](creating-a-watchface-images/10-android-resource-vs.png "Satz Buildaktion auf AndroidResource")](creating-a-watchface-images/10-android-resource-vs.png)
+[![Buildvorgang](creating-a-watchface-images/10-android-resource-vs.png "Satz Buildaktion auf AndroidResource")](creating-a-watchface-images/10-android-resource-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Buildvorgang](creating-a-watchface-images/10-android-resource-xs.png "Satz Buildaktion auf AndroidResource")](creating-a-watchface-images/10-android-resource-xs.png)
+[![Buildvorgang](creating-a-watchface-images/10-android-resource-xs.png "Satz Buildaktion auf AndroidResource")](creating-a-watchface-images/10-android-resource-xs.png#lightbox)
 
 -----
 
@@ -342,13 +342,13 @@ Erstellen und Bereitstellen der app auf dem Gerät Abnutzung. Daraufhin sollte d
 
 4.  Wählen Sie die **Xamarin Beispiel** beobachten Gesicht (auf der rechten Seite dargestellt): 
 
-    [ ![Auswahl einer Watchface](creating-a-watchface-images/11-watchface-picker.png "Wischen Zifferblatt der Xamarin-Beispiel Watch suchen")](creating-a-watchface-images/11-watchface-picker.png)
+    [![Auswahl einer Watchface](creating-a-watchface-images/11-watchface-picker.png "Wischen Zifferblatt der Xamarin-Beispiel Watch suchen")](creating-a-watchface-images/11-watchface-picker.png#lightbox)
 
 5.  Tippen Sie auf die **Xamarin Beispiel** beobachten Fläche, um es auszuwählen. 
 
 Dadurch werden das Zifferblatt der Überwachung des Geräts für die benutzerdefinierte Überwachung Gesicht bisher implementierten nutzungsdiensts Abnutzung geändert: 
 
-[ ![Zifferblatt digitale Watch](creating-a-watchface-images/12-digital-watchface.png "benutzerdefinierte digitale Überwachung auf Abnutzung Gerät ausgeführt")](creating-a-watchface-images/12-digital-watchface.png)
+[![Zifferblatt digitale Watch](creating-a-watchface-images/12-digital-watchface.png "benutzerdefinierte digitale Überwachung auf Abnutzung Gerät ausgeführt")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
 
 Dies ist ein Schriftbild an relativ einfach gehalten überwachen, da die Implementierung der app so minimal ist (z. B. dieser umfasst jedoch nicht überwachen Gesicht Hintergrund und ihn nicht aufrufen `Paint` Anti-Aliasing-Methoden, um die Darstellung zu verbessern). Es jedoch die minimalen-Funktionalität implementieren, die zum Erstellen eines benutzerdefinierten Überwachungsfenster Gesichts erforderlich ist. 
 
@@ -476,7 +476,7 @@ Application.Context.UnregisterReceiver (timeZoneReceiver);
 
 Erstellen und Bereitstellen der app auf dem Gerät Abnutzung erneut aus. Überwachungsfenster Gesicht Auswahl als vor dem Zifferblatt der Überwachung auswählen. In der Vorschau der Auswahl einer Überwachung wird auf der linken Seite angezeigt, und neue Überwachung Schriftart wird auf der rechten Seite angezeigt:
 
-[ ![Zifferblatt analogen Watch](creating-a-watchface-images/13-analog-watchface.png "verbessert analogen Fläche in der Auswahl und auf Geräten")](creating-a-watchface-images/13-analog-watchface.png)
+[![Zifferblatt analogen Watch](creating-a-watchface-images/13-analog-watchface.png "verbessert analogen Fläche in der Auswahl und auf Geräten")](creating-a-watchface-images/13-analog-watchface.png#lightbox)
 
 In dieser Abbildung wird der zweite Zeiger einmal pro Sekunde verschoben. Wenn Sie diesen Code auf einem Gerät Abnutzung ausführen, wird der zweite Zeiger gelangt der Apple Watch ambient-Modus ausgeblendet.
 

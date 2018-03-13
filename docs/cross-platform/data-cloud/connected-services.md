@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: cc2deb11d544bc4e933e690d6089eb001a186c79
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c9ae8d65a2bfdd035cccb6b911448ea047f8c40
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="connected-services-walkthrough"></a>Verbundene Dienste Exemplarische Vorgehensweise
 
@@ -24,22 +24,22 @@ Diese exemplarische Vorgehensweise veranschaulicht das hinzufügen einen Azure-B
 1.  Starten Sie durch Doppelklicken auf die **verbundene Dienste** Knoten in der Projektmappe öffnen wird die **Services-Katalog**.
   Dies ist eine Liste aller verfügbaren Dienste für diesen Anwendungstyp. Wählen Sie einen Dienst (z. B. **Mobile Back-End-mit Azure App Service**) indem Sie darauf klicken.
 
-  [ ![](connected-services-images/image001-sml.png "Dienstknoten in Visual Studio für Mac verbunden sind.")](connected-services-images/image001.png)
+  [![](connected-services-images/image001-sml.png "Dienstknoten in Visual Studio für Mac verbunden sind.")](connected-services-images/image001.png#lightbox)
 
 2. Die Detailseite Dienst weist eine Beschreibung des Diensts und die Abhängigkeiten installiert werden.
   Klicken Sie auf die **hinzufügen** , um die app die Abhängigkeiten hinzuzufügen:
 
-  [ ![](connected-services-images/image002-sml.png "Mobile Back-End-mit Azure")](connected-services-images/image002.png)
+  [![](connected-services-images/image002-sml.png "Mobile Back-End-mit Azure")](connected-services-images/image002.png#lightbox)
 
 3. Die Abhängigkeiten müssen sowohl die PCL und den plattformspezifischen Projekten arbeiten hinzugefügt werden.
   Aktivieren Sie die Kontrollkästchen, um den Dienst auf jedes Projekt hinzuzufügen, die darauf verweisen (entweder direkt oder indirekt):
 
-  [ ![](connected-services-images/image003-sml.png "Überprüfen Sie alle Projekte, die den Dienst verweisen soll")](connected-services-images/image003.png)
+  [![](connected-services-images/image003-sml.png "Überprüfen Sie alle Projekte, die den Dienst verweisen soll")](connected-services-images/image003.png#lightbox)
 
 4. Wählen Sie **Accept** auf die **akzeptieren der Lizenzbedingungen** Dialogfelder für die NuGet-Pakete.
   Es können zwei Dialogfelder annehmen, eine für die MobileClient und Abhängigkeiten und die andere für SQLiteStore, was für die offline-datensynchronisierung erforderlich ist, vorhanden sein:
 
-  [ ![](connected-services-images/image004-sml.png "Lizenzvereinbarungen akzeptieren")](connected-services-images/image004.png)
+  [![](connected-services-images/image004-sml.png "Lizenzvereinbarungen akzeptieren")](connected-services-images/image004.png#lightbox)
 
   ![](connected-services-images/image005.png "Lizenz Annahme Fenster")
 
@@ -48,7 +48,7 @@ Diese exemplarische Vorgehensweise veranschaulicht das hinzufügen einen Azure-B
 
 6. Wählen Sie einen app-Dienst aus der Liste aus. Ausfüllen dieser den Vorlagencode für die `MobileServiceClient` Objekt durch die entsprechende URL der app-Dienst in Azure:
 
-  [ ![](connected-services-images/image006-sml.png "Wählen Sie aus der app service")](connected-services-images/image006.png)
+  [![](connected-services-images/image006-sml.png "Wählen Sie aus der app service")](connected-services-images/image006.png#lightbox)
 
   Wenn es keine Dienste aufgeführt sind, klicken Sie auf die **neu** Schaltfläche (siehe Schritt 9).
 
@@ -59,12 +59,12 @@ Diese exemplarische Vorgehensweise veranschaulicht das hinzufügen einen Azure-B
 
 8. Befolgen Sie die Dokumentation im **Arbeitsschritte** zum Hinzufügen von Daten, die offline-Synchronisierung, Authentifizierung und Pushbenachrichtigungen an Ihre app:
 
-  [ ![](connected-services-images/image008-sml.png "Lesen Sie die nächsten Schritte-Anweisungen")](connected-services-images/image008.png)
+  [![](connected-services-images/image008-sml.png "Lesen Sie die nächsten Schritte-Anweisungen")](connected-services-images/image008.png#lightbox)
 
 10. Wenn Sie alle vorhandenen app-Dienste besitzen, können Sie neue Dienste von innerhalb von Visual Studio für Mac erstellen.
   Klicken Sie auf die **neu** Schaltfläche in der linken unteren Rand der Liste der Dienste zu öffnen die **neuen App Service** Dialogfeld:
 
-  [ ![](connected-services-images/image009-sml.png "Erstellen Sie einen neuen app-Dienst in Visual Studio für Mac")](connected-services-images/image009.png)
+  [![](connected-services-images/image009-sml.png "Erstellen Sie einen neuen app-Dienst in Visual Studio für Mac")](connected-services-images/image009.png#lightbox)
 
 Ein neuer Dienst erfordert die folgenden Parameter:
 

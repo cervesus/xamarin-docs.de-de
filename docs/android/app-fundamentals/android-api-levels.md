@@ -7,18 +7,17 @@ ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 5a8b51f6c63d8632e71d1cddabb0c37758ee02f0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 907af0948e9d081f05cc201c49f94629a513c935
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="understanding-android-api-levels"></a>Grundlegendes zu Android-API-Ebenen
 
 _Xamarin.Android hat mehrere Servicelevel Android-API-Einstellungen, die Ihre app-Kompatibilität mit mehreren Versionen von Android zu bestimmen. Dieses Handbuch erklärt, was bedeutet, dass diese Einstellungen, deren Konfiguration und welche Auswirkung auf Ihre app zur Laufzeit aufweisen._
 
-<a name="quick" />
 
 ## <a name="quick-start"></a>Schnellstart
 
@@ -37,30 +36,30 @@ Bevor Sie eine API-Ebene für das Projekt konfigurieren können, müssen Sie die
 Normalerweise werden alle drei Ebenen von Xamarin.Android-API auf den gleichen Wert festgelegt. Auf der **Anwendung** Seite **Compile using Android Version (Zielframework)** auf die neueste stabile API-Version (oder zumindest auf die Android-Version, die alle Funktionen verfügt, Sie müssen).
 Im folgenden Screenshot ist das Zielframework auf festgelegt **Android 7.1 (API-Ebene 25 - Nougat)**:
 
-[![Framework-Version standardmäßig Kompilieren mithilfe von Android-Version als Ziel](android-api-levels-images/vs-defaults-sml.png)](android-api-levels-images/vs-defaults.png)
+[![Framework-Version standardmäßig Kompilieren mithilfe von Android-Version als Ziel](android-api-levels-images/vs-defaults-sml.png)](android-api-levels-images/vs-defaults.png#lightbox)
 
 Auf der **Android-Manifest** Seite, legen Sie die mindestens Android-Version auf **verwenden Kompilieren mit SDK Version** , und legen Sie die Ziel-Android-Version auf den gleichen Wert wie die Ziel-Framework-Version (in der folgenden Screenshot des Zielframeworks für Android auf festgelegt ist **Android 7.1 (Nougat)**):
 
-[![Legen Sie Mindest- und Ziel-Android-Versionen auf Zielframework-version](android-api-levels-images/vs-manifest-defaults-sml.png)](android-api-levels-images/vs-manifest-defaults.png)
+[![Legen Sie Mindest- und Ziel-Android-Versionen auf Zielframework-version](android-api-levels-images/vs-manifest-defaults-sml.png)](android-api-levels-images/vs-manifest-defaults.png#lightbox)
 
 Wenn Sie Abwärtskompatibilität mit einer früheren Version von Android beibehalten möchten, legen Sie **mindestens Android-Version als Ziel** die älteste Version von Android, die Ihre app unterstützt werden sollen. (Beachten Sie, dass API-Ebene 14 für erforderliche minimale API-Ebene [Google Play-Dienste und Firebase](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html).) Das folgende Beispielkonfiguration unterstützt Android-Versionen von API-Ebene 14 bis API-Ebene 25:
 
-[![Kompilieren Sie mit der API-Ebene 25 Nougat "," Minimum Android-Version auf API-Ebene 14 festgelegt](android-api-levels-images/vs-minimum-sml.png)](android-api-levels-images/vs-minimum.png)
+[![Kompilieren Sie mit der API-Ebene 25 Nougat "," Minimum Android-Version auf API-Ebene 14 festgelegt](android-api-levels-images/vs-minimum-sml.png)](android-api-levels-images/vs-minimum.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Normalerweise werden alle drei Ebenen von Xamarin.Android-API auf den gleichen Wert festgelegt. Legen Sie **Zielframework** auf die neueste stabile API-Version (oder zumindest auf die Android-Version, die alle Funktionen verfügt, Sie müssen). Festlegen der **Zielframework**, navigieren Sie zu **erstellen > Allgemein** in der **Projektoptionen**. Im folgenden Screenshot ist das Zielframework auf festgelegt **verwenden Sie die neueste installierte Plattform (8.0)**:
 
-[![Neueste installierte Plattform direktionales Zielframework](android-api-levels-images/xs-default-target-sml.png)](android-api-levels-images/xs-default-target.png)
+[![Neueste installierte Plattform direktionales Zielframework](android-api-levels-images/xs-default-target-sml.png)](android-api-levels-images/xs-default-target.png#lightbox)
 
 Die Einstellungen für die minimale und Ziel Android-Version finden Sie unter **erstellen > Android-Anwendung** in **Projektoptionen**. Legen Sie die mindestens Android-Version auf **Automatic - Framework-Zielversion verwenden** , und legen Sie die Ziel-Android-Version auf den gleichen Wert wie die Ziel-Framework-Version. Im folgenden Screenshot ist das Zielframework für Android auf festgelegt ist **Android 8.0 (API-Ebene 26)** entsprechend die oben genannten Zielframework-Einstellung:
 
-[![Die Ziel- und Framework Ebenen festlegen in den Projekteigenschaften](android-api-levels-images/xs-default-app-sml.png)](android-api-levels-images/xs-default-app.png)
+[![Die Ziel- und Framework Ebenen festlegen in den Projekteigenschaften](android-api-levels-images/xs-default-app-sml.png)](android-api-levels-images/xs-default-app.png#lightbox)
 
 Wenn Sie Abwärtskompatibilität mit einer früheren Version von Android beibehalten möchten, ändern Sie **mindestens Android-Version** die älteste Version von Android, die Ihre app unterstützt werden sollen. Beachten Sie, dass API-Ebene 14 für erforderliche minimale API-Ebene [Google Play-Dienste und Firebase](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html).
 Beispielsweise unterstützt die folgende Konfiguration so früh wie API-Ebene 14 Android-Versionen aus:
 
-[ ![Minimum und Ziel-Versionen, die automatisch - verwenden die Zielframeworkversion](android-api-levels-images/xs-minimum-sml.png)](android-api-levels-images/xs-minimum.png)
+[![Minimum und Ziel-Versionen, die automatisch - verwenden die Zielframeworkversion](android-api-levels-images/xs-minimum-sml.png)](android-api-levels-images/xs-minimum.png#lightbox)
 
 -----
 
@@ -68,13 +67,11 @@ Beispielsweise unterstützt die folgende Konfiguration so früh wie API-Ebene 14
 Wenn mehrere Android-Version Ihrer app unterstützt werden, muss Ihr Code Überprüfungen zur Laufzeit, um sicherzustellen, dass Ihre app mit der Einstellung für mindestens Android-Version funktioniert enthalten (finden Sie unter [Laufzeitprüfungen für Android-Versionen](#runtimechecks) unten Einzelheiten). Wenn Sie nutzen oder eine Bibliothek erstellen, finden Sie unter [API-Ebenen und Bibliotheken](#libraries) unten für best Practices bei der Konfiguration von API-level-Einstellungen für Bibliotheken.
 
 
-<a name="verslevels" />
 
 ## <a name="android-versions-and-api-levels"></a>Android-Versionen und API-Ebenen
 
 Die Android-Plattform entwickelt, und neue Android-Versionen freigegeben werden, wird jede Android-Version einen eindeutige ganzzahlige Bezeichner, genannt zugewiesen der *API-Ebene*. Daher entspricht jede Android-Version auf eine einzelne Android-API-Ebene. Da Benutzer apps auf älteren als auch als das neueste Versionen von Android installieren, müssen die realen Android-apps arbeiten mit mehreren Ebenen von Android-API entworfen werden.
 
-<a name="versions" />
 
 ### <a name="android-versions"></a>Android-Versionen
 
@@ -145,7 +142,6 @@ Darüber hinaus Xamarin.Android definiert *Versionscodes erstellen* , der den de
 
 Wie diese Liste gibt, werden häufig neue Android-Versionen freigegeben &ndash; manchmal mehrere Releases pro Jahr. Daher gehören eine Vielzahl von Android-ältere und neuere Versionen Universum von Android-Geräten, die Ihre app ausgeführt. Wie können Sie sicherstellen, dass Ihre app, zuverlässig und konsistent auf so viele verschiedene Versionen von Android ausgeführt werden? Android API-Ebenen können Sie dieses Problem zu verwalten.
 
-<a name="apilevels" />
 
 ### <a name="android-api-levels"></a>Android-API-Ebenen
 
@@ -159,13 +155,11 @@ Wenn eine Anwendung erstellt wird, enthält es die folgenden API-Level-Informati
 
 Diese Einstellungen werden verwendet, um sicherzustellen, dass für die ordnungsgemäße Ausführung die Anwendung benötigten Funktionen bei der Installation auf dem Android-Gerät verfügbar ist. Wenn dies nicht der Fall ist, blockiert die app wird auf diesem Gerät ausgeführt. Z. B. wenn API-Ebene eines Android-Geräts kleiner als die minimale API-Ebene, die Sie für Ihre app angeben ist, wird die Android-Gerät den Benutzer verhindern, dass Ihrer app zu installieren.
 
-<a name="settings" />
 
 ## <a name="project-api-level-settings"></a>Projekteinstellungen für die API-Ebene
 
 In den folgenden Abschnitten wird erläutert, wie die SDK-Manager verwenden, um die Entwicklungsumgebung Vorbereiten für die API-Ebenen verwendet werden soll, woraufhin wiederum detaillierte erläuterungen zum Konfigurieren von *Zielframework*, *Minimum Android-Version*, und *Ziel Android-Version* Einstellungen in Xamarin.Android.
 
-<a name="sdk" />
 
 ### <a name="android-sdk-platforms"></a>Android SDK-Plattformen
 
@@ -182,7 +176,7 @@ Das Zielframework identifiziert, welche Versionen der Bibliothek für Ihre Anwen
 Es wird empfohlen, immer beim Kompilieren mit der *neueste* verfügbare Zielframework-Version. Auf diese Weise bietet Ihnen hilfreich Warnmeldungen für alle nicht mehr unterstützte APIs, die von Ihrem Code aufgerufen werden kann. Anhand der neuesten Version des Zielframeworks ist besonders wichtig, wenn Sie die aktuellen Support Library-Versionen verwenden &ndash; jede Bibliothek erwartet, dass Ihre app auf diesem Unterstützungsbibliothek minimale API-Ebene kompiliert oder größer sein. 
 
 > [!NOTE]
-> **Hinweis:** August 2018 ab, die Konsole der Google wiedergeben setzt voraus, dass neue apps als API-Ebene 26 (Android 8.0 Ziel) oder höher.
+> Ab August 2018, die Konsole der Google wiedergeben setzt voraus, dass neue apps als API-Ebene 26 (Android 8.0 Ziel) oder höher.
 Vorhandene apps müssen für die API-Ebene 26 oder höhere Versionen ab November 2018 gelten. Weitere Informationen finden Sie unter [Verbesserung der app-Sicherheit und Leistung auf Google Play nach Jahren kommen](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
 
 
@@ -190,7 +184,7 @@ Vorhandene apps müssen für die API-Ebene 26 oder höhere Versionen ab November
 
 Öffnen Sie in Visual Studio das Zielframework-Einstellung für den Zugriff auf die Projekteigenschaften im **Projektmappen-Explorer** , und wählen Sie die **Anwendung** Seite:
 
-[![Seite "Anwendung" von Projekteigenschaften](android-api-levels-images/vs-target-framework-sml.png)](android-api-levels-images/vs-target-framework.png)
+[![Seite "Anwendung" von Projekteigenschaften](android-api-levels-images/vs-target-framework-sml.png)](android-api-levels-images/vs-target-framework.png#lightbox)
 
 Legen Sie das Zielframework durch Auswählen von ein API-Ebene in der Dropdown-Menü unter **Compile using Android Version** wie oben gezeigt.
 
@@ -198,7 +192,7 @@ Legen Sie das Zielframework durch Auswählen von ein API-Ebene in der Dropdown-M
 
 Für den Zugriff auf die Zielframework-Einstellung in Visual Studio für Mac, mit der rechten Maustaste des Projektnamens, und wählen Sie **Optionen**; Dies öffnet die **Projektoptionen** Dialogfeld. Wechseln Sie in diesem Dialogfeld zu **erstellen > Allgemein** wie hier gezeigt:
 
-[![Abschnitt "Allgemein" der Optionsseite Projekt erstellen](android-api-levels-images/xs-target-framework-sml.png)](android-api-levels-images/xs-target-framework.png)
+[![Abschnitt "Allgemein" der Optionsseite Projekt erstellen](android-api-levels-images/xs-target-framework-sml.png)](android-api-levels-images/xs-target-framework.png#lightbox)
 
 Legen Sie das Zielframework durch Auswählen von ein API-Ebene in der Dropdown-Menü auf der rechten Seite des **Zielframework** wie oben gezeigt.
 
@@ -219,7 +213,7 @@ Auch wenn Ihre Anwendung möglicherweise erfolgreich erstellen und installieren 
 
 Öffnen Sie die Einstellung für mindestens Android in Visual Studio für den Zugriff auf die Projekteigenschaften im **Projektmappen-Explorer** , und wählen Sie die **Android-Manifest** Seite. In der Dropdown-Menü unter **mindestens Android-Version** können, wählen Sie die mindestens Android-Version für Ihre Anwendung:
 
-[![Minimale Android Zieloption legen Sie die Kompilierung mithilfe der SDK-version](android-api-levels-images/vs-minimum-version-sml.png)](android-api-levels-images/vs-minimum-version.png)
+[![Minimale Android Zieloption legen Sie die Kompilierung mithilfe der SDK-version](android-api-levels-images/vs-minimum-version-sml.png)](android-api-levels-images/vs-minimum-version.png#lightbox)
 
 Bei Auswahl des **verwenden Kompilieren mit SDK Version**, die mindestens Android-Version wird die Einstellung Zielframework identisch sein.
 
@@ -228,7 +222,7 @@ Bei Auswahl des **verwenden Kompilieren mit SDK Version**, die mindestens Androi
 Für den Zugriff auf die Zielframework-Einstellung in Visual Studio für Mac, mit der rechten Maustaste des Projektnamens, und wählen Sie **Optionen**; Dies öffnet die **Projektoptionen** Dialogfeld. Navigieren Sie zu **erstellen > Android-Anwendung**.
 Mithilfe des Dropdown-Menüs auf der rechten Seite des **mindestens Android-Version**, Sie können das Minimum Android-Version für Ihre Anwendung festlegen:
 
-[ ![Mindestversion von Android auf Automatic - Framework-Zielversion verwenden festgelegt](android-api-levels-images/xs-minimum-version-sml.png)](android-api-levels-images/xs-minimum-version.png)
+[![Mindestversion von Android auf Automatic - Framework-Zielversion verwenden festgelegt](android-api-levels-images/xs-minimum-version-sml.png)](android-api-levels-images/xs-minimum-version.png#lightbox)
 
 Bei Auswahl des **automatische &ndash; verwenden Sie die Zielframeworkversion**, die mindestens Android-Version wird die Einstellung Zielframework identisch sein.
 
@@ -247,7 +241,7 @@ Das Zielframework und die Ziel-Android-Version, während Sie eine sehr ähnliche
 
 Öffnen Sie diese Einstellung in Visual Studio für den Zugriff auf die Projekteigenschaften im **Projektmappen-Explorer** , und wählen Sie die **Android-Manifest** Seite. In der Dropdown-Menü unter **Ziel Android-Version** können, wählen Sie die Ziel-Android-Version für Ihre Anwendung:
 
-[![Android-Zielversion festlegen, die die Kompilierung mithilfe der SDK-version](android-api-levels-images/vs-target-version-sml.png)](android-api-levels-images/vs-target-version.png)
+[![Android-Zielversion festlegen, die die Kompilierung mithilfe der SDK-version](android-api-levels-images/vs-target-version-sml.png)](android-api-levels-images/vs-target-version.png#lightbox)
 
 Es wird empfohlen, dass Sie explizit die Ziel-Android-Version auf die neueste Version von Android festlegen, mit denen Sie die app zu testen. Im Idealfall sollte auf die neueste Android SDK-Version festgelegt werden &ndash; Dies ermöglicht Ihnen die Verwendung der neuen APIs vor dem Durcharbeiten der verhaltensänderungen. Für die meisten Entwickler wir *nicht* sollten Sie die Ziel-Android-Version auf festlegen **verwenden Kompilieren mithilfe von SDK-Version**.
 
@@ -256,7 +250,7 @@ Es wird empfohlen, dass Sie explizit die Ziel-Android-Version auf die neueste Ve
 Für den Zugriff auf die Zielframework-Einstellung in Visual Studio für Mac, mit der rechten Maustaste des Projektnamens, und wählen Sie **Optionen**; Dies öffnet die **Projektoptionen** Dialogfeld. Navigieren Sie zu **erstellen > Android-Anwendung**.
 Mithilfe des Dropdown-Menüs auf der rechten Seite des **Ziel Android-Version**, Sie können die Ziel-Android-Version für die Anwendung festlegen:
 
-[![Android-Zielversion festgelegt wird, die automatische - Framework-Zielversion verwenden](android-api-levels-images/xs-target-version-sml.png)](android-api-levels-images/xs-target-version.png)
+[![Android-Zielversion festgelegt wird, die automatische - Framework-Zielversion verwenden](android-api-levels-images/xs-target-version-sml.png)](android-api-levels-images/xs-target-version.png#lightbox)
 
 Es wird empfohlen, dass Sie explizit die Ziel-Android-Version auf die neueste Version von Android festlegen, mit denen Sie die app zu testen. Im Idealfall sollten sie auf die neuesten verfügbaren Android SDK-Version festgelegt werden &ndash; Dies ermöglicht Ihnen die Verwendung der neuen APIs vor dem Durcharbeiten der verhaltensänderungen. Für die meisten Entwickler nicht empfehlenswert, Festlegen der Ziel-Android-Version auf **Automatic - Framework-Zielversion verwenden**.
 
@@ -311,14 +305,14 @@ Es gibt keine schnelle und einfache Regel, die erklärt, wie verringern, oder ä
 
 Wenn Sie ein Klassenbibliotheksprojekt Xamarin.Android (z. B. einer Klassenbibliothek oder eine Bibliothek Bindungen) erstellen, können Sie konfigurieren, dass nur die Zielframework-Einstellung &ndash; mindestens Android-Version und die Ziel-Android-Version-Einstellungen sind nicht verfügbar. Da besteht also keine **Android-Manifest** Seite:
 
-[![Nur die Kompilierung mit Android-Version-Option verfügbar ist.](android-api-levels-images/vs-library-options-sml.png)](android-api-levels-images/vs-library-options.png)
+[![Nur die Kompilierung mit Android-Version-Option verfügbar ist.](android-api-levels-images/vs-library-options-sml.png)](android-api-levels-images/vs-library-options.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Wenn Sie eine Xamarin.Android-Steuerelementbibliothek-Projekt erstellen, besteht keine **Android-Anwendung** Seite dort Sie, die mindestens Android-Version und der Ziel-Android-Version konfigurieren können &ndash; dem Minimum Android-Version und dem Ziel Es sind keine Einstellungen für Android-Version verfügbar.
 Da besteht also keine **erstellen > Android-Anwendung** Seite):
 
-[ ![Erstellen Sie die Seite "Allgemein" ohne Optionen für Minimum und Ziel-version](android-api-levels-images/xs-library-options-sml.png)](android-api-levels-images/xs-library-options.png)
+[![Erstellen Sie die Seite "Allgemein" ohne Optionen für Minimum und Ziel-version](android-api-levels-images/xs-library-options-sml.png)](android-api-levels-images/xs-library-options.png#lightbox)
 
 -----
 

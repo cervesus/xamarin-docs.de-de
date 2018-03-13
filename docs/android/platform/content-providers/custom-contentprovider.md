@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: 66b956eddc48699c6fd61e9cb52a7fbc3fa70a51
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9fac4a233cecd9332602047bc83830d145b5fb08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-custom-contentprovider"></a>Erstellen eine benutzerdefinierte ContentProvider
 
@@ -28,7 +28,6 @@ Eine Klasse Inhaltsanbieter erben muss `ContentProvider`. Es sollte ein interner
 
 Mono für Android, die Inhalt Anbieterklasse darf haben eine `[ContentProvider]` Attribut, um den Uri (oder Uris) anzugeben, die hinzugefügt werden sollen, um **AndroidManifest.xml**.
 
-<a name="Mime_Type" />
 
 ### <a name="mime-type"></a>MIME-Typ
 
@@ -40,7 +39,6 @@ Das typische Format für MIME-Typen besteht aus zwei Teilen. Android `ContentPro
 
 Der zweite Teil der MIME-Typ bezieht sich auf die Anwendung, und ein Reverse-DNS-Standard mit die zu verwendende eine `vnd.` Präfix. Im Beispielcode wird `vnd.com.xamarin.sample.Vegetables`.
 
-<a name="Data_Model_Metadata" />
 
 ### <a name="data-model-metadata"></a>Datenmodellmetadaten
 
@@ -50,7 +48,6 @@ Um sicherzustellen, dass nur gültige Uri-Abfragen erstellt werden, ist es übli
 
 Im vorherigen Beispiel die `android.provider.ContactsContract` Klasse verfügbar gemacht, die Metadaten für die Kontakte-Daten. Für unsere benutzerdefinierten `ContentProvider` wird nur die Konstanten für die Klasse selbst zur Verfügung.
 
-<a name="Implementation" />
 
 ## <a name="implementation"></a>Implementierung
 
@@ -64,7 +61,6 @@ Es gibt drei Schritte zum Erstellen und nutzen eine benutzerdefinierte `ContentP
 
 Wie zuvor bereits erläutert, `ContentProviders` genutzt werden können, von Anwendungen als der, in dem sie definiert sind. In diesem Beispiel die Daten in der gleichen Anwendung genutzt werden, aber beachten Sie dabei, die andere Anwendungen auch darauf zugreifen können so lange sie wissen, der Uri und die Informationen zum Schema (die in der Regel als Konstante Werte zugänglich ist).
 
-<a name="Create_a_database" />
 
 ## <a name="create-a-database"></a>Erstellen Sie eine Datenbank
 
@@ -98,13 +94,11 @@ class VegetableDatabase  : SQLiteOpenHelper {
 
 Die Datenbank selbst-serverimplementierung muss keine Besonderheiten mit verfügbar gemacht werden eine `ContentProvider`, jedoch wenn Sie beabsichtigen, binden die `ContentProvider's` Daten an eine `ListView` Steuerelement wird dann eine eindeutige ganzzahlige Spalte mit dem Namen `_id` muss Teil der Resultset. Finden Sie unter der [Listenansichten und Adapter](~/android/user-interface/layouts/list-view/index.md) Dokument detaillierte Informationen zur Verwendung der `ListView` Steuerelement.
 
-<a name="Create_the_ContentProvider" />
 
 ## <a name="create-the-contentprovider"></a>Erstellen Sie die ContentProvider
 
 Im restlichen Teil dieses Abschnitts enthält schrittweise Anweisungen wie die **SimpleContentProvider/VegetableProvider.cs** Beispielklasse erstellt wurde.
 
-<a name="Initialize_the_Database" />
 
 ### <a name="initialize-the-database"></a>Initialisieren Sie die Datenbank
 
@@ -124,7 +118,6 @@ public class VegetableProvider : ContentProvider
 
 Der Rest des Codes wird die tatsächliche Inhaltsanbieter Implementierung bilden, die die Daten ermittelt und abgefragt werden können.
 
-<a name="Add_Metadata_for_Consumers" />
 
 
 ## <a name="add-metadata-for-consumers"></a>Hinzufügen von Metadaten für Consumer
@@ -165,7 +158,6 @@ public class VegetableProvider : ContentProvider
 }
 ```
 
-<a name="Implement_the_URI_Parsing_Helper" />
 
 ## <a name="implement-the-uri-parsing-helper"></a>Implementieren Sie den URI Helper analysieren
 
@@ -195,7 +187,6 @@ static UriMatcher BuildUriMatcher()
 
 Dieser Code ist für alle privat der `ContentProvider` Klasse. Verweisen auf [Googles UriMatcher Dokumentation](https://developer.xamarin.com/api/type/Android.Content.UriMatcher/) für Weitere Informationen zu erhalten.
 
-<a name="Implement_the_QueryMethod" />
 
 ## <a name="implement-the-querymethod"></a>Implementieren der QueryMethod
 
@@ -241,7 +232,6 @@ public override String GetType(Android.Net.Uri uri)
 }
 ```
 
-<a name="Implement_the_Other_Overrides" />
 
 ## <a name="implement-the-other-overrides"></a>Implementieren Sie die anderen Außerkraftsetzungen
 
@@ -264,13 +254,11 @@ public override int Update(Android.Net.Uri uri, ContentValues values, string sel
 
 Somit ist die grundlegende `ContentProvider` Implementierung. Nach der Installation der Anwendung werden die macht Daten verfügbar werden sowohl in der Anwendung, sondern auch für eine andere Anwendung, die den Uri, darauf zu verweisen bekannt.
 
-<a name="Access_the_ContentProvider" />
 
 ## <a name="access-the-contentprovider"></a>Zugriff auf die ContentProvider
 
 Einmal die `VegetableProvider` wurde implementiert, Zugriff auf sie erfolgt die gleiche Weise wie die Kontakte-Anbieter am Anfang dieses Dokuments: Abrufen eines Cursors, der mit dem angegebenen Uri, und klicken Sie dann einen Adapter für den Datenzugriff verwenden.
 
-<a name="Bind_a_ListView_to_a_ContentProvider" />
 
 ## <a name="bind-a-listview-to-a-contentprovider"></a>Binden Sie eine Listenansicht an eine ContentProvider
 
@@ -296,10 +284,9 @@ listView.Adapter = adapter;
 
 Die resultierende Anwendung sieht wie folgt:
 
-[![Screenshot der app Gemüse, Früchte, Blüten sowie deren Knospen, Körnerleguminosen, Glühbirnen, Knollen auflisten](custom-contentprovider-images/api11-contentprovider2.png)](custom-contentprovider-images/api11-contentprovider2.png)
+[![Screenshot der app Gemüse, Früchte, Blüten sowie deren Knospen, Körnerleguminosen, Glühbirnen, Knollen auflisten](custom-contentprovider-images/api11-contentprovider2.png)](custom-contentprovider-images/api11-contentprovider2.png#lightbox)
 
 
-<a name="Retrieve_a_Single_Item_from_a_ContentProvider" />
 
 ## <a name="retrieve-a-single-item-from-a-contentprovider"></a>Ein einzelnes Element aus einem ContentProvider abrufen
 

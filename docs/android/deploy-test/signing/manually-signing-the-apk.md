@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1625fe15d76ffe2bd3712d9126d9bd217bf60085
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f47fded9c09849f6d5f1329a4efd652df80816d5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="manually-signing-the-apk"></a>Manuelles Signieren des APK
 
-<a name="signing_legacy" />
 
 Nachdem die Anwendung für die Veröffentlichung erstellt wurde, muss das APK vor der Verteilung signiert werden, damit es auf einem Android-Gerät ausgeführt werden kann. Dieser Prozess wird in der Regel von der IDE ausgeführt. Es gibt jedoch einige Situationen, in denen es erforderlich ist, das APK manuell in der Befehlszeile zu signieren. Der Signaturvorgang eines APK besteht aus den folgenden Schritten:
 
@@ -29,7 +28,6 @@ Nachdem die Anwendung für die Veröffentlichung erstellt wurde, muss das APK vo
 Die Reihenfolge der Schritte ist wichtig und hängt davon ab, welches Tool zum Signieren des APK verwendet wird. Bei der Verwendung von **apksigner** ist es wichtig, die Anwendung zuerst mit **Zipalign** auszurichten und sie dann mit **Apksigner** zu signieren.  Sollte es nötig sein, **jarsigner** zum Signieren des APK zu verwenden, ist es wichtig, zunächst das APK zu signieren und dann **Zipalign** auszuführen. 
 
 
-<a name="Prerequisites" />
 
 ## <a name="prerequisites"></a>Erforderliche Komponenten
 
@@ -38,7 +36,6 @@ Dieser Leitfaden konzentriert sich auf die Verwendung von **apksigner** aus den 
 Anwendungen, die mit einer älteren Version der Android SDK-Buildtools erstellt werden, müssen wie unten in [Signieren des APK mit jarsigner](#Sign_the_APK_with_jarsigner) beschrieben **jarsigner** verwenden.
 
 
-<a name="Creating_a_Private_Keystore" />
 
 ## <a name="create-a-private-keystore"></a>Erstellen eines privaten Keystores
 
@@ -53,7 +50,6 @@ Der Schutz dieses Keystores ist wesentlich. Wenn er verloren geht, ist es nicht 
 Wenn Sie einen Keystore verloren haben, besteht die einzige Möglichkeit darin, einen neuen Keystore zu erstellen, das APK mit dem neuen Schlüssel erneut zu signieren und anschließend eine neue Anwendung einzureichen. Dann muss die alte Anwendung aus Google Play entfernt werden. Wenn der neue Keystore kompromittiert oder öffentlich verteilt wird, ist es ebenfalls möglich, dass inoffizielle Versionen einer Anwendung oder Versionen mit Schadcode verteilt werden.
 
 
-<a name="Create_a_New_Keystore" />
 
 ### <a name="create-a-new-keystore"></a>Erstellen eines neuen Keystores
 
@@ -99,7 +95,6 @@ Um die Schlüssel aufzulisten, die in einem Keystore gespeichert sind, verwenden
 $ keytool -list -keystore xample.keystore
 ```
 
-<a name="Zipalign_the_APK" />
 
 ## <a name="zipalign-the-apk"></a>Ausrichten des APK
 
@@ -111,7 +106,6 @@ Der folgende Befehl verwendet das signierte APK und erzeugt einen signiertes, mi
 $ zipalign -f -v 4 mono.samples.helloworld-unsigned.apk helloworld.apk
 ```
 
-<a name="Manually_Signing_the_APK" />
 
 ## <a name="sign-the-apk"></a>Signieren des APKs
 

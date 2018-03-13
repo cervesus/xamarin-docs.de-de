@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 2b16fd970e724228215fd0dd1c9022227ab84435
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c40e9291e81770435535de7b0c83d6c865cbed58
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-stacked-view"></a>Arbeiten mit gestapelten anzeigen
 
@@ -23,7 +23,7 @@ Der Stapel Ansichtssteuerelement (`UIStackView`) nutzt die Funktionen von Automa
 
 Das Layout der alle Unteransichten an eine Stapelansicht angefügt vom Entwickler definierten Eigenschaften wie z. B. Achse "," Verteilung "," Ausrichtung "und" Abstand Grundlage verwaltet werden:
 
-[ ![](stacked-views-images/stacked01.png "Unteransicht Layout für Diagramm")](stacked-views-images/stacked01.png)
+[![](stacked-views-images/stacked01.png "Unteransicht Layout für Diagramm")](stacked-views-images/stacked01.png#lightbox)
 
 Bei Verwendung einer `UIStackView` in einer app Xamarin.tvOS Definieren der Entwickler kann den Unteransichten entweder in eine Storyboard in der iOS-Designer oder durch Hinzufügen und Entfernen von Unteransichten in C#-Code.
 
@@ -103,21 +103,21 @@ Die einfachste Möglichkeit zur Bearbeitung von Stapel Sichten in einer app Xama
 1. In der **Lösung Pad**und auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. Entwerfen Sie das Layout Ihrer einzelner Elemente, die Sie der Stapelansicht hinzufügen möchten: 
 
-    [ ![](stacked-views-images/layout01.png "Layout (Beispiel)")](stacked-views-images/layout01.png)
+    [![](stacked-views-images/layout01.png "Layout (Beispiel)")](stacked-views-images/layout01.png#lightbox)
 1. Fügen Sie alle erforderlichen Einschränkungen hinzu, um die Elemente aus, um sicherzustellen, dass sie ordnungsgemäß skaliert. Dieser Schritt ist wichtig, sobald die Stapelansicht das Element hinzugefügt wird.
 1. Stellen Sie die erforderliche Anzahl von Kopien (vier in diesem Fall): 
 
-    [ ![](stacked-views-images/layout02.png "Die erforderliche Anzahl von Kopien")](stacked-views-images/layout02.png)
+    [![](stacked-views-images/layout02.png "Die erforderliche Anzahl von Kopien")](stacked-views-images/layout02.png#lightbox)
 1. Ziehen Sie eine **Stapelansicht** aus der **Toolbox** und legen Sie sie in der Sicht: 
 
-    [ ![](stacked-views-images/layout03.png "Eine Stapelansicht")](stacked-views-images/layout03.png)
+    [![](stacked-views-images/layout03.png "Eine Stapelansicht")](stacked-views-images/layout03.png#lightbox)
 1. Wählen Sie in die Stapelansicht der **Registerkarte "Widget"** von der **Eigenschaften aufgefüllt** wählen **füllen** für die **Ausrichtung**, **ausfüllen Gleichermaßen** für die **Verteilung** , und geben Sie `25` für die **Abstand**: 
 
-    [ ![](stacked-views-images/layout04.png "Die Registerkarte "Widget"")](stacked-views-images/layout04.png)
+    [![](stacked-views-images/layout04.png "Die Registerkarte "Widget"")](stacked-views-images/layout04.png#lightbox)
 1. Positionieren Sie die Stapelansicht auf dem Bildschirm, in dem Sie soll, und fügen die Einschränkungen, um in den erforderlichen Speicherort zu gewährleisten.
 1. Wählen Sie die einzelnen Elemente, und ziehen Sie sie in die Stapelansicht: 
 
-    [ ![](stacked-views-images/layout05.png "Die einzelnen Elemente in die Stapelansicht")](stacked-views-images/layout05.png)
+    [![](stacked-views-images/layout05.png "Die einzelnen Elemente in die Stapelansicht")](stacked-views-images/layout05.png#lightbox)
 1. Das Layout angepasst werden, und die Elemente werden in die Stapelansicht basierend auf den oben festgelegten Attributen angeordnet werden.
 1. Weisen Sie **Namen** in der **Registerkarte "Widget"** von der **Eigenschaften-Explorer** mit UI-Steuerelemente in C#-Code arbeiten.
 1. Speichern Sie die Änderungen.
@@ -127,21 +127,21 @@ Die einfachste Möglichkeit zur Bearbeitung von Stapel Sichten in einer app Xama
 1. In der **Projektmappen-Explorer**und auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. Entwerfen Sie das Layout Ihrer einzelner Elemente, die Sie der Stapelansicht hinzufügen möchten: 
 
-    [ ![](stacked-views-images/layout01.png "Beispiellayout für element")](stacked-views-images/layout01.png)
+    [![](stacked-views-images/layout01.png "Beispiellayout für element")](stacked-views-images/layout01.png#lightbox)
 1. Fügen Sie alle erforderlichen Einschränkungen hinzu, um die Elemente aus, um sicherzustellen, dass sie ordnungsgemäß skaliert. Dieser Schritt ist wichtig, sobald die Stapelansicht das Element hinzugefügt wird.
 1. Stellen Sie die erforderliche Anzahl von Kopien (vier in diesem Fall): 
 
-    [ ![](stacked-views-images/layout02.png "Die erforderliche Anzahl von Kopien")](stacked-views-images/layout02.png)
+    [![](stacked-views-images/layout02.png "Die erforderliche Anzahl von Kopien")](stacked-views-images/layout02.png#lightbox)
 1. Ziehen Sie eine **Stapelansicht** aus der **Toolbox** und legen Sie sie in der Sicht: 
 
-    [ ![](stacked-views-images/layout03-vs.png "Eine Stapelansicht")](stacked-views-images/layout03-vs.png)
+    [![](stacked-views-images/layout03-vs.png "Eine Stapelansicht")](stacked-views-images/layout03-vs.png#lightbox)
 1. Wählen Sie in die Stapelansicht der **Registerkarte "Widget"** von der **Eigenschaften-Explorer** wählen **füllen** für die **Ausrichtung**, **ausfüllen Gleichermaßen** für die **Verteilung** , und geben Sie `25` für die **Abstand**: 
 
-    [ ![](stacked-views-images/layout04-vs.png "Die Registerkarte "Widget"")](stacked-views-images/layout04-vs.png)
+    [![](stacked-views-images/layout04-vs.png "Die Registerkarte "Widget"")](stacked-views-images/layout04-vs.png#lightbox)
 1. Positionieren Sie die Stapelansicht auf dem Bildschirm, in dem Sie soll, und fügen die Einschränkungen, um in den erforderlichen Speicherort zu gewährleisten.
 1. Wählen Sie die einzelnen Elemente, und ziehen Sie sie in die Stapelansicht: 
 
-    [ ![](stacked-views-images/layout05-vs.png "Die einzelnen Elemente in die Stapelansicht")](stacked-views-images/layout05-vs.png)
+    [![](stacked-views-images/layout05-vs.png "Die einzelnen Elemente in die Stapelansicht")](stacked-views-images/layout05-vs.png#lightbox)
 1. Das Layout angepasst werden, und die Elemente werden in die Stapelansicht basierend auf den oben festgelegten Attributen angeordnet werden.
 1. Weisen Sie **Namen** in der **Registerkarte "Widget"** von der **Eigenschaften-Explorer** mit UI-Steuerelemente in C#-Code arbeiten.
 1. Speichern Sie die Änderungen.
@@ -190,11 +190,11 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 
 Wenn die app ausgeführt wird, werden die vier Elemente in unserer Stapelansicht gleichmäßig verteilt werden:
 
-[ ![](stacked-views-images/layout06.png "Wenn die app ausgeführt wird, werden die vier Elemente gleichmäßig in unserer Stapelansicht verteilt")](stacked-views-images/layout06.png)
+[![](stacked-views-images/layout06.png "Wenn die app ausgeführt wird, werden die vier Elemente gleichmäßig in unserer Stapelansicht verteilt")](stacked-views-images/layout06.png#lightbox)
 
 Wenn die Anzahl der Spieler verringert wird, die nicht verwendeten Ansichten ausgeblendet, und die Stapelansicht passen Sie das Layout anpassen:
 
-[ ![](stacked-views-images/layout07.png "Wenn die Anzahl der Spieler verringert wird, die nicht verwendeten Ansichten ausgeblendet, und die Stapelansicht passen Sie das Layout anpassen")](stacked-views-images/layout07.png)
+[![](stacked-views-images/layout07.png "Wenn die Anzahl der Spieler verringert wird, die nicht verwendeten Ansichten ausgeblendet, und die Stapelansicht passen Sie das Layout anpassen")](stacked-views-images/layout07.png#lightbox)
 
 <a name="Populate-a-Stack-View-from-Code" />
 

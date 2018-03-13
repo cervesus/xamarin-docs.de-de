@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: cddf3c58020b534abdc1541d967a9a7f5a4d891a
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 440ee997b075b5c89504dcf20171fa3c8713e1ce
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="images"></a>Bilder
 
@@ -79,7 +79,7 @@ var image = new Image { Source = "waterfront.jpg" };
 
 Die folgenden Screenshots zeigen das Ergebnis zum Anzeigen von einer lokalen Image auf jeder Plattform:
 
-[ ![Lokale "ImageSource"](images-images/local-sml.png "Beispielanwendung Anzeigen einer lokalen Bilds")](images-images/local.png "Beispielanwendung Anzeigen einer lokalen Bilds")
+[![Lokale "ImageSource"](images-images/local-sml.png "Beispielanwendung Anzeigen einer lokalen Bilds")](images-images/local.png#lightbox "Beispielanwendung Anzeigen einer lokalen Bilds")
 
 Zum Erhöhen der Flexibilität der `Device.RuntimePlatform` Eigenschaft kann auf ein anderes Bild-Datei oder der Pfad für einige oder alle Plattformen verwendet werden, wie in diesem Codebeispiel gezeigt:
 
@@ -102,7 +102,7 @@ Vor iOS 9, Retina-Versionen des Image platziert werden konnte, in der **Ressourc
 
 Bilder Android alternativen Auflösung sollte [speziell benannte Verzeichnisse](http://developer.android.com/guide/practices/screens_support.html) im Android-Projekt, wie im folgenden Screenshot gezeigt:
 
-[![Android mehrere Auflösung Bildspeicherort](images-images/xs-highdpisolution-sml.png "Android mehrere Auflösung Bildspeicherort")](images-images/xs-highdpisolution.png "Android Bildspeicherort mehrere Auflösung")
+[![Android mehrere Auflösung Bildspeicherort](images-images/xs-highdpisolution-sml.png "Android mehrere Auflösung Bildspeicherort")](images-images/xs-highdpisolution.png#lightbox "Android Bildspeicherort mehrere Auflösung")
 
 ### <a name="additional-controls-that-display-images"></a>Weitere Steuerelemente, die Anzeige von Bildern
 
@@ -159,7 +159,7 @@ Zurzeit besteht keine implizite Konvertierung für die Ressourcen-IDs. Sie müss
 
 Die folgenden Screenshots zeigen das Ergebnis zum Anzeigen von ein eingebettetes Bild auf jeder Plattform:
 
-[ ![ResourceImageSource](images-images/resource-sml.png "Beispielanwendung Anzeigen eines eingebetteten Bilds")](images-images/resource.png "Beispielanwendung Anzeigen eines eingebetteten Bilds")
+[![ResourceImageSource](images-images/resource-sml.png "Beispielanwendung Anzeigen eines eingebetteten Bilds")](images-images/resource.png#lightbox "Beispielanwendung Anzeigen eines eingebetteten Bilds")
 
 <a name="Embedded_Images_in_Xaml" />
 
@@ -261,7 +261,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 Die folgenden Screenshots zeigen das Ergebnis zum Anzeigen von remotebilds auf jeder Plattform:
 
-[![Download von "ImageSource" erwartet](images-images/download-sml.png "Beispielanwendung ein heruntergeladenes Image anzeigen")](images-images/download.png "Beispielanwendung ein heruntergeladenes Image anzeigen")
+[![Download von "ImageSource" erwartet](images-images/download-sml.png "Beispielanwendung ein heruntergeladenes Image anzeigen")](images-images/download.png#lightbox "Beispielanwendung ein heruntergeladenes Image anzeigen")
 
 <a name="Image_Caching" />
 

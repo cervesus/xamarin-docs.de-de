@@ -3,16 +3,16 @@ title: "Einführung in die proaktive Vorschläge"
 description: "In diesem Artikel wird gezeigt, wie proaktive Vorschläge in die app Xamarin.iOS Laufwerk Engagement verwendet werden, durch den Wechsel des Systems proaktiv hilfreiche Informationen automatisch für den Benutzer anzuzeigen."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
+ms.assetid: 8DDD084A-0D1E-4DF7-B686-6309DCEFF5D3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 2762487d25befd15d8b57a002c5da4e9dcb15bb8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 15f649440b2a855189acff33afcef5e8272a0769
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-proactive-suggestions"></a>Einführung in die proaktive Vorschläge
 
@@ -63,7 +63,7 @@ Ermöglicht der app Kontakte (und zugehörige Kontaktinformationen) in angezeigt
 
 ## <a name="ride-sharing-based-suggestions"></a>Außer Kraft setzen und Freigabe je Vorschläge
 
-Wenn eine fuhr-Freigabe-app verwendet die [MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) -API, iOS 10 bietet es als Option in der app-Switcher vorkommen, wenn der Benutzer eine fuhr möchten wahrscheinlich ist. Die app muss auch als fuhr-Freigabe-app registriert werden, durch Angeben der `MKDirectionsModeRideShare` für die [MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW33) -Schlüssel in seiner `Info.plist` Datei.
+Wenn eine fuhr-Freigabe-app verwendet die [MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) -API, iOS 10 bietet es als Option in der app-Switcher vorkommen, wenn der Benutzer eine fuhr möchten wahrscheinlich ist. Die app muss auch als fuhr-Freigabe-app registriert werden, durch Angeben der `MKDirectionsModeRideShare` für die [MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html) -Schlüssel in seiner `Info.plist` Datei.
 
 Wenn die app nur bei Stromausfällen unterstützt, würde der Vorschlag System beginnen, mit *"Eine fuhr auf Get..."*, wenn andere Typen von routing Richtung (z. B. Walking oder Fahrrad) unterstützt werden, wird das System verwenden *"Anweisungen zum Abrufen..."*
 
@@ -95,7 +95,7 @@ Alle diese Funktionen haben eines gemeinsam, verwenden jedoch alle `NSUserActivi
 
 Wie bereits erwähnt, `NSUserActivity` hilft das System, welche Informationen zu verstehen, der Benutzer aktuell mit auf dem Bildschirm arbeitet. `NSUserActivity` ist ein Lightweight-Status-caching-Mechanismus, um die Aktivität des Benutzers zu erfassen, während sie durch die app navigieren. Betrachten z. B. einem Restaurant-app ein:
 
-[ ![](proactive-suggestions-images/activity02.png "Der NSUserActivity Lightweight-Status-caching-Mechanismus")](proactive-suggestions-images/activity02.png)
+[![](proactive-suggestions-images/activity02.png "Der NSUserActivity Lightweight-Status-caching-Mechanismus")](proactive-suggestions-images/activity02.png#lightbox)
 
 Mit der folgenden Aktivitäten:
 
@@ -105,7 +105,7 @@ Mit der folgenden Aktivitäten:
 
 Führen Sie eine genauere Betrachtung der letzten Seite:
 
-[ ![](proactive-suggestions-images/activity03.png "Die NSUserActivity-details")](proactive-suggestions-images/activity03.png)
+[![](proactive-suggestions-images/activity03.png "Die NSUserActivity-details")](proactive-suggestions-images/activity03.png#lightbox)
 
 Hier wird die app erstellen eine `NSUserActivity` und verfügt über wurde mit Informationen, um den Status später neu zu erstellen. Die app ist auch einige Metadaten wie Name und Adresse der Standort enthalten. Mit dieser Aktivität erstellt wird kann die app iOS wissen, dass es den aktuellen Status des Benutzers darstellt.
 
@@ -324,7 +324,7 @@ Wenden Sie sich an Aktivitäten werden in der Anwendung mit implementiert `NSUse
 
 Sehen Sie sich wie die app Interaktionen threadingdienst kann:
 
-[ ![](proactive-suggestions-images/activity04.png "Übersicht über die Interaktionen Spenden")](proactive-suggestions-images/activity04.png)
+[![](proactive-suggestions-images/activity04.png "Übersicht über die Interaktionen Spenden")](proactive-suggestions-images/activity04.png#lightbox)
 
 Die app erstellt eine `INInteraction` -Objekt, enthält ein **Absicht** (`INIntent`), **Teilnehmer** und **Metadaten**. Die **Absicht** stellt eine Benutzeraktion, z. B. ein video Aufruf oder eine Textnachricht zu senden. Die **Teilnehmer** enthalten die Personen, die die Kommunikation zu empfangen. Die **Metadaten** zusätzliche Informationen wie z. B. erfolgreichen Senden der Nachricht usw. definiert.
 
@@ -334,7 +334,7 @@ Nach dem die Aktivität vollständig aufgefüllt ist, rufen Sie die `DonateInter
 
 Wenn der Benutzer mit der app aus der Karte Kontakt interagiert, ruft die Interaktion mit gebündelt eine `NSUserActivity`, dieser wird dann verwendet, um die app starten:
 
-[ ![](proactive-suggestions-images/activity05.png "Die Interaktion Ruft mit einem NSUserActivity gebündelt, die verwendet wird, um die app starten")](proactive-suggestions-images/activity05.png)
+[![](proactive-suggestions-images/activity05.png "Die Interaktion Ruft mit einem NSUserActivity gebündelt, die verwendet wird, um die app starten")](proactive-suggestions-images/activity05.png#lightbox)
 
 Betrachten Sie das folgende Beispiel für eine gesendet Nachrichtenabsicht:
 
@@ -449,7 +449,7 @@ Einige Schema.org-Hintergrund:
 - Es gibt mehr als 500 Schemas, die verschiedene Konzepte verfügbar darstellt.
 - Durch die Implementierung auf der Website, kann der Entwickler abrufen zu den Vorteilen der Verwendung von `NSUserActivity` in eine systemeigene app.
 
-Die Schemas werden in einer Struktur wie die Struktur, in denen bestimmte wie Typen angeordnet *Restaurant*, erben Sie die mehr generische Typen z. B. *lokalen Business*. Weitere Informationen finden Sie unter [Schema.org](#http://schema.org).
+Die Schemas werden in einer Struktur wie die Struktur, in denen bestimmte wie Typen angeordnet *Restaurant*, erben Sie die mehr generische Typen z. B. *lokalen Business*. Weitere Informationen finden Sie unter [Schema.org](http://schema.org).
 
 Angenommen, wenn die Webseite die folgenden Daten enthalten:
 

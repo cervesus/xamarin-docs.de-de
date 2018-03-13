@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 992e6583d64f078c0cd693765a1512c3e41a620a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c7edf0c8e563dad25693d184d3a44a3e66466126
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="path-information-and-enumeration"></a>Pfad und -Enumeration
 
@@ -110,7 +110,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die `Length` -Eigenschaft des neu erstellten `SKPathMeasure` Objekt ruft die Länge des Pfads ab. Dies ist die dividiert durch die `baseTextWidth` Wert (Hierbei handelt es sich um die Breite des Texts basierend auf einer Textgröße von 10), und klicken Sie dann die Basistext Größe von 10 multipliziert. Das Ergebnis ist eine neue Textgröße für die Anzeige von Text an, dass der Pfad:
 
-[![](information-images/pathlength-small.png "Dreifacher Screenshot der Seite Pfadlänge")](information-images/pathlength-large.png "dreifacher Screenshot der Seite Pfadlänge")
+[![](information-images/pathlength-small.png "Dreifacher Screenshot der Seite Pfadlänge")](information-images/pathlength-large.png#lightbox "dreifacher Screenshot der Seite Pfadlänge")
 
 Die Bézier-Kurve länger oder kürzer wird, sehen Sie die Textgröße zu ändern.
 
@@ -136,7 +136,7 @@ Die [ `SKPathMeasureMatrixFlags` ](https://developer.xamarin.com/api/type/SkiaSh
 
 Die **Einrad Hälfte-Pipe** Seite eine Animation auf eine Einrad, die zusammen eine kubische Bézier-Kurve hin-und zeigt scheint ein Strichmännchen:
 
-[![](information-images/unicyclehalfpipe-small.png "Dreifacher Screenshot der Seite Einrad Hälfte-Pipe")](information-images/unicyclehalfpipe-large.png "dreifacher Screenshot der Seite Einrad Hälfte-Pipe")
+[![](information-images/unicyclehalfpipe-small.png "Dreifacher Screenshot der Seite Einrad Hälfte-Pipe")](information-images/unicyclehalfpipe-large.png#lightbox "dreifacher Screenshot der Seite Einrad Hälfte-Pipe")
 
 Die `SKPaint` für den Verlauf der Hälfte-Pipe und die Einrad verwendete Objekt ist definiert als Feld in der [ `UnicycleHalfPipePage` ]() Klasse. Wird auch definiert die `SKPath` Objekt für die Einrad:
 
@@ -425,7 +425,7 @@ Beachten Sie, dass die Methode den ersten Punkt der einzelnen Kontur in die Vari
 
 Die **GlobularText** Beispiel verwendet diese Erweiterungsmethode scheinbar Umbrechen von Text um eine Hemisphäre sind in einem 3D-Effekt:
 
-[![](information-images/globulartext-small.png "Dreifacher Screenshot der Seite Globular Text")](information-images/globulartext-large.png "dreifacher Screenshot der Seite Globular Text")
+[![](information-images/globulartext-small.png "Dreifacher Screenshot der Seite Globular Text")](information-images/globulartext-large.png#lightbox "dreifacher Screenshot der Seite Globular Text")
 
 Die [ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Klassenkonstruktor führt dieser Transformation. Erstellt ein `SKPaint` -Objekt für den Text ein, und klicken Sie dann erhält ein `SKPath` -Objekt aus der `GetTextPath` Methode. Dies ist der Pfad zum Übergeben der `CloneWithTransform` Erweiterungsmethode zusammen mit einer Transform-Funktion: 
 

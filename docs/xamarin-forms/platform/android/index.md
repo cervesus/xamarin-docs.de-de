@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/13/2016
-ms.openlocfilehash: d68d84671028ded14b4b885f2c134656fc639f9e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b5e9a4c449bc99bd88fc415f5ebb969d2c2a08a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-platform-features"></a>Android-Plattform-Funktionen
 
@@ -28,14 +28,14 @@ Um das Xamarin.Forms-Android-Projekt Material Entwurf Designs hinzugefügt haben
 
 So sieht die **Todo** Beispiel hat den Standardwert `FormsApplicationActivity`:
 
-[ ![](images/before-appcompat-sml.png "TODO-Beispielanwendung ohne AppCompat")](images/before-appcompat.png "TODO-Beispielanwendung ohne AppCompat")
+[![](images/before-appcompat-sml.png "TODO-Beispielanwendung ohne AppCompat")](images/before-appcompat.png#lightbox "TODO-Beispielanwendung ohne AppCompat")
 
 Und dies ist der gleiche Code nach dem Upgrade des Projekts verwenden `FormsAppCompatActivity` (und Hinzufügen der zusätzlichen Designinformationen):
 
-[ ![](images/post-appcompat-sml.png "TODO-Beispielanwendung mit AppCompat und Designumgebung")](images/post-appcompat.png "TODO-Beispielanwendung mit AppCompat und Designs")
+[![](images/post-appcompat-sml.png "TODO-Beispielanwendung mit AppCompat und Designumgebung")](images/post-appcompat.png#lightbox "TODO-Beispielanwendung mit AppCompat und Designs")
 
 > [!NOTE]
-> **Hinweis**: Verwendung von `FormsAppCompatActivity`, [Basisklassen für einige Android benutzerdefinierten Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md) unterscheiden.
+> Bei Verwendung `FormsAppCompatActivity`, [Basisklassen für einige Android benutzerdefinierten Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md) unterscheiden.
 
 
 ## <a name="related-links"></a>Verwandte Links

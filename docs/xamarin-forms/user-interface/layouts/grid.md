@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 4d074dce06d5737bd6589efbc559c611425e5f19
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 18df6082f634d633d3f1ca8ea1e8d3f493532f47
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="grid"></a>Raster
 
 [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) unterstützt das Anordnen von Ansichten in Zeilen und Spalten. Zeilen und Spalten können festgelegt werden, um proportional Größen oder absolute Größen haben. Die `Grid` Layout sollten nicht mit herkömmlichen Tabellen verwechselt werden und dient nicht zum Präsentieren von Tabellendaten. `Grid` Es muss nicht das Konzept der Zeile, Spalte oder Zelle, die Formatierung. Im Gegensatz zu HTML-Tabellen `Grid` ist ausschließlich für das Layout des Inhalt vorgesehen.
 
-[ ![](grid-images/layouts-sml.png "Xamarin.Forms Layouts")](grid-images/layouts.png "Xamarin.Forms Layouts")
+[![](grid-images/layouts-sml.png "Xamarin.Forms Layouts")](grid-images/layouts.png#lightbox "Xamarin.Forms Layouts")
 
 Dieser Artikel umfasst folgende Themen:
 
@@ -54,7 +54,7 @@ Zeilen-und Spalteninformationen befindet sich in `Grid`des `RowDefinitions`  &  
 - **Absolute** &ndash; -Größen von Spalten und Zeilen mit bestimmten, feste Werte für Höhe und Breite. Als Wert angegeben und `GridUnitType.Absolute` in C# geschrieben und als `#` in XAML mit `#` wird von den gewünschten Wert.
 
 > [!NOTE]
-> **Hinweis**: Breitenwerte für Spalten werden festgelegt, als "*" in der Standardeinstellung in Xamarin.Forms, wodurch sichergestellt wird, dass die Spalte mit den verfügbaren Platz ausfüllen wird.
+> Breitenwerte für Spalten werden festgelegt, als "*" in der Standardeinstellung in Xamarin.Forms, wodurch sichergestellt wird, dass die Spalte mit den verfügbaren Platz ausfüllen wird.
 
 Erwägen Sie eine app, die drei Zeilen und zwei Spalten erforderlich ist. In die untersten Zeile muss genau 200px hoch sein, und die oberste Zeile muss zweimal so hoch wie die mittlere Zeile sein. Die linke Spalte breit genug, um den Inhalt angepasst werden muss, und die rechte Spalte muss den verbleibenden Platz auszufüllen.
 

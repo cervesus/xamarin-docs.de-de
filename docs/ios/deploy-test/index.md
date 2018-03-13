@@ -3,16 +3,16 @@ title: Bereitstellung und Testen
 description: "Leitfäden zu Stabilisierung und Bereitstellung"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: 2DBF3BF9-79E7-4E24-AF26-E34C972B0169
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0c152c389a6aa62512882863cd2830b436587475
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f051e855c9d32f5c9667dc70c7cb9cf9ba8105fb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="deployment-and-testing"></a>Bereitstellung und Testen
 
@@ -65,7 +65,7 @@ In diesem Artikel wird beschrieben, wie Sie Instruments für ein iOS-Gerät und 
 
 Dieser Artikel erläutert die Verwendung des Apple-Tools Instruments, um Speicherprobleme in einer iOS-Anwendung zu diagnostizieren, die mit Xamarin erstellt wurde. Es wird gezeigt, wie Instruments gestartet wird, wie Heap-Momentaufnahmen erfasst werden und wie der Anstieg des benötigten Speichers analysiert wird. Ebenfalls wird beschrieben, wie Instruments dafür verwendet wird, die genaue Codezeile zu ermitteln und anzuzeigen, die das Speicherproblem verursacht.
 
-##  <a name="linking-on-ioslinkermd"></a>[Linking on iOS (Verknüpfen unter iOS)](linker.md)
+##  <a name="linking-on-ioslinkermd"></a>[Verknüpfung unter iOS](linker.md)
 
 Erklärt, wie der Linker arbeitet, um das kleinstmögliche Anwendungspaket sicherzustellen, und wie dessen Einstellungen und Verbrauch angepasst werden.
 

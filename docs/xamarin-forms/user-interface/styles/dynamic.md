@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 2088ae055fb18b3b00712f063d2178f759021088
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9710e322460058902d89ec1a57c374b93beb82fb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="dynamic-styles"></a>Dynamische Formate
 
@@ -81,8 +81,8 @@ public partial class DynamicStylesPage : ContentPage
 
 Wenn die `OnButtonClicked` -Ereignishandler ausgeführt wird, `searchBarStyle` wechselt zwischen `blueSearchBarStyle` und `greenSearchBarStyle`. Daraus ergibt sich die Darstellung in den folgenden Screenshots dargestellt:
 
-[![](dynamic-images/dynamic-style-blue.png "Dynamic Style Beispiel Blau")](dynamic-images/dynamic-style-blue-large.png "Blau Dynamic Style Beispiel")
-[![](dynamic-images/dynamic-style-green.png "Grün Dynamic Style Beispiel") ] (dynamic-images/dynamic-style-green-large.png "Grün Dynamic Style-Beispiel")
+[![](dynamic-images/dynamic-style-blue.png "Dynamic Style Beispiel Blau")](dynamic-images/dynamic-style-blue-large.png#lightbox "Blau Dynamic Style Beispiel")
+[![](dynamic-images/dynamic-style-green.png "Grün Dynamic Style Beispiel") ] (dynamic-images/dynamic-style-green-large.png#lightbox "Grün Dynamic Style-Beispiel")
 
 Im folgenden Codebeispiel wird veranschaulicht, die entsprechende Seite in c#:
 
@@ -162,8 +162,8 @@ Die [ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchB
 
 In der Code-Behind-Datei der Konstruktor erstellt ein [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) Eintrag mit dem Schlüssel `searchBarStyle`gemäß dem vorherigen Beispiel, das dynamische Formate veranschaulicht. Wenn die `OnButtonClicked` -Ereignishandler ausgeführt wird, `searchBarStyle` wechselt zwischen `blueSearchBarStyle` und `greenSearchBarStyle`. Daraus ergibt sich die Darstellung in den folgenden Screenshots dargestellt:
 
-[![](dynamic-images/dynamic-style-inheritance-blue.png "Blau Dynamic Style-Vererbungsbeispiel")](dynamic-images/dynamic-style-inheritance-blue-large.png "Blau Dynamic Style-Vererbungsbeispiel")
-[![](dynamic-images/dynamic-style-inheritance-green.png "Dynamic Style Grün -Vererbungsbeispiel")](dynamic-images/dynamic-style-inheritance-green-large.png "Grün Dynamic Style Vererbung-Beispiel")
+[![](dynamic-images/dynamic-style-inheritance-blue.png "Blau Dynamic Style-Vererbungsbeispiel")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "Blau Dynamic Style-Vererbungsbeispiel")
+[![](dynamic-images/dynamic-style-inheritance-green.png "Dynamic Style Grün -Vererbungsbeispiel")](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox "Grün Dynamic Style Vererbung-Beispiel")
 
 Im folgenden Codebeispiel wird veranschaulicht, die entsprechende Seite in c#:
 
@@ -215,7 +215,7 @@ Stile nicht reagieren auf eigenschaftenänderungen, und für die Dauer einer Anw
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Verwendung von XAML-Markuperweiterungen](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [XAML-Markuperweiterungen](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Dynamische Formate (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
 - [Arbeiten mit Formatvorlagen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
 - [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)

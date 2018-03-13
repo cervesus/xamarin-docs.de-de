@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 90a2eb219ae1189e7a48e60cde9761e3e9e93e0b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce51511c58d7d0f5a14e487b57897bfa0e0b20b3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="graphics-and-animation"></a>Grafiken und Animationen
 
 _Android bietet ein sehr umfangreiches und verschiedene-Framework zur Unterstützung von 2D Grafiken und Animationen. Dieses Thema führt diese Frameworks und erläutert, wie benutzerdefinierte Grafiken und Animationen für die Verwendung in einer Anwendung Xamarin.Android zu erstellen._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -61,7 +60,6 @@ Apps in diesen Fällen mehr verwendet werden, wenn sie mit Eingabehilfen Bedenke
 Verweisen auf [Googles Accessibility Guide](http://developer.android.com/guide/topics/ui/accessibility/) für Weitere Informationen zum Zugriff auf Android APIs nutzen.
 
 
-<a name="2D_Graphics" />
 
 ## <a name="2d-graphics"></a>2D Grafiken
 
@@ -71,7 +69,6 @@ Das andere Verfahren, mit der [Zeichenbereich](https://developer.xamarin.com/api
 
 Betrachten wir zunächst zeichenbaren Ressourcen. Sie sind einfacher und decken die am häufigsten vorkommenden Fälle für das benutzerdefinierte zeichnen.
 
-<a name="Drawable Resources" />
 
 ### <a name="drawable-resources"></a>Zeichenbaren Ressourcen
 
@@ -153,7 +150,6 @@ Um anzuzeigen, wie dies aussehen würde, führen Sie die *AnimationsDemo* Projek
 
 Weitere Informationen zu den XML-Elemente und die Syntax des zeichenbaren Ressourcen, finden Sie in [Google Dokumentation](http://developer.android.com/guide/topics/resources/drawable-resource.html#Shape).
 
-<a name="Using the Canvas Drawing API" />
 
 ### <a name="using-the-canvas-drawing-api"></a>Mithilfe der Canvas-Zeichnung-API
 
@@ -183,7 +179,6 @@ Das Canvas-Klasse macht Methoden, um den Draw-Anweisungen programmgesteuert bere
 -   [Canvas.DrawText](https://developer.xamarin.com/api/member/Android.Graphics.Canvas.DrawText/p/System.String/System.Single/System.Single/Android.Graphics.Paint/) &ndash; zeichnet den Text auf der Canvas mit der angegebenen Farbe. Der Text gezeichnet wird, am Speicherort `x,y` .
 
 
-<a name="Drawing with the Canvas API" />
 
 #### <a name="drawing-with-the-canvas-api"></a>Zeichnen mit dem Zeichenbereich API
 
@@ -218,7 +213,6 @@ Dieser Code oben erstellt zuerst eine rote Farbe und ein grüner Paint-Objekt. E
 
 ![Bildschirm mit roter Farbe und Grün Paint-Objekten](graphics-and-animation-images/image3.png)
 
-<a name="Animation" />
 
 ## <a name="animation"></a>Animation
 
@@ -232,7 +226,6 @@ Benutzer, z. B. Aufgaben, die in ihren Anwendungen verschieben. Animationen sind
 
 Eigenschaft Animation ist im Allgemeinen die bevorzugte System verwenden, wie es flexibler ist und weitere Features bietet.
 
-<a name="View Animations" />
 
 ### <a name="view-animations"></a>Anzeigen von Fenstern
 
@@ -319,7 +312,6 @@ myImage.StartAnimation(myAnimation);
 
 Nun, wir eine grundlegende Kenntnisse über die Funktionsweise von Animationen anzeigen haben, können die Eigenschaftenanimationen verschieben.
 
-<a name="Property Animations" />
 
 ### <a name="property-animations"></a>Eigenschaftenanimationen
 
@@ -397,7 +389,6 @@ animator.Start();
 
 Wie Sie aus dem vorherigen Codeausschnitt sehen `ObjectAnimator` können zu verringern und vereinfachen Sie den Code, der zum Animieren eines Objekts erforderlich ist.
 
-<a name="Drawable Animations" />
 
 ### <a name="drawable-animations"></a>Zeichenbaren Animationen
 
@@ -442,7 +433,6 @@ protected override void OnCreate(Bundle bundle)
 
 Zu diesem Zeitpunkt haben wir die Grundlagen der Animation APIs zur Verfügung, in einer Android-Anwendung behandelt.
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2016
-ms.openlocfilehash: c305075d37a25bfe828f16d4e69955437a591f9a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 648125ca8bd2c7c8a015b4c29195dc75c0bbf0a0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="scrollview"></a>ScrollView
 
 [`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) enthält Layouts und können sie einen Bildlauf außerhalb des Bildschirms. `ScrollView` wird auch verwendet, um erlauben Ansichten automatisch in der sichtbare Teil des Bildschirms verschoben werden, wenn die Tastatur angezeigt wird.
 
-[ ![](scroll-view-images/layouts-sml.png "Xamarin.Forms Layouts")](scroll-view-images/layouts.png "Xamarin.Forms Layouts")
+[![](scroll-view-images/layouts-sml.png "Xamarin.Forms Layouts")](scroll-view-images/layouts.png#lightbox "Xamarin.Forms Layouts")
 
 Dieser Artikel behandelt:
 
@@ -35,7 +35,7 @@ Dieser Artikel behandelt:
 ## <a name="usage"></a>Verwendung
 
 > [!NOTE]
-> **Hinweis**: `ScrollView`s sollte nicht geschachtelt werden. Darüber hinaus `ScrollView`s muss nicht mit anderen Steuerelementen, die einen Bildlauf durchzuführen, z. B. bereitstellen verschachtelt sein `ListView` und `WebView`.
+> `ScrollView`s sollte nicht geschachtelt werden. Darüber hinaus `ScrollView`s muss nicht mit anderen Steuerelementen, die einen Bildlauf durchzuführen, z. B. bereitstellen verschachtelt sein `ListView` und `WebView`.
 
 `ScrollView` macht eine `Content` Eigenschaft, die mit einer einzigen Ansicht oder dem Layout festgelegt werden kann. Betrachten Sie dieses Beispiel ein Layout mit einem sehr großen BoxView, gefolgt von einem `Entry`:
 

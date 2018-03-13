@@ -3,16 +3,16 @@ title: Windows-Plattform-Besonderheiten
 description: "Plattform Einzelheiten können Sie Funktionen zu nutzen, die nur auf eine bestimmte Plattform verfügbar ist ohne Implementierung benutzerdefinierter Renderer oder Auswirkungen. Dieser Artikel veranschaulicht, wie die Windows-Plattform-Einzelheiten zu nutzen, die in Xamarin.Forms integriert werden."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4729DB9C-8800-4E29-9D66-3BE13C5F8C94
+ms.assetid: 22B403C0-FE6D-498A-AE53-095E6C4B527C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: da9279939af8dc4033cd89769a7add60a745ac85
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 01b32d1ca5356ed69480dff0d31c210a8c460417
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="windows-platform-specifics"></a>Windows-Plattform-Besonderheiten
 
@@ -52,7 +52,7 @@ Die `Page.On<Windows>` Methode gibt an, dass diese plattformspezifische nur unte
 
 Das Ergebnis ist, dass die angegebene Symbolleiste Platzierung angewendet wird, auf die [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) Instanz:
 
-[![](windows-images/toolbar-placement.png "Symbolleiste Platzierung plattformspezifischen")](windows-images/toolbar-placement-large.png "Symbolleiste Platzierung plattformspezifischen")
+[![](windows-images/toolbar-placement.png "Symbolleiste Platzierung plattformspezifischen")](windows-images/toolbar-placement-large.png#lightbox "Symbolleiste Platzierung plattformspezifischen")
 
 <a name="collapsable_navigation_bar" />
 
@@ -84,7 +84,7 @@ Die `MasterDetailPage.On<Windows>` Methode gibt an, dass diese plattformspezifis
 
 Das Ergebnis ist, die ein angegebenes [ `CollapseStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/) wird angewendet, um die [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) -Instanz, mit die Breite, die ebenfalls angegeben wird:
 
-[![](windows-images/collapsed-navigation-bar.png "Reduziert die Navigationsleiste plattformspezifischen")](windows-images/collapsed-navigation-bar-large.png "reduzierten Navigationsleiste plattformspezifischen")
+[![](windows-images/collapsed-navigation-bar.png "Reduziert die Navigationsleiste plattformspezifischen")](windows-images/collapsed-navigation-bar-large.png#lightbox "reduzierten Navigationsleiste plattformspezifischen")
 
 ## <a name="summary"></a>Zusammenfassung
 
@@ -93,6 +93,6 @@ Dieser Artikel veranschaulicht, wie die Windows-Plattform-Einzelheiten zu nutzen
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Erstellen der Plattform-Besonderheiten](~/xamarin-forms/platform/platform-specifics/creating.md)
+- [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 - [WindowsSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/)

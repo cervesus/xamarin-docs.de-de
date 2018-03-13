@@ -7,18 +7,17 @@ ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: 9acb1ad6ab1425edb98b938e8c03edc3704f50ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 9f88899d390f7f268f1b2f435617dc952f9eb205
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="splash-screen"></a>Begrüßungsbildschirm
 
 _Eine Android-app nimmt einige Zeit in gestartet wird, insbesondere wenn die app zunächst auf einem Gerät gestartet wird. Ein Begrüßungsbildschirm möglicherweise Start angezeigt Bearbeitung an den Benutzer "oder" an, dass branding einrichten._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -32,10 +31,8 @@ Dieses Handbuch beschreibt eine Technik, um einen Begrüßungsbildschirm in eine
 
 3.  Hinzufügen einer neuen Aktivität der Anwendung, die als durch das Design, das im vorherigen Schritt erstellten definierten Begrüßungsbildschirm verwendet werden.
 
-[![Beispiel für Xamarin-Logo-Splash-Bildschirm gefolgt von app-Bildschirm](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png)
+[![Beispiel für Xamarin-Logo-Splash-Bildschirm gefolgt von app-Bildschirm](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -43,7 +40,6 @@ Dieses Handbuch setzt voraus, dass die Anwendung für Android-API-Ebene 15 (Andr
 
 Alle Code und XML-Code in diesem Handbuch finden Sie in der [SplashScreen](https://developer.xamarin.com/samples/monodroid/SplashScreen) Beispielprojekt für dieses Handbuchs.
 
-<a name="implement" />
 
 ## <a name="implementing-a-splash-screen"></a>Implementieren einen Begrüßungsbildschirm
 
@@ -51,7 +47,6 @@ Die schnellste Möglichkeit zum Rendern und den Begrüßungsbildschirm angezeigt
 
 Der Begrüßungsbildschirm wird als eine Aktivität, die das Branding zeigt implementiert zeichenbaren, führt alle Initialisierungen und startet alle Aufgaben. Sobald die app neu gestartet wurde, wird der Begrüßungsbildschirm Aktivität startet die Hauptaktivität und selbst aus der Anwendung Back-Stapel entfernt wird.
 
-<a name="drawable" />
 
 ### <a name="creating-a-drawable-for-the-splash-screen"></a>Erstellen eine zeichenbaren für den Begrüßungsbildschirm
 
@@ -79,7 +74,6 @@ Legen Sie diese Datei in die **Ressourcen und Ausgaben möglich** Ordner (z. B. 
 
 Nachdem der Begrüßungsbildschirm zeichenbaren erstellt wurde, besteht der nächste Schritt erstellen Sie ein Design für den Begrüßungsbildschirm.
 
-<a name="theme" />
 
 ### <a name="implementing-a-theme"></a>Implementieren ein Design
 
@@ -103,7 +97,6 @@ Um ein benutzerdefiniertes Design für den Begrüßungsbildschirm Aktivität zu 
 
 **MyTheme.Splash** ist sehr spartan &ndash; Fenster Hintergrund deklariert, explizit entfernt die Titelleiste aus dem Fenster und deklariert, dass es Vollbildmodus ist. Wenn Sie einen Begrüßungsbildschirm erstellen, die die Benutzeroberfläche der app emuliert, bevor die Aktivität die erste Layout vergrößert möchten, können Sie `windowContentOverlay` statt `windowBackground` in Ihre Formatdefinition. In diesem Fall müssen Sie auch ändern der **splash_screen.xml** zeichenbaren, sodass er eine Emulation von der Benutzeroberfläche angezeigt.
 
-<a name="activity" />
 
 ### <a name="create-a-splash-activity"></a>Erstellen einer Splash-Aktivität
 
@@ -161,7 +154,6 @@ public class MainActivity : AppCompatActivity
 }
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

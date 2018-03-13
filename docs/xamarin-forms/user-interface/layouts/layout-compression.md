@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 15f198465c544989b347fe534978956741478ed2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e03acbbac737bffd21ee3b592ab017d227f822ad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-compression"></a>Layoutkomprimierung
 
@@ -60,7 +60,7 @@ Die resultierende Hierarchie für eine geschachtelte Ansicht mit untersucht werd
 Layout-Komprimierung für Xamarin.Forms-Anwendungen auf IOS- und Android-Plattform verfügbar ist, zielt darauf ab, so vereinfachen Sie die Ansicht durch das Entfernen der angegebenen Layouts aus der visuellen Struktur, die Seitenrendering verbessert schachteln. Die Leistungsvorteile, die übermittelt wird, variiert abhängig von der Komplexität einer Seite, die Version des Betriebssystems verwendet wird und das Gerät, auf dem die Anwendung ausgeführt wird. Die größten Leistungssteigerungen werden jedoch bei älteren Geräten zu verzeichnen sein.
 
 > [!NOTE]
-> **Hinweis**: zwar auf die Ergebnisse des Anwendens von Layout-Komprimierung auf Android dieser Artikel konzentriert sich, es ist gleichermaßen anwendbar für iOS.
+> Während auf die Ergebnisse des Anwendens von Layout-Komprimierung auf Android dieser Artikel konzentriert sich, ist es gleichermaßen anwendbar für iOS.
 
 ## <a name="layout-compression"></a>Layoutkomprimierung
 

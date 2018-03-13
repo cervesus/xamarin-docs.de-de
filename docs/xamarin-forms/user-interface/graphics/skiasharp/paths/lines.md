@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9a3090873569db2466db9ab25cc105ea59401df3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: abcda680f6cfbde802f7b666cf2aade2c6e11093
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Linien und Strich Caps
 
@@ -92,7 +92,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Für jedes Mitglied der `SKStrokeCap` -Enumeration, die Handler zeichnet zwei Zeilen mit Strichstärke 50 Pixeln und einer anderen Zeile im Vordergrund mit Strichstärke 2 Pixel positioniert. Diese zweite Zeile dient die geometrische Start- und Ende der Zeile, die unabhängig von der Linienstärke und eine Obergrenze Strich veranschaulichen:
 
-[![](lines-images/strokecaps-small.png "Dreifacher Screenshot der Seite Strich Caps")](lines-images/strokecaps-large.png "dreifacher Screenshot der Seite Strich Caps")
+[![](lines-images/strokecaps-small.png "Dreifacher Screenshot der Seite Strich Caps")](lines-images/strokecaps-large.png#lightbox "dreifacher Screenshot der Seite Strich Caps")
 
 Wie Sie sehen können, die `Square` und `Round` Strich Caps effektiv die Länge der Zeile erweitern, indem Sie halbe Strichbreite am Anfang der Zeile und erneut am Ende. Diese Erweiterung ist wichtig, wenn es erforderlich, die Dimensionen eines gerenderten Graphics-Objekts zu ermitteln ist.
 
@@ -230,7 +230,7 @@ T GetPickerItem<T>(Picker picker)
 
 Der Screenshot zeigt eine Vielzahl von `Picker` Auswahl wird auf drei Plattformen:
 
-[![](lines-images/multiplelines-small.png "Dreifacher Screenshot der Seite mehrere Zeilen")](lines-images/multiplelines-large.png "dreifacher Screenshot der Seite mehrere Zeilen")
+[![](lines-images/multiplelines-small.png "Dreifacher Screenshot der Seite mehrere Zeilen")](lines-images/multiplelines-large.png#lightbox "dreifacher Screenshot der Seite mehrere Zeilen")
 
 Das iPhone auf der linken zeigt wie die `SKPointMode.Points` bewirkt, dass Enumerationsmember `DrawPoints` zum Rendern aller Punkte in der `SKPoint` array als Quadrat ist das Linienende `Butt` oder `Square`. Kreise werden gerendert, wenn das Linienende ist `Round`.
 

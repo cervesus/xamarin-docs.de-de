@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/01/2018
-ms.openlocfilehash: c8f6832f618c37b3593f28c8efaeb87e4df5df03
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fba8412c53597260744bdce443a7e993a6990672
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-resource-basics"></a>Grundlagen der Android-Ressource
 
@@ -39,7 +39,6 @@ Die fünf Dateien, aus denen die Standardressourcen besteht, die im Ordner "Ress
 
 -  **Resource.Designer.cs** &ndash; diese Datei wird automatisch generiert und Beibehalten von Xamarin.Android und enthält die eindeutige IDs jeder Ressource zugewiesen. Dies ist sehr ähnlich und ihres Verwendungszwecks identisch, mit der R.java-Datei, die eine Android-Anwendung in Java geschrieben würden. Es wird automatisch erstellt, indem die Xamarin.Android Tools und wird von Zeit zu Zeit neu generiert werden.
 
-<a name="Creating_and_Accessing_Resources" />
 
 ## <a name="creating-and-accessing-resources"></a>Erstellen und den Zugriff auf Ressourcen
 
@@ -62,7 +61,6 @@ Darüber hinaus ist es wichtig zu beachten, dass Android Kleinbuchstabe Dateinam
 
 Nach der Ressourcen zu einem Projekt hinzugefügt wurden, stehen zwei Möglichkeiten, Ihre Verwendung in einer Anwendung &ndash; programmgesteuert (im Code) oder aus XML-Dateien.
 
-<a name="Referencing_Resources_Programmatically" />
 
 ## <a name="referencing-resources-programmatically"></a>Programmgesteuertes Verweisen auf Ressourcen
 
@@ -108,7 +106,6 @@ Wenn Ressourcen programmgesteuert (im Code) verwiesen wird, kann darauf über di
 
 -  **Ressourcenname** &ndash; Dies ist der Dateiname der Ressource (ohne Erweiterung) oder den Wert des Attributs "Android: Name" für Ressourcen, die in einem XML-Element befinden.
 
-<a name="Referencing_Resources_from_XML" />
 
 ## <a name="referencing-resources-from-xml"></a>Verweisen auf Ressourcen aus XML
 

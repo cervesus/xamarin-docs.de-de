@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 726c65746b1282223c403b08c54c400ea32a6324
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 62ac3ab4b3114447f0c67d86c601a688bb8ff1a7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cell-appearance"></a>Darstellung der Zelle
 
@@ -230,7 +230,7 @@ Die [ `OnBindingContextChanged` ](https://developer.xamarin.com/api/member/Xamar
 Sie können Benutzeroberflächen-Steuerelemente binden, um die [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) Instanzen anzuzeigenden ihre Werte, die außer Kraft setzen müssen entfernt der `OnBindingContextChanged` Methode.
 
 > [!NOTE]
-> **Hinweis**: zum Überschreiben `OnBindingContextChanged`, stellen Sie sicher, dass der Basisklasse `OnBindingContextChanged` aufgerufen wird, damit registrierte Delegaten empfangen die `BindingContextChanged` Ereignis.
+> Zum Überschreiben `OnBindingContextChanged`, stellen Sie sicher, dass der Basisklasse `OnBindingContextChanged` aufgerufen wird, damit registrierte Delegaten empfangen die `BindingContextChanged` Ereignis.
 
 In XAML kann Binden von benutzerdefinierten Zellentyps an Daten erreicht werden wie im folgenden Codebeispiel gezeigt:
 

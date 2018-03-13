@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 2a10c161c49e7cd0d45d29522a98c0dc78f7adb7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 702a5986c9249eec38868895f55ef6f63b534b9b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tab-bars-and-tab-bar-controllers"></a>Auf der Registerkarte Balken und Registerkartenleiste-Controller
 
@@ -42,7 +42,7 @@ Um ein Verständnis dafür zu zum Arbeiten mit der `UITabBarController`, wir die
 
 In dieser exemplarischen Vorgehensweise werden wir die folgende Anwendung zu erstellen:
 
-[ ![](creating-tabbed-applications-images/00-app.png "Im Registerkartenformat Beispiel-app")](creating-tabbed-applications-images/00-app.png)
+[![](creating-tabbed-applications-images/00-app.png "Im Registerkartenformat Beispiel-app")](creating-tabbed-applications-images/00-app.png#lightbox)
 
 Obwohl eine Vorlage im Registerkartenformat Anwendung bereits in Visual Studio für Mac, in diesem Beispiel verfügbar ist, werden wir arbeitsmaterial auf ein leeres Projekt erhalten Sie einen besseren Überblick darüber, wie die Anwendung erstellt wird.
 
@@ -55,9 +55,9 @@ Beginnen wir, indem Sie eine neue Anwendung erstellen.
 
 Wählen Sie die **Datei > Neu > Projektmappe** Menüelement in Visual Studio für Mac, und wählen eine **iOS > App > leeres Projekt** Vorlage, nennen Sie das Projekt `TabbedApplication`, wie unten dargestellt:
 
-[ ![](creating-tabbed-applications-images/newsolution1.png "Wählen Sie die leere Projektvorlage")](creating-tabbed-applications-images/newsolution1.png)
+[![](creating-tabbed-applications-images/newsolution1.png "Wählen Sie die leere Projektvorlage")](creating-tabbed-applications-images/newsolution1.png#lightbox)
 
-[ ![](creating-tabbed-applications-images/newsolution2.png "Nennen Sie das Projekt TabbedApplication")](creating-tabbed-applications-images/newsolution2.png)
+[![](creating-tabbed-applications-images/newsolution2.png "Nennen Sie das Projekt TabbedApplication")](creating-tabbed-applications-images/newsolution2.png#lightbox)
 
 
 
@@ -65,7 +65,7 @@ Wählen Sie die **Datei > Neu > Projektmappe** Menüelement in Visual Studio fü
 
 Fügen Sie eine leere Klasse dazu **Datei > neue Datei** auswählen und die **Allgemein: leere Klasse** Vorlage. Nennen Sie die Datei `TabController` wie unten dargestellt:
 
-[ ![](creating-tabbed-applications-images/02-newclass.png "Fügen Sie die TabController-Klasse")](creating-tabbed-applications-images/02-newclass.png)
+[![](creating-tabbed-applications-images/02-newclass.png "Fügen Sie die TabController-Klasse")](creating-tabbed-applications-images/02-newclass.png#lightbox)
 
 Die `TabController` Klasse enthält die Implementierung der `UITabBarController` verwalten, die ein Array von `UIViewControllers`. Bei der Auswahl einer Registerkarte für die `UITabBarController` zur Darstellung der Ansicht für den entsprechenden View-Controller von übernimmt.
 
@@ -113,7 +113,7 @@ namespace TabbedApplication {
 
 Beachten Sie, dass für jede `UIViewController` Instanz, legen wir den `Title` Eigenschaft von der `UIViewController`. Wenn die Controller hinzugefügt werden die `UITabBarController`, die `UITabBarController` liest die `Title` für jeden Controller und zeigen Sie es in der entsprechenden Registerkarte Bezeichnung aus, wie unten dargestellt:
 
-[ ![](creating-tabbed-applications-images/00-app.png "Führen Sie die Beispiel-app")](creating-tabbed-applications-images/00-app.png)
+[![](creating-tabbed-applications-images/00-app.png "Führen Sie die Beispiel-app")](creating-tabbed-applications-images/00-app.png#lightbox)
 
 #### <a name="setting-the-tabcontroller-as-the-rootviewcontroller"></a>Festlegen der TabController als die RootViewController
 
@@ -144,7 +144,7 @@ Zum Abrufen der `UITabController` um als ersten Bildschirm zu laden, müssen wir
 
 Wenn wir die Anwendung jetzt ausführen der `UITabBarController` wird geladen, mit der ersten Registerkarte standardmäßig ausgewählt. Auswählen einer der anderen Registerkarten die Ergebnisse im zugeordneten Controllers anzeigen angezeigt wird, indem Sie die `UITabBarController,` wie unten, in dem der Endbenutzer die zweite Registerkarte ausgewählt wurde:
 
-[ ![](creating-tabbed-applications-images/03-secondtab.png "Die zweite Registerkarte angezeigt")](creating-tabbed-applications-images/03-secondtab.png)
+[![](creating-tabbed-applications-images/03-secondtab.png "Die zweite Registerkarte angezeigt")](creating-tabbed-applications-images/03-secondtab.png#lightbox)
 
  <a name="Modifying_TabBarItems" />
 
@@ -185,7 +185,7 @@ tab2.View.BackgroundColor = UIColor.Orange;
 
 Der obige Code geht davon aus, ein Bild mit dem Namen `second.png` in das Stammverzeichnis des Projekts in Visual Studio für Mac hinzugefügt wurde Wir haben unsere-Projekt, um alle Geräte Lösungen abzudecken, wie unten dargestellt tatsächlich drei Bildern hinzugefügt:
 
- [ ![](creating-tabbed-applications-images/tabbedimages7new.png "Die Bilder dem Projekt hinzugefügt")](creating-tabbed-applications-images/tabbedimages7new.png)
+ [![](creating-tabbed-applications-images/tabbedimages7new.png "Die Bilder dem Projekt hinzugefügt")](creating-tabbed-applications-images/tabbedimages7new.png#lightbox)
 
 Die Registerkarte Bild muss eine Png 30 x 30 Zwischenfarbe für normale Auflösung 60 x 60 für hochauflösende und 90 x 90 für iPhone 6 Plus Auflösung. In unserem Code wir brauchen nur beim Laden der Datei mit dem Namen `second.png` und iOS wird automatisch die hohe Auflösung auf Geräten mit einem Retina-Display zu laden. Weitere Informationen finden Sie in der [arbeiten mit Bildern](~/ios/app-fundamentals/images-icons/index.md) Handbücher. Standardmäßig sind die Leiste Registerkartenelemente grau, mit einem blauen Farbton beim aktiviert.
 
@@ -193,13 +193,13 @@ Die Registerkarte Bild muss eine Png 30 x 30 Zwischenfarbe für normale Auflösu
 
 Konnte die oben genannten Bilder auch hinzugefügt werden die **Ressourcen** Datenverzeichnis, das ein bestimmtes Verzeichnis befindet, deren Inhalt automatisch in das Stammverzeichnis des Anwendungspaket kopiert werden wird:
 
-[ ![](creating-tabbed-applications-images/tabbedapplication8.png "Die Bilder als Ressourcen")](creating-tabbed-applications-images/tabbedapplication8.png)
+[![](creating-tabbed-applications-images/tabbedapplication8.png "Die Bilder als Ressourcen")](creating-tabbed-applications-images/tabbedapplication8.png#lightbox)
 
 Wir darüber hinaus beim Festlegen der `Title` -Eigenschaft direkt unter der `TabBarItem`, überschreibt es Wert für `Title` auf dem Controller selbst.
 
 Wenn wir die Anwendung jetzt ausführen, zeigt die zweite Registerkarte unsere benutzerdefinierte Titel und das Bild aus, wie unten dargestellt:
 
-[ ![](creating-tabbed-applications-images/05-customtab.png "Die zweite Registerkarte mit einem Quadratisches Symbol")](creating-tabbed-applications-images/05-customtab.png)
+[![](creating-tabbed-applications-images/05-customtab.png "Die zweite Registerkarte mit einem Quadratisches Symbol")](creating-tabbed-applications-images/05-customtab.png#lightbox)
 
  <a name="Setting_the_Badge_Value" />
 
@@ -214,7 +214,7 @@ tab3.TabBarItem.BadgeValue = "Hi";
 
 Bei Ausführen dieses ergibt sich eine rote Bezeichnung mit der Zeichenfolge "Hi" in der oberen linken Ecke der Registerkarte wie folgt:
 
-[ ![](creating-tabbed-applications-images/06-badge.png "Die zweite Registerkarte mit einem Hi badge")](creating-tabbed-applications-images/06-badge.png)
+[![](creating-tabbed-applications-images/06-badge.png "Die zweite Registerkarte mit einem Hi badge")](creating-tabbed-applications-images/06-badge.png#lightbox)
 
 Das Signal wird häufig verwendet, um eine Zahl ungelesen Hinweis angezeigt, der neue Elemente. Um das Signal zu entfernen, legen Sie die `BadgeValue` auf null fest, wie unten dargestellt:
 
@@ -236,7 +236,7 @@ Im obigen Beispiel haben wir zum Arbeiten mit einem `UITabBarController` Wenn es
 
 In diesem Szenario wird der Startbildschirm von einem Controller, der nicht lädt eine `UITabBarController`. Wenn der Benutzer mit dem Bildschirm durch Tippen auf eine Schaltfläche interagiert, werden die gleichen View-Controller geladen werden, in eine `UITabBarController`, ist die klicken Sie dann dem Benutzer angezeigt. Der folgende Screenshot zeigt den Anwendungsablauf:
 
-[ ![](creating-tabbed-applications-images/inital-screen-application.png "Diese bildschirmabbildung zeigt den Anwendungsablauf")](creating-tabbed-applications-images/inital-screen-application.png)
+[![](creating-tabbed-applications-images/inital-screen-application.png "Diese bildschirmabbildung zeigt den Anwendungsablauf")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)
 
 Beginnen Sie eine neue Anwendung für dieses Beispiel an. Wir verwenden wieder die **iPhone > App > leeres Projekt (c#)** Vorlage, diesmal das Projekt `InitialScreenDemo`.
 
@@ -249,14 +249,14 @@ In diesem Beispiel wird benötigen wir ein Storyboard mit unserem View-Controlle
 
 Wir nennen diese neue Storyboard **MainStoryboard** , wie unten gezeigt: 
 
-[ ![](creating-tabbed-applications-images/new-file-dialog.png "Fügen Sie dem Projekt eine MainStoryboard-Datei")](creating-tabbed-applications-images/new-file-dialog.png)
+[![](creating-tabbed-applications-images/new-file-dialog.png "Fügen Sie dem Projekt eine MainStoryboard-Datei")](creating-tabbed-applications-images/new-file-dialog.png#lightbox)
 
 Es gibt einige wichtige Schritte beachten Sie beim Hinzufügen eines Drehbuchs in eine zuvor nicht Storyboard-Datei, die beschrieben werden die [Einführung in Storyboards](~/ios/user-interface/storyboards/index.md) Handbuch. Diese lauten wie folgt:
 
  
 1. Fügen Sie Ihr Name Storyboard der **Hauptbenutzeroberfläche** Teil der `Info.plist`:
 
-    [![](creating-tabbed-applications-images/project-options.png "Legen Sie die Hauptkomponente der Benutzeroberfläche auf MainStoryboard")](creating-tabbed-applications-images/project-options.png)
+    [![](creating-tabbed-applications-images/project-options.png "Legen Sie die Hauptkomponente der Benutzeroberfläche auf MainStoryboard")](creating-tabbed-applications-images/project-options.png#lightbox)
 1. In Ihrem `App Delegate`, überschreiben Sie die Fenster-Methode, durch den folgenden Code:
 
     ```csharp
@@ -270,11 +270,11 @@ Wir werden drei View-Controller für dieses Beispiel benötigen. Dasjenige, mit 
 
 Öffnen Sie den Designer, indem Sie auf die MainStoryboard.storyboard-Datei doppelklicken, und ziehen Sie drei View-Controller der Entwurfsoberfläche. Jede dieser Controller Ansicht ihrer eigenen Klasse entspricht dem oben genannten Namen haben soll dies der Fall ist, klicken Sie unter **Identität > Klasse**, geben Sie in ihrem Namen, wie im folgenden Screenshot gezeigt:
 
-[ ![](creating-tabbed-applications-images/class-name.png "Legen Sie die Klasse den ViewController1")](creating-tabbed-applications-images/class-name.png)
+[![](creating-tabbed-applications-images/class-name.png "Legen Sie die Klasse den ViewController1")](creating-tabbed-applications-images/class-name.png#lightbox)
 
 Visual Studio für Mac generiert automatisch die Klassen und Designer-Dateien erforderlich, dies ist in das Auffüllzeichen Lösung wie unten gezeigt:
 
-[ ![](creating-tabbed-applications-images/solution-pad2.png "Automatisch generierte Dateien im Projekt")](creating-tabbed-applications-images/solution-pad2.png)
+[![](creating-tabbed-applications-images/solution-pad2.png "Automatisch generierte Dateien im Projekt")](creating-tabbed-applications-images/solution-pad2.png#lightbox)
 
  <a name="Creating_the_UI" />
 
@@ -291,11 +291,11 @@ Wir möchten, ziehen eine `Label` und ein `Button` auf ViewController1 aus der *
 
 Wir steuern die Sichtbarkeit der Schaltfläche in einem `TouchUpInside` Ereignis, und es müssen im Code-behind darauf verwiesen. Wir es mit identifiziert die **Namen** `aButton` in den Eigenschaften aufgefüllt, wie im folgenden Screenshot dargestellt:
 
-[ ![](creating-tabbed-applications-images/abutton-properties.png "Legen Sie den Namen zu aButton in den Eigenschaften mit Leerstellen auffüllen")](creating-tabbed-applications-images/abutton-properties.png)
+[![](creating-tabbed-applications-images/abutton-properties.png "Legen Sie den Namen zu aButton in den Eigenschaften mit Leerstellen auffüllen")](creating-tabbed-applications-images/abutton-properties.png#lightbox)
 
 Die Entwurfsoberfläche sollte jetzt mit dem folgenden Screenshot entsprechen:
 
-[ ![](creating-tabbed-applications-images/design-surface1.png "Die Entwurfsoberfläche sollte nun ähnlich wie in diesem Screenshot aussehen.")](creating-tabbed-applications-images/design-surface1.png)
+[![](creating-tabbed-applications-images/design-surface1.png "Die Entwurfsoberfläche sollte nun ähnlich wie in diesem Screenshot aussehen.")](creating-tabbed-applications-images/design-surface1.png#lightbox)
 
 Fügen Sie ein wenig mehr Details `ViewController2` und `ViewController3`, indem Sie eine Bezeichnung hinzugefügt, und wenn der Text "Zwei" und "Drei" geändert. Dies unterstreicht, dem Benutzer die Registerkarte "/ Sicht Wir betrachten.
 
@@ -305,7 +305,7 @@ Wir werden laden `ViewController1` beim ersten Starten der Anwendung. Wenn der B
 
 Wenn der Benutzer lässt die `aButton`, ein TouchUpInside-Ereignis ausgelöst werden soll. Wir wählen Sie die Schaltfläche "", und klicken Sie in der **Registerkarte "Ereignisse"** Pad Eigenschaften deklarieren Sie den Ereignishandler – `InitialActionCompleted` – damit im Code verwiesen werden kann. Dies wird im folgenden Screenshot dargestellt:
 
-[ ![](creating-tabbed-applications-images/event-handler.png "Wenn der Benutzer die aButton freigibt, Auslösen eines Ereignisses TouchUpInside")](creating-tabbed-applications-images/event-handler.png)
+[![](creating-tabbed-applications-images/event-handler.png "Wenn der Benutzer die aButton freigibt, Auslösen eines Ereignisses TouchUpInside")](creating-tabbed-applications-images/event-handler.png#lightbox)
 
 Jetzt müssen wir erkennen die View-Controller auf die Schaltfläche ausgeblendet, wenn das Ereignis auslöst `InitialActionCompleted`. In `ViewController1`, fügen Sie die folgende partielle Methode hinzu:
 
@@ -324,7 +324,7 @@ Wir haben jetzt unsere erste Ansicht wie erwartet funktioniert. Als Nächstes wi
 
 In der **Toolbox**, suchen Sie nach der **Registerkarte Leiste Controller** unter Controller & Objekte, und ziehen Sie es auf der Entwurfsoberfläche angezeigt. Wie im folgenden Screenshot sehen, ist die Registerkarte Leiste Controller UI kleiner und schaltet Sie daher zwei View-Controller mit standardmäßig:
 
-[ ![](creating-tabbed-applications-images/tabbarcontroller.png "Hinzufügen einer Registerkarte Leiste Controller des Layouts")](creating-tabbed-applications-images/tabbarcontroller.png)
+[![](creating-tabbed-applications-images/tabbarcontroller.png "Hinzufügen einer Registerkarte Leiste Controller des Layouts")](creating-tabbed-applications-images/tabbarcontroller.png#lightbox)
 
 Löschen Sie diese neue Ansicht Domänencontroller durch Auswählen der schwarzen Leiste am unteren und drücken ENTF.
 
@@ -334,15 +334,15 @@ In unserem Storyboard verwenden wir das Segues, um die Übergänge zwischen den 
  
 So richten Sie unsere Registerkarten ein **STRG + klicken** aus der TabBarController auf die einzelnen unsere View-Controller in der Reihenfolge von eins bis drei, und wählen Sie die Beziehung **Registerkarte** aus dem Kontextmenü aus, wie unten gezeigt:
 
-[ ![](creating-tabbed-applications-images/context-menu.png "Wählen Sie die Registerkarte "-Beziehung")](creating-tabbed-applications-images/context-menu.png)
+[![](creating-tabbed-applications-images/context-menu.png "Wählen Sie die Registerkarte "-Beziehung")](creating-tabbed-applications-images/context-menu.png#lightbox)
 
 Das Storyboard in etwa den folgenden Screenshot:
 
-[ ![](creating-tabbed-applications-images/segue-layout.png "Das Storyboard in etwa diesen Screenshot mit")](creating-tabbed-applications-images/segue-layout.png)
+[![](creating-tabbed-applications-images/segue-layout.png "Das Storyboard in etwa diesen Screenshot mit")](creating-tabbed-applications-images/segue-layout.png#lightbox)
 
 Wenn wir klicken Sie auf eines der Elemente der Registerkarte Balken und untersuchen den Eigenschaftenbereich, sehen Sie eine Anzahl von aktuellen Position unterschiedliche Optionen, wie unten gezeigt:
 
-[ ![](creating-tabbed-applications-images/properties-panel.png "Festlegen der Optionen auf der Registerkarte im Eigenschaften-Explorer")](creating-tabbed-applications-images/properties-panel.png)
+[![](creating-tabbed-applications-images/properties-panel.png "Festlegen der Optionen auf der Registerkarte im Eigenschaften-Explorer")](creating-tabbed-applications-images/properties-panel.png#lightbox)
 
 Wir können Hiermit können Sie bestimmte Attribute wie z. B. das Signal, den Titel und die iOS bearbeiten [Bezeichner](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/UIKitUICatalog/TabBarItem.html), u. a.
 
@@ -360,11 +360,11 @@ public override void ViewDidLoad ()
 
 Wenn die Anwendung ausgeführt wird und der Benutzer die Schaltfläche auf dem ersten Bildschirm die UITabBarController tippt wird, mit der Ansicht aus dem ersten Bildschirm in der ersten Registerkarte platziert werden, wie unten dargestellt geladen:
 
-[ ![](creating-tabbed-applications-images/first-view.png "Die Ausgabe der Beispiel-app")](creating-tabbed-applications-images/first-view.png)
+[![](creating-tabbed-applications-images/first-view.png "Die Ausgabe der Beispiel-app")](creating-tabbed-applications-images/first-view.png#lightbox)
 
 <!--Save the files and run the application:
 
-[ ![](creating-tabbed-applications-images/inital-screen-application.png "Save the files and run the application")](creating-tabbed-applications-images/inital-screen-application.png)-->
+[![](creating-tabbed-applications-images/inital-screen-application.png "Save the files and run the application")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)-->
 
 ## <a name="summary"></a>Zusammenfassung
 

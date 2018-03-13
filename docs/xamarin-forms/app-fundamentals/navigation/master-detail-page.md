@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: f7e949902e2f960a9aa68c600514b7fefc8ae30d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9d774870a541630d8c6519f9dfeaeb21cacb98e8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="master-detail-page"></a>Master / Detail-Seite
 
@@ -22,7 +22,7 @@ _Die Xamarin.Forms-MasterDetailPage ist eine Seite, die verwaltet zwei verwandte
 
 Eine Masterseite zeigt eine Liste von Elementen, in der Regel an, wie in den folgenden Screenshots dargestellt:
 
-[![](master-detail-page-images/masterpage-components.png "Master-Page-Komponenten")](master-detail-page-images/masterpage-components-large.png "Master Page-Komponenten")
+[![](master-detail-page-images/masterpage-components.png "Master-Page-Komponenten")](master-detail-page-images/masterpage-components-large.png#lightbox "Master Page-Komponenten")
 
 Der Speicherort der Liste der Elemente auf jeder Plattform identisch ist, und wählen eines der Elemente, wechseln Sie automatisch zur entsprechenden Detailseite. Darüber hinaus bietet die Masterseite auch eine Navigationsleiste, die eine Schaltfläche, die verwendet werden kann enthält, um zur Detailseite active zu navigieren:
 

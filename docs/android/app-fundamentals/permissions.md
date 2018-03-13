@@ -4,18 +4,17 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3C440714-43E3-4D31-946F-CA59DAB303E8
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: d20b2aa7df17f2000e2de9cb67f091c52989719b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: topgenorth
+ms.author: toopge
+ms.date: 03/09/2018
+ms.openlocfilehash: 39ee7f826d4c775ead679a09ce56a7c0f92b60ed
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="permissions-in-xamarinandroid"></a>Permissions In Xamarin.Android
 
-<a name="overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -42,7 +41,7 @@ Bevor Sie eine oder mehrere Berechtigungen anfordern, ist es eine bewährte Meth
 
 Der gesamte Workflow überprüfen und Anfordern von Berechtigungen wird als bezeichnet eine _zur Laufzeit Berechtigungen_ überprüfen und kann in der folgenden Abbildung zusammengefasst werden: 
 
-[ ![Flussdiagramm für Laufzeit-Berechtigung überprüfen](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png)
+[![Flussdiagramm für Laufzeit-Berechtigung überprüfen](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
 
 Die Android-Unterstützungsbibliothek Backports einige der neuen APIs für Berechtigungen auf ältere Versionen von Android. Diese mehr APIs prüft automatisch die Version von Android auf dem Gerät, daher ist es nicht notwendig, um einen API-Überprüfung jedes Mal auszuführen.  
 
@@ -50,7 +49,7 @@ Dieses Dokument wird beschrieben, wie Berechtigungen zu einer Xamarin.Android-An
 
 
 > [!NOTE]
-> **Hinweis:** es ist möglich, dass Berechtigungen für Hardware auswirken können, wie die app von Google Play gefiltert werden. Z. B. wenn die app für die Verwendung der Kamera Berechtigung erfordert, zeigt klicken Sie dann Google Play die app im Google Play Store auf einem Gerät nicht, die über keinen Kamera installiert.
+> Es ist möglich, dass Berechtigungen für Hardware auswirken können, wie die app von Google Play gefiltert werden. Z. B. wenn die app für die Verwendung der Kamera Berechtigung erfordert, zeigt klicken Sie dann Google Play die app im Google Play Store auf einem Gerät nicht, die über keinen Kamera installiert.
 
 
 <a name="requirements" />
@@ -59,7 +58,6 @@ Dieses Dokument wird beschrieben, wie Berechtigungen zu einer Xamarin.Android-An
 
 Es wird dringend empfohlen, dass Xamarin.Android Projekte umfassen die [Xamarin.Android.Support.Compat](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/) NuGet-Paket. Dieses Paket wird Backport-Berechtigung, die bestimmte APIs den Zugriff auf frühere Versionen von Android, die eine gemeinsame Bereitstellung ohne die Notwendigkeit, ständig Schnittstelle überprüfen die Version von Android, die die app ausgeführt wird.
 
-<a name="requesting_permissions" />
 
 ## <a name="requesting-system-permissions"></a>Anfordern von Berechtigungen
 
@@ -68,9 +66,8 @@ Der erste Schritt beim Arbeiten mit Android Berechtigungen wird deklariert, dass
 Apps, die als Ziel Android 6.0 oder höher können nicht angenommen werden, die dem Benutzer die Berechtigung irgendwann in der Vergangenheit erteilt, dass die Berechtigung gültig das nächste Mal sind. Eine app für Android 6.0 auf muss immer eine Überprüfung der Berechtigung zur Laufzeit ausführen. Apps für Android 5.1 oder niedriger müssen sich nicht um Berechtigung zur Laufzeit zu überprüfen.
 
 > [!NOTE]
-> **Hinweis:** Anwendungen sollte nur die benötigten Berechtigungen anfordern.
+> Anwendungen sollten nur die Berechtigungen anfordern, die sie benötigen.
 
-<a name="declaring_permissions_in_the_manifest" />
 
 ### <a name="declaring-permissions-in-the-manifest"></a>Deklarieren von Berechtigungen im Manifest
 
@@ -87,15 +84,15 @@ Es ist möglich, die Berechtigungen mithilfe der in Visual Studio integrierten T
 
 1. Doppelklicken Sie auf **Eigenschaften** in der **Projektmappen-Explorer** , und wählen Sie die **Android-Manifest** Registerkarte im Eigenschaftenfenster angezeigt:
 
-    [![Erforderliche Berechtigungen auf der Registerkarte "Android-Manifest"](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png)
+    [![Erforderliche Berechtigungen auf der Registerkarte "Android-Manifest"](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
 
 2. Wenn die Anwendung nicht bereits über ein AndroidManifest.xml verfügt, klicken Sie auf **keine AndroidManifest.xml gefunden. Klicken Sie zum Hinzufügen einer** wie unten dargestellt:
 
-    [![Keine AndroidManifest.xml-Meldung](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png)
+    [![Keine AndroidManifest.xml-Meldung](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
 
 3. Wählen Sie alle Berechtigungen, die Ihre Anwendung benötigt werden, aus der **erforderliche Berechtigungen** angezeigt, und speichern:
 
-    [![Beispiele für Berechtigungen zur KAMERA ausgewählt](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png)
+    [![Beispiele für Berechtigungen zur KAMERA ausgewählt](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -103,15 +100,15 @@ Es ist möglich, die Berechtigungen mithilfe der in Visual Studio für Mac integ
 
 1. Doppelklicken Sie auf das Projekt in der **Lösung Pad** , und wählen Sie **Optionen > Erstellen > Android-Anwendung**:
 
-    [![Erforderliche Abschnitt "Berechtigungen" angezeigt](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png)
+    [![Erforderliche Abschnitt "Berechtigungen" angezeigt](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
 
 2. Klicken Sie auf die **Android-Manifest hinzufügen** Schaltfläche verfügt das Projekt nicht bereits ein **AndroidManifest.xml**:
 
-    [![Android-Manifest des Projekts ist nicht vorhanden](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png)
+    [![Android-Manifest des Projekts ist nicht vorhanden](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
 
 3. Wählen Sie alle Berechtigungen, die Ihre Anwendung benötigt werden, aus der **erforderliche Berechtigungen** aus, und klicken Sie auf **OK**:
 
-    [![Beispiele für Berechtigungen zur KAMERA ausgewählt](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png)
+    [![Beispiele für Berechtigungen zur KAMERA ausgewählt](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
     
 -----
 
@@ -119,7 +116,6 @@ Xamarin.Android wird automatisch einige Berechtigungen zur Buildzeit Debug-Build
 
 Für apps für Android 5.1 (API-Ebene 22) oder niedriger aufweist, ist es nichts weiter, die ausgeführt werden muss. Apps, die für Android 6.0 (API 23 Stufe 23) oder höher ausgeführt werden sollten fahren Sie mit dem nächsten Abschnitt zum zur Laufzeit ausführen Berechtigung überprüft. 
 
-<a name="run_time_permission_checks" />
 
 ### <a name="runtime-permission-checks-in-android-60"></a>Common Language Runtime-Berechtigung überprüft in Android 6.0
 
@@ -213,7 +209,6 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 }
 ```  
 
-<a name="summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

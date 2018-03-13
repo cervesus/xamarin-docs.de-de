@@ -7,27 +7,24 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 8075473464472c5a830f62ebfc91c00ad54d1b98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b744f4c8582aa9295645b2bdc22e6fddf2bedc3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="calendar"></a>Kalender
 
-<a name="Calendar_API" />
 
 ## <a name="calendar-api"></a>Kalender-API
 
 Ein neuer Satz von Kalender APIs Android 4 eingeführten unterstützt Anwendungen, die darauf ausgelegt sind, lesen und Schreiben von Daten an den Kalenderanbieter. Diese APIs unterstützen eine Vielzahl von Optionen der Interaktion mit Kalenderdaten, einschließlich der Möglichkeit zum Lesen und Schreiben von Ereignissen, Teilnehmer und Erinnerungen. Mithilfe des Calendar-Anbieters in Ihrer Anwendung werden Daten, die Sie über die API hinzufügen in der integrierten Kalender-app angezeigt, die mit Android 4 ausgeliefert wird.
 
-<a name="Adding_Permissions" />
 
 ## <a name="adding-permissions"></a>Hinzufügen von Berechtigungen
 
 Bei der Arbeit mit dem neuen Kalender APIs in Ihrer Anwendung wird im ersten Schritt müssen Sie die entsprechenden Berechtigungen auf der Android-Manifest hinzufügen. Die Berechtigungen, die Sie hinzufügen müssen sind `android.permisson.READ_CALENDAR` und `android.permission.WRITE_CALENDAR`, je nachdem, ob Sie lesen oder Schreiben von Kalenderdaten.
 
-<a name="Using_the_Calendar_Contract" />
 
 ## <a name="using-the-calendar-contract"></a>Verwendung des Kalender-Vertrags
 
@@ -35,7 +32,6 @@ Nachdem Sie die Berechtigungen festgelegt haben, können Sie mit interagieren Ka
 
 Sehen wir uns ein Beispiel, das die Kalender-API verwendet. In diesem Beispiel untersuchen wir, Kalender und die zugehörigen Ereignisse auflisten und wie einen Kalender ein neues Ereignis hinzu.
 
-<a name="Listing_Calendars" />
 
 ## <a name="listing-calendars"></a>Auflisten von Kalendern
 
@@ -122,10 +118,9 @@ Im obigen Code, verwendet der Adapter im angegebenen Spalten der `sourceColumns`
 
 Hier ist ein Screenshot, der das Endergebnis anzeigt, mit der Calendar-Informationen angezeigt, der `ListView`:
 
-[![Anzeigen von zwei Kalendereinträge-Emulator ausführen CalendarDemo](calendar-images/11-calendar.png)](calendar-images/11-calendar.png)
+[![Anzeigen von zwei Kalendereinträge-Emulator ausführen CalendarDemo](calendar-images/11-calendar.png)](calendar-images/11-calendar.png#lightbox)
 
 
-<a name="Listing_Calendar_Events" />
 
 ## <a name="listing-calendar-events"></a>Angebot Kalenderereignissen
 
@@ -221,10 +216,9 @@ class ViewBinder : Java.Lang.Object, SimpleCursorAdapter.IViewBinder
 
 Dadurch wird eine Liste der Ereignisse, wie unten dargestellt:
 
-[![Screenshot der Beispiel-app, die drei Kalenderereignisse anzeigen](calendar-images/12-events.png)](calendar-images/12-events.png)
+[![Screenshot der Beispiel-app, die drei Kalenderereignisse anzeigen](calendar-images/12-events.png)](calendar-images/12-events.png#lightbox)
 
 
-<a name="Adding_a_Calendar_Event" />
 
 ## <a name="adding-a-calendar-event"></a>Hinzufügen eines Kalenderereignisses
 
@@ -280,11 +274,11 @@ long GetDateTimeMS (int yr, int month, int day, int hr, int min)
 
 Wenn wir die Ereignisliste UI eine Schaltfläche hinzu, und führen Sie den oben aufgeführten Code click-Ereignishandler der Schaltfläche wird, wird das Ereignis auf den Kalender hinzugefügt und in unserer Liste aktualisiert wird, wie unten dargestellt:
 
-[![Screenshot der Beispiel-app mit Kalenderereignisse gefolgt von Schaltfläche hinzufügen (Beispielereignis)](calendar-images/13.png)](calendar-images/13.png)
+[![Screenshot der Beispiel-app mit Kalenderereignisse gefolgt von Schaltfläche hinzufügen (Beispielereignis)](calendar-images/13.png)](calendar-images/13.png#lightbox)
 
 Wenn wir die Kalender-app öffnen, wird es angezeigt, dass das Ereignis gibt es auch geschrieben werden:
 
-[![Screenshot des Kalender-app, die das ausgewählte Ereignis anzeigen](calendar-images/14.png)](calendar-images/14.png)
+[![Screenshot des Kalender-app, die das ausgewählte Ereignis anzeigen](calendar-images/14.png)](calendar-images/14.png#lightbox)
 
 Wie Sie sehen können, ermöglicht Android leistungsstarke und einfach Zugriff auf abgerufen und Beibehalten von Kalenderdaten, Kalender Funktionen nahtlos integrieren von Anwendungen gestatten.
 

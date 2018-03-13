@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fdd4311072efd5571724fbe00d12a96921054fa2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4c5b9fcbfaabbfc78da1064396dc3fec2d3fde8d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="deployment-and-testing"></a>Bereitstellung und Testen
 
@@ -23,7 +23,7 @@ An, ob Sie zu einem Test Überwachungsfenster bereitstellen, oder auf den App St
 - In der **iOS Dev Center**:
   - [App-IDs](#App_IDs) erstellt wurden.
   - [App-Gruppen](#App_Groups) konfiguriert (falls erforderlich).
-  - [*Verteilung* Provisioning Profile](#Provisioning_Profiles) erstellt.
+  - Verteilung Provisioning Profile erstellt
 
 - In der Projektmappe:
 
@@ -36,6 +36,7 @@ An, ob Sie zu einem Test Überwachungsfenster bereitstellen, oder auf den App St
   - [Bereitstellen auf einem Apple Watch zu Testzwecken](~/ios/watchos/deploy-test/device.md), oder
   - [In den App Store hochladen](~/ios/watchos/deploy-test/appstore.md).
 
+<a name="App_IDs"/>
 
 ## <a name="app-ids"></a>App-IDs
 
@@ -65,7 +66,7 @@ Beachten Sie, dass einige Funktionen nicht mit einem Platzhalter-App-ID (z. B. P
 
 Für die Verteilung müssen Sie nur eine Bereitstellung Verteilungsprofil für den Platzhalter-ID der App zu erstellen.
 
-<a name="app-groups" />
+<a name="App_Groups" />
 
 ## <a name="app-groups"></a>App-Gruppen
 
@@ -102,8 +103,6 @@ Doppelklicken Sie zum Bearbeiten der **Entitlements.plist** Datei in diesen Proj
 sein.![Der Editor Entitlements.plist](images/entitlements-plist-sml.png)
 
 Führen Sie **nicht** aktivieren Sie Berechtigungen in das Watch-App-Projekt. Es ist nicht erforderlich, um die Überwachung selbst aktiviert sein.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

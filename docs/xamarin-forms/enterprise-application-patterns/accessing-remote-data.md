@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: a219a5ed4045bff639f29fd49ef5288139140135
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0eec51a6c95894482a57bfe3bb1f95aec2045af4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="accessing-remote-data"></a>Zugreifen auf Remotedaten
 
@@ -52,7 +52,7 @@ Die `CatalogService` Klasse dient zum Abrufen von Daten aus dem Katalog Microser
 
 Abbildung 10 – 1 zeigt die Interaktion von Klassen, die Katalogdaten aus dem Katalog Microservice für die Anzeige von Lesen der `CatalogView`.
 
-[![](accessing-remote-data-images/catalogdata.png "Abrufen von Daten aus dem Katalog Microservice")](accessing-remote-data-images/catalogdata-large.png "Abrufen von Daten aus dem Katalog Microservice")
+[![](accessing-remote-data-images/catalogdata.png "Abrufen von Daten aus dem Katalog Microservice")](accessing-remote-data-images/catalogdata-large.png#lightbox "Abrufen von Daten aus dem Katalog Microservice")
 
 **Abbildung 10 – 1**: Abrufen von Daten aus dem Katalog Microservice
 
@@ -157,7 +157,7 @@ Die `BasketService` Klasse wird verwendet, um den Datenabruf zu verwalten und de
 
 Abbildung 10 – 2 zeigt die Interaktion von Klassen, die die Warenkorb angezeigten Daten durch Senden der `BasketView`, um die Warenkorb-Microservice.
 
-[![](accessing-remote-data-images/basketdata.png "Senden von Daten an die Warenkorb-Microservice")](accessing-remote-data-images/basketdata-large.png "Senden von Daten an die Warenkorb-Microservice")
+[![](accessing-remote-data-images/basketdata.png "Senden von Daten an die Warenkorb-Microservice")](accessing-remote-data-images/basketdata-large.png#lightbox "Senden von Daten an die Warenkorb-Microservice")
 
 **Abbildung 10 – 2**: Senden von Daten an die Warenkorb-Microservice
 

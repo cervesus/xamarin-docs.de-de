@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 97ca114f1160168c7fd9439e31dc475bc37b0467
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 2ec783b6963fc4ae14166ebf1e56bf8a802ba8b4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tabbed-page"></a>Seite im Registerformat
 
@@ -97,7 +97,7 @@ public class MainPageCS : TabbedPage
 Die [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) wird mit zwei untergeordneten aufgefüllt [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) Objekte. Das erste untergeordnete Element ist ein [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) -Instanz, und die zweite Registerkarte ist eine [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) , enthält eine `ContentPage` Instanz.
 
 > [!NOTE]
-> **Hinweis**: die [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) die Virtualisierung der Benutzeroberfläche nicht unterstützt. Aus diesem Grund Leistung kann beeinträchtigt sein, falls die `TabbedPage` enthält zu viele untergeordnete Elemente.
+> Die [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) die Virtualisierung der Benutzeroberfläche nicht unterstützt. Aus diesem Grund Leistung kann beeinträchtigt sein, falls die `TabbedPage` enthält zu viele untergeordnete Elemente.
 
 Die folgenden Screenshots zeigen die `TodayPage` [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) -Instanz, die auf angezeigt wird der *heute* Registerkarte:
 

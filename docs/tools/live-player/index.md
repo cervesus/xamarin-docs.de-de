@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: edc1dd9f9544d1ab03781e7f3181a78b72f53909
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1fea2e2f7210e282fa1e27ad3a1203da2216791e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-live-player"></a>Xamarin Live Player
 
 Xamarin-Live-Player können Sie die live Änderungen an Ihrer Anwendung vornehmen und diese Änderungen wiederzugeben live auf Ihrem Gerät. Der Code ausgeführt wird, in der Live-Player Xamarin-app – besteht keine Notwendigkeit zum Einrichten von Emulatoren oder Kabel verwenden, um den Code bereitzustellen.
 
-[ ![Xamarin-Live-Player: Code, Scan, Test](images/xamarin-live.png)](images/xamarin-live-sml.png)
+[![Xamarin-Live-Player: Code, Scan, Test](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
 1. Aktivieren der *Xamarin Live Player* in **Voreinstellungen**, und wählen Sie dann aus der **Geräte** Liste.
 2. Debuggen oder ausführen, und klicken Sie dann das Paar QRCodeto das Gerät überprüfen.
@@ -28,11 +28,11 @@ Xamarin-Live-Player können Sie die live Änderungen an Ihrer Anwendung vornehme
 
 Konfigurieren Sie die IDE Verwendung Xamarin Live Player auf 2017 von Visual Studio oder Visual Studio für Mac. Live-Player Xamarin unterstützt iOS, Android und Xamarin.Forms-Projekte.
 
-## <a name="xamarin-live-player-appplayermd"></a>[Xamarin Player Live-App](player.md)
+## <a name="xamarin-live-player-appplayermd"></a>[Xamarin Live Player-App](player.md)
 
 Über den Xamarin Player app Live.
 
-## <a name="xaml-live-previewinglive-viewmd"></a>[XAML Live-Vorschau](live-view.md)
+## <a name="xaml-live-previewinglive-viewmd"></a>[XAML-Livevorschau](live-view.md)
 
 Verwenden der Funktion "Live führen Sie aktuellen Ansicht".
 

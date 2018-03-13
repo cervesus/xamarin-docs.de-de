@@ -4,14 +4,15 @@ description: Eingehendere Untersuchung SkiaSharp Transformationen mit vielseitig
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 85402768990869a2121cdea5ab7d232d80d64ed2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9d5e65abe675ded48e9239f2cd10ceed4a7c3a52
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="matrix-transforms"></a>Matrixtransformationen
 
@@ -401,7 +402,7 @@ public class PathTransformPage : ContentPage
 
 Es wird in der oberen linken Ecke des Zeichenbereichs angezeigt:
 
-[![](matrix-images/pathtransform-small.png "Dreifacher Screenshot der Seite Pfad transformieren")](matrix-images/pathtransform-large.png "dreifacher Screenshot der Seite Pfad transformieren")
+[![](matrix-images/pathtransform-small.png "Dreifacher Screenshot der Seite Pfad transformieren")](matrix-images/pathtransform-large.png#lightbox "dreifacher Screenshot der Seite Pfad transformieren")
 
 Der Konstruktor Vertrieb dieses Programms gilt die Matrix für den Pfad mit dem folgenden Aufruf:
 
@@ -588,7 +589,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 Der iOS-Bildschirm unten zeigt das Bitmuster an, wenn die Seite erstmals geladen wird, während die beiden anderen Bildschirme nach einigen Manipulation anzeigen:
 
-[![](matrix-images/showaffinematrix-small.png "Dreifacher Screenshot der Seite Affine Matrix anzeigen")](matrix-images/showaffinematrix-large.png "dreifacher Screenshot der Seite Affine Matrix anzeigen")
+[![](matrix-images/showaffinematrix-small.png "Dreifacher Screenshot der Seite Affine Matrix anzeigen")](matrix-images/showaffinematrix-large.png#lightbox "dreifacher Screenshot der Seite Affine Matrix anzeigen")
 
 Obwohl es scheint, als ob die Berührungspunkte die Ecken der Bitmap ziehen, die nur eine Illusion ist. Die Matrix aus den Berührungspunkte berechnet transformiert das Bitmuster, damit die Ecken mit die Berührungspunkte übereinstimmen.
 

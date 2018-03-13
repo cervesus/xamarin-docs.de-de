@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/21/2016
-ms.openlocfilehash: 3afb7608838a2c34f143d0563b50f03ad7f6ecf4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c6fb404919621e1b22217b4461597ae07a5624c4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xaml-compilation"></a>Verwendung von XAML-Kompilierung
 
@@ -56,7 +56,7 @@ public class HomePage : ContentPage
 In diesem Beispiel der Kompilierung der XAML für die `HomePage` Klasse erfolgen und Fehler, die als Teil des Kompilierungsprozesses gemeldet.
 
 > [!NOTE]
-> **Hinweis**: die `XamlCompilation` Attribut und der `XamlCompilationOptions` Enumeration befinden sich in der `Xamarin.Forms.Xaml0` -Namespace, die importiert werden muss, deren Verwendung.
+> Die `XamlCompilation` Attribut und der `XamlCompilationOptions` Enumeration befinden sich in der `Xamarin.Forms.Xaml0` -Namespace, die importiert werden muss, deren Verwendung.
 
 
 ## <a name="related-links"></a>Verwandte Links

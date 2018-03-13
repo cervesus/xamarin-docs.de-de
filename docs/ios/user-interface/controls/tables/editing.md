@@ -7,30 +7,22 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 1ea4489cd6f9839d5d32c97aa7ded41e4f15538a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: eb8bae676a4b5c682cdb204c6d38ffc1112b483a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="editing"></a>Bearbeiten
 
 Features für die Bearbeitung der Tabelle sind aktiviert, durch Überschreiben der Methoden in einer `UITableViewSource` Unterklasse. Das einfachste Bearbeitungsverhalten ist Bewegung Streifen zu löschen, die mit einer einzelnen methodenüberschreibung implementiert werden kann.
 Komplexere bearbeiten (einschließlich verschieben Datenzeilen) kann mit der Tabelle im Bearbeitungsmodus erfolgen.
 
-Dieses Handbuch überprüft Folgendes:
-
-- [Wischen löschen](#Swipe_to_Delete)
-- [Bearbeitungsmodus](#Edit_Mode)
-- [Zeile einfügen Bearbeitungsstil](#row_insertion_editing_style)
-
-<a name="Swipe_to_delete" />
-
 ## <a name="swipe-to-delete"></a>Wischen löschen
 
 Die Wischen So löschen Sie die Funktion ist eine natürliche Geste in iOS, die Benutzer erwarten. 
 
- [ ![](editing-images/image10.png "Beispiel für Wischen löschen")](editing-images/image10.png)
+ [![](editing-images/image10.png "Beispiel für Wischen löschen")](editing-images/image10.png#lightbox)
 
 Es gibt drei Methode überschreibt, die Bewegung Wischen anzuzeigende beeinflussen eine **löschen** Schaltfläche in einer Zelle:
 
@@ -68,14 +60,13 @@ public override string TitleForDeleteConfirmation (UITableView tableView, NSInde
 
 In diesem Beispiel die `UITableViewSource` wurde aktualisiert, um die Verwendung einer `List<TableItem>` (statt ein Array von Zeichenfolgen) wie die Datenquelle, da er unterstützt hinzufügen und Löschen von Elementen aus der Auflistung.
 
-<a name="Edit_mode" />
 
 ## <a name="edit-mode"></a>Bearbeitungsmodus
 
 Wenn eine Tabelle im Bearbeitungsmodus befindet sieht der Benutzer ein rotes "stop" Widget für jede Zeile, eine Schaltfläche "löschen", wenn der verwendete festgestellt werden. Die Tabelle enthält auch ein "Handle"-Symbol, um anzugeben, dass die Zeile gezogen werden kann, um die Reihenfolge ändern.
 Die **TableEditMode** Beispiel implementiert diese Funktionen, wie dargestellt.
 
- [ ![](editing-images/image11.png "Das Beispiel TableEditMode implementiert diese Funktionen, wie dargestellt")](editing-images/image11.png)
+ [![](editing-images/image11.png "Das Beispiel TableEditMode implementiert diese Funktionen, wie dargestellt")](editing-images/image11.png#lightbox)
 
 Es gibt eine Reihe von verschiedenen Methoden auf `UITableViewSource` , von denen beeinflusst das Verhalten einer Tabelle bearbeiten:
 
@@ -136,13 +127,12 @@ und nach Abschluss der Benutzer bearbeiten, die **Fertig** Schaltfläche Bearbei
 table.SetEditing (false, true);
 ```
 
-<a name="Edit_mode_–_row_insertion_editing_style" />
 
 ## <a name="row-insertion-editing-style"></a>Zeilenformat einfügen bearbeiten
 
 Zeile einfügen von innerhalb der Tabelle wird eine ungewöhnlich Benutzeroberfläche – ist das wichtigste Beispiel in der standard-iOS-apps die **Kontakt bearbeiten** Bildschirm. Diese Abbildung zeigt, wie die Zeile einfügen-Funktionalität funktioniert – in Bearbeitung-Modus eine zusätzliche Zeile, die ist (wenn geklickt haben), zusätzliche Zeilen in die Daten eingefügt. Wenn die Bearbeitung abgeschlossen ist, die temporäre **(neuen hinzufügen)** Zeile entfernt.
 
- [ ![](editing-images/image12.png "Nach Abschluss der Bearbeitung hinzufügen die temporäre neue Zeile wird entfernt.")](editing-images/image12.png)
+ [![](editing-images/image12.png "Nach Abschluss der Bearbeitung hinzufügen die temporäre neue Zeile wird entfernt.")](editing-images/image12.png#lightbox)
 
 Es gibt eine Reihe von verschiedenen Methoden auf `UITableViewSource` , von denen beeinflusst das Verhalten einer Tabelle bearbeiten. Diese Methoden sind im Beispielcode wie folgt implementiert wurde:
 

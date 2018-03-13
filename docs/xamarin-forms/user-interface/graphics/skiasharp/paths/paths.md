@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f02c5cfd75fd9d9cd97d28ca276b32808f7a45ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f1ce6b62ef13d24148048253700d7b3bff805fad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="path-basics"></a>Pfad-Grundlagen
 
@@ -99,7 +99,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die erste Kontur besteht aus einem Aufruf von [ `MoveTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.MoveTo/p/System.Single/System.Single/) mit X- und Y-Koordinaten anstelle einer `SKPoint` Werts, gefolgt von drei Aufrufe [ `LineTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.LineTo/p/System.Single/System.Single/) zum Zeichnen von der drei Seiten des der Dreieck. Die zweite Kontur hat nur zwei Aufrufe `LineTo` jedoch am Ende der Kontur mit einem Aufruf von [ `Close` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Close()/), die die Kontur schließt. Der Unterschied ist signifikant:
 
-[![](paths-images/twotrianglecontours-small.png "Dreifacher Screenshot der Seite zwei Dreieck Konturen")](paths-images/twotrianglecontours-large.png "dreifacher Screenshot der Seite zwei Dreieck Konturen")
+[![](paths-images/twotrianglecontours-small.png "Dreifacher Screenshot der Seite zwei Dreieck Konturen")](paths-images/twotrianglecontours-large.png#lightbox "dreifacher Screenshot der Seite zwei Dreieck Konturen")
 
 Wie Sie sehen können, die erste Kontur ist offensichtlich eine Reihe von drei miteinander verbundenen Linien, aber am Ende wird keine Verbindung mit dem Anfang hergestellt. Die beiden Zeilen werden am oberen überlappen. Die zweite Kontur offensichtlich geschlossen wird und mit einem weniger musste `LineTo` aufruft, da die `Close` Methode fügt automatisch eine letzte Zeile aus, um die Kontur zu schließen.
 
@@ -189,7 +189,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hier wird das Programm auf drei Plattformen ausgeführt wird:
 
-[![](paths-images/strokejoins-small.png "Dreifacher Screenshot der Seite verknüpft Strich")](paths-images/strokejoins-large.png "dreifacher Screenshot der Seite Strich verknüpft")
+[![](paths-images/strokejoins-small.png "Dreifacher Screenshot der Seite verknüpft Strich")](paths-images/strokejoins-large.png#lightbox "dreifacher Screenshot der Seite Strich verknüpft")
 
 Spitz Joins besteht aus einem spitzen Punkt mit den Zeilen, in denen eine Verbindung herstellen. Spitz Joins kann recht lang sind, nach dem Eintritt in zwei Zeilen in einem kleinen Winkel. Übermäßig lange gehrungsverbindungen verhindern möchten, ist die Länge des Joins Spitz durch den Wert des beschränkt die [ `StrokeMiter` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeMiter/) Eigenschaft `SKPaint`. Ein Spitz-Join, der überschreitet diese Länge ist deaktiviert einen Join der Abschrägung sind gehackt.
 

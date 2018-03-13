@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: d5f9f86447886e2cea46a6317d05506cdbed90bb
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 30ee40272b5f7a6f5863dccf4dcae7431f6f536f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-a-view"></a>Implementieren eine Sicht
 
@@ -115,7 +115,7 @@ Der Prozess zum Erstellen der benutzerdefinierten Rendererklasse lautet wie folg
 1. Hinzufügen einer `ExportRenderer` -Attribut auf die benutzerdefinierten Renderer-Klasse, um anzugeben, dass es zum Rendern des benutzerdefinierten Steuerelements mit Xamarin.Forms verwendet werden soll. Dieses Attribut wird verwendet, um den benutzerdefinierten Renderer mit Xamarin.Forms zu registrieren.
 
 > [!NOTE]
-> **Hinweis**: für die meisten Xamarin.Forms Elemente ist optional, um einen benutzerdefinierten Renderer in jedem plattformprojekt bereitzustellen. Wenn ein benutzerdefinierter Renderer nicht registriert ist, wird der Standardrenderer für die Basisklasse für das Steuerelement verwendet werden. Benutzerdefinierte Renderer sind jedoch erforderlich, in jede plattformprojekt beim Rendern einer [Ansicht](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) Element.
+> Für die meisten Xamarin.Forms Elemente ist optional, geben Sie einen benutzerdefinierten Renderer in jedem plattformprojekt. Wenn ein benutzerdefinierter Renderer nicht registriert ist, wird der Standardrenderer für die Basisklasse für das Steuerelement verwendet werden. Benutzerdefinierte Renderer sind jedoch erforderlich, in jede plattformprojekt beim Rendern einer [Ansicht](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) Element.
 
 Das folgende Diagramm veranschaulicht die Zuständigkeiten aller Projekte in der beispielanwendung, sowie die Beziehungen zwischen ihnen:
 
@@ -318,7 +318,7 @@ namespace CustomRenderer.WinPhone81
 Vorausgesetzt, dass die `Control` Eigenschaft ist `null`, ein neues `CaptureElement` instanziiert wird und die `InitializeAsync` -Methode aufgerufen wird, verwendet die `MediaCapture` -API, um die Vorschau-Stream, von der Kamera bereitstellen. Die `SetNativeControl` Methode wird aufgerufen, um einen Verweis auf weisen die `CaptureElement` -Instanz, auf die `Control` Eigenschaft. Die `CaptureElement` -Steuerelement stellt eine `Tapped` Ereignis, das vom übernommen wird die `OnCameraPreviewTapped` Methode zu beenden und Starten der Videovorschau, wenn es abgerufen werden. Die `Tapped` Ereignis ist für abonniert, wenn benutzerdefinierte Renderer auf ein neues Xamarin.Forms-Element angefügt und abbestellt nur, wenn das Element den Renderer Änderungen angefügt ist.
 
 > [!NOTE]
-> **Hinweis**: Es ist wichtig, beenden und löschen Sie die Objekte, die Zugriff auf die Kamera in einer Windows Phone oder uwp-Anwendung bereitstellen. Bei unterlassen kann mit anderen Anwendungen beeinträchtigen, die versuchen, die Kamera des Geräts zugreifen. Weitere Informationen finden Sie unter und [Schnellstart: Aufzeichnen von Videos über die MediaCapture-API](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx) für Windows-Runtime-Anwendungen und [anzeigen die Kameravorschau](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access) für uwp-Apps.
+> Es ist wichtig, beenden und löschen Sie die Objekte, die Zugriff auf die Kamera in einem Windows Phone oder einer uwp-Anwendung bereitstellen. Bei unterlassen kann mit anderen Anwendungen beeinträchtigen, die versuchen, die Kamera des Geräts zugreifen. Weitere Informationen finden Sie unter und [Schnellstart: Aufzeichnen von Videos über die MediaCapture-API](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx) für Windows-Runtime-Anwendungen und [anzeigen die Kameravorschau](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access) für uwp-Apps.
 
 ## <a name="summary"></a>Zusammenfassung
 

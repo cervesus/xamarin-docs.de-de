@@ -4,14 +4,15 @@ description: "Durchsuchen Sie mit SkiaSharp um quadratische, konischen und kubis
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 8fdebd00b0b33c184337eacd0836dd81a19f161b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2b48667d90bf994deca5c41080e002974b0ded91
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>Drei Typen von Bézier-Kurven
 
@@ -88,7 +89,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hier wird die Anwendung auf allen drei Plattformen ausgeführt:
 
-[![](beziers-images/beziercurve-small.png "Dreifacher Screenshot der Seite Bézier-Kurve")](beziers-images/beziercurve-large.png "dreifacher Screenshot der Seite Bézier-Kurve")
+[![](beziers-images/beziercurve-small.png "Dreifacher Screenshot der Seite Bézier-Kurve")](beziers-images/beziercurve-large.png#lightbox "dreifacher Screenshot der Seite Bézier-Kurve")
 
 Mathematisch, ist die Kurve eine kubische Polynoms. Die Kurve wird eine gerade Linie an drei Punkten darf höchstens überschneidet. Klicken Sie auf den Startpunkt. die Kurve ist immer eine gerade Linie vom Beginn Tangenten, und klicken Sie in der gleichen Richtung wie, zeigen Sie auf den ersten Kontrollpunkt. An den Endpunkt die Kurve ist immer eine gerade Linie von das zweite Steuerelement Tangenten, und klicken Sie in der gleichen Richtung wie, zeigen Sie auf den Endpunkt.
 
@@ -206,7 +207,7 @@ Die Start- und Endpunkte (`point0` und `point3`) werden auf die normale parametr
 
 Hier wird das Programm ausgeführt wird, auf die drei Plattformen mit drei verschiedenen Blickwinkeln dar:
 
-[![](beziers-images/beziercirculararc-small.png "Dreifacher Screenshot der Seite Kreisbogen Bézier-")](beziers-images/beziercirculararc-large.png "dreifacher Screenshot der Kreisbogen Bézier-Seite")
+[![](beziers-images/beziercirculararc-small.png "Dreifacher Screenshot der Seite Kreisbogen Bézier-")](beziers-images/beziercirculararc-large.png#lightbox "dreifacher Screenshot der Kreisbogen Bézier-Seite")
 
 Sehen Sie sich die Windows Mobile-Bildschirm, und Sie sehen, dass der Bézier-Kurve wird vor allem aus ein Halbkreis abweicht, wird bei der des Winkels um 180 Grad Unzulässiger der iOS-Bildschirm zeigt, dass es scheint, passen einen Quartal Kreis einwandfrei aus, wenn der Winkel 90 Grad ist.
 
@@ -288,7 +289,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die Punkte werden basierend auf Sinusförmig oszillierende Wert interpoliert `t`. Die interpolierten Punkte werden dann verwendet, um eine Reihe von vier verbundenen Bézier-Kurven zu erstellen. So sieht die Animation ausgeführt wird, auf die drei Plattformen, die mit dem Status von einem Kreis in ein Quadrat aus:
 
-[![](beziers-images/squaringthecircle-small.png "Dreifacher Screenshot, der die Squaring der Seite "Kreis"")](beziers-images/squaringthecircle-large.png "dreifacher Screenshot, der die Squaring der Seite "Kreis"")
+[![](beziers-images/squaringthecircle-small.png "Dreifacher Screenshot, der die Squaring der Seite "Kreis"")](beziers-images/squaringthecircle-large.png#lightbox "dreifacher Screenshot, der die Squaring der Seite "Kreis"")
 
 Solche eine Animation wäre ohne Kurven unmöglich, die algorithmisch flexibel genug ist, als Kreisbögen und gerade Linien dargestellt werden.
 
@@ -337,7 +338,7 @@ Es kann sein, dass eine gute Übung, zeichnen diese Koordinaten auf Papier Diagr
 
 Hier wird die Vorzeichen unendlich auf allen drei Plattformen ein:
 
-[![](beziers-images/bezierinfinity-small.png "Dreifacher Screenshot der Seite Bézier unendlich")](beziers-images/bezierinfinity-large.png "dreifacher Screenshot der Seite Bézier unendlich")
+[![](beziers-images/bezierinfinity-small.png "Dreifacher Screenshot der Seite Bézier unendlich")](beziers-images/bezierinfinity-large.png#lightbox "dreifacher Screenshot der Seite Bézier unendlich")
 
 Es ist etwas glattere Richtung der Mitte als das unendlich Vorzeichen von gerendert der **Bogen unendlich** Seite aus der [ **drei Möglichkeiten, einen Bogen gezeichnet werden soll** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) Artikel.
 
@@ -400,7 +401,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Und hier ist er auf allen drei Plattformen ausgeführt werden:
 
-[![](beziers-images/quadraticcurve-small.png "Dreifacher Screenshot der Seite quadratische Kurve")](beziers-images/quadraticcurve-large.png "dreifacher Screenshot der Seite quadratische Kurve")
+[![](beziers-images/quadraticcurve-small.png "Dreifacher Screenshot der Seite quadratische Kurve")](beziers-images/quadraticcurve-large.png#lightbox "dreifacher Screenshot der Seite quadratische Kurve")
 
 Die gepunkteten Linien sind Tangens der Kurve an der Start- und Endpunkt und der Kontrollpunkt treffen.
 
@@ -478,7 +479,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hier wird die Anwendung auf allen drei Plattformen ausgeführt:
 
-[![](beziers-images/coniccurve-small.png "Dreifacher Screenshot der Seite konischen Kurve")](beziers-images/coniccurve-large.png "dreifacher Screenshot der Seite konischen Kurve")
+[![](beziers-images/coniccurve-small.png "Dreifacher Screenshot der Seite konischen Kurve")](beziers-images/coniccurve-large.png#lightbox "dreifacher Screenshot der Seite konischen Kurve")
 
 Wie Sie sehen können, scheint der Kontrollpunkt die Kurve für sie weitere pull, wenn das Gewicht größer ist. Wenn die Gewichtung auf 0 (null) ist, wird die Kurve eine gerade Linie von der Startpunkt zum Endpunkt an.
 
@@ -542,7 +543,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Wie Sie sehen können, ist es keinen visuellen Unterschied zwischen der `ConicTo` Pfad Rot und der zugrunde liegenden Kreis Referenzzwecken angezeigt:
 
-[![](beziers-images/coniccirculararc-small.png "Dreifacher Screenshot der Seite konischen Kreisbogen")](beziers-images/coniccirculararc-large.png "dreifacher Screenshot der Seite konischen Kreisbogen konvertiert.")
+[![](beziers-images/coniccirculararc-small.png "Dreifacher Screenshot der Seite konischen Kreisbogen")](beziers-images/coniccirculararc-large.png#lightbox "dreifacher Screenshot der Seite konischen Kreisbogen konvertiert.")
 
 Sondern Sie den Winkel um 180 Grad und der Mathematik fehl.
 

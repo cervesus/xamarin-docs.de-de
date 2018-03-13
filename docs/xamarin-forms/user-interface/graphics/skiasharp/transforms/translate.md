@@ -4,14 +4,15 @@ description: "Erfahren Sie, wie die übersetzen-Transformation verwenden, um Ski
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 491c82406dafceb876ddbb4a0a7204447b95f57d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cac2479af2778af6043a85583f9d7b518748d7da
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-translate-transform"></a>Der Translate-Transformation
 
@@ -68,7 +69,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Durch Einfügung aufeinander folgenden Rechtecke nach unten:
 
-[![](translate-images/accumulatedtranslate-small.png "Dreifacher Screenshot der Seite kumuliert übersetzen")](translate-images/accumulatedtranslate-large.png "dreifacher Screenshot der Seite kumuliert übersetzen")
+[![](translate-images/accumulatedtranslate-small.png "Dreifacher Screenshot der Seite kumuliert übersetzen")](translate-images/accumulatedtranslate-large.png#lightbox "dreifacher Screenshot der Seite kumuliert übersetzen")
 
 Wenn die akkumulierten Übersetzung Faktoren sind `dx` und `dy`, und der Angabe in einer Zeichnung-Funktion (`x`, `y`), und klicken Sie dann das Objekt, an dem Punkt gerendert wird (`x'`, `y'`), wobei:
 
@@ -125,7 +126,7 @@ using (SKPaint textPaint = new SKPaint())
 
 In jedem der drei Beispiele `Translate` wird aufgerufen, für die Anzeige von den Text, um ihn von der vom angegebenen Speicherort versetzt die `x` und `y` Variablen. Dann wird der Text in eine andere Farbe hat keine Auswirkungen Übersetzung erneut angezeigt:
 
-[![](translate-images/translatetexteffects-small.png "Dreifacher Screenshot der Seite Texteffekte übersetzen")](translate-images/translatetexteffects-large.png "dreifacher Screenshot der Seite Texteffekte übersetzen")
+[![](translate-images/translatetexteffects-small.png "Dreifacher Screenshot der Seite Texteffekte übersetzen")](translate-images/translatetexteffects-large.png#lightbox "dreifacher Screenshot der Seite Texteffekte übersetzen")
 
 Jedes der drei Beispiele zeigt eine andere Art der negieren der `Translate` aufrufen:
 
@@ -209,7 +210,7 @@ public class HendecagramArrayPage : ContentPage
 
 Hier ist das Ergebnis:
 
-[![](translate-images/hendecagramarray-small.png "Dreifacher Screenshot der Seite Hendecagram Array")](translate-images/hendecagramarray-large.png "dreifacher Screenshot der Seite Hendecagram Array")
+[![](translate-images/hendecagramarray-small.png "Dreifacher Screenshot der Seite Hendecagram Array")](translate-images/hendecagramarray-large.png#lightbox "dreifacher Screenshot der Seite Hendecagram Array")
 
 Animationen umfassen häufig Transformationen. Die **Hendecagram Animation** Seite 11 Spitzen Sterns über in einem Kreis bewegt. Die [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) Klasse beginnt mit einigen Feldern und der überschreibt die `OnAppearing` und `OnDisappearing` Methoden zum Starten und Beenden einen Xamarin.Forms-Zeitgeber:
 
@@ -294,7 +295,7 @@ public class HendecagramAnimationPage : ContentPage
 
 Die `PaintSurface` Ereignishandler ruft die `Translate` aufzurufende Methode zweimal, zuerst in der Mitte des Zeichenbereichs, übersetzt und dann in der Umfang eines Kreises bei zentraler übersetzt (0, 0). So groß wie möglich werden gleichzeitig die Stern innerhalb der Grenzen der Seite wird auf der Radius des Kreises festgelegt:
 
-[![](translate-images/hendecagramanimation-small.png "Dreifacher Screenshot der Seite Hendecagram Animation")](translate-images/hendecagramanimation-large.png "dreifacher Screenshot der Seite Hendecagram Animation")
+[![](translate-images/hendecagramanimation-small.png "Dreifacher Screenshot der Seite Hendecagram Animation")](translate-images/hendecagramanimation-large.png#lightbox "dreifacher Screenshot der Seite Hendecagram Animation")
 
 Beachten Sie, dass die Stern dieselbe Ausrichtung beibehält, die es dreht, um die Mitte der Seite. Es ist nicht auf allen drehen. Dies ist ein Auftrag für eine Rotationstransformation.
 

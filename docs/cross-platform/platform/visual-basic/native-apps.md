@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: dc107ee865ea93cdc12148a5498cf3d512f1dae9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 95817c2ec22c4c27f0f4a933db54105614e54030
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="visual-basicnet-in-xamarin-ios-and-android"></a>Visual Basic.NET in Xamarin iOS und Android
 
 Die [TaskyPortable](/samples/mobile/VisualBasic/TaskyPortableVB/) beispielanwendung für veranschaulicht, wie Visual Basic-Code in eine Portable Klassenbibliothek kompiliert mit Xamarin verwendet werden kann. Hier sind einige Screenshots der resultierenden apps unter iOS, Android und Windows Phone:
 
- [ ![](native-apps-images/image5.png "iOS, Android und Windows-Telefone Ausführen von Apps mit Visual Basic")](native-apps-images/image5.png)
+ [![](native-apps-images/image5.png "iOS, Android und Windows-Telefone Ausführen von Apps mit Visual Basic")](native-apps-images/image5.png#lightbox)
 
 IOS, Android und Windows Phone-Projekte im Beispiel in c# geschrieben sind. Die Benutzeroberfläche für jede Anwendung mit systemeigenen Technologien integriert ist (Storyboards, Xml und Verwendung von XAML-bzw.), während die `TodoItem` Verwaltung wird bereitgestellt, von der portablen Klassenbibliothek in Visual Basic mithilfe einer `IXmlStorage` Implementierung, die das systemeigene Projekt.
 
@@ -26,7 +26,8 @@ IOS, Android und Windows Phone-Projekte im Beispiel in c# geschrieben sind. Die 
 
 Dieses Handbuch erläutert, wie in Visual Basic implementiert wurde die [TaskyPortableVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB) Xamarin-Beispiel für iOS und Android.
 
-> ⚠️ Überprüfen Sie die Anweisungen auf [Visual Basic.NET PCLs](/guides/cross-platform/application_fundamentals/pcl/portable_visual_basic_net/) bevor Sie mit dieser Anleitung fortfahren.
+> [!NOTE]
+> Überprüfen Sie die Anweisungen auf [Visual Basic.NET PCLs](/guides/cross-platform/application_fundamentals/pcl/portable_visual_basic_net/) bevor Sie mit dieser Anleitung fortfahren.
 
 ## <a name="visualbasicportablelibrary"></a>VisualBasicPortableLibrary
 
@@ -158,9 +159,9 @@ Public Class TodoItemRepositoryXML
 End Class
 ```
 
-> ℹ️ **Hinweis:** dieser Code ist ein Beispiel für ein sehr einfaches Daten-Speichermechanismus.
-> Er wird bereitgestellt, um zu veranschaulichen, wie eine Portable Klassenbibliothek für eine Schnittstelle den Zugriff auf plattformspezifische Funktionen (in diesem Fall laden und speichern eine XML-Datei) code können.
-> Sie sollte es keine Alternative professionell Datenbank sein.
+> [!NOTE]
+> Dieser Code ist ein Beispiel für ein sehr einfaches Daten-Speichermechanismus.
+> Er wird bereitgestellt, um zu veranschaulichen, wie eine Portable Klassenbibliothek für eine Schnittstelle den Zugriff auf plattformspezifische Funktionen (in diesem Fall laden und speichern eine XML-Datei) code können. Sie sollte es keine Alternative professionell Datenbank sein.
 
 ## <a name="ios-android-and-windows-phone-application-projects"></a>iOS, Android und Windows Phone-Anwendungsprojekten
 
@@ -263,7 +264,7 @@ TodoMgr = new TodoItemManager(filename, xmlStorage);
 
 Der Rest der Windows Phone-Anwendung besteht aus Xaml und c# zum Erstellen der Benutzeroberfläche und Verwenden der `TodoMgr` Klasse zum Laden und speichern `TodoItem` Objekte.
 
-# <a name="visual-basic-pcl-in-visual-studio-for-mac"></a>Visual Basic PCL in Visual Studio für Mac
+## <a name="visual-basic-pcl-in-visual-studio-for-mac"></a>Visual Basic PCL in Visual Studio für Mac
 
 Visual Studio für Mac unterstützt nicht die Sprache Visual Basic – Sie können nicht erstellt oder Kompilieren der Visual Basic-Projekte mit Visual Studio für Mac.
 
@@ -271,58 +272,58 @@ Visual Studio für Mac Unterstützung für Portable Klassenbibliotheken bedeutet
 
 In diesem Abschnitt erläutert, wie eine PCL-Assembly in Visual Studio zu kompilieren, und stellen Sie sicher, dass es in ein Versionskontrollsystem gespeichert und auf andere Projekte verweist.
 
-## <a name="keeping-the-pcl-output-from-visual-studio"></a>Halten die PCL-Ausgabe von Visual Studio
+### <a name="keeping-the-pcl-output-from-visual-studio"></a>Halten die PCL-Ausgabe von Visual Studio
 
 Standardmäßig werden die meisten Versionskontrollsysteme (einschließlich TFS- und Git) zum ignorieren konfiguriert die **/bin/** Verzeichnis, d. die kompilierte PCL-Assembly h. wird nicht gespeichert werden. Dies bedeutet, dass Sie müssten manuell auf dem Computer mit Visual Studio für Mac einen Verweis darauf hinzufügen zu kopieren.
 
 Um sicherzustellen, dass die Ausgabe der PCL-Assembly mit das Versionskontrollsystem gespeichert werden kann, können Sie ein Skript nach der Erstellung erstellen, die sie in den Projektstamm kopiert. Dieser Schritt nach der Erstellung kann sichergestellt werden, die Assembly einfach zur quellcodeverwaltung hinzugefügt und mit anderen Projekten gemeinsam genutzt.
 
-### <a name="visual-studio-2017"></a>Visual Studio 2017
+#### <a name="visual-studio-2017"></a>Visual Studio 2017
 
 1. Mit der rechten Maustaste auf das Projekt, und wählen Sie die **Eigenschaften > Buildereignisse** Abschnitt.
 
 2. Hinzufügen einer _Postbuild_ Skript, das die Ausgabe-DLL in diesem Projekt in das Projektstammverzeichnis kopiert (außerhalb der **/bin/**). Abhängig von Ihrer Version Control-Konfiguration sollte die DLL jetzt Datenquellen-Steuerelement hinzugefügt werden können.
 
-  [ ![](native-apps-images/image6-vs-sml.png "Buildereignisse Post Buildskript zum Kopieren von VB-DLL")](native-apps-images/image6-vs.png)
+  [![](native-apps-images/image6-vs-sml.png "Buildereignisse Post Buildskript zum Kopieren von VB-DLL")](native-apps-images/image6-vs.png#lightbox)
 
-### <a name="visual-studio-2015"></a>Visual Studio 2015
+#### <a name="visual-studio-2015"></a>Visual Studio 2015
 
 1.  Mit der rechten Maustaste auf das Projekt, und wählen Sie **Eigenschaften > Kompilieren** , vergewissern Sie sich dann mit dem alle Konfigurationen in der oberen linken Kamm ausgewählt ist. Klicken Sie auf die **Buildereignisse...**  Schaltfläche in der unteren rechten Ecke.
 
-  [ ![](native-apps-images/image6.png "Kompilieren Sie die Projekteigenschaften im Abschnitt")](native-apps-images/image6.png)
+    [![](native-apps-images/image6.png "Kompilieren Sie die Projekteigenschaften im Abschnitt")](native-apps-images/image6.png#lightbox)
 
 1.  Fügen Sie ein Postbuild-Skript, das die Ausgabe-DLL in diesem Projekt in das Stammverzeichnis des Projekts kopiert (Dies ist außerhalb des **/bin/** ). Abhängig von Ihrer Version Control-Konfiguration sollte die DLL jetzt Datenquellen-Steuerelement hinzugefügt werden können.
 
-  [ ![](native-apps-images/image7.png "Fenster Protokollereignisse erstellen")](native-apps-images/image7.png)
+    [![](native-apps-images/image7.png "Fenster Protokollereignisse erstellen")](native-apps-images/image7.png#lightbox)
 
-### <a name="all-versions"></a>Alle Versionen
+#### <a name="all-versions"></a>Alle Versionen
 
 Beim nächsten Erstellen Sie das Projekt, das Portable Class Library-Assembly kopiert werden, in das Projektstammverzeichnis, und wenn Sie Check-in/Commit/Push sind die Änderungen der DLL gespeichert wird (sodass sie auf einem Mac mit Visual Studio für Mac heruntergeladen werden kann).
 
-  [ ![](native-apps-images/image8-sml.png "Speicherort der Ausgabeassembly Visual Basic")](native-apps-images/image8.png)
+  [![](native-apps-images/image8-sml.png "Speicherort der Ausgabeassembly Visual Basic")](native-apps-images/image8.png#lightbox)
 
 
 Diese Assembly kann dann Xamarin-Projekte in Visual Studio für Mac, hinzugefügt werden, obwohl die Sprache Visual Basic selbst nicht in Xamarin iOS oder Android-Projekte unterstützt wird.
 
-## <a name="referencing-the-pcl-in-visual-studio-for-mac"></a>Verweisen auf die PCL, in Visual Studio für Mac
+### <a name="referencing-the-pcl-in-visual-studio-for-mac"></a>Verweisen auf die PCL, in Visual Studio für Mac
 
 Da Xamarin Visual Basic nicht unterstützt kann nicht es PCL-Projekt (noch die Windows Phone-app) geladen, wie in diesem Screenshot gezeigt:
 
- [ ![](native-apps-images/image9.png "Visual Studio für Mac-Lösung")](native-apps-images/image9.png)
+ [![](native-apps-images/image9.png "Visual Studio für Mac-Lösung")](native-apps-images/image9.png#lightbox)
 
 Wir können die Visual Basic-PCL-Assembly-DLL immer noch in den Projekten Xamarin.iOS und Xamarin.Android einschließen:
 
 1.  Mit der rechten Maustaste auf die **Verweise** Knoten, und wählen **Verweise bearbeiten...**
 
-  [ ![](native-apps-images/image10.png "Projektmenü für Verweise bearbeiten")](native-apps-images/image10.png)
+    [![](native-apps-images/image10.png "Projektmenü für Verweise bearbeiten")](native-apps-images/image10.png#lightbox)
 
 1.  Wählen Sie die **.Net Assembly** Registerkarte, und navigieren Sie zu der Ausgabe-DLL in das Verzeichnis der Visual Basic-Projekt. Obwohl Visual Studio für Mac das Projekt nicht öffnen können, sollten alle Dateien aus der quellcodeverwaltung vorhanden sein. Klicken Sie auf **hinzufügen** dann **OK** Hinzufügen dieser Assembly auf IOS- und Android-Anwendungen.
 
-  [ ![](native-apps-images/image11-sml.png "Klicken Sie auf Hinzufügen und dann auf OK, um diese Assembly IOS- und Android-Anwendungen hinzuzufügen")](native-apps-images/image11.png)
+    [![](native-apps-images/image11-sml.png "Klicken Sie auf Hinzufügen und dann auf OK, um diese Assembly IOS- und Android-Anwendungen hinzuzufügen")](native-apps-images/image11.png#lightbox)
 
 1.  IOS- und Android-Anwendungen enthalten können nun die Anwendungslogik, die von der portablen Klassenbibliothek in Visual Basic bereitgestellt. Diese bildschirmabbildung zeigt eine iOS-Anwendung, die verweist auf die Visual Basic-PCL und Code, der die Funktionalität aus dieser Bibliothek verwendet wurde.
 
-  [ ![](native-apps-images/image12-sml.png "Bearbeiten Sie Verweise hinzufügen .NET Assembly-Fenster")](native-apps-images/image12.png)
+    [![](native-apps-images/image12-sml.png "Bearbeiten Sie Verweise hinzufügen .NET Assembly-Fenster")](native-apps-images/image12.png#lightbox)
 
 
 Wenn Änderungen vorgenommen werden, auf die Visual Basic-Projekt in Visual Studio Denken Sie daran, das Projekt erstellen, speichern die resultierende DLL-Assembly in der quellcodeverwaltung, und ziehen Sie dann diese neue DLL aus der quellcodeverwaltung auf Ihrem Mac, damit Visual Studio für Mac erstellt enthalten Sie die neuesten die Funktionalität.

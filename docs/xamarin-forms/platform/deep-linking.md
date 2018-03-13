@@ -5,20 +5,24 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2016
-ms.openlocfilehash: b2decf1331764ed6b1696126d8b23318e329e0c7
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 38d3b6da0dd33e038f2d50209280f2983faf6013
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-indexing-and-deep-linking"></a>Indizieren Sie die Anwendung und Deep Links
 
 _Indizieren Sie die Anwendung ermöglicht Anwendungen, die andernfalls vergessen würde, nachdem ein Paar wird verwendet, um die relevanten bleiben, indem Sie in den Suchergebnissen angezeigt wird. Deep Links ermöglicht Anwendungen, die auf ein Suchergebnis reagieren, die Anwendungsdaten, in der Regel durch Navigieren zu einer Seite aus dem deep-Link enthält. In diesem Artikel wird veranschaulicht, wie Anwendung Indizierung verwenden und deep links, um Xamarin.Forms Anwendungsinhalt auf IOS- und Android-Geräte durchsuchbar zu machen._
 
-## <a name="overview"></a>Übersicht
+> [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
+
+**Verknüpfen mit Xamarin.Forms und Azure, Tiefe von [Xamarin University](https://university.xamarin.com/)**
+
 
 Xamarin.Forms Anwendung Indizierung und deep Links bieten eine API für die Veröffentlichung von Metadaten für die Anwendung Indizierung, wie Benutzer über Anwendungen navigieren. Indizierte Inhalt kann dann nach in Spotlight-Suche, in der Google-Suche oder in eine Websuche gesucht. Tippen Sie auf ein Suchergebnis, die einen deep-Link enthält, wird ein Ereignis auszulösen, die von einer Anwendung verarbeitet werden können, und dient normalerweise zum Navigieren auf der Seite auf die verwiesen wird der deep-Link.
 
@@ -31,7 +35,7 @@ Jede `TodoItem` Instanz, die vom Benutzer erstellten indiziert wird. Clientplatt
 Weitere Informationen zur Verwendung der SQLite-Datenbank finden Sie unter [arbeiten mit einer lokalen Datenbank](~/xamarin-forms/app-fundamentals/databases.md).
 
 > [!NOTE]
-> **Hinweis**: Xamarin.Forms-Anwendung, Indizierung und deep verknüpfen Funktionalität ist nur für IOS- und Android-Plattformen verfügbar und erfordert iOS 9 und API 23 bzw.
+> Xamarin.Forms Anwendung Indizierung Deep verknüpfen Funktionalität ist nur für IOS- und Android-Plattformen verfügbar und erfordert iOS 9 und API 23 bzw.
 
 ## <a name="setup"></a>Setup
 
@@ -106,7 +110,7 @@ Application.Current.AppLinks.RegisterLink (appLink);
 Dadurch wird die [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) Instanz für der Anwendungsverzeichnis [ `AppLinks` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.AppLinks/) Auflistung.
 
 > [!NOTE]
-> **Hinweis**: die `RegisterLink` Methode kann auch verwendet werden, um den Inhalt zu aktualisieren, die für eine Seite indiziert wurde, ist.
+> Die `RegisterLink` Methode kann auch verwendet werden, um den Inhalt zu aktualisieren, die für eine Seite indiziert wurde, ist.
 
 Sobald ein [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) Instanz registriert wurde für die Indizierung, können sie in den Suchergebnissen angezeigt. Der folgende Screenshot zeigt indizierte Inhalt, die angezeigt wird, in den Suchergebnissen auf das iOS-Plattform:
 
@@ -123,7 +127,7 @@ Application.Current.AppLinks.DeregisterLink (appLink);
 Dies entfernt das [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) Instanz aus der Anwendungsverzeichnis [ `AppLinks` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.AppLinks/) Auflistung.
 
 > [!NOTE]
-> **Hinweis**: auf Android es ist nicht möglich, die indizierte Inhalt aus Suchergebnisse zu löschen.
+> Auf Android-Geräten ist es nicht möglich, indizierte Inhalt aus Suchergebnisse löschen.
 
 <a name="responding" />
 
@@ -211,7 +215,7 @@ Darüber hinaus können Werte für die folgenden Schlüssel angegeben werden:
 - `shouldAddToPublicIndex` – ein `string` entweder `true` oder `false` , die steuert, ob, klicken Sie dann den Benutzern angezeigt werden kann, wer die Anwendung auf seinem iOS-Gerät installiert haben Apple öffentlichen Cloud Index, den indizierten Inhalt hinzuzufügen. Allerdings nur weil der Inhalt für die öffentliche Indizierung festgelegt wurde, bedeutet es nicht, dass es automatisch von Apple öffentlichen Cloud Index hinzugefügt werden. Weitere Informationen finden Sie unter [öffentliche Indizierung](~/ios/platform/search/nsuseractivity.md). Beachten Sie, die diesen Schlüssel soll, um festgelegt werden `false` beim Hinzufügen von persönlichen Daten, die [ `KeyValues` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.KeyValues/) Auflistung.
 
 > [!NOTE]
-> **Hinweis**: die `KeyValues` Auflistung wird nicht auf die Android-Plattform verwendet.
+> Die `KeyValues` Auflistung wird nicht auf die Android-Plattform verwendet.
 
 Weitere Informationen zur Übergabe finden Sie unter [Einführung in die Übergabe](~/ios/platform/handoff.md).
 

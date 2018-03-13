@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 9c95a1b71f83ee810b775420aab3ceafeeca0379
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e5c17c53c154eb4da4ec76e567c1c73695de7e35
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -212,11 +212,11 @@ Der Xamarin Profiler besteht aus fünf Abschnitte, wie unten gezeigt:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![](images/profiler-mac-sml.png "Profiler-Abschnitte in Visual Studio für Mac")](images/profiler-mac.png) 
+[![](images/profiler-mac-sml.png "Profiler-Abschnitte in Visual Studio für Mac")](images/profiler-mac.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/profiler-vs.png "Profiler-Abschnitte in Visual Studio")](images/profiler-vs.png)
+[![](images/profiler-vs.png "Profiler-Abschnitte in Visual Studio")](images/profiler-vs.png#lightbox)
 
 -----
 
@@ -234,11 +234,11 @@ Am Anfang des Profilers wird das Zuordnungen, die die Größe des Arbeitsspeiche
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![](images/allocations1.png "Instrumentieren der Zuordnungen")](images/allocations1.png) 
+[![](images/allocations1.png "Instrumentieren der Zuordnungen")](images/allocations1.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/allocations1-vs.png "Instrumentieren der Zuordnungen")](images/allocations1-vs.png)
+[![](images/allocations1-vs.png "Instrumentieren der Zuordnungen")](images/allocations1-vs.png#lightbox)
 
 -----
 
@@ -248,11 +248,11 @@ Es gibt verschiedenen Datenansichten in die Zuordnungen instrumentieren, die es 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-  [![](images/allocations3.png "Registerkarte "Zuordnungen"")](images/allocations3.png) 
+  [![](images/allocations3.png "Registerkarte "Zuordnungen"")](images/allocations3.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations2-vs.png "Registerkarte "Zuordnungen"")](images/allocations2-vs.png)
+  [![](images/allocations2-vs.png "Registerkarte "Zuordnungen"")](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -264,11 +264,11 @@ Die Inspektor-Ansicht für Zuordnungen bietet Optionen zum Filtern und Gruppiere
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-  [![](images/allocations2.png "Registerkarte "Aufruf"")](images/allocations2.png) 
+  [![](images/allocations2.png "Registerkarte "Aufruf"")](images/allocations2.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations3-vs.png "Registerkarte "Aufruf"")](images/allocations3-vs.png)
+  [![](images/allocations3-vs.png "Registerkarte "Aufruf"")](images/allocations3-vs.png#lightbox)
 
 -----
 
@@ -276,11 +276,11 @@ Die Inspektor-Ansicht für Zuordnungen bietet Optionen zum Filtern und Gruppiere
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-  [![](images/allocations4.png "Registerkarte "Momentaufnahmen"")](images/allocations4.png) 
+  [![](images/allocations4.png "Registerkarte "Momentaufnahmen"")](images/allocations4.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations4-vs.png "Registerkarte "Momentaufnahmen"")](images/allocations4-vs.png)
+  [![](images/allocations4-vs.png "Registerkarte "Momentaufnahmen"")](images/allocations4-vs.png#lightbox)
 
 -----
 
@@ -292,15 +292,15 @@ Im Diagramm zeichnen angezeigt, wie im folgenden Screenshot gezeigt, die Anzahl 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Instrumentieren der Time-Profiler](images/time1.png)](images/time1.png) 
+[![Instrumentieren der Time-Profiler](images/time1.png)](images/time1.png#lightbox) 
 
-[![Zeit Profiler Instrument – Liste der Beispiele](images/time3.png)](images/time3.png) 
+[![Zeit Profiler Instrument – Liste der Beispiele](images/time3.png)](images/time3.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Instrumentieren der Time-Profiler](images/time1-vs.png)](images/time1-vs.png) 
+[![Instrumentieren der Time-Profiler](images/time1-vs.png)](images/time1-vs.png#lightbox) 
 
-[![Zeit Profiler Instrument – Liste der Beispiele](images/time3-vs.png)](images/time3-vs.png) 
+[![Zeit Profiler Instrument – Liste der Beispiele](images/time3-vs.png)](images/time3-vs.png#lightbox) 
 
 -----
 
@@ -309,11 +309,11 @@ Im Diagramm zeichnen angezeigt, wie im folgenden Screenshot gezeigt, die Anzahl 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-  [![](images/time2.png "Zeit Profiler Instrument – Aufrufstruktur")](images/time2.png) 
+  [![](images/time2.png "Zeit Profiler Instrument – Aufrufstruktur")](images/time2.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/time2-vs.png "Zeit Profiler Instrument – Aufrufstruktur")](images/time2-vs.png) 
+  [![](images/time2-vs.png "Zeit Profiler Instrument – Aufrufstruktur")](images/time2-vs.png#lightbox) 
 
 -----
 
@@ -325,7 +325,7 @@ Durch die Verwendung von c# und F#-verwalteten Code kann es sein, recht häufig 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Zyklen Instrumentieren](images/cycles-vs.png)](images/time1-vs.png) 
+[![Zyklen Instrumentieren](images/cycles-vs.png)](images/time1-vs.png#lightbox) 
 
 -----
 
@@ -338,11 +338,11 @@ Wenn Sie ein Profil eine app mit einer anderen Konfiguration erstellen, werden S
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Profilerstellung Fehlerdialogfeld](images/image001.png)](images/image001.png) 
+[![Profilerstellung Fehlerdialogfeld](images/image001.png)](images/image001.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/image1vs.png "Profilerstellung Fehlerdialogfeld")](images/image1vs.png) 
+[![](images/image1vs.png "Profilerstellung Fehlerdialogfeld")](images/image1vs.png#lightbox) 
 
 -----
 
@@ -350,7 +350,7 @@ Wenn Sie ein Profil eine app mit einer anderen Konfiguration erstellen, werden S
 Wählen Sie **Update** um den Vorgang fortzusetzen.
 
 <!---
-##Profiling Android Applications
+## Profiling Android Applications
 
 
 Due to the recent inclusion of the profiling libraries into any new Android project template, you will find that when profiling any legacy applications you are greeted with the message dialog above.
@@ -358,7 +358,7 @@ Due to the recent inclusion of the profiling libraries into any new Android proj
 You will need to enable this to make sure that the profiling libraries are included in your Android application, for debug builds. This should not be checked for release builds as it creates overhead.
 
 
-##Profiling iOS Applications
+## Profiling iOS Applications
 
 ### Profiling tvOS
 

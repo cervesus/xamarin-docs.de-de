@@ -5,18 +5,25 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 65030DA3-C7C1-4A02-B478-811073C39139
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 1fe290983bf7b130dee6f1a1878a32dce3efc4c4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0ede9bbb47f398a82d6eae5d827122f469ad6ea4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layouts"></a>Layouts
 
-Xamarin.Forms verfügt über mehrere Layouts und Funktionen zum Strukturieren von Inhalt auf dem Bildschirm. Jedes Layoutsteuerelement wird sowie weitere Details zum Behandeln von Bildschirm Ausrichtung wird im folgenden beschrieben:
+Xamarin.Forms verfügt über mehrere Layouts und Funktionen zum Strukturieren von Inhalt auf dem Bildschirm. 
+
+> [!VIDEO https://youtube.com/embed/4HlLjTZQzjM]
+
+**Xamarin.Forms-Layouts, von [Xamarin University](https://university.xamarin.com/)**
+
+Jedes Layoutsteuerelement wird sowie weitere Details zum Behandeln von Bildschirm Ausrichtung wird im folgenden beschrieben:
 
 * **[StackLayout](stack-layout.md)**  &ndash; verwendet, um linear, Anordnen von Ansichten horizontal oder vertikal. Ansichten in einer StackLayout können an das Rechenzentrum, nach links oder rechts des Layouts ausgerichtet werden.
 * **[AbsoluteLayout](absolute-layout.md)**  &ndash; zum Anordnen der Sichten durch Festlegen von Koordinaten & Größe als Absolute Werte oder Verhältnisse verwendet. AbsoluteLayout kann verwendet werden, überlagern Sie die Ansichten als auch auf der linken Seite, rechtsbündig oder mittig zu verankern.
@@ -35,7 +42,7 @@ Plattformsteuerelemente können auch verwendet werden, direkt in Xamarin.Forms L
 
 Die folgende Grafik visualisiert Layout-Steuerelemente:
 
-[ ![](images/layouts-sml.png "Xamarin.Forms Layouts")](images/layouts.png "Xamarin.Forms Layouts")
+[![](images/layouts-sml.png "Xamarin.Forms Layouts")](images/layouts.png#lightbox "Xamarin.Forms Layouts")
 
 ## <a name="choosing-the-right-layout"></a>Auswählen des richtigen Layouts
 
@@ -156,7 +163,7 @@ Beachten Sie die folgenden Aspekte des vorangehenden Codes ein:
 
 Die [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) Struktur kann verwendet werden, um Ausrichtung und die Erweiterung für eine Ansicht, relativ zu seinem übergeordneten definieren.
 
-### <a name="margin-and-paddingmargin-and-paddingmd"></a>[Rand und Abstand](margin-and-padding.md)
+### <a name="margin-and-paddingmargin-and-paddingmd"></a>[Ränder und Abstände](margin-and-padding.md)
 
 Die [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) und [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) Eigenschaften Layoutverhalten steuern, wenn ein Element in der Benutzeroberfläche gerendert wird.
 
@@ -180,7 +187,7 @@ iOS, Android und Windows Plattformen unterstützen alle größere Bildschirmgrö
 
 Xamarin.Forms definiert vier Klassen für Layout - [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), [ `AbsoluteLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/), [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/), und [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), und jede ordnet die untergeordneten Elemente auf andere Weise. Allerdings manchmal erforderlichen zum Organisieren von Seiteninhalt, die nicht mit einem Layout gebotenen Xamarin.Forms. In diesem Artikel wird erläutert, wie eine benutzerdefiniertes Layout-Klasse schreiben, und zeigt eine Ausrichtung Akzent `WrapLayout` -Klasse, die ordnet seine untergeordneten Elemente horizontal über die Seite, und klicken Sie dann dient als Wrapper für die Anzeige von nachfolgenden untergeordneten Elemente, um zusätzliche Zeilen.
 
-### <a name="layout-compressionlayout-compressionmd"></a>[Layout-Komprimierung](layout-compression.md)
+### <a name="layout-compressionlayout-compressionmd"></a>[Layoutkomprimierung](layout-compression.md)
 
 Layout-Komprimierung entfernt angegebenen Layouts aus der visuellen Struktur, in dem Versuch zur Verbesserung der Leistung beim Rendern der Seite. Der daraus resultierende Leistungsvorteil variiert je nach Komplexität einer Seite, der Version des verwendeten Betriebssystems und des Geräts, auf dem die Anwendung ausgeführt wird. Die größten Leistungssteigerungen werden jedoch bei älteren Geräten zu verzeichnen sein.
 

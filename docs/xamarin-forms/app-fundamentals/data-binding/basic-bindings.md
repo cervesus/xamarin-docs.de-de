@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 500ad02d79cea79f59b1aca91b0312c9a9d6bac3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b82c0471985306962133c3bf7b084b49d5588bb6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="basic-bindings"></a>Grundlegende Bindungen
 
@@ -94,7 +94,7 @@ Der Name der Klasse einschließlich ist jedoch eine gute Erinnerung des Zielobje
 
 Wie Sie bearbeiten die `Slider`die `Label` dreht entsprechend:
 
-[![Basice-Code binden](basic-bindings-images/basiccodebinding-small.png "grundlegenden Code Bindung")](basic-bindings-images/basiccodebinding-large.png "Basic-Code-Bindung")
+[![Basice-Code binden](basic-bindings-images/basiccodebinding-small.png "grundlegenden Code Bindung")](basic-bindings-images/basiccodebinding-large.png#lightbox "Basic-Code-Bindung")
 
 Die **grundlegenden XAML-Bindung** Seite ist identisch mit **Standardbindung Code** mit dem Unterschied, dass es die gesamte Datenbindung in XAML definiert:
 
@@ -190,7 +190,7 @@ Die `Binding` Konstruktor verfügt über 6 Parameter, sodass der `source` Parame
 
 Dieses Programm ausführen, kann ein wenig überraschend sein:
 
-[![Alternativer Code Bindung](basic-bindings-images/alternativecodebinding-small.png "alternativer Code Bindung")](basic-bindings-images/alternativecodebinding-large.png "alternativer Code Bindung")
+[![Alternativer Code Bindung](basic-bindings-images/alternativecodebinding-small.png "alternativer Code Bindung")](basic-bindings-images/alternativecodebinding-large.png#lightbox "alternativer Code Bindung")
 
 Die iOS-Bildschirm auf der linken Seite zeigt wie sieht das beim ersten der Seite öffnen. Wobei ist die `Label`? 
 
@@ -319,7 +319,7 @@ Die **Bindung Kontext Vererbung** Beispiel ist eine einfache Veranschaulichung d
 
 Die `BindingContext` Eigenschaft der `StackLayout` festgelegt ist, um die `slider` Objekt. Diesem Bindungskontext von sowohl geerbt wird die `Label` und die `BoxView`, die beide von wofür ihre `Rotation` Eigenschaften festlegen, um die `Value` Eigenschaft der `Slider`: 
 
-[![Binden von Kontext Vererbung](basic-bindings-images/bindingcontextinheritance-small.png "binden Kontext Vererbung")](basic-bindings-images/bindingcontextinheritance-large.png "binden Kontext Vererbung")
+[![Binden von Kontext Vererbung](basic-bindings-images/bindingcontextinheritance-small.png "binden Kontext Vererbung")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "binden Kontext Vererbung")
 
 In der [weiter Artikel](binding-mode.md), sehen Sie wie die *Bindungsmodus* können den Fluss der Daten zwischen Quell-und ändern.
 

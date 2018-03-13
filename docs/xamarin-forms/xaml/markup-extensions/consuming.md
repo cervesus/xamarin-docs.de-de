@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: cc4407be9dee7e19dbf1f3cc03b3b88191717e6f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0c68d2cfd43eb535fe2e02b5662250cb6e453ddd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Nutzen die Verwendung von XAML-Markuperweiterungen
 
@@ -137,7 +137,7 @@ Im abschließenden Beispiel zeigt die `Device.RuntimePlatform` Wert. Die `Enviro
 
 So sieht das Beispiel auf allen drei Plattformen ausgeführt:
 
-[![X: Static-Demo](consuming-images/staticdemo-small.png "X: Static-Demo")](consuming-images/staticdemo-large.png "X: Static-Demo")
+[![X: Static-Demo](consuming-images/staticdemo-small.png "X: Static-Demo")](consuming-images/staticdemo-large.png#lightbox "X: Static-Demo")
 
 <a name="reference" />
 
@@ -181,7 +181,7 @@ Die **X: Reference-Demo** Seite zeigt zwei Verwendungen von `x:Reference` mit da
 
 Sowohl `x:Reference` Ausdrücke verwenden, die Kurzform der `ReferenceExtension` Klassennamen und Beseitigen der `Name=` Teil des Ausdrucks. Im ersten Beispiel das `x:Reference` Markuperweiterung eingebettet ist, der `Binding` Markuperweiterung. Beachten Sie, dass die `Source` und `StringFormat` Einstellungen werden durch Kommas getrennt. Hier wird das Programm auf allen drei Plattformen ausgeführt:
 
-[![X: Reference-Demo](consuming-images/referencedemo-small.png "X: Reference-Demo")](consuming-images/referencedemo-large.png "X: Reference-Demo")
+[![X: Reference-Demo](consuming-images/referencedemo-small.png "X: Reference-Demo")](consuming-images/referencedemo-large.png#lightbox "X: Reference-Demo")
 
 <a name="type" />
 
@@ -236,7 +236,7 @@ Dies ist wie das Navigationsmenü im `MainPage` in der **Markuperweiterungen** P
 
 Hier ist die Hauptseite der öffnenden in **Markuperweiterungen**:
 
-[![Main Seite](consuming-images/mainpage-small.png "Main Seite")](consuming-images/mainpage-large.png "Main Seite")
+[![Main Seite](consuming-images/mainpage-small.png "Main Seite")](consuming-images/mainpage-large.png#lightbox "Main Seite")
 
 Jede `CommandParameter` -Eigenschaftensatz auf eine `x:Type` Markuperweiterung, die auf eine der anderen Seiten verweist. Die `Command` Eigenschaft gebunden ist, auf eine Eigenschaft mit dem Namen `NavigateCommand`. Diese Eigenschaft wird definiert, der `MainPage` Code-Behind-Datei:
 
@@ -319,7 +319,7 @@ public partial class TypeDemoPage : ContentPage
 
 Die Methode, ausgeführt wird, wenn eine `Button` gedrückt erstellt eine neue Instanz des Arguments wird, wird seine `VerticalOptions` -Eigenschaft, und fügt es der `StackLayout`. Die drei `Button` Elemente anschließend freigegeben wird, die Seite dynamisch erstellte Sichten:
 
-[![X: Type-Demo](consuming-images/typedemo-small.png "X: Type-Demo")](consuming-images/typedemo-large.png "X: Type-Demo")
+[![X: Type-Demo](consuming-images/typedemo-small.png "X: Type-Demo")](consuming-images/typedemo-large.png#lightbox "X: Type-Demo")
 
 <a name="array" />
 
@@ -376,7 +376,7 @@ Die **X: Array-Demo** Seite zeigt, wie `x:Array` Elemente hinzufügen einer `Lis
 
 Die `ViewCell` erstellt eine einfache `BoxView` für jeden Eintrag Farbe:
 
-[![X: Array-Demo](consuming-images/arraydemo-small.png "X: Array-Demo")](consuming-images/arraydemo-large.png "X: Array-Demo")
+[![X: Array-Demo](consuming-images/arraydemo-small.png "X: Array-Demo")](consuming-images/arraydemo-large.png#lightbox "X: Array-Demo")
 
 Es gibt mehrere Möglichkeiten zum Angeben der einzelnen `Color` Elemente in diesem Array. Sie können eine `x:Static` Markuperweiterung:
 
@@ -449,7 +449,7 @@ Dann Sie, die für eine der ermittelt der `Label` Elemente, Sie möchten die eig
 
 Hier wird das Programm auf drei Plattformen ausgeführt wird:
 
-[![X: Null-Demo](consuming-images/nulldemo-small.png "X: Null-Demo")](consuming-images/nulldemo-large.png "X: Null-Demo")
+[![X: Null-Demo](consuming-images/nulldemo-small.png "X: Null-Demo")](consuming-images/nulldemo-large.png#lightbox "X: Null-Demo")
 
 Beachten Sie, dass diese vier von der `Label` Elemente haben eine Serifenschriftart jedoch im Center `Label` Schriftart sans-Serif "Standard" hat.
 
@@ -462,6 +462,6 @@ Wenn Sie eine Notwendigkeit für eine XAML-Markuperweiterung, die nicht in Xamar
 
 - [Markuperweiterungen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
 - [Verwendung von XAML-Markup Extensions Kapitel Xamarin.Forms Buchs](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
-- [Ressourcenverzeichnis](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Dynamische Formate](~/xamarin-forms/user-interface/styles/dynamic.md)
+- [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Dynamische Stile](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)

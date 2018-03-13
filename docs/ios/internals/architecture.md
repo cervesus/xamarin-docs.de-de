@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: bf9d292acf43bbbe3e4ba76b5a264a11288b7225
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 732f60a413077bc15018679fe8f8bc0a18227246
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-architecture"></a>iOS-Architektur
 
@@ -20,7 +20,7 @@ Xamarin.iOS Anwendungen innerhalb der Mono-ausführungsumgebung ausgeführt, und
 
 Das folgende Diagramm zeigt eine grundlegende Übersicht über diese Architektur:
 
-[ ![](architecture-images/ios-arch-small.png "Dieses Diagramm zeigt eine grundlegende Übersicht über die Zukunft der Uhrzeit (AOT) Kompilierung-Architektur")](architecture-images/ios-arch.png)
+[ ![](architecture-images/ios-arch-small.png "Dieses Diagramm zeigt eine grundlegende Übersicht über die Zukunft der Uhrzeit (AOT) Kompilierung-Architektur")](architecture-images/ios-arch.png#lightbox)
 
 ## <a name="native-and-managed-code-an-explanation"></a>Systemeigenen und verwalteten Code: eine Erklärung
 
@@ -36,7 +36,7 @@ Wenn Sie eine Xamarin-Plattform-Anwendung kompilieren, der Compiler Mono c# (ode
 Es ist jedoch eine sicherheitseinschränkung iOS, Festlegen von Apple, die die Ausführung von dynamisch generierten Code auf einem Gerät lässt nicht zu.
 Um sicherzustellen, dass wir diese Protokolle für Sicherheit folgen, verwendet Xamarin.iOS stattdessen einen im Voraus der Uhrzeit (AOT)-Compiler zum Kompilieren des verwalteten Codes. Dies führt zu einer systemeigenen iOS binäre, optional mit LLVM optimiert, bei Geräten, die auf der Apple-ARM-basierten Prozessor bereitgestellt werden können. Nachstehend ist ein grober Diagramm wie dies zusammenpasst dargestellt:
 
-[ ![](architecture-images/aot.png "Eine grobe Diagramm wie dies zusammenpasst")](architecture-images/aot-large.png)
+[![](architecture-images/aot.png "Eine grobe Diagramm wie dies zusammenpasst")](architecture-images/aot-large.png#lightbox)
 
 Mithilfe von AOT bietet eine Reihe von Einschränkungen in erläutert werden die [Einschränkungen](~/ios/internals/limitations.md) Handbuch. Es bietet auch eine Reihe von Verbesserungen gegenüber JIT durch eine Verringerung der Startzeit und verschiedene leistungsoptimierungen
 
@@ -101,7 +101,7 @@ Es gibt zwei Arten von Registrierungsstellen in Xamarin.iOS – dynamische und s
 
 - **Statische Registrierungsstellen** – statische Registrierungsstelle generiert Objective-C-Code während des Builds, die dann in einer statischen Bibliothek kompiliert und in die ausführbare Datei verknüpft. Dies ermöglicht einen schnelleren Start, jedoch während des Buildvorgangs länger dauert. Dies wird standardmäßig verwendet, für das Gerät erstellt. Die statische Registrierungsstelle kann auch mit der iOS-Simulator verwendet werden, durch das übergeben `--registrar:static` als ein `mtouch` Attribut in Ihrem Projekt Buildoptionen, wie unten dargestellt:
 
-    [ ![](architecture-images/image1.png "Zusätzliche Mtouch Argumente festgelegt")](architecture-images/image1.png)
+    [![](architecture-images/image1.png "Zusätzliche Mtouch Argumente festgelegt")](architecture-images/image1.png#lightbox)
 
 Weitere Informationen zu den Besonderheiten des iOS-Typregistrierung-System von Xamarin.iOS verwendet, finden Sie in der [Typ Registrierungsstelle](~/ios/internals/registrar.md) Handbuch.
 
@@ -179,7 +179,7 @@ Dieses Handbuch erläutert, AOT Kompilierung von Xamarin.iOS-apps und untersucht
 ## <a name="related-links"></a>Verwandte Links
 
 - [Einschränkungen](~/ios/internals/limitations.md)
-- [Objective-C-Bindung](~/cross-platform/macios/binding/overview.md)
+- [Binden von Objective-C](~/cross-platform/macios/binding/overview.md)
 - [Selektoren Objective-C](~/ios/internals/objective-c-selectors.md)
 - [Typ-Registrierungsstelle](~/ios/internals/registrar.md)
 - [Linker](~/ios/deploy-test/linker.md)

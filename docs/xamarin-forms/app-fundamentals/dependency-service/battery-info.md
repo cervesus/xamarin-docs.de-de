@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 28c8ecc77aaeb00eff6f343ad41fed1c653362db
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 78832c396f8968769f3134728cd435555aecbc8f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="checking-battery-status"></a>Akkustatus überprüfen
 
@@ -70,7 +70,7 @@ namespace DependencyServiceSample
 Mit der Programmierung für diese Schnittstelle im freigegebenen Code können Xamarin.Forms-app auf die Power-Verwaltungs-APIs auf jeder Plattform zugreifen.
 
 > [!NOTE]
-> **Hinweis**: Klassen implementieren der Schnittstelle benötigen einen parameterlosen Konstruktor zur Bearbeitung der `DependencyService`. Konstruktoren können nicht von Schnittstellen definiert werden.
+> Klassen, die die Schnittstelle implementieren, benötigen einen parameterlosen Konstruktor zur Bearbeitung der `DependencyService`. Konstruktoren können nicht von Schnittstellen definiert werden.
 
 <a name="iOS_Implementation" />
 
@@ -547,4 +547,4 @@ Diese Anwendung auf iOS, Android oder Windows-Plattformen ausgeführt, und drüc
 
 - [DependencyService (Beispiel)](https://developer.xamarin.com/samples/DependencyService)
 - [Verwenden DependencyService (Beispiel)](https://developer.xamarin.com/samples/UsingDependencyService/)
-- [Xamarin.Forms-Beispiele](https://github.com/xamarin/xamarin-forms-samples)
+- [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://github.com/xamarin/xamarin-forms-samples)

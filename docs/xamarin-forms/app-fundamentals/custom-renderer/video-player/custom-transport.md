@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d37c2c9dbb12668680b5813e9e083d2ebb184c66
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: b0d871068f42a03b2aba3c1482a9236b19fe0db9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-video-transport-controls"></a>Benutzerdefinierte video Transport-Steuerelemente
 
@@ -646,11 +646,11 @@ namespace VideoPlayerDemos
 
 Da `AutoPlay` auf festgelegt ist `false` in der **CustomTransport.xaml** -Datei müssen Sie die drücken die **wiedergeben** -Schaltfläche, wenn es aktiviert wird, um das Video zu starten. Die Schaltflächen werden definiert, sodass ihre textentsprechungen die Unicode-Zeichen, die weiter oben erläuterten begleitet werden. Bei der Wiedergabe des Videos, haben die Schaltflächen eine konsistente Darstellung auf jeder Plattform:
 
-[![Wiedergabe von benutzerdefinierten Transportbindungselementen](custom-transport-images/customtransportplaying-small.png "benutzerdefinierten Transports wiedergeben")](custom-transport-images/customtransportplaying-large.png "benutzerdefinierten Transports wiedergeben")
+[![Wiedergabe von benutzerdefinierten Transportbindungselementen](custom-transport-images/customtransportplaying-small.png "benutzerdefinierten Transports wiedergeben")](custom-transport-images/customtransportplaying-large.png#lightbox "benutzerdefinierten Transports wiedergeben")
 
 Jedoch unter Android und universelle Windows-Plattform die **wiedergeben** Schaltfläche sieht sehr unterschiedlich, wenn das Video angehalten wird:
 
-[![Benutzerdefinierter Transport angehalten](custom-transport-images/customtransportpaused-small.png "benutzerdefinierter Transport angehalten")](custom-transport-images/customtransportpaused-large.png "benutzerdefinierter Transport angehalten")
+[![Benutzerdefinierter Transport angehalten](custom-transport-images/customtransportpaused-small.png "benutzerdefinierter Transport angehalten")](custom-transport-images/customtransportpaused-large.png#lightbox "benutzerdefinierter Transport angehalten")
 
 In einer produktionsanwendung sollten Sie möglicherweise eigene Bitmap-Images für die Schaltflächen zu verwenden, um visuelle Einheitlichkeit zu erzielen.
 

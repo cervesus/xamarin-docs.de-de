@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 80fe298f3dd24aac7f84213aee96499dd369d16d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f0cb4e00abffead854c2590bde6df45c200ff0bb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="core-animation"></a>Core-Animation
 
@@ -23,12 +23,16 @@ Alle hochauflösende Animationen in iOS z. B. Durchführen eines Bildlaufs von T
 
 Die Core-Animationen und Core Grafiken Frameworks zusammenarbeiten, um ansprechende, erstellen Sie animierte 2D Grafiken. Tatsächlich kann Core Animation selbst 2D Grafiken in 3D-Bereich, transformiert erstaunliche, Kino Oberflächen zu erstellen. Allerdings würde um "true" 3D-Grafiken zu erstellen, Sie müssen etwas wie OpenGL ES oder für Spiele, aktivieren Sie auf eine API wie MonoGame, verwenden auch 3D nicht Gegenstand dieses Artikels ist.
 
+<a name="Using_Core_Animation" />
+
 ## <a name="core-animation"></a>Core-Animation
 
 iOS verwendet das Framework Core-Animation um Animationseffekte wie Übergang zwischen Ansichten, Menüs gleitende und Durchführen eines Bildlaufs Effekte, um nur einige zu nennen zu erstellen. Es gibt zwei Verfahren zum Arbeiten mit Animation:
 
--  [Über UIKit](#Using_UIKit_Animation), inklusive der anzeigen-basierte Animationen sowie animierte Übergänge zwischen Domänencontrollern.
--   [Über Core Animation](#Using_Core_Animation), welche Ebenen direkt, bei dem Steuerelement eine umfassendere.
+- [Über UIKit](#Using_UIKit_Animation), inklusive der anzeigen-basierte Animationen sowie animierte Übergänge zwischen Domänencontrollern.
+- [Über Core Animation](#Using_Core_Animation), welche Ebenen direkt, bei dem Steuerelement eine umfassendere.
+
+<a name="Using_UIKit_Animation" />
 
 ## <a name="using-uikit-animation"></a>Verwenden von UIKit Animationen
 
@@ -237,6 +241,6 @@ In diesem Artikel erläutert, die Funktionen für Animation über die *Core Anim
 ## <a name="related-links"></a>Verwandte Links
 
 - [Core-Animation-Beispiel](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
-- [Core-Grafiken](~/ios/platform/graphics-animation-ios/core-graphics.md)
+- [Core Graphics](~/ios/platform/graphics-animation-ios/core-graphics.md)
 - [Grafiken und Animationen Exemplarische Vorgehensweise](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
-- [Core-Animation](https://developer.xamarin.com/recipes/ios/animation/coreanimation)
+- [Core Animation](https://developer.xamarin.com/recipes/ios/animation/coreanimation)

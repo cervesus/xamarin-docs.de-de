@@ -4,14 +4,15 @@ description: "Ermitteln Sie die SkiaSharp Skalierungstransformation für Objekte
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 3ea498b3672c0b9ef4efeff7ec5981dca5a36912
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: feecfc923903a20332bf3a1a188ab9d7cd2ce1c0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-scale-transform"></a>Die Skalierungstransformation für die
 
@@ -103,7 +104,7 @@ Sie Fragen sich vielleicht: wie wirken sich die Skalierungsfaktoren auf den Rüc
 
 Wie Sie, alle Elemente, die nach dem sehen die `Scale` erhöht sich proportional aufrufen:
 
-[![](scale-images/basicscale-small.png "Dreifacher Screenshot der Seite grundlegende Skalierung")](scale-images/basicscale-large.png "dreifacher Screenshot der Seite grundlegende Skalierung")
+[![](scale-images/basicscale-small.png "Dreifacher Screenshot der Seite grundlegende Skalierung")](scale-images/basicscale-large.png#lightbox "dreifacher Screenshot der Seite grundlegende Skalierung")
 
 Der Text die Breite der gestrichelte Linie, die Länge der Bindestriche in dieser Zeile, die Rundung von den Ecken und der 10-Pixel-Rand zwischen dem linken und oberen Randes des Zeichenbereichs und des abgerundeten Rechtecks unterliegen alle den gleichen Skalierungsfaktoren.
 
@@ -165,7 +166,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Der oberen linken Ecke des abgerundeten Rechtecks positioniert ist `margin` Pixel vom linken Rand des Zeichenbereichs und `margin` Pixel vom oberen Rand. Die beiden letzten Argumente an die `Scale` Methode werden auf diese Werte sowie die Breite und Höhe des Texts, der die Breite und Höhe des abgerundeten Rechtecks auch ist festgelegt. Dies bedeutet, dass alle Skalierung relativ zum Mittelpunkt des dieses Rechteck ist:
 
-[![](scale-images/centeredscale-small.png "Dreifacher Screenshot der Seite zentriert Skalierung")](scale-images/centeredscale-large.png "dreifacher Screenshot der Seite zentriert Skalierung")
+[![](scale-images/centeredscale-small.png "Dreifacher Screenshot der Seite zentriert Skalierung")](scale-images/centeredscale-large.png#lightbox "dreifacher Screenshot der Seite zentriert Skalierung")
 
 Die `Slider` Elemente an diesem Programm haben einen Bereich von & #x 2013, 10 bis 10. Wie Sie sehen können, dazu führen, dass negative Werte vertikale Skalierung (z. B. Bildschirm auf das Android-Geräten in der Mitte) Objekte aus, um die horizontale Achse zu blättern, die den Mittelpunkt der Skalierung durchlaufen. Negative Werte der horizontalen Skalierung (z. B. wie in der Windows-Bildschirm auf der rechten Seite) dazu führen, dass Objekte, um die vertikale Achse zu blättern, die den Mittelpunkt der Skalierung durchlaufen.
 
@@ -246,7 +247,7 @@ using (SKPaint strokePaint = new SKPaint
 
 Die `pathBounds` Rechteck am oberen Rand dieser Code abgerufen und dann später verwendet werden, mit der Breite und Höhe des Zeichenbereichs in der `Scale` aufrufen. Dass der Aufruf selbst die Koordinaten des Pfads skaliert werden, wenn er vom gerendert wird die `DrawPath` Aufruf, der den Stern werden in der oberen rechten Ecke des Zeichenbereichs zentriert. Es muss nach unten und nach links verschoben werden sollen. Dies ist die Aufgabe von der `Translate` aufrufen. Diese zwei Eigenschaften des `pathBounds` – ca. 100 sind, damit die Übersetzung Faktoren ca. 100 sind. Da die `Translate` Aufruf ist nach der `Scale` aufrufen, diese Werte werden durch die Skalierungsfaktoren effektiv skaliert, damit sie die Mitte des Sterns in der Mitte des Zeichenbereichs verschieben:
 
-[![](scale-images/anisotropicscaling-small.png "Dreifacher Screenshot der Seite anisotrope Skalierung")](scale-images/anisotropicscaling-large.png "dreifacher Screenshot der Seite anisotrope Skalierung")
+[![](scale-images/anisotropicscaling-small.png "Dreifacher Screenshot der Seite anisotrope Skalierung")](scale-images/anisotropicscaling-large.png#lightbox "dreifacher Screenshot der Seite anisotrope Skalierung")
 
 Eine weitere Möglichkeit, Sie können überlegen, der `Scale` und `Translate` Aufrufe ist, um die Auswirkung in umgekehrter Reihenfolge zu bestimmen: die `Translate` Aufruf verlagert den Pfad an, weshalb es vollständig sichtbar ist, aber in der oberen linken Ecke des Zeichenbereichs ausgerichtet ist. Die `Scale` Methode setzt diese Stern größere relativ zur linken oberen Ecke.
 
@@ -289,7 +290,7 @@ using (SKPaint textPaint = new SKPaint
 
 Ähnliche Logik ist, und der Text wird erweitert, auf die Größe der Seite basierend auf Grenzen textrechtecks Merry `MeasureText` (Dies ist ein bisschen größer als der tatsächliche Text):
 
-[![](scale-images/anisotropictext-small.png "Dreifacher Screenshot der anisotrope Testseite")](scale-images/anisotropictext-large.png "dreifacher Screenshot der anisotrope Testseite")
+[![](scale-images/anisotropictext-small.png "Dreifacher Screenshot der anisotrope Testseite")](scale-images/anisotropictext-large.png#lightbox "dreifacher Screenshot der anisotrope Testseite")
 
 Wenn Sie das Seitenverhältnis des grafische Objekte beibehalten müssen, müssen Sie kugelstrahler Skalierung verwenden möchten. Die **Kugelstrahler Skalierung** Seite zeigt dies für den Stern 11 gezeigt wird. Im Prinzip sind die Schritten zum Anzeigen von einem Objekt in der Mitte der Seite mit kugelstrahler Skalierung:
 
@@ -338,7 +339,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Der Code zeigt auch die Stern zehn weitere Male, jedes Mal, verringern die Skalierung Faktor von 10 % und die Farbe progressiv von Rot in Blau zu ändern:
 
-[![](scale-images/isotropicscaling-small.png "Dreifacher Screenshot der Seite Skalierung Kugelstrahler")](scale-images/isotropicscaling-large.png "dreifacher Screenshot der Seite Kugelstrahler Skalierung")
+[![](scale-images/isotropicscaling-small.png "Dreifacher Screenshot der Seite Skalierung Kugelstrahler")](scale-images/isotropicscaling-large.png#lightbox "dreifacher Screenshot der Seite Kugelstrahler Skalierung")
 
 
 ## <a name="related-links"></a>Verwandte Links

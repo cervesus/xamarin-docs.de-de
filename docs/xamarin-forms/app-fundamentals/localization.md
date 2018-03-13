@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: ad9129e06f43eea69518c4d876edc7cfd462f4e0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ffde89558495c4b9ccb9ec41761b5fc7ca53db38
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="localization"></a>Lokalisierung
 
@@ -71,7 +71,7 @@ Die Basis-Ressourcendatei (RESX) enthält die standardmäßige sprachenzeichenfo
 
 Wählen Sie einen aussagekräftigen Namen wie **AppResources** , und drücken Sie **OK**.
 
-[ ![Fügen Sie die Ressourcendatei](localization-images/resx-new-file-sml.png "Dialogfeld "neue Datei"")](localization-images/resx-new-file.png "Dialogfeld "neue Datei"")
+[![Fügen Sie die Ressourcendatei](localization-images/resx-new-file-sml.png "Dialogfeld "neue Datei"")](localization-images/resx-new-file.png#lightbox "Dialogfeld "neue Datei"")
 
 Zwei Dateien werden dem Projekt hinzugefügt werden:
 
@@ -88,32 +88,32 @@ Standardmäßig bei der Generierung von Verweisen auf Zeichenfolgen stark typisi
 
 Wählen Sie die **AppResources.resx** Datei, und zeigen die **Eigenschaften** mit Leerstellen auffüllen, um zu ermitteln, in denen diese Buildtool konfigurieren. Der Screenshot unten zeigt die **benutzerdefiniertes Tool: ResXFileCodeGenerator**.
 
-[[ide name="xs]]
 
-[ ![](localization-images/xs-resx-internal-sml.png "Eigenschaften mit Leerstellen auffüllen für AppResources.Resx")](localization-images/xs-resx-internal.png)
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[[/ide]]
+[![](localization-images/vs-resx-internal-sml.png "Eigenschaftenfenster für AppResources.Resx")](localization-images/vs-resx-internal.png#lightbox)
 
-[[ide name="vs]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![](localization-images/vs-resx-internal-sml.png "Eigenschaftenfenster für AppResources.Resx")](localization-images/vs-resx-internal.png)
+[![](localization-images/xs-resx-internal-sml.png "Eigenschaften mit Leerstellen auffüllen für AppResources.Resx")](localization-images/xs-resx-internal.png#lightbox)
 
-[[/ide]]
+-----
 
 Die stark typisierte Zeichenfolgeneigenschaften vornehmen `public`, müssen Sie die Konfiguration manuell ändern **benutzerdefiniertes Tool: PublicResXFileCodeGenerator**, wie im folgenden Screenshot gezeigt:
 
 
-[[ide name="xs]]
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](localization-images/xs-resx-public-sml.png "Eigenschaften mit Leerstellen auffüllen für AppResources.Resx")](localization-images/xs-resx-public.png)
+[![](localization-images/vs-resx-public-sml.png "Eigenschaftenfenster für AppResources.Resx")](localization-images/vs-resx-public.png#lightbox)
 
-[[/ide]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[[ide name="vs]]
+[![](localization-images/xs-resx-internal-sml.png "Eigenschaften mit Leerstellen auffüllen für AppResources.Resx")](localization-images/xs-resx-internal.png#lightbox)
 
-[ ![](localization-images/vs-resx-public-sml.png "Eigenschaftenfenster für AppResources.Resx")](localization-images/vs-resx-public.png)
 
-[[/ide]]
+[![](localization-images/xs-resx-public-sml.png "Eigenschaften mit Leerstellen auffüllen für AppResources.Resx")](localization-images/xs-resx-public.png#lightbox)
+
+-----
 
 Diese Änderung ist optional, und ist nur erforderlich, wenn Sie lokalisierte Zeichenfolgen in anderen Assemblys zu verweisen (z. B., wenn Sie die RESX-Dateien in einer anderen Assembly in den Code einfügen) möchten. Das Beispiel in diesem Thema bewirkt, dass die Zeichenfolgen `internal` , da sie in der gleichen Xamarin.Forms PCL-Assembly definiert sind, in denen sie verwendet werden.
 
@@ -605,13 +605,13 @@ Wenn diese Einstellungen nicht aktualisiert werden, die lokalisierte RESX-Ressou
 
 Mit der rechten Maustaste auf das Windows Phone-Projekt, und wählen Sie **Eigenschaften**. In der **Anwendung** Registerkarte Tick der **unterstützten Kulturen** , die von der Anwendung unterstützt:
 
-[ ![](localization-images/winphone-projectproperties-sml.png "Projekteigenschaften - unterstützten Kulturen")](localization-images/winphone-projectproperties.png "Projekteigenschaften - unterstützten Kulturen")
+[![](localization-images/winphone-projectproperties-sml.png "Projekteigenschaften - unterstützten Kulturen")](localization-images/winphone-projectproperties.png#lightbox "Projekteigenschaften - unterstützten Kulturen")
 
 ##### <a name="wmappmanifestxml"></a>WMAppManifest.xml
 
 Erweitern Sie den Knoten "Eigenschaften" im Windows Phone-Projekt, und doppelklicken Sie auf die **WMAppManifest.xml** Datei. Klicken Sie auf die **Verpackung** Registerkarte, und aktivieren Sie die Sprachen, die von der Anwendung unterstützt.
 
-[ ![](localization-images/winphone-wmappmanifest-sml.png "WMAppManifest.xml - unterstützte Sprachen")](localization-images/winphone-wmappmanifest.png "WMAppManifest.xml - unterstützte Sprachen")
+[![](localization-images/winphone-wmappmanifest-sml.png "WMAppManifest.xml - unterstützte Sprachen")](localization-images/winphone-wmappmanifest.png#lightbox "WMAppManifest.xml - unterstützte Sprachen")
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 

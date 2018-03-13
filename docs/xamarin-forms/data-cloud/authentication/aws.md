@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 85413cf223e794ad2fda093601f9221d0261af39
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ac4c788b4bd48991d7628d892ad1ece3d2451228
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authenticating-users-with-an-amazon-simpledb-service"></a>Authentifizieren von Benutzern mit einer Amazon SimpleDB-Dienst
 
@@ -61,7 +61,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 Die `SelectAsync` Methode gibt eine Antwort mit einer Auflistung von Elementen und die zugehörigen Attribute, die mit den Abfrageausdruck übereinstimmen. Der Abfrageausdruck wird sichergestellt, dass nur Elemente, die e-Mail-Adresse des Benutzers entsprechen abgerufen werden sollen. Weitere Informationen zu Abfrageausdrücken, finden Sie unter [wählen Sie zum Erstellen von Amazon SimpleDB Abfragen](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/UsingSelect.html) des Amazon-Website.
 
 > [!NOTE]
-> **Hinweis**: Achten Sie darauf, dass Sie die zitieren Regeln befolgt, beim Erstellen des Abfrageausdrucks. Weitere Informationen finden Sie unter [zitieren Regeln auswählen](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html) des Amazon-Website.
+> Achten Sie darauf, dass die zitieren Regeln befolgt, beim Erstellen des Abfrageausdrucks. Weitere Informationen finden Sie unter [zitieren Regeln auswählen](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html) des Amazon-Website.
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 3de0e09b15b704db5e67fbbee6ba9bac86f58557
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4762612075a866581339b198552b8e26c9a1f6fa
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="async-support-overview"></a>Async Support Overview (Übersicht über die asynchrone Unterstützung)
 
@@ -28,7 +28,7 @@ Eine ausführlichere Diskussion der neuen asynchronen Funktionen von C#-5 (einsc
 
 Die beispielanwendung wird eine einfache asynchrone Web-Anforderung (ohne Blockierung des Haupt-Threads), und klicken Sie dann aktualisiert die Benutzeroberfläche mit der heruntergeladenen HTML- und der Anzahl der Zeichen.
 
- [ ![](async-images/AsyncAwait_427x368.png "Die beispielanwendung wird eine einfache asynchrone Web-Anforderung ohne den Hauptthread zu blockieren und aktualisiert die Benutzeroberfläche mit der heruntergeladenen HTML- und der Anzahl der Zeichen")](async-images/AsyncAwait.png)
+ [![](async-images/AsyncAwait_427x368.png "Die beispielanwendung wird eine einfache asynchrone Web-Anforderung ohne den Hauptthread zu blockieren und aktualisiert die Benutzeroberfläche mit der heruntergeladenen HTML- und der Anzahl der Zeichen")](async-images/AsyncAwait.png#lightbox)
 
 Die Xamarin asynchrone Unterstützung basiert auf der Grundlage Mono 3.0 und aktualisiert die API-Profil wird eine mobilgerätefreundliche-Version von Silverlight eine mobilgerätefreundliche-Version von .NET 4.5 ausgeführt werden.
 

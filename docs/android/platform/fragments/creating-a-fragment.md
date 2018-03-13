@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: c1dd3495b0d7f76197126094cfd10e50d0ca760d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 415c3a5e9446c5db545b62272f3b90a9ac73e401
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-a-fragment"></a>Erstellen ein Fragment
 
@@ -28,7 +28,7 @@ Der obige Code wird die Ansicht vergrößern `Resource.Layout.Example_Fragment`,
 
 
 > [!NOTE]
-> **Hinweis:** Fragment Unterklassen müssen einen öffentlichen Standardwert kein Argumentkonstruktor aufweisen.
+> Unterklassen Fragment müssen einen öffentlichen Standard kein Argumentkonstruktor verfügen.
 
 ## <a name="adding-a-fragment-to-an-activity"></a>Hinzufügen eines Fragments zu einer Aktivität
 
@@ -108,7 +108,7 @@ ODER
 Fragmente haben ihre eigenen Lebenszyklus, der etwas unabhängig von, aber dennoch von der, betroffen ist die [Lebenszyklus der hosting-Aktivität](~/android/app-fundamentals/activity-lifecycle/index.md).
 Z. B. wenn eine Aktivität angehalten wird, sind alle seine zugeordneten Fragmente angehalten. Das folgende Diagramm beschreibt den Lebenszyklus des Fragments.
 
-[![Flussdiagramm zur Veranschaulichung des Fragment-Lebenszyklus](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png)
+[![Flussdiagramm zur Veranschaulichung des Fragment-Lebenszyklus](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png#lightbox)
 
 
 ### <a name="fragment-creation-lifecycle-methods"></a>Fragment Erstellung Lebenszyklusmethoden
@@ -238,4 +238,4 @@ public override void OnCreate(Bundle savedState)
 
 Der folgende Bildschirm zeigt, wie in diesem Menü aussehen würde:
 
-[![Beispiel-Screenshot Meine Reisen App anzeigen von Menüelementen](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png)
+[![Beispiel-Screenshot Meine Reisen App anzeigen von Menüelementen](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png#lightbox)

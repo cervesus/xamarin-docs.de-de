@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/03/2017
-ms.openlocfilehash: a13de7fbb4b6e1f9fa2853ce599f3a038a5e4040
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: affe58d9276bd0b687089fb42a14ca964c570c9c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="complications"></a>Bereichsregeln
 
@@ -24,7 +24,7 @@ Beachten Sie, dass jede Anwendung WatchOS nur eine Komplikation haben kann.
 
 Lesen Sie zuerst [Apple Docs](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html) zu bestimmen, ob Ihre app für eine Komplikation geeignet ist. Es gibt 5 `CLKComplicationFamily` Typen der Anzeige zur Auswahl:
 
-[ ![](complications-images/all-complications-sml.png "Die 5 CLKComplicationFamily-Typen: zirkuläre kleine, modulare kleine, modulare große, kleine aus, aus großen")](complications-images/all-complications.png)
+[![](complications-images/all-complications-sml.png "Die 5 CLKComplicationFamily-Typen: zirkuläre kleine, modulare kleine, modulare große, kleine aus, aus großen")](complications-images/all-complications.png#lightbox)
 
 Apps können nur einen Stil oder alle fünf, abhängig von den angezeigten Daten implementieren.
 Sie können auch unterstützen Zeitreise, geben Sie Werte für die vergangenen und/oder zukünftige Zeiten, wie der Benutzer die digitale Crown aktiviert.
@@ -83,7 +83,7 @@ Führen Sie die [Schreiben einer Komplikation](#writing) Anweisungen zum Hinzuf�
 
 Der Watch-Erweiterungs **"Info.plist"** Datei geben Sie den Namen des der `CLKComplicationDataSource` und welche Komplikation Familien, die Sie unterstützen möchten:
 
-[ ![](complications-images/complications-config-sml.png "Die Schwierigkeit-Familie-Typen")](complications-images/complications-config.png)
+[![](complications-images/complications-config-sml.png "Die Schwierigkeit-Familie-Typen")](complications-images/complications-config.png#lightbox)
 
 Die **Datenquellenklasse** anzeigen Eingabeliste Klassennamen auf diese Unterklasse `CLKComplicationDataSource` Unterklasse, die die Schwierigkeit Logik enthält.
 

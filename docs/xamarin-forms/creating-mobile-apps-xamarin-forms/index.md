@@ -8,15 +8,15 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/03/2016
-ms.openlocfilehash: b6054b4037b14a73cb5bfe50b619e805fdcf1737
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: caee0d685838f7c0a54e19611fdf72df5730c037
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book-first-edition"></a>Beim Erstellen mobiler Apps mit Xamarin.Forms Buch erste Edition
 
-<p><img src="Images/Cover-sml.png" title="Beim Erstellen mobiler Apps mit Xamarin.Forms-Buch" align="left"/>Charless neuestes Buch - <i>Erstellen mobiler Apps mit Xamarin.Forms</i> - (electronic) drücken gesendet wurde, und ist jetzt zum Download verfügbar!</p>
+<p><img src="Images/Cover-sml.png" title="Beim Erstellen mobiler Apps mit Xamarin.Forms-Buch" align="left" />Charless neuestes Buch - <i>Erstellen mobiler Apps mit Xamarin.Forms</i> - (electronic) drücken gesendet wurde, und ist jetzt zum Download verfügbar!</p>
 
 Dies *Auflage* ist 27 Kapitel und deckt Xamarin.Forms&nbsp;2.x, einschließlich der Animation, MVVM, Trigger, Verhalten, benutzerdefinierte Layouts, benutzerdefinierten Renderern und vieles mehr.
 Kapitel 28 steht auch jetzt online für die einzelnen Kapitel, die unten aufgeführten.

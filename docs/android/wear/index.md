@@ -8,15 +8,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1dad5e859efdf69e7003b45724f718b16faffd62
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ac83b74f39497333de7aa80079784adf61bf2e65
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-wear"></a>Android Wear
-
-## <a name="android-wear"></a>Android Wear
 
 Android Abnutzung ist eine Version von Android, die zur wearable Geräte wie z. B. intelligente Überwachungen vorgesehen ist. Dieser Abschnitt enthält Anweisungen zum Installieren und Konfigurieren von Tools für die Entwicklung von Abnutzung, eine schrittweise Anleitung zum Erstellen Ihres ersten Abnutzung Geräts und eine Liste von Beispielen, die Sie verwenden können, um für die Erstellung Ihres eigenen apps Dach erforderlich.
 
@@ -28,7 +26,7 @@ Android Dach führt, wird beschrieben, wie zum Installieren und konfigurieren Si
 
 Erläutert Android Abnutzung-spezifische steuert und enthält Links zu Beispielen, die veranschaulichen, wie Sie diese Steuerelemente verwenden.
 
-##  <a name="platform-featuresandroidwearplatformindexmd"></a>[Plattformfunktionen](~/android/wear/platform/index.md)
+##  <a name="platform-featuresandroidwearplatformindexmd"></a>[Plattformfeatures](~/android/wear/platform/index.md)
 
 Dokumente in diesem Abschnitt werden spezifische Funktionen für Android Dach behandelt. Hier finden Sie ein Thema, das beschreibt, wie eine WatchFace erstellt.
 
@@ -36,12 +34,11 @@ Dokumente in diesem Abschnitt werden spezifische Funktionen für Android Dach be
 
 In der Vorschau anzeigen Sie, und Optimieren Sie Ihre Benutzeroberfläche für die verfügbaren Bildschirmgrößen.
 
-##  <a name="deployment--testingandroidweardeploy-testindexmd"></a>[Bereitstellung und Tests](~/android/wear/deploy-test/index.md)
+##  <a name="deployment--testingandroidweardeploy-testindexmd"></a>[Bereitstellung und Testen](~/android/wear/deploy-test/index.md)
 
 Erläutert, wie Ihre app Android Dach ein Dach Android-Gerät oder auf Android-Emulator für Abnutzung konfiguriert bereitstellen. Er umfasst außerdem das Debuggen, Tipps und Informationen zum Einrichten einer Bluetooth-Verbindung zwischen Ihrem Computer und einem Android-Gerät.
 
 
-<a name="Samples" />
 
 ## <a name="samples"></a>Proben
 
@@ -137,21 +134,21 @@ Sehen Sie sich diese video, Links, die mit Abnutzung Xamarin.Android behandeln u
 <table align="center" border="0" cellpadding="1" cellspacing="1">
     <tr>
         <td>
-        <a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/"><img src="Images/video-android-l.png" border="0"/ /></td>
+        <a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/"><img src="Images/video-android-l.png" border="0" /></td>
         <td><a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/">Android L und vieles mehr</a>
         <br />
 Die Android L Developer Preview eingeführt, eine Fülle von neue APIs für Entwickler zu nutzen, einschließlich Material Entwurf, Benachrichtigungen und neue Animationen, um nur einige zu nennen.</td>
     </tr>
     <tr>
         <td>
-        <a href="https://www.youtube.com/watch?v=80H8tXByZQc"><img src="Images/video-eyes-ears.png" border="0" / /></td>
+        <a href="https://www.youtube.com/watch?v=80H8tXByZQc"><img src="Images/video-eyes-ears.png" border="0" /></td>
         <td><a href="https://www.youtube.com/watch?v=80H8tXByZQc">C# ist in meinen Ohren und Augen: Google Glass und Android Dach</a>
         <br />
 Wearable computing scheint etwas aus der Zukunft (oder eine Folge von Inspektor-Gadget), aber viele Personen sind bereits Hinwendung Zukunft heute! C#-Entwickler wissen und haben bereits die Tools und Fertigkeiten, die Leistung der wearable Geräte (Evolve 2014) nutzen zu können.</td>
     </tr>
     <tr>
         <td>
-        <a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU"><img src="Images/video-whats-new.png" border="0" / /></td>
+        <a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU"><img src="Images/video-whats-new.png" border="0" /></td>
         <td><a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU">Was ist neu in Xamarin.Android</a>
         <br />
         <i>Android L, Android Abnutzung, Android, TV, Android Auto, Material Entwurf und Grafiken; Was Sie als Entwickler Xamarin bedeutet dies? </i> aus weiterentwickelt 2014.</td>

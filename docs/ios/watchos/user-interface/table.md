@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4887b9a42c5a855353b5a4e422559aafcdc68173
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0b8d8d08db15959a47093f255a891605a089ea00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="table-control"></a>Table-Steuerelement
 
@@ -24,7 +24,7 @@ Die WatchOS `WKInterfaceTable` Steuerelement ist deutlich einfacher als Gegenst�
 
 Ziehen Sie die **Tabelle** Steuerelement in eine Szene. Standardmäßig sieht er diese (anzeigt, die ein nicht angegebener einzeiligen Layout):
 
-[ ![](table-images/add-table-sml.png "Hinzufügen einer Tabelle")](table-images/add-table.png)
+[![](table-images/add-table-sml.png "Hinzufügen einer Tabelle")](table-images/add-table.png#lightbox)
 
 Benennen Sie der Tabelle der **Eigenschaften** Pads **Namen** Feld, sodass im Code verwiesen werden kann.
 
@@ -34,7 +34,7 @@ Die Tabelle schließt automatisch eine einzelne Zeile, dargestellt durch einen Z
 
 Festlegen der **Klasse** für den Controller Zeile wählen Sie die Zeile in der **Dokumentgliederung** , und geben Sie einen Klassennamen in der **Eigenschaften** aufgefüllt:
 
-[ ![](table-images/add-row-controller-sml.png "Einen Klassennamen eingeben, in den Eigenschaften mit Leerstellen auffüllen")](table-images/add-row-controller.png)
+[![](table-images/add-row-controller-sml.png "Einen Klassennamen eingeben, in den Eigenschaften mit Leerstellen auffüllen")](table-images/add-row-controller.png#lightbox)
 
 Sobald die Klasse für die Zeile Controller festgelegt ist, wird die IDE eine entsprechende C#-Datei im Projekt erstellt. Ziehen Sie Steuerelemente (z. B. Bezeichnungen) auf die Zeile, und stellen Sie diesen Namen, damit sie auf im Code verwiesen werden können.
 

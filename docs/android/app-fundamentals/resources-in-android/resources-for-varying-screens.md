@@ -6,18 +6,17 @@ ms.assetid: 3D17DE45-115C-7192-5685-44F8EEE07DCC
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 10/12/2017
-ms.openlocfilehash: aeb7115e3c7521f6679e8802eb759d7e56ba1cfe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: fcd77d97d492baee441cfd428e58ea83525f927e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-resources-for-varying-screens"></a>Erstellen von Ressourcen für unterschiedliche Bildschirme
 
 Android selbst wird ausgeführt auf vielen verschiedenen Geräten mit einer Vielzahl von Lösungen, Bildschirmgrößen und Bildschirm dichten. Android wird durchführen, Skalierung und Ändern der Größe, damit die Anwendung, die auf diesen Geräten arbeiten, aber kann dies ein nicht optimaler Benutzererlebnis. Z. B. Bilder möglicherweise unscharf angezeigt wird, Bilder, wodurch die Position von Elementen der Benutzeroberfläche in das Layout wird überlappen oder entweder zu weit auseinander, zu viele (oder nicht genügend) ein Bildschirm Platz belegen können.
 
-<a name="Concepts" />
 
 ## <a name="concepts"></a>Konzepte
 
@@ -39,7 +38,6 @@ Beachten Sie, dass die ersten drei dieser Konzepte Kommunikation beziehen &ndash
 
 Zur Unterstützung der Umgang mit dieser Komplexität Android Framework bevorzugt *Dichte typunabhängig Pixel (dp)* für Bildschirmlayouts. Mithilfe der Dichte geräteunabhängige Pixel werden Elemente der Benutzeroberfläche für den Benutzer haben die gleiche physikalische Größe auf Bildschirmen mit unterschiedliche Dichten angezeigt.
 
-<a name="Supporting_Various_Screen_Sizes_and_Densities" />
 
 ## <a name="supporting-various-screen-sizes-and-densities"></a>Unterstützung für verschiedene Bildschirmgrößen und dichten
 
@@ -49,7 +47,6 @@ Die Verwendung der Dichte typunabhängig Pixel anstelle der tatsächlichen Pixel
 Android kann die Drawables zur Laufzeit, um die geeignete Größe skaliert werden.
 Es ist jedoch möglich, dass diese Skalierung Bitmaps unscharf erscheinen verursachen. Um dies zu vermeiden, kann es notwendig, das Bereitstellen alternativer Ressourcen für die unterschiedliche Dichten sein. Beim Entwerfen von Geräten für mehrere Lösungen und Bildschirm dichten einfacher nachweisen wird zunächst die höhere Auflösung oder die Dichte Bilder und skalieren Sie anschließend nach unten. Dadurch wird verhindert, alle Weichzeichnen oder Verzerrung, der von der Größenänderung führen kann.
 
-<a name="Declare_the_Screen_Size_the_Application_Supports" />
 
 ### <a name="declare-the-screen-size-the-application-supports"></a>Deklarieren Sie die Größe des Bildschirms der Anwendung unterstützt
 
@@ -59,29 +56,21 @@ Zu diesem Zweck in Xamarin.Android es ist erforderlich, fügen zuerst eine **And
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Android Manifest](resources-for-varying-screens-images/01-android-manifest-vs-sml.png)](resources-for-varying-screens-images/01-android-manifest-vs.png)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
-
-[![Android Manifest](resources-for-varying-screens-images/01-android-manifest-xs-sml.png)](resources-for-varying-screens-images/01-android-manifest-xs.png)
-
------
-
+[![Android Manifest](resources-for-varying-screens-images/01-android-manifest-vs-sml.png)](resources-for-varying-screens-images/01-android-manifest-vs.png#lightbox)
 
 **AndroidManifest.xml** wird hinzugefügt, um die **Eigenschaften** Verzeichnis. Die Datei anschließend bearbeitet wird, um enthalten [unterstützt Bildschirme](http://developer.android.com/guide/topics/manifest/supports-screens-element.html):
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![Unterstützt die Bildschirme hinzufügen](resources-for-varying-screens-images/02-adding-supports-screens-vs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-vs.png)
+[![Unterstützt die Bildschirme hinzufügen](resources-for-varying-screens-images/02-adding-supports-screens-vs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Unterstützt die Bildschirme hinzufügen](resources-for-varying-screens-images/02-adding-supports-screens-xs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-xs.png)
+[![Android Manifest](resources-for-varying-screens-images/01-android-manifest-xs-sml.png)](resources-for-varying-screens-images/01-android-manifest-xs.png#lightbox)
+
+**AndroidManifest.xml** wird hinzugefügt, um die **Eigenschaften** Verzeichnis. Die Datei anschließend bearbeitet wird, um enthalten [unterstützt Bildschirme](http://developer.android.com/guide/topics/manifest/supports-screens-element.html):
+
+[![Unterstützt die Bildschirme hinzufügen](resources-for-varying-screens-images/02-adding-supports-screens-xs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-xs.png#lightbox)
 
 -----
-
-
-<a name="Provide_Alternate_Layouts_for_Different_Screen_Sizes" />
 
 ### <a name="provide-alternate-layouts-for-different-screen-sizes"></a>Geben Sie alternative Layouts für verschiedene Bildschirmgrößen
 
@@ -148,7 +137,6 @@ Für Anwendungen, die den alten und neuen API-Ebenen umfassen werden zum Erstell
 -----
 
 
-<a name="Provide_Different_Bitmaps_for_Different_Screen_Densities" />
 
 ### <a name="provide-different-bitmaps-for-different-screen-densities"></a>Geben Sie die verschiedenen Bitmaps für verschiedene Bildschirm dichten
 
@@ -162,17 +150,15 @@ Vergleichen Sie dies zu einem Layout, die mit bestimmten Ressourcen Dichte vorge
 
 ![Screenshots mit Dichte-spezifischen Ressourcen](resources-for-varying-screens-images/07-density-specific-resources.png)
 
-<a name="Create_Varying_Density_Resources_with_Android_Asset_Studio" />
 
 ### <a name="create-varying-density-resources-with-android-asset-studio"></a>Erstellen Sie unterschiedliche Dichte Ressourcen mit Android Asset-Studio
 
 Die Erstellung von diese Bitmaps der verschiedenen dichten kann etwas zeitraubend sein. Google wurde ein online-Dienstprogramm an einige die Beteiligten bei der Erstellung des diese Bitmaps aufgerufen zeitlichen Aufwand zu reduzieren, kann daher erstellt die [ **Android Asset Studio**](https://romannurik.github.io/AndroidAssetStudio/).
 
-[![Android Asset Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png)
+[![Android Asset Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
 
 Diese Website ist hilfreich für die Erstellung von Bitmaps, die auf die vier allgemeine Bildschirm dichten abzielen, durch die Bereitstellung von einem Bild. Android Asset Studio erstellen Sie die Bitmaps Transponder- und anschließend als Zip-Datei heruntergeladen werden können.
 
-<a name="Tips_for_Multiple_Screens" />
 
 ## <a name="tips-for-multiple-screens"></a>Tipps für mehrere Bildschirme
 
@@ -189,7 +175,6 @@ Android ausgeführt wird, auf einer verwirrend Anzahl von Geräten, und die Komb
 
 - **LayoutParams für Höhe und Breite verwenden** – Wenn Sie Elemente der Benutzeroberfläche in eine XML-Layout-Datei Definieren eines Android-Anwendung mithilfe der **Wrap_content** und **Fill_parent** Werte müssen weitere Erfolg Stellen Sie sicher eine ordnungsgemäße Darstellung auf verschiedenen Geräten als Pixel oder Dichte geräteunabhängigen Einheiten mit ein. Diese Dimensionswerte bewirken, dass Android Bitmapressourcen nach Bedarf skalieren. Aus diesem Grund gleichen Einheiten Dichte typunabhängig sind am besten reserviert für den Fall angeben die Ränder und Abstand von Elementen der Benutzeroberfläche.
 
-<a name="Testing_Multiple_Screens" />
 
 ## <a name="testing-multiple-screens"></a>Testen mehrere Bildschirme
 

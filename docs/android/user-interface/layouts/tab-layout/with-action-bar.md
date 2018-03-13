@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 14abb7a4b85b493bb0ab96a982d989fad783fabd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: afaa02168dcac54115e8fca53683725926e4baed
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>Im Registerkartenformat Layouts mit den ActionBar
 
 _Dieses Handbuch stellt, und es wird erläutert, wie die ActionBar-APIs verwenden, um eine Schnittstelle im Registerkartenformat Benutzer in einer Anwendung Xamarin.Android zu erstellen._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -27,7 +26,6 @@ Die Aktionsleiste ist eine Android-UI-Muster, das verwendet wird, um eine einhei
 Beachten Sie, dass `Toolbar` ist eine neuere und allgemeineren Aktion Leiste-Komponente, mit denen Sie statt der sollten `ActionBar` (`Toolbar` wurde entwickelt, um ersetzen `ActionBar`). Weitere Informationen finden Sie unter [Symbolleiste](~/android/user-interface/controls/tool-bar/index.md). 
 
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -36,7 +34,6 @@ Jede Xamarin.Android-Anwendung, die Ziel-API-Ebene 11 (Android 3.0) oder höher,
 Einige der ActionBar APIs wurden wieder auf API-Ebene 7 (Android 2.1) portiert und können über die [V7 AppCompat Bibliothek](http://developer.android.com/tools/support-library/features.html#v7-appcompat), dem Xamarin.Android apps über zur Verfügung gestellt der [Xamarin Android-Unterstützungsbibliothek – V7 ](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) Paket.
 
 
-<a name="Introducing_tabs_in_the_ActionBar" />
 
 ## <a name="introducing-tabs-in-the-actionbar"></a>Einführung in die Registerkarten in der ActionBar
 
@@ -63,7 +60,6 @@ Xamarin.Android dient als Wrapper für die `ActionBar.ITabListener` mit Ereignis
 -  TabUnselected
 
 
-<a name="Adding_Tabs_to_the_ActionBar" />
 
 ### <a name="adding-tabs-to-the-actionbar"></a>Hinzufügen von Registerkarten, um die ActionBar
 
@@ -111,7 +107,6 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-<a name="Event_Handlers_vs_ActionBar.ITabListener" />
 
 #### <a name="event-handlers-vs-actionbaritablistener"></a>Ereignis-Handler Vs ActionBar.ITabListener
 
@@ -120,7 +115,6 @@ Anwendungen sollten Ereignishandler verwenden und `ActionBar.ITabListener` für 
 Beim Umgang mit vieler Registerkarten oder Freigabe allgemeine Funktionen zwischen den Registerkarten des ActionBar, es kann effizienter sein im Hinblick auf die Arbeitsspeicher- und Leistungsproblemen, eine benutzerdefinierte Klasse zu erstellen, implementiert `ActionBar.ITabListener`, und eine einzelne Instanz der Klasse freigeben. Dies reduziert die Anzahl der GREF, die eine Anwendung Xamarin.Android verwendet wird. 
 
 
-<a name="Backwards_Compatibility_for_Older_Devices" />
 
 ### <a name="backwards-compatibility-for-older-devices"></a>Abwärtskompatibilität-Kompatibilität für ältere Geräte
 
@@ -177,7 +171,6 @@ public class MainActivity : ActionBarActivity, ActionBar.ITabListener
 }
 ```
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

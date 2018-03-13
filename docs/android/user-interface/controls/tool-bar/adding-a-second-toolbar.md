@@ -7,21 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: b471742ae9fb365d75e8dd3ca0f93f5e55208f19
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 343694163c79ab4d7e8b78875282e7077db979e5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="adding-a-second-toolbar"></a>Hinzufügen einer zweiten Symbolleiste
 
-<a name="overview" />
 
 ## <a name="overview"></a>Übersicht 
 
 Die `Toolbar` möglich, mehr als ersetzen die Aktionsleiste &ndash; mehrmals in einer Aktivität verwendet werden, kann es sein, werden für die Platzierung an einer beliebigen Stelle auf dem Bildschirm angepasst, und es kann konfiguriert werden, damit nur eine teilweise Breite des Bildschirms umfassen. Die folgenden Beispiele veranschaulichen, wie erstellen Sie eine zweite `Toolbar` und platziert ihn am unteren Rand des Bildschirms. Dies `Toolbar` implementiert **Kopie**, **Ausschneiden**, und **einfügen** Menüelemente. 
 
-<a name="define_second" />
 
 ## <a name="define-the-second-toolbar"></a>Definieren Sie die zweite Symbolleiste 
 
@@ -78,10 +76,9 @@ Bearbeiten Sie **Resources/values/styles.xml** und die Formatdefinition folgende
 
 Dadurch werden der unteren Symbolleiste ein dunkles gelb. Erstellen und Ausführen der app können Sie eine leere zweite Symbolleiste am unteren Rand des Bildschirms angezeigt: 
 
-[![Screenshot der app mit dem gelben zweite Symbolleiste am unteren Rand des Bildschirms](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png)
+[![Screenshot der app mit dem gelben zweite Symbolleiste am unteren Rand des Bildschirms](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png#lightbox)
 
 
-<a name="second_menus" />
  
 ## <a name="add-edit-menu-items"></a>Hinzufügen von Menüelementen bearbeiten 
 
@@ -100,7 +97,6 @@ Zum Hinzufügen von Menüelementen zu einem sekundären `Toolbar`:
 Die folgenden Abschnitte zeigen diesen Vorgang im Detail: **Ausschneiden**, **Kopie**, und **einfügen** Menüelemente werden hinzugefügt, die letzte `Toolbar`. 
 
 
-<a name="second_resource" />
 
 ### <a name="define-the-edit-menu-resource"></a>Definieren Sie die Menüressource bearbeiten
 
@@ -130,7 +126,6 @@ In der **Ressourcen/Menü** Unterverzeichnis, erstellen Sie eine neue XML-Datei 
 Diesen XML-Code erstellt die **Ausschneiden**, **Kopie**, und **einfügen** Menüelemente (mit Symbolen, die hinzugefügt wurden, die `mipmap-` Ordner im [Ersetzen der Aktionsleiste ](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md)).
 
 
-<a name="inflate_menus" />
 
 ### <a name="inflate-the-menus"></a>Vergrößern Sie die Menüs
 
@@ -149,18 +144,17 @@ Dieser Code sucht den `edit_toolbar` Sicht definiert, die **Main.axml**, wird de
 
 Erstellen Sie die App, und führen Sie sie aus. Wenn die app ausgeführt wird, werden der Text und Symbole, die oben hinzugefügten angezeigt, wie hier gezeigt: 
 
-[![Diagramm der unteren Symbolleiste mit Ausschneiden, kopieren und Einfügen von Symbolen](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png)
+[![Diagramm der unteren Symbolleiste mit Ausschneiden, kopieren und Einfügen von Symbolen](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png#lightbox)
 
 Tippen Sie auf die **Ausschneiden** Menüsymbol bewirkt, dass die folgenden Toast angezeigt werden: 
 
-[![Screenshot der Toast zeigt an, dass wurde das Symbol "Ausschneiden-Menü" abgerufen werden.](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png)
+[![Screenshot der Toast zeigt an, dass wurde das Symbol "Ausschneiden-Menü" abgerufen werden.](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png#lightbox)
 
 Tippen auf Menüelemente auf einer Symbolleiste wird die resultierende Popups angezeigt: 
 
-[![Screenshots des Popups für speichern, kopieren, und fügen Sie Menüelemente werden abgerufen](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png)
+[![Screenshots des Popups für speichern, kopieren, und fügen Sie Menüelemente werden abgerufen](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png#lightbox)
 
 
-<a name="up_button" />
 
 ## <a name="the-up-button"></a>Die Schaltfläche "oben" 
 
@@ -187,7 +181,7 @@ SupportActionBar.SetHomeButtonEnabled (true);
 
 Wenn der Benutzer navigiert von `MainActivity` auf `DetailActivity`, die `DetailActivity` zeigt ein **einrichten** Schaltfläche (zeigenden Pfeil nach links), wie im Screenshot dargestellt:
 
-[![Bildschirmabbildung von Beispiel für eine nach-oben Schaltfläche-links-Taste auf der Symbolleiste](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png)
+[![Bildschirmabbildung von Beispiel für eine nach-oben Schaltfläche-links-Taste auf der Symbolleiste](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
 
 Tippen Sie auf diese **einrichten** Schaltfläche bewirkt, dass die app zurückkehren zu `MainActivity`. In eine komplexere Anwendung mit mehreren Ebenen der Hierarchie würde Tippen Sie auf diese Schaltfläche den Benutzer auf die nächsthöhere Ebene in der app anstatt zum vorherigen Bildschirm zurück. 
 

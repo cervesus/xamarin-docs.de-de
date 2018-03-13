@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f7ded8fdc1274f7c98d8f7134f6a87c7ba767646
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b0d757c951f9244beb093a0a9b13ac1d069b507
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="reporting-bugs"></a>Melden von Fehlern
 
@@ -70,7 +70,7 @@ Die folgenden Abschnitte enthalten bekannte Probleme und ihre Lösungen.
 
 Der Debugger eine Verbindung herstellt, Xamarin.Mac-Apps über TCP, das bedeutet, dass standardmäßig beim Sandkasten, aktivieren sie für die Verbindung der App kann, sodass, wenn Sie versuchen, die app auszuführen, ohne die richtigen Berechtigungen aktiviert, Sie einen Fehler erhalten *"Es konnte keine Verbindung mit der Debugger"*. 
 
-[![Bearbeiten die Berechtigungen](troubleshooting-images/debug01.png "die Berechtigungen bearbeiten")](troubleshooting-images/debug01-large.png)
+[![Bearbeiten die Berechtigungen](troubleshooting-images/debug01.png "die Berechtigungen bearbeiten")](troubleshooting-images/debug01-large.png#lightbox)
 
 Die **zulassen ausgehende Netzwerkverbindungen (Client)** Berechtigung ist erforderlich, damit der Debugger, kann durch Aktivierung dieser Einstellung normalerweise Debuggen. Da Sie ohne Debuggen können, haben wir aktualisiert die `CompileEntitlements` Ziel für `msbuild` hinzuzufügende automatisch über diese Berechtigung die Berechtigungen für jede app, die für das Debuggen Sandbox ist nur builds. Releasebuilds sollten die Berechtigungen, die in der Berechtigungsdatei unverändert bleiben sollen angegeben verwenden.
 
@@ -80,7 +80,7 @@ Wenn in Ihrer app Xamarin.Mac 3rd Party Bibliotheken einschließen möchten, erh
 
 Dadurch gelöst werden kann, indem Sie die Optionen für das Xamarin.Mac-Projekt, und navigieren Sie zu öffnen **Mac erstellen** > **Internationalisierung** und Überprüfung der **West** Internationalisierung:
 
-[![Bearbeiten die Buildoptionen](troubleshooting-images/issue01.png "die Buildoptionen bearbeiten")](troubleshooting-images/issue01-large.png)
+[![Bearbeiten der Buildoptionen](troubleshooting-images/issue01.png "Editing the build options")](troubleshooting-images/issue01-large.png#lightbox)
 
 ### <a name="failed-to-compile-mm5103"></a>Fehler beim Kompilieren (mm5103)
 
@@ -100,7 +100,7 @@ Mit dem neuen Visual Studio für Mac installiert ist, beim Erstellen eines neuen
 
 Wenn Sie doppelklicken Sie auf die **Entitlements.plist** Datei, die Ansprüche-Editor wird angezeigt:
 
-[![Bearbeiten die Berechtigungen](troubleshooting-images/entitlements02.png "die Berechtigungen bearbeiten")](troubleshooting-images/entitlements02-large.png)
+[![Bearbeiten die Berechtigungen](troubleshooting-images/entitlements02.png "die Berechtigungen bearbeiten")](troubleshooting-images/entitlements02-large.png#lightbox)
 
 Für vorhandene Xamarin.Mac Projekte müssen Sie manuell erstellen die **Entitlements.plist** -Datei, indem Sie mit der rechten Maustaste auf das Projekt in der **Lösung Pad** auswählen und **hinzufügen**  >  **Neue Datei...** . Wählen Sie als Nächstes **Xamarin.Mac** > **leeren Eigenschaftenliste**:
 
@@ -108,7 +108,7 @@ Für vorhandene Xamarin.Mac Projekte müssen Sie manuell erstellen die **Entitle
 
 Geben Sie `Entitlements` für den Namen und klicken Sie auf die **neu** Schaltfläche. Wenn das Projekt zuvor eine Berechtigungsdatei enthalten, werden Sie aufgefordert, das Projekt und erstellen eine neue Datei hinzufügen:
 
-[![Überprüfen das Überschreiben einer Datei](troubleshooting-images/entitlements04.png "überprüfen das Überschreiben einer Datei")](troubleshooting-images/entitlements04-large.png)
+[![Überprüfen das Überschreiben einer Datei](troubleshooting-images/entitlements04.png "überprüfen das Überschreiben einer Datei")](troubleshooting-images/entitlements04-large.png#lightbox)
 
 ## <a name="contacting-support-business-or-enterprise-licenses"></a>Kontaktaufnahme mit dem Support (Lizenzen Business oder Enterprise)
 
@@ -124,14 +124,14 @@ Die Community von Entwicklern, die mithilfe von Xamarin-Produkte ist erstaunlich
 
 Ihr Feedback ist uns wichtig. Wenn Sie Probleme bei Xamarin.Mac finden:
 
-- Suchen der [Problem Repository](https://github.com/xamarin/xamarin-macios/issues) 
-- Vor dem Umschalten zur GitHub-Probleme, Xamarin-Probleme nachverfolgt wurden, auf [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi). Suchen Sie es für den Abgleich von Problemen.
-- Wenn Sie ein übereinstimmendes Problem finden können, bitte-Datei ein neues Problem in der [GitHub-Problem-Repository](https://github.com/xamarin/xamarin-macios/issues/new).
+- Durchsuchen Sie das [Repository „Issues“](https://github.com/xamarin/xamarin-macios/issues). 
+- Vor der Umstellung auf das GitHub-Repository „Issues“ wurden Xamarin-Probleme auf [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) nachverfolgt. Suchen Sie dort nach übereinstimmenden Problemen.
+- Wenn Sie kein übereinstimmendes Problem finden können, melden Sie ein neues Problem im [GitHub-Repository „Issues“](https://github.com/xamarin/xamarin-macios/issues/new).
 
-GitHub-Probleme sind alle öffentlichen. Es ist nicht möglich, Kommentare oder Anlagen ausgeblendet. 
+GitHub-Issues sind allesamt öffentlich. Es ist nicht möglich, Kommentare oder Anlagen auszublenden. 
 
-Geben Sie auch so viel wie möglich Folgendes:                                                                                                                                          
+Fügen Sie möglichst viele der folgenden Informationen hinzu:                                                                                                                                          
 
-- Ein einfaches Beispiel, das Problem zu reproduzieren. Dies ist **liveschaltung** möglichst. 
-- Die vollständige stapelüberwachung des Absturzes.
-- Der C#-Code, der den Absturz umgibt. 
+- Ein einfaches Beispiel, um das Problem zu reproduzieren. Dies ist von **sehr großem Nutzen**, sofern möglich. 
+- Die vollständige Stapelüberwachung des Absturzes.
+- Den C#-Code, der den Absturz umgibt. 

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: ce1014616d0cf5f6cd5228d69976dfeca546b382
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c45ea8cb7c0e3d12e94666d61c6fdf7e5828264e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="text-input"></a>Texteingabe
 
@@ -19,9 +19,9 @@ Benutzereingaben Text erfolgt mit der `UITextField` für einzeilige ein- und UIT
 
 Die folgenden Screenshots zeigen die Symbole für diese Steuerelemente, befindet sich in der Toolbox-Block in Visual Studio für Mac:
 
- [ ![](text-input-images/image11a.png "UITextField")](text-input-images/image11a.png)
+ [![](text-input-images/image11a.png "UITextField")](text-input-images/image11a.png#lightbox)
 
- [ ![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png)
+ [![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png#lightbox)
 
 Sobald Sie den Ausgang genannt haben und Storyboard-Datei gespeichert haben, ist Visual Studio für Mac aktualisiert die `.designer.cs` partielle Klasse, und Sie können die C#-Code, der das Steuerelement in der Klassendatei verweist auf Hinzufügen. Jedes Steuerelement verfügt über eigene eindeutige Eigenschaften und Ereignisse, die in C#-Code zugegriffen werden können.
 
@@ -32,7 +32,7 @@ Sobald Sie den Ausgang genannt haben und Storyboard-Datei gespeichert haben, ist
 
 Die `UITextField` Steuerelement wird am häufigsten verwendet, um eine einzelne Zeile des Texteingabe z. B. ein Benutzername oder das Kennwort zu übernehmen. Einige der Optionen für das Anpassen des Steuerelements werden hier angezeigt:
 
- [ ![](text-input-images/image15a.png "UITextField-Eigenschaften")](text-input-images/image15a.png)
+ [![](text-input-images/image15a.png "UITextField-Eigenschaften")](text-input-images/image15a.png#lightbox)
 
 Diese Steuerelemente werden im folgenden erläutert:
 
@@ -76,7 +76,7 @@ View.Add(textfield1);
 
 Die `UITextView` -Steuerelement kann verwendet werden, zum Anzeigen von nur-Lese Text oder mehrere Zeilen Texteingabe akzeptieren. Es weist viele der dieselben Optionen wie die `UITextField` (z. B. Großschreibung, Korrektur, usw.).
 
- [ ![](text-input-images/image16a.png "UITextView-Eigenschaften")](text-input-images/image16a.png)
+ [![](text-input-images/image16a.png "UITextView-Eigenschaften")](text-input-images/image16a.png#lightbox)
 
 Die Eigenschaften umfassen:
 

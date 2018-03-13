@@ -5,18 +5,23 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: f6e80b21c76089c0f3f7ac655584b7e18400307e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 017f3c1b5fc14bf22a5ad85d1017bc8125b04038
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-extensions"></a>iOS-Erweiterungen
 
 _In iOS 8 eingeführt, die Erweiterungen sind Widgets, mit denen von iOS in standard Kontexten wie z. B. in der Mitteilungszentrale dargestellt werden, wenn der Benutzer eine benutzerdefinierte verwenden anfordert oder Foto werden bearbeiten. Alle Erweiterungen werden in Verbindung mit einer Container-app installiert und aus einer bestimmten Erweiterung Stelle in einer app Host aktiviert werden._
+
+> [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
+
+**Durch Erstellen von Erweiterungen in iOS [Xamarin University](https://university.xamarin.com/)**
 
 Erweiterungen, wie in iOS 8 eingeführt wurden speziell `UIViewControllers` , Clientanzahl von iOS in standard-Kontexten z. B. innerhalb der **Mitteilungszentrale**, wie spezielle benutzerdefinierte Tastaturtypen, die vom Benutzer angefordert wird, ausführen Eingabe oder anderen Kontexten wie z. B. bearbeiten ein Foto, in dem die Erweiterung Spezialeffekt Filter eingeben kann.
 
@@ -183,7 +188,7 @@ Bestimmte Arten von Erweiterungen möglicherweise zusätzliche Anforderungen. Z.
 
 In der folgenden exemplarischen Vorgehensweise erstellen Sie ein Beispiel für **heute** Widget, die den Tag und die Anzahl der Tage im Jahr berechnet:
 
-[ ![](extensions-images/carpediemscreenshot-sm.png "Ein Beispiel für heute Widget, die den Tag und die Anzahl der Tage im Jahr berechnet")](extensions-images/carpediemscreenshot.png)
+[![](extensions-images/carpediemscreenshot-sm.png "Ein Beispiel für heute Widget, die den Tag und die Anzahl der Tage im Jahr berechnet")](extensions-images/carpediemscreenshot.png#lightbox)
 
 <a name="Creating-the-Solution" />
 
@@ -193,26 +198,26 @@ Führen Sie folgende Schritte aus, um die erforderlichen Projektmappe zu erstell
 
 1. Erstellen Sie zunächst eine neue iOS **einzelne Ansicht App** Projekt, und klicken Sie auf die **Weiter** Schaltfläche: 
 
-    [ ![](extensions-images/today01.png "Zunächst erstellen Sie eine neue iOS "," einzelne Ansicht-App-Projekt, und klicken Sie auf die Schaltfläche "Weiter"")](extensions-images/today01.png)
+    [![](extensions-images/today01.png "Zunächst erstellen Sie eine neue iOS "," einzelne Ansicht-App-Projekt, und klicken Sie auf die Schaltfläche "Weiter"")](extensions-images/today01.png#lightbox)
 2. Nennen Sie das Projekt `TodayContainer` , und klicken Sie auf die **Weiter** Schaltfläche: 
 
-    [ ![](extensions-images/today02.png "Nennen Sie das Projekt TodayContainer, und klicken Sie auf die Schaltfläche "Weiter"")](extensions-images/today02.png)
+    [![](extensions-images/today02.png "Nennen Sie das Projekt TodayContainer, und klicken Sie auf die Schaltfläche "Weiter"")](extensions-images/today02.png#lightbox)
 3. Überprüfen Sie die **Projektname** und **SolutionName** , und klicken Sie auf die **erstellen** Schaltfläche, um die Projektmappe zu erstellen: 
 
-    [ ![](extensions-images/today03.png "Überprüfen Sie den Projektnamen und SolutionName, und klicken Sie auf die Schaltfläche "erstellen", um die Projektmappe zu erstellen.")](extensions-images/today03.png)
+    [![](extensions-images/today03.png "Überprüfen Sie den Projektnamen und SolutionName, und klicken Sie auf die Schaltfläche "erstellen", um die Projektmappe zu erstellen.")](extensions-images/today03.png#lightbox)
 4. Im nächsten Schritt in der **Projektmappen-Explorer**mit der rechten Maustaste auf die Projektmappe, und fügen Sie einen neuen **iOS Erweiterung** Projekt aus der **heute Erweiterung** Vorlage: 
 
-    [ ![](extensions-images/today04.png "Als Nächstes im Projektmappen-Explorer mit der rechten Maustaste auf die Projektmappe und die ein neues Projekt des iOS-Erweiterung aus der Vorlage heute Erweiterung hinzufügen")](extensions-images/today04.png)
+    [![](extensions-images/today04.png "Als Nächstes im Projektmappen-Explorer mit der rechten Maustaste auf die Projektmappe und die ein neues Projekt des iOS-Erweiterung aus der Vorlage heute Erweiterung hinzufügen")](extensions-images/today04.png#lightbox)
 5. Nennen Sie das Projekt `DaysRemaining` , und klicken Sie auf die **Weiter** Schaltfläche: 
 
-    [ ![](extensions-images/today05.png "Nennen Sie das Projekt DaysRemaining, und klicken Sie auf die Schaltfläche "Weiter"")](extensions-images/today05.png)
+    [![](extensions-images/today05.png "Nennen Sie das Projekt DaysRemaining, und klicken Sie auf die Schaltfläche "Weiter"")](extensions-images/today05.png#lightbox)
 6. Überprüfen Sie das Projekt, und klicken Sie auf die **erstellen** Schaltfläche, um ihn zu erstellen: 
 
-    [ ![](extensions-images/today06.png "Überprüfen Sie das Projekt, und klicken Sie auf die Schaltfläche "erstellen", um ihn zu erstellen")](extensions-images/today06.png)
+    [![](extensions-images/today06.png "Überprüfen Sie das Projekt, und klicken Sie auf die Schaltfläche "erstellen", um ihn zu erstellen")](extensions-images/today06.png#lightbox)
 
 Diese Lösung verfügen jetzt über zwei Projekten, wie hier gezeigt:
 
-[ ![](extensions-images/today07.png "Sich so ergebende Lösung müsste nun zwei Projekte, wie hier gezeigt.")](extensions-images/today07.png)
+[![](extensions-images/today07.png "Sich so ergebende Lösung müsste nun zwei Projekte, wie hier gezeigt.")](extensions-images/today07.png#lightbox)
 
 <a name="Creating-the-Extension-User-Interface" />
 
@@ -228,10 +233,10 @@ Führen Sie folgende Schritte aus, um die Benutzeroberfläche mit einem Storyboa
 
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf des Erweiterungsprojekts `Main.storyboard` Datei zur Bearbeitung zu öffnen: 
 
-    [ ![](extensions-images/today08.png "Doppelklicken Sie auf die Erweiterung Projekte Main.storyboard-Datei aus, um ihn zur Bearbeitung zu öffnen.")](extensions-images/today08.png)
+    [![](extensions-images/today08.png "Doppelklicken Sie auf die Erweiterung Projekte Main.storyboard-Datei aus, um ihn zur Bearbeitung zu öffnen.")](extensions-images/today08.png#lightbox)
 2. Wählen Sie die Bezeichnung, die die Benutzeroberfläche von Vorlage automatisch hinzugefügt wurde, und weisen Sie ihm die **Namen** `TodayMessage` in der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**: 
 
-    [ ![](extensions-images/today09.png "Wählen Sie die Bezeichnung, die die Benutzeroberfläche von Vorlage automatisch hinzugefügt wurde, und geben Sie ihm den Namen TodayMessage in der Registerkarte "Widget" im Eigenschaften-Explorer")](extensions-images/today09.png)
+    [![](extensions-images/today09.png "Wählen Sie die Bezeichnung, die die Benutzeroberfläche von Vorlage automatisch hinzugefügt wurde, und geben Sie ihm den Namen TodayMessage in der Registerkarte "Widget" im Eigenschaften-Explorer")](extensions-images/today09.png#lightbox)
 3. Speichern Sie die Änderungen auf das Storyboard.
 
 <a name="Using-Code" />
@@ -242,16 +247,16 @@ Führen Sie folgende Schritte aus, um die Benutzeroberfläche im Code zu erstell
 
 1. In der **Projektmappen-Explorer**, wählen die **DaysRemaining** Projekt, fügen Sie eine neue Klasse aus, und rufen sie `CodeBasedViewController`: 
 
-    [ ![](extensions-images/code01.png "Aelect DaysRemaining-Projekt, fügen Sie eine neue Klasse hinzu, und nennen Sie es CodeBasedViewController")](extensions-images/code01.png)
+    [![](extensions-images/code01.png "Aelect DaysRemaining-Projekt, fügen Sie eine neue Klasse hinzu, und nennen Sie es CodeBasedViewController")](extensions-images/code01.png#lightbox)
 2. Auch die **Projektmappen-Explorer**, doppelklicken Sie auf der Erweiterung `Info.plist` Datei zur Bearbeitung zu öffnen: 
 
-    [ ![](extensions-images/code02.png "Doppelklicken Sie auf die Datei Extensions "Info.plist", um sie zur Bearbeitung öffnen")](extensions-images/code02.png)
+    [![](extensions-images/code02.png "Doppelklicken Sie auf die Datei Extensions "Info.plist", um sie zur Bearbeitung öffnen")](extensions-images/code02.png#lightbox)
 3. Wählen Sie die **Datenquellensicht** (vom unteren Rand des Bildschirms), und öffnen Sie die `NSExtension` Knoten: 
 
-    [ ![](extensions-images/code03.png "Wählen Sie die Datenquellensicht aus dem unteren Rand des Bildschirms, und öffnen Sie den Knoten NSExtension")](extensions-images/code03.png)
+    [![](extensions-images/code03.png "Wählen Sie die Datenquellensicht aus dem unteren Rand des Bildschirms, und öffnen Sie den Knoten NSExtension")](extensions-images/code03.png#lightbox)
 4. Entfernen Sie die `NSExtensionMainStoryboard` Schlüssel und fügen eine `NSPrincipalClass` mit dem Wert `CodeBasedViewController`: 
 
-    [ ![](extensions-images/code04.png "Entfernen Sie den Schlüssel NSExtensionMainStoryboard und fügen Sie eine NSPrincipalClass mit dem Wert CodeBasedViewController hinzu")](extensions-images/code04.png)
+    [![](extensions-images/code04.png "Entfernen Sie den Schlüssel NSExtensionMainStoryboard und fügen Sie eine NSPrincipalClass mit dem Wert CodeBasedViewController hinzu")](extensions-images/code04.png#lightbox)
 5. Speichern Sie die Änderungen.
 
 Als Nächstes Bearbeiten der `CodeBasedViewController.cs` Datei, und stellen sie wie folgt aussehen:
@@ -327,7 +332,7 @@ Beachten Sie, wie dieser Vorgang an den normalen Prozess des Schreibens einer ap
 
 In dieser exemplarischen Vorgehensweise werden die Container-app wird einfach als eine Methode verwendet, um liefern, und installieren Sie die Erweiterung und stellt keine Funktionalität eigene bereit. Bearbeiten Sie die TodayContainer `Main.storyboard` Datei und fügen Sie Text definieren die Erweiterung-Funktion und wie Sie sie installieren:
 
-[ ![](extensions-images/today10.png "Bearbeiten Sie die Datei TodayContainers Main.storyboard und fügen Sie Text definieren die Extensions-Funktion und wie Sie sie installieren")](extensions-images/today10.png)
+[![](extensions-images/today10.png "Bearbeiten Sie die Datei TodayContainers Main.storyboard und fügen Sie Text definieren die Extensions-Funktion und wie Sie sie installieren")](extensions-images/today10.png#lightbox)
 
 Speichern Sie die Änderungen auf das Storyboard.
 
@@ -337,19 +342,19 @@ Speichern Sie die Änderungen auf das Storyboard.
 
 Um die Erweiterung im iOS-Simulator zu testen, führen die **TodayContainer** app. Die Hauptansicht des Containers wird angezeigt:
 
-[ ![](extensions-images/run01.png "Die Hauptansicht Container werden angezeigt")](extensions-images/run01.png)
+[![](extensions-images/run01.png "Die Hauptansicht Container werden angezeigt")](extensions-images/run01.png#lightbox)
 
 Als Nächstes erreicht die **Home** Schaltfläche im Simulator, Wischen Sie vom oberen Rand des Bildschirms öffnen die **Mitteilungszentrale**, wählen die **heute** Registerkarte, und klicken Sie auf die **Bearbeiten** Schaltfläche:
 
-[ ![](extensions-images/run02.png "Drücken Sie die Startseite im Simulator, Wischen Sie vom oberen Rand des Bildschirms die Mitteilungszentrale öffnen, wählen Sie die Registerkarte "heute", und klicken Sie auf die Schaltfläche "Bearbeiten"")](extensions-images/run02.png)
+[![](extensions-images/run02.png "Drücken Sie die Startseite im Simulator, Wischen Sie vom oberen Rand des Bildschirms die Mitteilungszentrale öffnen, wählen Sie die Registerkarte "heute", und klicken Sie auf die Schaltfläche "Bearbeiten"")](extensions-images/run02.png#lightbox)
 
 Hinzufügen der **DaysRemaining** -Erweiterung der **heute** anzuzeigen, und klicken Sie auf die **Fertig** Schaltfläche:
 
-[ ![](extensions-images/run03.png "Die Ansicht "heute" DaysRemaining-Erweiterung hinzu, und klicken Sie auf die Schaltfläche "Fertig"")](extensions-images/run03.png)
+[![](extensions-images/run03.png "Die Ansicht "heute" DaysRemaining-Erweiterung hinzu, und klicken Sie auf die Schaltfläche "Fertig"")](extensions-images/run03.png#lightbox)
 
 Das neue Widget werden hinzugefügt werden, um die **heute** anzeigen und die Ergebnisse angezeigt werden:
 
-[ ![](extensions-images/run04.png "Das neue Widget werden hinzugefügt werden, um die Ansicht "heute" und die Ergebnisse werden angezeigt")](extensions-images/run04.png)
+[![](extensions-images/run04.png "Das neue Widget werden hinzugefügt werden, um die Ansicht "heute" und die Ergebnisse werden angezeigt")](extensions-images/run04.png#lightbox)
 
 <a name="Communicating-with-the-Host-App" />
 

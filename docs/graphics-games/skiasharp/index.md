@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: 03089e4760ebf19849cd4d34cafb7047d8915a4d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ee0625f22062fef3c27a697ce33488274abc24d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="2d-drawing"></a>2D Zeichnung
 
 SkiaSharp bietet eine leistungsstarke C#-API auf diese Weise 2D Grafiken. Es beruht [Googles Skia Bibliothek](http://skia.org), die gleiche Bibliothek, die Google Chrome, Firefox und Android-Grafik Stacks verwendet.
 
-[ ![](images/ide-sml.png "SkiaSharp bietet eine leistungsstarke C#-API auf diese Weise 2D Grafiken")](images/ide.png)
+[![](images/ide-sml.png "SkiaSharp bietet eine leistungsstarke C#-API auf diese Weise 2D Grafiken")](images/ide.png#lightbox)
 
 SkiaSharp ist eine Portable Bibliothek und bequem als liefert eine [plattformübergreifende NuGet-Paket](https://www.nuget.org/packages/SkiaSharp), und unterstützt die folgenden Plattformen ausgegeben: MacOS, Xamarin.Android, Xamarin.iOS und dem Windows-Desktop.
 
@@ -43,7 +43,7 @@ Weitere Informationen Sie zum Arbeiten mit cross-Platform-Grafiken, die in Xamar
   * [Die Typen der Pfad ausfüllen](~/xamarin-forms/user-interface/graphics/skiasharp/paths/fill-types.md)
   * [Polylinien und parametrische Formeln](~/xamarin-forms/user-interface/graphics/skiasharp/paths/polylines.md)
   * [Punkte und Bindestriche enthalten](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)
-  * [Finger Paint-Ereignisse](~/xamarin-forms/user-interface/graphics/skiasharp/paths/finger-paint.md)
+  * [Zeichnen mit Fingern](~/xamarin-forms/user-interface/graphics/skiasharp/paths/finger-paint.md)
 - [Transformationen](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/index.md)
   * [Der Translationstransformation](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/translate.md)
   * [Die Skalierungstransformation für die](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/scale.md)
@@ -54,15 +54,15 @@ Weitere Informationen Sie zum Arbeiten mit cross-Platform-Grafiken, die in Xamar
   * [Nicht-affine Transformationen](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)
   * [3D-Drehung](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md)
 - [Kurven und Pfaden](~/xamarin-forms/user-interface/graphics/skiasharp/curves/index.md)
-  * [Drei Möglichkeiten, einen Bogen gezeichnet werden soll.](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)
+  * [Drei Möglichkeiten, einen Bogen zu zeichnen](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)
   * [Drei Typen von Bézier-Kurven](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)
   * [SVG-Pfaddaten](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)
-  * [Clipping mit Pfaden und Regionen](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)
-  * [Pfad Effekte](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)
+  * [Schneiden mit Pfaden und Regionen](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)
+  * [Pfadeffekte](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)
   * [Pfade und Text](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)
-  * [Pfad und -Enumeration](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
+  * [Pfadinformationen und -enumeration](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
 
-## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[Anmerkungen zur Plattform bestimmte](~/graphics-games/skiasharp/platform.md)
+## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[Plattformspezifische Hinweise](~/graphics-games/skiasharp/platform.md)
 
 Diese Seite beschreibt die setupanweisungen für SkiaSharp auf verschiedenen Plattformen, einschließlich iOS, Android, MacOS und Windows.
 

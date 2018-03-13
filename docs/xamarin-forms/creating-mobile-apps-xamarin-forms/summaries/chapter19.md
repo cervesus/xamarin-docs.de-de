@@ -3,14 +3,15 @@ title: Zusammenfassung der Kapitel 19. Auflistungsansichten
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 37afa3a54fd20745a65312fb5a24d958c8ec405f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: 73b3ec3e60a8fca5c48f515eab2cbb8359618dbb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>Zusammenfassung der Kapitel 19. Auflistungsansichten
 
@@ -97,7 +98,7 @@ Die [ **TextCellListXaml** ](https://github.com/xamarin/xamarin-forms-book-sampl
 
 In XAML ist es möglich, festzulegen eine [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) auf die `DataTemplate` und definieren Sie eine benutzerdefinierte visuelle Struktur als der [ `View` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ViewCell.View/) Eigenschaft `ViewCell`. (`View` ist die Inhaltseigenschaft des `ViewCell` also die `ViewCell.View` Tags sind nicht erforderlich.) Die [ **CustomNamedColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CustomNamedColorList) Beispiel wird diese Technik veranschaulicht:
 
-[![Dreifacher Screenshot der benutzerdefinierte benannte Farbenliste](images/ch19fg11-small.png "benutzerdefinierte benannte Farbenliste")](images/ch19fg11-large.png "benutzerdefinierte benannte Farbenliste")
+[![Dreifacher Screenshot der benutzerdefinierte benannte Farbenliste](images/ch19fg11-small.png "benutzerdefinierte benannte Farbenliste")](images/ch19fg11-large.png#lightbox "benutzerdefinierte benannte Farbenliste")
 
 Abrufen der Größe für alle Plattformen kann schwierig sein. Die [ `RowHeight` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RowHeight/) Eigenschaft ist nützlich, aber in einigen Fällen sollten Sie zum Verwenden der [ `HasUnevenRows` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.HasUnevenRows/) -Eigenschaft, die weniger effizient ist, aber erzwingt, dass die `ListView` Größe der Zeilen. Für iOS und Android müssen Sie einen dieser beiden Eigenschaften verwenden, um ordnungsgemäße Zeilengröße abzurufen.
 
@@ -127,7 +128,7 @@ Die [ `Student` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/mas
 
 Die [ **StudentList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/StudentList) Programm verwendet eine `ImageCell` zum Anzeigen der Studenten und Bilder in einem `ListView`:
 
-[![Dreifacher Screenshot der Student Liste](images/ch19fg18-small.png "Student Liste")](images/ch19fg18-large.png "Student-Liste")
+[![Dreifacher Screenshot der Student Liste](images/ch19fg18-small.png "Student Liste")](images/ch19fg18-large.png#lightbox "Student-Liste")
 
 Die [ **ListViewHeader** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewHeader) Beispiel fügt eine [ `Header` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.Header/) Eigenschaft aber nur angezeigt auf Android-Geräten.
 

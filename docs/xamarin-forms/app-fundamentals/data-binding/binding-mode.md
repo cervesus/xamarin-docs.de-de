@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: e85bc98b5da4c6e529f150c6e7945a8556e2c60f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 887dc3cf710fb75d05d02af179bc218c15d31f97
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-mode"></a>Bindungsmodus
 
@@ -45,7 +45,7 @@ Zunächst mag dies Abwärtskompatibilität: jetzt die `Label` der Datenbindungsq
 
 Wie zu erwarten, die `Slider` auf den Wert 1 initialisiert wird, aus dem ersten `Opacity` Wert `Label`. Dies wird im auf der linken Seite der iOS-Screenshot gezeigt:
 
-[![Reverse-Bindung](binding-mode-images/reversebinding-small.png "Reverse-Bindung")](binding-mode-images/reversebinding-large.png "Reverse-Bindung")
+[![Reverse-Bindung](binding-mode-images/reversebinding-small.png "Reverse-Bindung")](binding-mode-images/reversebinding-large.png#lightbox "Reverse-Bindung")
 
 Werden aber möglicherweise überrascht es, dass die `Slider` weiterhin funktionsfähig sind, wie in der Android- und uwp-Screenshots veranschaulicht. Dies wird empfohlen, dass die Datenbindung optimiert, wenn funktioniert scheint der `Slider` ist das Bindungsziel statt über das `Label` daran, dass die Initialisierung funktioniert, wie wir erwarten.
 
@@ -250,7 +250,7 @@ Die `Value` Eigenschaft von der `Slider`, ist jedoch `TwoWay`. Dadurch kann jede
 
 Wenn das Programm zuerst ausgeführt wird, der `BoxView`, `Label`, und drei `Slider` Elemente sind alle Satz von ViewModel basierend auf dem ersten `Color` -Eigenschaft festgelegt wird, wenn das ViewModel instanziiert wurde. Dies wird im auf der linken Seite der iOS-Screenshot gezeigt:
 
-[![Einfache Farbauswahl](binding-mode-images/simplecolorselector-small.png "einfache Farbauswahl")](binding-mode-images/simplecolorselector-large.png "einfache Farbauswahl")
+[![Einfache Farbauswahl](binding-mode-images/simplecolorselector-small.png "einfache Farbauswahl")](binding-mode-images/simplecolorselector-large.png#lightbox "einfache Farbauswahl")
 
 Wie Sie die Schieberegler Bearbeiten der `BoxView` und `Label` werden wie in der Android- und uwp-Screenshots veranschaulicht entsprechend aktualisiert.
 
@@ -661,7 +661,7 @@ public partial class SampleSettingsPage : ContentPage
 
 Auf der linken Seite der iOS-Screenshot zeigt das Programm bei der ersten Ausführung. Der Konstruktor in `SampleSettingsViewModel` initialisiert die Hintergrundfarbe weiß, und der Auswahl in der `ListView`:
 
-[![Beispiel-Einstellungen](binding-mode-images/samplesettings-small.png "Beispiel Einstellungen")](binding-mode-images/samplesettings-large.png "Beispiel-Einstellungen")
+[![Beispiel-Einstellungen](binding-mode-images/samplesettings-small.png "Beispiel Einstellungen")](binding-mode-images/samplesettings-large.png#lightbox "Beispiel-Einstellungen")
 
 Die anderen zwei Screenshots zeigen geänderte Einstellungen an. Denken Sie daran, Ihnen das Experimentieren mit dieser Seite, setzen das Programm, in den Energiesparmodus oder beenden Sie sie auf dem Gerät oder Emulator, der er ausgeführt wird. Beenden die Anwendung aus Visual Studio-Debugger führt nicht dazu, dass die `OnSleep` außer Kraft setzen, der `App` Klasse aufgerufen werden.
 

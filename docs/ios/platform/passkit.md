@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: beff54d2b2bb72b2adf1e77819c56004b92e13f7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 279b5bc1188c973fddc033f9b592e9acec703a59
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="passkit"></a>PassKit
 
@@ -22,7 +22,7 @@ Wallet ist eine app für iPhones und iPod mit iOS 6 berührt. Er speichert und z
 
 Dieses Dokument führt Wallet, Xamarin.iOS, mit der Kit-API übergeben und erläutert, wie auf dem Server übergibt implementieren.
 
- [ ![](passkit-images/image1.png "Die Wallet speichert und organisiert werden allen Durchläufen auf einem Telefon")](passkit-images/image1.png)
+ [![](passkit-images/image1.png "Die Wallet speichert und organisiert werden allen Durchläufen auf einem Telefon")](passkit-images/image1.png#lightbox)
 
 
 ## <a name="requirements"></a>Anforderungen
@@ -55,7 +55,7 @@ Im Kern enthält Kit übergeben eine einfache und praktische Möglichkeit zum Sp
 
 Pass-Kit ist nicht einfach eine API innerhalb CocoaTouch, sondern ist Teil einer größeren Ökosystem von apps, Daten und Dienste, die die sichere Freigabe zu ermöglichen und Verwaltung von Barcodes und anderen Daten. Das übersichtlichen Diagramm zeigt verschiedenen Entitäten, die einbezogen werden können, in erstellen und Verwenden von übergibt:
 
- [ ![](passkit-images/image2.png "Dieses Diagramm auf hoher Ebene Aufschluss über die Entitäten erstellen und Verwenden von übergibt")](passkit-images/image2.png)
+ [![](passkit-images/image2.png "Dieses Diagramm auf hoher Ebene Aufschluss über die Entitäten erstellen und Verwenden von übergibt")](passkit-images/image2.png#lightbox)
 
 Jeder Teil der Umgebung hat eine klar definierte Rolle:
 
@@ -86,7 +86,7 @@ Derzeit unterstützt fünf Typen, die in der Wallet-app von dem Layout und die o
 
 Die fünf Pass-Typen sind in diesem Screenshot gezeigt (in der Reihenfolge: Coupons generisch ist, zu speichern, Karten, Einstiegshilfe bestanden wurden und Ereignis-Ticket):
 
- [ ![](passkit-images/image3.png "Die fünf Pass-Typen sind in diesem Screenshot dargestellt.")](passkit-images/image3.png)
+ [![](passkit-images/image3.png "Die fünf Pass-Typen sind in diesem Screenshot dargestellt.")](passkit-images/image3.png#lightbox)
 
 ### <a name="file-structure"></a>Dateistruktur
 
@@ -103,7 +103,7 @@ Eine Pass-Datei ist tatsächlich ein ZIP-Archiv mit einem **.pkpass** Erweiterun
 
 Verzeichnisstruktur einer Pass-Datei wird unten angezeigt (Dies ist der Inhalt der ZIP-Archiv):
 
- [ ![](passkit-images/image4.png "Verzeichnisstruktur einer Pass-Datei wird hier angezeigt.")](passkit-images/image4.png)
+ [![](passkit-images/image4.png "Verzeichnisstruktur einer Pass-Datei wird hier angezeigt.")](passkit-images/image4.png#lightbox)
 
 ### <a name="passjson"></a>pass.json
 
@@ -238,9 +238,9 @@ Ein Typ-ID übergeben möchten folgenden erstellen.
 
 Der erste Schritt ist das Einrichten einer übergeben Typ-ID für jedes einzelne _Typ_ erfolgreich unterstützt werden müssen. Die ID übergeben (oder Typbezeichner übergeben) wird einen eindeutigen Bezeichner für die erfolgreich erstellt. Wir verwenden diese ID, die erfolgreich mit Ihrem Entwicklerkonto mithilfe eines Zertifikats zu verknüpfen.
 
-1. In der [Zertifikate, Bezeichner und Profile-Abschnitt des iOS-Bereitstellungsportal](https://developer.apple.com/account/overview.action), navigieren Sie zu **Bezeichner** , und wählen Sie **Typ-IDs übergeben** . Wählen Sie dann die  **+**  um einen neuen Pass-Typ zu erstellen: [ ![ ] (passkit-images/passid.png "Erstellen eines neuen Pass-Typs")](passkit-images/passid.png)
+1. In der [Zertifikate, Bezeichner und Profile-Abschnitt des iOS-Bereitstellungsportal](https://developer.apple.com/account/overview.action), navigieren Sie zu **Bezeichner** , und wählen Sie **Typ-IDs übergeben** . Wählen Sie dann die  **+**  um einen neuen Pass-Typ zu erstellen: [ ![ ] (passkit-images/passid.png "Erstellen eines neuen Pass-Typs")](passkit-images/passid.png#lightbox)
 
-2.   Geben Sie einen **Beschreibung** (Name) und **Bezeichner** (eindeutige Zeichenfolge) für die erfolgreich. Beachten Sie, die alle übergeben Typ-IDs mit der Zeichenfolge beginnen muss `pass.` In diesem Beispiel wir verwenden `pass.com.xamarin.coupon.banana` : [ ![ ] (passkit-images/register.png "Geben Sie eine Beschreibung und einen Bezeichner")](passkit-images/register.png)
+2.   Geben Sie einen **Beschreibung** (Name) und **Bezeichner** (eindeutige Zeichenfolge) für die erfolgreich. Beachten Sie, die alle übergeben Typ-IDs mit der Zeichenfolge beginnen muss `pass.` In diesem Beispiel wir verwenden `pass.com.xamarin.coupon.banana` : [ ![ ] (passkit-images/register.png "Geben Sie eine Beschreibung und einen Bezeichner")](passkit-images/register.png#lightbox)
 
 
 3.   Bestätigen Sie die ID übergeben, durch Drücken der **registrieren** Schaltfläche.
@@ -252,11 +252,11 @@ Der erste Schritt ist das Einrichten einer übergeben Typ-ID für jedes einzelne
 
 Um ein neues Zertifikat für diese ID übergeben zu erstellen, führen Sie folgende Schritte aus:
 
-1.  Wählen Sie die neu erstellte übergeben-ID aus der Liste aus, und klicken Sie auf **bearbeiten** : [ ![ ] (passkit-images/pass-done.png "wählen Sie aus der Liste die ID des neuen übergeben")](passkit-images/pass-done.png)
+1.  Wählen Sie die neu erstellte übergeben-ID aus der Liste aus, und klicken Sie auf **bearbeiten** : [ ![ ] (passkit-images/pass-done.png "wählen Sie aus der Liste die ID des neuen übergeben")](passkit-images/pass-done.png#lightbox)
 
     Aktivieren Sie das Kontrollkästchen **Zertifikat erstellen...** :
 
-    [ ![](passkit-images/cert-dist.png "Wählen Sie erstellen Zertifikat.")](passkit-images/cert-dist.png)
+    [![](passkit-images/cert-dist.png "Wählen Sie erstellen Zertifikat.")](passkit-images/cert-dist.png#lightbox)
 
 
 2.  Führen Sie die Schritte zum Erstellen einer Zertifikatsignieranforderung (CSR).
@@ -286,7 +286,7 @@ Nun, wir den Typ übergeben wir einen Durchlauf erstellt haben so testen Sie den
 
 Es gibt einige Quelldateien im Beispielcode für diesen Artikel, die verwendet werden kann, um eine Übergabe zu generieren. Verwenden Sie die Dateien in den `CouponBanana.raw` des Verzeichnisses CreateAPassManually Verzeichnis. Die folgenden Dateien sind vorhanden:
 
- [ ![](passkit-images/image18.png "Diese Dateien sind vorhanden.")](passkit-images/image18.png)
+ [![](passkit-images/image18.png "Diese Dateien sind vorhanden.")](passkit-images/image18.png#lightbox)
 
 Öffnen Sie pass.json und bearbeiten Sie die JSON-Objekte. Sie müssen mindestens ein update der `passTypeIdentifier` und `teamIdentifer` entsprechend Ihrem Apple Developer-Konto.
 
@@ -330,11 +330,11 @@ Im Beispiel wird Code für diesen Artikel gibt es ein Projekt mit der Bezeichnun
 
 Wenn Sie die Ausgabe dieser Tools zu überprüfen, (durch Festlegen der Dateiname in .zip, und öffnen ihn), sehen Sie die folgenden Dateien (Beachten Sie das Hinzufügen der `manifest.json` und `signature` Dateien):
 
- [ ![](passkit-images/image19.png "Untersuchen die Ausgabe dieser Tools")](passkit-images/image19.png)
+ [![](passkit-images/image19.png "Untersuchen die Ausgabe dieser Tools")](passkit-images/image19.png#lightbox)
 
 Sobald Sie angemeldet, ZIP und erhält die Datei (z. b. um `BananaCoupon.pkpass`) können Sie ziehen Sie es in der Simulator zum Testen oder per e-Mail an sich selbst auf einem echten Gerät abrufen. Daraufhin sollte einen Bildschirm, um **hinzufügen** übergeben, wie folgt:
 
- [ ![](passkit-images/image20.png "Fügen Sie den Bildschirm übergeben")](passkit-images/image20.png)
+ [![](passkit-images/image20.png "Fügen Sie den Bildschirm übergeben")](passkit-images/image20.png#lightbox)
 
 Normalerweise würde diese Prozess auf einem Server, jedoch manuelle Erstellung von Pass-Option ist für kleine Unternehmen, die nur Coupons erstellen, die nicht über die Unterstützung von Back-End-Server erfordern möglicherweise automatisiert werden.
 
@@ -344,7 +344,7 @@ Normalerweise würde diese Prozess auf einem Server, jedoch manuelle Erstellung 
 
 Wallet ist die zentrale Information das Ökosystem Kit übergeben. Diese bildschirmabbildung zeigt leere Wallet und wie der Pass-Liste und einzelne übergibt aussehen:
 
- [ ![](passkit-images/image21.png "Diese bildschirmabbildung zeigt leere Wallet, und wie der Pass-Liste und einzelne übergibt suchen")](passkit-images/image21.png)
+ [![](passkit-images/image21.png "Diese bildschirmabbildung zeigt leere Wallet, und wie der Pass-Liste und einzelne übergibt suchen")](passkit-images/image21.png#lightbox)
 
 Wallet-Features aufgeführt:
 
@@ -377,9 +377,9 @@ Kanal Anwendungen sind intermediate apps, die möglicherweise übergibt im Namen
 
 Diese bildschirmabbildung zeigt wie **Mail** in iOS 6 eine Pass-Anlage erkennt und (sofern verwendet) bietet **hinzufügen** es Wallet.
 
- [ ![](passkit-images/image22.png "Diese bildschirmabbildung zeigt, wie iOS 6-e-Mail eine Pass-Anlage erkennt")](passkit-images/image22.png)
+ [![](passkit-images/image22.png "Diese bildschirmabbildung zeigt, wie iOS 6-e-Mail eine Pass-Anlage erkennt")](passkit-images/image22.png#lightbox)
 
- [ ![](passkit-images/image23.png "Diese bildschirmabbildung zeigt, wie Nachrichten bietet, um einen Pass-Anhang Wallet hinzufügen")](passkit-images/image23.png)
+ [![](passkit-images/image23.png "Diese bildschirmabbildung zeigt, wie Nachrichten bietet, um einen Pass-Anhang Wallet hinzufügen")](passkit-images/image23.png#lightbox)
 
 Wenn Sie eine app erstellen, die ein Kanal für übergibt sein kann, können sie vom erkannt werden:
 
@@ -498,7 +498,7 @@ var passes = library.GetPasses ();  // returns PKPass[]
 
 Beachten Sie, dass der Simulator die Liste der übergibt, die zurückgegeben wird, nicht filtern, damit diese Methode immer auf echten Geräten getestet werden soll. Diese Liste kann in einer UITableView, die Beispiel-app wie folgt aussehen angezeigt werden, nach zwei Coupons hinzugefügt wurden:
 
- [ ![](passkit-images/image29.png "Das Beispiel-app-aussehen wie folgt zwei Coupons hinzugefügt worden sind")](passkit-images/image29.png)
+ [![](passkit-images/image29.png "Das Beispiel-app-aussehen wie folgt zwei Coupons hinzugefügt worden sind")](passkit-images/image29.png#lightbox)
 
 
 ### <a name="displaying-passes"></a>Anzeigen von übergibt
@@ -520,7 +520,7 @@ string passInfo =
 
 Diese Zeichenfolge wird als Warnung im Beispiel gezeigt:
 
- [ ![](passkit-images/image30.png "Die Warnung Coupons ausgewählt, in der Stichprobe")](passkit-images/image30.png)
+ [![](passkit-images/image30.png "Die Warnung Coupons ausgewählt, in der Stichprobe")](passkit-images/image30.png#lightbox)
 
 Sie können auch die `LocalizedValueForFieldKey()` Methode zum Abrufen von Daten aus Feldern in der übergibt, die Sie entwickelt haben (da Sie wissen, welche Felder sollten vorhanden sein). Im Beispielcode wird diese nicht angezeigt.
 
@@ -541,7 +541,7 @@ NavigationController.PresentModalViewController (pkapvc, true);
 
 Die Übergabe erhält **hinzufügen** und **"Abbrechen"** Optionen:
 
- [ ![](passkit-images/image20.png "Die erfolgreich mit den Optionen hinzufügen und "Abbrechen" angezeigt")](passkit-images/image20.png)
+ [![](passkit-images/image20.png "Die erfolgreich mit den Optionen hinzufügen und "Abbrechen" angezeigt")](passkit-images/image20.png#lightbox)
 
 ### <a name="replace-an-existing-pass"></a>Ersetzen Sie einen vorhandenen Durchlauf
 

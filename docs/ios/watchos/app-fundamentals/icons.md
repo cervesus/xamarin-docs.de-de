@@ -6,11 +6,11 @@ ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 38a2e8b8cd5932bf96c1e0032a6f47627c3ea592
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 98cd780a29abdbeaab02483e4b6ed01a218f88e5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-icons"></a>Arbeiten mit Symbolen
 
@@ -97,7 +97,7 @@ Einmal Ihre [übergeordnete app](~/ios/watchos/app-fundamentals/parent-app.md) i
 
 3. Fügen Sie alle WatchOS Images hinzu, wie in diesem Screenshot gezeigt:
 
-  [ ![](icons-images/appicons-sml.png "Fügen Sie alle WatchOS Bilder hinzu, wie in diesem Screenshot dargestellt.")](icons-images/appicons.png)
+  [![](icons-images/appicons-sml.png "Fügen Sie alle WatchOS Bilder hinzu, wie in diesem Screenshot dargestellt.")](icons-images/appicons.png#lightbox)
 
   Verweisen auf [Richtlinien von Apple Symbol](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/IconandImageSizes.html) für die erforderliche Größen (Dimensionen werden auch auf dem Bildschirm angezeigt). Denken Sie daran, dass diese Symbole automatisch abgeschnitten werden werden, um in einem Kreis zu rendern.
 

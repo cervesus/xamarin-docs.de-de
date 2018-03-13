@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 015bce612f369797f0540a0cb55f71f420f007a2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d5a8baec164eb5c70f6dae5b2fa4fd5271afbd1c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-background-transfer-service-and-nsurlsession"></a>Exemplarische Vorgehensweise – mit Hintergrundübertragungsdienst und NSURLSession
 
@@ -20,7 +20,7 @@ _In dieser exemplarischen Vorgehensweise verwenden wir den Hintergrundübertragu
 
 Eine hintergrundübertragung wird durch Konfigurieren von einem Hintergrund initiiert `NSURLSession` und einreihen hochladen oder Herunterladen von Aufgaben. Wenn Aufgaben abgeschlossen haben, während die Anwendung backgrounded, angehalten oder beendet wird, werden iOS die Anwendung durch Aufrufen der Abschlusshandler in der Anwendungsverzeichnis benachrichtigt *AppDelegate*. Das folgende Diagramm veranschaulicht diese in Aktion:
 
- [ ![](background-transfer-walkthrough-images/transfer.png "Eine hintergrundübertragung wird von einem Hintergrund NSURLSession konfigurieren initiiert und einreihen hochladen und Herunterladen von Aufgaben")](background-transfer-walkthrough-images/transfer.png)
+ [![](background-transfer-walkthrough-images/transfer.png "Eine hintergrundübertragung wird von einem Hintergrund NSURLSession konfigurieren initiiert und einreihen hochladen und Herunterladen von Aufgaben")](background-transfer-walkthrough-images/transfer.png#lightbox)
 
 Sehen wir uns an, wie dies im Code aussieht.
 

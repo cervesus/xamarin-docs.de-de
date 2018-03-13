@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 82151599b92094b816f4763c533ed7746db37920
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 489f3bd43ff4515000127ac29de197435493d5a9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-navigation-and-focus"></a>Arbeiten mit Navigationsbereich und den Fokus
 
@@ -21,7 +21,7 @@ _Dieser Artikel behandelt das Konzept der Fokus und deren Verwendung und Behande
 
 Dieser Artikel umfasst das Konzept der [Fokus](#Focus-and-Selection) und wie diese verwendet werden, behandeln [Navigation](#Navigation) in einer Xamarin.tvOS-app-Benutzeroberfläche. Untersucht, wie die integrierte Steuerelemente zur Seitennavigation tvos. außerdem wurden Fokus, Hervorhebung und Auswahl verwenden, um Ihre Xamarin.tvOS app Benutzernavigation-Schnittstelle bereitstellen.
 
-[ ![](navigation-focus-images/intro01.png "tvos. außerdem wurden apps Benutzernavigation-Schnittstelle")](navigation-focus-images/intro01.png)
+[![](navigation-focus-images/intro01.png "tvos. außerdem wurden apps Benutzernavigation-Schnittstelle")](navigation-focus-images/intro01.png#lightbox)
 
 Wir führen anschließend eine Betrachtung der Verwendung den Fokus mit [Parallax](#Focus-and-Parallax) und *Bilder in den Ebenen* visuelle Hinweise für den aktuellen Status der Navigation für den Endbenutzer bereitstellen.
 
@@ -35,7 +35,7 @@ Benutzer der app Xamarin.tvOS werden nicht werden interagieren mit der Schnittst
 
 Eine erfolgreiche tvos. außerdem wurden app implementiert Navigation auf eine Weise, die den Zweck der app und die Struktur der Daten, wenn, die es ohne auf die Navigation selbst vorlegt, reibungslos unterstützt. Entwerfen Sie die Navigation, sodass natürliche und vertraute das Gefühl, ohne die Benutzeroberfläche dominieren oder zeichnen den Fokus von der Inhalt und die benutzerfreundlichkeit der apps.
 
-[ ![](navigation-focus-images/nav01.png "Die tvos. außerdem wurden für die app")](navigation-focus-images/nav01.png)
+[![](navigation-focus-images/nav01.png "Die tvos. außerdem wurden für die app")](navigation-focus-images/nav01.png#lightbox)
 
 Während einer Apple TV, die Benutzer in der Regel mit einem stapelsatz an Bildschirme, jeweils eine bestimmte Gruppe von Inhalt darstellen navigiert. Wiederum jeder Bildschirm für neuer führt möglicherweise zu einem oder mehreren untergeordneten Bildschirmen von Inhalten mithilfe der standardmäßigen Benutzeroberflächen-Steuerelemente wie z. B. [Schaltflächen](~/ios/tvos/user-interface/buttons.md), [Registerkarte Balken](~/ios/tvos/user-interface/tab-bars.md), Tabellen, [Auflistungsansichten](~/ios/tvos/user-interface/collection-views.md) oder [ Teilen von Ansichten](~/ios/tvos/user-interface/split-views.md).
 
@@ -58,7 +58,7 @@ Apple empfiehlt, halten Folgendes beachten Sie beim Entwerfen der Navigation fü
 
 Auf der Apple TV, ein Bild, Schaltfläche oder anderen Benutzeroberflächenelement gilt _im Fokus_ wird er das Ziel der aktuellen Navigation.
 
-[ ![](navigation-focus-images/focus01.png "Fokus und Auswahl-Beispiel")](navigation-focus-images/focus01.png)
+[![](navigation-focus-images/focus01.png "Fokus und Auswahl-Beispiel")](navigation-focus-images/focus01.png#lightbox)
 
 Im Gegensatz zu iOS-Geräte, auf dem der Benutzer direkt mit Elementen auf dem Gerät Touchscreen, interagieren, Benutzer interagieren mit tvos. außerdem wurden die Elemente aus, über den Raum, der mithilfe von Siri Remote. Um darzustellen, und Behandeln dieser Benutzerinteraktionen, die Apple TV verwendet eine _Fokus_ basierendes Modell.
 
@@ -138,7 +138,7 @@ Allerdings möglicherweise Zeiten, aufgrund der notwendigkeiten des UI-Entwurfs,
 
 Führen Sie die folgenden Benutzeroberflächenlayout für ein Beispiel:
 
- [ ![](navigation-focus-images/guide01.png "Arbeiten mit Fokus Handbücher-Beispiel")](navigation-focus-images/guide01.png)
+ [![](navigation-focus-images/guide01.png "Arbeiten mit Fokus Handbücher-Beispiel")](navigation-focus-images/guide01.png#lightbox)
  
 Da die **mehr Informationen** Schaltfläche liegt nicht in einem horizontalen und vertikalen Raster mit der **kaufen** Schaltfläche wäre es nicht an den Benutzer zugegriffen werden kann. Allerdings Dies kann leicht behoben werden mithilfe einer _Fokus Handbuch_ Bewegung Hinweise an das Modul für den Fokus zu übermitteln. 
 
@@ -170,7 +170,7 @@ Zunächst wird ein neues `UIFocusGuide` erstellt und hinzugefügt, der Ansicht L
 
 Als Nächstes im Fokus Handbuch oben, links, Breite und Höhe Anker relativ zum angepasst werden die **mehr Infos** und **kaufen** Schaltflächen, um zwischen ihnen zu positionieren. Thema
 
-[ ![](navigation-focus-images/guide02.png "Beispiel für den Fokus-Handbuch")](navigation-focus-images/guide02.png)
+[![](navigation-focus-images/guide02.png "Beispiel für den Fokus-Handbuch")](navigation-focus-images/guide02.png#lightbox)
 
 Es ist auch wichtig zu beachten, dass die neuen Einschränkungen werden aktiviert wird, wie sie durch Festlegen von erstellt werden ihre `Active` Eigenschaft `true`:
 

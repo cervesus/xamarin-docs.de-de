@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 0600a4ca1f26fd034679619c1427821e9c7a12b8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b96b306c882eb30aaf8c81604afb9b6a547d715b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implicit-styles"></a>Impliziten Stilen
 
@@ -51,7 +51,7 @@ Das folgende Codebeispiel zeigt eine *implizite* Stil auf einer Seite in XAML de
 
 Die [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) definiert ein einzelnes *implizite* Stil, die auf der Seite angewendete [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Instanzen. Die `Style` wird verwendet, um auf einen gelben Hintergrund blauen Text angezeigt, beim Festlegen von auch andere Optionen für die Darstellung. Die `Style` wird hinzugefügt, um der Seite [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) ohne Angabe einer `x:Key` Attribut. Aus diesem Grund die `Style` gilt für alle der `Entry` implizit Instanzen, wie sie entsprechen der [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) Eigenschaft von der `Style` genau. Allerdings die `Style` gilt nicht für die `CustomEntry` -Instanz, die ein untergeordnetes ist `Entry`. Daraus ergibt sich die Darstellung in den folgenden Screenshots dargestellt:
 
-[![](implicit-images/implicit-styles.png "Beispiel für impliziten Stilen")](implicit-images/implicit-styles-large.png "impliziten Stilen-Beispiel")
+[![](implicit-images/implicit-styles.png "Beispiel für impliziten Stilen")](implicit-images/implicit-styles-large.png#lightbox "impliziten Stilen-Beispiel")
 
 Darüber hinaus die vierte [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) überschreibt die [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/) und [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) Eigenschaften des impliziten Formats, verschiedene `Color`Werte.
 
@@ -82,7 +82,7 @@ In diesem Beispiel wird die *implizite* [ `Style` ](https://developer.xamarin.co
 
 Weitere Informationen zum Erstellen von Formaten in einer Anwendungsverzeichnis [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), finden Sie unter [globalen Formatvorlagen](~/xamarin-forms/user-interface/styles/application.md).
 
-## <a name="creating-an-implicit-style-in-c35"></a>Erstellen einen impliziten Stil in C &#35;
+## <a name="creating-an-implicit-style-in-c35"></a>Erstellen einen impliziten Stil in C&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) Instanzen können auf einer Seite hinzugefügt werden [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) Auflistung in c# durch Erstellen eines neuen [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), und klicken Sie dann durch Hinzufügen der `Style` auf Instanzen der `ResourceDictionary`, entsprechend der folgende Codebeispiel:
 

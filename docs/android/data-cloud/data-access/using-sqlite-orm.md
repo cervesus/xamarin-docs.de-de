@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: b1eb886685597e671dccf70063c34e102ce2cac9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b9523d76c04dae97b74744fbe2bd6bc7022c3194
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-sqlitenet"></a>Verwenden von SQLite.NET
 
@@ -21,7 +21,7 @@ Die SQLite.NET-Bibliothek, die empfiehlt Xamarin ist ein sehr einfaches ORM, mit
 
 Um die SQLite.NET-Bibliothek in einer Xamarin-app einzuschließen, fügen die [SQLite.net PCL NuGet-Paket](https://www.nuget.org/packages/sqlite-net-pcl/) auf das Projekt mit der **SQLite-Net-PCL** NuGet-Paket:
 
-[ ![SQLite.NET NuGet-Paket](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet-Paket")](using-sqlite-orm-images/image1a.png)
+[![SQLite.NET NuGet-Paket](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet-Paket")](using-sqlite-orm-images/image1a.png#lightbox)
 
 Nachdem Sie die Bibliothek SQLite.NET verfügbar haben, führen Sie diese drei Schritte, um es verwenden, um eine Datenbank zuzugreifen:
 
@@ -185,7 +185,7 @@ foreach (var s in stocksStartingWithA) {
 ```
 
 > [!NOTE]
-> **Hinweis:** beim Schreiben von SQL-Anweisungen direkt erstellen Sie eine Abhängigkeit auf den Namen der Tabellen und Spalten, die in der Datenbank aus Ihrer Klassen und ihre Attribute generiert wurden. Wenn Sie diesen Namen im Code ändern müssen Sie daran denken, aktualisieren Sie jede SQL-Anweisung manuell geschrieben.
+> Wenn SQL-Anweisungen direkt schreiben erstellen Sie eine Abhängigkeit auf den Namen der Tabellen und Spalten, die in der Datenbank aus Ihrer Klassen und ihre Attribute generiert wurden. Wenn Sie diesen Namen im Code ändern müssen Sie daran denken, aktualisieren Sie jede SQL-Anweisung manuell geschrieben.
 
 ### <a name="deleting-an-object"></a>Löschen eines Objekts
 

@@ -7,11 +7,11 @@ ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 44df6fce4ec6d667c096da01cfc339ec2afdb077
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec5ca2883c6e109a67ee8a4ecb25fe938d0df4ec
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough-creating-an-application-using-the-reflection-api"></a>Exemplarische Vorgehensweise: Erstellen einer Anwendung mithilfe der Reflektions-API
 
@@ -34,7 +34,7 @@ Die Verwendung der Reflektions-API ist so einfach wie das:
 
 Sehen wir uns ein Beispiel zum Veranschaulichen der Reflektions-API verwenden. In diesem Beispiel werden wir eine einfache dateneingabebildschirm wie folgt erstellen:
 
- [ ![](reflection-api-walkthrough-images/01-expense-entry.png "In diesem Beispiel fügen wir eine einfache dateneingabebildschirm erstellen, wie hier gezeigt")](reflection-api-walkthrough-images/01-expense-entry.png)
+ [![](reflection-api-walkthrough-images/01-expense-entry.png "In diesem Beispiel fügen wir eine einfache dateneingabebildschirm erstellen, wie hier gezeigt")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
  <a name="Creating_a_Class_with_MT.D_Attributes" />
 
@@ -119,7 +119,7 @@ window.RootViewController = nav;
 
 Jetzt bei Ausführung die Anwendung, in der Titel wird das `UINavigationController’s` Navigationsleiste als Screenshot unten gezeigt:
 
- [ ![](reflection-api-walkthrough-images/02-create-task.png "Nun, wenn wir die Anwendung ausführen, wird der Titel in der Navigationsleiste UINavigationControllers")](reflection-api-walkthrough-images/02-create-task.png)
+ [![](reflection-api-walkthrough-images/02-create-task.png "Nun, wenn wir die Anwendung ausführen, wird der Titel in der Navigationsleiste UINavigationControllers")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
 
 Durch Einschließen einer `UINavigationController`, wir können jetzt nutzen von anderen Funktionen von MT. D, die für die Navigation erforderlich ist. Beispielsweise können wir eine Enumeration zum Hinzufügen der `Expense` Klasse, um die Kategorie für die Ausgaben und MT. definieren D wird eine Auswahlbildschirm automatisch erstellt. Um zu demonstrieren, Ändern der `Expense` Klasse einbeziehen, ein `ExpenseCategory` Feld wie folgt:
 
@@ -142,11 +142,11 @@ public class Expense
 
 Die Anwendung jetzt ausführen Führt eine neue Zeile in der Tabelle für die Kategorie wie gezeigt:
 
- [ ![](reflection-api-walkthrough-images/03-set-details.png "Wie gezeigt führt in eine neue Zeile in der Tabelle für die Kategorie die Anwendung jetzt ausführen")](reflection-api-walkthrough-images/03-set-details.png)
+ [![](reflection-api-walkthrough-images/03-set-details.png "Wie gezeigt führt in eine neue Zeile in der Tabelle für die Kategorie die Anwendung jetzt ausführen")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
 
 Die Datenzeile ausgewählt wird, erhalten Sie in der Anwendung navigieren zu einem neuen Bildschirm mit Zeilen, die die Enumeration entsprechen wie folgt:
 
- [ ![](reflection-api-walkthrough-images/04-set-category.png "In der Anwendung navigieren zu einem neuen Bildschirm mit Zeilen, die die Enumeration entsprechen führt Sie die Zeile auswählen")](reflection-api-walkthrough-images/04-set-category.png)
+ [![](reflection-api-walkthrough-images/04-set-category.png "In der Anwendung navigieren zu einem neuen Bildschirm mit Zeilen, die die Enumeration entsprechen führt Sie die Zeile auswählen")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
 
  <a name="Summary" />
 

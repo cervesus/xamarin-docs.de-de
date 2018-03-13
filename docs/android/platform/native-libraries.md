@@ -6,11 +6,12 @@ ms.assetid: 7AA6CEC8-C09E-BBDA-FDD6-E40559143548
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.openlocfilehash: 8d7e03582571939b8cd3ae89fc2deff3b5603d36
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: 7bd9a64ab7ea775688225ff5496773647174ebf8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="using-native-libraries"></a>Verwenden von systemeigenen Bibliotheken
 
@@ -21,13 +22,13 @@ Um eine systemeigene Bibliothek mit einer Anwendung Xamarin.Android bereitzustel
 Um eine systemeigene Bibliothek mit einem Xamarin.Android-Steuerelementbibliothek-Projekt bereitstellen, die binäre Bibliothek zum Projekt hinzufügen, und legen Sie dessen **Buildvorgang** auf **EmbeddedNativeLibrary**.
 
 Beachten Sie, dass seit Android mehrere binäre Anwendungsschnittstellen (ABIs) unterstützt, Xamarin.Android welche ABI kennen muss für die systemeigene Bibliothek erstellt wird.
-Es gibt zwei Möglichkeiten, die dies durchgeführt werden kann:
+Es gibt zwei Möglichkeiten, dies zu erreichen:
 
 1.  Pfad "sniffing"
 1.  Mithilfe einer `AndroidNativeLibrary/Abi` Element in der Projektdatei
 
 
-Mit Abhörangriffe im Pfad, den Namen des übergeordneten Verzeichnisses für die systemeigene Bibliothek an die ABI verwendet wird, die die Bibliothek-Ziele. Daher, wenn Sie hinzufügen `lib/armeabi/libfoo.so` für das Projekt, klicken Sie dann die ABI wird werden "generieren" als `armeabi`.
+Bei der Pfadermittlung wird der Name des übergeordneten Verzeichnisses der nativen Bibliothek verwendet, um die ABI anzugeben, die die Bibliothek als Ziel verwendet. Daher, wenn Sie hinzufügen `lib/armeabi/libfoo.so` für das Projekt, klicken Sie dann die ABI wird werden "generieren" als `armeabi`.
 
 Alternativ können Sie die Projektdatei, um explizit anzugeben, die ABI mit bearbeiten:
 

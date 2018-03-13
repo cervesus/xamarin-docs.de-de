@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/24/2017
-ms.openlocfilehash: d8fa54f23dfea063fa25f6e26e2df2c2ed82101e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9aa66a531b723f176b940ba35ee4e86eae711f7d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="collection-views"></a>Auflistungsansichten
 
@@ -22,7 +22,7 @@ Beim Arbeiten mit c# und .NET in einer Xamarin.Mac app dem Entwickler Zugriff au
 
 Ein `NSCollectionView` zeigt ein Raster Unteransichten organisiert mithilfe einer `NSCollectionViewLayout`. Jede Unteransicht im Raster wird dargestellt, durch eine `NSCollectionViewItem` verwaltet das Laden des Inhalts der Ansicht eine `.xib` Datei.
 
-[ ![Eine Beispiel-app ausführen](collection-view-images/intro01.png)](collection-view-images/intro01.png)
+[![Eine Beispiel-app ausführen](collection-view-images/intro01.png)](collection-view-images/intro01.png#lightbox)
 
 Dieser Artikel behandelt die Grundlagen der Arbeit mit Auflistungsansichten in einer app Xamarin.Mac. Wird mit hoher vorgeschlagen, dass Sie über arbeiten die [Hello, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Benutzeroberflächen-Generator](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) und [Steckdosen und Aktionen](~/mac/get-started/hello-mac.md#Outlets_and_Actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die in diesem Artikel verwendet werden.
 
@@ -821,4 +821,4 @@ Dieser Artikel hat eine ausführliche Übersicht über das Arbeiten mit Auflistu
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
 - [Datenbindung und Schlüssel/Wert-Codierung](~/mac/app-fundamentals/databinding.md)
 - [NSCollectionView](https://developer.apple.com/reference/appkit/nscollectionview)
-- [OS X Human Richtlinien zur Benutzeroberfläche](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

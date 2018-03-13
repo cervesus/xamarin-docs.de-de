@@ -7,11 +7,11 @@ ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 63faa0c46abfb509a6834efa647f23ad0ed7f454
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1a5e4ab73c9090cbb743dc8cb339d6f50c5ff527
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough-using-a-json-element-to-create-a-user-interface"></a>Exemplarische Vorgehensweise: Erstellen einer Benutzeroberfläche mithilfe einer JSON-Element
 
@@ -22,7 +22,7 @@ MT. D unterstützt beim Erstellen von Benutzeroberflächen, die im JSON-Format d
 
 MT. D unterstützt die volle Bandbreite von Funktionen, die bei Verwendung von JSON in der API-Elemente verfügbar sind. Die Anwendung im folgenden Screenshot wird z. B. vollständig mit JSON deklariert:
 
-[ ![](json-element-walkthrough-images/01-load-from-file.png "Zum Beispiel die Anwendung in diesem Screenshot ist vollständig deklariert mit JSON") ](json-element-walkthrough-images/01-load-from-file.png) [ ![ ] (json-element-walkthrough-images/02-load-from-file-details.png "z. B. die Anwendung in diesem Screenshot ist vollständig mit deklarierten JSON")](json-element-walkthrough-images/02-load-from-file-details.png)
+[![](json-element-walkthrough-images/01-load-from-file.png "Zum Beispiel die Anwendung in diesem Screenshot ist vollständig deklariert mit JSON") ](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ] (json-element-walkthrough-images/01-load-from-file.png "z. B. die Anwendung in diesem Screenshot ist vollständig mit deklarierten JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 Wir rufen Sie das Beispiel aus der [Elemente API Exemplarische Vorgehensweise](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) Lernprogramm zum Hinzufügen eines Aufgabe Detailbildschirm mit JSON.
 
@@ -30,7 +30,7 @@ Wir rufen Sie das Beispiel aus der [Elemente API Exemplarische Vorgehensweise](~
 
 Im Beispiel für diese exemplarische Vorgehensweise können Vorgänge erstellt werden. Wenn eine Aufgabe auf dem ersten Bildschirm ausgewählt ist, erhält ein Detailbildschirm, wie dargestellt:
 
- [ ![](json-element-walkthrough-images/03-task-list.png "Wenn eine Aufgabe auf dem ersten Bildschirm ausgewählt ist, ein Detailbildschirm erhält gezeigten")](json-element-walkthrough-images/03-task-list.png)
+ [![](json-element-walkthrough-images/03-task-list.png "Wenn eine Aufgabe auf dem ersten Bildschirm ausgewählt ist, ein Detailbildschirm erhält gezeigten")](json-element-walkthrough-images/03-task-list.png#lightbox)
 
 ## <a name="creating-the-json"></a>Erstellen die JSON-Objekte
 
@@ -166,7 +166,7 @@ _rootElement = new RootElement ("Json Example"){
 
 Zur Laufzeit wird wird die Datei abgerufen und analysiert werden MT. sein D, wenn der Benutzer auf die zweite Ansicht navigiert, wie im folgenden Screenshot gezeigt:
 
- [ ![](json-element-walkthrough-images/04-json-web-example.png "Die Datei abgerufen und analysiert werden MT. D, wenn der Benutzer in der zweiten Ansicht navigiert")](json-element-walkthrough-images/04-json-web-example.png)
+ [![](json-element-walkthrough-images/04-json-web-example.png "Die Datei abgerufen und analysiert werden MT. D, wenn der Benutzer in der zweiten Ansicht navigiert")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
  <a name="Summary" />
 

@@ -7,18 +7,17 @@ ms.assetid: 27CB3C16-33F3-F580-E2C0-968005A7E02E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 91e27fcaef0ef1b262eceecd4d3c71bac34e328d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: edf25ebd089994c01b2fa45e77b35fad9a51e350
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="java-bindings-metadata"></a>Metadaten für Java-Bindungen
 
 _C#-Code im Xamarin.Android ruft Java-Bibliotheken über Bindungen, d. h. einen Mechanismus, der die Details auf niedriger Ebene abstrahiert, die in Java Native Interface (JNI) angegeben werden. Xamarin.Android bietet ein Tool, das diese Bindungen generiert. Diese Tools kann Entwickler-Steuerelements, wie eine Bindung erstellt wird, mithilfe von Metadaten, die Prozeduren, z. B. Ändern von Namespaces und Umbenennen von Elementen ermöglicht. Dieses Dokument erläutert die Funktionsweise von Metadaten, werden die Attribute, die Metadaten unterstützt, und erläutert deren Bindungsprobleme zu beheben, indem Sie diese Metadaten zu ändern._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -74,7 +73,6 @@ Die **MetaData.xml** Datei ist die meisten Importieren dieser Dateien, da der hi
 
 Zu besprechen wechseln können **Metadata.xml** im Detail.
 
-<a name="Metadata.xml_Transform_File" />
 
 ## <a name="metadataxml-transform-file"></a>Metadata.XML-Transform-Datei
 
@@ -114,7 +112,6 @@ Die folgende Liste enthält einige der häufiger verwendeten XPath-Elemente für
 -   `parameter` &ndash; Identifizieren Sie einen Parameter für eine Methode an. Z. B. `/parameter[@name='p0']`
 
 
-<a name="ADDING_TYPES" />
 
 ### <a name="adding-types"></a>Hinzufügen von Typen
 
@@ -129,7 +126,6 @@ Die `add-node` Element informiert die Xamarin.Android bindungsprojekt hinzufüge
 </add-node>
 ```
 
-<a name="REMOVING_TYPES" />
 
 ### <a name="removing-types"></a>Entfernen von Typen
 
@@ -138,8 +134,6 @@ Es ist möglich, weisen Sie den Xamarin.Android Bindungen-Generator einen Java-T
 ```xml
 <remove-node path="/api/package[@name='{package_name}']/class[@name='{name}']" />
 ```
-
-<a name="Renaming_Members" />
 
 ### <a name="renaming-members"></a>Umbenennen von Elementen
 
@@ -169,6 +163,8 @@ Um die verwalteten Namen einer umschlossenen Typ (oder Methode) ordnungsgemäß 
     name="managedName">NewName</attr>
 ```
 
+<a name="Renaming_EventArg_Wrapper_Classes" />
+
 #### <a name="renaming-eventarg-wrapper-classes"></a>Umbenennen von `EventArg` Wrapperklassen
 
 Bei der Xamarin.Android Bindung Generator identifiziert eine `onXXX` Setter-Methode für eine _Listenertyp_, ein C#-Ereignis und `EventArgs` Unterklasse generiert werden Zusatz Sie zur Unterstützung von .NET API für den Java-basierten Listener Muster. Betrachten Sie beispielsweise die folgenden Java-Klasse und Methode ein:
@@ -193,7 +189,6 @@ Dies ist nicht zulässigen C#-Klassennamen. Um dieses Problem zu beheben, muss d
 ```
 
  
-<a name="Supported_Attributes" />
 
 ## <a name="supported-attributes"></a>Unterstützte Attribute
 
@@ -341,7 +336,6 @@ Alle diese Änderungen vorhanden, können Sie den folgenden Code in Xamarin.Andr
 realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 ```
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

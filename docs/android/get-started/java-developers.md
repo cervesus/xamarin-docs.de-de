@@ -7,17 +7,17 @@ ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.openlocfilehash: fb74e0efd62c6347534e6f301953325bd4d378d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: 240fc917a154085a459c6612f68c8b71e3ef01bb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarin-for-java-developers"></a>Xamarin für Java-Entwickler
 
 _Wenn Sie ein Java-Entwickler sind, sind Sie auf dem besten Weg, Ihre Fähigkeiten und vorhandenen Code auf der Xamarin-Plattform zu nutzen und gleichzeitig die Vorteile von C# für die Wiederverwendung von Code auszuschöpfen. Sie werden feststellen, dass die C#-Syntax der Java-Syntax sehr ähnlich ist und dass beide Sprachen sehr ähnliche Funktionen bieten. Darüber hinaus werden Sie Features entdecken, die einzigartig in C# sind und Ihnen das Entwicklerleben erleichtern._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -91,7 +91,6 @@ Schließlich erlaubt es Xamarin, [vorhandene Java-Ressourcen](#interop) mithilfe
 In den folgenden Abschnitten werden die grundlegenden Unterschiede bei den ersten Schritten zwischen C# und Java beschrieben, ein späterer Abschnitt erläutert die objektorientierten Unterschiede zwischen diesen Sprachen.
 
 
-<a name="assemblies" />
 
 ### <a name="libraries-vs-assemblies"></a>Bibliotheken im Vergleich zu Assemblys
 
@@ -99,7 +98,6 @@ Java verpackt verwandte Klassen normalerweise in **JAR**-Dateien. In C# und .NET
 
 Weitere Informationen zu Assemblys finden Sie im MSDN-Thema [Assemblys und der globale Assemblycache](https://msdn.microsoft.com/en-us/library/ms173099.aspx).
 
-<a name="namespaces" />
 
 ### <a name="packages-vs-namespaces"></a>Pakete im Vergleich zu Namespaces
 
@@ -111,7 +109,6 @@ namespace WeatherApp
     ...
 ```
 
-<a name="imports" />
 
 ### <a name="importing-types"></a>Importieren von Typen
 
@@ -146,7 +143,6 @@ using System.Threading.Tasks;
 Diese Anweisungen importieren Funktionalität aus den Namespaces `System`, `Android.App`, `Android.Content` usw.
 
 
-<a name="generics" />
 
 ### <a name="generics"></a>Generika
 
@@ -197,7 +193,6 @@ Es gibt jedoch auch einige wichtige Unterschiede:
 -   C# verwendet Destruktorsyntax im C++-Stil, um Finalizer auszudrücken. Die Syntax unterscheidet sich von der `finalize`-Methode von Java, aber die Semantik ist nahezu identisch. (Beachten Sie, dass Destruktoren in C# automatisch den Destruktor der Basisklasse aufrufen &ndash; im Gegensatz zu Java, wo ein expliziter Aufruf von `super.finalize` verwendet wird.)
 
 
-<a name="inheritance" />
 
 ### <a name="class-inheritance"></a>Klassenvererbung
 
@@ -251,7 +246,6 @@ Der Zugriff auf Eigenschaften kann Lese-/Schreibzugriff, schreibgeschützt oder 
 Weitere Informationen zu C#-Eigenschaften finden Sie im MSDN-Thema [Eigenschaften](https://msdn.microsoft.com/en-us/library/x9fsa0sw.aspx).
 
 
-<a name="basemethods" />
 
 ### <a name="calling-base-class-methods"></a>Aufrufen von Basisklassenmethoden
 
@@ -287,7 +281,6 @@ public class MainActivity : Activity
 In diesem Fall ruft die `OnCreate`-Methode, die durch die abgeleitete Klasse (`MainActivity`) definiert ist, die `OnCreate`-Methode der Basisklasse (`Activity`) auf.
 
 
-<a name="accessmodifiers" />
 
 ### <a name="access-modifiers"></a>Zugriffsmodifizierer
 
@@ -300,7 +293,6 @@ Java und C# unterstützen die Zugriffsmodifizierer `public`, `private`, und `pro
 Weitere Informationen zu C#-Zugriffsmodifizierern finden Sie im MSDN-Thema [Zugriffsmodifizierer](https://msdn.microsoft.com/en-us/library/ms173121.aspx).
 
 
-<a name="virtualoverride" />
 
 ### <a name="virtual-and-override-methods"></a>Virtuelle und überschreibende Methoden
 
@@ -320,7 +312,7 @@ Weitere Informationen zur Unterstützung von C# für Polymorphismus finden Sie i
 
 <a name="lambdas" />
 
-## <a name="lambda-expressions"></a>Lambdaausdrücke
+## <a name="lambda-expressions"></a>Lambda-Ausdrücke
 
 C# ermöglicht es, *Umschließungen* zu erstellen: anonyme Inlinemethoden, die auf den Zustand der Methode zugreifen können, in der sie eingeschlossen sind.
 Mit Lambdaausdrücken können Sie weniger Zeilen Code schreiben, um die gleiche Funktionalität zu implementieren, die Sie in Java ggf. mit viel mehr Codezeilen implementiert haben.
@@ -492,7 +484,7 @@ Wird der Klasse und den Schnittstellen, von denen geerbt werden soll, vorangeste
         <code>import</code>
       </td>
       <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/zhdeatwt.aspx">using</a>
+        <a href="https://msdn.microsoft.com/en-us/library/zhdeatwt.aspx">Verwenden</a>
       </td>
       <td valign="top">
 Importiert Typen aus einem Namespace. Wird auch zum Erstellen eines Namespacealias verwendet.
@@ -514,7 +506,7 @@ Verhindert die Ableitung von Klassen. Verhindert, dass Methoden und Eigenschafte
         <code>instanceof</code>
       </td>
       <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/scekt9xw.aspx">is</a>
+        <a href="https://msdn.microsoft.com/en-us/library/scekt9xw.aspx"> ist gleich </a>
       </td>
       <td valign="top">
 Wertet aus, ob ein Objekt mit einem angegebenen Typ kompatibel ist.
@@ -658,7 +650,7 @@ Verhindert, dass eine Variable verschoben wird.
     </tr>
     <tr>
       <td valign="top">
-get </td>
+Abrufen </td>
       <td valign="top">
 Definiert eine Accessormethode, die den Wert einer Eigenschaft abruft.
       </td>
@@ -673,7 +665,7 @@ Ermöglicht es einem Parameter, einen weniger abgeleiteten Typ in einer generisc
     </tr>
     <tr>
       <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/9kkx3h3c.aspx">object</a>
+        <a href="https://msdn.microsoft.com/en-us/library/9kkx3h3c.aspx">Objekt</a>
       </td>
       <td valign="top">
 Ein Alias für den <code>Object</code>-Typ in .NET Framework.
@@ -753,7 +745,7 @@ Ruft den Typ eines Objekts ab.
     </tr>
     <tr>
       <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/bb383973.aspx">var</a>
+        <a href="https://msdn.microsoft.com/en-us/library/bb383973.aspx">"var"</a>
       </td>
       <td valign="top">
 Deklariert eine implizit typisierte lokale Variable.
@@ -792,7 +784,6 @@ Wenn Sie über vorhandene Java-Funktionalität verfügen, die Sie nicht nach C# 
 Weitere Informationen zu diesen Techniken finden Sie unter [Übersicht über die Java-Integration](~/android/platform/java-integration/index.md).
 
 
-<a name="further" />
 
 ## <a name="for-further-reading"></a>Weitere Informationen
 
@@ -803,7 +794,6 @@ So wie Java-Kenntnisse mindestens genauso viel mit der Vertrautheit mir den Java
 Wenn Sie bereit sind, Ihr erstes Xamarin.Android-Projekt in C# in Angriff zu nehmen, kann Ihnen unsere [Hallo Android](~/android/get-started/hello-android/index.md)-Serie dabei helfen, Ihre erste Xamarin.Android-Anwendung zu erstellen und Ihr Verständnis der Grundlagen der Android-Anwendungsentwicklung mit Xamarin weiter zu vertiefen.
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

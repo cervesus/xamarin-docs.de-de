@@ -6,12 +6,12 @@ ms.assetid: 405A1FA0-4EFA-4AEB-B672-F36307B9CF16
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 83997018f4e08567a9150bf1e21374a98c8ddb4e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 1d9cf345aa971c40f4132cc7970ed1244640da14
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-in-android"></a>Tippen Sie in Android
 
@@ -33,7 +33,7 @@ Die `MotionEvent` Objekt wird an einer geeigneten Methode in einer Anwendung üb
 
 
 > [!NOTE]
-> **Hinweis:** Touchscreens nicht allen Android-Geräten zu unterstützen. 
+> Nicht alle Android-Geräte unterstützen Touchscreens. 
 
 Hinzufügen der folgenden Tags in der Manifestdatei bewirkt, dass Google Play nur Anzeige Ihrer app für diese Geräte, die mit Toucheingabe aktiviert werden:
 
@@ -90,11 +90,11 @@ Gesten sind eine hervorragende Möglichkeit für Benutzer mit einer Anwendung in
 
 Seit Android 1.6 bietet Android SDK eine Anwendung auf dem Emulator Gesten-Generator vorinstalliert. Diese Anwendung ermöglicht Entwicklern das vordefinierte Gesten erstellen, die in eine Anwendung eingebettet werden kann. Der folgende Screenshot zeigt ein Beispiel des Gesten-Generators:
 
-[![Screenshot der Gesten Generator mit Beispiel-Gesten](touch-in-android-images/image11.png)](touch-in-android-images/image11.png)
+[![Screenshot der Gesten Generator mit Beispiel-Gesten](touch-in-android-images/image11.png)](touch-in-android-images/image11.png#lightbox)
 
 Eine verbesserte Version dieser Anwendung namens Gestenhandler-Tool kann Google Play gefunden werden. Gestenhandler-Tool ist sehr ähnlich wie Gesten-Generator, außer dass können Sie Gesten zu testen, nachdem sie erstellt wurden. Dieses nächste Screenshot zeigt Gesten-Generator:
 
-[![Screenshot der Gestenhandler Tool mit der Beispiel-Gesten](touch-in-android-images/image12.png)](touch-in-android-images/image12.png)
+[![Screenshot der Gestenhandler Tool mit der Beispiel-Gesten](touch-in-android-images/image12.png)](touch-in-android-images/image12.png#lightbox)
 
 Geste Tool etwas besser eignet sich zum Erstellen von benutzerdefinierter Gesten wie die Gesten getestet werden, wie sie erstellt wird, werden dadurch und problemlos über Google Play verfügbar ist.
 

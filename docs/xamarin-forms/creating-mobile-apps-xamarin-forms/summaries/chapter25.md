@@ -3,14 +3,15 @@ title: Zusammenfassung der Kapitel 25. Seite "-Varianten
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: bbe960357d9180df90a4423d6acfdf3f869d1b77
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 30642709519fc809d30da9a437728112f56a64d6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>Zusammenfassung der Kapitel 25. Seite "-Varianten
 
@@ -54,7 +55,7 @@ Die `Master` und `Detail` Eigenschaften werden definiert, mit visueller Struktur
 
 XAML-Datei fest, die auch die [ `IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/) Eigenschaft `MasterDetailPage` auf `True`. Dies bewirkt, dass die Gestaltungsvorlage, die beim Start angezeigt werden; Standardmäßig wird die Detailseite angezeigt. Die [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs) Dateisätzen `IsPresented` auf `false` Wenn ein Element ausgewählt ist, aus der `ListView` in die Masterseite. Die Seite "Details" wird angezeigt:
 
-[![Dreifacher Screenshot School und Detailebene](images/ch25fg09-small.png "Detailseite aus einem MasterDetailPage")](images/ch25fg09-large.png "Detailseite aus einem MasterDetailPage")
+[![Dreifacher Screenshot School und Detailebene](images/ch25fg09-small.png "Detailseite aus einem MasterDetailPage")](images/ch25fg09-large.png#lightbox "Detailseite aus einem MasterDetailPage")
 
 ### <a name="your-own-user-interface"></a>Eine eigene Benutzeroberfläche
 
@@ -98,7 +99,7 @@ Die [ **DiscreteTabbedColors** ](https://github.com/xamarin/xamarin-forms-book-s
 
 Für jede Seite, die in eine `TabbedPage`, die `Title` Eigenschaft ist erforderlich, um den Text auf der Registerkarte angeben, und dem Apple Store erfordert, dass ein Symbol ebenfalls verwendet werden daher die `Icon` Eigenschaftensatz für iOS:
 
-[![Dreifacher Screenshot der diskreten im Registerkartenformat Farben](images/ch25fg13-small.png "TabbedPage")](images/ch25fg13-large.png "TabbedPage")
+[![Dreifacher Screenshot der diskreten im Registerkartenformat Farben](images/ch25fg13-small.png "TabbedPage")](images/ch25fg13-large.png#lightbox "TabbedPage")
 
 Die [ **StudentNotes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/StudentNotes) Beispiel verfügt über eine Startseite, die alle Studenten auflistet. Wenn eine Student abgerufen wird, navigiert dies zu einer `TabbedPage` Ableitung [ `StudentNotesDataPage` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/StudentNotes/StudentNotes/StudentNotes/StudentNotesDataPage.xaml), die umfasst drei `ContentPage` in seiner visuellen Struktur zu Objekten, von denen einige Hinweise für diese Student eingeben kann.
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 234bd79754ae7f328d3207757156089441fc588c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0d418786a7364946e4e20100157fa0907b66deeb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="web-view"></a>Webansicht
 
@@ -96,7 +96,7 @@ Dadurch wird das Element initialisiert [ `WebView` ](https://developer.xamarin.c
 
 Erstellen Sie die App, und führen Sie sie aus. Eine einfache Webseite-Viewer-app sollte wie im folgenden Screenshot sehen angezeigt werden:
 
-[![Beispiel der Anzeige von einem WebView-app](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png)
+[![Beispiel der Anzeige von einem WebView-app](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png#lightbox)
 
 Behandeln der **wieder** Schaltfläche Tastendruck, fügen Sie die folgenden Anweisung:
 
@@ -122,7 +122,7 @@ Dies [ `OnKeyDown(int, KeyEvent)` ](https://developer.xamarin.com/api/member/And
 
 Führen Sie die Anwendung erneut aus. Sie sollten jetzt möglich, folgen Links, und navigieren über die Seitenverlauf zurück:
 
-[![Beispiel Screenshots der Schaltfläche "zurück", in Aktion](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png)
+[![Beispiel Screenshots der Schaltfläche "zurück", in Aktion](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png#lightbox)
 
 
 *Teile dieser Seite werden basierend auf der Arbeit erstellt und von Android Open Source-Projekt gemeinsam genutzt und verwendet entsprechend Begriffe, die in beschriebenen Änderungen der*

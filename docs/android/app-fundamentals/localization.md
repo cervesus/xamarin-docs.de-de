@@ -7,12 +7,12 @@ ms.assetid: D1277939-A1E8-468E-B136-820D816AF853
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: adfc0da404c6b9df79c3b2be51f8cafa302a6bc3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: c4800c1fe844a03c20b28079640a5ddab8046b1f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-localization"></a>Android Lokalisierung
 
@@ -81,7 +81,7 @@ Die meisten Entwickler sind bereits vertraut sind, mit der Verwendung von **dpi*
 ![Bildschirmabbildung von Ressourcen und Ausgaben möglich und Ressourcen-Werte für mehrere kulturellen Bezeichner](localization-images/resources.png)
 
 > [!NOTE]
-> **Hinweis:** beim Angeben einer anderen Sprache wie der obersten Ebene `es` nur zwei Zeichen erforderlich sind, aber wenn Sie ein vollständige Gebietsschema angeben, das Format des Verzeichnisses einen Bindestrich und Kleinbuchstaben erfordert **r** auf die beiden zu trennen Teile, z. B. **pt rBR** oder **Zh-rCN**. Vergleichen Sie dies mit den Rückgabewert in Code mit einem Unterstrich (z. b. `pt_BR`) angezeigt wird. Beide Fälle unterscheiden sich auf den Wert .NET `CultureInfo` -Klasse verwendet, verfügt über einen Bindestrich nur (z. b. `pt-BR`) angezeigt wird. Behalten Sie unter Berücksichtigung dieser Unterschiede beim Xamarin plattformübergreifend zu arbeiten.
+> Beim Angeben einer anderen Sprache wie der obersten Ebene `es` nur zwei Zeichen erforderlich sind, aber wenn Sie ein vollständige Gebietsschema angeben, das Format des Verzeichnisses einen Bindestrich und Kleinbuchstaben erfordert **r** trennen Sie die beiden Teile, z. B. **pt rBR** oder **Zh-rCN**. Vergleichen Sie dies mit den Rückgabewert in Code mit einem Unterstrich (z. b. `pt_BR`) angezeigt wird. Beide Fälle unterscheiden sich auf den Wert .NET `CultureInfo` -Klasse verwendet, verfügt über einen Bindestrich nur (z. b. `pt-BR`) angezeigt wird. Behalten Sie unter Berücksichtigung dieser Unterschiede beim Xamarin plattformübergreifend zu arbeiten.
 
 #### <a name="stringsxml-file-format"></a>Strings.XML-Dateiformat
 
@@ -164,13 +164,13 @@ In der **Strings.xml**
 
 ```xml
 <plurals name="numberOfTasks">
-         <!--
-                    As a developer, you should always supply "one" and "other"
-                    strings. Your translators will know which strings are actually
-                    needed for their language.
-             -->
-         <item quantity="one">There is %d task left.</item>
-         <item quantity="other">There are %d tasks still to do.</item>
+   <!--
+      As a developer, you should always supply "one" and "other"
+      strings. Your translators will know which strings are actually
+      needed for their language.
+    -->
+   <item quantity="one">There is %d task left.</item>
+   <item quantity="other">There are %d tasks still to do.</item>
  </plurals>
 ```
 
@@ -229,15 +229,13 @@ Bei Verwendung von Android 4.2 (API-Ebene 17) und höher, Ausrichtung keine beso
 
 Der folgende Screenshot zeigt die [lokalisierte **Tasky** Beispiel](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) in Arabisch:
 
-[![Screenshot der Tasky-app in Arabisch](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png) 
+[![Screenshot der Tasky-app in Arabisch](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png#lightbox) 
 
 Der nächste Screenshot zeigt die [lokalisierte **Tasky** Beispiel](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) in Hebräisch:
 
-[![Screenshot des Tasky app – Hebräisch](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png)
+[![Screenshot des Tasky app – Hebräisch](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png#lightbox)
 
 RTL-Text ist mit dem lokalisiert **Strings.xml** Dateien auf die gleiche Weise wie LTR Text.
-
-<a name="testing" />
 
 ## <a name="testing"></a>Test
 

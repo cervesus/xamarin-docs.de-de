@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/07/2017
-ms.openlocfilehash: 707ba5874c939fbd25f4e25a7cefd3dc5fc75131
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0ea6528ce3523ab5d829342e99ccf35ca3d69aa2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Remote-iOS-Simulator (für Windows)
 
 _IOS-apps testen und Debuggen vollständig in Visual Studio unter Windows_
 
-[ ![](ios-simulator-images/hero-sml.png "iOS-Simulator unter Windows")](ios-simulator-images/hero.png)
+[![](ios-simulator-images/hero-sml.png "iOS-Simulator unter Windows")](ios-simulator-images/hero.png#lightbox)
 
 ## <a name="download-and-install"></a>Herunterladen und installieren
 
@@ -36,7 +36,7 @@ So verwenden Sie den remote-iOS-simulator
 
 Können Sie den remote-iOS-Simulator aus deaktivieren **Tools > Optionen > Xamarin > für den iOS** durch das Kontrollkästchen für **Remote-Simulator für Windows** hier dargestellt:
 
-[ ![](ios-simulator-images/options-sml.png "Kontrollkästchen, um den Simulator verwenden.")](ios-simulator-images/options.png)
+[![](ios-simulator-images/options-sml.png "Kontrollkästchen, um den Simulator verwenden.")](ios-simulator-images/options.png#lightbox)
 
 IOS-Simulator wird auf dem verbundenen Mac-Computer geöffnet. Überprüfen Sie diese Option, um den remote-iOS-Simulator wieder zu aktivieren.
 
@@ -54,14 +54,14 @@ Die Symbolleiste des Fensters enthält eine Reihe von Schaltflächen für die In
 - [**Einstellungen** ](#settings) – konfigurieren Sie die Tastatur und Speicherort.
  - Andere [ **Optionen** ](#options) – eine Vielzahl von Simulator Optionen stehen zur Verfügung, z. B. drehen, Shake, oder rufen Sie andere Zustände im Simulator. Wenn einige Optionen verdeckt werden, können sie aus dem Symbol "Ellipse" zugegriffen werden, die in der Symbolleiste oder mit der rechten Maustaste auf das Fenster angezeigt wird.
 
-    [ ![](ios-simulator-images/maps-app-sml.png "iOS-Simulator zuordnet, Beispiel")](ios-simulator-images/maps-app.png)
+    [![](ios-simulator-images/maps-app-sml.png "iOS-Simulator zuordnet, Beispiel")](ios-simulator-images/maps-app.png#lightbox)
 
 
 ### <a name="settings"></a>Einstellungen
 
 Das Zahnradsymbol "" öffnet die **Einstellungen** Fenster:
 
-[ ![](ios-simulator-images/settings-sml.png "Einstellungen für iOS-simulator")](ios-simulator-images/settings.png)
+[![](ios-simulator-images/settings-sml.png "Einstellungen für iOS-simulator")](ios-simulator-images/settings.png#lightbox)
 
 Dadurch können Sie im Simulator die Hardwaretastatur aktivieren, und wählen der Speicherort auf dem Gerät (z. B. einen statischen Speicherort oder andere gleitenden Standortoptionen) gemeldet wird.
 
@@ -71,7 +71,7 @@ Dadurch können Sie im Simulator die Hardwaretastatur aktivieren, und wählen de
 
 Mit der rechten Sie Maustaste im simulatorfenster, um die im Simulator, wie Drehung, eine Geste Shake auslösen und Neustarten des Simulators verfügbaren Optionen anzuzeigen:
 
-[ ![](ios-simulator-images/more-sml.png "zusätzliche Einstellungen für iOS-simulator")](ios-simulator-images/more.png)
+[![](ios-simulator-images/more-sml.png "zusätzliche Einstellungen für iOS-simulator")](ios-simulator-images/more.png#lightbox)
 
 ### <a name="touchscreen-support"></a>Touchscreen-Unterstützung
 

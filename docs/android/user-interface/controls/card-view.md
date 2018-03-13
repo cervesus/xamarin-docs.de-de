@@ -7,18 +7,17 @@ ms.assetid: CF12FE85-D03A-4E64-95D2-D7115061A500
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: b8f643c8158c5a3a849a3d8ee3dd8d0e7e30addf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 46eec10bbabec74719affabce1e8033a083680be
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cardview"></a>CardView
 
 _Das Widget Cardview ist eine Benutzeroberflächenkomponente, die Text- und Image-Inhalt in den Ansichten bereitgestellt werden, die Karten ähneln. Dieses Handbuch erläutert das verwenden und Anpassen von CardView in Xamarin.Android Anwendungen Aufrechterhaltung der Abwärtskompatibilität mit früheren Versionen von Android._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -59,7 +58,6 @@ Hinzufügen der `Xamarin.Android.Support.v7.CardView` Paket in Visual Studio:
 So konfigurieren Sie ein Android 5.0-app-Projekt finden Sie unter [Einrichten einer Android 5.0-Projekt](~/android/platform/lollipop.md).
 Weitere Informationen zum Installieren von NuGet-Pakete finden Sie unter [Exemplarische Vorgehensweise: einschließlich eines NuGet in Ihrem Projekt](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
-<a name="basic" />
 
 ## <a name="introducing-cardview"></a>Einführung in CardView
 
@@ -94,11 +92,10 @@ Wenn Sie diese XML-Daten verwenden, um den vorhandenen Inhalt der ersetzen **Mai
 
 In diesem Beispiel Layout erstellt einen Standard- `CardView` mit einer Textzeile wie im folgenden Screenshot gezeigt:
 
-[![Screenshot der CardView mit weißem Hintergrund und Textzeile](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png)
+[![Screenshot der CardView mit weißem Hintergrund und Textzeile](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png#lightbox)
 
 In diesem Beispiel wird das app-Format das helle Design "Material" festgelegt ist (`Theme.Material.Light`), damit die `CardView` Schatten und Rändern leichter zu erkennen sind. Weitere Informationen zu Designumgebung Android 5.0-apps, finden Sie unter [Design "Material"](~/android/user-interface/material-theme.md). Im nächsten Abschnitt erfahren wir zum Anpassen `CardView` für eine Anwendung.
 
-<a name="customizing" />
 
 ## <a name="customizing-cardview"></a>Anpassen von CardView
 
@@ -159,30 +156,28 @@ Sie können diesen Namespace Aufrufen `card_view` oder sogar `myapp` auf Wunsch 
 
 Wenn in diesem Beispiel Layout verwendet wird, um ein Bild in einer app Fotos anzeigen anzuzeigen die `CardView` die Darstellung einer Momentaufnahme Foto hat, wie im folgenden Screenshot dargestellt:
 
-[![CardView mit einem Bild und Beschriftung unter dem Bild](card-view-images/03-photo-cardview-sml.png)](card-view-images/03-photo-cardview.png)
+[![CardView mit einem Bild und Beschriftung unter dem Bild](card-view-images/03-photo-cardview-sml.png)](card-view-images/03-photo-cardview.png#lightbox)
 
 Diesem Screenshot stammt aus der [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer) Beispiel-app verwendet einen `RecyclerView` Widgets zum Präsentieren von einer bildlauffähigen Liste mit `CardView` Bilder für die Anzeige von Fotos. Weitere Informationen zu `RecyclerView`, finden Sie unter der [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md) Handbuch.
 
 Beachten Sie, dass eine `CardView` mehr als eine untergeordnete Ansicht in seiner im Inhaltsbereich angezeigt werden können. Z. B. in der obigen Foto anzeigen von app-Beispiel Inhaltsbereichs besteht aus einem `ListView` , enthält eine `ImageView` und eine `TextView`. Obwohl `CardView` Instanzen werden häufig vertikal angeordnet, Sie können auch anordnen horizontal (finden Sie unter [erstellen eine benutzerdefinierte Ansicht Formatvorlage](~/android/user-interface/material-theme.md#customview) für eine Beispiel-Screenshot).
 
-<a name="layout" />
 
 ### <a name="cardview-layout-options"></a>CardView Layoutoptionen
 
 `CardView` Layouts können angepasst werden, indem Sie einem oder mehreren Attributen, die Auswirkungen auf die Auffüllung, Höhe, Eckradius und Hintergrundfarbe festlegen:
 
-[![Diagramm der CardView-Attribute](card-view-images/04-attributes-sml.png)](card-view-images/04-attributes.png)
+[![Diagramm der CardView-Attribute](card-view-images/04-attributes-sml.png)](card-view-images/04-attributes.png#lightbox)
 
 Jedes Attribut kann auch geändert werden, dynamisch durch Aufrufen einer Entsprechung `CardView` Methode (Weitere Informationen zu `CardView` Methoden, finden Sie unter der [CardView-Klassenreferenz](https://developer.android.com/reference/android/support/v7/widget/CardView.html)).
 Beachten Sie, dass diese Attribute (mit Ausnahme von Background-Farbe) einen Dimensionswert, der eine Dezimalzahl übernehmen, gefolgt von der Einheit ist. Beispielsweise `11.5dp` 11.5 Dichte typunabhängig Pixel angibt.
 
-<a name="padding" />
 
 #### <a name="padding"></a>Textabstand
 `
 CardView` bietet fünf Auffüllung-Attribute, um Inhalt in die Karte zu positionieren. Sie können sie festlegen, in dem Layout-XML oder Sie können analoge Methoden im Code aufrufen:
 
-[![Diagramm der CardView padding-Attribute](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png)
+[![Diagramm der CardView padding-Attribute](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
 
 Die Auffüllung Attribute werden wie folgt erläutert:
 
@@ -200,13 +195,12 @@ Inhalt Auffüllung Attribute sind relativ zu den Grenzen des Inhaltsbereichs und
 Z. B. wenn `contentPadding` wurden in der app Fotos anzeigen ausreichend erhöht die `CardView` würde schneiden Sie das Bild und Text auf der Karte angezeigt.
 
 
-<a name="elevation" />
 
 #### <a name="elevation"></a>Erhöhung der Rechte
 
 `CardView` bietet zwei Erhöhung-Attribute, um zu steuern, die Erhöhung der Rechte und demzufolge die Schattengröße:
 
-[![Diagramm der CardView Erhöhung Attribute](card-view-images/06-elevation-sml.png)](card-view-images/06-elevation.png)
+[![Diagramm der CardView Erhöhung Attribute](card-view-images/06-elevation-sml.png)](card-view-images/06-elevation.png#lightbox)
 
 Die Erhöhung der Rechte Attribute werden wie folgt erläutert:
 
@@ -217,13 +211,12 @@ Die Erhöhung der Rechte Attribute werden wie folgt erläutert:
 Größere Werte von `cardElevation` vergrößern Sie den Schatten vornehmen `CardView` "float" über dem Hintergrund höher scheinen. Die `cardElevation` Attribut bestimmt außerdem die Zeichnungsreihenfolge des überlappende Ansichten, d. h., die `CardView` unter einer anderen überlappende Ansicht mit einer höheren Einstellung für die Erhöhung der Rechte und höher überlappenden Ansichten mit einer niedrigeren Einstellung für die Erhöhung der Rechte gezeichnet wird.
 Die `cardMaxElevation` Einstellung eignet sich für die bei Ihrer app Erhöhung der Rechte kann dynamisch Änderungen in &ndash; verhindert, dass den Schatten Erweiterung über die Begrenzung, die Sie mit dieser Einstellung definieren.
 
-<a name="radius" />
 
 #### <a name="corner-radius-and-background-color"></a>Eckradius und Hintergrundfarbe
 
 `CardView` bietet die Attribute, die Sie verwenden können, um seine Eckradius und die Hintergrundfarbe zu steuern. Diese beiden Eigenschaften können Sie das allgemeine Format des Ändern der `CardView`:
 
-[![Diagramm der CardView Ecke radious und Farbe Hintergrundattribute](card-view-images/07-radius-bgcolor-sml.png)](card-view-images/07-radius-bgcolor.png)
+[![Diagramm der CardView Ecke radious und Farbe Hintergrundattribute](card-view-images/07-radius-bgcolor-sml.png)](card-view-images/07-radius-bgcolor.png#lightbox)
 
 Diese Attribute werden wie folgt erläutert:
 
@@ -233,8 +226,6 @@ Diese Attribute werden wie folgt erläutert:
 
 In diesem Diagramm `cardCornerRadius` festgelegt ist, um eine weitere abgerundeten 10dp und `cardBackgroundColor` festgelegt ist, um `"#FFFFCC"` (hellgelb).
 
-
-<a name="compatibility" />
 
 ## <a name="compatibility"></a>Kompatibilität
 
@@ -255,7 +246,6 @@ Als Hilfe bei der Verwaltung von Kompatibilität Unterschiede `CardView` enthäl
 
 Weitere Informationen zum Verwalten der Kompatibilität mit früheren Versionen von Android finden Sie unter [verwalten Kompatibilität](https://developer.android.com/training/material/compatibility.html).
 
-<a name="summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

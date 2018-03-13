@@ -5,20 +5,23 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 41e28366a856f5f0c12db6087117aebb4de72844
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5013b35828cecc2e38600839f306f3c0fc1366b9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>Verwenden ein Azure-Cosmos-DB-Dokumentdatenbank
 
 _Ein Azure-Cosmos-DB-dokumentdatenbank ist ein NoSQL-Datenbank, die mit geringer Latenz der Zugang zu JSON-Dokumente, bietet einen schnelle, hochverfügbare, skalierbare Datenbankdienst für Anwendungen, die eine nahtlose Skalierung und globale Replikation erforderlich sind. In diesem Artikel wird erläutert, wie die Microsoft Azure DocumentDB-Clientbibliothek verwenden, um ein Azure-Cosmos-DB-dokumentdatenbank in einer Xamarin.Forms-Anwendung zu integrieren._
 
-## <a name="overview"></a>Übersicht
+> [!VIDEO https://youtube.com/embed/BoVH12igmbg]
+
+**Microsoft Azure-Cosmos-DB, von [Xamarin University](https://university.xamarin.com/)**
 
 Ein Azure-Cosmos-DB-Dokument-Datenbankkonto kann mit einem Azure-Abonnement bereitgestellt werden. Jede Datenbankkonto kann keine oder mehrere Datenbanken verfügen. Eine dokumentdatenbank in Azure-Cosmos-DB ist ein logischer Container für dokumentauflistungen und Benutzer.
 

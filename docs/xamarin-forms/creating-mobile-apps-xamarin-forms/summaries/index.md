@@ -3,14 +3,15 @@ title: Kapitel Zusammenfassungen zum Erstellen von mobilen Apps mit Xamarin.Form
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 14A1A56C-CE91-4F86-BCF2-A4CB055A861E
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b88d227b272c34dd1c4d22fc707edce4df6dd91f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e2cf6033958848f0c1b16e78fbc3a3d18a6b4fd
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="chapter-summaries-for-creating-mobile-apps-with-xamarinforms"></a>Kapitel Zusammenfassungen zum Erstellen von mobilen Apps mit Xamarin.Forms
 
@@ -26,45 +27,45 @@ Die **ursprünglichen Code aus Buch** Verzweigung der [ **Xamarin-Forms-Book-Sam
 
 ## <a name="contents"></a>Inhalt
 
-[Chapter 1. Wie ist Xamarin.Forms angebracht?](chapter01.md)
+[Chapter 1. Welche Funktion hat Xamarin.Forms?](chapter01.md)
 
 [Kapitel 2. Aufbau einer App](chapter02.md)
 
-[Kapitel 3. Eine umfassendere in text](chapter03.md)
+[Kapitel 3. Details zu Text](chapter03.md)
 
-[Kapitel 4. Durchführen eines Bildlaufs im Stapel](chapter04.md)
+[Kapitel 4. Scrollen im Stapel](chapter04.md)
 
-[Kapitel 5. Umgang mit der Größe](chapter05.md)
+[Kapitel 5. Umgang mit Größen](chapter05.md)
 
-[Kapitel 6. Auf eine Schaltfläche](chapter06.md)
+[Kapitel 6. Schaltflächenklicks](chapter06.md)
 
-[Kapitel 7. XAML und code](chapter07.md)
+[Kapitel 7. XAML oder Code](chapter07.md)
 
-[Kapitel 8. Code und XAML-Code in harmonische](chapter08.md)
+[Kapitel 8. Verknüpfung von Code und XAML](chapter08.md)
 
-[Kapitel 9. Clientplattform-spezifische API-Aufrufe](chapter09.md)
+[Kapitel 9. Plattformspezifische API-Aufrufe](chapter09.md)
 
-[Kapitel 10. Verwendung von XAML-Markuperweiterungen](chapter10.md)
+[Kapitel 10. XAML-Markuperweiterungen](chapter10.md)
 
-[Kapitel 11. Die bindungsfähigen-Infrastruktur](chapter11.md)
+[Kapitel 11. Die bindbare Infrastruktur](chapter11.md)
 
 [Kapitel 12. Stile](chapter12.md)
 
 [Kapitel 13. Bitmaps](chapter13.md)
 
-[Kapitel 14. Absolute layout](chapter14.md)
+[Kapitel 14. Absolutes Layout](chapter14.md)
 
 [Kapitel 15. Die interaktive-Schnittstelle](chapter15.md)
 
 [Kapitel 16. Datenbindung](chapter16.md)
 
-[Kapitel 17. Das Raster Mastering](chapter17.md)
+[Kapitel 17. Optimieren des Rasters](chapter17.md)
 
 [Kapitel 18. MVVM](chapter18.md)
 
-[Kapitel 19. Auflistungsansichten](chapter19.md)
+[Kapitel 19. Sammlungsansichten](chapter19.md)
 
-[Kapitel 20. Async und Datei-e/a](chapter20.md)
+[Kapitel 20. Asynchrone Verarbeitung und Datei-E/A](chapter20.md)
 
 [Kapitel 21. Transformationen](chapter21.md)
 
@@ -74,13 +75,13 @@ Die **ursprünglichen Code aus Buch** Verzweigung der [ **Xamarin-Forms-Book-Sam
 
 [Kapitel 24. Seitennavigation](chapter24.md)
 
-[Chapter 25. Seite "-Varianten](chapter25.md)
+[Chapter 25. Seitenvarianten](chapter25.md)
 
-[Kapitel 26. Benutzerdefinierte layouts](chapter26.md)
+[Kapitel 26. Benutzerdefinierte Layouts](chapter26.md)
 
 [Kapitel 27. Benutzerdefinierte Renderer](chapter27.md)
 
-[Kapitel 28. Speicherort und Karten](chapter28.md)
+[Kapitel 28. Position und Karten](chapter28.md)
 
 
 

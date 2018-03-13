@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 0846dc8bdb3ac722838faa4173f5d30233912ecc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 86514dbd6b40e9d59ea9a598395cf6f0a3f4889a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Veröffentlichen im App Store
 
@@ -32,7 +32,7 @@ In diesem Dokument wird erläutert, wie Sie mit Visual Studio für Mac und Xcode
 
 Wenn Sie dem [Mac-Entwicklerprogramm](https://developer.apple.com/devcenter/mac/) beitreten, hat der Entwickler die Wahl, ob er einen Beitritt als Einzelperson oder als Unternehmen wünscht. Dies wird im folgenden Screenshot gezeigt:
 
-[![Das Apple-Entwicklerportal](images/image1.png "The Apple Developer Portal")](images/image1-large.png)
+[![Das Apple-Entwicklerportal](images/image1.png "The Apple Developer Portal")](images/image1-large.png#lightbox)
 
 Wählen Sie den richtigen Registrierungstyp für Ihre Situation aus.
 

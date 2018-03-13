@@ -7,18 +7,16 @@ ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/24/2018
-ms.openlocfilehash: 5f583fa78674b1b07d362e5171877e4ec3c861a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 012f563dcdaa70e33d641a4d8fb52df1622c260a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="setup-and-installation"></a>Setup und Installation
 
 _Dieser Artikel führt Sie durch die Installationsschritte und Konfigurationsdetails, die zum Vorbereiten der Computer und Geräte für Android Dach Entwicklung erforderlich. Am Ende dieses Artikels stehen Ihnen eine funktionierende Xamarin.Android Abnutzung-Installation in Visual Studio für Mac und/oder Microsoft Visual Studio integriert und verlaufen beim Erstellen Ihrer ersten Xamarin.Android Abnutzung-Anwendung bereit._
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -35,9 +33,7 @@ Folgendes ist erforderlich, um Android Dach Xamarin-basierten apps zu erstellen:
 Sie können weiterhin [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) Domänenmodus speziell für API-Ebene 23 entwickeln oder eine frühere Version.
 
 > [!IMPORTANT]
-> **Hinweis:** Xamarin.Android JDK 9 nicht unterstützt.
-
-<a name="installation" />
+> JDK 9 unterstützt Xamarin.Android nicht.
 
 ## <a name="installation"></a>Installation
 
@@ -49,7 +45,6 @@ Nach der Installation von Xamarin.Android führen Sie die folgenden Schritte aus
 
 Diese Schritte werden in den folgenden Abschnitten beschrieben.
 
-<a name="sdktools" />
 
 ### <a name="install-android-sdk-and-tools"></a>Android-SDK und-Tools installieren 
 

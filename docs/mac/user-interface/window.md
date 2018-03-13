@@ -3,16 +3,16 @@ title: Windows
 description: In diesem Artikel wird das Arbeiten mit Windows- und Bereiche in einer Anwendung Xamarin.Mac behandelt. Erstellen von Windows und Bereiche in Xcode und Schnittstelle-Generator Laden aus dem Storyboards und .xib Dateien und Arbeiten mit diesen programmgesteuerten beschrieben.
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
+ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: bcf95bf481d58f21e4adce6039c3eb02ce24b938
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f483fcfa9dfca1eb476ceab2b67e7a03bf4b6354
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="windows"></a>Windows
 
@@ -29,7 +29,7 @@ Windows kann, modale (z. B. ein Dialogfeld "Export", die verworfen werden muss, 
 
 Bereiche sind eine besondere Art von Fenster (eine Unterklasse des basistexts `NSWindow` Klasse), in der Regel eine zusätzliche Funktion in einer Anwendung, z. B. Dienstprogramm Windows wie Text-Format Inspektoren und System-Farbauswahl dienen.
 
-[ ![](window-images/intro01.png "Bearbeiten eines Fensters in Xcode")](window-images/intro01.png)
+[![](window-images/intro01.png "Bearbeiten eines Fensters in Xcode")](window-images/intro01.png#lightbox)
 
 In diesem Artikel werden die Grundlagen der Arbeit mit Windows und Bereiche in einer Anwendung Xamarin.Mac eingegangen. Wird mit hoher vorgeschlagen, dass Sie über arbeiten die [Hello, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Benutzeroberflächen-Generator](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) und [Steckdosen und Aktionen](~/mac/get-started/hello-mac.md#Outlets_and_Actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die in diesem Artikel verwendet werden.
 
@@ -96,7 +96,7 @@ Weitere Informationen finden Sie unter der [Vollbildmodus Windows](https://devel
 
 Ein Bereich ist ein zusätzliches Fenster, das Steuerelemente und Optionen, die Einfluss auf das aktive Dokument oder die Auswahl (z. B. das System Farbauswahl) enthält:
 
-[ ![](window-images/panel01.png "Eine Farbpalette")](window-images/panel01.png)
+[![](window-images/panel01.png "Eine Farbpalette")](window-images/panel01.png#lightbox)
 
 Bereiche können es sich um _App-spezifisches_ oder _systemweiten_. App-spezifisches Bereiche über den oberen Rand der Anwendung Dokumentfenster float und nicht mehr angezeigt, wenn die Anwendung im Hintergrund ist. Systemweiten Bereiche (z. B. die **Schriftarten** Bereich), "float", zusätzlich zu allen geöffneten Fenstern unabhängig von der Anwendung. 
 
@@ -112,7 +112,7 @@ Apple empfiehlt es sich um die folgenden Richtlinien:
 
 Die meisten moderne MacOS Anwendungen vorhanden, zusätzliche Steuerelemente und Optionen, die Einfluss auf das aktive Dokument oder die Auswahl als _Inspektoren_ , sind Teil des Hauptfensters (z. B. die **Seiten** app siehe unten), Anstatt Bereich Windows:
 
-[ ![](window-images/panel02.png "Ein Beispiel-Inspektor")](window-images/panel02.png)
+[![](window-images/panel02.png "Ein Beispiel-Inspektor")](window-images/panel02.png#lightbox)
 
 Weitere Informationen finden Sie unter der [Bereiche](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowPanels.html#//apple_ref/doc/uid/20000957-CH42-SW1) Abschnitt der Apple [OS X-Richtlinien für menschliche Benutzeroberfläche](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) und unseren [MacInspector](https://developer.xamarin.com/samples/mac/MacInspector/) Beispiel-app für eine vollständige Implementierung der ein **Inspektor Schnittstelle** in einer Xamarin.Mac-app.
 
@@ -122,11 +122,11 @@ Weitere Informationen finden Sie unter der [Bereiche](https://developer.apple.co
 
 Wenn Sie eine neue Xamarin.Mac Kakao-Anwendung erstellen, erhalten Sie Standardfensters leer ist, wird standardmäßig an. Dieses Windows wird definiert, einem `.storyboard` automatisch im Projekt enthaltene Datei. So bearbeiten Sie die Windows-Design in der **Projektmappen-Explorer**, doppelklicken klicken Sie auf die `Main.storyboard` Datei:
 
-[ ![](window-images/edit01.png "Die Haupt-Storyboard auswählen")](window-images/edit01.png)
+[![](window-images/edit01.png "Die Haupt-Storyboard auswählen")](window-images/edit01.png#lightbox)
 
 Dies öffnet das Fenster Design in Xcodes Benutzeroberflächen-Generator:
 
-[ ![](window-images/edit02.png "Bearbeiten die Benutzeroberfläche in Xcode")](window-images/edit02.png)
+[![](window-images/edit02.png "Bearbeiten die Benutzeroberfläche in Xcode")](window-images/edit02.png#lightbox)
 
 In der **Attribut Inspektor**, es gibt mehrere Eigenschaften, die Sie zum Definieren und steuern die Fenster verwenden können:
 
@@ -160,7 +160,7 @@ Finden Sie in der Apple- [Einführung in Windows](https://developer.apple.com/li
 
 Um die Anfangsposition des Fensters festgelegt und dessen Größe zu steuern, wechseln Sie zu der **Größe Inspektor**:
 
-[ ![](window-images/edit07.png "Die standardmäßige Größe und Position")](window-images/edit07.png)
+[![](window-images/edit07.png "Die standardmäßige Größe und Position")](window-images/edit07.png#lightbox)
 
 Von hier aus können die Anfangsgröße des Fensters, weisen Sie ihm eine minimale und maximale Größe, legen Sie die ursprüngliche Position auf dem Bildschirm und steuern die Rahmen um das Fenster.
 
@@ -176,15 +176,15 @@ Führen Sie folgende Schritte aus:
 2. Wählen Sie die `NSWindowController` in der Entwurfsoberfläche angezeigt.
 3. Wechseln Sie zu der **Identität Inspektor** anzuzeigen, und geben Sie `WindowController` als die **Klassenname**: 
 
-    [ ![](window-images/windowcontroller01.png "Der Name der Klasse festlegen")](window-images/windowcontroller01.png)
+    [![](window-images/windowcontroller01.png "Der Name der Klasse festlegen")](window-images/windowcontroller01.png#lightbox)
 4. Die Änderungen zu speichern und zurück zu Visual Studio für Mac synchronisiert werden.
 5. Ein `WindowController.cs` Datei wird hinzugefügt werden, um das Projekt in der **Projektmappen-Explorer** in Visual Studio für Mac: 
 
-    [ ![](window-images/windowcontroller02.png "Auswählen der Windows-Domänencontroller")](window-images/windowcontroller02.png)
+    [![](window-images/windowcontroller02.png "Auswählen der Windows-Domänencontroller")](window-images/windowcontroller02.png#lightbox)
 6. Öffnen Sie das Storyboard in Xcode des Benutzeroberflächen-Generator.
 7. Die `WindowController.h` -Datei wird für die Verwendung verfügbar sein: 
 
-    [ ![](window-images/windowcontroller03.png "Bearbeiten der Datei WindowController.h")](window-images/windowcontroller03.png)
+    [![](window-images/windowcontroller03.png "Bearbeiten der Datei WindowController.h")](window-images/windowcontroller03.png#lightbox)
 
 <a name="Adding_UI_Elements" />
 
@@ -194,21 +194,21 @@ Ziehen Sie Steuerelemente aus, um den Inhalt eines Fensters zu definieren, die *
 
 Beispielsweise können wir ziehen Sie die Symbolleiste aus der **Bibliothek Inspektor** auf das Fenster in der **Benutzeroberflächen-Editors**:
 
-[ ![](window-images/edit03.png "Auswählen einer Symbolleiste aus der Bibliothek")](window-images/edit03.png)
+[![](window-images/edit03.png "Auswählen einer Symbolleiste aus der Bibliothek")](window-images/edit03.png#lightbox)
 
 Ziehen Sie anschließend eine **Textansicht** und seine Größe ändern, um die Fläche unter der Symbolleiste aufgefüllt:
 
-[ ![](window-images/edit04.png "Hinzufügen einer Textansicht")](window-images/edit04.png)
+[![](window-images/edit04.png "Hinzufügen einer Textansicht")](window-images/edit04.png#lightbox)
 
 Da wir möchten die **Textansicht** wir zum Verkleinern und vergrößern die Fenstergröße ändert, wechseln Sie zu der **Einschränkung Editor** und fügen Sie die folgenden Einschränkungen:
 
-[ ![](window-images/edit05.png "Bearbeiten von Einschränkungen")](window-images/edit05.png)
+[![](window-images/edit05.png "Bearbeiten von Einschränkungen")](window-images/edit05.png#lightbox)
 
 Durch Klicken auf die für **I-Balken rot** am oberen des Editors und durch Klicken auf **4 Einschränkungen hinzufügen**, sagen wir Textansicht Speicherstick auf den angegebenen X-und Y-Koordinaten und vergrößert oder verkleinert werden horizontal und vertikal als die Fenstergröße geändert wird.
 
 Wir schließlich verfügbar zu machen die **Textansicht** codieren, verwenden eine **Steckdose** (vornehmen möchten, wählen Sie die `ViewController.h` Datei):
 
-[ ![](window-images/edit06.png "Konfigurieren von einer Steckdose")](window-images/edit06.png)
+[![](window-images/edit06.png "Konfigurieren von einer Steckdose")](window-images/edit06.png#lightbox)
 
 Speichern Sie die Änderungen zu, und wechseln Sie zurück zu Visual Studio für Mac mit Xcode zu synchronisieren.
 
@@ -237,17 +237,17 @@ Nun, da wir einen grundlegenden Windows erstellt haben, betrachten die typische 
 
 Standardmäßig eine neue Xamarin.Mac-Anwendung zeigt automatisch das Fenster definiert, der `MainWindow.xib` Datei gestartet wird:
 
-[ ![](window-images/display01.png "Ein Beispiel-Fenster Ausführen")](window-images/display01.png)
+[![](window-images/display01.png "Ein Beispiel-Fenster Ausführen")](window-images/display01.png#lightbox)
 
 Da wir das Design dieser oben im Fenster geändert haben, enthält es jetzt einen Standard-Symbolleiste und **Textansicht** Steuerelement. Im folgenden Abschnitt die `Info.plist` Datei ist verantwortlich für die Anzeige dieses Fensters:
 
-[ ![](window-images/display00.png "Bearbeiten der Datei "Info.plist"")](window-images/display00.png)
+[![](window-images/display00.png "Bearbeiten der Datei "Info.plist"")](window-images/display00.png#lightbox)
 
 Die **Hauptbenutzeroberfläche** Dropdownliste wird verwendet, um das Storyboard auswählen, die als die Haupt-app-Benutzeroberfläche verwendet wird (in diesem Fall `Main.storyboard`).
 
 Eine View-Controller wird automatisch dem Projekt hinzugefügt, die Windows-Main steuern, der (zusammen mit seiner Hauptansicht) angezeigt wird. Ist im definiert die `ViewController.cs` Datei und angefügt werden die **des Dateibesitzer** in Benutzeroberflächen-Generator unter der **Identität Inspektor**:
 
-[ ![](window-images/display02.png "Der Besitzer der Datei festlegen")](window-images/display02.png)
+[![](window-images/display02.png "Der Besitzer der Datei festlegen")](window-images/display02.png#lightbox)
 
 Für unsere Fenster möchten wir, sie haben einen beliebigen Titel `untitled` beim ersten Öffnen wir also Außerkraftsetzung der `ViewWillAppear` Methode in der `ViewController.cs` wie folgt aussehen:
 
@@ -313,11 +313,11 @@ Würden Sie zum Schließen der `MyWindow` `NSWindow` Instanz.
 
 Apple hat in MacOS, eine Möglichkeit, den Benutzer zu informieren bereitgestellt, die den Inhalt eines Fensters (`NSWindow`) wurde vom Benutzer geändert und gespeichert werden muss. Wenn das Fenster geänderten Inhalt enthält, ein kleiner schwarzer Punkt erscheint in der **schließen** Widget:
 
-[ ![](window-images/close01.png "Ein Fenster mit den geänderten marker")](window-images/close01.png)
+[![](window-images/close01.png "Ein Fenster mit den geänderten marker")](window-images/close01.png#lightbox)
 
 Wenn der Benutzer versucht, das Fenster schließen oder beenden Sie die Mac-App sind nicht gespeicherte Inhalt des Fensters ändert, sollten Sie präsentieren einer [Dialogfeld](~/mac/user-interface/dialog.md) oder [modale Blatt](~/mac/user-interface/dialog.md) und ermöglicht dem Benutzer ihre Änderungen zu speichern erste:
 
-[ ![](window-images/close02.png "Ein Blatt wird angezeigt, wenn das Fenster geschlossen wird gespeichert")](window-images/close02.png)
+[![](window-images/close02.png "Ein Blatt wird angezeigt, wenn das Fenster geschlossen wird gespeichert")](window-images/close02.png#lightbox)
 
 ### <a name="marking-a-window-as-modified"></a>Markieren ein Fenster geändert
 
@@ -485,11 +485,11 @@ void NewDocument (NSObject sender) {
 
 Dieser Code erstellt eine neue Version des unserer Fenster Controller, lädt das neue Fenster der Haupt- und der Schlüssel Fenster vereinfacht und Titel wird. Wenn wir unsere Anwendung auszuführen, und wählen Sie nun **neu** aus der **Datei** Menü ein neues Editorfenster geöffnet und angezeigt werden:
 
-[ ![](window-images/display04.png "Es wurde ein neues unbenanntes Fenster hinzugefügt.")](window-images/display04.png)
+[![](window-images/display04.png "Es wurde ein neues unbenanntes Fenster hinzugefügt.")](window-images/display04.png#lightbox)
 
 Wenn wir öffnen die **Windows** Menü, sehen Sie die Anwendung automatisch nachverfolgen und Behandeln von unseren geöffneten Fenstern:
 
-[ ![](window-images/display05.png "Klicken Sie im Windows-Menü")](window-images/display05.png)
+[![](window-images/display05.png "Klicken Sie im Windows-Menü")](window-images/display05.png#lightbox)
 
 Weitere Informationen zum Arbeiten mit Menüs in einer Anwendung Xamarin.Mac finden Sie unter unsere [arbeiten mit Menüs](~/mac/user-interface/menu.md) Dokumentation.
 
@@ -559,7 +559,7 @@ Es gibt möglicherweise Zeiten, in dem Sie Änderungen an der ein Fenster Größ
 
 Informationen zum Überwachen der Fenstergröße ändert zunächst sicherstellen Sie, dass Sie eine benutzerdefinierte Klasse für den Controller Fenster in Xcodes Benutzeroberflächen-Generator zugewiesen haben. Z. B. `MasterWindowController` in der folgenden:
 
-[ ![](window-images/resize01.png "Der Identity-Inspektor")](window-images/resize01.png)
+[![](window-images/resize01.png "Der Identity-Inspektor")](window-images/resize01.png#lightbox)
 
 Als Nächstes Bearbeiten des benutzerdefinierten Fenster Controllerklasse und zum Überwachen der `DidResize` Ereignis auf der Controller Fenster live größenveränderung benachrichtigt zu werden. Zum Beispiel:
 
@@ -643,11 +643,11 @@ public override void AwakeFromNib ()
 
 Wir sind auch Überwachung der `WillClose` Ereignis in das Fenster und Überprüfung des Status der `DocumentEdited` Eigenschaft. Ist er `true` muss dem Benutzer Zugriff auf die Änderungen zu speichern, um die Datei zu gewähren. Wenn wir unsere app ausführen und Text eingeben, wird der Punkt angezeigt:
 
-[ ![](window-images/file01.png "Eine geänderte Fenster")](window-images/file01.png)
+[![](window-images/file01.png "Eine geänderte Fenster")](window-images/file01.png#lightbox)
 
 Wenn Sie versuchen, das Fenster schließen, erhalten wir eine Warnung aus:
 
-[ ![](window-images/file02.png "Anzeigen eines Speichervorgangs Dialogfeld")](window-images/file02.png)
+[![](window-images/file02.png "Anzeigen eines Speichervorgangs Dialogfeld")](window-images/file02.png#lightbox)
 
 Wenn wir ein Dokument aus einer Datei laden können wir den Titel des Fensters festlegen, auf der Datei mithilfe der `window.SetTitleWithRepresentedFilename (Path.GetFileName(path));` Methode (davon ausgehend, dass `path` ist eine Zeichenfolge, die zu öffnende Datei darstellt). Wir können darüber hinaus legen Sie die URL der Datei unter Verwendung der `window.RepresentedUrl = url;` Methode.
 
@@ -690,11 +690,11 @@ void OpenDialog (NSObject sender)
 
 Wählen Sie jetzt beim Ausführen dieser app, **öffnen...**  aus der **Datei** klicken Sie im Menü eine Textdatei aus der **öffnen** Dialogfeld Feld, und öffnen Sie ihn:
 
-[ ![](window-images/file03.png "Ein geöffnetes Dialogfenster")](window-images/file03.png)
+[![](window-images/file03.png "Ein geöffnetes Dialogfenster")](window-images/file03.png#lightbox)
 
 Die Datei wird angezeigt, und der Titel wird durch das Symbol der Datei festgelegt werden:
 
-[ ![](window-images/file04.png "Der Inhalt einer Datei geladen.")](window-images/file04.png)
+[![](window-images/file04.png "Der Inhalt einer Datei geladen.")](window-images/file04.png#lightbox)
 
 <a name="Adding_a_New_Window_to_a_Project" />
 
@@ -707,22 +707,22 @@ Um ein neues Fenster hinzuzufügen, führen Sie folgende Schritte aus:
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` Datei, um ihn zur Bearbeitung in Xcodes Benutzeroberflächen-Generator zu öffnen.
 2. Ziehen Sie ein neues **Fenster Controller** aus der **Bibliothek** und legen sie auf der **Entwurfsoberfläche**:
 
-    [ ![](window-images/new01.png "Auswählen von einem neuen Fenster Controller in der Bibliothek")](window-images/new01.png)
+    [![](window-images/new01.png "Auswählen von einem neuen Fenster Controller in der Bibliothek")](window-images/new01.png#lightbox)
 3. In der **Identität Inspektor**, geben Sie `PreferencesWindow` für die **Storyboard-ID**: 
 
-    [ ![](window-images/new02.png "Festlegen der Storyboard-ID")](window-images/new02.png)
+    [![](window-images/new02.png "Festlegen der Storyboard-ID")](window-images/new02.png#lightbox)
 5. Entwerfen Sie Ihre Schnittstelle: 
 
-    [ ![](window-images/new03.png "Entwerfen der Benutzeroberflächenautomatisierungs")](window-images/new03.png)
+    [![](window-images/new03.png "Entwerfen der Benutzeroberflächenautomatisierungs")](window-images/new03.png#lightbox)
 6. Öffnen Sie das App-Menü (`MacWindows`), wählen **Einstellungen...** , Steuerelement klicken und ziehen, um das neue Fenster: 
 
-    [ ![](window-images/new05.png "Erstellen eine segue")](window-images/new05.png)
+    [![](window-images/new05.png "Erstellen eine segue")](window-images/new05.png#lightbox)
 7. Wählen Sie **anzeigen** im Popupmenü.
 6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode zu synchronisieren.
 
 Wenn wir führen Sie den Code, und wählen Sie die **Einstellungen...**  aus der **Anwendungsmenü**, das Fenster wird angezeigt:
 
-[ ![](window-images/new04.png "Eine Beispiel-Menü "Einstellungen"")](window-images/new04.png)
+[![](window-images/new04.png "Eine Beispiel-Menü "Einstellungen"")](window-images/new04.png#lightbox)
 
 <a name="Working_with_Panels" />
 
@@ -742,7 +742,7 @@ Genau wie jeder andere Typ von Fenster, das Sie erstellen und in der Anwendung X
 
 In der **Attribut Inspektor**, Sie haben die folgenden Optionen, die spezifisch für Bereiche:
 
-[ ![](window-images/panel03.png "Die Attribut-Inspektor")](window-images/panel03.png)
+[![](window-images/panel03.png "Die Attribut-Inspektor")](window-images/panel03.png#lightbox)
 
 - **Stil** -können Sie das Format des Bereichs von anpassen: reguläre Bereich (anscheinend Standardfensters), Utility Bereich (hat eine kleinere Titelleiste), HUD-Bereich (transparent ist und die Titelleiste ist Bestandteil des Hintergrunds).
 - **Nicht aktiviert** -bestimmt in das Panel wird das Fenster.
@@ -754,20 +754,20 @@ Um einen neuen Bereich hinzuzufügen, führen Sie folgende Schritte aus:
 1. In der **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen** > **neue Datei...** .
 2. Wählen Sie im Dialogfeld "neue Datei" **Xamarin.Mac** > **Kakao-Fenster mit Controller**:
 
-    [ ![](window-images/panels00.png "Hinzufügen eines neuen Fensters-Controllers")](window-images/panels00.png)
+    [![](window-images/panels00.png "Hinzufügen eines neuen Fensters-Controllers")](window-images/panels00.png#lightbox)
 3. Geben Sie für den **Namen** `DocumentPanel` ein, und klicken Sie auf **Neu**.
 4. Doppelklicken Sie auf die `DocumentPanel.xib` Datei, um ihn zur Bearbeitung in der Benutzeroberflächen-Generator zu öffnen: 
 
-    [ ![](window-images/new02.png "Bearbeiten die pannel")](window-images/new02.png)
+    [![](window-images/new02.png "Bearbeiten die pannel")](window-images/new02.png#lightbox)
 5. Löschen Sie das vorhandene Fenster, und ziehen Sie ein Panel aus der **Bibliothek Inspektor** in der die **Benutzeroberflächen-Editors**: 
 
-    [ ![](window-images/panels01.png "Löschen von vorhandenen Fenster")](window-images/panels01.png)
+    [![](window-images/panels01.png "Löschen von vorhandenen Fenster")](window-images/panels01.png#lightbox)
 6. Verknüpfen Sie den Bereich bis zu der **des Dateibesitzer*-**Fenster*- **Nachrichtenplattform**: 
 
-    [ ![](window-images/panels02.png "Ziehen Weise wird das panel")](window-images/panels02.png)
+    [![](window-images/panels02.png "Ziehen Weise wird das panel")](window-images/panels02.png#lightbox)
 7. Wechseln Sie zu der **Identität Inspektor** und legen Sie im Bereich-Klasse den `DocumentPanel`: 
 
-    [ ![](window-images/panels03.png "Festlegen des Bereichs-Klasse")](window-images/panels03.png)
+    [![](window-images/panels03.png "Festlegen des Bereichs-Klasse")](window-images/panels03.png#lightbox)
 6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode zu synchronisieren.
 7. Bearbeiten der `DocumentPanel.cs` Datei, und ändern Sie die Klassendefinition in Folgendes: 
 
@@ -788,7 +788,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 Wenn wir unsere Anwendung ausführen, wird das Panel angezeigt:
 
-[ ![](window-images/panels04.png "Der Bereich in einer ausgeführten app")](window-images/panels04.png)
+[![](window-images/panels04.png "Der Bereich in einer ausgeführten app")](window-images/panels04.png#lightbox)
 
 > [!IMPORTANT]
 > Bereich Windows von Apple veraltet und sollten ersetzt werden, mit **Inspektor Schnittstellen**. Ein vollständiges Beispiel zum Erstellen einer **Inspektor** in einer app Xamarin.Mac finden Sie unter unsere [MacInspector](https://developer.xamarin.com/samples/mac/MacInspector/) Beispiel-app.
@@ -805,5 +805,5 @@ Dieser Artikel hat eine ausführliche Übersicht über das Arbeiten mit Windows-
 - [MacInspector (Beispiel)](https://developer.xamarin.com/samples/mac/MacInspector/)
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
 - [Arbeiten mit Menüs](~/mac/user-interface/menu.md)
-- [OS X Human Richtlinien zur Benutzeroberfläche](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Einführung in Windows](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

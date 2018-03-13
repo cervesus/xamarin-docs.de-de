@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: a2c3ce9e19340067d77a8bc131b5a247806ecfa1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 36c793e7a9b7b30bcb0cdf2c7959fd2df36c8775
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-the-file-system"></a>Arbeiten mit dem Dateisystem
 
@@ -26,7 +26,7 @@ iOS verfügt auch über einige Funktionen Datei: bestimmte Verzeichnisse erforde
 
 Dieser Artikel beschreibt die Funktionen und Einschränkungen des iOS-Dateisystem im Detail und eine beispielanwendung, die Xamarin.iOS auszuführende einige einfache Dateisystemvorgänge veranschaulicht:
 
- [ ![](file-system-images/05-sampleapp.png "Ein Beispiel für iOS ausführen einige einfache Dateisystemvorgänge")](file-system-images/05-sampleapp.png)
+ [![](file-system-images/05-sampleapp.png "Ein Beispiel für iOS ausführen einige einfache Dateisystemvorgänge")](file-system-images/05-sampleapp.png#lightbox)
 
  <a name="General_File_Access" />
 
@@ -110,7 +110,7 @@ Weitere Informationen zu den System.IO-Namespace, finden Sie unter der [MSDN-Dok
 
 Arbeiten mit Json Daten in einer Anwendung Xamarin.iOS ist sehr einfach mit der [Json.NET](http://www.newtonsoft.com/json) Hochleistungs-JSON-Framework für .NET NuGet-Paket. Fügen Sie einfach das NuGet-Paket, das Projekt Ihrer Anwendung: 
 
-[ ![](file-system-images/json01.png "Das NuGet-Paket hinzufügen zum Projekt Anwendungen")](file-system-images/json01.png)
+[![](file-system-images/json01.png "Das NuGet-Paket hinzufügen zum Projekt Anwendungen")](file-system-images/json01.png#lightbox)
 
 Als Nächstes fügen Sie eine Klasse, die als Datenmodell für die Serialisierung/Deserialisierung fungiert (in diesem Fall `Account.cs`):
 
@@ -217,11 +217,11 @@ Wenn Sie die Anwendungspaket unter Mac OS durchsuchen, wird ein anderes Symbol a
 
 Um das Anwendungspaket für den Beispielcode anzuzeigen, mit der rechten Maustaste auf das Projekt in Visual Studio für Mac, und wählen **enthaltenden Ordner öffnen**. Navigieren Sie zu **"bin" /Debug/** sollten finden Sie ein Anwendungssymbol (vergleichbar mit dem folgenden Screenshot).
 
- [ ![](file-system-images/40-bundle.png "Navigieren Sie zu "bin" / Debug, um ein Anwendungssymbol ähnlich wie in diesem Screenshot suchen")](file-system-images/40-bundle.png)
+ [![](file-system-images/40-bundle.png "Navigieren Sie zu "bin" / Debug, um ein Anwendungssymbol ähnlich wie in diesem Screenshot suchen")](file-system-images/40-bundle.png#lightbox)
 
 Mit der rechten Maustaste auf das Symbol, und wählen Sie **Anzeigen des Paketinhalts** den Inhalt des Verzeichnisses Anwendungspaket durchsuchen. Der Inhalt wird wie der Inhalt eines regulären Verzeichnisses angezeigt, wie hier gezeigt:
 
- [ ![](file-system-images/45-bundle.png "Der Inhalt des app-Pakets")](file-system-images/45-bundle.png)
+ [![](file-system-images/45-bundle.png "Der Inhalt des app-Pakets")](file-system-images/45-bundle.png#lightbox)
 
 Anwendungspaket ist, was im Simulator oder auf Ihrem Gerät installiert ist, während der Tests und letztlich ist was für die Aufnahme in den App Store an Apple gesendet wird.
 
@@ -313,7 +313,7 @@ Der Inhalt dieses Verzeichnisses werden nie an den Benutzer über iTunes verfüg
 
 Diese bildschirmabbildung zeigt die Verzeichnisstruktur, geben Sie im Finder:
 
- [ ![](file-system-images/08-library-directory.png "Diese bildschirmabbildung zeigt die Verzeichnisstruktur, geben Sie im Finder")](file-system-images/08-library-directory.png)
+ [![](file-system-images/08-library-directory.png "Diese bildschirmabbildung zeigt die Verzeichnisstruktur, geben Sie im Finder")](file-system-images/08-library-directory.png#lightbox)
 
  <a name="Accessing_Other_Directories_Programmatically" />
 
@@ -352,11 +352,11 @@ var tmp = Path.Combine (documents, "..", "tmp");
 
 Benutzer können die Dateien im Verzeichnis "Dokumente" Ihre Anwendung zugreifen, indem Sie die Bearbeitung `Info.plist` und erstellen eine **Anwendung unterstützt iTunes Freigabe** (`UIFileSharingEnabled`) Eintrag in der **Quelle** Ansicht als hier gezeigt:
 
- [ ![](file-system-images/09-uifilesharingenabled-plist.png "Hinzufügen der Anwendung unterstützt iTunes-Freigabe-Eigenschaft")](file-system-images/09-uifilesharingenabled-plist.png)
+ [![](file-system-images/09-uifilesharingenabled-plist.png "Hinzufügen der Anwendung unterstützt iTunes-Freigabe-Eigenschaft")](file-system-images/09-uifilesharingenabled-plist.png#lightbox)
 
 Diese Dateien können im iTunes zugegriffen werden, wenn das Gerät verbunden ist und der Benutzer wählt die `Apps` Registerkarte. Das folgende Bildschirmfoto zeigt z. B. die Dateien im ausgewählten freigegebenen über iTunes app:
 
- [ ![](file-system-images/10-itunes-file-sharing.png "Diese bildschirmabbildung zeigt die Dateien im ausgewählten freigegebenen über iTunes app")](file-system-images/10-itunes-file-sharing.png)
+ [![](file-system-images/10-itunes-file-sharing.png "Diese bildschirmabbildung zeigt die Dateien im ausgewählten freigegebenen über iTunes app")](file-system-images/10-itunes-file-sharing.png#lightbox)
 
 Benutzer können nur die Elemente der obersten Ebene in diesem Verzeichnis über iTunes zugreifen. Sie können nicht den Inhalt der Unterverzeichnisse (obwohl sie können auf ihre Computer kopieren oder löschen) finden Sie unter. Beispielsweise können für GoodReader, PDF und epub-Dateien mit der Anwendung freigegeben werden, damit Benutzer auf ihre iOS-Geräten gelesen werden können.
 
@@ -364,7 +364,7 @@ Benutzer, die den Inhalt von ihren Ordner "Dokumente" nicht ändern können Prob
 
 Der Beispielcode für diesen Artikel erstellt eine Datei und einen Ordner im Ordner "Dokumente" (in **SampleCode.cs**) und ermöglicht die Dateifreigabe, die der **"Info.plist"** Datei. Diese bildschirmabbildung zeigt, wie diese in iTunes angezeigt werden:
 
- [ ![](file-system-images/15-itunes-file-sharing-example.png "Diese Abbildung zeigt, wie die Dateien im iTunes dargestellt")](file-system-images/15-itunes-file-sharing-example.png)
+ [![](file-system-images/15-itunes-file-sharing-example.png "Diese Abbildung zeigt, wie die Dateien im iTunes dargestellt")](file-system-images/15-itunes-file-sharing-example.png#lightbox)
 
 Finden Sie in der [arbeiten mit Bildern](~/ios/app-fundamentals/images-icons/index.md) Artikel finden Sie Informationen über das Festlegen von Symbolen für die Anwendung und für alle benutzerdefinierten Typen, die Sie erstellen.
 

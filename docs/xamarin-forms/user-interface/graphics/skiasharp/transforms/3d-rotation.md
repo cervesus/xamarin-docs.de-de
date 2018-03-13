@@ -4,14 +4,15 @@ description: Verwenden Sie nicht affine Transformationen 2D Objekte im 3D-Raum d
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 1341cde32778358fbeb7b65045616d5d81623d37
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: a959278b5de72792b23e46372b1333362bed91c8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="3d-rotations"></a>3D Drehungen
 
@@ -27,7 +28,7 @@ Es ist schwierig, diese entwickeln `SKMatrix` Transformation arbeiten ausschlie�
 
 Ein dreidimensionales Koordinatensystem Fügt einer dritten Achse z konzeptionell aufgerufen, die Z-Achse wird im rechten Winkel auf dem Bildschirm. Koordinaten in 3D-Bereich mit drei Zahlen angegeben werden: (X, y, Z). In der 3D Koordinatensystem verwendet in diesem Artikel ansteigenden Werten von X nach rechts und zunehmenden Y-Werte ausfallen, wie zwei Dimensionen. Zunehmende positive Z-Werte stammen aus dem Bildschirm. Der Ursprung ist der oberen linken Ecke, wie 2D Grafiken. Sie können als XY-Ebene mit der Z-Achse im rechten Winkel auf dieser Ebene des Bildschirms vorstellen.
 
-Dadurch wird eine linke Koordinatensystem aufgerufen. Wenn Sie zeigen die Zeigefinger für Ihre linken in Richtung der positiven X Koordinaten (rechts) und dem mittleren Finger in Richtung der zunehmenden Y-Koordinaten (unten), klicken Sie dann die Thumb-Punkte in der Richtung des zu erhöhenden Z-Koordinaten &#x2014; Erweitern Sie im Bildschirm.
+Dadurch wird eine linke Koordinatensystem aufgerufen. Wenn Sie die Zeigefinger für Ihre linken in Richtung der positive X Koordinaten (rechts zeigen) und dem mittleren Finger in die Richtung des zu erhöhenden Y-Koordinaten (unten), klicken Sie dann Ihre Thumb verweist in der Richtung des zu erhöhenden Z-Koordinaten – erweitern aus der Bildschirm.
 
 In der 3D-Grafik basieren die Transformationen auf eine 4 x 4-Matrix. So sieht die 4 x 4-Identitätsmatrix aus:
 
@@ -109,7 +110,7 @@ Die Drehung um die Z-Achse ist im 2D Grafiken identisch:
 |    0       0     0  1  |
 </pre>
 
-Die Richtung der Drehung wird durch die Eignung des Koordinatensystems impliziert. Dies ist ein Linkshändig System, wenn Sie den Ziehpunkt einer Hand Links für ansteigenden Werten für eine bestimmte Achse &#x2014; zeigen auf der rechten Seite für die Drehung um die x-Achse Bild-ab für die Drehung um die y-Achse, und Sie für die Drehung um die Z-Achse &#x2014; die Kurve der anderen Finger zeigt dann die Richtung der Drehung für positive Winkel an.
+Die Richtung der Drehung wird durch die Eignung des Koordinatensystems impliziert. Dies ist ein Linkshändig System, wenn Sie den Ziehpunkt der Richtung ansteigenden Werten für eine bestimmte Achse der linken zeigen – rechts für die Drehung um die x-Achse, Bild-ab für die Drehung um die y-Achse, und Sie für die Drehung um die Z-Achse – klicken Sie dann die Kurve der Handelsversion die anderen Finger gibt die Richtung der Drehung für positive Winkel an.
 
 `SKMatrix44` hat die statische generalisiert [ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/) und [ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/) Methoden, mit denen Sie auf die Achse angeben, die die Drehung erfolgt:
 
@@ -408,7 +409,7 @@ public partial class Rotation3DPage : ContentPage
 
 Wenn Sie mit dem vierten Schieberegler experimentieren, sehen Sie sich, dass die verschiedenen Tiefe-Einstellungen nicht das Objekt von der Viewer verschieben, aber stattdessen das Ausmaß der Perspektive Effekte Alter:
 
-[![](3d-rotation-images/rotation3d-small.png "Dreifacher Screenshot der Drehung 3D Seite")](3d-rotation-images/rotation3d-large.png "dreifacher Screenshot der Drehung 3D Seite")
+[![](3d-rotation-images/rotation3d-small.png "Dreifacher Screenshot der Drehung 3D Seite")](3d-rotation-images/rotation3d-large.png#lightbox "dreifacher Screenshot der Drehung 3D Seite")
 
 Die **animiert Drehung 3D** verwendet auch `SKMatrix44` eine Textzeichenfolge in einem 3D-Bereich animiert. Die `textPaint` -Objekts festgelegt, wie ein Feld im Konstruktor verwendet wird, um die Grenzen des Texts zu bestimmen:
 
@@ -442,7 +443,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-Die `OnAppearing` Außerkraftsetzung definiert drei Xamarin.Forms `Animation` Objekte zum Animieren der `xRotationDegrees`, `yRotationDegrees`, und `zRotationDegrees` Felder mit unterschiedlichen Raten. Beachten Sie, dass die Zeiträume dieser Animationen Primzahlen & #x &#x2014; eingestellt sind. 5 Sekunden, 7 Sekunden und 11 Sekunden &#x2014; Damit die gesamte Kombination nur jede 385 Sekunden oder mehr als 10 Minuten wiederholt:
+Die `OnAppearing` Außerkraftsetzung definiert drei Xamarin.Forms `Animation` Objekte zum Animieren der `xRotationDegrees`, `yRotationDegrees`, und `zRotationDegrees` Felder mit unterschiedlichen Raten. Beachten Sie, dass die Zeiträume dieser Animationen festgelegt ist, um Zahlen Primzahl – 5 Sekunden, 7 Sekunden und 11 Sekunden – damit die gesamte Kombination nur jede 385 Sekunden oder mehr als 10 Minuten wiederholt:
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -532,7 +533,7 @@ public class AnimatedRotation3DPage : ContentPage
 
 Diese 3D-Drehung umgeben mit mehreren 2D Transformationen Mittelpunkts der Drehung um die Mitte des Bildschirms verschoben, und die Größe der Textzeichenfolge skalieren, sodass sie die gleiche Breite wie der Bildschirm ist:
 
-[![](3d-rotation-images/animatedrotation3d-small.png "Dreifacher Screenshot der Drehung animiert 3D Seite")](3d-rotation-images/animatedrotation3d-large.png "dreifacher Screenshot der Drehung animiert 3D Seite")
+[![](3d-rotation-images/animatedrotation3d-small.png "Dreifacher Screenshot der Drehung animiert 3D Seite")](3d-rotation-images/animatedrotation3d-large.png#lightbox "dreifacher Screenshot der Drehung animiert 3D Seite")
 
 
 ## <a name="related-links"></a>Verwandte Links

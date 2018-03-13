@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 20b18cd79eeaabab8019c367e241a4975dc37b0e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b7db9082f05ea4db41ddb84d34be2ec9113f2ad5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-core-spotlight"></a>Suche mit Core Spotlight
 
@@ -46,7 +46,7 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 
 Diese Informationen würde wie folgt in einem Suchergebnis angezeigt:
 
-[ ![](corespotlight-images/corespotlight01.png "Core Spotlight-Suche-Ergebnis (Übersicht)")](corespotlight-images/corespotlight01.png)
+[![](corespotlight-images/corespotlight01.png "Core Spotlight-Suche-Ergebnis (Übersicht)")](corespotlight-images/corespotlight01.png#lightbox)
 
 ## <a name="restoring-an-item"></a>Ein Element wiederherstellen
 
@@ -80,7 +80,7 @@ Beachten Sie, dass dieses Mal werden die Kontrollkästchen für die Aktivität m
 Es gibt möglicherweise vorkommen, dass ein Index-Element, das wir mit Core Spotlight erstellt müssen geändert werden, wie z. B. eine Änderung im Titel oder Miniaturbild erforderlich ist. Um diese Änderung vorzunehmen, verwenden wir die gleiche Methode verwendet wurde, um zunächst den Index zu erstellen.
 Wir erstellen Sie ein neues `CSSearchableItem` mit derselben ID wie zum Erstellen des Artikels, und fügen Sie ein neues `CSSearchableItemAttributeSet` mit den geänderten Attributen:
 
-[ ![](corespotlight-images/corespotlight02.png "Aktualisieren ein Element (Übersicht)")](corespotlight-images/corespotlight02.png)
+[![](corespotlight-images/corespotlight02.png "Aktualisieren ein Element (Übersicht)")](corespotlight-images/corespotlight02.png#lightbox)
 
 Wenn dieses Element in der durchsuchbaren Index geschrieben wird, wird das vorhandene Element mit den neuen Informationen aktualisiert.
 

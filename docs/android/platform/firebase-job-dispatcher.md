@@ -7,12 +7,12 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 6b55e525849d57f2ad9e40ea64b75cfc65ef0727
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: fd5b2f8c758d8e1e9bb9276da96a410c61478d4a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Auftrag wurde vom Verteiler firebase
 
@@ -138,7 +138,7 @@ Die `Job.Builder` führt einige grundlegende validierungsüberprüfungen für di
 * Ein `Job`des _Lebensdauer_ nur verwendet werden, bis das Gerät neu gestartet wird (wie lange es wird zur Ausführung geplant) &ndash; , sobald das Gerät neu gestartet der `Job` verloren gegangen ist.
 * Ein `Job` wird nicht wiederholt &ndash; es wird nur einmal ausgeführt.
 * Ein `Job` wird so bald wie möglich ausführen geplant werden.
-* Die Standard-wiederholungsstrategie für eine `Job` ist die Verwendung einer _Exponentielles Backoff_ (auf Weitere Details unten im Abschnitt erläuterten [Festlegen einer RetryStrategy](#Setting_a_RestryStrategy))
+* Die Standard-wiederholungsstrategie für eine `Job` ist die Verwendung einer _Exponentielles Backoff_ (auf Weitere Details unten im Abschnitt erläuterten [Festlegen einer RetryStrategy](#Setting_a_RetryStrategy))
 
 ### <a name="scheduling-a-job"></a>Planen einer `Job`
 
@@ -164,12 +164,14 @@ Der Rückgabewert von `FirebaseJobDispatcher.Schedule` wird eines der folgenden 
 
 Es ist möglich, einen Auftrag anzupassen. Die Beispiele dafür, wie ein Auftrag angepasst werden kann:
 
-* [Übergeben von Parametern an einen Auftrag](#Passing_Parameters_to_a_Job) &ndash; ein `Job` möglicherweise zusätzliche Werte mit der Arbeit, z. B. das Herunterladen von Dateien.
+* [Übergeben von Parametern zu einem Auftrag](#Passing_Parameters_to_a_Job) &ndash; ein `Job` möglicherweise zusätzliche Werte mit der Arbeit, z. B. das Herunterladen von Dateien.
 * [Festlegen von Einschränkungen](#Setting_Constraints) &ndash; es möglicherweise erforderlich sein, nur ein Auftrag ausgeführt wird, wenn bestimmte Bedingungen erfüllt sind. Führen Sie z. B. nur eine `Job` Wenn das Gerät aufgeladen ist. 
 * [Geben an, wann eine `Job` ausgeführt werden soll](#Setting_Job_Triggers) &ndash; der Firebase Auftrag wurde vom Verteiler ermöglicht Anwendungen, die eine Zeit angeben, der der Auftrag ausgeführt werden soll.  
 * [Deklarieren Sie eine wiederholungsversuchstrategie für fehlgeschlagene Aufträge](#Setting_a_RetryStrategy) &ndash; ein _wiederholungsstrategie_ bietet Hinweise zum der `FirebaseJobDispatcher` auf Vorgehensweise mit `Jobs` , die nicht abgeschlossen. 
 
 Jedes dieser Themen wird mehr in den folgenden Abschnitten erläutert werden.
+
+<a name="Passing_Parameters_to_a_Job" />
 
 #### <a name="passing-parameters-to-a-job"></a>Übergeben von Parametern zu einem Auftrag
 
@@ -197,6 +199,7 @@ public override bool OnStartJob(IJobParameters jobParameters)
 } 
 ```
 
+<a name="Setting_Constraints" />
 
 #### <a name="setting-constraints"></a>Festlegen von Einschränkungen
 
@@ -215,6 +218,8 @@ Job myJob = dispatcher.NewJobBuilder()
                       .Build();
 ```
 
+<a name="Setting_Job_Triggers" />
+
 #### <a name="setting-job-triggers"></a>Einstellung Auftragsauslöser
 
 Die `JobTrigger` bietet einen Leitfaden für das Betriebssystem zu, wenn der Auftrag beginnen soll. Ein `JobTrigger` verfügt über eine _Fenster ausführen_ , einen geplanten Zeitpunkt für den Fall definiert die `Job` ausgeführt werden soll. Das Fenster für die Ausführung verfügt über eine _Startfenster_ Wert und ein _endfenster_ Wert. Das Startfenster ist die Anzahl der Sekunden an, die das Gerät warten soll, bevor die Ausführung des Auftrags und der Endwert für das Fenster wird die maximale Anzahl von Sekunden vor dem Ausführen der `Job`. 
@@ -230,6 +235,8 @@ Job myJob = dispatcher.NewJobBuilder()
 ```
 
 Die Standardeinstellung `JobTrigger` für ein Auftrag mit dem Wert dargestellt wird `Trigger.Now`, der angibt, dass ein Auftrag ausgeführt werden, so bald wie möglich nach geplant...
+
+<a name="Setting_a_RetryStrategy" />
 
 #### <a name="setting-a-retrystrategy"></a>Festlegen einer RetryStrategy
 

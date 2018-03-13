@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: ee91f0ebdc07f03831ae95a4b8ae6f85c3eb549e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d23f29fbfb51473ff5f89f27c0bfd621cfffbce0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="checking-device-orientation"></a>Überprüfen der Geräteausrichtung
 
@@ -29,7 +29,7 @@ Die Anwendung mit `DependencyService` hat die folgende Struktur:
 ![](device-orientation-images/orientation-diagram.png "DependencyService Anwendungsstruktur")
 
 > [!NOTE]
-> **Hinweis:** ist es möglich, erkennen, ob das Gerät im Hochformat oder Querformat im freigegebenen Code befindet, wie gezeigt in [Device Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation) . In diesem Artikel beschriebene Methode verwendet systemeigene Funktionen, um erhalten weitere Informationen zur Ausrichtung, z. B. ob das Gerät stehend angezeigt wird.
+> Es ist möglich, erkennen, ob das Gerät im Hochformat oder Querformat im freigegebenen Code befindet, wie gezeigt in [Device Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation). In diesem Artikel beschriebene Methode verwendet systemeigene Funktionen, um erhalten weitere Informationen zur Ausrichtung, z. B. ob das Gerät stehend angezeigt wird.
 
 <a name="Creating_the_Interface" />
 
@@ -57,7 +57,7 @@ namespace DependencyServiceSample.Abstractions
 Mit der Programmierung für diese Schnittstelle im freigegebenen Code können Xamarin.Forms-app auf der geräteausrichtung APIs auf jeder Plattform zugreifen.
 
 > [!NOTE]
-> **Hinweis**: Klassen implementieren der Schnittstelle benötigen einen parameterlosen Konstruktor zur Bearbeitung der `DependencyService`.
+> Klassen, die die Schnittstelle implementieren, benötigen einen parameterlosen Konstruktor zur Bearbeitung der `DependencyService`.
 
 <a name="iOS_Implementation" />
 
@@ -224,4 +224,4 @@ Diese Anwendung auf iOS, Android oder Windows-Plattformen ausgeführt, und drüc
 
 - [Verwenden DependencyService (Beispiel)](https://developer.xamarin.com/samples/UsingDependencyService)
 - [DependencyService (Beispiel)](https://developer.xamarin.com/samples/DependencyService/DependencyServiceSample/)
-- [Xamarin.Forms-Beispiele](https://github.com/xamarin/xamarin-forms-samples)
+- [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://github.com/xamarin/xamarin-forms-samples)

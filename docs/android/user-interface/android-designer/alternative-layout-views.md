@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: f6884260315f8846720370c558f7435d2c5a9d91
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c2df60a79ea3b5a0ff226cfaade0440db13fd5ea
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alternative-layout-views"></a>Alternative Layoutansichten
 
 _In diesem Thema wird erläutert, wie Layouts mit Versionsangabe sein können mithilfe von ressourcenqualifizierer. Beispielsweise treten möglicherweise eine Version eines Layouts, das nur verwendet wird, wenn das Gerät im Querformat ist und eine Layout-Version, die nur für Hochformat ist._
 
-<a name="creating_alternative_layouts" />
 
 ## <a name="creating-alternative-layouts"></a>Alternative Layouts erstellen
 
@@ -26,11 +25,11 @@ Beim Klicken auf die **Alternative Layoutansicht** Symbol (auf der linken Seite 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Alternative Ansicht Layoutbereich](alternative-layout-views-images/vs/01-alt-layout-view-pane-sml.png "Alternative Ansicht Layoutbereich")](alternative-layout-views-images/vs/01-alt-layout-view-pane.png)
+[![Alternative Ansicht Layoutbereich](alternative-layout-views-images/vs/01-alt-layout-view-pane-sml.png "Alternative Ansicht Layoutbereich")](alternative-layout-views-images/vs/01-alt-layout-view-pane.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Alternative Ansicht Layoutbereich](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png)
+[![Alternative Ansicht Layoutbereich](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png#lightbox)
 
 -----
 
@@ -38,11 +37,11 @@ Beim Klicken auf die grüne Pluszeichens (+) neben **neue Version**, **erstellen
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Layout Variation erstellen](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "Layout Variation erstellen")](alternative-layout-views-images/vs/02-create-layout-variation.png)
+[![Layout Variation erstellen](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "Layout Variation erstellen")](alternative-layout-views-images/vs/02-create-layout-variation.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Layout Variation erstellen](alternative-layout-views-images/xs/02-create-layout-variation-sml.png)](alternative-layout-views-images/xs/02-create-layout-variation.png)
+[![Layout Variation erstellen](alternative-layout-views-images/xs/02-create-layout-variation-sml.png)](alternative-layout-views-images/xs/02-create-layout-variation.png#lightbox)
 
 -----
 
@@ -51,11 +50,11 @@ Im folgenden Beispiel der ressourcenqualifizierer für **Bildschirmausrichtung**
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Große Flächen Variation](alternative-layout-views-images/vs/03-large-land-sml.png "großen Flächen Variante")](alternative-layout-views-images/vs/03-large-land.png)
+[![Große Flächen Variation](alternative-layout-views-images/vs/03-large-land-sml.png "großen Flächen Variante")](alternative-layout-views-images/vs/03-large-land.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Große-Land-Variante](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png)
+[![Große-Land-Variante](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png#lightbox)
 
 -----
 
@@ -64,16 +63,15 @@ Beachten Sie, dass die Auswirkungen der Auswahl der Ressource Qualifizierer wird
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Geladene Layout Indikator](alternative-layout-views-images/vs/04-new-layout-sml.png "geladenen Layout-Indikator")](alternative-layout-views-images/vs/04-new-layout.png)
+[![Geladene Layout Indikator](alternative-layout-views-images/vs/04-new-layout-sml.png "geladenen Layout-Indikator")](alternative-layout-views-images/vs/04-new-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Indikator für geladen](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png)
+[![Indikator für geladen](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png#lightbox)
 
 -----
 
 
-<a name="editing_alternative_layouts" />
 
 ## <a name="editing-alternative-layouts"></a>Bearbeiten die Alternative Layouts
 
@@ -83,11 +81,11 @@ Zur Vereinfachung der Wartung mehrerer Layout-Versionen der Designer bietet eine
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Symbol "mit mehreren bearbeiten"](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "mit mehreren bearbeiten-Symbol")](alternative-layout-views-images/vs/05-multi-layout-icon.png)
+[![Symbol "mit mehreren bearbeiten"](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "mit mehreren bearbeiten-Symbol")](alternative-layout-views-images/vs/05-multi-layout-icon.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Symbol "mit mehreren bearbeiten"](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png)
+[![Symbol "mit mehreren bearbeiten"](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png#lightbox)
 
 -----
 
@@ -96,11 +94,11 @@ Beim Klicken auf die **mit mehreren bearbeiten** Symbol Linien angezeigt werden,
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Aufheben der Verknüpfung aller Layouts](alternative-layout-views-images/vs/06-multi-linked-sml.png "alle Layouts aufheben")](alternative-layout-views-images/vs/06-multi-linked.png)
+[![Aufheben der Verknüpfung aller Layouts](alternative-layout-views-images/vs/06-multi-linked-sml.png "alle Layouts aufheben")](alternative-layout-views-images/vs/06-multi-linked.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Alle Layouts aufheben](alternative-layout-views-images/xs/06a-linked-sml.png)](alternative-layout-views-images/xs/06a-linked.png)
+[![Alle Layouts aufheben](alternative-layout-views-images/xs/06a-linked-sml.png)](alternative-layout-views-images/xs/06a-linked.png#lightbox)
 
 -----
 
@@ -109,11 +107,11 @@ Wenn Sie mehr als zwei Layouts haben, können Sie selektiv wechseln die Schaltfl
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Unlink mittleren Layout](alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "mittleren Layout Verknüpfung aufheben")](alternative-layout-views-images/vs/07-unlink-middle-layout.png)
+[![Unlink mittleren Layout](alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "mittleren Layout Verknüpfung aufheben")](alternative-layout-views-images/vs/07-unlink-middle-layout.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Aufheben der Verknüpfung mittleren layout](alternative-layout-views-images/xs/06b-multi-linked-sml.png)](alternative-layout-views-images/xs/06b-multi-linked.png)
+[![Aufheben der Verknüpfung mittleren layout](alternative-layout-views-images/xs/06b-multi-linked-sml.png)](alternative-layout-views-images/xs/06b-multi-linked.png#lightbox)
  
 -----
  
@@ -121,7 +119,6 @@ Wenn Sie mehr als zwei Layouts haben, können Sie selektiv wechseln die Schaltfl
 In diesem Beispiel wird eine Änderung vorgenommen, entweder die **Standard** oder **lange** Layout wird weitergegeben werden, andere Layout aber nicht für die **großen Flächen** Layout. 
 
 
-<a name="multi_edit_example" />
 
 ### <a name="multi-edit-example"></a>Bearbeiten von Multi-Beispiel 
 
@@ -129,11 +126,11 @@ Wenn Sie ein Layout ändern, wird im Allgemeinen die gleiche Änderung auf alle 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Hinzufügen von TextView](alternative-layout-views-images/vs/08-add-textview-sml.png "TextView hinzufügen")](alternative-layout-views-images/vs/08-add-textview.png)
+[![Hinzufügen von TextView](alternative-layout-views-images/vs/08-add-textview-sml.png "TextView hinzufügen")](alternative-layout-views-images/vs/08-add-textview.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![TextView hinzufügen](alternative-layout-views-images/xs/07-add-textview-sml.png)](alternative-layout-views-images/xs/07-add-textview.png)
+[![TextView hinzufügen](alternative-layout-views-images/xs/07-add-textview-sml.png)](alternative-layout-views-images/xs/07-add-textview.png#lightbox)
  
 -----
  
@@ -142,11 +139,11 @@ Die `TextView` wird ebenfalls hinzugefügt der **großen Flächen** Layout anzei
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Querformat TextView](alternative-layout-views-images/vs/09-landscape-textview-sml.png "TextView Querformat")](alternative-layout-views-images/vs/09-landscape-textview.png)
+[![Querformat TextView](alternative-layout-views-images/vs/09-landscape-textview-sml.png "TextView Querformat")](alternative-layout-views-images/vs/09-landscape-textview.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Querformat TextView](alternative-layout-views-images/xs/08-landscape-textview-sml.png)](alternative-layout-views-images/xs/08-landscape-textview.png)
+[![Querformat TextView](alternative-layout-views-images/xs/08-landscape-textview-sml.png)](alternative-layout-views-images/xs/08-landscape-textview.png#lightbox)
  
 -----
  
@@ -154,7 +151,6 @@ Die `TextView` wird ebenfalls hinzugefügt der **großen Flächen** Layout anzei
 Aber was geschieht, wenn Sie möchten, eine Änderung vorzunehmen, die nur ein Layout lokal ist (d. h. nicht sollen die Änderung an einem beliebigen anderen Layouts weitergegeben werden)? Zu diesem Zweck müssen Sie das Layout aufheben, das ändern, bevor Sie diese zu ändern, wie im folgenden erklärt werden soll. 
 
 
-<a name="making_local_changes" />
 
 ### <a name="making-local-changes"></a>Lokale Änderungen 
 
@@ -162,11 +158,11 @@ Angenommen, wir möchten, dass beide Layouts der hinzugefügten haben `TextView`
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Lokale](alternative-layout-views-images/vs/10-local-change-sml.png "lokale ändern")](alternative-layout-views-images/vs/10-local-change.png)
+[![Lokale](alternative-layout-views-images/vs/10-local-change-sml.png "lokale ändern")](alternative-layout-views-images/vs/10-local-change.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Lokale ändern](alternative-layout-views-images/xs/09-local-change-sml.png)](alternative-layout-views-images/xs/09-local-change.png)
+[![Lokale ändern](alternative-layout-views-images/xs/09-local-change-sml.png)](alternative-layout-views-images/xs/09-local-change.png#lightbox)
  
 -----
  
@@ -174,7 +170,6 @@ Angenommen, wir möchten, dass beide Layouts der hinzugefügten haben `TextView`
 Beim Klicken auf die **Standard** Layout an, die `TextView` Textzeichenfolge noch festgelegt ist, um `Portrait`. 
 
 
-<a name="handling_conflicts" />
 
 ## <a name="handling-conflicts"></a>Lösen von Konflikten 
 
@@ -182,22 +177,21 @@ Wenn Sie sich entscheiden, so ändern Sie die Farbe des Texts in der **Standard*
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Konflikt verursachenden Änderung](alternative-layout-views-images/vs/11-conflicting-change-sml.png "Konflikt verursachenden Änderung")](alternative-layout-views-images/vs/11-conflicting-change.png)
+[![Konflikt verursachenden Änderung](alternative-layout-views-images/vs/11-conflicting-change-sml.png "Konflikt verursachenden Änderung")](alternative-layout-views-images/vs/11-conflicting-change.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Widersprüchliche Änderung](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png)
+[![Widersprüchliche Änderung](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png#lightbox)
  
 -----
  
 
 Ein *Konflikt* wird angezeigt, auf der rechten Seite des Widgets, um den Konflikt zu erläutern: 
 
-[ ![Warnung-Konflikt](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png)
+[![Warnung-Konflikt](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png#lightbox)
 
 Der Konflikt-Feld enthält die Liste der Eigenschaften, die geändert wurden, und ihre Werte aufgeführt. Auf **Konflikt ignorieren** gilt die Eigenschaftenänderung nur für dieses Widget. Auf **übernehmen** gilt die Eigenschaftenänderung für dieses Widget auch hinsichtlich des Widgets Gegenstück in der verknüpften **Standard** Layout. Wenn alle eigenschaftsänderungen angewendet werden, wird der Konflikt automatisch verworfen. 
 
-<a name="view_group_conflicts" />
 
 ### <a name="view-group-conflicts"></a>Gruppe "Ansicht" Konflikte 
 
@@ -205,11 +199,11 @@ Eigenschaftenänderungen sind nicht die einzige Quelle von Konflikten. Beim Einf
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Anzeigen der Gruppe Konflikt](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "Konflikt Gruppe anzeigen")](alternative-layout-views-images/vs/12-view-group-conflict.png)
+[![Anzeigen der Gruppe Konflikt](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "Konflikt Gruppe anzeigen")](alternative-layout-views-images/vs/12-view-group-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Die Gruppe Konflikt anzeigen](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png)
+[![Die Gruppe Konflikt anzeigen](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png#lightbox)
  
 -----
  
@@ -220,11 +214,11 @@ Wenn eine `CheckBox` hinzugefügt wird die **Standard** Layout, eine andere Konf
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![CheckBox-Konflikt](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "Checkbox-Konflikt")](alternative-layout-views-images/vs/13-checkbox-conflict.png)
+[![CheckBox-Konflikt](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "Checkbox-Konflikt")](alternative-layout-views-images/vs/13-checkbox-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![CheckBox-Konflikt](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png)
+[![CheckBox-Konflikt](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png#lightbox)
  
 -----
  
@@ -233,18 +227,18 @@ Klicken auf die **großen Flächen** Layout ergibt den Konflikt. Die folgende Me
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![ALT Layout Konflikt](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "Alt Layout-Konflikt")](alternative-layout-views-images/vs/14-alt-layout-conflict.png)
+[![ALT Layout Konflikt](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "Alt Layout-Konflikt")](alternative-layout-views-images/vs/14-alt-layout-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![ALT-Layout-Konflikt](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png)
+[![ALT-Layout-Konflikt](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png#lightbox)
  
 -----
  
 
 Der Konflikt-Feld zeigt außerdem die folgende Meldung:
 
-[ ![Konfliktmeldung](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png)
+[![Konfliktmeldung](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png#lightbox)
 
 Hinzufügen der `CheckBox` verursacht einen Konflikt, da die **großen Flächen** Layout wurde in der `LinearLayout` , die Sie enthält. In diesem Fall das Feld Konflikt zeigt jedoch das Widget, das soeben eingefügt wurde die **Standard** Layout (die `CheckBox`).
 
@@ -252,11 +246,11 @@ Wenn Sie auf **Konflikt ignorieren**, Designer löst den Konflikt zwischen, soda
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Gruppe Konflikt aufgelöst](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "Gruppe Konflikt aufgelöst")](alternative-layout-views-images/vs/15-resolved-group-conflict.png)
+[![Gruppe Konflikt aufgelöst](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "Gruppe Konflikt aufgelöst")](alternative-layout-views-images/vs/15-resolved-group-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Gruppe Konflikt aufgelöst](alternative-layout-views-images/xs/16-resolved-group-conflict-sml.png)](alternative-layout-views-images/xs/16-resolved-group-conflict.png)
+[![Gruppe Konflikt aufgelöst](alternative-layout-views-images/xs/16-resolved-group-conflict-sml.png)](alternative-layout-views-images/xs/16-resolved-group-conflict.png#lightbox)
  
 -----
  
@@ -264,7 +258,6 @@ Wenn Sie auf **Konflikt ignorieren**, Designer löst den Konflikt zwischen, soda
 Wie im vorherigen Beispiel mit der `Button`, die `CheckBox` ein rotes Änderung Marker verfügt nicht über nur die `LinearLayout` wurde geändert, die in angewendet wurden die **großen Flächen** Layout.
 
 
-<a name="Conflict_Persistence" />
 
 ### <a name="conflict-persistence"></a>Konflikt-Persistenz
 

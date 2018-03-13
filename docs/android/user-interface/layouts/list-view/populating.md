@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: 74d8533d0a757a307d88125701a482dfefd5eec2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 12197d238ddc6ddc2bd8f48f77aa15f5eff22a0a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="populating-a-listview-with-data"></a>ListView mit Daten auffüllen
 
-<a name="overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -23,7 +22,6 @@ Zum Hinzufügen von Zeilen zu einer `ListView` müssen Sie das Layout und die im
 
 Die integrierten Adapter nehmen eine Ansicht Ressourcen-ID als Parameter, der für jede Zeile verwendet wird. Sie können integrierte Ressourcen, z. B. die `Android.Resource.Layout` Sie müssen also keine Schreiben eigener.
 
-<a name="Using_ListActivity_and_ArrayAdapterString" />
 
 ## <a name="using-listactivity-and-arrayadapterltstringgt"></a>Verwenden von ListActivity und ArrayAdapter&lt;Zeichenfolge&gt;
 
@@ -43,13 +41,12 @@ public class HomeScreen : ListActivity {
 }
 ```
 
-<a name="Handling_Row_Clicks" />
 
 ### <a name="handling-row-clicks"></a>Behandlung von Zeile klickt
 
 In der Regel eine `ListView` auch ermöglicht dem Benutzer, eine Zeile zum Durchführen von Maßnahmen (z. B. Wiedergabe eines Musiktitels Aufrufen eines Kontakts oder einem anderen Bildschirm anzeigen) zu berühren. So reagieren Sie auf Benutzer Fingereingaben es eine muss weitere Methode implementiert, der `ListActivity` &ndash; `OnListItemClick` &ndash; wie folgt:
 
-[![Screenshot des eine SimpleListItem](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png)
+[![Screenshot des eine SimpleListItem](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
 
 ```csharp
 protected override void OnListItemClick(ListView l, View v, int position, long id)
@@ -61,9 +58,8 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 
 Nachdem der Benutzer eine Zeile berühren kann und eine `Toast` Warnung wird angezeigt:
 
-[![Screenshot der Toast, die angezeigt wird, wenn eine Zeile verwendet wird](populating-images/basictable2.png)](populating-images/basictable2.png)
+[![Screenshot der Toast, die angezeigt wird, wenn eine Zeile verwendet wird](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
 
-<a name="Implementing_a_ListAdapter" />
 
 ## <a name="implementing-a-listadapter"></a>Implementieren eine ListAdapter
 
@@ -110,7 +106,6 @@ public class HomeScreenAdapter : BaseAdapter<string> {
 }
 ```
 
-<a name="Using_a_Custom_Adapter" />
 
 ### <a name="using-a-custom-adapter"></a>Verwenden eines benutzerdefinierten Adapters
 
@@ -122,7 +117,6 @@ ListAdapter = new HomeScreenAdapter(this, items);
 
 Da in diesem Beispiel wird die gleiche Zeilenlayout verwendet (`SimpleListItem1`) sieht die resultierende Anwendung mit dem vorherigen Beispiel identisch.
 
-<a name="Row_View_Re-Use" />
 
 ### <a name="row-view-re-use"></a>Zeile Sicht erneut verwenden
 
@@ -147,13 +141,12 @@ Benutzerdefinierte adapterimplementierungen sollten *immer* Wiederverwenden der 
 
 Einige adapterimplementierungen (z. B. die `CursorAdapter`) keine `GetView` -Methode, stattdessen benötigen sie zwei verschiedene Installationsmethoden `NewView` und `BindView` die erzwingen Zeile erneut verwenden, durch die Trennung von Aufgaben der `GetView` in zwei Methoden. Es ist ein `CursorAdapter` Beispiel weiter unten in das Dokument.
 
-<a name="Enabling_Fast_Scrolling" />
 
 ## <a name="enabling-fast-scrolling"></a>Aktivieren die schnelle Durchführen eines Bildlaufs
 
 Schnelle Bildlauf hilft dem Benutzer in lange Listen einen Bildlauf durch die Bereitstellung eines zusätzlichen "Handles", das als eine Bildlaufleiste, um einen Teil der Liste der direkten Zugriff auf fungiert. Diese bildschirmabbildung zeigt das schnelle Scroll-Handle an:
 
-[![Screenshot der Fast mit einem Bildlauf Handle Bildlauf](populating-images/fastscroll.png)](populating-images/fastscroll.png)
+[![Screenshot der Fast mit einem Bildlauf Handle Bildlauf](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
 
 Verursacht das schnelle Durchführen eines Bildlaufs Handle angezeigt werden, ist so einfach wie das Festlegen der `FastScrollEnabled` Eigenschaft `true`:
 
@@ -161,13 +154,12 @@ Verursacht das schnelle Durchführen eines Bildlaufs Handle angezeigt werden, is
 ListView.FastScrollEnabled = true;
 ```
 
-<a name="Adding_a_Section_Index" />
 
 ### <a name="adding-a-section-index"></a>Hinzufügen eines Indexes Abschnitt
 
 Bietet eine Abschnittsindex zusätzliches Feedback für Benutzer, Fast Bildlauf in einer langen Liste werden &ndash; es wird gezeigt, welche sie zum Bildlauf haben Abschnitt. Die dazu führen, dass die Abschnittsindex angezeigt werden, muss die Adapter-Unterklasse implementieren die `ISectionIndexer` Schnittstelle, geben Sie den Text je nach den Zeilen angezeigt werden:
 
-[![Screenshot der H angezeigt wird, klicken Sie oben im Abschnitt beginnt, die mit H](populating-images/sectionindex.png)](populating-images/sectionindex.png)
+[![Screenshot der H angezeigt wird, klicken Sie oben im Abschnitt beginnt, die mit H](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
 
 Implementiert `ISectionIndexer` müssen Sie drei Methoden zu einem Adapter hinzufügen:
 

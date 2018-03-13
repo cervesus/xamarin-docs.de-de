@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/01/2017
-ms.openlocfilehash: 01708f12340ec57bf1cb0e2bd076b680c99dff39
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f336767cb6aea8bd8c7ce44f6479850a63d473a6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-a-java-library"></a>Binden einer Java-Bibliothek
 
@@ -30,7 +30,7 @@ Dieses Handbuch erklärt die erste Option: Gewusst wie: Erstellen einer *Bindung
 
 Xamarin.Android implementiert Bindungen mit *Aufrufwrappern verwaltet* (*MCW*). MCW ist einer JNI-Bridge, die verwendet wird, wenn verwalteter Code Java-Code aufrufen muss. Verwaltete Aufrufwrappern bieten auch Unterstützung für das Erstellen von Unterklassen für Java-Typen und zum Überschreiben von virtueller Methoden in Java-Typen. Ebenso, wenn Android Laufzeitcode (Grafik) verwalteten Code aufrufen möchte, tut sie über eine andere JNI-Bridge, die als Android Callable Wrapper (Inhaltsfehler) bezeichnet. Dies [Architektur](~/android/internals/architecture.md) wird in der folgenden Abbildung veranschaulicht:
 
-[ ![Android JNI-Bridge-Architektur](images/architecture.png)](images/architecture.png)
+[![Android JNI-Bridge-Architektur](images/architecture.png)](images/architecture.png#lightbox)
 
 Eine Bindungen-Bibliothek ist eine Assembly, die verwaltete Callable Wrapper für Java-Typen enthält. Hier ist z. B. eine Java-Datentyp `MyClass`, die in einer Bibliothek Bindungen umbrochen werden soll:
 
@@ -74,7 +74,6 @@ Wenn Sie eine vorhandene Android-Bibliothek zu binden, ist es notwendig, die fol
 
 * **Welche Version des JDK wurde verwendet, um die Bibliothek zu kompilieren?** &ndash; Binden Fehler kann auftreten, wenn die Android-Bibliothek mit einer anderen Version des JDK als verwendet vom Xamarin.Android erstellt wurde. Wenn möglich, kompilieren Sie erneut mit der Android-Bibliothek mit der gleichen Version des JDK, die durch die Installation von Xamarin.Android verwendet wird.
 
-<a name="BUILD_ACTIONS" />
 
 ## <a name="build-actions"></a>Buildvorgänge
 
@@ -127,7 +126,6 @@ Der Xamarin.Android binden Generator ändert einige Java Idiome und Mustern in .
 -   Ein _inneren Klasse_ in Java ist eine _der geschachtelten Klasse_ mit Instanzkonstruktor in C# geschrieben.
 
 
-<a name="BINDING_SCENARIOS" />
 
 ## <a name="binding-scenarios"></a>Binden von Szenarien
 

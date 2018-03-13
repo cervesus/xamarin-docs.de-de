@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: 05a162dab3b427ec345f22818b6c6d9df82c498b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4b2a470d7fe2a1f9d4b8df40836c934547adf614
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-buttons"></a>Arbeiten mit Schaltflächen
 
@@ -21,7 +21,7 @@ _Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Schaltflächen innerh
 
 Eine Instanz der `UIButton` -Klasse zum Erstellen von schaltflächenstilen den Fokus erhalten kann, auswählbare in einem Fenster tvos. außerdem wurden. Wenn der Benutzer eine Schaltfläche auswählt, sendet er eine Aktionsnachricht auf das Zielobjekt Ihrer Xamarin.tvOS app reagieren, die dem Benutzer den eingabeendpunkt zulassen.
 
-[ ![](buttons-images/buttons01.png "Beispiel-Schaltflächen")](buttons-images/buttons01.png)
+[![](buttons-images/buttons01.png "Beispiel-Schaltflächen")](buttons-images/buttons01.png#lightbox)
 
 Weitere Informationen zum Arbeiten mit Fokus, und Navigieren mit der Remoteinstanz Siri finden Sie unter unsere [arbeiten mit Navigationsbereich und den Fokus](~/ios/tvos/app-fundamentals/navigation-focus.md) und [Siri Remote und Bluetooth-Controller](~/ios/tvos/platform/remote-bluetooth.md) Dokumentation.
 
@@ -31,7 +31,7 @@ Weitere Informationen zum Arbeiten mit Fokus, und Navigieren mit der Remoteinsta
 
 In tvos. außerdem wurden Schaltflächen für app-spezifisches Aktionen verwendet werden und können einen Titel, ein Symbol oder beides enthalten. Wie der Benutzer der app-Benutzeroberfläche mithilfe navigiert der [Siri Remote](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote), Fokus verlagert sich auf die Schaltfläche mit den angegebenen somit Text- und Hintergrundfarben zu ändern. Ein Schatten wird auch auf die Schaltfläche "Hinzufügen eines 3D-Effekt somit steigen über den Rest der Benutzeroberfläche angezeigt" angewendet.
 
-[ ![](buttons-images/buttons01.png "Beispiel-Schaltflächen")](buttons-images/buttons01.png)
+[![](buttons-images/buttons01.png "Beispiel-Schaltflächen")](buttons-images/buttons01.png#lightbox)
 
 Apple hat die folgenden Vorschläge für die Arbeit mit Schaltflächen:
 
@@ -70,19 +70,19 @@ Die einfachste Möglichkeit zum Arbeiten mit Schaltflächen in einer app Xamarin
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. Ziehen Sie eine **Schaltfläche** aus der **Bibliothek** und legen Sie sie in der Sicht: 
 
-    [ ![](buttons-images/storyboard01.png "Eine Schaltfläche")](buttons-images/storyboard01.png)
+    [![](buttons-images/storyboard01.png "Eine Schaltfläche")](buttons-images/storyboard01.png#lightbox)
 1. In der **Eigenschaften-Explorer**, Sie können mehrere Eigenschaften der Schaltfläche z. B. Anpassen der **Titel** und **Textfarbe**: 
 
-    [ ![](buttons-images/storyboard02.png "Eigenschaften von Schaltflächen")](buttons-images/storyboard02.png)
+    [![](buttons-images/storyboard02.png "Eigenschaften von Schaltflächen")](buttons-images/storyboard02.png#lightbox)
 1. Als Nächstes wechseln Sie zu der **Registerkarte "Ereignisse"** und über das Netzwerk ein **Ereignis** aus der **Schaltfläche** und Aufruf der `ButtonPressed`: 
 
-    [ ![](buttons-images/storyboard03.png "Die Registerkarte "Ereignisse"")](buttons-images/storyboard03.png)
+    [![](buttons-images/storyboard03.png "Die Registerkarte "Ereignisse"")](buttons-images/storyboard03.png#lightbox)
 1. Sie werden automatisch auf verlagert die `ViewController.cs` anzeigen, wo Sie die neue Aktion in Ihrem Code platzieren können, die **einrichten** und **nach unten** Pfeiltasten: 
 
-    [ ![](buttons-images/storyboard04.png "Platzieren eine neue Aktion im code")](buttons-images/storyboard04.png)
+    [![](buttons-images/storyboard04.png "Platzieren eine neue Aktion im code")](buttons-images/storyboard04.png#lightbox)
 1. Drücken Sie die **EINGABETASTE** um den Speicherort auszuwählen: 
 
-    [ ![](buttons-images/storyboard05.png "Der Code-editor")](buttons-images/storyboard05.png)
+    [![](buttons-images/storyboard05.png "Der Code-editor")](buttons-images/storyboard05.png#lightbox)
 1. Speichern Sie die Änderungen auf alle Dateien.
 
 
@@ -91,13 +91,13 @@ Die einfachste Möglichkeit zum Arbeiten mit Schaltflächen in einer app Xamarin
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. Ziehen Sie eine **Schaltfläche** aus der **Bibliothek** und legen Sie sie in der Sicht: 
 
-    [ ![](buttons-images/storyboard01vs.png "Eine Schaltfläche")](buttons-images/storyboard01vs.png)
+    [![](buttons-images/storyboard01vs.png "Eine Schaltfläche")](buttons-images/storyboard01vs.png#lightbox)
 1. In der **Eigenschaften-Explorer**, Sie können mehrere Eigenschaften der Schaltfläche z. B. Anpassen der **Titel** und **Textfarbe**: 
 
-    [ ![](buttons-images/storyboard02vs.png "Im Eigenschaften-Explorer")](buttons-images/storyboard02vs.png)
+    [![](buttons-images/storyboard02vs.png "Im Eigenschaften-Explorer")](buttons-images/storyboard02vs.png#lightbox)
 1. Als Nächstes wechseln Sie zu der **Registerkarte "Ereignisse"** und über das Netzwerk ein **Ereignis** aus der **Schaltfläche** und Aufruf der `ButtonPressed`: 
 
-    [ ![](buttons-images/storyboard03vs.png "Die Registerkarte "Ereignisse"")](buttons-images/storyboard03vs.png)
+    [![](buttons-images/storyboard03vs.png "Die Registerkarte "Ereignisse"")](buttons-images/storyboard03vs.png#lightbox)
 1. Speichern Sie die Änderungen auf alle Dateien.
 
 
@@ -270,7 +270,7 @@ In diesem Artikel wurden behandelt, Entwerfen und Arbeiten mit Schaltflächen in
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiele für tvos. außerdem wurden](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvos. außerdem wurden Handbücher für interaktive Workflowdienste-Schnittstelle](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [App-Programmierhandbuch für tvos. außerdem wurden](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

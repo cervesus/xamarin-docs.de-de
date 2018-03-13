@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: c5bd753aaa3a9e807a03a9fb05b233cfa39d0dc3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6ac9ca7bae517602c33729134eb0bd48359afbc7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-text-to-speech"></a>Implementieren der Sprachausgabe
 
@@ -44,7 +44,7 @@ public interface ITextToSpeech
 Mit der Programmierung für diese Schnittstelle im freigegebenen Code können Xamarin.Forms-app auf die Spracherkennung-APIs auf jeder Plattform zugreifen.
 
 > [!NOTE]
-> **Hinweis**: Klassen implementieren der Schnittstelle benötigen einen parameterlosen Konstruktor zur Bearbeitung der `DependencyService`.
+> Klassen, die die Schnittstelle implementieren, benötigen einen parameterlosen Konstruktor zur Bearbeitung der `DependencyService`.
 
 <a name="iOS_Implementation" />
 
@@ -84,15 +84,12 @@ Die `[assembly]` Attribut registriert die Klasse als eine Implementierung von de
 
 ## <a name="android-implementation"></a>Android-Implementierung
 
-Android-Code ist komplizierter als die iOS-Version: dafür, dass die implementierende Klasse zu Vererben von Android-spezifische `Java.Lang.Object` und zum Implementieren der `IOnInitListener` Schnittstelle auch.
-
-Xamarin.Forms bietet außerdem die `Forms.Context` -Objekt, das eine Instanz des aktuellen Kontexts für Android ist. Viele Android SDK-Methoden erfordern, ein gutes Beispiel wird die Möglichkeit zum Aufruf `StartActivity()`.
+Android-Code ist komplizierter als die iOS-Version: dafür, dass die implementierende Klasse zu Vererben von Android-spezifische `Java.Lang.Object` und zum Implementieren der `IOnInitListener` Schnittstelle auch. Darüber hinaus müssen Zugriff auf den aktuellen Android-Kontext, die durch verfügbar gemacht wird die `MainActivity.Instance` Eigenschaft.
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
 namespace DependencyServiceSample.Droid
 {
-
     public class TextToSpeechImplementation : Java.Lang.Object, ITextToSpeech, TextToSpeech.IOnInitListener
     {
         TextToSpeech speaker;
@@ -103,7 +100,7 @@ namespace DependencyServiceSample.Droid
             toSpeak = text;
             if (speaker == null)
             {
-                speaker = new TextToSpeech(Forms.Context, this);
+                speaker = new TextToSpeech(MainActivity.Instance, this);
             }
             else
             {

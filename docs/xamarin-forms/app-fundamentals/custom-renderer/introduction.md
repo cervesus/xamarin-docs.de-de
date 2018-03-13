@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: a9908429994f4575a9e41936d500bfd8906a843b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 837d75bd4ecde92d4c375c680a5f5e7ff231f825
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>Einführung in benutzerdefinierte Renderer
 
@@ -52,7 +52,7 @@ Die `MyEntry` -Steuerelement ist ein `Entry` steuern, wo die `BackgroundColor` a
 Die `local` Namespacepräfix kann alles sein. Allerdings die `namespace` und `assembly` Werte müssen die Details des benutzerdefinierten Steuerelements übereinstimmen. Nach der Namespace deklariert ist, wird das Präfix verwendet, auf das benutzerdefinierte Steuerelement verweisen.
 
 > [!NOTE]
-> **Hinweis**: Definieren der `xmlns` ist deutlich einfacher in PCLs als freigegebene Projekte. Eine PCL wird in eine Assembly kompiliert, daher ist es einfach zu bestimmen, welche die `assembly=CustomRenderer` Wert sein soll. Gemeinsam genutzte Projekte verwenden, werden alle freigegebenen Ressourcen (einschließlich des XAML-Codes) in jede der verweisenden-Projekten; Dies bedeutet, dass bei iOS, Android und Windows Phone kompiliert-Projekte verfügen über eigene *Assemblynamen* es ist nicht möglich Sie schreiben die `xmlns` Deklaration, da der Wert für jede Anwendung unterschiedlich sein muss. Benutzerdefinierte Steuerelemente in XAML für freigegebene Projekte erfordern alle Anwendungsprojekt mit demselben Namen konfiguriert werden.
+> Definieren der `xmlns` ist deutlich einfacher in PCLs als freigegebene Projekte. Eine PCL wird in eine Assembly kompiliert, daher ist es einfach zu bestimmen, welche die `assembly=CustomRenderer` Wert sein soll. Gemeinsam genutzte Projekte verwenden, werden alle freigegebenen Ressourcen (einschließlich des XAML-Codes) in jede der verweisenden-Projekten; Dies bedeutet, dass bei iOS, Android und Windows Phone kompiliert-Projekte verfügen über eigene *Assemblynamen* es ist nicht möglich Sie schreiben die `xmlns` Deklaration, da der Wert für jede Anwendung unterschiedlich sein muss. Benutzerdefinierte Steuerelemente in XAML für freigegebene Projekte erfordern alle Anwendungsprojekt mit demselben Namen konfiguriert werden.
 
 Die `MyEntry` benutzerdefiniertes Steuerelement wird dann für jede Plattform, mit einem grauen Hintergrund gerendert, wie in den folgenden Screenshots dargestellt:
 
@@ -69,7 +69,7 @@ Der Prozess zum Erstellen einer benutzerdefinierten Rendererklasse lautet wie fo
 1. Hinzufügen einer `ExportRenderer` -Attribut auf die benutzerdefinierten Renderer-Klasse, um anzugeben, dass es zum Rendern des Steuerelements Xamarin.Forms verwendet werden soll. Dieses Attribut wird verwendet, um den benutzerdefinierten Renderer mit Xamarin.Forms zu registrieren.
 
 > [!NOTE]
-> **Hinweis**: für die meisten Xamarin.Forms Elemente ist optional, um einen benutzerdefinierten Renderer in jedem plattformprojekt bereitzustellen. Wenn ein benutzerdefinierter Renderer nicht registriert ist, wird der Standardrenderer für die Basisklasse für das Steuerelement verwendet werden. Benutzerdefinierte Renderer sind jedoch erforderlich, in jede plattformprojekt beim Rendern einer [Ansicht](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) oder [ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) Element.
+> Für die meisten Xamarin.Forms Elemente ist optional, geben Sie einen benutzerdefinierten Renderer in jedem plattformprojekt. Wenn ein benutzerdefinierter Renderer nicht registriert ist, wird der Standardrenderer für die Basisklasse für das Steuerelement verwendet werden. Benutzerdefinierte Renderer sind jedoch erforderlich, in jede plattformprojekt beim Rendern einer [Ansicht](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) oder [ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) Element.
 
 Die Themen in dieser Serie bieten Demonstrationen und erläuterungen zu den von diesem Prozess für verschiedene Xamarin.Forms Elemente.
 

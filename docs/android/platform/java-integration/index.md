@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/18/2017
-ms.openlocfilehash: 88e8c66d36956649f0a996046f038d89a7267cf5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 213702d289adefe966f07c3ad0174156cbc69ee1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="java-integration-overview"></a>Übersicht über die Java-Integration
 
 _Die Java-Ökosystem umfasst verschiedene und enorme Auflistung von Komponenten. Viele dieser Komponenten können zum Erstellen eine Android-Anwendung entwickeln benötigte Zeit reduzieren, verwendet werden. Dieses Dokument wird eingeführt und bieten eine allgemeine Übersicht über einige der Methoden, die Entwicklern diese vorhandenen Java-Komponenten verwenden können, um ihre Xamarin.Android Anwendungsentwicklung zu verbessern._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -41,7 +40,6 @@ Das zweite Verfahren, mit JNI, funktioniert mit viel geringerer, aber ermöglich
 Das dritte Verfahren unterscheidet sich grundlegend von den vorherigen beiden: Portieren von Code von Java in c#. Portieren von Code von einer Sprache in eine andere kann ein sehr arbeitsaufwendig Vorgang sein, aber es ist möglich, zu reduzieren, dass Aufwand mithilfe eines Tools namens *Schärfe*. Scharf ist ein open Source-Tool, das eine Java-zu-Konverter c#. 
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

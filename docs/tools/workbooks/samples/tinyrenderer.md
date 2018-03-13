@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: 1689736ce3f2a8e20ceaa23edf410d3892038522
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e5422d3f0a68f99790617fe534b30389aae2563c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tinyrenderer-workbooks"></a>TinyRenderer Arbeitsmappen
 
@@ -30,7 +30,7 @@ Eine Reihe von Arbeitsmappen, die erläutern, wie OpenGL funktioniert, welche au
 -    [Lektion 7: Shadow-Zuordnung](https://developer.xamarin.com/workbooks/graphics/tiny-renderer/lesson7.workbook)
 -    [Lektion 8: Ambient okklusionsabfragen](https://developer.xamarin.com/workbooks/graphics/tiny-renderer/lesson8.workbook)
 
-[ ![](tinyrenderer-images/tinyrenderer-sml.png "Drahtmodell-Rendering-Beispiel")](tinyrenderer-images/tinyrenderer.png)
+[![](tinyrenderer-images/tinyrenderer-sml.png "Drahtmodell-Rendering-Beispiel")](tinyrenderer-images/tinyrenderer.png#lightbox)
 
 Der C#-Code in diesen Arbeitsmappen basiert auf diesem open Source- [C++-Code](https://github.com/ssloy/tinyrenderer) und der Text wird von diesem [Wiki](https://github.com/ssloy/tinyrenderer/wiki/). Vielen Dank, die die ursprüngliche Arbeit unter einer Lizenz verfügbar ist, die uns in einen Satz von Arbeitsmappen vollzogen zulässig.
 

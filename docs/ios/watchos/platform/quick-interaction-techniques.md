@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 75a8e807a68a3fccfa76fc7ba1f260818b25174d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bf93744914a0caf4f6599fc333ae200468d66e48
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="quick-interaction-techniques-for-watchos-3"></a>Schnelle Interaktion Techniken für WatchOS 3
 
@@ -77,7 +77,7 @@ Reagieren Sie auf die Aktion der Erkennung, behandeln die Aktion, die vom Benutz
 
 Bei diskreten Gesten Aktion aufgerufen werden, wenn die Aktion erkannt wird und ein Zustand (`WKGestureRecognizerState`) als zugewiesen ist:
 
-[ ![](quick-interaction-techniques-images/quick01.png "Diskreten Gestenhandler-Status")](quick-interaction-techniques-images/quick01.png)
+[![](quick-interaction-techniques-images/quick01.png "Diskreten Gestenhandler-Status")](quick-interaction-techniques-images/quick01.png#lightbox)
 
 Alle diskreten Gesten fangen die `Possible` Status- und Übergangsinformationen, die entweder die `Failed` oder `Recognized` Zustand. Wenn Sie diskrete Gesten verwenden, behandeln nicht der Entwickler direkt mit dem Status im Allgemeinen. Stattdessen greifen sie auf die Aktion aufgerufen werden, wenn die Aktion nur erkannt wird.
 
@@ -85,7 +85,7 @@ Alle diskreten Gesten fangen die `Possible` Status- und Übergangsinformationen,
 
 Fortlaufende Gesten unterscheiden sich geringfügig von diskrete Gesten, wenn die Aktion mehrere Male aufgerufen wird, wie die Aktion erkannt wird:
 
-[ ![](quick-interaction-techniques-images/quick02.png "Fortlaufende Gestenhandler-Zustände")](quick-interaction-techniques-images/quick02.png)
+[![](quick-interaction-techniques-images/quick02.png "Fortlaufende Gestenhandler-Zustände")](quick-interaction-techniques-images/quick02.png#lightbox)
 
 Erneut, fortlaufende Gesten startet mit dem `Possible` Status, aber sie über mehrere Updates ausgeführt. Hier muss der Entwickler Zustands der und Aktualisieren der Benutzeroberfläche der Anwendung während der `Changed` phase, bis schließlich die Bewegung ist `Recognized` oder `Canceled`.
 
@@ -168,7 +168,7 @@ Apple hat bleibt es Aufgabe des Entwicklers, um zu bestimmen, wie die Anzahl der
 
 Das Vorzeichen (`+/-`) des rotierenden Delta gibt die Richtung an, dass der Benutzer die digitale Crown aktivieren ist:
 
-[ ![](quick-interaction-techniques-images/quick03.png "Die Vorzeichen des Deltas rotierenden gibt die Richtung an, dass der Benutzer die digitale Crown aktivieren ist")](quick-interaction-techniques-images/quick03.png)
+[![](quick-interaction-techniques-images/quick03.png "Die Vorzeichen des Deltas rotierenden gibt die Richtung an, dass der Benutzer die digitale Crown aktivieren ist")](quick-interaction-techniques-images/quick03.png#lightbox)
 
 
 Wenn der Benutzer sich scrolling ist zurück positive Deltas und einen Bildlauf nach unten, klicken Sie dann negative Deltas zurückgegeben werden unabhängig davon, welche Ausrichtung der Benutzer die Überwachung in tragen, WatchKit.
@@ -189,15 +189,15 @@ Es obliegt dem Entwickler, die bestimmen, wann ihre benutzerdefinierte Schnittst
 
 Die Standardmethode, dass ein Benutzer einer Tabellenansicht in einer app WatchOS navigiert wird, einen Bildlauf zu der gewünschten Datenelement, tippen auf eine bestimmte Zeile an die Detailansicht anzuzeigen, tippen Sie auf die Schaltfläche "zurück" nach Abschluss der Details anzeigen, und wiederholen den Vorgang für alle anderen Informationen, die die y interessiert sind, aus der in der Tabelle:
 
-[ ![](quick-interaction-techniques-images/quick04.png "Verschieben zwischen einer Tabelle und der Detailansicht")](quick-interaction-techniques-images/quick04.png)
+[![](quick-interaction-techniques-images/quick04.png "Verschieben zwischen einer Tabelle und der Detailansicht")](quick-interaction-techniques-images/quick04.png#lightbox)
 
 Neue zu WatchOS 3, der Entwickler kann vertikale Paging auf aktivieren die Tabellenansicht-Steuerelemente. Diese Funktion aktiviert ist kann der Benutzer scrollen, um eine Tabellenansicht Zeile suchen, und tippen Sie auf die Zeile, um seine Details als vor dem anzeigen. Allerdings können sie jetzt oben streichen wählen Sie die nächste Zeile in der Tabelle oder abwärts bis zu der vorherigen Zeile (oder die digitale Crown), alle ohne anzuzeigende Tabelle zurückgeben zuerst:
 
-[ ![](quick-interaction-techniques-images/quick05.png "Verschieben zwischen einer Tabelle und der Detailansicht und Streifen nach oben oder unten verschieben zwischen den anderen Zeilen")](quick-interaction-techniques-images/quick05.png)
+[![](quick-interaction-techniques-images/quick05.png "Verschieben zwischen einer Tabelle und der Detailansicht und Streifen nach oben oder unten verschieben zwischen den anderen Zeilen")](quick-interaction-techniques-images/quick05.png#lightbox)
 
 Um diesen Modus aktivieren, die WatchOS app Storyboard in Xcode zum Bearbeiten geöffnet, wählen Sie die Ansicht der Tabelle und überprüfen Sie die **vertikale Detail Paging** Kontrollkästchen:
 
-[ ![](quick-interaction-techniques-images/quick06.png "Aktivieren Sie das Kontrollkästchen mit vertikalen Detail Paging")](quick-interaction-techniques-images/quick06.png)
+[![](quick-interaction-techniques-images/quick06.png "Aktivieren Sie das Kontrollkästchen mit vertikalen Detail Paging")](quick-interaction-techniques-images/quick06.png#lightbox)
 
 Stellen Sie sicher, dass die Tabelle Segues verwendet, um detaillierte anzeigen und speichern Sie die Änderungen auf das Storyboard und zurück zu Visual Studio für Mac synchronisiert werden.
 
@@ -313,7 +313,7 @@ Eine wohlgeformte schnelle Interaktion Erfahrung erhalten die Benutzer das Vertr
 
 Insbesondere wird ist ein Problem beim Watch-app wird auf diese Weise jede Art von Netzwerkverbindung oder Freigeben von Informationen für eine Begleit-iPhone-app. Dies kann sich häufig auf eine wartende Indikator führen, während die Transaktion eingerichtet ist, ausgeführt wird, die während einer schnellen Interaktion nicht wünschenswert ist. Betrachten Sie das folgende Beispiel:
 
-[ ![](quick-interaction-techniques-images/quick07.png "Diagramm der Watch-app auf diese Weise einer Netzwerkverbindungs und Freigeben von Informationen für eine Begleit-iPhone-app")](quick-interaction-techniques-images/quick07.png)
+[![](quick-interaction-techniques-images/quick07.png "Diagramm der Watch-app auf diese Weise einer Netzwerkverbindungs und Freigeben von Informationen für eine Begleit-iPhone-app")](quick-interaction-techniques-images/quick07.png#lightbox)
 
 1. Der Benutzer wählt ein Element auf der Apple Watch erwerben.
 2. Sie tippen Sie auf die Schaltfläche "kaufen".
@@ -325,7 +325,7 @@ Ab dem Zeitpunkt der Benutzer die Schaltfläche "kaufen" tippt, bis die Transakt
 
 Mithilfe von vorgeschlagenen Apple-Modell, sehen Sie sich die gleichen schnelle Interaktion erneut:
 
-[ ![](quick-interaction-techniques-images/quick08.png "Vorgeschlagene Modelldiagramm Apples")](quick-interaction-techniques-images/quick08.png)
+[![](quick-interaction-techniques-images/quick08.png "Vorgeschlagene Modelldiagramm Apples")](quick-interaction-techniques-images/quick08.png#lightbox)
 
 1. Der Benutzer wählt ein Element auf der Apple Watch erwerben.
 2. Sie tippen Sie auf die Schaltfläche "kaufen".

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/15/2017
-ms.openlocfilehash: 1a5120f088fca6997eef3a1bc27126b442380cac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b54adc28e318b263052bb6073390556a198cffe7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="device-provisioning"></a>Bereitstellung von Geräten
 
@@ -22,7 +22,7 @@ Beim Entwickeln einer Xamarin.iOS-Anwendung ist es wichtig diese durch Bereitste
 
 Die hervorgehobenen Abschnitte in der folgenden Abbildung zeigen, welche Schritte vor der iOS-Bereitstellung erforderlich sind:
 
-[![](images/provisioningdiagram.png "Die hervorgehobenen Abschnitte in dieser Abbildung zeigen, welche Schritte vor der iOS-Bereitstellung erforderlich sind")](images/provisioningdiagram.png)
+[![](images/provisioningdiagram.png "Die hervorgehobenen Abschnitte in dieser Abbildung zeigen, welche Schritte vor der iOS-Bereitstellung erforderlich sind")](images/provisioningdiagram.png#lightbox)
 
 Der nächste Schritt besteht dann in der Verteilung der Anwendung. Weitere Informationen zur Bereitstellung finden Sie in den Leitfäden zur [App Distribution (App-Verteilung)](~/ios/deploy-test/app-distribution/index.md).
 
@@ -84,4 +84,4 @@ Apple stellt eine Auswahl an speziellen Anwendungsdiensten, auch Funktionen gena
 - [Free Provisioning (Kostenlose Bereitstellung)](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [App-Verteilung](~/ios/deploy-test/app-distribution/index.md)
 - [Problembehandlung](~/ios/deploy-test/troubleshooting.md)
-- [Apple - App Distribution Guide (Apple – Leitfaden zur App-Verteilung)](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
+- [Apple: Leitfaden zur App-Verteilung](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)

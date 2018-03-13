@@ -6,12 +6,12 @@ ms.assetid: 157F0899-4E3E-4538-90AF-B59B8A871204
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/31/2018
-ms.openlocfilehash: 0cf1557cea8d5adb3678ba5e424f9f23375e32bc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 02/28/2018
+ms.openlocfilehash: 2dea77b4c52db0c032aba9bde471e76eb36ba3ad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="accessibility-on-android"></a>Eingabehilfen unter Android
 
@@ -171,14 +171,12 @@ In der Layout-XML Eingabehilfen-Attribute wie `hint` und `contentDescription` ka
 
 Der Vorteil der Text in einer separaten Datei gespeichert ist, dass mehrere sprachübersetzungen der Datei in die app bereitgestellt werden können. Finden Sie unter der [Android-lokalisierungsleitfaden](~/android/app-fundamentals/localization.md) um zu erfahren, wie lokalisierte Zeichenfolge Dateien hinzufügen, um ein Anwendungsprojekt.
 
-<a name="testing" />
 
 ## <a name="testing-accessibility"></a>Barrierefreiheit
 
 Führen Sie die [Schritte](http://developer.android.com/training/accessibility/testing.html#how-to) TalkBack und Durchsuchen von Touch So testen Sie den Zugriff auf Android-Geräten zu aktivieren.
 
 Möglicherweise müssen Sie installieren [TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback) von Google Play herunter, wenn er nicht in erscheint **Einstellungen > Eingabehilfen**.
-
 
 
 ## <a name="related-links"></a>Verwandte Links

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: f55620720bb986142a56de7e8602be56280006d4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2c48ae5386fda63aed43c24c09c10cfb87b93637
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -34,7 +34,7 @@ Folgendes ist erforderlich, die in diesem Artikel vorgestellten Schritte ausfüh
 
 CloudKit lässt sich der Entwicklerzugriff auf die iCloud-Server zu gewähren. Es bildet die Grundlage für iCloud Laufwerk und iCloud Foto-Bibliothek. CloudKit wird für Mac OS X und Apple iOS-Geräte unterstützt.
 
- [ ![](intro-to-cloudkit-images/image1.png "Wie CloudKit auf Mac OS X und Apple iOS-Geräten unterstützt wird")](intro-to-cloudkit-images/image1.png)
+ [![](intro-to-cloudkit-images/image1.png "Wie CloudKit auf Mac OS X und Apple iOS-Geräten unterstützt wird")](intro-to-cloudkit-images/image1.png#lightbox)
 
 CloudKit verwendet die iCloud-Konto-Infrastruktur. Wenn ein Benutzer eine iCloud-Konto auf dem Gerät angemeldet ist, verwendet CloudKit ihrer ID zur Identifizierung des Benutzers. Wenn kein Konto verfügbar ist, wird beschränkten schreibgeschützten Zugriff bereitgestellt werden.
 
@@ -55,11 +55,11 @@ Bevor eine Anwendung Xamarin CloudKit Framework nutzen kann, die Anwendung muss 
 1.  Öffnen Sie das Projekt in Visual Studio für Mac oder Visual Studio.
 2.  In der **Projektmappen-Explorer**öffnen die **"Info.plist"** Datei, und stellen Sie sicher der **Paket-ID** entspricht, die in definiert wurde **App-ID**erstellt als Teil der Bereitstellung einrichten:
  
-    [ ![](intro-to-cloudkit-images/image26a.png "Geben Sie die Paket-ID")](intro-to-cloudkit-images/image26a-orig.png "Info.plist file displaying Bundle Identifier")
+    [![](intro-to-cloudkit-images/image26a.png "Geben Sie die Paket-ID")](intro-to-cloudkit-images/image26a-orig.png#lightbox "Info.plist file displaying Bundle Identifier")
 
 3.  Führen Sie einen Bildlauf zum unteren Rand der **"Info.plist"** Datei, und wählen Sie **Hintergrundmodi aktiviert**, **Speicherort Updates** und **Remote Benachrichtigungen**:
 
-    [ ![](intro-to-cloudkit-images/image27a.png "Wählen Sie aktiviert Hintergrundmodi Speicherort aktualisiert und Remote-Benachrichtigungen")](intro-to-cloudkit-images/image27a-orig.png "Info.plist file displaying background modes")
+    [![](intro-to-cloudkit-images/image27a.png "Wählen Sie aktiviert Hintergrundmodi Speicherort aktualisiert und Remote-Benachrichtigungen")](intro-to-cloudkit-images/image27a-orig.png#lightbox "Info.plist file displaying background modes")
 4.  Mit der rechten Maustaste in des iOS-Projekts in der Projektmappe, und wählen **Optionen**.
 5.  Wählen Sie **iOS Bundle Signing**, wählen die **Developer Identität** und **Bereitstellungsprofil** oben erstellt.
 6.  Sicherstellen der **Entitlements.plist** enthält **iCloud aktivieren** , **Schlüssel-Wert-Speicher** und **CloudKit** .
@@ -95,7 +95,7 @@ Das Konzept eine Clientanwendung und getrennt von anderen Clients ausführen, is
 
 CloudKit wurde entworfen, die gleichen Vorteile bieten, wie die oben genannten, und diese mit dem Arbeiten mit Cloud-basierter anzuwenden:
 
- [ ![](intro-to-cloudkit-images/image31.png "CloudKit-apps kommunizieren mithilfe von Containern")](intro-to-cloudkit-images/image31.png)
+ [![](intro-to-cloudkit-images/image31.png "CloudKit-apps kommunizieren mithilfe von Containern")](intro-to-cloudkit-images/image31.png#lightbox)
 
 Genau wie die Anwendung, die sich daher ist die Anwendung die Kommunikation mit iCloud 1 von n eine von vielen auf dem Gerät ausgeführte. Jeder dieser anderen Kommunikationssilos werden als Container bezeichnet.
 
@@ -117,13 +117,13 @@ Während der Container, standardmäßig gebunden 1: 1 für eine angegebene Anwen
 
 Eine der Hauptfunktionen von CloudKit besteht darin Datenmodell für eine Anwendung und die Replikation dieses Modell bis zu dem iCloud-Server schalten. Einige Informationen richtet sich des Benutzers, die sie erstellt haben, andere sind öffentliche Daten, die von einem Benutzer für die öffentliche Verwendung (z. B. eine Restaurantkritik) erstellt werden konnte oder möglicherweise Informationen, die der Entwickler für die Anwendung veröffentlicht wurde. In beiden Fällen die Zielgruppe ist nicht nur ein einzelner Benutzer, jedoch ist eine Community von Benutzern.
 
- [ ![](intro-to-cloudkit-images/image32.png "CloudKit Container-Diagramm")](intro-to-cloudkit-images/image32.png)
+ [![](intro-to-cloudkit-images/image32.png "CloudKit Container-Diagramm")](intro-to-cloudkit-images/image32.png#lightbox)
 
 In einem Container wird zunächst die Öffentliche Datenbank. Dadurch werden alle Informationen des öffentlichen aktiv ist und mingles zusammen. Darüber hinaus sind mehrere einzelne private Datenbanken für jeden Benutzer der Anwendung.
 
 Bei Ausführung auf einem iOS-Gerät wird die Anwendung nur Zugriff auf die Informationen für den gegenwärtig angemeldeten iCloud-Benutzer sein. Daher wird die Anwendungsansicht des Containers wie folgt lauten:
 
- [ ![](intro-to-cloudkit-images/image33.png "Die Anwendungsansicht des Containers")](intro-to-cloudkit-images/image33.png)
+ [![](intro-to-cloudkit-images/image33.png "Die Anwendungsansicht des Containers")](intro-to-cloudkit-images/image33.png#lightbox)
 
 Sie sehen nur der öffentliche und der private Datenbank, die dem aktuell angemeldeten iCloud-Benutzer zugeordnet.
 
@@ -186,7 +186,7 @@ Dies sind die Unterschiede zwischen der Datenbank-Datentypen:
 
 Container enthalten, Datenbanken und in Datenbanken sind Datensätze. Datensätze sind der Mechanismus, der in dem strukturierte Daten in und aus CloudKit verschoben werden:
 
- [ ![](intro-to-cloudkit-images/image34.png "Container enthalten, Datenbanken und in Datenbanken sind Datensätze")](intro-to-cloudkit-images/image34.png)
+ [![](intro-to-cloudkit-images/image34.png "Container enthalten, Datenbanken und in Datenbanken sind Datensätze")](intro-to-cloudkit-images/image34.png#lightbox)
 
 Datensätze werden verfügbar gemacht, in CloudKit Framework über die `CKRecord` -Klasse, die Schlüssel-Wert-Paaren umschließt. Eine Instanz eines Objekts in einer Anwendung ist gleichbedeutend mit einem `CKRecord` in CloudKit. Darüber hinaus jede `CKRecord` besitzt einen Datensatztyp, was der Klasse eines Objekts entspricht.
 
@@ -227,11 +227,11 @@ await CloudManager.SaveAsync (newRecord);
 
 Datensätze sind nicht in einer bestimmten Datenbank selbst vorhanden – Gruppen von Datensätzen zusammen in einer Zone Datensatz vorhanden. Datensatz Zonen kann als Tabellen in einer herkömmlichen relationalen Datenbanken betrachtet werden:
 
- [ ![](intro-to-cloudkit-images/image35.png "Gruppen von Datensätzen vorhanden zusammen in einer Zone Datensatz.")](intro-to-cloudkit-images/image35.png)
+ [![](intro-to-cloudkit-images/image35.png "Gruppen von Datensätzen vorhanden zusammen in einer Zone Datensatz.")](intro-to-cloudkit-images/image35.png#lightbox)
 
 Es können mehrere Datensätze in einer bestimmten Datensatz Zone und mehrere Datensatz Zonen innerhalb einer bestimmten Datenbank vorhanden sein. Jede Datenbank enthält einen Datensatz Standardzone:
 
- [ ![](intro-to-cloudkit-images/image36.png "Jede Datenbank enthält einen Datensatz Standardzone und benutzerdefinierte Zone")](intro-to-cloudkit-images/image36.png)
+ [![](intro-to-cloudkit-images/image36.png "Jede Datenbank enthält einen Datensatz Standardzone und benutzerdefinierte Zone")](intro-to-cloudkit-images/image36.png#lightbox)
 
 Dies ist, in dem Datensätze werden standardmäßig gespeichert. Darüber hinaus können benutzerdefinierte Datensatz Zonen erstellt werden. Notieren Sie die Zonen darstellen, die die Basis Granularität an welche Atomic Commits und Change Tracking erfolgt.
 
@@ -258,7 +258,7 @@ var recordID =  new CKRecordID("My Record");
 
 Verweise stellen Beziehungen zwischen den verknüpften Datensätzen in einer bestimmten Datenbank:
 
- [ ![](intro-to-cloudkit-images/image37.png "Verweise stellen Beziehungen zwischen den verknüpften Datensätzen in einer bestimmten Datenbank")](intro-to-cloudkit-images/image37.png)
+ [![](intro-to-cloudkit-images/image37.png "Verweise stellen Beziehungen zwischen den verknüpften Datensätzen in einer bestimmten Datenbank")](intro-to-cloudkit-images/image37.png#lightbox)
 
 Im obigen Beispiel besitzen Eltern untergeordneten Elemente aus, damit, dass das untergeordnete Element über einen untergeordneten Datensatz des übergeordneten Datensatzes ist. Die Beziehung aus dem untergeordneten Datensatz mit dem übergeordneten Datensatz wechselt und wird als bezeichnet eine *wieder Verweis*.
 
@@ -283,7 +283,7 @@ var reference = new CKReference(newRecord, new CKReferenceAction());
 
 Ressourcen können für eine Datei groß ist, nicht strukturierte Daten in die icloud hochgeladen und einen bestimmten Datensatz zugeordnet werden:
 
- [ ![](intro-to-cloudkit-images/image38.png "Ressourcen können für eine Datei groß ist, nicht strukturierte Daten in die icloud hochgeladen und einen bestimmten Datensatz zugeordnet werden")](intro-to-cloudkit-images/image38.png)
+ [![](intro-to-cloudkit-images/image38.png "Ressourcen können für eine Datei groß ist, nicht strukturierte Daten in die icloud hochgeladen und einen bestimmten Datensatz zugeordnet werden")](intro-to-cloudkit-images/image38.png#lightbox)
 
 Auf dem Client eine `CKRecord` erstellt wird, beschreibt die Datei, die auf dem iCloud-Server hochgeladen werden. Ein `CKAsset` wird erstellt, um die Datei enthalten und mit dem Datensatz, beschreiben sie verknüpft ist.
 
@@ -594,7 +594,7 @@ Abonnements werden verfügbar gemacht, in CloudKit Framework über die `CKSubscr
 
 Bevor Sie Abonnements in C#-Code implementieren, werfen wir einen schnellen Überblick über die Funktionsweise von Abonnements:
 
- [ ![](intro-to-cloudkit-images/image39.png "Einen Überblick über die Funktionsweise von Abonnements")](intro-to-cloudkit-images/image39.png)
+ [![](intro-to-cloudkit-images/image39.png "Einen Überblick über die Funktionsweise von Abonnements")](intro-to-cloudkit-images/image39.png#lightbox)
 
 Das obige Diagramm zeigt den typischen abonnierungsprozess wie folgt aus:
 
@@ -697,7 +697,7 @@ Als Nächstes werden wir diese Themen detailliert betrachten.
 
 Wie bereits erwähnt, bietet CloudKit eine Möglichkeit für die Anwendung zur eindeutigen Identifizierung ein gegebenen Benutzers an:
 
- [ ![](intro-to-cloudkit-images/image40.png "Eindeutig sich ein bestimmter Benutzer")](intro-to-cloudkit-images/image40.png)
+ [![](intro-to-cloudkit-images/image40.png "Eindeutig sich ein bestimmter Benutzer")](intro-to-cloudkit-images/image40.png#lightbox)
 
 Es ist eine Clientanwendung, die auf Geräten des Benutzers und aller die jeweiligen Benutzer Private Datenbanken innerhalb des Containers CloudKit ausgeführt wird. Die Clientanwendung führt zu einem bestimmten Benutzer verknüpft sein. Dieser Wert basiert auf der Benutzer, die in der iCloud lokal auf dem Gerät angemeldet ist.
 
@@ -732,7 +732,7 @@ Der obige Code ist der CloudKit-Container, geben Sie die ID des gerade angemelde
 
 Jeder Benutzer in CloudKit hat bestimmten Metadaten, die sie beschreiben. Diese Metadaten wird als Datensatz CloudKit dargestellt:
 
- [ ![](intro-to-cloudkit-images/image41.png "Jeder Benutzer in CloudKit hat bestimmten Metadaten, die sie beschreiben")](intro-to-cloudkit-images/image41.png)
+ [![](intro-to-cloudkit-images/image41.png "Jeder Benutzer in CloudKit hat bestimmten Metadaten, die sie beschreiben")](intro-to-cloudkit-images/image41.png#lightbox)
 
 Suchen in der privaten Datenbank für einen bestimmten Benutzer, der einen Container vorhanden, wird ein Datensatz, die dieser Benutzer definiert ist. Es gibt viele Benutzerdatensätze in die Öffentliche Datenbank, eine für jeden Benutzer des Containers. Eines der folgenden verfügen Datensatz-ID, die dem aktuell angemeldeten Benutzers Datensatz-ID übereinstimmt
 
@@ -768,7 +768,7 @@ In diesen Fällen kann die Anwendung anfordern, dass der Benutzer diese Informat
 
 Vorausgesetzt, dass die Benutzer als Filtertreiber-in für die Anwendung den Zugriff auf ihre Benutzerkontoinformationen beschränkt, können sie an andere Benutzer der Anwendung erkannt werden:
 
- [ ![](intro-to-cloudkit-images/image42.png "Ein Benutzer kann an andere Benutzer der Anwendung erkennbar sein.")](intro-to-cloudkit-images/image42.png)
+ [![](intro-to-cloudkit-images/image42.png "Ein Benutzer kann an andere Benutzer der Anwendung erkennbar sein.")](intro-to-cloudkit-images/image42.png#lightbox)
 
 Kommuniziert der Client-Anwendung in einen Container, und der Container kommuniziert iCloud den Zugriff auf Benutzer Informationen. Der Benutzer kann eine e-Mail-Adresse angeben und Ermittlung kann verwendet werden, um das Abrufen von Informationen über den Benutzer zurück. Optional können die Benutzer-ID auch verwendet werden, um Informationen über den Benutzer zu ermitteln.
 
@@ -849,40 +849,40 @@ Führen Sie folgende Schritte aus:
 
 1. In Visual Studio für Ma, kompilieren Sie die Anwendung für **Release** > **iOS-Gerät**: 
 
-    [![](intro-to-cloudkit-images/shipping01.png "Kompilieren Sie die Anwendung zur Freigabe")](intro-to-cloudkit-images/shipping01.png)
+    [![](intro-to-cloudkit-images/shipping01.png "Kompilieren Sie die Anwendung zur Freigabe")](intro-to-cloudkit-images/shipping01.png#lightbox)
 
 2. Aus der **erstellen** klicken Sie im Menü **Archiv**: 
 
-    [![](intro-to-cloudkit-images/shipping02.png "Wählen Sie Archiv")](intro-to-cloudkit-images/shipping02.png)
+    [![](intro-to-cloudkit-images/shipping02.png "Wählen Sie Archiv")](intro-to-cloudkit-images/shipping02.png#lightbox)
 
 3. Die **Archiv** wird erstellt und in Visual Studio für Mac angezeigt: 
 
-    [![](intro-to-cloudkit-images/shipping03.png "Das Archiv wird erstellt und angezeigt werden")](intro-to-cloudkit-images/shipping03.png)
+    [![](intro-to-cloudkit-images/shipping03.png "Das Archiv wird erstellt und angezeigt werden")](intro-to-cloudkit-images/shipping03.png#lightbox)
 
 4. Starten Sie **Xcode**.
 5. Aus der **Fenster** klicken Sie im Menü **Planer**: 
 
-    [![](intro-to-cloudkit-images/shipping04.png "Wählen Sie Planer")](intro-to-cloudkit-images/shipping04.png)
+    [![](intro-to-cloudkit-images/shipping04.png "Wählen Sie Planer")](intro-to-cloudkit-images/shipping04.png#lightbox)
 
 6. Wählen Sie die Anwendung Archiv, und klicken Sie auf die **exportieren...**  Schaltfläche: 
 
-    [![](intro-to-cloudkit-images/shipping05.png "Die Anwendung Archiv")](intro-to-cloudkit-images/shipping05.png)
+    [![](intro-to-cloudkit-images/shipping05.png "Die Anwendung Archiv")](intro-to-cloudkit-images/shipping05.png#lightbox)
     
 7. Wählen Sie eine Methode für den Export aus, und klicken Sie auf die **Weiter** Schaltfläche: 
 
-    [![](intro-to-cloudkit-images/shipping06.png "Wählen Sie eine Methode für den export")](intro-to-cloudkit-images/shipping06.png)
+    [![](intro-to-cloudkit-images/shipping06.png "Wählen Sie eine Methode für den export")](intro-to-cloudkit-images/shipping06.png#lightbox)
 
 8. Wählen Sie die **Entwicklungsteam** aus der Dropdown-Liste und klicken Sie auf die **auswählen** Schaltfläche: 
 
-    [![](intro-to-cloudkit-images/shipping07.png "Wählen Sie in der Dropdownliste das Entwicklungsteam")](intro-to-cloudkit-images/shipping07.png)
+    [![](intro-to-cloudkit-images/shipping07.png "Wählen Sie in der Dropdownliste das Entwicklungsteam")](intro-to-cloudkit-images/shipping07.png#lightbox)
 
 9. Wählen Sie **Produktion** aus der Dropdown-Liste und klicken Sie auf die **Weiter** Schaltfläche: 
 
-    [![](intro-to-cloudkit-images/shipping08.png "Produktion in der Dropdownliste auswählen.")](intro-to-cloudkit-images/shipping08.png)
+    [![](intro-to-cloudkit-images/shipping08.png "Produktion in der Dropdownliste auswählen.")](intro-to-cloudkit-images/shipping08.png#lightbox)
 
 10. Überprüfen Sie die Einstellung aus und klicken Sie auf die **exportieren** Schaltfläche: 
 
-    [![](intro-to-cloudkit-images/shipping09.png "Überprüfen Sie die Einstellung")](intro-to-cloudkit-images/shipping09.png)
+    [![](intro-to-cloudkit-images/shipping09.png "Überprüfen Sie die Einstellung")](intro-to-cloudkit-images/shipping09.png#lightbox)
 
 11. Wählen Sie einen Speicherort zum Generieren der resultierenden Anwendung `.ipa` Datei.
 

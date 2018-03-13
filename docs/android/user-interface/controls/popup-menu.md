@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/18/2017
-ms.openlocfilehash: 54b6809b7e27dc87be6d510e4a4b6071e4ae22e7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f976d798ae1b1279fc8f82d3cf1d738bb2c93911
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="popup-menu"></a>PopUp-Menü
 
 Die `PopupMenu` Klasse fügt Unterstützung für die Anzeige von Popupmenüs, die eine bestimmte Sicht zugeordnet sind. Die folgende Abbildung zeigt ein Popupmenü angezeigt auf eine Schaltfläche und das zweite Element hervorgehoben, wie diese Option ausgewählt ist:
 
- [ ![Beispiel für eine PopopMenu mit drei Elementen drei](popup-menu-images/20-popupmenu.png)](popup-menu-images/20-popupmenu.png)
+ [![Beispiel für eine PopopMenu mit drei Elementen drei](popup-menu-images/20-popupmenu.png)](popup-menu-images/20-popupmenu.png#lightbox)
 
 Android 4 hinzugefügt, verschiedene neue Funktionen zur `PopupMenu` , erleichtern ein wenig, nämlich arbeiten:
 
@@ -26,9 +26,8 @@ Android 4 hinzugefügt, verschiedene neue Funktionen zur `PopupMenu` , erleichte
 
 Werfen wir einen Blick auf diese Verbesserungen. In diesem Beispiel haben wir eine einzelne Aktivität, die eine Schaltfläche enthält. Wenn der Benutzer die Schaltfläche klickt, wird ein Popup-Menü angezeigt, wie unten dargestellt:
 
- [ ![Beispiel für die app, die in einen Emulator mit den Schaltflächen und Popupmenü 3-Element](popup-menu-images/06-popupmenu.png)](popup-menu-images/06-popupmenu.png)
+ [![Beispiel für die app, die in einen Emulator mit den Schaltflächen und Popupmenü 3-Element](popup-menu-images/06-popupmenu.png)](popup-menu-images/06-popupmenu.png#lightbox)
 
-<a name="Creating_a_Popup_Menu" />
 
 ## <a name="creating-a-popup-menu"></a>Erstellen ein Popup-Menü
 
@@ -62,7 +61,6 @@ showPopupMenu.Click += (s, arg) => {
 
 Im obigen Code nach dem Menü überhöhte Wir rufen Sie einfach `menu.Show` auf dem Bildschirm angezeigt.
 
-<a name="Handling_Menu_Events" />
 
 ## <a name="handling-menu-events"></a>Behandlung von Menüereignissen im
 

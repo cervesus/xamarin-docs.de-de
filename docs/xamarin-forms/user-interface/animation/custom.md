@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 42ef3e6c82763831b5114f3de7603bba8f59eac6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c582e0306bdc69570e3f8e8d35c7fa15b30523da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-animations"></a>Benutzerdefinierte Animationen
 
@@ -54,7 +54,7 @@ Die folgenden Argumente werden angegeben, der `Commit` Methode:
 Der Gesamteffekt besteht darin, die eine Animation erstellen, die vergrößert die [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) Eigenschaft ein [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) zwischen 1 und 2, mehr als 2 Sekunden (2000 Millisekunden), mit der [ `Linear` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.Linear/) Beschleunigungsfunktionen Funktion. Jedes Mal, die die Animation abgeschlossen ist, dessen `Scale` Eigenschaft auf 1 zurückgesetzt wurde und die Animation wiederholt wird.
 
 > [!NOTE]
-> **Hinweis**: gleichzeitige Animationen, die unabhängig voneinander ausführbar konstruiert werden können, durch das Erstellen einer `Animation` -Objekt für jede Animation, und dem anschließenden Aufrufen der `Commit` -Methode für jede Animation.
+> Gleichzeitige Animationen, die unabhängig voneinander ausführbar konstruiert werden können, durch das Erstellen einer `Animation` -Objekt für jede Animation, und dem anschließenden Aufrufen der `Commit` -Methode für jede Animation.
 
 <a name="child" />
 

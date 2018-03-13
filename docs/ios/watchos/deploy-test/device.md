@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fab2092837f9b9ca8ada53274c9644f131fb5659
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 211f8c7066e86dac3a8351b913da0185093dcb70
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="testing-on-watch-devices"></a>Testen auf Geräten überwachen
 
@@ -32,7 +32,7 @@ Testen von iOS-apps auf einem echten iPhone oder iPad ist immer erforderlich, da
 
 Überwachungen werden nicht von anderen – müssen Sie nun Ihr Apple Watch-Gerät hinzufügen, vor dem Bereitstellen von apps für sie. Suchen der Watch UDID mit **Xcode** (**Windows > Geräte** Liste). Wenn paarweise zugeordneten Phone verbunden ist werden auch die Überwachung Informationen angezeigt:
 
-[ ![](device-images/xcode-devices-sml.png "Gepaarte Watch-Informationen")](device-images/xcode-devices.png)
+[![](device-images/xcode-devices-sml.png "Gepaarte Watch-Informationen")](device-images/xcode-devices.png#lightbox)
 
 Wenn Sie wissen, der Überwachung UDID, Hinzufügen der Geräteliste im Developer Center:
 
@@ -99,12 +99,12 @@ Dies kann auftreten, wenn im DEBUGMODUS befinden, zur Bereitstellung auf einem A
 
 Um *vorübergehend* dieses Problem zu umgehen, deaktivieren Sie **inkrementelle Builds** in Watch-Erweiterung **Projektoptionen > Erstellen > WatchOS Build** Fenster:
 
-[ ![](device-images/disable-incremental-sml.png "Das Kontrollkästchen inkrementelle Builds")](device-images/disable-incremental.png)
+[![](device-images/disable-incremental-sml.png "Das Kontrollkästchen inkrementelle Builds")](device-images/disable-incremental.png#lightbox)
 
 Dies wird in einer zukünftigen Version behoben werden, nach dem inkrementelle Builds erneut aktiviert werden können, schnellere Buildzeiten nutzen.
 
 
-#<a name="3-watch-app-fails-to-start-while-debugging-on-device"></a>3# Watch-App kann beim Debuggen auf diesem Gerät nicht gestartet
+### <a name="watch-app-fails-to-start-while-debugging-on-device"></a>Watch-App kann nicht gestartet werden, während des Debuggens auf Gerät
 
 Wenn der Versuch, eine Watch-app auf einem physischen Gerät, das nur das Symbol "& laden" Spinner "Debuggen angezeigt werden (und schließlich Timeout). Dies wird in einer zukünftigen Version behoben werden; eine problemumgehung besteht darin, einen Releasebuild ausführen (die keine Debuggen zulassen).
 

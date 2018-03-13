@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e3701960f246a8f627d991edf244656b5fd8958e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e81ecd10f4dfc101cf63ba9d052d15b51a367ee5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-portable-class-libraries"></a>Einführung in portablen Klassenbibliotheken
 
@@ -29,10 +29,6 @@ Stehen drei wichtige Möglichkeiten zur gemeinsamen Nutzung von Code, der dieses
 
 
 Auf dieser Seite erläutert, wie eine **PCL** das für ein bestimmtes Profil vorgesehen ist, das dann von mehreren plattformspezifischen Projekte verwiesen werden kann.
-
-## <a name="requirements"></a>Anforderungen
-
-Portable Library-Projekte werden automatisch in Visual Studio für Mac in aktiviert MacOS und auf Visual Studio 2013 und höher integriert sind.
 
 
 ## <a name="what-is-a-portable-class-library"></a>Was ist eine Portable Klassenbibliothek?
@@ -132,7 +128,7 @@ J </td>
   </tbody>
 </table>
 
-Die Xamarin-Spalte gibt die Tatsache, Xamarin.iOS und Xamarin.Android unterstützt die Profile, die mit Visual Studio 2013 und höher ausgeliefert und die Verfügbarkeit von Funktionen in Bibliotheken, die Sie erstellen werden nur beschränkt werden, die andere Plattformen, mit denen Sie nach Wunsch wieder. unterstützt.
+Die Xamarin-Spalte gibt die Tatsache, dass Xamarin.iOS und Xamarin.Android unterstützt die Profile, die im Lieferumfang von Visual Studio, und die Verfügbarkeit von Funktionen in Bibliotheken, die Sie erstellen nur vom gewählten zur Unterstützung anderer Plattformen beschränkt.
 
 Dies umfasst Profile, die Kombinationen aus:
 
@@ -170,7 +166,7 @@ Dieses Diagramm zeigt die Architektur einer plattformübergreifenden-Anwendung m
 
 
 
-[![](pcl-images/image1.png "Dieses Diagramm zeigt die Architektur einer plattformübergreifenden-Anwendung mithilfe einer portablen Klassenbibliothek Freigeben von Code, aber auch mithilfe der Abhängigkeitsinjektion plattformabhängigen Funktionen übergeben")](pcl-images/image1.png)
+[![](pcl-images/image1.png "Dieses Diagramm zeigt die Architektur einer plattformübergreifenden-Anwendung mithilfe einer portablen Klassenbibliothek Freigeben von Code, aber auch mithilfe der Abhängigkeitsinjektion plattformabhängigen Funktionen übergeben")](pcl-images/image1.png#lightbox)
 
 
 
@@ -212,7 +208,7 @@ Klicken Sie zum Anzeigen und ändern Sie die PCL-Einstellungen für dieses Proje
 
 
 
-[![](pcl-images/image4.png "Zum Anzeigen und ändern Sie die PCL-Einstellungen für dieses Projekt, mit der rechten Maustaste des Projekts, und wählen Optionen erstellen Allgemein auf die hier gezeigte Bildschirm finden Sie unter")](pcl-images/image4.png)
+[![](pcl-images/image4.png "Zum Anzeigen und ändern Sie die PCL-Einstellungen für dieses Projekt, mit der rechten Maustaste des Projekts, und wählen Optionen erstellen Allgemein auf die hier gezeigte Bildschirm finden Sie unter")](pcl-images/image4.png#lightbox)
 
 
 
@@ -224,7 +220,7 @@ Die Einstellungen auf diesem Bildschirm steuern, welche Plattformen, die diesen 
 
 
 
-[![](pcl-images/image5.png "Die Zielframework-Optionen automatisch ändern, aktualisiert das aktuelle Profil der Bildschirm wird außerdem eine Warnmeldung angezeigt, wenn inkompatible Optionen ausgewählt werden")](pcl-images/image5.png)
+[![](pcl-images/image5.png "Die Zielframework-Optionen automatisch ändern, aktualisiert das aktuelle Profil der Bildschirm wird außerdem eine Warnmeldung angezeigt, wenn inkompatible Optionen ausgewählt werden")](pcl-images/image5.png#lightbox)
 
 
 
@@ -238,7 +234,7 @@ Wenn Code in einer PCL-Bibliothek geschrieben wird, wird der Visual Studio für 
 
 
 
-[![](pcl-images/image6.png "E/a über das Standardprofil Profile136 in Visual Studio für Mac Beachten Sie die Bildlaufleiste gibt an, etwa eine Hälfte der verfügbaren Klassen tatsächlich angezeigten sind nur 14 verfügbaren Klassen verwendet wird")](pcl-images/image6.png)
+[![](pcl-images/image6.png "E/a über das Standardprofil Profile136 in Visual Studio für Mac Beachten Sie die Bildlaufleiste gibt an, etwa eine Hälfte der verfügbaren Klassen tatsächlich angezeigten sind nur 14 verfügbaren Klassen verwendet wird")](pcl-images/image6.png#lightbox)
 
 
 
@@ -246,7 +242,7 @@ Vergleichen Sie, dass die automatische Vervollständigung in einem Xamarin.iOS o
 
 
 
-[![](pcl-images/image7.png "Es sind 40 Klassen, die Klassen wie Datei- und Verzeichnisdaten, die nicht in jedem beliebigen PCL Profil sind, verfügbare einschließlich häufig verwendet werden.")](pcl-images/image7.png)
+[![](pcl-images/image7.png "Es sind 40 Klassen, die Klassen wie Datei- und Verzeichnisdaten, die nicht in jedem beliebigen PCL Profil sind, verfügbare einschließlich häufig verwendet werden.")](pcl-images/image7.png#lightbox)
 
 
 
@@ -261,7 +257,7 @@ Sobald eine PCL-Projekt erstellt wurde, können Sie einen Verweis darauf aus ein
 
 
 
-[![](pcl-images/image8.png "In Visual Studio für Mac mit der rechten Maustaste auf den Knoten "Verweise", und wählen Sie Verweise bearbeiten und dann wechseln Sie zur Registerkarte "Projekte" gezeigten")](pcl-images/image8.png)
+[![](pcl-images/image8.png "In Visual Studio für Mac mit der rechten Maustaste auf den Knoten "Verweise", und wählen Sie Verweise bearbeiten und dann wechseln Sie zur Registerkarte "Projekte" gezeigten")](pcl-images/image8.png#lightbox)
 
 
 
@@ -269,7 +265,7 @@ Das folgende Bildschirmfoto zeigt das Auffüllzeichen Lösung für die TaskyPort
 
 
 
-[![](pcl-images/image9.png "Das Auffüllzeichen Lösung für die TaskyPortable-Beispiel-app")](pcl-images/image9.png)
+[![](pcl-images/image9.png "Das Auffüllzeichen Lösung für die TaskyPortable-Beispiel-app")](pcl-images/image9.png#lightbox)
 
 
 
@@ -325,7 +321,7 @@ Die PCL-Einstellungen angezeigt und geändert werden, indem Sie mit der rechten 
 
 
 
-[![](pcl-images/image13.png "Die PCL-Einstellungen können angezeigt und geändert, indem Sie mit der rechten Maustaste auf das Projekt, und wählen die Bibliothek für Eigenschaften, wie in diesem Screenshot dargestellt werden")](pcl-images/image13.png)
+[![](pcl-images/image13.png "Die PCL-Einstellungen können angezeigt und geändert, indem Sie mit der rechten Maustaste auf das Projekt, und wählen die Bibliothek für Eigenschaften, wie in diesem Screenshot dargestellt werden")](pcl-images/image13.png#lightbox)
 
 
 
@@ -340,7 +336,7 @@ Wenn Code in einer PCL-Bibliothek geschrieben wird, wird Visual Studio erkennt d
 
 
 
-[![](pcl-images/image14.png "E/a über das Standardprofil Profile136")](pcl-images/image14.png)
+[![](pcl-images/image14.png "E/a über das Standardprofil Profile136")](pcl-images/image14.png#lightbox)
 
 
 
@@ -348,7 +344,7 @@ Vergleichen Sie, dass die automatische Vervollständigung in einem regulären Pr
 
 
 
-[![](pcl-images/image15.png "Automatische Vervollständigung in einem regulären-Projekt")](pcl-images/image15.png)
+[![](pcl-images/image15.png "Automatische Vervollständigung in einem regulären-Projekt")](pcl-images/image15.png#lightbox)
 
 
 
@@ -363,7 +359,7 @@ Sobald eine PCL-Projekt erstellt wurde, können Sie einen Verweis darauf aus ein
 
 
 
-[![](pcl-images/image16.png ""Projekte" gezeigten")](pcl-images/image16.png)
+[![](pcl-images/image16.png ""Projekte" gezeigten")](pcl-images/image16.png#lightbox)
 
 
 
@@ -371,7 +367,7 @@ Der folgende Screenshot zeigt den Projektmappen-Bereich für die TaskyPortable B
 
 
 
-[![](pcl-images/image17.png "Im Bereich der Lösung für die TaskyPortable-Beispiel-app")](pcl-images/image17.png)
+[![](pcl-images/image17.png "Im Bereich der Lösung für die TaskyPortable-Beispiel-app")](pcl-images/image17.png#lightbox)
 
 
 
@@ -393,7 +389,7 @@ Hier sind einige Screenshots der resultierenden apps unter iOS, Android und Wind
 
 
 
-[![](pcl-images/image18.png "Hier sind einige Screenshots der resultierenden apps unter iOS, Android und Windows Phone")](pcl-images/image18.png)
+[![](pcl-images/image18.png "Hier sind einige Screenshots der resultierenden apps unter iOS, Android und Windows Phone")](pcl-images/image18.png#lightbox)
 
 
 
@@ -406,7 +402,7 @@ Die Lösungsstruktur wird unten gezeigt (in Visual Studio für Mac und Visual St
 
 
 
-[![](pcl-images/image19.png "Die Projektmappenstruktur in Visual Studio für Mac und Visual Studio bzw. lautet")](pcl-images/image19.png)
+[![](pcl-images/image19.png "Die Projektmappenstruktur in Visual Studio für Mac und Visual Studio bzw. lautet")](pcl-images/image19.png#lightbox)
 
 
 

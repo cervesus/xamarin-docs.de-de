@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 3b54ed876857f0cd04d7a304ff05b9710fbd9e04
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6735e9c03bee981f048231b53539c3b239f64484
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="string-formatting"></a>Formatierung von Zeichenfolgen
 
@@ -121,7 +121,7 @@ Im letzten Abschnitt wird die `BindingContext` auf den Wert des `Math.PI` und mi
 
 Hier wird das Programm auf allen drei Plattformen ausgeführt:
 
-[![Formatieren von Zeichenfolgen](string-formatting-images/stringformatting-small.png "Formatierung eine Zeichenfolge")](string-formatting-images/stringformatting-large.png "Formatierung eine Zeichenfolge")
+[![Formatieren von Zeichenfolgen](string-formatting-images/stringformatting-small.png "Formatierung eine Zeichenfolge")](string-formatting-images/stringformatting-large.png#lightbox "Formatierung eine Zeichenfolge")
 
 ## <a name="viewmodels-and-string-formatting"></a>ViewModels und Formatierung von Zeichenfolgen
 
@@ -174,7 +174,7 @@ Dieser Ansatz wird angezeigt, der **besser Farbauswahl** Beispiel, das im gleich
 
 Stehen nun drei Paare von `Slider` und `Label` Elemente, die auf den gleichen gebunden sind source-Eigenschaft in der `HslColorViewModel` Objekt. Der einzige Unterschied besteht darin, die `Label` verfügt über eine `StringFormat` anzuzeigende jeder Eigenschaft `Slider` Wert.
 
-[![Farbe besser Selektor](string-formatting-images/bettercolorselector-small.png "besser Farbe Selektor")](string-formatting-images/bettercolorselector-large.png "besser Farbe Selektor")
+[![Farbe besser Selektor](string-formatting-images/bettercolorselector-small.png "besser Farbe Selektor")](string-formatting-images/bettercolorselector-large.png#lightbox "besser Farbe Selektor")
 
 Sie Fragen sich vielleicht wie RGB (Rot, Grün, Blau)-Werte im herkömmlichen zweistellige Hexadezimalformat angezeigt werden konnte. Diese ganzzahligen Werte stehen nicht zur Verfügung direkt aus der `Color` Struktur. Eine Lösung bestünde darin ganzzahlige Werte der Farbe Komponenten innerhalb der ViewModel berechnen und diese als Eigenschaften verfügbar gemacht. Kann anschließend formatieren Sie sie mithilfe der `X2` Spezifikation Formatierung.
 

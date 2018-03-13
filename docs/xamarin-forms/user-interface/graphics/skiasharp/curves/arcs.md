@@ -4,14 +4,15 @@ description: "Erfahren Sie, wie mit SkiaSharp Bögen auf drei verschiedene Arten
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 236f5da78022d6f6482ed66ffd439c4cd15766a3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 390c8f4634ea38ecb93e3f21175db00fef27b8e4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Drei Möglichkeiten, einen Bogen gezeichnet werden soll.
 
@@ -100,7 +101,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Wie Sie sehen können, können der Startwinkel und den mittelpunktswinkel negative Werte annehmen:
 
-[![](arcs-images/anglearc-small.png "Dreifacher Screenshot der Seite Winkel Bogen")](arcs-images/anglearc-large.png "dreifacher Screenshot der der Winkel Bogen-Seite")
+[![](arcs-images/anglearc-small.png "Dreifacher Screenshot der Seite Winkel Bogen")](arcs-images/anglearc-large.png#lightbox "dreifacher Screenshot der der Winkel Bogen-Seite")
 
 Dieser Ansatz zum Generieren von einen Bogen algorithmisch am einfachsten ist, und es ist einfach, die parametrischen Gleichungen abgeleitet werden, die den Bogen beschreiben. Zu wissen, die Größe und Position des der Ellipse, die Start- und Sweep Winkel, können die Start- und Endpunkte des Bogens berechnet werden mithilfe der einfachen Trigonometrie (trigonometry):
 
@@ -205,11 +206,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Ein neues `SKPath` Objekt für jeden kreisslice erstellt wird. Der Pfad besteht aus einer Zeile aus der Mitte ein `ArcTo` des Bogens und eine andere Zeile zurück an die Ergebnisse Center gezeichnet werden soll die `Close` aufrufen. Dieses Programm zeigt "explodierten" Kreissegmente durch Verschieben aller out aus der Mitte von 50 Pixel. Diese Aufgabe erfordert einen Vektor in Richtung der Mitte des der mittelpunktswinkel für jedes Segment:
 
-[![](arcs-images/explodedpiechart-small.png "Dreifacher Screenshot der Seite Kreisdiagramm explodiert")](arcs-images/explodedpiechart-large.png "dreifacher Screenshot der Seite Kreisdiagramm explodiert")
+[![](arcs-images/explodedpiechart-small.png "Dreifacher Screenshot der Seite Kreisdiagramm explodiert")](arcs-images/explodedpiechart-large.png#lightbox "dreifacher Screenshot der Seite Kreisdiagramm explodiert")
 
 Um anzuzeigen, wie es ohne die "Auflösung" aussieht, einfach kommentieren Sie Sie aus der `Translate` aufrufen:
 
-[![](arcs-images/explodedpiechartunexploded-small.png "Dreifacher Screenshot der Seite Kreisdiagramm explodiert ohne der Explosion")](arcs-images/explodedpiechartunexploded-large.png "dreifacher Screenshot der Seite Kreisdiagramm explodiert ohne die Auflösung")
+[![](arcs-images/explodedpiechartunexploded-small.png "Dreifacher Screenshot der Seite Kreisdiagramm explodiert ohne der Explosion")](arcs-images/explodedpiechartunexploded-large.png#lightbox "dreifacher Screenshot der Seite Kreisdiagramm explodiert ohne die Auflösung")
 
 ## <a name="the-tangent-arc"></a>Der Bogen Tangenten
 
@@ -413,7 +414,7 @@ public partial class TangentArcPage : InteractivePage
 
 So sieht die **Tangens Bogen** Seite, die auf allen drei Plattformen ausgeführt:
 
-[![](arcs-images/tangentarc-small.png "Dreifacher Screenshot der Seite Tangens Bogen")](arcs-images/tangentarc-large.png "dreifacher Screenshot der Seite Tangens Bogen")
+[![](arcs-images/tangentarc-small.png "Dreifacher Screenshot der Seite Tangens Bogen")](arcs-images/tangentarc-large.png#lightbox "dreifacher Screenshot der Seite Tangens Bogen")
 
 Auf Windows Mobile-Gerät die drei Punkte sind fast kollineare und der Bogen ist sehr klein.
 
@@ -490,7 +491,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hier wird das Programm auf drei Plattformen ausgeführt wird:
 
-[![](arcs-images/roundedheptagon-small.png "Dreifacher Screenshot der Seite gerundet Siebeneck")](arcs-images/roundedheptagon-large.png "dreifacher Screenshot der Seite Siebeneck gerundet")
+[![](arcs-images/roundedheptagon-small.png "Dreifacher Screenshot der Seite gerundet Siebeneck")](arcs-images/roundedheptagon-large.png#lightbox "dreifacher Screenshot der Seite Siebeneck gerundet")
 
 ## <a name="the-elliptical-arc"></a>Elliptischen Bogens
 
@@ -585,7 +586,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hier ist er auf den drei Plattformen ausgeführt:
 
-[![](arcs-images/ellipticalarc-small.png "Dreifacher Screenshot der Seite elliptischen Bogens")](arcs-images/ellipticalarc-large.png "dreifacher Screenshot der Seite elliptischen Bogens")
+[![](arcs-images/ellipticalarc-small.png "Dreifacher Screenshot der Seite elliptischen Bogens")](arcs-images/ellipticalarc-large.png#lightbox "dreifacher Screenshot der Seite elliptischen Bogens")
 
 Die **Bogen unendlich** Seite verwendet elliptischen Bogens einem Vorzeichen Unendlich gezeichnet werden soll. Die Vorzeichen unendlich basiert auf zwei Kreise mit Radii von 100 Einheiten von 100 Einheiten getrennt:
 
@@ -653,7 +654,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Der Code verwendet die `Bounds` Eigenschaft `SKPath` um zu bestimmen, die Dimensionen von den Sinus unendlich, um auf die Größe des Zeichenbereichs zu skalieren:
 
-[![](arcs-images/arcinfinity-small.png "Dreifacher Screenshot der Seite Bogen unendlich")](arcs-images/arcinfinity-large.png "dreifacher Screenshot der Seite Bogen unendlich")
+[![](arcs-images/arcinfinity-small.png "Dreifacher Screenshot der Seite Bogen unendlich")](arcs-images/arcinfinity-large.png#lightbox "dreifacher Screenshot der Seite Bogen unendlich")
 
 Es erscheint das Ergebnis ein wenig "klein", legt nahe, dass die `Bounds` Eigenschaft `SKPath` meldet einen Wert größer als der Pfad.
 
@@ -661,7 +662,7 @@ Die ungefähre Skia intern des Bogens mit mehreren quadratische Bézier-Kurven. 
 
 Um eine engere Anpassung zu erhalten, verwenden die `TightBounds` -Eigenschaft, der die Steuerpunkte ausgeschlossen sind. Hier wird das Programm ausführen im Querformat, und die `TightBounds` Eigenschaft, um die Grenzen der Pfad zu erhalten:
 
-[![](arcs-images/arcinfinitytightbounds-small.png "Dreifacher Screenshot der Seite Bogen unendlich mit enge Grenzen")](arcs-images/arcinfinitytightbounds-large.png "dreifacher Screenshot der Seite Bogen unendlich mit enge Grenzen")
+[![](arcs-images/arcinfinitytightbounds-small.png "Dreifacher Screenshot der Seite Bogen unendlich mit enge Grenzen")](arcs-images/arcinfinitytightbounds-large.png#lightbox "dreifacher Screenshot der Seite Bogen unendlich mit enge Grenzen")
 
 Obwohl die Verbindungen zwischen dem Bögen und gerade Linien mathematisch smooth sind, scheinen die Änderung von Bogen gerade Linie etwas abrupten. Eine bessere Infinity-Anmeldung wird in der nächsten Seite angezeigt.
 

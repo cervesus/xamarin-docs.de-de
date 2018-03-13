@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 523d79adbc5d4f88d4a2670b6422a58fb9256ab2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e40fd215d23e7da6f1356bba17fac84ce91007ae
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="polylines-and-parametric-equations"></a>Polylinien und parametrische Formeln
 
@@ -109,7 +109,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Das Ergebnis wird auch bezeichnet ein *arithmetische Spirale* , da das Offset zwischen jeder Schleife konstant ist:
 
-[![](polylines-images/archimedeanspiral-small.png "Dreifacher Screenshot der Seite Archimedean Spirale")](polylines-images/archimedeanspiral-large.png "dreifacher Screenshot der Seite Archimedean Spirale")
+[![](polylines-images/archimedeanspiral-small.png "Dreifacher Screenshot der Seite Archimedean Spirale")](polylines-images/archimedeanspiral-large.png#lightbox "dreifacher Screenshot der Seite Archimedean Spirale")
 
 Beachten Sie, dass die `SKPath` wird erstellt, einem `using` Block. Dies `SKPath` benötigt mehr Arbeitsspeicher als die `SKPath` Objekte in den vorherigen Programmen, die anzeigt, die eine `using` Block ist besser geeignet ist, nicht verwalteten Ressourcen freizugeben.
 

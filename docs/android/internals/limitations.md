@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 11a7c9dcbe9481209d2eb90ff9d981f7437a1c99
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1b970432d7cd5b6a84b8af72ab616493f3cd36a7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="limitations"></a>Einschränkungen
 
@@ -19,13 +19,11 @@ Da Anwendungen auf Android-Geräten erforderlich sind, Generieren von Java-Proxy
 
 Dies sind die im Vergleich zum Desktop Mono Xamarin.Android-Einschränkungen:
 
-<a name="Limited_Dynamic_Language_Support" />
 
 ## <a name="limited-dynamic-language-support"></a>Begrenzte dynamische sprachunterstützung
 
  [Android Aufrufwrappern](~/android/platform/java-integration/android-callable-wrappers.md) jederzeit die Android-Laufzeit verwalteter Code aufgerufen muss werden benötigt. Android callable Wrapper werden zum Zeitpunkt der Kompilierung generiert basierend auf statische Analyse von IL. Das Ergebnis dieses: Sie *kann nicht* orientieren dynamische Sprachen (IronPython, IronRuby, usw.) in jedem Szenario, für die Erstellung von Unterklassen von Java-Typen (einschließlich indirekte Unterklassen), erforderlich ist es gibt keine Möglichkeit zum Extrahieren von diesen dynamischen Typen zum Zeitpunkt der Kompilierung den erforderlichen Android callable Wrapper generiert.
 
-<a name="Limited_Java_Generation_Support" />
 
 ## <a name="limited-java-generation-support"></a>Unterstützung der eingeschränkten Java-Generierung
 
@@ -88,7 +86,6 @@ class MyIntentService : IntentService {
 }
 ```
 
-<a name="Generic_Csharp_classes" />
 
 ### <a name="generic-c-classes"></a>Generische Klassen in c#
 
@@ -150,7 +147,6 @@ Generische Klassen in c# werden nur teilweise unterstützt. Die folgenden Einsch
     }
     ```
 
-<a name="Partial_Java_Generics_Support" />
 
 ## <a name="partial-java-generics-support"></a>Partielle Java Generika-Unterstützung
 

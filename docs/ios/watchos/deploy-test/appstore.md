@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: eed12c84b9952ef5c3dd27847071f05392bc16c4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dfbc976da109a3813b8d7abd85adafbc9bb94fa0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="deploying-to-the-app-store"></a>Auf den App Store bereitstellen
 
@@ -62,6 +62,8 @@ Sie können überprüfen, ob das Bereitstellungsprofil in der **Projektoptionen*
 Die **Bereitstellungsprofil** Liste zeigt alle übereinstimmenden Profile – sehen Sie die entsprechenden Profilen, die Sie in der Dropdown-Liste erstellt haben.
 
 ![](appstore-images/options-selectprofile-sml.png "Das Dialogfeld für die iOS-Paket zu signieren")
+
+<a name="iTunes_Connect"/>
 
 ## <a name="itunes-connect"></a>iTunes Connect
 
@@ -123,7 +125,7 @@ Xcode wird Archive für Mac in Visual Studio erstellten automatisch angezeigt we
 
 5. Finden Sie in iTunes Connect erneut aus, um die hochgeladene Binärdatei finden Sie unter. Wechseln Sie zur Konfigurationsseite für Ihre app, und wählen Sie **Vorabversion** in der oberen Menüleiste, finden Sie unter der **Builds** Liste:
 
-  [ ![](appstore-images/itc-prerelease-sml.png "Die Konfigurationsseite apps in iTunes Connect")](appstore-images/itc-prerelease.png)
+  [![](appstore-images/itc-prerelease-sml.png "Die Konfigurationsseite apps in iTunes Connect")](appstore-images/itc-prerelease.png#lightbox)
 
 Dann können Sie die app zur Genehmigung übermitteln, auf die **Versionen** Seite. Finden Sie in der [Übersicht über die iOS-app-Verteilung](~/ios/deploy-test/app-distribution/index.md) für Weitere Informationen.
 

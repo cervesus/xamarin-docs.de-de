@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: eb7189226e4f5d7eb2b55bf61728e65db44ba57b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 737c55aea087094ceb5e6070261d0a3d724e8a01
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-xaml-markup-extensions"></a>Erstellen von XAML-Markuperweiterungen
 
@@ -117,7 +117,7 @@ Die **HSL-Farbe Demo** Seite zeigt einer Vielzahl von Möglichkeiten, die `HslCo
 
 Beachten Sie, dass bei `HslColorExtension` ist ein XML-Tag, die vier Eigenschaften werden als Attribute festgelegt, wenn es zwischen den geschweiften Klammern angezeigt wird, die vier Eigenschaften sind jedoch getrennt durch Semikolons ohne Anführungszeichen ein. Die Standardwerte für `H`, `S`, und `L` sind 0 und der Standardwert des `A` beträgt 1, sodass diese Eigenschaften ausgelassen werden, können Wenn Sie auf die Standardwerte festgelegt werden sollen. Im letzte Beispiel zeigt ein Beispiel, bei denen die Brillanz 0, d. h. normalerweise Schwarz ergibt, aber der alpha-Kanal ist 0,5, damit halb transparent und wird, anhand der weiße Hintergrund der Seite grauen:
 
-[![HSL-Farbe Demo](creating-images/hslcolordemo-small.png "HSL-Farbe Demo")](creating-images/hslcolordemo-large.png "HSL-Farbe-Demo")
+[![HSL-Farbe Demo](creating-images/hslcolordemo-small.png "HSL-Farbe Demo")](creating-images/hslcolordemo-large.png#lightbox "HSL-Farbe-Demo")
 
 ## <a name="a-markup-extension-for-accessing-bitmaps"></a>Eine Markuperweiterung für den Zugriff auf Bitmaps
 
@@ -180,7 +180,7 @@ Obwohl `ImageResourceExtension` erfordert die `Source` festzulegende Eigenschaft
 
 Hier wird das Programm auf allen drei Plattformen ausgeführt:
 
-[![Bild-Ressource Demo](creating-images/imageresourcedemo-small.png "Image Ressource Demo")](creating-images/imageresourcedemo-large.png "Image Ressource Demo")
+[![Bild-Ressource Demo](creating-images/imageresourcedemo-small.png "Image Ressource Demo")](creating-images/imageresourcedemo-large.png#lightbox "Image Ressource Demo")
 
 ## <a name="service-providers"></a>Dienstanbieter
 

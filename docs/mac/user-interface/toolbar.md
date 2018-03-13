@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 641f62d5e646607b2ff61db412a5defce63a211d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 92b90f8d4655ea89b67e81f3235b6fd9b6d92833
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbars"></a>Symbolleisten
 
@@ -82,7 +82,7 @@ Zum Verfügbarmachen von Benutzeroberflächenelementen für C#-Code durch Steckd
 2. Wählen Sie den Controller Fenster auf der Entwurfsoberfläche angezeigt.
 3. Wechseln Sie zu der **Identität Inspektor** und geben Sie "WindowController" als die **Klassenname**: 
 
-    [![Eine benutzerdefinierte Klasse Einstellungsname für den Controller Fenster](toolbar-images/windowcontroller01.png "Einstellungsname eine benutzerdefinierte Klasse für den Fenster-Controller")](toolbar-images/windowcontroller01-large.png) 
+    [![Eine benutzerdefinierte Klasse Einstellungsname für den Controller Fenster](toolbar-images/windowcontroller01.png "Einstellungsname eine benutzerdefinierte Klasse für den Fenster-Controller")](toolbar-images/windowcontroller01-large.png#lightbox) 
 
 4. Die Änderungen zu speichern und zurück zu Visual Studio für Mac synchronisiert werden.
 5. Ein **WindowController.cs** Datei wird hinzugefügt werden, um das Projekt in der **Lösung Pad** in Visual Studio für Mac: 
@@ -92,7 +92,7 @@ Zum Verfügbarmachen von Benutzeroberflächenelementen für C#-Code durch Steckd
 6. Öffnen Sie das Storyboard in Xcodes Benutzeroberflächen-Generator.
 7. Die **WindowController.h** -Datei wird für die Verwendung verfügbar sein: 
 
-    [![Die Datei WindowController.h](toolbar-images/windowcontroller03.png "der WindowController.h-Datei")](toolbar-images/windowcontroller03-large.png)
+    [![Die Datei WindowController.h](toolbar-images/windowcontroller03.png "der WindowController.h-Datei")](toolbar-images/windowcontroller03-large.png#lightbox)
 
 ## <a name="creating-and-maintaining-toolbars-in-xcode"></a>Erstellen und Verwalten von Symbolleisten in Xcode
 
@@ -188,7 +188,7 @@ Hier verwenden Sie Schnittstelle-Generator zu suchen (Feld) konfigurieren und Ve
 
 Mehrere Kakao-Benutzeroberflächenautomatisierungs-Elementen interagieren Standardsymbolleiste Elemente standardmäßig. Ziehen Sie beispielsweise eine **Textansicht** auf das Fenster der Anwendung, und positionieren Sie ihn zum Auffüllen des Inhaltsbereichs:
 
-[![Hinzufügen einer Textansicht zur Anwendung](toolbar-images/edit09.png "eine Textansicht zur Anwendung hinzufügen")](toolbar-images/edit09-large.png)
+[![Hinzufügen einer Textansicht zur Anwendung](toolbar-images/edit09.png "eine Textansicht zur Anwendung hinzufügen")](toolbar-images/edit09-large.png#lightbox)
 
 Speichern Sie das Dokument, zurück zu Visual Studio für Mac mit Xcode zu synchronisieren, führen Sie die Anwendung, Text eingeben, wählen Sie sie und klicken Sie auf die **Farben** Symbolleistenelement. Beachten Sie, dass der Textansicht automatisch mit dem Farbwähler funktioniert:
 
@@ -201,7 +201,7 @@ Mithilfe einer **Image Symbolleistenelement**, Bitmap-Bild hinzugefügt der **Re
 1. In Visual Studio für Mac in der **Lösung Pad**, mit der rechten Maustaste die **Ressourcen** Ordner, und wählen **hinzufügen** > **Hinzufügen von Dateien** .
 2. Aus der **Hinzufügen von Dateien** Dialogfeld Feld, navigieren Sie zu der gewünschten Bilder, wählen Sie sie aus und klicken Sie auf die **öffnen** Schaltfläche: 
 
-    [![Auswählen von Bildern hinzuzufügende](toolbar-images/edit11.png "Bilder hinzufügen auswählen")](toolbar-images/edit11-large.png)
+    [![Auswählen von Bildern hinzuzufügende](toolbar-images/edit11.png "Bilder hinzufügen auswählen")](toolbar-images/edit11-large.png#lightbox)
 
 3. Wählen Sie **Kopie**, überprüfen Sie **verwenden die gleiche Aktion für alle ausgewählten Dateien**, und klicken Sie auf **OK**:
 
@@ -225,7 +225,7 @@ Mithilfe einer **Image Symbolleistenelement**, Bitmap-Bild hinzugefügt der **Re
 
 9. Ziehen Sie eine **Trennzeichen Symbolleistenelement** aus der **Bibliothek Inspektor** auf der Symbolleiste **Symbolleistenelemente zulässig** Bereich: 
 
-    [![Trennzeichen Symbolleistenelement hinzugefügt, in den Bereich der zulässigen Symbolleistenelemente](toolbar-images/edit17.png "ein Trennzeichen Symbolleistenelement dem Bereich Symbolleistenelemente zulässig")](toolbar-images/edit17-large.png)
+    [![Trennzeichen Symbolleistenelement hinzugefügt, in den Bereich der zulässigen Symbolleistenelemente](toolbar-images/edit17.png "ein Trennzeichen Symbolleistenelement dem Bereich Symbolleistenelemente zulässig")](toolbar-images/edit17-large.png#lightbox)
 
 10. Ziehen Sie das Trennzeichen-Element und das "Papierkorb"-Element, das die **Symbolleistenelemente Standard** Bereichs- und Menge von aus die Reihenfolge der Symbolleiste Elementen von links nach rechts wie folgt (Farben, Schriftarten, Trennzeichen, Papierkorb, Flexible Speicherplatz, Drucken): 
 
@@ -244,7 +244,7 @@ Um eine Symbolleiste oder ein Symbolleistenelement im Code zuzugreifen, muss es 
 1. In der **Lösung Pad**, doppelklicken Sie auf **Main.storyboard** , die sie in Xcode geöffnet.
 2. Stellen Sie sicher, dass die benutzerdefinierte Klasse "WindowController", mit dem Controller im Hauptfenster in zugewiesen wurde der **Identität Inspektor**:
 
-    [![Legen Sie eine benutzerdefinierte Klasse für den Controller Fenster mithilfe der Identity-Inspektor](toolbar-images/edit20a.png "legen Sie eine benutzerdefinierte Klasse für den Controller Fenster mithilfe der Identity-Inspektor")](toolbar-images/edit20a-large.png)
+    [![Legen Sie eine benutzerdefinierte Klasse für den Controller Fenster mithilfe der Identity-Inspektor](toolbar-images/edit20a.png "legen Sie eine benutzerdefinierte Klasse für den Controller Fenster mithilfe der Identity-Inspektor")](toolbar-images/edit20a-large.png#lightbox)
 
 3. Wählen Sie als Nächstes das Symbolleistenelement in der **Schnittstellenhierarchie**: 
 
@@ -253,11 +253,11 @@ Um eine Symbolleiste oder ein Symbolleistenelement im Code zuzugreifen, muss es 
 4. Öffnen der **Assistant Ansicht**, wählen die **WindowController.h** Datei- und Steuerelement ziehen Sie aus der Symbolleistenelement die **WindowController.h** Datei.
 5. Festlegen der **Verbindung** Geben Sie auf **Aktion**, geben Sie "TrashDocument" für die **Namen**, und klicken Sie auf die **verbinden** Schaltfläche: 
 
-    [![Konfigurieren eine Aktion für ein Symbolleistenelement](toolbar-images/edit23.png "eine Aktion für ein Symbolleistenelement konfigurieren")](toolbar-images/edit23-large.png)
+    [![Konfigurieren eine Aktion für ein Symbolleistenelement](toolbar-images/edit23.png "eine Aktion für ein Symbolleistenelement konfigurieren")](toolbar-images/edit23-large.png#lightbox)
 
 6. Verfügbar machen die **Textansicht** als eine Steckdose namens "DocumentEditor" in der **ViewController.h** Datei: 
 
-    [![Konfigurieren von einer Steckdose für Textansicht](toolbar-images/edit24.png "eine Steckdose für Textansicht konfigurieren")](toolbar-images/edit24-large.png)
+    [![Konfigurieren von einer Steckdose für Textansicht](toolbar-images/edit24.png "eine Steckdose für Textansicht konfigurieren")](toolbar-images/edit24-large.png#lightbox)
 
 7. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode zu synchronisieren.
 

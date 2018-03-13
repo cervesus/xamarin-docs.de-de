@@ -3,14 +3,15 @@ title: Zusammenfassung der Kapitel 13. Bitmaps
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 2e511f2ebf75b065469a9051ee5797ac58c147f3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 74e5e47a481d02fe11be4b770b818d2c88b517f7
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>Zusammenfassung der Kapitel 13. Bitmaps
 
@@ -76,7 +77,7 @@ Die beste Herangehensweise ist, beginnen mit einer Bitmap, die länger als die P
 
 Die [ **MadTeaParty** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/MadTeaParty) zeigt Lewis Carrolls Kapitel 7 *Alice Adventures in Wunderland* mit den ursprünglichen Abbildungen von John Tenniel:
 
-[![Dreifacher Screenshot mad Tee Partei](images/ch13fg16-small.png "Mad Hatters Tee Partei Buch Text")](images/ch13fg16-large.png "Mad Hatters Tee Partei Buch Text")
+[![Dreifacher Screenshot mad Tee Partei](images/ch13fg16-small.png "Mad Hatters Tee Partei Buch Text")](images/ch13fg16-large.png#lightbox "Mad Hatters Tee Partei Buch Text")
 
 ### <a name="browsing-and-waiting"></a>Durchsuchen und warten
 

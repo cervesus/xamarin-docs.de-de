@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/30/2017
-ms.openlocfilehash: bbf20155fe097f0229aa28c1f0d046cb3ef31a63
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 83e58625438a0b50d89ca8dac3e940c8742e5aec
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-android-assets"></a>Mit dem Android-Geräte
 
@@ -20,7 +20,6 @@ _Bestand_ bieten eine Möglichkeit, beliebige Dateien, wie Text, Xml, Schriftart
 Objekte, die dem Projekt hinzugefügt werden genau wie ein Dateisystem, das in Ihrer Anwendung mit lesbar angezeigt [AssetManager](https://developer.xamarin.com/api/type/Android.Content.Res.AssetManager/).
 In dieser einfachen Demo Kegel zum Medienobjekt einen Text-Dateien, hinzufügen zu lesen mit `AssetManager`, und zeigen Sie es in einem TextView.
 
-<a name="Add_Asset_to_Project" />
 
 ## <a name="add-asset-to-project"></a>Asset-Projekt hinzufügen
 
@@ -36,13 +35,12 @@ Visual Studio festgelegt haben sollten die **Buildvorgang** für diese Datei zu 
 
 Visual Studio für Mac festgelegt haben sollten die **Buildvorgang** für diese Datei zu **AndroidAsset**:
 
-[![Wenn die Buildaktion auf AndroidAsset](android-assets-images/asset-properties-xs-sml.png)](android-assets-images/asset-properties-xs.png)
+[![Wenn die Buildaktion auf AndroidAsset](android-assets-images/asset-properties-xs-sml.png)](android-assets-images/asset-properties-xs.png#lightbox)
 
 -----
 
 Auswählen der richtigen **BuildAction** wird sichergestellt, dass die Datei in die APK zum Zeitpunkt der Kompilierung verpackt werden.
 
-<a name="Reading_Assets" />
 
 ## <a name="reading-assets"></a>Lesen von Ressourcen
 
@@ -71,7 +69,6 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-<a name="Running_the_Application" />
 
 ## <a name="running-the-application"></a>Ausführen der Anwendung
 

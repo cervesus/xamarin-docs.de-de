@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: d1d91804c11d2e944bb618fadb3d659b512c5905
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fb7ca216978e4c890349a44b07d5a383e9ca2384
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="simple-animations"></a>Einfache Animationen
 
@@ -130,7 +130,7 @@ Die folgenden Screenshots zeigen die Übersetzung auf jeder Plattform ausgeführ
 ![](simple-images/translateto.png "Translation-Animation")
 
 > [!NOTE]
-> **Hinweis**: Wenn ein Element wird zunächst außerhalb des Bildschirms angeordnet, und klicken Sie dann auf dem Bildschirm übersetzt, nach der Übersetzung des Elements Layout bleibt außerhalb des Bildschirms Eingabe und der Benutzer kann nicht mit ihm interagieren. Aus diesem Grund wird empfohlen, dass eine Ansicht, in der letzten Position angeordnet werden soll, und klicken Sie dann alle Übersetzungen ausgeführt erforderlichen.
+> Wenn ein Element wird zunächst außerhalb des Bildschirms angeordnet, und klicken Sie dann auf dem Bildschirm übersetzt, nach der Übersetzung bleibt die Eingabe Elementlayouts außerhalb des Bildschirms, und der Benutzer interagieren kann nicht. Aus diesem Grund wird empfohlen, dass eine Ansicht, in der letzten Position angeordnet werden soll, und klicken Sie dann alle Übersetzungen ausgeführt erforderlichen.
 
 ### <a name="fading"></a>Ausblenden
 
@@ -228,6 +228,6 @@ Dieser Artikel veranschaulicht, erstellen und Abbrechen von Animationen mithilfe
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Übersicht über die asynchrone Unterstützung](~/cross-platform/platform/async.md)
+- [Async Support Overview (Übersicht über die asynchrone Unterstützung)](~/cross-platform/platform/async.md)
 - [Grundlegende Animation (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/basic/)
 - [ViewExtensions](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/)

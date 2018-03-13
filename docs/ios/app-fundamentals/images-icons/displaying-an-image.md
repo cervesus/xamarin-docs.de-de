@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c54cb71b0cab653eee52e3773a5233d536412e7b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1ca537ef47f48886483e99bb33b0d524d16593f8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="displaying-an-image"></a>Anzeigen eines Bilds
 
@@ -135,11 +135,11 @@ Um problemlos diesen Effekt zu erzielen, wechseln die _Rendermodus_ des Medienob
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio f체r Mac](#tab/vsmac)
 
-[ ![](displaying-an-image-images/templateimage01.png "Legen Sie auf dem Vorlagenimage Render-Modus")](displaying-an-image-images/templateimage01.png)
+[![](displaying-an-image-images/templateimage01.png "Legen Sie auf dem Vorlagenimage Render-Modus")](displaying-an-image-images/templateimage01.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](displaying-an-image-images/templateimage01vs.png "Legen Sie auf der Vorlage Render-Modus")](displaying-an-image-images/templateimage01vs.png)
+[![](displaying-an-image-images/templateimage01vs.png "Legen Sie auf der Vorlage Render-Modus")](displaying-an-image-images/templateimage01vs.png#lightbox)
 
 -----
 
@@ -147,11 +147,11 @@ Im IOS-Designer, weisen Sie die Imagemedienobjekt an ein Benutzeroberfl채chenste
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio f체r Mac](#tab/vsmac)
 
-[ ![](displaying-an-image-images/templateimage03.png "Legen Sie den Farbton, um das Bild zur farblichen Kennzeichnung")](displaying-an-image-images/templateimage03.png)
+[![](displaying-an-image-images/templateimage03.png "Legen Sie den Farbton, um das Bild zur farblichen Kennzeichnung")](displaying-an-image-images/templateimage03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](displaying-an-image-images/templateimage03vs.png "Legen Sie den Farbton, um das Bild zur farblichen Kennzeichnung")](displaying-an-image-images/templateimage03vs.png)
+[![](displaying-an-image-images/templateimage03vs.png "Legen Sie den Farbton, um das Bild zur farblichen Kennzeichnung")](displaying-an-image-images/templateimage03vs.png#lightbox)
 
 -----
 
@@ -319,5 +319,5 @@ Dieser Code erstellt ein neues `UIImageView` und weist ihm eine anf채ngliche Gr�
 ## <a name="related-links"></a>Verwandte Links
 
 - [Arbeiten mit Bildern (Beispiel)](https://developer.xamarin.com/samples/WorkingWithImages/)
-- [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
+- [Hallo iPhone](~/ios/get-started/hello-ios/index.md)
 - [Benutzerdefiniertes Symbol und Richtlinien f체r die Erstellung von Images](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

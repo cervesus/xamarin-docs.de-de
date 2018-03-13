@@ -3,14 +3,15 @@ title: "Zusammenfassung der Kapitel 11. Die bindungsfähigen-Infrastruktur"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 3e3cfb55f7b96751979d14b489e892bc07817780
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6e0f1abf04695dfb5348b631a9fbdbd2c81bc431
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>Zusammenfassung der Kapitel 11. Die bindungsfähigen-Infrastruktur
 
@@ -22,7 +23,7 @@ Xamarin.Forms definiert eine erweiterte Eigenschaft Rollendefinition mit der Bez
 
 Die [ **ClassHierarchy** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/ClassHierarchy) Beispiel verwendet Reflektion zum Anzeigen einer Klassenhierarchie von Xamarin.Forms und veranschaulichen die entscheidende Rolle `BindableObject` in dieser Hierarchie. `BindableObject` leitet sich von `Object` und ist die übergeordnete Klasse [ `Element` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/) aus dem [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) abgeleitet wird. Dies ist die übergeordnete Klasse [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) und [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/), dies ist die übergeordnete Klasse [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/):
 
-[![Dreifacher Screenshot der Klassenhierarchie Freigabe](images/ch11fg01-small.png "Klasse Hierarchie Freigabe")](images/ch11fg01-large.png "Klasse Hierarchie freigeben")
+[![Dreifacher Screenshot der Klassenhierarchie Freigabe](images/ch11fg01-small.png "Klasse Hierarchie Freigabe")](images/ch11fg01-large.png#lightbox "Klasse Hierarchie freigeben")
 
 ## <a name="a-peek-into-bindableobject-and-bindableproperty"></a>Einen Blick in BindableObject und BindableProperty
 

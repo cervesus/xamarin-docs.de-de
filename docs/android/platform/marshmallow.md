@@ -7,12 +7,12 @@ ms.assetid: E4D6F183-98D2-460A-9D65-937639A899E0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: b28ca68701394a8b7b0b543a5ae646910e7c8361
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: c9ff9eb0b8d013485f0437d470ec49f1c1795d7a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="marshmallow-features"></a>Marshmallow-Funktionen
 
@@ -20,7 +20,6 @@ _Dieser Artikel hilft Ihnen Einstieg in Xamarin.Android zum Entwickeln von apps 
 
 In diesem Artikel bietet einen Überblick über die neuen Funktionen in Android 6.0 Marshmallow wird erläutert, wie Android Marshmallow Entwicklung Xamarin.Android Vorbereitung und enthält Links zu Beispielanwendungen, die veranschaulichen, wie Nutzen des neuen Android Marshmallow Funktionen in Xamarin.Android apps. 
 
-<a name="overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -29,7 +28,7 @@ Xamarin.Android unterstützt Android Marshmallow und umfasst:
 
 -   **API-23/Android 6.0 Bindungen** &ndash; Android 6.0 fügt viele neue APIs für die neuen Funktionen, die unten beschriebenen; diese APIs stehen Xamarin.Android apps beim Abzielen auf API-Ebene 23. Weitere Informationen zur Android 6.0-APIs finden Sie unter [Android 6.0-APIs](http://developer.android.com/preview/api-overview.html). 
 
-[![Hero Images-Tablets und-Telefone Marshmallow ausführen](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png)
+[![Hero Images-Tablets und-Telefone Marshmallow ausführen](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png#lightbox)
 
 Obwohl die Marshmallow-Version auf "Polnisch und Qualität" hauptsächlich ausgelegt ist, bietet es außerdem viele neue Funktionen von Interesse sind für Entwickler Xamarin.Android an. Zu diesen Funktionen gehören: 
 
@@ -57,9 +56,6 @@ Darüber hinaus wurden viele Core-Bibliothek für Android-Updates mit Android M 
 
 Darüber hinaus wurden viele Core-Bibliothek für Android-Updates mit Android Marshmallow veröffentlicht, und diese Updates bieten neue Funktionen für Android Marshmallow und früheren Versionen von Android. In diesem Artikel wird erläutert, wie für den Einstieg in das Erstellen von apps mit Android Marshmallow, und es bietet eine Übersicht über die neue Funktion in Android 6.0 hervorgehoben. 
 
-
-<a name="requirements" />
-
 ## <a name="requirements"></a>Anforderungen
 
 Folgendes ist erforderlich, um die neuen Funktionen für Android Marshmallow in Xamarin-basierten apps zu verwenden: 
@@ -74,7 +70,6 @@ Folgendes ist erforderlich, um die neuen Funktionen für Android Marshmallow in 
 
 Sie können weiterhin [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) Domänenmodus speziell für API-Ebene 23 entwickeln oder eine frühere Version. 
 
-<a name="gettingstarted" />
 
 ## <a name="getting-started"></a>Erste Schritte
 
@@ -90,13 +85,11 @@ Zum Einstieg Android Marshmallow mit Xamarin.Android verwenden, müssen Sie heru
 
 Jeder dieser Schritte wird in den folgenden Abschnitten erläutert:
 
-<a name="updates" />
 
 ### <a name="install-xamarin-updates"></a>Installieren Sie Xamarin-Updates
 
 Um Xamarin aktualisieren, damit sie die Unterstützung für Android 6.0 Marshmallow enthält, ändern Sie den Update-Kanal an **stabile** und installieren Sie alle Updates. Weitere Informationen zum Installieren von Updates aus dem Kanal Updates finden Sie unter [ändern Sie den Kanal Updates](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/). 
 
-<a name="sdkpreview" />
 
 ### <a name="install-the-android-60-sdk"></a>Installieren Sie das SDK für Android 6.0
 
@@ -104,17 +97,16 @@ Zum Erstellen eines Projekts Xamarin.Android für Android Marshmallow müssen Si
 
 -   Starten Sie den Android SDK-Manager (in Visual Studio für Mac verwenden **Tools > SDK-Manager**; in Visual Studio verwenden **Tools > Android > Android SDK Manager**), und installieren Sie die neueste Android SDK-Tools:
 
-    [![Android SDK-Tools in den Android SDK-Manager auswählen.](marshmallow-images/mnc-preview-tools.png)](marshmallow-images/mnc-preview-tools.png)
+    [![Android SDK-Tools in den Android SDK-Manager auswählen.](marshmallow-images/mnc-preview-tools.png)](marshmallow-images/mnc-preview-tools.png#lightbox)
 
 -   Zudem installieren Sie das neueste **Android 6.0** SDK-Paketen:
 
-    [![Auswählen von Android 6.0 SDK-Paketen im Android SDK Manager](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png)
+    [![Auswählen von Android 6.0 SDK-Paketen im Android SDK Manager](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png#lightbox)
 
 Müssen Sie den Android SDK-Tools Revision 24.3.4 installieren oder höher.
 Weitere Informationen zum Verwenden von Android SDK Manager Android 6.0 SDK installieren, finden Sie unter [SDK-Manager](http://developer.android.com/tools/help/sdk-manager.html).
 
 
-<a name="xaproject" />
 
 ### <a name="start-a-xamarinandroid-project"></a>Starten eines Projekts Xamarin.Android
 
@@ -123,7 +115,6 @@ Erstellen Sie ein neues Xamarin.Android-Projekt. Wenn Sie die Android-Entwicklun
 Wenn Sie ein Android-Projekt erstellen, müssen Sie die versionseinstellungen Ziel Android 6.0 MarshMallow konfigurieren. Um das Projekt für Marshmallow abzielen möchten, müssen Sie das Projekt für die konfigurieren **API-Ebene 23 (Xamarin.Android 6.0 Support)**. Weitere Informationen zum Konfigurieren von Android-API-Ebene Ebenen finden Sie unter [Grundlegendes zu Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md).
 
 
-<a name="emudev" />
 
 ### <a name="configure-an-emulator-or-device"></a>Konfigurieren Sie einen Emulator oder Gerät
 
@@ -135,19 +126,17 @@ Wenn Sie einen Emulator verwenden, starten Sie den Android AVD-Manager, und erst
 
 Beispielsweise wird dieses virtuelle Gerät zum Emulieren einer Nexus-5 konfiguriert:
 
-[![Konfigurieren ein AVD mit Nexus-5-Geräte, Android 6.0-Ziel und Intel Atom (x86)](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png)
+[![Konfigurieren ein AVD mit Nexus-5-Geräte, Android 6.0-Ziel und Intel Atom (x86)](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png#lightbox)
 
 Wenn Sie ein physisches Gerät, z. B. eine 5 Nexus verwenden, können Sie eine Vorschau des Android Marshmallow bei 6 oder 9, installieren. Weitere Informationen zum Aktualisieren Ihres Geräts auf Android Marshmallow finden Sie unter [Hardware von Betriebssystemabbildern](http://developer.android.com/preview/download.html#images).
 
 
-<a name="newfeatures" />
 
 ## <a name="new-features"></a>Neue Funktionen
 
 Viele der Änderungen in Android Marshmallow Mittelpunkt stehen verbessern die Android-benutzerfreundlichkeit, Leistung zu erhöhen, und Beheben von Fehlern. Marshmallow wurde jedoch auch einige umfangreiche Änderungen in die Grundlagen der Android-Plattform. In den folgenden Abschnitten markieren Sie diese Verbesserungen und enthalten Links, um Ihnen den Einstieg in die neuen Funktionen für Android Marshmallow in Ihrer app verwenden können. 
 
 
-<a name="permissions" />
 
 ### <a name="runtime-permissions"></a>Common Language Runtime-Berechtigungen
 
@@ -169,7 +158,6 @@ So verwenden Sie diese Beispiel-app:
 Weitere Informationen zu den neuen Funktionen der Laufzeit Berechtigungen in Android Marshmallow finden Sie unter [arbeiten mit Systemadministratorberechtigungen](https://developer.android.com/preview/features/runtime-permissions.html).
 
 
-<a name="authentication" />
 
 ### <a name="authentication-enhancements"></a>Authentifizierung-Erweiterungen
 
@@ -181,8 +169,6 @@ Android Marshmallow umfasst zwei Authentifizierung-Erweiterungen, mit deren Hilf
 
 Die Links und Beispiel-apps, die als Nächstes beschriebenen können Sie bekannte mit den neuen Features.
 
-
-<a name="fingerprint" />
 
 #### <a name="fingerprint-authentication"></a>Fingerabdruckauthentifizierung
 
@@ -200,7 +186,6 @@ Beachten Sie, dass diese Beispiel-app auf einem Gerät mit einem Fingerabdruckle
 Diese app nicht Ihren Fingerabdruck (oder Ihr Kennwort) gespeichert.
 
 
-<a name="voice" />
 
 #### <a name="voice-interactions"></a>Voice-Interaktionen
 
@@ -210,7 +195,6 @@ Finden Sie unter [hinzufügen eine Konversation auf Ihrem Android-App mit Aktivi
 Eine Beispiel-app ist verfügbar, die zeigt, wie die Sprach-Interaktion-API in einer app Xamarin.Android: [Stimme Interaktionen](https://github.com/jamesmontemagno/MarshmallowSamples/tree/master/VoiceInteractions).
 
 
-<a name="confirmcred" />
 
 #### <a name="confirm-credential"></a>Bestätigen von Anmeldeinformationen
 
@@ -225,7 +209,6 @@ So verwenden Sie diese Beispiel-app:
 2.  Tippen Sie auf die **Kauf** Schaltfläche aus, und bestätigen Sie die Anmeldeinformationen des Schloss Bildschirm.
 
 
-<a name="chrometabs" />
 
 ### <a name="chrome-custom-tabs"></a>Benutzerdefinierte Registerkarten Chrome
 
@@ -245,7 +228,6 @@ Um diese Funktion in Ihrer app Xamarin.Android nutzen zu können, herunterladen 
 Weitere Informationen zu diesem Feature finden Sie unter [Chrome benutzerdefinierte Registerkarten](https://developer.chrome.com/multidevice/android/customtabs).
 
 
-<a name="designlib" />
 
 ### <a name="material-design-support-library"></a>Material Design-Unterstützungsbibliothek
 
@@ -280,8 +262,6 @@ Dieses Beispiel veranschaulicht die folgenden Funktionen von der Design-Biblioth
 
 Weitere Informationen zu der Design-Bibliothek, finden Sie unter [Android Entwurf Unterstützungsbibliothek](http://android-developers.blogspot.co.at/2015/05/android-design-support-library.html) in der Android-Entwickler-Blog.
 
-
-<a name="libraries" />
 
 ### <a name="additional-library-updates"></a>Zusätzliche Bibliothek Updates
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 742780ad87672bd8a3e2bb3cb66ca582a680d44f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 28218bcbf6527c818fdf2988375d1c353e9f1d27
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-icon"></a>Anwendungssymbol
 
@@ -122,7 +122,7 @@ Führen Sie folgende Schritte aus:
     ![Bearbeiten von AppIcons.appiconset](app-icon-images/intro01.png "Editing the AppIcons.appiconset")
 2. Klicken Sie für jede benötigte Symbolgröße auf das Symbol und wählen Sie die dazugehörige Bilddatei aus, die Sie zuvor erstellt haben: 
 
-    [![Auswählen eines Symbolbilds](app-icon-images/intro02.png "Selecting an icon image")](app-icon-images/intro02-large.png)
+    [![Auswählen eines Symbolbilds](app-icon-images/intro02.png "Selecting an icon image")](app-icon-images/intro02-large.png#lightbox)
 3. Speichern Sie die Änderungen.
 
 
@@ -135,7 +135,7 @@ Führen Sie folgende Schritte aus:
 1. Doppelklicken Sie auf **Info.plist** im **Projektmappen-Explorer**, um die **Projektoptionen** zu öffnen.
 2. Klicken Sie im Abschnitt **Mac OS X Application Target (Anwendungsziel für Mac OS X Application Target)** auf **App-Symbole**, um die `AppIcons.appiconset`-Datei auszuwählen: 
 
-    [![Festlegen der Symbole](app-icon-images/icon01.png "Setting the icon set")](app-icon-images/icon01-large.png)
+    [![Festlegen der Symbole](app-icon-images/icon01.png "Setting the icon set")](app-icon-images/icon01-large.png#lightbox)
 3. Speichern Sie die Änderungen.
 
 Wenn die App ausgeführt wird, wird das neue Symbol im Dock angezeigt:

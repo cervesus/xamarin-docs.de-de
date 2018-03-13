@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: acdcdc2b76a995ca324532c6a034b2fdf8e21db5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4747fb73358a60d10832a1e650acd90a5a4274d1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS Sicherheits- und Datenschutzfunktionen
 
@@ -76,7 +76,7 @@ Weitere Informationen zum Arbeiten mit `Info.plist` Schlüssel, finden Sie in de
 
 Nehmen Sie im folgende Beispiel für den Zugriff auf HomeKit auf iOS 10 (und höher), muss die Entwickler hinzufügen, die `NSHomeKitUsageDescription` Schlüssel für der app `Info.plist` Datei, und geben Sie eine Zeichenfolge deklarieren warum die app des Benutzers HomeKit Datenbank zugreifen möchte. Diese Zeichenfolge auf die Benutzer bei der ersten Zeit erhält Ausführen der app zu erstellen:
 
-[ ![](security-privacy-images/info01.png "Eine Beispiel-NSHomeKitUsageDescription-Warnung")](security-privacy-images/info01.png)
+[![](security-privacy-images/info01.png "Eine Beispiel-NSHomeKitUsageDescription-Warnung")](security-privacy-images/info01.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -87,7 +87,7 @@ Xamarin.iOS for Visual Studio aktuelle unterstützt keine Bearbeitung der sicher
 3. Fügen Sie den folgenden Knoten aus, um die erforderlichen Beschreibung hinzu: `<string>Allows the app to control HomeKit enabled devices.</string>`
 4. Die `Info.plist` Datei sollte folgendermaßen aussehen: 
 
-    [ ![](security-privacy-images/info02vs.png "Die Datei "Info.plist" sollte wie folgt aussehen.")](security-privacy-images/info02vs.png)
+    [![](security-privacy-images/info02vs.png "Die Datei "Info.plist" sollte wie folgt aussehen.")](security-privacy-images/info02vs.png#lightbox)
 4. Speichern Sie die Änderungen in der Datei.
 5. Zurück zu Visual Studio und zu den Recompile der app.
 
@@ -100,10 +100,10 @@ Um einer der Datenschutz-Schlüssel festzulegen, führen Sie folgende Schritte a
 3. Fügen Sie einen neuen **Eintrag** der Liste.
 4. Wählen Sie in der Dropdownliste einen Schlüssel (z. B. **Datenschutz - Beschreibung der Verwendung HomeKit**): 
 
-    [ ![](security-privacy-images/info02.png "Wählen Sie einen datenschutzschlüssel")](security-privacy-images/info02.png)
+    [![](security-privacy-images/info02.png "Wählen Sie einen datenschutzschlüssel")](security-privacy-images/info02.png#lightbox)
 5. Geben Sie eine Beschreibung für die warum die app, die auf die angegebene Informationen zur Funktion oder Benutzer zugreifen möchte ein: 
 
-    [ ![](security-privacy-images/info03.png "Geben Sie eine Beschreibung")](security-privacy-images/info03.png)
+    [![](security-privacy-images/info03.png "Geben Sie eine Beschreibung")](security-privacy-images/info03.png#lightbox)
 6. Speichern Sie die Änderungen in der Datei.
 
 -----

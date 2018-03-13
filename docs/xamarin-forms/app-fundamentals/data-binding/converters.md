@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: aaa4c93eda9edb0eb5d568b3470c02352bdb7467
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: df6a0afe18b6929f8e03ce4d9bf35198034508bf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-value-converters"></a>Bindung Wertkonverter
 
@@ -95,7 +95,7 @@ Wenn ein Wertkonverter auf mehreren Seiten der Anwendung verwendet wird, können
 
 Die **Schaltflächen aktivieren** Seite zeigt eine allgemeine erforderlich, wenn eine `Button` führt einen Vorgang basierend auf Text, der die Benutzertypen in eine `Entry` anzeigen. Wenn nichts in typisiert wurde die `Entry`die `Button` sollte deaktiviert werden. Jede `Button` enthält eine Datenbindung für die `IsEnabled` Eigenschaft. Der Datenbindungsquelle ist die `Length` Eigenschaft von der `Text` -Eigenschaft des entsprechenden `Entry`. Wenn für das `Length` Eigenschaft ist nicht "0", "der Wertkonverter zurück `true` und die `Button` aktiviert ist:
 
-[![Aktivieren Sie die Schaltflächen](converters-images/enablebuttons-small.png "Schaltflächen aktivieren")](converters-images/enablebuttons-large.png "Schaltflächen aktivieren")
+[![Aktivieren Sie die Schaltflächen](converters-images/enablebuttons-small.png "Schaltflächen aktivieren")](converters-images/enablebuttons-large.png#lightbox "Schaltflächen aktivieren")
 
 Beachten Sie, dass die `Text` Eigenschaft in jedem `Entry` auf eine leere Zeichenfolge initialisiert wird. Die `Text` Eigenschaft `null` standardmäßig, und die Daten Bindung funktioniert nicht in diesem Fall.
 
@@ -236,7 +236,7 @@ Die **Switch Indikatoren** Seite wird veranschaulicht, wie sie zum Anzeigen des 
 
 In den letzten der drei `Switch` und `Label` -Paaren, mit das generische Argument festgelegt ist `Style`, und der gesamte `Style` Objekte werden bereitgestellt, für die Werte der `TrueObject` und `FalseObject`. Diese außer Kraft setzen, die implizite Formatvorlage für `Label` im Ressourcenverzeichnis festgelegt, sodass die Eigenschaften in diesem Format explizit zugewiesen sind die `Label`. Umschalten der `Switch` bewirkt, dass das entsprechende `Label` um die Änderung zu übernehmen:
 
-[![Wechseln Sie Indikatoren](converters-images/switchindicators-small.png "wechseln Indikatoren")](converters-images/switchindicators-large.png "Indikatoren wechseln")
+[![Wechseln Sie Indikatoren](converters-images/switchindicators-small.png "wechseln Indikatoren")](converters-images/switchindicators-large.png#lightbox "Indikatoren wechseln")
 
 Es ist auch möglich, verwenden Sie [ `Triggers` ](~/xamarin-forms/app-fundamentals/triggers.md) ähnliche Änderungen in der Benutzeroberfläche, basierend auf andere Sichten implementiert.
 
@@ -460,7 +460,7 @@ Die Werte der `Red` und `Green` Eigenschaften werden angezeigt, mit einem `Bindi
 
 Hier ist das Ergebnis:
 
-[![RGB-Farbauswahl](converters-images/rgbcolorselector-small.png "RGB-Farbauswahl")](converters-images/rgbcolorselector-large.png "RGB-Farbauswahl")
+[![RGB-Farbauswahl](converters-images/rgbcolorselector-small.png "RGB-Farbauswahl")](converters-images/rgbcolorselector-large.png#lightbox "RGB-Farbauswahl")
 
 
 ## <a name="related-links"></a>Verwandte Links

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 5a5072d7f07fa7e426a14d3ac841e775d872acff
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: cb87593b63e28c01beacdea479cc9d6ec4aceb9b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="validation"></a>Validierung
 
@@ -19,7 +19,7 @@ Jede app, die Benutzereingaben akzeptiert, sollten sicherstellen, dass die Einga
 
 Im Kontext des Modell-ViewModel-Modell (MVVM), das einem Ansichtsmodell Muster oder Modell müssen häufig zum Ausführen von datenvalidierung und Validierungsfehler in die Ansicht zu signalisieren, damit der Benutzer, die sie korrigieren kann. Die mobile app eShopOnContainers synchrone clientseitige überprüft der Modell-Eigenschaften anzeigen und benachrichtigt den Benutzer des Validierungsfehler durch das Steuerelement, das den ungültigen Daten hervorheben und Anzeigen von Fehlermeldungen, die den Benutzer zu informieren Warum die Daten ungültig ist. Abbildung 6-1 gibt Aufschluss über die Klassen beim Ausführen einer Überprüfung in der mobilen Anwendung für eShopOnContainers.
 
-[![](validation-images/validation.png "Überprüfung von Klassen in der mobilen Anwendung für eShopOnContainers")](validation-images/validation-large.png "Überprüfung Klassen in der mobilen Anwendung für eShopOnContainers")
+[![](validation-images/validation.png "Überprüfung von Klassen in der mobilen Anwendung für eShopOnContainers")](validation-images/validation-large.png#lightbox "Überprüfung Klassen in der mobilen Anwendung für eShopOnContainers")
 
 **Abbildung 6 – 1**: Überprüfung Klassen in der mobilen Anwendung für eShopOnContainers
 

@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/25/2017
-ms.openlocfilehash: 43d1ef53933ca7867b834dbf118ec730ccbf71ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5cadaf5f41d940a0255113178d018b59b780eabc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-cursoradapters"></a>Verwenden von CursorAdapters
 
-<a name="overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -27,7 +26,6 @@ Android bietet Adapterklassen, insbesondere, um Daten aus einer Datenbankabfrage
 
 Cursor-Adapter bieten eine leistungsstarke Möglichkeit, einen Bildlauf durch lange Listen mit Daten, die in SQLite gespeichert sind. Der verwendete Code muss in eine SQL-Abfrage definieren eine `Cursor` Objekt, und klicken Sie dann beschrieben, wie das Erstellen und füllen Sie die Ansichten für jede Zeile.
 
-<a name="Creating_an_SQLite_Database" />
 
 ## <a name="creating-an-sqlite-database"></a>Erstellen eine SQLite-Datenbank
 
@@ -63,7 +61,6 @@ Die `VegetableDatabase` Klasse instanziiert werden der `OnCreate` Methode der `H
 
 Die Cursorabfrage *müssen* haben eine Spalte mit ganzen Zahlen `_id` für die `CursorAdapter` arbeiten. Wenn die zugrunde liegende Tabelle keine Integer-Spalte, die mit dem Namen `_id` verwenden Sie einen Spaltenalias für eine andere eindeutige ganze Zahl in die `RawQuery` , aus der Cursor besteht. Finden Sie in der [Android Docs](https://developer.xamarin.com/api/type/Android.Widget.CursorAdapter/) für Weitere Informationen zu erhalten.
 
-<a name="Creating_the_Cursor" />
 
 ### <a name="creating-the-cursor"></a>Erstellen den Cursor
 
@@ -85,7 +82,6 @@ cursor.Close();
 
 Sobald eine Anwendung eine SQLite-Datenbank verfügbar hat und ein Cursorobjekt erstellt wurde, wie dargestellt, kann es verwenden, entweder eine `SimpleCursorAdapter` oder eine Unterklasse von `CusorAdapter` anzuzeigenden Zeilen in eine `ListView`.
 
-<a name="Using_SimpleCursorAdapter" />
 
 ## <a name="using-simplecursoradapter"></a>Verwenden von SimpleCursorAdapter
 
@@ -119,7 +115,6 @@ listView.Adapter = new SimpleCursorAdapter (this, Android.Resource.Layout.Simple
 
 `SimpleCursorAdapter` ist eine schnelle und einfache Möglichkeit zum Anzeigen von SQLite-Daten in eine `ListView`. Die haupteinschränkung ist, dass es kann nur Spaltenwerte anzuzeigenden Steuerelemente binden, er lässt keine anderen Aspekte des Zeilenlayouts (z. B. Steuerelemente anzeigen/ausblenden oder Ändern von Eigenschaften) ändern.
 
-<a name="Subclassing_CursorAdapter" />
 
 ## <a name="subclassing-cursoradapter"></a>Erstellen von Unterklassen CursorAdapter
 
@@ -133,7 +128,6 @@ Erhält eine funktionierende SQLite-Datenbank, müssen Sie nur überschreiben, z
 
 Der Adapter Unterklassen in vorherigen Beispielen haben Methoden zum Zurückgeben der Anzahl der Zeilen sowie zum Abrufen des aktuellen Elements – der `CursorAdapter` erfordert keine dieser Methoden aus, da diese Informationen aus dem Cursor selbst abgeleitet werden kann. Durch das Erstellen und Auffüllen der einzelnen Ansichten in diesen beiden Methoden Aufteilen der `CursorAdapter` erzwingt die Sicht erneut zu verwenden. Dies ist im Gegensatz dazu eine reguläre Adapter, ist es möglich ist, ignoriert der `convertView` Parameter von der `BaseAdapter.GetView` Methode.
 
-<a name="Implementing_the_CursorAdapter" />
 
 ### <a name="implementing-the-cursoradapter"></a>Implementieren der CursorAdapter
 
@@ -159,7 +153,6 @@ public class HomeScreenCursorAdapter : CursorAdapter {
 }
 ```
 
-<a name="Assigning_the_CursorAdapter" />
 
 ### <a name="assigning-the-cursoradapter"></a>Zuweisen der CursorAdapter
 

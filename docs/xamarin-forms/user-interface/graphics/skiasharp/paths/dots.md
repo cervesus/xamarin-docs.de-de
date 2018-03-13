@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 30b7e322d618492164fac5e439c5187616d61717
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 32326eb472b1bb8b4fbaf4066edc36255f5948ca
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="dots-and-dashes"></a>Punkte und Bindestriche enthalten
 
@@ -155,7 +155,7 @@ float[] GetPickerArray(Picker picker)
 
 In den folgenden Screenshots wird der iOS-Bildschirm auf die äußerst linke eine gepunktete Linie auf:
 
-[![](dots-images/dotsanddashes-small.png "Dreifacher Screenshot der Seite Punkte und Bindestriche enthalten")](dots-images/dotsanddashes-large.png "dreifacher Screenshot der Seite Punkte und Bindestriche enthalten")
+[![](dots-images/dotsanddashes-small.png "Dreifacher Screenshot der Seite Punkte und Bindestriche enthalten")](dots-images/dotsanddashes-large.png#lightbox "dreifacher Screenshot der Seite Punkte und Bindestriche enthalten")
 
 Jedoch Android Bildschirm sollte auch eine gepunktete Linie unter Verwendung des Arrays {10, 10} anzeigen, sondern stattdessen die Linie ist Durchgezogen. Was ist passiert? Das Problem besteht darin, dass Android Bildschirm auch Strich Caps Einstellung wurde `Square`. Erweitert alle Bindestriche halbe Strichbreite verursacht werden, um die Lücken zu füllen.
 
@@ -213,7 +213,7 @@ protected override void OnAppearing()
 
 Natürlich müssen Sie das Programm zum Anzeigen der Animation tatsächlich auszuführen:
 
-[![](dots-images/animatedspiral-small.png "Dreifacher Screenshot der Seite animiert Spirale")](dots-images/animatedspiral-large.png "dreifacher Screenshot der Seite animiert Spirale")
+[![](dots-images/animatedspiral-small.png "Dreifacher Screenshot der Seite animiert Spirale")](dots-images/animatedspiral-large.png#lightbox "dreifacher Screenshot der Seite animiert Spirale")
 
 Sie haben nun gesehen, wie zum Zeichnen von Linien und Kurven mit parametrische Formeln definieren werden. Ein Abschnitt später veröffentlicht werden sollen die verschiedenen Typen von Kurven, `SKPath` unterstützt.
 

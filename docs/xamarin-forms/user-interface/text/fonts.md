@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 22a0b0f5df5a44f2409a59b26eb841b97c920d8b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 771e1607bc4e6be8f0991e159b5d34f6d4ea9c02
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="fonts"></a>Schriftarten
 
@@ -181,7 +181,7 @@ Wenn Sie eine benutzerdefinierte Schriftart angeben, wird immer eine gute Idee, 
 
 Mithilfe einer Schriftart als integrierte Schriftarten erfordert einige plattformspezifischen-Codierung. Diese bildschirmabbildung zeigt die benutzerdefinierte Schriftartdatei **Hummern** aus [Google Open Source-Schriftarten](https://www.google.com/fonts) auf iOS, Android und Windows Phone-mithilfe von Xamarin.Forms gerendert.
 
- [ ![Benutzerdefinierte Schriftart auf IOS- und Android](fonts-images/custom-sml.png "benutzerdefinierte Schriftarten Beispiel")](fonts-images/custom.png "benutzerdefinierte Schriftarten-Beispiel")
+ [![Benutzerdefinierte Schriftart auf IOS- und Android](fonts-images/custom-sml.png "benutzerdefinierte Schriftarten Beispiel")](fonts-images/custom.png#lightbox "benutzerdefinierte Schriftarten-Beispiel")
 
 Im folgenden sind die erforderlichen Schritte für jede Plattform erläutert. Wenn Sie benutzerdefinierte Schriftart-Dateien mit einer Anwendung einschließen, achten Sie darauf, dass Sie überprüfen, ob die Schriftart-Lizenz für die Verteilung zulässt.
 
@@ -229,7 +229,7 @@ new Label
 > [!NOTE]
 > Beachten Sie, dass die Datei Schriftartname und Schriftartname unterscheiden können. Um den Schriftartnamen für Windows zu ermitteln, mit der rechten Maustaste der .ttf-Datei, und wählen Sie **Vorschau**. Der Name der Schriftart kann dann über das untenstehende Vorschaufenster ermittelt werden.
 
-Der allgemeine Code für die Anwendung ist nun abgeschlossen. Nun wird plattformspezifischer Telefonwählcode als [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) implementiert.
+Der allgemeine Code für die Anwendung ist damit fertiggestellt. Nun wird plattformspezifischer Telefonwählcode als [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) implementiert.
 
 ### <a name="xaml"></a>XAML
 

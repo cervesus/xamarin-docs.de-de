@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 1cc74fb30e59ecd5f6be3cf3e1c84f60cd5ca0a6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 1fba2219a10a83043097d1b5ca6fb293de4d6c70
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="source-lists"></a>Quelllisten
 
@@ -22,7 +22,7 @@ Bei der Arbeit mit c# und .NET in einer Anwendung Xamarin.Mac haben Sie Zugriff 
 
 Eine Liste der Quelle ist eine besondere Art von Ansicht der Gliederung verwendet, um die Quelle einer Aktion, wie der Randleiste in Finder oder iTunes anzuzeigen.
 
-[ ![](source-list-images/source05.png "Ein Beispiel-Quellliste")](source-list-images/source05.png)
+[![](source-list-images/source05.png "Ein Beispiel-Quellliste")](source-list-images/source05.png#lightbox)
 
 In diesem Artikel werden die Grundlagen der Arbeit mit Listen Quelle in einer Anwendung Xamarin.Mac eingegangen. Wird mit hoher vorgeschlagen, dass Sie über arbeiten die [Hello, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Benutzeroberflächen-Generator](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) und [Steckdosen und Aktionen](~/mac/get-started/hello-mac.md#Outlets_and_Actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die in diesem Artikel verwendet werden.
 
@@ -50,7 +50,7 @@ Eine Liste der Quelle ist eine besondere Art von Ansicht der Gliederung verwende
 
 Zunächst erstellen wir ein neues `SourceListItem` Klasse zum Speichern der Daten für unsere Quellliste. In der **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen** > **neue Datei...** Wählen Sie **allgemeine** > **leere Klasse**, geben Sie `SourceListItem` für die **Namen** , und klicken Sie auf die **neu** Schaltfläche:
 
-[ ![](source-list-images/source01.png "Eine leere Klasse hinzufügen")](source-list-images/source01.png)
+[![](source-list-images/source01.png "Eine leere Klasse hinzufügen")](source-list-images/source01.png#lightbox)
 
 Stellen Sie die `SourceListItem.cs` Datei aussehen wie folgt: 
 
@@ -532,19 +532,19 @@ Dies erstellt eine benutzerdefinierte, wiederverwendbare Unterklasse von `NSOutl
 
 Jetzt sehen wir unsere Quellliste in Benutzeroberflächen-Generator entwerfen. Doppelklicken Sie auf die `Main.storyboard` Datei zur Bearbeitung in der Benutzeroberflächen-Generator geöffnet, und ziehen eine geteilte Ansicht aus der **Bibliothek Inspektor**es die View-Controller hinzu, und legen Sie sie mit der Ansicht im Ändern der Größe der **Einschränkungen-Editor** :
 
-[ ![](source-list-images/source00.png "Bearbeiten von Einschränkungen")](source-list-images/source00.png)
+[![](source-list-images/source00.png "Bearbeiten von Einschränkungen")](source-list-images/source00.png#lightbox)
 
 Ziehen Sie anschließend eine Liste der Quelle aus der **Bibliothek Inspektor**, fügen Sie es auf die linke Seite der geteilten Ansicht, und legen Sie ihn mit der Ansicht im Ändern der Größe der **Einschränkungen Editor**:
 
-[ ![](source-list-images/source02.png "Bearbeiten von Einschränkungen")](source-list-images/source02.png)
+[![](source-list-images/source02.png "Bearbeiten von Einschränkungen")](source-list-images/source02.png#lightbox)
 
 Als Nächstes wechseln Sie zu der **Identität Ansicht**, wählen Sie die Quelle, und ändern Sie ihn des **Klasse** auf `SourceListView`:
 
-[ ![](source-list-images/source03.png "Der Name der Klasse festlegen")](source-list-images/source03.png)
+[![](source-list-images/source03.png "Der Name der Klasse festlegen")](source-list-images/source03.png#lightbox)
 
 Erstellen Sie abschließend eine **Nachrichtenplattform** für unsere Quellliste aufgerufen `SourceList` in die `ViewController.h` Datei:
 
-[ ![](source-list-images/source04.png "Konfigurieren von einer Steckdose")](source-list-images/source04.png)
+[![](source-list-images/source04.png "Konfigurieren von einer Steckdose")](source-list-images/source04.png#lightbox)
 
 Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode zu synchronisieren.
 
@@ -614,7 +614,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 Wenn wir unsere Anwendung ausführen, wird Folgendes angezeigt:
 
-[ ![](source-list-images/source05.png "Eine Beispiel-app ausführen")](source-list-images/source05.png)
+[![](source-list-images/source05.png "Eine Beispiel-app ausführen")](source-list-images/source05.png#lightbox)
 
 <a name="Summary" />
 
@@ -628,7 +628,7 @@ Dieser Artikel hat eine ausführliche Übersicht über das Arbeiten mit Listen Q
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
 - [Tabellenansichten](~/mac/user-interface/table-view.md)
 - [Gliederungsansichten](~/mac/user-interface/outline-view.md)
-- [OS X Human Richtlinien zur Benutzeroberfläche](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Einführung in die Ansichten werden kann](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
 - [NSOutlineView](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSOutlineView_Class/index.html#//apple_ref/doc/uid/TP40004079)
 - [NSOutlineViewDataSource](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSOutlineViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40004175)

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 36d8e27ce06e38e1cf652558bfb5a83f572e4403
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 202df615f1b35504f1fe5c9fd64c9c4b4db77a2d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="understanding-sirikit-concepts"></a>Grundlegendes zu Konzepten SiriKit
 
@@ -57,7 +57,7 @@ Siri und Karten alle Interaktionen des Benutzers zu verwalten und mithilfe der B
 
 Dieser Abschnitt bietet einen Überblick darüber, wie SiriKit dem Benutzer die Interaktion mit der app mithilfe von Siri ermöglicht. Für dieses Beispiel müssen die gefälschte MonkeyChat-app verwendet werden:
 
-[ ![](understanding-sirikit-images/monkeychat01.png "Das Symbol "MonkeyChat"")](understanding-sirikit-images/monkeychat01.png)
+[![](understanding-sirikit-images/monkeychat01.png "Das Symbol "MonkeyChat"")](understanding-sirikit-images/monkeychat01.png#lightbox)
 
 MonkeyChat behält eine eigene Adressbuch des Benutzers Freunde, jeweils eines Anzeigenamens (z. B. Bobo z. B.) zugeordnet ist, und ermöglicht es dem Benutzer nach dem Bildschirmnamen jeder Freund Chats Text an.
 
@@ -179,7 +179,7 @@ Unabhängig davon, wie eine Anforderung gestellt wird, oder wie Siri auf die Anf
 
 Wenn der Benutzer eine verbale Anforderung der Siri sendet, sind dies die Schritte, die Siri folgen wird:
 
-[ ![](understanding-sirikit-images/monkeychat02.png "Die folgenden Schritte Siri wird")](understanding-sirikit-images/monkeychat02.png)
+[![](understanding-sirikit-images/monkeychat02.png "Die folgenden Schritte Siri wird")](understanding-sirikit-images/monkeychat02.png#lightbox)
 
 1. Siri nimmt zunächst die Audiodaten des Benutzers **Spracherkennung** und in Text konvertiert.
 2. Als Nächstes wird der Text in konvertiert ein **Absicht**, wird eine strukturierte Darstellung der Anforderung des Benutzers.
@@ -188,7 +188,7 @@ Wenn der Benutzer eine verbale Anforderung der Siri sendet, sind dies die Schrit
 
 Es gibt drei Hauptmethoden, die die app des Benutzers Konversation mit Siri teilnehmen kann:
 
-[ ![](understanding-sirikit-images/monkeychat03.png "Die drei Hauptmethoden, dass die app in der Konversation Benutzer mit Siri teilnehmen kann")](understanding-sirikit-images/monkeychat03.png)
+[![](understanding-sirikit-images/monkeychat03.png "Die drei Hauptmethoden, dass die app in der Konversation Benutzer mit Siri teilnehmen kann")](understanding-sirikit-images/monkeychat03.png#lightbox)
 
 1. **Vokabular** -Dies ist die app Siri die Wörter mitteilen, wie sie wissen, um damit zu interagieren muss.
 2. **App-Logik** – Hierbei handelt es sich um die Aktionen und Antworten, mit denen die app gelangen auf Basis der angegebenen Intents.
@@ -219,7 +219,7 @@ Es gibt drei Hauptmethoden, die die app des Benutzers Konversation mit Siri teil
 
 Die erste Rolle, die die app in der Konversation akzeptiert wird Siri Sprache des Benutzers verstehen zu helfen:
 
-[ ![](understanding-sirikit-images/monkeychat04.png "Helfen Siri verstehen die Benutzer-Sprache")](understanding-sirikit-images/monkeychat04.png)
+[![](understanding-sirikit-images/monkeychat04.png "Helfen Siri verstehen die Benutzer-Sprache")](understanding-sirikit-images/monkeychat04.png#lightbox)
 
 Siri verfügt nicht über den Namen "Bobo" in der Datenbank, aber die app ist und hat diese Informationen mit Siri über des Vokabulars freigegeben. Die app hilft außerdem beim erkennen, dass Bobo ein Empfänger ist, da sie zu Siri als angegeben Siri eine *Kontakt*.
 
@@ -227,7 +227,7 @@ Siri weiß, dass mehrere ist erforderlich, um eine Nachricht als nur einen Empf�
 
 Im obigen Beispiel hat der Benutzer geantwortet, *"Senden Sie weitere Bananen"*, die Siri in eine strukturierte bündeln wird **Absicht**:
 
-[ ![](understanding-sirikit-images/monkeychat05.png "Siri wird die Antwort des Benutzers in einem strukturierten Absicht bündeln.")](understanding-sirikit-images/monkeychat05.png)
+[![](understanding-sirikit-images/monkeychat05.png "Siri wird die Antwort des Benutzers in einem strukturierten Absicht bündeln.")](understanding-sirikit-images/monkeychat05.png#lightbox)
 
 Die strukturierte Absicht enthält die folgende Informationen:
 
@@ -248,7 +248,7 @@ Siri wird automatisch ein geeignetes erstellen `NSUserActivity` zum Starten der 
 
 Nachdem die app verarbeitet die Absicht und eine Antwort auf Siri zurückgegeben hat, stellt er dann die Ergebnisse dem Benutzer (Alternativtext und visuell):
 
-[ ![](understanding-sirikit-images/monkeychat06.png "Die Ergebnisse, die dem Benutzer sowohl Alternativtext und visuell angezeigt")](understanding-sirikit-images/monkeychat06.png)
+[![](understanding-sirikit-images/monkeychat06.png "Die Ergebnisse, die dem Benutzer sowohl Alternativtext und visuell angezeigt")](understanding-sirikit-images/monkeychat06.png#lightbox)
 
 Siri enthält mehrere integrierte Antwort von Benutzeroberflächen für jede der Domänen für die app verfügbar. Da MonkeyChat eine optionale Erweiterung des Intent-Benutzeroberfläche bereitgestellt hat, ist es jedoch verwendet die Ergebnisse der Konversation für den Benutzer im obigen Beispiel anzuzeigen.
 
@@ -256,7 +256,7 @@ Siri enthält mehrere integrierte Antwort von Benutzeroberflächen für jede der
 
 Es gibt drei Hauptaufgaben, die die App-Erweiterung beim Umgang mit Intents ausführen müssen:
 
-[ ![](understanding-sirikit-images/monkeychat07.png "Der beabsichtigte Lebenszyklus")](understanding-sirikit-images/monkeychat07.png)
+[![](understanding-sirikit-images/monkeychat07.png "Der beabsichtigte Lebenszyklus")](understanding-sirikit-images/monkeychat07.png#lightbox)
 
 1. Die app muss **beheben** jeder Parameter für ein Ereignis. Die app aufrufen folglich Resolve mehrmals (einmal pro jeden Parameter), und manchmal mehrere Male auf den gleichen Parameter erst die app und der Benutzer den gleichen was angefordert wird.
 2. Die app muss **bestätigen** , die angeforderte Absicht behandeln und das erwartete Ergebnis Siri erzählen werden können.
@@ -329,7 +329,7 @@ Es gibt auch eine API zur Siri bei Deaktivierung in Form von Wörtern und Ausdr�
 
 Die Erweiterung Intents ist verantwortlich für die wichtigsten Interaktionen zwischen der Anwendung und Siri wie folgt behandeln:
 
-[ ![](understanding-sirikit-images/intents01.png "Die Erweiterung Intents")](understanding-sirikit-images/intents01.png)
+[![](understanding-sirikit-images/intents01.png "Die Erweiterung Intents")](understanding-sirikit-images/intents01.png#lightbox)
 
 Die Absicht-Erweiterung kann eine oder mehrere Intents zu unterstützen, es obliegt dem Entwickler, zu entscheiden, wie sie in der app SiriKit implementieren möchten. Der Entwickler hinzufügen für jeden Zweck behandelt werden müssen auch eine separate Absicht-Erweiterung.  Dies bedeutet, dass Apple fordert an, dass der Entwickler die Anzahl der Absicht Erweiterungen beschränken, sodass Siri besitzt mehrere Prozesse, die für die app öffnen, die eine erfordern, mehr Arbeitsspeicher und die Uhrzeit, zu behandeln.
 
@@ -355,7 +355,7 @@ Eine der allgemeinen Aufgaben, die Benutzer ist "den Anwendungsnamen verbify" he
 
 Die Benutzeroberflächenerweiterung Intents bietet die Möglichkeit, schalten Sie der app Benutzeroberfläche und in die-Oberfläche Siri branding und stellen die Benutzer können mit der app verbunden. Mit dieser Erweiterung kann die app Brand als auch visual und andere Informationen in die Aufzeichnung bringen.
 
-[ ![](understanding-sirikit-images/intents02.png "Beispielausgabe für Intents Benutzeroberflächenerweiterung")](understanding-sirikit-images/intents02.png)
+[![](understanding-sirikit-images/intents02.png "Beispielausgabe für Intents Benutzeroberflächenerweiterung")](understanding-sirikit-images/intents02.png#lightbox)
 
 Die Benutzeroberflächenerweiterung Intents gibt stets eine `UIViewController` und die app hinzufügen nichts es gerne innerhalb der Ansicht-Controller, z. B. mit zusätzlichen Informationen, die die erste Antwort überschritten wird. Die Benutzeroberfläche Intents können auch Benutzer mit dem Status einer lang ausgeführten Ereignisses, z. B., wie viel länger dauert es, eine Freigabe Auto zum Erreichen von ihrem Speicherort fuhr aktualisieren.
 

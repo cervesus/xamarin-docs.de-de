@@ -3,14 +3,15 @@ title: Zusammenfassung der Kapitel 28. Speicherort und Karten
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 7361f65fecfed9d61b9df7088f9021ffa0192ad8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0968270f657d3195855a752da311b4855283e971
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Zusammenfassung der Kapitel 28. Speicherort und Karten
 
@@ -215,7 +216,7 @@ Die [ `PositionExtensions` ](https://github.com/xamarin/xamarin-forms-book-sampl
 
 Hiermit wird die [LocalMuseumsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/LocalMuseumsPage.xaml) Datei und [LocalMuseumsPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/LocalMuseumsPage.xaml.cs) Code-Behind-Datei auch die Entfernung dem Museum aus den Standort des Benutzers angezeigt werden sollen:
 
-[![Dreifacher Screenshot der Seite mit lokalen Museen](images/ch28fg28-small.png "Abstand an einem Speicherort")](images/ch28fg28-large.png "Abstand an einem Speicherort")
+[![Dreifacher Screenshot der Seite mit lokalen Museen](images/ch28fg28-small.png "Abstand an einem Speicherort")](images/ch28fg28-large.png#lightbox "Abstand an einem Speicherort")
 
 Das Programm wird gezeigt, wie die Anzahl von Pins basierend auf den Speicherort der Zuordnung dynamisch zu beschränken.
 

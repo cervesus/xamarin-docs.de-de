@@ -3,14 +3,15 @@ title: Zusammenfassung der Kapitel 22. Animation
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0ee99881a43b625cc8a70fb59e54710705c2d07a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: df0647e869fcf37a3a1dfdeb6f3dbf1e7d07ad95
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-22-animation"></a>Zusammenfassung der Kapitel 22. Animation
 
@@ -110,7 +111,7 @@ Die [ **CopterAnimation** ](https://github.com/xamarin/xamarin-forms-book-sample
 
 [**RotatingSpokes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotatingSpokes) dreht `BoxView` Speichen, um die Mitte des Bildschirms, und klicken Sie dann Dreht jedes Spoke selbst interessante Muster erstellen:
 
-[![Dreifacher Screenshot der Rotation Speichen](images/ch22fg21-small.png "drehen Speichen")](images/ch22fg21-large.png "Speichen drehen")
+[![Dreifacher Screenshot der Rotation Speichen](images/ch22fg21-small.png "drehen Speichen")](images/ch22fg21-large.png#lightbox "Speichen drehen")
 
 Allerdings eine allmähliche Erhöhung der `Rotation` Eigenschaft eines Elements funktionieren ggf. nicht in der archivspeicherung als die [ **RotationBreakdown** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotationBreakdown) demonstriert.
 
@@ -124,7 +125,7 @@ Die `LayoutTo` Methode speziellen Zwecken eingeschränkt werden soll. Die [ **Bo
 
 Die [ **XamagonXuzzle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle) -Beispiel verwendet `LayoutTo` verschieben Kacheln in eine Implementierung der klassischen 15 bis 16-Rätsel, in dem eine verschlüsselte Bild anstelle von nummerierten Kacheln angezeigt:
 
-[![Dreifacher Screenshot des Xamarin Xuzzle](images/ch22fg26-small.png "Xuzzle Puzzle Spiel")](images/ch22fg26-large.png "Xuzzle Puzzle Spiel")
+[![Dreifacher Screenshot des Xamarin Xuzzle](images/ch22fg26-small.png "Xuzzle Puzzle Spiel")](images/ch22fg26-large.png#lightbox "Xuzzle Puzzle Spiel")
 
 ### <a name="your-own-awaitable-animations"></a>Awaitable Animationen
 

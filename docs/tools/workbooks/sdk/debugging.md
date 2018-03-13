@@ -6,11 +6,11 @@ ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 4a83afca753d1131e3486004443f9c4a895f6fbc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a0873c6b902e29174da5e27a09e8f580d6d69eb7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debugging-integrations"></a>Debuggen von Integrationen
 
@@ -43,11 +43,11 @@ defaults write com.xamarin.Inspector WebKitDeveloperExtras -bool true
 
 und starten Sie die Xamarin-Arbeitsmappen. Sobald dies geschehen ist, sehen Sie **Element überprüfen** angezeigt werden, in Ihrem Rechtsklick-Kontextmenü, und eine neue **Developer** Bereich wird in Arbeitsmappen Voreinstellungen verfügbar sein. Diese Option können Sie wählen, ob Sie die Developer-Tools, die beim Start geöffnet werden soll:
 
-[![Developer-Bereich](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png)
+[![Developer-Bereich](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png#lightbox)
 
 Diese Einstellung kann nur neu starten sowie – Sie müssen die Arbeitsmappen-Client neu starten, damit dafür auf neuer Arbeitsmappen wirksam wird. Aktivieren die Developer-Tools über das Kontextmenü oder die Einstellungen wird der vertrauten Safari-Benutzeroberfläche angezeigt werden:
 
-[![Safari-Entwicklungstools](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png)
+[![Safari-Entwicklungstools](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png#lightbox)
 
 Informationen zur Verwendung von Safari-Entwicklertools finden Sie unter der [WebKit-Inspektor Dokumentation][webkit-docs].
 
@@ -61,6 +61,6 @@ C:\Windows\System32\F12\F12Chooser.exe
 
 Ausführen F12-Auswahl, und Sie sollte eingebettete Instanz angezeigt, die die Oberfläche des Arbeitsmappen-Client in der Liste verwendet werden. Wählen Sie es, und der vertrauten F12-Tools zum Debuggen von Internet Explorer angezeigt werden, an den Client angehängt:
 
-[![F12-tools](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png)
+[![F12-tools](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png#lightbox)
 
 [webkit-docs]: https://trac.webkit.org/wiki/WebInspector

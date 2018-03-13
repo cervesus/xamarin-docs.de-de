@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/17/2017
-ms.openlocfilehash: 0c2765551c16be605bc78d9ef32a91fd2c4ead8c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9602e4d99e8f5c004fe75ab724bb3746aca46003
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="resource-dictionaries"></a>Ressourcenverzeichnis
 
@@ -83,10 +83,10 @@ Jede Ressource haben einen Schlüssel, der dem angegebenen unter Verwendung der 
 
 Die erste [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) Instanz abgerufen und verarbeitet die `LabelPageHeadingStyle` Ressource auf Anwendungsebene definierten [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), mit der zweiten `Label` Instanz Abrufen und Verarbeiten der `LabelNormalStyle` Ressource in der Steuerelementebene definierten `ResourceDictionary`. Auf ähnliche Weise die [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) Instanz abgerufen und verarbeitet die `NormalTextColor` Ressource auf Anwendungsebene definierten `ResourceDictionary`, und die `MediumBoldText` Ressource in der Steuerelementebene definierten `ResourceDictionary`. Daraus ergibt sich die Darstellung in den folgenden Screenshots dargestellt:
 
-[![](resource-dictionaries-images/screenshots-sml.png ": "ResourceDictionary" Ressourcen verbrauchen")](resource-dictionaries-images/screenshots.png ": "ResourceDictionary" Ressourcen zu verbrauchen.")
+[![](resource-dictionaries-images/screenshots-sml.png ": "ResourceDictionary" Ressourcen verbrauchen")](resource-dictionaries-images/screenshots.png#lightbox ": "ResourceDictionary" Ressourcen zu verbrauchen.")
 
 > [!NOTE]
-> **Hinweis**: Ressourcen, die für eine einzelne Seite spezifisch sind nicht in einer Ebene Ressourcenverzeichnis Anwendung enthalten sein, daher wird Ressourcen dann beim Anwendungsstart anstelle von analysiert, durch die entsprechende Seite im Bedarfsfall. Weitere Informationen finden Sie unter [verringern die Größe der Anwendung Ressource Wörterbuch](~/xamarin-forms/deploy-test/performance.md).
+> Ressourcen, die auf einer einzelnen Seite beziehen darf nicht in einer Anwendung Ebene Ressourcenwörterbuch, daher enthalten sein, die Ressourcen dann beim Anwendungsstart anstelle von analysiert werden, wenn eine Seite erforderlich. Weitere Informationen finden Sie unter [verringern die Größe der Anwendung Ressource Wörterbuch](~/xamarin-forms/deploy-test/performance.md).
 
 ## <a name="overriding-resources"></a>Ressourcen überschreiben
 
@@ -118,7 +118,7 @@ Wenn [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.For
 
 Die ursprüngliche `PageBackgroundColor` und `NormalTextColor` Instanzen, die auf der Anwendungsebene definierten codierungsangaben durch die `PageBackgroundColor` und `NormalTextColor` Instanzen auf Seitenebene definiert. Aus diesem Grund die Hintergrundfarbe wird Blau, und der Text auf der Seite wird Gelb, wie in den folgenden Screenshots veranschaulicht:
 
-[![](resource-dictionaries-images/overridding-screenshots-sml.png "Überschreiben: "ResourceDictionary" Ressourcen")](resource-dictionaries-images/overridding-screenshots.png ": "ResourceDictionary" Ressourcen überschreiben")
+[![](resource-dictionaries-images/overridding-screenshots-sml.png "Überschreiben: "ResourceDictionary" Ressourcen")](resource-dictionaries-images/overridding-screenshots.png#lightbox ": "ResourceDictionary" Ressourcen überschreiben")
 
 Beachten Sie jedoch, dass der Hintergrund der Statusleiste des der [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) weiterhin Gelb ist, da die [ `BarBackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.NavigationPage.BarBackgroundColor/) auf den Wert der Eigenschaft festgelegt ist die `PageBackgroundColor` Ressource in der Anwendung definiert Ebene [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/).
 
@@ -175,7 +175,7 @@ Beim Zusammenführen der [ `ResourceDictionary` ](https://developer.xamarin.com/
 1. Die Ressourcen in die Ressourcenwörterbücher, die über zusammengeführt wurden die `MergedDictionaries` Auflistung, in der sie, in aufgelistet sind Reihenfolge der `MergedDictionaries` Eigenschaft.
 
 > [!NOTE]
-> **Hinweis**: Suche Ressourcenverzeichnis kann einen rechenintensiven Vorgang sein, wenn eine Anwendung mehrere enthält, große Ressourcenwörterbücher. Daher stellen Sie sicher, dass jede Seite in einer Anwendung nur Ressourcenverzeichnis, die auf der Seite verwendet, um zu vermeiden unnötige Suchläufe geeignet sind.
+> Ressourcenverzeichnis suchen kann einen rechenintensiven Vorgang sein, wenn eine Anwendung mehrere enthält große Ressourcenwörterbücher. Daher stellen Sie sicher, dass jede Seite in einer Anwendung nur Ressourcenverzeichnis, die auf der Seite verwendet, um zu vermeiden unnötige Suchläufe geeignet sind.
 
 ## <a name="summary"></a>Zusammenfassung
 

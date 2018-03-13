@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d4da50dac901628b9baf10a07650d232a977a653
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f77eac8179f9e368e767bb4b586ccaa3f93e40a3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-page-control"></a>Arbeiten mit Seitensteuerelement
 
@@ -20,7 +20,7 @@ _Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Seitensteuerelement i
 
 In einigen Fällen müssen Sie eine Reihe von Seiten oder Bilder in Ihrer app Xamarin.tvOS anzuzeigen. Ein Steuerelement wurde entwickelt, welche Seite aufzuzeigen ein Benutzer auf Out die maximale Anzahl von Seiten ist. Ein Steuerelement zeigt eine Reihe von Punkten mit einem dunklen Oval Hintergrund strukturiert. Anzeigen der aktuellen Seite einen ausgefüllten Punkt, alle anderen Seiten, die als leere Punkte anzeigen. Das Seitensteuerelement wird die äußere die meisten Punkte zugeschnitten werden soll, wenn zu viele seine Hintergrundbereich zu groß.
 
-[ ![](page-controls-images/page01.png "Beispiel-Steuerelements")](page-controls-images/page01.png)
+[![](page-controls-images/page01.png "Beispiel-Steuerelements")](page-controls-images/page01.png#lightbox)
 
 Ein Steuerelement in einem nicht interaktiven Element entwickelt, um nur dem Benutzer Rückmeldung zu geben. Sie müssen zum Hinzufügen von anderen Steuerelementen um die aktuelle Seitenzahl (z. B. Gesten oder Schaltflächen) zu ändern.
 
@@ -41,14 +41,14 @@ Die einfachste Möglichkeit zum Arbeiten mit Steuerelemente der Seite in einer a
 1. In der **Lösung Pad**, doppelklicken Sie auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. Ziehen Sie eine **Seitensteuerelement** aus der **Toolbox** und legen Sie sie in der Sicht: 
 
-    [ ![](page-controls-images/page02.png "Ein Steuerelement")](page-controls-images/page02.png)
+    [![](page-controls-images/page02.png "Ein Steuerelement")](page-controls-images/page02.png#lightbox)
 1. In der **Registerkarte "Widget"** von der **Eigenschaften Pad**, können Sie verschiedene Eigenschaften des Steuerelements Seite z. B. anpassen seine **aktuelle Seite** und **Seitenanzahl**: 
 
-    [ ![](page-controls-images/page03.png "Die Registerkarte "Widget"")](page-controls-images/page03.png)
+    [![](page-controls-images/page03.png "Die Registerkarte "Widget"")](page-controls-images/page03.png#lightbox)
 1. Fügen Sie anschließend Steuerelemente oder Gesten zur Ansicht, um rückwärts und Vorwärts durch die Auflistung von Seiten.
 1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie in C#-Code auf sie reagieren können. Zum Beispiel: 
 
-    [ ![](page-controls-images/page04.png "Benennen Sie das Steuerelement")](page-controls-images/page04.png)
+    [![](page-controls-images/page04.png "Benennen Sie das Steuerelement")](page-controls-images/page04.png#lightbox)
 1. Speichern Sie die Änderungen.
     
 
@@ -58,14 +58,14 @@ Die einfachste Möglichkeit zum Arbeiten mit Steuerelemente der Seite in einer a
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. Ziehen Sie eine **Seitensteuerelement** aus der **Toolbox** und legen Sie sie in der Sicht: 
 
-    [ ![](page-controls-images/page02-vs.png "Ein Steuerelement")](page-controls-images/page02-vs.png)
+    [![](page-controls-images/page02-vs.png "Ein Steuerelement")](page-controls-images/page02-vs.png#lightbox)
 1. In der **Registerkarte "Widget"** von der **Eigenschaften-Explorer**, können Sie verschiedene Eigenschaften des Steuerelements Seite z. B. Anpassen der **aktuelle Seite** und **Seitenanzahl**: 
 
-    [ ![](page-controls-images/page03-vs.png "Die Registerkarte "Widget"")](page-controls-images/page03-vs.png)
+    [![](page-controls-images/page03-vs.png "Die Registerkarte "Widget"")](page-controls-images/page03-vs.png#lightbox)
 1. Fügen Sie anschließend Steuerelemente oder Gesten zur Ansicht, um rückwärts und Vorwärts durch die Auflistung von Seiten.
 1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie in C#-Code auf sie reagieren können. Zum Beispiel: 
 
-    [ ![](page-controls-images/page04-vs.png "Benennen Sie das Steuerelement")](page-controls-images/page04-vs.png)
+    [![](page-controls-images/page04-vs.png "Benennen Sie das Steuerelement")](page-controls-images/page04-vs.png#lightbox)
 1. Speichern Sie die Änderungen.
     
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 670c990fb4f2e4d2a01ada83ea98e8e589b5c473
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d1052695bb7337a18d1a2f1f7015e9079f86f6f5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-icons-and-images"></a>Arbeiten mit Symbolen und Bilder
 
@@ -67,13 +67,13 @@ Führen Sie zum Festlegen der starten-Image für das Projekt tvos. außerdem wur
 
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf `Assets.xcassets` um ihn zur Bearbeitung zu öffnen: 
 
-    [ ![](icons-images-images/asset01.png "Die Datei Assets.xcassets")](icons-images-images/asset01.png)
+    [![](icons-images-images/asset01.png "Die Datei Assets.xcassets")](icons-images-images/asset01.png#lightbox)
 2. In der **Asset Editor**, klicken Sie auf der `LaunchImages` Asset: 
 
-    [ ![](icons-images-images/asset02.png "Das Medienobjekt LaunchImages")](icons-images-images/asset02.png)
+    [![](icons-images-images/asset02.png "Das Medienobjekt LaunchImages")](icons-images-images/asset02.png#lightbox)
 3. Klicken Sie auf die **1 x Apple TV** Eintrag, und wählen Sie das Abbild zu starten, oder ziehen Sie optional ein neues Image in aus dem Dateisystem: 
 
-    [ ![](icons-images-images/asset03.png "Wählen Sie ein Image starten")](icons-images-images/asset03.png)
+    [![](icons-images-images/asset03.png "Wählen Sie ein Image starten")](icons-images-images/asset03.png#lightbox)
 4. Speichern Sie die Änderungen.
 
 <a name="Layered-Images" />
@@ -84,7 +84,7 @@ Noch nicht mit der Apple-TV-Images in den Ebenen arbeiten mit den Effekt Paralla
 
 Überlappende Bilder enthalten aus zwei (2) auf fünf (5) Trennen von Ebenen, die kombiniert werden, um ein Abschließen des Images zu bilden. Mit Ausnahme der Hintergrundebene verwendet jeder Ebene die Z-Reihenfolge zusammen mit Transparenz, um eine Illusion von Tiefe zu erstellen. Wenn der Benutzer mit einem Abbild in den Ebenen interagiert, werden höhere Z sortiert Ebenen skaliert und den überlappenden um diesen Effekt zu erstellen.
 
-[ ![](icons-images-images/layered01.png "Überlappende Bilder Z sortiert-Diagramm")](icons-images-images/layered01.png)
+[![](icons-images-images/layered01.png "Überlappende Bilder Z sortiert-Diagramm")](icons-images-images/layered01.png#lightbox)
 
 > [!IMPORTANT]
 > **Hinweis:** überlappende Bilder für Ihre app-Symbole erforderlich sind, und sind für andere optional [den Fokus erhalten kann Elemente](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (z. B. dem Anfang Regal-Image). Allerdings wird Apple vorgeschlagen, die Verwendung von Images in den Ebenen für jedes Bild, das Fokus in der app abrufen kann.
@@ -109,7 +109,7 @@ Wann immer möglich, verwenden Sie immer die integrierte `UIKit` Steuerelementen
 
 Es ist wichtig, denken Sie daran, eine _Safe Zone_ Rahmen in jeder Ebene, die das Bild in den Ebenen erstellen. Da die einzelnen Ebenen skaliert und während der Effekt Parallax zugeschnitten werden können, kann der Inhalt der Ebenen zugeschnitten ist nah an den Rand der Ebene:
 
-[ ![](icons-images-images/layered02.png "35 Pixel Rahmen")](icons-images-images/layered02.png)
+[![](icons-images-images/layered02.png "35 Pixel Rahmen")](icons-images-images/layered02.png#lightbox)
 
 <a name="Creating-Layered-Images" />
 
@@ -128,7 +128,7 @@ tvos. außerdem wurden funktioniert mit den Ebenen-Images in den folgenden Forma
 
 Apple erstellt die [Parallax-Vorschau](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg) zu Vorschau- und erstellte überlappende Bilder für App-Symbole und optional den Fokus erhalten kann Elemente erforderlich sind. Die Vorschau zeigt die jeder Ebene, die den abgeschlossenen Images in den Ebenen bildet:
 
-[ ![](icons-images-images/layered03.png "Die Parallax-Vorschau")](icons-images-images/layered03.png)
+[![](icons-images-images/layered03.png "Die Parallax-Vorschau")](icons-images-images/layered03.png#lightbox)
 
 Während der Vorschau auf ein Bild in den Ebenen, können Sie die Maus verwenden, drehen das Bild und eine Vorschau der Parallax wirksam. Verwenden der  **+**  (plus) und  **-**  (Minuszeichen) hinzufügen und Entfernen von Ebenen.
 
@@ -142,7 +142,7 @@ Weitere Informationen zum Erstellen und Anzeigen einer Vorschau in den Ebenen-Im
 
 Ihre app Xamarin.tvOS müssen nicht nur ein App-Symbol für die Apple TV-Startseite, sondern auch ein Symbol für den App Store. Das Symbol "App" wird die Ihres ersten ändern, um eine hervorragende Eindruck für Ihre potenziellen Benutzer und sollte Ihre app Zweck auf einen Blick vermitteln.
 
-[ ![](icons-images-images/icon01.png "Das Symbol "App"")](icons-images-images/icon01.png)
+[![](icons-images-images/icon01.png "Das Symbol "App"")](icons-images-images/icon01.png#lightbox)
 
 Alle Apps muss eine kleine und eine große Version von dessen Symbol "App" angeben. Des kleinen Symbols wird auf dem Bildschirm Apple TV-Startseite verwendet werden, wenn die app installiert wird. Die große Version wird von dem App Store. "Große Symbole" App sollte imitieren, die das Aussehen und Verhalten von der Version des kleinen Symbols an.
 
@@ -202,16 +202,16 @@ Führen Sie zum Festlegen von App-Symbole, die erforderlich sind, für das Proje
 
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf `Assets.xcassets` um ihn zur Bearbeitung zu öffnen: 
 
-    [ ![](icons-images-images/asset01.png "Die Assets.xcassets fileg")](icons-images-images/asset01.png)
+    [![](icons-images-images/asset01.png "Die Assets.xcassets fileg")](icons-images-images/asset01.png#lightbox)
 2. In der **Asset Editor**, erweitern Sie die `App Icon & Top Shelf Image` Asset: 
 
-    [ ![](icons-images-images/asset04.png "Erweitern Sie den oberen Regal-Standardimage-Medienobjekt")](icons-images-images/asset04.png)
+    [![](icons-images-images/asset04.png "Erweitern Sie den oberen Regal-Standardimage-Medienobjekt")](icons-images-images/asset04.png#lightbox)
 3. Erweitern Sie als Nächstes die `App Icon - Small` Asset: 
 
-    [ ![](icons-images-images/asset05.png "Erweitern Sie das App-Symbol - kleine asset")](icons-images-images/asset05.png)
+    [![](icons-images-images/asset05.png "Erweitern Sie das App-Symbol - kleine asset")](icons-images-images/asset05.png#lightbox)
 4. Erweitern Sie dann die `Back` Bestand, und klicken Sie auf die `Contents` Eintrag: 
 
-    [ ![](icons-images-images/asset06.png "Erweitern Sie dann das Back-Medienobjekt")](icons-images-images/asset06.png)
+    [![](icons-images-images/asset06.png "Erweitern Sie dann das Back-Medienobjekt")](icons-images-images/asset06.png#lightbox)
 5. Klicken Sie auf die **1 x Apple TV-Eintrag** , und wählen Sie eine Bilddatei.
 6. Wiederholen Sie die oben genannten Schritte für die `Front` und `Middle` Bestand.
 7. Wiederholen Sie dann die gleichen Schritte zum Definieren der `App Icon - Large` Asset.
@@ -223,7 +223,7 @@ Führen Sie zum Festlegen von App-Symbole, die erforderlich sind, für das Proje
 
 Wenn der Benutzer die app Xamarin.tvOS auf die Zeile nach oben auf dem Bildschirm Apple TV-Startseite aufgegeben hat, wird ein großes oben Regal Bild angezeigt, wenn es sich bei Ihrer app vom Benutzer ausgewählt wird. Dieses Bild sollte markieren Sie die Funktionen der app, oder geben Sie direkte Links zum jeweiligen Inhalt.
 
-[ ![](icons-images-images/topshelf01.png "Beispiel mit Top Regal-Bild")](icons-images-images/topshelf01.png)
+[![](icons-images-images/topshelf01.png "Beispiel mit Top Regal-Bild")](icons-images-images/topshelf01.png#lightbox)
 
 Die oberen Regal Image kann entweder als eine einzelne statische bereitgestellt `.png` oder `.lsr` Datei (finden Sie unter [in den Ebenen-Images erstellen](#Creating-Layered-Images)) oder erstellt werden, dynamisch zur Laufzeit als eine einzelne Zeile mit den Fokus erhalten kann Elemente (finden Sie unter [ Dynamische Oberes Regal Inhalt](#Dynamic-Top-Shelf-Content) unten).
 
@@ -253,13 +253,13 @@ Führen Sie zum Festlegen der oberen Regal Image erforderlich für das Projekt t
 
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf `Assets.xcassets` um ihn zur Bearbeitung zu öffnen: 
 
-    [ ![](icons-images-images/asset01.png "Die Datei Assets.xcassets")](icons-images-images/asset01.png)
+    [![](icons-images-images/asset01.png "Die Datei Assets.xcassets")](icons-images-images/asset01.png#lightbox)
 2. In der **Asset Editor**, erweitern Sie die `App Icon & Top Shelf Image` Asset: 
 
-    [ ![](icons-images-images/asset04.png "Erweitern Sie den oberen Regal-Standardimage-Medienobjekt")](icons-images-images/asset04.png)
+    [![](icons-images-images/asset04.png "Erweitern Sie den oberen Regal-Standardimage-Medienobjekt")](icons-images-images/asset04.png#lightbox)
 3. Klicken Sie auf der `Top Shelf Image` Asset: 
 
-    [ ![](icons-images-images/asset07.png "Die Top-Regal-Standardimage-Medienobjekt")](icons-images-images/asset07.png)
+    [![](icons-images-images/asset07.png "Die Top-Regal-Standardimage-Medienobjekt")](icons-images-images/asset07.png#lightbox)
 5. Klicken Sie auf die **1 x Apple TV-Eintrag** , und wählen Sie eine Bilddatei.
 6. Speichern Sie die Änderungen.
 
@@ -423,10 +423,10 @@ Führen Sie folgende Schritte aus:
 
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Info.plist` um ihn zur Bearbeitung zu öffnen: 
 
-    [ ![](icons-images-images/info01.png "Die Datei "Info.plist"")](icons-images-images/info01.png)
+    [![](icons-images-images/info01.png "Die Datei "Info.plist"")](icons-images-images/info01.png#lightbox)
 2. In der **"Info.plist" Editor**, wählen Sie den Katalog Bestand (konfigurierten oben in der [Festlegen von App-Symbole](#Setting-the-App-Icons) Abschnitt) für die **App-Symbole**: 
 
-    [ ![](icons-images-images/info02.png "Die Datei "Info.plist"-Editor")](icons-images-images/info02.png)
+    [![](icons-images-images/info02.png "Die Datei "Info.plist"-Editor")](icons-images-images/info02.png#lightbox)
 3. Wählen Sie als Nächstes den Bestand-Katalog (konfigurierten oben in der [Einstellen des Bildes starten](#Setting-the-Launch-Image) Abschnitt) für die **starten Bilder**.
 4. Speichern Sie die Änderungen.
 

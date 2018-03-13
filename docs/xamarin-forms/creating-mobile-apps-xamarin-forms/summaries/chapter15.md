@@ -3,14 +3,15 @@ title: Zusammenfassung der in Kapitel 15. Die interaktive-Schnittstelle
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: e6c61f9a6ba66db2b9a5c7b217c7da952607e709
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 37bbbf2b89048db175ddc1b3b1a24cea92b898a7
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Zusammenfassung der in Kapitel 15. Die interaktive-Schnittstelle
 
@@ -105,7 +106,7 @@ Die `ValueChanged` Ereignis wird nicht ausgelöst, während der `Slider` Initial
 
 Die [ **RgbSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/RgbSliders) Programm enthält drei `Slider` Elemente, die Sie interaktiv eine Farbe auswählen, durch die RGB-Werte angeben können:
 
-[![Dreifacher Screenshot des R G B Schieberegler](images/ch15fg03-small.png "RGB-Schieberegler")](images/ch15fg03-large.png "RGB-Schieberegler")
+[![Dreifacher Screenshot des R G B Schieberegler](images/ch15fg03-small.png "RGB-Schieberegler")](images/ch15fg03-large.png#lightbox "RGB-Schieberegler")
 
 Die [ **TextFade** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/TextFade) Beispiel verwendet zwei `Slider` Elemente verschieben zwei `Label` Elemente über eine `AbsoluteLayout` und in den anderen ausblenden.
 

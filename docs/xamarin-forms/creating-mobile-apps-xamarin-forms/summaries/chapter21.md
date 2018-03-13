@@ -3,14 +3,15 @@ title: Zusammenfassung der Kapitel 21. Transformiert
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 378ce3fb39cfb5c42d5ec7611415f5420146a9cc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: afb8e2fff58583dc8648c55839649c96cb68b6ba
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-21-transforms"></a>Zusammenfassung der Kapitel 21. Transformiert
 
@@ -49,7 +50,7 @@ Die [ **TranslationDemo** ](https://github.com/xamarin/xamarin-forms-book-sample
 
 Eine übliche Verwendung der Übersetzung Eigenschaften ist etwas offset von der Darstellung von Text. Dies wird dargestellt, der [ **TextOffsets** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/TextOffsets) Beispiel:
 
-[![Dreifacher Screenshot von Text Offsets](images/ch21fg03-small.png "Text Offsets")](images/ch21fg03-large.png "Offsets von Text")
+[![Dreifacher Screenshot von Text Offsets](images/ch21fg03-small.png "Text Offsets")](images/ch21fg03-large.png#lightbox "Offsets von Text")
 
 Ein weiterer Effekt wird zum Rendern von mehreren Kopien einer `Label` zu einen 3D Block ähneln, wie z. B. im veranschaulicht die [ **BlockText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BlockText) Beispiel.
 
@@ -101,7 +102,7 @@ Die [ **MinimalBoxViewClock** ](https://github.com/xamarin/xamarin-forms-book-sa
 
 Die [ **BoxViewClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BoxViewClock) verwendet `BoxView` für mehr umfassenden Grafiken, einschließlich Teilstriche auf dem Zifferblatt der Uhr markiert, und übergibt, drehen eine Distanz aus ihren enden:
 
-[![Dreifacher Screenshot BoxView Uhr](images/ch21fg17-small.png "Analog Zifferblatt")](images/ch21fg17-large.png "Analog Zifferblatt")
+[![Dreifacher Screenshot BoxView Uhr](images/ch21fg17-small.png "Analog Zifferblatt")](images/ch21fg17-large.png#lightbox "Analog Zifferblatt")
 
 Darüber hinaus eine [ `SecondBackEaseConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondBackEaseConverter.cs) -Klasse im **Xamarin.FormsBook.Toolkit** bewirkt, dass der zweite Zeiger, scheinbar an wieder etwas ziehen Sie vor der Installation fort, und dann wieder in der richtigen Position zu verschieben.
 

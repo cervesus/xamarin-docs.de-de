@@ -7,19 +7,18 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 8bfa599ce0a85897ecaf655c1d4da00fe898bc68
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0cf1c4d749eb85a7e0f4c035e10e2e7a40e0c711
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="switch"></a>Schalter
 
 Die `Switch` Widget (siehe unten) ermöglicht Benutzern das Umschalten zwischen zwei Zuständen, z. B. unter oder deaktiviert. Die `Switch` Standardwert ist OFF. Das Widget wird in ihrer ON und OFF-Status unten gezeigt:
 
-[ ![Screenshots von Switch-Widgets in deaktivieren und Aktivieren von Zuständen](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png)
+[![Screenshots von Switch-Widgets in deaktivieren und Aktivieren von Zuständen](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
 
-<a name="Creating_a_Switch" />
 
 ## <a name="creating-a-switch"></a>Erstellen einen Switch
 
@@ -32,9 +31,8 @@ Um einem Switch zu erstellen, deklarieren Sie einfach eine `Switch` -Element im 
 
 Dadurch wird einen grundlegende Switch erstellt, wie unten dargestellt:
 
-[ ![Screenshot der Demo-app, die einen Schalter im Status "OFF" anzeigen](switch-images/07-switch.png)](switch-images/07-switch.png)
+[![Screenshot der Demo-app, die einen Schalter im Status "OFF" anzeigen](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
 
-<a name="Changing_Default_Values" />
 
 ## <a name="changing-default-values"></a>Ändern der Standardwerte
 
@@ -48,7 +46,6 @@ Der Text, den vom Steuerelement angezeigt wird, für die ON und OFF angegeben un
         android:textOff="NO" />
 ```
 
- <a name="Providing_a_Title" />
 
 
 ## <a name="providing-a-title"></a>Bereitstellen eines Titels
@@ -66,7 +63,7 @@ Die `Switch` auch Widget unterstützt wird, einschließlich einer textbezeichnun
 
 Dieses Markup erstellt der folgende Screenshot zur Laufzeit:
 
-[![Screenshot der Demo-app mit Text horizontal vor der Switch-widget](switch-images/08-switch.png)](switch-images/08-switch.png)
+[![Screenshot der Demo-app mit Text horizontal vor der Switch-widget](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
 
 Wenn eine `Switch`des geändert wird, löst es eine `CheckedChange` Ereignis.
 Z. B. im folgenden Code wird dieses Ereignis erfassen und präsentieren einer `Toast` Widget mit einer Meldung auf Grundlage der `isChecked` Wert `Switch`, der an den Ereignishandler übergeben wird, als Teil der `CompoundButton.CheckedChangeEventArg` Argument.

@@ -3,16 +3,16 @@ title: RecyclerView
 description: "RecyclerView ist eine Gruppe \"Ansicht\" für die Anzeige von Sammlungen. Es soll eine flexiblere Ersatz für ältere Ansicht-Gruppen wie z. B. ListView-Steuerelement und GridView.  Dieses Handbuch erläutert das verwenden und Anpassen von RecyclerView in Xamarin.Android Anwendungen."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CF12FE85-D03A-4E64-95D2-D7115061A500
+ms.assetid: 91EF0BD2-3306-47E1-9B39-627A1787762F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/03/2018
-ms.openlocfilehash: ec8b3a4655c8e8d9e492c9f7a1807dd64ecc6ae7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 028520742a84e717e28147f2fa1fafacfef34028
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="recyclerview"></a>RecyclerView
 
@@ -23,7 +23,7 @@ _RecyclerView ist eine Gruppe "Ansicht" für die Anzeige von Sammlungen. Es soll
 Viele apps müssen Sammlungen des gleichen Typs (z. B. Nachrichten, Kontakte, Bilder oder Titel); anzeigen Diese Auflistung wird häufig zu groß für auf dem Bildschirm, damit die Auflistung in einem kleinen Fenster angezeigt wird, das über alle Elemente in der Auflistung reibungslos gescrollt werden kann.
 `RecyclerView` ist ein Android-Widget, die eine Auflistung von Elementen in einer Liste oder einem Raster, damit der Benutzer einen Bildlauf durch die Auflistung zeigt. Im folgenden finden Sie einen Screenshot der Beispiel-app, verwendet `RecyclerView` e-Mail-Posteingang Inhalt in einer Liste der vertikalen Bildlaufleiste angezeigt:
 
-[ ![Beispiel-app mithilfe von RecyclerView in Liste Posteingangsnachrichten](images/01-recyclerview-example-sml.png)](images/01-recyclerview-example.png)
+[![Beispiel-app mithilfe von RecyclerView in Liste Posteingangsnachrichten](images/01-recyclerview-example-sml.png)](images/01-recyclerview-example.png#lightbox)
 
 `RecyclerView` bietet zwei interessante Funktionen:
 

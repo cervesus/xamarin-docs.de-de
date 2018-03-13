@@ -3,16 +3,16 @@ title: Teil 1. Erste Schritte mit XAML
 description: "In einer Anwendung Xamarin.Forms ist XAML hauptsächlich den visuellen Inhalt einer Seite definieren. Eine XAML-Datei ist immer eine C#-Codedatei, die Code-Unterstützung für das Markup bietet zugeordnet. Tragen diese beiden Dateien zusammen, für die Klassendefinition einer neuen, die untergeordnete Ansichten und eigenschaftsinitialisierung enthält. In der XAML-Datei Klassen und Eigenschaften mit XML-Elementen und Attributen verwiesen, und Links zwischen Markup und Code hergestellt werden."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 8e02dbd8687fc10582874710db7ca6848f546751
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55c4fa73044b1c37e879ed7731161269bdbf8ba8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Teil 1. Erste Schritte mit XAML
 
@@ -195,7 +195,7 @@ Obwohl Sie normalerweise benötigen zu viel Zeit mit generierten Codedateien, we
 
 Beim Kompilieren und dieses Programms ausführen die `Label` Element wird in der Mitte der Seite, wie nahe legt, der XAML-Code führt. Drei sind von links nach rechts die folgenden Plattformen iOS-, Android- und Windows 10 Mobile:
 
-[![](get-started-with-xaml-images/xamlsamples.png "Standard Xamarin.Forms Anzeige")](get-started-with-xaml-images/xamlsamples-large.png "Xamarin.Forms standardmäßig anzeigen")
+[![](get-started-with-xaml-images/xamlsamples.png "Standard Xamarin.Forms Anzeige")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "Xamarin.Forms standardmäßig anzeigen")
 
 Für weitere interessante Visualisierungen, müssen Sie, lediglich weitere interessante XAML.
 
@@ -354,7 +354,7 @@ public MainPage()
 
 Festlegen der `Content` Eigenschaft von der Seite "ersetzt die Einstellung von der `Content` Eigenschaft in der XAML-Datei. Beim Kompilieren und die neue Version dieses Programms bereitstellen, wird eine Schaltfläche auf dem Bildschirm angezeigt. Drücken sie navigiert zum `HelloXamlPage`. Hier ist die resultierende Seite auf iPhone, Android und Windows 10 Mobile Geräte:
 
-[ ![](get-started-with-xaml-images/helloxaml1.png "Bezeichnungstext gedreht")](get-started-with-xaml-images/helloxaml1-large.png "Bezeichnungstext gedreht")
+[![](get-started-with-xaml-images/helloxaml1.png "Bezeichnungstext gedreht")](get-started-with-xaml-images/helloxaml1-large.png#lightbox "Bezeichnungstext gedreht")
 
 Navigieren Sie Sie, zurück zu `MainPage` mithilfe der **< zurück** Schaltfläche iOS, verwenden Sie den linken Pfeil am oberen Rand der Seite oder am unteren Rand des Telefons auf Android-Geräten oder der nach-links-Taste am unteren Rand der Seite auf Windows 10 Mobile.
 
@@ -364,7 +364,7 @@ Gerne zum Experimentieren mit der XAML-Code für verschiedene Möglichkeiten zum
 
 Hier ist, wie es aussieht:
 
-[ ![](get-started-with-xaml-images/helloxaml2.png "Drehen von Text mit Unicode-Zeichen")](get-started-with-xaml-images/helloxaml2-large.png "gedreht Bezeichnungstext mit Unicode-Zeichen")
+[![](get-started-with-xaml-images/helloxaml2.png "Drehen von Text mit Unicode-Zeichen")](get-started-with-xaml-images/helloxaml2-large.png#lightbox "gedreht Bezeichnungstext mit Unicode-Zeichen")
 
 ## <a name="xaml-and-code-interactions"></a>XAML und Codeinteraktionen
 
@@ -392,7 +392,7 @@ Die **HelloXamlPage** Beispiel enthält nur einen einzigen `Label` auf der Seite
 
 Diese Verwendung von XAML-Datei ist syntaktisch abgeschlossen, und was er sieht folgendermaßen aus:
 
-[ ![](get-started-with-xaml-images/xamlpluscode1.png "Mehrere Steuerelemente auf einer Seite")](get-started-with-xaml-images/xamlpluscode1-large.png "mehrere Steuerelemente auf einer Seite")
+[![](get-started-with-xaml-images/xamlpluscode1.png "Mehrere Steuerelemente auf einer Seite")](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox "mehrere Steuerelemente auf einer Seite")
 
 Allerdings werden Sie wahrscheinlich Installation dieses Programms funktional ungenügend werden berücksichtigt. Vielleicht die `Slider` soll dazu führen, dass die `Label` zur Anzeige des aktuellen Werts und die `Button` richtet sich wahrscheinlich eine Aktion innerhalb des Programms.
 
@@ -483,7 +483,7 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 
 Beim Ausführen des Programms die `Label` wird nicht angezeigt, die `Slider` bewertet werden, da die `ValueChanged` Ereignis wurde nicht noch ausgelöst. Aber keine Änderungen an der `Slider` bewirkt, dass den Wert, der angezeigt werden:
 
-[ ![](get-started-with-xaml-images/xamlpluscode2.png "Schiebereglerwert angezeigt")](get-started-with-xaml-images/xamlpluscode2-large.png "angezeigten Schiebereglerwert")
+[![](get-started-with-xaml-images/xamlpluscode2.png "Schiebereglerwert angezeigt")](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox "angezeigten Schiebereglerwert")
 
 Jetzt für die `Button`. Wir simulieren Sie eine Antwort auf eine `Clicked` Ereignis über eine Warnung mit dem `Text` der Schaltfläche. Der Ereignishandler kann problemlos umgewandelt. die `sender` Argument an einen `Button` , und klicken Sie dann auf seine Eigenschaften zugreifen:
 

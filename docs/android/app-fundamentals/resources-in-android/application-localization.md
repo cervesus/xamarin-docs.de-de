@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/30/2017
-ms.openlocfilehash: 9c65672ef2c3f968e76c6180da07f5daf9f5b68a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a8d25d8780a62e54780d7aa03d81f89fa0f668a4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-localization-and-string-resources"></a>Die Anwendungslokalisierung und Zeichenfolgenressourcen
 
@@ -19,7 +19,7 @@ Die anwendungslokalisierung dient das Bereitstellen alternativer Ressourcen, um 
 
 Z. B. die folgende Abbildung zeigt dieselbe Anwendung in drei verschiedenen Geräten Gebietsschemas ausgeführt, aber jede Schaltfläche angezeigte Text bezieht sich auf das Gebietsschema, das auf jedem Gerät festgelegt ist:
 
-[![Beispiele für drei verschiedene Gebietsschemas](application-localization-images/01-click-me-sml.png)](application-localization-images/01-click-me.png)
+[![Beispiele für drei verschiedene Gebietsschemas](application-localization-images/01-click-me-sml.png)](application-localization-images/01-click-me.png#lightbox)
 
 In diesem Beispiel den Inhalt einer Datei Layout **Main.axml** sieht etwa wie folgt:
 

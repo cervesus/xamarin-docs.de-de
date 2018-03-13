@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 3362744d0d201ef82c846c80b0e1a87426953c85
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 3ddf481a2356d49f11b96f5a8a6b7f7a492fefc9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>Verarbeiten eines ASP.NET-Webdiensts (ASMX)
 
@@ -74,7 +74,7 @@ Der ASMX-Dienst stellt die folgenden Vorgänge:
 Weitere Informationen zu dem in der Anwendung verwendeten Datenmodell finden Sie unter [die Daten modellieren,](~/xamarin-forms/data-cloud/walkthrough.md).
 
 > [!NOTE]
-> **Hinweis**: die beispielanwendung nutzt den Xamarin-gehostete ASMX-Dienst, der nur-Lese Zugriff auf den Webdienst bereitstellt. Aus diesem Grund werden die Vorgänge, die zu erstellen, aktualisieren und Löschen von Daten die in der Anwendung verwendeten Daten nicht geändert. Eine hostfähige Version von der ASMX-Dienst ist jedoch verfügbar, in der **TodoASMXService** Ordner in der zugehörigen beispielanwendung. Dieser hostfähigen Version der ASMX-Dienst ermöglicht vollständige erstellen, aktualisieren, lesen und löschen den Zugriff auf die Daten.
+> Die beispielanwendung nutzt den Xamarin-gehostete ASMX-Dienst, der nur-Lese Zugriff auf den Webdienst bereitstellt. Aus diesem Grund werden die Vorgänge, die zu erstellen, aktualisieren und Löschen von Daten die in der Anwendung verwendeten Daten nicht geändert. Eine hostfähige Version von der ASMX-Dienst ist jedoch verfügbar, in der **TodoASMXService** Ordner in der zugehörigen beispielanwendung. Dieser hostfähigen Version der ASMX-Dienst ermöglicht vollständige erstellen, aktualisieren, lesen und löschen den Zugriff auf die Daten.
 
 Ein *Proxy* muss generiert werden, um der ASMX-Dienst zu nutzen, die die Anwendung für die Verbindung mit dem Dienst ermöglicht. Der Proxy wird vom verbrauchende Dienstmetadaten erstellt, die die Methoden und die zugehörigen Dienstkonfiguration definiert. Diese Metadaten wird in Form eines Web Services Description Language (WSDL)-Dokuments verfügbar gemacht, die durch den Webdienst generiert wird. Der Proxy wird durch das Hinzufügen eines Webverweises für den Webdienst zu den plattformspezifischen Projekten erstellt.
 

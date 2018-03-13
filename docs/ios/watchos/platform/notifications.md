@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0f1d968dcee0cb9b6cd0cee8fa60be4f4dbb2833
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 600d651eae1f470f17511afaf9bc86c80ffc1a75
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="notifications"></a>Benachrichtigungen
 
@@ -99,17 +99,17 @@ Sie *müssen* bieten eine JSON-Nutzlast ein Test beim Testen von Benachrichtigun
 Visual Studio für Mac werden zusätzliche Optionen angezeigt, wenn eine Watch-Erweiterung, als festgelegt ist die **Startprojekt**.
 Mit der rechten Maustaste auf das Erweiterungsprojekt überwachen, und wählen Sie **ausführen mit > benutzerdefinierte Parameter...** :
     
-[![](notifications-images/runwith-customparams-sml.png "Mit der benutzerdefinierten Eigenschaften")](notifications-images/runwith-customparams.png)
+[![](notifications-images/runwith-customparams-sml.png "Mit der benutzerdefinierten Eigenschaften")](notifications-images/runwith-customparams.png#lightbox)
     
 Daraufhin wird die **Ausführungsargumente** Fenster enthält ein **WatchKit** Registerkarte. Wählen Sie **Benachrichtigung** , und geben Sie eine JSON-Nutzlast, drücken Sie dann die **Execute** Watch-app im Simulator zu starten:
     
-[![](notifications-images/runwith-execargs-sml.png "Wählen Sie die Nutzlast Standard Benachrichtigung")](notifications-images/runwith-execargs.png)
+[![](notifications-images/runwith-execargs-sml.png "Wählen Sie die Nutzlast Standard Benachrichtigung")](notifications-images/runwith-execargs.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Festzulegende die benachrichtigungsnutzlast Test in Visual Studio mit der rechten Maustaste auf die Watch-Erweiterung zum Bearbeiten der **Projekteigenschaften**. Wechseln Sie zu der **Debuggen** Abschnitt, und wählen Sie eine Benachrichtigungen JSON-Datei aus der Liste (es wird automatisch Listet alle JSON-Dateien, die im Projekt enthaltenen).
     
-[![](notifications-images/runwith-execargs-sml-vs.png "Wählen Sie eine JSON-Datei von Benachrichtigungen")](notifications-images/runwith-execargs-vs.png)
+[![](notifications-images/runwith-execargs-sml-vs.png "Wählen Sie eine JSON-Datei von Benachrichtigungen")](notifications-images/runwith-execargs-vs.png#lightbox)
 
 Wenn die Watch-Erweiterung ist die **Startprojekt**, Visual Studio zeigt zusätzliche Optionen, wie unten dargestellt. Wählen Sie eines der **Benachrichtigung** Optionen so starten Sie die Watch-app in **Benachrichtigung** Modus (mit der JSON-Datei, die im Eigenschaftenfenster ausgewählt):
     

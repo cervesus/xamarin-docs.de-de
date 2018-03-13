@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c3de0150bd34667a9310b796bf98a6bff6c07a67
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 39186735749174884646a72871accfa051d2901c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="databases"></a>Databases
 
@@ -27,7 +27,7 @@ In diesem Artikel werden zwei Möglichkeiten, SQLite Datenzugriff behandelt:
 1. **Direkten Zugriff auf die** – durch direkten Zugriff auf eine SQLite-Datenbank, können wir Daten aus der Datenbank für die Codierung von Schlüssel-Wert- und -Datenbindung mit Benutzeroberflächenelemente in Xcodes Benutzeroberflächen-Generator erstellt. Mithilfe von Schlüssel-Wert-Codierung und Datenbindungsmethoden in Ihrer Anwendung Xamarin.Mac, können Sie den Umfang des Codes, die Sie schreiben und verwalten, die zum Auffüllen von und Arbeiten mit UI-Elemente, erheblich verringern. Sie haben außerdem den Vorteil, dass weitere Entkopplung Ihre Daten sichern (_Datenmodell_) von der Vorderseite enden Benutzeroberfläche (_Model-View-Controller_), was zu einfacher zu verwalten, eine flexiblere Anwendung Entwurf.
 2. **SQLite.NET ORM-** – mithilfe der open Source [SQLite.NET](http://www.sqlite.org) Objekt Beziehung Manager (ORM) wir kann erheblich reduzieren den Umfang des Codes zum Lesen und Schreiben von Daten aus einer SQLite-Datenbank erforderlich. Diese Daten können dann zum Auffüllen einer Benutzer-Schnittstelle-Element, z. B. einer Tabellenansicht verwendet werden.
 
-[![Ein Beispiel für die ausgeführte app](databases-images/intro01.png "ein Beispiel für die ausgeführte app")](databases-images/intro01-large.png)
+[![Ein Beispiel für die ausgeführte app](databases-images/intro01.png "ein Beispiel für die ausgeführte app")](databases-images/intro01-large.png#lightbox)
 
 In diesem Artikel werden die Grundlagen der Arbeit mit Schlüssel-Wert zu codieren und Datenbindung mit SQLite-Datenbanken in einer Anwendung Xamarin.Mac eingegangen. Wird mit hoher vorgeschlagen, dass Sie über arbeiten die [Hello, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Benutzeroberflächen-Generator](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) und [Steckdosen und Aktionen](~/mac/get-started/hello-mac.md#Outlets_and_Actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die in diesem Artikel verwendet werden.
 
@@ -52,7 +52,7 @@ Führen Sie folgende Schritte aus:
 1. In der **Lösung Pad**, mit der rechten Maustaste auf die **Verweise** Ordner, und wählen **Verweise bearbeiten**.
 2. Wählen Sie sowohl die **Mono.Data.Sqlite** und **"System.Data"** Assemblys: 
 
-    [![Hinzufügen der erforderlichen Verweise](databases-images/reference01.png "die erforderlichen Verweise hinzufügen")](databases-images/reference01-large.png)
+    [![Hinzufügen der erforderlichen Verweise](databases-images/reference01.png "die erforderlichen Verweise hinzufügen")](databases-images/reference01-large.png#lightbox)
 3. Klicken Sie auf die **OK** Schaltfläche, um die Änderungen zu speichern und die Verweise hinzuzufügen.
 
 ### <a name="modifying-the-data-model"></a>Ändern das Datenmodell
@@ -1019,7 +1019,7 @@ Die Menüsteuerelemente MacOS (z. B. Kombinationsfeld) zur Verfügung, kann der 
 
 Beispielsweise ein Kombinationsfeld Bearbeiten im Beispiel oben im-Generator-Schnittstelle: einfache Bindung hinzufügen und verfügbar zu machen ihn mit einer Netzsteckdose, mit dem Namen `EmployeeSelector`:
 
-[![Verfügbarmachen von einem Kombinationsfeld im Feld Steckdose](databases-images/combo01.png "verfügbar machen eine Kombinationsfeld Feld an")](databases-images/combo01-large.png)
+[![Verfügbarmachen von einem Kombinationsfeld im Feld Steckdose](databases-images/combo01.png "verfügbar machen eine Kombinationsfeld Feld an")](databases-images/combo01-large.png#lightbox)
 
 In der **Attribute Inspektor**, überprüfen Sie die **Autocompletes** und **Datenquelle verwendet** Eigenschaften:
 
@@ -1924,7 +1924,7 @@ Führen Sie Folgendes ein, um das Paket hinzufügen:
 1. In der **Lösung Pad**, mit der rechten Maustaste die **Pakete** Ordner, und wählen **Pakete hinzufügen...**
 2. Geben Sie `SQLite.net` in der **Suchfeld** , und wählen Sie die **Sqlite-Net** Eintrag:
 
-    [![Hinzufügen der SQLite-NuGet-Paket](databases-images/nuget01.png "hinzufügen SQLite NuGet-Pakets")](databases-images/nuget01-large.png)
+    [![Hinzufügen der SQLite-NuGet-Paket](databases-images/nuget01.png "hinzufügen SQLite NuGet-Pakets")](databases-images/nuget01-large.png#lightbox)
 3. Klicken Sie auf die **Paket hinzufügen** Schaltfläche, um den Vorgang abzuschließen.
 
 ### <a name="creating-the-data-model"></a>Erstellen das Datenmodell
@@ -2063,7 +2063,7 @@ conn.Insert (Occupation);
 
 Als ein Verwendungsbeispiel fügen wir eine Tabellensicht auf unserer GUI in Xcodes Benutzeroberflächen-Generator. Wir müssen hier Tabelle über eine Steckdose verfügbar zu machen (`OccupationTable`), damit wir über C#-Code darauf zugreifen können:
 
-[![Verfügbarmachen von einer Tabelle anzeigen Steckdose](databases-images/table01.png "Verfügbarmachen von einer Steckdose der Tabelle anzeigen")](databases-images/table01-large.png)
+[![Verfügbarmachen von einer Tabelle anzeigen Steckdose](databases-images/table01.png "Verfügbarmachen von einer Steckdose der Tabelle anzeigen")](databases-images/table01-large.png#lightbox)
 
 Fügen Sie anschließend die benutzerdefinierten Klassen zum Auffüllen dieser Tabelle mit Daten aus der Datenbank SQLite.NET.
 

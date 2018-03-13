@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/05/2017
-ms.openlocfilehash: f7e511d7f0a933ab7f29369e5e5f0aa46607c8f8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c423c9bf49c735673793f8e61134f7e705816d54
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="installation"></a>Installation
 
@@ -55,19 +55,19 @@ Sie können nicht Projektmappe erstellen, eine neue "überwachen"... Sie können
 
 1. Wenn Sie ein vorhandenes Projekt haben, wählen Sie zunächst **Datei > neue Projektmappe** und iOS-app erstellen (z. B. eine **einzelne Ansicht App**):
 
-    [ ![](installation-images/cycle8-2-sml.png "Wählen Sie die Datei > neue Projektmappe, und erstellen Sie eine iOS-app")](installation-images/cycle8-2.png)
+    [![](installation-images/cycle8-2-sml.png "Wählen Sie die Datei > neue Projektmappe, und erstellen Sie eine iOS-app")](installation-images/cycle8-2.png#lightbox)
 
 2. Sobald die iOS-app erstellt (oder Sie Ihre vorhandenen iOS-app verwenden möchten), mit der rechten Maustaste auf die Projektmappe, und wählen Sie **hinzufügen > Neues Projekt hinzufügen...** . In der **neues Projekt** aus **WatchOS > App > WatchKit App**:
 
-    [ ![](installation-images/cycle8-6-sml.png "Wählen Sie WatchOS > App > WatchKit App")](installation-images/cycle8-6.png)
+    [![](installation-images/cycle8-6-sml.png "Wählen Sie WatchOS > App > WatchKit App")](installation-images/cycle8-6.png#lightbox)
 
 3. Im nächste Bildschirm können Sie auswählen, welche iOS-app-Projekt die Watch-app einschließen soll:
 
-    [ ![](installation-images/cycle8-7-sml.png "Wählen Sie die iOS-app-Projekt die Watch-app enthalten soll")](installation-images/cycle8-7.png)
+    [![](installation-images/cycle8-7-sml.png "Wählen Sie die iOS-app-Projekt die Watch-app enthalten soll")](installation-images/cycle8-7.png#lightbox)
 
 4. Wählen Sie abschließend auf den Speicherort zum Speichern des Projekts (und optional die quellcodeverwaltung aktiviert):
 
-    [ ![](installation-images/cycle8-8-sml.png "Wählen Sie den Speicherort zum Speichern des Projekts")](installation-images/cycle8-8.png)
+    [![](installation-images/cycle8-8-sml.png "Wählen Sie den Speicherort zum Speichern des Projekts")](installation-images/cycle8-8.png#lightbox)
 
 5. Automatisches Konfigurieren von Visual Studio für Mac [-Projektverweise und **"Info.plist"** Einstellungen](~/ios/watchos/get-started/project-references.md) für Sie.
 
@@ -81,11 +81,11 @@ Doppelklicken Sie auf der Watch-app **Interface.storyboard** zu bearbeiten, inde
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![](installation-images/iosdesigner-sml.png "Das Storyboard im Designer")](installation-images/iosdesigner.png)
+[![](installation-images/iosdesigner-sml.png "Das Storyboard im Designer")](installation-images/iosdesigner.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](installation-images/iosdesigner-sml-vs.png "Das Storyboard im Designer")](installation-images/iosdesigner-vs.png)
+[![](installation-images/iosdesigner-sml-vs.png "Das Storyboard im Designer")](installation-images/iosdesigner-vs.png#lightbox)
 
 -----
 
@@ -152,7 +152,7 @@ Es gibt zwei Modi für das Starten einer WatchKit-app:
 Wenn Xcode 8 (oder höher) installiert ist, Apple Watch-Simulatoren unterscheiden sich von iOS-Simulatoren (im Gegensatz zu [Xcode 6](#xcode6), wobei diese als enthalten ein *externen Anzeige*).
 Die Simulator-Liste wird angezeigt, wenn Sie das Watch-App-Projekt wählen und sie das Startprojekt stellen, *iOS-Simulatoren* zur Auswahl (wie unten gezeigt).
 
-[ ![](installation-images/xs-xcode8-watchos3-sml.png "Den Simulator-Typ auswählen")](installation-images/xs-xcode8-watchos3.png)
+[![](installation-images/xs-xcode8-watchos3-sml.png "Den Simulator-Typ auswählen")](installation-images/xs-xcode8-watchos3.png#lightbox)
 
 Beim Starten des Debuggens, *zwei* Simulatoren sollte gestartet werden: die iOS-Simulator *und* der Apple Watch-Simulator. Verwenden Sie **Befehl + Umschalt + H** Navigieren zu dem Menü und Uhrzeitaufgaben Zifferblatt Watch; und Verwenden der **Hardware** Menü Festlegen der **Force berühren Druck**. Scrollen auf der Trackpad oder die Maus, wird die digitale Kronenlänge mit simuliert.
 
@@ -195,13 +195,13 @@ Visual Studio für Mac kann die Watch-app starten, mit der Benachrichtigung _Sta
 Mit der rechten Maustaste auf das Watch-app-Projekt, und wählen Sie **ausführen mit > benutzerdefinierte Konfiguration...** :
 
 
-[![](installation-images/runwith-customparams-sml.png "Ausführen einer benutzerdefinierten Konfigurations")](installation-images/runwith-customparams.png)
+[![](installation-images/runwith-customparams-sml.png "Ausführen einer benutzerdefinierten Konfigurations")](installation-images/runwith-customparams.png#lightbox)
 
 
 Daraufhin wird die **benutzerdefinierte Parameter** Fenster, in dem Sie auswählen können **Benachrichtigung** (und geben Sie eine JSON-Nutzlast), drücken Sie dann die **ausführen** Watch-app im Simulator zu starten:
 
 
-[![](installation-images/runwith-execargs-sml.png "Festlegen der Benachrichtigung und Nutzlast")](installation-images/runwith-execargs.png)
+[![](installation-images/runwith-execargs-sml.png "Festlegen der Benachrichtigung und Nutzlast")](installation-images/runwith-execargs.png#lightbox)
 
 
 

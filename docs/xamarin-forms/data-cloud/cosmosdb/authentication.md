@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: a16f72e6aaee93aa313aff0aba23887b51acf701
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 10c4a1e3355263722d170dff0a5e2707eb794818
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>Authentifizieren von Benutzern mit einer Azure-Cosmos-DB-Dokument-Datenbank
 
@@ -81,7 +81,7 @@ Der Prozess zum Hosten von in Azure App Service Broker token Ressource lautet wi
 
     Der folgende Screenshot zeigt diese Konfiguration:
 
-    [![](authentication-images/azure-web-app-settings.png "App Service-Web-App-Einstellungen")](authentication-images/azure-web-app-settings-large.png "App Service-Web-App-Einstellungen")
+    [![](authentication-images/azure-web-app-settings.png "App Service-Web-App-Einstellungen")](authentication-images/azure-web-app-settings-large.png#lightbox "App Service-Web-App-Einstellungen")
 
 1. Veröffentlichen Sie die Ressource token Broker-Lösung in Azure App Service-Web-app.
 
@@ -117,7 +117,7 @@ Der Prozess zum Konfigurieren der App Service Einfache Authentifizierung lautet 
 
   Der folgende Screenshot zeigt diese Konfiguration:
 
-  [![](authentication-images/app-service-authentication-settings.png "App Service Web-App-Authentifizierungseinstellungen")](authentication-images/app-service-authentication-settings-large.png "App Service Web-App-Authentifizierungseinstellungen")
+  [![](authentication-images/app-service-authentication-settings.png "App Service Web-App-Authentifizierungseinstellungen")](authentication-images/app-service-authentication-settings-large.png#lightbox "App Service Web-App-Authentifizierungseinstellungen")
 
 Die App Service-Web-app sollte auch für die Kommunikation mit Facebook-app So aktivieren Sie den Authentifizierungsablauf konfiguriert werden. Dies kann durch Auswählen des Facebook-Identitätsanbieters und Eingeben der **App-ID** und **App-Geheimnis** Werte aus den Facebook-app-Einstellungen im Facebook-Developer Center. Weitere Informationen finden Sie unter [Hinzufügen von Facebook-Informationen für Ihre Anwendung](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application).
 

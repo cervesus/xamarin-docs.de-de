@@ -7,21 +7,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/05/2017
-ms.openlocfilehash: a6bfebb5272da3fd50f4f165fc25bb75574a0b63
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4bcbd14b88f19dc48dc9d0694fb30aed31708153
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="maps-application"></a>Maps-Anwendung
 
 Die einfachste Methode zum Arbeiten mit Karten in Xamarin.Android ist die unten gezeigte integrierten Karten-Anwendung zu nutzen:
 
-[![Beispiel-Screenshot der integrierten app von Google Maps](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png)
+[![Beispiel-Screenshot der integrierten app von Google Maps](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
 
 Wenn Sie die Maps-Anwendung verwenden, werden die Zuordnung nicht Teil Ihrer Anwendung. Stattdessen wird die Anwendung starten Sie die Maps-Anwendung und laden die Zuordnung extern. Im nächste Abschnitt untersucht, wie mit Xamarin.Android verwenden, um Zuordnungen wie oben zu starten.
 
-<a name="Creating_the_Intent" />
 
 ## <a name="creating-the-intent"></a>Die Absicht erstellen
 
@@ -35,7 +34,6 @@ StartActivity (mapIntent);
 
 Dieser Code ist erforderlich, starten Sie die Zuordnung, die in der vorherigen Bildschirmaufnahme dargestellt. Zusätzlich zum Angeben von Breiten- und Längengrad, unterstützt das URI-Schema für Maps einige andere Optionen.
 
-<a name="Geo_Uri_Scheme" />
 
 ## <a name="geo-uri-scheme"></a>Geo-URI-Schema
 
@@ -52,10 +50,9 @@ Der obige Code verwendet die Geo-Schema, um einen URI zu erstellen. Dieser URI-S
 
 Die Versionen des URIS, die eine Abfrage (d. h. die Straße suchen oder die Adresse-Begriffe) annehmen verwenden Google Geocoder Dienst um den Speicherort abzurufen, der Sie dann auf der Karte angezeigt wird. Z. B. der URI `geo:0,0?q=coop+Cambridge` führt zu den unten gezeigten Zuordnung:
 
-[![Beispiel für ein Screenshot, Google Maps mit einen Suchbegriff anzeigt](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png)
+[![Beispiel für ein Screenshot, Google Maps mit einen Suchbegriff anzeigt](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
 
 
-<a name="Street_View" />
 
 Weitere Informationen über Geo-URI-Schemas finden Sie unter [einen Speicherort auf einer Karte anzeigen](http://developer.android.com/guide/components/intents-common.html#Maps).
 
@@ -64,7 +61,7 @@ Weitere Informationen über Geo-URI-Schemas finden Sie unter [einen Speicherort 
 
 Zusätzlich zu den Geo-Schema unterstützt Android auch das Laden von Straße Ansichten von Priorität. Ein Beispiel für die Straße Ansicht-Anwendung, die von Xamarin.Android gestartet ist unten dargestellt:
 
-[![Beispiel-Screenshot einer Straße Sicht](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png)
+[![Beispiel-Screenshot einer Straße Sicht](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
 
 Um eine Straße Ansicht zu starten, verwenden Sie einfach die `google.streetview` URI-Schema, wie im folgenden Code gezeigt:
 

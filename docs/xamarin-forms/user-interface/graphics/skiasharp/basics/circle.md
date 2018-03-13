@@ -4,14 +4,15 @@ description: "Grundlagen der SkiaSharp zeichnen, einschließlich explizite und p
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 63314efdd29c8da0273459de2d12f7b807968a04
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5b09621f1d3a24f8061e5cd6551dd85ce93e36e3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="drawing-a-simple-circle"></a>Zeichnen eines Kreises einfache
 
@@ -139,7 +140,7 @@ Dieses Mal die `DrawCircle` Aufruf füllt den Kreis, der mithilfe der neuen Eige
 
 Hier wird das Programm auf iOS-, Android- und universellen Windows-Plattform ausgeführt wird:
 
-[![](circle-images/simplecircle-small.png "Dreifacher Screenshot der Seite einfacher Kreis")](circle-images/simplecircle-large.png "dreifacher Screenshot der Seite einfacher Kreis")
+[![](circle-images/simplecircle-small.png "Dreifacher Screenshot der Seite einfacher Kreis")](circle-images/simplecircle-large.png#lightbox "dreifacher Screenshot der Seite einfacher Kreis")
 
 Wenn das Programm selbst ausführen, können Sie Aktivieren der Phone oder im Simulator seitlich ausgerichtet, um anzuzeigen, wie die Grafik neu gezeichnet wird. Jedes Mal neu gezeichnet wird, die Grafik muss die `PaintSurface` Ereignishandler erneut aufgerufen wird.
 

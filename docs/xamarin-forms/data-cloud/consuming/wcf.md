@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 372ea9a20e9f67c41c74fb01afb8110ee741a709
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5cf194dce9bf4d0af23ba663ab00cf94a8a1766c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>Nutzen einen Windows Communication Foundation (WCF)-Webdienst
 
@@ -76,7 +76,7 @@ Der WCF-Dienst stellt die folgenden Vorgänge:
 Weitere Informationen zu dem in der Anwendung verwendeten Datenmodell finden Sie unter [die Daten modellieren,](~/xamarin-forms/data-cloud/walkthrough.md).
 
 > [!NOTE]
-> **Hinweis**: die beispielanwendung verwendet die Xamarin-gehosteten WCF-Dienst, der nur-Lese Zugriff auf den Webdienst bereitstellt. Aus diesem Grund werden die Vorgänge, die zu erstellen, aktualisieren und Löschen von Daten die in der Anwendung verwendeten Daten nicht geändert. Eine hostfähige Version von der ASMX-Dienst ist jedoch verfügbar, in der **TodoWCFService** Ordner in der zugehörigen beispielanwendung. Diese hostfähigen Version von den WCF-Dienst ermöglicht vollständige erstellen, aktualisieren, lesen und löschen den Zugriff auf die Daten.
+> Die beispielanwendung nutzt die Xamarin-gehosteten WCF-Dienst, der nur-Lese Zugriff auf den Webdienst bereitstellt. Aus diesem Grund werden die Vorgänge, die zu erstellen, aktualisieren und Löschen von Daten die in der Anwendung verwendeten Daten nicht geändert. Eine hostfähige Version von der ASMX-Dienst ist jedoch verfügbar, in der **TodoWCFService** Ordner in der zugehörigen beispielanwendung. Diese hostfähigen Version von den WCF-Dienst ermöglicht vollständige erstellen, aktualisieren, lesen und löschen den Zugriff auf die Daten.
 
 Ein *Proxy* muss generiert werden, um einen WCF-Dienst zu nutzen, die die Anwendung für die Verbindung mit dem Dienst ermöglicht. Der Proxy erstellt wird, nutzen Dienstmetadaten, die die Methoden und die zugehörigen Dienstkonfiguration zu definieren. Diese Metadaten wird in Form eines Web Services Description Language (WSDL)-Dokuments verfügbar gemacht, die durch den Webdienst generiert wird. Der Proxy kann mithilfe von Microsoft WCF Web Service-Reference-Anbieter in Visual Studio 2017 zum Hinzufügen eines Dienstverweises für den Webdienst eine Standardbibliothek des .NET erstellt werden. Eine Alternative zum Erstellen des Proxys, die mit dem Microsoft WCF Web Verweis Dienstanbieter in Visual Studio 2017 wird das ServiceModel Metadata Utility Tool (svcutil.exe) verwenden. Weitere Informationen finden Sie unter [ServiceModel Metadata Utility Tool (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/).
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8bf47f1edfd4256e25c7af8ce2970ad1918b8027
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 237a986d6db2fb6984e99c6265fbbc212b35a351
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="subscriptions-and-reporting"></a>Abonnements und Berichterstellung
 
@@ -53,17 +53,17 @@ Die In-App Kauf gemeinsamer geheimer Schlüssel muss in der JSON-Anforderung ver
 
 Aus dem iTunes Connect-Startseite auswählen **meine Apps**:   
    
- [ ![](subscriptions-and-reporting-images/image2.png "Wählen Sie „Meine Apps“ aus")](subscriptions-and-reporting-images/image2.png)  
+ [![](subscriptions-and-reporting-images/image2.png "Meine Apps auswählen")](subscriptions-and-reporting-images/image2.png#lightbox)  
  
 Wählen Sie eine Anwendung, und klicken Sie auf die **In App-Einkäufe** Registerkarte:
 
-[ ![](subscriptions-and-reporting-images/image6.png "Klicken Sie auf der Registerkarte "In-App-Einkäufe"")](subscriptions-and-reporting-images/image6.png)
+[![](subscriptions-and-reporting-images/image6.png "Klicken Sie auf der Registerkarte "In-App-Einkäufe"")](subscriptions-and-reporting-images/image6.png#lightbox)
 
 Wählen Sie in den unteren Rand der Seite, **anzeigen oder erstellen Sie einen gemeinsamen geheimen Schlüssel**:
    
- [ ![](subscriptions-and-reporting-images/image40.png "Wählen Sie die Sicht oder generieren Sie einen gemeinsamen geheimen Schlüssel")](subscriptions-and-reporting-images/image40.png)
+ [![](subscriptions-and-reporting-images/image40.png "Wählen Sie die Sicht oder generieren Sie einen gemeinsamen geheimen Schlüssel")](subscriptions-and-reporting-images/image40.png#lightbox)
 
- [ ![](subscriptions-and-reporting-images/image41.png "Generieren Sie einen gemeinsamen geheimen Schlüssel")](subscriptions-and-reporting-images/image41.png)   
+ [![](subscriptions-and-reporting-images/image41.png "Generieren Sie einen gemeinsamen geheimen Schlüssel")](subscriptions-and-reporting-images/image41.png#lightbox)   
    
    
    
@@ -115,9 +115,9 @@ iTunes Connect ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) biet
 
 Ein Beispiel für Vertrieb und Trends Bericht wird unten gezeigt:   
 
- [ ![](subscriptions-and-reporting-images/image42.png "Ein Beispiel für Vertrieb und Trends Bericht")](subscriptions-and-reporting-images/image42.png)   
+ [![](subscriptions-and-reporting-images/image42.png "Ein Beispiel für Vertrieb und Trends Bericht")](subscriptions-and-reporting-images/image42.png#lightbox)   
    
  Es gibt auch eine [ **ITC verbinden Mobile**iOS-app (iTunes Link)](http://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8).
 iPhone-Screenshots für einige der verfügbaren Statistiken sind hier aufgeführt:   
    
- [ ![](subscriptions-and-reporting-images/image43.png "iPhone-Screenshots für einige der verfügbaren Statistiken")](subscriptions-and-reporting-images/image43.png)
+ [![](subscriptions-and-reporting-images/image43.png "iPhone-Screenshots für einige der verfügbaren Statistiken")](subscriptions-and-reporting-images/image43.png#lightbox)

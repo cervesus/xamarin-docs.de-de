@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: b8d8aed397f72df53fdca7e455b8ef723e48e0a3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5334465905817336df91f5816596dc5723071811
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction"></a>Einführung
 
@@ -88,7 +88,7 @@ Informationen zur Implementierung der Back-End-Dienste finden Sie unter [.NET Mi
 
 Dieses Handbuch konzentriert sich auf das Erstellen von plattformübergreifenden Unternehmens-apps, die mithilfe von Xamarin.Forms und die eShopOnContainers mobilen app als Beispiel verwendet. Abbildung 1 bis 2 zeigt die Seiten werden aus der mobilen Anwendung für eShopOnContainers, die die oben aufgeführten Funktionen bereitstellen.
 
-[![](introduction-images/screenshots.png "Die mobile app eShopOnContainers")](introduction-images/screenshots-large.png "der eShopOnContainers mobilen app")
+[![](introduction-images/screenshots.png "Die mobile app eShopOnContainers")](introduction-images/screenshots-large.png#lightbox "der eShopOnContainers mobilen app")
 
 **Abbildung 1 bis 2**: der eShopOnContainers mobilen app
 

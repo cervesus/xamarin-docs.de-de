@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 14345503-1742-41F5-B2EF-EE31AB7C3516
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: 8c40472f794be9a21045da4f4477d4104c3ddbdd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7246379fbe5918671de68cd4af10d1ce497e7c4e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-tvos"></a>Einführung in die tvos. außerdem wurden
 
@@ -23,6 +24,10 @@ Apple hat die 5. Generierung von Apple TV-Hardware, die Apple TV 4 K, veröffent
 Die Apple TV-Plattform ist für Entwickler, sodass sie umfassende-faszinierend apps erstellen und über den integrierten Apple TV-App-Store freigibt geöffnet.
 
 Weitere Informationen zu tvos. außerdem wurden, finden Sie unter der [Einstieg](~/ios/tvos/get-started/index.md) Dokument.
+
+> [!VIDEO https://youtube.com/embed/Q04oIYymfGM]
+
+**mit Xamarin tvos. außerdem wurden durch [Xamarin University](https://university.xamarin.com/)**
 
 ## <a name="documentation"></a>Dokumentation
 
@@ -70,7 +75,7 @@ Neue Probleme und Vorschläge zu melden [auf GitHub](https://github.com/xamarin/
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiele für tvos. außerdem wurden](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvos. außerdem wurden Handbücher für interaktive Workflowdienste-Schnittstelle](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [App-Programmierhandbuch für tvos. außerdem wurden](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

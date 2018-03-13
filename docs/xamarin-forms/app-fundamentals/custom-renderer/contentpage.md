@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: f1f420641691e700894687fef8ea3bd44fd60ff2
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d7f7e031d91cd1505ee255bbf0d25198bd9ae82a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-contentpage"></a>Anpassen einer ContentPage verwendet wird
 
@@ -99,7 +99,7 @@ Der Prozess zum Erstellen der benutzerdefinierten Rendererklasse lautet wie folg
 1. Hinzufügen einer `ExportRenderer` -Attribut auf die Seite Renderer-Klasse, um anzugeben, dass es zum Rendern der Seite Xamarin.Forms verwendet werden soll. Dieses Attribut wird verwendet, um den benutzerdefinierten Renderer mit Xamarin.Forms zu registrieren.
 
 > [!NOTE]
-> **Hinweis**: ist optional, um eine Seite-Renderer in jedem plattformprojekt bereitzustellen. Wenn ein Renderer für Seiten nicht registriert ist, wird der Standardrenderer für die Seite verwendet werden.
+> Ist er optional einen Seiten-Renderer in jedem plattformprojekt bereitstellen. Wenn ein Renderer für Seiten nicht registriert ist, wird der Standardrenderer für die Seite verwendet werden.
 
 Das folgende Diagramm veranschaulicht die Zuständigkeiten aller Projekte in der beispielanwendung, sowie die Beziehung zwischen ihnen:
 
@@ -248,7 +248,7 @@ Auf der Windows Phone-Plattform und ein typisierter Verweis auf die systemeigene
 Wenn einen benutzerdefinierten Renderer implementieren, die abgeleitet `PageRenderer` auf der Windows-Runtime die `ArrangeOverride` Methode sollte auch um die Steuerelemente der Seite anordnen implementiert werden, da der Basis-Renderer was damit geschehen nicht bekannt ist. Andernfalls führt eine leere Seite. Aus diesem Grund in diesem Beispiel die `ArrangeOverride` Methodenaufrufe der `Arrange` Methode für die `Page` Instanz.
 
 > [!NOTE]
-> **Hinweis**: Es ist wichtig, beenden und löschen Sie die Objekte, die Zugriff auf die Kamera in einer Windows Phone 8.1 WinRT-Anwendung bereitstellen. Bei unterlassen kann mit anderen Anwendungen beeinträchtigen, die versuchen, die Kamera des Geräts zugreifen. Weitere Informationen finden Sie unter der `CleanUpCaptureResourcesAsync` Methode im Windows Phone-Projekt in der Beispielprojektmappe und [Schnellstart: Erfassen von Video über die MediaCapture-API](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx).
+> Es ist wichtig, beenden und löschen Sie die Objekte, die Zugriff auf die Kamera in einer Windows Phone 8.1 WinRT-Anwendung bereitstellen. Bei unterlassen kann mit anderen Anwendungen beeinträchtigen, die versuchen, die Kamera des Geräts zugreifen. Weitere Informationen finden Sie unter der `CleanUpCaptureResourcesAsync` Methode im Windows Phone-Projekt in der Beispielprojektmappe und [Schnellstart: Erfassen von Video über die MediaCapture-API](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx).
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>Erstellen die Seiten-Renderer für universelle Windows-Plattform
 
@@ -297,7 +297,7 @@ Der Aufruf der Basisklasse `OnElementChanged` -Methode instanziiert einen `Frame
 Wenn einen benutzerdefinierten Renderer implementieren, die abgeleitet `PageRenderer` für universelle Windows-Plattform, die `ArrangeOverride` Methode sollte auch um die Steuerelemente der Seite anordnen implementiert werden, da der Basis-Renderer was damit geschehen nicht bekannt ist. Andernfalls führt eine leere Seite. Aus diesem Grund in diesem Beispiel die `ArrangeOverride` Methodenaufrufe der `Arrange` Methode für die `Page` Instanz.
 
 > [!NOTE]
-> **Hinweis**: Es ist wichtig, beenden und löschen Sie die Objekte, die Zugriff auf die Kamera in einer uwp-Anwendung bereitstellen. Bei unterlassen kann mit anderen Anwendungen beeinträchtigen, die versuchen, die Kamera des Geräts zugreifen. Weitere Informationen finden Sie unter [anzeigen die Kameravorschau](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access).
+> Es ist wichtig, beenden und löschen Sie die Objekte, die Zugriff auf die Kamera in einer uwp-Anwendung bereitstellen. Bei unterlassen kann mit anderen Anwendungen beeinträchtigen, die versuchen, die Kamera des Geräts zugreifen. Weitere Informationen finden Sie unter [anzeigen die Kameravorschau](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access).
 
 ## <a name="summary"></a>Zusammenfassung
 

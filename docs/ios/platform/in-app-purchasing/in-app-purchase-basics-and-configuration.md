@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8e0f5b24ff6790aa3bf63eb9112790e0a62ce0a3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 302bb1225067ad401f97ee6bad88b4cd16c6dc95
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="in-app-purchase-basics-and-configuration"></a>In App-Käufe Grundlagen und Konfiguration
 
 In app-Einkäufe implementieren, muss die Anwendung die StoreKit-API auf dem Gerät nutzen können. StoreKit wird die gesamte Kommunikation mit Apple iTunes-Servern zum Abrufen von Produktinformationen und Ausführen von Transaktionen verwaltet. Die provisioning-Profil muss konfiguriert werden, für den Erwerb von app- und Produktinformationen in iTunes Connect eingegeben werden muss.
 
- [ ![](in-app-purchase-basics-and-configuration-images/image1.png "StoreKit verwaltet gesamte Kommunikation mit der Apple-, wie in diesem Diagramm dargestellt.")](in-app-purchase-basics-and-configuration-images/image1.png)
+ [![](in-app-purchase-basics-and-configuration-images/image1.png "StoreKit verwaltet gesamte Kommunikation mit der Apple-, wie in diesem Diagramm dargestellt.")](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
 
 Mit dem App Store bereitgestellt Erwerb von in-app benötigen Sie die folgenden Setup und Konfiguration Folgendes:
 
@@ -58,11 +58,11 @@ Diese drei Schritte sollten abgeschlossen sein, bevor Sie Code schreiben zu müs
 
 Erstellen und Verteilen von kostenlose apps erfordert nur geringfügige Konfigurationsschritte in [iTunes Connect](https://itunesconnect.apple.com)allerdings kostenpflichtigen verkaufen möchten, apps oder in app-Einkäufe erfordert, dass Sie Apple Bankgeschäfte und auf einen Rechnungsposten Informationen bereitzustellen. Klicken Sie auf **Vereinbarungen, Steuer und Bankgeschäfte** über das Hauptmenü hier dargestellt:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image2.png "Klicken Sie auf Vereinbarungen, Steuer und Bankgeschäfte über das Hauptmenü")](in-app-purchase-basics-and-configuration-images/image2.png)
+ [![](in-app-purchase-basics-and-configuration-images/image2.png "Klicken Sie auf Vereinbarungen, Steuer und Bankgeschäfte über das Hauptmenü")](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
 
 Sollte Ihr Entwicklerkonto haben eine **bezahlt iOS-Anwendungen** Vertrag aktiviert ist, wie in diesem Screenshot gezeigt:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image3.png "Ihrem Entwicklerkonto sollte ein iOS verfügen, die Anwendungen bezahlt faktisch Vertrag")](in-app-purchase-basics-and-configuration-images/image3.png)
+ [![](in-app-purchase-basics-and-configuration-images/image3.png "Ihrem Entwicklerkonto sollte ein iOS verfügen, die Anwendungen bezahlt faktisch Vertrag")](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
 
 Sie werden keine StoreKit-Funktionalität zu testen, bis Sie haben eine **bezahlt iOS-Anwendungen** -Vertrag: StoreKit Aufrufe in Ihrem Code schlägt fehl, bis Apple verarbeitet hat Ihre **Verträge, Steuer und Bankgeschäfte** Informationen.
 
@@ -75,7 +75,7 @@ Das Formular zum Erstellen neuer **App-IDs**
 
  sieht wie folgt aus:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image4.png "Das Formular zum Erstellen von neuen App-IDs")](in-app-purchase-basics-and-configuration-images/image4.png)
+ [![](in-app-purchase-basics-and-configuration-images/image4.png "Das Formular zum Erstellen von neuen App-IDs")](in-app-purchase-basics-and-configuration-images/image4.png#lightbox)
 
 Geben Sie einen passenden Namen für die *Beschreibung*, sodass Sie diese App-ID in einer Liste problemlos erkennen können. Für die *App ID-Präfix*, wählen Sie die Team-ID.
 
@@ -90,7 +90,7 @@ Können Sie eine beliebige Zeichenfolge, die Ihnen, für gefällt die **Paket-ID
 
 Beachten Sie, dass **In App-Käufe** automatisch in der Liste der Dienste aktiviert werden:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image5.png "In App-Käufe wird automatisch in der Liste der Dienste aktiviert werden")](in-app-purchase-basics-and-configuration-images/image5.png)
+ [![](in-app-purchase-basics-and-configuration-images/image5.png "In App-Käufe wird automatisch in der Liste der Dienste aktiviert werden")](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
 
 #### <a name="provisioning-profiles"></a>Bereitstellungsprofile
 
@@ -100,16 +100,16 @@ Erstellen Sie die App-ID, die Sie für den Erwerb von In-App eingerichtet haben,
 
 Klicken Sie auf **meine Apps** in iTunes Connect zum Erstellen oder bearbeiten den Eintrag einer iOS-Anwendung. Die Übersicht über die Anwendungsseite wird im folgenden dargestellt:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image6.png "Die Anwendung-Seite "Übersicht"")](in-app-purchase-basics-and-configuration-images/image6.png)
+ [![](in-app-purchase-basics-and-configuration-images/image6.png "Die Anwendung-Seite "Übersicht"")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
 
 Klicken Sie auf **In App-Einkäufe** erstellen oder bearbeiten Ihre Produkte für den Verkauf. Diese bildschirmabbildung zeigt die Beispiel-app mit verschiedenen Produkten, die bereits hinzugefügt:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image7.png "Die Beispiel-app mit mehreren Produkten, die bereits hinzugefügt.")](in-app-purchase-basics-and-configuration-images/image7.png)
+ [![](in-app-purchase-basics-and-configuration-images/image7.png "Die Beispiel-app mit mehreren Produkten, die bereits hinzugefügt.")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
 
 Der Prozess zum Hinzufügen neuer Produkte umfasst zwei Schritte:
 
-1.   Wählen Sie den Product: [ ![ ] (in-app-purchase-basics-and-configuration-images/image8.png "wählen Sie die Product-Typs")](in-app-purchase-basics-and-configuration-images/image8.png) 
-2.   Geben Sie das Produkt Attribute, einschließlich der Produkt-Id, Tarif und lokalisierten Beschreibungen: [ ![ ] (in-app-purchase-basics-and-configuration-images/image9.png "Eingabe der Products-Attribute")](in-app-purchase-basics-and-configuration-images/image9.png)
+1.   Wählen Sie den Product: [ ![ ] (in-app-purchase-basics-and-configuration-images/image8.png "wählen Sie die Product-Typs")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   Geben Sie das Produkt Attribute, einschließlich der Produkt-Id, Tarif und lokalisierten Beschreibungen: [ ![ ] (in-app-purchase-basics-and-configuration-images/image9.png "Eingabe der Products-Attribute")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 Die Felder für jedes Produkt in app-Käufe erforderlich sind, sind unten beschrieben:
 
@@ -158,13 +158,13 @@ App-Store können Sie weder eine beliebige Preis für Ihre Produkte auswählen �
 
 Apple bietet eine Matrix Preis, mit denen Sie die geeignete Stufe, die für die Währung/Price auszuwählen, sein sollen. Ein Auszug aus der Matrix Preis (August 2012) wird im folgenden dargestellt:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image10.png "Ein Auszug aus der Preis Matrix August 2012")](in-app-purchase-basics-and-configuration-images/image10.png)
+ [![](in-app-purchase-basics-and-configuration-images/image10.png "Ein Auszug aus der Preis Matrix August 2012")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
 Auf die Zeit der Schriftlegung (Juni 2013) befinden sich 87 Ebenen von USD zu USD 999,99 0,99. Die Preise Matrix zeigt den Preis, dass Ihre Kunden bezahlt und auch die Menge, die ausgehändigt von Apple – dies weniger die Ladung 30 % ist und auch alle lokalen steuern erforderlich sind (wie Sie sehen, in dem Beispiel, dass die USA und Kanada Verkäufer 70 ° c für eine 99 c-p empfangen sammeln Roduct, dagegen australischen Verkäufer nur 63 c aufgrund erhalten "waren &amp; Services Tax" auf der Verkaufspreis erhoben).
 
 Preise Ihres Produkts kann jederzeit, auch geplante preisänderungen, die an einem zukünftigen Datum wirksam aktualisiert werden. Diese bildschirmabbildung zeigt, wie mit einem Stichtag Zukunft Preisänderung hinzugefügt wird: der Preis geändert wird, vorübergehend aus der Ebene 1 auf Ebene 3 für den Monat September nur:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image11.png "Mit einem Stichtag Zukunft Preisänderung, in denen der Preis vorübergehend aus der Ebene 1, Ebene 3 für den Monat September nur geändert wird")](in-app-purchase-basics-and-configuration-images/image11.png)
+ [![](in-app-purchase-basics-and-configuration-images/image11.png "Mit einem Stichtag Zukunft Preisänderung, in denen der Preis vorübergehend aus der Ebene 1, Ebene 3 für den Monat September nur geändert wird")](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
 
 ### <a name="free-products-not-supported"></a>Kostenlose Produkte nicht unterstützt.
 
@@ -174,7 +174,7 @@ Obwohl Apple eine spezielle Option von kostenloses Abonnement für Newsstand app
 
 In iTunes Connect können Sie unterschiedliche Namen und eine Beschreibung für eine beliebige Anzahl von unterstützten Sprachen Texteingaben. Jede Sprache hinzugefügt/bearbeitet über ein Popup sind möglich:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image12.png "Jede Sprache möglich hinzugefügt/bearbeitet über ein popup")](in-app-purchase-basics-and-configuration-images/image12.png)   
+ [![](in-app-purchase-basics-and-configuration-images/image12.png "Jede Sprache möglich hinzugefügt/bearbeitet über ein popup")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
    
    
    
@@ -186,7 +186,7 @@ In iTunes Connect können Sie unterschiedliche Namen und eine Beschreibung für 
 
 Eine app gesendet wird, mit dem in der app Erwerb aktiviert (ob es eine neue app ist, oder die Funktionalität wurde mit einer vorhandenen Arbeitsaufgabe hinzugefügt) zum ersten Mal müssen Sie auch alle Produkte mit übermitteln auswählen. Das iTunes Connect-Portal wird dazu aufgefordert werden, wie in diesem Screenshot gezeigt:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image13.png "Das iTunes Connect Portal fordert Sie zum Übermitteln von einigen anderen Produkten auch")](in-app-purchase-basics-and-configuration-images/image13.png)   
+ [![](in-app-purchase-basics-and-configuration-images/image13.png "Das iTunes Connect Portal fordert Sie zum Übermitteln von einigen anderen Produkten auch")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
    
    
    

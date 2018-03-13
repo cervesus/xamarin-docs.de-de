@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7e6621dc580e478873ce2db7139b04284bee355c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fcfd1fd2ec9271bb5e8d9e09b43b7dc4cf3b3f12
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="advanced-message-app-extensions"></a>Erweiterte Nachrichten-App-Erweiterungen
 
@@ -50,11 +50,11 @@ Nachrichtenerweiterungen-Apps werden nur für iOS 10 unterstützt, der Inhalt, d
 
 Interaktive Nachrichten eine benutzerdefinierte Meldung Blase vorhanden und werden durch eine Nachrichten-App-Erweiterung bereitgestellt. Sie ermöglicht dem Benutzer das interaktive Nachrichteninhalte, erstellen, fügen Sie es in das Nachrichtenfeld für die Eingabe und senden.
 
-[ ![](advanced-message-app-extensions-images/interactive01.png "Erstellen von interaktiven Nachrichteninhalt")](advanced-message-app-extensions-images/interactive01.png)
+[![](advanced-message-app-extensions-images/interactive01.png "Erstellen von interaktiven Nachrichteninhalt")](advanced-message-app-extensions-images/interactive01.png#lightbox)
 
 Des Empfängers kann auf eine interaktive Nachricht antworten, tippen Sie auf die Nachricht Blase im Auftragsverlauf wird Nachricht an die Nachricht App-Erweiterung zu laden, der Sie erstellt. Die Erweiterung gestartete Vollbildmodus und ermöglicht den Benutzer eine Antwort zu verfassen und zurück an den ursprünglichen Benutzer zu senden.
 
-[ ![](advanced-message-app-extensions-images/interactive02.png "Die Erweiterung gestartet Vollbildmodus")](advanced-message-app-extensions-images/interactive02.png)
+[![](advanced-message-app-extensions-images/interactive02.png "Die Erweiterung gestartet Vollbildmodus")](advanced-message-app-extensions-images/interactive02.png#lightbox)
 
 
 In den folgenden Themen werden nachfolgend detailliert behandelt:
@@ -68,7 +68,7 @@ In den folgenden Themen werden nachfolgend detailliert behandelt:
 
 Wenn vom Benutzer aufgerufen wird, wird eine Meldung-App-Erweiterung am unteren Rand der Versionsgeschichte der Nachricht in der kompakten Ansichtsmodus angezeigt:
 
-[ ![](advanced-message-app-extensions-images/interactive03.png "Übersicht über die Nachrichten-API")](advanced-message-app-extensions-images/interactive03.png)
+[![](advanced-message-app-extensions-images/interactive03.png "Übersicht über die Nachrichten-API")](advanced-message-app-extensions-images/interactive03.png#lightbox)
 
 1. Die `MSMessageAppViewController` Objekt in der Nachrichten-App-Erweiterung ist die Hauptklasse, die aufgerufen wird, wenn die Erweiterung anzeigen, die dem Benutzer angezeigt wird.
 2. Die Konversation erhält der Benutzer als ein `MSConversation` Objektinstanz.
@@ -80,7 +80,7 @@ Wenn vom Benutzer aufgerufen wird, wird eine Meldung-App-Erweiterung am unteren 
 
 Betrachten Sie den Prozess, der eine Nachricht App-Erweiterung, die aktiv:
 
-[ ![](advanced-message-app-extensions-images/interactive04.png "Der Prozess aktiv eine Nachricht App-Erweiterung")](advanced-message-app-extensions-images/interactive04.png)
+[![](advanced-message-app-extensions-images/interactive04.png "Der Prozess aktiv eine Nachricht App-Erweiterung")](advanced-message-app-extensions-images/interactive04.png#lightbox)
 
 1. Wenn eine Erweiterung (z. B. von der App-Fach) gestartet wird, wird die Nachricht app Starten eines Prozesses.
 2. Die `DidBecomeActive` Methode wird aufgerufen, und übergeben einer `MSConversation` , die die Konversation, die die Nachrichten-App-Erweiterung, in ausgeführt wird darstellt.
@@ -88,7 +88,7 @@ Betrachten Sie den Prozess, der eine Nachricht App-Erweiterung, die aktiv:
 
 Betrachten Sie als Nächstes den Prozess einer Nachricht App-Erweiterung, die immer deaktiviert:
 
-[ ![](advanced-message-app-extensions-images/interactive05.png "Der Prozess eine Nachrichten-App-Erweiterung immer deaktiviert")](advanced-message-app-extensions-images/interactive05.png)
+[![](advanced-message-app-extensions-images/interactive05.png "Der Prozess eine Nachrichten-App-Erweiterung immer deaktiviert")](advanced-message-app-extensions-images/interactive05.png#lightbox)
 
 1. Die Nachrichten-App-Erweiterung deaktiviert werden, die `ViewWillDisappear` -Methode zuerst aufgerufen werden.
 2. Die `ViewDidDisappear` Methode wird aufgerufen.
@@ -128,7 +128,7 @@ Wenn der Benutzer auf die Blase Nachricht in der Konversation auf MacOS klickt, 
 
 Die `AccessibilityLabel` Eigenschaft wird vom Sprachausgaben verwendet, um die Aufzeichnung der Konversation an dem Benutzer zu lesen. Die `Layout` Eigenschaft gibt an, wie die Nachricht, zurzeit nur angezeigt werden sollen die `MSMessageTemplateLayout` wird unterstützt und sieht wie folgt:
 
-[ ![](advanced-message-app-extensions-images/interactive06.png "Die Vorlage MSMessageTemplateLayout")](advanced-message-app-extensions-images/interactive06.png)
+[![](advanced-message-app-extensions-images/interactive06.png "Die Vorlage MSMessageTemplateLayout")](advanced-message-app-extensions-images/interactive06.png#lightbox)
 
 Die `Image` Eigenschaft von der `MSMessageTemplateLayout` enthält Inhalte für den Hauptteil der MessageBubble auf dem Bildschirm. Die `MediaFileUrl` Eigenschaft auch enthält Inhalte für den Text der Nachricht Blase, erlaubt aber Inhalte, die von nicht unterstützt wird `UIImage` (z. B. eine Videodatei, der im Hintergrund Schleife würde). Wenn beide die `Image` und `MediaFileUrl` Eigenschaften zur Verfügung, die `Image` -Eigenschaft Vorrang. Die `MediaFileUrl` unterstützt PNG, JPEG, GIF und Video (in einem beliebigen Format, die durch das Media Player Framework abgespielt werden kann) Media-Formate.
 
@@ -140,7 +140,7 @@ Die `ImageTitle` und `ImageSubtitle` Eigenschaften geben Sie eine Beschreibung f
 
 Die `Caption`, `SubCaption`, `TrailingCaption` und `TrailingSubcaption` Eigenschaften beschreiben das Bild außerdem werden in einem Abschnitt unter dem Bild gerendert. Alle diese Eigenschaften zum Festlegen von `null` wird eine Nachricht Blase ohne Beschriftungsbereichs erstellen:
 
-[ ![](advanced-message-app-extensions-images/interactive07.png "Eine Nachricht Blase ohne Beschriftungsbereichs")](advanced-message-app-extensions-images/interactive07.png)
+[![](advanced-message-app-extensions-images/interactive07.png "Eine Nachricht Blase ohne Beschriftungsbereichs")](advanced-message-app-extensions-images/interactive07.png#lightbox)
 
 Das letzte Ereignis zu beachten ist, dass die Nachrichten-app Symbol "der Nachricht App-Erweiterung" in der oberen linken Ecke der Nachricht Blase gezeichnet wird.
 
@@ -181,7 +181,7 @@ Sobald der neue Inhalt auf das Feld für die Eingabe ist, kann der Benutzer zum 
 
 Eine Nachrichten-App-Erweiterung kann in einem der zwei unterschiedliche Ansichtsmodi angezeigt werden:
 
-[ ![](advanced-message-app-extensions-images/interactive08.png "Eine Nachricht App-Erweiterung, die in zwei unterschiedliche Ansichtsmodi angezeigt: Compact & erweitert")](advanced-message-app-extensions-images/interactive08.png)
+[![](advanced-message-app-extensions-images/interactive08.png "Eine Nachricht App-Erweiterung, die in zwei unterschiedliche Ansichtsmodi angezeigt: Compact & erweitert")](advanced-message-app-extensions-images/interactive08.png#lightbox)
 
 - **Compact** -Dies ist der Standardmodus, in dem die unteren 25 % der Nachricht an die Nachrichten-App-Erweiterung beanspruchen. Im Compact-Modus ist die app keinen Zugriff auf der Tastatur, horizontalen Bildlauf oder Streifen Geste Prüfer. Die app verfügt über Zugriff auf das Feld für die Eingabe und Aufrufe von `InsertMessage` wird sofort, die es dem Benutzer angezeigt werden.
 - **Erweitert** -App-Erweiterung für die Nachricht füllt die gesamte Nachricht anzeigen. Hat keinen Zugriff auf das Feld für die Eingabe, aber verfügt über Zugriff auf die Tastatur, horizontalen Bildlauf und Wischen Geste Merkmale.
@@ -384,7 +384,7 @@ Optional, hätte die app verwendet die `WillTransition` Methode, um die Änderun
 
 Es gibt zwei Fälle, die eine Nachrichten-App-Erweiterung beim Antworten auf Nachrichten verarbeiten müssen:
 
-[ ![](advanced-message-app-extensions-images/interactive09.png "Die Nachrichten-App-Erweiterung in den Modi aktiv und inaktiv")](advanced-message-app-extensions-images/interactive09.png)
+[![](advanced-message-app-extensions-images/interactive09.png "Die Nachrichten-App-Erweiterung in den Modi aktiv und inaktiv")](advanced-message-app-extensions-images/interactive09.png#lightbox)
 
 - **Erweiterung ist inaktiv** -einmal die Nachricht App-Erweiterung Nachrichtenblasen in die Aufzeichnung Nachricht, die der Benutzer nutzen kann, um die Erweiterungen zu aktivieren und die interaktive Konversation weiterhin vorhanden ist.
 - **Erweiterung wird aktiv** -Benutzer kann die Nachricht App-Erweiterung Nachricht Blase wird in die Aufzeichnung der Nachricht, geben den Ansichtsmodus erweitert und den interaktiven Prozess aus, wo sie aufgehört haben weiterhin tippen.
@@ -393,7 +393,7 @@ Es gibt zwei Fälle, die eine Nachrichten-App-Erweiterung beim Antworten auf Nac
 
 Wenn eine Blase Nachricht vom Benutzer in der Aufzeichnung der Nachricht abgerufen wird, und die Nachrichten-App-Erweiterung inaktiv ist, erfolgt die folgende Schritte:
 
-[ ![](advanced-message-app-extensions-images/interactive10.png "Behandlung von einem inaktiven Nachricht Blase")](advanced-message-app-extensions-images/interactive10.png)
+[![](advanced-message-app-extensions-images/interactive10.png "Behandlung von einem inaktiven Nachricht Blase")](advanced-message-app-extensions-images/interactive10.png#lightbox)
 
 1. Der Benutzer tippt der Erweiterungs Nachricht Blase.
 2. Wenn eine Erweiterung gestartet wird, wird die Nachricht app Starten eines Prozesses.
@@ -406,7 +406,7 @@ Wenn der Prozess abgeschlossen ist, wird die Nachricht-App-Erweiterung im Anzeig
 
 Wenn eine Nachricht Blase vom Benutzer in der Aufzeichnung der Nachricht abgerufen wird, und die Nachrichten-App-Erweiterung aktiv ist, wird der folgende Prozess auftreten:
 
-[ ![](advanced-message-app-extensions-images/interactive11.png "Behandlung von einer aktiven Nachricht Blase")](advanced-message-app-extensions-images/interactive11.png)
+[![](advanced-message-app-extensions-images/interactive11.png "Behandlung von einer aktiven Nachricht Blase")](advanced-message-app-extensions-images/interactive11.png#lightbox)
 
 1. Der Benutzer tippt der Erweiterungs Nachricht Blase.
 2. Da die Nachrichten-App-Erweiterung bereits aktiv ist, wird die `WillTransition` Methode der `MSMessagesAppViewController` aufgerufen, um die kompakte umstellen, für den der Expanded-Ansichtsmodus behandeln.
@@ -457,11 +457,11 @@ Die ausgewählte Nachricht in der Nachricht App-Erweiterung Benutzeroberfläche 
 
 Bei die einzelnen Schritten eine interaktive Konversation zwischen zwei des Benutzers in der Konversation gesendet wird, können die teilweise abgeschlossene Blasen der Meldung beginnen Sie mit der Nachricht Aufzeichnung überflüssigen Daten gefüllt:
 
-[ ![](advanced-message-app-extensions-images/interactive12.png "Die teilweise abgeschlossene Nachrichtenblasen können viele Realisierungslinks enthalten die Aufzeichnung der Nachricht")](advanced-message-app-extensions-images/interactive12.png)
+[![](advanced-message-app-extensions-images/interactive12.png "Die teilweise abgeschlossene Nachrichtenblasen können viele Realisierungslinks enthalten die Aufzeichnung der Nachricht")](advanced-message-app-extensions-images/interactive12.png#lightbox)
 
 Stattdessen sollte der Nachrichten-App-Erweiterung der vorherigen Nachrichtenblasen in einem kompakten Kommentar in die Nachricht Aufzeichnung reduzieren:
 
-[ ![](advanced-message-app-extensions-images/interactive13.png "Reduzieren die vorherige Nachrichtenblasen in die Aufzeichnung der Nachricht")](advanced-message-app-extensions-images/interactive13.png)
+[![](advanced-message-app-extensions-images/interactive13.png "Reduzieren die vorherige Nachrichtenblasen in die Aufzeichnung der Nachricht")](advanced-message-app-extensions-images/interactive13.png#lightbox)
 
 Dies erfolgt mithilfe einer `MSSession` so reduzieren Sie alle vorhandenen Schritte. Damit die `DidSelectMessage` Methode der `MSMessagesAppViewController` Klasse kann geändert werden, um wie folgt aussehen:
 
@@ -516,7 +516,7 @@ Eine Nachrichten-App-Erweiterung können verwendet werden, während die Benutzer
 
 Sehen Sie sich die folgenden Interaktion in einer Gruppe Konversation mit drei Benutzer an:
 
-[ ![](advanced-message-app-extensions-images/interactive14.png "Interaktion in einer Gruppe Konversation mit drei Benutzer")](advanced-message-app-extensions-images/interactive14.png)
+[![](advanced-message-app-extensions-images/interactive14.png "Interaktion in einer Gruppe Konversation mit drei Benutzer")](advanced-message-app-extensions-images/interactive14.png#lightbox)
 
 1. Benutzer 1 sendet eine Gruppe interaktive Meldung gefragt werden, Benutzer 2, sowie Benutzer 3 ein Hamburger häufigsten auszuwählen.
 2. Benutzer 2 wählt Tomatoes.
@@ -531,7 +531,7 @@ Wenn der Benutzer eine Nachricht sendet, wird ein Sitzungstoken generiert und in
 
 Nehmen Sie als Beispiel einer Gruppe Konversation, die oben genannte, um den Zugriff auf den Bezeichner des Absenders einer Nachricht zu besprechen:
 
-[ ![](advanced-message-app-extensions-images/interactive15.png "Gruppe Konversation Senden von Bezeichnern")](advanced-message-app-extensions-images/interactive15.png)
+[![](advanced-message-app-extensions-images/interactive15.png "Gruppe Konversation Senden von Bezeichnern")](advanced-message-app-extensions-images/interactive15.png#lightbox)
 
 1. Benutzer 1 sendet erneut, eine Gruppe interaktive Meldung gefragt werden, Benutzer 2, sowie Benutzer 3 ein Hamburger häufigsten auszuwählen.
 2. Benutzer 3 wählt Gurken.

@@ -7,18 +7,17 @@ ms.assetid: 48B20C9A-B2A2-AE82-76B2-A3C1E5A4050D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: b2ed48ae9df7e950525fdc0cb97181ebe5a44dfb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: d9342dc3a8d324f03cd31e1d03600449bfcf23f1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="designer-basics"></a>Designer-Grundlagen
 
 _In diesem Thema führt Designer-Funktionen, wird erläutert, wie die-Designer zu starten, wird beschrieben, die Entwurfsoberfläche und erläutert, wie der Bereich "Eigenschaften" Widgeteigenschaften bearbeiten._
 
-<a name="Launching_the_Designer" />
 
 ## <a name="launching-the-designer"></a>Den Designer wird gestartet.
 
@@ -26,11 +25,11 @@ Der Designer wird automatisch gestartet, wenn ein Layout erstellt wird, oder dur
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![In Visual Studio-Designer-Fenster](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png)
+[![In Visual Studio-Designer-Fenster](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Designer-Fenster in Visual Studio für Mac](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png)
+[![Designer-Fenster in Visual Studio für Mac](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png#lightbox)
 
 -----
 
@@ -39,20 +38,19 @@ Der Designer wird automatisch gestartet, wenn ein Layout erstellt wird, oder dur
 
 Ebenso können Sie ein neues Layout hinzufügen, indem Sie mit der rechten Maustaste die **Layout** Ordner in der **Projektmappen-Explorer** auswählen und **hinzufügen > Neues Element… > Android Layout**:
 
-[![Dialogfeld Neues Element hinzufügen](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png)
+[![Dialogfeld Neues Element hinzufügen](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Ebenso können Sie ein neues Layout hinzufügen, indem Sie mit der rechten Maustaste die **Layout** Ordner in der **Lösung Pad** auswählen und **hinzufügen > neue Datei > Android > Layout**:
 
-[![Dialogfeld "neue Datei" hinzufügen](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png)
+[![Dialogfeld "neue Datei" hinzufügen](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png#lightbox)
 
 -----
 
 Dies erstellt eine neue .axml-Datei und lädt es auf die Entwurfsoberfläche.
 
 
-<a name="Designer_Features" />
 
 ## <a name="designer-features"></a>Designer-Funktionen
 
@@ -60,11 +58,11 @@ Der Designer besteht aus mehreren Abschnitten, die die verschiedenen Funktionen 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Diagramm der-Designerbereichen](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png)
+[![Diagramm der-Designerbereichen](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Diagramm der-Designerbereichen](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png)
+[![Diagramm der-Designerbereichen](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png#lightbox)
 
 -----
 
@@ -97,7 +95,6 @@ Wenn Sie ein Layout im Designer bearbeitet haben, verwenden Sie die folgenden Fu
 -----
 
 
-<a name="Toolbar" />
 
 ## <a name="toolbar"></a>Symbolleiste
 
@@ -105,11 +102,11 @@ Die Symbolleiste (oberhalb der Entwurfsoberfläche positioniert) stellt Konfigur
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Diagramm der Designer-Symbolleiste](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png)
+[![Diagramm der Designer-Symbolleiste](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Diagramm der Designer-Symbolleiste](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png)
+[![Diagramm der Designer-Symbolleiste](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png#lightbox)
 
 -----
 
@@ -143,7 +140,6 @@ Jede dieser Funktionen ist in den folgenden Themen ausführlicher erläutert:
 [Material Entwurfsfunktionen](~/android/user-interface/android-designer/material-design-features.md) bietet eine umfassende Übersicht über die **Design-Editors** und **Material Entwurfsbereich**.
 
 
-<a name="Design_Surface" />
 
 ## <a name="design-surface"></a>Entwurfsoberfläche
 
@@ -151,17 +147,16 @@ Der Designer ermöglicht es Ihnen, Drag & drop von Widgets aus der Toolbox auf d
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Beispiel Einfügen von Zeilen auf der Entwurfsoberfläche](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png)
+[![Beispiel Einfügen von Zeilen auf der Entwurfsoberfläche](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Beispiel Einfügen von Zeilen auf der Entwurfsoberfläche](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png)
+[![Beispiel Einfügen von Zeilen auf der Entwurfsoberfläche](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png#lightbox)
 
 -----
 
 Darüber hinaus können Widgets kopiert werden: können Sie kopieren und einfügen, um das Kopieren von Widgets, oder Sie können Drag & drop eine vorhandene Widget beim Drücken der <kbd>STRG</kbd> Schlüssel.
 
-<a name="Context_Menu_Commands" />
 
 ### <a name="context-menu-commands"></a>Kontextmenübefehle
 
@@ -169,7 +164,7 @@ Ein Kontextmenü ist sowohl in der Entwurfsoberfläche als auch in der Dokumentg
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Beispiel im Kontextmenü der Entwurfsoberfläche mit der rechten Maustaste](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png)
+[![Beispiel im Kontextmenü der Entwurfsoberfläche mit der rechten Maustaste](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png#lightbox)
 
 In diesem Beispiel wird mit der rechten Maustaste ein `TextView` öffnet ein Kontextmenü, das mehrere Optionen bereitstellt:
 
@@ -179,7 +174,7 @@ In diesem Beispiel wird mit der rechten Maustaste ein `TextView` öffnet ein Kon
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Beispiel im Kontextmenü der Entwurfsoberfläche mit der rechten Maustaste](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png)
+[![Beispiel im Kontextmenü der Entwurfsoberfläche mit der rechten Maustaste](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png#lightbox)
 
 In diesem Beispiel wird mit der rechten Maustaste ein `TextView` öffnet ein Kontextmenü, das mehrere Optionen bereitstellt:
 
@@ -198,7 +193,6 @@ In diesem Beispiel wird mit der rechten Maustaste ein `TextView` öffnet ein Kon
 -   **Löschen Sie**, **Kopie**, und **Ausschneiden** &ndash; Vorgänge, die für die webdatenverbindung gelten `TextView`.
 
 
-<a name="Zoom_Controls" />
 
 ### <a name="zoom-controls"></a>Zoom-Steuerelementen
 
@@ -206,11 +200,11 @@ Die Entwurfsoberfläche unterstützt Zoomen über mehrere Steuerelemente, wie da
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Diagramm der Entwurfsoberfläche Zoom-Steuerelemente](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png)
+[![Diagramm der Entwurfsoberfläche Zoom-Steuerelemente](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Diagramm der Entwurfsoberfläche Zoom-Steuerelemente](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png)
+[![Diagramm der Entwurfsoberfläche Zoom-Steuerelemente](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png#lightbox)
 
 -----
 
@@ -228,7 +222,6 @@ Diese Steuerelemente erleichtern es bestimmte Bereiche der Benutzeroberfläche i
 
 Beachten Sie, dass das ausgewählte Einstellung zoom wirkt sich nicht auf die Benutzeroberfläche der Anwendung zur Laufzeit aus.
 
-<a name="property_pad" />
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -238,11 +231,10 @@ Beachten Sie, dass das ausgewählte Einstellung zoom wirkt sich nicht auf die Be
 
 Der Designer unterstützt die Bearbeitung von Widgeteigenschaften über den **Eigenschaft Pad**. Die Eigenschaften aufgeführt, die auf den Pad-Eigenschaft ändern, je nachdem, den welche Widget in der Entwurfsoberfläche ausgewählt ist. Wenn die `Button` im vorherigen Beispiel aktiviert ist, die Eigenschaften für diesen `Button` Widget werden angezeigt:
 
-[![Screenshot von der Eigenschaft mit Leerstellen auffüllen](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png)
+[![Screenshot von der Eigenschaft mit Leerstellen auffüllen](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png#lightbox)
 
 -----
 
-<a name="Property_Pad_Sections" />
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -272,7 +264,6 @@ Das Auffüllzeichen-Eigenschaft wird in mehrere Abschnitte unterteilt, die ähnl
 -----
 
 
-<a name="Default_Values" />
 
 ### <a name="default-values"></a>Standardwerte
 
@@ -287,7 +278,6 @@ Werden die Eigenschaften von den meisten Widgets leer ist, in der **Eigenschaft 
 
 -----
 
-<a name="Referencing_resources" />
 
 ### <a name="referencing-resources"></a>Verweisen auf Ressourcen
 
@@ -299,13 +289,13 @@ Diese Schaltfläche wird beim Klicken auf die ein Ressourcenauswahl geöffnet.
 
 Der folgende Screenshot zeigt die verfügbaren Ressourcen, wenn auf die Auslassungspunkte rechts neben dem Textfeld für eine `Button` Widget in der **Eigenschaften** Fenster:
 
-[![Beispiel-Ressourcen-Screenshot mit zwei aufgeführten Ressourcen](designer-basics-images/vs/09-resources-sml.png)](designer-basics-images/vs/09-resources.png)
+[![Beispiel-Ressourcen-Screenshot mit zwei aufgeführten Ressourcen](designer-basics-images/vs/09-resources-sml.png)](designer-basics-images/vs/09-resources.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Der folgende Screenshot zeigt die verfügbaren Ressourcen, wenn auf die Auslassungspunkte rechts neben dem Textfeld für eine `Button` Widget in der **Eigenschaft Pad**:
 
-[![Beispiel-Ressourcen-Screenshot mit zwei aufgeführten Ressourcen](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png)
+[![Beispiel-Ressourcen-Screenshot mit zwei aufgeführten Ressourcen](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png#lightbox)
 
 -----
 
@@ -313,16 +303,15 @@ Das folgende Beispiel veranschaulicht die Ressourcenauswahl für die `Src` Eigen
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Ressourcenauswahl Symbolressource für eine ImageView auflisten](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png)
+[![Ressourcenauswahl Symbolressource für eine ImageView auflisten](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Ressourcenauswahl Symbolressource für eine ImageView auflisten](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png)
+[![Ressourcenauswahl Symbolressource für eine ImageView auflisten](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png#lightbox)
 
 -----
 
 
-<a name="Boolean_Property_References" />
 
 ### <a name="boolean-property-references"></a>Boolesche Eigenschaftenverweise
 
@@ -336,25 +325,21 @@ Das folgende Beispiel veranschaulicht die Ressourcenauswahl für die `Src` Eigen
 
 *Boolesche* Eigenschaften werden normalerweise als ein Kontrollkästchen in der Eigenschaft Pad angezeigt. Wenn eine `Boolean` Ressourcenverweise die Eigenschaft unterstützt wird, eine kleine Kontrollkästchen neben der Eigenschaft erscheint. Ein aktiviertes Kontrollkästchen bedeutet, dass `true` und ein leeres Feld bedeutet `false`. Sie können auch direkt einen Wert eingeben, z. B. `true` oder `false`. Bewegen des Mauszeigers über die Eingabe wird eine kleine Text-Symbol "Feld". Wenn Sie den Wert manuell eingeben möchten, können Sie darauf klicken.
 
-[![Beispiel für boolesche Eigenschaften festlegen](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png)
+[![Beispiel für boolesche Eigenschaften festlegen](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png#lightbox)
 
-<a name="Grouped_Properties" />
 
 ## <a name="grouped-properties"></a>Gruppeneigenschaften
 
 Einige Widgets mehrwertige Eigenschaften besitzen, die zusammen gruppiert sind (z. B. `Padding`, z. B.). Diese Eigenschaftswerte sind aufgeführt, der **Eigenschaft Pad** in einer einzigen, erweiterbaren Zeile. Einige dieser Eigenschaften können bearbeitet werden direkt in der gruppierten Zeile, z. B. die `Padding` Eigenschaft fest, wie im folgenden:
 
-[![Beispieleinstellungen für die Padding-Eigenschaft](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png)
+[![Beispieleinstellungen für die Padding-Eigenschaft](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png#lightbox)
 
 -----
 
-<a name="Editing_Properties_Inline" />
 
 ## <a name="editing-properties-inline"></a>Bearbeiten von Eigenschaften Inline
 
 Die Android-Designer unterstützt die direkte Bearbeitung der bestimmte Eigenschaften auf der Entwurfsoberfläche angezeigt (Sie müssen also nicht für diese Eigenschaften in der Eigenschaftenliste suchen). Eigenschaften, die direkt bearbeitet werden können gehören Text, Rand und Größe.
-
-<a name="Text" />
 
 ### <a name="text"></a>Text
 
@@ -366,7 +351,7 @@ Die Eigenschaften von Text von einigen Widgets (z. B. `Button` und `TextView`), 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Text-Ressource für die Zeichenfolge hello](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png)
+[![Text-Ressource für die Zeichenfolge hello](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png#lightbox)
 
 -----
 
@@ -378,7 +363,7 @@ Können Sie einen neuen Textwert eingeben, oder Sie können eine neue Ressourcen
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![UMSCHALT + EINGABETASTE, um automatisch Text mit einer neuen Ressource verknüpfen](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png)
+[![UMSCHALT + EINGABETASTE, um automatisch Text mit einer neuen Ressource verknüpfen](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png#lightbox)
 
 -----
 
@@ -386,7 +371,6 @@ Diese Änderung wird gespeichert, in des Widgets `text` Eigenschafts-ändert nic
 Wenn Sie in einer neuen Textzeichenfolge vergeben, drücken Sie <kbd>UMSCHALT</kbd> +
 <kbd>EINGABETASTE</kbd> des eingegebenen Texts automatisch auf eine neue Ressource zu verknüpfen.
 
-<a name="Margin" />
 
 ### <a name="margin"></a>Margin
 
@@ -400,7 +384,7 @@ Wenn Sie ein Widget zum ersten Mal klicken, werden die Ziehpunkte angezeigt. Wen
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Screenshot der Rand handles im Designer](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png)
+[![Screenshot der Rand handles im Designer](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png#lightbox)
 
 -----
 
@@ -412,12 +396,11 @@ Wenn Sie bereits ein Rand festgelegt wurde, werden gepunktete Linien angezeigt, 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Beispiel für die gepunkteten Linien kennzeichnen Platz um eine Schaltfläche](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png)
+[![Beispiel für die gepunkteten Linien kennzeichnen Platz um eine Schaltfläche](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
 
 -----
 
 
-<a name="Size" />
 
 ### <a name="size"></a>Größe
 
@@ -429,7 +412,7 @@ Wie bereits erwähnt, können Sie wechseln in den Bearbeitungsmodus mit der Grö
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Wrap-Inhalt und zum Ändern der Größe-handles](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png)
+[![Wrap-Inhalt und zum Ändern der Größe-handles](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png#lightbox)
 
 -----
 
@@ -443,7 +426,7 @@ Wenn die Größenwert festgelegt wird, um **Content umschließen**, zeigt der De
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Das Handle des übergeordneten Übereinstimmung](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png)
+[![Das Handle des übergeordneten Übereinstimmung](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png#lightbox)
 
 -----
 
@@ -457,7 +440,7 @@ Außerdem Sie können ziehen Sie den zirkuläre Ziehpunkt (wie in den oben genan
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Zirkuläre Ziehpunkte](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png)
+[![Zirkuläre Ziehpunkte](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png#lightbox)
 
 -----
 
@@ -469,12 +452,11 @@ Bearbeiten von nicht von allen Containern zulassen der `Size` eines Widgets. Bea
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Keine Ziehpunkte](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png)
+[![Keine Ziehpunkte](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png#lightbox)
 
 -----
 
 
-<a name="Outline_View" />
 
 ## <a name="document-outline"></a>Dokumentgliederung
 
@@ -487,7 +469,7 @@ Im folgenden Beispiel, das mit `LinearLayout` Widget ausgewählt ist:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Dokumentgliederung](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png)
+[![Dokumentgliederung](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png#lightbox)
 
 -----
 

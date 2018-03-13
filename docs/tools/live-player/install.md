@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/22/2017
-ms.openlocfilehash: f3fa2502f55ad7ebf59d015923ff4008103b08bd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b801af77eceaf94b0ede98b6af51d55d6029fe6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Player Live-Setup
 
@@ -88,7 +88,7 @@ Live-Player Xamarin benötigen Sie Folgendes:
 2. Wechseln Sie zu **Visual Studio > Einstellungen...**  , und wählen Sie die **Projekte > Xamarin Player Live (Vorschau)** Registerkarte.
 3. Teilstriche **aktivieren Xamarin Live Player**:
 
-  [ ![Aktivieren Sie das Kontrollkästchen aktivieren Xamarin Live-Player im Fenster "Optionen"](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png)
+  [![Aktivieren Sie das Kontrollkästchen aktivieren Xamarin Live-Player im Fenster "Optionen"](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png#lightbox)
 
 2. Erstellen oder öffnen Sie eine Xamarin-Projekt (oder eine [Beispiel](~/tools/live-player/samples.md)).
 3. Wählen Sie **Player Live** in der Geräteliste.

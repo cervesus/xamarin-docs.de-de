@@ -3,16 +3,16 @@ title: Application Fundamentals (Anwendungsgrundlagen)
 description: "Kernkonzepte für die Anwendung"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
+ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/21/2017
-ms.openlocfilehash: 9cace37a9e762a49a90963591931793d30d05453
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f6c0bb75327f0c14d314a0e7ad9d114fd17c2a57
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="application-fundamentals"></a>Application Fundamentals (Anwendungsgrundlagen)
 
@@ -23,7 +23,7 @@ Dieser Abschnitt enthält eine Anleitung für einige der häufiger Aufgaben Ding
 In diesem Artikel werden die Änderungen der Sicherheit, die Transportsicherheit für die App auf eine app für iOS 9 und was dies für Ihre Projekte Xamarin.iOS bedeutet erzwingt vorgestellt, berücksichtigt die ATS Konfigurationsoptionen, und es wird beschrieben, wie opt-Out von ATS, falls erforderlich. Da ATS standardmäßig aktiviert ist, lösen alle unsichere internetverbindungen eine Ausnahme in iOS 9-apps, (es sei denn, Sie sie explizit zugelassen haben).
 
 
-## <a name="backgroundingiosapp-fundamentalsbackgroundingindexmd"></a>[Backgrounding](~/ios/app-fundamentals/backgrounding/index.md)
+## <a name="backgroundingiosapp-fundamentalsbackgroundingindexmd"></a>[Hintergrundverarbeitung](~/ios/app-fundamentals/backgrounding/index.md)
 
 Im Hintergrund verarbeitet oder backgrounding versteht man ermöglicht Anwendungen, die Aufgaben im Hintergrund, während eine andere Anwendung im Vordergrund ausgeführt wird. Dieses Handbuch dient als Einführung in iOS-Verarbeitung im Hintergrund.
 
@@ -56,7 +56,7 @@ In diesem Artikel untersucht, wie zum Erstellen von iOS-Anwendungen vollständig
 
 Die `NSUserDefaults` -Klasse bietet eine Möglichkeit für iOS-Apps und Erweiterungen für die programmgesteuerte Interaktion mit dem eine systemweite Standardeinstellung System. Verwenden Sie das System standardmäßig, kann der Benutzer einer Verhalten oder die app formatieren, um ihre Voreinstellungen (basierend auf den Entwurf der app) erfüllen konfigurieren. Geben Sie beispielsweise Folgendes ein, um das Darstellen von Daten in Vs Metrik das englische System oder Auswählen eines bestimmten UI-Designs.
 
-## <a name="touchiosapp-fundamentalstouchindexmd"></a>[Tippen Sie auf](~/ios/app-fundamentals/touch/index.md)
+## <a name="touchiosapp-fundamentalstouchindexmd"></a>[Toucheingabe](~/ios/app-fundamentals/touch/index.md)
 
 Touchscreens auf viele der heutigen Geräte ermöglichen Benutzern Geräten auf eine natürliche und intuitive Weise schnell und effizient interagieren. Diese Aktivität ist nicht nur auf einfache Touch Erkennung beschränkt – es ist möglich, auch Gesten verwenden. Zwei-Finger-Zoom Bewegung ist z. B. ein sehr gängiges Beispiel dieser – durch einen Teil des Bildschirms mit zwei Fingern fest, denen der Benutzer vergrößern oder verkleinern kann pinching an. Dieses Handbuch untersucht Touch- und Gesten in iOS.
 

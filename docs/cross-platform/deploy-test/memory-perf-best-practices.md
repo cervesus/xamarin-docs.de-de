@@ -8,35 +8,18 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 56d868f64de009d01930ec34ee2cb436276006ef
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 287f564ba74050aa8a06e5a582ae8db6657e440e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cross-platform-performance"></a>Plattformübergreifende Leistung
 
-_Sie haben verschiedene Möglichkeiten, die Leistung von Anwendungen zu verbessern, die mit der Xamarin-Plattform erstellt wurden. Wenn Sie diese Kniffe kombinieren, können Sie die CPU-Auslastung und die Speichermenge, die von einer Anwendung verwendet wird, erheblich reduzieren. In diesem Artikel wird Folgendes erläutert._
+_Sie haben verschiedene Möglichkeiten, die Leistung von Anwendungen zu verbessern, die mit der Xamarin-Plattform erstellt wurden. Wenn Sie diese Kniffe kombinieren, können Sie die CPU-Auslastung und die Speichermenge, die von einer Anwendung verwendet wird, erheblich reduzieren. In diesem Artikel werden die Methoden beschrieben und erläutert._
 
-Eine schlechte Anwendungsleistung kann sich auf unterschiedliche Weise bemerkbar machen. Die Anwendung reagiert scheinbar nicht mehr, der Bildlauf ist möglicherweise verlangsamt, und auch die Akkulaufzeit kann abnehmen. Leistungsoptimierung umfasst jedoch mehr als das bloße Implementieren eines effizienten Codes. Es muss ebenfalls berücksichtigt werden, wie der Benutzer die Leistung der Anwendung wahrnimmt. Wenn laufende Vorgänge Benutzer beispielsweise nicht an anderen Aktivitäten hindern, kann dies die Benutzerfreundlichkeit verbessern.
+Eine schlechte Anwendungsleistung kann sich auf unterschiedliche Weise bemerkbar machen. Die Anwendung reagiert scheinbar nicht mehr, der Bildlauf ist möglicherweise verlangsamt, und auch die Akkulaufzeit kann abnehmen. Leistungsoptimierung umfasst jedoch mehr als das bloße Implementieren eines effizienten Codes. Es muss ebenfalls berücksichtigt werden, wie der Benutzer die Leistung der Anwendung wahrnimmt. Wenn beispielsweise Vorgänge ausgeführt werden können, ohne dass der Benutzer daran gehindert wird, gleichzeitig andere Aktivitäten auszuführen, kann dies dazu beitragen die Benutzerfreundlichkeit zu verbessern.
 
-Die (wahrgenommene) Leistung von Anwendungen, die mit Xamarin.Android erstellt wurden, lässt sich auf unterschiedliche Arten und Weisen steigern. Dazu zählen:
-
-- [Verwenden des Profilers](#profiler)
-- [Freigeben von IDisposable-Ressourcen](#idisposable)
-- [Abbestellen von Ereignisabonnements](#events)
-- [Verwenden schwacher Verweise, um speicherresidente Objekte zu vermeiden](#weakreferences)
-- [Verzögern der Kosten der Objekterstellung](#lazy)
-- [Implementieren von asynchronen Vorgängen](#async)
-- [Verwenden des SGen-Garbage Collectors](#sgen)
-- [Reduzieren der Anwendungsgröße](#linker)
-- [Optimieren von Bildressourcen](#optimizeimages)
-- [Reduzieren des Aktivierungszeitraums der Anwendung](#activationperiod)
-- [Reduzieren der Kommunikation des Webdiensts](#webservicecommunication)
-
-In diesem [Video der Xamarin University](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps) finden Sie weitere hilfreiche Tipps für das Entwerfen von Xamarin-Apps.
-
-[ ![](memory-perf-best-practices-images/clancey-sml.png "Kostenloses Xamarin University-Video zum Vermeiden gängiger Fehlerquellen")](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)
 
 <a name="profiler" />
 

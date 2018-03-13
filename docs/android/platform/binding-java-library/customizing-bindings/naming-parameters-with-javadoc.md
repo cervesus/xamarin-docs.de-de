@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/20/2017
-ms.openlocfilehash: 84dfe88e912241eb0024143bca568ae75e5bfa28
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d83135aa9c101e06a680b458cce8c12dcdddd947
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="naming-parameters-with-javadoc"></a>Benennen von Parametern mit Javadoc
 
 _Dieser Artikel beschreibt die Vorgehensweise beim Wiederherstellen von Parameternamen in einem Projekt für die Java-Bindung mithilfe von Javadoc aus dem Java-Projekt generiert._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -38,9 +37,8 @@ Sobald dies geschehen ist, sollte die Namen der ursprünglichen Java-Parameter i
 
 
 > [!NOTE]
-> **Hinweis:** sehr viel systemverarbeitungszeit in die Varianz bei der die JavaDoc-Ausgabe vorhanden ist. Die. Jeder einzelnen möglichen Permutation JAR Bindung toolkette nicht unterstützt und daher einige Parameter möglicherweise nicht ordnungsgemäß benannt.
+> Es ist sehr viel systemverarbeitungszeit in die Varianz bei der die JavaDoc-Ausgabe. Die. Jeder einzelnen möglichen Permutation JAR Bindung toolkette nicht unterstützt und daher einige Parameter möglicherweise nicht ordnungsgemäß benannt.
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 7566ebac0f487ef321c512c988c79f34e50777ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f13515326bd75f2b2c15e2b6059e6f829814ea5c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="local-notifications"></a>Lokale Benachrichtigungen
 
@@ -28,7 +28,7 @@ Android bietet zwei System gesteuert Bereiche für Benachrichtigungssymbole und 
 
 Um Details zu der Benachrichtigung zu erhalten, kann der Benutzer (der jeder Benachrichtigungssymbol zum Offenlegen von Benachrichtigungsinhalt erweitert wird) öffnen Sie die Benachrichtigung öffnen, und führen Sie alle Aktionen, die Benachrichtigungen zugeordnet. Die folgende Abbildung zeigt eine *öffnen Benachrichtigung* , entspricht der Infobereich oben angezeigt:
 
-[![Öffnen der Beispiel-Benachrichtigung drei Benachrichtigungen anzeigen](local-notifications-images/02-notification-drawer-sml.png)](local-notifications-images/02-notification-drawer.png)
+[![Öffnen der Beispiel-Benachrichtigung drei Benachrichtigungen anzeigen](local-notifications-images/02-notification-drawer-sml.png)](local-notifications-images/02-notification-drawer.png#lightbox)
 
 Android-Benachrichtigungen werden zwei Typen von Layouts verwenden:
 
@@ -38,7 +38,6 @@ Android-Benachrichtigungen werden zwei Typen von Layouts verwenden:
 
 Jeder dieser Typen Layout (und deren Erstellung) werden in den folgenden Abschnitten erläutert.
 
-<a name="base-layout" />
 
 ### <a name="base-layout"></a>Basis-Layout
 
@@ -54,7 +53,7 @@ Alle Android-Benachrichtigungen werden basierend auf der Basis Layoutformat erst
 
 Diese Elemente werden angezeigt, wie im folgenden Diagramm dargestellt:
 
-[![Speicherort der Benachrichtigung Elemente](local-notifications-images/03-notification-callouts-sml.png)](local-notifications-images/03-notification-callouts.png)
+[![Speicherort der Benachrichtigung Elemente](local-notifications-images/03-notification-callouts-sml.png)](local-notifications-images/03-notification-callouts.png#lightbox)
 
 Basis Layouts sind auf 64 Dichte typunabhängig Pixel (dp) hoch beschränkt. Android dieser Stil grundlegende Benachrichtigung wird standardmäßig erstellt.
 
@@ -64,13 +63,13 @@ Benachrichtigungen können optional ein großes Symbol angezeigt, das die Anwend
 
 Beginnen mit dem Android 5.0, können Benachrichtigungen auch auf die für den sperrbildschirmhintergrund angezeigt:
 
-[![Beispiel für den sperrbildschirmhintergrund-Benachrichtigung](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png)
+[![Beispiel für den sperrbildschirmhintergrund-Benachrichtigung](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png#lightbox)
 
 Der Benutzer kann Doppeltippen Sie auf die Benachrichtigung für den sperrbildschirmhintergrund entsperren Sie das Gerät, und springen Sie zu der app, die diese Benachrichtigung stammt oder Streifen verwerfen die Benachrichtigung. Apps können das Maß an Sichtbarkeit eine Benachrichtigung zu steuern, was die für den sperrbildschirmhintergrund angezeigt werden, und Benutzer können auswählen, ob vertraulichem Inhalt für den sperrbildschirmhintergrund Benachrichtigungen angezeigt werden können.
 
 Android 5.0.x eingeführt, eine Benachrichtigung mit hoher Priorität Präsentationsformat aufgerufen *Heads-Up*. Heads-Up-Benachrichtigungen vom oberen Rand des Bildschirms für einige Sekunden nach unten schieben, und klicken Sie dann auf den Benachrichtigungsbereich sichern zurückzukehren:
 
-[![Beispiel-heads-up-Benachrichtigung](local-notifications-images/06-heads-up-notification-sml.png)](local-notifications-images/06-heads-up-notification.png)
+[![Beispiel-heads-up-Benachrichtigung](local-notifications-images/06-heads-up-notification-sml.png)](local-notifications-images/06-heads-up-notification.png#lightbox)
 
 Heads-Up-Benachrichtigungen ermöglichen es dem System UI, wichtige Informationen vor der Benutzer ohne Unterbrechung des Status der derzeit ausgeführten Aktivität eingefügt werden soll.
 
@@ -84,7 +83,6 @@ Android bietet Unterstützung für Benachrichtigung Metadaten, sodass Benachrich
 
 **Hinweis:** **Sichtbarkeit** und **Kategorie** wurden eingeführt Android 5.0 und in früheren Versionen von Android nicht verfügbar sind. Beginnend mit Android 8.0 [benachrichtigungskanäle](#notif-chan) werden verwendet, um zu steuern, wie dem Benutzer Benachrichtigungen angezeigt werden.
 
-<a name="expanded-layouts" />
 
 ### <a name="expanded-layouts"></a>Erweiterte Layouts
 
@@ -106,7 +104,6 @@ Android unterstützt drei erweiterten Layout Stile für einzelnes Ereignis Benac
 
 [Über die grundlegenden Benachrichtigung](#beyond-the-basic-notification) (weiter unten in diesem Artikel) erläutert, wie *Big Text*, *Posteingang*, und *Image* Benachrichtigungen.
 
-<a name="notification-creation" />
 
 ## <a name="notification-creation"></a>Benachrichtigung erstellen
 
@@ -127,7 +124,6 @@ Um eine Benachrichtigung in Android zu erstellen, verwenden Sie die [Notificatio
 
 Nach dem Festlegen dieser Optionen im Generator generieren Sie eine Benachrichtigungsobjekt, das die Einstellungen enthält. Um die Benachrichtigung zu veröffentlichen, übergeben Sie diese Benachrichtigungsobjekt, das *Warnungs-Manager*. Android bietet die [NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/) -Klasse, die für die Veröffentlichung von Benachrichtigungen und sie dem Benutzer angezeigt wird. Ein Verweis auf diese Klasse kann aus einem beliebigen Kontext, z. B. eine Aktivität oder einem Dienst abgerufen werden.
 
-<a name="how-to-generate" />
 
 ### <a name="how-to-generate-a-notification"></a>Gewusst wie: Generieren Sie eine Benachrichtigung
 
@@ -185,7 +181,6 @@ Der Zeitstempel wird automatisch festgelegt, aber Sie können diese Einstellung 
 ```csharp
 builder.SetWhen (Java.Lang.JavaSystem.CurrentTimeMillis());
 ```
-<a name="sound-and-vibr" />
 
 ### <a name="enabling-sound-and-vibration"></a>Aktivieren der Sound und Vibrationen
 
@@ -265,7 +260,6 @@ Eine Benachrichtigung weiterhin angezeigt, bis eines der drei Dinge Ereignisse a
 
 Weitere Informationen zum Aktualisieren von Android-Benachrichtigungen finden Sie unter [ändern Sie eine Benachrichtigung](http://developer.android.com/training/notify-user/managing.html#Updating).
 
-<a name="starting-an-activity" />
 
 ### <a name="starting-an-activity-from-a-notification"></a>Starten Sie eine Aktivität aus einer Benachrichtigung
 
@@ -380,11 +374,11 @@ Beginnen mit dem Android 8.0 (Oreo), können Sie die *benachrichtigungskanäle* 
 
 Die **YouTube** mit Android Oreo installierten app sind zwei Benachrichtigungskategorien aufgeführt: **herunterladen Benachrichtigungen** und **allgemeine Benachrichtigungen**:
 
-[![Benachrichtigung Bildschirme für YouTube in Android Oreo](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png)
+[![Benachrichtigung Bildschirme für YouTube in Android Oreo](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
 
 Jede dieser Kategorien entspricht ein Benachrichtigungskanal. Implementiert die YouTube-app eine **herunterladen Benachrichtigungen** Kanal und ein **allgemeine Benachrichtigungen** Kanal. Der Benutzer tippen kann **herunterladen Benachrichtigungen**, dem Bildschirm "Einstellungen" angezeigt, für der app Benachrichtigungen Kanal herunterladen:
 
-[![Benachrichtigungen Bildschirm für YouTube-app herunterladen](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png)
+[![Benachrichtigungen Bildschirm für YouTube-app herunterladen](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
 
 Der Benutzer kann auf diesem Bildschirm das Verhalten der Ändern der **herunterladen** Benachrichtigungen channel folgendermaßen aus:
 
@@ -400,14 +394,13 @@ Der Benutzer kann auf diesem Bildschirm das Verhalten der Ändern der **herunter
 
 Die **allgemeine Benachrichtigungen** Kanal hat ähnliche Einstellungen:
 
-[![Allgemeine Benachrichtigungen Bildschirm für YouTube-app](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png)
+[![Allgemeine Benachrichtigungen Bildschirm für YouTube-app](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png#lightbox)
 
 Beachten Sie, dass Sie keine absolute Kontrolle über Ihre benachrichtigungskanäle wie mit dem Benutzer interagieren &ndash; der Benutzer die Einstellungen für alle Benachrichtigungskanal auf dem Gerät ändern kann, wie in den oben genannten Screenshots dargestellt. Allerdings können Sie Standardwerte konfigurieren, (wie unten beschrieben). Da diese Beispiele veranschaulichen, macht es die neue Kanäle Benachrichtigungsfunktion möglich, dass Sie Benutzern eine präzisere Kontrolle über die verschiedenen Arten von Benachrichtigungen gewähren.
 
 Sollten Sie Unterstützung für einen Benachrichtigungskanal zu Ihrer app hinzufügen? Wenn Sie Android 8.0, Ihre app als Ziel bestimmen *müssen* benachrichtigungskanäle implementieren.
 Eine app, die als Ziel für Oreo, die versucht, eine lokale Benachrichtigung für den Benutzer zu senden, ohne Verwendung eines benachrichtigungskanals schlägt fehl, die Benachrichtigung auf Oreo Geräte angezeigt werden sollen. Bei Android 8.0 nicht, wird Ihre app weiterhin unter Android 8.0, jedoch mit dem gleichen Benachrichtigungsverhalten wie ausgeführt es aufweisen würde, wenn für Android 7.1 oder früher ausgeführt wird.
 
-<a name="notif-chan-create" />
 
 ### <a name="creating-a-notification-channel"></a>Erstellen eines Benachrichtigungskanals
 
@@ -448,7 +441,6 @@ Um einen Benachrichtigungskanal zu erstellen, führen Sie folgende Schritte aus:
     notificationManager.CreateNotificationChannel (chan);
     ```
 
-<a name="notif-chan-post" />
 
 ### <a name="posting-to-a-notifications-channel"></a>Posten von Beiträgen in einem Kanal Benachrichtigungen
 
@@ -507,7 +499,6 @@ builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable
 Dieser Beispielcode öffnet die Abbilddatei an **Resources/drawable/monkey_icon.png**, konvertiert es in eine Bitmap und übergibt das resultierende Bitmap `Notification.Builder`. In der Regel die bildauflösung Quelle ist größer als das kleine Symbol &ndash; aber nicht sehr viel größere. Ein Bild, das zu groß ist möglicherweise unnötige größenänderungsvorgängen, die die Benachrichtigung die Buchung verzögert werden kann.
 Weitere Informationen zur Benachrichtigung Symbolgrößen in Android finden Sie unter [Benachrichtigungssymbole](http://developer.android.com/design/style/iconography.html#notification).
 
-<a name="big-text-style" />
 
 ### <a name="big-text-style"></a>Große Textart
 
@@ -544,7 +535,6 @@ builder.SetStyle (textStyle);
 
 In diesem Beispiel dem Meldungstext und der Zusammenfassungstext befinden sich der `BigTextStyle` Objekt (`textStyle`) vor der Übergabe an `Notification.Builder.`
 
-<a name="image-style" />
 
 ### <a name="image-style"></a>Bild-Format
 
@@ -609,7 +599,6 @@ Wenn Sie die Größe der Bilddatei nicht im Voraus kennen, ist es eine gute Idee
 
 Weitere Informationen zum Laden und Decodieren von Bildern für große Bitmap finden Sie unter [laden große Bitmaps effiziente](https://developer.xamarin.com/recipes/android/resources/general/load_large_bitmaps_efficiently).
 
-<a name="inbox-style" />
 
 ### <a name="inbox-style"></a>Eingangsbox-Stil
 
@@ -645,13 +634,11 @@ Um neue Textzeilen in den Text der Benachrichtigung hinzuzufügen, rufen Sie die
 
 Sie können auch die *Posteingang* Stil für Benachrichtigungen, die einzelne Textzeilen in einem erweiterten Format anzeigen. Z. B. die *Posteingang* Benachrichtigung-Stil kann verwendet werden, um mehrere ausstehende Benachrichtigungen in einer zusammenfassungsbenachrichtigung kombinieren &ndash; können Sie ein einzelnes aktualisieren *Posteingang* Benachrichtigung über neu formatieren Zeilen mit Benachrichtigungsinhalt (finden Sie unter [aktualisieren eine Benachrichtigung](#updating-a-notification) oben), sondern als einen kontinuierlichen Strom von neuen, größtenteils ähnlich Benachrichtigungen zu generieren. Weitere Informationen zu diesem Verfahren finden Sie unter [zusammenfassen Ihre Benachrichtigungen](http://developer.android.com/design/patterns/notifications.html#summarize_your_notifications).
 
-<a name="configuring-metadata" />
 
 ## <a name="configuring-metadata"></a>Konfigurieren von Metadaten
 
 `Notification.Builder` enthält Methoden, die Sie aufrufen können, um Metadaten über die Benachrichtigung, wie z. B. Sichtbarkeit, Priorität und Kategorie festgelegt. Android verwendet diese Informationen &mdash; zusammen mit benutzereinstellungseinstellungen &mdash; um zu bestimmen, wie und wann Benachrichtigungen angezeigt.
 
-<a name="priority-settings" />
 
 ### <a name="priority-settings"></a>Prioritätseinstellungen
 
@@ -694,7 +681,6 @@ Im nächsten Beispiel wird die mit niedriger Priorität "Für den Tag betrachtet
 
 Da die Benachrichtigung ", um herauszufinden, für den Tag" eine Benachrichtigung mit niedriger Priorität ist, wird Sie von Android keine Heads-up Format angezeigt.
 
-<a name="visibility-settings" />
 
 ### <a name="visibility-settings"></a>Sichtbarkeitseinstellungen
 
@@ -719,7 +705,6 @@ Wenn eine `Private` Benachrichtigung gesendet wird, wird nur der Name und der ap
 
 In diesem Beispiel **NotificationsLab** ist der Name der ursprünglichen app. Diese geschwärzten Version der Benachrichtigung angezeigt wird, nur wenn die für den sperrbildschirmhintergrund sicher ist (d. h. per PIN, Muster oder ein Kennwort geschützt) &ndash; der für den sperrbildschirmhintergrund nicht sicher ist, der vollständigen Inhalt der Benachrichtigung auf der für den sperrbildschirmhintergrund verfügbar ist.
 
-<a name="category-settings" />
 
 ### <a name="category-settings"></a>Kategorie-Einstellungen
 
@@ -791,7 +776,6 @@ Methodenaufrufe für wichtige Benachrichtigungsoptionen sind identisch mit denen
 
 Die [LocalNotifications](https://developer.xamarin.com/samples/monodroid/LocalNotifications) Beispiel veranschaulicht, wie `NotificationCompat.Builder` um eine zweite Aktivität von einer Benachrichtigung zu starten. In diesem Beispielcode wird erläutert, der [mithilfe von lokalen Benachrichtigungen in Xamarin.Android](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md) Exemplarische Vorgehensweise.
 
-<a name="notification-styles" />
 
 ### <a name="notification-styles"></a>Benachrichtigung Stile
 
@@ -806,7 +790,6 @@ builder.SetStyle (textStyle);
 
 Auf ähnliche Weise können Ihre app `NotificationCompat.InboxStyle` und `NotificationCompat.BigPictureStyle` für *Posteingang* und *Image* Stile, bzw.
 
-<a name="priority-and-category" />
 
 ### <a name="notification-priority-and-category"></a>Benachrichtigungspriorität und Kategorie
 
@@ -823,7 +806,6 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 In diesem Beispiel wird die app des **Zielframework** auf Android 5.0 festgelegt ist und die **Mindestversion Android** festgelegt ist, um **Android 4.1 (API Level 16)**. Da `SetCategory` wird in API-Ebene 21 und höher verfügbar, in diesem Beispielcode ruft `SetCategory` nur, wenn es verfügbar ist &ndash; kein Aufruf `SetCategory` beim API-Ebene ist kleiner als
 21.
 
-<a name="lockscreen-visibility" />
 
 ### <a name="lockscreen-visibility"></a>Sichtbarkeit des Sperrbildschirms
 
@@ -835,7 +817,6 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 }
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

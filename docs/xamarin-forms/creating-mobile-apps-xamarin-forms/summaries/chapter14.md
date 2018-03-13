@@ -3,14 +3,15 @@ title: Zusammenfassung der Kapitel 14. Absolute layout
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: ac4c41ebd70b58e95a3fa4fa7a391a473361b1db
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 394e1722c79bac5f034e9ad88eb1fed7e5090f8c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>Zusammenfassung der Kapitel 14. Absolute layout
 
@@ -91,7 +92,7 @@ Die [ **SimpleOverlay** ](https://github.com/xamarin/xamarin-forms-book-samples/
 
 Die [ **DotMatrixClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/DotMatrixClock) Beispiel zeigt die aktuelle Zeit mit einer simulierten 5 x 7 Punkt Matrix anzeigen. Jeder Punkt ist eine `BoxView` (es gibt davon 228) angepasst und positioniert die `AbsoluteLayout`.
 
-[![Dreifacher Screenshot Punkt Matrix Uhr](images/ch14fg08-small.png "Punktmatrix Uhr")](images/ch14fg08-large.png "Punktmatrix Uhr")
+[![Dreifacher Screenshot Punkt Matrix Uhr](images/ch14fg08-small.png "Punktmatrix Uhr")](images/ch14fg08-large.png#lightbox "Punktmatrix Uhr")
 
 Die [ **BouncingText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/BouncingText) Programm erstellt eine Animation zwei `Label` Objekte horizontal und vertikal über den Bildschirm zu springen.
 

@@ -4,14 +4,15 @@ description: "Finden Sie unter wie die Neigung Transformation Geneigter Grafikob
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: charlespetzold
 ms.author: chape
 ms.date: 03/20/2017
-ms.openlocfilehash: b8bb4db49d3800d694724d6be8fe949b55060c21
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a18b60d486a911e4a76298fd20a70f16ac392881
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-skew-transform"></a>Die Schiefsymmetrische Transformation
 
@@ -69,7 +70,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Werte von der `xSkew` Argument verschieben Sie den unteren Rand der Text für positive Werte nach rechts oder Links für negative Werte. Werte der `ySkew` für positive Werte oder für negative Werte rechts des Texts nach unten zu verschieben:
 
-[![](skew-images/skewexperiment-small.png "Dreifacher Screenshot der Seite verzerren Experiment")](skew-images/skewexperiment-large.png "dreifacher Screenshot der Seite Experiment neigen")
+[![](skew-images/skewexperiment-small.png "Dreifacher Screenshot der Seite verzerren Experiment")](skew-images/skewexperiment-large.png#lightbox "dreifacher Screenshot der Seite Experiment neigen")
 
 Wenn `xSkew` der negative Wert von `ySkew`, das Ergebnis ist die Rotation, aber in einem gewissen auch als die Anzeige gibt Windows skaliert.
 
@@ -152,7 +153,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 Ein Winkel positive oder negative 90 Grad erreicht, der Tangens Ansätze unendlich, aber Winkel bis zu ungefähr 80 Grad oder eine ähnliche verwendet werden können:
 
-[![](skew-images/skewangleexperiment-small.png "Dreifacher Screenshot der Seite verzerren Winkel Experiment")](skew-images/skewangleexperiment-large.png "dreifacher Screenshot der Seite verzerren Winkel Experiment")
+[![](skew-images/skewangleexperiment-small.png "Dreifacher Screenshot der Seite verzerren Winkel Experiment")](skew-images/skewangleexperiment-large.png#lightbox "dreifacher Screenshot der Seite verzerren Winkel Experiment")
 
 Eine kleine negative horizontale Neigung kann schräg oder kursiv Text imitieren, die als die **schräg Text** veranschaulicht. Die [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) Klasse zeigt, wie dies funktioniert:
 
@@ -188,7 +189,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 Die `TextAlign` Eigenschaft `SKPaint` festgelegt ist, um `Center`. Ohne Transformationen die `DrawText` telefonisch mit Koordinaten (0, 0) würde, positionieren Sie den Text horizontal mittig an der Basislinie in der oberen linken Ecke. Die `SkewDegrees` neigt den Text horizontal 20 Grad relativ zu der Basislinie. Die `Translate` Aufruf verschiebt die horizontale Mitte der Basislinien-der Text in der Mitte des Zeichenbereichs:
 
-[![](skew-images/obliquetext-small.png "Dreifacher Screenshot der Seite schräg Text")](skew-images/obliquetext-large.png "dreifacher Screenshot der Seite schräg Text")
+[![](skew-images/obliquetext-small.png "Dreifacher Screenshot der Seite schräg Text")](skew-images/obliquetext-large.png#lightbox "dreifacher Screenshot der Seite schräg Text")
 
 Die **verzerren Schattentext** Seite veranschaulicht, wie eine Kombination aus einem 45-Grad-Neigung und vertikale Skalierung einer Textschatten vornehmen möchten, die den Text kippt. Hier wird der relevante Teil der `PaintSurface` Ereignishandler:
 
@@ -221,11 +222,11 @@ using (SKPaint textPaint = new SKPaint())
 
 Der Schatten ist angezeigten zuerst und anschließend auf den Text an:
 
-[![](skew-images/skewshadowtext1-small.png "Dreifacher Screenshot der Seite verzerren Schattentext")](skew-images/skewshadowtext1-large.png "dreifacher Screenshot der Seite verzerren Schattentext")
+[![](skew-images/skewshadowtext1-small.png "Dreifacher Screenshot der Seite verzerren Schattentext")](skew-images/skewshadowtext1-large.png#lightbox "dreifacher Screenshot der Seite verzerren Schattentext")
 
 Die vertikale Koordinate übergeben, um die `DrawText` Methode gibt die Position des Texts relativ zu der Basislinie. Dies ist die gleiche vertikale Koordinate für das Zentrum des neigen verwendet. Diese Technik kann nicht ausgeführt werden, wenn die Textzeichenfolge Unterlängen enthält. Zum Beispiel das Einsetzen des Worts "sonderbaren", "Schatten" und hier das Ergebnis:
 
-[![](skew-images/skewshadowtext2-small.png "Dreifacher Screenshot der Seite verzerren Schattentext ein alternatives Wort mit Unterlängen")](skew-images/skewshadowtext2-large.png "dreifacher Screenshot der Seite verzerren Schattentext ein alternatives Wort mit Unterlängen")
+[![](skew-images/skewshadowtext2-small.png "Dreifacher Screenshot der Seite verzerren Schattentext ein alternatives Wort mit Unterlängen")](skew-images/skewshadowtext2-large.png#lightbox "dreifacher Screenshot der Seite verzerren Schattentext ein alternatives Wort mit Unterlängen")
 
 Die Schattenkopien und den Text werden weiterhin an der Grundlinie ausgerichtet, aber die Auswirkungen nur falschen sucht. Um dies zu beheben, müssen Sie die Textgrenzen zu erhalten:
 
@@ -245,7 +246,7 @@ canvas.Translate(-xText, -yText - textBounds.Bottom);
 
 Jetzt erweitert der Schatten vom unteren Rand dieser Unterlängen bestimmt:
 
-[![](skew-images/skewshadowtext3-small.png "Dreifacher Screenshot der Seite verzerren Schattentext Korrekturen für Unterlängen")](skew-images/skewshadowtext3-large.png "dreifacher Screenshot der Seite verzerren Schattentext Korrekturen für Unterlängen bestimmt")
+[![](skew-images/skewshadowtext3-small.png "Dreifacher Screenshot der Seite verzerren Schattentext Korrekturen für Unterlängen")](skew-images/skewshadowtext3-large.png#lightbox "dreifacher Screenshot der Seite verzerren Schattentext Korrekturen für Unterlängen bestimmt")
 
 
 ## <a name="related-links"></a>Verwandte Links

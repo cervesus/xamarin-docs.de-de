@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 37c0b3f1f826893bef5c1a7ffb5d422c1c8c5c78
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fc9765b3f6a77f47fdce32dbc3805dd7bd70a08a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-tab-bar-controller"></a>Arbeiten mit Registerkartenleiste-Controller
 
@@ -20,7 +20,7 @@ _Dieser Artikel umfasst das Entwerfen und Verwenden von innerhalb einer app Xama
 
 Für viele Arten von apps für tvos. außerdem wurden wird die primäre Navigation als eine Registerkartenleiste angezeigt am oberen Rand des Bildschirms ausgeführt. Der Benutzer Kundenkarte links und rechts in der Liste der möglichen Kategorien und Inhaltsbereichs unterhalb der ändert sich entsprechend der Auswahl des Benutzers.
 
-[ ![](tab-bars-images/tab01.png "Beispiel-Registerkartenleiste")](tab-bars-images/tab01.png)
+[![](tab-bars-images/tab01.png "Beispiel-Registerkartenleiste")](tab-bars-images/tab01.png#lightbox)
 
 Die Registerkartenleiste ist standardmäßig transparent und immer am oberen Rand des Bildschirms angezeigt. Im Fokus, eine Registerkartenleiste befasst sich mit den oberen 140 Pixel des Bildschirms, jedoch wird schnell unterwegs eingeblendet, sobald der Fokus auf den Inhalt im Bereich unten.
 
@@ -64,22 +64,22 @@ Die einfachste Möglichkeit zum Arbeiten mit Registerkarte Balken in einer app X
     
 1. Starten Sie eine neue Xamarin.tvOS-app, und wählen Sie **tvos. außerdem wurden** > **App** > **im Registerkartenformat App**: 
 
-    [ ![](tab-bars-images/tab02.png "Wählen Sie im Registerkartenformat App")](tab-bars-images/tab02.png)
+    [![](tab-bars-images/tab02.png "Wählen Sie im Registerkartenformat App")](tab-bars-images/tab02.png#lightbox)
 1. Führen Sie die Anweisungen zum Erstellen einer neuen Xamarin.tvOS-Lösung.
 1. In der **Lösung Pad**, doppelklicken Sie auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. So ändern Sie die **Symbol** oder **Titel** nach einer bestimmten Kategorie auswählen der **Leiste Registerkartenelement** für die **View Controller** in der  **Dokumentgliederung**:
 
-    [ ![](tab-bars-images/tab03a.png "Die Registerkartenleiste Element, für die View-Controller in der Dokumentgliederung")](tab-bars-images/tab03a.png)
+    [![](tab-bars-images/tab03a.png "Die Registerkartenleiste Element, für die View-Controller in der Dokumentgliederung")](tab-bars-images/tab03a.png#lightbox)
 1. Legen Sie dann die erforderlichen Eigenschaften der **Registerkarte "Widget"** von der **Eigenschaften-Explorer**: 
 
-    [ ![](tab-bars-images/tab03.png "Die Registerkarte "Widget"")](tab-bars-images/tab03.png)
+    [![](tab-bars-images/tab03.png "Die Registerkarte "Widget"")](tab-bars-images/tab03.png#lightbox)
 1. Fügen Sie eine neue Kategorie (Registerkarte) hinzu, indem eine **Modellansichtcontroller** auf der Entwurfsoberfläche: 
 
-    [ ![](tab-bars-images/tab04.png "Eine View-Controller")](tab-bars-images/tab04.png)
+    [![](tab-bars-images/tab04.png "Eine View-Controller")](tab-bars-images/tab04.png#lightbox)
 1. Steuerelement klicken und ziehen Sie aus der **Registerkarte-View-Controller** mit dem neuen **Modellansichtcontroller**.
 1. Wählen Sie im Popupmenü **anzeigen Controller** So fügen Sie die neue Ansicht als Registerkarte (Kategorie "") hinzu: 
 
-    [ ![](tab-bars-images/tab05.png "Wählen Sie die Registerkarte "")](tab-bars-images/tab05.png)
+    [![](tab-bars-images/tab05.png "Wählen Sie die Registerkarte "")](tab-bars-images/tab05.png#lightbox)
 1. Entwerfen des Layouts für jede Caterogies Inhaltsbereichs als normaler Schrift, die Benutzeroberfläche durch Hinzufügen von UI-Elemente in der iOS-Designer.
 1. Machen Sie alle erforderlichen Ereignisse zur Bearbeitung von UI-Steuerelemente in C#-Code verfügbar.
 1. Benennen Sie alle UI-Steuerelemente, die Sie in C#-Code verfügbar machen möchten.
@@ -89,22 +89,22 @@ Die einfachste Möglichkeit zum Arbeiten mit Registerkarte Balken in einer app X
     
 1. Starten Sie eine neue Xamarin.tvOS-app, und wählen Sie **tvos. außerdem wurden** > **App** > **im Registerkartenformat App**: 
 
-    [ ![](tab-bars-images/tab02vs.png "Wählen Sie im Registerkartenformat App")](tab-bars-images/tab02vs.png)
+    [![](tab-bars-images/tab02vs.png "Wählen Sie im Registerkartenformat App")](tab-bars-images/tab02vs.png#lightbox)
 1. Führen Sie die Anweisungen zum Erstellen einer neuen Xamarin.tvOS-Lösung.
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. So ändern Sie die **Symbol** oder **Titel** nach einer bestimmten Kategorie auswählen der **Leiste Registerkartenelement** für die **View Controller** in der  **Dokumentgliederung**:
 
-    [ ![](tab-bars-images/tab03avs.png "Die View-Controller in der Dokumentgliederung")](tab-bars-images/tab03avs.png)
+    [![](tab-bars-images/tab03avs.png "Die View-Controller in der Dokumentgliederung")](tab-bars-images/tab03avs.png#lightbox)
 1. Legen Sie dann die erforderlichen Eigenschaften der **Registerkarte "Widget"** von der **Eigenschaften-Explorer**: 
 
-    [ ![](tab-bars-images/tab03vs.png "Die Registerkarte "Widget"")](tab-bars-images/tab03vs.png)
+    [![](tab-bars-images/tab03vs.png "Die Registerkarte "Widget"")](tab-bars-images/tab03vs.png#lightbox)
 1. Um eine neue Kategorie (Registerkarte) hinzuzufügen, ziehen Sie eine **Modellansichtcontroller** aus der **Toolbox** und legen Sie sie auf der Entwurfsoberfläche: 
 
-    [ ![](tab-bars-images/tab04vs.png "Eine View-Controller")](tab-bars-images/tab04vs.png)
+    [![](tab-bars-images/tab04vs.png "Eine View-Controller")](tab-bars-images/tab04vs.png#lightbox)
 1. Steuerelement klicken und ziehen Sie aus der **Registerkarte-View-Controller** mit dem neuen **Modellansichtcontroller**.
 1. Wählen Sie im Popupmenü **anzeigen Controller** So fügen Sie die neue Ansicht als Registerkarte (Kategorie "") hinzu: 
 
-    [ ![](tab-bars-images/tab05vs.png "Wählen Sie die Registerkarte "")](tab-bars-images/tab05vs.png)
+    [![](tab-bars-images/tab05vs.png "Wählen Sie die Registerkarte "")](tab-bars-images/tab05vs.png#lightbox)
 1. Entwerfen des Layouts für jede Caterogies Inhaltsbereichs als normaler Schrift, die Benutzeroberfläche durch Hinzufügen von UI-Elemente in iOS-Designer.
 1. Machen Sie alle erforderlichen Ereignisse zur Bearbeitung von UI-Steuerelemente in C#-Code verfügbar.
 1. Benennen Sie alle UI-Steuerelemente, die Sie in C#-Code verfügbar machen möchten.
@@ -137,7 +137,7 @@ TabBar.Items [2].BadgeValue = "10";
 
 Erzeugt die folgende Ergebnisse beim Ausführen ein:
 
-[ ![](tab-bars-images/tab06.png "Ein Registerkartenelement-Leiste mit badge")](tab-bars-images/tab06.png)
+[![](tab-bars-images/tab06.png "Ein Registerkartenelement-Leiste mit badge")](tab-bars-images/tab06.png#lightbox)
 
 Verwenden der `Title` Eigenschaft von der `UITabBarItem` so ändern Sie den Titel und die `Image` Eigenschaft, die das Symbol "geändert.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 5ce20322b576b12ff9dfe56ef0bc9d2e1ca27792
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 530e53230e9f0dea165b083fa6795558025a293f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac Extension Support
 
@@ -42,7 +42,7 @@ Die folgenden Tipps können hilfreich sein, bei der Arbeit mit Erweiterungen in 
 - Nicht abgefangenen Ausnahmen stürzt der Erweiterung werden bietet nur eine kleine Menge von nützlichen Informationen in den **Systemprotokoll**. Umschließen problematische Code in eine `try/catch` (Ausnahme) blockieren, die `NSLog`des vor dem erneuten Auslösen hilfreich sein kann.
 - Die **Systemprotokoll** zugegriffen werden kann, aus der **Konsole** app unter der **Anwendungen** > **Hilfsprogramme**:
 
-    [ ![](extensions-images/extension02.png "Systemprotokoll")](extensions-images/extension02.png)
+    [![](extensions-images/extension02.png "Systemprotokoll")](extensions-images/extension02.png#lightbox)
 - Wie oben bereits erwähnt, werden die hostanwendung Erweiterung ausführen mit dem System registriert. Löschen das Anwendungspaket mit Ihre Registrierung aufheben. 
 - Wenn "verirrte"-Versionen ein app-Erweiterungen registriert sind, verwenden Sie den folgenden Befehl, um diese zu suchen (sodass sie gelöscht werden können): `plugin kit -mv`
 
@@ -65,4 +65,4 @@ Dieser Artikel hat einen kurzen Blick auf das Arbeiten mit Erweiterungen in eine
 
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
 - [ExtensionSamples](https://developer.xamarin.com/samples/mac/ExtensionSamples/)
-- [OS X Human Richtlinien zur Benutzeroberfläche](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

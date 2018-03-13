@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 0F2266D7-21FF-404D-A148-0CFDE76B12AA
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 8e5bb4747811729adf5363b0a893b0f85108b220
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 39c699b10280218223b6f6022d419f77aba875dc
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="multitasking-for-ipad"></a>Multitasking für iPad
 
@@ -35,6 +36,11 @@ Es gibt eine Anzahl von zu berücksichtigenden Aspekte [Multitasking in Ihrer ap
 App-Entwickler können Sie auch [opt-Out-of Multitasking](#Opting-Out-of-Multitasking), einschließlich [deaktivieren PIP Videowiedergabe](#Disabling-PIP-Video-Playback).
 
 In diesem Artikel werden die erforderlichen Schritte zum sicherstellen, dass Ihre app Xamarin.iOS wird in einem Multitaskingumgebung ordnungsgemäß ausgeführt oder wie Multitasking abzuwählen, wenn es sich nicht um eine gute ist zu, für Ihre app groß behandelt.
+
+> [!VIDEO https://youtube.com/embed/GctYAozoLr8]
+
+**Multitasking für iPad, indem [Xamarin University](https://university.xamarin.com)**
+
 
 <a name="Multitasking-QuickStart" />
 
@@ -59,7 +65,7 @@ iOS 9 bietet die neuen Funktionen von Multitasking auf dem iPad durch die Einfü
 
 Das Feature Folie über ermöglicht dem Benutzer eine zweite app auswählen und in einem kleinen gleitende Bereich auf schnelle Interaktion anzeigt. Das Panel Folie über ist temporär und wird geschlossen, wenn der Benutzer wechselt zurück zum Arbeiten mit der Haupt-app erneut aus.
 
-[ ![](multitasking-images/about01.png "Das Panel Folie über")](multitasking-images/about01.png)
+[![](multitasking-images/about01.png "Das Panel Folie über")](multitasking-images/about01.png#lightbox)
 
 Die wichtigste daran ist, dass der Benutzer entscheidet, welche zwei Web-apps-Seite-an-Seite und hat der Entwickler keine Kontrolle über diesen Prozess ausgeführt werden. Daher sind einige Punkte, die Sie benötigen, um sicherzustellen, dass Ihre app Xamarin.iOS in einem Bereich Folie über ordnungsgemäß ausgeführt wird:
 
@@ -74,7 +80,7 @@ Schieben Sie über steht nur auf einem iPad Pro, iPad Air, iPad Air-2, iPad Mini
 
 Der Benutzer kann auf unterstützten iPad Hardware (iPad iPad Mini-4 und iPad Pro nur per Funk 2) Wählen Sie eine zweite app und führen Sie es Seite-an-Seite mit der aktuell ausgeführten app in einem geteilten Bildschirmmodus. Der Benutzer kann den Anteil der Hauptbildschirm, die jede app durch Ziehen belegt steuern eine auf dem Bildschirm Unterteiler.
 
-[ ![](multitasking-images/about02.png "Die geteilte Ansicht")](multitasking-images/about02.png)
+[![](multitasking-images/about02.png "Die geteilte Ansicht")](multitasking-images/about02.png#lightbox)
 
 Der Benutzer entscheidet, welche zwei Web-apps-Seite-an-Seite ausgeführt werden und auch der Entwickler hat keinen Einfluss auf diesen Prozess, wie Folie über. Daher stellt geteilten Ansicht ähnlich wie Anforderungen an die in einem Xamarin.iOS-app:
 
@@ -89,7 +95,7 @@ Weitere Informationen zum Vorbereiten Ihrer app für geteilte Ansicht finden Sie
 
 Das neue Bild im Bild-Funktion (auch bekannt als _PIP_) ermöglicht es dem Benutzer ein Video in einem kleinen schwebenden Fenster überwachen, die der Benutzer an einer beliebigen Stelle auf dem Bildschirm über andere ausgeführte apps positionieren kann.
 
-[ ![](multitasking-images/about03.png "Ein Beispiel für Bild in unverankerte Fenster "Bild"")](multitasking-images/about03.png)
+[![](multitasking-images/about03.png "Ein Beispiel für Bild in unverankerte Fenster "Bild"")](multitasking-images/about03.png#lightbox)
 
 Als hat der Benutzer mit Folie über und geteilten Ansicht volle Kontrolle über ein Video in der Abbildung im Bild Modus beobachten. Ist Ihre app Hauptfunktion Video ansehen, benötigen sie einige Änderungen im PIP-Modus ordnungsgemäß verhält. Andernfalls werden keine Änderungen erforderlich, zur Unterstützung von PIP.
 
@@ -111,44 +117,27 @@ Unterstützung von iOS 9-Multitasking auf alle neuen Xamarin.iOS app erneut verw
 
 ### <a name="screen-size-and-orientation-considerations"></a>Bildschirmgröße und Ausrichtung Überlegungen
 
-Bevor Sie iOS 9 konnte Sie Ihrer app Agains bestimmten Gerät Bildschirmgrößen und -Ausrichtungen entwerfen. Da eine app nun in einem Bereich Folie Out oder in Teilen Ansichtsmodus ausgeführt werden kann, kann sich entweder in einer Klasse compact oder reguläre horizontale Größe auf iPad, unabhängig von der physischen Ausrichtung oder Bildschirm Größe des Geräts ausgeführt gefunden werden.
+Bevor Sie iOS 9 konnte Sie Ihrer app anhand der bestimmten Gerät Bildschirmgrößen und Ausrichtungen entwerfen. Da eine app nun in einem Bereich Folie Out oder in Teilen Ansichtsmodus ausgeführt werden kann, kann sich entweder in einer Klasse compact oder reguläre horizontale Größe auf iPad, unabhängig von der physischen Ausrichtung oder Bildschirm Größe des Geräts ausgeführt gefunden werden.
 
-[ ![](multitasking-images/sizeclasses01.png "Bildschirmgröße und Ausrichtung Überlegungen")](multitasking-images/sizeclasses01.png)
+[![](multitasking-images/sizeclasses01.png "Bildschirmgröße und Ausrichtung Überlegungen")](multitasking-images/sizeclasses01.png#lightbox)
 
 Auf einem iPad hat eine Vollbild-Anwendung reguläre horizontale und vertikale Größe-Klassen. Alle iPhones, aber das iPhone 6 Plus und iPhone 6 s Plus, haben Sie kompakt Klassen in beide Richtungen Ausrichtung. Das iPhone 6 Plus und iPhone 6 s Plus im Querformat haben eine reguläre horizontale Größe-Klasse und einer Compact vertikale Größe-Klasse (ähnlich wie bei einem iPad Mini).
 
 Auf iPads, die Folie über und geteilte Ansicht unterstützen, können Sie die folgenden Kombinationen Schluss:
 
-<table width=100% border="1px">
-    <tr>
-        <td><b>Ausrichtung</b></td>
-        <td><b>Primäre App</b></td>
-        <td><b>Sekundäre App</b></td>
-    </tr>
-    <tr>
-        <td><b>Portrait</b></td>
-        <td>75 % des Bildschirms<br/>Compact Horizontal<br/>Reguläre vertikal</td>
-        <td>25 % des Bildschirms<br/>Compact Horizontal<br/>Reguläre vertikal</td>
-    </tr>
-    <tr>
-        <td><b>Querformat</b></td>
-        <td>75 % des Bildschirms<br/>Reguläre Horizontal<br/>Reguläre vertikal</td>
-        <td>25 % des Bildschirms<br/>Compact Horizontal<br/>Reguläre vertikal</td>
-    </tr>
-    <tr>
-        <td><b>Querformat</b></td>
-        <td>50 % des Bildschirms<br/>Compact Horizontal<br/>Reguläre vertikal</td>
-        <td>50 % des Bildschirms<br/>Compact Horizontal<br/>Reguläre vertikal</td>
-    </tr>
-</table>
+| **Ausrichtung** | **Primäre App** | **Sekundäre App** |
+|--- |--- |--- |
+| **Portrait** |75 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|25 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|
+| **Querformat** |75 % des Bildschirms<br />Reguläre Horizontal<br />Reguläre vertikal|25 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|
+| **Querformat** |50 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|50 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|
 
 Im Beispiel [MuliTask](https://developer.xamarin.com/samples/monotouch/ios9/MultiTask/) app, wenn er Vollbild auf einem iPad im Querformat-Modus ausgeführt wird, wird es der Liste und die Detailansicht gleichzeitig vorhanden:
 
-[ ![](multitasking-images/sizeclasses03.png "Die Liste und der Detailansicht angezeigt, die zur gleichen Zeit")](multitasking-images/sizeclasses03.png)
+[![](multitasking-images/sizeclasses03.png "Die Liste und der Detailansicht angezeigt, die zur gleichen Zeit")](multitasking-images/sizeclasses03.png#lightbox)
 
 Wenn in einem Bereich schieben Sie über die gleiche app ausgeführt wird, wird als Compact horizontale Größe Klasse angeordnet und zeigt nur die Liste:
 
-[ ![](multitasking-images/sizeclasses04.png "Nur der Liste angezeigt, wenn das Gerät horizontale ist")](multitasking-images/sizeclasses04.png)
+[![](multitasking-images/sizeclasses04.png "Nur der Liste angezeigt, wenn das Gerät horizontale ist")](multitasking-images/sizeclasses04.png#lightbox)
 
 Um sicherzustellen, dass Ihre app in diesen Situationen ordnungsgemäß verhält, sollten Sie übernehmen Merkmals Sammlungen zusammen mit der Größe von Klassen und entsprechen dem `IUIContentContainer` und `IUITraitEnvironment` Schnittstellen. Finden Sie in der Apple- [UITraitCollection-Klassenreferenz](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/doc/uid/TP40014202) und unseren [Einführung in Storyboards Unified](~/ios/user-interface/storyboards/unified-storyboards.md) Weitere Informationen.
 
@@ -166,11 +155,11 @@ Jetzt können apps mit iOS 9, eigene benutzerdefinierte Tastenkombinationen erst
 
 **– Registerkarte "Befehl"** wird ein app-Switcher, die dem Benutzer ermöglicht, wechseln Sie schnell zwischen apps über die Tastatur, ähnlich wie die Mac OS bringen:
 
-[ ![](multitasking-images/keyboard01.png "Der Switcher app")](multitasking-images/keyboard01.png)
+[![](multitasking-images/keyboard01.png "Der Switcher app")](multitasking-images/keyboard01.png#lightbox)
 
 Wenn eine app für iOS 9 Tastenkombinationen enthält, die Benutzer kann halten Sie auf der **Befehl**, **Option** oder **Steuerelement** Schlüssel, um sie in einem Popupfenster anzuzeigen:
 
-[ ![](multitasking-images/keyboard02.png "Die Tastatur Tastenkombinationen-popup")](multitasking-images/keyboard02.png)
+[![](multitasking-images/keyboard02.png "Die Tastatur Tastenkombinationen-popup")](multitasking-images/keyboard02.png#lightbox)
 
 #### <a name="defining-custom-keyboard-shortcuts"></a>Definieren von Tastenkombinationen
 
@@ -206,7 +195,7 @@ Als Nächstes überschreiben die `KeyCommands` Eigenschaft und erstellen Sie ein
 
 Wenn beim Ausführen dieser app auf einem iPad mit einer Hardwaretastatur angefügt und vom Benutzer eingegebenen **Befehl N**, ein neuer Eintrag wird zur Liste hinzugefügt werden. Wenn der Benutzer auf gedrückt hält die **Befehl** Schlüssel, die Liste der Verknüpfungen wird angezeigt:
 
-[ ![](multitasking-images/keyboard03.png "Die Tastatur Tastenkombinationen-popup")](multitasking-images/keyboard03.png)
+[![](multitasking-images/keyboard03.png "Die Tastatur Tastenkombinationen-popup")](multitasking-images/keyboard03.png#lightbox)
 
 Sie finden Sie im Beispiel [Multitasking app](http://developer.xamarin.com/samples/monotouch/ios9/MultiTask/) eine Beispiel-Implementierung.
 
@@ -240,7 +229,7 @@ Während Apple bereits vermuten lässt, dass alle apps für iOS 9 Multitasking u
 
 Damit Ihre app Xamarin.iOS opt-Out-of entweder mit einer Folie Out Bereich als oder geteilten Ansicht Modus ausgeführt wird, bearbeiten Sie des Projekts **"Info.plist"** Datei, und überprüfen Sie **Vollbild erfordert**:
 
-[ ![](multitasking-images/fullscreen01.png "Die Entscheidung Out-of Multitasking")](multitasking-images/fullscreen01.png)
+[![](multitasking-images/fullscreen01.png "Die Entscheidung Out-of Multitasking")](multitasking-images/fullscreen01.png#lightbox)
 
 > [!IMPORTANT]
 > **Hinweis:** während Opting-Out-of Multitasking verhindert, dass der Ihrer app in Folie Out "oder" geteilte Ansicht ausgeführt wird, ist es **nicht** verhindern, dass eine andere app ausgeführt schieben, oder ein Bild im Bild Video anzeigt, die zusammen mit Ihrer App.

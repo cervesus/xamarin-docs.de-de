@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e138fc1176c646a2e4e9caf94462028dd7c68e9f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 77365d5ed62b2ef2e81407ab1fa5aef55c592d0b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="bundle-for-mac-app-store"></a>Für den Mac App Store bündeln
 
@@ -25,11 +25,11 @@ In diesem Abschnitt werden die Grundlagen der Erstellung einer Anwendung mit Vis
 
 Ändern Sie die **Konfiguration** auf **Release**, bevor Sie die Optionen zum Codesignieren und Komprimieren aktualisieren. Sie müssen sicherstellen, dass Sie Ihre **Unternehmensidentität** und das von ihnen erstellte Provisioning-Profil verwenden, wenn Sie die Anwendung im App Store anbieten wollen.
 
- [![Bearbeiten der Optionen zum Codesignieren](bundling-images/config02.png "Editing the code signing options")](bundling-images/config02-large.png)
+ [![Bearbeiten der Optionen zum Codesignieren](bundling-images/config02.png "Editing the code signing options")](bundling-images/config02-large.png#lightbox)
 
 Stellen Sie sicher, dass die Option zur Erstellung eines Installer-Pakets in den **Mac Build**-Einstellungen aktiviert ist:
 
-[![Bearbeiten der Buildoptionen](bundling-images/config03.png "Editing the build options")](bundling-images/config03-large.png)
+[![Bearbeiten der Buildoptionen](bundling-images/config03.png "Editing the build options")](bundling-images/config03-large.png#lightbox)
 
 ## <a name="build"></a>Build
 

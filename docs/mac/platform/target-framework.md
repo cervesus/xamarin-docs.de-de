@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: ac4644f65486d70fcbb7da1a03574fb238348313
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f657fc3dd87d5c39d442a863e4acc00ac320b00d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="target-framework"></a>Zielframework
 
@@ -41,12 +41,12 @@ Drei Zielframework-Optionen sind verfügbar für Xamarin.Mac, jeweils mit versch
 Führen Sie folgende Schritte aus, um in den Ziel-Framework-Typ für ein Projekt Xamarin.Mac zu ändern:
 
 1. Öffnen Sie das Xamarin.Mac-Projekt in Visual Studio für Mac.
-2. In der **Projektmappen-Explorer**, doppelklicken Sie auf die Projektdatei, öffnen Sie die **Projektoptionen** (Dialogfeld).
+2. Doppelklicken Sie auf die Projektdatei im **Projektmappen-Explorer**, um die **Projektoptionen** zu öffnen.
 3. Aus der **allgemeine** Registerkarte, wählen Sie den Typ des **Zielframework** , die den Anforderungen Ihrer Anwendung am besten entspricht:
 
-  [![Verwenden Sie das Fenster Projektoptionen zur ein Zielframeworks](target-framework-images/select-target-full.png "verwenden Sie das Fenster Projektoptionen zur ein Zielframeworks")](target-framework-images/select-target-full-large.png)
+  [![Verwenden Sie das Fenster Projektoptionen zur ein Zielframeworks](target-framework-images/select-target-full.png "verwenden Sie das Fenster Projektoptionen zur ein Zielframeworks")](target-framework-images/select-target-full-large.png#lightbox)
 
-4. Klicken Sie auf die **OK** Schaltfläche, um die Änderungen zu speichern.
+4. Klicken Sie auf **OK**, um die Änderungen zu speichern.
 
 Sie sollten **Bereinigen** und dann **neu erstellen** Xamarin.Mac Projekt nach dem Wechsel der Ziel-Framework-Typ.
 

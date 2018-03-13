@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c4a88f875b4082f85b1c5565de2a24548e7b8874
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8e90bc3974247066a714cb44b6648a83cdb58cf5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="push-notifications-in-ios"></a>Pushbenachrichtigungen in iOS
 
@@ -45,37 +45,37 @@ Einem eigenen Zertifikat ist für die Umgebungen, die im vorherigen Abschnitt er
 
 1.  Zum Erstellen go ein Zertifikate für den iOS-Bereitstellungsportal auf der Website von Apple, wie im folgenden Screenshot (Beachten Sie das Menüelement App-IDs auf der linken Seite) dargestellt:
 
-    [ ![](remote-notifications-in-ios-images/image5new.png "Die iOS-Bereitstellungsportal Apples-Website")](remote-notifications-in-ios-images/image5new.png)
+    [![](remote-notifications-in-ios-images/image5new.png "Die iOS-Bereitstellungsportal Apples-Website")](remote-notifications-in-ios-images/image5new.png#lightbox)
 
 2.  Als Nächstes navigieren Sie zum Abschnitt App-IDs aus, und erstellen Sie eine neue app-ID ein, wie im folgenden Screenshot gezeigt:
 
-    [ ![](remote-notifications-in-ios-images/image6new.png "Navigieren Sie zum Abschnitt App-IDs und erstellen Sie eine neue app-ID")](remote-notifications-in-ios-images/image6new.png)
+    [![](remote-notifications-in-ios-images/image6new.png "Navigieren Sie zum Abschnitt App-IDs und erstellen Sie eine neue app-ID")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
 3.  Wenn Sie beim Klicken auf die  **+**  Schaltfläche, Sie werden in der Lage, geben die Beschreibung und eine Paket-ID für die app-ID, wie in der nächste Screenshot dargestellt:
 
-    [ ![](remote-notifications-in-ios-images/image7new.png "Geben Sie die Beschreibung und eine Paket-ID für die app-ID")](remote-notifications-in-ios-images/image7new.png)
+    [![](remote-notifications-in-ios-images/image7new.png "Geben Sie die Beschreibung und eine Paket-ID für die app-ID")](remote-notifications-in-ios-images/image7new.png#lightbox)
 
 4. Stellen Sie sicher, dass **explizite App-ID** und, die die Paket-ID ist nicht mit Enden einer `*` . Dadurch wird einen Bezeichner, die sich gut für mehrere Anwendungen erstellt und Push Notification-Zertifikate müssen für eine einzelne Anwendung sein.
 
 1. Wählen Sie unter "App-Dienste" **Pushbenachrichtigungen**:
 
-    [ ![](remote-notifications-in-ios-images/image8new.png "Aktivieren Sie Pushbenachrichtigungen")](remote-notifications-in-ios-images/image8new.png)
+    [![](remote-notifications-in-ios-images/image8new.png "Aktivieren Sie Pushbenachrichtigungen")](remote-notifications-in-ios-images/image8new.png#lightbox)
 
 2. Drücken Sie **Absenden** Registrierung des neuen App-ID bestätigen:
 
-    [ ![](remote-notifications-in-ios-images/image9new.png "Registrierung der neuen App-ID bestätigen")](remote-notifications-in-ios-images/image9new.png)
+    [![](remote-notifications-in-ios-images/image9new.png "Registrierung der neuen App-ID bestätigen")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
 3.  Als Nächstes müssen Sie das Zertifikat für die app-ID erstellen. Suchen Sie im linken Navigationsbereich, **Zertifikate > alle** , und wählen Sie die `+` Schaltfläche, wie im folgenden Screenshot gezeigt:
 
-    [ ![](remote-notifications-in-ios-images/image10new.png "Erstellen Sie das Zertifikat für die app-ID")](remote-notifications-in-ios-images/image8.png)
+    [![](remote-notifications-in-ios-images/image10new.png "Erstellen Sie das Zertifikat für die app-ID")](remote-notifications-in-ios-images/image8.png#lightbox)
 
 4.  Bestimmen Sie, ob Sie ein Zertifikat Entwicklung oder Produktion verwenden möchten:
 
-    [ ![](remote-notifications-in-ios-images/image11new.png "Wählen Sie ein Zertifikat Entwicklung oder Produktion")](remote-notifications-in-ios-images/image11new.png)
+    [![](remote-notifications-in-ios-images/image11new.png "Wählen Sie ein Zertifikat Entwicklung oder Produktion")](remote-notifications-in-ios-images/image11new.png#lightbox)
 
 5. Und wählen Sie dann die neue App-ID, die wir gerade erstellt haben:
 
-    [ ![](remote-notifications-in-ios-images/image12new.png "Wählen Sie die soeben erstellte neue App-ID")](remote-notifications-in-ios-images/image12new.png)
+    [![](remote-notifications-in-ios-images/image12new.png "Wählen Sie die soeben erstellte neue App-ID")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
 6.  Anweisungen, die Sie durch die Erstellung dauert wird angezeigt ein *Zertifikatsignieranforderung* mithilfe der **Schlüsselbundverwaltung** Anwendung auf Ihrem Mac.
 
@@ -85,11 +85,11 @@ Einem eigenen Zertifikat ist für die Umgebungen, die im vorherigen Abschnitt er
 
 9.  Öffnen Sie nach der Erstellung der Bereitstellungsprofil **Xcode-Planer** und aktualisieren Sie sie. Wenn die provisioning-Profil, die Sie erstellt wird, dass es möglicherweise erforderlich sein, das Profil von iOS-Bereitstellungsportal herunterladen und importieren Sie ihn manuell nicht angezeigt. Der folgende Screenshot zeigt ein Beispiel für den Planer mit dem für die Bereitstellung Profil hinzugefügt:
 
-    [ ![](remote-notifications-in-ios-images/image13new.png "Dieser Screenshot zeigt ein Beispiel für den Planer mit dem für die Bereitstellung Profil hinzugefügt")](remote-notifications-in-ios-images/image13new.png)
+    [![](remote-notifications-in-ios-images/image13new.png "Dieser Screenshot zeigt ein Beispiel für den Planer mit dem für die Bereitstellung Profil hinzugefügt")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
 10.  An diesem Punkt müssen wir das Xamarin.iOS-Projekt, um die neu erstellten provisioning-Profil verwenden, konfigurieren. Dies erfolgt aus **Projektoptionen** Dialogfeld unter **iOS Bundle Signing** Registerkarte, wie im folgenden Screenshot gezeigt:
 
-    [ ![](remote-notifications-in-ios-images/image11.png "Konfigurieren Sie das Projekt Xamarin.iOS Verwendung neu erstellten provisioning-Profil")](remote-notifications-in-ios-images/image11.png)
+    [![](remote-notifications-in-ios-images/image11.png "Konfigurieren Sie das Projekt Xamarin.iOS Verwendung neu erstellten provisioning-Profil")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ef016d963f710ff54fc57b5e6e57181df030c8f6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e67646e5072f703af71fc3f0a7901fd8485f9710
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>Implementieren eine HybridWebView
 
@@ -151,7 +151,7 @@ Der Prozess zum Erstellen der benutzerdefinierten Rendererklasse lautet wie folg
 1. Hinzufügen einer `ExportRenderer` -Attribut auf die benutzerdefinierten Renderer-Klasse, um anzugeben, dass es zum Rendern des benutzerdefinierten Steuerelements mit Xamarin.Forms verwendet werden soll. Dieses Attribut wird verwendet, um den benutzerdefinierten Renderer mit Xamarin.Forms zu registrieren.
 
 > [!NOTE]
-> **Hinweis**: für die meisten Xamarin.Forms Elemente ist optional, um einen benutzerdefinierten Renderer in jedem plattformprojekt bereitzustellen. Wenn ein benutzerdefinierter Renderer nicht registriert ist, wird der Standardrenderer für die Basisklasse für das Steuerelement verwendet werden. Benutzerdefinierte Renderer sind jedoch erforderlich, in jede plattformprojekt beim Rendern einer [Ansicht](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) Element.
+> Für die meisten Xamarin.Forms Elemente ist optional, geben Sie einen benutzerdefinierten Renderer in jedem plattformprojekt. Wenn ein benutzerdefinierter Renderer nicht registriert ist, wird der Standardrenderer für die Basisklasse für das Steuerelement verwendet werden. Benutzerdefinierte Renderer sind jedoch erforderlich, in jede plattformprojekt beim Rendern einer [Ansicht](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) Element.
 
 Das folgende Diagramm veranschaulicht die Zuständigkeiten aller Projekte in der beispielanwendung, sowie die Beziehungen zwischen ihnen:
 
@@ -316,7 +316,7 @@ Diese Funktionalität wird folgendermaßen erreicht:
   - Ressourcen werden freigegeben.
 
 > [!NOTE]
-> **Hinweis**: die `WKWebView` Klasse wird nur in iOS 8 und höher unterstützt.
+> Die `WKWebView` Klasse wird nur in iOS 8 und höher unterstützt.
 
 ### <a name="creating-the-custom-renderer-on-android"></a>Erstellen von benutzerdefinierten Renderers für Android
 
@@ -411,7 +411,7 @@ public class JSBridge : Java.Lang.Object
 Die Klasse ableiten muss `Java.Lang.Object`, und Methoden, die an JavaScript verfügbar gemacht werden müssen ergänzt werden, mit der `[JavascriptInterface]` und `[Export]` Attribute. Aus diesem Grund, wenn die `invokeCSharpAction` JavaScript-Funktion wird in die Webseite eingefügt und wird ausgeführt, er ruft die `JSBridge.InvokeAction` Methode aufgrund ergänzt wird, mit der `[JavascriptInterface]` und `[Export("invokeAction")]` Attribute. Wiederum die `InvokeAction` Methode ruft die `HybridWebView.InvokeAction` Methode wird aufgerufen, die registrierte Aktion aus, um das Popup anzuzeigen.
 
 > [!NOTE]
-> **Hinweis**: Projekten, in denen die `[Export]` Attribut umfasst einen Verweis auf `Mono.Android.Export`, oder ein Compilerfehler führt.
+> Projekten, in denen die `[Export]` Attribut umfasst einen Verweis auf `Mono.Android.Export`, oder ein Compilerfehler führt.
 
 Beachten Sie, dass die `JSBridge` -Klasse verwaltet eine `WeakReference` auf die `HybridWebViewRenderer` Klasse. Dies ist zu vermeiden, erstellen einen Zirkelbezug zwischen den beiden Klassen. Weitere Informationen finden Sie unter [schwache Verweise](https://msdn.microsoft.com/library/ms404247(v=vs.110).aspx) auf MSDN.
 

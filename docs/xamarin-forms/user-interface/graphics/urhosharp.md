@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/11/2016
-ms.openlocfilehash: 7937e80b13ca7e3ecec1dc179adade666bd90635
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9cbc756c5ba61d764404ffabd347232a25dbdc58
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Verwenden von UrhoSharp in Xamarin.Forms
 
@@ -33,7 +33,7 @@ Vor der Verwendung UrhoSharp, müssen Entwickler ihre Projektmappe das UrhoSharp
 Das UrhoSharp.Forms NuGet-Paket enthält alle Objekte, die zum Erstellen von Objekten UrhoSharp erforderlich. Das UrhoSharp.Forms NuGet-Paket enthält die `UrhoSurface` -Klasse, die zum Host UrhoSharp in Xamarin.Forms verwendet wird.
 Um zu beginnen, mit der Maustaste, auf der PCL **Pakete** Ordner, und wählen **Pakete hinzufügen...** . Geben Sie den Suchbegriff **UrhoSharp.Forms**Option **UrhoSharp für Xamarin.Forms**, klicken Sie dann auf **Paket hinzufügen**.
 
-[ ![](urhosharp-images/add-package-sml.png "Pakete-Dialogfeld "hinzufügen"")](urhosharp-images/add-package.png "Pakete-Dialogfeld "hinzufügen"")
+[![](urhosharp-images/add-package-sml.png "Pakete-Dialogfeld "hinzufügen"")](urhosharp-images/add-package.png#lightbox "Pakete-Dialogfeld "hinzufügen"")
 
 Das UrhoSharp.Forms NuGet-Paket wird dem Projekt hinzugefügt werden:
 

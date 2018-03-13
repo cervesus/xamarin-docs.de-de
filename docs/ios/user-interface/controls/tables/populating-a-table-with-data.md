@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: fb0e4341d8d8ad0719f35c691add9bad1d3f85a8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fe62b917946dda4cf669f5b15c91a5e3b596a0fc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="populating-a-table-with-data"></a>Auffüllen einer Tabelle mit Daten
 
@@ -88,7 +88,7 @@ public override void ViewDidLoad ()
 
 Die daraus resultierende Tabelle sieht wie folgt:
 
- [ ![](populating-a-table-with-data-images/image3.png "Beispiel für die Tabelle ausgeführt wird")](populating-a-table-with-data-images/image3.png)
+ [![](populating-a-table-with-data-images/image3.png "Beispiel für die Tabelle ausgeführt wird")](populating-a-table-with-data-images/image3.png#lightbox)
 
 Die meisten Tabellen ermöglicht dem Benutzer, eine Zeile aus, um Sie auszuwählen, und führen Sie eine andere Aktion (z. B. Wiedergabe eines Musiktitels Aufrufen eines Kontakts oder einem anderen Bildschirm anzeigen) zu berühren. Um dies zu erreichen, gibt es einige Dinge, die erforderlich ist. Zunächst erstellen wir eine AlertController um eine Meldung angezeigt wird, wenn der Benutzer durch das Hinzufügen der folgenden, klicken Sie auf eine Zeile auf die `RowSelected` Methode:
 
@@ -140,7 +140,7 @@ Jetzt kann der Benutzer eine Zeile berühren, und eine Warnung wird angezeigt:
 
 
 
- [ ![](populating-a-table-with-data-images/image4.png "Die ausgewählte Zeile-Warnung")](populating-a-table-with-data-images/image4.png)
+ [![](populating-a-table-with-data-images/image4.png "Die ausgewählte Zeile-Warnung")](populating-a-table-with-data-images/image4.png#lightbox)
 
 
 ## <a name="cell-reuse"></a>Zelle Wiederverwendung
@@ -220,7 +220,7 @@ Sehen Sie Beispiele für die im oben erläuterten Themen der **BasicTable** Beis
 
 Ein Index hilft dem Benutzer, die einen Bildlauf durch lange Listen, die in der Regel alphabetisch sortiert werden, obwohl Sie indizieren können von Ihnen ausgewählten Kriterien werden sollen. Die **BasicTableIndex** Beispiel lädt eine längere Liste von Elementen aus einer Datei, um den Index zu veranschaulichen. Jedes Element im Index entspricht zu einem Abschnitt der Tabelle.
 
- [ ![](populating-a-table-with-data-images/image5.png "Die Index-Anzeige")](populating-a-table-with-data-images/image5.png)
+ [![](populating-a-table-with-data-images/image5.png "Die Index-Anzeige")](populating-a-table-with-data-images/image5.png#lightbox)
 
 Zur Unterstützung von "Abschnitte" z. B. Daten hinter der Tabelle gruppiert werden, müssen, damit das Beispiel BasicTableIndex erstellt eine `Dictionary<>` aus dem Array von Zeichenfolgen, die den ersten Buchstaben jedes Elements als Wörterbuchschlüssel verwenden:
 
@@ -270,7 +270,7 @@ Indizes werden im Allgemeinen nur mit einfachen Tabellenformat verwendet.
 Kopf- und Fußzeilen können verwendet werden, um Zeilen in einer Tabelle visuell zu gruppieren. Die Datenstruktur, die erforderlich ist sehr ähnlich, einen Index hinzufügen – `Dictionary<>` wirklich gut funktioniert. Anstatt das Alphabet um Zellen zu gruppieren, wird in diesem Beispiel wird die Gemüse botanischen Typ gruppieren.
 Die Ausgabe sieht wie folgt aus:
 
- [ ![](populating-a-table-with-data-images/image6.png "Beispiel Kopf- und Fußzeilen")](populating-a-table-with-data-images/image6.png)
+ [![](populating-a-table-with-data-images/image6.png "Beispiel Kopf- und Fußzeilen")](populating-a-table-with-data-images/image6.png#lightbox)
 
 Um die Anzeige von Kopf- und Fußzeilen der `UITableViewSource` Unterklasse erfordert diese zusätzlichen Methoden:
 

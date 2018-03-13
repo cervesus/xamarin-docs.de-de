@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: dbe88f39999ee163ff2e7cdf4b9301aa0f0681bc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ad057f55ed69174bef55c0364e5e7ea30bae2789
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="device-styles"></a>Geräte-Stile
 
@@ -115,7 +115,7 @@ Die *Gerät* Stile respektieren Voreinstellungen für die Barrierefreiheit, dami
 
 Die folgenden Screenshots zeigen Gerät Formatvorlagen auf jeder Plattform mit den kleinsten Schriftgrad für zugegriffen werden kann:
 
-[![](device-images/minimum-size.png "Zugegriffen werden kann, kleine Gerät Formatvorlagen auf jeder Plattform")](device-images/minimum-size-large.png "zugegriffen werden kann, kleine Gerät Formatvorlagen auf jeder Plattform")
+[![](device-images/minimum-size.png "Zugegriffen werden kann, kleine Gerät Formatvorlagen auf jeder Plattform")](device-images/minimum-size-large.png#lightbox "zugegriffen werden kann, kleine Gerät Formatvorlagen auf jeder Plattform")
 
 Die folgenden Screenshots zeigen Gerät Formatvorlagen auf jeder Plattform mit den größten Schriftgrad für zugegriffen werden kann:
 

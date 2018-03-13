@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 84450527a1301cf95c93a5dc2796a2cf76f4ae2b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3a66ec9f935159e4854a12584a6c9f70ab805abb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-an-effect"></a>Erstellen eines Effekts
 
@@ -29,7 +29,7 @@ Der Prozess zum Erstellen eines Effekts in jedem Projekt plattformspezifischen l
 Die Auswirkungen kann dann verwendet werden, indem Sie sie auf das entsprechende Steuerelement anfügen.
 
 > [!NOTE]
-> **Hinweis**: ist er optional ein Effekts in jede plattformprojekt bereitstellen. Bei dem Versuch, eine Auswirkung zu verwenden, wenn ein solcher registriert ist nicht gibt einen Wert ungleich Null zurück, der keine Aktionen ausführt.
+> Ist er optional ein Effekts in jede plattformprojekt bereitstellen. Bei dem Versuch, eine Auswirkung zu verwenden, wenn ein solcher registriert ist nicht gibt einen Wert ungleich Null zurück, der keine Aktionen ausführt.
 
 Die beispielanwendung für veranschaulicht eine `FocusEffect` die Farbe des Hintergrunds eines Steuerelements ändert, wenn es den Fokus erhält. Das folgende Diagramm veranschaulicht die Zuständigkeiten aller Projekte in der beispielanwendung, sowie die Beziehungen zwischen ihnen:
 
@@ -195,7 +195,7 @@ Der Prozess für die Nutzung eines Effekts aus einer Xamarin.Forms Portable Klas
 1. Fügen Sie die Auswirkungen auf das Steuerelement, indem Sie des Steuerelements hinzugefügt [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) Auflistung.
 
 > [!NOTE]
-> **Hinweis**: eine Auswirkung-Instanz kann nur auf einem einzelnen Steuerelement angefügt werden. Aus diesem Grund muss ein Effekt zweimal, um es auf zwei Steuerelementen verwenden aufgelöst werden.
+> Eine Auswirkung-Instanz kann nur ein einzelnes Steuerelement zugeordnet werden. Aus diesem Grund muss ein Effekt zweimal, um es auf zwei Steuerelementen verwenden aufgelöst werden.
 
 ## <a name="consuming-the-effect-in-xaml"></a>Nutzen den Effekt in XAML
 

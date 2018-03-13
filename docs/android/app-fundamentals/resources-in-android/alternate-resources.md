@@ -6,12 +6,12 @@ ms.assetid: AE5A864E-192D-475E-C731-99249C2E7D9E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e421a52b1ae97b0beef59352a756401ed661051e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 7ebbf2a9215c8472ae2f286728cb2f819e8331cb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alternate-resources"></a>Alternative Ressourcen
 
@@ -142,7 +142,7 @@ Android bestimmt die Ressourcen, die Basis, indem der folgende Test des Regeln d
 
 Diese Regeln sind auch im folgenden Flussdiagramm dargestellt:
 
-[![Ressourcen-Flussdiagramm](alternate-resources-images/flowchart-sml.png)](alternate-resources-images/flowchart.png)
+[![Ressourcen-Flussdiagramm](alternate-resources-images/flowchart-sml.png)](alternate-resources-images/flowchart.png#lightbox)
 
 Wenn das System nach Dichte-spezifischen Ressourcen sucht und nicht werden gefunden kann, wird versucht, andere Dichte bestimmte Ressourcen suchen und zu skalieren. Android sind nicht unbedingt die Standardressourcen verwenden.
 Beispielsweise bei der Suche nach einer Ressource mit geringer Dichte nicht verfügbar ist, kann Android HD-Version der Ressource für die Standardinstanz oder eine mittlere Dichte Ressourcen auswählen. Es liegt daran, dass die HD-Ressource mit einem Faktor von 0,5 skaliert werden kann nach unten zu weniger Sichtbarkeit Probleme führt als Abwärtsskalierung aktuell eine mittlere Dichte-Ressource, um den Faktor 0,75 müsste.
@@ -196,4 +196,4 @@ Als Nächstes wird der Qualifizierer für den Bildschirm Dichte `ldpi`, was dazu
 Als Ergebnis dieses Vorgangs wird Android zeichenbaren Ressourcen verwenden, in das Ressourcenverzeichnis `drawable-en-port-ldpi` für das Gerät.
 
 > [!NOTE]
-> **Hinweis:** Qualifizierer Größe Bildschirm geben Sie eine Ausnahme zu dieser Auswahlprozesses verwendet werden. Es ist möglich, für Android Ressourcen auswählen, die für einen kleineren Bildschirm als welche das aktuelle Gerät stellt vorgesehen sind. Z. B. einem großen Bildschirmgerät möglicherweise verwenden Sie die Ressourcen für einen normal großen Bildschirm bereitzustellen. Jedoch das Gegenteil dieses nicht erfüllt ist: das gleiche großen Bildschirmgerät wird nicht für einen Bildschirm Xlarge bereitgestellten Ressourcen verwenden. Android einen Ressourcensatz gefunden, der eine bestimmte Bildschirmgröße entspricht, stürzt die Anwendung.
+> Der Bildschirm Größe Qualifizierer bieten eine Ausnahme zu dieser Auswahlprozesses verwendet werden. Es ist möglich, für Android Ressourcen auswählen, die für einen kleineren Bildschirm als welche das aktuelle Gerät stellt vorgesehen sind. Z. B. einem großen Bildschirmgerät möglicherweise verwenden Sie die Ressourcen für einen normal großen Bildschirm bereitzustellen. Jedoch das Gegenteil dieses nicht erfüllt ist: das gleiche großen Bildschirmgerät wird nicht für einen Bildschirm Xlarge bereitgestellten Ressourcen verwenden. Android einen Ressourcensatz gefunden, der eine bestimmte Bildschirmgröße entspricht, stürzt die Anwendung.

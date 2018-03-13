@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1ad3c193261bf22b7ee344aa1ccabb226533b907
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dc6146670c4b5f7d29491335b4719e032487dcce
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Debuggen von Android Abnutzung in einem Emulator
 
@@ -28,14 +28,14 @@ Um Ihre Abnutzung-app in einem Emulator auszuführen, müssen Sie installieren d
 
 Wenn Sie ein Abnutzung virtuelles Gerät erstellen, wählen Sie ein Android Dach Geräteprofil (z. B. **Android Abnutzung Quadrat**). Verwenden Sie zum Verbessern der Leistung der Abnutzung **X86** CPU/ABI wie in diesem Beispiel dargestellt:
 
-[![Beispielkonfiguration für Abnutzung virtuelles Gerät](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png)
+[![Beispielkonfiguration für Abnutzung virtuelles Gerät](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png#lightbox)
 
 
 ## <a name="launch-the-wear-virtual-device"></a>Starten Sie den virtuellen Abnutzung-Gerät 
 
 Nachdem Sie ein virtuelles Gerät mit Android Dach erstellt haben, können Sie es aus dem Pulldownmenü Gerät in der IDE auswählen, bevor Sie das Debuggen starten. Wenn Ihr virtuelle Gerät nicht in der Pulldownliste Gerät verfügbar ist, stellen Sie sicher, dass das Projekt ein Android ist *Dach* app-Projekt (nicht mit einem Android-app-Projekt) und dass ihr Ziel API-Ebene, auf die gleiche API festgelegt ist-Ebene als das virtuelle Gerät. Zum Beispiel:
 
-[ ![Auswählen einer Dach AVD in Visual Studio-Gerät-Menü](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png)
+[![Auswählen einer Dach AVD in Visual Studio-Gerät-Menü](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
 
 Nachdem die Android-Emulator gestartet wurde, wird Xamarin.Android Abnutzung-app auf dem Emulator bereitzustellen. Der Emulator führt die App mit dem Image des konfigurierten virtuellen Geräts aus.
 

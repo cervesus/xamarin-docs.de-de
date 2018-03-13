@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/02/2017
-ms.openlocfilehash: b7756c63901d3b4fbfea70587b3fdf8e5cf9df72
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 965d4987c154acc5a2f95d4ca622266ebdc2a1c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="synchronizing-offline-data-with-azure-mobile-apps"></a>Synchronisieren von Offline-Daten mit Azure Mobile Apps
 
@@ -133,7 +133,7 @@ Die `IMobileServiceSyncTable.PushAsync` Methode arbeitet mit den Synchronisierun
 Pull erfolgt durch die `IMobileServiceSyncTable.PullAsync` Methode für eine einzelne Tabelle. Der erste Parameter für die `PullAsync` Methode wird einen Abfragenamen ein, die nur auf dem mobilen Gerät verwendet wird. Mit einer Abfrage ungleich Null Name-Ergebnissen bei der Ausführung von Azure Mobile Client-SDK ein *inkrementelle Synchronisierung*, jedes Mal eine Pullvorgang Ergebnisse, die neuesten zurück `updatedAt` Zeitstempel aus den Ergebnissen in der lokalen gespeichert ist Systemtabellen. Nachfolgende Pull-Vorgängen abrufen dann nur Datensätze nach diesem Zeitstempel. Alternativ können Sie *vollständige Synchronisierung* kann erreicht werden, indem Sie übergeben `null` als Name der Abfrage, was dazu führt, in allen Datensätzen, die auf jeden Pullvorgang abgerufen wird. Nach jeder Synchronisierungsvorgang werden die empfangene Daten in den lokalen Speicher eingefügt.
 
 > [!NOTE]
-> **Hinweis**: Wenn ein Pullabonnement für eine Tabelle, die lokale Updates ausstehen ausgeführt wird, führen die Pull einen Push zuerst im Kontext der Synchronisierung. Dies minimiert die Konflikte zwischen Änderungen, die bereits in der Warteschlange befinden und neue Daten aus der Azure-Mobile Apps-Instanz.
+> Wenn Sie ein Pullabonnement für eine Tabelle ausgeführt wird, die lokale Updates ausstehen, wird der Pullvorgang zuerst einen Push auf den Kontext für die Synchronisierung ausgeführt. Dies minimiert die Konflikte zwischen Änderungen, die bereits in der Warteschlange befinden und neue Daten aus der Azure-Mobile Apps-Instanz.
 
 Die `SyncAsync` -Methode enthält auch eine grundlegende Implementierung für die Behandlung von Konflikten, wenn derselbe Datensatz im lokalen Speicher und in Azure Mobile Apps-Instanz geändert wurde. Wenn der Konflikt wird, dass Daten sowohl im lokalen Speicher und in der Azure-Mobile Apps-Instanz aktualisiert wurde die `SyncAsync` Methode aktualisiert die Daten im lokalen Speicher aus den Daten in der Azure-Mobile Apps-Instanz gespeichert. Wenn alle anderen Konflikt auftritt, die `SyncAsync` -Methode werden die lokale Änderung verworfen. Verarbeitet das Szenario vorhanden ist, in denen eine Änderung der lokale für Daten, die aus der Azure Mobile Apps-Instanz gelöscht worden ist.
 
@@ -150,7 +150,7 @@ await todoTable.PurgeAsync(todoTable.Where(item => item.Done));
 Ein Aufruf von `PurgeAsync` auch löst einen Push-Vorgang. Aus diesem Grund werden alle Elemente, die lokal als abgeschlossen markiert sind mit der Azure-Mobile Apps-Instanz gesendet werden, aus dem lokalen Speicher entfernt. Allerdings Vorgänge ausstehend Synchronisierung mit der Azure-Mobile Apps-Instanz vorhanden sind, die Bereinigung wird auszulösen, wenn ein `InvalidOperationException` , sofern die `force` Parameter auf festgelegt ist `true`. Eine alternative Strategie besteht darin, überprüfen Sie die `IMobileServiceSyncContext.PendingOperations` Eigenschaft, die die Anzahl der ausstehenden Vorgänge, die noch nicht mit der Azure-Mobile Apps-Instanz ein Push ausgeführt wurde zurückgibt, und nur die Bereinigung durchführen, wenn die Eigenschaft auf 0 (null) ist.
 
 > [!NOTE]
-> **Hinweis**: Aufrufen von `PurgeAsync` mit der `force` Parametersatz auf `true` verlieren alle ausstehenden Änderungen.
+> Aufrufen von `PurgeAsync` mit der `force` Parametersatz auf `true` verlieren alle ausstehenden Änderungen.
 
 ## <a name="initiating-synchronization"></a>Initiieren der Synchronisierung
 

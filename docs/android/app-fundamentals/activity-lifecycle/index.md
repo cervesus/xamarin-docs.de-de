@@ -7,12 +7,12 @@ ms.assetid: 05B34788-F2D2-4347-B66B-40AFD7B1D167
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: ccd55d4d7f1aea55110e109bed1fbd4ebc90b93f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 02/28/2018
+ms.openlocfilehash: 335e63ce5a36cbd0172744a35c82920853b82e5c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="activity-lifecycle"></a>Aktivitätslebenszyklus
 
@@ -44,7 +44,7 @@ Android Aktivitäts-Lebenszyklus umfasst eine Auflistung von Methoden, die inner
 
 Android-Betriebssysteme verhandelt Aktivitäten, die basierend auf ihren Zustand. Dadurch wird die Android-Aktivitäten zu identifizieren, die nicht mehr verwendet, sodass das Betriebssystem, Arbeitsspeicher und Ressourcen freizugeben. Das folgende Diagramm veranschaulicht die Zustände an, die eine Aktivität während seiner Lebensdauer durchlaufen kann:
 
-[ ![Status-Aktivitätsdiagramm](images/image1-sml.png)](images/image1.png)
+[![Status-Aktivitätsdiagramm](images/image1-sml.png)](images/image1.png#lightbox)
 
 Diese Zustände können wie folgt in 4 Hauptgruppen unterteilt werden:
 
@@ -69,7 +69,7 @@ Wir behandeln diese später in der [Status in der gesamten der Lebenszyklus verw
 
 Android SDK und durch Erweiterung auch das Framework Xamarin.Android, geben Sie ein leistungsfähiges Modell für die Verwaltung des Status von Aktivitäten innerhalb einer Anwendung. Wenn eine Aktivität Zustand sich ändert, wird die Aktivität vom Betriebssystem, benachrichtigt der spezifische Methoden in der jeweiligen Aktivität aufruft. Das folgende Diagramm veranschaulicht diese Methoden in Beziehung zu den Lebenszyklus der Aktivität:
 
-[ ![Flussdiagramm der Aktivität-Lebenszyklus](images/image2-sml.png)](images/image2.png)
+[![Flussdiagramm der Aktivität-Lebenszyklus](images/image2-sml.png)](images/image2.png#lightbox)
 
 Als Entwickler können Sie Zustandsänderungen behandeln, durch das Überschreiben dieser Methoden innerhalb einer Aktivität. Es ist wichtig, beachten Sie jedoch, dass Lebenszyklusmethoden alle an der UI-Thread aufgerufen werden und das Betriebssystem blockiert verhindert das nächste Segment der UI-Arbeit, z. B. zum Ausblenden von der aktuellen Aktivität eine neue Aktivität usw. anzeigen. Daher sollte Code in diesen Methoden so kurz wie möglich ist, stellen eine Anwendung, die den Eindruck gut funktioniert. Lang andauernden Aufgaben sollten in einem Hintergrundthread ausgeführt werden.
 
@@ -205,7 +205,7 @@ Die nächste Lifecycle-Methode wird aufgerufen, nachdem `OnRestart` werden `OnSt
 
 Viele Android-Geräte sind zwei unterschiedliche Schaltflächen: Schaltfläche "Zurück" und eine Schaltfläche "Start". Ein Beispiel hierfür kann im folgenden Screenshot von Android 4.0.3 angezeigt werden:
 
-[ ![Schaltflächen zurück und Homepage](images/image4-sml.png)](images/image4.png)
+[![Schaltflächen zurück und Homepage](images/image4-sml.png)](images/image4.png#lightbox)
 
 Besteht ein feine Unterschied zwischen den zwei Schaltflächen, obwohl sie haben die gleiche Auswirkung von Inkonsistenzen einer Anwendung im Hintergrund angezeigt werden. Klickt ein Benutzer auf die Schaltfläche "zurück", werden sie Android darüber informiert, dass sie die Aktivität abgeschlossen haben. Android wird die Aktivität dann gelöscht. Im Gegensatz dazu klickt der Benutzer die Schaltfläche "Start" die Aktivität ist lediglich abgelegt Hintergrund &ndash; Android wird die Aktivität nicht beenden.
 
@@ -225,7 +225,6 @@ Diese gespeicherte Status wird als Instanzstatus bezeichnet. Android bietet drei
 
 Dieser Leitfaden behandelt die ersten beiden Optionen.
 
- <a name="Bundle_State" />
 
 
 ### <a name="bundle-state"></a>Bundle-Status
@@ -241,7 +240,7 @@ Eine Aktivität enthält Methoden, um besser zu speichern und Abrufen des Instan
 
 Das folgende Diagramm veranschaulicht, wie diese Methoden verwendet werden:
 
-[ ![Flussdiagramm der Paket-Zustände](images/image3-sml.png)](images/image3.png)
+[![Flussdiagramm der Paket-Zustände](images/image3-sml.png)](images/image3.png#lightbox)
 
 #### <a name="onsaveinstancestate"></a>OnSaveInstanceState
 
@@ -276,7 +275,7 @@ protected override void OnCreate (Bundle bundle)
 
 Der obige Code inkrementiert den Wert einer ganzen Zahl namens `c` beim Klicken auf eine Schaltfläche mit dem Namen `incrementCounter` geklickt wird, Anzeigen des Ergebnisses in einer `TextView` mit dem Namen `output`. Eine konfigurationsänderung Fall – z. B. wenn das Gerät gedreht wird – der obige Code verliert den Wert der `c` da die `bundle` wäre `null`, wie in der folgenden Abbildung dargestellt:
 
-[ ![Anzeige wird vorherigen Wert nicht angezeigt werden.](images/07-sml.png)](images/07.png)
+[![Anzeige wird vorherigen Wert nicht angezeigt werden.](images/07-sml.png)](images/07.png#lightbox)
 
 Den Wert des beibehalten `c` in diesem Beispiel wird die Aktivität kann außer Kraft setzen `OnSaveInstanceState`, den Wert im Paket zu speichern, wie unten dargestellt:
 
@@ -295,10 +294,9 @@ c = bundle.GetInt ("counter", -1);
 ```
 
 > [!NOTE]
-> **Hinweis:** es ist wichtig, immer Aufruf auf die grundlegende Implementierung der `OnSaveInstanceState` , damit der Status der Hierarchie anzeigen auch gespeichert werden kann.
+> Es ist wichtig, immer Aufruf auf die grundlegende Implementierung der `OnSaveInstanceState` , damit der Status der Hierarchie anzeigen auch gespeichert werden kann.
 
 
-<a name="View_State" />
 
 ##### <a name="view-state"></a>Ansichtszustand
 
@@ -312,7 +310,7 @@ c = bundle.GetInt ("counter", -1);
 
 Da die `EditText` Steuerelement verfügt über eine `id` zugewiesen, wenn der Benutzer einige Daten gibt und das Gerät dreht, die Daten werden weiterhin angezeigt, wie unten dargestellt:
 
-[ ![Daten werden im Querformat beibehalten.](images/08-sml.png)](images/08.png)
+[![Daten werden im Querformat beibehalten.](images/08-sml.png)](images/08.png#lightbox)
 
 #### <a name="onrestoreinstancestate"></a>OnRestoreInstanceState
 
@@ -334,8 +332,6 @@ Diese Methode ist vorhanden, um einige Flexibilität im Hinblick auf bereitstell
 Ein Beispiel für das Speichern von Status mit einer `Bundle`, finden Sie in der [Exemplarische Vorgehensweise – Speichern der Aktivitätszustand](saving-state.md).
 
 
-<a name="Bundle_Limitations" />
-
 #### <a name="bundle-limitations"></a>Bundle-Einschränkungen
 
 Obwohl `OnSaveInstanceState` ist es einfach, um flüchtige Daten zu speichern, gelten einige Einschränkungen:
@@ -348,7 +344,6 @@ Obwohl `OnSaveInstanceState` ist es einfach, um flüchtige Daten zu speichern, g
 
 Bundle-Status eignet sich für einfache Datentypen, die nicht viel Arbeitsspeicher verwendet, wohingegen *nichtkonfigurationsdomänen für Instanzdaten* ist nützlich für komplexere Daten oder Daten, die abzurufenden aufwendig ist, z. B. einen Webdienstaufruf oder eine komplizierte Datenbankabfrage. Nach Bedarf, ruft Instanzdaten nicht-Konfiguration in einem Objekt gespeichert. Im nächste Abschnitt führt `OnRetainNonConfigurationInstance` als eine Möglichkeit, komplexe Datentypen über Änderungen an der Konfiguration beibehalten.
 
-<a name="Persisting_Complex_Data" />
 
 ### <a name="persisting-complex-data"></a>Komplexe Daten beibehalten
 
@@ -407,7 +402,7 @@ public class NonConfigInstanceActivity : ListActivity
 
 Dieser Code Ruft die Ergebnisse aus dem Web als JSON formatierten ab, analysiert diese und präsentiert die Ergebnisse dann in einer Liste aus, wie im folgenden Screenshot gezeigt:
 
-[ ![Auf dem Bildschirm angezeigten Ergebnisse](images/06-sml.png)](images/06.png)
+[![Auf dem Bildschirm angezeigten Ergebnisse](images/06-sml.png)](images/06.png#lightbox)
 
 Tritt eine konfigurationsänderung – z. B., wenn ein Gerät gedreht wird - wird der Code der Prozess wiederholt. Zum wiederverwenden, die ursprünglich abgerufenen Ergebnisse und nicht dazu, dass unnötige, redundanten Netzwerke aufzurufen, verwenden wir `OnRetainNonconfigurationInstance` um die Ergebnisse zu speichern, wie unten dargestellt:
 

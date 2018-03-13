@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 848db0af436ad43e07e68de4d278f641ab83136d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c806eb51be5f585f2c94b438f6ca31a70aaa7551
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough--using-touch-in-ios"></a>Exemplarische Vorgehensweise – Touch mit iOS
 
@@ -24,9 +24,11 @@ Diese exemplarische Vorgehensweise veranschaulicht das Schreiben von Code, der a
 Jeder Abschnitt enthält Anweisungen, um den Code von Grund auf neu zu schreiben.
 Die [starten Beispielcode](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start) enthält bereits einen vollständige Menüs "" und "Storyboard-Bildschirm:
 
- [ ![](ios-touch-walkthrough-images/image3.png "Das Beispiel enthält Menü Bildschirm")](ios-touch-walkthrough-images/image3.png)
+ [![](ios-touch-walkthrough-images/image3.png "Das Beispiel enthält Menü Bildschirm")](ios-touch-walkthrough-images/image3.png#lightbox)
 
 Gehen Sie folgendermaßen vor, um das Storyboard Code hinzu, und erfahren Sie mehr über die verschiedenen Typen von touchereignissen verfügbar im iOS. Öffnen Sie alternativ die [fertig gestellten Beispiel](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_final) alles anzeigen.
+
+<a name="Touch_Samples"/>
 
 ## <a name="touch-samples"></a>Touch-Beispiele
 
@@ -35,7 +37,7 @@ In diesem Beispiel werden einige der Touch-APIs beispielmedienobjekt. Führen Si
 
 1. Öffnen Sie das Projekt **Touch_Start**. Zuerst führen Sie das Projekt, um sicherzustellen, dass alles ist zulässig und Toucheingabe der **berühren Beispiele** Schaltfläche. Einen Bildschirm ähnlich der folgenden sollte angezeigt werden (auch wenn keine der Schaltflächen funktioniert):
     
-    [![](ios-touch-walkthrough-images/image4.png "Beispiel-app ausführen, arbeitsfreie-Schaltflächen")](ios-touch-walkthrough-images/image4.png)
+    [![](ios-touch-walkthrough-images/image4.png "Beispiel-app ausführen, arbeitsfreie-Schaltflächen")](ios-touch-walkthrough-images/image4.png#lightbox)
 
 
 1. Bearbeiten Sie die Datei **TouchViewController.cs** und fügen Sie die folgenden zwei Variablen auf die Klasse `TouchViewController`:
@@ -166,9 +168,9 @@ In diesem Beispiel werden einige der Touch-APIs beispielmedienobjekt. Führen Si
 
 1. An dieser Stelle ist der Bildschirm berühren Beispiele abgeschlossen. Beachten Sie, wie der Bildschirm ändert, während Sie die Bilder interagieren wie im folgenden Screenshot gezeigt:
         
-    [![](ios-touch-walkthrough-images/image4.png "Bildschirm der ersten app")](ios-touch-walkthrough-images/image4.png)
+    [![](ios-touch-walkthrough-images/image4.png "Bildschirm der ersten app")](ios-touch-walkthrough-images/image4.png#lightbox)
     
-    [![](ios-touch-walkthrough-images/image5.png "Dem Bildschirm, nachdem der Benutzer eine Schaltfläche bewegt.")](ios-touch-walkthrough-images/image5.png)
+    [![](ios-touch-walkthrough-images/image5.png "Dem Bildschirm, nachdem der Benutzer eine Schaltfläche bewegt.")](ios-touch-walkthrough-images/image5.png#lightbox)
  
 
 <a name="Gesture_Recognizer_Samples" />
@@ -183,7 +185,7 @@ In diesem Abschnitt werden die Berührungsereignisse beseitigt werden und verans
 
 Wenn das Ausführen der [starten Beispielcode](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start) , und klicken Sie auf die **Geste Erkennungsmodul Beispiele** Schaltfläche, sollte den folgenden Bildschirm angezeigt:
 
- [ ![](ios-touch-walkthrough-images/image6.png "Dieser Bildschirm zeigt durch Klicken auf die Schaltfläche mit den Gestenhandler Erkennungsmodul Beispiele")](ios-touch-walkthrough-images/image6.png)
+ [![](ios-touch-walkthrough-images/image6.png "Dieser Bildschirm zeigt durch Klicken auf die Schaltfläche mit den Gestenhandler Erkennungsmodul Beispiele")](ios-touch-walkthrough-images/image6.png#lightbox)
 
 Führen Sie folgende Schritte Prüfer Gestenhandler zu implementieren:
 
@@ -305,15 +307,17 @@ Beachten Sie, dass wir die Bewegung in Form der Methode ein Ziel zuweisen `Handl
 1. Führen Sie die Anwendung, und die beiden Images interagieren.
 Der folgende Screenshot ist ein Beispiel für diese Aktivitäten:
     
-    [![](ios-touch-walkthrough-images/image7.png "Diese bildschirmabbildung zeigt eine Drag-Aktivität")](ios-touch-walkthrough-images/image7.png)
+    [![](ios-touch-walkthrough-images/image7.png "Diese bildschirmabbildung zeigt eine Drag-Aktivität")](ios-touch-walkthrough-images/image7.png#lightbox)
 
 
+
+<a name="Custom_Gesture_Recognizer"/>
 
 ## <a name="custom-gesture-recognizer"></a>Benutzerdefinierte Gestenhandler-Erkennung
 
 In diesem Abschnitt werden wir die Konzepte in vorherigen Abschnitten zum Erstellen einer benutzerdefinierten Geste Erkennung anwenden. Die benutzerdefinierte Aktion Erkennung wird Unterklassen `UIGestureRecognizer`, und wird dann erkennen, wenn der Benutzer einen "V" zeichnet auf dem Bildschirm eine Bitmap zu wechseln. Der folgende Screenshot ist ein Beispiel dieses Bildschirms:
 
- [ ![](ios-touch-walkthrough-images/image8.png "Die app erkennt, wenn der Benutzer einen "V" auf dem Bildschirm zeichnet.")](ios-touch-walkthrough-images/image8.png)
+ [![](ios-touch-walkthrough-images/image8.png "Die app erkennt, wenn der Benutzer einen "V" auf dem Bildschirm zeichnet.")](ios-touch-walkthrough-images/image8.png#lightbox)
 
 Führen Sie die Schritte zum Erstellen einer benutzerdefinierten Geste Erkennung:
 
@@ -490,9 +494,9 @@ Jetzt kann die Klasse starten neue beim nächsten des Benutzers mit der Anwendun
 
 1. Führen Sie die Anwendung, und versuchen Sie, zeichnen einen "V" auf dem Bildschirm. Ändern, wird das Bild angezeigt werden sollte angezeigt werden, wie in den folgenden Screenshots dargestellt:
     
-    [![](ios-touch-walkthrough-images/image9.png "Die Schaltfläche "ausgecheckt"")](ios-touch-walkthrough-images/image9.png)
+    [![](ios-touch-walkthrough-images/image9.png "Die Schaltfläche "ausgecheckt"")](ios-touch-walkthrough-images/image9.png#lightbox)
     
-    [![](ios-touch-walkthrough-images/image10.png "Die Schaltfläche "deaktiviert"")](ios-touch-walkthrough-images/image10.png)
+    [![](ios-touch-walkthrough-images/image10.png "Die Schaltfläche "deaktiviert"")](ios-touch-walkthrough-images/image10.png#lightbox)
 
 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2017
-ms.openlocfilehash: afbd2d8f25cdf51c7c7c33f72f10e3b5ce8762ef
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 29686b29a18fe409a1f778d54266cbeedea40eda
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="local-databases"></a>Lokale Datenbanken
 
@@ -24,7 +24,7 @@ Xamarin.Forms-Anwendungen können die [SQLite.NET PCL NuGet](https://www.nuget.o
 
 Der zugehörige [beispielanwendung](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo) ist eine einfache Aufgabenlisten Anwendung. Die folgenden Screenshots zeigen, wie das Beispiel auf jeder Plattform wird angezeigt:
 
-[ ![Xamarin.Forms Datenbank Beispiel Screenshots](databases-images/todo-list-sml.png ""Todolist" erste Page Screenshots")](databases-images/todo-list.png ""Todolist" erste Page Screenshots") [ ![ Xamarin.Forms Datenbank Beispiel Screenshots](databases-images/todo-detail-sml.png ""Todolist" zweite Page Screenshots")](databases-images/todo-detail.png ""Todolist" zweite Page Screenshots")
+[![Xamarin.Forms Datenbank Beispiel Screenshots](databases-images/todo-list-sml.png ""Todolist" erste Page Screenshots")](databases-images/todo-list.png#lightbox ""Todolist" erste Page Screenshots") [ ![ Xamarin.Forms Datenbank Beispiel Screenshots](databases-images/todo-list-sml.png ""Todolist" erste Page Screenshots")](databases-images/todo-list.png#lightbox ""Todolist" erste Page Screenshots")
 
 <a name="Using_SQLite_with_PCL" />
 
@@ -222,5 +222,5 @@ Dieser Artikel konzentriert sich auf **Zugriff auf** einer SQLite-Datenbank, ind
 ## <a name="related-links"></a>Verwandte Links
 
 - [TODO-Beispiel](https://developer.xamarin.com/samples/xamarin-forms/Todo/)
-- [Xamarin.Forms-Beispiele](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Datenbank-Arbeitsmappe](https://developer.xamarin.com/workbooks/xamarin-forms/application-fundamentals/database/database.workbook)

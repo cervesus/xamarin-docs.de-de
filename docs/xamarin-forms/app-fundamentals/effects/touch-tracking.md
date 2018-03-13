@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: 89d3b56a15110d0c106c43ce227f11f86bbdf404
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0fd037e62bcdb1b2be4c93dc0d32ca76f4e1ba8e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="invoking-events-from-effects"></a>Aufrufen von Ereignissen von Effekten
 
@@ -448,7 +448,7 @@ Die `Moved` Logik wechselt die `BoxView` durch Ändern der `LayoutBounds` -Eigen
 
 Sie können mehrere verschieben `BoxView` Elemente, die gleichzeitig mit anderen Fingern fest.
 
-[![](touch-tracking-images/boxviewdragging-small.png "Dreifacher Screenshot der Seite BoxView ziehen")](touch-tracking-images/boxviewdragging-large.png "dreifacher Screenshot der Seite BoxView ziehen")
+[![](touch-tracking-images/boxviewdragging-small.png "Dreifacher Screenshot der Seite BoxView ziehen")](touch-tracking-images/boxviewdragging-large.png#lightbox "dreifacher Screenshot der Seite BoxView ziehen")
 
 ### <a name="subclassing-the-view"></a>Erstellen von Unterklassen für die Sicht
 
@@ -511,7 +511,7 @@ Die nächsten beiden Demos erfordern, Grafiken und können die SkiaSharp für di
 
 Die **Ellipse Zeichnung** Seite können Sie eine Ellipse, die durch ein Lesegerät Finger auf dem Bildschirm gezeichnet werden soll. Je nachdem, wie Sie den Finger verschieben, können Sie die Ellipse, die von der linken oberen Ecke auf der unteren rechten Ecke oder von einer beliebigen anderen Ecke in die entgegengesetzte Ecke zeichnen. Die Ellipse wird mit einem zufälligen Farbe und Deckkraft gezeichnet.
 
-[![](touch-tracking-images/ellipsedrawing-small.png "Dreifacher Screenshot der Seite Ellipse Zeichnung")](touch-tracking-images/ellipsedrawing-large.png "dreifacher Screenshot der Seite Ellipse Zeichnung")
+[![](touch-tracking-images/ellipsedrawing-small.png "Dreifacher Screenshot der Seite Ellipse Zeichnung")](touch-tracking-images/ellipsedrawing-large.png#lightbox "dreifacher Screenshot der Seite Ellipse Zeichnung")
 
 Wenn Sie eine Schaltfläche mit den Auslassungszeichen klicken Sie dann berühren können Sie es an eine andere Position ziehen. Dies erfordert eine Technik, bekannt als "Treffertests," der auch für das Objekt zu einem bestimmten Zeitpunkt zu suchen. Schaltfläche mit die Auslassungszeichen SkiaSharp sind nicht Xamarin.Forms-Elemente, deshalb können sie ihre eigenen ausführen `TouchEffect` verarbeiten. Die `TouchEffect` müssen gelten für die gesamte `SKCanvasView` Objekt.
 
@@ -683,7 +683,7 @@ case TouchActionType.Pressed:
 
 Das andere SkiaSharp-Beispiel ist die **Finger Paint** Seite. Sie können eine Konturfarbe und Strichbreite auswählen, aus zwei `Picker` anzeigt, und zeichnen Sie dann mit einem oder mehreren Fingern:
 
-[![](touch-tracking-images/fingerpaint-small.png "Dreifacher Screenshot der Seite Finger Paint")](touch-tracking-images/fingerpaint-large.png "dreifacher Screenshot der Seite Finger Paint")
+[![](touch-tracking-images/fingerpaint-small.png "Dreifacher Screenshot der Seite Finger Paint")](touch-tracking-images/fingerpaint-large.png#lightbox "dreifacher Screenshot der Seite Finger Paint")
 
 Dieses Beispiel benötigen Sie auch eine separate Klasse zum Darstellen von jeder Zeile auf dem Bildschirm gezeichnet:
 
@@ -791,7 +791,7 @@ Die `AddToList` und `RemoveFromList` beide Methoden überprüft, ob die `List` z
 
 Die verschiedenen `WhiteKey` und `BlackKey` Elemente werden auf der Seite angeordnet [XAML-Datei](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/SilentKeyboardPage.xaml), dem sieht am besten des Telefons in einer im Querformat aktiviert wird:
 
-[![](touch-tracking-images/silentkeyboard-small.png "Dreifacher Screenshot der Seite Automatische Tastatur")](touch-tracking-images/silentkeyboard-large.png "dreifacher Screenshot der Seite Automatische Tastatur")
+[![](touch-tracking-images/silentkeyboard-small.png "Dreifacher Screenshot der Seite Automatische Tastatur")](touch-tracking-images/silentkeyboard-large.png#lightbox "dreifacher Screenshot der Seite Automatische Tastatur")
 
 Wenn Sie über die Schlüssel den Finger sweep, wird durch die geringfügigen Änderungen in Farbe angezeigt, dass die Touch-Ereignisse von einem Schlüssel zu einem anderen übertragen werden.
 

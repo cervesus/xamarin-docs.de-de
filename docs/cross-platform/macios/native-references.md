@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 29b405c61b745c26c74318243f75e5809ecfdd7d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a33993bdef16191b66127dcc68c57661636c0f8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="native-references"></a>Systemeigene Verweise
 
@@ -78,13 +78,13 @@ Führen Sie die Schritte sind erforderlich, um ein Framework in einem Xamarin.iO
 1. Erstellen Sie ein neues oder öffnen Sie ein vorhandenes Xamarin.iOS, Xamarin.Mac oder Bindung Projekt.
 2. In der **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie **hinzufügen** > **systemeigenen Verweis hinzufügen**: 
 
-    [ ![](native-references-images/ref01.png "Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Projektnamen, und wählen Sie die systemeigenen Verweis hinzufügen")](native-references-images/ref01.png)
+    [![](native-references-images/ref01.png "Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Projektnamen, und wählen Sie die systemeigenen Verweis hinzufügen")](native-references-images/ref01.png#lightbox)
 3. Aus der **öffnen** Dialogfeld Feld, wählen Sie den Namen der systemeigenen Rahmen, die Sie einbetten möchten und klicken Sie auf die **öffnen** Schaltfläche: 
 
-    [ ![](native-references-images/ref02.png "Wählen Sie den Namen von systemeigenen Framework einbetten, und klicken Sie auf die Schaltfläche "Öffnen"")](native-references-images/ref02.png)
+    [![](native-references-images/ref02.png "Wählen Sie den Namen von systemeigenen Framework einbetten, und klicken Sie auf die Schaltfläche "Öffnen"")](native-references-images/ref02.png#lightbox)
 4. Das Framework wird das Projekt Struktur hinzugefügt werden: 
 
-    [ ![](native-references-images/ref03.png "Das Framework wird die Struktur von Projekten hinzugefügt werden")](native-references-images/ref03.png)
+    [![](native-references-images/ref03.png "Das Framework wird die Struktur von Projekten hinzugefügt werden")](native-references-images/ref03.png#lightbox)
 
 Wenn das Projekt kompiliert wird, wird systemeigene Rahmen in der App-Bündel eingebettet werden.
 

@@ -4,14 +4,15 @@ description: "Laden Sie Bitmaps aus verschiedenen Quellen und angezeigt werden k
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: 9045fb2f54407fe8c9071efc5570296bb102f72e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: facdcb6231b77714d6f5d0c7d496db12f75b1d08
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="bitmap-basics"></a>Bitmap-Grundlagen
 
@@ -204,7 +205,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die Bitmap gestreckt wird mit den Abmessungen des Rechtecks aus diesem Grund die Affe horizontal in diese Screenshots verzerrt wird:
 
-[![](bitmaps-images/basicbitmaps-small.png "Dreifacher Screenshot von der Seite "grundlegende Bitmaps"")](bitmaps-images/basicbitmaps-large.png "triple Screenshot der Seite grundlegende Bitmaps")
+[![](bitmaps-images/basicbitmaps-small.png "Dreifacher Screenshot von der Seite "grundlegende Bitmaps"")](bitmaps-images/basicbitmaps-large.png#lightbox "triple Screenshot der Seite grundlegende Bitmaps")
 
 Das dritte Bild & #x 2014; die können nur angezeigt, wenn Sie das Programm auszuführen, und Laden ein Foto von Ihrer eigenen Bildbibliothek & #x 2014; wird auch angezeigt, in ein Rechteck, aber des Rechtecks Position und Größe angepasst werden, um die Bitmap Seitenverhältnis beibehalten. In dieser Berechnung ist etwas komplizierter, da es erfordert die Berechnung von einem Skalierungsfaktor basierend auf der Größe der Bitmap und Zielrechtecks und zentrieren das Rechteck in diesem Bereich:
 

@@ -4,14 +4,15 @@ description: Erstellen Sie mit der dritten Spalte der Transformationsmatrix Pers
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 3fda8524b824042aa4aba07853da2801baf47027
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2e2e83404bc93bd07885008b868c51eba2ff7140
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="non-affine-transforms"></a>Nicht Affine Transformationen
 
@@ -226,7 +227,7 @@ public partial class TestPerspectivePage : ContentPage
 
 Hier sind einige Beispielbilder:
 
-[![](non-affine-images/testperspective-small.png "Dreifacher Screenshot der Seite Testperspektive")](non-affine-images/testperspective-large.png "dreifacher Screenshot der Seite Testperspektive")
+[![](non-affine-images/testperspective-small.png "Dreifacher Screenshot der Seite Testperspektive")](non-affine-images/testperspective-large.png#lightbox "dreifacher Screenshot der Seite Testperspektive")
 
 Wie Sie die Schieberegler experimentieren, finden Sie, dass die Werte über 0.0066 oder unter –0.0066 dazu führen, dass das Bild, das es aufgeteilter und inkohärente werden. Die Bitmap, die transformiert werden ist 300 Pixel Quadrat. Es ist relativ zu ihren Mittelpunkt transformiert, damit die Koordinaten der Bitmap für die im Bereich von –150 auf 150. Bedenken Sie, dass der Wert von Z "ist:
 
@@ -390,13 +391,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hier einige Beispiele:
 
-[![](non-affine-images/tapertransform-small.png "Dreifacher Screenshot der Seite Konikwinkel transformieren")](non-affine-images/tapertransform-large.png "dreifacher Screenshot der Seite Konikwinkel transformieren")
+[![](non-affine-images/tapertransform-small.png "Dreifacher Screenshot der Seite Konikwinkel transformieren")](non-affine-images/tapertransform-large.png#lightbox "dreifacher Screenshot der Seite Konikwinkel transformieren")
 
 Ein weiterer Typ von generalisierte nicht affine Transformationen sind 3D-Drehung in das nächste Dokument veranschaulicht wird, [3D Drehungen](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md).
 
 Die Transformation nicht affinen kann ein Rechteck in jeder konvexe Quadrat transformiert werden. Dies wird veranschaulicht, durch die **nicht affinen Matrix anzeigen** Seite. Es ist sehr ähnlich der **Affine Matrix anzeigen** Seite aus der [Matrix transformiert](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md) Artikel mit dem Unterschied, dass es sich um eine vierte verfügt `TouchPoint` Objekt zum Bearbeiten der vierten Ecke der Bitmap:
 
-[![](non-affine-images/shownonaffinematrix-small.png "Dreifacher Screenshot der Seite nicht affinen Matrix anzeigen")](non-affine-images/shownonaffinematrix-large.png "Triple Screenshot, der die Seite mit nicht affinen Matrix anzeigen")
+[![](non-affine-images/shownonaffinematrix-small.png "Dreifacher Screenshot der Seite nicht affinen Matrix anzeigen")](non-affine-images/shownonaffinematrix-large.png#lightbox "Triple Screenshot, der die Seite mit nicht affinen Matrix anzeigen")
 
 Solange Sie versuchen nicht, einen innere Winkel von einer der Ecken der Bitmap größer als 180 Grad oder beiden Seiten, die einander nicht schneiden, berechnet das Programm erfolgreich die Transformation, die mit dieser Methode aus der [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) Klasse:
 

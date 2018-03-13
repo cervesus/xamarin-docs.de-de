@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 4556c053eec4b28ea863743720fe346a57da8997
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 08d07a82651887c9d87b908acd82296a3d80e43f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="loading-application-resource-videos"></a>Laden die Anwendung Ressourcen videos
 
@@ -174,7 +174,7 @@ Wenn die iOS-Ressource in gespeichert ist die **Ressourcen** Ordner, und wenn di
 
 Hier wird die Seite, die auf drei Plattformen ausgeführt:
 
-[![Wiedergeben von Videoressourcen](loading-resources-images/playvideoresource-small.png "Videoressourcen wiedergeben")](loading-resources-images/playvideoresource-large.png "Videoressourcen wiedergeben")
+[![Wiedergeben von Videoressourcen](loading-resources-images/playvideoresource-small.png "Videoressourcen wiedergeben")](loading-resources-images/playvideoresource-large.png#lightbox "Videoressourcen wiedergeben")
 
 Sie haben nun gesehen, wie [Laden von Videos aus einem URI Web](web-videos.md) und eingebettete Ressourcen wiedergeben. Darüber hinaus können Sie [Laden von Videos aus Videobibliothek des Geräts](accessing-library.md).
 

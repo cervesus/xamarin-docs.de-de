@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: c70e4c9ec49b48c3bf6ecc6a4944d992f8ae930a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 160dd4b2326529abbb456e77391f0f73ee374f50
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-behaviors"></a>Xamarin.Forms-Verhalten
 
@@ -85,7 +85,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 Die `NumericValidationBehavior` leitet sich von der [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) -Klasse, in denen `T` ist ein [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/). Die [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) Methode registriert einen Ereignishandler für die [ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) -Ereignis mit der [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) Methode, die Deduplizierung beim Registrieren der `TextChanged`Ereignis, um zu verhindern, dass Arbeitsspeicher von Speicherverlusten. Die Kernfunktionalität des Verhaltens wird bereitgestellt, indem der `OnEntryTextChanged` -Methode, die den vom Benutzer in eingegebenen Wert analysiert der `Entry`, und legt sie fest der [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) -Eigenschaft auf Rot, wenn der Wert ist eine `double`.
 
 > [!NOTE]
-> **Hinweis**: Xamarin.Forms ist nicht festgelegt. die `BindingContext` eines Verhaltens, da Verhalten freigegeben und auf mehrere Steuerelemente über Stile angewendet werden können.
+> Xamarin.Forms ist nicht festgelegt. die `BindingContext` eines Verhaltens, da Verhalten freigegeben und auf mehrere Steuerelemente über Stile angewendet werden können.
 
 ## <a name="consuming-a-xamarinforms-behavior"></a>Nutzen eine Xamarin.Forms-Verhalten
 
@@ -108,10 +108,10 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 Zur Laufzeit wird das Verhalten entsprechend die verhaltensimplementierung zur Interaktion mit dem Steuerelement reagieren. Die folgenden Screenshots veranschaulicht das Verhalten reagieren auf die Eingabe ist ungültig:
 
-[ ![](creating-images/screenshots-sml.png "Beispielanwendung mit Xamarin.Forms Verhalten")](creating-images/screenshots.png "Beispielanwendung mit Xamarin.Forms-Verhalten")
+[![](creating-images/screenshots-sml.png "Beispielanwendung mit Xamarin.Forms Verhalten")](creating-images/screenshots.png#lightbox "Beispielanwendung mit Xamarin.Forms-Verhalten")
 
 > [!NOTE]
-> **Hinweis**: Verhalten für einen bestimmten Steuerelementtyp (oder eine übergeordnete Klasse, die für viele Steuerelemente angewendet werden kann) geschrieben sind, und sie sollte nur zu einem kompatiblen Steuerelement hinzugefügt werden. Sie versuchen, ein Verhalten auf das Steuerelement nicht kompatibel anzufügen führt eine Ausnahme ausgelöst.
+> Verhalten für einen bestimmten Steuerelementtyp (oder eine übergeordnete Klasse, die für viele Steuerelemente angewendet werden kann) geschrieben sind, und sie sollte nur zu einem kompatiblen Steuerelement hinzugefügt werden. Sie versuchen, ein Verhalten auf das Steuerelement nicht kompatibel anzufügen führt eine Ausnahme ausgelöst.
 
 ### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>Nutzen eine Xamarin.Forms-Verhalten mit einer Formatvorlage
 
@@ -181,7 +181,7 @@ Die [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) ang
 Weitere Informationen zu Stilen finden Sie unter [Stile](~/xamarin-forms/user-interface/styles/index.md).
 
 > [!NOTE]
-> **Hinweis**: während Sie hinzufügen können, um ein Verhalten, das festgelegt oder in XAML, abgefragt werden, wenn Sie Verhaltensweisen, die erstellen Bindungseigenschaften Status sie sollten nicht freigegeben werden zwischen Steuerelementen in einem `Style` in einem `ResourceDictionary`.
+> Während Sie hinzufügen können, um ein Verhalten, das festgelegt oder in XAML, abgefragt werden, wenn Sie Verhaltensweisen, die erstellen Bindungseigenschaften Status sie sollten nicht freigegeben werden zwischen Steuerelementen in einem `Style` in einem `ResourceDictionary`.
 
 ### <a name="removing-a-behavior-from-a-control"></a>Entfernen ein Verhalten aus einem Steuerelement
 

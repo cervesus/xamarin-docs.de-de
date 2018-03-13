@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: 6de57e9523ff336c2e06e39903280db9c9ab95fa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: df9059b0e64b4a05b554f25b5f9d7f6031406633
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-icons"></a>Anwendungssymbole
 
@@ -32,13 +32,13 @@ Auf die gleiche Weise, dass eine app Xamarin.iOS Bildanlagen für UI-Steuereleme
 
 - **Symbol "Anwendung"** -alle iOS-app muss ein Anwendungssymbol definieren. Dies ist das Symbol, das der Benutzer tippen sollen auf der iOS-Startseite auf die app zu starten. Darüber hinaus wird dieses Symbol von Game Center "," ggf. verwendet. Beispiel: 
 
-    [ ![](app-icons-images/000.png "Symbol "Anwendung"")](app-icons-images/000-full.png)
+    [![](app-icons-images/000.png "Symbol "Anwendung"")](app-icons-images/000-full.png#lightbox)
 - **Symbol "Spotlight** – Wenn der Benutzer den Namen einer App in einem Spotlight-Suche eingibt dieses Symbol wird angezeigt. Beispiel: 
 
-    [ ![](app-icons-images/000a.png "Symbol "Spotlight"")](app-icons-images/000a-full.png)
+    [![](app-icons-images/000a.png "Symbol "Spotlight"")](app-icons-images/000a-full.png#lightbox)
 - **Symbol "Einstellungen"** – Wenn der Benutzer gibt die **Einstellungen** app auf seinem iOS-Gerät, dieses Symbol wird am Ende angezeigt werden die **Einstellungen** Liste für die app. Beispiel: 
 
-    [ ![](app-icons-images/000b.png "Symbol "Einstellungen"")](app-icons-images/000b-full.png)
+    [![](app-icons-images/000b.png "Symbol "Einstellungen"")](app-icons-images/000b-full.png#lightbox)
 
 Die folgenden Asset Bildgrößen und Lösungen ist erforderlich sein, um unterstützen alle die Symboltypen, die von einer Xamarin.iOS-app für iOS 5 über iOS 9 (oder höher) erforderlich sind:
 
@@ -251,5 +251,5 @@ Um die iTunes-Grafik festzulegen, führen Sie Folgendes aus:
 ## <a name="related-links"></a>Verwandte Links
 
 - [Arbeiten mit Bildern (Beispiel)](https://developer.xamarin.com/samples/WorkingWithImages/)
-- [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
+- [Hallo iPhone](~/ios/get-started/hello-ios/index.md)
 - [Benutzerdefiniertes Symbol und Richtlinien für die Erstellung von Image](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html))
