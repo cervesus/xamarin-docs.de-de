@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e78b76a531e9f8ea88adca46fc59b2063fce14cc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e12e33b254e58759043ed838d5c34dd7bd024fd
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>Exemplarische Vorgehensweise – verwenden benutzerdefinierte Steuerelemente mit dem Xamarin-Designer für iOS
 
@@ -33,13 +33,13 @@ Dieses Handbuch setzt voraus, Vertrautheit mit den Inhalt in behandelt die [Eins
 1. Erstellen Sie eine neue Projektmappe aus der **iOS > App > einzelne Ansicht Anwendung > c#** Vorlage, nennen Sie sie `ScratchTicket`, und folgen Sie der Assistent für neue:
 
 
-    [![](ios-designable-controls-walkthrough-images/01new.png "Erstellen einer neuen Projektmappe")](ios-designable-controls-walkthrough-images/01new.png)
+    [![](ios-designable-controls-walkthrough-images/01new.png "Erstellen einer neuen Projektmappe")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 
 
 1. Erstellen Sie eine neue leere Klassendatei mit dem Namen `ScratchTicketView`:
 
 
-    [![](ios-designable-controls-walkthrough-images/02new.png "Erstellen Sie eine neue ScratchTicketView-Klasse")](ios-designable-controls-walkthrough-images/02new.png)
+    [![](ios-designable-controls-walkthrough-images/02new.png "Erstellen Sie eine neue ScratchTicketView-Klasse")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
 
 
 1. Fügen Sie den folgenden Code für `ScratchTicketView` Klasse:
@@ -168,63 +168,50 @@ Dieses Handbuch setzt voraus, Vertrautheit mit den Inhalt in behandelt die [Eins
     
 1. Doppelklicken Sie auf die `Main.storyboard` Datei im Designer zu öffnen:
 
-    
-    [![](ios-designable-controls-walkthrough-images/03new.png "Die iOS-Designer")](ios-designable-controls-walkthrough-images/03new.png)
-
+    [![](ios-designable-controls-walkthrough-images/03new.png "Die iOS-Designer")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
 
 1. Drag & Drop ein **Image Ansicht** aus der **Toolbox** auf die Ansicht in das Storyboard.
 
-    
-    [![](ios-designable-controls-walkthrough-images/04new.png "Ein Image-Ansicht des Layouts hinzugefügt")](ios-designable-controls-walkthrough-images/04new.png)
+    [![](ios-designable-controls-walkthrough-images/04new.png "Ein Image-Ansicht des Layouts hinzugefügt")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
 
 1. Wählen Sie die **Bild anzeigen** , und ändern Sie seine **Image** Eigenschaft `Monkey.png`.
 
-    
-    [![](ios-designable-controls-walkthrough-images/05new.png "Monkey.png Bild Image-Eigenschaft")](ios-designable-controls-walkthrough-images/05new.png)
+    [![](ios-designable-controls-walkthrough-images/05new.png "Setting Image View Image property to Monkey.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
     
 1. Wie wir Größenklassen verwenden, müssen wir hier Bild zu beschränken. Klicken Sie auf das Bild zweimal, um diese Einschränkung Modus versetzen. Wir schränken Sie ihn an das Rechenzentrum durch Klicken auf das Handle Center anheften, und richten Sie es sowohl vertikal und horizontal:
-    
-    
-    [![](ios-designable-controls-walkthrough-images/06new.png "Zentrieren das Bild")](ios-designable-controls-walkthrough-images/06new.png)
 
-    
+    [![](ios-designable-controls-walkthrough-images/06new.png "Zentrieren das Bild")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
+
 1. Um die Höhe und Breite zu beschränken, klicken Sie auf die Handles Größe anheften (die "Bone" geformten Handles) auf, und wählen Sie die Breite und Höhe:
 
-    
-    [![](ios-designable-controls-walkthrough-images/07new.png "Hinzufügen von Einschränkungen")](ios-designable-controls-walkthrough-images/07new.png)
+    [![](ios-designable-controls-walkthrough-images/07new.png "Hinzufügen von Einschränkungen")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
 
 1. Aktualisieren Sie den Frame basierend auf Einschränkungen, indem Sie auf die Schaltfläche "Aktualisieren" auf der Symbolleiste:
 
-
-    [![](ios-designable-controls-walkthrough-images/08new.png "Die Einschränkungen-Symbolleiste")](ios-designable-controls-walkthrough-images/08new.png)
+    [![](ios-designable-controls-walkthrough-images/08new.png "Die Einschränkungen-Symbolleiste")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
 
 1. Als Nächstes erstellen Sie das Projekt, damit die **Scratch Ticket Ansicht** erscheint unter **benutzerdefinierte Komponenten** in der Toolbox:
 
-    
-    [![](ios-designable-controls-walkthrough-images/09new.png "Der benutzerdefinierte Komponenten-toolbox")](ios-designable-controls-walkthrough-images/09new.png)
+    [![](ios-designable-controls-walkthrough-images/09new.png "Der benutzerdefinierte Komponenten-toolbox")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
 
 
 1. Drag & drop eine **Scratch Ticket Ansicht** , damit es auf das Bild Affe angezeigt wird. Passen Sie den Ziehpunkten so, dass der Speicherbereich Ticket-Ansicht der Affe abdeckt, die vollständig, wie unten dargestellt:
 
-    
-    [![](ios-designable-controls-walkthrough-images/10new.png "Eine Sicht Scratch Ticket für die Image-Sicht")](ios-designable-controls-walkthrough-images/10new.png)
-
+    [![](ios-designable-controls-walkthrough-images/10new.png "Eine Sicht Scratch Ticket für die Image-Sicht")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
 
 1. Schränken Sie die Scratch Ticket Ansicht anzuzeigende Bild durch ein umschließendes Rechteck zum Auswählen der beiden Ansichten zu zeichnen. Wählen Sie die Optionen, die in der Breite, Höhe, Center und mittleren und Update-Frames, die basierend auf Einschränkungen zu beschränken, wie unten dargestellt:
- 
-    
-    [![](ios-designable-controls-walkthrough-images/11new.png "Zentrieren und Hinzufügen von Einschränkungen")](ios-designable-controls-walkthrough-images/11new.png)
+
+    [![](ios-designable-controls-walkthrough-images/11new.png "Zentrieren und Hinzufügen von Einschränkungen")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
 
 
 1. Führen Sie die Anwendung, und "scratch deaktiviert" das Bild, um die Affe anzuzeigen.
 
-
- [ ![](ios-designable-controls-walkthrough-images/10-app.png "Eine Beispiel-app ausführen")](ios-designable-controls-walkthrough-images/10-app.png)
+    [![](ios-designable-controls-walkthrough-images/10-app.png "Eine Beispiel-app ausführen")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="adding-design-time-properties"></a>Hinzufügen von Eigenschaften zur Entwurfszeit
 
@@ -286,7 +273,7 @@ public override void Draw(CGRect rect)
 
 Z. B. ein `ExportAttribute` und ein `BrowsableAttribute` mit dem Argument festgelegt `true` führt in der Eigenschaft, die im Designer angezeigt wird **Eigenschaft** Bereich. Ändern der Eigenschaft zu einem anderen Bild mit dem Projekt enthalten sind, z. B. `FillTexture2.png`, führt das Steuerelement aktualisieren zur Entwurfszeit wie unten dargestellt:
 
- [ ![](ios-designable-controls-walkthrough-images/11-customproperty.png "Entwurfszeit-Eigenschaften bearbeiten")](ios-designable-controls-walkthrough-images/10-app.png)
+ [![](ios-designable-controls-walkthrough-images/11-customproperty.png "Entwurfszeit-Eigenschaften bearbeiten")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="summary"></a>Zusammenfassung
 
