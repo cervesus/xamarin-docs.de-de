@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c0cfe437b03a1f0dea05a506b1dfce62a4658bb4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e96e98f90c7f4c849a9f679b2de819ccaabfec0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-distribution-overview"></a>App-Verteilung – Übersicht
 
@@ -22,7 +22,7 @@ _Dieses Dokument bietet einen Überblick über die Verteilung Techniken, die fü
 Nachdem Ihre app Xamarin.tvOS entwickelt wurde, ist der nächste Schritt im Lebenszyklus Softwareentwicklung, Ihre app an Benutzer verteilen, wie im Abschnitt unten stehende Abbildung hervorgehoben dargestellt:
 
 
-[![Das Software Development Lifecycle (Übersicht)](images/publishingdiagram.png)](images/publishingdiagram.png)
+[![Das Software Development Lifecycle (Übersicht)](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
 
 
 Apple bietet die folgenden Möglichkeiten zum Verteilen einer app tvos. außerdem wurden die vom Xamarin.tvOS unterstützt werden:
@@ -70,7 +70,7 @@ Durch die interne Verteilung, die auch als *Enterprise-Verteilung* bezeichnet wi
 
 Weitere Informationen zum Abrufen der Einrichtung und die Anwendung intern zu verteilen, finden Sie auf der [internen Verteilung Handbuch](~/ios/deploy-test/app-distribution/in-house-distribution.md). Dieses Dokument ist spezifisch für iOS, jedoch die gleichen Techniken für tvos. außerdem wurden apps verwendet werden.
 
-<a name="Ad-Hoc-Distribution" />
+<a name="Ad_Hoc_Distribution"/>
 
 ## <a name="ad-hoc-distribution"></a>Ad-hoc-Verteilung
 

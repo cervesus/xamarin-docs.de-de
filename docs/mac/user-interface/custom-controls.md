@@ -3,16 +3,16 @@ title: Erstellen benutzerdefinierter Steuerelemente
 description: "Dieser Artikel beschreibt, wie benutzerdefinierte Steuerelemente erstellen und im Benutzeroberflächen-Generator mit ihnen arbeiten."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f3d6301bc2c0237a268669fff437801bfb2657d1
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 3ea88810384dfe8b1a08080953db19caddf25d6a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-custom-controls"></a>Erstellen von benutzerdefinierten Steuerelementen
 
@@ -22,7 +22,7 @@ Bei der Arbeit mit c# und .NET in einer Anwendung Xamarin.Mac haben Sie Zugriff 
 
 Bietet eine Vielzahl von integrierten Benutzersteuerelemente eine MacOS können Zeiten, die Sie zum Erstellen eines benutzerdefinierten Steuerelements zur Verfügung zu stellen Funktionen Out benötigen-of-Box nicht bereitgestellt oder ein benutzerdefiniertes Design der Benutzeroberfläche (z. B. ein Spiel-Schnittstelle) vorhanden sein.
 
-[ ![](custom-controls-images/intro01.png "Beispiel für ein benutzerdefiniertes UI-Steuerelement")](custom-controls-images/intro01.png)
+[![](custom-controls-images/intro01.png "Beispiel für ein benutzerdefiniertes UI-Steuerelement")](custom-controls-images/intro01.png#lightbox)
 
 In diesem Artikel werden die Grundlagen der Erstellung eine wiederverwendbare benutzerdefinierte Benutzeroberflächensteuerelement in einer Anwendung Xamarin.Mac eingegangen. Wird mit hoher vorgeschlagen, dass Sie über arbeiten die [Hello, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Benutzeroberflächen-Generator](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) und [Steckdosen und Aktionen](~/mac/get-started/hello-mac.md#Outlets_and_Actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die in diesem Artikel verwendet werden.
 
@@ -50,7 +50,7 @@ Da das benutzerdefinierte Steuerelement erstellt wird, eine Benutzereingabe (lin
 
 Öffnen Sie in Visual Studio für Mac das Xamarin.Mac-Projekt, das Sie verwenden möchten, erstellen eine benutzerdefinierte Schnittstelle Benutzersteuerelement für (oder eine neue erstellen). Fügen Sie eine neue Klasse hinzu, und nennen Sie es `NSFlipSwitch`:
 
-[ ![](custom-controls-images/custom01.png "Hinzufügen einer neuen Klasse")](custom-controls-images/custom01.png)
+[![](custom-controls-images/custom01.png "Hinzufügen einer neuen Klasse")](custom-controls-images/custom01.png#lightbox)
 
 Als Nächstes Bearbeiten der `NSFlipSwitch.cs` Klasse, und stellen sie wie folgt aussehen:
 
@@ -336,19 +336,19 @@ Mit unseren benutzerdefiniertes Steuerelement vollständig definiert können wir
 
 Um das Steuerelement mit der Schnittstelle-Generator hinzuzufügen, führen Sie einen bereinigten Build des Projekts Xamarin.Mac zunächst Doppelklicken Sie auf die `Main.storyboard` Datei, um ihn zur Bearbeitung im Benutzeroberflächen-Generator zu öffnen:
 
-[ ![](custom-controls-images/custom02.png "Bearbeiten das Storyboard in Xcode")](custom-controls-images/custom02.png)
+[![](custom-controls-images/custom02.png "Bearbeiten das Storyboard in Xcode")](custom-controls-images/custom02.png#lightbox)
 
 Ziehen Sie anschließend eine `Custom View` in der Benutzeroberfläche entwerfen:
 
-[ ![](custom-controls-images/custom03.png "Wählen eine benutzerdefinierte Ansicht aus der Bibliothek")](custom-controls-images/custom03.png)
+[![](custom-controls-images/custom03.png "Wählen eine benutzerdefinierte Ansicht aus der Bibliothek")](custom-controls-images/custom03.png#lightbox)
 
 Mit der benutzerdefinierten Sicht ausgewählter, wechseln Sie zu der **Identität Inspektor** und ändern Sie die Ansicht **Klasse** auf `NSFlipSwitch`:
 
-[ ![](custom-controls-images/custom04.png "Festlegen der View-Klasse")](custom-controls-images/custom04.png)
+[![](custom-controls-images/custom04.png "Festlegen der View-Klasse")](custom-controls-images/custom04.png#lightbox)
 
 Wechseln Sie zu der **Assistant-Editor** , und erstellen Sie eine **Steckdose** für das benutzerdefinierte Steuerelement (sicherstellen, binden sie in der `ViewControler.h` Datei und nicht die `.m` Datei):
 
-[ ![](custom-controls-images/custom05.png "Konfigurieren eine neue Steckdose")](custom-controls-images/custom05.png)
+[![](custom-controls-images/custom05.png "Konfigurieren eine neue Steckdose")](custom-controls-images/custom05.png#lightbox)
 
 Speichern Sie die Änderungen, zurück zu Visual Studio für Mac, und lassen Sie die Änderungen zu synchronisieren. Bearbeiten der `ViewController.cs` Datei, und stellen die `ViewDidLoad` Methode aussehen wie folgt:
 
@@ -369,7 +369,7 @@ Hier auf die reagieren die `ValueChanged` Ereignis, die wir zuvor definierten, a
 
 Optional, wir Builder-Schnittstelle zurück und definieren eine **Aktion** für das Steuerelement:
 
-[ ![](custom-controls-images/custom06.png "Konfigurieren eine neue Aktion")](custom-controls-images/custom06.png)
+[![](custom-controls-images/custom06.png "Konfigurieren eine neue Aktion")](custom-controls-images/custom06.png#lightbox)
 
 Bearbeiten Sie erneut, die `ViewController.cs` Datei, und fügen Sie die folgende Methode hinzu:
 
@@ -394,5 +394,5 @@ Dieser Artikel hat eine ausführliche Übersicht über das Erstellen einer wiede
 - [MacCustomControl (Beispiel)](https://developer.xamarin.com/samples/mac/MacCustomControl/)
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
 - [Datenbindung und Schlüssel/Wert-Codierung](~/mac/app-fundamentals/databinding.md)
-- [OS X Human Richtlinien zur Benutzeroberfläche](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Behandlung von Mausereignissen](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/EventOverview/HandlingMouseEvents/HandlingMouseEvents.html)

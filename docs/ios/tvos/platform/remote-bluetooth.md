@@ -3,16 +3,16 @@ title: Siri Remote und Bluetooth-Controller
 description: "Dieser Artikel behandelt die neuen Siri Remote und Bluetooth Gamecontroller in Ihren apps Xamarin.tvOS unterstützen."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
+ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5d74479e995c5c6ba6f6fd9fd23fbca78718ee31
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cef717a727b3b018b9eec3e8a402ae4f927f7cb8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="siri-remote-and-bluetooth-controllers"></a>Siri Remote und Bluetooth-Controller
 
@@ -23,7 +23,7 @@ Benutzer der app Xamarin.tvOS werden nicht werden interagieren mit der Schnittst
 
 Wenn Ihre app ein Spiel ist, Sie können optional erstellen in der Unterstützung für 3rd Party, vorgenommen für iOS (Konfiguration) [Bluetooth Gamecontroller](#Bluetooth-Game-Controllers) in Ihrer app ebenfalls.
 
-[ ![](remote-bluetooth-images/intro01.png "Die Bluetooth-Remote und Gamecontroller")](remote-bluetooth-images/intro01.png)
+[![](remote-bluetooth-images/intro01.png "Die Bluetooth-Remote und Gamecontroller")](remote-bluetooth-images/intro01.png#lightbox)
 
 Dieser Artikel beschreibt die [Siri Remote](#The-Siri-Remote), [Oberflächen-Gesten berühren](#Touch-Surface-Gestures) und [Siri Remote Schaltflächen](#Siri-Remote-Buttons) und gezeigt, wie Arbeiten sie über [Gesten und Storyboards](#Gestures-and-Storyboards), [Gesten und Code](#Gestures-and-Code) und [Low-Level-Ereignisbehandlung](#Low-Level-Event-Handling). Schließlich behandelt wird [arbeiten mit Gamecontroller](#Working-with-Game-Controllers) in einer Xamarin.tvOS-app.
 
@@ -35,7 +35,7 @@ Die wichtigste Methode, die Benutzer mit dem Apple TV und Ihre app Xamarin.tvOS 
 
 Herausforderung darin ein app-Entwickler tvos. außerdem wurden ist das Erstellen einer schnell, einfach zu verwenden und grafisch anspruchsvollen Benutzeroberfläche, die die Siri Remote Touch-Oberfläche, Beschleunigungsmesser, Schaltflächen und Gyroskop nutzt.
 
-[ ![](remote-bluetooth-images/remote01.png "Siri Remote")](remote-bluetooth-images/remote01.png)
+[![](remote-bluetooth-images/remote01.png "Siri Remote")](remote-bluetooth-images/remote01.png#lightbox)
 
 Siri Remoteinstanz verfügt über die folgenden Features und die erwartete Verwendung innerhalb Ihrer app tvos. außerdem wurden:
 
@@ -128,14 +128,14 @@ Um eine Erkennung Gesten hinzuzufügen, führen Sie folgende Schritte aus:
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung der Benutzeroberflächen-Designer.
 2. Ziehen Sie eine **Geste Erkennungsmodul Tippen Sie auf** aus der **Bibliothek** und legen Sie sie in der Sicht: 
 
-    [ ![](remote-bluetooth-images/storyboard01.png "Eine Tap-Geste-Erkennung")](remote-bluetooth-images/storyboard01.png)
+    [![](remote-bluetooth-images/storyboard01.png "Eine Tap-Geste-Erkennung")](remote-bluetooth-images/storyboard01.png#lightbox)
 3. Überprüfen Sie **wählen** in der **Schaltfläche** Teil der **Attribut Inspektor**: 
 
-    [ ![](remote-bluetooth-images/storyboard02.png "Aktivieren Sie")](remote-bluetooth-images/storyboard02.png)
+    [![](remote-bluetooth-images/storyboard02.png "Aktivieren Sie")](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **Wählen Sie** bedeutet, dass die Bewegung antwortet auf die Benutzer klicken auf die **berühren Oberfläche** auf der Remoteinstanz Siri. Sie haben auch die Möglichkeit, Antworten auf die **Menü**, **für Wiedergabe und Pause**, **einrichten**, **unten**, **Links** und **Rechts** Schaltflächen.
 5. Als Nächstes Verknüpfen einer **Aktion** aus der **Geste Erkennungsmodul Tippen Sie auf** und Aufruf der `TouchSurfaceClicked`: 
 
-    [ ![](remote-bluetooth-images/storyboard03.png "Eine Aktion aus der Erkennung der Tap-Geste")](remote-bluetooth-images/storyboard03.png)
+    [![](remote-bluetooth-images/storyboard03.png "Eine Aktion aus der Erkennung der Tap-Geste")](remote-bluetooth-images/storyboard03.png#lightbox)
 6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac.
 
 Bearbeiten Sie die View-Controller (Beispiel `FirstViewController.cs`) Datei, und fügen Sie den folgenden Code zum Behandeln der Geste, die ausgelöst wird:
@@ -314,7 +314,7 @@ Wie bei `UITouch` Ereignisse, wenn Sie implementieren müssen die `UIPress` Auß
 
 Zusätzlich zu den standardmäßigen Siri Remoteinstanz, die im Lieferumfang von der Apple TV, 3rd Party, vorgenommen für iOS können Ihre app Xamarin.tvOS gesteuert (Konfiguration) Bluetooth-Gamecontroller in Verbindung mit dem Apple TV und verwendet werden.
 
-[ ![](remote-bluetooth-images/game01.png "Bluetooth-Gamecontroller")](remote-bluetooth-images/game01.png)
+[![](remote-bluetooth-images/game01.png "Bluetooth-Gamecontroller")](remote-bluetooth-images/game01.png#lightbox)
 
 Gamecontroller können verwendet werden, um Spielverlauf verbessern, und geben Sie einen Eindruck von stärker in ein Spiel. Sie können auch die standardmäßige Apple TV-Schnittstelle zu steuern, damit die Verwendung zwischen dem Remotecomputer und dem Controller wechseln muss, nicht verwendet werden.
 
@@ -425,7 +425,7 @@ Apple hat mehrere bestimmte Anforderungen, die erfüllt sein müssen, wenn Ihre 
 
 Um Gamecontroller-Unterstützung in Ihrer app Xamarin.tvOS aktivieren möchten, doppelklicken Sie auf die `Info.plist` in der Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen:
 
-[ ![](remote-bluetooth-images/game02.png "Die Datei "Info.plist"-editor")](remote-bluetooth-images/game02.png)
+[![](remote-bluetooth-images/game02.png "Die Datei "Info.plist"-editor")](remote-bluetooth-images/game02.png#lightbox)
 
 Klicken Sie unter der **Gamecontroller** Abschnitt, aktivieren Sie das Kontrollkästchen durch **Gamecontroller aktivieren**, überprüfen Sie alle Gamecontroller-Typen, die von der app unterstützt werden.
 

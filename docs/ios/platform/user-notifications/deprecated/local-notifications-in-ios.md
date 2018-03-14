@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d84473ee4379cd9a39315635017b81a2714da162
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2a8ae55f9cc3e2dd4818dec96a35017c76cc9623
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="notifications-in-xamarinios"></a>Benachrichtigungen in Xamarin.iOS
 
@@ -44,7 +44,7 @@ var settings = UIUserNotificationSettings.GetSettingsForTypes(
 UIApplication.SharedApplication.RegisterUserNotificationSettings (settings);
 ```
 
-  [ ![](local-notifications-in-ios-images/image0-sml.png "Bestätigen die Möglichkeit, eine lokale Benachrichtigung senden")](local-notifications-in-ios-images/image0.png)
+  [![](local-notifications-in-ios-images/image0-sml.png "Bestätigen die Möglichkeit, eine lokale Benachrichtigung senden")](local-notifications-in-ios-images/image0.png#lightbox)
 
 Um eine lokale Benachrichtigung zu planen, Sie erstellen, eine `UILocalNotification` Objekt, das Festlegen der `FireDate`, und Planen Sie ihn über die `ScheduleLocalNotification` Methode auf die `UIApplication.SharedApplication` Objekt. Der folgende Codeausschnitt zeigt, wie eine Benachrichtigung zu planen, die ausgelöst werden in der Zukunft eine Minute, und eine Warnung mit einer Meldung angezeigt:
 
@@ -59,7 +59,7 @@ UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 
 Der folgende Screenshot zeigen, wie diese Warnung aussieht:
 
-  [ ![](local-notifications-in-ios-images/image2-sml.png "Eine Beispiel-Warnung")](local-notifications-in-ios-images/image2.png)
+  [![](local-notifications-in-ios-images/image2-sml.png "Eine Beispiel-Warnung")](local-notifications-in-ios-images/image2.png#lightbox)
 
 Beachten Sie, dass, wenn der Benutzer auf *nicht zulassen* Benachrichtigungen wird nichts angezeigt.
 

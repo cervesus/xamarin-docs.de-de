@@ -7,18 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: de4683ca660224aa3cf17398ac649086b7e4ad88
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6c0f2b92b34ce4d446e51b0aafa56f6283701dd1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="extending-the-recyclerview-example"></a>Erweitern Sie im RecyclerView-Beispiel
 
 
 Die basic-app, die in beschriebenen [ein einfaches RecyclerView Beispiel](~/android/user-interface/layouts/recycler-view/recyclerview-example.md) tatsächlich nicht viele Funktionen &ndash; einfach einen Bildlauf durchführt und zeigt eine feste Liste von Foto durchsuchen zu erleichtern. Erwarten Benutzer in echten Anwendungen um mit der app interagieren, indem Sie auf Elemente in der Anzeige zu können. Darüber hinaus die zugrunde liegenden Datenquelle ändern kann (oder von der Anwendung geändert werden), und den Inhalt der Anzeige müssen mit diesen Änderungen konsistent bleiben. In den folgenden Abschnitten erfahren Sie, wie Element-Click-Ereignisse behandeln, und aktualisieren Sie `RecyclerView` Wenn die Änderungen die zugrunde liegenden Datenquelle.
 
-<a name="itemclick" />
 
 ### <a name="handling-item-click-events"></a>Behandlung von Element-Click-Ereignisse
 
@@ -91,7 +90,7 @@ PhotoViewHolder vh = new PhotoViewHolder (itemView, OnClick);
 
 Jetzt beim Erstellen und die Beispiel-anzeigen von Fotos-app ausführen, tippen Sie auf ein Foto in der Anzeige bewirkt, dass ein Popups angezeigt, die besagt, dass die Foto berührt wurde:
 
-[ ![Beispiel für Popupbenachrichtigungen der angezeigt, wenn ein Foto Karte wird abgerufen.](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png)
+[![Beispiel für Popupbenachrichtigungen der angezeigt, wenn ein Foto Karte wird abgerufen.](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png#lightbox)
 
 Dieses Beispiel zeigt nur eine Vorgehensweise zum Implementieren von Ereignishandlern mit `RecyclerView`. Ein anderer Ansatz, der hier verwendet werden konnte besteht darin zu platzieren Sie Ereignisse auf den Inhaber der Ansicht und des Adapters diese Ereignisse abonnieren. Sofern die Beispiel-app Fotos ein Foto Bearbeitungsfunktionen, separate Ereignisse würde werden muss, um die `ImageView` und die `TextView` innerhalb jedes `CardView`: berührt auf der `TextView` starten würden eine `EditView` Dialogfeld, in dem den Benutzer bearbeiten kann die Beschriftung und Fingereingaben auf die `ImageView` würde ein Foto Retusche-Tool, mit dem den Benutzer Zuschneiden oder drehen das Foto starten. Je nach den Anforderungen der app müssen Sie die beste Methode für die Behandlung von und reagieren auf Ereignisse berühren entwerfen.
 
@@ -159,7 +158,7 @@ randomPickBtn.Click += delegate
 
 Nun, dass bei der **zufällige auswählen** Schaltfläche wird abgerufen, `RecyclerView` aktualisiert die Anzeige, dass ein Foto weiter unten in der Auflistung mit dem ersten Foto in der Auflistung vertauscht wurden:
 
-[ ![Erste Screenshot vor dem Austausch zweite Screenshot nach einem Austausch](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png)
+[![Erste Screenshot vor dem Austausch zweite Screenshot nach einem Austausch](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png#lightbox)
 
 Natürlich `NotifyDataSetChanged` konnte aufgerufen wurden, anstatt die beiden Aufrufe von `NotifyItemChanged`, aber dies daher würde erzwingen `RecyclerView` um die gesamte Auflistung zu aktualisieren, obwohl nur zwei Elemente in der Auflistung geändert wurde. Aufrufen von `NotifyItemChanged` ist erheblich effizienter als das Aufrufen `NotifyDataSetChanged`.
 

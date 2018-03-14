@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: bda207796d1019f8188176acce055d782cb9e32d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e8487dc06b3512a0ec0bb1b30393faeab506df60
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="mac-platform-setup"></a>Mac-Plattform-Setup
 
@@ -20,6 +21,10 @@ ms.lasthandoff: 02/27/2018
 
 Bevor Sie beginnen, erstellen (oder verwenden Sie ein vorhandenes) Xamarin.Forms-Projekt.
 Sie können nur Mac-apps mit Visual Studio für Mac hinzufügen.
+
+> [!VIDEO https://youtube.com/embed/mvQ7jzaNseM]
+
+**Hinzufügen eines MacOS-Projekts in Xamarin.Forms, indem [Xamarin University](https://university.xamarin.com/)**
 
 ## <a name="adding-a-mac-app"></a>Hinzufügen einer Mac-App
 
@@ -92,7 +97,7 @@ Hinzufügen eine Mac-app, die auf MacOS Sierra und Mac OS X El Capitan ausgefüh
 
 9. Doppelklicken Sie auf **Main.storyboard** in Xcode zu bearbeiten. Wählen Sie die **Fenster** und _deaktivieren Sie_ der **ersten Controller ist** Kontrollkästchen (handelt, da der Code oben ein Fenster erstellt wird):
 
-  [ ![Deaktivieren Sie das Kontrollkästchen der erste Controller wird in Xcode](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png)
+  [![Deaktivieren Sie das Kontrollkästchen der erste Controller wird in Xcode](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
 
   Sie können das Menüsystem in das Storyboard So entfernen Sie unerwünschte Elemente bearbeiten.
 

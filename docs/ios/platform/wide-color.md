@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ab6124e2b11d26d4c10330e7b824e4761ebf4603
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 95098cd5c97ccc8357531feb79e55600f53a4be5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="wide-color"></a>Breite Farbskala
 
@@ -38,19 +38,19 @@ Die folgenden Farbe Kernkonzepte benötigen abgedeckt werden, bevor Sie einen ti
 
 Ein Farbraum ist eine Umgebung, in der Farben dargestellt und verglichen werden können. Es kann eine bis zu vier-dimensionalen Raum sein, die durch die Intensität der Farbe Komponenten definiert ist. 
 
-[ ![](wide-color-images/color00.png "Ein Farbraum")](wide-color-images/color00.png)
+[![](wide-color-images/color00.png "Ein Farbraum")](wide-color-images/color00.png#lightbox)
 
 ### <a name="color-channels"></a>Farbkanälen
 
 Die Farbkomponenten können auch als Farbkanälen bezeichnet werden. Einige bekannten Darstellungen wäre die RGB-Leerzeichen, den grau Leerzeichen, die CMYK-Leerzeichen oder Gerät unabhängig Leerzeichen. 
 
-[ ![](wide-color-images/color02.png "Die Farbkomponenten können auch als Farbkanälen bezeichnet werden")](wide-color-images/color02.png)
+[![](wide-color-images/color02.png "Die Farbkomponenten können auch als Farbkanälen bezeichnet werden")](wide-color-images/color02.png#lightbox)
 
 ### <a name="color-primaries"></a>Farbe Grundfarben
 
 Farbe Grundfarben bieten das Koordinatensystem, das verwendet wird, vergleichen und Farben zu berechnen. Farbe Grundfarben fallen in der Regel das am häufigsten ressourcenintensive Version der angegebenen Farbe, die innerhalb des Kanals Farbe generiert werden können.
 
-[ ![](wide-color-images/color01.png "Farbe Grundfarben Geben Sie das Koordinatensystem, das verwendet wird, vergleichen und Berechnen von Farben")](wide-color-images/color01.png)
+[![](wide-color-images/color01.png "Farbe Grundfarben Geben Sie das Koordinatensystem, das verwendet wird, vergleichen und Berechnen von Farben")](wide-color-images/color01.png#lightbox)
 
 Im Fall der RGB-Farbspektrum oben dargestellt, sind die primäre Farbe Where der `1.0` Koordinaten verankert sind (z. B. `[1.0, 0.0, 0.0]` für Rot).
 
@@ -58,7 +58,7 @@ Im Fall der RGB-Farbspektrum oben dargestellt, sind die primäre Farbe Where der
 
 Farbskala bezieht sich auf alle Farben, die als eine Kombination aus den einzelnen Farbkanälen innerhalb einer angegebenen Farbraum definiert werden können.
 
-[ ![](wide-color-images/color03.png "Farbe Farbskala-Beispiel")](wide-color-images/color03.png)
+[![](wide-color-images/color03.png "Farbe Farbskala-Beispiel")](wide-color-images/color03.png#lightbox)
 
 ## <a name="what-is-wide-color"></a>Was ist eine Breite Farbskala
 
@@ -80,7 +80,7 @@ Benutzer, die Erfassen von digitalen Bilder im RAW-Format möglicherweise Bilder
 
 Im 2015 veröffentlicht Apple neue Produkte (iMac und iPad Pro 9.7"), die den neuen Anzeige P3-Farbraum um erstellt, indem die sRGB Farbraum Probleme behandeln bereitstellen.
 
-[ ![](wide-color-images/color04.png "Die neue Anzeige P3-Farbraum")](wide-color-images/color04.png)
+[![](wide-color-images/color04.png "Die neue Anzeige P3-Farbraum")](wide-color-images/color04.png#lightbox)
 
 Die Anzeige P3-Farbraum hat die folgenden Eigenschaften:
 
@@ -112,7 +112,7 @@ Durch ermöglicht lässt für Werte, die kleiner als 0 (null) und größer als 1
 
 Um anzuzeigen, wie Werte außerhalb von 0 (null) und eine in den erweiterten Bereich sRGB Farbraum funktionieren, nehmen Sie im folgende Beispiel die von den meisten wiederum überlastete roten in den Farbraum der anzeigen-P3:
 
-[ ![](wide-color-images/color05.png "Funktionsweise von Werten außerhalb 0 (null) und eine in den erweiterten Bereich sRGB Farbraum")](wide-color-images/color05.png)
+[![](wide-color-images/color05.png "Funktionsweise von Werten außerhalb 0 (null) und eine in den erweiterten Bereich sRGB Farbraum")](wide-color-images/color05.png#lightbox)
 
 Im Anzeigebereich P3, würde dieser Farbe dargestellt werden als `[1.0, 0.0, 0.0]` und im erweiterten Bereich sRGB es wäre `[1.358, -0.074, -0.012]`. Da sRGB Werten gefüllt sind werden in der Anzeige P3 enthaltenen und die Anzeige P3-Werte "außerhalb" der Bereiche sRGB anordnen.
 

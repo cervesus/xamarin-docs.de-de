@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: cbabaf36ba8bfaa74ec17b0af0cd97e29f72d270
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 996723db83a1f972cce26090d1253f97b6c818d3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="contacts-and-contactsui"></a>Kontakte und ContactsUI
 
@@ -27,7 +27,7 @@ Die beiden neuen Frameworks enthalten die folgende Funktionen:
 
 - [**ContactsUI** ](#contactsui) -Xamarin.iOS Benutzeroberflächenelemente bietet anzeigen, bearbeiten, wählen und Kontakte auf iOS-Geräte erstellen.
 
-[ ![](contacts-images/add01.png "Ein Beispiel für Kontakt Blatt auf einem iOS-Gerät")](contacts-images/add01.png)
+[![](contacts-images/add01.png "Ein Beispiel für Kontakt Blatt auf einem iOS-Gerät")](contacts-images/add01.png#lightbox)
 
 > [!IMPORTANT]
 > **Hinweis:** vorhandenen `AddressBook` und `AddressBookUI` Frameworks Verwenden von iOS 8 (vor) sind in iOS 9 veraltet und sollte ersetzt werden, mit dem neuen `Contacts` und `ContactsUI` Frameworks so bald wie möglich für alle vorhandenen Xamarin.iOS App. Neue apps sollten mit den neuen Frameworks geschrieben werden.
@@ -43,11 +43,13 @@ In den folgenden Abschnitten führen wir einen Blick auf diese neuen Frameworks 
 
 Das Kontakte-Framework bietet Xamarin.iOS Zugriff auf die Kontaktinformationen des Benutzers. Da die meisten apps nur schreibgeschützten Zugriff erfordern, wurde dieses Framework für den Thread sicheren, nur-Lese Zugriff optimiert.
 
+<a name="Contact_Objects" />
+
 ### <a name="contact-objects"></a>Contact-Objekte
 
 Die `CNContact` Klasse bietet sicheren, nur-Lese Threadzugriffs auf die Eigenschaften eines Kontakts, z. B. Name, Adresse oder Telefonnummern. `CNContact` Funktionen wie eine `NSDictionary` und enthält mehrere, schreibgeschützten Auflistungen von Eigenschaften (z. B. Adressen oder Telefonnummern):
 
-[ ![](contacts-images/contactobjects.png "Wenden Sie sich an Objekt (Übersicht)")](contacts-images/contactobjects.png)
+[![](contacts-images/contactobjects.png "Wenden Sie sich an Objekt (Übersicht)")](contacts-images/contactobjects.png#lightbox)
 
 Für jede Eigenschaft, die mehrere Werte (z. B. e-Mail-Adresse oder Telefonnummer Ziffern) enthalten kann, werden sie als Array von dargestellt werden `NSLabeledValue` Objekte. `NSLabeledValue` ist ein Tupel der Thread-sichere bestehend aus einem nur-Lese Satz von Bezeichnungen und Werte, in dem die Bezeichnung der Wert für den Benutzer (z. B. Heim- oder Arbeit e-Mail) definiert. Die Kontakte-Framework bietet eine Auswahl von vordefinierten Bezeichnungen (über die `CNLabelKey` und `CNLabelPhoneNumberKey` statische Klassen), die Sie in Ihrer app verwenden können oder Sie haben die Möglichkeit, benutzerdefinierte Etiketten für Ihre Anforderungen definieren.
 
@@ -111,7 +113,7 @@ else
 
 Wenn dieser Code auf einem iOS 9-Gerät ausgeführt wird, wird der User-Auflistung ein neuer Kontakt hinzugefügt werden. Zum Beispiel:
 
-[ ![](contacts-images/add01.png "Ein neuer Kontakt hinzugefügt, der User-Auflistung")](contacts-images/add01.png)
+[![](contacts-images/add01.png "Ein neuer Kontakt hinzugefügt, der User-Auflistung")](contacts-images/add01.png#lightbox)
 
 ### <a name="contact-formatting-and-localization"></a>Wenden Sie sich an Formatierung und Lokalisierung
 
@@ -194,7 +196,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 
 Ein Benutzer möglicherweise verschiedene Quellen von Kontaktinformationen für eine einzelne Person in ihrer Datenbank (z. B. iCloud, Facebook oder Google Mail). In iOS und OS X-apps können diese Kontaktinformationen automatisch miteinander verknüpft und angezeigt, die dem Benutzer als ein einzelnes _Unified wenden Sie sich an_:
 
-[ ![](contacts-images/unified01.png "Übersicht über Unified Kontakte")](contacts-images/unified01.png)
+[![](contacts-images/unified01.png "Übersicht über Unified Kontakte")](contacts-images/unified01.png#lightbox)
 
 Unified Kontakt ist einen temporären, speicherresidenten Überblick über die Link-Kontaktinformationen, die seinen eigenen eindeutigen Bezeichner zugewiesen wird (die, den Kontakt erneut abzurufen, bei Bedarf verwendet werden soll). Standardmäßig wird das Framework Kontakte Unified Kontakt möglichst zurück.
 
@@ -259,11 +261,11 @@ Bei einer Änderung ein Kontakts, der Kontakt-Speicher sendet eine `CNContactSto
 
 Kontakte eines Benutzers können entweder lokal auf dem Gerät des Benutzers oder als aus einem oder mehreren Serverkonten (z. B. Facebook oder Google) auf dem Gerät synchronisierte Kontakte vorhanden sein. Jeder Pool von Kontakten verfügt über einen eigenen _Container_ ein bestimmtes Kontakts kann nur in einem Container befinden.
 
-[ ![](contacts-images/containers01.png "Container und Gruppen (Übersicht)")](contacts-images/containers01.png)
+[![](contacts-images/containers01.png "Container und Gruppen (Übersicht)")](contacts-images/containers01.png#lightbox)
 
 Einige Container ermöglichen die Kontakte in eine oder mehrere angeordnet werden _Gruppen_ oder _Untergruppen_. Dieses Verhalten ist abhängig von der Sicherungsspeicher für einen Container. Beispielsweise kann iCloud hat nur ein Container aber viele Gruppen (jedoch keine untergeordneten Gruppen). Microsoft Exchange unterstützt keine Gruppen andererseits, jedoch können mehrere Container (eine für jeden Exchange-Ordner) haben.
 
-[ ![](contacts-images/containers02.png "Überschneidungen Sie Container und Gruppen")](contacts-images/containers02.png)
+[![](contacts-images/containers02.png "Überschneidungen Sie Container und Gruppen")](contacts-images/containers02.png#lightbox)
 
 <a name="contactsui" />
 

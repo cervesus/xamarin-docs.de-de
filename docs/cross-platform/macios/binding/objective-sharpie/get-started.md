@@ -7,23 +7,20 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 01c390af08e59f3b10888a183df7fa6758c2609c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5d1de42a398affc1b6b6c9b863df5bc86a016c08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started"></a>Erste Schritte
-
-<style type="text/css"> .Terminal Blau {Color: rgb(10,96,254);} .terminal Grün {Color: rgb(12,156,26);} .terminal Magenta {Farbe: rgb(152,12,103);} </style>
-
 
 > [!IMPORTANT]
 > **Warnung:** objektiven Sharpie ist ein Tool für erfahrene Entwickler von Xamarin mit Kenntnissen von Objective-C (und durch Erweiterung auch C). Bevor Sie versuchen, eine Bibliothek für Objective-C-Bindung sollten Sie solide Kenntnisse im Erstellen Sie die systemeigene Bibliothek auf der Befehlszeile aus (und ein gutes Verständnis der Funktionsweise der systemeigenen Bibliothek) verfügen.
 
 <a name="installing" />
 
-# <a name="installing-objective-sharpie"></a>Installieren von Dienstziel Sharpie
+## <a name="installing-objective-sharpie"></a>Installieren von Dienstziel Sharpie
 
 Objektive Sharpie befindet sich derzeit ein eigenständiges Befehlszeilentool für Mac OS X 10.10 und höher, und ist _nicht vollständig unterstützt Xamarin-Produkt_. Nur sollte von erfahrenen Entwicklern verwendet werden, beim Erstellen eines Projekts für die Bindung an a 3rd Objective-C-Bibliothek eines Drittanbieters.
 
@@ -34,9 +31,10 @@ Führen Sie das Installationsprogramm, und führen Sie die aufforderungen vom In
   - [Herunterladen der neuesten Version](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
   - [Forum-Ankündigung](https://forums.xamarin.com/discussion/104800/objective-sharpie-3-4)
 
-> 💡 **Tipp:** verwenden die `sharpie update` Befehl aus, um auf die neueste Version zu aktualisieren.
+> [!TIP]
+> Verwenden der `sharpie update` Befehl aus, um auf die neueste Version zu aktualisieren.
 
-# <a name="basic-walkthrough"></a>Grundlegende exemplarische Vorgehensweise
+## <a name="basic-walkthrough"></a>Grundlegende exemplarische Vorgehensweise
 
 Objektive Sharpie ist ein Befehlszeilentool, bereitgestellten von Xamarin, die hilft bei der Erstellung der Definitionen erforderlich, um eine 3rd Party Objective-C-Bibliothek in c# zu binden.
 Selbst bei Verwendung des Ziels Sharpie, der Entwickler *wird* müssen die generierten Dateien ändern, nachdem Ziel Sharpie abgeschlossen ist, um auftretende Probleme zu behandeln, die vom Tool nicht automatisch verarbeitet werden konnte.

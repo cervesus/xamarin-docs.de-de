@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/22/2017
-ms.openlocfilehash: 605374c0f2bfe656e564e48d14ffe18ce5b7dfe5
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c6d10025ccc038ba160fe3c09f6ce92e97d916d2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="files"></a>Dateien
 
@@ -40,18 +40,18 @@ Einbetten eine Datei in eine **PCL** Assembly erstellen, oder fügen Sie eine Da
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Konfigurieren von eingebettete Ressourcenbuildvorgang](files-images/vs-embeddedresource-sml.png "Einstellung EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png "Einstellung EmbeddedResource BuildAction")
+[![Konfigurieren von eingebettete Ressourcenbuildvorgang](files-images/vs-embeddedresource-sml.png "Einstellung EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png#lightbox "Einstellung EmbeddedResource BuildAction")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![Textdatei eingebettet, in der PCL, konfigurieren eingebettete Ressourcenbuildvorgang](files-images/xs-embeddedresource-sml.png "Einstellung EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png "Einstellung EmbeddedResource BuildAction")
+[![Textdatei eingebettet, in der PCL, konfigurieren eingebettete Ressourcenbuildvorgang](files-images/xs-embeddedresource-sml.png "Einstellung EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "Einstellung EmbeddedResource BuildAction")
 
 -----
 
 `GetManifestResourceStream` wird verwendet, um Zugriff auf die eingebettete Datei mithilfe der **Ressourcen-ID**. Standardmäßig die Ressourcen-ID der Dateiname, der den Standardnamespace für das eingebettet ist in - Projekt mit dem Präfix in diesem Fall die Assembly wird **WorkingWithFiles** und der Dateiname ist **PCLTextResource.txt**, Daher ist die Ressourcen-ID `WorkingWithFiles.PCLTextResource.txt`.
 
 ```csharp
-var assembly = typeof(LoadResourceText).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
 Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLTextResource.txt");
 string text = "";
 using (var reader = new System.IO.StreamReader (stream)) {
@@ -61,12 +61,12 @@ using (var reader = new System.IO.StreamReader (stream)) {
 
 Die `text` Variable kann dann verwendet werden, um den Text anzuzeigen, oder verwenden sie andernfalls im Code. Diesen Screenshot mit der [Beispiel-app](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/) wird der Text gerendert wird, einem `Label` Steuerelement.
 
- [ ![Textdatei eingebettet, in der PCL](files-images/pcltext-sml.png "eingebettete Textdatei in PCL angezeigt, in der App")](files-images/pcltext.png "eingebettete Textdatei in PCL in-App angezeigt")
+ [![Textdatei eingebettet, in der PCL](files-images/pcltext-sml.png "eingebettete Textdatei in PCL angezeigt, in der App")](files-images/pcltext.png#lightbox "eingebettete Textdatei in PCL in-App angezeigt")
 
 Laden und Deserialisieren von XML ist gleichermaßen einfach. Der folgende Code zeigt eine XML-Datei wird geladen und deserialisiert aus einer Ressource gebunden ein `ListView` für die Anzeige. Die XML-Datei enthält ein Array von `Monkey` Objekte (die Klasse wird im Beispielcode definiert).
 
 ```csharp
-var assembly = typeof(LoadResourceText).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
 Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLXmlResource.xml");
 List<Monkey> monkeys;
 using (var reader = new System.IO.StreamReader (stream)) {
@@ -77,7 +77,7 @@ var listView = new ListView ();
 listView.ItemsSource = monkeys;
 ```
 
- [ ![XML-Datei eingebettet, in der PCL, in der Listenansicht angezeigt](files-images/pclxml-sml.png "eingebettete XML-Datei in der PCL angezeigt, in der Listenansicht")](files-images/pclxml.png "eingebettete XML-Datei in der PCL, die in der Listenansicht angezeigt")
+ [![XML-Datei eingebettet, in der PCL, in der Listenansicht angezeigt](files-images/pclxml-sml.png "eingebettete XML-Datei in der PCL angezeigt, in der Listenansicht")](files-images/pclxml.png#lightbox "eingebettete XML-Datei in der PCL, die in der Listenansicht angezeigt")
 
 <a name="Embedding_in_Shared_Projects" />
 
@@ -106,7 +106,7 @@ var resourcePrefix = "WorkingWithFiles.WinPhone.";
 
 Debug.WriteLine("Using this resource prefix: " + resourcePrefix);
 // note that the prefix includes the trailing period '.' that is required
-var assembly = typeof(SharedPage).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(SharedPage)).Assembly;
 Stream stream = assembly.GetManifestResourceStream
     (resourcePrefix + "SharedTextResource.txt");
 ```
@@ -129,7 +129,7 @@ Da in einigen Fällen es schwierig ist zu verstehen, warum eine bestimmte Ressou
 using System.Reflection;
 // ...
 // use for debugging, not in released app code!
-var assembly = typeof(SharedPage).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(SharedPage)).Assembly;
 foreach (var res in assembly.GetManifestResourceNames()) {
     System.Diagnostics.Debug.WriteLine("found resource: " + res);
 }
@@ -141,7 +141,7 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 
 Da Xamarin.Forms auf mehrere Plattformen mit einem eigenen Dateisystem ausgeführt besteht keine einen Ansatz für das Laden und Speichern von Dateien, die vom Benutzer erstellt. Um zu veranschaulichen, wie das Speichern und laden die Beispiel-app einen Bildschirm enthält, der speichert und lädt einer Benutzereingabe - Textdateien wird nicht mehr benötigen Bildschirm unten gezeigt:
 
- [ ![Speichern und Laden von Text](files-images/saveandload-sml.png "speichern und Laden von Dateien in der App")](files-images/saveandload.png "speichern und Laden von Dateien in der App")
+ [![Speichern und Laden von Text](files-images/saveandload-sml.png "speichern und Laden von Dateien in der App")](files-images/saveandload.png#lightbox "speichern und Laden von Dateien in der App")
 
 Jede Plattform verfügt über eine leicht abweichende Verzeichnisstruktur und anderen Filesystem-Funktionen – z. B. Xamarin.iOS und Xamarin.Android unterstützen die meisten `System.IO` Funktionalität jedoch Windows Phone unterstützt nur `IsolatedStorage` und [ `Windows.Storage` ](http://msdn.microsoft.com/library/windowsphone/develop/jj681698(v=vs.105).aspx) APIs.
 
@@ -250,5 +250,5 @@ Dieses Dokument hat einige einfache Dateivorgänge für eingebettete Ressourcen 
 
 - [FilesSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
 - [Erstellen, schreiben und Lesen einer Datei (UWP)](/windows/uwp/files/quickstart-reading-and-writing-files/)
-- [Xamarin.Forms-Beispiele](https://github.com/xamarin/xamarin-forms-samples)
+- [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://github.com/xamarin/xamarin-forms-samples)
 - [Dateien Arbeitsmappe](https://developer.xamarin.com/workbooks/xamarin-forms/application-fundamentals/files/files.workbook)

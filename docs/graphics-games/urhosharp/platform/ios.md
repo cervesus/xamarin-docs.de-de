@@ -1,17 +1,17 @@
 ---
 title: "UrhoSharp IOS- und tvos. außerdem wurden Unterstützung"
-description: "iOS und tvos. außerdem wurden bestimmte Setup- und Funktionen"
+description: "iOS und tvos. außerdem wurden bestimmte Setup- und Funktionen für UrhoSharp."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 7B06567E-E789-4EA1-A2A9-F3B2212EDD23
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 9cf779b23ed830c07af0100152a44d6c3c4e317b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 465fed25f360f29ad0b63146add8de939fa8924e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="urhosharp-ios-and-tvos-support"></a>UrhoSharp IOS- und tvos. außerdem wurden Unterstützung
 
@@ -21,17 +21,17 @@ Während Urho eine portable Klassenbibliothek ist, und ermöglicht die gleiche A
 
 In den nachfolgenden Seiten wird angenommen, dass `MyGame` ist eine Subclass von der `Application` Klasse.
 
-# <a name="ios-and-tvos"></a>iOS und tvos. außerdem wurden
+## <a name="ios-and-tvos"></a>iOS und tvos. außerdem wurden
 
 **Unterstützte Architekturen:** armv7, arm64, i386
 
-# <a name="creating-a-project"></a>Erstellen eines Projekts
+## <a name="creating-a-project"></a>Erstellen eines Projekts
 
 Erstellen Sie ein iOS-Projekt, und klicken Sie dann Ressourcenverzeichnis Daten hinzufügen und stellen Sie sicher, dass alle Dateien **BundleResource** als die **Buildvorgang**.
 
 ![Projekt Setup](ios-images/image-4.png "Daten hinzufügen, um das Ressourcenverzeichnis")
 
-# <a name="configuring-and-launching-urho"></a>Konfigurieren und starten Urho
+## <a name="configuring-and-launching-urho"></a>Konfigurieren und starten Urho
 
 Hinzufügen von using-Anweisungen für die `Urho` und `Urho.iOS` Namespaces, und fügen Sie diesen Code für das Initialisieren von Urho sowie das Starten der Anwendungsstatus hinzu:
 
@@ -57,7 +57,7 @@ async void LaunchGame()
 
 Es ist wichtig, dass Sie PNG Optimierungen deaktiviert werden, da der standardmäßige iOS PNG-Optimierer Images generiert, die Urho ohne derzeit ordnungsgemäß verarbeiten kann
 
-# <a name="custom-embedding-of-urho"></a>Benutzerdefinierte Einbetten von Urho
+## <a name="custom-embedding-of-urho"></a>Benutzerdefinierte Einbetten von Urho
 
 Sie können auch mit dem Fehlen eines Urho werden über den Bildschirm für die gesamte Anwendung, und um es als eine Komponente der Anwendung verwenden, erstellen Sie eine `UrhoSurface` also eine `UIView` , die Sie in einer vorhandenen Anwendung einbetten können.
 

@@ -7,19 +7,15 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 695d02c5fa0477053cd95d73e1b738332d14f0f9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0fdeecc4465aa5709b452ef0b591ec4e5c262e3d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="labels"></a>Bezeichnungen
 
-Die `UILabel` Steuerelement dient zum Anzeigen von einzelnen und mehreren Zeilen nur-Text zu lesen. In diesem Artikel werden die folgenden Themen behandelt:
-
-- [Implementieren eine Bezeichnung](#Implementing_a_Label)
-- [Abschneiden sowie das Umbrechen](#Truncating_and_Wrapping)
-- [Formatieren von Text und Bezeichnung](#Formatting_Text_and_Label)
+Die `UILabel` Steuerelement dient zum Anzeigen von einzelnen und mehreren Zeilen nur-Text zu lesen. 
 
 ## <a name="implementing-a-label"></a>Implementieren eine Bezeichnung
 
@@ -52,6 +48,8 @@ Die folgenden Eigenschaften können auf das Auffüllzeichen Eigenschaften angepa
 ## <a name="truncating-and-wrapping"></a>Abschneiden sowie das Umbrechen
 
 Für Informationen über die Befehlszeile in iOS unterbrochen wird, finden Sie in der [abgeschnitten und Textumbruch](https://developer.xamarin.com/recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text/) Rezept.
+
+<a name="Formatting_Text_and_Label"/>
 
 ## <a name="formatting-text-and-label"></a>Formatieren von Text und Bezeichnung
 

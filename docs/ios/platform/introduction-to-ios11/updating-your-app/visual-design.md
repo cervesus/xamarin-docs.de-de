@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 2904a7da73f5bf6e8960f65239d1f8dc52ab1aba
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d66d8cd722aa9a7b6fe27db3f6128ee24309a1de
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="visual-design-updates"></a>Visuelle Design-Updates
 
@@ -51,7 +51,7 @@ iOS 11 machte es einfacher, einen Controller Suche direkt auf der Navigationslei
 NavigationItem.SearchController = searchController;
 ```
 
-[![Große Navigationstitel mit Suchleiste](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png)
+[![Große Navigationstitel mit Suchleiste](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png#lightbox)
 
 Abhängig von den Funktionen der app müssen Sie möglicherweise oder sollten sich nicht auf die Suchleiste ausblenden, wenn ein Benutzer eine Liste einen Bildlauf. Sie können anpassen, dies mithilfe der `HidesSearchBarWhenScrolling` Eigenschaft.
 
@@ -75,7 +75,7 @@ iOS 7 [eingeführt](~/ios/platform/introduction-to-ios7/ios7-ui.md#fullscreen) `
 
 Der sichere Bereich ist eine neue Art der darum geht, sichtbare Bereich von der Anwendung und Einschränkungen zwischen einer Ansicht und eine übergeordnete Ansicht hinzugefügt werden. Betrachten Sie beispielsweise die folgende Abbildung aus:
 
-[![Abgesicherten Bereich Vs oberen und unteren Layout-Handbuch](visual-design-images/image10-sml.png)](visual-design-images/image10.png)
+[![Abgesicherten Bereich Vs oberen und unteren Layout-Handbuch](visual-design-images/image10-sml.png)](visual-design-images/image10.png#lightbox)
 
 Vorher, wenn Sie hatten eine Ansicht hinzugefügt und auf den grünen Bereich oberhalb sichtbar sein sollte, Sie würden schränken Sie ihn auf die _unten_ von der `TopLayoutGuide` und die _oben_ von der `BottomLayoutGuide`. In iOS 11, Sie möchten stattdessen schränken Sie ihn auf die _oben_ und _unteren_ des sicheren Bereichs. Beispiel:
 

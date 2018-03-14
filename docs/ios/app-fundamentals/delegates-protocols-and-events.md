@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5df7c2bbc7be1089795c94b6f639bd4556b49366
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 69296992c503d536a4160f172022c7ce5578812f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="events-protocols-and-delegates"></a>Ereignisse, Protokolle und Delegaten
 
@@ -32,7 +32,7 @@ In diesem Artikel Sie über alle diese Themen erfahren, und Sie haben eine solid
 
 Um Protokolle und Delegaten zu veranschaulichen, erstellen wir eine einfache Zuordnung-Anwendung, die von einer Anmerkung zu einer Zuordnung hinzugefügt wird, wie hier gezeigt:
 
- [ ![](delegates-protocols-and-events-images/01-map.png "Ein Beispiel für eine einfache Zuordnung-Anwendung, die eine Anmerkung zu einer Zuordnung fügt") ](delegates-protocols-and-events-images/01-map.png) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "eine Beispiel-Anmerkung zu einer Zuordnung hinzugefügt")](delegates-protocols-and-events-images/04-annotation-with-callout.png)
+ [![](delegates-protocols-and-events-images/01-map.png "Ein Beispiel für eine einfache Zuordnung-Anwendung, die eine Anmerkung zu einer Zuordnung fügt") ](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "eine Beispiel-Anmerkung zu einer Zuordnung hinzugefügt")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Vor dem bewältigt diese app Fortschritts, beginnen wir zunächst mit .NET Ereignisse unter der UIKit ansehen.
 
@@ -59,15 +59,15 @@ aButton.TouchUpInside += delegate {
 
 Der vorhergehende Code ist in der Methode ViewDidLoad der UIViewContoller oben wired. Die Variable aButton verweist auf eine Schaltfläche, die Sie in der iOS-Designer oder durch Code hinzufügen können. Die folgende Abbildung zeigt diese Schaltfläche aus, wie es im iOS-Designer aus dem Beispiel, das in diesem Artikel begleitet geschaltet hinzugefügt wird:
 
- [ ![](delegates-protocols-and-events-images/02-interface-builder-outlet.png "Eine Schaltfläche in iOS-Designer hinzugefügt")](delegates-protocols-and-events-images/02-interface-builder-outlet.png)
+ [![](delegates-protocols-and-events-images/02-interface-builder-outlet.png "Eine Schaltfläche in iOS-Designer hinzugefügt")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
 
 Xamarin.iOS unterstützt auch das Ziel-Aktionsformat Herstellen einer Verbindung zwischen Ihren Code auf eine Aktivität, die mit einem Steuerelement auftritt. Um ein Ziel-Aktion für die Schaltfläche "Hello" erstellt haben, doppelklicken klicken sie in der iOS-Designer. Die UIViewController Code-Behind-Datei wird angezeigt, und der Entwickler wird aufgefordert, wählen Sie einen Speicherort für das Herstellen einer Verbindung Methode einfügen:
 
- [ ![](delegates-protocols-and-events-images/03-interface-builder-action.png "Die UIViewControllers Code-Behind-Datei")](delegates-protocols-and-events-images/03-interface-builder-action.png)
+ [![](delegates-protocols-and-events-images/03-interface-builder-action.png "Die UIViewControllers Code-Behind-Datei")](delegates-protocols-and-events-images/03-interface-builder-action.png#lightbox)
 
 Nachdem Sie einen Standort ausgewählt ist, eine neue Methode erstellt und wired von an das Steuerelement. Im folgenden Beispiel wird eine Nachricht in die Konsole geschrieben werden, wenn auf die Schaltfläche geklickt wird:
 
- [ ![](delegates-protocols-and-events-images/05-interface-builder-action.png "Eine Nachricht wird an die Konsole geschrieben werden, wenn die Schaltfläche geklickt wird")](delegates-protocols-and-events-images/05-interface-builder-action.png)
+ [![](delegates-protocols-and-events-images/05-interface-builder-action.png "Eine Nachricht wird an die Konsole geschrieben werden, wenn die Schaltfläche geklickt wird")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
 
 Weitere Informationen über das iOS-Ziel-Action-Muster finden Sie im Abschnitt "Ziel-Aktion" von " [Anwendung Kernkompetenzen für iOS](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)" in Apple iOS-Entwicklerbibliothek.
 
@@ -170,7 +170,7 @@ Werfen wir einen Blick auf ein Beispiel, das mithilfe von Xamarin.iOS eines Obje
 
 Auf diese Weise die `MKAnnotation` Protokoll wird verwendet, um die relevante Daten bereit, die eine Anmerkung begleitet. Die aktuelle Ansicht für die Anmerkung selbst basiert aus den Daten in das Objekt, das nimmt die `MKAnnotation` Protokoll. Z. B. der Text für die Legende an, die angezeigt wird, wenn der Benutzer auf die Anmerkung tippt, (wie im folgenden Screenshot gezeigt) stammen aus den `Title` Eigenschaften der Klasse, die das Protokoll implementiert:
 
- [ ![](delegates-protocols-and-events-images/04-annotation-with-callout.png "Beispieltext für die Legende beim Tippen auf die Anmerkung")](delegates-protocols-and-events-images/04-annotation-with-callout.png)
+ [![](delegates-protocols-and-events-images/04-annotation-with-callout.png "Beispieltext für die Legende beim Tippen auf die Anmerkung")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Wie im nächsten Abschnitt werden die Protokolle Deep Dive, beschrieben bindet Xamarin.iOS Protokolle für abstrakte Klassen. Für die `MKAnnotation` -Protokoll die gebundene C#-Klasse heißt `MKAnnotation` zu imitieren, die den Namen des Protokolls verfügbar, und es ist eine Unterklasse von `NSObject`, die Stammbasisklasse für CocoaTouch. Das Protokoll erfordert einen Getter und Setter für die Koordinate implementiert werden. Titel und Untertitel sind jedoch optional. Aus diesem Grund in die `MKAnnotation` -Klasse, die `Coordinate` Eigenschaft ist *abstrakte*, implementiert werden müssen und die `Title` und `Subtitle` Eigenschaften gekennzeichnet sind *virtuellen* , wodurch optional, wie unten dargestellt:
 

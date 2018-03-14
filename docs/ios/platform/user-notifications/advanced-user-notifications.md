@@ -3,16 +3,16 @@ title: Fortgeschrittene Benutzerbenachrichtigungen
 description: "Dieser Artikel hat einen tieferen Einblick in das neue Benutzerbenachrichtigungen-Framework und wie Sie vollständige in einem Xamarin.iOS-app nutzen."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4e1ff652-28f0-4566-b383-9d12664401a4
+ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 6408f3b45f93413fa814e410f07e7b71179b7338
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e20c9f068fe92e0dd711e0c20d31d713a0d03f0d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="advanced-user-notifications"></a>Fortgeschrittene Benutzerbenachrichtigungen
 
@@ -81,7 +81,7 @@ Für eine Remote-Benachrichtigung durch eine Erweiterung der geändert werden mu
 
 Sehen Sie sich in der folgenden Übersicht des Prozesses an:
 
-[ ![](advanced-user-notifications-images/extension02.png "Hinzufügen von Anlagen für Media-Prozess")](advanced-user-notifications-images/extension02.png)
+[![](advanced-user-notifications-images/extension02.png "Hinzufügen von Anlagen für Media-Prozess")](advanced-user-notifications-images/extension02.png#lightbox)
 
 Sobald der Remote-Benachrichtigung an das Gerät (über APNs) übermittelt wird, können die Webdiensterweiterung dann die erforderliche Image über gewünschten Mitteln herunterladen (z. B. ein `NSURLSession`) und nachdem sie das Bild erhalten hat, können sie den Inhalt der Benachrichtigung und zur Anzeige ändern es dem Benutzer.
 
@@ -157,7 +157,7 @@ Unterstützung von Interaktionen der Benutzer mit einer Benachrichtigung für Be
 
 Wenn der Benutzer eine Benachrichtigung für Benutzer mit einer benutzerdefinierten Benutzeroberfläche angezeigt wird, müssen sie die folgenden Elemente:
 
-[ ![](advanced-user-notifications-images/customui01.png "Eine Benachrichtigung für Benutzer mit einem benutzerdefinierten Benutzeroberflächenelemente")](advanced-user-notifications-images/customui01.png)
+[![](advanced-user-notifications-images/customui01.png "Eine Benachrichtigung für Benutzer mit einem benutzerdefinierten Benutzeroberflächenelemente")](advanced-user-notifications-images/customui01.png#lightbox)
 
 Wenn der Benutzer mit den benutzerdefinierten Aktionen (unten die Benachrichtigung dargestellt) interagiert, kann die Benutzeroberfläche aktualisiert werden, um die Benutzer Ihr Feedback als das was geschah, als sie eine bestimmte Aktion aufgerufen.
 
@@ -171,13 +171,13 @@ Führen Sie folgende Schritte aus, um eine benutzerdefinierte Benutzer-Benachric
 2. Mit der rechten Maustaste auf den Namen der Projektmappe in der **Lösung Pad** , und wählen Sie **hinzufügen** > **neues Projekt hinzufügen**.
 3. Wählen Sie **iOS** > **Erweiterungen** > **Benachrichtigung Content Erweiterungen** , und klicken Sie auf die **Weiter** Schaltfläche: 
 
-    [ ![](advanced-user-notifications-images/notify01.png "Wählen Sie die Benachrichtigung Content-Erweiterungen")](advanced-user-notifications-images/notify01.png)
+    [![](advanced-user-notifications-images/notify01.png "Wählen Sie die Benachrichtigung Content-Erweiterungen")](advanced-user-notifications-images/notify01.png#lightbox)
 4. Geben Sie einen **Namen** für die Erweiterung, und klicken Sie auf die **Weiter** Schaltfläche: 
 
-    [ ![](advanced-user-notifications-images/notify02.png "Geben Sie einen Namen für die Erweiterung")](advanced-user-notifications-images/notify02.png)
+    [![](advanced-user-notifications-images/notify02.png "Geben Sie einen Namen für die Erweiterung")](advanced-user-notifications-images/notify02.png#lightbox)
 5. Anpassen der **Projektname** und/oder **Projektmappenname** Wenn erforderlich, und klicken Sie auf die **erstellen** Schaltfläche: 
 
-    [ ![](advanced-user-notifications-images/notify03.png "Passen Sie die Projektnamen und/oder die Namen der Projektmappe")](advanced-user-notifications-images/notify03.png)
+    [![](advanced-user-notifications-images/notify03.png "Passen Sie die Projektnamen und/oder die Namen der Projektmappe")](advanced-user-notifications-images/notify03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -185,7 +185,7 @@ Führen Sie folgende Schritte aus, um eine benutzerdefinierte Benutzer-Benachric
 2. Mit der rechten Maustaste auf den Namen der Projektmappe in der **Projektmappen-Explorer** , und wählen Sie **hinzufügen** > **neues Projekt hinzufügen**.
 3. Wählen Sie **iOS** > **Erweiterungen** > **Benachrichtigung Content Erweiterungen**: 
 
-    [ ![](advanced-user-notifications-images/notify01w.png "Wählen Sie die Benachrichtigung Content-Erweiterungen")](advanced-user-notifications-images/notify01w.png)
+    [![](advanced-user-notifications-images/notify01w.png "Wählen Sie die Benachrichtigung Content-Erweiterungen")](advanced-user-notifications-images/notify01w.png#lightbox)
 4. Geben Sie einen **Namen** für die Erweiterung, und klicken Sie auf die **OK** Schaltfläche.
 
 -----
@@ -254,7 +254,7 @@ Das System muss darüber informiert werden, finden Sie die Erweiterung für der 
 3. Erweitern Sie die `NSExtension` Schlüssel.
 4. Hinzufügen der `UNNotificationExtensionCategory` als Typ Key **Zeichenfolge** mit dem Wert der Kategorie die Erweiterung gehört (in diesem Beispiel "Ereignis-Einladung): 
 
-    [ ![](advanced-user-notifications-images/customui02.png "Fügen Sie der UNNotificationExtensionCategory-Schlüssel")](advanced-user-notifications-images/customui02.png)
+    [![](advanced-user-notifications-images/customui02.png "Fügen Sie der UNNotificationExtensionCategory-Schlüssel")](advanced-user-notifications-images/customui02.png#lightbox)
 5. Speichern Sie die Änderungen.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -263,7 +263,7 @@ Das System muss darüber informiert werden, finden Sie die Erweiterung für der 
 3. Erweitern Sie die `NSExtension` Schlüssel.
 4. Hinzufügen der `UNNotificationExtensionCategory` als Typ Key **Zeichenfolge** mit dem Wert der Kategorie die Erweiterung gehört (in diesem Beispiel "Ereignis-Einladung): 
 
-    [ ![](advanced-user-notifications-images/customui02w.png "Fügen Sie der UNNotificationExtensionCategory-Schlüssel")](advanced-user-notifications-images/customui02w.png)
+    [![](advanced-user-notifications-images/customui02w.png "Fügen Sie der UNNotificationExtensionCategory-Schlüssel")](advanced-user-notifications-images/customui02w.png#lightbox)
 5. Speichern Sie die Änderungen.
 
 -----
@@ -272,11 +272,11 @@ Benachrichtigung Content Erweiterung Kategorien (`UNNotificationExtensionCategor
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![](advanced-user-notifications-images/customui03.png "Benachrichtigung Erweiterung Inhalt Kategorien")](advanced-user-notifications-images/customui03.png)
+[![](advanced-user-notifications-images/customui03.png "Benachrichtigung Erweiterung Inhalt Kategorien")](advanced-user-notifications-images/customui03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](advanced-user-notifications-images/customui03w.png "Benachrichtigung Erweiterung Inhalt Kategorien")](advanced-user-notifications-images/customui03w.png)
+[![](advanced-user-notifications-images/customui03w.png "Benachrichtigung Erweiterung Inhalt Kategorien")](advanced-user-notifications-images/customui03w.png#lightbox)
 
 -----
 
@@ -286,11 +286,11 @@ In der Situation, in dem die Benutzeroberfläche des benutzerdefinierten Benachr
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![](advanced-user-notifications-images/customui04.png "Suchen von Standardinformationen")](advanced-user-notifications-images/customui04.png)
+[![](advanced-user-notifications-images/customui04.png "Suchen von Standardinformationen")](advanced-user-notifications-images/customui04.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](advanced-user-notifications-images/customui04w.png "Suchen von Standardinformationen")](advanced-user-notifications-images/customui04w.png)
+[![](advanced-user-notifications-images/customui04w.png "Suchen von Standardinformationen")](advanced-user-notifications-images/customui04w.png#lightbox)
 
 -----
 
@@ -367,11 +367,11 @@ Um diesen Effekt zu vermeiden, bearbeiten die `Info.plist` -Datei für die Erwei
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[ ![](advanced-user-notifications-images/customui05.png "Der Schlüssel UNNotificationExtensionInitialContentSizeRatio")](advanced-user-notifications-images/customui05.png)
+[![](advanced-user-notifications-images/customui05.png "Der Schlüssel UNNotificationExtensionInitialContentSizeRatio")](advanced-user-notifications-images/customui05.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](advanced-user-notifications-images/customui05w.png "Der Schlüssel UNNotificationExtensionInitialContentSizeRatio")](advanced-user-notifications-images/customui05w.png)
+[![](advanced-user-notifications-images/customui05w.png "Der Schlüssel UNNotificationExtensionInitialContentSizeRatio")](advanced-user-notifications-images/customui05w.png#lightbox)
 
 -----
 

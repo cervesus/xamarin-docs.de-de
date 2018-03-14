@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: a3c9c76ce173606d206166b2bcfb9760eb5634ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: abb8ee30828e5d9856b9fd72cca8adb669959818
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Die Veröffentlichung auf dem Apple TV-App Store
 
@@ -154,14 +154,14 @@ Mit der Xamarin.tvOS-app ordnungsgemäß konfiguriert können Sie jetzt bereit f
     ![](app-store-publishing-images/buildxs01new.png "Wählen Sie die Release-Konfiguration")
 2. Wählen Sie aus dem **Build**-Menü die Option **Zur Veröffentlichung aktivieren**:
 
-    [ ![](app-store-publishing-images/buildxs02new.png "Wählen Sie „Für Veröffentlichung aktivieren“ aus")](app-store-publishing-images/buildxs02new.png)
+    [![](app-store-publishing-images/buildxs02new.png "Wählen Sie Archiv für die Veröffentlichung")](app-store-publishing-images/buildxs02new.png#lightbox)
 3. Sobald das Archiv erstellt wurde, wird die **Archivansicht** angezeigt:
 
-    [ ![](app-store-publishing-images/buildxs03new.png "Das Archive-Ansicht")](app-store-publishing-images/buildxs03new.png)
+    [![](app-store-publishing-images/buildxs03new.png "Das Archive-Ansicht")](app-store-publishing-images/buildxs03new.png#lightbox)
 
-#<a name="3-sign-and-distribute-your-app"></a>&#3;# signieren und Verteilen von Ihrer App
+### <a name="sign-and-distribute-your-app"></a>Signieren und Verteilen Ihrer App
 
-Beim Erstellen Ihrer Anwendung für das Archiv wird automatisch die *Archivansicht* geöffnet. Darin werden alle archivierten Projekte nach Projektmappe gruppiert angezeigt. Standardmäßig wird in dieser Ansicht nur die aktuelle geöffnete Projektmappe angezeigt. Klicken Sie auf **Alle Archive anzeigen**, um alle Projektmappen mit Archiven anzuzeigen.
+Beim Erstellen Ihrer Anwendung für das Archiv wird automatisch die *Archiv-Ansicht* geöffnet. Darin werden alle archivierten Projekte nach Projektmappe gruppiert angezeigt. Standardmäßig wird in dieser Ansicht nur die aktuelle geöffnete Projektmappe angezeigt. Klicken Sie auf **Alle Archive anzeigen**, um alle Projektmappen mit Archiven anzuzeigen.
 
 Es wird empfohlen, Archive beizubehalten, die bei den Kunden bereitgestellt wurden (App Store- oder Unternehmensbereitstellungen). Dadurch können alle generierten Debuginformationen zu einem späteren Zeitpunkt symbolisiert werden.
 
@@ -169,19 +169,19 @@ Gehen Sie folgendermaßen vor, um Ihre App für die Verteilung zu signieren und 
 
 1. Wählen Sie die **signieren und Verteilen von...** , unten dargestellt:
 
-    [ ![](app-store-publishing-images/buildxs04new.png ", Wählen Sie TheSign und verteilen...")](app-store-publishing-images/buildxs04new.png)
+    [![](app-store-publishing-images/buildxs04new.png ", Wählen Sie TheSign und verteilen...")](app-store-publishing-images/buildxs04new.png#lightbox)
 2. Dadurch wird der Veröffentlichungs-Assistent geöffnet. Wählen Sie den Verteilungskanal **App Store** aus, um ein Paket zu erstellen, und öffnen Sie den Application Loader:
 
-    [ ![](app-store-publishing-images/distribute01.png "Wählen Sie den App Store-Verteilung-Kanal")](app-store-publishing-images/distribute01.png)
+    [![](app-store-publishing-images/distribute01.png "Wählen Sie den App Store-Verteilung-Kanal")](app-store-publishing-images/distribute01.png#lightbox)
 3. Wählen Sie die Signaturidentität sowie das entsprechende Bereitstellungsprofil oder mit einer anderen Identität neu melden Sie an, auf dem Bildschirm Bereitstellungsprofil:
 
-    [ ![](app-store-publishing-images/distribute02.png "Wählen Sie die Signaturidentität und das entsprechende Bereitstellungsprofil")](app-store-publishing-images/distribute02.png)
+    [![](app-store-publishing-images/distribute02.png "Wählen Sie die Signaturidentität und das entsprechende Bereitstellungsprofil")](app-store-publishing-images/distribute02.png#lightbox)
 4. Überprüfen Sie die Details Ihres Pakets, und klicken Sie zum Speichern des `.ipa`-Pakets auf **Veröffentlichen**:
 
-    [ ![](app-store-publishing-images/distribute03.png "Überprüfen Sie die Details des Pakets")](app-store-publishing-images/distribute03.png)
+    [![](app-store-publishing-images/distribute03.png "Überprüfen Sie die Details des Pakets")](app-store-publishing-images/distribute03.png#lightbox)
 5. Sobald die `.ipa` gespeichert wurde, kann Ihre App über den Application Loader in iTunes Connect hochgeladen werden:
 
-    [ ![](app-store-publishing-images/distribute04.png "Klicken Sie in iTunes Connect über das Anwendungslademodul hochgeladen")](app-store-publishing-images/distribute04.png)
+    [![](app-store-publishing-images/distribute04.png "Klicken Sie in iTunes Connect über das Anwendungslademodul hochgeladen")](app-store-publishing-images/distribute04.png#lightbox)
 
 Nachdem Ihr Verteilungsbuild erstellt und archiviert wurde, können Sie nun Ihre Anwendung an iTunes Connect übermitteln.
 
@@ -196,15 +196,15 @@ Wird der Archiv-Workflow in Visual Studio für Mac Application Loader automatisc
 
 2. Wählen Sie *Ihre App übermitteln* aus, und klicken Sie auf die Schaltfläche *Auswählen*:
 
-    [ ![](app-store-publishing-images/publishvs01.png "Wählen Sie „Ihre App übermitteln“ aus")](app-store-publishing-images/publishvs01.png)
+    [![](app-store-publishing-images/publishvs01.png "Wählen Sie übermitteln Ihrer App")](app-store-publishing-images/publishvs01.png#lightbox)
 
 3. Wählen Sie die zuvor erstellte ZIP- oder IPA-Datei aus, und klicken Sie auf die Schaltfläche **OK**.
 4. Die Datei wird durch den Application Loader überprüft:
 
-    [ ![](app-store-publishing-images/publishvs02.png "Das Anwendungslademodul-Überprüfungsbildschirm")](app-store-publishing-images/publishvs02.png)
+    [![](app-store-publishing-images/publishvs02.png "Das Anwendungslademodul-Überprüfungsbildschirm")](app-store-publishing-images/publishvs02.png#lightbox)
 5. Klicken Sie auf die Schaltfläche *Weiter*. Die Anwendung wird nun für den App Store überprüft:
 
-    [ ![](app-store-publishing-images/publishvs03.png "Die Anwendung wird gegen den App Store")](app-store-publishing-images/publishvs03.png)
+    [![](app-store-publishing-images/publishvs03.png "Die Anwendung wird gegen den App Store")](app-store-publishing-images/publishvs03.png#lightbox)
 6. Klicken Sie auf die Schaltfläche **Senden**, um die Anwendung zur Überprüfung an Apple zu senden.
 7. Sie werden vom Application Loader informiert, sobald die Datei erfolgreich hochgeladen wurde.
 
@@ -214,7 +214,7 @@ Wird der Archiv-Workflow in Visual Studio für Mac Application Loader automatisc
 
 Wenn Sie melden Sie sich wieder bei iTunes Connect, und wählen Sie Ihre app aus der Liste der verfügbaren apps, der Status in iTunes Connect wird nun angezeigt, dass darauf **warten auf Überprüfung** (möglicherweise vorübergehend lesen **hochladen empfangen** während der Verarbeitung):
 
-[ ![](app-store-publishing-images/image21.png "Der Status im iTunes Verbinden mit Warten auf Überprüfung")](app-store-publishing-images/image21.png)
+[![](app-store-publishing-images/image21.png "Der Status im iTunes Verbinden mit Warten auf Überprüfung")](app-store-publishing-images/image21.png#lightbox)
 
 <a name="Troubleshooting" />
 
@@ -233,6 +233,6 @@ In diesem Artikel dargestellt eine schrittweise Anleitung zum Konfigurieren, ers
 
 - [Arbeiten mit Symbolen und Bildern](~/ios/tvos/app-fundamentals/icons-images.md)
 - [Vorbereiten Sie Ihrer App Übermittlung für die neue Apple TV](https://developer.apple.com/tvos/submit/)
-- [Tipps für App-Store-Übermittlung](https://developer.apple.com/appstore/resources/submission/tips.html)
-- [Häufige](https://developer.apple.com/app-store/review/rejections/)
-- [App Store Review Guidelines](https://developer.apple.com/appstore/resources/approval/guidelines.html)
+- [Tipps für die Übermittlung an den App Store](https://developer.apple.com/appstore/resources/submission/tips.html)
+- [Common App Rejections (Häufige Ablehnungsgründe für Apps)](https://developer.apple.com/app-store/review/rejections/)
+- [Richtlinien für die Überprüfung im App Store](https://developer.apple.com/appstore/resources/approval/guidelines.html)

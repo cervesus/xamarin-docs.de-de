@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 278b9e782073a26dc04bac9418613ea4c09db445
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7b6d0901f8b01668626fc3b6a70a091e99e2287e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="troubleshooting"></a>Problembehandlung
 
@@ -46,7 +46,7 @@ Um dieses Problem zu beheben, führen Sie folgende Schritte aus:
 1. Visual Studio für Mac, mit der Maustaste auf die Projektdatei Xamarin.tvOS in der **Projektmappen-Explorer** , und wählen Sie **Optionen**.
 2. Wählen Sie **tvos. außerdem wurden Build** und stellen Sie sicher, dass Sie auf die **Version** Konfiguration: 
 
-    [ ![](troubleshooting-images/ts01.png "Wählen Sie tvos. außerdem wurden Buildoptionen")](troubleshooting-images/ts01.png)
+    [![](troubleshooting-images/ts01.png "Wählen Sie tvos. außerdem wurden Buildoptionen")](troubleshooting-images/ts01.png#lightbox)
 3. Hinzufügen `--bitcode=asmonly` auf die **zusätzliche Mtouch Argumente** Feld, und klicken Sie auf die **OK** Schaltfläche.
 4. Neu erstellen Ihrer app in der **Version** Konfiguration.
 
@@ -124,7 +124,7 @@ Kompilieren Sie Ihre app für Release und iTunes Connect erneut übermitteln.
 
 Wenn Sie eine 3rd Party-Bibliothek (z. B. MonoGame) verwenden und die Kompilierung Version bei der eine lange Reihe von Fehlermeldungen Endziffern `Task "MTouch" execution -- FAILED`, versuchen Sie es hinzufügen `-gcc_flags="-framework OpenAL"` auf Ihre **zusätzliche Touch Argumente**:
 
-[ ![](troubleshooting-images/mtouch01.png "Ausführung der Aufgabe MTouch")](troubleshooting-images/mtouch01.png)
+[![](troubleshooting-images/mtouch01.png "Ausführung der Aufgabe MTouch")](troubleshooting-images/mtouch01.png#lightbox)
 
 Sollten Sie auch einschließen `--bitcode=asmonly` in der **zusätzliche Touch Argumente**, haben die Linkeroptionen so eingestellt **Link alle** , und führen Sie eine saubere Kompilierung.
 

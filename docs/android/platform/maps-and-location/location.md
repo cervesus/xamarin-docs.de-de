@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: beb690fe495d142bb4b0424ad752101fc46da590
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 28cfb4cda27446b914c23a2ce4e8e9f845876107
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="location-services"></a>Ortsbezogene Dienste
 
@@ -54,7 +54,7 @@ Für apps, die als API 21 (Android 5.0 Lollipop)-Version Ziel oder höher könne
 
 Um die Berechtigungen festgelegt haben, erweitern Sie die **Eigenschaften** Ordner in der **Lösung Pad** und doppelklicken Sie auf **AndroidManifest.xml**. Die Berechtigungen aufgelistet **Required Permissions**:
 
-[![Screenshot der Einstellungen für Android-Manifest erforderliche Berechtigungen](location-images/location-01-xs.png)](location-images/location-01-xs.png)
+[![Screenshot der Einstellungen für Android-Manifest erforderliche Berechtigungen](location-images/location-01-xs.png)](location-images/location-01-xs.png#lightbox)
 
 Durch Festlegen dieser Berechtigungen weist Android an, dass Ihre Anwendung die Erlaubnis des Benutzers, um den Zugriff auf die Ort-Anbieter erforderlich. Geräte, die API-Ebene 22 (Android 5.1) ausführen oder niedriger fordert den Benutzer zum gewähren dieser Berechtigungen jedes Mal die app installiert ist. Auf Geräten mit-API-Ebene 23 (Android 6.0) oder höher, sollten die app eine Laufzeit-berechtigungsüberprüfung, bevor eine Anforderung des Anbieters Speicherort ausführen. 
 
@@ -334,11 +334,11 @@ else
 > [!NOTE]
 >  Wenn der Benutzer alle Speicherort Anbieter deaktiviert hat `GetBestProvider` zurück `null`. Um zu sehen, wie dieser Code auf einem echten Gerät funktioniert, müssen Sie GPS, Wi-Fi und Mobilfunknetzen unter ermöglichen **Google-Einstellungen > Speicherort > Modus** wie in diesem Screenshot gezeigt:
 
-[![Bildschirm "Einstellungen Positionsmodus" auf einem Android-Telefon](location-images/location-02.png)](location-images/location-02.png)
+[![Bildschirm "Einstellungen Positionsmodus" auf einem Android-Telefon](location-images/location-02.png)](location-images/location-02.png#lightbox)
 
 Der folgende Screenshot zeigt, dem Speicherort Anwendung ausgeführten über `GetBestProvider`:
 
-[![Anzeigen von Breiten- und Längengrad Anbieter GetBestProvider-app](location-images/location-03.png)](location-images/location-03.png)
+[![Anzeigen von Breiten- und Längengrad Anbieter GetBestProvider-app](location-images/location-03.png)](location-images/location-03.png#lightbox)
 
 Beachten Sie, dass `GetBestProvider` wird den Anbieter nicht dynamisch geändert. Stattdessen bestimmt die am besten verfügbaren Anbieter einmal während des Lebenszyklus der Aktivität. Ändert die Anbieterstatus, nachdem es festgelegt wurde, wird die Anwendung erfordert zusätzlichen Code in der `ILocationListener` Methoden &ndash; `OnProviderEnabled`, `OnProviderDisabled`, und `OnStatusChanged` &ndash; , behandeln jede Möglichkeit, die im Zusammenhang mit der Anbieter-Schalter.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 8afce6021c2816f354e26ccecd7d0c40ceb2a9bd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: babbe0344130dc0ce38023eabe7479d2b464276b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="editing-nuget-metadata"></a>NuGet-Metadaten bearbeiten
 
@@ -26,7 +26,7 @@ Die **Metadaten** Abschnitt konfiguriert die Werte, die verwendet wird, der [ **
 
 Die **allgemeine** Registerkarte enthält vier Felder, die eingegeben werden müssen, um ein NuGet-Paket zu generieren:
 
-[ ![](metadata-images/metadata-general-sml.png "Die erforderlichen Metadaten-Fenster von NuGet-Paket")](metadata-images/metadata-general.png)
+[![](metadata-images/metadata-general-sml.png "Die erforderlichen Metadaten-Fenster von NuGet-Paket")](metadata-images/metadata-general.png#lightbox)
 
 - **ID** – die Paket-ID, die in Nuget.org (oder ablegen, wo das Paket verteilt werden soll) eindeutig sein sollte. Führen Sie [Anleitung](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) und nur gültige Zeichen in einer URL (ohne Leerzeichen ein, und vermeiden Sie die meisten Sonderzeichen).
 - **Version** – wählen Sie eine Versionsnummer, die konsistent mit [NuGet Versionsregeln](https://docs.microsoft.com/en-us/nuget/create-packages/dependency-versions).
@@ -45,7 +45,7 @@ Weitere Informationen finden Sie unter der [Elementreferenzen erforderlich](http
 
 Die **Details** Registerkarte enthält die optionalen Felder aus, in der Manifestdatei des NuGet-Paket eingeschlossen werden sollen.
 
-[ ![](metadata-images/metadata-detail-sml.png "Optionale Metadaten-Fenster von NuGet-Paket")](metadata-images/metadata-detail.png)
+[![](metadata-images/metadata-detail-sml.png "Optionale Metadaten-Fenster von NuGet-Paket")](metadata-images/metadata-detail.png#lightbox)
 
 Finden Sie in der [Referenz zu optionalen Elemente](https://docs.microsoft.com/en-us/nuget/schema/nuspec#optional-metadata-elements) für Weitere Informationen zu den erforderlichen und optionalen Feldern.
 
