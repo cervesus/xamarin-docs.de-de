@@ -84,7 +84,7 @@ Es ist ein Open Source-Äquivalent Touch.Unit für Android Andr.Unit aufgerufen.
 Hier sind einige Setup Komponententests für Windows Phone hilfreiche Links:
 
 -   [http://www.jeff.wilcox.name/2010/05/sl3-utf-bits/](http://www.jeff.wilcox.name/2010/05/sl3-utf-bits/)
--   [http://www.Jeff.wilcox.Name/2011/06/Updated-UT-Mango-Bits/](http://www.jeff.wilcox.name/2011/06/updated-ut-mango-bits/)
+-   [http://www.jeff.wilcox.name/2011/06/updated-ut-mango-bits/](http://www.jeff.wilcox.name/2011/06/updated-ut-mango-bits/)
 -   [http://www.smartypantscoding.com/a-cheat-sheet-for-unit-testing-silverlight-apps-on-windows-phone-7](http://www.smartypantscoding.com/a-cheat-sheet-for-unit-testing-silverlight-apps-on-windows-phone-7)
 -   [http://mobile.dzone.com/articles/unit-testing-your-windows](http://mobile.dzone.com/articles/unit-testing-your-windows)
 
