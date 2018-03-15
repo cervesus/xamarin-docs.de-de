@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 99f66fd0d23f14224bcd915ef7d1c6d81367f173
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 412e65e074a171666a0ed9b61e347c4a16ec366b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-an-application"></a>Veröffentlichen einer Anwendung
 
 Wenn Sie eine praktische App erstellt haben, will diese auch benutzt werden. In diesem Abschnitt werden die Schritte erläutert, die mit der öffentlichen Verteilung einer App über verschiedene Kanäle einhergehen, die mit Xamarin.Android erstellt wurde. Zu diesen Kanälen zählen z.B. E-Mails, ein privater Webserver, Google Play oder der Amazon Appstore.
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -29,7 +28,7 @@ Der letzte Schritt der Entwicklung einer Xamarin.Android-Anwendung ist die Verö
 
 In folgendem Diagramm werden die Schritte zur Veröffentlichung einer Xamarin.Android-Anwendung veranschaulicht:
 
-[ ![Erstellen und Bereitstellen (Flowchart)](images/build-and-deploy-steps.png)](images/build-and-deploy-steps.png)
+[![Erstellen und Bereitstellen (Flussdiagramm)](images/build-and-deploy-steps.png)](images/build-and-deploy-steps.png#lightbox)
 
 Wie Sie im oben stehenden Diagramm erkennen können, unterscheidet sich die Vorbereitung bei unterschiedlichen Verteilungsmethoden nicht. Es gibt mehrere Möglichkeiten, wie Sie eine Android-Anwendung für Benutzer bereitstellen können:
 
@@ -49,7 +48,7 @@ Mit dem Verteilungsprogramm für mobile Apps von Amazon können Entwickler mobil
 
 Google Play ist einer der umfassendsten und beliebtesten Marketplaces für Android-Anwendungen. Auf Google Play können Benutzer Anwendungen entdecken, herunterladen, bewerten und kaufen – und das mit einem Klick auf ein einziges Symbol auf ihrem Gerät oder ihrem Computer. Google Play bietet zudem Tools zur Analyse von Verkaufs- und Markttrends. Darüber hinaus bietet es auch Tools, mit denen Sie eingrenzen können, welche Geräte und Benutzer eine Anwendung herunterladen dürfen. Unten stehend finden Sie einen Screenshot von Google Play auf einem Android-Gerät:
 
-[ ![Google Play (Screenshot)](images/google-play-app.png)](images/google-play-app.png)
+[![Screenshot von Google Play](images/google-play-app.png)](images/google-play-app.png#lightbox)
 
 In diesem Abschnitt wurde gezeigt, wie die Anwendung in einem Store wie Google Play zusammen mit passenden Werbematerialien hochgeladen werden kann. Es wurden allgemeine Informationen zu APK-Erweiterungsdateien und eine Übersicht über deren Funktionsweise zur Verfügung gestellt. Außerdem wurden die Google-Lizenzierungsdienste beschrieben. Zum Schluss wurden alternative Verteilungsmethoden wie u.a. die Verwendung eines HTTP-Webservers, die einfache Verteilung per E-Mail und der Amazon App Store für Android dargestellt.
 

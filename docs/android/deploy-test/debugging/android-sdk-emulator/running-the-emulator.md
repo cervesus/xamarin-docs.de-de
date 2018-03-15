@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 2995d9126617a767013ed1f5cb808f22ce0fd2da
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 89768d2562814091f0e5894c4af2edd67d68cb00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="running-the-android-sdk-emulator"></a>Ausführen des Android SDK-Emulators
 
@@ -32,13 +32,13 @@ Visual Studio enthält vorkonfigurierte virtuelle Geräte, die im Dropdownmenü 
 
 -   **VisualStudio\_android-23\_x86\_tablet** 
 
-[ ![Virtuelle Geräte](running-the-emulator-images/win/01-virtual-devices-sml.png)](running-the-emulator-images/win/01-virtual-devices.png)
+[![Virtuelle Geräte](running-the-emulator-images/win/01-virtual-devices-sml.png)](running-the-emulator-images/win/01-virtual-devices.png#lightbox)
 
 Üblicherweise wählen Sie das virtuelle Gerät **VisualStudio\_android-23\_x86\_phone** zum Testen und Debuggen einer Smartphone-App aus. Wenn eines dieser vorkonfigurierten virtuellen Geräte Ihre Anforderungen erfüllt (d.h. mit der API-Zielebene Ihrer App übereinstimmt), fahren Sie mit dem [Starten des Emulators](#launching) fort, um Ihre App im Emulator auszuführen. (Wenn Sie nicht noch nicht mit Android-API-Ebenen vertraut sind, finden Sie weitere Informationen unter [Understanding Android API Levels (Grundlegendes zu Android-API-Ebenen)](~/android/app-fundamentals/android-api-levels.md).)
 
 Wenn Ihr Xamarin.Android-Projekt eine Zielframeworkebene verwendet, die mit den verfügbaren virtuellen Geräten nicht kompatibel ist, werden die nicht verwendbaren virtuellen Geräte in der Dropdownliste unter **Nicht unterstützte Geräte** aufgelistet. Für das folgende Projekt ist beispielsweise ein Zielframework auf **Android 7.1 Nougat (API 25)** festgelegt, das mit den virtuellen **Android 6.0**-Geräten inkompatibel ist, die standardmäßig bereitgestellt sind:
 
-[ ![Inkompatibles virtuelles Gerät](running-the-emulator-images/win/02-incompatible-level-sml.png)](running-the-emulator-images/win/02-incompatible-level.png)
+[![Inkompatibles virtuelles Gerät](running-the-emulator-images/win/02-incompatible-level-sml.png)](running-the-emulator-images/win/02-incompatible-level.png#lightbox)
 
 Sie können auf **Android-Mindestziel wird geändert** klicken, um die mindestens erforderliche Android-Version des Projekts zu ändern, damit sie mit der API-Ebene der verfügbaren virtuellen Geräte übereinstimmt. Alternativ können Sie den **Android-Emulator-Manager** verwenden, um neue virtuelle Geräte zu erstellen, die wie weiter unten unter [Konfigurieren von virtuellen Geräten](#virtualdevice) erklärt Ihre API-Zielebene unterstützen. Bevor Sie virtuelle Geräte für eine neue API-Ebene konfigurieren können, müssen Sie zunächst die entsprechenden Systemimages für diese API-Ebene installieren &ndash; dies wird im nächsten Abschnitt erklärt.
 
@@ -50,7 +50,7 @@ Visual Studio für Mac enthält vorkonfigurierte virtuelle Geräte, die im Dropd
 
 -   **Android\_ARMv7a**
 
-[ ![Virtuelle Geräte](running-the-emulator-images/mac/01-virtual-devices-sml.png)](running-the-emulator-images/mac/01-virtual-devices.png)
+[![Virtuelle Geräte](running-the-emulator-images/mac/01-virtual-devices-sml.png)](running-the-emulator-images/mac/01-virtual-devices.png#lightbox)
 
 Üblicherweise wählen Sie das virtuelle Gerät **Android\_Accelerated\_x86** zum Testen und Debuggen einer Smartphone-App aus. Wenn dieses vorkonfigurierte virtuelle Gerät Ihre Anforderungen erfüllt (d.h. mit der API-Zielebene Ihrer App übereinstimmt), fahren Sie mit dem [Starten des Emulators](#launching) fort, um Ihre App im Emulator auszuführen. (Wenn Sie nicht noch nicht mit Android-API-Ebenen vertraut sind, finden Sie weitere Informationen unter [Understanding Android API Levels (Grundlegendes zu Android-API-Ebenen)](~/android/app-fundamentals/android-api-levels.md).)
 
@@ -73,11 +73,11 @@ Nachdem Sie ein virtuelles Gerät aus dem Geräte-Dropdownmenü ausgewählt habe
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Modi „Debuggen“ und „Release“; Schaltfläche „Wiedergeben“](running-the-emulator-images/win/17-debug-release-sml.png)](running-the-emulator-images/win/17-debug-release.png)
+[![Modi „Debuggen“ und „Release“; Schaltfläche „Wiedergeben“](running-the-emulator-images/win/17-debug-release-sml.png)](running-the-emulator-images/win/17-debug-release.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Modi „Debuggen“ und „Release“; Schaltfläche „Wiedergeben“](running-the-emulator-images/mac/16-debug-release-sml.png)](running-the-emulator-images/mac/16-debug-release.png)
+[![Modi „Debuggen“ und „Release“; Schaltfläche „Wiedergeben“](running-the-emulator-images/mac/16-debug-release-sml.png)](running-the-emulator-images/mac/16-debug-release.png#lightbox)
 
 -----
 

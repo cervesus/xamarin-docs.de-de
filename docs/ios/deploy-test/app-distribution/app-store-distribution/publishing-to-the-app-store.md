@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 84db17ede0019e1134b65edaca85ef2401fb3bc0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dfa3d1f89d813f2e57863e615c701cd78c655ac0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Veröffentlichen im App Store
 
@@ -133,7 +133,7 @@ Führen Sie folgende Schritte aus:
 4. Verknüpfungen verringern die Gesamtgröße der Anwendung, indem nicht verwendete Methoden, Eigenschaften, Klassen usw. entfernt werden. In den meisten Fällen sollte die Standardeinstellung **Nur SDK-Assemblys verknüpfen** beibehalten werden. In einigen Situationen, wie z.B. bei der Verwendung von bestimmten Drittanbieterbibliotheken, müssen Sie diesen Wert möglicherweise auf **Nicht verknüpfen** festlegen, um zu verhindern, dass erforderliche Elemente entfernt werden. Weitere Informationen finden Sie in der Anleitung [iOS Build Mechanics](~/ios/deploy-test/ios-build-mechanics.md) (iOS-Buildmechanik).
 5. Aktivieren Sie das Kontrollkästchen **PNG-Bilddateien für iOS optimieren**, um die Gesamtgröße Ihrer Anwendung noch weiter zu verringern.
 6. Das Debuggen sollte _nicht_ aktiviert sein, um das Build nicht unnötig zu vergrößern.
-8. Für iOS 11 müssen Sie eine Gerätearchitektur auswählen, die **ARM64** unterstützt. Weitere Informationen zu Builds auf 64-Bit-iOS-Geräten finden Sie im Abschnitt **Enabling 64 Bit Builds of Xamarin.iOS Apps** (64-Bit-Builds in Xamarin.iOS-Apps aktiveren) der Dokumentation [32/64 bit Platform Considerations](~/cross-platform/macios/32-and-64.md) (Überlegungen zu 32-/64-Bit-Plattformen).
+8. Für iOS 11 müssen Sie eine Gerätearchitektur auswählen, die **ARM64** unterstützt. Weitere Informationen zu Builds auf 64-Bit-iOS-Geräten finden Sie im Abschnitt **Enabling 64 Bit Builds of Xamarin.iOS Apps** (64-Bit-Builds in Xamarin.iOS-Apps aktiveren) der Dokumentation [32/64 bit Platform Considerations](~/cross-platform/macios/32-and-64/index.md) (Überlegungen zu 32-/64-Bit-Plattformen).
 9. Optional können Sie auch den **LLVM**-Compiler für kleineren und schnelleren Code verwenden. Die Kompilierung dauert in diesem Fall jedoch länger.
 10. Entsprechend der Anforderungen Ihrer Anwendung möchten Sie möglicherweise auch den Typ der für die **Internationalisierung** verwendeten und eingerichteten **Garbage Collection** anpassen.
 11. Speichern Sie die Änderungen an der Buildkonfiguration.
@@ -157,7 +157,7 @@ Führen Sie folgende Schritte aus:
 
     ![](publishing-to-the-app-store-images/configurevs02.png "Die Registerkarte „Erweitert“")
 
-8. Wenn die Zielgeräte Ihrer Xamarin.iOS-Anwendung iOS 8- und 64-Bit-iOS-Geräte sind, müssen Sie eine der Gerätearchitekturen auswählen, die **ARM64** unterstützen. Weitere Informationen zu Builds auf 64-Bit-iOS-Geräten finden Sie im Abschnitt **Enabling 64 Bit Builds of Xamarin.iOS Apps** (64-Bit-Builds in Xamarin.iOS-Apps aktiveren) der Dokumentation [32/64 bit Platform Considerations](~/cross-platform/macios/32-and-64.md) (Überlegungen zu 32-/64-Bit-Plattformen).
+8. Wenn die Zielgeräte Ihrer Xamarin.iOS-Anwendung iOS 8- und 64-Bit-iOS-Geräte sind, müssen Sie eine der Gerätearchitekturen auswählen, die **ARM64** unterstützen. Weitere Informationen zu Builds auf 64-Bit-iOS-Geräten finden Sie im Abschnitt **Enabling 64 Bit Builds of Xamarin.iOS Apps** (64-Bit-Builds in Xamarin.iOS-Apps aktiveren) der Dokumentation [32/64 bit Platform Considerations](~/cross-platform/macios/32-and-64/index.md) (Überlegungen zu 32-/64-Bit-Plattformen).
 9. Optional können Sie auch den **LLVM**-Compiler für kleineren und schnelleren Code verwenden. Die Kompilierung dauert in diesem Fall jedoch länger.
 10. Entsprechend der Anforderungen Ihrer Anwendung möchten Sie möglicherweise auch den Typ der für die **Internationalisierung** verwendeten und eingerichteten **Garbage Collection** anpassen.
 11. Speichern Sie die Änderungen an der Buildkonfiguration.
@@ -351,16 +351,16 @@ Das Übermitteln Ihrer Anwendung zur Überprüfung an Apple erfolgt über die Ap
 
 1. Wählen Sie *Ihre App übermitteln* aus, und klicken Sie auf die Schaltfläche *Auswählen*:
 
-    [ ![](publishing-to-the-app-store-images/publishvs01.png "Wählen Sie „Ihre App übermitteln“ aus")](publishing-to-the-app-store-images/publishvs01.png)
+    [![](publishing-to-the-app-store-images/publishvs01.png "Wählen Sie „Ihre App übermitteln“ aus")](publishing-to-the-app-store-images/publishvs01.png#lightbox)
 
 2. Wählen Sie die zuvor erstellte ZIP- oder IPA-Datei aus, und klicken Sie auf die Schaltfläche **OK**.
 
 3. Die Datei wird durch den Application Loader überprüft:
 
-    [ ![](publishing-to-the-app-store-images/publishvs02.png "Der Validierungsbildschirm")](publishing-to-the-app-store-images/publishvs02.png)
+    [![](publishing-to-the-app-store-images/publishvs02.png "Der Validierungsbildschirm")](publishing-to-the-app-store-images/publishvs02.png#lightbox)
 4. Klicken Sie auf die Schaltfläche *Weiter*. Die Anwendung wird nun für den App Store überprüft:
 
-    [ ![](publishing-to-the-app-store-images/publishvs03.png "Überprüfen für den App Store")](publishing-to-the-app-store-images/publishvs03.png)
+    [![](publishing-to-the-app-store-images/publishvs03.png "Überprüfen für den App Store")](publishing-to-the-app-store-images/publishvs03.png#lightbox)
 5. Klicken Sie auf die Schaltfläche **Senden**, um die Anwendung zur Überprüfung an Apple zu senden.
 6. Sie werden vom Application Loader informiert, sobald die Datei erfolgreich hochgeladen wurde.
 
@@ -368,7 +368,7 @@ Das Übermitteln Ihrer Anwendung zur Überprüfung an Apple erfolgt über die Ap
 
 Wenn Sie sich nun erneut bei iTunes Connect anmelden und Ihre Anwendung aus der Liste der verfügbaren Apps auswählen, wird der Status in iTunes Connect mit **Warten auf Überprüfung** angezeigt (während der Verarbeitung wird möglicherweise vorübergehend **Upload erhalten** angezeigt):
 
-[ ![](publishing-to-the-app-store-images/image21.png "Der Status in iTunes Connect sollte nun „Auf Überprüfung wird gewartet“ lauten")](publishing-to-the-app-store-images/image21.png)
+[![](publishing-to-the-app-store-images/image21.png "Der Status in iTunes Connect sollte nun „Auf Überprüfung wird gewartet“ lauten")](publishing-to-the-app-store-images/image21.png#lightbox)
 
 ## <a name="summary"></a>Zusammenfassung
 

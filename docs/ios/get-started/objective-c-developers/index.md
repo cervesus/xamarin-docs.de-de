@@ -7,11 +7,11 @@ ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 7e26c11f71b446baf89ca11effe30bc1e041f951
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 275cce891801cd542d202960efc3da668fa8f07b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Xamarin für Objective-C-Entwickler
 
@@ -21,7 +21,7 @@ Xamarin bietet einen Pfad für Entwickler, die iOS ansteuern, um ihren Code für
 
 Außerdem erlaubt es Xamarin, vorhandene Objective-C-Ressourcen mithilfe einer Technologie zu nutzen, die als Bindung bezeichnet wird. Sie erstellen einfach eine statische Bibliothek in Objective-C und machen ihn wie im folgenden Diagramm gezeigt über die Bindung für C# verfügbar:
 
- [ ![](images/01-bindings.png "Eine statische Bibliothek in Objective-C, die über eine Bindung für C# verfügbar gemacht wird")](images/01-bindings.png)
+ [![](images/01-bindings.png "Eine statische Bibliothek in Objective-C, die über eine Bindung für C# verfügbar gemacht wird")](images/01-bindings.png#lightbox)
 
 Dies beschränkt sich nicht nur auf Nicht-Benutzeroberflächencode. Bindungen können auch Benutzeroberflächencode, der in Objective-C entwickelt wurde, verfügbar machen.
 

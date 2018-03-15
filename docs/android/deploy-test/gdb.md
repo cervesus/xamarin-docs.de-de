@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: ee98e19ce59b8a61040941d9851b8fbf965c3b17
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55d72a49f90095a33577279d018e1696dda8fc42
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="gdb"></a>GDB
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 02/27/2018
 Xamarin.Android 4.10 hat Teilunterstützung für das Verwenden von `gdb` durch das Verwenden des `_Gdb`-MSBuild-Ziels eingeführt. 
 
 > [!NOTE]
-> **Hinweis:** `gdb`-Unterstützung erfordert die Installation des Android NDK.
+> `gdb`-Unterstützung erfordert die Installation des Android NDK.
 
 Es gibt drei Möglichkeiten zum Verwenden von `gdb`:
 
@@ -59,7 +59,7 @@ Das `_Gdb`-Ziel erstellt ein `gdb-symbols`-Verzeichnis und kopiert die Inhalte d
 
 
 > [!NOTE]
-> **Hinweis:** Die Inhalte des `gdb-symbols`-Verzeichnisses sind mit dem Android-Ziel verknüpft, für das Sie die Bereitstellung durchgeführt haben, und werden nicht automatisch ersetzt, wenn Sie das Ziel ändern. (Dies ist ein Fehler.) Wenn Sie Android-Zielgeräte ändern, müssen Sie dieses Verzeichnis manuell löschen.
+> Die Inhalte des `gdb-symbols`-Verzeichnisses sind mit dem Android-Ziel verknüpft, für das Sie die Bereitstellung durchgeführt haben, und werden nicht automatisch ersetzt, wenn Sie das Ziel ändern. (Dies ist ein Fehler.) Wenn Sie Android-Zielgeräte ändern, müssen Sie dieses Verzeichnis manuell löschen.
 
 Kopieren Sie zum Schluss den generierten `gdb`-Befehl, und führen Sie ihn in Ihrer Shell aus:
 

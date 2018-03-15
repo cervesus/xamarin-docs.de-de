@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: baf1ae7d4cc533af0db482e8d7c31fc3c8b4edbf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4e93696f8eef44030ffacbdbaa8ebcd860a402f6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="free-provisioning"></a>Kostenlose Bereitstellung
 
@@ -43,29 +43,29 @@ Für die freie Bereitstellung einer Anwendung auf einem Gerät müssen Sie in Xc
 2. Öffnen Sie Xcode, und gehen Sie zu **Xcode > Einstellungen**.
 3. Klicken Sie unter **Konten** auf die **+**-Schaltfläche, um Ihre vorhandene Apple-ID hinzuzufügen. Dies sollte ungefähr wie folgt aussehen:
 
-  [ ![](free-provisioning-images/launchapp1.png "Xcode > Voreinstellungen > Konten")](free-provisioning-images/launchapp1.png)
+  [![](free-provisioning-images/launchapp1.png "Xcode > Voreinstellungen > Konten")](free-provisioning-images/launchapp1.png#lightbox)
 
 4. Schließen Sie das iOS-Gerät an, auf dem die Bereitstellung erfolgen soll, und erstellen Sie eine neue leere Einzelansicht für Ihr iOS-Projekt in Xcode. Wählen Sie in der Dropdownliste **Team** die zuvor hinzugefügte Apple-ID aus. Das Format sollte etwa wie `your name (Personal Team - your Apple ID)` aussehen:
 
-  [ ![](free-provisioning-images/launchapp2.png "Erstellen der Signierungsidentität")](free-provisioning-images/launchapp2.png)
+  [![](free-provisioning-images/launchapp2.png "Erstellen der Signierungsidentität")](free-provisioning-images/launchapp2.png#lightbox)
 
 5. Stellen Sie sicher, dass der Bündelbezeichner im Abschnitt **Allgemein > Identität** _genau_ dem Bündelbezeichner Ihrer Xamarin.iOS-App entspricht und dass das Bereitstellungsziel dem verbundenen iOS-Gerät entweder entspricht oder niedriger ist. Dieser Schritt ist äußerst wichtig, da ein Bereitstellungsprofil in Xcode nur mit einer eindeutigen App-ID erstellt wird:
 
-  [![](free-provisioning-images/launchapp5.png "Erstellen eines Bereitstellungsprofils mit einer expliziten App-ID")](free-provisioning-images/launchapp5.png)
+  [![](free-provisioning-images/launchapp5.png "Erstellen eines Bereitstellungsprofils mit einer expliziten App-ID")](free-provisioning-images/launchapp5.png#lightbox)
 
 6. Wählen Sie im Abschnitt „Signierung“ die Option **Signierung automatisch verwalten** aus, und wählen Sie anschließend aus der Dropdownliste Ihr Team aus:
 
-  [![](free-provisioning-images/launchapp6.png "Auswählen der Option zum automatischen Verwalten der Signierung und Ihres Teams aus der Dropdownliste")](free-provisioning-images/launchapp6.png)
+  [![](free-provisioning-images/launchapp6.png "Auswählen der Option zum automatischen Verwalten der Signierung und Ihres Teams aus der Dropdownliste")](free-provisioning-images/launchapp6.png#lightbox)
 
 7. Dadurch werden automatisch ein Bereitstellungsprofil und eine Signierungsidentität für Sie erstellt. Diese werden durch Klicken auf das Informationssymbol neben dem Bereitstellungsprofil angezeigt:
 
-  [![](free-provisioning-images/launchapp7.png "Anzeigen des Bereitstellungsprofils")](free-provisioning-images/launchapp7.png)
+  [![](free-provisioning-images/launchapp7.png "Anzeigen des Bereitstellungsprofils")](free-provisioning-images/launchapp7.png#lightbox)
 
 8. Stellen Sie die leere Anwendung durch Klicken auf die Schaltfläche „Ausführen“ auf Ihrem Gerät bereit, um in Xcode zu testen.
 
 9. Gehen Sie zurück zu Ihrer IDE, und lassen Sie das Gerät angeschlossen. Klicken Sie mit der rechten Maustaste auf den Namen Ihres Xamarin.iOS-Projekts, um das Dialogfeld **Projektoptionen** zu öffnen. Gehen Sie zum Abschnitt „iOS-Bundle-Signierung“, und legen Sie Ihre Signierungsidentität und Ihr Bereitstellungsprofil eindeutig fest:
 
-  [![](free-provisioning-images/launchapp8.png "Festlegen der Signierungsidentität und des Bereitstellungsprofils")](free-provisioning-images/launchapp8.png)
+  [![](free-provisioning-images/launchapp8.png "Festlegen der Signierungsidentität und des Bereitstellungsprofils")](free-provisioning-images/launchapp8.png#lightbox)
 
 Wird Ihre Signierungsidentität oder das korrekte Bereitstellungsprofil in Ihrer IDE nicht angezeigt, müssen Sie die IDE möglicherweise neu starten.
 

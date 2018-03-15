@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 3bc53a8230b66b88319f729d7effe8ed75f0176b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf2f62929df63d08add76b7fb6de404d2780b2b3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="building-abi-specific-apks"></a>Erstellen ABI-spezifischer Android-Anwendungspakete (APKs)
 
@@ -42,7 +42,6 @@ In dieser Anleitung wird beschrieben, wie für das Erstellen mehrerer APKs für 
 Am Ende dieser Anleitung finden Sie eine exemplarische Vorgehensweise, die demonstriert, wie Sie für diese Schritte mit [Rake](http://martinfowler.com/articles/rake.html) ein Skript erstellen.
 
 
-<a name="Setting_android_versionCode" />
 
 ### <a name="creating-the-version-code-for-the-apk"></a>Erstellen des Versionscodes für das APK
 
@@ -67,7 +66,7 @@ Durch die Erweiterung dieses Versionscodeschemas auf acht Ziffern ist es möglic
 
 Das folgende Diagramm veranschaulicht die Position jedes Code, der in der obigen Liste beschrieben wird:
 
-[![Diagramm des achtstelligen Versionscodeformats mit farblicher Kennzeichnung](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png)
+[![Diagramm des achtstelligen Versionscodeformats mit farblicher Kennzeichnung](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png#lightbox)
 
 
 Google Play stellt sicher, dass auf Grundlage der `versionCode`- und APK-Konfiguration das richtige APK an das Gerät übermittelt wird. Das APK mit dem höchsten Versionscode wird an das Gerät übermittelt. Beispielsweise kann eine Anwendung drei APKs mit den folgenden Versionscodes aufweisen:
@@ -88,7 +87,6 @@ Stellen Sie sich nun vor, dass die x86-Version einige Updates oder Fehlerkorrekt
 Die manuelle Pflege dieser Versionscodes kann einen erheblichen Aufwand für den Entwickler bedeuten. Der Prozess der Berechnung des ordnungsgemäßen `android:versionCode` und der anschließenden Erstellung der APKs sollte automatisiert werden.
 Ein Beispiel dafür wird in der exemplarischen Vorgehensweise am Ende dieses Dokuments erläutert.
 
-<a name="CreatingAndroidManifest" />
 
 ### <a name="create-a-temporary-androidmanifestxml"></a>Erstellen der temporären Datei „AndroidManifest.XML“
 
@@ -123,7 +121,6 @@ In der folgenden Liste werden die einzelnen Befehlszeilenparameter erläutert:
 -   `<CS_PROJ FILE>` &ndash; Dies ist der Pfad zur Datei `.csproj` für das Xamarin.Android-Projekt.
 
 
-<a name="SignAndZipAlign" />
 
 ### <a name="sign-and-zipalign-the-apk"></a>Signieren des und Anwenden von Zipalign auf das APK
 
@@ -139,7 +136,6 @@ Auf alle Xamarin.Android-Anwendungen muss Zipalign angewendet werden, bevor sie 
 zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 ```
 
-<a name="Automating_APK_Creation_With_Rake" />
 
 ## <a name="automating-apk-creation-with-rake"></a>Automatisieren der APK-Erstellung mit Rake
 
@@ -174,11 +170,11 @@ $ rake build
 
 Sobald der Rake-Task abgeschlossen ist, gibt es drei `bin`-Ordner mit der Datei `xamarin.helloworld.apk`. Der nächste Screenshot zeigt alle diese Ordner samt Inhalt:
 
-[![Speicherorte plattformspezifischer Ordner, die „xamarin.helloworld.apk“ enthalten](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png)
+[![Speicherorte plattformspezifischer Ordner, die „xamarin.helloworld.apk“ enthalten](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
 
 > [!NOTE]
-> **Hinweis:** Der in dieser Anleitung beschriebene Buildprozess kann in einem der vielen verschiedenen Buildsysteme implementiert werden. Obwohl wir kein vorgefertigtes Beispiel haben, sollte es auch mit [PowerShell](http://technet.microsoft.com/en-ca/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) oder [Fake](http://fsharp.github.io/FAKE/) möglich sein.
+> Der in dieser Anleitung beschriebene Buildprozess kann in eins der vielen verschiedenen Buildsysteme implementiert werden. Obwohl wir kein vorgefertigtes Beispiel haben, sollte es auch mit [PowerShell](http://technet.microsoft.com/en-ca/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) oder [Fake](http://fsharp.github.io/FAKE/) möglich sein.
 
 
 ## <a name="summary"></a>Zusammenfassung

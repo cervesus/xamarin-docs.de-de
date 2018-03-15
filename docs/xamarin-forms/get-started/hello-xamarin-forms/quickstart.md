@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 7ce674ea38bc847bc9064a5a61113900a45b991d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 434a12c26a5823b082751c95c2090b22c39cf081
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms-Schnellstart
 
 In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung erstellen, die eine vom Benutzer eingegebene alphanumerische Telefonnummer in eine numerische Telefonnummer übersetzt und sie anschließend anruft. Die fertige Anwendung wird unten gezeigt:
 
-[![](quickstart-images/intro-app-examples-sml.png "Phoneword-Anwendung")](quickstart-images/intro-app-examples.png "Phoneword Application")
+[![](quickstart-images/intro-app-examples-sml.png "Phoneword-Anwendung")](quickstart-images/intro-app-examples.png#lightbox "Phoneword Application")
 
 Erstellen Sie die Phoneword-Anwendung wie folgt:
 
@@ -113,7 +113,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
         }
 
   > [!NOTE]
-> **Hinweis**: Der Versuch, die Anwendung an diesem Punkt zu erstellen, führt zu Fehlern, die später behoben werden.
+  > Der Versuch, die Anwendung an diesem Punkt zu erstellen, führt zu Fehlern, die später behoben werden.
 
   Speichern Sie die Änderungen an **MainPage.xaml.cs**, indem Sie **STRG+S** drücken, und schließen Sie die Datei.
 
@@ -565,7 +565,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
         }
 
   > [!NOTE]
-> **Hinweis**: Der Versuch, die Anwendung an diesem Punkt zu erstellen, führt zu Fehlern, die später behoben werden.
+  > Der Versuch, die Anwendung an diesem Punkt zu erstellen, führt zu Fehlern, die später behoben werden.
 
   Speichern Sie die Änderungen an **MainPage.xaml.cs**, indem Sie auf **Datei > Speichern** klicken (oder indem Sie **&#8984;+S** drücken), und schließen Sie die Datei.
 

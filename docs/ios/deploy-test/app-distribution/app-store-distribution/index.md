@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: e19949c3a2efa4a5ddb17393d58c4430662254eb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2ee98b48feb8bc1e3431d796a7ca07a6c2e74790
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-store-distribution"></a>App Store-Verteilung
 
@@ -48,13 +48,13 @@ Sie können dieselbe **App-ID** und dieselben **Geräte** wie für das Entwicklu
 3. Klicken Sie auf die Schaltfläche **+**, um ein neues Zertifikat zu erstellen.
 4. Wählen Sie unter der Überschrift *Produktion* die Option **App Store and Ad Hoc** (App Store und Ad-hoc) aus:
 
-    [ ![](images/createcertmanually01.png "Wählen „App Store“ und „Ad-hoc“ aus")](images/createcertmanually01.png)
+    [![](images/createcertmanually01.png "Auswählen von „App Store“ und „Ad-hoc“")](images/createcertmanually01.png#lightbox)
 5. Klicken Sie auf **Continue** (Weiter), und befolgen Sie die Anweisungen zum Erstellen einer Zertifikatsignieranforderung mithilfe des Keychain-Zugriffs:
 
-    [ ![](images/createcertmanually02.png "Erstellen Sie eine Zertifikatsignieranforderung über Keychain-Zugriff")](images/createcertmanually02.png)
+    [![](images/createcertmanually02.png "Erstellen einer Zertifikatsignieranforderung über Keychain-Zugriff")](images/createcertmanually02.png#lightbox)
 6. Sobald Sie die CSR wie beschrieben erstellt haben, klicken Sie auf **Weiter**, und laden Sie die CSR in das Member Center hoch:
 
-    [ ![](images/createcertmanually03.png "Laden Sie die Zertifikatsignieranforderung in das Member Center hoch")](images/createcertmanually03.png)
+    [![](images/createcertmanually03.png "Hochladen der Zertifikatsignieranforderung in das Member Center")](images/createcertmanually03.png#lightbox)
 
 7. Klicken Sie auf **Generate** (Generieren), um das Zertifikat zu erstellen.
 8. Klicken Sie für das abgeschlossene Zertifikat auf **Download** (Herunterladen), und doppelklicken Sie auf die Datei, um sie zu installieren.
@@ -62,11 +62,11 @@ Sie können dieselbe **App-ID** und dieselben **Geräte** wie für das Entwicklu
 
 Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Preferences“ (Einstellungen) in Xcode anzufordern. Führen Sie dazu folgende Schritte aus:
 
-1.   Wählen Sie Ihr Team aus, und klicken Sie auf **Zertifikate verwalten…**: [ ![](images/selectteam.png "Auswählen des Teams und Anzeigen der Details")](images/selectteam.png)
+1.   Wählen Sie Ihr Team aus, und klicken Sie auf **Zertifikate verwalten…**: [![](images/selectteam.png "Auswählen des Teams und Anzeigen der Details")](images/selectteam.png#lightbox)
 
-2.   Klicken Sie anschließend auf die Schaltfläche **Erstellen** neben **iOS Distribution Certificate** (iOS-Verteilungszertifikat): [ ![](images/selectcert.png "Erstellen eines iOS-Verteilungszertifikats")](images/selectcert.png)
+2.   Klicken Sie anschließend auf die Schaltfläche **Erstellen** neben **iOS Distribution Certificate** (iOS-Verteilungszertifikat): [![](images/selectcert.png "Create an iOS Distribution Certificate (Erstellen eines iOS-Verteilungszertifikats)")](images/selectcert.png#lightbox)
 
-3.   Die Signierungsidentität wird wie unten dargestellt abhängig von Ihren Teamprivilegien generiert. Ansonsten müssen Sie warten, bis ein Team-Agent oder Administrator diese genehmigt: [ ![](images/generated.png "Die Signierungsidentität wird erstellt und ein Dialogfeld angezeigt")](images/generated.png)
+3.   Die Signierungsidentität wird wie unten dargestellt abhängig von Ihren Teamberechtigungen generiert. Ansonsten müssen Sie warten, bis ein Team-Agent oder Administrator diese genehmigt: [![](images/generated.png "Die Signierungsidentität wird erstellt und ein Dialogfeld angezeigt")](images/generated.png#lightbox)
 
 
 <a name="creatingprofile" />
@@ -95,27 +95,27 @@ Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils h
 
 1. Navigieren Sie zurück zum Apple-Bereitstellungsportal, und wählen Sie **Provisioning** (Bereitstellung) > **Distribution** (Verteilung) aus:
 
-    [ ![](images/distribute01.png "Wählen Sie „Bereitstellung > Verteilung“ aus")](images/distribute01.png)
+    [![](images/distribute01.png "Auswählen von „Bereitstellung > Verteilung“")](images/distribute01.png#lightbox)
 
 2. Klicken Sie auf die Schaltfläche **+**, und wählen Sie als Typ des Verteilungsprofils, das Sie erstellen möchten, **App Store** aus:
 
-    [ ![](images/distribute02.png "Erstellen Sie ein App Store-Verteilungsprofil")](images/distribute02.png)
+    [![](images/distribute02.png "App Store-Verteilungsprofil erstellen")](images/distribute02.png#lightbox)
 
 3. Klicken Sie auf die Schaltfläche **Continue** (Weiter), und wählen Sie aus der Dropdownliste die App-ID aus, für die Sie ein Verteilungsprofil erstellen möchten:
 
-    [ ![](images/distribute03.png "Wählen Sie in der Dropdownliste „App-ID“ aus")](images/distribute03.png)
+    [![](images/distribute03.png "Wählen Sie in der Dropdownliste „App-ID“ aus")](images/distribute03.png#lightbox)
 
 4. Klicken Sie auf die Schaltfläche **Weiter**, und wählen Sie das Zertifikat zum Signieren der Anwendung aus:
 
-    [ ![](images/distribute04.png "Wählen Sie das zum Signieren der Anwendung erforderliche Verteilungszertifikat aus")](images/distribute04.png)
+    [![](images/distribute04.png "Auswählen des zum Signieren der Anwendung erforderlichen Verteilungszertifikats")](images/distribute04.png#lightbox)
 
 5. Klicken Sie auf die Schaltfläche **Weiter**, und wählen Sie das iOS-Gerät aus, auf dem die Xamarin.iOS-Anwendung ausgeführt werden soll:
 
-    [ ![](images/distribute05.png "Wählen Sie das iOS-Gerät aus, auf dem die App ausgeführt werden darf")](images/distribute05.png)
+    [![](images/distribute05.png "Auswählen des iOS-Geräts, auf dem die App ausgeführt werden darf")](images/distribute05.png#lightbox)
 
 6. Klicken Sie auf die Schaltfläche **Weiter**, und geben Sie einen **Namen** für das neue Verteilungsprofil ein:
 
-    [ ![](images/distribute06.png "Geben Sie einen Namen für das neue Verteilungsprofil ein")](images/distribute06.png)
+    [![](images/distribute06.png "Geben Sie einen Namen für das neue Verteilungsprofil ein")](images/distribute06.png#lightbox)
 
 7. Klicken Sie auf die Schaltfläche **Generieren**, um das neue Profil zu erstellen und den Prozess abzuschließen.
 

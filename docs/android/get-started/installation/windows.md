@@ -7,18 +7,17 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 10cfb790fca30b67faaa8f7720a358ec34c25663
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 7cf21e75c9ae2f3c27b07cb20f1044779b42b06b
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="windows-installation"></a>Windows-Installation
 
 _In diesem Leitfaden werden die Schritte für die Installation von Xamarin.Android für Visual Studio unter Windows beschrieben. Weiterhin wird erläutert, wie Xamarin.Android konfiguriert werden muss, damit Sie Ihre erste Xamarin.Android-Anwendung erstellen können._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Übersicht
 
@@ -39,7 +38,6 @@ Bis zum Ende dieses Leitfadens werden Sie über eine funktionierende Xamarin.And
 
 Ausführliche Informationen zum Installieren von Xamarin für die Verwendung mit Visual Studio unter Windows finden Sie im [Installationshandbuch für Windows](~/cross-platform/get-started/installation/windows.md).
 
-<a name="configuration" />
 
 ## <a name="configuration"></a>Konfiguration
 
@@ -52,16 +50,15 @@ Diese Standardspeicherorte funktionieren für die meisten Benutzer, ohne dass we
 Xamarin.Android verwendet [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), was erforderlich ist, wenn Sie für die API-Ebene 24 oder höher entwickeln (JDK 8 unterstützt auch API-Ebenen älter als 24). Sie können weiterhin [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) verwenden, wenn Sie spezifisch für API-Ebene 23 oder früher entwickeln.
 
 > [!IMPORTANT]
-> **Hinweis:** Xamarin.Android unterstützt JDK 9 nicht.
+> Xamarin.Android unterstützt JDK 9 nicht.
 
-<a name="sdk_manager" />
 
 ### <a name="android-sdk-manager"></a>Android-SDK-Manager
 
 Android verwendet mehrere Einstellungen für die Android-API-Ebene, um die Kompatibilität Ihrer App über die verschiedenen Android-Versionen zu bestimmen (weitere Informationen zu Android-API-Ebenen finden Sie unter [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md) (Grundlegendes zu Android-API-Ebenen)).
 Abhängig von Ihrer/Ihren Android-API-Zielebene(n) müssen Sie möglicherweise Android SDK-Komponenten herunterladen und installieren. Darüber hinaus müssen Sie möglicherweise im Android SDK bereitgestellte optionale Tools und Emulator-Images installieren. Verwenden Sie hierzu den **Android SDK-Manager**. Sie können den **Android SDK-Manager** starten, indem Sie auf **Tools > Android > Android SDK-Manager** klicken:
 
-[![Vorgehensweise beim Starten des Android SDK-Managers](windows-images/08-sdk-manager-sml.png)](windows-images/08-sdk-manager.png)
+[![Vorgehensweise beim Starten des Android SDK-Managers](windows-images/08-sdk-manager-sml.png)](windows-images/08-sdk-manager.png#lightbox)
 
 In Visual Studio wird standardmäßig der Google Android SDK-Manager installiert:
 
@@ -71,7 +68,6 @@ Sie können über den Google Android SDK-Manager Versionen des Android SDK Tools
 
 Weitere Informationen zur Verwendung des Xamarin Android SDK-Managers finden Sie unter [Android SDK Setup (Android SDK-Setup)](~/android/get-started/installation/android-sdk.md).
 
-<a name="emulator" />
 
 ### <a name="android-emulator"></a>Android-Emulator
 
@@ -94,8 +90,6 @@ Da die CPU eines Entwicklungscomputers jeweils nur eine Virtualisierungstechnolo
 Wenn Sie über ein physisches Android-Gerät für Testzwecke verfügen, ist dies ein guter Zeitpunkt, um es für die Entwicklung einzurichten. Unter [Set Up Device for Development](~/android/get-started/installation/set-up-device-for-development.md) (Einrichten des Geräts für die Entwicklung) finden Sie Informationen zu der Konfiguration Ihres Android-Geräts für die Entwicklung, dem anschließenden Verbinden mit Ihrem Computer zur Ausführung und dem Debuggen von Xamarin.Android-Anwendungen.
 
 
-<a name="create_app" />
-
 ## <a name="create-an-application"></a>Erstellen einer Anwendung
 
 Nachdem Sie Xamarin.Android installiert haben, können Sie Visual Studio starten, um ein neues Projekt zu erstellen. Klicken Sie auf **Datei > Neu > Projekt**, um mit dem Erstellen Ihrer App zu beginnen:
@@ -104,12 +98,10 @@ Nachdem Sie Xamarin.Android installiert haben, können Sie Visual Studio starten
 
 Wählen Sie im Dialogfeld **Neues Projekt** den Eintrag **Android** unter **Vorlagen** aus, und klicken Sie im rechten Bereich auf **Leere App (Android)**. Geben Sie einen Namen für Ihre App ein (im nachfolgenden Screenshot heißt die App **MyApp**), und klicken Sie anschließend auf **OK**:
 
-[![Screenshot des Dialogfelds „Neues Projekt“, Erstellen einer leeren Android-App](windows-images/11-first-app-sml.png)](windows-images/11-first-app.png)
+[![Screenshot des Dialogfelds „Neues Projekt“, Erstellen einer leeren Android-App](windows-images/11-first-app-sml.png)](windows-images/11-first-app.png#lightbox)
 
 Das ist alles! Nun können Sie mit Xamarin.Android Android-Anwendungen erstellen!
 
-
-<a name="summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: bc89450a5c9a00ab9f088ca9fff345ebbf7b6c4c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d7a458a0a0c2da1dbb40ae7222fcd35cf7172953
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Hallo, iOS: Ausführliche Erläuterungen
 
@@ -102,7 +102,7 @@ Bevor eine iOS-Anwendung eine neue Benutzeroberfläche laden kann, müssen zwei 
 
 In diesem Abschnitt werden die in der folgenden Abbildung dargestellten Beziehungen behandelt:
 
-[ ![](hello-ios-deepdive-images/image32.png "Die Architektur- und Anwendungsgrundlagenbeziehungen sind in diesem Diagramm dargestellt")](hello-ios-deepdive-images/image32.png)
+[![](hello-ios-deepdive-images/image32.png "Die Architektur- und Anwendungsgrundlagenbeziehungen sind in diesem Diagramm dargestellt")](hello-ios-deepdive-images/image32.png#lightbox)
 
 Wir beginnen am Anfang und erfahren, was beim Start der Anwendung geschieht.
 
@@ -197,7 +197,7 @@ Die _Ansicht_ kann durch einen Klick in den weißen Teil der Szene ausgewählt w
 
 Auf der linken Seite der Szene befindet sich wie im folgenden Screenshot veranschaulicht ein grauer Pfeil mit einem Flaggensymbol:
 
- [ ![](hello-ios-deepdive-images/image37.png "Ein grauer Pfeil mit Flaggensymbol")](hello-ios-deepdive-images/image37.png)
+ [![](hello-ios-deepdive-images/image37.png "Ein grauer Pfeil mit Flaggensymbol")](hello-ios-deepdive-images/image37.png#lightbox)
 
 Die graue Pfeil stellt einen Storyboard-Übergang namens *Segue* („Segway“ ausgesprochen) dar. Da dieser Segue keinen Ursprung hat, handelt es sich um einen *Sourceless Segue*. Ein Sourceless Segue verweist auf die erste Szene, deren Ansichten beim Anwendungsstart in unser Anwendungsfenster geladen werden. Der Szene und die darin enthaltenen Ansichten werden dem Benutzer als Erstes angezeigt, wenn die Anwendung geladen wird.
 
@@ -243,7 +243,7 @@ Im nächsten Abschnitt wird die durch diese Szene dargestellte Hierarchie von In
 
 Eine _Hierarchie von Inhaltsansichten_ besteht aus einem Stapel von Ansichten und Unteransichten, die wie im folgenden Diagramm veranschaulicht von einem einzelnen Ansichtscontroller verwaltet werden:
 
- [ ![](hello-ios-deepdive-images/image41.png "Die Hierarchie der Inhaltsansichten")](hello-ios-deepdive-images/image41.png)
+ [![](hello-ios-deepdive-images/image41.png "Die Hierarchie der Inhaltsansichten")](hello-ios-deepdive-images/image41.png#lightbox)
 
 Die Hierarchie von Inhaltsansichten von `ViewController` kann leichter angezeigt werden, indem Sie die Hintergrundfarbe der Stammansicht im Ansichtsabschnitt des **Eigenschaftenpads** wie im folgenden Screenshot veranschaulicht vorübergehend in Gelb ändern:
 
@@ -259,7 +259,7 @@ Die Hierarchie von Inhaltsansichten von `ViewController` kann leichter angezeigt
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem Fenster, den Ansichten, Unteransichten und dem Ansichtscontroller, die die Benutzeroberfläche auf den Gerätebildschirm bringen:
 
- [ ![](hello-ios-deepdive-images/image43.png "Die Beziehungen zwischen den Steuerelementen „Fenster“, „Ansichten“, „Unteransichten“ und „Ansicht“")](hello-ios-deepdive-images/image43.png)
+ [![](hello-ios-deepdive-images/image43.png "Die Beziehungen zwischen den Steuerelementen „Fenster“, „Ansichten“, „Unteransichten“ und „Ansicht“")](hello-ios-deepdive-images/image43.png#lightbox)
 
 Im nächsten Abschnitt wird erläutert, wie mit Ansichten im Code gearbeitet werden muss, und Sie lernen das Programmieren für die Benutzerinteraktion mit Ansichtscontroller und dem Ansichtslebenszyklus.
 
@@ -331,7 +331,7 @@ Die wichtigste Rolle des Ansichtscontrollers ist die Reaktion auf Benutzerintera
 Nun, da Sie ein tieferes Verständnis der Ansichten und des Ansichtscontrollers haben, untersuchen wir die Funktionsweise.
 Im `Phoneword_iOS`-Projekt wurde eine Schaltfläche namens `TranslateButton` zur Hierarchie von Inhaltsansichten hinzugefügt:
 
- [ ![](hello-ios-deepdive-images/image1.png "Es wurde eine Schaltfläche namens TranslateButton zur Hierarchie von Inhaltsansichten hinzugefügt.")](hello-ios-deepdive-images/image1.png)
+ [![](hello-ios-deepdive-images/image1.png "Es wurde eine Schaltfläche namens TranslateButton zur Hierarchie von Inhaltsansichten hinzugefügt.")](hello-ios-deepdive-images/image1.png#lightbox)
 
 Wenn ein **Name** dem Steuerelement **Schaltfläche** im **Eigenschaftenpad** zugewiesen ist, wird der iOS-Designer automatisch einem Steuerelement in **ViewController.designer.cs** zugewiesen, sodass `TranslateButton` innerhalb der `ViewController`-Klasse verfügbar ist. Steuerelemente werden erstmals in der `ViewDidLoad`-Phase des Ansichtslebenszyklus verfügbar. Diese Lebenszyklusmethode wird verwendet, um auf die Toucheingabe des Benutzers zu reagieren:
 
@@ -432,7 +432,7 @@ Sobald das Gerät bereitgestellt wurde, können Sie es bereitstellen, indem Sie 
 
 Die Anwendung wird auf dem iOS-Gerät bereitgestellt:
 
-[ ![](hello-ios-deepdive-images/image1.png "Die Anwendung wird auf dem iOS-Gerät bereitgestellt und ausgeführt.")](hello-ios-deepdive-images/image1.png)
+[![](hello-ios-deepdive-images/image1.png "Die Anwendung wird auf dem iOS-Gerät bereitgestellt und ausgeführt.")](hello-ios-deepdive-images/image1.png#lightbox)
 
 ### <a name="generate-custom-icons-and-launch-images"></a>Generieren von benutzerdefinierten Symbolen und Startbildern
 

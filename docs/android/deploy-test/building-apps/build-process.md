@@ -6,23 +6,20 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 68ddb9baa008ec8222b4399a5ab25330fda2afd1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: 51caebb86cb72b11ced70522fc253e608f5ccab0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="build-process"></a>Buildprozess
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Übersicht
 
 Der Xamarin.Android-Buildprozess ist dafür verantwortlich, alles zusammenzufügen: [Generieren von `Resource.designer.cs`](~/android/internals/api-design.md), Unterstützen von `AndroidAsset`, `AndroidResource` und anderen [Buildaktionen](#Build_Actions), Generieren von [Wrappern, die von Android aufgerufen werden können](~/android/platform/java-integration/android-callable-wrappers.md), und Generieren einer `.apk`-Datei für die Ausführung auf Android-Geräten.
 
-<a name="App_Packaging" />
-<a name="Application_Packages" />
 
 ## <a name="application-packages"></a>Anwendungspakete
 
@@ -34,7 +31,6 @@ Im Großen und Ganzen gibt es zwei Arten von Android-Anwendungspaketen (`.apk`-D
 
 Nicht zufällig stimmen diese mit der MSBuild-`Configuration` überein, die das Paket generiert.
 
-<a name="Shared_Runtime" />
 
 ### <a name="shared-runtime"></a>Shared Runtime
 
@@ -53,7 +49,6 @@ Es ist bekannt, dass die schnelle Bereitstellung auf Geräten fehlschlägt, die 
 Die schnelle Bereitstellung ist standardmäßig aktiviert und kann in Debugbuilds deaktiviert werden, indem die `$(EmbedAssembliesIntoApk)`-Eigenschaft auf `True` festgelegt wird.
 
 
-<a name="MSBuild_Projects" />
 
 ## <a name="msbuild-projects"></a>MSBuild-Projekte
 
@@ -81,7 +76,6 @@ Die folgenden Buildziele sind für Xamarin.Android-Projekte definiert:
 
 -   **UpdateAndroidResources** &ndash; Aktualisiert die `Resource.designer.cs`-Datei. Dieses Ziel wird normalerweise von der IDE aufgerufen, wenn dem Projekt neue Ressourcen hinzugefügt werden.
 
-<a name="Build_Properties" />
 
 ## <a name="build-properties"></a>Buildeigenschaften
 
@@ -116,7 +110,6 @@ Installationseigenschaften steuern das Verhalten der `Install`- und `Uninstall`-
     MSBuild /t:Install ProjectName.csproj /p:AdbTarget=-e
     ```
 
-<a name="App_Packaging" />
 
 ### <a name="packaging-properties"></a>Paketeigenschaften
 
@@ -146,7 +139,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     Standardmäßig ist diese Eigenschaft `False`.
 
--   **AndroidFastDeploymentType** &ndash; Eine durch Doppelpunkte (`:`) getrennte Liste von Werten zum Steuern, welche Typen im [Verzeichnis für schnelle Bereitstellung](#Fast_Deployment) auf dem Zielgerät bereitgestellt werden können, wenn die MSBuild-Eigenschaft [`$(EmbedAssembliesIntoApk)`](#EmbedAssembliesIntoApk) den Wert `False` aufweist. Wenn eine Ressource schnell bereitgestellt wird, ist sie *nicht* in die generierte `.apk`-Datei eingebettet, was die Bereitstellungszeiten beschleunigen kann. (Je mehr schneller bereitgestellt wird, desto seltener muss die `.apk`-Datei neu erstellt werden, und der Installationsprozess kann schneller ablaufen.) Gültige Werte sind:
+-   **AndroidFastDeploymentType** &ndash; Eine durch Doppelpunkte (`:`) getrennte Liste von Werten zum Steuern, welche Typen im [Verzeichnis für schnelle Bereitstellung](#Fast_Deployment) auf dem Zielgerät bereitgestellt werden können, wenn die MSBuild-Eigenschaft `$(EmbedAssembliesIntoApk)` den Wert `False` aufweist. Wenn eine Ressource schnell bereitgestellt wird, ist sie *nicht* in die generierte `.apk`-Datei eingebettet, was die Bereitstellungszeiten beschleunigen kann. (Je mehr schneller bereitgestellt wird, desto seltener muss die `.apk`-Datei neu erstellt werden, und der Installationsprozess kann schneller ablaufen.) Gültige Werte sind:
 
     - `Assemblies`: Bereitstellen von Anwendungsassemblys.
 
@@ -158,7 +151,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
 -   **AndroidApplicationJavaClass** &ndash; Der vollständige Java-Klassenname, der anstelle von `android.app.Application` verwendet werden soll, wenn eine Klasse von [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/) erbt.
 
-    Diese Eigenschaft wird im Allgemeinen durch *andere* Eigenschaften festgelegt, z.B. durch die MSBuild-Eigenschaft [`$(AndroidEnableMultiDex)`](#AndroidEnableMultiDex).
+    Diese Eigenschaft wird im Allgemeinen durch *andere* Eigenschaften festgelegt, z.B. durch die MSBuild-Eigenschaft `$(AndroidEnableMultiDex)`.
 
     In Xamarin.Android 6.1 hinzugefügt.
 
@@ -285,7 +278,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
 -   **MonoSymbolArchiv** &ndash; Eine boolesche Eigenschaft, die steuert, ob `.mSYM`-Artefakte für die spätere Verwendung mit `mono-symbolicate` generiert werden, um &ldquo;echte&rdquo; Dateinamen- und Zeilennummerinformationen aus Releasestapelüberwachungen zu extrahieren.
 
-    Dies ist standardmäßig TRUE für &ldquo;Release&rdquo;-Apps mit aktivierten Debugsymbolen: [`$(EmbedAssembliesIntoApk)`](#EmbedAssembliesIntoApk) ist TRUE, `$(DebugSymbols)` ist TRUE, und `$(Optimize)` ist TRUE.
+    Dies ist standardmäßig TRUE für &ldquo;Release&rdquo;-Apps mit aktivierten Debugsymbolen: `$(EmbedAssembliesIntoApk)` ist TRUE, `$(DebugSymbols)` ist TRUE, und `$(Optimize)` ist TRUE.
 
     In Xamarin.Android 7.1 hinzugefügt.
 
@@ -312,13 +305,11 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     -   **versionCode** &ndash; Verwendet den Versionscode direkt aus `Properties\AndroidManifest.xml`.
 
-    Sie können benutzerdefinierte Elemente mit der Eigenschaft [AndroidVersionCodeProperties](#AndroidVersionCodeProperties) definieren.
+    Sie können mithilfe der `AndroidVersionCodeProperties`-Eigenschaft (definiert als Nächstes) benutzerdefinierte Elemente definieren.
 
     Hinzugefügt in Xamarin.Android 7.2.
 
--   **AndroidVersionCodeProperties** &ndash; Eine Zeichenfolgeneigenschaft, die es dem Entwickler erlaubt, benutzerdefinierte Elemente für die Verwendung mit dem [AndroidVersionCodePattern](#AndroidVersionCodePattern) zu definieren.
-    Diese liegen in Form eines `key=value`-Paares vor. Alle Elemente im `value` sollten ganzzahlige Werte sein. Beispiel: `screen=23;target=$(_SupportedApiLevel)`.
-    Wie Sie sehen können, können Sie vorhandene oder benutzerdefinierte MSBuild-Eigenschaften in der Zeichenfolge verwenden.
+-   **AndroidVersionCodeProperties** &ndash; Eine Zeichenfolgeneigenschaft, die es dem Entwickler erlaubt, benutzerdefinierte Elemente für die Verwendung mit `AndroidVersionCodePattern` zu definieren. Diese liegen in Form eines `key=value`-Paares vor. Alle Elemente im `value` sollten ganzzahlige Werte sein. Beispiel: `screen=23;target=$(_SupportedApiLevel)`. Wie Sie sehen können, können Sie vorhandene oder benutzerdefinierte MSBuild-Eigenschaften in der Zeichenfolge verwenden.
 
     Hinzugefügt in Xamarin.Android 7.2.
 
@@ -365,8 +356,6 @@ Die folgenden MSBuild-Eigenschaften werden mit [Bindungsprojekten](~/android/pla
     Der Standardwert wird sich in einem zukünftigen Release ändern.
 
 
-<a name="Resgen" />
-<a name="Resource_Properties" />
 
 ### <a name="resource-properties"></a>Ressourceneigenschaften
 
@@ -385,7 +374,6 @@ Ressourceneigenschaften steuern die Generierung der `Resource.designer.cs`-Datei
     **Experimentell**. Hinzugefügt in Xamarin.Android 7.0.
 
 
-<a name="Signing" />
 <a name="Signing_Properties" />
 
 ### <a name="signing-properties"></a>Signatureigenschaften
@@ -435,7 +423,7 @@ Um den oben generierten Keystore zu verwenden, verwenden Sie die Eigenschaftengr
 
 <a name="Build_Actions" />
 
-## <a name="build-actions"></a>Buildaktionen
+## <a name="build-actions"></a>Buildvorgänge
 
 *Buildaktionen* werden [auf Dateien](http://msdn.microsoft.com/en-us/library/bb629388.aspx) im Projekt angewendet und steuern, wie die Datei verarbeitet wird.
 
@@ -446,21 +434,16 @@ Um den oben generierten Keystore zu verwenden, verwenden Sie die Eigenschaftengr
 Dateien mit einer Buildaktion von `AndroidEnvironment` werden verwendet, um [Umgebungsvariablen und Systemeigenschaften während des Prozessstarts zu initialisieren](~/android/deploy-test/environment.md).
 Die Buildaktion `AndroidEnvironment` kann auf mehrere Dateien angewendet werden. Diese werden in keiner bestimmten Reihenfolge ausgewertet (geben Sie daher nicht die gleiche Umgebungsvariable oder Systemeigenschaft in mehreren Dateien an).
 
-<a name="Java_Interop_Support" />
-<a name="AndroidJavaSource" />
 
 ### <a name="androidjavasource"></a>AndroidJavaSource
 
 Dateien mit einer Buildaktion von `AndroidJavaSource` sind Java-Quellcode, der im endgültigen Android-Paket enthalten sein wird.
 
-<a name="AndroidJavaLibrary" />
 
 ### <a name="androidjavalibrary"></a>AndroidJavaLibrary
 
 Dateien mit einer Buildaktion von `AndroidJavaLibrary` sind Java-Archive (`.jar`-Dateien), die im endgültigen Android-Paket enthalten sein werden.
 
-<a name="Resources" />
-<a name="AndroidResource" />
 
 ### <a name="androidresource"></a>AndroidResource
 
@@ -499,8 +482,6 @@ Fortgeschrittene Benutzer wünschen sich vielleicht, dass verschiedene Ressource
 </ItemGroup>
 ```
 
-<a name="Native_Library_Support" />
-<a name="AndroidNativeLibrary" />
 
 ### <a name="androidnativelibrary"></a>AndroidNativeLibrary
 
@@ -546,7 +527,6 @@ Dateien mit einer *ProguardConfiguration*-Buildaktion enthalten Optionen, mit de
 Diese Dateien wird ignoriert, wenn die MSBuild-Eigenschaft `$(EnableProguard)` nicht den Wert `True` aufweist.
 
 
-<a name="Target_Definitions" />
 
 ## <a name="target-definitions"></a>Zieldefinitionen
 

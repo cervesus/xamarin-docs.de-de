@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: fbf18bad2dbe227575f4d820a121eab6e91655a0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5263d32ace14eb803bfd65b6a9b2ea5992ee1413
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="connection-troubleshooting"></a>Problembehandlung bei der Verbindung
 
@@ -45,15 +45,15 @@ Die Xamarin-Buildhostanwendung aus älteren Versionen von Xamarin.iOS ist nicht 
 
 2. Stellen Sie sicher, dass die **Remoteanmeldung** auf dem Mac aktiviert ist. Legen Sie den Zugriff für **Nur diese Benutzer** fest, und stellen Sie sicher, dass Ihr Mac-Benutzer in der Liste oder Gruppe inbegriffen ist:
 
-    [![ ] (troubleshooting-images/troubleshooting-image1.png "Zugriff nur für diese Benutzer festlegen")](troubleshooting-images/troubleshooting-image1.png)
+    [![](troubleshooting-images/troubleshooting-image1.png "Zugriff nur für diese Benutzer festlegen")](troubleshooting-images/troubleshooting-image1.png#lightbox)
 
 3. Überprüfen Sie, dass die Firewall eingehende Verbindungen über Port 22 – den Standardwert für SSH – zulässt:
 
-    [ ![](troubleshooting-images/troubleshooting-image2.png "Überprüfen Sie, ob die Firewall eingehende Verbindungen über Port 22 zulässt")](troubleshooting-images/troubleshooting-image2.png)
+    [![](troubleshooting-images/troubleshooting-image2.png "Überprüfen Sie, ob die Firewall eingehende Verbindungen über Port 22 zulässt")](troubleshooting-images/troubleshooting-image2.png#lightbox)
 
     Wenn Sie **Automatically allow signed software to receive incoming connections** (Signierte Software automatisch für den Empfang eingehender Verbindungen zulassen) deaktiviert haben, wird in OS X während des Verbindungsaufbaus ein Dialogfeld angezeigt, das Sie auffordert, `mono-sgen` oder `mono-sgen32` für den Empfang von eingehenden Verbindungen zuzulassen. Klicken Sie in diesem Dialogfeld auf **Zulassen**:
 
-    [ ![](troubleshooting-images/troubleshooting-image4a.png "Klicken Sie in diesem Dialogfeld auf „Zulassen“")](troubleshooting-images/troubleshooting-image4a.png)
+    [![](troubleshooting-images/troubleshooting-image4a.png "Klicken Sie in diesem Dialogfeld auf „Zulassen“")](troubleshooting-images/troubleshooting-image4a.png#lightbox)
 
 4. Vergewissern Sie sich, dass Sie über das Benutzerkonto auf diesem Mac angemeldet sind und über eine aktive GUI-Sitzung verfügen.
 
@@ -63,12 +63,12 @@ Die Xamarin-Buildhostanwendung aus älteren Versionen von Xamarin.iOS ist nicht 
 
     Beispielsweise wird der Kontoname des folgenden Screenshots **amyb** und nicht **Amy Burns** lauten:
 
-    [ ![](troubleshooting-images/troubleshooting-image5a.png "Abrufen des Kontonamens aus der Terminal-App")](troubleshooting-images/troubleshooting-image5a.png)
+    [![](troubleshooting-images/troubleshooting-image5a.png "Abrufen des Kontonamens aus der Terminal-App")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
 
 
 6. Überprüfen Sie, dass die IP-Adresse, die Sie für den Mac verwenden, richtig ist. Sie finden die IP-Adresse unter **Systemeinstellungen > Freigabe > Remoteanmeldung** auf dem Mac.
 
-    [ ![](troubleshooting-images/troubleshooting-image17.png "Die IP-Adresse in der App „Systemeinstellungen“")](troubleshooting-images/troubleshooting-image17.png)
+    [![](troubleshooting-images/troubleshooting-image17.png "Die IP-Adresse in der App „Systemeinstellungen“")](troubleshooting-images/troubleshooting-image17.png#lightbox)
 
 7. Wenn Sie die IP-Adresse für den Mac bestätigt haben, führen Sie einen `ping` an diese Adresse in `cmd.exe` unter Windows durch:
 
@@ -80,7 +80,7 @@ Die Xamarin-Buildhostanwendung aus älteren Versionen von Xamarin.iOS ist nicht 
 
         ssh amyb@10.1.8.95
 
-<a name="stepnine">
+<a name="stepnine" />
 
 9. Wenn **Schritt 8 erfolgreich ist**, können Sie versuchen, einen einfachen Befehl wie `ls` über die Verbindung auszuführen:
 
@@ -129,7 +129,7 @@ Bekannte Ursachen:
 
 - **Fehler [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)**: Dieses Problem kann bei Xamarin 4.1 auftreten, wenn die **Anmelde-Shell** im Kontextmenü **Erweiterte Optionen** für den Mac-Benutzer in **Systemeinstellungen &gt; Benutzer &amp; Gruppen** auf einen anderen Wert als **/bin/bash** festgelegt ist. (Ab Xamarin 4.2 führt dieses Szenario stattdessen zur Fehlermeldung „Verbindung konnte nicht hergestellt werden“.) **Problemumgehung**: Ändern Sie die **Anmelde-Shell** zurück in die ursprüngliche Standardeinstellung **/bin/bash**.
 
-<a name="tryagain">
+<a name="tryagain" />
 
 ### <a name="couldnt-connect-to-macbuildhostlocal-please-try-again"></a>„Es konnte keine Verbindung mit MacBuildHost.local hergestellt werden. Versuchen Sie es erneut.“
 
@@ -153,7 +153,7 @@ Gemeldete Ursachen:
 
     1. Überprüfen Sie den Speicherort der **sshd\_config**-Datei durch Ausführen von `ls /etc/ssh/sshd_config` und `ls /etc/sshd_config` in einer Eingabeaufforderung eines Terminals. Für alle verbleibenden Schritte müssen Sie den Speicherort verwenden, der _nicht_ „Datei oder Verzeichnis nicht vorhanden“ zurückgibt.
 
-        [ ![](troubleshooting-images/troubleshooting-image18.png "Ausführen von „ls /etc/ssh/sshd_config“ und „ls /etc/sshd_config“ im Terminal")](troubleshooting-images/troubleshooting-image18.png)
+        [![](troubleshooting-images/troubleshooting-image18.png "Ausführen von „ls /etc/ssh/sshd_config“ und „ls /etc/sshd_config“ im Terminal")](troubleshooting-images/troubleshooting-image18.png#lightbox)
 
     3. Führen Sie `cp /etc/ssh/sshd_config "$HOME/Desktop/"` im Terminal aus, um die Datei auf Ihren Desktop zu kopieren.
 
@@ -171,7 +171,7 @@ Gemeldete Ursachen:
 
     9. Deaktivieren und aktivieren Sie die **Remoteanmeldung** erneut unter **Systemeinstellungen &gt; Freigabe &gt; Remoteanmeldung**, um den SSH-Server neu zu starten.
 
-<a name="clearing">
+<a name="clearing" />
 
 ### <a name="clearing-the-broker-idb-build-and-designer-agents-on-the-mac"></a>Deaktivieren des Brokers, IDB, Builds und Designer-Agents auf dem Mac
 
@@ -183,7 +183,7 @@ Wenn die Protokolldateien ein Problem während der Schritte „Installieren“, 
 
 2. Klicken Sie bei gleichzeitigem Drücken von STRG auf den **XMA**-Ordner, und wählen Sie **In den Papierkorb verschieben** aus:
 
-    [ ![](troubleshooting-images/troubleshooting-image8.png "Verschieben des Ordners „XMA“ in den Papierkorb")](troubleshooting-images/troubleshooting-image8.png)
+    [![](troubleshooting-images/troubleshooting-image8.png "Verschieben des Ordners „XMA“ in den Papierkorb")](troubleshooting-images/troubleshooting-image8.png#lightbox)
 
 3. Auf Windows gibt es auch einen Zwischenspeicher, dessen Bereinigung hilfreich sein kann. Öffnen Sie eine Befehlseingabeaufforderung als Administrator unter Windows:
 
@@ -221,7 +221,7 @@ Das Ausgabefenster ist der beste Startpunkt. Es zeigt Meldungen über Hauptverbi
 2. Wählen Sie in der Dropdownliste **Ausgabe anzeigen von** aus.
 3. Wählen Sie **Xamarin** aus.
 
-[ ![](troubleshooting-images/troubleshooting-image11.png "Wählen Sie „Xamarin“ auf der Registerkarte „Ausgabe“ aus")](troubleshooting-images/troubleshooting-image11.png)
+[![](troubleshooting-images/troubleshooting-image11.png "Wählen Sie „Xamarin“ auf der Registerkarte „Ausgabe“ aus")](troubleshooting-images/troubleshooting-image11.png#lightbox)
 
 ### <a name="log-files"></a>Protokolldateien
 
@@ -236,18 +236,18 @@ Wenn das Ausgabefenster nicht genügend Informationen enthält, um das Problem z
 
 3. Nachdem Visual Studio einen Verbindungsfehler aufweist, sammeln Sie die Protokolle von **Hilfe > Xamarin > Zip-Protokolle**:
 
-    [ ![](troubleshooting-images/troubleshooting-image12.png "Sammeln Sie die Protokolle aus „Hilfe > Xamarin > Protokolle zippen“")](troubleshooting-images/troubleshooting-image12.png)
+    [![](troubleshooting-images/troubleshooting-image12.png "Sammeln Sie die Protokolle aus „Hilfe > Xamarin > Protokolle zippen“")](troubleshooting-images/troubleshooting-image12.png#lightbox)
 
 4. Wenn Sie die ZIP-Datei öffnen, wird Ihnen eine Liste der Dateien angezeigt, die dem folgenden Beispiel ähneln. Bei Verbindungsfehlern sind die wichtigsten Dateien **\*Ide.log** und **\*Ide.svclog**. Diese Dateien enthalten die gleichen Meldungen in zwei etwas unterschiedlichen Formaten. Die **.svclog** steht im XML-Format zur Verfügung und ist nützlich, wenn Sie die Nachrichten durchsuchen möchten. Bei **.log** handelt es sich um Klartext. Dies ist nützlich, wenn Nachrichten mithilfe von Befehlszeilentools gefiltert werden sollen.
 
 
     Um alle Nachrichten zu durchsuchen, wählen Sie die **.svclog**-Datei aus, und öffnen Sie sie:
 
-    [ ![](troubleshooting-images/troubleshooting-image13.png "Wählen Sie die SVCLOG-Datei aus")](troubleshooting-images/troubleshooting-image13.png)
+    [![](troubleshooting-images/troubleshooting-image13.png "Wählen Sie die SVCLOG-Datei aus")](troubleshooting-images/troubleshooting-image13.png#lightbox)
 
 5. Die **.svclog**-Datei wird in **Microsoft Service Trace Viewer** geöffnet. Sie können die Nachrichten nach Threads durchsuchen, um verwandte Nachrichtengruppen anzuzeigen. Zum Durchsuchen nach Threads wählen Sie zuerst die Registerkarte **Graph** aus, klicken dann auf das Dropdownmenü **Layoutmodus** und wählen **Thread** aus:
 
-    [ ![](troubleshooting-images/troubleshooting-image14.png "Klicken Sie auf das Dropdownmenü „Layoutmodus“, und wählen Sie „Thread“ aus")](troubleshooting-images/troubleshooting-image14.png)
+    [![](troubleshooting-images/troubleshooting-image14.png "Klicken Sie auf das Dropdownmenü „Layoutmodus“, und wählen Sie „Thread“ aus")](troubleshooting-images/troubleshooting-image14.png#lightbox)
 
 <a name="verboselogs" />
 
@@ -307,7 +307,7 @@ Verwandter Fehler: [#36195](https://bugzilla.xamarin.com/show_bug.cgi?id=36195)
 
 Starten Sie Xcode auf dem Mac, und stellen Sie sicher, dass Ihr Apple-Entwicklerkonto angemeldet und Ihr iOS-Entwicklungsprofil heruntergeladen ist:
 
-[ ![](troubleshooting-images/troubleshooting-image7.png "Stellen Sie sicher, dass Ihr Apple-Entwicklerkonto angemeldet und das iOS-Entwicklungsprofil heruntergeladen ist")](troubleshooting-images/troubleshooting-image7.png)
+[![](troubleshooting-images/troubleshooting-image7.png "Stellen Sie sicher, dass Ihr Apple-Entwicklerkonto angemeldet und das iOS-Entwicklungsprofil heruntergeladen ist")](troubleshooting-images/troubleshooting-image7.png#lightbox)
 
 ### <a name="a-socket-operation-was-attempted-to-an-unreachable-network"></a>„Ein Socketvorgang für ein nicht erreichbares Netzwerk wurde versucht“
 
@@ -323,7 +323,7 @@ Dieses Problem kann auftreten, wenn Visual Studio nicht den MEF-Komponentencache
 
 Hierdurch wird der Visual Studio MEF-Komponentencache zum Beheben von Beschädigungen des Caches gelöscht.
 
-<a name="errors">
+<a name="errors" />
 
 ### <a name="errors-due-to-existing-build-host-processes-on-the-mac"></a>Fehler aufgrund von vorhandenen Buildhostprozessen auf dem Mac
 
@@ -333,7 +333,7 @@ Das Verhalten der aktuellen aktiven Verbindung kann manchmal von Prozessen von v
 ps -A | grep mono
 ```
 
-[![ ] (troubleshooting-images/troubleshooting-image10.png "Ausführen von Befehlen im Terminal auf dem Mac")](troubleshooting-images/troubleshooting-image10.png)
+[![](troubleshooting-images/troubleshooting-image10.png "Ausführen von Befehlen im Terminal auf dem Mac")](troubleshooting-images/troubleshooting-image10.png#lightbox)
 
 Verwenden Sie zum Beenden der vorhandenen Prozesse den folgenden Befehl:
 
@@ -353,7 +353,7 @@ Wenn Sie eine Problembehandlung für einen Build durchführen und sicher stellen
 
 2. Klicken Sie bei gleichzeitigem Drücken von STRG auf den **mtbs**-Ordner, und wählen Sie **In den Papierkorb verschieben** aus:
 
-    [ ![](troubleshooting-images/troubleshooting-image9.png "Verschieben des Ordners „mtbs“ in den Papierkorb")](troubleshooting-images/troubleshooting-image9.png)
+    [![](troubleshooting-images/troubleshooting-image9.png "Verschieben des Ordners „mtbs“ in den Papierkorb")](troubleshooting-images/troubleshooting-image9.png#lightbox)
 
 
 ## <a name="related-links"></a>Verwandte Links

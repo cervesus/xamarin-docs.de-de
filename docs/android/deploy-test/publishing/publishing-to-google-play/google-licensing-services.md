@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/20/2017
-ms.openlocfilehash: f1e7e36dfa1bfe122084f0525d83f06760ca1fe0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d4ed2df994ace7f6de5ade78577e759bb811565c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="google-licensing-services"></a>Google-Lizenzierungsdienste
 
@@ -26,7 +26,7 @@ Die Google-Lizenzierungsdienste sind dahingehend sicher, dass jede Antwort mit e
 
 Eine Anwendung, die die Google-Lizenzierung implementiert hat, sendet eine Anforderung an einen Dienst, der von der Google Play-Anwendung auf dem Gerät gehostet wird. Google Play sendet diese Anforderung weiter an den Google-Lizenzierungsserver, der daraufhin mit dem Lizenzstatus antwortet: 
 
-[ ![Lizenzierungsserver-Workflowdiagramm](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png)
+[![Lizenzierungsserver-Workflowdiagramm](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png#lightbox)
 
 In dem obenstehenden Diagramm wird der folgende Workflow dargestellt: 
 
@@ -36,7 +36,6 @@ In dem obenstehenden Diagramm wird der folgende Workflow dargestellt:
 
 Die Google-Lizenzierungsdienste sind ebenfalls Kernkomponenten von APK-Erweiterungsdateien (auf die an späterer Stelle in diesem Dokument eingegangen wird). APK-Erweiterungsdateien verwenden Google-Lizenzierungsdienste, um die URL der Dateien, die heruntergeladen werden sollen, abzurufen.
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>Anforderungen
 

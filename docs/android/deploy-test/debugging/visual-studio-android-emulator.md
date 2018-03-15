@@ -7,12 +7,12 @@ ms.assetid: CD128CB9-499F-4558-B49F-77248824EFDF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: d4d00019f9c0fd3483cdf1b03d9f110078ce37a8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: a31d90e6d5abd574eb6187953082e1b70f66a113
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="visual-studio-android-emulator"></a>Visual Studio-Emulator für Android
 
@@ -24,36 +24,32 @@ Microsoft Visual Studio 2015 enthält einen Android-Emulator, der als Debugziel 
 
 Dieser Leitfaden erläutert, wie der Microsoft Android-Emulator von Visual Studio zum Testen Ihrer App gestartet wird. Ebenso werden die unterschiedlichen verfügbaren Funktionen des Emulators beschrieben. Sie erfahren, wie Sie *Geräteprofile* (ähnlich wie Gerätedefinitionen im Android SDK-Standardemulator) auswählen können, um unterschiedliche Arten von Android-Geräten zu simulieren. Zum Schluss werden im Abschnitt zur Problembehandlung häufige Fehlerquellen und Problemumgehung erklärt.
 
-<a name="requirements" />
-
 ## <a name="requirements"></a>Anforderungen
 
 Um den Emulator ausführen, muss der Computer die Voraussetzungen zum Ausführen von Hyper-V erfüllen. Hyper-V erfordert eine 64-Bit-Version der Pro-Edition von Windows 8, Windows 8.1, Windows 10 oder höher. Weitere Informationen zu den Anforderungen finden Sie unter [Systemanforderungen für den Visual Studio-Emulator für Android](https://msdn.microsoft.com/en-us/library/mt228280.aspx)
 
 > [!NOTE]
-> **Hinweis:** Sie können HAXM (vom Android SDK-Emulator verwendet) nicht verwenden, während Hyper-V aktiviert ist. Weitere Informationen zu den Einschränkungen und potentielle Probleme mit HAXM finden Sie unter [HAXM Virtualization Conflicts (HAXM-Virtualisierungskonflikte)](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#virt-conflicts).
+> Sie können HAXM (vom Android SDK-Emulator verwendet) nicht verwenden, während Hyper-V aktiviert ist. Weitere Informationen zu den Einschränkungen und potentielle Probleme mit HAXM finden Sie unter [HAXM Virtualization Conflicts (HAXM-Virtualisierungskonflikte)](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#virt-conflicts).
 
-
-<a name="launching" />
 
 ## <a name="running-the-emulator"></a>Ausführen des Emulators
 
 Visual Studio macht mehrere vorkonfigurierte Zielgerätprofile im Dropdownmenü **Debugziel** verfügbar (dies ist im folgenden Screenshot dargestellt). Den Microsoft Android-Emulatorzielen wird der **VS-Emulator** vorangestellt:
 
-[ ![Vorkonfigurierte Zielgerätprofile](visual-studio-android-emulator-images/01-vs-emulator-defaults-vs-sml.png)](visual-studio-android-emulator-images/01-vs-emulator-defaults-vs.png)
+[![Vorkonfigurierte Zielgerätprofile](visual-studio-android-emulator-images/01-vs-emulator-defaults-vs-sml.png)](visual-studio-android-emulator-images/01-vs-emulator-defaults-vs.png#lightbox)
 
 Wenn Visual Studio eine Xamarin.Android-Anwendung startet, wird der Emulator mit dem ausgewählten Geräteziel gestartet, und die App wird auf dem Emulator bereitgestellt. In der unteren linken Ecke von Visual Studio wird eine Meldung angezeigt, die angibt, dass der Emulator gestartet wird:
 
-[ ![Starten des VS-Emulators](visual-studio-android-emulator-images/02-emulator-starting-vs-sml.png)](visual-studio-android-emulator-images/02-emulator-starting-vs.png)
+[![VS-Emulator starten](visual-studio-android-emulator-images/02-emulator-starting-vs-sml.png)](visual-studio-android-emulator-images/02-emulator-starting-vs.png#lightbox)
 
 Nach einer Verzögerung beim Systemstart wird der Emulatorbildschirm wie unten links angezeigt. Ziehen Sie das Sperrsymbol auf dem Bildschirm nach oben, um das Gerät zu entsperren.
 Die Xamarin.Android-App sollte dann, wie auf dem rechten Telefon dargestellt, im Emulator ausgeführt werden:
 
-[ ![Emulatorscreenshots](visual-studio-android-emulator-images/03-first-screen-vs-sml.png)](visual-studio-android-emulator-images/03-first-screen-vs.png)
+[![Emulatorscreenshots](visual-studio-android-emulator-images/03-first-screen-vs-sml.png)](visual-studio-android-emulator-images/03-first-screen-vs.png#lightbox)
 
 So wie bei beim Android SDK-Standardemulator ist es auch möglich, Breakpoints im Code festzulegen, Variablen zu prüfen und die Aufrufliste anzuzeigen. Die vertikale Symbolleiste rechts neben dem Emulator stellt den Zugriff auf die Emulatorfunktionen bereit:
 
-[ ![Schaltflächen auf der vertikalen Symbolleiste](visual-studio-android-emulator-images/04-vertical-toolbar-vs-sml.png)](visual-studio-android-emulator-images/04-vertical-toolbar-vs.png)
+[![Schaltflächen auf der vertikalen Symbolleiste](visual-studio-android-emulator-images/04-vertical-toolbar-vs-sml.png)](visual-studio-android-emulator-images/04-vertical-toolbar-vs.png#lightbox)
 
 In der folgenden Liste ist die Funktion jeder Schaltfläche auf der vertikalen Symbolleiste zusammengefasst:
 
@@ -77,7 +73,7 @@ In der folgenden Liste ist die Funktion jeder Schaltfläche auf der vertikalen S
 
 Die Schaltfläche *Additional Tools* (Zusätzliche Tools) zeigt an, dass ein Dialogfeld geöffnet wird, auf dem die zusätzlichen Funktionen des Emulators angezeigt werden.
 
-[ ![Dialogfeld „Zusätzliche Tools“](visual-studio-android-emulator-images/05-additional-tools-vs-sml.png)](visual-studio-android-emulator-images/05-additional-tools-vs.png)
+[![Dialogfeld „Zusätzliche Tools“](visual-studio-android-emulator-images/05-additional-tools-vs-sml.png)](visual-studio-android-emulator-images/05-additional-tools-vs.png#lightbox)
 
 
 Jede zusätzliche Funktion ist über unterschiedliche Schaltflächen oben im Dialogfeld verfügbar:
@@ -100,7 +96,6 @@ Jede zusätzliche Funktion ist über unterschiedliche Schaltflächen oben im Dia
 Weitere Informationen darüber, wie diese Funktionen verwendet werden, finden Sie unter [Introducing Visual Studio's Emulator for Android (Einführung in den Visual Studio-Emulator für Android)](https://blogs.msdn.microsoft.com/visualstudioalm/2014/11/12/introducing-visual-studios-emulator-for-android/).
 
 
-<a name="device_profiles" />
 
 ## <a name="configuring-device-profiles"></a>Konfigurieren von Geräteprofilen
 
@@ -108,28 +103,26 @@ Der Microsoft Android-Emulator enthält einen Satz von Geräteprofilen, die die 
 
 Der *Emulator-Manager* wird zum Installieren, Deinstallieren und Starten von Geräteprofilen verwendet. Wählen Sie im Menü **Tools** **Visual Studio-Emulator für Android...**, so wie im Screenshot unten gezeigt, aus:
 
-[ ![Starten des Emulators aus dem Menü „Tools“](visual-studio-android-emulator-images/06-launch-emulator-manager-vs-sml.png)](visual-studio-android-emulator-images/06-launch-emulator-manager-vs.png)
+[![Emulators aus dem Menü „Tools“ starten](visual-studio-android-emulator-images/06-launch-emulator-manager-vs-sml.png)](visual-studio-android-emulator-images/06-launch-emulator-manager-vs.png#lightbox)
 
 Dadurch wird das Dialogfeld **Geräteprofile** geöffnet. Die installierten Profile werden oben in der Geräteprofilliste gekennzeichnet. Profile, die nicht installiert werden (jedoch zur Installation verfügbar sind), sind ausgegraut:
 
-[ ![Symbole für Geräteprofile](visual-studio-android-emulator-images/07-device-profiles-vs-sml.png)](visual-studio-android-emulator-images/07-device-profiles-vs.png)
+[![Symbole für Geräteprofile](visual-studio-android-emulator-images/07-device-profiles-vs-sml.png)](visual-studio-android-emulator-images/07-device-profiles-vs.png#lightbox)
 
 Um ein neues Profil zu erstellen, klicken Sie auf das Symbol für die Profilinstallation (ein Pfeil, der nach unten zeigt, so wie im Screenshot oben dargestellt). Wenn Sie z.B. auf das Symbol für die Profilinstallation für das **5.7" Marshmallow (6.0.0) XHDPI Phone** klicken, lädt der Emulator-Manager das Profil, wie unten dargestellt, herunter:
 
-[ ![Beispiel für das Herunterladen von Profilen](visual-studio-android-emulator-images/08-downloading-profile-vs-sml.png)](visual-studio-android-emulator-images/08-downloading-profile-vs.png)
+[![Beispiel für das Herunterladen von Profilen](visual-studio-android-emulator-images/08-downloading-profile-vs-sml.png)](visual-studio-android-emulator-images/08-downloading-profile-vs.png#lightbox)
 
 Nachdem das Geräteprofil heruntergeladen wurde, wird es gekennzeichnet, um anzugeben, dass das Profil erfolgreich installiert wurde. Durch Klicken auf das Symbol *Details anzeigen* wird der Plattformtyp, die CPU-Architektur, die Bildschirmgröße sowie -auflösung sowie der verfügbare Speicher für das Gerät angezeigt.
 
-[ ![Anzeigen von Geräteprofildetails](visual-studio-android-emulator-images/09-show-details-vs-sml.png)](visual-studio-android-emulator-images/09-show-details-vs.png)
+[![Geräteprofildetails anzeigen](visual-studio-android-emulator-images/09-show-details-vs-sml.png)](visual-studio-android-emulator-images/09-show-details-vs.png#lightbox)
 
 Wenn das Dropdownmenü **Ziel debuggen** in Visual Studio geöffnet wird, ist das neu installierte Geräteprofil nun als Ziel verfügbar:
 
-[ ![Neues Profil im Ziel-Dropdownmenü](visual-studio-android-emulator-images/10-debug-target-vs-sml.png)](visual-studio-android-emulator-images/10-debug-target-vs.png)
+[![Neues Profil im Ziel-Dropdownmenü](visual-studio-android-emulator-images/10-debug-target-vs-sml.png)](visual-studio-android-emulator-images/10-debug-target-vs.png#lightbox)
 
 Diese Liste kann gekürzt werden. Klicken Sie hierzu im *Emulator-Manager* auf **Uninstall this profile** (Diese Profil deinstallieren), um nicht verwendete Geräteprofile zu entfernen. Beachten Sie, dass Sie derzeit keine benutzerdefinierten Geräteprofile in diesem Emulator erstellen können.
 
-
-<a name="troubleshooting" />
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
@@ -144,27 +137,25 @@ Durchlaufen Sie folgende Schritte, um diese Änderung wirksam zu machen:
 
 1.  Klicken Sie auf die Schaltfläche **Start**, geben Sie **MMC** ein, und drücken Sie auf die **EINGABETASTE**. Klicken Sie, wie unten dargestellt, auf **Hyper-V Manager**:
 
-    [ ![Hyper-V Manager](visual-studio-android-emulator-images/15-launch-hyperv-manager.png)](visual-studio-android-emulator-images/15-launch-hyperv-manager.png)
+    [![Hyper-V-Manager](visual-studio-android-emulator-images/15-launch-hyperv-manager.png)](visual-studio-android-emulator-images/15-launch-hyperv-manager.png#lightbox)
 
 2.  Klicken Sie im Bereich **Virtual Machines** des Hyper-V Managers mit der rechten Maustaste auf den Emulator, der zum Bearbeiten verwendet werden soll, und klicken Sie auf **Einstellungen...**:
 
-    [ ![Menüelement „Einstellungen“ von Virtual Machines](visual-studio-android-emulator-images/16-vm-settings.png)](visual-studio-android-emulator-images/16-vm-settings.png)
+    [![Menüelement „Einstellungen“ von Virtual Machines](visual-studio-android-emulator-images/16-vm-settings.png)](visual-studio-android-emulator-images/16-vm-settings.png#lightbox)
 
 3.  Navigieren Sie im Fenster „Einstellungen“ zum Bereich **Compatibility** (Kompatibilität) (unter **Hardware > Prozessor**), und aktivieren Sie **Migrate to a physical computer with a different processor version** (Zu einem physischen Computer mit einer anderen Prozessorversion migrieren):
 
-    [ ![Option „Migrieren“ aktiviert](visual-studio-android-emulator-images/17-set-compatibility-vs-sml.png)](visual-studio-android-emulator-images/17-set-compatibility-vs.png)
+    [![Option „Migrieren“ aktiviert](visual-studio-android-emulator-images/17-set-compatibility-vs-sml.png)](visual-studio-android-emulator-images/17-set-compatibility-vs.png#lightbox)
 
 4.  Klicken Sie auf **OK**, und schließen Sie das Fenster des Hyper-V Managers.
 
 
-<a name="app_fail" />
 
 ### <a name="app-deploys-and-starts-but-fails-immediately"></a>Die App wird bereitgestellt und gestartet, schlägt jedoch sofort fehl
 
 In dieser Situation wird der Emulator gestartet, die App erfolgreich im Emulator bereitgestellt und gestartet. Die App schlägt jedoch sofort fehl.
 In vielen Fällen liegt der Grund bei Inkompatibilitäten zwischen dem Hostprozessor und dem virtuellen Hyper V-Computer. Befolgen Sie die Anweisungen unter [Der Emulator wird nicht gestartet](#cant_connect) (oben), um diesen Fehler zu beheben.
 
-<a name="mscorlib" />
 
 ### <a name="emulator-stops-with-the-diagnostic-message-libaot-mscorlibdllso-not-found"></a>Der Emulator wird mit der Diagnosemeldung **libaot-mscorlib.dll.so nicht gefunden** angehalten
 
@@ -176,23 +167,20 @@ Befolgen Sie die folgenden Schritte zur Deaktivierung der Bereitstellung, um die
 
 3.  Klicken Sie auf **Android-Optionen**, und heben Sie die Auswahl von **Fast Deployment verwenden (nur Debugmodus)** auf:
 
-    [ ![Option „Fast Deployment verwenden“ aufgehoben](visual-studio-android-emulator-images/18-fast-deployment-vs-sml.png)](visual-studio-android-emulator-images/18-fast-deployment-vs.png)
+    [![Option „Use Fast Deployment“ (Fast Deployment verwenden) aufgehoben](visual-studio-android-emulator-images/18-fast-deployment-vs-sml.png)](visual-studio-android-emulator-images/18-fast-deployment-vs.png#lightbox)
 
 
-<a name="dragndrop" />
 
 ### <a name="drag-and-drop-does-not-work"></a>Drag & Drop funktioniert nicht
 
 Wenn der *Visual Studio-Emulator für Android* als Administrator gestartet wird (oder falls sie ihn über Visual Studio starten, während Visual Studio mit Administratorberechtigung ausgeführt wird), funktioniert Drag & Drop von APK- oder ZIP-Dateien möglicherweise nicht. Um diese Problem zu umgehen, führen Sie den *Visual Studio-Emulator für Android* ohne erweiterte Berechtigungen (d.h. nicht als Administrator) aus.
 
-<a name="other" />
 
 ### <a name="other-errors"></a>Andere Fehler
 
 Die oben genannten Tipps zur Problembehandlung decken die häufigsten Probleme bei der Verwendung des Visual Studio-Emulators für Android mit Xamarin.Android ab. Eine ausführlichere Anleitung für die Problembehandlung im Visual Studio-Emulator für Android finden Sie unter [Troubleshooting the Visual Studio Emulator for Android (Problembehandlung für den Visual Studio-Emulator für Android)](https://msdn.microsoft.com/en-us/library/mt228282.aspx).
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 

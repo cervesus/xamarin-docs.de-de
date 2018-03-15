@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 6bb712da5becbe9c19dddf3deb393f0d50cd726b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4da96f3119fb46fbeb22ad3d6c68b3099f6d0698
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="in-house-distribution"></a>Interne Verteilung
 
@@ -56,15 +56,15 @@ Es ist wichtig, zu beachten, dass abgelaufene Zertifikate nicht erneuert werden 
 3. Klicken Sie auf die Schaltfläche **+**, um ein neues Zertifikat zu erstellen.
 4. Wählen Sie unter der Überschrift *Produktion* **Intern und Ad-hoc** aus:
 
-   [![ ] (in-house-distribution-images/createcertmanually01.png "Wählen Sie „Intern“ und „Ad-hoc“")](in-house-distribution-images/createcertmanually01.png)
+   [![](in-house-distribution-images/createcertmanually01.png "„Intern“ und „Ad-hoc“ auswählen")](in-house-distribution-images/createcertmanually01.png#lightbox)
 
 5. Klicken Sie auf „Continue“ (Weiter), und befolgen Sie die Anweisungen zur Erstellung einer Zertifikatsignieranforderung (CSR) mithilfe des Keychain-Zugriffs:
 
-   [ ![](in-house-distribution-images/createcertmanually02.png "Erstellen Sie eine Zertifikatsignieranforderung über Keychain-Zugriff")](in-house-distribution-images/createcertmanually02.png)
+   [![](in-house-distribution-images/createcertmanually02.png "Eine Zertifikatsignieranforderung über Keychain-Zugriff erstellen")](in-house-distribution-images/createcertmanually02.png#lightbox)
 
 6. Sobald Sie Ihre CSR wie beschrieben erstellt haben, klicken Sie auf „Weiter“, und laden Sie Ihre CSR in das Member Center hoch:
 
-   [ ![](in-house-distribution-images/createcertmanually03.png "Laden Sie die Zertifikatsignieranforderung in das Member Center hoch")](in-house-distribution-images/createcertmanually03.png)
+   [![](in-house-distribution-images/createcertmanually03.png "Zertifikatsignieranforderung in das Member Center hochladen")](in-house-distribution-images/createcertmanually03.png#lightbox)
 
 7. Klicken Sie auf „Generieren“, um Ihr Zertifikat zu erstellen.
 8. Laden Sie das abgeschlossene Zertifikat herunter, und doppelklicken Sie auf die Datei, um sie zu installieren.
@@ -74,15 +74,15 @@ Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Einstellungen
 
 1. Wählen Sie das Team aus, und klicken Sie auf *Details anzeigen*:
 
-    [ ![](in-house-distribution-images/selectteam.png "Wählen Sie Ihr Team")](in-house-distribution-images/selectteam.png)
+    [![](in-house-distribution-images/selectteam.png "Ihr Team auswählen")](in-house-distribution-images/selectteam.png#lightbox)
 
 2. Klicken Sie anschließend auf die Schaltfläche **Create** (Erstellen) neben **iOS Distribution Certificate** (iOS-Verteilungszertifikat):
 
-   [ ![](in-house-distribution-images/selectcert.png "Erstellen Sie das iOS-Verteilungszertifikat")](in-house-distribution-images/selectcert.png)
+   [![](in-house-distribution-images/selectcert.png "Das iOS-Verteilungszertifikat erstellen")](in-house-distribution-images/selectcert.png#lightbox)
 
 2.   Klicken Sie anschließend auf die Schaltfläche **plus (+)**, und wählen Sie **iOS App Store** aus:
 
-   [ ![](in-house-distribution-images/selectcert.png "Wählen Sie „iOS App Store“ aus")](in-house-distribution-images/selectcert.png)
+   [![](in-house-distribution-images/selectcert.png "„iOS App Store“ auswählen")](in-house-distribution-images/selectcert.png#lightbox)
 
 <a name="profile" />
 
@@ -105,23 +105,23 @@ Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils h
 
 1. Navigieren Sie zurück zum Apple-Bereitstellungsportal, und wählen Sie **Provisioning** (Bereitstellung) > **Distribution** (Verteilung) aus:
 
-   [![](in-house-distribution-images/distribute01.png "Klicken Sie auf „Bereitstellung > Verteilung“")](in-house-distribution-images/distribute01.png)
+   [![](in-house-distribution-images/distribute01.png "Klicken Sie auf „Bereitstellung > Verteilung“")](in-house-distribution-images/distribute01.png#lightbox)
 
 2. Klicken Sie auf die **+**-Schaltfläche, und wählen Sie den Typ des Verteilungsprofils aus, das Sie **intern** erstellen möchten:
 
-   [ ![](in-house-distribution-images/distribute02.png "Erstellen Sie ein internes Verteilungsprofil")](in-house-distribution-images/distribute02.png)
+   [ ![](in-house-distribution-images/distribute02.png "Erstellen Sie ein internes Verteilungsprofil")](in-house-distribution-images/distribute02.png#lightbox)
 
 3. Klicken Sie auf die Schaltfläche **Continue** (Weiter), und wählen Sie aus der Dropdownliste die App-ID aus, für die Sie ein Verteilungsprofil erstellen möchten:
 
-   [![](in-house-distribution-images/distribute03.png "Wählen Sie in der Dropdownliste „App-ID“ aus")](in-house-distribution-images/distribute03.png)
+   [![](in-house-distribution-images/distribute03.png "Wählen Sie in der Dropdownliste „App-ID“ aus")](in-house-distribution-images/distribute03.png#lightbox)
 
 4. Klicken Sie auf die Schaltfläche **Weiter**, und wählen Sie ein Verteilungszertifikat zum Signieren der Anwendung aus:
 
-   [ ![](in-house-distribution-images/distribute04.png "Wählen Sie ein zum Signieren der Anwendung erforderliches Verteilungszertifikat aus")](in-house-distribution-images/distribute04.png)
+   [ ![](in-house-distribution-images/distribute04.png "Wählen Sie ein zum Signieren der Anwendung erforderliches Verteilungszertifikat aus")](in-house-distribution-images/distribute04.png#lightbox)
 
 6. Klicken Sie auf die Schaltfläche **Weiter**, und geben Sie einen **Namen** für das neue Verteilungsprofil ein:
 
-   [![](in-house-distribution-images/distribute06.png "Geben Sie einen Namen für das neue Verteilungsprofil ein")](in-house-distribution-images/distribute06.png)
+   [![](in-house-distribution-images/distribute06.png "Geben Sie einen Namen für das neue Verteilungsprofil ein")](in-house-distribution-images/distribute06.png#lightbox)
 
 7. Klicken Sie auf die Schaltfläche **Generieren**, um das neue Profil zu erstellen und den Prozess abzuschließen.
 

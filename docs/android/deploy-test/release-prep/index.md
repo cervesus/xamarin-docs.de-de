@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 7f36a29b00e0393ac0a2d65e7ebe7d290bbdb89a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e440d5ab9f822277a8c0948a9795b9a030fa268c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="preparing-an-application-for-release"></a>Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)
 
-<a name="Compile_the_Application_for_Release" />
 
 Nachdem eine Anwendung codiert und getestet wurde, ist es erforderlich, ein Paket zur Verteilung vorzubereiten. Die erste Aufgabe bei der Vorbereitung dieses Pakets liegt darin, die Anwendung für die Veröffentlichung zu erstellen, was hauptsächlich mit dem Festlegen einiger Anwendungsattribute verbunden ist.
 
@@ -53,13 +52,13 @@ Die Eigenschaft `Icon` für das `Application`-Attribut (Anwendungsattribut) wird
 
 In Visual Studio 2015 und höher geben Sie das Anwendungssymbol über den Bereich **Android-Manifest** der **Eigenschaften** des Projekts an, wie im folgenden Screenshot gezeigt:
 
-[ ![Festlegen des Anwendungssymbols](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png)
+[![Anwendungssymbol festlegen](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 In Visual Studio für Mac ist es auch möglich, das Anwendungssymbol über den **Projektoptionen**-Bereich **Android-Anwendung** anzugeben, wie im folgenden Screenshot gezeigt:
 
-[ ![Festlegen des Anwendungssymbols](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png)
+[![Anwendungssymbol festlegen](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png#lightbox)
 
 -----
 
@@ -77,13 +76,13 @@ Die Versionsverwaltung ist wichtig für die Wartung und Verteilung von Android-A
 
 In Visual Studio können diese Werte wie im folgenden Screenshot gezeigt über den Bereich **Android-Manifest** der **Eigenschaften** des Projekts festgelegt werden:
 
-[ ![Festlegen der Versionsnummer](images/vs/02-versioning-sml.png)](images/vs/02-versioning.png)
+[![Versionsnummer festlegen](images/vs/02-versioning-sml.png)](images/vs/02-versioning.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Diese Werte können über den Bereich **Erstellen > Android-Anwendung** der **Projektoptionen** festgelegt werden wie im folgenden Screenshot gezeigt:
 
-[ ![Festlegen der Versionsnummer](images/xs/02-versioning-sml.png)](images/xs/02-versioning.png)
+[![Versionsnummer festlegen](images/xs/02-versioning-sml.png)](images/xs/02-versioning.png#lightbox)
 
 -----
 
@@ -93,7 +92,6 @@ Diese Werte können über den Bereich **Erstellen > Android-Anwendung** der **Pr
 
 Xamarin.Android-APKs können durch eine Kombination des Linkers Xamarin.Android zum Entfernen von unnötigem *verwalteten* Code sowie des Tools *ProGuard* aus dem Android SDK zum Entfernen von nicht verwendetem *Java-Bytecode* verkleinert werden. Vom Erstellungsprozess wird zuerst der Linker Xamarin.Android zum Optimieren der App auf Ebene des verwalteten Codes (C#) und anschließend ProGuard (sofern aktiviert) zum Optimieren der APK auf Java-Bytecode-Ebene verwendet.
 
-<a name="Configure_the_Linker" />
 
 ### <a name="configure-the-linker"></a>Konfigurieren des Linkers
 
@@ -107,7 +105,7 @@ Der Releasemodus deaktiviert die freigegebene Laufzeit und aktiviert die Verknü
 
 Legen Sie die Optionen des Linkers über den Bereich **Android-Optionen** der **Eigenschaften** des Projekts fest:
 
-[ ![Linker-Optionen](images/vs/03-linking-sml.png)](images/vs/03-linking.png)
+[![Linkeroptionen](images/vs/03-linking-sml.png)](images/vs/03-linking.png#lightbox)
 
 Das Pulldownmenü **Verknüpfen** enthält die folgenden Optionen zum Steuern des Linkers:
 
@@ -122,7 +120,7 @@ Das Pulldownmenü **Verknüpfen** enthält die folgenden Optionen zum Steuern de
 
 Legen Sie die Optionen des Linkers wie im folgenden Screenshot gezeigt über die Registerkarte **Linker** des Bereichs **Android-Build** der **Projektoptionen** fest:
 
-[ ![Linker-Optionen](images/xs/03-linking-sml.png)](images/xs/03-linking.png)
+[![Linkeroptionen](images/xs/03-linking-sml.png)](images/xs/03-linking.png#lightbox)
 
 Es stehen folgende Optionen zum Steuern des Linkers zur Verfügung:
 
@@ -136,7 +134,6 @@ Es stehen folgende Optionen zum Steuern des Linkers zur Verfügung:
 
 Durch das Verknüpfen können unerwartete Nebenwirkungen auftreten, daher ist es wichtig, dass eine Anwendung im Releasemodus auf einem physischen Gerät erneut getestet wird.
 
-<a name="proguard" />
 
 ### <a name="proguard"></a>ProGuard
 
@@ -148,11 +145,11 @@ Wenn **Enable ProGuard** (ProGuard aktivieren) ausgewählt ist, führt Xamarin.A
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Proguard-Buildvorgang](images/vs/05-proguard-build-action-sml.png)](images/vs/05-proguard-build-action.png)
+[![Proguard-Buildvorgang](images/vs/05-proguard-build-action-sml.png)](images/vs/05-proguard-build-action.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Proguard-Buildvorgang](images/xs/05-proguard-build-action-sml.png)](images/xs/05-proguard-build-action.png)
+[![Proguard-Buildvorgang](images/xs/05-proguard-build-action-sml.png)](images/xs/05-proguard-build-action.png#lightbox)
 
 -----
 
@@ -228,7 +225,6 @@ Die Option **AOT Kompilierung** (unter [Packaging Properties (Paketeigenschaften
 
 Um die Option **AOT-Kompilierung** ausführen zu können, müssen Sie mindestens über eine Enterprise-Lizenz verfügen. Die **AOT Kompilierung** ist nur verfügbar, wenn das Projekt für den Releasemodus konfiguriert ist. Sie ist standardmäßig deaktiviert. Weitere Informationen über die AOT-Kompilierung finden Sie unter [AOT](http://www.mono-project.com/docs/advanced/aot/).
 
-<a name="llvm" />
 
 #### <a name="llvm-optimizing-compiler"></a>LLVM-Optimierungscompiler
 
@@ -246,31 +242,28 @@ Der _LLVM-Optimierungscompiler_ erstellt kürzeren und schneller kompilierbaren 
 
 Paketeigenschaften können über den Bereich **Android-Optionen** der **Eigenschaften** des Projekts festgelegt werden wie im folgenden Screenshot gezeigt:
 
-[ ![Paketeigenschaften](images/vs/04-packaging-sml.png)](images/vs/04-packaging.png)
+[![Paketeigenschaften](images/vs/04-packaging-sml.png)](images/vs/04-packaging.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Paketeigenschaften können wie im folgenden Screenshot gezeigt in den **Projektoptionen** festgelegt werden:
 
-[ ![Paketeigenschaften](images/xs/04-packaging-sml.png)](images/xs/04-packaging.png)
+[![Paketeigenschaften](images/xs/04-packaging-sml.png)](images/xs/04-packaging.png#lightbox)
 
 -----
 
-Viele dieser Eigenschaften wie **Shared Runtime verwenden** und **Fast Deployment verwenden** wurden für den Debug-Modus konzipiert. Wenn die Anwendung jedoch für den Releasemodus konfiguriert ist, bestimmen andere Einstellungen, wie die App [für Größe und Ausführungsgeschwindigkeit optimiert wird](#shrink_apk), [wie sie vor Manipulationen geschützt wird](#protect_app) und wie sie verpackt werden kann, damit verschiedene Architekturen und Größeneinschränkungen unterstützt werden.
+Viele dieser Eigenschaften, wie **Shared Runtime verwenden** und **Fast Deployment verwenden**, sind für den Debugmodus konzipiert. Wenn die Anwendung jedoch für den Releasemodus konfiguriert ist, bestimmen andere Einstellungen, wie die App [für Größe und Ausführungsgeschwindigkeit optimiert wird](#shrink_apk), [wie sie vor Manipulationen geschützt wird](#protect_app) und wie sie verpackt werden kann, damit verschiedene Architekturen und Größeneinschränkungen unterstützt werden.
 
-<a name="Specify_Supported_Architectures" />
 
 ### <a name="specify-supported-architectures"></a>Angeben unterstützter Architekturen
 
 Wenn Sie eine Xamarin.Android-App auf die Veröffentlichung vorbereiten, müssen Sie unbedingt die unterstützten CPU-Architekturen angeben. Ein einzelnes APK kann Computercode enthalten, der mehrere unterschiedliche Architekturen unterstützt. Weitere Angaben zur Unterstützung mehrere CPU-Architekturen finden Sie unter [CPU-Architekturen](~/android/app-fundamentals/cpu-architectures.md).
 
-<a name="multiabi" />
 
 ### <a name="generate-one-package-apk-per-selected-abi"></a>Generieren eines Pakets (.APK) pro ausgewählter ABI
 
 Wenn diese Option aktiviert ist, wird ein APK für jede der unterstützten ABIs erstellt (wird in der **Erweitert**-Registerkarte ausgewählt, wie in [CPU Architectures (CPU-Architekturen)](~/android/app-fundamentals/cpu-architectures.md) beschrieben), anstatt eines einzigen, großen APK für alle unterstützten ABIs. Diese Option steht nur zur Verfügung, wenn das Projekt für den Releasemodus konfiguriert ist, und sie ist standardmäßig deaktiviert.
 
-<a name="multidex" />
 
 ### <a name="multi-dex"></a>Multi-Dex
 
@@ -305,30 +298,30 @@ Nachdem alle oben aufgeführten Schritte abgeschlossen wurden, kompilieren Sie d
 
 Klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer**, und wählen Sie das Kontextmenüelement **Archiv ...**  aus, um mit der Veröffentlichung zu beginnen:
 
-[![Archiv-App](images/vs/07-archive-for-publishing-sml.png)](images/vs/07-archive-for-publishing.png)
+[![Archiv-App](images/vs/07-archive-for-publishing-sml.png)](images/vs/07-archive-for-publishing.png#lightbox)
 
 Mit **Archiv...** wird der **Archiv-Manager** geöffnet und der Archivierungsprozess der App-Bündel gestartet wie in diesem Screenshot gezeigt:
 
-[![Archiv-Manager](images/vs/08-archive-manager-sml.png)](images/vs/08-archive-manager.png)
+[![Archiv-Manager](images/vs/08-archive-manager-sml.png)](images/vs/08-archive-manager.png#lightbox)
 
 Eine andere Möglichkeit, ein Archiv zu erstellen, besteht darin, mit der rechten Maustaste auf die Projektmappe im **Projektmappen-Explorer** zu klicken und **Alle archivieren...** auszuwählen. Dadurch wird die Projektmappe erstellt, und alle Xamarin-Projekte, aus denen ein Archiv generiert werden kann, werden archiviert:
 
-[![Alle archivieren](images/vs/09-archive-all-sml.png)](images/vs/09-archive-all.png)
+[![Alle archivieren](images/vs/09-archive-all-sml.png)](images/vs/09-archive-all.png#lightbox)
 
 
 Sowohl mit **Archivieren** als auch mit **Alle archivieren** wird der **Archiv-Manager** automatisch geöffnet. Zum direkten Starten des **Archiv-Managers** klicken Sie auf das Menüelement **Tools > Archiv-Manager ...** :
 
-[![Starten des Archiv-Managers](images/vs/10-launch-archive-manager-sml.png)](images/vs/10-launch-archive-manager.png)
+[![Archiv-Manager starten](images/vs/10-launch-archive-manager-sml.png)](images/vs/10-launch-archive-manager.png#lightbox)
 
 Sie können die Archive der Projektmappen jederzeit ansehen, indem Sie mit der rechten Maustaste auf den Knoten **Projektmappe** klicken und **Archivansicht** auswählen:
 
-[![Archivansicht](images/vs/11-view-archives-sml.png)](images/vs/11-view-archives.png)
+[![Archivansicht](images/vs/11-view-archives-sml.png)](images/vs/11-view-archives.png#lightbox)
 
 ### <a name="the-archive-manager"></a>Der Archiv-Manager
 
 Der **Archiv-Manager** besteht aus den Bereichen **Projektmappenliste**, **Archivliste** und **Details**:
 
-[![Archiv-Manager-Bereiche](images/vs/12-archive-manager-detail-sml.png)](images/vs/12-archive-manager-detail.png)
+[![Archiv-Manager-Bereiche](images/vs/12-archive-manager-detail-sml.png)](images/vs/12-archive-manager-detail.png#lightbox)
 
 In der **Projektmappenliste** werden alle Projektmappen mit mindestens einem archivierten Projekt angezeigt. Die **Projektmappenliste** enthält die folgenden Bereiche:
 
@@ -348,11 +341,11 @@ Im **Bereich „Details“** werden zusätzliche Informationen zu jedem Archiv a
 
 Wenn eine archivierte Version der Anwendung zur Veröffentlichung bereit ist, wählen Sie das Archiv im **Archiv-Manager** aus und klicken auf die Schaltfläche **Verteilen...**:
 
-[![Verteilen-Schaltfläche](images/vs/13-distribute-sml.png)](images/vs/13-distribute.png)
+[![Schaltfläche „Verteilen“](images/vs/13-distribute-sml.png)](images/vs/13-distribute.png#lightbox)
 
 Im Dialogfeld **Vertriebskanal** werden Informationen zur App, zum Fortschritt des Verteilungs-Workflows sowie eine Vertriebskanal-Auswahl angezeigt. Beim ersten Ausführen werden zwei Optionen angezeigt:
 
-[ ![Vertriebskanal auswählen](images/vs/14-distribution-channel-sml.png)](images/vs/14-distribution-channel.png)
+[![Vertriebskanal auswählen](images/vs/14-distribution-channel-sml.png)](images/vs/14-distribution-channel.png#lightbox)
 
 Es kann einer der folgenden Vertriebskanäle ausgewählt werden:
 
@@ -364,15 +357,15 @@ Es kann einer der folgenden Vertriebskanäle ausgewählt werden:
 
 Wählen Sie **Erstellen > Archivieren zur Veröffentlichung** aus, um den Veröffentlichungsprozess zu starten:
 
-[ ![Archivieren zur Veröffentlichung](images/xs/07-archive-for-publishing-sml.png)](images/xs/07-archive-for-publishing.png)
+[![Archivieren zur Veröffentlichung](images/xs/07-archive-for-publishing-sml.png)](images/xs/07-archive-for-publishing.png#lightbox)
 
 Mit **Archivieren zur Veröffentlichung** wird das Projekt erstellt und in einer Archivdatei gebündelt. Mit der Menüoption **Alle archivieren** werden alle Projekte in der Projektmappe archiviert, die archiviert werden können. Bei beiden Optionen wird automatisch der **Archiv-Manager** geöffnet, wenn das Erstellen und Bündeln abgeschlossen ist:
 
-[![Archivansicht](images/xs/08-archives-view-sml.png)](images/xs/08-archives-view.png)
+[![Archivansicht](images/xs/08-archives-view-sml.png)](images/xs/08-archives-view.png#lightbox)
 
 In diesem Beispiel wird im **Archiv-Manager** nur eine archivierte Anwendung aufgeführt: **Meine App**. Beachten Sie, dass im Kommentarfeld ein kurzer Kommentar zum Archiv gespeichert werden kann. Um eine archivierte Version einer Xamarin.Android-Anwendung zu veröffentlichen, wählen Sie die App im **Archiv-Manager** aus und klicken auf **Anmelden und Verteilen ...**  wie oben gezeigt. Im daraufhin geöffneten Dialogfeld **Anmelden und Verteilen** haben Sie zwei Auswahlmöglichkeiten:
 
-[ ![Signieren und Verteilen](images/xs/09-sign-and-distribute-sml.png)](images/xs/09-sign-and-distribute.png)
+[![Signieren und Verteilen](images/xs/09-sign-and-distribute-sml.png)](images/xs/09-sign-and-distribute.png#lightbox)
 
 
 Hier können Sie den Vertriebskanal auswählen:

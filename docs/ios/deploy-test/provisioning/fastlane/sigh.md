@@ -2,16 +2,16 @@
 title: "fastlane für iOS – sigh"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d80a0ab5583231f95241fb8d4f6e339e44a84ca
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2c6ac298ca2040bb2d3619be080fb1387fbfd3a0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="fastlane-for-ios--sigh"></a>fastlane für iOS – sigh
 
@@ -61,7 +61,7 @@ Eine App-ID kann mit folgendem Befehl erstellt werden:
 
 Hierbei ist `com.company.appname` die Bündel-ID Ihrer App, die wie im Folgenden dargestellt in der Datei „Info.plist“ Ihrer Xamarin.iOS-Anwendung gefunden werden kann:
 
-[ ![](sigh-images/fastlane-image5.png "Die Datei „Info.plist“ der Xamarin.iOS-Anwendung")](sigh-images/fastlane-image5.png)
+[![](sigh-images/fastlane-image5.png "Die Datei „Info.plist“ der Xamarin.iOS-Anwendung")](sigh-images/fastlane-image5.png#lightbox)
 
 Die eindeutige App-ID muss eine Zeichenfolge im Reverse-DNS-Stil sein. Notieren Sie sich diese, sobald sie erstellt wurde, da sie später in diesem Artikel für die Verwendung von sigh benötigt wird.
 
@@ -108,7 +108,7 @@ Geben Sie den Benutzernamen Ihrer Apple-ID ein, wenn fastlane Sie dazu aufforder
 
 Wenn Ihre Apple-ID mit mehreren Teams verbunden ist, werden diese hier angezeigt. Wählen Sie die Nummer aus, die dem Team entspricht, das Sie verwenden möchten:
 
-[ ![](sigh-images/fastlane-image2.png "Wählen Sie das Team aus, das Sie verwenden möchten")](sigh-images/fastlane-image2.png)
+[![](sigh-images/fastlane-image2.png "Wählen Sie das Team aus, das Sie verwenden möchten")](sigh-images/fastlane-image2.png#lightbox)
 
 Die Team-ID kann auch folgendermaßen an die CLI übergeben werden:
 
@@ -124,7 +124,7 @@ Fastlane erstellt das Bereitstellungsprofil für Sie, lädt es herunter und inst
 
 Wenn Sie das Developer Center durchsuchen, können Sie das neu erstellte Bereitstellungsprofil wie im Folgenden dargestellt anzeigen lassen:
 
-[ ![](sigh-images/fastlane-image10.png "Sehen Sie sich das neu erstellte Bereitstellungsprofil an")](sigh-images/fastlane-image10.png)
+[![](sigh-images/fastlane-image10.png "Sehen Sie sich das neu erstellte Bereitstellungsprofil an")](sigh-images/fastlane-image10.png#lightbox)
 
 sigh speichert Bereitstellungsprofile standardmäßig im aktuellen Ordner. Bearbeiten Sie `output_path`, oder gehen Sie folgendermaßen vor, um das Ausgabeverzeichnis zu ändern:
 
@@ -140,19 +140,19 @@ Die folgenden Optionen können verwendet werden, um zusätzliche Unterstützung 
 
 - Verwenden Sie folgenden Befehl, um alle Bereitstellungsprofile herunterzuladen:
 
-    ````bash
+    ```bash
     fastlane sigh download_all
     ```
 
-- To use a specific signing identity for your provisioning profile use:
+- Verwenden Sie folgenden Befehl, um eine bestimmte Signierungsidentität für Ihr Bereitstellungsprofil zu verwenden:
 
     ```bash
     fastlane sigh -c "Amy cert"
     ```
     
-    Where `Amy cert` is the Code Signing Identity name.
+    Hierbei ist `Amy cert` der Name der Codesignierungsidentität.
 
 
-## Related Links
+## <a name="related-links"></a>Verwandte Links
 
-- [fastlane - sigh](https://github.com/fastlane/fastlane/tree/master/sigh#readme)
+- [fastlane – sigh](https://github.com/fastlane/fastlane/tree/master/sigh#readme)

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/25/2018
-ms.openlocfilehash: 854ca06abc8be2f55f3e95a8ac3bd87c78af19cf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55f5cf22718713fdcf11c49e0993f47c2f5a6f1d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-emulator-setup"></a>Setup von Android-Emulator
 
@@ -25,7 +25,7 @@ Der Google Android SDK-Emulator kann in verschiedenen Konfigurationen ausgeführ
 
 
 > [!NOTE]
-> **Hinweis:** Mit der Veröffentlichung von Version **26.0.1** von Android SDK Tools hat Google die Unterstützung für bestehende AVD/SDK-Manager zugunsten seines neuen CLI-Tools (Befehlszeilenschnittstellentool) eingestellt. Aufgrund dieser Änderung werden jetzt Xamarin SDK- bzw. Geräte-Manager anstelle von Google SDK- bzw. Emulator Manager für Android-Tools 26.0.1 und höher verwendet. (Weitere Informationen zum Xamarin SDK-Manager finden Sie unter [Android SDK Setup (Android SDK-Setup)](~/android/get-started/installation/android-sdk.md)).
+> Mit der Veröffentlichung von Version **26.0.1** von Android SDK Tools hat Google die Unterstützung für bestehende AVD/SDK-Manager zugunsten seines neuen CLI-Tools (Befehlszeilenschnittstellentool) eingestellt. Aufgrund dieser Änderung werden jetzt Xamarin SDK- bzw. Geräte-Manager anstelle von Google SDK- bzw. Emulator Manager für Android-Tools 26.0.1 und höher verwendet. (Weitere Informationen zum Xamarin SDK-Manager finden Sie unter [Android SDK Setup (Android SDK-Setup)](~/android/get-started/installation/android-sdk.md)).
 
 
 ## <a name="sections"></a>Abschnitte

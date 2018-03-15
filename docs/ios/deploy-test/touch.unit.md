@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a113a386f1312253fda8913cea3cb608a65e1061
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f7c743bab2a6acb3dcd57ebca207957f983e0c0f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="unit-testing"></a>Unittests
 
@@ -119,15 +119,15 @@ Klicken Sie in Ihrer Projektmappe mit der rechten Maustaste auf das Projekt, um 
 
 Mit dem Test Runner können Sie sehen, welche Tests registriert sind, und Sie können einzeln auswählen, welche Tests ausgeführt werden können.
 
-[ ![](touch.unit-images/02.png "Die Liste der registrierten Tests")](touch.unit-images/02.png) 
+[![](touch.unit-images/02.png "Die Liste der registrierten Tests")](touch.unit-images/02.png#lightbox) 
 
-[ ![](touch.unit-images/03.png "Ein einzelner Test")](touch.unit-images/03.png) 
+[![](touch.unit-images/03.png "Ein einzelner Test")](touch.unit-images/03.png#lightbox) 
 
-[ ![](touch.unit-images/04.png "Ergebnisse des Testlaufs")](touch.unit-images/04.png)
+[![](touch.unit-images/04.png "Ergebnisse des Testlaufs")](touch.unit-images/04.png#lightbox)
 
 Sie können einzelne Prüfvorrichtungen ausführen, indem Sie sie aus den geschachtelten Ansichten auswählen, oder Sie können mit „Alles ausführen“ alle Ihre Tests ausführen. Wenn Sie den Standardtest ausführen, sollte dieser je einen Test enthalten, der je einen Test mit den Kriterien "bestanden", "fehlgeschlagen" und "ignoriert" enthalten soll. Die Berichte sehen folgendermaßen aus, und Sie können direkt einen Drilldown zu den fehlgeschlagenen Tests ausführen und mehr über den Fehler herausfinden:
 
-[ ![](touch.unit-images/05.png "Ein Beispielbericht")](touch.unit-images/05.png) [ ![](touch.unit-images/06.png "A sample report")](touch.unit-images/06.png) [ ![](touch.unit-images/07.png "A sample report")](touch.unit-images/07.png)
+[![](touch.unit-images/05.png "Ein Beispielbericht")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/05.png "A sample report")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/05.png "A sample report")](touch.unit-images/05.png#lightbox)
 
 Im Anwendungsausgabefenster in Ihrer IDE können Sie auch die aktuell ausgeführten Tests und deren gegenwärtigen Status sehen.
 

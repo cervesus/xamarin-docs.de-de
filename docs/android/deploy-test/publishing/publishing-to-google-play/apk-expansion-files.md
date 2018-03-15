@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: d118eb5e9f875c5480105d1596ef1318112fb53e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3431791d51858df2013634e1594ee960a10728da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="apk-expansion-files"></a>APK-Erweiterungsdateien
 
@@ -33,7 +33,6 @@ Erweiterungsdateien werden als *transparente binäre Blobs (Obb)* behandelt und 
 Die Erweiterungsdateien müssen gleichzeitig mit dem APK hochgeladen werden.
 Google Play verhindert, dass eine Erweiterungsdatei zu einem vorhandenen APK hochgeladen oder vorhandene APKs aktualisiert werden. Wenn es notwendig ist, eine Erweiterungsdatei zu aktualisieren, muss ein neues APK mit aktualisiertem `versionCode` hochgeladen werden.
 
-<a name="Expansion_File_Storage" />
 
 ## <a name="expansion-file-storage"></a>Dateispeicher für die Erweiterungsdateien
 
@@ -51,7 +50,6 @@ Wenn es notwendig ist, eine Erweiterungsdatei zu entpacken, sollten die entpackt
 
 Eine Alternative zum Extrahieren von Dateien aus einer Erweiterungsdatei ist das Lesen der Objekte oder Ressourcen direkt aus der Erweiterungsdatei. Die Erweiterungsdatei ist nicht mehr als eine ZIP-Datei, die mit einem entsprechenden `ContentProvider` verwendet werden kann. Die [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary) enthält eine Assembly, [System.IO.Compression.Zip](https://github.com/mattleibow/Android.Play.ExpansionLibrary/tree/master/System.IO.Compression.Zip), die eine `ContentProvider` für direkten Zugriff auf einige Mediendateien ermöglicht. Wenn Mediendateien in eine ZIP-Datei gepackt werden, können Medienwiedergabeaufrufe Dateien im ZIP-Ordner direkt nutzen, ohne dass die ZIP-Datei entpackt werden muss. Die Mediendateien sollten nicht komprimiert werden, wenn sie der ZIP-Datei hinzugefügt werden. 
 
-<a name="FileName_Format" />
 
 ### <a name="filename-format"></a>FileName-Format
 
@@ -68,13 +66,12 @@ Die drei Komponenten dieses Schemas sind:
 
 Wenn die APK-Version beispielsweise 21 und der Paketname `mono.samples.helloworld` lautet, wird die Haupterweiterungsdatei folgendermaßen benannt: **main.21.mono.samples.helloworld**.
 
-<a name="Download_Process" />
 
 ## <a name="download-process"></a>Downloadvorgang
 
 Wenn eine Anwendung über Google Play installiert wird, sollten die Erweiterungsdateien heruntergeladen und zusammen mit dem APK gespeichert werden. In bestimmten Situationen wird dies möglicherweise nicht der Fall sein, oder Erweiterungsdateien werden gelöscht. Um diese Bedingung behandeln zu können, muss eine Anwendung überprüfen, ob die Erweiterungsdateien vorhanden sind, und sie dann herunterladen, falls erforderlich. Das folgende Flussdiagramm zeigt den empfohlenen Workflow dieses Prozesses:
 
-[ ![APK-Erweiterungsflussdiagramm](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png)
+[![APK-Erweiterungsflussdiagramm](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
 
 Wenn eine Anwendung gestartet wird, sollte überprüft werden, ob die entsprechenden Erweiterungsdateien auf dem aktuellen Gerät vorhanden sind. Wenn dies nicht der Fall ist, muss die Anwendung eine Anforderung der [Anwendungslizenzierung](http://developer.android.com/google/play/licensing/index.html) von Google Play stellen. Diese Überprüfung erfolgt mithilfe der *License Verification Library (LVL)*, und sie muss für kostenlose und lizenzierte Anwendungen erfolgen. Die LVL wird hauptsächlich von kostenpflichtigen Anwendungen verwendet, um Lizenzbeschränkungen zu erzwingen. Google hat die LVL jedoch erweitert, sodass sie ebenfalls mit den Erweiterungsbibliotheken verwendet werden kann. Kostenlose Anwendungen müssen die LVL-Überprüfung ausführen, können aber die Lizenzeinschränkungen ignorieren. Die Anforderung der LVL ist verantwortlich für die Bereitstellung der folgenden Informationen zu den Erweiterungsdateien, die die Anwendung erfordert: 
 
@@ -92,7 +89,6 @@ Nachdem die Überprüfung der LVL durchgeführt wurde, sollte die Anwendung die 
 -  Fehler, die während des Downloads auftreten, werden ordnungsgemäß behandelt und rückgängig gemacht werden.
 
 
-<a name="Architectural_Overview" />
 
 ## <a name="architectural-overview"></a>Architekturübersicht
 

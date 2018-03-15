@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 0fff4de7420bceda8c15ae33b03886eb6b332aeb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 430b07918b13878e3561b55ff841a64855183fa7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-package-size"></a>Anwendungspaketgröße
 
@@ -28,13 +28,13 @@ Xamarin.Android verwendet eine Vielzahl von Mechanismen, um die Paketgröße zu 
 
 Um eine vollständig in sich geschlossene Anwendung ausliefern zu können, muss das Paket die Anwendung, die zugehörigen Bibliotheken, den Inhalt, die Mono-Laufzeit und die erforderlichen BCL-Assemblys (Base Class Library) enthalten. Wenn wir zum Beispiel die Standardvorlage „Hello World“ verwenden, sieht der Inhalt eines kompletten Paketbuilds so aus:
 
-[ ![Paketgröße vor Anwenden des Linkers](app-package-size-images/hello-world-package-size-before-linker.png)](app-package-size-images/hello-world-package-size-before-linker.png)
+[![Paketgröße vor Anwenden des Linkers](app-package-size-images/hello-world-package-size-before-linker.png)](app-package-size-images/hello-world-package-size-before-linker.png#lightbox)
 
 15,8 MB ist eine größere Downloadgröße als von uns gewünscht. Das Problem sind die BCL-Bibliotheken, da sie „mscorlib“, „System“ und „Mono.Android“ enthalten, die viele der notwendigen Komponenten für die Ausführung Ihrer Anwendung bereitstellen. Sie bieten jedoch auch Funktionen, die Sie möglicherweise nicht in Ihrer Anwendung verwenden, sodass es daher ggf. sinnvoller ist, diese Komponenten auszuschließen.
 
 Wenn wir eine Anwendung für die Verteilung erstellen, führen wir einen Prozess aus, der als Verknüpfung bezeichnet wird, der die Anwendung untersucht und jeglichen Code entfernt, der nicht direkt verwendet wird. Dieser Prozess ähnelt der Funktionalität, die [Garbage Collection](~/android/internals/garbage-collection.md) für von Heap zugewiesenen Speicher bereitstellt. Aber anstatt auf Objekte angewendet zu werden, wird die Verknüpfung auf Ihren Code angewendet. Zum Beispiel gibt es in „System.dll“ einen ganzen Namespace für das Senden und Empfangen von E-Mails, aber wenn Ihre Anwendung diese Funktionalität nicht nutzt, verschwendet dieser Code nur Platz. Nachdem der Linker auf die Anwendung „Hello World“ angewendet wurde, sieht unser Paket nun so aus:
 
-[ ![Paketgröße nach Anwenden des Linkers](app-package-size-images/hello-world-package-size-after-linker.png)](app-package-size-images/hello-world-package-size-after-linker.png)
+[![Paketgröße nach Anwenden des Linkers](app-package-size-images/hello-world-package-size-after-linker.png)](app-package-size-images/hello-world-package-size-after-linker.png#lightbox)
 
 Wie wir sehen, wird dadurch ein erheblicher Teil der BCL entfernt, der nicht verwendet wurde. Beachten Sie, dass die endgültige BCL-Größe davon abhängt, was die Anwendung tatsächlich verwendet. Wenn wir zum Beispiel einen Blick auf eine umfangreichere Beispielanwendung namens „ApiDemo“ werfen, sehen wir, dass die BCL-Komponente größer geworden ist, weil „ApiDemo“ mehr von der BCL verwendet als „Hello World“:
 
@@ -51,7 +51,7 @@ Android ist beim Kopieren und Installieren eines Pakets relativ langsam, weshalb
 
 Beim ersten Debuggen auf dem Gerät kopieren wir zwei große Pakete namens *Shared Runtime* und *Shared Platform*. „Shared Runtime“ enthält die Mono-Laufzeit und BCL, während „Shared Platform“ für Android-API-Ebenen spezifische Assemblys enthält:
 
-[ ![Shared Runtime-Paketgröße](app-package-size-images/shared-runtime-package-size.png)](app-package-size-images/shared-runtime-package-size.png)
+[![Shared Runtime-Paketgröße](app-package-size-images/shared-runtime-package-size.png)](app-package-size-images/shared-runtime-package-size.png#lightbox)
 
 Das Kopieren dieser Kernkomponenten erfolgt nur einmal, da es ziemlich viel Zeit in Anspruch nimmt, erlaubt aber allen nachfolgenden Anwendungen, die im Debugmodus ausgeführt werden, diese zu nutzen. Schließlich kopieren wir die tatsächliche Anwendung, die klein und schnell ist:
 
@@ -65,9 +65,9 @@ Gehen Sie zum Aktivieren von *Schnelle Assemblybereitstellung* folgendermaßen v
 
 1.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Android-Projekt, und wählen Sie **Optionen** aus.
 
-2.  Wählen Sie sie im Dialogfeld „Projektoptionen“ **Android-Build** :  
+2.  Wählen Sie im Dialogfeld **Android-Build** aus:  
 
-    ![Projektoptionen, Android-Build](app-package-size-images/fastdev0.png)
+    ![Projektoptionen für Android-Build](app-package-size-images/fastdev0.png)
 
 3.  Aktivieren Sie die Kontrollkästchen **Freigebenene Mono-Laufzeit** und **Schnelle Assemblybereitstellung**:  
 

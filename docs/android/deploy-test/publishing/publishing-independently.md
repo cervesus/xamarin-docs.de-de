@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: fec57fbeb201d55e887969c5a50baf6a76c10e17
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e09bb1150c3cc53104b41b75a2c3d4d2db4e5ff
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="publishing-independently"></a>Unabhängiges Veröffentlichen
 
 Sie können eine Anwendung veröffentlichen, ohne einen vorhandenen Android Marketplace zu verwenden. In diesem Abschnitt werden solche alternative Veröffentlichungsmethoden und Lizenzierungsebenen von Xamarin.Android erläutert.
 
-<a name="Xamarin_Licensing" />
 
 ## <a name="xamarin-licensing"></a>Xamarin-Lizenzierung
 
@@ -31,36 +30,32 @@ Vier Lizenzen stehen für die Entwicklung, Bereitstellung und Verteilung von Xam
 
 Besuchen Sie [visualstudio.com](https://www.visualstudio.com/xamarin/), um sich die Community-Edition herunterzuladen oder mehr über den Erwerb der Professional- und Enterprise-Editionen zu erfahren.
 
-<a name="Allow_Installation_from_Unknown_Sources" />
 
 ## <a name="allow-installation-from-unknown-sources"></a>Installieren von Anwendungen aus unbekannten Quellen zulassen
 
 Standardmäßig können Android-Benutzer nur Anwendungen von Google Play herunterladen und installieren. Damit ein Benutzer Anwendungen auch aus anderen Quellen als dem Marketplace herunterladen kann, muss dieser die Einstellung *Unbekannte Quellen* auf einem Gerät aktivieren, bevor eine Anwendung installiert wird. Diese Einstellung befindet sich wie im folgenden Diagramm dargestellt unter **Einstellungen > Sicherheit**:
 
-[ ![Bildschirm „Einstellungen > Sicherheit“](publishing-independently-images/settings.png)](publishing-independently-images/settings.png)
+[![Bildschirm „Einstellungen > Sicherheit“](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
 
 
 > [!IMPORTANT]
-> **Hinweis:** Einige Netzwerkanbieter verhindern die Installation von Anwendungen aus unbekannten Quellen trotz dieser Einstellung.
+> Einige Netzwerkanbieter verhindern unabhängig von der Einstellung die Installation von Anwendungen aus unbekannten Quellen.
 
 
-<a name="Publishing_by_E-Mail" />
 
 ## <a name="publishing-by-e-mail"></a>Veröffentlichen per E-Mail
 
 Durch das Anfügen des Release-APKs an eine E-Mail können Sie eine Anwendung schnell und komfortabel an Benutzer verteilen. Wenn der Benutzer die E-Mail auf einem Android-Gerät öffnet, erkennt Android die APK-Anlage und zeigt wie im folgenden Screenshot dargestellt die Schaltfläche **Installieren** an:
 
-[ ![Schaltfläche „Installieren“ bei Öffnen einer Anlage](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png)
+[![Schaltfläche „Installieren“ bei Öffnen einer Anlage](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png#lightbox)
 
 Obwohl die Verteilung per E-Mail einfach ist, stehen wenige Schutzmaßnahmen gegen Softwarepiraterie oder die nicht gestattete Verteilung bereit. Diese Art der Verteilung eignet sich daher am besten für Situationen, in denen nur wenige Personen die Anwendung per E-Mail erhalten. Die Personen müssen als vertrauenswürdig gelten und dürfen die Anwendung nicht verteilen.
 
-<a name="Publishing_by_Web" />
 
 ## <a name="publishing-by-web"></a>Veröffentlichen per Web
 
 Sie können eine Anwendung auch über einen Webserver verteilen. Hierzu müssen Sie die Anwendung auf den Webserver hochladen und den Benutzern anschließend einen Downloadlink zur Verfügung stellen. Wenn ein Android-Gerät einen Link abruft und die Anwendung herunterlädt, wird diese automatisch installiert, sobald der Download abgeschlossen ist.
 
-<a name="Manually_Installing_an_APK" />
 
 ## <a name="manually-installing-an-apk"></a>Manuelles Installieren eines APKs
 
