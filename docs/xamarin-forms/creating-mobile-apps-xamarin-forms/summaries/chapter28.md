@@ -7,11 +7,11 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0968270f657d3195855a752da311b4855283e971
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d7a75ce0303030d53315b5e698fc604a910c969c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Zusammenfassung der Kapitel 28. Speicherort und Karten
 
@@ -29,7 +29,7 @@ Ein Winkel nördlich bzw. südlich des Äquators aus der Mitte der Erde Marken g
 
 ### <a name="longitude-and-meridians"></a>Längen- und meridiane
 
-Bildhälfte gute Kreise vom Nord-zum Südpol sind Zeilen gleich Länge, auch bekannt als *meridiane*. Dies sind relativ zu dem Nullmeridian in Greenwich in England. Gemäß der Konvention Längengrade einen vom Nullmeridian sind positive Werte von 0 Grad ein, um 180 Grad und Längengrade westlich vom Nullmeridian negative Werte von 0 Grad an & #x 2013, um 180 Grad.
+Bildhälfte gute Kreise vom Nord-zum Südpol sind Zeilen gleich Länge, auch bekannt als *meridiane*. Dies sind relativ zu dem Nullmeridian in Greenwich in England. Gemäß der Konvention Längengrade einen vom Nullmeridian sind positive Werte von 0 Grad um 180 Grad und Längengrade westlich vom Nullmeridian negative Werte von 0 Grad ein, um &ndash;um 180 Grad.
 
 ### <a name="the-equirectangular-projection"></a>Die equirektangularprojektion
 

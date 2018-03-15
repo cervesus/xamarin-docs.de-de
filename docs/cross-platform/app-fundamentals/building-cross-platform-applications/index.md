@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/28/2016
-ms.openlocfilehash: 7934738a546a266036573b81e15ef9b2fa28d7b4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 53c32003cd1a77a3aa5feb0ab26cedeab27789dc
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="sharing-code-options"></a>Optionen für die Codefreigabe
 
@@ -22,19 +22,19 @@ Es gibt zwei Optionen zum Freigeben von Code für plattformübergreifende mobile
 
 ## <a name="building-cross-platform-mobile-apps"></a>Cross-Platform Mobile Apps erstellen
 
- [Übersicht](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-0-overview.md)
+ [Übersicht](~/cross-platform/app-fundamentals/building-cross-platform-applications/overview.md)
 
- [Teil 1 – Grundlegendes zum der Xamarin-Mobile-Plattform](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-1-understanding-the-xamarin-mobile-platform.md)
+ [Teil 1 – Grundlegendes zum der Xamarin-Mobile-Plattform](~/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md)
 
- [Teil 2 – Architektur](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-2-architecture.md)
+ [Teil 2 – Architektur](~/cross-platform/app-fundamentals/building-cross-platform-applications/architecture.md)
 
- [Teil 3 – Einrichten einer Xamarin-Cross-Plattformlösung](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-3-setting-up-a-xamarin-cross-platform-solution.md)
+ [Teil 3 – Einrichten einer Xamarin-Cross-Plattformlösung](~/cross-platform/app-fundamentals/building-cross-platform-applications/setting-up-a-xamarin-cross-platform-solution.md)
 
- [Teil 4 – Umgang mit mehreren Plattformen](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-4-platform-divergence-abstraction-divergent-implementation.md)
+ [Teil 4 – Umgang mit mehreren Plattformen](~/cross-platform/app-fundamentals/building-cross-platform-applications/platform-divergence-abstraction-divergent-implementation.md)
 
- [Teil 5 – praktische Strategien für die Codefreigabe](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-5-practical-code-sharing-strategies.md)
+ [Teil 5 – praktische Strategien für die Codefreigabe](~/cross-platform/app-fundamentals/building-cross-platform-applications/practical-code-sharing-strategies.md)
 
- [Teil 6 – Testen und App Store-Genehmigungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-6-testing-and-app-store-approvals.md)
+ [Teil 6 – Testen und App Store-Genehmigungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/testing-and-app-store-approvals.md)
 
  <a name="Cross-Platform_Mobile_Application_Case_Studies" />
 

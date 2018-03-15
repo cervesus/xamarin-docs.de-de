@@ -7,12 +7,12 @@ ms.assetid: 3BE4A128-2D88-4500-9E48-20375EA99A49
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: ac83b74f39497333de7aa80079784adf61bf2e65
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/13/2018
+ms.openlocfilehash: 5db4c735205753810466c26535ba9e2f525709a8
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="android-wear"></a>Android Wear
 
@@ -44,116 +44,25 @@ Erläutert, wie Ihre app Android Dach ein Dach Android-Gerät oder auf Android-E
 
 Sie erhalten eine Anzahl von [Beispiele](https://developer.xamarin.com/samples/android/Android%20Wear/) mit Android Dach (oder direkt [Github](https://github.com/xamarin/monodroid-samples/tree/master/wear)). 
 
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-  <thead>
-      <th>
-          <strong>Beispiel</strong>
-      </th>
-      <th>
-          <strong>Beschreibung</strong>
-      </th>
-      <th>
-          <strong>bildschirmabbildung von</strong>
-      </th>
-  </thead>
-  <tbody>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/SkeletonWear/">SkeletonWear</a>
-      </td>
-      <td valign="top">
-Ein einfaches Beispiel der Grundlagen der wearable-Projekte, einschließlich GridViewPager und interaktive Benachrichtigungen.
-      </td>
-      <td>
-          <img src="Images/skeleton.png" class="tableimg">
-      </td>
-  </tr>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/WatchViewStub/">WatchViewStub</a>
-      </td>
-      <td valign="top">
-Ein einfaches Demo des WatchViewStub-Steuerelements, die Form "Bildschirm" erkennt und lädt automatisch die richtige Layout.
-Funktionsweise des WatchViewStub in der <b>Resources/layout/main_actvity.xml</b> Layout.
-      </td>
-      <td>
-          <img src="Images/watchview.png" class="tableimg">
-      </td>
-  </tr>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/RecipeAssistant/">RecipeAssistant</a>
-      </td>
-      <td valign="top">
-Demo der Abnutzung Benachrichtigung Seiten in Form von Rezept Schritte. Benachrichtigungen werden erstellt, <b>RecipeService.cs</b>.
-      </td>
-      <td>
-          <img src="Images/recipeassist.png" class="tableimg">
-      </td>
-  </tr>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/ElizaChat/">ElizaChat</a>
-      </td>
-      <td valign="top">
-Arbeitserleichterung Beispiel der Interaktion mit "Personal"Assistant aufgerufen Eliza, erstellen eine Konversation mithilfe von programmierten Antworten mithilfe von Abnutzung interaktive Benachrichtigungen.
-      </td>
-      <td>
-          <img src="Images/eliza.png" class="tableimg">
-      </td>
-  </tr>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/GridViewPager/">GridViewPager</a>
-      </td>
-      <td valign="top">
-GridViewPager implementiert das Muster für 2D Navigation, in denen der Benutzer Kundenkarte vertikal und horizontal zum Navigieren durch Optionen und Inhalt.
-      </td>
-      <td>
-          <img src="Images/gridviewpager.png" class="tableimg">
-      </td>
-  </tr>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/monodroid/wear/WatchFace">WatchFace</a>
-      </td>
-      <td valign="top">
-          <b>WatchFace</b> ist eine benutzerdefinierte Überwachung Schaltflächenoberseite Analog-Stil Stunde, Minute und der zweite Hände geraten. In diesem Beispiel wird veranschaulicht, wie zum Erstellen eines Watch-Face-Diensts, der die aktuelle Uhrzeit zeichnet und Handles ambient-Modus und Sichtbarkeit-Ereignissen Change. Es enthält einen broadcast Empfänger, der für zeitzonenänderungen überwacht und aktualisiert automatisch entsprechend die Zeit.
-      </td>
-      <td>
-          <img src="Images/watchface.png" class="tableimg">
-      </td>
-  </tr>
-  </tbody>
-</table>
+|Beispiel|Beschreibung|Bildschirmabbildung|
+|--- |--- |--- |
+|[SkeletonWear](https://developer.xamarin.com/samples/SkeletonWear/)|Ein einfaches Beispiel der Grundlagen der wearable-Projekte, einschließlich GridViewPager und interaktive Benachrichtigungen.|![Screenshot des Skeletonwear](images/skeleton.png)|
+|[WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/)|Ein einfaches Demo des WatchViewStub-Steuerelements, die Form "Bildschirm" erkennt und lädt automatisch die richtige Layout.  Funktionsweise des WatchViewStub in der **Resources/layout/main_actvity.xml** Layout.|![Screenshot des WatchViewStub](images/watchview.png)|
+|[RecipeAssistant](https://developer.xamarin.com/samples/RecipeAssistant/)|Demo der Abnutzung Benachrichtigung Seiten in Form von Rezept Schritte. Benachrichtigungen werden in RecipeService.cs erstellt.|![Screenshot des RecipeAssistant](images/recipeassist.png)|
+|[ElizaChat](https://developer.xamarin.com/samples/ElizaChat/)|Arbeitserleichterung Beispiel der Interaktion mit "Personal"Assistant aufgerufen Eliza, erstellen eine Konversation mithilfe von programmierten Antworten mithilfe von Abnutzung interaktive Benachrichtigungen.|![Screenshot des ElizaChat](images/eliza.png)|
+|[GridViewPager](https://developer.xamarin.com/samples/GridViewPager/)|GridViewPager implementiert das Muster für 2D Navigation, in denen der Benutzer Kundenkarte vertikal und horizontal zum Navigieren durch Optionen und Inhalt.|![Screenshot des GridViewPager](images/gridviewpager.png)|
+|[WatchFace](https://developer.xamarin.com/samples/monodroid/wear/WatchFace)|WatchFace ist eine benutzerdefinierte Überwachung Schaltflächenoberseite Analog-Stil Stunde, Minute und der zweite Hände geraten. In diesem Beispiel wird veranschaulicht, wie zum Erstellen eines Watch-Face-Diensts, der die aktuelle Uhrzeit zeichnet und Handles ambient-Modus und Sichtbarkeit-Ereignissen Change. Es enthält einen broadcast Empfänger, der für zeitzonenänderungen überwacht und aktualisiert automatisch entsprechend die Zeit.|![Screenshot des WatchFace](images/gridviewpager.png)|
+
 
 ##  <a name="videos"></a>Videos
 
-Sehen Sie sich diese video, Links, die mit Abnutzung Xamarin.Android behandeln unterstützen.
+Sehen Sie sich diese video, Links, die mit Abnutzung Xamarin.Android behandeln unterstützen:
 
-<table align="center" border="0" cellpadding="1" cellspacing="1">
-    <tr>
-        <td>
-        <a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/"><img src="Images/video-android-l.png" border="0" /></td>
-        <td><a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/">Android L und vieles mehr</a>
-        <br />
-Die Android L Developer Preview eingeführt, eine Fülle von neue APIs für Entwickler zu nutzen, einschließlich Material Entwurf, Benachrichtigungen und neue Animationen, um nur einige zu nennen.</td>
-    </tr>
-    <tr>
-        <td>
-        <a href="https://www.youtube.com/watch?v=80H8tXByZQc"><img src="Images/video-eyes-ears.png" border="0" /></td>
-        <td><a href="https://www.youtube.com/watch?v=80H8tXByZQc">C# ist in meinen Ohren und Augen: Google Glass und Android Dach</a>
-        <br />
-Wearable computing scheint etwas aus der Zukunft (oder eine Folge von Inspektor-Gadget), aber viele Personen sind bereits Hinwendung Zukunft heute! C#-Entwickler wissen und haben bereits die Tools und Fertigkeiten, die Leistung der wearable Geräte (Evolve 2014) nutzen zu können.</td>
-    </tr>
-    <tr>
-        <td>
-        <a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU"><img src="Images/video-whats-new.png" border="0" /></td>
-        <td><a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU">Was ist neu in Xamarin.Android</a>
-        <br />
-        <i>Android L, Android Abnutzung, Android, TV, Android Auto, Material Entwurf und Grafiken; Was Sie als Entwickler Xamarin bedeutet dies? </i> aus weiterentwickelt 2014.</td>
-    </tr>
-</table>
+|Beschreibung|Bildschirmabbildung|
+|--- |--- |
+|[Android L und noch viel mehr](http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/) &ndash; die Entwicklervorschau für Android L eingeführt, eine Fülle von neue APIs für Entwickler zu nutzen, einschließlich Material Entwurf, Benachrichtigungen und neue Animationen, um nur einige zu nennen.|![Bildschirmabbildung von der Präsentation Video](images/video-android-l.png)|
+|[C# ist in meinen Ohren und Augen: Google Glass und Android Dach](https://www.youtube.com/watch?v=80H8tXByZQc) &ndash; Wearable computing scheint etwas aus der Zukunft (oder eine Folge von Inspektor-Gadget), aber viele Personen sind bereits Hinwendung Zukunft heute! C#-Entwickler wissen und haben bereits die Tools und Fertigkeiten, die Leistung der wearable Geräte (Evolve 2014) nutzen zu können.|![Bildschirmabbildung von der Präsentation Video](images/video-eyes-ears.png)|
+|[Neuheiten bei Xamarin.Android](https://www.youtube.com/watch?v=Gpqc2XZIQfU) &ndash; Android L, Android Dach, Android, TV, Android Auto, Material Entwurf und ClipArt; was dies tut Mean Ihnen als Entwickler Xamarin? von Evolve 2014.|![Bildschirmabbildung von der Präsentation Video](Images/video-whats-new.png)|
 
 
 <!--

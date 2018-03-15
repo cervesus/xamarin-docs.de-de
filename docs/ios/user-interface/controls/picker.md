@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/02/2017
-ms.openlocfilehash: 3418d0b7946e1da68380512d64bdfc8b13d1d784
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b92bdc365cae524cee1f586b293c4638225c6178
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="picker"></a>Datumsauswahl
 
@@ -22,7 +22,7 @@ Ein bestimmter Benutzer Fall werden für die Datumsauswahl das Datum und / oder 
 
 Der Artikel umfasst, implementieren und Verwenden der [Datumsauswahl](#picker) und [Datumsauswahl](#datepicker) Steuerelemente.
 
-<a name="picker"/>
+<a name="picker" />
 
 ## <a name="picker"></a>Datumsauswahl
 
@@ -143,7 +143,7 @@ Der Rückgabewert gibt die Anzahl der wählt Ihrer Auswahl haben.
 Die Darstellung von der `UIPickerView` angepasst werden, mithilfe der `UIPickerView.UIPickerViewAppearance` -Klasse oder durch Überschreiben der `UIPickerViewModel.GetView` und `UIPickerViewModel.GetRowHeight` Methoden in der `UIPickerViewModel`.
 
 
-<a name="datepicker"/>
+<a name="datepicker" />
 
 ## <a name="date-picker"></a>Datumsauswahl
 

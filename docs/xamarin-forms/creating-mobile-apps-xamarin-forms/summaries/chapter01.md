@@ -7,11 +7,11 @@ ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 9b60a45cc998743d34d5cadb7750f35e7b965579
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e1d246ea65e88bde07c3d527c18b7850aa09e08b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Zusammenfassung der Chapter 1. Wie ist Xamarin.Forms angebracht?
 
@@ -21,7 +21,7 @@ Einer der am häufigsten unliebsame Aufträge in der Programmierung ist eine Cod
 
 Dieses Problem ist üblich, wenn mobile Plattformen abzielen. Aktuell existieren zwei wichtigen mobilen Plattformen, die Apple-Familie von iPhones und iPads ausgeführt, das Betriebssystem iOS und Android-Betriebssysteme, die auf einer Vielzahl von Mobiltelefonen und Tablets ausgeführt wird. Eine andere wichtige Plattform ist Microsofts universelle Windows-Plattform (UWP), wodurch ein einzelnes Programm für Windows 10 und Windows 10 Mobile zu entwickeln.
 
-Muss eine Softwareanbieter, die für diese drei Plattformen entwickeln möchte mit verschiedenen Benutzeroberflächen-Paradigmen, drei anderen entwicklungsumgebungen, drei verschiedene Programmierschnittstellen, verarbeiten und & #x 2014 und vielleicht größtenteils spät & #x 2014; drei verschiedenen Programmiersprachen: Objective-C für iPhone und iPad für Android Java und c# für Windows.
+Muss eine Softwareanbieter, die für diese drei Plattformen entwickeln möchte mit verschiedenen Benutzeroberflächen-Paradigmen, drei anderen entwicklungsumgebungen, drei verschiedene Programmierschnittstellen, verarbeiten und&mdash;vielleicht am häufigsten falsch&mdash; drei verschiedenen Programmiersprachen: Objective-C für iPhone und iPad für Android Java und c# für Windows.
 
 ## <a name="the-c-and-net-solution"></a>Die Lösung für c# und .NET
 

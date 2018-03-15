@@ -8,11 +8,11 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: feecfc923903a20332bf3a1a188ab9d7cd2ce1c0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 39e2084bf9ca888d6e39fc5f02a455d3500e568c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="the-scale-transform"></a>Die Skalierungstransformation für die
 
@@ -44,7 +44,7 @@ Die `SKCanvas` Klasse definiert vier `Scale` Methoden. Die erste [ `Scale` ](htt
 public void Scale (Single s)
 ```
 
-Dies bezeichnet man *kugelstrahler* Skalierung & #x 2014; Skalierung also dasselbe in beide Richtungen. Kugelstrahler Skalierung wird das Objekt Seitenverhältnis beibehalten.
+Dies bezeichnet man *kugelstrahler* Skalierung &mdash; Skalierung also dasselbe in beide Richtungen. Kugelstrahler Skalierung wird das Objekt Seitenverhältnis beibehalten.
 
 Die zweite [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/) Methode können Sie verschiedene Werte für die horizontale und vertikale Skalierung angeben:
 
@@ -168,7 +168,7 @@ Der oberen linken Ecke des abgerundeten Rechtecks positioniert ist `margin` Pixe
 
 [![](scale-images/centeredscale-small.png "Dreifacher Screenshot der Seite zentriert Skalierung")](scale-images/centeredscale-large.png#lightbox "dreifacher Screenshot der Seite zentriert Skalierung")
 
-Die `Slider` Elemente an diesem Programm haben einen Bereich von & #x 2013, 10 bis 10. Wie Sie sehen können, dazu führen, dass negative Werte vertikale Skalierung (z. B. Bildschirm auf das Android-Geräten in der Mitte) Objekte aus, um die horizontale Achse zu blättern, die den Mittelpunkt der Skalierung durchlaufen. Negative Werte der horizontalen Skalierung (z. B. wie in der Windows-Bildschirm auf der rechten Seite) dazu führen, dass Objekte, um die vertikale Achse zu blättern, die den Mittelpunkt der Skalierung durchlaufen.
+Die `Slider` Elemente an diesem Programm haben einen Bereich von &ndash;10 bis 10. Wie Sie sehen können, dazu führen, dass negative Werte vertikale Skalierung (z. B. Bildschirm auf das Android-Geräten in der Mitte) Objekte aus, um die horizontale Achse zu blättern, die den Mittelpunkt der Skalierung durchlaufen. Negative Werte der horizontalen Skalierung (z. B. wie in der Windows-Bildschirm auf der rechten Seite) dazu führen, dass Objekte, um die vertikale Achse zu blättern, die den Mittelpunkt der Skalierung durchlaufen.
 
 Dieser vierte Version der `Scale` Methode ist tatsächlich eine Verknüpfung. Möglicherweise möchten Sie sehen, wie dies durch Ersetzen funktioniert die `Scale` Methode in diesem Code durch Folgendes:
 

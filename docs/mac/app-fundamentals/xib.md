@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9a4b8ac68da7bcb25ea55906e8fe060b7c7fdee9
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 92ca65409dd82806278885bb03efd7b04ab1827d
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="xib-files"></a>.XIB-Dateien
 
@@ -67,7 +67,7 @@ Die **Benutzeroberflächen-Editors** Abschnitt enthält die Oberfläche, auf dem
 
 #### <a name="properties--utilities"></a>Eigenschaften und Energieversorgung
 
-Die **Eigenschaften und Energieversorgung** Abschnitt ist in zwei Hauptabschnitte, die wir arbeiten mit devided **Eigenschaften** (auch als Inspektoren bezeichnet) und die **Bibliothek**:
+Die **Eigenschaften und Energieversorgung** Abschnitt ist in zwei Hauptabschnitte, die wir arbeiten mit unterteilt **Eigenschaften** (auch als Inspektoren bezeichnet) und die **Bibliothek**:
 
 ![Die Eigenschaftenanalyse](xib-images/xcode04.png "der Eigenschaftenanalyse")
 
@@ -375,7 +375,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 Dieser Code fügt an die Aktion, die Sie in Xcode und Benutzeroberflächen-Generator erstellt und jedes Mal, die der Benutzer auf die Schaltfläche klickt aufgerufen werden.
 
-Einige Elemente der Benutzeroberfläche automatisch haben, für die Aktionen, z. B. Elemente in der Standard-Menüleiste wie z. B. die **öffnen...**  Menüelement (`openDocument:`). In der **Lösung Pad**, doppelklicken Sie auf die `AppDelegate.CS` Datei zur Bearbeitung öffnen, und fügen Sie den folgenden Code unter der `DidFinishLaunching` Methode:
+Einige Elemente der Benutzeroberfläche automatisch haben, für die Aktionen, z. B. Elemente in der Standard-Menüleiste wie z. B. die **öffnen...**  Menüelement (`openDocument:`). In der **Lösung Pad**, doppelklicken Sie auf die **AppDelegate.cs** Datei zur Bearbeitung öffnen, und fügen Sie den folgenden Code unter der `DidFinishLaunching` Methode:
 
 ```csharp
 [Export ("openDocument:")]

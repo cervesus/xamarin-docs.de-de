@@ -7,12 +7,12 @@ ms.assetid: 2AE68ACE-8496-445D-BF17-5E4097D4AE35
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 5589d512f9a4ee9c1148810f36fee12d561f725c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/14/2018
+ms.openlocfilehash: 66555139cfaab2074e7461be737f997a9bb9c7a7
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="resolving-library-installation-errors"></a>Beheben von Installationsfehlern Bibliothek
 
@@ -104,7 +104,7 @@ Wenn Sie versucht haben, verwenden die oben beschriebenen Schritte für die auto
 
     -   [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    Wenn die **m2repository** Archiv wird nicht angezeigt in dieser Tabelle können Sie die Download-URL erstellen, vorangestellt **https://dl-ssl.google.com/android/repository/** auf den Namen des der **m2repository**  herunterladen. Verwenden Sie z. B. **https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip** herunterladen **android\_m2repository\_r10.zip** .
+    Wenn die **m2repository** Archiv wird nicht angezeigt in dieser Tabelle können Sie die Download-URL erstellen, vorangestellt  **https://dl-ssl.google.com/android/repository/**  auf den Namen des der **m2repository** herunterladen. Verwenden Sie z. B.  **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip** herunterladen **android\_m2repository\_r10.zip**.
 
 2.  Benennen Sie die Datei mit den entsprechenden MD5-Hash der Download-URL wie in der obigen Tabelle gezeigt. Angenommen, Sie heruntergeladen haben **android\_m2repository\_r25.zip**, benennen Sie sie um **0B3F1796C97C707339FB13AE8507AF50.zip**. Wenn der MD5-Hash für die Download-URL der heruntergeladenen Datei nicht in der Tabelle angezeigt wird, können Sie eine [online MD5-Generator](http://www.webconfs.com/online-md5-generator.php) , die URL in eine MD5-Hash-Zeichenfolge zu konvertieren. 
 
@@ -160,6 +160,8 @@ Verwenden Sie die folgenden Schritte aus, um herunterladen **m2repository** und 
     [![Beispiel für die Dateien in den Ordner 23.1.1.0/embedded kopiert](resolving-library-installation-errors-images/09-copied-vs.png)](resolving-library-installation-errors-images/09-copied-vs.png#lightbox)
 
 8.  Stellen Sie sicher, dass alle Dateien kopiert werden. Die **eingebettete** Verzeichnis sollte jetzt enthalten Dateien wie z. B. **JAR**, **aar**, und **.pom**.
+
+9.  Entpacken Sie eine extrahiert **aar** Dateien. Unter Windows, Anfügen einer **ZIP** -Erweiterung der **aar** Datei Maustaste, und wählen Sie **alle extrahieren...** , entfernen Sie dann die **ZIP** Erweiterung. Entzippen Sie MacOS, die **aar** Datei mithilfe der **Entzippen** -Befehl in der Terminal (z. B. **Entzippen file.aar**).
 
 An diesem Punkt haben Sie die fehlenden Komponenten manuell installiert, und das Projekt sollte ohne Fehler erstellt. Wenn dies nicht der Fall, stellen Sie sicher, dass Sie heruntergeladen haben die **m2repository** **ZIP** archivieren Version, die genau auf die Version in der Fehlermeldung entspricht und stellen Sie sicher, dass die Installation von Inhalt in der Korrigieren Sie die Speicherorte, wie in den obigen Schritten beschrieben. 
 

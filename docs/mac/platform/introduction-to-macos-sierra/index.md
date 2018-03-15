@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 036e1ddc95f8eabec3e87c13c25cad972c29a5d1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 161a5be643ccf5f96b04413cec5956264af6ce60
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-macos-sierra"></a>Einführung in MacOS Sierra
 
@@ -63,8 +63,6 @@ Unsere [Erstellen von modernen MacOS Apps](~/mac/platform/introduction-to-macos-
 Das Framework CloudKit wurde in MacOS Sierra, damit Benutzer schnell und einfach Datensätze oder Datensatzgruppen aus ihren Datenbanken privaten iCloud freigeben kann erweitert.
 
 CloudKit bietet eine vollständige Benutzeroberfläche für das Senden und freigegebene Datensatz Einladungen akzeptieren, und der Benutzer über vollständige Lese-/Schreibzugriff Kontrolle über die Personen, die Zugriff auf die Datensätze haben.
-
-<!--To find out more, please see our [CloudKit Data Sharing](~/mac/platform-features/introduction-to-macos-sierra/cloudkit-data-sharing/) guide.-->
 
 Weitere Informationen finden Sie in der Apple- [CloudKit Frameworkverweis](https://developer.apple.com/reference/clockkit) und [CloudKit JS-Frameworkverweis](https://developer.apple.com/reference/cloudkitjs).
 

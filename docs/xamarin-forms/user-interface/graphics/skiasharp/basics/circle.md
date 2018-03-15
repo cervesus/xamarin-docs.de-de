@@ -8,11 +8,11 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 5b09621f1d3a24f8061e5cd6551dd85ce93e36e3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 10f741e853603ef22cd45004a6c726ae579f3675
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="drawing-a-simple-circle"></a>Zeichnen eines Kreises einfache
 
@@ -146,7 +146,7 @@ Wenn das Programm selbst ausführen, können Sie Aktivieren der Phone oder im Si
 
 Ein `SKPaint` Objekt ist etwas mehr als eine Auflistung von Eigenschaften zu zeichnen. Diese Objekte sind sehr einfach. Sie können wiederverwenden `SKPaint` Objekte wie dieses Programm ist, oder Sie können mehrere erstellen `SKPaint` Objekte für verschiedene Kombinationen von Eigenschaften zu zeichnen. Sie erstellen und Initialisieren von diesen Objekten außerhalb von der `PaintSurface` -Ereignishandler, und Sie können diese speichern als Felder in der Page-Klasse.
 
-Obwohl die Breite der Kontur des Kreises als 25 Pixel & #x 2014; angegeben wird oder ein Viertel des Radius der Kreis & #x 2014; Sie wird schlankere sein, und es gibt ein guter Grund für diesen: halbe Breite der Linie durch die blauen Kreis verdeckt wird. Die Argumente für die `DrawCircle` Methode definieren, die abstrakte geometrischen Koordinaten Umfang eines Kreises. Das blaue innere wird auf diese Dimension auf das nächstliegende Pixel angepasst, aber die Kontur 25 Pixel breiten Betrieb verläuft die geometrische Kreis & #x 2014; die Hälfte auf interne und die Hälfte an der Außenseite.
+Obwohl die Breite der Kontur des Kreises als 25 Pixel angegeben wird &mdash; oder ein Viertel des Radius des Kreises &mdash; es scheinbar schlankere, und es gibt ein guter Grund für diesen: halbe Breite der Linie durch die blauen Kreis verdeckt wird. Die Argumente für die `DrawCircle` Methode definieren, die abstrakte geometrischen Koordinaten Umfang eines Kreises. Das blaue innere wird auf diese Dimension auf das nächstliegende Pixel angepasst, aber 25 Pixel breiten Kontur Betrieb verläuft die geometrischen Kreis &mdash; Hälfte auf interne und die Hälfte an der Außenseite.
 
 Im nächsten Beispiel in der [Integration mit Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md) Artikel wird dies visuell veranschaulicht.
 

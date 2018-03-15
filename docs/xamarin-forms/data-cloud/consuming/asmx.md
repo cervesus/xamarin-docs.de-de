@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 3ddf481a2356d49f11b96f5a8a6b7f7a492fefc9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a095dbbb78ad1517791356ae0b7cbeaa94d1336f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>Verarbeiten eines ASP.NET-Webdiensts (ASMX)
 
@@ -39,37 +39,12 @@ Anweisungen zum Einrichten des ASMX-Diensts können in der Readme-Datei gefunden
 
 Der ASMX-Dienst stellt die folgenden Vorgänge:
 
-<table>
-  <thead>
-    <tr>
-      <th>Vorgang</th>
-      <th>Beschreibung</th>
-      <th>Parameter</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GetTodoItems</td>
-      <td>Abrufen einer Liste von Aufgaben</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>CreateTodoItem</td>
-      <td>Ein neues Aufgabenelement erstellen</td>
-      <td>Ein XML-serialisierten <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>EditTodoItem</td>
-      <td>Aktualisieren einer Aufgabe</td>
-      <td>Ein XML-serialisierten <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>DeleteTodoItem</td>
-      <td>Löschen einer Aufgabe</td>
-      <td>Ein XML-serialisierten <code>TodoItem</code></td>
-    </tr>
-  </tbody>
-</table>
+|Vorgang|Beschreibung|Parameter|
+|--- |--- |--- |
+|GetTodoItems|Abrufen einer Liste von Aufgaben|
+|CreateTodoItem|Ein neues Aufgabenelement erstellen|Eine mithilfe von XML serialisierte TodoItem|
+|EditTodoItem|Aktualisieren einer Aufgabe|Eine mithilfe von XML serialisierte TodoItem|
+|DeleteTodoItem|Löschen einer Aufgabe|Eine mithilfe von XML serialisierte TodoItem|
 
 Weitere Informationen zu dem in der Anwendung verwendeten Datenmodell finden Sie unter [die Daten modellieren,](~/xamarin-forms/data-cloud/walkthrough.md).
 

@@ -7,11 +7,11 @@ ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 5ad53d7bc8c4ee54a47c4b327fb6f07bc1906ab9
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 5559f9e6a4baf9d3f82701b5e3f341900ba83bae
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Zusammenfassung der Kapitel 4. Durchführen eines Bildlaufs im Stapel
 
@@ -67,9 +67,9 @@ Bei einem vertikalen `StackLayout`, `HorizontalOptions` Einstellung bestimmt, wi
 
 Bei einem vertikalen `StackLayout`, jedes untergeordnete Element wird vertikal uneingeschränkte und ruft eine vertikale slot je nach Höhe des untergeordneten Standorts in diesem Fall die `VerticalOptions` Einstellung ist nicht relevant.
 
-Wenn die vertikale `StackLayout` selbst ist und dass nicht eingeschränkte & #x 2014; die wenn seine `VerticalOptions` Einstellung ist `Start`, `Center`, oder `End`, klicken Sie dann auf die Höhe des der `StackLayout` wird die gesamte Höhe der untergeordneten.
+Wenn die vertikale `StackLayout` selbst ist und dass nicht eingeschränkte&mdash;, wenn seine `VerticalOptions` Einstellung ist `Start`, `Center`, oder `End`, klicken Sie dann auf die Höhe des der `StackLayout` wird die gesamte Höhe der untergeordneten.
 
-Jedoch wenn die vertikale `StackLayout` wird vertikal eingeschränkt & #x 2014; Wenn die `VerticalOptions` Einstellung ist `Fill`& #x 2014; und die Höhe des der `StackLayout` werden die Höhe des Containers, die möglicherweise größer als die Gesamthöhe des die untergeordneten Elemente. Wenn dies der Fall ist, und wenn mindestens ein untergeordnetes Element enthält eine `VerticalOptions` festlegen mit eine `Expands` flag des `true`, zusätzliche Leerzeichen in der `StackLayout` wird gleichmäßig zwischen diesen untergeordneten Elementen mit eine `Expands` flag des `true`. Die gesamte Höhe der untergeordneten Elemente ist dann ist die Höhe des der `StackLayout`, und die `Alignment` Teil der `VerticalOptions` Einstellung bestimmt, wie das untergeordnete Element in einem Steckplatz vertikal positioniert wird.
+Jedoch wenn die vertikale `StackLayout` wird vertikal eingeschränkt&mdash;wenn seine `VerticalOptions` Einstellung ist `Fill` &mdash;klicken Sie dann auf die Höhe des der `StackLayout` werden die Höhe des Containers, die möglicherweise größer als die Summe die Höhe der untergeordneten Elemente. Wenn dies der Fall ist, und wenn mindestens ein untergeordnetes Element enthält eine `VerticalOptions` festlegen mit eine `Expands` flag des `true`, zusätzliche Leerzeichen in der `StackLayout` wird gleichmäßig zwischen diesen untergeordneten Elementen mit eine `Expands` flag des `true`. Die gesamte Höhe der untergeordneten Elemente ist dann ist die Höhe des der `StackLayout`, und die `Alignment` Teil der `VerticalOptions` Einstellung bestimmt, wie das untergeordnete Element in einem Steckplatz vertikal positioniert wird.
 
 Dies wird dargestellt, der [ **VerticalOptionsDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/VerticalOptionsDemo) Beispiel.
 

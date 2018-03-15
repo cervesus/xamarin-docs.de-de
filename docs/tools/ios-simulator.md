@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/07/2017
-ms.openlocfilehash: 0ea6528ce3523ab5d829342e99ccf35ca3d69aa2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 20e8d843b73fca5eb49da21a7f834ebbb52f4aa9
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Remote-iOS-Simulator (für Windows)
 
@@ -52,7 +52,7 @@ Die Symbolleiste des Fensters enthält eine Reihe von Schaltflächen für die In
 - **Sperre** – Sperren Sie den Simulator (Sie können zum Entsperren streichen).
 - **Bildschirmabbildung von** – einen Screenshot der Simulator auf dem Datenträger gespeichert.
 - [**Einstellungen** ](#settings) – konfigurieren Sie die Tastatur und Speicherort.
- - Andere [ **Optionen** ](#options) – eine Vielzahl von Simulator Optionen stehen zur Verfügung, z. B. drehen, Shake, oder rufen Sie andere Zustände im Simulator. Wenn einige Optionen verdeckt werden, können sie aus dem Symbol "Ellipse" zugegriffen werden, die in der Symbolleiste oder mit der rechten Maustaste auf das Fenster angezeigt wird.
+- Andere [ **Optionen** ](#options) – eine Vielzahl von Simulator Optionen stehen zur Verfügung, z. B. drehen, Shake, oder rufen Sie andere Zustände im Simulator. Wenn einige Optionen verdeckt werden, können sie aus dem Symbol "Ellipse" zugegriffen werden, die in der Symbolleiste oder mit der rechten Maustaste auf das Fenster angezeigt wird.
 
     [![](ios-simulator-images/maps-app-sml.png "iOS-Simulator zuordnet, Beispiel")](ios-simulator-images/maps-app.png#lightbox)
 

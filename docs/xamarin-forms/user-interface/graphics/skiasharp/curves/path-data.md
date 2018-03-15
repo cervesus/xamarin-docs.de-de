@@ -8,11 +8,11 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: cc21f789d96f9375655766916f80c6f3f524c29d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 7d50e5a33020de822f96a8bf2f713a8c5b9d3020
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="svg-path-data"></a>SVG-Pfaddaten
 
@@ -423,7 +423,7 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Eine Besonderheit wird jedoch mit der zweiten Seite vorgenommen. Da die Uhr aktualisiert wird alle 16 Millisekunden der `Millisecond` Eigenschaft von der `DateTime` Wert kann potenziell dazu genutzt werden, um ein Sweep Zweitens hand statt in einem animieren, die in diskrete Sprünge verschoben aus zweiter zweiten. Dieser Code, nicht jedoch die datenverschiebung zu sein. Stattdessen wird der Xamarin.Forms [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) und [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) Animation Beschleunigungsfunktionen für eine andere Art der Verschiebung. Diese Beschleunigungsfunktionen dazu führen, dass der zweite Zeiger zum Verschieben in einen wird ruckartiger Weise & #x 2014; zurückzusetzen ein kleines, bevor es verschoben werden, und klicken Sie dann leicht zu stark behandeln das Ziel, einen Effekt, leider nicht in dieser statischen Screenshots reproduzieren:
+Eine Besonderheit wird jedoch mit der zweiten Seite vorgenommen. Da die Uhr aktualisiert wird alle 16 Millisekunden der `Millisecond` Eigenschaft von der `DateTime` Wert kann potenziell dazu genutzt werden, um ein Sweep Zweitens hand statt in einem animieren, die in diskrete Sprünge verschoben aus zweiter zweiten. Dieser Code, nicht jedoch die datenverschiebung zu sein. Stattdessen wird der Xamarin.Forms [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) und [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) Animation Beschleunigungsfunktionen für eine andere Art der Verschiebung. Diese Beschleunigungsfunktionen dazu führen, dass der zweite Zeiger auf eine Weise wird ruckartiger verschieben &mdash; zurückzusetzen ein kleines, bevor es verschoben werden, und klicken Sie dann leicht zu stark behandeln das Ziel, einen Effekt, leider nicht in dieser statischen Screenshots reproduzieren:
 
 [![](path-data-images/prettyanalogclock-small.png "Dreifacher Screenshot der Seite ziemlich analogen Uhr")](path-data-images/prettyanalogclock-large.png#lightbox "dreifacher Screenshot der Seite ziemlich analogen Uhr")
 

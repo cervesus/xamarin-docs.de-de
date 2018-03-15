@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/05/2017
-ms.openlocfilehash: 465ba4822a1004100160703f1607d99199f28a16
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: c0d328e784b0a12b0df1a6b2bf5b990ffa461da5
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="apple-account-management"></a>Apple-Kontenverwaltung
 
@@ -41,7 +41,7 @@ Sie benötigen ein Apple Developer-Konto, um dieses Feature zu verwenden. Weiter
 
 - Stellen Sie sicher, dass Sie mit dem Internet verbunden sind. Dies liegt daran Fastlane direkt mit dem Apple-Entwicklerportal kommuniziert.
 - Sicherzustellen, dass Sie über [Fastlane-Tools installiert](~/ios/deploy-test/provisioning/fastlane/index.md#Installation).
-- Sicherzustellen, dass Sie über die aktuellsten Fastlane Tools aus [https://download.fastlane.tools](https://download.fastlane.tools).
+- Sicherzustellen, dass Sie über die aktuellsten Fastlane Tools aus [ https://download.fastlane.tools ](https://download.fastlane.tools).
 - Bevor Sie beginnen, stellen Sie sicher, akzeptieren Sie alle Benutzer Lizenzverträge in der [Entwicklerportal](https://developer.apple.com/account/).
 
 ## <a name="adding-an-apple-developer-account"></a>Hinzufügen eines Apple Developer-Kontos
@@ -50,7 +50,7 @@ Sie benötigen ein Apple Developer-Konto, um dieses Feature zu verwenden. Weiter
 
     ![Apple Developer Kontooptionen](apple-account-management-images/image1.png)
 
-2. Drücken Sie die  **+**  Schaltfläche, um die Anmeldung im Dialogfeld angezeigt, wie unten dargestellt: 
+2. Drücken Sie die ** + ** Schaltfläche, um die Anmeldung im Dialogfeld angezeigt, wie unten dargestellt: 
 
     ![FastLane-Dialogfeld.](apple-account-management-images/image2.png)
 
@@ -69,8 +69,7 @@ Sie benötigen ein Apple Developer-Konto, um dieses Feature zu verwenden. Weiter
     ![](apple-account-management-images/image6.png)
 
 
-<a name="managing"/>
-    
+<a name="managing" />
 
 
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>Verwalten von Identitäten signieren und Profile bereitstellen

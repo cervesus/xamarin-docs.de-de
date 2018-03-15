@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: df3692777eaa0791385c9ef3d114fbc8a9ab752e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c489aab66a0aaafeaaeadad0e8b95d451ec1592
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>Mithilfe des Tools MonoGame-Pipeline
 
@@ -70,7 +70,7 @@ Nachdem das Projekt erstellt wurde, müssen wir ausführen, um sicherzustellen, 
 
 # <a name="creating-a-content-project"></a>Erstellen einen Content-Projekt
 
-Nun, da wir einen Spielprojekt haben, können wir eine MonoGame Pipeline-Projekt erstellen. Dazu in der MonoGame Pipeline Tool Select **Datei > neu...**  und navigieren Sie zu Ihrem Projekt Ordners "Content". Für Android, befindet sich der Ordner unter **[Projekt root]\BouncingGame.Android\Assets\Content\**. Für iOS, befindet sich der Ordner unter **[Projekt root]\BouncingGame.iOS\Content\**.
+Nun, da wir einen Spielprojekt haben, können wir eine MonoGame Pipeline-Projekt erstellen. Dazu in der MonoGame Pipeline Tool Select **Datei > neu... ** und navigieren Sie zu Ihrem Projekt Ordners "Content". Für Android, befindet sich der Ordner unter **[Projekt root]\BouncingGame.Android\Assets\Content\**. Für iOS, befindet sich der Ordner unter **[Projekt root]\BouncingGame.iOS\Content\**.
 
 Ändern der **Dateiname** auf **ContentProject** , und klicken Sie auf die **speichern** Schaltfläche:
 
@@ -85,7 +85,7 @@ Sehen wir uns einige der wichtigsten Optionen für das Content-Projekt.
 
 ## <a name="output-folder"></a>Ausgabeordner
 
-Dies ist der Ordner (in Bezug auf das Content-Projekt selbst), in dem die Ausgabe **.xnb** Dateien gespeichert werden. Um die Dinge einfach zu halten, verwenden wir den gleichen Ordner für die bereitzustellenden unsere Eingabe Ausgabedateien. Ändern wir also die **Ausgabeordner** werden **.\**  :
+Dies ist der Ordner (in Bezug auf das Content-Projekt selbst), in dem die Ausgabe **.xnb** Dateien gespeichert werden. Um die Dinge einfach zu halten, verwenden wir den gleichen Ordner für die bereitzustellenden unsere Eingabe Ausgabedateien. Ändern wir also die **Ausgabeordner** werden **.\* * :
 
 ![](walkthrough-images/image10.png "")
 
@@ -113,7 +113,7 @@ Hinzufügen einer **PNG** Datei dem Projekt wird zunächst kopieren wir es in da
 
 ![](walkthrough-images/image12.png "Eine PNG-Datei zum Projekt hinzufügen")
 
-Als Nächstes fügen wir die Datei dem Projekt Pipeline. Wählen Sie dazu in das pipelinetool MonoGame **Bearbeiten > Element hinzufügen...** , wählen die **ball.png** Datei, und klicken Sie auf **öffnen**. Die Datei ist nun Teil der Content-Projekt und, bei Auswahl dieser Option werden die Eigenschaften angezeigt:
+Als Nächstes fügen wir die Datei dem Projekt Pipeline. Wählen Sie dazu in das pipelinetool MonoGame **Bearbeiten > Element hinzufügen... **, wählen die **ball.png** Datei, und klicken Sie auf **öffnen**. Die Datei ist nun Teil der Content-Projekt und, bei Auswahl dieser Option werden die Eigenschaften angezeigt:
 
 ![](walkthrough-images/image13.png "Die Datei werden jetzt Teil des Content-Projekts, und bei Auswahl dieser Option werden die Eigenschaften anzeigen")
 
@@ -124,18 +124,18 @@ Wir werden lassen alle Werte auf ihre Standardwerte sind keine Änderungen erfor
 
 ## <a name="adding-a-spritefont-file"></a>Hinzufügen einer Datei .spritefont
 
-Wir können .spritefont-Datei über das pipelinetool MonoGame erstellen. CocosSharp erfordert Schriftarten in einer **Schriftarten** Ordner und CocosSharp Vorlagen, die automatisch eine Schriftartordner automatisch erstellt. Wir können diesen Ordner für das Tool MonoGame Pipeline hinzufügen, indem auswählen **Bearbeiten > Hinzufügen > vorhandenen Ordner...** . Navigieren Sie zu der **Content** Ordner, und wählen die **Schriftarten** Ordner, und klicken Sie auf **OK**:
+Wir können .spritefont-Datei über das pipelinetool MonoGame erstellen. CocosSharp erfordert Schriftarten in einer **Schriftarten** Ordner und CocosSharp Vorlagen, die automatisch eine Schriftartordner automatisch erstellt. Wir können diesen Ordner für das Tool MonoGame Pipeline hinzufügen, indem auswählen **Bearbeiten > Hinzufügen > vorhandenen Ordner... **. Navigieren Sie zu der **Content** Ordner, und wählen die **Schriftarten** Ordner, und klicken Sie auf **OK**:
 
 ![](walkthrough-images/browsetofonts.png "In den Inhaltsordner durchsuchen Sie, wählen Sie den Ordner Schriftarten, und klicken Sie auf OK")
 
-Um eine neue .sprintefont Datei hinzuzufügen, mit der rechten Maustaste auf den Ordner Schriftarten, und wählen Sie **hinzufügen > Neues Element...** , wählen die **SpriteFont Beschreibung** aus, geben Sie den Namen **arial 36**, und klicken Sie auf **Ok**. CocosSharp erfordert spezifische Benennung von Schriftartdateien – sie muss im Format [FontType]-[FontSize]. Wenn eine Schriftart nicht dieses Namensformat übereinstimmt, wird es nicht von CocosSharp zur Laufzeit geladen werden.
+Um eine neue .sprintefont Datei hinzuzufügen, mit der rechten Maustaste auf den Ordner Schriftarten, und wählen Sie **hinzufügen > Neues Element... **, wählen die **SpriteFont Beschreibung** aus, geben Sie den Namen **arial 36**, und klicken Sie auf **Ok**. CocosSharp erfordert spezifische Benennung von Schriftartdateien – sie muss im Format [FontType]-[FontSize]. Wenn eine Schriftart nicht dieses Namensformat übereinstimmt, wird es nicht von CocosSharp zur Laufzeit geladen werden.
 
 ![](walkthrough-images/image15.png "Wenn eine Schriftart nicht dieses Namensformat übereinstimmt wird es nicht von CocosSharp zur Laufzeit geladen werden")
 
 Die Datei .spritefont ist tatsächlich eine XML-Datei, die in einem Texteditor, einschließlich Visual Studio für Mac bearbeitet werden können Die am häufigsten verwendeten Variablen in einer Datei .spritefont bearbeitet werden die `FontName` und `Size` Eigenschaft:
 
 
-```csharp
+```xml
     <!-- Modify this string to change the font that will be imported. -->
     <FontName>Arial</FontName>
 
@@ -147,7 +147,7 @@ Die Datei .spritefont ist tatsächlich eine XML-Datei, die in einem Texteditor, 
 Wir müssen die Datei in einem beliebigen Texteditor geöffnet. Als unsere **arial 36.spritefont** Name bereits vermuten lässt, wir werden lassen die `FontName` als `Arial` jedoch ändern, die `Size` Wert `36`:
 
 
-```csharp
+```xml
     <!-- Modify this string to change the font that will be imported. -->
     <FontName>Arial</FontName>   
   
@@ -170,7 +170,7 @@ Zunächst fügen wir die Dateien zum Projekt. In Visual Studio für Mac müssen 
 
 ## <a name="adding-gamescenecs"></a>Hinzufügen von GameScene.cs
 
-Wir erstellen eine Klasse mit dem Namen `GameScene,` unsere Objekte Sprite und Text enthalten. Zu diesem Zweck mit der Maustaste auf die **BouncingGame** (nicht BouncingGame.Android) Projekt, und wählen Sie **hinzufügen > neuen Datei...** . Wählen Sie die **allgemeine** Kategorie, wählen die **leere Klasse** aus, und geben Sie dann den Namen **GameScene**.
+Wir erstellen eine Klasse mit dem Namen `GameScene,` unsere Objekte Sprite und Text enthalten. Zu diesem Zweck mit der Maustaste auf die **BouncingGame** (nicht BouncingGame.Android) Projekt, und wählen Sie **hinzufügen > neuen Datei... **. Wählen Sie die **allgemeine** Kategorie, wählen die **leere Klasse** aus, und geben Sie dann den Namen **GameScene**.
 
 Nach der Erstellung ändern wir die `GameScene.cs` Datei enthält den folgenden Code:
 

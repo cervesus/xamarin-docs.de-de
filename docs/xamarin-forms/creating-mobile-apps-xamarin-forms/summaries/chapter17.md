@@ -7,11 +7,11 @@ ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 09f63dd418ea1fb523c028edb02c28c22bfdccd1
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4f76b1060ee8a672319683525470aee00e3db001
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>Zusammenfassung der Kapitel 17. Das Raster Mastering
 
@@ -29,16 +29,16 @@ Die Definition eine `Grid` beginnt in der Regel in XAML mit Füllen der [ `RowDe
 
 In XAML wird die [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLengthTypeConverter/) konvertiert einfache Textzeichenfolgen in `GridLength` Werte. Im Hintergrund der [ `GridLength` Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.GridLength.GridLength/p/System.Double/Xamarin.Forms.GridUnitType/) erstellt die `GridLength` Wert basierend auf eine Zahl und ein Wert vom Typ [ `GridUnitType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/), eine Enumeration mit drei Membern:
 
-- [`Absolute`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Absolute/) & #x 2014; die Breite oder Höhe wird in geräteunabhängigen Einheiten (eine Zahl in XAML) angegeben.
-- [`Auto`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Auto/) & #x 2014; die Höhe oder Breite ist automatisch angepassten basierend auf den Inhalt der Zelle ("Auto" in XAML)
-- [`Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) & #x 2014; Verbleibende Höhe oder Breite proportional zugewiesen ist (eine Zahl mit "\*" namens *Stern*, in XAML)
+- [`Absolute`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Absolute/) &mdash; die Breite oder Höhe wird in geräteunabhängigen Einheiten (eine Zahl in XAML) angegeben.
+- [`Auto`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Auto/) &mdash; die Höhe oder Breite ist automatisch angepassten basierend auf den Inhalt der Zelle ("Auto" in XAML)
+- [`Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) &mdash; Verbleibende Höhe oder Breite proportional zugewiesen ist (eine Zahl mit "\*" namens *Stern*, in XAML)
 
-Jedes untergeordnete Element von der `Grid` muss auch zugewiesen werden einer Zeile und Spalte (entweder explizit oder implizit). Umfasst Zeile und Spalte Spannen sind optional. Diese werden alle mit bindungsfähigen Eigenschaften & #x 2014 angefügt angegeben; durch definierten Eigenschaften der `Grid` jedoch festgelegt auf untergeordneten Standorten, von der `Grid`. `Grid` definiert vier statische angefügte bindbare Eigenschaften an:
+Jedes untergeordnete Element von der `Grid` muss auch zugewiesen werden einer Zeile und Spalte (entweder explizit oder implizit). Umfasst Zeile und Spalte Spannen sind optional. Diese werden alle mit angegeben angefügte bindbare Eigenschaften &mdash; durch definierten Eigenschaften der `Grid` jedoch festgelegt, auf die untergeordneten Elemente des der `Grid`. `Grid` definiert vier statische angefügte bindbare Eigenschaften an:
 
-- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) & #x 2014; Die nullbasierte Zeile; Standard ist 0
-- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) & #x 2014; Die nullbasierte Spalte; Standard ist 0
-- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) & #x 2014; die Anzahl von Zeilen das untergeordnete Element erstreckt; Der Standardwert ist 1
-- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) & #x 2014; die Anzahl der Spalten das untergeordnete Element erstreckt; Der Standardwert ist 1
+- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) &mdash; Die nullbasierte Zeile; Standard ist 0
+- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) &mdash; Die nullbasierte Spalte; Standard ist 0
+- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) &mdash; die Anzahl von Zeilen das untergeordnete Element erstreckt; Der Standardwert ist 1
+- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) &mdash; die Anzahl der Spalten das untergeordnete Element erstreckt; Der Standardwert ist 1
 
 Im Code kann ein Programm acht statische Methoden zum Festlegen und Abrufen dieser Werte verwenden:
 

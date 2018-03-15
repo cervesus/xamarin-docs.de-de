@@ -1,5 +1,5 @@
 ---
-title: Aktualisieren von Komponentenverweisen zu NuGet
+title: Aktualisieren von komponentenverweisen zu NuGet
 description: Ersetzen Sie die Komponente verweist mit NuGet-Pakete in Zukunft Ihrer apps.
 ms.topic: article
 ms.prod: xamarin
@@ -8,13 +8,13 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2017
-ms.openlocfilehash: f3dbfb52d4fbcb4dd65f695a862f6b041d2b22c0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4de4517c960395e5d7d5a8fb2c537576e15fc007
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="updating-component-references-to-nuget"></a>Aktualisieren von Komponentenverweisen zu NuGet
+# <a name="updating-component-references-to-nuget"></a>Aktualisieren von komponentenverweisen zu NuGet
 
 _Ersetzen Sie die Komponente verweist mit NuGet-Pakete in Zukunft Ihrer apps._
 
@@ -27,6 +27,82 @@ Die meisten Komponenten werden in eine der oben genannten Kategorien fallen.
 Bei Verwendung eine Komponente, die nicht angezeigt wird, ein Äquivalent NuGet-Paket haben, lesen Sie die [Komponenten ohne einen Migrationspfad NuGet](#require-update) Abschnitt weiter unten.
 
 Auf diese Seiten finden Sie detaillierte Anweisungen zum Hinzufügen von NuGet-Pakete auf [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) oder [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+
+## <a name="opening-a-project-containing-a-component"></a>Öffnen ein Projekt mit einer Komponente
+
+In Version für November 2017 war [angekündigt](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) , die von der Xamarin-Komponentenspeicher würde nicht mehr unterstützt werden. In dem Bestreben, die mit der Sunsetting Komponenten weitergehen unterstützen das 15.6 Release von Visual Studio und 7.4 Release von Visual Studio für Mac nicht mehr Komponenten in Ihrem Projekt. 
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Wenn Sie ein Projekt in Visual Studio laden, wird das folgende Dialogfeld angezeigt, erläutert wird, dass Sie alle Komponenten aus dem Projekt manuell entfernen müssen:
+
+![Warnung Dialogfeld erläutert wird, dass eine Komponente in Ihr Projekt gefunden wurde und entfernt werden müssen](component-nuget-images/component-alert-vs.png)
+
+So entfernen Sie eine Komponente aus Ihrem Projekt:
+
+1. Öffnen Sie die CSPROJ-Datei. Klicken Sie hierzu mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Projekt entladen**. 
+
+2. Mit der rechten Maustaste erneut auf das Projekt entladen, und wählen Sie **{Ihr Projekt-Name} .csproj bearbeiten**.
+
+3. "Alle Verweise suchen" in der Datei `XamarinComponentReference`. Es sollte ähnlich wie im folgenden Beispiel aussehen:
+
+    ```xml
+    <ItemGroup>
+      <XamarinComponentReference Include="advancedcolorpicker">
+        <Version>2.0.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="gunmetaltheme">
+        <Version>1.4.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="signature-pad">
+        <Version>2.2.0</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+    </ItemGroup>
+    ```
+
+4. Entfernen Sie die Verweise auf `XamarinComponentReference` und speichern Sie die Datei. Im obigen Beispiel ist es sicher ist, entfernen Sie die gesamte `ItemGroup`.
+
+5. Nachdem die Datei gespeichert wurde, mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Projekt erneut laden**.
+
+6. Wiederholen Sie die oben genannten Schritte für jedes Projekt in der Projektmappe ein.
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+Wenn Sie ein Projekt in Visual Studio für Mac laden, wird das folgende Dialogfeld angezeigt, erläutert wird, dass Sie alle Komponenten aus dem Projekt manuell entfernen müssen:
+
+![Warnung Dialogfeld erläutert wird, dass eine Komponente in Ihr Projekt gefunden wurde und entfernt werden müssen](component-nuget-images/component-alert.png)
+
+So entfernen Sie eine Komponente aus Ihrem Projekt:
+
+1. Öffnen Sie die CSPROJ-Datei. Klicken Sie hierzu mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Tools > Datei bearbeiten**.
+
+2. "Alle Verweise suchen" in der Datei `XamarinComponentReference`. Es sollte ähnlich wie im folgenden Beispiel aussehen:
+
+    ```xml
+    <ItemGroup>
+      <XamarinComponentReference Include="advancedcolorpicker">
+        <Version>2.0.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="gunmetaltheme">
+        <Version>1.4.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="signature-pad">
+        <Version>2.2.0</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+    </ItemGroup>
+    ```
+
+3. Entfernen Sie die Verweise auf `XamarinComponentReference` und speichern Sie die Datei. Im obigen Beispiel ist es sicher ist, entfernen Sie die gesamte `ItemGroup`
+
+4. Wiederholen Sie die oben genannten Schritte für jedes Projekt in der Projektmappe ein. 
+
+-----
 
 <a name="contain" />
 

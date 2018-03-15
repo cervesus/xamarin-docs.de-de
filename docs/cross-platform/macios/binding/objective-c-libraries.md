@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: d1c4c46b62b95d70dd2832c96ffd2686163990a5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f0e8dabc47352213d18d079ee9f8abb3e557b868
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="binding-objective-c-libraries"></a>Binden von Objective-C-Bibliotheken
 
@@ -1514,6 +1514,6 @@ Zum Zeitpunkt der Xamarin.iOS v3. 2, wir unterstützen erben von Protokollen, di
 
 In der Vergangenheit wir benötigt das Protokoll in jede Implementierung kopiert, aber in diesen Fällen nun wir können die `MKShape` Klasse erben die `MKOverlay` Protokoll, und es werden die erforderlichen Methoden automatisch generieren.
 
-### <a name="related-links"></a>Verwandte links
+## <a name="related-links"></a>Verwandte links
 
 - [Bindung-Beispiel](https://developer.xamarin.com/samples/BindingSample/)

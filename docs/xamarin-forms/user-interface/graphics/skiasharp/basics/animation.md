@@ -8,11 +8,11 @@ ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: e18ef7c77c1d5c93d53882233c65a56e5567fcd7
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 347ecf72356915714200835263e38519c1ad8a13
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="basic-animation"></a>Grundlegende Animation
 
@@ -107,7 +107,7 @@ async Task AnimationLoop()
 
 ```
 
-Die `while` Schleife beginnt, durch den Bezug einer Zykluszeit aus der `Slider`. Dies ist eine Zeit in Sekunden an, z. B. 5. Die zweite Anweisung berechnet einen Wert von `t` für *Zeit*. Für eine `cycleTime` 5 `t` erhöht, von 0 auf 1 alle 5 Sekunden. Das Argument für die `Math.Sin` -Funktion in der zweiten Anweisung liegt zwischen 0 und 2π alle 5 Sekunden. Die `Math.Sin` Funktion gibt einen Wert im Bereich von 0, 1 auf 0 zurück, und klicken Sie dann auf & #x 2013; 1 und 0 alle 5 Sekunden, sondern mit Werten, die langsamer zu ändern, wenn der Wert in der Nähe von 1 oder – 1 ist. Der Wert 1 wird hinzugefügt, damit die Werte immer positive sind und klicken Sie dann es durch 2, geteilt wird damit die Werte reicht von ½ auf 1 fest, um ½ auf 0, um ½, jedoch langsamer, wenn der Wert ca. 1 und 0 ist. Diese befindet sich in der `scale` Feld, und die `SKCanvasView` ist ungültig.
+Die `while` Schleife beginnt, durch den Bezug einer Zykluszeit aus der `Slider`. Dies ist eine Zeit in Sekunden an, z. B. 5. Die zweite Anweisung berechnet einen Wert von `t` für *Zeit*. Für eine `cycleTime` 5 `t` erhöht, von 0 auf 1 alle 5 Sekunden. Das Argument für die `Math.Sin` -Funktion in der zweiten Anweisung liegt zwischen 0 und 2π alle 5 Sekunden. Die `Math.Sin` Funktion gibt einen Wert zwischen 0 und 1 zurück, die auf 0, und klicken Sie dann auf &ndash;1 und 0 für alle fünf Sekunden, aber mit Werten, die langsamer zu ändern, wenn der Wert in der Nähe von 1 oder – 1 ist. Der Wert 1 wird hinzugefügt, damit die Werte immer positive sind und klicken Sie dann es durch 2, geteilt wird damit die Werte reicht von ½ auf 1 fest, um ½ auf 0, um ½, jedoch langsamer, wenn der Wert ca. 1 und 0 ist. Diese befindet sich in der `scale` Feld, und die `SKCanvasView` ist ungültig.
 
 Die `PaintSurface` Methode verwendet dieses `scale` Wert zum Berechnen der beiden Achsen der Ellipse:
 

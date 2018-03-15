@@ -1,43 +1,37 @@
 ---
-title: Installations- und Anforderungen
+title: Arbeitsmappen Installations- und Anforderungen
+description: Zum Herunterladen, installieren und verwenden die Xamarin-Arbeitsmappen.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: abc9f9402b55a11e313b9938f07f37e5329b55b6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: abd6ac7d4bce5a180db087488b32c878ed0a416b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="installation-and-requirements"></a>Installations- und Anforderungen
-
-<script> Var InspectorOnLoad Funktion () = {Var PrimaryTextBase = "Für Arbeitsmappen Xamarin;" Var SecondaryTextBase = "oder für herunterladen"; Var InspectorDownloadUrlMac = "https://dl.xamarin.com/interactive/XamarinInteractive.pkg"; Var InspectorDownloadUrlWin = " https://DL.xamarin.com/Interactive/XamarinInteractive.msi";
-
-  var aPrimary = document.getElementById("inspector-download-primary"); var aSecondary = document.getElementById("inspector-download-secondary");
-
-  Var aMac = aPrimary; Var aWin = aSecondary; Var MacTextBase = PrimaryTextBase; Var WinTextBase = SecondaryTextBase;
-
-  if (/win/i.test(navigator.platform.toLowerCase())) { aMac = aSecondary; aWin = aPrimary; macTextBase = secondaryTextBase; winTextBase = primaryTextBase; }
-
-  aMac.href = inspectorDownloadUrlMac; aMac.text = macTextBase + " Mac"; aWin.href = inspectorDownloadUrlWin; aWin.text = winTextBase + " Windows"; };
-
-document.addEventListener("DOMContentLoaded", inspectorOnLoad);
-</script>
+# <a name="workbooks-installation-and-requirements"></a>Arbeitsmappen Installations- und Anforderungen
 
 <a name="install" />
 
 ## <a name="download-and-install"></a>Herunterladen und installieren
 
-<ol>
-  <li>Überprüfen Sie die <a href="#Requirements"> Anforderungen</a> unten.</li>
-  <li>Herunterladen und installieren <a href="https://dl.xamarin.com/interactive/XamarinInteractive.pkg" id="inspector-download-primary">Xamarin-Arbeitsmappen für Mac</a> (<a href="https://dl.xamarin.com/interactive/XamarinInteractive.msi" id="inspector-download-secondary">oder Download für Windows</a>).
-  </li>
-  <li>Starten Sie <a href="~/tools/workbooks/workbook.md"> Spielereien</a> -Arbeitsmappen oder ausprobieren der <a href="https://developer.xamarin.com/workbooks/">Beispiele</a>.
-    </li>
-</ol>
+# <a name="windowstabvswin"></a>[Windows](#tab/vswin)
+
+1. Überprüfen Sie die [Anforderungen](#requirements) unten.
+2. Herunterladen und installieren [Xamarin-Arbeitsmappen für Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
+3. Starten Sie [Spielereien](~/tools/workbooks/workbook.md) -Arbeitsmappen oder ausprobieren der [Beispiele](https://developer.xamarin.com/workbooks)
+
+# <a name="macostabvsmac"></a>[macOS](#tab/vsmac)
+
+1. Überprüfen Sie die [Anforderungen](#Requirements) unten.
+2. Herunterladen und installieren [Xamarin-Arbeitsmappen für Mac](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
+3. Starten Sie [Spielereien](~/tools/workbooks/workbook.md) -Arbeitsmappen oder ausprobieren der [Beispiele](https://developer.xamarin.com/workbooks)
+
+-----
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -48,52 +42,15 @@ document.addEventListener("DOMContentLoaded", inspectorOnLoad);
 
 #### <a name="supported-app-platforms"></a>Unterstützte App-Plattformen
 
-<table>
-<thead>
-  <tr>
-    <th>App-Plattform</th>
-    <th>Unterstützte Betriebssysteme</th>
-    <th>Hinweise</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Mac (Unified)</td>
-    <td>Nur unterstützt auf Mac.</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>iOS (Unified)</td>
-    <td>Unterstützt für Macintosh und Windows</td>
-    <td>
-      <ul>
-        <li>Xamarin.iOS 11.0 und Xcode 9.0 oder höher muss auf einem Mac installiert sein</li>
-        <li>Unter Windows iOS-Arbeitsmappen ist ein Mac-Build-Host ausführen alle oben genannten erforderlich und die <a href="~/tools/ios-simulator.md">Remote-iOS-Simulator</a> unter Windows installiert.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Android</td>
-    <td>Unterstützt für Macintosh und Windows</td>
-    <td>Verwenden Sie Google, Visual Studio oder Xamarin Android-Emulator die Zeichenfolge muss mit einem virtuellen Gerät > = 5.0</td>
-  </tr>
-  <tr>
-    <td>WPF</td>
-    <td>Nur unterstützt unter Windows.</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>Konsole ((.NET Framework)</td>
-    <td>Unterstützt für Macintosh und Windows</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>Konsole (.NET Core)</td>
-    <td>Unterstützt für Macintosh und Windows</td>
-    <td/>
-  </tr>
-</tbody>
-</table>
+|App-Plattform|Unterstützte Betriebssysteme|Hinweise|
+|--- |--- |--- |
+|Mac (Unified)|Nur unterstützt auf Mac.|
+|iOS (Unified)|Unterstützt für Macintosh und Windows|Xamarin.iOS 11.0 und Xcode 9.0 oder höher muss auf einem Mac installiert sein Unter Windows iOS-Arbeitsmappen ist ein Mac-Build-Host ausführen alle oben genannten erforderlich und die [Remote-iOS-Simulator](~/tools/ios-simulator.md) unter Windows installiert.|
+|Android|Unterstützt für Macintosh und Windows|Verwenden Sie Google, Visual Studio oder Xamarin Android-Emulator die Zeichenfolge muss mit einem virtuellen Gerät > = 5.0|
+|WPF|Nur unterstützt unter Windows.|
+|Konsole ((.NET Framework)|Unterstützt für Macintosh und Windows|
+|Konsole (.NET Core)|Unterstützt für Macintosh und Windows|
+
 
 ## <a name="reporting-bugs"></a>Melden von Fehlern
 
@@ -108,7 +65,7 @@ Fügen Sie immer die Clientprotokolldateien Arbeitsmappen:
 
 1.4.x installiert sein bietet außerdem die Möglichkeit, die Protokolldatei im Finder (MacOS) oder im Explorer (Windows) direkt über das Hauptmenü auswählen:
 
-- **Protokolldatei für Hilfe → anzeigen**
+- **Hilfe > Protokolldatei anzeigen**
 
 #### <a name="log-paths-for-workbooks-13-and-earlier"></a>Log-Pfade für Arbeitsmappen 1.3 und früher:
 
@@ -121,23 +78,23 @@ Es ist sehr hilfreich zu wissen, Details zu Ihrem Betriebssystem und Xamarin-Pro
 
 Über das Hauptmenü in Arbeitsmappen:
 
-* **Hilfe → Kopie-Versionsinformationen**
+* **Hilfe > Versionsinformationen kopieren**
 
 #### <a name="instructions-for-workbooks-13-and-earlier"></a>Anweisungen für Arbeitsmappen 1.3 und früher:
 
 Visual Studio für Mac
 
-- **Visual Studio → Informationen über Visual Studio → anzeigen → Kopie Detailinformationen**
+- **Visual Studio > Informationen zu Visual Studio > Details anzeigen > Informationen kopieren**
 - Fügen Sie in den Bericht "Fehlerstatus"
 
 Visual Studio
 
-- **Hilfe zu Visual Studio → Kopie Informationen →**
+- **Hilfe > Informationen zu Visual Studio > Info kopieren**
 - Informieren Sie uns Ihre Betriebssystemversion und gibt an, ob Sie 32-Bit oder 64-Bit-Windows ausgeführt werden.
 
 ### <a name="samples"></a>Proben
 
-Wenn Sie anfügen oder verknüpfen, können die `.workbooks` treten Probleme mit, Datei, die möglicherweise helfen, den Fehler schneller zu lösen.
+Wenn Sie anfügen oder verknüpfen, können die **.workbooks** treten Probleme mit, Datei, die möglicherweise helfen, den Fehler schneller zu lösen.
 
 ### <a name="devices"></a>Geräte
 
@@ -148,7 +105,7 @@ Wenn Sie Probleme beim Herstellen einer Verbindung Ihres IOS- oder Android-Arbei
 - Android: Stellen Sie sicher, dass die Verwendung von x X86 Emulator
 - Android: Welche Emulatorplattform verwenden Sie? -Emulators für Google?
   Visual Studio-Android-Emulator? Xamarin Android Player?
-- iOS unter Windows: Welche Version der Xamarin-Remote-iOS-Simulator Sie installiert haben (Überprüfen Sie `Add/Remove Programs` in `Control Panel`)?
+- iOS unter Windows: Welche Version der Xamarin-Remote-iOS-Simulator Sie installiert haben (Überprüfen Sie **Programme hinzufügen/entfernen** in **Systemsteuerung**)?
 - iOS unter Windows: auch Geben Sie Informationen zur Version der Plattform für den Mac-Build-Host
 - Verfügt das Gerät über eine Netzwerkverbindung (Überprüfen über Webbrowser)?
 
@@ -168,7 +125,7 @@ Wenn Sie Visual Studio 2017 haben, öffnen Sie **Installer für Visual Studio**,
 
 Wenn Sie Arbeitsmappen & Inspektor selbst mit einem heruntergeladenen Installer installiert haben, müssen sie über deinstalliert werden die **Apps & Features** System Seite "Einstellungen" unter Windows 10 oder über **Programme hinzufügen/entfernen**in der Systemsteuerung unter älteren Versionen von Windows.
 
-> **Starten Sie → Einstellungen → System → Apps & Features**
+> **Start > Einstellungen > System > Apps & Features**
 
 ![](install-images/windows-remove.png "Xamarin-Arbeitsmappen und Inspektor gemäß &quot;Apps &amp; Funktionen&quot;")
 
@@ -197,7 +154,7 @@ Für frühere Versionen müssen Sie manuell Folgendes entfernen:
 
 ## <a name="downgrading"></a>Ausführen eines Downgrades für
 
-Die Paket-ID für `/Applications/Xamarin Workbooks.app` angebotskennzeichen `com.xamarin.Inspector` zu `com.xamarin.Workbooks` in der Version 1,4, um zu ermöglichen, eine zukünftige Aufteilen der Xamarin-Arbeitsmappen & Inspektor Installationsprogramme.
+Die Paket-ID für **Anwendungen/Xamarin Workbooks.app** angebotskennzeichen `com.xamarin.Inspector` zu `com.xamarin.Workbooks` in der Version 1,4, um zu ermöglichen, eine zukünftige Aufteilen der Xamarin-Arbeitsmappen & Inspektor Installationsprogramme.
 
 Aufgrund eines Fehlers in älteren Installationsprogramme ist es nicht möglich, 1.4 oder neuere Versionen mit dem 1.3.2 oder ältere Installationsprogramme herabgestuft werden.
 

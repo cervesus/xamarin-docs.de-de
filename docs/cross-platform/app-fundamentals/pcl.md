@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e81ecd10f4dfc101cf63ba9d052d15b51a367ee5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5dd77232dc992880b18393c740b54c7784e4d049
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-portable-class-libraries"></a>Einführung in portablen Klassenbibliotheken
 
@@ -39,94 +39,13 @@ Wenn Sie eine Portable Klassenbibliothek erstellen, können Sie jedoch eine Komb
 
 Die folgende Tabelle zeigt einige der Funktionen, die von der .NET Plattform variieren. Um eine Assembly PCL schreiben, die garantiert auf bestimmten Geräten-Plattformen ausgeführt wird, wählen Sie einfach die Unterstützung erforderlich ist, wenn Sie das Projekt erstellen.
 
-<table border="1" cellpadding="1" cellspacing="1">
-  <tbody>
-    <tr>
-      <td>
-Feature </td>
-      <td>
-.NET Framework </td>
-      <td>
-UWP-Apps </td>
-      <td>
-Silverlight </td>
-      <td>
-Windows Phone </td>
-      <td>
-Xamarin </td>
-    </tr>
-    <tr>
-      <td>
-Kernspeicher </td>
-      <td>
-J </td>
-      <td>
-J </td>
-      <td>
-J </td>
-      <td>
-J </td>
-      <td>
-J </td>
-    </tr>
-    <tr>
-      <td>
-LINQ </td>
-      <td>
-J </td>
-      <td>
-J </td>
-      <td>
-J </td>
-      <td>
-J </td>
-      <td>
-J </td>
-    </tr>
-    <tr>
-      <td>
-IQueryable </td>
-       <td>
-J </td>
-      <td>
-J </td>
-      <td>
-J </td>
-      <td>
-7.5 + </td>
-      <td>
-J </td>
-    </tr>
-    <tr>
-      <td>
-Serialisierung </td>
-      <td>
-J </td>
-      <td>
-J </td>
-      <td>
-J </td>
-      <td>
-J </td>
-      <td>
-J </td>
-    </tr>
-    <tr>
-      <td>
-Datenanmerkungen </td>
-      <td>
-4.0.3 + </td>
-      <td>
-J </td>
-      <td>
-J </td>
-      <td>
-      </td>
-      <td>
-J </td>
-    </tr>
-  </tbody>
-</table>
+|Feature|.NET Framework|UWP-Apps|Silverlight|Windows Phone|Xamarin|
+|---|---|---|---|---|---|
+|Kernspeicher|J|J|J|J|J|
+|LINQ|J|J|J|J|J|
+|IQueryable|J|J|J|7.5 +|J|
+|Serialisierung|J|J|J|J|J|
+|Datenanmerkungen|4.0.3 +|J|J||J|
 
 Die Xamarin-Spalte gibt die Tatsache, dass Xamarin.iOS und Xamarin.Android unterstützt die Profile, die im Lieferumfang von Visual Studio, und die Verfügbarkeit von Funktionen in Bibliotheken, die Sie erstellen nur vom gewählten zur Unterstützung anderer Plattformen beschränkt.
 

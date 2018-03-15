@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: abcda680f6cfbde802f7b666cf2aade2c6e11093
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 341d850709ff27f4dc397cee3bb2fc5f73c0ec3c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Linien und Strich Caps
 
@@ -30,7 +30,7 @@ canvas.DrawLine (x0, y0, x1, y1, paint);
 
 Wird standardmäßig die `StrokeWidth` -Eigenschaft des neu instanziierten `SKPaint` Objekt ist 0, d. h. dieselbe Wirkung wie der Wert 1 hat in einer Zeile von einem Pixel in Stärke rendern. Dies wird auf hochauflösende Geräten wie Telefonen sehr dünne angezeigt, sodass Sie wahrscheinlich festlegen möchten die `StrokeWidth` auf einen höheren Wert. Aber wenn Sie das Zeichnen von Linien eine beträchtliche Anzahl an Dicke anfangen, ein anderes Problem auslöst: wie den Beginn und Ende #kommentare thick gerendert werden soll?
 
-Die Darstellung der den Beginn und Ende der Zeilen wird aufgerufen, eine *Linienende* oder Skia, eine *Strich Cap*. Das Wort "Abdeckung" in diesem Kontext bezieht sich auf eine Art von Hat & #x 2014. etwas, das am Ende der Zeile befindet. Festlegen der [ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/) Eigenschaft von der `SKPaint` -Objekts auf einen der folgenden Elemente von der [ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/) Enumeration:
+Die Darstellung der den Beginn und Ende der Zeilen wird aufgerufen, eine *Linienende* oder Skia, eine *Strich Cap*. Das Wort "Abdeckung" in diesem Kontext bezieht sich auf eine Art von Hat &mdash; etwas, das am Ende der Zeile befindet. Festlegen der [ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/) Eigenschaft von der `SKPaint` -Objekts auf einen der folgenden Elemente von der [ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/) Enumeration:
 
 - [`Butt`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Butt/) (Standard)
 - [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)

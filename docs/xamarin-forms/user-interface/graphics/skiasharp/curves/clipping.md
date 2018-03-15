@@ -8,11 +8,11 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: bb99984f93f494cfb5ad3d37ccb25f0b91d0b489
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e84bce5d4280ded801ed58999a2570d3c6bd327e
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="clipping-with-paths-and-regions"></a>Clipping mit Pfaden und Regionen
 
@@ -267,7 +267,7 @@ Allerdings Überladungen der `ClipPath` und `ClipRect` mit `SKRegionOperation` P
 
 Weiterhin können Sie die `SKRegionOperation` -Enumeration, aber es erfordert, dass Sie eine Clippingbereichs im Sinne von definieren eine [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) Objekt.
 
-Ein neu erstelltes `SKRegion` Objekt beschreibt einen leeren Bereich. Der erste Aufruf für das Objekt in der Regel ist [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) , damit die Region beschreiben ein rechteckiges Bereichs. Der Parameter für `SetRect` ist eine eine `SKRectI` Wert & #x 2014; der Rechteckwert mit ganzzahligen Eigenschaften. Sie können dann aufrufen [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) mit einem `SKPath` Objekt. Dies erstellt eine Region, die unterscheidet sich das Innere des Pfads, aber die anfängliche rechteckigen Bereich abgeschnitten.
+Ein neu erstelltes `SKRegion` Objekt beschreibt einen leeren Bereich. Der erste Aufruf für das Objekt in der Regel ist [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) , damit die Region beschreiben ein rechteckiges Bereichs. Der Parameter für `SetRect` ist eine eine `SKRectI` Wert &mdash; die Rechteckwert mit ganzzahligen Eigenschaften. Sie können dann aufrufen [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) mit einem `SKPath` Objekt. Dies erstellt eine Region, die unterscheidet sich das Innere des Pfads, aber die anfängliche rechteckigen Bereich abgeschnitten.
 
 Die `SKRegionOperation` Enumeration wird nur eine sprachbasierte stammt, wenn der Aufruf einer der der [ `Op` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.Op/p/SkiaSharp.SKRegion/SkiaSharp.SKRegionOperation/) -methodenüberladungen, wie diese:
 

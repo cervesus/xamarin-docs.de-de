@@ -7,11 +7,11 @@ ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 7dbcc093bc467e633f9333bb129adc25372832f3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a3ef515feabfc142f30e7e00a8fed710e733f4dc
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>Zusammenfassung der Kapitel 3. Eine umfassendere in text
 
@@ -91,7 +91,7 @@ Mehrere Instanzmethoden zulassen, ändern eine vorhandene Farbe aus, um eine neu
 
 Zwei statische schreibgeschützte Eigenschaften definieren Sie schließlich die spezielle Farbwert:
 
-- [`Color.Default`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/), alle Kanäle zu legen & #x 2013; 1
+- [`Color.Default`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/), legen Sie alle Kanäle auf &ndash;1
 - [`Color.Accent`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Accent/)
 
 `Color.Default` Dient zum Erzwingen der Plattform Farbschema und daher hat eine andere Bedeutung in anderen Kontexten auf verschiedenen Plattformen. Standardmäßig sind die Farbschemas Plattform:

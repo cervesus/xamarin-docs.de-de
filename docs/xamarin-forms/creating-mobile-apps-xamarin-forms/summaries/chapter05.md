@@ -7,11 +7,11 @@ ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 1df1751c55c6a031bf9f26d774b739f4ca83fa91
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0c61727e90a03d618a7423e5b865a7fcc9e0b399
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>Zusammenfassung der Kapitel 5. Umgang mit der Größe
 
@@ -42,7 +42,7 @@ Zusammengefasst kann Zielgruppenadressierung Telefone und Tablets Xamarin.Forms 
 - 160 Einheiten pro Zoll entspricht
 - zu den Zentimeter 64 Einheiten
 
-Die schreibgeschützte [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) und [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) von definierte Eigenschaften `VisualElement` Standardwerte "Werte & #x 2013; modellieren" 1. Nur, wenn ein Element wurde angepasst und im Layout untergebracht werden diese Eigenschaften die tatsächliche Größe des Elements in dem geräteunabhängigen Einheiten entsprechen. Diese Größe enthält alle `Padding` für das Element festgelegt, aber nicht die `Margin`.
+Die schreibgeschützte [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) und [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) von definierte Eigenschaften `VisualElement` Standard-Werte von "Modell" &ndash;1. Nur, wenn ein Element wurde angepasst und im Layout untergebracht werden diese Eigenschaften die tatsächliche Größe des Elements in dem geräteunabhängigen Einheiten entsprechen. Diese Größe enthält alle `Padding` für das Element festgelegt, aber nicht die `Margin`.
 
 Wird ausgelöst, ein visuelles Element der [ `SizeChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.SizeChanged/) Ereignis bei seiner `Width` oder `Height` hat sich geändert. Die [ **WhatSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/WhatSize) Beispiel verwendet dieses Ereignis, um das Programm Bildschirmgröße anzuzeigen.
 
@@ -75,7 +75,7 @@ Die **EstimatedFontSize** Programm und die **FitToSizeClock** Programm beide ent
 
 ## <a name="empirically-fitting-text"></a>Empirisch Einpassen von text
 
-Eine andere Möglichkeit, einem Rechteck des Texts ist, empirisch Berechnen der Textgröße des gerenderten, und passen es nach oben oder unten. Das Programm in den Aufrufen Buch [ `GetSizeRequest` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/) auf ein visuelles Element, um die gewünschte Größe des Elements zu erhalten. -Methode ist veraltet, und Programme sollten stattdessen aufrufen [`Measure`] (/ api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/).
+Eine andere Möglichkeit, einem Rechteck des Texts ist, empirisch Berechnen der Textgröße des gerenderten, und passen es nach oben oder unten. Das Programm in den Aufrufen Buch [ `GetSizeRequest` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/) auf ein visuelles Element, um die gewünschte Größe des Elements zu erhalten. -Methode ist veraltet, und Programme sollten stattdessen Aufrufen [ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/).
 
 Für eine `Label`, das erste Argument muss die Breite des Containers (zur Einbindung zulassen), während das zweite Argument sollte festgelegt werden, `Double.PositiveInfinity` die Höhe uneingeschränkten vornehmen. Die [ **EmpiricalFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize) Beispiel wird diese Technik veranschaulicht.
 

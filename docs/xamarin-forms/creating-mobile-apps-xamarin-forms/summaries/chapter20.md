@@ -7,11 +7,11 @@ ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 86ae56fc2baac3eab0fbf375c5f67f7b2327721a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0ac316bc2cef04a80958c047427845dbdcc4137f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Zusammenfassung der Kapitel 20. Async und Datei-e/a
 
@@ -65,7 +65,7 @@ Bisher .NET [ `System.IO` ](https://developer.xamarin.com/api/namespace/System.I
 
 ### <a name="good-news-and-bad-news"></a>Gute Neuigkeiten und schlechte Nachrichten
 
-Alle Plattformen von Xamarin.Forms Unterstützung Anwendung lokalen Speicher & #x 2014 unterstützt; Speicher, der für die Anwendung privat ist.
+Alle Plattformen, die vom lokalen Speicher für Xamarin.Forms unterstützen Anwendung unterstützt &mdash; Speicher, der für die Anwendung privat ist.
 
 Die Xamarin.iOS und Xamarin.Android-Bibliotheken enthalten eine Version von .NET, die dieser beiden Plattformen ausdrücklich Xamarin zugeschnitten ist. Dazu gehören Klassen aus `System.IO` , mit der Datei-e/a mit lokalem Speicher der Anwendung in dieser beiden Plattformen ausgeführt werden können.
 
@@ -111,13 +111,13 @@ Die **Xamarin.FormsBook.Platform.Android** Projekt enthält ein ähnliches [ `Fi
 
 Die **Xamarin.FormsBook.Platform** Projekt enthält außerdem eine [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/FileHelper.cs) -Klasse, die die Verwendung von vereinfacht die `DependencyService` Objekt.
 
-Um diese Bibliotheken verwenden zu können, muss eine Lösung enthalten alle Projekte in der **Xamarin.FormsBook.Platform** Lösung und jede Anwendung Projekte müssen einen Verweis auf die entsprechende Bibliothek in  **Xamarin.FormsBook.Platform**.
+Um diese Bibliotheken verwenden zu können, muss eine Lösung enthalten alle Projekte in der **Xamarin.FormsBook.Platform** Lösung und jede Anwendung Projekte müssen einen Verweis auf die entsprechende Bibliothek in ** Xamarin.FormsBook.Platform**.
 
 Die [ **TextFileAsync** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileAsync) Lösung veranschaulicht, wie die **Xamarin.FormsBook.Platform** Bibliotheken. Jedes der Projekte hat einen Aufruf von `Toolkit.Init`. Die Anwendung nutzt die asynchrone Datei e/a-Funktionen.
 
 ### <a name="keeping-it-in-the-background"></a>Da diese im Hintergrund
 
-Methoden in Bibliotheken, die Aufrufe an mehrere asynchrone Methoden & #x 2014; z. B. die `WriteFileAsync` und `ReadFileASync` Methoden in der Windows-Runtime [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) Klasse & #x 2014; können mit etwas effizienter gestaltet werden die [ `ConfigureAwait` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task%3CTResult%3E.ConfigureAwait/p/System.Boolean/) aufzurufende Methode Wechseln zurück an den Benutzeroberflächenthread zu vermeiden.
+Methoden in Bibliotheken, die mehrere asynchrone Methoden aufrufen &mdash; wie z. B. die `WriteFileAsync` und `ReadFileASync` Methoden in der Windows-Runtime [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) Klasse &mdash; können vorgenommen werden, in einem gewissen eine effizientere mithilfe der [ `ConfigureAwait` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task%3CTResult%3E.ConfigureAwait/p/System.Boolean/) Methode zur Vermeidung zurück an den Benutzeroberflächenthread wechseln.
 
 ### <a name="dont-block-the-ui-thread"></a>Blockieren Sie nicht im UI-Thread!
 

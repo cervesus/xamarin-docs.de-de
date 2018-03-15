@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: f8b748ad1b57218d1e8aab11bdc1037cf3cfa14c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 98c38001ea7751c419d4be5b0f68339b06ec656f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="consuming-a-restful-web-service"></a>Nutzen einen RESTful-Webdienst
 
@@ -49,42 +49,12 @@ Anweisungen zum Einrichten des REST-Diensts können in der Readme-Datei gefunden
 
 Der REST-Dienst mithilfe von ASP.NET Core geschrieben und stellt die folgenden Vorgänge:
 
-<table>
-  <thead>
-    <tr>
-      <th>Vorgang</th>
-      <th>HTTP-Methode</th>
-      <th>Relativer URI</th>
-      <th>Parameter</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Abrufen einer Liste von Aufgaben</td>
-      <td>GET</td>
-      <td>/api/todoitems/</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Ein neues Aufgabenelement erstellen</td>
-      <td>BEREITSTELLEN</td>
-      <td>/api/todoitems/</td>
-      <td>Eine JSON-Format <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>Aktualisieren einer Aufgabe</td>
-      <td>PUT</td>
-      <td>/api/todoitems/</td>
-      <td>Eine JSON-Format <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>Löschen einer Aufgabe</td>
-      <td>DELETE</td>
-      <td>/api/todoitems/{id}</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+|Vorgang|HTTP-Methode|Relativer URI|Parameter|
+|--- |--- |--- |--- |
+|Abrufen einer Liste von Aufgaben|GET|/api/todoitems/|
+|Ein neues Aufgabenelement erstellen|BEREITSTELLEN|/api/todoitems/|Eine JSON-Format TodoItem|
+|Aktualisieren einer Aufgabe|PUT|/api/todoitems/|Eine JSON-Format TodoItem|
+|Löschen einer Aufgabe|DELETE|/api/todoitems/{id}|
 
 Die Mehrheit der URIs umfassen die `TodoItem` ID im Pfad. So löschen Sie beispielsweise die `TodoItem` , deren ID ist `6bb8a868-dba1-4f1a-93b7-24ebce87e243`, der Client sendet eine DELETE-Anforderung zu `http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243`. Weitere Informationen zu das Datenmodell in der beispielanwendung verwendet, finden Sie unter [die Daten modellieren,](~/xamarin-forms/data-cloud/walkthrough.md).
 

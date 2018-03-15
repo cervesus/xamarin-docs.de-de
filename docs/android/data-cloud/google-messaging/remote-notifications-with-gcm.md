@@ -7,12 +7,12 @@ ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 64961e9c45c28ede4cc84f7b978da565be4426d9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 823fad163e837adab5490446c23ab2f492679114
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Remote-Benachrichtigungen mit Google Cloud Messaging
 
@@ -507,32 +507,12 @@ Bevor wir von GCM Nachrichten empfangen kann, muss die GCM-Listener in der Andro
 
 Sehen wir uns, was bewirkt, dass jede Einstellung in dieser XML-Code:
 
-<table>
-    <thead>
-        <tr>
-            <th>Einstellung</th>
-            <th>Beschreibung</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>com.google.android.gms.gcm.GcmReceiver</code></td>
-            <td>Deklariert, dass unsere app einen GCM-Empfänger implementiert, der erfasst und verarbeitet eingehende Nachrichten der Push-Benachrichtigung.</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.permission.SEND</code></td>
-            <td>Deklariert, dass nur GCM-Server Nachrichten direkt an die Anwendung senden können.</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.intent.RECEIVE</code></td> 
-            <td>Beabsichtigte Filter ankündigt, dass unsere app Broadcastmeldungen von GCM behandelt.</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.intent.REGISTRATION</code></td>
-            <td>Beabsichtigte Filter ankündigt, dass unsere app neue Registrierung Intents verarbeitet (Wir haben eine Instanz-ID-Listenerdienst implementiert).</td>
-        </tr>
-    </tbody>
-</table>
+|Einstellung|Beschreibung|
+|---|---|
+|`com.google.android.gms.gcm.GcmReceiver`|Deklariert, dass unsere app einen GCM-Empfänger implementiert, der erfasst und verarbeitet eingehende Nachrichten der Push-Benachrichtigung.|
+|`com.google.android.c2dm.permission.SEND`|Deklariert, dass nur GCM-Server Nachrichten direkt an die Anwendung senden können.|
+|`com.google.android.c2dm.intent.RECEIVE`|Beabsichtigte Filter ankündigt, dass unsere app Broadcastmeldungen von GCM behandelt.|
+|`com.google.android.c2dm.intent.REGISTRATION`|Beabsichtigte Filter ankündigt, dass unsere app neue Registrierung Intents verarbeitet (Wir haben eine Instanz-ID-Listenerdienst implementiert).|
 
 Sie können alternativ ergänzen `GcmListenerService` mit diesen Attributen, anstatt in XML; Angabe wir hier in **AndroidManifest.xml** , damit die Codebeispiele leichter zu befolgen sind. 
 

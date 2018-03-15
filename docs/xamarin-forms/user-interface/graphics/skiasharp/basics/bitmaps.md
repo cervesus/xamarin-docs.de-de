@@ -8,17 +8,17 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: facdcb6231b77714d6f5d0c7d496db12f75b1d08
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 921697657397662e92fb72c32e6efcc31745d7f1
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="bitmap-basics"></a>Bitmap-Grundlagen
 
 _Laden Sie Bitmaps aus verschiedenen Quellen und angezeigt werden können._
 
-Die Unterstützung von Bitmaps in SkiaSharp ist sehr umfangreich. Dieser Artikel umfasst nur die Grundlagen & #x 2014; Gewusst wie: Laden von Bitmaps und wie diese angezeigt:
+Die Unterstützung von Bitmaps in SkiaSharp ist sehr umfangreich. Dieser Artikel umfasst nur die Grundlagen &mdash; wie Bitmaps geladen und wie diese angezeigt:
 
 ![](bitmaps-images/bitmapssample.png "Die Anzeige von zwei bitmaps")
 
@@ -207,7 +207,7 @@ Die Bitmap gestreckt wird mit den Abmessungen des Rechtecks aus diesem Grund die
 
 [![](bitmaps-images/basicbitmaps-small.png "Dreifacher Screenshot von der Seite "grundlegende Bitmaps"")](bitmaps-images/basicbitmaps-large.png#lightbox "triple Screenshot der Seite grundlegende Bitmaps")
 
-Das dritte Bild & #x 2014; die können nur angezeigt, wenn Sie das Programm auszuführen, und Laden ein Foto von Ihrer eigenen Bildbibliothek & #x 2014; wird auch angezeigt, in ein Rechteck, aber des Rechtecks Position und Größe angepasst werden, um die Bitmap Seitenverhältnis beibehalten. In dieser Berechnung ist etwas komplizierter, da es erfordert die Berechnung von einem Skalierungsfaktor basierend auf der Größe der Bitmap und Zielrechtecks und zentrieren das Rechteck in diesem Bereich:
+Das dritte Bild &mdash; dem Sie nur anzeigen können, wenn Sie das Programm auszuführen, und Laden ein Foto aus Ihren eigenen Bildbibliothek &mdash; wird ebenfalls innerhalb eines Rechtecks, aber des Rechtecks angezeigt Position und Größe angepasst werden, um die Bitmap Seitenverhältnis beibehalten. In dieser Berechnung ist etwas komplizierter, da es erfordert die Berechnung von einem Skalierungsfaktor basierend auf der Größe der Bitmap und Zielrechtecks und zentrieren das Rechteck in diesem Bereich:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

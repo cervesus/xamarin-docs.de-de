@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 6625edc1f661e5f9769de82ec48367e9f900e567
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ab44cb7a065164bb5b7501ac63bd0321b612b7ca
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="understanding-the-sample"></a>Grundlegendes zur im Beispiel
 
@@ -38,47 +38,19 @@ Jedes Thema in diesem Handbuch enthält einen Link zum Herunterladen einer *unte
 
 Die PCL-Projekt für jede beispielanwendung besteht aus drei Hauptordner:
 
-<table>
-    <thead>
-        <tr><td><strong>Ordner</strong></td><td><strong>Purpose</strong></td></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>Data</strong></td>
-                        <td>Enthält die Klassen und Schnittstellen, die zum Verwalten von Datenelementen und mit dem Webdienst kommunizieren. Mindestens, dazu gehören die <code>TodoItemManager</code> -Klasse, die über eine Eigenschaft in offen gelegt werden die <code>App</code> Klasse um Webdienstvorgänge aufzurufen.</td>
-        </tr>
-        <tr>
-            <td><strong>Modelle</strong></td>
-                        <td>Enthält die Klassen des Daten-Modell für die Anwendung. Mindestens, dazu gehören die <code>TodoItem</code> -Klasse, die ein einzelnes Element der Daten, die von der Anwendung verwendeten modelliert. Der Ordner kann auch alle zusätzlichen Klassen verwendet, um Benutzer Modelldaten enthalten.</td>
-        </tr>
-        <tr>
-            <td><strong>Ansichten</strong></td>
-                        <td>Enthält die Seiten für die Anwendung. Dies umfasst normalerweise die <code>TodoListPage</code> und <code>TodoItemPage</code> Klassen und alle zusätzlichen Klassen zu Authentifizierungszwecken verwendet.</td>
-                </tr>
-    </tbody>
-</table>
+|Ordner|Zweck|
+|--- |--- |
+|Daten|Enthält die Klassen und Schnittstellen, die zum Verwalten von Datenelementen und mit dem Webdienst kommunizieren. Mindestens, dazu gehören die `TodoItemManager` -Klasse, die über eine Eigenschaft in offen gelegt werden die `App` Klasse um Webdienstvorgänge aufzurufen.|
+|Modelle|Enthält die Klassen des Daten-Modell für die Anwendung. Mindestens, dazu gehören die `TodoItem` -Klasse, die ein einzelnes Element der Daten, die von der Anwendung verwendeten modelliert. Der Ordner kann auch alle zusätzlichen Klassen verwendet, um Benutzer Modelldaten enthalten.|
+|Ansichten|Enthält die Seiten für die Anwendung. Dies umfasst normalerweise die `TodoListPage` und `TodoItemPage` Klassen und alle zusätzlichen Klassen zu Authentifizierungszwecken verwendet.|
 
 Die PCL-Projekt für jede Anwendung umfasst auch eine Reihe wichtiger Dateien:
 
-<table>
-    <thead>
-      <tr><td><strong>Datei</strong></td><td><strong>Purpose</strong></td></tr>
-    <thead>
-    <tbody>
-        <tr>
-            <td><strong>Constants.cs</strong></td>
-            <td>Die <code>Constants</code> -Klasse, der alle Konstanten, die von der Anwendung verwendet werden, um mit dem Webdienst kommunizieren angibt. Diese Konstanten erfordern, dass für einen Anbieter aktualisieren für den Zugriff auf Ihren persönlichen Back-End-Dienst erstellt werden.
-        </tr>
-        <tr>
-            <td><strong>ITextToSpeech.cs</strong></td>
-            <td>Die <code>ITextToSpeech</code> -Schnittstelle, das angibt, dass die <code>Speak</code> Methode muss von jeder beliebigen implementierenden Klasse angegeben werden.</td>
-        </tr>
-        <tr>
-          <td><strong>Todo.cs</strong></td>
-          <td>Die <code>App</code> Klasse, die verantwortlich für die Instanziierung der ersten Seite, die von der Anwendung auf jeder Plattform angezeigt werden und die <code>TodoItemManager</code> -Klasse, die verwendet wird, um Webdienstvorgänge aufzurufen.</td>
-        </tr>
-    </tbody>
-</table>
+|Datei|Zweck|
+|--- |--- |
+|Constants.cs|Die `Constants` -Klasse, der alle Konstanten, die von der Anwendung verwendet werden, um mit dem Webdienst kommunizieren angibt. Diese Konstanten erfordern, dass für einen Anbieter aktualisieren für den Zugriff auf Ihren persönlichen Back-End-Dienst erstellt werden.|
+|ITextToSpeech.cs|Die `ITextToSpeech` -Schnittstelle, das angibt, dass die `Speak` Methode muss von jeder beliebigen implementierenden Klasse angegeben werden.|
+|Todo.cs|Die `App` Klasse, die verantwortlich für die Instanziierung der ersten Seite, die von der Anwendung auf jeder Plattform angezeigt werden und die `TodoItemManager` -Klasse, die verwendet wird, um Webdienstvorgänge aufzurufen.|
 
 ### <a name="viewing-pages"></a>Anzeigen von Seiten
 

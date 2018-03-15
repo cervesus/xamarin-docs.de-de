@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f1ce6b62ef13d24148048253700d7b3bff805fad
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6d2e600ccc85f6e72e7f913e7ffb501bf62ff69a
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="path-basics"></a>Pfad-Grundlagen
 
@@ -115,7 +115,7 @@ Wie Sie sehen können, die erste Kontur ist offensichtlich eine Reihe von drei m
 - `AddPath` So fügen Sie einen anderen Pfad auf den aktuellen Pfad hinzu
 - [`AddPathReverse`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddPathReverse/p/SkiaSharp.SKPath/) So fügen Sie einen anderen Pfad in umgekehrter Reihenfolge hinzu
 
-Beachten Sie, dass ein `SKPath` Objekt definiert wird, nur eine Geometrie & #x 2014; eine Reihe von Punkten und Verbindungen. Nur, wenn ein `SKPath` mit kombiniert eine `SKPaint` Objekt ist der Pfad, der mit einer bestimmten Farbe, die Strichbreite usw. gerendert. Außerdem Beachten Sie, dass die `SKPaint` -Objekt übergeben, um die `DrawPath` Methode Merkmale des gesamten Pfads definiert. Wenn Sie etwas, erfordern verschiedene Farben zeichnen möchten, müssen Sie einen separaten Pfad für jede Farbe verwenden.
+Beachten Sie, dass ein `SKPath` Objekt definiert, nur eine Geometrie &mdash; eine Reihe von Punkten und Verbindungen. Nur, wenn ein `SKPath` mit kombiniert eine `SKPaint` Objekt ist der Pfad, der mit einer bestimmten Farbe, die Strichbreite usw. gerendert. Außerdem Beachten Sie, dass die `SKPaint` -Objekt übergeben, um die `DrawPath` Methode Merkmale des gesamten Pfads definiert. Wenn Sie etwas, erfordern verschiedene Farben zeichnen möchten, müssen Sie einen separaten Pfad für jede Farbe verwenden.
 
 Ebenso wie die Darstellung der Start- und Ende einer Zeile durch eine Obergrenze Strich definiert ist, wird die Darstellung der Verbindung zwischen zwei Zeilen definiert, indem eine *Strich Join*. Geben Sie dies durch Festlegen der [ `StrokeJoin` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeJoin/) Eigenschaft `SKPaint` an ein Mitglied der [ `SKStrokeJoin` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeJoin/) Enumeration:
 

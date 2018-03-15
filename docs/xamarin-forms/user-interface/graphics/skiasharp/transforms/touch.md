@@ -8,11 +8,11 @@ ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 16e9423c84e591e15a703b4d5bb204a8b642bb40
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 90be80d42c20ca7509037b5f59b34cc1bddde6de
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="touch-manipulations"></a>Tippen Sie auf Manipulationen
 
@@ -193,7 +193,7 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-Wenn die `HitTest` -Methode zurückkehrt `true` & #x 2014; bedeutet, dass ein Finger den Bildschirm innerhalb des Bereichs, der von der Bitmap & #x 2014; belegt berührt werden hat, und klicken Sie dann die Touch ID wurde die `TouchIds` Auflistung. Diese ID stellt die Reihenfolge der Berührungsereignisse für diese Finger dar, bis Sie den Finger vom Bildschirm hebt. Wenn mehrere Finger die Bitmap, tippen Sie dann die `touchIds` Auflistung enthält eine Touch ID für jeden Finger.
+Wenn die `HitTest` -Methode zurückkehrt `true` &mdash; Dies bedeutet, dass ein Finger den Bildschirm innerhalb des Bereichs, der von der Bitmap belegt berührt hat &mdash; die Touch ID hinzugefügt wird die `TouchIds` Auflistung. Diese ID stellt die Reihenfolge der Berührungsereignisse für diese Finger dar, bis Sie den Finger vom Bildschirm hebt. Wenn mehrere Finger die Bitmap, tippen Sie dann die `touchIds` Auflistung enthält eine Touch ID für jeden Finger.
 
 Die `TouchAction` Handler ruft auch die `ProcessTouchEvent` in Klasse `TouchManipulationBitmap`. Dies ist, wenn einige (aber nicht alle) von der tatsächlichen Fingereingabe Verarbeitung erfolgt.
 
@@ -404,7 +404,7 @@ class TouchManipulationManager
 
 Wenn Drehung ausgewählt wurde, behandeln Sie zunächst die einem Finger und zwei-Finger textmanipulationsmethoden die Drehung. Wenn Drehung erkannt wird, wird die rotationskomponente effektiv entfernt. Was bleibt, wird als Schwenken und Skalierung interpretiert.
 
-So sieht die `OneFingerManipulate` Methode. Wenn ein Finger Rotation nicht aktiviert wurde, ist die Logik einfache & #x 2014. einfach verwendet die vorherigen Punkt und den neuen Punkt So erstellen Sie einen Vektor mit dem Namen `delta` , entspricht genau Übersetzung. Mit einem Finger Drehung aktiviert verwendet die Methode Winkel aus der Dreh-und Angelpunkt (in der Mitte der Bitmap) mit dem vorherigen Punkt und den neuen Punkt erstellt eine Rotationsmatrix.
+So sieht die `OneFingerManipulate` Methode. Wenn ein Finger Rotation nicht aktiviert wurde, und klicken Sie dann die Logik einfach ist &mdash; einfach verwendet die vorherigen Punkt und den neuen Punkt So erstellen Sie einen Vektor mit dem Namen `delta` , entspricht genau Übersetzung. Mit einem Finger Drehung aktiviert verwendet die Methode Winkel aus der Dreh-und Angelpunkt (in der Mitte der Bitmap) mit dem vorherigen Punkt und den neuen Punkt erstellt eine Rotationsmatrix.
 
 ```csharp
 class TouchManipulationManager

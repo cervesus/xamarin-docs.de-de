@@ -7,11 +7,11 @@ ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: afb8e2fff58583dc8648c55839649c96cb68b6ba
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a40b4f00fd2a0dd3f61c4882a2ef25b8eb68a3a5
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-21-transforms"></a>Zusammenfassung der Kapitel 21. Transformiert
 
@@ -19,9 +19,9 @@ Eine Xamarin.Forms-Ansicht angezeigt wird, auf dem Bildschirm in einer Position 
 
 Xamarin.Forms unterstützt drei grundlegende Arten von Transformationen:
 
-- *Übersetzung* & #x 2014; ein Element verschieben, horizontal oder vertikal
-- *Skalierung* & #x 2014; ändern Sie die Größe eines Elements
-- *Drehung* & #x 2014; aktivieren Sie ein Element aus, um einen Punkt oder einer Achse
+- *Übersetzung* &mdash; ein Element verschieben, horizontal oder vertikal
+- *Skalierung* &mdash; Ändern der Größe eines Elements
+- *Drehung* &mdash; aktivieren Sie ein Element aus, um einen Punkt oder einer Achse
 
 Die Skalierung ist Xamarin.Forms kugelstrahler. Er wirkt sich auf die Breite und Höhe gleichmäßig. Rotation wird sowohl auf der zweidimensionale Oberfläche des Bildschirms und in einem 3D-Bereich unterstützt. Es gibt keine Transformation Zeitversatz (oder schieren) und keine generalisierte Matrixtransformation.
 

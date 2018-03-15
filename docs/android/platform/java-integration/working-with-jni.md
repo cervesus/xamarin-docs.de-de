@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: e9a6f44637b77bf53c3cab00ac5051e6a2f27386
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f14d456cba66142c51e0755cdfd3c6795bd1cf73
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="working-with-jni"></a>Arbeiten mit JNI
 
@@ -154,7 +154,7 @@ Beachten Sie, dass die Basisklasse wird beibehalten, und systemeigene Methodende
 
 In der Regel generiert Xamarin.Android automatisch den Java-Code, der die Inhaltsfehler ausmacht. Diese Generierung basiert auf den Klassen- und Namen, wenn eine Klasse aus einer Javaklasse abgeleitet und vorhandene Java-Methoden überschreibt. Allerdings ist die codegenerierung in einigen Szenarien nicht ausreichend, wie im folgenden erläutert:
 
--   Android-Unterstützung Aktion benennt Layout-XML-Attribute, z. B. die [Android: OnClick](https://developer.xamarin.com/api/member/Android.Views.View+IOnClickListener.OnClick/p/Android.Views.View/) XML-Attribut. Wenn es angegeben wird, versuchen die vergrößerte Ansicht Instanz zum Nachschlagen der Java-Methode.
+-   Android unterstützt Aktionsnamen im Layout-XML-Attribute, z. B. die [Android: OnClick](https://developer.xamarin.com/api/member/Android.Views.View+IOnClickListener.OnClick/p/Android.Views.View/) XML-Attribut. Wenn es angegeben wird, versucht die vergrößerte Ansicht Instanz zum Nachschlagen der Java-Methode.
 
 -   Die [java.io.Serializable](http://developer.android.com/reference/java/io/Serializable.html) Schnittstelle erfordert `readObject` und `writeObject` Methoden. Da es keine Member dieser Schnittstelle sind, macht unsere entsprechende verwaltete Implementierung dieser Methoden zum Java-Code nicht verfügbar.
 

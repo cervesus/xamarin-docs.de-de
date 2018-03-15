@@ -7,11 +7,11 @@ ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 3390a298cd8d9967f0aea2bd9fb5a90830714ba5
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: db950915decd2bba216c7dcd6031797037a7c8e0
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>Zusammenfassung der Kapitel 24. Seitennavigation
 
@@ -118,7 +118,7 @@ Die [ **BuildAPage** ](https://github.com/xamarin/xamarin-forms-book-samples/tre
 
 ## <a name="patterns-of-data-transfer"></a>Muster für die Datenübertragung
 
-Häufig ist es erforderlich, um Daten zwischen Seiten & #x 2014 freizugeben. Übertragen von Daten zu einer Seite Navigation und für eine Seite, um Daten zur Seite zurückzukehren, die sie aufgerufen hat. Es gibt mehrere Verfahren dazu.
+Es ist häufig erforderlich, um Daten zwischen Seiten freizugeben &mdash; zum Übertragen von Daten zu einer Seite Navigation und für eine Seite, um Daten zur Seite zurückzukehren, die sie aufgerufen hat. Es gibt mehrere Verfahren dazu.
 
 ### <a name="constructor-arguments"></a>Konstruktorargumente
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 7c38ebb6b482f4097a4977accecc4a230d3f3ed3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e8e56afbdf0b68ecc49a89b08b2e67a9715f2aef
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="android-speech"></a>Android Speech
 
@@ -128,11 +128,11 @@ Zum größten Teil, Android-Geräte gibt, hat den Standardwert Google TTS-Dienst
 
 ### <a name="step-1---instantiating-texttospeech"></a>Step 1 - Instantiating TextToSpeech
 
-`TextToSpeech` bis zu 3 Parameter annehmen können, die ersten beiden sind erforderlich, mit dem dritten wird optional (`AppContext`, `IOnInitListener`, `engine`). Der Listener wird verwendet, um an den Dienst und der Test für Fehler mit dem Modul wird eine beliebige Anzahl von verfügbaren Android Text-zu-Sprache-Module auf ein Minimum zu binden, das Gerät wird nicht Googles-Modul über.
+`TextToSpeech` bis zu 3 Parameter annehmen können, die ersten beiden sind erforderlich, mit dem dritten wird optional (`AppContext`, `IOnInitListener`, `engine`). Der Listener wird verwendet, um an den Dienst und der Test für Fehler mit dem Modul wird eine beliebige Anzahl von verfügbaren Android Text-zu-Sprache-Module zu binden. Zumindest müssen das Gerät Googles-Modul.
 
 ### <a name="step-2---finding-the-languages-available"></a>Schritt 2: Suchen nach verfügbaren Sprachen
 
-Die `Java.Util.Locale` -Namespace enthält eine nützliche Methode namens `GetAvailableLocales()`. Diese Liste mit durch das Sprachmodul unterstützten Sprachen kann dann für die installierten Sprachen getestet werden soll.
+Die `Java.Util.Locale` Klasse enthält eine nützliche Methode namens `GetAvailableLocales()`. Diese Liste mit durch das Sprachmodul unterstützten Sprachen kann dann für die installierten Sprachen getestet werden soll.
 
 Es ist einem minimalen Aufwand verbunden, um die Liste der Sprachen "verstanden" zu generieren. Es wird immer eine Standardsprache (die Sprache der Benutzer festlegen, wenn sie ihr Gerät zuerst eingerichtet), werden dies der Fall ist in diesem Beispiel die `List<string>` wurde von "Default" als erster Parameter, der Rest der Liste wird je nach Ergebnis ausgefüllt werden die `textToSpeech.IsLanguageAvailable(locale)`.
 
@@ -186,7 +186,7 @@ protected override void OnActivityResult(int req, Result res, Intent data)
 
 ### <a name="step-5---the-ioninitlistener"></a>Schritt 5 – die IOnInitListener
 
-Für eine Aktivität zum Konvertieren der Text-zu-Sprache, die Schnittstellenmethode können `OnInit` erstellt werden muss (Dies ist der zweite Parameter für die Instanziierung des angegebenen der `TextToSpeech` Klasse). Den Listener initialisiert und überprüft das Ergebnis.
+Für eine Aktivität zum Konvertieren der Text-zu-Sprache, die Schnittstellenmethode können `OnInit` implementiert werden muss (Dies ist der zweite Parameter für die Instanziierung des angegebenen der `TextToSpeech` Klasse). Den Listener initialisiert und überprüft das Ergebnis.
 
 Der Listener für beide testen sollten `OperationResult.Success` und `OperationResult.Failure` mindestens.
 Das folgende Beispiel zeigt nur diese:

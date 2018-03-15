@@ -6,12 +6,12 @@ ms.assetid: AE5A864E-192D-475E-C731-99249C2E7D9E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 7ebbf2a9215c8472ae2f286728cb2f819e8331cb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 230c26c2537987f7ca09e28e05ec96186e5f7882
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="alternate-resources"></a>Alternative Ressourcen
 
@@ -44,7 +44,7 @@ Die folgenden Regeln gelten, wenn Sie einen Ressourcentyp Qualifizierer hinzufü
 Die möglichen Qualifizierer sind zu Referenzzwecken im folgenden aufgeführt:
 
 - **MCC und MNC** &ndash; der [mobile Ländercode](http://en.wikipedia.org/wiki/List_of_mobile_country_codes) (MCC) und optional die [Mobilfunknetz Code](http://en.wikipedia.org/wiki/Mobile_Network_Code) (MNC). Die SIM-Karte gebe den MCC, während das Netzwerk, mit dem das Gerät verbunden ist die MNC bereitstellt. Obwohl es möglich, Ziel Gebietsschemas, verwenden die mobile Landeskennzahl ist, ist die empfohlene Vorgehensweise verwenden Sie den unten angegebenen sprachqualifizierer. Um beispielsweise Zielressourcen in Deutschland, wäre der Qualifizierer `mcc262`. Um Zielressourcen für T-Mobile-Geräte in den USA der Qualifizierer ist `mcc310-mnc026`.
-  Eine vollständige Liste der mobilen Landeskennzahlen und Mobilfunknetz Codes finden Sie unter <http://mcclist.com/>.
+  Eine vollständige Liste der mobilen Landeskennzahlen und Mobilfunknetz Codes finden Sie unter <http://mcc-mnc.com/>.
 
 - **Sprache** &ndash; die zweibuchstabige [Code nach ISO 639-1-Sprache](http://en.wikipedia.org/wiki/ISO_639-1) und optional gefolgt von der zweibuchstabige [ISO 3166 Alpha 2 Landes-/Regionscode](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). 
   Wenn beide Qualifizierer angegeben werden, sind diese getrennt durch ein `-r`. Um z. B. auf Ziel französischsprachige Gebietsschemas wird der Qualifizierer der `fr` verwendet wird. Kanadischen Französisch Gebietsschemas als Ziel der `fr-rCA` verwendet werden. Eine vollständige Liste von Sprachcodes und Landes-/ Regionscodes, finden Sie unter [Codes für die Darstellung der Namen von Sprachen](http://www.loc.gov/standards/iso639-2/php/English_list.php) und [Ländernamen und Codeelemente](http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements.htm).

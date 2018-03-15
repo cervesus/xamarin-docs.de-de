@@ -8,11 +8,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 2b48667d90bf994deca5c41080e002974b0ded91
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dcfcf43c89f26b4e721c9752b9cbad1f4a30cfc2
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>Drei Typen von Bézier-Kurven
 
@@ -20,7 +20,7 @@ _Durchsuchen Sie mit SkiaSharp um quadratische, konischen und kubische Bézier-K
 
 Bézier-Kurve wird nach Pierre Bézier (1910 – 1999), einer französischen Techniker den Automobilhersteller Renault, mit dem Namen, die die Kurve für den Entwurf computergestützten Car-Texte verwendet.
 
-Bézier-Kurven wird sich gut für interaktives designerlebnis bekannt sind: sie sind gut erwies & #x 2014; Das heißt, keine Singularitäten, die dazu führen, dass die Kurve unendlich oder unhandlich werden & #x 2014 vorhanden sind; und sie sind im Allgemeinen ansprechend. Zeichenumrisse von computerbasierte Schriftarten sind in der Regel mit Bézier-Kurven definiert:
+Bézier-Kurven wird sich gut für interaktives designerlebnis bekannt sind: sie sind gut konzipierte &mdash; in anderen Worten: Es stehen nicht Singularitäten, die dazu führen, dass die Kurve unendlich oder unhandlich werden &mdash; und sind im Allgemeinen ansprechend . Zeichenumrisse von computerbasierte Schriftarten sind in der Regel mit Bézier-Kurven definiert:
 
 ![](beziers-images/beziersample.png "Eine Beispiel-Bézier-Kurve")
 
@@ -411,7 +411,7 @@ Allerdings ist die Form des eine quadratische Bézier-Kurve nicht elliptischen, 
 
 ## <a name="the-conic-bzier-curve"></a>Die konischen Bézier-Kurve
 
-Die Bézier-Kurve konischen & #x 2014; auch bekannt als rational quadratische Bézier-Kurve & #x 2014; ist eine relativ neue Erweiterung für die Familie der Bézier-Kurven. Wie die quadratische Bézier-Kurve umfasst rational quadratische Bézier-Kurve an einem Startpunkt, einen Endpunkt und Steuerungspunkts für das ein. Rational quadratische Bézier-Kurve erfordert jedoch auch eine *Gewichtung* Wert. Sie wird aufgerufen, eine *rational* quadratische, da die parametrischen Formeln Verhältnissen beinhalten.
+Die konischen Bézier-Kurve &mdash; auch bekannt als die rational quadratische Bézier-Kurve &mdash; ist eine relativ neue Erweiterung für die Familie der Bézier-Kurven. Wie die quadratische Bézier-Kurve umfasst rational quadratische Bézier-Kurve an einem Startpunkt, einen Endpunkt und Steuerungspunkts für das ein. Rational quadratische Bézier-Kurve erfordert jedoch auch eine *Gewichtung* Wert. Sie wird aufgerufen, eine *rational* quadratische, da die parametrischen Formeln Verhältnissen beinhalten.
 
 Die parametrischen Formeln für X und Y Verhältnissen sind, die den gleichen Nenner gemeinsam nutzen. So sieht die Gleichung für den Nenner für *t* im Bereich von 0 auf 1 und einen Gewichtungswert von *w*:
 
@@ -425,7 +425,7 @@ x(t) = ((1 – t) ²x₀ + 2wt (1 – t) X₁ + t²x₂)) ÷ d(t)
 
 y(t) = ((1 – t) ²y₀ + 2wt (1 – t) Y₁ + t²y₂)) ÷ d(t)
 
-Rational quadratische Bézier-Kurven heißen auch *Conics* , da diese Segmente eines Conic Abschnitt & #x 2014; genau darstellen können Hyperbeln, Parabeln und Ellipsen, Kreisen.
+Rational quadratische Bézier-Kurven heißen auch *Conics* , da sie für jeden Bereich Conic Segmente genau darstellen können &mdash; Hyperbeln, Parabeln und Ellipsen, Kreisen.
 
 Um einen Pfad eine vernünftige quadratische Bézier-Kurve hinzugefügt haben, verwenden die [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) Methode oder die [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) Überladung mit separaten `x` und `y` Koordinaten:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 861d47d001c10c14a0294536c6122cafb33a93ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e930004a91133f391f68221473f212b7caaf1b07
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="3d-coordinates-in-monogame"></a>3D Koordinaten im MonoGame
 
@@ -47,7 +47,7 @@ In dieser exemplarischen Vorgehensweise konzentriert sich auf Objekte im 3D-Raum
 
 Bevor wir beginnen, unsere Roboter um verschieben, erstellen wir eine `Robot` Klasse, um die Logik zum Zeichnen und Bewegung enthalten. Spieleentwicklern finden Sie in diese Kapselung der Logik und die Daten als ein *Entität*.
 
-Fügen Sie eine neue leere Klassendatei, die **MonoGame3D** Portable Klassenbibliothek (nicht die plattformspezifischen ModelAndVerts.Android). Benennen Sie It ** Roboter **, und klicken Sie auf **neu**:
+Fügen Sie eine neue leere Klassendatei, die **MonoGame3D** Portable Klassenbibliothek (nicht die plattformspezifischen ModelAndVerts.Android). Nennen Sie sie **Roboter** , und klicken Sie auf **neu**:
 
 ![](part3-images/image3.png "Nennen Sie sie Roboter, und klicken Sie auf neu")
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 650f8dceebb088b3601c21c1f5373fc4ae8c76dc
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c309fb6936296dc181e499c91770ab8891121e9c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>Hinzufügen von Intelligenz mit Cognitive-Diensten
 
@@ -52,51 +52,20 @@ Die `RateAppPage` ermöglicht es dem Benutzer ein Foto des ihre Smiley, werden d
 
 Das Projekt "Portable Klassenbibliothek (PCL)" für die beispielanwendung besteht aus fünf Hauptordner:
 
-<table>
-    <thead>
-        <tr><td><strong>Ordner</strong></td><td><strong>Purpose</strong></td></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>Modelle</strong></td>
-            <td>Enthält die Klassen des Daten-Modell für die Anwendung. Dies schließt die <code>TodoItem</code> -Klasse, die ein einzelnes Element der Daten, die von der Anwendung verwendeten modelliert. Der Ordner enthält auch Klassen, mit denen Modell JSON-Antworten von anderen Microsoft Cognitive-Dienst-APIs zurückgegeben.</td>
-        </tr>
-        <tr>
-            <td><strong>Repositorys</strong></td>
-                        <td>Enthält die <code>ITodoItemRepository</code> Schnittstelle und <code>TodoItemRepository</code> Klasse, die verwendet werden, um Datenbankvorgänge durchzuführen.</td>
-        </tr>
-        <tr>
-            <td><strong>Dienste</strong></td>
-                        <td>Enthält die Schnittstellen und Klassen, mit denen verschiedene Microsoft Cognitive Dienst-APIs, mit Schnittstellen zuzugreifen, mit denen, die <code>DependencyService</code> Klasse, um die Klassen zu suchen, die in Projekten für die Plattform die Schnittstellen implementieren.</td>
-        </tr>
-        <tr>
-            <td><strong>odatautils</strong></td>
-            <td>Enthält die <code>Timer</code> -Klasse, die von verwendet wird, die <code>AuthenticationService</code> Klasse, um ein JWT-Zugriffstoken Minuten 9 erneuern.</td>
-        </tr>
-        <tr>
-            <td><strong>Ansichten</strong></td>
-            <td>Enthält die Seiten für die Anwendung.</td>
-        </tr>
-    </tbody>
-</table>
+|Ordner|Zweck|
+|--- |--- |
+|Modelle|Enthält die Klassen des Daten-Modell für die Anwendung. Dies schließt die `TodoItem` -Klasse, die ein einzelnes Element der Daten, die von der Anwendung verwendeten modelliert. Der Ordner enthält auch Klassen, mit denen Modell JSON-Antworten von anderen Microsoft Cognitive-Dienst-APIs zurückgegeben.|
+|Repositorys|Enthält die `ITodoItemRepository` Schnittstelle und `TodoItemRepository` Klasse, die verwendet werden, um Datenbankvorgänge durchzuführen.|
+|Dienste|Enthält die Schnittstellen und Klassen, mit denen verschiedene Microsoft Cognitive Dienst-APIs, mit Schnittstellen zuzugreifen, mit denen, die `DependencyService` Klasse, um die Klassen zu suchen, die in Projekten für die Plattform die Schnittstellen implementieren.|
+|odatautils|Enthält die `Timer` -Klasse, die von verwendet wird, die `AuthenticationService` Klasse, um ein JWT-Zugriffstoken Minuten 9 erneuern.|
+|Ansichten|Enthält die Seiten für die Anwendung.|
 
 Die PCL-Projekt enthält außerdem einige wichtigen Dateien:
 
-<table>
-    <thead>
-      <tr><td><strong>Datei</strong></td><td><strong>Purpose</strong></td></tr>
-    <thead>
-    <tbody>
-        <tr>
-            <td><strong>Constants.cs</strong></td>
-            <td>Die <code>Constants</code> -Klasse, die die API-Schlüssel und die Endpunkte für die Microsoft Cognitive-Dienst-APIs gibt an, die aufgerufen werden. Die API-Schlüssel Konstanten müssen für den Zugriff auf die verschiedenen Cognitive-APIs aktualisiert werden.
-        </tr>
-        <tr>
-          <td><strong>App.xaml.cs</strong></td>
-          <td>Die <code>App</code> Klasse dient zum Instanziieren der ersten Seite, die von der Anwendung auf jeder Plattform angezeigt werden und die <code>TodoManager</code> -Klasse, die zum Aufrufen von Datenbankvorgängen verwendet wird.</td>
-        </tr>
-    </tbody>
-</table>
+|Datei|Zweck|
+|--- |--- |
+|Constants.cs|Die `Constants` -Klasse, die die API-Schlüssel und die Endpunkte für die Microsoft Cognitive-Dienst-APIs gibt an, die aufgerufen werden. Die API-Schlüssel Konstanten müssen für den Zugriff auf die verschiedenen Cognitive-APIs aktualisiert werden.|
+|App.xaml.cs|Die `App` Klasse dient zum Instanziieren der ersten Seite, die von der Anwendung auf jeder Plattform angezeigt werden und die `TodoManager` -Klasse, die zum Aufrufen von Datenbankvorgängen verwendet wird.|
 
 ### <a name="nuget-packages"></a>NuGet-Pakete
 

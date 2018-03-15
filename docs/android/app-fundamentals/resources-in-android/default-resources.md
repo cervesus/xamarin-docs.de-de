@@ -6,12 +6,12 @@ ms.assetid: 762572F0-173A-D994-0510-8F36BEF3D487
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 3d9c747cdf8e43f33b9310ac1156550066b400eb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 5cf5bd38612f0f763e30456b0dd42198a3c0ff06
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="default-resources"></a>Standardressourcen
 
@@ -31,7 +31,7 @@ Eine vollständige Liste der Ressourcentypen finden Sie weiter unten:
 -  **Anim** &ndash; XML-Dateien, die beschreiben, *Tween* Animationen. Tween Animationen handelt es sich um eine Reihe von Animation Anweisungen zum Ausführen von Transformationen auf dem Inhalt einer Drehung anzeigen, Objekt oder beispielsweise ein Bild oder wächst die Größe des Texts. Tween Animationen sind beschränkt, nur die Objekte anzuzeigen.
 
 -  **Farbe** &ndash; XML-Dateien, die eine Liste der Status von Farben zu beschreiben. Um Farbe Zustand Listen zu verstehen, sollten Sie ein UI-Widget, z. B. eine Schaltfläche aus.
-   Erleichtern können verschiedenen Zustände, wie z. B. gedrückt wird oder deaktiviert haben, und die Schaltfläche ändern die Farbe bei jeder Änderung im Zustand. Die Liste wird in eine Status-Liste angegeben.
+   Möglicherweise verfügt es über verschiedene Zustände, wie z. B. gedrückt wird oder deaktiviert, und die Schaltfläche ändern die Farbe bei jeder Änderung im Zustand. Die Liste wird in eine Status-Liste angegeben.
 
 -  **zeichenbaren** &ndash; zeichenbare Ressourcen sind eine allgemeine Konzept für die Grafiken, die können werden in die Anwendung kompiliert und dann auf die API-Aufrufe zugreift oder verweist auf andere XML-Ressourcen.
    Einige Beispiele für Drawables sind Bitmap-Dateien (PNG, GIF, JPG), spezielle in der Größe veränderbaren Bitmaps genannt [neun Patches](https://developer.android.com/guide/topics/graphics/2d-graphics.html#nine-patch), Status Listet allgemeine Formen, die in XML usw. definiert.
