@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/22/2017
-ms.openlocfilehash: 9b801af77eceaf94b0ede98b6af51d55d6029fe6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ddc16dc1faaf623098aad5bca340c15f943223ba
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Player Live-Setup
 
@@ -68,7 +68,7 @@ Live-Player Xamarin benötigen Sie Folgendes:
 
   Ist kein Gerät zugeordnet ist ein QR-Code wird mit Anweisungen angezeigt. ein Gerät gekoppelt werden:
 
-    ![Koppeln Sie einen Gerätefenster](install-images/manage-empty-windows.png)
+  ![Koppeln Sie einen Gerätefenster](install-images/manage-empty-windows.png)
 
   Wenn das Gerät nicht erreichbar ist, für die Paarung, ggf. ein Fehler angezeigt.
 
@@ -111,11 +111,11 @@ Live-Player Xamarin benötigen Sie Folgendes:
 
   Wenn kein Gerät verbunden ist, wird mit Anweisungen zum Koppeln Sie ein Gerät ein QR-Code angezeigt:
 
-    ![Koppeln Sie einen Gerätefenster](install-images/manage-empty.png)
+  ![Koppeln Sie einen Gerätefenster](install-images/manage-empty.png)
 
   Wenn das Gerät nicht erreichbar ist, für die Paarung, wird ein Fehler angezeigt:
 
-    ![Keine Verbindung mit Gerät-Fehlermeldung](install-images/error-cannot-connect.png)
+  ![Keine Verbindung mit Gerät-Fehlermeldung](install-images/error-cannot-connect.png)
 
 
 -----

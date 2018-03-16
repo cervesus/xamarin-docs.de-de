@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/12/2017
-ms.openlocfilehash: 670ec465843bbe819b41a53fff71b01ab78b0059
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f09aae1445cfcf9f4225af3de37b65ebb5a1b6b2
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>Bereitstellen von Abwärtskompatibilität Kompatibilität mit dem Paket für Android-Unterstützung
 
@@ -25,13 +25,13 @@ Die Nützlichkeit der Fragmente wäre Abwärtskompatibilität Kompatibilität mi
 
 Das Paket für Android-Unterstützung wird an eine Anwendung Xamarin.Android nicht automatisch hinzugefügt. Xamarin bietet die [NuGet-Paket für die Bibliothek für Android unterstützt v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) zu vereinfachen, die Unterstützungsbibliotheken einer Xamarin.Android-Anwendung hinzufügen. Supportpakete in Ihrer Anwendung enthalten Xamarin.Android enthalten die [Bibliothek für Android unterstützt v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) Komponente in Ihr Projekt Xamarin.Android, wie im folgenden Screenshot gezeigt: 
 
-[![Screenshot der Android-Unterstützungsbibliothek v4-Paket zum Projekt hinzugefügt wird](providing-backwards-compatibility-images/02.png)](providing-backwards-compatibility-images/02.png#lightbox)
+[![Screenshot der Android-Unterstützungsbibliothek v4-Paket zum Projekt hinzugefügt wird](providing-backwards-compatibility-images/02-sml.png)](providing-backwards-compatibility-images/02.png#lightbox)
 
 Nachdem diese Schritte durchgeführt wurden, wird es möglich, Fragmente in früheren Versionen von Android verwenden. Das Fragment-APIs funktioniert die gleiche jetzt bei diesen älteren Versionen, mit folgenden Ausnahmen: 
 
 -   **Ändern Sie die Mindestversion von Android** &ndash; die Anwendung muss nicht mehr Android 3.0 oder höher abzielen, wie unten dargestellt: 
 
-    [![Der Minimum Android Screenshot Zielsatz wird unter den Anwendungseigenschaften](providing-backwards-compatibility-images/03.png)](providing-backwards-compatibility-images/03.png#lightbox)
+    [![Der Minimum Android Screenshot Zielsatz wird unter Android-Manifest](providing-backwards-compatibility-images/03-sml.png)](providing-backwards-compatibility-images/03.png#lightbox)
 
 -   **Erweitern Sie FragmentActivity** &ndash; der Aktivitäten, die Fragmente hosten müssen erben nun von `Android.Support.V4.App.FragmentActivity` , und nicht aus `Android.App.Activity` . 
 

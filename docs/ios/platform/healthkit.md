@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 4f85f208c12561b6db9800d963e2d7bf32c2a4d0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3e21794c9f1d8f010ec323774bc93987f4b89e1d
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -67,7 +67,7 @@ So ermitteln Sie weitere Informationen zum Bereitstellen einer iOS-app die [Ger�
 
 Die Erstellung von einer expliziten **App-ID** und eine entsprechende **Bereitstellungsprofil** erfolgt innerhalb von Apple [iOS Dev Center](https://developer.apple.com/devcenter/ios/index.action). 
 
-Ihre aktuellen **App-IDs** aufgelisteten innerhalb der [Zertifikate "," Bezeichner "und" Profile](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) Teil der Developer Center. Häufig zeigt diese Liste **ID** Werte der `*`gibt an, die **App-ID*- **Name** kann mit einer beliebigen Anzahl von Suffixen verwendet werden. Solche *Wildcard App IDs* kann nicht mit der Integrität Kit verwendet werden.
+Ihre aktuellen **App-IDs** aufgelisteten innerhalb der [Zertifikate "," Bezeichner "und" Profile](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) Teil der Developer Center. Häufig zeigt diese Liste **ID** Werte der `*`gibt an, die **App-ID** - **Name** kann mit einer beliebigen Anzahl von Suffixen verwendet werden. Solche *Wildcard App IDs* kann nicht mit der Integrität Kit verwendet werden.
  
 So erstellen eine explizite **App-ID**, klicken Sie auf die  **+**  Schaltfläche in der oberen rechten Ecke, um führen die **Registrieren von iOS-App-ID** Seite:
 
@@ -87,7 +87,7 @@ Klicken Sie auf **Fortfahren** und über die verbleibenden Bildschirme, in dem S
 
 Klicken Sie auf **generieren** und "await" die Erstellung Ihres Profils. Laden Sie die Datei, und doppelklicken Sie darauf, in Xcode zu installieren. Sie können überprüfen, ob die Installation unter **Xcode > Einstellungen > Konten > Details anzeigen...** Daraufhin sollte die gerade installierten provisioning-Profil, und weist sie das Symbol für Integrität Kit und andere spezielle Dienste in ihre **Berechtigungen** Zeile:
 
-[![](healthkit-images/image05.png "Anzeigen des Profils in Xcode")](healthkit-images/image05.png#lightbox)
+[![](healthkit-images/image05.png "Profil in Xcode anzeigen")](healthkit-images/image05.png#lightbox)
 
 <a name="associating-appid" />
 

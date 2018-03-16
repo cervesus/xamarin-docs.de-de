@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b75bc7e4ccf53e82ff107c867c5ba01813960ea5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0456742ca30257670375e3ae781dcdc49707e2ce
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="the-command-interface"></a>Die Befehlsschnittstelle
 
@@ -22,7 +22,7 @@ Die Befehle Schnittstelle bietet eine alternative Methode zum Implementieren von
 
 Ermöglicht eine Datenbindung zwischen einer `Button` und ein ViewModel, die `Button` definiert zwei Eigenschaften:
 
-- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) vom Typ [`ICommand`](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/)
+- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) vom Typ <xref:System.Windows.Input.ICommand>
 - [`CommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.CommandParameter/) vom Typ `Object`
 
 Um die Befehlsschnittstelle verwenden zu können, definieren Sie eine Bindung, die als Ziel verwendet die `Command` Eigenschaft von der `Button` , in dem die Quelle ist eine Eigenschaft im ViewModel vom Typ `ICommand`. Das ViewModel enthält Code zugeordnet sind, `ICommand` -Eigenschaft, die ausgeführt wird, wenn die Schaltfläche geklickt wird. Sie können festlegen, `CommandParameter` an mehrere Schaltflächen unterscheiden, wenn sie alle sind beliebige Daten gebunden werden soll, auf das gleiche `ICommand` Eigenschaft im ViewModel.
@@ -39,7 +39,7 @@ All diese Befehle können in einem ViewModel in einer Weise behandelt werden, di
 
 ## <a name="the-icommand-interface"></a>Der ICommand-Schnittstelle
 
-Die [ `ICommand` ](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/) Schnittstelle ist nicht Teil des Xamarin.Forms. Es wird stattdessen definiert, der [ `System.Windows.Input` ](https://developer.xamarin.com/api/namespace/System.Windows.Input/) -Namespace und besteht aus zwei Methoden und ein Ereignis:
+Die <xref:System.Windows.Input.ICommand> Schnittstelle ist nicht Teil des Xamarin.Forms. Es wird stattdessen definiert, der [System.Windows.Input](xref:System.Windows.Input) -Namespace und besteht aus zwei Methoden und ein Ereignis:
 
 ```csharp
 public interface ICommand

@@ -8,20 +8,20 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: c4b2a103821bb18da4878cd37335faa899e910be
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ee79c79d7b3226f23851a3157e5a609d7cfc4cf4
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="working-with-user-defaults"></a>Arbeiten mit Standardeinstellungen für Benutzer
 
-_Dieser Artikel behandelt die Arbeit mit NSUserDefault Standardeinstellungen in einer Xamarin iOS-App oder eine Erweiterung zu speichern._
+_Dieser Artikel behandelt die Arbeit mit NSUserDefault Standardeinstellungen in einem Xamarin.iOS-App oder eine Erweiterung zu speichern._
 
 
-Die `NSUserDefaults` -Klasse bietet eine Möglichkeit für iOS-Apps und Erweiterungen für die programmgesteuerte Interaktion mit dem eine systemweite Standardeinstellung System. Verwenden Sie das System standardmäßig, kann der Benutzer einer Verhalten oder die app formatieren, um ihre Voreinstellungen (basierend auf den Entwurf der app) erfüllen konfigurieren. Geben Sie beispielsweise Folgendes ein, um das Darstellen von Daten in Vs Metrik das englische System oder Auswählen eines bestimmten UI-Designs.
+Die `NSUserDefaults` -Klasse bietet eine Möglichkeit für iOS-Apps und Erweiterungen für die programmgesteuerte Interaktion mit dem standardmäßig eine systemweite-System. Verwenden Sie das System standardmäßig, kann der Benutzer einer Verhalten oder die app formatieren, um ihre Voreinstellungen (basierend auf den Entwurf der app) erfüllen konfigurieren. Geben Sie beispielsweise Folgendes ein, um das Darstellen von Daten in Vs Metrik das englische System oder Auswählen eines bestimmten UI-Designs.
 
-Bei der App-Gruppen verwendet `NSUserDefaults` bietet auch eine Möglichkeit für die Kommunikation zwischen apps (oder Extensions) in einer bestimmten Gruppe.
+Bei Verwendung mit App-Gruppen `NSUserDefaults` bietet auch eine Möglichkeit für die Kommunikation zwischen apps (oder Extensions) in einer bestimmten Gruppe.
 
 <a name="About-User-Defaults" />
 
@@ -32,7 +32,7 @@ Wie oben, Standardeinstellungen für Benutzer angegeben (`NSUserDefaults`) zu ei
 Wenn die app zuerst ausgeführt wird, `NSUserDefaults` liest die Schlüssel und Werte aus der app-Benutzerdatenbank wird standardmäßig und speichert sie in den Arbeitsspeicher zu vermeiden, öffnen und lesen die Datenbank jedes Mal ein Wert erforderlich ist. 
 
 > [!IMPORTANT]
-> **Hinweis**: Apple wird nicht mehr empfohlen, dass der Entwickler Aufrufen der `Synchronize` Methode, um in-Memory-Caches mit der Datenbank direkt zu synchronisieren. Stattdessen wird es automatisch in regelmäßigen Abständen zu in-Memory-Caches mit der Datenbank eines Benutzers Standardwerte synchronisieren aufgerufen werden.
+> **Hinweis**: Apple empfiehlt, die nicht mehr die Developer-Aufruf die `Synchronize` Methode, um in-Memory-Caches mit der Datenbank direkt zu synchronisieren. Stattdessen wird es automatisch in regelmäßigen Abständen zu in-Memory-Caches mit der Datenbank eines Benutzers Standardwerte synchronisieren aufgerufen werden.
 
 Die `NSUserDefaults` Klasse enthält mehrere Hilfsmethoden zum Lesen und Schreiben von Einstellungswerte für häufig verwendete Datentypen wie z. B.: Zeichenfolge, ganze Zahl, "float", Boolean und URLs. Andere Typen von Daten können archiviert werden, mithilfe von `NSData`, die dann gelesen oder geschrieben werden, mit der Standard-Benutzerdatenbank. Weitere Informationen finden Sie in der Apple- [Präferenzen und Einstellungen Programmierhandbuch](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i).
 
@@ -46,7 +46,7 @@ Die freigegebene standardmäßig Benutzerinstanz bietet Zugriff auf die Standard
 - Die app-Paket-ID-Domäne.
 - Ein `NSGlobalDomain` besteht die Standardwerte, die von allen apps gemeinsam verwendet werden.
 - Einer separaten Domäne für jede bevorzugte Sprache des Benutzers.
-- Ein `NSRegistationDomain` mit einem Satz von temporären Standardwerte, die von der app, um sicherzustellen, dass Suchvorgänge sind immer erfolgreich geändert werden kann.
+- Ein `NSRegistrationDomain` mit einem Satz von temporären Standardwerte, die von der app, um sicherzustellen, dass Suchvorgänge sind immer erfolgreich geändert werden kann.
 
 Um die freigegebene standardmäßig Benutzerinstanz zuzugreifen, verwenden Sie den folgenden Code ein:
 
@@ -59,11 +59,11 @@ var plist = NSUserDefaults.StandardUserDefaults;
 
 ## <a name="accessing-an-app-group-nsuserdefaults-instance"></a>Zugreifen auf App NSUserDefaults Gruppeninstanz
 
-Wie oben angegeben, App-Gruppen mit `NSUserDefaults` für die Kommunikation zwischen Apps (oder Extensions) in einer bestimmten Gruppe verwendet werden können. Sie müssen zunächst sicherstellen, dass die App-Gruppe und die erforderliche App-IDs in ordnungsgemäß konfiguriert wurde die **Zertifikate "," Bezeichner "und" Profile** Abschnitt [iOS Dev Center](https://developer.apple.com/devcenter/ios/) und installiert wurde auf in der Entwicklungsumgebung.
+Wie oben angegeben, App-Gruppen mit `NSUserDefaults` für die Kommunikation zwischen Apps (oder Extensions) in einer bestimmten Gruppe verwendet werden können. Sie müssen zunächst sicherstellen, dass die App-Gruppe und die erforderliche App-IDs in ordnungsgemäß konfiguriert wurde die **Zertifikate "," Bezeichner "und" Profile** Abschnitt [iOS Dev Center](https://developer.apple.com/devcenter/ios/) und installiert wurde in der Entwicklungsumgebung.
 
-Als Nächstes Ihre App und/oder Erweiterung Projekte müssen einen gültigen App-IDs, die weiter oben erstellt werden, die die `Entitlements.plist` Datei hat die App-Gruppen aktiviert und angegeben und, dass es beim Abrufen des in der App-Bündel enthalten.
+Ihre App und/oder Erweiterung Projekte als Nächstes einen gültigen App-IDs, die weiter oben erstellt haben und die `Entitlements.plist` Datei hat, in der App-Bundle mit der App-Gruppen aktiviert und angegeben eingeschlossen werden sollen.
 
-Mit dieser alle vorhanden können die Standardeinstellungen für den Benutzer der freigegebenen App-Gruppe mit dem folgenden Code zugegriffen werden:
+Mit dieser alle erfüllt können freigegebenen App Gruppe Benutzer standardmäßig zugegriffen werden mit dem folgenden Code:
 
 ```csharp
 // Get App Group User Defaults

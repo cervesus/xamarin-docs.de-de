@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: c5bafe12c2cf8c5f8d75757b22223c708ae248dc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ef4de2d544f3bcfb661b29dd90de738ae0442373
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms Views
 
@@ -107,7 +107,7 @@ Ansichten sind Benutzeroberflächenobjekte wie z. B. Schaltflächen, Bezeichnung
 
 |     |     |
 | --- | --- |
-| [`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) ermöglicht es dem Benutzer mit der Plattform Datumsauswahl ein Datum auswählen. Legen Sie einen Datumsbereich zulässige mit der [ `MinimumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) und [ `MaximumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) Eigenschaften. Die [ `Date` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) Eigenschaft ist für das ausgewählte Datum und die [ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/) Ereignis wird ausgelöst, wenn diese Eigenschaft geändert wird.<br /><br />[API-Dokumentation](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) | [![DatePicker-Beispiel](views-images/DatePicker.png "DatePicker-Beispiel")](views-images/DatePicker-Large.png#lightbox "DatePicker-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/DatePickerDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/DatePickerDemoPage.xaml) |
+| [`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) ermöglicht es dem Benutzer mit der Plattform Datumsauswahl ein Datum auswählen. Legen Sie einen Datumsbereich zulässige mit der [ `MinimumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) und [ `MaximumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) Eigenschaften. Die [ `Date` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) Eigenschaft ist für das ausgewählte Datum und die [ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/) Ereignis wird ausgelöst, wenn diese Eigenschaft geändert wird.<br /><br />[API-Dokumentation](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) / [Handbuch](~/xamarin-forms/user-interface/datepicker.md) / [Beispiel](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker) | [![DatePicker-Beispiel](views-images/DatePicker.png "DatePicker-Beispiel")](views-images/DatePicker-Large.png#lightbox "DatePicker-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/DatePickerDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/DatePickerDemoPage.xaml) |
 |     |     |
 
 ### <a name="timepicker"></a>TimePicker

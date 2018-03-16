@@ -6,12 +6,12 @@ ms.assetid: 298139E2-194F-4A58-BC2D-1D22231066C4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 05443bb341b2355c9e7a72f46b70214fb169e598
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/15/2018
+ms.openlocfilehash: db277f20e63a59690ffaa8a8544ff9540578d3f5
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="garbage-collection"></a>Garbage Collection
 
@@ -21,12 +21,12 @@ Xamarin.Android verwendet Mono [einfache Generationen-Garbage Collectors](http:/
 -   Wichtigen Auflistungen (sammelt Gen1 und LOB space Heaps). 
 
 > [!NOTE]
-> Bei Abwesenheit einer expliziten Auflistung über [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) Auflistungen sind *bedarfsgesteuert*, basierend auf Heapzuordnungen. *Dies ist keiner verweiszählung System*; Objekte *nicht gesammelt werden, sobald es keine ausstehenden Verweise sind*, oder wenn ein Bereich verlassen hat. Der globale Katalogserver wird ausgeführt, wenn nicht genügend Arbeitsspeicher für neue Zuordnungen kleinere Heap ausgeführt wurde. Wenn keine Zuordnungen vorhanden sind, wird er nicht ausgeführt.
+> Bei Abwesenheit einer expliziten Auflistung über [GC. Collect()](xref:System.GC.Collect) Auflistungen sind *bedarfsgesteuert*, basierend auf Heapzuordnungen. *Dies ist keiner verweiszählung System*; Objekte *nicht gesammelt werden, sobald es keine ausstehenden Verweise sind*, oder wenn ein Bereich verlassen hat. Der globale Katalogserver wird ausgeführt, wenn nicht genügend Arbeitsspeicher für neue Zuordnungen kleinere Heap ausgeführt wurde. Wenn keine Zuordnungen vorhanden sind, wird er nicht ausgeführt.
 
 
-Kleinere Sammlungen sind billig und häufige und werden verwendet, um die zuletzt zugeordnete und inaktive Objekten zu sammeln. Kleinere Sammlungen werden nach jedem einige MB von zugeordneten Objekten ausgeführt. Kleinere Sammlungen möglicherweise manuell durchgeführt werden, durch den Aufruf [GC. Sammeln von (0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32/) 
+Kleinere Sammlungen sind billig und häufige und werden verwendet, um die zuletzt zugeordnete und inaktive Objekten zu sammeln. Kleinere Sammlungen werden nach jedem einige MB von zugeordneten Objekten ausgeführt. Kleinere Sammlungen möglicherweise manuell durchgeführt werden, durch den Aufruf [GC. Sammeln von (0)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 
 
-Wichtige Sammlungen sind teuer und weniger häufig und werden verwendet, um alle inaktiven Objekten freizugeben. Wichtige Sammlungen werden ausgeführt, sobald Arbeitsspeicher für die aktuelle Heapgröße (vor dem Ändern der Größe der Heap) ausgeschöpft ist. Wichtige Sammlungen möglicherweise manuell durchgeführt werden, durch den Aufruf [GC. Sammeln von ()](https://developer.xamarin.com/api/member/System.GC.Collect/) oder durch Aufrufen von [GC. Sammeln von (Int)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32) mit dem Argument [GC. MaxGeneration](https://developer.xamarin.com/api/property/System.GC.MaxGeneration/). 
+Wichtige Sammlungen sind teuer und weniger häufig und werden verwendet, um alle inaktiven Objekten freizugeben. Wichtige Sammlungen werden ausgeführt, sobald Arbeitsspeicher für die aktuelle Heapgröße (vor dem Ändern der Größe der Heap) ausgeschöpft ist. Wichtige Sammlungen möglicherweise manuell durchgeführt werden, durch den Aufruf [GC. Sammeln von ()](xref:System.GC.Collect) oder durch Aufrufen von [GC. Sammeln von (Int)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) mit dem Argument [GC. MaxGeneration](xref:System.GC.MaxGeneration). 
 
 
 
@@ -34,7 +34,7 @@ Wichtige Sammlungen sind teuer und weniger häufig und werden verwendet, um alle
 
 Es gibt drei Kategorien von Objekttypen.
 
--   **Verwaltete Objekte**: Typen, die sind *nicht* Vererben [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) , z. B. [System.String](https://developer.xamarin.com/api/type/System.String/). 
+-   **Verwaltete Objekte**: Typen, die sind *nicht* Vererben [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) , z. B. [System.String](xref:System.String). 
     Diese werden normalerweise durch das GC gesammelt. 
 
 -   **Java-Objekte**: Java-Typen in der Android-Runtime-VM vorhanden ist, aber nicht für den Mono-VM verfügbar gemacht. Diese sind langweilig und wird nicht weiter erläutert werden. Diese werden normalerweise von der Android-Laufzeit VM gesammelt. 
@@ -71,7 +71,7 @@ All dies ist erforderlich, eine Instanz eines Objekts Peer live wird als entwede
 
 Objekte auf derselben Ebene werden logisch innerhalb der Android-Laufzeit und die Mono-VM vorhanden. Angenommen, ein [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/) verwalteter Peer-Instanz weist einen entsprechenden [android.app.Activity](http://developer.android.com/reference/android/app/Activity.html) Framework Peer Java-Instanz. Alle Objekte, die von erben [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) können beide virtuellen Computer heraus ausgetauschten erwartet werden. 
 
-Alle Objekte, die Darstellung in beide virtuellen Computer werden verfügen über eine Lebensdauer, die erweitert werden im Vergleich zu Objekten, die nur innerhalb einer einzelnen virtuellen Computer vorhanden sind (z. B. eine [ `System.Collections.Generic.List<int>` ](https://developer.xamarin.com/api/type/System.Collections.Generic.List%601/)). Aufrufen von [GC. Sammeln von](https://developer.xamarin.com/api/member/System.GC.Collect/) wird nicht unbedingt diese Objekte sammeln, wie der Xamarin.Android globale Katalogserver muss sicherstellen, dass das Objekt vor dem durch die Sammlung von einer virtuellen Maschine verwiesen wird nicht. 
+Alle Objekte, die Darstellung in beide virtuellen Computer werden verfügen über eine Lebensdauer, die erweitert werden im Vergleich zu Objekten, die nur innerhalb einer einzelnen virtuellen Computer vorhanden sind (z. B. eine [ `System.Collections.Generic.List<int>` ](xref:System.Collections.Generic.List%601)). Aufrufen von [GC. Sammeln von](xref:System.GC.Collect) wird nicht unbedingt diese Objekte sammeln, wie der Xamarin.Android globale Katalogserver muss sicherstellen, dass das Objekt vor dem durch die Sammlung von einer virtuellen Maschine verwiesen wird nicht. 
 
 Lebensdauer eines Objekts, zu verkürzen [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/) aufgerufen werden soll. Dies wird manuell "die Verbindung für das Objekt zwischen den zwei VMs freigegeben werden und des globale Verweis und somit ermöglicht die Objekte schneller gesammelt werden getrennt". 
 
@@ -140,7 +140,7 @@ Der globale Katalogserver wurde eine unvollständige Ansicht des Prozesses und m
 Z. B. einer Instanz von einer [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) Typ oder abgeleiteten Typ ist mindestens einer Größe von 20 Bytes (ohne Hinweis usw. ist implementierungsspezifisch usw..). 
 [Verwaltete Callable Wrapper](~/android/internals/architecture.md) fügen Sie keine zusätzlichen Instanzmember, also wenn unbedingt notwendig ein [Android.Graphics.Bitmap](https://developer.xamarin.com/api/type/Android.Graphics.Bitmap/) -Instanz, die in ein Blob 10 MB des Arbeitsspeichers, bezieht sich Xamarin.Android des GC erfahren Sie nicht, die &ndash; dem globalen Katalogserver ein 20-Byte-Objekt wird angezeigt, und wird in der Lage, feststellen, dass sie auf Android Runtime zugeordnete Objekte, die 10 MB des Arbeitsspeichers aktiv halten verknüpft ist. 
 
-Es ist häufig erforderlich, die das GC-Hilfe. Leider *GC. AddMemoryPressure()* und *GC. RemoveMemoryPressure()* werden nicht unterstützt, wenn also Sie *wissen* , dass eine große Java zugewiesene Objektdiagramm gerade reserviert wird, Sie möglicherweise manuell aufrufen müssen [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) auf Aufforderung einen GC zum Freigeben von der Java-Seite Arbeitsspeicher, oder Sie können explizit freigeben, *Java.Lang.Object* Unterklassen, unterbrechen die Zuordnung zwischen den verwalteten callable Wrapper und Java-Instanz. Beispielsweise finden Sie unter [Fehler 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6). 
+Es ist häufig erforderlich, die das GC-Hilfe. Leider *GC. AddMemoryPressure()* und *GC. RemoveMemoryPressure()* werden nicht unterstützt, wenn also Sie *wissen* , dass eine große Java zugewiesene Objektdiagramm gerade reserviert wird, Sie möglicherweise manuell aufrufen müssen [GC. Collect()](xref:System.GC.Collect) auf Aufforderung einen GC zum Freigeben von der Java-Seite Arbeitsspeicher, oder Sie können explizit freigeben, *Java.Lang.Object* Unterklassen, unterbrechen die Zuordnung zwischen den verwalteten callable Wrapper und Java-Instanz. Beispielsweise finden Sie unter [Fehler 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6). 
 
 
 > [!NOTE]
@@ -314,7 +314,7 @@ class BetterActivity : Activity {
 
 ## <a name="minor-collections"></a>Kleinere Sammlungen
 
-Kleinere Sammlungen möglicherweise manuell durchgeführt werden, durch den Aufruf [GC. Collect(0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32). Kleinere Sammlungen sind (im Vergleich zu wichtigen Auflistungen) billig, aber eine erhebliche festen Kosten, damit nicht zu häufig ausgelöst werden sollen, und müssen eine Verzögerung von wenigen Millisekunden. 
+Kleinere Sammlungen möglicherweise manuell durchgeführt werden, durch den Aufruf [GC. Collect(0)](xref:System.GC.Collect). Kleinere Sammlungen sind (im Vergleich zu wichtigen Auflistungen) billig, aber eine erhebliche festen Kosten, damit nicht zu häufig ausgelöst werden sollen, und müssen eine Verzögerung von wenigen Millisekunden. 
 
 Wenn die Anwendung eine "Arbeitszyklus verfügt" in der dasselbe fortlaufend ausgeführt wird, kann es ratsam sein manuell Registrierungsvorgang eine kleinere Auflistung nach Druckvolumen beendet wurde. Beispiel-Zoll-Zyklen umfassen: 
 
@@ -326,7 +326,7 @@ Wenn die Anwendung eine "Arbeitszyklus verfügt" in der dasselbe fortlaufend aus
 
 ## <a name="major-collections"></a>Wichtige Sammlungen
 
-Wichtige Sammlungen möglicherweise manuell durchgeführt werden, durch den Aufruf [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) oder `GC.Collect(GC.MaxGeneration)`. 
+Wichtige Sammlungen möglicherweise manuell durchgeführt werden, durch den Aufruf [GC. Collect()](xref:System.GC.Collect) oder `GC.Collect(GC.MaxGeneration)`. 
 
 Sie sollten nur selten ausgeführt werden und möglicherweise eine Verzögerung von einer Sekunde auf einem Gerät Android-Format, wenn einen Heap 512 MB zu sammeln. 
 

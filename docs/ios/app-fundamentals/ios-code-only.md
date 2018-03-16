@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b50c4bbef1510b739c4f7da7d732a4f4c66f13f3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d53dea1a46c6b42f901beb217eb00b3a3fa0fd92
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Erstellen von iOS-Benutzeroberflächen in Code
 
@@ -69,7 +69,7 @@ Die leere Projektvorlage fügt 4 Dateien zum Projekt hinzu:
 ## <a name="ios-templates"></a>iOS-Vorlagen
 
 
-Visual Studio für Mac bietet keine leere Vorlage. Alle Vorlagen stammen mit Storyboard-Unterstützung, die als die primäre Methode zum Erstellen einer Benutzeroberflächenautomatisierungs Apple empfiehlt. Allerdings ist es möglich, um die Benutzeroberfläche in vollständig im Code erstellen. 
+Visual Studio für Mac bietet keine leere Vorlage. Alle Vorlagen stammen mit Storyboard-Unterstützung, die als die primäre Methode zum Erstellen einer Benutzeroberflächenautomatisierungs Apple empfiehlt. Allerdings ist es möglich, die Benutzeroberfläche vollständig im Code zu erstellen. 
 
 Die folgenden Schritte begleiten Sie das Storyboard aus einer Anwendung entfernen: 
 
@@ -316,7 +316,7 @@ Im obigen Beispiel gestartet wir eine neue Benutzeroberfläche im Code zu erstel
 
 iOS-Benutzeroberflächen bestehen aus einer Hierarchie anzeigen. Zusätzliche Ansichten, z. B. Bezeichnungen, Schaltflächen, Schieberegler usw. werden als Unteransichten einige übergeordnete Ansicht hinzugefügt.
 
-Angenommen, wir bearbeiten, um die `CustomViewController` Anmeldebildschirm erstellen, in dem der Benutzer einen Benutzernamen und ein Kennwort eingeben kann. Der Bildschirm besteht aus zwei Textfelder und eine Schaltfläche.
+Beispielsweise ermöglicht das Bearbeiten der `CustomViewController` Anmeldebildschirm erstellen, in dem der Benutzer einen Benutzernamen und ein Kennwort eingeben kann. Der Bildschirm besteht aus zwei Textfelder und eine Schaltfläche.
 
 ### <a name="adding-the-text-fields"></a>Hinzufügen von Textfeldern
 
@@ -433,7 +433,7 @@ View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton });
 
 ## <a name="adding-button-functionality"></a>Hinzufügen einer Schaltfläche-Funktion
 
-Wenn eine Schaltfläche geklickt wird, die Benutzer erwarten, dass etwas geschehen, ob dies durch eine Warnung, oder Navigieren zu einem anderen Bildschirm. 
+Wenn eine Schaltfläche geklickt wird, werden Ihre Benutzer etwas geschehen erwarten. Beispielsweise wird eine Warnung angezeigt, oder Navigation zu einem anderen Bildschirm ausgeführt wird. 
 
 Wir fügen Sie Code zum zweiten View-Controller auf dem Navigationsbereich-Stapel abgelegt.
 
@@ -497,7 +497,7 @@ Zusätzlich zur Verwendung von Steuerelementen, die Teil der UIKit sind, können
 
 ### <a name="inheriting-from-uiview"></a>Erben von UIView
 
-Im ersten Schritt erforderlich ist eine Klasse für die benutzerdefinierte Ansicht erstellen. Wir müssen hierfür das **Klasse** Vorlage in Visual Studio zum Hinzufügen einer leeren Klasse mit dem Namen `CircleView`. Die Basisklasse sollte festgelegt werden, um `UIView`, welche wie bereits erwähnt, ist in der `UIKit` Namespace. Wir müssen auch die `System.Drawing` auch Namespace. Die anderen verschiedenen `System.*` Namespaces nicht in diesem Beispiel verwendet, also gerne entfernen.
+Im ersten Schritt erforderlich ist eine Klasse für die benutzerdefinierte Ansicht erstellen. Wir müssen hierfür das **Klasse** Vorlage in Visual Studio zum Hinzufügen einer leeren Klasse mit dem Namen `CircleView`. Die Basisklasse sollte festgelegt werden, um `UIView`, die wir zurückgerufen werden, der `UIKit` Namespace. Wir müssen auch die `System.Drawing` auch Namespace. Die anderen verschiedenen `System.*` Namespaces nicht in diesem Beispiel verwendet, also gerne entfernen.
 
 Die Klasse sollte wie folgt aussehen:
 

@@ -6,21 +6,20 @@ ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 8be599f5b6541ef738ffa47a01374fd7f90044a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 693ada611dc24d3bb22de7c51efe378939a732ad
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="threading"></a>Threading
 
-Die Laufzeit Xamarin.iOS ermöglicht den Zugriff auf Entwickler .NET threading-APIs, die sowohl explizite Verwendung von Threads ( `System.Threading.Thread, System.Threading.ThreadPool`) implizit, wenn Sie mit der asynchronen Delegaten Muster oder BeginXXX-Methoden sowie den vollständigen Bereich von APIs, die die Aufgabe unterstützen Parallel Library.
+Die Xamarin.iOS-Laufzeit bietet Entwicklern Zugriff auf die .NET threading-APIs, beide explizit bei der Verwendung von Threads (`System.Threading.Thread, System.Threading.ThreadPool`) als auch implizit bei asynchronen Delegaten Muster oder BeginXXX-Methoden sowie die vollständigen Bereich von APIs, die Unterstützung der Task Parallel Library.
 
 
 
-Xamarin empfiehlt dringend die Verwendung der [Task Parallel Library](http://msdn.microsoft.com/en-us/library/dd460717.aspx)
-
- (TPL) zum Erstellen von Anwendungen für einige Gründe:-der TPL Standardplaner delegiert die Ausführung der Aufgabe an den Threadpool, der wiederum dynamisch die Anzahl der Threads, die erforderlich vergrößert wird, da der Prozess findet, und vermeidet ein Szenario, in denen zu viele Threads zu beenden. einrichten, um CPU-Zeit konkurrieren. 
+Xamarin empfiehlt dringend die Verwendung der [Task Parallel Library](http://msdn.microsoft.com/en-us/library/dd460717.aspx) (TPL) zum Erstellen von Anwendungen für einige Gründe:
+-  TPL Standardplaner delegiert die Ausführung der Aufgabe an den Threadpool dem wiederum dynamisch die Anzahl der Threads, die erforderlich vergrößert wird, da der Prozess findet, ein Szenario, in denen zu viele Threads um CPU-Zeit konkurrieren letztendlich, zu vermeiden. 
 -  Es ist einfacher, sind im Wesentlichen Vorgänge in Bezug auf die TPL-Tasks. Können Sie bequem bearbeitet werden, zu planen, ihre Ausführung zu serialisieren oder viele parallel mit einem umfangreichen Satz von APIs zu starten. 
 -  Es ist die Grundlage für die Programmierung mit den neuen C#-Async spracherweiterungen. 
 
@@ -41,7 +40,6 @@ MyThreadedRoutine ()
 {  
     var result = DoComputation ();  
 
-    //
     // we want to update an object that is managed by the main
     // thread; To do so, we need to ensure that we only access
     // this from the main thread:
@@ -77,4 +75,4 @@ Hinweis: Da Xamarin.iOS 5.2 Sie keine eigene bereitstellen `NSAutoReleasePool` m
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Arbeiten mit der UI-Thread](~/ios/user-interface/ios-ui/ui-thread.md)
+- [Arbeiten mit dem UI-Thread](~/ios/user-interface/ios-ui/ui-thread.md)
