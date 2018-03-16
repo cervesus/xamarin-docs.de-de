@@ -9,7 +9,7 @@ author: topgenorth
 ms.author: toopge
 ms.openlocfilehash: abd6ac7d4bce5a180db087488b32c878ed0a416b
 ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/15/2018
 ---
