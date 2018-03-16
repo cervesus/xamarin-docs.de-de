@@ -50,7 +50,7 @@ Sie benötigen ein Apple Developer-Konto, um dieses Feature zu verwenden. Weiter
 
     ![Apple Developer Kontooptionen](apple-account-management-images/image1.png)
 
-2. Drücken Sie die ** + ** Schaltfläche, um die Anmeldung im Dialogfeld angezeigt, wie unten dargestellt: 
+2. Drücken Sie die **+** Schaltfläche, um die Anmeldung im Dialogfeld angezeigt, wie unten dargestellt: 
 
     ![FastLane-Dialogfeld.](apple-account-management-images/image2.png)
 

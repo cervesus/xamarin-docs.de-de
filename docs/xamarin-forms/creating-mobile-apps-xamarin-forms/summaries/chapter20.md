@@ -109,9 +109,9 @@ Die **Xamarin.FormsBook.Platform.iOS** Projekt enthält die [ `FileHelper` ](htt
 
 Die **Xamarin.FormsBook.Platform.Android** Projekt enthält ein ähnliches [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/FileHelper.cs) Android-Klasse.
 
-Die **Xamarin.FormsBook.Platform** Projekt enthält außerdem eine [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/FileHelper.cs) -Klasse, die die Verwendung von vereinfacht die `DependencyService` Objekt.
+Die **Xamarin.FormsBook.Platform** Projekt enthält außerdem eine [`FileHelper`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/FileHelper.cs) -Klasse, die die Verwendung von vereinfacht die `DependencyService` Objekt.
 
-Um diese Bibliotheken verwenden zu können, muss eine Lösung enthalten alle Projekte in der **Xamarin.FormsBook.Platform** Lösung und jede Anwendung Projekte müssen einen Verweis auf die entsprechende Bibliothek in ** Xamarin.FormsBook.Platform**.
+Um diese Bibliotheken verwenden zu können, muss eine Lösung enthalten alle Projekte in der **Xamarin.FormsBook.Platform** Lösung und jede Anwendung Projekte müssen einen Verweis auf die entsprechende Bibliothek in  **Xamarin.FormsBook.Platform**.
 
 Die [ **TextFileAsync** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileAsync) Lösung veranschaulicht, wie die **Xamarin.FormsBook.Platform** Bibliotheken. Jedes der Projekte hat einen Aufruf von `Toolkit.Init`. Die Anwendung nutzt die asynchrone Datei e/a-Funktionen.
 
