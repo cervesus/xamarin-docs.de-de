@@ -121,6 +121,7 @@
 ### [DataPages](user-interface/datapages/index.md)
 #### [Erste Schritte](user-interface/datapages/get-started.md)
 #### [Steuerelementreferenz](user-interface/datapages/controls.md)
+### [DatePicker](user-interface/datepicker.md)
 ### [Grafik](user-interface/graphics/index.md)
 #### [Verwenden von CocosSharp in Xamarin.Forms](user-interface/graphics/cocossharp.md)
 #### [Verwenden von SkiaSharp in Xamarin.Forms](user-interface/graphics/skiasharp/index.md)
