@@ -6,11 +6,11 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 6ca5b4d70669909b952752f7d600fcac37e9f557
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 68b420f98461ee42862726a658d721b36326c203
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>Welche Supportoptionen für Xamarin verfügbar sind?
 
@@ -18,28 +18,13 @@ ms.lasthandoff: 03/09/2018
 
 Wie gezeigt auf die [Xamarin Supportseite](https://www.xamarin.com/support), sind mehrere Optionen verfügbar.  Hier sind einige schnellen ersten Empfehlungen [von Stack Overflow Inspiriertes](http://stackoverflow.com/help/product-support) zum die beste Option auswählen:
 
-<table>
-    <tr>
-        <td>"Was bedeutet dieser Fehler?" oder "Wie kann ich...?"</td>
-        <td><a href="http://stackoverflow.com/questions/ask?tags=xamarin">Stapelüberlauf</a> unter der <em>Xamarin</em> Tag</td>
-    </tr>
-    <tr>
-        <td>Ich glauben, dass dieses Problem durch einen Fehler in die Xamarin-Quellcode verursacht wird.</td>
-        <td><a href="https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html">Xamarin Bugzilla</a></td>
-    </tr>
-    <tr>
-        <td>Ich habe eine Idee, Funktionsanfrage oder neue Dokumentation-Anforderung.</td>
-        <td><a href="https://xamarin.uservoice.com">Xamarin UserVoice page</a></td>
-    </tr>
-    <tr>
-        <td>Welche Ressourcen, Frameworks oder Tools empfehlen anderen Benutzern für...? (und andere offenen Diskussionen)</td>
-        <td><a href="https://forums.xamarin.com/">Xamarin-Foren</a></td>
-    </tr>
-    <tr>
-        <td>Ich habe eine Frage zu den Abonnements, Lizenzierung und Preise.</td>
-        <td>Per e-Mail oder Telefon Kontaktinformationen über die <a href="https://www.xamarin.com/faq">– häufig gestellte Fragen</a></td>
-    </tr>
-</table>
+|   |   |
+|---|---|
+|"Was bedeutet dieser Fehler?" oder "Wie kann ich...?"|[Stapelüberlauf](http://stackoverflow.com/questions/ask?tags=xamarin) unter der *Xamarin* Tag|
+|Ich glauben, dass dieses Problem durch einen Fehler in die Xamarin-Quellcode verursacht wird.|[Xamarin Bugzilla](https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html)|
+|Ich habe eine Idee, Funktionsanfrage oder neue Dokumentation-Anforderung.|[Xamarin UserVoice page](https://xamarin.uservoice.com)|
+|Welche Ressourcen, Frameworks oder Tools empfehlen anderen Benutzern für...? (und andere offenen Diskussionen)|[Xamarin-Foren](https://forums.xamarin.com)|
+|Ich habe eine Frage zu den Abonnements, Lizenzierung und Preise.|Per e-Mail oder Telefon Kontaktinformationen über die [– häufig gestellte Fragen](https://www.xamarin.com/faq)|
 
 Das Supportteam von Xamarin wird jede dieser Optionen zu überwachen.  Es wird empfohlen, allen Benutzern das beitragen, ihre durchdachtes Fragen und Berichte zu nutzen und Hilfe Kenntnisse Xamarin-Entwickler-Community wachsen.  Achten Sie für vermuteten Mängel übermitteln Fehler zeigt an, wenn möglich, stellen Sie sicher, dass die Probleme durch das Technikerteam Xamarin formal nachverfolgt werden.
 

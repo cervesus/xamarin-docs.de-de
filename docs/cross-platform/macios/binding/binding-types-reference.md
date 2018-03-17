@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 6042ab9aa861a08da421140857459b02a78f7c70
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 568650a850b9db1fa22deef55eebb6a437e7e0b7
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="binding-types-reference-guide"></a>Bindungstypen Referenzhandbuch
 
@@ -1987,70 +1987,20 @@ interface MyColoringKeys {
 
 Die folgenden Datentypen werden in unterstützt die `StrongDictionary` Definition:
 
-<table border="1" cellpadding="1" cellspacing="1" width="80%">
-<tbody>
-  <tr>
-    <td>C#-Schnittstellentyp</td>
-    <td>NSDictionary Speichertyp</td>
-  </tr>
-  <tr>
-    <td>bool</td>
-    <td>Boolescher Wert in einer NSNumber gespeichert</td>
-  </tr>
-  <tr>
-    <td>Enumerationswerte</td>
-    <td>ganze Zahl, die in einer NSNumber gespeichert</td>
-  </tr>
-  <tr>
-    <td>int</td>
-    <td>32-Bit-Ganzzahl, die in einer NSNumber gespeichert</td>
-  </tr>
-  <tr>
-    <td>uint</td>
-    <td>32-Bit-Ganzzahl ohne Vorzeichen in eine NSNumber gespeichert</td>
-  </tr>
-  <tr>
-    <td>nint</td>
-    <td>Gespeichert in einer NSNumber NSInteger</td>
-  </tr>
-  <tr>
-    <td>nuint</td>
-    <td>Gespeichert in einer NSNumber NSUInteger</td>
-  </tr>
-  <tr>
-    <td>long</td>
-    <td>64-Bit-Ganzzahl, die in einer NSNumber gespeichert</td>
-  </tr>
-  <tr>
-    <td>float</td>
-    <td>32-Bit-Ganzzahl, die als eine NSNumber gespeichert</td>
-  </tr>
-  <tr>
-    <td>double</td>
-    <td>64-Bit-Ganzzahl, die als eine NSNumber gespeichert</td>
-  </tr>
-  <tr>
-    <td>NSObject und Unterklassen einzugeben</td>
-    <td>NSObject</td>
-  </tr>
-  <tr>
-    <td>NSDictionary</td>
-    <td>NSDictionary</td>
-  </tr>
-  <tr>
-    <td>Zeichenfolge</td>
-    <td>NSString</td>
-  </tr>
-  <tr>
-    <td>NSString</td>
-    <td>NSString</td>
-  </tr>
-  <tr>
-    <td>C#-Array von NSObject</td>
-    <td>NSArray</td>
-  </tr>
-  <tr>
-    <td>C#-Array von Enumerationen</td>
-    <td>NSArray mit NSNumbers mit dem Wert</td>
-  </tr>
-</tbody>
+|C#-Schnittstellentyp|`NSDictionary` Speichertyp|
+|---|---|
+|`bool`|`Boolean` gespeichert einer `NSNumber`|
+|Enumerationswerte|ganze Zahl gespeichert, ein `NSNumber`|
+|`int`|32-Bit-Ganzzahl, die in gespeicherten ein `NSNumber`|
+|`uint`|32-Bit-Ganzzahl ohne Vorzeichen gespeichert einer `NSNumber`|
+|`nint`|`NSInteger` gespeichert einer `NSNumber`|
+|`nuint`|`NSUInteger` gespeichert einer `NSNumber`|
+|`long`|64-Bit-Ganzzahl, die in gespeicherten ein `NSNumber`|
+|`float`|32-Bit-Ganzzahl gespeichert als ein `NSNumber`|
+|`double`|64-Bit-Ganzzahl gespeichert als ein `NSNumber`|
+|`NSObject` und Unterklassen einzugeben|`NSObject`|
+|`NSDictionary`|`NSDictionary`|
+|`string`|`NSString`|
+|`NSString`|`NSString`|
+|C#- `Array` von `NSObject`|`NSArray`|
+|C#- `Array` von Enumerationen|`NSArray` mit `NSNumber` Werte|

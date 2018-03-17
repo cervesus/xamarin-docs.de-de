@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 202df615f1b35504f1fe5c9fd64c9c4b4db77a2d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 67635b6a04579246467184cdff8d9f277b36ecc4
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="understanding-sirikit-concepts"></a>Grundlegendes zu Konzepten SiriKit
 
@@ -65,108 +65,33 @@ Es gibt viele Möglichkeiten, dass der Benutzer möglicherweise eine Interaktion
 
 Beispielsweise, wenn der Benutzer eine Nachricht an ihre "Friend" Bobo senden möchten, haben sie möglicherweise die folgenden Konversation mit Siri:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>User</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Hey Siri Senden einer Nachricht MonkeyChat"</td>
-</tr>
-<tr>
-    <td>", Denen?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Bobo"</td>
-</tr>
-<tr>
-    <td>"Was möchten Sie reden, Bobo?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Stellen senden Sie weitere Bananen"</td>
-</tr>
-</table>
+_Benutzer: Hey Siri, eine MonkeyChat-Nachricht senden._<br />
+_Siri: auf dem?_<br />
+_Benutzer: Bobo._<br />
+_Siri: Was möchten Sie reden, Bobo?_<br />
+_Benutzer: Senden Sie weitere Bananen._<br />
 
 Eine andere Person möglicherweise dieselbe Anforderung mit einer anderen Konversation stellen:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>User</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Senden Sie eine Nachricht an Bobo auf MonkeyChat"</td>
-</tr>
-<tr>
-    <td>"Was möchten Sie reden, Bobo?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Stellen senden Sie weitere Bananen"</td>
-</tr>
-</table>
+_Benutzer: Senden einer Nachricht an Bobo auf MonkeyChat._<br />
+_Siri: Was möchten Sie reden, Bobo?_<br />
+_Benutzer: Senden Sie weitere Bananen._<br />
 
 Und ein anderer Benutzer kann eine noch kürzere anfordern:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>User</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"MonkeyChat Bobo senden Sie weitere Bananen"</td>
-</tr>
-<tr>
-    <td>"Nun senden Nachricht schicken Sie weitere Bananen Bobo auf Monkeychat"</td>
-    <td></td>
-</tr>
-</table>
+_Benutzer: MonkeyChat Bobo senden Sie weitere Bananen._<br />
+_Siri: Nun senden Nachricht senden Sie weitere Bananen an Bobo auf Monkeychat._<br />
 
 Oder sogar dieselbe Anforderung in einer anderen Sprache:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>User</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"MonkeyChat Bobo s'il Vous Plaît Envoyer plus de Bananes"</td>
-</tr>
-<tr>
-    <td>"Oui, Envoi Nachricht s'il Vous Plaît Envoyer plus de Bananes À Bobo Sur Monkeychat"</td>
-    <td></td>
-</tr>
-</table>
+_Benutzer: MonkeyChat Bobo s'il Vous Plaît Envoyer plus de Bananes._<br />
+_Siri: Oui, Envoi Nachricht s'il Vous Plaît Envoyer plus de Bananes À Bobo Sur Monkeychat._<br />
 
 Ein anderer Benutzer möglicherweise noch sehr ausführliche in ihrer Konversation werden:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>User</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Hey Siri, können Sie bitte mir einer kompakten und starten Sie die app MonkeyChat senden ein Text mit der Nachricht senden Sie weitere Bananen"</td>
-</tr>
-<tr>
-    <td>", Denen?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Bobo über Mein bewährte Pal"</td>
-</tr>
-</table>
+_Benutzer: Hey Siri, können Sie bitte mir einer kompakten und starten Sie die app MonkeyChat senden ein Text mit der Nachricht senden Sie weitere Bananen._<br />
+_Siri: auf dem?_<br />
+_Benutzer: Meine bewährte Pal Bobo._<br />
 
 Darüber hinaus sind viele Methoden, die Siri reagieren kann, auf eine Anforderung, einige basierend auf wie die Anforderung gestellt wurde:
 
@@ -198,24 +123,9 @@ Es gibt drei Hauptmethoden, die die app des Benutzers Konversation mit Siri teil
 
 Überprüfen Sie angesichts der oben angegebenen Informationen, wie die folgenden Konversation mit der app MonkeyChat interagieren würden:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>User</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Hey Siri Senden einer Nachricht an Bobo auf MonkeyChat"</td>
-</tr>
-<tr>
-    <td>"Was möchten Sie reden, Bobo?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Stellen senden Sie weitere Bananen"</td>
-</tr>
-</table>
+_Benutzer: Hey Siri Senden einer Nachricht an Bobo auf MonkeyChat._<br />
+_Siri: Was möchten Sie reden, Bobo?_<br />
+_Benutzer: Senden Sie weitere Bananen._<br />
 
 Die erste Rolle, die die app in der Konversation akzeptiert wird Siri Sprache des Benutzers verstehen zu helfen:
 

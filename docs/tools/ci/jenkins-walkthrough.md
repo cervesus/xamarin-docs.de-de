@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 8d23211e28cb1b1dae13d67e32462888c66ff065
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ff754a690627e7e2f0a5cd39dd669a4c9ddd47fb
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="using-jenkins-with-xamarin"></a>Verwendung von Jenkins mit Xamarin
 
@@ -343,40 +343,14 @@ Signieren und Zipaligning der APK sind technisch zwei getrennten Aufgaben, die v
 
 Beide Befehle erfordern Befehlszeilenparameter, die zwischen den Projekten variieren können. Darüber hinaus sind einige dieser Befehlszeilenparameter Kennwörter, die nicht in der Konsolenausgabe angezeigt werden sollen, wenn der Build ausgeführt wird. Wir werden einige dieser Parameter über die Befehlszeile in Umgebungsvariablen speichern. Die Umgebungsvariablen für die Anmeldung und/oder Zip Ausrichten von erforderlich sind, werden in der folgenden Tabelle beschrieben:
 
-<table>
-    <thead>
-        <tr>
-            <td>Umgebungsvariablen</td>
-            <td>Beschreibung</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>KEYSTORE_FILE</td>
-            <td>Dies ist der Pfad zur Keystore zum Signieren der APK</td>
-        </tr>
-        <tr>
-            <td>KEYSTORE_ALIAS</td>
-            <td>Der Schlüssel im Schlüsselspeicher, der zum Signieren der APK verwendet wird.</td>
-        </tr>
-        <tr>
-            <td>INPUT_APK</td>
-            <td>Die durch die erstellte APK `xbuild`.</td>
-        </tr>
-        <tr>
-            <td>SIGNED_APK</td>
-            <td>Signierte APK von erzeugten `jarsigner`.</td>
-        </tr>
-        <tr>
-            <td>FINAL_APK</td>
-            <td>Dies ist die ZIP-Datei APK, die vom erzeugt wird ausgerichtet `zipalign`.</td>
-        </tr>
-        <tr>
-            <td>STORE_PASS</td>
-            <td>Dies ist das Kennwort, das Zugriff auf den Inhalt des Schlüsselspeichers für die Datei singend verwendet wird.</td>
-        </tr>
-    </tbody>
-</table>
+|Umgebungsvariablen|Beschreibung|
+|--- |--- |
+|KEYSTORE_FILE|Dies ist der Pfad zur Keystore zum Signieren der APK|
+|KEYSTORE_ALIAS|Der Schlüssel im Schlüsselspeicher, der zum Signieren der APK verwendet wird.|
+|INPUT_APK|Die durch die erstellte APK `xbuild`.|
+|SIGNED_APK|Signierte APK von erzeugten `jarsigner`.|
+|FINAL_APK|Dies ist die ZIP-Datei APK, die vom erzeugt wird ausgerichtet `zipalign`.|
+|STORE_PASS|Dies ist das Kennwort, das Zugriff auf den Inhalt des Schlüsselspeichers für die Datei singend verwendet wird.|
 
 Wie im Abschnitt beschrieben wird, können diese Umgebungsvariablen während des Erstellungsvorgangs Verwenden des Plug-Ins EnvInject festgelegt werden. Der Auftrag müssen einen neuen Build Schritt hinzugefügt basierend auf die Inject-Umgebungsvariablen, wie in der nächste Screenshot dargestellt:
 

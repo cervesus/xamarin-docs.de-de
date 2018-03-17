@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: f962f4619352dbaaed8c8ffcf5d8c8305cb6ad62
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7ddb4b7d4867813311448258bb4fb177ae4cd175
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="specialized-fragment-classes"></a>Spezielle Fragment-Klassen
 
@@ -191,8 +191,7 @@ public class AlertDialogFragment : DialogFragment
 
 ## <a name="preferencefragment"></a>PreferenceFragment
 
-Zur einfachen Verwaltung der Einstellungen der Fragmente-API bietet die `PreferenceFragment` Unterklasse. Die `PreferenceFragment` ähnelt der [PreferenceActivity](https://developer.xamarin.com/api/type/Android.Preferences.PreferenceActivity/
-) &ndash; eine Hierarchie von Einstellungen für den Benutzer in einem Fragment wird angezeigt. Wie der Benutzer mit den Einstellungen interagiert, sie werden automatisch gespeichert [SharedPreferences](http://developer.android.com/reference/android/content/SharedPreferences.html).
+Zur einfachen Verwaltung der Einstellungen der Fragmente-API bietet die `PreferenceFragment` Unterklasse. Die `PreferenceFragment` ähnelt der [PreferenceActivity](https://developer.xamarin.com/api/type/Android.Preferences.PreferenceActivity/) &ndash; eine Hierarchie von Einstellungen für den Benutzer in einem Fragment wird angezeigt. Wie der Benutzer mit den Einstellungen interagiert, sie werden automatisch gespeichert [SharedPreferences](http://developer.android.com/reference/android/content/SharedPreferences.html).
 Verwenden Sie in Android 3.0 oder höher Anwendungen, die `PreferenceFragment` für den Umgang mit Voreinstellungen in Anwendungen. Das folgende Bild zeigt ein Beispiel für eine `PreferenceFragment`:
 
 [![Beispiel-PreferencesFragment mit Inline, Dialogfelder und starten-Voreinstellungen](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)

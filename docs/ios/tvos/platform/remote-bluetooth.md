@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: cef717a727b3b018b9eec3e8a402ae4f927f7cb8
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ca3dd71c3da316e467d8c388efbbded3d9778bf0
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="siri-remote-and-bluetooth-controllers"></a>Siri Remote und Bluetooth-Controller
 
@@ -39,43 +39,14 @@ Herausforderung darin ein app-Entwickler tvos. außerdem wurden ist das Erstelle
 
 Siri Remoteinstanz verfügt über die folgenden Features und die erwartete Verwendung innerhalb Ihrer app tvos. außerdem wurden:
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>Funktion</b></td>
-    <td><b>Allgemein-App-Nutzung</b></td>
-    <td><b>Spiel App-Nutzung</b></td>
-</tr>
-<tr>
-    <td valign="top"><b>Touch-Oberfläche</b><br/>Streichen Sie nach, um zu navigieren, drücken Sie die EINGABETASTE, um auszuwählen, und halten Sie für Kontextmenüs.</td>
-    <td valign="top"><b>Tap/Streifen:</b><br/>UI-Navigation zwischen den Fokus erhalten kann.<br/><br/><b>Klicken Sie auf:</b><br/>Aktiviert die ausgewählte (bildschärfenmodus)-Element.</td>
-    <td valign="top"><b>Tap/Streifen:</b><br/>Spiel Entwurf abhängig und kann als eine Steuerkreuz durch Tippen auf die Ränder verwendet werden.<br/><br/><b>Klicken Sie auf:</b><br/>Führen Sie die primäre Maustaste-Funktion.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Menü</b><br/>Drücken Sie, um zum vorherigen Bildschirm oder einem Menü zurückzukehren.</td>
-    <td valign="top">Kehrt zum vorherigen Bildschirm zurück und beendet, Apple TV-Startbildschirm aus dem Haupt-app-Bildschirm.</td>
-    <td valign="top">Anhalten und fortsetzen Spielzüge, kehrt zum vorherigen Bildschirm zurück und wird beendet, Apple TV-Startbildschirm aus dem Haupt-app-Bildschirm.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Siri/suchen</b><br/>In Ländern mit Siri halten für Voice-Steuerelement in allen anderen Ländern, zeigt Suchbildschirm.</td>
-    <td valign="top">n/v</td>
-    <td valign="top">n/v</td>
-</tr>
-<tr>
-    <td valign="top"><b>Wiedergabe und Pause</b><br/>Wiedergeben und Anhalten von Medien oder eine sekundären Funktion in apps bietet.</td>
-    <td valign="top">Startet die Wiedergabe von Medien und Wiedergabe anhalten/fortsetzen.</td>
-    <td valign="top">Sekundäre Schaltfläche Funktion ausführt, oder überspringt Sie Intro Video (falls vorhanden).</td>
-</tr>
-<tr>
-    <td valign="top"><b>Home</b><br/>Drücken Sie die EINGABETASTE, um zur Startseite zurückzukehren, und doppelklicken Sie zum Anzeigen von ausgeführten apps, halten Sie Geräte in den Ruhezustand.</td>
-    <td valign="top">n/v</td>
-    <td valign="top">n/v</td>
-</tr>
-<tr>
-    <td valign="top"><b>Volume</b><br/>Steuert, angefügte Volume Audio/Video-Geräte.</td>
-    <td valign="top">n/v</td>
-    <td valign="top">n/v</td>
-</tr>
-</table>
+|Feature|Allgemein-App-Nutzung|Spiel App-Nutzung|
+|---|---|---|
+|**Touch-Oberfläche**<br />Streichen Sie nach, um zu navigieren, drücken Sie die EINGABETASTE, um auszuwählen, und halten Sie für Kontextmenüs.|**Tap/Wischen**<br />UI-Navigation zwischen den Fokus erhalten kann.<br /><br />**Klicken Sie auf**<br />Aktiviert die ausgewählte (bildschärfenmodus)-Element.|**Tap/Wischen**<br />Spiel Entwurf abhängig und kann als eine Steuerkreuz durch Tippen auf die Ränder verwendet werden.<br /><br />**Klicken Sie auf**<br />Führen Sie die primäre Maustaste-Funktion.|
+|**Menü**<br />Drücken Sie, um zum vorherigen Bildschirm oder einem Menü zurückzukehren.|Kehrt zum vorherigen Bildschirm zurück und beendet, Apple TV-Startbildschirm aus dem Haupt-app-Bildschirm.|Anhalten und fortsetzen Spielzüge, kehrt zum vorherigen Bildschirm zurück und wird beendet, Apple TV-Startbildschirm aus dem Haupt-app-Bildschirm.|
+|**Siri/suchen**<br />In Ländern mit Siri halten für Voice-Steuerelement in allen anderen Ländern, zeigt Suchbildschirm.|n/v|n/v|
+|**Wiedergabe und Pause**<br />Wiedergeben und Anhalten von Medien oder eine sekundären Funktion in apps bietet.|Startet die Wiedergabe von Medien und Wiedergabe anhalten/fortsetzen.|Sekundäre Schaltfläche Funktion ausführt, oder überspringt Sie Intro Video (falls vorhanden).|
+|**Home**<br />Drücken Sie die EINGABETASTE, um zur Startseite zurückzukehren, und doppelklicken Sie zum Anzeigen von ausgeführten apps, halten Sie Geräte in den Ruhezustand.|n/v|n/v|
+|**Volume**<br />Steuert, angefügte Volume Audio/Video-Geräte.|n/v|n/v|
 
 <a name="Touch-Surface-Gestures" />
 
@@ -83,18 +54,10 @@ Siri Remoteinstanz verfügt über die folgenden Features und die erwartete Verwe
 
 Die Siri Remote berühren Oberfläche kann eine Vielzahl von einem Finger Gesten erkennen, die Sie in Ihrer app Xamarin.tvOS reagieren können:
 
-<table width="100%">
-<tr>
-    <td valign="top" width="30%"><img src="remote-bluetooth-images/Gesture01.png"></td>
-    <td valign="top" width="30%"><img src="remote-bluetooth-images/Gesture02.png"></td>
-    <td valign="top" width="30%"><img src="remote-bluetooth-images/Gesture03.png"></td>
-</tr>
-<tr>
-    <td valign="top"><b>Streichen Sie nach:</b><br/>Auswahl (Fokus) zwischen Elementen der Benutzeroberfläche auf dem Bildschirm bewegt (oben, unten links, mit der rechten Maustaste). Ein Lesegerät kann einen Bildlauf durch umfangreiche Listen von Inhalten mithilfe schnell Trägheit verwendet werden.</td>
-    <td valign="top"><b>Klicken Sie auf:</b><br/>Das ausgewählte (bildschärfenmodus)-Element aktiviert oder verhält sich wie die primäre Maustaste in ein Spiel. Klicken Sie auf, und Speichern der speicherresidenten können Kontextmenüs oder sekundäre Funktionen aktivieren.</td>
-    <td valign="top"><b>Tippen Sie auf:</b><br/>Leicht Tippen auf die Oberfläche berühren, an den Kanten verhält sich wie direktionale Schaltflächen in einem Steuerkreuz, verschieben den Fokus, oben, unten, links oder rechts je nach Bereich abgerufen. Je nach der app kann verwendet werden, um ausgeblendete Steuerelemente anzuzeigen.</td>
-</tr>
-</table>
+|Wischen|Klicken|Tippen Sie auf|
+|---|---|---|
+|![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
+|Auswahl (Fokus) zwischen Elementen der Benutzeroberfläche auf dem Bildschirm bewegt (oben, unten links, mit der rechten Maustaste). Ein Lesegerät kann einen Bildlauf durch umfangreiche Listen von Inhalten mithilfe schnell Trägheit verwendet werden.|Das ausgewählte (bildschärfenmodus)-Element aktiviert oder verhält sich wie die primäre Maustaste in ein Spiel. Klicken Sie auf, und Speichern der speicherresidenten können Kontextmenüs oder sekundäre Funktionen aktivieren.|Leicht Tippen auf die Oberfläche berühren, an den Kanten verhält sich wie direktionale Schaltflächen in einem Steuerkreuz, verschieben den Fokus, oben, unten, links oder rechts je nach Bereich abgerufen. Je nach der app kann verwendet werden, um ausgeblendete Steuerelemente anzuzeigen.|
 
 Apple bietet die folgenden Vorschläge für die Arbeit mit Gesten berühren Oberfläche:
 
@@ -112,7 +75,7 @@ Zusätzlich zu den Gesten auf der Oberfläche berühren kann Ihre app für den B
 Darüber hinaus Menü Schaltfläche drückt können erkannt werden mithilfe einer Geste Erkennung mit normalen `UIKit` Elemente. Wenn Sie die Schaltfläche wird gedrückt abzufangen, Sie ist zuständig für das Schließen des aktuellen Ansicht View Controller und der vorherigen Abfrage zurück.
 
 > [!IMPORTANT]
-> **Hinweis:** sollten Sie **immer** die Wiedergabe und Pause-Taste auf der Remoteinstanz eine Funktion zuweisen. Mit einer nicht-funktionale Schaltfläche können Sie Ihre app unterbrochen, um den Endbenutzer aussehen vornehmen. Wenn Sie eine gültige Funktion für Schaltflächenname besitzen, weisen Sie die gleiche Funktion wie die primäre Maustaste (berühren Oberfläche klicken).
+> Sie sollten **immer** die Wiedergabe und Pause-Taste auf der Remoteinstanz eine Funktion zuweisen. Mit einer nicht-funktionale Schaltfläche können Sie Ihre app unterbrochen, um den Endbenutzer aussehen vornehmen. Wenn Sie eine gültige Funktion für Schaltflächenname besitzen, weisen Sie die gleiche Funktion wie die primäre Maustaste (berühren Oberfläche klicken).
 
 
 
@@ -319,77 +282,24 @@ Zusätzlich zu den standardmäßigen Siri Remoteinstanz, die im Lieferumfang von
 Gamecontroller können verwendet werden, um Spielverlauf verbessern, und geben Sie einen Eindruck von stärker in ein Spiel. Sie können auch die standardmäßige Apple TV-Schnittstelle zu steuern, damit die Verwendung zwischen dem Remotecomputer und dem Controller wechseln muss, nicht verwendet werden.
 
 > [!IMPORTANT]
-> **Hinweis:** Ihrer app kann nicht den Benutzer einen erwerben erzwingen, dass Bluetooth-Gamecontroller sind eine optionale Kauf, der Endbenutzer vorgenommen werden können. Wenn Ihre app Gamecontroller unterstützt, muss es auch Siri Remote unterstützen, damit das Spiel von allen Benutzern von Apple TV verwendbar ist.
-
+> Ihre app kann nicht den Benutzer einen erwerben erzwingen, dass Bluetooth-Gamecontroller sind eine optionale Kauf, der Endbenutzer vorgenommen werden können. Wenn Ihre app Gamecontroller unterstützt, muss es auch Siri Remote unterstützen, damit das Spiel von allen Benutzern von Apple TV verwendbar ist.
 
 Eine Gamecontroller verfügt über die folgenden Features und die erwartete Verwendung innerhalb Ihrer app tvos. außerdem wurden:
-<table width="100%" border="1px">
-<tr>
-    <td><b>Funktion</b></td>
-    <td><b>Allgemein-App-Nutzung</b></td>
-    <td><b>Spiel App-Nutzung</b></td>
-</tr>
-<tr>
-    <td valign="top"><b>D-Pad</b></td>
-    <td valign="top">Benutzeroberflächenelemente (ändert den Fokus) navigiert.</td>
-    <td valign="top">Hängt von Spiel.</td>
-</tr>
-<tr>
-    <td valign="top"><b>A</b></td>
-    <td valign="top">Aktiviert das ausgewählte (bildschärfenmodus)-Element.</td>
-    <td valign="top">Primäre Schaltfläche Funktion ausführt, und vergewissert sich Dialogfeldaktionen.</td>
-</tr>
-<tr>
-    <td valign="top"><b>B</b></td>
-    <td valign="top">Kehrt zum vorherigen Bildschirm zurück, oder auf dem Startbildschirm des beendet wird, wenn es sich um die app-Hauptbildschirm aus.</td>
-    <td valign="top">Führt die zweite Schaltfläche-Funktion, oder zum vorherigen Bildschirm zurück.</td>
-</tr>
-<tr>
-    <td valign="top"><b>X</b></td>
-    <td valign="top">Startet die Wiedergabe von Medien oder Wiedergabe angehalten/fortgesetzt wird.</td>
-    <td valign="top">Hängt von Spiel.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Y</b></td>
-    <td valign="top">n/v</td>
-    <td valign="top">Hängt von Spiel.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Menü</b></td>
-    <td valign="top">Kehrt zum vorherigen Bildschirm zurück, oder auf dem Startbildschirm des beendet wird, wenn es sich um die app-Hauptbildschirm aus.</td>
-    <td valign="top">Fortsetzen Sie anhalten/Spielverlauf, kehrt zum vorherigen Bildschirm zurück oder beendet wird, auf dem Startbildschirm des Wenn es sich um die app-Hauptbildschirm.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Linke Schulter-Schaltfläche</b></td>
-    <td valign="top">Navigiert nach links.</td>
-    <td valign="top">Hängt von Spiel.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Linke Trigger</b></td>
-    <td valign="top">Navigiert nach links.</td>
-    <td valign="top">Hängt von Spiel.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Rechte Schulter-Schaltfläche</b></td>
-    <td valign="top">Navigiert rechts an.</td>
-    <td valign="top">Hängt von Spiel.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Rechter Auslöser</b></td>
-    <td valign="top">Navigiert rechts</td>
-    <td valign="top">Hängt von Spiel.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Linken Ministick</b></td>
-    <td valign="top">Benutzeroberflächenelemente (ändert den Fokus) navigiert.</td>
-    <td valign="top">Hängt von Spiel.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Ministick rechts</b></td>
-    <td valign="top">n/v</td>
-    <td valign="top">Hängt von Spiel.</td>
-</tr>
-</table>
+
+|Feature|Allgemein-App-Nutzung|Spiel App-Nutzung|
+|---|---|---|
+|**D-Pad**|Benutzeroberflächenelemente (ändert den Fokus) navigiert.|Hängt von Spiel.|
+|**A**|Aktiviert das ausgewählte (bildschärfenmodus)-Element.|Primäre Schaltfläche Funktion ausführt, und vergewissert sich Dialogfeldaktionen.|
+|**B**|Kehrt zum vorherigen Bildschirm zurück, oder auf dem Startbildschirm des beendet wird, wenn es sich um die app-Hauptbildschirm aus.|Führt die zweite Schaltfläche-Funktion, oder zum vorherigen Bildschirm zurück.|
+|**X**|Startet die Wiedergabe von Medien oder Wiedergabe angehalten/fortgesetzt wird.|Hängt von Spiel.|
+|**Y**|n/v|Hängt von Spiel.|
+|**Menü**|Kehrt zum vorherigen Bildschirm zurück, oder auf dem Startbildschirm des beendet wird, wenn es sich um die app-Hauptbildschirm aus.|Fortsetzen Sie anhalten/Spielverlauf, kehrt zum vorherigen Bildschirm zurück oder beendet wird, auf dem Startbildschirm des Wenn es sich um die app-Hauptbildschirm.|
+|**Linke Schulter-Schaltfläche**|Navigiert nach links.|Hängt von Spiel.|
+|**Linke Trigger**|Navigiert nach links.|Hängt von Spiel.|
+|**Rechte Schulter-Schaltfläche**|Navigiert rechts an.|Hängt von Spiel.|
+|**Rechter Auslöser**|Navigiert rechts|Hängt von Spiel.|
+|**Linken Ministick**|Benutzeroberflächenelemente (ändert den Fokus) navigiert.|Hängt von Spiel.|
+|**Ministick rechts**|n/v|Hängt von Spiel.|
 
 Apple bietet die folgenden Vorschläge für die Arbeit mit Gamecontroller:
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: b78ade19efed92ab3b2d8ba790f2d7334472bab4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 09858bd7902b44bbedd96f1be9c9c827131ee16f
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="native-types"></a>Systemeigene Typen
 
@@ -27,28 +27,11 @@ Mit dieser neuen Datentypen wird der gleiche Quellcode für 32-Bit, 32-Bit und 6
 
 Die folgende Tabelle zeigt die Änderungen in unseren Datentypen entsprechend dieser neuen 32/64-Bit-Umgebung:
 
-<table>
-        <tr>
-            <th>Systemeigener Typ</th>
-            <th>32-Bit-Unterstützungstyp</th> 
-            <th>64-Bit-Unterstützungstyp</th>
-        </tr>
-        <tr>
-            <td><code>System.nint</code></td>
-        <td><code>System.Int32</code> (<code>int</code>)</td>
-        <td><code>System.Int64</code> (<code>long</code>)</td>
-        </tr>
-        <tr>
-            <td><code>System.nuint</code></td>
-        <td><code>System.UInt32</code> (<code>uint</code>)</td>
-        <td><code>System.UInt64</code> (<code>ulong</code>)</td>
-        </tr>
-        <tr>
-            <td><code>System.nfloat</code></td>
-        <td><code>System.Single</code> (<code>float</code>)</td>
-        <td><code>System.Double</code> (<code>double</code>)</td>
-        </tr>
-    </table>
+|Systemeigener Typ|32-Bit-Unterstützungstyp|64-Bit-Unterstützungstyp|
+|--- |--- |--- |
+|`System.nint`|`System.Int32` (`int`)|`System.Int64` (`long`)|
+|`System.nuint`|`System.UInt32` (`uint`)|`System.UInt64` (`ulong`)|
+|`System.nfloat`|`System.Single` (`float`)|`System.Double` (`double`)|
 
 Wir haben diese Namen zu ermöglichen, dass Ihr C#-Code "Suchen", wenn Sie die gleiche Weise, die er heute aussehen würde, mehr oder weniger ausgewählt.
 
@@ -76,32 +59,15 @@ Der Punkt, Größe und Rechteck-Datentypen, die mit CoreGraphics verwendet werde
 
 Beim Verschieben auf **Unified**, müssen Sie ersetzen `System.Drawing` mit ihren `CoreGraphics` Gegenstücke, wie in der folgenden Tabelle dargestellt:
 
-<table>
-        <tr>
-            <th>Geben Sie "System.Drawing" alte</th>
-            <th>Neue Datentyp CoreGraphics</th> 
-            <th>Beschreibung</th>
-        </tr>
-        <tr>
-        <td><code>RectangleF</code></td>
-        <td><code>CGRect</code></td>
-        <td>Enthält floating-point-Rechteck Informationen.  </td>
-        </tr>
-        <tr>
-        <td><code>SizeF</code></td>
-        <td><code>CGSize</code></td>
-        <td>Gleitkommawert enthält zeigen Sie Informationen zur Datenbankgröße (Breite, Höhe)</td>
-        </tr>
-        <tr>
-        <td><code>PointF</code></td>
-        <td><code>CGPoint</code></td>
-        <td>Enthält eine Gleitkommazahl, zeigen Sie Informationen (X, Y)</td>
-        </tr>
-    </table>
+|Geben Sie "System.Drawing" alte|Neue Datentyp CoreGraphics|Beschreibung|
+|--- |--- |--- |
+|`RectangleF`|`CGRect`|Enthält floating-point-Rechteck Informationen.|
+|`SizeF`|`CGSize`|Gleitkommawert enthält zeigen Sie Informationen zur Datenbankgröße (Breite, Höhe)|
+|`PointF`|`CGPoint`|Enthält eine Gleitkommazahl, zeigen Sie Informationen (X, Y)|
 
 Die alten Daten verwendeten Typen Gleitkommawerte zum Speichern der Elemente der Datenstrukturen dagegen verwendet eine neue `System.nfloat`.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Arbeiten mit systemeigenen Typen in plattformübergreifende Apps](~/cross-platform/macios/native-types-cross-platform.md)
-- [Klassische Vs einheitliche API-Unterschiede](http://developer.xamarin.comhttps://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [Arbeiten mit nativen Typen in plattformübergreifenden Apps](~/cross-platform/macios/native-types-cross-platform.md)
+- [Klassische Vs einheitliche API-Unterschiede](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d1052695bb7337a18d1a2f1f7015e9079f86f6f5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3e3d1663e07b16721d1aa7253e7d0150a609718e
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="working-with-icons-and-images"></a>Arbeiten mit Symbolen und Bilder
 
@@ -40,17 +40,9 @@ Das Bild starten schnell angezeigt und vermittelt den Eindruck, dass die app sch
 
 Start-Images sind keine Gelegenheit für Werbung oder künstlerischen Ausdruck, sie dienen lediglich der Eindruck entstehen, dass Ihre app schnell gestartet und kann jetzt verwendet.
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Bild zu starten</b></td>
-</tr>
-<tr>
-    <td><b>Size</b></td>
-    <td>1920px x 1080px
-
-    Non-layered `.png` files only</td>
-</tr>
-</table>
+|Starten der Bildgröße|Hinweise|
+|---|---|
+|1920x1080px|Non-layered .png files only|
 
 Apple macht die folgenden Vorschläge zum Starten der app-Image entwerfen:
 
@@ -146,39 +138,15 @@ Ihre app Xamarin.tvOS müssen nicht nur ein App-Symbol für die Apple TV-Startse
 
 Alle Apps muss eine kleine und eine große Version von dessen Symbol "App" angeben. Des kleinen Symbols wird auf dem Bildschirm Apple TV-Startseite verwendet werden, wenn die app installiert wird. Die große Version wird von dem App Store. "Große Symbole" App sollte imitieren, die das Aussehen und Verhalten von der Version des kleinen Symbols an.
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Symbol "Small"</b></td>
-    <td colspan="2"><b>"Große Symbole"</b></td>
-</tr>
-<tr>
-    <td><b>Tatsächliche Größe</b></td>
-    <td>400px x 240px</td>
-    <td><b>Size</b></td>
-    <td>1280px x 768px</td>
-</tr>
-<tr>
-    <td><b>Größe der sicheren Zone</b></td>
-    <td>370px x 222px</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><b>Ohne Fokus Größe</b></td>
-    <td>300px x 180px</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><b>Mit Fokus Größe</b></td>
-    <td>370px x 222px</td>
-    <td></td>
-    <td></td>
-</tr>
-</table>
+|Symbol "Small"||"Große Symbole"||
+|---|---|---|---|
+|Tatsächliche Größe|400x240px|Größe|1280x768px|
+|Größe der sicheren Zone|370x222px|||
+|Ohne Fokus Größe|300x180px|||
+|Mit Fokus Größe|370x222px|||
 
 > [!IMPORTANT]
-> **Hinweis:** Ihrer App-Symbole muss angegeben werden, als **Bilder in den Ebenen**. Finden Sie unter der [Bild in den Ebenen](#Layered-Images) im Abschnitt oben für weitere Details.
+> Ihre App-Symbole muss angegeben werden, als **Bilder in den Ebenen**. Finden Sie unter der [Bild in den Ebenen](#Layered-Images) im Abschnitt oben für weitere Details.
 
 
 
@@ -227,17 +195,9 @@ Wenn der Benutzer die app Xamarin.tvOS auf die Zeile nach oben auf dem Bildschir
 
 Die oberen Regal Image kann entweder als eine einzelne statische bereitgestellt `.png` oder `.lsr` Datei (finden Sie unter [in den Ebenen-Images erstellen](#Creating-Layered-Images)) oder erstellt werden, dynamisch zur Laufzeit als eine einzelne Zeile mit den Fokus erhalten kann Elemente (finden Sie unter [ Dynamische Oberes Regal Inhalt](#Dynamic-Top-Shelf-Content) unten).
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Oberes Regal-Bild</b></td>
-</tr>
-<tr>
-    <td><b>Size</b></td>
-    <td>1920px x 720px
-
-    Static `.png` or layered `.lsr` file</td>
-</tr>
-</table>
+|Oberes Regal Bildgröße|Hinweise|
+|---|---|
+|1920x720px|Statische .png "oder" geschichteten .lsr-Datei|
 
 Apple bietet die folgenden Vorschläge zum Erstellen der Top-Regal Bilder an:
 
@@ -279,38 +239,12 @@ Inhalt wird als einzelne, einem horizontalen Bildlauf Liste von Inhalten mit ein
 
 Die folgenden Inhaltsgrößen werden benötigt:
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>&nbsp;</b></td>
-    <td><b>Poster (2:3)</b></td>
-    <td><b>Square (1:1)</b></td>
-    <td><b>HDTV (16:9)</b></td>
-</tr>
-<tr>
-    <td><b>Tatsächliche Größe</b></td>
-    <td>404px x 608px</td>
-    <td>608px x 608px</td>
-    <td>908px x 512px</td>
-</tr>
-<tr>
-    <td><b>Größe der sicheren Zone</b></td>
-    <td>380px x 570px</td>
-    <td>570px x 570px</td>
-    <td>852px x 479px</td>
-</tr>
-<tr>
-    <td><b>Ohne Fokus Größe</b></td>
-    <td>333px x 500px</td>
-    <td>500px x 500px</td>
-    <td>782px x 440px</td>
-</tr>
-<tr>
-    <td><b>Mit Fokus Größe</b></td>
-    <td>380px x 570px</td>
-    <td>570px x 570px</td>
-    <td>852px x 479px</td>
-</tr>
-</table>
+||Poster (2:3)|Square (1:1)|HDTV (16:9)|
+|---|---|---|---|
+|Tatsächliche Größe|404x608px|608x608px|908x512px|
+|Größe der sicheren Zone|380x570px|570x570px|852x479px|
+|Ohne Fokus Größe|333x500px|500x500px|782x440px|
+|Mit Fokus Größe|380x570px|570x570px|852x479px|
 
 Apple bietet die folgenden Vorschläge für die Inhalte geschnitten Zeile:
 
@@ -325,27 +259,14 @@ Optional kann Ihre app Xamarin.tvOS in einem Regal oben als automatisch durchfü
 
 Zusätzlich zu den automatischen Bildlauf kann der Benutzer die Kontrolle über das Banner und führen Sie einen Bildlauf in beide Richtungen mithilfe von Siri Remote. Machen eine kleine, wird die zirkuläre Geste auf der Remoteinstanz Siri, wenn ein Banner besteht aus den Fokus der Parallax-Effekt für diese Banner aktiviert.
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Banner-Image (Extra breit)</b></td>
-</tr>
-<tr>
-    <td><b>Tatsächliche Größe</b></td>
-    <td>1940px x 624px</td>
-</tr>
-<tr>
-    <td><b>Größe der sicheren Zone</b></td>
-    <td>1740px x 620px</td>
-</tr>
-<tr>
-    <td><b>Ohne Fokus Größe</b></td>
-    <td>1740px x 560px</td>
-</tr>
-<tr>
-    <td><b>Mit Fokus Größe</b></td>
-    <td>1740px x 620px</td>
-</tr>
-</table>
+**Banner-Image (Extra breit)**
+
+|   |   |
+|---|---|
+|Tatsächliche Größe|1940x624px|
+|Größe der sicheren Zone|1740x620px|
+|Ohne Fokus Größe|1740x560px|
+|Mit Fokus Größe|1740x620px|
 
 Durchführen eines Bildlaufs Inset Banner kann entweder bereitgestellt werden, als statisch `.png` oder überlappende `.lsr` Datei.
 
@@ -366,44 +287,13 @@ Wenn Ihre app Xamarin.tvOS ein Spiel ist, und Sie haben Game Center-Unterstützu
 - **Dashboard-Bildmaterial** – ein optionales Bild bereitgestellt, die am oberen Rand der app-Dashboard in Game Center angezeigt werden. Diese Images stellen nicht den Fokus erhalten kann.
 - **Leaderboard Bildmaterial** -Geben Sie zwischen eins (1) auf drei (3) 16:9-Seitenverhältnis Bilder für jede Leaderboard, die Ihrer app unterstützt werden. Dies ist möglicherweise entweder eine statische `.png` oder überlappende `.lsr` Dateien. Grafik Leaderboard ist den Fokus erhalten kann.
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>&nbsp;</b></td>
-    <td><b>Leistung-Symbole</b></td>
-    <td><b>Dashboard-Bildmaterial</b></td>
-    <td><b>Leaderboard-Bildmaterial</b></td>
-</tr>
-<tr>
-    <td><b>Sichtbare Größe</b></td>
-    <td>200px x 200px</td>
-    <td>923px x 150px</td>
-    <td>n/v</td>
-</tr>
-<tr>
-    <td><b>Tatsächliche Größe</b></td>
-    <td>320px x 320px</td>
-    <td>n/v</td>
-    <td>659px x 371px</td>
-</tr>
-<tr>
-    <td><b>Größe der sicheren Zone</b></td>
-    <td>n/v</td>
-    <td>n/v</td>
-    <td>618px x 348px</td>
-</tr>
-<tr>
-    <td><b>Ohne Fokus Größe</b></td>
-    <td>n/v</td>
-    <td>n/v</td>
-    <td>548px x 309px</td>
-</tr>
-<tr>
-    <td><b>Mit Fokus Größe</b></td>
-    <td>n/v</td>
-    <td>n/v</td>
-    <td>618px x 348px</td>
-</tr>
-</table>
+||Leistung-Symbole|Dashboard-Bildmaterial|Leaderboard-Bildmaterial|
+|---|---|---|---|
+|Sichtbare Größe|200x200px|923x150px|n/v|
+|Tatsächliche Größe|320x320px|n/v|659x371px|
+|Größe der sicheren Zone|n/v|n/v|618x348px|
+|Ohne Fokus Größe|n/v|n/v|548x309px|
+|Mit Fokus Größe|n/v|n/v|618x348px|
 
 Weitere Informationen zum Arbeiten mit Game Center finden Sie im Apple [Game Center-Programmierhandbuch](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html).
 

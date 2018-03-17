@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 6d6e4f7a60468090797c61fc78119d759f57b728
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 68ea5c700efaaf007718cae3ec8b8f7875385b07
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="unified-api"></a>Einheitliche API
 
@@ -67,36 +67,14 @@ Dies vereinfacht den Code zwischen den Macintosh und iOS-Plattformen ohne beding
 
 Die einheitliche API entfernt veraltete Methoden und einige Instanzen vorhanden sind, bei der es Tippfehler in den API-Namen, wenn sie auf die ursprünglichen MonoTouch und MonoMac Namespaces in der klassischen-APIs gebunden wurden. Diese Instanzen in der neuen APIs Unified korrigiert wurden und in Ihrer Komponente, IOS- und Mac-Anwendungen aktualisiert werden müssen. Hier ist eine Liste der gängigsten Einträge, die auftreten kann:
 
-<table width="100%" border="1">
-<tr>
-    <th>Name der klassische API-Methode</th>
-    <th>Name der einheitliche API-Methode</th>
-</tr>
-<tr>
-    <td>UINavigationController.PushViewControllerAnimated()</td>
-    <td>UINavigationController.PushViewController()</td>
-</tr>
-<tr>
-    <td>UINavigationController.PopViewControllerAnimated()</td>
-    <td>UINavigationController.PopViewController()</td>
-</tr>
-<tr>
-    <td>CGContext.SetRGBFillColor()</td>
-    <td>CGContext.SetFillColor()</td>
-</tr>
-<tr>
-    <td>NetworkReachability.SetCallback()</td>
-    <td>NetworkReachability.SetNotification()</td>
-</tr>
-<tr>
-    <td>CGContext.SetShadowWithColor</td>
-    <td>CGContext.SetShadow</td>
-</tr>
-<tr>
-    <td>UIView.StringSize</td>
-    <td>UIKit.UIStringDrawing.StringSize</td>
-</tr>
-</table>
+|Name der klassische API-Methode|Name der einheitliche API-Methode|
+|--- |--- |
+|`UINavigationController.PushViewControllerAnimated()`|`UINavigationController.PushViewController()`|
+|`UINavigationController.PopViewControllerAnimated()`|`UINavigationController.PopViewController()`|
+|`CGContext.SetRGBFillColor()`|`CGContext.SetFillColor()`|
+|`NetworkReachability.SetCallback()`|`NetworkReachability.SetNotification()`|
+|`CGContext.SetShadowWithColor`|`CGContext.SetShadow`|
+|`UIView.StringSize`|`UIKit.UIStringDrawing.StringSize`|
 
 Eine vollständige Liste der Änderungen beim Wechseln in der klassischen auf die einheitliche API, finden Sie in unserem [Classic (monotouch.dll) Vs Unified (Xamarin.iOS.dll) API-Unterschiede](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) Dokumentation.
 

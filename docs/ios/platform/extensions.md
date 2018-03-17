@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 017f3c1b5fc14bf22a5ad85d1017bc8125b04038
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6e0eebef2404ce3f117fe897d456f3ef78a8f585
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="ios-extensions"></a>iOS-Erweiterungen
 
@@ -44,63 +44,14 @@ In diesem Artikel werden die folgenden Themen behandelt:
 
 ## <a name="extension-points"></a>Erweiterungspunkte
 
-Es gibt mehrere Typen von Erweiterung, die im iOS 8 (und höher) erstellt werden können:
-
-<table>
-<colgroup>
-<col />
-<col />
-<col />
-</colgroup>
-
-<thead>
-<tr>
-    <th >Typ</th>
-    <th >Beschreibung</th>
-    <th >Erweiterungspunkt</th>
-    <th >Host-App</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-    <td >Aktion</td>
-    <td >Spezialisierten Editor oder für einen bestimmten Medientyp-viewer</td>
-    <td ><code>com.apple.ui-services</code></td>
-    <td >Beliebig</td>
-</tr>
-<tr>
-    <td >Dokument-Anbieter</td>
-    <td >Ermöglicht der app auf einem remote Dokumentenspeicher</td>
-    <td ><code>com.apple.fileprovider-ui</code></td>
-    <td >Apps, die mit einem <a href="https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/">UIDocumentPickerViewController</a></td>
-</tr>
-<tr>
-    <td >Tastatur</td>
-    <td >Alternative Tastaturen</td>
-    <td ><code>com.apple.keyboard-service</code></td>
-    <td >Beliebig</td>
-</tr>
-<tr>
-    <td >Foto bearbeiten</td>
-    <td >Foto zu bearbeiten oder zu bearbeiten</td>
-    <td ><code>com.apple.photo-editing</code></td>
-    <td >Photos.App-editor</td>
-</tr>
-<tr>
-    <td >Freigeben</td>
-    <td >Teilt Daten mit sozialen Netzwerken, Dienste usw. messaging.</td>
-    <td ><code>com.apple.share-services</code></td>
-    <td >Beliebig</td>
-</tr>
-<tr>
-    <td >Heute</td>
-    <td >"Widgets" angezeigt, die auf dem Bildschirm "heute" oder die Mitteilungszentrale</td>
-    <td ><code>com.apple.widget-extensions</code></td>
-    <td >Heute "und" Mitteilungszentrale</td>
-</tr>
-</tbody>
-</table>
+|Typ|Beschreibung|Erweiterungspunkt|Host-App|
+|--- |--- |--- |--- |
+|Aktion|Spezialisierten Editor oder für einen bestimmten Medientyp-viewer|`com.apple.ui-services`|Beliebig|
+|Dokument-Anbieter|Ermöglicht der app auf einem remote Dokumentenspeicher|`com.apple.fileprovider-ui`|Apps, die mit einem [UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|
+|Tastatur|Alternative Tastaturen|`com.apple.keyboard-service`|Beliebig|
+|Foto bearbeiten|Foto zu bearbeiten oder zu bearbeiten|`com.apple.photo-editing`|Photos.App-editor|
+|Freigeben|Teilt Daten mit sozialen Netzwerken, Dienste usw. messaging.|`com.apple.share-services`|Beliebig|
+|Heute|"Widgets" angezeigt, die auf dem Bildschirm "heute" oder die Mitteilungszentrale|`com.apple.widget-extensions`|Heute "und" Mitteilungszentrale|
 
 [Zusätzliche Erweiterungspunkte](~/ios/platform/introduction-to-ios10/index.md#app-extensions) in iOS 10 hinzugefügt wurden.
 

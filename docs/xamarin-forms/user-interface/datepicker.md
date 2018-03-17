@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/12/2018
-ms.openlocfilehash: d47499c1e309fbc67c85b55cacbbba3942188f54
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 5c214fe4124b900ea63399b97084d1ce0e181d4a
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="using-datepicker"></a>DatePicker verwenden
 
@@ -48,7 +48,7 @@ DatePicker datePicker = new DatePicker
 };
 ```
 
-Wenn eine `DateTime` Wert in angegeben in XAML wird die Verwendung von XAML-Parser beansprucht die `DateTime.Parse` Methode mit einer `CultureInfo.InvariantCulture` Argument, um die Zeichenfolge zu konvertieren eine `DateTime` Wert. Die Datumsangaben in einem präzisen Format angegeben werden: zweistellige Monate, Tage zweistellige und vierstellige Jahresangaben durch Schrägstriche getrennte:
+Wenn eine `DateTime` angegeben Wert in XAML wird die Verwendung von XAML-Parser beansprucht der `DateTime.Parse` Methode mit einer `CultureInfo.InvariantCulture` Argument, um die Zeichenfolge zu konvertieren eine `DateTime` Wert. Die Datumsangaben in einem präzisen Format angegeben werden: zweistellige Monate, Tage zweistellige und vierstellige Jahresangaben durch Schrägstriche getrennte:
 
 ```xaml
 <DatePicker MinimumDate="01/01/2018"
@@ -78,7 +78,7 @@ Es ist möglich, eine nicht eingeschränkte horizontales Layout-Option verwenden
             ··· />
 ```
 
-Dies ist jedoch nicht empfohlen. Abhängig von der Einstellung von der `Format` Eigenschaft ausgewählt Datumsangaben möglicherweise unterschiedlichen breiten erforderlich. Die Formatzeichenfolge "D" verursacht beispielsweise `DateTime` zum Anzeigen von Datumsangaben in einem Langformat und "Mittwoch, 12 September 2018" erfordert eine Breite größer als "Freitag, 4 Mai 2018". Abhängig von der Plattform dieser Unterschied kann dazu führen, dass die `DateTime` Ansicht so ändern Sie die Breite in Layout oder für die Anzeige abgeschnitten werden.
+Dies ist jedoch nicht empfohlen. Abhängig von der Einstellung von der `Format` Eigenschaft ausgewählt Datumsangaben möglicherweise unterschiedlichen breiten erforderlich. Die Formatzeichenfolge "D" verursacht beispielsweise `DateTime` zum Anzeigen von Datumsangaben in einem Langformat und "Mittwoch, 12 September 2018" erfordert eine Breite größer als "Freitag, 4 Mai 2018" an. Abhängig von der Plattform dieser Unterschied kann dazu führen, dass die `DateTime` Ansicht so ändern Sie die Breite in Layout oder für die Anzeige abgeschnitten werden.
 
 > [!TIP]
 > Es wird empfohlen, die Standardeinstellung verwenden `HorizontalOptions` Einstellung des `Fill` mit `DatePicker`, und nicht mit einer Breite von `Auto` beim `DatePicker` in einer `Grid` Zelle.
@@ -139,7 +139,7 @@ Hier wird die Verwendung von XAML-Datei ein:
 </ContentPage>
 ```
 
-Jede `DatePicker` erhält eine `Format` Eigenschaft von "D" für einen langen Datumsformat. Beachten Sie auch, dass die `endDatePicker` Objekt besitzt eine Bindung, die als Ziel verwendet die `MinimumDate` Eigenschaft. Bindungsquelle ist auf dem ausgewählten `Date` Eigenschaft von der `startDatePicker` Objekt. Dadurch wird sichergestellt, dass das Enddatum immer zu einem späteren Zeitpunkt als oder gleich dem Startdatum ist. Zusätzlich zu den beiden `DatePicker` Objekte eine `Switch` ist mit der Bezeichnung "Include beide Tag insgesamt". 
+Jede `DatePicker` erhält eine `Format` Eigenschaft von "D" für einen langen Datumsformat. Beachten Sie auch, dass die `endDatePicker` Objekt besitzt eine Bindung, die als Ziel verwendet die `MinimumDate` Eigenschaft. Bindungsquelle ist auf dem ausgewählten `Date` Eigenschaft von der `startDatePicker` Objekt. Dadurch wird sichergestellt, dass das Enddatum immer zu einem späteren Zeitpunkt als oder gleich dem Startdatum ist. Zusätzlich zu den beiden `DatePicker` Objekte eine `Switch` ist mit der Bezeichnung "Enthalten beide Tage insgesamt". 
 
 Die beiden `DatePicker` Ansichten verfügen über Handler verknüpft die `DateSelected` -Ereignis und die `Switch` an ein Handler angefügt seine `Toggled` Ereignis. Diese Ereignishandler sind in der CodeBehind-Datei und eine neue Berechnung der Tage zwischen den beiden Datumsangaben auslösen:
 
@@ -184,7 +184,7 @@ Nach zwei Datumsangaben ausgewählt sind, zeigt die Anwendung die Anzahl der Tag
 
 [![Tage zwischen Datumsangaben Ergebnis](datepicker-images/DaysBetweenDatesResult.png "Tage zwischen Datumsangaben Ergebnis")](datepicker-images/DaysBetweenDatesResult-Large.png#lightbox "Tage zwischen Datumsangaben Ergebnis")
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte links
 
 - [DaysBetweenDates-Beispiel](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
 - [DatePicker-API](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/)

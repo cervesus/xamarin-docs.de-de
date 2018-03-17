@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: a2378cb439ceed94751e61fd44b54aae3a65bebd
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3564b4f7d41822fdd9ab167fb3e756f26678a17b
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="touch-id"></a>Touch ID
 
@@ -39,11 +39,8 @@ Schlüsselbund kann nicht allein das Schlüsselbund-Element entschlüsselt; Stat
 
 Zuerst sollte Ihre Anwendung Abfragen, in den keychain-Wert zu überprüfen, ob ein Kennwort vorhanden ist. Wenn es nicht vorhanden ist, müssen Sie möglicherweise nach einem Kennwort gefragt werden, damit der Benutzer ständig gebeten wird nicht. Wenn das Kennwort werden aktualisiert muss, den Benutzer ein neues Kennwort auffordern und in den aktualisierten Wert an den keychain-Wert übergeben.
 
-
-> ℹ️ **Hinweis**: mit vertrauliche Daten Sie aus der Datenbank erhalten, ist nicht nur bewährte Methode, aber davon ausgegangen, dass keine geheimen Schlüssel im Speicher behalten werden. Wie lange, wie es erforderlich ist und absolut keine es eine globale Variable zuweisen, sollten Sie nur einen geheimen Schlüssel für halten!
-
-
-
+> [!NOTE]
+> Nachdem über den keychain-Wert mit einem geheimen Schlüssel abgerufen werden, sollten alle Verweise auf die Daten aus dem Arbeitsspeicher gelöscht werden. Nie weisen sie eine globale Variable.
 
 ## <a name="keychain-acl-and-touch-id"></a>Schlüsselbund ACL und Touch ID
 
@@ -53,32 +50,11 @@ Access Control List ist ein neues Schlüsselbund-Element-Attribut in iOS 8, die 
 
 Seit iOS 8 ist jetzt eine neue Vorhandensein Benutzerrichtlinie `SecAccessControl`, wird die von der sicheren Enclave auf einem iPhone 5s und höher erzwungen. Wir sehen, in der folgenden Tabelle zusammengestellt einfach wie die Gerätekonfiguration richtlinienauswertung beeinflussen kann:
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Gerätekonfiguration</td>
-    <td>Auswertung von Richtlinien</td>
-    <td>Sicherungsverfahren</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td>Gerät ohne Kennung</td>
-    <td>Kein Zugriff</td>
-    <td>Keiner</td>
-</tr>
-<tr>
-    <td>Gerät mit der Kennung</td>
-    <td>Erfordert die Kennung</td>
-    <td>Keiner</td>
-</tr>
-<tr>
-    <td>Gerät mit Touch ID</td>
-    <td>Touch ID bevorzugt</td>
-    <td>Ermöglicht der Kennung</td>
-</tr>
-</tbody>
-</table>
+|Gerätekonfiguration|Auswertung von Richtlinien|Sicherungsverfahren|
+|--- |--- |--- |
+|Gerät ohne Kennung|Kein Zugriff|Keiner|
+|Gerät mit der Kennung|Erfordert die Kennung|Keiner|
+|Gerät mit Touch ID|Touch ID bevorzugt|Ermöglicht der Kennung|
 
 Alle Vorgänge in der sicheren Enclave können voneinander als vertrauenswürdig eingestuft. Dies bedeutet, dass wir das Authentifizierungsergebnis Touch ID verwenden können, um die Entschlüsselung der Schlüsselsammlung-Element zu autorisieren. Die sichere Enclave bleiben einen Zähler der fehlgeschlagenen Übereinstimmungen von Touch ID, in denen Fall ein Benutzer mit der Kennung zurücksetzen muss.
 Ein neues Framework in iOS 8 aufgerufen _lokale Authentifizierung_, dieser Vorgang der Authentifizierung innerhalb des Geräts unterstützt. Wir untersuchen dies im nächsten Abschnitt.

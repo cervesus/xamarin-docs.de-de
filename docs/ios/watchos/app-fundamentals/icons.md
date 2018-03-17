@@ -6,11 +6,11 @@ ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 98cd780a29abdbeaab02483e4b6ed01a218f88e5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6d80ef6bdac7f35b282f6347a0356453a413b39c
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="working-with-icons"></a>Arbeiten mit Symbolen
 
@@ -21,48 +21,12 @@ Apple Watch-Lösungen erfordern zwei Sätze von Symbole:
 
 ## <a name="apple-watch-icons"></a>Apple Watch-Symbole
 
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-    <tr>
-      <td valign="top">
-        <b>iOS-App-Symbol</b>
-      </td>
-      <td valign="top">
-Wird angezeigt, auf dem iPhone und wird die übergeordnete Anwendung gestartet </td>
-      <td>
-        <img src="icons-images/icon-ios.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" rowspan="3">
-        <b>Symbol "Watch-App"</b>
-      </td>
-      <td valign="top">
-Wird auf der Apple Watch-Startbildschirm </td>
-      <td>
-        <img src="icons-images/icon-home.png" class="tableimg" />
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Überwachen von Benachrichtigungen wird angezeigt </td>
-      <td>
-        <img src="icons-images/notification-icon.png" class="tableimg" />
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Wird angezeigt, der <a href="~/ios/watchos/app-fundamentals/settings.md">iOS Apple Watch-App</a>
-      </td>
-      <td>
-        <a href="icons-images/watch-app.png">
-          <img src="icons-images/watch-app-sml.png" class="tableimg">
-        </a>
-      </td>
-    </tr>
-    <tbody>
-</table>
-
-
+| | | |
+|-|-|-|
+|iOS-App-Symbol|Wird angezeigt, auf dem iPhone und wird die übergeordnete Anwendung gestartet|![](icons-images/icon-ios.png)|
+|Symbol "Watch-App"|Wird auf der Apple Watch-Startbildschirm|![](icons-images/icon-home.png)|
+||Überwachen von Benachrichtigungen wird angezeigt|![](icons-images/notification-icon.png)|
+||Wird angezeigt, der [iOS Apple Watch-App](~/ios/watchos/app-fundamentals/settings.md)|![](icons-images/watch-app-sml.png)|
 
 ## <a name="configuring-your-solution"></a>Konfigurieren die Projektmappe
 

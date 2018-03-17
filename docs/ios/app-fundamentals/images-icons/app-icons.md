@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: df9059b0e64b4a05b554f25b5f9d7f6031406633
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 68372d90b0567c662f0ae43e315663832f1f769b
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="application-icons"></a>Anwendungssymbole
 
@@ -42,104 +42,66 @@ Auf die gleiche Weise, dass eine app Xamarin.iOS Bildanlagen für UI-Steuereleme
 
 Die folgenden Asset Bildgrößen und Lösungen ist erforderlich sein, um unterstützen alle die Symboltypen, die von einer Xamarin.iOS-app für iOS 5 über iOS 9 (oder höher) erforderlich sind:
 
-<table cellpadding="7" cellspacing="0" width="100%">
-    <tr valign="top">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="5" align="center" bgcolor="#F0F0F0"><b>iPhone</b></td>
-    </tr>
-    <tr valign="center">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 5 & 6</b></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 7 & 8</b></td>
-        <td align="center" bgcolor="#F9F9F9"><b>iOS 9 & 10<b><br/><i>(iPhone 6 und 7 Plus)</i></td>
-    </tr>
-    <tr valign="top" bgcolor="#F0F0F0">
-        <td width="200" align="center"><b>Symbol "-Typ</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>3x</b></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">Anwendungssymbol</td>
-        <td align="center">57x57</td>
-        <td align="center">114x114</td>
-        <td align="center" style="color:#BBBBBB;">60x60<sup>(1)</sup></td>
-        <td align="center">120x120</td>
-        <td align="center">180 x 180</td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">Spotlight</td>
-        <td align="center">29x29</td>
-        <td align="center">58 x 58</td>
-        <td align="center" style="color:#BBBBBB;">40x40<sup>(2)</sup></td>
-        <td align="center">80x80</td>
-        <td align="center">120x120</td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">Einstellungen</td>
-        <td align="center" style="color:#BBBBBB;">29x29<sup>(3)(4)</sup></td>
-        <td align="center" style="color:#BBBBBB;">58x58<sup>(3)(4)</sup></td>
-        <td align="center">-</td>
-        <td align="center">-</td>
-        <td align="center">87x87</td>
-    </tr>
-</table>
+### <a name="iphone-icon-sizes"></a>iPhone Symbolgrößen
 
-<table cellpadding="7" cellspacing="0" width="100%">
-    <tr valign="top">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="5" align="center" bgcolor="#F0F0F0"><b>iPad</b></td>
-    </tr>
-    <tr valign="center">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 5 & 6</b></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 7 & 8</b></td>
-        <td colspan="1" align="center" bgcolor="#F9F9F9"><b>iOS&nbsp;9 & 10</b></td>
-    </tr>
-    <tr valign="top" bgcolor="#F0F0F0">
-        <td width="200" align="center"><b>Symbol "-Typ</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>2x<br/>iPad&nbsp;Pro</b></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">Anwendungssymbol</td>
-        <td align="center">72x72</td>
-        <td align="center">144x144</td>
-        <td align="center">76x76</td>
-        <td align="center">152x152</td>
-        <td align="center">167x167<sup>(6)</sup></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">Spotlight</td>
-        <td align="center">50x50</td>
-        <td align="center">100x100</td>
-        <td align="center">40x40</td>
-        <td align="center">80x80</td>
-        <td align="center" style="color:#BBBBBB;">120x120<sup>(5)</sup></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">Einstellungen</td>
-        <td align="center" style="color:#BBBBBB;">29x29<sup>(3)(5)</sup></td>
-        <td align="center" style="color:#BBBBBB;">58x58<sup>(3)(5)</sup></td>
-        <td align="center">-</td>
-        <td align="center">-</td>
-        <td align="center" style="color:#BBBBBB;">58x58<sup>(5)</sup></td>
-    </tr>
-</table>
+- **iPhone: iOS 9 und 10 (iPhone 6 und 7 Plus)**
 
-1. _Sowohl Visual Studio für Mac und Xcode unterstützt Festlegen von 1 X-Image für iOS 7 nicht mehr._
-2. _Festlegen eines 1 X-Images für iOS 7 wird nicht unterstützt, wenn Asset Kataloge verwenden._
-3. _iOS 7 und 8 verwenden dieselbe Bildgrößen als iOS 5 und 6 an._
-4. _Verwendet die Bilder und die Größe der Spotlight-Symbol._
-5. _Verwendet die gleiche Größe Symbole als dem iPhone an._
-6. _Nur unterstützt mit Asset-Katalog-Image-Sätze._
+    ||3x|
+    |---|---|
+    |Anwendungssymbol|180 x 180|
+    |Spotlight|120x120|
+    |Einstellungen|87x87|
 
-Weitere Informationen zu Symbolen finden Sie in der Apple- [Symbol und Bildgrößen](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1) Dokumentation.
+- **iPhone: iOS 7 & 8**
+
+    ||1x|2x|
+    |---|---|---|
+    |Anwendungssymbol|60x60<sup>1</sup>|120x120|
+    |Spotlight|40x40<sup>2</sup>|80x80|
+    |Einstellungen|-|-|
+
+- **iPhone: iOS 5 & 6**
+
+    ||1x|2x|
+    |---|---|---|
+    |Anwendungssymbol|57x57|114x114|
+    |Spotlight|29x29|58 x 58|
+    |Einstellungen|29x29<sup>3, 4</sup>|58 x 58<sup>3, 4</sup>|
+
+### <a name="ipad-icon-sizes"></a>iPad Symbolgrößen
+
+- **iPad: iOS 9 & 10**
+
+    ||2x (iPad Pro)|
+    |---|---|
+    |Anwendungssymbol|167x167<sup>6</sup>|
+    |Spotlight|120x120<sup>6</sup>|
+    |Einstellungen|58x58<sup>5</sup>|
+
+- **iPad: iOS 7 & 8**
+
+    ||1x|2x|
+    |---|---|---|
+    |Anwendungssymbol|76x76|152x152|
+    |Spotlight|40x40|80x80|
+    |Einstellungen|-|-|
+
+- **iPad: iOS 5 & 6**
+
+    ||1x|2x|
+    |---|---|---|
+    |Anwendungssymbol|72x72|144x144|
+    |Spotlight|50x50|100x100|
+    |Einstellungen|29x29<sup>3, 5</sup>|58x58<sup>3, 5</sup>|
+
+ 1. Sowohl Visual Studio für Mac und Xcode unterstützt Festlegen von 1 X-Image für iOS 7 nicht mehr.
+ 2. Festlegen eines 1 X-Images für iOS 7 wird nicht unterstützt, wenn Asset Kataloge verwenden.
+ 3. iOS 7 und 8 verwenden dieselbe Bildgrößen als iOS 5 und 6 an.
+ 4. Verwendet die Bilder und die Größe der Spotlight-Symbol.
+ 5. Verwendet die gleiche Größe Symbole als dem iPhone an.
+ 6. Nur unterstützt mit Asset-Katalog-Image-Sätze.
+ 
+ Weitere Informationen zu Symbolen finden Sie in der Apple- [Symbol und Bildgrößen](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1) Dokumentation.
 
 <a name="managing" />
 

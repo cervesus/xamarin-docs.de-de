@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: 2c48ae5386fda63aed43c24c09c10cfb87b93637
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e231043b1c4b0fa7ba72f2a371545036ffb21164
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -147,40 +147,12 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 
 Dies sind die Unterschiede zwischen der Datenbank-Datentypen:
 
-<table cellpadding="1" cellspacing="1" border="1" width="100%">
-<thead>
-<tr>
-<td></td>
-<td>Öffentliche Datenbank</td>
-<td>Private-Datenbank</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Datentyp</td>
-<td>Gemeinsam genutzte Daten</td>
-<td>Daten des aktuellen Benutzers</td>
-</tr>
-
-<tr>
-<td>Kontingent</td>
-<td>Auf der Hand des Entwicklers Kontingent berücksichtigt</td>
-<td>Klicken Sie auf das Kontingent des Benutzers berücksichtigt</td>
-</tr>
-
-<tr>
-<td>Standardberechtigungen</td>
-<td>Lesbare World</td>
-<td>Benutzer lesbar</td>
-</tr>
-
-<tr>
-<td>Berechtigungen bearbeiten</td>
-<td>iCloud Dashboard Rollen über eine Benutzerdatensatz-Klasse Ebene</td>
-<td>Nicht zutreffend</td>
-</tr>
-</tbody>
-</table>
+||Öffentliche Datenbank|Private-Datenbank|
+|---|--- |--- |
+|**Datentyp**|Gemeinsam genutzte Daten|Daten des aktuellen Benutzers|
+|**Quota**|Auf der Hand des Entwicklers Kontingent berücksichtigt|Klicken Sie auf das Kontingent des Benutzers berücksichtigt|
+|**Standardberechtigungen**|Lesbare World|Benutzer lesbar|
+|**Berechtigungen bearbeiten**|iCloud Dashboard Rollen über eine Benutzerdatensatz-Klasse Ebene|Nicht zutreffend|
 
 ### <a name="records"></a>Datensätze
 

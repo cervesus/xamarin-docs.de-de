@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: cda523cd9d762c3a3c1570e2abd0acb8a264d5dd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 10fb2e2824a05954e19f9b483884061b217be683
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="verify-attributes"></a>Überprüfen der Attribute
 
@@ -29,32 +29,12 @@ Nachdem Sie überprüft haben, dass die Bindung korrigieren oder wurden behoben,
 
 Der Hinweis-Argument für das Attribut angegebenen kann, werden mit den unten stehenden Dokumentation verwiesen. Dokumentation für eine beliebige erzeugten `[Verify]` Attribute werden in der Konsole als auch angegeben werden, nachdem die Bindung abgeschlossen wurde.
 
-<table>
-  <thead>
-  <tr>
-    <th>Überprüfen Sie Hinweis</th>
-    <th>Beschreibung</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>InferredFromPreceedingTypedef</td>
-    <td>Der Name dieser Deklaration durch allgemeine Konvention aus abgeleitet wurde die sofort jeweils vorgehenden <code>typedef</code> in den ursprünglichen systemeigene Quellcode einfügen. Stellen Sie sicher, dass der abgeleitete Name korrekt sind, da diese Konvention mehrdeutig ist.</td>
-  </tr>
-  <tr>
-    <td>ConstantsInterfaceAssociation</td>
-    <td>Es gibt keine Möglichkeit kinderleicht Nachweis, um zu bestimmen, welche Objective-C-Schnittstelle eine Variablendeklaration "extern" zugeordnet werden kann. Instanzen dieser gebunden sind, als <code>[Field]</code> Eigenschaften in einer teilweise-Schnittstelle in einer in der Nähe von "-" durch konkrete Oberfläche erzeugt eine intuitivere API, die möglicherweise eliminieren "Konstanten"-Schnittstelle vollständig.</td>
-  </tr>
-  <tr>
-    <td>MethodToProperty</td>
-    <td>Eine Objective-C-Methode wurde als eine C#-Eigenschaft wird aufgrund des Namenskonvention wie, die keine Parameter akzeptiert und Zurückgeben eines Werts (nicht "void" zurückgeben) gebunden. Häufig Methoden wie diese als Eigenschaften gebunden werden sollte, um eine nützlicher API-Oberfläche jedoch gelegentlich Fehlerquote auftreten können, und die Bindung muss sich tatsächlich auf eine Methode.</td>
-  </tr>
-  <tr>
-    <td>StronglyTypedNSArray</td>
-    <td>Ein systemeigenes <code>NSArray*</code> gebunden wurde, als <code>NSObject[]</code>. Es kann möglich sein, stärker Geben Sie das Array in der Bindung, die basierend auf den Erwartungen, die über die API-Dokumentation (z. B. Kommentare in der Headerdatei) festlegen oder durch Untersuchen der Arrayinhalt durch Tests. Angenommen, ein NSArray *, enthält nur NSNumber * Instancescan gebunden werden, als <code>NSNumber[]</code> anstelle von <code>NSObject[]</code>.</td>
-  </tr>
-  </tbody>
-</table>
+|Überprüfen Sie Hinweis|Beschreibung|
+|---|---|
+|InferredFromPreceedingTypedef|Der Name dieser Deklaration durch allgemeine Konvention aus abgeleitet wurde die sofort jeweils vorgehenden `typedef` in den ursprünglichen systemeigene Quellcode einfügen. Stellen Sie sicher, dass der abgeleitete Name korrekt sind, da diese Konvention mehrdeutig ist.|
+|ConstantsInterfaceAssociation|Es gibt keine Möglichkeit kinderleicht Nachweis, um zu bestimmen, welche Objective-C-Schnittstelle eine Variablendeklaration "extern" zugeordnet werden kann. Instanzen dieser gebunden sind, als `[Field]` Eigenschaften in einer teilweise-Schnittstelle in einer in der Nähe von "-" durch konkrete Oberfläche erzeugt eine intuitivere API, die möglicherweise eliminieren "Konstanten"-Schnittstelle vollständig.|
+|MethodToProperty|Eine Objective-C-Methode wurde als eine C#-Eigenschaft wird aufgrund des Namenskonvention wie, die keine Parameter akzeptiert und Zurückgeben eines Werts (nicht "void" zurückgeben) gebunden. Häufig Methoden wie diese als Eigenschaften gebunden werden sollte, um eine nützlicher API-Oberfläche jedoch gelegentlich Fehlerquote auftreten können, und die Bindung muss sich tatsächlich auf eine Methode.|
+|StronglyTypedNSArray|Ein systemeigenes `NSArray*` gebunden wurde, als `NSObject[]`. Es kann möglich sein, stärker Geben Sie das Array in der Bindung, die basierend auf den Erwartungen, die über die API-Dokumentation (z. B. Kommentare in der Headerdatei) festlegen oder durch Untersuchen der Arrayinhalt durch Tests. Angenommen, ein NSArray *, enthält nur NSNumber * Instancescan gebunden werden, als `NSNumber[]` anstelle von `NSObject[]`.|
 
 Erhalten Sie die Dokumentation für einen Hinweis mit auch schnell die `sharpie verify-docs` tool, zum Beispiel:
 

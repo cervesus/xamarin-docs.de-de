@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: b1b6338494b9be98e677cf9d338410eae759feb8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a09ba93fe7c3f5ade6b5cafe44fd7ee2b0c33487
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>Aktualisieren vorhandene Apps auf einheitliche API
 
@@ -49,7 +49,7 @@ Vorhandene Xamarin.Mac-apps können aktualisiert werden, um die einheitliche API
 
 Beim Aktualisieren einer vorhandenen Xamarin.Forms-Projektmappe mit der ein iOS-Projekt die Unified-API verwenden, gehen Sie wie folgt vor. Einheitliche API-Unterstützung ist nur verfügbar in Xamarin.Forms 1.3 und höher, damit [die Anweisungen](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md) wird auch erläutert, wie Ihre app Xamarin.Forms auf Version 1.3 zu aktualisieren. Diese [Tipps](~/cross-platform/macios/unified/updating-tips.md) kann Ihnen helfen, die alle systemeigenen iOS-Code in benutzerdefinierten Renderer oder Abhängigkeitsdienste aktualisieren.
 
-## <a name="working-with-native-types-in-cross-platform-appscross-platformmaciosnativetypesmd"></a>[Arbeiten mit systemeigenen Typen in plattformübergreifende Apps](~/cross-platform/macios/nativetypes.md)
+## <a name="working-with-native-types-in-cross-platform-appscross-platformmaciosnativetypesmd"></a>[Arbeiten mit nativen Typen in plattformübergreifenden Apps](~/cross-platform/macios/nativetypes.md)
 
 Dieser Artikel umfasst, verwenden die neue iOS Unified API systemeigene Typen (Nint, Nuint, Nfloat) in einer plattformübergreifenden-Anwendung, in dem Code mit nicht-iOS-Geräten, z. B. Android oder Windows Phone Betriebssysteme freigegebenen. Einblick in die bei der systemeigenen Typen verwendet werden soll, und bietet mehrere mögliche Lösungen für Fälle, in dem der neue Typ mit plattformübergreifenden Code verwendet werden muss.
 
@@ -68,4 +68,4 @@ Führen Sie diese Anweisungen, um [Aktualisieren eines vorhandenen Projekts der 
 - [Aktualisieren von Apps mit Xamarin.Forms](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 - [Aktualisieren von Bindungen](~/cross-platform/macios/unified/update-binding.md)
 - [Aktualisieren von Tipps](~/cross-platform/macios/unified/updating-tips.md)
-- [Klassische Vs einheitliche API-Unterschiede](http://developer.xamarin.comhttps://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [Klassische Vs einheitliche API-Unterschiede](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

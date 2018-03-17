@@ -7,12 +7,12 @@ ms.assetid: 3BE4A128-2D88-4500-9E48-20375EA99A49
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/13/2018
-ms.openlocfilehash: 5db4c735205753810466c26535ba9e2f525709a8
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.date: 03/16/2018
+ms.openlocfilehash: 31114df0b631aea909e82f3a8b836d5ef922d2c1
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="android-wear"></a>Android Wear
 
@@ -37,6 +37,10 @@ In der Vorschau anzeigen Sie, und Optimieren Sie Ihre Benutzeroberfläche für d
 ##  <a name="deployment--testingandroidweardeploy-testindexmd"></a>[Bereitstellung und Testen](~/android/wear/deploy-test/index.md)
 
 Erläutert, wie Ihre app Android Dach ein Dach Android-Gerät oder auf Android-Emulator für Abnutzung konfiguriert bereitstellen. Er umfasst außerdem das Debuggen, Tipps und Informationen zum Einrichten einer Bluetooth-Verbindung zwischen Ihrem Computer und einem Android-Gerät.
+
+##  <a name="wear-apishttpsdeveloperandroidcomreferenceandroidsupportwearable"></a>[Dach APIs](https://developer.android.com/reference/android/support/wearable)
+
+Android Developer-Website enthält ausführliche Informationen zu wichtigsten Dach APIs wie z. B. [Wearable Aktivität](https://developer.android.com/reference/android/support/wearable/activity/package-summary.html), [Intents](https://developer.android.com/reference/com/google/android/wearable/intent/package-summary.html), [Authentifizierung](https://developer.android.com/reference/android/support/wearable/authentication/package-summary.html), [ Komplikationen](https://developer.android.com/reference/android/support/wearable/complications/package-summary.html), [Komplikationen Rendern](https://developer.android.com/reference/android/support/wearable/complications/rendering/package-summary.html), [Benachrichtigungen](https://developer.android.com/reference/android/support/wearable/notifications/package-summary.html), [Ansichten](https://developer.android.com/reference/android/support/wearable/view/package-summary.html), und [WatchFace](https://developer.android.com/reference/android/support/wearable/watchface/package-summary.html).
 
 
 

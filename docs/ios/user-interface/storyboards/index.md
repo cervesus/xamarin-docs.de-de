@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 342e8189d9dec6eaa60a999d56a7891da845d247
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a0b0ca9857e706a9a84f1c661f7f6ff294e112c1
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="introduction-to-storyboards"></a>Einführung in die Storyboards
 
@@ -84,32 +84,12 @@ Jede Anwendung, die mithilfe von Klassen Größe verwenden ebenfalls das neue [ 
 
 [![](images/adaptivesegue.png "Die Adaptive Segues-Dropdownliste")](images/adaptivesegue.png#lightbox)
 
-<table>
-    <thead>
-        <tr>
-            <th>Segue</th>
-            <th>Beschreibung</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Anzeigen</td>
-            <td>Dies ist vergleichbar mit dem ein Pushabonnement segue, führt aber den Inhalt des Bildschirms berücksichtigt. </td>
-        </tr>
-        <tr>
-            <td>Anzeigen von Details</td>
-            <td>Wenn die app eine Master- und Detailtabelle anzeigen (z. B. in einer geteilten Ansicht Controller auf einem iPAd) angezeigt wird, wird der Inhalt die Detailansicht ersetzt. Wenn die app nur die Master zeigt <strong>oder</strong> Detail, ersetzen den Inhalt der Anfang des Stapels Controller anzeigen.</td>
-        </tr>
-        <tr>
-            <td>Präsentation</td>
-            <td>Dies ähnelt der modale Segue und ermöglicht die Auswahl der Präsentation und Übergang-Formate.</td>
-        </tr>
-        <tr>
-            <td>Popover Präsentation</td>
-            <td>Dies stellt Inhalt dar, wie eine popover</td>
-        </tr>
-    </tbody>
-</table>
+|Segue|Beschreibung|
+|--- |--- |
+|Anzeigen|Dies ist vergleichbar mit dem ein Pushabonnement segue, führt aber den Inhalt des Bildschirms berücksichtigt.|
+|Anzeigen von Details|Wenn die app eine Master- und Detailtabelle anzeigen (z. B. in einer geteilten Ansicht Controller auf einem iPad) angezeigt wird, wird der Inhalt die Detailansicht ersetzt. Wenn die app nur die Master oder Detail angezeigt wird, ersetzen den Inhalt der Anfang des Stapels Controller anzeigen.|
+|Präsentation|Dies ähnelt der modale Segue und ermöglicht die Auswahl der Präsentation und Übergang-Formate.|
+|Popover Präsentation|Dies stellt Inhalt dar, wie eine popover|
 
 ### <a name="transferring-data-with-segues"></a>Übertragen von Daten mit Segues
 

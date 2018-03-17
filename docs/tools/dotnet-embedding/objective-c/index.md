@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f6d19f0f6573b17dfb3feb6bf131686413d4e68f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 047f7d7497a114bf4b7c94e50bdf09862b882794
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="objective-c-support"></a>Objective-C-Unterstützung
 
@@ -201,13 +201,11 @@ Aufgrund von `NSDate` verweisen Datum, alle Konvertierungen zwischen ihm und `Da
 
 Beim Konvertieren von `DateTime` auf `NSDate` der "DateTime" `Kind` Eigenschaft berücksichtigt wird.
 
-<table>
-<tr><th> Art         </th><th> Ergebnisse                                                                                            </th></tr>
-<!--tr><td> ------------ </td><td> -------------------------------------------------------------------------------------------------- </td></tr-->
-<tr><td> (UTC)          </td><td> Konvertierung erfolgt unter Verwendung des angegebenen DateTime-Objekts werden.                                  </td></tr>
-<tr><td> Lokal        </td><td> Das Ergebnis des Aufrufs `ToUniversalTime ()` im angegebenen DateTime-Objekt für die Konvertierung verwendet wird. </td></tr>
-<tr><td> Nicht angegeben.  </td><td> Der angegebene DateTime-Objekt wird als angenommen (UTC), also dasselbe Verhalten wie eine Art == (UTC).                </td></tr>
-</table>
+|Art|Ergebnisse                                                                                            |
+|---|---|
+|(UTC)|Konvertierung erfolgt unter Verwendung der angegebenen `DateTime` Objekt ist.|
+|Lokal|Das Ergebnis des Aufrufs `ToUniversalTime()` im bereitgestellten `DateTime` Objekt für die Konvertierung verwendet wird.|
+|Nicht angegeben.|Der bereitgestellte `DateTime` Objekt gilt als (UTC), also dasselbe Verhalten wie eine Art == (UTC).|
 
 Die Konvertierung erfolgt mithilfe der folgenden Formel:
 

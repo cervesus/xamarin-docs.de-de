@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: b076c7a71d81a474ca80ac32771d5512c21c167c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b4705bc9c8fdb1a671c7de2453ea088bf2afe424
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>Exemplarische Vorgehensweise – arbeiten mit WCF
 
@@ -394,37 +394,12 @@ Der WCF-Dienstproxy kann wie folgt von einer Anwendung Xamarin.iOS genutzt werde
 1. In der `HelloWorld.iOS` Projekt, fügen einen Verweis auf die `HelloWorldServiceProxy` Projekt und einem Verweis auf die `System.ServiceModel` Namespace.
 1. In **Projektmappen-Explorer**, doppelklicken Sie auf `Main.storyboard` zum Öffnen der Datei in der iOS-Designer. Fügen Sie dann die folgenden `UIButton` und `UITextView` Steuerelemente:
 
-    <table>
-        <thead>
-            <tr>
-                <td></td>
-                <td>name</td>
-                <td>Titel</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>UIButton</code></td>
-                <td><code>sayHelloWorldButton</code></td>
-                <td>Sagen Sie "Hello, World"</td>
-            </tr>
-            <tr>
-                <td><code>UITextView</code></td>
-                <td><code>sayHelloWorldText</code></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><code>UIButton</code></td>
-                <td><code>getHelloWorldDataButton</code></td>
-                <td>Abrufen von "Hello, World" Daten</td>
-            </tr>
-            <tr>
-                <td><code>UITextView</code></td>
-                <td><code>getHelloWorldDataText</code></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+    ||name|Titel|
+    |--- |--- |--- |
+    |`UIButton`|`sayHelloWorldButton`|Sagen Sie "Hello, World"|
+    |`UITextView`|`sayHelloWorldText`||
+    |`UIButton`|`getHelloWorldDataButton`|Abrufen von "Hello, World" Daten|
+    |`UITextView`|`getHelloWorldDataText`||
 
     Nach dem Hinzufügen der Steuerelemente, sollte die Benutzeroberfläche den folgenden Screenshot ähneln:
 

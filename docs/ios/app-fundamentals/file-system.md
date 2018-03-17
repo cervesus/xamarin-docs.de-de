@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 36c793e7a9b7b30bcb0cdf2c7959fd2df36c8775
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: fd6aa66a7e5e788babc0df3e94b8f3677a7625f0
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="working-with-the-file-system"></a>Arbeiten mit dem Dateisystem
 
@@ -238,78 +238,14 @@ Diese Verzeichnisse und ihre Zwecke zu verwenden, sind unten aufgeführt:
 
 &nbsp;
 
-<table>
-  <tbody>
-    <tr>
-      <td>
-Verzeichnis </td>
-      <td>
-Beschreibung </td>
-    </tr>
-    <tr>
-      <td>
-        <p>[ApplicationName].app/</p>
-      </td>
-      <td>
-        <p><b>In iOS 7 und früher</b> Dies ist die <code>ApplicationBundle</code> Verzeichnis, in dem die ausführbare Datei der Anwendung gespeichert ist. Die Verzeichnisstruktur, die Sie in Ihrer app zu erstellen, die in diesem Verzeichnis (z. B. Bilder und andere Dateitypen, die Sie als Ressourcen in Ihrer Visual Studio für Mac-Projekt markiert haben) vorhanden ist.</p>
-        <p>Wenn Sie die Inhaltsdateien in Ihre Anwendungspaket zugreifen müssen, steht der Pfad zu diesem Verzeichnis über die <code>NSBundle.MainBundle.BundlePath</code> Eigenschaft.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Dokumente /</p>
-      </td>
-      <td>
-        <p>Verwenden Sie dieses Verzeichnis zum Speichern von Benutzerdokumente und Datendateien der Anwendung.</p>
-        <p>Der Inhalt dieses Verzeichnisses können werden zur Verfügung gestellt, die dem Benutzer über iTunes Dateifreigabe (obwohl dies ist standardmäßig deaktiviert). Hinzufügen einer <code>UIFileSharingEnabled</code> Boolean-Taste, um die Datei "Info.plist", um Benutzern Zugriff auf diese Dateien ermöglichen.</p>
-        <p>Auch wenn eine Anwendung nicht sofort nicht Dateifreigabe aktivieren, vermeiden Sie Ablegen von Dateien, die Ihre Benutzer in diesem Verzeichnis ausgeblendet werden soll (z. B. Datenbankdateien, es sei denn, Sie beabsichtigen, diese freizugeben). Als vertrauliche Dateien ausgeblendet bleiben, diese Dateien nicht verfügbar gemacht werden (und möglicherweise verschoben, geänderte oder gelöschte von iTunes) Wenn die Freigabe von Dateien in einer zukünftigen Version aktiviert ist.</p>
-        <p>Sie können die <code>Environment.GetFolderPath
-(Environment.SpecialFolder.MyDocuments)</code> Methode, um den Pfad zu dem Verzeichnis "Dokumente" für Ihre Anwendung abzurufen.</p>
-        <p>Der Inhalt dieses Verzeichnisses werden vom iTunes gesichert.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Bibliothek /</p>
-      </td>
-      <td>
-        <p>Das Verzeichnis der Bibliothek ist eine gute zum Speichern von Dateien, die nicht direkt vom Benutzer, z. B. Datenbanken oder andere Anwendung generierte Dateien erstellt werden.
-Der Inhalt dieses Verzeichnisses werden nie an den Benutzer über iTunes verfügbar gemacht.</p>
-        <p>Sie können eigene Unterverzeichnisse in der Bibliothek erstellen. Es gibt jedoch bereits einige vom System erstellten Verzeichnisse hier, dass Sie von, z. B. Voreinstellungen und Caches berücksichtigen sollten.</p>
-        <p>Der Inhalt dieses Verzeichnisses (mit Ausnahme der Caches Unterverzeichnis) werden vom iTunes gesichert. Benutzerdefinierte Verzeichnisse, die Sie in der Bibliothek erstellen, werden gesichert.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Bibliothek/Voreinstellungen /</p>
-      </td>
-      <td>
-        <p>Anwendungsspezifische Einstellungsdateien werden in diesem Verzeichnis gespeichert. Diese Dateien nicht direkt erstellt werden. Verwenden Sie stattdessen die <code>NSUserDefaults</code> Klasse.</p>
-        <p>Der Inhalt dieses Verzeichnisses werden vom iTunes gesichert.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Bibliothek/Caches /</p>
-      </td>
-      <td>
-        <p>Das Caches-Verzeichnis ist, führen Sie ein guter Ausgangspunkt für Datendateien gespeichert, die Ihrer Anwendung behilflich sein können, aber, die können einfach neu erstellt werden, falls erforderlich. Die Anwendung sollte erstellen und diese Dateien nach Bedarf löschen und diese Dateien bei Bedarf neu erstellt werden. Ios5 kann auch diese Dateien (unter äußerst niedrig Speicher Situationen) löschen, jedoch kein Wert zurückgegeben wird, während die Anwendung ausgeführt wird.</p>
-        <p>Der Inhalt dieses Verzeichnisses nicht vom iTunes, d., sie sind nicht vorhanden h., wenn der Benutzer ein Gerät wiederherstellt, gesichert werden, und sie können möglicherweise nicht vorhanden, nachdem eine aktualisierte Version der Anwendung installiert ist.</p>
-        <p>Für den Fall, dass Ihre Anwendung keine Verbindung mit dem Netzwerk herstellen kann, können Sie das Verzeichnis Caches verwenden, zum Speichern von Daten oder Dateien, um eine gute offline Erfahrung zu bieten. Die Anwendung speichern und diese Daten schnell beim Warten auf Antworten Netzwerk abrufen kann, aber es muss nicht gesichert werden und kann problemlos werden wiederhergestellt oder neu erstellt werden, nachdem eine Wiederherstellung oder der Version aktualisieren.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>tmp/</p>
-      </td>
-      <td>
-        <p>Anwendungen können temporäre Dateien speichern, die nur für einen kurzen Zeitraum in diesem Verzeichnis erforderlich sind. Um Speicherplatz zu sparen, sollten die Dateien gelöscht werden, wenn sie nicht mehr benötigt werden. Das Betriebssystem kann auch Dateien von diesem Verzeichnis gelöscht, wenn eine Anwendung nicht ausgeführt wird.</p>
-        <p>Der Inhalt dieses Verzeichnisses werden vom iTunes nicht gesichert.</p>
-        <p>Beispielsweise kann die Tmp-Verzeichnis verwendet, werden zum Speichern temporärer Dateien, die für die Anzeige für den Benutzer (z. B. Twitter Avatare oder e-Mail-Anlagen) heruntergeladen werden, jedoch gelöscht werden konnte, nachdem sie haben wurde angezeigt (und erneut heruntergeladen werden, wenn sie in der Zukunft erforderlich sind ).</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+|Verzeichnis|Beschreibung|
+|---|---|
+|[ApplicationName].app/|**In iOS 7 und früher** Dies ist die `ApplicationBundle` Verzeichnis, in dem die ausführbare Datei der Anwendung gespeichert ist. Die Verzeichnisstruktur, die Sie in Ihrer app zu erstellen, die in diesem Verzeichnis (z. B. Bilder und andere Dateitypen, die Sie als Ressourcen in Ihrer Visual Studio für Mac-Projekt markiert haben) vorhanden ist.<br /><br />Wenn Sie die Inhaltsdateien in Ihre Anwendungspaket zugreifen müssen, steht der Pfad zu diesem Verzeichnis über die `NSBundle.MainBundle.BundlePath` Eigenschaft.|
+|Dokumente /|Verwenden Sie dieses Verzeichnis zum Speichern von Benutzerdokumente und Datendateien der Anwendung.<br /><br />Der Inhalt dieses Verzeichnisses können werden zur Verfügung gestellt, die dem Benutzer über iTunes Dateifreigabe (obwohl dies ist standardmäßig deaktiviert). Hinzufügen einer `UIFileSharingEnabled` Boolean-Taste, um die Datei "Info.plist", um Benutzern Zugriff auf diese Dateien ermöglichen.<br /><br />Auch wenn eine Anwendung nicht sofort nicht Dateifreigabe aktivieren, vermeiden Sie Ablegen von Dateien, die Ihre Benutzer in diesem Verzeichnis ausgeblendet werden soll (z. B. Datenbankdateien, es sei denn, Sie beabsichtigen, diese freizugeben). Als vertrauliche Dateien ausgeblendet bleiben, diese Dateien nicht verfügbar gemacht werden (und möglicherweise verschoben, geänderte oder gelöschte von iTunes) Wenn die Freigabe von Dateien in einer zukünftigen Version aktiviert ist.<br /><br /> Sie können die `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)` Methode, um den Pfad zu dem Verzeichnis "Dokumente" für Ihre Anwendung abzurufen.<br /><br />Der Inhalt dieses Verzeichnisses werden vom iTunes gesichert.|
+|Bibliothek /|Das Verzeichnis der Bibliothek ist eine gute zum Speichern von Dateien, die nicht direkt vom Benutzer, z. B. Datenbanken oder andere Anwendung generierte Dateien erstellt werden. Der Inhalt dieses Verzeichnisses werden nie an den Benutzer über iTunes verfügbar gemacht.<br /><br />Sie können eigene Unterverzeichnisse in der Bibliothek erstellen. Es gibt jedoch bereits einige vom System erstellten Verzeichnisse hier, dass Sie von, z. B. Voreinstellungen und Caches berücksichtigen sollten.<br /><br />Der Inhalt dieses Verzeichnisses (mit Ausnahme der Caches Unterverzeichnis) werden vom iTunes gesichert. Benutzerdefinierte Verzeichnisse, die Sie in der Bibliothek erstellen, werden gesichert.|
+|Bibliothek/Voreinstellungen /|Anwendungsspezifische Einstellungsdateien werden in diesem Verzeichnis gespeichert. Diese Dateien nicht direkt erstellt werden. Verwenden Sie stattdessen die `NSUserDefaults` Klasse.<br /><br />Der Inhalt dieses Verzeichnisses werden vom iTunes gesichert.|
+|Bibliothek/Caches /|Das Caches-Verzeichnis ist, führen Sie ein guter Ausgangspunkt für Datendateien gespeichert, die Ihrer Anwendung behilflich sein können, aber, die können einfach neu erstellt werden, falls erforderlich. Die Anwendung sollte erstellen und diese Dateien nach Bedarf löschen und diese Dateien bei Bedarf neu erstellt werden. Ios5 kann auch diese Dateien (unter äußerst niedrig Speicher Situationen) löschen, jedoch kein Wert zurückgegeben wird, während die Anwendung ausgeführt wird.<br /><br />Der Inhalt dieses Verzeichnisses nicht vom iTunes, d., sie sind nicht vorhanden h., wenn der Benutzer ein Gerät wiederherstellt, gesichert werden, und sie können möglicherweise nicht vorhanden, nachdem eine aktualisierte Version der Anwendung installiert ist.<br /><br />Für den Fall, dass Ihre Anwendung keine Verbindung mit dem Netzwerk herstellen kann, können Sie das Verzeichnis Caches verwenden, zum Speichern von Daten oder Dateien, um eine gute offline Erfahrung zu bieten. Die Anwendung speichern und diese Daten schnell beim Warten auf Antworten Netzwerk abrufen kann, aber es muss nicht gesichert werden und kann problemlos werden wiederhergestellt oder neu erstellt werden, nachdem eine Wiederherstellung oder der Version aktualisieren.|
+|tmp/|Anwendungen können temporäre Dateien speichern, die nur für einen kurzen Zeitraum in diesem Verzeichnis erforderlich sind. Um Speicherplatz zu sparen, sollten die Dateien gelöscht werden, wenn sie nicht mehr benötigt werden. Das Betriebssystem kann auch Dateien von diesem Verzeichnis gelöscht, wenn eine Anwendung nicht ausgeführt wird.<br /><br />Der Inhalt dieses Verzeichnisses werden vom iTunes nicht gesichert.<br /><br />Beispielsweise kann die Tmp-Verzeichnis verwendet, werden zum Speichern temporärer Dateien, die für die Anzeige für den Benutzer (z. B. Twitter Avatare oder e-Mail-Anlagen) heruntergeladen werden, jedoch gelöscht werden konnte, nachdem sie haben wurde angezeigt (und erneut heruntergeladen werden, wenn sie in der Zukunft erforderlich sind ).|
 
 Diese bildschirmabbildung zeigt die Verzeichnisstruktur, geben Sie im Finder:
 

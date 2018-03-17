@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 30a952bf0df4db34c749de3d6198877b7a9766b9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 77808ae03f5801dd3628b8966e05a574b8501f37
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="unified-storyboards"></a>Einheitliche Storyboards
 
@@ -116,63 +116,23 @@ In diesem Abschnitt werden die normalen Typen von Merkmals Sammlungen behandelt,
 
 Im folgenden finden eine typische Merkmal ""-Auflistung, die der Entwickler möglicherweise auf einem iPhone angezeigt:
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Eigenschaft</td>
-    <td>Wert</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td><code>HorizontalSizeClass</code></td>
-    <td>Komprimieren</td>
-</tr>
-<tr>
-    <td><code>VerticalSizeClass</code></td>
-    <td>Regulär</td>
-</tr>
-<tr>
-    <td><code>UserInterfaceIdom</code></td>
-    <td>Telefon</td>
-</tr>
-<tr>
-    <td><code>DisplayScale</code></td>
-    <td>2.0</td>
-</tr>
-</tbody>
-</table>
+|Eigenschaft|Wert|
+|--- |--- |
+|`HorizontalSizeClass`|Komprimieren|
+|`VerticalSizeClass`|Regulär|
+|`UserInterfaceIdom`|Telefon|
+|`DisplayScale`|2.0|
 
 Die oben genannten Satz würden eine vollständig qualifizierte Merkmals Sammlung darstellen, wie sie Werte für alle zugehörigen Eigenschaften Merkmal "" enthält.
 
 Es ist auch möglich, ein Merkmal Sammlung verfügen, die einige ihrer Werte fehlen (Apple bezieht sich auf als *Unspecified*):
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Eigenschaft</td>
-    <td>Wert</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td><code>HorizontalSizeClass</code></td>
-    <td>Komprimieren</td>
-</tr>
-<tr>
-    <td><code>VerticalSizeClass</code></td>
-    <td>{unspecified}</td>
-</tr>
-<tr>
-    <td><code>UserInterfaceIdom</code></td>
-    <td>{unspecified}</td>
-</tr>
-<tr>
-    <td><code>DisplayScale</code></td>
-    <td>{unspecified}</td>
-</tr>
-</tbody>
-</table>
+|Eigenschaft|Wert|
+|--- |--- |
+|`HorizontalSizeClass`|Komprimieren|
+|`VerticalSizeClass`|Nicht angegeben.|
+|`UserInterfaceIdom`|Nicht angegeben.|
+|`DisplayScale`|Nicht angegeben.|
 
 Im Allgemeinen jedoch, wird Wenn der Entwickler der Umgebung Merkmal "" mitfinanziert Merkmals anfordert, es eine vollqualifizierte Auflistung zurückgegeben wie im obigen Beispiel zu sehen.
 
@@ -216,7 +176,6 @@ Eine andere Funktion, die ein Entwickler Merkmals Auflistungen ausführen könne
 
 Wie oben angegeben, wenn die Merkmale ist in einer der Sammlungen Merkmal "" nicht angegeben und wird in einer anderen angegeben, wird der Wert der angegebenen Version festgelegt werden. Jedoch wenn es mehrere Versionen eines angegebenen Werts angegeben gibt, den Wert aus der letzten Merkmals Sammlung den Wert werden, der verwendet wird.
 
-
 ## <a name="adaptive-view-controllers"></a>Adaptive View-Controller
 
 Dieser Abschnitt befasst sich mit Details wie die iOS-Ansicht und Controller Ansicht die Konzepte von "Traits" und Größenklassen automatisch in der Entwickler Anwendungen mehr adaptive werden übernommen haben.
@@ -259,58 +218,11 @@ IOS 8 ist zunächst einige Setup zur Vorbereitung des Übergangs erfolgen. Als N
 
 iOS 8 bietet mehrere Rückrufe, mit denen Entwickler kann die Änderung des Merkmals teilnehmen, wie in der folgenden Tabelle dargestellt:
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Phase</td>
-    <td>Rückruf</td>
-    <td>Beschreibung</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td>Setup</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        <li><code>TraitCollectionDidChange</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>Diese Methode ruft am Anfang eine Änderung des Merkmals aufgerufen, bevor ein Merkmal ""-Auflistung auf den neuen Wert festgelegt wird.</li>
-        <li>Die Methode wird aufgerufen, wenn der Wert des Merkmals Auflistung geändert wurde, aber bevor Animationen stattfindet.</li>
-        </ul>
-    </td>
-</tr>
-<tr>
-    <td>Animation</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>Der Übergang Koordinator, das an diese Methode übergeben wurde ein <code>AnimateAlongside</code> Clustereigenschaft, mit der Entwickler Animationen hinzufügen, die zusammen mit die Animationen an Standardeinstellung ausgeführt wird.</li>
-        </ul>
-    </td>
-</tr>
-<tr>
-    <td>Leeren von Volltextkatalogen</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>Stellt eine Methode für Entwickler, ihre eigenen Bereinigungscode enthalten, nachdem der Übergang stattfindet.</li>
-        </ul>
-    </td>
-</tr>
-</tbody>
-</table>
+|Phase|Rückruf|Beschreibung|
+|--- |--- |--- |
+|Setup|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>Diese Methode ruft am Anfang eine Änderung des Merkmals aufgerufen, bevor ein Merkmal ""-Auflistung auf den neuen Wert festgelegt wird.</li><li>Die Methode wird aufgerufen, wenn der Wert des Merkmals Auflistung geändert wurde, aber bevor Animationen stattfindet.</li></ul>|
+|Animation|`WillTransitionToTraitCollection`|Der Übergang Koordinator, das an diese Methode übergeben wurde ein `AnimateAlongside` Clustereigenschaft, mit der Entwickler Animationen hinzufügen, die zusammen mit die Animationen an Standardeinstellung ausgeführt wird.|
+|Leeren von Volltextkatalogen|`WillTransitionToTraitCollection`|Stellt eine Methode für Entwickler, ihre eigenen Bereinigungscode enthalten, nachdem der Übergang stattfindet.|
 
 Die `WillTransitionToTraitCollection` Methode eignet sich hervorragend für die Animation View Controller zusammen mit der Merkmals Auflistung geändert wird. Die `WillTransitionToTraitCollection` Methode ist nur verfügbar für View-Controller ( `UIViewController`) und nicht auf anderen Merkmals Umgebungen wie `UIViews`.
 

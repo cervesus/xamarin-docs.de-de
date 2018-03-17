@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 7819201e76e268ea84bf2cc5d49a5a07b20a04e3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4a3450026eff06555723b16093c7a0daf3d12ae7
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="programmatic-layout-constraints"></a>Einschränkungen für programmgesteuerte Layout
 
@@ -79,32 +79,15 @@ PurpleView.LeadingAnchor.ConstraintEqualTo (OrangeView.TrailingAnchor, 10).Activ
 
 In denen entsprechen die Bestandteile der C#-Code wie folgt auf die angegebenen Teile der Formel ein:
 
-<table width="100%" border="1">
-<tr>
-<td width="50%"><b>Gleichung</b></td><td><b>Code</b></td>
-</tr>
-<tr>
-<td width="50%">Element 1</td><td>PurpleView</td>
-</tr>
-<tr>
-<td width="50%">1-Attribut</td><td>LeadingAnchor</td>
-</tr>
-<tr>
-<td width="50%">Beziehung</td><td>ConstraintEqualTo</td>
-</tr>
-<tr>
-<td width="50%">Multiplikator</td><td>Der Standardwert ist 1,0 daher nicht angegeben</td>
-</tr>
-<tr>
-<td width="50%">Element 2</td><td>OrangeView</td>
-</tr>
-<tr>
-<td width="50%">2-Attribut</td><td>TrailingAnchor</td>
-</tr>
-<tr>
-<td width="50%">Konstante</td><td>10.0</td>
-</tr>
-</table>
+|Gleichung|Code|
+|---|---|
+|Element 1|PurpleView|
+|1-Attribut|LeadingAnchor|
+|Beziehung|ConstraintEqualTo|
+|Multiplikator|Der Standardwert ist 1,0 daher nicht angegeben|
+|Element 2|OrangeView|
+|2-Attribut|TrailingAnchor|
+|Konstante|10.0|
 
 Zusätzlich zur Bereitstellung nur die Parameter, die erforderlich sind, zu eine bestimmten Layout Einschränkung Gleichung zu lösen, jede der Methoden Layout Anker Erzwingen der typsicherheit, der an sie übergebenen Parameter. Daher horizontale Einschränkung verankert wie z. B. `LeadingAnchor` oder `TrailingAnchor` kann nur verwendet werden mit anderen horizontalen Anker Typen und Multiplikatoren werden nur bereitgestellt, um Einschränkungen der Datenkapazität.
 
