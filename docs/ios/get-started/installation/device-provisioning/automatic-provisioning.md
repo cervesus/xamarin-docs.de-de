@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: asb3993
+ms.author: amburns
 ms.date: 11/17/2017
-ms.openlocfilehash: d7532d052c57ad46caca0cd6d6ce26d0e77dc05f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a411c214e35f78ff9d3dd8d4e9122702d66a2156
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="automatic-provisioning"></a>Automatische Bereitstellung
 
@@ -34,23 +34,15 @@ Gehen Sie wie folgt vor, um Ihre App automatisch für die Bereitstellung auf ein
 
 1. Öffnen Sie in Visual Studio für Mac ein iOS-Projekt.
 
-2. Öffnen Sie die Datei **info.plist**:
+2. Öffnen Sie die Datei **Info.plist**.
 
-    ![Datei „Info.plist“](automatic-provisioning-images/image1.png)
-
-3. Wählen Sie im Abschnitt **Signieren** in der Dropdownliste **Team** Ihr Team aus:
+3. Wählen Sie im Abschnitt **Signierung** die Option **Automatische Bereitstellung**:
 
     ![Dropdownliste zur Teamauswahl](automatic-provisioning-images/image2.png)
 
-4. Aktivieren Sie, wie nachstehend gezeigt, das Kontrollkästchen **Signieren automatisch verwalten**. Dadurch wird der automatische Signierprozess gestartet, bei dem Visual Studio für Mac versucht, eine App-ID, ein Bereitstellungsprofil und eine Signieridentität zu generieren und diese für das Signieren verwendeten Artefakte festzulegen. Wenn das Kontrollkästchen aktiviert ist, sind die manuellen Steuerelemente zur Auswahl der Signieridentitäten deaktiviert.
+4. Wählen Sie Ihr Team aus der Dropdownliste **Team** aus.
 
-    ![Option zum automatischen Verwalten von Teams](automatic-provisioning-images/image3.png)
-
-5. Das folgende Dialogfeld wird mit dem Hinweis eingeblendet, dass die Projektdatei für die Verwendung des neu generierten Zertifikats und Bereitstellungsprofils modifiziert wird:
-
-    ![Dialogfeld mit Info zur Änderung der Projektdatei](automatic-provisioning-images/image4.png)
-
-6. Nach wenigen Sekunden wird ein Signaturzertifikat und Bereitstellungsprofil erstellt und angezeigt:
+6. Nach wenigen Sekunden werden ein Signaturzertifikat und ein Bereitstellungsprofil erstellt:
 
     ![Erfolgreich erstelltes Zertifikat und Profil](automatic-provisioning-images/image5.png)
 

@@ -7,12 +7,12 @@ ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: 240fc917a154085a459c6612f68c8b71e3ef01bb
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/13/2018
+ms.openlocfilehash: 7abcaa218c6755a58e6f35e982a1144060df0b3b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="xamarin-for-java-developers"></a>Xamarin für Java-Entwickler
 
@@ -433,342 +433,48 @@ Weitere Informationen zur Xamarin-Unterstützung von asynchronen Programmierfeat
 
 Viele Sprachschlüsselwörter, die in Java verwendet werden, werden auch in C# verwendet. Es gibt auch eine Reihe von Java-Schlüsselwörtern, die ein äquivalentes, aber anders benanntes Gegenstück in C# haben, wie in der folgenden Tabelle aufgeführt:
 
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-  <thead>
-    <th>
-        <strong>Java</strong>
-    </th>
-    <th>
-        <strong>C#</strong>
-    </th>
-    <th>
-        <strong>Beschreibung</strong>
-    </th>
-  </thead>
-  <tbody>
-    <tr>
-      <td valign="top">
-        <code>boolean</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/c8f5xwh7.aspx">bool</a>
-      </td>
-      <td valign="top">
-Wird zum Deklarieren der booleschen Werte <code>true</code> und <code>false</code> verwendet.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>extends</code>
-      </td>
-      <td valign="top">
-        <code>:</code>
-      </td>
-      <td valign="top">
-Wird der Klasse und den Schnittstellen, von denen geerbt werden soll, vorangestellt.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>implements</code>
-      </td>
-      <td valign="top">
-        <code>:</code>
-      </td>
-      <td valign="top">
-Wird der Klasse und den Schnittstellen, von denen geerbt werden soll, vorangestellt.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>import</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/zhdeatwt.aspx">Verwenden</a>
-      </td>
-      <td valign="top">
-Importiert Typen aus einem Namespace. Wird auch zum Erstellen eines Namespacealias verwendet.
-      </td>
-    </tr>
-    <tr>
-      <td valign="final">
-        <code>final</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/88c54tsw.aspx">sealed</a>
-      </td>
-      <td valign="top">
-Verhindert die Ableitung von Klassen. Verhindert, dass Methoden und Eigenschaften in abgeleiteten Klassen überschrieben werden.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>instanceof</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/scekt9xw.aspx"> ist gleich </a>
-      </td>
-      <td valign="top">
-Wertet aus, ob ein Objekt mit einem angegebenen Typ kompatibel ist.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>native</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/e59b22c5.aspx">extern</a>
-      </td>
-      <td valign="top">
-Deklariert eine Methode, die extern implementiert wird.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>package</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/z2kcy19k.aspx">namespace</a>
-      </td>
-      <td valign="top">
-Deklariert einen Bereich für eine in Beziehung stehende Gruppe von Objekten.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>T...</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/w5zay9db.aspx">params T[]</a>
-      </td>
-      <td valign="top">
-Gibt einen Methodenparameter an, der eine variable Anzahl von Argumenten annimmt.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>super</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/hfw7t1ce.aspx">base</a>
-      </td>
-      <td valign="top">
-Wird verwendet, um auf Member der übergeordneten Klasse aus einer abgeleiteten Klasse heraus zuzugreifen.
-      </td>
-    </tr>
-    <tr>
-      <td valign="synchronized">
-        <code>synchronized</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/c5kehkcz.aspx">lock</a>
-      </td>
-      <td valign="top">
-Umschließt einen wichtigen Abschnitt des Codes durch den Abruf und die Freigabe von Sperren.
-      </td>
-    </tr>
-  </tbody>
-</table>
+|Java|C#|description|
+|---|---|---|
+|`boolean`|[bool](https://msdn.microsoft.com/en-us/library/c8f5xwh7.aspx)|Wird zum Deklarieren der booleschen Werte „true“ und „false“ verwendet.|
+|`extends`|`:`|Wird der Klasse und den Schnittstellen, von denen geerbt werden soll, vorangestellt.|
+|`implements`|`:`|Wird der Klasse und den Schnittstellen, von denen geerbt werden soll, vorangestellt.|
+|`import`|[using](https://msdn.microsoft.com/en-us/library/zhdeatwt.aspx)|Importiert Typen aus einem Namespace. Wird auch zum Erstellen eines Namespacealias verwendet.|
+|`final`|[sealed](https://msdn.microsoft.com/en-us/library/88c54tsw.aspx)|Verhindert die Ableitung von Klassen. Verhindert, dass Methoden und Eigenschaften in abgeleiteten Klassen überschrieben werden.|
+|`instanceof`|[is](https://msdn.microsoft.com/en-us/library/scekt9xw.aspx)|Wertet aus, ob ein Objekt mit einem angegebenen Typ kompatibel ist.|
+|`native`|[extern](https://msdn.microsoft.com/en-us/library/e59b22c5.aspx)|Deklariert eine Methode, die extern implementiert wird.|
+|`package`|[namespace](https://msdn.microsoft.com/en-us/library/z2kcy19k.aspx)|Deklariert einen Bereich für eine in Beziehung stehende Gruppe von Objekten.|
+|`T...`|[params T](https://msdn.microsoft.com/en-us/library/w5zay9db.aspx)|Gibt einen Methodenparameter an, der eine variable Anzahl von Argumenten annimmt.|
+|`super`|[base](https://msdn.microsoft.com/en-us/library/hfw7t1ce.aspx)|Wird verwendet, um auf Member der übergeordneten Klasse aus einer abgeleiteten Klasse heraus zuzugreifen.|
+|`synchronized`|[lock](https://msdn.microsoft.com/en-us/library/c5kehkcz.aspx)|Umschließt einen wichtigen Abschnitt des Codes durch den Abruf und die Freigabe von Sperren.|
 
 
 Außerdem gibt es viele Schlüsselwörter, die einzigartig in C# sind und kein Gegenstück in Java besitzen. Xamarin.Android-Code verwendet häufig die folgenden C#-Schlüsselwörter (diese Tabelle ist nützlich, um sich auf sie zu beziehen, wenn Sie Xamarin.Android-[Beispielcode](https://developer.xamarin.com/samples/android/all/) lesen):
 
-
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-  <thead>
-    <th>
-        <strong>C#</strong>
-    </th>
-    <th>
-        <strong>Beschreibung</strong>
-    </th>
-  </thead>
-  <tbody>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/cscsdfbt.aspx">as</a>
-      </td>
-      <td valign="top">
-Führt Konvertierungen zwischen kompatiblen Verweistypen oder Nullwerte zulassenden Typen aus.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/hh156513.aspx">async</a>
-      </td>
-      <td valign="top">
-Gibt an, dass eine Methode oder ein Lambdaausdruck asynchron ist.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/hh156528.aspx">await</a>
-      </td>
-      <td valign="top">
-Hält die Ausführung einer Methode an, bis ein Task abgeschlossen ist.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/5bdb6693.aspx">byte</a>
-      </td>
-      <td valign="top">
-8-Bit-Ganzzahltyp ohne Vorzeichen.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/900fyy8e.aspx">delegate</a>
-      </td>
-      <td valign="top">
-Wird verwendet, um eine Methode oder eine anonyme Methode zu kapseln.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/sbbt4032.aspx">enum</a>
-      </td>
-      <td valign="top">
-Deklariert eine Enumeration, einen Satz benannter Konstanten.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/8627sbea.aspx">Ereignis</a>
-      </td>
-      <td valign="top">
-Deklariert ein Ereignis in einer Publisher-Klasse.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/f58wzh21.aspx">fixed</a>
-      </td>
-      <td valign="top">
-Verhindert, dass eine Variable verschoben wird.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Abrufen </td>
-      <td valign="top">
-Definiert eine Accessormethode, die den Wert einer Eigenschaft abruft.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/dd469484.aspx">in</a>
-      </td>
-      <td valign="top">
-Ermöglicht es einem Parameter, einen weniger abgeleiteten Typ in einer generischen Schnittstelle zu akzeptieren.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/9kkx3h3c.aspx">Objekt</a>
-      </td>
-      <td valign="top">
-Ein Alias für den <code>Object</code>-Typ in .NET Framework.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx">out</a>
-      </td>
-      <td valign="top">
-Parametermodifizierer oder generische Typparameterdeklaration.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/ebca9ah3.aspx">override</a>
-      </td>
-      <td valign="top">
-Erweitert oder ändert die Implementierung eines geerbten Member.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/6b0scde8.aspx">partial</a>
-      </td>
-      <td valign="top">
-Deklariert, dass eine Definition in mehrere Dateien aufgeteilt werden soll, oder trennt eine Methodendefinition von ihrer Implementierung.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx">readonly</a>
-      </td>
-      <td valign="top">
-Deklariert, dass ein Klassenmember nur zum Zeitpunkt der Deklaration oder durch den Klassenkonstruktor zugewiesen werden kann.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/14akc2c7.aspx">ref</a>
-      </td>
-      <td valign="top">
-Bewirkt, dass ein Argument nicht als Wert, sondern als Verweis übergeben wird.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/ms228368.aspx">set</a>
-      </td>
-      <td valign="top">
-Definiert eine Accessormethode, die den Wert einer Eigenschaft festlegt.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/362314fe.aspx">string</a>
-      </td>
-      <td valign="top">
-Alias für den <code>String</code>-Typ in .NET Framework.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/ah19swz4.aspx">struct</a>
-      </td>
-      <td valign="top">
-Ein Werttyp, der eine Gruppe in Beziehung stehender Variablen kapselt.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/58918ffs.aspx">typeof</a>
-      </td>
-      <td valign="top">
-Ruft den Typ eines Objekts ab.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/bb383973.aspx">"var"</a>
-      </td>
-      <td valign="top">
-Deklariert eine implizit typisierte lokale Variable.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/a1khb4f8.aspx">value</a>
-      </td>
-      <td valign="top">
-Verweist auf den Wert, den der Clientcode einer Eigenschaft zuweisen möchte.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/9fkccyh4.aspx">virtual</a>
-      </td>
-      <td valign="top">
-Ermöglicht das Überschreiben einer Methode in einer abgeleiteten Klasse.
-      </td>
-    </tr>
-  </tbody>
-</table>
+|C#|description|
+|---|---|
+|[as](https://msdn.microsoft.com/en-us/library/cscsdfbt.aspx)|Führt Konvertierungen zwischen kompatiblen Verweistypen oder Nullwerte zulassenden Typen aus.|
+|[async](https://msdn.microsoft.com/en-us/library/hh156513.aspx)|Gibt an, dass eine Methode oder ein Lambdaausdruck asynchron ist.|
+|[await](https://msdn.microsoft.com/en-us/library/hh156528.aspx)|Hält die Ausführung einer Methode an, bis ein Task abgeschlossen ist.|
+|[byte](https://msdn.microsoft.com/en-us/library/5bdb6693.aspx)|8-Bit-Ganzzahltyp ohne Vorzeichen.|
+|[delegate](https://msdn.microsoft.com/en-us/library/900fyy8e.aspx)|Wird verwendet, um eine Methode oder eine anonyme Methode zu kapseln.|
+|[enum](https://msdn.microsoft.com/en-us/library/sbbt4032.aspx)|Deklariert eine Enumeration, einen Satz benannter Konstanten.|
+|[event](https://msdn.microsoft.com/en-us/library/8627sbea.aspx)|Deklariert ein Ereignis in einer Publisher-Klasse.|
+|[fixed](https://msdn.microsoft.com/en-us/library/f58wzh21.aspx)|Verhindert, dass eine Variable verschoben wird.|
+|`get`|Definiert eine Accessormethode, die den Wert einer Eigenschaft abruft.|
+|[in](https://msdn.microsoft.com/en-us/library/dd469484.aspx)|Ermöglicht es einem Parameter, einen weniger abgeleiteten Typ in einer generischen Schnittstelle zu akzeptieren.|
+|[object](https://msdn.microsoft.com/en-us/library/9kkx3h3c.aspx)|Ein Alias für den Objekttyp in .NET Framework.|
+|[out](https://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx)|Parametermodifizierer oder generische Typparameterdeklaration.|
+|[override](https://msdn.microsoft.com/en-us/library/ebca9ah3.aspx)|Erweitert oder ändert die Implementierung eines geerbten Member.|
+|[partial](https://msdn.microsoft.com/en-us/library/6b0scde8.aspx)|Deklariert, dass eine Definition in mehrere Dateien aufgeteilt werden soll, oder trennt eine Methodendefinition von ihrer Implementierung.|
+|[readonly](https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx)|Deklariert, dass ein Klassenmember nur zum Zeitpunkt der Deklaration oder durch den Klassenkonstruktor zugewiesen werden kann.|
+|[ref](https://msdn.microsoft.com/en-us/library/14akc2c7.aspx)|Bewirkt, dass ein Argument nicht als Wert, sondern als Verweis übergeben wird.|
+|[set](https://msdn.microsoft.com/en-us/library/ms228368.aspx)|Definiert eine Accessormethode, die den Wert einer Eigenschaft festlegt.|
+|[string](https://msdn.microsoft.com/en-us/library/362314fe.aspx)|Ein Alias für den Zeichenfolgentyp in .NET Framework.|
+|[struct](https://msdn.microsoft.com/en-us/library/ah19swz4.aspx)|Ein Werttyp, der eine Gruppe in Beziehung stehender Variablen kapselt.|
+|[typeof](https://msdn.microsoft.com/en-us/library/58918ffs.aspx)|Ruft den Typ eines Objekts ab.|
+|[var](https://msdn.microsoft.com/en-us/library/bb383973.aspx)|Deklariert eine implizit typisierte lokale Variable.|
+|[value](https://msdn.microsoft.com/en-us/library/a1khb4f8.aspx)|Verweist auf den Wert, den der Clientcode einer Eigenschaft zuweisen möchte.|
+|[virtual](https://msdn.microsoft.com/en-us/library/9fkccyh4.aspx)|Ermöglicht das Überschreiben einer Methode in einer abgeleiteten Klasse.|
 
 
 <a name="interop" />

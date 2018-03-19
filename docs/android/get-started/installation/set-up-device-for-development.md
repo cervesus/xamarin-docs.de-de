@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: 64036af82ea49ad4d758a89767ff0da02eef094f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 26a543cc096d96346cd4503bf4fa2382f8ca9b78
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="set-up-device-for-development"></a>Einrichten eines Geräts für die Entwicklung
 
@@ -119,8 +119,7 @@ So installieren Sie die Treiber unter Windows 7:
 
 ### <a name="installing-unverified-drivers-in-windows-8"></a>Installieren nicht überprüfter Treiber unter Windows 8
 
-Es können zusätzliche Schritte erforderlich sein, um einen nicht überprüften Treiber unter Windows zu installieren.
-8. In den folgenden Schritten wird die Installation der Treiber für ein Galaxy Nexus beschrieben:
+Es können zusätzliche Schritte erforderlich sein, um einen nicht überprüften Treiber unter Windows 8 zu installieren. In den folgenden Schritten wird die Installation der Treiber für ein Galaxy Nexus beschrieben:
 
 1.  **Zugreifen auf die erweiterten Startoptionen von Windows 8**: Dieser Schritt umfasst den Neustart des Computers, um auf die erweiterten Startoptionen zuzugreifen. Starten Sie eine Eingabeaufforderung, und starten Sie den Computer mithilfe des folgenden Befehls neu:
 

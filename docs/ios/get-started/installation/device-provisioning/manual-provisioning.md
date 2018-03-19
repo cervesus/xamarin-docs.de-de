@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: asb3993
+ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: 2ad3bd55ae0abc44b0c9757bd79c2711eddf171d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e42b9d0b5eb64c17c96b66c9dbae7582551a06a0
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="manual-provisioning"></a>Manuelle Bereitstellung
 
@@ -236,9 +236,10 @@ An dieser Stelle sollte die Bereitstellung abgeschlossen sein, und die App kann 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-Stellen Sie unter „Projektoptionen“ > „iOS-Bundle-Signierung“ sicher, dass der Teamselektor auf „None“ (Keine) festgelegt ist.
+> [!IMPORTANT]
+> Bevor Sie beginnen, stellen Sie sicher, dass Sie in der **Info.plist** die Option **Manuelle Bereitstellung** ausgewählt haben.
 
-1. Schließen Sie das Gerät auf einem Macintosh-Computer an.
+1. Schließen Sie das Gerät an einem Macintosh-Computer an.
 2. Stellen Sie in der **Info.plist** des Projekts sicher, dass die Bundle-ID der App-ID entspricht (es sei denn, die App-ID ist ein Platzhalter):
 
   ![](manual-provisioning-images/deploydevice01xs.png "Eingeben eines Bezeichners")

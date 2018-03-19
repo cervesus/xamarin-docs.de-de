@@ -6,12 +6,12 @@ ms.assetid: 3528E195-AA74-90AF-B5F3-3B65FB4F0BB8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: bfbd95d33e442d31e94bd8c6ed888741f88d1188
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/13/2018
+ms.openlocfilehash: 971c663a93a837e40e82aa63e24ce4935c44c85a
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="linking-on-android"></a>Verknüpfung unter Android
 
@@ -19,37 +19,10 @@ Xamarin.Android-Anwendungen verwenden einen *Linker*, um die Größe der Anwendu
 
 Wie z.B. das [Hallo, Android](https://developer.xamarin.com/samples/HelloM4A/)-Beispiel:
 
-<table border="0" cellpadding="1" cellspacing="1">
-  <tbody>
-    <tr>
-      <td>
-        <strong>Konfiguration</strong>
-      </td>
-      <td>
-        <strong>1.2.0 Größe</strong>
-      </td>
-      <td>
-        <strong>4.0.1 Größe</strong>
-      </td>
-    </tr>
-    <tr>
-      <td>
-Release ohne Verknüpfung: </td>
-      <td>
-14,0 MB </td>
-      <td>
-16,0 MB </td>
-    </tr>
-    <tr>
-      <td>
-Release mit Verknüpfung: </td>
-      <td>
-4,2 MB </td>
-      <td>
-2,9 MB </td>
-    </tr>
-  </tbody>
-</table>
+|Konfiguration|Größe 1.2.0|Größe 4.0.1|
+|---|---|---|
+|Release ohne Verknüpfung:|14,0 MB|16,0 MB|
+|Release mit Verknüpfung:|4,2 MB|2,9 MB|
 
 Die Verknüpfung führt zu einem Paket, das 30 % der Größe des (nicht verknüpften) Originalpakets in 1.2.0 und 18 % der Größe des nicht verknüpften Pakets in 4.0.1 entspricht.
 

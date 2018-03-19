@@ -1,6 +1,6 @@
 ---
 title: Drahtlose Bereitstellung
-description: "Dieses Vorschaufeature erlaubt die Bereitstellung für iOS- oder Apple TV-Geräte über eine Netzwerkverbindung."
+description: "Dieses Feature erlaubt die Bereitstellung auf iOS- oder Apple TV-Geräten über eine Netzwerkverbindung."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
@@ -8,47 +8,40 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/09/2018
-ms.openlocfilehash: 11961a21a7c4188c505c822a35531036fd953405
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7566669fb7d607ca6616b88cb32b770537146c94
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="wireless-deployment"></a>Drahtlose Bereitstellung
 
-_Dieses Vorschaufeature erlaubt die Bereitstellung auf iOS- oder Apple TV-Geräten über eine Netzwerkverbindung._
-
-![Vorschauversion](~/media/shared/preview.png)
-
-Ein wichtiger Bestandteil des Entwicklerworkflows ist die Bereitstellung auf einem Gerät. In Xcode 9 wurde die Option zur Bereitstellung für ein iOS-Gerät oder Apple TV über ein Netzwerk eingeführt, sodass Sie die Geräte nicht mehr per Kabel anschließen müssen, wenn Sie Ihre App bereitstellen und debuggen möchten. Dieses Feature wurde in Visual Studio für Mac und im Visual Studio 15.6-Release eingeführt, das zurzeit als Vorschau verfügbar ist.
+Ein wichtiger Bestandteil des Entwicklerworkflows ist die Bereitstellung auf einem Gerät. In Xcode 9 wurde die Option zur Bereitstellung für ein iOS-Gerät oder Apple TV über ein Netzwerk eingeführt, sodass Sie die Geräte nicht mehr per Kabel anschließen müssen, wenn Sie Ihre App bereitstellen und debuggen möchten. Dieses Feature wurde in Visual Studio für Mac 7.4 und in Visual Studio 15.6 eingeführt.
 
 Dieses Handbuch enthält ausführliche Informationen zum Koppeln und Bereitstellen für ein Gerät über das Netzwerk.
 
 ## <a name="requirements"></a>Anforderungen
 
-Die drahtlose Bereitstellung steht als **Vorschaufeature** sowohl in Visual Studio für Mac als auch Visual Studio zur Verfügung.
-
+Die drahtlose Bereitstellung steht als Feature sowohl in Visual Studio für Mac als auch in Visual Studio zur Verfügung.
 
 Für die drahtlose Bereitstellung benötigen Sie Folgendes:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 - macOS 10.12.4
-- Die aktuelle Vorschauversion von Visual Studio für Mac 
-    - Zur Installation dieser Option im [Alpha- oder Betakanal](https://docs.microsoft.com/en-us/visualstudio/mac/update) in Visual Studio für Mac.
+- Die aktuelle Version von Visual Studio für Mac
 - Xcode 9.0 oder höher
 - Ein Gerät mit iOS 11.0 oder tvOS 11.0 und höher
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-- Die aktuelle [Vorschauversion](https://www.visualstudio.com/vs/preview/) von Visual Studio
+- Die aktuelle Version von Visual Studio
 - Ein Gerät mit iOS 11.0 oder tvOS 11.0 und höher
 
 Auf Ihrem Mac-Buildhost müssen die folgenden Komponenten installiert sein:
 
 - macOS 10.12.4
-- Visual Studio für Mac (Vorschau)
-    - Zur Installation dieser Option im [Alpha- oder Betakanal](https://docs.microsoft.com/en-us/visualstudio/mac/update) in Visual Studio für Mac.
+- Visual Studio für Mac
 - Xcode 9.0 oder höher
 
 -----

@@ -8,15 +8,15 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 3871955f723d1b3aec6245bba0502ca4f955d64c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 825b566ed45e8c337a1a452ec2c76a23e6a16462
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android-Leistung
 
-_Es gibt viele Methoden zum Verbessern der Leistung von Anwendungen, die mit Xamarin.Android erstellt wurden. Wenn Sie diese Kniffe kombinieren, können Sie die CPU-Auslastung und die Speichermenge, die von einer Anwendung verwendet wird, erheblich reduzieren. In diesem Artikel werden diese Methoden erläutert._
+_Es gibt viele Methoden zum Verbessern der Leistung von Anwendungen, die mit Xamarin.Android erstellt wurden. Wenn Sie diese Kniffe kombinieren, können Sie die CPU-Auslastung und die Speichermenge, die von einer Anwendung verwendet wird, erheblich reduzieren. In diesem Artikel werden die Methoden beschrieben und erläutert._
 
 ## <a name="performance-overview"></a>Überblick über Leistung
 
@@ -156,7 +156,7 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 
 Wenn der Benutzer einen Bildlauf durchführt, ruft die [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) die `GetView`-Überschreibung zur Anforderung neuer Ansichten auf. Gegebenenfalls wird eine nicht verwendete Ansicht im `convertView`-Parameter übergeben. Wenn dieser Wert `null` entspricht, dann erstellt der Code anschließend eine neue [`View`](https://developer.xamarin.com/api/type/Android.Views.View/)-Instanz. Andernfalls können die `convertView`-Eigenschaften zurückgesetzt und wiederverwendet werden.
 
-Weitere Informationen finden Sie unter [Row View Re-Use (Wiederverwenden der Zeilenansicht)](~/android/user-interface/layouts/list-view/populating.md) in [Populating a ListView with Data (Eine Listenansicht mit Daten auffüllen)](~/android/user-interface/layouts/list-view/populating.md).
+Weitere Informationen finden Sie unter [Row View Re-Use (Wiederverwenden der Zeilenansicht)](~/android/user-interface/layouts/list-view/populating.md#row-view-re-use) in [Populating a ListView with Data (Eine Listenansicht mit Daten auffüllen)](~/android/user-interface/layouts/list-view/populating.md).
 
 <a name="removeeventhandlers" />
 
@@ -225,7 +225,7 @@ Um eine Benachrichtigung zu erhalten, wenn der Benutzer die Benutzeroberfläche 
 
 ## <a name="optimize-image-resources"></a>Optimieren von Bildressourcen
 
-Bilder gehören zu den speicherintensivsten Ressourcen, die Anwendungen verwenden und werden häufig in hoher Auflösung erfasst. Verwenden Sie deshalb für die Bildanzeige die Auflösung, die für den Bildschirm des Geräts erforderlich ist. Wenn das Bild über eine höhere Auflösung als der Bildschirm verfügt, sollte sie nach unten skaliert werden.
+Bilder gehören zu den speicherintensivsten Ressourcen, die Anwendungen verwenden, und werden häufig in hoher Auflösung aufgenommen. Verwenden Sie deshalb für die Bildanzeige die Auflösung, die für den Bildschirm des Geräts erforderlich ist. Wenn das Bild über eine höhere Auflösung als der Bildschirm verfügt, sollte sie nach unten skaliert werden.
 
 Weitere Informationen finden Sie unter [Optimize Image Resources (Optimieren von Bildressourcen)](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages) im Leitfaden [Cross Plattform Performance (Plattformübergreifende Leistung)](~/cross-platform/deploy-test/memory-perf-best-practices.md).
 

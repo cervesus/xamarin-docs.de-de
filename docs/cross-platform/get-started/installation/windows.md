@@ -7,15 +7,15 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 09/29/2017
-ms.openlocfilehash: bffc6bb1bc6537745fe9603906b5938fc3c34fe1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b15c9b05a4e476353322c6d29e94267313460bfe
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="installing-xamarin-in-visual-studio-on-windows"></a>Installieren von Xamarin in Visual Studio unter Windows
 
-Da Xamarin jetzt ohne zusätzliche Kosten in allen Editionen von Visual Studio enthalten ist und keine separate Lizenz erforderlich macht, können Sie über den Visual Studio-Installer Xamarin-Tools herunterladen und installieren.
+Xamarin ist in allen Editionen von Visual Studio kostenlos enthalten.
 
 <a name="requirements" />
 
@@ -25,7 +25,7 @@ Für die Installation von Visual Studio-Tools für Xamarin ist Folgendes erforde
 
 1. Windows 7 oder höher.
 
-2. Visual Studio 2015 oder 2017 (Community, Professional oder Enterprise).
+2. Visual Studio 2017 (Community, Professional oder Enterprise).
 
 3. Xamarin für Visual Studio.
 
@@ -74,27 +74,6 @@ Wenn Visual Studio 2017 bereits installiert ist, können Sie Xamarin hinzufügen
 
 Weitere Informationen zum Herunterladen und Installieren von Visual Studio 2017 finden Sie unter [Installieren von Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio).
 
-
-<a name="vs2015" />
-
-### <a name="adding-xamarin-to-visual-studio-2015"></a>Hinzufügen von Xamarin zu Visual Studio 2015
-
-Führen Sie die folgenden Schritte aus, um Xamarin.Android zu einer vorhandenen Installation von Visual Studio 2015 hinzuzufügen:
-
-1. Klicken Sie unter Windows mit der rechten Maustaste auf die Schaltfläche **Start**, und wählen Sie **Programme und Funktionen** aus.
-
-2. Klicken Sie mit der rechten Maustaste auf **Microsoft Visual Studio**, und klicken Sie anschließend auf **Ändern**.
-
-3. Wenn das Dialogfeld „Visual Studio-Installer“ angezeigt wird, klicken Sie auf die Schaltfläche **Ändern**.
-
-4. Führen Sie auf der Registerkarte **Funktionen** einen Bildlauf nach unten bis **Plattformübergreifende Mobile-Entwicklung** durch. Klicken Sie auf das Kontrollkästchen neben **C#/.NET (Xamarin)**:
-
-    ![Hinzufügen von C#/.NET Xamarin zu Visual Studio 2015](windows-images/06-add-xamarin.png)
-
-5. Klicken Sie auf die Schaltfläche **UPDATE**, um Xamarin zu Visual Studio hinzuzufügen.
-
-
-<a name="verifying" />
 
 ### <a name="verifying-installation"></a>Überprüfen der Installation
 
