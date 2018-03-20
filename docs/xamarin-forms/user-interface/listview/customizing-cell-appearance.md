@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 62ac3ab4b3114447f0c67d86c601a688bb8ff1a7
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 551a0de8cd4965815c67a795fb5723d4261a173c
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="cell-appearance"></a>Darstellung der Zelle
 
@@ -73,11 +73,9 @@ Beachten Sie, dass Geschäftsgruppen mit Windows Phone 8.1, `ImageCell` wird nic
 <a name="customcells" />
 
 ## <a name="custom-cells"></a>Benutzerdefinierte Zellen
-Wenn die integrierte Zellen nicht das erforderliche Layout bereitstellen, implementiert benutzerdefinierte Zellen das Layout erforderliche. Beispielsweise empfiehlt es sich eine Zelle mit zwei Bezeichnungen dar, die gleiche Gewichtung zu haben. Ein `LabelCell` wäre nicht genügend da die `LabelCell` verfügt über eine Bezeichnung, die kleiner ist.
+Wenn die integrierte Zellen nicht das erforderliche Layout bereitstellen, implementiert benutzerdefinierte Zellen das Layout erforderliche. Beispielsweise empfiehlt es sich eine Zelle mit zwei Bezeichnungen dar, die gleiche Gewichtung zu haben. Ein `LabelCell` wäre nicht genügend da die `LabelCell` verfügt über eine Bezeichnung, die kleiner ist. Die meisten Zelle Anpassungen hinzufügen, zusätzliche schreibgeschützte Daten (z. B. zusätzliche Bezeichnungen, Bilder oder andere Anzeigeinformationen).
 
 Alle benutzerdefinierte Zellen abgeleitet müssen [ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), die dieselbe Basisklasse an, dass alle integrierten Zelle Typen verwenden.
-
-Die meisten Zelle Anpassungen hinzufügen, zusätzliche schreibgeschützte Daten (z. B. zusätzliche Bezeichnungen, Bilder oder andere Anzeigeinformationen). Wenn Schaltflächen oder anderen Steuerelementen, die konzentrieren können hinzugefügt werden, möglicherweise die Zelle selbst nicht auf Android geklickt werden kann. Eine Möglichkeit zum Umgehen dieser Einschränkung finden Sie weiter unten.
 
 Xamarin.Forms 2 eingeführt, ein neues [Zwischenspeichern von Abfragezeichenfolgen](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy) auf die `ListView` steuern, welche das Durchführen eines Bildlaufs leistungsverbesserung für einige Typen von benutzerdefinierten Zellen festgelegt werden kann.
 
@@ -261,30 +259,6 @@ var listView = new ListView {
 ```
 
 Auf IOS- und Android Wenn die [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) ist Wiederverwendung Elemente und benutzerdefinierte Zelle mithilfe eines benutzerdefinierten Renderers, der benutzerdefinierte Renderer muss änderungsbenachrichtigung korrekt implementieren. Wenn Zellen wiederverwendet werden wird ihre Eigenschaftswerte ändern, wenn der Bindungskontext mit einer verfügbaren Zelle aktualisiert wird, mit `PropertyChanged` Ereignisse, die ausgelöst wird. Weitere Informationen finden Sie unter [Anpassen einer ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md). Weitere Informationen zu der Zelle wiederverwenden, finden Sie unter [Zwischenspeichern Strategie](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
-
-### <a name="enabling-row-selection-on-android"></a>Aktivieren die Zeilenauswahl unter Android
-
-Um Zeilenauswahl zu ermöglichen, für die Zellen, die auch Elemente wie z. B. Eingabeargumente Schaltflächen, eine einfache [ `custom renderer` ](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) ist erforderlich. In der allgemeine Code erstellen Sie eine Unterklasse von `Button` , damit ein benutzerdefinierter Renderer in der plattformprojekten hinzugefügt werden kann:
-
-```csharp
-public class ListButton : Button { }
-```
-
-Die Renderer-Implementierung für Android einfach legt die `Focusable` Eigenschaft, die die Zeile an sowie den Host durch Klicken aktivierbaren Schaltflächen ausgewählt werden kann. Mit diesem Code wird das Android-Anwendungsprojekt hinzugefügt:
-
-```csharp
-[assembly: ExportRenderer (typeof (ListButton), typeof (ListButtonRenderer))]
-// ...
-public class ListButtonRenderer : ButtonRenderer {
-    protected override void OnElementChanged (ElementChangedEventArgs<ListButton> e) {
-        base.OnElementChanged (e);
-        Control.Focusable = false;
-    }
-}
-```
-
-Wie bereits erwähnt, nur Android erfordert die `ButtonRenderer` implementiert werden. iOS und Windows Phone-Plattformen können die Schaltfläche geklickt wird, ohne die Implementierung eines benutzerdefinierten Renderers.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

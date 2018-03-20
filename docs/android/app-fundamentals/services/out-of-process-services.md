@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: 0f018aa666f08792a1693a79e22da150f82712f6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ebbb4b527b27b87bb6357723978e730304658720
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="running-android-services-in-remote-processes"></a>Ausführen der Android-Dienste in Remote-Prozesse
 
@@ -415,7 +415,7 @@ Ein vereinfachtes Beispiel zum Erstellen einer benutzerdefinierten `normal` Bere
 
 Um eine benutzerdefinierte Berechtigung verwenden, wird er vom Dienst deklariert, während der Client fordert die Berechtigung explizit an.
 
-So erstellen Sie eine Berechtigung in den Dienst APK, eine `permission` Element wird hinzugefügt, um die `manifest` Element im**AndroidManifest.xml**. Durch diese Berechtigung benötigen die `name`, `protectionLevel`, und `label` Attribute festgelegt. Die `name` Attribut muss festgelegt werden, um eine Zeichenfolge, die die Berechtigung eindeutig identifiziert. Der Name erscheint der **AppInfo** -Ansicht der **Android-Einstellungen** (wie im nächsten Abschnitt gezeigt).
+So erstellen Sie eine Berechtigung in den Dienst APK, eine `permission` Element wird hinzugefügt, um die `manifest` Element im **AndroidManifest.xml**. Durch diese Berechtigung benötigen die `name`, `protectionLevel`, und `label` Attribute festgelegt. Die `name` Attribut muss festgelegt werden, um eine Zeichenfolge, die die Berechtigung eindeutig identifiziert. Der Name erscheint der **AppInfo** -Ansicht der **Android-Einstellungen** (wie im nächsten Abschnitt gezeigt).
 
 Die `protectionLevel` Attribut muss festgelegt werden, auf einen der vier Zeichenfolgenwerte, die oben beschrieben wurden.  Die `label` und `description` muss auf Zeichenfolgenressourcen verweisen und werden verwendet, um einen benutzerfreundlichen Namen und eine Beschreibung für den Benutzer bereitstellen.
 

@@ -6,24 +6,44 @@ ms.assetid: C10FD999-7A91-4708-B642-0C1B0901BD24
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: 96e8d1a3658a515b6b1d37cf0fdd93157954c01d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: d1267bc4a530deb6dfb6eb2e30bee2facabd8fed
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="foreground-services"></a>Vordergrund-Dienste
 
-Einige Dienste Ausführen einiger Aufgaben, die Benutzer aktiv zur Kenntnis genommen haben, werden diese Dienste als bezeichnet _Vordergrund Services_. Ein Beispiel eines Diensts Vordergrund ist eine app, die den Benutzer beim autostrecke oder Fußweg Richtungen gewährt wird. Auch wenn die app im Hintergrund ist, ist es wichtig, dass der Dienst über ausreichende Ressourcen ordnungsgemäß funktioniert und dass der Benutzer eine schnelle und praktische Möglichkeit zum Zugriff auf die app verfügt. Für Android-app, dies bedeutet, dass Hintergrunddienst Vordergrund sollten höheren Priorität als eine "normale" Dienst erhalten ein Vordergrund-Dienst bereitstellen muss eine `Notification` , in denen Android wird angezeigt, solange der Dienst ausgeführt wird.
+Ein Foreground-Dienst ist ein besonderer Typ eines gebundenen Diensts oder einem gestarteten Dienst. Gelegentlich Services führt Aufgaben, die Benutzer aktiv kennen müssen, diese Dienste werden als bezeichnet _Vordergrund Services_. Ein Beispiel eines Diensts Vordergrund ist eine app, die den Benutzer beim autostrecke oder Fußweg Richtungen gewährt wird. Auch wenn die app im Hintergrund ist, ist es wichtig, dass der Dienst über ausreichende Ressourcen ordnungsgemäß funktioniert und dass der Benutzer eine schnelle und praktische Möglichkeit zum Zugriff auf die app verfügt. Für Android-app, dies bedeutet, dass Hintergrunddienst Vordergrund sollten höheren Priorität als eine "normale" Dienst erhalten ein Vordergrund-Dienst bereitstellen muss eine `Notification` , in denen Android wird angezeigt, solange der Dienst ausgeführt wird.
  
-Ein Foreground-Dienst erstellt und ebenso wie jeden anderen Dienst gestartet. Wenn der Dienst gestartet wird, werden selbst mit Android als Vordergrund-Dienst registriert.
- 
-Dieses Handbuch werden die zusätzlichen Schritte erläutert, die ausgeführt werden muss, um einer Vordergrund-Dienst zu registrieren und zum Beenden des Diensts, wenn sie danach.
+Um einen Vordergrund-Dienst zu starten, muss die app Priorität verteilen, die zum Starten des Diensts Android informiert. Dann muss der Dienst selbst als Dienst Vordergrund mit Android registrieren. Apps, die unter Android 8.0 (oder höher) ausgeführt werden, sollten verwenden die `Context.StartForegroundService` Methode, um den Dienst zu starten, obwohl verwendet werden apps, die auf Geräten mit einer älteren Version von Android ausgeführt werden soll `Context.StartService`
+
+Diese C#-Erweiterungsmethode ist ein Beispiel zum Starten eines Diensts Vordergrund. Auf Android 8.0 und höher verwendet die `StartForegroundService` -Methode, andernfalls das ältere `StartService` verwendet wird.  
+
+```csharp
+public static void StartForegroundServiceComapt<T>(this Context context, Bundle args = null) where T : Service
+{
+    var intent = new Intent(context, typeof(T));
+    if (args != null) 
+    {
+        intent.PutExtras(args);
+    }
+
+    if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+    {
+        context.StartForegroundService(intent);
+    }
+    else
+    {
+        context.StartService(intent);
+    }
+}
+```
 
 ## <a name="registering-as-a-foreground-service"></a>Registrieren als Hintergrunddienst Vordergrund
 
-Ein Foreground-Dienst ist ein besonderer Typ eines gebundenen Diensts oder einem gestarteten Dienst. Der Dienst, nachdem es gestartet wurde, ruft der [ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/) Methode, um sich selbst bei Android als Vordergrund Dienst registrieren.   
+Nachdem ein Foreground-Dienst gestartet wurde, müssen sie selbst mit Android registrieren, durch den Aufruf der [ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/). Wenn der Dienst gestartet wurde, mit der `Service.StartForegroundService` Methode registriert aber nicht selbst dann Android beenden Sie den Dienst und die app als nicht reagierend gekennzeichnet wird.
 
 `StartForeground` verwendet zwei Parameter, die beide erforderlich sind:
  
@@ -78,8 +98,7 @@ Statusleistenbenachrichtigung an, die angezeigt wird, kann auch durch Übergabe 
 StopForeground(true);
 ```
 
-Wenn der Dienst, mit einem Aufruf von angehalten wird `StopSelf` oder `StopService`, und klicken Sie dann den Status Leiste Benachrichtigung ebenso entfernt wird.
-
+Wenn der Dienst, mit einem Aufruf von angehalten wird `StopSelf` oder `StopService`, die statusleistenbenachrichtigung entfernt werden.
 
 ## <a name="related-links"></a>Verwandte Links
 

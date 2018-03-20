@@ -7,12 +7,12 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: fd5b2f8c758d8e1e9bb9276da96a410c61478d4a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: c542237523b934cb8616fda6cefdcd969b7700bd
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Auftrag wurde vom Verteiler firebase
 
@@ -27,7 +27,7 @@ Beispielsweise kann ein Hintergrundauftrag eine Website alle paar Minuten abzufr
 Android bietet bereits mehrere APIs unterstützen Sie beim Arbeiten im Hintergrund ausführen, aber keines dieser eine umfassende Lösung ist:
 
 * **[Beabsichtigte Services](~/android/app-fundamentals/services/creating-a-service/intent-services.md)**  &ndash; Absicht Services sind hervorragend für die Arbeiten ausführen, jedoch keine Möglichkeit zum Planen der Arbeit angebotenen.
-* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager)**  &ndash; diese APIs ermöglichen nur Arbeit geplant werden, jedoch bietet keine Möglichkeit, die Aufgaben tatsächlich auszuführen. Außerdem ermöglicht das AlarmManager nur zeitbasierter Einschränkungen, d. h. ein Warnsignal auslösen, zu einem bestimmten Zeitpunkt oder nach ein bestimmten Zeitraum verstrichen ist. 
+* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)**  &ndash; diese APIs ermöglichen nur Arbeit geplant werden, jedoch bietet keine Möglichkeit, die Aufgaben tatsächlich auszuführen. Außerdem ermöglicht das AlarmManager nur zeitbasierter Einschränkungen, d. h. ein Warnsignal auslösen, zu einem bestimmten Zeitpunkt oder nach ein bestimmten Zeitraum verstrichen ist. 
 * **[JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)**  &ndash; der JobSchedule ist eine hervorragende API, die mit dem Betriebssystem zum Planen von Aufträgen funktioniert. Es ist jedoch nur verfügbar für die Android-apps, die API-Ebene 21 ausgerichtet oder höher. 
 * **[Broadcast Empfänger](~/android/app-fundamentals/broadcast-receivers.md)**  &ndash; ein Android-app kann broadcast Empfänger zum Ausführen von Aktionen als Reaktion auf Systemereignisse wide oder Intents einrichten. Broadcast Empfänger stellen jedoch keine Kontrolle über die Ausführung des Auftrags. Änderungen in der Android-Betriebssystem werden eingeschränkt, auch wenn broadcast Empfänger funktioniert oder die Arbeitsschritte, auf die reagiert werden kann. 
 * **Google Cloud Message-Netzwerk-Manager** &ndash; lange dies war, wohl die beste Möglichkeit, eine intelligente fehlerwiederherstellung Zeitplan im Hintergrund arbeiten. Allerdings wurde die GCMNetworkManager zwischenzeitlich als veraltet markiert. 

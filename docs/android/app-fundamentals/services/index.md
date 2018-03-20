@@ -7,12 +7,12 @@ ms.assetid: BA371A59-6F7A-F62A-02FC-28253504ACC9
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 02/16/2018
-ms.openlocfilehash: 5dc1fb0fb02014e123b3a161394155bde725f288
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: 08392872037783e0caaef4f2b19127adbe95151b
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="creating-android-services"></a>Erstellen von Android-Diensten
 
@@ -43,7 +43,7 @@ Verarbeitung im Hintergrund kann in zwei allgemeine Klassifizierungen unterteilt
 
 Es gibt vier verschiedene Typen von Android-Dienste:
 
-* **Dienst gebunden** &ndash; ein _Dienst gebunden_ ist ein Dienst, der eine andere Komponente (normalerweise eine Aktivität) gebunden ist. Eine gebundene Service bietet eine Schnittstelle, die die gebundenen Komponente und der Dienst miteinander interagieren kann. Sobald Sie nicht mehr Clients an den Dienst gebunden sind, wird Android den Dienst heruntergefahren.
+* **Dienst gebunden** &ndash; ein _Dienst gebunden_ ist ein Dienst, der eine andere Komponente (normalerweise eine Aktivität) gebunden ist. Eine gebundene Service bietet eine Schnittstelle, die die gebundenen Komponente und der Dienst miteinander interagieren kann. Sobald Sie nicht mehr Clients an den Dienst gebunden sind, wird Android den Dienst heruntergefahren. 
 
 * **`IntentService`** &ndash; Ein  _`IntentService`_  ist eine spezielle Unterklasse von der `Service` Klasse, die diensterstellung und Verwendung zu vereinfachen. Ein `IntentService` Verarbeitung einzelner autonome Aufrufe vorgesehen ist. Im Gegensatz zu einem Dienst gleichzeitig mehrere Aufrufe bewältigt werden kann, ein `IntentService` ist eher wie ein _Warteschlange Prozessor arbeiten_ &ndash; Arbeit wird in die Warteschlange gestellt und ein `IntentService` jeden Auftrag eine zu einem Zeitpunkt auf einem einzelnen Worker-Thread verarbeitet. In der Regel eine`IntentService` nicht an eine Aktivität oder ein Fragment gebunden ist. 
 
@@ -57,4 +57,26 @@ Während die meisten Dienste im Hintergrund ausgeführt werden, besteht eine spe
 
 Es ist auch möglich, einen Dienst in seinem eigenen Prozess ausgeführt werden, auf dem gleichen Gerät, dies wird manchmal als bezeichnet eine _Remotedienst_ oder als ein _Out-of-Process-Dienst_. Dies erfordert mehr Aufwand zu erstellen, jedoch können für eine Anwendung bei Funktionen mit anderen Anwendungen gemeinsam muss hilfreich sein, und können in einigen Fällen verbessern die benutzerfreundlichkeit einer Anwendung. 
 
-Jeder dieser Dienste verfügt über eigene Eigenschaften und Verhalten hin und wird in ihre eigenen Handbüchern ausführlich erläutert werden.
+### <a name="background-execution-limits-in-android-80"></a>Hintergrund Ausführung Grenzwerte bei Android 8.0
+
+Android 8.0 (API-Schicht 26), einer Android-Anwendung nicht mehr ab haben die Möglichkeit, die kostenlos im Hintergrund ausgeführt. Wenn in den Vordergrund kann eine app starten und Ausführen von Diensten ohne Einschränkung. Wenn eine Anwendung in den Hintergrund verschoben wird, wird Android app gewährt eine bestimmte Menge an Zeit zum Starten und Verwenden von Webdiensten. Nach Ablauf dieser Zeit wird die app kann nicht mehr alle Dienste gestartet und beendet alle Dienste, die gestartet wurden. An diesem Punkt ist, ist nicht möglich, dass der app, damit Aufgaben ausführen. Android hält eine Anwendung im Vordergrund werden, wenn eine der folgenden Bedingungen erfüllt sind:
+
+* Es gibt eine sichtbare Aktivität (gestartet oder angehalten).
+* Die Anwendung verfügt über einen Vordergrund-Dienst gestartet.
+* Eine andere app wird im Vordergrund und Komponenten von einer app, die sonst im Hintergrund verwendet. Ein Beispiel hierfür ist Anwendung ein, das in den Vordergrund ist mit einem bereitgestellten Dienst gebundene ist Anwendung b Anwendung B auch werden dann in den Vordergrund betrachtet und nicht von Android für wird im Hintergrund beendet.
+
+Es gibt einige Situationen, in denen, auch wenn eine app im Hintergrund ist, Android wird reaktiviert, die app und lockern diese Einschränkungen nach ein paar Minuten, ermöglicht es der app, um einige Aufgaben ausführen:
+* Eine hohe Priorität Firebase Cloud Nachricht wird von der Anwendung empfangen.
+* Die Anwendung empfängt eine Übertragung wie z. B. 
+* Die Anwendung empfängt eine führt eine `PendingIntent` als Antwort auf eine Benachrichtigung.
+
+Vorhandene Xamarin.Android Anwendungen möglicherweise ändern, wie der auszuführende Verarbeitung im Hintergrund um Probleme zu vermeiden, die unter Android 8.0 auftreten können. Es folgen einige praktische Alterantives an eine Android-Dienst:
+
+* **Planen von Arbeit, die im Hintergrund mithilfe der Android Auftragsplaner ausgeführt werden oder die [Firebase Auftrag Dispatcher](~/android/platform/firebase-job-dispatcher.md)**  &ndash; diese zwei Bibliotheken stellen ein Framework für Anwendungen, um die Verarbeitung im Hintergrund in zu Verwaltungsrechte_Aufträge_, eine einzelne Arbeitseinheit. Apps können Sie den Auftrag mit dem Betriebssystem sowie bestimmte Kriterien zu planen, wenn der Auftrag ausgeführt werden kann.
+* **Starten Sie den Dienst im Vordergrund** &ndash; ein Foreground-Dienst ist nützlich, wenn die app, eine Aufgabe im Hintergrund ausführen müssen und der Benutzer kann diese Aufgabe in regelmäßigen Abständen zu interagieren muss. Die Vordergrund-Dienst wird eine permanente Benachrichtigung angezeigt, damit der Benutzer berücksichtigt, dass die app ein Hintergrundtask ausgeführt wird und zeigt außerdem ein Verfahren zum Überwachen oder interagieren mit der Aufgabe. Ein Beispiel hierfür wäre eine Podcasts-app, die Wiedergabe ein Podcast für dem Benutzer oder vielleicht ein Podcast Episode herunterladen, damit er später besonders gefallen hat werden kann. 
+* **Verwenden Sie einen hohen Stellenwert Firebase Cloud Nachricht (FCM)** &ndash; Wenn Android erhält einen hohen Stellenwert FCM für eine app, die app zum Ausführen der Dienste im Hintergrund für einen kurzen Zeitraum wird zugelassen. Wäre dies eine gute Alternative, sodass Sie einen Hintergrunddienst, der eine app im Hintergrund abruft. 
+* **Für die app in den Vordergrund Wenn geht verzögern** &ndash; Wenn keine der vorherigen Lösungen sind gültig, Entwickeln von apps müssen eigene Möglichkeit zum Anhalten und Fortsetzen der Arbeit bei der die app in den Vordergrund gestellt.
+
+## <a name="related-links"></a>Verwandte Links
+
+* [Ausführung im Hintergrund Android Oreo beschränkt.](https://www.youtube.com/watch?v=Pumf_4yjTMc)
