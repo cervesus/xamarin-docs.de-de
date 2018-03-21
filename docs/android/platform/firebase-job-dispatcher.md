@@ -8,33 +8,32 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/19/2018
-ms.openlocfilehash: c542237523b934cb8616fda6cefdcd969b7700bd
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: fbcb0190f609efc4396429a7961c2d49ab82576f
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Auftrag wurde vom Verteiler firebase
 
 _Dieses Handbuch erläutert, wie beim Planen der Verarbeitung im Hintergrund mithilfe der Auftrag wurde vom Verteiler Firebase-Bibliothek von Google._
 
-## <a name="firebase-job-dispatcher-overview"></a>Firebase Auftrag wurde vom Verteiler (Übersicht)
+## <a name="overview"></a>Übersicht
 
 Eine der geeignetsten Methoden eine Android-Anwendung für den Benutzer reaktionsfähig wird sichergestellt, dass komplexe oder lang ausgeführte Arbeit im Hintergrund ausgeführt wird. Allerdings ist es wichtig, dass die Verarbeitung im Hintergrund nicht negativ auf die benutzerfreundlichkeit mit dem Gerät auswirkt. 
 
-Beispielsweise kann ein Hintergrundauftrag eine Website alle paar Minuten abzufragende für Änderungen an ein bestimmtes Dataset abrufen. Dies scheint harmlos, aber es auf dem Gerät keine katastrophalen Auswirkungen haben kann. Die Anwendung, letztlich Reaktivierung auf dem Gerät, Erhöhung der Rechte der CPU auf einer höheren Energiezustand aktiviert, die Sender Hochfahren, machen die netzwerkanforderungen und wird bei der Verarbeitung der Ergebnisse. Da das Gerät wird nicht sofort Herunterfahren und zurück in den Leerlaufzustand LP-herankommt schlechter. Schlecht geplanten Hintergrundarbeit möglicherweise versehentlich des Geräts in einem Zustand mit unnötiges und übermäßiges Stromverbrauch gewährleisten. Effektiv, wird diese offensichtliche unverfänglichen Aktivität (eine Website abrufen) des Geräts in relativ kurzer Zeit unbrauchbar werden.
+Beispielsweise kann ein Hintergrundauftrag eine Website alle drei oder vier Minuten abzufragende für Änderungen an ein bestimmtes Dataset abrufen. Dies scheint keine Auswirkungen, aber es keine katastrophalen Auswirkungen auf die Akkulaufzeit haben würden. Die Anwendung wird wiederholt Reaktivieren des Geräts, erhöhen die CPU auf einer höheren Energiezustand aktiviert, schalten Sie die Sender, auf stellen die Anforderungen über das Netzwerk, und klicken Sie dann die Ergebnisse verarbeiten. Da das Gerät wird nicht sofort Herunterfahren und zurück in den Leerlaufzustand LP-herankommt schlechter. Schlecht geplanten Hintergrundarbeit möglicherweise versehentlich des Geräts in einem Zustand mit unnötiges und übermäßiges Stromverbrauch gewährleisten. Diese scheinbar harmlose Aktivität (eine Website abrufen) wird das Gerät in relativ kurzer Zeit unbrauchbar werden.
 
-Android bietet bereits mehrere APIs unterstützen Sie beim Arbeiten im Hintergrund ausführen, aber keines dieser eine umfassende Lösung ist:
+Android bietet die folgenden APIs unterstützen Sie beim Arbeiten im Hintergrund ausführen selbst sind allerdings nicht für intelligente auftragsplanung ausreichend. 
 
 * **[Beabsichtigte Services](~/android/app-fundamentals/services/creating-a-service/intent-services.md)**  &ndash; Absicht Services sind hervorragend für die Arbeiten ausführen, jedoch keine Möglichkeit zum Planen der Arbeit angebotenen.
 * **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)**  &ndash; diese APIs ermöglichen nur Arbeit geplant werden, jedoch bietet keine Möglichkeit, die Aufgaben tatsächlich auszuführen. Außerdem ermöglicht das AlarmManager nur zeitbasierter Einschränkungen, d. h. ein Warnsignal auslösen, zu einem bestimmten Zeitpunkt oder nach ein bestimmten Zeitraum verstrichen ist. 
 * **[JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)**  &ndash; der JobSchedule ist eine hervorragende API, die mit dem Betriebssystem zum Planen von Aufträgen funktioniert. Es ist jedoch nur verfügbar für die Android-apps, die API-Ebene 21 ausgerichtet oder höher. 
-* **[Broadcast Empfänger](~/android/app-fundamentals/broadcast-receivers.md)**  &ndash; ein Android-app kann broadcast Empfänger zum Ausführen von Aktionen als Reaktion auf Systemereignisse wide oder Intents einrichten. Broadcast Empfänger stellen jedoch keine Kontrolle über die Ausführung des Auftrags. Änderungen in der Android-Betriebssystem werden eingeschränkt, auch wenn broadcast Empfänger funktioniert oder die Arbeitsschritte, auf die reagiert werden kann. 
-* **Google Cloud Message-Netzwerk-Manager** &ndash; lange dies war, wohl die beste Möglichkeit, eine intelligente fehlerwiederherstellung Zeitplan im Hintergrund arbeiten. Allerdings wurde die GCMNetworkManager zwischenzeitlich als veraltet markiert. 
+* **[Broadcast Empfänger](~/android/app-fundamentals/broadcast-receivers.md)**  &ndash; ein Android-app kann broadcast Empfänger zum Ausführen von Aktionen als Reaktion auf eine systemweite Ereignisse oder Intents einrichten. Broadcast Empfänger stellen jedoch keine Kontrolle über die Ausführung des Auftrags. Änderungen in der Android-Betriebssystem werden eingeschränkt, auch wenn broadcast Empfänger funktioniert oder die Arbeitsschritte, auf die reagiert werden kann. 
 
-Es sind zwei Schlüsselfunktionen effektiv Verarbeitung im Hintergrund ausführen (auch bezeichnet als eine _Hintergrundauftrag_ oder ein _Auftrag_):
+Es sind zwei Schlüsselfunktionen effiziente Verarbeitung im Hintergrund ausführen (auch bezeichnet als eine _Hintergrundauftrag_ oder ein _Auftrag_):
 
-1. **Intelligent Planen der Arbeit** &ndash; sind wichtig, wenn eine Anwendung im Hintergrund, die auf diese Weise ist dies der Fall als eine gute Bürger ist. Im Idealfall sollte die Anwendung nicht gefordert wird, dass ein Auftrag ausgeführt werden. Stattdessen sollte die Anwendung Bedingungen, die für die erfüllt sein müssen, wenn der Auftrag ausführen kann, und planen, die angeben, die Arbeiten ausführen, wenn die Bedingungen erfüllt sind. Dadurch können Android Intelligent Arbeit ausführen. Anforderungen über das Netzwerk können z. B. zusammengefasst werden, führen Sie alle zur selben Zeit maximale Mehraufwand bei der Platzierung Netzwerk nutzen.
+1. **Intelligent Planen der Arbeit** &ndash; sind wichtig, wenn eine Anwendung im Hintergrund, die auf diese Weise ist dies der Fall als eine gute Bürger ist. Im Idealfall sollte die Anwendung nicht gefordert wird, dass ein Auftrag ausgeführt werden. Stattdessen sollte die Anwendung Bedingungen angeben, die für die erfüllt sein müssen, wenn der Auftrag ausführen kann, und Sie planen, dass diese Aufgabe ausführen, wenn die Bedingungen erfüllt sind. Dadurch können Android Intelligent Arbeit ausführen. Anforderungen über das Netzwerk können z. B. zusammengefasst werden, führen Sie alle zur selben Zeit maximale Mehraufwand bei der Platzierung Netzwerk nutzen.
 2. **Kapselt die Arbeit** &ndash; sollte der Code die Verarbeitung im Hintergrund ausführen gekapselt werden, in einer Komponente, die ausgeführt werden kann, unabhängig von der Benutzeroberfläche und relativ einfach erneut geplant, wenn die Arbeit nicht abgeschlossen aus irgendeinem Grund.
 
 Der Auftrag wurde vom Verteiler Firebase ist eine Bibliothek von Google, die eine fluent-API, um Planungsdaten Verarbeitung im Hintergrund zu vereinfachen. Es ist der Ersatz für Google Cloud-Manager werden soll. Der Auftrag wurde vom Verteiler Firebase umfasst die folgenden APIs:
@@ -66,7 +65,7 @@ Um mit der Dispatcher Firebase beginnen, zuerst Hinzufügen der [Xamarin.Firebas
 
 Nach dem Hinzufügen der Auftrag wurde vom Verteiler Firebase-Bibliothek, erstellen Sie eine `JobService` Klasse, und Planen Sie mit einer Instanz der Ausführung der `FirebaseJobDispatcher`.
 
-### <a name="creating-a-jobservice"></a>Erstellen einer `JobService`
+### <a name="creating-a-jobservice"></a>Erstellen eine JobService
 
 Alle Arbeit, die von der Bibliothek Firebase Auftrag Verteiler muss erfolgen, in einem Typ, der erweitert die `Firebase.JobDispatcher.JobService` abstrakte Klasse. Erstellen einer `JobService` ähnelt dem Erstellen einer `Service` mit dem Android-Framework: 
 
@@ -74,7 +73,7 @@ Alle Arbeit, die von der Bibliothek Firebase Auftrag Verteiler muss erfolgen, in
 2. Ergänzen Sie die Unterklasse mit der `ServiceAttribute`. Obwohl nicht zwingend erforderlich, es wird empfohlen, explizit festlegen der `Name` Parameter, um beim Debuggen hilfreich sein der `JobService`. 
 3. Hinzufügen einer `IntentFilter` deklarieren die `JobService` in der **AndroidManifest.xml**. Dadurch wird auch die Firebase Auftrag Dispatcher-Bibliothek zu suchen, und rufen die `JobService`.
 
-Der folgende Code ist ein Beispiel für die am einfachsten `JobService` für eine Anwendung:
+Der folgende Code ist ein Beispiel für die am einfachsten `JobService` für eine Anwendung mithilfe der TPL portierungsziel asynchron ausführen:
 
 ```csharp
 [Service(Name = "com.xamarin.fjdtestapp.DemoJob")]
@@ -85,11 +84,14 @@ public class DemoJob : JobService
 
     public override bool OnStartJob(IJobParameters jobParameters)
     {
-        Log.Debug(TAG, "DemoJob::OnStartJob");
-        // Note: This runs on the main thread. Anything that takes longer than 16 milliseconds
-         // should be run on a seperate thread.
-        
-        return false; // return false because there is no more work to do.
+        Task.Run(() =>
+        {
+            // Work is happening asynchronously (code omitted)
+                       
+        });
+
+        // Return true because of the asynchronous work
+        return true;  
     }
 
     public override bool OnStopJob(IJobParameters jobParameters)
@@ -101,7 +103,7 @@ public class DemoJob : JobService
 }
 ```
 
-### <a name="creating-a-firebasejobdispatcher"></a>Erstellen einer `FirebaseJobDispatcher`
+### <a name="creating-a-firebasejobdispatcher"></a>Erstellen eine FirebaseJobDispatcher
 
 Bevor jede Arbeit geplant werden kann, ist es erforderlich, erstellen eine `Firebase.JobDispatcher.FirebaseJobDispatcher` Objekt. Die `FirebaseJobDispatcher` ist verantwortlich für die Planung einer `JobService`. Der folgende Codeausschnitt ist eine Möglichkeit zum Erstellen einer Instanz der `FirebaseJobDispatcher`: 
  
@@ -121,7 +123,7 @@ FirebaseJobDispatcher dispatcher = context.CreateJobDispatcher();
 
 Einmal die `FirebaseJobDispatcher` wurde instanziiert, es ist möglich, erstellen Sie eine `Job` und führen Sie den Code in der `JobService` Klasse. Die `Job` wird erstellt, indem ein `Job.Builder` Objekt, und wird im nächsten Abschnitt erläutert werden.
 
-### <a name="creating-a-firebasejobdispatcherjob-with-the-jobbuilder"></a>Erstellen einer `Firebase.JobDispatcher.Job` mit der `Job.Builder`
+### <a name="creating-a-firebasejobdispatcherjob-with-the-jobbuilder"></a>Erstellen eine Firebase.JobDispatcher.Job mit der Job.Builder
 
 Die `Firebase.JobDispatcher.Job` -Klasse ist verantwortlich für das Kapseln der Metadaten zum Ausführen einer `JobService`. Ein`Job` enthält Informationen, z. B. eine Einschränkung, die erfüllt sein muss, bevor der Auftrag ausgeführt werden kann, wenn die `Job` wiederholt wird, oder alle Trigger, das bewirkt den Auftrag ausgeführt werden.  Bare mindestens eine `Job` benötigen eine _Tag_ (eine eindeutige Zeichenfolge, die den Auftrag, identifiziert die `FirebaseJobDispatcher`) und den Typ des der `JobService` , die ausgeführt werden soll. Der Auftrag wurde vom Verteiler Firebase instanziiert dann die `JobService` wird er Zeit zum Ausführen des Auftrags.  Ein `Job` wird mit einer Instanz von erstellt die `Firebase.JobDispatcher.Job.JobBuilder` Klasse. 
 
@@ -140,7 +142,7 @@ Die `Job.Builder` führt einige grundlegende validierungsüberprüfungen für di
 * Ein `Job` wird so bald wie möglich ausführen geplant werden.
 * Die Standard-wiederholungsstrategie für eine `Job` ist die Verwendung einer _Exponentielles Backoff_ (auf Weitere Details unten im Abschnitt erläuterten [Festlegen einer RetryStrategy](#Setting_a_RetryStrategy))
 
-### <a name="scheduling-a-job"></a>Planen einer `Job`
+### <a name="scheduling-a-job"></a>Planen eines Auftrags
 
 Nach dem Erstellen der `Job`, muss geplant werden, mit der `FirebaseJobDispatcher` bevor es ausgeführt wird. Es gibt zwei Methoden für die Planung einer `Job`:
 
@@ -173,7 +175,7 @@ Jedes dieser Themen wird mehr in den folgenden Abschnitten erläutert werden.
 
 <a name="Passing_Parameters_to_a_Job" />
 
-#### <a name="passing-parameters-to-a-job"></a>Übergeben von Parametern zu einem Auftrag
+#### <a name="passing-jarameters-to-a-job"></a>Übergeben von Jarameters an einen Auftrag
 
 Parameter werden an einen Auftrag übergeben, durch das Erstellen einer `Bundle` , wird übergeben, zusammen mit der `Job.Builder.SetExtras` Methode:
 
@@ -219,8 +221,6 @@ Job myJob = dispatcher.NewJobBuilder()
 ```
 
 <a name="Setting_Job_Triggers" />
-
-#### <a name="setting-job-triggers"></a>Einstellung Auftragsauslöser
 
 Die `JobTrigger` bietet einen Leitfaden für das Betriebssystem zu, wenn der Auftrag beginnen soll. Ein `JobTrigger` verfügt über eine _Fenster ausführen_ , einen geplanten Zeitpunkt für den Fall definiert die `Job` ausgeführt werden soll. Das Fenster für die Ausführung verfügt über eine _Startfenster_ Wert und ein _endfenster_ Wert. Das Startfenster ist die Anzahl der Sekunden an, die das Gerät warten soll, bevor die Ausführung des Auftrags und der Endwert für das Fenster wird die maximale Anzahl von Sekunden vor dem Ausführen der `Job`. 
 
@@ -283,7 +283,7 @@ Einer dieser Methoden gibt einen ganzzahligen Wert zurück:
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieses Handbuch erläutert, wie mit, dass der Auftrag wurde vom Verteiler Firebase Intelligent arbeiten im Hintergrund ausgeführt wird. Es erläutert durchgeführt werden, da die Arbeit zu kapseln eine `JobService` und wie die `FirebaseJobDispatcher` so planen Sie diese Aufgabe, die Angabe der Kriterien mit einer `JobTrigger` und wie Fehler mit behandelt werden sollen eine `RetryStrategy`.
+Dieses Handbuch erläutert, wie mit, dass der Auftrag wurde vom Verteiler Firebase Intelligent arbeiten im Hintergrund ausgeführt wird. Er erläutert durchgeführt werden, da die Arbeit zu kapseln einer `JobService` sowie zum Verwenden der `FirebaseJobDispatcher` so planen Sie diese Aufgabe, die Angabe der Kriterien mit einer `JobTrigger` und wie Fehler mit behandelt werden sollen eine `RetryStrategy`.
 
 
 ## <a name="related-links"></a>Verwandte Links

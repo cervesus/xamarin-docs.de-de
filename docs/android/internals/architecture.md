@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 47f90af1ed68e6c3aea5710b7181b4787fc0895c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 9834da444032622cc3547e7c99ca3de0e41bb603
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="architecture"></a>Architektur
 
@@ -33,7 +33,7 @@ Weitere Informationen wie die Android-Klassen mit dem Android-Runtime-Klassen ko
 
 Android-Anwendungspakete sind ZIP-Container mit einem *.apk* Dateierweiterung. Anwendungspakete Xamarin.Android haben die gleiche Struktur und das Layout als normale Android Pakete mit der folgenden Erweiterungen:
 
--   Werden die Assemblys der Anwendung (mit IL) *gespeicherten* unkomprimierten innerhalb der *Assemblys* Ordner. Während der Prozess starten in Version erstellt die *.apk* ist *mmap()* Ed in den Prozess und die Assemblys aus dem Arbeitsspeicher geladen werden. Dies ermöglicht die schnellere app-Starts als Assemblys nicht benötigt, die vor der Ausführung extrahiert werden soll. - *Hinweis:* Speicherort Assemblyinformationen wie z. B. [Assembly.Location](https://developer.xamarin.com/api/property/System.Reflection.Assembly.Location/) und [Assembly.CodeBase](https://developer.xamarin.com/api/property/System.Reflection.Assembly.CodeBase/)
+-   Werden die Assemblys der Anwendung (mit IL) *gespeicherten* unkomprimierten innerhalb der *Assemblys* Ordner. Während der Prozess starten in Version erstellt die *.apk* ist *mmap()* Ed in den Prozess und die Assemblys aus dem Arbeitsspeicher geladen werden. Dies ermöglicht die schnellere app-Starts, wie Assemblys nicht vor der Ausführung extrahiert werden müssen. - *Hinweis:* Speicherort Assemblyinformationen wie z. B. [Assembly.Location](https://developer.xamarin.com/api/property/System.Reflection.Assembly.Location/) und [Assembly.CodeBase](https://developer.xamarin.com/api/property/System.Reflection.Assembly.CodeBase/)
     *nicht zuverlässig* in Version erstellt. Diese sind nicht als distinct Filesystem-Einträge vorhanden und keine verwendbaren Speicherort haben.
 
 

@@ -6,11 +6,11 @@ ms.assetid: 2375F833-A630-471E-B8E9-5AD2CB81F264
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 98d12bd93c50690909ac902a6f2498bcdb94960f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7befac774732d6f9e432d43ac9bdc635b25bf431
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="how-do-i-downgrade-a-nuget-package"></a>Wie werden ich ein NuGet-Paket heruntergestuft?
 
@@ -36,7 +36,6 @@ Sie können auch den exakten Befehl, der das Paket NuGet-Seite kopieren. Beispie
 
     `Xamarin.Forms version:`
 - Listet alle Pakete von Xamarin.Forms 1.4.x installiert sein: 
-
 
     `Xamarin.Forms version:1.4`
 

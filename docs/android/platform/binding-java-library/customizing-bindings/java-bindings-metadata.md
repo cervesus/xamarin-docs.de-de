@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: edf25ebd089994c01b2fa45e77b35fad9a51e350
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 70f17b6bc8dc991534cdf4dd065c813aa0e27e96
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="java-bindings-metadata"></a>Metadaten für Java-Bindungen
 
@@ -313,7 +313,7 @@ Die **EnumFields.xml** -Datei enthält die Zuordnung zwischen Java `int` Konstan
 </mapping>
 ```
 
-Hier haben wir die Java-Klasse ergriffen `SKRealReachSettings` und definiert eine c#-Enumeration namens `SKRealReachSettings` im Namespace `Skobbler.Ngx.Map.RealReach`. Die `field` Einträge definiert den Namen der Java-Konstante (Beispiel `UNIT\_SECOND`), den Namen des Eintrags Enum (Beispiel `Second`), und der Ganzzahlwert durch beide Entitäten dargestellt (Beispiel `0`). 
+Hier haben wir die Java-Klasse ergriffen `SKRealReachSettings` und definiert eine c#-Enumeration namens `SKMeasurementUnit` im Namespace `Skobbler.Ngx.Map.RealReach`. Die `field` Einträge definiert den Namen der Java-Konstante (Beispiel `UNIT_SECOND`), den Namen des Eintrags Enum (Beispiel `Second`), und der Ganzzahlwert durch beide Entitäten dargestellt (Beispiel `0`). 
 
 ### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>Definition Getter/Setter-Methoden, die mithilfe von EnumMethods.xml
 
@@ -328,7 +328,7 @@ Erhält die `SKRealReachSettings` -Enumeration definiert, über die folgenden **
 </mapping>
 ```
 
-Die erste `method` Zeile zugeordnet, den Rückgabewert von der Java `getMeasurementUnit` Methode, um die `SKRealReachSettings` Enum. Die zweite `method` Zeile ordnet den ersten Parameter der `setMeasurementUnit` der gleichen-Enumeration.
+Die erste `method` Zeile zugeordnet, den Rückgabewert von der Java `getMeasurementUnit` Methode, um die `SKMeasurementUnit` Enum. Die zweite `method` Zeile ordnet den ersten Parameter der `setMeasurementUnit` der gleichen-Enumeration.
 
 Alle diese Änderungen vorhanden, können Sie den folgenden Code in Xamarin.Android legen Sie die `MeasurementUnit`: 
 
