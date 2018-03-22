@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms Views
-description: "Xamarin.Forms-Ansichten sind die Bausteine von plattformübergreifenden mobilen Benutzeroberflächen."
+description: Xamarin.Forms-Ansichten sind die Bausteine von plattformübergreifenden mobilen Benutzeroberflächen.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
@@ -8,8 +8,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: f7d27c5226741ec2b105633206ebaa0ac73d9a7b
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 45dc110104d7bb064aff1c883f65d894cbe6402f
+ms.sourcegitcommit: c3abb91d1a944de07d1b2b0878b02752c768d722
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/22/2018
@@ -100,7 +100,7 @@ Ansichten sind Benutzeroberflächenobjekte wie z. B. Schaltflächen, Bezeichnung
 
 |     |     |
 | --- | --- |
-| [`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) nimmt die Form ein/aus-Schalter, damit der Benutzer einen booleschen Wert auswählen kann. Die [ `IsToggled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Switch.IsToggled/) Eigenschaft ist der Status des Switches, und die [ `Toggled` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Switch.Toggled/) Ereignis wird ausgelöst, wenn sich der Status ändert.<br /><br />[API-Dokumentation](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) | [![Beispiel für einen Switch](views-images/Switch.png "Beispiel für einen Switch")](views-images/Stepper-Large.png#lightbox "Beispiel wechseln")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
+| [`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) nimmt die Form ein/aus-Schalter, damit der Benutzer einen booleschen Wert auswählen kann. Die [ `IsToggled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Switch.IsToggled/) Eigenschaft ist der Status des Switches, und die [ `Toggled` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Switch.Toggled/) Ereignis wird ausgelöst, wenn sich der Status ändert.<br /><br />[API-Dokumentation](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) | [![Beispiel für einen Switch](views-images/Switch.png "Beispiel für einen Switch")](views-images/Switch-Large.png#lightbox "Beispiel wechseln")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
 |     |     |
 
 ### <a name="datepicker"></a>DatePicker
