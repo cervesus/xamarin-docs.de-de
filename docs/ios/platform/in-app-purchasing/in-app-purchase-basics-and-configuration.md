@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 302bb1225067ad401f97ee6bad88b4cd16c6dc95
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b622da2d6d9777fc200a091ccf003369b1c2e8d1
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="in-app-purchase-basics-and-configuration"></a>In App-Käufe Grundlagen und Konfiguration
 
@@ -84,7 +84,7 @@ Geben Sie einen passenden Namen für die *Beschreibung*, sodass Sie diese App-ID
 Können Sie eine beliebige Zeichenfolge, die Ihnen, für gefällt die **Paket-ID** (solange sie in Ihrem Konto eindeutig ist), jedoch Apple empfiehlt, Sie führen Sie den Reverse-DNS-Format, anstatt jede beliebige Zeichenfolge verwenden. Die beispielanwendung, die in diesem Artikel mit verwendet com.xamarin.storekit.testing für die Paket-ID, es würden jedoch gleichermaßen gültig, bis einen Bezeichner, wie z. B. My_store_example verwenden (obwohl Apple Es empfiehlt sich, keine).
 
 > [!IMPORTANT]
-> **Hinweis**: Apple ermöglicht auch das Sternchen Platzhalter am Ende hinzugefügt werden eine **Paket-ID** , damit eine einzelne App-ID jedoch für mehrere Anwendungen verwendet werden können _Platzhalter App-IDs nicht verwendet werden In AppPurchase_. Ein Beispiel, dass Platzhalter Paket-ID com.xamarin.* möglicherweise
+> Apple ermöglicht auch das Sternchen Platzhalter am Ende hinzugefügt werden eine **Paket-ID** , damit eine einzelne App-ID jedoch für mehrere Anwendungen verwendet werden können _Platzhalter App-IDs können nicht verwendet werden, für AppPurchase_. Ein Beispiel, dass Platzhalter Paket-ID com.xamarin.* möglicherweise
 
 #### <a name="enabling-app-services"></a>Aktivieren des App-Dienste
 

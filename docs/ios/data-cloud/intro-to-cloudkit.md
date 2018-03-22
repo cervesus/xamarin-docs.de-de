@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: e231043b1c4b0fa7ba72f2a371545036ffb21164
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: c4ee5c0457dd1faea74cbbc30dd2d0f42087a8d0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -43,7 +43,7 @@ CloudKit unterstützt sowohl das Konzept von öffentlichen und privaten Datenban
 CloudKit unterstützt strukturierte und Massenimport von Daten. Es ist in der Behandlung von großen dateiübertragungen nahtlos. CloudKit übernimmt effizient übertragen großer Dateien zu und von iCloud Server im Hintergrund und Freigeben des Entwicklers auf andere Aufgaben konzentrieren.
 
 > [!NOTE]
-> **Hinweis:** es ist wichtig zu beachten, dass CloudKit ist ein _Transport Technologie_. Es stellt keine Persistenz bereit; Es kann nur eine Anwendung zum Senden und Empfangen von Informationen von den Servern effizient.
+> Es ist wichtig zu beachten, dass CloudKit ist ein _Transport Technologie_. Es stellt keine Persistenz bereit; Es kann nur eine Anwendung zum Senden und Empfangen von Informationen von den Servern effizient.
 
 Verfassung dieses Dokuments ist Apple anfänglich CloudKit kostenlos mit einem hohen Grenzwert auf sowohl Bandbreite und die Speicherkapazität bereitstellen. Für größere Projekte oder Anwendungen mit einer großen Benutzerbasis hat Apple mit, dass einen günstigen Tarif Skalierung bereitgestellt wird, wird dem Hinweis.
 
@@ -239,7 +239,7 @@ Verweise werden verfügbar gemacht, in CloudKit Framework über die `CKReference
 Verweise stellen die Mechanismen hinter kaskadierende löscht. Wenn ein übergeordneter Datensatz aus der Datenbank gelöscht wird, werden jede untergeordnete Datensätze (wie in einer Beziehung angegeben) automatisch aus der Datenbank als auch gelöscht.
 
 > [!NOTE]
-> **Hinweis**: Verbleibend Zeiger sind eine Möglichkeit, wenn CloudKit verwenden. Beispielsweise kann nach der Zeit die Anwendung verfügt über eine Liste der Zeiger auf Datensätze abgerufen, einen Datensatz ausgewählt und dann für den Datensatz aufgefordert, der Datensatz nicht mehr in der Datenbank vorhanden. Eine Anwendung muss codiert werden, um diese Situation Datenbindungsvorgängen erfolgreich behandelt.
+> Zurückbleiben Zeiger sind eine Möglichkeit, wenn CloudKit verwenden. Beispielsweise kann nach der Zeit die Anwendung verfügt über eine Liste der Zeiger auf Datensätze abgerufen, einen Datensatz ausgewählt und dann für den Datensatz aufgefordert, der Datensatz nicht mehr in der Datenbank vorhanden. Eine Anwendung muss codiert werden, um diese Situation Datenbindungsvorgängen erfolgreich behandelt.
 
 Zwar nicht erforderlich, werden wieder Verweise bevorzugt, bei der Arbeit mit dem CloudKit-Framework. Apple hat dies das effizientesten Typ des Verweises, der im System abgestimmt.
 
@@ -395,7 +395,7 @@ Drei Dinge zu den oben aufgeführten Code zu beachten:
 
 
 > [!NOTE]
-> **Hinweis**: aufgrund der "lossy" mobilen Netzwerkkommunikation, in dem Verbindungen werden permanent gelöscht wird oder unterbrochen, einer der ersten Aspekte beim Arbeiten mit CloudKit Fehlerbehandlung ist, muss der Entwickler stellen.
+> Aufgrund der "lossy" mobilen Netzwerkkommunikation, wobei Verbindungen werden permanent gelöscht wird oder unterbrochen, einer der ersten Aspekte, die der Entwickler beim Arbeiten mit CloudKit Fehlerbehandlung ist vornehmen muss.
 
 ### <a name="fetching-a-record"></a>Abrufen eines Datensatzes
 
@@ -560,7 +560,7 @@ Abschließend sollte eine Pushbenachrichtigung gesendet werden, auf jedem Gerät
 Abonnements werden verfügbar gemacht, in CloudKit Framework über die `CKSubscription` Klasse. Sie kombinieren Datensatztyp ( `RecordType`), ein Prädikat ( `NSPredicate`) und ein Apple Push Notification ( `Push`).
 
 > [!NOTE]
-> **Hinweis**: CloudKit Push-Vorgänge sind etwas ergänzt werden, da sie eine Nutzlast enthalten, die bestimmte CloudKit-Informationen wie der Ursache die Clientpushinstallation durchgeführt werden soll.
+> CloudKit Push-Vorgänge sind etwas erweitert werden, da sie eine Nutzlast enthalten, die bestimmte CloudKit-Informationen wie der Ursache die Clientpushinstallation durchgeführt werden soll.
 
 #### <a name="how-subscriptions-work"></a>Funktionsweise von Abonnements
 
@@ -678,7 +678,7 @@ Da dies von iCloud stammt, ist eine umfangreiche Store Benutzerinformationen zu 
 Eine eindeutige, nach dem Zufallsprinzip generierte Benutzer-ID ist auf der Grundlage einer Container vom Container erstellt und iCloud-Konto des Benutzers (e-Mail-Adresse) zugeordnet. Diese Benutzer-ID wird an die Anwendung zurückgegeben und können auf beliebige Weise der Entwickler Ermessen verwendet werden.
 
 > [!NOTE]
-> **Hinweis**: verschiedene Anwendungen, die auf demselben Gerät ausgeführt wird, für denselben Benutzer iCloud unterschiedliche IDs hat, da mit unterschiedlichen CloudKit Containern verbunden sind.
+> Verschiedene Anwendungen ausgeführt werden, auf dem gleichen Gerät für iCloud-Benutzer müssen verschiedene Benutzer-IDs aus, da mit unterschiedlichen CloudKit Containern verbunden sind.
 
 Der folgende Code Ruft die CloudKit-Benutzer-ID für den angemeldeten in iCloud-Benutzer auf dem Gerät:
 
@@ -810,7 +810,7 @@ Der Entwickler kann diese Funktion verwenden, so ändern Sie ein Schema während
 Vor der Bereitstellung der Anwendung vom Entwickler kann ihre Schema und Daten zu migrieren-Umgebung für die Produktion verwenden **CloudKit Dashboard**. Bei der Ausführung für die Produktionsumgebung verhindert, dass der Server über eine Anwendung aus programmgesteuert das Schema geändert. Entwickler kann weiterhin Änderungen mit **CloudKit Dashboard** aber versucht, einen Datensatz in der Produktionsumgebung verursachen Fehler Felder hinzufügen.
 
 > [!NOTE]
-> **Hinweis:** der iOS-Simulator eignet sich nur für die **Entwicklungsumgebung**. Wenn der Entwickler ist bereit zum Testen einer Anwendung in eine **Produktionsumgebung**, einem physischen iOS-Gerät ist erforderlich.
+> Die iOS-Simulator eignet sich nur für die **Entwicklungsumgebung**. Wenn der Entwickler ist bereit zum Testen einer Anwendung in eine **Produktionsumgebung**, einem physischen iOS-Gerät ist erforderlich.
 
 
 ## <a name="shipping-a-cloudkit-enabled-app"></a>Eine CloudKit Shipping-fähiger Apps

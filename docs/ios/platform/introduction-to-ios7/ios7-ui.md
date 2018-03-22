@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 1ad37cb4a794ac47e0e2f184a730949f14e85572
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3d70aff4df91120402e2987598b8973172b46245
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 Übersicht über die Benutzeroberfläche
 
@@ -173,7 +173,7 @@ Finden Sie in der [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS
 Der Verschiebungswert wird dynamisch generiert, nachdem der Hierarchie, also beim Lesen die Sicht hinzugefügt wurden `TopLayoutGuide` und `BottomLayoutGuide` Werte in `ViewDidLoad` gibt 0 zurück. Die Sicht – z. B. im geladen hat, berechnen Sie den Wert der `ViewDidLayoutSubviews`.
 
 > [!IMPORTANT]
-> **Hinweis**: `TopLayoutGuide` und `BottomLayoutGuide` sind in iOS 11 zugunsten von neuen abgesicherten Bereichslayout veraltet. Apple haben angegeben, die mithilfe des sicheren Bereichs mit iOS-Version als iOS 11 kompatibel ist. Weitere Informationen finden Sie unter der [aktualisieren Ihre app für iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) Handbuch.
+> `TopLayoutGuide` und `BottomLayoutGuide` sind in iOS 11 zugunsten von neuen abgesicherten Bereichslayout veraltet. Apple haben angegeben, die mithilfe des sicheren Bereichs mit iOS-Version als iOS 11 kompatibel ist. Weitere Informationen finden Sie unter der [aktualisieren Ihre app für iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) Handbuch.
 
 #### <a name="edgesforextendedlayout"></a>EdgesForExtendedLayout
 
@@ -252,7 +252,7 @@ Beispielsweise der folgende Screenshot zeigt die Auswirkungen der Änderung der 
 Der Farbton kann auf Bilder auch wenn angewendet werden die `RenderingMode` festgelegt ist, um `UIImageRenderingMode.AlwaysTemplate`.
 
 > [!IMPORTANT]
-> Hinweis: Farbton kann nicht festgelegt werden mit `UIAppearance`.
+> Farbton kann nicht festgelegt werden, mithilfe von `UIAppearance`.
 
 
 ### <a name="dynamic-type"></a>Dynamische Typ

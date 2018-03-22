@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 4747fb73358a60d10832a1e650acd90a5a4274d1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5e4bbc22403c6c0bfa5c8dc7ac4e3a39545051d4
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS Sicherheits- und Datenschutzfunktionen
 
@@ -44,7 +44,7 @@ Die folgenden allgemeinen Sicherheit und Datenschutz in iOS 10 vorgenommenen Än
 Apps unter iOS 10 (oder höher) müssen ihre Absicht auf bestimmte Funktionen oder Benutzerinformationen zugreifen, indem Sie in einen oder mehrere Datenschutz-Schlüssel eingeben statisch deklarieren ihre `Info.plist` Dateien, die dem Benutzer erklären, warum die app zugreifen möchte.
 
 > [!IMPORTANT]
-> **Hinweis** Apps, die nicht bereitstellen, die benötigten Schlüssel werden im Hintergrund beendet das System beim Versuch, eine der eingeschränkten Funktionen oder Benutzerinformationen zugreifen _ohne Fehler_! Start eine app auf iOS 10 unerwartet fehlschlagen müssen sicherstellen, dass alle erforderlichen `Info.plist` angegeben wurden.
+> Apps, die nicht bereitstellen, die benötigten Schlüssel werden im Hintergrund beendet das System beim Versuch, eine der eingeschränkten Funktionen oder Benutzerinformationen zugreifen _ohne Fehler_! Start eine app auf iOS 10 unerwartet fehlschlagen müssen sicherstellen, dass alle erforderlichen `Info.plist` angegeben wurden.
 
 Im Zusammenhang mit des folgenden Datenschutzes Schlüssel verfügbar sind:
 
@@ -109,7 +109,7 @@ Um einer der Datenschutz-Schlüssel festzulegen, führen Sie folgende Schritte a
 -----
 
 > [!IMPORTANT]
-> **Hinweis:** aus dem Beispiel übergeben, oben, Fehler beim Festlegen der `NSHomeKitUsageDescription` -Schlüssel in der `Info.plist` Datei würde die app _im Hintergrund fehlerhaften_ (wird vom System zur Laufzeit geschlossen) ohne Fehler bei der Ausführung im iOS 10 (oder mehr).
+> Im Beispiel wird angegeben, über Fehler beim Festlegen der `NSHomeKitUsageDescription` -Schlüssel in der `Info.plist` Datei würde die app _im Hintergrund fehlerhaften_ (wird vom System zur Laufzeit geschlossen) ohne Fehler bei der Ausführung im iOS 10 (oder höher).
 
 <a name="Summary" />
 

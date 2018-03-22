@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 768ee4a2f33475b5327bf9c0fd006f1da580d836
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e72c013516de5bcf97e2e9f58a7a4f5cd87c730b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="resources-and-data-storage"></a>Ressourcen und die Speicherung von Daten
 
@@ -35,7 +35,7 @@ Jede app tvos. außerdem wurden, wird ein temporärer Cacheverzeichnis bereitges
 Daher kann nicht Ihre app auf zuvor heruntergeladene Inhalt nicht verfügbar sind, das er gestartet, wird das nächste Mal basieren. Ihre app Xamarin.tvOS sollte immer das Vorhandensein der erforderlichen Ressourcen überprüfen und diese nach Bedarf heruntergeladen.
 
 > [!IMPORTANT]
-> **Hinweis:** während Sie die Möglichkeit, andere Ressourcen und Ressourcen nach Bedarf heruntergeladen haben, Apple warnt Sie vor Nutzung des gesamten Speicherplatzes in Ihrer app einschließen, da es zu unvorhersehbaren Ergebnissen führen kann.
+> Während Sie die Möglichkeit, andere Ressourcen und Ressourcen nach Bedarf heruntergeladen haben, warnt Apple für den gesamten Platz im Cache der Ihrer app verwenden, da es zu unvorhersehbaren Ergebnissen führen kann.
 
 
 
@@ -70,7 +70,7 @@ Diese Ressourcen werden möglicherweise weiterhin auf dem Apple TV während des 
 Verwenden Sie Xcode, um Pakete mit verwandtem Inhalt (z. B. alle Ressourcen für Spiel Stufe 2) einen angegebenen Ressourcentag zugeordnet zu erstellen. Später wird Ihre app On-Demand-Ressource durch Angeben dieses Ressourcentag anfordern. Ihre app sollte eine Benutzeroberfläche vorweisen, die dem Benutzer angezeigt, die besagt, dass der Inhalt heruntergeladen wird. Weitere Informationen finden Sie in der Apple- [On-Demand-Handbuch](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083).
 
 > [!IMPORTANT]
-> **Hinweis:** sollte darauf geachtet werden, das richtige Gleichgewicht zwischen oft die app erhält Ressourcen bei Bedarf heruntergeladen und die Größe der einzelnen Downloads zu erreichen. Benutzer kann mit Ihrer app frustriert werden, wenn Spielverlauf ständig unterbrochen wird, um neue Inhalte herunterladen oder ein einzigen Download zu lange dauert.
+> Vorsichtig sollte vorgenommen werden, das richtige Gleichgewicht zwischen oft die app erhält Ressourcen bei Bedarf heruntergeladen und die Größe der einzelnen Downloads zu erreichen. Benutzer kann mit Ihrer app frustriert werden, wenn Spielverlauf ständig unterbrochen wird, um neue Inhalte herunterladen oder ein einzigen Download zu lange dauert.
 
 
 
@@ -85,7 +85,7 @@ Dieser Artikel hat die Größe, Ressourcen- und Daten Speicher Einschränkungen 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beispiele für tvos. außerdem wurden](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvos. außerdem wurden Handbücher für interaktive Workflowdienste-Schnittstelle](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [App-Programmierhandbuch für tvos. außerdem wurden](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

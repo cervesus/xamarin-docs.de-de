@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: e20c9f068fe92e0dd711e0c20d31d713a0d03f0d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 46a0920efc8d80db7f3783654630f65086907f50
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="advanced-user-notifications"></a>Fortgeschrittene Benutzerbenachrichtigungen
 
@@ -145,7 +145,7 @@ Zusätzlich zu den oben aufgeführten Remote Benachrichtigungen Medien Anlagen w
 Benachrichtigung in iOS 10 unterstützen Medien Anlagen von Bildern (statische und GIF-Dateien), Audio oder Video und das System zeigt automatisch die richtige benutzerdefinierte Benutzeroberfläche für jeden dieser Typen von Anlagen, wenn der Benutzer die Benachrichtigung angezeigt wird.
 
 > [!NOTE]
-> **Hinweis:** sollte geachtet werden sowohl die Mediengröße zu optimieren und die benötigte Zeit zum Herunterladen von Medien vom Remoteserver (oder das Medium für lokale Benachrichtigungen zusammenstellen) des Systems erzwingt strenge Grenzwerte sowohl beim Ausführen der app-Diensts Erweiterung. Betrachten Sie beispielsweise das Senden einer nach unten skalierte Version des Bilds oder einen kleinen Clip eines Videos in der Benachrichtigung dargestellt werden soll.
+> Sollte geachtet werden sowohl die Mediengröße zu optimieren und die benötigte Zeit zum Herunterladen von Medien vom Remoteserver (oder das Medium für lokale Benachrichtigungen zusammenstellen) wie das System erzwingt strenge Grenzwerte sowohl beim Ausführen der app-Erweiterung. Betrachten Sie beispielsweise das Senden einer nach unten skalierte Version des Bilds oder einen kleinen Clip eines Videos in der Benachrichtigung dargestellt werden soll.
 
 ## <a name="creating-custom-user-interfaces"></a>Erstellen benutzerdefinierter Benutzeroberflächen
 
@@ -299,7 +299,7 @@ In der Situation, in dem die Benutzeroberfläche des benutzerdefinierten Benachr
 Um die Benachrichtigung Content Erweiterung benutzerdefinierte Oberfläche zu entwerfen, doppelklicken Sie auf die `MainInterface.storyboard` Datei zur Bearbeitung in der iOS-Designer öffnen zu ziehen, in den Elementen, die Sie benötigen, um die gewünschte Schnittstelle zu erstellen (z. B. `UILabels` und `UIImageViews`).
 
 > [!NOTE]
-> **Hinweis:** wird die Benutzeroberfläche für die Benachrichtigung _nicht_ interaktive Steuerelementen wie z. B. Textfelder oder Schaltflächen in einer Benachrichtigung Content-Erweiterung zu unterstützen. Während sie das Storyboard hinzugefügt werden können, wird der Benutzer nicht mit ihnen interagieren können. Um eine benutzerdefinierte Benutzeroberfläche für die Benachrichtigung Benutzerinteraktion hinzuzufügen, verwenden Sie stattdessen benutzerdefinierte Aktionen.
+> Die Benutzeroberfläche für die Benachrichtigung wird _nicht_ interaktive Steuerelementen wie z. B. Textfelder oder Schaltflächen in einer Benachrichtigung Content-Erweiterung zu unterstützen. Während sie das Storyboard hinzugefügt werden können, wird der Benutzer nicht mit ihnen interagieren können. Um eine benutzerdefinierte Benutzeroberfläche für die Benachrichtigung Benutzerinteraktion hinzuzufügen, verwenden Sie stattdessen benutzerdefinierte Aktionen.
 
 Öffnen Sie nach die Benutzeroberfläche angeordnet, und die erforderlichen Steuerelemente, die für C#-Code verfügbar gemacht, die `NotificationViewController.cs` zum Bearbeiten und ändern die `DidReceiveNotification` Methode, um die Benutzeroberfläche zu füllen, wenn der Benutzer die Benachrichtigung erweitert. Zum Beispiel:
 

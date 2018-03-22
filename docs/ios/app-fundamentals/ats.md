@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: a4491f550369bbb8515635ecbb7c1c2b74de48cf
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 357528c559de36329ca4bf12ab2597247a17222d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="app-transport-security"></a>App-Transportsicherheit
 
@@ -82,7 +82,7 @@ Die TLS-Ebene wird gesteuert durch den Webdienst, den Sie nutzen, und es ist dah
 Je nach dem Server, Sie sind kommuniziert (insbesondere, wenn es sich um einen 3rd Party-Dienst ist), müssen Sie möglicherweise forward Secrecy deaktivieren, oder wählen Sie eine niedrigere TLS-Ebene. Finden Sie unter der [ATS-Optionen konfigurieren](#Configuring-ATS-Options) weiter unten für weitere Details.
 
 > [!IMPORTANT]
-> **Hinweis:** App Transportsicherheit gilt nicht für Xamarin-apps mit **verwaltet HTTPClient-Implementierungen**. Dies gilt für Verbindungen mit dem CFNetwork **HTTPClient-Implementierungen** oder **NSURLSession HTTPClient-Implementierungen** nur.
+> App-Transportsicherheit gilt nicht für Xamarin-apps mit **verwaltet HTTPClient-Implementierungen**. Dies gilt für Verbindungen mit dem CFNetwork **HTTPClient-Implementierungen** oder **NSURLSession HTTPClient-Implementierungen** nur.
 
 ### <a name="setting-the-httpclient-implementation"></a>Die Implementierung für "HttpClient" festlegen
 
@@ -138,7 +138,7 @@ Nachteile:
 
 Bei einem Verbindungsversuch mit dem Internet, entweder direkt oder über eine iOS 9-Webansicht, erhalten Sie möglicherweise einen Fehler in der Form:
 
-> App-Transportsicherheit hat ressourcenauslastung einem Klartext-HTTP (http://www.-the-blocked-domain.com) blockiert, da sie unsicher ist. Über die Datei "Info.plist"-Datei Ihrer app können temporäre Ausnahmen konfiguriert werden.
+> Transportsicherheit für die App hat einen Klartext HTTP blockiert (http://www.-the-blocked-domain.com) ressourcenauslastung, da sie unsicher ist. Über die Datei "Info.plist"-Datei Ihrer app können temporäre Ausnahmen konfiguriert werden.
 
 In iOS9 erzwingt App Transport Sicherheit (ATS) sichere Verbindungen zwischen Internet-Ressourcen (z. B. die app-Back-End-Server) und Ihre app. Darüber hinaus ATS erfordert Kommunikation unter Verwendung der `HTTPS` Protokoll und allgemeine API-Kommunikation mit TLS Version 1.2 mit forward Secrecy verschlüsselt werden.
 
@@ -243,7 +243,7 @@ Innerhalb von Visual Studio für Mac, doppelklicken Sie auf die `Info.plist` in 
 [![](ats-images/ats02.png "Die Datenquellensicht an, der die Datei "Info.plist"")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
-> **Hinweis:** Wenn Ihre Anwendung eine Verbindung mit der eine unsichere Website erfordert, sollten Sie **immer** Geben Sie die Domäne als eine Ausnahme mit `NSExceptionDomains` anstatt durch das ATS deaktivieren vollständig mit `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` sollte nur im Notfall Extremsituationen verwendet werden.
+> Wenn Ihre Anwendung eine Verbindung mit der eine unsichere Website erfordert, sollten Sie **immer** Geben Sie die Domäne als eine Ausnahme mit `NSExceptionDomains` anstatt durch das ATS deaktivieren vollständig mit `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` sollte nur im Notfall Extremsituationen verwendet werden.
 
 
 

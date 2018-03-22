@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: fc9765b3f6a77f47fdce32dbc3805dd7bd70a08a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7b3a7a2347ed93aff5cddc6f15e25028c61a53d8
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-tab-bar-controller"></a>Arbeiten mit Registerkartenleiste-Controller
 
@@ -113,7 +113,7 @@ Die einfachste Möglichkeit zum Arbeiten mit Registerkarte Balken in einer app X
 -----
 
 > [!IMPORTANT]
-> **Hinweis:** während es möglich ist, z. B. Ereignisse weisen `TouchUpInside` auf ein UI-Element (z. B. eine `UIButton`) in der iOS-Designer, niemals aufgerufen wird da Apple TV Fingereingabe Bildschirm oder Berührungsereignisse unterstützen keine. Sie sollten immer verwenden die `Primary Action ` Ereignis aus, wenn Ereignishandler für tvos. außerdem wurden die Elemente der Benutzeroberfläche erstellen.
+> Während es möglich ist, z. B. Ereignisse weisen `TouchUpInside` auf ein UI-Element (z. B. eine `UIButton`) in der iOS-Designer, niemals aufgerufen wird da Apple TV Fingereingabe Bildschirm oder Berührungsereignisse unterstützen keine. Sie sollten immer verwenden die `Primary Action ` Ereignis aus, wenn Ereignishandler für tvos. außerdem wurden die Elemente der Benutzeroberfläche erstellen.
 
 Weitere Informationen zum Arbeiten mit Storyboards finden Sie unter unsere [Hello tvos. außerdem wurden Quick Start Guide](~/ios/tvos/get-started/hello-tvos.md). 
 

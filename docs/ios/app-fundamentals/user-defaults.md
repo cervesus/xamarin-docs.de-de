@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: ee79c79d7b3226f23851a3157e5a609d7cfc4cf4
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 73f3beb87fffcb37ef3e36d54f634c3bc62da538
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-user-defaults"></a>Arbeiten mit Standardeinstellungen für Benutzer
 
@@ -32,7 +32,7 @@ Wie oben, Standardeinstellungen für Benutzer angegeben (`NSUserDefaults`) zu ei
 Wenn die app zuerst ausgeführt wird, `NSUserDefaults` liest die Schlüssel und Werte aus der app-Benutzerdatenbank wird standardmäßig und speichert sie in den Arbeitsspeicher zu vermeiden, öffnen und lesen die Datenbank jedes Mal ein Wert erforderlich ist. 
 
 > [!IMPORTANT]
-> **Hinweis**: Apple empfiehlt, die nicht mehr die Developer-Aufruf die `Synchronize` Methode, um in-Memory-Caches mit der Datenbank direkt zu synchronisieren. Stattdessen wird es automatisch in regelmäßigen Abständen zu in-Memory-Caches mit der Datenbank eines Benutzers Standardwerte synchronisieren aufgerufen werden.
+> Apple empfiehlt, die nicht mehr die Developer-Aufruf die `Synchronize` Methode, um in-Memory-Caches mit der Datenbank direkt zu synchronisieren. Stattdessen wird es automatisch in regelmäßigen Abständen zu in-Memory-Caches mit der Datenbank eines Benutzers Standardwerte synchronisieren aufgerufen werden.
 
 Die `NSUserDefaults` Klasse enthält mehrere Hilfsmethoden zum Lesen und Schreiben von Einstellungswerte für häufig verwendete Datentypen wie z. B.: Zeichenfolge, ganze Zahl, "float", Boolean und URLs. Andere Typen von Daten können archiviert werden, mithilfe von `NSData`, die dann gelesen oder geschrieben werden, mit der Standard-Benutzerdatenbank. Weitere Informationen finden Sie in der Apple- [Präferenzen und Einstellungen Programmierhandbuch](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i).
 
@@ -127,7 +127,7 @@ plist.SetBool(useHeader, "UseHeader");
 ```
 
 > [!IMPORTANT]
-> **Hinweis:** Wenn zuerst die App ausgeführt wird, `NSUserDefaults` liest die Schlüssel und Werte aus der app-Benutzerdatenbank wird standardmäßig und speichert sie in den Arbeitsspeicher zu vermeiden, öffnen und lesen die Datenbank jedes Mal ein Wert erforderlich ist.
+> Wenn die App zuerst ausgeführt wird, `NSUserDefaults` liest die Schlüssel und Werte aus der app-Benutzerdatenbank wird standardmäßig und speichert sie in den Arbeitsspeicher zu vermeiden, öffnen und lesen die Datenbank jedes Mal ein Wert erforderlich ist.
 
 
 

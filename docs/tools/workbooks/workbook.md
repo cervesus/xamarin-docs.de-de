@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: c111d2f873270eab78eee92edc3d884d1e92fdd8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 69c4b25e17c31d57701f99e84f6f686c65dc7028
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="interactive-workbooks"></a>Interaktive Arbeitsmappen
 
@@ -32,7 +32,7 @@ Der Code, der Bearbeitungsfenster bietet codevervollständigung, Syntaxfarben, I
 
 [ ![](workbook-images/inspector-0.6.0-repl-small.png "Der Code Bearbeitungsfenster bietet codevervollständigung, Syntaxfarben, Inline-live-Diagnose und Unterstützung für mehrzeilige-Anweisung")](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
-Xamarin-Arbeitsmappen werden gespeichert, einer `.workbook` -Datei, die eine CommonMark-Datei mit Metadaten oben ist (finden Sie unter [Arbeitsmappen Dateitypen](#Workbooks_Files_Types) detaillierte Informationen auf wie die Arbeitsmappen gespeichert werden können).
+Xamarin-Arbeitsmappen werden gespeichert, einer `.workbook` -Datei, die eine CommonMark-Datei mit Metadaten oben ist (finden Sie unter [Arbeitsmappen Dateitypen](#workbooks-files-types) detaillierte Informationen auf wie die Arbeitsmappen gespeichert werden können).
 
 ### <a name="nuget-package-support"></a>NuGet-Paket-Unterstützung
 
@@ -132,7 +132,7 @@ Das Verzeichnis darf eine `index.workbook` -Datei, die die tatsächlichen nur-Te
 Wenn ein nur-Text `.workbook` geöffneten Datei, die Ressourcen aus der gleichen Verzeichnis verweist in Arbeitsmappen 0.99.3 oder später, wenn er gespeichert wird, erfolgt eine Konvertierung in einen `.workbook` Paket. Dies ist "true" bei Macintosh- und Windows.
 
 > [!NOTE]
-> **Hinweis:** öffnet Windows-Benutzer die `package.workbook\index.workbook` direkt Datei jedoch andernfalls das Paket wird weisen das gleiche Verhalten wie auf Mac
+> Windows-Benutzer werden geöffnet. die `package.workbook\index.workbook` direkt Datei jedoch andernfalls das Paket wird weisen das gleiche Verhalten wie auf Mac
 
 ### <a name="archives"></a>Archive
 

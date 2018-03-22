@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/19/2018
-ms.openlocfilehash: 54ec41636f491708ea72585d3889fbbca85c8eb1
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e07a6b72f2821e8cc65e0b0d690dbadf1a6713b6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="launch-screens"></a>Starten Sie Bildschirme
 
@@ -35,7 +35,7 @@ In iOS 8 (und höher) kann der Entwickler eine spezielle Unified Storyboard um d
     ![Das Fenster Neues Projekt mit einzelne Ansicht Apps ausgewählt](launch-screens-images/launch01.png)
 
     - Wird standardmäßig ein neues Projekt umfasst eine **LaunchScreen.storyboard** Datei, die die Schnittstelle starten Bildschirm definiert. 
-    - Um ein vorhandenes Projekt stattdessen ein starten Bildschirm Storyboard hinzuzufügen, mit der Maustaste, auf den Namen des Projekts in der **Lösung Pad** , und wählen Sie **hinzufügen > neue Datei... ** und wählen Sie dann **starten Bildschirm**:
+    - Um ein vorhandenes Projekt stattdessen ein starten Bildschirm Storyboard hinzuzufügen, mit der Maustaste, auf den Namen des Projekts in der **Lösung Pad** , und wählen Sie **hinzufügen > neue Datei...**  und wählen Sie dann **starten Bildschirm**:
 
     ![Die neue Datei angezeigt, mit iOS starten Bildschirm ausgewählt](launch-screens-images/launch01b.png)
 
@@ -105,7 +105,7 @@ In iOS 8 (und höher) kann der Entwickler eine spezielle Unified Storyboard um d
 
 2. Wenn **Ressourcen > LaunchScreen.xib** vorhanden ist, der **Projektmappen-Explorer**, löschen Sie ihn, indem Sie mit der rechten Maustaste auf die Datei und **löschen**. Diese Datei wird durch ein Storyboard im nächsten Schritt ersetzt werden.
 
-3. Erstellen Sie ein Storyboard mithilfe des Bildschirms starten. In der **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen > Neues Element... ** gefolgt von **leere Storyboard**. Nennen Sie das Storyboard **LaunchScreen.storyboard** , und klicken Sie auf **hinzufügen**:
+3. Erstellen Sie ein Storyboard mithilfe des Bildschirms starten. In der **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen > Neues Element...**  gefolgt von **leere Storyboard**. Nennen Sie das Storyboard **LaunchScreen.storyboard** , und klicken Sie auf **hinzufügen**:
 
     ![Klicken Sie im Fenster Neues Element hinzufügen mit leeren Storyboard ausgewählt](launch-screens-images/launch03-vs.png)
 
@@ -179,7 +179,7 @@ In iOS 8 (und höher) kann der Entwickler eine spezielle Unified Storyboard um d
 -----
 
 > [!NOTE]
-> **Hinweis**: ein Storyboard verwendet als Bildschirm starten _müssen_ enthalten nur die einfache, integrierte Benutzeroberflächenelemente und **kann nicht** Berechnungen ausführen oder eine benutzerdefinierte Klasse abgeleitet.
+> Ein Storyboard verwendet als Bildschirm starten _müssen_ enthalten nur die einfache, integrierte Benutzeroberflächenelemente und **kann nicht** Berechnungen ausführen oder eine benutzerdefinierte Klasse abgeleitet.
 
 Weitere Informationen zum Erstellen eines Bildschirms starten mit einem Storyboard Unified finden Sie unter der [dynamische starten Bildschirme](~/ios/user-interface/storyboards/unified-storyboards.md#dynamic-launch-screens) Teil der [Unified Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) Handbuch.
 
@@ -187,7 +187,7 @@ Weitere Informationen zum Erstellen eines Bildschirms starten mit einem Storyboa
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-Bei der Aktualisierung einer vorhandenen app Verwendung des Storyboards für seine Bildschirme starten mit der rechten Maustaste klicken Sie auf die **Projektname** in der **Projektmappen-Explorer** , und wählen Sie **hinzufügen**  >  **Neue Datei... **. Wählen Sie **iOS** > **starten Bildschirm** , und klicken Sie auf die **neu** Schaltfläche:
+Bei der Aktualisierung einer vorhandenen app Verwendung des Storyboards für seine Bildschirme starten mit der rechten Maustaste klicken Sie auf die **Projektname** in der **Projektmappen-Explorer** , und wählen Sie **hinzufügen**  >  **Neue Datei...** . Wählen Sie **iOS** > **starten Bildschirm** , und klicken Sie auf die **neu** Schaltfläche:
 
 ![](launch-screens-images/storyboard02.png "Wählen Sie ein iOS-Bildschirm starten")
 
@@ -205,7 +205,7 @@ Das neue Storyboard als einen Startbildschirm verwenden möchten, führen Sie fo
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Mit der rechten Maustaste auf den Projektnamen in der **Projektmappen-Explorer** , und wählen Sie **hinzufügen** > **neue Datei... **: 
+1. Mit der rechten Maustaste auf den Projektnamen in der **Projektmappen-Explorer** , und wählen Sie **hinzufügen** > **neue Datei...** : 
 
     ![](launch-screens-images/image012.png "Neue Datei hinzufügen")
 2. Geben Sie einen Namen für den Startbildschirm, und klicken Sie auf die **hinzufügen** Schaltfläche: 

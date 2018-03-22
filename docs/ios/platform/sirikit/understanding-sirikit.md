@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 67635b6a04579246467184cdff8d9f277b36ecc4
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 0c1253391673e48f81c12b80719db485d276013d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="understanding-sirikit-concepts"></a>Grundlegendes zu Konzepten SiriKit
 
@@ -274,7 +274,7 @@ Die Benutzeroberflächenerweiterung Intents immer zusammen mit anderem Inhalt Si
 Es gibt einige Instanzen, in dem die app die Informationen ersetzen können, die Siri für den Benutzer angezeigt wird, z. B. messaging standardmäßig oder zugeordnet, in dem die app mit einem zugeschnitten, um die app die standarderfahrung ersetzen können.
 
 > [!IMPORTANT]
-> **Hinweis:** während es möglich ist, interaktive Elemente hinzufügen, z. B. `UIButtons` oder `UITextFields` auf der Absicht Benutzeroberflächenerweiterung `UIViewController`, diesen sind streng unzulässig, als die Absicht-Benutzeroberfläche in nicht interaktiven und der Benutzer ist nicht in der Lage, zu interagieren mit ihnen.
+> Es ist zwar möglich, interaktive Elemente hinzufügen, z. B. `UIButtons` oder `UITextFields` auf der Absicht Benutzeroberflächenerweiterung `UIViewController`, diese sind ausschließlich als die Absicht-Benutzeroberfläche in nicht interaktiven unzulässig und der Benutzer ist nicht in der Lage, Sie mit ihnen interagieren.
 
 Es ist völlig optional für die app eine beabsichtigte Benutzeroberflächenerweiterung angeben, da es sich bei Siri einen Standardsatz von Benutzeroberflächen für die einzelnen beabsichtigte enthält. Darüber hinaus sind die Schnittstellen Intents Benutzeroberfläche nur verfügbar für bestimmte Intents, dass Apple bewertet wurde für den Benutzer hilfreich sein würde.
 
@@ -320,7 +320,7 @@ Die app muss auch Siri sofort zu aktualisieren, wenn Benutzer bestimmte Vokabula
 Vor allem die app _müssen_ Löschen von Informationen aus dem Vokabular Siri umgehend, da ein Benutzer stören werden konnte, wenn sie eine Information gelöscht, aber Siri noch Stunden oder Tage später erkannt wurde.
 
 > [!IMPORTANT]
-> **Hinweis:** die app sollte Entfernen aller Benutzer bestimmte Vokabular aus Siri, wenn der Benutzer entscheidet, die app zurücksetzen oder sie abmelden.
+> Die app sollte entfernen Sie alle des Vokabulars bestimmte Benutzer aus Siri, wenn der Benutzer entscheidet, die app zurücksetzen oder sie abmelden.
 
 ## <a name="sirikit-permissions"></a>SiriKit-Berechtigungen
 

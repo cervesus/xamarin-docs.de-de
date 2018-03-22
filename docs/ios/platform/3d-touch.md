@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d544647a2718d6b511551f4341dee51b2c68941f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c5cd2671bb66aa89117012fe394bb724f7e22e1a
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-3d-touch"></a>Einführung in 3D Touch
 
@@ -65,7 +65,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 Die `MaximumPossibleForce` Eigenschaft gibt die höchsten möglichen Wert für die `Force` Eigenschaft von der [UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/) basierend auf dem iOS-Gerät, das die app ausgeführt wird.
 
 > [!IMPORTANT]
-> **Hinweis:** Änderungen in Druck führt dazu, dass die `TouchesMoved` Ereignis ausgelöst wurde, auch wenn das "X" / Y-Koordinaten, nicht geändert wurden. Aufgrund dieser Änderung im Verhalten, sollte Ihre iOS-apps für vorbereitet werden die `TouchesMoved` aufzurufenden Ereignisses häufiger und für die X- / Y-Koordinaten mit dem letzten identisch sein `TouchesMoved` aufrufen.
+> Änderungen in Druck führt dazu, dass die `TouchesMoved` Ereignis ausgelöst wurde, auch wenn das "X" / Y-Koordinaten, nicht geändert wurden. Aufgrund dieser Änderung im Verhalten, sollte Ihre iOS-apps für vorbereitet werden die `TouchesMoved` aufzurufenden Ereignisses häufiger und für die X- / Y-Koordinaten mit dem letzten identisch sein `TouchesMoved` aufrufen.
 
 
 
@@ -281,7 +281,7 @@ Hier definieren wir zwei statische Schnellaktions-Elemente mit den folgenden Sch
 * `UIApplicationShortcutItemType` -Ist ein Zeichenfolgenwert, den zum Identifizieren des Elements in dieser app verwendet werden. Weitere Informationen finden Sie in folgendem Abschnitt.
 
 > [!IMPORTANT]
-> **Hinweis:** Schnellaktions Verknüpfung-Elemente, die festgelegt werden, in der `Info.plist` Datei kann nicht zugegriffen werden, mit der `Application.ShortcutItems` Eigenschaft. Sie sind nur im übergeben, um die `HandleShortcutItem` -Ereignishandler. 
+> Schnelle Aktion Verknüpfung Elemente, die festgelegt werden, in der `Info.plist` Datei kann nicht zugegriffen werden, mit der `Application.ShortcutItems` Eigenschaft. Sie sind nur im übergeben, um die `HandleShortcutItem` -Ereignishandler. 
 
 
 

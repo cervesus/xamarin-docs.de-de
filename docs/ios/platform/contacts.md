@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 996723db83a1f972cce26090d1253f97b6c818d3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0a9b9651a735ef4300e19f5ccb231a616850d970
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="contacts-and-contactsui"></a>Kontakte und ContactsUI
 
@@ -30,7 +30,7 @@ Die beiden neuen Frameworks enthalten die folgende Funktionen:
 [![](contacts-images/add01.png "Ein Beispiel für Kontakt Blatt auf einem iOS-Gerät")](contacts-images/add01.png#lightbox)
 
 > [!IMPORTANT]
-> **Hinweis:** vorhandenen `AddressBook` und `AddressBookUI` Frameworks Verwenden von iOS 8 (vor) sind in iOS 9 veraltet und sollte ersetzt werden, mit dem neuen `Contacts` und `ContactsUI` Frameworks so bald wie möglich für alle vorhandenen Xamarin.iOS App. Neue apps sollten mit den neuen Frameworks geschrieben werden.
+> Die vorhandene `AddressBook` und `AddressBookUI` Frameworks Verwenden von iOS 8 (vor) sind in iOS 9 veraltet und sollte ersetzt werden, mit dem neuen `Contacts` und `ContactsUI` -Frameworks für alle bisherigen Xamarin.iOS app so bald wie möglich. Neue apps sollten mit den neuen Frameworks geschrieben werden.
 
 
 
@@ -144,7 +144,7 @@ var predicate = CNContact.GetPredicateForContacts("Appleseed");
 ```
 
 > [!IMPORTANT]
-> **Hinweis:** generischen und zusammengesetzten Prädikate werden nicht durch das Framework für Kontakte unterstützt.
+> Generische und zusammengesetzte Prädikate werden nicht durch das Framework für Kontakte unterstützt.
 
 Um beispielsweise nur das Abrufen von Daten zu beschränken die **"givenName"** und **FamilyName** Eigenschaften des Kontakts, verwenden Sie den folgenden Code:
 
@@ -190,7 +190,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 ```
 
 > [!IMPORTANT]
-> **Hinweis:** der `GetUnifiedContact` und `GetUnifiedContacts` Methoden die `CNContactStore` Klasse _nur_ einen partiellen Kontakt begrenzt auf die Eigenschaften, die vom bereitgestellten Fetch-Schlüssel angefordert zurückgeben.
+> Die `GetUnifiedContact` und `GetUnifiedContacts` Methoden die `CNContactStore` Klasse _nur_ einen partiellen Kontakt begrenzt auf die Eigenschaften, die vom bereitgestellten Fetch-Schlüssel angefordert zurückgeben.
 
 ### <a name="unified-contacts"></a>Einheitliche Kontakte
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f4a18bf8f35d1a6c615c819ea90433d1eb123422
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7f7cfcd320fcb38a9b08dfd8fe7e0fae7ff808ec
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-an-application-in-the-background"></a>Aktualisieren einer Anwendung im Hintergrund
 
@@ -79,7 +79,7 @@ Wenn wir aktualisieren Inhalt fertig sind, können wir das Betriebssystem, die d
 Anwendungen, die mit Fetch Hintergrund können Aufrufe an die Benutzeroberfläche von Hintergrund aktualisieren vornehmen. Wenn der Benutzer die Anwendung öffnet, werden die Benutzeroberfläche bis zum Datum und der neue Inhalt anzuzeigen. Die Anwendung App Switcher Momentaufnahme werden auch aktualisiert, damit der Benutzer sehen kann, wenn die Anwendung neuen Inhalte aufweist.
 
 > [!IMPORTANT]
-> **Hinweis**: einmal `PerformFetch` wird aufgerufen, die Anwendung muss ungefähr 30 Sekunden Kickoff Download neuer Inhalte, und rufen den Handlerblock Abschluss. Wenn diese zu lange dauert, wird die app beendet. Erwägen Sie Hintergrund abgerufen, mit der _Hintergrundübertragungsdienst_ beim Herunterladen von Medien oder anderen großen Dateien.
+> Einmal `PerformFetch` wird aufgerufen, die Anwendung muss ungefähr 30 Sekunden Kickoff Download neuer Inhalte, und rufen den Handlerblock Abschluss. Wenn diese zu lange dauert, wird die app beendet. Erwägen Sie Hintergrund abgerufen, mit der _Hintergrundübertragungsdienst_ beim Herunterladen von Medien oder anderen großen Dateien.
 
 
 ### <a name="backgroundfetchinterval"></a>BackgroundFetchInterval
@@ -132,7 +132,7 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 Remote-Benachrichtigungen auf unregelmäßiger Updates mit Inhalt vorgesehen, die für die Funktionalität der Anwendung von entscheidender Bedeutung ist. Weitere Informationen zu remote Benachrichtigungen, finden Sie unter den Xamarin [Pushbenachrichtigungen in iOS](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md) Handbuch.
 
 > [!IMPORTANT]
-> **Hinweis**: der Aktualisierungsmechanismus in Remote Benachrichtigungen basiert auf Hintergrund abgerufen, da die Anwendung muss Kickoff Download neuer Inhalte und rufen Sie den Handlerblock Abschluss innerhalb von 30 Sekunden empfangen die Benachrichtigung oder iOS wird die Anwendung zu beenden. Betrachten Sie die Kopplung Remote Benachrichtigungen mit _Hintergrundübertragungsdienst_ beim Herunterladen von Medien oder anderen großen Dateien im Hintergrund.
+> Da der Aktualisierungsmechanismus in Remote-Benachrichtigungen auf Hintergrund Fetch basiert, die Anwendung muss Kickoff Download neuer Inhalte und rufen Sie den Handlerblock Abschluss innerhalb von 30 Sekunden empfangen die Benachrichtigung oder iOS wird die Anwendung beendet. Betrachten Sie die Kopplung Remote Benachrichtigungen mit _Hintergrundübertragungsdienst_ beim Herunterladen von Medien oder anderen großen Dateien im Hintergrund.
 
 
 ### <a name="silent-remote-notifications"></a>Automatische Remote-Benachrichtigungen
@@ -156,7 +156,7 @@ Allerdings können APNs automatische Benachrichtigungen "Programme", zusammen mi
  [![](updating-an-application-in-the-background-images/silent.png "Reguläre Benachrichtigungen können gespeicherte automatische Benachrichtigungen vom APNs an das Gerät mithilfe von Push übertragen verwendet werden, wie in diesem Diagramm veranschaulicht")](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
-> **Hinweis**: Apple vertraut zu machen, Entwicklern das automatische Pushbenachrichtigungen zu senden, wenn die Anwendung erfordert, und lassen den APNs Planen ihrer Bereitstellung.
+> Apple vertraut zu machen, Entwicklern das automatische Pushbenachrichtigungen zu senden, wenn die Anwendung erfordert, und lassen den APNs ihre Bereitstellung planen.
 
 
 In diesem Abschnitt haben wir die verschiedenen Optionen für das Aktualisieren von Inhalt im Hintergrund zum Ausführen von Aufgaben, die nicht passen in einer Kategorie Hintergrund erforderlichen behandelt. Jetzt sehen wir uns einige dieser APIs in Aktion.

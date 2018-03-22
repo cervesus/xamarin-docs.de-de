@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 15f649440b2a855189acff33afcef5e8272a0769
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e7252aa89e2514653fc730c7221d22cc053d2e24
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-proactive-suggestions"></a>Einführung in die proaktive Vorschläge
 
@@ -68,7 +68,7 @@ Wenn eine fuhr-Freigabe-app verwendet die [MKDirectionsRequest](https://develope
 Wenn die app nur bei Stromausfällen unterstützt, würde der Vorschlag System beginnen, mit *"Eine fuhr auf Get..."*, wenn andere Typen von routing Richtung (z. B. Walking oder Fahrrad) unterstützt werden, wird das System verwenden *"Anweisungen zum Abrufen..."*
 
 > [!IMPORTANT]
-> **Hinweis:** der [MKMapItem](https://developer.xamarin.com/api/type/MapKit.MKMapItem/) Objekt, das die Anwendung empfängt möglicherweise keinen Längen- und Breitengrad Informationen und geocodierung benötigen.
+> Die [MKMapItem](https://developer.xamarin.com/api/type/MapKit.MKMapItem/) Objekt, das die Anwendung empfängt möglicherweise keinen Längen- und Breitengrad Informationen und geocodierung benötigen.
 
 ## <a name="implementing-proactive-suggestions"></a>Proaktive Vorschläge
 

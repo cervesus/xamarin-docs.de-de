@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 34b51f784b549caa0dda2eeda066bb39dfc13020
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 0783372cd36d5a4984d09ee055257d525e7becb1
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="multitasking-for-ipad"></a>Multitasking für iPad
 
@@ -33,7 +33,7 @@ Es gibt eine Anzahl von zu berücksichtigenden Aspekte [Multitasking in Ihrer ap
 - [Benutzerdefinierte Tastenkombinationen](#Custom-Hardware-Keyboard-Shortcuts)
 - [Ressourcenverwaltung](#Resource-Management-Considerations)
 
-App-Entwickler können Sie auch [opt-Out-of Multitasking](#Opting-Out-of-Multitasking), einschließlich [deaktivieren PIP Videowiedergabe](#Disabling-PIP-Video-Playback).
+App-Entwickler können Sie auch [Multitasking abwählen](#Opting-Out-of-Multitasking), einschließlich [deaktivieren PIP Videowiedergabe](#Disabling-PIP-Video-Playback).
 
 In diesem Artikel werden die erforderlichen Schritte zum sicherstellen, dass Ihre app Xamarin.iOS wird in einem Multitaskingumgebung ordnungsgemäß ausgeführt oder wie Multitasking abzuwählen, wenn es sich nicht um eine gute ist zu, für Ihre app groß behandelt.
 
@@ -205,7 +205,7 @@ Sie finden Sie im Beispiel [Multitasking app](http://developer.xamarin.com/sampl
 
 Auch für apps, die bereits iOS 8 des Entwurfs von Führungslinien und bewährte Methoden verwenden, möglicherweise effizienter ressourcenverwaltung weiterhin ein Problem. In iOS 9 müssen die apps nicht mehr ausschließliche Verwendung von Arbeitsspeicher, CPU oder andere Systemressourcen.
 
-Daher müssen Sie Ihre app Xamarin.iOS, um die effektive Verwendung von Systemressourcen optimieren oder gewinnen Beendigung unter unzureichendem Arbeitsspeicher. Dies gilt ebenso für apps, die von Multitasking teilnehmen, seit ein zweites möglicherweise app weiterhin in einer Folie über Bereich oder ein Bild im Fenster des Bild, erfordern zusätzliche Ressourcen oder die Aktualisierungsrate verursacht unter 60 Frames pro Sekunde fällt ausgeführt werden.
+Daher müssen Sie Ihre app Xamarin.iOS, um die effektive Verwendung von Systemressourcen optimieren oder gewinnen Beendigung unter unzureichendem Arbeitsspeicher. Dies gilt gleichermaßen von apps, die Multitasking abzuwählen, seit ein zweites möglicherweise app weiterhin in einer Folie über Bereich oder ein Bild im Fenster des Bild, erfordern zusätzliche Ressourcen oder die Aktualisierungsrate verursacht unter 60 Frames pro Sekunde fällt ausgeführt werden.
 
 Betrachten Sie die folgenden Benutzeraktionen und deren Bedeutung:
 
@@ -223,19 +223,16 @@ Finden Sie in der Apple- [Energie Effizienz Handbuch für iOS-Apps](https://deve
 
 <a name="Opting-Out-of-Multitasking" />
 
-## <a name="opting-out-of-multitasking"></a>Die Entscheidung Out-of Multitasking
+## <a name="opting-out-of-multitasking"></a>Wenn Sie keine Multitasking
 
 Während Apple bereits vermuten lässt, dass alle apps für iOS 9 Multitasking unterstützen, kann es sehr besondere Gründe für eine app nicht zu z. B. Spiele oder apps, die Kamera, die den gesamten Bildschirm ordnungsgemäß funktioniert erfordern.
 
-Damit Ihre app Xamarin.iOS opt-Out-of entweder mit einer Folie Out Bereich als oder geteilten Ansicht Modus ausgeführt wird, bearbeiten Sie des Projekts **"Info.plist"** Datei, und überprüfen Sie **Vollbild erfordert**:
+Damit Ihre app Xamarin.iOS abwählen, entweder mit einer Folie Out Bereich als oder geteilten Ansicht Modus ausgeführt wird, bearbeiten Sie des Projekts **"Info.plist"** Datei, und überprüfen Sie **Vollbild erfordert**:
 
-[![](multitasking-images/fullscreen01.png "Die Entscheidung Out-of Multitasking")](multitasking-images/fullscreen01.png#lightbox)
+[![](multitasking-images/fullscreen01.png "Wenn Sie keine Multitasking")](multitasking-images/fullscreen01.png#lightbox)
 
 > [!IMPORTANT]
-> **Hinweis:** während Opting-Out-of Multitasking verhindert, dass der Ihrer app in Folie Out "oder" geteilte Ansicht ausgeführt wird, ist es **nicht** verhindern, dass eine andere app ausgeführt schieben, oder ein Bild im Bild Video anzeigt, die zusammen mit Ihrer App.
-
-
-
+> Während Ihre app Multitasking abwählen verhindert werden, in Folie Out "oder" geteilte Ansicht ausgeführt werden, verhindert es einer anderen app nicht bewegen, oder ein Bild im Bild video ausgeführt wird, die zusammen mit Ihrer app anzeigt.
 
 <a name="Disabling-PIP-Video-Playback" />
 
@@ -243,7 +240,7 @@ Damit Ihre app Xamarin.iOS opt-Out-of entweder mit einer Folie Out Bereich als o
 
 In den meisten Fällen sollte die app können Benutzer alle Videoinhalten wiedergegeben, die in einem Bild im unverankerte Fenster "Bild" angezeigt. Möglicherweise gibt es jedoch Situationen, in denen dies nicht, wie z. B. Spiel ausgeschnittene Szene Videos erwünscht sein kann.
 
-Um der Videowiedergabe PIP teilnehmen, gehen Sie in Ihrer app:
+Um PIP Videowiedergabe abzuwählen, gehen Sie in Ihrer app:
 
  - Bei Verwendung einer `AVPlayerViewController` Video anzeigen möchten, legen Sie die `AllowsPictureInPicturePlayback` Eigenschaft, um `false`.
  - Bei Verwendung der `AVPlayerLayer` um Video anzuzeigen, nicht instanziieren einer `AVPictureInPictureController`.

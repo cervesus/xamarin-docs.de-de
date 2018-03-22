@@ -6,11 +6,11 @@ ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: c4eed99533ba1aca1bd5ba23078866909330b542
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c0369fe52897a2557a92fd56ebcd816b8427faf7
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>Einführung in Backgrounding in iOS
 
@@ -67,7 +67,7 @@ Der App Switcher ist eine wichtige Steuerelement-Funktion, die unter iOS 7 einge
 Mithilfe der App wechseln, können Benutzer über Snapshots aller backgrounded erfolgreichen und ausgesetzten Anwendungen blättern. Tippen Sie auf eine Anwendung in den Vordergrund gestartet. Streichen entfernt die Anwendung aus den Hintergrund der Prozess wird beendet. Es dauert eine genauere Betrachtung der App Switcher in der [iOS Application Lifecycle Demo](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md) im nächsten Abschnitt.
 
 > [!IMPORTANT]
-> **Hinweis**: Switcher für die App einen Unterschied zwischen backgrounded erfolgreichen und ausgesetzten Anwendungen nicht angezeigt.
+> Der App Switcher werden einen Unterschied zwischen backgrounded erfolgreichen und ausgesetzten Anwendungen nicht angezeigt werden.
 
 
 

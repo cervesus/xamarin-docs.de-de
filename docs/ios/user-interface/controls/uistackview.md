@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 82bcd29a201be01bc8123e313e5a76b82668cb85
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b8d3fc920610b357520dfebddb79492c44d4781c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="stack-view"></a>Stapelansicht
 
@@ -62,7 +62,7 @@ Ort:
 Bei der Arbeit mit einem Stapelansicht können Sie vorstellen, der die **Ausrichtung** als die **X** und **Y** Speicherort, der den Unteransicht und die **Verteilung** wie die **Höhe** und **Breite**.
 
 > [!IMPORTANT]
-> **Hinweis:** `UIStackView` dient als für nicht-Rendering-Containeransicht und daher ist es nicht gezeichnet auf den Zeichenbereich wie andere Unterklassen des `UIView`. Festlegen von Eigenschaften also z. B. `BackgroundColor` oder überschreiben `DrawRect` keine visuellen Auswirkungen.
+> `UIStackView` Dient als für nicht-Rendering-Containeransicht und daher ist es nicht gezeichnet auf den Zeichenbereich wie andere Unterklassen des `UIView`. Festlegen von Eigenschaften also z. B. `BackgroundColor` oder überschreiben `DrawRect` keine visuellen Auswirkungen.
 
 Weiterhin Layout der app-Schnittstelle durch eine Bezeichnung, ImageView, zwei Schaltflächen und eine horizontale Stapelansicht hinzufügen, sodass sie die folgenden ähnelt:
 
@@ -209,7 +209,7 @@ Wenn die `BaselineRelativeArrangement` Eigenschaft ist `true`, die Unteransichte
  - Eine horizontale Stapelansicht wird die höchste Unteransicht des vor- und Nachnamen Basislinien verwenden. Wenn der höchste Ansicht auch ein Stapel ist, wird als Grundlage des höchsten Unteransicht verwendet.
 
 > [!IMPORTANT]
-> **Hinweis:** Baseline-Ausrichtung funktioniert nicht gestreckt oder komprimiert Unteransicht Größen wie die Grundlinie der falschen Position berechnet wird. Für Baseline-Ausrichtung sicher, dass den Unteransicht **Höhe** entspricht der systeminternen Inhaltsansicht **Höhe**.
+> Baseline-Ausrichtung funktioniert gestreckt oder komprimiert Unteransicht Größen nicht wie die Grundlinie der falschen Position berechnet wird. Für Baseline-Ausrichtung sicher, dass den Unteransicht **Höhe** entspricht der systeminternen Inhaltsansicht **Höhe**.
 
 ### <a name="common-stack-view-uses"></a>Allgemeine Verwendungsmöglichkeiten der Stapel anzeigen
 

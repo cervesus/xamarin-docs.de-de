@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0b8d8d08db15959a47093f255a891605a089ea00
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c55ba4fb90181aaa1aa8ec52e2fcb3e2b2cc76d0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="table-control"></a>Table-Steuerelement
 
@@ -51,7 +51,8 @@ myTable.SetNumberOfRows ((nint)rows.Count, "default");
 ```
 
 > [!IMPORTANT]
-> **Hinweis**: Tabellenzeilen wie iOS werden nicht virtualisiert werden. Versuchen Sie, um die Anzahl der Zeilen einzuschränken (Apple empfiehlt kleiner als 20).
+> Tabellenzeilen sind nicht virtualisiert werden, wie sie iOS werden. Versuchen Sie, um die Anzahl der Zeilen einzuschränken (Apple empfiehlt kleiner als 20).
+
 Nachdem die Zeilen erstellt wurden, müssen Sie jede Zelle Auffüllen (z. B. `GetCell` in iOS führen würde). Dieser Codeausschnitt aus der [WatchTables Beispiel](https://developer.xamarin.com/samples/monotouch/watchOS/WatchTables/) aktualisiert die Bezeichnung in jeder Zeile
 
 ```csharp
@@ -62,7 +63,7 @@ for (var i = 0; i < rows.Count; i++) {
 ```
 
 > [!IMPORTANT]
-> **Hinweis:** Using `SetNumberOfRows` und klicken Sie dann in der Verwendung von Schleifen `GetRowController` bewirkt, dass die gesamte Tabelle an die Überwachung gesendet werden. Für nachfolgende Sichten der Tabelle, wenn Sie zum Hinzufügen oder Entfernen von bestimmte Zeilen verwenden `InsertRowsAt` und `RemoveRowsAt` für eine bessere Leistung.
+> Mit `SetNumberOfRows` und klicken Sie dann in der Verwendung von Schleifen `GetRowController` bewirkt, dass die gesamte Tabelle an die Überwachung gesendet werden. Für nachfolgende Sichten der Tabelle, wenn Sie zum Hinzufügen oder Entfernen von bestimmte Zeilen verwenden `InsertRowsAt` und `RemoveRowsAt` für eine bessere Leistung.
 
 
 ## <a name="respond-to-taps"></a>Reagieren auf Datenabzweigungen
@@ -148,7 +149,7 @@ WatchOS 3 eingeführt, ein neues Feature für Tabellen: die Möglichkeit, den De
 ![](table-images/table-scroll-sml.png "Vertikale Paging Detail-Beispiel") ![](table-images/table-detail-sml.png)
 
 > [!IMPORTANT]
-> **Warnung:** dieses Feature steht zurzeit nur durch das Storyboard in Xcode Schnittstelle-Generator bearbeiten.
+> Dieses Feature steht zurzeit nur durch das Storyboard in Xcode Schnittstelle-Generator bearbeiten.
 
 Um dieses Feature zu aktivieren, wählen die `WKInterfaceTable` auf der Entwurfsoberfläche und Tick der **vertikale Detail Paging** Option:
 

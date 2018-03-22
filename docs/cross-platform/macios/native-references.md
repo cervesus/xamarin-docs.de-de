@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 5a33993bdef16191b66127dcc68c57661636c0f8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ea635dfd5b7946c6d394d72bffbb328255b56b97
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="native-references"></a>Systemeigene Verweise
 
@@ -22,7 +22,7 @@ _Systemeigene Verweise bietet Ihnen die Möglichkeit, ein natives Framework in e
 Seit iOS 8.0 oder höher wurde es möglich, ein eingebettetes Framework zum Freigeben von Code für app-Erweiterungen und die Haupt-app in Xcode zu erstellen. Mithilfe der systemeigenen Verweis-Funktion werden in Xamarin.iOS diese eingebetteten Frameworks (erstellt mit Xcode) genutzt.
  
 > [!IMPORTANT]
-> **Hinweis:** wird es nicht möglich, die eingebettete Frameworks aus jeder Art von Xamarin.iOS oder Xamarin.Mac Projekte erstellen, systemeigene Verweise nur für den Verbrauch von vorhandenen systemeigenen (Objective-C)-Frameworks zulassen.
+> Es nicht möglich ist, erstellen eingebettete Frameworks aus jeder Art von Xamarin.iOS oder Xamarin.Mac Projekte werden, können Sie systemeigene Verweise nur für den Verbrauch von vorhandenen systemeigenen (Objective-C)-Frameworks.
 
 
 

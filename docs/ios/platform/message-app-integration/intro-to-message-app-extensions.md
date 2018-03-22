@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d9b6b5a778e0e4d5092d1036109f82896acf639b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 083920aba3c8dc83b157b591e194c43935dcc566
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="message-app-extension-basics"></a>Grundlagen der Nachrichten-App-Erweiterung
 
@@ -87,7 +87,7 @@ Für ein Bild, in einem Aufkleber Pack eingeschlossen werden sollen müssen sie 
 - Bilder, darf nicht kleiner als 100 x 100 Punkt oder größer, 206 x 206 zeigt sein.
 
 > [!IMPORTANT]
-> **Hinweis:** Aufkleber Bilder sollte immer angegeben werden, auf die `@3x` Auflösung im Bereich von 300 x 300, 618 x 618 Pixel. Das System generiert automatisch die `@2x` und `@1x` Versionen zur Laufzeit nach Bedarf.
+> Aufkleber Bilder sollte immer angegeben werden, auf die `@3x` Auflösung im Bereich von 300 x 300, 618 x 618 Pixel. Das System generiert automatisch die `@2x` und `@1x` Versionen zur Laufzeit nach Bedarf.
 
 Apple wird vorgeschlagen, Bildanlagen Aufkleber für verschiedene andere farbige Hintergründe (z. B. Whitepaper, Schwarz, Rot, Gelb und mit mehreren farbig) und über Fotos, um sicherzustellen, dass sie die am besten in allen möglichen Situationen testen.
 

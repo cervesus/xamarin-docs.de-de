@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8e90bc3974247066a714cb44b6648a83cdb58cf5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3af74fb9d93e22e361f2e3db00961d7955eda689
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="push-notifications-in-ios"></a>Pushbenachrichtigungen in iOS
 
 _Dieser Abschnitt befasst sich mit Pushbenachrichtigungen in iOS. Apple Push Notifications Gateway Service und die Rolle, die Wiedergabe in die publishing Benachrichtigungen an iOS-Anwendungen eingeführt. Es wird erläutert, wie die Sicherheitszertifikate erstellen, die notwendig sind, um Pushbenachrichtigungen zu aktivieren und zu besprechen. In diesem Abschnitt werden schließlich Teil der ordnungsaufgaben erläutert, die Anwendungsserver, zum Nachverfolgen der Clients für mobile Geräte ausführen müssen._
 
 > [!IMPORTANT]
-> **Hinweis:** die Informationen in diesem Abschnitt beziehen sich auf iOS 9 und vorherigen, es ist noch hier zur Unterstützung von älterer iOS-Versionen. IOS 10 und höher, finden Sie unter der [Benachrichtigungsframeworks User Guide](~/ios/platform/user-notifications/index.md) für die Unterstützung von lokalen und Remote-Benachrichtigung auf einem iOS-Gerät.
+> Die Informationen in diesem Abschnitt beziehen sich auf iOS 9 und vorherigen, es ist noch hier zur Unterstützung von älterer iOS-Versionen. IOS 10 und höher, finden Sie unter der [Benachrichtigungsframeworks User Guide](~/ios/platform/user-notifications/index.md) für die Unterstützung von lokalen und Remote-Benachrichtigung auf einem iOS-Gerät.
 
 Pushbenachrichtigungen sollten kurze beibehalten und nur wenig Daten, um der mobilen Anwendung zu benachrichtigen, dass er die Serveranwendung für ein Update kontaktiert werden sollte. Z. B., wenn neue e-Mail eingeht, würde die Anwendung für die nur die mobile Anwendung benachrichtigen, die neue e-Mail angekommen ist. Die Benachrichtigung würde nicht die neue e-Mail sich selbst enthalten. Die mobile Anwendung würde dann rufen Sie die neue e-Mail-Nachrichten vom Server entsprechende wurde
 

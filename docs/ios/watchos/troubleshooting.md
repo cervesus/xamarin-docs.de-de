@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ce850b7890265b82774534ca0daaf25bed7e0c2d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4a6b916f991b337d8a28764f1482ddd837bad460
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="watchos-troubleshooting"></a>WatchOS Problembehandlung
 
@@ -33,13 +33,6 @@ Diese Seite enthält zusätzliche Informationen und problemumgehungen für Featu
 ### <a name="general"></a>Allgemein
 
 <a name="deploy" />
-<!--
-* You cannot deploy to the App Store *from within Visual Studio for Mac or Visual Studio*
-    in the current release. You should create an **Archive** in Visual Studio for Mac
-    and then switch to Xcode to upload the archive to iTunes Connect. Visual Studio
-    is not currently supported (but will be a future release). Refer to the
-    [deployment guide](~/ios/watchos/deploy-test/appstore.md) for more information.
--->
 
 - Frühere Versionen von Visual Studio für Mac ist es falsch werden eines der der der **AppleCompanionSettings** Symbole als 88 x 88 Pixel; vortäuschen eine **Symbol Fehler fehlt** Wenn Sie versuchen, auf die App senden Speicher.
     Dieses Symbol muss 87 x 87 Pixel (29 Einheiten für  **@3x**  Retina Bildschirme). Sie können nicht in Visual Studio für Mac - entweder bearbeiten-Standardimage-Medienobjekt in Xcode beheben oder manuell bearbeiten, die **Contents.json** Datei (entsprechend [in diesem Beispiel](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
@@ -47,14 +40,6 @@ Diese Seite enthält zusätzliche Informationen und problemumgehungen für Featu
 - Wenn das Überwachungsfenster-Erweiterungsprojekt **"Info.plist" > WKApp Paket-ID** ist nicht [richtig festgelegt](~/ios/watchos/get-started/project-references.md) Watch-App entsprechend **Paket-ID**, der Debugger die Verbindung nicht und visuelle Studio für Mac mit der Nachricht warten *"Warte Debugger eine Verbindung herstellen"*.
 
 - Debuggen wird in unterstützt **Benachrichtigungen** Modus kann jedoch nicht zuverlässig. Es funktioniert in einigen Fällen aus, und wiederholen Sie dann. Überprüfen Sie, ob die Watch-App **"Info.plist"** `WKCompanionAppBundleIdentifier` die Paket-ID der übergeordneten Container/iOS-app entsprechend festgelegt ist (ie. das Projekt, das auf dem iPhone ausgeführt wird).
-
-<!--
-- **Can't launch application on Watch simulator.** This seems to
-    be an issue with the iOS Simulator hanging when trying to
-    install an app that has changed. Xcode release notes (beta 4)
-    includes a similar known issue:
-    If the issue persists, reset the Simulator (**iOS Simulator > Reset Content and Settings...**).
--->
 
 - iOS-Designer zeigt keine Entrypoint Pfeile für Blick oder Benachrichtigung Schnittstelle-Controller.
 
@@ -69,15 +54,6 @@ Diese Seite enthält zusätzliche Informationen und problemumgehungen für Featu
 ### <a name="visual-studio"></a>Visual Studio
 
 Die iOS-Designer zu unterstützen, für die Überwachung Kit *erfordert* die Projektmappe ordnungsgemäß konfiguriert werden. Wenn das Projekt verweist nicht festgelegt werden (finden Sie unter [Gewusst wie: Festlegen von verweisen](~/ios/watchos/get-started/project-references.md)) und dann auf die Entwurfsoberfläche nicht ordnungsgemäß funktionieren.
-
-<!--
-* New Watch Kit apps created in Visual Studio might not allow
-    starting in Notifications mode.
-
-* You cannot deploy to the App Store from Visual Studio (see [notes above](#deploy)
-    and the [deployment guide](~/ios/watchos/deploy-test/appstore.md)). Use
-    Visual Studio for Mac and Xcode on your Mac Build Host.
-    -->
 
 <a name="noalpha" />
 
@@ -109,11 +85,10 @@ Es ist einfach, entfernen Sie den alpha-Kanal zur Verwendung von Mac OS X die **
 ## <a name="manually-adding-interface-controller-files"></a>Manuelles Hinzufügen von Schnittstelle Controller Dateien
 
 > [!IMPORTANT]
-> Die Xamarin unterstützt Überwachung Kit entwerfen Überwachungsfenster Storyboards in der iOS-Designers (Visual Studio für Mac und Visual Studio), die unten beschriebenen Schritte ist nicht notwendig. Einfach Benennen eines Controllers Schnittstelle eine Klasse in Visual Studio für Mac-Eigenschaften aufgefüllt, und die C#-Code-Dateien werden automatisch erstellt werden.
+> Die Xamarin unterstützt WatchKit entwerfen Überwachungsfenster Storyboards in der iOS-Designers (Visual Studio für Mac und Visual Studio), die unten beschriebenen Schritte ist nicht notwendig. Einfach Benennen eines Controllers Schnittstelle eine Klasse in Visual Studio für Mac-Eigenschaften aufgefüllt, und die C#-Code-Dateien werden automatisch erstellt werden.
 
 
 *Wenn* Xcode Schnittstelle-Generator verwenden, befolgen Sie diese Schritte zum Erstellen von neuen Schnittstelle Controller für die app überwachen und Synchronisierung mit Xcode aktivieren, damit, dass die Steckdosen und Aktionen in c# verfügbar sind:
-
 
 1. Öffnen Sie der Watch-app **Interface.storyboard** in **Xcode Schnittstelle-Generator**.
     
@@ -256,7 +231,7 @@ Der Parameter Sie entsprechend Ihrer app aktualisieren müssen ist `launchsimwat
 Den vollständigen Pfad zu dem Haupt-app-Bündel *der iOS-App, die den Watch-app und die Erweiterung enthält*.
 
 > [!NOTE]
-> *Hinweis:* der Pfad, Sie angeben müssen, ist für die *iPhone .app Anwendungsdatei*, d. h. eine, die iOS-Simulator bereitgestellt wird und die Watch-Erweiterung und die Watch-app enthält.
+> Der Pfad, Sie angeben müssen, ist für die *iPhone .app Anwendungsdatei*, d. h. eine, die iOS-Simulator bereitgestellt wird und die Watch-Erweiterung und die Watch-app enthält.
 
 Beispiel:
 

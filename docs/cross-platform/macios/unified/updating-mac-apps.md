@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 35665731fb0b8b669a850c06929dd951589e6bf6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 46118b5879589c963898ab7f60c61bd8e38f3900
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-existing-mac-apps"></a>Aktualisieren vorhandener Mac-Apps
 
@@ -116,7 +116,7 @@ Während es Änderungen zu NuGet zur Bearbeitung der einheitliche API-Unterstüt
 Bis zu diesem Zeitpunkt wird genau wie die Komponenten müssen Sie wechseln alle NuGet-Paket, das Sie in Ihrem Projekt auf eine Version aufgenommen haben, die Unified-APIs unterstützt, und führen Sie anschließend einen bereinigten Build.
 
 > [!IMPORTANT]
-> **Hinweis:** haben einen Fehler in der Form _"Fehler 3 kann nicht im selben Projekt Xamarin.Mac"monomac.dll"und"Xamarin.Mac.dll"enthalten – explizit"Xamarin.Mac.dll"verwiesen wird, während"monomac.dll"verwiesen wird" Xxx Version = 0.0.000, Culture = Neutral, PublicKeyToken = Null'"_ nach dem Konvertieren der anwendungskennworts an die Unified-APIs, es liegt in der Regel müssen eine Komponente oder die NuGet-Paket in das Projekt, das nicht auf die einheitliche API aktualisiert wurde. Sie müssen die vorhandene Komponente/NuGet entfernen, update auf eine Version, die Unified-APIs unterstützt, und führen Sie einen bereinigten Build.
+> Haben einen Fehler in der Form _"Fehler 3 kann nicht im selben Projekt Xamarin.Mac"monomac.dll"und"Xamarin.Mac.dll"enthalten – explizit"Xamarin.Mac.dll"verwiesen wird, während"monomac.dll"verwiesen wird" Xxx, Version = 0.0.000, Culture = Neutral, PublicKeyToken = Null'"_ nach dem Konvertieren der anwendungskennworts an die Unified-APIs, es liegt in der Regel müssen eine Komponente oder die NuGet-Paket in das Projekt, das nicht auf die einheitliche API aktualisiert wurde. Sie müssen die vorhandene Komponente/NuGet entfernen, update auf eine Version, die Unified-APIs unterstützt, und führen Sie einen bereinigten Build.
 
 ## <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>Aktivieren die 64-Bit-Builds von Xamarin.Mac-Apps
 

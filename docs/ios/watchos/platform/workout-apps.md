@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 77bad4c31ad0cb11476c656aa495707d2a94aa8f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2282a340811d9932f9df3a1343b22ffc35247e54
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="workout-apps"></a>Workout Apps
 
@@ -472,7 +472,7 @@ Auch neue WatchOS 3, sind die Bewegung angehalten (`HKWorkoutEventType.MotionPau
 Wenn die app eine Bewegung angehalten-Ereignis empfängt, sollte diese angehalten, das Sammeln von Daten, bis der Benutzer fortgesetzt, während der Übertragung wird und das Ereignis wird während des Verschiebens fortgesetzt empfangen wird. App-app sollte die Trainings-Sitzung in Reaktion auf ein Ereignis Bewegung angehalten nicht anhalten.
 
 > [!IMPORTANT]
-> **Hinweis:** die Bewegung angehalten und während des Verschiebens Resume-Ereignisse werden nur unterstützt, für den Aktivitätstyp RunningWorkout (`HKWorkoutActivityType.Running`).
+> Die Bewegung angehalten und während des Verschiebens Resume-Ereignisse werden nur unterstützt, für den Aktivitätstyp RunningWorkout (`HKWorkoutActivityType.Running`).
 
 Erneut, können diese Ereignisse verarbeitet werden, durch Überschreiben der `DidGenerateEvent` Methode der `HKWorkoutSessionDelegate`:
 
@@ -649,7 +649,7 @@ Sehen Sie sich die Funktionsweise dieses Prozesses:
 3. Verwenden die übergebene in Trainings-Konfiguration, die app WatchOS 3 startet eine neue Trainings-Sitzung (`HKWorkoutSession`).
 
 > [!IMPORTANT]
-> **Hinweis:** damit für die übergeordnete iPhone-app eine Trainings auf der Apple Watch starten können, muss die app WatchOS 3 haben, im Hintergrund ausgeführt wird, aktiviert. Finden Sie unter [aktivieren im Hintergrund ausgeführt wird](#Enabling-Background-Running) oben Weitere Details.
+> Damit für die übergeordnete iPhone-app eine Trainings auf der Apple Watch starten können muss die app WatchOS 3 im Hintergrund ausgeführt wird, aktiviert sein. Finden Sie unter [aktivieren im Hintergrund ausgeführt wird](#Enabling-Background-Running) oben Weitere Details.
 
 Dieser Vorgang ist weitgehend mit der des Trainings-Sitzung direkt in der WatchOS 3-app zu starten. Verwenden Sie auf dem iPhone den folgenden Code:
 
@@ -764,7 +764,7 @@ Alle Informationen in diesem Dokument dargestellten geschaltet wurde, können ei
 3. **WatchOS 3 `OutdoorRunDelegate.cs`**  -ein benutzerdefiniertes `HKWorkoutSessionDelegate` Ereignisse für den Trainings-Handle.
 
 > [!IMPORTANT]
-> **Hinweis:** der Code in den folgenden Abschnitten dargestellten enthält nur die Teile, die zum Implementieren der neuen, erweiterten Funktionen bereitgestellt, um Trainings-apps in WatchOS 3 erforderlich. Alle unterstützenden Code und den Code vorhanden und aktualisiert die Benutzeroberfläche nicht enthalten ist, jedoch können problemlos erstellt werden, anhand der übrigen WatchOS-Dokumentation.<p/>
+> Der Code in den folgenden Abschnitten dargestellten enthält nur die Teile, die zum Implementieren der neuen, erweiterten Funktionen bereitgestellt, um Trainings-apps in WatchOS 3 erforderlich. Alle unterstützenden Code und den Code vorhanden und aktualisiert die Benutzeroberfläche nicht enthalten ist, jedoch können problemlos erstellt werden, anhand der übrigen WatchOS-Dokumentation.<p/>
 
 
 

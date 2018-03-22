@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 4a3450026eff06555723b16093c7a0daf3d12ae7
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 774d6e6ecdb081650c6f008b1ac83c397f788d5b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="programmatic-layout-constraints"></a>Einschränkungen für programmgesteuerte Layout
 
@@ -43,7 +43,7 @@ In den folgenden Abschnitten werden die einzelnen Optionen im Detail besprochen.
 Mithilfe der `NSLayoutAnchor` -Klasse haben Sie eine fluent Benutzeroberfläche zum Erstellen von Einschränkungen basierend auf den Premium-Eigenschaften der UI-Elemente, die eingeschränkt. Beispielsweise führt eine View-Controller oberen und unteren Layout macht die `TopAnchor`, `BottomAnchor` und `HeightAnchor` Eigenschaften zu verankern, während eine Sicht Edge "," Center "," Größe "und" Baseline-Eigenschaften verfügbar macht.
 
 > [!IMPORTANT]
-> **Hinweis:** zusätzlich zu den Standardsatz von Ankereigenschaften, iOS-Sichten auch umfassen die `LayoutMarginsGuides` und `ReadableContentGuide` Eigenschaften. Diese Eigenschaften verfügbar machen `UILayoutGuide` Objekte für die Arbeit mit der Ansicht Ränder und besser lesbar Handbücher bzw. Inhalt.
+> Zusätzlich zu den Standardsatz von Ankereigenschaften, iOS-Sichten auch umfassen die `LayoutMarginsGuides` und `ReadableContentGuide` Eigenschaften. Diese Eigenschaften verfügbar machen `UILayoutGuide` Objekte für die Arbeit mit der Ansicht Ränder und besser lesbar Handbücher bzw. Inhalt.
 
 Layout Anker bieten mehrere Methoden zum Erstellen von Einschränkungen in einem einfach zu lesende, kompakten Format an:
 

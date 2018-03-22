@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9cf9cb2e4773b90ecdd9321c6627003be3fa1b8b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 71f076bb0dc7d552a041d48a6ce531dcff444de6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Verwenden einer Sandbox eine Xamarin.Mac-app
 
@@ -174,7 +174,7 @@ Als Nächstes müssen wir die neuen App-ID und das Bereitstellungsprofil in unse
 6. Klicken Sie auf die **Fertig** Schaltfläche.
 
 > [!IMPORTANT]
-> **Hinweis:** möglicherweise müssen Sie beenden und starten Sie Visual Studio für Mac Bezugsquelle so, dass die neuen App-ID und Provisioning-Profil, das von Xcode installiert wurde erkannt.
+> Sie müssen möglicherweise beenden und starten Sie Visual Studio für Mac Bezugsquelle so, dass die neuen App-ID und Provisioning-Profil, das von Xcode installiert wurde erkannt.
 
 #### <a name="troubleshooting-provisioning-issues"></a>Problembehandlung bei der Bereitstellung
 
@@ -308,7 +308,7 @@ Einer Xamarin.Mac Anwendungsverzeichnis App-Containerverzeichnis weist folgende 
 - Für _Shoebox_ Arten von apps (z. B. Apple Foto-Apps), Inhalt des Benutzers wird in den Container gesendet.
 
 > [!IMPORTANT]
-> **Hinweis:** leider Xamarin.Mac verfügt nicht über 100 % API Coverage noch (im Gegensatz zu Xamarin.iOS), daher die `NSHomeDirectory` API wurde nicht in der aktuellen Version von Xamarin.Mac zugeordnet.
+> Leider Xamarin.Mac verfügt nicht über 100 % API Coverage noch (im Gegensatz zu Xamarin.iOS), daher die `NSHomeDirectory` API wurde nicht in der aktuellen Version von Xamarin.Mac zugeordnet.
 
 Als vorübergehende problemumgehung können Sie den folgenden Code:
 
@@ -413,7 +413,7 @@ Wenn der Benutzer eine Ressourcendatei in das Projekt importiert (über eine `NS
 Ein Lesezeichen Document-Scoped kann von jeder Anwendung gelöst werden, die die Lesezeichen-Daten und das Dokument selbst öffnen können. Unterstützt die Portabilität, sodass der Benutzer die Projektdateien an einen anderen Benutzer senden und having-alle Lesezeichen für diese ebenfalls funktionieren.
 
 > [!IMPORTANT]
-> **Hinweis:** können Sie eine Document-Scoped Bookman _nur_ zeigen Sie auf eine einzelne Datei und nicht auf einen Ordner, und diese Datei kann nicht an einem Speicherort, der vom System verwendet werden (z. B. `/private` oder `/Library`).
+> Ein Lesezeichen Document-Scoped können _nur_ zeigen Sie auf eine einzelne Datei und nicht auf einen Ordner, und diese Datei kann nicht an einem Speicherort, der vom System verwendet werden (z. B. `/private` oder `/Library`).
 
 #### <a name="using-security-scoped-bookmarks"></a>Mithilfe von Lesezeichen im Bereich der Sicherheit
 
@@ -428,7 +428,7 @@ Geben Sie entweder Security-Scoped Lesezeichen müssen, Sie die folgenden Schrit
 Nachdem Sie den Zugriff auf eine Ressource aufgegeben haben, müssen Sie mit Schritt 4 erneut aus, um den Zugriff wiederherzustellen zurückgeben. Die app Xamarin.Mac neu gestartet wird, müssen Sie zu Schritt 3 zurück und das Lesezeichen wieder zu beheben.
 
 > [!IMPORTANT]
-> **Hinweis:** Fehler beim Zugriff auf Security-Scoped URL-Ressourcen freizugeben, führt dazu, dass eine app Xamarin.Mac Kernel-Ressourcen zu gelangen. Daher kann die app nicht mehr werden Speicherorten im Dateisystem an ihren Container hinzufügen, bis er neu gestartet wird.
+> Fehler beim Zugriff auf Security-Scoped URL-Ressourcen freizugeben, bewirkt eine Xamarin.Mac app Kernel-Ressourcen zu gelangen. Daher kann die app nicht mehr werden Speicherorten im Dateisystem an ihren Container hinzufügen, bis er neu gestartet wird.
 
 ### <a name="the-app-sandbox-and-code-signing"></a>Die App Sandkasten und Signieren von code
 
@@ -493,7 +493,7 @@ In der Regel beim Entwerfen einer Xamarin.Mac-app für den Sandkasten für die A
 6. Implementieren Sie eine Migrationsstrategie.
 
 > [!IMPORTANT]
-> **Hinweis:** müssen Sie nicht nur Sandbox der Hauptausführungsdatei Sie app-Bündel, aber auch jedes enthalten Helper app oder Tool in der Paketdatei. Dies ist erforderlich für eine beliebige app aus dem Mac App Store verteilt und, falls möglich, sollte für alle anderen Arten von app-Verteilung vorgenommen werden.
+> Sie müssen nicht nur Sandbox der Hauptausführungsdatei Sie app-Bündel, aber auch jedes enthalten Helper app oder Tool in der Paketdatei. Dies ist erforderlich für eine beliebige app aus dem Mac App Store verteilt und, falls möglich, sollte für alle anderen Arten von app-Verteilung vorgenommen werden.
 
 Eine Liste aller ausführbare Binärdateien in einen Xamarin.Mac-app-Bündel Geben Sie den folgenden Befehl in Terminaldienste:
 

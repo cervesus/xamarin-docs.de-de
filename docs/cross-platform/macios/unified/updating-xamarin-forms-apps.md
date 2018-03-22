@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 48b8d1cf8e6242fde632bceec5d482f53037a954
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d2f14510e5968ebe24bd297365416fa8aa5a0c59
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>Aktualisieren von vorhandenen Xamarin.Forms-Apps
 
@@ -47,7 +47,7 @@ Bei der Migration erfordert ein Upgrade Xamarin.Forms auf Version 1.3, die die e
 
 ### <a name="migration-tool"></a>Migrationstool
 
-Klicken Sie auf das iOS-Projekt so, dass es aktiviert ist, wählen Sie dann **Projekt > Migrate to Xamarin.iOS einheitliche API...**  und akzeptieren Sie die Warnmeldung, die angezeigt wird.
+Klicken Sie auf das iOS-Projekt so, dass es aktiviert ist, wählen Sie dann **Projekt > Migrate to Xamarin.iOS einheitliche API... ** und akzeptieren Sie die Warnmeldung, die angezeigt wird.
 
 ![](updating-xamarin-forms-apps-images/beta-tool1.png "Wählen Sie Projekt > Migrieren nach Xamarin.iOS einheitliche API..., und akzeptieren Sie die Warnmeldung, die angezeigt wird")
 
@@ -80,7 +80,7 @@ Aktualisieren Sie Xamarin.Forms auf 1.3.1 Vorabversion mithilfe des NuGet-Paket-
 **Hinweis:** Xamarin.Forms Version 1.3.1 befindet sich derzeit im *Vorabversion*. Dies bedeutet, Sie müssen auswählen, die **Vorabversion** option NuGet über (ein Tick-Feld in Visual Studio für Mac) oder einer Drop-Dropdownliste in Visual Studio auf die neueste Version der Vorabversion finden Sie unter.
 
 > [!IMPORTANT]
-> Wenn Sie Visual Studio verwenden, stellen Sie sicher, dass die neueste Version des NuGet-Paket-Manager installiert ist. Ältere Versionen von NuGet in Visual Studio werden die einheitliche Version des Xamarin.Forms 1.3.1 nicht korrekt installieren. Wechseln Sie zu **Tools > Erweiterungen und Updates...**  , und klicken Sie auf die **installiert** Liste überprüfen, ob die **NuGet-Paket-Manager für Visual Studio** ist mindestens Version 2.8.5. Wenn sie älter ist, klicken Sie auf die **Updates** Liste aus, um die neueste Version herunterzuladen.
+> Wenn Sie Visual Studio verwenden, stellen Sie sicher, dass die neueste Version des NuGet-Paket-Manager installiert ist. Ältere Versionen von NuGet in Visual Studio werden die einheitliche Version des Xamarin.Forms 1.3.1 nicht korrekt installieren. Wechseln Sie zu **Tools > Erweiterungen und Updates... ** , und klicken Sie auf die **installiert** Liste überprüfen, ob die **NuGet-Paket-Manager für Visual Studio** ist mindestens Version 2.8.5. Wenn sie älter ist, klicken Sie auf die **Updates** Liste aus, um die neueste Version herunterzuladen.
 
 Nachdem Sie das NuGet-Paket in Xamarin.Forms 1.3.1 aktualisiert haben, nehmen Sie die folgenden Änderungen in jedem Projekt so aktualisieren Sie auf die neue `Xamarin.Forms.Application` Klasse.
 
@@ -196,7 +196,7 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
 
 Gelegentlich sehen Sie die Fehler, die etwa wie folgt nach dem Aktualisieren des Xamarin.Forms-NuGet-Pakets. Es tritt auf, wenn es sich bei der NuGet-Updater Verweise auf älteren Versionen von nicht vollständig entfernt die **Csproj** Dateien.
 
->IHRE\_PROJECT.csproj: Fehler: dieses Projekt verweist auf NuGet-Pakete, die auf diesem Computer nicht vorhanden sind. Aktivieren Sie das NuGet-Paketwiederherstellung herunterladen.  Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist... /.. /Packages/Xamarin.Forms.1.2.3.6257/Build/Portable-Win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets. (IHR\_PROJEKT)
+>IHRE\_PROJECT.csproj: Fehler: dieses Projekt verweist auf NuGet-Pakete, die auf diesem Computer nicht vorhanden sind. Aktivieren Sie das NuGet-Paketwiederherstellung herunterladen.  Weitere Informationen finden Sie unter http://go.microsoft.com/fwlink/?LinkID=322105. Die fehlende Datei ist... /.. /Packages/Xamarin.Forms.1.2.3.6257/Build/Portable-Win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets. (IHR\_PROJEKT)
 
 Um diese Fehler zu beheben, öffnen Sie die **Csproj** Datei in einem Text-Editor, und suchen Sie nach `<Target` Elemente, die auf älteren Versionen von Xamarin.Forms, z. B. die unten dargestellte-Element verweisen. Löschen Sie manuell dieses gesamte Element aus der **Csproj** von Dateien und speichern Sie die Änderungen.
 
@@ -226,7 +226,7 @@ Während es Änderungen zu NuGet zur Bearbeitung der einheitliche API-Unterstüt
 Bis zu diesem Zeitpunkt wird genau wie die Komponenten müssen Sie wechseln alle NuGet-Paket, das Sie in Ihrem Projekt auf eine Version aufgenommen haben, die Unified-APIs unterstützt, und führen Sie anschließend einen bereinigten Build.
 
 > [!IMPORTANT]
-> **Hinweis:** haben einen Fehler in der Form _"Fehler 3 kann nicht im selben Projekt Xamarin.iOS"monotouch.dll"und"Xamarin.iOS.dll"enthalten – explizit"Xamarin.iOS.dll"verwiesen wird, während"monotouch.dll"verwiesen wird" Xxx Version = 0.0.000, Culture = Neutral, PublicKeyToken = Null'"_ nach dem Konvertieren der anwendungskennworts an die Unified-APIs, es liegt in der Regel müssen eine Komponente oder die NuGet-Paket in das Projekt, das nicht auf die einheitliche API aktualisiert wurde. Sie müssen die vorhandene Komponente/NuGet entfernen, update auf eine Version, die Unified-APIs unterstützt, und führen Sie einen bereinigten Build.
+> Wenn Sie einen Fehler in der Form aufweisen _"Fehler 3 kann nicht im selben Projekt Xamarin.iOS"monotouch.dll"und"Xamarin.iOS.dll"enthalten – explizit"Xamarin.iOS.dll"verwiesen wird, während"monotouch.dll"verwiesen wird" Xxx, Version = 0.0.000, Culture = Neutral, PublicKeyToken = Null'"_ nach dem Konvertieren der anwendungskennworts an die Unified-APIs, es liegt in der Regel müssen eine Komponente oder die NuGet-Paket in das Projekt, das nicht auf die einheitliche API aktualisiert wurde. Sie müssen die vorhandene Komponente/NuGet entfernen, update auf eine Version, die Unified-APIs unterstützt, und führen Sie einen bereinigten Build.
 
 ## <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Aktivieren die 64-Bit-Builds von Xamarin.iOS-Apps
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 7ae41e99d20f0e8f3cad6b933e415002903a3294
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d3a370c3a8d930c817d38422b249b496532fa33f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="text-kit"></a>Text-Kit
 
@@ -143,7 +143,7 @@ public class ExclusionPathView : UITextView
 Dieser Code fügt Unterstützung für das Zeichnen auf Textansicht mit Graphics Core. Da die `UITextView` Klasse ist jetzt erstellt, um Text-Kit für die Textrendering und Layout verwenden, können sie alle Funktionen des Text-Kits, z. B. das Festlegen der Ausschluss Pfade verwenden.
 
 > [!IMPORTANT]
->   Hinweis: Diese Beispiel-Unterklassen `UITextView` hinzuzufügende Touch-Unterstützung zu zeichnen. Erstellen von Unterklassen für `UITextView` ist nicht erforderlich, die Funktionen des Text-Kits zu erhalten.
+> Dieses Beispiel Unterklassen `UITextView` hinzuzufügende Touch-Unterstützung zu zeichnen. Erstellen von Unterklassen für `UITextView` ist nicht erforderlich, die Funktionen des Text-Kits zu erhalten.
 
 
 

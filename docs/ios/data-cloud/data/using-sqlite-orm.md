@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/18/2018
-ms.openlocfilehash: 2b29826f1a7acc6bb8dcd0594c69a5cb7ff6db42
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: b161519bb6fecd31d54690af7c44772c0752f1f6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="using-sqlitenet"></a>Verwenden von SQLite.NET
 
@@ -167,7 +167,7 @@ foreach (var s in stocksStartingWithA) {
 ```
 
 > [!IMPORTANT]
-> **Hinweis**: beim Schreiben von SQL-Anweisungen direkt erstellen Sie eine Abhängigkeit auf den Namen der Tabellen und Spalten, die in der Datenbank aus Ihrer Klassen und ihre Attribute generiert wurden. Wenn Sie diesen Namen im Code ändern müssen Sie daran denken, aktualisieren Sie jede SQL-Anweisung manuell geschrieben.
+> Wenn SQL-Anweisungen direkt schreiben erstellen Sie eine Abhängigkeit auf den Namen der Tabellen und Spalten, die in der Datenbank aus Ihrer Klassen und ihre Attribute generiert wurden. Wenn Sie diesen Namen im Code ändern müssen Sie daran denken, aktualisieren Sie jede SQL-Anweisung manuell geschrieben.
 
 ### <a name="deleting-an-object"></a>Löschen eines Objekts
 

@@ -6,11 +6,11 @@ ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 5e05cf0f13512478b3957070e7fa6329ea84337f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ad75dfac55add7e03ffbdb910e0e62ebd0fd6c18
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS Backgrounding mit Aufgaben
 
@@ -43,7 +43,7 @@ UIApplication.SharedApplication.EndBackgroundTask(taskID);
 Während der Registrierung-Paare für eine Aufgabe mit einem eindeutigen Bezeichner `taskID`, und umschließt ihn dann in den Abgleich `BeginBackgroundTask` und `EndBackgroundTask` aufrufen. Um den Bezeichner zu generieren, stellen wir einen Aufruf der `BeginBackgroundTask` Methode für die `UIApplication` -Objekt, und starten Sie den lang dauernde Aufgabe in der Regel auf einen neuen Thread. Wenn die Aufgabe abgeschlossen ist, nennen wir `EndBackgroundTask` und im gleichen Bezeichner übergeben. Dies ist wichtig, da iOS die Anwendung beendet, wenn eine `BeginBackgroundTask` Aufruf verfügt nicht über einen übereinstimmenden `EndBackgroundTask`.
 
 > [!IMPORTANT]
-> **Hinweis**: Hintergrund threadsichere Vorgänge können auf der Haupt-Thread oder einem Hintergrundthread, je nach den Anforderungen der Anwendung ausführen.
+> Hintergrund threadsichere Vorgänge können auf der Haupt-Thread oder einem Hintergrundthread, je nach den Anforderungen der Anwendung ausführen.
 
 
 ## <a name="performing-tasks-during-didenterbackground"></a>Ausführen von Aufgaben während DidEnterBackground
@@ -65,7 +65,7 @@ public override void DidEnterBackground (UIApplication application) {
 Beginnen wir damit, durch Überschreiben der `DidEnterBackground` Methode in der `AppDelegate`, in der wir unsere Aufgabe über registrieren `BeginBackgroundTask` wie im vorherigen Beispiel. Als Nächstes erstellen einen neuen Thread und unsere zeitintensive Aufgabe ausführen. Beachten Sie, dass die `EndBackgroundTask` jetzt-Aufruf aus innerhalb der lang dauernde Aufgabe, da die `DidEnterBackground` Methode wird bereits zurückgegeben hat.
 
 > [!IMPORTANT]
-> **Hinweis**: iOS verwendet eine [Watchdog-Mechanismus](http://developer.apple.com/library/ios/qa/qa1693/_index.html) , stellen Sie sicher, dass Benutzeroberfläches einer Anwendung reaktionsfähig bleibt. Eine Anwendung, die zu viel Zeit in verbringt `DidEnterBackground` werden in der Benutzeroberfläche nicht mehr reagiert. Ermöglicht das Informationssammlung Aufgaben, die im Hintergrund ausgeführt `DidEnterBackground` in kürzester Zeit, die Benutzeroberfläche reaktionsfähig zu halten und verhindert, dass der Watchdog beendet die Anwendung zurückgegeben.
+> iOS verwendet eine [Watchdog-Mechanismus](http://developer.apple.com/library/ios/qa/qa1693/_index.html) , stellen Sie sicher, dass Benutzeroberfläches einer Anwendung reaktionsfähig bleibt. Eine Anwendung, die zu viel Zeit in verbringt `DidEnterBackground` werden in der Benutzeroberfläche nicht mehr reagiert. Ermöglicht das Informationssammlung Aufgaben, die im Hintergrund ausgeführt `DidEnterBackground` in kürzester Zeit, die Benutzeroberfläche reaktionsfähig zu halten und verhindert, dass der Watchdog beendet die Anwendung zurückgegeben.
 
 
 ## <a name="handling-background-task-time-limits"></a>Verarbeitung im Hintergrund Task-Zeitlimits
@@ -153,7 +153,7 @@ else {
 ```
 
 > [!IMPORTANT]
-> **Hinweis**: vermeiden Sie Aufrufe an die Benutzeroberfläche von der Hintergrundfarbe iOS 6-kompatiblem Code, aktualisieren, iOS 6 Hintergrund UI Updates nicht unterstützt, und die Anwendung wird beendet.
+> Vermeiden Sie Aufrufe an die Benutzeroberfläche von der Hintergrundfarbe iOS 6-kompatiblem Code, aktualisieren, iOS 6 Hintergrund UI Updates nicht unterstützt, und die Anwendung wird beendet.
 
 
 Die `NSURLSession` -API umfasst einen umfangreichen Satz von Features zum Behandeln von Authentifizierung, fehlerhafte Übertragungen verwalten und die clientseitige - aber keine serverseitige - Fehler gemeldet. Es hilft der Bridge, die Unterbrechung Aufgabe Zeit eingeführt in iOS 7 ausführen, und bietet auch Unterstützung für das übertragen großer Dateien schnell und zuverlässig. Im nächste Abschnitt wird erklärt, diese zweite Funktion.

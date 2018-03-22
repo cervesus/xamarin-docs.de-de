@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 9c6bbf27d4c8227d96e372e91e1ccf2c9e841ff8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0f59e8f5e732a45f7e6148a08de80fffc56dbb26
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-navigation-controllers"></a>Arbeiten mit Navigation Controller
 
@@ -25,7 +25,7 @@ Navigationsleisten können an den Anfang Ansichten einen Titel und eine optional
 Zusätzlich zu den Titel (die im mittleren Bereich angezeigt wird), Navigationsleisten kann eine oder mehrere Schaltflächen Navigationsleiste enthalten (`UIBarButtonItem`) auf der linken und rechten Seite des Balkens.
 
 > [!IMPORTANT]
-> **Hinweis:** Navigationsleisten sind standardmäßig vollständig transparent. Sollte geachtet werden, stellen Sie sicher, dass der Inhalt der Navigationsleiste über den Inhalt darunter lesbar bleibt. Z. B. wenn Inhalt in einer Tabelle anzeigen oder die Auflistung darunter einen Bildlauf durchführt.
+> Navigationsleisten sind standardmäßig vollständig transparent. Sollte geachtet werden, stellen Sie sicher, dass der Inhalt der Navigationsleiste über den Inhalt darunter lesbar bleibt. Z. B. wenn Inhalt in einer Tabelle anzeigen oder die Auflistung darunter einen Bildlauf durchführt.
 
 
 
@@ -77,7 +77,7 @@ Die einfachste Möglichkeit zum Arbeiten mit Navigationsleisten in einer app Xam
 -----
 
 > [!IMPORTANT]
-> **Hinweis:** während es möglich ist, z. B. Ereignisse weisen `TouchUpInside` auf ein UI-Element (z. B. eine UIButton) in der iOS-Designer nie aufgerufen wird da Apple TV hat eine Fingereingabe Bildschirm oder Berührungsereignisse unterstützen. Sie sollten immer verwenden die `Primary Action` Ereignis aus, wenn Ereignishandler für tvos. außerdem wurden die Elemente der Benutzeroberfläche erstellen.
+> Während es möglich ist, z. B. Ereignisse weisen `TouchUpInside` auf ein UI-Element (z. B. eine UIButton) in der iOS-Designer nie aufgerufen wird da Apple TV hat eine Fingereingabe Bildschirm oder Berührungsereignisse unterstützen. Sie sollten immer verwenden die `Primary Action` Ereignis aus, wenn Ereignishandler für tvos. außerdem wurden die Elemente der Benutzeroberfläche erstellen.
 
 
 

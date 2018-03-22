@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: 4b2a470d7fe2a1f9d4b8df40836c934547adf614
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5da834e7e77fb8ab080c124bd09653bc840be3b0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-buttons"></a>Arbeiten mit Schaltflächen
 
@@ -130,7 +130,7 @@ namespace tvRemote
 Solange einer Schaltfläche `Enabled` Eigenschaft ist `true` und fällt nicht von einem anderen Steuerelement oder Sicht, die im Fokus-Element, das mithilfe von Siri Remote vorgenommen werden. Wenn der Benutzer wählt die Schaltfläche aus und klickt auf die Oberfläche berühren der `ButtonPressed` oben definierte Aktion ausgeführt werden würde.
 
 > [!IMPORTANT]
-> **Hinweis:** während es möglich ist, weisen Sie Aktionen wie z. B. `TouchUpInside` auf eine `UIButton` in der iOS-Designer beim Erstellen einer **Ereignishandler**, es wird nie aufgerufen werden, da Apple TV ist ein Touchscreen oder den Support Touch-Ereignisse. Sie sollten immer die Standardeinstellung verwenden **Aktionstyp** für die Erstellung **Aktionen** für tvos. außerdem wurden Elemente der Benutzeroberfläche.
+> Während es möglich ist, weisen Sie Aktionen wie z. B. `TouchUpInside` auf eine `UIButton` in der iOS-Designer beim Erstellen einer **Ereignishandler**, es wird nie aufgerufen werden, da Apple TV Fingereingabe Bildschirm oder Berührungsereignisse unterstützen keine. Sie sollten immer die Standardeinstellung verwenden **Aktionstyp** für die Erstellung **Aktionen** für tvos. außerdem wurden Elemente der Benutzeroberfläche.
 
 
 
@@ -191,7 +191,7 @@ View.AddSubview (button);
 ```
 
 > [!IMPORTANT]
-> **Hinweis:** während es möglich ist, weisen Sie Aktionen wie z. B. `TouchUpInside` auf eine `UIButton`, es wird nie aufgerufen werden, da Apple TV hat eine Fingereingabe Bildschirm oder Berührungsereignisse unterstützen. Sie sollten immer Ereignisse verwenden, z. B. **AllEvents** oder **PrimaryActionTriggered**.
+> Es ist zwar möglich, weisen Sie Aktionen wie z. B. `TouchUpInside` auf eine `UIButton`, es wird nie aufgerufen werden, da Apple TV Fingereingabe Bildschirm oder Berührungsereignisse unterstützen keine. Sie sollten immer Ereignisse verwenden, z. B. **AllEvents** oder **PrimaryActionTriggered**.
 
 
 

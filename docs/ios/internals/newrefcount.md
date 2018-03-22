@@ -6,11 +6,11 @@ ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 43b357eecb0974884db645a0b2e5c8467ddf3b5d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 723a9c4a052f7f432ba0f32ec501af3221b2696f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="new-reference-counting-system"></a>Neue Referenzsystem zählen
 
@@ -46,7 +46,7 @@ Beachten Sie, dass diese Optionen in neueren Versionen von Visual Studio für Ma
 
     
 > [!IMPORTANT]
-> **Hinweis:** eine frühere Version dieser Funktion seit um MonoTouch 5.2 jedoch nur für verfügbar war **Sgen** als eine experimentelle Vorschau. Diese neue, erweiterte Version steht jetzt auch für die **Boehm** Garbage collection.
+> Eine frühere Version dieser Funktion seit um MonoTouch 5.2 jedoch nur für verfügbar war **Sgen** als eine experimentelle Vorschau. Diese neue, erweiterte Version steht jetzt auch für die **Boehm** Garbage collection.
 
 
 In der Vergangenheit wurden zwei Arten von Objekten, die von Xamarin.iOS verwaltet: solche, die lediglich einen Wrapper um ein systemeigenes Objekt (Peer-Objekte), und solche, die erweitert oder neue Funktionalität (abgeleitete Objekte) - integriert in der Regel durch die Verwaltung des Zustands der zusätzliche Speicher wurden. Zuvor war es möglich, dass wir eine Peerobjekt, mit dem Status (z. B. durch Hinzufügen eines C#-ereignishandlers) erweitern konnte aber wir informieren, dass das Objekt, das nicht referenzierte und dann gesammelten finden Sie unter. Dies kann verursacht einen Absturz später auf (z. B. wenn die Objective-C-Laufzeit wieder in das verwaltete Objekt aufgerufen).

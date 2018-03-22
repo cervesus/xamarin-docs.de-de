@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/07/2017
-ms.openlocfilehash: 557521bc3bce41b9023acbf31a344a57cb63d2a1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6331912eedcd52df45c0d25d83a5b599c55ca7d2
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="sirikit"></a>SiriKit
 
@@ -146,12 +146,10 @@ public partial class IntentHandler : INExtension, IINNotebookDomainHandling
 Die Klasse muss von erben `INExtension`, und da im Beispiel wird für die Behandlung von Listen und Anmerkungen dieser Intents, implementiert er auch `IINNotebookDomainHandling`.
 
 > [!NOTE]
-> **Hinweis zu benennen:** besteht eine Konvention, die in .NET für Schnittstellen als Präfix einen Großbuchstaben `I`, dem Xamarin entspricht, beim Binden von Protokollen im IOS-SDK.
->
-> Xamarin behält auch Typnamen IOS und Apple verwendet die ersten beiden Zeichen in Typnamen, um das Framework widerspiegeln, dem ein Typ gehört.
->
-> Für die `Intents` Framework Typen werden mit dem Präfix `IN*` (z. b. `INExtension`), aber dies sind _nicht_ Schnittstellen.
-> Daraus folgt auch, dass Protokolle (die Schnittstellen, die in C# geschrieben sind) mit zwei Enden `I`s, z. B. `IINAddTasksIntentHandling`.
+> - Es ist eine Konvention, die in .NET für Schnittstellen als Präfix einen Großbuchstaben `I`, dem Xamarin entspricht, beim Binden von Protokollen im IOS-SDK.
+> - Xamarin behält auch Typnamen IOS und Apple verwendet die ersten beiden Zeichen in Typnamen, um das Framework widerspiegeln, dem ein Typ gehört.
+> - Für die `Intents` Framework Typen werden mit dem Präfix `IN*` (z. b. `INExtension`), aber dies sind _nicht_ Schnittstellen.
+> - Daraus folgt auch, dass Protokolle (die Schnittstellen, die in C# geschrieben sind) mit zwei Enden `I`s, z. B. `IINAddTasksIntentHandling`.
 
 #### <a name="handling-intents"></a>Behandlung von Intents
 

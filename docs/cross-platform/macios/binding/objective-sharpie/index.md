@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: bcb7be862537a002e5a80462702ed1f2f8497cda
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 08796d38301ba9c6ae15c3ddfe700b1cd2166ace
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="objective-sharpie"></a>Objektive Sharpie
 
@@ -34,17 +34,13 @@ Es funktioniert, indem die Analyse der Headerdateien einer systemeigenen Bibliot
 Objektive Sharpie verwendet Clang Analyse der Headerdateien, damit die Bindung als genaue und umfassend wie möglich ist. Diese kann erheblich reduzieren, Zeit und Mühe dauert um eine Bindung Qualität zu erzeugen.
 
 > [!IMPORTANT]
-> **Warnung:** objektiven Sharpie ist ein Tool für erfahrene Entwickler von Xamarin mit Kenntnissen von Objective-C (und durch Erweiterung auch C). Bevor Sie versuchen, eine Bibliothek für Objective-C-Bindung sollten Sie solide Kenntnisse im Erstellen Sie die systemeigene Bibliothek auf der Befehlszeile aus (und ein gutes Verständnis der Funktionsweise der systemeigenen Bibliothek) verfügen.
-
-
+> Objektive Sharpie ist ein Tool für erfahrene Entwickler von Xamarin mit Kenntnissen von Objective-C (und durch Erweiterung auch C). Bevor Sie versuchen, eine Bibliothek für Objective-C-Bindung sollten Sie solide Kenntnisse im Erstellen Sie die systemeigene Bibliothek auf der Befehlszeile aus (und ein gutes Verständnis der Funktionsweise der systemeigenen Bibliothek) verfügen.
 
 ## <a name="history"></a>Versionsgeschichte
 
 Wir haben entwickelt wurde und Verwenden der Ziel-Sharpie intern über Xamarin für den letzten drei Jahren. Als Beweis der Leistungsfähigkeit des Ziels Sharpie APIs, die in Xamarin.iOS und Xamarin.Mac nach iOS 8, Mac OS X 10.10 eingeführt und WatchOS 2.0 wurden vollständig mit Ziel Sharpie einem Bootstrapping unterzogen. Xamarin basiert stark auf Ziel Sharpie intern zum Erstellen von eigenen Produkten.
 
 Ziel-Sharpie ist jedoch ein sehr komplexen Tool, das erfordert erweiterte Kenntnisse der Objective-C und C#, wie der Clang Compiler in der Befehlszeile verwenden und im Allgemeinen wie systemeigene Bibliotheken zusammengestellt werden. Aufgrund dieser hohe Balken wir sind, dass eine GUI-Assistent legt die falschen Erwartungen und als solche Ziel Sharpie ist derzeit nur als ein Befehlszeilentool verfügbar.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

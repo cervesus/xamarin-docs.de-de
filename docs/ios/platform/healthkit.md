@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3e21794c9f1d8f010ec323774bc93987f4b89e1d
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: e7075b67db94b6bf603bd96c637c9f7724ae1519
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -43,7 +43,7 @@ Im folgenden sind erforderlich, die in diesem Artikel vorgestellten Schritte aus
 - **iOS 8 (oder höher) Gerät** – ein iOS-Gerät, das die neueste Version von iOS ausgeführt wird, 8 oder höher zum Testen.
 
 > [!IMPORTANT]
-> **Hinweis:** Health Kit iOS 8 eingeführt wurde. Aktuell, Integrität Kit ist nicht verfügbar, auf dem iOS-Simulator, und Debuggen ist die Verbindung mit einem physischen iOS-Gerät erforderlich.
+> Integrität Kit wurde in iOS 8 eingeführt. Aktuell, Integrität Kit ist nicht verfügbar, auf dem iOS-Simulator, und Debuggen ist die Verbindung mit einem physischen iOS-Gerät erforderlich.
 
 
 
@@ -216,7 +216,7 @@ Der Auftrag des `ValidateAuthorization()` wird zum Erstellen der Gruppe von `HKO
 Die `ReactToHealthCarePermissions()` Rückruf wird aufgerufen, nachdem der Benutzer mit dem Dialogfeld "Berechtigungen" interagiert hat und zwei Angaben übergeben wird: ein `bool` -Wert, der werden `true` , wenn der Benutzer mit dem Dialogfeld "Berechtigungen" und eine interagierthat`NSError`, falls ungleich Null, womit eine Art von Fehler präsentieren das Dialogfeld "Berechtigungen" zugeordnet.
 
 > [!IMPORTANT]
-> **Hinweis:** zu den Argumenten dieser Funktion werden: die _Erfolg_ und _Fehler_ Parameter bedeuten nicht, ob der Benutzer die Berechtigung zum Health Kit Datenzugriff gewährt wurde! Sie nur ein Hinweis, dass der Benutzer die Möglichkeit, den Zugriff auf die Daten zu erlauben erteilt wurden.
+> Zu den Argumenten dieser Funktion werden: die _Erfolg_ und _Fehler_ Parameter bedeuten nicht, ob der Benutzer die Berechtigung zum Health Kit Datenzugriff gewährt wurde! Sie nur ein Hinweis, dass der Benutzer die Möglichkeit, den Zugriff auf die Daten zu erlauben erteilt wurden.
 
 Um zu bestätigen, ob die app Zugriff auf die Daten der `HKHealthStore.GetAuthorizationStatus()` Einsatz und übergibt `HKQuantityTypeIdentifierKey.HeartRate`. Basierend auf den Status zurückgegeben, die die app aktiviert oder deaktiviert die Möglichkeit, Daten eingeben. Es ist keine Standardbenutzer-Erfahrung für den Umgang mit einer Verweigerung des Zugriffs, und es gibt zahlreiche mögliche Optionen. Der Status wird festgelegt in der Beispiel-app auf einem `HeartRateModel` Singleton-Objekt, das wiederum relevante Ereignisse auslöst.
 
@@ -404,7 +404,7 @@ IOS-Simulator unterstützt Integrität Kit nicht. Debuggen muss auf ein physisch
 Fügen Sie einem ordnungsgemäß bereitgestellt iOS 8-Gerät-Entwicklung mit Ihrem System. Wählen Sie diese als das Bereitstellungsziel in Visual Studio für Mac, und wählen Sie im **ausführen > Debuggen**.
 
 > [!IMPORTANT]
-> **Hinweis:** Fehler bezüglich der Bereitstellung werden an diesem Punkt Oberfläche. Um Fehler zu beheben, überprüfen Sie zum Erstellen und die Bereitstellung eines Integrität Kit App Abschnitts oben aus. Die Komponenten sind: 
+> Fehler im Zusammenhang mit der Bereitstellung werden an diesem Punkt Oberfläche. Um Fehler zu beheben, überprüfen Sie zum Erstellen und die Bereitstellung eines Integrität Kit App Abschnitts oben aus. Die Komponenten sind: 
 >
 > - **iOS Dev Center** -explizite App-ID und Integrität Kit Provisioning-Profil aktiviert. 
 > - **Projekt Optionen** -Paket-ID (explizite App-ID) & Bereitstellungsprofil.

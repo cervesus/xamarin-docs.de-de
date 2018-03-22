@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d53dea1a46c6b42f901beb217eb00b3a3fa0fd92
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 24fc64d1bd04cb1ebefb9bf9a359efb395b45074
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Erstellen von iOS-Benutzeroberflächen in Code
 
@@ -620,7 +620,7 @@ Weitere Informationen zum Erstellen eines Bildschirms starten finden Sie in den 
 - [Sie Startbildschirme mit Storyboards verwalten](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 > [!IMPORTANT]
-> **Hinweis:** ab iOS 9, Apple empfiehlt, dass Storyboards als primäre Methode zum Erstellen eines Bildschirms starten verwendet werden soll.
+> Seit iOS 9 empfiehlt Apple Storyboards als primäre Methode zum Erstellen eines Bildschirms starten verwendet werden soll.
 
 ### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>Erstellen ein Bild zu starten, für vor iOS 8-Anwendungen
 
@@ -629,7 +629,7 @@ Ein statisches Bild kann zusätzlich zu einer .xib oder Storyboard-Startbildschi
 Diese statische Bilder kann in der Datei "Info.plist" oder als eine Asset-Katalog (für iOS 7) in der Anwendung festgelegt werden. Sie müssen separate Bilder für jede GeräteGröße (320 x 480 beträgt, 640 x 960 640 x 1136) bereitstellen, die Ihre Anwendung ausgeführt werden kann. Weitere Informationen zu starten Bildschirmgrößen, zeigen Sie an der [starten Bilder](~/ios/app-fundamentals/images-icons/launch-screens.md) Handbuch.
 
 > [!IMPORTANT]
-> **Hinweis:** verfügt Ihre app keine Bildschirm starten, können Sie feststellen, dass es vollständig den Bildschirm passt. Wenn dies der Fall ist, stellen Sie sicher, mindestens ein 640 x 1136-Image mit dem Namen einschließen `Default-568@2x.png` auf die Datei "Info.plist". 
+> Wenn Ihre app keine starten Bildschirm verfügt, werden Sie möglicherweise feststellen, es vollständig den Bildschirm passt. Wenn dies der Fall ist, stellen Sie sicher, mindestens ein 640 x 1136-Image mit dem Namen einschließen `Default-568@2x.png` auf die Datei "Info.plist". 
 
 
 

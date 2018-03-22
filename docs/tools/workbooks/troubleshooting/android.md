@@ -6,11 +6,11 @@ ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: eb188abb3e757f6f66af7758ced311ae1236d3ce
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 530abec733ec1d842559bf9c898217a8e45465aa
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>Problembehandlung bei Xamarin-Arbeitsmappen auf Android-Geräten
 
@@ -25,7 +25,8 @@ Sie benötigen einen Emulator, der Android 5.0 oder höher ausgeführt wird. ARM
 
 Lesen Sie [unserer Dokumentation zum Einrichten der Android-Emulatoren] [ android-emu] , wenn Sie nicht mit dem Prozess vertraut sind.
 
-**Hinweis:** Arbeitsmappen 1.1 und früher Worddokument versuchen (und nicht!) für ARM-Emulatoren verwenden, sofern diese verfügbar sind. So umgehen Sie dieses, starten Sie den X86 Emulator Ihrer Wahl vor dem Öffnen oder erstellen eine Android-Arbeitsmappe. Arbeitsmappen werden immer für die Verbindung mit einem laufenden Emulator bevorzugen, solange er kompatibel ist.
+> [!NOTE]
+> Arbeitsmappen 1.1 und früher werden versuchen (fehl, und!) für ARM-Emulatoren verwenden, sofern diese verfügbar sind. So umgehen Sie dieses, starten Sie den X86 Emulator Ihrer Wahl vor dem Öffnen oder erstellen eine Android-Arbeitsmappe. Arbeitsmappen werden immer für die Verbindung mit einem laufenden Emulator bevorzugen, solange er kompatibel ist.
 
 ## <a name="workbooks-wont-load"></a>Arbeitsmappen nicht geladen.
 
@@ -33,7 +34,7 @@ Lesen Sie [unserer Dokumentation zum Einrichten der Android-Emulatoren] [ androi
 
 Überprüfen Sie zunächst, dass der Emulator vollständig funktionierende Netzwerk zugreifen, durch eine beliebige Website im Webbrowser des Emulators testen kann.
 
-### <a name="visual-studio-android-emulator-cannot-connect-to-internet"></a>Visual Studio-Android-Emulator kann keine Verbindung zum Internet herstellen.
+### <a name="visual-studio-android-emulator-cannot-connect-to-the-internet"></a>Visual Studio-Android-Emulator kann keine Verbindung mit dem Internet herstellen.
 
 Wenn der Emulator nicht Netzwerkzugriff verfügt, müssen Sie diese Schritte ausführen, um die Hyper-V-Netzwerkswitch zu beheben. Wenn beim Wechsel zwischen WLAN-Netzwerke häufig müssen Sie dies in regelmäßigen Abständen zu wiederholen:
 

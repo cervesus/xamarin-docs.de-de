@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: c5cca8e6fceb9aef82fc6543adc6dc5e7399d839
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: b2a5402b8d2ac127f6a5f75decbee8567decb905
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="user-interface"></a>Benutzeroberfläche
 
@@ -65,6 +65,10 @@ Hinzufügen von Zuordnungen erfordert eine zusätzliche NuGet-Paket herunterlade
 ## <a name="pickerpickerindexmd"></a>[Auswahl](picker/index.md)
 
 Die [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) Ansicht ist ein Steuerelement für die Auswahl eines Text aus einer Liste von Daten.
+
+## <a name="sliderslidermd"></a>[Schieberegler](slider.md)
+
+Die `Slider` ermöglicht es einem Benutzer einen numerischen Wert in eine Breite Palette aus.
 
 ## <a name="stylesstylesindexmd"></a>[Stile](styles/index.md)
 

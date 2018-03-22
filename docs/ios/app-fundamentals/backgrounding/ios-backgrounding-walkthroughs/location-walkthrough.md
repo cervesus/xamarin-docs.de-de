@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b10894d6b18d78d682825000726c5ef2cbe5ba6b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dfae07d36c67c12d254cd70c22acb01b2fc1c9b0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="walkthrough---using-background-location"></a>Exemplarische Vorgehensweise – Hintergrund Speicherort verwenden
 
@@ -79,7 +79,7 @@ In dieser exemplarischen Vorgehensweise wird erläutert, einige wichtige Konzept
     - `AllowsBackgroundLocationUpdates` – Dies ist eine boolesche Eigenschaft, die unter iOS 9, die festgelegt werden kann, können eine app Empfang von Updates Speicherort, wenn angehalten eingeführt.
 
     > [!IMPORTANT]
-    > **Warnung**: iOS 8 (und höher) erfordert auch einen Eintrag in der **"Info.plist"** Datei, um dem Benutzer als Teil der autorisierungsanforderung anzuzeigen.
+    > iOS 8 (und höher) erfordert auch einen Eintrag in der **"Info.plist"** Datei, um dem Benutzer als Teil der autorisierungsanforderung anzuzeigen.
 
 1. Fügen Sie einen Schlüssel `NSLocationAlwaysUsageDescription` oder `NSLocationWhenInUseUsageDescription` mit einer Zeichenfolge, die für den Benutzer in der Warnung angezeigt wird, von dem Speicherort Datenzugriff angefordert.
 

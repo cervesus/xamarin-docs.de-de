@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a5dbd65cc32ed63c0fa6f8abe3a13ffee4e9df63
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 50553cb1dc5f7ea782c0f13e32f60d7b6ce3e181
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="enhanced-user-notifications"></a>Verbesserte Benutzerbenachrichtigungen
 
@@ -558,7 +558,7 @@ Führen Sie folgende Schritte aus, um eine Erweiterung der in einem Xamarin.iOS-
 -----
 
 > [!IMPORTANT]
-> Hinweis: Die Paket-ID für die Webdiensterweiterung übereinstimmen, die Paket-ID der Haupt-app mit `.appnameserviceextension` am Ende angefügt. Beispielsweise wäre die Haupt-app eine Paket-ID des `com.xamarin.monkeynotify`, die Webdiensterweiterung müsste eine Paket-ID des `com.xamarin.monkeynotify.monkeynotifyserviceextension`. Dies sollte automatisch festgelegt werden, wenn die Erweiterung der Projektmappe hinzugefügt wird. 
+> Die Paket-ID für die Webdiensterweiterung übereinstimmen, die Paket-ID der Haupt-app mit `.appnameserviceextension` am Ende angefügt. Beispielsweise wäre die Haupt-app eine Paket-ID des `com.xamarin.monkeynotify`, die Webdiensterweiterung müsste eine Paket-ID des `com.xamarin.monkeynotify.monkeynotifyserviceextension`. Dies sollte automatisch festgelegt werden, wenn die Erweiterung der Projektmappe hinzugefügt wird. 
 
 Es ist eine Hauptklasse in Notification Service-Erweiterung, die geändert werden, um die erforderliche Funktionalität bereitstellen müssen. Zum Beispiel:
 

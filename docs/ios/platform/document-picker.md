@@ -7,11 +7,11 @@ ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 4a8f1632076a12b1737ba8294ac8b2f28f19dc77
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 25b9d6c0eebd51a7b47b31c35fb3d5b56e45c3b3
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="document-picker"></a>Dokument-Auswahl
 
@@ -221,7 +221,7 @@ Verwenden in der obigen Abbildung Zusammenfügen:
 Verwenden zusammenfügen die Anwendung nicht mehr zum Öffnen einer Datenquelle zum lokalen überwachen und Cloud-basierten Änderungen der Datenbankdatei. Nachdem die Anwendung auf verlassen kann `NSMetadataQuery` direkt.
 
 > [!IMPORTANT]
-> **Hinweis**: zusammenfügen funktioniert nur, wenn die Anwendung Koordination der Datei verwendet wird, wie im vorherigen Abschnitt beschrieben. Wenn Datei Koordinierung nicht verwendet wird, standardmäßig die APIs der vorhandenen vor iOS 8-Verhalten.
+> Zusammenfügen funktioniert nur, wenn die Anwendung Koordination der Datei verwendet wird, wie im vorherigen Abschnitt beschrieben. Wenn Datei Koordinierung nicht verwendet wird, standardmäßig die APIs der vorhandenen vor iOS 8-Verhalten.
 
 
 
@@ -465,7 +465,7 @@ Führen Sie folgende Schritte aus:
 6.  Mit der rechten Maustaste auf `Entitlements.plist` in der **Projektmappen-Explorer** um ihn im Editor zu öffnen.
 
     > [!IMPORTANT]
-> **Hinweis**: In Visual Studio, die Sie möglicherweise die Berechtigungen-Editor zu öffnen, indem Sie mit der rechten Maustaste darauf, auswählen **Öffnen mit...** Klicken und Auswählen der Eigenschaft Testlisten-Editor
+    > In Visual Studio müssen Sie möglicherweise zu den Berechtigungen-Editor zu öffnen, indem Sie mit der rechten Maustaste darauf, Auswahl **Öffnen mit...** Klicken und Auswählen der Eigenschaft Testlisten-Editor
 
 7.  Überprüfen Sie **aktivieren iCloud** , **iCloud Dokumente** , **Schlüssel-Wert-Speicher** und **CloudKit** .
 8.  Sicherstellen der **Container** für die Anwendung vorhanden ist, (wie oben erstellt haben). Ein Beispiel: `iCloud.com.your-company.AppName`
@@ -793,7 +793,7 @@ namespace DocPicker
 ```
 
 > [!IMPORTANT]
-> **Hinweis**: der obige Code enthält den Code aus dem obigen Abschnitt Ermitteln von und Auflisten von Dokumenten. Er wird hier als Ganzes angezeigt, wie es in einer echten Anwendung angezeigt wird. Zur Vereinfachung dieses Beispiel funktioniert mit einer einzelnen, hartcodierte Datei (`test.txt`) nur.
+> Der obige Code enthält den Code aus dem obigen Abschnitt Ermitteln von und Auflisten von Dokumenten. Er wird hier als Ganzes angezeigt, wie es in einer echten Anwendung angezeigt wird. Zur Vereinfachung dieses Beispiel funktioniert mit einer einzelnen, hartcodierte Datei (`test.txt`) nur.
 
 Der obige Code macht mehrere iCloud Laufwerk Tastenkombinationen, um sie leichter mit dem Rest der Anwendung arbeiten können.
 
@@ -902,7 +902,7 @@ if (presentationPopover!=null) {
 ```
 
 > [!IMPORTANT]
-> **Hinweis**: aufrufen, muss der Entwickler die `StartAccessingSecurityScopedResource` Methode der `NSUrl` vor ein externes Dokument zugegriffen werden kann. Die `StopAccessingSecurityScopedResource` Methode muss aufgerufen werden, um die Sicherheit-Sperre aufzuheben, sobald das Dokument geladen wurde.
+> Der Entwickler muss Aufrufen der `StartAccessingSecurityScopedResource` Methode der `NSUrl` vor ein externes Dokument zugegriffen werden kann. Die `StopAccessingSecurityScopedResource` Methode muss aufgerufen werden, um die Sicherheit-Sperre aufzuheben, sobald das Dokument geladen wurde.
 
 ### <a name="sample-output"></a>Beispielausgabe
 
@@ -1134,7 +1134,7 @@ Für Mac OS X Yosemite Apple bietet die Abwärtskompatibilität Kompatibilität 
 Nachdem Sie dem Konto eines Benutzers in die icloud Laufwerk migriert wurde, werden können zum Weitergeben von Änderungen auf Dokumente auf diesen Geräten nur Geräte, die über die iCloud Laufwerk.
 
 > [!IMPORTANT]
-> **Hinweis**: Entwickler sollten Bedenken Sie, dass die neuen Funktionen, die in diesem Artikel beschriebene sind nur verfügbar, wenn das Konto des Benutzers in die icloud Laufwerk migriert wurde. 
+> Entwickler sollten bewusst sein, dass die neuen Funktionen, die in diesem Artikel beschriebene sind nur verfügbar, wenn das Konto des Benutzers in die icloud Laufwerk migriert wurde. 
 
 ## <a name="summary"></a>Zusammenfassung
 

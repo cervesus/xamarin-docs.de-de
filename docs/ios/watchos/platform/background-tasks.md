@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/13/2017
-ms.openlocfilehash: 83841e62d863bf4be4edef5c0b6b7d486f192f4d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8fd2b5069e175a68ff7609e75775db1929507582
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="background-tasks"></a>Hintergrundaufgaben
 
@@ -143,7 +143,7 @@ Das System erneut, das eine `WKSnapshotRefreshBackgroundTask` , damit die app (d
 Wenn die app kennzeichnet die `WKSnapshotRefreshBackgroundTask` abgeschlossen, das System wird automatisch eine Momentaufnahme der Benutzeroberfläche der Anwendung.
 
 > [!IMPORTANT]
-> **Hinweis:** unbedingt so planen Sie immer eine ` WKSnapshotRefreshBackgroundTask` nach dem die app haben neue Daten empfangen hat und aktualisiert seine Benutzeroberfläche oder dem Benutzer die geänderte Informationen nicht angezeigt.
+> Es ist wichtig, immer Planen einer ` WKSnapshotRefreshBackgroundTask` nach dem die app haben neue Daten empfangen hat und aktualisiert seine Benutzeroberfläche oder dem Benutzer die geänderte Informationen nicht angezeigt.
 
 
 
@@ -630,7 +630,7 @@ Apps, die an die Dockingstation angeheftet wurden, können Folgendes erwarten:
 Die letzte app, die der Benutzer ausgeführt wurde berücksichtigt werden die _zuletzt verwendeten_ app und den letzten Slot Docks belegt. Ab diesem Zeitpunkt gibt es Benutzer kann wählen, um es dauerhaft an die Dockingstation anheften. Die zuletzt verwendete Dateien werden wie jede andere bevorzugte app dem Benutzer bereits an die Dockingstation angeheftet hat behandelt.
 
 > [!IMPORTANT]
-> **Hinweis:** Apps, die nur auf dem Startbildschirm hinzugefügt wurden nicht erhält keine regulären Planung. Zum Empfangen von regulären planen und im Hintergrund aktualisiert, eine app _müssen_ Docks hinzugefügt werden.
+> Apps, die nur auf dem Startbildschirm hinzugefügt wurden keine regulären Planung erhält. Zum Empfangen von regulären planen und im Hintergrund aktualisiert, eine app _müssen_ Docks hinzugefügt werden.
 
 Wie weiter oben in diesem Dokument erwähnt, sind Momentaufnahmen WatchOS 3 sehr wichtig, da sie als sowohl beim Preview und starten Sie Bilder für die app funktionieren. Wenn der Benutzer auf eine app im Dock hat, wird es in den Vollbildmodus zu erweitern, geben Sie den Vordergrund und start ausgeführt, daher ist es zwingend erforderlich, dass die Momentaufnahme auf dem neuesten Stand sein.
 

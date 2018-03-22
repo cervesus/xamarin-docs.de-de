@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 9892577d7e0ed3d3f622f881cc51db09eb44a8fd
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7a190014abd3386a3a675d50ce6a89101d0588a7
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="social-framework"></a>Soziale Framework
 
@@ -22,7 +22,7 @@ _Das soziale Framework bietet eine einheitliche API, für die Interaktion mit so
 Mit sozialen Framework ermöglicht Anwendungen, die mit sozialen Netzwerken aus einer einzelnen API zu interagieren, ohne Authentifizierung zu verwalten. Sie enthält ein System modellansichtcontroller zum Verfassen von Beiträgen als auch eine Abstraktion, die ermöglicht, Nutzung von jedes sozialen Netzwerk-API über HTTP bereitgestellt.
 
 > [!IMPORTANT]
-> **Hinweis:** eine plattformübergreifende API zur Verbindung mit verschiedenen sozialer Netzwerken, finden Sie unter der [Xamarin.Social](http://components.xamarin.com/view/xamarin.social/) -Komponente in den Speicher der Xamarin-Komponente.
+> Eine plattformübergreifende API zur Verbindung mit verschiedenen sozialer Netzwerken, finden Sie unter der [Xamarin.Social](http://components.xamarin.com/view/xamarin.social/) -Komponente in den Speicher der Xamarin-Komponente.
 
 ## <a name="connecting-to-twitter"></a>Herstellen einer Verbindung mit Twitter
 

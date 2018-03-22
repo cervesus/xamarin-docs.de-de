@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 469a63a990b1adb108284cfb88ee54e05218a8a9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2e63f2c47bbcd6da0f0d5370ebfc231d19a10e7d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="request-app-review"></a>Prüfung der änderungsanforderungen-App
 
@@ -57,7 +57,7 @@ namespace iOSTenThree
 ```
 
 > [!NOTE]
-> **Hinweis:** Aufrufen `RequestReview()` in eine unzureichende Entwicklung app wird immer die Bewertung anzeigen und überprüfen Sie Dialogfeld damit getestet werden können. Dies gilt nicht für apps, die über TestFlight, verteilt wurden, in dem Aufruf der Methode werden ignoriert.
+> Aufrufen von `RequestReview()` in eine unzureichende Entwicklung app wird immer die Bewertung anzeigen und überprüfen Sie Dialogfeld damit getestet werden können. Dies gilt nicht für apps, die über TestFlight, verteilt wurden, in dem Aufruf der Methode werden ignoriert.
 
 Wenn die `RequestReview()` Methode wird aufgerufen, in einer Protokollversand-app, die der Benutzer aus dem App Store installiert wurde, iOS 10 wird den gesamten Prozess für die Bewertung und überprüfen Sie für den Entwickler zu behandeln. Erneut aus, da dieser Vorgang von der Richtlinie für die App Store gesteuert wird, eine Warnung kann oder möglicherweise nicht angezeigt.
 

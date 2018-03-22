@@ -7,11 +7,11 @@ ms.assetid: 951713CD-D6AD-981C-A09E-4F2C98588D8B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: d6e9dc47f2610fbc1e84cc74880ced13d4c99dce
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 00e5d84cd39312cdf6ac0107b4c7ffedcd82f3c0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-advanced-concepts-and-internals"></a>iOS Advanced Concepts und Besonderheiten
 
@@ -39,7 +39,7 @@ Listet die verfügbaren Assemblys und Klassen aus der .NET Basisklassenbibliothe
 Sie erfahren auch, wie Visual Studio für Mac und Xcodes Benutzeroberflächen-Generator-Schnittstelle-Generator Entwurf UI verwenden können.
 
 > [!IMPORTANT]
-> **Hinweis**: Dieses Dokument erläutert die Visual Studio für Mac Integration in Xcodes Benutzeroberflächen-Generator nur. Weitere Informationen zu den iOS-Designer, überprüfen Sie die [iOS Designer](~/ios/user-interface/designer/index.md) Dokument.
+> Dieses Dokument erläutert Visual Studio für Mac Integration in Xcodes Benutzeroberflächen-Generator nur an. Weitere Informationen zu den iOS-Designer, überprüfen Sie die [iOS Designer](~/ios/user-interface/designer/index.md) Dokument.
 
 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: a0b0ca9857e706a9a84f1c661f7f6ff294e112c1
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 85c05145ce2490468ac5d5fb9b8524853d46a9e3
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-storyboards"></a>Einführung in die Storyboards
 
@@ -60,7 +60,7 @@ Auf MouseUp wird ein Menü angezeigt werden, lassen uns die Aktion für unsere S
 [![](images/16new.png "Die Aktion Segue Dropdownliste mit Größe-Klassen")](images/16new.png#lightbox)
 
 > [!IMPORTANT]
-> **Hinweis:** , wenn Sie VMWare für Ihre virtuellen Windows-Computer verwenden, wird STRG + Klicken zugeordnet, als die _mit der rechten Maustaste_ los standardmäßig. Um eine Segue zu erstellen, bearbeiten Sie Ihre Voreinstellungen für die Tastatur über **Voreinstellungen** > **Tastatur und Maus** > **Mausaktionen** und ordnen Ihr **Sekundären Schaltfläche** wie unten gezeigt:
+> Wenn Sie VMWare für Ihre virtuellen Windows-Computer verwenden, wird STRG + Klicken zugeordnet, als die _mit der rechten Maustaste_ los standardmäßig. Um eine Segue zu erstellen, bearbeiten Sie Ihre Voreinstellungen für die Tastatur über **Voreinstellungen** > **Tastatur und Maus** > **Mausaktionen** und ordnen Ihr **Sekundären Schaltfläche** wie unten gezeigt:
 > 
 > [![](images/image22.png "Tastatur und Maus-Voreinstellungen")](images/image22.png#lightbox)
 > 

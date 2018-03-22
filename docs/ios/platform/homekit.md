@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: ea51dc2c7dadc5cc430df990c9ce79eac6e941da
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 02116e8e11cb6ff050e2c885338777e1fd25c4cb
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="homekit"></a>HomeKit
 
@@ -77,7 +77,7 @@ Führen Sie folgende Schritte aus:
 Mit diesen Einstellungen vorhanden kann die Anwendung jetzt HomeKit-Framework-APIs zuzugreifen. Ausführliche Informationen zu Bereitstellung, finden Sie unter unsere [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md) und [Bereitstellung der App](~/ios/get-started/installation/device-provisioning/index.md) Handbüchern.
 
 > [!IMPORTANT]
-> **Hinweis:** Testen einer app HomeKit aktiviert eine echte iOS-Gerät, das ordnungsgemäß bereitgestellt wurde für die Entwicklung erfordert. HomeKit kann nicht von iOS-Simulators getestet werden.
+> Testen einer app HomeKit aktiviert erfordert eine echte iOS-Gerät, das ordnungsgemäß bereitgestellt wurde, für die Entwicklung. HomeKit kann nicht von iOS-Simulators getestet werden.
 
 ## <a name="the-homekit-accessory-simulator"></a>Der Simulator HomeKit Zubehör
 
@@ -104,7 +104,7 @@ Starten Simulator HomeKit Zubehör, und einige virtuelle Zubehör erstellen, fü
 1. Starten Sie aus dem Ordner Anwendungen HomeKit Zubehör Simulator aus: 
 
     [![](homekit-images/simulator02.png "Der Simulator HomeKit Zubehör")](homekit-images/simulator02.png#lightbox)
-2. Klicken Sie auf die ** + ** Schaltfläche und wählen Sie **neue Zubehör... **: 
+2. Klicken Sie auf die  **+**  Schaltfläche und wählen Sie **neue Zubehör...** : 
 
     [![](homekit-images/simulator03.png "Hinzufügen einer neuen Zubehör")](homekit-images/simulator03.png#lightbox)
 3. Füllen Sie die Informationen zu den neuen Zubehör, und klicken Sie auf die **Fertig stellen** Schaltfläche: 
@@ -143,7 +143,7 @@ Um diesen Schlüssel festzulegen, führen Sie folgende Schritte aus:
 6. Speichern Sie die Änderungen in der Datei.
 
 > [!IMPORTANT]
-> **Hinweis:** Fehler beim Festlegen der `NSHomeKitUsageDescription` -Schlüssel in der `Info.plist` Datei führt in der app _im Hintergrund fehlerhaften_ (wird vom System zur Laufzeit geschlossen) ohne Fehler bei der Ausführung im iOS 10 (oder höher).
+> Fehler beim Festlegen der `NSHomeKitUsageDescription` -Schlüssel in der `Info.plist` Datei führt in der app _im Hintergrund fehlerhaften_ (wird vom System zur Laufzeit geschlossen) ohne Fehler bei der Ausführung im iOS 10 (oder höher).
 
 ## <a name="connecting-to-homekit"></a>Herstellen einer Verbindung mit HomeKit
 
@@ -265,7 +265,7 @@ Wenn das Home-Verzeichnis wurde erfolgreich erstellt wurde, müssen Sie zum Aufr
 Überwachen Sie auch die Startseite des Managers `DidAddHome` und `DidRemoveHome` Ereignisse, und aktualisieren Sie die app-Benutzeroberfläche nach Bedarf.
 
 > [!IMPORTANT]
-> **Hinweis:** der `AlertView.PresentOKAlert` im obigen Beispielcode verwendete Methode ist eine Hilfsklasse, die in der HomeKitIntro-Anwendung, das Arbeiten mit iOS Warnungen einfacher macht.
+> Die `AlertView.PresentOKAlert` im obigen Beispielcode verwendete Methode ist eine Hilfsklasse, die in der HomeKitIntro-Anwendung, das Arbeiten mit iOS Warnungen einfacher macht.
 
 
 ## <a name="finding-new-accessories"></a>Suchen von neuen Zubehör
@@ -275,7 +275,7 @@ Sobald eine primäre Home definiert oder vom Home-Manager geladen wurde, kann Ih
 Rufen Sie die `StartSearchingForNewAccessories` -Methode zum Starten der Suche nach neuen Zubehör und die `StopSearchingForNewAccessories` Methode, wenn Sie fertig sind.
 
 > [!IMPORTANT]
-> **Hinweis:** `StartSearchingForNewAccessories` sollten nicht bleiben für längere Zeit ausgeführt werden, da er sowohl die Akkulaufzeit als auch die Leistung des iOS-Geräts beeinträchtigt wird. Apple empfiehlt Aufrufen `StopSearchingForNewAccessories` nach einer Minute oder nur zu suchen, wenn die Zubehör-Benutzeroberfläche suchen, die dem Benutzer angezeigt wird.
+> `StartSearchingForNewAccessories` sollte nicht belassen werden für längere Zeit ausgeführt werden, da er sowohl die Akkulaufzeit als auch die Leistung des iOS-Geräts beeinträchtigt wird. Apple empfiehlt Aufrufen `StopSearchingForNewAccessories` nach einer Minute oder nur zu suchen, wenn die Zubehör-Benutzeroberfläche suchen, die dem Benutzer angezeigt wird.
 
 Die `DidFindNewAccessory` Ereignis wird aufgerufen, wenn neue Zubehör werden ermittelt, und sie werden zur hinzugefügt werden die `DiscoveredAccessories` Liste im Browser Zubehör.
 

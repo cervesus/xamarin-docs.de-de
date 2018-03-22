@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b970ff3570079c0e9fba10718ddcd75fbe857f2c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e400a72f4c759662e70bfecc372134f8fda05ad6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="new-user-interface-styles"></a>Neuer Benutzer Schnittstelle Stile
 
@@ -101,7 +101,7 @@ Darüber hinaus bieten Auflistungen Merkmal "" die folgenden Features in tvos. a
 - Eine app tvos. außerdem wurden kann Merkmals sammlungsänderungen behandeln, durch Überschreiben der `TraitCollectionDidChange` Methode von einer `UIView` oder `UIViewController` Klasse.
 
 > [!IMPORTANT]
-> **Hinweis:** unterstützt die Xamarin.tvOS frühe Vorschau für tvos. außerdem wurden 10 nicht vollständig `UIUserInterfaceStyle` für `UITraitCollection` noch. Vollständige Unterstützung wird in einer zukünftigen Version hinzugefügt.
+> Unterstützt die Xamarin.tvOS frühe Vorschau für tvos. außerdem wurden 10 nicht vollständig `UIUserInterfaceStyle` für `UITraitCollection` noch. Vollständige Unterstützung wird in einer zukünftigen Version hinzugefügt.
 
 
 
@@ -124,7 +124,7 @@ button.ForTraitCollection(dark).SetTitleColor (UIColor.White, UIControlState.Nor
 ```
 
 > [!IMPORTANT]
-> **Hinweis:** leider die Xamarin.tvOS-Vorschau für tvos. außerdem wurden 10 nicht vollständig unterstützt `UIUserInterfaceStyle` für `UITraitCollection`, sodass diese Art von Anpassung noch nicht verfügbar ist. Vollständige Unterstützung wird in einer zukünftigen Version hinzugefügt.
+> Leider die Xamarin.tvOS-Vorschau für tvos. außerdem wurden 10 nicht vollständig unterstützt `UIUserInterfaceStyle` für `UITraitCollection`, sodass diese Art von Anpassung noch nicht verfügbar ist. Vollständige Unterstützung wird in einer zukünftigen Version hinzugefügt.
 
 <a name="Responding-to-Theme-Changes-Directly" />
 

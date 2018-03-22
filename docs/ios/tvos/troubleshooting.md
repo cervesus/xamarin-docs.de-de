@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7b6d0901f8b01668626fc3b6a70a091e99e2287e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c72d0dd89593002dbb6ea8ac9369666b811f3a73
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="troubleshooting"></a>Problembehandlung
 
@@ -173,7 +173,7 @@ Die Lösung besteht darin, Hinzufügen der Unterstützung für den Remoteserver 
 ```
 
 > [!IMPORTANT]
-> **Hinweis:** Ihrer app kann nicht den Benutzer einen erwerben erzwingen, dass Bluetooth-Gamecontroller sind eine optionale Kauf, der Endbenutzer vorgenommen werden können. Wenn Ihre app Gamecontroller unterstützt, muss es auch Siri Remote unterstützen, damit das Spiel von allen Benutzern von Apple TV verwendbar ist.
+> Ihre app kann nicht den Benutzer einen erwerben erzwingen, dass Bluetooth-Gamecontroller sind eine optionale Kauf, der Endbenutzer vorgenommen werden können. Wenn Ihre app Gamecontroller unterstützt, muss es auch Siri Remote unterstützen, damit das Spiel von allen Benutzern von Apple TV verwendbar ist.
 
 Weitere Informationen finden Sie unter unsere [arbeiten mit Gamecontroller](~/ios/tvos/platform/remote-bluetooth.md#Working-with-Game-Controllers) Teil unserer [Siri Remote und Bluetooth-Controller](~/ios/tvos/platform/remote-bluetooth.md) Dokumentation.
 

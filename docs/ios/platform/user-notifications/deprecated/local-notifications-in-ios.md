@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 2a8ae55f9cc3e2dd4818dec96a35017c76cc9623
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1b36d3ba8601d125d0a17173efb12c249224e78
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="notifications-in-xamarinios"></a>Benachrichtigungen in Xamarin.iOS
 
 _In diesem Abschnitt wird gezeigt, wie lokale Benachrichtigungen in Xamarin.iOS implementiert wird. Es wird erläutert, die verschiedenen Benutzeroberflächenelemente einer iOS-Benachrichtigung und diskutieren Sie die API des durch das Erstellen und Anzeigen einer Benachrichtigung beteiligt._
 
 > [!IMPORTANT]
-> **Hinweis:** die Informationen in diesem Abschnitt beziehen sich auf iOS 9 und vorherigen, es ist noch hier zur Unterstützung von älterer iOS-Versionen. IOS 10 und höher, finden Sie unter der [Benachrichtigungsframeworks User Guide](~/ios/platform/user-notifications/index.md) für die Unterstützung von lokalen und Remote-Benachrichtigung auf einem iOS-Gerät.
+> Die Informationen in diesem Abschnitt beziehen sich auf iOS 9 und vorherigen, es ist noch hier zur Unterstützung von älterer iOS-Versionen. IOS 10 und höher, finden Sie unter der [Benachrichtigungsframeworks User Guide](~/ios/platform/user-notifications/index.md) für die Unterstützung von lokalen und Remote-Benachrichtigung auf einem iOS-Gerät.
 
 iOS verfügt über drei Möglichkeiten, um zu verdeutlichen, dass eine Benachrichtigung empfangen wurde:
 
@@ -78,7 +78,7 @@ notification.SoundName = UILocalNotification.DefaultSoundName;
 Pro Apple Human Richtlinien für die Benutzeroberfläche Wenn eine Benachrichtigung über einen Sound spielt er auch i. d. durch ein Signal oder eine Warnung, um die Hilfe des Benutzers die Anwendung zu identifizieren, die die Warnung ausgelöst. Wenn der Sound länger als 30 Sekunden ist, wird iOS standardmäßig sound stattdessen spielen auch.
 
 > [!IMPORTANT]
-> **Hinweis**: Es ist ein Fehler in der iOS-Simulator, die die Delegat Benachrichtigung zweimal ausgelöst werden. Dieses Problem sollte nicht auftreten, wenn die Anwendung auf einem Gerät ausführen.
+> Es ist ein Fehler in der iOS-Simulator, der die Delegat Benachrichtigung zweimal ausgelöst werden. Dieses Problem sollte nicht auftreten, wenn die Anwendung auf einem Gerät ausführen.
 
 ## <a name="handling-notifications"></a>Handlingbenachrichtigungen
 

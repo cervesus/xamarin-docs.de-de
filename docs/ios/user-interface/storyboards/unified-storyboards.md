@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 77808ae03f5801dd3628b8966e05a574b8501f37
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 60b2e6fa65226631fe2d2c847a56852ac9ae63d2
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="unified-storyboards"></a>Einheitliche Storyboards
 
@@ -581,7 +581,7 @@ IOS-Designer wird bestätigt, dass der Entwickler kann das Format des Storyboard
  [![](unified-storyboards-images/sizeclass02.png "Die Verwendung Größenklassen Warnung")](unified-storyboards-images/sizeclass02.png#lightbox)
 
 > [!IMPORTANT]
-> **Hinweis**: Automatisches Layout für Größenklassen ordnungsgemäß funktioniert auch überprüft werden muss.
+> Automatisches Layout muss Größenklassen ordnungsgemäß funktioniert auch überprüft werden.
 
 ### <a name="generic-device-types"></a>Generische Gerätetypen
 
@@ -630,7 +630,7 @@ Finden Sie im Abschnitt Größe Klasse diesem Artikel finden Sie weitere Informa
 Wenn der Entwickler hat Storyboards, bevor Sie verwendet, werden mit den vorhandenen Segue vertraut **Push**, **modale** und **Popover**. Wenn Größenklassen für eine Unified Storyboard-Datei aktiviert sind, werden die folgenden Adaptive Segue Typen (die die neue Ansicht-API von Netzwerkcontroller weiter oben erläuterten entsprechen) zur Verfügung gestellt: **anzeigen** und **Details anzeigen** .
 
 > [!IMPORTANT]
-> **Hinweis**: Wenn Größenklassen aktiviert sind, werden alle vorhandenen segues in die neuen Typen konvertiert werden.
+> Wenn Größenklassen aktiviert sind, alle vorhandenen segues wird in die neuen Typen konvertiert werden.
 
 Nehmen Sie als Beispiel eine IOS 8-Anwendung, ein Storyboard Unified mit einem Split-View-Controller verwendet, die eine einfache Spiel Navigationsmenü in der Master-Ansicht verfügt. Wenn der Benutzer auf eine Schaltfläche klickt, sollte des ausgewählten Elements-View-Controller im Abschnitt "Details" des Controllers geteilten Ansicht angezeigt werden, bei Ausführung auf einem iPad. Auf einem iPhone sollte des Elements-View-Controller auf Navigationsstapel abgelegt werden.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/25/2017
-ms.openlocfilehash: 7329e8ddb5b86adcf6e1efaa805149012be8853c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a1dbff32b113bd1c3a6b2058a34c73977c59c9e5
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="how-xamarinmac-works"></a>Funktionsweise von Xamarin.Mac
 
@@ -109,7 +109,7 @@ AOT in Xamarin.Mac aktiviert ist, durch Doppelklicken auf die **Projektname** in
 ![Argumente für zusätzliche Mmp AOT hinzugefügt](how-it-works-images/aot01.png "AOT hinzufügen, um zusätzliche Mmp-Argumente")
 
 > [!IMPORTANT]
-> WARNUNG! Aktivieren von AOT Kompilierung deutlich erhöht die Buildzeit in einigen Fällen bis zu einige Minuten, jedoch können sie app-Startzeiten verbessern, indem Sie Durchschnittswert von 20 %. Folglich AOT Kompilierung sollte nur aktiviert werden, auf **Release** Xamarin.Mac-App erstellt.
+> Aktivieren von AOT Kompilierung deutlich erhöht die Buildzeit in einigen Fällen bis zu einige Minuten, jedoch können sie app-Startzeiten verbessern, indem Sie Durchschnittswert von 20 %. Folglich AOT Kompilierung sollte nur aktiviert werden, auf **Release** Xamarin.Mac-App erstellt.
 
 ### <a name="aot-compilation-options"></a>AOT Kompilierungsoptionen
 

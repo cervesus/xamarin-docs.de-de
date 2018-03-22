@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: d9e38f055414ff0eca70df4a4e38aa959b7d7237
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ff19048504ee76db614306adebb71b7237139091
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Automatisches Layout mit dem Xamarin-Designer für iOS
 
@@ -88,7 +88,7 @@ Um eine Einschränkung erstellen, wählen Sie ein Handle, und ziehen Sie es an e
 Beachten Sie die drei gestrichelten grünen Linien für die anderen zwei Schaltflächen. Die grünen Linien geben *löschen Bereiche*, oder die Attribute aus anderen Elementen, wir eingeschränkt werden können. In der oben dargestellten Screenshot bieten die anderen zwei Schaltflächen 3 vertikale ablegebereiche ( *unteren*, *CenterY*, *oben*), die Schaltfläche zu beschränken. Die gestrichelte grüne Linie am oberen Rand der Ansicht bedeutet, dass der Controller Ansicht bietet eine Einschränkung am oberen Rand der Ansicht und durchgehende grünen Kasten bedeutet, dass die View-Controller eine Einschränkung unterhalb der obersten Layout Handbuch bietet.
 
 > [!IMPORTANT]
-> **Hinweis**: Layout Handbücher sind spezielle Arten von Einschränkung-Ziele, die können wir die oberen und unteren Einschränkungen erstellen, die das Vorhandensein von System Balken, z. B. Statusleisten oder Symbolleisten berücksichtigen. Einer der wichtigsten ist eine app, die zwischen iOS 6 und iOS 7 kompatibel, da die aktuelle Version der Containeransicht unterhalb der Statusleiste verfügt. Weitere Informationen zu den oberen Layout-Handbuch, finden Sie in der [Apple-Dokumentation](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2).
+> Layout-Handbücher sind spezielle Arten von Einschränkung-Ziele, die zulässt, erstellen Sie nach oben und unten Einschränkungen, die das Vorhandensein von System Balken, z. B. Statusleisten oder Symbolleisten berücksichtigen. Einer der wichtigsten ist eine app, die zwischen iOS 6 und iOS 7 kompatibel, da die aktuelle Version der Containeransicht unterhalb der Statusleiste verfügt. Weitere Informationen zu den oberen Layout-Handbuch, finden Sie in der [Apple-Dokumentation](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2).
 
 
 

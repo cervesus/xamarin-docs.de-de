@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 33e27043c3738c5213b17786e5a88fb30a7fc017
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e868c0ee71688e208c5217d9f5a89ea3acec988c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="speech-recognition"></a>Spracherkennung
 
@@ -127,7 +127,7 @@ Um die erforderlichen bereitzustellen `NSSpeechRecognitionUsageDescription` -Sch
 -----
 
 > [!IMPORTANT]
-> **Hinweis:** wegen eines Fehlers beim Geben Sie entweder die oben genannten `Info.plist` Schlüssel (`NSSpeechRecognitionUsageDescription` oder `NSMicrophoneUsageDescription`) kann dazu führen, die Fehler ohne Warnung beim Versuch, den Zugriff auf die Spracherkennung oder das Mikrofon Audio live-app.
+> Geben Sie entweder die oben genannten Schritte nicht `Info.plist` Schlüssel (`NSSpeechRecognitionUsageDescription` oder `NSMicrophoneUsageDescription`) kann dazu führen, die Fehler ohne Warnung beim Versuch, den Zugriff auf die Spracherkennung oder das Mikrofon Audio live-app.
 
 
 
@@ -186,7 +186,7 @@ Die `RequestAuthorization` Methode der `SFSpeechRecognizer` Klasse wird vom Benu
 Ein `SFSpeechRecognizerAuthorizationStatus` Ergebnis wird zurückgegeben, um die `RequestAuthorization` Methode Callback-Routine, die verwendet werden kann, um Maßnahmen basierend auf die Berechtigung des Benutzers. 
 
 > [!IMPORTANT]
-> **Hinweis:** Apple schlägt vor, warten, bis der Benutzer eine Aktion in der app, die Spracherkennung erfordert gestartet wurde, bevor Sie diese Berechtigung anfordern.
+> Apple wird vorgeschlagen, warten, bis der Benutzer eine Aktion in der app, die Spracherkennung erfordert gestartet wurde, bevor Sie diese Berechtigung anfordern.
 
 ### <a name="recognizing-pre-recorded-speech"></a>Erkennen von aufgezeichnete-Sprache
 
@@ -373,7 +373,7 @@ RecognitionTask.Cancel ();
 Es ist wichtig, rufen Sie `RecognitionTask.Cancel` Wenn der Benutzer die Verschiebung Freigeben von Arbeitsspeicher und geräteprozessors abbricht.
 
 > [!IMPORTANT]
-> **Hinweis:** wegen eines Fehlers beim Bereitstellen der `NSSpeechRecognitionUsageDescription` oder `NSMicrophoneUsageDescription` `Info.plist` Schlüssel können dazu führen, die app ohne Warnung fehl, beim Versuch, den Zugriff auf die Spracherkennung oder das Mikrofon für live-Audio (`var node = AudioEngine.InputNode;`). Finden Sie unter der **Bereitstellen einer Beschreibung der Verwendung** im Abschnitt oben für Weitere Informationen.
+> Fehler beim Bereitstellen der `NSSpeechRecognitionUsageDescription` oder `NSMicrophoneUsageDescription` `Info.plist` Schlüssel können dazu führen, die app ohne Warnung fehl, beim Versuch, den Zugriff auf die Spracherkennung oder das Mikrofon für live-Audio (`var node = AudioEngine.InputNode;`). Finden Sie unter der **Bereitstellen einer Beschreibung der Verwendung** im Abschnitt oben für Weitere Informationen.
 
 ## <a name="speech-recognition-limits"></a>Spracherkennung Recognition Grenzwerte
 

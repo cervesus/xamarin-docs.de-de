@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d5a8baec164eb5c70f6dae5b2fa4fd5271afbd1c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4ab11239caf5986bba52f080945d90a91ea9453e
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="walkthrough---using-background-transfer-service-and-nsurlsession"></a>Exemplarische Vorgehensweise – mit Hintergrundübertragungsdienst und NSURLSession
 
@@ -97,7 +97,7 @@ Wenn wir den Fortschritt einer Downloadaufgabe ermitteln möchten, können wir �
 Die Sitzung Delegaten-API ermöglicht eine umfassende Toolkit für die Interaktion mit Aufgaben. Eine vollständige Liste der Sitzung Methoden delegieren, beziehen sich auf die `NSUrlSessionDelegate` -API-Dokumentation.
 
 > [!IMPORTANT]
-> **Hinweis**: Hintergrund-Sitzungen werden in einem Hintergrundthread gestartet, damit alle Aufrufe zum Aktualisieren der Benutzeroberfläche durch Aufrufen explizit auf den UI-Thread ausgeführt werden müssen `InvokeOnMainThread` iOS Beenden der app zu vermeiden. 
+> Hintergrund-Sitzungen werden in einem Hintergrundthread gestartet, damit alle Aufrufe zum Aktualisieren der Benutzeroberfläche durch Aufrufen explizit auf den UI-Thread ausgeführt werden müssen `InvokeOnMainThread` iOS Beenden der app zu vermeiden. 
 
 
 ## <a name="handling-transfer-completion"></a>Behandlung Übertragung Abschluss

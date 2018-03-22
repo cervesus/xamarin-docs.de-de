@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 3e3d1663e07b16721d1aa7253e7d0150a609718e
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 927a77d5671e877e93e5375b61220ac595891179
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-icons-and-images"></a>Arbeiten mit Symbolen und Bilder
 
@@ -28,7 +28,7 @@ Erstellen von fesselnden Symbole und Bilder sind ein wichtiger Bestandteil der E
 - [Festlegen von Xamarin.tvOS Projekt Bilder](#Setting-Xamarin.tvOS-Project-Images) -umfasst die erforderlichen Schritte für das Bild zu starten und das Symbol "App" für Ihre app Xamarin.tvOS festgelegt.
 
 > [!IMPORTANT]
-> **Hinweis:** aller Images auf dem Apple TV sind in der 1 X-Auflösung (`@1x`) sollten _nur_ Bilder dieser Größe verwenden. Größere einschließlich höherer Auflösung Grafiken nicht nur Zeit benötigt herunterzuladen und mehr Arbeitsspeicher und Speicher, aber sie müssen zur Laufzeit dynamisch skaliert werden und wirkt sich negativ auf die Zeichnung Leistung.
+> Alle Images auf dem Apple TV sind in der 1 X-Auflösung (`@1x`) sollten _nur_ Bilder dieser Größe verwenden. Größere einschließlich höherer Auflösung Grafiken nicht nur Zeit benötigt herunterzuladen und mehr Arbeitsspeicher und Speicher, aber sie müssen zur Laufzeit dynamisch skaliert werden und wirkt sich negativ auf die Zeichnung Leistung.
 
 <a name="Launch-Image" />
 
@@ -79,7 +79,7 @@ Noch nicht mit der Apple-TV-Images in den Ebenen arbeiten mit den Effekt Paralla
 [![](icons-images-images/layered01.png "Überlappende Bilder Z sortiert-Diagramm")](icons-images-images/layered01.png#lightbox)
 
 > [!IMPORTANT]
-> **Hinweis:** überlappende Bilder für Ihre app-Symbole erforderlich sind, und sind für andere optional [den Fokus erhalten kann Elemente](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (z. B. dem Anfang Regal-Image). Allerdings wird Apple vorgeschlagen, die Verwendung von Images in den Ebenen für jedes Bild, das Fokus in der app abrufen kann.
+> Bilder mit Ebenen für Ihre app Symbole erforderlich sind, und sind optional, für andere [den Fokus erhalten kann Elemente](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (z. B. dem Anfang Regal-Image). Allerdings wird Apple vorgeschlagen, die Verwendung von Images in den Ebenen für jedes Bild, das Fokus in der app abrufen kann.
 
 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 48489ca7dc28dcc14a7810b15dc1ffa1fd4f7cf4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f619123fec036dfe919e977b4f218e8d235f0b82
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-web-services"></a>Einführung in Webdienste
 
@@ -29,8 +29,8 @@ In diesem Artikel werden die folgenden Themen erläutert:
 Für Kunden, indem Sie xamarin.Forms verwenden, stehen die vollständige Beispiele, die mithilfe dieser Technologien in der [Xamarin.Forms Webdienste](~/xamarin-forms/data-cloud/index.md) Dokumentation.
 
 > [!IMPORTANT]
-> **Hinweis für Xamarin.iOS:** In iOS 9, App-Transport-Sicherheit (ATS) erzwingt sichere Verbindungen zwischen Internetressourcen (z. B. die app-Back-End-Server) und der app, um das unbeabsichtigten Weitergabe von vertraulichen Informationen zu verhindern. Da ATS in apps für iOS 9 erstellt standardmäßig aktiviert ist, werden alle Verbindungen unterliegen ATS sicherheitsanforderungen. Wenn Verbindungen mit diesen Anforderungen nicht erfüllen, werden sie mit einer Ausnahme fehl.
-
+> In iOS 9 erzwingt App Transport Sicherheit (ATS) sichere Verbindungen zwischen Internetressourcen (z. B. die app-Back-End-Server) und der app, um das unbeabsichtigten Weitergabe von vertraulichen Informationen zu verhindern.
+> Da ATS in apps für iOS 9 erstellt standardmäßig aktiviert ist, werden alle Verbindungen unterliegen ATS sicherheitsanforderungen. Wenn Verbindungen mit diesen Anforderungen nicht erfüllen, werden sie mit einer Ausnahme fehl.
 
 Sie können opt-Out-of ATS ist es nicht möglich ist, verwenden Sie die `HTTPS` -Protokolls und sichere Kommunikation für Ressourcen im Internet. Dies kann erreicht werden, indem Sie die app aktualisiert **"Info.plist"** Datei. Weitere Informationen finden Sie unter [App Transportsicherheit](~/ios/app-fundamentals/ats.md).
 
@@ -191,7 +191,7 @@ client.GetAsync<CustomersResponse>("",
 ```
 
 > [!IMPORTANT]
-> **Hinweis:** während Tools wie z. B. ServiceStack und RestSharp erleichtern aufrufen und nutzen Dienste bewegen, manchmal ist es nicht triviale nutzen, XML oder JSON, der nicht dem Standard entspricht _DataContract_ Serialisierung Konventionen. Falls erforderlich, rufen Sie die Anforderung, und behandeln Sie die entsprechenden Serialisierung explizit mithilfe der ServiceStack.Text-Bibliothek, die weiter unten erläutert.
+> Während Tools wie z. B. ServiceStack und RestSharp erleichtern aufrufen und nutzen Dienste bewegen, manchmal ist es nicht triviale nutzen, XML oder JSON, der nicht dem Standard entspricht _DataContract_ Serialisierung Konventionen. Falls erforderlich, rufen Sie die Anforderung, und behandeln Sie die entsprechenden Serialisierung explizit mithilfe der ServiceStack.Text-Bibliothek, die weiter unten erläutert.
 
 
 <a name="Options_for_consuming_RESTful_data" />

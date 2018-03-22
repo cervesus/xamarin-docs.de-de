@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c806eb51be5f585f2c94b438f6ca31a70aaa7551
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 04c7a7235665e14fd128a3a70951168c1914c112
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="walkthrough--using-touch-in-ios"></a>Exemplarische Vorgehensweise – Touch mit iOS
 
@@ -92,12 +92,12 @@ In diesem Beispiel werden einige der Touch-APIs beispielmedienobjekt. Führen Si
         }
     }
     ```
+    
     Diese Methode funktioniert durch Suchen nach einem `UITouch` Objekt, und führen Sie eine Aktion, die basierend auf einem aufgetreten ist, falls vorhanden:
 
     * _In TouchImage_ – zeigt den Text `Touches Began` in eine Bezeichnung und ändern Sie das Bild.
     * _In DoubleTouchImage_ – ändern Sie das Bild angezeigt, wenn die Bewegung Doppeltippen wurde.
     * _In DragImage_ – legen Sie ein Flag gibt an, dass die Fingereingabe gestartet wurde. Die Methode `TouchesMoved` verwenden Sie dieses Flag wird ermittelt, ob `DragImage` auf dem Bildschirm verschoben werden soll, oder nicht, wie wir im nächsten Schritt sehen muss.
-
 
     Der obige Code nur befasst sich mit einzelnen Fingereingaben, es ist noch keine Verhalten, wenn der Benutzer ihre Finger auf dem Bildschirm verschoben wird. Um auf datenverschiebung zu reagieren, implementieren `TouchesMoved` wie im folgenden Code gezeigt:
 
@@ -192,7 +192,7 @@ Führen Sie folgende Schritte Prüfer Gestenhandler zu implementieren:
 
 1. Bearbeiten Sie die Datei **GestureViewController.cs** und fügen Sie die folgenden Instanzvariable hinzu:
 
-    ```chsarp
+    ```csharp
     #region Private Variables
     private bool imageHighlighted = false;
     private RectangleF originalImageFrame = RectangleF.Empty;
@@ -204,7 +204,7 @@ Die Pan-Geste-Erkennung verwenden die `originalImageFrame` Wert Methodenpaar erf
 
 1. Fügen Sie die folgende Methode mit dem Controller aus:
 
-    ```chsarp
+    ```csharp
     private void WireUpDragGestureRecognizer()
     {
         // Create a new tap gesture
@@ -223,7 +223,7 @@ Beachten Sie, dass wir die Bewegung in Form der Methode ein Ziel zuweisen `Handl
 
 1. Um HandleDrag zu implementieren, fügen Sie den folgenden Code an den Controller aus:
 
-    ```chsarp
+    ```csharp
     private void HandleDrag(UIPanGestureRecognizer recognizer)
     {
         // If it's just began, cache the location of the image
@@ -250,7 +250,7 @@ Beachten Sie, dass wir die Bewegung in Form der Methode ein Ziel zuweisen `Handl
 
 1. Hinzufügen einer `UITapGestureRecognizer` ändert, die das Bild in DoubleTouchImage angezeigt wird. Fügen Sie die folgende Methode, die `GestureViewController` Controller:
 
-    ```chsarp
+    ```csharp
     private void WireUpTapGestureRecognizer()
     {
         // Create a new tap gesture
@@ -286,7 +286,7 @@ Beachten Sie, dass wir die Bewegung in Form der Methode ein Ziel zuweisen `Handl
 
 1. Im letzten Schritt erforderlich ist, ändern `ViewDidLoad` so, dass sie die Methoden aufruft, wir gerade hinzugefügt. Ändern Sie ViewDidLoad, sodass sie den folgenden Code ähnelt:
 
-    ```chsarp
+    ```csharp
     public override void ViewDidLoad()
     {
         base.ViewDidLoad();
@@ -324,7 +324,7 @@ Führen Sie die Schritte zum Erstellen einer benutzerdefinierten Geste Erkennung
 
 1. Fügen Sie eine neue Klasse, um das Projekt mit dem Namen `CheckmarkGestureRecognizer`, und stellen sie den folgenden Code ähneln:
 
-    ```chsarp
+    ```csharp
     using System;
     using CoreGraphics;
     using Foundation;
@@ -444,7 +444,7 @@ Jetzt kann die Klasse starten neue beim nächsten des Benutzers mit der Anwendun
 
 1. Nun, dass wir eine Erkennung für die benutzerdefinierte Aktion definiert haben (`CheckmarkGestureRecognizer`) bearbeiten Sie die **CustomGestureViewController.cs** Datei, und fügen Sie die folgenden zwei Variablen hinzu:
 
-    ```chsarp
+    ```csharp
     #region Private Variables
     private bool isChecked = false;
     private CheckmarkGestureRecognizer checkmarkGesture;
@@ -453,7 +453,7 @@ Jetzt kann die Klasse starten neue beim nächsten des Benutzers mit der Anwendun
 
 1. Zum Instanziieren und unsere Geste Erkennung konfiguriert haben, fügen Sie die folgende Methode mit dem Controller aus:
 
-    ```chsarp
+    ```csharp
     private void WireUpCheckmarkGestureRecognizer()
     {
         // Create the recognizer
@@ -482,7 +482,7 @@ Jetzt kann die Klasse starten neue beim nächsten des Benutzers mit der Anwendun
 
 1. Bearbeiten Sie `ViewDidLoad` , damit er ruft `WireUpCheckmarkGestureRecognizer`, wie im folgenden Codeausschnitt gezeigt:
 
-    ```chsarp
+    ```csharp
     public override void ViewDidLoad()
     {
         base.ViewDidLoad();
