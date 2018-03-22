@@ -180,6 +180,7 @@
 ### [Auswahl](user-interface/picker/index.md)
 #### [Festlegen der ItemsSource-Eigenschaft einer Auswahl](user-interface/picker/populating-itemssource.md)
 #### [Hinzufügen von Daten zur Elementsammlung einer Auswahl](user-interface/picker/populating-items.md)
+### [Schieberegler](user-interface/slider.md)
 ### [Stile](user-interface/styles/index.md)
 #### [Introduction (Einführung)](user-interface/styles/introduction.md)
 #### [Explizite Stile](user-interface/styles/explicit.md)
