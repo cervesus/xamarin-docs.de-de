@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 5f27c1acefa63ee26184b8997594630e24cb0acc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 16cd5571a8c3b0e179046351e9996e55b040a9de
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="authentication-and-authorization"></a>Authentifizierung und Autorisierung
 
@@ -21,7 +21,7 @@ Es gibt viele Ansätze zum Integrieren von Authentifizierung und Autorisierung i
 
 ## <a name="authentication"></a>Authentifizierung
 
-Authentifizierung ist erforderlich, wenn eine Anwendung die Identität des aktuellen Benutzers zu kennen muss. ASP.NET Core der primäre Mechanismus für die Identifizierung von Benutzern ist das Mitgliedschaftssystem ASP.NET Core Identität, mit dem Benutzerinformationen in einem Datenspeicher, der vom Entwickler konfiguriert gespeichert. In der Regel wird diesen Datenspeicher ein Store EntityFramework werden, wenn benutzerdefinierte Geschäfte oder Pakete von Drittanbietern verwendet werden können, um Identitätsinformationen in Azure-Speicher, DocumentDB oder anderen Speicherorten zu speichern.
+Authentifizierung ist erforderlich, wenn eine Anwendung die Identität des aktuellen Benutzers zu kennen muss. ASP.NET Core der primäre Mechanismus für die Identifizierung von Benutzern ist das Mitgliedschaftssystem ASP.NET Core Identität, mit dem Benutzerinformationen in einem Datenspeicher, der vom Entwickler konfiguriert gespeichert. In der Regel wird diesen Datenspeicher ein Store EntityFramework werden, wenn benutzerdefinierte Geschäfte oder Pakete von Drittanbietern verwendet werden können, um Identitätsinformationen in Azure-Speicher, Azure-Cosmos-Datenbank oder anderen Speicherorten zu speichern.
 
 Für die Authentifizierungsszenarien, die nutzen eines Datenspeichers lokaler Benutzer und die Identitätsinformationen zwischen Anforderungen mithilfe von Cookies (wie in ASP.NET MVC-Webanwendungen wird) beibehalten, ist ASP.NET Core Identity eine angemessene Lösung. Allerdings sind Cookies nicht immer eine natürliche Möglichkeit beibehalten und Übertragen von Daten. Beispielsweise müssen eine ASP.NET Core-Web-Anwendung, die REST-Endpunkten verfügbar macht, die aus einer mobilen app zugegriffen werden in der Regel trägertokenauthentifizierung, zu verwenden, da Cookies in diesem Szenario verwendet werden können. Allerdings können trägertoken problemlos abgerufen und in der Authorization-Header der webanforderungen über die mobile app enthalten.
 

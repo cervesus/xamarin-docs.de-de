@@ -1,6 +1,6 @@
 ---
 title: Suchen nach Daten mit Azure Search
-description: "Azure Search ist ein Cloud-Dienst, der Indizierung und Abfragefunktionen für hochgeladene Daten bereitstellt. Dies entfernt die Anforderungen an die Infrastruktur und die Suche Algorithmus Komplexitäten, die normalerweise bei der Implementierung von Suchfunktionen in einer Anwendung verknüpft sind. Dieser Artikel veranschaulicht, wie der Microsoft Azure Search-Bibliothek zur Integration von Azure Search in einer Xamarin.Forms-Anwendung."
+description: Azure Search ist ein Cloud-Dienst, der Indizierung und Abfragefunktionen für hochgeladene Daten bereitstellt. Dies entfernt die Anforderungen an die Infrastruktur und die Suche Algorithmus Komplexitäten, die normalerweise bei der Implementierung von Suchfunktionen in einer Anwendung verknüpft sind. Dieser Artikel veranschaulicht, wie der Microsoft Azure Search-Bibliothek zur Integration von Azure Search in einer Xamarin.Forms-Anwendung.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: bf6b9f8aaa07e934a1e707b85ecaa24e4f3d99bf
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 24db1404e218eea86356f9bbc004e7d5850c2e7a
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="searching-data-with-azure-search"></a>Suchen nach Daten mit Azure Search
 
@@ -119,7 +119,7 @@ searchClient.Indexes.Delete(Constants.Index);
 
 Nach dem Definieren des Indexes, können Daten mithilfe einer der beiden Modelle hochgeladen werden:
 
-- **Pullmodell** : Daten in regelmäßigen Abständen aus Azure DocumentDB, Azure SQL-Datenbank, Azure-Blob-Speicher aufgenommen werden, oder SQL Server gehostet auf einem virtuellen Azure-Computer.
+- **Pullmodell** : Daten in regelmäßigen Abständen aus dem Azure-Cosmos-Datenbank, Azure SQL-Datenbank und Azure Blob-Speicher aufgenommen werden, oder SQL Server gehostet auf einem virtuellen Azure-Computer.
 - **Pushmodell** – Daten programmgesteuert auf den Index gesendet werden. Dies ist das Modell in diesem Artikel übernommen.
 
 Ein `SearchIndexClient` Instanz muss zum Importieren von Daten in den Index erstellt werden. Dies geschieht durch Aufrufen der `SearchServiceClient.Indexes.GetClient` Methode, wie im folgenden Codebeispiel gezeigt:

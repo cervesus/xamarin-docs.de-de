@@ -1,6 +1,6 @@
 ---
 title: Authentifizieren von Benutzern mit einer Azure-Cosmos-DB-Dokument-Datenbank
-description: "Azure DB Cosmos-Dokument-Datenbanken unterstützen partitionierte Sammlungen enthalten, die mehrere Server und Partitionen, und unterstützt eine unbegrenzte Speicherdauer und Durchsatz erstrecken können. In diesem Artikel wird erläutert, wie Zugriffssteuerung mit partitionierte Sammlungen kombiniert, damit ein Benutzer nur ihre eigenen Dokumente in einer Xamarin.Forms-Anwendung zugreifen kann."
+description: Azure DB Cosmos-Dokument-Datenbanken unterstützen partitionierte Sammlungen enthalten, die mehrere Server und Partitionen, und unterstützt eine unbegrenzte Speicherdauer und Durchsatz erstrecken können. In diesem Artikel wird erläutert, wie Zugriffssteuerung mit partitionierte Sammlungen kombiniert, damit ein Benutzer nur ihre eigenen Dokumente in einer Xamarin.Forms-Anwendung zugreifen kann.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 10c4a1e3355263722d170dff0a5e2707eb794818
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8de64d6489b4022e43bcf694f3b13d6f7eaaecbd
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>Authentifizieren von Benutzern mit einer Azure-Cosmos-DB-Dokument-Datenbank
 
@@ -22,12 +22,12 @@ _Azure DB Cosmos-Dokument-Datenbanken unterstützen partitionierte Sammlungen en
 
 Partitionsschlüssel muss angegeben werden, wenn eine partitionierte Sammlung zu erstellen, und die Dokumente mit den gleichen Partitionsschlüssel werden in der gleichen Partition gespeichert werden. Aus diesem Grund führt angeben der Identität des Benutzers als Partitionsschlüssel in eine partitionierte Sammlung, die nur für diesen Benutzer Dokumente gespeichert werden. Außerdem sichergestellt werden, dass die Azure-Cosmos-DB-dokumentdatenbank, als die Anzahl der Benutzer skaliert wird und Elemente erhöhen.
 
-Jede Auflistung muss Zugriff gewährt werden, und das Zugriffssteuerungsmodell DocumentDB-API definiert zwei Typen von Access-Konstrukte:
+Jede Auflistung muss Zugriff gewährt werden, und das SQL-API-Zugriffssteuerungsmodell definiert zwei Typen von Access-Konstrukte:
 
 - **Hauptschlüssel** vollen administrativen Zugriff auf alle Ressourcen in einem Cosmos-DB-Konto zu aktivieren, und erstellt, wenn ein Cosmos-DB-Konto erstellt wird.
 - **Ressourcentoken** die Beziehung zwischen dem Benutzer einer Datenbank und die Berechtigung, die der Benutzer für eine bestimmte Cosmos-DB-Ressource, z. B. eine Auflistung oder ein Dokument verfügt zu erfassen.
 
-Verfügbarmachen eines Hauptschlüssels öffnet ein Cosmos-DB-Konto, um die Möglichkeit, dass böswillige oder eine nachlässige verwenden. Cosmos-DB Ressourcentoken bieten jedoch einen sicheren Mechanismus für das Zulassen von Clients zu lesen, schreiben und Löschen bestimmte Ressourcen in einem Cosmos-DB-Konto entsprechend der erteilten Berechtigungen.
+Verfügbarmachen eines Hauptschlüssels öffnet ein Cosmos-DB-Konto, um die Möglichkeit, dass böswillige oder eine nachlässige verwenden. Azure-Cosmos-DB Ressourcentoken bieten jedoch einen sicheren Mechanismus für das Zulassen von Clients zu lesen, schreiben und Löschen bestimmte Ressourcen in einem Azure-Cosmos-DB-Konto entsprechend der erteilten Berechtigungen.
 
 Ein typischer Ansatz angefordert wird, ist generieren und Übermitteln von Ressourcentoken einer mobilen Anwendung auf einen Ressource token Broker verwenden. Das folgende Diagramm zeigt einen allgemeinen Überblick darüber, wie die beispielanwendung einen Ressource-token-Broker, zum Verwalten des Zugriffs auf die Datenbank Dokumentdaten verwendet:
 
@@ -44,7 +44,7 @@ Die Ressource token Broker ist ein Mid-Tier-Web-API, gehosteter Dienst in Azure 
 > [!NOTE]
 > Wenn das Ressourcentoken abläuft, erhalten nachfolgende-dokumentanforderungen für die Datenbank eine Ausnahme für 401 nicht autorisiert. An diesem Punkt sollte Xamarin.Forms Anwendungen stellen Sie die Identität wieder her, und Sie ein neues Ressourcentoken anfordern.
 
-Weitere Informationen zum Partitionieren von Cosmos-DB finden Sie unter [partitionieren und Skalierung in Azure-Cosmos-DB](/azure/cosmos-db/partition-data/). Weitere Informationen zur Cosmos-DB-Zugriffssteuerung finden Sie unter [Sichern des Zugriffs auf Daten Cosmos-DB](/azure/cosmos-db/secure-access-to-data/) und [Zugriffssteuerung in der DocumentDB-API](/rest/api/documentdb/access-control-on-documentdb-resources/).
+Weitere Informationen zum Partitionieren von Cosmos-DB finden Sie unter [partitionieren und Skalierung in Azure-Cosmos-DB](/azure/cosmos-db/partition-data/). Weitere Informationen zur Cosmos-DB-Zugriffssteuerung finden Sie unter [Sichern des Zugriffs auf Daten Cosmos-DB](/azure/cosmos-db/secure-access-to-data/) und [Zugriffssteuerung in der SQL-API](/rest/api/documentdb/access-control-on-documentdb-resources/).
 
 ## <a name="setup"></a>Setup
 
@@ -58,11 +58,11 @@ Der Prozess für die Integration von der Ressource token Broker in einer Xamarin
 
 <a name="cosmosdb_configuration" />
 
-### <a name="cosmos-db-configuration"></a>DB-COSMOS-Konfiguration
+### <a name="azure-cosmos-db-configuration"></a>Azure-Cosmos-DB-Konfiguration
 
 Der Prozess zum Erstellen einer Cosmos-DB-Kontos, der Zugriffssteuerung verwendet wird, lautet wie folgt:
 
-1. Erstellen Sie ein Konto Cosmos-DB. Weitere Informationen finden Sie unter [erstellen Sie ein Konto Cosmos-DB](/azure/cosmos-db/documentdb-dotnetcore-get-started#step-1-create-a-documentdb-account).
+1. Erstellen Sie ein Konto Cosmos-DB. Weitere Informationen finden Sie unter [erstellen Sie ein Azure-Cosmos-DB-Konto](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account).
 1. Erstellen Sie eine neue Sammlung mit dem Namen im Konto Cosmos-DB `UserItems`, Partitionsschlüssel angeben `/userid`.
 
 <a name="app_service_configuration" />
@@ -269,10 +269,10 @@ In diesem Artikel wird erläutert, wie Zugriffssteuerung mit partitionierte Samm
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [TodoDocumentDBAuth (sample)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
+- [TODO-Azure-Cosmos-DB-Auth (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
 - [Verwenden einer Azure Cosmos DB-Dokumentdatenbank](~/xamarin-forms/data-cloud/cosmosdb/consuming.md)
 - [Sichern des Zugriffs auf Azure-Cosmos-DB-Daten](/azure/cosmos-db/secure-access-to-data/)
-- [Zugriffssteuerung in der DocumentDB-API](/rest/api/documentdb/access-control-on-documentdb-resources/).
+- [Zugriffssteuerung in der SQL-API](/rest/api/documentdb/access-control-on-documentdb-resources/).
 - [Partitionieren und Skalierung in Azure-Cosmos-DB](/azure/cosmos-db/partition-data/)
-- [DocumentDB-Clientbibliothek](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
+- [Azure Cosmos DB Client Library](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
 - [Azure Cosmos DB API](https://msdn.microsoft.com/library/azure/dn948556.aspx)

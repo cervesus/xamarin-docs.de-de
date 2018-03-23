@@ -1,6 +1,6 @@
 ---
-title: "Details zur Implementierung von münzwurfs Zeit"
-description: "Dieses Handbuch erläutert Implementierungsdetails Münzwurfs Zeit-Spiele, einschließlich arbeiten mit Kachel Zuordnungen, Erstellen von Entitäten, animieren Sprites und effiziente Kollision implementieren."
+title: Details zur Implementierung von münzwurfs Zeit
+description: Dieses Handbuch erläutert Implementierungsdetails Münzwurfs Zeit-Spiele, einschließlich arbeiten mit Kachel Zuordnungen, Erstellen von Entitäten, animieren Sprites und effiziente Kollision implementieren.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5D285684-0417-4E16-BD14-2D1F6DEFBB8B
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: b3827d05ae9e563ae04dd4ab1e303577f6c9d82a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 80250ca9fae98fae653c9b2837b2b1a96fb02203
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="coin-time-implementation-details"></a>Details zur Implementierung von münzwurfs Zeit
 
@@ -61,10 +61,7 @@ Kacheln platziert werden können, indem Sie auf der **Mastersheet** Tileset klic
 1. Klicken Sie auf die Kachel gezeichnet werden soll
 1. Klicken Sie auf oder mithilfe von Push übertragen Sie, und ziehen Sie auf der Karte, um die Kachel zeichnen
 
-
     ![](cointime-images/image2.png "Klicken Sie auf die Kachel 1 gezeichnet werden soll.")
-
- 
 
 Oben links von der Tileset enthält alle im Gelände zeitlich Münzwurfs. Terrain, d. h. solid, enthält die **SolidCollision** Eigenschaft, die in den kacheleigenschaften auf der linken Seite des Bildschirms angezeigt:
 
@@ -97,15 +94,11 @@ Der Vorgang des Hinzufügens von Ebenen in Münzwurfs Zeit erfordert keine Ände
 1. Benennen Sie die neue .tmx-Datei aus, damit die Sequenz die Ebene Nummer mit vorhandenen Ebenen, wie z. B. weiterhin **level8.tmx**
 1. In Visual Studio oder Visual Studio für Mac wird fügen Sie die neue .tmx-Datei in den Ordner Android Ebenen hinzu. Stellen Sie sicher, dass die Datei verwendet das **AndroidAsset** Buildvorgang.
 
-
     ![](cointime-images/image8.png "Stellen Sie sicher, dass die Datei über den Buildvorgang AndroidAsset verwendet")
-
 
 1. Die neue .tmx-Datei auf den Ordner "iOS Ebenen" hinzufügen. Achten Sie darauf, verknüpfen Sie die Datei vom ursprünglichen Speicherort, und stellen Sie sicher, dass er verwendet die **BundleResource** Buildvorgang.
 
-
     ![](cointime-images/image9.png "Achten Sie darauf, verknüpfen Sie die Datei vom ursprünglichen Speicherort, und stellen Sie sicher, dass er die Buildaktion BundleResource verwendet")
-
 
 Die neue Ebene sollte angezeigt werden in den Bildschirm für das Auswählen von Ebene als Ebene 9 (Ebene Dateinamen beginnen bei 0, aber die Ebenen Schaltflächen beginnen mit der Zahl 1):
 

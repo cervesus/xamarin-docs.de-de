@@ -1,18 +1,18 @@
 ---
 title: Daten und Clouddienste
-description: "Xamarin.Forms-Anwendungen können Verarbeiten von Webdiensten implementiert, mithilfe einer Vielzahl von Technologien, und dieser Anleitung hierzu untersucht."
+description: Xamarin.Forms-Anwendungen können Verarbeiten von Webdiensten implementiert, mithilfe einer Vielzahl von Technologien, und dieser Anleitung hierzu untersucht.
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: "0601D9D0-C8D2-4C3B-A749-A340BDBF64A4ß"
+ms.assetid: 0601D9D0-C8D2-4C3B-A749-A340BDBF64A4ß
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 28007ee702c66f3b819430b544465d3470d571d9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 54313c3e8808ee9e563d6b55e3bf034c543a48e5
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="data--cloud-services"></a>Daten und Clouddienste
 
@@ -50,7 +50,7 @@ Dieser Artikel veranschaulicht, wie der Microsoft Azure Search-Bibliothek zur In
 
 ## <a name="storing-data-in-a-document-databasecosmosdbindexmd"></a>[Speichern von Daten in einer Dokumentdatenbank](cosmosdb/index.md)
 
-Dieses Handbuch veranschaulicht, wie die Microsoft Azure DocumentDB-Clientbibliothek verwenden, um ein Azure-Cosmos-DB-dokumentdatenbank in einer Xamarin.Forms-Anwendung zu integrieren. Ein Azure-Cosmos-DB-dokumentdatenbank ist ein NoSQL-Datenbank, die mit geringer Latenz der Zugang zu JSON-Dokumente, bietet einen schnelle, hochverfügbare, skalierbare Datenbankdienst für Anwendungen, die eine nahtlose Skalierung und globale Replikation erforderlich sind.
+Dieses Handbuch veranschaulicht, wie die Azure Cosmos DB .NET Standard-Clientbibliothek verwenden, um ein Azure-Cosmos-DB-dokumentdatenbank in einer Xamarin.Forms-Anwendung zu integrieren. Ein Azure-Cosmos-DB-dokumentdatenbank ist ein NoSQL-Datenbank, die mit geringer Latenz der Zugang zu JSON-Dokumente, bietet einen schnelle, hochverfügbare, skalierbare Datenbankdienst für Anwendungen, die eine nahtlose Skalierung und globale Replikation erforderlich sind.
 
 ## <a name="adding-intelligence-with-cognitive-servicescognitive-servicesindexmd"></a>[Hinzufügen von Intelligenz mit Cognitive Services](cognitive-services/index.md)
 
