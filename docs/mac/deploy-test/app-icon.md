@@ -1,6 +1,6 @@
 ---
 title: Anwendungssymbol
-description: "In diesem Artikel wird beschrieben, wie Sie die für das Anwendungssymbol einer Xamarin.Mac-Anwendung erforderlichen Bilder erstellen, wie Sie diese Bilder in eine ICNS-Datei bündeln, und wie Sie das Symbol zu dem Xamarin.Mac-Projekt hinzufügen."
+description: In diesem Artikel wird beschrieben, wie Sie die für das Anwendungssymbol einer Xamarin.Mac-Anwendung erforderlichen Bilder erstellen, wie Sie diese Bilder in eine ICNS-Datei bündeln, und wie Sie das Symbol zu dem Xamarin.Mac-Projekt hinzufügen.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 675b9405-d9a7-49f0-94ad-417f10a71d11
@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 28218bcbf6527c818fdf2988375d1c353e9f1d27
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ceeb0d33b00288e2a50dc7f758902c1dbc7ab04a
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="application-icon"></a>Anwendungssymbol
 
@@ -61,52 +61,18 @@ Um beispielsweise eine 512 × 512-Version des App-Symbols zu erstellen, sollten 
 
 Um sicherzustellen, dass das Symbol überall, wo es der Benutzer sehen kann, gut aussieht, sollten Sie Ressourcen in den folgenden Größen zur Verfügung stellen:
 
-<table width="100%" border="1px">
-<tr>
-    <td>Dateiname</td>
-    <td>Größe in Pixeln</td>
-</tr>
-<tr>
-    <td>icon_512x512@2x.png</td>
-    <td>1024 x 1024</td>
-</tr>
-<tr>
-    <td>icon_512x512.png</td>
-    <td>512 x 512</td>
-</tr>
-<tr>
-    <td>icon_256x256@2x.png</td>
-    <td>512 x 512</td>
-</tr>
-<tr>
-    <td>icon_256x256.png</td>
-    <td>256 x 256</td>
-</tr>
-<tr>
-    <td>icon_128x128@2x.png</td>
-    <td>256 x 256</td>
-</tr>
-<tr>
-    <td>icon_128x128.png</td>
-    <td>128 x 128</td>
-</tr>
-<tr>
-    <td>icon_32x32@2x.png</td>
-    <td>64 x 64</td>
-</tr>
-<tr>
-    <td>icon_32x32.png</td>
-    <td>32 x 32</td>
-</tr>
-<tr>
-    <td>icon_16x16@2x.png</td>
-    <td>32 x 32</td>
-</tr>
-<tr>
-    <td>icon_16x16.png</td>
-    <td>16 x 16</td>
-</tr>
-</table>
+|Dateiname|Größe in Pixeln|
+|---|---|
+|icon_512x512@2x.png|1024 x 1024|
+|icon_512x512.png|512 x 512|
+|icon_256x256@2x.png|512 x 512|
+|icon_256x256.png|256 x 256|
+|icon_128x128@2x.png|256 x 256|
+|icon_128x128.png|128 x 128|
+|icon_32x32@2x.png|64 x 64|
+|icon_32x32.png|32 x 32|
+|icon_16x16@2x.png|32 x 32|
+|icon_16x16.png|16 x 16|
 
 Weitere Informationen finden Sie unter [Provide High-Resolution Versions of All App Graphics Resources (Erstellen von Versionen in hoher Auflösung für alle Grafikressourcen einer App)](https://developer.apple.com/library/mac/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Optimizing/Optimizing.html#//apple_ref/doc/uid/TP40012302-CH7-SW3) in der Apple-Dokumentation.
 

@@ -1,6 +1,6 @@
 ---
-title: "IPA-Unterstützung"
-description: "In diesem Artikel erfahren Sie, wie Sie eine IPA-Datei erstellen können, die zum Bereitstellen einer App mit der Ad-hoc-Verteilung verwendet werden kann oder zur internen Verteilung internen Anwendungen."
+title: IPA-Unterstützung
+description: In diesem Artikel erfahren Sie, wie Sie eine IPA-Datei erstellen können, die zum Bereitstellen einer App mit der Ad-hoc-Verteilung verwendet werden kann oder zur internen Verteilung internen Anwendungen.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: D253C2DB-852E-6FC6-C9FD-574730B8DB19
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: bee3480fc90c2eac5629e336c57daa90adf9c346
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fa0986141a44bbe7100268c629e606a5857e2699
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ipa-support"></a>IPA-Unterstützung
 
@@ -151,7 +151,7 @@ Sobald das Bereitstellungsprofil erstellt und ausgewählt und die optionale **iT
     ![](ipa-support-images/imagevs02.png "Wählen Sie „Ad-Hoc“ in der Dropdownliste „Konfiguration“ aus")
 
     > [!NOTE]
-> Die Ad-hoc-Konfiguration steht möglicherweise nicht für neuere Xamarin.iOS-Projekte zur Verfügung. Wenn Sie nicht verfügbar ist, wählen Sie die Konfiguration **Release** aus.
+    > Die Ad-hoc-Konfiguration steht möglicherweise nicht für neuere Xamarin.iOS-Projekte zur Verfügung. Wenn Sie nicht verfügbar ist, wählen Sie die Konfiguration **Release** aus.
 
 3. Wenn Sie eine optionale **iTunesMetadata.plist**-Datei einbeziehen, klicken Sie auf die Schaltfläche **...**, wählen Sie sie aus der Liste aus, und klicken Sie anschließend auf **Öffnen**.
 

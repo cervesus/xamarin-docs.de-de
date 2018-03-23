@@ -1,6 +1,6 @@
 ---
 title: Automatische Bereitstellung
-description: "Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieses Handbuch beschreibt die Verwendung der Option „Automatische Signatur“ in Visual Studio für Mac, um Entwicklungszertifikate und -profile anzufordern."
+description: Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieses Handbuch beschreibt die Verwendung der Option „Automatische Signatur“ in Visual Studio für Mac, um Entwicklungszertifikate und -profile anzufordern.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 11/17/2017
-ms.openlocfilehash: a411c214e35f78ff9d3dd8d4e9122702d66a2156
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 271d9e3f7ae04f03a132ae2fd0ebf531fe52578c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="automatic-provisioning"></a>Automatische Bereitstellung
 
@@ -24,7 +24,7 @@ _Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in d
 - Xcode 9 oder höher
 
 > [!IMPORTANT]
->  Dieser Leitfaden veranschaulicht, wie Sie Visual Studio für Mac verwenden, um ein Apple-Gerät für die Bereitstellung einzurichten, und wie Sie eine Anwendung bereitstellen. Wie sie dies manuell oder mit Visual Studio unter Windows tun können, erfahren Sie in den detaillierten Schritte im Leitfaden für die [manuelle Bereitstellung](~/ios/get-started/installation/device-provisioning/manual-provisioning.md).
+> Dieser Leitfaden veranschaulicht, wie Sie Visual Studio für Mac verwenden, um ein Apple-Gerät für die Bereitstellung einzurichten, und wie Sie eine Anwendung bereitstellen. Wie sie dies manuell oder mit Visual Studio unter Windows tun können, erfahren Sie in den detaillierten Schritte im Leitfaden für die [manuelle Bereitstellung](~/ios/get-started/installation/device-provisioning/manual-provisioning.md).
 
 ## <a name="enabling-automatic-signing"></a>Aktivieren von „Automatische Signatur“
 

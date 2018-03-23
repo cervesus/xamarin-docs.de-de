@@ -1,6 +1,6 @@
 ---
 title: Apple Pay-Funktionen
-description: "Um Funktionen zu einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitstellungseinrichtung erforderlich. In diesem Leitfaden werden die erforderlichen Einstellungen für die Apple Pay-Funktionen erläutert."
+description: Um Funktionen zu einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitstellungseinrichtung erforderlich. In diesem Leitfaden werden die erforderlichen Einstellungen für die Apple Pay-Funktionen erläutert.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 735CC916-16A4-471B-87F7-0535E24288D7
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: cc2c12ce2826f0b66cdf49a9a4df84d7f67f7713
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 655e9fc81d7079c355998f0da7b41ea7cc778c3f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="apple-pay-capabilities"></a>Apple Pay-Funktionen
 
@@ -116,7 +116,7 @@ Führen Sie die folgenden Schritte aus, um ein Zertifikat zu erstellen:
     ![Erstellen einer Zertifikatsignieranforderung (CSR)](apple-pay-capabilities-images/image45.png)
     
     > [!IMPORTANT]
-> Bei Verwendung eines Zahlungsanbieters für Apple Pay, wie JudoPay oder Stripe, können Sie eine ordnungsgemäß formatierte CSR anfordern, die Sie an diesem Punkt verwenden können. Informationen zu dieser Anforderung befinden sich auf den Websites [JudoPay](https://www.judopay.com/docs/version-52/apple-pay/getting-started/#create-an-apple-pay-certificate) und [Stripe](https://stripe.com/docs/apple-pay/apps#csr). Führen Sie die Schritte 5 bis 8 unten aus, um Ihre eigene CSR zu erstellen. Sobald Sie über eine CSR verfügen, fahren Sie mit Schritt 9 fort.
+    > Bei Verwendung eines Zahlungsanbieters für Apple Pay, wie JudoPay oder Stripe, können Sie eine ordnungsgemäß formatierte CSR anfordern, die Sie an diesem Punkt verwenden können. Informationen zu dieser Anforderung befinden sich auf den Websites [JudoPay](https://www.judopay.com/docs/version-52/apple-pay/getting-started/#create-an-apple-pay-certificate) und [Stripe](https://stripe.com/docs/apple-pay/apps#csr). Führen Sie die Schritte 5 bis 8 unten aus, um Ihre eigene CSR zu erstellen. Sobald Sie über eine CSR verfügen, fahren Sie mit Schritt 9 fort.
 
 5.  Öffnen Sie die Anwendung „Keychain-Zugriff“, und navigieren Sie zu **Keychain-Zugriff > Certificate Assistant (Zertifikatassistent) > Request a Certificate from a Certificate Authority (Ein Zertifikat von einer Zertifizierungsstelle anfordern):** 
 
