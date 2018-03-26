@@ -1,6 +1,6 @@
 ---
-title: "Veröffentlichen im App Store"
-description: "Dieser Leitfaden führt Sie durch die Bereitstellung einer Xamarin.Mac-App mit Visual Studio für Mac. Darin wird beschrieben, wie Sie ein Mac-Entwicklerkonto einrichten, und Sie werden beim Erstellen der Zertifikate für die Codesignatur begleitet. Darüber hinaus wird gezeigt, wie Sie diese Zertifikate verwenden können, um Mac-Apps zu erstellen, die Sie direkt oder über den Mac App Store verteilen können."
+title: Veröffentlichen im App Store
+description: Dieser Leitfaden führt Sie durch die Bereitstellung einer Xamarin.Mac-App mit Visual Studio für Mac. Darin wird beschrieben, wie Sie ein Mac-Entwicklerkonto einrichten, und Sie werden beim Erstellen der Zertifikate für die Codesignatur begleitet. Darüber hinaus wird gezeigt, wie Sie diese Zertifikate verwenden können, um Mac-Apps zu erstellen, die Sie direkt oder über den Mac App Store verteilen können.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: D26C5E54-EAD2-5487-264D-4263AEA1EBF2
@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 86514dbd6b40e9d59ea9a598395cf6f0a3f4889a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e4c7b0913d43d9db3b5414c831864dae8d0b4d61
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Veröffentlichen im App Store
 
@@ -37,7 +37,7 @@ Wenn Sie dem [Mac-Entwicklerprogramm](https://developer.apple.com/devcenter/mac/
 Wählen Sie den richtigen Registrierungstyp für Ihre Situation aus.
 
 > [!NOTE]
-> **Hinweis**: Die hier vorgenommene Auswahl hat Auswirkungen auf die Darstellung einiger Bildschirmanzeigen bei der Konfiguration eines Entwicklerkontos. Die Beschreibungen und Screenshots in diesem Dokument erfolgen aus der Perspektive eines Entwicklerkontos für eine **Einzelperson**. In einem **Unternehmen** sind einige Optionen nur für Benutzer mit der Rolle **Teamadministrator** verfügbar.
+> Die hier vorgenommene Auswahl hat Auswirkungen auf die Darstellung einiger Bildschirmanzeigen bei der Konfiguration eines Entwicklerkontos. Die Beschreibungen und Screenshots in diesem Dokument erfolgen aus der Perspektive eines Entwicklerkontos für eine **Einzelperson**. In einem **Unternehmen** sind einige Optionen nur für Benutzer mit der Rolle **Teamadministrator** verfügbar.
 
 
 ### <a name="certificates-and-identifiersmacdeploy-testpublishing-to-the-app-storecertificates-identifiersmd"></a>[Zertifikate und Bezeichner](~/mac/deploy-test/publishing-to-the-app-store/certificates-identifiers.md)

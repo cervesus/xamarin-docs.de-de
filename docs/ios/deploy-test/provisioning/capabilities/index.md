@@ -1,6 +1,6 @@
 ---
 title: Arbeiten mit Funktionen
-description: "Um Funktionen zu einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitstellungseinrichtung erforderlich. In diesem Leitfaden werden die erforderlichen Einstellungen für alle Funktionen erläutert."
+description: Um Funktionen zu einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitstellungseinrichtung erforderlich. In diesem Leitfaden werden die erforderlichen Einstellungen für alle Funktionen erläutert.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
@@ -8,15 +8,15 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: c038aba3989046e6df062e97ae7f777ae6238ade
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ffc694e2f513d61cf32e94d8dc3bae17c887521b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-capabilities"></a>Arbeiten mit Funktionen
 
-_Um Funktionen zu einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitstellungseinrichtung erforderlich. In diesem Leitfaden werden die erforderlichen Einstellungen für alle Funktionen erläutert._
+_Um Funktionen einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitstellungseinrichtung erforderlich. In diesem Leitfaden werden die erforderlichen Einstellungen für alle Funktionen erläutert._
 
 Apple stellt Entwicklern _Funktionen_, häufig auch _App-Dienste_ genannt, als Werkzeug zur Erweiterung der Funktionen und des Verwendungsspielraums von iOS-Apps zur Verfügung. Mit diesen Funktionen können Entwickler ihrer Anwendung eine umfassendere Integration von Plattformfunktionen hinzufügen, wie z.B. das Einleiten finanzieller Transaktionen in der App, weitere Gerätedienste wie Siri und viele mehr.
 Diese Funktionen können mit Xamarin.iOS-Projekten verwendet werden. Die vollständige Liste der Dienste lautet wie folgt:
@@ -58,7 +58,7 @@ In diesem Abschnitt wird erläutert, wie Sie die automatische Bereitstellung von
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 > [!IMPORTANT]
-> **Hinweis:** Nicht alle Funktionen können in Visual Studio für Mac hinzugefügt und verwaltet werden. Die folgende Liste enthält die unterstützten Funktionen:
+> Nicht alle Funktionen können in Visual Studio für Mac hinzugefügt und verwaltet werden. Die folgende Liste enthält die unterstützten Funktionen:
 >
 >* HealthKit 
 >* HomeKit 
@@ -198,7 +198,7 @@ Erstellen Sie nun ein Bereitstellungsprofil, das diese App-ID enthält. Führen 
     ![Visual Studio für Mac – Projektoptionen](images/image16.png)
 
 > [!IMPORTANT]
-> Hinweis: Möglicherweise müssen Sie auch Berechtigungsschlüssel in der Datei „Entitlement.plist“ sowie Datenschutzschlüssel in der Datei „Info.plist“ festlegen. Weitere Informationen zu diesen Berechtigungen finden Sie im Leitfaden [Working with Entitlements](~/ios/deploy-test/provisioning/entitlements.md) (Arbeiten mit Berechtigungen).
+> Möglicherweise müssen Sie auch Berechtigungsschlüssel in der Datei „Entitlement.plist“ sowie Datenschutzschlüssel in der Datei „Info.plist“ festlegen. Weitere Informationen zu diesen Berechtigungen finden Sie im Leitfaden [Working with Entitlements](~/ios/deploy-test/provisioning/entitlements.md) (Arbeiten mit Berechtigungen).
 
 <a name="nextsteps" />
 
@@ -220,7 +220,7 @@ In der folgenden Liste werden einige der häufigsten Probleme aufgeführt, die z
 -   Stellen Sie sicher, dass die Bereitstellungsprofile und App-IDs installiert wurden und dass die Datei **Info.plist** der App (im Xamarin-Projekt) eine der zuvor konfigurierten App-IDs verwendet.
 -   Stellen Sie sicher, dass für die Datei **Entitlements.plist** der App (im Xamarin-Projekt) der richtige Dienst aktiviert wurde.
 -   Stellen Sie sicher, dass die Datenschutzschlüssel in der Datei „Info.plist“ entsprechend festgelegt sind.
--   Stellen Sie im Bereich **iOS-Bündelsignierung** der App sicher, dass **Benutzerdefinierte Berechtigungen** auf **Entitlements.plist** festgelegt ist. **Hinweis:** Hierbei handelt es sich _nicht_ um die Standardeinstellung für Debug- und iOS-Simulatorbuilds.
+-   Stellen Sie im Bereich **iOS-Bündelsignierung** der App sicher, dass **Benutzerdefinierte Berechtigungen** auf **Entitlements.plist** festgelegt ist. Hierbei handelt es sich _nicht_ um die Standardeinstellung für Debug- und iOS-Simulatorbuilds.
 
 <a name="summary" />
 

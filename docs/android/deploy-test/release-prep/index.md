@@ -1,17 +1,17 @@
 ---
-title: "Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)"
+title: Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9C8145B3-FCF1-4649-8C6A-49672DDA4159
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e440d5ab9f822277a8c0948a9795b9a030fa268c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/21/2018
+ms.openlocfilehash: baaa40bc89a1ca6728189563c8350f9c9f011762
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="preparing-an-application-for-release"></a>Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)
 
@@ -40,13 +40,7 @@ Jeder dieser Schritte wird unten genauer beschrieben.
 
 ## <a name="specify-the-application-icon"></a>Angeben des Anwendungssymbols
 
-Es wird dringend empfohlen, für jede Xamarin.Android-Anwendung ein Anwendungssymbol festzulegen. Einige Anwendungs-Marktplaces werden eine Veröffentlichung einer Android-Anwendung ohne ein solches Symbol nicht genehmigen.
-
-Die Eigenschaft `Icon` für das `Application`-Attribut (Anwendungsattribut) wird zur Festlegung eines Anwendungssymbols für ein Xamarin.Android-Projekt verwendet. Das Attribut kann in der Datei **Properties\AssemblyInfo.cs** deklariert werden, wie im folgenden Beispiel gezeigt wird:
-
-```csharp
-[assembly: Application(Icon = "@drawable/icon")]
-```
+Es wird dringend empfohlen, für jede Xamarin.Android-Anwendung ein Anwendungssymbol festzulegen. Einige Anwendungs-Marktplaces werden eine Veröffentlichung einer Android-Anwendung ohne ein solches Symbol nicht genehmigen. Die Eigenschaft `Icon` für das `Application`-Attribut (Anwendungsattribut) wird zur Festlegung eines Anwendungssymbols für ein Xamarin.Android-Projekt verwendet.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -61,6 +55,15 @@ In Visual Studio für Mac ist es auch möglich, das Anwendungssymbol über den *
 [![Anwendungssymbol festlegen](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png#lightbox)
 
 -----
+
+In diesen Beispielen bezieht sich `@drawable/icon` auf eine Symboldatei, die sich in **Resources/drawable/icon.png** befindet (Beachten Sie, dass die **.PNG**-Erweiterung nicht im Ressourcennamen enthalten ist). Das Attribut kann auch in der Datei **Properties\AssemblyInfo.cs** deklariert werden, wie im folgenden Beispiel gezeigt wird:
+
+```csharp
+[assembly: Application(Icon = "@drawable/icon")]
+```
+
+In der Regel wird `using Android.App` am oberen Rand von **AssemblyInfo.cs** deklariert (der Namespace des `Application`-Attributs ist `Android.App`). Dennoch müssen Sie diese `using`-Anweisung hinzufügen, falls sie noch nicht vorhanden ist.
+
 
 <a name="Versioning" />
 

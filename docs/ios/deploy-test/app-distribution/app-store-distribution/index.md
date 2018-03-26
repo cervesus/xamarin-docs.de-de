@@ -1,6 +1,6 @@
 ---
 title: App Store-Verteilung
-description: "Dieses Dokument behandelt die Anforderungen für die Verteilung an den Mac App Store."
+description: Dieses Dokument behandelt die Anforderungen für die Verteilung an den Mac App Store.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 2ee98b48feb8bc1e3431d796a7ca07a6c2e74790
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 25c4cb980f77880ae690916ec45be3cd12a3cf10
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="app-store-distribution"></a>App Store-Verteilung
 
@@ -37,7 +37,7 @@ Unabhängig davon, wie Sie eine Xamarin.iOS-Anwendung veröffentlichen möchten,
 Sie können dieselbe **App-ID** und dieselben **Geräte** wie für das Entwicklungsbereitstellungsprofil verwenden. Wenn Sie bereits eines besitzen, müssen Sie ein Verteilungszertifikat erstellen, um Ihre Organisation zu identifizieren, wenn Sie die App an den App Store übermitteln. Die Schritte zum Erstellen eines Verteilungszertifikats werden im folgenden Abschnitt beschrieben.
 
 > [!NOTE]
->  Hinweis: Nur Team-Agents und Administratoren können Verteilungszertifikate und Bereitstellungsprofile erstellen.
+> Nur Team-Agents und Administratoren können Verteilungszertifikate und Bereitstellungsprofile erstellen.
 
 <a name="creatingcertificate" />
 
@@ -51,10 +51,10 @@ Sie können dieselbe **App-ID** und dieselben **Geräte** wie für das Entwicklu
     [![](images/createcertmanually01.png "Auswählen von „App Store“ und „Ad-hoc“")](images/createcertmanually01.png#lightbox)
 5. Klicken Sie auf **Continue** (Weiter), und befolgen Sie die Anweisungen zum Erstellen einer Zertifikatsignieranforderung mithilfe des Keychain-Zugriffs:
 
-    [![](images/createcertmanually02.png "Erstellen einer Zertifikatsignieranforderung über Keychain-Zugriff")](images/createcertmanually02.png#lightbox)
+    [![](images/createcertmanually02.png "Eine Zertifikatsignieranforderung über Keychain-Zugriff erstellen")](images/createcertmanually02.png#lightbox)
 6. Sobald Sie die CSR wie beschrieben erstellt haben, klicken Sie auf **Weiter**, und laden Sie die CSR in das Member Center hoch:
 
-    [![](images/createcertmanually03.png "Hochladen der Zertifikatsignieranforderung in das Member Center")](images/createcertmanually03.png#lightbox)
+    [![](images/createcertmanually03.png "Zertifikatsignieranforderung in das Member Center hochladen")](images/createcertmanually03.png#lightbox)
 
 7. Klicken Sie auf **Generate** (Generieren), um das Zertifikat zu erstellen.
 8. Klicken Sie für das abgeschlossene Zertifikat auf **Download** (Herunterladen), und doppelklicken Sie auf die Datei, um sie zu installieren.

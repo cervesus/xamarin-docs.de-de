@@ -1,6 +1,6 @@
 ---
-title: "Einführung in fastlane für iOS"
-description: "Dieser Leitfaden beschreibt die verschiedenen fastlane-Tools zum Hinzufügen einer Codesignatur bei iOS-Anwendungen."
+title: Einführung in fastlane für iOS
+description: Dieser Leitfaden beschreibt die verschiedenen fastlane-Tools zum Hinzufügen einer Codesignatur bei iOS-Anwendungen.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 15ee039fbfa339a9246b2a4234f37caf685c80c6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4bba92180e77accaa42b70843fb5dbf12c94d632
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Einführung in fastlane für iOS
 
@@ -47,7 +47,7 @@ Der Inhalt dieser Anleitung kann als Ausgangspunkt für die Hilfe bei der App-Ve
 2. Laden Sie fastlane-Tools hier herunter: [https://download.fastlane.tools](https://download.fastlane.tools). 
 
     > [!NOTE]
-> Sie können fastlane-Tools auch über Homebrew mit `brew cask install fastlane` installieren oder über Rubygems (2.0 oder höher) mit `sudo gem install fastlane –NV`. Bei der Verwendung des Installers wird jedoch sichergestellt, dass die richtigen Abhängigkeiten verfügbar sind. 
+    > Sie können fastlane-Tools auch über Homebrew mit `brew cask install fastlane` installieren oder über Rubygems (2.0 oder höher) mit `sudo gem install fastlane –NV`. Bei der Verwendung des Installers wird jedoch sichergestellt, dass die richtigen Abhängigkeiten verfügbar sind. 
 
 3. Entzippen Sie die Datei, und doppelklicken Sie auf die ausführbare Datei `install`, um fastlane zu installieren. Wird ein Fehler angezeigt mit der Meldung, dass die Datei „nicht geöffnet werden kann, da sie von einem unbekannten Entwickler stammt“, klicken Sie auf OK, und führen Sie folgende Schritte aus:
     - Halten Sie STRG gedrückt, und klicken Sie auf die ausführbare Datei `install`. Dadurch wird das folgende Dialogfeld angezeigt:

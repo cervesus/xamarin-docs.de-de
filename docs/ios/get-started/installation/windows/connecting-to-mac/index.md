@@ -1,6 +1,6 @@
 ---
 title: Herstellen einer Verbindung mit dem Mac
-description: "Mit Xamarin.iOS für Visual Studio können Entwickler iOS-Anwendungen auf einem Windows-Computer mithilfe der Visual Studio-IDE erstellen und debuggen. In diesem Leitfaden werden die Funktionen von Xamarin.iOS für Visual Studio und das Herstellen einer Verbindung zum Mac-Buildhost erklärt."
+description: Mit Xamarin.iOS für Visual Studio können Entwickler iOS-Anwendungen auf einem Windows-Computer mithilfe der Visual Studio-IDE erstellen und debuggen. In diesem Leitfaden werden die Funktionen von Xamarin.iOS für Visual Studio und das Herstellen einer Verbindung zum Mac-Buildhost erklärt.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: c60927593f062c8ac9694d889ffbf581c09bab82
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e4f7b55fa859473e84298151bc08878bc2161192
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="connecting-to-the-mac"></a>Herstellen einer Verbindung mit dem Mac
 
@@ -39,7 +39,7 @@ Das folgende Diagramm zeigt eine einfache Übersicht über den Xamarin.iOS-Entwi
 [![iOS-Entwicklungsworkflow](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
->  Visual Studio startet einen separaten MSBuild-Prozess zum Erstellen der Projekte. Dieser Prozess stellt eine neue Verbindung mit dem Mac her. Dadurch bestehen tatsächlich zwei SSH-Verbindungen zwischen Windows und Mac während des Build-Prozess von Visual Studio. Bei der Verbindungsherstellung über die [Befehlszeile](#commandline) wird nur der eine MSBuild-Prozess erstellt. Zur Vereinfachung des Diagramms werden die gesamten Verbindungen durch einen Pfeil dargestellt.
+> Visual Studio startet einen separaten MSBuild-Prozess zum Erstellen der Projekte. Dieser Prozess stellt eine neue Verbindung mit dem Mac her. Dadurch bestehen tatsächlich zwei SSH-Verbindungen zwischen Windows und Mac während des Build-Prozess von Visual Studio. Bei der Verbindungsherstellung über die [Befehlszeile](#commandline) wird nur der eine MSBuild-Prozess erstellt. Zur Vereinfachung des Diagramms werden die gesamten Verbindungen durch einen Pfeil dargestellt.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -53,7 +53,7 @@ Die Systemanforderungen finden Sie im Handbuch [Installieren von Xamarin.iOS unt
 #### <a name="compatibility"></a>Kompatibilität
 
 > [!IMPORTANT]
->  Der Windows-Computer muss die gleiche Version von Xamarin.iOS verwenden wie der Mac-Computer, mit dem er verbunden ist. So stellen Sie sicher, dass dies der Fall ist:                                                    
+> Der Windows-Computer muss die gleiche Version von Xamarin.iOS verwenden wie der Mac-Computer, mit dem er verbunden ist. So stellen Sie sicher, dass dies der Fall ist:                                                    
 >                                                                                                                 
 > - **Visual Studio 2015 und frühere Versionen**: Stellen Sie sicher, dass den gleichen [Updatekanal](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/) eingestellt haben wie Visual Studio für Mac.
 >                                                                                                                 
@@ -113,7 +113,7 @@ Doppelklicken Sie auf einen Mac, um ihn auszuwählen und eine Verbindung herzust
 Die Anmeldeinformationen werden vom Agent verwendet, um eine neue SSH-Verbindung mit dem Mac herzustellen. Bei erfolgreicher Anmeldung wird ein SSH-Schlüssel erstellt und in der `authorized_keys`-Datei auf diesem Mac [registriert](#commandline). Bei nachfolgenden Verbindungen verwendet der Agent den Benutzernamen und die Schlüsseldatei, um eine Verbindung mit dem zuletzt verbundenen bekannten Buildhost herzustellen.
 
 > [!NOTE]
->  **Hinweis:** Verwenden Sie bei der Eingabe der Anmeldeinformationen Ihren _Benutzernamen_, nicht Ihren _vollständigen Namen_.  Sie können sich Ihren Benutzernamen über den `whoami`-Befehl im Terminal anzeigen lassen.  Beispielsweise wird der Kontoname des folgenden Screenshots **amyb** und nicht **Amy Burns** lauten:
+> Verwenden Sie bei der Eingabe der Anmeldeinformationen Ihren _Benutzernamen_, nicht Ihren _vollständigen Namen_.  Sie können sich Ihren Benutzernamen über den `whoami`-Befehl im Terminal anzeigen lassen.  Beispielsweise wird der Kontoname des folgenden Screenshots **amyb** und nicht **Amy Burns** lauten:
 >
 > ![Ermitteln des Benutzernamens in der Terminal-App](images/image5.png)
 
