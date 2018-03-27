@@ -1,6 +1,6 @@
 ---
 title: Hello, iOS Multiscreen
-description: "In diesem zweiteiligen Leitfaden wird die Phoneword-Anwendung, die Sie im Leitfaden „Hallo, iOS“ erstellt haben, um die Behandlung eines zweiten Bildschirms erweitert. Außerdem wird das Model-View-Controller-Entwurfsmuster eingeführt, die erste iOS-Navigation implementiert, und es werden die Struktur und Funktionen von iOS-Anwendungen ausführlich beschrieben."
+description: In diesem zweiteiligen Leitfaden wird die Phoneword-Anwendung, die Sie im Leitfaden „Hallo, iOS“ erstellt haben, um die Behandlung eines zweiten Bildschirms erweitert. Außerdem wird das Model-View-Controller-Entwurfsmuster eingeführt, die erste iOS-Navigation implementiert, und es werden die Struktur und Funktionen von iOS-Anwendungen ausführlich beschrieben.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: c866e5f4-8154-4342-876e-efa0693d66f5
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: a7d4af1563cb5fe5166c289c4ee5dca6ad3ffb00
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0c21fbd86fc9069d52f5f5935f66500e9477ca02
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="hello-ios-multiscreen-deep-dive"></a>Ausführliche Erläuterungen: Hallo, iOS Multiscreen
 
@@ -40,7 +40,7 @@ Model View Controller ist ein *Entwurfsmuster*, d.h. eine wiederverwendbare arch
 Das MVC-Muster ist hilfreich, da es die verschiedenen Teile einer GUI-Anwendung logisch trennt und die Wiederverwendung von Codes und Ansichten vereinfacht. Nachfolgend werden die drei Rollen ausführlicher betrachtet.
 
 > [!NOTE]
-> **Hinweis:** Das MVC-Muster entspricht in etwa der Struktur von ASP.NET-Seiten oder WPF-Anwendungen. In diesen Beispielen stellt die Ansicht die für die Beschreibung der Benutzeroberfläche zuständige Komponente dar, die der ASPX-Seite (HTML) in ASP.NET oder der XAML-Seite in einer WPF-Anwendung entspricht. Der Controller ist die für die Verwaltung der Ansicht zuständige Komponente, die dem CodeBehind in ASP.NET oder WPF entspricht.
+> Das MVC-Muster entspricht in etwa der Struktur von ASP.NET-Seiten oder WPF-Anwendungen. In diesen Beispielen stellt die Ansicht die für die Beschreibung der Benutzeroberfläche zuständige Komponente dar, die der ASPX-Seite (HTML) in ASP.NET oder der XAML-Seite in einer WPF-Anwendung entspricht. Der Controller ist die für die Verwaltung der Ansicht zuständige Komponente, die dem CodeBehind in ASP.NET oder WPF entspricht.
 
 
 ### <a name="model"></a>Modell
@@ -52,7 +52,7 @@ MVC ist von der *Datenpersistenz* und dem *Zugriff* auf das Modell völlig unabh
 In einigen Fällen kann die Modellkomponente von MVC auch leer sein. Sie können beispielsweise Ihrer App statische Seiten hinzufügen, in denen erklärt wird, wie das Telefonkonvertierungsprogramm funktioniert, warum es erstellt wurde und welche Kontaktmöglichkeiten es zum Melden von Fehlern gibt. Diese App-Bildschirme werden dann zwar mithilfe von Ansichten und Controllern erstellt, doch sie enthalten keine echten Modelldaten.
 
 > [!NOTE]
-> **Hinweis:** In manchen Dokumentationen bezieht sich die Modellkomponente des MVC-Musters auf das gesamte Back-End der Anwendung und nicht nur auf die in der Benutzeroberfläche angezeigten Daten. In diesem Leitfaden wird allerdings eine moderne Interpretation des Ausdrucks Modell verwendet. Die Unterscheidung ist jedoch nicht von großer Bedeutung.
+> In manchen Dokumentationen bezieht sich die Modellkomponente des MVC-Musters auf das gesamte Back-End der Anwendung und nicht nur auf die auf der Benutzeroberfläche angezeigten Daten. In diesem Leitfaden wird allerdings eine moderne Interpretation des Ausdrucks Modell verwendet. Die Unterscheidung ist jedoch nicht von großer Bedeutung.
 
 
 ### <a name="view"></a>Ansicht

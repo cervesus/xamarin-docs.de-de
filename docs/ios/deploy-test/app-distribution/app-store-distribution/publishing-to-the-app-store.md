@@ -1,6 +1,6 @@
 ---
-title: "Veröffentlichen im App Store"
-description: "In diesem Artikel wird beschrieben, wie Sie eine Xamarin.iOS-Anwendung für die Verteilung über den App Store konfigurieren, erstellen und veröffentlichen. In dieser Anleitung wird erklärt, wie Sie eine Anwendung für die Verteilung vorbereiten, wie Sie sie mithilfe der Tools von Apple zur Überprüfung übermitteln und wie Sie Ihre Anwendung schließlich im App Store veröffentlichen."
+title: Veröffentlichen im App Store
+description: In diesem Artikel wird beschrieben, wie Sie eine Xamarin.iOS-Anwendung für die Verteilung über den App Store konfigurieren, erstellen und veröffentlichen. In dieser Anleitung wird erklärt, wie Sie eine Anwendung für die Verteilung vorbereiten, wie Sie sie mithilfe der Tools von Apple zur Überprüfung übermitteln und wie Sie Ihre Anwendung schließlich im App Store veröffentlichen.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: dfa3d1f89d813f2e57863e615c701cd78c655ac0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ef8fafb923dcad936ce0a049e715cdd163ea7222
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Veröffentlichen im App Store
 
@@ -185,7 +185,7 @@ Nachdem Ihre Xamarin.iOS-Anwendung ordnungsgemäß konfiguriert wurde, können S
 
 
 > [!NOTE]
-> Hinweis: Während der frühere _App Store_ und ältere _Ad-hoc_-Konfigurationen mittlerweile aus allen Visual Studio für Mac-Vorlagenprojekten entfernt wurden, können diese Konfigurationen möglicherweise noch in älteren Projekten enthalten sein. In diesem Fall können Sie die Konfiguration **App Store | Gerät** wie in Schritt 1 oben gezeigt weiterhin verwenden.
+> Während der frühere _App Store_ und ältere _Ad-hoc_-Konfigurationen mittlerweile aus allen Visual Studio für Mac-Vorlagenprojekten entfernt wurden, können diese Konfigurationen möglicherweise noch in älteren Projekten enthalten sein. In diesem Fall können Sie die Konfiguration **App Store | Gerät** wie in Schritt 1 oben gezeigt weiterhin verwenden.
 
 ### <a name="sign-and-distribute-your-app"></a>Signieren und Verteilen der App
 
@@ -309,7 +309,7 @@ Nachdem Ihr Verteilungsbuild erstellt und archiviert wurde, können Sie nun Ihre
 ## <a name="submitting-your-app-to-apple"></a>Übermitteln der App an Apple
 
 > [!NOTE]
-> Hinweis: Der Überprüfungsprozess für iOS-Anwendungen wurde vor Kurzem von Apple geändert. Apps, die `iTunesMetadata.plist` in der IPA-Datei enthalten, werden nun möglicherweise abgelehnt. Tritt bei Ihnen der Fehler `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"` auf, hilft Ihnen die [hier](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1) beschriebene Problemumgehung bei der Lösung des Problems.
+> Der Überprüfungsprozess für iOS-Anwendungen wurde vor Kurzem von Apple geändert. Apps, die `iTunesMetadata.plist` in der IPA-Datei enthalten, werden nun möglicherweise abgelehnt. Tritt bei Ihnen der Fehler `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"` auf, hilft Ihnen die [hier](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1) beschriebene Problemumgehung bei der Lösung des Problems.
 
 Nach Abschluss des Verteilungsbuilds können Sie Ihre iOS-Anwendung nun zur Überprüfung und Freigabe im App Store an Apple übermitteln.
 

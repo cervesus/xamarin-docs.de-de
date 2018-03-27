@@ -1,6 +1,6 @@
 ---
 title: Konfigurieren einer App in iTunes Connect
-description: "Dieser Artikel beschreibt die Einrichtung und Verwaltung einer Xamarin.iOS-Anwendung in iTunes Connect für die Veröffentlichung im App Store."
+description: Dieser Artikel beschreibt die Einrichtung und Verwaltung einer Xamarin.iOS-Anwendung in iTunes Connect für die Veröffentlichung im App Store.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 74587317-4b15-4904-9582-dcd914827cbc
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: dc21b21e28de155aa7a0e7b5cf9734e752cce9a2
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 3d5c84aee12c374317a797aa41446630a441f6df
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Konfigurieren einer App in iTunes Connect
 
@@ -198,7 +198,7 @@ In diesem Abschnitt des iTunes Connect-Anwendungsdatensatzes wird die eindeutige
 ### <a name="app-icon"></a>App-Symbol
 
 > [!IMPORTANT]
->  **Hinweis**: App-Symbole werden nicht mehr über iTunes Connect übermittelt. Sie müssen durch ein **AppIcon**-Bild übermittelt werden, das in der Datei **Assets.xcassets** des Projekts festgelegt ist. Weitere Informationen finden Sie im Handbuch zu [App Store-Symbolen](~/ios/app-fundamentals/images-icons/app-store-icon.md).
+>  App-Symbole werden nicht mehr über iTunes Connect übermittelt. Sie müssen durch ein **AppIcon**-Bild übermittelt werden, das in der Datei **Assets.xcassets** des Projekts festgelegt ist. Weitere Informationen finden Sie im Handbuch zu [App Store-Symbolen](~/ios/app-fundamentals/images-icons/app-store-icon.md).
 
 Das App-Symbol ist das Gesicht Ihrer Anwendung den Benutzern gegenüber. Es muss daher einprägsam und auch bei kleiner Größe gut erkennbar sein. Einprägsame Symbole sind übersichtlich, einfach und sofort wiedererkennbar.
 

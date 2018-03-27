@@ -6,56 +6,138 @@ ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 26ac42e4b7acbe19dee746130fc335fdf18ffc46
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/22/2018
+ms.openlocfilehash: 1b6b8ed99c3b2ccc9c39499c9bb9f585bd335c46
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="android-debug-log"></a>Android-Debugprotokoll
 
+Ein sehr gängiger Trick, den Entwickler verwenden, um ihre Anwendungen zu debuggen, ist das Aufrufen von `Console.WriteLine`. Auf einer mobilen Plattform wie Android steht jedoch keine Konsole zur Verfügung. Android-Geräte stellen ein Protokoll bereit, das Sie beim Schreiben von Apps verwenden können. Dies wird aufgrund des Befehls, den Sie eingeben, um es abzurufen, manchmal als _Logcat_ bezeichnet. Verwenden Sie das **Debugprotokolltool** zum Anzeigen der protokollierten Daten.
+
 ## <a name="android-debug-log-overview"></a>Übersicht: Android-Debugprotokoll
 
-Ein sehr gängiger Trick, den Entwickler verwenden, um ihre Anwendungen zu debuggen, ist das Aufrufen von `Console.WriteLine`. Auf einer mobilen Plattform wie Android steht jedoch keine Konsole zur Verfügung. Android-Geräte stellen ein Protokoll bereit, das Sie beim Schreiben von Apps verwenden können. Dies wird aufgrund des Befehls, den Sie eingeben, um es abzurufen, manchmal als „Logcat“ bezeichnet.
+Das **Debugprotokolltool** bietet die Möglichkeit, während des Debuggens einer App durch Visual Studio Protokollausgaben anzuzeigen. Das Debugprotokoll unterstützt die folgenden Geräte:
 
-## <a name="accessing-from-visual-studio"></a>Zugreifen über Visual Studio
+-   Physische Android-Smartphones, -Tablets und -Wearables
+-   Ein virtuelles Android-Gerät, das auf dem Google Android-Emulator ausgeführt wird. 
 
-In Visual Studio 2015 und höher werden die Android- und iOS-Protokollpad vereinheitlicht.
+> [!NOTE]
+> Das **Debugprotokolltool** funktioniert nicht mit dem Xamarin Live Player.
 
-### <a name="visual-studio-2015--2017"></a>Visual Studio 2015 & 2017
+Das **Debugprotokoll** zeigt keine Protokollmeldungen an, die generiert werden, während die App eigenständig auf dem Gerät ausgeführt wird (z.B. während es von Visual Studio getrennt ist).
 
-In dem neuen Toolfenster „Geräteprotokoll“ für Visual Studio werden die Protokolle für Android- und iOS-Geräte angezeigt. Es kann angezeigt werden, indem Sie einen der folgenden Befehle ausführen: 
+
+## <a name="accessing-the-debug-log-from-visual-studio"></a>Zugreifen auf das Debugprotokoll von Visual Studio
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Klicken Sie auf das **Geräteprotokollsymbol (Logcat)**, um das **Debugprotokolltool** zu öffnen:
+
+[![Position des Geräteprotokolltools in der Symbolleiste](android-debug-log-images/vswin-01-logcat-sml.png)](android-debug-log-images/vswin-01-logcat.png#lightbox)
+
+Alternativ können Sie das **Geräteprotokolltool** über eine der folgenden Menüoptionen starten:
 
 -   **Ansicht > Andere Fenster > Geräteprotokoll**
 -   **Extras > Android > Geräteprotokoll**
--   **Android-Symbolleiste > Geräteprotokoll**
 
-Sobald das Toolfenster angezeigt wird, kann das physische Gerät aus dem Kombinationsfeld für Geräte ausgewählt werden. Nach Auswahl des Geräts wird automatisch mit dem Hinzufügen von Protokolleinträgen aus einer ausgeführten App in der Tabelle begonnen. Wenn Sie zwischen Geräten wechseln, wird die Geräteprotokollierung abgebrochen und erneut gestartet. Ein Android-Projekt muss geladen werden, damit die Geräte im Kombinationsfeld angezeigt werden können. Falls die Geräte nicht im Kombinationsfeld angezeigt werden, müssen Sie zunächst überprüfen, ob sie im Dropdownmenü „Start Debug“ (Debug starten) verfügbar sind. 
+Der folgende Screenshot veranschaulicht die verschiedenen Teile des **Debugtoolfensters**:
 
-Über dieses Toolfenster haben Sie Zugriff auf Folgendes: eine Tabelle mit Protokolleinträgen, ein Kombinationsfeld zur Geräteauswahl, eine Möglichkeit zum Löschen von Protokolleinträgen, ein Suchfeld und die Schaltflächen „Wiedergabe“, „Anhalten“ und „Pause“. 
+[![Bestandteile des Debugtoolfensters](android-debug-log-images/vswin-03-features-sml.png)](android-debug-log-images/vswin-03-features.png#lightbox)
 
+-   **Geräteauswahl**: Wählt aus, welches physische Gerät oder welcher ausgeführter Emulator überwacht werden soll.
+
+-   **Protokolleinträge**: Eine Tabelle mit Protokollmeldungen von Logcat.
+
+-   **Protokolleinträge löschen**: Löscht alle aktuellen Protokolleinträge aus der Tabelle.
+
+-   **Wiedergeben/Pause**: Wechsel zwischen Aktualisieren und Anhalten der Anzeige von neuen Protokolleinträgen.
+
+-   **Beenden**: Hält das Anzeigen von neuen Protokolleinträgen an.
+
+-   **Suchfeld**: Geben Sie Suchzeichenfolgen in dieses Feld ein, um nach einer Teilmenge von Protokolleinträgen zu filtern.
+
+
+Wenn das **Debugprotokoll**-Toolfenster angezeigt wird, verwenden Sie das Pulldownmenü des Geräts, um das Android-Gerät auszuwählen, das überwacht werden soll.
+
+[![Position der Geräteauswahl](android-debug-log-images/vswin-02-devices-combo-sml.png)](android-debug-log-images/vswin-02-devices-combo.png#lightbox)
+
+Nachdem Sie das Gerät ausgewählt haben, fügt das **Geräteprotokoll** automatisch Protokolleinträge aus einer ausgeführten App hinzu. Diese Protokolleinträge werden in der Tabelle für Protokolleinträge angezeigt. Wenn Sie zwischen Geräten wechseln, wird die Geräteprotokollierung abgebrochen und erneut gestartet. Beachten Sie, dass ein Android-Projekt geladen werden muss, bevor Geräte in der Geräteauswahl angezeigt werden. Wenn das Gerät nicht in der Geräteauswahl angezeigt wird, sollten Sie überprüfen, ob es im Geräte-Dropdownmenü von Visual Studio neben der Schaltfläche **Start** verfügbar ist.
+
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+Klicken Sie auf **Ansicht > Bereiche > Geräteprotokoll**, um das **Geräteprotokoll** zu öffnen.
+
+[![Position des Menüelements „Geräteprotokoll“](android-debug-log-images/vsmac-01-logcat-sml.png)](android-debug-log-images/vsmac-01-logcat.png#lightbox)
+
+Der folgende Screenshot veranschaulicht die verschiedenen Teile des **Debugtoolfensters**:
+
+[![Features des Debugtoolfensters](android-debug-log-images/vsmac-03-features-sml.png)](android-debug-log-images/vsmac-03-features.png#lightbox)
+
+-   **Geräteauswahl**: Wählt aus, welches physische Gerät oder welcher ausgeführter Emulator überwacht werden soll.
+
+-   **Protokolleinträge**: Eine Tabelle mit Protokollmeldungen von Logcat.
+
+-   **Protokolleinträge löschen**: Löscht alle aktuellen Protokolleinträge aus der Tabelle.
+
+-   **Suchfeld**: Geben Sie Suchzeichenfolgen in dieses Feld ein, um nach einer Teilmenge von Protokolleinträgen zu filtern.
+
+-   **Meldungen anzeigen**: Schaltet die Anzeige von Informationsmeldungen um.
+
+-   **Warnungen anzeigen**: Schaltet die Anzeige von Warnmeldungen um (Warnmeldungen werden in gelb dargestellt).
+
+-   **Fehler anzeigen**: Schaltet die Anzeige von Fehlermeldungen um (Warnmeldungen werden in rot dargestellt).
+
+-   **Verbindung wiederherstellen**: Stellt erneut eine Verbindung zum Gerät her und aktualisiert die Anzeige des Protokolleintrags.
+
+-   **Marker hinzufügen**: Fügt eine Markernachricht (wie z.B. `--- Marker N ---`) nach dem neuesten Protokolleintrag ein. Dabei ist _N_ ein Zähler, der bei 1 beginnt und bei jedem neu hinzugefügten Marker um 1 erhöht wird.
+
+Wenn das Debugprotokoll-Toolfenster angezeigt wird, verwenden Sie das Pulldownmenü des Geräts, um das Android-Gerät auszuwählen, das überwacht werden soll.
+
+[![Position der Geräteauswahl](android-debug-log-images/vsmac-02-devices-combo-sml.png)](android-debug-log-images/vsmac-02-devices-combo.png#lightbox)
+
+Nachdem Sie das Gerät ausgewählt haben, fügt das **Geräteprotokoll** automatisch Protokolleinträge aus einer ausgeführten App hinzu. Diese Protokolleinträge werden in der Tabelle für Protokolleinträge angezeigt. Wenn Sie zwischen Geräten wechseln, wird die Geräteprotokollierung abgebrochen und erneut gestartet. Beachten Sie, dass ein Android-Projekt geladen werden muss, bevor Geräte in der Geräteauswahl angezeigt werden. Wenn das Gerät nicht in der Geräteauswahl angezeigt wird, sollten Sie überprüfen, ob es im Geräte-Dropdownmenü von Visual Studio neben der Schaltfläche **Start** verfügbar ist.
+
+-----
 
 
 ## <a name="accessing-from-the-command-line"></a>Zugreifen über die Befehlszeile
 
-Eine weitere Möglichkeit für den Zugriff auf das Debugprotokoll stellt der Zugriff über die Befehlszeile dar. Öffnen Sie ein Konsolenfenster, und navigieren Sie zum Android SDK-Ordner „platform-tools“ (Beispiel: **C:\android-sdk-windows\platform-tools**). 
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Wenn nur ein Gerät angeschlossen ist, kann das Protokoll angezeigt werden mit:
+Eine weitere Möglichkeit für den Zugriff auf das Debugprotokoll stellt der Zugriff über die Befehlszeile dar. Öffnen Sie ein Eingabeaufforderungsfenster, und navigieren Sie zum Android SDK-Ordner „platform-tools“ (dieser befindet sich normalerweise unter **C:\\Programme (x86)\\Android\\android-sdk\\platform-tools**).
+
+Wenn nur ein Gerät (physisches Gerät oder Emulator) angefügt ist, kann der Bericht angezeigt werden, indem folgender Befehl eingegeben wird:
 
 ```shell
 $ adb logcat
 ```
 
-Wenn mehrere Geräte angeschlossen sind, muss das Gerät identifiziert werden. Beispiel: `adb -d logcat` zeigt das Protokoll des einzigen angeschlossenen physischen Geräts an, während `adb -e logcat` das Protokoll des einzigen ausgeführten Emulators anzeigt. 
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-Weitere Befehle können gefunden werden, indem nur **adb** ausgeführt wird.
+Eine weitere Möglichkeit für den Zugriff auf das Debugprotokoll stellt der Zugriff über die Befehlszeile dar. Öffnen Sie ein Terminalfenster, und navigieren Sie zum Android SDK-Ordner „platform-tools“ (dieser befindet sich normalerweise unter **/Benutzer/Benutzername/Library/Developer/Xamarin/android-sdk-macosx/platform-tools**).
 
+Wenn nur ein Gerät (physisches Gerät oder Emulator) angefügt ist, kann der Bericht angezeigt werden, indem folgender Befehl eingegeben wird:
+
+```shell
+$ ./adb logcat
+```
+
+-----
+
+
+Wenn mehrere Geräte angefügt sind, muss das Gerät explizit identifiziert werden. Beispiel: **adb -d logcat** zeigt das Protokoll des einzigen angefügten physischen Geräts an, während **adb -e logcat** das Protokoll des einzigen ausgeführten Emulators anzeigt.
+
+Weitere Befehle können gefunden werden, indem **adb** eingegeben wird oder die Hilfemeldungen durchgelesen werden.
 
 
 ## <a name="writing-to-the-debug-log"></a>Schreiben in das Debugprotokoll
 
-Nachrichten können mit Methoden der Klasse [Android.Util.Log](https://developer.xamarin.com/api/type/Android.Util.Log/) in das Debugprotokoll geschrieben werden: 
+Nachrichten können mit Methoden der Klasse [Android.Util.Log**in das**Debugprotokoll](https://developer.xamarin.com/api/type/Android.Util.Log/) geschrieben werden.
+Zum Beispiel: 
 
 ```csharp
 string tag = "myapp";
@@ -65,7 +147,7 @@ Log.Warn (tag, "this is a warning message");
 Log.Error (tag, "this is an error message");
 ```
 
-Dadurch wird Folgendes generiert:
+Dadurch wird eine Ausgabe erzeugt, die der folgenden ähnelt:
 
 ```shell
 I/myapp   (11103): this is an info message
@@ -73,27 +155,27 @@ W/myapp   (11103): this is a warning message
 E/myapp   (11103): this is an error message
 ```
 
-
 ## <a name="interesting-messages"></a>Interessante Nachrichten
 
-Beim Lesen des Protokolls und insbesondere bei der Bereitstellung von Protokollausschnitten für andere (da eine Bereitstellung der vollständigen Protokolldatei mit (1) zu viel Aufwand verbunden ist und die Datei (2) nicht lesbar ist), sollte zunächst mit der *wichtigsten* Zeile begonnen werden, die der folgenden ähnelt:
+Beim Lesen des Protokolls (und besonders bei der Bereitstellung von Protokollausschnitten für andere) ist eine sorgfältige Prüfung der gesamten Protokolldatei oft zu aufwendig.
+Um das Navigieren durch die Protokollnachrichten zu vereinfachen, suchen Sie anfangs nach einem Protokolleintrag, der dem folgenden ähnelt:
 
 ```shell
 I/ActivityManager(12944): Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=GcTest.GcTest/gctest.Activity1 } from pid 24175
 ```
 
-Insbesondere eine Zeile, die mit dem regulären Ausdruck übereinstimmt:
+Suchen Sie insbesondere nach einer Zeile, die mit dem regulären Ausdruck übereinstimmt und außerdem den Namen des Anwendungspakets enthält:
 
 ```shell
 ^I.*ActivityManager.*Starting: Intent
 ```
 
-und den Namen des Anwendungspakets enthält. Diese Zeile entspricht dem Start einer Aktivität, und der *Großteil* (aber nicht alle) der folgenden Nachrichten sollte sich auf die Anwendung beziehen. 
+Diese Zeile entspricht dem Start einer Aktivität, und der *Großteil* (aber nicht alle) der folgenden Nachrichten sollte sich auf die Anwendung beziehen.
 
-Die einzelnen Nachrichten enthalten die Prozesskennung (PID) des Prozesses, der die Nachrichten generiert. In der obigen `ActivityManager`-Nachricht hat Prozess `12944` die Nachricht generiert. Suchen Sie nach der mono.MonoRuntimeProvider-Nachricht, um zu bestimmen, welcher Prozess der gedebuggte Prozess der Anwendung ist: 
+Beachten Sie, dass die einzelnen Nachrichten die Prozesskennung (PID) des Prozesses enthalten, der die Nachrichten generiert. In der obigen `ActivityManager`-Nachricht hat Prozess `12944` die Nachricht generiert. Suchen Sie nach der **mono.MonoRuntimeProvider**-Meldung, um zu bestimmen, welcher Prozess der gedebuggte Prozess der Anwendung ist: 
 
 ```shell
 I/ActivityThread(  602): Pub TouchTest.TouchTest.__mono_init__: mono.MonoRuntimeProvider
 ```
 
-Diese Nachricht stammt aus dem Prozess, der gestartet wurde. Alle nachfolgenden Nachrichten mit übereinstimmender PID stammen aus demselben Prozess. 
+Diese Meldung stammt aus dem Prozess, der gestartet wurde. Alle nachfolgenden Meldungen, die diese PID enthalten, stammen aus dem gleichen Prozess.

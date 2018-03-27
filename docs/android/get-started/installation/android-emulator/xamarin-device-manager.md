@@ -1,18 +1,18 @@
 ---
-title: "Xamarin Android-Geräte-Manager"
-description: "Der Xamarin Android-Geräte-Manager, der sich derzeit in der Vorschauversion befindet, ersetzt den älteren Google Geräte-Manager. In diesem Handbuch wird erläutert, wie Sie den Xamarin Android-Geräte-Manager verwenden, um virtuelle Android-Geräte (AVDs) zu erstellen und zu konfigurieren, die Android-Geräte emulieren. Sie können diese virtuellen Geräte verwenden, um Ihre App auszuführen und zu testen, ohne von einem physischen Gerät abhängig zu sein."
+title: Xamarin Android-Geräte-Manager
+description: Der Xamarin Android-Geräte-Manager, der sich derzeit in der Vorschauversion befindet, ersetzt den älteren Google Geräte-Manager. In diesem Handbuch wird erläutert, wie Sie den Xamarin Android-Geräte-Manager verwenden, um virtuelle Android-Geräte (AVDs) zu erstellen und zu konfigurieren, die Android-Geräte emulieren. Sie können diese virtuellen Geräte verwenden, um Ihre App auszuführen und zu testen, ohne von einem physischen Gerät abhängig zu sein.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/13/2018
-ms.openlocfilehash: c38a0a7f6897cd90f81c92348280539b33524b9c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.date: 03/20/2018
+ms.openlocfilehash: 01fb21729e919872935fd63af28a13642a11fa4b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Xamarin Android-Geräte-Manager
 
@@ -308,7 +308,8 @@ Befolgen Sie diese Schritte, um ein neues Gerät im Bildschirm **Neues Gerät** 
 
 
 <a name="device-edit" />
- 
+
+
 ### <a name="edit-device"></a>Bearbeiten von Geräten
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -415,6 +416,7 @@ Das Menü „Zusätzliche Optionen“ enthält folgende Elemente:
 
 <a name="properties" />
  
+
 ## <a name="profile-properties"></a>Profileigenschaften
 
 Die Bildschirme **Neues Gerät** und **Device Editor** (Geräte-Editor) führen in der ersten Spalte die Eigenschaften des virtuellen Geräts auf. In der zweiten Spalte sind die entsprechenden Werte für jede Eigenschaft enthalten. Wenn Sie eine Eigenschaft auswählen, wird rechts eine ausführliche Beschreibung dieser Eigenschaft angezeigt. Sie können die *Hardwareprofileigenschaften* und die *AVD-Eigenschaften* bearbeiten.
@@ -467,9 +469,9 @@ Weitere Informationen zu diesen Eigenschaften finden Sie unter [Hardwareprofilei
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 Im Folgenden werden häufige Probleme mit dem Xamarin Android-Geräte-Manager sowie Problemumgehungen beschrieben:
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ### <a name="android-sdk-in-non-standard-location"></a>Speicherort von Android SDK weicht vom Standard ab
 
@@ -501,19 +503,64 @@ Gehen Sie folgendermaßen vor, um dieses Problem zu umgehen:
 
 Nachdem Sie diese Änderung an **user.config** vorgenommen haben, sollten Sie den Xamarin Android-Geräte-Manager starten können.
 
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Momentaufnahme deaktiviert WLAN unter Android Oreo
+
+Wenn Sie ein virtuelles Android-Gerät für Android Oreo mit simuliertem WLAN-Zugriff konfiguriert haben, verursacht ein Neustart des virtuellen Android-Geräts nach einer Momentaufnahme eventuell eine Deaktivierung des WLAN-Zugriffs.
+
+Sie können Folgendes tun, um dieses Problem zu umgehen:
+
+1. Wählen Sie das virtuelle Android-Gerät im Xamarin-Geräte-Manager aus.
+
+2. Klicken Sie im Menü „Zusätzliche Optionen“ auf **Im Explorer anzeigen**.
+
+3. Navigieren Sie zu **Momentaufnahme > default_boot**.
+
+4. Löschen Sie die Datei **snapshot.pb**:
+
+    [![Speicherort der snapshot.pb-Datei](xamarin-device-manager-images/win/36-delete-snapshot-sml.png)](xamarin-device-manager-images/win/36-delete-snapshot.png#lightbox)
+
+5. Starten Sie das virtuelle Android-Gerät neu. 
+
+Nach diesen Veränderungen startet das virtuelle Android-Gerät neu in einem Zustand, in dem das WLAN wieder funktioniert.
+
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Momentaufnahme deaktiviert WLAN unter Android Oreo
+
+Wenn Sie ein virtuelles Android-Gerät für Android Oreo mit simuliertem WLAN-Zugriff konfiguriert haben, verursacht ein Neustart des virtuellen Android-Geräts nach einer Momentaufnahme eventuell eine Deaktivierung des WLAN-Zugriffs.
+
+Sie können Folgendes tun, um dieses Problem zu umgehen:
+
+1. Wählen Sie das virtuelle Android-Gerät im Xamarin-Geräte-Manager aus.
+
+2. Klicken Sie im Menü „Zusätzliche Optionen“ auf **Im Finder zeigen**.
+
+3. Navigieren Sie zu **Momentaufnahme > default_boot**.
+
+4. Löschen Sie die Datei **snapshot.pb**:
+
+    [![Speicherort der snapshot.pb-Datei](xamarin-device-manager-images/mac/36-delete-snapshot-sml.png)](xamarin-device-manager-images/mac/36-delete-snapshot.png#lightbox)
+
+5. Starten Sie das virtuelle Android-Gerät neu. 
+
+Nach diesen Veränderungen startet das virtuelle Android-Gerät neu in einem Zustand, in dem das WLAN wieder funktioniert.
+
+-----
+
+
 ### <a name="generating-a-bug-report"></a>Erstellen eines Fehlerberichts
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Wenn Sie mit dem Xamarin Android-Geräte-Manager auf einen Fehler stoßen, der mit den oben genannten Tipps zur Problembehandlung nicht gelöst werden kann, erstellen Sie bitte einen Fehlerbericht, indem Sie einen Rechtsklick auf die Titelleiste ausführen und dann auf **Generate Bug Report** (Fehlerbericht erstellen) klicken:
 
 ![Ort des Menüelements zum Erstellen eines Fehlerberichts](xamarin-device-manager-images/win/35-bug-report.png)
 
+
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-Derzeit gibt es keine bekannten Probleme und zugehörige Problemumgehungen für den Xamarin Android-Geräte-Manager in Visual Studio für Mac. 
-
-### <a name="generating-a-bug-report"></a>Erstellen eines Fehlerberichts
-
-Wenn Sie auf ein Problem stoßen, erstellen Sie bitte einen Fehlerbericht, indem Sie auf **Help > Generate Bug Report** (Hilfe > Fehlerbericht erstellen) klicken:
+Wenn Sie mit dem Xamarin.Android-Geräte-Manager auf einen Fehler stoßen, der mit den oben genannten Tipps zur Problembehandlung nicht gelöst werden kann, erstellen Sie bitte einen Fehlerbericht, indem Sie auf **Hilfe > Fehlerbericht erstellen** klicken:
 
 ![Ort des Menüelements zum Erstellen eines Fehlerberichts](xamarin-device-manager-images/mac/35-bug-report.png)
 

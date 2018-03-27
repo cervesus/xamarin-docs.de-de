@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: ee612d4a8982a6ae505b4d329b9abbc84624a1e0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 66f4dcf14cd179795e9a23bccabe4289d74c7c5b
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android-Umgebung
 
@@ -36,7 +36,7 @@ Kommentare sind Zeilen, die mit `#` beginnen. Leere Zeilen werden ignoriert.
 
 Wenn *key* mit einem Großbuchstaben beginnt, wird *key* als Umgebungsvariable behandelt und **setenv**(3) wird verwendet, um Umgebungsvariablen beim Prozessstart auf den angegebenen *Wert* festzulegen.
 
-Wenn *key* mit einem Kleinbuchstaben beginnt, wird *key* als Android-Systemeigenschaft behandelt, und der *Wert* ist der *Standardwert*: Android-Systemeigenschaften, die das Ausführungsverhalten von Xamarin.Android steuern, werden zuerst vom Android-Systemeigenschaftenserver gesucht, und wenn kein Wert vorhanden ist, wird der Wert verwendet, der in der Umgebungsdatei angegeben wurde. Dadurch ist es möglich, `adb shell setprop` zum Überschreiben von Werten zu Diagnosezwecken zu verwenden, die aus der Umgebungsdatei stammen.
+Wenn *key* mit einem Kleinbuchstaben beginnt, wird *key* als Android-Systemeigenschaft behandelt, und *value* ist der *Standardwert*: Android-Systemeigenschaften, die das Ausführungsverhalten von Xamarin.Android steuern, werden zuerst vom Android-Systemeigenschaftsspeicher gesucht, und wenn kein Wert vorhanden ist, wird der Wert verwendet, der in der Umgebungsdatei angegeben wurde. Dadurch ist es möglich, `adb shell setprop` zum Überschreiben von Werten zu Diagnosezwecken zu verwenden, die aus der Umgebungsdatei stammen.
 
 ## <a name="xamarinandroid-environment-variables"></a>Xamarin.Android-Umgebungsvariablen
 
@@ -45,9 +45,9 @@ Xamarin.Android unterstützt die `XA_HTTP_CLIENT_HANDLER_TYPE`-Variable, die ent
 
 ### `XA_HTTP_CLIENT_HANDLER_TYPE`
 
-Der Typ mit Assemblyqualifikation, der vom [HttpMessageHandler](https://msdn.microsoft.com/en-us/library/system.net.http.httpmessagehandler(v=vs.118).aspx) erben muss und mit dem Standardkonstruktor [`HttpClient()` erstellt wurde](https://msdn.microsoft.com/en-us/library/hh138077(v=vs.118).aspx).
+Der Typ mit Assemblyqualifikation, der vom [HttpMessageHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpmessagehandler?view=xamarinandroid-7.1) erben muss und mit dem Standardkonstruktor [`HttpClient()` erstellt wurde](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=xamarinandroid-7.1#System_Net_Http_HttpClient__ctor).
 
-In Xamarin.Android 6.1 ist diese Umgebungsvariable standardmäßig nicht festgelegt. [HttpClientHandler](https://msdn.microsoft.com/en-us/library/system.net.http.httpclienthandler(v=vs.118).aspx) wird verwendet.
+In Xamarin.Android 6.1 ist diese Umgebungsvariable standardmäßig nicht festgelegt. [HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1) wird verwendet.
 
 Alternativ kann der Wert `Xamarin.Android.Net.AndroidClientHandler` festgelegt werden, um [`java.net.URLConnection`](https://developer.xamarin.com/api/type/Java.Net.URLConnection/) für den Netzwerkzugriff zu verwenden, wodurch *möglicherweise* TLS 1.2 verwendet werden kann, wenn dies von Android unterstützt wird.
 

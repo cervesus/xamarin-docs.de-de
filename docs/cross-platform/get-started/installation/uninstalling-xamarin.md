@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: 9b7738736995835ebb6da68d32bdfbec868e73cc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2c2ba84167924916c3bec27379d33c47e8dab360
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="uninstalling-xamarin"></a>Deinstallieren von Xamarin
 
@@ -69,13 +69,14 @@ rm -rf ~/Library/XamarinStudio-*
 Mono ist eine Open-Source-Implementierung von Microsofts .NET Framework und wird von allen Xamarin-Produkten (Xamarin.iOS, Xamarin.Android und Xamarin.Mac) verwendet, damit diese Plattformen in C# entwickelt werden können.
 
 > [!IMPORTANT]
-> Hinweis: Außerhalb von Xamarin gibt es weitere Anwendungen wie Unity, die ebenfalls Mono verwenden. Achten Sie darauf, dass es keine weiteren Abhängigkeiten mit Mono bestehen, bevor Sie es deinstallieren.
+> Außerhalb von Xamarin gibt es weitere Anwendungen wie Unity, die ebenfalls Mono verwenden. Achten Sie darauf, dass es keine weiteren Abhängigkeiten mit Mono bestehen, bevor Sie es deinstallieren.
 
 Um das Mono-Framework von einem Computer zu entfernen, führen Sie die folgenden Befehle im Terminal aus:
 
 ```bash
 sudo rm -rf /Library/Frameworks/Mono.framework
 sudo pkgutil --forget com.xamarin.mono-MDK.pkg
+sudo rm /etc/paths.d/mono-commands
 ```
 
 <a name="uninstallandroid" />
@@ -257,7 +258,7 @@ Wählen Sie zur vollständigen Deinstallation von Visual Studio 2017 die Option 
 [![](uninstalling-xamarin-images/vs2017-uninstall-sml.png "Vollständige Deinstallation von Visual Studio")](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
 
 > [!IMPORTANT]
-> **WARNUNG:** Wenn mindestens zwei Instanzen von Visual Studio – z.B. eine Release- und eine Vorschauversion – parallel installiert sind (SxS), kann das Deinstallieren einer Instanz dazu führen, dass einige Xamarin-Funktionen aus anderen Visual Studio-Instanzen entfernt werden. Zu diesen Funktionen zählen:
+> Wenn mindestens zwei Instanzen von Visual Studio – z.B. eine Release- und eine Vorschauversion – parallel installiert sind (SxS), kann das Deinstallieren einer Instanz dazu führen, dass einige Xamarin-Funktionen aus anderen Visual Studio-Instanzen entfernt werden. Zu diesen Funktionen zählen:
 >
 > - Xamarin Profiler
 > - Xamarin Workbooks/Inspector

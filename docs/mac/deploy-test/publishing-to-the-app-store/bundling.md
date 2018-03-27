@@ -1,6 +1,6 @@
 ---
-title: "Bündeln für den Mac App Store"
-description: "Dieser Leitfaden enthält Informationen zum Bündeln einer Xamarin.Mac-App für die Veröffentlichung im Mac App Store."
+title: Bündeln für den Mac App Store
+description: Dieser Leitfaden enthält Informationen zum Bündeln einer Xamarin.Mac-App für die Veröffentlichung im Mac App Store.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
@@ -8,18 +8,18 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 77365d5ed62b2ef2e81407ab1fa5aef55c592d0b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c3f94b448539b2e4073c7d8a1092df066e484dfc
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="bundle-for-mac-app-store"></a>Für den Mac App Store bündeln
 
 In diesem Abschnitt werden die Grundlagen der Erstellung einer Anwendung mit Visual Studio für Mac beschrieben, die im Mac App Store angeboten werden soll. Auf der Grundlage von zusätzlichen Funktionen (wie dem Zugang zu iCloud und Pushbenachrichtigungen) ist möglicherweise zusätzliches Setup notwendig, dessen Beschreibung den Rahmen dieses Artikels sprengen würde.
 
 > [!NOTE]
->  **Hinweis**: Bevor der Entwickler mit den folgenden Anweisungen beginnen kann, muss er zunächst ein sogenanntes Produktionsbereitstellungsprofil erstellen, um eine Anwendung für den Mac App Store entwickeln zu können. Sehen Sie sich die Anweisungen oben zur Erstellung des erforderlichen Bereitstellungsprofils an.
+> Bevor der Entwickler mit den folgenden Anweisungen beginnen kann, muss er zunächst ein sogenanntes Produktionsbereitstellungsprofil erstellen, um eine Anwendung für den Mac App Store entwickeln zu können. Sehen Sie sich die Anweisungen oben zur Erstellung des erforderlichen Bereitstellungsprofils an.
 
 ## <a name="code-signing-options"></a>Optionen zum Codesignieren
 

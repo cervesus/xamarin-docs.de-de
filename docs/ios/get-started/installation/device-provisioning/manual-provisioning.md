@@ -1,6 +1,6 @@
 ---
 title: Manuelle Bereitstellung
-description: "Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieser Leitfaden behandelt das Anfordern von Entwicklungszertifikaten und -profilen, das Arbeiten mit App-Diensten und das Bereitstellen einer App auf Geräten."
+description: Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieser Leitfaden behandelt das Anfordern von Entwicklungszertifikaten und -profilen, das Arbeiten mit App-Diensten und das Bereitstellen einer App auf Geräten.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: e42b9d0b5eb64c17c96b66c9dbae7582551a06a0
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: ecda5823636a1b2d7e31a39e29f1d46cdf7118b6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="manual-provisioning"></a>Manuelle Bereitstellung
 
@@ -85,7 +85,7 @@ Das Entwicklerprofil enthält Zertifikate, die zugeordneten Schlüssel und belie
 -----
 
 > [!WARNING]
-> **Hinweis:** Der Verlust des Zertifikats und der zugehörigen Schlüssel kann äußerst störend sein, da vorhandene Zertifikate gesperrt und zugeordnete Geräte erneut bereitgestellt werden müssen, einschließlich der für die Ad-hoc-Bereitstellung registrierten Geräte. Nach dem erfolgreichen Einrichten der Entwicklungszertifikate exportieren Sie eine Sicherungskopie und speichern sie an einem sicheren Ort. Weitere Informationen hierzu finden Sie in Abschnitt „Exporting and Importing Certificates and Profiles“ (Exportieren und Importieren von Zertifikaten und Profilen) des Handbuchs [Maintaining Certificates (Verwalten von Zertifikaten)](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html) in der Apple-Dokumentation.
+> Der Verlust des Zertifikats und der zugehörigen Schlüssel kann äußerst ungünstig sein, da vorhandene Zertifikate gesperrt und zugeordnete Geräte erneut bereitgestellt werden müssen, einschließlich der für die Ad-hoc-Bereitstellung registrierten Geräte. Nach dem erfolgreichen Einrichten der Entwicklungszertifikate exportieren Sie eine Sicherungskopie und speichern sie an einem sicheren Ort. Weitere Informationen hierzu finden Sie in Abschnitt „Exporting and Importing Certificates and Profiles“ (Exportieren und Importieren von Zertifikaten und Profilen) des Handbuchs [Maintaining Certificates (Verwalten von Zertifikaten)](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html) in der Apple-Dokumentation.
 
 <a name="provisioning" />
 
@@ -209,12 +209,12 @@ Die neuen Zertifikate oder Bereitstellungsprofile sind in Visual Studio für Mac
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 > [!IMPORTANT]
-> **Hinweis:** Es kann erforderlich sein, Visual Studio für Mac zu beenden und neu zu starten, bevor neue oder geänderte Zertifikate oder von Xcode aktualisierte Profile angezeigt werden.
+> Möglicherweise müssen Sie Visual Studio für Mac beenden und neu starten, bevor neue oder geänderte Zertifikate oder von Xcode aktualisierte Profile angezeigt werden.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 > [!IMPORTANT]
-> **Hinweis:** Manchmal ist es erforderlich, Visual Studio zu beenden und neu zu starten, bevor neue oder geänderte Zertifikate oder von Xcode aktualisierte Profile angezeigt werden.
+> Möglicherweise müssen Sie Visual Studio beenden und neu starten, bevor neue oder geänderte Zertifikate oder von Xcode aktualisierte Profile angezeigt werden.
 
 -----
 

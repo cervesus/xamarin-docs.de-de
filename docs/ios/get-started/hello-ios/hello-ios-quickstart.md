@@ -1,6 +1,6 @@
 ---
 title: Hello, iOS
-description: "Dieser zweiteilige Leitfaden beschreibt, wie Sie mit Visual Studio für Mac oder Visual Studio eine einfache Xamarin.iOS-Anwendung erstellen. Außerdem erhalten Sie Einblick in die grundlegenden Aspekte der Entwicklung von iOS-Anwendungen mit Xamarin. Es werden die Tools, Konzepte und Schritte eingeführt, die zum Erstellen und Bereitstellen einer Xamarin.iOS-Anwendung erforderlich sind."
+description: Dieser zweiteilige Leitfaden beschreibt, wie Sie mit Visual Studio für Mac oder Visual Studio eine einfache Xamarin.iOS-Anwendung erstellen. Außerdem erhalten Sie Einblick in die grundlegenden Aspekte der Entwicklung von iOS-Anwendungen mit Xamarin. Es werden die Tools, Konzepte und Schritte eingeführt, die zum Erstellen und Bereitstellen einer Xamarin.iOS-Anwendung erforderlich sind.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: D3868F3A-4EED-BDDF-45AA-665102C39634
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 7b1d56c62fe54d5b1e196e20e1a6989b542da1be
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6a26bb42ee0abcec70d17633152dd12bd200a737
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="helloios-quickstart"></a>Schnellstart für Hallo.iOS
 
@@ -90,7 +90,7 @@ Klicken Sie auf dem Startbildschirm auf **Neues Projekt...**, um eine neue Xamar
   ![](hello-ios-quickstart-images/image8new.png "Ziehen Sie eine Bezeichnung auf die Entwurfsoberfläche, den Bereich in der Mitte")
 
   > [!NOTE]
-> **Hinweis:** Sie können das **Eigenschaftenpad** oder die **Toolbox** jederzeit durch Navigieren zu **Ansicht > Pads** öffnen.
+  > Sie können das **Eigenschaftenpad** oder die **Toolbox** jederzeit durch Navigieren zu **Ansicht > Bereiche** öffnen.
 
 9. Ziehen Sie die Ziehpunkte der *Dragging Controls* (Ziehsteuerelemente) (die Kreise, um das Steuerelement herum), und verbreitern Sie die Bezeichnung:
 
@@ -268,9 +268,8 @@ Klicken Sie auf dem Startbildschirm auf **Neues Projekt...**, um eine neue Xamar
 
   ![](hello-ios-quickstart-images/image27new.png "Klicken Sie auf „Start“")
 
-
   > [!NOTE]
-> **Hinweis:** Aktuell kann es aufgrund einer Anforderung von Apple erforderlich sein, ein Entwicklungszertifikat oder eine *Signierungsidentität* zu besitzen, um Code für ein Gerät oder den Simulator zu erstellen. Führen Sie dazu die Schritte im Handbuch [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) aus.
+  > Aktuell kann es aufgrund einer Anforderung von Apple erforderlich sein, ein Entwicklungszertifikat oder eine *Signierungsidentität* zu besitzen, um Code für ein Gerät oder den Simulator zu erstellen. Führen Sie dazu die Schritte im Handbuch [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) aus.
 
 28. Damit wird die Anwendung im iOS-Simulator gestartet.
 
@@ -289,7 +288,7 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung 
 **Hinweis**: In dieser exemplarischen Vorgehensweise wird Visual Studio Enterprise 2017 auf einem virtuellen Computer mit Windows 10 verwendet. Ihre Einrichtung kann sich davon unterscheiden, solange sie die oben genannten Anforderungen erfüllt, aber beachten Sie, dass einige Screenshots sich von Ihrer Einrichtung unterscheiden können.
 
 > [!NOTE]
-> **Bevor Sie mit dieser exemplarischen Vorgehensweise fortfahren**, _müssen_ Sie bereits eine Verbindung von Visual Studio zu Ihrem Mac hergestellt haben. Dies liegt daran, dass Xamarin.iOS auf die Apple-Tools zum Erstellen und Starten des iOS Designers und der Anwendungen zurückgreift. Um zu beginnen, führen Sie die Schritte im [Connecting to Mac (Herstellen einer Verbindung mit Mac)](~/ios/get-started/installation/windows/connecting-to-mac/index.md)-Handbuch aus.
+> Bevor Sie mit dieser exemplarischen Vorgehensweise fortfahren, müssen Sie bereits eine Verbindung von Visual Studio zu Ihrem Mac hergestellt haben. Dies liegt daran, dass Xamarin.iOS auf die Apple-Tools zum Erstellen und Starten des iOS Designers und der Anwendungen zurückgreift. Um zu beginnen, führen Sie die Schritte im [Connecting to Mac (Herstellen einer Verbindung mit Mac)](~/ios/get-started/installation/windows/connecting-to-mac/index.md)-Handbuch aus.
 
 1. Starten Sie Visual Studio im **Start**-Menü:
 
@@ -333,7 +332,7 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung 
   ![](hello-ios-quickstart-images/vs-image10.png "Ändern Sie die Eigenschaft „Text“ der Bezeichnung in „Phoneword eingeben“")
 
   > [!NOTE]
-> **Hinweis:** Sie können die **Eigenschaften** oder die **Toolbox** jederzeit durch Navigieren zum Menü **Ansicht** nutzen.
+  > Sie können die **Eigenschaften** oder die **Toolbox** jederzeit durch Navigieren zum Menü **Ansicht** nutzen.
 
 
 9. Suchen Sie nach „Textfeld“ in der Toolbox, und ziehen Sie ein **Textfeld** aus der **Toolbox** auf die Entwurfsoberfläche, und platzieren Sie es unter der **Bezeichnung**. Passen Sie die Breite so an, bis die Breite des **Textfelds** mit jener der **Bezeichnung** identisch ist:
@@ -377,7 +376,7 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung 
   ![](hello-ios-quickstart-images/vs-image19.png "Fügen Sie eine neue Klasse mit dem Namen „PhoneTranslator“ hinzu")
 
   > [!IMPORTANT]
-> Stellen Sie sicher, dass Sie die Vorlage „Klasse“ auswählen, die ein C# im Symbol enthält. Andernfalls können Sie nicht auf diese neue Klasse verweisen.
+  > Stellen Sie sicher, dass Sie die Vorlage „Klasse“ auswählen, die ein C# im Symbol enthält. Andernfalls können Sie nicht auf diese neue Klasse verweisen.
 
 
 17. Dadurch wird eine neue C#-Klasse erstellt. Entfernen Sie den gesamten Vorlagencode, und ersetzen Sie Ihn durch den Folgenden:

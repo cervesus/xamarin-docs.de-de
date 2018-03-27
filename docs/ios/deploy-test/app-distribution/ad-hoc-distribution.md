@@ -1,6 +1,6 @@
 ---
 title: Ad-hoc-Verteilung
-description: "Dieser Artikel bietet einen Überblick über Ad-hoc-Verteilungstechniken, die in erster Linie zum Testen einer Xamarin.iOS-Anwendung mit einer großen Gruppe von Personen verwendet werden."
+description: Dieser Artikel bietet einen Überblick über Ad-hoc-Verteilungstechniken, die in erster Linie zum Testen einer Xamarin.iOS-Anwendung mit einer großen Gruppe von Personen verwendet werden.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d01130989336ada855e936a6597b517fab5ee69
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e0db9df11436cf1613ac5eacdf293245f99b8855
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ad-hoc-distribution"></a>Ad-hoc-Verteilung
 
@@ -39,7 +39,7 @@ Selbst wenn Sie beabsichtigen, eine Xamarin.iOS-Anwendung für die interne Berei
 Im nächste Abschnitt wird die Erstellung eines Verteilungszertifikats und eines Bereitstellungsprofils für die Verteilung beschrieben.
 
 > [!NOTE]
->  Hinweis: Nur Team-Agents und Administratoren können Verteilungszertifikate und Bereitstellungsprofile erstellen.
+> Nur Team-Agents und Administratoren können Verteilungszertifikate und Bereitstellungsprofile erstellen.
 
 <a name="createcertificate" />
 
@@ -55,11 +55,11 @@ Im nächste Abschnitt wird die Erstellung eines Verteilungszertifikats und eines
 
 5. Klicken Sie auf „Continue“ (Weiter), und befolgen Sie die Anweisungen zur Erstellung einer Zertifikatsignieranforderung (CSR) mithilfe des Keychain-Zugriffs:
 
-  [![](ad-hoc-distribution-images/createcertmanually02.png "Erstellen Sie eine Zertifikatsignieranforderung über Keychain-Zugriff")](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
+  [![](ad-hoc-distribution-images/createcertmanually02.png "Eine Zertifikatsignieranforderung über Keychain-Zugriff erstellen")](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
 
 6. Sobald Sie die CSR wie beschrieben erstellt haben, klicken Sie auf „Continue“ (Weiter), und laden Sie die CSR in das Member Center hoch:
 
-  [![](ad-hoc-distribution-images/createcertmanually03.png "Laden Sie die Zertifikatsignieranforderung in das Member Center hoch")](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
+  [![](ad-hoc-distribution-images/createcertmanually03.png "Zertifikatsignieranforderung in das Member Center hochladen")](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
 
 7. Klicken Sie auf „Generate“ (Generieren), um das Zertifikat zu erstellen.
 8. Laden Sie das abgeschlossene Zertifikat herunter, und doppelklicken Sie auf die Datei, um sie zu installieren.

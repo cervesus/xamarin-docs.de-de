@@ -1,6 +1,6 @@
 ---
 title: Arbeiten mit Berechtigungen
-description: "Berechtigungen sind besondere App-Funktionen und Sicherheitsberechtigungen, die Anwendungen gewährt werden, die für deren Verwendung konfiguriert sind."
+description: Berechtigungen sind besondere App-Funktionen und Sicherheitsberechtigungen, die Anwendungen gewährt werden, die für deren Verwendung konfiguriert sind.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 837a18fa09b7b1da3cf2d16d6e3e350250ae0829
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 8b5c88f4af3087f980b586113c274016935585c0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-entitlements"></a>Arbeiten mit Berechtigungen
 
@@ -32,7 +32,7 @@ Die entitlements.plist-Datei wird verwendet, um Berechtigungen anzugeben und das
 Allerdings müssen einige zusätzliche Bereitstellungen getätigt werden, um sicherzustellen, dass die App ordnungsgemäß codesigniert wird. Das verwendete Bereitstellungsprofil muss eine App-ID enthalten, für die die erforderlichen Funktionen aktiviert sind. Informationen, wie Sie dies erreichen, finden Sie unter [Working with Capabilities (Arbeit mit Funktionen)](~/ios/deploy-test/provisioning/capabilities/index.md).
 
 > [!IMPORTANT]
-> Hinweis: Die entitlements.plist-Datei hilft beim Ausfüllen der korrekten Eigenschaften für eine Anwendung mit Funktionen. Allerdings kann Sie kein Bereitstellungsprofil erstellen, da Sie nicht mit einem Apple-Entwicklerkonto verknüpft ist. Sie müssen trotzdem ein Bereitstellungsprofil im Entwicklerportal erstellen, um die Anwendung bereitzustellen und zu verteilen.
+> Die Entitlements.plist-Datei hilft beim Ausfüllen der korrekten Eigenschaften für eine Anwendung mit Funktionen. Allerdings kann Sie kein Bereitstellungsprofil erstellen, da Sie nicht mit einem Apple-Entwicklerkonto verknüpft ist. Sie müssen trotzdem ein Bereitstellungsprofil im Entwicklerportal erstellen, um die Anwendung bereitzustellen und zu verteilen.
 
 ## <a name="set-entitlements-in-a-xamarinios-project"></a>Festlegen von Berechtigungen im Xamarin.iOS-Projekt
 

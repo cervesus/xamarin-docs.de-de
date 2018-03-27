@@ -1,6 +1,6 @@
 ---
-title: "Hallo, iOS: Ausführliche Erläuterungen"
-description: "Dieser zweiteilige Leitfaden beschreibt, wie Sie mit Visual Studio für Mac oder Visual Studio eine einfache Xamarin.iOS-Anwendung erstellen. Außerdem erhalten Sie Einblick in die grundlegenden Aspekte der Entwicklung von iOS-Anwendungen mit Xamarin. Es werden die Tools, Konzepte und Schritte eingeführt, die zum Erstellen und Bereitstellen einer Xamarin.iOS-Anwendung erforderlich sind."
+title: 'Hallo, iOS: Ausführliche Erläuterungen'
+description: Dieser zweiteilige Leitfaden beschreibt, wie Sie mit Visual Studio für Mac oder Visual Studio eine einfache Xamarin.iOS-Anwendung erstellen. Außerdem erhalten Sie Einblick in die grundlegenden Aspekte der Entwicklung von iOS-Anwendungen mit Xamarin. Es werden die Tools, Konzepte und Schritte eingeführt, die zum Erstellen und Bereitstellen einer Xamarin.iOS-Anwendung erforderlich sind.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 61ba3a7e-fe11-4439-8bc8-9809512b8eff
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d7a458a0a0c2da1dbb40ae7222fcd35cf7172953
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 500c3d1c6f38427a921097a0c3104254ec5cb263
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Hallo, iOS: Ausführliche Erläuterungen
 
@@ -306,7 +306,7 @@ public partial class ViewController : UIViewController
 `ViewController` führt jetzt die Interaktionen der Hierarchie von Inhaltsansichten durch, die diesem Ansichtscontroller im Storyboard zugeordnet sind. Als Nächstes erfahren Sie mehr über die Rolle des Ansichtscontrollers bei der Verwaltung der Ansichten, indem ein Prozess namens Ansichtslebenszyklus eingeführt wird.
 
 > [!NOTE]
-> **Hinweis:** Für rein visuelle Anzeigen, die keine Benutzerinteraktion erfordern, kann die Eigenschaft **Klasse** im **Eigenschaftenpad** leer gelassen werden. Dadurch wird die Sicherungsklasse des Ansichtscontrollers als standardmäßige Implementierung von `UIViewController` festgelegt. Dies eignet sich, wenn Sie keinen benutzerdefinierten Code hinzufügen möchten.
+> Für rein visuelle Anzeigen, die keine Benutzerinteraktion erfordern, kann die Eigenschaft **Class** im **Eigenschaftenpad** leer gelassen werden. Dadurch wird die Sicherungsklasse des Ansichtscontrollers als standardmäßige Implementierung von `UIViewController` festgelegt. Dies eignet sich, wenn Sie keinen benutzerdefinierten Code hinzufügen möchten.
 
 ### <a name="view-lifecycle"></a>Ansichtslebenszyklus
 
@@ -416,7 +416,7 @@ Der iOS-Simulator ist eine schnelle Möglichkeit zum Testen einer Anwendung. Der
 Ein Gerät benötigt Zeit für die Bereitstellung und erfordert ein Apple-Entwicklerkonto. Das Handbuch [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md) enthält umfassende Anweisungen, mit denen ein Gerät für die Entwicklung vorbereitet werden kann.
 
 > [!NOTE]
-> **Hinweis:** Apple erfordert derzeit ein Entwicklungszertifikat oder eine _Signierungsidentität_, um Code auf dem Gerät oder im Simulator zu erstellen. Führen Sie dazu die Schritte im Handbuch [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) aus.
+> Apple erfordert derzeit ein Entwicklungszertifikat oder eine _Signierungsidentität_, um Code auf dem Gerät oder im Simulator zu erstellen. Führen Sie dazu die Schritte im Handbuch [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) aus.
 
 Sobald das Gerät bereitgestellt wurde, können Sie es bereitstellen, indem Sie es anschließen, das Ziel in der Buildsymbolleiste in das iOS-Gerät ändern und wie im folgenden Screenshot veranschaulicht auf **Starten** (**Wiedergeben**) drücken:
 
