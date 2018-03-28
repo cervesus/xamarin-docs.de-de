@@ -7,17 +7,17 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 29b846453396d37adc689fe49e80299e8f35bbe2
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 3b1894555c27e368fc80cc4ebaa1f6b40446e2aa
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="binding-objective-c-libraries"></a>Binden von Objective-C-Bibliotheken
 
 Bei der Arbeit mit Xamarin.iOS oder Xamarin.Mac können Fälle auftreten, in dem Sie eine Drittanbieter-Objective-C-Bibliothek nutzen möchten. In solchen Situationen können Sie Projekte für Xamarin-Bindung verwenden, erstellen eine C#-Bindung an den systemeigenen Objective-C-Bibliotheken. Das Projekt verwendet den gleichen Tools, mit denen wir die IOS- und Mac-APIs in c# zu bringen.
 
-Dieses Dokument wird beschrieben, wie Objective-C-APIs gebunden, wenn Sie C-APIs binden, sollten Sie den Standardmechanismus für .NET verwenden, hierzu [das P/Invoke-Framework](http://mono-project.com/Dllimport).
+Dieses Dokument wird beschrieben, wie Objective-C-APIs gebunden, wenn Sie C-APIs binden, sollten Sie den Standardmechanismus für .NET verwenden, hierzu [das P/Invoke-Framework](http://www.mono-project.com/docs/advanced/pinvoke/).
 Details zum C-Bibliothek statisch verknüpft sind verfügbar, auf die [systemeigene Bibliotheken verknüpfen](~/ios/platform/native-interop.md) Seite.
 
 Finden Sie in unserem Companion [Typen Referenzhandbuch binden](~/cross-platform/macios/binding/binding-types-reference.md).

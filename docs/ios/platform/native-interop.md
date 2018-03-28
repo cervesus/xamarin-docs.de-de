@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/28/2016
-ms.openlocfilehash: 9299d2b37825298d3defa18a9f5137e11b29f6ce
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 99e565c2268bec6d80c4976e604333cbd2f160a3
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="referencing-native-libraries"></a>Verweisen auf systemeigene Bibliotheken
 
@@ -105,7 +105,7 @@ Die systemeigene Bibliothek enthält C++-Code müssen Sie das Flag - cxx aufweis
 
 <a name="Accessing_C_Methods_from_C#" />
 
-## <a name="accessing-c-methods-from-c35"></a>Zugreifen auf die C-Methoden von C &#35;
+## <a name="accessing-c-methods-from-c35"></a>Der Zugriff auf C#-Methoden von C&#35;
 
 Es stehen zwei Arten von systemeigenen Bibliotheken auf iOS:
 
@@ -114,7 +114,7 @@ Es stehen zwei Arten von systemeigenen Bibliotheken auf iOS:
 -  Statische Bibliotheken, die Sie mit der Anwendung ausgeliefert wird.
 
 
-Verwenden Sie in einem dieser beiden definierten Methoden für den Zugriff auf [Mono P/Invoke-Funktionalität](http://www.mono-project.com/Interop_with_Native_Libraries) ist die gleiche Technologie, die Sie in .NET verwenden würden also ungefähr:
+Verwenden Sie in einem dieser beiden definierten Methoden für den Zugriff auf [Mono P/Invoke-Funktionalität](http://www.mono-project.com/docs/advanced/pinvoke/) ist die gleiche Technologie, die Sie in .NET verwenden würden also ungefähr:
 
 -  Bestimmen Sie die C-Funktion, die Sie aufrufen möchten.
 -  Bestimmen der Signatur

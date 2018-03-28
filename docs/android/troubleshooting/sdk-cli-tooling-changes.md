@@ -1,6 +1,6 @@
 ---
-title: "Änderungen an den Tools von Android SDK"
-description: "Änderungen an wie das Android SDK installierten API-Ebenen und AVDs verwaltet."
+title: Änderungen an den Tools von Android SDK
+description: Änderungen an wie das Android SDK installierten API-Ebenen und AVDs verwaltet.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 69e9f08870a01c056951700978d07277af5edfa8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a16aa3704d9e0a63cfabde4b620452e7e2a5bf57
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Änderungen an den Tools von Android SDK
 
@@ -20,7 +20,7 @@ _Änderungen an wie das Android SDK installierten API-Ebenen und AVDs verwaltet.
 
 ## <a name="changes-to--android-sdk-tooling"></a>Änderungen an den Android SDK-Tools
 
-In modernen der SDK-Tools für Android-Versionen wurde Google entfernt, die vorhandenen AVD und SDK-Manager für neue _Befehlszeilenschnittstelle_ (CLI)-Tools. Die erste **android** Programm wurde entfernt und die grafische Benutzeroberfläche (Graphical User Interface)-Manager in Visual Studio für Mac und früheren Versionen von Xamarin für Visual Studio hinter Version Android SDK-Tools nicht mehr funktionieren.
+In modernen der SDK-Tools für Android-Versionen wurde Google die vorhandenen AVD und SDK-Manager für neue CLI (Command Line Interface)-Tools entfernt. Die erste **android** Programm wurde entfernt und die grafische Benutzeroberfläche (Graphical User Interface)-Manager in Visual Studio für Mac und früheren Versionen von Xamarin für Visual Studio früheren Version 25.2.5 Android SDK-Tools nicht mehr funktionieren.
 
 
 ![Android-IDE-Menü in Visual Studio](sdk-cli-tooling-changes-images/android-ide-menu.png)
@@ -50,7 +50,7 @@ Es wird ein neues Programm aufgerufen **Sdkmanager** in der **Tools/Bin** Ordner
 
 **Hinzugefügt In:** Android SDK-Tools 25.3.0 (März 2017) und höher.
 
-Es wird ein neues Programm aufgerufen **Avdmanager** in der **Tools/Bin** Ordner Ihres Android SDK. Dieses Tool wird verwendet, um die AVD für Android-Emulators für Google beizubehalten. Weitere Informationen zur Verwendung dieses Tools finden Sie unter [Avdmanager](https://developer.android.com/studio/command-line/avdmanager.html).
+Es wird ein neues Programm aufgerufen **Avdmanager** in der **Tools/Bin** Ordner Ihres Android SDK. Dieses Tool wird verwendet, um die AVDs für Android-Emulators für Google beizubehalten. Weitere Informationen zur Verwendung dieses Tools finden Sie unter [Avdmanager](https://developer.android.com/studio/command-line/avdmanager.html).
 
 ### <a name="downgrading"></a>Ausführen eines Downgrades für
 
@@ -58,13 +58,13 @@ Können Sie ein downgrade Ihrer **Android SDK-Tools** Version durch die Installa
 
 ### <a name="using-the-old-gui"></a>Mithilfe der alten GUI
 
-Sie können weiterhin die ursprünglichen GUI verwenden, durch Ausführen der **android** Programmieren in Ihre **Tools** Ordner solange Sie sich befinden **Android SDK-Tools** Version **25.2.5**  oder niedriger.
+Sie können weiterhin die ursprünglichen GUI verwenden, durch Ausführen der **android** Programmieren in Ihre **Tools** Ordner solange Sie sich befinden **Android SDK-Tools** Version **25.2.5 ** oder niedriger.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Android SDK-Setup](~/android/get-started/installation/android-sdk.md)
-- [Grundlegendes zu Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md)
-- [Anmerkungen zu dieser Version (Google) SDK-Tools](https://developer.android.com/studiohttps://developer.xamarin.com/releases/sdk-tools.html)
+- [Verstehen von Android API-Ebenen](~/android/app-fundamentals/android-api-levels.md)
+- [Anmerkungen zu dieser Version von SDK Tools (Google)](https://developer.android.com/studio/releases/sdk-tools.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
-- [avdmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
+- [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)

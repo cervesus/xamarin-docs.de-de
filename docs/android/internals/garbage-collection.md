@@ -7,15 +7,15 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/15/2018
-ms.openlocfilehash: db277f20e63a59690ffaa8a8544ff9540578d3f5
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: e27e9577957229f347b217a8920eac239799da15
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="garbage-collection"></a>Garbage Collection
 
-Xamarin.Android verwendet Mono [einfache Generationen-Garbage Collectors](http://www.mono-project.com/Compacting_GC). Dies ist eine Markierung Sweep Garbage collection mit zwei Generationen und ein *LOB Speicherplatz*, mit zwei Arten von Auflistungen: 
+Xamarin.Android verwendet Mono [einfache Generationen-Garbage Collectors](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/). Dies ist eine Markierung Sweep Garbage collection mit zwei Generationen und ein *LOB Speicherplatz*, mit zwei Arten von Auflistungen: 
 
 -   Kleinere Sammlungen (sammelt Gen0 Heap) 
 -   Wichtigen Auflistungen (sammelt Gen1 und LOB space Heaps). 

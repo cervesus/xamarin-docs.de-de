@@ -1,16 +1,16 @@
 ---
-title: "Einschränkungen"
+title: Einschränkungen
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 43b099e8ddd6acc3e8cc4ce94580313a39a0c686
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c099797f0687f198ed220c1bd366bd93ab6c6e99
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="limitations"></a>Einschränkungen
 
@@ -25,7 +25,7 @@ Dies sind die im Vergleich zum Desktop Mono Xamarin.iOS-Einschränkungen:
 
 Im Gegensatz zu herkömmlichen Mono/.NET wird Code auf dem iPhone statisch voraus anstatt bei Bedarf kompiliert wird, die vom JIT-Compiler kompiliert.
 
-Mono [vollständige AOT](http://www.mono-project.com/AOT#Full_AOT) Technologie gelten einige Einschränkungen in Bezug auf Generika, werden diese verursacht, da nicht alle möglichen generische Instanziierung Vorfeld zur Kompilierzeit bestimmt werden kann. Dies ist kein Problem für den regulären .NET oder Mono-Laufzeiten, wie der Code immer zur Laufzeit mithilfe von der Just in Time-Compiler kompiliert wird. Aber dies stellt eine Herausforderung für einen statischen Compiler wie Xamarin.iOS.
+Mono [vollständige AOT](http://www.mono-project.com/docs/advanced/aot/#full-aot) Technologie gelten einige Einschränkungen in Bezug auf Generika, werden diese verursacht, da nicht alle möglichen generische Instanziierung Vorfeld zur Kompilierzeit bestimmt werden kann. Dies ist kein Problem für den regulären .NET oder Mono-Laufzeiten, wie der Code immer zur Laufzeit mithilfe von der Just in Time-Compiler kompiliert wird. Aber dies stellt eine Herausforderung für einen statischen Compiler wie Xamarin.iOS.
 
 Einige der am häufigsten Probleme, die Entwickler, die auftreten können, gehören:
 
@@ -117,13 +117,10 @@ In standard Mono ist es möglich, C#-Delegatinstanzen zu nicht verwaltetem Code 
 
 In Mono diesen Bridges implementiert werden, durch den Just-in-Time Compiler. Wenn mit den ahead des Time-Compiler das iPhone erforderlich, dass es zu diesem Zeitpunkt sind zwei wichtige Einschränkungen:
 
--  Sie müssen alle Ihre Rückrufmethoden mit kennzeichnen die [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/MonoPInvokeCallbackAttribute/) 
+-  Sie müssen alle Ihre Rückrufmethoden mit kennzeichnen die [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 
 -  Die Methoden verfügen über statische Methoden sein, es gibt keine Unterstützung für die Instanz Methoden. 
-
-
  
- <a name="No_Remoting" />
-
+<a name="No_Remoting" />
 
 ## <a name="no-remoting"></a>Keine Remoting
 

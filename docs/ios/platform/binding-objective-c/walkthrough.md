@@ -1,6 +1,6 @@
 ---
-title: "Exemplarische Vorgehensweise: Binden einer iOS-Bibliothek für Objective-C"
-description: "Dieser Artikel bietet eine praktische Exemplarische Vorgehensweise zur Erstellung einer Xamarin.iOS Bindung für eine vorhandene Objective-C-Bibliothek InfColorPicker. Es umfasst Themen wie z. B. Kompilieren einer statischen Bibliothek für Objective-C gebunden wird, und Verwenden der Bindung in einem Xamarin.iOS-Anwendung."
+title: 'Exemplarische Vorgehensweise: Binden einer iOS-Bibliothek für Objective-C'
+description: Dieser Artikel bietet eine praktische Exemplarische Vorgehensweise zur Erstellung einer Xamarin.iOS Bindung für eine vorhandene Objective-C-Bibliothek InfColorPicker. Es umfasst Themen wie z. B. Kompilieren einer statischen Bibliothek für Objective-C gebunden wird, und Verwenden der Bindung in einem Xamarin.iOS-Anwendung.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: e4619f5b1d3f888b2557cf894aaa83106504766f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 44ed651413d66866f131a294158525440278b291
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Exemplarische Vorgehensweise: Binden einer iOS-Bibliothek für Objective-C
 
@@ -94,7 +94,7 @@ Mit den Befehlszeilentools installiert sind wir auf mit der exemplarischen Vorge
 In dieser exemplarischen Vorgehensweise wird beschrieben, die folgenden Schritte aus:
 
 - **[Erstellen Sie eine statische Bibliothek](#Creating_A_Static_Library)**  – dieser Schritt umfasst das Erstellen einer statischen Bibliothek von der **InfColorPicker** Objective-C-Code. Die statische Bibliothek müssen die `.a` Dateierweiterung und werden in der .NET-Assembly des Library-Projekts eingebettet werden.
-- **[Erstellen Sie ein Projekt der Xamarin.iOS Bindung](#Create_a_Xamarin.iOS_Binding_Project)**  -Sobald wir eine statische Bibliothek verfügen, wird verwendet, um ein Xamarin.iOS Bindung-Projekt erstellen. Das bindungsprojekt besteht aus der statischen Bibliothek gerade erstellten und Metadaten in Form von C#-Code, der erklärt, wie die Objective-C-API verwendet werden kann. Diese Metadaten wird häufig als die API-Definitionen bezeichnet. Wir verwenden  **[Ziel Sharpie](#Using_Objective_Sharpie)**  helfen Sie uns mit der API-Definitionen zu erstellen.
+- **[Erstellen Sie ein Projekt der Xamarin.iOS Bindung](#Create_a_Xamarin.iOS_Binding_Project)**  -Sobald wir eine statische Bibliothek verfügen, wird verwendet, um ein Xamarin.iOS Bindung-Projekt erstellen. Das bindungsprojekt besteht aus der statischen Bibliothek gerade erstellten und Metadaten in Form von C#-Code, der erklärt, wie die Objective-C-API verwendet werden kann. Diese Metadaten wird häufig als die API-Definitionen bezeichnet. Wir verwenden **[Ziel Sharpie](#Using_Objective_Sharpie)** helfen Sie uns mit der API-Definitionen zu erstellen.
 - **[Die API-Definitionen zu normalisieren,](#Normalize_the_API_Definitions)**  – Ziel Sharpie eignet sich gut unterstützen Sie uns, aber nicht alle Funktionen. Einige Änderungen erläutert, die wir benötigen, um auf die API-Definitionen zu machen, bevor sie verwendet werden können.
 - **[Verwenden Sie die Bindung Library](#Using_the_Binding)**  -wir erstellen schließlich eine Xamarin.iOS-Anwendung, um mit unserer neu erstellte bindungsprojekt anzuzeigen.
 
@@ -159,7 +159,7 @@ Der erste Schritt ist für uns InfoColorPicker Quellcode in der statischen Bibli
 
     [![](walkthrough-images/image16b.png "Erweitern Sie den Abschnitt Link Binärdatei mit Bibliotheken")](walkthrough-images/image16b.png#lightbox)
 
-13. Verwenden der  **+**  Schaltfläche Öffnen Sie das Dialogfeld, sodass Sie die erforderlichen Frames Frameworks, die oben aufgeführten hinzufügen:
+13. Verwenden der **+** Schaltfläche Öffnen Sie das Dialogfeld, sodass Sie die erforderlichen Frames Frameworks, die oben aufgeführten hinzufügen:
 
     [![](walkthrough-images/image16c.png "Fügen Sie, dass die erforderlichen Frames Frameworks oben aufgeführten hinzu.")](walkthrough-images/image16c.png#lightbox)
 
@@ -183,7 +183,7 @@ Erstellen eine Fat binäre ist drei Schritten:
 
 Während diese drei Schritte unkompliziert sind, und es erforderlich sein kann, sie in der Zukunft wiederholen, wenn Fehlerbehebungen sind erforderlich, oder die Objective-C-Bibliothek aktualisiert wird. Wenn Sie diese Schritte automatisieren möchten, wird die künftige Wartung und Unterstützung der iOS-bindungsprojekt vereinfacht.
 
-Es stehen zahlreiche Tools zum Automatisieren von Aufgaben – z. B. ein Shellskript verfügbar [Neigungswinkel](http://rake.rubyforge.org/), [Xbuild](http://www.mono-project.com/Microsoft.Build), und [stellen](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Wenn wir die Xcode-Befehlszeilentools installiert haben, installiert wir außerdem vergewissern, dass das Buildsystem, die für diese exemplarische Vorgehensweise verwendet werden. Hier ist ein **Makefile** , mit denen Sie können eine Architektur mit mehreren freigegebene Bibliothek erstellen, die auf einem iOS-Gerät und der Simulator für jede der Bibliothek funktioniert:
+Es stehen zahlreiche Tools zum Automatisieren von Aufgaben – z. B. ein Shellskript verfügbar [Neigungswinkel](http://rake.rubyforge.org/), [Xbuild](http://www.mono-project.com/docs/tools+libraries/tools/xbuild/), und [stellen](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Wenn wir die Xcode-Befehlszeilentools installiert haben, installiert wir außerdem vergewissern, dass das Buildsystem, die für diese exemplarische Vorgehensweise verwendet werden. Hier ist ein **Makefile** , mit denen Sie können eine Architektur mit mehreren freigegebene Bibliothek erstellen, die auf einem iOS-Gerät und der Simulator für jede der Bibliothek funktioniert:
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild

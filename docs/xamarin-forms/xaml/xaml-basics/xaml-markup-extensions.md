@@ -1,18 +1,18 @@
 ---
 title: Teil 3. Verwendung von XAML-Markuperweiterungen
-description: "Verwendung von XAML-Markuperweiterungen bilden eine wichtige Funktion in XAML, die ermöglichen, Eigenschaften festgelegt werden, um Objekte oder Werte, die aus anderen Quellen indirekt verwiesen werden. Verwendung von XAML-Markuperweiterungen sind besonders wichtig für das Freigeben von Objekten, und verweisen auf die Konstanten, die in einer Anwendung verwendet, aber sie finden ihre größte Hilfsprogramm im datenbindungen."
+description: Verwendung von XAML-Markuperweiterungen bilden eine wichtige Funktion in XAML, die ermöglichen, Eigenschaften festgelegt werden, um Objekte oder Werte, die aus anderen Quellen indirekt verwiesen werden. Verwendung von XAML-Markuperweiterungen sind besonders wichtig für das Freigeben von Objekten, und verweisen auf die Konstanten, die in einer Anwendung verwendet, aber sie finden ihre größte Hilfsprogramm im datenbindungen.
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
-ms.date: 10/25/2017
-ms.openlocfilehash: 1c5c4c30a7e506e19fc4dc0728fb55851ec4911f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 3/27/2018
+ms.openlocfilehash: cd881b79945c2b9c10e9bb1bc85fce98acb71026
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Teil 3. Verwendung von XAML-Markuperweiterungen
 
@@ -45,7 +45,7 @@ Einige XAML-Seiten enthalten mehrere Ansichten mit Eigenschaften, die auf die gl
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
         <Button Text="Do that!"
                 HorizontalOptions="Center"
@@ -53,7 +53,7 @@ Einige XAML-Seiten enthalten mehrere Ansichten mit Eigenschaften, die auf die gl
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
         <Button Text="Do the other thing!"
                 HorizontalOptions="Center"
@@ -61,7 +61,7 @@ Einige XAML-Seiten enthalten mehrere Ansichten mit Eigenschaften, die auf die gl
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
     </StackLayout>
 </ContentPage>
@@ -136,7 +136,7 @@ Jetzt festgelegt werden muss die `HorizontalOptions` und `VerticalOptions` Eigen
         BorderWidth="3"
         Rotation="-15"
         TextColor="Red"
-        FontSize="Large" />
+        FontSize="24" />
 ```
 
 Die `StaticResource` Markuperweiterung immer mit geschweiften Klammern begrenzt wird, und der Wörterbuchschlüssel enthält.
@@ -192,7 +192,7 @@ Diese beiden Ressourcen verwiesen werden können, auf die gleiche Weise wie die 
         BorderWidth="{StaticResource borderWidth}"
         Rotation="{StaticResource rotationAngle}"
         TextColor="Red"
-        FontSize="Large" />
+        FontSize="24" />
 ```
 
 Für Ressourcen vom Typ `Color`, können Sie die gleichen zeichenfolgendarstellungen, die Sie verwenden, wenn Sie Attribute dieser Typen direkt zuweisen. Der Typkonverter werden aufgerufen, wenn die Ressource erstellt wird. Hier ist eine Ressource vom Typ `Color`:
@@ -201,14 +201,10 @@ Für Ressourcen vom Typ `Color`, können Sie die gleichen zeichenfolgendarstellu
 <Color x:Key="textColor">Red</Color>
 ```
 
-Die `FontSize` Eigenschaft stellt ein wenig Problem dar. Die Eigenschaft wird definiert, Datentyp `double`. Beim Festlegen der Eigenschaft an ein Mitglied der `NamedSize` Enumeration wie z. B. `Large`, die `FontSizeConverter` -Klasse arbeitet im Hintergrund in einer mithilfe von plattformabhängigen Wert konvertieren die `Device.GetNamedSized` Methode.
-
-Allerdings keine Ressource für einen Schriftgrad als definieren eine `double` und legen Sie den Wert "Groß". Zum Zeitpunkt der Verwendung von XAML-Parser die Ressource verarbeitet weiß er nicht, dass der Wert als eine Schriftgröße verwendet wird. 
-
-Die Lösung besteht darin, die Ressource als definieren eine `string` mithilfe der `x:String` Typ:
+Häufig Programme Satz ein `FontSize` Eigenschaft an ein Mitglied der `NamedSize` Enumeration wie z. B. `Large`. Die `FontSizeConverter` -Klasse arbeitet im Hintergrund in einer mithilfe von plattformabhängigen Wert konvertieren die `Device.GetNamedSized` Methode. Jedoch wenn Sie eine Schriftgröße Ressource definieren, es ist sinnvoller mit einem numerischen Wert dargestellt hier als ein `x:Double` Typ:
 
 ```xaml
-<x:String x:Key="fontSize">Large</x:String>
+<x:Double x:Key="fontSize">24</x:Double>
 ```
 
 Jetzt alle Eigenschaften außer `Text` werden durch die Einstellungen definiert:
@@ -275,7 +271,7 @@ So sieht die letzte vollständige XAML-Datei mit drei Schaltflächen, die Zugrif
                 BorderWidth="{StaticResource borderWidth}"
                 Rotation="{StaticResource rotationAngle}"
                 TextColor="{StaticResource textColor}"
-                FontSize"{StaticResource fontSize}" />
+                FontSize="{StaticResource fontSize}" />
 
         <Button Text="Do that!"
                 HorizontalOptions="{StaticResource horzOptions}"

@@ -6,15 +6,14 @@ ms.assetid: 5341D28E-B203-478D-8464-6FAFDC3A4110
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: e71c6ea816b8b732d21148db32fd9395732dd4c0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/27/2018
+ms.openlocfilehash: f02f77eb45086d1d568b367b28163a4773dcd80d
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="replacing-the-action-bar"></a>Ersetzen der Aktionsleiste
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -38,7 +37,7 @@ In den folgenden Abschnitten wird dieser Prozess im Detail erläutert. Eine einf
 
 ## <a name="start-an-app-project"></a>Starten Sie ein App-Projekt
 
-Erstellen Sie ein neues Android-Projekt namens **ToolbarFun** (finden Sie unter [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) für Weitere Informationen zum Erstellen eines neuen Android-Projekts). Nachdem das Projekt erstellt wurde, legen Sie die Ziel- und mindestens Android-API-Ebenen auf **Android 5.0.x (API-Ebene 21 - Lollipop)**. Weitere Informationen zu Android Versionsebenen festlegen, finden Sie unter [Grundlegendes zu Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md). Wenn die app erstellt und ausgeführt wird, zeigt die Aktionsleiste Standard, wie in diesem Screenshot dargestellt: 
+Erstellen Sie ein neues Android-Projekt namens **ToolbarFun** (finden Sie unter [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) für Weitere Informationen zum Erstellen eines neuen Android-Projekts). Nachdem das Projekt erstellt wurde, legen Sie die Ziel- und mindestens Android-API-Ebenen auf **Android 5.0.x (API-Ebene 21 - Lollipop)** oder höher. Weitere Informationen zu Android Versionsebenen festlegen, finden Sie unter [Grundlegendes zu Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md). Wenn die app erstellt und ausgeführt wird, zeigt die Aktionsleiste Standard, wie in diesem Screenshot dargestellt:
 
 [![Screenshot der Aktionsleiste Standard](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
 
@@ -76,6 +75,8 @@ Ein Olivgrün gefärbt `colorPrimary` Einstellung wird für die Hintergrundfarbe
 ```xml
 <item name="android:colorPrimary">#5A8622</item>
 ```
+
+## <a name="apply-the-custom-theme"></a>Anwenden von benutzerdefinierten Designs
 
 Bearbeiten Sie **Properties/AndroidManifest.xml** und fügen Sie die folgenden `android:theme` -Attribut auf die `<application>` Element so, dass die app verwendet die `MyTheme` benutzerdefiniertes Design: 
 
@@ -136,12 +137,6 @@ Bearbeiten Sie die Layoutdatei **Resources/layout/Main.axml** und Ersetzen Sie d
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
-    <Button
-        android:id="@+id/MyButton"
-        android:layout_below="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello World, Click Me!" />
 </RelativeLayout>
 ```
 
@@ -171,6 +166,7 @@ Dieser Code sucht den `Toolbar` und ruft `SetActionBar` , damit die `Toolbar` au
 
 Beachten Sie, dass die `Toolbar` formatiert wird, unabhängig von der `Theme.Material.Light.DarkActionBar` Design, das für den Rest der app angewendet wird. 
 
+Eine Ausnahme tritt beim Ausführen der app, finden Sie unter der [Problembehandlung](#troubleshooting) Abschnitt weiter unten.
 
  
 ## <a name="add-menu-items"></a>Hinzufügen von Menüelementen 
@@ -193,7 +189,7 @@ Die folgenden Abschnitte zeigen diesen Vorgang im Detail durch Hinzufügen von *
 
 ### <a name="install-menu-icons"></a>Installieren Sie im Menüsymbole
 
-Fortsetzen der `ToolbarFun` Beispiel-app fügen Sie im Menüsymbole der app-Projekt. Herunterladen [Symbolleiste icons.zip](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons.zip?raw=true) und Entpacken Sie es. Kopieren Sie den Inhalt von den extrahierten *Mipmap -* Ordnern dem Projekt *Mipmap -* Ordner unter **ToolbarFun/Ressourcen** und jede hinzugefügte Icon-Datei in das Projekt einfügen.
+Fortsetzen der `ToolbarFun` Beispiel-app fügen Sie im Menüsymbole der app-Projekt. Herunterladen [Symbole](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons-plus.zip?raw=true)entpacken und kopieren Sie den Inhalt von den extrahierten *Mipmap -* Ordnern dem Projekt *Mipmap -* Ordner unter **ToolbarFun / Ressourcen** und jede hinzugefügte Icon-Datei in das Projekt einfügen.
 
 
 ### <a name="define-a-menu-resource"></a>Definieren Sie eine Menüressource
@@ -277,6 +273,19 @@ Wenn ein Benutzer die Überlaufmenü tippt der **Voreinstellungen** Menüelement
 Weitere Informationen zu Android-Menüs, finden Sie in der Android-Entwickler [Menüs](https://developer.android.com/guide/topics/ui/menus.html) Thema. 
  
 
+## <a name="troubleshooting"></a>Problembehandlung
+
+Die folgenden Tipps können helfen, Probleme zu debuggen, die auftreten können, während die Aktionsleiste durch eine Symbolleiste ersetzen.
+
+### <a name="activity-already-has-an-action-bar"></a>Aktivität verfügt bereits über eine Action-Leiste
+
+Wenn die app nicht ordnungsgemäß um ein benutzerdefiniertes Design zu verwenden konfiguriert ist, wie in beschrieben [Anwenden von benutzerdefinierten Designs](#apply-the-custom-theme), die folgende Ausnahme kann auftreten, während der Ausführung der app:
+
+![Fehler, die auftreten können, wenn benutzerdefinierte Designs nicht verwendet wird](replacing-the-action-bar-images/03-theme-not-defined.png)
+
+Darüber hinaus eine Fehlermeldung wie z. B. Folgendes erzeugt: _Java.Lang.IllegalStateException: Diese Aktivität ist bereits eine Aktionsleiste, die durch die Fenster Dekoration angegeben._ 
+
+Um diesen Fehler zu beheben, überprüfen Sie, dass die `android:theme` -Attribut für die benutzerdefinierte Designs hinzugefügt wird `<application>` (in **Properties/AndroidManifest.xml**) wie zuvor im [Anwenden von benutzerdefinierten Designs](#apply-the-custom-theme). Darüber hinaus, dass dieser Fehler kann werden verursacht, wenn die `Toolbar` Layout oder Design "benutzerdefinierten" wurde nicht ordnungsgemäß konfiguriert.
 
 
 ## <a name="related-links"></a>Verwandte Links

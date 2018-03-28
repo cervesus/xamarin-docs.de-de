@@ -6,17 +6,17 @@ ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 3fa01d8f28dc1c86f9d4a8ee4d9fc0a9cdb8ee9c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7b7f64288695ecc0f9f57ec670c4e9ff2e44804c
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="objective-c-selectors"></a>Selektoren Objective-C
 
 Die Objective-C-Sprache basiert auf *Selektoren*. Ein Selektor ist eine Nachricht, die auf ein Objekt gesendet werden können oder eine *Klasse*. [Xamarin.iOS](~/ios/internals/api-design/index.md) Maps Selektoren auf Instanzmethoden Instanz und Klasse Selektoren statischen Methoden.
 
-Im Gegensatz zu normalen C-Funktionen (und wie die C++-Memberfunktionen) Sie nicht direkt aufrufen, eine Auswahl mit [P/Invoke](http://www.mono-project.com/Dllimport).
+Im Gegensatz zu normalen C-Funktionen (und wie die C++-Memberfunktionen) Sie nicht direkt aufrufen, eine Auswahl mit [P/Invoke](http://www.mono-project.com/docs/advanced/pinvoke/).
 (*Reserviert*: theoretisch können Sie P/Invoke für nicht virtuelle C++-Memberfunktionen, jedoch müssen Sie kümmern pro Compiler namenszerlegung, also in einer Welt mit Probleme besser ignoriert.) Stattdessen Selektoren werden gesendet, um eine Objective-C-Klasse oder Instanz mithilfe der [ `objc_msgSend` Funktion](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend).
 
 Möglicherweise ist [dabei hilfreich für Objective-C-messaging](http://developer.apple.com/iphone/library/documentation/cocoa/conceptual/ObjCRuntimeGuide/Articles/ocrtHowMessagingWorks.html) nützlich.
