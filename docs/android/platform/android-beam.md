@@ -7,15 +7,15 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/06/2017
-ms.openlocfilehash: e9936bb523db8ba8777df94a03bf12f9fa718fca
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 08d15095c8d1d08a65f18d5ad867efdd89d3b795
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="android-beam"></a>Android Beam
 
-Android Balken ist eine neue Near Field Communication (NFC)-Technologie in Android 4, die Clientanwendungen ermöglicht, Informationen über NFC in der Nähe freigeben.
+Android Balken ist eine Near Field Communication (NFC)-Technologie, die in Android 4.0, die Clientanwendungen ermöglicht, Freigeben von Informationen über NFC in der Nähe eingeführt.
 
 [![Diagramm zur Veranschaulichung zwei Geräte in der Nähe, Informationen gemeinsam nutzen](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/17/2017
-ms.openlocfilehash: d7c5bedb03d7c869be65e3c704bac58a9cdfcbbd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ab075cad0c3f3456ed23f3eb175dcdb3aa493510
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="troubleshooting"></a>Problembehandlung
 
@@ -25,7 +25,7 @@ Diesem Artikel erläutert einige der häufigsten Probleme sowie Schritte, um die
 
 Tritt auf, wenn das mobile Gerät mit Xamarin-Live-Player im selben Netzwerk wie der Computer mit der IDE nicht ist. Sehen Sie sich Folgendes:
 
-- Vergewissern Sie sich, dass das Gerät und der Computer im selben WiFi-Netzwerk sind.
+- Vergewissern Sie sich, dass das Gerät und der Computer im selben Wi-Fi-Netzwerk sind.
   - Wenn der Computer auch mit einem verkabelten Netzwerk verbunden ist, versuchen Sie die drahtgebundene Verbindung trennen.
 - Das Netzwerk möglicherweise eng gesichert werden (z. B. Unternehmensnetzwerken), den von Xamarin Live Player erforderlichen Ports blockieren.
 - Schließen Sie die Xamarin-Live-Player-Anwendung, und starten Sie ihn neu.
@@ -35,12 +35,92 @@ Tritt auf, wenn das mobile Gerät mit Xamarin-Live-Player im selben Netzwerk wie
 
 **"IOException: kann nicht zum Lesen von Daten von der übertragungsverbindung: Vorgang auf Socket nicht blockierend würde blockieren."**
 
-Dieser Fehler wird häufig aufgetreten ist, wenn das mobile Gerät mit Xamarin Live Player nicht im selben Netzwerk wie der Computer mit der IDE ist; Dies erfolgt häufig auf, wenn auf einem Gerät eine Verbindung herstellen, die zuvor erfolgreich zugewiesen wurde.
+Dieser Fehler wird häufig aufgetreten ist, wenn das mobile Gerät mit Xamarin Live Player nicht im selben Netzwerk wie der Visual Studio-Computer ist; Dies erfolgt häufig auf, wenn auf einem Gerät eine Verbindung herstellen, die zuvor erfolgreich zugewiesen wurde.
 
-* Überprüfen Sie, dass das Gerät und der Computer im selben WiFi-Netzwerk sind.
+* Überprüfen Sie, dass das Gerät und der Computer im selben Wi-Fi-Netzwerk sind.
 * Das Netzwerk möglicherweise eng gesichert werden (z. B. Unternehmensnetzwerken), den von Xamarin Live Player erforderlichen Ports blockieren. Die folgenden Ports sind für die Xamarin-Live-Player erforderlich:
   * 37847 – internen Netzwerkzugriff 
   * 8090 – externe Netzwerkzugriff
+
+## <a name="manually-configure-device"></a>Konfigurieren Sie Gerät manuell.
+
+Wenn Sie nicht auf Ihr Gerät über WLAN verbinden können können Sie versuchen, Ihr Gerät über die XML-Konfigurationsdatei mit den folgenden Schritten manuell zu konfigurieren:
+
+**Schritt 1: Öffnen der Konfigurationsdatei**
+
+Rufen Sie Anwendungsordner für Daten:
+
+* Windows: **%userprofile%\AppData\Roaming**
+* macOS: **~/Users/$USER/.config**
+
+In diesem Ordner finden Sie **PlayerDeviceList.xml** , wenn er nicht vorhanden ist, müssen zu erstellen.
+
+**Schritt 2: Abrufen der IP-Adresse**
+
+Wechseln Sie in der Live-Player Xamarin-app zu **zu > Verbindungstest > Verbindungstest starten**.
+
+Beachten Sie die IP-Adresse, benötigen Sie die IP-Adresse aufgelistet, wenn Sie Ihr Gerät konfigurieren.
+
+**Schritt 3: Rufen Sie Kopplung Code ab**
+
+Innerhalb der Xamarin-Live-Player Tap **Paar** oder **Paar erneut**, drücken Sie dann die **manuell eingeben**. Ein numerischer Code wird angezeigt, die müssen Sie die Konfigurationsdatei aktualisieren.
+
+**Schritt 4: GUID generiert.**
+
+Wechseln Sie zu: https://www.guidgenerator.com/online-guid-generator.aspx und generieren Sie eine neue Guid und sicherzustellen, dass Großbuchstaben auf.
+
+
+**Schritt 5: Konfigurieren von Gerät**
+
+Öffnen Sie die **PlayerDeviceList.xml** in einem Editor wie z. B. Visual Studio oder Visual Studio Code einrichten. Sie müssen Ihr Gerät in diese Datei manuell konfigurieren. Standardmäßig sollte die Datei den folgenden leeren enthalten `Devices` XML-Element:
+
+```xml
+<DeviceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Devices>
+
+</Devices>
+</DeviceList>
+```
+
+**Fügen Sie die iOS-Gerät:**
+
+```xml
+<PlayerDevice>
+<SecretCode>ENTER-PAIR-CODE-HERE</SecretCode>
+<UniqueIdentifier>ENTER-GUID-HERE</UniqueIdentifier>
+<Name>iPhone Player</Name>
+<Platform>iOS</Platform>
+<AndroidApiLevel>0</AndroidApiLevel>
+<DebuggerEndPoint>ENTER-IP-HERE:37847</DebuggerEndPoint>
+<HostEndPoint />
+<NeedsAppInstall>false</NeedsAppInstall>
+<IsSimulator>false</IsSimulator>
+<SimulatorIdentifier />
+<LastConnectTimeUtc>2018-01-08T20:36:03.9492291Z</LastConnectTimeUtc>
+</PlayerDevice>
+```
+
+
+**Hinzufügen von Android-Gerät:**
+
+```xml
+<PlayerDevice>
+<SecretCode>ENTER-PAIR-CODE-HERE</SecretCode>
+<UniqueIdentifier>ENTER-GUID-HERE</UniqueIdentifier>
+<Name>Android Player</Name>
+<Platform>Android</Platform>
+<AndroidApiLevel>24</AndroidApiLevel>
+<DebuggerEndPoint>ENTER-IP-HERE:37847</DebuggerEndPoint>
+<HostEndPoint />
+<NeedsAppInstall>false</NeedsAppInstall>
+<IsSimulator>false</IsSimulator>
+<SimulatorIdentifier />
+<LastConnectTimeUtc>2018-01-08T20:34:42.2332328Z</LastConnectTimeUtc>
+</PlayerDevice>
+```
+
+**Schließen Sie und öffnen Sie Visual Studio erneut.** Ihr Gerät sollte in der Liste angezeigt.
+
 
 ## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>"Typ oder Namespace wurde nicht gefunden" Nachricht in der IDE
 

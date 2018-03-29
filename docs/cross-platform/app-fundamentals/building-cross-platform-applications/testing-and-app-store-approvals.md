@@ -4,14 +4,10 @@ Title: "Teil 6 – testen und App Store Genehmigungen" ms.topic: article ms.prod
 
 # <a name="part-6---testing-and-app-store-approvals"></a>Teil 6: Testen und App-Store Genehmigungen
 
-<a name="Testing" />
-
 
 ## <a name="testing"></a>Test
 
 Viele apps (auch Android-apps für einige Niederlassungen) müssen Sie einen Genehmigungsprozess übergeben werden, bevor sie veröffentlicht werden; Daher testen unerlässlich, um sicherzustellen Ihrer app den Markt erreicht (ganz zu schweigen von erfolgreich ausgeführt wird, mit Ihren Kunden). Testen kann viele Formen annehmen, Developer-Ebene Komponententests für die Verwaltung über eine Vielzahl von Hardware Betatests dauern.
-
- <a name="Test_on_All_Platforms" />
 
 
 ### <a name="test-on-all-platforms"></a>Testen auf allen Plattformen
@@ -22,16 +18,12 @@ Es ist immer empfiehlt sich, den Simulator-Emulator verwenden, um mehrere Versio
 
 Sie sollten außerdem Testen auf so viele verschiedene physische Hardwaregeräten wie möglich.
 
- <a name="Devices_in_cloud" />
-
 
 #### <a name="devices-in-cloud"></a>Geräte in der cloud
 
 Die mobile Smartphone- und Tablet-Ökosystem wächst ständig, machen es unmöglich, die ständig zunehmenden Anzahl der verfügbaren Geräte zu testen. Um dieses Problem zu lösen, das eine Reihe von Diensten die Möglichkeit bieten, vielen verschiedene Geräten Remote zu steuern, sodass Anwendungen installiert und ohne direkt in viele Hardware investieren müssen getestet werden können.
 
 [Testen der App Mitte](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) bietet eine einfache Möglichkeit zum Testen von IOS- und Android-Apps auf Hunderten von verschiedenen Geräten.
-
- <a name="Test_Management" />
 
 
 ### <a name="test-management"></a>Testverwaltung
@@ -44,10 +36,8 @@ Beim Testen von Anwendungen in Ihrer Organisation und Verwaltung von einem Betap
 
 Es gibt eine Reihe von Diensten Hilfe ', um diese Probleme zu beheben, durch Bereitstellen der Infrastruktur, die in der Anwendung zu sammeln und Berichte zur Verwendung und Fehler integriert ist, und auch Optimierung im Rahmen des Bereitstellungsprozesses Hilfe registrieren und Verwalten von Testern und ihre Geräte .
 
-Die [Xamarin Insights Preview](http://xamarin.com/insights) bietet eine Lösung für den zweiten Teil dieses Problems Absturz reporting und komplexe Informationen zur Anwendungsverwendung bereitstellen.
+[Visual Studio-App Center](/appcenter/) bietet eine Lösung für diese Probleme, die Version testverteilung, Absturzberichte und Informationen zur Anwendungsverwendung anspruchsvolle bereitstellen.
 
-
- <a name="Test_Automation" />
 
 
 ### <a name="test-automation"></a>Testautomatisierung
@@ -55,12 +45,10 @@ Die [Xamarin Insights Preview](http://xamarin.com/insights) bietet eine Lösung 
 Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) können verwendet werden, um die Benutzeroberfläche mit automatisierten Testskripts erstellen, die lokal ausgeführt werden oder in hochgeladen werden können [App Center Testen](https://docs.microsoft.com/appcenter/test-cloud/).
 
 
- <a name="Unit_Testing" />
 
 
-## <a name="unit-testing"></a>Unittests
+## <a name="unit-testing"></a>Komponententests
 
- <a name="Touch.Unit" />
 
 
 #### <a name="touchunit"></a>Touch.Unit
@@ -69,29 +57,13 @@ Xamarin.iOS umfasst eine Komponententestframework Touch.Unit an das JUnit/NUnit-
 
 Finden Sie in unserem [Komponententests mit Xamarin.iOS](~/ios/deploy-test/touch.unit.md) Dokumentation ausführliche Tests schreiben und Ausführen von Touch.Unit.
 
- <a name="Andr.Unit" />
 
 
 #### <a name="andrunit"></a>Andr.Unit
 
 Es ist ein Open Source-Äquivalent Touch.Unit für Android Andr.Unit aufgerufen. Sie können es von herunterladen [Github](https://github.com/spouliot/Andr.Unit) und erfahren Sie über das Tool auf [ @spouliotBlog](http://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/).
 
- <a name="Windows_Phone" />
 
-
-#### <a name="windows-phone"></a>Windows Phone
-
-Hier sind einige Setup Komponententests für Windows Phone hilfreiche Links:
-
--   [http://www.jeff.wilcox.name/2010/05/sl3-utf-bits/](http://www.jeff.wilcox.name/2010/05/sl3-utf-bits/)
--   [http://www.jeff.wilcox.name/2011/06/updated-ut-mango-bits/](http://www.jeff.wilcox.name/2011/06/updated-ut-mango-bits/)
--   [http://www.smartypantscoding.com/a-cheat-sheet-for-unit-testing-silverlight-apps-on-windows-phone-7](http://www.smartypantscoding.com/a-cheat-sheet-for-unit-testing-silverlight-apps-on-windows-phone-7)
--   [http://mobile.dzone.com/articles/unit-testing-your-windows](http://mobile.dzone.com/articles/unit-testing-your-windows)
-
-
-&nbsp;
-
- <a name="App_Store_Approvals" />
 
 
 ## <a name="app-store-approvals"></a>App-Store Genehmigungen
@@ -100,7 +72,6 @@ Apple und Microsoft Betrieb den einzigen Speicher für ihre Plattformen: die App
 
 Warten auf eine app, die geprüft werden kann sehr verkraftet - Business-Druck bedeuten, dass Anwendungen mit wenig Rand für Fehler, vor einem Datum "Ziel" Launch zur Genehmigung gesendet werden. Der Prozess selbst kann bis zu zwei Wochen dauern und ist nicht notwendigerweise transparent: beschränkt Feedback zum Status der Anwendung vorhanden ist, bis er schließlich abgelehnt oder genehmigt wird. Ablehnung kann bedeuten fehlende ein marketing Fenster Verkaufschancen, besonders, wenn es mehr als einmal auftritt und Wochen zwischen des ursprünglichen Start Datums übergeben, und wenn die app schließlich genehmigt wird.
 
- <a name="Be_prepared" />
 
 
 ### <a name="be-prepared"></a>Darauf vorbereitet sein
@@ -117,7 +88,6 @@ Sobald Ihr Konto genehmigt wurde, können Sie keine app übermitteln. Der tatsä
 
 Der übrige Teil dieses Abschnitts wird erläutert, Dinge, die Sie berücksichtigt werden sollten, um sicherzustellen, dass die app ohne Unterbrechungen genehmigt wird.
 
- <a name="Quality" />
 
 
 ### <a name="quality"></a>Qualität
@@ -127,8 +97,6 @@ Klingt offensichtlich, aber Anwendungen werden häufig zurückgewiesen, weil sie
 Abstürze (crashes) sind eine häufige Ursache für die Ablehnung. Stellen Ihre app-Abstürze zu einfach ist, ist sichergestellt, dass abgelehnt werden. Die meisten Entwickler senden nicht ihre apps unter der Annahme, die sie werde stürzt ab, aber häufig der Fall. Testen Sie Ihre app gründlich, vor dem Senden des Updategrams, Schwerpunkt nicht nur sicherstellen, dass alles funktioniert, sondern auch, die Sie allgemeine mobile Fehlerszenarien wie Netzwerkprobleme und ressourceneinschränkungen z. B. Arbeitsspeicher oder Speicherplatz behandeln. Sowohl die physische Geräte der Simulator zum Testen verwenden – unabhängig davon, wie gut Code in einem Simulator ausgeführt wird, kann nur auf einem Gerät eine echte appleistung veranschaulichen. Verwenden von wie vielen verschiedenen Geräten, die beim Suchen und ein Team von Testern Beta eintragen, wenn Sie können - Dienste von Drittanbietern Beta-Verteilung und Feedback zu verwalten können.
 
 Alle mobilen Betriebssystemen wird eine Anwendung beenden, die nicht schnell genug gestartet. Die Länge der zulässigen Zeit variiert, aber im Allgemeinen apps sollte darauf abzielen, werden in ein paar Sekunden reagiert und Verwenden von Hintergrundaufgaben, die keine Aktionen ausführt, die länger dauern würde. Apps, die zu lange Ladezeiten oder antwortet nicht genug reguläre verwendet werden, werden zurückgewiesen. Immer bereitstellen Sie Benutzerfeedback, wenn etwas im Hintergrund geschieht oder die app angezeigt wird, abgestürzt und noch einmal: Abrufen von abgelehnt.
-
- <a name="Check_Your_Edge_Cases" />
 
 
 ### <a name="check-your-edge-cases"></a>Überprüfen Sie Ihre Grenzfälle
@@ -143,7 +111,6 @@ In der folgenden Liste ist ein guter Ausgangspunkt für die Überprüfung der Gr
 -   **Hardware variiert** – Denken Sie daran, auf die älteste langsamste Hardware zu testen, die Sie unterstützen möchten. Es gibt zwei Aspekte, die Ihre app betreffen können: Leistung zu erzielen, die möglicherweise auf eine ältere Geräte und Unterstützung für Hardware-Features, z. B. einer Kamera, Mikrofon, GPS, Gyroskop oder andere optionale Komponente unbrauchbar. Anwendungen sollten beeinträchtigen ordnungsgemäß (und nicht eines Absturzes) Wenn eine Komponente ist nicht verfügbar.
 
 
- <a name="Guidelines_are_more_than_just_a_‘guide’" />
 
 
 ### <a name="guidelines-are-more-than-just-a-guide"></a>Richtlinien sind mehr als nur eine "Anleitung"
@@ -158,7 +125,6 @@ Windows-Entwickler sollten ebenso vorsichtig sein; Ein häufiger Fehler ist nich
 
 Fordern Sie die Designern zu lesen und befolgen die Entwurfsrichtlinien für jede Plattform.
 
- <a name="Implementing_Platform-Specific_Features" />
 
 
 ### <a name="implementing-platform-specific-features"></a>Implementieren von Clientplattform-spezifische Funktionen
@@ -171,7 +137,6 @@ Folgende Dinge sind etwas strengere, wenn es darum geht, Implementieren von plat
 -   **Ordnet** – es ist immer häufiger, dass mobile Maps Overlays und andere Funktionen hinzugefügt haben, jedoch Achten Sie nicht die Zuordnung verdecken "Guthaben" Informationen (z. B. das Google-Logo in iOS5) wie auf diese Weise Ablehnung führt.
 
 
- <a name="Manage_Your_Metadata" />
 
 
 ### <a name="manage-your-metadata"></a>Verwalten von Metadaten
@@ -185,7 +150,6 @@ Zusätzlich zu den offensichtlichen technischen Problemen, die in einer Anwendun
 
 Fügen Sie so viel Aufwand in die Anwendung Metadaten wie in der Entwicklung und Tests. Anwendungen daher entsprechend Zeit, um sie richtig machen ist für kleinere Verstöße in den Metadaten abgelehnt.
 
- <a name="App_Stores:_Not_For_Everyone" />
 
 
 ### <a name="app-stores-not-for-everyone"></a>App-Stores: Nicht für "Jeder"
@@ -198,8 +162,6 @@ Android bietet die größte Flexibilität in dieser Hinsicht: Anwendungen könne
 Apple bietet eine interne Bereitstellungsoption für Entwickler, die registriert wird, in der iOS Developer Enterprise Program, umgeht die Store-App-Genehmigungsprozess und ermöglicht es Unternehmen, interne apps an Mitarbeiter zu verteilen.
 Diese Lizenz befasst sich leider nicht auf die Notwendigkeit der extranet-ähnliche app-Verteilung für andere geschlossenen Gruppen von Kunden oder Lieferanten aus. [Enterprise (und Ad-hoc-) Bereitstellung](~/ios/deploy-test/app-distribution/ipa-support.md)
 
-
- <a name="App_Store_Summary" />
 
 
 ### <a name="app-store-summary"></a>App-Store-Zusammenfassung

@@ -1,6 +1,6 @@
 ---
 title: Ressourcenverzeichnis
-description: "Verwendung von XAML-Ressourcen sind Definitionen der Objekte, die mehr als einmal verwendet werden können. Ein: \"ResourceDictionary\" kann Ressourcen in einem zentralen Ort definiert und wieder in der gesamten einer Xamarin.Forms-Anwendung verwendet werden. In diesem Artikel wird erläutert, wie erstellen und nutzen ein: \"ResourceDictionary\", und wie Ressourcenverzeichnis zusammengeführt."
+description: 'Verwendung von XAML-Ressourcen sind Definitionen der Objekte, die mehr als einmal verwendet werden können. Ein: "ResourceDictionary" kann Ressourcen in einem zentralen Ort definiert und wieder in der gesamten einer Xamarin.Forms-Anwendung verwendet werden. In diesem Artikel wird erläutert, wie erstellen und nutzen ein: "ResourceDictionary", und wie Ressourcenverzeichnis zusammengeführt.'
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/17/2017
-ms.openlocfilehash: 9602e4d99e8f5c004fe75ab724bb3746aca46003
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: aa3ae9fed67b6cd7521e5c59edcb54f05cc6b7c5
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="resource-dictionaries"></a>Ressourcenverzeichnis
 
@@ -53,7 +53,7 @@ Das folgende XAML-Code-Beispiel zeigt, Ressourcen, die in der Anwendungsebene de
 
 Dies [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) definiert drei [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) Ressourcen und ein [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) Ressource. Weitere Informationen zum Erstellen einer XAML `App` Klasse, finden Sie unter [App-Klasse](~/xamarin-forms/app-fundamentals/application-class.md).
 
-Jede Ressource haben einen Schlüssel, der dem angegebenen unter Verwendung der `x:Key` -Attribut, das sie einen beschreibenden Schlüssel, in bietet der `ResourceDictionary`. Der Schlüssel wird zum Abrufen einer Ressource aus der [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) durch die `StaticResource` Markuperweiterung, wie im folgenden Beispiel der Verwendung von XAML-Code veranschaulicht, die zusätzliche Ressourcen, die in einem Steuerelement definiert Ebene zeigt `ResourceDictionary`:
+Jede Ressource weist einen Schlüssel, der dem angegebenen unter Verwendung der `x:Key` -Attribut, das sie einen beschreibenden Schlüssel, in bietet der `ResourceDictionary`. Der Schlüssel wird zum Abrufen einer Ressource aus der [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) durch die `StaticResource` Markuperweiterung, wie im folgenden Beispiel der Verwendung von XAML-Code veranschaulicht, die zusätzliche Ressourcen, die in einem Steuerelement definiert Ebene zeigt `ResourceDictionary`:
 
 ```xaml
 <StackLayout Margin="0,20,0,0">

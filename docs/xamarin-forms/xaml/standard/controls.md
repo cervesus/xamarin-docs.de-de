@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
-ms.openlocfilehash: b044cb849f9a8e591a8db5907211a55f77d6e45f
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 084da9cbb06c7ec9bbab6ea4dc6a1a7b15ffe692
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xaml-standard-preview-controls"></a>Verwendung von XAML-Standard (Vorschau)-Steuerelemente
 
@@ -26,19 +26,19 @@ Es gibt auch eine Liste der Steuerelemente, die neue Eigenschaft und Enumeration
 
 |Xamarin.Forms|XAML Standard|
 |--- |--- |
-|Frame|Rahmen|
+|Frame|Randbereich|
 |Datumsauswahl|ComboBox|
 |ActivityIndicator|ProgressRing|
 |StackLayout|StackPanel|
 |Bezeichnung|TextBlock|
-|Eingabe|TextBox|
+|Eintrag|TextBox|
 |Schalter|ToggleSwitch|
 |ContentView|UserControl|
 
 
 ## <a name="properties-and-enumerations"></a>Eigenschaften und Enumerationen
 
-|Xamarin.FormsControls mit aktualisierten Eigenschaften|Xamarin.FormsProperty oder eine Enumerationsklasse|Verwendung von XAML-StandardEquivalent|
+|Xamarin.Forms-Steuerelemente mit aktualisierten Eigenschaften|Xamarin.Forms-Eigenschaft oder eine Enumerationsklasse|Verwendung von XAML-Standard entspricht.|
 |--- |--- |--- |
 |Schaltfläche, Eintrag, Bezeichnung, DatePicker, Editor, SearchBar, TimePicker|TextColor|Vordergrund|
 |VisualElement|BackgroundColor|Hintergrund *|

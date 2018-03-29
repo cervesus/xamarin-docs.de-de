@@ -1,6 +1,6 @@
 ---
-title: "Verwendung von XAML-Vorschau für Xamarin.Forms"
-description: "Wir sehen Sie uns die Xamarin.Forms-Layouts, das gerendert wird, während der Eingabe!"
+title: Verwendung von XAML-Vorschau für Xamarin.Forms
+description: Wir sehen Sie uns die Xamarin.Forms-Layouts, das gerendert wird, während der Eingabe!
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 02/24/2017
-ms.openlocfilehash: 8f4d8253d56708f77ede7b5173f3dd771e1da0ea
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a7a9c4fed92cb4ed8c8c12e97129bc8379037acb
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Verwendung von XAML-Vorschau für Xamarin.Forms
 
@@ -26,17 +26,19 @@ Es sind weitere Informationen in den [Anmerkungen zu dieser Version](https://dev
 
 ## <a name="getting-started"></a>Erste Schritte
 
-### <a name="visual-studio-for-mac-on-mac"></a>Visual Studio für Mac auf Mac
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Verwenden der **Ansicht > Weitere Fenster > Xamarin.Forms-Vorschau** Menü in Visual Studio zum Öffnen des Vorschaufensters. Verwenden der **Fenster > Neue vertikale Registerkartengruppe** -Menü, um die Seite-an-Seite zu positionieren.
+
+[![ListView-Steuerelement-Vorschau in Visual Studio](xaml-previewer-images/xamlp-list-vs-sml.png "Forms-Vorschau in Visual Studio")](xaml-previewer-images/xamlp-list-vs.png#lightbox "Forms-Vorschau in Visual Studio")
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Die **Vorschau** Schaltfläche im Editor angezeigt werden kann, durch einen XAML-Datei mit der rechten Maustaste und Auswählen von **Öffnen mit > Verwendung von XAML-Viewer**. Im Vorschaufenster klicken Sie dann angezeigt oder ausgeblendet werden kann durch Drücken der **Vorschau** Schaltfläche in der oberen rechten Ecke des jedes Dokumentfenster XAML:
 
 [![ListView-Steuerelement-Vorschau in Visual Studio für Mac](xaml-previewer-images/xamlp-list-sml.png "Forms-Vorschau in Visual Studio für Mac")](xaml-previewer-images/xamlp-list.png#lightbox "Forms-Vorschau in Visual Studio für Mac")
 
-### <a name="visual-studio-on-windows"></a>Visual Studio unter Windows
-
-Verwenden der **Ansicht > Weitere Fenster > Xamarin.Forms-Vorschau** Menü in Visual Studio zum Öffnen des Vorschaufensters. Verwenden der **Fenster > Neue vertikale Registerkartengruppe** -Menü, um die Seite-an-Seite zu positionieren.
-
-[![ListView-Steuerelement-Vorschau in Visual Studio](xaml-previewer-images/xamlp-list-vs-sml.png "Forms-Vorschau in Visual Studio")](xaml-previewer-images/xamlp-list-vs.png#lightbox "Forms-Vorschau in Visual Studio")
+-----
 
 ## <a name="xaml-preview-options"></a>Verwendung von XAML-Vorschau-Optionen
 

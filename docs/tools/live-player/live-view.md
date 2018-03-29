@@ -1,6 +1,7 @@
 ---
+redirect_url: /xamarin/tools/live-player/
 title: XAML Live-Vorschau
-description: "Testen von Änderungen am Code der app in Echtzeit auf Ihrem IOS- oder Android-Gerät"
+description: Testen von Änderungen am Code der app in Echtzeit auf Ihrem IOS- oder Android-Gerät
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 86E9A179-21F8-4F3A-A9CE-36F0FC5DB4A8
@@ -8,11 +9,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 12/21/2017
-ms.openlocfilehash: f5c1649d625f2094fb710066f79a4ae89a696266
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 96ce096a57e46b36ebe6516ba0aff2733883e400
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xaml-live-previewing"></a>XAML Live-Vorschau
 
@@ -20,12 +21,12 @@ Einer der Vorteile von Xamarin Player Live ist die Fähigkeit, live Preview XAML
 
 ## <a name="requirements"></a>Anforderungen
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Ein Computer unter Windows 7 oder höher.
 2. Visual Studio 2017 15.4 oder höher mit der **Mobile Entwicklung mit .NET** arbeitsauslastung installiert.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Einen Mac mit OS X 10.11, MacOS 10.12 oder höher.
 2. Visual Studio für Mac 7.2 oder höher. Es wird empfohlen, die neueste Version.
@@ -40,7 +41,7 @@ Einer der Vorteile von Xamarin Player Live ist die Fähigkeit, live Preview XAML
 
 Bevor Sie die Xamarin-Live-Player mit Ihres IOS- oder Android-Gerät verwenden können, müssen Sie die Live-Player Xamarin-app herunterladen und verbinden Sie es in Visual Studio, wie in beschrieben die [installieren](~/tools/live-player/install.md) Handbuch. Nachdem Sie Ihr Gerät zu Visual Studio erfolgreich gekoppelt haben, können Sie die live-Vorschau der Verwendung von XAML-Seite beginnen. 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Öffnen Sie die XAML-Seite, die Sie live-Vorschau im Visual Studio-2017 Editor möchten:
 
@@ -54,7 +55,7 @@ Bevor Sie die Xamarin-Live-Player mit Ihres IOS- oder Android-Gerät verwenden k
 
     ![](live-view-images/vs-image3.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Öffnen Sie die XAML-Seite, die Sie Livevorschau in Visual Studio für Mac-Editor möchten:
 

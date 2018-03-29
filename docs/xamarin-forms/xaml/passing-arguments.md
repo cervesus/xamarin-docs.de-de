@@ -1,6 +1,6 @@
 ---
-title: "Übergeben von Argumenten in XAML"
-description: "Dieser Artikel beschreibt die Verwendung von XAML-Attributen, die verwendet werden können, Argumente an nicht standardmäßige Konstruktoren, Factorymethoden aufrufen, und geben Sie ein generisches Argument übergeben."
+title: Übergeben von Argumenten in XAML
+description: Dieser Artikel beschreibt die Verwendung von XAML-Attributen, die verwendet werden können, Argumente an nicht standardmäßige Konstruktoren, Factorymethoden aufrufen, und geben Sie ein generisches Argument übergeben.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8F3B267F-499E-4D79-9193-FCA99F199519
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2016
-ms.openlocfilehash: a30dd9b33466ac6907322f8c6b586c012452a44f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 232f60bb7afca7acf73e63bd7e11e1b6ec47fbd2
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="passing-arguments-in-xaml"></a>Übergeben von Argumenten in XAML
 
@@ -135,7 +135,7 @@ Die [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) Str
 </BoxView>
 ```
 
-Die Anzahl der Elemente innerhalb der `x:Arguments` Tag und die Typen der diese Elemente müssen die Argumente der aufgerufenen Factorymethode entsprechen. Die [ `FromRgba` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/) Factorymethode erfordert vier [ `Int32` ](https://developer.xamarin.com/api/type/System.Int32/) Parameter, die die Werte Rot, Grün, Blau und alpha, die zwischen 0 und 255 bzw. darstellen. Die [ `FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/) Factorymethode erfordert vier [ `Double` ](https://developer.xamarin.com/api/type/System.Double/) Parameter, die den Farbton, Sättigung Helligkeit und Alphawerte, zwischen 0 und 1 bzw. darstellen. Die [ `FromHex` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/) Factorymethode erfordert eine [ `String` ](https://developer.xamarin.com/api/type/System.String/) , die die Hexadezimalwerte darstellt (A) RGB-Farbe.
+Die Anzahl der Elemente innerhalb der `x:Arguments` Tag und die Typen der diese Elemente müssen die Argumente der aufgerufenen Factorymethode entsprechen. Die [ `FromRgba` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/) Factorymethode erfordert vier [ `Int32` ](https://docs.microsoft.com/dotnet/api/system.int32) Parameter, die die Werte Rot, Grün, Blau und alpha, die zwischen 0 und 255 bzw. darstellen. Die [ `FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/) Factorymethode erfordert vier [ `Double` ](https://docs.microsoft.com/dotnet/api/system.double) Parameter, die den Farbton, Sättigung Helligkeit und Alphawerte, zwischen 0 und 1 bzw. darstellen. Die [ `FromHex` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/) Factorymethode erfordert eine [ `String` ](https://docs.microsoft.com/dotnet/api/system.string) , die die Hexadezimalwerte darstellt (A) RGB-Farbe.
 
 Die folgenden Screenshots zeigen das Ergebnis des Aufrufs jedes [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) Factory-Methode mit den Werten des angegebenen Arguments:
 
