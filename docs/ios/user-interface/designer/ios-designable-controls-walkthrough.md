@@ -1,6 +1,6 @@
 ---
-title: "Exemplarische Vorgehensweise – verwenden benutzerdefinierte Steuerelemente mit dem Xamarin-Designer für iOS"
-description: "Dieser Artikel bietet eine schrittweise exemplarische Vorgehensweise zeigt, wie ein benutzerdefiniertes Steuerelement zu erstellen und in die Xamarin-Designer für iOS verwenden. Es wird gezeigt, wie ein Steuerelement zur Verfügung zu stellen in der Toolbox des Designers daher Ziehen/auf eine Sicht nicht gelöscht kann werden. Es zeigt darüber hinaus, wie ein Steuerelement zu implementieren, damit es ordnungsgemäß zur Entwurfs- und Laufzeit gerendert wird, sowie zum Erstellen von Eigenschaften, die zur Entwurfszeit festgelegt werden können."
+title: Exemplarische Vorgehensweise – verwenden benutzerdefinierte Steuerelemente mit dem Xamarin-Designer für iOS
+description: Dieser Artikel bietet eine schrittweise exemplarische Vorgehensweise zeigt, wie ein benutzerdefiniertes Steuerelement zu erstellen und in die Xamarin-Designer für iOS verwenden. Es wird gezeigt, wie ein Steuerelement zur Verfügung zu stellen in der Toolbox des Designers daher Ziehen/auf eine Sicht nicht gelöscht kann werden. Es zeigt darüber hinaus, wie ein Steuerelement zu implementieren, damit es ordnungsgemäß zur Entwurfs- und Laufzeit gerendert wird, sowie zum Erstellen von Eigenschaften, die zur Entwurfszeit festgelegt werden können.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 3e12e33b254e58759043ed838d5c34dd7bd024fd
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4138ba0da1dd2174c53e6e35105c3199ea941f7f
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>Exemplarische Vorgehensweise – verwenden benutzerdefinierte Steuerelemente mit dem Xamarin-Designer für iOS
 
@@ -32,15 +32,11 @@ Dieses Handbuch setzt voraus, Vertrautheit mit den Inhalt in behandelt die [Eins
 
 1. Erstellen Sie eine neue Projektmappe aus der **iOS > App > einzelne Ansicht Anwendung > c#** Vorlage, nennen Sie sie `ScratchTicket`, und folgen Sie der Assistent für neue:
 
-
     [![](ios-designable-controls-walkthrough-images/01new.png "Erstellen einer neuen Projektmappe")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
-
 
 1. Erstellen Sie eine neue leere Klassendatei mit dem Namen `ScratchTicketView`:
 
-
     [![](ios-designable-controls-walkthrough-images/02new.png "Erstellen Sie eine neue ScratchTicketView-Klasse")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
-
 
 1. Fügen Sie den folgenden Code für `ScratchTicketView` Klasse:
 
