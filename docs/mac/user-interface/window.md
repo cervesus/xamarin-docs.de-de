@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f483fcfa9dfca1eb476ceab2b67e7a03bf4b6354
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4b8de30cecb738fecb13616a3b796c0b4fa5a51a
+ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="windows"></a>Windows
 
@@ -20,7 +20,7 @@ _In diesem Artikel wird das Arbeiten mit Windows- und Bereiche in einer Anwendun
 
 Bei der Arbeit mit c# und .NET in einer Anwendung Xamarin.Mac Sie haben Zugriff auf den gleichen Windows und Bilder, die ein Entwickler arbeiten in unter *Objective-C* und *Xcode* verfügt. Da Xamarin.Mac direkt mit Xcode integriert ist, können Sie die Xcode _Schnittstelle-Generator_ erstellen und Verwalten von Windows und -Bereiche (oder erstellen sie optional direkt im C#-Code).
 
-Basierend auf dessen Zweck, kann eine Anwendung Xamarin.Mac stellen ein oder mehrere Fenster auf dem Bildschirm zum Verwalten und koordinieren die Informationen, die er zeigt an, und arbeitet mit. Die Hauptfunktionen von Windows sind:
+Basierend auf ihren Zweck, kann eine Anwendung Xamarin.Mac stellen ein oder mehrere Fenster auf dem Bildschirm zum Verwalten und koordinieren die Informationen, die er zeigt an, und arbeitet mit. Die Hauptfunktionen des Fensters werden:
 
 1. Einen Bereich angeben, in dem Ansichten und Steuerelemente gespeichert und verwaltet werden können.
 2. Um zu übernehmen, und reagieren auf Ereignisse als Reaktion auf Benutzerinteraktion mit Tastatur und Maus.
