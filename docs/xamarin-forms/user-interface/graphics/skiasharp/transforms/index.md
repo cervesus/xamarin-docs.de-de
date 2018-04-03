@@ -1,6 +1,6 @@
 ---
 title: SkiaSharp Transformationen
-description: "Erfahren Sie mehr über die Transformationen für die Anzeige von Grafiken SkiaSharp"
+description: Erfahren Sie mehr über die Transformationen für die Anzeige von Grafiken SkiaSharp
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 10b23975fab8aa87019b9d0fed42decdc6adddfb
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 668488ab7efae66f1777e9ae6ded1f725833fe16
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp Transformationen
 
@@ -49,7 +49,7 @@ Die SkiaSharp Transformationen sind relativ zur linken oberen Ecke von der `SKCa
 
 Die sehr große Unterschied ist, dass SKiaSharp Transformationen sind *Methoden* dagegen die Transformationen Xamarin.Forms *Eigenschaften*. Dies ist ein semantisches Unterschied hinter der syntaktische Unterschied: SkiaSharp Transformationen einen Vorgang ausführen, während Xamarin.Forms Transformationen einen Status festgelegt. SkiaSharp Transformationen anwenden, anschließend gezeichneten Grafikobjekten, nicht jedoch Graphics-Objekten, die gezeichnet werden, bevor die Transformation angewendet wird. Eine Transformation Xamarin.Forms gilt hingegen eine zuvor gerenderten Elements als die Eigenschaft festgelegt ist. SkiaSharp Transformationen sind kumulativ, wie die Methoden aufgerufen werden. Xamarin.Forms Transformationen werden ersetzt, wenn die Eigenschaft mit einem anderen Wert festgelegt ist.
 
-Die Beispielprogramme in diesem Abschnitt angezeigt wird, unter der Überschrift **transformiert** auf der Startseite von der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) Programm, und klicken Sie in der [ **Transformiert** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms) Ordner der Projektmappe.
+Die Beispielprogramme in diesem Abschnitt angezeigt wird, unter der Überschrift **transformiert** auf der Startseite von der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm, und klicken Sie in der [ **Transformiert** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms) Ordner der Projektmappe.
 
 ## <a name="the-translate-transformtranslatemd"></a>[Die Verschiebungstransformation](translate.md)
 
@@ -87,4 +87,4 @@ Verwenden Sie nicht affine Transformationen 2D Objekte im 3D-Raum drehen.
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

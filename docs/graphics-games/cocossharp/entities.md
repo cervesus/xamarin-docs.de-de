@@ -1,6 +1,6 @@
 ---
-title: "Entitäten in CocosSharp"
-description: "Das Muster für die Entität ist eine leistungsfähige Möglichkeit zur spielcode zu organisieren. Es verbessert die Lesbarkeit, wird Code einfacher zu verwalten und nutzt die Funktionen der integrierten über-und untergeordneten Elementen."
+title: Entitäten in CocosSharp
+description: Das Muster für die Entität ist eine leistungsfähige Möglichkeit zur spielcode zu organisieren. Es verbessert die Lesbarkeit, wird Code einfacher zu verwalten und nutzt die Funktionen der integrierten über-und untergeordneten Elementen.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1D3261CE-AC96-4296-8A53-A76A42B927A8
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: fe722ce75f0322ab60bb6fd967ff2c498b2e7b20
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bb4af0f76f6b266cad4eb969d987a346b7396aa9
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="entities-in-cocossharp"></a>Entitäten in CocosSharp
 
@@ -34,7 +34,7 @@ Das Spiel abgeschlossene wird wie folgt aussehen:
 ![](entities-images/image1.png "Das Spiel abgeschlossene wird wie folgt aussehen.")
 
 
-# <a name="introduction-to-game-entities"></a>Einführung in Spiel Entitäten
+## <a name="introduction-to-game-entities"></a>Einführung in Spiel Entitäten
 
 Spiele Entitäten sind Klassen, die Objekte, benötigen Rendering, Konflikt, physikalische oder KI Logik definieren. Glücklicherweise entsprechen die Entitäten in einem Spiel Codebasis vorhanden häufig der konzeptionellen Objekte in einem Spiel. Wenn dies zutrifft, kann das Identifizieren der Entitäten in einem Spiel benötigt mehr problemlos ausgeführt werden. 
 
@@ -51,7 +51,7 @@ Z. B. ein Leerzeichen Designs [Schießen angegebene Geviertgröße oben Spiel](h
 Diese Entitäten würde ihre eigenen Klassen im Spiel bisher und jede Instanz nur wenig oder keine Setup über das hinaus Instanziierung erfordern würde.
 
 
-# <a name="general-vs-specific-entity-types"></a>Allgemeine im Vergleich zu Bestimmte Entitätstypen
+## <a name="general-vs-specific-entity-types"></a>Allgemeine im Vergleich zu bestimmten Entitätstypen
 
 Eine der ersten Fragen gegenüberstehen Spieleentwicklern mit einer Entität ist wie viel die Entitäten zu generalisieren. Die spezifischste Implementierungen würden Klassen für jeden Typ der Entität, definieren, auch wenn sie durch einige Merkmale unterscheiden wird. Weitere allgemeine Systeme werden Kombinieren von Gruppen von Entitäten in einer Klasse, und Instanzen, die angepasst werden.
 
@@ -84,7 +84,7 @@ Die Ebene der generalize-Option verwendet, hängt von viele Aspekte zu berücksi
 Der Einfachheit halber wird einen bestimmten Klasse basierenden Ansatz mit eine Einheit liefern und Aufzählungszeichen für dieses Lernprogramm verwendet werden.
 
 
-# <a name="project-setup"></a>Projekterstellung
+## <a name="project-setup"></a>Projekterstellung
 
 Bevor wir beginnen, unsere Entitäten implementieren, müssen wir ein Projekt zu erstellen. Wir müssen die CocosSharp-Projektvorlagen verwenden, um projekterstellung zu vereinfachen. [Überprüfen Sie diesen Beitrag](http://forums.xamarin.com/discussion/26822/cocossharp-project-templates-for-xamarin-studio) Informationen zum Erstellen eines CocosSharp-Projekts von Visual Studio für Mac-Vorlagen. Der Rest dieses Handbuchs verwendet den Namen des Projekts **EntityProject**.
 
@@ -110,14 +110,14 @@ public override void ApplicationDidFinishLaunching (CCApplication application, C
 Weitere Informationen zum Umgang mit CocosSharp Lösungen finden Sie unsere [Administratorhandbuch zur Behandlung von mehrere Auflösungen in CocosSharp](~/graphics-games/cocossharp/resolutions.md).
 
 
-# <a name="adding-content-to-the-project"></a>Hinzufügen von Inhalt zum Projekt
+## <a name="adding-content-to-the-project"></a>Hinzufügen von Inhalt zum Projekt
 
 Nachdem das Projekt erstellt wurde, wird es in enthaltenen Dateien hinzufügen [diese Inhalte Zip-Datei](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Entities.zip?raw=true). Zu diesem Zweck herunterladen Sie die Zip-Datei und Entpacken Sie es. Fügen Sie beide **ship.png** und **bullet.png** auf die **Content** Ordner. Die **Content** Ordner werden innerhalb der **Bestand** Ordner auf Android-Geräten und im Stammverzeichnis des Projekts unter iOS werden. Nachdem hinzugefügt, sehen wir beide Dateien in den **Content** Ordner:
 
 ![](entities-images/image2.png "Nachdem hinzugefügt, sollten beide Dateien im Ordner "Content" sein.")
 
 
-# <a name="creating-the-ship-entity"></a>Die Ship-Entität erstellen
+## <a name="creating-the-ship-entity"></a>Die Ship-Entität erstellen
 
 Die `Ship` Klasse des Spiels erste Entität sein wird. Hinzufügen einer `Ship` Klasse, erstellen Sie zunächst einen Ordner namens **Entitäten** auf der Stammebene des Projekts. Hinzufügen einer neuen Klasse in der **Entitäten** Ordner mit dem Namen `Ship`:
 
@@ -179,16 +179,16 @@ Wenn wir unsere Spiel auszuführen sehen wir nun unsere Ship-Entität:
 ![](entities-images/image4.png "Bei der Ausführung des Spiels, wird die Ship-Entität angezeigt werden")
 
 
-## <a name="why-inherit-from-ccnode-instead-of-ccsprite"></a>Warum das Vererben der CCNode statt CCSprite?
+### <a name="why-inherit-from-ccnode-instead-of-ccsprite"></a>Warum das Vererben der CCNode statt CCSprite?
 
 An diesem Punkt unsere `Ship` ist eine einfache Wrapper für eine `CCSprite` Instanz. Da `CCSprite` erbt auch von `CCNode`, konnten wir geerbt direkt aus `CCSprite`, der eingeschränkte würde des Codes in `Ship.cs`. Darüber hinaus erben direkt von `CCSprite` reduziert die Anzahl der Objekte im Arbeitsspeicher und kann die Leistung erhöht, die Abhängigkeitsstruktur zu verkleinern.
 
 Trotz dieser Vorteile, die wir von geerbten `CCNode` Ausblenden einiger der `CCSprite` Eigenschaften aus jeder Instanz. Z. B. die `Texture` Eigenschaft sollte nicht geändert werden, der außerhalb der `Ship` Klasse und das erben von `CCNode` erlaubt es uns, die diese Eigenschaft blenden. Die öffentlichen Member des unsere Entitäten sind besonders wichtig, wie ein Spiel überschreitet und zusätzliche Entwickler ein Team hinzugefügt werden.
 
 
-# <a name="adding-input-to-the-ship"></a>Eingabe für den Liefernamen hinzufügen
+## <a name="adding-input-to-the-ship"></a>Eingabe für den Liefernamen hinzufügen
 
-Nun, dass unsere Ship auf dem Bildschirm sichtbar ist werden wir Eingabe hinzufügen. Unser Ansatz werden ähnlich wie im Ansatz der [Einführung CocosSharp Handbuch](~/graphics-games/cocossharp/first-game/part2.md), außer dass wir den Code für die Verschiebung im platziert werden, wird die `Ship` Klasse anstatt im mit `CCLayer` oder `CCScene`.
+Nun, dass unsere Ship auf dem Bildschirm sichtbar ist werden wir Eingabe hinzufügen. Unser Ansatz werden ähnlich wie im Ansatz der [BouncingGame Handbuch](~/graphics-games/cocossharp/bouncing-game.md), außer dass wir den Code für die Verschiebung im platziert werden, wird die `Ship` Klasse anstatt im mit `CCLayer` oder `CCScene`.
 
 Fügen Sie den Code um `Ship` Umlagerung, wo der Benutzer den Bildschirm berührt unterstützen:
 
@@ -230,7 +230,7 @@ public class Ship : CCNode
 Viele Schießen angegebene Geviertgröße oben Spiele implementieren eine maximale Geschwindigkeit, wobei herkömmlichen Controller-basierten verschieben. Dies bedeutet, dass wir einfach sofortige Bewegung zum getesteten Codes kürzer beibehalten implementieren.
 
 
-# <a name="creating-the-bullet-entity"></a>Erstellen die Entität Aufzählungszeichen
+## <a name="creating-the-bullet-entity"></a>Erstellen die Entität Aufzählungszeichen
 
 Die zweite Entität in unserem einfachen Spiel ist eine Entität für die Anzeige von Aufzählungszeichen. Ebenso wie die `Ship` Entität, die `Bullet` Entität enthält eine `CCSprite` , damit es auf dem Bildschirm angezeigt wird. Die Logik für das Verschieben von unterscheidet sich insofern, dass es nicht von Benutzereingaben für das Verschieben von abhängt. stattdessen `Bullet` Instanzen werden in einer geraden Linie mit der Geschwindigkeit Eigenschaften verschoben.
 
@@ -288,7 +288,7 @@ Abgesehen von der Datei, die zum Ändern der `CCSprite` auf `bullet.png`, den Co
 Die `Schedule` Methode ermöglicht das Hinzufügen von Delegaten, die jedem Frame aufgerufen wird. In diesem Fall wir fügen die `ApplyVelocity` Methode so, dass unsere Aufzählungszeichen gemäß seiner Geschwindigkeitswerte verschiebt. Die `Schedule` -Methode übernimmt ein `Action<float>`, in dem der Parameter "float" die Zeitdauer (in Sekunden) seit dem letzten Frame gibt an, welche wir verwenden, um die zeitbasierte Bewegung zu implementieren. Seit dem Wert in Sekunden gemessen wird, und klicken Sie dann unsere Geschwindigkeitswerte darstellen, die Verschiebung im *Pixel pro Sekunde*.
 
 
-# <a name="adding-bullets-to-gamelayer"></a>Hinzufügen von Aufzählungszeichen zu GameLayer
+## <a name="adding-bullets-to-gamelayer"></a>Hinzufügen von Aufzählungszeichen zu GameLayer
 
 Bevor wir jeden hinzufügen `Bullet` -Instanzen, die unsere Spiel wird stellen wir einen Container, insbesondere eine `List<Bullet>`. Ändern der `GameLayer` damit es sich um eine Liste mit Aufzählungszeichen einbezieht:
 
@@ -422,14 +422,14 @@ Wir können jetzt das Spiel ausführen und finden Sie unter der `Ship` behandeln
 ![](entities-images/image1.png "Führen Sie das Spiel und der Liefernamen Aufzählungszeichen Instanzen behandeln sein wird")
 
 
-# <a name="why-gamelayer-has-ship-and-bullets-members"></a>Warum verfügt über GameLayer liefern und Aufzählungszeichen Member
+## <a name="why-gamelayer-has-ship-and-bullets-members"></a>Warum verfügt über GameLayer liefern und Aufzählungszeichen Member
 
 Unsere `GameLayer` Klasse definiert zwei Felder zum Verweisen auf Instanzen der Entität (`ship` und `bullets`), jedoch nicht mit ihnen. Darüber hinaus sind Entitäten für ihr eigenes Verhalten, z. B. Verschiebung und Behandeln von verantwortlich. Also warum wir hinzufügen `ship` und `bullets` Felder `GameLayer`?
 
 Der Grund, die wir diese Member hinzugefügt ist, da eine komplette Spiele Implementierung Logik müsste die `GameLayer` für die Interaktion zwischen den verschiedenen Entitäten. Dieses Spiel kann z. B. weiter entwickelt werden, um Feinde einzuschließen, die vom Player zerstört werden können. Diese Feinde Verkaufswerten einer `List` in der `GameLayer`, und eine Logik zum Testen, ob `Bullet` Instanzen in Konflikt stehen, mit der Feinde durchgeführt werden, der `GameLayer` ebenfalls. Das heißt, die `GameLayer` ist der Stamm *Besitzer* der Entität, alle Instanzen und ist zuständig für die Interaktionen zwischen Instanzen der Entität.
 
 
-# <a name="bullet-destruction-considerations"></a>Bullet Zerstörung Überlegungen
+## <a name="bullet-destruction-considerations"></a>Bullet Zerstörung Überlegungen
 
 Unsere Spiel fehlt derzeit Code zerstören `Bullet` Instanzen. Jede `Bullet` Instanz verfügt über Logik für das Verschieben in einen Bildschirm, aber wir noch keine Code aus, um alle außerhalb des Bildschirms zerstören hinzugefügt `Bullet` Instanzen.
 
@@ -437,12 +437,11 @@ Darüber hinaus die Zerstörung des `Bullet` Instanzen möglicherweise nicht in 
 
 Die einfachste Lösung besteht darin, die Verantwortung der Factoryklasse zur Zerstörung Unterstützung zu erweitern. Die Factory einer Entitätsinstanz zerstört wird, erhält kann von anderen Objekten wie z. B. behandelt werden können die `GameLayer` die Entitätsinstanz aus der Liste entfernen. 
 
-
-# <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Zusammenfassung
 
 Diese Anleitung zeigt, wie CocosSharp Entitäten durch Erben von der `CCNode` Klasse. Diese Entitäten sind eigenständige Objekte, die Behandlung von Erstellung ihrer eigenen visuelle Elemente und benutzerdefinierte Logik. Dieses Handbuch kennzeichnet Code, der innerhalb einer Entität (Bewegung und Erstellung von anderen Entitäten) gehört, aus Code, der in der Entität Stammcontainer (Kollisionen und andere Entität Interaktion-Logik) gehört.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte links
 
 - [CocosSharp API-Dokumentation](https://developer.xamarin.com/api/namespace/CocosSharp/)
 - [Inhalt zip](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Entities.zip?raw=true)

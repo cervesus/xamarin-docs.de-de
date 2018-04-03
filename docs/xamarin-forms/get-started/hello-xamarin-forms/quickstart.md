@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 5ee36d63e2751eb5d09ee526755d62dda4ef537e
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 7c90b5bcca5a6b8d2a4b52c166ae6884646a61d2
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms-Schnellstart
 
@@ -31,7 +31,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
 
     ![](quickstart-images/vs/new-solution.png "Neues Projekt")
 
-3. Klicken Sie im Dialogfeld **Neues Projekt** auf **Plattformübergreifend**, wählen Sie die Vorlage **Plattformübergreifende App (Xamarin.Forms)** aus, geben Sie für „Name“ und „Projektmappenname“ `Phoneword` ein, wählen Sie einen geeigneten Speicherort für das Projekt aus, und klicken Sie auf **OK**:
+3. Klicken Sie im Dialogfeld **Neues Projekt** auf **Plattformübergreifend**, wählen Sie die Vorlage **Mobile App (Xamarin.Forms)** aus, geben Sie für „Name“ und „Projektmappenname“ `Phoneword` ein, wählen Sie einen geeigneten Speicherort für das Projekt aus, und klicken Sie auf **OK**:
 
     ![](quickstart-images/vs/new-project.png "Plattformübergreifende Projektvorlagen")
 

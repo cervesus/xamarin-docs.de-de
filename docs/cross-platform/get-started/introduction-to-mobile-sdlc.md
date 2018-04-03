@@ -1,6 +1,6 @@
 ---
-title: "Einführung in den Lebenszyklus der mobilen Softwareentwicklung"
-description: "In diesem Artikel wird der Lebenszyklus der Softwareentwicklung in Bezug auf mobile Anwendungen beschrieben und einige der Überlegungen erläutert, die zum Erstellen mobiler Projekte erforderlich sind. Entwickler, die direkt einsteigen und mit dem Erstellen von Anwendungen beginnen möchten, können diesen Leitfaden überspringen und später für ein breiteres Verständnis der mobilen Entwicklung weiterlesen."
+title: Einführung in den Lebenszyklus der mobilen Softwareentwicklung
+description: In diesem Artikel wird der Lebenszyklus der Softwareentwicklung in Bezug auf mobile Anwendungen beschrieben und einige der Überlegungen erläutert, die zum Erstellen mobiler Projekte erforderlich sind. Entwickler, die direkt einsteigen und mit dem Erstellen von Anwendungen beginnen möchten, können diesen Leitfaden überspringen und später für ein breiteres Verständnis der mobilen Entwicklung weiterlesen.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: 7a344ce211a025176c2b40540ce8337802dd347b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 144e71677ad5477c7e1cfb5211cc5860995642bb
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Einführung in den Lebenszyklus der mobilen Softwareentwicklung
 
@@ -25,7 +25,7 @@ Dieses Dokument enthält eine gründliche, einführende Erläuterung für das Er
 1.   **Prozess**: Der Prozess der Softwareentwicklung wird als Lebenszyklus der Softwareentwicklung (Software Development Lifecycle, SDLC) bezeichnet. Die Phasen des SDLC werden in Bezug auf die Entwicklung mobiler Anwendungen untersucht, einschließlich der Inspiration, des Entwurfs, der Entwicklung, Stabilisierung, Bereitstellung und Wartung.
 1.   **Überlegungen**: Es gibt einige Überlegungen zum Erstellen mobiler Anwendung, insbesondere im Gegensatz zu herkömmlichen Web- oder Desktopanwendungen. Diese Überlegungen und ihre Auswirkungen auf die Entwicklung mobiler Anwendungen werden untersucht.
 
-Dieses Dokument richtet sich sowohl an neue als auch an erfahrene Anwendungsentwickler und soll grundlegende Fragen über die Entwicklung mobiler Apps beantworten. Die meisten Konzepte, denen Sie während des gesamten Lebenszyklus der Softwareentwicklung (SDLC) begegnen, werden umfassend vorgestellt. Dieses Dokument ist jedoch nicht für jeden geeignet. Wenn Sie direkt mit dem Erstellen von Anwendungen beginnen möchten, wird empfohlen, zu den Tutorials [Introduction to Mobile Development (Einführung in die Entwicklung mobiler Anwendungen)](~/cross-platform/get-started/introduction-to-mobile-development.md), [Hello, Android (Hallo, Android)](~/android/get-started/hello-android/index.md) oder [Hello, iPhone (Hallo, iPhone)](~/ios/get-started/hello-ios/index.md) zu springen und später zu diesem Dokument zurückzukehren.
+Dieses Dokument richtet sich sowohl an neue als auch an erfahrene Anwendungsentwickler und soll grundlegende Fragen über die Entwicklung mobiler Apps beantworten. Die meisten Konzepte, denen Sie während des gesamten Lebenszyklus der Softwareentwicklung (SDLC) begegnen, werden umfassend vorgestellt. Dieses Dokument ist jedoch nicht für jeden geeignet. Wenn Sie direkt mit dem Erstellen von Anwendungen beginnen möchten, wird empfohlen, direkt mit dem Leitfaden [Introduction to Mobile Development (Einführung in die Entwicklung mobiler Anwendungen)](~/cross-platform/get-started/introduction-to-mobile-development.md) weiter zu machen und später zu diesem Dokument zurückzukehren.
 
 ## <a name="mobile-development-sdlc"></a>Mobile Entwicklung – SDLC
 
@@ -73,19 +73,17 @@ Sobald die Funktionen und Funktionalitäten der App bestimmt sind, sollten Sie s
 
 #### <a name="ux-design"></a>Entwurf der UX
 
-Die UX wird üblicherweise mit Drahtmodellen oder Modellen mithilfe von Tools wie [Balsamiq](http://www.balsamiq.com/), [Mockingbird](https://gomockingbird.com/), [Visio](http://office.microsoft.com/en-us/visio/) oder einfach nur mit Stift und Papier entworfen. Durch UX-Modelle kann die UX entworfen werden, ohne den tatsächlichen UI-Entwurf zu berücksichtigen:
+Die Benutzererfahrung (UX) wird üblicherweise mit Drahtmodellen oder Modellen mithilfe von [einem von vielen verfügbaren Entwurfstoolkits](https://docs.microsoft.com/windows/uwp/design/downloads/) entworfen. Durch UX-Modelle kann die UX entworfen werden, ohne den tatsächlichen UI-Entwurf berücksichtigen zu müssen:
 
  [![](introduction-to-mobile-sdlc-images/balsamiq.png "Die Benutzererfahrung wird üblicherweise mit Drahtmodellen oder Modellen mithilfe von Tools wie Balsamiq entworfen")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
-Beim Erstellen von UX-Modellen ist es wichtig, die Richtlinien zur Benutzeroberfläche für die verschiedenen Zielplattformen der App zu berücksichtigen. Die App sollte den Anforderungen der verschiedenen Plattformen entsprechen. Die verschiedenen Richtlinien für alle Plattformen finden Sie unter:
+Beim Erstellen von UX-Modellen ist es wichtig, die Richtlinien für die Benutzeroberfläche für die verschiedenen Zielplattformen der App zu berücksichtigen. Die App sollte den Anforderungen der verschiedenen Plattformen entsprechen. Die verschiedenen offiziellen Entwurfsrichtlinien für die jeweiligen Plattformen finden Sie unter:
 
-1.   **Apple**: -  [Human Interface Guidelines (Eingaberichtlinien)](http://developer.apple.com/library/ios/#DOCUMENTATION/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
+1.   **Apple**: -  [Human Interface Guidelines (Eingaberichtlinien)](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/)
 1.   **Android**:[Design Guidelines (Entwurfsrichtlinien)](http://developer.android.com/design/index.html)
-1.   **Windows Phone**: [Design library for Windows Phone (Designbibliothek für Windows Phone)](http://msdn.microsoft.com/en-US/library/windowsphone/design/fa00461b-abe1-41d1-be87-0b0fe3d3389d(v=vs.105).aspx)
+1.   **UWP**: [UWP Design basics (Grundlagen des UWP-Entwurfs)](https://docs.microsoft.com/windows/uwp/design/basics/)
 
-Beispielsweise verfügt jede App über eine Metapher, über die man zwischen den einzelnen Abschnitten einer Anwendung wechseln kann. Bei iOS ist die Registerkartenleiste im unteren Bereich des Bildschirms platziert, bei Android im oberen Bereich, während beim Windows Phone eine Panoramaansicht verwendet wird:
-
- ![](introduction-to-mobile-sdlc-images/38.png "Jede App verfügt über eine Metapher, über die zwischen den einzelnen Abschnitten einer Anwendung gewechselt werden kann")
+Beispielsweise verfügt jede App über eine Metapher, über die man zwischen den einzelnen Abschnitten einer Anwendung wechseln kann. Bei iOS ist die Registerkartenleiste im unteren Bereich des Bildschirms platziert, bei Android im oberen Bereich, während bei UWP eine Ansicht mit [Pivots und Registerkarten](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot) verwendet wird.
 
 Zudem werden UX-Entscheidungen von der Hardware an sich beeinflusst. Beispielsweise haben iOS-Geräte keine physische *Zurück-*Taste, weshalb Sie die Metapher Navigation Controller (Navigationscontroller) einfügen sollten.
 
@@ -104,15 +102,6 @@ Sobald die UX bestimmt ist, muss als nächstes die UI entworfen werden. Für die
 Genauso wie bei der Erstellung der UX ist es wichtig zu bedenken, dass jede Plattform eine eigene Entwurfssprache hat. D.h., eine gut entworfene Anwendung wird möglicherweise trotzdem auf jeder Plattform anders aussehen.
 
  [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "Eine überlegt entworfene Anwendung wird möglicherweise trotzdem auf jeder Plattform anders aussehen")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
-
-Ideen zu guten UI-Designs finden Sie unter:
-
-1.   [pttrns.com](http://pttrns.com) (nur iOS)
-1.   [androidpttrns.com](http://androidpttrns.com) (nur Android)
-1.   [lovelyui.com](http://lovelyui.com) (iOS, Android und Windows Phone)
-1.   [mobiledesignpatterngallery.com](http://mobiledesignpatterngallery.com) (iOS, Android und Windows Phone)
-
-Außerdem können Sie sich auf Websites wie [Behance.com](http://behance.com) und [Dribbble.com](http://dribbble.com) Portfolios von Grafikdesignern anschauen. Dort sind Designer aus aller Welt vertreten, und oft kommen sie aus Ländern, in denen die Wechselkurse für Sie günstig sind. Das bedeutet, dass gute Grafikdesigns nicht unbedingt teuer sein müssen.
 
 ### <a name="development"></a>Entwicklung
 
@@ -135,12 +124,7 @@ In der Regel wird eine Anwendung, je weiter deren Entwicklung in den einzelnen P
 
 Für frühe Tests und zur Bereitstellung für verhältnismäßig wenige Geräte ist es in der Regel ausreichend, wenn die Anwendung direkt von einem Entwicklungscomputer aus zur Verfügung gestellt wird. Wenn sich aber die Zielgruppe vergrößert, wird diese Option sehr schnell sehr aufwändig. Aus diesem Grund gibt es eine Reihe von Optionen zur Testbereitstellung, die diesen Vorgang stark vereinfachen: Sie können Personen zu einem Test-Pool einladen, Builds über das Internet veröffentlichen und Tools für Benutzerfeedback zur Verfügung stellen.
 
-Häufig werden die folgenden Optionen verwendet:
-
-1.   **Testflight**: Dabei handelt es sich um ein iOS-Produkt, mit dem Sie Apps zum Testen verteilen können, und über das Ihre Kunden Ihnen Absturzberichte und Nutzungsinformationen übermitteln können. Diese Option ist in iTunes Connect enthalten. Sie können allerdings nicht darauf zurückgreifen, wenn Sie ein Mitglied von Apple Developer Enterprise sind.
-2.   **LaunchPad (lauchpadapp.com)**: Dieser Dienst ist Testflight sehr ähnlich, wurde aber für Android entworfen.
-3.   **Vessel (vessel.io)**: Mit diesem Dienst, verfügbar für iOS und Android, können Sie die Nutzung überwachen, Kunden nachverfolgen und sogar A/B-Tests in der App durchführen.
-4.  **hockeyapp.com**: Dieses Produkt bietet Testdienste für iOS, Android und Windows Phone an.
+Zum Testen und Bereitstellen können Sie das [App Center](https://appcenter.ms/) verwenden, um fortlaufend Apps zu erstellen, zu testen, zu veröffentlichen und zu überwachen.
 
 ### <a name="distribution"></a>Verteilung
 
@@ -170,9 +154,9 @@ Dadurch haben die Entwickler Zugang zu einem Verteilungskanal für ihre Anwendun
 1.  [Handango](http://www.handango.com/)
 1.  [GetJar](http://www.getjar.com/)
 
-#### <a name="windows"></a>Windows 
+#### <a name="uwp"></a>UWP 
 
-Anwendungen für Windows werden über den Microsoft Store an die Benutzer verteilt. Entwickler senden ihre Apps zur Genehmigung an das Windows Phone Dev Center.
+UWP-Anwendungen werden über den Microsoft Store an die Benutzer verteilt. Entwickler senden ihre Apps zur Genehmigung an das Windows Phone Dev Center. Weitere Informationen zum Veröffentlichen von Windows-Apps finden Sie in der [UWP-Dokumentation zum Veröffentlichen](https://docs.microsoft.com/windows/uwp/publish/).
 
 ## <a name="mobile-development-considerations"></a>Überlegungen zur mobilen Entwicklung
 
@@ -237,9 +221,9 @@ Multitasking unter Android hat zwei Komponenten. Die erste Komponente ist der Ak
 Die zweite Multitasking-Komponente unter Android ist die Verwendung von Diensten.
 Dienste sind Prozesse mit langer Laufzeit, die unabhängig von der Anwendung bestehen und verwendet werden, um Prozesse auszuführen, während eine Anwendung im Hintergrund läuft. Weitere Informationen finden Sie im Leitfaden [Creating Services (Erstellen von Diensten)](~/android/app-fundamentals/services/index.md).
 
-#### <a name="many-devices-amp-many-form-factors"></a>Viele Geräte &amp; Formfaktoren
+#### <a name="many-devices-and-many-form-factors"></a>Viele Geräte und viele Formfaktoren
 
-Im Gegensatz zu iOS, das nur auf wenigen Geräten verfügbar ist, oder sogar Windows Phone, das nur auf zugelassenen Geräten, die eine minimale Anzahl von Plattformanforderungen entsprechen, ausgeführt wird, schränkt Google nicht ein, auf welchen Geräten das Android-Betriebssystem ausgeführt werden darf. Dieses offene Paradigma hat zur Folge, dass eine Produktumgebung entsteht, die aus unzähligen verschiedenen Geräten besteht, die sich alle in der Hardware, der Bildschirmauflösung und -abmessung, den Gerätefunktionen und den Funktionen unterscheiden.
+Es bestehen keine Einschränkungen von Google, auf welchem Gerät das Android-Betriebssystem ausgeführt werden kann. Dieses offene Paradigma hat zur Folge, dass eine Produktumgebung entsteht, die aus unzähligen verschiedenen Geräten besteht, die sich alle in der Hardware, der Bildschirmauflösung und -abmessung, den Gerätefunktionen und den Funktionen unterscheiden.
 
 Aufgrund der starken Fragmentierung von Android-Geräten, entscheiden sich die meisten Entwickler dafür, ihre Anwendungen für die beliebtesten fünf bis sechs Geräte zu entwerfen, diese Geräte zum Testen zu verwenden und sie zu priorisieren.
 
@@ -252,25 +236,17 @@ Dies ist ein entscheidender Schritt im Verteilungsmodell von Android. Es handelt
 
 #### <a name="multitasking"></a>Multitasking
 
-Unter Windows Phone besteht Multitasking ebenfalls aus zwei Teilen: dem Lebenszyklus für Seiten und Anwendungen einerseits und Hintergrundprozessen andererseits. Jede Ansicht in einer Anwendung ist eine Seitenklasseninstanz, bei der Ereignisse entweder aktiv oder inaktiv sind (dabei gibt es spezielle Regeln zur Verarbeitung eines inaktiven Zustands bzw. für den Tombstone-Zustand). 
+Multitasking bei UWP besteht aus zwei Teilen: dem Lebenszyklus für Seiten und Anwendungen einerseits und Hintergrundprozessen andererseits. Jede Ansicht in einer Anwendung ist eine Seitenklasseninstanz, bei der Ereignisse entweder aktiv oder inaktiv sind (dabei gibt es spezielle Regeln zur Verarbeitung eines inaktiven Zustands bzw. für den Tombstone-Zustand). 
 
 Der zweite Teil des Multitasking besteht daraus, Hintergrund-Agents zur Verarbeitung von Aufgaben zur Verfügung zu stellen, wenn die App nicht im Vordergrund ausgeführt wird. 
 
 #### <a name="device-capabilities"></a>Gerätefunktionen
 
-Obwohl die Windows Phone-Hardware aufgrund der strengen von Microsoft vorgegebenen Richtlinien recht einheitlich ist, gibt es trotzdem noch Komponenten, die optional sind, und daher bei der Entwicklung besonders berücksichtigt werden müssen. Optionale Hardwarefunktionen sind z.B. die Kamera, der Kompass und das Gyroskop. Es gibt außerdem eine spezielle Klasse mit geringem Arbeitsspeicher (256 MB), die entweder besonders berücksichtigt werden muss, oder Sie stellen die Unterstützung von Geräten mit geringem Arbeitsspeicher ein.
-
-#### <a name="database"></a>Datenbank
-
-Sowohl iOS als auch Android verfügen über das SQLite-Datenbankmodul, durch das eine raffinierte Datenspeicherungsoption zur Verfügung gestellt wird, die auch plattformübergreifend funktioniert. Windows Phone 7 beinhaltet keine Datenbank. Unter Windows Phone 7.1 und 8 gibt es aber ein [local database engine (lokales Datenbankmodul)](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202860(v=vs.105).aspx), das nur mit [LINQ to SQL (LINQ nach SQL)](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202872(v=vs.105).aspx) abgefragt werden kann und das die Transact-SQL-Abfragen nicht unterstützt. Es gibt einen [open-source port of SQLite (Open-Source-Port von SQL Lite)](http://code.google.com/p/csharp-sqlite/), der zu einer Windows Phone-Anwendung hinzugefügt werden kann, um eine klassische Transact-SQL-Unterstützung und plattformübergreifende Kompatibilität zugänglich zu machen.
+Obwohl die UWP-Hardware recht einheitlich ist, gibt es trotzdem noch Komponenten, die optional sind, und daher bei der Entwicklung besonders berücksichtigt werden müssen. Optionale Hardwarefunktionen sind z.B. die Kamera, der Kompass und das Gyroskop. Es gibt außerdem eine spezielle Klasse mit geringem Arbeitsspeicher (256 MB), die entweder besonders berücksichtigt werden muss, oder Sie stellen die Unterstützung von Geräten mit geringem Arbeitsspeicher ein.
 
 #### <a name="security-considerations"></a>Sicherheitsüberlegungen
 
-Windows Phone-Anwendungen werden mit einer beschränkten Anzahl von Berechtigungen ausgeführt, die sie voneinander isolieren und die Vorgänge einschränken, die sie ausführen können.
-Der Netzwerkzugriff muss über bestimmte API erfolgen, und die Anwendungen können nur über kontrollierte Mechanismen miteinander kommunizieren. Auch der Zugriff auf das Dateisystem wird eingeschränkt. Über die API für den isolierten Speicher können Schlüssel-Wert-Paare gespeichert sowie Dateien und Ordner kontrolliert erstellt werden (weitere Informationen finden Sie unter [Isolated Storage Overview (Übersicht zum isolierten Speicher)](http://msdn.microsoft.com/en-us/library/ff402541(v=vs.92).aspx)).
-
-Der Zugriff der Anwendung auf Hardware und Betriebssystemfunktionen wird über die Funktionen gesteuert, die in der Manifestdatei aufgelistet sind (ähnlich wie bei Android).
-In der Manifestdatei muss angegeben werden, auf welche Funktionen die Anwendung zugreifen muss, damit einerseits die Benutzer die Berechtigungen sehen und ihnen zustimmen können und das Betriebssystem andererseits den Zugriff auf die API zulässt. Anwendungen müssen sich für den Zugang zu Funktionen wie u.a. den Kontakten, Kalenderdaten, der Kamera, dem Standort und der Medienbibliothek eine Genehmigung einholen. Weitere Informationen finden Sie in der Microsoft-Dokumentation: [Application Manifest File (Anwendungsmanifestdatei)](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff769509(v=vs.92).aspx).
+Weitere Informationen zu wichtigen Sicherheitsfaktoren bei UWP finden Sie in der [Dokumentation zur Sicherheit](https://docs.microsoft.com/windows/uwp/security/).
 
 ## <a name="summary"></a>Zusammenfassung
 

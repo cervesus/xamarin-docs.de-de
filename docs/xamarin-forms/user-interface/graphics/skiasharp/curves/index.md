@@ -8,11 +8,11 @@ ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 9daea43ea09f7acaa2f3cd1300785391f69c4746
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 3f2ab787d88ce2f5703a2d6ac670116ad224d32c
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="skiasharp-curves-and-paths"></a>SkiaSharp Kurven und Pfaden
 
@@ -20,7 +20,7 @@ _Informationen Sie zum Verwenden von SkiaSharp Kurven zu zeichnen und Verwenden 
 
 Die Untersuchung des [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) begann mit Methoden und Eigenschaften der [SkiaSharp Linien und Pfade](~/xamarin-forms/user-interface/graphics/skiasharp/paths/index.md) Artikel. Hier die Artikel mit Methoden, die Kurven zu hinzufügen zu fortfahren eine `SKPath` Objekte und andere leistungsstarke Pfad-Funktionen nutzen. Sie sehen, wie Sie einen vollständigen Pfad in eine präzise Textzeichenfolge angeben können, wie Pfad Effekte verwenden und wie in den Pfad Internals vorzudringen.
 
-Die Beispielprogramme in diesem Abschnitt angezeigt wird, unter der Überschrift **Kurven und mehr Pfade** auf der Startseite von der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) Programm, und in der [ **Kurven** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves) Ordner der Projektmappe.
+Die Beispielprogramme in diesem Abschnitt angezeigt wird, unter der Überschrift **Kurven und mehr Pfade** auf der Startseite von der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm, und in der [ **Kurven** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves) Ordner der Projektmappe.
 
 ## <a name="three-ways-to-draw-an-arcarcsmd"></a>[Drei Möglichkeiten, einen Bogen zu zeichnen](arcs.md)
 
@@ -54,4 +54,4 @@ Abrufen von Informationen über Pfade und aufführen des Inhalts
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,6 +1,6 @@
 ---
 title: Zeichnen eines Kreises einfache
-description: "Grundlagen der SkiaSharp zeichnen, einschließlich explizite und paint"
+description: Grundlagen der SkiaSharp zeichnen, einschließlich explizite und paint
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 10f741e853603ef22cd45004a6c726ae579f3675
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 402470c3a27ba4327afa6e77336d60748abad436
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="drawing-a-simple-circle"></a>Zeichnen eines Kreises einfache
 
@@ -20,7 +20,7 @@ _Grundlagen der SkiaSharp zeichnen, einschließlich explizite und paint_
 
 In diesem Artikel erläutert die Konzepte der Grafiken in SkiaSharp, einschließlich der Erstellung mit Xamarin.Forms ein `SKCanvasView` Objekt, das die Grafiken, die Behandlung von host der `PaintSurface` -Ereignisses und die Verwendung einer `SKPaint` Objekt, um Farb- und anderen Zeichnung anzugeben Attribute.
 
-Die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) Programm enthält alle Beispielcode für diese Reihe von Artikeln SkiaSharp. Die erste Seite berechtigt ist **einfacher Kreis** und ruft die Seitenklasse [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Dieser Code veranschaulicht das Zeichnen eines Kreises in der Mitte der Seite mit einem Radius von 100 Pixel. Die Gliederung des Kreises ist rot, und das Innere des Kreises ist Blau.
+Die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm enthält alle Beispielcode für diese Reihe von Artikeln SkiaSharp. Die erste Seite berechtigt ist **einfacher Kreis** und ruft die Seitenklasse [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Dieser Code veranschaulicht das Zeichnen eines Kreises in der Mitte der Seite mit einem Radius von 100 Pixel. Die Gliederung des Kreises ist rot, und das Innere des Kreises ist Blau.
 
 ![](circle-images/circleexample.png "Einem blauen Kreis rot umrandet")
 
@@ -154,4 +154,4 @@ Im nächsten Beispiel in der [Integration mit Xamarin.Forms](~/xamarin-forms/use
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

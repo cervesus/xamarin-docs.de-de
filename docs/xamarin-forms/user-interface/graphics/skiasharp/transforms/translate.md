@@ -1,6 +1,6 @@
 ---
 title: Der Translate-Transformation
-description: "Erfahren Sie, wie die übersetzen-Transformation verwenden, um SkiaSharp Grafiken zu verschieben"
+description: Erfahren Sie, wie die übersetzen-Transformation verwenden, um SkiaSharp Grafiken zu verschieben
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: cac2479af2778af6043a85583f9d7b518748d7da
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 771fde301a8585f25d7d83c7bf0451cf6e0cf8e9
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="the-translate-transform"></a>Der Translate-Transformation
 
@@ -36,7 +36,7 @@ Diese Argumente können negativ sein. Ein zweites [ `Translate` ](https://develo
 public void Translate (SKPoint point)
 ```
 
-Die **übersetzen kumuliert** auf der Seite der [ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) Beispielprogramm zeigt, dass mehrere Aufrufe der der `Translate` Methode sind kumulativ. Die [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) Klasse zeigt 20 Versionen des gleichen Rechtecks, jeweils offset aus dem vorherigen Rechteck gerade genug, damit sie entlang der diagonalen zu Strecken. So sieht die `PaintSurface` Ereignishandler:
+Die **übersetzen kumuliert** auf der Seite der [ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispielprogramm zeigt, dass mehrere Aufrufe der der `Translate` Methode sind kumulativ. Die [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) Klasse zeigt 20 Versionen des gleichen Rechtecks, jeweils offset aus dem vorherigen Rechteck gerade genug, damit sie entlang der diagonalen zu Strecken. So sieht die `PaintSurface` Ereignishandler:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -303,4 +303,4 @@ Beachten Sie, dass die Stern dieselbe Ausrichtung beibehält, die es dreht, um d
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,6 +1,6 @@
 ---
-title: Introduction to Content Pipelines
-description: "Inhaltspaket Pipelines Anwendungen oder Teile der Anwendung sind, dienen, die Dateien in ein Format zu konvertieren, die von Spiel Projekte geladen werden können. Pipeline Inhalt MonoGame handelt es sich um eine bestimmte Inhalte Pipeline-Implementierung zum Konvertieren von Dateien für CocosSharp und MonoGame-Projekte."
+title: Einführung in die Content-pipelines
+description: Inhaltspaket Pipelines Anwendungen oder Teile der Anwendung sind, dienen, die Dateien in ein Format zu konvertieren, die von Spiel Projekte geladen werden können. Pipeline Inhalt MonoGame handelt es sich um eine bestimmte Inhalte Pipeline-Implementierung zum Konvertieren von Dateien für CocosSharp und MonoGame-Projekte.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 40628B5F-FAF7-4FA7-A929-6C3FEA83F8EC
@@ -8,20 +8,20 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: d51852924a4d909857659d38f8c19d520bb4c589
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7394ae5ddacb20a10e603fa50376799b82d2a3dc
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="introduction-to-content-pipelines"></a>Introduction to Content Pipelines
+# <a name="introduction-to-content-pipelines"></a>Einführung in die Content-pipelines
 
 _Inhaltspaket Pipelines Anwendungen oder Teile der Anwendung sind, dienen, die Dateien in ein Format zu konvertieren, die von Spiel Projekte geladen werden können. Pipeline Inhalt MonoGame handelt es sich um eine bestimmte Inhalte Pipeline-Implementierung zum Konvertieren von Dateien für CocosSharp und MonoGame-Projekte._
 
 Dieser Artikel bietet ein über ein grundlegendes Verständnis von Inhalt Pipelines, wobei schwerpunktmäßig in erster Linie auf die die *MonoGame Inhalt Pipeline*, wobei es sich ein Content Pipeline-Implementierung mit CocosSharp und MonoGame verwendet.
 
 
-# <a name="what-is-a-content-pipeline"></a>Was ist eine Content Pipeline?
+## <a name="what-is-a-content-pipeline"></a>Was ist eine Content Pipeline?
 
 Der Begriff *Content Pipeline* ist ein allgemeiner Begriff für eine Datei aus einem Format in eine andere konvertiert. Die *input* der Content-Pipeline ist in der Regel eine Datei, die von einem Erstellungstool, wie Bilddateien aus Photoshop ausgegeben. Die Content-Pipeline erstellt die *Ausgabe* Datei in einem Format, die direkt von einem Spiel Projekt geladen werden kann. In der Regel die Ausgabedateien für schnelles Laden optimiert sind und reduziert die Größe des Datenträgers.
 
@@ -31,32 +31,32 @@ Wir können den Pfad visuell darstellen, den eine Datei von der Erstellung zur L
 
 ![](introduction-images/image1.png "Der Pfad, den eine Datei verwendet wird, von der Erstellung, die zur Laufzeit geladen wird, wird in diesem Diagramm veranschaulicht.")
 
-# <a name="why-use-a-content-pipeline"></a>Gründe für die Verwendung von Content-Pipeline
+## <a name="why-use-a-content-pipeline"></a>Gründe für die Verwendung von Content-pipeline
 
 Content-Pipelines führen einen zusätzlichen Schritt zwischen der authoring Anwendung und das Spiel, die kompilierzeiten zu erhöhen und Komplexität des Entwicklungsprozesses hinzufügen können. Trotz dieser Faktoren stellen Content Pipelines eine Reihe von Vorteilen für 3D-Spielentwicklung an:
 
 
-## <a name="converting-to-a-format-understood-by-the-game"></a>Konvertierung in ein Format, das Spiel verständlich
+### <a name="converting-to-a-format-understood-by-the-game"></a>Das Spiel verständlich in ein Format konvertieren
 
 Geben Sie Methoden zum Laden von verschiedenen Typen von Inhalt, CocosSharp und MonoGame; Allerdings muss der Inhalt korrekt formatiert sein, bevor Sie geladen wird. Die meisten Typen von Inhalten erfordern einige Art der Konvertierung, bevor Sie geladen wird. Beispielsweise Soundeffekten in der **.wav** Format konvertiert werden muss, in eine **.xnb** Datei, die zur Laufzeit geladen werden, da CocosSharp und MonoGame laden unterstützen die **.wav** Dateiformat.
 
 
-## <a name="converting-to-a-format-native-to-the-hardware"></a>Konvertieren in ein systemeigenes Format der Hardware
+### <a name="converting-to-a-format-native-to-the-hardware"></a>Konvertierung in ein Format systemeigene der Hardware
 
 Unterschiedliche Hardware Inhalt möglicherweise zur Laufzeit anders behandeln. Beispielsweise können CocosSharp Spiele Bilddateien laden, beim Erstellen einer `CCSprite` Instanz. Obwohl der gleiche Code zum Laden der Dateien auf IOS- und Android verwendet werden kann, speichert jede Plattform die geladene Datei unterschiedlich. Daher formatiert die MonoGame Content Pipeline Textur **.xnb** Dateien anders abhängig von der Zielplattform.
 
 
-## <a name="reducing-size-on-disk"></a>Reduzieren der Größe auf Datenträger 
+### <a name="reducing-size-on-disk"></a>Reduzieren der Größe auf Datenträger 
 
 Inhaltspaket Pipelines verwendet werden können, um Informationen zu entfernen, die nützlich zur Erstellungszeit, jedoch nicht zur Laufzeit erforderlich ist. Die ursprüngliche (Eingabedatei) kann alle Informationen, die Autoren vorhandene Inhalte verwalten kann, speichern, aber die Ausgabedatei kann abgespeckte insgesamt Spiele Datei gering gehalten werden. Diese Überlegungen sind besonders nützlich für mobile Spiele, die werden heruntergeladen, sondern auf den Installationsmedien verteilt.
 
 
-## <a name="reducing-load-time"></a>Ladezeit reduzieren
+### <a name="reducing-load-time"></a>Ladezeit reduzieren
 
 Spiele erfordern möglicherweise Änderungen des Inhalts zur Verbesserung der Leistung zur Laufzeit, um visuelle Elemente zu verbessern oder neue Funktionen hinzufügen. Z. B. viele 3D-Spielen Beleuchtung einmal zu berechnen, verwenden Sie das Ergebnis der Berechnung bei komplexe Szenen zu rendern. Da diese Berechnungen ausführen, wenn beim Laden von Inhalt ungeheuer teuer sein kann kann die Berechnung stattdessen ausgeführt werden, wenn das Spiel erstellt wird. Die resultierenden Berechnungen können eingefügt werden, im Inhalt, aktivieren den Inhalt zu ladende viel schneller, als andernfalls möglich wäre. 
 
 
-# <a name="xnb-file-extension"></a>XNB-Erweiterung
+## <a name="xnb-file-extension"></a>Xnb-Erweiterung
 
 Die **.xnb** Erweiterung der Ausgabedatei lautet die Erweiterung für alle Dateien, die von der Monogame Content Pipeline ausgegeben. Dies entspricht der Erweiterung von Dateien, die von Microsoft XNA Content Pipeline ausgegeben.
 
@@ -65,10 +65,10 @@ Die **.xnb** Erweiterung wird unabhängig von dem ursprünglichen Dateityp verwe
 CocosSharp und MonoGame .xnb-Dateien können erstellt werden, mithilfe der Monogame pipelinetool der behandelt wird [in dieser exemplarischen Vorgehensweise](~/graphics-games/cocossharp/content-pipeline/walkthrough.md).
 
 
-# <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel bereitgestellt eine Übersicht und Vorteile von Inhalt Pipelines im Allgemeinen sowie eine Einführung in die MonoGame Inhalt Pipeline.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte links
 
 - [MonoGame Pipeline-Dokumentation](http://www.monogame.net/documentation/?page=Pipeline)

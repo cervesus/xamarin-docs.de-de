@@ -1,6 +1,6 @@
 ---
 title: 2D mathematischen Funktionen mit CocosSharp
-description: "Dieser Leitfaden behandelt, für die Entwicklung von 2D Mathematik. Er CocosSharp zeigen, wie allgemeine Aufgaben zur 3D-Spielentwicklung verwendet und erläutert die mathematischen hinter dieser Aufgaben."
+description: Dieser Leitfaden behandelt, für die Entwicklung von 2D Mathematik. Er CocosSharp zeigen, wie allgemeine Aufgaben zur 3D-Spielentwicklung verwendet und erläutert die mathematischen hinter dieser Aufgaben.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5C241AB4-F97E-4B61-B93C-F5D307BCD517
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 7573ca423c3d9462d400f117c2116209e7c2a410
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 484bd8b19f2c51dac57a46a1ef93610ed5e13419
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="2d-math-with-cocossharp"></a>2D mathematischen Funktionen mit CocosSharp
 
@@ -28,12 +28,12 @@ Positionieren und Verschieben von Objekten mit Code die ist ein zentraler Bestan
 Entwickler, die kein sicheres mathematische Hintergrund besitzen, oder, die lange-vergessen haben diese Themen Schule, erübrigt sich Gedanken machen – dieses Dokument wird Gliedern Konzepte Ansatzpunkt Größe Teile und theoretische erläuterungen mit praktischen Beispielen begleitet werden. Kurz gesagt, in diesem Artikel wird die Frage beantwortet wird uralte mathematische Student: "Wenn ich tatsächlich müssen diese Dinge verwenden?"
 
 
-# <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Anforderungen
 
 Zwar in erster Linie auf der mathematischen CocosSharp-Seite dieses Dokument konzentriert sich, vorausgesetzt Codebeispiele arbeiten mit Objekten erben Formular `CCNode`. Darüber hinaus seit `CCNode` enthält keine Werte für Geschwindigkeit und Beschleunigung der Code geht davon aus arbeiten mit Entitäten an, die Werte, z. B. VelocityX, VelocityY AccelerationX und AccelerationY bereitzustellen. Weitere Informationen zu Entitäten, finden Sie unter exemplarischen auf [Entitäten in CocosSharp](~/graphics-games/cocossharp/entities.md).
 
 
-# <a name="velocity"></a>Geschwindigkeit
+## <a name="velocity"></a>Geschwindigkeit
 
 Entwickler verwenden den Begriff *Geschwindigkeit* beschreiben, wie ein Objekt gleitenden – ist insbesondere wie schnell schließt ein Element verschoben werden und die Richtung, dass die It bewegt wird. 
 
@@ -50,7 +50,7 @@ bulletInstance.VelocityY = 300;
 ```
 
 
-## <a name="implementing-velocity"></a>Implementieren der Geschwindigkeit
+### <a name="implementing-velocity"></a>Implementieren der Geschwindigkeit
 
 CocosSharp implementiert nicht Geschwindigkeit, damit Objekte, die Bewegung erfordern ihre eigene Logik Bewegung implementieren müssen. Neue Spiel Entwickler implementierende Geschwindigkeit oftmals machen Sie den Fehler, sodass ihre Geschwindigkeit Framerate abhängig. D. h. die folgenden *falsche Implementierung* anscheinend um richtige Ergebnisse bereitzustellen, aber als Basis für das Spiel Framerate wird:
 
@@ -75,7 +75,7 @@ Beachten Sie, dass ein Spiel der Frame langsamer ausgeführt wird, das die Posit
 Ein Beispiel zum Verschieben von zeitbasierten hinzufügen, finden Sie unter [diese Anleitung abdecken Zeit basierten verschieben](https://developer.xamarin.com/recipes/cross-platform/game_development/time_based_movement/).
 
 
-## <a name="calculating-positions-using-velocity"></a>Berechnen der Geschwindigkeit mit Positionen
+### <a name="calculating-positions-using-velocity"></a>Berechnen der Geschwindigkeit mit Positionen
 
 Geschwindigkeit kann verwendet werden, in der Vorhersage zu, in dem ein Objekt nach einer gewissen Zeit werden, oder für die Objekte Verhalten zu optimieren, ohne das Spiel auszuführen. Beispielsweise muss ein Entwickler, der die Übertragung der protokollsicherungsdaten ausgelöst Aufzählungszeichen implementiert das Aufzählungszeichen Geschwindigkeit festgelegt, nachdem er instanziiert wird. Eine Grundlage zum Festlegen der Geschwindigkeit bereitstellen, kann die Größe des Bildschirms verwendet werden. Wenn der Entwickler informiert wird, die das Aufzählungszeichen sollten die Höhe des Bildschirms in 2 Sekunden verschieben, wird die Geschwindigkeit sollte festgelegt werden, der die Höhe des Bildschirms geteilt durch 2. Wenn der Bildschirm 800 Pixel hoch ist, würde das Aufzählungszeichen Geschwindigkeit festgelegt werden, und 400 (also 800/2).
 
@@ -92,7 +92,7 @@ label.Text = secondsToReachTarget + " seconds to reach target";
 ```
 
 
-# <a name="acceleration"></a>Acceleration
+## <a name="acceleration"></a>Acceleration
 
 *Acceleration* ist eine allgemeine Konzept in 3D-Spielentwicklung und, die viele ähnlichkeiten mit der Geschwindigkeit geteilt. Acceleration misst, ob ein Objekt beschleunigen oder verlangsamen (wie der Wert der Geschwindigkeit des im Zeitverlauf ändert). Acceleration *fügt* Geschwindigkeit, genau wie Geschwindigkeit hinzugefügt, um zu positionieren. Allgemeine anwendungsfallbeispiele der Beschleunigung Schwerpunkt, ein Auto beschleunigen und eine Speicherplatz Lieferadresse seine Thrusters auslösen. 
 
@@ -111,12 +111,12 @@ icicle.AccelerationY = -50;
 ```
 
 
-## <a name="acceleration-vs-deceleration"></a>Acceleration im Vergleich zu Verzögerung
+### <a name="acceleration-vs-deceleration"></a>Acceleration im Vergleich zu Verlangsamung
 
 Obwohl Beschleunigung und Verzögerung manchmal in täglich Sprache unterscheiden, ist gibt es keine technische Unterschied zwischen den beiden. Schwerpunkt ist ein Force Acceleration vortäuschen. Wenn ein Objekt, das nach oben ausgelöst wird Klicken Sie dann Schwerpunkt verlangsamt es (verlangsamen), aber um, sobald das Objekt wird nicht mehr climbing und ist in der gleichen Richtung wie Schwerpunkt fallen dann Schwerpunkt ist beschleunigen sie (beschleunigt). Wie unten dargestellt, ist die Anwendung eine Beschleunigung, ob es in die gleiche Richtung oder die umgekehrte Richtung des Verschiebens angewendet wird. 
 
 
-## <a name="implementing-acceleration"></a>Acceleration implementieren
+### <a name="implementing-acceleration"></a>Acceleration implementieren
 
 Acceleration ist ähnlich wie Geschwindigkeit bei der Implementierung – es wird nicht automatisch durch CocosSharp implementiert, und zeitbasierte Acceleration ist die gewünschte Implementierung (im Gegensatz zu framebasierte Acceleration). Aus diesem Grund kann eine einfache Acceleration (zusammen mit der Geschwindigkeit) Implementierung formuliert werden:
 
@@ -149,7 +149,7 @@ Der offensichtlichste Unterschied zu den oben aufgeführten Code wird die `halfS
 Die praktische Auswirkung `halfSecondSquare` darin, dass Acceleration unabhängig von der Framerate mathematisch genau und erwartungsgemäß verhält. Die lineare Näherung der Beschleunigung unterliegt Framerate – je niedriger löscht die Framerate, desto weniger genau ist die Näherung ab. Mit `halfSecondsSquared` wird sichergestellt, dass der Code unabhängig von der Framerate identisch verhält.
 
 
-# <a name="angles-and-rotation"></a>Winkel und Drehung
+## <a name="angles-and-rotation"></a>Winkel und Drehung
 
 Visuelle Objekte wie z. B. `CCSprite` unterstützen Drehung über eine `Rotation` Variable. Dies kann auf einen Wert zugewiesen werden, die Drehung in Grad festgelegt. Der folgende Code zeigt z. B. Gewusst wie: Drehen eine `CCSprite` Instanz:
 
@@ -189,7 +189,7 @@ Diese Unterscheidung ist wichtig, da die `System.Math` Klasse gegen den Uhrzeige
 Es sollten beachten, dass die oben aufgeführten Diagramme Drehung in Grad angezeigt; allerdings einige mathematischen Funktionen (z. B. die Funktionen in der `System.Math` Namespace) erwarten und Rückgabewerte in *Bogenmaß* statt Grad. Sehen wir uns Gewusst wie: Konvertieren zwischen den zwei Einheitentypen etwas weiter unten in diesem Handbuch.
 
 
-## <a name="rotating-to-face-a-direction"></a>Um eine Richtung zeigen drehen
+### <a name="rotating-to-face-a-direction"></a>Um eine Richtung zeigen drehen
 
 Wie oben gezeigt `CCSprite` können gedreht werden, mithilfe der `Rotation` Eigenschaft. Die `Rotation` Eigenschaft wird bereitgestellt, indem Sie `CCNode` (die Basisklasse für `CCSprite`), womit der Drehung kann angewendet werden, um Entitäten an, die von erben `CCNode` auch. 
 
@@ -261,14 +261,16 @@ Dieser Code führt zu folgendem Verhalten:
 
 ![](math-images/image5.gif "Dieser Code führt zu diesem Verhalten")
 
-### <a name="using-atan2-to-convert-offsets-to-angles"></a>Verwenden zum Konvertieren von Offsets in Winkel Atan2
+#### <a name="using-atan2-to-convert-offsets-to-angles"></a>Verwenden zum Konvertieren von Atan2 Winkel offsets
+
 `System.Math.Atan2` kann verwendet werden, um ein Offset in einen Winkel zu konvertieren. Der Funktionsname `Atan2` stammen aus den Arkustangens trigonometrische Funktion. Das Suffix "2" wird diese Funktion unterscheidet, vom Standard `Atan` -Funktion, die das mathematische Verhalten des Arkustangens streng entspricht. Arkustangens ist eine Funktion, die zwischen-90 und einen Wert zurückgibt und bis + 90 Grad (oder der entsprechende im Bogenmaß). Viele Clientanwendungen, einschließlich Spiele, erfordern häufig eine vollständige 360 Grad der Werte, sodass der `Math` Klasse enthält `Atan2` auf diese Anforderung zu erfüllen.
 
 Beachten Sie, dass der obige Code Y-Parameter zunächst den X-Parameter dann beim Aufrufen übergibt der `Atan2` Methode. Dies ist rückwärts von den üblichen X, Y Sortierung der Positionskoordinaten. Weitere Informationen [finden Sie unter Atan2 Dokumente](https://msdn.microsoft.com/en-us/library/system.math.atan2(v=vs.110).aspx).
 
 Es ist auch Folgendes zu beachten, dass der Rückgabewert von `Atan2` wird im Bogenmaß, also von einer anderen Einheit verwendet, um den Winkel zu messen. Dieses Handbuch behandelt die Details der Bogenmaß nicht bietet, aber beachten Sie, alle trigonometrischen Funktionen in der `System.Math` Namespace verwenden von Radians, damit alle Werte in Grad konvertiert werden müssen, bevor Sie für CocosSharp Objekte verwendet werden. Weitere Informationen zu Bogenmaß verwendbaren [in Radiant Wikipedia-Seite](http://en.wikipedia.org/wiki/Radian).
 
-### <a name="forward-angle"></a>Forward-Spitzen
+#### <a name="forward-angle"></a>Forward-Spitzen
+
 Einmal die `FacePoint` Methode den Winkel in Bogenmaß konvertiert, definiert einen `forwardAngle` Wert. Dieser Wert stellt den Winkel, in dem die Entität mit Internetzugriff wird bei der Rotation Wert gleich 0 ist. In diesem Beispiel wird angenommen, dass die Entität nach oben, mit Internetzugriff wird also um 90° eine mathematische Drehung (im Gegensatz zu CocosSharp Drehung) verwenden. Wir verwenden die mathematische Drehung hier, da wir noch die Rotation für CocosSharp invertiert nicht geschehen.
 
 Das folgende Beispiel zeigt, welche eine Entität mit einem `forwardAngle` von 90 Grad kann folgendermaßen aussehen:
@@ -276,7 +278,7 @@ Das folgende Beispiel zeigt, welche eine Entität mit einem `forwardAngle` von 9
 ![](math-images/image6.png "Dies zeigt, wie eine Entität mit einem ForwardAngle von 90 Grad aussehen könnte")
 
 
-## <a name="angled-velocity"></a>Spitzen Geschwindigkeit
+### <a name="angled-velocity"></a>Spitzen Geschwindigkeit
 
 Bisher haben wir an, wie einen Offset in einen Winkel konvertieren gesucht. In diesem Abschnitt wird eine andere Möglichkeit – einen Winkel und konvertiert sie in X und Y-Werte. Typische Beispiele dafür sind ein Auto in die Richtung, die sie mit Internetzugriff wird oder ein Speicherplatz Ship behandeln die in Richtung verschoben wird, die der Liefernamen mit Internetzugriff wird Aufzählungszeichen verschieben. 
 
@@ -354,6 +356,6 @@ Dieser Code kann etwa generiert:
 ![](math-images/image9.png "Dieser Code kann in etwa diesen Screenshot erzeugen.")
 
 
-# <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Zusammenfassung
 
 Dieser Leitfaden behandelt allgemeine mathematische Konzepte der Entwicklung von 2D. Es wird gezeigt, wie zuweisen und Implementierung Geschwindigkeit und Acceleration und beschrieben, wie Objekte und Vektoren für das Verschieben in eine beliebige Richtung zu drehen.

@@ -1,6 +1,6 @@
 ---
 title: Die Rotationstransformation
-description: "Untersuchen Sie die Auswirkung und Animationen, die mit der SkiaSharp Rotationstransformation möglich"
+description: Untersuchen Sie die Auswirkung und Animationen, die mit der SkiaSharp Rotationstransformation möglich
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 146093e15651316e84947e2bd81eeee3bf55cedb
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e3e9c42fafc9a3d139a90bda6289260c5f3a667b
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="the-rotate-transform"></a>Die Rotationstransformation
 
@@ -370,4 +370,4 @@ Die Uhr ist sicherlich funktionsfähig, obwohl die Hände stattdessen einfach ge
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

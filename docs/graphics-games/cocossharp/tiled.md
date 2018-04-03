@@ -1,6 +1,6 @@
 ---
 title: Mit Kacheleffekt mit CocosSharp
-description: "Kacheleffekt ist ein leistungsfähiges, flexibles und ordnet ausgereifte Anwendung zum Erstellen der Kachel \"orthogonale und isometrische\" für Spiele. CocosSharp bietet eine integrierte Integration für systemeigene Dateiformat der Fläche."
+description: Kacheleffekt ist ein leistungsfähiges, flexibles und ordnet ausgereifte Anwendung zum Erstellen der Kachel "orthogonale und isometrische" für Spiele. CocosSharp bietet eine integrierte Integration für systemeigene Dateiformat der Fläche.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 804C042C-F62A-4E6C-B10F-06528637F0E2
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 5a469a372a9299712be7aef46c51f3d644946535
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 68afa9d175140fd5104e83282a2f72c47625d882
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="using-tiled-with-cocossharp"></a>Mit Kacheleffekt mit CocosSharp
 
@@ -30,7 +30,7 @@ Wenn abgeschlossen haben wir die folgenden Demo:
 ![](tiled-images/image1.png "Die Demo-app erstellt, indem Sie die Schritte in diesem Handbuch")
 
 
-# <a name="the-purpose-of-tile-maps"></a>Der Zweck der Kachel Zuordnungen
+## <a name="the-purpose-of-tile-maps"></a>Der Zweck der Kachel Zuordnungen
 
 Kachel-Zuordnungen im 3D-Spielentwicklung Jahrzehnten gewesen, jedoch werden weiterhin häufig in 2D Spiele für ihre Effizienz und Esthetics verwendet. Kachel-Karten sind erzielt eine sehr hohe Effizienz über ihre Nutzung der Kachel legt – Quellbilds von Kachel Maps verwendet. Eine Kachel-Menge ist eine Sammlung von Bildern, die in eine Datei zusammengefasst. Obwohl Kachel legt auf in der Kachel Zuordnungen verwendete Bilder zu verweisen, sind Dateien, die mehrere kleinere Bilder enthalten auch Sprite Blätter oder aufgerufen Sprite in 3D-Spielentwicklung zugeordnet. Wir können visuell darstellen, wie die Kachel Mengen verwendet werden, durch Hinzufügen eines Rasters auf die Kachel-Gruppe, die in der Demo verwendet werden:
 
@@ -43,7 +43,7 @@ Kachel Maps Anordnen der einzelnen Kacheln aus Kachel Zeichensätzen. Wir Beacht
 ![](tiled-images/image4.png "Dieses Bild zeigt die möglichen per Zufall neu, die mit den gleichen Kachel")
 
 
-# <a name="working-with-tmx-files"></a>Arbeiten mit .tmx-Dateien
+## <a name="working-with-tmx-files"></a>Arbeiten mit .tmx-Dateien
 
 Das .tmx-Dateiformat ist eine XML-Datei erstellt, die von der Anwendung Fläche kann u. [kostenlos heruntergeladen, auf der Website Fläche](http://www.mapeditor.org/). Das Dateiformat .tmx speichert die Informationen für die Kachel Zuordnungen. In der Regel wird ein Spiel, das eine .tmx-Datei für die einzelnen Ebenen oder separate Bereiche haben.
 
@@ -80,7 +80,7 @@ Beim Ausführen des Spiels, die wir sehen die Kachel-Zuordnung angezeigt, in der
 ![](tiled-images/image6.png "Wenn das Spiel ausgeführt wird, die Zuordnung der Kachel angezeigt werden, in der unteren linken Ecke des Bildschirms")
 
 
-# <a name="considerations-for-rendering-pixel-art"></a>Überlegungen für das Rendern von Grafiken Pixel
+## <a name="considerations-for-rendering-pixel-art"></a>Überlegungen für das Rendern von Grafiken pixel
 
 Pixel-Grafiken, im Kontext der Video-Spielentwicklung, bezieht sich auf 2D visual Art von Hand ist in der Regel erstellt und ist häufig mit niedriger Auflösung. Pixel Art eingeschränkten kann zeitaufwändig zu erstellen, damit Pixel Art Kachel häufig mit niedriger Auflösung Kacheln, z. B. 16- oder 32 Pixelbreite und Höhe umfassen,. Wenn zur Laufzeit nicht skaliert wird, ist die Pixel Kunst häufig zu klein für die meisten modernen Telefone und Tablets.
 
@@ -161,7 +161,7 @@ Unsere Kachel-Zuordnung wird jetzt nicht unscharf angezeigt:
 ![](tiled-images/image8.png "Jetzt wird die Kachel-Zuordnung nicht unscharf angezeigt")
 
 
-# <a name="using-tile-properties-at-runtime"></a>Von der Kacheleigenschaften zur Laufzeit
+## <a name="using-tile-properties-at-runtime"></a>Von der kacheleigenschaften zur Laufzeit
 
 Bisher haben wir eine `CCTileMap` Laden einer Datei .tmx sowie die Anzeige, aber wir haben keine Möglichkeit, die mit ihm zu interagieren. Insbesondere benötigen bestimmte Kacheln (z. B. unsere Glücksspiel Kasten) benutzerdefinierten Logik. Es werden schrittweise durchlaufen Gewusst wie: Erkennen von benutzerdefinierten kacheleigenschaften und verschiedene Möglichkeiten, auf diese Eigenschaften, die einmal zur Laufzeit identifiziert, zu reagieren.
 
@@ -175,7 +175,7 @@ Wenn die Glücksspiel Kasten Eigenschaften nicht angezeigt werden, mit der recht
 
 ![](tiled-images/image10.png "Wenn die Glücksspiel Kasten Eigenschaften nicht angezeigt werden, mit der rechten Maustaste auf die Glücksspiel Kasten und Auswählen der Kacheleigenschaften")
 
-Gekachelte Eigenschaften werden mit einem Namen und einen Wert implementiert. Um eine Eigenschaft hinzuzufügen, klicken Sie auf die  **+**  Schaltfläche, geben Sie den Namen **IsTreasure**, klicken Sie auf **OK**, geben Sie dann den Wert **"true"**: 
+Gekachelte Eigenschaften werden mit einem Namen und einen Wert implementiert. Um eine Eigenschaft hinzuzufügen, klicken Sie auf die **+** Schaltfläche, geben Sie den Namen **IsTreasure**, klicken Sie auf **OK**, geben Sie dann den Wert **"true"**: 
 
 ![](tiled-images/image11.png "Um eine Eigenschaft hinzuzufügen, klicken Sie auf die Schaltfläche "", geben Sie den Namen IsTreasure, klicken Sie auf OK, und geben Sie den Wert "true"")
 
@@ -273,11 +273,11 @@ Ein Großteil des Codes ist selbsterklärend, jedoch sollten erörtert, die Beha
 Die Glücksspiel Kasten profitieren also von wird eine Entität, anstatt eine einfache Kachel in der `CCTileMap`. Weitere Informationen zum Spiel Entitäten, finden Sie unter der [Entitäten in CocosSharp geführt](~/graphics-games/cocossharp/entities.md).
 
 
-# <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Zusammenfassung
 
 In dieser exemplarischen Vorgehensweise wird beschrieben, wie .tmx-Dateien erstellt, indem Fläche in einer Anwendung CocosSharp laden. Es zeigt, wie so ändern Sie die app-Auflösung niedrigerer Auflösung Pixel Art berücksichtigen und Gewusst wie: Suchen von Kacheln nach deren Eigenschaften, wie das Erstellen von Instanzen der Entität, benutzerdefinierten Logik ausführen.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte links
 
 - [Gekacheltes Website](http://www.mapeditor.org/)
 - [Inhalt zip](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Tiled.zip?raw=true)

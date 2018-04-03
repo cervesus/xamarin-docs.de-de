@@ -1,6 +1,6 @@
 ---
 title: Verwenden von CocosSharp in Xamarin.Forms
-description: "CocosSharp kann verwendet werden, um präzise Form, Bild und Textrendering zu einer Anwendung für die erweiterte Visualisierung hinzuzufügen"
+description: CocosSharp kann verwendet werden, um präzise Form, Bild und Textrendering zu einer Anwendung für die erweiterte Visualisierung hinzuzufügen
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: E0F404D5-5C6B-4288-92EC-78996C674E4E
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/03/2016
-ms.openlocfilehash: 395defa300da7b8f68746162d877a4fdb17ded9e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 83852b6b2d7324ae6aaf6b1dbf86a6ef7f9ac509
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Verwenden von CocosSharp in Xamarin.Forms
 
@@ -197,7 +197,7 @@ Das folgende Diagramm können Sie eine typische CocosSharp Hierarchie visualisie
 
 ![](cocossharp-images/image4.png "Typische CocosSharp-Hierarchie")
 
-Nur ein `CCScene` gleichzeitig aktiv sein können. Die meisten Spiele verwenden Sie mehrere `CCLayer` Instanzen zu sortieren Inhalt, aber die Anwendung verwendet nur einen. Auf ähnliche Weise die meisten Spiele mehrere visuelle Objekte verwenden, aber wir müssen nur einen in dieser app. Eine ausführlichere Erläuterung zu den CocosSharp visuellen Hierarchie Sie in finden der [verarbeit Spiel Exemplarische Vorgehensweise](~/graphics-games/cocossharp/first-game/index.md).
+Nur ein `CCScene` gleichzeitig aktiv sein können. Die meisten Spiele verwenden Sie mehrere `CCLayer` Instanzen zu sortieren Inhalt, aber die Anwendung verwendet nur einen. Auf ähnliche Weise die meisten Spiele mehrere visuelle Objekte verwenden, aber wir müssen nur einen in dieser app. Eine ausführlichere Erläuterung zu den CocosSharp visuellen Hierarchie Sie in finden der [BouncingGame Exemplarische Vorgehensweise](~/graphics-games/cocossharp/bouncing-game.md).
 
 Zunächst die `GameScene` Klasse wird nahezu leer sein – wir einfach erstellen, um den Verweis in erfüllen `HomePage`. Fügen Sie eine neue Klasse, um Ihre Plc `GameScene`. Sie sollten erbt von der `CCScene` -Klasse wie folgt:
 

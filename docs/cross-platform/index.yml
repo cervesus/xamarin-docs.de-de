@@ -1,19 +1,19 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: "Plattformübergreifender Leitfaden"
+title: Plattformübergreifender Leitfaden
 metadata:
-  description: "Plattformübergreifender Leitfaden für mobile Entwickler."
+  description: Plattformübergreifender Leitfaden für mobile Entwickler.
   author: conceptdev
   ms.author: crdun
-  ms.date: 02/17/2018
+  ms.date: 03/28/2018
   ms.topic: landing-page
-  ms.openlocfilehash: c143d0be4eb0a8afa122028018ab7c8c4e20a32a
-  ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+  ms.openlocfilehash: 92873a844fad195d221f6d191476cb5ff17c76e9
+  ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 03/09/2018
+  ms.lasthandoff: 04/03/2018
 abstract:
-  description: "Xamarin bietet eine Plattform für die plattformübergreifende Entwicklung für mobile, Tablet- und Desktopanwendungen."
+  description: Xamarin bietet eine Plattform für die plattformübergreifende Entwicklung für mobile, Tablet- und Desktopanwendungen.
   menu:
     items:
     - href: ~/cross-platform/samples/
@@ -21,28 +21,28 @@ abstract:
     - href: /visualstudio/
       text: Visual Studio
     - href: /visualstudio/mac/
-      text: "Visual Studio für Mac"
+      text: Visual Studio für Mac
 sections:
 - title: Erste Schritte
   items:
   - type: paragraph
-    text: "Erfahren Sie, wie Sie Ihre ersten Apps mit Xamarin und C# für Android, iOS, macOS, die universelle Windows-Plattform usw. erstellen."
+    text: Erfahren Sie, wie Sie Ihre ersten Apps mit Xamarin und C# für Android, iOS, macOS, die universelle Windows-Plattform usw. erstellen.
   - type: list
     style: icon48
     items:
     - image:
         src: https://docs.microsoft.com/media/common/i_setup.svg
       text: Anforderungen
-      href: ~/cross-platform/get-started/index.md
+      href: ~/cross-platform/get-started/requirements.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
       text: Erste Schritte
-      href: ~/cross-platform/get-started/index.md
+      href: ~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
       text: Multiscreen-Apps
-      href: ~/cross-platform/index.md
-- title: "Führungslinien"
+      href: ~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md
+- title: Führungslinien
   items:
   - type: grid
     style: columns
@@ -53,7 +53,7 @@ sections:
       className: cardsB
       items:
       - href: ~/cross-platform/get-started/index.md
-        html: "Tutorials für die ersten Schritte mit Xamarin. Stellen Sie sicher, dass alles korrekt installiert ist, und erstellen Sie Ihre ersten Apps."
+        html: Tutorials für die ersten Schritte mit Xamarin. Stellen Sie sicher, dass alles korrekt installiert ist, und erstellen Sie Ihre ersten Apps.
         image:
           src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
           href: ~/cross-platform/get-started/index.md
@@ -64,12 +64,6 @@ sections:
           src: ~/media/icons/i_platform.svg
           href: ~/
         title: Plattformfeatures
-      - href: ~/cross-platform/data-cloud/
-        html: Speicherung und Abruf von lokalen und Remotedaten sowie andere cloudbasierte Dienste.
-        image:
-          src: ~/media/icons/i_data-cloud.svg
-          href: ~/cross-platform/data-cloud/
-        title: Daten und Clouddienste
       - href: ~/cross-platform/macios/
         html: Allgemeine Features der iOS, watchOS, tvOS und macOS SDKs.
         image:
@@ -81,7 +75,7 @@ sections:
       className: cardsB
       items:
       - href: ~/cross-platform/app-fundamentals/
-        html: "Alles, was Sie wissen müssen, um Apps zu erstellen."
+        html: Alles, was Sie wissen müssen, um Apps zu erstellen.
         image:
           src: ~/media/icons/i_app-build.svg
           href: ~/cross-platform/app-fundamentals/
@@ -92,12 +86,6 @@ sections:
           src: ~/media/icons/i_deploy-test.svg
           href: ~/cross-platform/deploy-test/
         title: Bereitstellung und Testen
-      - href: ~/cross-platform/internals/
-        html: "Weitere Informationen über die plattformübergreifende mobile, Tablet- und Desktopentwicklung."
-        image:
-          src: https://docs.microsoft.com/en-us/media/common/i_advanced.svg
-          href: ~/cross-platform/internals/
-        title: "Weiterführende Konzepte und Interna"
 - title: Plattformen
   items:
   - type: list
@@ -106,13 +94,13 @@ sections:
     items:
     - title: Xamarin.Forms
       href: ~/xamarin-forms/index.md
-      html: "<p><a href=\"~/xamarin-forms/get-started/index.md\">Erste Schritte</a><br /><a href=\"~/xamarin-forms/app-fundamentals/index.md\">App-Grundlagen</a><br /><a href=\"~/xamarin-forms/user-interface/index.md\">Benutzeroberfläche</a><br /><a href=\"~/xamarin-forms/platform/index.md\">Plattformfeatures</a><br /><a href=\"~/xamarin-forms/deploy-test/index.md\">Bereitstellung und Testen</a><br /><a href=\"~/xamarin-forms/xaml/index.md\">XAML</a><br /><a href=\"~/xamarin-forms/data-cloud/index.md\">Daten und Clouddienste</a><br /><a href=\"~/xamarin-forms/internals/index.md\">Weiterführende Konzepte und Interna</a></p>"
+      html: <p><a href="~/xamarin-forms/get-started/index.md">Erste Schritte</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">App-Grundlagen</a><br /><a href="~/xamarin-forms/user-interface/index.md">Benutzeroberfläche</a><br /><a href="~/xamarin-forms/platform/index.md">Plattformfeatures</a><br /><a href="~/xamarin-forms/deploy-test/index.md">Bereitstellung und Testen</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">Daten und Clouddienste</a><br /><a href="~/xamarin-forms/internals/index.md">Weiterführende Konzepte und Interna</a></p>
     - title: Android
       href: ~/android/index.md
-      html: "<p><a href=\"~/android/get-started/index.md\">Erste Schritte</a><br /><a href=\"~/android/app-fundamentals/index.md\">App-Grundlagen</a><br /><a href=\"~/android/user-interface/index.md\">Benutzeroberfläche</a><br /><a href=\"~/android/platform/index.md\">Plattformfeatures</a><br /><a href=\"~/android/deploy-test/index.md\">Bereitstellung und Testen</a><br /><a href=\"~/android/data-cloud/index.md\">Daten und Clouddienste</a><br /><a href=\"~/android/internals/index.md\">Weiterführende Konzepte und Interna</a></p>"
+      html: <p><a href="~/android/get-started/index.md">Erste Schritte</a><br /><a href="~/android/app-fundamentals/index.md">App-Grundlagen</a><br /><a href="~/android/user-interface/index.md">Benutzeroberfläche</a><br /><a href="~/android/platform/index.md">Plattformfeatures</a><br /><a href="~/android/deploy-test/index.md">Bereitstellung und Testen</a><br /><a href="~/android/data-cloud/index.md">Daten und Clouddienste</a><br /><a href="~/android/internals/index.md">Weiterführende Konzepte und Interna</a></p>
     - title: iOS
       href: ~/ios/index.md
-      html: "<p><a href=\"~/ios/get-started/index.md\">Erste Schritte</a><br /><a href=\"~/ios/app-fundamentals/index.md\">App-Grundlagen</a><br /><a href=\"~/ios/user-interface/index.md\">Benutzeroberfläche</a><br /><a href=\"~/ios/platform/index.md\">Plattformfeatures</a><br /><a href=\"~/ios/deploy-test/index.md\">Bereitstellung und Testen</a><br /><a href=\"~/ios/data-cloud/index.md\">Daten und Clouddienste</a><br /><a href=\"~/ios/internals/index.md\">Weiterführende Konzepte und Interna</a></p>"
+      html: <p><a href="~/ios/get-started/index.md">Erste Schritte</a><br /><a href="~/ios/app-fundamentals/index.md">App-Grundlagen</a><br /><a href="~/ios/user-interface/index.md">Benutzeroberfläche</a><br /><a href="~/ios/platform/index.md">Plattformfeatures</a><br /><a href="~/ios/deploy-test/index.md">Bereitstellung und Testen</a><br /><a href="~/ios/data-cloud/index.md">Daten und Clouddienste</a><br /><a href="~/ios/internals/index.md">Weiterführende Konzepte und Interna</a></p>
     - title: Mac
       href: ~/mac/index.md
-      html: "<p><a href=\"~/mac/get-started/index.md\">Erste Schritte</a><br /><a href=\"~/mac/app-fundamentals/index.md\">App-Grundlagen</a><br /><a href=\"~/mac/user-interface/index.md\">Benutzeroberfläche</a><br /><a href=\"~/mac/platform/index.md\">Plattformfeatures</a><br /><a href=\"~/mac/deploy-test/index.md\">Bereitstellung und Testen</a><br /><a href=\"~/mac/internals/index.md\">Weiterführende Konzepte und Interna</a></p>"
+      html: <p><a href="~/mac/get-started/index.md">Erste Schritte</a><br /><a href="~/mac/app-fundamentals/index.md">App-Grundlagen</a><br /><a href="~/mac/user-interface/index.md">Benutzeroberfläche</a><br /><a href="~/mac/platform/index.md">Plattformfeatures</a><br /><a href="~/mac/deploy-test/index.md">Bereitstellung und Testen</a><br /><a href="~/mac/internals/index.md">Weiterführende Konzepte und Interna</a></p>

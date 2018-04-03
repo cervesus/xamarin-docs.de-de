@@ -1,5 +1,5 @@
 ---
-title: Details zur Implementierung von münzwurfs Zeit
+title: Spiel münzwurfs Zeit-details
 description: Dieses Handbuch erläutert Implementierungsdetails Münzwurfs Zeit-Spiele, einschließlich arbeiten mit Kachel Zuordnungen, Erstellen von Entitäten, animieren Sprites und effiziente Kollision implementieren.
 ms.topic: article
 ms.prod: xamarin
@@ -8,13 +8,13 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 80250ca9fae98fae653c9b2837b2b1a96fb02203
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: 8c33b74af80a14df1626ab39ba8c055a81259194
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="coin-time-implementation-details"></a>Details zur Implementierung von münzwurfs Zeit
+# <a name="coin-time-game-details"></a>Spiel münzwurfs Zeit-details
 
 _Dieses Handbuch erläutert Implementierungsdetails Münzwurfs Zeit-Spiele, einschließlich arbeiten mit Kachel Zuordnungen, Erstellen von Entitäten, animieren Sprites und effiziente Kollision implementieren._
 
@@ -24,27 +24,27 @@ Münzwurfs ist eine vollständige Platformer Spiele für iOS und Android. Das Zi
 
 Dieses Handbuch werden die Implementierungsdetails in Münzwurfs Zeit, die folgenden Themen erläutert:
 
-- [Arbeiten mit TMX-Dateien](#Working_with_TMX_Files)
-- [Beim Laden der Ebene](#Level_Loading)
-- [Hinzufügen von neuen Entitäten](#Adding_New_Entities)
-- [Animierte Entitäten](#Animated_Entities)
+- [Arbeiten mit Tmx-Dateien](#working-with-tmx-files)
+- [Beim Laden der Ebene](#level-loading)
+- [Hinzufügen von neuen Entitäten](#adding-new-entities)
+- [Animierte Entitäten](#animated-entities)
 
 
-# <a name="content-in-coin-time"></a>Inhalte in Münzwurfs Zeit
+## <a name="content-in-coin-time"></a>Inhalte in Münzwurfs Zeit
 
 Münzwurfs Zeit ist ein Beispielprojekt, das darstellt, wie ein Gesamtprojekt CocosSharp organisiert werden kann. Münzwurfs Uhrzeit Struktur zielt auf das Hinzufügen und die Wartung von Inhalten zu vereinfachen. Er verwendet **.tmx** erstellten Dateien [Fläche](http://www.mapeditor.org) für Ebenen und XML-Dateien Animationen definieren. Ändern oder Hinzufügen von neuen Inhalt kann mit minimalem Aufwand erreicht werden. 
 
 Trotz aller bemühungen dieser Ansatz Münzwurfs Mal ein effektive Projekt zum Lernen und experimentieren, damit auch wie professionelle Spiele wiedergegeben werden. Dieses Handbuch erläutert einige der Methoden zum Hinzufügen und Ändern von Inhalt zu vereinfachen.
 
 
-# <a name="working-with-tmx-files"></a>Arbeiten mit TMX-Dateien
+## <a name="working-with-tmx-files"></a>Arbeiten mit Tmx-Dateien
 
 Münzwurfs Zeitebenen werden definiert über die .tmx-Dateiformat, das durch ausgegeben wird die [Fläche](http://www.mapeditor.org) Kachel Zuordnungs-Editor. Eine ausführliche Erläuterung der Arbeit mit Fläche, finden Sie unter der [mit Cocos Spitze Handbuch gekachelt mithilfe](~/graphics-games/cocossharp/tiled.md). 
 
 Jede Ebene wird in einem eigenen .tmx-Datei definiert die **CoinTime/Bestand/Inhalt/Ebenen** Ordner. Alle Münzwurfs Zeitebenen freigeben eine Tileset-Datei, definiert in der **mastersheet.tsx** Datei. Diese Datei definiert die benutzerdefinierten Eigenschaften für jede Kachel, z. B., ob die Kachel einfarbig Kollision verfügt, oder gibt an, ob die Kachel durch eine Entitätsinstanz ersetzt werden soll. Die Datei mastersheet.tsx kann Eigenschaften nur einmal definiert und auf allen Ebenen verwendet werden. 
 
 
-## <a name="editing-a-tile-map"></a>Bearbeiten einer Kachel-Zuordnung
+### <a name="editing-a-tile-map"></a>Bearbeiten einer Kachel-Zuordnung
 
 Um eine Kachel-Zuordnung bearbeiten möchten, öffnen Sie die .tmx-Datei in Fläche durch Doppelklicken auf die Datei .tmx oder öffnen es über das Dateimenü in Fläche. Münzwurfs Zeit Ebene Kachel Zuordnungen mit drei Ebenen enthalten: 
 
@@ -54,7 +54,8 @@ Um eine Kachel-Zuordnung bearbeiten möchten, öffnen Sie die .tmx-Datei in Flä
 
 Wie wir später untersuchen, erwartet der Ebene Automatisches Laden von Code diese drei Ebenen in allen Münzwurfs Zeit Ebenen.
 
-### <a name="editing-terrain"></a>Bearbeiten von Terrain
+#### <a name="editing-terrain"></a>Bearbeiten von terrain
+
 Kacheln platziert werden können, indem Sie auf der **Mastersheet** Tileset klicken und dann auf die Kachel zuordnen. Geben Sie beispielsweise Folgendes ein, um neue Terrain in einer Ebene Paint-Ereignis:
 
 1. Wählen Sie die Terrain-Ebene
@@ -67,7 +68,8 @@ Oben links von der Tileset enthält alle im Gelände zeitlich Münzwurfs. Terrai
 
 ![](cointime-images/image3.png "Terrain, d. h. solid, beinhaltet die SolidCollision-Eigenschaft an, wie in der kacheleigenschaften auf der linken Seite des Bildschirms dargestellt")
 
-### <a name="editing-entities"></a>Bearbeiten von Entitäten
+#### <a name="editing-entities"></a>Bearbeiten von Entitäten
+
 Entitäten können hinzugefügt oder aus einer Ebene – genau wie Terrain entfernt werden. Die **Mastersheet** Tileset verfügt über alle Entitäten platziert zu während des laufenden Vorgangs horizontal aus, damit sie nicht angezeigt werden können, ohne Bildlauf nach rechts:
 
 ![](cointime-images/image4.png "Die Mastersheet Tileset verfügt über alle Entitäten platziert zu während des laufenden Vorgangs horizontal aus, damit sie nicht angezeigt werden können, ohne Bildlauf nach rechts")
@@ -85,7 +87,7 @@ Nachdem die Datei geändert und gespeichert wurde, werden die Änderungen automa
 ![](cointime-images/image7.png "Nachdem die Datei geändert und gespeichert wurde, werden die Änderungen automatisch angezeigt, wenn das Projekt erstellt und ausgeführt wird")
 
 
-## <a name="adding-new-levels"></a>Hinzufügen von neuen Ebenen
+### <a name="adding-new-levels"></a>Hinzufügen von neuen Ebenen
 
 Der Vorgang des Hinzufügens von Ebenen in Münzwurfs Zeit erfordert keine Änderungen am Code und nur einige kleinere Änderungen am Projekt. So fügen Sie eine neue Ebene hinzu:
 
@@ -105,7 +107,7 @@ Die neue Ebene sollte angezeigt werden in den Bildschirm für das Auswählen von
 ![](cointime-images/image10.png "Die neue Ebene sollte auf Ebene wählen Ebene 9-Datei beginnen bei 0 auftreten, während die Ebenen Schaltflächen mit der Zahl 1 beginnen")
 
 
-# <a name="level-loading"></a>Beim Laden der Ebene
+## <a name="level-loading"></a>Beim Laden der Ebene
 
 Wie oben beschrieben, neue Ebenen erfordern keine Änderungen im Code – das Spiel erkennt automatisch die Ebenen, wenn sie mit dem Namen ordnungsgemäß und hinzugefügt werden die **Ebenen** Ordner mit den richtigen Buildvorgang (**BundleResource**oder **AndroidAsset**).
 
@@ -201,7 +203,7 @@ private void GoToLevel(int levelNumber)
 Wir führen anschließend eine Betrachtung in aufgerufenen Methoden `GoToLevel`.
 
 
-## <a name="loadlevel"></a>LoadLevel
+### <a name="loadlevel"></a>LoadLevel
 
 Die `LoadLevel` Methode ist verantwortlich für das Laden der Datei .tmx und Hinzufügen zu den `GameScene`. Diese Methode erstellt keine interaktive Objekte wie Konflikte oder Entitäten – einfach wird erstellt, die visuellen Elemente für die Ebene, die auch als bezeichnet den *Umgebung*.
 
@@ -227,7 +229,7 @@ Die `CCTileMap` Konstruktor akzeptiert einen Dateinamen, die erstellt wird, verw
 Derzeit CocosSharp lässt keine Ebenen neu anordnen, ohne zu entfernen und erneut hinzugefügt wurden, mit deren übergeordneten `CCScene` (also die `GameScene` in diesem Fall), sodass die letzten zwei Zeilen der Methode erforderlich sind, um die Ebenen neu anzuordnen.
 
 
-## <a name="createcollision"></a>CreateCollision
+### <a name="createcollision"></a>CreateCollision
 
 Die `CreateCollision` -Methode erstellt eine `LevelCollision` -Instanz, die zum Ausführen *einfarbig Kollision* zwischen dem Player und Umgebung.
 
@@ -245,7 +247,7 @@ Ohne diese Konflikte würde der Spieler über der Ebene fallen, und das Spiel w�
 Kollisionen Münzwurfs zeitlich kann ohne zusätzlichen Code – nur Änderungen an gekachelten Dateien hinzugefügt werden. 
 
 
-## <a name="processtileproperties"></a>ProcessTileProperties
+### <a name="processtileproperties"></a>ProcessTileProperties
 
 Sobald eine Ebene geladen wird und der Konflikt erstellt wird, `ProcessTileProperties` wird aufgerufen, um die Logik, die basierend auf der kacheleigenschaften ausführen. Münzwurfs Zeitspanne beinhaltet eine `PropertyLocation` Struktur, Eigenschaften und die Koordinaten der Kachel mit diesen Eigenschaften zu definieren:
 
@@ -343,7 +345,7 @@ private bool TryCreateEntity(string entityType, float worldX, float worldY)
 ```
 
 
-# <a name="adding-new-entities"></a>Hinzufügen von neuen Entitäten
+## <a name="adding-new-entities"></a>Hinzufügen von neuen Entitäten
 
 Münzwurfs Zeit mithilfe des Entity-Musters für seine Spiel Objekte (die fällt die [Entitäten in CocosSharp geführt](~/graphics-games/cocossharp/entities.md)). Alle Entitäten, die von erben `CCNode`, d. h., sie als untergeordnete Elemente hinzugefügt werden können die `gameplayLayer`.
 
@@ -352,19 +354,19 @@ Jeder Entitätstyp ist auch direkt über eine Liste oder eine einzelne Instanz a
 Der vorhandene Code bietet es sich um eine Reihe von Entitätstypen als Beispiele zum Erstellen neuer Entitäten. Die folgenden Schritte können verwendet werden, um eine neue Entität zu erstellen:
 
 
-## <a name="1---define-a-new-class-using-the-entity-pattern"></a>1 - definieren Sie eine neue Klasse, die unter Verwendung des Musters Entität
+### <a name="1---define-a-new-class-using-the-entity-pattern"></a>1 - definieren Sie eine neue Klasse, die unter Verwendung des Musters Entität
 
 Die einzige Voraussetzung zum Erstellen einer Entität ist eine Klasse erstellen, die erbt `CCNode`. Die meisten Entitäten haben einige visuelle Element, z. B. eine `CCSprite`, die als untergeordnetes Element der Entität in seinem Konstruktor hinzugefügt werden sollen.
 
-CoinTime bietet die `AnimatedSpriteEntity` Klasse, die die Erstellung der animierten Entitäten vereinfacht. Animationen in ausführlicher behandelt werden die [animiert Entitäten Abschnitt](#Animated_Entities).
+CoinTime bietet die `AnimatedSpriteEntity` Klasse, die die Erstellung der animierten Entitäten vereinfacht. Animationen in ausführlicher behandelt werden die [animiert Entitäten Abschnitt](#animated-entities).
 
 
-## <a name="2--add-a-new-entry-to-the-trycreateentity-switch-statement"></a>2 – Fügen Sie einen neuen Eintrag für die TryCreateEntity Switch-Anweisung
+### <a name="2--add-a-new-entry-to-the-trycreateentity-switch-statement"></a>2 – Fügen Sie einen neuen Eintrag für die TryCreateEntity Switch-Anweisung
 
 Instanzen der neuen Entität instanziiert werden sollte, der `TryCreateEntity`. Wenn die Entität für jeden-Frame-Logik, wie Konflikte, AI oder Lesen von Eingaben, müssen die `GameScene` muss einen Verweis auf das Objekt zu halten. Wenn mehrere Instanzen erforderlich sind (z. B. `Coin` oder `Enemy` Instanzen), klicken Sie dann ein neues `List` hinzugefügt werden sollen die `GameScene` Klasse.
 
 
-## <a name="3--modify-tile-properties-for-the-new-entity"></a>3 – Ändern der kacheleigenschaften für die neue Entität
+### <a name="3--modify-tile-properties-for-the-new-entity"></a>3 – Ändern der kacheleigenschaften für die neue Entität
 
 Nachdem der Code die Erstellung der neuen Entität unterstützt, muss die neue Entität die Tileset hinzugefügt werden. Die Tileset kann bearbeitet werden, durch Öffnen einer beliebigen Ebene `.tmx` Datei. 
 
@@ -389,7 +391,7 @@ Die Tileset sollten überschreibt das vorhandene **mastersheet.tsx** Tileset:
 ![](cointime-images/image15.png "HE Tileset sollte die vorhandene mastersheet.tsx Tileset überschreiben.")
 
 
-# <a name="entity-tile-removal"></a>Entität Kachel entfernen
+## <a name="entity-tile-removal"></a>Entität Kachel entfernen
 
 Beim Laden einer Kachel-Zuordnung in ein Spiel, werden die einzelnen Kacheln statische Objekte. Da Entitäten benutzerdefiniertes Verhalten, z. B. Bewegung benötigen, entfernt Münzwurfs Zeitcode Kacheln aus, wenn Entitäten erstellt werden.
 
@@ -453,7 +455,7 @@ private void ProcessTileProperties()
 ```
 
 
-# <a name="entity-offsets"></a>Entität Offsets
+## <a name="entity-offsets"></a>Entität offsets
 
 Entitäten, die in Form von Kacheln erstellt werden durch die Ausrichtung der Mitte der Entität mit dem Mittelpunkt der Kachel positioniert. Größere Entitäten wie `Door`, verwenden Sie zusätzliche Eigenschaften und Logik ordnungsgemäß abgelegt werden soll. 
 
@@ -493,12 +495,12 @@ private void ProcessTileProperties()
 ```
 
 
-# <a name="animated-entities"></a>Animierte Entitäten
+## <a name="animated-entities"></a>Animierte Entitäten
 
 Münzwurfs Zeit enthält mehrere animierte Entitäten. Die `Player` und `Enemy` Entitäten Walk Animationen wiedergeben und die `Door` Entität spielt eine Animation öffnen, nachdem alle Münzen erfasst wurden.
 
 
-## <a name="achx-files"></a>.achx-Dateien
+### <a name="achx-files"></a>.achx-Dateien
 
 Münzwurfs Zeit Animationen werden in .achx-Dateien definiert. Jede Animation wird zwischen definiert `AnimationChain` tags, wie in der folgenden Animation in definierten gezeigt **propanimations.achx**:
 
@@ -533,7 +535,7 @@ Die `FrameLength` Eigenschaft definiert die Anzahl von Sekunden an, die ein Fram
 Alle anderen AnimationChain Eigenschaften in der Datei .achx von Münzwurfs Zeit ignoriert.
 
 
-## <a name="animatedspriteentity"></a>AnimatedSpriteEntity
+### <a name="animatedspriteentity"></a>AnimatedSpriteEntity
 
 Animationslogik ist Bestandteil der `AnimatedSpriteEntity` Klasse, die als Basisklasse dient, für die meisten Entitäten in verwendet das `GameScene`. Es bietet die folgenden Funktionen:
 
@@ -562,10 +564,10 @@ walkRightAnimation = animations.Find (item => item.Name == "WalkRight");
 ```
 
 
-# <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Zusammenfassung
 
 Dieser Leitfaden behandelt die Implementierungsdetails der Würfe Zeit. Münzwurfs Zeit wird erstellt, um ein Spiel abgeschlossen werden, aber es ist auch ein Projekt, das einfach geändert und erweitert werden kann. Leser werden empfohlen, verbringen Zeit und Änderungen an Ebenen, neue Ebenen hinzufügen und Erstellen von neuen Entitäten um vertieft Ihr Verständnis wie Münzwurfs implementiert wird.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte links
 
 - [Spielprojekt (Beispiel)](https://developer.xamarin.com/samples/mobile/CoinTime/)

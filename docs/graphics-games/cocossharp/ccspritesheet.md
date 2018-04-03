@@ -8,20 +8,20 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: ec8a641fbd15f826e92ada62f65b17dd46b369e4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e2bb5b98b5c93fb625ce645692d8a3ccb3d143b
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="improving-framerate-with-ccspritesheet"></a>Verbessern der Framerate mit CCSpriteSheet
+# <a name="improving-frame-rate-with-ccspritesheet"></a>Verbessern der Framerate mit CCSpriteSheet
 
 _CCSpriteSheet bietet Funktionen zum Kombinieren von und verwenden viele Bilddateien in eine Textur. Anzahl der Textur verringern kann ein Spiel Ladezeiten und Framerate verbessert werden._
 
 Viele Spiele ist die Optimierung reibungslos, und Laden schnell auf mobile Hardware erforderlich. Die `CCSpriteSheet` Klasse kann dazu beitragen, viele CocosSharp Spiele angetroffen allgemeiner Leistungsprobleme zu behandeln. Diese Anleitung enthält häufig auftretende Leistungsprobleme und zum Behandeln sie mithilfe der `CCSpriteSheet` Klasse.
 
 
-# <a name="what-is-a-sprite-sheet"></a>Was ist ein Blatt Sprite?
+## <a name="what-is-a-sprite-sheet"></a>Was ist ein Blatt Sprite?
 
 Ein *Sprite Blatt*, die können auch auf bezeichnet werden, als ein *Textur Atlas*, ein Bild in einer Datei mehrere Abbilder kombiniert wird. Dies kann die Leistung zur Laufzeit als auch Content Ladezeiten verbessern.
 
@@ -30,7 +30,7 @@ Die folgende Abbildung ist beispielsweise ein einfaches Sprite Blatt von drei se
 ![](ccspritesheet-images/image1.png "Die einzelnen Bilder können beliebiger Größe sein, und das resultierende Sprite Blatt ist nicht vollständig ausgefüllt werden")
 
 
-## <a name="render-states"></a>Render-Zustände
+### <a name="render-states"></a>Rendern von Zuständen
 
 Visueller CocosSharp-Objekte (z. B. `CCSprite`) vereinfachen Renderingcodes über herkömmlichen grafischen API Renderingcodes z. B. MonoGame oder OpenGL, die die Erstellung von Vertexpuffer erfordern (wie in der [zeichnen 3D-Grafiken mit Scheitelpunkten in MonoGame](~/graphics-games/monogame/3d/part2.md) Handbuch). Trotz seiner Einfachheit CocosSharp nicht beseitigen die Kosten für die Einstellung *Rendern Zustände*, sind die Anzahl der Male, dass Renderingcodes Texturen oder anderen Rendering-bezogene Status wechseln muss.
 
@@ -62,7 +62,7 @@ Render-Status können schwierig sein, zu optimieren, da die Reihenfolge zeichnen
 
 Natürlich ist die ideale Situation an, die einen einzelnen Render Status, obwohl er besitzt mehrere Abbilder. CocosSharp Spiele können zu diesem Zweck alle Bilder in einer einzelnen Datei kombiniert, und klicken Sie dann, dass eine Datei laden (zusammen mit seiner zugehörigen **plist** Datei) in einem `CCSpriteSheet`. Mithilfe der `CCSpriteSheet` Klasse ist sogar noch wichtiger für Spiele, wofür eine große Anzahl von Images, oder bei denen sehr, komplexe Layouts. 
 
-## <a name="load-times"></a>Laden.
+### <a name="load-times"></a>Laden.
 
 Kombinieren mehrere Bilder in einer Datei verbessert auch ein Spiel Ladezeiten eine Reihe von Gründen:
 
@@ -70,7 +70,7 @@ Kombinieren mehrere Bilder in einer Datei verbessert auch ein Spiel Ladezeiten e
  - Laden weniger Dateien bedeutet weniger Aufwand von pro Datei, z. B. das Analysieren von PNG-Headern
  - Laden weniger Dateien erfordert weniger Zeit, die wichtig für datenträgerbasierte Medien wie DVDs oder Festplatten eines Computers herkömmlichen ist seek
 
-# <a name="using-ccspritesheet-in-code"></a>Verwenden von CCSpriteSheet in Code
+## <a name="using-ccspritesheet-in-code"></a>Verwenden von CCSpriteSheet in code
 
 Zum Erstellen einer `CCSpriteSheet` Instanz, ein Bild und eine Datei, die die Bereiche des für jeden Frame zu verwendenden Images definiert, muss den Code angeben. Das Bild geladen werden kann, wie eine **PNG** oder **.xnb** Datei (bei Verwendung der [Content Pipeline](~/graphics-games/cocossharp/content-pipeline/index.md)). Die Datei definieren die Frames ist ein **plist** Datei, die manuell erstellt werden kann oder *TexturePacker* (die unten erläutert).
 
@@ -110,7 +110,7 @@ CCSprite sprite = new CCSprite (frame);
 Seit der `CCSprite` Konstruktor dauert eine `CCSpriteFrame` Parameter der Code nie hat, untersuchen Sie die Details der `CCSpriteFrame`, z. B. welche Struktur verwendet oder die Region des Bilds in der master Sprite Blatt.
 
 
-#  <a name="creating-a-sprite-sheet-plist"></a>Erstellen ein Sprite plist Blatt
+## <a name="creating-a-sprite-sheet-plist"></a>Erstellen eine Sprite Blatt plist
 
 Die plist-Datei ist eine Xml-basierte-Datei, die erstellt und manuell bearbeitet werden kann. Auf ähnliche Weise kann Bildbearbeitungsprogramme verwendet werden, um mehrere Dateien in eine größere Datei kombinieren. Seit erstellen und Verwalten von Sprite Blätter sehr zeitaufwändig sein können, wird das Programm TexturePacker betrachten wir die Dateien im CocosSharp-Format exportieren können. TexturePacker bietet ein kostenloses und eine "Pro" Version und steht für Windows und Mac OS. Der Rest dieses Handbuchs kann mithilfe der kostenlosen Version ausgeführt werden. 
 
@@ -124,13 +124,13 @@ Bilddateien (z. B. **PNG**) können TexturePacker durch Ziehen Sie Drag & Drop w
 
 Um ein Blatt Sprite zu exportieren, klicken Sie auf die **veröffentlichen Sprite Blatt** Schaltfläche und wählen Sie einen Speicherort für das Sprite ein. TexturePacker speichert eine plist-Datei und einer Bilddatei.
 
-Um die resultierenden Dateien zu verwenden, fügen Sie die PNG und der plist zu einem Projekt CocosSharp ein. Informationen zum Hinzufügen von Dateien zu Projekten CocosSharp finden Sie unter der [implementieren das Handbuch BouncingGame](~/graphics-games/cocossharp/first-game/part2.md). Nachdem die Dateien hinzugefügt wurden, können sie in geladen werden eine `CCSpriteSheet` wie im obigen Code weiter oben gezeigt wurde:
+Um die resultierenden Dateien zu verwenden, fügen Sie die PNG und der plist zu einem Projekt CocosSharp ein. Informationen zum Hinzufügen von Dateien zu Projekten CocosSharp finden Sie unter der [BouncingGame Handbuch](~/graphics-games/cocossharp/bouncing-game.md). Nachdem die Dateien hinzugefügt wurden, können sie in geladen werden eine `CCSpriteSheet` wie im obigen Code weiter oben gezeigt wurde:
 
 ```csharp
 CCSpriteSheet sheet = new CCSpriteSheet ("sheet.plist", "sheet.png"); 
 ```
 
-## <a name="considerations-for-maintaining-a-texturepacker-sprite-sheet"></a>Überlegungen zum Verwalten einer TexturePacker Sprite Blatt
+### <a name="considerations-for-maintaining-a-texturepacker-sprite-sheet"></a>Überlegungen zum Verwalten einer TexturePacker Sprite hinzu
 
 Wie Spiele entwickelt werden, möglicherweise Künstler hinzufügen, entfernen oder Ändern von Grafiken. Jede Änderung erfordert eine aktualisierte Sprite Blatt. Die folgenden Aspekte können Sprite Blatt Wartung erleichtern:
 
@@ -144,11 +144,11 @@ Wie Spiele entwickelt werden, möglicherweise Künstler hinzufügen, entfernen o
 
     ![](ccspritesheet-images/image10.png "Um Ordnerpfade einzuschließen, klicken Sie auf Anzeigen erweiterter im Datenabschnitt und stellen Ordnername überprüfen")
 
-# <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Zusammenfassung
 
 Diese Anleitung enthält Informationen zum Erstellen und Verwenden der `CCSpriteSheet` Klasse. Sie erfahren auch, wie Dateien erstellt, die geladen werden kann `CCSpriteSheet` Instanzen mit dem Programm TexturePacker.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte links
 
 - [CCSpriteSheet](https://developer.xamarin.com/api/type/CocosSharp.CCSpriteSheet/)
 - [Vollständige Demo (Beispiel)](https://developer.xamarin.com/samples/mobile/SpriteSheetDemo/)

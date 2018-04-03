@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: b94091afc459866d072bd3c4adc3947f6be258b1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 897e3bbe0375a425709ec63edf25088ac35106e5
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="skiasharp-lines-and-paths"></a>SkiaSharp Linien und Pfade
 
@@ -22,7 +22,7 @@ Die [vorherigen Abschnitt](~/xamarin-forms/user-interface/graphics/skiasharp/bas
 
 Der Grafikpfad ist der allgemeinste Ansatz zum Zeichnen von Linien und Kurven in SkiaSharp. In diesem Abschnitt erläutert die Verwendung einer `SKPath` Objekt gerade Linien gezeichnet werden soll, und verwenden eine Auflistung von kleinen geraden (aufgerufen eine *Polylinie*) Kurven gezeichnet werden soll, die Sie, mathematisch definieren können. Ein später Abschnitt wird erläutert, die verschiedene Arten von Kurven von unterstützten `SKPath`.
 
-Die Beispielprogramme in diesem Abschnitt angezeigt wird, unter der Überschrift **Linien und Pfade** auf der Startseite von der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) Programm, und klicken Sie in der [ **Pfade** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Paths) Ordner der Projektmappe.
+Die Beispielprogramme in diesem Abschnitt angezeigt wird, unter der Überschrift **Linien und Pfade** auf der Startseite von der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm, und klicken Sie in der [ **Pfade** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Paths) Ordner der Projektmappe.
 
 ## <a name="lines-and-stroke-capslinesmd"></a>[Linien und Strichenden](lines.md)
 
@@ -52,4 +52,4 @@ Verwenden Sie die Finger im Zeichenbereich Paint-Ereignis.
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,6 +1,6 @@
 ---
-title: Mithilfe des Tools MonoGame-Pipeline
-description: Das pipelinetool MonoGame dient zum Erstellen und Verwalten von Inhalt MonoGame-Projekte. Die Dateien in Projekten auf Inhalt vom Tool Monogame Pipeline verarbeitet und als .xnb-Dateien zur Verwendung in CocosSharp und MonoGame Anwendungen ausgegeben.
+title: Verwenden die MonoGame PipelineTool
+description: Das Pipelinetool MonoGame dient zum Erstellen und Verwalten von Inhalt MonoGame-Projekte. Die Dateien in Projekten auf Inhalt vom Tool Monogame Pipeline verarbeitet und als .xnb-Dateien zur Verwendung in CocosSharp und MonoGame Anwendungen ausgegeben.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
@@ -8,24 +8,24 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 5c489aab66a0aaafeaaeadad0e8b95d451ec1592
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 37505b166488230be9d0e0690e415852506664f1
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>Mithilfe des Tools MonoGame-Pipeline
 
-_Das pipelinetool MonoGame dient zum Erstellen und Verwalten von Inhalt MonoGame-Projekte. Die Dateien in Projekten auf Inhalt vom Tool Monogame Pipeline verarbeitet und als .xnb-Dateien zur Verwendung in CocosSharp und MonoGame Anwendungen ausgegeben._
+_Das Pipelinetool MonoGame dient zum Erstellen und Verwalten von Inhalt MonoGame-Projekte. Die Dateien in Projekten auf Inhalt vom Tool Monogame Pipeline verarbeitet und als .xnb-Dateien zur Verwendung in CocosSharp und MonoGame Anwendungen ausgegeben._
 
-Das pipelinetool MonoGame stellt eine einfach zu bedienenden-Umgebung für die Konvertierung der Inhaltsdateien in **.xnb** Dateien zur Verwendung in CocosSharp und MonoGame-Anwendungen. Informationen zum Inhalt Pipelines und warum sie 3D-Spielentwicklung nützlich sind, finden Sie unter [dieser Einführung auf Inhalt Pipelines](~/graphics-games/cocossharp/content-pipeline/introduction.md)
+Das Pipelinetool MonoGame stellt eine einfach zu bedienenden-Umgebung für die Konvertierung der Inhaltsdateien in **.xnb** Dateien zur Verwendung in CocosSharp und MonoGame-Anwendungen. Informationen zum Inhalt Pipelines und warum sie 3D-Spielentwicklung nützlich sind, finden Sie unter [dieser Einführung in das Content Pipelines](~/graphics-games/cocossharp/content-pipeline/introduction.md)
 
 In dieser exemplarischen Vorgehensweise wird Folgendes behandelt:
 
  - Installieren das Tool MonoGame Pipeline
  - Erstellen eines Projekts CocosSharp
  - Erstellen einen Content-Projekt
- - Verarbeiten von Dateien in das pipelinetool MonoGame
+ - Verarbeiten von Dateien in das Pipelinetool MonoGame
  - Verwenden von Dateien zur Laufzeit
 
 In dieser exemplarischen Vorgehensweise mithilfe ein Projekts CocosSharp veranschaulicht, wie **.xnb** Dateien geladen und in einer Anwendung verwendet werden können. Benutzer von MonoGame werden auch in dieser exemplarischen Vorgehensweise verwiesen werden, da CocosSharp und MonoGame die gleiche verwenden **.xnb** Inhaltsdateien.
@@ -35,85 +35,85 @@ Die fertige app zeigt eine einzelne Sprite Anzeigen einer Textur aus einer **.xn
 ![](walkthrough-images/image1.png "Die fertige app zeigt eine einzelne Sprite eine Textur aus einer Datei .xnb anzeigen")
 
 
-# <a name="monogame-pipeline-platform-discussion"></a>Die Plattform Diskussion MonoGame-Pipeline
+## <a name="monogame-pipeline-tool-discussion"></a>MonoGame Pipelinetool Diskussion
 
 Das MonoGame Pipeline-Tool steht auf OS X, Windows und Linux zur Verfügung. In dieser exemplarischen Vorgehensweise wird das Tool unter Windows ausgeführt, aber es gefolgt werden zusammen unter Mac und Linux auch. Informationen zum Abrufen des Tools unter Max oder Linux einrichten, finden Sie unter [auf dieser Seite](http://www.monogame.net/2015/01/09/monogame-pipeline-tool-available-for-macos-and-linux/).
 
-Das pipelinetool MonoGame ist in der Lage, um Inhalte zu erstellen, bei Wenn auch unter Windows ist dies der Fall ist Entwickler, die mit iOS-Anwendungen führen [Xamarin Mac Agent](~/ios/get-started/installation/windows/connecting-to-mac/index.md) wird in der Lage, die Entwicklung unter Windows fortsetzen.
+Das Pipelinetool MonoGame ist in der Lage, um Inhalte zu erstellen, bei Wenn auch unter Windows ist dies der Fall ist Entwickler, die mit iOS-Anwendungen führen [Xamarin Mac Agent](~/ios/get-started/installation/windows/connecting-to-mac/index.md) wird in der Lage, die Entwicklung unter Windows fortsetzen.
 
 
-# <a name="installing-the-monogame-pipeline-tool"></a>Installieren das Tool MonoGame Pipeline
+## <a name="installing-the-monogame-pipeline-tool"></a>Installieren das Tool MonoGame Pipeline
 
 Beginnen wir damit, durch die Installation der MonoGame, einschließlich der Inhalte MonoGame-Pipeline. Beachten Sie, dass der Inhalt MonoGame-Pipeline ein separater Download für Mac. Alle MonoGame Installationsprogramme befinden sich auf die [MonoGame-Downloadseite](http://www.monogame.net/downloads/). Wir heruntergeladene MonoGame für Visual Studio, aber nach der Installation des Entwicklers können MonoGame in Visual Studio für Mac zu:
 
 ![](walkthrough-images/image2.png "Herunterladen von MonoGame für Visual Studio, aber nachdem die Developer-Verwendung MonoGame in Visual Studio für Mac zu installiert")
 
-Nach dem Herunterladen, wir durch das Installationsprogramm ausführen und akzeptieren die Standardoptionen. Nach Abschluss der Installation wird das pipelinetool MonoGame installiert ist, und finden Sie in der Suche im Menü Start:
+Nach dem Herunterladen, wir durch das Installationsprogramm ausführen und akzeptieren die Standardoptionen. Nach Abschluss der Installation das Pipelinetool MonoGame installiert ist, und suchen Sie im Menü Start befinden:
 
-![](walkthrough-images/image3.png "Nach Abschluss der Installation das pipelinetool MonoGame installiert ist und gefunden werden kann, suchen Sie im Menü Start")
+![](walkthrough-images/image3.png "Nach Abschluss der Installation das Pipelinetool MonoGame ist installiert, und suchen Sie im Menü Start finden")
 
 Starten Sie das Tool MonoGame-Pipeline:
 
 ![](walkthrough-images/image4.png "Starten Sie das Tool MonoGame-Pipeline")
 
-Sobald das pipelinetool MonoGame ausgeführt wird, beginnen wir können unsere Spiel und Content-Projekte erstellen.
+Sobald das Pipelinetool MonoGame ausgeführt wird, können wir unsere Spiel und Content-Projekte zu starten.
 
 
-# <a name="creating-an-empty-cocossharp-project"></a>Erstellen eines leeren CocosSharp-Projekts
+## <a name="creating-an-empty-cocossharp-project"></a>Erstellen eines leeren CocosSharp-Projekts
 
-Der nächste Schritt besteht darin ein CocosSharp-Projekt zu erstellen. Es ist wichtig, dass wir CocosSharp zunächst erstellen Sie das Projekt, damit wir unsere Content-Projekt in der Ordnerstruktur, die vom Projekt CocosSharp erstellt speichern können. Informationen zum Erstellen eines neuen Projekts finden Sie unter [im Handbuch BouncingGame](~/graphics-games/cocossharp/first-game/part1.md). Dieses Handbuch wir erstellen ein Projekt mit der Bezeichnung BouncingGame, aber alle vorhandenes CocosSharp Projekt einwandfrei funktioniert. Wenn Sie ein vorhandenes CocosSharp-Projekt, dem Sie Inhalt hinzufügen möchten verfügen, können Sie dieses Projekt statt auf das Projekt BouncingGame verwenden.
+Der nächste Schritt besteht darin ein CocosSharp-Projekt zu erstellen. Es ist wichtig, dass wir CocosSharp zunächst erstellen Sie das Projekt, damit wir unsere Content-Projekt in der Ordnerstruktur, die vom Projekt CocosSharp erstellt speichern können. Um die Struktur eines Projekts CocosSharp zu verstehen, sehen Sie sich die [BouncingGame](~/graphics-games/cocossharp/bouncing-game.md), die in diesem Handbuch verwendet wird. Jedoch wenn Sie ein vorhandenes CocosSharp-Projekt, dem Sie Inhalt hinzufügen möchten verfügen, können Sie das Projekt anstelle von BouncingGame verwenden.
 
 Nachdem das Projekt erstellt wurde, müssen wir ausführen, um sicherzustellen, dass es erstellt und haben wir alles ordnungsgemäß eingerichtet ist:
 
 ![](walkthrough-images/image5.png "Nachdem das Projekt erstellt wurde, führen Sie es, sicherzustellen, dass sie builds und, dass alles richtig eingerichtet")
 
 
-# <a name="creating-a-content-project"></a>Erstellen einen Content-Projekt
+## <a name="creating-a-content-project"></a>Erstellen einen Content-Projekt
 
-Nun, da wir einen Spielprojekt haben, können wir eine MonoGame Pipeline-Projekt erstellen. Dazu in der MonoGame Pipeline Tool Select **Datei > neu...** und navigieren Sie zu Ihrem Projekt Ordners "Content". Für Android, befindet sich der Ordner unter **[Projekt root]\BouncingGame.Android\Assets\Content\**. Für iOS, befindet sich der Ordner unter **[Projekt root]\BouncingGame.iOS\Content\**.
+Nun, da wir einen Spielprojekt haben, können wir eine MonoGame Pipeline-Projekt erstellen. Dazu in der Select MonoGame Pipelinetool **Datei > neu...**  und navigieren Sie zu Ihrem Projekt Ordners "Content". Für Android, befindet sich der Ordner unter **[Projekt root]\BouncingGame.Android\Assets\Content\**. Für iOS, befindet sich der Ordner unter **[Projekt root]\BouncingGame.iOS\Content\**.
 
 Ändern der **Dateiname** auf **ContentProject** , und klicken Sie auf die **speichern** Schaltfläche:
 
 ![](walkthrough-images/image8.png "Ändern Sie den Dateinamen in ContentProject, und klicken Sie auf die Schaltfläche "Speichern"")
 
-Nachdem das Projekt erstellt wurde, zeigt das pipelinetool MonoGame Informationen über das Projekt beim Stamm **ContentProject** Element ausgewählt ist:
+Nachdem das Projekt erstellt wurde, zeigt das Pipelinetool MonoGame Informationen über das Projekt beim Stamm **ContentProject** Element ausgewählt ist:
 
-![](walkthrough-images/image9.png "Nachdem das Projekt erstellt wurde, zeigt MonoGame Pipeline das Tool Informationen über das Projekt, wenn das Stammverzeichnis ContentProject Element ausgewählt ist")
+![](walkthrough-images/image9.png "Nachdem das Projekt erstellt wurde, zeigen das Pipelinetool MonoGame Informationen zum des Projekts, wenn das Stammverzeichnis ContentProject Element ausgewählt ist")
 
 Sehen wir uns einige der wichtigsten Optionen für das Content-Projekt.
 
 
-## <a name="output-folder"></a>Ausgabeordner
+### <a name="output-folder"></a>Ausgabeordner
 
-Dies ist der Ordner (in Bezug auf das Content-Projekt selbst), in dem die Ausgabe **.xnb** Dateien gespeichert werden. Um die Dinge einfach zu halten, verwenden wir den gleichen Ordner für die bereitzustellenden unsere Eingabe Ausgabedateien. Ändern wir also die **Ausgabeordner** werden **.\** :
+Dies ist der Ordner (in Bezug auf das Content-Projekt selbst), in dem die Ausgabe **.xnb** Dateien gespeichert werden. Um die Dinge einfach zu halten, verwenden wir den gleichen Ordner für die bereitzustellenden unsere Eingabe Ausgabedateien. Ändern wir also die **Ausgabeordner** werden **.\**  :
 
 ![](walkthrough-images/image10.png "")
 
 
-## <a name="platform"></a>Plattform
+### <a name="platform"></a>Plattform
 
 Dadurch wird die Zielplattform für den Inhalt definiert. Beachten Sie, dass dies **Windows** standardmäßig, sodass wir möchten dies in unserem Zielplattform ändern also **Android** (oder iOS, wenn Sie zusammen mit einem iOS-Projekt).
 
 ![](walkthrough-images/image11.png "Beachten Sie, dass dies Windows standardmäßig aktiviert ist, so ändern Sie die Zielplattform aus die Android oder iOS ist, wenn Sie zusammen mit einem iOS-Projekt")
 
 
-# <a name="processing-files-in-the-monogame-pipelinetool"></a>Verarbeiten von Dateien in das MonoGame PipelineTool
+## <a name="processing-files-in-the-monogame-pipeline-tool"></a>Verarbeiten von Dateien in das Pipelinetool MonoGame
 
 Als Nächstes wir werden werden hinzufügen Inhalt an unsere **ContentProject**. Für dieses Projekt wir werden Sie in das Stammverzeichnis des Projekts werden Dateien hinzufügen, aber größere Projekte werden in der Regel ihre Inhalte in Ordnern organisieren.
 
 Es müssen zwei Dateien hinzufügen:
 
  - Ein **PNG** Datei, die verwendet werden soll, ein Sprite gezeichnet werden soll. Diese Datei kann [hier herunterladen](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/ball.png?raw=true).
- - Ein **.spritefont** Datei, die zum Zeichnen des Texts auf dem Bildschirm verwendet werden soll. Das ContentPipeline-Tool unterstützt das Erstellen neuer .spritefont Dateien, damit es keine Datei zum Herunterladen ist.
+ - Ein **.spritefont** Datei, die zum Zeichnen des Texts auf dem Bildschirm verwendet werden soll. Der Inhalt Pipeline-Tool unterstützt die neue .spritefont-Dateien erstellen, damit es keine Datei zum Herunterladen ist.
 
 
-## <a name="adding-a-png-file"></a>Eine PNG-Datei hinzufügen
+### <a name="adding-a-png-file"></a>Eine PNG-Datei hinzufügen
 
 Hinzufügen einer **PNG** Datei dem Projekt wird zunächst kopieren wir es in dasselbe Verzeichnis wie das pipelineprojekt besitzt die **.mgcb** Erweiterung.
 
 ![](walkthrough-images/image12.png "Eine PNG-Datei zum Projekt hinzufügen")
 
-Als Nächstes fügen wir die Datei dem Projekt Pipeline. Wählen Sie dazu in das pipelinetool MonoGame **Bearbeiten > Element hinzufügen...**, wählen die **ball.png** Datei, und klicken Sie auf **öffnen**. Die Datei ist nun Teil der Content-Projekt und, bei Auswahl dieser Option werden die Eigenschaften angezeigt:
+Als Nächstes fügen wir die Datei dem Projekt Pipeline. Wählen Sie dazu in das Pipelinetool MonoGame **Bearbeiten > Element hinzufügen...** , wählen die **ball.png** Datei, und klicken Sie auf **öffnen**. Die Datei ist nun Teil der Content-Projekt und, bei Auswahl dieser Option werden die Eigenschaften angezeigt:
 
 ![](walkthrough-images/image13.png "Die Datei werden jetzt Teil des Content-Projekts, und bei Auswahl dieser Option werden die Eigenschaften anzeigen")
 
@@ -122,9 +122,9 @@ Wir werden lassen alle Werte auf ihre Standardwerte sind keine Änderungen erfor
 ![](walkthrough-images/image14.png "Stellen Sie sicher, dass der Build ordnungsgemäß funktioniert, indem Sie den Inhaltsordner für eine neue ball.xnb-Datei überprüfen")
 
 
-## <a name="adding-a-spritefont-file"></a>Hinzufügen einer Datei .spritefont
+### <a name="adding-a-spritefont-file"></a>Hinzufügen einer Datei .spritefont
 
-Wir können .spritefont-Datei über das pipelinetool MonoGame erstellen. CocosSharp erfordert Schriftarten in einer **Schriftarten** Ordner und CocosSharp Vorlagen, die automatisch eine Schriftartordner automatisch erstellt. Wir können diesen Ordner für das Tool MonoGame Pipeline hinzufügen, indem auswählen **Bearbeiten > Hinzufügen > vorhandenen Ordner...**. Navigieren Sie zu der **Content** Ordner, und wählen die **Schriftarten** Ordner, und klicken Sie auf **OK**:
+Wir können .spritefont-Datei durch das Pipelinetool MonoGame erstellen. CocosSharp erfordert Schriftarten in einer **Schriftarten** Ordner und CocosSharp Vorlagen, die automatisch eine Schriftartordner automatisch erstellt. Wir können das Pipelinetool MonoGame in diesem Ordner hinzufügen, durch Auswahl **Bearbeiten > Hinzufügen > vorhandenen Ordner...** . Navigieren Sie zu der **Content** Ordner, und wählen die **Schriftarten** Ordner, und klicken Sie auf **OK**:
 
 ![](walkthrough-images/browsetofonts.png "In den Inhaltsordner durchsuchen Sie, wählen Sie den Ordner Schriftarten, und klicken Sie auf OK")
 
@@ -156,19 +156,19 @@ Wir müssen die Datei in einem beliebigen Texteditor geöffnet. Als unsere **ari
     <Size>36</Size>
 ```
  
-# <a name="using-files-at-runtime"></a>Verwenden von Dateien zur Laufzeit
+## <a name="using-files-at-runtime"></a>Verwenden von Dateien zur Laufzeit
 
 .Xnb Dateien werden jetzt erstellt und in unserem Projekt verwendet werden können. Wir müssen hinzufügen werden die Dateien in Visual Studio für Mac, und klicken Sie dann wir fügen Code zu unserer `GameScene.cs` Datei laden diese Dateien und angezeigt werden können.
 
 
-## <a name="adding-xnb-files-to-visual-studio-for-mac"></a>Hinzufügen von .xnb-Dateien in Visual Studio für Mac
+### <a name="adding-xnb-files-to-visual-studio-for-mac"></a>Hinzufügen von .xnb-Dateien in Visual Studio für Mac
 
 Zunächst fügen wir die Dateien zum Projekt. In Visual Studio für Mac müssen erweitern die **BouncingGame.Android** Projekt, erweitern Sie die **Bestand** Ordner mit der rechten Maustaste auf die **Content** Ordner, und wählen Sie **Hinzufügen > Hinzufügen von Dateien...** Wir wählen zuerst die **ball.xnb** wir zuvor erstellt, und klicken Sie auf **öffnen**. Klicken Sie dann die oben genannten Schritte wiederholen, aber Hinzufügen der **arial 36.xnb** Datei. Wir wählen die **behalten Sie die Datei in seiner aktuellen Unterverzeichnis** option, wenn Sie Visual Studio für Mac zum Hinzufügen der das aufgefordert werden. Einmal nicht mehr benötigen beide Dateien sollten Teil unserer Projekts werden:
 
 ![](walkthrough-images/image20.png "Einmal nicht mehr benötigen beide Dateien muss Teil des Projekts")
 
 
-## <a name="adding-gamescenecs"></a>Hinzufügen von GameScene.cs
+### <a name="adding-gamescenecs"></a>Hinzufügen von **GameScene.cs**
 
 Wir erstellen eine Klasse mit dem Namen `GameScene,` unsere Objekte Sprite und Text enthalten. Zu diesem Zweck mit der Maustaste auf die **BouncingGame** (nicht BouncingGame.Android) Projekt, und wählen Sie **hinzufügen > neuen Datei...**. Wählen Sie die **allgemeine** Kategorie, wählen die **leere Klasse** aus, und geben Sie dann den Namen **GameScene**.
 
@@ -214,7 +214,7 @@ namespace BouncingGame
 } 
 ```
 
-Gehen wir wird nicht näher auf die oben aufgeführten Code seit der Arbeit mit CocosSharp visueller Objekte wie CCSprite und CCLabelTtf in abgedeckt wird die [CocosSharp-Intro-Handbuch](~/graphics-games/cocossharp/first-game/index.md).
+Gehen wir wird nicht näher auf die oben aufgeführten Code seit der Arbeit mit CocosSharp visueller Objekte wie CCSprite und CCLabelTtf in abgedeckt wird die [BouncingGame Handbuch](~/graphics-games/cocossharp/bouncing-game.md).
 
 Wir müssen auch Code hinzufügen, um unseren neu erstellten laden `GameScene`. Hierzu wir öffnen die `GameAppDelegate.cs` Datei (befindet sich im die **BouncingGame** PCL) und ändern die `ApplicationDidFinishLaunching` Methode, sodass es aussieht:
 
@@ -236,11 +236,11 @@ Bei der Ausführung wird unsere Spiel formuliert werden:
 ![](walkthrough-images/image1.png "Bei der Ausführung sieht des Spiels wie")
 
 
-# <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Zusammenfassung
 
-In dieser exemplarischen Vorgehensweise wurde gezeigt, wie Sie das pipelinetool MonoGame um .xnb Dateien aus einer Eingabe PNG-Datei zu erstellen sowie Gewusst wie: Erstellen einer neuen .xnb-Datei aus einer Datei .sprintefont neu erstellt. Es wurde auch erläutert, wie CocosSharp-Projekte zur Verwendung von .xnb Dateien strukturiert und wie diese Dateien zur Laufzeit geladen.
+In dieser exemplarischen Vorgehensweise wurde gezeigt, wie Sie das Pipelinetool MonoGame um .xnb Dateien aus einer Eingabe PNG-Datei zu erstellen sowie Gewusst wie: Erstellen einer neuen .xnb-Datei aus einer Datei .sprintefont neu erstellt. Es wurde auch erläutert, wie CocosSharp-Projekte zur Verwendung von .xnb Dateien strukturiert und wie diese Dateien zur Laufzeit geladen.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte links
 
 - [MonoGame Downloads](http://www.monogame.net/downloads/)
 - [MonoGame Pipeline-Dokumentation](http://www.monogame.net/documentation/?page=Pipeline)

@@ -2,22 +2,22 @@
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
-  description: "Xamarin.Forms macht ein vollständiges plattformübergreifendes Toolkit für die Benutzeroberfläche verfügbar, mit dem .NET-Entwickler mobile, Tablet- und Desktop-Apps erstellen können."
+  description: Xamarin.Forms macht ein vollständiges plattformübergreifendes Toolkit für die Benutzeroberfläche verfügbar, mit dem .NET-Entwickler mobile, Tablet- und Desktop-Apps erstellen können.
   author: conceptdev
   ms.author: crdun
   ms.date: 02/17/2018
   ms.topic: landing-page
-  ms.openlocfilehash: ff86846ded6ca9dffce616a4e0e3415b58fc20da
-  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.openlocfilehash: ae192b3f07c4d6c180644871e48b6bc749a633c2
+  ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 02/27/2018
+  ms.lasthandoff: 04/03/2018
 abstract:
-  description: "Xamarin.Forms macht ein vollständiges plattformübergreifendes Benutzeroberflächen-Toolkit für .NET-Entwickler verfügbar. Erstellen Sie vollständig native Android-, iOS- und Windows-Apps mit C# in Visual Studio."
+  description: Xamarin.Forms macht ein vollständiges plattformübergreifendes Benutzeroberflächen-Toolkit für .NET-Entwickler verfügbar. Erstellen Sie vollständig native Android-, iOS- und Windows-Apps mit C# in Visual Studio.
   menu:
     items:
     - href: ~/xamarin-forms/samples/
-      text: "Xamarin.Forms Samples (Beispiele für Xamarin.Forms)"
+      text: Xamarin.Forms Samples (Beispiele für Xamarin.Forms)
     - href: https://developer.xamarin.com/releases/xamarin-forms/
       text: Anmerkungen zu dieser Version
     - href: https://developers.google.com/
@@ -30,7 +30,7 @@ sections:
 - title: Erste Schritte
   items:
   - type: paragraph
-    text: "Erfahren Sie, wie Sie Ihre erste Xamarin.Forms-App mit Xamarin und C# für Android, iOS und Windows erstellen."
+    text: Erfahren Sie, wie Sie Ihre erste Xamarin.Forms-App mit Xamarin und C# für Android, iOS und Windows erstellen.
   - type: list
     style: icon48
     items:
@@ -40,13 +40,13 @@ sections:
       href: ~/xamarin-forms/get-started/installation.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: Hello, Xamarin.Forms
+      text: Schnellstart
       href: ~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
       text: Multiscreen-Apps
       href: ~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md
-- title: "Führungslinien"
+- title: Führungslinien
   items:
   - type: grid
     style: columns
@@ -57,17 +57,17 @@ sections:
       className: cardsB
       items:
       - href: ~/xamarin-forms/get-started/index.md
-        html: "Tutorials für die ersten Schritte mit Xamarin.Forms. Stellen Sie sicher, dass alles korrekt installiert ist, und erstellen Sie Ihre ersten Xamarin.Forms-Apps."
+        html: Tutorials für die ersten Schritte mit Xamarin.Forms. Stellen Sie sicher, dass alles korrekt installiert ist, und erstellen Sie Ihre ersten Xamarin.Forms-Apps.
         image:
           src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
           href: ~/xamarin-forms/get-started/index.md
         title: Erste Schritte
       - href: ~/xamarin-forms/user-interface
-        html: "Erfahren Sie mehr über den vollständigen Satz von Steuerelementen für die Benutzeroberfläche, der in Xamarin.Forms XAML verfügbar ist."
+        html: Erfahren Sie mehr über den vollständigen Satz von Steuerelementen für die Benutzeroberfläche, der in Xamarin.Forms XAML verfügbar ist.
         image:
           src: ~/media/icons/i_user-interface.svg
           href: ~/xamarin-forms/user-interface/
-        title: "Benutzeroberfläche"
+        title: Benutzeroberfläche
       - href: ~/xamarin-forms/deploy-test/
         html: Anweisungen zum Erstellen und Bereitstellen Ihrer Apps und Tipps, um sie vorab zu testen!
         image:
@@ -85,7 +85,7 @@ sections:
       className: cardsB
       items:
       - href: ~/xamarin-forms/app-fundamentals/
-        html: "Alles, was Sie zum Erstellen von Xamarin.Forms-Apps wissen müssen, z.B. Arbeiten mit Dateien, Images, Datenbanken und mehr."
+        html: Alles, was Sie zum Erstellen von Xamarin.Forms-Apps wissen müssen, z.B. Arbeiten mit Dateien, Images, Datenbanken und mehr.
         image:
           src: ~/media/icons/i_app-build.svg
           href: ~/xamarin-forms/app-fundamentals/
@@ -97,17 +97,17 @@ sections:
           href: ~/
         title: Plattformfeatures
       - href: ~/xamarin-forms/xaml/
-        html: "Erstellen Sie Benutzeroberflächen deklarativ, und geben Sie sie für mobile und Desktopplattformen frei."
+        html: Erstellen Sie Benutzeroberflächen deklarativ, und geben Sie sie für mobile und Desktopplattformen frei.
         image:
           src: ~/media/icons/i_xaml-forms.svg
           href: ~/xamarin-forms/xaml/
         title: XAML
       - href: ~/xamarin-forms/internals/
-        html: "Weitere Informationen zu Xamarin.Forms-Interna und Unterstützung bei Features wie Lokalisierung und Eingabehilfen."
+        html: Weitere Informationen zu Xamarin.Forms-Interna und Unterstützung bei Features wie Lokalisierung und Eingabehilfen.
         image:
           src: https://docs.microsoft.com/en-us/media/common/i_config-tools.svg
           href: ~/xamarin-forms/internals/
-        title: "Weiterführende Konzepte und Interna"
+        title: Weiterführende Konzepte und Interna
 - title: Referenz
   items:
   - type: list
@@ -117,8 +117,8 @@ sections:
     - title: API
       html: <p><a href="https://developer.xamarin.com/api/root/Xamarin.Forms/">Xamarin.Forms-API-Dokumentation</a></p>
     - title: Proben
-      html: <p><a href="https://developer.xamarin.com/samples/xamarin-forms/all/">Xamarin.Forms-Beispiele</a></p>
+      html: <p><a href="https://developer.xamarin.com/samples/xamarin-forms/all/">Xamarin.Forms Samples (Beispiele für Xamarin.Forms)</a></p>
     - title: Arbeitsmappen
       html: <p><a href="https://developer.xamarin.com/workbooks#xamarin-forms">Xamarin.Forms Workbooks</a></p>
-    - title: "Bücher"
-      html: "<p><a href=\"~/xamarin-forms/creating-mobile-apps-xamarin-forms\">E-Book über das Erstellen mobiler Apps</a></p><p><a href=\"~/xamarin-forms/enterprise-application-patterns\">E-Book zu Mustern von Unternehmensanwendungen</a></p>"
+    - title: Bücher
+      html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">E-Book über das Erstellen mobiler Apps</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">E-Book zu Mustern von Unternehmensanwendungen</a></p>

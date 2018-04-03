@@ -1,6 +1,6 @@
 ---
 title: Mithilfe von CCTextureCache Textur-Caching
-description: "Der CocosSharp CCTextureCache Klasse bietet ein gängiges Verfahren zum Organisieren, Cache, und entfernen Inhalt an. Er ist besonders nützlich für große Spiele, die nicht vollständig in den Arbeitsspeicher, vereinfacht den Prozess der Gruppierung und Freigeben von Texturen anpassen können."
+description: Der CocosSharp CCTextureCache Klasse bietet ein gängiges Verfahren zum Organisieren, Cache, und entfernen Inhalt an. Er ist besonders nützlich für große Spiele, die nicht vollständig in den Arbeitsspeicher, vereinfacht den Prozess der Gruppierung und Freigeben von Texturen anpassen können.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1B5F3F85-9E68-42A7-B516-E90E54BA7102
@@ -8,13 +8,13 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 365e343a55a208b63f4dc52999e8857b5f0ec1f4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 350a454bc94c796b34cfeeb319481919b18d334f
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="texture-caching-using-cctexturecache"></a>Mithilfe von CCTextureCache Textur-Caching
+# <a name="texture-caching-using-cctexturecache"></a>Textur Zwischenspeichern mithilfe von CCTextureCache
 
 _Der CocosSharp CCTextureCache Klasse bietet ein gängiges Verfahren zum Organisieren, Cache, und entfernen Inhalt an. Er ist besonders nützlich für große Spiele, die nicht vollständig in den Arbeitsspeicher, vereinfacht den Prozess der Gruppierung und Freigeben von Texturen anpassen können._
 
@@ -29,7 +29,7 @@ Dieser Leitfaden behandelt die `CCTextureCache` und daher ist es wichtig, dass 3
  - Freigeben von Texturen
 
 
-# <a name="why-texture-caching-matters"></a>Warum Texture-Caching von Bedeutung
+## <a name="why-texture-caching-matters"></a>Warum texture-caching von Bedeutung
 
 Zwischenspeichern der Textur ist ein wichtiger Bestandteil der Entwicklung von Textur laden ist ein zeitaufwendiger Vorgang und Texturen erfordern eine beträchtliche Menge an Arbeitsspeicher zur Laufzeit.
 
@@ -38,7 +38,7 @@ Wie bei jeder Dateivorgang möglich Texturen von einem Datenträger laden ein ko
 Wie bereits erwähnt, belegen Texturen auch eine große Menge an Arbeitsspeicher für Common Language Runtime. Ein Hintergrundbild auf die der Auflösung des iPhone 6 (1344 x 750) würde z. B. 4 MB RAM – belegen, selbst wenn die PNG-Datei nur einige Kilobyte groß ist. Textur caching bietet eine Möglichkeit, Textur-Verweise in einer app freizugeben, sowie eine einfache Möglichkeit, alle Inhalte zu entladen, wenn zwischen unterschiedlichen Spiel Status übergeht.
 
 
-# <a name="texture-lifespan"></a>Texture-Lebensdauer
+## <a name="texture-lifespan"></a>Texture-Lebensdauer
 
 CocosSharp Texturen können für die gesamte Dauer der Ausführung einer app im Speicher gehalten werden, oder als kurzlebiges. Verwendung einer app sollten von Texturen, die nicht mehr benötigten freigeben, um Speicher zu minimieren. Natürlich, bedeutet dies, dass Texturen verworfen und neu zu einem späteren Zeitpunkt, die Ladezeiten zu erhöhen oder die Leistung während der lädt beeinträchtigen kann geladen werden können. 
 
@@ -58,7 +58,7 @@ Wenn das Spiel groß ist lädt genug es schließlich genügend Texturen, um alle
 Im oben gezeigte Diagramm gibt an, dass Textur speicherauslastung kann durch das Entladen reduziert werden, aber dies erfordert möglicherweise zusätzliche Ladezeiten, wenn ein Player eine Ebene wiedergeben möchte. Es ist auch Folgendes zu beachten, dass die UITexture und MainCharacter Texturen geladen und nie entladen werden. Dies bedeutet, dass diese Texturen in allen Ebenen benötigt werden, damit sie immer im Arbeitsspeicher beibehalten werden. 
 
 
-# <a name="using-sharedtexturecache"></a>Verwenden von SharedTextureCache
+## <a name="using-sharedtexturecache"></a>Verwenden von SharedTextureCache
 
 CocosSharp automatisch Texturen zwischengespeichert, wenn sie über das Laden der `CCSprite` Konstruktor. Im folgenden Code wird z. B. nur eine Instanz der Textur erstellt:
 
@@ -84,7 +84,7 @@ CCSprite starSprite = new CCSprite ();
 `AddImage` überprüft, ob der Argumentdatei (in diesem Fall `star.png`) wurde bereits geladen. Wenn dies der Fall ist, wird die zwischengespeicherte Instanz zurückgegeben. Wenn dies nicht anschließend, aus dem Dateisystem erfolgt und ein Verweis auf die Textur intern, für gespeichert wird nachfolgende `AddImage` aufrufen. In anderen Worten: die `star.png` -Image nur einmal geladen wird, und nachfolgende Aufrufe erfordern keine zusätzliche Datenträgerzugriff oder zusätzliche Textur Arbeitsspeicher.
 
 
-# <a name="lazy-loading-vs-pre-loading-with-addimage"></a>Verzögerten Laden im Vergleich zu Mit AddImage laden vorab.
+## <a name="lazy-loading-vs-pre-loading-with-addimage"></a>Lazy loading-im Vergleich zu vor Laden mit AddImage
 
 `AddImage` ermöglicht es Code, dem geschrieben werden soll, ob die angeforderte Textur oder nicht bereits geladen ist. Das bedeutet, dass der Inhalt wird nicht geladen werden, bis diese benötigt wird; Allerdings kann dies auch zur Laufzeit aufgrund unvorhersehbare Laden von Inhalt Leistungsprobleme auftreten.
 
@@ -114,12 +114,12 @@ void PreLoadImages()
 Diese vorab laden kann dazu führen, verwendeter Speicher und Startzeit erhöhen kann. Der Spieler weichen z. B. tatsächlich nie eine dargestellte Einschalten der `powerup3.png` Textur, damit sie unnötig geladen wird. Natürlich kann das erforderlichen Kosten für einen potenziellen Pop im Spielverlauf, vermeiden Sie daher, Vorabladen von Inhalt in der Regel am besten, wenn er im Arbeitsspeicher passt zu Zahlen sein.
 
 
-# <a name="disposing-textures"></a>Freigeben von Texturen
+## <a name="disposing-textures"></a>Freigeben von Texturen
 
 Wenn Sie ein Spiel, das keine erfordert mehr Textur Arbeitsspeicher als auf dem minimum Spec-Gerät verfügbar ist, dann Texturen nicht verworfen werden müssen. Andererseits, möglicherweise größer Spiele Textur Arbeitsspeicher, um Platz für neue Inhalte freizugeben. Beispielsweise kann ein Spiel, das eine große Menge an Arbeitsspeicher, die Speichern von Texturen für eine Umgebung zurückgreifen. Wenn die Umgebung nur in einer bestimmten Ebene verwendet wird sollte dann sie entladen werden nach Beendigung die Ebene.
 
 
-## <a name="disposing-a-single-texture"></a>Freigeben einer einzelnen Struktur
+### <a name="disposing-a-single-texture"></a>Freigeben einer einzelnen Struktur
 
 Entfernen eine einzelne Struktur zuerst erfordert das Aufrufen der `Dispose` -Methode, und klicken Sie dann auf Manuelles Entfernen aus der `CCTextureCache`.
 
@@ -187,11 +187,11 @@ Die Dispose-Methode werden alle internen Strukturen, die gelöscht wird, des dur
 
 
 
-# <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Zusammenfassung
 
 Diese Anleitung zeigt, wie die `CCTextureCache` Klasse, um den Saldo Arbeitsspeicher Verwendung und die Common Language Runtime-Leistung. `CCTexturCache.SharedTextureCache` kann explizit oder implizit zu laden und Zwischenspeichern von Texturen, für die Lebensdauer der Anwendung verwendet, während er sich `CCTextureCache` Instanzen dienen zum Entladen von Texturen, um die speicherauslastung zu reduzieren.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte links
 
 - [https://github.com/mono/CocosSharp](https://github.com/mono/CocosSharp)
 - [/api/type/CocosSharp.CCTextureCache/](https://developer.xamarin.com/api/type/CocosSharp.CCTextureCache/)

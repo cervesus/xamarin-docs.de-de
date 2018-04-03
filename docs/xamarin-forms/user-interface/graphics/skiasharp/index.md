@@ -1,6 +1,6 @@
 ---
 title: Verwenden von SkiaSharp in Xamarin.Forms
-description: "Verwenden Sie SkiaSharp für 2D Grafiken in Ihren Anwendungen Xamarin.Forms"
+description: Verwenden Sie SkiaSharp für 2D Grafiken in Ihren Anwendungen Xamarin.Forms
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 2C348BEA-81DF-4794-8857-EB1DFF5E11DB
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/11/2017
-ms.openlocfilehash: eaebd8cbae996e9a5792d0a4898fafb72bdded47
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2183601ca6e642b2fb21f640ed4fddfe2c300dc8
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="using-skiasharp-in-xamarinforms"></a>Verwenden von SkiaSharp in Xamarin.Forms
 
@@ -57,5 +57,5 @@ Die Untersuchung des Pfade weiterhin mit dem Hinzufügen von Kurven auf einem Pf
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [SkiaSharp mit Xamarin.Forms Webinar (Video)](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)

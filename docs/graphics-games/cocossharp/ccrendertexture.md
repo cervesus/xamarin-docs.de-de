@@ -1,17 +1,17 @@
 ---
 title: Leistung und visuelle Effekte mit CCRenderTexture
-description: "CCRenderTexture ermöglicht Entwicklern das verbessern die Leistung ihrer CocosSharp Spiele, durch das Reduzieren der Draw-Aufrufe und kann zum Erstellen von visuellen Effekten verwendet werden. Diese Anleitung begleitet CCRenderTexture-Beispiel, um eine praktische Beispiel dafür, wie effektive Verwendung von dieser Klasse bereitzustellen."
+description: CCRenderTexture ermöglicht Entwicklern das verbessern die Leistung ihrer CocosSharp Spiele, durch das Reduzieren der Draw-Aufrufe und kann zum Erstellen von visuellen Effekten verwendet werden. Diese Anleitung begleitet CCRenderTexture-Beispiel, um eine praktische Beispiel dafür, wie effektive Verwendung von dieser Klasse bereitzustellen.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: F02147C2-754B-4FB4-8BE0-8261F1C5F574
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 8283c299d0e6529ef4cf8c285ec47b4d42fc682a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 36661344fc0f4b9e132e3f721c50f82f3a8db057
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="performance-and-visual-effects-with-ccrendertexture"></a>Leistung und visuelle Effekte mit CCRenderTexture
 
@@ -24,7 +24,7 @@ Dieses Handbuch untersucht, wie Sie die `CCRenderTexture` Objekt zum Verbessern 
 ![](ccrendertexture-images/image1.png "Dieses Handbuch verweist auf das Beispielprojekt CCRenderTexture")
 
 
-# <a name="card--a-typical-entity"></a>Karte – eine Typische Entität
+## <a name="card--a-typical-entity"></a>Karte – eine typische Entität
 
 Vor der Verwendung ansehen `CCRenderTexture` -Objekt, wir werden uns mit zuerst vertraut der `Card` Entität, die innerhalb dieses Projekts verwendet wird, untersuchen die `CCRenderTexture` Klasse. Die `Card` Klasse ist eine typische Entität, die die Entität Muster beschrieben, die in der [Entität Handbuch](~/graphics-games/cocossharp/entities.md). Die Smartcard-Klasse verfügt über alle visual Komponenten (Instanzen von `CCSprite` und `CCLabel`) als Felder aufgeführt:
 
@@ -65,7 +65,7 @@ Im Beispiel wird die nötige um zwei Probleme verfügbar zu machen, die auftrete
 - Bestimmte visuelle Effekte wie Transparenz, können nicht genau, implementiert werden, wie wir später untersuchen
 
 
-## <a name="card-draw-calls"></a>Karte Draw-Aufrufe
+### <a name="card-draw-calls"></a>Karte Draw-Aufrufe
 
 Getesteten Codes ist eine Vereinfachung in eine vollständige gefundenen werden möglicherweise *sammelbare Kartenspiels* (CCG) wie z. B. "Magic: das Sammeln von" oder "Hearthstone". Unsere Spiel nur drei Karten gleichzeitig angezeigt und verfügt über eine kleine Anzahl von möglichen Einheiten (Blau, Grün und Orange). Im Gegensatz dazu, eine vollständige Spiel möglicherweise mehr als zwanzig Karten auf dem Bildschirm zu einem bestimmten Zeitpunkt und Player möglicherweise Hunderte von Karten auswählen, wenn ihre Kartenstapel zu erstellen. Obwohl unsere Spiel von Leistungsproblemen derzeit nicht beeinträchtigt wird, kann eine vollständige Spiels mit ähnliche Implementierung.
 
@@ -76,7 +76,7 @@ CocosSharp bietet ein Einblick in die Renderingleistung, verfügbar machen, die 
 Beachten Sie, dass trotz der drei Karten auf Bildschirm 19 Draw-Aufrufe (jede Karte Ergebnisse in sechs zeichnen-Befehle, die Konten der Leistung Informationen für eine oder mehrere Text). Draw-Aufrufe haben einen entscheidenden Einfluss auf die Leistung eines Spiels, damit CocosSharp eine Reihe von Verfahren zum Verringern der ihnen bietet. Ein Verfahren wird beschrieben, der [CCSpriteSheet Handbuch](~/graphics-games/cocossharp/ccspritesheet.md). Eine andere Technik ist die Verwendung der `CCRenderTexture` auf jede Entität zu einem Aufruf reduziert werden, weil wir in diesem Handbuch untersuchen.
 
 
-## <a name="card-transparency"></a>Transparenz der Karte
+### <a name="card-transparency"></a>Transparenz der Karte
 
 Unsere `Card` Entität enthält ein `Opacity` Eigenschaft zum Steuerelement Transparenz wie im folgenden Codeausschnitt gezeigt:
 
@@ -143,7 +143,7 @@ Damit visualisieren, warum dieser Fehler tritt, müssen es zu bedenken, dass jed
 Mit einem `CCRenderTexture` erlaubt es uns, die gesamte Karte transparent zu gestalten ohne Auswirkungen auf das Rendering einzelne Komponenten innerhalb der Karte, da wir später in diesem Handbuch angezeigt wird.
 
 
-# <a name="using-ccrendertexture"></a>Verwenden von CCRenderTexture
+## <a name="using-ccrendertexture"></a>Verwenden von CCRenderTexture
 
 Nun, dass wir die Probleme mit Rendern jede Komponente einzeln identifiziert haben, müssen wir Rendering einschalten einer `CCRenderTexture` und vergleichen Sie das Verhalten.
 
@@ -159,7 +159,7 @@ protected override void AddedToScene ()
 ```
 
 
-## <a name="card-draw-calls"></a>Karte Draw-Aufrufe
+### <a name="card-draw-calls"></a>Karte Draw-Aufrufe
 
 Wenn wir das Spiel jetzt ausführen, sehen wir die Draw-Aufrufe von 19 auf vier reduziert (jede Karte, die von 6 aus, um eine reduziert wird):
 
@@ -168,7 +168,7 @@ Wenn wir das Spiel jetzt ausführen, sehen wir die Draw-Aufrufe von 19 auf vier 
 Wie bereits erwähnt kann diese Art der Reduzierung einen entscheidenden Einfluss auf Spiele mit mehreren visual Entitäten auf dem Bildschirm haben.
 
 
-## <a name="card-transparency"></a>Transparenz der Karte
+### <a name="card-transparency"></a>Transparenz der Karte
 
 Einmal die `useRenderTextures` festgelegt ist, um `true`, transparente Karten unterschiedlich dargestellt werden:
 
@@ -181,7 +181,7 @@ Vergleichen wir die transparente Roboter Karte mit Render Texturen (links) und o
 Die offensichtliche Unterschiede sind in den Details Text (schwarz statt hellgrau) und Roboter Sprite (anstelle von Licht dunkel und ohne Sättigung).
 
 
-# <a name="ccrendertexture-details"></a>CCRenderTexture-Details
+## <a name="ccrendertexture-details"></a>CCRenderTexture-details
 
 Nun, dass wir die Vorteile der Verwendung gesehen haben `CCRenderTexture`, werfen wir einen Blick auf die Verwendung in der `Card` Entität.
 
@@ -256,7 +256,7 @@ Die `SwitchToRenderTexture` Methode kann aufgerufen werden, wenn die Struktur ak
 Untersuchen Sie die folgenden Abschnitte der `SwitchToRenderTexture` Methode. 
 
 
-## <a name="ccrendertexture-size"></a>CCRenderTexture Größe
+### <a name="ccrendertexture-size"></a>CCRenderTexture Größe
 
 Der Konstruktor CCRenderTexture erfordert zwei Sätze von Dimensionen. Die erste steuert die Größe des der `CCRenderTexture` Wenn es gezeichnet wird, und der zweite gibt die Breite in Pixel und die Höhe des Inhalts. Die `Card` Entität instanziiert die `CCRenderTexture` Hintergrund mit [ContentSize](https://developer.xamarin.com/api/property/CocosSharp.CCSprite.ContentSize/). Unsere Spiel verfügt über eine `DesignResolution` von 512 von 384, die wie gezeigt in `ViewController.LoadGame` auf iOS- und `MainActivity.LoadGame` auf Android-Geräten:
 
@@ -293,7 +293,7 @@ renderTexture = new CCRenderTexture(unitResolution, pixelResolution);
 ![](ccrendertexture-images/image9.png "Um zu vergleichen, kann die PixelResolution-Wert entsprechend den Hintergrund ändern. ContentSize ohne verdoppelt wird, und vergleichen das Ergebnis")
 
 
-## <a name="rendering-to-a-ccrendertexture"></a>Rendern in einem CCRenderTexture
+### <a name="rendering-to-a-ccrendertexture"></a>Rendern in einem CCRenderTexture
 
 Visuelle Objekte in CocosSharp werden in der Regel nicht explizit gerendert. Stattdessen visueller Objekte hinzugefügt werden eine `CCLayer` ist Teil einer `CCScene`. CocosSharp automatisch rendert die `CCScene` und seine visuelle Hierarchie in jeden Frame ohne Renderingcode aufgerufen werden. 
 
@@ -355,7 +355,7 @@ foreach (var component in visualComponents)
 this.AddChild(renderTexture.Sprite);
 ```
 
-# <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Zusammenfassung
 
 Dieses Handbuch behandelt die `CCRenderTexture` Klasse, indem eine `Card` Entität, die sich in einem entladbare Kartenspiels verwendet werden kann. Es wurde gezeigt, wie mithilfe der `CCRenderTexture` Klasse zur Verbesserung der Framerate und Transparenz der gesamten Entität ordnungsgemäß zu implementieren.
 

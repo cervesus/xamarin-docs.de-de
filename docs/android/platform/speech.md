@@ -1,18 +1,18 @@
 ---
 title: Android Speech
-description: "Dieser Artikel behandelt die Grundlagen der Verwendung sehr leistungsstarken Android.Speech-Namespaces. Seit der Einführung wurde Android Spracherkennung erkannt und als Text ausgeben können. Es ist ein relativ einfacher Vorgang. Für Text-zu-Sprache, der Prozess ist jedoch komplizierter, da nicht nur das Sprachmodul verfügt, berücksichtigt werden, aber auch die Sprachen verfügbar und aus dem Text-zu-Sprache (Sprachausgabe)-System installiert."
+description: Dieser Artikel behandelt die Grundlagen der Verwendung sehr leistungsstarken Android.Speech-Namespaces. Seit der Einführung wurde Android Spracherkennung erkannt und als Text ausgeben können. Es ist ein relativ einfacher Vorgang. Für Text-zu-Sprache, der Prozess ist jedoch komplizierter, da nicht nur das Sprachmodul verfügt, berücksichtigt werden, aber auch die Sprachen verfügbar und aus dem Text-zu-Sprache (Sprachausgabe)-System installiert.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: FA3B8EC4-34D2-47E3-ACEA-BD34B28115B9
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: e8e56afbdf0b68ecc49a89b08b2e67a9715f2aef
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.date: 04/02/2018
+ms.openlocfilehash: acc64fee37e1a6046991355389a09a29e1889993
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="android-speech"></a>Android Speech
 
@@ -158,15 +158,21 @@ foreach (var locale in localesAvailable)
 langAvailable = langAvailable.OrderBy(t => t).Distinct().ToList();
 ```
 
+Dieser Code ruft [TextToSpeech.IsLanguageAvailable](https://developer.xamarin.com/api/member/Android.Speech.Tts.TextToSpeech.IsLanguageAvailable/p/Java.Util.Locale/) zu überprüfen, ob das Language Pack für ein bestimmtes Gebietsschema bereits auf dem Gerät vorhanden ist. Diese Methode gibt ein [LanguageAvailableResult](https://developer.xamarin.com/api/type/Android.Speech.Tts.LanguageAvailableResult/), der angibt, ob die Sprache für das übergebene Gebietsschema verfügbar ist. Wenn `LanguageAvailableResult` gibt an, dass die Sprache ist `NotSupported`, besteht keine Sprach-Paket (auch zum Download) für diese Sprache. Wenn `LanguageAvailableResult` festgelegt ist, um `MissingData`, ist es möglich ist, ein neues Sprachpaket herunterzuladen, wie in Schritt 4 unten erläutert.
+
 ### <a name="step-3---setting-the-speed-and-pitch"></a>Schritt 3 – Festlegen der Geschwindigkeit und Tonhöhe
 
 Android ermöglicht dem Benutzer den Sound die Spracherkennung durch Ändern von alter der `SpeechRate` und `Pitch` (die Rate der Geschwindigkeit und dem Signalton an, der die Sprache). Dies geht von 0 auf 1 fest, mit der "normale" Sprache wird für beide 1.
 
 ### <a name="step-4---testing-and-loading-new-languages"></a>Schritt 4: Testen und das Laden neuer Sprachen
 
-Dies erfolgt mithilfe einer `Intent` mit dem Ergebnis interpretiert wird `OnActivityResult`. Im Gegensatz zu der Sprache-zu-Text-Beispiel, das verwendet die `RecognizerIntent` als eine `PutExtra` Parameter an die `Intent`, die Installation Absicht verwendet eine `Action`.
+Eine neue Sprache herunterladen erfolgt mithilfe einer `Intent`. Das Ergebnis des diese Absicht bewirkt, dass die [OnActivityResult](https://developer.xamarin.com/api/member/Android.App.Activity.OnActivityResult/) aufzurufende Methode. Im Gegensatz zu-Sprache-zu-Text (verwendet, die die [RecognizerIntent](https://developer.xamarin.com/api/type/Android.Speech.RecognizerIntent/) als eine `PutExtra` Parameter an die `Intent`), Tests und Laden von `Intent`sind `Action`-basierend:
 
-Es ist möglich, eine neue Sprache von Google mithilfe des folgenden Codes zu installieren. Das Ergebnis der `Activity` geprüft, ob die Sprache erforderlich ist, und wenn dies der Fall, installiert die Sprache nach Nachfrage nach dem Download erfolgen.
+-   [TextToSpeech.Engine.ActionCheckTtsData](https://developer.xamarin.com/api/field/Android.Speech.Tts.TextToSpeech+Engine.ActionCheckTtsData/) &ndash; Starts an activity from the platform `TextToSpeech` engine to verify proper installation and availability of language resources on the device.
+
+-   [TextToSpeech.Engine.ActionInstallTtsData](https://developer.xamarin.com/api/field/Android.Speech.Tts.TextToSpeech+Engine.ActionInstallTtsData/) &ndash; Starts an activity that prompts the user to download the necessary languages.
+
+Das folgende Codebeispiel zeigt, wie diese Aktionen für Sprachressourcen testen und eine neue Sprache herunterladen:
 
 ```csharp
 var checkTTSIntent = new Intent();
@@ -183,6 +189,19 @@ protected override void OnActivityResult(int req, Result res, Intent data)
     }
 }
 ```
+
+`TextToSpeech.Engine.ActionCheckTtsData` testet, ob die Verfügbarkeit der Ressourcen für die Standardsprache. `OnActivityResult` wird aufgerufen, wenn dieser Test abgeschlossen ist. Wenn Sprachressourcen heruntergeladen werden, müssen `OnActivityResult` ausgelöst wird, deaktiviert die `TextToSpeech.Engine.ActionInstallTtsData` Aktion aus, um eine Aktivität zu starten, die dem Benutzer ermöglicht, die benötigten Sprachen herunterladen. Beachten Sie, dass diese `OnActivityResult` Implementierung überprüft nicht die `Result` code, da in diesem Beispiel beläuft Bestimmung bereits vorgenommen wurde, dass das Language Pack heruntergeladen werden muss.
+
+Die `TextToSpeech.Engine.ActionInstallTtsData` Aktion Ursachen der **Google TTS Stimme Daten** Aktivität, die dem Benutzer angezeigt werden, für das Auswählen von Sprachen herunterladen:
+
+![Google-Sprachausgabe Stimme Data-Aktivität](speech-images/01-google-tts-voice-data.png)
+
+Beispielsweise kann der Benutzer Französisch auswählen und klicken Sie auf das Symbol "Dateidownload" zum Herunterladen von französischen Voice-Daten:
+
+![Beispiel für die französischen Sprache herunterladen](speech-images/02-selecting-french.png)
+
+Die Installation dieser Daten erfolgt automatisch, nachdem der Download abgeschlossen ist.
+
 
 ### <a name="step-5---the-ioninitlistener"></a>Schritt 5 – die IOnInitListener
 
