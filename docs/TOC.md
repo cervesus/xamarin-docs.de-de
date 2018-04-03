@@ -11,7 +11,7 @@
 ### [iOS-Simulator für Windows](tools/ios-simulator.md)
 ### [Einbetten von .NET](tools/dotnet-embedding/index.md)
 ### [Xamarin Inspector](tools/inspector/index.md)
-### [Xamarin Live Player](tools/live-player/index.md)
+### [Live Player für Xamarin.Forms](tools/live-player/index.md)
 ### [Xamarin Profiler](tools/profiler/index.md)
 ### [Xamarin Workbooks](tools/workbooks/index.md)
 ## [Grafiken und Spiele](graphics-games/index.yml)
