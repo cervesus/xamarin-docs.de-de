@@ -1,18 +1,17 @@
 ---
-title: "Einführung in die fortlaufende Integration mit Xamarin"
-description: "Fortlaufende Integration ist eine Software Engineering-Methode in der ein automatischen Buildvorgang kompiliert und optional testet eine app, wenn Code hinzugefügt oder von Entwicklern im Repository der Versionskontrolle des Projekts geändert. In diesem Artikel werden die allgemeinen Konzepte der kontinuierlichen Integration und einige der verfügbaren Optionen für die kontinuierliche Integration mit Xamarin-Projekten erläutert."
-ms.topic: article
+title: Einführung in die fortlaufende Integration mit Xamarin
+description: Fortlaufende Integration ist eine Software Engineering-Methode in der ein automatischen Buildvorgang kompiliert und optional testet eine app, wenn Code hinzugefügt oder von Entwicklern im Repository der Versionskontrolle des Projekts geändert. In diesem Artikel werden die allgemeinen Konzepte der kontinuierlichen Integration und einige der verfügbaren Optionen für die kontinuierliche Integration mit Xamarin-Projekten erläutert.
 ms.prod: xamarin
 ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 2a8849a75f3c26a83a030700878a3195fde7515f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 017691ece68f979eea1627c0442f49018d5742fb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Einführung in die fortlaufende Integration mit Xamarin
 

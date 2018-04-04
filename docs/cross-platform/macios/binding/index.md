@@ -1,19 +1,18 @@
 ---
-title: Objective-C-Bindung
-ms.topic: article
+title: Binden von Objective-C
 ms.prod: xamarin
 ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: e836081d79d904e2d0952386e536eefdabe361e1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fef2826f536042dc9be830a4c0dc358658c359d9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
-# <a name="binding-objective-c"></a>Objective-C-Bindung
+# <a name="binding-objective-c"></a>Binden von Objective-C
 
 Dieser Abschnitt enthält eine Vielzahl von Dokumenten, die Erstellen von Bindungen für Objective-C-Bibliotheken abdecken, damit sie von C#-Anwendungen mit einem Xamarin.iOS oder Xamarin.Mac erstellt aufgerufen werden können.
 

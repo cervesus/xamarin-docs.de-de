@@ -1,18 +1,17 @@
 ---
 title: ViewPager mit Ansichten
-description: "ViewPager handelt es sich um ein Layout-Manager, der gestural Navigation implementiert werden kann. Gestural Navigation kann der Benutzer streichen Sie nach links und rechts zum schrittweisen Durchlaufen von Datenseiten. Dieses Handbuch wird erläutert, wie eine swipeable Benutzeroberfläche mit ViewPager und PagerTabStrip, verwenden von Ansichten wie die Datenseiten zu implementieren (eine nachfolgende Anleitung enthält Informationen zum Verwenden von Fragmenten für die Seiten)."
-ms.topic: article
+description: ViewPager handelt es sich um ein Layout-Manager, der gestural Navigation implementiert werden kann. Gestural Navigation kann der Benutzer streichen Sie nach links und rechts zum schrittweisen Durchlaufen von Datenseiten. Dieses Handbuch wird erläutert, wie eine swipeable Benutzeroberfläche mit ViewPager und PagerTabStrip, verwenden von Ansichten wie die Datenseiten zu implementieren (eine nachfolgende Anleitung enthält Informationen zum Verwenden von Fragmenten für die Seiten).
 ms.prod: xamarin
 ms.assetid: 42E5379F-B0F4-4B87-A314-BF3DE405B0C8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 9c30cf9d76498e95aba6f9a003bc40c7d14e21de
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 39251f7cf6bc287b76b7921278853158bdb14d66
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="viewpager-with-views"></a>ViewPager mit Ansichten
 

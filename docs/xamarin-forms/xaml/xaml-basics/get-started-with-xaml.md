@@ -1,18 +1,17 @@
 ---
 title: Teil 1. Erste Schritte mit XAML
-description: "In einer Anwendung Xamarin.Forms ist XAML hauptsächlich den visuellen Inhalt einer Seite definieren. Eine XAML-Datei ist immer eine C#-Codedatei, die Code-Unterstützung für das Markup bietet zugeordnet. Tragen diese beiden Dateien zusammen, für die Klassendefinition einer neuen, die untergeordnete Ansichten und eigenschaftsinitialisierung enthält. In der XAML-Datei Klassen und Eigenschaften mit XML-Elementen und Attributen verwiesen, und Links zwischen Markup und Code hergestellt werden."
-ms.topic: article
+description: In einer Anwendung Xamarin.Forms ist XAML hauptsächlich den visuellen Inhalt einer Seite definieren. Eine XAML-Datei ist immer eine C#-Codedatei, die Code-Unterstützung für das Markup bietet zugeordnet. Tragen diese beiden Dateien zusammen, für die Klassendefinition einer neuen, die untergeordnete Ansichten und eigenschaftsinitialisierung enthält. In der XAML-Datei Klassen und Eigenschaften mit XML-Elementen und Attributen verwiesen, und Links zwischen Markup und Code hergestellt werden.
 ms.prod: xamarin
 ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 55c4fa73044b1c37e879ed7731161269bdbf8ba8
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f1d347cc37ab065e09cb2627ee2122797280f3c1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Teil 1. Erste Schritte mit XAML
 

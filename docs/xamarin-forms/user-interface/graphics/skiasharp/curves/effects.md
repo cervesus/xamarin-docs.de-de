@@ -1,18 +1,17 @@
 ---
 title: Pfad Effekte
 description: Ermitteln der verschiedenen Pfad Auswirkungen, mit die Pfade für Kontur zuweisen und ausfüllen verwendet werden können
-ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 140e5768db797f36299bef358e0296ae57398535
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 4097aea4079555b26b586db5ec63fa261d5e7946
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="path-effects"></a>Pfad Effekte
 

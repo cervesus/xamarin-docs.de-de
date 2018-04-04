@@ -1,18 +1,17 @@
 ---
 title: Anpassen von Bindungen
-description: "Sie können eine Xamarin.Android-Bindung anpassen, indem Sie bearbeiten die Metadaten, die den Bindungsprozess steuert. Diese manuellen Änderungen sind oft notwendig, zum Auflösen von Buildfehler und die resultierende-API können strukturiert werden, damit sie besser mit c# konsistent sind / .NET. Diese Handbücher erläutern die Struktur dieser Metadaten, wie die Metadaten zu ändern sowie deren JavaDoc zu können, um die Namen der Parameter der Methode wiederherzustellen."
-ms.topic: article
+description: Sie können eine Xamarin.Android-Bindung anpassen, indem Sie bearbeiten die Metadaten, die den Bindungsprozess steuert. Diese manuellen Änderungen sind oft notwendig, zum Auflösen von Buildfehler und die resultierende-API können strukturiert werden, damit sie besser mit c# konsistent sind / .NET. Diese Handbücher erläutern die Struktur dieser Metadaten, wie die Metadaten zu ändern sowie deren JavaDoc zu können, um die Namen der Parameter der Methode wiederherzustellen.
 ms.prod: xamarin
 ms.assetid: 63C5078D-9E42-4F70-AF8C-8CEEA84FB6AF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 09/25/2017
-ms.openlocfilehash: 14372c3ca42d1ba4a8ade1248f3c5f3210cc7e46
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bb4f3b24be2072cb8b33893899a23951ace63607
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-bindings"></a>Anpassen von Bindungen
 

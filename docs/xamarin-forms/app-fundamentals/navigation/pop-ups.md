@@ -1,18 +1,17 @@
 ---
 title: Anzeigen von Popups
-description: "Xamarin.Forms stellt zwei pop-Einrichtung-ähnliche Elemente der Benutzeroberfläche – eine Warnung und ein Arbeitsblatt Aktion bereit. In diesem Artikel wird veranschaulicht, wie das Blatt \"Warnung\" und \"Aktion\" APIs, Benutzer einfache Fragen stellen und als Anleitung für die Benutzer über die Aufgaben."
-ms.topic: article
+description: Xamarin.Forms stellt zwei pop-Einrichtung-ähnliche Elemente der Benutzeroberfläche – eine Warnung und ein Arbeitsblatt Aktion bereit. In diesem Artikel wird veranschaulicht, wie das Blatt "Warnung" und "Aktion" APIs, Benutzer einfache Fragen stellen und als Anleitung für die Benutzer über die Aufgaben.
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 87b20dfd8882bf7da58b1bd078930fb69c46a79d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2e0a5ff433de034da0170e3aa9a19ab50ddc3cb6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="displaying-pop-ups"></a>Anzeigen von Popups
 

@@ -1,18 +1,17 @@
 ---
 title: Erstellen der Plattform-Besonderheiten
-description: "Anbieter können ihre eigenen Plattform-Besonderheiten mit Effekte erstellen. Ein Effekt bietet die spezifische Funktionalität, die dann über eine plattformspezifische verfügbar gemacht wird. Das Ergebnis ist ein Effekt, der leichter über XAML und über die fluent-API-Code genutzt werden kann. In diesem Artikel veranschaulicht, wie einen Effekt über einen plattformspezifischen verfügbar zu machen."
-ms.topic: article
+description: Anbieter können ihre eigenen Plattform-Besonderheiten mit Effekte erstellen. Ein Effekt bietet die spezifische Funktionalität, die dann über eine plattformspezifische verfügbar gemacht wird. Das Ergebnis ist ein Effekt, der leichter über XAML und über die fluent-API-Code genutzt werden kann. In diesem Artikel veranschaulicht, wie einen Effekt über einen plattformspezifischen verfügbar zu machen.
 ms.prod: xamarin
 ms.assetid: 0D0E6274-6EF2-4D40-BB77-3D8E53BCD24B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/23/2016
-ms.openlocfilehash: 7cdc67f8ea1038226bb6ef8c8add8c03e9635e6a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6283e22d75d9e52ad3e2f300617818c98d887481
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-platform-specifics"></a>Erstellen der Plattform-Besonderheiten
 

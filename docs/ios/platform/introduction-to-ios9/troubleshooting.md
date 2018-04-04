@@ -1,18 +1,17 @@
 ---
 title: Problembehandlung
-description: "Dieser Artikel enthält einige Tipps zur Problembehandlung für das Arbeiten mit iOS 9 in Xamarin.iOS-apps."
-ms.topic: article
+description: Dieser Artikel enthält einige Tipps zur Problembehandlung für das Arbeiten mit iOS 9 in Xamarin.iOS-apps.
 ms.prod: xamarin
 ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: ca3697b355a45e06f941a6dfd610cd19f922ca75
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 1b335fc6b19d87a46059511baf866433691b1b4d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting"></a>Problembehandlung
 
@@ -150,7 +149,7 @@ Um dieses Problem zu beheben, führen Sie folgende Schritte aus:
 3. Klicken Sie unter der **Geräte** side Bereich, wählen Sie Ihr Gerät, mit der rechten Maustaste und wählen Sie **Provisioning Profile anzeigen...** : 
 
     [![](troubleshooting-images/untrusted03.png "SShow Provisioning Profile")](troubleshooting-images/untrusted03.png#lightbox)
-4. Wählen Sie jede Bereitstellungsprofil derzeit auf dem Gerät und auf die  **-**  Schaltfläche zu löschen: 
+4. Wählen Sie jede Bereitstellungsprofil derzeit auf dem Gerät und auf die **-** Schaltfläche zu löschen: 
 
     [![](troubleshooting-images/untrusted04.png "Löschen ein Bereitstellungsprofil")](troubleshooting-images/untrusted04.png#lightbox)
 5. Aus der **Xcode** klicken Sie im Menü **Einstellungen...**  und **Konten**: 

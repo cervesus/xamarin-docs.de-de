@@ -1,7 +1,6 @@
 ---
-title: "C# 6 der neuen Funktionen (Übersicht)"
-description: "Die neueste Version der C#-Sprache – Version 6 – weiterhin die Sprache aus, um weniger Textbausteine und Klarheit mehr Konsistenz wurden weiterentwickelt. Bereinigung – Syntax zur objektinitialisierung, die Möglichkeit, mit \"await\" in Catch/finally-Blöcke und die Null-Bedingung? Operator sind besonders nützlich."
-ms.topic: article
+title: C# 6 der neuen Funktionen (Übersicht)
+description: Die neueste Version der C#-Sprache – Version 6 – weiterhin die Sprache aus, um weniger Textbausteine und Klarheit mehr Konsistenz wurden weiterentwickelt. Bereinigung – Syntax zur objektinitialisierung, die Möglichkeit, mit "await" in Catch/finally-Blöcke und die Null-Bedingung? Operator sind besonders nützlich.
 ms.prod: xamarin
 ms.assetid: 4B4E41A8-68BA-4E2B-9539-881AC19971B
 ms.technology: xamarin-cross-platform
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 80456287c92913b048b73f40d2db6dcb16cc270d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2a189a19280576876e5d5a6a4fa34d2d00cab330
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="c-6-new-features-overview"></a>C# 6 der neuen Funktionen (Übersicht)
 
@@ -52,7 +51,7 @@ Visual Studio für Mac aktualisiert automatisch die Mono-Installation auf Ihrem 
 
 Windows-Benutzer benötigen [Visual Studio 2015 oder 2017 ^](https://www.visualstudio.com/) installiert, um die C#-6-Code kompilieren (auch wenn Sie Xamarin Studio für Windows als Ihre IDE).
 
-^ oder  *[Microsoft Build Tools 2015](http://www.microsoft.com/en-us/download/details.aspx?id=48159)*  , z. B. für Befehl Zeile Kompilierung oder Buildserver.
+^ oder *[Microsoft Build Tools 2015](http://www.microsoft.com/en-us/download/details.aspx?id=48159)* , z. B. für Befehl Zeile Kompilierung oder Buildserver.
 
 ## <a name="using-c-6"></a>Mithilfe von c# 6
 

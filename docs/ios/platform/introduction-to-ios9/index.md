@@ -1,18 +1,17 @@
 ---
-title: "Einführung in iOS 9"
-description: "In diesem Artikel werden alle neuen und geänderten-APIs und verfügbare Funktionen auf iOS 9 für Entwickler von Xamarin.iOS eingeführt."
-ms.topic: article
+title: Einführung in iOS 9
+description: In diesem Artikel werden alle neuen und geänderten-APIs und verfügbare Funktionen auf iOS 9 für Entwickler von Xamarin.iOS eingeführt.
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 5b26989603695cfb309fba5a5318f7ef4d2460e2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 10ed9154b92e6f13dd71f83cf4fed47585dc795f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-ios-9"></a>Einführung in iOS 9
 

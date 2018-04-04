@@ -1,18 +1,17 @@
 ---
 title: Verwendung von Jenkins mit Xamarin
-description: "Diese Anleitung wird veranschaulicht, wie Jenkins als fortlaufende Integration-Server einrichten und automatisieren Kompilieren von mobilen Anwendungen mit Xamarin erstellt wurden. Es wird beschrieben, wie Jenkins unter OS X installieren, um ihn zu konfigurieren, richten Sie Aufträge Xamarin.iOS und Xamarin.Android Anwendungen zu kompilieren, wenn Änderungen an das Verwaltungssystem von Source Code übergeben werden."
-ms.topic: article
+description: Diese Anleitung wird veranschaulicht, wie Jenkins als fortlaufende Integration-Server einrichten und automatisieren Kompilieren von mobilen Anwendungen mit Xamarin erstellt wurden. Es wird beschrieben, wie Jenkins unter OS X installieren, um ihn zu konfigurieren, richten Sie Aufträge Xamarin.iOS und Xamarin.Android Anwendungen zu kompilieren, wenn Änderungen an das Verwaltungssystem von Source Code übergeben werden.
 ms.prod: xamarin
 ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: ff754a690627e7e2f0a5cd39dd669a4c9ddd47fb
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: f183eb487b49d60c896bef9c90c711cd3da846b7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-jenkins-with-xamarin"></a>Verwendung von Jenkins mit Xamarin
 
@@ -103,7 +102,7 @@ An diesem Punkt hat Jenkins installiert wurde. Wenn wir Xamarin mobile Anwendung
 
 ### <a name="installing-plugins"></a>Installieren von Plug-Ins
 
-Nach Abschluss der Jenkins.App Installationsprogramm er startet Jenkins und starten den Webbrowser, mit der URL http://localhost: 8080, wie im folgenden Screenshot gezeigt:
+Nach Abschluss der Jenkins.App Installationsprogramm er startet Jenkins und starten Sie den Webbrowser, mit der URL http://localhost:8080, wie im folgenden Screenshot gezeigt:
 
  [![](jenkins-walkthrough-images/image10.png "8080, wie in diesem Screenshot dargestellt.")](jenkins-walkthrough-images/image10.png#lightbox)
 

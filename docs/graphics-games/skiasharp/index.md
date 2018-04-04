@@ -1,18 +1,17 @@
 ---
 title: 2D Zeichnung
 description: Cross Platform 2D Zeichnen mit SkiaSharp
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: ee0625f22062fef3c27a697ce33488274abc24d9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a6249525e8a5f85284c462888a7698312321642f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="2d-drawing"></a>2D Zeichnung
 
@@ -74,4 +73,4 @@ Sie können Durchsuchen der [API-Dokumentation](https://developer.xamarin.com/ap
 
 SkiaSharp ist eine In Bearbeitung, die wir mit unserer Community gemeinsam nutzen. Während es wichtige Teile der API Skia gebunden haben, bleibt viel Arbeit ausgeführt werden. Verwenden wir die stabile C#-API von Skia angefügt und unser Plan wird fortgesetzt, Beitragende unsere Arbeit für die C-Bindungen des Skia vollständige Coverage an die-APIs bereitstellen.
 
-Führt die Bindung bemühungen, lassen Sie Kommentare oder Vorschläge für das GitHub-Repository als Probleme helfen [http://github.com/mono/SkiaSharp](http://github.com/mono/SkiaSharp).
+Führt die Bindung bemühungen, lassen Sie Kommentare oder Vorschläge für das GitHub-Repository als Probleme helfen [ http://github.com/mono/SkiaSharp ](http://github.com/mono/SkiaSharp).

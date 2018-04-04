@@ -1,18 +1,17 @@
 ---
 title: Neuer Benutzer Schnittstelle Stile
-description: "Dieser Artikel behandelt das Licht und dunkel UI-Designs, Apple tvos. außerdem wurden 10 und wie diese in einer app Xamarin.tvOS implementiert hinzugefügt wurde."
-ms.topic: article
+description: Dieser Artikel behandelt das Licht und dunkel UI-Designs, Apple tvos. außerdem wurden 10 und wie diese in einer app Xamarin.tvOS implementiert hinzugefügt wurde.
 ms.prod: xamarin
 ms.assetid: 8BC37683-AD9E-45CD-BE40-96965618AD1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: e400a72f4c759662e70bfecc372134f8fda05ad6
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: da75a99e842b13d42251cdd1c5195ec66ff4a513
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="new-user-interface-styles"></a>Neuer Benutzer Schnittstelle Stile
 
@@ -186,7 +185,7 @@ Apple hat die folgenden Möglichkeiten hinzugefügt, wenn tvos. außerdem wurden
 
 * Der Entwickler kann verschiedene Varianten der Elemente der Benutzeroberfläche, die basierend auf dem UI-Design im Angeben der **Attribut Inspektor**:
     
-    * Mehrere Eigenschaften verfügen jetzt über eine  **+**  neben dem geklickt werden kann, um eine bestimmte Version des UI-Design hinzuzufügen: 
+    * Mehrere Eigenschaften verfügen jetzt über eine **+** neben dem geklickt werden kann, um eine bestimmte Version des UI-Design hinzuzufügen: 
 
         [![](user-interface-styles-images/theme08.png "Fügen Sie eine bestimmte Version des UI-Design")](user-interface-styles-images/theme08.png#lightbox) 
     

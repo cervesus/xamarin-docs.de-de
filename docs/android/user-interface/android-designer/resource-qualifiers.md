@@ -1,18 +1,17 @@
 ---
 title: Ressourcenqualifizierer und zu den Visualisierungsoptionen
-description: "In diesem Thema wird erläutert, wie Ressourcen definiert werden, die verwendet wird, nur, wenn die Qualifiziererwerte abgeglichen werden wird. Ein einfaches Beispiel ist eine Sprache qualifiziert Zeichenfolgenressource. Eine Zeichenfolgenressource kann mit anderen alternativen Ressourcen, die definiert, um für zusätzliche Sprachen verwendet werden als Standard definiert werden. Alle Ressourcentypen können qualifiziert werden, einschließlich des Layouts selbst."
-ms.topic: article
+description: In diesem Thema wird erläutert, wie Ressourcen definiert werden, die verwendet wird, nur, wenn die Qualifiziererwerte abgeglichen werden wird. Ein einfaches Beispiel ist eine Sprache qualifiziert Zeichenfolgenressource. Eine Zeichenfolgenressource kann mit anderen alternativen Ressourcen, die definiert, um für zusätzliche Sprachen verwendet werden als Standard definiert werden. Alle Ressourcentypen können qualifiziert werden, einschließlich des Layouts selbst.
 ms.prod: xamarin
 ms.assetid: 2111C18A-3EDA-3787-25E1-3869FF4BE441
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/29/2018
-ms.openlocfilehash: bff6d917fc4ce65daed329f15d6648bbfe0dd069
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bc9eb145b6d9ed7bd441d625f533c5cbbd87fccd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>Ressourcenqualifizierer und zu den Visualisierungsoptionen
 

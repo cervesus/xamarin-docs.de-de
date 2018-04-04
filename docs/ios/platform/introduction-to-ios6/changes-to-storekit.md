@@ -1,18 +1,17 @@
 ---
-title: "Änderungen an StoreKit"
-description: "iOS 6 führt zwei Änderungen auf die Store-Kit-API: die Möglichkeit zum Anzeigen von iTunes (und Store-App/iBookstore) innerhalb der app und eine neue in-app Produkte kaufen Option Apple, in dem Ihre Dateien zum Herunterladen hostet. Dieses Dokument erläutert, wie diese Funktionen mit Xamarin.iOS implementiert wird."
-ms.topic: article
+title: Änderungen an StoreKit
+description: 'iOS 6 führt zwei Änderungen auf die Store-Kit-API: die Möglichkeit zum Anzeigen von iTunes (und Store-App/iBookstore) innerhalb der app und eine neue in-app Produkte kaufen Option Apple, in dem Ihre Dateien zum Herunterladen hostet. Dieses Dokument erläutert, wie diese Funktionen mit Xamarin.iOS implementiert wird.'
 ms.prod: xamarin
 ms.assetid: 253D37D7-44C7-D012-3641-E15DC41C2699
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: ec83bc0f62ee195884cef2f59ba701fcbf15c1da
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8a7a70c3f84518141cf44d630fb4137051d0c866
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="changes-to-storekit"></a>Änderungen an StoreKit
 

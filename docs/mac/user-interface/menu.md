@@ -1,18 +1,17 @@
 ---
-title: "Menüs"
-description: "In diesem Artikel wird das Arbeiten mit Menüs in einer Anwendung Xamarin.Mac behandelt. Erstellen und Verwalten von Menüs und Menüelemente in Xcode und Benutzeroberflächen-Generator und Arbeiten mit diesen programmgesteuerten beschrieben."
-ms.topic: article
+title: Menüs
+description: In diesem Artikel wird das Arbeiten mit Menüs in einer Anwendung Xamarin.Mac behandelt. Erstellen und Verwalten von Menüs und Menüelemente in Xcode und Benutzeroberflächen-Generator und Arbeiten mit diesen programmgesteuerten beschrieben.
 ms.prod: xamarin
 ms.assetid: 5D367F8E-3A76-4995-8A89-488530FAD802
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 52a9fc206a2c303d13d80be4de743d98056f7684
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 50c9cf333ff7965bbdfbb964a2301e677eb6aa59
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="menus"></a>Menüs
 
@@ -439,7 +438,7 @@ Doppelklicken Sie anschließend auf der app-Storyboard-Datei in die **Lösung Pa
 
 ![Der Inspektor Attribute](menu-images/action01.png "der Attribute-Inspektor")
 
-Klicken Sie auf die  **+**  Schaltfläche am unteren Rand der **Attribute Inspektor** So fügen Sie eine neue benutzerdefinierte Aktion hinzu:
+Klicken Sie auf die **+** Schaltfläche am unteren Rand der **Attribute Inspektor** So fügen Sie eine neue benutzerdefinierte Aktion hinzu:
 
 ![Eine neue Aktion hinzufügen](menu-images/action02.png "eine neue Aktion hinzufügen")
 

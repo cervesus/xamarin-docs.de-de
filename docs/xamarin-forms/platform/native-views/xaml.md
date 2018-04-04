@@ -1,18 +1,17 @@
 ---
 title: Systemeigene Ansichten in XAML
-description: "Systemeigene Ansichten von iOS, Android und universellen Windows-Plattform können direkt von Xamarin.Forms XAML-Dateien verwiesen werden. Eigenschaften und Ereignishandler für systemeigene Sichten festgelegt werden können, und sie können mit Xamarin.Forms Sichten interagieren. Dieser Artikel veranschaulicht, wie systemeigene Ansichten Xamarin.Forms XAML-Dateien nutzen."
-ms.topic: article
+description: Systemeigene Ansichten von iOS, Android und universellen Windows-Plattform können direkt von Xamarin.Forms XAML-Dateien verwiesen werden. Eigenschaften und Ereignishandler für systemeigene Sichten festgelegt werden können, und sie können mit Xamarin.Forms Sichten interagieren. Dieser Artikel veranschaulicht, wie systemeigene Ansichten Xamarin.Forms XAML-Dateien nutzen.
 ms.prod: xamarin
 ms.assetid: 7A856D31-B300-409E-9AEB-F8A4DB99B37E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: f4345e107a32c3a583c246fe5dbe24590960c870
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6dbad7352a089f482fa3a396505507da58771cef
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="native-views-in-xaml"></a>Systemeigene Ansichten in XAML
 

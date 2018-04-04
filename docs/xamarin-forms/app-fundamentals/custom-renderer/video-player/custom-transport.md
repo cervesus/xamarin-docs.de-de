@@ -1,17 +1,16 @@
 ---
 title: Benutzerdefinierte video Transport-Steuerelemente
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: b0d871068f42a03b2aba3c1482a9236b19fe0db9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5463a91dba5840ebe655aa1509d9f98e73643d26
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="custom-video-transport-controls"></a>Benutzerdefinierte video Transport-Steuerelemente
 
@@ -521,19 +520,19 @@ namespace FormsVideoLibrary.UWP
 
 Verwenden von Unicode-Zeichen für symbolische **wiedergeben**, **anhalten**, und **beenden** Bilder ist problematisch. Die [sonstige technische](https://unicode-table.com/en/blocks/miscellaneous-technical/) Abschnitt im Unicode-Standard definiert drei Symbolzeichen scheinbar für diesen Zweck geeignet. Diese lauten wie folgt:
 
-- 0x23F5 (schwarze mittlere nach rechts zeigendes Dreieck) oder & #x23F5; für **wiedergeben**
-- 0x23F8 (doppelter senkrechter Strich) oder & #x23F8; für **anhalten**
-- 0x23F9 (schwarze Quadrat) oder & #x23F9; für **beenden**
+- 0x23F5 (schwarze mittlere nach rechts zeigendes Dreieck) oder &#x23F5; für **wiedergeben**
+- 0x23F8 (doppelter senkrechter Strich) oder &#x23F8; für **anhalten**
+- 0x23F9 (schwarze Quadrat) oder &#x23F9; für **beenden**
 
 Unabhängig davon wie diese Symbole in Ihrem Browser angezeigt werden (und verschiedene Browsern unterschiedlich behandeln), sie werden nicht angezeigt konsistent auf Plattformen von Xamarin.Forms unterstützt. Auf IOS- und uwp-Geräten die **anhalten** und **beenden** Zeichen haben eine grafische Darstellung des mit einem blauen Hintergrund 3D und einem weißen Vordergrund. Dies ist die Groß-/Kleinschreibung auf Android-Geräten, auf dem das Symbol einfach Blau ist nicht. Allerdings die 0x23F5 Codepunkt für **wiedergeben** besitzt, dass die gleiche Darstellung auf UWP, und es auch nicht auf IOS- und Android unterstützt wird.
 
 Aus diesem Grund kann die 0x23F5 Codepoint für verwendet werden **wiedergeben**. Ein guter Ersatz ist:
 
-- 0x25B6 (schwarze nach rechts zeigendes Dreieck) oder & #x25B6; für **wiedergeben**
+- 0x25B6 (schwarze nach rechts zeigendes Dreieck) oder &#x25B6; für **wiedergeben**
 
 Dies wird von allen drei Plattformen unterstützt, außer dass es sich um eine einfache schwarzen Dreiecks handelt, die keinen die 3D-Darstellung des ähnelt **anhalten** und **beenden**. Eine Möglichkeit besteht darin, den 0x25B6 Codepoint mit einem variant zu befolgen:
 
-- 0x25B6 gefolgt von 0xFE0F (Variant 16) oder & #x25B6; & #xFE0F; für **wiedergeben**
+- 0x25B6 gefolgt von 0xFE0F (Variant 16) oder &#x25B6; &#xFE0F; für **wiedergeben**
 
 Dies ist im unten gezeigten Markup verwendet. Bei iOS kann dadurch die **wiedergeben** gleichen 3D-Darstellung als symbol der **anhalten** und **beenden** Schaltflächen, aber die Variante funktioniert nicht unter Android und UWP.
 

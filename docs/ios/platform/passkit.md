@@ -1,18 +1,17 @@
 ---
 title: PassKit
-description: "Wallet ist eine System-iOS-app, die gespeichert und angezeigt werden, Barcodes und andere Informationen zum Verknüpfen von Kundentransaktionen auf ihre Mobiltelefon mit der realen Welt."
-ms.topic: article
+description: Wallet ist eine System-iOS-app, die gespeichert und angezeigt werden, Barcodes und andere Informationen zum Verknüpfen von Kundentransaktionen auf ihre Mobiltelefon mit der realen Welt.
 ms.prod: xamarin
 ms.assetid: 74B9973B-C1E8-B727-3F6D-59C1F98BAB3A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 279b5bc1188c973fddc033f9b592e9acec703a59
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1c8ac92c5ff7eed5116587ed13755ddee74a877
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="passkit"></a>PassKit
 
@@ -238,7 +237,7 @@ Ein Typ-ID übergeben möchten folgenden erstellen.
 
 Der erste Schritt ist das Einrichten einer übergeben Typ-ID für jedes einzelne _Typ_ erfolgreich unterstützt werden müssen. Die ID übergeben (oder Typbezeichner übergeben) wird einen eindeutigen Bezeichner für die erfolgreich erstellt. Wir verwenden diese ID, die erfolgreich mit Ihrem Entwicklerkonto mithilfe eines Zertifikats zu verknüpfen.
 
-1. In der [Zertifikate, Bezeichner und Profile-Abschnitt des iOS-Bereitstellungsportal](https://developer.apple.com/account/overview.action), navigieren Sie zu **Bezeichner** , und wählen Sie **Typ-IDs übergeben** . Wählen Sie dann die  **+**  um einen neuen Pass-Typ zu erstellen: [ ![ ] (passkit-images/passid.png "Erstellen eines neuen Pass-Typs")](passkit-images/passid.png#lightbox)
+1. In der [Zertifikate, Bezeichner und Profile-Abschnitt des iOS-Bereitstellungsportal](https://developer.apple.com/account/overview.action), navigieren Sie zu **Bezeichner** , und wählen Sie **Typ-IDs übergeben** . Wählen Sie dann die **+** um einen neuen Pass-Typ zu erstellen: [ ![ ] (passkit-images/passid.png "Erstellen eines neuen Pass-Typs")](passkit-images/passid.png#lightbox)
 
 2.   Geben Sie einen **Beschreibung** (Name) und **Bezeichner** (eindeutige Zeichenfolge) für die erfolgreich. Beachten Sie, die alle übergeben Typ-IDs mit der Zeichenfolge beginnen muss `pass.` In diesem Beispiel wir verwenden `pass.com.xamarin.coupon.banana` : [ ![ ] (passkit-images/register.png "Geben Sie eine Beschreibung und einen Bezeichner")](passkit-images/register.png#lightbox)
 

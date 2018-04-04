@@ -1,20 +1,19 @@
 ---
-title: Plattformfunktionen
-description: "Dokumente in diesem Abschnitt werden die Funktionen, die spezifisch für iOS behandelt."
-ms.topic: article
+title: Plattformfeatures
+description: Dokumente in diesem Abschnitt werden die Funktionen, die spezifisch für iOS behandelt.
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/15/2017
-ms.openlocfilehash: 88ddd7c74fd800c71e63c03f6a8492ecfcc28f9f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0a76ed52f52de144bb3da1e7be6e215ce0dfe0ab
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
-# <a name="platform-features"></a>Plattformfunktionen
+# <a name="platform-features"></a>Plattformfeatures
 
 ##  <a name="introduction-to-ios-11iosplatformintroduction-to-ios11indexmd"></a>[Einführung in iOS 11](~/ios/platform/introduction-to-ios11/index.md)
 
@@ -35,7 +34,7 @@ Dieser Abschnitt definiert die Änderungen im iOS 9 beim Aktualisieren von iOS 8
 
 Apples iOS 8 versucht eine große Anzahl von Änderungen an das Betriebssystem von iOS 7. Hier erfahren, was sind und deren Verwendung.
 
-##  <a name="introduction-to-ios-7iosplatformintroduction-to-ios7indexmd"></a>[Einführung in die iOS 7](~/ios/platform/introduction-to-ios7/index.md)
+##  <a name="introduction-to-ios-7iosplatformintroduction-to-ios7indexmd"></a>[Einführung in iOS 7](~/ios/platform/introduction-to-ios7/index.md)
 
 Über die wichtigsten neuen APIs in iOS 7 eingeführt wurden einschließlich View-Controller bewirkt, dass, Verbesserungen an UIView Animationen UIKit Dynamics und Text-Kit.
 
@@ -59,7 +58,7 @@ Die neue CallKit-API in iOS 10 bietet eine Möglichkeit für VOIP-apps für iPho
 
 Mit der Einführung von iOS 9, Apple hat zwei neue Frameworks, veröffentlicht `Contacts` und `ContactsUI`, ersetzen die vorhandene Adressbuch und Adressbuch Benutzeroberflächen-Frameworks, die von iOS 8 und früher verwendeten.
 
-##  <a name="document-pickeriosplatformdocument-pickermd"></a>[Dokument-Auswahl](~/ios/platform/document-picker.md)
+##  <a name="document-pickeriosplatformdocument-pickermd"></a>[Dokumentauswahl](~/ios/platform/document-picker.md)
 
 Die Auswahl einer Dokument können Dokumente apps gemeinsam genutzt werden. Diese Dokumente können in iCloud oder in eine andere app-Verzeichnis gespeichert werden. Dokumente werden über den Satz von freigegebenen [Dokument Anbieter Erweiterungen](~/ios/platform/extensions.md) hat der Benutzer auf seinem Gerät installiert.
 
@@ -87,15 +86,15 @@ Integrität Kit bietet einen sicheren Datenspeicher für Integritätsdienst-bezo
 
 Apple eingeführt HomeKit in iOS 8, um ein allgemeines Framework zum Erkennen und kommunizieren mit home Automation Geräte im Stamm des Benutzers bereitzustellen. HomeKit bietet eine gemeinsame Plattform für die Konfiguration von Geräten und Aktionen einrichten, um diese zu steuern.
 
-##  <a name="in-app-purchasingiosplatformin-app-purchasingindexmd"></a>[Erwerb von in-App](~/ios/platform/in-app-purchasing/index.md)
+##  <a name="in-app-purchasingiosplatformin-app-purchasingindexmd"></a>[In-App-Käufe](~/ios/platform/in-app-purchasing/index.md)
 
 iOS-Anwendungen können verkaufen, digitale Produkte oder Dienste, die mit StoreKit – einen Satz von APIs, die von iOS, die Kommunikation mit der Apple-Servern bereitgestellt für die Durchführung von finanzielle Transaktionen mit dem Benutzer über ihre Apple-ID. Die StoreKit-APIs sind in erster Linie durch das Abrufen von Produktinformationen und Durchführen von Transaktionen betroffenen – es gibt keine Benutzeroberfläche-Komponente. Anwendungen, die in der app zu erwerben implementieren müssen ihre eigene Benutzeroberfläche erstellen, und verfolgen Sie gekauften mit benutzerdefiniertem Code für dem Benutzer der erforderlichen Produkte oder Dienste bereitstellen.
 
-##  <a name="ios-gaming-apisiosplatformgamingindexmd"></a>[iOS-APIs spielen](~/ios/platform/gaming/index.md)
+##  <a name="ios-gaming-apisiosplatformgamingindexmd"></a>[iOS-Gaming-APIs](~/ios/platform/gaming/index.md)
 
 Apple hat mehrere technologische Verbesserungen an der Gaming-APIs in iOS 9, die zur Implementierung von Spiel Grafiken und Audio in einem Xamarin.iOS-app zu vereinfachen. Dazu gehören sowohl einfache Entwicklung über allgemeine Frameworks und nutzen die Leistungsfähigkeit von dem iOS-Gerät GPU für verbesserte Geschwindigkeit und Grafik bietet.
 
-##  <a name="message-app-integrationiosplatformmessage-app-integrationindexmd"></a>[Integrieren von Apps](~/ios/platform/message-app-integration/index.md)
+##  <a name="message-app-integrationiosplatformmessage-app-integrationindexmd"></a>[Integration von Nachrichten-Apps](~/ios/platform/message-app-integration/index.md)
 
 Neu für iOS-10-App-Erweiterung einer Nachricht integriert die **Nachrichten** app und stellt neue Funktionen für den Benutzer. Die Erweiterung kann Text, Aufkleber, Mediendateien und interaktive Nachrichten senden.
 
@@ -113,7 +112,7 @@ Dieses Dokument führt Passbook, Xamarin.iOS, mit der Kit-API übergeben und erl
 
 Foto-Kit ist ein neues Framework, das ermöglicht es Anwendungen, die systembilderbibliothek Abfragen und die Erstellung benutzerdefinierter Benutzeroberflächen zum Anzeigen und ändern den Inhalt. Umfasst eine Reihe von Klassen, die Bild und video Bestand sowie Auflistungen von Ressourcen wie z. B. Alben und Ordner darstellen.
 
-##  <a name="request-app-reviewiosplatformrequest-app-reviewmd"></a>[Prüfung der änderungsanforderungen-App](~/ios/platform/request-app-review.md)
+##  <a name="request-app-reviewiosplatformrequest-app-reviewmd"></a>[Anfordern der App-Prüfung](~/ios/platform/request-app-review.md)
 
 Neu bei iOS 10.3, die `RequestReview()` -Methode ermöglicht es eine iOS-app an den Benutzer bitten, bewerten, oder Überprüfen sie. Beim Aufrufen dieser Methode in einer Protokollversand-app ist, die der Benutzer aus dem App Store installiert wurde, werden iOS 10 behandeln die gesamte Bewertung und einen Prüfvorgang für den Entwickler. Da dieser Vorgang von der Richtlinie für die App Store gesteuert wird, wird eine Warnung kann oder möglicherweise nicht angezeigt.
 
@@ -137,7 +136,7 @@ iOS 10 umfasst eine neue Speech-API, die die app fortlaufende Spracherkennung un
 
 Text-Kit ist eine neue API, die leistungsstarke Text Layout und Rendering Funktionen bietet. Basiert auf niedriger Ebene Framework Core-Text, aber ist sehr viel einfacher zu verwenden als Core Text.
 
-##  <a name="touch-idiosplatformtouchidmd"></a>[Touch ID](~/ios/platform/touchid.md)
+##  <a name="touch-idiosplatformtouchidmd"></a>[Touch-ID](~/ios/platform/touchid.md)
 
 Touch ID wurde als Mittel zum Authentifizieren des Benutzers - ähnlich wie eine Kennung in iOS 7 eingeführt. Es wurde jedoch zum Entsperren des Geräts, den App Store, mithilfe der iTunes und Authentifizieren der iCloud-Schlüsselbund beschränkt.
 
@@ -151,7 +150,7 @@ iOS 10 und MacOS Sierra verbessert die Unterstützung für erweiterte Schlüssel
 
 
 
-##  <a name="binding-objective-cbinding-objective-cindexmd"></a>[Objective-C-Bindung](binding-objective-c/index.md)
+##  <a name="binding-objective-cbinding-objective-cindexmd"></a>[Binden von Objective-C](binding-objective-c/index.md)
 
 Wenn Sie auf iOS zu arbeiten, können Fällen auftreten, in dem Sie eine Drittanbieter-Objective-C-Bibliothek nutzen möchten. In solchen Situationen können Sie zum Erstellen einer C#-Bindung an den systemeigenen Objective-C-Bibliotheken MonoTouchs Bindung Projekte verwenden. Das Projekt verwendet den gleichen Tools, mit denen wir die iOS-APIs in c# zu versetzen. &nbsp;Diesem Dokument wird beschrieben, wie Objective-C-APIs gebunden.
 
@@ -159,10 +158,10 @@ Wenn Sie auf iOS zu arbeiten, können Fällen auftreten, in dem Sie eine Drittan
 
 Xamarin.iOS unterstützt systemeigene C-Bibliotheken und Objective-C-Bibliotheken verknüpfen. Dieses Dokument erläutert, wie Sie Ihre systemeigenen C-Bibliotheken in Ihrem Projekt Xamarin.iOS verknüpfen. 
 
-## <a name="embedded-frameworksembedded-frameworksmd"></a>[Eingebettete frameworks](embedded-frameworks.md)
+## <a name="embedded-frameworksembedded-frameworksmd"></a>[Eingebettete Frameworks](embedded-frameworks.md)
 
 Erläutert, wie Objective-C-Benutzer-Frameworks in Xamarin.iOS apps eingebettet werden sollen.
 
-## <a name="exception-marshalingexception-marshalingmd"></a>[Ausnahme Marshalling](exception-marshaling.md)
+## <a name="exception-marshalingexception-marshalingmd"></a>[Ausnahme beim Marshaling](exception-marshaling.md)
 
 Beschreibt, wie Objective-C und verwaltete Ausnahmen zwischen systemeigenen und verwalteten Frames gemarshallt werden.

@@ -1,18 +1,17 @@
 ---
 title: .NET 2.0 Standardsupport in Xamarin.Forms
-description: "In diesem Artikel wird erläutert, wie eine Xamarin.Forms-Anwendung für die Verwendung von Standard 2.0 von .NET konvertiert wird."
-ms.topic: article
+description: In diesem Artikel wird erläutert, wie eine Xamarin.Forms-Anwendung für die Verwendung von Standard 2.0 von .NET konvertiert wird.
 ms.prod: xamarin
 ms.assetid: 95805355-63a7-44e7-a3c6-6487a6276ab2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 7923ccdf85ffcbbc239df9e9df751f561615baa1
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 8685f1e10b5094e6f58e8efea51e6dd216dfa000
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="net-standard-20-support-in-xamarinforms"></a>.NET 2.0 Standardsupport in Xamarin.Forms
 

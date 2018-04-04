@@ -1,18 +1,17 @@
 ---
-title: "Erstellen von iOS-Benutzeroberflächen in Code"
-description: "Xamarin.iOS bietet zwei Methoden zum Erstellen einer Benutzeroberfläche für Ihre app – mit dem Xamarin-Designer für iOS oder im Code. In diesem Artikel untersucht, wie Sie iOS Benutzeroberflächen vollständig im Code erstellen. Es wird gezeigt, wie von einer Vorlage um eine Anwendungsbildschirm in einem Controller zu erstellen, durch das Erstellen einer Hierarchie von Ansichten von UIKit gestartet. Klicken Sie dann, es wird erläutert, wie benutzerdefinierte Ansichten erstellen, die geladen werden können, in einem Controller."
-ms.topic: article
+title: Erstellen von iOS-Benutzeroberflächen in Code
+description: Xamarin.iOS bietet zwei Methoden zum Erstellen einer Benutzeroberfläche für Ihre app – mit dem Xamarin-Designer für iOS oder im Code. In diesem Artikel untersucht, wie Sie iOS Benutzeroberflächen vollständig im Code erstellen. Es wird gezeigt, wie von einer Vorlage um eine Anwendungsbildschirm in einem Controller zu erstellen, durch das Erstellen einer Hierarchie von Ansichten von UIKit gestartet. Klicken Sie dann, es wird erläutert, wie benutzerdefinierte Ansichten erstellen, die geladen werden können, in einem Controller.
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 24fc64d1bd04cb1ebefb9bf9a359efb395b45074
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 7e8460d2c946159a9869322d6d4944d213d3d801
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Erstellen von iOS-Benutzeroberflächen in Code
 

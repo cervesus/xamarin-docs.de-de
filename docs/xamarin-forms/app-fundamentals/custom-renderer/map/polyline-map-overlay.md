@@ -1,18 +1,17 @@
 ---
 title: Markieren eine Route auf einer Karte
-description: "In diesem Artikel wird erläutert, wie auf einer Karte eine Polylinie Überlagerung hinzugefügt wird. Eine Polylinie Overlay besteht aus einer Reihe von verbundenen Liniensegmenten, die normalerweise verwendet werden, bilden eine Form, die erforderlich ist, oder eine Route auf einer Karte anzeigen."
-ms.topic: article
+description: In diesem Artikel wird erläutert, wie auf einer Karte eine Polylinie Überlagerung hinzugefügt wird. Eine Polylinie Overlay besteht aus einer Reihe von verbundenen Liniensegmenten, die normalerweise verwendet werden, bilden eine Form, die erforderlich ist, oder eine Route auf einer Karte anzeigen.
 ms.prod: xamarin
 ms.assetid: FBFDC715-1654-4188-82A0-FC522548BCFF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: c7becef16009596148b4de28e4e8f6892cb44fe1
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f781a472a63d97c8859aff36b28e0fd4fa0c7756
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="highlighting-a-route-on-a-map"></a>Markieren eine Route auf einer Karte
 
@@ -31,7 +30,7 @@ Wenn eine [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Ma
 1. [Anpassen](#Customizing_the_Map) die Zuordnung durch das Erstellen eines benutzerdefinierten Renderers für die Zuordnung auf jeder Plattform.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) Initialisiert und vor der Verwendung konfiguriert werden müssen. Weitere Informationen finden Sie unter [ `Maps Control` ](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) Initialisiert und vor der Verwendung konfiguriert werden müssen. Weitere Informationen finden Sie unter [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
 Informationen zum Anpassen einer Karte, die mithilfe eines benutzerdefinierten Renderers finden Sie unter [Anpassen einer Karte Pin](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 
@@ -303,5 +302,5 @@ In diesem Artikel wird erläutert, wie eine Karte, um eine Route auf einer Karte
 ## <a name="related-links"></a>Verwandte Links
 
 - [Polylinie Zuordnung Ovlerlay (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
-- [Anpassen einer Karte-Pin](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
+- [Anpassen einer Kartennadel](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/)

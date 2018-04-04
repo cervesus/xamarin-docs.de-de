@@ -1,18 +1,17 @@
 ---
 title: Schnelle Renderer
-description: "Dieser Artikel führt schnelle Renderern, die der wiederverwendungen und Rendering Kosten eines Steuerelements Xamarin.Forms auf Android-Geräten zu reduzieren, indem Sie die resultierende systemeigene Steuerelement-Hierarchie vereinfachen."
-ms.topic: article
+description: Dieser Artikel führt schnelle Renderern, die der wiederverwendungen und Rendering Kosten eines Steuerelements Xamarin.Forms auf Android-Geräten zu reduzieren, indem Sie die resultierende systemeigene Steuerelement-Hierarchie vereinfachen.
 ms.prod: xamarin
 ms.assetid: 097f87f2-d891-4f3c-be02-fb7d195a481a
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 956fa919ef9aa994fea92a9a64ca1325819f3ffc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 16807d890f12810ccc1d50cb8e506e104ec8e6a3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="fast-renderers"></a>Schnelle Renderer
 

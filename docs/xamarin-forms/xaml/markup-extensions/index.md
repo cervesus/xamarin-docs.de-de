@@ -1,18 +1,17 @@
 ---
 title: Verwendung von XAML-Markuperweiterungen
-description: "Erweitern Sie den Bereich von Quellen, die über das XAML-Attributen festgelegt ist"
-ms.topic: article
+description: Erweitern Sie den Bereich von Quellen, die über das XAML-Attributen festgelegt ist
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 11889115b65608c750690c33052a9c86f7081e25
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b81bc4b31edd1d8b8f5f43f97885c38e889dd32c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xaml-markup-extensions"></a>Verwendung von XAML-Markuperweiterungen
 
@@ -46,7 +45,7 @@ Ist keiner attributeinstellung in der geschweiften Klammern *immer* eine XAML-Ma
 
 Dieser Artikel ist in zwei Teile unterteilt:
 
-## <a name="consuming-xaml-markup-extensionsconsumingmd"></a>[Nutzen die Verwendung von XAML-Markuperweiterungen](consuming.md)  
+## <a name="consuming-xaml-markup-extensionsconsumingmd"></a>[Verwenden von XAML-Markuperweiterungen](consuming.md)  
 
 Verwenden Sie die Verwendung von XAML-Markuperweiterungen in Xamarin.Forms definiert.
 
@@ -60,6 +59,6 @@ Schreiben Sie Ihre eigenen benutzerdefinierten XAML-Markuperweiterungen.
 
 - [Markuperweiterungen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
 - [Verwendung von XAML-Markup Extensions Kapitel Xamarin.Forms Buchs](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
-- [Ressourcenverzeichnis](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Dynamische Formate](~/xamarin-forms/user-interface/styles/dynamic.md)
+- [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Dynamische Stile](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)

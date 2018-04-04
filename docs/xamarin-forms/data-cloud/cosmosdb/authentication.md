@@ -1,18 +1,17 @@
 ---
 title: Authentifizieren von Benutzern mit einer Azure-Cosmos-DB-Dokument-Datenbank
 description: Azure DB Cosmos-Dokument-Datenbanken unterstützen partitionierte Sammlungen enthalten, die mehrere Server und Partitionen, und unterstützt eine unbegrenzte Speicherdauer und Durchsatz erstrecken können. In diesem Artikel wird erläutert, wie Zugriffssteuerung mit partitionierte Sammlungen kombiniert, damit ein Benutzer nur ihre eigenen Dokumente in einer Xamarin.Forms-Anwendung zugreifen kann.
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 8de64d6489b4022e43bcf694f3b13d6f7eaaecbd
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: 0132f849a066976896295da8b8b67ed8bf3c3e8d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>Authentifizieren von Benutzern mit einer Azure-Cosmos-DB-Dokument-Datenbank
 

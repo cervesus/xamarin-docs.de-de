@@ -1,17 +1,16 @@
 ---
 title: Benutzerprofil
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 6BB01F75-5E98-49A1-BBA0-C2680905C59D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/22/2018
-ms.openlocfilehash: 1407266f987b36b72e32a82c8f6f43b4a734af5d
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: 1eaae86ab9eacf007eca792d96e889db6f367922
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="user-profile"></a>Benutzerprofil
 
@@ -50,7 +49,7 @@ Android 4 (API-Ebene 14), ab der [ContactsContact.Profile](https://developer.xam
 
 ## <a name="required-permissions"></a>Erforderliche Berechtigungen
 
-Zum Lesen und Schreiben von Daten, Anwendungen anfordern müssen die `READ_CONTACTS` und `WRITE_CONTACTS` Berechtigungen bzw..
+Zum Lesen und Schreiben von Daten, Anwendungen anfordern müssen die `READ_CONTACTS` und `WRITE_CONTACTS` Berechtigungen bzw.
 Darüber hinaus zum Lesen und bearbeiten das Benutzerprofil, Anwendungen müssen anfordern der `READ_PROFILE` und `WRITE_PROFILE` Berechtigungen.
 
 

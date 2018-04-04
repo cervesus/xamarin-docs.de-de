@@ -1,18 +1,17 @@
 ---
 title: Modale Seiten
-description: "Xamarin.Forms bietet Unterstützung für modale Seiten. Eine modale Seite ermutigt Benutzer, eine eigenständige Aufgabe auszuführen. Dabei kann erst dann die Ansicht gewechselt werden, wenn die Aufgabe abgeschlossen oder abgebrochen wurde. Dieser Artikel veranschaulicht, wie zu modalen Seiten zu navigieren."
-ms.topic: article
+description: Xamarin.Forms bietet Unterstützung für modale Seiten. Eine modale Seite ermutigt Benutzer, eine eigenständige Aufgabe auszuführen. Dabei kann erst dann die Ansicht gewechselt werden, wenn die Aufgabe abgeschlossen oder abgebrochen wurde. Dieser Artikel veranschaulicht, wie zu modalen Seiten zu navigieren.
 ms.prod: xamarin
 ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: b1e67fe355b9a84cc6832441f06c72dcd4c512ad
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 909a04398043a3c2f0c30e4da82d174a6bfaf148
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="modal-pages"></a>Modale Seiten
 
@@ -42,7 +41,7 @@ Modale Navigationsmethoden werden von der Eigenschaft [`Navigation`](https://dev
 Die [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) Eigenschaft auch macht eine [ `ModalStack` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INavigation.ModalStack/) Eigenschaft aus der die modalen Seiten im modalen Stapel abgerufen werden können. Es gibt jedoch kein Konzept für die modale Stapelbearbeitung oder das Entfernen per Pop, um bei der modalen Navigation zur Stammseite zurückzukehren. Grund dafür ist, dass diese Vorgänge auf den zugrunde liegenden Plattformen nicht allgemein unterstützt werden.
 
 > [!NOTE]
-> Ein [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) Instanz ist nicht für die Durchführung von modalen Seitennavigation erforderlich.
+> Für die Durchführung einer modalen Seitennavigation ist keine [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)-Instanz erforderlich.
 
 <a name="Pushing_Pages_to_the_Modal_Stack" />
 

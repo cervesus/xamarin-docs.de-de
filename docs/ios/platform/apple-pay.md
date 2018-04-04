@@ -1,17 +1,16 @@
 ---
 title: Apple Pay
-description: "Dieses Handbuch untersucht das Einrichten der Umgebung Xamarin.iOS für die Verwendung mit Apple Pay zum Bezahlen der physischer waren, z. B. Nahrungsmittel Kunst, Unterhaltung und Mitgliedschaften über Ihre app. Es enthält Informationen zu den erforderlichen Bezeichner, Zertifikate und Berechtigungen."
-ms.topic: article
+description: Dieses Handbuch untersucht das Einrichten der Umgebung Xamarin.iOS für die Verwendung mit Apple Pay zum Bezahlen der physischer waren, z. B. Nahrungsmittel Kunst, Unterhaltung und Mitgliedschaften über Ihre app. Es enthält Informationen zu den erforderlichen Bezeichner, Zertifikate und Berechtigungen.
 ms.prod: xamarin
 ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: af899bb1c5708e3fc0be88db6224d9127f5a5c6d
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: fc7c247e5edcdc25d53c34c922801a5497b8c367
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="apple-pay"></a>Apple Pay
 

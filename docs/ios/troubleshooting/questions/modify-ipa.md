@@ -1,16 +1,16 @@
 ---
-title: "Kann ich Dateien hinzufügen oder Entfernen von Dateien aus einer IPA-Datei nach der Erstellung in Visual Studio?"
-ms.topic: article
+title: Kann ich Dateien hinzufügen oder Entfernen von Dateien aus einer IPA-Datei nach der Erstellung in Visual Studio?
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 6C3082FB-C3F1-4661-BE45-64570E56DE7C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: be792c95de7aa66d64278e47b2ca6b354e611273
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b8b61ba38491b2085233dd1b30a82bc57d2baaed
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>Kann ich Dateien hinzufügen oder Entfernen von Dateien aus einer IPA-Datei nach der Erstellung in Visual Studio?
 
@@ -86,4 +86,4 @@ file missing: /Users/macuser/Library/Caches/Xamarin/mtbs/builds/iPhoneApp1/cc530
 
 Und die App Store-Überprüfung meldet eine ähnliche Fehlermeldung angezeigt:
 
-> Fehler ITMS-90035: "Ungültige Signatur. Eine versiegelte Ressource ist nicht vorhanden oder ungültig. Der binäre Pfad [iPhoneApp1.app/iPhoneApp1] enthält eine ungültige Signatur. Stellen Sie sicher, dass Sie Ihre Anwendung mit einer Verteilung, kein ad-hoc-Zertifikat oder ein Zertifikat Entwicklung angemeldet haben. Stellen Sie sicher, dass die Einstellungen der Code Signaturzertifikat in Xcode korrekt, auf der Zielebene sind (der alle Werte auf Projektebene außer Kraft). Vergewissern Sie sich außerdem, dass das Paket, das Sie hochladen mit einer Release-Ziel in Xcode nicht Simulator-Ziel erstellt wurde. Wenn Sie sicher, dass Ihr Code Signaturzertifikat-Einstellungen richtig sind sind, wählen Sie in Xcode "bereinigen All", löschen Sie das Verzeichnis "Build" im Finder und rebuild-Ziel-Version. Weitere Informationen finden Sie in [https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"
+> Fehler ITMS-90035: "Ungültige Signatur. Eine versiegelte Ressource ist nicht vorhanden oder ungültig. Der binäre Pfad [iPhoneApp1.app/iPhoneApp1] enthält eine ungültige Signatur. Stellen Sie sicher, dass Sie Ihre Anwendung mit einer Verteilung, kein ad-hoc-Zertifikat oder ein Zertifikat Entwicklung angemeldet haben. Stellen Sie sicher, dass die Einstellungen der Code Signaturzertifikat in Xcode korrekt, auf der Zielebene sind (der alle Werte auf Projektebene außer Kraft). Vergewissern Sie sich außerdem, dass das Paket, das Sie hochladen mit einer Release-Ziel in Xcode nicht Simulator-Ziel erstellt wurde. Wenn Sie sicher, dass Ihr Code Signaturzertifikat-Einstellungen richtig sind sind, wählen Sie in Xcode "bereinigen All", löschen Sie das Verzeichnis "Build" im Finder und rebuild-Ziel-Version. Weitere Informationen finden Sie in [ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"

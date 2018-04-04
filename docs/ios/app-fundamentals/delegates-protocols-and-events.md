@@ -1,18 +1,17 @@
 ---
 title: Ereignisse, Protokolle und Delegaten
-description: "Dieser Artikel erläutert die wichtigsten iOS-Technologien verwendet, um Rückrufe zu empfangen und Benutzeroberflächen-Steuerelemente mit Daten aufzufüllen. Diese Technologien sind Ereignisse, Protokolle und Delegaten. In diesem Artikel erklärt den Zweck jedes davon ist, und jede Verwendung von c#. Es wird veranschaulicht, wie Xamarin.iOS iOS-Steuerelemente verwendet, um bekannte .NET Ereignisse sowie wie Xamarin.iOS Objective-C-Konzepten wie Protokolle und Delegaten unterstützt (Objective-C-Delegaten darf nicht mit verwechselt werden C#-Delegaten). Dieser Artikel enthält auch Beispiele, die zeigen, wie Protokolle verwendet – sowohl als Grundlage für Objective-C-Delegaten, und in nicht-Delegat Szenarien sind."
-ms.topic: article
+description: Dieser Artikel erläutert die wichtigsten iOS-Technologien verwendet, um Rückrufe zu empfangen und Benutzeroberflächen-Steuerelemente mit Daten aufzufüllen. Diese Technologien sind Ereignisse, Protokolle und Delegaten. In diesem Artikel erklärt den Zweck jedes davon ist, und jede Verwendung von c#. Es wird veranschaulicht, wie Xamarin.iOS iOS-Steuerelemente verwendet, um bekannte .NET Ereignisse sowie wie Xamarin.iOS Objective-C-Konzepten wie Protokolle und Delegaten unterstützt (Objective-C-Delegaten darf nicht mit verwechselt werden C#-Delegaten). Dieser Artikel enthält auch Beispiele, die zeigen, wie Protokolle verwendet – sowohl als Grundlage für Objective-C-Delegaten, und in nicht-Delegat Szenarien sind.
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 69296992c503d536a4160f172022c7ce5578812f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4c2888eb2d0b1ae79e10ca764e7bf14a1afb6c59
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="events-protocols-and-delegates"></a>Ereignisse, Protokolle und Delegaten
 

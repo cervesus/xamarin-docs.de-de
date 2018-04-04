@@ -1,18 +1,17 @@
 ---
 title: Bindung aus einer ControlTemplate
-description: "Vorlagenbindungen können Binden von Inhaltssteuerelementen in einer Steuerelementvorlage auf Daten an der öffentlichen Eigenschaften aktivieren Eigenschaftswerte für Steuerelemente in der Steuerelementvorlage problemlos geändert werden. Dieser Artikel veranschaulicht, wie mit vorlagenbindungen Binden von Daten aus einer Steuerelementvorlage ausgeführt wird."
-ms.topic: article
+description: Vorlagenbindungen können Binden von Inhaltssteuerelementen in einer Steuerelementvorlage auf Daten an der öffentlichen Eigenschaften aktivieren Eigenschaftswerte für Steuerelemente in der Steuerelementvorlage problemlos geändert werden. Dieser Artikel veranschaulicht, wie mit vorlagenbindungen Binden von Daten aus einer Steuerelementvorlage ausgeführt wird.
 ms.prod: xamarin
 ms.assetid: 794A663C-3A8D-438A-BD02-8E97C919B55F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 5b330c448a135cbcf8fc2745debc48924e29c103
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3b306c79aea9bd2192aa73eddcf95790a9b24353
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-from-a-controltemplate"></a>Bindung aus einer ControlTemplate
 
@@ -68,7 +67,7 @@ Daraus ergibt sich die Darstellung in den folgenden Screenshots dargestellt:
 
 ![](template-binding-images/teal-theme.png "Blaugrünen Steuerelementvorlage Vorlagenbindungen verwenden")
 
-## <a name="creating-a-templatebinding-in-c35"></a>Erstellen eine TemplateBinding in C &#35;
+## <a name="creating-a-templatebinding-in-c35"></a>Erstellen eine TemplateBinding in C&#35;
 
 In c# ist ein [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) wird erstellt, indem Sie mit der `TemplateBinding` -Konstruktor, wie im folgenden Codebeispiel wird veranschaulicht:
 

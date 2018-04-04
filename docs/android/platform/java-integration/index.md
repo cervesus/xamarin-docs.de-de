@@ -1,18 +1,17 @@
 ---
-title: "Übersicht über die Java-Integration"
-description: "Die Java-Ökosystem umfasst verschiedene und enorme Auflistung von Komponenten. Viele dieser Komponenten können zum Erstellen eine Android-Anwendung entwickeln benötigte Zeit reduzieren, verwendet werden. Dieses Dokument wird eingeführt und bieten eine allgemeine Übersicht über einige der Methoden, die Entwicklern diese vorhandenen Java-Komponenten verwenden können, um ihre Xamarin.Android Anwendungsentwicklung zu verbessern."
-ms.topic: article
+title: Übersicht über die Java-Integration
+description: Die Java-Ökosystem umfasst verschiedene und enorme Auflistung von Komponenten. Viele dieser Komponenten können zum Erstellen eine Android-Anwendung entwickeln benötigte Zeit reduzieren, verwendet werden. Dieses Dokument wird eingeführt und bieten eine allgemeine Übersicht über einige der Methoden, die Entwicklern diese vorhandenen Java-Komponenten verwenden können, um ihre Xamarin.Android Anwendungsentwicklung zu verbessern.
 ms.prod: xamarin
 ms.assetid: 7B5B8695-1C49-19BF-AE99-948CDCBD2A20
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/18/2017
-ms.openlocfilehash: 213702d289adefe966f07c3ad0174156cbc69ee1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: dbaf17479ae077fced425df5ac31bdbbc4e06b64
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="java-integration-overview"></a>Übersicht über die Java-Integration
 

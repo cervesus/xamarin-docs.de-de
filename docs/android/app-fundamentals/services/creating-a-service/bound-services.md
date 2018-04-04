@@ -1,18 +1,17 @@
 ---
 title: Bound Services in Xamarin.Android
-description: "Gebundene Dienste sind Android Dienste, die eine Client / Server-Schnittstelle bereitstellen, der mit ein Client (z. B. eine Android-Aktivität) interagieren kann. Dieses Handbuch werden die wichtigsten Komponenten der mit dem Erstellen eines gebundenen Diensts und wie für die Verwendung in einer Anwendung Xamarin.Android erläutert."
-ms.topic: article
+description: Gebundene Dienste sind Android Dienste, die eine Client / Server-Schnittstelle bereitstellen, der mit ein Client (z. B. eine Android-Aktivität) interagieren kann. Dieses Handbuch werden die wichtigsten Komponenten der mit dem Erstellen eines gebundenen Diensts und wie für die Verwendung in einer Anwendung Xamarin.Android erläutert.
 ms.prod: xamarin
 ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: 04307eab1bc8dc28fa69315809e254c920fb6d56
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 18cfe6acae08efac85223c9c121a12f102f846cc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Bound Services in Xamarin.Android
 
@@ -34,7 +33,7 @@ Dieses Diagramm veranschaulicht, wie die Aktivität, Dienst-Verbindung, Binder u
 
 ![Ein Diagramm wie die Dienstkomponenten miteinander in Beziehung stehen](bound-services-images/bound-services-02.png "ein Diagramm wie die Dienstkomponenten miteinander in Beziehung stehen.")
 
-Diese Anleitung wird beschrieben, wie Erweitern der `Service` Klasse zum Implementieren eines gebundenen Diensts. Es befasst sich auch implementieren `IServiceConnection` und Erweitern von `Binder` damit einen Client mit dem Dienst kommunizieren kann. Eine Beispiel-app begleitet dieses Handbuch, die eine Lösung mit einer einzelnen Xamarin.Android Projekt mit der Bezeichnung enthält  **[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)**  . Dies ist eine sehr einfache Anwendung die veranschaulicht, wie einen Dienst implementiert und wie Sie eine Aktivität zu binden. Der gebundene-Dienst hat eine sehr einfache API mit nur eine Methode, `GetFormattedTimestamp`, womit eine Zeichenfolge, die dem Benutzer mitteilt, wenn der Dienst gestartet wurde und wie lange er ausgeführt wurde. Die app kann auch der Benutzer manuell Aufheben der Bindung und mit dem Dienst verbunden.
+Diese Anleitung wird beschrieben, wie Erweitern der `Service` Klasse zum Implementieren eines gebundenen Diensts. Es befasst sich auch implementieren `IServiceConnection` und Erweitern von `Binder` damit einen Client mit dem Dienst kommunizieren kann. Eine Beispiel-app begleitet dieses Handbuch, die eine Lösung mit einer einzelnen Xamarin.Android Projekt mit der Bezeichnung enthält **[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)** . Dies ist eine sehr einfache Anwendung die veranschaulicht, wie einen Dienst implementiert und wie Sie eine Aktivität zu binden. Der gebundene-Dienst hat eine sehr einfache API mit nur eine Methode, `GetFormattedTimestamp`, womit eine Zeichenfolge, die dem Benutzer mitteilt, wenn der Dienst gestartet wurde und wie lange er ausgeführt wurde. Die app kann auch der Benutzer manuell Aufheben der Bindung und mit dem Dienst verbunden.
 
 [![Screenshot der Anwendung auf einem Android-Telefon](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png#lightbox)
 

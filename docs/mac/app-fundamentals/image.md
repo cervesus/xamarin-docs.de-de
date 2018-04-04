@@ -1,18 +1,17 @@
 ---
 title: Bilder
-description: "In diesem Artikel wird das Arbeiten mit Bildern und Symbolen in einer Anwendung Xamarin.Mac behandelt. Erstellen und Verwalten der Images erforderlich, um das Symbol für Ihre Anwendung erstellen und Verwenden von Bildern in C#-Code und Xcodes Benutzeroberflächen-Generator beschrieben."
-ms.topic: article
+description: In diesem Artikel wird das Arbeiten mit Bildern und Symbolen in einer Anwendung Xamarin.Mac behandelt. Erstellen und Verwalten der Images erforderlich, um das Symbol für Ihre Anwendung erstellen und Verwenden von Bildern in C#-Code und Xcodes Benutzeroberflächen-Generator beschrieben.
 ms.prod: xamarin
 ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: d8098afea87765166db8318b76adf250818a0a6f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dc33dc78c09c0b5b7cb7533afdd2f95b8ebd9c4e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="images"></a>Bilder
 
@@ -46,7 +45,7 @@ Wenn Sie ein Bild für die Verwendung in einer Anwendung Xamarin.Mac hinzufügen
 - **[Veraltet] Hauptprojekt-Struktur** -Images können direkt in die Struktur der Projekte hinzugefügt werden. Beim Aufrufen von Bildern in das Hauptprojekt-Struktur aus Code gespeichert, wird kein Speicherort angegeben. Beispiel: `NSImage image = NSImage.ImageNamed("tags.png");`. 
 - **[Veraltet] Ressourcenordner** -die speziellen **Ressourcen** Ordner wird für jede Datei, die Bestandteil der Anwendung werden der z. B. Symbol, Bildschirm gestartet oder Allgemein bündeln, Bilder (oder eine beliebige andere Bild- oder -Datei der Entwickler möchte hinzufügen). Beim Aufrufen von Abbildern der **Ressourcen** Ordner aus Code, so wie Bilder gespeichert, in der Struktur Hauptprojekt, keine Ordnerspeicherort angegeben ist. Beispiel: `NSImage.ImageNamed("tags.png")`.
 - **Benutzerdefinierte Ordner oder Unterordner [veraltet]** – der Entwickler der Quellstruktur Projekte hinzufügen ein benutzerdefiniertes Ordners und speichern Sie die Bilder vorhanden. Der Speicherort, wo die Datei hinzugefügt wird, kann in einen Unterordner, um weitere Hilfe organisieren das Projekt geschachtelt werden. Z. B., wenn der Entwickler hinzugefügt eine `Card` Ordner für das Projekt und ein Unterordner des `Hearts` zu diesem Ordner speichern ein Bild **Jack.png** in der `Hearts` Ordner `NSImage.ImageNamed("Card/Hearts/Jack.png")` lädt das Abbild Common Language Runtime.
-- **Asset-Katalog Image Mengen [empfohlen]** - hinzugefügten OS X El Capitan **Asset Kataloge Image legt** enthalten alle Versionen oder Darstellungen eines Bilds, die zur Unterstützung von verschiedenen Geräten und Skalierungsfaktoren für erforderlich sind Ihre die Anwendung. Anstatt auf den Dateinamen des Bilds Bestand (**@1x**,  **@2x** ).
+- **Asset-Katalog Image Mengen [empfohlen]** - hinzugefügten OS X El Capitan **Asset Kataloge Image legt** enthalten alle Versionen oder Darstellungen eines Bilds, die zur Unterstützung von verschiedenen Geräten und Skalierungsfaktoren für erforderlich sind Ihre die Anwendung. Anstatt auf den Dateinamen des Bilds Bestand (**@1x**, **@2x**).
 
 <a name="asset-catalogs" />
 
@@ -68,7 +67,7 @@ Wie bereits erwähnt, ein **Asset Kataloge Image legt** enthalten alle Versionen
 
     [![Bearbeiten das Bild Satzname](image-images/imageset04.png "bearbeiten das Bild Satzname")](image-images/imageset04-large.png#lightbox)
     
-Eine spezielle **Vektor** Klasse hinzugefügt wurden **Image legt** , die uns ermöglicht, enthalten eine _PDF_ Vektorbild in die Casset stattdessen auch einzelne Bitmapdateien am formatiert die verschiedenen Lösungen. Mit dieser Methode an, Sie geben Sie eine einzelnen Vektor-Datei für die  **@1x**  Auflösung (formatiert als Vektor PDF-Datei) und die  **@2x**  und  **@3x**  Versionen der Datei zum Zeitpunkt der Kompilierung generiert und in der Anwendung-Paket enthalten.
+Eine spezielle **Vektor** Klasse hinzugefügt wurden **Image legt** , die uns ermöglicht, enthalten eine _PDF_ Vektorbild in die Casset stattdessen auch einzelne Bitmapdateien am formatiert die verschiedenen Lösungen. Mit dieser Methode an, Sie geben Sie eine einzelnen Vektor-Datei für die **@1x** Auflösung (formatiert als Vektor PDF-Datei) und die **@2x** und **@3x** Versionen der Datei zum Zeitpunkt der Kompilierung generiert und in der Anwendung-Paket enthalten.
 
 [![Festlegen, welches Bild-Editor-Benutzeroberfläche](image-images/imageset05.png "festlegen, welches Bild-Editor-Benutzeroberfläche")](image-images/imageset05-large.png#lightbox)
 
@@ -142,7 +141,7 @@ Ein Grafik Bestand, den Sie einer Anwendung Xamarin.Mac (Symbole, benutzerdefini
 Wenn Sie die standard und hochauflösenden Version eines Bilds erstellen, verwenden Sie die Benennungskonvention für das Image-Paar, wenn sie in Ihrem Projekt Xamarin.Mac einschließlich:
 
 - **Standard-Auflösung**  - **ImageName.filename-Erweiterung** (Beispiel: **tags.png**)
-- **Hochauflösende**   -   **ImageName@2x.filename-extension**  (Beispiel:  **tags@2x.png** )
+- **Hochauflösende**   -  **ImageName@2x.filename-extension** (Beispiel: **tags@2x.png**)
 
 Wenn Sie einem Projekt hinzugefügt, würden sie wie folgt aussehen:
 
@@ -150,7 +149,7 @@ Wenn Sie einem Projekt hinzugefügt, würden sie wie folgt aussehen:
 
 Bei einem Benutzeroberflächenelement im Benutzeroberflächen-Generator wird ein Bild zugeordnet ist, müssen Sie einfach die Datei im Auswählen der _ImageName_**.** _-Erweiterung_ Format (Beispiel: **tags.png**). Gleich für ein Bild im C#-Code verwenden, müssen Sie die Datei im Auswählen der _ImageName_**.** _-Erweiterung_ Format.
 
-Wenn Sie Xamarin.Mac-Anwendung auf einem Mac ausgeführt werden die _ImageName_**.** _-Erweiterung_ Format-Bild wird auf Standard Lösung zeigt, verwendet die  **ImageName@2x.filename-extension**  Image wird automatisch auf übernommen Retina Display Basen Macs.
+Wenn Sie Xamarin.Mac-Anwendung auf einem Mac ausgeführt werden die _ImageName_**.** _-Erweiterung_ Format-Bild wird auf Standard Lösung zeigt, verwendet die **ImageName@2x.filename-extension** Image wird automatisch auf übernommen Retina Display Basen Macs.
 
 
 ## <a name="using-images-in-interface-builder"></a>Verwenden von Bildern in Benutzeroberflächen-Generator
@@ -176,7 +175,7 @@ Um ein Bild im Benutzeroberflächen-Generator zu verwenden, führen Sie folgende
      ![Das Bild angezeigt wird, in dem Symbolleisten-Editor](image-images/ib04.png "das Bild angezeigt wird, in dem Symbolleisten-Editor")
 6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode zu synchronisieren.
 
-Die oben genannten Schritte für jedes Benutzeroberflächenelement, das ihre Bildeigenschaft festgelegt werden, ermöglicht funktionieren die **Attribut Inspektor**. Erneut, wenn Sie aufgenommen haben eine  **@2x**  Version der Imagedatei, es wird automatisch auf verwendet Retina Display basierend Macs.
+Die oben genannten Schritte für jedes Benutzeroberflächenelement, das ihre Bildeigenschaft festgelegt werden, ermöglicht funktionieren die **Attribut Inspektor**. Erneut, wenn Sie aufgenommen haben eine **@2x** Version der Imagedatei, es wird automatisch auf verwendet Retina Display basierend Macs.
 
 > [!IMPORTANT]
 > Wenn das Bild nicht verfügbar in ist die **ImageName** Dropdownliste das .storyboard-Projekt in Xcode zu schließen und erneut öffnen von Visual Studio für Mac. Wenn das Bild immer noch nicht verfügbar ist, stellen Sie sicher, dass seine **Buildvorgang** ist `BundleResource` und, die das Bild hinzugefügt wurde die **Ressourcen** Ordner.
@@ -189,7 +188,7 @@ Wenn ein Bild in den Arbeitsspeicher, die mithilfe von C#-Code in Ihrer Anwendun
 NSImage image = NSImage.ImageNamed("tags.png");
 ```
 
-Der obige Code verwendet die statische `ImageNamed("...")` Methode der `NSImage` Klasse beim Laden des angegebenen Bilds in den Arbeitsspeicher aus der **Ressourcen** Ordner, wenn das Bild kann nicht gefunden werden, `null` zurückgegeben werden. Wie Bilder, die in der Schnittstelle-Generator zugewiesen, wenn Sie aufgenommen haben eine  **@2x**  Version der Imagedatei, es wird automatisch auf verwendet Retina Display basierend Macs.
+Der obige Code verwendet die statische `ImageNamed("...")` Methode der `NSImage` Klasse beim Laden des angegebenen Bilds in den Arbeitsspeicher aus der **Ressourcen** Ordner, wenn das Bild kann nicht gefunden werden, `null` zurückgegeben werden. Wie Bilder, die in der Schnittstelle-Generator zugewiesen, wenn Sie aufgenommen haben eine **@2x** Version der Imagedatei, es wird automatisch auf verwendet Retina Display basierend Macs.
 
 Um Bilder außerhalb der Anwendungspaket (aus dem Mac-Dateisystem) zu laden, verwenden Sie den folgenden Code ein:
 

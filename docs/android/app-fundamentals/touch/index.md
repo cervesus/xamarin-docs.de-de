@@ -1,18 +1,17 @@
 ---
 title: Tippen Sie auf
-description: "Touchscreens auf viele der heutigen Geräte ermöglichen Benutzern Geräten auf eine natürliche und intuitive Weise schnell und effizient interagieren. Diese Aktivität ist nicht nur auf einfache Touch Erkennung beschränkt – es ist möglich, auch Gesten verwenden. Zwei-Finger-Zoom Bewegung ist z. B. ein sehr gängiges Beispiel dieser durch einen Teil des Bildschirms mit zwei Fingern fest, denen der Benutzer vergrößern oder verkleinern kann pinching an. Dieses Handbuch Touch untersucht und Aktionen in Android."
-ms.topic: article
+description: Touchscreens auf viele der heutigen Geräte ermöglichen Benutzern Geräten auf eine natürliche und intuitive Weise schnell und effizient interagieren. Diese Aktivität ist nicht nur auf einfache Touch Erkennung beschränkt – es ist möglich, auch Gesten verwenden. Zwei-Finger-Zoom Bewegung ist z. B. ein sehr gängiges Beispiel dieser durch einen Teil des Bildschirms mit zwei Fingern fest, denen der Benutzer vergrößern oder verkleinern kann pinching an. Dieses Handbuch Touch untersucht und Aktionen in Android.
 ms.prod: xamarin
 ms.assetid: 61874769-978A-4562-9B2A-7FFD45F58B38
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 791dd25796e1f9ba4d73b99dea0fd043431f0218
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d6c6d7fd02511ede84b7cfa75575d755f11bab99
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="touch"></a>Tippen Sie auf
 

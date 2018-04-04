@@ -1,18 +1,17 @@
 ---
 title: Teil 4. Data Binding-Grundlagen
-description: "Datenbindungen können Eigenschaften von zwei Objekten, die verknüpft werden, damit eine Änderung in einem bewirkt, dass eine Änderung in den anderen bestehen. Dies ist ein sehr wichtiges Tool, und während der datenbindungen, die vollständig im Code definiert werden können, stellt XAML Verknüpfungen und Vereinfachung. Daher ist eine der wichtigsten Markuperweiterungen in Xamarin.Forms binden."
-ms.topic: article
+description: Datenbindungen können Eigenschaften von zwei Objekten, die verknüpft werden, damit eine Änderung in einem bewirkt, dass eine Änderung in den anderen bestehen. Dies ist ein sehr wichtiges Tool, und während der datenbindungen, die vollständig im Code definiert werden können, stellt XAML Verknüpfungen und Vereinfachung. Daher ist eine der wichtigsten Markuperweiterungen in Xamarin.Forms binden.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: dbbbe051aab065a5b71905459f577fcacefd8bc5
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 2aa6fd2f54c09921621a12af9401a6f84ae37ffa
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-4-data-binding-basics"></a>Teil 4. Data Binding-Grundlagen
 

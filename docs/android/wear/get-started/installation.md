@@ -1,18 +1,17 @@
 ---
 title: Setup und Installation
-description: "Dieser Artikel führt Sie durch die Installationsschritte und Konfigurationsdetails, die zum Vorbereiten der Computer und Geräte für Android Dach Entwicklung erforderlich. Am Ende dieses Artikels stehen Ihnen eine funktionierende Xamarin.Android Abnutzung-Installation in Visual Studio für Mac und/oder Microsoft Visual Studio integriert und verlaufen beim Erstellen Ihrer ersten Xamarin.Android Abnutzung-Anwendung bereit."
-ms.topic: article
+description: Dieser Artikel führt Sie durch die Installationsschritte und Konfigurationsdetails, die zum Vorbereiten der Computer und Geräte für Android Dach Entwicklung erforderlich. Am Ende dieses Artikels stehen Ihnen eine funktionierende Xamarin.Android Abnutzung-Installation in Visual Studio für Mac und/oder Microsoft Visual Studio integriert und verlaufen beim Erstellen Ihrer ersten Xamarin.Android Abnutzung-Anwendung bereit.
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 012f563dcdaa70e33d641a4d8fb52df1622c260a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 86ed62075f5c39eaf7b0e348020f4a9361764727
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="setup-and-installation"></a>Setup und Installation
 
@@ -33,7 +32,7 @@ Folgendes ist erforderlich, um Android Dach Xamarin-basierten apps zu erstellen:
 Sie können weiterhin [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) Domänenmodus speziell für API-Ebene 23 entwickeln oder eine frühere Version.
 
 > [!IMPORTANT]
-> JDK 9 unterstützt Xamarin.Android nicht.
+> Xamarin.Android unterstützt JDK 9 nicht.
 
 ## <a name="installation"></a>Installation
 

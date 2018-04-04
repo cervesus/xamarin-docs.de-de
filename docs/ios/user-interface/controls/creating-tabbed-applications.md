@@ -1,18 +1,17 @@
 ---
 title: Auf der Registerkarte Balken und Registerkartenleiste-Controller
-description: "iOS-Anwendungen, die über eine Registerkartennavigation Benutzeroberfläche werden erstellt, mit der UITabBarController-Klasse. In diesem Artikel werden protokollsuchen zum Einrichten einer im Registerkartenformat-Anwendung, die mehrere Controller und Ansichten enthält. Klicken Sie dann untersucht, wie eine UITabBarController geladen, wenn es nicht der Stamm-Controller, z. B. nach dem Anmeldebildschirm."
-ms.topic: article
+description: iOS-Anwendungen, die über eine Registerkartennavigation Benutzeroberfläche werden erstellt, mit der UITabBarController-Klasse. In diesem Artikel werden protokollsuchen zum Einrichten einer im Registerkartenformat-Anwendung, die mehrere Controller und Ansichten enthält. Klicken Sie dann untersucht, wie eine UITabBarController geladen, wenn es nicht der Stamm-Controller, z. B. nach dem Anmeldebildschirm.
 ms.prod: xamarin
 ms.assetid: 7C772899-2900-F139-D642-F3C4F3F14DDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 702a5986c9249eec38868895f55ef6f63b534b9b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c3c57cceed7271ebbe707172db892a246003426b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="tab-bars-and-tab-bar-controllers"></a>Auf der Registerkarte Balken und Registerkartenleiste-Controller
 

@@ -1,18 +1,17 @@
 ---
 title: iOS-Datenzugriff
-description: "Die meisten Anwendungen auf eine Anforderung zum Speichern von Daten auf dem Gerät lokal. Wenn die Menge der Daten im Grunde klein ist, erfordert dies in der Regel eine Datenbank und eine Datenschicht in der Anwendung Zugriff auf die Datenbank zu verwalten. iOS hat die SQLite-Datenbank-Engine \"integriert\" und Zugriff zum Speichern und Abrufen von Daten durch die Xamarin Plattform vereinfacht. Dieses Dokument wird gezeigt, wie eine SQLite-Datenbank zuzugreifen."
-ms.topic: article
+description: Die meisten Anwendungen auf eine Anforderung zum Speichern von Daten auf dem Gerät lokal. Wenn die Menge der Daten im Grunde klein ist, erfordert dies in der Regel eine Datenbank und eine Datenschicht in der Anwendung Zugriff auf die Datenbank zu verwalten. iOS hat die SQLite-Datenbank-Engine "integriert" und Zugriff zum Speichern und Abrufen von Daten durch die Xamarin Plattform vereinfacht. Dieses Dokument wird gezeigt, wie eine SQLite-Datenbank zuzugreifen.
 ms.prod: xamarin
 ms.assetid: 3AEDFD8D-FB10-4CEF-BE04-CCD14E95F02C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 6dba862055cc266b2af1eaf87418fe7ebf5830c5
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 47f2567d81f61568aad639330dc5133856e31936
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-data-access"></a>iOS-Datenzugriff
 

@@ -1,18 +1,17 @@
 ---
-title: "Aktivitätslebenszyklus"
-description: "Aktivitäten sind ein wichtiger Baustein von Android-Anwendungen und sie können in einer Reihe von unterschiedlichen Zuständen annehmen. Der Aktivitätenlebenszyklus beginnt mit Instanziierung und endet mit Zerstörung und viele Status in der Zwischenzeit enthält. Bei einer statusänderung von eine Aktivität wird die entsprechende Lifecycle Ereignismethode aufgerufen, die Aktivität der bevorstehenden statusänderung zu benachrichtigen und zum Ausführen von Code Anpassung an diese Änderung ermöglicht. In diesem Artikel untersucht den Lebenszyklus von Aktivitäten und erläutert, die dafür verantwortlich, dass eine Aktivität bei jedem dieser Zustand Änderungen als Teil einer Anwendung gut konzipierte, zuverlässige verfügt."
-ms.topic: article
+title: Aktivitätslebenszyklus
+description: Aktivitäten sind ein wichtiger Baustein von Android-Anwendungen und sie können in einer Reihe von unterschiedlichen Zuständen annehmen. Der Aktivitätenlebenszyklus beginnt mit Instanziierung und endet mit Zerstörung und viele Status in der Zwischenzeit enthält. Bei einer statusänderung von eine Aktivität wird die entsprechende Lifecycle Ereignismethode aufgerufen, die Aktivität der bevorstehenden statusänderung zu benachrichtigen und zum Ausführen von Code Anpassung an diese Änderung ermöglicht. In diesem Artikel untersucht den Lebenszyklus von Aktivitäten und erläutert, die dafür verantwortlich, dass eine Aktivität bei jedem dieser Zustand Änderungen als Teil einer Anwendung gut konzipierte, zuverlässige verfügt.
 ms.prod: xamarin
 ms.assetid: 05B34788-F2D2-4347-B66B-40AFD7B1D167
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/28/2018
-ms.openlocfilehash: 335e63ce5a36cbd0172744a35c82920853b82e5c
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f35f3e59d8b669795ade3d370894e45866cea1ff
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="activity-lifecycle"></a>Aktivitätslebenszyklus
 

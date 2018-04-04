@@ -1,18 +1,17 @@
 ---
 title: Problembehandlung von Bindungen
-description: "Dieser Artikel beschreibt mehrere häufige Fehler, die auftreten können, während der Generierung Bindungen wird zusammen mit möglichen Ursachen und Vorschläge zur Problembehebung."
-ms.topic: article
+description: Dieser Artikel beschreibt mehrere häufige Fehler, die auftreten können, während der Generierung Bindungen wird zusammen mit möglichen Ursachen und Vorschläge zur Problembehebung.
 ms.prod: xamarin
 ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 6d31e2a22c63f8d46893dd1928b561e1a06b19b4
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: da6286eed091114c117c723f462bbb8cac77034b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting-bindings"></a>Problembehandlung von Bindungen
 
@@ -51,7 +50,7 @@ Nachdem Sie die Bibliothek für Android dekompiliert haben, überprüfen Sie den
 
 - **Klassen, die Merkmale des obfuskation** &ndash; Eigenschaften von verborgenen Klassen umfassen:
 
-    - Der Name der Klasse enthält eine  **$** , d. h. **eine$ .class**
+    - Der Name der Klasse enthält eine **$**, d. h. **eine$ .class**
     - Der Name der Klasse vollständig gefährdet ist von Kleinbuchstaben, d. h. **a.class**      
 
 - **`import` Anweisungen für die Unreferenzierte Bibliotheken** &ndash; identifizieren die nicht referenzierte Bibliothek, und fügen Sie diese Abhängigkeiten zum Projekt Xamarin.Android Bindung mit einer **Buildvorgang** von **ReferenceJar**  oder **EmbedddedReferenceJar**.

@@ -1,18 +1,17 @@
 ---
-title: "Testen auf Geräten überwachen"
+title: Testen auf Geräten überwachen
 description: Bereitstellen von Apps auf Ihrer Apple Watch testen
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: A72A7D38-FAE8-4DD2-843D-54B74C5078D7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 211f8c7066e86dac3a8351b913da0185093dcb70
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d1d00a4d561551435e7d2333520dc614a79dcad3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="testing-on-watch-devices"></a>Testen auf Geräten überwachen
 
@@ -26,7 +25,7 @@ Nachdem Sie ausgeführt haben die [Bereitstellungsschritte](~/ios/watchos/deploy
 
 ## <a name="devices"></a>Geräte
 
-Testen von iOS-apps auf einem echten iPhone oder iPad ist immer erforderlich, das Gerät im Developer Center registriert werden. Die Geräteliste sieht wie folgt (klicken Sie auf das Pluszeichen  **+**  zum Hinzufügen eines neuen Geräts):
+Testen von iOS-apps auf einem echten iPhone oder iPad ist immer erforderlich, das Gerät im Developer Center registriert werden. Die Geräteliste sieht wie folgt (klicken Sie auf das Pluszeichen **+** zum Hinzufügen eines neuen Geräts):
 
 ![](device-images/devices-sml.png "Die Geräteliste sieht wie folgt")
 

@@ -1,18 +1,17 @@
 ---
-title: "Übergeben von Parametern Auswirkungen als angefügte Eigenschaften"
-description: "Angefügte Eigenschaften können verwendet werden, Auswirkungen Parameter zu definieren, die auf Änderungen zur Laufzeit reagieren. Dieser Artikel beschreibt die Eigenschaften zum Übergeben von Parametern eines Effekts, und ändern einen Parameter zur Laufzeit mit angefügt werden."
-ms.topic: article
+title: Übergeben von Parametern Auswirkungen als angefügte Eigenschaften
+description: Angefügte Eigenschaften können verwendet werden, Auswirkungen Parameter zu definieren, die auf Änderungen zur Laufzeit reagieren. Dieser Artikel beschreibt die Eigenschaften zum Übergeben von Parametern eines Effekts, und ändern einen Parameter zur Laufzeit mit angefügt werden.
 ms.prod: xamarin
 ms.assetid: DFCDCB9F-17DD-4117-BD53-B4FB206BB387
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 585d0422b4dc2b35fc8ba50ed82d2d34e53a784e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c02929c49d9757f0814208d5f4fce7d258a689bd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Übergeben von Parametern Auswirkungen als angefügte Eigenschaften
 

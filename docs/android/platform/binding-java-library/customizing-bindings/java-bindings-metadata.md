@@ -1,18 +1,17 @@
 ---
-title: "Metadaten für Java-Bindungen"
-description: "C#-Code im Xamarin.Android ruft Java-Bibliotheken über Bindungen, d. h. einen Mechanismus, der die Details auf niedriger Ebene abstrahiert, die in Java Native Interface (JNI) angegeben werden. Xamarin.Android bietet ein Tool, das diese Bindungen generiert. Diese Tools kann Entwickler-Steuerelements, wie eine Bindung erstellt wird, mithilfe von Metadaten, die Prozeduren, z. B. Ändern von Namespaces und Umbenennen von Elementen ermöglicht. Dieses Dokument erläutert die Funktionsweise von Metadaten, werden die Attribute, die Metadaten unterstützt, und erläutert deren Bindungsprobleme zu beheben, indem Sie diese Metadaten zu ändern."
-ms.topic: article
+title: Metadaten für Java-Bindungen
+description: C#-Code im Xamarin.Android ruft Java-Bibliotheken über Bindungen, d. h. einen Mechanismus, der die Details auf niedriger Ebene abstrahiert, die in Java Native Interface (JNI) angegeben werden. Xamarin.Android bietet ein Tool, das diese Bindungen generiert. Diese Tools kann Entwickler-Steuerelements, wie eine Bindung erstellt wird, mithilfe von Metadaten, die Prozeduren, z. B. Ändern von Namespaces und Umbenennen von Elementen ermöglicht. Dieses Dokument erläutert die Funktionsweise von Metadaten, werden die Attribute, die Metadaten unterstützt, und erläutert deren Bindungsprobleme zu beheben, indem Sie diese Metadaten zu ändern.
 ms.prod: xamarin
 ms.assetid: 27CB3C16-33F3-F580-E2C0-968005A7E02E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 70f17b6bc8dc991534cdf4dd065c813aa0e27e96
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 6dea13fcda43cad22b8bea9838bbcb23b97820c7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="java-bindings-metadata"></a>Metadaten für Java-Bindungen
 
@@ -246,7 +245,7 @@ Bindungen-Generator z. B. der Meinung ist, die die Java-Methode `de.neom.neoread
 
 ### <a name="obfuscated"></a>verborgen
 
-Tools, die Bibliotheken für Java zu verbergen können mit der Bindung Xamarin.Android-Generator und der Fähigkeit zum Generieren von C#-Wrapperklassen beeinträchtigen. Eigenschaften von verborgenen Klassen umfassen: * der Klassenname enthält eine  **$** , d. h. **eine$ .class** * der Klassennamen vollständig gefährdet ist von Kleinbuchstaben, d. h.  **a.Class**
+Tools, die Bibliotheken für Java zu verbergen können mit der Bindung Xamarin.Android-Generator und der Fähigkeit zum Generieren von C#-Wrapperklassen beeinträchtigen. Eigenschaften von verborgenen Klassen umfassen: * der Klassenname enthält eine **$**, d. h. **eine$ .class** * der Klassennamen vollständig gefährdet ist von Kleinbuchstaben, d. h.  **a.Class**
 
 Dieser Codeausschnitt ist ein Beispiel für eine "nicht verborgenen" C#-Typ zu generieren:
 

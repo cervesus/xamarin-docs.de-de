@@ -1,18 +1,17 @@
 ---
 title: Authentifizieren von Benutzern mit Azure Mobile Apps
-description: "Azure Mobile Apps verwenden eine Vielzahl von externen Identitätsanbieter zum Authentifizieren und autorisieren Benutzer der Anwendung, einschließlich Facebook, Google, Microsoft, Twitter und Azure Active Directory zu unterstützen. Berechtigungen können für Tabellen festgelegt werden, um den Zugriff nur für authentifizierte Benutzer einzuschränken. In diesem Artikel wird erläutert, wie Azure Mobile Apps zu verwenden, um den Authentifizierungsvorgang in einer Xamarin.Forms-Anwendung verwalten."
-ms.topic: article
+description: Azure Mobile Apps verwenden eine Vielzahl von externen Identitätsanbieter zum Authentifizieren und autorisieren Benutzer der Anwendung, einschließlich Facebook, Google, Microsoft, Twitter und Azure Active Directory zu unterstützen. Berechtigungen können für Tabellen festgelegt werden, um den Zugriff nur für authentifizierte Benutzer einzuschränken. In diesem Artikel wird erläutert, wie Azure Mobile Apps zu verwenden, um den Authentifizierungsvorgang in einer Xamarin.Forms-Anwendung verwalten.
 ms.prod: xamarin
 ms.assetid: D50D6F56-8B19-44E7-81F3-E0E1C6E240
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 823dcdfdaca79045a407b62ec7e75079ee25d72f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5f5c69601c11a3c0d25bc804c60883841b0fb30d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-users-with-azure-mobile-apps"></a>Authentifizieren von Benutzern mit Azure Mobile Apps
 

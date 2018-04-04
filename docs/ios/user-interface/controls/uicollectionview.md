@@ -1,18 +1,17 @@
 ---
 title: Auflistungsansichten
-description: "Auflistungsansichten können Inhalte mithilfe von beliebigen Layouts angezeigt werden sollen. Dateien können problemlos Raster-ähnliches Layouts ausgegeben, und unterstützt auch benutzerdefinierte Layouts erstellen."
-ms.topic: article
+description: Auflistungsansichten können Inhalte mithilfe von beliebigen Layouts angezeigt werden sollen. Dateien können problemlos Raster-ähnliches Layouts ausgegeben, und unterstützt auch benutzerdefinierte Layouts erstellen.
 ms.prod: xamarin
 ms.assetid: F4B85F25-0CB5-4FEA-A3B5-D22FCDC81AE4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 7048eb9c478d7ae10787e158f18b764b258da171
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 75ad331a265c14892f101b1aa7956d2cde3beec8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="collection-views"></a>Auflistungsansichten
 
@@ -140,7 +139,7 @@ Ergänzung Ansichten sind rein visuelle Ansichten, die in angezeigt werden, eine
 
 ## <a name="data-source"></a>Datenquelle
 
-Wie bei anderen Teilen von iOS, z. B. `UITableView` und `MKMapView`, `UICollectionView` ruft seine Daten aus einer *Datenquelle*, wird die in Xamarin.iOS über verfügbar gemacht der  **`UICollectionViewDataSource`**  Klasse. Diese Klasse ist verantwortlich für das Bereitstellen von Inhalt an die `UICollectionView` wie z. B.:
+Wie bei anderen Teilen von iOS, z. B. `UITableView` und `MKMapView`, `UICollectionView` ruft seine Daten aus einer *Datenquelle*, wird die in Xamarin.iOS über verfügbar gemacht der **`UICollectionViewDataSource`** Klasse. Diese Klasse ist verantwortlich für das Bereitstellen von Inhalt an die `UICollectionView` wie z. B.:
 
 -  **Zellen** – Merry `GetCell` Methode.
 -  **Zusätzliche Ansichten** – Merry `GetViewForSupplementaryElement` Methode.

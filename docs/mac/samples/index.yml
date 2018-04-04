@@ -2,18 +2,18 @@
 documentType: LandingData
 title: Xamarin.Mac-Beispiele
 metadata:
-  description: "Plattformübergreifende Xamarin.Mac-Beispiel-Apps für mobile Entwickler."
+  description: Plattformübergreifende Xamarin.Mac-Beispiel-Apps für mobile Entwickler.
   author: conceptdev
   ms.author: crdun
   ms.date: 02/27/2018
-  ms.topic: article
-  ms.openlocfilehash: b367917c1605ccb6e50a55621521b56942ef8f54
-  ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+  ms.topic: sample
+  ms.openlocfilehash: f29128999930e7120a84ab61c6e3bb1154084410
+  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 02/28/2018
+  ms.lasthandoff: 04/04/2018
 abstract:
-  description: "Xamarin.Mac-Beispiel-Apps und -Codedemos für die ersten Schritte beim Erstellen mobiler Apps mit C# und Xamarin."
+  description: Xamarin.Mac-Beispiel-Apps und -Codedemos für die ersten Schritte beim Erstellen mobiler Apps mit C# und Xamarin.
   menu:
     items:
     - href: https://developer.xamarin.com/samples/mac/all/
@@ -32,19 +32,19 @@ sections:
         href: https://developer.xamarin.com/samples/mac/Hello_Mac/
       title: Hallo, Mac
     - href: https://developer.xamarin.com/samples/mac/MacControls/
-      html: "UI-Steuerelement-Beispiele für Mac-Apps."
+      html: UI-Steuerelement-Beispiele für Mac-Apps.
       image:
         src: images/controls.png
         href: https://developer.xamarin.com/samples/mac/MacControls/
       title: MacControls
     - href: https://developer.xamarin.com/samples/mac/MacImages/
-      html: "UI-Steuerelement-Beispiele für Mac-Apps."
+      html: UI-Steuerelement-Beispiele für Mac-Apps.
       image:
         src: images/images.png
         href: https://developer.xamarin.com/samples/mac/MacImages/
       title: MacImages
     - href: https://developer.xamarin.com/samples/mac/SourceWriter/
-      html: "Einfacher Editor, der Unterstützung für die Codevervollständigung und die Syntaxhervorhebung bietet."
+      html: Einfacher Editor, der Unterstützung für die Codevervollständigung und die Syntaxhervorhebung bietet.
       image:
         src: images/sourcewriter.png
         href: https://developer.xamarin.com/samples/mac/SourceWriter/

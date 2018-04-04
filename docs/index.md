@@ -5,17 +5,17 @@ title: Xamarin-Dokumentation
 description: Xamarin ermöglicht es Ihnen, native Apps für Android, iOS und MacOS mithilfe von .NET-Code und plattformspezifischen Benutzeroberflächen zu erstellen. Mit Xamarin.Forms können Sie native Apps mit freigegebenem Benutzeroberflächencode erstellen, der in C# oder in XAML geschrieben ist.
 featureFlags:
 - clicktale
-ms.openlocfilehash: d73b8165fc1a71fbfe3202f694c4653788ccfb28
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: de03c1bd1b7874e6a837fbbb9e88a353f19afca5
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 <div id="main" class="v2">
     <div class="container">
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="~/cross-platform/get-started/index.md">
+                <a href="~/xamarin-forms/get-started/index.md">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
@@ -80,10 +80,10 @@ ms.lasthandoff: 03/15/2018
                 <a href="#platforms">Plattformen</a>
                 <ul id="platforms">
                     <li>
-                        <a data-default="true" href="#Cross-Platform">Plattformübergreifend</a>
-                        <ul id="Cross-Platform" class="cardsC">
+                        <a data-default="true" href="#XamarinForms">Xamarin.Forms</a>
+                        <ul id="XamarinForms" class="cardsC">
                             <li>
-                                <a href="~/cross-platform/get-started/index.md">
+                                <a href="~/xamarin-forms/get-started/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -94,7 +94,7 @@ ms.lasthandoff: 03/15/2018
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Erste Schritte</h3>
-                                                    <p>Beginnen Sie mit dem Erstellen von plattformübergreifenden Apps für Desktop- und mobile Plattformen mit Xamarin für Android, iOS, macOS, der universellen Windows-Plattform usw.</p>
+                                                    <p>Tutorials für die ersten Schritte mit Xamarin.Forms. Stellen Sie sicher, dass alles korrekt installiert ist, und erstellen Sie Ihre erste App.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -102,18 +102,18 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/cross-platform/app-fundamentals/index.md">
+                                <a href="~/xamarin-forms/app-fundamentals/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Application Fundamentals" src="~/media/index/xamarin-cross-platform-fundamentals.svg?branch=master" data-linktype="external">
+                                                        <img alt="Application Fundamentals" src="~/media/index/xamarin-forms-fundamentals.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Application Fundamentals (Anwendungsgrundlagen)</h3>
-                                                    <p>Erfahren Sie mehr über die Grundlagen im Hinblick auf das Schreiben von Code, der freigegeben werden kann und für grundlegende Aufgaben wie Dateiverarbeitung, Images usw. verwendet wird.</p>
+                                                    <p>Alles, was Sie zum Erstellen von Apps wissen müssen, z.B. Arbeiten mit Dateien, Images, Datenbanken und mehr.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -121,18 +121,18 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/cross-platform/platform/index.md">
+                                <a href="~/xamarin-forms/user-interface/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Platform Features" src="~/media/index/xamarin-cross-platform-platform-features.svg?branch=master" data-linktype="external">
+                                                        <img alt="User Interface" src="~/media/index/xamarin-forms-ui.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Plattformfeatures</h3>
-                                                    <p>Arbeiten mit plattformspezifischen Features wie FaceID und ARKit und den neuesten iOS-Erweiterungen.</p>
+                                                    <h3>Benutzeroberfläche</h3>
+                                                    <p>Erfahren Sie mehr über die Steuerelemente der Benutzeroberfläche, die für Android, iOS und Windows verfügbar sind.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -140,7 +140,45 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/cross-platform/deploy-test/index.md">
+                                <a href="~/xamarin-forms/xaml/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Xamarin.Forms XAML" src="~/media/index/xamarin-forms-xaml.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>XAML</h3>
+                                                    <p>Drücken Sie plattformübergreifende Benutzeroberflächen deklarativ mit XAML aus.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/xamarin-forms/platform/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Platform Features" src="~/media/index/xamarin-forms-platform-features.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Plattformfeatures</h3>
+                                                    <p>Arbeiten mit plattformspezifischen Features für Android, iOS und Windows.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/xamarin-forms/deploy-test/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -151,7 +189,7 @@ ms.lasthandoff: 03/15/2018
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Bereitstellung und Testen</h3>
-                                                    <p>Erstellen und Bereitstellen von Apps für mehrere Plattformen.</p>
+                                                    <p>Anweisungen zum Erstellen und Bereitstellen Ihrer Apps und Tipps, um sie vorab zu testen.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,18 +197,18 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/cross-platform/internals/index.md">
+                                <a href="~/xamarin-forms/internals/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Advanced Concepts and Internals" src="~/media/index/xamarin-cross-platform-advanced-topics.svg?branch=master" data-linktype="external">
+                                                        <img alt="Advanced Concepts and Internals" src="~/media/index/xamarin-forms-internals.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Weiterführende Konzepte und Interna</h3>
-                                                    <p>Weitere Informationen zu Xamarin-Interna und Unterstützung bei Features wie Lokalisierung und Eingabehilfen.</p>
+                                                    <p>Funktionsweise von Xamarin.Forms.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -178,7 +216,26 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/cross-platform/samples/index.yml">
+                                <a href="~/xamarin-forms/data-cloud/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Data and Cloud Services" src="~/media/index/xamarin-forms-data-cloud.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Daten und Clouddienste</h3>
+                                                    <p>Datenspeicherung und Zugriff auf Clouddienste wie z.B. Microsoft Azure.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/xamarin-forms/samples/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -188,8 +245,46 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Proben</h3>
-                                                    <p>Plattformübergreifende vorgefertigte Apps, um Xamarin auszuprobieren.</p>
+                                                    <h3>Beispiel-Apps</h3>
+                                                    <p>Erstellen Sie Apps und Code-Demos für Xamarin.Forms unter Android, iOS und Windows.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Mobile Apps Book" src="~/media/index/xamarin-forms-ebook.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Buch zu mobilen Apps</h3>
+                                                    <p>Lernen Sie mit diesem Buch und den Beispielen Xamarin.Forms Schritt für Schritt kennen.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/xamarin-forms/enterprise-application-patterns/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Enterprise Patterns eBook" src="~/media/index/xamarin-forms-enterprise.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>E-Book für Unternehmen</h3>
+                                                    <p>Architekturrichtlinien für die Entwicklung von anpassbaren, verwaltbaren und testbaren Xamarin.Forms-Unternehmensanwendungen.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -250,7 +345,7 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Benutzeroberfläche</h3>
+                                                    <h3>Android-Benutzeroberfläche</h3>
                                                     <p>Erfahren Sie mehr über den vollständigen Satz von Widgets für die Benutzeroberfläche, der in Android verfügbar ist.</p>
                                                 </div>
                                             </div>
@@ -269,7 +364,7 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Plattformfeatures</h3>
+                                                    <h3>Android-Plattformfeatures</h3>
                                                     <p>Arbeiten mit plattformspezifischen Features und den neuesten Android-Erweiterungen.</p>
                                                 </div>
                                             </div>
@@ -388,7 +483,7 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Erste Schritte</h3>
+                                                    <h3>Erste Schritte mit iOS</h3>
                                                     <p>Tutorials für die ersten Schritte mit Xamarin.iOS. Stellen Sie sicher, dass alles korrekt installiert ist, und erstellen Sie Ihre erste App.</p>
                                                 </div>
                                             </div>
@@ -426,7 +521,7 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Benutzeroberfläche</h3>
+                                                    <h3>iOS-Benutzeroberfläche</h3>
                                                     <p>Erfahren Sie mehr über den vollständigen Satz von UIKit-Steuerelementen, der in iOS verfügbar ist.</p>
                                                 </div>
                                             </div>
@@ -445,7 +540,7 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Plattformfeatures</h3>
+                                                    <h3>iOS-Plattformfeatures</h3>
                                                     <p>Arbeiten mit plattformspezifischen Features wie FaceID und ARKit und den neuesten iOS-Erweiterungen.</p>
                                                 </div>
                                             </div>
@@ -583,7 +678,7 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Erste Schritte</h3>
+                                                    <h3>Erste Schritte mit Mac</h3>
                                                     <p>Tutorials für die ersten Schritte mit Xamarin.Mac. Stellen Sie sicher, dass alles korrekt installiert ist, und erstellen Sie Ihre erste App.</p>
                                                 </div>
                                             </div>
@@ -621,7 +716,7 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Benutzeroberfläche</h3>
+                                                    <h3>Mac-Benutzeroberfläche</h3>
                                                     <p>Erfahren Sie mehr über den vollständigen Satz von AppKit-Steuerelementen, der in macOS verfügbar ist.</p>
                                                 </div>
                                             </div>
@@ -636,11 +731,11 @@ ms.lasthandoff: 03/15/2018
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Platform Features" src="~/media/index/xamarin-mac-platform-features.svg?branch=master" data-linktype="external">
+                                                        <img alt="Mac Platform Features" src="~/media/index/xamarin-mac-platform-features.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Plattformfeatures</h3>
+                                                    <h3>Mac-Plattformfeatures</h3>
                                                     <p>Arbeiten mit plattformspezifischen Features und den neuesten macOS-Erweiterungen.</p>
                                                 </div>
                                             </div>
@@ -708,10 +803,10 @@ ms.lasthandoff: 03/15/2018
                         </ul>
                     </li>
                     <li>
-                        <a data-default="true" href="#XamarinForms">Xamarin.Forms</a>
-                        <ul id="XamarinForms" class="cardsC">
+                        <a data-default="true" href="#Cross-Platform">Plattformübergreifend</a>
+                        <ul id="Cross-Platform" class="cardsC">
                             <li>
-                                <a href="~/xamarin-forms/get-started/index.md">
+                                <a href="~/cross-platform/get-started/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -722,7 +817,7 @@ ms.lasthandoff: 03/15/2018
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Erste Schritte</h3>
-                                                    <p>Tutorials für die ersten Schritte mit Xamarin.Forms. Stellen Sie sicher, dass alles korrekt installiert ist, und erstellen Sie Ihre erste App.</p>
+                                                    <p>Beginnen Sie mit dem Erstellen von plattformübergreifenden Apps für Desktop- und mobile Plattformen mit Xamarin für Android, iOS, macOS, der universellen Windows-Plattform usw.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -730,18 +825,18 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/app-fundamentals/index.md">
+                                <a href="~/cross-platform/app-fundamentals/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Application Fundamentals" src="~/media/index/xamarin-forms-fundamentals.svg?branch=master" data-linktype="external">
+                                                        <img alt="Application Fundamentals" src="~/media/index/xamarin-cross-platform-fundamentals.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Application Fundamentals (Anwendungsgrundlagen)</h3>
-                                                    <p>Alles, was Sie zum Erstellen von Apps wissen müssen, z.B. Arbeiten mit Dateien, Images, Datenbanken und mehr.</p>
+                                                    <p>Erfahren Sie mehr über die Grundlagen im Hinblick auf das Schreiben von Code, der freigegeben werden kann und für grundlegende Aufgaben wie Dateiverarbeitung, Images usw. verwendet wird.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -749,56 +844,18 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/user-interface/index.md">
+                                <a href="~/cross-platform/platform/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="User Interface" src="~/media/index/xamarin-forms-ui.svg?branch=master" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Benutzeroberfläche</h3>
-                                                    <p>Erfahren Sie mehr über die Steuerelemente der Benutzeroberfläche, die auf den unterstützten Plattformen verfügbar sind.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/xamarin-forms/xaml/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Xamarin.Forms XAML" src="~/media/index/xamarin-forms-xaml.svg?branch=master" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>XAML</h3>
-                                                    <p>Drücken Sie plattformübergreifende Benutzeroberflächen deklarativ mit XAML aus.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/xamarin-forms/platform/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Platform Features" src="~/media/index/xamarin-forms-platform-features.svg?branch=master" data-linktype="external">
+                                                        <img alt="Platform Features" src="~/media/index/xamarin-cross-platform-platform-features.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Plattformfeatures</h3>
-                                                    <p>Arbeiten mit plattformspezifischen Features für Android, iOS und Windows.</p>
+                                                    <p>Arbeiten mit plattformspezifischen Features wie FaceID und ARKit und den neuesten iOS-Erweiterungen.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -806,7 +863,7 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/deploy-test/index.md">
+                                <a href="~/cross-platform/deploy-test/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -817,7 +874,7 @@ ms.lasthandoff: 03/15/2018
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Bereitstellung und Testen</h3>
-                                                    <p>Anweisungen zum Erstellen und Bereitstellen Ihrer Apps und Tipps, um sie vorab zu testen.</p>
+                                                    <p>Erstellen und Bereitstellen von Apps für mehrere Plattformen.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -825,45 +882,7 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/internals/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Advanced Concepts and Internals" src="~/media/index/xamarin-forms-internals.svg?branch=master" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Weiterführende Konzepte und Interna</h3>
-                                                    <p>Funktionsweise von Xamarin.Forms.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/xamarin-forms/data-cloud/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Data and Cloud Services" src="~/media/index/xamarin-forms-data-cloud.svg?branch=master" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Daten und Clouddienste</h3>
-                                                    <p>Datenspeicherung und Zugriff auf Clouddienste.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/xamarin-forms/samples/index.yml">
+                                <a href="~/cross-platform/samples/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -873,46 +892,8 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Beispiel-Apps</h3>
-                                                    <p>Erstellen Sie Apps und Code-Demos für Xamarin.Forms unter Android, iOS und Windows.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Mobile Apps Book" src="~/media/index/xamarin-forms-ebook.svg?branch=master" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Buch zu mobilen Apps</h3>
-                                                    <p>Lernen Sie mit diesem Buch und den Beispielen Xamarin.Forms Schritt für Schritt kennen.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/xamarin-forms/enterprise-application-patterns/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Enterprise Patterns eBook" src="~/media/index/xamarin-forms-enterprise.svg?branch=master" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>E-Book für Unternehmen</h3>
-                                                    <p>Architekturrichtlinien für die Entwicklung von anpassbaren, verwaltbaren und testbaren Xamarin.Forms-Unternehmensanwendungen.</p>
+                                                    <h3>Proben</h3>
+                                                    <p>Plattformübergreifende vorgefertigte Apps, um Xamarin auszuprobieren.</p>
                                                 </div>
                                             </div>
                                         </div>

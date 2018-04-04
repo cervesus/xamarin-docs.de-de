@@ -1,18 +1,17 @@
 ---
-title: "Geräteausrichtung"
-description: "Verstehen Sie, wie zum Erstellen von Anwendungen, die großartig in Hochformat- und querformatausrichtung Ausrichtungen aussehen."
-ms.topic: article
+title: Geräteausrichtung
+description: Verstehen Sie, wie zum Erstellen von Anwendungen, die großartig in Hochformat- und querformatausrichtung Ausrichtungen aussehen.
 ms.prod: xamarin
 ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: cb17c224fc6102d9e0dc25853c2222734299647a
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 9d1b10925f1455c303950eff342764b1fbc9275d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="device-orientation"></a>Geräteausrichtung
 
@@ -88,9 +87,9 @@ Xamarin.Android unterstützt mehrere Optionen zum Angeben der Ausrichtung:
 - **ReversePortrait** &ndash; bewirkt, dass die Anwendung für die Verwendung von Hochformat Gegenrichtung aus üblich, dass "stehend." angezeigt.
 - **FullSensor** &ndash; bewirkt, dass die Anwendung Sensor-Daten, und wählen Sie die richtige Ausrichtung (aus den möglichen 4) basieren.
 - **FullUser** &ndash; bewirkt, dass die Anwendung verwenden Sie die Einstellungen des Benutzers Ausrichtung. Wenn automatische Drehung aktiviert ist, können alle 4 Ausrichtungen verwendet werden.
-- **UserLandscape** &ndash;  _\[nicht unterstützt\]_  bewirkt, dass die Anwendung für die Verwendung von Querformat, es sei denn, der Benutzer Automatisches Drehung aktiviert ist, wird in diesem Fall verwendet, die Temperatursensor Ausrichtung zu bestimmen. Diese Option wird die Kompilierung unterbrochen.
-- **UserPortrait** &ndash;  _\[nicht unterstützt\]_  bewirkt, dass die Anwendung für die Verwendung von Hochformat, es sei denn, der Benutzer Automatisches Drehung aktiviert ist, wird in diesem Fall verwendet, die Temperatursensor Ausrichtung zu bestimmen. Diese Option wird die Kompilierung unterbrochen.
-- **Gesperrt** &ndash;  _\[nicht unterstützt\]_  bewirkt, dass die Anwendung zur Verwendung der bildschirmausrichtung, was beim Starten, ist es ohne reagieren auf Änderungen in das Gerät den physikalischen Ausrichtung. Diese Option wird die Kompilierung unterbrochen.
+- **UserLandscape** &ndash; _\[nicht unterstützt\]_ bewirkt, dass die Anwendung für die Verwendung von Querformat, es sei denn, der Benutzer Automatisches Drehung aktiviert ist, wird in diesem Fall verwendet, die Temperatursensor Ausrichtung zu bestimmen. Diese Option wird die Kompilierung unterbrochen.
+- **UserPortrait** &ndash; _\[nicht unterstützt\]_ bewirkt, dass die Anwendung für die Verwendung von Hochformat, es sei denn, der Benutzer Automatisches Drehung aktiviert ist, wird in diesem Fall verwendet, die Temperatursensor Ausrichtung zu bestimmen. Diese Option wird die Kompilierung unterbrochen.
+- **Gesperrt** &ndash; _\[nicht unterstützt\]_ bewirkt, dass die Anwendung zur Verwendung der bildschirmausrichtung, was beim Starten, ist es ohne reagieren auf Änderungen in das Gerät den physikalischen Ausrichtung. Diese Option wird die Kompilierung unterbrochen.
 
 Beachten Sie, dass die systemeigene Android-APIs bieten einen hohen steuern, wie die Ausrichtung verwaltet wird, einschließlich der Optionen, die des Benutzers explizit widersprechen Voreinstellungen ausgedrückt werden.
 

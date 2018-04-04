@@ -1,18 +1,17 @@
 ---
 title: Einheitliche Storyboards
-description: "Einheitliche Storyboards ermöglichen iOS Entwickler zum Erstellen der Benutzeroberfläche mit einer einzelnen Storyboard, anstatt mehrere Storyboards, auf die erweiterbare Palette Gerät Bildschirmgrößen abzudecken. In diesem Artikel wurde entwickelt, um eine detailliertere Übersicht über die in den Betrieb des einheitliche Storyboards innerhalb von Xamarin.iOS zu gewähren."
-ms.topic: article
+description: Einheitliche Storyboards ermöglichen iOS Entwickler zum Erstellen der Benutzeroberfläche mit einer einzelnen Storyboard, anstatt mehrere Storyboards, auf die erweiterbare Palette Gerät Bildschirmgrößen abzudecken. In diesem Artikel wurde entwickelt, um eine detailliertere Übersicht über die in den Betrieb des einheitliche Storyboards innerhalb von Xamarin.iOS zu gewähren.
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 60b2e6fa65226631fe2d2c847a56852ac9ae63d2
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: d84afd0d33a6115d5d3ef9ea9b68d3370f9bb946
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="unified-storyboards"></a>Einheitliche Storyboards
 
@@ -680,7 +679,7 @@ Und wenn die Anwendung auf dem iPhone-Simulator ausgeführt wird, ist das Elemen
 
  [![](unified-storyboards-images/exclude05.png "Das Element fehlt, wenn der ausgeführten app in der iPhone-Simulator")](unified-storyboards-images/exclude05.png#lightbox)
 
-Um einen Ausschluss Groß-/Kleinschreibung von einem Element zu entfernen, wählen Sie einfach das Element in der **Entwurfsoberfläche**, einen Bildlauf zum unteren Rand der **Property Explorer** , und klicken Sie auf die  **-** Schaltfläche neben die Groß-/Kleinschreibung zu entfernen.
+Um einen Ausschluss Groß-/Kleinschreibung von einem Element zu entfernen, wählen Sie einfach das Element in der **Entwurfsoberfläche**, einen Bildlauf zum unteren Rand der **Property Explorer** , und klicken Sie auf die **-**Schaltfläche neben die Groß-/Kleinschreibung zu entfernen.
 
 Um eine Implementierung der Storyboards Unified anzuzeigen, sehen die `UnifiedStoryboard` Beispiel Xamarin iOS 8-Anwendung, die auf dieses Dokument angefügt.
 

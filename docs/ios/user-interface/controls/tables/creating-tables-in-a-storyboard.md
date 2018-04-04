@@ -1,18 +1,17 @@
 ---
 title: Arbeiten mit Tabellen in der iOS-Designer
-description: "In den vorherigen Abschnitten untersucht wir Entwickeln mit Tabellen. In diesem Abschnitt fünfte und letzte wir aggregieren, was wir bisher gelernt haben und erstellen eine basisanwendung der Aufgabenliste ein Storyboard mit."
-ms.topic: article
+description: In den vorherigen Abschnitten untersucht wir Entwickeln mit Tabellen. In diesem Abschnitt fünfte und letzte wir aggregieren, was wir bisher gelernt haben und erstellen eine basisanwendung der Aufgabenliste ein Storyboard mit.
 ms.prod: xamarin
 ms.assetid: D8416E10-481A-0B6E-4081-B146E6358004
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e46038b21327fe8847d2c04ee1ba16960f6a059b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 869719b1d3514fee4b45f61dcdb34a0bcf54f7b2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Arbeiten mit Tabellen in der iOS-Designer
 
@@ -115,7 +114,7 @@ Auf diese Weise müssen Sie als Nächstes erstellen eine Schaltfläche, die neue
 Führen Sie folgende Schritte aus: 
 
 -  Ziehen Sie eine **Leiste Schaltflächenelement** aus der Toolbox an die _rechten Seite der Navigationsleiste_.
--  In der **Eigenschaften Pad**unter **Leiste Schaltflächenelement** wählen **Bezeichner: Hinzufügen** (zu erleichtern eine  *+*  plus Schaltfläche). 
+-  In der **Eigenschaften Pad**unter **Leiste Schaltflächenelement** wählen **Bezeichner: Hinzufügen** (zu erleichtern eine *+* plus Schaltfläche). 
 -  Benennen Sie es so, dass er im Code zu einem späteren Zeitpunkt identifiziert werden kann. Beachten Sie, dass Sie die Stamm-View-Controller Geben Sie einen Klassennamen müssen (z. B. **ItemViewController**), die Leiste Schaltfläche den Namen des Elements festlegen können.
 
 

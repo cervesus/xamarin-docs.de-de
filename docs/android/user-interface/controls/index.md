@@ -1,18 +1,17 @@
 ---
 title: Steuerelemente
-description: "Bausteine zum Erstellen von Benutzeroberflächen Xamarin.Android"
-ms.topic: article
+description: Bausteine zum Erstellen von Benutzeroberflächen Xamarin.Android
 ms.prod: xamarin
 ms.assetid: B7A82166-B920-4672-B7A2-20DD5E0B5AEF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 25afd284fc88df4f23aaa3dfa1f47a3dc4fee551
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8994a8988c0e32e85aedcd9110e3583195843862
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="controls"></a>Steuerelemente
 
@@ -62,7 +61,7 @@ Die `Calendar` Klasse dient zum Konvertieren in einer bestimmten Instanz von Wer
 ![Bearbeiten der Beispieltext](images/edit-text.png)
 
 
-## <a name="galleryandroiduser-interfacecontrolsgallerymd"></a>[Gallery](~/android/user-interface/controls/gallery.md)
+## <a name="galleryandroiduser-interfacecontrolsgallerymd"></a>[Katalog](~/android/user-interface/controls/gallery.md)
 
 `Gallery` ist ein Widget eines Layouts, das zum Anzeigen von Elementen in einer horizontal bildlauffähigen Liste verwendet wird. die aktuelle Auswahl positioniert in der Mitte der Ansicht.
 
@@ -76,28 +75,28 @@ Die *Navigationsleiste* stellt Steuerelemente für die Seitennavigation auf Ger�
 ![Beispiel-Navigationsleiste](images/navigation-bar.png)
 
 
-## <a name="pickersandroiduser-interfacecontrolspickersindexmd"></a>[Datumsauswahl](~/android/user-interface/controls/pickers/index.md)
+## <a name="pickersandroiduser-interfacecontrolspickersindexmd"></a>[Auswahl](~/android/user-interface/controls/pickers/index.md)
 
 *Bildlaufbereich* sind Elemente der Benutzeroberfläche, mit denen den Benutzer ein Datum oder eine Uhrzeit auswählen, mithilfe der Dialogfelder, die von Android bereitgestellt werden können.
 
 ![Beispiel-Auswahl](images/picker.png)
 
 
-## <a name="popup-menuandroiduser-interfacecontrolspopup-menumd"></a>[Popup-Menü](~/android/user-interface/controls/popup-menu.md)
+## <a name="popup-menuandroiduser-interfacecontrolspopup-menumd"></a>[Popupmenü](~/android/user-interface/controls/popup-menu.md)
 
 `PopupMenu` Dient zum Anzeigen von Popupmenüs, die eine bestimmte Sicht zugeordnet sind.
 
 ![Beispiel-Popupmenü](images/popup-menu.png)
 
 
-## <a name="spinnerandroiduser-interfacecontrolsspinnermd"></a>[Spinner](~/android/user-interface/controls/spinner.md)
+## <a name="spinnerandroiduser-interfacecontrolsspinnermd"></a>[Drehfeld](~/android/user-interface/controls/spinner.md)
 
 `Spinner` ist ein Element der Benutzeroberfläche, die eine schnelle Möglichkeit, wählen Sie einen Wert aus einem Satz bereitstellt. Es handelt sich um Simmilar auf eine Dropdown-Liste. 
 
 ![Beispiel "Spinner"](images/spinner.png)
 
 
-## <a name="switchandroiduser-interfacecontrolsswitchmd"></a>[Switch](~/android/user-interface/controls/switch.md)
+## <a name="switchandroiduser-interfacecontrolsswitchmd"></a>[Schalter](~/android/user-interface/controls/switch.md)
 
 `Switch` ist ein Benutzeroberflächenelement, mit dem Benutzer Umschalten zwischen zwei Zuständen, z. B. unter oder deaktiviert. Die `Switch` Standardwert ist OFF.
 

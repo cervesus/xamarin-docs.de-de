@@ -1,18 +1,17 @@
 ---
 title: CoreImage
-description: "CoreImage ist ein neues Framework mit iOS 5 zum Bereitstellen von bildverarbeitungs- und live-Funktionalität der video-Erweiterung eingeführt wurden. In diesem Artikel stellt diese Funktionen mit Xamarin.iOS Beispiele."
-ms.topic: article
+description: CoreImage ist ein neues Framework mit iOS 5 zum Bereitstellen von bildverarbeitungs- und live-Funktionalität der video-Erweiterung eingeführt wurden. In diesem Artikel stellt diese Funktionen mit Xamarin.iOS Beispiele.
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: da9b9230a466c70cd584a00af848ffe87dacbc5b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0bb2c3b8b563da53e432ad16e6518ada67a4655e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="coreimage"></a>CoreImage
 

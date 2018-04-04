@@ -1,18 +1,17 @@
 ---
 title: Erstellen von Android-Diensten
-description: "Dieses Handbuch erläutert Xamarin.Android-Dienste, die Android-Komponenten sind, mit die Arbeit ohne eine aktive Benutzeroberfläche ausgeführt werden können. Dienste für Aufgaben, die im Hintergrund, wie viel Zeit Berechnungen, Herunterladen von Dateien, Wiedergeben von Musik, ausgeführt werden sehr häufig verwendet werden und so weiter. Es wird erläutert, die verschiedenen Szenarien, denen für Dienste geeignet sind und zeigt, wie sie sowohl zum Ausführen von Hintergrundaufgaben langer sowie für die Bereitstellung einer Schnittstelle für Remoteprozeduraufrufe implementieren."
-ms.topic: article
+description: Dieses Handbuch erläutert Xamarin.Android-Dienste, die Android-Komponenten sind, mit die Arbeit ohne eine aktive Benutzeroberfläche ausgeführt werden können. Dienste für Aufgaben, die im Hintergrund, wie viel Zeit Berechnungen, Herunterladen von Dateien, Wiedergeben von Musik, ausgeführt werden sehr häufig verwendet werden und so weiter. Es wird erläutert, die verschiedenen Szenarien, denen für Dienste geeignet sind und zeigt, wie sie sowohl zum Ausführen von Hintergrundaufgaben langer sowie für die Bereitstellung einer Schnittstelle für Remoteprozeduraufrufe implementieren.
 ms.prod: xamarin
 ms.assetid: BA371A59-6F7A-F62A-02FC-28253504ACC9
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/19/2018
-ms.openlocfilehash: 08392872037783e0caaef4f2b19127adbe95151b
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: 2e942d1085822fee935ae0f23f2253f23d49a43d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-android-services"></a>Erstellen von Android-Diensten
 
@@ -45,7 +44,7 @@ Es gibt vier verschiedene Typen von Android-Dienste:
 
 * **Dienst gebunden** &ndash; ein _Dienst gebunden_ ist ein Dienst, der eine andere Komponente (normalerweise eine Aktivität) gebunden ist. Eine gebundene Service bietet eine Schnittstelle, die die gebundenen Komponente und der Dienst miteinander interagieren kann. Sobald Sie nicht mehr Clients an den Dienst gebunden sind, wird Android den Dienst heruntergefahren. 
 
-* **`IntentService`** &ndash; Ein  _`IntentService`_  ist eine spezielle Unterklasse von der `Service` Klasse, die diensterstellung und Verwendung zu vereinfachen. Ein `IntentService` Verarbeitung einzelner autonome Aufrufe vorgesehen ist. Im Gegensatz zu einem Dienst gleichzeitig mehrere Aufrufe bewältigt werden kann, ein `IntentService` ist eher wie ein _Warteschlange Prozessor arbeiten_ &ndash; Arbeit wird in die Warteschlange gestellt und ein `IntentService` jeden Auftrag eine zu einem Zeitpunkt auf einem einzelnen Worker-Thread verarbeitet. In der Regel eine`IntentService` nicht an eine Aktivität oder ein Fragment gebunden ist. 
+* **`IntentService`** &ndash; Ein _`IntentService`_ ist eine spezielle Unterklasse von der `Service` Klasse, die diensterstellung und Verwendung zu vereinfachen. Ein `IntentService` Verarbeitung einzelner autonome Aufrufe vorgesehen ist. Im Gegensatz zu einem Dienst gleichzeitig mehrere Aufrufe bewältigt werden kann, ein `IntentService` ist eher wie ein _Warteschlange Prozessor arbeiten_ &ndash; Arbeit wird in die Warteschlange gestellt und ein `IntentService` jeden Auftrag eine zu einem Zeitpunkt auf einem einzelnen Worker-Thread verarbeitet. In der Regel eine`IntentService` nicht an eine Aktivität oder ein Fragment gebunden ist. 
 
 * **Gestarteter Dienst** &ndash; ein _gestarteter Dienst_ ist ein Dienst, der durch eine andere Android-Komponente (z. B. eine Aktivität) gestartet wurde und fortlaufendes wird im Hintergrund ausgeführt werden, bis ein Element explizit teilt die Dienst beenden. Im Gegensatz zu einem gebundenen Dienst muss ein gestarteten Dienst keine Clients, die direkt an diesen gebunden. Aus diesem Grund ist es wichtig, gestartete Diensten so entwerfen, dass sie ordnungsgemäß nach Bedarf neu gestartet werden können.
 

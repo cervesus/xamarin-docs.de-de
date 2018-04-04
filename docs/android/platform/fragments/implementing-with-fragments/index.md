@@ -1,18 +1,17 @@
 ---
 title: Mit Fragmenten implementieren
-description: "Fragmente, Android 3.0 eingeführt. Fragmente sind eigenständige, modulare Komponenten, mit denen die Komplexität beim Schreiben von Anwendungen, die auf Bildschirmen mit unterschiedlichen Größen ausgeführt werden können, bewältigt werden kann. Dieser Artikel führt Sie durch wie Fragmente verwenden, um Xamarin.Android Anwendungen zu entwickeln und wie Fragmente auf vorab Android 3.0-Geräten unterstützt."
-ms.topic: article
+description: Fragmente, Android 3.0 eingeführt. Fragmente sind eigenständige, modulare Komponenten, mit denen die Komplexität beim Schreiben von Anwendungen, die auf Bildschirmen mit unterschiedlichen Größen ausgeführt werden können, bewältigt werden kann. Dieser Artikel führt Sie durch wie Fragmente verwenden, um Xamarin.Android Anwendungen zu entwickeln und wie Fragmente auf vorab Android 3.0-Geräten unterstützt.
 ms.prod: xamarin
 ms.assetid: A71E9D87-CB69-10AB-CE51-357A05C76BCD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 2ed67eac51f6edcfda16caf73e4667c49124082c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 81f1f992de450ee62c4c1d2e80da858b024be594
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="implementing-with-fragments"></a>Mit Fragmenten implementieren
 

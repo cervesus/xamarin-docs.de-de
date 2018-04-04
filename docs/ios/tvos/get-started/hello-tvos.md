@@ -1,18 +1,17 @@
 ---
-title: "Hello, tvos. außerdem wurden Quick Start Guide"
-description: "Dieses Handbuch behandelt, durch die Erstellung der ersten Xamarin.tvOS-app und seine Entwicklung-toolkette. Es wird außerdem der Xamarin-Designer, die UI-Steuerelemente für Code verfügbar macht, und veranschaulicht das Erstellen, ausführen und Testen einer Anwendung Xamarin.tvOS eingeführt."
-ms.topic: article
+title: Hello, tvos. außerdem wurden Quick Start Guide
+description: Dieses Handbuch behandelt, durch die Erstellung der ersten Xamarin.tvOS-app und seine Entwicklung-toolkette. Es wird außerdem der Xamarin-Designer, die UI-Steuerelemente für Code verfügbar macht, und veranschaulicht das Erstellen, ausführen und Testen einer Anwendung Xamarin.tvOS eingeführt.
 ms.prod: xamarin
 ms.assetid: 6E0AFE58-A13B-492F-861E-D5D73EB1C4A3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: 5eccb36b3c6a437ddc1ec055e779d8f78460643e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0adf6e326dd29db15b6bd90626f424b803dc0bc9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvos. außerdem wurden Quick Start Guide
 
@@ -253,7 +252,7 @@ Müssen Sie die Xamarin-Designer für iOS verwenden, um die Benutzeroberfläche 
 
 Um erstellen Ihre Benutzeroberfläche zu starten, doppelklicken Sie nun auf die `Main.storyboard` in der Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung in der iOS-Designer zu öffnen:
 
-[![](hello-tvos-images/designer01.png "Die Main.storyboard-Datei im Projektmappen-Explorer")](hello-tvos-images/designer01.png#lightbox)
+[![](hello-tvos-images/designer01.png "Die Datei „Main.storyboard“ in Projektmappen-Explorer")](hello-tvos-images/designer01.png#lightbox)
 
 Dieser Designer starten und wie folgt aussehen:
 

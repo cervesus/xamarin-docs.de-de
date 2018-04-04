@@ -1,18 +1,17 @@
 ---
-title: "Einführung in ContentProviders"
-description: "Die Android-Betriebssystem verwendet Inhaltsanbieter, um Zugriff auf freigegebene Daten wie Mediendateien, Kontakte und Kalenderinformationen zu vereinfachen. Dieser Artikel führt die ContentProvider-Klasse und enthält zwei Beispiele für die Art der Verwendung."
-ms.topic: article
+title: Einführung in ContentProviders
+description: Die Android-Betriebssystem verwendet Inhaltsanbieter, um Zugriff auf freigegebene Daten wie Mediendateien, Kontakte und Kalenderinformationen zu vereinfachen. Dieser Artikel führt die ContentProvider-Klasse und enthält zwei Beispiele für die Art der Verwendung.
 ms.prod: xamarin
 ms.assetid: 6E1810AA-EB70-9AD0-1B32-D9418908CC97
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 53408220f1bbd3b0aa97e0c54bd8f4c09847b448
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e534c02820bfeab3a5bc1211bf0cbb20b9821af3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="intro-to-contentproviders"></a>Einführung in ContentProviders
 

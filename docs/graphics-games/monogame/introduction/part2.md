@@ -1,18 +1,17 @@
 ---
-title: "Teil 2 – Implementieren der WalkingGame"
-description: "In dieser exemplarischen Vorgehensweise veranschaulicht die Spiellogik und Inhalt in ein leeres MonoGame-Projekt zum Erstellen einer Demo von eine animierte Sprite verschieben mit Fingereingaben hinzufügen."
-ms.topic: article
+title: Teil 2 – Implementieren der WalkingGame
+description: In dieser exemplarischen Vorgehensweise veranschaulicht die Spiellogik und Inhalt in ein leeres MonoGame-Projekt zum Erstellen einer Demo von eine animierte Sprite verschieben mit Fingereingaben hinzufügen.
 ms.prod: xamarin
 ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 2bc8f5448e249a801edfc88726f3dfb5d24b158d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 89f5148dacfb229750839e4554199f78c8d15126
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>Teil 2 – Implementieren der WalkingGame
 

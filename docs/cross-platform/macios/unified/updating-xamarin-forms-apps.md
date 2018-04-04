@@ -1,18 +1,17 @@
 ---
 title: Aktualisieren von vorhandenen Xamarin.Forms-Apps
-description: "Führen Sie diese Schritte zum Aktualisieren einer vorhandenen Xamarin.Forms-app die einheitliche API, und aktualisieren Sie auf Version 1.3.1"
-ms.topic: article
+description: Führen Sie diese Schritte zum Aktualisieren einer vorhandenen Xamarin.Forms-app die einheitliche API, und aktualisieren Sie auf Version 1.3.1
 ms.prod: xamarin
 ms.assetid: C2F0D1D1-256D-44A4-AAC9-B06A0CB41E70
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: d2f14510e5968ebe24bd297365416fa8aa5a0c59
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 49614dddf05d692d94d28b29729e7b2038be31e7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>Aktualisieren von vorhandenen Xamarin.Forms-Apps
 
@@ -47,7 +46,7 @@ Bei der Migration erfordert ein Upgrade Xamarin.Forms auf Version 1.3, die die e
 
 ### <a name="migration-tool"></a>Migrationstool
 
-Klicken Sie auf das iOS-Projekt so, dass es aktiviert ist, wählen Sie dann **Projekt > Migrate to Xamarin.iOS einheitliche API... ** und akzeptieren Sie die Warnmeldung, die angezeigt wird.
+Klicken Sie auf das iOS-Projekt so, dass es aktiviert ist, wählen Sie dann **Projekt > Migrate to Xamarin.iOS einheitliche API...**  und akzeptieren Sie die Warnmeldung, die angezeigt wird.
 
 ![](updating-xamarin-forms-apps-images/beta-tool1.png "Wählen Sie Projekt > Migrieren nach Xamarin.iOS einheitliche API..., und akzeptieren Sie die Warnmeldung, die angezeigt wird")
 
@@ -80,7 +79,7 @@ Aktualisieren Sie Xamarin.Forms auf 1.3.1 Vorabversion mithilfe des NuGet-Paket-
 **Hinweis:** Xamarin.Forms Version 1.3.1 befindet sich derzeit im *Vorabversion*. Dies bedeutet, Sie müssen auswählen, die **Vorabversion** option NuGet über (ein Tick-Feld in Visual Studio für Mac) oder einer Drop-Dropdownliste in Visual Studio auf die neueste Version der Vorabversion finden Sie unter.
 
 > [!IMPORTANT]
-> Wenn Sie Visual Studio verwenden, stellen Sie sicher, dass die neueste Version des NuGet-Paket-Manager installiert ist. Ältere Versionen von NuGet in Visual Studio werden die einheitliche Version des Xamarin.Forms 1.3.1 nicht korrekt installieren. Wechseln Sie zu **Tools > Erweiterungen und Updates... ** , und klicken Sie auf die **installiert** Liste überprüfen, ob die **NuGet-Paket-Manager für Visual Studio** ist mindestens Version 2.8.5. Wenn sie älter ist, klicken Sie auf die **Updates** Liste aus, um die neueste Version herunterzuladen.
+> Wenn Sie Visual Studio verwenden, stellen Sie sicher, dass die neueste Version des NuGet-Paket-Manager installiert ist. Ältere Versionen von NuGet in Visual Studio werden die einheitliche Version des Xamarin.Forms 1.3.1 nicht korrekt installieren. Wechseln Sie zu **Tools > Erweiterungen und Updates...**  , und klicken Sie auf die **installiert** Liste überprüfen, ob die **NuGet-Paket-Manager für Visual Studio** ist mindestens Version 2.8.5. Wenn sie älter ist, klicken Sie auf die **Updates** Liste aus, um die neueste Version herunterzuladen.
 
 Nachdem Sie das NuGet-Paket in Xamarin.Forms 1.3.1 aktualisiert haben, nehmen Sie die folgenden Änderungen in jedem Projekt so aktualisieren Sie auf die neue `Xamarin.Forms.Application` Klasse.
 

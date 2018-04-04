@@ -1,17 +1,17 @@
 ---
 title: Hinweise zur Fehlerbehebung
-ms.topic: article
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 56137ACA-4811-B312-6860-E16D0FA123F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/15/2018
-ms.openlocfilehash: 015fff63c612c3acf29681b90c1e945c5e460034
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 961f9f38687790343f225d95c74e00e98f594c28
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting-tips"></a>Hinweise zur Fehlerbehebung
 
@@ -200,7 +200,7 @@ Es gibt vier Nachrichten folgen:
 -  Globale schwache verweisen Zerstörung: Dies sind Zeilen, die mit beginnt *-w-* .
 
 
-In allen Nachrichten die *Grefc* Wert ist die Anzahl der globalen Verweise, die Xamarin.Android erstellt, während die *Grefwc* Wert ist die Anzahl der schwachen globalen Verweise, die Xamarin.Android erstellt hat. Die *behandeln* oder *Obj-Handle* Wert ist der Handlewert JNI und die Zeichen nach der "  */* " ist der Typ der Handlewert:   */l* für den lokalen Verweis */g* für globale Verweise und */w* für schwache globalen Verweise.
+In allen Nachrichten die *Grefc* Wert ist die Anzahl der globalen Verweise, die Xamarin.Android erstellt, während die *Grefwc* Wert ist die Anzahl der schwachen globalen Verweise, die Xamarin.Android erstellt hat. Die *behandeln* oder *Obj-Handle* Wert ist der Handlewert JNI und die Zeichen nach der " */*" ist der Typ der Handlewert:   */l* für den lokalen Verweis */g* für globale Verweise und */w* für schwache globalen Verweise.
 
 Im Rahmen des Prozesses GC globalen Verweise vorhanden sind (+ g +) werden in konvertiert schwache globalen Verweise (verursacht eine + w + und -g-), eine Java-Seite-GC wird ausgeschlossen, und der schwache Verweis für die globale wird dann überprüft, um festzustellen, ob diese gesammelt wurden. Wenn sie noch aktiv ist, wird eine neue Gref erstellt, um schwache Ref (+ g +, -w-), andernfalls der schwache Ref zerstört wird (-w).
 
@@ -270,7 +270,7 @@ Dies sollten Sie einsatzbereit abrufen. Wenn weiterhin Probleme bestehen, sollte
 
 ## <a name="receiving-activation-incomplete-error-message"></a>Empfangen von "Aktivierung unvollständige Fehlermeldung
 
-Dieses Problem kann auftreten, wenn Xamarin.Android für Visual Studio verwenden. Um dieses Problem zu beheben, senden Sie die Protokolle aus den folgenden Ort hinzu  *contact@xamarin.com* .
+Dieses Problem kann auftreten, wenn Xamarin.Android für Visual Studio verwenden. Um dieses Problem zu beheben, senden Sie die Protokolle aus den folgenden Ort hinzu *contact@xamarin.com*.
 
 -  Protokollspeicherort: **%LocalAppData%\\Xamarin\\Protokolle**
 
@@ -301,7 +301,7 @@ Um dies zu erreichen, suchen Sie der Plattform Ihrer Wahl unter und führen Sie 
 5. Geben Sie Ihre Anmeldeinformationen
 6. Nach Updates suchen
 
-Wenn diese Fehlermeldung angezeigt weiterhin, e-Mail-  **contact@xamarin.com** .
+Wenn diese Fehlermeldung angezeigt weiterhin, e-Mail- **contact@xamarin.com**.
 
 
 

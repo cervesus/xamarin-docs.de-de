@@ -1,18 +1,17 @@
 ---
-title: "Einführung in Android Abnutzung"
-description: "Mit der Einführung von Google Android Dach sind Sie nicht mehr auf nur-Telefone und Tablets beschränkt, .NET-Sprachen, wenn es um hervorragende Android-apps entwickeln. Der Xamarin.Android-Unterstützung für Android Dach ermöglicht Sie C#-Code auf Ihrem Handgelenk ausführen! Diese Einführung bietet eine grundlegende Übersicht über Android Dach, beschreibt ihre wichtigsten Funktionen und bietet eine Übersicht über die Features, die in Android Dach 2.0 verfügbar sind. Es werden einige der gängigeren Dach Android-Geräte aufgeführt, und bietet Links zu den wesentlichen Google Android Dach Dokumentation weitere Informationen."
-ms.topic: article
+title: Einführung in Android Abnutzung
+description: Mit der Einführung von Google Android Dach sind Sie nicht mehr auf nur-Telefone und Tablets beschränkt, .NET-Sprachen, wenn es um hervorragende Android-apps entwickeln. Der Xamarin.Android-Unterstützung für Android Dach ermöglicht Sie C#-Code auf Ihrem Handgelenk ausführen! Diese Einführung bietet eine grundlegende Übersicht über Android Dach, beschreibt ihre wichtigsten Funktionen und bietet eine Übersicht über die Features, die in Android Dach 2.0 verfügbar sind. Es werden einige der gängigeren Dach Android-Geräte aufgeführt, und bietet Links zu den wesentlichen Google Android Dach Dokumentation weitere Informationen.
 ms.prod: xamarin
 ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 4f6cfe61b5f91fb6703fdcdd20513ce6bc2dc161
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0ab166bb71c23d456cb70d35a2794717110642fd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-android-wear"></a>Einführung in Android Abnutzung
 

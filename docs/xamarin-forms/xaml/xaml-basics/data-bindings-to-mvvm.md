@@ -1,18 +1,17 @@
 ---
 title: Teil 5. Aus Datenbindungen zu MVVM
-description: "Das Model-View-ViewModel (MVVM)-Architekturschema wurde durch XAML Bedenken erfunden. Das Muster erzwingt eine Trennung zwischen den drei Softwareebenen – der Verwendung von XAML-Benutzeroberfläche wird aufgerufen, die Ansicht befindet die zugrunde liegenden Daten des Modells aufgerufen; und ein Vermittler zwischen der Ansicht und das Modell als ViewModel bezeichnet. Die Ansicht und das ViewModel sind häufig über datenbindungen, die in der XAML-Datei definierten verbunden. BindingContext für die Sicht ist in der Regel eine Instanz des ViewModel."
-ms.topic: article
+description: Das Model-View-ViewModel (MVVM)-Architekturschema wurde durch XAML Bedenken erfunden. Das Muster erzwingt eine Trennung zwischen den drei Softwareebenen – der Verwendung von XAML-Benutzeroberfläche wird aufgerufen, die Ansicht befindet die zugrunde liegenden Daten des Modells aufgerufen; und ein Vermittler zwischen der Ansicht und das Modell als ViewModel bezeichnet. Die Ansicht und das ViewModel sind häufig über datenbindungen, die in der XAML-Datei definierten verbunden. BindingContext für die Sicht ist in der Regel eine Instanz des ViewModel.
 ms.prod: xamarin
 ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 207bf7649d588f973b400cb452d9d8b246955cdb
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 95cd79a4bd6da47757cfeb12a2862ccb5a66fee2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Teil 5. Aus Datenbindungen zu MVVM
 

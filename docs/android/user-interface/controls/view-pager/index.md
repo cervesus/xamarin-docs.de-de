@@ -1,18 +1,17 @@
 ---
 title: ViewPager
-description: "ViewPager handelt es sich um ein Layout-Manager, der gestural Navigation implementiert werden kann. Gestural Navigation kann der Benutzer streichen Sie nach links und rechts zum schrittweisen Durchlaufen von Datenseiten. Dieses Handbuch erläutert, wie gestural ViewPager, Navigation mit und ohne Fragmente implementiert. Außerdem wird zum Hinzufügen von Seite Indikatoren mit PagerTitleStrip und PagerTabStrip beschrieben."
-ms.topic: article
+description: ViewPager handelt es sich um ein Layout-Manager, der gestural Navigation implementiert werden kann. Gestural Navigation kann der Benutzer streichen Sie nach links und rechts zum schrittweisen Durchlaufen von Datenseiten. Dieses Handbuch erläutert, wie gestural ViewPager, Navigation mit und ohne Fragmente implementiert. Außerdem wird zum Hinzufügen von Seite Indikatoren mit PagerTitleStrip und PagerTabStrip beschrieben.
 ms.prod: xamarin
 ms.assetid: D42896C0-DE7C-4818-B171-CB2D5E5DD46A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 5e2f93eea970a15df03b00cc962ca7482624973d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bd687175048bb6a19dde21e66619667511a76796
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="viewpager"></a>ViewPager
 

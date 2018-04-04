@@ -1,18 +1,17 @@
 ---
 title: Pushbenachrichtigungen in iOS
-description: "Dieser Abschnitt befasst sich mit Pushbenachrichtigungen in iOS. Apple Push Notifications Gateway Service und die Rolle, die Wiedergabe in die publishing Benachrichtigungen an iOS-Anwendungen eingeführt. Es wird erläutert, wie die Sicherheitszertifikate erstellen, die notwendig sind, um Pushbenachrichtigungen zu aktivieren und zu besprechen. In diesem Abschnitt werden schließlich Teil der ordnungsaufgaben erläutert, die Anwendungsserver, zum Nachverfolgen der Clients für mobile Geräte ausführen müssen."
-ms.topic: article
+description: Dieser Abschnitt befasst sich mit Pushbenachrichtigungen in iOS. Apple Push Notifications Gateway Service und die Rolle, die Wiedergabe in die publishing Benachrichtigungen an iOS-Anwendungen eingeführt. Es wird erläutert, wie die Sicherheitszertifikate erstellen, die notwendig sind, um Pushbenachrichtigungen zu aktivieren und zu besprechen. In diesem Abschnitt werden schließlich Teil der ordnungsaufgaben erläutert, die Anwendungsserver, zum Nachverfolgen der Clients für mobile Geräte ausführen müssen.
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 3af74fb9d93e22e361f2e3db00961d7955eda689
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 3a86ce5e61576faec41b5fcddf899d731d2cc57a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="push-notifications-in-ios"></a>Pushbenachrichtigungen in iOS
 
@@ -51,7 +50,7 @@ Einem eigenen Zertifikat ist für die Umgebungen, die im vorherigen Abschnitt er
 
     [![](remote-notifications-in-ios-images/image6new.png "Navigieren Sie zum Abschnitt App-IDs und erstellen Sie eine neue app-ID")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
-3.  Wenn Sie beim Klicken auf die  **+**  Schaltfläche, Sie werden in der Lage, geben die Beschreibung und eine Paket-ID für die app-ID, wie in der nächste Screenshot dargestellt:
+3.  Wenn Sie beim Klicken auf die **+** Schaltfläche, Sie werden in der Lage, geben die Beschreibung und eine Paket-ID für die app-ID, wie in der nächste Screenshot dargestellt:
 
     [![](remote-notifications-in-ios-images/image7new.png "Geben Sie die Beschreibung und eine Paket-ID für die app-ID")](remote-notifications-in-ios-images/image7new.png#lightbox)
 

@@ -1,18 +1,18 @@
 ---
 title: WatchOS Problembehandlung
 description: Bekannte Probleme und problemumgehungen bei der Verwendung Entwicklungsprobleme WatchOS.
-ms.topic: article
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4a6b916f991b337d8a28764f1482ddd837bad460
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 6e7a7dd09d65b88831136662d8718886aaf483c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="watchos-troubleshooting"></a>WatchOS Problembehandlung
 
@@ -35,7 +35,7 @@ Diese Seite enthält zusätzliche Informationen und problemumgehungen für Featu
 <a name="deploy" />
 
 - Frühere Versionen von Visual Studio für Mac ist es falsch werden eines der der der **AppleCompanionSettings** Symbole als 88 x 88 Pixel; vortäuschen eine **Symbol Fehler fehlt** Wenn Sie versuchen, auf die App senden Speicher.
-    Dieses Symbol muss 87 x 87 Pixel (29 Einheiten für  **@3x**  Retina Bildschirme). Sie können nicht in Visual Studio für Mac - entweder bearbeiten-Standardimage-Medienobjekt in Xcode beheben oder manuell bearbeiten, die **Contents.json** Datei (entsprechend [in diesem Beispiel](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
+    Dieses Symbol muss 87 x 87 Pixel (29 Einheiten für **@3x** Retina Bildschirme). Sie können nicht in Visual Studio für Mac - entweder bearbeiten-Standardimage-Medienobjekt in Xcode beheben oder manuell bearbeiten, die **Contents.json** Datei (entsprechend [in diesem Beispiel](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
 
 - Wenn das Überwachungsfenster-Erweiterungsprojekt **"Info.plist" > WKApp Paket-ID** ist nicht [richtig festgelegt](~/ios/watchos/get-started/project-references.md) Watch-App entsprechend **Paket-ID**, der Debugger die Verbindung nicht und visuelle Studio für Mac mit der Nachricht warten *"Warte Debugger eine Verbindung herstellen"*.
 

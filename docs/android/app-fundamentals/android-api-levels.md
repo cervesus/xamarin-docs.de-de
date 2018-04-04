@@ -1,18 +1,17 @@
 ---
 title: Grundlegendes zu Android-API-Ebenen
-description: "Xamarin.Android hat mehrere Servicelevel Android-API-Einstellungen, die Ihre app-Kompatibilität mit mehreren Versionen von Android zu bestimmen. Dieses Handbuch erklärt, was bedeutet, dass diese Einstellungen, deren Konfiguration und welche Auswirkung auf Ihre app zur Laufzeit aufweisen."
-ms.topic: article
+description: Xamarin.Android hat mehrere Servicelevel Android-API-Einstellungen, die Ihre app-Kompatibilität mit mehreren Versionen von Android zu bestimmen. Dieses Handbuch erklärt, was bedeutet, dass diese Einstellungen, deren Konfiguration und welche Auswirkung auf Ihre app zur Laufzeit aufweisen.
 ms.prod: xamarin
 ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 907af0948e9d081f05cc201c49f94629a513c935
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8f284fefd260764c6f09d78d2518bfd115782cd2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="understanding-android-api-levels"></a>Grundlegendes zu Android-API-Ebenen
 

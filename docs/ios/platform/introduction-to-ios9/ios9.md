@@ -1,17 +1,16 @@
 ---
-title: "iOS 9 Kompatibilität"
-description: "Auch wenn Sie nicht sofort iOS 9-Funktionen zu Ihrer app hinzufügen möchten, sollten Sie Ihre apps mit der neuesten Version von Xamarin neu erstellen."
-ms.topic: article
+title: iOS 9 Kompatibilität
+description: Auch wenn Sie nicht sofort iOS 9-Funktionen zu Ihrer app hinzufügen möchten, sollten Sie Ihre apps mit der neuesten Version von Xamarin neu erstellen.
 ms.prod: xamarin
 ms.assetid: 69A05B0E-8A0A-489F-8165-B10AC46FAF3C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 3f52ef88224e65f12502c9fbf82e240233890a82
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: b7cbec3f064e6000f991fb0f9ce256415f6ce5dd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 Kompatibilität
 

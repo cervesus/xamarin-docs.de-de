@@ -1,18 +1,17 @@
 ---
 title: Binden die Problembehandlung
-description: "Dieses Handbuch beschreibt, was zu tun, wenn Sie Probleme, die eine Bibliothek für Objective-C-Bindung haben."
-ms.topic: article
+description: Dieses Handbuch beschreibt, was zu tun, wenn Sie Probleme, die eine Bibliothek für Objective-C-Bindung haben.
 ms.prod: xamarin
 ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/19/2016
-ms.openlocfilehash: 2db7fe30f05224f6b74b4d2189606da59946bda0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7ea3e3802ec2e0baf0fe8355a41e806bacabc9ac
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-troubleshooting"></a>Binden die Problembehandlung
 
@@ -45,15 +44,15 @@ Wenn Sie ein Fall auftreten, übergeben `null` löst ein `ArgumentNullException`
 
 Ihr Feedback ist uns wichtig. Wenn Sie Probleme bei Xamarin.Mac finden:
 
-- Überprüfen Sie die [Xamarin.Mac-Foren](https://forums.xamarin.com/categories/mac)
-- Suchen der [Problem Repository](https://github.com/xamarin/xamarin-macios/issues) 
-- Vor dem Umschalten zur GitHub-Probleme, Xamarin-Probleme nachverfolgt wurden, auf [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi). Suchen Sie es für den Abgleich von Problemen.
-- Wenn Sie ein übereinstimmendes Problem finden können, bitte-Datei ein neues Problem in der [GitHub-Problem-Repository](https://github.com/xamarin/xamarin-macios/issues/new).
+- Überprüfen Sie die [Xamarin.Mac-Foren](https://forums.xamarin.com/categories/mac).
+- Durchsuchen Sie das [Repository „Issues“](https://github.com/xamarin/xamarin-macios/issues). 
+- Vor der Umstellung auf das GitHub-Repository „Issues“ wurden Xamarin-Probleme auf [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) nachverfolgt. Suchen Sie dort nach übereinstimmenden Problemen.
+- Wenn Sie kein übereinstimmendes Problem finden können, melden Sie ein neues Problem im [GitHub-Repository „Issues“](https://github.com/xamarin/xamarin-macios/issues/new).
 
-GitHub-Probleme sind alle öffentlichen. Es ist nicht möglich, Kommentare oder Anlagen ausgeblendet. 
+GitHub-Issues sind allesamt öffentlich. Es ist nicht möglich, Kommentare oder Anlagen auszublenden. 
 
-Geben Sie auch so viel wie möglich Folgendes:
+Fügen Sie möglichst viele der folgenden Informationen hinzu:
 
-- Ein einfaches Beispiel, das Problem zu reproduzieren. Dies ist **liveschaltung** möglichst. 
-- Die vollständige stapelüberwachung des Absturzes.
-- Der C#-Code, der den Absturz umgibt. 
+- Ein einfaches Beispiel, um das Problem zu reproduzieren. Dies ist von **sehr großem Nutzen**, sofern möglich. 
+- Die vollständige Stapelüberwachung des Absturzes.
+- Den C#-Code, der den Absturz umgibt. 

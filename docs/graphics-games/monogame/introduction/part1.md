@@ -1,18 +1,17 @@
 ---
-title: "Teil 1 – erstellen eine plattformübergreifende MonoGame"
-description: "In dieser exemplarischen Vorgehensweise wird das Erstellen eines neuen Projekts für IOS- und Android mithilfe von MonoGame veranschaulicht. Das Ergebnis ist eine Visual Studio für Mac-Lösung mit einem Projekt mit freigegebenem plattformübergreifende-Code als auch ein Projekt für jede Plattform. Dieses Projekt wird einen leeren blauen Bildschirm bei der Ausführung angezeigt."
-ms.topic: article
+title: Teil 1 – erstellen eine plattformübergreifende MonoGame
+description: In dieser exemplarischen Vorgehensweise wird das Erstellen eines neuen Projekts für IOS- und Android mithilfe von MonoGame veranschaulicht. Das Ergebnis ist eine Visual Studio für Mac-Lösung mit einem Projekt mit freigegebenem plattformübergreifende-Code als auch ein Projekt für jede Plattform. Dieses Projekt wird einen leeren blauen Bildschirm bei der Ausführung angezeigt.
 ms.prod: xamarin
 ms.assetid: FC69E69B-04D4-45DF-9BBF-2A6CDEAD9B2F
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 0d1352b4129dc1cf8be42e813787b9b73f80cd3e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0cd12f23f8cb269b2a41a08bf641db08e18fb82b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-1--creating-a-cross-platform-monogame"></a>Teil 1 – erstellen eine plattformübergreifende MonoGame
 

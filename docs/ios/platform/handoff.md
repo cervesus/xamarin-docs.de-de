@@ -1,17 +1,16 @@
 ---
-title: "Übergabe"
-description: "In diesem Artikel deckt arbeiten mit Übergabe in einem Xamarin.iOS-app zu übertragenden Benutzeraktivitäten zwischen apps, die für den Benutzer ausgeführt's anderer Geräte."
-ms.topic: article
+title: Übergabe
+description: In diesem Artikel deckt arbeiten mit Übergabe in einem Xamarin.iOS-app zu übertragenden Benutzeraktivitäten zwischen apps, die für den Benutzer ausgeführt's anderer Geräte.
 ms.prod: xamarin
 ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 25220f37433037b55f13c4de5a07c0c09173a269
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bb665c7ffd4241fac14be13ebd8f113d11afd417
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="handoff"></a>Übergabe
 
@@ -463,7 +462,7 @@ Diese JSON-Datei enthält ein Wörterbuch, das eine Liste von app-IDs in der For
 }
 ```
 
-Zum Signieren der JSON-Datei (so, dass sie den richtigen `Content-Type` von `application/pkcs7-mime`), verwenden Sie die **Terminaldienste** app und eine `openssl` Befehl mit einem Zertifikat und Schlüssel, die von einer Zertifizierungsstelle als vertrauenswürdig iOS ausgegeben (finden Sie unter [ http://support.Apple.com/kb/ht5012](http://support.apple.com/kb/ht5012) eine Liste). Zum Beispiel:
+Zum Signieren der JSON-Datei (so, dass sie den richtigen `Content-Type` von `application/pkcs7-mime`), verwenden Sie die **Terminaldienste** app und eine `openssl` Befehl mit einem Zertifikat und Schlüssel, die von einer Zertifizierungsstelle als vertrauenswürdig iOS ausgegeben (finden Sie unter [ http://support.apple.com/kb/ht5012 ](http://support.apple.com/kb/ht5012) eine Liste). Zum Beispiel:
 
 ```csharp
 echo '{"activitycontinuation":{"apps":["YWBN8XTPBJ.com.company.FirstApp",

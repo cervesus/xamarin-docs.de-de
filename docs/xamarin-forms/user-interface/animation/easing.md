@@ -1,18 +1,17 @@
 ---
 title: Beschleunigungsfunktionen
-description: "Xamarin.Forms umfasst eine Beschleunigung-Klasse, die Ihnen die Angabe eine Übertragungsfunktion, die steuert, wie Animationen beschleunigen oder verlangsamen Sie, wie sie ausgeführt werden, kann. In diesem Artikel wird veranschaulicht, wie die vordefinierten Beschleunigungsfunktionen verwendet und wie benutzerdefinierte Beschleunigungsfunktionen erstellen."
-ms.topic: article
+description: Xamarin.Forms umfasst eine Beschleunigung-Klasse, die Ihnen die Angabe eine Übertragungsfunktion, die steuert, wie Animationen beschleunigen oder verlangsamen Sie, wie sie ausgeführt werden, kann. In diesem Artikel wird veranschaulicht, wie die vordefinierten Beschleunigungsfunktionen verwendet und wie benutzerdefinierte Beschleunigungsfunktionen erstellen.
 ms.prod: xamarin
 ms.assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: a57fd6e45d744d0e527c811649ce5299ebcd34d5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e9171b885bdf5958b6969719301a1d7dad51d95b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="easing-functions"></a>Beschleunigungsfunktionen
 
@@ -109,7 +108,7 @@ In diesem Artikel wird veranschaulicht, wie die vordefinierten Beschleunigungsfu
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Übersicht über die asynchrone Unterstützung](~/cross-platform/platform/async.md)
+- [Async Support Overview (Übersicht über die asynchrone Unterstützung)](~/cross-platform/platform/async.md)
 - [Beschleunigungsfunktionen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/easing/)
 - [Einfachere](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/)
 - [ViewExtensions](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/)

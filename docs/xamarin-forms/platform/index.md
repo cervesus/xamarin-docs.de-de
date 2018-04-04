@@ -1,20 +1,19 @@
 ---
-title: Plattformfunktionen
+title: Plattformfeatures
 description: Clientplattform-spezifische Funktionen mit Xamarin.Forms nutzen
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/20/2017
-ms.openlocfilehash: 950cc4a8611b05c22825ef89a85827fa0d3e5f7b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 454969d8a59128423d632452033b8ba84ee0bc98
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
-# <a name="platform-features"></a>Plattformfunktionen
+# <a name="platform-features"></a>Plattformfeatures
 
 Xamarin.Forms ist erweiterbar und können Sie Sie integrieren Clientplattform-spezifische Funktionen, die mit [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md), [benutzerdefinierten Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md), [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md), die [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md), und vieles mehr.
 
@@ -22,7 +21,7 @@ Xamarin.Forms ist erweiterbar und können Sie Sie integrieren Clientplattform-sp
 
 Dieses Handbuch beschreibt die Material Entwurf zu implementieren, indem vorhandene Xamarin.Forms Android-apps aktualisieren.
 
-## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[Indizieren Sie die Anwendung und Deep Links](deep-linking.md)
+## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[Anwendungsindizierung und Deep Linking](deep-linking.md)
 
 Indizieren Sie die Anwendung ermöglicht Anwendungen, die andernfalls vergessen würde, nachdem ein Paar wird verwendet, um die relevanten bleiben, indem Sie in den Suchergebnissen angezeigt wird. Deep Links ermöglicht Anwendungen, die auf ein Suchergebnis reagieren, die Anwendungsdaten, in der Regel durch Navigieren zu einer Seite aus dem deep-Link enthält.
 
@@ -38,11 +37,11 @@ Einige iOS Styling ausgeführt werden kann, über **"Info.plist"** und `UIAppear
 
 Xamarin.Forms verfügt jetzt über Preview-Unterstützung für Mac OS-apps.
 
-## <a name="native-formsnative-formsmd"></a>[Systemeigene Formulare](native-forms.md)
+## <a name="native-formsnative-formsmd"></a>[Native Formulare](native-forms.md)
 
 Systemeigene Forms zulassen Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-abgeleitete Seiten von systemeigene universelle Windows-Plattform (UWP), Xamarin.iOS und Xamarin.Android Projekte verwendet wird.
 
-## <a name="native-viewsnative-viewsindexmd"></a>[Systemeigene Ansichten](native-views/index.md)
+## <a name="native-viewsnative-viewsindexmd"></a>[Native Ansichten](native-views/index.md)
 
 Systemeigene Ansichten von iOS, Android und universellen Windows-Plattform können direkt von Xamarin.Forms verwiesen werden. Eigenschaften und Ereignishandler für systemeigene Sichten festgelegt werden können, und sie können mit Xamarin.Forms Sichten interagieren.
 
@@ -50,7 +49,7 @@ Systemeigene Ansichten von iOS, Android und universellen Windows-Plattform könn
 
 Plattform Einzelheiten können Sie Funktionen zu nutzen, die nur auf eine bestimmte Plattform verfügbar ist ohne benutzerdefinierten Renderer oder Auswirkungen.
 
-## <a name="pluginspluginsmd"></a>[-Plug-Ins](plugins.md)
+## <a name="pluginspluginsmd"></a>[Plug-Ins](plugins.md)
 
 Stehen eine Vielzahl von Open-Source-Plug-ins auf Github, Nuget sowie der Komponentenspeicher Xamarin, um Xamarin.Forms-apps zu erweitern.
 

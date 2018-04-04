@@ -1,18 +1,17 @@
 ---
 title: Xamarin Workbooks
-description: "Xamarin-Arbeitsmappen bieten eine Mischung verschiedener Dokumentation und Code, der perfekt für Experimente, ist, lernen, und das Erstellen von Führungslinien und unterstützt die Internetsuche durcharbeiten."
-ms.topic: article
+description: Xamarin-Arbeitsmappen bieten eine Mischung verschiedener Dokumentation und Code, der perfekt für Experimente, ist, lernen, und das Erstellen von Führungslinien und unterstützt die Internetsuche durcharbeiten.
 ms.prod: xamarin
 ms.assetid: 04275482-0488-4F1C-8808-D03A8E21BE62
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: 04d6110ea9d0f2c10cf0c3d17182cd06b88e7708
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: bae0fcc5b82a2833e39d078693555634d160ffb9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarin-workbooks"></a>Xamarin Workbooks
 

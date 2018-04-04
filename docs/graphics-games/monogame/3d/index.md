@@ -1,18 +1,17 @@
 ---
-title: "Einführung in 3D-Grafiken mit MonoGame"
-description: "MonoGame bietet eine flexible und effiziente API für die Anzeige von 3D-Grafiken in Echtzeit. Es umfasst auf höherer Ebene Konstrukte für das Rendering und auch der Zugriff auf Grafikressourcen auf niedrigerer Ebene."
-ms.topic: article
+title: Einführung in 3D-Grafiken mit MonoGame
+description: MonoGame bietet eine flexible und effiziente API für die Anzeige von 3D-Grafiken in Echtzeit. Es umfasst auf höherer Ebene Konstrukte für das Rendering und auch der Zugriff auf Grafikressourcen auf niedrigerer Ebene.
 ms.prod: xamarin
 ms.assetid: 8706826E-8BA5-4E00-A7D6-4072626E3292
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 3aec62d1b6c0963094aeade685906822127b1dbd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 59aab811a51517d052902b40cb9e43a7cda6d654
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-3d-graphics-with-monogame"></a>Einführung in 3D-Grafiken mit MonoGame
 

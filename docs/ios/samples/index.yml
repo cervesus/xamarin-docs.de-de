@@ -2,18 +2,18 @@
 documentType: LandingData
 title: Xamarin.iOS-Beispiele
 metadata:
-  description: "Plattformübergreifende Xamarin.iOS-Beispiel-Apps für mobile Entwickler."
+  description: Plattformübergreifende Xamarin.iOS-Beispiel-Apps für mobile Entwickler.
   author: conceptdev
   ms.author: crdun
   ms.date: 02/17/2018
-  ms.topic: article
-  ms.openlocfilehash: b0c3efa12cbeb045104b2ce823cbf57cd1f56f75
-  ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+  ms.topic: sample
+  ms.openlocfilehash: 9a22147adbcd59fe7168af8e717d065d6d27b85e
+  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 03/12/2018
+  ms.lasthandoff: 04/04/2018
 abstract:
-  description: "Xamarin.iOS-Beispiel-Apps und -Codedemos für die ersten Schritte beim Erstellen mobiler Apps mit C# und Xamarin."
+  description: Xamarin.iOS-Beispiel-Apps und -Codedemos für die ersten Schritte beim Erstellen mobiler Apps mit C# und Xamarin.
   menu:
     items:
     - href: https://developer.xamarin.com/samples/ios/all/
@@ -26,7 +26,7 @@ sections:
     className: cardsW
     items:
     - href: https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/
-      html: "ARKit Augmented Reality-Demo zum Platzieren von Objekten auf erkannten Oberflächen."
+      html: ARKit Augmented Reality-Demo zum Platzieren von Objekten auf erkannten Oberflächen.
       image:
         src: images/arkit.png
         href: https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/
@@ -50,7 +50,7 @@ sections:
         href: https://developer.xamarin.com/samples/monotouch/ios9/QuickContacts/
       title: QuickContacts
     - href: https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/
-      html: "UI-Steuerelementsuite, die in watchOS verfügbar ist."
+      html: UI-Steuerelementsuite, die in watchOS verfügbar ist.
       image:
         src: images/watchos.png
         href: https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/

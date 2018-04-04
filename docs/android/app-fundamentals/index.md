@@ -1,18 +1,17 @@
 ---
 title: Application Fundamentals (Anwendungsgrundlagen)
-description: "Kernkonzepte für die Anwendung"
-ms.topic: article
+description: Kernkonzepte für die Anwendung
 ms.prod: xamarin
 ms.assetid: 935B8BFE-23B7-4239-5C87-F4A503B889CB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 4abb8c823c62bc62fd2e6f717cc1b5bde9057e4e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cfb31fa6cac7c4848054cd58a1e144c2ac944262
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="application-fundamentals"></a>Application Fundamentals (Anwendungsgrundlagen)
 
@@ -35,7 +34,7 @@ Dieser Artikel führt das Konzept von Android-Ressourcen in Xamarin.Android und 
 
 
 
-##  <a name="activity-lifecycleandroidapp-fundamentalsactivity-lifecycleindexmd"></a>[Aktivitätenlebenszyklus](~/android/app-fundamentals/activity-lifecycle/index.md)
+##  <a name="activity-lifecycleandroidapp-fundamentalsactivity-lifecycleindexmd"></a>[Aktivitätslebenszyklus](~/android/app-fundamentals/activity-lifecycle/index.md)
 
 Aktivitäten sind ein wichtiger Baustein von Android-Anwendungen und sie können in einer Reihe von unterschiedlichen Zuständen annehmen. Der Aktivitätenlebenszyklus beginnt mit Instanziierung und endet mit Zerstörung und viele Status in der Zwischenzeit enthält. Bei einer statusänderung von eine Aktivität wird die entsprechende Lifecycle Ereignismethode aufgerufen, die Aktivität der bevorstehenden statusänderung zu benachrichtigen und zum Ausführen von Code Anpassung an diese Änderung ermöglicht. In diesem Artikel untersucht den Lebenszyklus von Aktivitäten und erläutert, die dafür verantwortlich, dass eine Aktivität bei jedem dieser Zustand Änderungen als Teil einer Anwendung gut konzipierte, zuverlässige verfügt.
 
@@ -47,7 +46,7 @@ In diesem Artikel erläutert, wie eine Xamarin.Android durch Übersetzen von Zei
 
 Dieser Artikel behandelt die Android-Dienste, die Android-Komponenten sind, mit die Arbeit im Hintergrund ausgeführt werden können. Es wird erläutert, die verschiedenen Szenarien, denen für Dienste geeignet sind und gezeigt, wie deren Implementierung sowohl für lang andauernde Hintergrundaufgaben sowie auf eine Schnittstelle für Remoteprozeduraufrufe bereitzustellen.
 
-## <a name="broadcast-receiversandroidapp-fundamentalsbroadcast-receiversmd"></a>[Empfänger senden](~/android/app-fundamentals/broadcast-receivers.md)
+## <a name="broadcast-receiversandroidapp-fundamentalsbroadcast-receiversmd"></a>[Broadcast Receiver](~/android/app-fundamentals/broadcast-receivers.md)
 
 Diese Anleitung enthält Informationen zum Erstellen und Verwenden von broadcast Empfänger eine Android-Komponente, die auf eine systemweite-Broadcasts in Xamarin.Android reagiert.
 
@@ -64,14 +63,14 @@ Sie können die toolunterstützung in Visual Studio für Mac oder Visual Studio 
 Android bietet ein sehr umfangreiches und verschiedene-Framework zur Unterstützung von 2D Grafiken und Animationen. Dieses Dokument führt diese Frameworks und erläutert, wie benutzerdefinierte Grafiken und Animationen erstellen und in einer Anwendung Xamarin.Android zu verwenden.
 
 
-##  <a name="cpu-architecturesandroidapp-fundamentalscpu-architecturesmd"></a>[CPU-Architektur](~/android/app-fundamentals/cpu-architectures.md)
+##  <a name="cpu-architecturesandroidapp-fundamentalscpu-architecturesmd"></a>[CPU-Architekturen](~/android/app-fundamentals/cpu-architectures.md)
 
 Xamarin.Android unterstützt mehrere CPU-Architekturen, einschließlich der 32-Bit und 64-Bit-Geräten. Dieser Artikel beschreibt, wie Sie eine app an eine oder mehrere Android unterstützt CPU-Architekturen abzielen.
 
 
 
 
-##  <a name="handling-rotationandroidapp-fundamentalshandling-rotationmd"></a>[Behandlung von Drehung](~/android/app-fundamentals/handling-rotation.md)
+##  <a name="handling-rotationandroidapp-fundamentalshandling-rotationmd"></a>[Verarbeiten der Drehung](~/android/app-fundamentals/handling-rotation.md)
 
 Dieser Artikel beschreibt, wie Gerät Ausrichtung Änderungen in Xamarin.Android behandelt. Sie erfahren, wie Arbeiten Sie mit dem Ressourcensystem Android, um Ressourcen für ein bestimmtes geräteausrichtung ebenfalls automatisch zu laden, wie an der Ausrichtung programmgesteuert zu verarbeiten Änderungen. Es beschreibt dann Techniken für die Zustandsverwaltung, wenn ein Gerät gedreht wird.
 
@@ -90,7 +89,7 @@ In diesem Abschnitt wird erläutert, wie lokale und remote-Benachrichtigungen in
 
 
 
-##  <a name="touchandroidapp-fundamentalstouchindexmd"></a>[Tippen Sie auf](~/android/app-fundamentals/touch/index.md)
+##  <a name="touchandroidapp-fundamentalstouchindexmd"></a>[Toucheingabe](~/android/app-fundamentals/touch/index.md)
 
 In diesem Abschnitt erläutert die Konzepte und Details zur Implementierung fingereingabegesten auf Android-Geräten. Touch-APIs sind eingeführt und gefolgt von einer Untersuchung des Geste Prüfer erläutert.
 

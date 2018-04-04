@@ -1,18 +1,17 @@
 ---
 title: Authentifizieren des Zugriffs auf Webdienste
-description: "Dieses Handbuch wird erläutert, wie zum Integrieren von Authentifizierungsdienste in einer Xamarin.Forms-Anwendung von Benutzern ein Back-End-freigeben, während Sie den Zugriff auf ihre eigenen Daten nur eine aktiviert werden. Zu den behandelten Themen gehören unter Verwendung der Standardauthentifizierung mit einem REST-Dienst, mithilfe der Komponente zur Xamarin.Auth zum Authentifizieren beim OAuth-Identitätsanbieter, und mithilfe der integrierten Authentifizierungsmechanismen von unterschiedlichen Anbietern angeboten."
-ms.topic: article
+description: Dieses Handbuch wird erläutert, wie zum Integrieren von Authentifizierungsdienste in einer Xamarin.Forms-Anwendung von Benutzern ein Back-End-freigeben, während Sie den Zugriff auf ihre eigenen Daten nur eine aktiviert werden. Zu den behandelten Themen gehören unter Verwendung der Standardauthentifizierung mit einem REST-Dienst, mithilfe der Komponente zur Xamarin.Auth zum Authentifizieren beim OAuth-Identitätsanbieter, und mithilfe der integrierten Authentifizierungsmechanismen von unterschiedlichen Anbietern angeboten.
 ms.prod: xamarin
 ms.assetid: E6FCFAE1-4F83-4F93-9190-EC5290360C54
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 0139a7a921861b5d1c9a3639ee2c7e25ee6cf5fe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: df0e188efd2791b03a63c31b715ed1da77079230
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-access-to-web-services"></a>Authentifizieren des Zugriffs auf Webdienste
 
@@ -46,4 +45,4 @@ Amazon SimpleDB bietet keine eigenen ressourcenbasierte Berechtigungssystem. Aut
 ## <a name="related-links"></a>Verwandte Links
 
 - [Einführung in Webdienste](~/cross-platform/data-cloud/web-services/index.md)
-- [Übersicht über die asynchrone Unterstützung](~/cross-platform/platform/async.md)
+- [Async Support Overview (Übersicht über die asynchrone Unterstützung)](~/cross-platform/platform/async.md)

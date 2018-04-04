@@ -1,17 +1,16 @@
 ---
 title: Grundlagen der Android-Ressource
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: ED32E7B5-D552-284B-6385-C3EDDCC30A4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/01/2018
-ms.openlocfilehash: fba8412c53597260744bdce443a7e993a6990672
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f6be1001e5d3455a94e677f1bb5dc52ca574b873
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-resource-basics"></a>Grundlagen der Android-Ressource
 
@@ -136,7 +135,7 @@ Z. B. den Inhalt einer Datei Layout **Main.axml**, lauten wie folgt:
 </LinearLayout>
 ```
 
-Dieses Beispiel umfasst ein [ `ImageView` ](https://developer.xamarin.com/recipes/android/controls/imageview) , erfordert eine zeichenbare Ressource mit dem Namen **Flag**. Die `ImageView` hat seine `src` -Attributsatz zur  **@drawable/flag** . Wenn die Aktivität gestartet wird, sieht in das Verzeichnis Android **Ressource/Drawable** nach einer Datei namens **flag.png** (die Dateierweiterung ist möglicherweise ein anderes Bildformat, z. B. **flag.jpg**) Laden Sie die Datei, und zeigen Sie es in der `ImageView`.
+Dieses Beispiel umfasst ein [ `ImageView` ](https://developer.xamarin.com/recipes/android/controls/imageview) , erfordert eine zeichenbare Ressource mit dem Namen **Flag**. Die `ImageView` hat seine `src` -Attributsatz zur **@drawable/flag**. Wenn die Aktivität gestartet wird, sieht in das Verzeichnis Android **Ressource/Drawable** nach einer Datei namens **flag.png** (die Dateierweiterung ist möglicherweise ein anderes Bildformat, z. B. **flag.jpg**) Laden Sie die Datei, und zeigen Sie es in der `ImageView`.
 Wenn diese Anwendung ausgeführt wird, würde es etwa der folgenden Abbildung aussehen:
 
 ![Lokalisierte ImageView](android-resource-basics-images/03-localized-screenshot.png)

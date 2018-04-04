@@ -1,18 +1,17 @@
 ---
 title: Einschränkungen
 description: Einige Einschränkungen von der Xamarin-Live-Player
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 36A1531E-630A-4B7C-A333-4E67E5DC023C
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.date: 08/04/2017
-ms.openlocfilehash: 71d37b79c962123bb5adf6f999e713f68086166c
-ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
+ms.date: 03/29/2018
+ms.openlocfilehash: 0068540ec385ab3be56865c7728eb3128154a2ea
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/29/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="limitations"></a>Einschränkungen
 
@@ -48,7 +47,7 @@ Es gibt einige Einschränkungen auf die Dinge, die Xamarin-Live-Player ausgefüh
 ### <a name="other-project-types"></a>Andere Projekttypen
 - Live-Player ist nicht vorgesehen, für systemeigenes Android oder iOS-Projekte (die Android-XML-Index oder Storyboards für die Benutzeroberfläche zu verwenden).
 
-### <a name="misc"></a>Sonst.
+### <a name="misc"></a>Sonstiges
 - Eingeschränkte Unterstützung für die Reflektion (derzeit einige beliebte NuGets, z. B. SQLite und Json.NET betrifft). Andere NuGets möglicherweise immer noch unterstützt werden.
 - Einige Systemklassen nicht überschrieben werden kann (z. B. eine Unterklasse kann nicht implementiert werden).
 - Einige Plattformfunktionen, die Bereitstellung erforderlich, können nicht in der Live-Player Xamarin-app (jedoch er bei allgemeinen Vorgängen wie Foto-Katalog-Zugriff konfiguriert wurde) funktionieren.

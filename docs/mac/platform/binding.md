@@ -1,18 +1,17 @@
 ---
 title: Binden von Mac-Bibliotheken
-description: "Dieses Handbuch Links zu anderen Dokumenten, die beschreiben, wie Sie Bindungen für Objective-C-Librariesl erstellen"
-ms.topic: article
+description: Dieses Handbuch Links zu anderen Dokumenten, die beschreiben, wie Sie Bindungen für Objective-C-Librariesl erstellen
 ms.prod: xamarin
 ms.assetid: 521707CD-79D3-488A-84CB-A37EBF93AC94
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/13/2017
-ms.openlocfilehash: 918c02542ee861b44411c29b01510a92659dee42
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c70a34acbdac6339a96000a2f987d4ac4f3d6a45
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-mac-libraries"></a>Binden von Mac-Bibliotheken
 
@@ -41,5 +40,5 @@ Finden Sie in der [XMBindingExample Mac Beispiel](https://github.com/xamarin/mac
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Objective-C-Bindung](~/cross-platform/macios/binding/index.md)
+- [Binden von Objective-C](~/cross-platform/macios/binding/index.md)
 - [Binden von iOS-Bibliotheken](~/ios/platform/binding-objective-c/index.md)

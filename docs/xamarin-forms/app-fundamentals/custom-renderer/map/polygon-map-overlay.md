@@ -1,18 +1,17 @@
 ---
 title: Hervorheben eines Bereichs auf einer Karte
-description: "In diesem Artikel wurde erläutert, wie einer Karte, markieren Sie eine Region auf der Karte eine Polygon-Überlagerung hinzugefügt wird. Polygone sind eine geschlossene Form, und ihre Innenbereiche ausgefüllt haben."
-ms.topic: article
+description: In diesem Artikel wurde erläutert, wie einer Karte, markieren Sie eine Region auf der Karte eine Polygon-Überlagerung hinzugefügt wird. Polygone sind eine geschlossene Form, und ihre Innenbereiche ausgefüllt haben.
 ms.prod: xamarin
 ms.assetid: E79EB2CF-8DD6-44A8-B47D-5F0A94FB0A63
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 6c116565842537f24d92a6d100ab1636f25c2e12
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d87237015b9e3d896766894d552c650047137146
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="highlighting-a-region-on-a-map"></a>Hervorheben eines Bereichs auf einer Karte
 
@@ -31,7 +30,7 @@ Wenn eine [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Ma
 1. [Anpassen](#Customizing_the_Map) die Zuordnung durch das Erstellen eines benutzerdefinierten Renderers für die Zuordnung auf jeder Plattform.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) Initialisiert und vor der Verwendung konfiguriert werden müssen. Weitere Informationen finden Sie unter [ `Maps Control` ](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) Initialisiert und vor der Verwendung konfiguriert werden müssen. Weitere Informationen finden Sie unter [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
 Informationen zum Anpassen einer Karte, die mithilfe eines benutzerdefinierten Renderers finden Sie unter [Anpassen einer Karte Pin](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 

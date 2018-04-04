@@ -1,18 +1,17 @@
 ---
-title: "Einführung in iOS 8"
-description: "Apple hat mit iOS 8 eine Fülle von neuen Frameworks und APIs auszeichnen und suchen zu erfreuen Entwickler bereitgestellt. In diesem Handbuch wird diese neuen APIs einführen und finden Sie unter erläutert, wie iOS 8 Entwickler und Benutzer profitieren können."
-ms.topic: article
+title: Einführung in iOS 8
+description: Apple hat mit iOS 8 eine Fülle von neuen Frameworks und APIs auszeichnen und suchen zu erfreuen Entwickler bereitgestellt. In diesem Handbuch wird diese neuen APIs einführen und finden Sie unter erläutert, wie iOS 8 Entwickler und Benutzer profitieren können.
 ms.prod: xamarin
 ms.assetid: 33AD66C0-3743-49FE-9DCE-88ED3A16BA63
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 8a4fabd5cc63434950f4646336b06676f6eb915b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 2f57547356adcbafd01851bc54e42a14454ccd6a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-ios-8"></a>Einführung in iOS 8
 

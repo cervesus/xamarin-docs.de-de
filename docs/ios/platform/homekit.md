@@ -1,18 +1,17 @@
 ---
 title: HomeKit
-description: "HomeKit ist Apple Framework zum home Automatisierungsgeräten steuern. Dieser Artikel führt HomeKit und Konfigurieren von Test-Zubehör im Simulator HomeKit Zubehör und eine einfache Xamarin.iOS app schreiben, für die Interaktion mit diesen Zubehör behandelt."
-ms.topic: article
+description: HomeKit ist Apple Framework zum home Automatisierungsgeräten steuern. Dieser Artikel führt HomeKit und Konfigurieren von Test-Zubehör im Simulator HomeKit Zubehör und eine einfache Xamarin.iOS app schreiben, für die Interaktion mit diesen Zubehör behandelt.
 ms.prod: xamarin
 ms.assetid: 90C0C553-916B-46B1-AD52-1E7332792283
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 02116e8e11cb6ff050e2c885338777e1fd25c4cb
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 5699465330a4d2a5b983ec7661f80c1ed4f14bde
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="homekit"></a>HomeKit
 
@@ -104,7 +103,7 @@ Starten Simulator HomeKit Zubehör, und einige virtuelle Zubehör erstellen, fü
 1. Starten Sie aus dem Ordner Anwendungen HomeKit Zubehör Simulator aus: 
 
     [![](homekit-images/simulator02.png "Der Simulator HomeKit Zubehör")](homekit-images/simulator02.png#lightbox)
-2. Klicken Sie auf die  **+**  Schaltfläche und wählen Sie **neue Zubehör...** : 
+2. Klicken Sie auf die **+** Schaltfläche und wählen Sie **neue Zubehör...** : 
 
     [![](homekit-images/simulator03.png "Hinzufügen einer neuen Zubehör")](homekit-images/simulator03.png#lightbox)
 3. Füllen Sie die Informationen zu den neuen Zubehör, und klicken Sie auf die **Fertig stellen** Schaltfläche: 

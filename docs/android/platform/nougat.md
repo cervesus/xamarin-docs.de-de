@@ -1,18 +1,17 @@
 ---
 title: Nougat-Funktionen
-description: "Wie die ersten Schritte mit Xamarin.Android zum Entwickeln von apps für Android Nougat."
-ms.topic: article
+description: Wie die ersten Schritte mit Xamarin.Android zum Entwickeln von apps für Android Nougat.
 ms.prod: xamarin
 ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: c666b7d5b680eab3c990950569868eacdb6f30af
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: fe544f8ac677987f8921ccb1c11b8930811b9553
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="nougat-features"></a>Nougat-Funktionen
 
@@ -56,7 +55,7 @@ Folgendes ist erforderlich, um die neuen Funktionen für Android Nougat in Xamar
 -   **Java Developer Kit** &ndash; Xamarin Android 7.0 development requires [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) or later if you are developing for API level 24 or greater (JDK 8 also supports API levels earlier than 24). Die 64-Bit-Version des JDK 8 ist erforderlich, wenn Sie benutzerdefinierte Steuerelemente oder das Vorschauprogramm Forms verwenden.
 
 > [!IMPORTANT]
-> JDK 9 unterstützt Xamarin.Android nicht.
+> Xamarin.Android unterstützt JDK 9 nicht.
 
 Beachten Sie, dass apps mit Xamarin C6SR4 oder höher neu erstellt, müssen damit zuverlässig mit Android Nougat arbeiten. Da nur für Android Nougat verknüpfen können [NDK bereitgestellte systemeigene Bibliotheken](https://developer.android.com/about/versions/nougat/android-7.0-changes.html), vorhandene apps mit Bibliotheken wie **Mono.Data.Sqlite.dll** stürzt möglicherweise ab, wenn auf Android Nougat ausgeführt werden soll, wenn sie nicht richtig sind neu erstellt.
 

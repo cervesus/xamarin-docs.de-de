@@ -1,18 +1,17 @@
 ---
 title: Verbesserte Benutzerbenachrichtigungen
 description: Dieser Artikel umfasst alle von den Verfahren, die Benachrichtigung der Benutzer von iOS 10 und wie Sie Ihre Verwendung in einer app Xamarin.iOS erweitert wurden.
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 50553cb1dc5f7ea782c0f13e32f60d7b6ce3e181
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 9fd3ff17dc9af3fd30a7d5b31e8cea7ff8669a51
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="enhanced-user-notifications"></a>Verbesserte Benutzerbenachrichtigungen
 
@@ -169,7 +168,7 @@ Um die erforderliche Berechtigung zu ermöglichen, führen Sie folgende Schritte
 2. Wechseln Sie zu der **Quelle** anzeigen: 
 
     [![](enhanced-user-notifications-images/setup01.png "Die Datenquellensicht")](enhanced-user-notifications-images/setup01.png#lightbox)
-3. Klicken Sie auf die  **+**  Schaltfläche, um einen neuen Schlüssel hinzuzufügen.
+3. Klicken Sie auf die **+** Schaltfläche, um einen neuen Schlüssel hinzuzufügen.
 4. Geben Sie `aps-environment` für die **Eigenschaft**, lassen Sie die **Typ** als `String` , und geben Sie entweder `development` oder `production` für die **Wert**: 
 
     [![](enhanced-user-notifications-images/setup02.png "Die Eigenschaft der Aps-Umgebung")](enhanced-user-notifications-images/setup02.png#lightbox)
@@ -178,7 +177,7 @@ Um die erforderliche Berechtigung zu ermöglichen, führen Sie folgende Schritte
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Doppelklicken Sie auf die `Entitlements.plist` in der Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
-3. Klicken Sie auf die  **+**  Schaltfläche, um einen neuen Schlüssel hinzuzufügen.
+3. Klicken Sie auf die **+** Schaltfläche, um einen neuen Schlüssel hinzuzufügen.
 4. Geben Sie `aps-environment` für die **Eigenschaft**, lassen Sie die **Typ** als `String` , und geben Sie entweder `development` oder `production` für die **Wert**: 
 
     [![](enhanced-user-notifications-images/setup02w.png "Die Eigenschaft der Aps-Umgebung")](enhanced-user-notifications-images/setup02.png#lightbox)

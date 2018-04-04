@@ -1,18 +1,17 @@
 ---
-title: "Angefügte Eigenschaften"
-description: "Eine angefügte Eigenschaft ist eine besondere Art von bindbare Eigenschaft, die in einer Klasse definiert, jedoch auf andere Objekte angefügt und erkennbaren in XAML als ein Attribut enthält, die eine Klasse, und ein Eigenschaftsnamen, die durch einen Punkt getrennt. Dieser Artikel bietet eine Einführung in angefügte Eigenschaften und veranschaulicht das Erstellen und nutzen müssen."
-ms.topic: article
+title: Angefügte Eigenschaften
+description: Eine angefügte Eigenschaft ist eine besondere Art von bindbare Eigenschaft, die in einer Klasse definiert, jedoch auf andere Objekte angefügt und erkennbaren in XAML als ein Attribut enthält, die eine Klasse, und ein Eigenschaftsnamen, die durch einen Punkt getrennt. Dieser Artikel bietet eine Einführung in angefügte Eigenschaften und veranschaulicht das Erstellen und nutzen müssen.
 ms.prod: xamarin
 ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/02/2016
-ms.openlocfilehash: 7112812c843ccbcd6c24ea028deae3c09851b03d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c903a39e5569c7ffedfff8eb8e6b0bd4071be9d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="attached-properties"></a>Angefügte Eigenschaften
 

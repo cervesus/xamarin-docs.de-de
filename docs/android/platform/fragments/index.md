@@ -1,18 +1,17 @@
 ---
 title: Fragmente
-description: "Android 3.0 eingeführten Fragmente mit wie vielen unterschiedlichen Bildschirmgrößen auf Telefonen und Tablets gefunden flexiblere Entwürfe unterstützt. In diesem Artikel befasst sich mit Fragmenten Xamarin.Android Anwendungen entwickeln, sowie die Informationen zur Unterstützung von Fragmenten vorab Android 3.0 (API-Ebene 11)-Geräte."
-ms.topic: article
+description: Android 3.0 eingeführten Fragmente mit wie vielen unterschiedlichen Bildschirmgrößen auf Telefonen und Tablets gefunden flexiblere Entwürfe unterstützt. In diesem Artikel befasst sich mit Fragmenten Xamarin.Android Anwendungen entwickeln, sowie die Informationen zur Unterstützung von Fragmenten vorab Android 3.0 (API-Ebene 11)-Geräte.
 ms.prod: xamarin
 ms.assetid: 1AFB4242-A337-F8E0-83D9-B8D850D7F384
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/15/2018
-ms.openlocfilehash: 0a9a1f41810fe113ac3d88d2533411ac537840ab
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 08c2edb3acc15518c7d5a69f227fb9ef819887be
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="fragments"></a>Fragmente
 

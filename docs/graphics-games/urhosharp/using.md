@@ -1,17 +1,16 @@
 ---
 title: Verwenden von UrhoSharp
-description: "Übersicht über das UrhoSharp-Modul"
-ms.topic: article
+description: Übersicht über das UrhoSharp-Modul
 ms.prod: xamarin
 ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: cd30f17d631216a3ea119a262aca6d294394a77f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cdb32c0fe9aa1a267bda5768b9026667723d694c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-urhosharp"></a>Verwenden von UrhoSharp
 
@@ -497,7 +496,7 @@ Arbeitsspeicher Budgets pro Ressourcentyp festgelegt werden können: Wenn Ressou
 
 Urho3D versucht, nach Möglichkeit vorhandene Dateiformate verwenden, und definieren benutzerdefinierte Dateiformate nur, wenn dies absolut notwendig ist z. B. für Modelle (*.mdl) und für Animationen (*.ani). Für diese Arten von Elementen, Urho stellt einen Konverter - [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html) die viele gängige 3D Formate, z. B. Fbx, Dae, 3ds, und Obj usw. genutzt werden können.
 
-Es gibt auch eine praktische add-in für Blender [https://github.com/reattiva/Urho3D-Blender](https://github.com/reattiva/Urho3D-Blender) exportieren, die Ihre Medienobjekte Blender in das Format, das für die Urho3D geeignet ist.
+Es gibt auch eine praktische add-in für Blender [ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) exportieren, die Ihre Medienobjekte Blender in das Format, das für die Urho3D geeignet ist.
 
 ## <a name="background-loading-of-resources"></a>Das Laden der im Hintergrund von Ressourcen
 
@@ -529,7 +528,7 @@ soundSource.AutoRemove = true;
 
 # <a name="particles"></a>Partikel
 
-Partikel bieten eine einfache Möglichkeit, einige einfachen und kostengünstigen Auswirkungen auf Ihre Anwendung hinzufügen.  Sie können Partikel im PEX-Format gespeicherte nutzen, der mit Tools wie [http://onebyonedesign.com/flash/particleeditor/](http://onebyonedesign.com/flash/particleeditor/).
+Partikel bieten eine einfache Möglichkeit, einige einfachen und kostengünstigen Auswirkungen auf Ihre Anwendung hinzufügen.  Sie können Partikel im PEX-Format gespeicherte nutzen, der mit Tools wie [ http://onebyonedesign.com/flash/particleeditor/ ](http://onebyonedesign.com/flash/particleeditor/).
 
 Partikel sind Komponenten, die zu einem Knoten hinzugefügt werden können.  Sie müssen des Knotens Aufrufen `CreateComponent<ParticleEmitter2D>` Methode, um das Partikel erstellen und konfigurieren Sie dann durch Festlegen von der Auswirkung-Eigenschaft auf einen 2D-Skalierungsvorgang Effekt, des Partikels aus dem Cache Ressource geladen wird.
 

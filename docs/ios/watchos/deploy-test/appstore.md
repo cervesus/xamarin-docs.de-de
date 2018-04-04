@@ -1,18 +1,17 @@
 ---
 title: Auf den App Store bereitstellen
-description: "Bereitstellen von Watch-Apps für den App Store"
-ms.topic: article
+description: Bereitstellen von Watch-Apps für den App Store
 ms.prod: xamarin
 ms.assetid: DBE16040-70D2-4F61-B5F3-C8D213DBC754
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: c5b89570fdd3df80d39c6621fcd12a23babed9ee
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: a3c68a0720fbe18f35731cf1a19248c00f748877
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="deploying-to-the-app-store"></a>Auf den App Store bereitstellen
 
@@ -177,7 +176,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 Sicherzustellen, dass Sie über die neueste Version von Visual Studio für Mac, und dass Ihre **AppIcons.appiconset** enthält einen vollständigen Satz von Bildern. Wenn dieser Fehler weiterhin angezeigt werden, zeigen Sie die Quelle des der **Contents.json** , er enthält einen Eintrag für alle erforderlichen Bilder zu bestätigen. Auch nachdem Sie sichergestellt haben, verwenden Sie die neueste Version von Xamarin, löschen und erneutes Erstellen der **AppIcons.appiconset**.
 
 > [!IMPORTANT]
-> Es ist ein bekanntes Problem in Visual Studio für Mac Computer überwachen Symbol Unterstützung: er davon ausgeht, ein Bild 88 x 88 Pixel für die  **29x29@3x**  Image (die 87 x 87 Pixel sein sollte).
+> Es ist ein bekanntes Problem in Visual Studio für Mac Computer überwachen Symbol Unterstützung: er davon ausgeht, ein Bild 88 x 88 Pixel für die **29x29@3x** Image (die 87 x 87 Pixel sein sollte).
 
 
 Sie können nicht in Visual Studio für Mac - entweder bearbeiten-Standardimage-Medienobjekt in Xcode beheben oder manuell bearbeiten, die **Contents.json** Datei (entsprechend [in diesem Beispiel](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).

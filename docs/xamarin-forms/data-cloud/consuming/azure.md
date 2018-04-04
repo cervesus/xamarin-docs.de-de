@@ -1,18 +1,17 @@
 ---
-title: "Verwenden einer mobilen Anwendung für Azure"
-description: "Azure Mobile Apps können Sie zum Entwickeln von apps mit skalierbare Back-Ends mit Unterstützung für mobile-Authentifizierung, offline-Synchronisierung und Push-Benachrichtigungen in Azure App Service, gehostet. Dieser Artikel, die nur für Azure Mobile Apps, die eine Node.js-Back-End verwenden gilt, werden die Abfragen, einfügen, aktualisieren und Löschen von Daten in einer Tabelle in einer Instanz von Azure-Mobile-Apps erläutert."
-ms.topic: article
+title: Verwenden einer mobilen Anwendung für Azure
+description: Azure Mobile Apps können Sie zum Entwickeln von apps mit skalierbare Back-Ends mit Unterstützung für mobile-Authentifizierung, offline-Synchronisierung und Push-Benachrichtigungen in Azure App Service, gehostet. Dieser Artikel, die nur für Azure Mobile Apps, die eine Node.js-Back-End verwenden gilt, werden die Abfragen, einfügen, aktualisieren und Löschen von Daten in einer Tabelle in einer Instanz von Azure-Mobile-Apps erläutert.
 ms.prod: xamarin
 ms.assetid: 2B3EFD0A-2922-437D-B151-4B4DE46E2095
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 5b087700e3a5276e19454a8dafedb508758b7b71
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e2e9e2c05d3f6e467fd47b31af4f53049aab2709
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="consuming-an-azure-mobile-app"></a>Verwenden einer mobilen Anwendung für Azure
 

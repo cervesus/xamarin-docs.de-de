@@ -1,17 +1,16 @@
 ---
-title: "In-App-Käufe"
-description: "iOS-Anwendungen können digitale Produkte und Dienste, die mithilfe der Store-Kit-APIs verkaufen. Produkte werden erstellt und im iTunes Connect-Portal verwaltet. Verwaltet die transaktionsverarbeitung von Apple und alle Produkte genehmigt, bevor sie verkauft werden können, und die Kosten gegen einer Gebühr für jede Transaktion (derzeit 30 %). Apple erfordert, dass Sie verwenden, die in-app, die für digitale Verkäufe in Ihrer app erwerben, aber nicht für den Verkauf von physischen Waren oder nicht Digital-Dienste verwenden. Apps, die alternative Zahlungsoptionen für digitale Produkte und Dienste zu bieten, werden wahrscheinlich abgelehnt werden. Dieses Dokument wird erläutert, wie Ihre Anwendung zur Verwendung von Store-Kit konfigurieren sowie Xamarin.iOS Beispiele für die häufigsten Kaufverhalten in app-Szenarien."
-ms.topic: article
+title: In-App-Käufe
+description: iOS-Anwendungen können digitale Produkte und Dienste, die mithilfe der Store-Kit-APIs verkaufen. Produkte werden erstellt und im iTunes Connect-Portal verwaltet. Verwaltet die transaktionsverarbeitung von Apple und alle Produkte genehmigt, bevor sie verkauft werden können, und die Kosten gegen einer Gebühr für jede Transaktion (derzeit 30 %). Apple erfordert, dass Sie verwenden, die in-app, die für digitale Verkäufe in Ihrer app erwerben, aber nicht für den Verkauf von physischen Waren oder nicht Digital-Dienste verwenden. Apps, die alternative Zahlungsoptionen für digitale Produkte und Dienste zu bieten, werden wahrscheinlich abgelehnt werden. Dieses Dokument wird erläutert, wie Ihre Anwendung zur Verwendung von Store-Kit konfigurieren sowie Xamarin.iOS Beispiele für die häufigsten Kaufverhalten in app-Szenarien.
 ms.prod: xamarin
 ms.assetid: B41929D8-47E4-466D-1F09-6CC3C09C83B2
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: af8eb556215679bab2da8f54e8231f7d7d3ed418
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7a8dec6051caeba55c45df29c085ecfcddd160d2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="in-app-purchasing"></a>In-App-Käufe
 
@@ -66,12 +65,12 @@ In diesem Artikel eingeführt wurde das Konzept der in der app zu erwerben, besc
 
 - [InAppPurchaseSample](https://developer.xamarin.com/samples/StoreKit/)
 - [In App-Käufe Programmierhandbuch](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction.html)
-- [iTunes Connect-Entwicklerhandbuch](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/iTunesConnect_Guide.pdf)
+- [iTunes Connect-Entwicklerleitfaden](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/iTunesConnect_Guide.pdf)
 - [Referenz für Store-Kit-Framework](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/StoreKit_Collection/StoreKit_Collection.pdf)
 - [In App-Käufe-Produkt-IDs Fragen und Antworten](https://developer.apple.com/library/ios/#qa/qa1329/_index.html)
 - [Technischer Hinweis in App-Käufe](https://developer.apple.com/library/ios/#technotes/tn2259/_index.html)
 - [Die erste App Store-Übermittlung](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
 - [App Store Resource Center](https://developer.apple.com/appstore/index.html)
-- [Tipps für App-Store-Übermittlung](https://developer.apple.com/appstore/resources/submission/tips.html)
-- [App Store Review Guidelines](https://developer.apple.com/appstore/resources/approval/guidelines.html)
+- [Tipps für die Übermittlung an den App Store](https://developer.apple.com/appstore/resources/submission/tips.html)
+- [Richtlinien für die Überprüfung im App Store](https://developer.apple.com/appstore/resources/approval/guidelines.html)
 - [Verwalten von Apps](https://developer.apple.com/appstore/resources/managing/index.html)

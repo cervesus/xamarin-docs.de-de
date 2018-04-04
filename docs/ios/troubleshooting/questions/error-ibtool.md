@@ -1,16 +1,16 @@
 ---
 title: 'IBTool-Fehler: Der Vorgang konnte nicht abgeschlossen werden.'
-ms.topic: article
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: A804EBC4-2BBF-4A98-A4E8-A455DB2E8A17
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: dd668859428da1abfa3a8e46a0810b2de6645fe2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4647227ad208bfa968f8282a966220a09ab7f4a6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ibtool-error-the-operation-couldnt-be-completed"></a>IBTool-Fehler: Der Vorgang konnte nicht abgeschlossen werden.
 
@@ -54,7 +54,7 @@ Sie können dieses Element zu ändern und hinzufügen eine `LogicalName` , damit
 </BundleResource>
 ```
 
-In Visual Studio für Mac der `LogicalName` kann auch mit eingerichtet werden die `Resource ID` Feld für das Bild unter **Ansicht > füllt > Eigenschaften**. (Siehe auch: [http://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545](http://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545))
+In Visual Studio für Mac der `LogicalName` kann auch mit eingerichtet werden die `Resource ID` Feld für das Bild unter **Ansicht > füllt > Eigenschaften**. (Siehe auch: [ http://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545 ](http://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545))
 
 Nach dieser Änderung müssen Sie das Storyboard aktualisieren und `.xib` Dateien an den neuen übergeordneten Image verwenden. Visual Studio für Mac aktualisiert automatisch die Liste der Autocompletions für die `Image` Eigenschaft in der iOS-Designer. In Visual Studio müssen Sie den Pfad von hand bearbeiten. Die iOS-Designer zeigt diese dann als ein fehlendes Bild, aber das Projekt erstellt und ordnungsgemäß ausgeführt.
 

@@ -1,18 +1,17 @@
 ---
-title: "Einführung in die 3D-Spielentwicklung mit Xamarin"
-description: "Die Art der 3D-Spielentwicklung kann von der Entwicklung von anderen Typen von apps erheblich abweichen. Dieser Artikel ist eine Einführung in die Entwicklung mit Technologien, die mit Xamarin.iOS und Xamarin.Android verwendet werden können. Es bietet eine allgemeine Erläuterung der wie Spiele vorgenommen werden und eine Stichprobe von Technologien für die Verwendung mit Xamarin.iOS und Xamarin.Android."
-ms.topic: article
+title: Einführung in die 3D-Spielentwicklung mit Xamarin
+description: Die Art der 3D-Spielentwicklung kann von der Entwicklung von anderen Typen von apps erheblich abweichen. Dieser Artikel ist eine Einführung in die Entwicklung mit Technologien, die mit Xamarin.iOS und Xamarin.Android verwendet werden können. Es bietet eine allgemeine Erläuterung der wie Spiele vorgenommen werden und eine Stichprobe von Technologien für die Verwendung mit Xamarin.iOS und Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 9d1ce2da87d6f169efb5431f734695f6876cf3f0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b2df6d431004bbfa140b6cae1d069404af92c1df
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Einführung in die 3D-Spielentwicklung mit Xamarin
 
@@ -97,8 +96,8 @@ Einige Inhalte Pipelines sind sehr schnell und erfordern keine manuellen Aufwand
 3D-Spielentwicklung führt neue Rollen und Titel für Einzelpersonen, die in den Prozess einbezogen. Die meisten Entwickler können nicht zum Erfüllen der Breite Palette an maßgeblichen Qualifikationen für eine vollständige Spiel freigeben, damit eine Anzahl von Disziplinen vorhanden. Bedenken Sie, dass dies eine vollständige Liste der Bereiche der Entwicklung – nur einige der häufigeren nicht ist.
 
 - **Programmierer** – die meisten Personen, die in diesem Artikel wird fallen in diese Kategorie zu lesen. Die Rolle der Programmierer in 3D-Spielentwicklung ähnelt ein Programmierer-Rolle in einer Anwendung nicht Spiel. Aufgaben zählen das Schreiben von Logik, um den Ablauf eines Spiels, Entwickeln von Systemen für allgemeine Aufgaben im Kontext eines bestimmten Projekts, hinzufügen und Anzeigen des Inhalts und des Kurses Beheben von Fehlern zu steuern.
-- **2D Interpreten** – 2D Künstler sind verantwortlich für das Erstellen von *2D Bestand*. Dazu gehören Bilddateien, für des Spiels GUI, Partikel, Umgebungen und Zeichen. Wenn das Spiel, das Sie entwickeln 3D ist, können 2D Künstler nicht verantwortlich für Umgebungen und Zeichen sein. Finden Sie kostenlose ClipArt für das Spiel am [http://opengameart.org/](http://opengameart.org/) .
-- **3D Künstler** – 3D Künstler sind verantwortlich für das Erstellen von *3D Bestand*. Dazu gehören 3D-Modelle für Umgebungen, die Zeichen und Eigenschaftendateien enthalten (Möbel Pflanzen und andere unbelebte Objekte). Einige Teams unterscheiden zwischen 3D Künstler und 3D-Animatoren abhängig von der Größe des Teams. Sie finden die kostenlose 3D Grafiken für das Spiel am [http://opengameart.org/](http://opengameart.org/) .
+- **2D Interpreten** – 2D Künstler sind verantwortlich für das Erstellen von *2D Bestand*. Dazu gehören Bilddateien, für des Spiels GUI, Partikel, Umgebungen und Zeichen. Wenn das Spiel, das Sie entwickeln 3D ist, können 2D Künstler nicht verantwortlich für Umgebungen und Zeichen sein. Finden Sie kostenlose ClipArt für das Spiel am [ http://opengameart.org/ ](http://opengameart.org/) .
+- **3D Künstler** – 3D Künstler sind verantwortlich für das Erstellen von *3D Bestand*. Dazu gehören 3D-Modelle für Umgebungen, die Zeichen und Eigenschaftendateien enthalten (Möbel Pflanzen und andere unbelebte Objekte). Einige Teams unterscheiden zwischen 3D Künstler und 3D-Animatoren abhängig von der Größe des Teams. Sie finden die kostenlose 3D Grafiken für das Spiel am [ http://opengameart.org/ ](http://opengameart.org/) .
 - **Spiel Designer** – Spiel Designer sind dafür verantwortlich zu definieren, wie das Spiel wiedergegeben wird. Dies kann auf hoher Ebene Entscheidungen wie z. B. die Einstellung für das Spiel, das Ziel des Spiels und Fortschritt von ein Player über das Spiel einschließen. Spiel-Designer können auch Koeffizienten für Bewegung oder Ebene USV definieren und Entwerfen Ebene Layouts sehr detaillierte Entscheidungen dienen, z. B. Zuordnung Eingabe für Aktionen, beteiligt sein. Beachten Sie, dass der Begriff *Designer* bezieht sich möglicherweise auf ein Spiel oder eine visual-Designer, je nach Kontext.
 - **Sound Designer** – Sound Designer sind verantwortlich für ein Spiel-audio-Objekte. Einige Teams möglicherweise zwischen Personen, die verantwortlich für das Erstellen von Soundeffekten und Komponisten, während kleinere Teams eine Einzelperson verantwortlich für alle Audio möglicherweise unterscheiden.
 
@@ -171,9 +170,9 @@ Sehen Sie sich die [UrhoSharp Handbücher](~/graphics-games/urhosharp/index.md) 
 
 Die markierten Technologien ist nur ein Beispiel für den verfügbaren Technologien. Andere wichtigen Technologien zählen:
 
-- **Sprite Kit** – Xamarin bietet Unterstützung für Apple Sprite Kit Spiel Framework, die Sie Zugriff auf alle Funktionen der systemeigenen API gewährt. Da Sprite Kit Technologie, die von Apple erstellt ist, wird die enge Integration mit dem Rest des iOS-Ökosystem. Sprite Kit ist natürlich nicht plattformübergreifende auf Android-Geräten kann deshalb nicht verwendet werden. Weitere Informationen finden Sie unter Sprite Kit, finden Sie in diesen Beitrag: [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
-- **Szene Kit** – Xamarin bietet auch Unterstützung für Apple Szene Kit Framework implementieren 3D-Grafiken in iOS-apps zu vereinfachen. Szene Kit ist auch Technologie, die von Apple, bereitgestellt werden, sodass er die Integration und plattformspezifischen Hinweise für Sprite Kit oben genannten verfügt. Weitere Informationen zu Szene Kit, finden Sie in diesen Beitrag: [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
-- **OpenTK –** OpenTK (die für das Öffnen Tool Kit steht) bietet auf niedriger Ebene OpenGL-Zugriff auf iOS und Apple Macintosh Hardware. Weitere Informationen zu OpenTK, finden Sie unter der Hauptseite auf: [http://www.opentk.com/](http://www.opentk.com/)
+- **Sprite Kit** – Xamarin bietet Unterstützung für Apple Sprite Kit Spiel Framework, die Sie Zugriff auf alle Funktionen der systemeigenen API gewährt. Da Sprite Kit Technologie, die von Apple erstellt ist, wird die enge Integration mit dem Rest des iOS-Ökosystem. Sprite Kit ist natürlich nicht plattformübergreifende auf Android-Geräten kann deshalb nicht verwendet werden. Weitere Informationen finden Sie unter Sprite Kit finden Sie in diesen Beitrag:  [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
+- **Szene Kit** – Xamarin bietet auch Unterstützung für Apple Szene Kit Framework implementieren 3D-Grafiken in iOS-apps zu vereinfachen. Szene Kit ist auch Technologie, die von Apple, bereitgestellt werden, sodass er die Integration und plattformspezifischen Hinweise für Sprite Kit oben genannten verfügt. Weitere Informationen zu Szene Kit finden Sie in diesen Beitrag: [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
+- **OpenTK –** OpenTK (die für das Öffnen Tool Kit steht) bietet auf niedriger Ebene OpenGL-Zugriff auf iOS und Apple Macintosh Hardware. Weitere Informationen zu OpenTK finden Sie unter der Hauptseite auf:  [http://www.opentk.com/](http://www.opentk.com/)
 
 
 # <a name="summary"></a>Zusammenfassung

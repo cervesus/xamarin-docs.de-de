@@ -1,18 +1,17 @@
 ---
 title: Erstellen eines benutzerdefinierten Layouts
-description: "Xamarin.Forms definiert vier Klassen für Layout – StackLayout, AbsoluteLayout RelativeLayout und Raster, und jede ordnet die untergeordneten Elemente auf andere Weise. In einigen Fällen ist es jedoch erforderlich, zum Organisieren von Seiteninhalt mithilfe eines Layouts dargestellt, die nicht von Xamarin.Forms bereitgestellt. In diesem Artikel wird erläutert, wie eine benutzerdefiniertes Layout-Klasse schreiben und eine Ausrichtung Akzent WrapLayout-Klasse, die ordnet seine untergeordneten Elemente horizontal über die Seite, und klicken Sie dann dient als Wrapper für die Anzeige von nachfolgenden untergeordneten Elemente, um zusätzliche Zeilen veranschaulicht."
-ms.topic: article
+description: Xamarin.Forms definiert vier Klassen für Layout – StackLayout, AbsoluteLayout RelativeLayout und Raster, und jede ordnet die untergeordneten Elemente auf andere Weise. In einigen Fällen ist es jedoch erforderlich, zum Organisieren von Seiteninhalt mithilfe eines Layouts dargestellt, die nicht von Xamarin.Forms bereitgestellt. In diesem Artikel wird erläutert, wie eine benutzerdefiniertes Layout-Klasse schreiben und eine Ausrichtung Akzent WrapLayout-Klasse, die ordnet seine untergeordneten Elemente horizontal über die Seite, und klicken Sie dann dient als Wrapper für die Anzeige von nachfolgenden untergeordneten Elemente, um zusätzliche Zeilen veranschaulicht.
 ms.prod: xamarin
 ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 4c7bf5f2c867faef7d9baf8d511393dbe2d129a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f0728ac110fcf86f44a5ccb5ddd80b00af1b8d62
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-custom-layout"></a>Erstellen eines benutzerdefinierten Layouts
 

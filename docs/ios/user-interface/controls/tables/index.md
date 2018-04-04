@@ -1,18 +1,17 @@
 ---
 title: Arbeiten mit Tabellen und Zellen
 description: Anzeigen von Xamarin.iOS UITableView mit Daten
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 04DF47DD-4E17-75D7-AC7C-8CF4A574CD21
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/06/2016
-ms.openlocfilehash: f6abcaa3a771954785df83e80c7e46dd200e6986
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a1cda3632a75c7e462e763a34fdb5b586237b670
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-tables-and-cells"></a>Arbeiten mit Tabellen und Zellen
 
@@ -43,14 +42,14 @@ In diesen Artikeln dauert einen umfassenden Einblick in die Arbeit mit Tabellen,
 
  [Erstellen von Tabellen in einem Storyboard](~/ios/user-interface/controls/tables/creating-tables-in-a-storyboard.md)
  
- [Automatische Größenanpassung Zeilenhöhe](~/ios/user-interface/controls/tables/autosizing-row-height.md)
+ [Automatische Größenanpassung der Zeilenhöhe](~/ios/user-interface/controls/tables/autosizing-row-height.md)
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [WorkingWithTables (Beispiel)](https://developer.xamarin.com/samples/monotouch/WorkingWithTables/)
 - [Tabellen in Storyboards (Beispiel)](https://developer.xamarin.com/samples/monotouch/StoryboardTable/)
-- [Einführung in die Storyboards](~/ios/user-interface/storyboards/index.md)
+- [Einführung in Storyboards](~/ios/user-interface/storyboards/index.md)
 - [Storyboard TableView Rezept](https://developer.xamarin.com/recipes/ios/general/storyboard/storyboard_a_tableview)
 - [Einführung in MonoTouch.Dialog](~/ios/user-interface/monotouch.dialog/index.md)
 - [Beispiel für TableEditing auf Github](https://github.com/xamarin/monotouch-samples/tree/master/TableEditing)

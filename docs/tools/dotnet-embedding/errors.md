@@ -1,21 +1,20 @@
 ---
 title: .NET Einbetten von Fehlern
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 932C3F0C-D968-42D1-BB14-D97C73361983
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 90d30b92069bcd6a5c008fa8009c0392c4d26473
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64caaf6610d9f9193a686d91b4731cd4d4953fa6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="em0xxx-binding-error-messages"></a>EM0xxx: Fehlermeldungen Bindung
 
-Z. B. Parameter, Umgebung
+Beispiel: Parameter, Umgebung
 
 <!-- 0xxx: the generator itself, e.g. parameters, environment -->
 <h3><a name="EM0000"/>EM0000: Unerwarteter Fehler: Bitte geben Sie einen Fehlerbericht an https://github.com/mono/Embeddinator-4000/issues</h3>
@@ -68,7 +67,7 @@ Dies ist ein bekanntes Problem, das wir in einer zukünftigen Version des Genera
 
 Das Tool konnte die Frameworks, die in der Fehlermeldung genannten nicht zusammenführen, weil eine gemeinsame Datei zwischen ihnen vorhanden ist.
 
-Dies weist möglicherweise einen Fehler in der Embeddinator-4000 hin; Bitte der Datei eines Fehlerberichts an [https://github.com/mono/Embeddinator-4000/issues](https://github.com/mono/Embeddinator-4000/issues) zu einem Testfall.
+Dies weist möglicherweise einen Fehler in der Embeddinator-4000 hin; Bitte der Datei eines Fehlerberichts an [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) zu einem Testfall.
 
 <h3><a name="EM0011"/>EM0011: Die Assembly `X` ist nicht vorhanden.</h3>
 
@@ -104,7 +103,7 @@ Die Syntax für die Befehlszeilenoption `A` konnte nicht vom Tool analysiert wer
 
 Diese Fehlermeldung wird gemeldet, wenn es sich bei eine internen konsistenzüberprüfung in der Embeddinator-4000 ein Fehler auftritt.
 
-Gibt einen Fehler in der Embeddinator-4000. Bitte der Datei eines Fehlerberichts an [https://github.com/mono/Embeddinator-4000/issues](https://github.com/mono/Embeddinator-4000/issues) zu einem Testfall.
+Gibt einen Fehler in der Embeddinator-4000. Bitte der Datei eines Fehlerberichts an [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) zu einem Testfall.
 
 
 <!-- 1xxx: code processing -->
@@ -141,7 +140,7 @@ Hinweis: Unterstützte Funktionen werden durch neue Versionen des Tools weiteren
 
 <h3><a name="EM1021"/>Konstruktor `C` Standardwerte für die kein Wrapper generiert wurde.</h3>
 
-Dies ist eine **Warnung** , die Standardparameter Konstruktors `C` keine zusätzlichen Code generieren. Die häufigste Ursache ist, dass eine vorhandene Methode bereits die gleiche Signatur verfügt. Z. B. in .net ist es möglich, dass:
+Dies ist eine **Warnung** , die Standardparameter Konstruktors `C` keine zusätzlichen Code generieren. Die häufigste Ursache ist, dass eine vorhandene Methode bereits die gleiche Signatur verfügt. Beispiel: in .net ist es möglich, dass:
 
 ```
 public class MyType {
@@ -173,7 +172,7 @@ Hinweis: Unterstützte Funktionen werden durch neue Versionen des Tools weiteren
 
 <h3><a name="EM1032"/>Methode `M` Standardwerte für die kein Wrapper generiert wurde.</h3>
 
-Dies ist eine **Warnung** , die Standardparameter Methode `M` keine zusätzlichen Code generieren. Die häufigste Ursache ist, dass eine vorhandene Methode bereits die gleiche Signatur verfügt. Z. B. in .net ist es möglich, dass:
+Dies ist eine **Warnung** , die Standardparameter Methode `M` keine zusätzlichen Code generieren. Die häufigste Ursache ist, dass eine vorhandene Methode bereits die gleiche Signatur verfügt. Beispiel: in .net ist es möglich, dass:
 
 ```
 public class MyType {
@@ -187,7 +186,7 @@ In solchen Fällen nur zwei generiert `increment` Selektoren erstellt werden, be
 
 <h3><a name="EM1033"/>Methode `M` wird nicht generiert werden, da eine andere Methode den Operator mit einem Anzeigenamen verfügbar macht.</h3>
 
-Dies ist eine **Warnung** , die die Methode `M` wird nicht generiert werden, da eine andere Methode den Operator mit einem Anzeigenamen verfügbar macht. (https://msdn.microsoft.com/en-us/library/ms229032 (v=vs.110).aspx)
+Dies ist eine **Warnung** , die die Methode `M` wird nicht generiert werden, da eine andere Methode den Operator mit einem Anzeigenamen verfügbar macht. (https://msdn.microsoft.com/en-us/library/ms229032(v=vs.110).aspx)
 
 
 <h3><a name="EM1034"/>Erweiterungsmethode `M` generiert, da sie für den primitiven Typ erstellt werden, können nicht innerhalb einer Kategorie `T`. Eine normale, statische Methode generiert wurde.</h3>

@@ -2,18 +2,18 @@
 documentType: LandingData
 title: Xamarin.Android-Beispiele
 metadata:
-  description: "Xamarin.Android-Beispiel-Apps für mobile Entwickler."
+  description: Xamarin.Android-Beispiel-Apps für mobile Entwickler.
   author: conceptdev
   ms.author: crdun
   ms.date: 02/20/2018
-  ms.topic: article
-  ms.openlocfilehash: df9b864542bbdbf57ed9096ce8e869a056b021c3
-  ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+  ms.topic: sample
+  ms.openlocfilehash: 58c8cf15dc196071268172980279cb19f269cc4a
+  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 02/28/2018
+  ms.lasthandoff: 04/04/2018
 abstract:
-  description: "Xamarin Android-Beispiel-Apps und -Code-Demos für die ersten Schritte beim Erstellen mobiler Apps mit C# und Xamarin."
+  description: Xamarin Android-Beispiel-Apps und -Code-Demos für die ersten Schritte beim Erstellen mobiler Apps mit C# und Xamarin.
   menu:
     items:
     - href: https://developer.xamarin.com/samples/android/all/
@@ -32,7 +32,7 @@ sections:
         href: https://developer.xamarin.com/samples/monodroid/android5.0/GoogleIO2014Master/
       title: Material Design
     - href: https://developer.xamarin.com/samples/monodroid/GooglePlayServices/
-      html: "Diese Lösung verwendet Xamarin Google Play Services NuGet, um einige Anwendungsbereiche der Karten-API zu veranschaulichen."
+      html: Diese Lösung verwendet Xamarin Google Play Services NuGet, um einige Anwendungsbereiche der Karten-API zu veranschaulichen.
       image:
         src: images/gps.png
         href: https://developer.xamarin.com/samples/monodroid/GooglePlayServices/
@@ -44,19 +44,19 @@ sections:
         href: https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager/
       title: FlashCardPager
     - href: https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/
-      html: "Fragmente sind eigenständige, modulare Komponenten, mit denen die Komplexität beim Schreiben von Anwendungen, die auf Bildschirmen mit unterschiedlichen Größen ausgeführt werden können, bewältigt werden kann."
+      html: Fragmente sind eigenständige, modulare Komponenten, mit denen die Komplexität beim Schreiben von Anwendungen, die auf Bildschirmen mit unterschiedlichen Größen ausgeführt werden können, bewältigt werden kann.
       image:
         src: images/fragments.png
         href: https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/
       title: Fragmente
     - href: https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/
-      html: "App zum farbigen Malen mit Fingern mithilfe der Nachverfolgung von Multitoucheingaben auf Android-Geräten."
+      html: App zum farbigen Malen mit Fingern mithilfe der Nachverfolgung von Multitoucheingaben auf Android-Geräten.
       image:
         src: images/fingerpaint.png
         href: https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/
       title: FingerPaint
     - href: https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/
-      html: "Verwenden Sie dieses Beispiel, um zu erfahren, wie Sie die neuen CardView- und RecyclerView-Widgets in Android 5.0 Lollipop verwenden können."
+      html: Verwenden Sie dieses Beispiel, um zu erfahren, wie Sie die neuen CardView- und RecyclerView-Widgets in Android 5.0 Lollipop verwenden können.
       image:
         src: images/recycler.png
         href: https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/
@@ -68,7 +68,7 @@ sections:
         href: https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/
       title: Symbolleiste
     - href: https://developer.xamarin.com/samples/monodroid/wear/WatchFace/
-      html: "Erläutert, wie Sie ein benutzerdefiniertes Android Wear-Zifferblatt implementieren."
+      html: Erläutert, wie Sie ein benutzerdefiniertes Android Wear-Zifferblatt implementieren.
       image:
         src: images/watchface.png
         href: https://developer.xamarin.com/samples/monodroid/wear/WatchFace/

@@ -1,18 +1,17 @@
 ---
-title: "In der Android-App verknüpfen"
-description: "Diese Anleitung wird erläutert, wie Android 6.0 app-Verknüpfung, eine Technik unterstützt, die mobile-apps So reagieren Sie auf die URLs auf Websites ermöglicht. Es wird erläutert, welche app-Verknüpfung ist, wie app-Verknüpfung in einer Anwendung für Android 6.0 implementiert und eine Website zum Erteilen von Berechtigungen an die mobile Anwendung für eine Domäne zu konfigurieren."
-ms.topic: article
+title: In der Android-App verknüpfen
+description: Diese Anleitung wird erläutert, wie Android 6.0 app-Verknüpfung, eine Technik unterstützt, die mobile-apps So reagieren Sie auf die URLs auf Websites ermöglicht. Es wird erläutert, welche app-Verknüpfung ist, wie app-Verknüpfung in einer Anwendung für Android 6.0 implementiert und eine Website zum Erteilen von Berechtigungen an die mobile Anwendung für eine Domäne zu konfigurieren.
 ms.prod: xamarin
 ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 78fef780728ba1c2a3b9978504058f7a386b0e7d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 2ef6b8044387d759e26d05c1468caaad7efb9bdc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-linking-in-android"></a>In der Android-App verknüpfen
 
@@ -56,7 +55,7 @@ Einrichten von app-Links in Android 6.0 umfasst zwei Hauptschritte:
 Es ist notwendig, einen beabsichtigten Filter konfigurieren, der einen URI (oder möglich, einen Satz von URIs) von einer Website einer Aktivität an eine Android-Anwendung zugeordnet ist. In Xamarin.Android, wird diese Beziehung durch Erweitern einer Aktivität mit der [IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/). Der beabsichtigte Filter muss die folgende Informationen deklarieren:
 
 * **`Intent.ActionView`** &ndash; Dadurch wird der beabsichtigten Filter, um die Antwort auf Anforderungen zum Anzeigen von Informationen registriert.
-* **`Categories`** &ndash;  Der beabsichtigte Filter sollten beide registrieren  **[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)**  und  **[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)**  ordnungsgemäß werden sollen die Web-URI zu behandeln.
+* **`Categories`** &ndash;  Der beabsichtigte Filter sollten beide registrieren **[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)** und **[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)** ordnungsgemäß werden sollen die Web-URI zu behandeln.
 * **`DataScheme`** &ndash; Der beabsichtigte Filter muss deklarieren `http` und/oder `https`. Hierbei handelt es sich um gültige nur zwei Schemas.
 * **`DataHost`** &ndash; Dies ist die Domäne, die die URIs aus hergestellt werden.
 * **`DataPathPrefix`** &ndash; Dies ist ein optionaler Pfad auf Ressourcen auf der Website.

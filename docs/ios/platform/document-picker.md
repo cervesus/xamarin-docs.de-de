@@ -1,17 +1,16 @@
 ---
 title: Dokument-Auswahl
-description: "Die Auswahl einer Dokument modellansichtcontroller gewährt Benutzerzugriff auf Dateien außerhalb einer Anwendung Sandkasten. Es ist ein einfacher Mechanismus zur Freigabe von Dokumenten zwischen apps. Außerdem können komplexere Workflows, da der Benutzer ein einzelnes Dokument mit mehreren Anwendungen bearbeiten können. Dieser Artikel enthält eine Einführung zur Verwendung der Dokument-Auswahl in einem Xamarin.iOS-Anwendung und die Änderungen in Dokumenten mit iCloud zu ihrer Unterstützung erforderlich."
-ms.topic: article
+description: Die Auswahl einer Dokument modellansichtcontroller gewährt Benutzerzugriff auf Dateien außerhalb einer Anwendung Sandkasten. Es ist ein einfacher Mechanismus zur Freigabe von Dokumenten zwischen apps. Außerdem können komplexere Workflows, da der Benutzer ein einzelnes Dokument mit mehreren Anwendungen bearbeiten können. Dieser Artikel enthält eine Einführung zur Verwendung der Dokument-Auswahl in einem Xamarin.iOS-Anwendung und die Änderungen in Dokumenten mit iCloud zu ihrer Unterstützung erforderlich.
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 25b9d6c0eebd51a7b47b31c35fb3d5b56e45c3b3
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 33a6dc7294db74c3c8ab451f147c941124db8982
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="document-picker"></a>Dokument-Auswahl
 

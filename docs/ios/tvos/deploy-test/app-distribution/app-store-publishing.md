@@ -1,18 +1,17 @@
 ---
-title: "Die Veröffentlichung auf dem Apple TV-App Store"
-description: "Dieser Artikel zeigt, wie konfigurieren, erstellen und Veröffentlichen einer app Xamarin.tvOS für die Verteilung über den Apple TV-App Store. Er enthält eine schrittweise Anleitung, die zum Vorbereiten Ihrer app für die Verteilung, wie Apple Tools verwenden, um die app zur Überprüfung senden, und schließlich, wie Sie Ihre app auf den Apple TV-App Store veröffentlicht abdeckt."
-ms.topic: article
+title: Die Veröffentlichung auf dem Apple TV-App Store
+description: Dieser Artikel zeigt, wie konfigurieren, erstellen und Veröffentlichen einer app Xamarin.tvOS für die Verteilung über den Apple TV-App Store. Er enthält eine schrittweise Anleitung, die zum Vorbereiten Ihrer app für die Verteilung, wie Apple Tools verwenden, um die app zur Überprüfung senden, und schließlich, wie Sie Ihre app auf den Apple TV-App Store veröffentlicht abdeckt.
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: abb8ee30828e5d9856b9fd72cca8adb669959818
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c72b161845f6d8492a47d95e51a80cf0b4f30271
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Die Veröffentlichung auf dem Apple TV-App Store
 
@@ -114,7 +113,7 @@ verwendet tvos. außerdem wurden *bereitstellungsprofile* zu steuern, wie ein be
 Führen Sie für die Bereitstellung die folgenden Schritte mithilfe des webbasierten iOS-Bereitstellungsportals von Apple aus:
 
 1.  Wählen Sie **Bereitstellung** > **Verteilung** aus.
-2.  Klicken Sie auf die  **+**  Schaltfläche und wählen Sie den Typ des Profils Verteilung, die Sie erstellen möchten **Apple TV-App Store**.
+2.  Klicken Sie auf die **+** Schaltfläche und wählen Sie den Typ des Profils Verteilung, die Sie erstellen möchten **Apple TV-App Store**.
 3.  Wählen Sie aus der Dropdownliste die **App-ID** aus, für die Sie ein Verteilungsprofil erstellen möchten.
 4.  Wählen Sie das Zertifikat zum Signieren der Anwendung erforderlich sind.
 5.  Geben Sie einen **Namen** für das neue **Verteilungsprofil** ein, und generieren Sie das Profil.
@@ -154,7 +153,7 @@ Mit der Xamarin.tvOS-app ordnungsgemäß konfiguriert können Sie jetzt bereit f
     ![](app-store-publishing-images/buildxs01new.png "Wählen Sie die Release-Konfiguration")
 2. Wählen Sie aus dem **Build**-Menü die Option **Zur Veröffentlichung aktivieren**:
 
-    [![](app-store-publishing-images/buildxs02new.png "Wählen Sie Archiv für die Veröffentlichung")](app-store-publishing-images/buildxs02new.png#lightbox)
+    [![](app-store-publishing-images/buildxs02new.png "„Archive for Publishing“ (Für Veröffentlichung archivieren) auswählen")](app-store-publishing-images/buildxs02new.png#lightbox)
 3. Sobald das Archiv erstellt wurde, wird die **Archivansicht** angezeigt:
 
     [![](app-store-publishing-images/buildxs03new.png "Das Archive-Ansicht")](app-store-publishing-images/buildxs03new.png#lightbox)
@@ -196,7 +195,7 @@ Wird der Archiv-Workflow in Visual Studio für Mac Application Loader automatisc
 
 2. Wählen Sie *Ihre App übermitteln* aus, und klicken Sie auf die Schaltfläche *Auswählen*:
 
-    [![](app-store-publishing-images/publishvs01.png "Wählen Sie übermitteln Ihrer App")](app-store-publishing-images/publishvs01.png#lightbox)
+    [![](app-store-publishing-images/publishvs01.png "Wählen Sie „Ihre App übermitteln“ aus")](app-store-publishing-images/publishvs01.png#lightbox)
 
 3. Wählen Sie die zuvor erstellte ZIP- oder IPA-Datei aus, und klicken Sie auf die Schaltfläche **OK**.
 4. Die Datei wird durch den Application Loader überprüft:

@@ -1,18 +1,17 @@
 ---
 title: Festlegen einer Auswahl ItemsSource-Eigenschaft
-description: "Die Auswahl einer Ansicht ist ein Steuerelement für die Auswahl eines Text aus einer Liste von Daten. In diesem Artikel wird erläutert, wie Sie eine Auswahl mit Daten auffüllen, indem Sie die ItemsSource-Eigenschaft festlegen, und reagieren auf die Auswahl in einem vom Benutzer."
-ms.topic: article
+description: Die Auswahl einer Ansicht ist ein Steuerelement für die Auswahl eines Text aus einer Liste von Daten. In diesem Artikel wird erläutert, wie Sie eine Auswahl mit Daten auffüllen, indem Sie die ItemsSource-Eigenschaft festlegen, und reagieren auf die Auswahl in einem vom Benutzer.
 ms.prod: xamarin
 ms.assetid: 8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 5e3d20ad213df9fd9331c71c84003c7738bd5a29
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bf3940bc1bc0318bad4d785388f9dc9292af80ca
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>Festlegen einer Auswahl ItemsSource-Eigenschaft
 

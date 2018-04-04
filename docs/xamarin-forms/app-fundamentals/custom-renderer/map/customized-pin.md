@@ -1,18 +1,17 @@
 ---
 title: Anpassen einer Karte-Pin
-description: "Dieser Artikel veranschaulicht, wie ein benutzerdefiniertes Renderers für das Kartensteuerelement, dem eine systemeigene Darstellung mit einer angepassten Pin \"und\" eine angepasste Ansicht der Pin-Daten auf jeder Plattform angezeigt."
-ms.topic: article
+description: Dieser Artikel veranschaulicht, wie ein benutzerdefiniertes Renderers für das Kartensteuerelement, dem eine systemeigene Darstellung mit einer angepassten Pin "und" eine angepasste Ansicht der Pin-Daten auf jeder Plattform angezeigt.
 ms.prod: xamarin
 ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 312bda44a6b390c6ba486d5a3d60dfe4fb770a2e
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 353575bad91c9bade0207a0aa271d9de7ec50240
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-a-map-pin"></a>Anpassen einer Karte-Pin
 
@@ -33,7 +32,7 @@ Des Renderingprozesses kann verwendet werden, um plattformspezifische Anpassunge
 Jedes Element wird nun wiederum zum Implementieren der besprochen werden eine `CustomMap` Renderer an, der eine systemeigene Darstellung mit einer angepassten Pin "und" eine angepasste Ansicht der Pin-Daten auf jeder Plattform angezeigt.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) Initialisiert und vor der Verwendung konfiguriert werden müssen. Weitere Informationen finden Sie unter [ `Maps Control` ](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) Initialisiert und vor der Verwendung konfiguriert werden müssen. Weitere Informationen finden Sie unter [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
 <a name="Creating_the_Custom_Map" />
 

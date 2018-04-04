@@ -1,18 +1,17 @@
 ---
 title: Grundlegendes zur im Beispiel
-description: "Dieses Thema enthält eine exemplarische Vorgehensweise für die Xamarin.Forms-beispielanwendung, die für die Kommunikation mit anderen Webdiensten veranschaulicht. Während jeder Webdienst eine separate beispielanwendung verwendet, sind mit ähnlichen Funktionen und Klassen für allgemeine freigeben."
-ms.topic: article
+description: Dieses Thema enthält eine exemplarische Vorgehensweise für die Xamarin.Forms-beispielanwendung, die für die Kommunikation mit anderen Webdiensten veranschaulicht. Während jeder Webdienst eine separate beispielanwendung verwendet, sind mit ähnlichen Funktionen und Klassen für allgemeine freigeben.
 ms.prod: xamarin
 ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: ab44cb7a065164bb5b7501ac63bd0321b612b7ca
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: e9738a766762dd64cdfbb034d4eaa54f76aca311
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="understanding-the-sample"></a>Grundlegendes zur im Beispiel
 
@@ -56,7 +55,7 @@ Die PCL-Projekt für jede Anwendung umfasst auch eine Reihe wichtiger Dateien:
 
 Der Großteil der Beispielanwendungen enthalten mindestens zwei Seiten:
 
-- **TodoListPage** – auf dieser Seite zeigt eine Liste der `TodoItem` Instanzen und ein Symbol "Takt" Wenn die `TodoItem.Done` Eigenschaft ist `true`. Durch Klicken auf ein Element navigiert zu der `TodoItemPage`. Darüber hinaus können neue Elemente erstellt werden, indem Sie auf die  *+*  Symbol.
+- **TodoListPage** – auf dieser Seite zeigt eine Liste der `TodoItem` Instanzen und ein Symbol "Takt" Wenn die `TodoItem.Done` Eigenschaft ist `true`. Durch Klicken auf ein Element navigiert zu der `TodoItemPage`. Darüber hinaus können neue Elemente erstellt werden, indem Sie auf die *+* Symbol.
 - **TodoItemPage** – auf dieser Seite zeigt die Details für den ausgewählten `TodoItem`, und ermöglicht dessen bearbeitet werden gespeichert, gelöscht, gesprochen und sein.
 
 Darüber hinaus enthalten einige Beispielanwendungen zusätzliche Seiten, die zur Verwaltung des Authentifizierungsprozesses Benutzer verwendet werden.

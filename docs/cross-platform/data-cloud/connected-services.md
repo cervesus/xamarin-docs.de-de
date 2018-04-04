@@ -1,18 +1,17 @@
 ---
-title: "Von verbundenen Diensten in Visual Studio für Mac"
-description: "Hinzufügen von Azure Datenspeicher, Authentifizierung und Pushbenachrichtigungen auf mobile apps aus Visual Studio für Mac"
-ms.topic: article
+title: Von verbundenen Diensten in Visual Studio für Mac
+description: Hinzufügen von Azure Datenspeicher, Authentifizierung und Pushbenachrichtigungen auf mobile apps aus Visual Studio für Mac
 ms.prod: xamarin
 ms.assetid: ADDFB3A5-DB6A-417C-8ACE-33D107FB75C2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 5c9ae8d65a2bfdd035cccb6b911448ea047f8c40
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b9aaa197ccf01c59d6e4bbb0476d10295a108f89
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="connected-services-walkthrough"></a>Verbundene Dienste Exemplarische Vorgehensweise
 

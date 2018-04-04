@@ -1,18 +1,17 @@
 ---
 title: Binden von ein. AAR
-description: "Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen einer Xamarin.Android Java Bindungen Bibliothek aus einer Android. AAR-Datei."
-ms.topic: article
+description: Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen einer Xamarin.Android Java Bindungen Bibliothek aus einer Android. AAR-Datei.
 ms.prod: xamarin
 ms.assetid: 380413B8-6A99-4BB8-B64C-3EAF9F359C22
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: ae209f8099925cc160e16cb5365625e48e6c384d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 101fb28add97749549de9c44292a1ef99a717dde
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-an-aar"></a>Binden von ein. AAR
 
@@ -284,7 +283,7 @@ var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 
 Die **textanalyzer.aar** Beispiel enthält eine Bilddatei, die am befindet **res/drawable/monkey.png**. Wir Zugriff auf diese Bildressource und deren Verwendung in unserem Beispiel-app:
 
-Bearbeiten der **Namen "bindingtest"** Layout (**Main.axml**) und fügen eine `ImageView` bis zum Ende der `LinearLayout` Container. Dies `ImageView` zeigt das Bild finden Sie unter  **@drawable/monkey** ; dieses Bild wird im Abschnitt "Ressourcen" der geladen **textanalyzer.aar**:
+Bearbeiten der **Namen "bindingtest"** Layout (**Main.axml**) und fügen eine `ImageView` bis zum Ende der `LinearLayout` Container. Dies `ImageView` zeigt das Bild finden Sie unter **@drawable/monkey**; dieses Bild wird im Abschnitt "Ressourcen" der geladen **textanalyzer.aar**:
 
 ```xml
     ...

@@ -1,18 +1,17 @@
 ---
 title: Bereitstellung und Testen
-description: "Informationen zum Testen Ihrer app Abnutzung auf einem Android-Gerät (oder -Emulator) und auf die Bereitstellung vorbereitet."
-ms.topic: article
+description: Informationen zum Testen Ihrer app Abnutzung auf einem Android-Gerät (oder -Emulator) und auf die Bereitstellung vorbereitet.
 ms.prod: xamarin
 ms.assetid: 3D8E5A97-F719-4E8C-B777-108DFF20C91F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/19/2017
-ms.openlocfilehash: f80be1c61d28ce73342399a0b4f2346007cd14de
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e6472b3bf07750338d9ada7ca62f0a5c9e2c8a7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="deployment-and-testing"></a>Bereitstellung und Testen
 
@@ -23,7 +22,7 @@ Wenn die app bereit ist, wird im letzte Thema erläutert, wie zur Vorbereitung d
 
 Zum Debuggen einer Anwendung Xamarin.Android Abnutzung auf dem Android SDK-Emulator.
 
-## <a name="debug-on-a-wear-deviceandroidweardeploy-testdebug-on-devicemd"></a>[Debuggen Sie auf einem Gerät Abnutzung](~/android/wear/deploy-test/debug-on-device.md)
+## <a name="debug-on-a-wear-deviceandroidweardeploy-testdebug-on-devicemd"></a>[Debuggen Sie auf einem Wear-Gerät](~/android/wear/deploy-test/debug-on-device.md)
 
 Eine Android-Gerät konfigurieren, sodass Xamarin.Android Abnutzung Anwendungen darauf direkt von Visual Studio oder Visual Studio für Mac bereitgestellt werden können
 

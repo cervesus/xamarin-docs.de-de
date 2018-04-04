@@ -1,17 +1,16 @@
 ---
 title: Zusammenfassung der in Kapitel 15. Die interaktive-Schnittstelle
-ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 09b999771ec500409e40dc2aef671045bf9f5565
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: c5b2bc00c4337969322193966f26ce0e151f426e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Zusammenfassung der in Kapitel 15. Die interaktive-Schnittstelle
 
@@ -91,7 +90,7 @@ Die [ `Stepper` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/)
 
 - [`Increment`](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Increment/) Der Typ `double`, initialisiert auf 1
 
-Optisch können die `Stepper` besteht aus zwei Schaltflächen, die mit der Bezeichnung  **&ndash;**  und  **+** . Drücken  **&ndash;**  verringert `Value` von `Increment` auf ein Minimum von `Minimum`. Drücken  **+**  erhöht `Value` von `Increment` auf ein Maximum von `Maximum`.
+Optisch können die `Stepper` besteht aus zwei Schaltflächen, die mit der Bezeichnung **&ndash;** und **+**. Drücken **&ndash;** verringert `Value` von `Increment` auf ein Minimum von `Minimum`. Drücken **+** erhöht `Value` von `Increment` auf ein Maximum von `Maximum`.
 
 Dies wird veranschaulicht, durch die [ **StepperDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo) Beispiel.
 

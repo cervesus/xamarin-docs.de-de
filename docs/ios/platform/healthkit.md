@@ -1,18 +1,17 @@
 ---
 title: HealthKit
-description: "HealthKit ist ein Framework, eingeführt in iOS 8, die einen zentralisierte, koordinierten und sicheren Datenspeicher für Integrität bezogene Informationen bereitstellt. Das Betriebssystem wird sichergestellt, dass der Datenschutz und Sicherheit der Zustandsinformationen und mit der Integrität-app ein Dashboard für den Benutzer. Mit der Berechtigung des Benutzers können Anwendungen lesen und Schreiben von einer Vielzahl von Zustandsinformationen."
-ms.topic: article
+description: HealthKit ist ein Framework, eingeführt in iOS 8, die einen zentralisierte, koordinierten und sicheren Datenspeicher für Integrität bezogene Informationen bereitstellt. Das Betriebssystem wird sichergestellt, dass der Datenschutz und Sicherheit der Zustandsinformationen und mit der Integrität-app ein Dashboard für den Benutzer. Mit der Berechtigung des Benutzers können Anwendungen lesen und Schreiben von einer Vielzahl von Zustandsinformationen.
 ms.prod: xamarin
 ms.assetid: E3927A21-507C-43BA-A2AD-957716BA9B52
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e7075b67db94b6bf603bd96c637c9f7724ae1519
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: a569bcff3ac33d008788bb0b946bd027fa5c0ea8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -69,14 +68,14 @@ Die Erstellung von einer expliziten **App-ID** und eine entsprechende **Bereitst
 
 Ihre aktuellen **App-IDs** aufgelisteten innerhalb der [Zertifikate "," Bezeichner "und" Profile](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) Teil der Developer Center. Häufig zeigt diese Liste **ID** Werte der `*`gibt an, die **App-ID** - **Name** kann mit einer beliebigen Anzahl von Suffixen verwendet werden. Solche *Wildcard App IDs* kann nicht mit der Integrität Kit verwendet werden.
  
-So erstellen eine explizite **App-ID**, klicken Sie auf die  **+**  Schaltfläche in der oberen rechten Ecke, um führen die **Registrieren von iOS-App-ID** Seite:
+So erstellen eine explizite **App-ID**, klicken Sie auf die **+** Schaltfläche in der oberen rechten Ecke, um führen die **Registrieren von iOS-App-ID** Seite:
 
 
 [![](healthkit-images/image02.png "Registrieren einer app auf der Apple-Entwicklerportal")](healthkit-images/image02.png#lightbox)
 
 Wie in der Abbildung oben gezeigt, nach dem Erstellen einer app-Beschreibung, verwenden die **explizite App-ID** Abschnitt aus, um eine ID für Ihre Anwendung zu erstellen. In der **Anwendungsdienste** aktivieren Sie im Abschnitt **Health Kit** in der **Dienste aktivieren** Abschnitt.
 
-Wenn Sie fertig sind, drücken Sie die **Fortfahren** Schaltfläche zum Registrieren der **App-ID** in Ihrem Konto. Sie werden reaktiviert werden wieder die **Zertifikate, Bezeichner und Profile** Seite. Klicken Sie auf **Provisioning Profile** gelangen Sie zu der Liste der aktuellen provisioning Profile, und klicken Sie auf die  **+**  Schaltfläche in der oberen rechten Ecke zum Ausführen der **iOS hinzufügen Bereitstellungsprofil** Seite. Wählen Sie die **iOS-App-Entwicklung** aus, und klicken Sie auf **Fortfahren** zum Abrufen der **wählen Sie App-ID** Seite. Wählen Sie hier den expliziten **App-ID** , die Sie zuvor angegeben haben:
+Wenn Sie fertig sind, drücken Sie die **Fortfahren** Schaltfläche zum Registrieren der **App-ID** in Ihrem Konto. Sie werden reaktiviert werden wieder die **Zertifikate, Bezeichner und Profile** Seite. Klicken Sie auf **Provisioning Profile** gelangen Sie zu der Liste der aktuellen provisioning Profile, und klicken Sie auf die **+** Schaltfläche in der oberen rechten Ecke zum Ausführen der **iOS hinzufügen Bereitstellungsprofil** Seite. Wählen Sie die **iOS-App-Entwicklung** aus, und klicken Sie auf **Fortfahren** zum Abrufen der **wählen Sie App-ID** Seite. Wählen Sie hier den expliziten **App-ID** , die Sie zuvor angegeben haben:
 
 
 [![](healthkit-images/image03.png "Wählen Sie die explizite App-ID")](healthkit-images/image03.png#lightbox)

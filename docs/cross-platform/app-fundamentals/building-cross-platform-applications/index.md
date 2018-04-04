@@ -1,18 +1,17 @@
 ---
 title: Erstellen von Cross-Platform-Anwendungen
-description: "Dieser Abschnitt beschreibt eine Zusammenfassung plus sechs Komponenten zum Erstellen von Anwendungen mit dem Xamarin-Entwicklungsplattform – aus Grundlegendes zur Funktionsweise von Xamarin beim Entwerfen von mobilen apps und klicken Sie dann testen und bereitstellen können, die verschiedene app-Stores."
-ms.topic: article
+description: Dieser Abschnitt beschreibt eine Zusammenfassung plus sechs Komponenten zum Erstellen von Anwendungen mit dem Xamarin-Entwicklungsplattform – aus Grundlegendes zur Funktionsweise von Xamarin beim Entwerfen von mobilen apps und klicken Sie dann testen und bereitstellen können, die verschiedene app-Stores.
 ms.prod: xamarin
 ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/28/2016
-ms.openlocfilehash: 53c32003cd1a77a3aa5feb0ab26cedeab27789dc
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: b9d167d8874ecfde9094bacc26cff3e7d1b10bab
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="sharing-code-options"></a>Optionen für die Codefreigabe
 

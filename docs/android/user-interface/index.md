@@ -1,18 +1,17 @@
 ---
-title: "Benutzeroberfläche"
-description: "Erstellen von Benutzeroberflächen für Xamarin.Android-Apps"
-ms.topic: article
+title: Benutzeroberfläche
+description: Erstellen von Benutzeroberflächen für Xamarin.Android-Apps
 ms.prod: xamarin
 ms.assetid: F67B7C33-BC53-2BB6-CDA7-16E4AB4A9EFB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/18/2017
-ms.openlocfilehash: 40d02def5c0aae3334ae59cec78f6d22a1d5d772
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 152f5551e2f539e8ab93121c35c2acca7eb7f2e9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="user-interface"></a>Benutzeroberfläche
 
@@ -22,7 +21,7 @@ Den folgenden Abschnitten werden die verschiedenen Tools und Bausteine, die verw
 
 In diesem Abschnitt wird erläutert, wie visuell anordnen von Steuerelementen und Bearbeiten von Eigenschaften mit dem Android-Designer. Außerdem wird erläutert, wie den Designer mit Benutzeroberflächen und Ressourcen in verschiedenen Konfigurationen, z. B. Designs, Sprachen und Gerätekonfigurationen, funktioniert und wie um alternative Ansichten wie quer- und Hochformat zu entwerfen.
 
-## <a name="material-themeandroiduser-interfacematerial-thememd"></a>[Design "Material"](~/android/user-interface/material-theme.md)
+## <a name="material-themeandroiduser-interfacematerial-thememd"></a>[Materialdesign](~/android/user-interface/material-theme.md)
 
 *Design "Material"* ist das Format der Benutzer-Schnittstelle, die das Aussehen und Verhalten von Ansichten und Aktivitäten in Android bestimmt. Design "Material" ist in der Android-Geräten integriert, damit sie vom System Benutzeroberfläche sowie von Anwendungen verwendet wird. Diese Anleitung führt Sie Material Entwurfsprinzipien und erklärt, wie Sie eine app mithilfe von integrierten Material Designs oder ein benutzerdefiniertes Design Design.
 

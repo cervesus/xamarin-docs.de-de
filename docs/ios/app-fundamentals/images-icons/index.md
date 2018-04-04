@@ -1,18 +1,17 @@
 ---
 title: Bildern und Symbolen
-description: "Dieser Abschnitt enthält eine Vielzahl von Artikeln, die Arbeiten mit Bildern in einem Xamarin.iOS-app, wie beispielsweise verwenden sie als Symbole abdecken, starten Sie Bildschirme oder einschließlich sie Steuerelemente und Bereitstellen von Symbolen für benutzerdefinierte Dokumenttypen."
-ms.topic: article
+description: Dieser Abschnitt enthält eine Vielzahl von Artikeln, die Arbeiten mit Bildern in einem Xamarin.iOS-app, wie beispielsweise verwenden sie als Symbole abdecken, starten Sie Bildschirme oder einschließlich sie Steuerelemente und Bereitstellen von Symbolen für benutzerdefinierte Dokumenttypen.
 ms.prod: xamarin
 ms.assetid: 0AB8CC07-11E4-0D75-4119-AED1A1252424
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 904ba5db84101651d10605fadf8e8861db0ddc1f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fd191c898d5bb015d2d394d42db1049bb0128fb7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="images-and-icons"></a>Bildern und Symbolen
 
@@ -65,5 +64,5 @@ Dieser Artikel behandelt die einschließlich und verwalten ein Standardimage-Med
 ## <a name="related-links"></a>Verwandte Links
 
 - [Arbeiten mit Bildern (Beispiel)](https://developer.xamarin.com/samples/WorkingWithImages/)
-- [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
+- [Hallo iPhone](~/ios/get-started/hello-ios/index.md)
 - [Benutzerdefiniertes Symbol und Richtlinien für die Erstellung von Images](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

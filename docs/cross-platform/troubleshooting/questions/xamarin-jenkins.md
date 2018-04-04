@@ -1,16 +1,16 @@
 ---
-title: "Warum wird von Xamarin nicht Jenkins unterstützt?"
-ms.topic: article
+title: Warum wird von Xamarin nicht Jenkins unterstützt?
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 8129229a821edd2ef4f251679ee46bca7b74c8f9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8112f9bfc8975b12e3c300c0c981d21749173f7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="why-isnt-jenkins-supported-by-xamarin"></a>Warum wird von Xamarin nicht Jenkins unterstützt?
 
@@ -50,7 +50,7 @@ oder
 
 > Fehler: Die Starter Edition von Xamarin.iOS Gebäude außerhalb von Xamarin Studio nicht unterstützt 
 
-Die häufigste Ursache für dieses Szenario ist die Verwendung von Jenkins über die Anmeldung mit einem Benutzerkonto, das nicht mit Xamarin-Lizenz zugeordnet. Die einfachste Möglichkeit zum Auflösen von diesem ist Jenkins als eine app direkt über das Benutzerkonto installiert. Prozess- und einige zusätzliche Aspekte berücksichtigt werden hier beschrieben: [https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)
+Die häufigste Ursache für dieses Szenario ist die Verwendung von Jenkins über die Anmeldung mit einem Benutzerkonto, das nicht mit Xamarin-Lizenz zugeordnet. Die einfachste Möglichkeit zum Auflösen von diesem ist Jenkins als eine app direkt über das Benutzerkonto installiert. Dieser Prozess und einige zusätzliche Aspekte berücksichtigt werden hier beschrieben: [https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)
 
 Eine andere Möglichkeit ist, dass die Xamarin-Lizenzinformationen aus irgendeinem Grund beschädigt ist, können Sie die [Xamarin-Lizenz Resync Handbuch](~/cross-platform/troubleshooting/legacy-licenses/resync-licenses.md) dieses Szenario zu behandeln.
 

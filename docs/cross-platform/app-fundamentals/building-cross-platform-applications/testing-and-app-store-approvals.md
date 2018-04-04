@@ -1,5 +1,5 @@
 #<a name="---"></a>---
-Title: "Teil 6 – testen und App Store Genehmigungen" ms.topic: article ms.prod: Xamarin ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B ms.technology: Xamarin plattformübergreifende Autor: asb3993 ms.author: Amburns ms.date: 03/23/2017
+Title: "Teil 6 – testen und App Store Genehmigungen" ms.prod: Xamarin ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B ms.technology: Xamarin plattformübergreifende Autor: asb3993 ms.author: Amburns ms.date: 03/23/2017
 ---
 
 # <a name="part-6---testing-and-app-store-approvals"></a>Teil 6: Testen und App-Store Genehmigungen
@@ -47,7 +47,7 @@ Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-u
 
 
 
-## <a name="unit-testing"></a>Komponententests
+## <a name="unit-testing"></a>Unittests
 
 
 
@@ -68,7 +68,7 @@ Es ist ein Open Source-Äquivalent Touch.Unit für Android Andr.Unit aufgerufen.
 
 ## <a name="app-store-approvals"></a>App-Store Genehmigungen
 
-Apple und Microsoft Betrieb den einzigen Speicher für ihre Plattformen: die App Store "und" Marketplace bzw. Sowohl ihre Geräte gesperrt, und implementieren Sie einen strenge app Review-Prozess, um zu steuern, die Qualität der Anwendungen, die für den download verfügbaren. Öffnen des Android-Art bedeutet, dass es eine Reihe von Store-Optionen im Bereich von Google Play, weit verbreitet und keine Review-Prozess, der Amazon-App Store für Android und Hardware-spezifischen bemühungen wie Samsung Apps, die Verteilung auf stärker eingeschränkt haben Darüber hinaus einen Genehmigungsprozess implementiert.
+Apple und Microsoft Betrieb den einzigen Speicher für ihre Plattformen: die App Store "und" Marketplace bzw.. Sowohl ihre Geräte gesperrt, und implementieren Sie einen strenge app Review-Prozess, um zu steuern, die Qualität der Anwendungen, die für den download verfügbaren. Öffnen des Android-Art bedeutet, dass es eine Reihe von Store-Optionen im Bereich von Google Play, weit verbreitet und keine Review-Prozess, der Amazon-App Store für Android und Hardware-spezifischen bemühungen wie Samsung Apps, die Verteilung auf stärker eingeschränkt haben Darüber hinaus einen Genehmigungsprozess implementiert.
 
 Warten auf eine app, die geprüft werden kann sehr verkraftet - Business-Druck bedeuten, dass Anwendungen mit wenig Rand für Fehler, vor einem Datum "Ziel" Launch zur Genehmigung gesendet werden. Der Prozess selbst kann bis zu zwei Wochen dauern und ist nicht notwendigerweise transparent: beschränkt Feedback zum Status der Anwendung vorhanden ist, bis er schließlich abgelehnt oder genehmigt wird. Ablehnung kann bedeuten fehlende ein marketing Fenster Verkaufschancen, besonders, wenn es mehr als einmal auftritt und Wochen zwischen des ursprünglichen Start Datums übergeben, und wenn die app schließlich genehmigt wird.
 

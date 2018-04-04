@@ -1,18 +1,17 @@
 ---
 title: Application Fundamentals (Anwendungsgrundlagen)
 description: Untersuchen die Grundlagen der Entwicklung Xamarin.Forms
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: afa3bf25b1448d98c49c95a66bd0f4dc55bde39e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a53c15ebad6081dae2ebc4bd782bcc3644620fe
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="application-fundamentals"></a>Application Fundamentals (Anwendungsgrundlagen)
 
@@ -64,7 +63,7 @@ Xamarin.Forms unterstützt Datenbank datengesteuerten Anwendungen, die mit dem D
 
 Xamarin.Forms `MessagingCenter` ermöglicht das anzeigen, Modelle und andere Komponenten mit kommunizieren, ohne Informationen über miteinander neben einem einfachen Nachrichtenvertrag kennen zu müssen.
 
-## <a name="navigationnavigationindexmd"></a>[Navigationsbereich](navigation/index.md)
+## <a name="navigationnavigationindexmd"></a>[Navigation](navigation/index.md)
 
 Xamarin.Forms stellt eine Reihe von anderen Seite Navigation Erfahrungen, abhängig von der `Page` geben verwendet wird.
 

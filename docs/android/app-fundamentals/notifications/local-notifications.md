@@ -1,18 +1,17 @@
 ---
 title: Lokale Benachrichtigungen
-description: "In diesem Abschnitt wird gezeigt, wie lokale Benachrichtigungen in Xamarin.Android implementiert wird. Es wird erläutert, die verschiedenen Benutzeroberflächenelemente der Android-Benachrichtigung und behandelt die API des durch das Erstellen und Anzeigen einer Benachrichtigung beteiligt."
-ms.topic: article
+description: In diesem Abschnitt wird gezeigt, wie lokale Benachrichtigungen in Xamarin.Android implementiert wird. Es wird erläutert, die verschiedenen Benutzeroberflächenelemente der Android-Benachrichtigung und behandelt die API des durch das Erstellen und Anzeigen einer Benachrichtigung beteiligt.
 ms.prod: xamarin
 ms.assetid: 03E19D14-7C81-4D5C-88FC-C3A3A927DB46
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: f13515326bd75f2b2c15e2b6059e6f829814ea5c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 97c8372656f0cbfa5b8f7bb12d15b00feac4b5c3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="local-notifications"></a>Lokale Benachrichtigungen
 

@@ -1,18 +1,17 @@
 ---
 title: Benutzerdefinierte Animationen
-description: "Die Animation-Klasse ist der Baustein von allen Xamarin.Forms Animationen mit den Erweiterungsmethoden in den ViewExtensions-Klasse, erstellen eine oder mehrere Animationsobjekte. Dieser Artikel veranschaulicht, wie die Animation-Klasse zum Erstellen und \"Abbrechen\" Animationen mehrere Animationen zu synchronisieren, und Erstellen von benutzerdefinierten Animationen, die Eigenschaften zu animieren, die durch die vorhandenen Methoden für die Animation animiert werden nicht."
-ms.topic: article
+description: Die Animation-Klasse ist der Baustein von allen Xamarin.Forms Animationen mit den Erweiterungsmethoden in den ViewExtensions-Klasse, erstellen eine oder mehrere Animationsobjekte. Dieser Artikel veranschaulicht, wie die Animation-Klasse zum Erstellen und "Abbrechen" Animationen mehrere Animationen zu synchronisieren, und Erstellen von benutzerdefinierten Animationen, die Eigenschaften zu animieren, die durch die vorhandenen Methoden für die Animation animiert werden nicht.
 ms.prod: xamarin
 ms.assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: c582e0306bdc69570e3f8e8d35c7fa15b30523da
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 302aa784baad9afb703f88dcfba56b68fd3c9105
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="custom-animations"></a>Benutzerdefinierte Animationen
 

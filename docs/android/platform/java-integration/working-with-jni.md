@@ -1,18 +1,17 @@
 ---
 title: Arbeiten mit JNI
-description: "Xamarin.Android ermöglicht das Schreiben von Android-apps in c# anstelle von Java. Mehrere Assemblys werden mit Xamarin.Android bereitgestellt, die Bindungen für Java-Clientbibliotheken, einschließlich Mono.Android.dll und Mono.Android.GoogleMaps.dll. Allerdings Bindungen werden nicht für alle möglichen Java-Bibliothek bereitgestellt und die Bindungen, die bereitgestellt werden können nicht gebunden werden, jedem Java-Typen und Member. Um ungebundenen Java-Typen und Member verwenden, kann die Java Native Interface (JNI) verwendet werden. Dieser Artikel zeigt, wie JNI mit Java-Typen und Member von Xamarin.Android Anwendungen interagieren."
-ms.topic: article
+description: Xamarin.Android ermöglicht das Schreiben von Android-apps in c# anstelle von Java. Mehrere Assemblys werden mit Xamarin.Android bereitgestellt, die Bindungen für Java-Clientbibliotheken, einschließlich Mono.Android.dll und Mono.Android.GoogleMaps.dll. Allerdings Bindungen werden nicht für alle möglichen Java-Bibliothek bereitgestellt und die Bindungen, die bereitgestellt werden können nicht gebunden werden, jedem Java-Typen und Member. Um ungebundenen Java-Typen und Member verwenden, kann die Java Native Interface (JNI) verwendet werden. Dieser Artikel zeigt, wie JNI mit Java-Typen und Member von Xamarin.Android Anwendungen interagieren.
 ms.prod: xamarin
 ms.assetid: A417DEE9-7B7B-4E35-A79C-284739E3838E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: f14d456cba66142c51e0755cdfd3c6795bd1cf73
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 4b5874a0f0e4289201f68299e2e37660cabc9ecf
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-jni"></a>Arbeiten mit JNI
 

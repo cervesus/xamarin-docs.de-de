@@ -1,18 +1,17 @@
 ---
 title: Hello, Abnutzung
-description: "Erstellen Sie Ihrer ersten Android Dach app, und führen Sie sie auf ein Gerät oder Emulator Abnutzung. Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen eines kleinen Dach Android-Projekts, das auf eine Schaltfläche behandelt und zeigt einen Leistungsindikator klicken Sie auf dem Gerät Abnutzung. Es wird erläutert, wie Debuggen Sie die Anwendung mit einem Emulator Abnutzung oder ein Abnutzung-Gerät, das mit einem Android-Telefon über Bluetooth verbunden ist. Darüber hinaus eine Reihe von Tipps zum Debuggen für Android Dach."
-ms.topic: article
+description: Erstellen Sie Ihrer ersten Android Dach app, und führen Sie sie auf ein Gerät oder Emulator Abnutzung. Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen eines kleinen Dach Android-Projekts, das auf eine Schaltfläche behandelt und zeigt einen Leistungsindikator klicken Sie auf dem Gerät Abnutzung. Es wird erläutert, wie Debuggen Sie die Anwendung mit einem Emulator Abnutzung oder ein Abnutzung-Gerät, das mit einem Android-Telefon über Bluetooth verbunden ist. Darüber hinaus eine Reihe von Tipps zum Debuggen für Android Dach.
 ms.prod: xamarin
 ms.assetid: 86BCD0E7-E9DC-40F1-9B44-887BC51BB48D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 8eed2d6b825a6e6dd7e956bf901246b9a630081a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 742a10ce0042d2bbf6d5690cb7a7a6eca529a57e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-wear"></a>Hello, Abnutzung
 
