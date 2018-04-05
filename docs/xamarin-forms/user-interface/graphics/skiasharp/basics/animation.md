@@ -7,11 +7,11 @@ ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 7435807e77a9a79d7fc3821675c1d959a16caa8f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 859677a3dcfcddd0b333c9ddf60c01e2093b6a5b
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="basic-animation"></a>Grundlegende Animation
 
@@ -24,7 +24,7 @@ Sie können Animationen SkiaSharp Grafiken in Xamarin.Forms verursacht die `Pain
 Die **Pulsating Ellipse** auf der Seite der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm erstellt eine Animation der beiden Achsen einer Ellipse, damit er angezeigt wird, um pulsating werden, und Sie können auch steuern, die Rate der dieser Pulsation:
 
 
-Die [ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml) Datei instanziiert einen Xamarin.Forms `Slider` und ein `Label` den aktuellen Wert des Schiebereglers angezeigt. Dies ist eine allgemeine Möglichkeit zum Integrieren einer `SKCanvasView` mit anderen Ansichten Xamarin.Forms:
+Die [ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml) Datei instanziiert einen Xamarin.Forms `Slider` und ein `Label` den aktuellen Wert des Schiebereglers angezeigt. Dies ist eine allgemeine Möglichkeit zum Integrieren einer `SKCanvasView` mit anderen Ansichten Xamarin.Forms:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -149,7 +149,7 @@ Beachten Sie, dass die `SKPaint` -Objekt wird erstellt, einem `using` Block. Wie
 
  Eine bessere Lösung in diesem speziellen Fall wäre, erstellen Sie zwei `SKPaint` Objekte einmal, und speichern Sie sie als Felder.
 
-Was ist die **erweitern Kreise** Animation verfügt. Die [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs) Klasse beginnt, durch die mehrere Felder, einschließlich der Definition einer `SKPaint` Objekt:
+Was ist die **erweitern Kreise** Animation verfügt. Die [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs) Klasse beginnt, durch die mehrere Felder, einschließlich der Definition einer `SKPaint` Objekt:
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage

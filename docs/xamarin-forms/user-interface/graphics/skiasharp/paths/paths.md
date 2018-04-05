@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 3a828baccda83822237d2564d771bcd89c9099e5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b2881148631435c9082b42cad0e784100b010b46
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-basics"></a>Pfad-Grundlagen
 
@@ -50,7 +50,7 @@ Die `R` steht für *relative*. Sie haben die gleiche Syntax wie die entsprechend
 
 Kontur endet mit einem weiteren Aufruf von `MoveTo` oder `RMoveTo`, dem beginnt eine neue Kontur oder einen Aufruf von `Close`, die die Kontur schließt. Die `Close` Methode automatisch Fügt eine gerade Linie von den aktuellen Zeitpunkt mit dem ersten Punkt der Kontur und kennzeichnet den Pfad als "geschlossen", was bedeutet, dass es ohne alle Stroke-Caps gerendert wird.
 
-Der Unterschied zwischen offenen und geschlossenen Konturen wird veranschaulicht, der **zwei Dreieck Konturen** Seite verwendet ein `SKPath` Objekt mit zwei Konturen zwei Dreiecke gerendert. Die erste Kontur geöffnet ist, und die zweite ist geschlossen. So sieht die [ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs) Klasse:
+Der Unterschied zwischen offenen und geschlossenen Konturen wird veranschaulicht, der **zwei Dreieck Konturen** Seite verwendet ein `SKPath` Objekt mit zwei Konturen zwei Dreiecke gerendert. Die erste Kontur geöffnet ist, und die zweite ist geschlossen. So sieht die [ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs) Klasse:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -122,7 +122,7 @@ Ebenso wie die Darstellung der Start- und Ende einer Zeile durch eine Obergrenze
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Round/) für einen abgerundeten join
 - [`Bevel`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Bevel/) für einen Join gehackt deaktivieren
 
-Die **Strich Joins** zeigt drei Joins mit Code wie Schraffieren den **Stroke-Caps** Seite. Dies ist die `PaintSurface` -Ereignishandler in der [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs) Klasse:
+Die **Strich Joins** zeigt drei Joins mit Code wie Schraffieren den **Stroke-Caps** Seite. Dies ist die `PaintSurface` -Ereignishandler in der [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs) Klasse:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

@@ -7,11 +7,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 668b1f437b78535bd4cdf3bb3f80154dbf281a02
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c6fd0f905aceb9dddc4047abc6ad2722adf2d8e9
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Drei Möglichkeiten, einen Bogen gezeichnet werden soll.
 
@@ -73,7 +73,7 @@ path.ArcTo (oval, startAngle, sweepAngle, false);
 
 Diese Version des `ArcTo` zeichnet eine Linie von der aktuellen Position, an den Anfang des Bogens. Dies bedeutet, dass das Kreissegment an einer beliebigen Stelle in der Mitte einer größeren Kontur sein kann.
 
-Die **Winkel Bogen** Seite können Sie zwei Schieberegler Geben Sie die Start- und sweep Winkel. Die XAML-Datei instanziiert zwei `Slider` Elemente und ein `SKCanvasView`. Die `PaintCanvas` Ereignishandler in der [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) Datei zeichnet das Oval und den Bogen mit zwei `SKPaint` Objekte als Felder definiert:
+Die **Winkel Bogen** Seite können Sie zwei Schieberegler Geben Sie die Start- und sweep Winkel. Die XAML-Datei instanziiert zwei `Slider` Elemente und ein `SKCanvasView`. Die `PaintCanvas` Ereignishandler in der [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) Datei zeichnet das Oval und den Bogen mit zwei `SKPaint` Objekte als Felder definiert:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -110,7 +110,7 @@ y = oval.MidY + (oval.Height / 2) * sin(angle)
 
 Die `angle` Wert lautet entweder `startAngle` oder `startAngle + sweepAngle`.
 
-Die Verwendung von zwei Winkel definieren einen Bogen ist für Fälle, in dem Sie die angular Länge des Bogens bekannt sein, z. B. gezeichnet werden soll, um ein Kreisdiagramm, am besten geeignet. Die **Kreisdiagramm explodiert** veranschaulicht dies. Die [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) Klasse verwendet eine interne Klasse, um einige Daten erstellt wurde und die Farben definiert:
+Die Verwendung von zwei Winkel definieren einen Bogen ist für Fälle, in dem Sie die angular Länge des Bogens bekannt sein, z. B. gezeichnet werden soll, um ein Kreisdiagramm, am besten geeignet. Die **Kreisdiagramm explodiert** veranschaulicht dies. Die [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) Klasse verwendet eine interne Klasse, um einige Daten erstellt wurde und die Farben definiert:
 
 ```csharp
 class ChartData
@@ -259,7 +259,7 @@ So sieht die endgültige gerade Linie und Bogen, der die Kontur hinzugefügt wir
 
 Die Kontur kann aus der zweiten Tangentialpunkt fortgesetzt werden.
 
-Die **Tangens Bogen** Seite ermöglicht Ihnen das Experimentieren mit den Tangens Bogen. Dies ist die erste von mehreren Seiten, die abgeleitet [ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/InteractivePage.cs), die ein paar praktische definiert `SKPaint` Objekte und führt `TouchPoint` verarbeiten:
+Die **Tangens Bogen** Seite ermöglicht Ihnen das Experimentieren mit den Tangens Bogen. Dies ist die erste von mehreren Seiten, die abgeleitet [ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs), die ein paar praktische definiert `SKPaint` Objekte und führt `TouchPoint` verarbeiten:
 
 ```csharp
 public class InteractivePage : ContentPage
@@ -309,7 +309,7 @@ public class InteractivePage : ContentPage
 }
 ```
 
-Die `TangentArcPage`-Klasse wird von `InteractivePage` abgeleitet. Konstruktor in der [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) Datei ist verantwortlich für das Instanziieren und Initialisieren der `touchPoints` Arrays und die Einstellung `baseCanvasView` (in `InteractivePage`), die `SKCanvasView` Objekt instanziiert wird, der [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) Datei:
+Die `TangentArcPage`-Klasse wird von `InteractivePage` abgeleitet. Konstruktor in der [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) Datei ist verantwortlich für das Instanziieren und Initialisieren der `touchPoints` Arrays und die Einstellung `baseCanvasView` (in `InteractivePage`), die `SKCanvasView` Objekt instanziiert wird, der [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) Datei:
 
 ```csharp
 public partial class TangentArcPage : InteractivePage
@@ -419,7 +419,7 @@ Auf Windows Mobile-Gerät die drei Punkte sind fast kollineare und der Bogen ist
 
 Der Tangente Bogen ist ideal zum Erstellen von abgerundeten Ecken, z. B. ein abgerundetes Rechteck. Da `SKPath` enthält bereits ein `AddRoundedRect` -Methode, die **gerundet Siebeneck** Seite veranschaulicht, wie `ArcTo` für die Rundung der Ecken eines Polygons sieben Seiten. (Der Code ist für alle regulären Polygon verallgemeinert.)
 
-Die `PaintSurface` Handler, der die [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) Klasse enthält mindestens eine `for` Schleife, um die Koordinaten der sieben Scheitelpunkte des der Siebeneck und ein zweites zum Berechnen der Mittelpunkte sieben Seiten aus diesen zu berechnen Scheitelpunkte. Diese Mittelpunkte werden dann verwendet, um den Pfad zu erstellen:
+Die `PaintSurface` Handler, der die [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) Klasse enthält mindestens eine `for` Schleife, um die Koordinaten der sieben Scheitelpunkte des der Siebeneck und ein zweites zum Berechnen der Mittelpunkte sieben Seiten aus diesen zu berechnen Scheitelpunkte. Diese Mittelpunkte werden dann verwendet, um den Pfad zu erstellen:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -543,7 +543,7 @@ Ist die Geneigter Ellipse nicht groß genug, um zwischen den beiden Punkten ents
 
 Obwohl diese Verfahren zur Definition eines Bogens komplexe ersten Auftreten vorkommt, ist der einzige Ansatz, der ermöglicht, einen Bogen mit eine gedrehte Ellipse definiert, und es ist häufig der einfachste Ansatz, wenn Sie andere Teile der Kontur Bögen integrieren müssen.
 
-Die **elliptischen Bogens** Seite können Sie die beiden Punkte, und die Größe und Rotation der Ellipse interaktiv festgelegt. Die `EllipticalArcPage` Klasse abgeleitet `InteractivePage`, und die `PaintSurface` Ereignishandler in der [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) Code-Behind-Datei, zeichnet die vier Bögen:
+Die **elliptischen Bogens** Seite können Sie die beiden Punkte, und die Größe und Rotation der Ellipse interaktiv festgelegt. Die `EllipticalArcPage` Klasse abgeleitet `InteractivePage`, und die `PaintSurface` Ereignishandler in der [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) Code-Behind-Datei, zeichnet die vier Bögen:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -613,7 +613,7 @@ Die vier Tangentenpunkten sind alle, die zum Zeichnen von einem unendlich Vorzei
 
 ![](arcs-images/infinitycoordinates.png "Zwei Kreise Tangenten mit Koordinaten")
 
-Die `PaintSurface` Ereignishandler in der [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) Klasse positioniert die Infinity-Zeichen, damit die (0, 0) befindet sich in der Mitte der Seite und den Pfad zu der Bildschirmgröße skaliert:
+Die `PaintSurface` Ereignishandler in der [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) Klasse positioniert die Infinity-Zeichen, damit die (0, 0) befindet sich in der Mitte der Seite und den Pfad zu der Bildschirmgröße skaliert:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

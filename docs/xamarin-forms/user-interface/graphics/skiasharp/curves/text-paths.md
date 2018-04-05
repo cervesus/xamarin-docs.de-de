@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 77005665d163e7f9f62325b94cc5c779a7873f78
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c0b793a495278d91429045d7e396917d02c1412e
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="paths-and-text"></a>Pfade und Text
 
@@ -45,7 +45,7 @@ Diese Tasks ist abschneiden. Die **Clipping Text** -Seite erstellt einen Freiste
 
 [![](text-paths-images/clippingtext-small.png "Dreifacher Screenshot der Seite Text kürzen")](text-paths-images/clippingtext-large.png#lightbox "dreifacher Screenshot der Seite Text kürzen")
 
-Die [ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Klassenkonstruktor lädt die Bitmap, die als eingebettete Ressource in gespeichert ist die **Medien** Ordner der Projektmappe:
+Die [ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Klassenkonstruktor lädt die Bitmap, die als eingebettete Ressource in gespeichert ist die **Medien** Ordner der Projektmappe:
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -126,7 +126,7 @@ Die **Pfad Texteffekt** Seite konvertiert ein einzelnes kaufmännisches und-Zeic
 
 [![](text-paths-images/textpatheffect-small.png "Dreifacher Screenshot der Seite "Pfad Texteffekt"")](text-paths-images/textpatheffect-large.png#lightbox "dreifacher Screenshot der Seite "Pfad Texteffekt"")
 
-Viele Aufgaben in der [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) Klasse tritt in den Feldern und der Konstruktor. Die beiden `SKPaint` Objekte definiert, wie Felder für zwei unterschiedliche Zwecke verwendet werden: die erste (mit dem Namen `textPathPaint`) wird das kaufmännische und-Zeichen mit konvertiert eine `TextSize` von 50 auf einen Pfad für die Auswirkung der 1D Pfad. Die zweite (`textPaint`) wird verwendet, um die größere Version der das kaufmännische und-Zeichen mit diesem Pfad Effekt anzuzeigen. Aus diesem Grund die `Style` der dieses zweite Paint Objekt festgelegt ist `Stroke`, aber die `StrokeWidth` Eigenschaft ist nicht festgelegt werden, da diese Eigenschaft nicht erforderlich ist, bei Verwendung einer 1D Pfad Auswirkungen:
+Viele Aufgaben in der [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) Klasse tritt in den Feldern und der Konstruktor. Die beiden `SKPaint` Objekte definiert, wie Felder für zwei unterschiedliche Zwecke verwendet werden: die erste (mit dem Namen `textPathPaint`) wird das kaufmännische und-Zeichen mit konvertiert eine `TextSize` von 50 auf einen Pfad für die Auswirkung der 1D Pfad. Die zweite (`textPaint`) wird verwendet, um die größere Version der das kaufmännische und-Zeichen mit diesem Pfad Effekt anzuzeigen. Aus diesem Grund die `Style` der dieses zweite Paint Objekt festgelegt ist `Stroke`, aber die `StrokeWidth` Eigenschaft ist nicht festgelegt werden, da diese Eigenschaft nicht erforderlich ist, bei Verwendung einer 1D Pfad Auswirkungen:
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -213,7 +213,7 @@ Normalerweise die [ `GetFillPath` ](https://developer.xamarin.com/api/member/Ski
 
 Sie können auch aufrufen `GetFillPath` im Pfad Merry `GetTextPath` zunächst werden aber möglicherweise nicht ganz sicher Was würde folgendermaßen aussehen.
 
-Die **Zeichen Gliederung Gliederungen** das Verfahren veranschaulicht. Der relevante Code befindet sich in der `PaintSurface` Handler, der die [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) Klasse.
+Die **Zeichen Gliederung Gliederungen** das Verfahren veranschaulicht. Der relevante Code befindet sich in der `PaintSurface` Handler, der die [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) Klasse.
 
 Der Konstruktor beginnt mit der Erstellung einer `SKPaint` Objekt mit dem Namen `textPaint` mit einem `TextSize` -Eigenschaft basierend auf der Größe der Seite. Dies wird konvertiert in einen Pfad mit der `GetTextPath` Methode. Die-Koordinate Argumente `GetTextPath` effektiv den Pfad auf dem Bildschirm zu zentrieren:
 
@@ -287,7 +287,7 @@ Der Text im ersten Argument angegebenen erfolgt auszuführende entlang des Pfads
 
 Diese Methode hat keine Möglichkeit, bieten Anleitungen zur Einstellung der `TextSize` Eigenschaft `SKPaint` , Text zu automatisierenden perfekt vom Beginn des Pfads bis zum Ende ausführen. In einigen Fällen können Sie diese Textgröße auf Ihren eigenen herauszufinden. In einigen Fällen müssen Sie zum Messen der Path Funktionen verwenden, um in einem zukünftigen Artikel beschrieben werden.
 
-Die **zirkuläre Text** Programm umfließt Text mit einem Kreis. Es ist einfach zu bestimmen den Umfang eines Kreises, daher ist es einfach zu groß ist den Text, der genau entsprechen. Die `PaintSurface` Handler, der die [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) Klasse berechnet einen Radius Umfang eines Kreises anhand der Größe der Seite. Wird dieser Kreis `circularPath`:
+Die **zirkuläre Text** Programm umfließt Text mit einem Kreis. Es ist einfach zu bestimmen den Umfang eines Kreises, daher ist es einfach zu groß ist den Text, der genau entsprechen. Die `PaintSurface` Handler, der die [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) Klasse berechnet einen Radius Umfang eines Kreises anhand der Größe der Seite. Wird dieser Kreis `circularPath`:
 
 ```csharp
 public class CircularTextPage : ContentPage

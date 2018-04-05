@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2018
-ms.openlocfilehash: 0068540ec385ab3be56865c7728eb3128154a2ea
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43699e77bc8b7365c6d5f7fbf27e19a945e69e22
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="limitations"></a>Einschränkungen
 
@@ -51,7 +51,7 @@ Es gibt einige Einschränkungen auf die Dinge, die Xamarin-Live-Player ausgefüh
 - Eingeschränkte Unterstützung für die Reflektion (derzeit einige beliebte NuGets, z. B. SQLite und Json.NET betrifft). Andere NuGets möglicherweise immer noch unterstützt werden.
 - Einige Systemklassen nicht überschrieben werden kann (z. B. eine Unterklasse kann nicht implementiert werden).
 - Einige Plattformfunktionen, die Bereitstellung erforderlich, können nicht in der Live-Player Xamarin-app (jedoch er bei allgemeinen Vorgängen wie Foto-Katalog-Zugriff konfiguriert wurde) funktionieren.
-- Benutzerdefinierte Ziele und Buildschritte werden ignoriert. Z. B. Tools wie Fody, Retit, AutoFac und AutoMapper kann nicht integriert werden.
+- Benutzerdefinierte Ziele und Buildschritte werden ignoriert. Tools wie Fody, rüsten AutoFac und AutoMapper können z. B. können nicht integriert werden.
 - F#-Projekten werden nicht von Android unterstützt und eingeschränkte Unterstützung für iOS
 - Erweiterte Szenarien mit benutzerdefinierten generischen Klassen und Schnittstellen wird möglicherweise nicht unterstützt.
 

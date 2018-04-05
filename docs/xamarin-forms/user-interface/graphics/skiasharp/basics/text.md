@@ -7,11 +7,11 @@ ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 1e8ad47867fb1821df1e427aa777ead1a7da19a0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4ef9f1b634d2ecfa73a94bfd562a68593dfdc575
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="integrating-text-and-graphics"></a>Integrieren von Text und Grafiken
 
@@ -23,7 +23,7 @@ In diesem Artikel werden die messen Text, möglicherweise den Text an einer best
 
 Die SkiaSharp `Canvas` Klasse enthält auch Methoden zum Zeichnen eines Rechtecks ([`DrawRect`](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawRect/p/SkiaSharp.SKRect/SkiaSharp.SKPaint/)) und ein Rechteck mit abgerundeten Ecken ([`DrawRoundRect`](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawRoundRect/p/SkiaSharp.SKRect/System.Single/System.Single/SkiaSharp.SKPaint/)). Diese Methoden erfordern das Rechteck definiert werden, als ein `SKRect` Wert.
 
-Die **Text eingebunden** Seite zentriert wird eine kurze Textzeichenfolge, die auf der Seite und mit einem Frame besteht aus einem Paar von abgerundeten Rechtecken umgeben. Die [ `FramedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs) Klasse zeigt, wie dies funktioniert.
+Die **Text eingebunden** Seite zentriert wird eine kurze Textzeichenfolge, die auf der Seite und mit einem Frame besteht aus einem Paar von abgerundeten Rechtecken umgeben. Die [ `FramedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs) Klasse zeigt, wie dies funktioniert.
 
 In SkiaSharp verwenden Sie die `SKPaint` Klasse, um Text und Schriftart-Attribute festlegen, aber Sie können auch sie um die gerenderte Größe des Texts zu erhalten. Der Anfang des folgenden `PaintSurface` Ereignishandler ruft zwei unterschiedliche `MeasureText` Methoden. Die erste [ `MeasureText` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.MeasureText/p/System.String/) Aufruf weist ein einfaches `string` Argument und gibt die Breite des Texts in Pixel auf der aktuellen Schriftartattribute Basis. Die Anwendung berechnet dann einen neuen `TextSize` Eigenschaft von der `SKPaint` -Objekt auf Grundlage dieser gerenderten Breite, die aktuelle `TextSize` Eigenschaft und die Breite des Anzeigebereichs. Dies dient als festzulegende `TextSize` , damit der Text die Zeichenfolge, die bei 90 % der Breite des Bildschirms gerendert werden:
 

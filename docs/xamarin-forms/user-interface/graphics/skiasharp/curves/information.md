@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 998c804f02eed808c0a1493b054e754a7670aa70
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 82ac4ea49462c7520219e1a621ea3946297b1b45
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-information-and-enumeration"></a>Pfad und -Enumeration
 
@@ -31,7 +31,7 @@ Im Artikel [ **Pfade und Text** ](~/xamarin-forms/user-interface/graphics/skiash
 
 Die [ `SKPathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) Klasse kann dazu beitragen. Die [Konstruktor](https://developer.xamarin.com/api/constructor/SkiaSharp.SKPathMeasure.SKPathMeasure/p/SkiaSharp.SKPath/System.Boolean/System.Single/) akzeptiert ein `SKPath` Argument, und die [ `Length` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPathMeasure.Length/) Eigenschaft zeigt die Länge.
 
-Dies wird dargestellt, der **Pfadlänge** Beispiel wird basierend auf der **Bézier-Kurve** Seite. Die [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) Datei leitet sich von `InteractivePage` und eine Schnittstelle für die Fingereingabe umfasst:
+Dies wird dargestellt, der **Pfadlänge** Beispiel wird basierend auf der **Bézier-Kurve** Seite. Die [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) Datei leitet sich von `InteractivePage` und eine Schnittstelle für die Fingereingabe umfasst:
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -52,7 +52,7 @@ Dies wird dargestellt, der **Pfadlänge** Beispiel wird basierend auf der **Béz
 </local:InteractivePage>
 ```
 
-Die [ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs) Code-Behind-Datei können Sie definieren den Endpunkten und Steuerpunkte eine kubische Bézier-Kurve vier Berührungspunkte zu verschieben. Drei Felder definieren eine Textzeichenfolge ein `SKPaint` Objekt und eine berechnete Breite des Texts:
+Die [ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs) Code-Behind-Datei können Sie definieren den Endpunkten und Steuerpunkte eine kubische Bézier-Kurve vier Berührungspunkte zu verschieben. Drei Felder definieren eine Textzeichenfolge ein `SKPaint` Objekt und eine berechnete Breite des Texts:
 
 ```csharp
 public partial class PathLengthPage : InteractivePage
@@ -242,7 +242,7 @@ Einige der Informationen in den `SKPoint` Array ist redundant. Z. B. wenn ein `M
 
 Verbs problematisch ist jedoch `Close`. Mit diesem Befehl zeichnet eine gerade Linie von der aktuellen Position, an den Anfang der Kontur hergestellt zuvor von der `Move` Befehl. Im Idealfall der `Close` Verb sollte nur einem Punkt, anstatt diese zwei Punkte enthalten. Schlimmer noch: ist, die den Punkt begleitende der `Close` Verb ist immer (0, 0). Dies bedeutet, dass wenn Sie einen Pfad durchlaufen haben, Sie wahrscheinlich behalten müssen die `Move` Punkt- und der aktuellen Position.
 
-Die statische [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) Klasse enthält mehrere Methoden, die die drei Typen von Bézier-Kurven in einer Reihe von kleinen gerade Linien konvertieren, der die Kurve zu ermitteln. (Die parametrischen Formeln wurden so präsentiert, in dem Artikel [ **drei Typen von Bézier-Kurven**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) Die `Interpolate` Methode gliedert einer geraden Linie in zahlreichen kurze Zeilen, die nur eine Einheit lang sind:
+Die statische [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) Klasse enthält mehrere Methoden, die die drei Typen von Bézier-Kurven in einer Reihe von kleinen gerade Linien konvertieren, der die Kurve zu ermitteln. (Die parametrischen Formeln wurden so präsentiert, in dem Artikel [ **drei Typen von Bézier-Kurven**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) Die `Interpolate` Methode gliedert einer geraden Linie in zahlreichen kurze Zeilen, die nur eine Einheit lang sind:
 
 ```csharp
 static class PathExtensions
@@ -426,7 +426,7 @@ Die **GlobularText** Beispiel verwendet diese Erweiterungsmethode scheinbar Umbr
 
 [![](information-images/globulartext-small.png "Dreifacher Screenshot der Seite Globular Text")](information-images/globulartext-large.png#lightbox "dreifacher Screenshot der Seite Globular Text")
 
-Die [ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Klassenkonstruktor führt dieser Transformation. Erstellt ein `SKPaint` -Objekt für den Text ein, und klicken Sie dann erhält ein `SKPath` -Objekt aus der `GetTextPath` Methode. Dies ist der Pfad zum Übergeben der `CloneWithTransform` Erweiterungsmethode zusammen mit einer Transform-Funktion: 
+Die [ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Klassenkonstruktor führt dieser Transformation. Erstellt ein `SKPaint` -Objekt für den Text ein, und klicken Sie dann erhält ein `SKPath` -Objekt aus der `GetTextPath` Methode. Dies ist der Pfad zum Übergeben der `CloneWithTransform` Erweiterungsmethode zusammen mit einer Transform-Funktion: 
 
 ```csharp
 public class GlobularTextPage : ContentPage

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: e492bee2b43f2be54f450550e3f44e7da3de258e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 09328e1c6d884898aed86f2cb8ab1b84bf6d5cab
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="fonts"></a>Schriftarten
 
@@ -135,7 +135,7 @@ Es ist ein integrierte Konverter für die `Font` Clustereigenschaft, mit der all
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-Angeben von mehreren `Font` Einstellungen, die erforderlichen Einstellungen in einer einzigen Schriftart Attributzeichenfolge zu kombinieren. Die Schriftart Attributzeichenfolge formatiert werden sollen, als `"[font-face],[attributes],[size]"`. Die Reihenfolge der Parameter ist wichtig, alle Parameter sind optional, und mehreren `attributes` kann beispielsweise angegeben werden:
+Angeben von mehreren `Font` Einstellungen, die erforderlichen Einstellungen in einer einzigen Schriftart Attributzeichenfolge zu kombinieren. Die Schriftart Attributzeichenfolge formatiert werden sollen, als `"[font-face],[attributes],[size]"`. Die Reihenfolge der Parameter ist wichtig, alle Parameter sind optional, und mehrere `attributes` kann beispielsweise angegeben werden:
 
 ```xaml
 <Label Text="Small bold text" FontAttributes="Bold" FontSize="Micro" />

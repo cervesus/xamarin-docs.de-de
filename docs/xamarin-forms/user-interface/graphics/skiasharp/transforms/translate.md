@@ -7,11 +7,11 @@ ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 573848186a8f389ac18e22ea4c3b7d4fe1503449
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 98bf81df3eed951893c6bb717d933cfb61e029d3
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="the-translate-transform"></a>Der Translate-Transformation
 
@@ -35,7 +35,7 @@ Diese Argumente können negativ sein. Ein zweites [ `Translate` ](https://develo
 public void Translate (SKPoint point)
 ```
 
-Die **übersetzen kumuliert** auf der Seite der [ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispielprogramm zeigt, dass mehrere Aufrufe der der `Translate` Methode sind kumulativ. Die [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) Klasse zeigt 20 Versionen des gleichen Rechtecks, jeweils offset aus dem vorherigen Rechteck gerade genug, damit sie entlang der diagonalen zu Strecken. So sieht die `PaintSurface` Ereignishandler:
+Die **übersetzen kumuliert** auf der Seite der [ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Beispielprogramm zeigt, dass mehrere Aufrufe der der `Translate` Methode sind kumulativ. Die [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) Klasse zeigt 20 Versionen des gleichen Rechtecks, jeweils offset aus dem vorherigen Rechteck gerade genug, damit sie entlang der diagonalen zu Strecken. So sieht die `PaintSurface` Ereignishandler:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -78,7 +78,7 @@ y "= y + dy
 
 Diese werden als bezeichnet den *transformieren Formeln* für die Übersetzung. Die Standardwerte der `dx` und `dy` für einen neuen `SKCanvas` 0 sind.
 
-Es ist üblich, verwenden die übersetzen-Transformation für Schatteneffekten und ähnliche Verfahren als der **übersetzen Texteffekte** veranschaulicht. Hier wird der relevante Teil der `PaintSurface` Ereignishandler in der [ `TranslateTextEffectsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs) Klasse:
+Es ist üblich, verwenden die übersetzen-Transformation für Schatteneffekten und ähnliche Verfahren als der **übersetzen Texteffekte** veranschaulicht. Hier wird der relevante Teil der `PaintSurface` Ereignishandler in der [ `TranslateTextEffectsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs) Klasse:
 
 ```csharp
 float textSize = 150;
@@ -137,7 +137,7 @@ Im dritte Beispiel speichert den Zustand der von der `SKCanvas` Objekt mit einem
 
 Sie haben jedoch keinen Gedanken Transformationen über zwischen zwei Aufrufen der Durchführung der `PaintSurface` Handler zur nächsten. Jeder neue Aufruf `PaintSurface` bietet einen aktuellen `SKCanvas` Objekt mit Standard-Transformationen.
 
-Eine andere häufige Verwendung von der `Translate` "Transformieren" ist für einem visuellen Objekt zu rendern, die ursprünglich erstellt wurde mithilfe von Koordinaten, die zum Zeichnen praktische sind. Sie möchten z. B. Koordinaten für einer analogen Uhr mit einem Rechenzentrum, an dem Punkt (0, 0) angeben. Sie können dann Transformationen verwenden, um diese anzuzeigen möchten. Dies wird dargestellt, der [**Hendecagram Array**] Seite. Die [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs) Klasse beginnt mit der Erstellung einer `SKPath` Objekt für einen Stern 11 gezeigt wird. Die `HendecagramPath` Objekt ist definiert als öffentliche, statische und schreibgeschützt, damit er von anderen Programmen Demo zugegriffen werden kann. Es wird in einem statischen Konstruktor erstellt:
+Eine andere häufige Verwendung von der `Translate` "Transformieren" ist für einem visuellen Objekt zu rendern, die ursprünglich erstellt wurde mithilfe von Koordinaten, die zum Zeichnen praktische sind. Sie möchten z. B. Koordinaten für einer analogen Uhr mit einem Rechenzentrum, an dem Punkt (0, 0) angeben. Sie können dann Transformationen verwenden, um diese anzuzeigen möchten. Dies wird dargestellt, der [**Hendecagram Array**] Seite. Die [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs) Klasse beginnt mit der Erstellung einer `SKPath` Objekt für einen Stern 11 gezeigt wird. Die `HendecagramPath` Objekt ist definiert als öffentliche, statische und schreibgeschützt, damit er von anderen Programmen Demo zugegriffen werden kann. Es wird in einem statischen Konstruktor erstellt:
 
 ```csharp
 public class HendecagramArrayPage : ContentPage
@@ -211,7 +211,7 @@ Hier ist das Ergebnis:
 
 [![](translate-images/hendecagramarray-small.png "Dreifacher Screenshot der Seite Hendecagram Array")](translate-images/hendecagramarray-large.png#lightbox "dreifacher Screenshot der Seite Hendecagram Array")
 
-Animationen umfassen häufig Transformationen. Die **Hendecagram Animation** Seite 11 Spitzen Sterns über in einem Kreis bewegt. Die [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) Klasse beginnt mit einigen Feldern und der überschreibt die `OnAppearing` und `OnDisappearing` Methoden zum Starten und Beenden einen Xamarin.Forms-Zeitgeber:
+Animationen umfassen häufig Transformationen. Die **Hendecagram Animation** Seite 11 Spitzen Sterns über in einem Kreis bewegt. Die [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) Klasse beginnt mit einigen Feldern und der überschreibt die `OnAppearing` und `OnDisappearing` Methoden zum Starten und Beenden einen Xamarin.Forms-Zeitgeber:
 
 ```csharp
 public class HendecagramAnimationPage : ContentPage

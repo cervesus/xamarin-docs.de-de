@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 274c8e9a79fa3fadff14f1174d86aad04d902b05
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 46ab21aa5156a6deab5952f165917cc299b500ac
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="dots-and-dashes"></a>Punkte und Bindestriche enthalten
 
@@ -29,7 +29,7 @@ Im Allgemeinen sollten Sie den Längen Striche und Lücken ein Vielfaches der St
 
 Allerdings die `StrokeCap` festlegen, der die `SKPaint` Objekt wirkt sich auch auf diese Punkte und Bindestriche enthalten. Wie Sie in Kürze sehen, hat, die Auswirkungen auf die Elemente dieses Arrays.
 
-Gepunktete und gestrichelte Linien auf demonstriert die **Punkte und Bindestriche** Seite. Die [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml) Datei instanziiert zwei `Picker` anzeigt, eine für die in dem Sie eine Obergrenze Strich und das zweite auf ein Array Dash auswählen:
+Gepunktete und gestrichelte Linien auf demonstriert die **Punkte und Bindestriche** Seite. Die [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml) Datei instanziiert zwei `Picker` anzeigt, eine für die in dem Sie eine Obergrenze Strich und das zweite auf ein Array Dash auswählen:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -92,7 +92,7 @@ Gepunktete und gestrichelte Linien auf demonstriert die **Punkte und Bindestrich
 
 Die ersten drei Elemente in der `dashArrayPicker` wird davon ausgegangen, dass die Strichbreite 10 Pixel beträgt. Der {10, 10} Array für eine gepunktete Linie ist {30, 10} ist für eine gestrichelte Linie und {10, 10, 30, 10} ist für eine Linie an Punkt Strich. (Die anderen drei wird in Kürze erläutert werden.)
 
-Die [ `DotsAndDashesPage` Code-Behind-Datei](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) enthält die `PaintSurface` -Ereignishandler und eine Reihe von Routinen der Hilfsfunktion für den Zugriff auf die `Picker` Ansichten:
+Die [ `DotsAndDashesPage` Code-Behind-Datei](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) enthält die `PaintSurface` -Ereignishandler und eine Reihe von Routinen der Hilfsfunktion für den Zugriff auf die `Picker` Ansichten:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -168,7 +168,7 @@ Die Windows-Bildschirm an, dass der gepunktete und gestrichelte Linie für einen
 
 Bisher nicht erwähnt wurde des zweiten Parameters, der die `SKPathEffect.CreateDash` Methode. Dieser Parameter heißt `phase` und verweist auf einen Offset innerhalb des Punkt und Dash-Musters für den Anfang der Zeile. Wenn das Array Dash ist z. B. {10, 10} und der `phase` ist 10, und klicken Sie dann die Zeile beginnt mit einem Punkt, anstatt eine Lücke.
 
-Eine interessante Anwendungsmöglichkeit der `phase` Parameter ist in einer Animation. Die **Spirale animiert** Seite ähnelt der **Archimedean Spirale** Seite, außer dass die [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs) Klasse animiert das `phase` Parameter. Die Seite zeigt außerdem ein weiteres Verfahren zum Animation. Das vorangegangene Beispiel dem [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs) verwendet die `Task.Delay` Methode zum Steuern der Animation. In diesem Beispiel wird stattdessen verwendet die Xamarin.Forms `Device.Timer` Methode:
+Eine interessante Anwendungsmöglichkeit der `phase` Parameter ist in einer Animation. Die **Spirale animiert** Seite ähnelt der **Archimedean Spirale** Seite, außer dass die [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs) Klasse animiert das `phase` Parameter. Die Seite zeigt außerdem ein weiteres Verfahren zum Animation. Das vorangegangene Beispiel dem [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs) verwendet die `Task.Delay` Methode zum Steuern der Animation. In diesem Beispiel wird stattdessen verwendet die Xamarin.Forms `Device.Timer` Methode:
 
 
 ```csharp

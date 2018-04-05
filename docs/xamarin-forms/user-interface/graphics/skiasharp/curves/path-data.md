@@ -7,11 +7,11 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 7ea99612f85a853bcd045b773df0a01f33427a89
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fe9699894224d9a33b3a79e9b5bcd4cd41c635dd
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="svg-path-data"></a>SVG-Pfaddaten
 
@@ -147,7 +147,7 @@ Die statische [ `SKPath.ParseSvgPathData` ](https://developer.xamarin.com/api/me
 
 Die [ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) Methode eignet sich zum Abrufen von Daten der SVG-Pfads aus einer vorhandenen `SKPath` Objekt in ein anderes Programm zu übertragen, oder in einem textbasierten Format wie z. B. XML gespeichert. (Die `ToSvgPathData` Methode wird im Beispielcode in diesem Artikel nicht vorgeführt.) Führen Sie *nicht* erwarten `ToSvgPathData` zum Zurückgeben einer Zeichenfolge entspricht genau der Methodenaufrufe, die den Pfad erstellt. Insbesondere werden Sie feststellen, dass Bögen mit mehreren konvertiert werden `QuadTo` Befehle aus, und ist wie in der vom zurückgegebenen Pfaddaten angezeigt werden `ToSvgPathData`.
 
-Die **Pfad Daten-Hello** Seite Spells das Wort "HELLO" Pfaddaten für SVG. Sowohl die `SKPath` und `SKPaint` Objekte werden als Felder in definiert die [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) Klasse:
+Die **Pfad Daten-Hello** Seite Spells das Wort "HELLO" Pfaddaten für SVG. Sowohl die `SKPath` und `SKPaint` Objekte werden als Felder in definiert die [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) Klasse:
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -218,7 +218,7 @@ Der Pfad füllt den Zeichenbereich, der bei der Anzeige im Querformat günstiger
 
 [![](path-data-images/pathdatahello-small.png "Dreifacher Screenshot, der den Pfad Daten-Hello-Seite")](path-data-images/pathdatahello-large.png#lightbox "dreifacher Screenshot, der den Pfad Daten-Hello-Seite")
 
-Die **Pfad Daten Cat** Seite ähnelt. Der Pfad und Paint-Objekte werden als Felder in definiert die [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) Klasse:
+Die **Pfad Daten Cat** Seite ähnelt. Der Pfad und Paint-Objekte werden als Felder in definiert die [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) Klasse:
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -291,7 +291,7 @@ Hier wird das Programm auf allen drei Plattformen ausgeführt:
 
 Normalerweise, wenn ein `SKPath` Objekt als ein Feld definiert ist, müssen die Kontur des Pfads in den Konstruktor oder eine andere Methode definiert werden. Bei Verwendung von SVG-Pfaddaten jedoch haben Sie angezeigt, dass der Pfad vollständig in der Field-Definition angegeben werden kann.
 
-Die frühere **problematischen analogen Uhr** -Beispiel in der [ **der drehen transformieren** ](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) Artikel die Zeiger der Uhr als einfache Linien angezeigt. Die **ziemlich analogen Uhr** Programm unten ersetzt die Zeilen mit `SKPath` Objekte definiert, die als Felder in der [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) -Klasse zusammen mit `SKPaint` Objekte:
+Die frühere **problematischen analogen Uhr** -Beispiel in der [ **der drehen transformieren** ](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) Artikel die Zeiger der Uhr als einfache Linien angezeigt. Die **ziemlich analogen Uhr** Programm unten ersetzt die Zeilen mit `SKPath` Objekte definiert, die als Felder in der [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) -Klasse zusammen mit `SKPaint` Objekte:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage

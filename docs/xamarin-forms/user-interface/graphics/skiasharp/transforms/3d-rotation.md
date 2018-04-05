@@ -7,11 +7,11 @@ ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 47daca2ab94f718aeb5ce474c87edce3c3bd77a4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2f5562475db17b7451fe7cb2ee8bbf4ccb782a87
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="3d-rotations"></a>3D Drehungen
 
@@ -221,7 +221,7 @@ Wenn 2D Objekte mit einem positiven Winkel um die y-Achse, und klicken Sie dann 
 
 Bei Verwendung `SKMatrix44`, alle 3D-Drehung und Perspektive Vorgänge auszuführen, durch Multiplizieren der verschiedenen `SKMatrix44` Werte. Und dann eine zweidimensionale 3 x 3-Matrix aus den 4 x 4 extrahiert werden können Matrix mit der [ `Matrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Matrix/) Eigenschaft von der `SKMatrix44` Klasse. Diese Eigenschaft gibt ein vertrautes `SKMatrix` Wert.
 
-Die **Drehung 3D** Seite können Sie die 3D-Drehung experimentieren. Die [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml) Datei instanziiert vier Schieberegler, um die Drehung um die X-, Y- und Z-Achse festlegen, und klicken Sie zum Festlegen eines Tiefenwerts:
+Die **Drehung 3D** Seite können Sie die 3D-Drehung experimentieren. Die [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml) Datei instanziiert vier Schieberegler, um die Drehung um die X-, Y- und Z-Achse festlegen, und klicken Sie zum Festlegen eines Tiefenwerts:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -302,7 +302,7 @@ Die **Drehung 3D** Seite können Sie die 3D-Drehung experimentieren. Die [ **Rot
 
 Beachten Sie, dass die `depthSlider` wird initialisiert, indem eine `Minimum` Wert 250. Dies bedeutet, dass die 2D Objekt, das hier rotierenden X- und Y-Koordinaten, die in einen Kreis, der durch einen Radius 250 Pixel, um den Ursprung definierten eingeschränkt hat. Drehung dieses Objekts in einem 3D-Bereich führt immer zu Koordinatenwerte weniger als 250.
 
-Die [ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs) Code-Behind-Datei lädt in eine Bitmap, das 300 Pixel quadratische ist:
+Die [ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs) Code-Behind-Datei lädt in eine Bitmap, das 300 Pixel quadratische ist:
 
 ```csharp
 public partial class Rotation3DPage : ContentPage
