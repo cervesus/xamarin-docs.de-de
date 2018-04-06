@@ -1,18 +1,17 @@
 ---
-title: "Multi-Core-Geräte und Xamarin.Android"
-description: "Android kann in mehreren verschiedenen Computerarchitekturen ausgeführt werden. Dieses Dokument beschreibt die verschiedenen CPU-Architekturen, die für eine Xamarin.Android-Anwendung verwendet werden können. In diesem Dokument wird auch erläutert, wie Android-Anwendungen verpackt werden, um verschiedene CPU-Architekturen zu unterstützen. Die Application Binary Interface (ABI) wird vorgestellt, und es wird eine Anleitung bereitgestellt, welche ABIs in einer Xamarin.Android-Anwendung verwendet werden."
-ms.topic: article
+title: Multi-Core-Geräte und Xamarin.Android
+description: Android kann in mehreren verschiedenen Computerarchitekturen ausgeführt werden. Dieses Dokument beschreibt die verschiedenen CPU-Architekturen, die für eine Xamarin.Android-Anwendung verwendet werden können. In diesem Dokument wird auch erläutert, wie Android-Anwendungen verpackt werden, um verschiedene CPU-Architekturen zu unterstützen. Die Application Binary Interface (ABI) wird vorgestellt, und es wird eine Anleitung bereitgestellt, welche ABIs in einer Xamarin.Android-Anwendung verwendet werden.
 ms.prod: xamarin
 ms.assetid: D812883C-A14A-E74B-0F72-E50071E96328
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: ac525805fce99f44ea1efb132fb99f6d3a01f2f3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0288ba6aa8a3c9eb89208161f60ba831723444c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>Multi-Core-Geräte und Xamarin.Android
 

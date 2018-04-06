@@ -1,18 +1,17 @@
 ---
 title: Bereitstellung und Testen
-description: "Dieser Abschnitt umfasst Leitfäden, in denen erklärt wird, wie Sie eine Anwendung testen, ihre Leistung optimieren, sie auf die Veröffentlichung vorbereiten, sie mit einem Zertifikat signieren und in einem App-Store veröffentlichen."
-ms.topic: article
+description: Dieser Abschnitt umfasst Leitfäden, in denen erklärt wird, wie Sie eine Anwendung testen, ihre Leistung optimieren, sie auf die Veröffentlichung vorbereiten, sie mit einem Zertifikat signieren und in einem App-Store veröffentlichen.
 ms.prod: xamarin
 ms.assetid: 568C0B85-EFF3-AF6F-5605-95055193D367
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 5ddc2a258ad09de2cdd8214dceb533441812ae54
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d7453af3721cbdb6b93d884322cee1cd5115c317
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="deployment-and-testing"></a>Bereitstellung und Testen
 
@@ -35,7 +34,7 @@ In diesem Artikel wird das Starten des Emulators über die Befehlszeile kurz erk
 
 Die Leitfäden in diesem Abschnitt sollen Sie beim Debuggen Ihrer App mithilfe von Android-Emulators, physischen Android-Geräten und dem Debugprotokoll unterstützen.
 
-##  <a name="setting-the-debuggable-attributeandroiddeploy-testdebuggable-attributemd"></a>[Setting the Debuggable Attribute (Festlegen des Debuggable-Attributs)](~/android/deploy-test/debuggable-attribute.md)
+##  <a name="setting-the-debuggable-attributeandroiddeploy-testdebuggable-attributemd"></a>[Festlegen des Debuggable-Attributs](~/android/deploy-test/debuggable-attribute.md)
 
 In diesem Artikel wird erläutert, wie das Attribut „Debuggable“ festgelegt wird, damit Tools wie `adb` mit der JVM kommunizieren können.
 

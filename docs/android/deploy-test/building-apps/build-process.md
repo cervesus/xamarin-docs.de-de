@@ -1,17 +1,16 @@
 ---
 title: Buildprozess
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 1f3f9316aec4ebfa0bb0868dd341abbfaa613cbc
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 2833c645a07a3717d9baeeec11e5fa7f9087725a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="build-process"></a>Buildprozess
 
@@ -61,24 +60,24 @@ Fortgeschrittene Benutzer möchten vielleicht Aktionen ausführen, die nicht von
 
 Die folgenden Buildziele sind für Xamarin.Android-Projekte definiert:
 
--   **Build**: Erstellt das Paket.
+-   **Build** &ndash; Erstellt das Paket.
 
--   **Clean**: Entfernt alle Dateien, die vom Buildprozess generiert wurden.
+-   **Clean** &ndash; Entfernt alle Dateien, die vom Buildprozess generiert wurden.
 
--   **Install**: Installiert das Paket auf dem Standardgerät oder virtuellen Gerät.
+-   **Install** &ndash; Installiert das Paket auf dem Standardgerät oder virtuellen Gerät.
 
--   **Uninstall**: Deinstalliert das Paket vom Standardgerät oder virtuellen Gerät.
+-   **Uninstall** &ndash; Deinstalliert das Paket vom Standardgerät oder virtuellen Gerät.
 
--   **SignAndroidPackage**: Erstellt und signiert das Paket (`.apk`). Verwenden Sie diese Option mit `/p:Configuration=Release`, um eigenständige „Releasepakete“ zu generieren.
+-   **SignAndroidPackage** &ndash; Erstellt und signiert das Paket (`.apk`). Verwenden Sie diese Option mit `/p:Configuration=Release`, um eigenständige „Releasepakete“ zu generieren.
 
--   **UpdateAndroidResources**: Aktualisiert die `Resource.designer.cs`-Datei. Dieses Ziel wird normalerweise von der IDE aufgerufen, wenn dem Projekt neue Ressourcen hinzugefügt werden.
+-   **UpdateAndroidResources** &ndash; Aktualisiert die `Resource.designer.cs`-Datei. Dieses Ziel wird normalerweise von der IDE aufgerufen, wenn dem Projekt neue Ressourcen hinzugefügt werden.
 
 
 ## <a name="build-properties"></a>Buildeigenschaften
 
 MSBuild-Eigenschaften steuern das Verhalten der Ziele. Sie werden in der Projektdatei (z.B. **MyApp.csproj**) in einem [PropertyGroup-Element von MSBuild](http://msdn.microsoft.com/en-us/library/t4w159bs.aspx) angegeben. 
 
--   **Konfiguration**: Gibt die zu verwendende Buildkonfiguration an, z.B. „Debug“ oder „Release“. Die Configuration-Eigenschaft wird verwendet, um Standardwerte für andere Eigenschaften zu ermitteln, die das Zielverhalten bestimmen. In der IDE können ggf. zusätzliche Konfigurationen erstellt werden.
+-   **Konfiguration** &ndash; Gibt die zu verwendende Buildkonfiguration an, z.B. „Debug“ oder „Release“. Die Configuration-Eigenschaft wird verwendet, um Standardwerte für andere Eigenschaften zu ermitteln, die das Zielverhalten bestimmen. In der IDE können ggf. zusätzliche Konfigurationen erstellt werden.
 
     *Standardmäßig* wird die `Debug`-Konfiguration dazu führen, dass die `Install`- und `SignAndroidPackage`-Ziele ein kleineres Android-Paket erstellen, das das Vorhandensein anderer Dateien und Pakete erfordert, um funktionsfähig zu sein.
 
@@ -86,7 +85,7 @@ MSBuild-Eigenschaften steuern das Verhalten der Ziele. Sie werden in der Projekt
 
 -   **DebugSymbols** &ndash; Ein boolescher Wert, der bestimmt, ob das Android-Paket *debuggt* werden kann (in Kombination mit der `$(DebugType)`-Eigenschaft). Ein Paket, das debuggt werden kann, enthält Debugsymbole, legt das `//application/@android:debuggable`-Attribut auf `true` fest und fügt automatisch die Berechtigung `INTERNET` hinzu, sodass ein Debugger an den Prozess angefügt werden kann. Eine Anwendung kann debuggt werden, wenn `DebugSymbols` den Wert `True` aufweist *und* `DebugType` entweder die leere Zeichenfolge oder `Full` ist.
 
--   **DebugType**: Gibt den [Typ von Debugsymbolen](http://msdn.microsoft.com/en-us/library/s5c8athz.aspx) an, die als Teil des Builds generiert werden sollen. Dies wirkt sich ebenfalls darauf aus, ob die Anwendung debuggt werden kann. Mögliche Werte:
+-   **DebugType** &ndash; Gibt den [Typ von Debugsymbolen](http://msdn.microsoft.com/en-us/library/s5c8athz.aspx) an, die als Teil des Builds generiert werden sollen. Dies wirkt sich ebenfalls darauf aus, ob die Anwendung debuggt werden kann. Mögliche Werte:
 
     - **Full**: Vollständige Symbole werden generiert. Wenn die MSBuild-Eigenschaft `DebugSymbols` ebenfalls den Wert `True` aufweist, kann das Anwendungspaket debuggt werden.
 
@@ -99,7 +98,7 @@ MSBuild-Eigenschaften steuern das Verhalten der Ziele. Sie werden in der Projekt
 
 Installationseigenschaften steuern das Verhalten der `Install`- und `Uninstall`-Ziele.
 
--   **AdbTarget**: Gibt das Android-Zielgerät an, auf dem das Android-Paket installiert oder entfernt werden soll. Der Wert dieser Eigenschaft ist identisch mit der [-`adb`Zielgerätoption](http://developer.android.com/tools/help/adb.html#issuingcommands):
+-   **AdbTarget** &ndash; Gibt das Android-Zielgerät an, auf dem das Android-Paket installiert oder entfernt werden soll. Der Wert dieser Eigenschaft ist identisch mit der [-`adb`Zielgerätoption](http://developer.android.com/tools/help/adb.html#issuingcommands):
 
     ```bash
     # Install package onto emulator via -e
@@ -120,23 +119,23 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     Hinzugefügt in Xamarin.Android 8.2.
 
--   **AndroidApplication**: Ein boolescher Wert, der angibt, ob das Projekt für eine Android-Anwendung (`True`) oder für ein Android-Bibliotheksprojekt (`False` oder nicht vorhanden) vorgesehen ist.
+-   **AndroidApplication** &ndash; Ein boolescher Wert, der angibt, ob das Projekt für eine Android-Anwendung (`True`) oder für ein Android-Bibliotheksprojekt (`False` oder nicht vorhanden) vorgesehen ist.
 
     Es darf nur ein Projekt mit `<AndroidApplication>True</AndroidApplication>` in einem Android-Paket vorhanden sein. (Leider wurde dies noch nicht bestätigt, was zu subtilen und bizarren Fehlern in Bezug auf Android-Ressourcen führen kann.)
 
--   **AndroidBuildApplicationPackage**: Ein boolescher Wert, der angibt, ob das Paket erstellt und signiert werden soll (APK-Datei). Wenn Sie diesen Wert auf `True` festlegen, entspricht dies der Verwendung des [SignAndroidPackage](#Build_Targets)-Buildziels.
+-   **AndroidBuildApplicationPackage** &ndash; Ein boolescher Wert, der angibt, ob das Paket erstellt und signiert werden soll (APK-Datei). Wenn Sie diesen Wert auf `True` festlegen, entspricht dies der Verwendung des [SignAndroidPackage](#Build_Targets)-Buildziels.
 
     Unterstützung für diese Eigenschaft wurde nach Xamarin.Android 7.1 hinzugefügt.
 
     Standardmäßig ist diese Eigenschaft `False`.
 
--   **AndroidEnableMultiDex**: Eine boolesche Eigenschaft, die bestimmt, ob Multi-Dex-Unterstützung in der endgültigen `.apk`-Datei verwendet wird.
+-   **AndroidEnableMultiDex** &ndash; Eine boolesche Eigenschaft, die bestimmt, ob Multi-Dex-Unterstützung in der endgültigen `.apk`-Datei verwendet wird.
 
     Unterstützung für diese Eigenschaft wurde in Xamarin.Android 5.1 hinzugefügt.
 
     Standardmäßig ist diese Eigenschaft `False`.
 
--   **AndroidEnableSGenConcurrent**: Eine boolesche Eigenschaft, die bestimmt, ob der [gleichzeitige GC-Collector](http://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen) von Mono verwendet wird.
+-   **AndroidEnableSGenConcurrent** &ndash; Eine boolesche Eigenschaft, die bestimmt, ob der [gleichzeitige GC-Collector](http://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen) von Mono verwendet wird.
 
     Unterstützung für diese Eigenschaft wurde in Xamarin.Android 7.2 hinzugefügt.
 
@@ -163,7 +162,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     Standardmäßig ist diese Eigenschaft `True`.
 
--   **AndroidFastDeploymentType**: Eine durch Doppelpunkte (`:`) getrennte Liste von Werten zum Steuern, welche Typen im [Verzeichnis für schnelle Bereitstellung](#Fast_Deployment) auf dem Zielgerät bereitgestellt werden können, wenn die MSBuild-Eigenschaft `$(EmbedAssembliesIntoApk)` den Wert `False` aufweist. Wenn eine Ressource schnell bereitgestellt wird, ist sie *nicht* in die generierte `.apk`-Datei eingebettet, was die Bereitstellungszeiten beschleunigen kann. (Je mehr schneller bereitgestellt wird, desto seltener muss die `.apk`-Datei neu erstellt werden, und der Installationsprozess kann schneller ablaufen.) Gültige Werte sind:
+-   **AndroidFastDeploymentType** &ndash; Eine durch Doppelpunkte (`:`) getrennte Liste von Werten zum Steuern, welche Typen im [Verzeichnis für schnelle Bereitstellung](#Fast_Deployment) auf dem Zielgerät bereitgestellt werden können, wenn die MSBuild-Eigenschaft `$(EmbedAssembliesIntoApk)` den Wert `False` aufweist. Wenn eine Ressource schnell bereitgestellt wird, ist sie *nicht* in die generierte `.apk`-Datei eingebettet, was die Bereitstellungszeiten beschleunigen kann. (Je mehr schneller bereitgestellt wird, desto seltener muss die `.apk`-Datei neu erstellt werden, und der Installationsprozess kann schneller ablaufen.) Gültige Werte sind:
 
     - `Assemblies`: Bereitstellen von Anwendungsassemblys.
 
@@ -193,7 +192,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     In Xamarin.Android 6.1 hinzugefügt.
 
--   **AndroidTlsProvider**: Ein Zeichenfolgenwert, der angibt, welcher TLS-Anbieter in einer Anwendung verwendet werden soll. Dabei sind folgende Werte möglich:
+-   **AndroidTlsProvider** &ndash; Ein Zeichenfolgenwert, der angibt, welcher TLS-Anbieter in einer Anwendung verwendet werden soll. Dabei sind folgende Werte möglich:
 
     - `btls`: Verwendet [BoringSSL](https://boringssl.googlesource.com/boringssl) für die TLS-Kommunikation mit [HttpWebRequest](https://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.aspx).
       Dies ermöglicht die Verwendung von TLS 1.2 in allen Android-Versionen.
@@ -211,7 +210,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     In Xamarin.Android 7.1 hinzugefügt.
 
--   **AndroidLinkMode**: Gibt an, welcher Typ von [Verknüpfung](~/android/deploy-test/linker.md) für Assemblys ausgeführt werden soll, die im Android-Paket enthalten sind. Wird nur in Android-Anwendungsprojekten verwendet. Der Standardwert ist *SdkOnly*. Gültige Werte sind:
+-   **AndroidLinkMode** &ndash; Gibt an, welcher Typ von [Verknüpfung](~/android/deploy-test/linker.md) für Assemblys ausgeführt werden soll, die im Android-Paket enthalten sind. Wird nur in Android-Anwendungsprojekten verwendet. Der Standardwert ist *SdkOnly*. Gültige Werte sind:
 
     - **Keiner**: Es wird keine Verknüpfung versucht.
 
@@ -223,25 +222,25 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     ```
 
--   **AndroidLinkSkip**: Gibt eine durch Semikolons (`;`) getrennte Liste von Assemblynamen (ohne Dateierweiterungen) von Assemblys an, die nicht verknüpft werden sollen. Wird nur in Android-Anwendungsprojekten verwendet.
+-   **AndroidLinkSkip** &ndash; Gibt eine durch Semikolons (`;`) getrennte Liste von Assemblynamen (ohne Dateierweiterungen) von Assemblys an, die nicht verknüpft werden sollen. Wird nur in Android-Anwendungsprojekten verwendet.
 
     ```xml
     <AndroidLinkSkip>Assembly1;Assembly2</AndroidLinkSkip>
     ```
 
--   **AndroidManagedSymbols**: Eine boolesche Eigenschaft, die steuert, ob Sequenzpunkte generiert werden, sodass Dateinamen- und Zeilennummerinformationen aus `Release`-Stapelüberwachungen extrahiert werden können.
+-   **AndroidManagedSymbols** &ndash; Eine boolesche Eigenschaft, die steuert, ob Sequenzpunkte generiert werden, sodass Dateinamen- und Zeilennummerinformationen aus `Release`-Stapelüberwachungen extrahiert werden können.
 
     In Xamarin.Android 6.1 hinzugefügt.
 
--   **AndroidManifest**: Gibt einen Dateinamen an, der als Vorlage für die Datei [`AndroidManifest.xml`](~/android/platform/android-manifest.md) der App verwendet werden soll.
+-   **AndroidManifest** &ndash; Gibt einen Dateinamen an, der als Vorlage für die Datei [`AndroidManifest.xml`](~/android/platform/android-manifest.md) der App verwendet werden soll.
     Während des Builds werden alle anderen notwendigen Werte gemergt, um die eigentliche Datei `AndroidManifest.xml` zu generieren.
     `$(AndroidManifest)` muss den Paketnamen im `/manifest/@package`-Attribut enthalten.
 
--   **AndroidSdkBuildToolsVersion**: Das build-tools-Paket des Android SDK enthält unter anderem die Tools **aapt** und **zipalign**. Mehrere verschiedene Versionen des build-tools-Pakets können gleichzeitig installiert werden. Das build-tools-Paket, das für die Paketerstellung ausgewählt wird, wird durch Überprüfen und Verwenden einer „bevorzugten“ build-tools-Version ermittelt, wenn diese vorhanden ist. Wenn die „bevorzugte“ Version *nicht* vorhanden ist, wird das Paket mit der höchsten installierten build-tools-Version verwendet.
+-   **AndroidSdkBuildToolsVersion** &ndash; Das build-tools-Paket des Android SDK enthält unter anderem die Tools **aapt** und **zipalign**. Mehrere verschiedene Versionen des build-tools-Pakets können gleichzeitig installiert werden. Das build-tools-Paket, das für die Paketerstellung ausgewählt wird, wird durch Überprüfen und Verwenden einer „bevorzugten“ build-tools-Version ermittelt, wenn diese vorhanden ist. Wenn die „bevorzugte“ Version *nicht* vorhanden ist, wird das Paket mit der höchsten installierten build-tools-Version verwendet.
 
     Die MSBuild-Eigenschaft `$(AndroidSdkBuildToolsVersion)` enthält die bevorzugte build-tools-Version. Das Xamarin.Android-Buildsystem stellt einen Standardwert in `Xamarin.Android.Common.targets` zur Verfügung, und der Standardwert kann in Ihrer Projektdatei überschrieben werden, um eine alternative build-tools-Version auszuwählen, wenn (zum Beispiel) die letzte Version von aapt abstürzt, während eine frühere aapt-Version bekanntermaßen funktioniert.
 
--   **AndroidSupportedAbis**: Eine Zeichenfolgeneigenschaft, die eine durch Semikolons (`;`) getrennte Liste von ABIs enthält, die in die `.apk`-Datei aufgenommen werden sollen.
+-   **AndroidSupportedAbis** &ndash; Eine Zeichenfolgeneigenschaft, die eine durch Semikolons (`;`) getrennte Liste von ABIs enthält, die in die `.apk`-Datei aufgenommen werden sollen.
 
     Unterstützte Werte sind:
 
@@ -251,23 +250,23 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
     -   `arm64-v8a`: Erfordert Xamarin.Android 5.1 oder höher.
     -   `x86_64`: Erfordert Xamarin.Android 5.1 oder höher.
 
--   **AndroidUseSharedRuntime**: Eine boolesche Eigenschaft, die bestimmt, ob die *Shared Runtime-Pakete* erforderlich sind, um die Anwendung auf dem Zielgerät auszuführen. Durch die Verwendung der Shared Runtime-Pakete kann das Anwendungspaket kleiner werden, wodurch der Vorgang der Paketerstellung und -bereitstellung beschleunigt wird, was zu einem schnelleren Verarbeitungszyklus für Build/Bereitstellung/Debuggen führt.
+-   **AndroidUseSharedRuntime** &ndash; Eine boolesche Eigenschaft, die bestimmt, ob die *Shared Runtime-Pakete* erforderlich sind, um die Anwendung auf dem Zielgerät auszuführen. Durch die Verwendung der Shared Runtime-Pakete kann das Anwendungspaket kleiner werden, wodurch der Vorgang der Paketerstellung und -bereitstellung beschleunigt wird, was zu einem schnelleren Verarbeitungszyklus für Build/Bereitstellung/Debuggen führt.
 
     Diese Eigenschaft sollte `True` für Debugbuilds und `False` für Releaseprojekte sein.
 
--   **AotAssemblies**: Eine boolesche Eigenschaft, die festlegt, ob Assemblys vorzeitig in nativen Code kompiliert und in die `.apk`-Datei eingebunden werden.
+-   **AotAssemblies** &ndash; Eine boolesche Eigenschaft, die festlegt, ob Assemblys vorzeitig in nativen Code kompiliert und in die `.apk`-Datei eingebunden werden.
 
     Unterstützung für diese Eigenschaft wurde in Xamarin.Android 5.1 hinzugefügt.
 
     Standardmäßig ist diese Eigenschaft `False`.
 
--   **EmbedAssembliesIntoApk**: Eine boolesche Eigenschaft, die bestimmt, ob die Assemblys der App in das Anwendungspaket eingebettet werden sollen.
+-   **EmbedAssembliesIntoApk** &ndash; Eine boolesche Eigenschaft, die bestimmt, ob die Assemblys der App in das Anwendungspaket eingebettet werden sollen.
 
     Diese Eigenschaft sollte `True` für Releasebuilds und `False` für Debugbuilds sein. Sie *muss* ggf. `True` in Debugbuilds sein, wenn die schnelle Bereitstellung das Zielgerät nicht unterstützt.
 
     Wenn diese Eigenschaft `False` ist, steuert die MSBuild-Eigenschaft `$(AndroidFastDeploymentType)` auch, was in die `.apk`-Datei eingebettet wird. Dies wirkt sich auf die Bereitstellungszeit und die Zeit für erneute Buildprozesse aus.
 
--   **EnableLLVM**: Eine boolesche Eigenschaft, die bestimmt, ob LLVM verwendet wird, wenn Assemblys vorab in nativen Code kompiliert werden.
+-   **EnableLLVM** &ndash; Eine boolesche Eigenschaft, die bestimmt, ob LLVM verwendet wird, wenn Assemblys vorab in nativen Code kompiliert werden.
 
     Unterstützung für diese Eigenschaft wurde in Xamarin.Android 5.1 hinzugefügt.
 
@@ -275,7 +274,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     Diese Eigenschaft wird ignoriert, wenn die MSBuild-Eigenschaft `$(AotAssemblies)` nicht den Wert `True` aufweist.
 
--   **EnableProguard**: Eine boolesche Eigenschaft, die bestimmt, ob [proguard](http://developer.android.com/tools/help/proguard.html) als Teil des Paketerstellungsprozesses ausgeführt wird, um Java-Code zu verknüpfen.
+-   **EnableProguard** &ndash; Eine boolesche Eigenschaft, die bestimmt, ob [proguard](http://developer.android.com/tools/help/proguard.html) als Teil des Paketerstellungsprozesses ausgeführt wird, um Java-Code zu verknüpfen.
 
     Unterstützung für diese Eigenschaft wurde in Xamarin.Android 5.1 hinzugefügt.
 
@@ -283,7 +282,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     Wenn `True`, werden [ProguardConfiguration](#ProguardConfiguration)-Dateien verwendet, um die `proguard`-Ausführung zu steuern.
 
--   **JavaMaximumHeapSize**: Gibt den Wert des **java**
+-   **JavaMaximumHeapSize** &ndash; Gibt den Wert des **java**
     `-Xmx`-Parameters an, der beim Erstellen der `.dex`-Datei als Teil des Paketerstellungsprozesses verwendet werden soll. Wenn keine Angabe erfolgt, wird die Option `-Xmx` nicht an **java** übergeben.
 
     Die Angabe dieser Eigenschaft ist erforderlich, wenn das [`_CompileDex`-Ziel einen `java.lang.OutOfMemoryError` auslöst](https://bugzilla.xamarin.com/show_bug.cgi?id=18327).
@@ -294,7 +293,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
 -   **JavaOptions** &ndash; Gibt zusätzliche Befehlszeilenoptionen an, die beim Erstellen der `.dex`-Datei an **java** übergeben werden.
 
--   **MandroidI18n**: Gibt die Internationalisierungsunterstützung an, die in der Anwendung enthalten ist, wie z.B. Sortierung und Sortieren von Tabellen. Der Wert ist eine durch Kommas oder Semikolons getrennte Liste von mindestens einem der folgenden Werte, für den nicht zwischen Groß-/Kleinschreibung unterschieden wird:
+-   **MandroidI18n** &ndash; Gibt die Internationalisierungsunterstützung an, die in der Anwendung enthalten ist, wie z.B. Sortierung und Sortieren von Tabellen. Der Wert ist eine durch Kommas oder Semikolons getrennte Liste von mindestens einem der folgenden Werte, für den nicht zwischen Groß-/Kleinschreibung unterschieden wird:
 
     -   **Keiner**: Keine zusätzliche Codierung einbeziehen.
 
@@ -315,13 +314,13 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
     <MandroidI18n>West</MandroidI18n>
     ```
 
--   **MonoSymbolArchiv**: Eine boolesche Eigenschaft, die steuert, ob `.mSYM`-Artefakte für die spätere Verwendung mit `mono-symbolicate` generiert werden, um &ldquo;echte&rdquo; Dateinamen- und Zeilennummerinformationen aus Releasestapelüberwachungen zu extrahieren.
+-   **MonoSymbolArchiv** &ndash; Eine boolesche Eigenschaft, die steuert, ob `.mSYM`-Artefakte für die spätere Verwendung mit `mono-symbolicate` generiert werden, um &ldquo;echte&rdquo; Dateinamen- und Zeilennummerinformationen aus Releasestapelüberwachungen zu extrahieren.
 
     Dies ist standardmäßig TRUE für &ldquo;Release&rdquo;-Apps mit aktivierten Debugsymbolen: `$(EmbedAssembliesIntoApk)` ist TRUE, `$(DebugSymbols)` ist TRUE, und `$(Optimize)` ist TRUE.
 
     In Xamarin.Android 7.1 hinzugefügt.
 
--   **AndroidVersionCodePattern**: Eine Zeichenfolgeneigenschaft, die es dem Entwickler ermöglicht, den `versionCode` im Manifest anzupassen.
+-   **AndroidVersionCodePattern** &ndash; Eine Zeichenfolgeneigenschaft, die es dem Entwickler ermöglicht, den `versionCode` im Manifest anzupassen.
     Informationen zur Entscheidung für einen `versionCode`finden Sie unter [Erstellen des Versionscodes für das APK](~/android/deploy-test/building-apps/abi-specific-apks.md).
     
     Einige Beispiele: Wenn `abi` `armeabi` ist und `versionCode` im Manifest `123` ist, generiert `{abi}{versionCode}` einen versionCode von `1123`, wenn `$(AndroidCreatePackagePerAbi)` TRUE ist, andernfalls wird ein Wert von 123 generiert.
@@ -340,9 +339,9 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
         -   4 &ndash; `arm64-v8a`
         -   5 &ndash; `x86_64`
 
-    -   **minSDK**: Fügt den mindestens unterstützten SDK-Wert aus `AndroidManifest.xml` oder `11` ein, wenn kein solcher definiert ist.
+    -   **minSDK** &ndash; Fügt den mindestens unterstützten SDK-Wert aus `AndroidManifest.xml` oder `11` ein, wenn kein solcher definiert ist.
 
-    -   **versionCode**: Verwendet den Versionscode direkt aus `Properties\AndroidManifest.xml`. 
+    -   **versionCode** &ndash; Verwendet den Versionscode direkt aus `Properties\AndroidManifest.xml`. 
 
     Sie können mithilfe der `$(AndroidVersionCodeProperties)`-Eigenschaft (definiert als Nächstes) benutzerdefinierte Elemente definieren.
 
@@ -350,7 +349,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     Hinzugefügt in Xamarin.Android 7.2.
 
--   **AndroidVersionCodeProperties**: Eine Zeichenfolgeneigenschaft, die es dem Entwickler erlaubt, benutzerdefinierte Elemente für die Verwendung mit `AndroidVersionCodePattern` zu definieren. Diese liegen in Form eines `key=value`-Paares vor. Alle Elemente im `value` sollten ganzzahlige Werte sein. Beispiel: `screen=23;target=$(_SupportedApiLevel)`. Wie Sie sehen können, können Sie vorhandene oder benutzerdefinierte MSBuild-Eigenschaften in der Zeichenfolge verwenden.
+-   **AndroidVersionCodeProperties** &ndash; Eine Zeichenfolgeneigenschaft, die es dem Entwickler erlaubt, benutzerdefinierte Elemente für die Verwendung mit `AndroidVersionCodePattern` zu definieren. Diese liegen in Form eines `key=value`-Paares vor. Alle Elemente im `value` sollten ganzzahlige Werte sein. Beispiel: `screen=23;target=$(_SupportedApiLevel)`. Wie Sie sehen können, können Sie vorhandene oder benutzerdefinierte MSBuild-Eigenschaften in der Zeichenfolge verwenden.
 
     Hinzugefügt in Xamarin.Android 7.2.
 
@@ -374,7 +373,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
 Die folgenden MSBuild-Eigenschaften werden mit [Bindungsprojekten](~/android/platform/binding-java-library/index.md) verwendet:
 
--   **AndroidClassParser**: Eine Zeichenfolgeneigenschaft, die steuert, wie `.jar`-Dateien analysiert werden. Mögliche Werte:
+-   **AndroidClassParser** &ndash; Eine Zeichenfolgeneigenschaft, die steuert, wie `.jar`-Dateien analysiert werden. Mögliche Werte:
 
     - **class-parse**: Verwendet `class-parse.exe`, um Java-Bytecode direkt (ohne Unterstützung durch eine JVM) zu analysieren. Dieser Wert ist experimentell. 
 
@@ -393,7 +392,7 @@ Die folgenden MSBuild-Eigenschaften werden mit [Bindungsprojekten](~/android/pla
 
     Der Standardwert wird sich in einem zukünftigen Release ändern.
 
--   **AndroidCodegenTarget**: Eine Zeichenfolgeneigenschaft, die die Codegenerierungsziel-ABI steuert. Mögliche Werte:
+-   **AndroidCodegenTarget** &ndash; Eine Zeichenfolgeneigenschaft, die die Codegenerierungsziel-ABI steuert. Mögliche Werte:
 
     - **XamarinAndroid**: Verwendet die JNI-Bindungs-API, die seit Mono für Android 1.0 vorhanden ist. Bindungsassemblys, die mit Xamarin.Android 5.0 oder höher erstellt wurden, können nur unter Xamarin.Android 5.0 oder höher (API-/ABI-Erweiterungen) ausgeführt werden, aber die *Quelle* ist kompatibel mit früheren Produktversionen.
 
@@ -416,15 +415,15 @@ Die folgenden MSBuild-Eigenschaften werden mit [Bindungsprojekten](~/android/pla
 
 Ressourceneigenschaften steuern die Generierung der `Resource.designer.cs`-Datei, die Zugriff auf Android-Ressourcen ermöglicht. 
 
--   **AndroidResgenExtraArgs**: Gibt zusätzliche Befehlszeilenoptionen an, die an den Befehl **aapt** übergeben werden, wenn Android-Objekte und -Ressourcen verarbeitet werden.
+-   **AndroidResgenExtraArgs** &ndash; Gibt zusätzliche Befehlszeilenoptionen an, die an den Befehl **aapt** übergeben werden, wenn Android-Objekte und -Ressourcen verarbeitet werden.
 
--   **AndroidResgenFile**: Gibt den Namen der zu generierenden Ressourcendatei an. Die Standardvorlage legt diese Option auf `Resource.designer.cs` fest.
+-   **AndroidResgenFile** &ndash; Gibt den Namen der zu generierenden Ressourcendatei an. Die Standardvorlage legt diese Option auf `Resource.designer.cs` fest.
 
--   **MonoAndroidResourcePrefix**: Gibt ein *Pfadpräfix* an, das am Anfang von Dateinamen mit einer Buildaktion von `AndroidResource` entfernt wird. Damit soll ermöglicht werden, den Speicherort von Ressourcen zu ändern.
+-   **MonoAndroidResourcePrefix** &ndash; Gibt ein *Pfadpräfix* an, das am Anfang von Dateinamen mit einer Buildaktion von `AndroidResource` entfernt wird. Damit soll ermöglicht werden, den Speicherort von Ressourcen zu ändern.
 
     Der Standardwert ist `Resources`. Ändern Sie diese Option für die Java-Projektstruktur in `res`.
 
--   **AndroidExplicitCrunch**: Wenn Sie eine App mit einer sehr großen Anzahl lokaler zeichenbarer Ressourcen erstellen, kann ein anfänglicher Buildprozess (oder erneuter Buildprozess) mehrere Minuten dauern. Um den Buildprozess zu beschleunigen, versuchen Sie, diese Eigenschaft einzuschließen und auf `True` festzulegen. Wenn diese Eigenschaft festgelegt ist, verarbeitet der Buildprozess PNG-Dateien vorab.
+-   **AndroidExplicitCrunch** &ndash; Wenn Sie eine App mit einer sehr großen Anzahl lokaler zeichenbarer Ressourcen erstellen, kann ein anfänglicher Buildprozess (oder erneuter Buildprozess) mehrere Minuten dauern. Um den Buildprozess zu beschleunigen, versuchen Sie, diese Eigenschaft einzuschließen und auf `True` festzulegen. Wenn diese Eigenschaft festgelegt ist, verarbeitet der Buildprozess PNG-Dateien vorab.
 
     **Experimentell**. Hinzugefügt in Xamarin.Android 7.0.
 
@@ -437,15 +436,15 @@ Signatureigenschaften steuern, wie das Anwendungspaket signiert wird, damit es a
 
 Standardmäßig generiert das Signaturziel bei Bedarf einen neuen Debugsignaturschlüssel. Wenn Sie einen bestimmten Schlüssel verwenden möchten (z.B. auf einem Buildserver), können die folgenden MSBuild-Eigenschaften verwendet werden:
 
--   **AndroidKeyStore**: Ein boolescher Wert, der angibt, ob benutzerdefinierte Signaturinformationen verwendet werden sollen. Der Standardwert ist `False`. Dies bedeutet, dass der Debugsignatur-Standardschlüssel verwendet wird, um Pakete zu signieren.
+-   **AndroidKeyStore** &ndash; Ein boolescher Wert, der angibt, ob benutzerdefinierte Signaturinformationen verwendet werden sollen. Der Standardwert ist `False`. Dies bedeutet, dass der Debugsignatur-Standardschlüssel verwendet wird, um Pakete zu signieren.
 
--   **AndroidSigningKeyAlias**: Gibt den Alias für den Schlüssel im Keystore an. Dies ist der Wert **keytool -alias**, der beim Erstellen des Keystore verwendet wird. 
+-   **AndroidSigningKeyAlias** &ndash; Gibt den Alias für den Schlüssel im Keystore an. Dies ist der Wert **keytool -alias**, der beim Erstellen des Keystore verwendet wird. 
 
--   **AndroidSigningKeyPass**: Gibt das Kennwort des Schlüssels in der Keystoredatei an. Dies ist der Wert, der eingegeben wird, wenn `keytool` die folgende Aufforderung ausgibt: **Enter key password for $(AndroidSigningKeyAlias)**.
+-   **AndroidSigningKeyPass** &ndash; Gibt das Kennwort des Schlüssels in der Keystoredatei an. Dies ist der Wert, der eingegeben wird, wenn `keytool` die folgende Aufforderung ausgibt: **Enter key password for $(AndroidSigningKeyAlias)**.
 
--   **AndroidSigningKeyStore**: Gibt den Dateinamen der von `keytool` erstellten Keystoredatei an. Dies entspricht dem Wert, der der Option **keytool -keystore** zur Verfügung gestellt wird.
+-   **AndroidSigningKeyStore** &ndash; Gibt den Dateinamen der von `keytool` erstellten Keystoredatei an. Dies entspricht dem Wert, der der Option **keytool -keystore** zur Verfügung gestellt wird.
 
--   **AndroidSigningStorePass**: Gibt das Kennwort für `$(AndroidSigningKeyStore)` an. Dies ist der Wert, der `keytool` beim Erstellen der Keystoredatei zur Verfügung gestellt wird, wenn die folgende Aufforderung ausgegeben wird: **Enter keystore password:**. 
+-   **AndroidSigningStorePass** &ndash; Gibt das Kennwort für `$(AndroidSigningKeyStore)` an. Dies ist der Wert, der `keytool` beim Erstellen der Keystoredatei zur Verfügung gestellt wird, wenn die folgende Aufforderung ausgegeben wird: **Enter keystore password:**. 
 
 Betrachten Sie zum Beispiel den folgenden `keytool`-Aufruf:
 
@@ -528,7 +527,7 @@ Fortgeschrittene Benutzer wünschen sich vielleicht, dass verschiedene Ressource
 </PropertyGroup>
 ```
 
-**LogicalName**: Gibt den Ressourcenpfad explizit an. Ermöglicht das &ldquo;Aliasing&rdquo; von Dateien, damit diese als mehrere unterschiedliche Ressourcennamen zur Verfügung stehen.
+**LogicalName** &ndash; Gibt den Ressourcenpfad explizit an. Ermöglicht das &ldquo;Aliasing&rdquo; von Dateien, damit diese als mehrere unterschiedliche Ressourcennamen zur Verfügung stehen.
 
 ```xml
 <ItemGroup Condition="'$(Configuration)'!='Debug'">
@@ -556,7 +555,7 @@ Bei der Pfadermittlung wird der Name des übergeordneten Verzeichnisses der nati
 
 #### <a name="item-attribute-name"></a>Elementattributname
 
-**Abi**: Gibt die ABI der nativen Bibliothek an.
+**Abi** &ndash; Gibt die ABI der nativen Bibliothek an.
 
 ```xml
 <ItemGroup>

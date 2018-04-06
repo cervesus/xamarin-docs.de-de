@@ -1,18 +1,17 @@
 ---
 title: Verwenden von TestFlight
-description: "TestFlight ist jetzt im Besitz von Apple und ist die primäre Methode zum Beta-Testen Ihrer Xamarin.iOS-Apps. Dieser Artikel führt Sie durch alle Schritte des TestFlight-Prozesses, vom Hochladen Ihrer App bis hin zum Arbeiten mit iTunes Connect."
-ms.topic: article
+description: TestFlight ist jetzt im Besitz von Apple und ist die primäre Methode zum Beta-Testen Ihrer Xamarin.iOS-Apps. Dieser Artikel führt Sie durch alle Schritte des TestFlight-Prozesses, vom Hochladen Ihrer App bis hin zum Arbeiten mit iTunes Connect.
 ms.prod: xamarin
 ms.assetid: BA880768-2BC8-41E4-B57E-A56F8EED4690
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: adc08009de308598041adb79dc02bf83bcf4a2f2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5a6e90aab3aae408d4daace81875e44f075818bd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-testflight"></a>Verwenden von TestFlight
 

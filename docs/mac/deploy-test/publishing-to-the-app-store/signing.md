@@ -1,18 +1,17 @@
 ---
 title: Signieren mit einer Entwickler-ID
-description: "Dieser Leitfaden erläutert die Signierung einer Xamarin.Mac-App mit der Entwickler-ID für die Veröffentlichung."
-ms.topic: article
+description: Dieser Leitfaden erläutert die Signierung einer Xamarin.Mac-App mit der Entwickler-ID für die Veröffentlichung.
 ms.prod: xamarin
 ms.assetid: cf7b733b-e08f-4f56-a233-264b29ee4c97
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 46d5527a33b82a795029f62900e782d644671f0d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 1a2726ec46ac51ae9848b318798afba74183360c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="sign-with-developer-id"></a>Signieren mit einer Entwickler-ID
 

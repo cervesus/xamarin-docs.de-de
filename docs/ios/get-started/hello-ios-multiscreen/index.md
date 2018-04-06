@@ -1,18 +1,18 @@
 ---
 title: Hello, iOS Multiscreen
-description: "In diesem zweiteiligen Leitfaden wird die Phoneword-Anwendung, die Sie im Leitfaden „Hallo, iOS“ erstellt haben, um die Behandlung eines zweiten Bildschirms erweitert. Außerdem wird das Model-View-Controller-Entwurfsmuster eingeführt, die erste iOS-Navigation implementiert, und es werden die Struktur und Funktionen von iOS-Anwendungen ausführlich beschrieben."
-ms.topic: article
+description: In diesem zweiteiligen Leitfaden wird die Phoneword-Anwendung, die Sie im Leitfaden „Hallo, iOS“ erstellt haben, um die Behandlung eines zweiten Bildschirms erweitert. Außerdem wird das Model-View-Controller-Entwurfsmuster eingeführt, die erste iOS-Navigation implementiert, und es werden die Struktur und Funktionen von iOS-Anwendungen ausführlich beschrieben.
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 79f57ac0-37d0-4593-9dcf-fca93ad0be65
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: d727667685d72de1bd42a9dc7e6f2be77f740cf3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 95be7bd39aced5dad680efbae0bd7e0f4d040f7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-ios-multiscreen"></a>Hello, iOS Multiscreen
 

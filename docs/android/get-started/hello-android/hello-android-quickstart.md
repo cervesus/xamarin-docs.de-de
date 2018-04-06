@@ -1,18 +1,18 @@
 ---
 title: 'Hallo, Android: Schnellstart'
 description: In diesem zweiteiligen Handbuch erstellen Sie Ihre erste Xamarin.Android-Anwendung – entweder mit Visual Studio oder mit Visual Studio für Mac. Außerdem entwickeln Sie ein Verständnis für die grundlegenden Aspekte der Entwicklung von Android-Anwendungen mit Xamarin. Währenddessen werden Ihnen die Tools, Konzepte und Schritte vorgestellt, die zum Erstellen und Bereitstellen einer Xamarin.Android-Anwendung erforderlich sind.
-ms.topic: article
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: bbe243b108be6e0060ba9067db58a9875c7b5153
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: c5937cc86a8a1f8506b14774b0429bee3c8aa594
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-android-quickstart"></a>Hallo, Android: Schnellstart
 
@@ -476,7 +476,7 @@ translateButton.Click += (sender, e) =>
 };
 ```
 
-Speichern Sie Ihre Arbeit, und erstellen Sie die Anwendung, indem Sie **Erstellen > Alle erstellen** auswählen (oder durch Drücken von **&#8984; + B**). Wenn die Anwendung kompiliert wird, erhalten Sie eine Erfolgsmeldung am oberen Rand von Visual Studio für Mac:
+Speichern Sie Ihre Arbeit, und erstellen Sie die Anwendung, indem Sie **Erstellen > Alle erstellen** auswählen (oder durch Drücken von **& #8984; + B**). Wenn die Anwendung kompiliert wird, erhalten Sie eine Erfolgsmeldung am oberen Rand von Visual Studio für Mac:
 
 Wenn Fehler auftreten, wiederholen Sie die vorherigen Schritte, und beheben Sie alle Fehler, bis die Anwendung erfolgreich erstellt wird. Wenn Sie einen Buildfehler wie _Resource does not exist in the current context_ (Ressource ist im aktuellen Kontext nicht vorhanden) erhalten, überprüfen Sie, ob der Name des Namespaces in **MainActivity.cs** dem Projektnamen (`Phoneword`) entspricht, und erstellen Sie dann die Projektmappe völlig neu. Wenn weiterhin Buildfehler auftreten, stellen Sie sicher, dass Sie die neuesten Updates für Xamarin.Android und Visual Studio für Mac installiert haben.
 

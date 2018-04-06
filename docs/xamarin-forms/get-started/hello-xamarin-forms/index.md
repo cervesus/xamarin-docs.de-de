@@ -1,18 +1,18 @@
 ---
 title: Hello, Xamarin.Forms
-description: "Dieser Leitfaden bietet eine Einführung in das Entwickeln einer Xamarin.Forms-Anwendung mit Visual Studio für Mac oder Visual Studio sowie in die Grundlagen der Anwendungsentwicklung mit Xamarin.Forms. Es werden Tools, Konzepte und Schritte eingeführt, die zum Erstellen und Bereitstellen einer Xamarin.iOS-Anwendung erforderlich sind."
-ms.topic: article
+description: Dieser Leitfaden bietet eine Einführung in das Entwickeln einer Xamarin.Forms-Anwendung mit Visual Studio für Mac oder Visual Studio sowie in die Grundlagen der Anwendungsentwicklung mit Xamarin.Forms. Es werden Tools, Konzepte und Schritte eingeführt, die zum Erstellen und Bereitstellen einer Xamarin.iOS-Anwendung erforderlich sind.
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: af79e4ef-99c6-4a17-b5d1-95ab652ac7ab
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 786b22ccc6a3e1fcba2ddbe8813aada33cfdda4e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: a06bd03d7df45719b132f7cb1d9a46455dc75ddf
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-xamarinforms"></a>Hello, Xamarin.Forms
 
@@ -31,7 +31,7 @@ Im zweiten Teil dieses Leitfadens wird dieser Vorgang noch einmal genauer betrac
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Introduction to Xamarin.Forms (Einführung in Xamarin.Forms)](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
+- [Einführung in Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Debuggen in Visual Studio](http://msdn.microsoft.com/library/k0k771bt%28v=vs.90%29.aspx)
 - [Visual Studio für Mac-Anleitungen: Debuggen](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/)
 - [Free Self-Guided Learning (Kostenloses eigenständiges Lernen) (Video)](https://university.xamarin.com/self-guided)

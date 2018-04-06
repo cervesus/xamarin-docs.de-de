@@ -1,17 +1,16 @@
 ---
 title: Arbeiten mit Lokalisierung
-description: "Anpassung Ihrer WatchOS-apps für mehrere Sprachen"
-ms.topic: article
+description: Anpassung Ihrer WatchOS-apps für mehrere Sprachen
 ms.prod: xamarin
 ms.assetid: 55834877-757B-4860-AF2F-933A948BE38D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 9ad3499a232e5f2b2ef362f772ed0197e71e6bee
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c765005491f55a1bdcadb1bc5aea97f693dc4570
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-localization"></a>Arbeiten mit Lokalisierung
 
@@ -55,7 +54,7 @@ Standardmäßig ist die Watch-app für die Lokalisierung nicht konfiguriert. Mü
 
 1. Erstellen Sie **Base.lproj** Verzeichnis und verschieben Sie die **Interface.storyboard** hinein.
 
-2. Erstellen Sie  **<language>.lproj** Verzeichnisse für jede Sprache, die Sie unterstützen möchten.
+2. Erstellen Sie **<language>.lproj** Verzeichnisse für jede Sprache, die Sie unterstützen möchten.
 
 3. Die **.lproj** Verzeichnisse enthalten sollte ein **Interface.strings** Textdatei (der Dateiname sollte die Storboard Name übereinstimmen). Optional können Sie keine Bilder einfügen, die Lokalisierung in diese Verzeichnisse erfordern.
 
@@ -86,13 +85,13 @@ Wenn das Storyboard in der Apple Watch gerendert wird, wird die richtigen Werte 
 
 #### <a name="storyboard-images"></a>Storyboard-Bilder
 
-Die beispiellösung umfasst außerdem eine  **gradient@2x.png**  Bild im jeweiligen Sprachordner. Dieses Image kann für jede Sprache (z. b. unterscheiden Sie haben Text, die benötigt wird, übersetzen eingebettet oder Verwendung lokalisiert Iconography).
+Die beispiellösung umfasst außerdem eine **gradient@2x.png** Bild im jeweiligen Sprachordner. Dieses Image kann für jede Sprache (z. b. unterscheiden Sie haben Text, die benötigt wird, übersetzen eingebettet oder Verwendung lokalisiert Iconography).
 
 Legen Sie des Bilds einfach **Image** Eigenschaft in das Storyboard und das richtige Bild für die Überwachung gemäß der vom Benutzer ausgewählten Sprache gerendert wird.
 
 ![](localization-images/storyboard-image.png "Legen Sie die Bilder Bildeigenschaft in das storyboard")
 
-Hinweis: alle Apple Überwachungen Schreibberechtigung Retina zeigt nur die  **@2x**  Version des Abbilds ist erforderlich. Sie müssen nicht angeben  **@2x**  in das Storyboard.
+Hinweis: alle Apple Überwachungen Schreibberechtigung Retina zeigt nur die **@2x** Version des Abbilds ist erforderlich. Sie müssen nicht angeben **@2x** in das Storyboard.
 
 ### <a name="watch-extension"></a>Watch-Erweiterung
 
@@ -130,7 +129,7 @@ Bilder, die vom Code aufgefüllt werden, können auf zwei Arten festgelegt werde
   displayImage.SetImage("gradient"); // image in Watch App (as shown above)
   ```
 
-2. Verschieben Sie ein Bild von der Erweiterung, mit der Überwachung `FromBundle` und die app wird automatisch das richtige Bild für die ausgewählte Sprache des Benutzers ausgewählt. In der Beispielprojektmappe ist ein Bild  **language@2x.png**  in der jeweiligen Sprache Ordner, und es wird auf `DetailController` mit dem folgenden Code:
+2. Verschieben Sie ein Bild von der Erweiterung, mit der Überwachung `FromBundle` und die app wird automatisch das richtige Bild für die ausgewählte Sprache des Benutzers ausgewählt. In der Beispielprojektmappe ist ein Bild **language@2x.png** in der jeweiligen Sprache Ordner, und es wird auf `DetailController` mit dem folgenden Code:
 
   ```csharp
   using (var image = UIImage.FromBundle ("language")) {
@@ -138,7 +137,7 @@ Bilder, die vom Code aufgefüllt werden, können auf zwei Arten festgelegt werde
   }
   ```
 
-  Beachten Sie, die Sie nicht benötigen, geben Sie die  **@2x**  beim Verweisen auf den Dateinamen des Bilds.
+  Beachten Sie, die Sie nicht benötigen, geben Sie die **@2x** beim Verweisen auf den Dateinamen des Bilds.
 
 Die zweite Methode ist auch anwendbar, wenn Sie ein Image von einem Remoteserver zum Rendern auf der Apple Watch herunterzuladen. jedoch müssen in diesem Fall Sie sicherstellen, dass das Bild, das Sie herunterladen gemäß den benutzereinstellungen richtig lokalisiert ist.
 

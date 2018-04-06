@@ -1,18 +1,17 @@
 ---
 title: ProGuard
-description: "ProGuard ist ein Datei-Shrinker, Optimierer, Obfuscator und eine Vorüberprüfung der Java-Klasse. Er erkennt und entfernt nicht verwendeten Code, analysiert und optimiert Bytecode und verbirgt anschließend Klassen und Klassenmember. Dieser Leitfaden erläutert, wie ProGuard funktioniert, wie Sie ihn in Ihrem Projekt aktivieren und konfigurieren. Darüber hinaus werden einige Beispiele für ProGuard-Konfigurationen bereitgestellt."
-ms.topic: article
+description: ProGuard ist ein Datei-Shrinker, Optimierer, Obfuscator und eine Vorüberprüfung der Java-Klasse. Er erkennt und entfernt nicht verwendeten Code, analysiert und optimiert Bytecode und verbirgt anschließend Klassen und Klassenmember. Dieser Leitfaden erläutert, wie ProGuard funktioniert, wie Sie ihn in Ihrem Projekt aktivieren und konfigurieren. Darüber hinaus werden einige Beispiele für ProGuard-Konfigurationen bereitgestellt.
 ms.prod: xamarin
 ms.assetid: 29C0E850-3A49-4618-9078-D59BE0284D5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 10744d7c4fbcc5a8935a1fe1e60b6c96ec828815
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e65c78633ae91318bd8e9cce949bac9cc12675c0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="proguard"></a>ProGuard
 

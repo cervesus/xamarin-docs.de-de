@@ -1,18 +1,17 @@
 ---
-title: "Die „iTunesMetadata.plist“-Datei"
-description: "In diesem Artikel wird die „iTunesMetadata.plist“-Datei vorgestellt, die verwendet wird, um iTunes Informationen zu einer iOS-Anwendung zu liefern, die die Ad-hoc-Verteilung entweder zu Testzwecken oder für die Unternehmensbereitstellung verwendet."
-ms.topic: article
+title: Die „iTunesMetadata.plist“-Datei
+description: In diesem Artikel wird die „iTunesMetadata.plist“-Datei vorgestellt, die verwendet wird, um iTunes Informationen zu einer iOS-Anwendung zu liefern, die die Ad-hoc-Verteilung entweder zu Testzwecken oder für die Unternehmensbereitstellung verwendet.
 ms.prod: xamarin
 ms.assetid: 70676eba-6a99-4a3a-bccc-84359fe9c2c3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3bdf00a9e50b2bf66f51c825306c2ba8e6365dd2
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 1b1b0c758126acb0c1e7953ea36e5ac871ee20ef
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="the-itunesmetadataplist-file"></a>Die „iTunesMetadata.plist“-Datei
 
@@ -303,7 +302,7 @@ Führen Sie folgende Schritte aus:
 
     ![](itunesmetadata-images/image01.png "Auswählen der iOS-Eigenschaftenliste")
 3. Geben Sie für den **Namen** `iTunesMetadata` ein, und klicken Sie auf **Neu**.
-4. Doppelklicken Sie im `iTunesMetadata.plist`Projektmappen-Explorer **auf die Datei** , um sie zur Bearbeitung zu öffnen:
+4. Doppelklicken Sie im `iTunesMetadata.plist`Projektmappen-Explorer**auf die Datei**, um sie zur Bearbeitung zu öffnen:
 
     ![](itunesmetadata-images/image02.png "Der iTunesMetadata.plist-Editor")
 5. Klicken Sie auf das grüne **+**, um einen neuen Eintrag hinzuzufügen, oder geben Sie `UIRequiredDeviceCapabilities` als Schlüsselnamen ein:

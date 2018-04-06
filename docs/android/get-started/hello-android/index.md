@@ -1,18 +1,18 @@
 ---
 title: Hello, Android (Hallo, Android)
-description: "In diesem zweiteiligen Leitfaden erstellen Sie Ihre erste Xamarin.Android-Anwendung – entweder mit Visual Studio für Mac oder mit Visual Studio. Außerdem erhalten Sie Einblick in die grundlegenden Aspekte der Entwicklung von Android-Anwendungen mit Xamarin. Währenddessen werden die Tools, Konzepte und Schritte eingeführt, die zum Erstellen und Bereitstellen einer Xamarin.Android-Anwendung erforderlich sind."
-ms.topic: article
+description: In diesem zweiteiligen Leitfaden erstellen Sie Ihre erste Xamarin.Android-Anwendung – entweder mit Visual Studio für Mac oder mit Visual Studio. Außerdem erhalten Sie Einblick in die grundlegenden Aspekte der Entwicklung von Android-Anwendungen mit Xamarin. Währenddessen werden die Tools, Konzepte und Schritte eingeführt, die zum Erstellen und Bereitstellen einer Xamarin.Android-Anwendung erforderlich sind.
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: C6474F70-3617-46AD-93E8-BE66878EEC17
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/02/2016
-ms.openlocfilehash: 8c48238071084c734768296fefe7056fcc55cabf
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: da6dabed58bedcbcaf1191c16a790e055184c95a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-android"></a>Hello, Android (Hallo, Android)
 

@@ -1,17 +1,16 @@
 ---
-title: "fastlane für iOS – sigh"
-ms.topic: article
+title: fastlane für iOS – sigh
 ms.prod: xamarin
 ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 2c6ac298ca2040bb2d3619be080fb1387fbfd3a0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ee04569fbfff84eafc5f813e6a25cbf6ad53f033
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="fastlane-for-ios--sigh"></a>fastlane für iOS – sigh
 
@@ -108,7 +107,7 @@ Geben Sie den Benutzernamen Ihrer Apple-ID ein, wenn fastlane Sie dazu aufforder
 
 Wenn Ihre Apple-ID mit mehreren Teams verbunden ist, werden diese hier angezeigt. Wählen Sie die Nummer aus, die dem Team entspricht, das Sie verwenden möchten:
 
-[![](sigh-images/fastlane-image2.png "Wählen Sie das Team aus, das Sie verwenden möchten")](sigh-images/fastlane-image2.png#lightbox)
+[![](sigh-images/fastlane-image2.png "Das Team auswählen, das Sie verwenden möchten")](sigh-images/fastlane-image2.png#lightbox)
 
 Die Team-ID kann auch folgendermaßen an die CLI übergeben werden:
 
