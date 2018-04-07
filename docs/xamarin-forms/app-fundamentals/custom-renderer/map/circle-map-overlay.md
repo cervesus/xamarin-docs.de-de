@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: a70c8fdca457e386a1490ca974e1a1ea5da2f6db
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 23f36bfbdc4638bb8f35dd2a55124a1438e1d441
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>Markieren eine Kreisbereiche auf einer Karte
 
@@ -290,17 +290,40 @@ namespace MapOverlay.UWP
                 nativeMap.MapElements.Add(polygon);
             }
         }
-        ...
+        // GenerateCircleCoordinates helper method (below)
     }
 }
 ```
 
 Diese Methode führt die folgenden Vorgänge aus, vorausgesetzt, dass die benutzerdefinierten Renderers ein neues Xamarin.Forms-Element zugeordnet ist:
 
-- Die Kreis-Position und den Radius werden abgerufen, von der `CustomMap.Circle` Eigenschaft und übergeben der `GenerateCircleCoordinates` -Methode, die Breiten- und Längengrad generiert Koordinaten für den Umfang des Kreises.
+- Die Kreis-Position und den Radius werden abgerufen, von der `CustomMap.Circle` Eigenschaft und übergeben der `GenerateCircleCoordinates` -Methode, die Breiten- und Längengrad generiert Koordinaten für den Umfang des Kreises. Der Code für diese Hilfsmethode wird unten gezeigt.
 - Der Kreis Umkreis Koordinaten werden in konvertiert eine `List` von `BasicGeoposition` Koordinaten.
 - Der Kreis wird erstellt, indem die Instanziierung einer `MapPolygon` Objekt. Die `MapPolygon` Klasse wird verwendet, um eine Form "multipunkteingabe" auf der Karte angezeigt, durch Festlegen seiner `Path` Eigenschaft, um eine `Geopath` Objekt, das die Koordinaten der Form "enthält.
 - Das Polygon gerendert wird auf der Karte, hinzufügen zu der `MapControl.MapElements` Auflistung.
+
+
+```
+List<Position> GenerateCircleCoordinates(Position position, double radius)
+{
+    double latitude = position.Latitude.ToRadians();
+    double longitude = position.Longitude.ToRadians();
+    double distance = radius / EarthRadiusInMeteres;
+    var positions = new List<Position>();
+
+    for (int angle = 0; angle <=360; angle++)
+    {
+        double angleInRadians = ((double)angle).ToRadians();
+        double latitudeInRadians = Math.Asin(Math.Sin(latitude) * Math.Cos(distance) + Math.Cos(latitude) * Math.Sin(distance) * Math.Cos(angleInRadians));
+        double longitudeInRadians = longitude + Math.Atan2(Math.Sin(angleInRadians) * Math.Sin(distance) * Math.Cos(latitude), Math.Cos(distance) - Math.Sin(latitude) * Math.Sin(latitudeInRadians));
+
+        var pos = new Position(latitudeInRadians.ToDegrees(), longitudeInRadians.ToDegrees());
+        positions.Add(pos);
+    }
+
+    return positions;
+}
+```
 
 ## <a name="summary"></a>Zusammenfassung
 

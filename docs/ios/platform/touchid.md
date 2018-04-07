@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 6ec46a5e098ba14925102211a27fcce8c27970e9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d9d70c37de5cb91c4cd1fdc77e27942d851c346b
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="touch-id"></a>Touch ID
 
@@ -121,47 +121,46 @@ In den vorherigen Abschnitten wurde der Theorie Zugriffs und der Authentifizieru
 
 Daher betrachten wir dazu unsere Anwendung einige Touch ID Authentifizierung hinzugefügt. In dieser exemplarischen Vorgehensweise werden wir verwenden die [Storyboard Tabelle](https://developer.xamarin.com/samples/StoryboardTable/) Beispiel. Wir möchten sicherstellen, dass nur der Besitzer des Geräts etwas in dieser Liste hinzufügen kann, wir nicht unnötig, da jeder Benutzer ein Element hinzuzufügen können möchten!
 
-1.  Laden Sie das Beispiel und führen Sie es in Visual Studio für Mac.
-2.  Doppelklick auf `MainStoryboard.Storyboard` um das Beispiel in der iOS-Designer zu öffnen. In diesem Beispiel möchten wir, die Authentifizierung gesteuert wird vorliegenden Anwendung einen neuen Bildschirm hinzufügen. Dies geht vor der aktuellen `MasterViewController`.
-3.  Ziehen Sie ein neues **Modellansichtcontroller** aus der **Toolbox** auf die **Entwurfsoberfläche**. Legen Sie diese als die **Root Modellansichtcontroller** von **STRG + Drag &** aus der **Navigation Controller**:
+1. Laden Sie das Beispiel und führen Sie es in Visual Studio für Mac.
+2. Doppelklick auf `MainStoryboard.Storyboard` um das Beispiel in der iOS-Designer zu öffnen. In diesem Beispiel möchten wir, die Authentifizierung gesteuert wird vorliegenden Anwendung einen neuen Bildschirm hinzufügen. Dies geht vor der aktuellen `MasterViewController`.
+3. Ziehen Sie ein neues **Modellansichtcontroller** aus der **Toolbox** auf die **Entwurfsoberfläche**. Legen Sie diese als die **Root Modellansichtcontroller** von **STRG + Drag &** aus der **Navigation Controller**:
 
     [![](touchid-images/image4.png "Legen Sie die Stamm-View-Controller")](touchid-images/image4.png#lightbox)
 4.  Nennen Sie die neue Ansicht Controller `AuthenticationViewController`.
-5.  Ziehen Sie eine Schaltfläche, und platzieren Sie es auf die `AuthenticationViewController`. Rufen Sie diese `AuthenticateButton`, und weisen Sie ihm den Text `Add a Chore`.
-6.  Erstellen Sie ein Ereignis auf der `AuthenticateButton` aufgerufen `AuthenticateMe`.
-7.  Erstellen Sie eine manuelle aus segue `AuthenticationViewController` durch Klicken auf der schwarzen Leiste am unteren und **STRG + Drag &** in der Menüleiste auf die `MasterViewController` auswählen und **Push** (oder **anzeigen** Größenklassen verwenden):
+5. Ziehen Sie eine Schaltfläche, und platzieren Sie es auf die `AuthenticationViewController`. Rufen Sie diese `AuthenticateButton`, und weisen Sie ihm den Text `Add a Chore`.
+6. Erstellen Sie ein Ereignis auf der `AuthenticateButton` aufgerufen `AuthenticateMe`.
+7. Erstellen Sie eine manuelle aus segue `AuthenticationViewController` durch Klicken auf der schwarzen Leiste am unteren und **STRG + Drag &** in der Menüleiste auf die `MasterViewController` auswählen und **Push** (oder **anzeigen** Größenklassen verwenden):
 
     [![](touchid-images/image5.png "Ziehen Sie in der Menüleiste auf die MasterViewController und Push auswählen oder anzeigen")](touchid-images/image6.png#lightbox)
-8.  Klicken Sie auf den neu erstellten segue und weisen Sie ihm den Bezeichner `AuthenticationSegue`, wie unten gezeigt:
+8. Klicken Sie auf den neu erstellten segue und weisen Sie ihm den Bezeichner `AuthenticationSegue`, wie unten gezeigt:
 
     [![](touchid-images/image7.png "Den Bezeichner für die Segue AuthenticationSegue festgelegt")](touchid-images/image7.png#lightbox)
-9.  Fügen Sie den folgenden Code zu `AuthenticationViewController` hinzu:
+9. Fügen Sie den folgenden Code zu `AuthenticationViewController` hinzu:
 
-    ```
+    ```csharp
     partial void AuthenticateMe (UIButton sender)
-        {
-            var context = new LAContext();
-            NSError AuthError;
-            var myReason = new NSString("To add a new chore");
+    {
+        var context = new LAContext();
+        NSError AuthError;
+        var myReason = new NSString("To add a new chore");
 
-
-            if (context.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, out AuthError)){
-                var replyHandler = new LAContextReplyHandler((success, error) => {
-
-                    this.InvokeOnMainThread(()=>{
-                        if(success){
-                            Console.WriteLine("You logged in!");
-                            PerformSegue("AuthenticationSegue", this);
-                        }
-                        else{
-                            //Show fallback mechanism here
-                        }
-                    });
-
+        if (context.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, out AuthError)){
+            var replyHandler = new LAContextReplyHandler((success, error) => {
+                this.InvokeOnMainThread(()=> {
+                    if(success)
+                    {
+                        Console.WriteLine("You logged in!");
+                        PerformSegue("AuthenticationSegue", this);
+                    }
+                    else
+                    {
+                        // Show fallback mechanism here
+                    }
                 });
-                context.EvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, myReason, replyHandler);
-            };
-        }
+            });
+            context.EvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, myReason, replyHandler);
+        };
+    }
     ```
 
 Dies ist der Code, den Sie Touch ID-Authentifizierung mit der lokalen Authentifizierung implementieren müssen. Die hervorgehobenen Zeilen in der folgenden Abbildung veranschaulichen die Verwendung der lokalen Authentifizierung:
