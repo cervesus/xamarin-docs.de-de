@@ -83,7 +83,6 @@
 ### [HttpClient-Stapel und SSL/TLS-Implementierungsauswahl](macios/http-stack.md)
 ## [Problembehandlung](troubleshooting/index.md)
 ### [Häufig gestellte Fragen](troubleshooting/questions/index.md)
-#### [Kann ich Visual Studio 2017 Release Candidate mit Xamarin verwenden?](troubleshooting/questions/visualstudio-2017-rc.md)
 #### [Wie kann ich anzeigen, welche Bibliotheken in PCL unterstützt werden?](troubleshooting/questions/pcl-support-libraries.md)
 #### [PCL-Reflektions-API](troubleshooting/questions/pcl-reflection.md)
 #### [PCL-Fallstudie: Wie kann ich Probleme im Zusammenhang mit System.Diagnostics.Tracing für das NuGet-Paket für den Microsoft-TPL-Datenfluss lösen?](troubleshooting/questions/pcl-case-study.md)
@@ -96,12 +95,14 @@
 #### [Wann und wie sollte ich einen Fehlerbericht speichern?](troubleshooting/questions/howto-file-bug.md)
 #### [Warum wird Jenkins nicht von Xamarin unterstützt?](troubleshooting/questions/xamarin-jenkins.md)
 #### [Welche Projekteinstellungen sind für den Debugger erforderlich?](troubleshooting/questions/debugger-settings.md)
+
+### Fragen zu Visual Studio
+#### [Kontrollkästchen für die Bereitstellung in Configuration Manager deaktiviert](troubleshooting/questions/deploy-checkboxes.md)
+#### [Fehlende Visual Studio-Erweiterungen nach der Installation](troubleshooting/questions/missing-vs-extensions.md)
+#### [Wie führe ich eine gründliche Deinstallation von Xamarin für Visual Studio aus?](troubleshooting/questions/uninstall-xamarin-vs.md)
+#### [Wie erfasse ich die aktuellen Aufruflisten des Visual Studio-Prozesses?](troubleshooting/questions/vs-callstack.md)
+#### [Warum integriert Visual Studio mein referenziertes Bibliotheksprojekt nicht in meinen Build?](troubleshooting/questions/vs-config-manager.md)
+
 ### [Aktualisieren von Komponentenverweisen auf NuGet](troubleshooting/component-nuget.md)
 ### [Supportoptionen](troubleshooting/support-options.md)
-### [Fragen zu Legacylizenzen](troubleshooting/legacy-licenses/index.md)
-#### [Teammanagement mit der Xamarin-Plattform](troubleshooting/legacy-licenses/team-management.md)
-#### [Wie kann ich die E-Mail-Adresse meines Kontos ändern?](troubleshooting/legacy-licenses/change-email.md)
-#### [Wie synchronisiere ich Xamarin-Lizenzen manuell?](troubleshooting/legacy-licenses/resync-licenses.md)
-#### [Einige spezifische Lizenzierungsfehler](troubleshooting/legacy-licenses/licensing-errors.md)
-#### [Warum kann ich mich in Visual Studio oder Visual Studio für Mac nicht bei Xamarin anmelden?](troubleshooting/legacy-licenses/login-troubleshooting.md)
 ## [Beispiele](samples/index.yml)
