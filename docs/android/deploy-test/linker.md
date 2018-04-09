@@ -1,17 +1,16 @@
 ---
-title: "Verknüpfung unter Android"
-ms.topic: article
+title: Verknüpfung unter Android
 ms.prod: xamarin
 ms.assetid: 3528E195-AA74-90AF-B5F3-3B65FB4F0BB8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/13/2018
-ms.openlocfilehash: 971c663a93a837e40e82aa63e24ce4935c44c85a
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.date: 03/30/2018
+ms.openlocfilehash: bcc9617553be425ab17050a1a6fb034f6d7f596d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="linking-on-android"></a>Verknüpfung unter Android
 
@@ -146,6 +145,8 @@ namespace Android.Runtime
     }
 }
 ```
+
+In den obigen Beispielen wird das Attribut `Preserve` im Namespace `Android.Runtime` deklariert. Sie können das Attribut `Preserve` aber in einem beliebigen Namespace verwenden, weil der Linker das Attribut anhand des Typnamens nachschlägt.
 
 
 

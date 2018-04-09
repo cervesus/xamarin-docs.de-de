@@ -1,18 +1,17 @@
 ---
-title: "Visual Studio-Emulator für Android"
-description: "Dieser Leitfaden erläutert die Methoden zum Konfigurieren und Verwenden des Android-Emulators von Visual Studio zum Entwickeln von Xamarin.Android-Apps in Visual Studio 2015."
-ms.topic: article
+title: Visual Studio-Emulator für Android
+description: Dieser Leitfaden erläutert die Methoden zum Konfigurieren und Verwenden des Android-Emulators von Visual Studio zum Entwickeln von Xamarin.Android-Apps in Visual Studio 2015.
 ms.prod: xamarin
 ms.assetid: CD128CB9-499F-4558-B49F-77248824EFDF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: a31d90e6d5abd574eb6187953082e1b70f66a113
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/30/2018
+ms.openlocfilehash: bcc88ba4c46aa9abe9038d6ea65bc9c17f337da6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="visual-studio-android-emulator"></a>Visual Studio-Emulator für Android
 
@@ -21,6 +20,9 @@ _Dieser Leitfaden erläutert die Methoden zum Konfigurieren und Verwenden des An
 ## <a name="visual-studio-android-emulator-overview"></a>Überblick: Android-Emulator für Visual Studio
 
 Microsoft Visual Studio 2015 enthält einen Android-Emulator, der als Debugziel für eine Xamarin.Android-App verwendet werden kann: *Visual Studio-Emulator für Android*. Dieser Emulator verwendet die Hyper-V-Funktionen Ihres Entwicklungscomputers, wodurch schnellere Start- und Ausführungszeiten garantiert werden können, als beim Standardemulator, der mit dem Android SDK geliefert wird. Der Visual Studio-Emulator für Android kann als eine Alternative zum Android SDK-Standardemulator verwendet werden, wenn Sie eine Xamarin.Android-Anwendung verwenden.
+
+> [!NOTE]
+> Der Visual Studio-Emulator für Android ist nur mit Visual Studio 2015 kompatibel und nicht mit Visual Studio 2017.
 
 Dieser Leitfaden erläutert, wie der Microsoft Android-Emulator von Visual Studio zum Testen Ihrer App gestartet wird. Ebenso werden die unterschiedlichen verfügbaren Funktionen des Emulators beschrieben. Sie erfahren, wie Sie *Geräteprofile* (ähnlich wie Gerätedefinitionen im Android SDK-Standardemulator) auswählen können, um unterschiedliche Arten von Android-Geräten zu simulieren. Zum Schluss werden im Abschnitt zur Problembehandlung häufige Fehlerquellen und Problemumgehung erklärt.
 

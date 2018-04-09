@@ -1,7 +1,6 @@
 ---
 title: Erste Schritte
-description: "Lernen Sie das Entwickeln mobiler Anwendungen vom Anfang an bis zur Bereitstellung mithilfe dieser ausführlichen Handbücher."
-ms.topic: article
+description: Lernen Sie das Entwickeln mobiler Anwendungen vom Anfang an bis zur Bereitstellung mithilfe dieser ausführlichen Handbücher.
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.technology: xamarin-cross-platform
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 8d9acbf5fa53c2fa94d1a15d51de9d3db48a16fe
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2178d567f1ccfe803ebce8b7b623c31c290999bc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="getting-started"></a>Erste Schritte
 
@@ -23,11 +22,13 @@ Sehen Sie sich vor Beginn die [Systemanforderungen](requirements.md) sowie die [
 
 ## <a name="build-your-first-app"></a>Erstellen Ihrer ersten App
 
-Um gleich mit dem programmieren beginnen zu können, wählen Sie einen Schnellstart-Leitfaden, der Ihnen beim Erstellen Ihrer ersten App hilft:
+> [!div class="nextstepaction"]
+> [Xamarin.Forms-Schnellstart](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
+
+Wenn Sie eine App erstellen möchten, die native Technologien für die Benutzeroberfläche nutzt, z.B. Android XML oder Xcode Storyboards, verwenden Sie eine dieser plattformspezifischen Anleitungen:
 
 * [Android Quick Start (Schnellstartanleitung für Android)](~/android/get-started/hello-android/hello-android-quickstart.md)
 * [iOS Quick Start (Schnellstartanleitung für iOS)](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
-* [Xamarin.Forms Quick Start (Schnellstartanleitung für Xamarin.Forms)](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
 * [Erste Schritte mit Mac](~/mac/get-started/hello-mac.md)
 
 ## <a name="getting-started-with-mobile-development"></a>Erste Schritte in der Entwicklung mobiler Anwendungen
@@ -47,7 +48,7 @@ Dieser Artikel beschreibt den Lebenszyklus der Softwareentwicklung in Bezug auf 
 Dieses Dokument bietet eine Übersicht über Visual Studio für Mac, die integrierte Entwicklungsumgebung (Integrated Development Environment, IDE).
 
 
-## <a name="xamarin-university-video"></a>Xamarin University-Video
+## <a name="get-started-with-xamarin-university"></a>Erste Schritte mit Xamarin University
 
 > [!VIDEO https://youtube.com/embed/NGvn-pGZFPA]
 

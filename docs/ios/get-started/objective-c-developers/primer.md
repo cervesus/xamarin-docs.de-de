@@ -1,17 +1,16 @@
 ---
-title: "Einführung in C# für Objective-C-Entwickler"
-description: "Xamarin.iOS ermöglicht, in C# geschriebenen plattformunabhängigen Code auf verschiedenen Plattformen gemeinsam zu nutzen. Bestehende iOS-Anwendungen möchten jedoch möglicherweise bereits erstellten Objective-C-Code nutzen. Dieser Artikel dient als kurze Einführung für Objective-C-Entwickler, die zu Xamarin und zur Sprache C# wechseln möchten."
-ms.topic: article
+title: Einführung in C# für Objective-C-Entwickler
+description: Xamarin.iOS ermöglicht, in C# geschriebenen plattformunabhängigen Code auf verschiedenen Plattformen gemeinsam zu nutzen. Bestehende iOS-Anwendungen möchten jedoch möglicherweise bereits erstellten Objective-C-Code nutzen. Dieser Artikel dient als kurze Einführung für Objective-C-Entwickler, die zu Xamarin und zur Sprache C# wechseln möchten.
 ms.prod: xamarin
 ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bfc91ba92b2ed62e61d7ba99dec03784933295bd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 717e131dd4025ea07780f6e52d8171fd15272dac
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="c-primer-for-objective-c-developers"></a>Einführung in C# für Objective-C-Entwickler
 
@@ -120,7 +119,7 @@ Das Schlüsselwort *static* hat in Objective-C und C# eine sehr unterschiedliche
 
 Wenn das Schlüsselwort „static“ auf eine Variable in Objective-C angewendet wird, behält die Variable ihren Wert funktionsaufrufübergreifend hinweg bei.
 
-C# weist auch das Schlüsselwort „static“ auf. Wenn es auf eine Methode angewendet wird, macht es praktisch dasselbe wie der Modifizierer `+` in Objective-C, nämlich eine Klassenmethode erstellen. Ähnlich verhält es sich, wenn es auf andere Konstrukte wie Felder, Eigenschaften und Ereignisse angewendet wird. Es macht diese zu einem Teil des Typs, in dem sie deklariert sind, und nicht zu einer Instanz dieses Typs. Sie können auch eine statische Klasse erstellen, in der alle Methoden, die in der Klasse definiert sind, ebenfalls statisch sein müssen.
+C# weist auch das Schlüsselwort „static“ auf. Wird es auf eine Methode angewendet, geschieht quasi dasselbe wie beim Modifizierer `+` in Objective-C. Es erstellt eine Klassenmethode. Ähnlich verhält es sich, wenn es auf andere Konstrukte wie Felder, Eigenschaften und Ereignisse angewendet wird. Es macht diese zu einem Teil des Typs, in dem sie deklariert sind, und nicht zu einer Instanz dieses Typs. Sie können auch eine statische Klasse erstellen, in der alle Methoden, die in der Klasse definiert sind, ebenfalls statisch sein müssen.
 
 ### <a name="nsarray-vs-list-initialization"></a>NSArray im Vergleich zu Listeninitialisierung
 
@@ -132,7 +131,7 @@ MyClass object2 = new MyClass ();
 List<MyClass> myList = new List<MyClass>{ object1, object2 };
 ```
 
-### <a name="blocks-vs-lambda-expressions"></a>Blöcke im Vergleich zu Lambda-Ausdrücken
+### <a name="blocks-vs-lambda-expressions"></a>Blöcke im Vergleich zu Lambda-Ausdrücke
 
 Objective-C verwendet *Blöcke* zum Erstellen von Abschlüssen, wobei Sie eine Funktion inline erstellen können, die den Zustand, in dem sie eingeschlossen ist, nutzen kann. C# arbeitet mit einem ähnlichen Konzept, nämlich Lambda-Ausdrücken. In C# werden Lambdaausdrücke mit dem Operator `=>` erstellt, wie nachstehend gezeigt:
 
