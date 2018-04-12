@@ -1,5 +1,5 @@
 ---
-title: Verarbeiten einer Amazon SimpleDB-Diensts
+title: Consuming an Amazon SimpleDB Service
 description: Amazon SimpleDB ist ein Webdienst, der bietet die Möglichkeit zum Speichern und Abfragen von Daten in der Amazon-Cloud. Dieser Artikel beschreibt, wie der AWS-SDK für .NET verwenden, um Abfragen, erstellen, ersetzen und Löschen von Daten in einem Dienst SimpleDB.
 ms.prod: xamarin
 ms.assetid: 823819AA-15F9-4144-B355-78A10AD37513
@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
 ms.openlocfilehash: 1602319dbf5a5d00ac5de75f2d438b9aea692699
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/12/2018
 ---
-# <a name="consuming-an-amazon-simpledb-service"></a>Verarbeiten einer Amazon SimpleDB-Diensts
+# <a name="consuming-an-amazon-simpledb-service"></a>Consuming an Amazon SimpleDB Service
 
 _Amazon SimpleDB ist ein Webdienst, der bietet die Möglichkeit zum Speichern und Abfragen von Daten in der Amazon-Cloud. Dieser Artikel beschreibt, wie der AWS-SDK für .NET verwenden, um Abfragen, erstellen, ersetzen und Löschen von Daten in einem Dienst SimpleDB._
 
@@ -197,7 +197,7 @@ In diesem Artikel wurde erläutert, wie der AWS-SDK für .NET verwenden, um Abfr
 
 - [TodoAWS (sample)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAWS/)
 - [Amazon Web Services SDK-Xamarin-Entwicklerhandbuch](http://docs.aws.amazon.com/mobile/sdkforxamarin/developerguide/)
-- [Amazon Cognito Identity](http://docs.aws.amazon.com/cognito/devguide/identity/)
-- [Amazon SimpleDB Entwicklerdokumentation](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Welcome.html)
-- [AmazonSimpleDBClient Class](http://docs.aws.amazon.com/sdkfornet1/latest/apidocs/html/T_Amazon_SimpleDB_AmazonSimpleDBClient.htm)
+- [Amazon Cognito Identität](http://docs.aws.amazon.com/cognito/devguide/identity/)
+- [Amazon SimpleDB Developer Documentation](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Welcome.html)
+- [AmazonSimpleDBClient-Klasse](http://docs.aws.amazon.com/sdkfornet1/latest/apidocs/html/T_Amazon_SimpleDB_AmazonSimpleDBClient.htm)
 - [Amazon Web Services SDK für .NET](https://www.nuget.org/packages?q=Tags%3A%22aws-sdk-v3%22)

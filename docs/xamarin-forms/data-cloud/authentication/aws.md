@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
 ms.openlocfilehash: 592e957e0c64e7189d6f01f1ba0f23da074c4bec
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/12/2018
 ---
 # <a name="authenticating-users-with-an-amazon-simpledb-service"></a>Authentifizieren von Benutzern mit einer Amazon SimpleDB-Dienst
 
@@ -69,9 +69,9 @@ In diesem Artikel wird erläutert, wie Benutzer den Zugriff auf ihre eigenen Sim
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [TodoAWSAuth (sample)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAWSAuth/)
+- [TodoAWSAuth (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAWSAuth/)
 - [Verarbeiten einer Amazon SimpleDB-Diensts](~/xamarin-forms/data-cloud/consuming/aws.md)
 - [Authentifizieren von Benutzern mit einem Identitätsanbieter](~/xamarin-forms/data-cloud/authentication/oauth.md)
-- [Amazon Cognito Identity](http://docs.aws.amazon.com/cognito/devguide/identity/)
-- [Amazon SimpleDB Entwicklerdokumentation](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Welcome.html)
+- [Amazon Cognito Identität](http://docs.aws.amazon.com/cognito/devguide/identity/)
+- [Amazon SimpleDB Developer Documentation](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Welcome.html)
 - [Amazon Web Services SDK für .NET](https://www.nuget.org/packages?q=Tags%3A%22aws-sdk-v3%22)
