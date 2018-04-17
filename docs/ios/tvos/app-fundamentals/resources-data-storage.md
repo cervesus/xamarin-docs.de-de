@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b4d96ef50498b454da583a955169b9d51c29dd01
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8103dcc1c2e1e8c2375a86d51580b1ea3fcce432
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="resources-and-data-storage"></a>Ressourcen und die Speicherung von Daten
 
@@ -55,6 +55,9 @@ Daher muss Ihre app Xamarin.tvOS Benutzerdaten in eine iCloud Datenspeicher spei
 
 - **iCloud Schlüssel-Wert-Speicher (KVS)** – Geben Sie für kleine Mengen an Informationen (weniger als 1 MB), dass Ihre app möglicherweise können Sie iCloud KVS Speicher (z. B. benutzereinstellungen) erforderlich. iCloud KVS Daten werden automatisch mit der Cloud und aller Geräte des Benutzers, die die gleiche app ausgeführt synchronisiert werden. Weitere Informationen finden Sie unter der [Schlüssel-Wert-Speicher](~/ios/data-cloud/introduction-to-icloud.md) Teil unserer [Einführung in die iCloud](~/ios/data-cloud/introduction-to-icloud.md) Dokument oder APNs von Apple [Entwerfen für Schlüssel-Wert-Daten in iCloud](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/iCloudDesignGuide/Chapters/DesigningForKey-ValueDataIniCloud.html#//apple_ref/doc/uid/TP40012094-CH7) (Dokumentation).
 - **CloudKit** – für die Speicherung von größeren Angaben (größer als 1 MB), Apple CloudKit-Framework verwenden. Im Gegensatz zu iCloud KVS Speicher können CloudKit Daten für alle Benutzer Ihrer app (ebenso wie für einen einzelnen Benutzer privat wird) freigegeben werden. Weitere Informationen zu bilden, finden Sie unter unsere [Einführung in CloudKit](~/ios/data-cloud/intro-to-cloudkit.md) -Dokumentation oder APNs von Apple [CloudKit Schnellstart](https://developer.apple.com/library/prerelease/tvos/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987).
+
+> [!IMPORTANT]
+> Apple [bietet Tools](https://developer.apple.com/support/allowing-users-to-manage-data/) Entwickler der Europäischen Union allgemeine Daten Schutz vor (GDPR) ordnungsgemäß verarbeiten können.
 
 <a name="On-Demand-Resources" />
 

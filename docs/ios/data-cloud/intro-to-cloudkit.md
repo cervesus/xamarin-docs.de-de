@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: 33ceff4549e4afbb1e5fecf3bd380fdb9a3df5f2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4765b91bdc1f64be7e2ea67622db7af8634f1347
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -20,6 +20,9 @@ _iCloud aktivieren APIs iOS 8-Anwendungen zum Speichern von Daten in icloud zula
 Das Framework CloudKit optimiert der Entwicklung von Anwendungen, Zugriff iCloud. Dies schließt den Abruf von Anwendungsdaten und Asset Rechte als auch die Möglichkeit zum sicheren Speichern von Anwendungsinformationen. Dieses Kit bietet Benutzern eine Ebene Anonymität durch Zulassen des Zugriffs auf Anwendungen mit ihren iCloud IDs ohne die persönlichen Informationen gemeinsam nutzen.
 
 Entwickler können darauf konzentrieren, ihre Client-Side-Anwendungen und iCloud nicht erforderlich, serverseitige Logik schreiben können. CloudKit bietet Authentifizierung, privaten und öffentlichen Datenbanken und strukturierte Daten und Asset-Speicherdienste.
+
+> [!IMPORTANT]
+> Apple [bietet Tools](https://developer.apple.com/support/allowing-users-to-manage-data/) Entwickler der Europäischen Union allgemeine Daten Schutz vor (GDPR) ordnungsgemäß verarbeiten können.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -149,7 +152,7 @@ Dies sind die Unterschiede zwischen der Datenbank-Datentypen:
 ||Öffentliche Datenbank|Private-Datenbank|
 |---|--- |--- |
 |**Datentyp**|Gemeinsam genutzte Daten|Daten des aktuellen Benutzers|
-|**Quota**|Auf der Hand des Entwicklers Kontingent berücksichtigt|Klicken Sie auf das Kontingent des Benutzers berücksichtigt|
+|**Kontingent**|Auf der Hand des Entwicklers Kontingent berücksichtigt|Klicken Sie auf das Kontingent des Benutzers berücksichtigt|
 |**Standardberechtigungen**|Lesbare World|Benutzer lesbar|
 |**Berechtigungen bearbeiten**|iCloud Dashboard Rollen über eine Benutzerdatensatz-Klasse Ebene|Nicht zutreffend|
 
@@ -881,6 +884,6 @@ Dieser Artikel hat eine kurze Einführung in die CloudKit-API behandelt. Es zeig
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [CloudKitAtlas (sample)](https://developer.xamarin.com/samples/monotouch/ios8/CloudKitAtlas/)
+- [CloudKitAtlas (Beispiel)](https://developer.xamarin.com/samples/monotouch/ios8/CloudKitAtlas/)
 - [Einführung in iOS 8](~/ios/platform/introduction-to-ios8.md)
 - [Erstellen ein Bereitstellungsprofil](~/ios/get-started/installation/device-provisioning/index.md)

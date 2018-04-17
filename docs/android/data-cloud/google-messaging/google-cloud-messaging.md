@@ -6,12 +6,12 @@ ms.assetid: DF8EF401-F63D-4BA0-B2C6-B22DF8FD60CB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 73ff82f3bf36aa54422c1693c6bf07731480b7f7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/12/2018
+ms.openlocfilehash: 29cccf414759a79a8ba74dfc35b7ba9f6a1cc5d6
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="google-cloud-messaging"></a>Google Cloud Messaging
 
@@ -21,6 +21,9 @@ _Google Cloud Messaging (GCM) ist ein Dienst, der erleichtert das messaging zwis
 
 Dieses Thema bietet einen allgemeinen Überblick darüber, wie Google Cloud Messaging Nachrichten zwischen Ihrer app und ein app-Server weiterleitet, und es bietet eine schrittweise Anleitung für den Erwerb von Anmeldeinformationen, sodass Ihre app GCM-Dienste verwenden kann.
 
+> [!NOTE]
+> GCM wurde ersetzt wurde, indem Sie [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) (FCM).
+> GCM-Server und Client-APIs [sind veraltet](https://firebase.googleblog.com/2018/04/time-to-upgrade-from-gcm-to-fcm.html) und wird nicht mehr verfügbar sein so bald wie 11. April 2019.
 
 ## <a name="overview"></a>Übersicht
 
@@ -77,7 +80,7 @@ Google [Client-Apps registrieren](https://developers.google.com/cloud-messaging/
 
 
 
-### <a name="downstream-messaging"></a>Downstream Messaging
+### <a name="downstream-messaging"></a>Downstream-Messaging
 
 Wenn der Anwendungsserver an den Client-app eine nachfolgende Nachricht sendet, befolgt er die Schritte im folgenden Diagramm dargestellt:
 
@@ -128,7 +131,7 @@ Google [Upstream Nachrichten](https://developers.google.com/cloud-messaging/ccs#
 
 <a name="settingup" />
 
-## <a name="setting-up-google-cloud-messaging"></a>Setting Up Google Cloud Messaging
+## <a name="setting-up-google-cloud-messaging"></a>Google Cloud Messaging einrichten
 
 Bevor Sie GCM-Dienste in Ihrer app verwenden können, müssen Sie zunächst Anmeldeinformationen für den Zugriff auf Google GCM-Server erwerben. Die folgenden Abschnitte beschreiben die erforderlichen Schritte zum Abschließen dieses Vorgangs an:
 

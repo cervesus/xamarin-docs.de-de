@@ -6,11 +6,11 @@ ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 5561cccfd0968c309526aae1e5dc90831ca681b4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0ae286ddbc61f48cbdd257dc453a2d9680bba703
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Zusätzliche iOS 9-Frameworks Änderungen
 
@@ -65,6 +65,9 @@ Weitere Informationen finden Sie unter den folgenden Dokumenten:
 - [Referenz zu CloudKit Web Services](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloutKitWebServicesReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40015240) -Apple-Referenz, die die HTTP-Schnittstelle, um CloudKit beschreibt.
 - [CloudKit Katalog: Eine Einführung in CloudKit (Kakao und JavaScript)](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599) -Apple Beispiel-app, die mithilfe von CloudKit und CloudKit JS.
 
+> [!IMPORTANT]
+> Apple [bietet Tools](https://developer.apple.com/support/allowing-users-to-manage-data/) Entwickler der Europäischen Union allgemeine Daten Schutz vor (GDPR) ordnungsgemäß verarbeiten können.
+
 ## <a name="foundation-framework-additions"></a>Foundation-Framework-Erweiterungen
 
 Apple enthalten die folgenden Änderungen an der Foundation-Framework in iOS 9:
@@ -110,7 +113,7 @@ if (NSProcessInfo.ProcessInfo.LowPowerModeEnabled) {
 }
 ```
 
-## <a name="healthkit-framework-changes"></a>HealthKit Framework Changes
+## <a name="healthkit-framework-changes"></a>HealthKit Framework ändert.
 
 Apple enthalten die folgenden Änderungen an der [HealthKit](https://developer.xamarin.com/api/namespace/HealthKit/) Framework in iOS 9:
 
@@ -185,7 +188,7 @@ var controller = new SFSafariViewController(new NSUrl("http://www.xamarin.com"))
 PresentViewController(controller, true, null);
 ```
 
-## <a name="uikit-framework-changes"></a>UIKit Framework Changes
+## <a name="uikit-framework-changes"></a>UIKit Framework ändert.
 
 Apple hat zahlreiche Verbesserungen auf mehrere Elemente enthalten die [UIKit](https://developer.xamarin.com/api/namespace/UIKit/) Framework für iOS 9. In den folgenden Abschnitten werden diese Änderungen ausführlich beschrieben.
 

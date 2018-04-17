@@ -5,11 +5,12 @@ ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a75d76ad1292955003705a5ddc1d52381addc796
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/09/2018
+ms.openlocfilehash: 8bd4ce464adf316517e2e1f2299006913bc68736
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="limitations"></a>Einschränkungen
 
@@ -106,6 +107,18 @@ Der Mangel an System.Reflection. **Ausgeben** bedeutet, die keinen Code, der auf
 
 Aber der gesamte Reflektions-API, einschließlich der Type.GetType ("" SomeClass "bereitgestellt"), Auflisten von Methoden, Eigenschaften, Attribute und Werte abrufen genügt.
 
+### <a name="using-delegates-to-call-native-functions"></a>Verwenden von Delegaten aufrufen systemeigener Funktionen
+
+Um eine systemeigene Funktion über einen Delegaten c# aufrufen zu können, muss der Delegatdeklaration überein mit einem der folgenden Attribute ausgestattet sein:
+
+- [UnmanagedFunctionPointerAttribute](https://developer.xamarin.com/api/type/System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute/) (bevorzugt, da er über Plattformen hinweg und mit .NET Standard 1.1 höher kompatibel ist)
+- [MonoNativeFunctionWrapperAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoNativeFunctionWrapperAttribute)
+
+Wegen eines Fehlers beim Bereitstellen eines dieser Attribute führt zu einem Laufzeitfehler, wie z. B.:
+
+```
+System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
+```
  
  <a name="Reverse_Callbacks" />
 

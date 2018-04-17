@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: df0e188efd2791b03a63c31b715ed1da77079230
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc34cf265885708fa6392936a8dbc9d82796e2fd
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="authenticating-access-to-web-services"></a>Authentifizieren des Zugriffs auf Webdienste
 
@@ -36,11 +36,6 @@ Azure Active Directory B2C ist eine Cloud-identitätsverwaltungslösung für kun
 ## <a name="integrating-azure-active-directory-b2c-with-azure-mobile-appsazure-ad-b2c-mobile-appmd"></a>[Integrieren von Azure Active Directory B2C in Azure Mobile Apps](azure-ad-b2c-mobile-app.md)
 
 Azure Active Directory B2C kann zum Verwalten der Authentifizierung für Azure-Mobile-Apps verwendet werden. Bei diesem Ansatz die Verwaltungsoberfläche für die Identität ist vollständig in der Cloud definiert und kann ohne Änderung des Codes für die mobile Anwendung geändert werden. Dieser Artikel veranschaulicht, wie Azure Active Directory B2C-Authentifizierung und Autorisierung mit einer Instanz von Azure Mobile Apps mit Xamarin.Forms bereitstellen.
-
-## <a name="authenticating-users-with-an-amazon-simpledb-serviceawsmd"></a>[Authentifizieren von Benutzern mit einer Amazon SimpleDB-Dienst](aws.md)
-
-Amazon SimpleDB bietet keine eigenen ressourcenbasierte Berechtigungssystem. Authentifizierung bei einem Identitätsanbieter kann stattdessen verwendet werden, um sicherzustellen, dass Benutzer nur Zugriff auf ihre eigenen Daten in der Domäne SimpleDB haben. In diesem Artikel wird erläutert, wie Benutzer den Zugriff auf ihre eigenen Daten SimpleDB zu beschränken.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

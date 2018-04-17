@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: e9738a766762dd64cdfbb034d4eaa54f76aca311
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 703441e3fc58beeb33e519f3781387a59c1c1cef
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="understanding-the-sample"></a>Grundlegendes zur im Beispiel
 
@@ -49,7 +49,7 @@ Die PCL-Projekt für jede Anwendung umfasst auch eine Reihe wichtiger Dateien:
 |--- |--- |
 |Constants.cs|Die `Constants` -Klasse, der alle Konstanten, die von der Anwendung verwendet werden, um mit dem Webdienst kommunizieren angibt. Diese Konstanten erfordern, dass für einen Anbieter aktualisieren für den Zugriff auf Ihren persönlichen Back-End-Dienst erstellt werden.|
 |ITextToSpeech.cs|Die `ITextToSpeech` -Schnittstelle, das angibt, dass die `Speak` Methode muss von jeder beliebigen implementierenden Klasse angegeben werden.|
-|Todo.cs|Die `App` Klasse, die verantwortlich für die Instanziierung der ersten Seite, die von der Anwendung auf jeder Plattform angezeigt werden und die `TodoItemManager` -Klasse, die verwendet wird, um Webdienstvorgänge aufzurufen.|
+|TODO.cs|Die `App` Klasse, die verantwortlich für die Instanziierung der ersten Seite, die von der Anwendung auf jeder Plattform angezeigt werden und die `TodoItemManager` -Klasse, die verwendet wird, um Webdienstvorgänge aufzurufen.|
 
 ### <a name="viewing-pages"></a>Anzeigen von Seiten
 
@@ -86,7 +86,7 @@ Webdienstvorgänge erfolgt über die `TodoItemManager` Klasse und einer Instanz 
 
 Darüber hinaus enthalten einige Beispielanwendungen zusätzliche Methoden in der `TodoItemManager` -Klasse, die zur Verwaltung des Authentifizierungsprozesses Benutzer verwendet werden.
 
-Anstatt die Webdienstvorgänge direkt aufrufen der `TodoItemManager` Methoden Aufrufen von Methoden für eine abhängige-Klasse, die in eingeschleust wird die `TodoItemManager` Konstruktor. Eine beispielanwendung beispielsweise fügt die `SimpleDBStorage` Klasse in der `TodoItemManager` Konstruktor, um die Implementierung bereitstellen, die Vorgänge an der Amazon SimpleDB Dienst aufruft.
+Anstatt die Webdienstvorgänge direkt aufrufen der `TodoItemManager` Methoden Aufrufen von Methoden für eine abhängige-Klasse, die in eingeschleust wird die `TodoItemManager` Konstruktor. Eine beispielanwendung beispielsweise fügt die `RestService` Klasse in der `TodoItemManager` Konstruktor, um die Implementierung bereitstellen, die REST-APIs für den Datenzugriff verwendet.
 
 ### <a name="translating-text-to-speech"></a>Übersetzen von Text-zu-Sprache
 
@@ -113,4 +113,3 @@ In diesem Thema bereitgestellten eine exemplarische Vorgehensweise für die Xama
 - [WCF-Version (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF)
 - [REST-Version (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
 - [Azure-Version (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzure)
-- [Amazon Web Services-Version (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAWS)

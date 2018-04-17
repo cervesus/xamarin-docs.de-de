@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: ed934e4a5896a004e0f226d156109df182cfebd3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 20d5a81a6a33465e5b883e495600b57400adf199
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="f35"></a>F&#35;
 
@@ -21,7 +21,7 @@ F#-kombiniert die Succinctness expressivität und Composability der funktionalen
 
 F# ist als einer Programmiersprache Ihrer Wahl für Xamarin-Benutzer auf alle von der Xamarin-unterstützte Plattformen verfügbar: iOS, Android und MacOS.
 
-- [Leitfaden für F#](https://docs.microsoft.com/en-us/dotnet/fsharp/)
+- [Leitfaden für F#](https://docs.microsoft.com/dotnet/fsharp/)
 - [Erste Schritte mit F#- und Xamarin](overview.md)
 - [F#-Mobile-Beispiele](samples.md)
 
@@ -36,4 +36,3 @@ F# ist eine unterstützte Sprache in Visual Studio für Mac. Unterstützt Funkti
 - Syntaxhervorhebung in f# Interactive
 - F#-Vorlagen für Xamarin.Forms, iOS und Android
 - [*und vieles mehr...*](https://developer.xamarin.com/releases/studio/xamarin.studio_6.0/xamarin.studio_6.0/#F_Enhancements)
-

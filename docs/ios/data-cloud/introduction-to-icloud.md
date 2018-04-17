@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: c9e7c920855d2002f52d05e28c5225f301cd62b1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a62d4621a8f3ace64401d64e35c806317a591c03
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="icloud"></a>iCloud
 
@@ -30,6 +30,9 @@ Es gibt vier Arten von Speicher zur Verfügung:
 - **Einzelne Dateien und Verzeichnisse** – für die Verwaltung von vielen verschiedenen Dateien direkt in das Dateisystem.
 
 Dieses Dokument erläutert die ersten beiden Typen - Schlüssel-Wert-Paare und UIDocument Unterklassen- und wie diese Funktionen in Xamarin.iOS verwendet.
+
+> [!IMPORTANT]
+> Apple [bietet Tools](https://developer.apple.com/support/allowing-users-to-manage-data/) Entwickler der Europäischen Union allgemeine Daten Schutz vor (GDPR) ordnungsgemäß verarbeiten können.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -412,7 +415,7 @@ Benutzer erhalten auch verschiedene Warnungen, wenn sie versuchen, eine iCloud-f
 
  [![](introduction-to-icloud-images/icloud-delete2.png "Beispiel-Dialogfeld, wenn der Benutzer versucht, eine iCloud-fähigen Anwendung von ihrem Gerät entfernt werden.")](introduction-to-icloud-images/icloud-delete2.png#lightbox)
 
-## <a name="icloud-backup"></a>iCloud Backup
+## <a name="icloud-backup"></a>iCloud-Sicherung
 
 Während der Sicherung auf iCloud ein Feature nicht, die von Entwicklern direkt zugegriffen wird, können Sie Ihre Anwendung Entwerfen der Benutzeroberfläche Einfluss auf die.
 Apple bietet [iOS Daten Speicherrichtlinien](http://developer.apple.com/icloud/documentation/data-storage/) für Entwickler, damit Sie in ihre iOS-Anwendungen ausführen.
@@ -437,4 +440,4 @@ Schließlich enthalten sie eine kurze Erläuterung auf wie das Hinzufügen von i
 - [iCloud Veranstaltung-Beispielcode](https://github.com/xamarin/Seminars/tree/master/2012-03-22-iCloud)
 - [iCloud Veranstaltung Folien](http://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
 - [iCloud NSUbiquitousKeyValueStore](https://developer.apple.com/library/prerelease/ios/)
-- [iCloud Storage](http://support.apple.com/kb/HT4847)
+- [iCloud-Speicher](http://support.apple.com/kb/HT4847)

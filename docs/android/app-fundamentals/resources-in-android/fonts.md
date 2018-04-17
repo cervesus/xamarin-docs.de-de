@@ -5,15 +5,14 @@ ms.assetid: 3F543FC5-FDED-47F8-8D2C-481FCC98BFDA
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: d4ad9dde4004440985ff247d2f986ede385f981f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/13/2018
+ms.openlocfilehash: 086576ea7d806bb0768fbe4563df7fca99244ccb
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="fonts"></a>Schriftarten
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -41,7 +40,7 @@ Die Bibliothek für Android unterstützt v26 wird Backport-Unterstützung für S
             app:fontStyle="normal" 
             app:fontWeight="400" />
 
-</font-family>    
+</font-family>
 ```
 
 Solange Schriftarten für eine Android-Anwendung ordnungsgemäß bereitgestellt werden, sie können angewendet werden auf ein UI-Widget durch Festlegen der [ `fontFamily` Attribut](https://developer.android.com/reference/android/widget/TextView.html#attr_android:fontFamily). Der folgende Codeausschnitt zeigt beispielsweise, wie eine Schriftart in ein TextView angezeigt:
@@ -49,8 +48,8 @@ Solange Schriftarten für eine Android-Anwendung ordnungsgemäß bereitgestellt 
 ```xml
 <TextView
     android:text="The quick brown fox jumped over the lazy dog."
-    android:fontFamily="@font/caveat_bold"
-    app:fontFamily="@font/caveat_bold"
+    android:fontFamily="@font/sourcesanspro_regular"
+    app:fontFamily="@font/sourcesanspro_regular"
     android:textAppearance="?android:attr/textAppearanceLarge"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
@@ -58,14 +57,12 @@ Solange Schriftarten für eine Android-Anwendung ordnungsgemäß bereitgestellt 
 
 Dieses Handbuch wird zunächst erläutert, wie für die Verwendung von Schriftarten als Android-Ressource, und fahren Sie dann zum Herunterladen von Schriftarten zur Laufzeit zu besprechen.
 
-
 ## <a name="fonts-as-a-resource"></a>Schriftarten, die als Ressource
 
 Packen eine Schriftart in ein Android APK wird sichergestellt, dass es immer für die Anwendung verfügbar ist. Eine Schriftartdatei (entweder ein. TTF oder ein. Durch Kopieren von Dateien in ein Unterverzeichnis im Verzeichnis einer Anwendung Xamarin.Android genau wie jede andere Ressource OTF-Datei) hinzugefügt der **Ressourcen** Ordner eines Xamarin.Android-Projekts. Schriftarten Ressourcen bleiben einer **Schriftart** Unterverzeichnis von der **Ressourcen** Ordner des Projekts. 
 
-
 > [!NOTE]
->  Die Schriftarten müssen eine **Buildvorgang** von **AndroidResource** oder wird nicht in der endgültigen APK verpackt werden. Die Buildaktion sollte automatisch von der IDE festgelegt werden.
+> Die Schriftarten müssen eine **Buildvorgang** von **AndroidResource** oder wird nicht in der endgültigen APK verpackt werden. Die Buildaktion sollte automatisch von der IDE festgelegt werden.
 
 Wenn es viele ähnliche Schriftartdateien (z. B. Schriftart mit anders gewichtet oder Stile gibt) ist es möglich, die sie in einer Schriftartfamilie zu gruppieren.
 
@@ -75,7 +72,7 @@ Wenn es viele ähnliche Schriftartdateien (z. B. Schriftart mit anders gewichtet
 
 Eine Schriftfamilie ist ein Satz von Schriftarten, die anders gewichtet und Formate haben. Möglicherweise gibt es z. B. separate Schriftartdateien für fett oder kursiv-Schriftarten. Die Schriftfamilie wird definiert, indem `font` Elemente in einer XML-Datei, die aufbewahrt werden, in der **Ressourcen/Schriftart** Verzeichnis. Jede Schriftfamilie sollte seinem eigenen XML-Datei haben.
 
-Zum Erstellen einer eine Schriftfamilie, zunächst alle Schriftarten zum Hinzufügen der **Ressourcen/Schriftart** Ordner. Dann erstellen Sie eine neue XML-Datei im Ordner "Schriftart" für die Schriftfamilie. Diese XML-Datei weist einen Stamm `font-family` Element, das eine oder mehrere enthält `font` Elemente. Jede `font` Element deklariert, die Attribute einer Schriftart. 
+Zum Erstellen einer eine Schriftfamilie, zunächst alle Schriftarten zum Hinzufügen der **Ressourcen/Schriftart** Ordner. Dann erstellen Sie eine neue XML-Datei im Ordner "Schriftart" für die Schriftfamilie. Der Name der XML-Datei ist keine Affinität oder Beziehung die Schriftarten, die auf die verwiesen wird. die Ressourcendatei kann einen beliebigen Dateinamen zulässige Android-Ressource. Diese XML-Datei weist einen Stamm `font-family` Element, das eine oder mehrere enthält `font` Elemente. Jede `font` Element deklariert, die Attribute einer Schriftart.
 
 Das folgende XML ist ein Beispiel für eine Schriftfamilie für die _Quellen Sans Pro_ Schriftart, die viele verschiedene Schriftbreiten definiert. Dies wird als Datei im gespeichert die **Ressourcen/Schriftart** Ordner mit dem Namen **sourcesanspro.xml**:
 
@@ -86,7 +83,7 @@ Das folgende XML ist ein Beispiel für eine Schriftfamilie für die _Quellen San
     <font android:font="@font/sourcesanspro_regular" 
           android:fontStyle="normal" 
           android:fontWeight="400"
-          app:font="@font/sourcesanspro_" 
+          app:font="@font/sourcesanspro_regular" 
           app:fontStyle="normal" 
           app:fontWeight="400" />
     <font android:font="@font/sourcesanspro_bold" 
@@ -111,13 +108,13 @@ Die `fontStyle` Attribut besitzt zwei mögliche Werte:
 
 Die `fontWeight` Attribut entspricht dem CSS `font-weight` Attribut und bezieht sich auf die Stärke der Schriftart. Dies ist ein Wert im Bereich von 100 bis 900. Die folgende Liste beschreibt die allgemeinen Schriftart Gewichtungswerte und deren Namen:
 
-* **Thin** &ndash; 100
+* **Schlanke** &ndash; 100
 * **Zusätzliche hell** &ndash; 200
 * **Light** &ndash; 300
 * **Normal** &ndash; 400
 * **Mittel** &ndash; 500
 * **Semi fett** &ndash; 600
-* **Bold** &ndash; 700
+* **Fett formatierte** &ndash; 700
 * **Zusätzliche fett** &ndash; 800
 * **Schwarz** &ndash; 900
 
@@ -136,7 +133,6 @@ Nachdem Sie eine Schriftfamilie definiert wurde, kann verwendet werden deklarati
     />
 ```
 
-
 ### <a name="programmatically-assigning-fonts"></a>Zuweisen von programmgesteuert Schriftarten
 
 Schriftarten können programmgesteuert festgelegt werden, mithilfe der [ `Resources.GetFont` ](https://developer.android.com/reference/android/content/res/Resources.html#getFont(int)) Methode zum Abrufen einer [ `Typeface` ](https://developer.android.com/reference/android/graphics/Typeface.html) Objekt. Viele Ansichten verfügen über eine `TypeFace` -Eigenschaft, die verwendet werden kann, das Widget die Schriftart zuweisen. Dieser Codeausschnitt zeigt, wie Sie programmgesteuert die Schriftart für eine TextView festlegen:
@@ -154,14 +150,13 @@ var typeface = Typeface.Create("<FONT FAMILY NAME>", Android.Graphics.TypefaceSt
 textView1.Typeface = typeface;
 ```
 
-
 ## <a name="downloading-fonts"></a>Herunterladen von Schriftarten
 
 Anstatt als eine Anwendungsressource Verpacken von Schriftarten kann Android Schriftarten aus einer Remotequelle herunterladen. Dies hat die wünschenswerte Auswirkungen Verringern der Größe der APK. 
 
 Schriftarten werden heruntergeladen, mit Unterstützung einer _Schriftart Anbieter_. Dies ist eine spezielle Inhaltsanbieter, die das Herunterladen und Zwischenspeichern von Schriftarten für alle Anwendungen auf dem Gerät verwaltet. Android 8.0 umfasst einen Anbieter Schriftart zum Herunterladen von Schriftarten aus dem [Google Schriftart Repository](http://fonts.google.com). Diese Schriftart Standardanbieter ist mehr auf API-Ebene 14 mit der Android-Unterstützungsbibliothek v26.
- 
- Wenn eine app für eine Schriftart anfordert, wird der Schriftart-Anbieter zuerst überprüfen, um festzustellen, ob die Schriftart bereits auf dem Gerät vorhanden ist. Wenn dies nicht der Fall ist, versucht er, klicken Sie dann die Schriftart heruntergeladen. Wenn die Schriftart heruntergeladen, klicken Sie dann für Android werden kann, wird die Standardschriftart des Systems verwendet. Sobald die Schriftart heruntergeladen wurde, ist es für alle Anwendungen auf dem Gerät, nicht nur die app, die die ursprüngliche Anforderung verfügbar.
+
+Wenn eine app für eine Schriftart anfordert, wird der Schriftart-Anbieter zuerst überprüfen, um festzustellen, ob die Schriftart bereits auf dem Gerät vorhanden ist. Wenn dies nicht der Fall ist, versucht er, klicken Sie dann die Schriftart heruntergeladen. Wenn die Schriftart heruntergeladen, klicken Sie dann für Android werden kann, wird die Standardschriftart des Systems verwendet. Sobald die Schriftart heruntergeladen wurde, ist es für alle Anwendungen auf dem Gerät, nicht nur die app, die die ursprüngliche Anforderung verfügbar.
 
 Wenn eine Anforderung zum Herunterladen einer Schriftart erfolgt, wird die app den Schriftart-Anbieter nicht direkt abzufragen. Apps werden verwenden Sie stattdessen eine Instanz von der [ `FontsContract` ](https://developer.android.com/reference/android/provider/FontsContract.html) API (oder die [ `FontsContractCompat` ](https://developer.android.com/reference/android/support/v4/provider/FontsContractCompat.html) Wenn 26 der Support-Bibliothek verwendet wird).  
 
@@ -184,19 +179,18 @@ Unabhängig davon, welcher Ansatz verwendet wird können die Ressourcendateien, 
              app:fontProviderPackage="com.google.android.gms" 
              app:fontProviderQuery="VT323"
              app:fontProviderCerts="@array/com_google_android_gms_fonts_certs"
-    >
+>
 </font-family>
 ```
 
 Die `font-family` Element enthält die folgenden Attribute, deklarieren die Information, dass Android erfordert, um die Schriftarten herunterzuladen:
- 
+
 1. **FontProviderAuthority** &ndash; die Autorität des Schriftart-Anbieters für die Anforderung verwendet werden soll.
 2. **FontPackage** &ndash; das Paket für den Anbieter der Schriftart für die Anforderung verwendet werden soll. Dient zum Überprüfen der Identität des Anbieters.
 3. **FontQuery** &ndash; Dies ist eine Zeichenfolge, die den Schriftart Anbieter suchen Sie die gewünschte Schriftart helfen. Details für die Schriftart-Abfrage sind spezifisch für die Schriftart-Anbieter. Die [ `QueryBuilder` ](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/DownloadableFonts/QueryBuilder.cs) -Klasse in der [herunterladbare Schriftarten](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/) Beispiel-app bietet einige Informationen zu den Abfrage-Format für Schriftarten aus der Google Schriftarten Open Source-Auflistung.
 4. **FontProviderCerts** &ndash; ein ressourcenarray mit der Liste der Sätze von Hashes für die Zertifikate, die mit der Anbieter signiert werden soll.
 
 Nachdem die Schriftarten definiert werden, es kann erforderlich sein, Informationen zur der _Schriftart Zertifikate_ mit dem Download beteiligt.
-
 
 ### <a name="font-certificates"></a>Schriftart-Zertifikate
 
@@ -226,7 +220,6 @@ Das folgende XML heißt beispielsweise **Resources/values/fonts_cert.xml** und s
 
 Mit diesen Ressourcendateien vorhanden kann die app die Schriftarten herunterladen.
 
-
 ### <a name="declaring-downloadable-fonts-as-resources"></a>Deklarieren Sie herunterladbare Schriftarten als Ressourcen
 
 Durch Auflisten der herunterladbaren Schriftarten in die **AndroidManifest.XML**, Android werden die Schriftarten asynchron herunterladen, wenn die app zum ersten Mal startet. Die Schriftart des selbst sind aufgeführt, in ein Array-Ressourcendatei, etwa so aus: 
@@ -238,14 +231,13 @@ Durch Auflisten der herunterladbaren Schriftarten in die **AndroidManifest.XML**
         <item>@font/vt323</item>
     </array>
 </resources>
-```        
+```
 
 Informationen zum Herunterladen dieser Schriftarten denen in deklariert werden **AndroidManifest.XML** durch Hinzufügen von `meta-data` als untergeordnetes Element der `application` Element. Angenommen, die herunterladbaren Schriftarten in einer Ressourcendatei am deklariert werden **Resources/values/downloadable_fonts.xml**, und klicken Sie dann diesen Ausschnitt, der dem Manifest hinzugefügt werden müssten: 
 
 ```xml
 <meta-data android:name="downloadable_fonts" android:resource="@array/downloadable_fonts" />
 ```
-
 
 ### <a name="downloading-a-font-with-the-font-apis"></a>Herunterladen einer Schriftart die Schriftart-APIs
 
@@ -269,17 +261,16 @@ Im vorherigen Codeausschnitt `FontToDownload` ist eine Abfrage, die die Schrifta
 Vor der Übergabe der `FontRequest` auf die `FontContractCompat.RequestFont` -Methode, stehen zwei Objekte, die erstellt werden müssen:
 
 * **`FontsContractCompat.FontRequestCallback`** &ndash; Dies ist eine abstrakte Klasse, die erweitert werden muss. Es ist ein Rückruf, die aufgerufen wird, wenn `RequestFont` abgeschlossen ist. Eine app Xamarin.Android muss als Unterklasse `FontsContractCompat.FontRequestCallback` und überschreiben die `OnTypefaceRequestFailed` und `OnTypefaceRetrieved`, die Aktionen, die ausgeführt werden, wenn der Download fehlschlägt oder erfolgreich ausgeführt bzw. wird bereitstellen.
-* **`Handler`** &ndash; Dies ist eine `Handler` von verwendet wird `RequestFont` die Schriftart für einen Thread bei Bedarf heruntergeladen. Schriftarten sollten **nicht** im UI-Thread heruntergeladen werden.  
+* **`Handler`** &ndash; Dies ist eine `Handler` von verwendet wird `RequestFont` die Schriftart für einen Thread bei Bedarf heruntergeladen. Schriftarten sollten **nicht** im UI-Thread heruntergeladen werden.
 
 Dieser Codeausschnitt ist ein Beispiel einer C#-Klasse, die asynchron eine Schriftart aus Google Schriftarten Open Source-Auflistung heruntergeladen wird. Implementiert die `FontRequestCallback` -Schnittstelle und löst ein Ereignis c# bei `FontRequest` wurde beendet. 
-
 
 ```csharp
 public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
 {
     // A very simple font query; replace as necessary
     public static readonly String FontToDownload = "Courgette";
-    
+
     Android.OS.Handler Handler = null;
 
     public event EventHandler<FontDownloadEventArg> FontDownloaded = delegate
@@ -305,7 +296,7 @@ public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
         base.OnTypefaceRetrieved(typeface);
         FontDownloaded(this, new FontDownloadEventArg(typeface));
     }
-    
+
     Handler GetHandlerThreadHandler()
     {
         if (Handler == null)
@@ -335,9 +326,8 @@ public class FontDownloadEventArg : EventArgs
 }
 ```
 
-
-
 Dieses Hilfsprogramm verwendet eine neue `FontDownloadHelper` erstellt wurde, und ein Ereignishandler zugeordnet ist:  
+
 ```csharp
 var fontHelper = new FontDownloadHelper();
 
@@ -348,22 +338,20 @@ fontHelper.FontDownloaded += (object sender, FontDownloadEventArg e) =>
 fontHelper.DownloadFonts(this); // this is an Android Context instance.
 ```
 
-
 ## <a name="summary"></a>Zusammenfassung
 
-Diese Anleitung erläutert die neuen APIs im Android 8.0 herunterladbare Schriftarten und Schriftarten als Ressourcen unterstützen. Es wurde beschrieben, wie vorhandene Schriftarten in einer APK eingebettet werden sollen, und Ihre Verwendung in einem Layout. Es wird erläutert, wie Android 8.0 Schriftarten vom Anbieter einer Schriftart, entweder programmgesteuert oder indem Sie deklarieren die Schriftart Metadaten in Ressourcendateien unterstützt. 
-
+Diese Anleitung erläutert die neuen APIs im Android 8.0 herunterladbare Schriftarten und Schriftarten als Ressourcen unterstützen. Es wurde beschrieben, wie vorhandene Schriftarten in einer APK eingebettet werden sollen, und Ihre Verwendung in einem Layout. Es wird erläutert, wie Android 8.0 Schriftarten vom Anbieter einer Schriftart, entweder programmgesteuert oder indem Sie deklarieren die Schriftart Metadaten in Ressourcendateien unterstützt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [fontFamily](https://developer.android.com/reference/android/widget/TextView.html#attr_android:fontFamily)
+- [FontFamily](https://developer.android.com/reference/android/widget/TextView.html#attr_android:fontFamily)
 - [FontConfig](https://developer.android.com/reference/android/text/FontConfig.html)
 - [FontRequest](https://developer.android.com/reference/android/support/v4/provider/FontRequest.html)
 - [FontsContractCompat](https://developer.android.com/reference/android/support/v4/provider/FontsContractCompat.html)
 - [Resources.GetFont](https://developer.android.com/reference/android/content/res/Resources.html#getFont(int))
-- [Typeface](https://developer.android.com/reference/android/graphics/Typeface.html)
+- [Schriftart](https://developer.android.com/reference/android/graphics/Typeface.html)
 - [Die Bibliothek 26 NuGet Android-Unterstützung](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/)
 - [Verwenden von Schriftarten in Android](https://www.youtube.com/watch?v=TfB-TsLFJdM)
 - [CSS-Schriftart Gewichtung-Spezifikation](https://www.w3.org/TR/css-fonts-3/#font-weight-numeric-values)
 - [Google Schriftarten Open Source-Auflistung](https://fonts.google.com/)
-- [Source Sans Pro](https://fonts.google.com/specimen/Source+Sans+Pro)
+- [Sans Pro Quelle](https://fonts.google.com/specimen/Source+Sans+Pro)

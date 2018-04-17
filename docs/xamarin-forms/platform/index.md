@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/20/2017
-ms.openlocfilehash: 454969d8a59128423d632452033b8ba84ee0bc98
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fd46411f3662652ef26addc76f273d6071401a6f
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="platform-features"></a>Plattformfeatures
 
@@ -33,9 +33,17 @@ Gewusst wie: Verwenden der `Device` Klasse, um plattformspezifische Verhalten im
 
 Einige iOS Styling ausgeführt werden kann, über **"Info.plist"** und `UIAppearance` API. Dieses Handbuch enthält Beispiele für iOS 9-Clientfeatures in der iOS-app von einer Xamarin.Forms-Projektmappe, einschließlich Core Spotlight-Suche.
 
+## <a name="gtkgtkmd"></a>[GTK](gtk.md)
+
+Xamarin.Forms verfügt jetzt über Preview-Unterstützung für GTK-apps.
+
 ## <a name="macmacmd"></a>[Mac](mac.md)
 
 Xamarin.Forms verfügt jetzt über Preview-Unterstützung für Mac OS-apps.
+
+## <a name="wpfwpfmd"></a>[WPF](wpf.md)
+
+Xamarin.Forms verfügt jetzt über Preview-Unterstützung für Windows Presentation Foundation (WPF)-apps.
 
 ## <a name="native-formsnative-formsmd"></a>[Native Formulare](native-forms.md)
 

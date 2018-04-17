@@ -6,12 +6,12 @@ ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: c6e1d36d871b4bb41a1e53d6e58ba8940813b29f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/12/2018
+ms.openlocfilehash: e2f25504b971a0332dc51dc9b017c9c83222ec57
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Remote-Benachrichtigungen mit Firebase Cloud-Messaging
 
@@ -427,7 +427,7 @@ Tippen Sie auf die **Protokoll Token** Schaltfläche. Eine Meldung wie die folge
 Die lange Zeichenfolge mit der Bezeichnung mit **token** ist die Instanz-ID-Token, die Sie in der Konsole Firebase einfügen werden &ndash; auswählen und diese Zeichenfolge in die Zwischenablage kopieren. Wenn Sie keine Instanz-ID-Token angezeigt werden, fügen Sie die folgende Zeile am Anfang der `OnCreate` Methode, um zu überprüfen, ob **Google-services.json** ordnungsgemäß analysiert wurde:
 
 ```csharp
-Log.Debug(TAG, "google app id: " + Resource.String.google_app_id);
+Log.Debug(TAG, "google app id: " + GetString(Resource.String.google_app_id));
 ```
 
 Die `google_app_id` Wert, der im Ausgabefenster protokolliert übereinstimmen, die `mobilesdk_app_id` Wert in aufgezeichnet **Google-services.json**. 
@@ -548,7 +548,7 @@ Versuchen Sie es löschen, wenn Sie keine Nachricht erhält, den **FCMClient** a
 
 Um Benachrichtigungen in foregrounded-apps zu erhalten, müssen Sie implementieren `FirebaseMessagingService`. Dieser Dienst ist auch für den Empfang von datennutzlasten und zum Senden von Nachrichten upstream erforderlich. Die folgenden Beispiele veranschaulichen, wie einen Dienst implementiert, der erweitert `FirebaseMessagingService` &ndash; resultierende app wird in der Lage, remote Benachrichtigungen zu verarbeiten, während er im Vordergrund ausgeführt wird. 
 
-### <a name="implement-firebasemessagingservice"></a>Implement FirebaseMessagingService
+### <a name="implement-firebasemessagingservice"></a>Implementieren von FirebaseMessagingService
 
 Die `FirebaseMessagingService` Dienst umfasst eine `OnMessageReceived` -Methode, die Sie schreiben, um eingehende Nachrichten zu verarbeiten. Beachten Sie, dass `OnMessageReceived` wird aufgerufen, für die benachrichtigungsmeldungen *nur* Wenn die app im Vordergrund ausgeführt wird. Wenn die app im Hintergrund ausgeführt wird, wird eine automatisch generierte Benachrichtigung angezeigt (wie weiter oben in dieser exemplarischen Vorgehensweise demonstriert). 
 
@@ -683,6 +683,27 @@ Dieses Mal die Meldung, die im Ausgabefenster protokolliert wurde auch in eine n
 Wenn Sie die Benachrichtigung öffnen, sehen Sie die letzte Meldung, die von der GUI Firebase Konsole Benachrichtigungen gesendet wurde: 
 
 [![Vordergrund-Benachrichtigung mit Symbol "Foreground" angezeigt](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png#lightbox)
+
+
+## <a name="disconnecting-from-fcm"></a>Trennen der Verbindung FCM
+
+Um ein Thema zu kündigen, rufen die [UnsubscribeFromTopic](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging.html#unsubscribeFromTopic%28java.lang.String%29) Methode für die [FirebaseMessaging](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging) Klasse. Beispielsweise, um das Abonnement zu kündigen die _News_ Thema abonniert zuvor, ein **Unsubscribe** Schaltfläche konnte das Layout mit den folgenden Ereignishandler Code hinzugefügt werden:
+
+```csharp
+var unSubscribeButton = FindViewById<Button>(Resource.Id.unsubscribeButton);
+unSubscribeButton.Click += delegate {
+    FirebaseMessaging.Instance.UnsubscribeFromTopic("news");
+    Log.Debug(TAG, "Unsubscribed from remote notifications");
+};
+```
+
+Löschen Sie zum Aufheben der Registrierung der Geräte FCM vollständig aus die Instanz-ID durch Aufrufen der [DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29) Methode für die [FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId) Klasse. Zum Beispiel:
+
+```csharp
+FirebaseInstanceId.Instance.DeleteInstanceId();
+```
+
+Dieser Methodenaufruf löscht die Instanz-ID und den Daten zugeordnet. Daher ist das periodische Senden der FCM Daten an das Gerät wurde angehalten.
 
  
 ## <a name="troubleshooting"></a>Problembehandlung
