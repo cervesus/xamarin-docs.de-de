@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 643ae8f30dc6447b548448f77883b204d8dc76c2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 34702fafdd0d767362b0ca32ab56e880ed7cb366
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-team-city-with-xamarin"></a>Verwenden Team City mit Xamarin
 
@@ -39,7 +39,7 @@ Es sind mehrere Schritte bei der Platzierung TeamCity einrichten:
 
 - **Erstellen eines TeamCity Projekte** – sobald die vorangegangenen drei Schritte abgeschlossen sind, müssen wir ein TeamCity-Projekt, das alle-Metadaten enthalten erstellen zum Abrufen von Quellcode, Kompilieren die Projekte und übermitteln die Tests mit Xamarin Test Cloud.
 
-# <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Anforderungen
 
 Erfahrung mit [Xamarin Test Cloud](https://developer.xamarin.com/guides/testcloud) ist erforderlich.
 
@@ -88,7 +88,6 @@ Buildskript kann so einfach wie eine Powershell-Datei (unter Windows) oder eines
 - [**GEFÄLSCHTE** ](http://fsharp.github.io/FAKE/) – Hierbei handelt es sich um eine DSL basierend in F# erläutert werden, wodurch es möglich, vorhandene Bibliotheken für .NET bei Bedarf nutzen.
 
 Welche Skriptsprache verwendet wird, hängt von Ihren Präferenzen und Anforderungen. Die [TaskyPro Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash) Beispiel enthält ein Beispiel zur Verwendung der Neigungswinkel als eine [Buildskript](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile).
-
 
 > [!NOTE]
 > Es ist möglich, eine XML-basierte Buildsystem wie MSBuild oder NAnt, aber diese fehlende verwenden die Ausdruckskraft und verwaltbarkeit DSL, die für die Entwicklung von Software vorgesehen ist.
@@ -166,35 +165,35 @@ Nachdem TeamCity installiert ist, und Visual Studio für Mac können das Projekt
 
 1. Durch Anmeldung TeamCity über den Webbrowser gestartet. Navigieren Sie zu der Stammprojekt:
 
-    ![](teamcity-images/image2.png "Navigieren Sie zu dem Projekt Stamm") unterhalb der Stammprojekt, erstellen Sie ein neues untergeordnete Projekt:
+    ![Navigieren Sie zum Stammverzeichnis Projekt](teamcity-images/image2.png "navigieren Sie zum Stammverzeichnis Projekt") unterhalb der Stammprojekt, erstellen Sie ein neues untergeordnete Projekt:
 
-    ![](teamcity-images/image3.png "Navigieren Sie zu der Stamm Underneath the Root Projekten, erstellen Sie ein neue untergeordnete Projekt")
+    ![Navigieren Sie zu der Stamm Underneath the Root Projekten, erstellen Sie ein neues Projekt für die untergeordnete](teamcity-images/image3.png "navigieren Sie zum Stamm Projekt Underneath the Root Projekt, erstellen Sie ein neues untergeordnete Projekt")
 2. Sobald das untergeordnete Projekt erstellt wurde, fügen Sie eine neue Build-Konfiguration hinzu:
 
-    ![](teamcity-images/image5.png "Sobald das untergeordnete Projekt erstellt wurde, Hinzufügen einer neuen Build-Konfiguration")
+    ![Sobald das untergeordnete Projekt erstellt wurde, fügen Sie eine neue Buildkonfiguration](teamcity-images/image5.png "nachdem das untergeordnete Projekt erstellt wurde, Hinzufügen einer neuen Build-Konfiguration")
 3. Fügen Sie ein Projekt VCS an der Konfiguration zu erstellen. Dies erfolgt über den Bildschirm für die Version des Steuerelements die Einstellung:
 
-    ![](teamcity-images/image6.png "Dies erfolgt über die Einstellung der Version des Steuerelements-Bildschirm")
+    ![Dies erfolgt über die Einstellung der Version des Steuerelements Bildschirm](teamcity-images/image6.png "Dies erfolgt über die Einstellung der Version des Steuerelements-Bildschirm")
 
     Ist kein VCS-Projekt erstellt haben, müssen Sie die Option zum Erstellen über die neue VCS Stammseite unten:
 
-    ![](teamcity-images/image7.png "Ist kein VCS-Projekt erstellt haben, müssen Sie die Option zum Erstellen einer auf der Seite neue VCS-Stamm")
+    ![Ist kein VCS-Projekt erstellt haben, haben Sie die Option zum Erstellen einer auf der Seite neue VCS Stamm](teamcity-images/image7.png "ist kein VCS-Projekt erstellt haben, haben Sie die Möglichkeit, auf der Seite neue VCS Stamm erstellen")
 
     Nachdem die VCS Stamm angehängt wurden, erkennen TeamCity wird Auschecken des Projekts und versuchen Sie, automatisch Buildschritte. Wenn Sie mit TeamCity vertraut sind, können Sie eine der erkannten Buildschritte auswählen. Sie können ruhig, erkannte Buildschritte fürs ignoriert werden sollen.
 
 4. Als Nächstes konfigurieren Sie einen Trigger erstellen. Dies wird von einem Build zur Warteschlange, wenn bestimmte Bedingungen erfüllt sind, z. B. wenn ein Benutzer Code im Repository ein Commit ausgeführt wird. Der folgende Screenshot zeigt, wie einen Buildtrigger hinzugefügt wird:
 
-    ![](teamcity-images/image8.png "Diese bildschirmabbildung zeigt, wie einen Buildtrigger hinzugefügt") ein Beispiel zum Konfigurieren eines Triggers Build kann im folgenden Screenshot angezeigt werden:
+    ![Diese bildschirmabbildung zeigt, wie einen Buildtrigger hinzugefügt](teamcity-images/image8.png "diesem Screenshot zeigt, wie ein Buildtrigger hinzugefügt") ein Beispiel zum Konfigurieren eines Triggers Build kann im folgenden Screenshot angezeigt werden:
 
-    ![](teamcity-images/image9.png "Ein Beispiel zum Konfigurieren eines Build-Triggers kann in diesem Screenshot angezeigt werden")
+    ![Ein Beispiel zum Konfigurieren eines Triggers Build sehen Sie in diesem Screenshot](teamcity-images/image9.png "ein Beispiel zum Konfigurieren eines Build-Triggers kann in diesem Screenshot angezeigt werden")
 
 5. Im vorherige Abschnitt parametrisieren das Skript erstellen vorgeschlagen, einige Werte als Umgebungsvariablen gespeichert. Diese Variablen können die Buildkonfiguration über den Bildschirm Parameter hinzugefügt werden. Fügen Sie die Variablen für den Test-Cloud-API-Schlüssel, die iOS-Geräte-ID und die Android-Gerät-ID wie im folgenden Screenshot gezeigt:
 
-    ![](teamcity-images/image11.png "Fügen Sie die Variablen für den Test-Cloud-API-Schlüssel, die iOS-Geräte-ID und die Android-Geräte-ID")
+    ![Fügen Sie die Variablen für den Test-Cloud-API-Schlüssel, die iOS-Geräte-ID und die Android-Geräte-ID](teamcity-images/image11.png "fügen die Variablen für den Test-Cloud-API-Schlüssel, die iOS-Geräte-ID und die Android-Geräte-ID")
 
 6. Der letzte Schritt besteht darin einen Buildschritt hinzuzufügen, mit der das Buildskript zum Kompilieren der Anwendung und in die Warteschlange einreihen der Anwendung in Test Cloud aufgerufen wird. Der folgende Screenshot ist ein Beispiel für einen Schritt zur Erstellung, der eine Rakefile zum Erstellen einer Anwendung verwendet:
 
-    ![](teamcity-images/image12.png "Ein Screenshot, diese ist ein Beispiel für einen Schritt zur Erstellung, der eine Rakefile zum Erstellen einer Anwendung verwendet")
+    ![Diese Abbildung ist ein Beispiel für einen Schritt der Erstellung, die eine Rakefile zum Erstellen einer Anwendung verwendet](teamcity-images/image12.png "diesem Screenshot ist ein Beispiel für einen Schritt zur Erstellung, die eine Rakefile zum Erstellen einer Anwendung verwendet")
 
 7. An diesem Punkt ist die Build-Konfiguration abgeschlossen. Es ist ratsam, das Auslösen eines Builds überprüfen Sie, dass das Projekt ordnungsgemäß konfiguriert ist. Eine gute Möglichkeit hierzu ist, eine kleine, der nicht signifikante Änderung für das Repository zu übernehmen. TeamCity sollte das Commit zu erkennen und Starten eines Builds.
 
