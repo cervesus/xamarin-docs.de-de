@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 7dcf3cba72a07b06236e29ddf2603745fd348596
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 050e37d208c3ba5a330d7ecc6df9d106e14f8bb9
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="map"></a>Zuordnung
 
@@ -72,15 +72,26 @@ Auf manchen Plattformen sind zusätzliche Konfigurationsschritte erforderlich, b
 
 ### <a name="ios"></a>iOS
 
-Auf iOS 7 steuern die Zuordnung "nur Works", so lange wie die `FormsMaps.Init()` aufgerufen wurde.
+Für den Zugriff auf iOS-Standortdiensten auf, müssen Sie die folgenden Schlüssel in festlegen **"Info.plist"**:
 
-IOS 8 zwei Schlüssel hinzugefügt werden, müssen die **"Info.plist"** Datei: [ `NSLocationAlwaysUsageDescription` ](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) und [ `NSLocationWhenInUseUsageDescription` ](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26). Die XML-Darstellung wird unten gezeigt – sollten Sie aktualisieren die `string` Werte widerspiegeln, wie Ihre Anwendung die Speicherortinformationen verwendet:
+- iOS 11
+    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – für die Verwendung von Standortdiensten, wenn die app verwendet wird
+    - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) – für die Verwendung von Standortdiensten jederzeit
+- iOS 10 und früher
+    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – für die Verwendung von Standortdiensten, wenn die app verwendet wird
+    - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – für die Verwendung von Standortdiensten jederzeit    
+    
+Um die iOS 11 und früheren Versionen zu unterstützen, können Sie alle drei Schlüssel einschließen: `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, und `NSLocationAlwaysUsageDescription`.
+
+Die XML-Darstellung für diese Schlüssel im **"Info.plist"** wird unten gezeigt. Aktualisieren Sie die `string` Werte widerspiegeln, wie Ihre Anwendung die Speicherortinformationen verwendet:
 
 ```xml
 <key>NSLocationAlwaysUsageDescription</key>
-    <string>Can we use your location</string>
+<string>Can we use your location at all times?</string>
 <key>NSLocationWhenInUseUsageDescription</key>
-    <string>We are using your location</string>
+<string>Can we use your location when your app is being used?</string>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>Can we use your location at all times?</string>
 ```
 
 Die **"Info.plist"** Einträge können auch hinzugefügt werden, **Quelle** Sicht beim Bearbeiten der **"Info.plist"** Datei:
