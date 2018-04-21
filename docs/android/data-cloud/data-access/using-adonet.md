@@ -1,18 +1,18 @@
 ---
-title: Mithilfe von ADO.NET
+title: Verwendung von ADO.NET mit Android
 ms.prod: xamarin
 ms.assetid: F6ABCEF1-951E-40D8-9EA9-DD79123C2650
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: a2f7a7a0c282284d7a45fb81c134d300aef5afba
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 29e81afdf2c46cdefc68e2c2fae4e6e47999a346
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
-# <a name="using-adonet"></a>Mithilfe von ADO.NET
+# <a name="using-adonet-with-android"></a>Verwendung von ADO.NET mit Android
 
 Xamarin bietet eine integrierte Unterstützung für die SQLite-Datenbank, die unter Android verfügbar und kann mithilfe der vertrauten ADO.NET-ähnliche Syntax verfügbar gemacht werden. Verwenden diese APIs benötigen Sie SQL-Anweisungen zu schreiben, die von SQLite,, z. B. verarbeitet werden `CREATE TABLE`, `INSERT` und `SELECT` Anweisungen.
 

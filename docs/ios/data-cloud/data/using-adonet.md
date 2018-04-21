@@ -1,18 +1,18 @@
 ---
-title: Mithilfe von ADO.NET
+title: Verwendung von ADO.NET mit iOS
 ms.prod: xamarin
 ms.assetid: 79078A4D-2D24-44F3-9543-B50418A7A000
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 4bf908c51deefea4e8a7e76fbf18b1aea5edee03
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7d8478c363da1e4362a8a837dafba7f9cf85872e
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
-# <a name="using-adonet"></a>Mithilfe von ADO.NET
+# <a name="using-adonet-with-ios"></a>Verwendung von ADO.NET mit iOS
 
 Xamarin bietet eine integrierte Unterstützung für die SQLite-Datenbank, die bei iOS kann mit vertrauten ADO.NET-ähnliche Syntax verfügbar gemacht wurden, verfügbar ist. Verwenden diese APIs benötigen Sie SQL-Anweisungen zu schreiben, die von SQLite,, z. B. verarbeitet werden `CREATE TABLE`, `INSERT` und `SELECT` Anweisungen.
 

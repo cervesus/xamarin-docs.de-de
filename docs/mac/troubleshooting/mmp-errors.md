@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: 0a4bab44cfa260060c990949b45d3f5e6b103d0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: df6a848023febcb7fc65cf6616aeae3b43b39262
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin.Mac-Fehlermeldungen (Mmp)
 
@@ -131,7 +131,7 @@ Dies weist in der Regel ein Fehler im Xamarin.Mac hin; Bitte der Datei eines Feh
 
 #### <a name="mm0091-this-version-of-xamarinmac-requires-the--sdk-shipped-with-xcode--either-upgrade-xcode-to-get-the-required-header-files-or-use-the-dynamic-registrar-or-set-the-managed-linker-behaviour-to-link-platform-or-link-framework-sdks-only-to-try-to-avoid-the-new-apis"></a>MM0091: Diese Version von Xamarin.Mac erfordert die * SDK (Xcode Lieferumfang *). Entweder upgrade Xcode erhalten die erforderlichen Header-Dateien oder die dynamische Registrierungsstelle verwenden oder verwalteten Linker Verhalten auf Link Plattform oder nur Link Framework SDKs (versucht, die neuen APIs zu vermeiden).
 
-Xamarin.Mac erfordert die Headerdateien, von der SDK-Version, die in der Fehlermeldung zur Erstellung der Anwendung mit dem statischen Registrar angegebenen... Die empfohlene Methode zum Beheben dieses Fehlers Xcode zum Abrufen der erforderlichen SDK zu aktualisieren, dazu gehören die erforderlichen Headerdateien. Wenn Sie mehrere Versionen von Xcode installiert haben oder ein Xcode in einer nicht standardmäßigen Speicherort verwenden möchten, stellen Sie sicher, dass die richtigen Xcode-Speicherort in der IDE Einstellungen.
+Xamarin.Mac erfordert die Headerdateien, von der SDK-Version, die in der Fehlermeldung zur Erstellung der Anwendung mit dem statischen Registrar angegeben. Die empfohlene Methode zum Beheben dieses Fehlers Xcode zum Abrufen der erforderlichen SDK zu aktualisieren, dazu gehören die erforderlichen Headerdateien. Wenn Sie mehrere Versionen von Xcode installiert haben oder ein Xcode in einer nicht standardmäßigen Speicherort verwenden möchten, stellen Sie sicher, dass die richtigen Xcode-Speicherort in der IDE Einstellungen.
 
 Eine mögliche, eine alternative Lösung ist zum Aktivieren des verwalteten Linkers. Hiermit entfernen Sie nicht verwendete API einschließen, in den meisten Fällen, die neue API, in dem die Headerdateien fehlt (oder ist unvollständig) sind. Jedoch stellt dies nicht funktioniert, wenn das Projekt-API verwendet, die in einer neueren SDK als an denjenigen Ihrer Xcode eingeführt wurde.
 
@@ -363,7 +363,7 @@ Finden Sie unter https://msdn.microsoft.com/en-us/library/x0w2664k.aspx Weitere 
 
 <!-- 5104 used by mtouch -->
 
-### <a name="mm52xx-linking"></a>MM52xx: linking
+### <a name="mm52xx-linking"></a>MM52xx: Verknüpfen
 
 <a name="MM5202" />
 
@@ -433,9 +433,9 @@ Finden Sie unter der [entsprechende Mtouch Warnung](~/ios/troubleshooting/mtouch
 <!-- MM6xxx: mmp internal tools -->
 <!-- MM7xxx: reserved -->
 
-## <a name="mm8xxx-runtime"></a>MM8xxx: runtime
+## <a name="mm8xxx-runtime"></a>MM8xxx: Common Language Runtime
 
-### <a name="mm800x-misc"></a>MM800x: misc
+### <a name="mm800x-misc"></a>MM800x: Verschiedenes
 
 <!-- 8000 used by mtouch -->
 <!-- 8001 used by mtouch -->

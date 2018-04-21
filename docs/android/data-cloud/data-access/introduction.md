@@ -1,16 +1,16 @@
 ---
-title: Einführung
+title: Einführung in die Speicherung von Daten auf Android-Geräten
 ms.prod: xamarin
 ms.assetid: FDAC0771-4749-4758-865A-F1BD190CA54B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/28/2017
-ms.openlocfilehash: a2d92b6f7bfa1e2a40e30d0b832dd8a8f737cee2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 42af02d2ed2a679d89425257d92f03a3764675ce
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="introduction"></a>Einführung
 
@@ -38,7 +38,7 @@ Es gibt eine Reihe von Vorteilen mit einer SQL-Datenbank in Ihrer mobilen app ei
 -  Das Datenmodell aus der Serverkomponente der eine verbundene Anwendung möglicherweise (ganz oder teilweise) in der mobilen Anwendung erneut verwendet werden.
 
 
-## <a name="sqlite-database-engine"></a>SQLite Database Engine
+## <a name="sqlite-database-engine"></a>SQLite-Datenbankmodul
 
 SQLite ist ein Open Source-Datenbankmodul, die für ihre mobile-Plattform Google verbreitet ist. Das Datenbankmodul SQLite ist für beide Betriebssysteme integriert, damit es keine zusätzliche Arbeit für Entwickler ist zu nutzen. SQLite eignet sich gut für plattformübergreifende mobile Entwicklung, da:
 
