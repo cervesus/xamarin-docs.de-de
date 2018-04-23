@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 7531a8a21b6895de6113f5edd85d09a5e150877e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ec3cb08b227b268c4c755545e8bc76b9e234d093
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="sharing-code-options"></a>Optionen für die Codefreigabe
 
@@ -136,7 +136,7 @@ Eine geeignete Lösung, wenn Sie die resultierende Assembly mit anderen Entwickl
 
 Die gewählte Strategie für die Codefreigabe wird von den Plattformen Ihrer Zielgruppe gesteuert. Wählen Sie eine Methode, die am besten für Ihr Projekt aus.
 
-PCL "oder" Standard ".NET sind eine gute Wahl zum Erstellen von teilbar Codebibliotheken (insbesondere für NuGet veröffentlichen). Gemeinsam genutzte Projekte sind optimal für Anwendungsentwickler planen, viele Plaform-spezifische Funktionen in ihren Cross-Platform-apps zu verwenden.
+PCL "oder" Standard ".NET sind eine gute Wahl zum Erstellen von teilbar Codebibliotheken (insbesondere für NuGet veröffentlichen). Gemeinsam genutzte Projekte sind optimal für Anwendungsentwickler planen, viele Plaform-spezifische Funktionen in ihren plattformübergreifende apps zu verwenden.
 
 
 ## <a name="related-links"></a>Verwandte Links
