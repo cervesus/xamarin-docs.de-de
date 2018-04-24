@@ -170,7 +170,7 @@ Beim Klicken auf **Sprache/Region hinzufügen...** , **Sprache auswählen** Dial
 -----
 
 
-In diesem Beispiel haben wir **fr (Französisch)** für die Sprache und **BE** (Belgien) für das Land/Region Dialekt Französisch. Beachten Sie, dass die **Region** Feld ist optional, da viele Sprachen ohne Beachtung für bestimmte Regionen angegeben werden können. Wenn die **Sprache** Pulldownmenü erneut geöffnet wird, die neu hinzugefügten Sprache/Region-Ressource wird angezeigt:
+In diesem Beispiel haben wir **fr (Französisch)** für die Sprache und **BE** (Belgien) für das Land/Region Regionalsprache Französisch. Beachten Sie, dass die **Region** Feld ist optional, da viele Sprachen ohne Beachtung für bestimmte Regionen angegeben werden können. Wenn die **Sprache** Pulldownmenü erneut geöffnet wird, die neu hinzugefügten Sprache/Region-Ressource wird angezeigt:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 

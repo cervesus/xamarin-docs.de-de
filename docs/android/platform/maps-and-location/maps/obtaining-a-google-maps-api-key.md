@@ -127,7 +127,7 @@ Nachdem Sie die SHA-1-Fingerabdruck eines Signaturzertifikat Keystore abgerufen 
    [![Klicken Sie auf die Schaltfläche "aktivieren" im Abschnitt Dashboard](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
 
 
-An diesem Punkt der API-Projekt erstellt wurde, und die Google Maps Android-API v2 hinzugefügt wurde. Allerdings können Sie erst verwenden, diese API in Ihrem Projekt Anmeldeinformationen dafür zu erstellen. Als Nächstes betrachten wir eine API-Schlüssel und einer Anwendung Xamarin.Android weiße Liste erstellen, damit Sie diesen Schlüssel autorisiert wird.
+An diesem Punkt der API-Projekt erstellt wurde, und die Google Maps Android-API v2 hinzugefügt wurde. Allerdings können Sie erst verwenden, diese API in Ihrem Projekt Anmeldeinformationen dafür zu erstellen. Als Nächstes betrachten wir eine API-Schlüssel und einer Anwendung Xamarin.Android Zulassungsliste erstellen, damit Sie diesen Schlüssel autorisiert wird.
 
 
 ## <a name="obtaining-the-api-key"></a>Abrufen von API-Schlüssel

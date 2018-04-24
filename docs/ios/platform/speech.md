@@ -71,7 +71,7 @@ Die Sprach-Erkennung-API stellt Ergebnisse zurück an die aufrufende Anwendung i
 - Vertrauensgrade für einzelnen Übersetzungen.
 - Informationen zur zeitlichen Steuerung.
 
-Wie bereits erwähnt, kann Audio für die Übersetzung entweder durch eine live Feed oder von aufgezeichnete Quelle und in über 50 Sprachen und Dialekte von iOS 10 unterstützt bereitgestellt werden.
+Wie bereits erwähnt, kann Audio für die Übersetzung entweder durch eine live Feed oder von aufgezeichnete Quelle und in über 50 Sprachen und Regionalsprachen von iOS 10 unterstützt bereitgestellt werden.
 
 Die Sprach-Erkennung-API kann auf beliebige iOS-Geräte mit iOS 10 verwendet werden und ist in den meisten Fällen eine aktive Internetverbindung erforderlich, da der Großteil der Übersetzungen für Apple Server stattfindet. Dies bedeutet, dass einige neuere iOS, die Geräte immer unterstützen, die auf dem Gerät Übersetzung von bestimmten Sprachen.
 

@@ -51,7 +51,7 @@ Werfen wir einen kurzen Blick auf einige einfache Spiel Mechanismen in einer Xam
 ### <a name="pathfinding"></a>Pathfinding
 
 Pathfinding ist für ein Element AI eines Spiels die Möglichkeit, die Methode zur Umgehung Spielfelds zu suchen.
-Beispiel: ein 2D Feind, suchen Sie nach ihrem Weg durch eine Maze oder ein 3D Zeichen über ein First-Person-Shooter World Terrain.
+Beispiel: ein 2D Gegner, suchen Sie nach ihrem Weg durch eine Maze oder ein 3D Zeichen über ein First-Person-Shooter World Terrain.
 
 Beachten Sie in der folgenden Schritte aus:
 

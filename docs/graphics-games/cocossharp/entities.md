@@ -61,7 +61,7 @@ Nehmen wir z. B. ein Spiel Speicherplatz, der die folgenden Klassen definiert:
  - `EnemyMissileShip`
  - `EnemyLaserShip`
 
-Ein weitere generalisierten Ansatz wäre, erstellen Sie eine einzelne Klasse für Player umfasst und eine einzelne Klasse für Gegners umfasst, die zur Unterstützung der verschiedenen Ship Typen konfiguriert werden konnte. Anpassung eventuell welches Abbild zum Laden, welche Art von Aufzählungszeichen Entitäten erstellen, wenn die Verschiebung Koeffizienten, behandeln und AI-Logik für die Feind geliefert wird. In diesem Fall kann die Liste der Entitäten auf reduziert werden:
+Ein weitere generalisierten Ansatz wäre, erstellen Sie eine einzelne Klasse für Player umfasst und eine einzelne Klasse für Gegners umfasst, die zur Unterstützung der verschiedenen Ship Typen konfiguriert werden konnte. Anpassung eventuell welches Abbild zum Laden, welche Art von Aufzählungszeichen Entitäten erstellen, wenn die Verschiebung Koeffizienten, behandeln und AI-Logik für die Gegner geliefert wird. In diesem Fall kann die Liste der Entitäten auf reduziert werden:
 
  - `PlayerShip`
  - `EnemyShip`
