@@ -192,7 +192,7 @@ Es sollten beachten, dass die oben aufgeführten Diagramme Drehung in Grad angez
 
 Wie oben gezeigt `CCSprite` können gedreht werden, mithilfe der `Rotation` Eigenschaft. Die `Rotation` Eigenschaft wird bereitgestellt, indem Sie `CCNode` (die Basisklasse für `CCSprite`), womit der Drehung kann angewendet werden, um Entitäten an, die von erben `CCNode` auch. 
 
-Einige Spiele erfordern Objekte rotiert werden soll, damit sie ein Ziel sind. Beispiele hierfür sind eine Computer gesteuerte Feind an ein Ziel Player oder ein Speicherplatz liefern, die für den Punkt, in dem der Benutzer den Bildschirm berührt, fliegen behandeln. Allerdings muss ein Drehungswert zuerst basierend auf den Speicherort der rotierenden Entität und den Speicherort des Ziels auf stoßen, berechnet werden.
+Einige Spiele erfordern Objekte rotiert werden soll, damit sie ein Ziel sind. Beispiele hierfür sind eine Computer gesteuerte Gegner an ein Ziel Player oder ein Speicherplatz liefern, die für den Punkt, in dem der Benutzer den Bildschirm berührt, fliegen behandeln. Allerdings muss ein Drehungswert zuerst basierend auf den Speicherort der rotierenden Entität und den Speicherort des Ziels auf stoßen, berechnet werden.
 
 Dieser Prozess erfordert eine Reihe von Schritten:
 

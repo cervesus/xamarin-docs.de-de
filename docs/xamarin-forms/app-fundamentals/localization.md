@@ -146,7 +146,7 @@ Sprachspezifischen Ressourcendateien müssen eine bestimmte Benennungskonvention
 * **AppResources.zh Hans.resx** - Chinesisch (vereinfacht) sprachübersetzungen.
 * **AppResources.zh Hant.resx** - Chinesisch (traditionell) sprachübersetzungen.
 * **AppResources.pt.resx** -portugiesische Übersetzungen.
-* **AppResources.pt BR.resx** -Brasilianisches Portugiesisch Übersetzungen.
+* **AppResources.pt BR.resx** -Übersetzungen Portugiesisch (Brasilien).
 
 Das allgemeine Muster ist die Verwendung von zwei Buchstaben bestehende Sprachcode, aber es gibt einige Beispiele für (z. B. Chinesisch), in dem ein anderes Format verwendet wird, und andere Beispiele (z. B. Portugiesisch (Brasilien)), ein vierstelligen Gebietsschemabezeichner erforderlich ist.
 
