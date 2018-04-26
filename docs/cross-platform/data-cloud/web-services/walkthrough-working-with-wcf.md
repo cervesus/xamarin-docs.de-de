@@ -7,18 +7,18 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: 1b317c4c82ec736c7f4c8306036e43cf04086a82
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 297aac4ba4a564e4506d841d3e11718ad79307e2
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>Exemplarische Vorgehensweise – arbeiten mit WCF
 
 _In dieser exemplarischen Vorgehensweise wird behandelt, wie eine mobile Anwendung mit Xamarin erstellten einen WCF-Webdienst mithilfe der Klasse BasicHttpBinding nutzen kann._
 
 
-Es ist eine häufige Anforderung für mobile Anwendungen mit Back-End-Systemen kommunizieren können. Es gibt viele Optionen und Optionen für das Back-End-Frameworks, von denen [Windows Communication Foundation](http://msdn.microsoft.com/en-us/library/ms731082.aspx) (WCF). In dieser exemplarischen Vorgehensweise bietet ein Beispiel, wie ein WCF-Diensts mithilfe eine mobile Anwendung von Xamarin kann nutzen die `BasicHttpBinding` Klasse. Die exemplarische Vorgehensweise enthält die folgenden Themen:
+Es ist eine häufige Anforderung für mobile Anwendungen mit Back-End-Systemen kommunizieren können. Es gibt viele Optionen und Optionen für das Back-End-Frameworks, von denen [Windows Communication Foundation](http://msdn.microsoft.com/library/ms731082.aspx) (WCF). In dieser exemplarischen Vorgehensweise bietet ein Beispiel, wie ein WCF-Diensts mithilfe eine mobile Anwendung von Xamarin kann nutzen die `BasicHttpBinding` Klasse. Die exemplarische Vorgehensweise enthält die folgenden Themen:
 
 1.  **Erstellen Sie einen WCF-Dienst** – In diesem Abschnitt erstellen wir einen sehr einfachen WCF-Dienst mit zwei Methoden. Die erste Methode dauert einen Zeichenfolgenparameter, während die andere Methode ein c#-Objekt dauert. In diesem Abschnitt besprechen auch so konfigurieren Sie ein Entwickler-Arbeitsstation, um Remotezugriff auf den WCF-Dienst zu ermöglichen.
 1.  **Erstellen Sie eine Anwendung Xamarin.Android** – nachdem der WCF-Dienst erstellt wurde, erstellen wir eine einfache Xamarin.Android-Anwendung, die den WCF-Dienst nutzt. Dieser Abschnitt befasst sich mit WCF-Dienstklasse Proxy zur Vereinfachung der Kommunikation mit dem WCF-Dienst zu erstellen.
@@ -228,7 +228,7 @@ Für den WCF-Dienst muss ein Webdienstproxy erstellt werden, bevor eine Anwendun
 1. Erstellen der `HelloWorldServiceProxy` Projekt.
 
 > [!NOTE]
-> Eine Alternative zum Erstellen des Proxys, die mit dem Microsoft WCF Web Verweis Dienstanbieter in Visual Studio 2017 wird das ServiceModel Metadata Utility Tool (svcutil.exe) verwenden. Weitere Informationen finden Sie unter [ServiceModel Metadata Utility Tool (Svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
+> Eine Alternative zum Erstellen des Proxys, die mit dem Microsoft WCF Web Verweis Dienstanbieter in Visual Studio 2017 wird das ServiceModel Metadata Utility Tool (svcutil.exe) verwenden. Weitere Informationen finden Sie unter [ServiceModel Metadata Utility Tool (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
 
 <a name="Creating_a_Xamarin_Android_Application" />
 
@@ -535,6 +535,6 @@ Dieses Lernprogramm behandelt zum Arbeiten mit einem WCF-Diensts in einer mobile
 ## <a name="related-links"></a>Verwandte Links
 
 - [HelloWorld (Beispiel)](https://developer.xamarin.com/samples/mobile/WCF-Walkthrough/)
-- [Entwickeln von dienstorientierten Anwendungen mit WCF](https://docs.microsoft.com/en-us/dotnet/framework/wcf/index)
-- [Vorgehensweise: erstellen ein Windows Communication Foundation-Clients](https://docs.microsoft.com/en-us/dotnet/framework/wcf/how-to-create-a-wcf-client)
-- [ServiceModel Metadata Utility Tool (svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [Entwickeln von dienstorientierten Anwendungen mit WCF](https://docs.microsoft.com/dotnet/framework/wcf/index)
+- [Vorgehensweise: erstellen ein Windows Communication Foundation-Clients](https://docs.microsoft.com/dotnet/framework/wcf/how-to-create-a-wcf-client)
+- [ServiceModel Metadata Utility Tool (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)

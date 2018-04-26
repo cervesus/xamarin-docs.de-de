@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: f94959062f01a363319494eb510f1a6e42fe36b6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 52f4c51258d1b635adcd697bccb7dd553acc0d5e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="localization"></a>Lokalisierung
 
@@ -20,7 +20,7 @@ Wenn Sie direkt auf die technische Details zum Lokalisieren von Xamarin-apps üb
 
 - [**Xamarin.Forms** ](~/xamarin-forms/app-fundamentals/localization.md) plattformübergreifende Lokalisierung mithilfe von RESX-Dateien.
 - [**Xamarin.iOS** ](~/ios/app-fundamentals/localization/index.md) systemeigene Plattform Lokalisierung.
-- [**Xamarin.Android**](~/android/app-fundamentals/localization.md) native platform localization.
+- [**Xamarin.Android** ](~/android/app-fundamentals/localization.md) systemeigene Plattform Lokalisierung.
 
 ## <a name="i18n-and-l10n"></a>I18N und L10n
 
@@ -110,7 +110,7 @@ Wenn die Eingabe der Daten von der app-Benutzer mit einem CultureInfo-Instanz, d
 double.Parse("1 999,99", CultureInfo.CreateSpecificCulture("fr-FR"));
 ```
 
-Finden Sie unter der [Analysieren von numerischen Zeichenfolgen](http://msdn.microsoft.com/en-us/library/xbtzcc4w(v=vs.110).aspx) und [Analysieren von Zeichenfolgen für Datum und Uhrzeit](http://msdn.microsoft.com/en-us/library/2h3syy57(v=vs.110).aspx) MSDN-Artikel für zusätzliche Informationen.
+Finden Sie unter der [Analysieren von numerischen Zeichenfolgen](http://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx) und [Analysieren von Zeichenfolgen für Datum und Uhrzeit](http://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx) MSDN-Artikel für zusätzliche Informationen.
 
 <a name="rtl" />
 
@@ -130,7 +130,7 @@ IOS und Android unterstützt rechts-nach-links-Layouts und Schriftart-Rendering 
 
 Verschiedene Sprachen definieren die Sortierreihenfolge von ihrem Alphabet unterschiedlich ist, selbst wenn sie den gleichen Zeichensatz verwenden.
 
-Finden Sie unter der [Detail Zeichenfolgenvergleich](http://msdn.microsoft.com/en-us/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison) in [bewährte Methoden für die Verwendung von Zeichenfolgen in .NET Framework](http://msdn.microsoft.com/en-us/library/dd465121(v=vs.110).aspx) ein Beispiel, in dem Sprache (CultureInfo) wirkt sich auf die Sortierreihenfolge.
+Finden Sie unter der [Detail Zeichenfolgenvergleich](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison) in [bewährte Methoden für die Verwendung von Zeichenfolgen in .NET Framework](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx) ein Beispiel, in dem Sprache (CultureInfo) wirkt sich auf die Sortierreihenfolge.
 
 Es ist unwahrscheinlich, dass die integrierten Funktionen auf mobilen Plattformen unterstützen sprachspezifische Sortierreihenfolge so Sie möglicherweise zusätzlichen Code in Ihrer Geschäftslogik zu implementieren müssen.
 
@@ -187,7 +187,7 @@ Die folgenden Tipps hilft Ihnen, Ergebniszeichenfolgen zu generieren, die einfac
 
 In einigen Fällen sind Entwickler möchten die einzelnen Wörtern oder einen Satz "Ausschnitte" angeben, damit sie sie in der gesamten Anwendung erneut verwenden können. Z. B. haben"für den Text Sie 5 Nachrichten." Sie können die folgenden Zeichenfolgen für die Übersetzung angeben.
 
-**Bad**:
+**Ungültige**:
 
 ```csharp
 "You have"
@@ -198,7 +198,7 @@ In einigen Fällen sind Entwickler möchten die einzelnen Wörtern oder einen Sa
 
 und dann versuchen, die richtige Satz auf dynamische im Code mithilfe von Verkettung von Zeichenfolgen erstellen:
 
-**Bad**:
+**Ungültige**:
 
 ```csharp
 "You have" + " " + numMsgs + " " + "messages"
@@ -283,7 +283,7 @@ Um Übersetzungsfunktionen in Ihrer app zu erstellen, sollten Sie die [-API der 
 Für Testzwecke können Sie eine der vielen online Übersetzungstools verwenden, während der Entwicklung Ihrer app lokalisierten Text einschließt:
 
 - [Bing-Übersetzer](https://www.bing.com/translator/)
-- [Google Translate](http://translate.google.com/)
+- [Übersetzen von Google](http://translate.google.com/)
 
 Es gibt noch viele andere verfügbar. Die Qualität der maschinellen Übersetzung ist nicht im allgemeinen ausreichend, um eine Anwendung freigeben betrachtet, ohne zuerst überprüft und professionelle Übersetzer oder Muttersprachlern getestet.
 
@@ -312,4 +312,4 @@ Fortsetzen Sie, lesen technische Details für die Plattform, der Sie interessier
 
 - [Übersicht über die Lokalisierung von Apple](https://developer.apple.com/internationalization/)
 - [Prüfliste für Android-Lokalisierung](http://developer.android.com/distribute/tools/localization-checklist.html)
-- [Bewährte Methoden für die Entwicklung weltweit einsatzfähiger Anwendungen (MSDN)](http://msdn.microsoft.com/en-us/library/w7x1y988%28v=vs.90%29.aspx)
+- [Bewährte Methoden für die Entwicklung weltweit einsatzfähiger Anwendungen (MSDN)](http://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)

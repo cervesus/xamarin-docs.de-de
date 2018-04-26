@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: a669daf5361e35305182922cdcb7c6a1fb92db47
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cdbe480c45e9c0117f1437b1ee632f6ea8f142e0
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>Wo finde ich meine Versionsinformationen und Protokolle?
 
@@ -85,13 +85,13 @@ Achten Sie für jede Protokollspeicherort komprimieren, und fügen Sie den gesam
 
 `%LOCALAPPDATA%\Xamarin\Logs`
 
-#### <a name="a-idvs-2017-namevs-2017--visual-studio-2017"></a><a id="vs-2017" name="vs-2017" /> Visual Studio 2017
+#### <a name="a-idvs-2017-namevs-2017--visual-studio-2017"></a><a id="vs-2017" name="vs-2017" /> Visual Studio-2017
 
 [Gewusst wie: Abrufen der Visual Studio-Installationsprotokolle](https://docs.microsoft.com/visualstudio/install/troubleshooting-installation-issues#how-to-get-the-visual-studio-installation-logs)
 
 #### <a name="a-idvs-2015-namevs-2015--visual-studio-2015"></a><a id="vs-2015" name="vs-2015" /> Visual Studio 2015
 
-#### <a name="a-idwindows-universal-installer-namewindows-universal-installer--xamarin-universal-installer"></a><a id="windows-universal-installer" name="windows-universal-installer" /> Xamarin "Universal" installer
+#### <a name="a-idwindows-universal-installer-namewindows-universal-installer--xamarin-universal-installer"></a><a id="windows-universal-installer" name="windows-universal-installer" /> "Universal" Xamarin-installer
 
 `%LOCALAPPDATA%\Xamarin\Universal`
 
@@ -103,7 +103,7 @@ Hierbei handelt es sich um die Protokolle von der `XamarinInstaller.exe` Install
 msiexec /i Xamarin.msi /l*vx "%USERPROFILE%\Desktop\Xamarin.log"
 ```
 
-Referenz: [Befehlszeilenoptionen](http://msdn.microsoft.com/en-us/library/aa367988.aspx)
+Referenz: [Befehlszeilenoptionen](http://msdn.microsoft.com/library/aa367988.aspx)
 
 #### <a name="a-idvisual-studio-startup-verbose-logs-namevisual-studio-startup-verbose-logs-visual-studio-startup-verbose-logs"></a><a id="visual-studio-startup-verbose-logs" name="visual-studio-startup-verbose-logs" />Visual Studio starten, ausführliche Protokolle
 
@@ -111,7 +111,7 @@ Referenz: [Befehlszeilenoptionen](http://msdn.microsoft.com/en-us/library/aa3679
 devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 ```
 
-Referenz:  [ /Log (devenv.exe)](http://msdn.microsoft.com/en-us/library/ms241272.aspx)
+Referenz:  [ /Log (devenv.exe)](http://msdn.microsoft.com/library/ms241272.aspx)
 
 ### <a name="a-idmac-logs-namemac-logs-mac-logs"></a><a id="mac-logs" name="mac-logs" />Mac-Protokolle
 
@@ -129,7 +129,7 @@ Dieser Ordner kann auch über geöffnet werden "-> Open Log Directory Help".
 
 Dieser Ordner kann auch über geöffnet werden "-> Open Log Directory Help".
 
-#### <a name="a-idmac-universal-installer-namemac-universal-installer-xamarin-universal-installer"></a><a id="mac-universal-installer" name="mac-universal-installer" />Xamarin "Universal" installer
+#### <a name="a-idmac-universal-installer-namemac-universal-installer-xamarin-universal-installer"></a><a id="mac-universal-installer" name="mac-universal-installer" />"Universal" Xamarin-installer
 
 `~/Library/Logs/XamarinInstaller/Universal`
 

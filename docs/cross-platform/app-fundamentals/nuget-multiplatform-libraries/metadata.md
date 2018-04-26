@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: fa526d33758afb73965e315c8e471d960d84e781
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6d30f564d54b96d358d37059f9dababaf8f3314e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="editing-nuget-metadata"></a>NuGet-Metadaten bearbeiten
 
@@ -19,7 +19,7 @@ _Verwenden Sie die Projektoptionen zum Bearbeiten von NuGet-Metadaten für Multi
 
 Bibliothek Projekttypen (z. B. PCL .NET Standard oder die neuen NuGet-Projekttyp) haben eine **NuGet-Paket** im Abschnitt der **Projektoptionen** Fenster.
 
-Die **Metadaten** Abschnitt konfiguriert die Werte, die verwendet wird, der [ **.nuspec** NuGet-Paket-Manifestdatei](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#the-role-and-structure-of-the-nuspec-file).
+Die **Metadaten** Abschnitt konfiguriert die Werte, die verwendet wird, der [ **.nuspec** NuGet-Paket-Manifestdatei](https://docs.microsoft.com/nuget/create-packages/creating-a-package#the-role-and-structure-of-the-nuspec-file).
 
 ## <a name="required-information"></a>Erforderliche Informationen
 
@@ -27,15 +27,15 @@ Die **allgemeine** Registerkarte enthält vier Felder, die eingegeben werden mü
 
 [![](metadata-images/metadata-general-sml.png "Die erforderlichen Metadaten-Fenster von NuGet-Paket")](metadata-images/metadata-general.png#lightbox)
 
-- **ID** – die Paket-ID, die in Nuget.org (oder ablegen, wo das Paket verteilt werden soll) eindeutig sein sollte. Führen Sie [Anleitung](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) und nur gültige Zeichen in einer URL (ohne Leerzeichen ein, und vermeiden Sie die meisten Sonderzeichen).
-- **Version** – wählen Sie eine Versionsnummer, die konsistent mit [NuGet Versionsregeln](https://docs.microsoft.com/en-us/nuget/create-packages/dependency-versions).
+- **ID** – die Paket-ID, die in Nuget.org (oder ablegen, wo das Paket verteilt werden soll) eindeutig sein sollte. Führen Sie [Anleitung](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) und nur gültige Zeichen in einer URL (ohne Leerzeichen ein, und vermeiden Sie die meisten Sonderzeichen).
+- **Version** – wählen Sie eine Versionsnummer, die konsistent mit [NuGet Versionsregeln](https://docs.microsoft.com/nuget/create-packages/dependency-versions).
 - **Autoren** – durch Trennzeichen getrennte Liste von Namen.
 - **Beschreibung** – Übersicht über die Funktionen der Paketkonfiguration der angezeigt wird, wenn der Benutzer das Paket auswählen.
 
 > [!NOTE]
 > Denken Sie daran, um die Versionsnummer erhöht, wenn neue Versionen für die Verteilung an NuGet oder andere Benutzer zu erstellen.
 
-Weitere Informationen finden Sie unter der [Elementreferenzen erforderlich](https://docs.microsoft.com/en-us/nuget/schema/nuspec#required-metadata-elements) für Weitere Informationen und wie diese Anweisungen auf detaillierte [eine eindeutige Paket-ID auswählen und zum Festlegen der Versionsnummer](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) und [ Ein Paket Einstellungstyp](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#setting-a-package-type).
+Weitere Informationen finden Sie unter der [Elementreferenzen erforderlich](https://docs.microsoft.com/nuget/schema/nuspec#required-metadata-elements) für Weitere Informationen und wie diese Anweisungen auf detaillierte [eine eindeutige Paket-ID auswählen und zum Festlegen der Versionsnummer](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) und [ Ein Paket Einstellungstyp](https://docs.microsoft.com/nuget/create-packages/creating-a-package#setting-a-package-type).
 
 > [!IMPORTANT]
 > Alle Felder auf dieser Registerkarte müssen eingegeben werden. Andernfalls wird eine Fehlermeldung angezeigt: _"das Projekt verfügt nicht über NuGet Metadaten also ein NuGet-Paket wird nicht erstellt werden. Metadaten von NuGet-Paketen kann im Abschnitt "Metadaten" im Projekt-Optionen angegeben werden"_
@@ -46,7 +46,7 @@ Die **Details** Registerkarte enthält die optionalen Felder aus, in der Manifes
 
 [![](metadata-images/metadata-detail-sml.png "Optionale Metadaten-Fenster von NuGet-Paket")](metadata-images/metadata-detail.png#lightbox)
 
-Finden Sie in der [Referenz zu optionalen Elemente](https://docs.microsoft.com/en-us/nuget/schema/nuspec#optional-metadata-elements) für Weitere Informationen zu den erforderlichen und optionalen Feldern.
+Finden Sie in der [Referenz zu optionalen Elemente](https://docs.microsoft.com/nuget/schema/nuspec#optional-metadata-elements) für Weitere Informationen zu den erforderlichen und optionalen Feldern.
 
 > [!NOTE]
 > Wenn die Verteilung des NuGet-Pakets auf [NuGet.org](https://www.nuget.org) es wird empfohlen, so viele Informationen wie möglich bereitzustellen.
@@ -54,4 +54,4 @@ Finden Sie in der [Referenz zu optionalen Elemente](https://docs.microsoft.com/e
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [NUSPEC-Verweis](https://docs.microsoft.com/en-us/nuget/schema/nuspec#general-form-and-schema)
+- [NUSPEC-Verweis](https://docs.microsoft.com/nuget/schema/nuspec#general-form-and-schema)

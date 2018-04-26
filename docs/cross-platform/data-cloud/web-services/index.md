@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: ad18382a7143c7b1cc6bbecb3867c042512eb562
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6de16095d9e1267587a050e8081f87f896f3153e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-web-services"></a>Einführung in Webdienste
 
@@ -22,7 +22,7 @@ Um korrekt zu funktionieren, sind viele mobile Anwendungen in der Cloud abhängi
 In diesem Artikel werden die folgenden Themen erläutert:
 
 - [REST-Dienste](#rest)
-- [ASP.Net Web Services (ASMX)](#asmx)
+- [ASP.NET-Webdienste (ASMX)](#asmx)
 - [WCF-Dienste](#wcf)
 
 Für Kunden, indem Sie xamarin.Forms verwenden, stehen die vollständige Beispiele, die mithilfe dieser Technologien in der [Xamarin.Forms Webdienste](~/xamarin-forms/data-cloud/index.md) Dokumentation.
@@ -312,7 +312,7 @@ Dadurch wird den Proxy im Web oder Verweise des Projekts generiert. Seit dem Gen
 
 #### <a name="manually-adding-a-proxy-to-a-project"></a>Manuelles Hinzufügen eines Proxys zu einem Projekt
 
-Wenn Sie einen vorhandenen Proxy, der über kompatible Tools generiert wurde haben, kann diese Ausgabe genutzt werden, wenn als Teil des Projekts enthalten. In Visual Studio für Mac verwenden die **Dateien hinzufügen...** Menüoption, um den Proxy hinzuzufügen. Darüber hinaus erfordert dies *System.Web.Services.dll* verwiesen wird, explizit mit der **Verweise hinzufügen...** dialog.
+Wenn Sie einen vorhandenen Proxy, der über kompatible Tools generiert wurde haben, kann diese Ausgabe genutzt werden, wenn als Teil des Projekts enthalten. In Visual Studio für Mac verwenden die **Dateien hinzufügen...** Menüoption, um den Proxy hinzuzufügen. Darüber hinaus erfordert dies *System.Web.Services.dll* verwiesen wird, explizit mit der **Verweise hinzufügen...** Dialogfeld.
 
 ### <a name="consuming-the-proxy"></a>Nutzen den Proxy
 
@@ -337,7 +337,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 Die Task Parallel Library (TPL) kann vereinfachen das nutzen ein APM begin/End-Methodenpaar von kapseln die asynchronen Vorgänge in der gleichen `Task` Objekt. Diese Kapselung von mehrere Überladungen der dient den `Task.Factory.FromAsync` Methode. Diese Methode erstellt eine `Task` , ausgeführt wird die `TodoService.EndGetTodoItems` -Methode einmal die `TodoService.BeginGetTodoItems` Methode ausgeführt wird, mit der `null` Parameter, der angibt, dass keine Daten an übergeben werden die `BeginGetTodoItems` delegieren. Schließlich den Wert, der die `TaskCreationOptions` Enumeration gibt an, dass das Standardverhalten für die Erstellung und Ausführung von Aufgaben verwendet werden soll.
 
-Weitere Informationen zu APM, finden Sie unter [asynchronen Programmierungsmodell](https://msdn.microsoft.com/en-us/library/ms228963(v=vs.110).aspx) und [TPL und herkömmliche .NET Framework asynchrone Programmierung](https://msdn.microsoft.com/en-us/library/dd997423(v=vs.110).aspx) auf MSDN.
+Weitere Informationen zu APM, finden Sie unter [asynchronen Programmierungsmodell](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx) und [TPL und herkömmliche .NET Framework asynchrone Programmierung](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx) auf MSDN.
 
 Weitere Informationen zum Verarbeiten einer ASMX-Diensts finden Sie unter [Nutzen einer ASP.NET Web Service (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md).
 
@@ -364,7 +364,7 @@ Weitere Informationen zur Verwendung von der Xamarin-Plattform für die Verarbei
 
 Ein *Proxy* muss generiert werden, um einen WCF-Dienst zu nutzen, die die Anwendung für die Verbindung mit dem Dienst ermöglicht. Der Proxy erstellt wird, nutzen Dienstmetadaten, die die Methoden und die zugehörigen Dienstkonfiguration zu definieren. Diese Metadaten wird in Form eines Web Services Description Language (WSDL)-Dokuments verfügbar gemacht, die durch den Webdienst generiert wird. Der Proxy kann mithilfe von Microsoft WCF Web Service-Reference-Anbieter in Visual Studio 2017 zum Hinzufügen eines Dienstverweises für den Webdienst eine Standardbibliothek des .NET erstellt werden.
 
-Eine Alternative zum Erstellen des Proxys, die mit dem Microsoft WCF Web Verweis Dienstanbieter in Visual Studio 2017 wird das ServiceModel Metadata Utility Tool (svcutil.exe) verwenden. Weitere Informationen finden Sie unter [ServiceModel Metadata Utility Tool (Svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
+Eine Alternative zum Erstellen des Proxys, die mit dem Microsoft WCF Web Verweis Dienstanbieter in Visual Studio 2017 wird das ServiceModel Metadata Utility Tool (svcutil.exe) verwenden. Weitere Informationen finden Sie unter [ServiceModel Metadata Utility Tool (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security" />
 
@@ -416,7 +416,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 Die Task Parallel Library (TPL) kann vereinfachen das nutzen ein APM begin/End-Methodenpaar von kapseln die asynchronen Vorgänge in der gleichen `Task` Objekt. Diese Kapselung von mehrere Überladungen der dient den `Task.Factory.FromAsync` Methode. Diese Methode erstellt eine `Task` , ausgeführt wird die `TodoServiceClient.EndGetTodoItems` -Methode einmal die `TodoServiceClient.BeginGetTodoItems` Methode ausgeführt wird, mit der `null` Parameter, der angibt, dass keine Daten an übergeben werden die `BeginGetTodoItems` delegieren. Schließlich den Wert, der die `TaskCreationOptions` Enumeration gibt an, dass das Standardverhalten für die Erstellung und Ausführung von Aufgaben verwendet werden soll.
 
-Weitere Informationen zu APM, finden Sie unter [asynchronen Programmierungsmodell](https://msdn.microsoft.com/en-us/library/ms228963(v=vs.110).aspx) und [TPL und herkömmliche .NET Framework asynchrone Programmierung](https://msdn.microsoft.com/en-us/library/dd997423(v=vs.110).aspx) auf MSDN.
+Weitere Informationen zu APM, finden Sie unter [asynchronen Programmierungsmodell](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx) und [TPL und herkömmliche .NET Framework asynchrone Programmierung](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx) auf MSDN.
 
 Weitere Informationen zum Verarbeiten einer WCF-Diensts finden Sie unter [Nutzung eines Windows Communication Foundation (WCF)-Webdiensts](~/xamarin-forms/data-cloud/consuming/wcf.md).
 
@@ -462,5 +462,5 @@ Dieses Handbuch wurde veranschaulicht, wie verschiedene Web Service-Technologien
 
 - [WebServices-Beispiel](https://developer.xamarin.com/samples/mobile/WebServices/WebServiceSamples/)
 - [Webdienste in Xamarin.Forms](~/xamarin-forms/data-cloud/index.md)
-- [ServiceModel Metadata Utility Tool (svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
-- [BasicHttpBinding](http://msdn.microsoft.com/en-us/library/system.servicemodel.basichttpbinding.aspx)
+- [ServiceModel Metadata Utility Tool (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [BasicHttpBinding](http://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)

@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: d5f639cffc8ff2d134731374bd72663fec81c6a0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6f6b88bf29e94a221b2ef58b3299348eb08d33fa
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>Teil 5 – praktische Strategien für die Codefreigabe
 
@@ -88,7 +88,7 @@ Praktische Implementierungen von ADO.NET werden offensichtlich über verschieden
 
 
 
-### <a name="sqlite-net--cross-platform-orm"></a>SQLite-NET – Cross-Platform ORM
+### <a name="sqlite-net--cross-platform-orm"></a>SQLite-NET – plattformübergreifende ORM
 
 Ein ORM (oder das Objekt objektrelationale Zuordnungen) versucht, vereinfachen Sie die Speicherung von Daten in Klassen modelliert. Anstatt manuell Schreiben von SQL-Abfragen, Tabellen zu erstellen, oder wählen Sie INSERT- und DELETE-Daten, die manuell aus extrahiert werden-Klasse Felder und Eigenschaften, die ein ORM Sicherheitsebene des Codes, die für Sie. Verwenden Reflektion, um die Struktur Ihrer Klassen zu untersuchen, kann ein ORM automatisch erstellen, Tabellen und Spalten, die eine Klasse übereinstimmen, und Generieren von Abfragen, um die Daten lesen und schreiben. Dadurch wird ein Anwendungscode einfach gesendet und Objektinstanzen, die alle SQL-Vorgänge hinter den Kulissen übernimmt ORM abgerufen werden.
 
@@ -200,7 +200,7 @@ Isolierte Speicherung ist eine allgemeine API zum Speichern und Laden von Dateie
 
 Es ist der standardmäßige Mechanismus für den Zugriff auf Dateien im Windows Phone (Silverlight), die in Xamarin.iOS und Xamarin.Android gemeinsamer Code der Datei-Zugriff zu ermöglichen, zu schreibenden implementiert wurde. Die `System.IO.IsolatedStorage` Klasse verwiesen werden kann, und alle drei Plattformen in einer [freigegebenes Projekt](~/cross-platform/app-fundamentals/shared-projects.md).
 
-Finden Sie in der [isolierten Speicher (Übersicht) für Windows Phone](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402541(v=vs.105).aspx) für Weitere Informationen.
+Finden Sie in der [isolierten Speicher (Übersicht) für Windows Phone](http://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx) für Weitere Informationen.
 
 Die APIs für den isolierten Speicher sind nicht verfügbar in [portablen Klassenbibliotheken](~/cross-platform/app-fundamentals/pcl.md). Eine Alternative zur PCL ist die [PCLStorage NuGet](https://pclstorage.codeplex.com/)
 

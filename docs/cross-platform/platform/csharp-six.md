@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 2a189a19280576876e5d5a6a4fa34d2d00cab330
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: de6fdab62a57dddb6fcf48302b7ff9f5ec2bc9a2
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="c-6-new-features-overview"></a>C# 6 der neuen Funktionen (Übersicht)
 
@@ -51,7 +51,7 @@ Visual Studio für Mac aktualisiert automatisch die Mono-Installation auf Ihrem 
 
 Windows-Benutzer benötigen [Visual Studio 2015 oder 2017 ^](https://www.visualstudio.com/) installiert, um die C#-6-Code kompilieren (auch wenn Sie Xamarin Studio für Windows als Ihre IDE).
 
-^ oder *[Microsoft Build Tools 2015](http://www.microsoft.com/en-us/download/details.aspx?id=48159)* , z. B. für Befehl Zeile Kompilierung oder Buildserver.
+^ oder *[Microsoft Build Tools 2015](http://www.microsoft.com/download/details.aspx?id=48159)* , z. B. für Befehl Zeile Kompilierung oder Buildserver.
 
 ## <a name="using-c-6"></a>Mithilfe von c# 6
 

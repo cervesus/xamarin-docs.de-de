@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 036dbc6a33126d4ade1a68e853ca6ddb4b7c83cc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0df51429ea9655b0a72d9f4c1e413fa7e37410ac
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="app-search-enhancements"></a>Suchen Sie App-Erweiterungen
 
@@ -63,7 +63,7 @@ Um dieses Feature zu implementieren, bearbeiten Sie der app `Info.plist` hinzuf�
 
 -----
 
-So reagieren Sie auf der Benutzer ein Suchergebnis zu fortfahren (`NSUserActivity`), bearbeiten Sie die `AppDelegate.cs` Datei, und überschreiben die `ContinueUserActivity` Methode. Zum Beispiel:
+So reagieren Sie auf der Benutzer ein Suchergebnis zu fortfahren (`NSUserActivity`), bearbeiten Sie die `AppDelegate.cs` Datei, und überschreiben die `ContinueUserActivity` Methode. Beispiel:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -107,7 +107,7 @@ Führen Sie folgende Schritte aus, um diese Funktion zu aktivieren:
 1. Erstellen Sie eine Nachrichten-App-Erweiterung.
 2. Hinzufügen der `com.apple.developer.associated-domains` der app-Berechtigungen und eine Liste der Webdomänen, die die Bilder zu hosten, die Nachrichten-App-Erweiterung ist die gemeinsame Verwendung, enthalten. Geben Sie für jede Domäne der `spotlight-image-search` Dienst.
 3. Hinzufügen einer `apple-app-site-association` Datei auf der Website, die die Bilder hostet. Diese Datei enthält ein Wörterbuch für die `spotlight-image-search` service und enthält die ID der app, die das Team oder App-ID-Präfix, gefolgt von die Paket-ID ist Die Datei darf bis zu 500 Pfade und Muster, die von Spotlight indiziert und in gängigen Image Suchvorgänge eingeschlossen werden. Weitere Informationen finden Sie in der Apple- [erstellen und Hochladen der Datei Zuordnung](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW4) Dokumentation.
-4. Zulassen der Applebot Websites durchsucht. Finden Sie in der Apple- [zu Applebot](https://support.apple.com/en-us/HT204683) Dokumentation.
+4. Zulassen der Applebot Websites durchsucht. Finden Sie in der Apple- [zu Applebot](https://support.apple.com/HT204683) Dokumentation.
 
 Finden Sie unter unsere [App Nachrichtenintegration](~/ios/platform/message-app-integration/index.md) Dokumentation.
 

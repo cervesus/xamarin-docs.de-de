@@ -1,5 +1,5 @@
 ---
-title: Xamarin.iOS errors
+title: Xamarin.iOS-Fehler
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9F76162B-D622-45DA-996B-2FBF8017E208
@@ -7,13 +7,13 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 0187b65e4c10e7cc03715a997a90fbddab9bd532
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71cddc07863002a887cada2bb0db0f8d25fd1a17
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="xamarinios-errors"></a>Xamarin.iOS errors
+# <a name="xamarinios-errors"></a>Xamarin.iOS-Fehler
 
 ## <a name="mt0xxx-mtouch-error-messages"></a>MT0xxx: Mtouch-Fehlermeldungen
 
@@ -581,7 +581,7 @@ Die Assembly, die in der Fehlermeldung genannten ist mehrmals in – Assembly-Bu
 
 Die Assemblys, die in der Fehlermeldung genannten wurden in Konflikt stehende Build-Ziele.
 
-Zum Beispiel:
+Beispiel:
 
     --assembly-build-target:Assembly1.dll=framework=MyBinary --assembly-build-target:Assembly2.dll=dynamiclibrary=MyBinary
 
@@ -593,7 +593,7 @@ In diesem Beispiel wird versucht, eine dynamische Bibliothek sowie ein Framework
 
 Die Assemblys, die in der Fehlermeldung genannten werden alle in eine einzelne statische Objekt kompiliert. Dies ist nicht zulässig, die an ein anderes statisches Objekt muss jede Assembly kompiliert werden.
 
-Zum Beispiel:
+Beispiel:
 
     --assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
 
@@ -631,7 +631,7 @@ Da `my/path.o` ist kein gültiger Dateiname aufgrund der Verzeichnistrennzeichen
 
 <a name="MT0109" />
 
-### <a name="mt0109-the-assembly-0-was-loaded-from-a-different-path-than-the-provided-path-provided-path-1-actual-path-2"></a>MT0109: Die Assembly "{0}" wurde geladen von einem anderen Pfad als der angegebene Pfad (Pfad bereitgestellt: \ {1\}, der tatsächliche Pfad: \ {2\}).
+### <a name="mt0109-the-assembly-0-was-loaded-from-a-different-path-than-the-provided-path-provided-path-1-actual-path-2"></a>MT0109: Die Assembly "{0}" wurde geladen, aus einem anderen Pfad als der angegebene Pfad (Pfad bereitgestellt: {1}, tatsächlichen Pfad: {2}).
 
 Dies ist eine Warnung gibt an, dass eine Assembly verwiesen wird, von der Anwendung geladen von einem anderen Speicherort als angefordert wurde.
 
@@ -968,13 +968,13 @@ In den meisten Fällen, die Weitere Informationen über den Fehler für den iOS-
 
 <a name="MT1021" />
 
-### <a name="mt1021-could-not-copy-the-file--to--2"></a>MT1021: Konnte nicht kopieren Sie die Datei "\*'to'\*": \ {2\}
+### <a name="mt1021-could-not-copy-the-file--to--2"></a>MT1021: Konnte nicht kopieren Sie die Datei "\*'to'\*": {2}
 
 Eine Datei konnte nicht kopiert werden. Die Fehlermeldung aus der Kopiervorgang wurde Weitere Informationen zum Fehler.
 
 <a name="MT1022" />
 
-### <a name="mt1022-could-not-copy-the-directory--to--2"></a>MT1022: Konnte nicht kopiert werden das Verzeichnis "\*'to'\*": \ {2\}
+### <a name="mt1022-could-not-copy-the-directory--to--2"></a>MT1022: Konnte nicht kopiert werden das Verzeichnis "\*'to'\*": {2}
 
 Ein Verzeichnis konnte nicht kopiert werden. Die Fehlermeldung aus der Kopiervorgang wurde Weitere Informationen zum Fehler.
 
@@ -1653,11 +1653,11 @@ Die Assembly, die Ursache des Problems heißt in der Fehlermeldung. Zur Behebung
 
 <a name="MT2104" />
 
-### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: Kann nicht auf die Assembly "{0}" zu verknüpfen, wenn er im gemischten Modus ist.
+### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: Keine Assembly Verknüpfung kann "{0}" unverändert im gemischten Modus.
 
 Gemischte Assemblys können nicht vom Linker verarbeitet werden.
 
-Finden Sie unter https://msdn.microsoft.com/en-us/library/x0w2664k.aspx Weitere Informationen zu gemischten Assemblys.
+Finden Sie unter https://msdn.microsoft.com/library/x0w2664k.aspx Weitere Informationen zu gemischten Assemblys.
 
 ## <a name="mt3xxx-aot-error-messages"></a>MT3xxx: AOT-Fehlermeldungen
 
@@ -2060,7 +2060,7 @@ Bitte überprüfen Sie, ob die `Register` Attribut für die verwaltete Klasse in
 
 <a name="MT4161" />
 
-### <a name="mt4161-the-registrar-found-an-unsupported-structure--all-fields-in-a-structure-must-also-be-structures-field--with-type-2-is-not-a-structure"></a>MT4161:-Die Registrierungsstelle eine nicht unterstützte Struktur gefunden "\*": alle Felder in einer Struktur muss auch Strukturen (Feld "\*' mit Typ"\ {2\}"ist eine Struktur).
+### <a name="mt4161-the-registrar-found-an-unsupported-structure--all-fields-in-a-structure-must-also-be-structures-field--with-type-2-is-not-a-structure"></a>MT4161:-Die Registrierungsstelle eine nicht unterstützte Struktur gefunden "\*": alle Felder in einer Struktur muss auch Strukturen (Feld "\*'mit Typ'{2}' ist keine Struktur).
 
 Die Registrierungsstelle gefunden eine Struktur mit nicht unterstützte Felder.
 
@@ -2068,7 +2068,7 @@ Alle Felder in einer Struktur, die für Objective-C verfügbar gemacht wird, mus
 
 <a name="MT4162" />
 
-### <a name="mt4162-the-type--used-as--2-is-not-available-in---it-was-introduced-in---please-build-with-a-newer--sdk-usually-done-by-using-the-most-recent-version-of-xcode"></a>MT4162: Der Typ "\*" (als verwendet * \ {2\}) ist nicht verfügbar in ** (es seit * *)\* erstellen Sie mit einer neueren * SDK (normalerweise mit der neuesten Version von Xcode vorgenommen.
+### <a name="mt4162-the-type--used-as--2-is-not-available-in---it-was-introduced-in---please-build-with-a-newer--sdk-usually-done-by-using-the-most-recent-version-of-xcode"></a>MT4162: Der Typ "\*" (als verwendet * {2}) ist nicht verfügbar in ** (es seit * *)\* erstellen Sie mit einer neueren * SDK (normalerweise mit der neuesten Version von Xcode vorgenommen.
 
 Die Registrierungsstelle gefunden, einen Typ, der nicht im aktuellen SDK enthalten ist.
 
@@ -2148,7 +2148,7 @@ Wenn Sie während der Entwicklung eines Projekts Bindung für eine systemeigene 
 
 ## <a name="mt5xxx-gcc-and-toolchain-error-messages"></a>MT5xxx: GCC und toolkette Fehlermeldungen
 
-### <a name="mt51xx-compilation"></a>MT51xx: Compilation
+### <a name="mt51xx-compilation"></a>MT51xx: Kompilierung
 
 <!--
  MT5xxx GCC and toolchain
@@ -2179,7 +2179,7 @@ Wenn Sie während der Entwicklung eines Projekts Bindung für eine systemeigene 
 
 Dies weist in der Regel ein Fehler im Xamarin.iOS hin; Melden Sie den Fehler auf [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
-### <a name="mt52xx-linking"></a>MT52xx: Linking
+### <a name="mt52xx-linking"></a>MT52xx: Verknüpfen
 
 <!--
   MT52xx linking
@@ -2308,7 +2308,7 @@ Dieser Fehler wird gemeldet, nur zusammen mit [MT5212](#MT5212). Finden Sie unte
 
 ### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214: Verknüpfen von systemeigenen fehlgeschlagen ist, nicht definiertes Symbol: *. Dieses Symbol wurde verwiesen, wenn das verwaltete Element *. Stellen Sie sicher, dass alle erforderlichen Frameworks verwiesen wird und systemeigene Bibliotheken verknüpft wurden.
 
-Dieser Fehler wird gemeldet, wenn der verwaltete Code P/Invoke auf einer nativen Methode enthält, die nicht vorhanden ist. Zum Beispiel:
+Dieser Fehler wird gemeldet, wenn der verwaltete Code P/Invoke auf einer nativen Methode enthält, die nicht vorhanden ist. Beispiel:
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -2425,7 +2425,7 @@ Fehler beim Signieren der Anwendung. Überprüfen Sie das Buildprotokoll zum Anz
 
 ## <a name="mt6xxx-mtouch-internal-tools-error-messages"></a>MT6xxx: Mtouch interne tools Fehlermeldungen
 
-### <a name="mt600x-stripper"></a>MT600x: Stripper
+### <a name="mt600x-stripper"></a>MT600x: Entfernen
 
 <!--
  MT6xxx mtouch internal tools
@@ -2945,7 +2945,7 @@ Dies weist in der Regel ein Fehler im Xamarin.iOS hin; Melden Sie den Fehler auf
 
 <a name="MT8013" />
 
-### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013: Ungültige DelegateProxyAttribute für den Rückgabewert der Methode *.*: Delegattyp (\ {2\}) gibt einen Typ, ein Feld "Ereignishandler". Um einen Fehlerbericht an http://bugzilla.xamarin.com.
+### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013: Ungültige DelegateProxyAttribute für den Rückgabewert der Methode *.*: Delegattyp ({2}) gibt an, einen Typ, ein Feld "Ereignishandler". Um einen Fehlerbericht an http://bugzilla.xamarin.com.
 
 Das DelegateProxy-Attribut für die betreffende Methode ist ungültig.
 
@@ -2953,7 +2953,7 @@ Dies weist in der Regel ein Fehler im Xamarin.iOS hin; Melden Sie den Fehler auf
 
 <a name="MT8014" />
 
-### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: Ungültige DelegateProxyAttribute für den Rückgabewert der Methode *.*: der Delegattyps (\ {2\,}) 'Handler'-Feld ist null. Um einen Fehlerbericht an http://bugzilla.xamarin.com.
+### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: Ungültige DelegateProxyAttribute für den Rückgabewert der Methode *.*: der Delegattyp ({2}) 'Handler'-Feld ist null. Um einen Fehlerbericht an http://bugzilla.xamarin.com.
 
 Das DelegateProxy-Attribut für die betreffende Methode ist ungültig.
 
@@ -2961,7 +2961,7 @@ Dies weist in der Regel ein Fehler im Xamarin.iOS hin; Melden Sie den Fehler auf
 
 <a name="MT8015" />
 
-### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015: Ungültige DelegateProxyAttribute für den Rückgabewert der Methode *.*: der Delegattyps (\ {2\,}) 'Handler'-Feld keinen Delegaten, ist es eine *. Um einen Fehlerbericht an http://bugzilla.xamarin.com.
+### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015: Ungültige DelegateProxyAttribute für den Rückgabewert der Methode *.*: der Delegattyp ({2}) 'Handler'-Feld keinen Delegaten, ist es eine *. Um einen Fehlerbericht an http://bugzilla.xamarin.com.
 
 Das DelegateProxy-Attribut für die betreffende Methode ist ungültig.
 

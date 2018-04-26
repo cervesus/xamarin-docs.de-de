@@ -1,5 +1,5 @@
 ---
-title: Bound Services in Xamarin.Android
+title: Gebunden Sie Dienste werden im Xamarin.Android.
 description: Gebundene Dienste sind Android Dienste, die eine Client / Server-Schnittstelle bereitstellen, der mit ein Client (z. B. eine Android-Aktivität) interagieren kann. Dieses Handbuch werden die wichtigsten Komponenten der mit dem Erstellen eines gebundenen Diensts und wie für die Verwendung in einer Anwendung Xamarin.Android erläutert.
 ms.prod: xamarin
 ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: 18cfe6acae08efac85223c9c121a12f102f846cc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1cb151cc5c741a020fcbb398441ed4958ec5980b
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="bound-services-in-xamarinandroid"></a>Bound Services in Xamarin.Android
+# <a name="bound-services-in-xamarinandroid"></a>Gebunden Sie Dienste werden im Xamarin.Android.
 
 _Gebundene Dienste sind Android Dienste, die eine Client / Server-Schnittstelle bereitstellen, der mit ein Client (z. B. eine Android-Aktivität) interagieren kann. Dieses Handbuch werden die wichtigsten Komponenten der mit dem Erstellen eines gebundenen Diensts und wie für die Verwendung in einer Anwendung Xamarin.Android erläutert._
 
@@ -263,7 +263,7 @@ Einige OOP-Puristen möglicherweise von der früheren Implementierungen von Proj
 Es ist streng genommen ist nicht erforderlich, für den Client kennen die `TimestampService` und Verfügbarmachen dieses konkrete Klasse für Clients kann eine Anwendung jedoch fehleranfällig und schwieriger zu über dessen Lebensdauer zu verwalten. Eine alternative Methode besteht darin, eine Schnittstelle verwenden, die verfügbar macht, ist die `GetFormattedTimestamp()` -Methode und Proxy-Aufrufe an den Dienst über die `Binder` (oder eine mögliche Service Connection-Klasse):  
 
 ```csharp
-public class TimestampBinder : Binder, IGetTimesamp
+public class TimestampBinder : Binder, IGetTimestamp
 {
     TimestampService service;
     public TimestampBinder(TimestampService service)

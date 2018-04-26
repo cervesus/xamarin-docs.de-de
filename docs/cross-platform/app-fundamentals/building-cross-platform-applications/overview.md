@@ -6,17 +6,17 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 48aa53595d7ab0ccd5fb8f3dab57198199d65b8e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b3b15736b5ec750e0b8db078cf428a7f573bc435
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="building-cross-platform-applications-overview"></a>Erstellen von Cross-Platform-Anwendungen (Übersicht)
 
 Dieses Handbuch enthält die Xamarin-Plattform und wie eine plattformübergreifende Anwendung maximieren die Wiederverwendung von Code und bieten eine systemeigene qualitativ hochwertige-Erlebnis auf allen mobilen hauptplattformen konzipiert: iOS, Android und Windows Phone.
 
-Ansatz wird in diesem Dokument gilt im Allgemeinen für Produktivität apps und Spiele apps jedoch der Fokus auf die Produktivität und -Dienstprogramm (nicht-Spiel Anwendungen) ist. Finden Sie unter der [Einführung MonoGame Dokument](https://developer.xamarin.com/guides/cross-platform/game_development/monogame/introduction/) oder Auschecken [Visual Studio-Tools für Unity](https://docs.microsoft.com/en-us/visualstudio/cross-platform/visual-studio-tools-for-unity) plattformübergreifende Entwicklung Anleitungen.
+Ansatz wird in diesem Dokument gilt im Allgemeinen für Produktivität apps und Spiele apps jedoch der Fokus auf die Produktivität und -Dienstprogramm (nicht-Spiel Anwendungen) ist. Finden Sie unter der [Einführung MonoGame Dokument](~/graphics-games/monogame/introduction/index.md) oder Auschecken [Visual Studio-Tools für Unity](https://docs.microsoft.com/visualstudio/cross-platform/visual-studio-tools-for-unity) plattformübergreifende Entwicklung Anleitungen.
 
 Der Ausdruck "Schreiben-einmal ausführen, überall" wird häufig verwendet werden, um zeigen die Vorzüge einer einzelnen Codebasis, ausgeführt auf mehreren Plattformen unverändert bleiben sollen. Während Sie den Vorteil, dass Code erneut zu verwenden ist, führt diesen Ansatz häufig zu Anwendungen, die eine Funktionsgruppe niedrigsten gemeinsamen Nenner haben und eine generische aussehende-Benutzeroberfläche, die nicht zu groß ist gut in eine der Zielplattformen.
 

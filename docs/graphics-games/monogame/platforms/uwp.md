@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: ee4ee83c07cf01d1324b5f127d4f77ced0df2afe
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: e28823165188d1046142e31490967367d3246422
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="creating-a-monogame-uwp-project"></a>Erstellen eines MonoGame UWP-Projekts
 
@@ -31,9 +31,9 @@ Entwickeln von MonoGame UWP-apps benötigen Sie Folgendes:
 - Einstellung Gerät Entwicklermodus
 - [MonoGame 3.5 für Visual Studio](http://www.monogame.net/2016/03/17/monogame-3-5/) oder höher
 
-Weitere Informationen finden Sie in diesem [Seite einrichten für Windows 10-UWP-Entwicklung](https://msdn.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
+Weitere Informationen finden Sie in diesem [Seite einrichten für Windows 10-UWP-Entwicklung](https://msdn.microsoft.com/windows/uwp/get-started/get-set-up).
 
-Xbox One Spiele können auf Xbox One Hardware Retail entwickelt werden. Für die Entwicklung von PCs und Xbox One ist zusätzliche Software erforderlich. Informationen zum Konfigurieren einer Xbox One für 3D-Spielentwicklung, finden Sie auf dieser Seite [Einrichten einer Xbox One](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/index).
+Xbox One Spiele können auf Xbox One Hardware Retail entwickelt werden. Für die Entwicklung von PCs und Xbox One ist zusätzliche Software erforderlich. Informationen zum Konfigurieren einer Xbox One für 3D-Spielentwicklung, finden Sie auf dieser Seite [Einrichten einer Xbox One](https://msdn.microsoft.com/windows/uwp/xbox-apps/index).
 
 ## <a name="creating-an-empty-template"></a>Erstellen eine leere Vorlage
 

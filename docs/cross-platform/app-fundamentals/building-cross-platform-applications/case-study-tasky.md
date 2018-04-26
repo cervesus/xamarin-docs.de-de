@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: f8e663ab2e274bff1ae8b700586d4c6749f04545
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 690edabd53752ff0347fdb232a4bbfcb1ba6e84d
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="case-study-tasky"></a>Case Study: Tasky
 
@@ -166,7 +166,7 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 
 #### <a name="locking-to-prevent-concurrent-access"></a>Um gleichzeitigen Zugriff zu verhindern, dass Sperren
 
-Ein [Sperre](http://msdn.microsoft.com/en-us/library/c5kehkcz(v=vs.100).aspx) wird implementiert, innerhalb der `TaskItemDatabase` Klasse, um den gleichzeitigen Zugriff auf die Datenbank zu verhindern. Dadurch wird sichergestellt, gleichzeitigen Zugriff von anderen Threads serialisiert wird (andernfalls möglicherweise eine UI-Komponente zum Lesen der Datenbank zur gleichen Zeit, ein Hintergrundthread er aktualisiert, versuchen). Ein Beispiel für die Implementierung der Sperre wird hier gezeigt:
+Ein [Sperre](http://msdn.microsoft.com/library/c5kehkcz(v=vs.100).aspx) wird implementiert, innerhalb der `TaskItemDatabase` Klasse, um den gleichzeitigen Zugriff auf die Datenbank zu verhindern. Dadurch wird sichergestellt, gleichzeitigen Zugriff von anderen Threads serialisiert wird (andernfalls möglicherweise eine UI-Komponente zum Lesen der Datenbank zur gleichen Zeit, ein Hintergrundthread er aktualisiert, versuchen). Ein Beispiel für die Implementierung der Sperre wird hier gezeigt:
 
 ```csharp
 static object locker = new object ();
@@ -253,7 +253,7 @@ Die verbleibenden Abschnitte erläutern die plattformspezifischen Implementierun
 
  <a name="iOS_App" />
 
-## <a name="ios-app"></a>iOS App
+## <a name="ios-app"></a>iOS-App
 
 Es gibt nur eine Handvoll Klassen zum Implementieren der iOS-Tasky Anwendung mithilfe der allgemeinen PCL-Projekt zum Speichern und Abrufen von Daten erforderlich sind. Das vollständige iOS Xamarin.iOS-Projekt wird unten gezeigt:
 
@@ -357,7 +357,7 @@ Die Funktionalität von der **Aufgabendetails** Bildschirm bereitstellt (z.B. sp
 
  <a name="Android_App" />
 
-## <a name="android-app"></a>Android App
+## <a name="android-app"></a>Android-App
 
 Das vollständige Xamarin.Android-Projekt wird unten gezeigt:
 
@@ -417,7 +417,7 @@ Alle Verweise auf die PCL-Bibliothek werden über die `TaskItemManager` Klasse.
 
  <a name="Windows_Phone_App" />
 
-## <a name="windows-phone-app"></a>Windows Phone App
+## <a name="windows-phone-app"></a>Windows Phone-App
 Das vollständige Windows Phone-Projekt:
 
  ![](case-study-tasky-images/taskywp7-solution.png "Windows Phone-App das vollständige Windows Phone-Projekt")

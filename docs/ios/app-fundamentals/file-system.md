@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5c6a5233c9cdc043986f106712895439fa008b41
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0706e416861e5636413577d38bf524ce9184bc4d
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="working-with-the-file-system"></a>Arbeiten mit dem Dateisystem
 
@@ -77,7 +77,7 @@ using (TextReader reader = new StreamReader("./TestData/test.xml")) {
 }
 ```
 
-Finden Sie in der MSDN-Dokumentation für die ["System.xml"](http://msdn.microsoft.com/en-us/library/system.xml.aspx) Namespace-URI für Weitere Informationen zu [Serialisierung](http://msdn.microsoft.com/en-us/library/system.xml.serialization.aspx). Überprüfen Sie außerdem die [Xamarin.iOS Dokumentation](~/ios/deploy-test/linker.md) auf vom Linker – in der Regel Sie müssen zum Hinzufügen der `[Preserve]` -Attribut auf Klassen, die Sie serialisieren möchten.
+Finden Sie in der MSDN-Dokumentation für die ["System.xml"](http://msdn.microsoft.com/library/system.xml.aspx) Namespace-URI für Weitere Informationen zu [Serialisierung](http://msdn.microsoft.com/library/system.xml.serialization.aspx). Überprüfen Sie außerdem die [Xamarin.iOS Dokumentation](~/ios/deploy-test/linker.md) auf vom Linker – in der Regel Sie müssen zum Hinzufügen der `[Preserve]` -Attribut auf Klassen, die Sie serialisieren möchten.
 
  <a name="Creating_Files_and_Directories" />
 
@@ -102,7 +102,7 @@ var directoryname = Path.Combine (documents, "NewDirectory");
 Directory.CreateDirectory(directoryname);
 ```
 
-Weitere Informationen zu den System.IO-Namespace, finden Sie unter der [MSDN-Dokumentation](http://msdn.microsoft.com/en-us/library/system.io.aspx).
+Weitere Informationen zu den System.IO-Namespace, finden Sie unter der [MSDN-Dokumentation](http://msdn.microsoft.com/library/system.io.aspx).
 
 
 ### <a name="serializing-json"></a>Serialisieren von Json
@@ -191,7 +191,7 @@ Deshalb Fall zwar iOS-Geräte werden die Groß-/Kleinschreibung beachtet, und Ih
 
 ### <a name="path-separator"></a>Pfadtrennzeichen
 
-iOS uses the forward slash ‘/’as the path separator (which is different from Windows, which uses the backslash ‘\’).
+iOS verwendet einen Schrägstrich "/" als Pfadtrennzeichen für den (unterscheidet sich von Windows, der verwendet den umgekehrten Schrägstrich "\").
 
 Aufgrund dieses Unterschieds verwirrend, die es wird empfohlen, verwenden Sie die `System.IO.Path.Combine` -Methode, die für die aktuelle Plattform, statt eine hartcodierung einer bestimmten Pfadtrennzeichen passt. Dies ist ein einfacher Schritt, der den Code für andere Plattformen besser portierbar macht.
 
@@ -239,12 +239,12 @@ Diese Verzeichnisse und ihre Zwecke zu verwenden, sind unten aufgeführt:
 
 |Verzeichnis|Beschreibung|
 |---|---|
-|[ApplicationName].app/|**In iOS 7 und früher** Dies ist die `ApplicationBundle` Verzeichnis, in dem die ausführbare Datei der Anwendung gespeichert ist. Die Verzeichnisstruktur, die Sie in Ihrer app zu erstellen, die in diesem Verzeichnis (z. B. Bilder und andere Dateitypen, die Sie als Ressourcen in Ihrer Visual Studio für Mac-Projekt markiert haben) vorhanden ist.<br /><br />Wenn Sie die Inhaltsdateien in Ihre Anwendungspaket zugreifen müssen, steht der Pfad zu diesem Verzeichnis über die `NSBundle.MainBundle.BundlePath` Eigenschaft.|
+|[ApplicationName] .app /|**In iOS 7 und früher** Dies ist die `ApplicationBundle` Verzeichnis, in dem die ausführbare Datei der Anwendung gespeichert ist. Die Verzeichnisstruktur, die Sie in Ihrer app zu erstellen, die in diesem Verzeichnis (z. B. Bilder und andere Dateitypen, die Sie als Ressourcen in Ihrer Visual Studio für Mac-Projekt markiert haben) vorhanden ist.<br /><br />Wenn Sie die Inhaltsdateien in Ihre Anwendungspaket zugreifen müssen, steht der Pfad zu diesem Verzeichnis über die `NSBundle.MainBundle.BundlePath` Eigenschaft.|
 |Dokumente /|Verwenden Sie dieses Verzeichnis zum Speichern von Benutzerdokumente und Datendateien der Anwendung.<br /><br />Der Inhalt dieses Verzeichnisses können werden zur Verfügung gestellt, die dem Benutzer über iTunes Dateifreigabe (obwohl dies ist standardmäßig deaktiviert). Hinzufügen einer `UIFileSharingEnabled` Boolean-Taste, um die Datei "Info.plist", um Benutzern Zugriff auf diese Dateien ermöglichen.<br /><br />Auch wenn eine Anwendung nicht sofort nicht Dateifreigabe aktivieren, vermeiden Sie Ablegen von Dateien, die Ihre Benutzer in diesem Verzeichnis ausgeblendet werden soll (z. B. Datenbankdateien, es sei denn, Sie beabsichtigen, diese freizugeben). Als vertrauliche Dateien ausgeblendet bleiben, diese Dateien nicht verfügbar gemacht werden (und möglicherweise verschoben, geänderte oder gelöschte von iTunes) Wenn die Freigabe von Dateien in einer zukünftigen Version aktiviert ist.<br /><br /> Sie können die `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)` Methode, um den Pfad zu dem Verzeichnis "Dokumente" für Ihre Anwendung abzurufen.<br /><br />Der Inhalt dieses Verzeichnisses werden vom iTunes gesichert.|
 |Bibliothek /|Das Verzeichnis der Bibliothek ist eine gute zum Speichern von Dateien, die nicht direkt vom Benutzer, z. B. Datenbanken oder andere Anwendung generierte Dateien erstellt werden. Der Inhalt dieses Verzeichnisses werden nie an den Benutzer über iTunes verfügbar gemacht.<br /><br />Sie können eigene Unterverzeichnisse in der Bibliothek erstellen. Es gibt jedoch bereits einige vom System erstellten Verzeichnisse hier, dass Sie von, z. B. Voreinstellungen und Caches berücksichtigen sollten.<br /><br />Der Inhalt dieses Verzeichnisses (mit Ausnahme der Caches Unterverzeichnis) werden vom iTunes gesichert. Benutzerdefinierte Verzeichnisse, die Sie in der Bibliothek erstellen, werden gesichert.|
 |Bibliothek/Voreinstellungen /|Anwendungsspezifische Einstellungsdateien werden in diesem Verzeichnis gespeichert. Diese Dateien nicht direkt erstellt werden. Verwenden Sie stattdessen die `NSUserDefaults` Klasse.<br /><br />Der Inhalt dieses Verzeichnisses werden vom iTunes gesichert.|
 |Bibliothek/Caches /|Das Caches-Verzeichnis ist, führen Sie ein guter Ausgangspunkt für Datendateien gespeichert, die Ihrer Anwendung behilflich sein können, aber, die können einfach neu erstellt werden, falls erforderlich. Die Anwendung sollte erstellen und diese Dateien nach Bedarf löschen und diese Dateien bei Bedarf neu erstellt werden. Ios5 kann auch diese Dateien (unter äußerst niedrig Speicher Situationen) löschen, jedoch kein Wert zurückgegeben wird, während die Anwendung ausgeführt wird.<br /><br />Der Inhalt dieses Verzeichnisses nicht vom iTunes, d., sie sind nicht vorhanden h., wenn der Benutzer ein Gerät wiederherstellt, gesichert werden, und sie können möglicherweise nicht vorhanden, nachdem eine aktualisierte Version der Anwendung installiert ist.<br /><br />Für den Fall, dass Ihre Anwendung keine Verbindung mit dem Netzwerk herstellen kann, können Sie das Verzeichnis Caches verwenden, zum Speichern von Daten oder Dateien, um eine gute offline Erfahrung zu bieten. Die Anwendung speichern und diese Daten schnell beim Warten auf Antworten Netzwerk abrufen kann, aber es muss nicht gesichert werden und kann problemlos werden wiederhergestellt oder neu erstellt werden, nachdem eine Wiederherstellung oder der Version aktualisieren.|
-|tmp/|Anwendungen können temporäre Dateien speichern, die nur für einen kurzen Zeitraum in diesem Verzeichnis erforderlich sind. Um Speicherplatz zu sparen, sollten die Dateien gelöscht werden, wenn sie nicht mehr benötigt werden. Das Betriebssystem kann auch Dateien von diesem Verzeichnis gelöscht, wenn eine Anwendung nicht ausgeführt wird.<br /><br />Der Inhalt dieses Verzeichnisses werden vom iTunes nicht gesichert.<br /><br />Beispielsweise kann die Tmp-Verzeichnis verwendet, werden zum Speichern temporärer Dateien, die für die Anzeige für den Benutzer (z. B. Twitter Avatare oder e-Mail-Anlagen) heruntergeladen werden, jedoch gelöscht werden konnte, nachdem sie haben wurde angezeigt (und erneut heruntergeladen werden, wenn sie in der Zukunft erforderlich sind ).|
+|TMP /|Anwendungen können temporäre Dateien speichern, die nur für einen kurzen Zeitraum in diesem Verzeichnis erforderlich sind. Um Speicherplatz zu sparen, sollten die Dateien gelöscht werden, wenn sie nicht mehr benötigt werden. Das Betriebssystem kann auch Dateien von diesem Verzeichnis gelöscht, wenn eine Anwendung nicht ausgeführt wird.<br /><br />Der Inhalt dieses Verzeichnisses werden vom iTunes nicht gesichert.<br /><br />Beispielsweise kann die Tmp-Verzeichnis verwendet, werden zum Speichern temporärer Dateien, die für die Anzeige für den Benutzer (z. B. Twitter Avatare oder e-Mail-Anlagen) heruntergeladen werden, jedoch gelöscht werden konnte, nachdem sie haben wurde angezeigt (und erneut heruntergeladen werden, wenn sie in der Zukunft erforderlich sind ).|
 
 Diese bildschirmabbildung zeigt die Verzeichnisstruktur, geben Sie im Finder:
 

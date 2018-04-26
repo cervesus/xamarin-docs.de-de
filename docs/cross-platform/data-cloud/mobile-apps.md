@@ -1,5 +1,5 @@
 ---
-title: Microsoft Azure Mobile Apps
+title: Microsoft Azure-Mobile Apps
 description: Downloads für das Azure Portal-Dokumentation, Beispiele und Code.
 ms.prod: xamarin
 ms.assetid: 7B9AA8D9-C181-4C33-8AB0-2F56E4DBFC03
@@ -7,19 +7,19 @@ ms.technology: xamarin-cross-platform
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2017
-ms.openlocfilehash: 14ae6bdb3419bac13aebe6b5a9d8346ed5163de5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4a6211ac218d914089bf1d0dbcb9956800dde700
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="microsoft-azure-mobile-apps"></a>Microsoft Azure Mobile Apps
+# <a name="microsoft-azure-mobile-apps"></a>Microsoft Azure-Mobile Apps
 
 _Downloads für das Azure Portal-Dokumentation, Beispiele und Code._
 
 <!--
 NOTE TO AUTHORS: this page is referenced from
-http://azure.microsoft.com/en-us/develop/mobile/xamarin/
+http://azure.microsoft.com/develop/mobile/xamarin/
 as https://developer.xamarin.com/guides/cross-platform/data-cloud/mobile-services/
 A redirect has been put in place to /mobile-apps/ HOWEVER the /Resources/ .ZIP files are still located in /mobile-services/ so that the following permalinks don't break
 
@@ -54,8 +54,8 @@ Es umfasst erstellen eine neue Azure-Mobile-App in das Portal und herunterladen 
 
 Demonstrates how to add server-side scripts to Azure Mobile Services data tables to implement server-side validation and other functionality.
 
--  [iOS](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#errors)
--  [Android](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#errors)
+-  [iOS](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#errors)
+-  [Android](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#errors)
 -->
 
 <!--
@@ -63,16 +63,16 @@ Demonstrates how to add server-side scripts to Azure Mobile Services data tables
 
 A quick example of paging large sets of data using Skip() and Take().
 
--  [iOS](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#paging)
--  [Android](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#paging)
+-  [iOS](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#paging)
+-  [Android](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#paging)
 -->
 
 ## <a name="get-started-with-users"></a>Erste Schritte mit Benutzern
 
 Stellt ausführliche Anweisungen zum Konfigurieren und codieren Anmeldebildschirm mit Azure Mobile Services bereit. Unterstützten Authentifizierungsanbieter gehören Microsoft, Google, Facebook und Twitter.
 
--  [iOS](https://azure.microsoft.com/en-us/documentation/articles/app-service-mobile-xamarin-ios-get-started-users/)
--  [Android](https://azure.microsoft.com/en-us/documentation/articles/app-service-mobile-xamarin-android-get-started-users/)
+-  [iOS](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-ios-get-started-users/)
+-  [Android](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-android-get-started-users/)
 
 
 ## <a name="authorize-users-in-scripts"></a>Autorisieren von Benutzern in Skripts
@@ -102,12 +102,12 @@ Führen Sie die Anweisungen zum Konfigurieren von Pushbenachrichtigungen für Ap
 ## <a name="related-links"></a>Verwandte Links
 
 - [Erste Schritte (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/Azure/GettingStarted)
-- [GetStartedWithData (sample)](https://github.com/xamarin/mobile-samples/tree/master/Azure/GetStartedWithData)
-- [GetStartedWithUsers (sample)](https://github.com/xamarin/mobile-samples/tree/master/Azure/GetStartedWithUsers)
+- [GetStartedWithData (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/Azure/GetStartedWithData)
+- [GetStartedWithUsers (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/Azure/GetStartedWithUsers)
 - [GetStartedWithPush (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/Azure/GetStartedWithPush)
-- [NotificationHubs (sample)](https://github.com/xamarin/mobile-samples/tree/master/Azure/NotificationHubs)
+- [NotificationHubs (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/Azure/NotificationHubs)
 - [Azure Mobile-Client](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
-- [Lernpfad für Azure Mobile Apps](https://azure.microsoft.com/en-us/documentation/learning-paths/appservice-mobileapps/)
+- [Lernpfad für Azure Mobile Apps](https://azure.microsoft.com/documentation/learning-paths/appservice-mobileapps/)
 
 <!--
 - [ValidateModifyData (sample)](https://github.com/xamarin/mobile-samples/tree/master/Azure/ValidateModifyData)

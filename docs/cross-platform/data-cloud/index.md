@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/09/2017
-ms.openlocfilehash: 13868864813a2f120857fb6347924197e374638c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ab449a58cc87699b97a1ade7721a08f771c4f55d
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="microsoft-azure"></a>Microsoft Azure
 
@@ -26,12 +26,12 @@ _Dokumentation und Beispielcode für Azure-downloads._
 Die neue [verbundene Dienste](connected-services.md) Funktion von Visual Studio für Mac kann Entwickler schnell und einfach für mobile Anwendungen aus der IDE Funktionen der Azure hinzufügen. Verfügbar für Tests in den Alpha-Kanal.
 
 
-## <a name="azure-app-services"></a>Azure App Services
+## <a name="azure-app-services"></a>Azure App-Dienste
 
 Es ist eine Sammlung von [Azure Mobile Apps Dokumentation](~/cross-platform/data-cloud/mobile-apps.md) führt, die Sie durch den Prozess der Implementierung der [Azure Mobile Client](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/).
 Xamarin bietet auch eine Azure-Messaging NuGet-Pakete für [iOS](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.iOS/) und [Android](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.Android/) Pushbenachrichtigungen plattformübergreifend implementieren können.
 
-Konfigurieren Sie Ihre apps auf die [Azure App Services-Portal](https://portal.azure.com/) auf Mobile Apps, Web-APIs, Speicher und vieles mehr. Erfahren Sie mehr über [wie app-Dienste unterscheiden](http://azure.microsoft.com/en-us/updates/whats-new-with-azure-app-service/) und sehen Sie sich [diese Videos von Microsoft](http://azure.microsoft.com/en-us/campaigns/azure-march-announcement/).
+Konfigurieren Sie Ihre apps auf die [Azure App Services-Portal](https://portal.azure.com/) auf Mobile Apps, Web-APIs, Speicher und vieles mehr. Erfahren Sie mehr über [wie app-Dienste unterscheiden](http://azure.microsoft.com/updates/whats-new-with-azure-app-service/) und sehen Sie sich [diese Videos von Microsoft](http://azure.microsoft.com/campaigns/azure-march-announcement/).
 
 ## <a name="active-directory-authentication"></a>Active Directory-Authentifizierung
 
@@ -58,7 +58,7 @@ Zusätzlich zu den [Dokumentationsbeispiele](https://github.com/xamarin/mobile-s
 - [MyShoppe](https://github.com/jamesmontemagno/MyShoppe) -Azure-Mobile Apps.
 
 - [Shopping](https://github.com/dotnet-architecture/eShopOnContainers) – Beispiel für die [Architektur Reihe](https://www.microsoft.com/net/learn/architecture) der e-Books.
-- [MyDriving](https://azure.microsoft.com/en-us/campaigns/mydriving/) – Azure + IoT-Beispiels in Build 2016.
+- [MyDriving](https://azure.microsoft.com/campaigns/mydriving/) – Azure + IoT-Beispiels in Build 2016.
 
 
 ## <a name="related-links"></a>Verwandte Links

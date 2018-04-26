@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: b7604633a5dfad6134d7b549299194ab6707a865
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da827c5bdd25bf841f5396b10d1eeb70e132dfeb
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="api-design"></a>API-Entwurf
 
@@ -95,7 +95,7 @@ Die [Foundation](https://developer.xamarin.com/api/namespace/Foundation/) -Names
 
 Xamarin.iOS spiegelt in c# die Hierarchie der Klassen von Objective-c. Z. B. die Objective-C-Basisklasse [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) ist in c# über [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/).
 
-Obwohl dieser Namespace Bindungen für die zugrunde liegenden Foundation Objective-C-Typen enthält, in einigen Fällen haben wir die zugrunde liegende Typen, .NET-oder Schematypen zugeordnet. Zum Beispiel:
+Obwohl dieser Namespace Bindungen für die zugrunde liegenden Foundation Objective-C-Typen enthält, in einigen Fällen haben wir die zugrunde liegende Typen, .NET-oder Schematypen zugeordnet. Beispiel:
 
 - Anstelle von [NSString](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html) und [NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html), die Common Language Runtime stellt diese als C#- [Zeichenfolge](https://developer.xamarin.com/api/type/System.String/)s und stark typisierte [Array](https://developer.xamarin.com/api/type/System.Array/)s in der gesamten die API.
 
@@ -378,7 +378,7 @@ Das Muster wird auch verwendet, um die Daten bei Bedarf für einige Steuerelemen
 Zusätzlich zu den stark typisierten Eigenschaft ist auch eine schwach typisierte Delegat, der ermöglicht den Entwickler, die Dinge unterschiedlich binden, falls gewünscht.
 Ein stark typisiertes Everywhere `Delegate` -Eigenschaft verfügbar gemacht wird, bei der Bindung des Xamarin.iOS, ein entsprechendes `WeakDelegate` Eigenschaft ist ebenfalls verfügbar gemacht.
 
-Bei Verwendung der `WeakDelegate`, Sie sind verantwortlich für ordnungsgemäß ergänzen die Klasse mithilfe der [exportieren](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) Attribut, um die Auswahl anzugeben. Zum Beispiel:
+Bei Verwendung der `WeakDelegate`, Sie sind verantwortlich für ordnungsgemäß ergänzen die Klasse mithilfe der [exportieren](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) Attribut, um die Auswahl anzugeben. Beispiel:
 
 ```csharp
 class Notifier : NSObject  {
@@ -623,13 +623,13 @@ Sie müssen nicht zu diesem Gedanken machen, wenn Visual Studio für Mac und Int
 
 Eine Kernkomponente von Objective-C-Programmierung ist Selektoren. Sie werden häufig über APIs stammen, die erfordern, dass Sie einen Selektor übergeben oder den Code So reagieren Sie auf einen Selektor erwartet.
 
-Erstellen neue Selektoren in c# ist sehr einfach: Sie erstellen Sie einfach eine neue Instanz der dem `ObjCRuntime.Selector` Klasse, und verwenden Sie das Ergebnis in einer beliebigen Stelle in der API, die dies erfordert. Zum Beispiel:
+Erstellen neue Selektoren in c# ist sehr einfach: Sie erstellen Sie einfach eine neue Instanz der dem `ObjCRuntime.Selector` Klasse, und verwenden Sie das Ergebnis in einer beliebigen Stelle in der API, die dies erfordert. Beispiel:
 
 ```csharp
 var selector_add = new Selector ("add:plus:");
 ```
 
-Für eine C#-Methode reagieren auf einen Anruf Selektor, müssen sie erbt von der `NSObject` Typ und die C#-Methode müssen mit dem Selektor Namen ergänzt werden die `[Export]` Attribut. Zum Beispiel:
+Für eine C#-Methode reagieren auf einen Anruf Selektor, müssen sie erbt von der `NSObject` Typ und die C#-Methode müssen mit dem Selektor Namen ergänzt werden die `[Export]` Attribut. Beispiel:
 
 ```csharp
 public class MyMath : NSObject {
@@ -693,7 +693,7 @@ Xamarin.iOS hat eine Garbage Collection, die kümmern wird für Sie Ressourcen f
 
 Verfügbarmachen der `IDisposable` Schnittstelle ist eine praktische Möglichkeit zur Unterstützung von Entwicklern in der Freigabe von Objekten, die große Speicherblöcke kapseln können (z. B. eine `UIImage` kann nur ein unverfänglichen Zeiger aussehen, aber zu einem Bild 2 MB zeigen werden konnte ) und andere wichtigen und begrenzten Ressourcen (z. B. ein video decodieren Puffer).
 
-NSObject implementiert die IDisposable-Schnittstelle und auch die [.NET Dispose-Muster](http://msdn.microsoft.com/en-us/library/fs2xkftw.aspx). Dadurch können Entwickler diese Unterklasse NSObject außer Kraft setzen das Dispose-Verhalten und ihre eigenen Ressourcen bei Bedarf freigeben. Betrachten Sie beispielsweise diese View-Controller, der um eine Reihe von Bildern bleibt:
+NSObject implementiert die IDisposable-Schnittstelle und auch die [.NET Dispose-Muster](http://msdn.microsoft.com/library/fs2xkftw.aspx). Dadurch können Entwickler diese Unterklasse NSObject außer Kraft setzen das Dispose-Verhalten und ihre eigenen Ressourcen bei Bedarf freigeben. Betrachten Sie beispielsweise diese View-Controller, der um eine Reihe von Bildern bleibt:
 
 ```csharp
 class MenuViewController : UIViewController {

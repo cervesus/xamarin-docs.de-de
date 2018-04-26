@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 2139be01b95a0a4287bba43b8a2ebad537ac7a4f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 087a20ea3b573595e6cbd2b40d77de649676391e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folder"></a>Wie kann ich IPA-Ausgabedateien in den TFS-Ablageordner kopieren?
 
@@ -41,13 +41,13 @@ ms.lasthandoff: 04/04/2018
 
 -   Dies ist das gleiche allgemeine Verfahren erläutert, die auf [kann ich den Ausgabepfad der Datei IPA-Datei ändern?](~/ios/troubleshooting/questions/ipa-output-path.md). Zwei wichtige Punkte sind festzulegende `$(TF_BUILD_BINARIESDIRECTORY)` als Zielordner, und fügen Sie daher eine zusätzliche Bedingung hinzu `CopyIpa` wird nur ausgeführt, für die TFS-builds.
 
--   Eine Beschreibung der `TF_BUILD_BINARIESDIRECTORY` finden Sie unter [ https://msdn.microsoft.com/en-us/library/hh850448.aspx ](https://msdn.microsoft.com/en-us/library/hh850448.aspx).
+-   Eine Beschreibung der `TF_BUILD_BINARIESDIRECTORY` finden Sie unter [ https://msdn.microsoft.com/library/hh850448.aspx ](https://msdn.microsoft.com/library/hh850448.aspx).
 
 ## <a name="additional-references"></a>Zusätzliche Referenzen
 
 - [Dokumentation zum Installieren von TFS für die Verwendung mit Xamarin](https://docs.microsoft.com/vsts/tfvc/overview)
-- [TFS-BuildTask: Xamarin.Android](https://docs.microsoft.com/en-us/vsts/build-release/tasks/build/xamarin-android)
-- [TFS-BuildTask: Xamarin.iOS](https://docs.microsoft.com/en-us/vsts/build-release/tasks/build/xamarin-ios)
+- [TFS-BuildTask: Xamarin.Android](https://docs.microsoft.com/vsts/build-release/tasks/build/xamarin-android)
+- [TFS-BuildTask: Xamarin.iOS](https://docs.microsoft.com/vsts/build-release/tasks/build/xamarin-ios)
 
 ### <a name="next-steps"></a>Nächste Schritte
 Dieses Dokument beschreibt das aktuelle Verhalten ab Xamarin 3.11.666 für Visual Studio und Xamarin.iOS 8.10.3 auf dem Mac Host erstellen. Für weitere Unterstützung zu erhalten, wenden Sie sich an uns, oder bleibt dieses Problem auch nach der Nutzung der oben angegebenen Informationen finden Sie unter [welche Supportoptionen für Xamarin verfügbar sind?](~/cross-platform/troubleshooting/support-options.md) Informationen zu Kontaktoptionen Vorschläge, sowie zur die Datei eines neuen Fehlers bei Bedarf. 

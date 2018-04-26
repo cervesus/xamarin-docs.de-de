@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: ae1300936a24ac1381496eaaf78aefb875bd5ed6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 33573d14d77f0582caca7d1e71b839563a3dd110
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="2d-math-with-cocossharp"></a>2D mathematischen Funktionen mit CocosSharp
 
@@ -264,7 +264,7 @@ Dieser Code führt zu folgendem Verhalten:
 
 `System.Math.Atan2` kann verwendet werden, um ein Offset in einen Winkel zu konvertieren. Der Funktionsname `Atan2` stammen aus den Arkustangens trigonometrische Funktion. Das Suffix "2" wird diese Funktion unterscheidet, vom Standard `Atan` -Funktion, die das mathematische Verhalten des Arkustangens streng entspricht. Arkustangens ist eine Funktion, die zwischen-90 und einen Wert zurückgibt und bis + 90 Grad (oder der entsprechende im Bogenmaß). Viele Clientanwendungen, einschließlich Spiele, erfordern häufig eine vollständige 360 Grad der Werte, sodass der `Math` Klasse enthält `Atan2` auf diese Anforderung zu erfüllen.
 
-Beachten Sie, dass der obige Code Y-Parameter zunächst den X-Parameter dann beim Aufrufen übergibt der `Atan2` Methode. Dies ist rückwärts von den üblichen X, Y Sortierung der Positionskoordinaten. Weitere Informationen [finden Sie unter Atan2 Dokumente](https://msdn.microsoft.com/en-us/library/system.math.atan2(v=vs.110).aspx).
+Beachten Sie, dass der obige Code Y-Parameter zunächst den X-Parameter dann beim Aufrufen übergibt der `Atan2` Methode. Dies ist rückwärts von den üblichen X, Y Sortierung der Positionskoordinaten. Weitere Informationen [finden Sie unter Atan2 Dokumente](https://msdn.microsoft.com/library/system.math.atan2(v=vs.110).aspx).
 
 Es ist auch Folgendes zu beachten, dass der Rückgabewert von `Atan2` wird im Bogenmaß, also von einer anderen Einheit verwendet, um den Winkel zu messen. Dieses Handbuch behandelt die Details der Bogenmaß nicht bietet, aber beachten Sie, alle trigonometrischen Funktionen in der `System.Math` Namespace verwenden von Radians, damit alle Werte in Grad konvertiert werden müssen, bevor Sie für CocosSharp Objekte verwendet werden. Weitere Informationen zu Bogenmaß verwendbaren [in Radiant Wikipedia-Seite](http://en.wikipedia.org/wiki/Radian).
 

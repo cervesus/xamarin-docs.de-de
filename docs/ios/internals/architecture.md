@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 930b52e5b2a532e71594f26af79035db2cc5fb25
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 85dc675a9b18b974f21532298e4d3028bdecd0b7
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ios-architecture"></a>iOS-Architektur
 
@@ -23,14 +23,14 @@ Das folgende Diagramm zeigt eine grundlegende Übersicht über diese Architektur
 
 ## <a name="native-and-managed-code-an-explanation"></a>Systemeigenen und verwalteten Code: eine Erklärung
 
-Bei der Entwicklung für Xamarin die Begriffe *systemeigenen und verwalteten* Code häufig verwendet werden. [Verwalteter Code](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/) ist Code, der die Ausführung von verwalteten der [.NET Framework Common Language Runtime](https://msdn.microsoft.com/en-us/library/8bs2ecf4(v=vs.110).aspx), oder in die Xamarin Fall: die Mono-Laufzeit. Dies ist die intermediate Language sogenannten.
+Bei der Entwicklung für Xamarin die Begriffe *systemeigenen und verwalteten* Code häufig verwendet werden. [Verwalteter Code](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/) ist Code, der die Ausführung von verwalteten der [.NET Framework Common Language Runtime](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx), oder in die Xamarin Fall: die Mono-Laufzeit. Dies ist die intermediate Language sogenannten.
 
 Systemeigener Code ist Code, der direkt auf die jeweilige Plattform (z. B. Objective-C oder sogar AOT kompilierten Code auf einem ARM-Chip) ausgeführt wird. Dieses Handbuch wird erklärt, wie AOT verwalteten Code in systemeigenen Code kompiliert, und es wird erläutert, wie eine Xamarin.iOS Anwendung funktioniert, vollständige nutzen und Apple iOS-APIs durch die Verwendung von Bindungen, während Sie auch eine Zugriff auf. NET BCL und eine anspruchsvolle Sprache wie z. B. c#.
 
 
 ## <a name="aot"></a>AOT
 
-Wenn Sie eine Xamarin-Plattform-Anwendung kompilieren, der Compiler Mono c# (oder f#) wird ausgeführt, und c# und F#-Code in Microsoft Intermediate Language (MSIL) kompiliert wird. Wenn Sie eine Xamarin.Android, eine Xamarin.Mac oder sogar einem Xamarin.iOS-Anwendung im Simulator Ausführen der [.NET Common Language Runtime (CLR)](https://msdn.microsoft.com/en-us/library/8bs2ecf4(v=vs.110).aspx) mithilfe einer Just-in-Time (JIT)-Compiler MSIL kompiliert. Zur Laufzeit, die diese in systemeigenen Code kompiliert wird, können die auf die richtige Architektur für Ihre Anwendung ausführen.
+Wenn Sie eine Xamarin-Plattform-Anwendung kompilieren, der Compiler Mono c# (oder f#) wird ausgeführt, und c# und F#-Code in Microsoft Intermediate Language (MSIL) kompiliert wird. Wenn Sie eine Xamarin.Android, eine Xamarin.Mac oder sogar einem Xamarin.iOS-Anwendung im Simulator Ausführen der [.NET Common Language Runtime (CLR)](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx) mithilfe einer Just-in-Time (JIT)-Compiler MSIL kompiliert. Zur Laufzeit, die diese in systemeigenen Code kompiliert wird, können die auf die richtige Architektur für Ihre Anwendung ausführen.
 
 Es ist jedoch eine sicherheitseinschränkung iOS, Festlegen von Apple, die die Ausführung von dynamisch generierten Code auf einem Gerät lässt nicht zu.
 Um sicherzustellen, dass wir diese Protokolle für Sicherheit folgen, verwendet Xamarin.iOS stattdessen einen im Voraus der Uhrzeit (AOT)-Compiler zum Kompilieren des verwalteten Codes. Dies führt zu einer systemeigenen iOS binäre, optional mit LLVM optimiert, bei Geräten, die auf der Apple-ARM-basierten Prozessor bereitgestellt werden können. Nachstehend ist ein grober Diagramm wie dies zusammenpasst dargestellt:
@@ -69,7 +69,7 @@ Der folgende Pseudocode zeigt ein Beispiel, wie dies funktioniert:
  }
 ```
 
-**Objective-C:**
+**Ziel-"c:"**
 
 ```objectivec
 @interface MyViewController : UIViewController { }

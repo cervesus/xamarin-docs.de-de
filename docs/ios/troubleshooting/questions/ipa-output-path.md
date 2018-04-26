@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 06074566b3d3a05e05a1646c70de211f908f3aa9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9c80a209279a2f032eb6c9efcba1398ca0e267a5
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="can-i-change-the-output-path-of-the-ipa-file"></a>Kann ich den Ausgabepfad der Datei IPA-Datei ändern?
 
@@ -44,7 +44,7 @@ Diese Schritte werden für alle iOS-Projekt arbeiten, die das Buildmodul MSBuild
 2. Legen Sie die DestinationFolder auf den gewünschten Ausgabeordner. Wie üblich können Sie MSBuild-Eigenschaften (z. B. $(OutputPath)) innerhalb dieses Argument, wenn Sie möchten.
 
 ## <a name="notes"></a>Hinweise
-- Die `CreateIpaDependsOn` Eigenschaft wird definiert, der `Xamarin.iOS.Common.targets` Datei, die Teil des Xamarin.iOS. Verhält sich wie beschrieben unter *überschreiben "DependsOn"-Eigenschaften* auf [ https://msdn.microsoft.com/en-us/library/ms366724.aspx ](https://msdn.microsoft.com/en-us/library/ms366724.aspx).
+- Die `CreateIpaDependsOn` Eigenschaft wird definiert, der `Xamarin.iOS.Common.targets` Datei, die Teil des Xamarin.iOS. Verhält sich wie beschrieben unter *überschreiben "DependsOn"-Eigenschaften* auf [ https://msdn.microsoft.com/library/ms366724.aspx ](https://msdn.microsoft.com/library/ms366724.aspx).
 
 - Können Sie eine **verschieben** Aufgabe anstelle eines **Kopie** Aufgabe, wenn Sie bevorzugte. Wenn Sie auswählen, dass die Option, und Sie werden unter Windows erstellen, müssen Sie den eine vollqualifizierte Vorgangsnamen verwenden `<Microsoft.Build.Tasks.Move>` zur Vermeidung eine Mehrdeutigkeit mit dem XamarinVS Buildaufgaben.
 
@@ -78,6 +78,6 @@ Diese Schritte werden für alle iOS-Projekt arbeiten, die das Buildmodul MSBuild
 2. Legen Sie die `DestinationFolder` in den gewünschten Ausgabeordner. Sie können MSBuild-Eigenschaften wie gewohnt verwenden (z. B. `$(OutputPath)`) innerhalb dieses Argument, wenn Sie möchten.
 
 ## <a name="notes"></a>Hinweise
-- Die `CreateIpaDependsOn` Eigenschaft wird definiert, der `Xamarin.iOS.Common.targets` Datei, die Teil des Xamarin.iOS. Verhält sich wie beschrieben unter *überschreiben "DependsOn"-Eigenschaften* auf [ https://msdn.microsoft.com/en-us/library/ms366724.aspx ](https://msdn.microsoft.com/en-us/library/ms366724.aspx).
+- Die `CreateIpaDependsOn` Eigenschaft wird definiert, der `Xamarin.iOS.Common.targets` Datei, die Teil des Xamarin.iOS. Verhält sich wie beschrieben unter *überschreiben "DependsOn"-Eigenschaften* auf [ https://msdn.microsoft.com/library/ms366724.aspx ](https://msdn.microsoft.com/library/ms366724.aspx).
 
 - Können Sie eine **verschieben** Aufgabe anstelle eines **Kopie** Aufgabe, wenn Sie bevorzugte. Wenn Sie auswählen, dass die Option, und Sie werden unter Windows erstellen, müssen Sie den eine vollqualifizierte Vorgangsnamen verwenden `<Microsoft.Build.Tasks.Move>` zur Vermeidung eine Mehrdeutigkeit mit dem XamarinVS Buildaufgaben.

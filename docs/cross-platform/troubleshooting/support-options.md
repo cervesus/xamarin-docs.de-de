@@ -6,11 +6,11 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: d8853da7d35752ef27bb23fce6d0db54540ed39d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 500b4c63131ab850b4b9d7c6a0aec49b313ec426
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>Welche Supportoptionen für Xamarin verfügbar sind?
 
@@ -22,7 +22,7 @@ Wie gezeigt auf die [Xamarin Supportseite](https://www.xamarin.com/support), sin
 |---|---|
 |"Was bedeutet dieser Fehler?" oder "Wie kann ich...?"|[Stapelüberlauf](http://stackoverflow.com/questions/ask?tags=xamarin) unter der *Xamarin* Tag|
 |Ich glauben, dass dieses Problem durch einen Fehler in die Xamarin-Quellcode verursacht wird.|[Xamarin Bugzilla](https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html)|
-|Ich habe eine Idee, Funktionsanfrage oder neue Dokumentation-Anforderung.|[Xamarin UserVoice page](https://xamarin.uservoice.com)|
+|Ich habe eine Idee, Funktionsanfrage oder neue Dokumentation-Anforderung.|[Xamarin UserVoice-Seite](https://xamarin.uservoice.com)|
 |Welche Ressourcen, Frameworks oder Tools empfehlen anderen Benutzern für...? (und andere offenen Diskussionen)|[Xamarin-Foren](https://forums.xamarin.com)|
 |Ich habe eine Frage zu den Abonnements, Lizenzierung und Preise.|Per e-Mail oder Telefon Kontaktinformationen über die [– häufig gestellte Fragen](https://www.xamarin.com/faq)|
 
@@ -32,7 +32,7 @@ Das Supportteam von Xamarin wird jede dieser Optionen zu überwachen.  Es wird e
 
 ### <a name="visual-studio-email-support-incidents-for-xamarin-topics"></a>Visual Studio-e-Mail-Supportfälle für Xamarin-Themen
 
-Xamarin-SDK und IDE-Features kommen für technischen Support Incidents im Rahmen des [Visual Studio-abonnentenvorteile](https://msdn.microsoft.com/subscriptions/bb266240) und [Microsoft Premier Support](https://www.microsoft.com/en-us/microsoftservices/support.aspx).  Dies entspricht sich mit den Richtlinien für andere Entwicklungsplattformen in Visual Studio, z. B. uwp- und ASP.NET.  Xamarin-Incidents gesendet, dass auf diese Weise an das Supportteam von Xamarin zugewiesen werden soll.  Finden Sie unter der [Microsoft Support FAQ](https://support.microsoft.com/gp/offerprophone) für Weitere Informationen zu den Richtlinien für diese Incidents.
+Xamarin-SDK und IDE-Features kommen für technischen Support Incidents im Rahmen des [Visual Studio-abonnentenvorteile](https://msdn.microsoft.com/subscriptions/bb266240) und [Microsoft Premier Support](https://www.microsoft.com/microsoftservices/support.aspx).  Dies entspricht sich mit den Richtlinien für andere Entwicklungsplattformen in Visual Studio, z. B. uwp- und ASP.NET.  Xamarin-Incidents gesendet, dass auf diese Weise an das Supportteam von Xamarin zugewiesen werden soll.  Finden Sie unter der [Microsoft Support FAQ](https://support.microsoft.com/gp/offerprophone) für Weitere Informationen zu den Richtlinien für diese Incidents.
 
 Für Xamarin Test Cloud Supportanfragen stellen übermittelt werden können, navigieren Sie zur die [Test Cloud-Anmeldeseite](https://testcloud.xamarin.com/login) und Öffnen der **unterstützen** Link.
 
@@ -46,7 +46,7 @@ Xamarin ist [nun ein Bestandteil von Visual Studio-Abonnements](https://blog.xam
 
 [Stellen Sie eine Frage Stapelüberlauf](http://stackoverflow.com/questions/ask?tags=xamarin) , aus der Community für häufige Fehler oder schwierige Implementierung Fragen für die Verwendung von API-Hilfe zu erhalten.  Schließen Sie unbedingt die _Xamarin_ auf die Frage zu kennzeichnen.  Siehe auch: [wie stellen Sie eine gute Frage?](http://stackoverflow.com/help/how-to-ask)
 
-#### <a name="additional-resources"></a>Zusätzliche Ressourcen
+#### <a name="additional-resources"></a>Weitere Ressourcen
 
 -   Überprüfen Sie [Xamarin Developer Center](/index.md) für Dokumentation, Anleitungen und Beispielen.
 -   Überprüfen Sie [Stack Overflow Dokumentation](http://stackoverflow.com/documentation) für Community bereitgestellte Beispielcode und erläuterungen zu.
@@ -58,7 +58,7 @@ Xamarin ist [nun ein Bestandteil von Visual Studio-Abonnements](https://blog.xam
 
 (Hinweis: Diese Empfehlung weiterhin weiterentwickelt wird, um sicherzustellen, dass neue Benutzer mit den besten Zugriff auf die Unterstützung für häufige Probleme während der ersten Installation verfügen.  Bleiben Sie dran für Updates.)
 
-#### <a name="additional-resources"></a>Zusätzliche Ressourcen
+#### <a name="additional-resources"></a>Weitere Ressourcen
 
 -   Überprüfen Sie die [Installationshandbüchern](~/cross-platform/get-started/installation/index.md) und [Systemanforderungen](~/cross-platform/get-started/requirements.md) um sicherzustellen, dass alle Pakete richtig installiert und kompatibel sind.
 
@@ -68,7 +68,7 @@ Xamarin ist [nun ein Bestandteil von Visual Studio-Abonnements](https://blog.xam
 
 (*Für Probleme, die nach dem Update stabile*: nicht in jedem Fall einen schnellen Fehlerbericht Datei, wenn ein Fehler, Installationsfehler oder anderes unerwartetes Verhalten auftreten nach dem Update auf eine neue stabile Version.  Diese Berichte sind sehr nützlich.  Of Course, Sie unbedingt die [Anmerkungen zu dieser Version](https://developer.xamarin.com/releases/) kurz für den Fall, dass das Problem, die Sie sehen möglicherweise eine absichtliche ändern oder ein bekanntes Problem.)
 
-#### <a name="additional-resources"></a>Zusätzliche Ressourcen
+#### <a name="additional-resources"></a>Weitere Ressourcen
 
 -   Wenn Sie ein Problem lokal gelöst haben durch das Erstellen einer benutzerdefinierten Lösung basierend auf [Xamarin open-Source-Entwicklungsprojekte](http://open.xamarin.com/), erwägen Sie, führen Sie eine pullanforderung zum Abrufen von Änderungen in Xamarin integriert senden!
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: feef0a4083d2455cc189ddab6ed22762c044d848
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 799ee198f776b963bb8779d71bacc322001e2882
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-portable-class-libraries"></a>Einführung in portablen Klassenbibliotheken
 
@@ -55,7 +55,7 @@ Dies umfasst Profile, die Kombinationen aus:
 -  Windows Phone 8
 -  UWP-Apps
 
-Erfahren Sie mehr über die verschiedenen Profile Funktionen auf [Microsoft Website](http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx) und finden Sie unter anderen Community Elements [PCL profilzusammenfassung](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY) inklusive der Framework-Informationen und andere Hinweise unterstützt.
+Erfahren Sie mehr über die verschiedenen Profile Funktionen auf [Microsoft Website](http://msdn.microsoft.com/library/gg597391(v=vs.110).aspx) und finden Sie unter anderen Community Elements [PCL profilzusammenfassung](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY) inklusive der Framework-Informationen und andere Hinweise unterstützt.
 
 
 
@@ -371,7 +371,7 @@ Die restliche den gemeinsam verwendeten Code verwendet die abstrakte Klasse, um 
 
 
 
-### <a name="taskyandroid-and-taskyios"></a>TaskyAndroid and TaskyiOS
+### <a name="taskyandroid-and-taskyios"></a>TaskyAndroid und TaskyiOS
 
 
 IOS- und Android-Anwendungsprojekten enthalten die Benutzeroberfläche und andere plattformspezifischen Code verwendet, um den gemeinsam verwendeten Code in der PCL anschließen.
@@ -429,4 +429,4 @@ In diesem Artikel kurz erläutert, die vor- und Nachteile von portablen Klassenb
 - [Portable Visual Basic](~/cross-platform/platform/visual-basic/index.md)
 - [Freigegebene Projekte](~/cross-platform/app-fundamentals/shared-projects.md)
 - [Optionen für die Codefreigabe](~/cross-platform/app-fundamentals/code-sharing.md)
-- [Plattformübergreifende Entwicklung mit .NET Framework (Microsoft)](http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx)
+- [Plattformübergreifende Entwicklung mit .NET Framework (Microsoft)](http://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)
