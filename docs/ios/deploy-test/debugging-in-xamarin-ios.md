@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8848dd20683163cd42215fe496dd7ff6a9e9f0c7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e2e32170de258f46eb5a926db35bce33c0ca64de
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="debugging"></a>Debuggen
 
@@ -164,7 +164,7 @@ Diese lauten wie folgt:
 - **Einzelschritt (F10)**: Dadurch wird ebenfalls die nächste Codezeile ausgeführt. Wenn die nächste Zeile ein Funktionsaufruf ist, wird der Einzelschritt in der ersten Zeile der Funktion anhalten, wodurch Sie die Funktion dann Zeile für Zeile debuggen können. Wenn die nächste Zeile keine Funktion ist, funktioniert diese Schaltfläche genauso wie der Prozedurschritt.
 - **Rücksprung (Umschalttaste + F11)**: Dadurch wird zu der Zeile zurückgekehrt, in der die aktuelle Funktion aufgerufen wurde.
 
-Detailliertere Dokumentationen zum Debuggen finden Sie unter [Navigate Code with the Visual Studio Debugger (Navigieren durch den Code mit dem Visual Studio Debugger)](https://docs.microsoft.com/en-us/visualstudio/debugger/navigating-through-code-with-the-debugger).
+Detailliertere Dokumentationen zum Debuggen finden Sie unter [Navigate Code with the Visual Studio Debugger (Navigieren durch den Code mit dem Visual Studio Debugger)](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger).
 
 -----
 

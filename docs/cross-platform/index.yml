@@ -5,13 +5,13 @@ metadata:
   description: Plattformübergreifender Leitfaden für mobile Entwickler.
   author: conceptdev
   ms.author: crdun
-  ms.date: 03/28/2018
+  ms.date: 04/25/2018
   ms.topic: landing-page
-  ms.openlocfilehash: 92873a844fad195d221f6d191476cb5ff17c76e9
-  ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+  ms.openlocfilehash: 51ca9ee767acf453b252a967e0bbcd083c52ce20
+  ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 04/03/2018
+  ms.lasthandoff: 04/26/2018
 abstract:
   description: Xamarin bietet eine Plattform für die plattformübergreifende Entwicklung für mobile, Tablet- und Desktopanwendungen.
   menu:
@@ -44,48 +44,40 @@ sections:
       href: ~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md
 - title: Führungslinien
   items:
-  - type: grid
-    style: columns
-    className: column50
+  - type: list
+    style: cards
+    className: cardsB
     items:
-    - type: list
-      style: cards
-      className: cardsB
-      items:
-      - href: ~/cross-platform/get-started/index.md
-        html: Tutorials für die ersten Schritte mit Xamarin. Stellen Sie sicher, dass alles korrekt installiert ist, und erstellen Sie Ihre ersten Apps.
-        image:
-          src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
-          href: ~/cross-platform/get-started/index.md
-        title: Erste Schritte
-      - href: ~/cross-platform/platform
-        html: Arbeiten mit Plattformfeatures.
-        image:
-          src: ~/media/icons/i_platform.svg
-          href: ~/
-        title: Plattformfeatures
-      - href: ~/cross-platform/macios/
-        html: Allgemeine Features der iOS, watchOS, tvOS und macOS SDKs.
-        image:
-          src: https://docs.microsoft.com/media/logos/logo_xcode.svg
-          href: ~/cross-platform/macios/
-        title: Apple-Plattform (Mac und iOS)
-    - type: list
-      style: cards
-      className: cardsB
-      items:
-      - href: ~/cross-platform/app-fundamentals/
-        html: Alles, was Sie wissen müssen, um Apps zu erstellen.
-        image:
-          src: ~/media/icons/i_app-build.svg
-          href: ~/cross-platform/app-fundamentals/
-        title: Application Fundamentals (Anwendungsgrundlagen)
-      - href: ~/cross-platform/deploy-test/
-        html: Anweisungen zum Erstellen und Bereitstellen Ihrer Apps und Tipps, um sie vorab zu testen!
-        image:
-          src: ~/media/icons/i_deploy-test.svg
-          href: ~/cross-platform/deploy-test/
-        title: Bereitstellung und Testen
+    - href: ~/cross-platform/get-started/index.md
+      html: Tutorials für die ersten Schritte mit Xamarin. Stellen Sie sicher, dass alles korrekt installiert ist, und erstellen Sie Ihre ersten Apps.
+      image:
+        src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
+        href: ~/cross-platform/get-started/index.md
+      title: Erste Schritte
+    - href: ~/cross-platform/app-fundamentals/
+      html: Alles, was Sie wissen müssen, um Apps zu erstellen.
+      image:
+        src: ~/media/icons/i_app-build.svg
+        href: ~/cross-platform/app-fundamentals/
+      title: Application Fundamentals (Anwendungsgrundlagen)
+    - href: ~/cross-platform/platform
+      html: Arbeiten mit Plattformfeatures.
+      image:
+        src: ~/media/icons/i_platform.svg
+        href: ~/
+      title: Plattformfeatures
+    - href: ~/cross-platform/deploy-test/
+      html: Anweisungen zum Erstellen und Bereitstellen Ihrer Apps und Tipps, um sie vorab zu testen!
+      image:
+        src: ~/media/icons/i_deploy-test.svg
+        href: ~/cross-platform/deploy-test/
+      title: Bereitstellung und Testen
+    - href: ~/cross-platform/macios/
+      html: Allgemeine Features der iOS, watchOS, tvOS und macOS SDKs.
+      image:
+        src: https://docs.microsoft.com/media/logos/logo_xcode.svg
+        href: ~/cross-platform/macios/
+      title: Apple-Plattform (Mac und iOS)
 - title: Plattformen
   items:
   - type: list
