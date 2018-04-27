@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/16/2016
 ms.openlocfilehash: f851c1ca241be9e3c94a70b1f63135a46575d471
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="adding-a-universal-windows-platform-uwp-app"></a>Hinzufügen einer universellen Windows-Plattform (UWP)-App
 
@@ -25,25 +25,25 @@ Universelle Windows-Plattform ist in Xamarin.Forms 2.1 und höher verfügbar und
 
 So fügen Sie einer uwp-app hinzu, die auf Windows 10-Smartphones, Tablets und Desktops ausgeführt wird, gehen Sie wie folgt vor:
 
- 1 . Mit der rechten Maustaste auf die Projektmappe, und wählen Sie **hinzufügen > Neues Projekt...**  und Hinzufügen einer **leere App (universelle Windows)** Projekt:
+ 1. Mit der rechten Maustaste auf die Projektmappe, und wählen Sie **hinzufügen > Neues Projekt...**  und Hinzufügen einer **leere App (universelle Windows)** Projekt:
 
   ![](universal-images/add-wu.png "Dialogfeld "Neues Projekt" hinzufügen")
 
- 2 . In der **neue universelle Windows-Plattform-Projekt** Dialogfeld wählen die Minimum und Ziel-Versionen von Windows 10, unter dem die app ausgeführt wird:
+ 2. In der **neue universelle Windows-Plattform-Projekt** Dialogfeld wählen die Minimum und Ziel-Versionen von Windows 10, unter dem die app ausgeführt wird:
 
   ![](universal-images/target-version.png "Dialogfeld "Neues universelle Windows Plattform-Projekt"")
 
- 3 . Mit der rechten Maustaste auf das uwp-Projekt, und wählen Sie **NuGet-Pakete verwalten...**  und Hinzufügen der **Xamarin.Forms** Paket. Stellen Sie sicher, dass auf die gleiche Version des Pakets Xamarin.Forms auch andere Projekte in der Lösung aktualisiert wurden.
+ 3. Mit der rechten Maustaste auf das uwp-Projekt, und wählen Sie **NuGet-Pakete verwalten...**  und Hinzufügen der **Xamarin.Forms** Paket. Stellen Sie sicher, dass auf die gleiche Version des Pakets Xamarin.Forms auch andere Projekte in der Lösung aktualisiert wurden.
 
- 4 . Stellen Sie sicher, dass das neue uwp-Projekt erstellt werden der **erstellen > Configuration Manager** Fenster (dies wahrscheinlich wird nicht Volumenamen standardmäßig). Tick der **erstellen** und **bereitstellen** Felder für das universelle Projekt:
+ 4. Stellen Sie sicher, dass das neue uwp-Projekt erstellt werden der **erstellen > Configuration Manager** Fenster (dies wahrscheinlich wird nicht Volumenamen standardmäßig). Tick der **erstellen** und **bereitstellen** Felder für das universelle Projekt:
 
   [![](universal-images/configuration-sml.png "Fenster "Konfigurations-Manager"")](universal-images/configuration.png#lightbox "Fenster "Konfigurations-Manager"")
 
- 5 . Mit der rechten Maustaste auf das Projekt, und wählen **hinzufügen > Verweis** , und erstellen Sie einen Verweis auf das Anwendungsprojekt Xamarin.Forms (PCL, .NET Standard oder freigegebenes Projekt).
+ 5. Mit der rechten Maustaste auf das Projekt, und wählen **hinzufügen > Verweis** , und erstellen Sie einen Verweis auf das Anwendungsprojekt Xamarin.Forms (PCL, .NET Standard oder freigegebenes Projekt).
 
   ![](universal-images/addref-sml.png "Dialogfeld "Verweis-Manager"")
 
- 6 . Bearbeiten Sie im uwp-Projekt **App.xaml.cs** einschließen der `Init` Methodenaufruf innerhalb der `OnLaunched` Methode um Linie 52:
+ 6. Bearbeiten Sie im uwp-Projekt **App.xaml.cs** einschließen der `Init` Methodenaufruf innerhalb der `OnLaunched` Methode um Linie 52:
 
 ```csharp
 // under this line
@@ -52,15 +52,15 @@ rootFrame.NavigationFailed += OnNavigationFailed;
 Xamarin.Forms.Forms.Init (e); // requires the `e` parameter
 ```
 
- 7 . Bearbeiten Sie im uwp-Projekt **"MainPage.xaml"** durch das Entfernen der `Grid` enthaltenen der `Page` Element.
+ 7. Bearbeiten Sie im uwp-Projekt **"MainPage.xaml"** durch das Entfernen der `Grid` enthaltenen der `Page` Element.
 
- 8 . In **"MainPage.xaml"**, fügen Sie einen neuen `xmlns` Eintrag für `Xamarin.Forms.Platform.UWP`:
+ 8. In **"MainPage.xaml"**, fügen Sie einen neuen `xmlns` Eintrag für `Xamarin.Forms.Platform.UWP`:
 
 ```csharp
 xmlns:forms="using:Xamarin.Forms.Platform.UWP"
 ```
 
- 9 . In **"MainPage.xaml"**, ändern Sie den Stamm `<Page` Element `<forms:WindowsPage`:
+ 9. In **"MainPage.xaml"**, ändern Sie den Stamm `<Page` Element `<forms:WindowsPage`:
 
 ```xaml
 <forms:WindowsPage
@@ -70,13 +70,13 @@ xmlns:forms="using:Xamarin.Forms.Platform.UWP"
 </forms:WindowsPage>
 ```
 
- 10 . In uwp-Projekt bearbeiten **"MainPage.Xaml.cs"** So entfernen Sie die `: Page` Vererbung Spezifizierer nach dem Klassennamen (da es nun erbt, `WindowsPage` aufgrund der Änderung, die im vorherigen Schritt):
+ 10. In uwp-Projekt bearbeiten **"MainPage.Xaml.cs"** So entfernen Sie die `: Page` Vererbung Spezifizierer nach dem Klassennamen (da es nun erbt, `WindowsPage` aufgrund der Änderung, die im vorherigen Schritt):
 
 ```csharp
 public sealed partial class MainPage  // REMOVE ": Page"
 ```
 
- 11 . In **"MainPage.Xaml.cs"**, Hinzufügen der `LoadApplication` rufen Sie in der `MainPage` Konstruktor, um die Xamarin.Forms-app zu starten:
+ 11. In **"MainPage.Xaml.cs"**, Hinzufügen der `LoadApplication` rufen Sie in der `MainPage` Konstruktor, um die Xamarin.Forms-app zu starten:
 
 ```csharp
 // below this existing line
@@ -95,7 +95,7 @@ LoadApplication(new YOUR_NAMESPACE.App());
   * Location
 -->
 
-12 . Fügen Sie alle lokalen Ressourcen (z. b. Bilddateien) aus den vorhandenen plattformprojekten, die erforderlich sind.
+12. Fügen Sie alle lokalen Ressourcen (z. b. Bilddateien) aus den vorhandenen plattformprojekten, die erforderlich sind.
 
 <a name="troubleshooting" />
 

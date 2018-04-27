@@ -7,10 +7,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/16/2016
 ms.openlocfilehash: 0d2ef44896c9352776443c2fec318d40d27d7539
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="adding-a-windows-app"></a>Hinzufügen einer Windows-App
 
@@ -34,7 +34,7 @@ Xamarin.Forms.Forms.Init (e); // requires LaunchActivatedEventArgs
 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated) {}
 ```
 
- 5 . Bearbeiten Sie **"MainPage.xaml"** -ändern Sie das Stammelement `<Page` zu `<forms:WindowsPage` *und* definieren die `xmlns:forms` , die verwendet werden:
+ 5. Bearbeiten Sie **"MainPage.xaml"** -ändern Sie das Stammelement `<Page` zu `<forms:WindowsPage` *und* definieren die `xmlns:forms` , die verwendet werden:
 
 ```xaml
 <forms:WindowsPage
@@ -45,13 +45,13 @@ if (e.PreviousExecutionState == ApplicationExecutionState.Terminated) {}
 ```
 
 
- 6 . Bearbeiten Sie **"MainPage.Xaml.cs"** So entfernen Sie die `: Page` Vererbung Spezifizierer für Name der Klasse.
+ 6. Bearbeiten Sie **"MainPage.Xaml.cs"** So entfernen Sie die `: Page` Vererbung Spezifizierer für Name der Klasse.
 
 ```csharp
 public sealed partial class MainPage  // REMOVE ": Page"
 ```
 
- 7 . Noch im **"MainPage.Xaml.cs"**, Hinzufügen der `LoadApplication` rufen Sie in der `MainPage` Konstruktor (in der Nähe der Zeile 28) um die Xamarin.Forms-app zu starten:
+ 7. Noch im **"MainPage.Xaml.cs"**, Hinzufügen der `LoadApplication` rufen Sie in der `MainPage` Konstruktor (in der Nähe der Zeile 28) um die Xamarin.Forms-app zu starten:
 
 ```csharp
 // below this existing line
@@ -60,12 +60,12 @@ this.InitializeComponent();
 LoadApplication(new YOUR_NAMESPACE.App());
 ```
 
-8 . Doppelklicken Sie auf **"Package.appxmanifest"** diese Funktionen festlegen, die häufig erforderlich sind:
+8. Doppelklicken Sie auf **"Package.appxmanifest"** diese Funktionen festlegen, die häufig erforderlich sind:
 
   Legen Sie die Funktionen:
 
   * Internet (Client)
   * Speicherort
 
-9 . Fügen Sie schließlich alle lokalen Ressourcen (z. b. Bilddateien) aus den vorhandenen plattformprojekten, die erforderlich sind.
+9. Fügen Sie schließlich alle lokalen Ressourcen (z. b. Bilddateien) aus den vorhandenen plattformprojekten, die erforderlich sind.
 
