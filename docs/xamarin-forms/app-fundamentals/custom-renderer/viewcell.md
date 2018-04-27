@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 3e5f4f2d4c4025cce21026cc611af650616e69e2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4d1d4323e42df6240fee7be42ae8fac70a2b3f1f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-viewcell"></a>Anpassen einer ViewCell
 
 _Eine Xamarin.Forms-ViewCell ist eine Zelle, die hinzugefügt werden kann, eine ListView oder TableView, die eine Entwickler benutzerdefinierte Sicht enthält. In diesem Artikel veranschaulicht, wie einen benutzerdefinierten Renderer für eine ViewCell, die in einem Xamarin.Forms ListView-Steuerelement gehostet wird. Dies beendet die Xamarin.Forms-Layout-Berechnungen nicht während des Bildlaufs ListView wiederholt aufgerufen._
 
-Jede Zelle Xamarin.Forms verfügt über eine begleitende Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Wenn eine [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) einer Xamarin.Forms-Anwendung in iOS gerendert wird die `ViewCellRenderer` Klasse instanziiert, die instanziiert wiederum ein systemeigenes `UITableViewCell` Steuerelement. Auf der Android-Plattform die `ViewCellRenderer` Klasse instanziiert ein systemeigenes `View` Steuerelement. Auf Windows Phone und die universelle Windows-Plattform (UWP) die `ViewCellRenderer` Klasse instanziiert ein systemeigenes `DataTemplate`. Weitere Informationen zu den Renderer und systemeigene Steuerelementklassen, die Xamarin.Forms-Steuerelemente zuordnen, finden Sie unter [Renderer-Basisklassen und systemeigenen Steuerelementen](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Jede Zelle Xamarin.Forms verfügt über eine begleitende Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Wenn eine [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) einer Xamarin.Forms-Anwendung in iOS gerendert wird die `ViewCellRenderer` Klasse instanziiert, die instanziiert wiederum ein systemeigenes `UITableViewCell` Steuerelement. Auf der Android-Plattform die `ViewCellRenderer` Klasse instanziiert ein systemeigenes `View` Steuerelement. Auf die universelle Windows-Plattform (UWP), die `ViewCellRenderer` Klasse instanziiert ein systemeigenes `DataTemplate`. Weitere Informationen zu den Renderer und systemeigene Steuerelementklassen, die Xamarin.Forms-Steuerelemente zuordnen, finden Sie unter [Renderer-Basisklassen und systemeigenen Steuerelementen](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Das folgende Diagramm veranschaulicht die Beziehung zwischen der [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) und das entsprechende systemeigene Steuerelemente, die ihn implementieren:
 
@@ -169,7 +169,7 @@ Die `NativeCell` plattformspezifischen, alle abgeleiteten Renderingklassen benut
 
 ![](viewcell-images/screenshots.png "NativeCell auf jeder Plattform")
 
-Die `ViewCellRenderer` -Klasse macht Clientplattform-spezifische Methoden zum Rendern der benutzerdefinierten Zelle. Dies ist die `GetCell` Methode für die iOS-Plattform, die `GetCellCore` Methode für die Android-Plattform und die `GetTemplate` Methode auf der Windows Phone-Plattform.
+Die `ViewCellRenderer` -Klasse macht Clientplattform-spezifische Methoden zum Rendern der benutzerdefinierten Zelle. Dies ist die `GetCell` Methode für die iOS-Plattform, die `GetCellCore` Methode für die Android-Plattform und die `GetTemplate` Methode für die universelle Windows-Plattform.
 
 Jede Klasse benutzerdefinierter Renderer mit ergänzt wird ein `ExportRenderer` -Attribut, das den Renderer mit Xamarin.Forms registriert. Das Attribut nimmt zwei Parameter: der Typname der Zelle Xamarin.Forms gerendert wird, und der Typname der benutzerdefinierten Renderer. Die `assembly` Präfix für das Attribut gibt an, dass das Attribut für die gesamte Assembly angewendet wird.
 
@@ -519,15 +519,15 @@ Im folgenden Codebeispiel wird veranschaulicht, die Layoutdefinition für die `N
 
 Dieses Layout gibt an, dass zwei `TextView` Steuerelemente und ein `ImageView` Steuerelement werden verwendet, um den Inhalt der Zelle angezeigt. Die beiden `TextView` Steuerelemente sind vertikal ausgerichtet, innerhalb einer `LinearLayout` Steuerelement alle Steuerelemente, die eigenständig sind innerhalb einer `RelativeLayout`.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Erstellen von benutzerdefinierten Renderers für Windows Phone und universelle Windows-Plattform
+### <a name="creating-the-custom-renderer-on-uwp"></a>Erstellen von benutzerdefinierten Renderers für universelle Windows-Plattform
 
-Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für Windows Phone-und uwp:
+Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für universelle Windows-Plattform:
 
 ```csharp
-[assembly: ExportRenderer(typeof(NativeCell), typeof(NativeWinPhoneCellRenderer))]
-namespace CustomRenderer.WinPhone81
+[assembly: ExportRenderer(typeof(NativeCell), typeof(NativeUWPCellRenderer))]
+namespace CustomRenderer.UWP
 {
-    public class NativeWinPhoneCellRenderer : ViewCellRenderer
+    public class NativeUWPCellRenderer : ViewCellRenderer
     {
         public override Windows.UI.Xaml.DataTemplate GetTemplate(Cell cell)
         {

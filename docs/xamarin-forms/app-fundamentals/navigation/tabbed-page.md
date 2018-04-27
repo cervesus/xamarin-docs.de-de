@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 11287d38ec0e01e068ca385c92e6a6efdc323aeb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4210f672cdc68acc45b1f547dcc2e6933298df93
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="tabbed-page"></a>Seite im Registerformat
 
@@ -39,7 +39,6 @@ Das Layout einer [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin
     > [!NOTE]
   > Beachten Sie, dass bei Verwendung von AppCompat für Android jede Registerkarte auch ein Symbol angezeigt wird. Darüber hinaus die `TabbedPageRenderer` für Android AppCompat eine überschreibbare hat `SetTabIcon` -Methode, die verwendet werden kann, aus einer benutzerdefinierten Registerkarte Symbole laden `Drawable`. Diese Außerkraftsetzung macht das SVG-Bilder als Symbole verwenden, auf eine `TabbedPage`.
 
-- Klicken Sie auf Windows Phone-Registerkarten am oberen Rand des Bildschirms aufgeführt und Detailbereich unterschreitet. Die Registerkarte, die Namen in Kleinbuchstaben, und der Benutzer automatisch konvertiert werden kann die Auflistung der Registerkarten einen Bildlauf durchführen, wenn zu viele auf einem Bildschirm passt.
 - Nicht im Windows-Tablet-Formfaktoren arbeiten, die Registerkarten sind immer sichtbar, und Benutzer müssen Wischen Sie (oder mit der rechten Maustaste, wenn sie eine Maus angefügt haben) zum Anzeigen von Registerkarten in einem `TabbedPage` (wie unten gezeigt).
 
 ![](tabbed-page-images/windows-tabs.png "TabbedPage Registerkarten unter Windows")
@@ -251,6 +250,6 @@ Dieser Artikel veranschaulicht, wie eine TabbedPage zu verwenden, um durch eine 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Seite "-Varianten](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
-- [TabbedPageWithNavigationPage (sample)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TabbedPageWithNavigationPage)
+- [TabbedPageWithNavigationPage (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TabbedPageWithNavigationPage)
 - [TabbedPage (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TabbedPage/)
 - [TabbedPage](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)

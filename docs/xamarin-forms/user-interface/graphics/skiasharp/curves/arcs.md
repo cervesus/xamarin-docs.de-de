@@ -7,11 +7,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: c6fd0f905aceb9dddc4047abc6ad2722adf2d8e9
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: aba193ca38d60db52298fdf239d936310a4ac193
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Drei Möglichkeiten, einen Bogen gezeichnet werden soll.
 
@@ -106,7 +106,7 @@ Dieser Ansatz zum Generieren von einen Bogen algorithmisch am einfachsten ist, u
 
 X = Ellipse. MidX + (Ellipse. Breite / 2) * cos(angle)
 
-y = oval.MidY + (oval.Height / 2) * sin(angle)
+y = Ellipse. MidY + (Ellipse. Höhe / 2) * sin(angle)
 
 Die `angle` Wert lautet entweder `startAngle` oder `startAngle + sweepAngle`.
 
@@ -415,8 +415,6 @@ So sieht die **Tangens Bogen** Seite, die auf allen drei Plattformen ausgeführt
 
 [![](arcs-images/tangentarc-small.png "Dreifacher Screenshot der Seite Tangens Bogen")](arcs-images/tangentarc-large.png#lightbox "dreifacher Screenshot der Seite Tangens Bogen")
 
-Auf Windows Mobile-Gerät die drei Punkte sind fast kollineare und der Bogen ist sehr klein.
-
 Der Tangente Bogen ist ideal zum Erstellen von abgerundeten Ecken, z. B. ein abgerundetes Rechteck. Da `SKPath` enthält bereits ein `AddRoundedRect` -Methode, die **gerundet Siebeneck** Seite veranschaulicht, wie `ArcTo` für die Rundung der Ecken eines Polygons sieben Seiten. (Der Code ist für alle regulären Polygon verallgemeinert.)
 
 Die `PaintSurface` Handler, der die [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) Klasse enthält mindestens eine `for` Schleife, um die Koordinaten der sieben Scheitelpunkte des der Siebeneck und ein zweites zum Berechnen der Mittelpunkte sieben Seiten aus diesen zu berechnen Scheitelpunkte. Diese Mittelpunkte werden dann verwendet, um den Pfad zu erstellen:
@@ -605,7 +603,7 @@ Der Radius des Kreises ist 100 Einheiten, und Hypotenuse des Dreiecks 150 Einhei
 
 Mithilfe dieser Informationen können dann die Koordinaten des Punkts Tangenten berechnet werden:
 
-x = 112·cos(41.8) = 83
+X = 112·cos(41.8) = 83
 
 y = 112·sin(41.8) = 75
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: b9a5e7c15fd1105a9ca4661ff38e4eb2c92dd10f
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 24bf7bd7fb2aa51968a96bdbf808030604665c26
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Linien und Strich Caps
 
@@ -235,7 +235,7 @@ Das iPhone auf der linken zeigt wie die `SKPointMode.Points` bewirkt, dass Enume
 
 Wenn Sie stattdessen `SKPointMode.Lines`, wie auf dem Android Bildschirm in der Mitte dargestellt die `DrawPoints` Methode zeichnet eine verbindende Linie zwischen jedem Paar von `SKPoint` Werte, die Abdeckung angegebene Zeile in diesem Fall mit `Round`.
 
-Das Windows mobile-Gerät zeigt das Ergebnis der `SKPointMode.Polygon` Wert. Wird eine Linie zwischen den aufeinanderfolgenden Punkten im Array, aber wenn Sie sehr genau hinsehen, sehen Sie, dass diese Zeilen nicht miteinander verbunden sind. Jede dieser separaten Zeilen beginnt und endet mit dem angegebenen Linienende. Bei Auswahl der `Round` Caps, scheinen die Zeilen verbunden sein, aber sie eigentlich nicht verbunden.
+Die UWP-Screenshot zeigt das Ergebnis der `SKPointMode.Polygon` Wert. Wird eine Linie zwischen den aufeinanderfolgenden Punkten im Array, aber wenn Sie sehr genau hinsehen, sehen Sie, dass diese Zeilen nicht miteinander verbunden sind. Jede dieser separaten Zeilen beginnt und endet mit dem angegebenen Linienende. Bei Auswahl der `Round` Caps, scheinen die Zeilen verbunden sein, aber sie eigentlich nicht verbunden.
 
 Ob Zeilen sind oder nicht verbunden ist ein wesentlicher Aspekt der Arbeit mit Grafikpfade.
 

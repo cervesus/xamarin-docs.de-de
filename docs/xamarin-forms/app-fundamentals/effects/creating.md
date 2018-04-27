@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 773636cf879439477a6f71e44f13ae66b8f10ea8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6138bd1f9211248b3a260795c2ef9d3db87580be
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="creating-an-effect"></a>Erstellen eines Effekts
 
@@ -43,7 +43,7 @@ Ein [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) con
 
 Die folgenden Abschnitte beschreiben die Clientplattform-spezifische Implementierung der `FocusEffect` Klasse.
 
-## <a name="ios-project"></a>iOS Project
+## <a name="ios-project"></a>iOS-Projekt
 
 Das folgende Codebeispiel zeigt die `FocusEffect` Implementierung für das iOS-Projekt:
 
@@ -96,7 +96,7 @@ Die `OnAttached` Methode legt die `BackgroundColor` Eigenschaft des Steuerelemen
 
 Die `OnElementPropertyChanged` Außerkraftsetzung antwortet mit bindbare eigenschaftenänderungen auf das Xamarin.Forms-Steuerelement. Wenn die [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/) eigenschaftenänderungen, die `BackgroundColor` -Eigenschaft des Steuerelements in Weiß geändert wird, wenn das Steuerelement den Fokus besitzt, andernfalls wird er in Violett hell geändert. Diese Funktion umschlossen ist ein `try` / `catch` für den Fall, dass das Steuerelement, das der Effekt angefügt ist keine Sperren ein `BackgroundColor` Eigenschaft.
 
-## <a name="android-project"></a>Android Project
+## <a name="android-project"></a>Android-Projekt
 
 Das folgende Codebeispiel zeigt die `FocusEffect` Implementierung für das Android-Projekt:
 
@@ -150,17 +150,17 @@ Die `OnAttached` Methodenaufrufe der `SetBackgroundColor` Methode zum Festlegen 
 
 Die `OnElementPropertyChanged` Außerkraftsetzung antwortet mit bindbare eigenschaftenänderungen auf das Xamarin.Forms-Steuerelement. Wenn die [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/) eigenschaftenänderungen, die Hintergrundfarbe des Steuerelements Weiß geändert wird, wenn das Steuerelement den Fokus besitzt, andernfalls wird es in Grün geändert. Diese Funktion umschlossen ist ein `try` / `catch` für den Fall, dass das Steuerelement, das der Effekt angefügt ist keine Sperren ein `BackgroundColor` Eigenschaft.
 
-## <a name="windows-phone--universal-windows-platform-projects"></a>Windows Phone & universelle Windows-Plattformprojekten
+## <a name="universal-windows-platform-projects"></a>Universelle Windows-Plattformprojekten
 
-Das folgende Codebeispiel zeigt die `FocusEffect` Implementierung für die Projekte für Windows Phone und universelle Windows-Plattform (UWP):
+Das folgende Codebeispiel zeigt die `FocusEffect` Implementierung für Projekte der universellen Windows-Plattform (UWP):
 
 ```csharp
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.WinRT;
+using Xamarin.Forms.Platform.UWP;
 
 [assembly: ResolutionGroupName("MyCompany")]
 [assembly: ExportEffect(typeof(FocusEffect), "FocusEffect")]
-namespace EffectsDemo.WinPhone81
+namespace EffectsDemo.UWP
 {
     public class FocusEffect : PlatformEffect
     {

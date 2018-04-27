@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: afaf0c702cdba1ba9c5d2c9d158501c50501f910
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3fc5b24474230fd2b2477f020ac24cd72996d7b1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
@@ -47,7 +47,7 @@ Das Layout einer [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xam
 
 - Bei iOS kann eine Navigationsleiste am oberen Rand der Seite, die einen Titel anzeigt und dessen, vorhanden ist eine *wieder* Schaltfläche, die zur vorherigen Seite zurückgibt.
 - Auf Android-Geräten eine Navigationsleiste am oberen Rand der Seite, einen Titel, ein Symbol anzeigt, vorhanden ist und ein *wieder* Schaltfläche, die zur vorherigen Seite zurückgibt. Das Symbol wird definiert, der `[Activity]` -Attribut, das ergänzt die `MainActivity` Klasse im Android plattformspezifische Projekt.
-- Auf Windows Phone existiert eine Navigationsleiste am oberen Rand der Seite, die einen "Titel" anzeigt. Windows Phone verfügt nicht über die *wieder* Schaltfläche auf der Navigationsleiste, da eine auf dem Bildschirm *wieder* Schaltfläche am unteren Rand des Bildschirms vorhanden ist.
+- Klicken Sie auf die universelle Windows-Plattform existiert eine Navigationsleiste am oberen Rand der Seite, die einen "Titel" anzeigt. 
 
 Auf allen Plattformen, den Wert der [ `Page.Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) Eigenschaft wird als Titel der Seite angezeigt.
 

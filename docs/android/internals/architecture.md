@@ -5,12 +5,12 @@ ms.assetid: 7DC22A08-808A-DC0C-B331-2794DD1F9229
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: f4be88a1eabb3fa3cca733690a3f097a03516272
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 9ce1d790f5dea00ac47d5639ae8424793006445a
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="architecture"></a>Architektur
 
@@ -103,11 +103,11 @@ Die Reihenfolge der Ereignisse:
 
 5.  *monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* invokes *LogTextBox.n_getDefaultMovementMethod()* , which invokes *TextView.n_GetDefaultMovementMethod()* , which invokes [Java.Lang.Object.GetObject&lt;TextView&gt; (handle, JniHandleOwnership.DoNotTransfer)](https://developer.xamarin.com/api/member/Java.Lang.Object.GetObject%7BT%7D/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) .
 
-6.  *Java.Lang.Object.GetObject&lt;TextView&gt;()* checks to see if there is already a corresponding C# instance for *handle* . Wenn Sie vorhanden ist, wird es zurückgegeben. In diesem Szenario nicht vorhanden ist, sodass *Object.GetObject&lt;T&gt;()* müssen eines erstellen.
+6.  *Java.Lang.Object.GetObject&lt;TextView&gt;()* prüft, ob es bereits eine entsprechende C# ist-Instanz, für *behandeln* . Wenn Sie vorhanden ist, wird es zurückgegeben. In diesem Szenario nicht vorhanden ist, sodass *Object.GetObject&lt;T&gt;()* müssen eines erstellen.
 
 7.  *Object.GetObject&lt;T&gt;()* sucht nach der *LogTextBox (IntPtr, JniHandleOwneship)* Konstruktor wird aufgerufen, erstellt eine Zuordnung zwischen *behandeln* und die erstellte Instanz und die erstellte Instanz zurückgibt.
 
-8.  *TextView.n_GetDefaultMovementMethod()* invokes the *LogTextBox.DefaultMovementMethod* property getter.
+8.  *TextView.n_GetDefaultMovementMethod()* Ruft die *LogTextBox.DefaultMovementMethod* Getter für eine Eigenschaft.
 
 9.  Steuerung wird an die *android.widget.TextView* -Konstruktor, der Ausführung beendet wird.
 
@@ -115,11 +115,7 @@ Die Reihenfolge der Ereignisse:
 
 11. Die *LogTextBox (Kontext IAttributeSet, Int)* Konstruktor führt *in der gleichen Instanz erstellt (7)* .
 
-12. ...
-
-
-Wenn die (IntPtr, JniHandleOwnership) Konstruktor kann nicht gefunden werden, wird eine [System.MissingMethodException](https://developer.xamarin.com/api/type/System.MissingMethodException/) ausgelöst.
-
+12. Wenn die (IntPtr, JniHandleOwnership) Konstruktor kann nicht gefunden werden, klicken Sie dann eine System.MissingMethodException] (https://developer.xamarin.com/api/type/System.MissingMethodException/) ausgelöst.
 
 <a name="Premature_Dispose_Calls" />
 

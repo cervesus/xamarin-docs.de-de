@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 76a5c96d0e7bb85f0e6b313e2dbc058b8c2aae6d
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: f1f0bb0ce282479a7b185257880244863bb67a60
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="list-appearance"></a>Darstellung der Liste
 
@@ -35,7 +35,7 @@ So aktivieren Sie die Gruppierung:
 - Legen Sie die `ListView`des `ItemsSource` auf diese Liste.
 - Legen Sie `IsGroupingEnabled` auf "true".
 - Legen Sie [ `GroupDisplayBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupDisplayBinding/) zum Binden an die Eigenschaft der Gruppen, die als Titel der Gruppe verwendet wird.
-- [Optional] Legen Sie [ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/) zum Binden an die Eigenschaft der Gruppen, die als den Kurznamen für die Gruppe verwendet wird. Der kurze Name wird für den Sprunglisten (Rigt Side-Spalte bei iOS kann die Kachel des Rasters auf Windows Phone) verwendet.
+- [Optional] Legen Sie [ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/) zum Binden an die Eigenschaft der Gruppen, die als den Kurznamen für die Gruppe verwendet wird. Der kurze Name wird für den Sprunglisten (rechten Spalte auf iOS) verwendet.
 
 Starten Sie durch Erstellen einer Klasse für die Gruppen:
 
@@ -120,7 +120,7 @@ Beachten Sie, dass wir:
 
 Wenn in der Liste gruppieren aktiviert wurde, kann auch dem Gruppenheader angepasst werden.
 
-Ähnlich wie die `ListView` verfügt über eine `ItemTemplate` zum definieren, wie Zeilen angezeigt werden, `ListView` verfügt über eine `GroupHeaderTemplate`. 
+Ähnlich wie die `ListView` verfügt über eine `ItemTemplate` zum definieren, wie Zeilen angezeigt werden, `ListView` verfügt über eine `GroupHeaderTemplate`.
 
 Ein Beispiel für das Anpassen der Gruppenkopfzeile in XAML wird hier gezeigt:
 
@@ -206,7 +206,7 @@ Um eine benutzerdefinierte Kopf- und Fußzeile zu erstellen, definieren Sie Ansi
 <a name="Row_Separators" />
 
 ## <a name="row-separators"></a>Zeilentrennzeichen
-Trennlinien zwischen abfragedarstellung `ListView` Elemente standardmäßig auf IOS- und Android. Trennlinien pro dieser Plattformen UX-Richtlinien werden von Windows Phone nicht unterstützt. Wenn Sie lieber die Trennlinien auf IOS- und Android ausblenden möchten, legen Sie die `SeparatorVisibility` Eigenschaft für die Listenansicht. Die Optionen für `SeparatorVisibility` sind:
+Trennlinien zwischen abfragedarstellung `ListView` Elemente standardmäßig auf IOS- und Android. Wenn Sie lieber die Trennlinien auf IOS- und Android ausblenden möchten, legen Sie die `SeparatorVisibility` Eigenschaft für die Listenansicht. Die Optionen für `SeparatorVisibility` sind:
 
 * **Standard** -zeigt eine Trennlinie auf IOS- und Android.
 * **Keine** -Blendet das Trennzeichen auf allen Plattformen.

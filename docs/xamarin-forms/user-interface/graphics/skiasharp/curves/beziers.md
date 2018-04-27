@@ -7,11 +7,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: c5142a3abcc6d461bc277faeb02e3aacd9727bca
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 7b7bd83c474c7e0d32a693e06b5f12696ec5efa2
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>Drei Typen von Bézier-Kurven
 
@@ -92,7 +92,7 @@ Hier wird die Anwendung auf allen drei Plattformen ausgeführt:
 
 Mathematisch, ist die Kurve eine kubische Polynoms. Die Kurve wird eine gerade Linie an drei Punkten darf höchstens überschneidet. Klicken Sie auf den Startpunkt. die Kurve ist immer eine gerade Linie vom Beginn Tangenten, und klicken Sie in der gleichen Richtung wie, zeigen Sie auf den ersten Kontrollpunkt. An den Endpunkt die Kurve ist immer eine gerade Linie von das zweite Steuerelement Tangenten, und klicken Sie in der gleichen Richtung wie, zeigen Sie auf den Endpunkt.
 
-Die kubische Bézier-Kurve wird immer durch eine konvexe Quadrat, das die vier Punkte verbindet festgelegt. Hierbei spricht einen *konvexe Hülle*. Wenn das Steuerelement zeigt auf die gerade Linie zwischen den Start- und Endpunkt liegen, wird der Bézier-Kurve als eine gerade Linie gerendert. Aber die Kurve kann auch überqueren selbst, wie der Screenshot aus dem Windows Mobile-Gerät veranschaulicht.
+Die kubische Bézier-Kurve wird immer durch eine konvexe Quadrat, das die vier Punkte verbindet festgelegt. Hierbei spricht einen *konvexe Hülle*. Wenn das Steuerelement zeigt auf die gerade Linie zwischen den Start- und Endpunkt liegen, wird der Bézier-Kurve als eine gerade Linie gerendert. Aber die Kurve kann auch überqueren selbst, wie der dritten Screenshot veranschaulicht.
 
 Eine Pfad Kontur kann mehrere verbundene kubische Bézier-Kurven enthalten, die Verbindung zwischen zwei kubische Bézier-Kurven wird smooth nur, wenn die folgenden drei Punkte kollineare sind (d. h. auf einer geraden Linie liegen):
 
@@ -208,7 +208,7 @@ Hier wird das Programm ausgeführt wird, auf die drei Plattformen mit drei versc
 
 [![](beziers-images/beziercirculararc-small.png "Dreifacher Screenshot der Seite Kreisbogen Bézier-")](beziers-images/beziercirculararc-large.png#lightbox "dreifacher Screenshot der Kreisbogen Bézier-Seite")
 
-Sehen Sie sich die Windows Mobile-Bildschirm, und Sie sehen, dass der Bézier-Kurve wird vor allem aus ein Halbkreis abweicht, wird bei der des Winkels um 180 Grad Unzulässiger der iOS-Bildschirm zeigt, dass es scheint, passen einen Quartal Kreis einwandfrei aus, wenn der Winkel 90 Grad ist.
+Sehen Sie sich die dritte Screenshot, und Sie sehen, dass der Bézier-Kurve wird vor allem aus ein Halbkreis abweicht, wird bei der des Winkels um 180 Grad Unzulässiger der iOS-Bildschirm zeigt, dass es scheint, passen einen Quartal Kreis einwandfrei aus, wenn der Winkel 90 Grad ist.
 
 Berechnen die Koordinaten der die beiden Steuerpunkte ist recht einfach, wenn das Quartal Kreis objektorientierte sieht ist:
 

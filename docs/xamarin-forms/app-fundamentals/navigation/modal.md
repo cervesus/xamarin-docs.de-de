@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 909a04398043a3c2f0c30e4da82d174a6bfaf148
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 00d52aa69372ab5ec3073e2355a43521b515ca8b
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="modal-pages"></a>Modale Seiten
 
@@ -100,7 +100,7 @@ Allerdings ist die genaue Reihenfolge an, dass diese Ereignisse treten plattform
 
 ### <a name="disabling-the-back-button"></a>Deaktivieren die Schaltfläche "zurück"
 
-Unter Android und Windows Phone-Benutzer kann stets zur vorherigen Seite durch Drücken des Standards *wieder* Schaltfläche auf dem Gerät. Wenn die modale Seite den Benutzer für Ihre eigenständige Aufgaben vor dem Verlassen der Seite erforderlich ist, muss die Anwendung deaktiviert die *wieder* Schaltfläche. Dies geschieht durch Überschreiben der [ `Page.OnBackButtonPressed` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnBackButtonPressed/) Methode auf der Seite "gebunden". Weitere Informationen finden Sie unter [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charless Xamarin.Forms Buch.
+Auf Android-Geräten der Benutzer kann stets zur vorherigen Seite durch Drücken des Standards *wieder* Schaltfläche auf dem Gerät. Wenn die modale Seite den Benutzer für Ihre eigenständige Aufgaben vor dem Verlassen der Seite erforderlich ist, muss die Anwendung deaktiviert die *wieder* Schaltfläche. Dies geschieht durch Überschreiben der [ `Page.OnBackButtonPressed` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnBackButtonPressed/) Methode auf der Seite "gebunden". Weitere Informationen finden Sie unter [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charless Xamarin.Forms Buch.
 
 ### <a name="animating-page-transitions"></a>Animieren Seitenübergänge
 

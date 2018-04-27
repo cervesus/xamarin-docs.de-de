@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 7ba3808e7b8d948d502be3f80b8830e1aaf3b52f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 471616dffc700cf93a9f6435565222d7628bf165
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="device-class"></a>Geräteklasse
 
@@ -24,7 +24,7 @@ Zusätzlich zu den Methoden und Eigenschaften für den Zielcode auf bestimmte Ha
 
 Vor dem Xamarin.Forms 2.3.4, die Plattform, die die Anwendung ausgeführt wurde abgerufen werden konnte, durch Untersuchen der [ `Device.OS` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.OS/) Eigenschaft und durch vergleichen, die [ `TargetPlatform.iOS` ](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.iOS/), [ `TargetPlatform.Android` ](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.Android/), [ `TargetPlatform.WinPhone` ](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.WinPhone/), und [ `TargetPlatform.Windows` ](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.Windows/) Enumerationswerte. Auf ähnliche Weise eine von der [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) Überladungen können verwendet werden, um die Clientplattform-spezifische Werte für ein Steuerelement bereitzustellen.
 
-Allerdings haben seit Xamarin.Forms 2.3.4 diese APIs veraltet ersetzt und wurden. Die [ `Device` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/) -Klasse beinhaltet nun öffentliche Zeichenfolgenkonstanten, die Plattformen – identifizieren [ `Device.iOS` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.iOS/), [ `Device.Android` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.Android/), [ `Device.WinPhone` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.WinPhone/), [ `Device.WinRT` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.WinRT/), [ `Device.UWP` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.UWP/), und [ `Device.macOS` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.macOS/). Auf ähnliche Weise die [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) Überladungen wurden durch ersetzt die [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) und [ `On` ](https://developer.xamarin.com/api/type/Xamarin.Forms.On/) APIs.
+Allerdings haben seit Xamarin.Forms 2.3.4 diese APIs veraltet ersetzt und wurden. Die [ `Device` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/) -Klasse beinhaltet nun öffentliche Zeichenfolgenkonstanten, die Plattformen – identifizieren [ `Device.iOS` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.iOS/), [ `Device.Android` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.Android/), [ `Device.WinPhone` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.WinPhone/) (veraltet) [ `Device.WinRT` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.WinRT/) (veraltet) [ `Device.UWP` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.UWP/), und [ `Device.macOS` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.macOS/). Auf ähnliche Weise die [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) Überladungen wurden durch ersetzt die [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) und [ `On` ](https://developer.xamarin.com/api/type/Xamarin.Forms.On/) APIs.
 
 In c# können Clientplattform-spezifische Werte bereitgestellt werden durch das Erstellen einer `switch` -Anweisung für die [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) -Eigenschaft, und klicken Sie dann bereitgestellt, `case` -Anweisungen für die erforderlichen Plattformen:
 
@@ -36,7 +36,6 @@ switch (Device.RuntimePlatform)
     top = 20;
     break;
   case Device.Android:
-  case Device.WinPhone:
   case Device.UWP:
   default:
     top = 0;
@@ -52,7 +51,7 @@ Die [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlat
   <StackLayout.Margin>
     <OnPlatform x:TypeArguments="Thickness">
       <On Platform="iOS" Value="0,20,0,0" />
-      <On Platform="Android, WinPhone, UWP" Value="0,0,0,0" />
+      <On Platform="Android, UWP" Value="0,0,0,0" />
     </OnPlatform>
   </StackLayout.Margin>
   ...
@@ -70,9 +69,9 @@ Die [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlat
 
 Die `Device.Idiom` können verwendet werden, um Layouts oder Funktionen hängen vom Gerät die Anwendung ausgeführt wird. Die [ `TargetIdiom` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetIdiom/) Enumeration enthält die folgenden Werte:
 
--  **Phone** – iPhone, iPod Touch, Windows Phone, Android-Geräte enger gefasst als 600 Dips ^
--  **Tablet** – iPad, Computer mit Windows 8.1, Android-Geräte breiter als 600 Dips ^
--  **Desktop** – nur im zurückgegebenen [uwp-apps](~/xamarin-forms/platform/windows/installation/universal.md) auf Windows 10-Desktopcomputern (gibt `Phone` auf mobilen Windows-Geräten, die in bestimmten Szenarien einschließlich)
+-  **Phone** – iPhone, iPod Touch und Android-Geräte enger gefasst als 600 Dips ^
+-  **Tablet** – iPad, Windows-Geräten und Android-Geräte breiter als 600 Dips ^
+-  **Desktop** – nur im zurückgegebenen [uwp-apps](~/xamarin-forms/platform/windows/installation/index.md) auf Windows 10-Desktopcomputern (gibt `Phone` auf mobilen Windows-Geräten, die in bestimmten Szenarien einschließlich)
 -  **TV** – Tizen TV-Geräte
 -  **Nicht unterstützte** : nicht verwendeter
 
@@ -149,7 +148,7 @@ Wenn der Code innerhalb der Zeitgeber mit der Benutzeroberfläche interagiert (z
 
 ## <a name="devicebegininvokeonmainthread"></a>Device.BeginInvokeOnMainThread
 
-Elemente der Benutzeroberfläche sollte nie von Hintergrundthreads, z. B. in einen Timer oder ein Abschlusshandler für asynchrone Vorgänge wie das webanforderungen ausgeführte Code zugegriffen werden. Alle Hintergrund-Code, der muss die Benutzeroberfläche aktualisieren sollten umhüllt [ `BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/). Dies ist die Entsprechung der `InvokeOnMainThread` iOS, `RunOnUiThread` auf Android-Geräten und `Dispatcher.BeginInvoke` auf Windows Phone.
+Elemente der Benutzeroberfläche sollte nie von Hintergrundthreads, z. B. in einen Timer oder ein Abschlusshandler für asynchrone Vorgänge wie das webanforderungen ausgeführte Code zugegriffen werden. Alle Hintergrund-Code, der muss die Benutzeroberfläche aktualisieren sollten umhüllt [ `BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/). Dies ist die Entsprechung der `InvokeOnMainThread` iOS, `RunOnUiThread` auf Android-Geräten und `Dispatcher.RunAsync` auf die universelle Windows-Plattform.
 
 Der Code Xamarin.Forms ist:
 

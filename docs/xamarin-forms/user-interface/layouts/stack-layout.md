@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 638243958fce34871089b10185f150492dbd2b0d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c27f94302037e4e19c9d72131e7137c8a4004d5c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="stacklayout"></a>StackLayout
 
@@ -215,8 +215,6 @@ Title="StackLayouts">
 Der obige Code erhalten Sie im folgenden dargestellt:
 
 ![](stack-layout-images/stack.png "Komplexe StackLayout")
-
-Beachten Sie, dass aufgrund von entscheidend dafür, wie Schaltflächen von Windows Phone gerendert werden, einige der Kreise durch Boxviews im Windows Phone-Screenshot ersetzt wurden.
 
 Beachten Sie, dass `StackLayouts`s geschachtelt werden, da in einigen Fällen Schachteln von Layouts einfacher, als vertrauenswürdig sind alle Elemente innerhalb des gleichen Layouts sein kann. Beachten Sie, dass auch, da `StackLayout` unterstützt keine überlappenden Elemente der Seite "ist nicht Teil der Layout-Sicherungsfunktionalität gefunden auf den Seiten für die andere Tastaturlayouts stimmen.
 

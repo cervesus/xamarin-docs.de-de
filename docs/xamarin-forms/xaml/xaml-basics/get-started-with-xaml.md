@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: f1d347cc37ab065e09cb2627ee2122797280f3c1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f8032966b49f6f023642b0d1338e8c5d740b66e0
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Teil 1. Erste Schritte mit XAML
 
@@ -192,7 +192,7 @@ Während der Laufzeit code, in dem bestimmte Plattform Projekt Aufrufen einer `L
 
 Obwohl Sie normalerweise benötigen zu viel Zeit mit generierten Codedateien, werden manchmal Runtime-Ausnahmen ausgelöst für Code in die generierten Dateien, damit Sie mit diesen vertraut sein sollten.
 
-Beim Kompilieren und dieses Programms ausführen die `Label` Element wird in der Mitte der Seite, wie nahe legt, der XAML-Code führt. Drei sind von links nach rechts die folgenden Plattformen iOS-, Android- und Windows 10 Mobile:
+Beim Kompilieren und dieses Programms ausführen die `Label` Element wird in der Mitte der Seite, wie nahe legt, der XAML-Code führt. Die drei Plattformen von links nach rechts werden iOS, Android und universelle Windows-Plattform:
 
 [![](get-started-with-xaml-images/xamlsamples.png "Standard Xamarin.Forms Anzeige")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "Xamarin.Forms standardmäßig anzeigen")
 
@@ -351,11 +351,11 @@ public MainPage()
 }
 ```
 
-Festlegen der `Content` Eigenschaft von der Seite "ersetzt die Einstellung von der `Content` Eigenschaft in der XAML-Datei. Beim Kompilieren und die neue Version dieses Programms bereitstellen, wird eine Schaltfläche auf dem Bildschirm angezeigt. Drücken sie navigiert zum `HelloXamlPage`. Hier ist die resultierende Seite auf iPhone, Android und Windows 10 Mobile Geräte:
+Festlegen der `Content` Eigenschaft von der Seite "ersetzt die Einstellung von der `Content` Eigenschaft in der XAML-Datei. Beim Kompilieren und die neue Version dieses Programms bereitstellen, wird eine Schaltfläche auf dem Bildschirm angezeigt. Drücken sie navigiert zum `HelloXamlPage`. So sieht die resultierende Seite auf iPhone, Android und universelle Windows-Plattform aus:
 
 [![](get-started-with-xaml-images/helloxaml1.png "Bezeichnungstext gedreht")](get-started-with-xaml-images/helloxaml1-large.png#lightbox "Bezeichnungstext gedreht")
 
-Navigieren Sie Sie, zurück zu `MainPage` mithilfe der **< zurück** Schaltfläche iOS, verwenden Sie den linken Pfeil am oberen Rand der Seite oder am unteren Rand des Telefons auf Android-Geräten oder der nach-links-Taste am unteren Rand der Seite auf Windows 10 Mobile.
+Navigieren Sie Sie, zurück zu `MainPage` mithilfe der **< zurück** auf iOS, verwenden Sie die nach-links-Taste am oberen Rand der Seite oder am unteren Rand des Telefons auf Android oder den linken Pfeil am oberen Rand der Seite auf Windows 10 auf die Schaltfläche.
 
 Gerne zum Experimentieren mit der XAML-Code für verschiedene Möglichkeiten zum Rendern der `Label`. Wenn keine Unicode-Zeichen in den Text eingebettet werden sollen, können Sie die standard-XML-Syntax. Angenommen, um die Grußformel in typografische einzufügen, zu verwenden:
 

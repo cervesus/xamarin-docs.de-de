@@ -7,12 +7,12 @@ ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: c5937cc86a8a1f8506b14774b0429bee3c8aa594
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 44c3e4b0f05526560ff4b32808ba476110ce5e8f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="hello-android-quickstart"></a>Hallo, Android: Schnellstart
 
@@ -185,11 +185,10 @@ Der nächste Schritt besteht im Hinzufügen von Code, um die Benutzeroberfläche
 (Resource.Layout.Main)`-Aufrufen hinzu. Ändern Sie zunächst den Vorlagencode, damit die `OnCreate`-Methode der folgenden Darstellung ähnelt:
 
 ```csharp
-using System;
 using Android.App;
-using Android.Content;
-using Android.Widget;
 using Android.OS;
+using Android.Widget;
+using Core;
 
 namespace Phoneword
 {
@@ -420,13 +419,10 @@ Doppelklicken Sie auf **MainActivity.cs** im **Lösungspad**, um sie zu öffnen.
 Fügen Sie zunächst einen Ereignishandler zur Schaltfläche **Übersetzen** hinzu. Suchen Sie in der `MainActivity`-Klasse die Methode `OnCreate`. Fügen Sie den Schaltflächencode in `OnCreate` unter den `base.OnCreate(bundle)`- und `SetContentView (Resource.Layout.Main)`-Aufrufen hinzu. Entfernen Sie den Vorlagencode für die Verarbeitung der Schaltflächen, damit die `OnCreate`-Methode der folgenden Darstellung ähnelt:
 
 ```csharp
-using System;
 using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Android.Widget;
+using Core;
 
 namespace Phoneword
 {

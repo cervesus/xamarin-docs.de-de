@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: df0e113f0c76ea9bde58da7a7ceccd50edd5b227
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 74f65021c23515e78e630f907a89ffde74de4da4
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="cell-appearance"></a>Darstellung der Zelle
 
@@ -62,8 +62,6 @@ TextCells als systemeigene Steuerelemente zur Laufzeit gerendert werden, damit d
 - `TextColor` &ndash; die Farbe des Texts
 - `DetailColor` &ndash; die Farbe des Texts detail
 - `ImageSource` &ndash; das Bild, das neben dem Text angezeigt
-
-Beachten Sie, dass Geschäftsgruppen mit Windows Phone 8.1, `ImageCell` wird nicht standardmäßig Skalieren von Bildern. Beachten Sie, dass Windows Phone 8.1 die einzige Plattform ist, auf welches, die Detailelement Text angezeigt wird, in der gleichen Farbe und Schriftart als primäre Text standardmäßig. Windows Phone 8.0 rendert `ImageCell` wie unten dargestellt:
 
 ![](customizing-cell-appearance-images/image-cell-default.png "Standard-ImageCell-Beispiel")
 

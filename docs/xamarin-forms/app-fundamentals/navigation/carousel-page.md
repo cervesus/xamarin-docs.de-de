@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d55d8c8d98828097c842cc383037db88097b963d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 035254f87e52801d5ff7419f9ad9d5503f060020
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="carousel-page"></a>Seite "Karussell"
 
@@ -45,7 +45,7 @@ Zwei Ansätze können verwendet werden, um das Erstellen einer [ `CarouselPage` 
 - [Auffüllen](#Populating_a_CarouselPage_with_a_Page_Collection) der `CarouselPage` mit einer Auflistung von untergeordneten [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) Instanzen.
 - [Zuweisen](#Populating_a_CarouselPage_with_a_Template) eine Sammlung aus, die [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/) Eigenschaft und weisen eine [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) auf die [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/) zurückzugebendeEigenschaft[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) Instanzen für Objekte in der Auflistung.
 
-Mit beiden Ansätzen müssen die `CarouselPage` zeigt dann jede Seite wiederum mit einem Streifen Interaktion verschieben zur nächsten Seite angezeigt werden. Diese Variante Navigationsbereich werden natürliche und Windows Phone-Benutzern vertraut sich schnell zurechtfinden.
+Mit beiden Ansätzen müssen die `CarouselPage` zeigt dann jede Seite wiederum mit einem Streifen Interaktion verschieben zur nächsten Seite angezeigt werden. 
 
 > [!NOTE]
 > Ein [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) nur ausgefüllt werden, die mit [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) Instanzen oder `ContentPage` ableitungen.
@@ -246,7 +246,7 @@ Weitere Informationen zu den [ `CarouselPage` ](https://developer.xamarin.com/ap
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel veranschaulicht, wie eine [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) durch eine Auflistung von Seiten navigieren. Die `CarouselPage` ist eine Seite, die Benutzer nebeneinander navigieren Sie können zum Navigieren in Seiten von Inhalten, z. B. einen Katalog, und bietet eine Navigation, die natürliche und Windows Phone-Benutzern vertraut ist.
+In diesem Artikel veranschaulicht, wie eine [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) durch eine Auflistung von Seiten navigieren. Die `CarouselPage` ist eine Seite, die Benutzer nebeneinander navigieren Sie können zum Navigieren durch die Seiten des Inhalts, ähnlich wie ein Katalog.
 
 
 ## <a name="related-links"></a>Verwandte Links

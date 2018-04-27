@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/20/2017
-ms.openlocfilehash: fd46411f3662652ef26addc76f273d6071401a6f
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: be131bdbfeceabd72494708cdfe9a263da9bbbd8
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="platform-features"></a>Plattformfeatures
 
@@ -63,11 +63,4 @@ Stehen eine Vielzahl von Open-Source-Plug-ins auf Github, Nuget sowie der Kompon
 
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
-Xamarin.Forms verfügt über Unterstützung für vier verschiedene Typen von Windows-Projekt:
-
-* Windows Phone 8 Silverlight (die ursprüngliche Windows-Plattform von Xamarin.Forms unterstützt)
-* Windows Phone 8.1 (WinRT),
-* Windows 8.1 (WinRT), und
-* Universelle Windows-Plattform (Windows 10).
-
-Dieser Abschnitt beschreibt die Unterschiede zwischen ihnen und wie sie eine vorhandene Xamarin.Forms-Projektmappe hinzuzufügen.
+Xamarin.Forms verfügt über Unterstützung für die universelle Windows-Plattform (UWP) unter Windows 10. Dieser Artikel enthält Informationen zum Hinzufügen einer uwp-Projekt zu einer vorhandenen Xamarin.Forms-Projektmappe.

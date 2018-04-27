@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 09328e1c6d884898aed86f2cb8ab1b84bf6d5cab
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 52c86c63c328729211c4fbd22bd10b5eb1e56615
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="fonts"></a>Schriftarten
 
@@ -53,7 +53,7 @@ Sie können auch die `NamedSize` Enumeration besitzt vier integrierte Optionen; 
 -  **Micro**
 -  **Kleine**
 -  **Mittel**
--  **Large**
+-  **Große**
 
 
 Die `NamedSize` Enumeration kann überall verwendet eine `FontSize` kann angegeben werden, mithilfe der `Device.GetNamedSize` Methode, um den Wert zu konvertieren einer `double`:
@@ -166,7 +166,7 @@ Die `FormattedString` -Klasse kann auch in XAML verwendet werden, wie hier gezei
         <OnPlatform x:TypeArguments="x:String">
                 <On Platform="iOS" Value="MarkerFelt-Thin" />
                 <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
-                <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
         </OnPlatform>
     </Label.FontFamily>
 </Label>
@@ -178,7 +178,7 @@ Wenn Sie eine benutzerdefinierte Schriftart angeben, wird immer eine gute Idee, 
 
 ## <a name="using-a-custom-font"></a>Verwenden eine benutzerdefinierte Schriftart
 
-Mithilfe einer Schriftart als integrierte Schriftarten erfordert einige plattformspezifischen-Codierung. Diese bildschirmabbildung zeigt die benutzerdefinierte Schriftartdatei **Hummern** aus [Google Open Source-Schriftarten](https://www.google.com/fonts) auf iOS, Android und Windows Phone-mithilfe von Xamarin.Forms gerendert.
+Mithilfe einer Schriftart als integrierte Schriftarten erfordert einige plattformspezifischen-Codierung. Diese bildschirmabbildung zeigt die benutzerdefinierte Schriftartdatei **Hummern** aus [Google Open Source-Schriftarten](https://www.google.com/fonts) mit Xamarin.Forms gerendert.
 
  [![Benutzerdefinierte Schriftart auf IOS- und Android](fonts-images/custom-sml.png "benutzerdefinierte Schriftarten Beispiel")](fonts-images/custom.png#lightbox "benutzerdefinierte Schriftarten-Beispiel")
 
@@ -240,7 +240,7 @@ Sie können auch [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md
         <OnPlatform x:TypeArguments="x:String">
                 <On Platform="iOS" Value="Lobster-Regular" />
                 <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
-                <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
         </OnPlatform>
     </Label.FontFamily>
 </Label>

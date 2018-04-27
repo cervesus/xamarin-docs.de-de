@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 6288a773fb7122c16b405b8a5056b23b7a59fb6d
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: d22ebf0e150c064835fa73765a65025f10ef4c2a
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="the-path-fill-types"></a>Die Typen der Pfad ausfüllen
 
@@ -165,7 +165,7 @@ In der Regel wird die Pfad-Fülltyp betrifft nur fortgesetzt werden kann und kei
 
 [![](fill-types-images/fivepointedstar-small.png "Dreifacher Screenshot der Seite Five-Pointed Stern")](fill-types-images/fivepointedstar-large.png#lightbox "dreifacher Screenshot der Seite Five-Pointed Stern")
 
-Die Android- und Windows mobile-Screenshots zeigen die üblichen gerade-ungerade und winding Effekte, aber die Reihenfolge der Kontur und Füllung wirkt sich auch auf die Ergebnisse.
+Die Android- und uwp-Screenshots zeigen die üblichen gerade-ungerade und winding Effekte, aber die Reihenfolge der Kontur und Füllung wirkt sich auch auf die Ergebnisse.
 
 Winding Algorithmus ist abhängig von der Richtung der Linien gezeichnet werden. In der Regel können Wenn Sie einen Pfad erstellen, Sie die entsprechende Richtung steuern, wie Sie angeben, dass Zeilen, die von einem Punkt in eine andere gezeichnet werden. Allerdings die `SKPath` Klasse definiert auch Methoden wie z. B. `AddRect` und `AddCircle` , die gesamte Kontur zeichnen. Um zu steuern, wie diese Objekte gezeichnet werden, enthalten die Methoden einen Parameter vom Typ [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/), die zwei Member aufweist:
 

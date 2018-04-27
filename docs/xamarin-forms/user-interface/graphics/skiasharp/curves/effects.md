@@ -7,11 +7,11 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 9bdad3e7d3e16dfe906f96bce2b92cdb9ee6260a
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 76192f48bedebb183c64c83e34c3908cc85d591c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="path-effects"></a>Pfad Effekte
 
@@ -420,7 +420,7 @@ Die *Cosh* ist die hyperbolische Kosinus-Funktion. Für *x* gleich 0, *Cosh* 0 (
 
 Suchen den richtigen Wert der *eine* an der Oberleitung auf die Dimensionen der Seite "den Anschluss" ist keine direkte Berechnung. Wenn *w* und *h* sind die Breite und Höhe eines Rechtecks, den optimalen Wert für *eine* erfüllt die folgende Gleichung:
 
-cosh(w / 2 / a) = 1 + h / a
+COSH (w/2/a) = 1 + h / a
 
 Die folgende Methode in der [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs) Klasse enthält, auf Gleichheit durch einen Verweis auf die zwei Ausdrücke auf der linken Seite und rechts neben dem Gleichheitszeichen als `left` und `right`. Bei kleinen Werten für *eine*, `left` ist größer als `right`; bei großen Werten für *eine*, `left` ist kleiner als `right`. Die `while` Schleife eingeschränkt wird, auf einen optimalen Wert von *eine*:
 
@@ -854,7 +854,7 @@ In der `PaintSurface` Handler, der `SKPathEffect.Create2DPath` Aufrufe legt die 
 
 Die Skalierung von der ursprünglichen Screenshot bewirkt, dass einige Verzerrung, insbesondere auf dem Android-Bildschirm.
 
-Beachten Sie, dass diese Kacheln immer die gesamte angezeigt und werden nie abgeschnitten. Außer ist auf dem Bildschirm Windows 10 Mobile nicht selbst offensichtlich, dass der Bereich, das ausgefüllt wurde ein abgerundetes Rechteck ist. Wenn Sie diese Kacheln zu einem bestimmten Bereich abschneiden möchten, verwenden Sie einen Freistellungspfad.
+Beachten Sie, dass diese Kacheln immer die gesamte angezeigt und werden nie abgeschnitten. Auf den ersten beiden Screenshots ist sie nicht selbst offensichtlich, dass der Bereich, das ausgefüllt wurde ein abgerundetes Rechteck ist. Wenn Sie diese Kacheln zu einem bestimmten Bereich abschneiden möchten, verwenden Sie einen Freistellungspfad.
 
 Versuchen Sie die `Style` Eigenschaft der `SKPaint` -Objekt `Stroke`, und sehen Sie die einzelnen Kacheln beschriebenen statt gefüllt.
 

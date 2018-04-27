@@ -7,11 +7,11 @@ ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: charlespetzold
 ms.author: chape
 ms.date: 03/20/2017
-ms.openlocfilehash: 39547ebaf301a9b6dca6a90cb5ede831b19862cf
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: c8913dcb5dbe9664f1186b1acf46f09cb8da74ed
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="the-skew-transform"></a>Die Schiefsymmetrische Transformation
 
@@ -71,7 +71,7 @@ Werte von der `xSkew` Argument verschieben Sie den unteren Rand der Text für po
 
 [![](skew-images/skewexperiment-small.png "Dreifacher Screenshot der Seite verzerren Experiment")](skew-images/skewexperiment-large.png#lightbox "dreifacher Screenshot der Seite Experiment neigen")
 
-Wenn `xSkew` der negative Wert von `ySkew`, das Ergebnis ist die Rotation, aber in einem gewissen auch als die Anzeige gibt Windows skaliert.
+Wenn `xSkew` der negative Wert von `ySkew`, das Ergebnis ist die Rotation, aber auch skalierte etwas wie die Anzeige für die universelle Windows-Plattform gibt an.
 
 Die Transformation Formeln lauten wie folgt:
 

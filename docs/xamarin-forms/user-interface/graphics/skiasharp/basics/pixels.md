@@ -7,11 +7,11 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: e01d3e228a0684865fb09dd7a4cbb0e2f0b49125
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 95f782fd4670782217d8ce4bc055341747a71170
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>Pixel und geräteunabhängigen Einheiten
 
@@ -102,7 +102,7 @@ Hier wird das Programm auf allen drei Plattformen ausgeführt:
 
 Wie Sie sehen können, die `CanvasSize` Eigenschaft von der `SKCanvasView` und die `Size` Eigenschaft der `SKImageInfo` Wert, der in den Pixelmaßen reporting konsistent sind. Die `Height` und `Width` Eigenschaften der `SKCanvasView` Xamarin.Forms-Eigenschaften, und melden die Größe der Sicht in dem geräteunabhängigen Einheiten, die von der Plattform definiert.
 
-Die iOS 7-Simulator auf der linken Seite besitzt 2 Pixel pro geräteunabhängige Einheit, die Android Nexus 5 in der Mitte hat 3 Pixel pro Einheit, und die Nokia Lumia 925 auf der rechten Seite 2,25 Pixel pro Einheit. Der Warum einfachen circle gezeigt früheren sieht ungefähr die gleiche Größe auf dem iPhone und Windows phone, jedoch auf der Android-Telefon kleiner ist.
+Die iOS 7-Simulator auf der linken Seite 2 Pixel pro geräteunabhängige Einheit und das Android Nexus 5 in der Mitte 3 Pixel pro Einheit. Deshalb ist die weiter oben dargestellten einfache Kreis hat unterschiedliche Größen auf verschiedenen Plattformen.
 
 Falls Sie lieber vollständig in geräteunabhängigen Einheiten arbeiten möchten, Sie können dazu durch Festlegen der `IgnorePixelScaling` Eigenschaft von der `SKCanvasView` auf `true`. Allerdings können Sie die Ergebnisse nicht gefallen. SkiaSharp rendert die Grafiken auf eine kleinere Geräteoberfläche mit einer Pixelgröße gleich der Größe der Ansicht in geräteunabhängigen Einheiten. (Z. B. SkiaSharp würde eine Anzeigeoberfläche des 360 x 512 Pixel auf die Nexus 5 verwenden.) Klicken Sie dann wird das Bild oben Größe, was zu spürbaren Bitmap Jaggies skaliert.
 

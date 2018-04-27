@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: a153791893f99a472c3fcf91a205bf91ed971e13
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ddd779fc7eb1a10e74c68504367083ff0efcdfcd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="listview"></a>ListView
 
@@ -53,7 +53,7 @@ Weitere Informationen zum Anpassen von Zellen in einem ListView finden Sie unter
 ListView unterstützt eine Reihe von Interaktionen Formatvorlagen, einschließlich:
 
 - **[Zum Aktualisieren ziehen](interactivity.md#Pull_to_Refresh)**  &ndash; ListView Pull zum Aktualisieren auf jeder Plattform unterstützt.
-- **[Kontext Aktionen](interactivity.md#Context_Actions)**  &ndash; ListView unterstützt Maßnahmen für einzelne Elemente in einer Liste. Angenommen, können Sie implementieren Wischen-Action-auf iOS oder Long-Tap Aktionen unter Android und Windows Phone.
+- **[Kontext Aktionen](interactivity.md#Context_Actions)**  &ndash; ListView unterstützt Maßnahmen für einzelne Elemente in einer Liste. Beispielsweise können Sie implementieren Wischen-zu-Aktion auf iOS oder Long-Tap Aktionen auf Android-Geräten.
 - **[Auswahl](interactivity.md#selectiontaps)**  &ndash; können Sie überwachen, für die Auswahl und Deselections Maßnahmen zu ergreifen, wenn eine Zeile abgerufen werden.
 
 ![](images/context-default.png "ListView mit Kontext Aktionen")
@@ -71,4 +71,4 @@ Weitere Informationen zu den Interaktivitätsfunktionen des ListView finden Sie 
 - [Benutzerdefinierte Ansicht der Renderer (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/WorkingWithListviewNative)
 - [ListView-Interaktivität (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
 - [iOS-Arbeitsmappe](https://developer.xamarin.com/workbooks/xamarin-forms/user-interface/listview/ListView1-ios.workbook)
-- [Android Workbook](https://developer.xamarin.com/workbooks/xamarin-forms/user-interface/listview/ListView1-android.workbook)
+- [Android-Arbeitsmappe](https://developer.xamarin.com/workbooks/xamarin-forms/user-interface/listview/ListView1-android.workbook)

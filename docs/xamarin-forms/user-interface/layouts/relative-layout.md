@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 2edd7a982d0307475933a234e7e1fbb8dd8d6a34
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 924aa88d29379c98204fd810c651de56ff757971
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
@@ -221,8 +221,6 @@ Title="RelativeLayout">
 Der obige Code erhalten Sie im folgenden dargestellt:
 
 ![](relative-layout-images/relative.png "Komplexe RelativeLayout")
-
-Beachten Sie, dass aufgrund von entscheidend dafür, wie Schaltflächen von Windows Phone gerendert werden, einige der Kreise durch Boxviews im Windows Phone-Screenshot ersetzt wurden.
 
 Beachten Sie, dass `RelativeLayouts`s geschachtelt werden, da in einigen Fällen Schachteln von Layouts einfacher, als vertrauenswürdig sind alle Elemente innerhalb des gleichen Layouts sein kann. Beachten Sie auch, die einige Elemente sind `RelativeToView`, da, die für das Layout von einfacher und intuitiver gestattet, wenn die Beziehungen zwischen den Ansichten Positionierung geführt.
 

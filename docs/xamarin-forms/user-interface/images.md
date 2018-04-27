@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: ddbcb74d34f09c7bb60891148bd50b36bc5094c3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5e8ad5ba3bdfa61ae1b2f4404016f204a8c1747c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="images"></a>Bilder
 
@@ -58,7 +58,6 @@ Bilddateien können jede Anwendungsprojekt hinzugefügt und von Xamarin.Forms im
 
 - **iOS** : die bevorzugte Methode zum Verwalten und Bilder unterstützen, da iOS 9 ist die Verwendung **Asset-Katalog-Image-Sätze**, sollte die enthalten, alle Versionen eines Bilds, die zur Unterstützung von verschiedenen Geräten und Skalierungsfaktoren für erforderlich sind ein die Anwendung. Weitere Informationen finden Sie unter [Bilder hinzufügen, eine Asset-Katalog Image festgelegt](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 - **Android** -Platzieren von Bildern in der **Ressourcen und Ausgaben möglich** mit Verzeichnis **Buildvorgang: AndroidResource**. Hoher und niedriger DPI Versionen eines Bilds können auch angegeben werden (in entsprechend benannt **Ressourcen** Unterverzeichnisse, wie z. B. **zeichenbaren Ldpi**, **zeichenbaren Hdpi**, und **zeichenbaren Xhdpi**).
-- **Windows Phone-** -Platzieren von Bildern in das Stammverzeichnis der Anwendung mit **Buildvorgang: Inhalt**.
 - **Universelle Windows-Plattform (UWP)** -Platzieren von Bildern in das Stammverzeichnis der Anwendung mit **Buildvorgang: Inhalt**.
 
 > [!IMPORTANT]
@@ -93,7 +92,7 @@ image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>Systemeigene Lösungen (Retina und hoher DPI-Einstellung)
 
-iOS, Android, Windows Phone-und uwp-schließen die Unterstützung für anderes Bild Auflösungen, in denen das Betriebssystem das passende Image zur Laufzeit basierend auf dem Gerät Funktionen auswählt. Xamarin.Forms nutzt die systemeigener Plattformen APIs zum Laden von lokalen Bilder, sodass es alternative Lösungen automatisch unterstützt, wenn die Dateien ordnungsgemäß benannt und befindet sich im Projekt.
+IOS-, Android- und uwp-schließen die Unterstützung für anderes Bild Auflösungen, in denen das Betriebssystem das passende Image zur Laufzeit basierend auf dem Gerät Funktionen auswählt. Xamarin.Forms nutzt die systemeigener Plattformen APIs zum Laden von lokalen Bilder, sodass es alternative Lösungen automatisch unterstützt, wenn die Dateien ordnungsgemäß benannt und befindet sich im Projekt.
 
 Die bevorzugte Methode zum Verwalten von Images, da iOS 9 darin besteht, die Bilder für jede Lösung erforderlich, um die entsprechenden Asset-Katalog Bildersatz ziehen. Weitere Informationen finden Sie unter [Bilder hinzufügen, eine Asset-Katalog Image festgelegt](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
@@ -103,7 +102,7 @@ Bilder Android alternativen Auflösung sollte [speziell benannte Verzeichnisse](
 
 [![Android mehrere Auflösung Bildspeicherort](images-images/xs-highdpisolution-sml.png "Android mehrere Auflösung Bildspeicherort")](images-images/xs-highdpisolution.png#lightbox "Android Bildspeicherort mehrere Auflösung")
 
-UWP und Windows Phone-image Dateinamen [können mit dem Suffix werden `.scale-xxx` vor der Dateierweiterung](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), wobei `xxx` ist der Prozentsatz der Skalierung für die Ressource angewendet wurde, z. B. **myimage.scale-200.png**. Bilder können dann im Code oder in XAML ohne die Skalierung Modifizierer, z. B. direkt verwiesen werden **myimage.png**. Die Plattform wird die nächste geeignete Objektskalierung basierend auf der Anzeige des aktuellen DPI ausgewählt.
+Universelle Windows-Plattform Bilddateinamen [können mit dem Suffix werden `.scale-xxx` vor der Dateierweiterung](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), wobei `xxx` ist der Prozentsatz der Skalierung für die Ressource angewendet wurde, z. B. **myimage.scale 200.png**. Bilder können dann im Code oder in XAML ohne die Skalierung Modifizierer, z. B. direkt verwiesen werden **myimage.png**. Die Plattform wird die nächste geeignete Objektskalierung basierend auf der Anzeige des aktuellen DPI ausgewählt.
 
 ### <a name="additional-controls-that-display-images"></a>Weitere Steuerelemente, die Anzeige von Bildern
 

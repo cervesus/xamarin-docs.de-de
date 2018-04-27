@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 78d14b9764ab0c7cafb9f09fa1c8acea3f45afde
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c913ea56af423631c48fb9ee6d8dcb95028a4144
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>Übergeben von Parametern Auswirkungen als Common Language Runtime-Eigenschaften
 
@@ -112,7 +112,7 @@ In beiden Codebeispielen eine Instanz von der `ShadowEffect` Klasse instanziiert
 
 Die folgenden Abschnitte beschreiben die Clientplattform-spezifische Implementierung der `LabelShadowEffect` Klasse.
 
-### <a name="ios-project"></a>iOS Project
+### <a name="ios-project"></a>iOS-Projekt
 
 Das folgende Codebeispiel zeigt die `LabelShadowEffect` Implementierung für das iOS-Projekt:
 
@@ -147,7 +147,7 @@ namespace EffectsDemo.iOS
 
 Die `OnAttached` Methode ruft die `ShadowEffect` Instanz und legt `Control.Layer` Eigenschaften auf den angegebenen Eigenschaftswerten den Schatten zu erstellen. Diese Funktion umschlossen ist ein `try` / `catch` blockieren, für den Fall, dass das Steuerelement, das der Effekt angefügt ist keine der `Control.Layer` Eigenschaften. Keine Implementierung erfolgt durch die `OnDetached` Methode, da kein Cleanup erforderlich ist.
 
-### <a name="android-project"></a>Android Project
+### <a name="android-project"></a>Android-Projekt
 
 Das folgende Codebeispiel zeigt die `LabelShadowEffect` Implementierung für das Android-Projekt:
 
@@ -184,14 +184,14 @@ namespace EffectsDemo.Droid
 
 Die `OnAttached` Methode ruft die `ShadowEffect` -Instanz und ruft die [ `TextView.SetShadowLayer` ](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/) Methode, um einen Schatten mit den angegebenen Eigenschaftswerten erstellen. Diese Funktion umschlossen ist ein `try` / `catch` blockieren, für den Fall, dass das Steuerelement, das der Effekt angefügt ist keine der `Control.Layer` Eigenschaften. Keine Implementierung erfolgt durch die `OnDetached` Methode, da kein Cleanup erforderlich ist.
 
-### <a name="windows-phone--universal-windows-platform-projects"></a>Windows Phone & universelle Windows-Plattformprojekten
+### <a name="universal-windows-platform-project"></a>Universelle Windows-Plattform-Projekt
 
-Das folgende Codebeispiel zeigt die `LabelShadowEffect` Implementierung für die Projekte für Windows Phone und universelle Windows-Plattform (UWP):
+Das folgende Codebeispiel zeigt die `LabelShadowEffect` Implementierung für das Projekt für die universelle Windows-Plattform (UWP):
 
 ```csharp
 [assembly: ResolutionGroupName ("Xamarin")]
 [assembly: ExportEffect (typeof(LabelShadowEffect), "LabelShadowEffect")]
-namespace EffectsDemo.WinPhone81
+namespace EffectsDemo.UWP
 {
     public class LabelShadowEffect : PlatformEffect
     {
@@ -229,7 +229,7 @@ namespace EffectsDemo.WinPhone81
 }
 ```
 
-Windows-Runtime und der universellen Windows-Plattform einen Schatteneffekt stellen keine muss das `LabelShadowEffect` Implementierung auf beiden Plattformen simuliert ein Datum durch Hinzufügen eines zweiten Offsets [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) hinter dem primären `Label`. Die `OnAttached` Methode ruft die `ShadowEffect` Instanz ist, erstellt das neue `Label`, und einige Eigenschaften für das Layout für die `Label`. Klicken Sie dann wird die Schattenkopie erstellt, durch Festlegen der [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/), [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/), und [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) Eigenschaften zum Steuern der Farbe und Position von der `Label`. Die `shadowLabel` wird eingefügt hinter dem primären offset `Label`. Diese Funktion umschlossen ist ein `try` / `catch` blockieren, für den Fall, dass das Steuerelement, das der Effekt angefügt ist keine der `Control.Layer` Eigenschaften. Keine Implementierung erfolgt durch die `OnDetached` Methode, da kein Cleanup erforderlich ist.
+Die universelle Windows-Plattform stellt keinen Schatteneffekt muss das `LabelShadowEffect` Implementierung auf beiden Plattformen simuliert ein Datum durch Hinzufügen eines zweiten Offsets [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) hinter dem primären `Label`. Die `OnAttached` Methode ruft die `ShadowEffect` Instanz ist, erstellt das neue `Label`, und einige Eigenschaften für das Layout für die `Label`. Klicken Sie dann wird die Schattenkopie erstellt, durch Festlegen der [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/), [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/), und [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) Eigenschaften zum Steuern der Farbe und Position von der `Label`. Die `shadowLabel` wird eingefügt hinter dem primären offset `Label`. Diese Funktion umschlossen ist ein `try` / `catch` blockieren, für den Fall, dass das Steuerelement, das der Effekt angefügt ist keine der `Control.Layer` Eigenschaften. Keine Implementierung erfolgt durch die `OnDetached` Methode, da kein Cleanup erforderlich ist.
 
 ## <a name="summary"></a>Zusammenfassung
 

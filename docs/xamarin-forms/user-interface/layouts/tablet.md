@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: d75c5714e53961ff5704c72b5508514f8cd2e898
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bcd277145de13a95a0b19aa4945b02078af52978
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Layout für Tablet und Desktop-apps
 
@@ -18,7 +18,7 @@ Xamarin.Forms unterstützt alle Gerätetypen, die auf unterstützten Plattformen
 
 * iPads,
 * Android-tablets
-* Windows-Tablets und Desktopcomputer (unter Windows 8.1 oder Windows 10).
+* Windows-Tablets und desktop-Computer (unter Windows 10).
 
 Auf dieser Seite werden kurz erläutert:
 
@@ -53,12 +53,7 @@ Wenn viele verschiedene bildschirmauflösungen zu unterstützen, können Sie Ihr
 
 ### <a name="windows-tablets-and-desktops"></a>Windows-Tablets und PCs
 
-Zur Unterstützung von Tablets und Desktopcomputer, auf denen Windows ausgeführt wird, müssen Sie eines der zwei unterstützte Projekttypen verwenden:
-
-* [Windows 8.1](~/xamarin-forms/platform/windows/installation/tablet.md) -
-  apps, die speziell für Windows 8.1-Tablets und PCs erstellt.
-* [Windows-UWP-Unterstützung](~/xamarin-forms/platform/windows/installation/universal.md) -
-  universelle apps für sowohl Windows 10-Smartphones, Tablets und Desktops erstellt.
+Unterstützung von Tablets und Desktopcomputer, auf denen Windows ausgeführt wird, müssen mit [Windows uwp-Unterstützung](~/xamarin-forms/platform/windows/installation/index.md), welche builds universelle apps für Windows 10.
 
 Apps auf Windows-Tablets und PCs können auf beliebige Dimensionen darüber hinaus ausgeführt Vollbildmodus verändert werden.
 

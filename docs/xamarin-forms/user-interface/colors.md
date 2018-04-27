@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 8d6276a96d591363c88be4ff7edd8a9d039fb29d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71c10e1de8b94b8d9799d144fb603c82c40ca9eb
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="colors"></a>Farben
 
@@ -44,7 +44,7 @@ var @default = new Label    { Text = "Default",    BackgroundColor = Color.Defau
 var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accent };
 ```
 
-Diese Farben werden auf jeder Plattform unten angezeigt. Beachten Sie die endgültige Farbe - `Accent` -ist eine blue-ish Farbe für IOS- und Android; dieser Wert wird definiert, indem Sie Xamarin.Forms. Auf Windows Phone der `Accent` zeigt Rot *, die vom Benutzer ausgewählte Akzentfarbe für dieses Gerät ist*, dieser Wert ändert sich abhängig von Einstellungen des Benutzers.
+Diese Farben werden auf jeder Plattform unten angezeigt. Beachten Sie die endgültige Farbe - `Accent` -ist eine blue-ish Farbe für IOS- und Android; dieser Wert wird definiert, indem Sie Xamarin.Forms.
 
  [![Farbe Demo](colors-images/colors-sml.png "Farbe Demo")](colors-images/colors.png#lightbox "Farbe-Demo")
 
@@ -59,8 +59,6 @@ Entwickler können diesen Wert festlegen einer `Color` Eigenschaft jedoch sollte
 Legen Sie die Farbe zu deaktivieren.
 
 ## <a name="coloraccent"></a>Color.Accent
-
-Auf Windows Phone ist dies die Komplementärfarbe, die vom Benutzer ausgewählt wurde. Gute Windows Phone-Anwendungen verwenden diese als Teil ihrer formatieren, um ein homogenes Aussehen und Verhalten bereitzustellen.
 
 Auf IOS- und Android wird diese Instanz eine kontrastreiche Farbe festlegen, die auf den Standardhintergrund angezeigt wird, jedoch ist nicht die Standard-Textfarbe identisch.
 

@@ -7,11 +7,11 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 09a81cd84f145512b9fbbf0db009335eac8a95a9
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: b4a36e15bd5db72ef113748282175c6d31a95966
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="the-scale-transform"></a>Die Skalierungstransformation für die
 
@@ -25,15 +25,15 @@ Die Skalierungstransformation wird auch häufig Grafikkoordinaten zu verschieben
 
 Zuvor haben Sie gesehen zwei Transformation Formeln, die beschreiben, die Auswirkungen der Übersetzung Authentifizierungsstufen `dx` und `dy`:
 
-x' = x + dx
+X "= X + Dx
 
 y "= y + dy
 
 Skalierungsfaktoren des `sx` und `sy` sind und nicht Additive multiplikative:
 
-x' = sx · x
+X "Sx · = x
 
-y' = sy · y
+y "Sy · = y
 
 Die Standardwerte der übersetzen Faktoren sind 0; die Standardwerte für die Skalierungsfaktoren steht "1".
 
@@ -167,7 +167,7 @@ Der oberen linken Ecke des abgerundeten Rechtecks positioniert ist `margin` Pixe
 
 [![](scale-images/centeredscale-small.png "Dreifacher Screenshot der Seite zentriert Skalierung")](scale-images/centeredscale-large.png#lightbox "dreifacher Screenshot der Seite zentriert Skalierung")
 
-Die `Slider` Elemente an diesem Programm haben einen Bereich von &ndash;10 bis 10. Wie Sie sehen können, dazu führen, dass negative Werte vertikale Skalierung (z. B. Bildschirm auf das Android-Geräten in der Mitte) Objekte aus, um die horizontale Achse zu blättern, die den Mittelpunkt der Skalierung durchlaufen. Negative Werte der horizontalen Skalierung (z. B. wie in der Windows-Bildschirm auf der rechten Seite) dazu führen, dass Objekte, um die vertikale Achse zu blättern, die den Mittelpunkt der Skalierung durchlaufen.
+Die `Slider` Elemente an diesem Programm haben einen Bereich von &ndash;10 bis 10. Wie Sie sehen können, dazu führen, dass negative Werte vertikale Skalierung (z. B. Bildschirm auf das Android-Geräten in der Mitte) Objekte aus, um die horizontale Achse zu blättern, die den Mittelpunkt der Skalierung durchlaufen. Negative Werte der horizontalen Skalierung (z. B. wie die uwp-Bildschirm auf der rechten Seite) dazu führen, dass Objekte, um die vertikale Achse zu blättern, die den Mittelpunkt der Skalierung durchlaufen.
 
 Dieser vierte Version der `Scale` Methode ist tatsächlich eine Verknüpfung. Möglicherweise möchten Sie sehen, wie dies durch Ersetzen funktioniert die `Scale` Methode in diesem Code durch Folgendes:
 

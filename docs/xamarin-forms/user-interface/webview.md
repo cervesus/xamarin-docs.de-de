@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: a96c57b66e5debbbb7318c22e33a21eb9b998395
-ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
+ms.openlocfilehash: ed37e723d4b1a7997890c41886df8d117425e270
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="webview"></a>WebView
 
@@ -33,12 +33,12 @@ Dieses Handbuch besteht aus den folgenden Abschnitten:
 WebView bietet Unterstützung für die folgenden Typen von Inhalten:
 
 - HTML- & CSS-Websites &ndash; WebView bietet vollständige Unterstützung für Websites, die mit HTML und CSS, einschließlich der Unterstützung von JavaScript geschrieben.
-- Dokumente &ndash; da WebView mit systemeigenen Komponenten auf jeder Plattform implementiert wird, kann WebView für das Anzeigen von Dokumenten, die auf jeder Plattform sichtbar sind. Das heißt, PDF-Dateien auf iOS und Android, aber nicht auf Windows Phone arbeiten.
+- Dokumente &ndash; da WebView mit systemeigenen Komponenten auf jeder Plattform implementiert wird, kann WebView für das Anzeigen von Dokumenten, die auf jeder Plattform sichtbar sind. Das heißt, PDF-Dateien auf IOS- und Android arbeiten.
 - HTML-Zeichenfolgen &ndash; WebView kann HTML-Zeichenfolgen aus dem Arbeitsspeicher anzeigen.
 - Lokale Dateien &ndash; WebView kann keines der oben aufgeführten Inhaltstypen eingebettet in der app darstellen.
 
 > [!NOTE]
-> `WebView` unter Windows und Windows Phone unterstützt Silverlight, Flash oder alle ActiveX-Steuerelemente keine auch, wenn sie von Internet Explorer auf dieser Plattform unterstützt werden.
+> `WebView` unter Windows unterstützt nicht Silverlight, Flash oder alle ActiveX-Steuerelemente, auch wenn sie von Internet Explorer auf dieser Plattform unterstützt werden.
 
 ### <a name="websites"></a>Websites
 
@@ -231,28 +231,9 @@ using (var streamReader = new StreamReader (assetManager.Open ("local.html"))) {
 }
 ```
 
-#### <a name="windows-phone"></a>Windows Phone
+#### <a name="universal-windows-platform"></a>Universelle Windows-Plattform
 
-Auf Windows Phone, platzieren Sie HTML, CSS und Bilder im Projektstammverzeichnis mit den Buildvorgang festgelegt *Content* wie nachstehend gezeigt:
-
-![](webview-images/windows-vs.png "Lokale Dateien auf Windows Phone")
-
-Auf Windows Phone die `BaseUrl` sollte festgelegt werden, um `""`:
-
-```csharp
-[assembly: Dependency (typeof(BaseUrl_Windows))]
-namespace WorkingWithWebview.Windows {
-  public class BaseUrl_Windows : IBaseUrl {
-    public string Get() {
-      return "";
-    }
-  }
-}
-```
-
-#### <a name="windows-runtime-and-universal-windows-platform"></a>Windows-Runtime und universelle Windows-Plattform
-
-Für Projekte für Windows-Runtime und universelle Windows-Plattform (UWP), platzieren Sie HTML, CSS und Bilder im Projektstammverzeichnis mit den Buildvorgang festgelegt *Content*.
+Für Projekte der universellen Windows-Plattform (UWP), platzieren Sie HTML, CSS und Bilder im Projektstammverzeichnis mit den Buildvorgang festgelegt *Content*.
 
 Die `BaseUrl` sollte festgelegt werden, um `"ms-appx-web:///"`:
 
@@ -402,14 +383,11 @@ WebView unter Android in der Standardeinstellung ist etwa so schnell wie den int
 
 Die [uwp-WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) Microsoft Edge-Renderingmodul verwendet. Desktop- und Tablet-Geräte sollten die gleiche Leistung als mit dem Edge-Browser selbst angezeigt.
 
-Die `WebBrowser` Steuerelement im Windows Phone 8 und Windows Phone 8.1 unterstützt nicht die neueste HTML5-Unterstützungsfunktionen und können häufig eine schlechte Leistung aufweisen. Bedenken Sie Standorte in Anzeige der Windows Phone- `WebView`. Es ist nicht ausreichend, um Sie in Internet Explorer testen.
-
 ## <a name="permissions"></a>Berechtigungen
 
 In der Reihenfolge für `WebView` funktioniert, Sie müssen sicherstellen, dass die Berechtigungen für jede Plattform festgelegt sind. Beachten Sie, dass auf manchen Plattformen `WebView` funktioniert im Debugmodus befindet, jedoch nicht, wenn für die Veröffentlichung erstellt. Ist, dass einige Berechtigungen, wie z. B. für den Zugriff auf das Internet auf Android-Geräten für Mac im Debugmodus standardmäßig von Visual Studio festgelegt sind.
 
-- **Windows Phone 8.0** &ndash; erfordert `ID_CAP_WEBBROWSERCOMPONENT` für das Steuerelement und `ID_CAP_NETWORKING` für den Internetzugriff.
-- **Windows Phone 8.1 und uwp-** &ndash; erfordert die Funktion Internet (Client & Server) Netzwerkinhalte angezeigt.
+- **Universelle Windows-Plattform** &ndash; erfordert die Funktion Internet (Client & Server) Netzwerkinhalte angezeigt.
 - **Android** &ndash; erfordert `INTERNET` nur, wenn Sie Inhalt über das Netzwerk anzeigen. Lokale Inhalte erfordern keine besonderen Berechtigungen.
 - **iOS** &ndash; benötigt keine besonderen Berechtigungen.
 

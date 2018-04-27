@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: e555c038d66033d925da42e4c70b89d5caac8ad6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43b021b158bbb815ab8d27c393f54e0775599940
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>Einführung in benutzerdefinierte Renderer
 
@@ -19,7 +19,7 @@ _Benutzerdefinierter Renderer bieten einen sehr effizienter Ansatz zum Anpassen 
 
 Xamarin.Forms [Seiten, Layouts und Steuerelemente](~/xamarin-forms/user-interface/controls/index.md) eine allgemeine API zum Beschreiben von plattformübergreifenden mobilen von Benutzeroberflächen darzustellen. Jede Seite, Layout und Steuerelement unterschiedlich auf jeder Plattform gerendert wird mithilfe einer `Renderer` -Klasse, die wiederum ein systemeigenen-Steuerelement (entsprechend der Darstellung Xamarin.Forms), erstellt angeordnet, auf dem Bildschirm, und fügt das Verhalten der gemeinsam verwendeten Code.
 
-Entwickler können ihre eigenen benutzerdefinierten `Renderer`-Klassen implementieren, um die Darstellung und/oder das Verhalten eines Steuerelements anzupassen. Eine Anwendung-Projekt, um das Steuerelement an einem Ort anpassen, während gleichzeitig das Standardverhalten auf anderen Plattformen können benutzerdefinierten Renderer für einen bestimmten Typ hinzugefügt werden. oder anderen benutzerdefinierten Renderer können jede Anwendungsprojekt zum Erstellen von einem anderen Aussehen und Verhalten auf iOS-, Android- und Windows Phone hinzugefügt werden. Allerdings ist die Implementierung einer benutzerdefinierten Renderer-Klasse, um ein einfaches Steuerelement durchführen häufig eine Heavyweight-Antwort. Auswirkungen dieser Prozess vereinfacht, und sind für kleine Styling Änderungen in der Regel verwendet. Weitere Informationen finden Sie unter [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md).
+Entwickler können ihre eigenen benutzerdefinierten `Renderer`-Klassen implementieren, um die Darstellung und/oder das Verhalten eines Steuerelements anzupassen. Eine Anwendung-Projekt, um das Steuerelement an einem Ort anpassen, während gleichzeitig das Standardverhalten auf anderen Plattformen können benutzerdefinierten Renderer für einen bestimmten Typ hinzugefügt werden. oder anderen benutzerdefinierten Renderer können jede Anwendungsprojekt zum Erstellen von einem anderen Aussehen und Verhalten auf iOS-, Android- und die universelle Windows-Plattform (UWP) hinzugefügt werden. Allerdings ist die Implementierung einer benutzerdefinierten Renderer-Klasse, um ein einfaches Steuerelement durchführen häufig eine Heavyweight-Antwort. Auswirkungen dieser Prozess vereinfacht, und sind für kleine Styling Änderungen in der Regel verwendet. Weitere Informationen finden Sie unter [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md).
 
 ## <a name="examining-why-custom-renderers-are-necessary"></a>Untersuchen Warum benutzerdefinierten Renderern sind erforderlich
 
@@ -51,7 +51,7 @@ Die `MyEntry` -Steuerelement ist ein `Entry` steuern, wo die `BackgroundColor` a
 Die `local` Namespacepräfix kann alles sein. Allerdings die `namespace` und `assembly` Werte müssen die Details des benutzerdefinierten Steuerelements übereinstimmen. Nach der Namespace deklariert ist, wird das Präfix verwendet, auf das benutzerdefinierte Steuerelement verweisen.
 
 > [!NOTE]
-> Definieren der `xmlns` ist deutlich einfacher in PCLs als freigegebene Projekte. Eine PCL wird in eine Assembly kompiliert, daher ist es einfach zu bestimmen, welche die `assembly=CustomRenderer` Wert sein soll. Gemeinsam genutzte Projekte verwenden, werden alle freigegebenen Ressourcen (einschließlich des XAML-Codes) in jede der verweisenden-Projekten; Dies bedeutet, dass bei iOS, Android und Windows Phone kompiliert-Projekte verfügen über eigene *Assemblynamen* es ist nicht möglich Sie schreiben die `xmlns` Deklaration, da der Wert für jede Anwendung unterschiedlich sein muss. Benutzerdefinierte Steuerelemente in XAML für freigegebene Projekte erfordern alle Anwendungsprojekt mit demselben Namen konfiguriert werden.
+> Definieren der `xmlns` ist deutlich einfacher in PCLs als freigegebene Projekte. Eine PCL wird in eine Assembly kompiliert, daher ist es einfach zu bestimmen, welche die `assembly=CustomRenderer` Wert sein soll. Bei Verwendung von freigegebenen Projekten werden alle freigegebenen Ressourcen (einschließlich des XAML-Codes) kompiliert, in jede der verweisenden-Projekten; Dies bedeutet, dass bei iOS, Android und uwp-Projekte verfügen über eigene *Assemblynamen* unmöglich ist, schreiben die `xmlns` Deklaration, da der Wert für jede Anwendung unterschiedlich sein muss. Benutzerdefinierte Steuerelemente in XAML für freigegebene Projekte erfordern alle Anwendungsprojekt mit demselben Namen konfiguriert werden.
 
 Die `MyEntry` benutzerdefiniertes Steuerelement wird dann für jede Plattform, mit einem grauen Hintergrund gerendert, wie in den folgenden Screenshots dargestellt:
 

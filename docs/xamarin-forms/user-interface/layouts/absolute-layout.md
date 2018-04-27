@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: d07026fbcc43a43a9f26d85ad15d5a4e3165e2ef
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 110c608558059ba0f207b4cff343b428125e1784
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="absolutelayout"></a>AbsoluteLayout
 
@@ -282,11 +282,7 @@ Der obige Code erhalten Sie im folgenden dargestellt:
 
 ![](absolute-layout-images/abs.png "Komplexe AbsoluteLayout")
 
-Beachten Sie, dass aufgrund von entscheidend dafür, wie Schaltflächen von Windows Phone gerendert werden, einige der Kreise durch Boxviews im Windows Phone-Screenshot ersetzt wurden.
-
 Beachten Sie, dass `AbsoluteLayout`s geschachtelt werden, da in einigen Fällen Schachteln von Layouts einfacher, als vertrauenswürdig sind alle Elemente innerhalb des gleichen Layouts sein kann.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

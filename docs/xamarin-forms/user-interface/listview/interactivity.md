@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 511a7052b07a853279f91211b3e3b1219f125c59
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d16c45b7f7cb7eef67a905b6fbcb9b8675b0b2ba
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="listview-interactivity"></a>ListView-Interaktivität
 
@@ -53,12 +53,10 @@ Mit der Auswahl aktiviert:
 
 ![](interactivity-images/selection-default.png "ListView mit Auswahl aktiviert")
 
-Beachten Sie, dass auf Windows Phone, einige der Zellen, einschließlich `SwitchCell` ihre visuellen Zustands als Antwort auf die Auswahl nicht aktualisieren.
-
 <a name="Context_Actions" />
 
 ## <a name="context-actions"></a>Kontext-Aktionen
-Häufig Benutzer sollten Maßnahmen auf ein Element in einem `ListView`. Betrachten Sie beispielsweise eine Liste von e-Mail-Adressen in die e-Mail-app. Bei iOS kann können navigieren Sie zum Löschen einer Nachricht und auf Windows Phone-Long-drücken Sie eine Nachricht und löschen Sie ihn:
+Häufig Benutzer sollten Maßnahmen auf ein Element in einem `ListView`. Betrachten Sie beispielsweise eine Liste von e-Mail-Adressen in die e-Mail-app. IOS, können Sie zum Löschen einer Nachricht Streifen::
 
 ![](interactivity-images/context-default.png "ListView mit Kontext Aktionen")
 
@@ -149,8 +147,6 @@ Pull aktualisieren, als der Benutzer ist abrufen:
 ![](interactivity-images/refresh-start.png "ListView Pull In Bearbeitung aktualisieren")
 
 Pull aktualisieren, als der Benutzer hat die Pull veröffentlicht. Dies ist, was dem Benutzer angezeigt, während Sie die Liste aktualisiert haben: ![ ] (interactivity-images/refresh-in-progress.png "ListView Pull auf vollständige aktualisieren")
-
-Beachten Sie, dass zum Zeitpunkt der Xamarin.Forms 1.4.3, Pull zum Aktualisieren auf Windows Phone 8.1 nicht unterstützt wird. Auf Windows Phone 8 ist zum Aktualisieren ziehen keine systemeigene Plattform-Funktion, damit eine Implementierung von Pull zum Aktualisieren von Xamarin.Forms bereitgestellt wird. Schließlich bedenken, dass Pull-datenaktualisierung funktioniert nicht auf Windows Phone, wenn alle Elemente in der Liste (das heißt, wenn vertikaler Bildlauf nicht erforderlich ist) auf dem Bildschirm passen.
 
 ListView macht einige Ereignisse, die Sie zum Aktualisieren ziehen Ereignisse reagieren können.
 

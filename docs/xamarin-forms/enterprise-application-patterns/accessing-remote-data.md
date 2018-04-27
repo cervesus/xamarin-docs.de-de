@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 0f29377c52dcf65247c11079178efe0745c654eb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f1e15d31f11c6845ad61882996f01fb16e80ed95
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="accessing-remote-data"></a>Zugreifen auf Remotedaten
 
@@ -330,13 +330,13 @@ Der FFImageLoading `CachedImage` Steuerelement ist ein Ersatz für die Xamarin.F
     <ffimageloading:CachedImage.LoadingPlaceholder>
         <OnPlatform x:TypeArguments="ImageSource">
             <On Platform="iOS, Android" Value="default_campaign" />
-            <On Platform="UWP, WinRT, WinPhone" Value="Assets/default_campaign.png" />
+            <On Platform="UWP" Value="Assets/default_campaign.png" />
         </OnPlatform>
     </ffimageloading:CachedImage.LoadingPlaceholder>
     <ffimageloading:CachedImage.ErrorPlaceholder>
         <OnPlatform x:TypeArguments="ImageSource">
             <On Platform="iOS, Android" Value="noimage" />
-            <On Platform="UWP, WinRT, WinPhone" Value="Assets/noimage.png" />
+            <On Platform="UWP" Value="Assets/noimage.png" />
         </OnPlatform>
     </ffimageloading:CachedImage.ErrorPlaceholder>
 </ffimageloading:CachedImage>
@@ -414,4 +414,4 @@ Bei der Kommunikation mit Web-APIs muss apps empfindlich gegenüber vorübergehe
 ## <a name="related-links"></a>Verwandte Links
 
 - [Download-e-Book (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (sample)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [eShopOnContainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

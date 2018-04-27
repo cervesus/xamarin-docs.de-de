@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: 2ddaba4541af52ae119fbf504fdcc66ba357c113
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e3205d83ba207322d4c53c4c6e98d4890ad48a77
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Player Live-App
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 04/04/2018
 
 Xamarin Live Player steht für Android aus Google Play zur Verfügung:
 
-[ ![Auf Google Play verfügbar](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
+[![Auf Google Play verfügbar](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
 
 Ist Live Xamarin Player für Android-Geräten ohne Google Play erhältlich [HockeyApp](https://aka.ms/xlp-hockeyapp) Verteilung. Darüber hinaus frühe Vorschau erstellt, für Android aus Google Play direkt installiert werden kann, durch die Teilnahme an der [öffnen-Betaprogramm](https://play.google.com/apps/testing/com.xamarin.live)
 
@@ -53,7 +53,7 @@ Wenn die Verbindung erfolgreich ist, der Code sollte auf dem Gerät fast sofort 
 
 Drücken Sie die Schaltfläche "Information" **(i)** am unteren Rand der app, zeigen die **Optionen** Menü:
 
-[ ![Screenshot der im Menü "Optionen"](player-images/options-sml.png)](player-images/options.png#lightbox)
+[![Screenshot der im Menü "Optionen"](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>Protokolle
 
@@ -61,11 +61,11 @@ Zeigen Sie die Protokolle, um Probleme zu diagnostizieren.
 
 ### <a name="settings"></a>Einstellungen
 
-* Schaltet die Anzeige der kompilierungs-und Laufzeitfehler.
-* Versionsinformationen.
-* Senden von Feedback.
+- Schaltet die Anzeige der kompilierungs-und Laufzeitfehler.
+- Versionsinformationen.
+- Senden von Feedback.
 
-[ ![Screenshot der Einstellungen](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[![Screenshot der Einstellungen](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>Verwalten von Geräten
 
@@ -107,9 +107,8 @@ Sie können dieses Fenster auch aus der Liste der Geräte zugreifen:
 
 Wenn Sie alle Probleme finden Sie unter auftreten [Einschränkungen und Problembehandlung](~/tools/live-player/troubleshooting.md).
 
-
 ## <a name="related-links"></a>Verwandte Links
 
 - [Einschränkungen](~/tools/live-player/limitations.md)
 - [Problembehandlung](~/tools/live-player/troubleshooting.md)
-- [Xamarin Player Live-Beispiele](~/tools/livehttps://developer.xamarin.com/samples.md)
+- [Xamarin Player Live-Beispiele](samples.md)

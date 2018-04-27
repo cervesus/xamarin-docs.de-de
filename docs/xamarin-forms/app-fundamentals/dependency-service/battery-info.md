@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 3f098e7f403a4f5e9fd924b8745348197cd4f843
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b437b42c1cb4dd8cbe7612a680032d84e852ff6
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="checking-battery-status"></a>Akkustatus überprüfen
 
@@ -22,7 +22,6 @@ Da Xamarin.Forms nicht zum Überprüfen des aktuellen Akkustatus enthalten ist, 
 - **[Zum Erstellen der Schnittstelle](#Creating_the_Interface)**  &ndash; zu verstehen, wie die Schnittstelle im gemeinsamen Code erstellt wird.
 - **[iOS Implementierung](#iOS_Implementation)**  &ndash; erfahren Sie, wie die Schnittstelle in systemeigenem Code für iOS zu implementieren.
 - **[Android-Implementierung](#Android_Implementation)**  &ndash; erfahren Sie, wie die Schnittstelle für Android in systemeigenem Code zu implementieren.
-- **[Windows Phone-Implementierung](#Windows_Phone_Implementation)**  &ndash; erfahren Sie, wie die Schnittstelle für Windows Phone in systemeigenem Code zu implementieren.
 - **[Universelle Windows-Plattform-Implementierung](#UWPImplementation)**  &ndash; erfahren Sie, wie die Schnittstelle in systemeigenem Code für die universelle Windows-Plattform (UWP) zu implementieren.
 - **[Implementieren im freigegebenen Code](#Implementing_in_Shared_Code)**  &ndash; erfahren, wie `DependencyService` in die systemeigene Implementierung von freigegebenem Code aufrufen.
 
@@ -311,74 +310,6 @@ namespace DependencyServiceSample.Droid
 
 Dieses Attribut wird die Klasse als eine Implementierung von registriert die `IBattery` -Schnittstelle, dies bedeutet, dass `DependencyService.Get<IBattery>` kann verwendet werden, der gemeinsam verwendeten Code kann eine Instanz davon erstellen.
 
-<a name="Windows_Phone_Implementation" />
-
-## <a name="windows-phone-implementation"></a>Windows Phone-Implementierung
-
-Diese Implementierung ist stärker eingeschränkt als die Android und iOS-Versionen, da die Windows Phone-Power-API weniger Informationen als die Entsprechungen für Android und iOS bereitstellt.
-
-```csharp
-using System;
-using Windows.ApplicationModel.Core;
-using DependencyServiceSample.WinPhone;
-
-namespace DependencyServiceSample.WinPhone
-{
-  public class BatteryImplementation : IBattery
-  {
-    private int last;
-    private BatteryStatus status = BatteryStatus.Unknown;
-
-    public BatteryImplementation()
-    {
-      last = DefaultBattery.RemainingChargePercent;
-    }
-
-    Windows.Phone.Devices.Power.Battery battery;
-    private Windows.Phone.Devices.Power.Battery DefaultBattery
-    {
-      get { return battery ?? (battery = Windows.Phone.Devices.Power.Battery.GetDefault()); }
-    }
-    public int RemainingChargePercent
-    {
-      get
-      { return DefaultBattery.RemainingChargePercent; }
-    }
-
-    public  BatteryStatus Status
-    {
-      get { return status; }
-    }
-
-    public PowerSource PowerSource
-    {
-      get
-      {
-        if (status == BatteryStatus.Full || status == BatteryStatus.Charging)
-          return PowerSource.Ac;
-
-        return PowerSource.Battery;
-      }
-    }
-  }
-}
-```
-
-Fügen Sie der `[assembly]` Attribut über die Klasse (und die außerhalb der Namespaces, die definiert wurden), einschließlich der erforderlichen `using` Anweisungen.
-
-```csharp
-using System;
-using Windows.ApplicationModel.Core;
-using DependencyServiceSample.WinPhone;
-
-[assembly: Xamarin.Forms.Dependency (typeof (BatteryImplementation))]
-namespace DependencyServiceSample.WinPhone {
-  public class BatteryImplementation : IBattery {
-    ...
-```
-
-Dieses Attribut wird die Klasse als eine Implementierung von registriert die `IBattery` -Schnittstelle, dies bedeutet, dass `DependencyService.Get<IBattery>` im freigegebenen Code zum Erstellen einer Instanz des Zertifikats verwendet werden können.
-
 <a name="UWPImplementation" />
 
 ## <a name="universal-windows-platform-implementation"></a>Universelle Windows-Plattform-Implementierung
@@ -537,7 +468,7 @@ public MainPage ()
 }
 ```
 
-Diese Anwendung auf iOS, Android oder Windows-Plattformen ausgeführt, und drücken die Schaltfläche "" führt zu den Text der Schaltfläche aktualisiert werden, um den aktuellen Status der Stromversorgung des Geräts widerzuspiegeln.
+Ausführen der Anwendung auf iOS, führt Android, oder universelle Windows-Plattform und auf die Schaltfläche in den Text der Schaltfläche aktualisiert werden, um den aktuellen Status der Stromversorgung des Geräts widerzuspiegeln.
 
 ![](battery-info-images/battery.png "Akku-Status-Beispiel")
 

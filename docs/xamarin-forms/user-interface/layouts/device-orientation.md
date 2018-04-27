@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 9d1b10925f1455c303950eff342764b1fbc9275d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b06b17ce8f19f7f7cabe35c23de5b61db8f71dbe
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="device-orientation"></a>Geräteausrichtung
 
@@ -29,9 +29,6 @@ Dieser Artikel führt Sie durch das Erstellen von apps, die Ausrichtung von Ger�
 
 Wenn Sie Xamarin.Forms verwenden, ist das unterstützte Verfahren zum Steuern des Geräts auf die Einstellungen für jedes einzelne Projekt verwenden.
 
-> [!NOTE]
-> Ab Xamarin.Forms 1.5.0, liegt ein Fehler wird verhindert, dass, versucht Renderer basierende benutzerdefinierte Ausrichtung zu Fehlern zu steuern. Finden Sie unter [in dieser Diskussion](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)dieser Diskussion in die Xamarin-Foren für Weitere Informationen.
-
 ### <a name="ios"></a>iOS
 
 Bei iOS kann geräteausrichtung konfiguriert ist, für Anwendungen, die **"Info.plist"** Datei. Diese Datei wird Ausrichtung-Einstellungen für iPhone & iPod sowie Einstellungen für iPad einschließen, wenn die app als Ziel enthält. Im folgenden sind die Anweisungen, die spezifisch für die IDE. Verwenden Sie die IDE-Optionen am oberen Rand dieses Dokuments an, welche Anweisungen auswählen, finden Sie unter möchten:
@@ -40,7 +37,7 @@ Bei iOS kann geräteausrichtung konfiguriert ist, für Anwendungen, die **"Info.
 
 In Visual Studio, öffnen Sie das iOS-Projekt, und öffnen Sie **"Info.plist"**. Die Datei wird in einem Konfigurationsfenster, beginnend mit der iPhone-Registerkarte "Bereitstellung-Info" zu öffnen:
 
-![iPhone Deployment Info in Visual Studio](device-orientation-images/orientation-vs-iphone.png)
+![iPhone Bereitstellungsinformationen in Visual Studio](device-orientation-images/orientation-vs-iphone.png)
 
 Wählen Sie zum Konfigurieren der iPad-Ausrichtung der **iPad Bereitstellungsinformationen** Registerkarte im oberen linken Bereich des Bereichs, dann wählen Sie aus den verfügbaren Ausrichtungen:
 
@@ -57,7 +54,6 @@ Wenn Sie lieber so bearbeiten Sie die Werte, die über ein Schlüssel-Wert Edito
 ![Gerät Ausrichtungen in Visual Studio für Mac unterstützt.](device-orientation-images/orientation-xam-source.png)
 
 -----
-
 
 ### <a name="android"></a>Android
 
@@ -93,27 +89,9 @@ Xamarin.Android unterstützt mehrere Optionen zum Angeben der Ausrichtung:
 
 Beachten Sie, dass die systemeigene Android-APIs bieten einen hohen steuern, wie die Ausrichtung verwaltet wird, einschließlich der Optionen, die des Benutzers explizit widersprechen Voreinstellungen ausgedrückt werden.
 
-### <a name="windows-phone"></a>Windows Phone
+### <a name="universal-windows-platform"></a>Universelle Windows-Plattform
 
-Auf Windows Phone-RT, unterstützten Ausrichtungen festgelegt sind, der <span class="UIItem">"Package.appxmanifest"</span> Datei. Öffnen das Manifest wird ein Panel Konfiguration anzuzeigen, in denen unterstützten Ausrichtungen ausgewählt werden können:
-
-![](device-orientation-images/vs-winrt-config.png ""Package.appxmanifest" Visual-Editor")
-
-Unter Windows Phone 8 (Silverlight) unterstützten Ausrichtungen festgelegt sind, im Code in der <span class="UIItem">"MainPage.Xaml.cs"</span> Datei. In der Standard-Projektvorlage wird der Wert bereits mit der folgenden Zeile des Codes festgelegt:
-
-```csharp
-SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
-```
-
-Ersetzen Sie zum Angeben der Ausrichtung, die auf Windows Phone-Optionen, die durch den Code So aktivieren Sie die Ausrichtungen an, die Sie möchten:
-
-```csharp
-SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
-SupportedOrientations = SupportedPageOrientation.Portrait; // portrait only
-SupportedOrientations = SupportedPageOrientation.Landscape; // landscape only
-```
-
-Beachten Sie, dass Windows Phone-Landscape Ansichten in beiden unterstützt (wie von Hochformat dargestellt) Ausrichtungen von links nach rechts und rechts-nach-links. Es ist nicht möglich, um anzugeben, die verwendet wird.
+Auf die universelle Windows Plattform (UWP) unterstützten Ausrichtungen werden festgelegt, der **"Package.appxmanifest"** Datei. Öffnen das Manifest wird ein Panel Konfiguration anzuzeigen, in denen unterstützten Ausrichtungen ausgewählt werden können.
 
 <a name="Reacting_to_Changes_in_Orientation" />
 
