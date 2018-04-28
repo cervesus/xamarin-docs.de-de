@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2018
-ms.openlocfilehash: 51aad1643709a96c56ccad8187a53f47a65a9dac
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 2e2bbf12cd7b4abab4609349b549fde1bcea09e8
+ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="wpf-platform-setup"></a>WPF-Plattform-Setup
 
@@ -57,7 +57,7 @@ WPF-app hinzu, die auf dem Windows 7, 8 und 10-Desktops ausgeführt wird, gehen 
     xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"
     ```
 
-    Ändern Sie nun die `Window` tag `wpf:FormsApplcationPage`. Ändern der `Title` festlegen auf den Namen der Anwendung, z. B. **BoxViewClock**. Die vollständige Verwendung von XAML-Datei sollte wie folgt aussehen:
+    Ändern Sie nun die `Window` tag `wpf:FormsApplicationPage`. Ändern der `Title` festlegen auf den Namen der Anwendung, z. B. **BoxViewClock**. Die vollständige Verwendung von XAML-Datei sollte wie folgt aussehen:
 
     ```xaml
     <wpf:FormsApplicationPage x:Class="BoxViewClock.WPF.MainWindow"

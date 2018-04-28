@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 74f65021c23515e78e630f907a89ffde74de4da4
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 37ecc76d9774b3f375af92f2a00c6c687358f065
+ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="cell-appearance"></a>Darstellung der Zelle
 
@@ -70,7 +70,7 @@ TextCells als systemeigene Steuerelemente zur Laufzeit gerendert werden, damit d
 <a name="customcells" />
 
 ## <a name="custom-cells"></a>Benutzerdefinierte Zellen
-Wenn die integrierte Zellen nicht das erforderliche Layout bereitstellen, implementiert benutzerdefinierte Zellen das Layout erforderliche. Beispielsweise empfiehlt es sich eine Zelle mit zwei Bezeichnungen dar, die gleiche Gewichtung zu haben. Ein `LabelCell` wäre nicht genügend da die `LabelCell` verfügt über eine Bezeichnung, die kleiner ist. Die meisten Zelle Anpassungen hinzufügen, zusätzliche schreibgeschützte Daten (z. B. zusätzliche Bezeichnungen, Bilder oder andere Anzeigeinformationen).
+Wenn die integrierte Zellen nicht das erforderliche Layout bereitstellen, implementiert benutzerdefinierte Zellen das Layout erforderliche. Beispielsweise empfiehlt es sich eine Zelle mit zwei Bezeichnungen dar, die gleiche Gewichtung zu haben. Ein `TextCell` wäre nicht genügend da die `TextCell` verfügt über eine Bezeichnung, die kleiner ist. Die meisten Zelle Anpassungen hinzufügen, zusätzliche schreibgeschützte Daten (z. B. zusätzliche Bezeichnungen, Bilder oder andere Anzeigeinformationen).
 
 Alle benutzerdefinierte Zellen abgeleitet müssen [ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), die dieselbe Basisklasse an, dass alle integrierten Zelle Typen verwenden.
 

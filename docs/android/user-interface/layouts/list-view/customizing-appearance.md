@@ -5,12 +5,12 @@ ms.assetid: B09AD282-2C4F-D71E-6806-9B1EF05C2CD4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 71557cc0adb123cd4556c3d35add314f44f30da1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/26/2018
+ms.openlocfilehash: f4d737e31304a88f3ec293f90267a35ed1f2c7a5
+ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="customizing-a-listviews-appearance"></a>Anpassen der Darstellung einer ListView
 
@@ -38,7 +38,7 @@ Es gibt zwölf integrierte Sichten, die mit verwiesen werden können **Android.R
 
 - **SimpleListItemChecked** &ndash; zeigt Häkchen Auswahl an.
 
-- **SimpleListItemMultipleChoice** &ndash; Displays check boxes to indicate multiple-choice selection.
+- **SimpleListItemMultipleChoice** &ndash; zeigt Kontrollkästchen Multiple-Choice-Auswahl an.
 
 - **SimpleListItemSingleChoice** &ndash; zeigt Optionsfelder gegenseitig Auswahl an.
 
@@ -106,7 +106,7 @@ Zum Anzeigen eines diese Zubehör übergeben Festlegen der erforderlichen Layout
 ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItemChecked, items);
 ```
 
-Die `ListView` selbst unterstützt verschiedene Modi, unabhängig von den Accessor, der angezeigt wird. Um Verwirrung zu vermeiden, verwenden Sie `Single` Auswahlmodus mit `Checked` und `SingleChoice` Zubehör und `Multiple` Modus mit der `MultipleChoice` Stil. Der Auswahlmodus wird gesteuert, indem die `ChoiceMode` Eigenschaft von der `ListView`.
+Die `ListView` selbst unterstützt verschiedene Modi, unabhängig von den Accessor, der angezeigt wird. Um Verwirrung zu vermeiden, verwenden Sie `Single` Auswahlmodus mit `SingleChoice` Zubehör und `Checked` oder `Multiple` Modus mit der `MultipleChoice` Stil. Der Auswahlmodus wird gesteuert, indem die `ChoiceMode` Eigenschaft von der `ListView`.
 
 
 ### <a name="handling-api-level"></a>Behandeln von API-Ebene
