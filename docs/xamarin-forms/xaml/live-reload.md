@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 04/23/2018
-ms.openlocfilehash: 11e876207285689b230bb2fada3a4c836443e360
-ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
+ms.openlocfilehash: bfb53af420b64fb9af994d3fb19293406d3acd7b
+ms.sourcegitcommit: 180a8411d912de40545f9624e2127a66ee89e7b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="xamarin-live-reload"></a>Xamarin Live neu laden
 
@@ -31,7 +31,7 @@ Live-Reload ist derzeit nur in Visual Studio 2017 verfügbar.
 * [Xamarin.Forms 3.0.354232-pre3](https://www.nuget.org/packages/Xamarin.Forms/3.0.0.354232-pre3) oder höher.
 
 ## <a name="getting-started"></a>Erste Schritte
-### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Installieren Sie Xamarin Live zum erneuten Laden von Visual Studio Marketplace.
+### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Installieren Sie Xamarin Live zum erneuten Laden von Visual Studio Marketplace
 
 Live-Laden von Xamarin wird über die Visual Studio Marketplace verteilt. Um die Erweiterung installieren möchten, besuchen Sie die [Xamarin Live zum erneuten Laden der Seite in Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Xamarin.XamarinLiveReload) Website und klicken Sie auf **herunterladen**.
 
@@ -39,9 +39,9 @@ Live-Laden von Xamarin wird über die Visual Studio Marketplace verteilt. Um die
 
 ![Installer für Visual Studio Xamarin Live Reload-Bestätigung](images/LiveReloadVSIXInstall.png)
 
-> Alternativ können Sie dafür in Suchen der **Online** Registerkarte der **Erweiterungen und Updates** Dialogfeld innerhalb von Visual Studio.
+Alternativ können Sie dafür in Suchen der **Online** Registerkarte der **Erweiterungen und Updates** Dialogfeld innerhalb von Visual Studio.
 
-### <a name="2-configure-your-app-to-use-live-reload"></a>2. Konfigurieren Sie Ihre app zur Verwendung von Live neu laden.
+### <a name="2-configure-your-app-to-use-live-reload"></a>2. Konfigurieren der app zur Verwendung von Live neu laden
 
 Hinzufügen von Live zum erneuten Laden zu vorhandenen mobilen apps kann in drei Schritten ausgeführt werden:
 
@@ -66,7 +66,7 @@ public partial class App : Application
 }
 ```
 
-### <a name="3-start-live-reloading"></a>3. Starten Sie die live neu laden.
+### <a name="3-start-live-reloading"></a>3. Starten der live neu laden
 
 Kompilieren Sie und Bereitstellen Sie Ihrer Anwendung. Sobald die app bereitgestellt ist, öffnen Sie eine XAML-Datei, nehmen Sie einige Änderungen vor und speichern Sie die Datei. Die Änderungen werden an das Bereitstellungsziel entweder erneut bereitgestellt.
 
@@ -110,18 +110,13 @@ Nein. Tatsächlich können Sie sogar starten Sie alle Ihre Anwendung unterstütz
 * Funktioniert nur mit .NET Standardbibliotheken.
 * CSS-Stylesheets werden nicht unterstützt.
 * Benutzeroberflächenzustand möglicherweise zwischen erneut bereitstellen, es sei denn, die mit MVVM nicht beibehalten.
-
-## <a name="live-reload-server"></a>Live-Server neu laden
-
-In Szenarien, die eine Verbindung aus der ausgeführten app auf Ihrem Computer (mit angegebene `localhost` oder `127.0.0.1` in **Tools > Optionen > Xamarin > Live zum erneuten Laden**) ist nicht möglich (z. B. Firewalls, unterschiedlichen Netzwerken), Sie können einen Remoteserver stattdessen konfigurieren, wird die IDE und die app zu verbinden.
-
-Live zum erneuten Laden verwendet den Standard [MQTT Protokoll](http://mqtt.org/) zu tauschen Nachrichten aus, und kann daher mit kommunizieren [Servern von Drittanbietern](https://github.com/mqtt/mqtt.github.io/wiki/servers). Es gibt auch [öffentlichen Servern](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (auch bekannt als *Brokern*) verfügbar, die Sie verwenden können. Live zum erneuten Laden wurde mit getestet `broker.hivemq.com` und `iot.eclipse.org` Hostnamen als auch die Dienste von [www.cloudmqtt.com](https://www.cloudmqtt.com) und [www.cloudamqp.com](https://www.cloudamqp.com). Sie können auch einen eigenen MQTT-Server in der Cloud bereitstellen, wie z. B. [HiveMQ in Azure](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud) oder [Kaninchen MQ auf AWS](http://www.rabbitmq.com/ec2.html). 
-
-Sie können einen beliebigen Port konfigurieren, aber es ist üblich, den 1883-Standardport für Remoteserver verwenden. Live Reload-Nachrichten verwenden starke End-to-End-AES symmetrische Verschlüsselung, sodass für die Verbindung zu Remoteservern werden kann. Standardmäßig werden die Verschlüsselungsschlüssel und den Initialisierungsvektor (IV) auf jedes Visual Studio-Sitzung neu generiert.
+* Erneutes Laden der gesamten app-Ressourcen (d. h. **App.xaml** oder freigegebenen Ressourcenwörterbücher), app Navigation wird zurückgesetzt.
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
-Als die Anwendung erstellt wird, wird die Informationen aus **Tools > Optionen > Xamarin > Reload Live** (Name, Port und Verschlüsselung Hostschlüssel) werden daher in der app eingebettet, die bei `LiveReload.Init();` ausgeführt wird, keine Kopplung oder Konfiguration ist erforderlich für die Verbindung erfolgreich hergestellt werden kann.
+### <a name="app-doesnt-connect"></a>App verbunden nicht.
+
+Als die Anwendung erstellt wird, wird die Informationen aus **Tools > Optionen > Xamarin > Reload Live** (Name, Port und Verschlüsselung Hostschlüssel) werden daher in der app eingebettet, die bei `LiveReload.Init()` ausgeführt wird, keine Kopplung oder Konfiguration ist erforderlich für die Verbindung erfolgreich hergestellt werden kann.
 
 Als normale Netzwerkprobleme (Firewall, Gerät in einem anderen Netzwerk) ist die Hauptgründe dafür, dass die app keine IDE Verbindung hergestellt werden kann, da es sich bei die Konfiguration von in Visual Studio unterscheidet. Dies kann vorkommen, wenn werden:
 
@@ -131,6 +126,13 @@ Als normale Netzwerkprobleme (Firewall, Gerät in einem anderen Netzwerk) ist di
 
 Diesen Fällen werden alle Ausgabeklasse erstellen und Bereitstellen der app erneut aus.
 
+### <a name="uninstalling-preview-1"></a>Preview 1 deinstallieren
+
+Wenn Sie eine ältere Vorschau und Probleme deinstallieren, gehen Sie folgendermaßen vor:
+
+1. Löschen Sie den Ordner **C:\Program Files (x86) \Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\Extensions\Xamarin\LiveReload** (Hinweis: Ersetzen Sie "Unternehmen" mit dem installierten Edition, und "Preview" mit "2017" Wenn Sie Um eine stabile VS installiert)
+2. Öffnen einer **entwicklereingabeaufforderung** für diese Visual Studio und führen Sie `devenv /updateconfiguration`. 
+
 ## <a name="tips--tricks"></a>Tipps und Tricks
 
 * Solange die Live-Reload-Einstellungen nicht ändern (einschließlich der Verschlüsselungsschlüssel, z. B. Wenn Sie deaktivieren **Automatisches Generieren von Verschlüsselungsschlüsseln**) und Sie aus dem gleichen Computer erstellen, müssen Sie nicht zum Erstellen und Bereitstellen der app nach der Erstkonfiguration Stellen Sie bereit, es sei denn, Sie Code oder Abhängigkeiten ändern. Sie können nur starten, erneut eine zuvor bereitgestellte app und wird eine Verbindung mit dieser bis zum letzten Host verwendet.
@@ -138,3 +140,21 @@ Diesen Fällen werden alle Ausgabeklasse erstellen und Bereitstellen der app ern
 * Es gibt keine Einschränkung auf wie viele Geräte, die Sie mit der gleichen Visual Studio-Sitzung verbinden können. Sie können bereitstellen und starten Sie die app in beliebig viele Geräte-Simulatoren nach Bedarf, das erneute Laden live arbeiten auf allen von ihnen gleichzeitig anzuzeigen.
 
 * Live Reload Laden nur den Benutzeroberflächenteil der app, aber dies der Fall ist *nicht* Ihren Seiten neu zu erstellen, keins ist es ersetzen, Ihre Ansichtsmodell (oder Bindungskontext). Dies bedeutet, dass die *gesamte* app-Status wird in den Neuladen, einschließlich der eingefügten Abhängigkeiten immer beibehalten.
+
+## <a name="live-reload-server"></a>Live-Server neu laden
+
+In Szenarien, die eine Verbindung aus der ausgeführten app auf Ihrem Computer (mit angegebene `localhost` oder `127.0.0.1` in **Tools > Optionen > Xamarin > Live zum erneuten Laden**) ist nicht möglich (z. B. Firewalls, unterschiedlichen Netzwerken), Sie können einen Remoteserver stattdessen konfigurieren, wird die IDE und die app zu verbinden.
+
+Live zum erneuten Laden verwendet den Standard [MQTT Protokoll](http://mqtt.org/) zu tauschen Nachrichten aus, und kann daher mit kommunizieren [Servern von Drittanbietern](https://github.com/mqtt/mqtt.github.io/wiki/servers). Es gibt auch [öffentlichen Servern](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (auch bekannt als *Brokern*) verfügbar, die Sie verwenden können. Live zum erneuten Laden wurde mit getestet `broker.hivemq.com` und `iot.eclipse.org` Hostnamen als auch die Dienste von [www.cloudmqtt.com](https://www.cloudmqtt.com) und [www.cloudamqp.com](https://www.cloudamqp.com). Sie können auch einen eigenen MQTT-Server in der Cloud bereitstellen, wie z. B. [HiveMQ in Azure](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud) oder [Kaninchen MQ auf AWS](http://www.rabbitmq.com/ec2.html). 
+
+Sie können einen beliebigen Port konfigurieren, aber es ist üblich, den 1883-Standardport für Remoteserver verwenden. Live Reload-Nachrichten verwenden starke End-to-End-AES symmetrische Verschlüsselung, sodass für die Verbindung zu Remoteservern werden kann. Standardmäßig werden die Verschlüsselungsschlüssel und den Initialisierungsvektor (IV) auf jedes Visual Studio-Sitzung neu generiert.
+
+Wahrscheinlich ist die einfachste Möglichkeit zum Installieren der [Mosquitto](https://mosquitto.org) Server in einer leeren Ubuntu-VM in Azure:
+
+1. Erstellen einer neuen Ubuntu Server-VM in Azure-Portal
+2. Fügen Sie eine neue Regel für eingehenden Ports für 1883 (Standardport MQTT) in der Registerkarte "Netzwerk"
+3. Öffnen der [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) (bash-Modus)
+4. Geben Sie `ssh [USERNAME]@[PUBLIC_IP]` mithilfe des Benutzernamens, die Sie ausgewählt, 1 haben) und die öffentliche IP-Adresse, die in Ihrer VM-Seite "Übersicht" angezeigt
+5. Führen Sie `sudo apt-get install mosquitto`, Eingabe des Kennworts, das Sie ausgewählt, 1 haben)
+
+Dieser IP-Adresse können Sie jetzt mit MQTT-Server herzustellen.
