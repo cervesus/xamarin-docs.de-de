@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: e84427ba576528ed76f5885605c423bf6499d20c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a8ab35b3ec13c76e1e00da6e3265e3e337e37b7e
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-a-view"></a>Implementieren eine Sicht
 
 _Xamarin.Forms benutzerdefinierte Benutzeroberflächen-Steuerelemente müssen vom View-Klasse abgeleitet werden, die verwendet wird, um Layouts und Steuerelemente auf dem Bildschirm zu platzieren. In diesem Artikel wird veranschaulicht, wie einen benutzerdefinierten Renderer für ein benutzerdefiniertes Steuerelement mit Xamarin.Forms erstellt, die zum Anzeigen der Vorschau Videostreams von Kamera des Geräts verwendet wird._
 
-Jede Ansicht Xamarin.Forms verfügt über eine begleitende Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Wenn eine [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) einer Xamarin.Forms-Anwendung in iOS, gerendert wird die `ViewRenderer` Klasse instanziiert, die instanziiert wiederum ein systemeigenes `UIView` Steuerelement. Auf der Android-Plattform die `ViewRenderer` Klasse instanziiert ein systemeigenes `View` Steuerelement. Auf Windows Phone und die universelle Windows-Plattform (UWP) die `ViewRenderer` Klasse instanziiert ein systemeigenes `FrameworkElement` Steuerelement. Weitere Informationen zu den Renderer und systemeigene Steuerelementklassen, die Xamarin.Forms-Steuerelemente zuordnen, finden Sie unter [Renderer-Basisklassen und systemeigenen Steuerelementen](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Jede Ansicht Xamarin.Forms verfügt über eine begleitende Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Wenn eine [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) einer Xamarin.Forms-Anwendung in iOS, gerendert wird die `ViewRenderer` Klasse instanziiert, die instanziiert wiederum ein systemeigenes `UIView` Steuerelement. Auf der Android-Plattform die `ViewRenderer` Klasse instanziiert ein systemeigenes `View` Steuerelement. Auf die universelle Windows-Plattform (UWP), die `ViewRenderer` Klasse instanziiert ein systemeigenes `FrameworkElement` Steuerelement. Weitere Informationen zu den Renderer und systemeigene Steuerelementklassen, die Xamarin.Forms-Steuerelemente zuordnen, finden Sie unter [Renderer-Basisklassen und systemeigenen Steuerelementen](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Das folgende Diagramm veranschaulicht die Beziehung zwischen der [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) und das entsprechende systemeigene Steuerelemente, die ihn implementieren:
 
@@ -263,13 +263,13 @@ namespace CustomRenderer.Droid
 
 Vorausgesetzt, dass die `Control` Eigenschaft ist `null`, `SetNativeControl` Methode wird aufgerufen, um ein neues instanziieren `CameraPreview` steuern und weisen Sie einen Verweis hinzu, um die `Control` Eigenschaft. Die `CameraPreview` -Steuerelement ist ein benutzerdefiniertes plattformspezifischen-Steuerelement, das verwendet die `Camera` -API, um die Vorschau-Stream, von der Kamera bereitstellen. Die `CameraPreview` Steuerelement ist konfiguriert, vorausgesetzt, dass die benutzerdefinierten Renderers ein neues Xamarin.Forms-Element zugeordnet ist. Diese Konfiguration umfasst das Erstellen eines neuen systemeigenes `Camera` Objekt, das eine bestimmte Hardware Kamera zugreifen, und registrieren Sie einen Ereignishandler zum Verarbeiten der `Click` Ereignis. Wiederum dieser Handler beendet und der Videovorschau gestartet, wenn es abgerufen werden. Die `Click` Ereignis ist abbestellt, wenn das Xamarin.Forms-Element der Renderer Änderungen angefügt ist.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Erstellen von benutzerdefinierten Renderers für Windows Phone und universelle Windows-Plattform
+### <a name="creating-the-custom-renderer-on-uwp"></a>Erstellen von benutzerdefinierten Renderers für universelle Windows-Plattform
 
-Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für Windows Phone-und uwp:
+Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für universelle Windows-Plattform:
 
 ```csharp
 [assembly: ExportRenderer (typeof(CameraPreview), typeof(CameraPreviewRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class CameraPreviewRenderer : ViewRenderer<CameraPreview, Windows.UI.Xaml.Controls.CaptureElement>
     {
@@ -317,7 +317,7 @@ namespace CustomRenderer.WinPhone81
 Vorausgesetzt, dass die `Control` Eigenschaft ist `null`, ein neues `CaptureElement` instanziiert wird und die `InitializeAsync` -Methode aufgerufen wird, verwendet die `MediaCapture` -API, um die Vorschau-Stream, von der Kamera bereitstellen. Die `SetNativeControl` Methode wird aufgerufen, um einen Verweis auf weisen die `CaptureElement` -Instanz, auf die `Control` Eigenschaft. Die `CaptureElement` -Steuerelement stellt eine `Tapped` Ereignis, das vom übernommen wird die `OnCameraPreviewTapped` Methode zu beenden und Starten der Videovorschau, wenn es abgerufen werden. Die `Tapped` Ereignis ist für abonniert, wenn benutzerdefinierte Renderer auf ein neues Xamarin.Forms-Element angefügt und abbestellt nur, wenn das Element den Renderer Änderungen angefügt ist.
 
 > [!NOTE]
-> Es ist wichtig, beenden und löschen Sie die Objekte, die Zugriff auf die Kamera in einem Windows Phone oder einer uwp-Anwendung bereitstellen. Bei unterlassen kann mit anderen Anwendungen beeinträchtigen, die versuchen, die Kamera des Geräts zugreifen. Weitere Informationen finden Sie unter und [Schnellstart: Aufzeichnen von Videos über die MediaCapture-API](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx) für Windows-Runtime-Anwendungen und [anzeigen die Kameravorschau](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access) für uwp-Apps.
+> Es ist wichtig, beenden und löschen Sie die Objekte, die Zugriff auf die Kamera in einer uwp-Anwendung bereitstellen. Bei unterlassen kann mit anderen Anwendungen beeinträchtigen, die versuchen, die Kamera des Geräts zugreifen. Weitere Informationen finden Sie unter [anzeigen die Kameravorschau](/windows/uwp/audio-video-camera/simple-camera-preview-access/).
 
 ## <a name="summary"></a>Zusammenfassung
 

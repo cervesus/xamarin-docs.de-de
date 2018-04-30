@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 58f5a64f85dbe5a6889e6ff598c14fdfd9b0a5df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da3025f2616c91488ec70e25836351b08e957494
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-contentpage"></a>Anpassen einer ContentPage verwendet wird
 
 _Eine ContentPage verwendet wird, ist ein visuelles Element, das eine einzelne Ansicht und nimmt den größten Teil der Bildschirm. Dieser Artikel veranschaulicht, wie einen benutzerdefinierten Renderer auf der Seite ContentPage verwendet und Entwickler können das Standardrendering zurückgreifen systemeigene mit ihren eigenen plattformspezifische Anpassungen zu überschreiben._
 
-Jedes Xamarin.Forms-Steuerelement verfügt über eine begleitende Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Wenn eine [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) einer Xamarin.Forms-Anwendung in iOS gerendert wird die `PageRenderer` Klasse instanziiert, die instanziiert wiederum ein systemeigenes `UIViewController` Steuerelement. Auf der Android-Plattform die `PageRenderer` Klasse instanziiert einen `ViewGroup` Steuerelement. Auf Windows Phone und die universelle Windows-Plattform (UWP) die `PageRenderer` Klasse instanziiert einen `FrameworkElement` Steuerelement. Weitere Informationen zu den Renderer und systemeigene Steuerelementklassen, die Xamarin.Forms-Steuerelemente zuordnen, finden Sie unter [Renderer-Basisklassen und systemeigenen Steuerelementen](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Jedes Xamarin.Forms-Steuerelement verfügt über eine begleitende Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Wenn eine [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) einer Xamarin.Forms-Anwendung in iOS gerendert wird die `PageRenderer` Klasse instanziiert, die instanziiert wiederum ein systemeigenes `UIViewController` Steuerelement. Auf der Android-Plattform die `PageRenderer` Klasse instanziiert einen `ViewGroup` Steuerelement. Auf die universelle Windows-Plattform (UWP), die `PageRenderer` Klasse instanziiert einen `FrameworkElement` Steuerelement. Weitere Informationen zu den Renderer und systemeigene Steuerelementklassen, die Xamarin.Forms-Steuerelemente zuordnen, finden Sie unter [Renderer-Basisklassen und systemeigenen Steuerelementen](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Das folgende Diagramm veranschaulicht die Beziehung zwischen der [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) und das entsprechende systemeigene Steuerelemente, die ihn implementieren:
 
@@ -197,57 +197,6 @@ namespace CustomRenderer.Droid
 Der Aufruf der Basisklasse `OnElementChanged` -Methode instanziiert ein Android `ViewGroup` Steuerelement, das eine Gruppe von Ansichten ist. Der live-Kamera Stream wird nur gerendert werden, vorausgesetzt, dass der Renderer ist nicht mit einem vorhandenen Xamarin.Forms-Element bereits angefügt und vorausgesetzt, dass eine Seiteninstanz vorhanden, vom benutzerdefinierten Renderer gerendert wird ist.
 
 Die Seite wird dann durch den Aufruf einer Reihe von Methoden, mit denen angepasst der `Camera` -API zum Bereitstellen des livestreams von der Kamera und die Möglichkeit, ein Foto vor dem Erfassen der `AddView` Methode wird aufgerufen, um die live-Kamera hinzufügen UI zum Streamen der `ViewGroup`.
-
-### <a name="creating-the-page-renderer-on-windows-phone"></a>Erstellen die Seiten-Renderer für Windows Phone
-
-Das folgende Codebeispiel zeigt die Seiten-Renderer für die Windows Phone-Plattform:
-
-```csharp
-[assembly: ExportRenderer (typeof(CameraPage), typeof(CameraPageRenderer))]
-namespace CustomRenderer.WinPhone81
-{
-    public class CameraPageRenderer : PageRenderer
-    {
-        ...
-
-        protected override void OnElementChanged (VisualElementChangedEventArgs e)
-        {
-            base.OnElementChanged (e);
-
-            if (e.OldElement != null || Element == null) {
-                return;
-            }
-
-            try {
-                ...
-                var container = ContainerElement as Canvas;
-
-                SetupUserInterface ();
-                SetupEventHandlers ();
-                SetupLiveCameraStream ();
-                container.Children.Add (page);
-            }
-            ...
-        }
-
-        protected override Size ArrangeOverride(Size finalSize)
-        {
-            page.Arrange(new Windows.Foundation.Rect(0, 0, finalSize.Width, finalSize.Height));
-            return finalSize;
-        }
-        ...
-    }
-}
-```
-
-Der Aufruf der Basisklasse `OnElementChanged` -Methode instanziiert, ein Windows Phone- `Canvas` -Steuerelement, auf denen die Seite gerendert wird. Der live-Kamera Stream wird nur gerendert werden, vorausgesetzt, dass der Renderer ist nicht mit einem vorhandenen Xamarin.Forms-Element bereits angefügt und vorausgesetzt, dass eine Seiteninstanz vorhanden, vom benutzerdefinierten Renderer gerendert wird ist.
-
-Auf der Windows Phone-Plattform und ein typisierter Verweis auf die systemeigene Seite verwendet wird, auf der Plattform durch zugegriffen werden kann die `ContainerElement` -Eigenschaft, mit der `Canvas` steuern, werden die typisierten Verweis auf die `FrameworkElement`. Die Seite wird dann angepasst, durch den Aufruf einer Reihe von Methoden, mit denen die `MediaCapture` -API zum Bereitstellen des livestreams von der Kamera und die Möglichkeit, ein Foto zu erfassen, bevor der angepasste Seite hinzugefügt wird der `Canvas` für die Anzeige.
-
-Wenn einen benutzerdefinierten Renderer implementieren, die abgeleitet `PageRenderer` auf der Windows-Runtime die `ArrangeOverride` Methode sollte auch um die Steuerelemente der Seite anordnen implementiert werden, da der Basis-Renderer was damit geschehen nicht bekannt ist. Andernfalls führt eine leere Seite. Aus diesem Grund in diesem Beispiel die `ArrangeOverride` Methodenaufrufe der `Arrange` Methode für die `Page` Instanz.
-
-> [!NOTE]
-> Es ist wichtig, beenden und löschen Sie die Objekte, die Zugriff auf die Kamera in einer Windows Phone 8.1 WinRT-Anwendung bereitstellen. Bei unterlassen kann mit anderen Anwendungen beeinträchtigen, die versuchen, die Kamera des Geräts zugreifen. Weitere Informationen finden Sie unter der `CleanUpCaptureResourcesAsync` Methode im Windows Phone-Projekt in der Beispielprojektmappe und [Schnellstart: Erfassen von Video über die MediaCapture-API](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx).
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>Erstellen die Seiten-Renderer für universelle Windows-Plattform
 

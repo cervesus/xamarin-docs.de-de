@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 1e8ef47ceb381a0e4e163aaa24795d46264195da
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c120add5a301e440911bd9794da77732e7787cc0
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-an-entry"></a>Einen Eintrag anpassen
 
 _Das Steuerelement Xamarin.Forms Eintrag ermöglicht eine einzelne Textzeile bearbeitet werden. Dieser Artikel veranschaulicht, wie zum Erstellen eines benutzerdefinierten Renderers für das Steuerelement Eintrag und Entwickler können das Standardrendering zurückgreifen systemeigene mit ihren eigenen plattformspezifische Anpassungen zu überschreiben._
 
-Jedes Xamarin.Forms-Steuerelement verfügt über eine begleitende Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Wenn ein [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) einer Xamarin.Forms-Anwendung in iOS-Steuerelement gerendert wird die `EntryRenderer` Klasse instanziiert, das wiederum ein systemeigenes instanziiert `UITextField` Steuerelement. Auf der Android-Plattform die `EntryRenderer` Klasse instanziiert ein `EditText` Steuerelement. Auf Windows Phone und die universelle Windows-Plattform (UWP) die `EntryRenderer` Klasse instanziiert einen `TextBox` Steuerelement. Weitere Informationen zu den Renderer und systemeigene Steuerelementklassen, die Xamarin.Forms-Steuerelemente zuordnen, finden Sie unter [Renderer-Basisklassen und systemeigenen Steuerelementen](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Jedes Xamarin.Forms-Steuerelement verfügt über eine begleitende Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Wenn ein [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) einer Xamarin.Forms-Anwendung in iOS-Steuerelement gerendert wird die `EntryRenderer` Klasse instanziiert, das wiederum ein systemeigenes instanziiert `UITextField` Steuerelement. Auf der Android-Plattform die `EntryRenderer` Klasse instanziiert ein `EditText` Steuerelement. Auf die universelle Windows-Plattform (UWP), die `EntryRenderer` Klasse instanziiert einen `TextBox` Steuerelement. Weitere Informationen zu den Renderer und systemeigene Steuerelementklassen, die Xamarin.Forms-Steuerelemente zuordnen, finden Sie unter [Renderer-Basisklassen und systemeigenen Steuerelementen](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Das folgende Diagramm veranschaulicht die Beziehung zwischen der [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Steuerelement und den entsprechenden systemeigenen Steuerelementen, die ihn implementieren:
 
@@ -178,13 +178,13 @@ namespace CustomRenderer.Android
 
 Der Aufruf der Basisklasse `OnElementChanged` -Methode instanziiert ein Android `EditText` Steuerelement, mit einem Verweis auf das Steuerelement wird an des Renderers zugewiesen `Control` Eigenschaft. Festlegen der Hintergrundfarbe klicken Sie dann auf hellgrün mit der `Control.SetBackgroundColor` Methode.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Erstellen von benutzerdefinierten Renderers für Windows Phone und universelle Windows-Plattform
+### <a name="creating-the-custom-renderer-on-uwp"></a>Erstellen von benutzerdefinierten Renderers für universelle Windows-Plattform
 
-Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für Windows Phone-und uwp:
+Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für universelle Windows-Plattform:
 
 ```csharp
 [assembly: ExportRenderer(typeof(MyEntry), typeof(MyEntryRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class MyEntryRenderer : EntryRenderer
     {

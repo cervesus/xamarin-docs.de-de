@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 9d822444196479dabd19f43f45f289117f64c05e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 964e2302c290930ec62752e51e7de388cb42ee32
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-listview"></a>Anpassen einer ListView
 
 _Eine Xamarin.Forms ListView ist eine Sicht, die eine Auflistung von Daten als einer vertikalen Liste angezeigt wird. In diesem Artikel veranschaulicht, wie einen benutzerdefinierten Renderer, der plattformspezifischen List-Steuerelemente und systemeigene Zelle Layouts kapselt mehr Kontrolle über die einheitlichen Liste Steuerelement Leistung ermöglicht._
 
-Jede Ansicht Xamarin.Forms verfügt über eine begleitende Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Wenn eine [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) einer Xamarin.Forms-Anwendung in iOS gerendert wird die `ListViewRenderer` Klasse instanziiert, die instanziiert wiederum ein systemeigenes `UITableView` Steuerelement. Auf der Android-Plattform die `ListViewRenderer` Klasse instanziiert ein systemeigenes `ListView` Steuerelement. Auf Windows Phone und die universelle Windows-Plattform (UWP) die `ListViewRenderer` Klasse instanziiert ein systemeigenes `ListView` Steuerelement. Weitere Informationen zu den Renderer und systemeigene Steuerelementklassen, die Xamarin.Forms-Steuerelemente zuordnen, finden Sie unter [Renderer-Basisklassen und systemeigenen Steuerelementen](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Jede Ansicht Xamarin.Forms verfügt über eine begleitende Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Wenn eine [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) einer Xamarin.Forms-Anwendung in iOS gerendert wird die `ListViewRenderer` Klasse instanziiert, die instanziiert wiederum ein systemeigenes `UITableView` Steuerelement. Auf der Android-Plattform die `ListViewRenderer` Klasse instanziiert ein systemeigenes `ListView` Steuerelement. Auf die universelle Windows-Plattform (UWP), die `ListViewRenderer` Klasse instanziiert ein systemeigenes `ListView` Steuerelement. Weitere Informationen zu den Renderer und systemeigene Steuerelementklassen, die Xamarin.Forms-Steuerelemente zuordnen, finden Sie unter [Renderer-Basisklassen und systemeigenen Steuerelementen](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Das folgende Diagramm veranschaulicht die Beziehung zwischen der [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Steuerelement und den entsprechenden systemeigenen Steuerelementen, die ihn implementieren:
 
@@ -467,15 +467,15 @@ protected override void OnElementPropertyChanged (object sender, System.Componen
 
 Die Methode erstellt eine neue Instanz der dem `NativeAndroidListViewAdapter` Klasse, die Daten, das dem systemeigenen bereitstellt `ListView` steuern, sofern die bindungsfähigen `NativeListView.Items` -Eigenschaft geändert hat.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Erstellen von benutzerdefinierten Renderers für Windows Phone und universelle Windows-Plattform
+### <a name="creating-the-custom-renderer-on-uwp"></a>Erstellen von benutzerdefinierten Renderers für universelle Windows-Plattform
 
-Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für Windows Phone-und uwp:
+Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für universelle Windows-Plattform:
 
 ```csharp
-[assembly: ExportRenderer (typeof(NativeListView), typeof(NativeWinPhoneListViewRenderer))]
-namespace CustomRenderer.WinPhone81
+[assembly: ExportRenderer(typeof(NativeListView), typeof(NativeUWPListViewRenderer))]
+namespace CustomRenderer.UWP
 {
-    public class NativeWinPhoneListViewRenderer : ListViewRenderer
+    public class NativeUWPListViewRenderer : ListViewRenderer
     {
         ListView listView;
 
