@@ -151,7 +151,7 @@ x:Class="DemoListView.GroupingViewPage">
                     DetailColor="#503026" />
                 </DataTemplate>
             </ListView.GroupHeaderTemplate>
-            <!-- End Group Header Customization
+            <!-- End Group Header Customization -->
         </ListView>
     </ContentPage.Content>
 </ContentPage>
