@@ -1,5 +1,5 @@
 ---
-title: Steuerelemente
+title: Android-Steuerelemente (Widgets)
 description: Bausteine zum Erstellen von Benutzeroberflächen Xamarin.Android
 ms.prod: xamarin
 ms.assetid: B7A82166-B920-4672-B7A2-20DD5E0B5AEF
@@ -7,14 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 8994a8988c0e32e85aedcd9110e3583195843862
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28418c3b3fedcd24963008eb3b59ffa782d791f1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="controls"></a>Steuerelemente
-
+# <a name="android-controls-widgets"></a>Android-Steuerelemente (Widgets)
 
 Xamarin.Android macht alle systemeigenen Steuerelemente der Benutzeroberfläche (Widgets) von Android bereitgestellt. Diese Steuerelemente können leicht auf Xamarin.Android-apps, die mit dem Android-Designer oder programmgesteuert über XML-Layout-Dateien hinzugefügt werden. Unabhängig davon, welche Methode Sie wählen, Xamarin.Android aller Methoden in C# geschrieben und Benutzeroberflächeneigenschaften Objekt verfügbar macht. In den folgenden Abschnitten stellen die am häufigsten verwendeten Android Benutzeroberflächen-Steuerelemente vor und wird erläutert, wie sie in Xamarin.Android apps integrieren.
 

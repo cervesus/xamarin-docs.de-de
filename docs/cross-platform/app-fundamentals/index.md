@@ -1,5 +1,5 @@
 ---
-title: Application Fundamentals (Anwendungsgrundlagen)
+title: Freigeben von Code
 description: Kernkonzepte für die Anwendung
 ms.prod: xamarin
 ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
@@ -7,33 +7,19 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: f5bd66cfcfb6ee06abac7bec9151e7325ebb32a2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 01116a35dca80cd92ea16232a2abb127f60d9f0a
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="application-fundamentals"></a>Application Fundamentals (Anwendungsgrundlagen)
+# <a name="sharing-code"></a>Freigeben von Code
 
 Dieser Abschnitt enthält eine Anleitung für einige der häufiger Aufgaben Dinge oder Konzepte, denen Entwickler beim Entwickeln von mobilen Anwendungen berücksichtigen müssen.
 
-##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[Erstellen von plattformübergreifenden Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
-
-Durch Auswählen von Xamarin, und halten einige Dinge beachten Sie beim Entwerfen und Entwickeln von mobilen Anwendungen, können Sie enormen Code alle mobilen Plattformen gemeinsam nutzen, verkürzen Sie die Zeit auf dem Markt, nutzen vorhandene Talent, für den mobilen Zugriff Nachfrage erfüllen, und plattformübergreifende Komplexität zu reduzieren. &nbsp;In diesem Dokument werden wichtige Richtlinien bietet folgende Vorteile für Hilfsprogramm und Produktivität bemerken.
-
-## <a name="code-sharing-optionscode-sharingmd"></a>[Optionen für die Codefreigabe](code-sharing.md)
+## <a name="code-sharing-overviewcode-sharingmd"></a>[Übersicht über das Freigeben Code](code-sharing.md)
 
 Informationen Sie zu den verschiedenen Code Freigabeoptionen für Xamarin-Projekte, einschließlich portablen Klassenbibliotheken (PCLs), freigegebene Projekte und Standardbibliotheken .NET verfügbar.
-
-
-## <a name="accessibilityaccessibilitymd"></a>[Barrierefreiheit](accessibility.md)
-
-Tipps zum Erstellen von Anwendungen zugegriffen werden kann.
-
-
-## <a name="localizationlocalizationmd"></a>[Lokalisierung](localization.md)
-
-Richtlinien für die gebietsschemabasierte-apps vorgenommen werden, können in mehrere Sprachen übersetzt werden.
 
 
 ##  <a name="portable-class-librariescross-platformapp-fundamentalspclmd"></a>[Portable Klassenbibliotheken](~/cross-platform/app-fundamentals/pcl.md)
@@ -55,18 +41,3 @@ NuGet-Pakete können von PCL oder .NET Standardprojekten automatisch generiert w
 ##  <a name="manually-creating-nuget-packages-for-xamarincross-platformapp-fundamentalsnuget-manualmd"></a>[Manuelles Erstellen von NuGet-Pakete für Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md)
 
 Tipps zum Erstellen von NuGet-Pakete, die mit der Xamarin-Plattform arbeiten.
-
-##  <a name="cross-platform-data-accessxamarin-formsdata-cloudindexmd"></a>[Cross-Platform-Datenzugriff](~/xamarin-forms/data-cloud/index.md)
-
-Die meisten Anwendungen auf eine Anforderung zum Speichern von Daten auf dem Gerät lokal. Wenn die Menge der Daten im Grunde klein ist, erfordert dies in der Regel eine Datenbank und eine Datenschicht in der Anwendung Zugriff auf die Datenbank zu verwalten. iOS und Android haben die SQLite-Datenbank-Engine "integriert" und Zugriff zum Speichern und Abrufen von Daten durch die Xamarin Plattform vereinfacht. Die [Android Datenzugriff](~/android/data-cloud/data-access/index.md), [iOS Datenzugriff](~/ios/data-cloud/data/index.md), und [Xamarin.Forms Datenzugriff](~/xamarin-forms/data-cloud/index.md) Anleitungen bieten Beispiele zum SQLite auf jeder Plattform zugreifen.
-
-
-##  <a name="transport-layer-securitytransport-layer-securitymd"></a>[Transport Layer Security](transport-layer-security.md)
-
-Informationen zur Selectingthe korrekten SSL/TLS-Implementierung zum Sichern Ihrer app über eine Netzwerkverbindung.
-
-
-##  <a name="notificationsxamarin-formsdata-cloudpush-notificationsindexmd"></a>[Benachrichtigungen](~/xamarin-forms/data-cloud/push-notifications/index.md)
-
-Mobile Anwendungen mit Benachrichtigungen unaufdringlichen ganz informieren des Benutzers, den eine bestimmte Anwendung-Ereignis aufgetreten ist, hat. Benachrichtigungen werden in der Regel verwendet, um Benutzer über den Status des Prozesses zu benachrichtigen, die im Hintergrund ausgeführt wird. Ein Beispiel hierfür möglicherweise eine große Datei heruntergeladen werden. Diese Datei kann viel Zeit zum Herunterladen, dauern, damit diese Aktivität im Hintergrund ausgeführt werden soll. Wenn der Download abgeschlossen ist, wird der Benutzer durch eine Benachrichtigung der Tatsache informiert.
-Darüber hinaus Benachrichtigung ar nicht nur auf lokale Anwendungen beschränkt. Es ist auch möglich, für serveranwendungen Benachrichtigungen für mobile Anwendungen zu veröffentlichen. In diesem Artikel besprechen wie Benachrichtigungen in Android und iOS verwendet.

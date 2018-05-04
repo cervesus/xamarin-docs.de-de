@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f5e778ef9ba31c1a9e880b9fc66c2e48ddb2420c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 505c2902f2b8d112597b4b9b9b07282a7810db68
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="net-embedding"></a>Einbetten von .NET
 
@@ -21,15 +21,17 @@ Ermöglicht das Einbetten von .NET vorhandenem .NET Code (C#-, F#- usw.), die vo
 
 Dies bedeutet, dass wenn Sie eine .NET Bibliothek, die Sie aus der vorhandenen iOS-app verwenden möchten verfügen, können Sie dies tun.   Oder wenn Sie ihn mit einem systemeigenen C++-Bibliothek verknüpfen möchten, ist auch möglich, die.   Oder .NET Code aus Java nutzen.
 
+Einbetten von .NET basiert auf der [Embeddinator 4000](https://github.com/mono/Embeddinator-4000) open Source-Projekt.
+
 ## <a name="environments-and-languages"></a>Umgebungen und Sprachen
 
-Das Tool ist sowohl Beachten Sie die Umgebung aus, die verwendet werden, sowie die Sprache, die sie nutzen.   Beispielsweise lässt die iOS-Plattform nicht Just-in-Time (JIT)-Kompilierung, damit die Embeddinator statisch .NET Code in systemeigenen Code kompiliert wird, die in iOS verwendet werden kann.  Diese Enviroments wir einen Abruf JIT kompiliert, und anderen Umgebungen erlauben JIT-Kompilierung.
+Das Tool ist sowohl Beachten Sie die Umgebung aus, die verwendet werden, sowie die Sprache, die sie nutzen.   Beispielsweise lässt die iOS-Plattform nicht Just-in-Time (JIT)-Kompilierung, damit .NET einbetten statisch .NET Code in systemeigenen Code kompiliert wird, die in iOS verwendet werden kann.  Diese Enviroments wir einen Abruf JIT kompiliert, und anderen Umgebungen erlauben JIT-Kompilierung.
 
 Verschiedene Verbraucher Sprache, werden unterstützt, sodass er .NET Code als idiomatische Code in der Zielsprache bereitstellt.   Dies ist die Liste der unterstützten Sprachen derzeit:
 
-- [**Objective-C** ](objective-c/index.md) – Zuordnen von .NET zu idiomatische Objective-C-APIs.
-- [**Java** ](android/index.md) – Zuordnen von .NET zu idiomatische Java-APIs.
-- **C**: Zuordnen von .NET zu einer objektorientierten wie C-APIs.
+- [**Objective-C** ](objective-c/index.md) – Zuordnen von .NET zu idiomatische Objective-C-APIs
+- [**Java** ](android/index.md) – Zuordnen von .NET zu idiomatische Java-APIs
+- [**C** ](get-started/c.md) – Zuordnen von .NET zu objektorientierte wie C-APIs
 
 Weitere Sprachen werden später bereitgestellt.
 
@@ -37,10 +39,9 @@ Weitere Sprachen werden später bereitgestellt.
 
 Überprüfen Sie eine der unsere Bereitstellungshandbücher für jede der derzeit unterstützten Sprachen Schritte aus, um zu beginnen:
 
-- [**Objective-C** ](get-started/objective-c/index.md) – MacOS und iOS behandelt.
-- [**Java** ](get-started/java/index.md) – deckt MacOS und Android.
-- [**C** ](get-started/c.md) – behandelt die Programmiersprache C auf Desktopplattformen auf.
-
+- [**Objective-C** ](get-started/objective-c/index.md) – deckt MacOS und iOS
+- [**Java** ](get-started/java/index.md) – deckt MacOS und Android
+- [**C** ](get-started/c.md) – behandelt die Programmiersprache C auf Desktopplattformen auf
 
 ## <a name="related-links"></a>Verwandte Links
 

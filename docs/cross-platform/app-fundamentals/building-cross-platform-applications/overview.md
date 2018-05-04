@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: b3b15736b5ec750e0b8db078cf428a7f573bc435
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: e4a55829e35329a50b2e121311b0102328e6fea9
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="building-cross-platform-applications-overview"></a>Erstellen von Cross-Platform-Anwendungen (Übersicht)
 
@@ -25,7 +25,7 @@ Xamarin ist nicht nur eine "Write-einmal ausführen, überall" Plattform, da auf
 Hier wird eine Zusammenfassung der wichtigsten Punkte zum Erstellen von Xamarin plattformübergreifende apps:
 
 -   **Verwenden von c#** -apps in c# schreiben. Vorhandenen Code in c# geschriebene kann portiert für IOS- und Android mithilfe von Xamarin sehr einfach, und offensichtlich in Windows-apps verwendet werden.
--   **Verwenden von MVC oder MVVVM Entwurfsmuster** -Entwickeln der Benutzeroberfläche der Anwendung, die mit dem Modell/Ansicht/Controller-Muster. Ihre Anwendung mit einem Modell/Ansicht/Controller Ansatz oder ein Modell/Sicht/ViewModel-Ansatz zu entwickeln, es eine klaren Unterschied zwischen dem "Modell" und den Rest gibt. Bestimmen, welche Teile der Anwendung verwendet systemeigene Benutzeroberflächenelemente jeder Plattform (iOS, Android, Windows, Mac), und verwenden Sie diese als Richtlinie zum Aufteilen von Ihrer Anwendung in zwei Komponenten: "Core" und "Benutzeroberfläche".
+-   **Verwenden von MVC oder MVVM Entwurfsmuster** -Entwickeln der Benutzeroberfläche der Anwendung, die mit dem Modell/Ansicht/Controller-Muster. Ihre Anwendung mit einem Modell/Ansicht/Controller Ansatz oder ein Modell/Sicht/ViewModel-Ansatz zu entwickeln, es eine klaren Unterschied zwischen dem "Modell" und den Rest gibt. Bestimmen, welche Teile der Anwendung verwendet systemeigene Benutzeroberflächenelemente jeder Plattform (iOS, Android, Windows, Mac), und verwenden Sie diese als Richtlinie zum Aufteilen von Ihrer Anwendung in zwei Komponenten: "Core" und "Benutzeroberfläche".
 -   **Erstellen Sie systemeigene Benutzeroberflächen** -jede betriebssystemspezifischen Anwendung stellt eine andere Benutzeroberfläche (implementiert in c# mit Unterstützung von systemeigenen UI-Entwurfstools):
 
 1.  IOS verwenden Sie die UIKit-APIs zum Erstellen von Anwendungen systemeigene, optional die Xamarin iOS-Designer, um Ihre Benutzeroberfläche visuell zu erstellen.

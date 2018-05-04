@@ -1,16 +1,16 @@
 ---
-title: Einbetten von Fehlern .NET
+title: .NET Einbetten von Fehlern
 ms.prod: xamarin
 ms.assetid: 932C3F0C-D968-42D1-BB14-D97C73361983
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/11/2018
-ms.openlocfilehash: 0bc4451d8eb93b826fc673bc4e163c9b7b68c36e
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 677242ea12f8fd87d82f337eafd96a1743ad806a
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="net-embedding-errors"></a>Einbetten von Fehlern .NET
 
@@ -92,7 +92,7 @@ Dies ist ein bekanntes Problem, das wir in einer zukünftigen Version des Genera
 
 Das Tool konnte die Frameworks, die in der Fehlermeldung genannten nicht zusammenführen, weil eine gemeinsame Datei zwischen ihnen vorhanden ist.
 
-Dies weist möglicherweise einen Fehler in der Embeddinator-4000 hin; Bitte der Datei eines Fehlerberichts an [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) zu einem Testfall.
+Dies weist möglicherweise einen Fehler im .NET einbetten hin; Bitte der Datei eines Fehlerberichts an [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) zu einem Testfall.
 
 <a name="EM0011" />
 
@@ -142,9 +142,9 @@ Die Syntax für die Befehlszeilenoption `A` konnte nicht vom Tool analysiert wer
 
 ### <a name="em0099-internal-error--please-file-a-bug-report-with-a-test-case-httpsgithubcommonoembeddinator-4000issues"></a>EM0099: Interner Fehler *. Bitte der Datei eines Fehlerberichts zu einem Testfall (https://github.com/mono/Embeddinator-4000/issues).
 
-Diese Fehlermeldung wird gemeldet, wenn es sich bei eine internen konsistenzüberprüfung in der Embeddinator-4000 ein Fehler auftritt.
+Diese Fehlermeldung wird gemeldet, wenn es sich bei eine internen konsistenzüberprüfung in .NET einbetten schlägt fehl.
 
-Gibt einen Fehler in der Embeddinator-4000. Bitte der Datei eines Fehlerberichts an [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) zu einem Testfall.
+Gibt einen Fehler in .NET einbetten. Bitte der Datei eines Fehlerberichts an [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) zu einem Testfall.
 
 <!-- 1xxx: code processing -->
 
@@ -236,7 +236,7 @@ Dies ist eine **Warnung** , die die Methode `M` wird nicht generiert werden, da 
 
 ### <a name="em1034-extension-method-m-is-not-generated-inside-a-category-because-they-cannot-be-created-on-primitive-type-t-a-normal-static-method-was-generated"></a>EM1034: Erweiterungsmethode `M` generiert, da sie für den primitiven Typ erstellt werden, können nicht innerhalb einer Kategorie `T`. Eine normale, statische Methode generiert wurde.
 
-Dies ist eine **Warnung** , dass eine Erweiterungsmethode für einen Primivite eingeben (z. B. `System.Int32`) wurde gefunden. In ObjC ist es nicht möglich, um Kategorien für den primitiven Typ zu erstellen. Stattdessen werden der Generator erzeugt eine normale, statische Methode.
+Dies ist eine **Warnung** , dass eine Erweiterungsmethode für einen Primivite eingeben (z. B. `System.Int32`) wurde gefunden. In Objective-C ist es nicht möglich, um Kategorien für den primitiven Typ zu erstellen. Stattdessen werden der Generator erzeugt eine normale, statische Methode.
 
 <a name="EM1040" />
 
@@ -286,7 +286,7 @@ Dies ist eine **Warnung** dieses Element `E` wird nicht generiert werden, weil d
 
 Dies ist eine **Warnung** , die auf `E` wird nicht unterstützt für Xamarin.iOS und Xamarin.Mac Anwendungsfällen betrachtet. 
 
-Verbrauch von statischen oder dynamischen Embeddinator Bibliotheken erfordern möglicherweise zusätzliche Arbeitsschritte oder kleiner Anpassungen und sollte vermieden werden, in den meisten Fällen zu verwenden.
+Verbrauch von statischen oder dynamischen .NET Einbetten von Bibliotheken erfordern möglicherweise zusätzliche Arbeitsschritte oder sein und sollte vermieden werden, in den meisten Fällen zu verwenden.
 
 Entfernen Sie die `--target` Parameter "oder" Pass `--target=framework` stattdessen.
 

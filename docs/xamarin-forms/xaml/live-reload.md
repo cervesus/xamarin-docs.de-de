@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 04/23/2018
-ms.openlocfilehash: bfb53af420b64fb9af994d3fb19293406d3acd7b
-ms.sourcegitcommit: 180a8411d912de40545f9624e2127a66ee89e7b2
+ms.openlocfilehash: 627225fdeef781a8b24a79e9b46627a739fd15af
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="xamarin-live-reload"></a>Xamarin Live neu laden
 
@@ -106,13 +106,33 @@ Nein. Tatsächlich können Sie sogar starten Sie alle Ihre Anwendung unterstütz
 ## <a name="limitations"></a>Einschränkungen
 
 * Nur XAML-Neuladen wird unterstützt.
-* Nur unterstützt in Visual Studio.
-* Funktioniert nur mit .NET Standardbibliotheken.
-* CSS-Stylesheets werden nicht unterstützt.
 * Benutzeroberflächenzustand möglicherweise zwischen erneut bereitstellen, es sei denn, die mit MVVM nicht beibehalten.
-* Erneutes Laden der gesamten app-Ressourcen (d. h. **App.xaml** oder freigegebenen Ressourcenwörterbücher), app Navigation wird zurückgesetzt.
+
+## <a name="known-issues"></a>Bekannte Probleme
+
+* Nur unterstützt in Visual Studio.
+* Funktioniert nur mit .NET Standardbibliotheken. Dies wird in der nächsten Preview-Version behoben werden.
+* CSS-Stylesheets werden nicht unterstützt. Dies wird in der nächsten Preview-Version behoben werden.
+* Erneutes Laden der gesamten app-Ressourcen (d. h. **App.xaml** oder freigegebenen Ressourcenwörterbücher), app Navigation wird zurückgesetzt. Dies wird in der nächsten Preview-Version behoben werden.
+* XAML bearbeiten, während die universelle Windows-Plattform Debuggen ein Absturzes Laufzeit verursachen. Problemumgehung: Verwenden Sie **Starten ohne Debugging (STRG + F5)** anstelle von **starten (F5) Debuggen**.
 
 ## <a name="troubleshooting"></a>Problembehandlung
+
+### <a name="error-codes"></a>Fehlercodes
+
+* **XLR001**: *das aktuelle Projekt verweist auf die "Xamarin.LiveReload" NuGet-Paket-Version [VERSION], aber die Live-Laden von Xamarin-Erweiterung erfordert Version [VERSION].*
+
+  Damit eine schnelle Iteration und die Entwicklung der Funktion Live zum erneuten Laden zu können, müssen das NuGet-Paket und die Erweiterung für Visual Studio genau entsprechen. Aktualisieren Sie das NuGet-Paket auf die gleiche Version der Erweiterung, die Sie installiert haben.
+
+* **XLR002**: *Live Reload benötigt mindestens die Eigenschaft "MqttHostname" beim Erstellen über die Befehlszeile. Alternativ festlegen Sie 'EnableLiveReload' auf 'False', um die Funktion zu deaktivieren.*
+
+  Die Live-Reload erforderlichen Eigenschaften sind nicht verfügbar, wenn von der Befehlszeile aus (oder in fortlaufende Integration) erstellen und muss daher explizit angegeben werden. 
+
+* **XLR003**: *Live Reload NuGet-Paket erfordert die Installation der Xamarin Live Reload Visual Studio-Erweiterung.*
+
+  Es wurde versucht, ein Projekt zu erstellen, die das Neuladen Live NuGet-Paket verweist auf die Erweiterung für Visual ist jedoch nicht installiert.  
+
+
 
 ### <a name="app-doesnt-connect"></a>App verbunden nicht.
 
@@ -145,7 +165,7 @@ Wenn Sie eine ältere Vorschau und Probleme deinstallieren, gehen Sie folgenderm
 
 In Szenarien, die eine Verbindung aus der ausgeführten app auf Ihrem Computer (mit angegebene `localhost` oder `127.0.0.1` in **Tools > Optionen > Xamarin > Live zum erneuten Laden**) ist nicht möglich (z. B. Firewalls, unterschiedlichen Netzwerken), Sie können einen Remoteserver stattdessen konfigurieren, wird die IDE und die app zu verbinden.
 
-Live zum erneuten Laden verwendet den Standard [MQTT Protokoll](http://mqtt.org/) zu tauschen Nachrichten aus, und kann daher mit kommunizieren [Servern von Drittanbietern](https://github.com/mqtt/mqtt.github.io/wiki/servers). Es gibt auch [öffentlichen Servern](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (auch bekannt als *Brokern*) verfügbar, die Sie verwenden können. Live zum erneuten Laden wurde mit getestet `broker.hivemq.com` und `iot.eclipse.org` Hostnamen als auch die Dienste von [www.cloudmqtt.com](https://www.cloudmqtt.com) und [www.cloudamqp.com](https://www.cloudamqp.com). Sie können auch einen eigenen MQTT-Server in der Cloud bereitstellen, wie z. B. [HiveMQ in Azure](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud) oder [Kaninchen MQ auf AWS](http://www.rabbitmq.com/ec2.html). 
+Live zum erneuten Laden verwendet den Standard [MQTT Protokoll](http://mqtt.org/) zu tauschen Nachrichten aus, und kann daher mit kommunizieren [Servern von Drittanbietern](https://github.com/mqtt/mqtt.github.io/wiki/servers). Es gibt auch [öffentlichen Servern](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (auch bekannt als *Brokern*) verfügbar, die Sie verwenden können. Live zum erneuten Laden wurde mit getestet `broker.hivemq.com` und `iot.eclipse.org` Hostnamen als auch die Dienste von [www.cloudmqtt.com](https://www.cloudmqtt.com) und [www.cloudamqp.com](https://www.cloudamqp.com). Sie können auch einen eigenen MQTT-Server in der Cloud bereitstellen, wie z. B. [HiveMQ in Azure](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud).
 
 Sie können einen beliebigen Port konfigurieren, aber es ist üblich, den 1883-Standardport für Remoteserver verwenden. Live Reload-Nachrichten verwenden starke End-to-End-AES symmetrische Verschlüsselung, sodass für die Verbindung zu Remoteservern werden kann. Standardmäßig werden die Verschlüsselungsschlüssel und den Initialisierungsvektor (IV) auf jedes Visual Studio-Sitzung neu generiert.
 

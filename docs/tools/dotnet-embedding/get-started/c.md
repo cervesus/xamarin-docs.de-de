@@ -5,61 +5,55 @@ ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.date: 11/14/2017
-ms.openlocfilehash: 8dff45de6de7c9492b199f323656778ac5c34d57
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/19/2018
+ms.openlocfilehash: 1313d7156a1fd75fd40e2aff65404aef5ab023bb
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started-with-c"></a>Erste Schritte mit C
 
-
 ## <a name="requirements"></a>Anforderungen
 
-Verwendung von .NET Einbetten von C benötigen Sie einen Mac oder Windows-Computer mit:
+Um .NET Einbetten von mit C# zu verwenden, benötigen Sie einen Mac oder Windows-Computer mit:
+
+### <a name="macos"></a>macOS
 
 * MacOS 10.12 (Sierra) oder höher
 * Xcode 8.3.2 oder höher
+* [Mono](http://www.mono-project.com/download/)
+
+### <a name="windows"></a>Windows
 
 * Windows 7, 8, 10 oder höher
 * Visual Studio 2015 oder höher
 
-* [Mono](http://www.mono-project.com/download/)
+## <a name="installing-net-embedding-from-nuget"></a>Installieren von .NET Einbetten von NuGet
 
+Befolgen Sie diese [Anweisungen](~/tools/dotnet-embedding/get-started/install/install.md) installieren und Konfigurieren von .NET einbetten für das Projekt.
 
-## <a name="installation"></a>Installation
+Der Befehl aufrufen, die Sie konfigurieren, sollten sieht wie (möglicherweise mit anderen Versionsnummer erneut und Pfade):
 
-Der nächste Schritt ist zum Herunterladen und installieren die .NET Einbetten von Tools auf Ihrem Computer.
+### <a name="visual-studio-for-mac"></a>Visual Studio für Mac
 
-Binäre Builds für C# und Java-Generatoren sind noch nicht verfügbar, jedoch sind in Kürze verfügbar.
+```shell
+mono {SolutionDir}/packages/Embeddinator-4000.0.4.0.0/tools/Embeddinator-4000.exe --gen=c --output=managed_c --platform=macos --compile managed.dll
+```
 
-Alternativ ist es möglich, erstellen sie über unsere Git-Repository finden Sie unter der [beitragen](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md) Dokument Anweisungen.
+### <a name="visual-studio-2017"></a>Visual Studio 2017
 
+```shell
+$(SolutionDir)\packages\Embeddinator-4000.0.2.0.80\tools\Embeddinator-4000.exe --gen=c --output=managed_c --platform=windows --compile managed.dll
+```
 
 ## <a name="generation"></a>Generierung
-
-Rufen Sie das Übergeben der richtigen Flags für die die Programmiersprache C als Ziel .NET einbetten-Tool, um C#-Code zu generieren:
-
-### <a name="windows"></a>Windows:
-
-```csharp
-$ build/lib/Debug/Embeddinator-4000.exe --gen=c --output=managed_c --platform=windows --compile managed.dll
-```
-
-Achten Sie darauf, die aus einer Visual Studio-Befehlsshell bestimmte auf die Visual Studio-Version Sie aufrufen können die Anwendung.
-
-### <a name="macos"></a>macOS
-
-```csharp
-$ mono build/lib/Debug/Embeddinator-4000.exe --gen=c --output=managed_c --platform=macos --compile managed.dll
-```
 
 ### <a name="output-files"></a>Ausgabedateien
 
 Wenn alles gut geht, wird die folgende Ausgabe angezeigt:
 
-```csharp
+```shell
 Parsing assemblies...
     Parsed 'managed.dll'
 Processing assemblies...
@@ -76,12 +70,12 @@ Generating binding code...
     Generated: mono_embeddinator.h
 ```
 
-Da die `--compile` Flag an das Tool übergeben wurde, .NET einbetten sollte auch haben kompiliert die Ausgabedateien in eine freigegebene Bibliothek, die sich neben die generierten Dateien, eine `libmanaged.dylib` Datei auf MacOS, und `managed.dll` unter Windows.
+Da die `--compile` Flag an das Tool übergeben wurde, .NET einbetten sollte auch haben kompiliert die Ausgabedateien in eine freigegebene Bibliothek, die sich neben die generierten Dateien, eine **libmanaged.dylib** auf MacOS und Datei**managed.dll** unter Windows.
 
-Um die freigegebene Bibliothek nutzen Sie zählen die `managed.h` C-Header-Datei, die die C-Deklarationen, die für die jeweilige bereitstellt verwalteten Bibliotheks-APIs und Verknüpfung mit der oben erwähnten kompiliert freigegebene Bibliothek.
+Um die freigegebene Bibliothek nutzen zu können, zählen die **managed.h** C-Header-Datei, die die C-Deklarationen, die für die jeweilige bereitstellt verwalteten Bibliotheks-APIs und Verknüpfung mit der oben erwähnten kompiliert freigegebene Bibliothek.
 
 ## <a name="further-reading"></a>Weiterführende Themen
 
-* [Embeddinator Einschränkungen](~/tools/dotnet-embedding/limitations.md)
-* [Das open-Source-Projekt verwendet werden sollen](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md)
+* [.NET Einbetten von Einschränkungen](~/tools/dotnet-embedding/limitations.md)
+* [Das open-Source-Projekt verwendet werden sollen](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
 * [Fehlercodes und Beschreibungen](~/tools/dotnet-embedding/errors.md)

@@ -6,14 +6,13 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f75ced921cd240e280b5dd6f7366ccceefb5e40e
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 3620312ff3fbf9d7aa879ae6d318f0b39eec386a
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started-with-macos"></a>Erste Schritte mit macOS
-
 
 ## <a name="what-you-will-need"></a>Sie benötigen
 
@@ -27,7 +26,7 @@ Erstellen Sie zuerst ein einfaches Hello World-Beispiel in C# geschrieben.
 
 Öffnen Sie Visual Studio für Mac, erstellen Sie ein neues Mac Class Library-Projekt namens **Hello aus Csharp**, und speichern Sie es **~/Projects/hello-from-csharp**.
 
-Ersetzen Sie den Code in der `MyClass.cs` -Datei mit den folgenden Codeausschnitt:
+Ersetzen Sie den Code in der **MyClass.cs** -Datei mit den folgenden Codeausschnitt:
 
 ```csharp
 using AppKit;
@@ -44,7 +43,9 @@ Erstellen Sie das Projekt. Die resultierende Assembly als gespeichert **~/Projec
 
 ### <a name="bind-the-managed-assembly"></a>Die verwaltete Assembly binden
 
-Führen Sie die Embeddinator um ein natives Framework für die verwaltete Assembly zu erstellen:
+Nachdem Sie eine verwaltete Assembly haben, müssen binden Sie es, indem .NET Einbetten von aufrufen.
+
+Wie in beschrieben die [Installation](~/tools/dotnet-embedding/get-started/install/install.md) Anleitung hierzu als Postbuildschritt in Ihrem Projekt eine benutzerdefinierte MSBuild-Ziel oder manuell:
 
 ```shell
 cd ~/Projects/hello-from-csharp
@@ -93,4 +94,4 @@ Führen Sie schließlich die Xcode-Projekt, und etwa Folgendes angezeigt wird:
 
 ![Hallo von C#-Beispiel im Simulator ausführen](macos-images/hello-from-csharp-mac.png)
 
-Eine umfassendere und kreativer Beispiel steht [hier](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather).
+Ein Beispiel für umfassendere und kreativer [steht hier](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather).

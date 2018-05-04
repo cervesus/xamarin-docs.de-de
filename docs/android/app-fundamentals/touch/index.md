@@ -1,5 +1,5 @@
 ---
-title: Tippen Sie auf
+title: Touch- und Gesten in Xamarin.Android
 description: Touchscreens auf viele der heutigen Geräte ermöglichen Benutzern Geräten auf eine natürliche und intuitive Weise schnell und effizient interagieren. Diese Aktivität ist nicht nur auf einfache Touch Erkennung beschränkt – es ist möglich, auch Gesten verwenden. Zwei-Finger-Zoom Bewegung ist z. B. ein sehr gängiges Beispiel dieser durch einen Teil des Bildschirms mit zwei Fingern fest, denen der Benutzer vergrößern oder verkleinern kann pinching an. Dieses Handbuch Touch untersucht und Aktionen in Android.
 ms.prod: xamarin
 ms.assetid: 61874769-978A-4562-9B2A-7FFD45F58B38
@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: d6c6d7fd02511ede84b7cfa75575d755f11bab99
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3700f9c73fb58fefcdba7987c9931e385cd52d38
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="touch"></a>Tippen Sie auf
+# <a name="touch-and-gestures-in-xamarinandroid"></a>Touch- und Gesten in Xamarin.Android
 
 _Touchscreens auf viele der heutigen Geräte ermöglichen Benutzern Geräten auf eine natürliche und intuitive Weise schnell und effizient interagieren. Diese Aktivität ist nicht nur auf einfache Touch Erkennung beschränkt – es ist möglich, auch Gesten verwenden. Zwei-Finger-Zoom Bewegung ist z. B. ein sehr gängiges Beispiel dieser durch einen Teil des Bildschirms mit zwei Fingern fest, denen der Benutzer vergrößern oder verkleinern kann pinching an. Dieses Handbuch Touch untersucht und Aktionen in Android._
 

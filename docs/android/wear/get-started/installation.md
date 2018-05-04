@@ -1,17 +1,17 @@
 ---
-title: Setup und Installation
+title: 'Installieren und Einrichten von Dach OS onXamarin.Android '
 description: Dieser Artikel führt Sie durch die Installationsschritte und Konfigurationsdetails, die zum Vorbereiten der Computer und Geräte für Android Dach Entwicklung erforderlich. Am Ende dieses Artikels stehen Ihnen eine funktionierende Xamarin.Android Abnutzung-Installation in Visual Studio für Mac und/oder Microsoft Visual Studio integriert und verlaufen beim Erstellen Ihrer ersten Xamarin.Android Abnutzung-Anwendung bereit.
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 86ed62075f5c39eaf7b0e348020f4a9361764727
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 14162663c518fdd1324f2b0340592fbae491d112
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="setup-and-installation"></a>Setup und Installation
 
@@ -122,4 +122,4 @@ Weitere Informationen zum Verpacken Abnutzung-apps finden Sie unter [arbeiten mi
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkeletonWear (sample)](https://developer.xamarin.com/samples/SkeletonWear/)
+- [SkeletonWear (Beispiel)](https://developer.xamarin.com/samples/SkeletonWear/)

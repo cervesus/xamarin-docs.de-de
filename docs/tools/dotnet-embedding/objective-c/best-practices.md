@@ -1,18 +1,18 @@
 ---
-title: Embeddinator 4000 bewährte Methoden für ObjC
+title: Einbetten von Best Practices für Objective-C .NET
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: ca5face9865c60fabe8359c2bf356d5d5555f517
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 9f31190d54b187e1dc298fe1c2a8d443862f10de
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="embeddinator-4000-best-practices-for-objc"></a>Embeddinator 4000 bewährte Methoden für ObjC
+# <a name="net-embedding-best-practices-for-objective-c"></a>Bewährte Methoden für Objective-C .NET einbetten
 
 Dies ist ein Entwurf und wird möglicherweise nicht synchron mit den Funktionen derzeit unterstützt das Tool. Wir hoffen, dass dieses Dokument wird separat entwickeln und schließlich das endgültige Tool entsprechen, d. h. empfehlen wir langfristig bewährte Vorgehensweisen - keine unmittelbare problemumgehungen.
 
@@ -106,7 +106,7 @@ Diese Benennungsregel wurde keine Übereinstimmung in der .NET GC-Welt; eine .NE
 
 ## <a name="exceptions"></a>Ausnahmen
 
-Es ist ziemlich Commont in .NET Ausnahmen intensiv zum Melden von Fehlern verwendet. Allerdings sind sie langsam und ObjC Recht nicht identisch sind. Nach Möglichkeit sollten Sie diese aus der Objective-C-Entwickler ausblenden.
+Es ist üblich, das in .NET Ausnahmen intensiv zum Melden von Fehlern verwendet. Sie sind jedoch langsam und nicht ganz identisch in Objective-c Nach Möglichkeit sollten Sie diese aus der Objective-C-Entwickler ausblenden.
 
 Beispielsweise .NET `Try` Muster wird viel einfacher aus Objective-C-Code genutzt werden:
 
@@ -138,6 +138,6 @@ Der Generator führen Sie die gleiche `return nil` Muster für generiert `init*`
 
 Objective-C lässt keine Operatoren überladen werden, wie c#, damit diese Klassenselektoren konvertiert werden.
 
-["Anzeigename"](/dotnet/standard/design-guidelines/operator-overloads/) benannte Methode werden anstelle der operatorüberladungen generiert Wenn gefunden, und eine einfachere API nutzen, liefern.
+["Anzeigename"](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads) werden benannte Methoden aufrufanweisung der operatorüberladungen generiert Wenn gefunden, und eine einfachere API nutzen, liefern.
 
 Klassen, die die Operatoren außer Kraft setzen `==` und/oder `!=` sollten der standard ist gleich (Objekt)-Methode ebenfalls überschreiben.
