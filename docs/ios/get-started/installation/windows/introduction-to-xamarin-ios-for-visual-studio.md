@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a8264d3ebd5f294b1b77fbbafd660825d5ce5180
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 859f84fbe329d79e9e1e6a8b7445fe2a7f03af23
+ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Einführung in Xamarin.iOS für Visual Studio
 
@@ -37,38 +37,24 @@ Sie müssen einige Anforderungen erfüllen, wenn Sie in Visual Studio für iOS b
 Es stehen einige Konfigurationsoptionen zur Verfügung. Sie können sich also entscheiden, welche am besten zu Ihren Entwicklungsbedürfnissen passt. Dies sind die folgenden:
 
 -  Verwenden Sie einen Mac als Hauptcomputer für die Entwicklung, und führen Sie eine Windows-VM aus, auf der Visual Studio installiert ist. Es wird empfohlen, dass Sie eine VM-Software wie [Parallels](http://www.parallels.com/products/desktop/) oder [VMWare](http://www.vmware.com/products/fusion/) verwenden.
--  Verwenden Sie einen Mac nur als Buildhost. In diesem Szenario ist er mit dem gleichen Netzwerk wie der Windows-Computer mit den [notwendigen](~/cross-platform/get-started/installation/windows.md#installation) Tools verbunden.
+-  Verwenden Sie einen Mac nur als Buildhost. In diesem Szenario ist er mit demselben Netzwerk wie der Windows-Computer verbunden, und die [notwendigen Tools](~/cross-platform/get-started/installation/windows.md#installation) sind auf dem Mac installiert.
 
 
 Führen Sie in beiden Fällen die folgenden Schritte aus:
 
-- [Installieren der Xamarin.iOS-Tools auf Ihrem Mac-Host](https://docs.microsoft.com/visualstudio/mac/installation)
-- [Konfigurieren Sie Ihren Mac](~/ios/get-started/installation/windows/index.md#configuring)
+- [Installieren von Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/installation)
 - [Installieren Sie Xamarin-Tools unter Windows](~/cross-platform/get-started/installation/windows.md)
-
-Um mit Xamarin in Visual Studio entwickeln zu können, müssen Sie **mindestens** Visual Studio 2015 Professional oder höher verwenden. Xamarin funktioniert **nicht** mit Visual Studio Express-Editionen, da diese keine Add-Ins unterstützen.
 
 ## <a name="connecting-to-the-mac"></a>Herstellen einer Verbindung mit dem Mac
 
-Zum einen können Sie eine Verbindung mit dem Mac-Buildhost über das Symbol in der Visual Studio-Symbolleiste herstellen (wenn eine iOS-Anwendung geöffnet ist):
+Folgen Sie den Anweisungen im Leitfaden [Durchführen einer Kopplung mit einem Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md), um Visual Studio mit Ihrem Mac-Buildhost zu verbinden.
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png "Symbol „Mit Mac verbinden“")](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png#lightbox)
-
-Zum anderen können Sie ebenso eine Verbindung herstellen, indem Sie zu **Tools > Optionen** in Visual Studio navigieren und dann **Xamarin > iOS-Einstellungen** auswählen:
-
- [![](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png "Option „iOS“")](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png#lightbox)
-
-Sie können den Mac-Buildhost wechseln, indem Sie auf **Xamarin Mac Agent suchen** klicken. Der folgende Bildschirm wird zum Aktualisieren des Mac-Buildhosts angezeigt:
-
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png "Dialogfeld „Xamarin Mac Agent“")](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png#lightbox)
 
 
 ## <a name="visual-studio-toolbar-overview"></a>Übersicht: Visual Studio-Symbolleiste
 
 Xamarin.iOS für Visual Studio fügt der Standardsymbolleiste und der neuen iOS-Symbolleiste Elemente hinzu.
 Die Funktionen dieser Symbolleisten werden unten erläutert.
-
-
 
 ### <a name="standard-toolbar"></a>Standardsymbolleiste
 
@@ -174,7 +160,7 @@ Um Ihrer Ansicht Objekte hinzuzufügen, fügen Sie über den Bereich **Toolbox**
 
 ### <a name="device-logging"></a>Geräteprotokollierung
 
-In Visual Studio 2015 und höher werden die Android- und iOS-Protokollpads vereinheitlicht
+In Visual Studio 2017 wurden die Android- und iOS-Protokollpads vereinheitlicht.
 
 Mit dem neuen Toolfenster „Geräteprotokoll“ für Visual Studio können Sie Protokolle für Android- und iOS-Geräte anzeigen. Dies erreichen Sie mit jedem der folgenden Befehle:
 

@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: 2f3950509134d3f643f0ea63b6725c1b4fe38409
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6be97162d1c371b9215d59ef77a7a5044e04f6b1
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-mobile-development"></a>Einführung in die Entwicklung mobiler Anwendungen
 
@@ -42,7 +42,7 @@ Durch die leistungsstarken und umfassenden Funktionen von Xamarin wird eine Lüc
 
 
 > [!NOTE]
-> In der Reihe „Erste Schritte“ werden die ersten Schritte beim Erstellen von iOS- und Android-Anwendungen beleuchtet. [Hier](http://dev.windowsphone.com/en-us/develop) finden Sie von Microsoft bereitgestellte Tutorials zur Entwicklung für Windows Phone. Weitere Informationen zur plattformübergreifenden Entwicklung mit Xamarin (einschließlich UWP-Anwendungen für Windows) finden Sie in der Anleitung zum [Erstellen plattformübergreifender Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md).
+> In der Reihe „Erste Schritte“ werden die ersten Schritte beim Erstellen von iOS- und Android-Anwendungen beleuchtet. Microsoft stellt Informationen zur [UWP-Entwicklung (Universelle Windows-Plattform)](https://docs.microsoft.com/windows/uwp/develop/) für Tablets und Desktop-PCs zur Verfügung. Weitere Informationen zur plattformübergreifenden Entwicklung mit Xamarin (einschließlich UWP-Anwendungen für Windows) finden Sie in der Anleitung zum [Erstellen plattformübergreifender Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md).
 
 
 

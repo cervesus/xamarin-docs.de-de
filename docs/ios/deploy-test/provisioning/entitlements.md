@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 6ced541ca9df6fcae1643dc14c2e19807e972822
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f158ab7e51eb7610566ed052b326fecf016add8a
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="working-with-entitlements"></a>Arbeiten mit Berechtigungen
 
@@ -127,6 +127,9 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
     - Die Zeichenfolge `$(TeamIdentifierPrefix)` können Sie finden, indem Sie sich bei developer.apple.com anmelden und zu **Member Center > Your Account > Developer Account Summary** (Mitgliedcenter > Ihr Konto > Zusammenfassung Developer-Konto) navigieren, um Ihre Team-ID abzurufen (oder Ihre eigene ID, wenn Sie ein einzelner Entwickler sind). Dabei handelt es sich um eine 10-stellige Zeichenfolge (z.B. A93A5CM278).
     - Die Zeichenfolge `$(CFBundleIdentifier)` beginnt mit `iCloud` und wird festgelegt, wenn der iCloud-Container mit den in [Arbeit mit Funktionen](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md) beschriebenen Schritten erstellt wird.
     - Die Platzhalter $`(TeamIdentifierPrefix)` und `$(CFBundleIdentifier)` können verwendet werden und werden bei der Erstellung durch die entsprechenden Werte ersetzt.
+
+> [!IMPORTANT]
+> Apple [stellt Tools zur Verfügung](https://developer.apple.com/support/allowing-users-to-manage-data/), die Entwickler dabei unterstützen, die Datenschutz-Grundverordnung (DSGVO) der Europäischen Union umzusetzen.
 
 ### <a name="app-groups"></a>App-Gruppen
 
