@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/04/2017
-ms.openlocfilehash: b5bccfa38a9f382789585284765183efa42b6a3d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 54f3d3c475e506e7d451af5125e90a0f51aa7374
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Einführung in die fortlaufende Integration mit Xamarin
 
@@ -35,9 +35,8 @@ Erstellen von Xamarin.iOS und Xamarin.Android Projektmappen mit App-Center gerad
 
 ### <a name="using-teamcity-with-xamarintoolsciteamcitymd"></a>[Verwenden von TeamCity mit Xamarin](~/tools/ci/teamcity.md)
 
-Dieses Handbuch beschreibt die Schritte, die mit der Verwendung von TeamCity zum Kompilieren von mobilen apps und sie mit Xamarin Test Cloud zu senden.
+Dieses Handbuch beschreibt die Schritte, die mit der Verwendung von TeamCity zum Kompilieren von mobilen apps und sie zum Testen der App-Center zu senden.
 
-###  <a name="using-jenkins-with-xamarintoolscijenkins-walkthroughmd"></a>[Verwenden von Jenkins mit Xamarin](~/tools/ci/jenkins-walkthrough.md)
+### <a name="using-jenkins-with-xamarintoolscijenkins-walkthroughmd"></a>[Verwenden von Jenkins mit Xamarin](~/tools/ci/jenkins-walkthrough.md)
 
 Diese Anleitung wird veranschaulicht, wie Jenkins als fortlaufende Integration-Server einrichten und automatisieren Kompilieren von mobilen apps mit Xamarin erstellt wurden. Es wird beschrieben, wie Jenkins unter OS X installieren, um ihn zu konfigurieren, richten Sie Aufträge, Xamarin.iOS und Xamarin.Android apps kompiliert, wenn Änderungen an Versionskontrollsystems übergeben werden.
-

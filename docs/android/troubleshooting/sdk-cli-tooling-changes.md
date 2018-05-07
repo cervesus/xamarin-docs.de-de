@@ -7,25 +7,20 @@ ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 4156d712b91ad069d482debdf0731be8b649287a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/02/2018
+ms.openlocfilehash: b5de9d673a348ddd4b939ae387257f835b37117a
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Änderungen an den Tools von Android SDK
 
 _Änderungen an wie das Android SDK installierten API-Ebenen und AVDs verwaltet._
 
-## <a name="changes-to--android-sdk-tooling"></a>Änderungen an den Android SDK-Tools
+## <a name="changes-to-android-sdk-tooling"></a>Änderungen an den Android SDK-Tools
 
-In modernen der SDK-Tools für Android-Versionen wurde Google die vorhandenen AVD und SDK-Manager für neue CLI (Command Line Interface)-Tools entfernt. Die erste **android** Programm wurde entfernt und die grafische Benutzeroberfläche (Graphical User Interface)-Manager in Visual Studio für Mac und früheren Versionen von Xamarin für Visual Studio früheren Version 25.2.5 Android SDK-Tools nicht mehr funktionieren.
-
-
-![Android-IDE-Menü in Visual Studio](sdk-cli-tooling-changes-images/android-ide-menu.png)
-
-Beim Verwenden der **android** Programm über die Befehlszeile führt dazu, eine Fehlermeldung ähnlich der folgenden:
+In den neuesten Versionen der SDK-Tools für Android ist Google die vorhandenen AVD und SDK-Manager zugunsten von neuen CLI (Command Line Interface)-Tools entfernt. Die **android** Programm wurde entfernt und die Google-Benutzeroberfläche (Graphical User Interface)-Manager in Visual Studio für Mac und früheren Versionen von Xamarin für Visual Studio früheren Version 25.2.5 Android SDK-Tools nicht mehr funktionieren. Beispielsweise möchten, verwenden Sie die **android** Programm über die Befehlszeile führt dazu, eine Fehlermeldung wie folgt:
 
 ```shell
 The "android" command is deprecated.
@@ -34,11 +29,21 @@ For command-line tools, use tools\bin\sdkmanager.bat
 and tools\bin\avdmanager.bat
 ```
 
-Daher müssen Sie mithilfe der CLI-Tools zum Verwalten und aktualisieren Sie die Emulatoren und Android-SDK.
+In den folgenden Abschnitten wird erläutert, wie die Android-SDK und Android virtuellen Geräten mit Android SDK 25.3.0 zu verwalten und höher.
+
+### <a name="ui-tools"></a>UI-Tools
+
+Visual Studio und Visual Studio für Mac bieten jetzt Xamarin Ersatz für die nicht mehr unterstützte Google-GUI-basierte-Manager:
+
+-   Verwenden Sie zum Herunterladen von Android SDK-Tools, Plattformen und anderen Komponenten, die Sie benötigen für die Entwicklung von apps Xamarin.Android, die [Xamarin Android SDK Manager](~/android/get-started/installation/android-sdk.md) anstelle der älteren Google SDK Manager.
+
+-   Verwenden Sie zum Erstellen und Konfigurieren von virtuellen Android-Geräte, die [Xamarin Android-Geräte-Manager](~/android/get-started/installation/android-emulator/xamarin-device-manager.md) anstelle der älteren Google Emulator-Manager.
+
+Diese Tools sind funktionell gleichwertig mit der Google-GUI-basierte Managern, die sie ersetzen.
 
 ### <a name="cli-tools"></a>CLI-Tools
 
-Die folgenden Programme besteht nun die Befehlszeilenschnittstelle für den Android SDK-Tools:
+Alternativ können Sie CLI-Tools verwenden, verwalten und-Emulatoren und Android-SDK zu aktualisieren. Die folgenden Programme besteht nun die Befehlszeilenschnittstelle für den Android SDK-Tools:
 
 #### <a name="sdkmanager"></a>sdkmanager
 
@@ -64,6 +69,7 @@ Sie können weiterhin die ursprünglichen GUI verwenden, durch Ausführen der **
 ## <a name="related-links"></a>Verwandte Links
 
 - [Android SDK-Setup](~/android/get-started/installation/android-sdk.md)
+- [Android-Geräte-Manager](~/android/get-started/installation/android-emulator/xamarin-device-manager.md)
 - [Verstehen von Android API-Ebenen](~/android/app-fundamentals/android-api-levels.md)
 - [Anmerkungen zu dieser Version von SDK Tools (Google)](https://developer.android.com/studio/releases/sdk-tools.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
