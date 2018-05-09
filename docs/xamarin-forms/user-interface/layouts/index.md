@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 864e81b6955fd5138c4055a3f202695803139ac6
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 2f57ac5b5b54b2606618c5e59fb544cae7c77e88
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="layouts"></a>Layouts
 
@@ -28,6 +28,7 @@ Jedes Layoutsteuerelement wird sowie weitere Details zum Behandeln von Bildschir
 * **[AbsoluteLayout](absolute-layout.md)**  &ndash; zum Anordnen der Sichten durch Festlegen von Koordinaten & Größe als Absolute Werte oder Verhältnisse verwendet. AbsoluteLayout kann verwendet werden, überlagern Sie die Ansichten als auch auf der linken Seite, rechtsbündig oder mittig zu verankern.
 * **[RelativeLayout](relative-layout.md)**  &ndash; verwendet, um Sichten zu ordnen, indem Sie Einschränkungen relativ zu ihrer übergeordneten Dimensionen & Position festlegen.
 * **[Raster](grid.md)**  &ndash; verwendet, um Ansichten in einem Raster anordnen. Im Hinblick auf die absoluten Werte oder Verhältnisse können Zeilen und Spalten angegeben werden.
+* **[FlexLayout](flex-layout.md)**  &ndash; verwendet, um die Ansichten horizontal oder vertikal mit umbrechen anordnen.
 * **[ScrollView](scroll-view.md)**  &ndash; scrollen, wenn eine Sicht vollständig innerhalb der Grenzen des Bildschirms anpassen kann nicht bereitgestellt.
 * **[LayoutOptions](layout-options.md)**  &ndash; Ausrichtung und die Erweiterung für eine Ansicht, relativ zu seinem übergeordneten definieren.
 * **[Geben Sie Transparenz](#input_transparency)**  &ndash; gibt an, ob ein Element die Eingaben empfängt.
@@ -59,6 +60,23 @@ Wenn ein Beispiel für `StackLayout` gute Wahl, sollten Sie eine app, die zum An
   <Button HorizontalOptions="End" Text="Button" />
 </StackLayout>
 ```
+
+### <a name="flexlayoutflex-layoutmd"></a>[FlexLayout](flex-layout.md)
+
+Die `FlexLayout` ähnelt `StackLayout` insofern, dass untergeordnete Ansichten horizontal oder vertikal angezeigt:
+
+```xaml
+<FlexLayout Direction="Column"
+            AlignItems="Center"
+            JustifyContent="SpaceEvenly">
+        
+    <Label Text="FlexLayout in Action" />
+    <Button Text="Button" />
+    <Label Text="Another Label" />
+</FlexLayout>
+```
+
+Jedoch, wenn es sind zu viele Elemente in eine einzelne Zeile oder Columm, passen `FlexLayout` ist auch in der Lage, diese Sichten umschließen. `FlexLayout` basiert auf den CSS-Flexible Box-Layout-Module und verfügt über viele der gleichen integrierten Optionen zum Positionieren und Ausrichten von seinen untergeordneten Elementen.
 
 ### <a name="absolutelayoutabsolute-layoutmd"></a>[AbsoluteLayout](absolute-layout.md)
 

@@ -7,12 +7,12 @@ ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 67644caedd268aac45a86c03a69ba017976fc103
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/30/2018
+ms.openlocfilehash: d8f909ab522b5bbf08a2b666fd4f64340e60b3e5
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Schnellstart für „Hallo, Android“-Multiscreen
 
@@ -108,10 +108,11 @@ In dieser Klasse erstellen Sie eine `ListActivity` und füllen sie programmgeste
 
 ### <a name="adding-translation-history-code"></a>Hinzufügen des Übersetzungsverlaufcodes
 
-Diese App sammelt Telefonnummern, die der Benutzer im ersten Bildschirm übersetzt hat, und übergibt sie an den zweiten Bildschirm. Die Telefonnummern werden als Liste von Zeichenfolgen gespeichert. Fügen Sie am Anfang der Klasse `MainActivity` die folgende `using`-Anweisung hinzu, um die Listen zu unterstützen:
+Diese App sammelt Telefonnummern, die der Benutzer im ersten Bildschirm übersetzt hat, und übergibt sie an den zweiten Bildschirm. Die Telefonnummern werden als Liste von Zeichenfolgen gespeichert. Um Listen (und Prioritäten, die später verwendet werden) zu unterstützen, fügen Sie die folgenden `using`-Anweisungen an den Anfang von **MainActivity.cs** hinzu:
 
 ```csharp
 using System.Collections.Generic;
+using Android.Content;
 ```
 
 Erstellen Sie als Nächstes eine leere Liste, die mit Telefonnummern befüllt werden kann.
@@ -246,10 +247,11 @@ In dieser Klasse wird eine `ListActivity` erstellt und programmgesteuert befüll
 
 ### <a name="adding-translation-history-code"></a>Hinzufügen des Übersetzungsverlaufcodes
 
-Diese App sammelt Telefonnummern, die der Benutzer im ersten Bildschirm übersetzt hat, und übergibt sie an den zweiten Bildschirm. Die Telefonnummern werden als Liste von Zeichenfolgen gespeichert. Fügen Sie am Anfang der Klasse `MainActivity` die folgende `using`-Anweisung hinzu, um die Listen zu unterstützen:
+Diese App sammelt Telefonnummern, die der Benutzer im ersten Bildschirm übersetzt hat, und übergibt sie an den zweiten Bildschirm. Die Telefonnummern werden als Liste von Zeichenfolgen gespeichert. Um Listen (und Prioritäten, die später verwendet werden) zu unterstützen, fügen Sie die folgenden `using`-Anweisungen an den Anfang von **MainActivity.cs** hinzu:
 
 ```csharp
 using System.Collections.Generic;
+using Android.Content;
 ```
 
 Erstellen Sie als Nächstes eine leere Liste, die mit Telefonnummern befüllt werden kann. Die Klasse `MainActivity` sieht nun wie folgt aus:

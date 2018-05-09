@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: 96ee8343bb2b99fdc0be9437aaa7737a70b8c19c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5ee04614a500618846ad3acf2a38f279351d6e9d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="ios-localization"></a>iOS Lokalisierung
 
@@ -19,7 +19,7 @@ _Dieses Dokument behandelt die Lokalisierungsfunktionen des iOS-SDK und Zugriff 
 
 Finden Sie in der [Internationalisierung Codierungen](encodings.md) Anweisungen einschließlich Zeichen legt/Codepages in Anwendungen, die nicht-Unicode-Daten verarbeiten müssen.
 
-## <a name="ios-platform-features"></a>iOS-Plattform-Funktionen
+## <a name="ios-platform-features"></a>iOS-Plattformfeatures
 
 In diesem Abschnitt werden einige der Lokalisierungsfunktionen in iOS beschrieben. Fahren Sie mit der [nächsten Abschnitt](#basics) zu bestimmten Code und anhand von Beispielen finden Sie unter.
 
@@ -359,5 +359,5 @@ Finden Sie weitere Informationen zum i18n und L10n für iOS, Android und plattfo
 - [Tasky (lokalisierte Storyboard) (Beispiel)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10nStoryboard)
 - [Apple-Lokalisierungsleitfaden](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/InternationalizingYourUserInterface/InternationalizingYourUserInterface.html)
 - [Plattformübergreifende Lokalisierung (Übersicht)](~/cross-platform/app-fundamentals/localization.md)
-- [Xamarin.Forms Lokalisierung](~/xamarin-forms/app-fundamentals/localization.md)
+- [Xamarin.Forms Lokalisierung](~/xamarin-forms/app-fundamentals/localization/index.md)
 - [Android Lokalisierung](~/android/app-fundamentals/localization.md)

@@ -1,17 +1,17 @@
 ---
-title: Starten Sie Bildschirme
+title: Starten Sie Bildschirme für Xamarin.iOS-Apps
 description: Dieser Artikel beschreibt, wie eine app starten Bildschirm für alle iOS-Geräten bei jeder Auflösung und Ausrichtung, die mit einem einzelnen Unified Storyboard zu erstellen.
 ms.prod: xamarin
 ms.assetid: 31A489CA-756B-4B9B-B386-4BADF18EDD33
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 01/19/2018
-ms.openlocfilehash: 991c2f30bcca1969e336f7269ad2a22ce6245b95
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/02/2018
+ms.openlocfilehash: d5a267bfa8655a9b9c6d4dba9d8cf9d16624ba9b
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="launch-screens"></a>Starten Sie Bildschirme
 
@@ -96,17 +96,19 @@ In iOS 8 (und höher) kann der Entwickler eine spezielle Unified Storyboard um d
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Erstellen Sie ein neues Projekt. Wählen Sie in Visual Studio **Datei > Neu > Projekt**, und wählen Sie dann **einzelne Ansicht App (iPhone)**:
-    
-    ![Das Fenster Neues Projekt, mit der App für einzelne anzeigen (iPhone) ausgewählt](launch-screens-images/launch01-vs.png)
+1. Erstellen Sie ein neues Projekt. Wählen Sie in Visual Studio **Datei > Neu > Projekt > c# > iPhone & iPad > iOS-App (Xamarin)**:
 
-    - Nennen Sie das Projekt, wählen Sie einen Speicherort aus, und wählen **OK**.
+    ![Das Fenster Neues Projekt, mit der iOS-App (Xamarin) ausgewählt](launch-screens-images/launch01.w157.png)
+
+    Wählen Sie die **einzelne Ansicht App** Vorlage, und klicken Sie dann auf **OK**:
+
+    ![Einzelne Sicht App-Vorlage](launch-screens-images/launch01-2.w157.png)
 
 2. Wenn **Ressourcen > LaunchScreen.xib** vorhanden ist, der **Projektmappen-Explorer**, löschen Sie ihn, indem Sie mit der rechten Maustaste auf die Datei und **löschen**. Diese Datei wird durch ein Storyboard im nächsten Schritt ersetzt werden.
 
 3. Erstellen Sie ein Storyboard mithilfe des Bildschirms starten. In der **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen > Neues Element...**  gefolgt von **leere Storyboard**. Nennen Sie das Storyboard **LaunchScreen.storyboard** , und klicken Sie auf **hinzufügen**:
 
-    ![Klicken Sie im Fenster Neues Element hinzufügen mit leeren Storyboard ausgewählt](launch-screens-images/launch03-vs.png)
+    ![Klicken Sie im Fenster Neues Element hinzufügen mit leeren Storyboard ausgewählt](launch-screens-images/launch03.w157.png)
 
 4. Konfigurieren Sie das Projekt mit **LaunchScreen.storyboard** als der Bildschirm-Storyboard starten:
 
@@ -119,7 +121,7 @@ In iOS 8 (und höher) kann der Entwickler eine spezielle Unified Storyboard um d
 
     - In der **Projektmappen-Explorer**, mit der rechten Maustaste auf **Asset Kataloge** , und wählen Sie **Asset-Katalog hinzufügen**. Nennen Sie diesen neuen Asset-Katalog **Bestand**:
 
-    ![Klicken Sie im Fenster Neues Element hinzufügen mit Asset-Katalog ausgewählt](launch-screens-images/launch05-vs.png)
+    ![Klicken Sie im Fenster Neues Element hinzufügen mit Asset-Katalog ausgewählt](launch-screens-images/launch05.w157.png)
 
     - Hinzufügen einer neuen Bildersatz der **Bestand** Asset-Katalog, wie in beschrieben die [Bilder hinzufügen, eine Asset-Katalog Image festgelegt](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Teil der [Anzeigen eines Bilds](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Handbuch.
 

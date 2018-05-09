@@ -6,12 +6,12 @@ ms.assetid: 60288B12-49E3-4E87-8690-D04A5EC7A664
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: 8afc15a75b6d34d9b3f094fe2c92f2b6623ee63f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/24/2018
+ms.openlocfilehash: f1f733fa91be7bf76e19896e78809d18494891d3
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="displaying-an-image"></a>Anzeigen eines Bilds
 
@@ -66,6 +66,7 @@ Bei Verwendung einer **Bildersatz** in der iOS-Designer, wählen Sie einfach den
 1. Öffnen Sie das Asset-Katalog aus der **Projektmappen-Explorer**, und klicken Sie in der oberen linken Ecke auf die **Plus** Schaltfläche:
 
     ![](displaying-an-image-images/asset5.png "Klicken Sie auf das Pluszeichen Schaltfläche")
+
 2. Wählen Sie **Bild hinzufügen, legen Sie** und der Bild-Editor für den neuen Bildersatz angezeigt. Von hier aus ziehen in Bildern für jeden der verschiedenen Geräten und und Lösungen, die erforderlich sind. (Hinweis:, die in den Lösungen, die im angegebenen passen diese Lösungen die [Bildgrößen und Dateinamen](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Dokument):
 
     ![](displaying-an-image-images/asset7.png "Legen Sie die Bild-editor")

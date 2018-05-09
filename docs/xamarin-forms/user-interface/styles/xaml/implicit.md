@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
 ms.openlocfilehash: d9c9f8816ea45ac122829739ad5134cc740263df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="implicit-styles"></a>Impliziten Stilen
 
@@ -128,5 +128,5 @@ Ein *implizite* Stil ist eine, die durch alle visuellen Elemente des gleichen ve
 - [Grundlegende Formate (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 - [Arbeiten mit Formatvorlagen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
 - [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [Style](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Setter](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [Stil](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
+- [Setter-Methode](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)

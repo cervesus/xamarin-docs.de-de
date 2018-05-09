@@ -5,12 +5,12 @@ ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.date: 04/05/2017
-ms.openlocfilehash: 21af0ef09644f39f9be42788b3d8f4977a2143d3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
-ms.translationtype: MT
+ms.date: 05/06/2018
+ms.openlocfilehash: a4ca803085f31ff0db5dd4f194b705d765447c9d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="apple-account-management"></a>Apple-Kontenverwaltung
 
@@ -18,23 +18,20 @@ Die Schnittstelle für die Apple-Konto bietet eine Möglichkeit, alle Entwicklun
 
 Die Authentifizierung Ihrer Apple-ID erfolgt in der Befehlszeile mit [Fastlane](https://fastlane.tools/). FastLane muss auf dem Computer, für die Sie für die Authentifizierung erfolgreich installiert. Weitere Informationen zu Fastlane und zur Installation finden Sie unter der [Fastlane](~/ios/deploy-test/provisioning/fastlane/index.md) Handbüchern.
 
-Das Dialogfeld "Apple-Konto" in Visual Studio für Mac können Sie folgende Aktionen ausführen:
+Das Dialogfeld "Apple-Konto" können Sie folgende Aktionen ausführen:
 
 * **Erstellen und Verwalten von Zertifikaten** 
 * **Erstellen und Verwalten von Bereitstellungsprofilen** 
 
 Informationen zu diesem Zweck wird in diesem Handbuch beschrieben.
 
-IOS Bundle Signaturtools können auch folgende Aktionen ausführen:
-
-* **Eine neue Signaturidentität einem vorhandenen Profil hinzufügen** 
-* **Neue Bereitstellung von Geräten** 
+Sie können auch die automatische Bereitstellung Tools iOS automatisch erstellen und verwalten Ihre Identitäten signieren, App-IDs und Profile bereitstellen.
 
 Weitere Informationen zur Verwendung dieser Funktionen finden Sie in der [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md) Handbuch.
 ️
 ## <a name="requirements"></a>Anforderungen
 
-Apple-Kontenverwaltung steht auf Visual Studio für Mac. Es ist zurzeit nicht verfügbar in Visual Studio für Windows.
+Apple-Kontenverwaltung steht auf Visual Studio für Mac und Visual Studio 2017 (Version 15.7 und höher)
 
 Sie benötigen ein Apple Developer-Konto, um dieses Feature zu verwenden. Weitere Informationen zum Apple Developer-Konten finden Sie in der [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md) Handbuch.
 
@@ -44,6 +41,8 @@ Sie benötigen ein Apple Developer-Konto, um dieses Feature zu verwenden. Weiter
 - Bevor Sie beginnen, stellen Sie sicher, akzeptieren Sie alle Benutzer Lizenzverträge in der [Entwicklerportal](https://developer.apple.com/account/).
 
 ## <a name="adding-an-apple-developer-account"></a>Hinzufügen eines Apple Developer-Kontos
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 1. So öffnen das Konto-Dialogfeld "Management" Gehe zu **Visual Studio > Einstellungen > Apple-Entwicklerkonto**:
 
@@ -57,18 +56,35 @@ Sie benötigen ein Apple Developer-Konto, um dieses Feature zu verwenden. Weiter
  
 5. Wählen Sie **immer zulassen** auf die Warnung zu Visual Studio, um Ihre Anmeldeinformationen zu verwenden:
 
-    ![](apple-account-management-images/image4.png)
+    ![Dialogfeld Warnung immer zulassen](apple-account-management-images/image4.png)
 
 6. Sobald Ihr Konto erfolgreich hinzugefügt wurde, sehen Sie Ihre Apple-ID und alle Teams, denen Ihre Apple-ID gehört.
 
-    ![](apple-account-management-images/image5.png)
+    ![Apple Developer-Konto-Dialogfeld mit Konten hinzugefügt wurden](apple-account-management-images/image5.png)
 
 7. Wählen Sie alle Teams, und drücken Sie die **"Details anzeigen"...** Schaltfläche. Daraufhin wird eine Liste aller Identitäten signieren und Bereitstellen von Profilen, die auf dem Computer installiert sind, angezeigt:
 
-    ![](apple-account-management-images/image6.png)
+    ![Details zum Bildschirm gestelltem signaturidentitäten und bereitstellungsprofile auf Ihrem Computer](apple-account-management-images/image6.png)
 
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-<a name="managing" />
+1. Bevor Sie beginnen, Ihre Apple-ID, Visual Studio-2017 hinzuzufügen, stellen Sie sicher, dass Ihre Entwicklungsumgebung ist [gekoppelt mit einem Mac-Build-Host](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+
+1. Um das Konto Management-Fenster zu öffnen, wechseln Sie zu **Extras > Optionen > Xamarin > Apple Konten**:
+
+    ![Bildschirm "Apple Konten-Optionen"](apple-account-management-images/prov1.png)
+
+1. Wählen Sie die **hinzufügen** und geben Sie Ihre Apple-ID und Kennwort:
+
+    ![Dialogfeld "UserName" und "Kennwort"](apple-account-management-images/prov1a.png)
+
+1. Sobald Ihr Konto erfolgreich hinzugefügt wurde, sehen Sie Ihre Apple-ID und alle Teams, denen Ihre Apple-ID gehört.
+ 
+1. Wählen Sie alle Teams, und drücken Sie die **"Details anzeigen"...** Schaltfläche. Daraufhin wird eine Liste aller Identitäten signieren und Bereitstellen von Profilen, die auf dem Computer installiert sind, angezeigt:
+
+    ![Dialogfeld "UserName" und "Kennwort"](apple-account-management-images/prov2.png)
+
+-----
 
 
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>Verwalten von Identitäten signieren und Profile bereitstellen
@@ -83,21 +99,37 @@ Das Team-Dialogfeld "Details" zeigt eine Liste der Identitäten signieren, nach 
 
 * **Abgelaufene** – das Zertifikat ist abgelaufen. Sie sollten dies aus Schlüsselbund entfernen.
 
-  ![](apple-account-management-images/image7.png)
+  ![Team-Dialogfeld Detailinformationen](apple-account-management-images/image7.png)
 
 ## <a name="create-a-signing-identities"></a>Eine Signierung Identitäten erstellen
 
-Wählen Sie zum Erstellen einer neuen Signaturidentität der **neues Zertifikat erstellen** Dropdown-Schaltfläche und wählen Sie den Typ, die erforderlich sind. Wenn Sie die richtigen Berechtigungen eine neue Signatur haben wird die Identität nach wenigen Sekunden angezeigt.
+Wählen Sie zum Erstellen einer neuen Signaturidentität der **Create Certificate** Dropdown-Schaltfläche und wählen Sie den Typ, die erforderlich sind. Wenn Sie die richtigen Berechtigungen eine neue Signatur haben wird die Identität nach wenigen Sekunden angezeigt.
 
-Wenn eine Option in der Dropdownliste ist abgeblendet und nicht wird, ausgewählt wie unten gezeigt, bedeutet dies, dass Sie nicht das richtige Team zum Erstellen dieses Typs von Zertifikat berechtigt sind.
+Wenn eine Option in der Dropdownliste ist abgeblendet und deaktiviert, bedeutet dies, dass Sie nicht das richtige Team zum Erstellen dieses Typs von Zertifikat berechtigt sind.
 
-![](apple-account-management-images/image8.png)
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+![Erstellen von Zertifikatoptionen](apple-account-management-images/image8.png)
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+![Erstellen von Zertifikatoptionen](apple-account-management-images/prov3.png)
+
+-----
 
 ## <a name="download-provisioning-profiles"></a>Provisioning Profiles herunterladen
 
 Das Dialogfeld "Team-Details" zeigt außerdem eine Liste aller provisioning Profile, die mit Ihrem Entwicklerkonto verbunden. Sie können alle provisioning Profile auf den lokalen Computer herunterladen, durch Drücken der **Herunterladen von allen Profilen** Schaltfläche
 
-![](apple-account-management-images/image9.png)
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+![Download der provisioning Profile](apple-account-management-images/image9.png)
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+![Download der provisioning Profile](apple-account-management-images/prov4.png)
+
+-----
 
 ## <a name="ios-bundle-signing"></a>iOS Bundle Signing
 
@@ -120,13 +152,10 @@ Dies ist da 2-Factor Authentication für Ihr Konto aktiviert ist. Stellen Sie si
 ### <a name="failed-to-create-new-certificate"></a>Fehler beim Erstellen des neuen Zertifikats
 "Sie haben das Limit für Zertifikate dieses Typs reached"
 
-![](apple-account-management-images/image10.png)
+![Dialogfeld "Zertifikat Limit"](apple-account-management-images/image10.png)
 
 Die maximale Anzahl der zulässigen Zertifikate wurden generiert. Um dieses Problem zu beheben, navigieren Sie zu der [Apple Developer Center](https://developer.apple.com/account/ios/certificate/distribution) und Produktion Zertifikate widerrufen.
 
 ## <a name="known-issues"></a>Bekannte Probleme
 
-* Manchmal dauert das Dialogfeld "Details anzeigen" eine übermäßige Zeit für die Identitäten und die Profile abzurufen.
-* Häufig kann der Fokus nicht in Visual Studio für Mac zurück nach der Eingabe der Details Ihrer verursacht, dass Ihr Konto nicht hinzugefügt werden. Wenn dies der Fall ist, versuchen Sie erneut den Prozess aus.
-* In Visual Studio für Mac erstellte Bereitstellungsprofile beachten keine Berechtigungen, die in Ihren Projekten ausgewählt wurden (entitlements.plist). Diese Funktion wird in zukünftigen Versionen der IDE hinzugefügt.
 * Das Verteilen von Bereitstellungsprofilen verwendet standardmäßig den App Store als Ziel. In-House- oder Ad-hoc-Profile sollten manuell erstellt werden.

@@ -6,12 +6,12 @@ ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 02/16/2018
-ms.openlocfilehash: 1cb151cc5c741a020fcbb398441ed4958ec5980b
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.date: 05/04/2018
+ms.openlocfilehash: f4fe1bd753260f05dedb452655572d290c0781d0
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Gebunden Sie Dienste werden im Xamarin.Android.
 
@@ -42,8 +42,8 @@ Diese Anleitung wird beschrieben, wie Erweitern der `Service` Klasse zum Impleme
 Es gibt drei Komponenten, die in der Reihenfolge für eine Android-Anwendung zum Verarbeiten eines gebundenen Diensts implementiert werden müssen:
 
 1. **Erweitern der `Service` Klasse und Implementieren von Rückrufmethoden Lebenszyklus** &ndash; diese Klasse enthält den Code, der die Arbeit ausgeführt, die des Diensts angefordert werden. Dies wird im folgenden ausführlicher erläutert.
-2. **Erstellen Sie eine Klasse, implementiert `IServiceConnection`**  &ndash; dieses Objekt enthält die Rückrufmethoden, die den Client zu benachrichtigen, wenn es mit verbunden (oder die Verbindung wurde getrennt) aus dem Dienst. Die Dienst-Verbindung stellt auch einen Verweis auf ein Objekt bereit, die vom Client verwendet werden kann, um direkt mit dem Dienst interagieren. Dieser Verweis wird als bezeichnet den _Binder_.
-3. **Erstellen Sie eine Klasse, implementiert `IBinder`**  &ndash; ein _Binder_ Implementierung stellt die API, die ein Client verwendet, um die Kommunikation mit dem Dienst bereit. Binder kann entweder bereitstellen einen Verweis auf die gebundene Dienst, sodass Methoden, die direkt aufgerufen werden, oder der Binder kann eine Client-API, die kapselt und blendet Sie aus den gebundenen Dienst aus der Anwendung bereitstellen. Ein `IBinder` müssen den erforderlichen Code für Remoteprozeduraufrufe bereitstellen. Es ist nicht erforderlich (oder empfohlen) zum Implementieren der `IBinder` -Schnittstelle direkt. Ein `IBinder` Instead-Anwendungen sollten erweitern die `Binder` stellt die Basisfunktionalität, die erforderlich sind, indem Sie die meisten ein `IBinder`.
+2. **Erstellen Sie eine Klasse, implementiert `IServiceConnection`**  &ndash; diese Schnittstelle bietet Rückrufmethoden werden aufgerufen, von Android auf den Client zu benachrichtigen, wenn die Verbindung mit dem Dienst geändert wurde, d. h. der Client verbunden oder getrennt hat das -Dienst. Die Dienst-Verbindung stellt auch einen Verweis auf ein Objekt bereit, die vom Client verwendet werden kann, um direkt mit dem Dienst interagieren. Dieser Verweis wird als bezeichnet den _Binder_.
+3. **Erstellen Sie eine Klasse, implementiert `IBinder`**  &ndash; ein _Binder_ Implementierung stellt die API, die ein Client verwendet, um die Kommunikation mit dem Dienst bereit. Binder kann entweder bereitstellen einen Verweis auf die gebundene Dienst, sodass Methoden, die direkt aufgerufen werden, oder der Binder kann eine Client-API, die kapselt und blendet Sie aus den gebundenen Dienst aus der Anwendung bereitstellen. Ein `IBinder` müssen den erforderlichen Code für Remoteprozeduraufrufe bereitstellen. Es ist nicht erforderlich (oder empfohlen) zum Implementieren der `IBinder` -Schnittstelle direkt. Stattdessen sollten Anwendungen erweitern die `Binder` Typ, der Großteil die grundlegenden Funktionen bietet eine `IBinder`.
 4. **Starten und Binden an einen Datendienst** &ndash; der Android-Anwendung ist verantwortlich für den Dienst zu starten und zu binden, nachdem der Dienst-Verbindung, der Binder und der Dienst erstellt wurden.
 
 Jeder dieser Schritte wird in den folgenden Abschnitten im Detail besprochen.

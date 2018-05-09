@@ -6,12 +6,12 @@ ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 10/25/2017
-ms.openlocfilehash: f8032966b49f6f023642b0d1338e8c5d740b66e0
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 04/10/2018
+ms.openlocfilehash: bc535160816ad186baaa5e802eceb6ae40347d75
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Teil 1. Erste Schritte mit XAML
 
@@ -23,9 +23,9 @@ Um zu beginnen, Ihre erste Verwendung von XAML-Datei bearbeiten, verwenden Sie V
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Verwenden Sie in Windows, Visual Studio, wählen Sie **Datei > Neu > Projekt** aus dem Menü. In der **neues Projekt** wählen Sie im Dialogfeld **Visual c# > plattformübergreifend** auf der linken Seite, und klicken Sie dann **Cross-Plattform-App (Xamarin.Forms oder systemeigen)** aus der Liste im mittleren Bereich. 
+Verwenden Sie in Windows, Visual Studio, wählen Sie **Datei > Neu > Projekt** aus dem Menü. In der **neues Projekt** wählen Sie im Dialogfeld **Visual c# > plattformübergreifend** auf der linken Seite, und klicken Sie dann **Mobile App (Xamarin.Forms)** aus der Liste im mittleren Bereich. 
 
-![](get-started-with-xaml-images/win/newprojectdialog.png "Dialogfeld "Neues Projekt"")
+![](get-started-with-xaml-images/win/newprojectdialog.w157.png "Dialogfeld "Neues Projekt"")
 
 Wählen Sie einen Speicherort für die Projektmappe, geben sie einen Namen der **XamlSamples** (oder alle von Ihnen gewünschten gewünscht), und drücken Sie die **OK**.
 
@@ -226,7 +226,7 @@ Test, der das Programm dennoch kompiliert und bereitgestellt werden, bevor Sie f
 
 Andere XAML-basierte hinzuzufügende `ContentPage` Klassen zum Projekt, wählen Sie die **XamlSamples** PCL Projekt, und rufen die **Projekt > Neues Element hinzufügen** Menüelement. Am linken Rand der **neues Element hinzufügen** wählen Sie im Dialogfeld **Visual C#-** und **Xamarin.Forms**. Wählen Sie aus der Liste **Inhaltsseite** (nicht **Inhaltsseite (c#)**, die eine Seite reinen erstellt oder **Inhaltsansicht**, eine Seite ist). Benennen Sie der Seite, z. B. **HelloXamlPage.xaml**:
 
-![](get-started-with-xaml-images/win/addnewitemdialog.png "Dialogfeld "Neues Element" hinzufügen")
+![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "Dialogfeld "Neues Element" hinzufügen")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 

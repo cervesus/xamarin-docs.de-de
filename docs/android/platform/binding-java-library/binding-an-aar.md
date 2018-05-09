@@ -6,12 +6,12 @@ ms.assetid: 380413B8-6A99-4BB8-B64C-3EAF9F359C22
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 101fb28add97749549de9c44292a1ef99a717dde
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/11/2018
+ms.openlocfilehash: 54708a7cfd071f77968991c9fe4e52938697c9bb
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-an-aar"></a>Binden von ein. AAR
 
@@ -82,7 +82,7 @@ Bevor Sie mit den folgenden Schritten fortfahren, laden Sie das Beispiel [textan
 
 1.  Erstellen Sie ein neues Bindungen-Klassenbibliothekprojekt mit der Vorlage für die Bibliothek für Android Bindungen ab. Sie können Visual Studio für Mac oder Visual Studio (die in den folgenden Screenshots zeigen die Visual Studio, aber Visual Studio für Mac ist sehr ähnlich). Nennen Sie die Projektmappe **AarBinding**:
 
-    [![AarBindings-Projekt erstellen](binding-an-aar-images/01-new-bindings-library-vs-sml.png)](binding-an-aar-images/01-new-bindings-library-vs.png#lightbox)
+    [![AarBindings-Projekt erstellen](binding-an-aar-images/01-new-bindings-library-vs-sml.w157.png)](binding-an-aar-images/01-new-bindings-library-vs.w157.png#lightbox)
 
 2.  Die Vorlage enthält eine **JAR-Dateien** Ordner, in dem Sie hinzufügen, Ihrer. AAR(s) auf das Bindings-Steuerelementbibliothek-Projekt. Mit der rechten Maustaste die **JAR-Dateien** Ordner, und wählen **hinzufügen > Vorhandenes Element**:
 
@@ -118,7 +118,7 @@ Um dies zu nutzen. Die DLL in Ihrer app Xamarin.Android, müssen Sie zunächst e
 
 1.  Wir entwickeln dieser app in derselben Projektmappe wie die Bindungen Bibliothek an, in dieser exemplarischen Vorgehensweise zu vereinfachen. (Die app, die die Bindungen Bibliothek nutzt konnte auch in einer anderen Projektmappe befinden.) Erstellen Sie eine neue Xamarin.Android-app: mit der rechten Maustaste in der Projektmappe, und wählen Sie **neues Projekt hinzufügen**. Nennen Sie das neue Projekt **Namen "bindingtest"**:
 
-    [![Erstellen Sie neue Namen "bindingtest"-Projekt](binding-an-aar-images/07-add-new-project-vs-sml.png)](binding-an-aar-images/07-add-new-project-vs.png#lightbox)
+    [![Erstellen Sie neue Namen "bindingtest"-Projekt](binding-an-aar-images/07-add-new-project-vs-sml.w157.png)](binding-an-aar-images/07-add-new-project-vs.w157.png#lightbox)
 
 2.  Mit der rechten Maustaste die **Verweise** Knoten der **Namen "bindingtest"** Projekt, und wählen Sie **Verweis hinzufügen...** :
 

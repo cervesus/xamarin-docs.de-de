@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 2178d567f1ccfe803ebce8b7b623c31c290999bc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fec14b0f7328bee1d0866ba02f28202e8d63e8cb
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started"></a>Erste Schritte
 
@@ -42,6 +42,10 @@ Dieses Dokument erläutert *wie Xamarin auf hoher Ebene funktioniert* und führt
 ###  <a name="introduction-to-the-mobile-software-development-lifecyclecross-platformget-startedintroduction-to-mobile-sdlcmd"></a>[Introduction to the Mobile Software Development Lifecycle (Einführung in den Lebenszyklus der mobilen Softwareentwicklung)](~/cross-platform/get-started/introduction-to-mobile-sdlc.md)
 
 Dieser Artikel beschreibt den Lebenszyklus der Softwareentwicklung in Bezug auf mobile Anwendungen und erläutert einige der Überlegungen, die zum Erstellen mobiler Projekte erforderlich sind. Entwickler, die direkt einsteigen und mit dem Erstellen von Anwendungen beginnen möchten, können diesen Leitfaden überspringen und später für ein breiteres Verständnis der mobilen Entwicklung weiterlesen.
+
+##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[Erstellen von plattformübergreifenden Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
+
+Wenn Sie sich für Xamarin entscheiden und bei der Entwicklung Ihrer mobilen Anwendungen einige Aspekte im Auge behalten, können Sie auf allen mobilen Plattformen Code in enormem Umfang gemeinsam nutzen. Darüber hinaus können Sie die Markteinführungszeit verkürzen, vorhandenes Potenzial nutzen, die Kundennachfrage nach mobilem Zugriff erfüllen und Komplexität plattformübergreifend reduzieren.&nbsp;In diesem Dokument werden die wichtigsten Leitlinien für die Realisierung dieser Vorteile für Hilfs- und Produktivitätsanwendungen skizziert.
 
 ###  <a name="introducing-visual-studio-for-machttpsdocsmicrosoftcomvisualstudiomac"></a>[Introducing Visual Studio for Mac (Einführung in Visual Studio für Mac)](https://docs.microsoft.com/visualstudio/mac/)
 

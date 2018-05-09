@@ -1,23 +1,24 @@
 ---
-title: Debuggen
+title: Debuggen von Xamarin.Android auf Geräten und in Emulatoren
 description: Testen und Debuggen einer Xamarin.Android-App
 ms.prod: xamarin
 ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/16/2018
-ms.openlocfilehash: 429a369ddcd11829920f9fb932a737d1a53cec10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 4b51b10965f3f6e77420d657bc0f7f7d25fc6569
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="debugging"></a>Debuggen
 
+In diesem Abschnitt wird beschrieben, wie das Debuggen einer Xamarin.Android-App auf Geräten oder in Emulatoren erfolgt.
 ## <a name="debugging-overview"></a>Übersicht über das Debugging
 
-Die Entwicklung von Android-Anwendungen erfordert das Ausführen der Anwendung, entweder auf physischer Hardware, einem Emulator oder Simulator. Die beste, aber nicht immer zweckmäßigste, Herangehensweise ist die Verwendung von Hardware. In vielen Fällen kann es einfacher und kostengünstiger sein, Android-Hardware mithilfe einer der unten beschriebenen Emulatoren zu simulieren/emulieren.
+Die Entwicklung von Android-Anwendungen erfordert das Ausführen der Anwendung, entweder auf physischer Hardware oder in einem Emulator. Die beste, aber nicht immer zweckmäßigste, Herangehensweise ist die Verwendung von Hardware. In vielen Fällen kann es einfacher und kostengünstiger sein, Android-Hardware mithilfe einer der unten beschriebenen Emulatoren zu simulieren/emulieren.
 
 
 ### <a name="android-sdk-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Android SDK-Emulator](~/android/deploy-test/debugging/android-sdk-emulator/index.md)

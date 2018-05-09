@@ -6,12 +6,12 @@ ms.assetid: 0CFB494C-376C-449D-B714-9E82644F9DA3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/16/2017
-ms.openlocfilehash: 492b06420d27f902faf7240003ebe5e16416a5cb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/02/2017
+ms.openlocfilehash: 73ca0974a42bf661a89327148b68341114297084
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="message-app-extension-basics"></a>Grundlagen der Nachrichten-App-Erweiterung
 
@@ -131,11 +131,12 @@ Erstellen Sie eine benutzerdefinierte Aufkleber Erfahrung, führen Sie folgende 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Starten Sie Visual Studio.
-2. Öffnen Sie die Projektmappe, um eine Nachricht App-Erweiterung hinzufügen. 
-3. Wählen Sie **iOS** > **Erweiterungen** > **iMessage Erweiterung** , und klicken Sie auf die **Weiter** Schaltfläche: 
+2. Öffnen Sie die Projektmappe, um eine Nachrichten-App-Erweiterung hinzufügen.
+3. Wählen Sie ** iOS Extensions > iMessage Erweiterung (iOS) **, und klicken Sie auf die **Weiter** Schaltfläche:
 
-    [![](intro-to-message-app-extensions-images/message01w.png "Wählen Sie iMessage Erweiterung")](intro-to-message-app-extensions-images/message01.png#lightbox)
-4. Geben Sie eine **Erweiterungsnamen** , und klicken Sie auf die **OK** Schaltfläche
+    [![Wählen Sie iMessage Erweiterung (iOS)](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
+
+4. Geben Sie einen **Namen** , und klicken Sie auf die **OK** Schaltfläche
 
 -----
 
@@ -166,7 +167,7 @@ Führen Sie folgende Schritte aus:
 1. In der **Projektmappen-Explorer**mit der rechten Maustaste auf die Erweiterung Projektnamen, und wählen Sie **hinzufügen** > **neue Datei...**   >  **iOS | Apple Watch** > **Schnittstelle Controller**.
 2. Geben Sie `StickerBrowserViewController` für die **Namen** , und klicken Sie auf die **neu** Schaltfläche: 
 
-    [![](intro-to-message-app-extensions-images/browser01w.png "Geben Sie ein StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.png#lightbox)
+    [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "Geben Sie ein StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
 3. Öffnen der `StickerBrowserViewController.cs` Datei zur Bearbeitung.
 
 -----

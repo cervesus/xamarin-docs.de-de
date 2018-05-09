@@ -5,11 +5,11 @@ title: Xamarin-Dokumentation
 description: Xamarin ermöglicht es Ihnen, native Apps für Android, iOS und MacOS mithilfe von .NET-Code und plattformspezifischen Benutzeroberflächen zu erstellen. Mit Xamarin.Forms können Sie native Apps mit freigegebenem Benutzeroberflächencode erstellen, der in C# oder in XAML geschrieben ist.
 featureFlags:
 - clicktale
-ms.openlocfilehash: ba47459859866c140dd12186035ed6916393a4f2
-ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
+ms.openlocfilehash: 8f7f1432ab0dfc7a44a6b688ea998ec01812609a
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -178,6 +178,44 @@ ms.lasthandoff: 05/04/2018
                                 </a>
                             </li>
                             <li>
+                                <a href="~/essentials/index.md?context=xamarin/xamarin-forms">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Xamarin.Essentials" src="~/media/index/xamarin-essentials.svg" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Xamarin.Essentials</h3>
+                                                    <p>Plattformübergreifende APIs für allgemeine Aufgaben wie Dateizugriff, Geräteinformationen, Hardwarefeatures usw.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/xamarin-forms/data-cloud/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Data & Cloud Services" src="~/media/index/xamarin-forms-data-cloud.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Daten und Clouddienste</h3>
+                                                    <p>Datenspeicherung und Zugriff auf Clouddienste wie z.B. Microsoft Azure.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="~/xamarin-forms/deploy-test/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
@@ -209,25 +247,6 @@ ms.lasthandoff: 05/04/2018
                                                 <div class="cardText">
                                                     <h3>Weiterführende Konzepte und Interna</h3>
                                                     <p>Funktionsweise von Xamarin.Forms.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/xamarin-forms/data-cloud/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Data and Cloud Services" src="~/media/index/xamarin-forms-data-cloud.svg?branch=master" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Daten und Clouddienste</h3>
-                                                    <p>Datenspeicherung und Zugriff auf Clouddienste wie z.B. Microsoft Azure.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -373,18 +392,18 @@ ms.lasthandoff: 05/04/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/android/deploy-test/index.md">
+                                <a href="~/essentials/index.md?context=xamarin/android">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Deployment and Testing" src="~/media/index/xamarin-cross-platform-deployment.svg?branch=master" data-linktype="external">
+                                                        <img alt="Xamarin.Essentials" src="~/media/index/xamarin-essentials.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Bereitstellung und Testen</h3>
-                                                    <p>Anweisungen zum Erstellen und Bereitstellen Ihrer Apps und Tipps, um sie vorab zu testen.</p>
+                                                    <h3>Xamarin.Essentials</h3>
+                                                    <p>Plattformübergreifende APIs für allgemeine Aufgaben wie Dateizugriff, Geräteinformationen, Hardwarefeatures usw.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -398,12 +417,31 @@ ms.lasthandoff: 05/04/2018
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Data and Cloud Services" src="~/media/index/xamarin-android-data-cloud.svg?branch=master" data-linktype="external">
+                                                        <img alt="Data & Cloud Services" src="~/media/index/xamarin-android-data-cloud.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Daten und Clouddienste</h3>
                                                     <p>Datenspeicherung und Zugriff auf Clouddienste.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/android/deploy-test/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Deployment and Testing" src="~/media/index/xamarin-cross-platform-deployment.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Bereitstellung und Testen</h3>
+                                                    <p>Anweisungen zum Erstellen und Bereitstellen Ihrer Apps und Tipps, um sie vorab zu testen.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -549,18 +587,18 @@ ms.lasthandoff: 05/04/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/ios/deploy-test/index.md">
+                                <a href="~/essentials/index.md?context=xamarin/ios">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Deployment and Testing" src="~/media/index/xamarin-cross-platform-deployment.svg?branch=master" data-linktype="external">
+                                                        <img alt="Xamarin.Essentials" src="~/media/index/xamarin-essentials.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Bereitstellung und Testen</h3>
-                                                    <p>Anweisungen zum Erstellen und Bereitstellen Ihrer Apps und Tipps, um sie vorab zu testen.</p>
+                                                    <h3>Xamarin.Essentials</h3>
+                                                    <p>Plattformübergreifende APIs für allgemeine Aufgaben wie Dateizugriff, Geräteinformationen, Hardwarefeatures usw.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -574,12 +612,31 @@ ms.lasthandoff: 05/04/2018
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Data and Cloud Services" src="~/media/index/xamarin-ios-data-cloud.svg?branch=master" data-linktype="external">
+                                                        <img alt="Data & Cloud Services" src="~/media/index/xamarin-ios-data-cloud.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Daten und Clouddienste</h3>
                                                     <p>Datenspeicherung und Zugriff auf Clouddienste.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/ios/deploy-test/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Deployment and Testing" src="~/media/index/xamarin-cross-platform-deployment.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Bereitstellung und Testen</h3>
+                                                    <p>Anweisungen zum Erstellen und Bereitstellen Ihrer Apps und Tipps, um sie vorab zu testen.</p>
                                                 </div>
                                             </div>
                                         </div>

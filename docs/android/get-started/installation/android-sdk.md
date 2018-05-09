@@ -1,5 +1,5 @@
 ---
-title: Android SDK-Setup
+title: Einrichten des Android SDK für Xamarin.Android
 description: Visual Studio enthält den Android SDK-Manager, der den eigenständigen SDK-Manager von Google ersetzt. In diesem Handbuch wird erklärt, wie Sie den SDK-Manager verwenden, um Tools , Plattformen und andere Komponenten von Android SDK herunterzuladen, die Sie zum Entwickeln von Xamarin.Android-Apps benötigen.
 ms.prod: xamarin
 ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 45ab1930300ac704da0a1fee25c08d40aa35ac5c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5c2259ad32f341094f6cdc440edb2053987374b1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="android-sdk-setup"></a>Android SDK-Setup
+# <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Einrichten des Android SDK für Xamarin.Android
 
 _Visual Studio enthält den Android SDK-Manager, der den eigenständigen SDK-Manager von Google ersetzt. In diesem Handbuch wird erklärt, wie Sie den SDK-Manager verwenden, um Tools, Plattformen und andere Komponenten des Android SDK herunterzuladen, die Sie zum Entwickeln von Xamarin.Android-Apps benötigen._
 

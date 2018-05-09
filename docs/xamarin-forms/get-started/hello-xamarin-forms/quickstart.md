@@ -6,12 +6,12 @@ ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/06/2018
-ms.openlocfilehash: e8d1064e76c2ccdeb14302d30428cd932444a0f5
-ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
+ms.date: 04/26/2018
+ms.openlocfilehash: f5c05ce308a10747ad3e18e4a1d141d29fd6c8a1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms-Schnellstart
 
@@ -35,7 +35,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
 
     ![](quickstart-images/vs/new-project.png "Plattformübergreifende Projektvorlagen")
 
-4. Klicken Sie im Dialogfeld **New Cross Platform App** (Neue plattformübergreifende App) auf **Leere App**, wählen Sie **Xamarin.Forms** als UI-Technologie und **.NET Standard** als Strategie für die Codefreigabe aus, und klicken Sie auf **OK**:
+4. Klicken Sie im Dialogfeld **New Cross Platform App** (Neue plattformübergreifende App) auf **Leere App**, wählen Sie **.NET Standard** als Strategie für die Codefreigabe aus, und klicken Sie auf **OK**:
 
     ![](quickstart-images/vs/new-app.png "Neue plattformübergreifende App")
 
@@ -53,7 +53,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -523,7 +523,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -630,7 +630,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
     }
     ```
 
-    Speichern Sie die Änderungen an **Phoneword.cs**, indem Sie auf **Datei > Speichern** klicken (oder indem Sie **&#8984;+S** drücken), und schließen Sie die Datei.
+    Speichern Sie die Änderungen an **App.xaml.cs**, indem Sie auf **Datei > Speichern** klicken (oder indem Sie **&#8984;+S** drücken), und schließen Sie die Datei.
 
 13. Wählen Sie im **Lösungspad** das Projekt **Phoneword** aus, klicken Sie mit der rechten Maustaste darauf, und klicken Sie auf **Hinzufügen > Neue Datei…**:
 

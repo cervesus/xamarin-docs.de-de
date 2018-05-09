@@ -6,12 +6,12 @@ ms.assetid: 93F1D5C5-E2AF-46EA-8460-485A0860C176
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: a6cb08f19aac46ffa089914e28c732660caa52b2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/11/2018
+ms.openlocfilehash: 2d9f2198dbb88e7614944ac73729a4e6eca42647
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-a-jar"></a>Binden von ein. JAR-DATEI
 
@@ -81,7 +81,7 @@ Bevor Sie mit den folgenden Schritten fortfahren, laden Sie Sie [Picasso 2.x.x.j
 
 Erstellen Sie zunächst ein neues Klassenbibliothekprojekt von Bindungen. Klicken Sie in Visual Studio für Mac oder Visual Studio eine neue Projektmappe erstellen, und wählen Sie die *Bibliothek für Android Bindungen* Vorlage. (Die Screenshots in dieser exemplarischen Vorgehensweise verwenden Sie Visual Studio, aber Visual Studio für Mac ist sehr ähnlich.) Nennen Sie die Projektmappe **JarBinding**: 
 
-[![JarBinding-Steuerelementbibliothek-Projekt erstellen](binding-a-jar-images/01-new-bindings-library-sml.png)](binding-a-jar-images/01-new-bindings-library.png#lightbox)
+[![JarBinding-Steuerelementbibliothek-Projekt erstellen](binding-a-jar-images/01-new-bindings-library-sml.w157.png)](binding-a-jar-images/01-new-bindings-library.w157.png#lightbox)
 
 Die Vorlage enthält eine **JAR-Dateien** Ordner, in dem Sie hinzufügen, Ihrer. JAR(s) auf das Bindings-Steuerelementbibliothek-Projekt. Mit der rechten Maustaste die **JAR-Dateien** Ordner, und wählen **hinzufügen > Vorhandenes Element**: 
 
@@ -130,7 +130,7 @@ In den folgenden Schritten erstellen wir eine minimale-app, mit denen die Bindun
 
 Erstellen Sie zunächst eine neue Xamarin.Android-app, die die Bindungen Bibliothek nutzt. Mit der rechten Maustaste in der Projektmappe, und wählen Sie **neues Projekt hinzufügen**; benennen Sie das neue Projekt **Namen "bindingtest"**. Wir sind diese app in derselben Projektmappe wie die Bindungen-Bibliothek erstellen, um diese exemplarische Vorgehensweise zu vereinfachen; Allerdings kann die app, die die Bindungen Bibliothek nutzt stattdessen in einer anderen Projektmappe befinden: 
 
-[![Hinzufügen eines neuen Namen "bindingtest"-Projekts](binding-a-jar-images/07-add-new-project-sml.png)](binding-a-jar-images/07-add-new-project.png#lightbox)
+[![Hinzufügen eines neuen Namen "bindingtest"-Projekts](binding-a-jar-images/07-add-new-project-sml.w157.png)](binding-a-jar-images/07-add-new-project.w157.png#lightbox)
 
 Mit der rechten Maustaste die **Verweise** Knoten der **Namen "bindingtest"** Projekt, und wählen Sie **Verweis hinzufügen...** :
 

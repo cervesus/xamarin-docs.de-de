@@ -4,14 +4,14 @@ description: Steuern des Informationsflusses zwischen Quelle und Ziel
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: fdcba9b680bd548371883788af9e4eda755d91df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: charlespetzold
+ms.author: chape
+ms.date: 05/01/2018
+ms.openlocfilehash: 1aa612d8b855158f09bc0aeaad1520a44b3d9637
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-mode"></a>Bindungsmodus
 
@@ -58,6 +58,7 @@ Der Bindungsmodus ist angegeben, mit einem Mitglied der [ `BindingMode` ](https:
 - [`TwoWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/) &ndash; Daten gehen beide Richtungen zwischen Quelle und Ziel
 - [`OneWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWay/) &ndash; verspätet Daten aus der Quelle zum Ziel
 - [`OneWayToSource`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; Daten wechselt vom Ziel zu Quelle
+- [`OneTime`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; verspätet Daten aus der Quelle zum Ziel, aber nur, wenn die `BindingContext` ändert sich (mit Xamarin.Forms 3.0 neu)
 
 Jede bindbare Eigenschaft hat den Standardwert Bindungsmodus, die festgelegt wird, wenn die bindbare Eigenschaft erstellt wird, und die verfügbar ist die [ `DefaultBindingMode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableProperty.DefaultBindingMode/) Eigenschaft von der `BindableProperty` Objekt. Dieser Standardmodus für die Bindung gibt den Modus wirksam, wenn diese Eigenschaft eine Datenbindung-Ziel ist.
 
@@ -94,6 +95,15 @@ Nur-Lese Bindungseigenschaften einen Standardmodus für die Bindung des `OneWayT
 - `SelectedItem` Eigenschaft `ListView`
 
 Der Grund ist, die eine Bindung auf den `SelectedItem` Eigenschaft sollten dazu führen, indem Sie die Bindungsquelle. Ein Beispiel weiter unten in diesem Artikel wird dieses Verhalten überschrieben.
+
+### <a name="one-time-bindings"></a>Einmalige Bindungen
+
+Mehrere Eigenschaften aufweisen, einen Bindung Standardmodus `OneTime`. Diese lauten wie folgt:
+
+- `IsTextPredictionEnabled` Eigenschaft `Entry`
+- `Text`, `BackgroundColor`, und `Style` Eigenschaften des `Span`.
+
+Eigenschaften mit dem Bindungsmodus als Ziel `OneTime` werden nur aktualisiert, wenn der Bindungskontext ändert. Für Bindungen an diese Zieleigenschaften vereinfacht dies die bindungsinfrastruktur, da sie nicht zum Überwachen von Änderungen in den Datenquelleneigenschaften ist.
 
 ## <a name="viewmodels-and-property-change-notifications"></a>ViewModels und-Eigenschaftenänderung Benachrichtigungen
 
@@ -198,6 +208,8 @@ public class HslColorViewModel : INotifyPropertyChanged
 Bei der `Color` eigenschaftenänderungen, die statische `GetNearestColorName` Methode in der `NamedColor` Klasse (auch in enthalten die **DataBindingDemos** Lösung) erhält die nächstgelegene benannte Farbe, und legt sie fest die `Name` Eigenschaft. Dies `Name` Eigenschaft verfügt über einen privaten `set` Accessor, damit sie von außerhalb der Klasse festgelegt werden kann.
 
 Wenn ein ViewModel als Bindungsquelle festgelegt ist, fügt die bindungsinfrastruktur einen Handler, der `PropertyChanged` Ereignis. Auf diese Weise wird die Bindung benachrichtigt werden, Änderungen an den Eigenschaften und kann dann die Zieleigenschaften aus die geänderten Werte festlegen.
+
+Jedoch wenn eine Zieleigenschaft (oder die `Binding` Definition auf eine Zieleigenschaft) hat eine `BindingMode` von `OneTime`, es ist nicht notwendig, für die bindungsinfrastruktur an einen Handler für die `PropertyChanged` Ereignis. Die Zieleigenschaft aktualisiert nur, wenn die `BindingContext` Änderungen und nicht wenn die Source-Eigenschaft selbst ändert. 
 
 Die **einfache Farbauswahl** XAML-Datei instanziiert den `HslColorViewModel` im Ressourcenverzeichnis und initialisiert der Seite die `Color` Eigenschaft. Die `BindingContext` Eigenschaft der `Grid` festgelegt ist, um eine `StaticResource` bindungserweiterung auf diese Ressource verweisen:
 

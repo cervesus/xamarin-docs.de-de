@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 83fb7a03b3426631fcf772bcb3605fea44fd4f2b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3485a7ebf9c54c2aa084dd11f32cd028cbc68aff
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="user-interface"></a>Benutzeroberfläche
 
@@ -51,7 +51,7 @@ Bilder mit Xamarin.Forms plattformübergreifend gemeinsam genutzt werden, sie k�
 
 ## <a name="layoutslayoutsindexmd"></a>[Layouts](layouts/index.md)
 
-Xamarin.Forms verfügt über verschiedene Layouts für die Strukturierung der auf dem Bildschirm Inhalt. `StackLayout`, `Grid`, `AbsoluteLayout`, `ScrollView`, und `RelativeLayout` kann jeweils verwendet werden, um ansprechende, reaktionsfähiger Benutzeroberflächen zu erstellen.
+Xamarin.Forms verfügt über verschiedene Layouts für die Strukturierung der auf dem Bildschirm Inhalt. `StackLayout`, `Grid`, `FlexLayout`, `AbsoluteLayout`, `ScrollView`, und `RelativeLayout` kann jeweils verwendet werden, um ansprechende, reaktionsfähiger Benutzeroberflächen zu erstellen.
 
 ## <a name="listviewlistviewindexmd"></a>[ListView](listview/index.md)
 
@@ -84,6 +84,10 @@ Xamarin.Forms verfügt über mehrere Ansichten zur Darstellung und Empfangen von
 ## <a name="themesthemesindexmd"></a>[Designs](themes/index.md)
 
 Xamarin.Forms-Designs definieren ein bestimmtes Erscheinungsbild für Standardsteuerelemente. Nachdem Sie ein Design Ressourcenwörterbuch für die Anwendung hinzugefügt haben, ändert sich die Darstellung der Standardsteuerelemente.
+
+## <a name="visual-state-managervisual-state-managermd"></a>[Visual-Status-Manager](visual-state-manager.md)
+
+Die visuellen Status-Manager bietet eine strukturierte Methode zum Auslösen von Änderungen in der Benutzeroberfläche von Code, z. B. Layout, die Änderungen in der geräteausrichtung oder die Größe anpasst.
 
 ## <a name="webviewwebviewmd"></a>[WebView](webview.md)
 

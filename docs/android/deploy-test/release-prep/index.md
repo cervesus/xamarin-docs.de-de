@@ -6,11 +6,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2018
-ms.openlocfilehash: 238e224a1dfbc17089c8b6d03e78043f77f3f383
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 18c49afdd08921b81573da94c23e66f1dd48a25f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="preparing-an-application-for-release"></a>Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)
 
@@ -192,7 +192,7 @@ Beachten Sie, dass Debugbuilds automatisch manche Berechtigungen festlegen, um d
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Auch mit der Einstellung [Debugging deaktiviert](#Disable_Debugging) ist es möglich, dass Angreifer Anwendungen erneut verpacken oder Konfigurationsoptionen bzw. -berechtigungen hinzufügen oder entfernen. Auf diese Weise können sie Anwendungen zurückentwickeln, debuggen oder manipulieren.
-Sie können [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) verwenden, um verwalteten Code zu verbergen und Laufzeitcode zur Erkennung des Sicherheitsstatus zur Buildzeit in eine Xamarin.Android-App einzufügen.
+Sie können [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) verwenden, um verwalteten Code zu verbergen und Laufzeitcode zur Erkennung des Sicherheitsstatus zur Buildzeit in eine Xamarin.Android-App einzufügen, um zu entdecken, ob die App auf einem Gerät mit entfernten Nutzungsbeschränkungen ausgeführt wird und darauf zu antworten.
 
 Dotfuscator CE ist im Lieferumfang von Visual Studio enthalten, jedoch weist nur Visual Studio 2015 Update 3 (und höher) die richtige Version auf, um mit Xamarin.Android verwendet werden zu können. Wenn Sie Dotfuscator verwenden möchten, klicken Sie auf **Tools > Präemptiver Schutz - Dotfuscator**.
 
@@ -202,7 +202,7 @@ Nach der Konfiguration schützt Dotfuscator CE automatisch jeden erstellten Buil
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Auch mit der Einstellung [Debugging deaktiviert](#Disable_Debugging) ist es möglich, dass Angreifer Anwendungen erneut verpacken oder Konfigurationsoptionen bzw. -berechtigungen hinzufügen oder entfernen. Auf diese Weise können sie Anwendungen zurückentwickeln, debuggen oder manipulieren.
-Sie können [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) mit Visual Studio verwenden, um verwalteten Code zu verbergen und Laufzeitcode zur Erkennung des Sicherheitsstatus zur Buildzeit in eine Xamarin.Android-App einzufügen, obwohl Visual Studio für Mac nicht unterstützt wird.
+Sie können [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) mit Visual Studio verwenden, um verwalteten Code zu verbergen und Laufzeitcode zur Erkennung des Sicherheitsstatus zur Buildzeit in eine Xamarin.Android-App einzufügen, um zu entdecken, ob die App auf einem Gerät mit entfernten Nutzungsbeschränkungen ausgeführt wird und darauf zu antworten, obwohl Visual Studio für Mac nicht unterstützt wird.
 
 Informationen zum Konfigurieren von Dotfuscator CE finden Sie unter [Using Dotfuscator Community Edition with Xamarin (Verwenden von Dotfuscator Community Edition mit Xamarin)](https://www.preemptive.com/obfuscating-xamarin-with-dotfuscator).
 Nach der Konfiguration schützt Dotfuscator CE automatisch jeden erstellten Build.

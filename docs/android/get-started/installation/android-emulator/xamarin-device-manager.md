@@ -6,19 +6,18 @@ ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/20/2018
-ms.openlocfilehash: 3dd67f25e389adda1af31f4a2b85abd4cfd751d0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/26/2018
+ms.openlocfilehash: 94f82c9f893e22074ba95c052b57ce6ff18eaa1e
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Xamarin Android-Geräte-Manager
 
 _Der Xamarin Android-Geräte-Manager, der sich derzeit in der Vorschauversion befindet, ersetzt den älteren Google Geräte-Manager. In diesem Handbuch wird erläutert, wie Sie den Xamarin Android-Geräte-Manager verwenden, um virtuelle Android-Geräte (AVDs) zu erstellen und zu konfigurieren, die Android-Geräte emulieren. Sie können diese virtuellen Geräte verwenden, um Ihre App auszuführen und zu testen, ohne von einem physischen Gerät abhängig zu sein._
 
 ![Derzeit als Vorschauversion verfügbar](~/media/shared/preview.png)
-
  
 ## <a name="overview"></a>Übersicht
 
@@ -57,25 +56,24 @@ In diesem Handbuch erfahren Sie, wie der Android-Geräte-Manager installiert und
 
 Sie benötigen Folgendes, um den Xamarin Android-Geräte-Manager verwenden zu können:
 
--   Visual Studio 2017 Version 15.5 oder höher. Visual Studio Community Edition und höher wird unterstützt.
+- Visual Studio 2017 Version 15.5 oder höher. Visual Studio Community Edition und höher wird unterstützt.
 
--   Xamarin für Visual Studio Version 4.8 oder höher. Weitere Informationen zum Updaten von Xamarin finden Sie unter [Change the Updates Channel (Ändern des Updatekanals)](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/).
+- Xamarin für Visual Studio Version 4.8 oder höher. Weitere Informationen zum Updaten von Xamarin finden Sie unter [Change the Updates Channel (Ändern des Updatekanals)](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/).
 
--   Die aktuelle Version des [Installers für den Xamarin-Geräte-Manager](https://go.microsoft.com/fwlink/?linkid=865528) für Windows.
+- Die aktuelle Version des [Installers für den Xamarin-Geräte-Manager](https://go.microsoft.com/fwlink/?linkid=865528) für Windows.
 
--   **Android SDK:** Android SDK muss installiert sein (siehe [Android SDK Setup (Setup von Android SDK)](~/android/get-started/installation/android-sdk.md)), und Version 26.0 von Android SDK Tools muss (gemäß den Erläuterungen im folgenden Abschnitt) installiert sein. Achten Sie darauf, Android SDK an folgendem Speicherort zu installieren (wenn das SDK nicht bereits installiert ist): **C:\\Programme (x86)\\Android\\android-sdk**.
+- **Android SDK:** Android SDK muss installiert sein (siehe [Android SDK Setup (Setup von Android SDK)](~/android/get-started/installation/android-sdk.md)), und Version 26.0 von Android SDK Tools muss (gemäß den Erläuterungen im folgenden Abschnitt) installiert sein. Achten Sie darauf, Android SDK an folgendem Speicherort zu installieren (wenn das SDK nicht bereits installiert ist): **C:\\Programme (x86)\\Android\\android-sdk**.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
--   Visual Studio für Mac 7.4 oder höher.
+- Visual Studio für Mac 7.4 oder höher.
 
--   Die aktuelle Version des [Installers für den Xamarin-Geräte-Manager](https://go.microsoft.com/fwlink/?linkid=865527) für macOS.
+- Die aktuelle Version des [Installers für den Xamarin-Geräte-Manager](https://go.microsoft.com/fwlink/?linkid=865527) für macOS.
 
--   **Android SDK:** Android SDK 8.0 (API 26) oder höher muss über den SDK-Manager installiert werden.
+- **Android SDK** &ndash; Android SDK 8.0 (API 26) oder höher muss über den SDK-Manager installiert werden.
 
 -----
 
- 
 ## <a name="installing-the-device-manager"></a>Installieren des Geräte-Managers
 
 Befolgen Sie diese Schritte, um den Xamarin Android-Geräte-Manager zu installieren:
@@ -88,6 +86,10 @@ Befolgen Sie diese Schritte, um den Xamarin Android-Geräte-Manager zu installie
 
     ![Setup-Assistent des Xamarin Android-Geräte-Managers](xamarin-device-manager-images/win/30-installer.png)
 
+
+> [!NOTE]
+> Beginnend mit [Visual Studio 2017 Preview 5](https://www.visualstudio.com/vs/preview/) wird der Android-Geräte-Manager als Teil des VS 2017-Installers verteilt werden. Es ist nicht erforderlich, ein separates Installationsprogramm zum Abrufen von Xamarin Android-Geräte-Manager für Visual Studio 2017 Preview 5 herunterzuladen.
+
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 1. Laden Sie den [Installer für den Xamarin-Geräte-Manager](https://go.microsoft.com/fwlink/?linkid=865527) für macOS herunter.
@@ -97,8 +99,6 @@ Befolgen Sie diese Schritte, um den Xamarin Android-Geräte-Manager zu installie
     [![Setup-Assistent des Xamarin Android-Geräte-Managers](xamarin-device-manager-images/mac/30-installer-sml.png)](xamarin-device-manager-images/mac/30-installer.png#lightbox)
 
 -----
-
- 
 ## <a name="launching-the-device-manager"></a>Starten des Geräte-Managers
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -125,7 +125,6 @@ Wenn Sie eine frühere Version von Visual Studio für Mac verwenden, muss der Xa
 
 [![ Speicherort des Xamarin Android-Geräte-Managers im Finder](xamarin-device-manager-images/mac/31-location-in-finder-sml.png)](xamarin-device-manager-images/mac/31-location-in-finder.png#lightbox)
 
-
 -----
 
 Bevor Sie den Android-Geräte-Manager verwenden können, müssen Sie Version 26.0.0 oder höher von Android SDK Tools installieren. Wenn Android SDK Tools 26.0.0 oder höher nicht installiert ist, wird beim Starten folgendes Fehlerdialogfeld angezeigt:
@@ -142,7 +141,6 @@ Bevor Sie den Android-Geräte-Manager verwenden können, müssen Sie Version 26.
 
 Wenn Ihnen dieses Fehlerdialogfeld angezeigt wird, klicken Sie auf **OK**, um den Android SDK-Manager zu öffnen. Klicken Sie im Android SDK-Manager auf die Registerkarte **Tools**, und installieren Sie **Android SDK Tools 26.0.2** oder höher, **Android SDK Platform-Tools 26.0.0** oder höher und **Android SDK Build-Tools 26.0.0** oder höher:
 
-
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 [![Installieren von Android SDK Tools 26.0](xamarin-device-manager-images/win/03-sdk-tools-sml.png)](xamarin-device-manager-images/win/03-sdk-tools.png#lightbox)
@@ -155,7 +153,6 @@ Nachdem diese Pakete installiert wurden, können Sie den SDK-Manager schließen 
 
 -----
 
- 
 ## <a name="main-screen"></a>Hauptbildschirm
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -181,9 +178,9 @@ Wenn Sie ein Gerät in der Liste anklicken, wird die Schaltfläche **Starten** a
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Klicken Sie auf die Schaltfläche **Wiedergeben**, um den Emulator mit dem gewünschten virtuellen Gerät zu starten:
- 
+
 [![Schaltfläche „Starten“ für ein Geräteimage](xamarin-device-manager-images/mac/06-start-button-sml.png)](xamarin-device-manager-images/mac/06-start-button.png#lightbox)
- 
+
 -----
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -195,12 +192,11 @@ Nachdem der Emulator mit dem ausgewählten virtuellen Gerät startet, ändert si
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Nachdem der Emulator mit dem ausgewählten virtuellen Gerät startet, ändert sich die Schaltfläche **Wiedergeben** in die Schaltfläche **Beenden**. Diese können Sie verwenden, um den Emulator anzuhalten:
- 
+
 [![Schaltfläche „Beenden“ für das ausgeführte Gerät](xamarin-device-manager-images/mac/07-stop-button-sml.png)](xamarin-device-manager-images/mac/07-stop-button.png#lightbox)
- 
+
 -----
 
- 
 ### <a name="new-device"></a>Neues Gerät
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -212,9 +208,9 @@ Klicken Sie auf die Schaltfläche **Neu** im oberen rechten Bereich des Bildschi
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Klicken Sie auf die Schaltfläche **Neues Gerät** im oberen rechten Bereich des Bildschirms, um ein neues Gerät zu erstellen:
- 
+
 [![Schaltfläche „Neu“ zum Erstellen eines neuen Geräts](xamarin-device-manager-images/mac/08-new-button-sml.png)](xamarin-device-manager-images/mac/08-new-button.png#lightbox)
- 
+
 -----
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)

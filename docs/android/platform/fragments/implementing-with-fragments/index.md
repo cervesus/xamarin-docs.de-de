@@ -1,65 +1,55 @@
 ---
-title: Mit Fragmenten implementieren
-description: Fragmente, Android 3.0 eingeführt. Fragmente sind eigenständige, modulare Komponenten, mit denen die Komplexität beim Schreiben von Anwendungen, die auf Bildschirmen mit unterschiedlichen Größen ausgeführt werden können, bewältigt werden kann. Dieser Artikel führt Sie durch wie Fragmente verwenden, um Xamarin.Android Anwendungen zu entwickeln und wie Fragmente auf vorab Android 3.0-Geräten unterstützt.
+title: Implementieren von Fragmenten - Exemplarische Vorgehensweise
+description: In diesem Artikel erläutert Fragmente verwenden, um Xamarin.Android Anwendungen zu entwickeln.
+ms.topic: tutorial
 ms.prod: xamarin
 ms.assetid: A71E9D87-CB69-10AB-CE51-357A05C76BCD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 81f1f992de450ee62c4c1d2e80da858b024be594
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/26/2018
+ms.openlocfilehash: 92c68298d7abd2570efd89e12d7cfb6364e90972
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
-# <a name="implementing-with-fragments"></a>Mit Fragmenten implementieren
+# <a name="implementing-fragments---walkthrough"></a>Implementieren von Fragmenten - Exemplarische Vorgehensweise
 
-_Fragmente, Android 3.0 eingeführt. Fragmente sind eigenständige, modulare Komponenten, mit denen die Komplexität beim Schreiben von Anwendungen, die auf Bildschirmen mit unterschiedlichen Größen ausgeführt werden können, bewältigt werden kann. Dieser Artikel führt Sie durch wie Fragmente verwenden, um Xamarin.Android Anwendungen zu entwickeln und wie Fragmente auf vorab Android 3.0-Geräten unterstützt._
-
+_Fragmente handelt es sich um eigenständige, modularen Komponenten, mit deren Hilfe können die Komplexität der Android-apps zu befassen, die mit unterschiedlichen Bildschirmgrößen-Geräte abzielen. Dieser Artikel führt durch die Schritte zum Erstellen und verwenden Sie beim Entwickeln von Anwendungen Xamarin.Android Fragmente._
 
 ## <a name="overview"></a>Übersicht
 
-In diesem Abschnitt werden protokollsuchen Gewusst wie: Erstellen einer Anwendung, die eine Liste der hohen spielt und ein Anführungszeichen in jeder ausgewählten Play angezeigt werden. Dieser app nutzt Fragmente, damit wir unsere UI-Komponenten zentral definieren können, aber verwenden diese auf verschiedenen Formfaktoren arbeiten. Die folgenden Screenshots zeigen z. B. die Anwendung auf einem Tablet 10" sowie auf einem Telefon ausgeführt:
+In diesem Abschnitt fügen Sie Exemplarische Vorgehensweise zum Erstellen und Verwenden von Fragmenten in einer Anwendung Xamarin.Android. Diese Anwendung zeigt mehrere spielt die Titel von William Shakespeare in einer Liste. Beim Tippen auf den Titel des wiedergeben wird die app ein Angebot aus dieser Play in einer separaten Aktivität angezeigt:
 
-[![Screenshots der Beispiel-app, die unter dem Tablet oder Telefon](images/intro-screenshot-sml.png)](images/intro-screenshot.png#lightbox)
+[![App auf einem Android-Telefon im Hochformat](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
 
-Dieser Abschnitt befasst sich mit die folgenden Themen:
+Wenn das Telefon Modus Querformat gedreht wird, wird das Erscheinungsbild der app zu ändern: sowohl die Liste der spielt und Anführungszeichen in der gleichen Aktivität angezeigt. Wenn eine Wiedergabe aktiviert ist, wird das Angebot Anzeige in der gleichen Aktivität sein:
 
-- **Erstellen von Fragmenten** &ndash; wird gezeigt, wie ein Fragment, um eine Liste der hohen spielt anzuzeigen und ein anderes Fragment anzuzeigenden ein Angebot aus jeder Play zu erstellen.
+[![App auf einem Android-Telefon im Querformat](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
 
-- **Unterstützen von unterschiedlichen Bildschirmgrößen** &ndash; zeigt das Layout der Anwendung zu größeren Bildschirmgrößen nutzen.
+Abschließend, wenn die app auf einem Tablet-PC ausgeführt wird:
 
-- **Verwenden das Android Supportpaket** &ndash; implementiert das Paket für Android unterstützt, und klicken Sie dann einige kleinere Änderungen an die Aktivitäten in der Anwendung ermöglicht unter älteren Versionen von Android ausgeführt wird.
+[![Auf einem Android-Tablet Ausführen einer App](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)
 
+Diese beispielanwendung kann problemlos auf die verschiedenen Formfaktoren arbeiten und Ausrichtungen mit minimalen codeänderungen mit Fragmenten anpassen und [alternative Layouts](/xamarin/android/app-fundamentals/resources-in-android/alternate-resources).
 
-## <a name="requirements"></a>Anforderungen
+Die Daten für die Anwendung werden in zwei Zeichenfolgenarrays vorhanden sein, die in der Anwendung hartcodiert als C#-Zeichenfolgenarrays sind. Jede der Arrays wird als Datenquelle für ein Fragment dienen.  Ein Array, in den Namen des einige spielt von Shakespeare gespeichert, und anderen Arrays wird ein Angebot aus dieser Play halten. Nach dem Start der app zeigt es die wiedergeben-Namen in einem `ListFragment`. Wenn der Benutzer klickt auf eine Wiedergabe in die `ListFragment`, startet die app von einer anderen Aktivität der das Angebot angezeigt wird.
 
-Diese exemplarische Vorgehensweise erfordert Xamarin.Android 4.0 oder höher. Es sind auch erforderlich, um das Android Supportpaket zu installieren, da in der Fragmente-Dokumentation beschrieben.
+Die Benutzeroberfläche für die app besteht aus zwei Layouts, eine für Hochformat und eine für im Querformat. Zur Laufzeit Android wird bestimmt, welches Layout beim Laden der Ausrichtung des Geräts anhand und stellt das Layout der Aktivität zum Rendern bereit. Alle von der Logik zum Reagieren auf Benutzer und zum Anzeigen der Daten wird in Fragmente enthalten sein. Die Aktivitäten in der app, die nur als Container, die als der Fragmente Host vorhanden sein.
 
+In dieser exemplarischen Vorgehensweise wird in zwei Führungslinien unterteilt werden. Die [erster Teil](./walkthrough.md) konzentriert sich auf die wichtigsten Bestandteile der Anwendung. Ein einzelner Satz von Layouts (optimiert für Hochformat) wird zusammen mit zwei Fragmente und zwei Aktivitäten erstellt werden:
 
-## <a name="introduction"></a>Einführung
+1. `MainActivity` &nbsp; Hierbei handelt es sich um den Start-Aktivität für die app.
+1. `TitlesFragment` &nbsp; Dieses Fragment zeigt eine Liste der Titel wiedergegeben wird, die von William Shakespeare geschrieben wurden. Es wird von gehostet werden `MainActivity`.
+1. `PlayQuoteActivity` &nbsp; `TitlesFragment` Startet die `PlayQuoteActivity` als Antwort auf die Benutzer wählen ein Spiel in `TitlesFragment`.
+1. `PlayQuoteFragment` &nbsp; Dieses Fragment wird ein Angebot aus einer Prüfung von William Shakespeare angezeigt. Es wird von gehostet werden `PlayQuoteActivity`.
 
-In dem Beispiel in diesem Abschnitt erstellen müssen, enthalten die Aktivitäten keine Logik zum Laden der Liste, reagieren auf die Auswahl des Benutzers oder das Angebot für die ausgewählten Play anzeigen. Diese Logik, die in den einzelnen Fragmenten vorhanden ist.
-Platzieren Sie diese Logik in den Fragmenten selbst, können wir die Anwendung zur Unterstützung von großer Bildschirmen mit einer Aktivität oder kleine Bildschirme mit mehreren Aktivitäten ohne abweichender Logik für jede Aktivität Schreiben des Workflows aufteilen. Auf einem Tablet-PC werden die beiden Fragmenten in einer Aktivität. Auf einem Telefon werden die Fragmente in unterschiedlichen Aktivitäten gehostet werden.
-
-Diese Anwendung besteht aus folgenden Teilen:
-
- **Verwendung des Layoutnamens** – zeigt eine oder beide der Fragmente, abhängig von der Größe des Bildschirms. Hierbei handelt es sich um den Start-Aktivität.
-
- **TitlesFragment** – zeigt eine Liste der hohen spielt in dem der Benutzer auswählen kann.
-
- **DetailsFragment** – zeigt die anführung wie in den ausgewählten wiedergeben.
-
- **DetailsActivity** – hostet, und zeigt die DetailsFragment.
-Diese Aktivität wird von Geräten mit kleine Bildschirme, z. B. Telefone.
-
-
+Die [zweiter Teil dieser exemplarischen Vorgehensweise](./walkthrough-landscape.md) besprechen Hinzufügen einer alternativen Layout (optimiert für im Querformat) der beiden Fragmenten auf dem Bildschirm angezeigt wird. Darüber hinaus werden einige kleinere Änderungen am Code an den Code erfolgen, damit die app sein Verhalten an die Anzahl der Fragmente angepasst wird, die gleichzeitig auf dem Bildschirm angezeigt werden.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [FragmentsWalkthrough (Beispiel)](https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/)
 - [Übersicht über-Designer](~/android/user-interface/android-designer/index.md)
-- [Xamarin.Android Beispiele: Wabe-Katalog](https://developer.xamarin.com/samples/HoneycombGallery/)
 - [Implementieren von Fragmenten](http://developer.android.com/guide/topics/fundamentals/fragments.html)
 - [Supportpaket](http://developer.android.com/sdk/compatibility-library.html)

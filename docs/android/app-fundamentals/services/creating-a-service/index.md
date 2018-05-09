@@ -5,12 +5,12 @@ ms.assetid: A78A55E7-FB5C-4C42-8E3E-939B5E98F9EB
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 02/01/2018
-ms.openlocfilehash: d1e0fdb1c4b159b6db283d7b9b3be673b73a0ee0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: 00785ad161f5f05fd70b059bb0a3f1c8d6c31f97
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="creating-a-service"></a>Erstellen eines Diensts
 
@@ -82,8 +82,8 @@ Die grundlegendste Möglichkeit zum Starten eines Diensts in Android ist beim Ve
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
--   **Implizite Absicht** &ndash; diese Art der Absicht lose identifiziert die Aktion, die ausgeführt werden soll, aber die genauen Service zum Abschließen dieser Aktion ist unbekannt. Implizite Priorität kann als ein Buchstabe, der "To Whom It Mai relevant..." adressiert betrachtet werden.
-    Android Untersuchen des Inhalts der Zweck und Determin, wenn es ein vorhandener Dienst, der übereinstimmt, der die Absicht ist.
+-   **Implizite Absicht** &ndash; diese Art der Absicht lose identifiziert die Aktion an, dass der Benutzer ausführen möchte, aber die genauen Service zum Abschließen dieser Aktion unbekannt ist. Implizite Priorität kann als ein Buchstabe, der "To Whom It Mai relevant..." adressiert betrachtet werden.
+    Android wird Untersuchen des Inhalts der Zweck und bestimmen, ob es ein vorhandener Dienst, der den Zweck erfüllt ist.
 
     Ein _beabsichtigte Filter_ wird verwendet, um bei der Zuordnung der implizite Absicht mit einem registrierten Dienst helfen. Ein Beabsichtigter Filter ist ein XML-Element, das hinzugefügt wird **AndroidManifest.xml** enthält die erforderlichen Metadaten können Sie einen Dienst mit der impliziten Priorität entsprechen.
 

@@ -6,11 +6,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 2833c645a07a3717d9baeeec11e5fa7f9087725a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 806ed841ec4db037a063bb458e1eed13226e08bd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="build-process"></a>Buildprozess
 
@@ -353,7 +353,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     Hinzugefügt in Xamarin.Android 7.2.
 
--   **AndroidUseLegacyVersionCode**: Eine boolesche Eigenschaft, die es dem Entwickler ermöglicht, die versionCode-Berechnung auf das frühere Verhalten vor Xamarin.Android 8.2 zurückzusetzen. Dies sollte NUR für Entwickler verwendet werden, die an im Google Play Store vorhandenen Anwendungen arbeiten. Es wird dringend empfohlen, die neue `$(AndroidVersionCodePattern)`-Eigenschaft zu verwenden.
+-   **AndroidUseLegacyVersionCode** &ndash; Eine boolesche Eigenschaft, die es dem Entwickler ermöglicht, die versionCode-Berechnung auf das frühere Verhalten vor Xamarin.Android 8.2 zurückzusetzen. Dies sollte NUR für Entwickler verwendet werden, die an im Google Play Store vorhandenen Anwendungen arbeiten. Es wird dringend empfohlen, die neue `$(AndroidVersionCodePattern)`-Eigenschaft zu verwenden.
 
     Hinzugefügt in Xamarin.Android 8.2.
 

@@ -6,12 +6,12 @@ ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/17/2017
-ms.openlocfilehash: 9fd3ff17dc9af3fd30a7d5b31e8cea7ff8669a51
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/02/2017
+ms.openlocfilehash: b27d415240f3b8cd25c4bc54f6d176c50e42a250
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="enhanced-user-notifications"></a>Verbesserte Benutzerbenachrichtigungen
 
@@ -548,10 +548,10 @@ Führen Sie folgende Schritte aus, um eine Erweiterung der in einem Xamarin.iOS-
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Öffnen Sie die app-Projektmappe in Visual Studio.
-2. Mit der rechten Maustaste auf den Namen der Projektmappe in der **Projektmappen-Explorer** , und wählen Sie **hinzufügen** > **neues Projekt hinzufügen**.
-3. Wählen Sie **iOS** > **Erweiterungen** > **Notification Service-Erweiterungen**: 
+2. Mit der rechten Maustaste auf den Namen der Projektmappe in der **Projektmappen-Explorer** , und wählen Sie **hinzufügen > Neues Projekt...** .
+3. Wählen Sie **Visual c# > iOS Extensions > Benachrichtigung Webdiensterweiterung**:
 
-    [![](enhanced-user-notifications-images/extension01w.png "Wählen Sie Notification Service-Erweiterungen")](enhanced-user-notifications-images/extension01w.png#lightbox)
+    [![](enhanced-user-notifications-images/extension01.w157-sml.png "Wählen Sie Notification Service-Erweiterungen")](enhanced-user-notifications-images/extension01.w157.png#lightbox)
 4. Geben Sie einen **Namen** für die Erweiterung, und klicken Sie auf die **OK** Schaltfläche.
 
 -----

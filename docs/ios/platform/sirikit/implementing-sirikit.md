@@ -6,12 +6,12 @@ ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/17/2017
-ms.openlocfilehash: 5fdc05de19799ce7b553428c23f860186909bcbb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: a4f38e93cae3c9577a0b1e32067da2cfd2e4796d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="implementing-sirikit"></a>Implementieren von SiriKit
 
@@ -95,7 +95,7 @@ Führen Sie folgende Schritte aus:
 2. Mit der rechten Maustaste auf den Namen der Projektmappe in der **Projektmappen-Explorer** , und wählen Sie **hinzufügen** > **neues Projekt...** .
 3. Wählen Sie **Visual C#-** > **freigegebenes Projekt** , und klicken Sie auf die **Weiter** Schaltfläche: 
 
-    [![](implementing-sirikit-images/prep02w.png "Wählen Sie die Klassenbibliothek")](implementing-sirikit-images/prep02w.png#lightbox)
+    [![](implementing-sirikit-images/prep02.w157-sml.png "Wählen Sie die Klassenbibliothek")](implementing-sirikit-images/prep02.w157.png#lightbox)
 4. Geben Sie `MonkeyChatCommon` für die **Namen** , und klicken Sie auf die **erstellen** Schaltfläche.
 5. Mit der rechten Maustaste auf die **Verweise** Ordner der Haupt-app in der **Projektmappen-Explorer** , und wählen Sie **Verweise bearbeiten...** . Überprüfen Sie die **MonkeyChatCommon** Projekt, und klicken Sie auf die **OK** Schaltfläche: 
 
@@ -459,7 +459,7 @@ Hinzufügen einer `AppIntentVocabulary.plist` -Datei in das app-Projekt, gehen S
 
 1. Mit der rechten Maustaste in den Namen des Projekts die **Projektmappen-Explorer** , und wählen Sie **hinzufügen** > **neue Datei...**   >  **iOS**:
 
-    [![](implementing-sirikit-images/plist01.png "Fügen Sie eine Liste mit Eigenschaften hinzu.")](implementing-sirikit-images/plist01.png#lightbox) 
+    [![](implementing-sirikit-images/plist01.png "Fügen Sie eine Liste mit Eigenschaften hinzu.")](implementing-sirikit-images/plist01.png#lightbox)
 2. Doppelklicken Sie auf die `AppIntentVocabulary.plist` in der Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
 3. Klicken Sie auf die **+** um einen Schlüssel hinzuzufügen, legen Sie die **Namen** auf `ParameterVocabularies` und die **Typ** auf `Array`:
 
@@ -521,9 +521,10 @@ Hinzufügen einer `AppIntentVocabulary.plist` -Datei in das app-Projekt, gehen S
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Mit der rechten Maustaste in den Namen des Projekts die **Projektmappen-Explorer** , und wählen Sie **hinzufügen** > **neue Datei...**   >  **iOS**:
+1. Mit der rechten Maustaste in den Namen des Projekts die **Projektmappen-Explorer** , und wählen Sie **hinzufügen > Neues Element… > Apple > Property List > "Info.plist"**:
 
-    [![](implementing-sirikit-images/plist01w.png "Fügen Sie eine neue Datei "Info.plist" hinzu.")](implementing-sirikit-images/plist01w.png#lightbox) 
+    [![](implementing-sirikit-images/plist01.w157-sml.png "Fügen Sie eine neue Datei "Info.plist" hinzu.")](implementing-sirikit-images/plist01.w157.png#lightbox)
+
 2. Doppelklicken Sie auf die `AppIntentVocabulary.plist` in der Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
 3. Klicken Sie auf die **+** um einen Schlüssel hinzuzufügen, legen Sie die **Namen** auf `ParameterVocabularies` und die **Typ** auf `Array`:
 
@@ -625,11 +626,11 @@ Um eine Erweiterung Intents zur Projektmappe hinzuzufügen, führen Sie folgende
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Mit der rechten Maustaste auf die **Projektmappenname** in der **Projektmappen-Explorer** , und wählen Sie **hinzufügen** > **neues Projekt hinzufügen...** .
-2. Wählen Sie aus dem Dialogfeld **iOS** > **Erweiterungen** > **Absicht Erweiterung** , und klicken Sie auf die **Weiter** Schaltfläche: 
+2. Wählen Sie im Dialogfeld **Visual c# > iOS Extensions > Absicht Erweiterung** , und klicken Sie auf die **Weiter** Schaltfläche:
 
-    [![](implementing-sirikit-images/intents05w.png "Beabsichtigte Erweiterung auswählen")](implementing-sirikit-images/intents05w.png#lightbox)
+    [![](implementing-sirikit-images/intents05.w157-sml.png "Beabsichtigte Erweiterung auswählen")](implementing-sirikit-images/intents05.w157.png#lightbox)
 3. Geben Sie anschließend eine **Namen** für die Absicht-Erweiterung, und klicken Sie auf die **OK** Schaltfläche.
-5. In der **Projektmappen-Explorer**, mit der rechten Maustaste auf die **Verweise** Ordner der neu erstellten Absicht-Erweiterung. Überprüfen Sie den Namen der das Projekt mit freigegebenem Code Bibliothek gemeinsame (die die app oben erstellt haben), und klicken Sie auf die **OK** Schaltfläche: 
+1. In der **Projektmappen-Explorer**, mit der rechten Maustaste auf die **Verweise** der Erweiterung Intents neu erstellten Ordner, und wählen Sie **hinzufügen > Verweis**. Überprüfen Sie den Namen der das Projekt mit freigegebenem Code Bibliothek gemeinsame (die die app oben erstellt haben), und klicken Sie auf die **OK** Schaltfläche:
 
     [![](implementing-sirikit-images/intents08w.png "Wählen Sie den Namen, der die allgemeine Bibliotheksprojekt mit freigegebenem code")](implementing-sirikit-images/intents08w.png#lightbox)
     

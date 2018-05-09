@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 5a53c15ebad6081dae2ebc4bd782bcc3644620fe
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2bd050e6eba33b543c52a80bb42b184200164c14
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="application-fundamentals"></a>Application Fundamentals (Anwendungsgrundlagen)
 
@@ -51,7 +51,7 @@ Effekte ermöglichen die native Steuerelemente für jede Plattform angepasst wer
 
 Der Xamarin.Forms [ `GestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/) Klasse tippen, verkleinern und Schwenken Gesten auf Benutzeroberflächen-Steuerelementen unterstützt.
 
-## <a name="localizationlocalizationmd"></a>[Lokalisierung](localization.md)
+## <a name="localizationlocalizationindexmd"></a>[Lokalisierung](localization/index.md)
 
 Integrierte Lokalisierung .NET Framework kann verwendet werden, um plattformübergreifende mehrsprachige Clientanwendungen mit Xamarin.Forms zu erstellen.
 

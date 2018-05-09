@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 6924cc9989c8ab1ca66472b628cdab677e546a3e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 076cadd16c3953ee4e06193190b59035ad57f2c1
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="android-localization"></a>Android Lokalisierung
 
 _Dieses Dokument führt die Lokalisierungsfunktionen von Android SDK und Zugriff darauf mit Xamarin._
 
-## <a name="android-platform-features"></a>Android-Plattform-Funktionen
+## <a name="android-platform-features"></a>Android-Plattformfeatures
 
 Dieser Abschnitt beschreibt die wichtigsten Lokalisierungsfunktionen von Android. Fahren Sie mit der [nächsten Abschnitt](#basics) zu bestimmten Code und anhand von Beispielen finden Sie unter.
 
@@ -265,5 +265,5 @@ Dieser Artikel behandelt die Grundlagen zum Lokalisieren von Android-Anwendungen
 - [Tasky (im Code lokalisiert) (Beispiel)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)
 - [Android Lokalisieren von Ressourcen](http://developer.android.com/guide/topics/resources/localization.html)
 - [Plattformübergreifende Lokalisierung (Übersicht)](~/cross-platform/app-fundamentals/localization.md)
-- [Xamarin.Forms Lokalisierung](~/xamarin-forms/app-fundamentals/localization.md)
+- [Xamarin.Forms Lokalisierung](~/xamarin-forms/app-fundamentals/localization/index.md)
 - [iOS Lokalisierung](~/ios/app-fundamentals/localization/index.md)

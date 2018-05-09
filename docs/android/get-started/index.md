@@ -1,5 +1,5 @@
 ---
-title: Erste Schritte mit Android
+title: Beginnen mit der Entwicklung von Android-Apps mit Xamarin.Android
 description: Xamarin.Android ermöglicht Ihnen die Erstellung von nativen Android-Anwendungen, die die gleichen UI-Steuerelemente verwenden, wie in Java, jedoch mit der Flexibilität und Eleganz einer modernen Sprache (C#), der Leistungsfähigkeit der .NET-Basisklassenbibliothek (BCL) und einer erstklassigen IDE (Visual Studio) zur Verfügung. Diese Reihe wird die Grundlagen der Xamarin.Android-Entwicklung einführen. Sie führt Sie von der Einrichtung und Installation zum Erstellen der ersten Anwendung.
 ms.prod: xamarin
 ms.assetid: D3BC68C5-87C1-50AF-ED0A-55EBF07CBD8B
@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 ms.custom: xamu-video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/25/2017
-ms.openlocfilehash: 8a9abb7e9a5640994d67c1fb33d15d8405442b6c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: a60331a6c8cd1b65e51a63b221cbdb7182803bd1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started-series"></a>Erste Schritte
 
