@@ -3,15 +3,14 @@ title: HttpClient-Stapel und SSL/TLS-Implementierung Selektor für iOS/macOS
 description: Der Stapel für "HttpClient" und der SSL/TLS-Implementierung Auswahlzeiger bestimmt die "HttpClient" und SSL/TLS-Implementierung, die von der Xamarin-app für iOS, tvos. außerdem wurden oder MacOS verwendet wird.
 ms.prod: xamarin
 ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: a1cf4340a2d9e26490f0e605f47ca43a14ae4c72
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: dcbdb4d20bca9764731b08e551a4d3b8a26a2ab4
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient-Stapel und SSL/TLS-Implementierung Selektor für iOS/macOS
 

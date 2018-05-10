@@ -3,15 +3,14 @@ title: Fehlende Visual Studio-Erweiterungen nach der installation
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 066d36a3-e553-48d6-8769-c972274d7641
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2017
-ms.openlocfilehash: 72870b9bf6ff6c3068ee037e6405e4ec03546cd6
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: e47cfc4de77a6310a81867eefb07c3c1e5cc7060
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="missing-visual-studio-extensions-after-installation"></a>Fehlende Visual Studio-Erweiterungen nach der installation
 
@@ -79,19 +78,19 @@ In bestimmten Situationen tritt möglicherweise ein Xamarin-Installationsprogram
 
 4.  Öffnen Sie den Registrierungs-Editor (Regedit).
 
-5.  Suchen Sie nach diesen Schlüssel:
+5.  Suchen Sie nach diesem Schlüssel:
 
     _HKEY\_LOCAL\_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\SharedDlls_
 
-6.  Suchen Sie und löschen Sie alle Einträge, die diesem Muster entsprechen:
+6.  Suchen und löschen Sie alle Einträge, die diesem Muster entsprechen:
 
     _C:\Program Files\*\Microsoft Visual Studio 1\*.0\Common7\IDE\Extensions\Xamarin_
 
-7.  Suchen Sie nach diesen Schlüssel:
+7.  Suchen Sie nach diesem Schlüssel:
 
     `HKEY\_CURRENT\_USER\Software\Microsoft\VisualStudio\1\*.0\ExtensionManager\PendingDeletions`
 
-8.  Löschen Sie alle Einträge, die aussehen, als ob sie mit Xamarin verknüpft werden können. Beispielsweise verwendet es folgt eine, die in früheren Versionen von Xamarin Probleme verursachen:
+8.  Löschen Sie alle Einträge, die zu Xamarin gehören könnten. Beispielsweise verwendet es folgt eine, die in früheren Versionen von Xamarin Probleme verursachen:
 
     _Mono.VisualStudio.Shell,1.0_
 

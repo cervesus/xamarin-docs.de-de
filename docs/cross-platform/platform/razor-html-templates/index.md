@@ -3,15 +3,14 @@ title: Erstellen von HTML-Ansichten mit Razor-Vorlagen
 description: " Verwenden eine Vollbild-Webseite zum Rendern von HTML kann eine einfache und effektive Möglichkeit zum Rendern komplexer Formatierung auf eine Weise plattformübergreifende, insbesondere, wenn Sie bereits die HTML, Javascript und CSS aus einem Websiteprojekt verfügen."
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: fa361e48f8f7e236a3295deda2d80a02ef06b34d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 48d7778bf3225401f2819909ae6be320cfa881e3
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="building-html-views-using-razor-templates"></a>Erstellen von HTML-Ansichten mit Razor-Vorlagen
 
@@ -373,7 +372,7 @@ In diesem Abschnitt wird erläutert, wie Build eigene hybridanwendung mithilfe d
 
 - **Android > App > Android WebView-Anwendung**
 - **iOS > App > WebView-Anwendung**
-- **ASP.NET MVC Project**
+- **ASP.NET MVC-Projekt**
 
 
 
@@ -483,7 +482,7 @@ HTML kann sich hervorragend für die Erstellung von Prototypen und die Arten von
 
 Die Webansichten in der Vorlage können problemlos mit plattformspezifischen Steuerelemente – einfach bearbeiten verbessert werden die **MainStoryboard.storyboard** im iOS-Designer oder der **Resources/layout/Main.axml** auf Android-Geräten.
 
-### <a name="razortodo-sample"></a>RazorTodo Sample
+### <a name="razortodo-sample"></a>RazorTodo-Beispiel
 
 Die [RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo) -Repository enthält zwei separate Lösungen, um die Unterschiede zwischen einer vollständig HTML-driven-app und eine app, die mit systemeigenen Steuerelementen HTML kombiniert dargestellt:
 
@@ -519,6 +518,6 @@ Schließlich führte RazorTodo Proben, die diesen veranschaulichen Webansichten 
 
 ### <a name="related-links"></a>Verwandte Links
 
-- [RazorTodo Sample](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
+- [RazorTodo-Beispiel](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
 - [MVC 3 - Razor-Ansichtsmodul (Microsoft)](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
 - [Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax (Microsoft)](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)

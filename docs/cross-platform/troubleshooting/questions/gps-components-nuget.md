@@ -3,14 +3,13 @@ title: Vereinheitlichung der Google Play Services, Komponenten und NuGet
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5D962EB4-2CB3-4B7D-9D77-889DEACDAE02
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: e0ba5ee9417917b834ab060a94f72d1f071b4912
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cfd417f4fc01b07b4334259c45472eb24b73abd8
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="unifying-google-play-services-components-and-nuget"></a>Vereinheitlichung der Google Play Services, Komponenten und NuGet
 
@@ -20,9 +19,9 @@ Gibt es mehrere Google-Dienstekomponenten wiedergeben und NuGet-Pakete werden ve
 
 -   Google Play-Dienste (Froyo)
 -   Google Play-Dienste (Gingerbread)
--   Google Play Services (ICS)
--   Google Play Services (JellyBean)
--   Google Play Services (KitKat)
+-   Google Play-Dienste (ICS)
+-   Google Play-Dienste (JellyBean)
+-   Google Play-Dienste (KitKat)
 
 Google tatsächlich nur umfasst zwei JAR-Dateien für Google Play-Dienste:
 
@@ -31,7 +30,7 @@ Google tatsächlich nur umfasst zwei JAR-Dateien für Google Play-Dienste:
 
 Die Abweichung vorhanden waren, da unsere Tools ordnungsgemäß erkennen nicht `aapt.exe` was die maximale Ressource API-Ebene für eine bestimmte app verwendet wurde. Dies bedeutet, dass wir Kompilierungsfehler erhalten, wenn es wurde versucht, mit der Bindung von Google Play-Dienste (KitKat) auf einer niedrigeren Ebene der API wie Gingerbread.
 
-### <a name="unifying-google-play-services"></a>Unifying Google Play Services
+### <a name="unifying-google-play-services"></a>Vereinheitlichung der Google Play-Dienste
 
 In neueren Versionen von Xamarin.Android, teilen wir jetzt `aapt.exe` zu verwenden, damit dieses Problem für uns verschwindet, welche maximale-Version.
 
@@ -55,8 +54,8 @@ Gingerbread keine Fragment standardmäßig unterstützt, und aus diesem Grund ei
 Da sie nicht mehr benötigt werden, haben wir die folgenden Komponenten/NuGets deaktiviert/Delisted:
 
 -   Google Play-Dienste (Gingerbread)
--   Google Play Services (JellyBean)
--   Google Play Services (KitKat)
+-   Google Play-Dienste (JellyBean)
+-   Google Play-Dienste (KitKat)
 
 Die vorhandene _Google wiedergeben Dienste (ICS)_ Komponente/Nuget wurde umbenannt in _Google Play-Dienste_ und wird auf dem neuesten Stand zukünftig beibehalten. Alle Projekte, verweisen Sie auf eines der Pakete deaktiviert/Delisted sollten aktualisiert werden, um diese zu verwenden.
 

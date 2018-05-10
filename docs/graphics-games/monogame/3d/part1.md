@@ -3,15 +3,14 @@ title: Verwenden der Modellklasse
 description: Die Modell-Klasse vereinfacht die komplexe 3D-Objekten gegenüber der traditionellen Methode der Rendern 3D-Grafiken rendern. Modellobjekte werden in Inhaltsdateien gespeichert, sodass für die einfache Integration von Inhalt ohne benutzerdefinierten Code erstellt.
 ms.prod: xamarin
 ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 7e778df7fa6dd27aee8282154c99faf5ca5791ce
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 01e000b22749acb1b5c3a3203db7f372613cca16
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="using-the-model-class"></a>Verwenden der Model-Klasse
 

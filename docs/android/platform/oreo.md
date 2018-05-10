@@ -8,11 +8,11 @@ ms.custom: video
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 4a7a8a96ff22cf02d04ffdfff684d454d1a28024
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3eb3bdd7b060b661d5202c63a879f1c88d2ccdcb
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="oreo-features"></a>Oreo-Funktionen
 
@@ -31,9 +31,9 @@ Folgendes ist erforderlich, um Android Oreo Funktionen in Xamarin-basierten apps
 
 -   **Visual Studio** &ndash; 15.5 oder höher von Visual Studio bei Verwendung von Windows erforderlich ist.  Wenn Sie mit einen Mac arbeiten, ist Visual Studio für Mac Version 7.2.0 erforderlich.
 
--   **Xamarin.Android** &ndash; Xamarin.Android 8.0 or later must be installed and configured with Visual Studio.
+-   **Xamarin.Android** &ndash; Xamarin.Android 8.0 oder höher muss installiert und mit Visual Studio konfiguriert werden.
 
--   **Android SDK** &ndash; Android SDK 8.0 (API 26) or later must be installed via the Android SDK Manager.
+-   **Android SDK** &ndash; Android SDK 8.0 (26-API) oder höher muss installiert sein über den Android SDK Manager.
 
 
 
@@ -190,7 +190,7 @@ Nach der Verwendung von **Avdmanager** um Ihr virtuelles Gerät erstellen, wird 
 
 -----
 
-Weitere Informationen zum Konfigurieren von Android-Emulator zum Testen und Debuggen, finden Sie unter [Android SDK-Emulator](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Weitere Informationen zum Konfigurieren von Android-Emulator zum Testen und Debuggen, finden Sie unter [Google Android-Emulator](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
 
 Wenn Sie z. B. eine Nexus oder ein Pixel ein physisches Gerät verwenden, können entweder Aktualisieren Ihres Geräts über automatisch über die Updates per Funk (OTA) oder Herunterladen ein Abbilds und flash Ihr Gerät direkt. Weitere Informationen zum manuellen Aktualisieren Ihres Geräts auf Android Oreo finden Sie unter [Factory Images für Nexus und Pixel-Geräte](https://developers.google.com/android/images).
 

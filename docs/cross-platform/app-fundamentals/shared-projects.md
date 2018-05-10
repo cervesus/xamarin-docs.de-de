@@ -3,15 +3,14 @@ title: Gemeinsam genutzte Projekte
 description: Gemeinsam genutzte Projekte können Sie die gemeinsamen Code schreiben, der durch eine Reihe von verschiedenen Anwendungsprojekte verwiesen wird. Der Code wird als Teil jeder verweisenden Projekts kompiliert und zählen Compilerdirektiven Clientplattform-spezifische Funktionalität in der gemeinsamen Codebasis integrieren können.
 ms.prod: xamarin
 ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: a7d5a25c3c6f2889bde0ff4aeaf85053bcc796fb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2910ada16aad2d8cb19cf0ee3a059c7df22b630e
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="shared-projects"></a>Gemeinsam genutzte Projekte
 

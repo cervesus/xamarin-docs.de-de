@@ -3,15 +3,14 @@ title: Übersicht über Unified-API
 description: Die neue Formatvorlage API einfacher als je zuvor Mac und iOS sowie für das können Sie zur Unterstützung der 32- und 64-Bit-Anwendungen mit dem binary-Code freigeben.
 ms.prod: xamarin
 ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c36682ba038c18dfb872e76f338ea1d9881cca10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0bdbf4a41ad5737603fccc7e78bc588a2f3acee3
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="unified-api-overview"></a>Übersicht über Unified-API
 
@@ -108,7 +107,7 @@ Die einheitliche API führt eine neue Plattform-ID für kompatible Pakete - **Xa
 
 <a name="deprecated-apis" />
 
-## <a name="arrays-and-systemcollectionsgeneric"></a>Arrays and System.Collections.Generic
+## <a name="arrays-and-systemcollectionsgeneric"></a>Arrays und System.Collections.Generic
 
 Da C#-Indexer erwarten, dass ein `int`, stehen Ihnen explizit umgewandelt `nint` Werte `int` Zugriff auf die Elemente in einer Auflistung oder ein Array. Zum Beispiel:
 

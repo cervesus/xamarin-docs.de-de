@@ -3,15 +3,14 @@ title: Behandlung von mehrere Auflösungen in CocosSharp
 description: Dieses Handbuch veranschaulicht das Arbeiten mit CocosSharp Spiele entwickeln, die auf Geräten von unterschiedlichen Auflösungen ordnungsgemäß angezeigt.
 ms.prod: xamarin
 ms.assetid: 859ABF98-2646-431A-A4A8-3E7E48DA5A43
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 4077af2351b8ab3ef718a71cc672add54b6ef05a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 577a3edbd106b6fba298b3ee5999265ef955f9dd
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>Behandlung von mehrere Auflösungen in CocosSharp
 
@@ -25,8 +24,8 @@ Das Standardverhalten für die Auflösung des CocosSharp wird entsprechend der p
 | **Gerät** | **Bildschirmauflösung** | **Beispiel-Screenshot** |
 |--- | --- |--- |
 |Gewünschten Anzeige|368 x 240 (mit schwarzen Balken für Seitenverhältnis)| ![368 x 240 (mit schwarzen Balken für Seitenverhältnis)](resolutions-images/image1.png) |
-|iPhone 4s|960x640| ![iPhone 4s 960x640](resolutions-images/image2.png) |
-|iPhone 6 Plus|1920 x 1080| ![iPhone 6 Plus 1920x1080](resolutions-images/image3.png) |
+|iPhone 4s|960 x 640| ![iPhone 4s 960x640](resolutions-images/image2.png) |
+|iPhone 6 Plus|1920 x 1080| ![iPhone 6 Plus 1920 x 1080](resolutions-images/image3.png) |
 
 Dieses Dokument behandelt wie CocosSharp verwenden Sie zum Beheben des Problems in der obigen Tabelle gezeigt. D. h. müssen zu einem beliebigen Gerät rendern, wie in der ersten Zeile – unabhängig von der Auflösung angezeigt wie eingegangen.
 
@@ -248,7 +247,7 @@ public override void ApplicationDidFinishLaunching (CCApplication application, C
 ```
 
 
-### <a name="defaulttexeltocontentsizeratio-example"></a>DefaultTexelToContentSizeRatio example
+### <a name="defaulttexeltocontentsizeratio-example"></a>DefaultTexelToContentSizeRatio-Beispiel
 
 Um finden Sie unter wie `DefaultTexelToContentSizeRatio` wirkt sich auf die Größe des visuellen Elemente, sollten Sie den oben aufgeführten Code:
 
@@ -277,7 +276,7 @@ Beim Ausführen des Spiels wird die Textur 1000 x 1000 jetzt vollständig sichtb
 ![](resolutions-images/image12.png "Jetzt beim Ausführen des Spiels wird die Textur 1000 x 1000 vollständig sichtbar sein")
 
 
-### <a name="defaulttexeltocontentsizeratio-details"></a>DefaultTexelToContentSizeRatio details
+### <a name="defaulttexeltocontentsizeratio-details"></a>DefaultTexelToContentSizeRatio-details
 
 Die `DefaultTexelToContentSizeRatio` Eigenschaft `static,` was bedeutet, dass alle Sprites in der Anwendung gemeinsam verwenden den gleichen Wert. Der typische Ansatz für Spiele mit Ressourcen für andere Lösungen hergestellt ist, einen vollständigen Satz von Ressourcen für jede Kategorie Lösung enthalten. Standardmäßig CocosSharp Visual Studio für Mac-Vorlagen bieten **%ld** und **hd** Ordner für Medienobjekte, Spiele, die zwei Sätze von Texturen Unterstützung hilfreich sein würde. Ein Beispiel Inhaltsordner mit Inhalt möglicherweise formuliert werden:
 

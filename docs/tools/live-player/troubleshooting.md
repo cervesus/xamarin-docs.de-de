@@ -3,15 +3,14 @@ title: Problembehandlung
 description: Bekannte Probleme mit der Xamarin-Live-Player und wie sie diesen Fehler zu beheben.
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/17/2017
-ms.openlocfilehash: f9d5d0e4a2217d48577c60940fb027b3a77416d2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 147ce43d3fe764f71f27dce46b699142dfb99872
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="troubleshooting"></a>Problembehandlung
 
@@ -125,7 +124,7 @@ Wechseln Sie zu: https://www.guidgenerator.com/online-guid-generator.aspx und ge
 
 Überprüfung, die Sie ausgewählt haben eine **Startprojekt** , die den Typ Ihres Geräts (iOS oder Android) entspricht und dass die Konfiguration dieser Gerätetyp (z. b. übereinstimmt **Debuggen | iPhone-Simulator** für iOS).
 
-## <a name="constructor-on-type-interpretedxamarinformsbutton-not-found-message-in-player"></a>"Constructor on type 'InterpretedXamarin.Forms.Button' not found" message in Player
+## <a name="constructor-on-type-interpretedxamarinformsbutton-not-found-message-in-player"></a>"Konstruktor für Typ"InterpretedXamarin.Forms.Button"nicht gefunden" Nachricht im Player
 
 Einige Systemklassen können, z. B. nicht überschrieben werden:
 

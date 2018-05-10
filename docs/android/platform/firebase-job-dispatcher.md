@@ -6,16 +6,18 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/20/2018
-ms.openlocfilehash: 124823238968ab21c1e55818ba5b99d2bb0c0bf8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/08/2018
+ms.openlocfilehash: a714ac55c3a49b91cb21e3ba1793b9bccd7d1be2
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Auftrag wurde vom Verteiler firebase
 
 _Dieses Handbuch erläutert, wie beim Planen der Verarbeitung im Hintergrund mithilfe der Auftrag wurde vom Verteiler Firebase-Bibliothek von Google._
+
+![Firebase Auftrag Verteiler in der Vorschau](~/media/shared/preview.png)
 
 ## <a name="overview"></a>Übersicht
 
@@ -60,9 +62,13 @@ Der Auftrag wurde vom Verteiler Firebase ist die Android-API Level 9 oder höher
 
 ## <a name="using-the-firebase-job-dispatcher-library-in-xamarinandroid"></a>Mithilfe der Firebase Auftrag Dispatcher-Bibliothek in Xamarin.Android
 
-Um mit der Dispatcher Firebase beginnen, zuerst Hinzufügen der [Xamarin.Firebase.JobDispatcher NuGet-Paket](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher/0.6.0-beta1) Xamarin.Android-Projekt. Suchen Sie das NuGet-Paket-Manager für die **Xamarin.Firebase.Jobdispatcher** Paket.  
+Um mit der Dispatcher Firebase beginnen, zuerst Hinzufügen der [Xamarin.Firebase.JobDispatcher NuGet-Paket](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher) Xamarin.Android-Projekt. Suchen Sie das NuGet-Paket-Manager für die **Xamarin.Firebase.JobDispatcher** Paket (d. h. vor der Veröffentlichung).
 
 Nach dem Hinzufügen der Auftrag wurde vom Verteiler Firebase-Bibliothek, erstellen Sie eine `JobService` Klasse, und Planen Sie mit einer Instanz der Ausführung der `FirebaseJobDispatcher`.
+
+> [!NOTE]
+> Das Ziel die aktuelle Bindung für den Firebase Auftrag Verteiler ist eine alte Version der Bibliothek. Das ist ein [bekannter Fehler [(https://bugzilla.xamarin.com/show_bug.cgi?id=59046)] verhindert die Bindung aus aktualisiert wird auf eine neuere Version des Verteilers Auftrag Firebase abzielen.
+
 
 ### <a name="creating-a-jobservice"></a>Erstellen eine JobService
 
@@ -287,8 +293,9 @@ Dieses Handbuch erläutert, wie mit, dass der Auftrag wurde vom Verteiler Fireba
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xamarin.Firebase.JobDispatcher für NuGet](https://www.nuget.org/packages/Xamarin.FirebaseJobDispatcher)
+- [Bindungen-Generator schlägt fehl mit Fehler Schwerwiegender AUSNAHMEFEHLER: System.ArgumentNullException: Wert darf nicht null sein.](https://bugzilla.xamarin.com/show_bug.cgi?id=59046)
+- [Xamarin.Firebase.JobDispatcher für NuGet](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)
 - [Firebase-Auftrag-Verteiler auf GitHub](https://github.com/firebase/firebase-jobdispatcher-android)
-- [Xamarin.Firebase.JobDispatcher Binding](https://github.com/xamarin/XamarinComponents/tree/master/Android/FirebaseJobDispatcher)
+- [Xamarin.Firebase.JobDispatcher-Bindung](https://github.com/xamarin/XamarinComponents/tree/master/Android/FirebaseJobDispatcher)
 - [Intelligent auftragsplanung](https://developer.android.com/topic/performance/scheduling.html)
 - [Android Akku und Arbeitsspeicher Optimierungen - Google e/a-2016 (Video)](https://www.youtube.com/watch?v=VC2Hlb22mZM&feature=youtu.be)

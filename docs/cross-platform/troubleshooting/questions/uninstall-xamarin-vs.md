@@ -3,15 +3,14 @@ title: Wie führe ich durch eine gründliche für Xamarin für Visual Studio dei
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: c1742239-05ea-449d-9c99-611e5e5a90e4
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: 49577961026d9895912d2848975e71a9f7eebbd8
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 99fde9330498ee62d3cf6b5910c2cbfae39cfdeb
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="how-do-i-perform-a-thorough-uninstall-for-xamarin-for-visual-studio"></a>Wie führe ich durch eine gründliche für Xamarin für Visual Studio deinstallieren?
 
@@ -30,7 +29,7 @@ ms.lasthandoff: 04/06/2018
 
 3.  Visual Studio MEF-Komponente Cacheverzeichnis sowie zu löschen:
 
-    _%LOCALAPPDATA%\\Microsoft\\VisualStudio\\1\*.0\\ComponentModelCache_
+    _%LocalAppData%\\Microsoft\\VisualStudio\\1\*.0\\ComponentModelCache_
 
     Diesen Schritt selbst ist häufig ausreichend, um Fehler zu beheben, z. B.:
 
@@ -48,7 +47,7 @@ ms.lasthandoff: 04/06/2018
 
 4.  Überprüfen Sie auch der _VirtualStore_ Directory, um festzustellen, ob Windows eine u. u. bei gespeicherten überlagern Sie die Dateien für die _Erweiterungen\\Xamarin_ oder _ComponentModelCache_Verzeichnisse vorhanden:
 
-    _%LOCALAPPDATA%\\VirtualStore_
+    _%LocalAppData%\\VirtualStore_
 
 5.  Öffnen Sie den Registrierungs-Editor (`regedit`).
 
@@ -56,19 +55,19 @@ ms.lasthandoff: 04/06/2018
 
     _HKEY\_lokale\_Computer\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\SharedDlls_
 
-7.  Suchen Sie und löschen Sie alle Einträge, die diesem Muster entsprechen:
+7.  Suchen und löschen Sie alle Einträge, die diesem Muster entsprechen:
 
     _"C:"\\Programmdateien\*\\Microsoft Visual Studio 1\*.0\\Common7\\IDE\\Erweiterungen\\Xamarin_
 
-8.  Suchen Sie nach diesen Schlüssel:
+8.  Suchen Sie nach diesem Schlüssel:
 
     _HKEY\_aktuelle\_Benutzer\\Software\\Microsoft\\VisualStudio\\1\*.0\\ExtensionManager ab\\PendingDeletions_
 
-9.  Löschen Sie alle Einträge, die aussehen, als ob sie mit Xamarin verknüpft werden können.  Beispielsweise verwendet es folgt eine, die in früheren Versionen von Xamarin Probleme verursachen:
+9.  Löschen Sie alle Einträge, die zu Xamarin gehören könnten.  Beispielsweise verwendet es folgt eine, die in früheren Versionen von Xamarin Probleme verursachen:
 
     _Mono.VisualStudio.Shell,1.0_
 
-10. Öffnen Sie eine Administrator `cmd.exe` -Eingabeaufforderung, und führen Sie die `devenv /setup` und `devenv /updateconfiguration` -Befehle für jede installierte Version von Visual Studio.  Z. B. für Visual Studio 2015:
+10. Öffnen Sie eine Administrator `cmd.exe` -Eingabeaufforderung, und führen Sie die `devenv /setup` und `devenv /updateconfiguration` -Befehle für jede installierte Version von Visual Studio.  Beispiel für Visual Studio 2015:
 
     ```
     "%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /setup

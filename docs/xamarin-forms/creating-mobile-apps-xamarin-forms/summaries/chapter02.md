@@ -6,11 +6,11 @@ ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c206b124349614db7249609707bd22e8a4efe6d8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 81bcc8e2f8627264820a859123e1be1a9f960a92
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Zusammenfassung der Kapitel 2. Aufbau einer App
 
@@ -70,7 +70,7 @@ Darüber hinaus muss für jede Plattform Instanziieren der `App` Speicherort in 
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
-- UWP: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.UWP/MainPage.xaml.cs)
+- UNIVERSELLE WINDOWS-PLATTFORM: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.UWP/MainPage.xaml.cs)
 - Windows 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/MainPage.xaml.cs)
 - Windows Phone 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WindowsPhone/MainPage.xaml.cs)
 
@@ -91,7 +91,7 @@ Um die Xamarin.Forms-Plattformen unterstützen möchten, muss die Version von .N
 - Windows Phone 8.1
 - Xamarin.Android
 - Xamarin.iOS
-- Xamarin.IOS (Classic)
+- Xamarin.IOS (klassisch)
 
 Dies wird als PC Profil 111 bezeichnet.
 
@@ -99,7 +99,7 @@ Mit dem SAP-Ansatz kann der Code im freigegebenen Projekt anderen Code für die 
 
 - iOS: `__IOS__`
 - Android: `__ANDROID__`
-- UWP: `WINDOWS_UWP`
+- UNIVERSELLE WINDOWS-PLATTFORM: `WINDOWS_UWP`
 - Windows 8.1: `WINDOWS_APP`
 - Windows Phone 8.1: `WINDOWS_PHONE_APP`
 
@@ -202,7 +202,7 @@ Diese beiden Eigenschaften sind nur von definiert `Label`, während die `Horizon
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Chapter 2 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch03-Apr2016.pdf)
-- [Chapter 2-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
-- [Chapter 2 f#-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)
+- [Chapter 2 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
+- [Chapter 2-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
+- [Chapter 2 f#-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
 - [Erste Schritte mit Xamarin.Forms](~/xamarin-forms/get-started/index.md)

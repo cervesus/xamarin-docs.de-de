@@ -2,15 +2,14 @@
 title: Teil 3 – Einrichten einer Xamarin-Cross-Plattformlösung
 ms.prod: xamarin
 ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: 6e8dfab76881bc972e00abe7cbbea238e335d9a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a13765805a3bc6be05522700960b032acbc864b5
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>Teil 3 – Einrichten einer Xamarin-Cross-Plattformlösung
 
@@ -71,7 +70,7 @@ Der Xamarin-Ansatz ist die Gruppencode in zwei Projekttypen:
  <a name="Core_Project" />
 
 
-### <a name="core-project"></a>Core Project
+### <a name="core-project"></a>Core-Projekt
 
 Freigegebene Codeprojekte sollten nur Assemblys verweisen, die auf allen Plattformen – d. h. zur Verfügung. die allgemeinen Framework-Namespaces wie `System`, `System.Core` und `System.Xml`.
 

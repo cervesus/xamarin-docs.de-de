@@ -3,15 +3,14 @@ title: Tools und Befehle
 description: Übersicht über die Tabellenanalysetools mit Ziel Sharpie und die Befehlszeilenargumente zu verwenden.
 ms.prod: xamarin
 ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 8a307739134fe3b76692fbef5c1dc028af01017d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0e333ce7c336d13c8b55326a5d51a64092885dfd
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="tools--commands"></a>Tools und Befehle
 
@@ -55,7 +54,7 @@ Objektive Sharpie stellt die folgenden Tools:
 |Tool|Beschreibung|
 |--- |--- |
 |**xcode**|Informationen zum aktuellen Xcode-Installation sowie die Versionen von iOS und Mac-SDKs, die verfügbar sind. Wir werden diese Informationen später verwenden werden, wenn wir unsere Bindungen generieren.|
-|**pod**|Sucht nach, konfiguriert, installiert (in einem lokalen Verzeichnis), und bindet Objective-C [CocoaPod](https://cocoapods.org/) Bibliotheken, die aus der master-Spec-Repository verfügbar sind. Dieses Tool wertet die installierten CocoaPod zur Übergabe an die richtige Eingabe automatisch Ableiten der `bind` Tool unten. In 3.0 neu.|
+|**Pod**|Sucht nach, konfiguriert, installiert (in einem lokalen Verzeichnis), und bindet Objective-C [CocoaPod](https://cocoapods.org/) Bibliotheken, die aus der master-Spec-Repository verfügbar sind. Dieses Tool wertet die installierten CocoaPod zur Übergabe an die richtige Eingabe automatisch Ableiten der `bind` Tool unten. In 3.0 neu.|
 |**bind**|Analysiert die Headerdateien (`*.h`) in der Bibliothek für Objective-C in der ersten [ApiDefinition.cs und StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) Dateien.|
 |**update**|Überprüft, ob neuere Versionen des Ziel-Sharpie und heruntergeladen und das Installationsprogramm wird gestartet, wenn ein solcher verfügbar ist.|
 |**verify-docs**|Zeigt detaillierte Informationen zu `[Verify]` Attribute.|
