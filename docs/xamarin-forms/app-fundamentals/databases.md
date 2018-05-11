@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2017
-ms.openlocfilehash: 95c5f482e1bf3e55fa4c6fef18b1dbe6274f33e8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d1f11ed1b52354dedbdb8893a96e0ae7589d5389
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="local-databases"></a>Lokale Datenbanken
 
@@ -19,7 +19,7 @@ _Xamarin.Forms unterstützt Datenbank datengesteuerten Anwendungen, die mit dem 
 
 ## <a name="overview"></a>Übersicht
 
-Xamarin.Forms-Anwendungen können die [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) Paket integrieren Sie Datenbankvorgängen in freigegebenen Code durch Verweisen auf die `SQLite` Klassen, die in der NuGet geliefert. Datenbankvorgänge können definiert werden, im Projekt Portable Klassenbibliothek (PCL) mit Xamarin.Forms-Projektmappe mit plattformspezifischen Projekte, die einen Pfad zum Speicherort der Datenbank zurückgegeben.
+Xamarin.Forms-Anwendungen können die [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) Paket integrieren Sie Datenbankvorgängen in freigegebenen Code durch Verweisen auf die `SQLite` Klassen, die in der NuGet geliefert. Datenbankvorgänge können definiert werden, in der standardmäßigen .NET Bibliotheksprojekt Xamarin.Forms-Projektmappe mit plattformspezifischen Projekte, die einen Pfad zum Speicherort der Datenbank zurückgegeben.
 
 Der zugehörige [beispielanwendung](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo) ist eine einfache Aufgabenlisten Anwendung. Die folgenden Screenshots zeigen, wie das Beispiel auf jeder Plattform wird angezeigt:
 
@@ -43,7 +43,7 @@ Es gibt eine Reihe von NuGet-Paketen mit ähnlichen Namen, das richtige Paket wu
 
 - **Erstellt von:** Frank A. Krueger
 - **ID:** Sqlite-Net-Pcl
-- **NuGet link:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **NuGet-Link:** [Sqlite-Net-Pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 Sobald der Verweis hinzugefügt wurde, Schreiben Sie eine Schnittstelle, die Clientplattform-spezifische Funktionalität abstrahiert, um den Speicherort der Datenbankdatei zu ermitteln. Die im Beispiel verwendete Schnittstelle definiert eine einzelne Methode:
 
@@ -126,7 +126,7 @@ Alle dem Datenzugriffscode wird geschrieben, in der PCL-Projekt, um über alle P
 
 <a name="PCL_iOS" />
 
-### <a name="ios-project"></a>iOS Project
+### <a name="ios-project"></a>iOS-Projekt
 
 Um iOS-Anwendung konfigurieren zu können, fügen Sie das gleiche NuGet-Paket, das iOS-Projekt mit der *NuGet* Fenster:
 
@@ -160,7 +160,7 @@ Beachten Sie, die den Code enthält die `assembly:Dependency` Attribut, damit di
 
 <a name="PCL_Android" />
 
-### <a name="android-project"></a>Android Project
+### <a name="android-project"></a>Android-Projekt
 
 Um die Android-Anwendung konfigurieren zu können, fügen Sie das gleiche NuGet-Paket mit dem Android-Projekt mithilfe der *NuGet* Fenster:
 

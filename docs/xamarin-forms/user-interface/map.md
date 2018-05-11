@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: e296ca79ee03e7fc61532758219b65946a8d4381
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 6063732e08680974b8d4a2358bfd85b176b36aec
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="map"></a>Zuordnung
 
@@ -62,7 +62,7 @@ Fügen Sie diesen Aufruf in den folgenden Dateien für jede Plattform hinzu:
 -  **Android** -MainActivity.cs-Datei, in der `OnCreate` Methode.
 -  **Universelle Windows-Plattform** -Datei "MainPage.Xaml.cs"-Datei, in der `MainPage` Konstruktor.
 
-Sobald das NuGet-Paket hinzugefügt wurde und die Initialisierungsmethode innerhalb jedes Applcation aufgerufen `Xamarin.Forms.Maps` APIs im gemeinsamen Code PCL oder freigegebenes Projekt verwendet werden können.
+Sobald das NuGet-Paket hinzugefügt wurde und die Initialisierungsmethode innerhalb jedes Applcation aufgerufen `Xamarin.Forms.Maps` APIs im allgemeine .NET Standard-Bibliotheksprojekt oder freigegebenes Projekt Code verwendet werden können.
 
 <a name="Platform_Configuration" />
 

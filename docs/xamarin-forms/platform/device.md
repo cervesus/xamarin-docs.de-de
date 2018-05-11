@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 1fc3fb17ec97ce9028abbf63cdedbfc5fec12204
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 520982491803fa0a909008ee60730a4149a75296
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="device-class"></a>Geräteklasse
 
@@ -155,7 +155,7 @@ Die [Maps Sample](https://github.com/xamarin/xamarin-forms-samples/blob/master/W
 
 ## <a name="devicestarttimer"></a>Device.StartTimer
 
-Die `Device` -Klasse verfügt auch über eine `StartTimer` Methode, die eine einfache Möglichkeit zum Auslösen der zeitabhängige Aufgaben, die in Xamarin.Forms gemeinsamen Code bereitstellt (einschließlich PCLs) funktioniert. Übergeben einer `TimeSpan` um das Intervall festzulegen und zurückzugeben `true` zu den Timer ausgeführt oder `false` um nach dem aktuellen Aufruf zu beenden.
+Die `Device` -Klasse verfügt auch über eine `StartTimer` Methode, die eine einfache Möglichkeit zum Auslösen der zeitabhängige Aufgaben bereitstellt, die in Xamarin.Forms gemeinsame Code ab, einschließlich .NET Standardbibliothek funktioniert. Übergeben einer `TimeSpan` um das Intervall festzulegen und zurückzugeben `true` zu den Timer ausgeführt oder `false` um nach dem aktuellen Aufruf zu beenden.
 
 ```csharp
 Device.StartTimer (new TimeSpan (0, 0, 60), () => {
@@ -184,7 +184,7 @@ Beachten Sie, dass Methoden, die mit `async/await` müssen nicht mit `BeginInvok
 
 ## <a name="summary"></a>Zusammenfassung
 
-Der Xamarin.Forms `Device` Klasse ermöglicht eine differenzierte Steuerung Funktionalität und Layouts auf der Basis eines je Plattform – Dies gilt auch für gemeinsamen Code (PCL oder freigegebenen Projekten).
+Der Xamarin.Forms `Device` Klasse ermöglicht eine differenzierte Steuerung Funktionalität und Layouts auf der Basis eines je Plattform – Dies gilt auch für gemeinsamen Code (.NET Standard Bibliotheksprojekte oder freigegebenen Projekten).
 
 
 ## <a name="related-links"></a>Verwandte Links

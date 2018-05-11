@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 4d1d4323e42df6240fee7be42ae8fac70a2b3f1f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: fd96770caf92eb30e669133f592f5d780146be59
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-viewcell"></a>Anpassen einer ViewCell
 
@@ -65,13 +65,13 @@ public class NativeCell : ViewCell
   }
 }
 ```
-Die `NativeCell` Klasse wird im Projekt portablen Klassenbibliothek (PCL) erstellt und definiert die API für die benutzerdefinierte Zelle. Die benutzerdefinierte Zelle macht `Name`, `Category`, und `ImageFilename` Eigenschaften, die über die Datenbindung angezeigt werden können. Weitere Informationen zur Datenbindung finden Sie unter [Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md) (Datenbindungsgrundlagen).
+Die `NativeCell` Klasse im .NET Standard Klassenbibliotheksprojekt erstellt und definiert die API für die benutzerdefinierte Zelle. Die benutzerdefinierte Zelle macht `Name`, `Category`, und `ImageFilename` Eigenschaften, die über die Datenbindung angezeigt werden können. Weitere Informationen zur Datenbindung finden Sie unter [Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md) (Datenbindungsgrundlagen).
 
 <a name="Consuming_the_Custom_Cell" />
 
 ## <a name="consuming-the-custom-cell"></a>Nutzen die benutzerdefinierte Zelle
 
-Die `NativeCell` benutzerdefinierte Zelle kann verwiesen werden in Xaml in der PCL-Projekt durch deklarieren einen Namespace für den Speicherort und verwenden das Namespacepräfix auf die benutzerdefinierte Cell-Element. Im folgenden Codebeispiel wird veranschaulicht wie die `NativeCell` benutzerdefinierte Zelle durch die entsprechende Verwendung von XAML-Seite genutzt werden kann:
+Die `NativeCell` benutzerdefinierte Zelle kann verwiesen werden in Xaml in .NET Standard-Bibliotheksprojekt durch deklarieren einen Namespace für den Speicherort und verwenden das Namespacepräfix auf die benutzerdefinierte Cell-Element. Im folgenden Codebeispiel wird veranschaulicht wie die `NativeCell` benutzerdefinierte Zelle durch die entsprechende Verwendung von XAML-Seite genutzt werden kann:
 
 ```xaml
 <ContentPage ...

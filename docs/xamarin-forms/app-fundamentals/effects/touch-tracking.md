@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: eb4ed3df4ea1f9e6aacf1c875eab17908d73cb7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e363cae4dd72a25e4768395410d4e56a8db30eba
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="invoking-events-from-effects"></a>Aufrufen von Ereignissen von Effekten
 
@@ -49,7 +49,7 @@ Aus diesem Grund implementiert der in diesem Artikel beschriebenen Touch-Trackin
 
 ## <a name="the-touch-tracking-effect-api"></a>Die Touch-Tracking Effekt-API
 
-Die [ **berühren nachverfolgen Auswirkungen Demos** ](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) Beispiel enthält die Klassen (und einer Enumeration), die die Low-Level Touch-Tracking zu implementieren. Diese Typen gehören zum Namespace `TouchTracking` und beginnen mit dem Wort `Touch`. Die **TouchTrackingEffectDemos** Portable Class Library-Projekt enthält die `TouchActionType` Enumeration für den Typ der Berührungsereignisse:
+Die [ **berühren nachverfolgen Auswirkungen Demos** ](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) Beispiel enthält die Klassen (und einer Enumeration), die die Low-Level Touch-Tracking zu implementieren. Diese Typen gehören zum Namespace `TouchTracking` und beginnen mit dem Wort `Touch`. Die **TouchTrackingEffectDemos** .NET Standard-Bibliotheksprojekt enthält die `TouchActionType` Enumeration für den Typ der Berührungsereignisse:
 
 ```csharp
 public enum TouchActionType
@@ -65,7 +65,7 @@ public enum TouchActionType
 
 Alle Plattformen umfassen auch ein Ereignis, das zeigt an, dass das Touch-Ereignis abgebrochen wurde.
 
-Die `TouchEffect` Klasse in der PCL leitet sich von `RoutingEffect` und definiert ein Ereignis mit dem Namen `TouchAction` und eine Methode namens `OnTouchAction` aufruft, die die `TouchAction` Ereignis:
+Die `TouchEffect` Klasse in der Standardbibliothek .NET leitet sich von `RoutingEffect` und definiert ein Ereignis mit dem Namen `TouchAction` und eine Methode namens `OnTouchAction` aufruft, die die `TouchAction` Ereignis:
 
 ```csharp
 public class TouchEffect : RoutingEffect
@@ -87,7 +87,7 @@ public class TouchEffect : RoutingEffect
 
 Beachten Sie außerdem die `Capture` Eigenschaft. Um Touch-Ereignisse zu erfassen, muss eine Anwendung diese Eigenschaft festlegen, um `true` vor einem `Pressed` Ereignis. Ansonsten Verhalten sich die Berührungsereignisse, wie die in universellen Windows-Plattform zu erhalten.
 
-Die `TouchActionEventArgs` Klasse in der PCL enthält alle Informationen, die zu jedem Ereignis gehören:
+Die `TouchActionEventArgs` Klasse in der Standardbibliothek .NET enthält alle Informationen, die zu jedem Ereignis gehören:
 
 ```csharp
 public class TouchActionEventArgs : EventArgs
@@ -112,7 +112,7 @@ public class TouchActionEventArgs : EventArgs
 
 Eine Anwendung kann mithilfe der `Id` Eigenschaft zum Nachverfolgen von einzelnen Fingern fest. Beachten Sie, dass die `IsInContact` Eigenschaft. Diese Eigenschaft ist immer `true` für `Pressed` Ereignisse und `false` für `Released` Ereignisse. Es ist auch immer `true` für `Moved` Ereignisse auf IOS- und Android. Die `IsInContact` Eigenschaft möglicherweise `false` für `Moved` Ereignisse auf die universelle Windows-Plattform, wenn das Programm auf dem Desktop ausgeführt wird und der Mauszeiger bewegt, ohne eine Schaltfläche wird gedrückt.
 
-Können Sie die `TouchEffect` Klasse in Ihren eigenen Anwendungen dazu die Datei in der Projektmappe PCL-Projekt, und durch Hinzufügen einer Instanz, um die `Effects` Auflistung eines beliebigen Elements Xamarin.Forms. Fügen Sie einen Handler, der `TouchAction` Ereignis, um die Berührungsereignisse zu erhalten.
+Können Sie die `TouchEffect` Klasse in Ihren eigenen Anwendungen dazu die Datei in der Projektmappe .NET Standard-Bibliotheksprojekt, und durch Hinzufügen einer Instanz, um die `Effects` Auflistung eines beliebigen Elements Xamarin.Forms. Fügen Sie einen Handler, der `TouchAction` Ereignis, um die Berührungsereignisse zu erhalten.
 
 Mit `TouchEffect` in Ihrer eigenen Anwendung, Sie benötigen auch das Plattform-Implementierungen in enthalten **TouchTrackingEffectDemos** Lösung.
 
@@ -151,7 +151,7 @@ public class TouchEffect : PlatformEffect
         // Get the Windows FrameworkElement corresponding to the Element that the effect is attached to
         frameworkElement = Control == null ? Container : Control;
 
-        // Get access to the TouchEffect class in the PCL
+        // Get access to the TouchEffect class in the .NET Standard library
         effect = (TouchTracking.TouchEffect)Element.Effects.
                     FirstOrDefault(e => e is TouchTracking.TouchEffect);
 
@@ -203,7 +203,7 @@ public class TouchEffect : PlatformEffect
 }
 ```
 
-`OnPointerPressed` überprüft auch den Wert der `Capture` Eigenschaften der Klasse Effekt in der PCL und Aufrufe `CapturePointer` wird jedoch `true`.
+`OnPointerPressed` überprüft auch den Wert der `Capture` Eigenschaften der Klasse Effekt in der Standardbibliothek .NET und Aufrufe `CapturePointer` wird jedoch `true`.
 
  Die UWP-Ereignishandler werden jetzt noch einfacher:
 
@@ -267,7 +267,7 @@ void OnTouch(object sender, Android.Views.View.TouchEventArgs args)
 
             idToEffectDictionary.Add(id, this);
 
-            capture = pclTouchEffect.Capture;
+            capture = libTouchEffect.Capture;
             break;
 
 ```
@@ -278,7 +278,7 @@ Entfernt das Element aus der `idToEffectDictionary` wann der Finger vom Bildschi
 void FireEvent(TouchEffect touchEffect, int id, TouchActionType actionType, Point pointerLocation, bool isInContact)
 {
     // Get the method to call for firing events
-    Action<Element, TouchActionEventArgs> onTouchAction = touchEffect.pclTouchEffect.OnTouchAction;
+    Action<Element, TouchActionEventArgs> onTouchAction = touchEffect.libTouchEffect.OnTouchAction;
 
     // Get the location of the pointer within the view
     touchEffect.view.GetLocationOnScreen(twoIntArray);

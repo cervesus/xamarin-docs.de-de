@@ -3,15 +3,14 @@ title: Plattformübergreifende Leistung
 description: Sie haben verschiedene Möglichkeiten, die Leistung von Anwendungen zu verbessern, die mit Xamarin.Android erstellt wurden. Wenn Sie diese Kniffe kombinieren, können Sie die CPU-Auslastung und die Speichermenge, die von einer Anwendung verwendet wird, erheblich reduzieren. In diesem Artikel werden die Techniken beschrieben und erläutert.
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 98b4b4a9e7bc28dd444cfdcb1afdfbe64cb1aee0
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: f011a92b4789da7328827f184449fd957abdf3ba
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="cross-platform-performance"></a>Plattformübergreifende Leistung
 
@@ -168,7 +167,7 @@ Das `handler`-Feld enthält den Verweis auf die anonyme Methode und dient zum Ab
 ## <a name="use-weak-references-to-prevent-immortal-objects"></a>Verwenden schwacher Verweise, um speicherresidente Objekte zu vermeiden
 
 > [!NOTE]
-> iOS-Entwickler sollten sich mit der Dokumentation zum [Vermeiden von Zirkelbezügen in iOS](~/ios/deploy-test/performance.md#avoidcircularreferences) vertraut machen, um sicherzustellen, dass ihre Apps Speicher effizient verwenden.
+> iOS-Entwickler sollten sich mit der Dokumentation zum [Vermeiden von Zirkelbezügen in iOS](~/ios/deploy-test/performance.md#avoid-strong-circular-references) vertraut machen, um sicherzustellen, dass ihre Apps Speicher effizient verwenden.
 
 <a name="lazy" />
 

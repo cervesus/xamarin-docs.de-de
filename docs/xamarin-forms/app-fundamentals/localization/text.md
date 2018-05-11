@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: cf0e7cab0c879f8fb286c87b2aaadab2dc1453f8
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: eaa57e90ef71f13a53737aa6540e5b5bd9126ad2
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="localization"></a>Lokalisierung
 
@@ -32,7 +32,7 @@ Es gibt zwei Beispiele, die mit diesem Dokument verbundene:
 
 Das TodoLocalized-Beispiel enthält eine [freigegebenes Projekt Demo](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized/SharedProject/) jedoch aufgrund der Einschränkungen des Buildsystems die Ressourcendateien nicht erhalten eine **. designer.cs** generierte Datei, den Zugriff auf unterbricht, übersetzte Zeichenfolgen im Code stark typisiert.
 
-Im weiteren Verlauf dieses Dokuments bezieht sich auf Projekte mithilfe der Xamarin.Forms PCL-Vorlage.
+Im weiteren Verlauf dieses Dokuments bezieht sich auf Projekte, die mit Xamarin.Forms .NET Standard Bibliotheksvorlage.
 
 ## <a name="globalizing-xamarinforms-code"></a>Globalisieren von Xamarin.Forms-Code
 
@@ -46,7 +46,7 @@ Die Beispiele sind als Ziel für Englisch, Französisch, Spanisch, Deutsch, Chin
 
 ### <a name="adding-resources"></a>Hinzufügen von Ressourcen
 
-Der erste Schritt beim Globalisieren einer Xamarin.Forms-PCL-Anwendung besteht die RESX-Ressourcendateien hinzuzufügen, die zum Speichern von des verwendeten Texts in der app verwendet werden. Wir müssen eine RESX-Datei, die den Standardtext enthält, hinzufügen und dann zusätzliche RESX-Dateien für jede Sprache, die wir unterstützen möchten.
+Der erste Schritt bei der Globalisierung Xamarin.Forms .NET Standard Library-Anwendung besteht die RESX-Ressourcendateien hinzuzufügen, die zum Speichern von des verwendeten Texts in der app verwendet werden. Wir müssen eine RESX-Datei, die den Standardtext enthält, hinzufügen und dann zusätzliche RESX-Dateien für jede Sprache, die wir unterstützen möchten.
 
 #### <a name="base-language-resource"></a>Basissprache Ressource
 
@@ -98,7 +98,7 @@ Die stark typisierte Zeichenfolgeneigenschaften vornehmen `public`, müssen Sie 
 
 -----
 
-Diese Änderung ist optional, und ist nur erforderlich, wenn Sie lokalisierte Zeichenfolgen in anderen Assemblys zu verweisen (z. B., wenn Sie die RESX-Dateien in einer anderen Assembly in den Code einfügen) möchten. Das Beispiel in diesem Thema bewirkt, dass die Zeichenfolgen `internal` , da sie in der gleichen Xamarin.Forms PCL-Assembly definiert sind, in denen sie verwendet werden.
+Diese Änderung ist optional, und ist nur erforderlich, wenn Sie lokalisierte Zeichenfolgen in anderen Assemblys zu verweisen (z. B., wenn Sie die RESX-Dateien in einer anderen Assembly in den Code einfügen) möchten. Das Beispiel in diesem Thema bewirkt, dass die Zeichenfolgen `internal` , da sie in der gleichen Assembly mit Xamarin.Forms .NET Standard-Bibliothek definiert sind, in denen sie verwendet werden.
 
 Sie müssen nur die benutzerdefinierten Tools auf der Basis RESX-Datei festlegen, wie oben gezeigt; Sie müssen nicht festlegen *alle* Buildtool auf den sprachspezifischen RESX-Dateien in den folgenden Abschnitten erläutert.
 
@@ -559,7 +559,7 @@ Projekte der universellen Windows-Plattform (UWP) sind keine Abhängigkeitsdiens
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 
-Erweitern Sie den Knoten "Eigenschaften" im Projekt Portable Klassenbibliothek (PCL), und doppelklicken Sie auf die **AssemblyInfo.cs** Datei. Fügen Sie die folgende Zeile zu der Datei, die kulturneutralen Ressourcen Assemblysprache auf Englisch festlegen:
+Erweitern Sie den Knoten "Eigenschaften" in der .NET Standard-Bibliotheksprojekt, und doppelklicken Sie auf die **AssemblyInfo.cs** Datei. Fügen Sie die folgende Zeile zu der Datei, die kulturneutralen Ressourcen Assemblysprache auf Englisch festlegen:
 
 ```csharp
 [assembly: NeutralResourcesLanguage("en")]

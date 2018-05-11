@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: 43b021b158bbb815ab8d27c393f54e0775599940
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: b394c64fe6e2bfb9e5e7ee0e00d8c0366d6bd93e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>Einführung in benutzerdefinierte Renderer
 
@@ -51,7 +51,7 @@ Die `MyEntry` -Steuerelement ist ein `Entry` steuern, wo die `BackgroundColor` a
 Die `local` Namespacepräfix kann alles sein. Allerdings die `namespace` und `assembly` Werte müssen die Details des benutzerdefinierten Steuerelements übereinstimmen. Nach der Namespace deklariert ist, wird das Präfix verwendet, auf das benutzerdefinierte Steuerelement verweisen.
 
 > [!NOTE]
-> Definieren der `xmlns` ist deutlich einfacher in PCLs als freigegebene Projekte. Eine PCL wird in eine Assembly kompiliert, daher ist es einfach zu bestimmen, welche die `assembly=CustomRenderer` Wert sein soll. Bei Verwendung von freigegebenen Projekten werden alle freigegebenen Ressourcen (einschließlich des XAML-Codes) kompiliert, in jede der verweisenden-Projekten; Dies bedeutet, dass bei iOS, Android und uwp-Projekte verfügen über eigene *Assemblynamen* unmöglich ist, schreiben die `xmlns` Deklaration, da der Wert für jede Anwendung unterschiedlich sein muss. Benutzerdefinierte Steuerelemente in XAML für freigegebene Projekte erfordern alle Anwendungsprojekt mit demselben Namen konfiguriert werden.
+> Definieren der `xmlns` ist deutlich einfacher in standardmäßigen .NET Library-Projekte als freigegebene Projekte. Eine .NET Standardbibliothek wird in eine Assembly kompiliert, daher ist es einfach zu bestimmen, welche die `assembly=CustomRenderer` Wert sein soll. Bei Verwendung von freigegebenen Projekten werden alle freigegebenen Ressourcen (einschließlich des XAML-Codes) kompiliert, in jede der verweisenden-Projekten; Dies bedeutet, dass bei iOS, Android und uwp-Projekte verfügen über eigene *Assemblynamen* unmöglich ist, schreiben die `xmlns` Deklaration, da der Wert für jede Anwendung unterschiedlich sein muss. Benutzerdefinierte Steuerelemente in XAML für freigegebene Projekte erfordern alle Anwendungsprojekt mit demselben Namen konfiguriert werden.
 
 Die `MyEntry` benutzerdefiniertes Steuerelement wird dann für jede Plattform, mit einem grauen Hintergrund gerendert, wie in den folgenden Screenshots dargestellt:
 
@@ -74,7 +74,7 @@ Die Themen in dieser Serie bieten Demonstrationen und erläuterungen zu den von 
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
-Wenn ein benutzerdefiniertes Steuerelement in einer PCL-Projekt enthalten sind, die der Projektmappe (d. h. nicht der PCL durch den Visual Studio für Mac/Visual Studio Xamarin.Forms-App-Projektvorlage erstellt) hinzugefügt wurde, kann eine Ausnahme in iOS-auftreten, bei dem Versuch, das benutzerdefinierte Steuerelement zugreifen. Wenn dieses Problem tritt auf, es kann aufgelöst werden, erstellen Sie einen Verweis auf das benutzerdefinierte Steuerelement aus der `AppDelegate` Klasse:
+Wenn ein benutzerdefiniertes Steuerelement, in enthalten ist ein .NET Standard-Bibliotheksprojekt, das der Projektmappe (d. h. nicht die .NET Standardbibliothek durch den Visual Studio für Mac/Visual Studio Xamarin.Forms-App-Projektvorlage erstellt), eine Ausnahme hinzugefügt wurde in iOS-auftreten bei Es wird versucht, auf das benutzerdefinierte Steuerelement. Wenn dieses Problem tritt auf, es kann aufgelöst werden, erstellen Sie einen Verweis auf das benutzerdefinierte Steuerelement aus der `AppDelegate` Klasse:
 
 ```csharp
 var temp = new ClassInPCL(); // in AppDelegate, but temp not used anywhere

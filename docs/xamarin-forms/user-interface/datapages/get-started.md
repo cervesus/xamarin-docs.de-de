@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d06c3f95f55edb4870279bfc7d5326be4af4b3bc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5774d91dad7b733a03219dcce1434798f70d4564
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="getting-started-with-datapages"></a>Erste Schritte mit DataPages
 
@@ -26,7 +26,7 @@ Zunächst erstellen eine einfache Datenlaufwerk-Seite in der Vorschau DataPages,
 
 ## <a name="1-add-nuget-packages"></a>1. Hinzufügen von NuGet-Paketen
 
-Fügen Sie diese NuGet-Pakete auf Ihre Xamarin.Forms PCL und Anwendungsprojekte hinzu:
+Fügen Sie diese NuGet-Pakete zu Xamarin.Forms .NET Standard Bibliotheks- und Projekten:
 
 * Xamarin.Forms.Pages
 * Xamarin.Forms.Theme.Base
@@ -54,7 +54,7 @@ In der **App.xaml** Datei, eine benutzerdefinierte `xmlns:mytheme` für das Desi
 
 Fügen Sie eine neue XAML-Seite für die Anwendung Xamarin.Forms und *ändern Sie die Basisklasse* aus `ContentPage` auf `Xamarin.Forms.Pages.ListDataPage`. Dies muss erfolgen, in der C#- und der XAML-Code:
 
-**C# file**
+**C#-Datei**
 
 ```csharp
 public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was ContentPage
@@ -135,7 +135,7 @@ Die oben genannten Schritte sollten dazu führen, dass eine Datenseite arbeiten:
 
 [![](get-started-images/demo-sml.png "DataPages-Beispielanwendung")](get-started-images/demo.png#lightbox "DataPages-Beispielanwendung")
 
-Dies funktioniert, da die vorgefertigten Stil **"Ereignisse"** in das helle Design NuGet-Paket vorhanden und verfügt über definierte Formatvorlagen, die mit die Datenquelle (z. b. "title", "image", "presenter").
+Dies funktioniert, da die vorgefertigten Stil **"Ereignisse"** in das helle Design NuGet-Paket vorhanden und verfügt über definierte Formatvorlagen, die mit die Datenquelle (z. b. "Title", "Image", "Vortragende").
 
 Die "Ereignisse" `StyleClass` wird erstellt, um die Anzeige der `ListDataPage` Steuerelement mit einem benutzerdefinierten `CardView` steuern, d. h. im definierten Xamarin.Forms.Pages. Die `CardView` Steuerelement verfügt über drei Eigenschaften: `ImageSource`, `Text`, und `Detail`. Das Design ist hartcodiert der Datasource drei Felder (aus der JSON-Datei) auf diese Eigenschaften für die Anzeige zu binden.
 

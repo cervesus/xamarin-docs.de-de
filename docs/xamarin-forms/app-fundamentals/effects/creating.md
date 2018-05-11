@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 6138bd1f9211248b3a260795c2ef9d3db87580be
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 12b8906dd4562e58dede181e773e4046b8434214
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-an-effect"></a>Erstellen eines Effekts
 
@@ -188,7 +188,7 @@ Die `OnAttached` Methode legt die `Background` Eigenschaft des Steuerelements Zy
 
 ## <a name="consuming-the-effect"></a>Nutzen die Auswirkung
 
-Der Prozess für die Nutzung eines Effekts aus einer Xamarin.Forms Portable Klassenbibliothek (PCL) oder Shared-Bibliotheksprojekt lautet wie folgt:
+Der Prozess für die Nutzung eines Effekts aus einer Xamarin.Forms .NET Standardbibliothek oder gemeinsam genutzte Bibliothek Projekt lautet wie folgt:
 
 1. Deklarieren Sie ein Steuerelement, das den Effekt angepasst werden.
 1. Fügen Sie die Auswirkungen auf das Steuerelement, indem Sie des Steuerelements hinzugefügt [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) Auflistung.
@@ -209,7 +209,7 @@ Das folgende Beispiel zeigt für die Verwendung von XAML-Code ein [ `Entry` ](ht
 </Entry>
 ```
 
-Die `FocusEffect` Klasse in der PCL unterstützt Sie Verbrauch Effekt in XAML und wird im folgenden Codebeispiel gezeigt:
+Die `FocusEffect` Klasse in der Standardbibliothek .NET unterstützt Sie Verbrauch Effekt in XAML und wird im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public class FocusEffect : RoutingEffect

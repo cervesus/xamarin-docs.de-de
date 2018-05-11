@@ -6,12 +6,12 @@ ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/26/2018
-ms.openlocfilehash: f5c05ce308a10747ad3e18e4a1d141d29fd6c8a1
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 05/03/2018
+ms.openlocfilehash: 6a0107ec11955f99c62a6f59f9bf82291dee9224
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms-Schnellstart
 
@@ -33,7 +33,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
 
 3. Klicken Sie im Dialogfeld **Neues Projekt** auf **Plattformübergreifend**, wählen Sie die Vorlage **Mobile App (Xamarin.Forms)** aus, geben Sie für „Name“ und „Projektmappenname“ `Phoneword` ein, wählen Sie einen geeigneten Speicherort für das Projekt aus, und klicken Sie auf **OK**:
 
-    ![](quickstart-images/vs/new-project.png "Plattformübergreifende Projektvorlagen")
+    ![](quickstart-images/vs/new-project.w157.png "Plattformübergreifende Projektvorlagen")
 
 4. Klicken Sie im Dialogfeld **New Cross Platform App** (Neue plattformübergreifende App) auf **Leere App**, wählen Sie **.NET Standard** als Strategie für die Codefreigabe aus, und klicken Sie auf **OK**:
 
@@ -168,7 +168,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
 
 12. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Visual C# > Code > Klasse**, nennen Sie die neue Datei **PhoneTranslator**, und klicken Sie auf **Hinzufügen**:
 
-    ![](quickstart-images/vs/add-translator-class.png "Neue Klasse hinzufügen")
+    ![](quickstart-images/vs/add-translator-class.w157.png "Neue Klasse hinzufügen")
 
 13. Entfernen Sie in **PhoneTranslator.cs** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden. Mit diesem Code wird eine Buchstabenwahl in eine Rufnummer übersetzt:
 
@@ -234,7 +234,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
 
 15. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Visual C# > Code > Schnittstelle**, nennen Sie die neue Datei **IDialer**, und klicken Sie auf **Hinzufügen**:
 
-    ![](quickstart-images/vs/add-idialer-interface.png "Neue Schnittstelle hinzufügen")
+    ![](quickstart-images/vs/add-idialer-interface.w157.png "Neue Schnittstelle hinzufügen")
 
 16. Entfernen Sie in **IDialer.cs** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden. Dieser Code definiert eine `Dial`-Methode, die auf jeder Plattform implementiert werden muss, um eine übersetzte Telefonnummer zu wählen:
 
@@ -257,9 +257,9 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
 
     ![](quickstart-images/vs/add-new-item-ios.png "Neues Element hinzufügen")
 
-18. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Apple > Code > Klasse**, nennen Sie die neue Datei **PhoneDialer**, und klicken Sie auf **Hinzufügen**:
+18. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Visual C# > Code > Klasse**, nennen Sie die neue Datei **PhoneDialer**, und klicken Sie auf **Hinzufügen**:
 
-    ![](quickstart-images/vs/new-phone-dialer-ios.png "Neue Klasse hinzufügen")
+    ![](quickstart-images/vs/new-phone-dialer-ios.w157.png "Neue Klasse hinzufügen")
 
 19. Entfernen Sie in **PhoneDialer.cs** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden. Dieser Code erstellt die Methode <code>Dial</code>, die auf der iOS-Plattform für die Anwahl übersetzter Telefonnummern verwendet wird:
 
@@ -291,7 +291,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
 
 21. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Visual C# > Android > Klasse**, nennen Sie die neue Datei **PhoneDialer**, und klicken Sie auf **Hinzufügen**:
 
-    ![](quickstart-images/vs/new-phone-dialer-android.png "Neue Klasse hinzufügen")
+    ![](quickstart-images/vs/new-phone-dialer-android.w157.png "Neue Klasse hinzufügen")
 
 22. Entfernen Sie in **PhoneDialer.cs** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden. Dieser Code erstellt die Methode `Dial`, die auf der Android-Plattform für die Anwahl übersetzter Telefonnummern verwendet wird:
 
@@ -391,7 +391,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
 
 27. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Visual C# > Code > Klasse**, nennen Sie die neue Datei **PhoneDialer**, und klicken Sie auf **Hinzufügen**:
 
-    ![](quickstart-images/vs/new-phone-dialer-uwp.png "Neue Klasse hinzufügen")
+    ![](quickstart-images/vs/new-phone-dialer-uwp.w157.png "Neue Klasse hinzufügen")
 
 28. Entfernen Sie in **PhoneDialer.cs** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden. Dieser Code erstellt die Methode `Dial` und Hilfsmethoden, die auf der universellen Windows-Plattform für die Anwahl übersetzter Telefonnummern verwendet werden:
 
@@ -523,7 +523,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, UWP" Value="20" />
+                <On Platform="Android, WinPhone, Windows" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -630,7 +630,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
     }
     ```
 
-    Speichern Sie die Änderungen an **App.xaml.cs**, indem Sie auf **Datei > Speichern** klicken (oder indem Sie **&#8984;+S** drücken), und schließen Sie die Datei.
+    Speichern Sie die Änderungen an **Phoneword.cs**, indem Sie auf **Datei > Speichern** klicken (oder indem Sie **&#8984;+S** drücken), und schließen Sie die Datei.
 
 13. Wählen Sie im **Lösungspad** das Projekt **Phoneword** aus, klicken Sie mit der rechten Maustaste darauf, und klicken Sie auf **Hinzufügen > Neue Datei…**:
 

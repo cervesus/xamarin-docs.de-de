@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 46284fd1b0863f904e9f24f125aef75fe3eb8caa
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c3a79947b02e0f877fd4ea1b0ddb72486c222719
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="native-views-in-c"></a>Systemeigene Ansichten in c#
 
@@ -19,7 +19,7 @@ _Systemeigene Ansichten von iOS-, Android- und uwp-können direkt von Xamarin.Fo
 
 ## <a name="overview"></a>Übersicht
 
-Jedes Xamarin.Forms-Steuerelement, das ermöglicht `Content` , um die festgelegt werden, oder mit einer `Children` Auflistung können plattformspezifische Ansichten hinzufügen. Z. B. eine iOS `UILabel` können nicht direkt hinzugefügt werden die [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) -Eigenschaft, oder auf die [ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) Auflistung. Beachten Sie jedoch, dass diese Funktionalität über die Verwendung von erfordert `#if` in Xamarin.Forms freigegebenes Projekt Projektmappen definiert und von Xamarin.Forms Portable Klassenbibliothek (PCL)-Projektmappen verfügbar ist.
+Jedes Xamarin.Forms-Steuerelement, das ermöglicht `Content` , um die festgelegt werden, oder mit einer `Children` Auflistung können plattformspezifische Ansichten hinzufügen. Z. B. eine iOS `UILabel` können nicht direkt hinzugefügt werden die [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) -Eigenschaft, oder auf die [ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) Auflistung. Beachten Sie jedoch, dass diese Funktionalität über die Verwendung von erfordert `#if` in Xamarin.Forms freigegebenes Projekt Projektmappen definiert und von Xamarin.Forms .NET Bibliothek Standardlösungen verfügbar ist.
 
 Führen Sie den folgenden Screenshots vor plattformspezifische Ansichten hinzugefügt, um eine Xamarin.Forms [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/):
 

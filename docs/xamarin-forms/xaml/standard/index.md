@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
-ms.openlocfilehash: 7cb2a79fffda40f09ee75a12d6287b162566741d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b16d146c5ad1097f38c41763a3ae111e7439256f
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="xaml-standard-preview"></a>Verwendung von XAML-Standard (Vorschau)
 
@@ -22,7 +22,7 @@ Führen Sie diese Schritte aus, um die Verwendung von XAML-Standard in Xamarin.F
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Herunterladen der [hier NuGet-Paket in der Vorschau anzeigen](https://aka.ms/xf-xamlstandard-nuget).
-2. Hinzufügen der **Xamarin.Forms.Alias** NuGet-Paket zu Projekten Xamarin.Forms PCL, .NET Standard- und Plattform.
+2. Hinzufügen der **Xamarin.Forms.Alias** NuGet-Paket zu Projekten Xamarin.Forms .NET Standard und Plattform.
 3. Initialisieren Sie das Paket mit `Alias.Init()`
 4. Hinzufügen einer `xmlns:a` Verweis `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
 5. Verwenden Sie die Typen in XAML - finden Sie unter der [steuert Verweis](controls.md) für Weitere Informationen.
@@ -30,7 +30,7 @@ Führen Sie diese Schritte aus, um die Verwendung von XAML-Standard in Xamarin.F
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 1. Herunterladen der [hier NuGet-Paket in der Vorschau anzeigen](https://aka.ms/xf-xamlstandard-nuget).
-2. Hinzufügen der **Xamarin.Forms.Alias** NuGet-Paket zu Projekten Xamarin.Forms PCL, .NET Standard- und Plattform.
+2. Hinzufügen der **Xamarin.Forms.Alias** NuGet-Paket zu Projekten Xamarin.Forms .NET Standard und Plattform.
 3. Initialisieren Sie das Paket mit `Alias.Init()`
 4. Hinzufügen einer `xmlns:a` Verweis `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
 5. Verwenden Sie die Typen in XAML - finden Sie unter der [steuert Verweis](controls.md) für Weitere Informationen.

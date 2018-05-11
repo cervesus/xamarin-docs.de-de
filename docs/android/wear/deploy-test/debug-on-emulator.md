@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: cf1b586c8e30b2922251104461d9ca7100b8e74e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3dda1445815f747f484458388cd856c2f9705603
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Debuggen von Android Abnutzung in einem Emulator
 
@@ -21,9 +21,9 @@ _Dieser Artikel wird erläutert, wie Debuggen einer Anwendung Xamarin.Android Ab
 
 Anwendungsentwicklung Android Dach erfordert die Anwendung ausführen, entweder auf physischer Hardware oder einem Emulator oder Simulator verwenden. Die beste, aber nicht immer zweckmäßigste, Herangehensweise ist die Verwendung von Hardware. In vielen Fällen kann es einfacher und kostengünstiger simulieren/Android Dach Hardware verwenden einen Emulator aus, wie unten beschrieben zu emulieren. Wenn Sie noch nicht vertraut sind, mit der Prozess der Bereitstellung und Ausführung von Dach Android-apps finden Sie unter [Hallo, Abnutzung](~/android/wear/get-started/hello-wear.md).
 
-## <a name="configure-the-android-sdk-emulator"></a>Konfigurieren von Android SDK-Emulator
+## <a name="configure-the-google-android-emulator"></a>Konfigurieren des Google Android-Emulators
 
-Um Ihre Abnutzung-app in einem Emulator auszuführen, müssen Sie installieren den Android SDK-Android-Emulator und für Android Dach zu konfigurieren. Allgemeine Android SDK-Emulator Installations- und Konfigurationsschritte Informationen finden Sie unter [Android SDK-Emulator](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Um Ihre Abnutzung-app in einem Emulator auszuführen, müssen Sie installieren den Android SDK-Android-Emulator und für Android Dach zu konfigurieren. Allgemeine Android SDK-Emulator Installations- und Konfigurationsschritte Informationen finden Sie unter [Google Android-Emulator](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
 
 Wenn Sie ein Abnutzung virtuelles Gerät erstellen, wählen Sie ein Android Dach Geräteprofil (z. B. **Android Abnutzung Quadrat**). Verwenden Sie zum Verbessern der Leistung der Abnutzung **X86** CPU/ABI wie in diesem Beispiel dargestellt:
 
@@ -47,4 +47,4 @@ Beim Ausführen der App muss der Emulator nicht jedes Mal beendet und anschließ
  
 ## <a name="summary"></a>Zusammenfassung
  
-Diese Anleitung wird erläutert, wie zum Konfigurieren von Android SDK-Emulator für die Entwicklung von Abnutzung und ein Abnutzung virtuelles Gerät für das Debuggen zu starten.
+Diese Anleitung wird erläutert, wie zum Konfigurieren von Google Android-Emulator für die Entwicklung von Abnutzung und ein Abnutzung virtuelles Gerät für das Debuggen zu starten.

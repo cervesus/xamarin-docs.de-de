@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 6dbad7352a089f482fa3a396505507da58771cef
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 24e7f29e42607d4a2c957cf85dad15f659d3618e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="native-views-in-xaml"></a>Systemeigene Ansichten in XAML
 
@@ -74,7 +74,7 @@ Bindbare Eigenschaften und angefügte bindbare Eigenschaften können auch festge
 Android Widget Konstruktoren erfordern in der Regel die Android `Context` -Objekt als Argument, wodurch sich über eine statische Eigenschaft in erfolgen kann die `MainActivity` Klasse. Daher, beim Erstellen von Android-Widget in XAML, die `Context` Objekt muss im Allgemeinen um das Widget-Konstruktor übergeben werden mithilfe der `x:Arguments` -Attribut mit einer `x:Static` Markuperweiterung. Weitere Informationen finden Sie unter [übergeben von Argumenten mit systemeigenen Ansichten](#passing_arguments).
 
 > [!NOTE]
-> Beachten Sie, diese Benennen einer Ansicht mit systemeigenen mit `x:Name` ist nicht möglich, in eine Portable Klassenbibliothek (PCL)-Projekt oder eine freigegebene Asset-Projekt (SAP). Auf diese Weise eine Variable des systemeigenen Typs generiert einen Kompilierungsfehler. Allerdings können systemeigene Ansichten umschlossen werden, `ContentView` Instanzen und in die CodeBehind-Datei abgerufen werden, vorausgesetzt, dass eine SAP verwendet wird. Weitere Informationen finden Sie unter [verweisen auf eine Ansicht mit systemeigenen Code](#native_view_code).
+> Beachten Sie, diese Benennen einer Ansicht mit systemeigenen mit `x:Name` ist nicht möglich, in ein Standard .NET Library-Projekt oder eine freigegebene Asset-Projekt (SAP). Auf diese Weise eine Variable des systemeigenen Typs generiert einen Kompilierungsfehler. Allerdings können systemeigene Ansichten umschlossen werden, `ContentView` Instanzen und in die CodeBehind-Datei abgerufen werden, vorausgesetzt, dass eine SAP verwendet wird. Weitere Informationen finden Sie unter [verweisen auf eine Ansicht mit systemeigenen Code](#native_view_code).
 
 <a name="native_bindings" />
 
@@ -285,7 +285,7 @@ IOS- und Android native Schaltfläche verwenden dieselbe `OnButtonTap` Ereignish
 
 ## <a name="subclassing-native-views"></a>Erstellen von Unterklassen für systemeigenen Ansichten
 
-Viele IOS- und Android native Sichten sind nicht geeignet für in XAML instanziiert werden, da sie statt Eigenschaften, Methoden zum Einrichten des Steuerelements verwenden. Die Lösung für dieses Problem besteht darin Unterklasse systemeigenen Ansichten in Wrappern, die eine weitere Verwendung von XAML-benutzerfreundliche API, die Eigenschaften verwendet, um setup für das Steuerelement, und, plattformunabhängige Ereignisse verwendet, definieren. Die umschlossenen systemeigenen Ansichten können dann werden in einer freigegebenen Asset Projekt (SAP) platziert und umgeben mit bedingten Kompilierungsdirektiven, oder in plattformspezifischen Projekte und aus XAML in einem Projekt der portablen Klassenbibliothek (PCL) verwiesen.
+Viele IOS- und Android native Sichten sind nicht geeignet für in XAML instanziiert werden, da sie statt Eigenschaften, Methoden zum Einrichten des Steuerelements verwenden. Die Lösung für dieses Problem besteht darin Unterklasse systemeigenen Ansichten in Wrappern, die eine weitere Verwendung von XAML-benutzerfreundliche API, die Eigenschaften verwendet, um setup für das Steuerelement, und, plattformunabhängige Ereignisse verwendet, definieren. Die umschlossenen systemeigenen Ansichten können dann werden in einer freigegebenen Asset Projekt (SAP) platziert und umgeben mit bedingten Kompilierungsdirektiven, oder in plattformspezifischen Projekte und aus XAML in .NET Standard-Bibliotheksprojekt verwiesen.
 
 Im folgenden Codebeispiel wird veranschaulicht, dass eine Xamarin.Forms-Seite, die verbraucht systemeigene Ansichten als Unterklasse:
 

@@ -7,11 +7,11 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: 95c023d702d165b7a8a0ba392b2f87af58bfae07
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 6180eb61e7850b7739c5514461796fb0aacbc4ff
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="finger-painting"></a>Finger Paint-Ereignisse
 
@@ -23,7 +23,7 @@ Ein `SKPath` Objekt ständig aktualisiert und angezeigt werden kann. Dieses Feat
 
 Touch-Unterstützung in Xamarin.Forms lässt nicht zu einzelnen Finger auf dem Bildschirm nachverfolgen, damit Sie eine Xamarin.Forms-Touch-Überwachung Auswirkung entwickelt wurde, um zusätzliche Touch-Unterstützung bereitzustellen. Dieser Effekt wird im Artikel beschriebenen [ **Aufrufen Ereignisse von Auswirkungen**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md). Das Beispielprogramm [ **Touch-Tracking Auswirkungen Demos** ](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/) enthält zwei Seiten, die SkiaSharp, einschließlich finger-painting Programm verwenden.
 
-Die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Lösung umfasst dieses Touch-Tracking-Ereignis. Das Portable Class Library-Projekt enthält die `TouchEffect` -Klasse, die `TouchActionType` -Enumeration, die `TouchActionEventHandler` zu delegieren, und die `TouchActionEventArgs` Klasse. Plattformprojekte enthalten eine `TouchEffect` für diese Plattform-Klasse; das iOS-Projekt enthält außerdem eine `TouchRecognizer` Klasse.
+Die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Lösung umfasst dieses Touch-Tracking-Ereignis. .NET Standard-Bibliotheksprojekt enthält die `TouchEffect` -Klasse, die `TouchActionType` -Enumeration, die `TouchActionEventHandler` zu delegieren, und die `TouchActionEventArgs` Klasse. Plattformprojekte enthalten eine `TouchEffect` für diese Plattform-Klasse; das iOS-Projekt enthält außerdem eine `TouchRecognizer` Klasse.
 
 Die **Finger Paint** auf der Seite **SkiaSharpFormsDemos** ist eine vereinfachte Finger zeichnen-Implementierung. Nicht zulassen Farbe auswählen oder Breite mit Strichen zu zeichnen, es wurde keine Möglichkeit zum Löschen des Zeichenbereichs, und Sie können nicht natürlich Bildmaterial speichern.
 

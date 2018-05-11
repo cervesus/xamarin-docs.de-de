@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 7b859dd58551675c121c5600ba9c691e4280a03b
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 805b27139d644d0fac4a7c5a9e9b2c2c331d7130
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-effects"></a>Einführung in die Effekte
 
@@ -21,7 +21,7 @@ Xamarin.Forms [Seiten, Layouts und Steuerelemente](~/xamarin-forms/user-interfac
 
 Entwickler können ihre eigenen benutzerdefinierten `Renderer`-Klassen implementieren, um die Darstellung und/oder das Verhalten eines Steuerelements anzupassen. Allerdings ist die Implementierung einer benutzerdefinierten Renderer-Klasse, um ein einfaches Steuerelement durchführen häufig eine Heavyweight-Antwort. Effekte vereinfachen dieses Vorgangs ermöglicht die systemeigene Steuerelemente für jede Plattform einfacher angepasst werden.
 
-Effekte werden in plattformspezifischen Projekte erstellt, durch die Erstellung von Unterklassen von der `PlatformEffect` -Steuerelement, und klicken Sie dann die Auswirkungen von Zuordnen eines entsprechenden Steuerelements in einem Projekt Xamarin.Forms Portable Klassenbibliothek (PCL) oder gemeinsam genutzte Bibliothek genutzt werden.
+Effekte werden in plattformspezifischen Projekte erstellt, durch die Erstellung von Unterklassen von der `PlatformEffect` -Steuerelement, und klicken Sie dann die Auswirkungen von Anfügen an eine entsprechende Steuerelement in einem Xamarin.Forms .NET Standardbibliothek oder gemeinsam genutzte Bibliothek-Projekt genutzt werden.
 
 ## <a name="why-use-an-effect-over-a-custom-renderer"></a>Gründe für die Nutzung eines Effekts über eines benutzerdefinierten Renderers
 

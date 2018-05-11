@@ -3,15 +3,14 @@ title: Einführung in den Lebenszyklus der mobilen Softwareentwicklung
 description: In diesem Artikel wird der Lebenszyklus der Softwareentwicklung in Bezug auf mobile Anwendungen beschrieben und einige der Überlegungen erläutert, die zum Erstellen mobiler Projekte erforderlich sind. Entwickler, die direkt einsteigen und mit dem Erstellen von Anwendungen beginnen möchten, können diesen Leitfaden überspringen und später für ein breiteres Verständnis der mobilen Entwicklung weiterlesen.
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: c49723038870b7b222bdada7823f1571c5d89d9e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c93a063c9c933e1b9f397d172115471473cf8f35
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Einführung in den Lebenszyklus der mobilen Softwareentwicklung
 
@@ -84,7 +83,7 @@ Beim Erstellen von UX-Modellen ist es wichtig, die Richtlinien für die Benutzer
 
 Beispielsweise verfügt jede App über eine Metapher, über die man zwischen den einzelnen Abschnitten einer Anwendung wechseln kann. Bei iOS ist die Registerkartenleiste im unteren Bereich des Bildschirms platziert, bei Android im oberen Bereich, während bei UWP eine Ansicht mit [Pivots und Registerkarten](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot) verwendet wird.
 
-Zudem werden UX-Entscheidungen von der Hardware an sich beeinflusst. Beispielsweise haben iOS-Geräte keine physische *Zurück-*Taste, weshalb Sie die Metapher Navigation Controller (Navigationscontroller) einfügen sollten.
+Zudem werden UX-Entscheidungen von der Hardware an sich beeinflusst. Beispielsweise haben iOS-Geräte keine physische *Zurück-* Taste, weshalb Sie die Metapher Navigation Controller (Navigationscontroller) einfügen sollten.
 
  ![](introduction-to-mobile-sdlc-images/01-navigation-controller.png "iOS-Geräte haben keine physische Zurück-Taste, weshalb Sie die Metapher „Navigation Controller“ (Navigationscontroller) einfügen")
 

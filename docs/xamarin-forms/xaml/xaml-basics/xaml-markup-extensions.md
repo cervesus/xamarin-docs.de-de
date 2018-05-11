@@ -7,11 +7,11 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
-ms.openlocfilehash: 104a3adb5d59bc7feafa3c993290247b749ce312
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c110223eae2bb06f64adf3e09977d97cc7b5d71b
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Teil 3. Verwendung von XAML-Markuperweiterungen
 
@@ -386,13 +386,13 @@ xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-Sie benötigen zusätzliche XML-Namespacedeklaration auf andere Klassen zugreifen. Jede zusätzliche XML-Namespacedeklaration definiert ein neues Präfix. Klassen, die lokal auf die freigegebene Anwendung PCL, z. B. den Zugriff auf `AppConstants`, XAML-Programmierer verwenden häufig das Präfix `local`. Die Namespacedeklaration muss die CLR (Common Language Runtime)-Namespacenamen, auch bekannt als die .NET Namespacenamen, der der Name ist, die in einem C#-angezeigt angeben `namespace` Definition oder in einem `using` Richtlinie:
+Sie benötigen zusätzliche XML-Namespacedeklaration auf andere Klassen zugreifen. Jede zusätzliche XML-Namespacedeklaration definiert ein neues Präfix. Klassen, die lokal auf die freigegebene Anwendung .NET Standardbibliothek, z. B. den Zugriff auf `AppConstants`, XAML-Programmierer verwenden häufig das Präfix `local`. Die Namespacedeklaration muss die CLR (Common Language Runtime)-Namespacenamen, auch bekannt als die .NET Namespacenamen, der der Name ist, die in einem C#-angezeigt angeben `namespace` Definition oder in einem `using` Richtlinie:
 
 ```csharp
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-Sie können auch XML-Namespacedeklarationen für Namespaces von .NET definieren, die in jeder beliebigen Assembly, die die PCL verweist. Hier ist z. B. eine `sys` Präfix für den standardmäßigen .NET `System` -Namespace, der in der **"mscorlib"** -Assembly, die "Microsoft Common Runtime Objektbibliothek" einmal hatten, aber jetzt bedeutet "mehrsprachigen Standard Common Runtime Objektbibliothek." Da dies eine andere Assembly ist, müssen Sie auch angeben der Name der Assembly, in diesem Fall **"mscorlib"**:
+Sie können auch XML-Namespacedeklarationen für .NET-Namespaces definieren, die in jeder beliebigen Assembly, die den standardmäßigen .NET Bibliothek verweist. Hier ist z. B. eine `sys` Präfix für den standardmäßigen .NET `System` -Namespace, der in der **"mscorlib"** -Assembly, die "Microsoft Common Runtime Objektbibliothek" einmal hatten, aber jetzt bedeutet "mehrsprachigen Standard Common Runtime Objektbibliothek." Da dies eine andere Assembly ist, müssen Sie auch angeben der Name der Assembly, in diesem Fall **"mscorlib"**:
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=mscorlib"

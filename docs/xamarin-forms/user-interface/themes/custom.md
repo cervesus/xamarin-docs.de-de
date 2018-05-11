@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: b760f5e1d37f4bc8cc6af063552b974afa435d56
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: c9bc532902e9cfcc080220a05e41401e893783e4
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-a-custom-theme"></a>Erstellen ein benutzerdefiniertes Design
 
@@ -68,7 +68,7 @@ Der Code für diesen Effekt erhält-mit eine benutzerdefinierten ordnungsgemäß
 xmlns:local="clr-namespace:ThemesDemo;assembly=ThemesDemo"
 ```
 
-### <a name="c-code-in-the-pcl-or-shared-project"></a>C#-Code in der PCL oder ein freigegebenes Projekt
+### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>C#-Code in der .NET Standard-Steuerelementbibliothek-Projekt oder ein freigegebenes Projekt
 
 Der Code zum Erstellen einer Round-Ecke `BoxView` verwendet [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md).
 Die Eckradius mithilfe der angewendet wird eine `BindableProperty` und wird implementiert, durch Anwenden einer [wirksam](~/xamarin-forms/app-fundamentals/effects/index.md). Der Effekt erfordert plattformspezifischen Code in der [iOS](#ios) und [Android](#android) Projekte (siehe unten).

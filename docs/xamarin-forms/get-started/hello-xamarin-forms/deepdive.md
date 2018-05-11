@@ -6,12 +6,12 @@ ms.assetid: d97aa580-1eb9-48b3-b15b-0d7421ea7ae
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/06/2018
-ms.openlocfilehash: e254aa14f5889cee6b5bee452f5275fd579eb8fc
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 04/10/2018
+ms.openlocfilehash: 9bb368ca72909489ca267794035a4c4d0883f109
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="xamarinforms-deep-dive"></a>Ausführliche Erläuterungen zu Xamarin.Forms
 
@@ -54,7 +54,7 @@ Die Codeorganisation in Visual Studio für Mac baut auf Visual Studio auf und gl
 
 Diese Projekte sind folgende:
 
-- Phoneword: Dieses Projekt ist das portable Klassenbibliotheksprojekt (Portable Class Library, PCL), das den gesamten freigegebenen Code und die gesamte freigegebene Benutzeroberfläche enthält.
+- Phoneword: Dieses Projekt ist das .NET Standard-Klassenbibliotheksprojekt, das den gesamten freigegebenen Code und die gesamte freigegebene Benutzeroberfläche enthält.
 - Phoneword.Droid: Dieses Projekt enthält Android-spezifischen Code und ist der Einstiegspunkt für Android-Anwendungen.
 - Phoneword.iOS: Dieses Projekt enthält iOS-spezifischen Code und ist der Einstiegspunkt für iOS-Anwendungen.
 
@@ -94,7 +94,7 @@ Eine Xamarin.Forms-Anwendung ist genauso aufgebaut wie eine traditionelle plattf
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-Eine Xamarin.Forms-Anwendung ist genauso aufgebaut wie eine traditionelle plattformübergreifende Anwendung. Freigegebener Code wird in einer portablen Klassenbibliothek platziert, und plattformspezifische Anwendungen nutzen ihn. Die folgende Abbildung bietet für die Phoneword-Anwendung einen Überblick über diese Beziehung:
+Eine Xamarin.Forms-Anwendung ist genauso aufgebaut wie eine traditionelle plattformübergreifende Anwendung. Freigegebener Code wird in der Regel in einer .NET Standard-Bibliothek platziert und von plattformspezifischen Anwendungen genutzt. Die folgende Abbildung bietet für die Phoneword-Anwendung einen Überblick über diese Beziehung:
 
 ![](deepdive-images/xs/architecture.png "Phoneword-Architektur")
 

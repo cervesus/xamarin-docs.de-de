@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: a601e74cc274fd57bb2be9af3562b3a7290d7047
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 275ec851a2fd8e96adecfeca5daf6a66add7bd92
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="gtk-platform-setup"></a>GTK-Plattform-Setup
 
@@ -56,7 +56,7 @@ So fügen Sie einer GTK-app hinzu, die auf dem Windows-Desktop ausgeführt wird,
 
 6. In der **Projektmappen-Explorer**mit der rechten Maustaste auf den Namen der Projektmappe, und wählen Sie **NuGet-Pakete für Projektmappe verwalten**. Wählen Sie die **Update** Registerkarte und der **Xamarin.Forms** Paket. Alle Projekte auswählen und auf die gleiche Xamarin.Forms-Version vom das Projekt GTK verwendete zu aktualisieren.
 
-7. In der **Projektmappen-Explorer**, mit der rechten Maustaste auf **Verweise** im Projekt GTK. In der **Verweis-Manager** wählen Sie im Dialogfeld **Projekte** auf der linken und aktivieren Sie das Kontrollkästchen neben dem Projekt .NET Standard, PCL oder freigegeben:
+7. In der **Projektmappen-Explorer**, mit der rechten Maustaste auf **Verweise** im Projekt GTK. In der **Verweis-Manager** wählen Sie im Dialogfeld **Projekte** auf der linken und aktivieren Sie das Kontrollkästchen neben dem Projekt .NET Standard "oder" Shared ":
 
     ![Verweisen auf das freigegebene Projekt](gtk-images/win/reference-shared-project.png "verweisen auf das freigegebene Projekt")
 
@@ -129,7 +129,7 @@ Hinzufügen eine GTK-app, die auf dem Macintosh-Desktop ausgeführt wird, gehen 
 
 6. Aktualisieren Sie die anderen Plattformprojekte Verwendung die gleiche Xamarin.Forms-Version vom das Projekt GTK verwendete.
 
-7. In der **Lösung Pad**, mit der rechten Maustaste auf **Verweise > Verweise bearbeiten...**  für die GTK Projekt, und fügen Sie einen Verweis auf das Xamarin.Forms-Projekt (entweder Standard .NET, PCL oder freigegebenes Projekt) hinzu.
+7. In der **Lösung Pad**, mit der rechten Maustaste auf **Verweise > Verweise bearbeiten...**  für die GTK Projekt, und fügen Sie einen Verweis auf das Xamarin.Forms-Projekt (.NET Standard oder freigegebenes Projekt) hinzu.
 
     ![Verweisen auf das freigegebene Projekt](gtk-images/mac/reference-shared-project.png "verweisen auf das freigegebene Projekt")
 

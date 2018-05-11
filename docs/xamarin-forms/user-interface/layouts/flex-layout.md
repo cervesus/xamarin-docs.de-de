@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: bba5007acb54852b9427c57c26aba6358c4c5771
-ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
-ms.translationtype: HT
+ms.openlocfilehash: 7585138cd6c33c2a5dc537ba28101a84e1c4b7ae
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Die Xamarin.Forms-FlexLayout
 
@@ -24,11 +24,11 @@ Der Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) Neuigkeiten gi
 
 `FlexLayout` leitet sich von [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) und erbt einen [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) Eigenschaft vom Typ `IList<View>`.
 
-`FlexLayout` definiert sechs öffentliche bindbare Eigenschaften und fünf angefügte bindbare Eigenschaften. (Wenn Sie nicht mit angefügten bindbare Eigenschaften vertraut sind, finden Sie im Artikel  **[angefügte Eigenschaften](~/xamarin-forms/xaml/attached-properties.md)**.) Alle diese Eigenschaften werden in den folgenden Abschnitten ausführlich beschrieben, auf **[die sechs bindbaren Eigenschaften](#bindable-properties)** und **[die fünf angefügte bindbare Eigenschaften](#attached-properties)**. Allerdings in diesem Artikel beginnt mit einem Abschnitt auf einigen **[allgemeine Anwendungen](#common-applications)** von `FlexLayout` , viele dieser Eigenschaften informell beschreibt. Gegen Ende des Artikels, sehen Sie, wie Sie kombinieren `FlexLayout` mit [CSS-Stylesheets](~/xamarin-forms/user-interface/styles/css/index.md).
+`FlexLayout` definiert sechs öffentliche bindbare Eigenschaften und fünf angefügte bindbare Eigenschaften, die Auswirkungen auf die Größe, die Ausrichtung und die Ausrichtung der untergeordneten Elemente. (Wenn Sie nicht mit angefügten bindbare Eigenschaften vertraut sind, finden Sie im Artikel  **[angefügte Eigenschaften](~/xamarin-forms/xaml/attached-properties.md)**.) Diese Eigenschaften werden in den folgenden Abschnitten ausführlich beschrieben, auf **[die bindungsfähigen Eigenschaften im Detail](#bindable-properties)** und  **[bindbaren angefügten Eigenschaften im Detail](#attached-properties)**. Allerdings in diesem Artikel beginnt mit einem Abschnitt auf einigen **[allgemeine Verwendungsszenarien](#common-scenarios)** von `FlexLayout` , viele dieser Eigenschaften informell beschreibt. Gegen Ende des Artikels, sehen Sie, wie Sie kombinieren `FlexLayout` mit [CSS-Stylesheets](~/xamarin-forms/user-interface/styles/css/index.md).
 
-<a name="common-applications" />
+<a name="common-scenarios" />
 
-## <a name="common-applications"></a>Allgemeine Anwendung
+## <a name="common-usage-scenarios"></a>Allgemeine Verwendungsszenarios
 
 Die **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** Beispielprogramm enthält mehrere Seiten, einige allgemeine von Verwendungsmöglichkeiten, Demonstate `FlexLayout` und ermöglicht Ihnen das Experimentieren mit seinen Eigenschaften.
 
@@ -71,7 +71,7 @@ Drei Eigenschaften des `FlexLayout` in angezeigt werden, die **SimpleStackPage.x
 
 - Die [ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems) -Eigenschaft ist vom Typ [ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems) und gibt an, wie die Elemente auf der querachse ausgerichtet sind. Die `Center` Option bewirkt, dass jedes Element horizontal zentriert werden soll.
 
-    Bei Verwendung von wurden eine `StackLayout` anstelle eines `FlexLayout` für diese Aufgabe zentrieren Sie in diesem Fall alle Elemente durch Zuweisen der `HorizontalOptions` Eigenschaft jedes Elements um `Center`. Die `HorizontalOptions` Eigenschaft funktioniert nicht für untergeordnete Elemente des eine `FlexLayout`, aber dieser einzelnen `AlignItems` Eigenschaft wird das gleiche Ziel erreicht. Wenn Sie möchten, können Sie mithilfe der `AlignSelf` -bindbare Eigenschaft überschreiben die `AlignItems` Eigenschaft für einzelne Elemente:
+    Bei Verwendung von wurden eine `StackLayout` anstelle eines `FlexLayout` für diese Aufgabe zentrieren Sie in diesem Fall alle Elemente durch Zuweisen der `HorizontalOptions` Eigenschaft jedes Elements um `Center`. Die `HorizontalOptions` Eigenschaft funktioniert nicht für untergeordnete Elemente des eine `FlexLayout`, aber die einzelnen `AlignItems` Eigenschaft wird das gleiche Ziel erreicht. Wenn Sie möchten, können Sie mithilfe der `AlignSelf` -bindbare Eigenschaft überschreiben die `AlignItems` Eigenschaft für einzelne Elemente:
 
     ```xaml
     <Label Text="FlexLayout in Action"
@@ -85,7 +85,7 @@ Drei Eigenschaften des `FlexLayout` in angezeigt werden, die **SimpleStackPage.x
 
     Bei Verwendung von wurden eine `StackLayout`, müssen Sie zum Zuweisen der `VerticalOptions` Eigenschaft jedes Elements um `CenterAndExpand` ein ähnliches Ergebnis erzielen. Aber die `CenterAndExpand` Option würde doppelt so viel Platz zwischen den einzelnen Elementen als vor dem ersten Element und nach dem letzten Element zuzuordnen. Imitieren, Sie können die `CenterAndExpand` Option `VerticalOptions` durch Festlegen der `JustifyContent` Eigenschaft `FlexLayout` auf `SpaceAround`.
 
-Diese `FlexLayout` Eigenschaften werden ausführlicher im Abschnitt **[die sechs bindbaren Eigenschaften](#bindable-properties)** unten.
+Diese `FlexLayout` Eigenschaften werden ausführlicher im Abschnitt **[die bindungsfähigen Eigenschaften im Detail](#bindable-properties)** unten.
 
 ### <a name="using-flexlayout-for-wrapping-items"></a>Verwenden FlexLayout für Elemente umschließen
 
@@ -190,7 +190,7 @@ So sieht das Programm ausgeführt wird, auf die drei Plattformen progressiv durc
 
 [![Die Seite "Wrapping Foto"](flex-layout-images/PhotoWrapping.png "die Foto-Wrapping-Seite")](flex-layout-images/PhotoWrapping-Large.png#lightbox)
 
-### <a name="holy-grail-layout-with-flexlayout"></a>Layout der wichtigste Aspekt mit FlexLayout
+### <a name="page-layout-with-flexlayout"></a>Seitenlayout mit FlexLayout
 
 Webdesign aufgerufen besteht ein Standardlayout der [ _wichtigste Aspekt_ ](https://en.wikipedia.org/wiki/Holy_grail_(web_design)) , da es sich um ein Layoutformat, die sehr vorteilhaft, aber häufig schwer handelt zu bedenken, dass mit perfekt ist. Das Layout besteht aus einem Header am oberen Rand der Seite und eine Fußzeile im unteren beiden Erweitern auf die gesamte Breite der Seite. Die Mitte der Seite einnimmt ist der Hauptinhalt jedoch häufig mit einem spaltenförmigen Menü auf der linken Seite des Inhalts und zusätzliche (bezeichnet ein _reserviert_ Bereich) auf der rechten Seite. [Abschnitt 5.4.1 der CSS-Flexible Box-Layout-Spezifikation](http://www.w3.org/TR/css-flexbox-1/#order-accessibility) wird beschrieben, wie das Layout der wichtigste Aspekt durch ein Feld Flex realisiert werden kann.
 
@@ -377,16 +377,16 @@ Die implizite Stil für die `Image` beinhaltet Einstellungen von zwei angefügte
 
 Die `Order` Einstellung des &ndash;1 Ursachen der `Image` Element in jedem geschachtelten zuerst angezeigt werden `FlexLayout` Ansichten unabhängig von seiner Position innerhalb der Auflistung der untergeordneten Elemente. Die `AlignSelf` Eigenschaft `Center` bewirkt, dass die `Image` innerhalb zentriert werden soll die `FlexLayout`. Dies überschreibt die Einstellung der der `AlignItems` -Eigenschaft, die einen Standardwert besitzt der `Stretch`. Dies bedeutet, die die `Label` und `Button` untergeordnete Elemente werden gestreckt, um die gesamte Breite des der `FlexLayout`.
 
-Innerhalb jeder der drei `FlexLayout` anzeigt, eine leere `Label` vorausgeht der `Button`, verfügt aber über eine `Grow` 1 festlegen. Dies bedeutet, dass alle zusätzlichen vertikalen Spae, werden diesem leer gelassen zugeordnet ist `Label`, die effektiv legt die `Button` unten.
+Innerhalb jeder der drei `FlexLayout` anzeigt, eine leere `Label` vorausgeht der `Button`, verfügt aber über eine `Grow` 1 festlegen. Dies bedeutet, dass alle zusätzlichen vertikale Platz, werden diesem leer gelassen zugeordnet ist `Label`, die effektiv legt die `Button` nach unten.
 
 <a name="bindable-properties" />
 
-## <a name="the-six-bindable-properties"></a>Die sechs bindbaren Eigenschaften
+## <a name="the-bindable-properties-in-detail"></a>Die bindungsfähigen Eigenschaften im detail
 
 Nun, dass Sie einige häufige Anwendungsbereiche gesehen haben `FlexLayout`, die Eigenschaften des `FlexLayout` genauer untersucht werden können. 
-`FlexLayout` definiert sechs bindbare Eigenschaften, die Sie festlegen, auf die `FlexLayout` selbst, entweder im Code oder in XAML, aber die `Position` Eigenschaft wird in diesem Artikel nicht behandelt.
+`FlexLayout` definiert sechs bindbare Eigenschaften, die Sie festlegen, auf die `FlexLayout` selbst, entweder im Code oder in XAML, Steuerelement Orientatin und Ausrichtung. (Eine dieser Eigenschaften [ `Position` ](xref:Xamarin.Forms.FlexLayout.Position), wird in diesem Artikel nicht behandelt.)
 
-Sie experimentieren können mit dem fünf verbleibenden bindbare Eigenschaften, die mithilfe der **experimentieren** auf der Seite der **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** Beispiel. Auf dieser Seite können Sie zum Hinzufügen oder entfernen die untergeordneten Elemente von einem `FlexLayout` und Kombinationen von den fünf bindbaren Eigenschaften festlegen. Die untergeordneten Elemente des der `FlexLayout` sind `Label` Ansichten verschiedener Farben und Größen, mit der `Text` -Eigenschaft auf eine Zahl entspricht, seine Position in der `Children` Auflistung.
+Sie können experimentieren mit fünf verbleibenden bindbare Eigenschaften, die mithilfe der **experimentieren** auf der Seite der **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** Beispiel. Auf dieser Seite können Sie zum Hinzufügen oder entfernen die untergeordneten Elemente von einem `FlexLayout` und Kombinationen von den fünf bindbaren Eigenschaften festlegen. Die untergeordneten Elemente des der `FlexLayout` sind `Label` Ansichten verschiedener Farben und Größen, mit der `Text` -Eigenschaft auf eine Zahl entspricht, seine Position in der `Children` Auflistung.
 
 Wenn das Programm gestartet wird, fünf `Picker` Ansichten anzeigen, die Standardwerte für diese fünf `FlexLayout` Eigenschaften. Die `FlexLayout` im unteren Rand des Bildschirms enthält drei untergeordneten Elemente:
 
@@ -493,7 +493,7 @@ Die `AlignContent` hat keine Auswirkungen, wenn nur eine Zeile oder Spalte vorha
 
 <a name="attached-properties" />
 
-## <a name="the-five-attached-bindable-properties"></a>Die fünf angefügte bindbare Eigenschaften
+## <a name="the-attached-bindable-properties-in-detail"></a>Die angefügten bindbaren Eigenschaften im detail
 
 `FlexLayout` definiert fünf angefügte bindbare Eigenschaften an. Diese Eigenschaften werden festgelegt, auf die untergeordneten Elemente der `FlexLayout` und beziehen sich nur auf diese bestimmten untergeordneten.
 
@@ -531,7 +531,7 @@ Die `Order` -Eigenschaft können Sie die Reihenfolge ändern, die die untergeord
 
 ### <a name="the-basis-property"></a>Die Basis-Eigenschaft
 
-Die [ `Basis` ](xref:Xamarin.Forms.FlexLayout.BasisProperty) angefügte bindbare Eigenschaft gibt die Menge des Speicherplatzes, der ein untergeordnetes Element des zugeordnet ist die `FlexLayout` auf der Hauptachse. Die angegebene Größe durch die `Basis` Eigenschaft ist die Größe der wichtigsten Achse des übergeordneten Elements `FlexLayout`. Das heißt, `Basis` gibt die Breite eines untergeordneten Elements an, wenn die untergeordneten Elemente in Zeilen oder die Höhe angeordnet werden, wenn die untergeordneten Elemente in den Spalten angeordnet sind.
+Die [ `Basis` ](xref:Xamarin.Forms.FlexLayout.BasisProperty) angefügte bindbare Eigenschaft gibt die Menge des Speicherplatzes, der ein untergeordnetes Element des zugeordnet ist die `FlexLayout` auf der Hauptachse. Die angegebene Größe durch die `Basis` Eigenschaft ist die Größe der wichtigsten Achse des übergeordneten Elements `FlexLayout`. Aus diesem Grund `Basis` gibt die Breite eines untergeordneten Elements an, wenn die untergeordneten Elemente in Zeilen oder die Höhe angeordnet werden, wenn die untergeordneten Elemente in den Spalten angeordnet sind.
 
 Die `Basis` -Eigenschaft ist vom Typ [ `FlexBasis` ](xref:Xamarin.Forms.FlexBasis), eine Struktur. Die Größe kann in geräteunabhängigen Einheiten oder als Prozentsatz der Größe der angegeben werden, wenn die `FlexLayout`. Der Standardwert der `Basis` Eigenschaft ist die statische Eigenschaft `FlexBasis.Auto`, was bedeutet, dass das untergeordnete Element angefordert der Breite oder Höhe wird verwendet.
 
@@ -615,7 +615,7 @@ Sie können die [CSS-Stilen](~/xamarin-forms/user-interface/styles/css/index.md)
 
 [![Die CSS-Katalog Seite "Elemente"](flex-layout-images/CssCatalogItems.png "CSS Katalog Elemente (Seite)")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
 
-Die ursprüngliche **CatalogItemsPage.xaml** Datei verfügt über fünf `Style` Definitionen in seiner `Resources` Abschnitt mit 15 `Setter` Objekte. In der **CssCatalogItemsPage.xaml** -Datei, die auf zwei reduziert wurde `Style` Definitionen mit nur vier `Setter` Objekte. Diese Stile ergänzen die CSS-Stylesheet für Eigenschaften, die die Xamarin.Forms CSS-Stilen-Funktion derzeit verarbeitet werden kann:
+Die ursprüngliche **CatalogItemsPage.xaml** Datei verfügt über fünf `Style` Definitionen in seiner `Resources` Abschnitt mit 15 `Setter` Objekte. In der **CssCatalogItemsPage.xaml** -Datei, die auf zwei reduziert wurde `Style` Definitionen mit nur vier `Setter` Objekte. Diese Stile ergänzen die CSS-Stylesheet für Eigenschaften, die die Xamarin.Forms CSS-Stilen-Funktion derzeit nicht unterstützt:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -695,7 +695,7 @@ Beachten Sie außerdem, dass zwei Elemente in jedem der drei Elemente umfassen `
 <Label StyleClass="empty" />
 ```
 
-Diese beziehen sich auf Selektoren in der **CatalogItemsStyles.css** Stylesheet:
+Diese beziehen sich auf Selektoren in der **CatalogItemsStyles.css** Stylesheet dargestellt:
 
 ```css
 frame {
@@ -734,7 +734,7 @@ button {
 
 Mehrere `FlexLayout` angefügte bindbare Eigenschaften hier verwiesen wird. In der `label.empty` Selektor, sehen Sie die `flex-grow` -Attribut, das eine leere Stile `Label` eine leere Stelle, die oben genannten Bereitstellen der `Button`. Die `image` Selektor enthält ein `order` Attribut und einem `align-self` -Attribut, beide entsprechen `FlexLayout` bindbare Eigenschaften zugeordnet.
 
-Haben Sie gesehen, dass Sie Eigenschaften festlegen können, direkt auf die `FlexLayout` und Sie können angeschlossene bindbare Eigenschaften festlegen, auf die untergeordneten Elemente einer `FlexLayout`. Oder Sie können diese Eigenschaften, die indirekt mit herkömmlichen XAML-basierte oder CSS-Stile festlegen. Wichtig ist, die mit bekannten und verstehen, diese Eigenschaften. Sie sind macht die `FlexLayout` tatsächlich flexibel. 
+Haben Sie gesehen, dass Sie Eigenschaften festlegen können, direkt auf die `FlexLayout` und Sie können angeschlossene bindbare Eigenschaften festlegen, auf die untergeordneten Elemente einer `FlexLayout`. Oder Sie können diese Eigenschaften, die indirekt mit herkömmlichen XAML-basierte oder CSS-Stile festlegen. Wichtig ist, werden von geläufig sein sollten diese Eigenschaften. Diese Eigenschaften sind macht die `FlexLayout` wirklicher flexible. 
 
 ## <a name="flexlayout-with-xamarinuniversity"></a>FlexLayout mit Xamarin.University
 

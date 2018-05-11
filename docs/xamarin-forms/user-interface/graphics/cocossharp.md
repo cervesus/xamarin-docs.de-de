@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/03/2016
-ms.openlocfilehash: 5fcc3405780e0c5e8a0e8d32caf35abf59808c8e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7ce541134e6db9a26699f96ab3114ced2ad22244
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Verwenden von CocosSharp in Xamarin.Forms
 
@@ -53,13 +53,13 @@ Ausführlichere Informationen finden Sie der [CocosSharp Abschnitt](~/graphics-g
 ## <a name="adding-the-cocossharp-nuget-packages"></a>Hinzufügen von CocosSharp Nuget-Paketen
 
 Vor der Verwendung CocosSharp, müssen Entwickler einige Zusätze zu ihrem Projekt Xamarin.Forms vornehmen.
-Dieses Handbuch setzt voraus, eine Xamarin.Forms-Projekt für iOS, Android und PCL Projekt.
-Der gesamte Code wird in der PCL-Projekt geschrieben werden. Allerdings müssen die Bibliotheken für den IOS- und Android-Projekte hinzugefügt werden.
+Dieses Handbuch setzt voraus, eine Xamarin.Forms-Projekt mit einem iOS, Android und .NET Standard-Steuerelementbibliothek-Projekt.
+Der gesamte Code wird in der .NET Standard-Bibliotheksprojekt geschrieben werden. Allerdings müssen die Bibliotheken für den IOS- und Android-Projekte hinzugefügt werden.
 
 Das CocosSharp Nuget-Paket enthält alle Objekte, die zum Erstellen von Objekten CocosSharp erforderlich.
 Das CocosSharp.Forms NuGet-Paket enthält die `CocosSharpView` -Klasse, die zum Host CocosSharp in Xamarin.Forms verwendet wird.
 Hinzufügen der **CocosSharp.Forms** NuGet und **CocosSharp** wird werden automatisch ebenfalls hinzugefügt.
-Zu diesem Zweck mit der Maustaste, auf der PCL <span class="UIItem">Pakete</span> Ordner, und wählen <span class="UIItem">Pakete hinzufügen... </span>. Geben Sie den Suchbegriff <span class="UIItem">CocosSharp.Forms</span>Option <span class="UIItem">CocosSharp für Xamarin.Forms</span>, klicken Sie dann auf <span class="UIItem">Paket hinzufügen</span>.
+Zu diesem Zweck mit der Maustaste auf die <span class="UIItem">Pakete</span> Ordner im .NET Standard-Bibliotheksprojekt, und wählen <span class="UIItem">Pakete hinzufügen... </span>. Geben Sie den Suchbegriff <span class="UIItem">CocosSharp.Forms</span>Option <span class="UIItem">CocosSharp für Xamarin.Forms</span>, klicken Sie dann auf <span class="UIItem">Paket hinzufügen</span>.
 
 ![](cocossharp-images/image1.png "Pakete-Dialogfeld "hinzufügen"")
 
@@ -198,7 +198,7 @@ Das folgende Diagramm können Sie eine typische CocosSharp Hierarchie visualisie
 
 Nur ein `CCScene` gleichzeitig aktiv sein können. Die meisten Spiele verwenden Sie mehrere `CCLayer` Instanzen zu sortieren Inhalt, aber die Anwendung verwendet nur einen. Auf ähnliche Weise die meisten Spiele mehrere visuelle Objekte verwenden, aber wir müssen nur einen in dieser app. Eine ausführlichere Erläuterung zu den CocosSharp visuellen Hierarchie Sie in finden der [BouncingGame Exemplarische Vorgehensweise](~/graphics-games/cocossharp/bouncing-game.md).
 
-Zunächst die `GameScene` Klasse wird nahezu leer sein – wir einfach erstellen, um den Verweis in erfüllen `HomePage`. Fügen Sie eine neue Klasse, um Ihre Plc `GameScene`. Sie sollten erbt von der `CCScene` -Klasse wie folgt:
+Zunächst die `GameScene` Klasse wird nahezu leer sein – wir einfach erstellen, um den Verweis in erfüllen `HomePage`. Fügen Sie eine neue Klasse, um Ihre .NET Standard Klassenbibliotheksprojekt mit der Bezeichnung `GameScene`. Sie sollten erbt von der `CCScene` -Klasse wie folgt:
 
 
 ```csharp
@@ -222,7 +222,7 @@ GameScene gameScene;
 
 Wir können jetzt unsere Projekt zu kompilieren und führen Sie es zum CocosSharp ausführen finden Sie unter. Wir noch nicht hinzugefügt, nichts unsere `GameScene,` daher ist die obere Hälfte des unserer Seite Schwarz – die Standardfarbe CocosSharp themawechsel:
 
-![](cocossharp-images/image5.png "Blank GameScene")
+![](cocossharp-images/image5.png "Leere GameScene")
 
 <a name="4" />
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 2600b52b6e044ca9a3a8387bcf719dd1632c406d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 86253e42db7da2da6eb8b03e2d4a4b3c943b7e17
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>Hinzufügen von Intelligenz mit Cognitive-Diensten
 
@@ -70,9 +70,7 @@ Die PCL-Projekt enthält außerdem einige wichtigen Dateien:
 
 Die beispielanwendung verwendet die folgenden NuGet-Pakete:
 
-- `Microsoft.Net.Http` – Stellt die `HttpClient` Klasse zum Senden von Anforderungen über HTTP.
 - `Newtonsoft.Json` – Stellt ein JSON-Framework für .NET bereit.
-- `Microsoft.ProjectOxford.Face` – eine Clientbibliothek für den Zugriff auf die Oberfläche-API.
 - `PCLStorage` – bietet eine Reihe von plattformübergreifenden lokale Datei-e/a-APIs.
 - `sqlite-net-pcl` – ermöglicht die Speicherung der SQLite-Datenbank.
 - `Xam.Plugin.Media` – bietet plattformübergreifende Foto verwendet wird und APIs entnehmen.
@@ -116,7 +114,7 @@ Die `IAudioRecorderService` Schnittstelle wird implementiert, indem die `AudioRe
 
 Die beispielanwendung Ruft die folgenden Cognitive Microsoft-Dienste:
 
-- Microsoft Speech API. Weitere Informationen finden Sie unter [Spracherkennung mithilfe der Microsoft-Speech-API](speech-recognition.md).
+- Microsoft-Speech-API. Weitere Informationen finden Sie unter [Spracherkennung mithilfe der Microsoft-Speech-API](speech-recognition.md).
 - Bing-Rechtschreibprüfung API. Weitere Informationen finden Sie unter [Rechtschreibprüfung mithilfe der Bing Rechtschreibprüfung aktivieren-API](spell-check.md).
 - API zu übersetzen. Weitere Informationen finden Sie unter [Textübersetzung mithilfe der API-Konvertierungsprogramm](text-translation.md).
 - -API-Oberfläche. Weitere Informationen finden Sie unter [Emotionen Recognition mithilfe der API Gesicht](emotion-recognition.md).

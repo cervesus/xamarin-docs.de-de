@@ -7,39 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: b6ea988aa8c058fe5a92a17e9b72f81e0ccb12db
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: aed240dd403957e5935666d4179a6d642c411b86
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="setup-windows-projects"></a>Einrichten der Windows-Projekte
 
 _Hinzufügen von neuen Windows-Projekten zu einer vorhandenen Xamarin.Forms-Projektmappe_
 
 Ältere Xamarin.Forms-Lösungen (oder solche, die auf MacOS erstellt) weisen keine app-Projekte der universellen Windows-Plattform (UWP). Aus diesem Grund müssen Sie eine uwp-Projekt zum Erstellen einer app für Windows 10 (UWP) manuell hinzufügen.
-
-<a name="pcl" />
-
-## <a name="update-the-pcl-profile"></a>Aktualisieren Sie das PCL-Profil
-
-Wenn Ihre vorhandene Xamarin.Forms-app die Portable Klassenbibliothek (PCL)-Vorlage verwendet, müssen Sie ein Profil aktualisieren.
-
-1. **mit der rechten Maustaste > Eigenschaften** (bestehenden Einstellungen können abweichen)
-
-  ![](images/targets.png "PCL-Ziele")
-
-2. Klicken Sie auf die **ändern...**  Schaltfläche
-
-3. Stellen Sie sicher der **Windows 8** und **Windows Phone 8.1** Optionen aktiviert sind (und **Windows Phone Silveright** ist *deaktiviert*):
-
-  ![](images/pcl.png "PCL Zieloptionen")
-
-4. Drücken Sie **OK** und die Änderungen zu speichern.
-
-Dies ist identisch mit dem **Profil 111** , wenn Sie Ihre PCL in Visual Studio für Mac mithilfe der Dropdown-Liste konfigurieren.
-
-  ![](images/pcl-xs.png "PCL Profil 111")
 
 ## <a name="add-a-universal-windows-platform-app"></a>Fügen Sie eine universelle Windows Plattform-app
 
@@ -65,7 +43,7 @@ So fügen Sie einer uwp-app hinzu, die auf Windows 10-Smartphones, Tablets und D
 
   [![](universal-images/configuration-sml.png "Fenster "Konfigurations-Manager"")](universal-images/configuration.png#lightbox "Fenster "Konfigurations-Manager"")
 
- 5. Mit der rechten Maustaste auf das Projekt, und wählen **hinzufügen > Verweis** , und erstellen Sie einen Verweis auf das Anwendungsprojekt Xamarin.Forms (PCL, .NET Standard oder freigegebenes Projekt).
+ 5. Mit der rechten Maustaste auf das Projekt, und wählen **hinzufügen > Verweis** , und erstellen Sie einen Verweis auf das Anwendungsprojekt Xamarin.Forms (.NET Standard oder freigegebenes Projekt).
 
   ![](universal-images/addref-sml.png "Dialogfeld "Verweis-Manager"")
 

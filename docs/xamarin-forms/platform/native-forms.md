@@ -1,23 +1,23 @@
 ---
 title: Systemeigene Formulare
-description: Systemeigene Forms ermöglichen Xamarin.Forms ContentPage verwendet abgeleitete Seiten von systemeigene universelle Windows-Plattform (UWP), Xamarin.iOS und Xamarin.Android Projekte verwendet wird. Systemeigene Projekte können Seiten ContentPage verwendet abgeleitete nutzen, die dem Projekt oder in eine Portable Klassenbibliothek (PCL), eine Standardbibliothek des .NET oder ein freigegebenes Projekt direkt hinzugefügt werden. In diesem Artikel wird erläutert, wie ContentPage verwendet abgeleitete Seiten verarbeitet werden, die direkt auf systemeigene Projekte hinzugefügt werden und wie zwischen ihnen zu navigieren.
+description: Systemeigene Forms ermöglichen Xamarin.Forms ContentPage verwendet abgeleitete Seiten von systemeigene universelle Windows-Plattform (UWP), Xamarin.iOS und Xamarin.Android Projekte verwendet wird. Systemeigene Projekte können Seiten ContentPage verwendet abgeleitete nutzen, die dem Projekt oder aus einer .NET Standard-Bibliothek, die Standardbibliothek .NET oder freigegebenes Projekt direkt hinzugefügt werden. In diesem Artikel wird erläutert, wie ContentPage verwendet abgeleitete Seiten verarbeitet werden, die direkt auf systemeigene Projekte hinzugefügt werden und wie zwischen ihnen zu navigieren.
 ms.prod: xamarin
 ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: 9d0d4e69228ce8a1d9944833bff80b22ea5f9ddd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bb7aa9a7071f9ac7bef0dce5790a3fe74302cfb4
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="native-forms"></a>Systemeigene Formulare
 
-_Systemeigene Forms ermöglichen Xamarin.Forms ContentPage verwendet abgeleitete Seiten von systemeigene universelle Windows-Plattform (UWP), Xamarin.iOS und Xamarin.Android Projekte verwendet wird. Systemeigene Projekte können Seiten ContentPage verwendet abgeleitete nutzen, die dem Projekt oder in eine Portable Klassenbibliothek (PCL), eine Standardbibliothek des .NET oder ein freigegebenes Projekt direkt hinzugefügt werden. In diesem Artikel wird erläutert, wie ContentPage verwendet abgeleitete Seiten verarbeitet werden, die direkt auf systemeigene Projekte hinzugefügt werden und wie zwischen ihnen zu navigieren._
+_Systemeigene Forms ermöglichen Xamarin.Forms ContentPage verwendet abgeleitete Seiten von systemeigene universelle Windows-Plattform (UWP), Xamarin.iOS und Xamarin.Android Projekte verwendet wird. Systemeigene Projekte können Seiten ContentPage verwendet abgeleitete nutzen, die dem Projekt oder aus einer .NET Standard-Bibliothek, die Standardbibliothek .NET oder freigegebenes Projekt direkt hinzugefügt werden. In diesem Artikel wird erläutert, wie ContentPage verwendet abgeleitete Seiten verarbeitet werden, die direkt auf systemeigene Projekte hinzugefügt werden und wie zwischen ihnen zu navigieren._
 
-In der Regel eine Xamarin.Forms-Anwendung besteht aus einer oder mehreren Seiten, die davon Herleiten [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), und diese Seiten werden in einer PCL, eine Standardbibliothek des .NET oder ein freigegebenes Projekt alle Plattformen gemeinsam. Erlaubt jedoch die systemeigene Forms `ContentPage`-abgeleitete Seiten direkt systemeigene universelle Windows-Plattform, Xamarin.iOS und Xamarin.Android Anwendungen hinzugefügt werden. Im Vergleich zu mit dem systemeigenen Projekt nutzen `ContentPage`-abgeleitete Seiten von einer PCL Standardbibliothek .NET oder freigegebenes Projekt den Vorteil, dass beim Hinzufügen von Seiten direkt in systemeigenen Projekten ist, dass die Seiten mit systemeigenen Sichten erweitert werden können. Systemeigene Ansichten können dann den Namen in XAML mit `x:Name` und der Code-Behind verwiesen wird. Weitere Informationen zu systemeigenen Ansichten finden Sie unter [systemeigenen Ansichten](~/xamarin-forms/platform/native-views/index.md).
+In der Regel eine Xamarin.Forms-Anwendung besteht aus einer oder mehreren Seiten, die davon Herleiten [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), und diese Seiten werden in einer .NET Standard-Steuerelementbibliothek-Projekt oder ein freigegebenes Projekt alle Plattformen gemeinsam. Erlaubt jedoch die systemeigene Forms `ContentPage`-abgeleitete Seiten direkt systemeigene universelle Windows-Plattform, Xamarin.iOS und Xamarin.Android Anwendungen hinzugefügt werden. Im Vergleich zu mit dem systemeigenen Projekt nutzen `ContentPage`-abgeleitete Seiten aus einer .NET Standard-Steuerelementbibliothek-Projekt oder ein freigegebenes Projekt den Vorteil, dass beim Hinzufügen von Seiten direkt in systemeigenen Projekten ist, dass die Seiten mit systemeigenen Sichten erweitert werden können. Systemeigene Ansichten können dann den Namen in XAML mit `x:Name` und der Code-Behind verwiesen wird. Weitere Informationen zu systemeigenen Ansichten finden Sie unter [systemeigenen Ansichten](~/xamarin-forms/platform/native-views/index.md).
 
 Der Prozess für die Nutzung einer Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-abgeleiteten Seite in einem systemeigenen Projekt lautet wie folgt:
 
@@ -30,7 +30,7 @@ Der Prozess für die Nutzung einer Xamarin.Forms [ `ContentPage` ](https://devel
 Xamarin.Forms muss initialisiert werden, durch Aufrufen der `Forms.Init` -Methode auf, bevor ein systemeigenes Projekt erstellen, kann eine [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-Seite abgeleitet. Wann in erster Linie dazu Auswahl hängt, wenn es am einfachsten in den Anwendungsablauf ist – konnte ausgeführt werden, beim Start der Anwendung oder direkt vor der `ContentPage`-abgeleiteten Seite erstellt wird. In diesem Artikel und die zugehörigen Beispielanwendungen die `Forms.Init` Methode wird beim Start der Anwendung aufgerufen.
 
 > [!NOTE]
-> Die **NativeForms** Anwendung errorhandling enthält keine Projekte Xamarin.Forms. Stattdessen besteht es von einem Xamarin.iOS-Projekt, ein Projekt Xamarin.Android und uwp-Projekt. Jedes Projekt ist ein systemeigenes Projekt, das systemeigene Forms verwendet werden, um nutzen [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-Seiten abgeleitet. Es ist jedoch kein Grund, warum die systemeigene Projekte nutzen konnte nicht `ContentPage`-Seiten von einer PCL Standardbibliothek .NET oder freigegebenes Projekt abgeleitet.
+> Die **NativeForms** Anwendung errorhandling enthält keine Projekte Xamarin.Forms. Stattdessen besteht es von einem Xamarin.iOS-Projekt, ein Projekt Xamarin.Android und uwp-Projekt. Jedes Projekt ist ein systemeigenes Projekt, das systemeigene Forms verwendet werden, um nutzen [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-Seiten abgeleitet. Es ist jedoch kein Grund, warum die systemeigene Projekte nutzen konnte nicht `ContentPage`-Seiten von einer .NET Standard-Steuerelementbibliothek-Projekt oder ein freigegebenes Projekt abgeleitet.
 
 Bei Verwendung von systemeigenen Forms Funktionen z. B. Xamarin.Forms [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/), [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/), und das Datenbindungsmodul alle noch arbeiten.
 
@@ -349,7 +349,7 @@ Weitere Informationen zur Unterstützung von Rückwärtsnavigation für universe
 
 ## <a name="summary"></a>Zusammenfassung
 
-Systemeigene Forms zulassen Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-abgeleitete Seiten von systemeigene universelle Windows-Plattform (UWP), Xamarin.iOS und Xamarin.Android Projekte verwendet wird. Systemeigene Projekte nutzen können `ContentPage`-abgeleitet von Seiten, die dem Projekt oder von einer PCL Standardbibliothek .NET oder freigegebenes Projekt direkt hinzugefügt werden. In diesem Artikel wird erläutert, wie nutzen `ContentPage`-abgeleitet von Seiten, die systemeigene Projekte sowie zum Navigieren zwischen ihnen direkt hinzugefügt werden.
+Systemeigene Forms zulassen Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-abgeleitete Seiten von systemeigene universelle Windows-Plattform (UWP), Xamarin.iOS und Xamarin.Android Projekte verwendet wird. Systemeigene Projekte nutzen können `ContentPage`-abgeleitet von Seiten, die dem Projekt oder eine .NET Standard-Bibliotheksprojekt oder ein freigegebenes Projekt direkt hinzugefügt werden. In diesem Artikel wird erläutert, wie nutzen `ContentPage`-abgeleitet von Seiten, die systemeigene Projekte sowie zum Navigieren zwischen ihnen direkt hinzugefügt werden.
 
 
 ## <a name="related-links"></a>Verwandte Links

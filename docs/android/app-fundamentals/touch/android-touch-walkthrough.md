@@ -5,12 +5,12 @@ ms.assetid: E281F89B-4142-4BD8-8882-FB65508BF69E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/02/2018
-ms.openlocfilehash: ae4d5b0b8cd384a11d130bc9258894e1cf4cfa36
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/09/2018
+ms.openlocfilehash: 625ba800ce498f80c0344c67e26bd79360de4002
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="walkthrough---using-touch-in-android"></a>Exemplarische Vorgehensweise – mit Touch in Android
 
@@ -38,7 +38,7 @@ Die erste Aktivität, Touch-Beispiel zeigt wie Sie Ereignishandler für die Ansi
     private void TouchMeImageViewOnTouch(object sender, View.TouchEventArgs touchEventArgs)
     {
         string message;
-        switch (touchEventArgs.Event.Action & MotionEventArgs.Mask)
+        switch (touchEventArgs.Event.Action & MotionEventActions.Mask)
         {
             case MotionEventActions.Down:
             case MotionEventActions.Move:
@@ -344,13 +344,11 @@ Im Rahmen dieser exemplarischen Vorgehensweise, die Bibliothek Gesten bereits mi
 
     Zeichnen Sie nun ein Häkchen auf dem Bildschirm, und die Bitmap angezeigt wird, sollte etwa wie in der nächsten Screenshots aussehen:
 
-    [![Gezeichnet Häkchen](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
-    [![erkannt Häkchen](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
+    [![Gezeichneten Häkchen, Häkchen wird erkannt.](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
 
     Zeichnen Sie schließlich eine Scribble auf dem Bildschirm. Das Kontrollkästchen sollte wieder auf das ursprüngliche Image ändern, wie im folgenden Screenshots gezeigt:
 
-    [![Auf dem Bildschirm Scribble](android-touch-walkthrough-images/image22.png)](android-touch-walkthrough-images/image22.png#lightbox)
-    [![ursprungsabbild wird angezeigt.](android-touch-walkthrough-images/image23.png)](android-touch-walkthrough-images/image23.png#lightbox)
+    [![Scribble auf dem Bildschirm, ursprungsabbild wird angezeigt.](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
 Sie haben jetzt einen Überblick über die Vorgehensweise beim Integrieren von Touch- und Gesten in einer Android-Anwendung mit Xamarin.Android.
 

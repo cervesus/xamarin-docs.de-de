@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms Views
+title: Xamarin.Forms-Ansichten
 description: Xamarin.Forms-Ansichten sind die Bausteine von plattformübergreifenden mobilen Benutzeroberflächen.
 ms.prod: xamarin
 ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
@@ -7,13 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: b690b4aed315a78d95d9e0e7444257f0fc2c4a78
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b370c27a212f876231764851c894bf683ae460c3
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="xamarinforms-views"></a>Xamarin.Forms Views
+# <a name="xamarinforms-views"></a>Xamarin.Forms-Ansichten
 
 _Xamarin.Forms-Ansichten sind die Bausteine von plattformübergreifenden mobilen Benutzeroberflächen._
 
@@ -53,7 +53,7 @@ Ansichten sind Benutzeroberflächenobjekte wie z. B. Schaltflächen, Bezeichnung
 
 |     |     |
 | --- | --- |
-| [`OpenGLView`](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/) Zeigt OpenGL-Grafiken in iOS und Android-Projekte. Es gibt keine Unterstützung für die universelle Windows-Plattform. IOS- und Android-Projekte erfordern einen Verweis auf die **OpenTK 1.0** Assembly oder der **OpenTK** Version 1.0.0.0-Assembly. `OpenGLView` ist einfacher, die in einem freigegebenen Projekt verwenden. Wenn in einer PCL "oder" Standard ".NET Bibliothek verwendet wird, wird eine Abhängigkeitsdienst auch (wie im Beispielcode gezeigt) erforderlich sein.<br /><br />Dies ist der einzige Grafiken-Funktion, die in Xamarin.Forms integriert ist, aber eine Xamarin.Forms-Anwendung kann auch Rendern Grafiken mit [ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md), [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md), oder [ `UrhoSharp` ](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[API-Dokumentation](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/)<br /><br /> | [![Beispiel für OpenGLView](views-images/OpenGLView.png "OpenGLView Beispiel")](views-images/OpenGLView-Large.png#lightbox "OpenGLView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml) mit [CodeBehind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
+| [`OpenGLView`](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/) Zeigt OpenGL-Grafiken in iOS und Android-Projekte. Es gibt keine Unterstützung für die universelle Windows-Plattform. IOS- und Android-Projekte erfordern einen Verweis auf die **OpenTK 1.0** Assembly oder der **OpenTK** Version 1.0.0.0-Assembly. `OpenGLView` ist einfacher, die in einem freigegebenen Projekt verwenden. Wenn in einer .NET Standardbibliothek verwendet wird, wird eine Abhängigkeitsdienst auch (wie im Beispielcode gezeigt) erforderlich sein.<br /><br />Dies ist der einzige Grafiken-Funktion, die in Xamarin.Forms integriert ist, aber eine Xamarin.Forms-Anwendung kann auch Rendern Grafiken mit [ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md), [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md), oder [ `UrhoSharp` ](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[API-Dokumentation](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/)<br /><br /> | [![Beispiel für OpenGLView](views-images/OpenGLView.png "OpenGLView Beispiel")](views-images/OpenGLView-Large.png#lightbox "OpenGLView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml) mit [CodeBehind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="map"></a>Zuordnung

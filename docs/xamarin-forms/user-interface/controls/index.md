@@ -7,24 +7,24 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: a9fb90794ec74c46019fd2b4f41d90a2635909cd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fb6620e160af4c2c844fa694649c95abdac123f9
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="controls-reference"></a>Steuerelementreferenz
 
 _Eine Beschreibung aller visuellen Elemente, die zum Erstellen einer Xamarin.Forms-Anwendung verwendet werden soll._
 
-Die visuelle Oberfläche einer Xamarin.Forms-Anwendung wird von Objekten erstellt, die die systemeigenen Steuerelemente für jede Zielplattform zuordnen. Dadurch können Clientplattform-spezifische Anwendungen für iOS, Android und universellen Windows-Plattform mit Xamarin.Forms-Codes in einer [Portable Class Library](~/cross-platform/app-fundamentals/pcl.md), eine [Standardbibliothek des .NET](~/cross-platform/app-fundamentals/net-standard.md), oder eine [ Freigegebene Projekt](~/cross-platform/app-fundamentals/shared-projects.md).
+Die visuelle Oberfläche einer Xamarin.Forms-Anwendung wird von Objekten erstellt, die die systemeigenen Steuerelemente für jede Zielplattform zuordnen. Dadurch können Clientplattform-spezifische Anwendungen für iOS, Android und universellen Windows-Plattform mit Xamarin.Forms-Codes in einer [Standardbibliothek des .NET](~/cross-platform/app-fundamentals/net-standard.md) oder ein [freigegebenes Projekt](~/cross-platform/app-fundamentals/shared-projects.md).
 
 Vier Hauptsteuerelement Gruppen verwendet, um die Benutzeroberfläche einer Xamarin.Forms-Anwendung erstellen, werden in den folgenden vier Artikeln gezeigt:
 
 - [**Seiten**](pages.md)
 - [**Layouts**](layouts.md)
 - [**Ansichten**](views.md)
-- [**Cells**](cells.md)
+- [**Zellen**](cells.md)
 
 Im Allgemeinen nimmt eine Xamarin.Forms-Seite den gesamten Bildschirm ein. Diese Seite enthält in der Regel ein Layout, die Ansichten und möglicherweise andere Tastaturlayouts stimmen enthält. Zellen sind spezielle Komponenten, die in Verbindung mit verwendet [ `TableView` ](views.md#tableView) und [ `ListView` ](views.md#listView).
 
