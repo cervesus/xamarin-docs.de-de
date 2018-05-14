@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 353575bad91c9bade0207a0aa271d9de7ec50240
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 04d3d99a5d85dd77c93e9b926e8952cc3d8a771e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-map-pin"></a>Anpassen einer Karte-Pin
 
@@ -47,7 +47,7 @@ public class CustomMap : Map
 }
 ```
 
-Die `CustomMap` Steuerelement wird im Projekt portablen Klassenbibliothek (PCL) erstellt und definiert die API für die benutzerdefinierte Karte. Die benutzerdefinierte Karte macht die `CustomPins` Eigenschaft, die die Auflistung von darstellt `CustomPin` Objekte, die von der systemeigenen Kartensteuerelement auf jeder Plattform gerendert werden. Die `CustomPin` ist im folgenden Codebeispiel dargestellt:
+Die `CustomMap` Steuerelement wird in das .NET Standard-Steuerelementbibliothek-Projekt erstellt und definiert die API für die benutzerdefinierte Karte. Die benutzerdefinierte Karte macht die `CustomPins` Eigenschaft, die die Auflistung von darstellt `CustomPin` Objekte, die von der systemeigenen Kartensteuerelement auf jeder Plattform gerendert werden. Die `CustomPin` ist im folgenden Codebeispiel dargestellt:
 
 ```csharp
 public class CustomPin : Pin
@@ -62,7 +62,7 @@ Diese Klasse definiert ein `CustomPin` als erben die Eigenschaften der [ `Pin` ]
 
 ## <a name="consuming-the-custom-map"></a>Nutzen die benutzerdefinierte Karte
 
-Die `CustomMap` Steuerelement kann verwiesen werden in XAML in der PCL-Projekt durch deklarieren einen Namespace für den Speicherort der und verwenden das Namespacepräfix für das benutzerdefinierte Kartensteuerelement. Im folgenden Codebeispiel wird veranschaulicht wie die `CustomMap` Steuerelement genutzt werden kann, durch die entsprechende Verwendung von XAML-Seite:
+Die `CustomMap` Steuerelement kann verwiesen werden in XAML in .NET Standard-Bibliotheksprojekt durch deklarieren einen Namespace für den Speicherort der und verwenden das Namespacepräfix für das benutzerdefinierte Kartensteuerelement. Im folgenden Codebeispiel wird veranschaulicht wie die `CustomMap` Steuerelement genutzt werden kann, durch die entsprechende Verwendung von XAML-Seite:
 
 ```xaml
 <ContentPage ...
@@ -322,7 +322,7 @@ void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEve
 }
 ```
 
-Diese Methode wird einen Webbrowser geöffnet und navigiert zu der Adresse gespeichert, der `CustomMKAnnotationView.Url` Eigenschaft. Beachten Sie, dass die Adresse, beim Erstellen definiert wurde der `CustomPin` Sammlung in der PCL-Projekt.
+Diese Methode wird einen Webbrowser geöffnet und navigiert zu der Adresse gespeichert, der `CustomMKAnnotationView.Url` Eigenschaft. Beachten Sie, dass die Adresse, beim Erstellen definiert wurde der `CustomPin` Auflistung in das .NET Standard-Steuerelementbibliothek-Projekt.
 
 <a name="Deselecting_the_Annotation" />
 
@@ -499,7 +499,7 @@ void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
 }
 ```
 
-Diese Methode wird einen Webbrowser geöffnet und navigiert zu der Adresse, die in gespeicherten der `Url` Eigenschaft der abgerufenen `CustomPin` Instanz, für die `Marker`. Beachten Sie, dass die Adresse, beim Erstellen definiert wurde der `CustomPin` Sammlung in der PCL-Projekt.
+Diese Methode wird einen Webbrowser geöffnet und navigiert zu der Adresse, die in gespeicherten der `Url` Eigenschaft der abgerufenen `CustomPin` Instanz, für die `Marker`. Beachten Sie, dass die Adresse, beim Erstellen definiert wurde der `CustomPin` Auflistung in das .NET Standard-Steuerelementbibliothek-Projekt.
 
 Weitere Informationen zum Anpassen einer `MapView` Instanz ist, finden Sie unter [Maps-API](~/android/platform/maps-and-location/maps/maps-api.md).
 
@@ -645,7 +645,7 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 }
 ```
 
-Diese Methode wird einen Webbrowser geöffnet und navigiert zu der Adresse, die in gespeicherten der `Url` Eigenschaft von der `CustomPin` Instanz. Beachten Sie, dass die Adresse, beim Erstellen definiert wurde der `CustomPin` Sammlung in der PCL-Projekt.
+Diese Methode wird einen Webbrowser geöffnet und navigiert zu der Adresse, die in gespeicherten der `Url` Eigenschaft von der `CustomPin` Instanz. Beachten Sie, dass die Adresse, beim Erstellen definiert wurde der `CustomPin` Auflistung in das .NET Standard-Steuerelementbibliothek-Projekt.
 
 Weitere Informationen zum Anpassen einer `MapControl` Instanz ist, finden Sie unter [Zuordnungen und Speicherort (Übersicht)](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx) auf MSDN.
 

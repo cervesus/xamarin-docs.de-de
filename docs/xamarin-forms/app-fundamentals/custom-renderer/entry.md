@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: c120add5a301e440911bd9794da77732e7787cc0
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c93681c3bfd8de8d813cbe98a7ac28b3ee8b74fc
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-an-entry"></a>Einen Eintrag anpassen
 
@@ -43,13 +43,13 @@ public class MyEntry : Entry
 }
 ```
 
-Die `MyEntry` Steuerelement im Projekt portablen Klassenbibliothek (PCL) erstellt und wird einfach ein [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Steuerelement. Anpassung des Steuerelements durchgeführt werden in den benutzerdefinierten Renderer, sodass keine weitere Implementierungsdetails in erforderlich ist der `MyEntry` Steuerelement.
+Die `MyEntry` Steuerelement wird in das .NET Standard-Steuerelementbibliothek-Projekt erstellt und ist einfach ein [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Steuerelement. Anpassung des Steuerelements durchgeführt werden in den benutzerdefinierten Renderer, sodass keine weitere Implementierungsdetails in erforderlich ist der `MyEntry` Steuerelement.
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>Nutzen das benutzerdefinierte Steuerelement
 
-Die `MyEntry` Steuerelement kann verwiesen werden in XAML in der PCL-Projekt durch deklarieren einen Namespace für den Speicherort der und verwenden das Namespacepräfix für das Steuerelement. Im folgenden Codebeispiel wird veranschaulicht wie die `MyEntry` Steuerelement genutzt werden kann, durch die entsprechende Verwendung von XAML-Seite:
+Die `MyEntry` Steuerelement kann verwiesen werden in XAML in .NET Standard-Bibliotheksprojekt durch deklarieren einen Namespace für den Speicherort der und verwenden das Namespacepräfix für das Steuerelement. Im folgenden Codebeispiel wird veranschaulicht wie die `MyEntry` Steuerelement genutzt werden kann, durch die entsprechende Verwendung von XAML-Seite:
 
 ```xaml
 <ContentPage ...

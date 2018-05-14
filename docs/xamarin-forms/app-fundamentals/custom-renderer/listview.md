@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 964e2302c290930ec62752e51e7de388cb42ee32
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 0d1afc2c14b19bbd03244affed494405776a3c99
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-listview"></a>Anpassen einer ListView
 
@@ -59,13 +59,13 @@ public class NativeListView : ListView
 }
 ```
 
-Die `NativeListView` wird im Projekt portablen Klassenbibliothek (PCL) erstellt und definiert die API für das benutzerdefinierte Steuerelement. Dieses Steuerelement macht eine `Items` -Eigenschaft, die zum Auffüllen verwendet wird die `ListView` mit Daten und die sein können datengebundene für Anzeigezwecke. Macht auch ein `ItemSelected` Ereignis, das ausgelöst wird, wenn ein Element in eine plattformspezifische systemeigene Strukturelement-Steuerelement ausgewählt ist. Weitere Informationen zur Datenbindung finden Sie unter [Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md) (Datenbindungsgrundlagen).
+Die `NativeListView` wird in das .NET Standard-Steuerelementbibliothek-Projekt erstellt und definiert die API für das benutzerdefinierte Steuerelement. Dieses Steuerelement macht eine `Items` -Eigenschaft, die zum Auffüllen verwendet wird die `ListView` mit Daten und die sein können datengebundene für Anzeigezwecke. Macht auch ein `ItemSelected` Ereignis, das ausgelöst wird, wenn ein Element in eine plattformspezifische systemeigene Strukturelement-Steuerelement ausgewählt ist. Weitere Informationen zur Datenbindung finden Sie unter [Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md) (Datenbindungsgrundlagen).
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>Nutzen das benutzerdefinierte Steuerelement
 
-Die `NativeListView` benutzerdefiniertes Steuerelement im verwiesen werden kann in Xaml PCL-Projekt durch deklarieren einen Namespace für den Speicherort und verwenden das Namespacepräfix für das Steuerelement. Im folgenden Codebeispiel wird veranschaulicht wie die `NativeListView` benutzerdefiniertes Steuerelement genutzt werden kann, durch die entsprechende Verwendung von XAML-Seite:
+Die `NativeListView` benutzerdefiniertes Steuerelement kann verwiesen werden in Xaml in .NET Standard-Bibliotheksprojekt durch deklarieren einen Namespace für den Speicherort und verwenden das Namespacepräfix für das Steuerelement. Im folgenden Codebeispiel wird veranschaulicht wie die `NativeListView` benutzerdefiniertes Steuerelement genutzt werden kann, durch die entsprechende Verwendung von XAML-Seite:
 
 ```xaml
 <ContentPage ...
