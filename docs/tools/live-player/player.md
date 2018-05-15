@@ -5,34 +5,16 @@ ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: topgenorth
 ms.author: toopge
-ms.date: 05/10/2017
-ms.openlocfilehash: 2e2a3e80c121688f9a8bfff0afe4184f19fc6619
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/14/2017
+ms.openlocfilehash: 3d4d34c6945387f5878ea708faf630d2545a750e
+ms.sourcegitcommit: b706fbe05344f7201fbe8f82d9dbbceb66060637
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Player Live-App
 
 ![Vorschaufunktion](~/media/shared/preview.png)
-
-## <a name="get-the-app"></a>Abrufen der App
-
-# <a name="androidtabandroid"></a>[Android](#tab/android)
-
-Xamarin Live Player steht für Android aus Google Play zur Verfügung:
-
-[![Auf Google Play verfügbar](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
-
-Ist Live Xamarin Player für Android-Geräten ohne Google Play erhältlich [HockeyApp](https://aka.ms/xlp-hockeyapp) Verteilung. Darüber hinaus frühe Vorschau erstellt, für Android aus Google Play direkt installiert werden kann, durch die Teilnahme an der [öffnen-Betaprogramm](https://play.google.com/apps/testing/com.xamarin.live)
-
-# <a name="iostabios"></a>[iOS](#tab/ios)
-
-Es wird empfohlen, Benutzer können die [Xamarin Live Player app _iOS Vorschau_ ](https://aka.ms/liveplayeralpha) genießen Sie schnellen Zugriff auf die neuesten Verbesserungen über TestFlight.
-
------
-
-## <a name="using-the-app"></a>Mithilfe der App
 
 Nachdem Sie die app auf Ihrem Telefon installiert haben, führen Sie die [setupanweisungen](~/tools/live-player/install.md) zur Verbindung mit Ihrem Computers. Führen Sie eine der [Beispiel-apps](~/tools/live-player/samples.md) Bezugsquelle arbeiten.
 

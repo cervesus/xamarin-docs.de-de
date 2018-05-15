@@ -81,8 +81,6 @@
 #### [GridLayout](user-interface/layouts/grid-layout.md)
 #### [Layouts im Registerkartenformat](user-interface/layouts/tab-layout/index.md)
 ##### [Navigationsregisterkarten mit ActionBar](user-interface/layouts/tab-layout/with-action-bar.md)
-##### [TabHost-Übersicht](user-interface/layouts/tab-layout/tab-host.md)
-##### [Erstellen einer Benutzeroberfläche mit Registerkarten mit TabHost](user-interface/layouts/tab-layout/creating-a-tabbed-ui.md)
 ### [Steuerelemente](user-interface/controls/index.md)
 #### [ActionBar](user-interface/controls/action-bar.md)
 #### [Automatische Vervollständigung](user-interface/controls/auto-complete.md)
