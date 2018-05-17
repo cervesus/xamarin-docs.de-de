@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: 3f321366b3afc814aef1c586af2707b1caeef4c7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f604d41990a7a592a3d5207e7a12075c35ae661f
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="manual-provisioning"></a>Manuelle Bereitstellung
 
@@ -254,7 +254,10 @@ Wenn die Einstellung auf **Automatisch** festgelegt ist, wählt Visual Studio f�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Schließen Sie das Gerät an einem Macintosh-Computer an.
+> [!IMPORTANT]
+> Bevor Sie beginnen, stellen Sie sicher, dass Sie in der unter **Projekt > Bereitstellungseigenschaften…** die Option **Manuelle Bereitstellung** ausgewählt haben.
+
+1. Schließen Sie das Gerät an den Mac-Buildhost an.
 2. Stellen Sie in der **Info.plist** des Projekts sicher, dass die Bundle-ID der App-ID entspricht:
 
   ![](manual-provisioning-images/servicevs01.png "Eingeben eines Bezeichners")

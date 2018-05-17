@@ -6,12 +6,12 @@ ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 07/15/2017
-ms.openlocfilehash: e04ebd041c64d474fafe12c387f558e740773c98
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/06/2018
+ms.openlocfilehash: 5265ee366c7e3c0e79e54d320d3d6eb57c2fd92d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="device-provisioning"></a>Bereitstellung von Geräten
 
@@ -47,23 +47,14 @@ Anhand dieser Schritte stellen Sie sicher, dass alle Komponenten, die während d
 
 <a name="Provisioning_Profile" />
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
-
 ## <a name="provisioning-your-device"></a>Bereitstellen Ihres Geräts
 
-Es gibt zwei Möglichkeiten zum Bereitstellen Ihres iOS-Geräts mit Visual Studio für Mac:
+Es gibt zwei Möglichkeiten zum Bereitstellen Ihres iOS-Geräts:
 
-* **Automatisch (Empfohlen)**: Wählen Sie die Option **Signierung automatisch verwalten** aus, um Visual Studio für Mac Ihre Signieridentitäten, App-IDs und Bereitstellungsprofile automatisch erstellen und verwalten zu lassen.  Weitere Informationen zur automatischen Verwaltung der Bereitstellung finden Sie im Leitfaden [Automatische Bereitstellung](automatic-provisioning.md). Dies ist die empfohlene Methode der Bereitstellung eines iOS-Geräts.
+* **Automatisch (Empfohlen)**: Wählen Sie das Schema **Automatische Bereitstellung** in Ihrem Projekt aus, um Visual Studio Ihre Signieridentitäten, App-IDs und Bereitstellungsprofile automatisch erstellen und verwalten zu lassen. Weitere Informationen zur automatischen Verwaltung der Bereitstellung finden Sie im Leitfaden [Automatische Bereitstellung](automatic-provisioning.md). Dies ist die empfohlene Methode der Bereitstellung eines iOS-Geräts.
 
 * **Manuell**: Signieridentitäten, App-IDs und Bereitstellungsprofile können über das Apple Developer Portal erstellt und verwaltet werden, wie im Leitfaden [Manuelle Bereitstellung](manual-provisioning.md) beschrieben. Diese Artefakte können dann wie im Leitfaden [Apple Account Management](~/cross-platform/macios/apple-account-management.md) beschrieben verwaltet werden.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-## <a name="provisioning-your-device"></a>Bereitstellen Ihres Geräts
-
-Befolgen Sie die ausführlichen Schritte im Handbuch zur [manuellen Bereitstellung](manual-provisioning.md), um zu erfahren, wie Sie ein Apple-Gerät für die Bereitstellung einrichten und eine Anwendung mit Visual Studio unter Windows bereitstellen.
-
------
 
 <a name="appservices" />
 
@@ -74,9 +65,6 @@ Apple stellt eine Auswahl an speziellen Anwendungsdiensten, auch Funktionen gena
 * Erstellen Sie eine App-ID mit den erforderlichen App-Diensten.
 * Erstellen Sie ein neues [Bereitstellungsprofil](#Provisioning_Profile), das diese App-ID enthält.
 * Legen Sie Berechtigungen im Xamarin.iOS-Projekt fest
-
-> [!NOTE]
-> In Visual Studio für Mac erstellte Bereitstellungsprofile berücksichtigen aktuell keine Kontoberechtigungen, die in Ihren Projekten ausgewählt wurden („Entitlements.plist“). Diese Funktion wird in zukünftigen Versionen der IDE hinzugefügt. Wenn Sie App Services verwenden möchten, empfiehlt es sich, die Anweisungen im Leitfaden [Manual Provisioning (Manuelle Bereitstellung)](manual-provisioning.md) zu berücksichtigen.
 
 ## <a name="related-links"></a>Verwandte Links
 

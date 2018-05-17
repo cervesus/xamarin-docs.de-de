@@ -1,5 +1,5 @@
 ---
-title: Hello, iOS
+title: Hallo, iOS-Schnellstart
 description: Dieser zweiteilige Leitfaden beschreibt, wie Sie mit Visual Studio für Mac oder Visual Studio eine einfache Xamarin.iOS-Anwendung erstellen. Außerdem erhalten Sie Einblick in die grundlegenden Aspekte der Entwicklung von iOS-Anwendungen mit Xamarin. Es werden die Tools, Konzepte und Schritte eingeführt, die zum Erstellen und Bereitstellen einer Xamarin.iOS-Anwendung erforderlich sind.
 ms.topic: quickstart
 ms.prod: xamarin
@@ -7,19 +7,18 @@ ms.assetid: D3868F3A-4EED-BDDF-45AA-665102C39634
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/23/2017
-ms.openlocfilehash: dc9b86845dc91c7fb8ec3a88a5862e5e9f6de18d
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.date: 05/02/2017
+ms.openlocfilehash: c82343b3ec36512a8cfd7ba3b96862eac14bfafd
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="helloios-quickstart"></a>Schnellstart für Hallo.iOS
 
 Dieses Handbuch beschreibt, wie Sie eine Anwendung erstellen, die eine vom Benutzer eingegebene alphanumerische Telefonnummer in eine numerische Telefonnummer übersetzt und anschließend diese Nummer anruft. Die endgültige Anwendung sieht wie folgt aus:
 
  [![](hello-ios-quickstart-images/image1.png "Die Schnellstart-App „Hello.iOS“")](hello-ios-quickstart-images/image1.png#lightbox)
-
 
 <a name="Requirements" />
 
@@ -42,7 +41,7 @@ Im [Xamarin.iOS Mac Installation guide (Xamarin.iOS Mac-Installationsleitfaden)]
 
 Xamarin.iOS funktioniert mit den folgenden Setups:
 
--  Neueste Version von Visual Studio 2015 oder 2017 Professional oder höher unter Windows 7 oder höher, gekoppelt mit einem Mac-Buildhost, der den oben aufgeführten Spezifikationen entspricht.
+-  Neueste Version von Visual Studio 2017 Community, Professional oder Enterprise unter Windows 7 oder höher, gekoppelt mit einem Mac-Buildhost, der den oben aufgeführten Spezifikationen entspricht.
 
 Im [Xamarin.iOS Windows Installation guide (Xamarin.iOS Windows-Installationshandbuch)](~/ios/get-started/installation/windows/index.md) finden Sie ausführliche Installationsanweisungen.
 
@@ -63,7 +62,6 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung 
 Klicken Sie auf dem Startbildschirm auf **Neues Projekt...**, um eine neue Xamarin.iOS-Projektmappe zu erstellen:
 
 ![](hello-ios-quickstart-images/image3new.png "iOS-Lösung")
-
 
 2. Im **Dialogfeld „Neue Projektmappe“**, wählen Sie die Vorlage **iOS > App > Single View Application** (iOS > App > Einzelansicht) aus, um sicherzustellen, dass C# ausgewählt ist. Klicken Sie auf **Weiter**:
 
@@ -294,51 +292,42 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung 
 
   ![](hello-ios-quickstart-images/image001-.png "Der Startbildschirm")
 
-  Im Suchfeld unter **Neue Projektmappe** geben Sie _Single View App_ (Einzelansicht-App) ein, und wählen Sie **Single View App (iPhone)** (Einzelansicht-App (iPhone)) zum Erstellen einer neuen Xamarin.iOS-Projektmappe aus:
+  Erstellen Sie eine neue Xamarin.iOS-Projektmappe, indem Sie **Datei > Neu > Projekt... > Visual C# > iPhone & iPad > iOS-App (Xamari)** auswählen:
 
-  ![](hello-ios-quickstart-images/image002-.png "Fügen Sie eine Einzelansicht-App hinzu")
+  ![Wählen Sie den iOS-App (Xamarin)-Projekttyp aus](hello-ios-quickstart-images/image002.w157.png "Wählen Sie den iOS-App (Xamarin)-Projekttyp aus")
 
+  Wählen Sie im nächsten Dialogfeld die Vorlage **Einzelansicht-App** aus, und drücken Sie **OK**, um das Projekt zu erstellen:
 
-2. Benennen Sie das Projekt und die Projektmappe `Phoneword`, wie unten gezeigt:
+  ![Wählen Sie die Einzelansicht-Projektvorlage aus](hello-ios-quickstart-images/image002-2.w157.png "Wählen Sie die Einzelansicht-Projektvorlage aus")
 
-  ![](hello-ios-quickstart-images/vs-image3.png "Nennen Sie das Projekt „PhonewordiOS“ und die neue Projektmappe „Phoneword“")
-
-
-3. Klicken Sie auf **OK**, um das neue Projekt zu erstellen.
-
-4. Vergewissern Sie sich, dass das Xamarin Mac Agent-Symbol auf der Symbolleiste grün ist.
+1. Vergewissern Sie sich, dass das Xamarin Mac Agent-Symbol auf der Symbolleiste grün ist.
 
     ![Vergewissern Sie sich, dass das Xamarin Mac Agent-Symbol auf der Symbolleiste grün ist.](hello-ios-quickstart-images/vs-image4.png)
 
     Wenn dies nicht der Fall ist, besteht keine Verbindung zu Ihrem Mac-Buildhost. Befolgen Sie dann die Schritte im [Konfigurationshandbuch](~/ios/get-started/installation/windows/connecting-to-mac/index.md), um eine Verbindung herzustellen.
 
-
-5. Öffnen Sie die **Main.storyboard**-Datei im iOS Designer durch Doppelklicken auf diese im **Projektmappen-Explorer**:
+1. Öffnen Sie die **Main.storyboard**-Datei im iOS Designer durch Doppelklicken auf diese im **Projektmappen-Explorer**:
 
   ![](hello-ios-quickstart-images/vs-image7.png "Der iOS-Designer")
 
-6. Öffnen Sie die **Toolbox**-Registerkarte, geben Sie „Bezeichnung“ in die Suchleiste ein, und ziehen Sie eine **Bezeichnung** auf die Entwurfsoberfläche (der Bereich in der Mitte):
+1. Öffnen Sie die **Toolbox**-Registerkarte, geben Sie „Bezeichnung“ in die Suchleiste ein, und ziehen Sie eine **Bezeichnung** auf die Entwurfsoberfläche (der Bereich in der Mitte):
 
   ![](hello-ios-quickstart-images/vs-image8.png "Ziehen Sie eine Bezeichnung auf die Entwurfsoberfläche, den Bereich in der Mitte")
 
-
-7. Ziehen Sie dann die Ziehpunkte der *Dragging Controls* (Ziehsteuerelemente), und verbreitern Sie die Bezeichnung:
+1. Ziehen Sie dann die Ziehpunkte der *Dragging Controls* (Ziehsteuerelemente), und verbreitern Sie die Bezeichnung:
 
   ![](hello-ios-quickstart-images/vs-image9.png "Verbreitern Sie die Bezeichnung")
 
-
-8. Nachdem Sie die **Bezeichnung** auf der Entwurfsoberfläche ausgewählt haben, verwenden Sie das **Eigenschaftenfenster**, um die **Text**-Eigenschaft von der **Bezeichnung** in „Enter a Phoneword:“ (Phoneword eingeben) zu ändern.
+1. Nachdem Sie die **Bezeichnung** auf der Entwurfsoberfläche ausgewählt haben, verwenden Sie das **Eigenschaftenfenster**, um die **Text**-Eigenschaft von der **Bezeichnung** in „Enter a Phoneword:“ (Phoneword eingeben) zu ändern.
 
   ![](hello-ios-quickstart-images/vs-image10.png "Ändern Sie die Eigenschaft „Text“ der Bezeichnung in „Phoneword eingeben“")
 
   > [!NOTE]
   > Sie können die **Eigenschaften** oder die **Toolbox** jederzeit durch Navigieren zum Menü **Ansicht** nutzen.
 
-
-9. Suchen Sie nach „Textfeld“ in der Toolbox, und ziehen Sie ein **Textfeld** aus der **Toolbox** auf die Entwurfsoberfläche, und platzieren Sie es unter der **Bezeichnung**. Passen Sie die Breite so an, bis die Breite des **Textfelds** mit jener der **Bezeichnung** identisch ist:
+1. Suchen Sie nach „Textfeld“ in der Toolbox, und ziehen Sie ein **Textfeld** aus der **Toolbox** auf die Entwurfsoberfläche, und platzieren Sie es unter der **Bezeichnung**. Passen Sie die Breite so an, bis die Breite des **Textfelds** mit jener der **Bezeichnung** identisch ist:
 
   ![](hello-ios-quickstart-images/vs-image12.png "Passen Sie die Breite so an, dass Textfeld und Bezeichnung gleich breit sind")
-
 
 10. Nachdem Sie das **Textfeld** auf der Entwurfsoberfläche ausgewählt haben, ändern Sie die **Name**-Eigenschaft des **Textfelds** im Identitätsabschnitt der **Eigenschaften** in `PhoneNumberText`, und ändern Sie die **Text**-Eigenschaft in „1-855-XAMARIN“:
 
@@ -371,9 +360,9 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung 
   ![](hello-ios-quickstart-images/vs-image18.png "Fügen Sie Code hinzu, um alphanumerische Telefonnummern in numerische Telefonnummern zu übersetzen")
 
 
-16. Wählen Sie im **Neue Datei**-Dialogfeld **Apple > Klasse** aus, und geben Sie der neuen Datei den Namen `PhoneTranslator`:
+16. Wählen Sie im Dialogfeld **Neues Element hinzufügen** (mit der rechten Maustaste auf das Projekt klicken und „Hinzufügen > Neues Element...“ auswählen) die Option **Apple > Klasse** aus, und nennen Sie die neue Datei `PhoneTranslator`:
 
-  ![](hello-ios-quickstart-images/vs-image19.png "Fügen Sie eine neue Klasse mit dem Namen „PhoneTranslator“ hinzu")
+  ![](hello-ios-quickstart-images/vs-image19.w157.png "Fügen Sie eine neue Klasse mit dem Namen „PhoneTranslator“ hinzu")
 
   > [!IMPORTANT]
   > Stellen Sie sicher, dass Sie die Vorlage „Klasse“ auswählen, die ein C# im Symbol enthält. Andernfalls können Sie nicht auf diese neue Klasse verweisen.

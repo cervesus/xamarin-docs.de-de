@@ -6,12 +6,12 @@ ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: f34a3ee44b604bf0b82faf77769f3c2844e6460f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/14/2018
+ms.openlocfilehash: 6200a04bb4d82174d36a48beab7c63709ac39187
+ms.sourcegitcommit: c5bb1045b2f4607dafe3101ad1ea6ade23e44342
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="splash-screen"></a>Begrüßungsbildschirm
 
@@ -152,6 +152,73 @@ public class MainActivity : AppCompatActivity
     // Code omitted for brevity
 }
 ```
+
+## <a name="landscape-mode"></a>Querformat
+
+Der Begrüßungsbildschirm in den vorherigen Schritten implementiert wird im Hochformat- und querformatausrichtung Modus ordnungsgemäß angezeigt. In einigen Fällen ist es jedoch erforderlich, separate Begrüßungsbildschirme für Hochformat- und querformatausrichtung Modi zu verwenden (beispielsweise, wenn das Bild des Begrüßungsbildschirms Vollbildmodus ist).
+
+Um einen Begrüßungsbildschirm für Querformat hinzuzufügen, verwenden Sie die folgenden Schritte aus:
+
+1. In der **Ressourcen und Ausgaben möglich** Ordner hinzufügen die Querformat-Version des Begrüßungsbildschirms, die Sie verwenden möchten. In diesem Beispiel **splash_logo_land.png** ist die Version im Querformat das Logo, das in den obigen Beispielen (weißen Nachrichten nicht, sondern verwendet Blau) verwendet wurde.
+
+2. In der **Ressourcen und Ausgaben möglich** Ordner, erstellen Sie eine Querformat-Version von der `layer-list` zeichenbaren, wurde zuvor definierten (z. B. **splash_screen_land.xml**). Legen Sie in dieser Datei den Bitmappfad auf die Querformat-Version von der des Begrüßungsbildschirms. Im folgenden Beispiel **splash_screen_land.xml** verwendet **splash_logo_land.png**:
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+      <item>
+        <color android:color="@color/splash_background"/>
+      </item>
+      <item>
+        <bitmap
+            android:src="@drawable/splash_logo_land"
+            android:tileMode="disabled"
+            android:gravity="center"/>
+      </item>
+    </layer-list>
+    ```
+
+3.  Erstellen der **Ressourcen/Werte-Land** Benutzerordner, falls er nicht bereits vorhanden.
+
+4.  Fügen Sie die Dateien **"Colors.xml"** und **style.xml** auf **Werte Land** (diese können kopiert und geändert werden, aus der vorhandenen **values/colors.xml**und **values/style.xml** Dateien).
+
+5.  Ändern Sie **Werte-Land-/style.xml** , sodass die Querformat-Version von den zeichenbaren für verwendet `windowBackground`. In diesem Beispiel **splash_screen_land.xml** verwendet wird:
+
+    ```xml
+    <resources>
+      <style name="MyTheme.Base" parent="Theme.AppCompat.Light">
+      </style>
+        <style name="MyTheme" parent="MyTheme.Base">
+      </style>
+      <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen_land</item>
+        <item name="android:windowNoTitle">true</item>  
+        <item name="android:windowFullscreen">true</item>  
+        <item name="android:windowContentOverlay">@null</item>  
+        <item name="android:windowActionBar">true</item>  
+      </style>
+    </resources>
+    ```
+
+6.  Ändern Sie **Werte-Land-/ "Colors.xml"** so konfigurieren Sie die Farben für die Version im Querformat des Begrüßungsbildschirms verwenden möchten. In diesem Beispiel wird die Hintergrundfarbe des Begrüßungsbildschirms für Querformat Blau geändert:
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+      <color name="primary">#2196F3</color>
+      <color name="primaryDark">#1976D2</color>
+      <color name="accent">#FFC107</color>
+      <color name="window_background">#F5F5F5</color>
+      <color name="splash_background">#3498DB</color>
+    </resources>
+    ```
+
+7.  Erstellen Sie und führen Sie die app erneut aus. Drehen Sie das Gerät, um den Modus Querformat während der Begrüßungsbildschirm weiterhin angezeigt wird. Der Begrüßungsbildschirm Änderungen an der Landscape-Version:
+
+    [![Rotation der Begrüßungsbildschirm auf Querformat](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
+
+
+Beachten Sie, dass die Verwendung der im Querformat Begrüßungsbildschirm nicht immer ein nahtloses Erlebnis bereitstellen. Standardmäßig Android startet die app im Hochformat und geht es um Modus landscape, selbst wenn das Gerät bereits im Querformat ist. Daher, wenn die app gestartet wird, während das Gerät im Querformat ist, das Gerät kurz präsentiert den Hochformat Splash-Bildschirm und klicken Sie dann eine Animation Drehung aus der Hochformat Querformat Splash-Bildschirm. Leider dieser Hochformat, Querformat Anfangsübergang findet statt, auch wenn `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape` in der Begrüßungsbildschirm Aktivität Flags angegeben ist. Erstellen eine einzelne rendert Begrüßungsbildschirms ordnungsgemäß Hochformat- und querformatausrichtung Modi ist die beste Möglichkeit zum Umgehen dieser Einschränkung werden.
 
 
 ## <a name="summary"></a>Zusammenfassung

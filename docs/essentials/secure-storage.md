@@ -5,17 +5,39 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: 24d1e29ba0203aaafc3e21533478f6c505cc09b3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: e64160a5579bffa8e9e9820db1a3ba39bdf7304e
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials sichere Speicherung
 
 ![Vorabversion NuGet](~/media/shared/pre-release.png)
 
 Die **SecureStorage** Klasse hilft Lagern Sie einfache Schlüssel/Wert-Paaren.
+
+## <a name="getting-started"></a>Erste Schritte
+
+Für den Zugriff auf die **SecureStorage** Funktionalität, die folgenden plattformspezifischen Setup erforderlich ist:
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+Ohne zusätzliche Einrichtung erforderlich.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+Aktivieren Sie bei der Entwicklung für iOS-Simulator die **Schlüsselbund** Rechtsansprüche und hinzufügen eine Zugriffsgruppe für die Paket-ID der Anwendung.
+
+Öffnen der **Entitlements.plist** im iOS-Projekt, und suchen die **Schlüsselbund** Rechtsansprüche und aktivieren Sie ihn. Dadurch wird die Anwendungs-ID automatisch als eine Gruppe hinzugefügt.
+
+In den Projekteigenschaften unter **iOS Bundle Signing** legen Sie die **benutzerdefinierte Ansprüche** auf **Entitlements.plist**.
+
+# <a name="uwptabuwp"></a>[UNIVERSELLE WINDOWS-PLATTFORM](#tab/uwp)
+
+Ohne zusätzliche Einrichtung erforderlich.
+
+-----
 
 ## <a name="using-secure-storage"></a>Verwenden die sichere Speicherung
 
@@ -75,5 +97,5 @@ Diese API ist vorgesehen, um kleine Mengen von Text zu speichern.  Leistung ist 
 
 ## <a name="api"></a>API
 
-- [SecureStorage-Quellcode](https://github.com/xamarin/Essentials/tree/master/Essentials/SecureStorage)
+- [SecureStorage-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
 - [SecureStorage API-Dokumentation](xref:Xamarin.Essentials.SecureStorage)

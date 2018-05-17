@@ -1,93 +1,66 @@
 ---
-title: Remote-iOS-Simulator (für Windows)
-description: IOS-apps testen und Debuggen vollständig in Visual Studio unter Windows
+title: iOS-Remotesimulator für Windows
+description: Remote-iOS-Simulator für Windows können Sie zum Testen Ihrer apps auf einem iOS-Simulator unter Windows zusammen mit Visual Studio 2017 angezeigt.
 ms.prod: xamarin
 ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: topgenorth
 ms.author: toopge
-ms.date: 04/07/2017
-ms.openlocfilehash: 5a1408f6595bd1e2371cd1d0421f81a3a16a5cc3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/11/2018
+ms.openlocfilehash: b07cc24e63f4aa3ce4451e3bdb5819f1df1058c6
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
-# <a name="remoted-ios-simulator-for-windows"></a>Remote-iOS-Simulator (für Windows)
+# <a name="remoted-ios-simulator-for-windows"></a>iOS-Remotesimulator für Windows
 
-_IOS-apps testen und Debuggen vollständig in Visual Studio unter Windows_
+Remote-iOS-Simulator für Windows können Sie zum Testen Ihrer apps auf einem iOS-Simulator unter Windows zusammen mit Visual Studio 2017 angezeigt.
 
 [![](ios-simulator-images/hero-sml.png "iOS-Simulator unter Windows")](ios-simulator-images/hero.png#lightbox)
 
-## <a name="download-and-install"></a>Herunterladen und installieren
-
-Herunterladen der [Installer](https://dl.xamarin.com/xamarin-simulator/Xamarin.Simulator.Installer.msi) und auf Ihrem Windows-Computer installieren. Visual Studio-Tools für Xamarin sollte bereits installiert sein.
-
-> [!NOTE]
-> Mit einem remote-iOS-Simulator auf Visual Studio erfordert einen vernetzten Mac mit Xamarin installiert.
-
 ## <a name="getting-started"></a>Erste Schritte
 
-So verwenden Sie den remote-iOS-simulator
+Die Remote-iOS-Simulator für Windows wird automatisch als Teil der Xamarin in Visual Studio 2017 installiert. Gehen Sie folgendermaßen vor, um es verwenden zu um können:
 
-1. Stellen Sie sicher, dass Visual Studio auf Ihrem Mac verbunden ist, mindestens einmal, bevor Sie den remote-iOS-Simulator starten.
-2. Sicherzustellen, dass eine app für iOS oder tvos. außerdem wurden die **Startprojekt** und mit dem Debuggen beginnen.
+1. [Visual 2017 mit einem Mac-buildhost koppeln](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+2. Starten Sie in Visual Studio 2017 Debuggen eines Projekts auf iOS oder tvos. außerdem wurden ein. Die Remote-iOS-Simulator für Windows wird auf dem Windows-Computer angezeigt.
 
-Können Sie den remote-iOS-Simulator aus deaktivieren **Tools > Optionen > Xamarin > für den iOS** durch das Kontrollkästchen für **Remote-Simulator für Windows** hier dargestellt:
+## <a name="simulator-window"></a>Simulatorfenster
 
-[![](ios-simulator-images/options-sml.png "Kontrollkästchen, um den Simulator verwenden.")](ios-simulator-images/options.png#lightbox)
+Auf die Symbolleiste am oberen Rand des Simulators Fensters enthält eine Reihe von Schaltflächen nützlich:
 
-IOS-Simulator wird auf dem verbundenen Mac-Computer geöffnet. Überprüfen Sie diese Option, um den remote-iOS-Simulator wieder zu aktivieren.
-
-## <a name="features"></a>Features
-
-Der remote-iOS-Simulator bietet Ihnen eine Möglichkeit zum Testen und Debuggen von iOS-apps im Simulator vollständig von Visual Studio unter Windows.
-
-### <a name="simulator-window"></a>Simulatorfenster
-
-Die Symbolleiste des Fensters enthält eine Reihe von Schaltflächen für die Interaktion mit den Simulator:
-
-- **Home** – Schaltfläche "Start" auf dem Gerät simuliert.
-- **Sperre** – Sperren Sie den Simulator (Sie können zum Entsperren streichen).
-- **Bildschirmabbildung von** – einen Screenshot der Simulator auf dem Datenträger gespeichert.
-- [**Einstellungen** ](#settings) – konfigurieren Sie die Tastatur und Speicherort.
-- Andere [ **Optionen** ](#options) – eine Vielzahl von Simulator Optionen stehen zur Verfügung, z. B. drehen, Shake, oder rufen Sie andere Zustände im Simulator. Wenn einige Optionen verdeckt werden, können sie aus dem Symbol "Ellipse" zugegriffen werden, die in der Symbolleiste oder mit der rechten Maustaste auf das Fenster angezeigt wird.
+- **Home** – simuliert die Schaltfläche "Start" auf einem iOS-Gerät
+- **Sperre** – Sperren Sie den Simulator (Wischen zum Entsperren erforderlich)
+- **Bildschirmabbildung von** – speichert einen Screenshot des Simulators
+- [**Einstellungen** ](#settings) – zeigt an, Tastatur, Speicherort und andere Einstellungen
+- [**Andere Optionen** ](#other-options) – bringt verschiedene Simulator-Optionen, wie Drehung und Shake Gesten
 
     [![](ios-simulator-images/maps-app-sml.png "iOS-Simulator zuordnet, Beispiel")](ios-simulator-images/maps-app.png#lightbox)
 
+## <a name="settings"></a>Einstellungen
 
-### <a name="settings"></a>Einstellungen
-
-Das Zahnradsymbol "" öffnet die **Einstellungen** Fenster:
+Klicken Sie auf der Symbolleiste Zahnradsymbol das **Einstellungen** Fenster:
 
 [![](ios-simulator-images/settings-sml.png "Einstellungen für iOS-simulator")](ios-simulator-images/settings.png#lightbox)
 
-Dadurch können Sie im Simulator die Hardwaretastatur aktivieren, und wählen der Speicherort auf dem Gerät (z. B. einen statischen Speicherort oder andere gleitenden Standortoptionen) gemeldet wird.
+Diese Einstellungen können Sie die Hardwaretastatur aktivieren, wählen einen Speicherort, der das Gerät sollte Bericht (statische und dynamische Standorten werden beide unterstützt), Touch ID zu aktivieren und den Inhalt und die Einstellungen für den Simulator zurücksetzen.
 
+## <a name="other-options"></a>Weitere Optionen
 
-
-### <a name="other-options"></a>Weitere Optionen
-
-Mit der rechten Sie Maustaste im simulatorfenster, um die im Simulator, wie Drehung, eine Geste Shake auslösen und Neustarten des Simulators verfügbaren Optionen anzuzeigen:
+Der Symbolleiste auf die Schaltfläche wird die anderen Optionen wie Drehung, Shake Gesten und neu zu starten. Diese gleichen Optionen können als Liste mit der rechten Maustaste an einer beliebigen Stelle in der Simulator-Fenster angezeigt werden:
 
 [![](ios-simulator-images/more-sml.png "zusätzliche Einstellungen für iOS-simulator")](ios-simulator-images/more.png#lightbox)
 
-### <a name="touchscreen-support"></a>Touchscreen-Unterstützung
+## <a name="touchscreen-support"></a>Touchscreen-Unterstützung
 
-Die meisten modernen Windows-Computer haben Touchscreens, und der remote-iOS-Simulator können Sie die simulatorfenster zum Testen von Benutzerinteraktionen in Ihre iOS-app zu berühren.
+Die meisten modernen Windows-Computer haben Touchscreens. Da die Remoteausführung iOS-Simulator für Windows Touch-Interaktionen unterstützt, können Sie Testen Ihrer app mit der gleichen verkleinern, Streifen und mit mehreren Finger Fingereingabe, die mit physischen iOS-Geräte verwendet.
 
-Dies schließt Pinch Streifen und mehrere Finger Fingereingabe - Dinge, die zuvor nur problemlos auf physischen Geräten getestet werden können.
+Auf ähnliche Weise behandelt prozessübergreifendes iOS-Simulator für Windows Windows Tablettstift Eingabe als Eingabe der Apple-Zeichenstift.
 
-Stift-Unterstützung in Windows wird auch in Apple Zeichenstift Eingabe im Simulator übersetzt.
+## <a name="disabling-the-remoted-ios-simulator-for-windows"></a>Deaktivieren von Remote-iOS-Simulator für Windows
 
-<!--
-<a name="knownissues" />
+Um die Remote-iOS-Simulator für Windows zu deaktivieren, navigieren Sie zu **Tools > Optionen > Xamarin > für den iOS** und deaktivieren Sie **Remote-Simulator für Windows**.
 
-# Known Issues
+[![](ios-simulator-images/options-sml.png "Kontrollkästchen, um den Simulator verwenden.")](ios-simulator-images/options.png#lightbox)
 
- - Apple Watch devices may show in the Visual Studio device list, but are not yet supported.
- - Launching in **Release** mode may also start Apple’s simulator on the networked Mac.
- - Closing the remote iOS Simulator on Windows will not immediately stop debugging in Visual Studio. Stop debugging manually from the menu or the red button.
- - Opening too many different simulators simultaneously will produce unexpected results.
- - Exception of type `Foundation.NSErrorException` may be thrown while launching Simulators. Workaround is to kill csproxy (server process) on the Mac host and re-deploy to the simulator.
- - Performance may be slower when using Xcode 8
--->
+Mit dieser Option öffnet Debuggen deaktiviert, erstellen Sie den iOS-Simulator auf dem Mac verbundenen Host.

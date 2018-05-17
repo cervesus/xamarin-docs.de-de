@@ -6,12 +6,12 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 1cd9a4977aad3f3bd8d8a4e51871698a54f75eb8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/04/2018
+ms.openlocfilehash: b1cf87ed8c5614a113a03232547a6753da26bc2d
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="windows-installation"></a>Windows-Installation
 
@@ -67,20 +67,25 @@ Sie können über den Google Android SDK-Manager Versionen des Android SDK Tools
 
 Weitere Informationen zur Verwendung des Xamarin Android SDK-Managers finden Sie unter [Android SDK Setup (Android SDK-Setup)](~/android/get-started/installation/android-sdk.md).
 
+### <a name="google-android-emulator"></a>Google Android-Emulator
 
-### <a name="android-emulator"></a>Android-Emulator
+Der [Google Android-Emulator](https://developer.android.com/studio/run/emulator) kann ein hilfreiches Tool zum Entwickeln und Testen einer Xamarin.Android-App sein. Angenommen, während der Entwicklung ist kein physisches Gerät, z. B. ein Tablet-PC, verfügbar, oder ein Entwickler möchte vor dem Ausführen eines Commits für Code einige Integrationstests auf seinem Computer ausführen.
 
-Wenn Sie nicht über ein physisches Android-Gerät für Testzwecke verfügen, können Sie Ihre App mit einem Android-Emulator testen. Weitere Informationen zum Google Android-Emulator finden Sie unter [Android SDK Emulator (Android SDK-Emulator)](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Das Emulieren eines Android-Geräts auf einem Computer umfasst die folgenden Komponenten:
 
-Der Google Android-Emulator verwendet Intel HAXM (Hardware Accelerated Execution Manager). Dieser kann mit den von anderen Emulatoren verwendeten Virtualisierungstechnologien in Konflikt stehen. Es gibt folgende drei Hauptvirtualisierungstechnologien:
+* **Google Android-Emulator** &ndash; Dies ist ein Emulator, der auf [QEMU](https://www.qemu.org/) basiert und ein virtualisiertes Gerät erstellt, das auf der Arbeitsstation des Entwicklers ausgeführt wird.
+* **Emulator-Image** &ndash; Ein _Emulator-Image_ ist eine Vorlage oder eine Spezifikation der Hardware und des Betriebssystems, die virtualisiert werden sollen. Beispielsweise würde ein Emulator-Image die Hardwareanforderungen für ein Nexus 5X mit Android 7.0 und installierten Google Play-Diensten identifizieren. Ein anderes Emulator-Image spezifiziert möglicherweise ein 10"-Tablet mit Android 6.0.
+* **Virtuelles Android-Gerät (AVD)** &ndash; Ein _virtuelles Android-Gerät_ ist ein aus einem Emulator-Image erstelltes „emuliertes“ Android-Gerät. Beim Ausführen und Testen von Android-Apps startet Xamarin.Android den Android-Emulator, startet ein bestimmtes AVD, installiert die APK und führt dann die App aus.
 
--   **Hyper-V** (wird vom Visual Studio-Emulator für Android und dem Windows Phone-Emulator verwendet) 
+Eine erhebliche Verbesserung der Leistung bei der Entwicklung auf x86-Computern kann erreicht werden, indem Sie spezielle für die x86-Architektur optimierte Emulator-Images und eine der beiden Virtualisierungstechnologien verwenden:
 
--   **Virtual Box** (wird von Genymotion verwendet)
+1. Hyper-V von Microsoft &ndash; Verfügbar auf Computern mit dem April-Update von Windows 10.
+2. Hardware Accelerated Execution Manager (HAXM) von Intel&ndash; Verfügbar auf x86-Computern mit OS X, MacOS oder älteren Versionen von Windows.
 
--   **Intel HAXM** (wird vom Google Android SDK-Emulator verwendet) 
+Weitere Informationen zu Google Android-Emulator Hyper-V und HAXM, finden Sie im Handbuch [Hardwarebeschleunigung für Android-Emulator](~/android/get-started/installation/android-emulator/hardware-acceleration.md).
 
-Da die CPU eines Entwicklungscomputers jeweils nur eine Virtualisierungstechnologie unterstützen kann, sollte auf einem Entwicklungscomputer jeweils nur eine eingesetzt werden.
+> [!NOTE]
+> In älteren Versionen von Windows ist die HAXM nicht kompatibel mit Hyper-V. In diesem Szenario ist es erforderlich, entweder [Hyper-V zu deaktivieren](/xamarin/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md?tabs=vswin#disabling-hyper-v) oder die langsameren Emulator-Images ohne x86-Optimierungen zu verwenden.
 
 <a name="device" />
 
@@ -95,9 +100,9 @@ Nachdem Sie Xamarin.Android installiert haben, können Sie Visual Studio starten
 
 ![Erstellen eines neuen Projekts](windows-images/10-new-project.png)
 
-Wählen Sie im Dialogfeld **Neues Projekt** den Eintrag **Android** unter **Vorlagen** aus, und klicken Sie im rechten Bereich auf **Leere App (Android)**. Geben Sie einen Namen für Ihre App ein (im nachfolgenden Screenshot heißt die App **MyApp**), und klicken Sie anschließend auf **OK**:
+Wählen Sie im Dialogfeld **Neues Projekt** den Eintrag **Android** unter **Vorlagen** aus, und klicken Sie im rechten Bereich auf **Android-App**. Geben Sie einen Namen für Ihre App ein (im nachfolgenden Screenshot heißt die App **MyApp**), und klicken Sie anschließend auf **OK**:
 
-[![Screenshot des Dialogfelds „Neues Projekt“, Erstellen einer leeren Android-App](windows-images/11-first-app-sml.png)](windows-images/11-first-app.png#lightbox)
+[![Screenshot des Dialogfelds „Neues Projekt“, Erstellen einer leeren Android-App](windows-images/11-first-app-sml.w157.png)](windows-images/11-first-app.w157.png#lightbox)
 
 Das ist alles! Nun können Sie mit Xamarin.Android Android-Anwendungen erstellen!
 
@@ -115,5 +120,6 @@ Im nächsten Schritt schauen Sie sich die [Hallo, Android](~/android/get-started
 - [Installieren von Visual Studio-Tools für Xamarin](~/cross-platform/get-started/installation/windows.md)
 - [Systemanforderungen](~/cross-platform/get-started/requirements.md)
 - [Android SDK-Setup](~/android/get-started/installation/android-sdk.md)
-- [Android SDK-Emulator](~/android/get-started/installation/android-emulator/index.md)
+- [Google Android-Emulator](~/android/get-started/installation/android-emulator/index.md)
 - [Set Up Device for Development (Einrichten eines Geräts für die Entwicklung)](~/android/get-started/installation/set-up-device-for-development.md)
+- [Ausführen von Apps auf dem Android-Emulator](https://developer.android.com/studio/run/emulator#Requirements)

@@ -1,21 +1,21 @@
 ---
-title: Ausführen des Android SDK-Emulators
-description: So debuggen Sie eine App mit dem Android SDK-Emulator
+title: Ausführen des Google Android-Emulators
+description: So debuggen Sie eine App mit dem Google Android-Emulator
 ms.prod: xamarin
 ms.assetid: AEA165A4-D81A-411B-91DF-2DED2EED27B5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 630520f88dd23d3860b5f42fbb9bc4eb35ca2c4b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0e290b24c0d7a98b1abaf647fe76e56867042645
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="running-the-android-sdk-emulator"></a>Ausführen des Android SDK-Emulators
+# <a name="running-the-google-android-emulator"></a>Ausführen des Google Android-Emulators
 
-In diesem Leitfaden erfahren Sie, wie Sie ein virtuelles Gerät im Android SDK-Emulator zum Debuggen und Testen Ihrer App starten.
+In diesem Leitfaden erfahren Sie, wie Sie ein virtuelles Gerät im Google Android-Emulator zum Debuggen und Testen Ihrer App starten.
 
 ## <a name="using-a-pre-configured-virtual-device"></a>Verwenden eines vorkonfigurierten virtuellen Geräts
 
@@ -80,13 +80,13 @@ Nachdem Sie ein virtuelles Gerät aus dem Geräte-Dropdownmenü ausgewählt habe
 
 -----
 
-Nach dem Start des Android-Emulators stellt Xamarin.Android die App im Emulator bereit. Der Emulator führt die App mit dem Image des konfigurierten virtuellen Geräts aus. Ein Beispielscreenshot des Android SDK Emulators ist unten zu sehen. Der Emulator wird in einer leeren App mit dem Namen **MyApp** ausgeführt:
+Nach dem Start des Android-Emulators stellt Xamarin.Android die App im Emulator bereit. Der Emulator führt die App mit dem Image des konfigurierten virtuellen Geräts aus. Ein Beispielscreenshot des Google Android-Emulators ist unten zu sehen. Der Emulator wird in einer leeren App mit dem Namen **MyApp** ausgeführt:
 
 ![Emulator, der eine leere App ausführt](running-the-emulator-images/emulator-running.png)
 
 Beim Ausführen der App muss der Emulator nicht jedes Mal beendet und anschließend wieder neu gestartet werden. Stattdessen kann dieser permanent ausgeführt werden. Bei der erstmaligen Ausführung einer Xamarin.Android-App im Emulator wird zuerst die freigegebene Xamarin.Android-Laufzeit für die Ziel-API-Ebene und anschließend die Anwendung installiert. Die Installation der Laufzeit kann einige Zeit in Anspruch nehmen. Bitte haben Sie daher etwas Geduld. Die Laufzeit wird nur bei der ersten Bereitstellung der Xamarin.Android-App im Emulator installiert &ndash; nachfolgende Bereitstellungen sind schneller, da nur die App in den Emulator kopiert wird.
 
-Weitere Informationen zur Verwendung des Android SDK Emulators finden Sie in den folgenden Themen für Android-Entwickler:
+Weitere Informationen zur Verwendung des Google Android-Emulators finden Sie in den folgenden Themen für Android-Entwickler:
 
 -   [Navigating on the Screen (Navigieren auf dem Bildschirm)](https://developer.android.com/studio/run/emulator.html#navigate)
 

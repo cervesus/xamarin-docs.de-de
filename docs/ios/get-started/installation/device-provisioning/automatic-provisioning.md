@@ -1,35 +1,46 @@
 ---
 title: Automatische Bereitstellung
-description: Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieses Handbuch beschreibt die Verwendung der Option „Automatische Signatur“ in Visual Studio für Mac, um Entwicklungszertifikate und -profile anzufordern.
+description: Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieses Handbuch beschreibt die Verwendung der Option „Automatische Signatur“, um Entwicklungszertifikate und -profile anzufordern.
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 11/17/2017
-ms.openlocfilehash: 01818d2870c7cf59a0f15385dbb3565f07400ff0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/06/2018
+ms.openlocfilehash: 0e2ce758da2951efa0508e76cdf4eaac5384fa6b
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="automatic-provisioning"></a>Automatische Bereitstellung
 
-_Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieses Handbuch beschreibt die Verwendung der Option „Automatische Signatur“ in Visual Studio für Mac, um Entwicklungszertifikate und -profile anzufordern._
+_Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieses Handbuch beschreibt die Verwendung der Option „Automatische Signatur“, um Entwicklungszertifikate und -profile anzufordern._
 
 ## <a name="requirements"></a>Anforderungen
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 - Visual Studio für Mac 7.3 oder höher
 - Xcode 9 oder höher
 
-> [!IMPORTANT]
-> Dieser Leitfaden veranschaulicht, wie Sie Visual Studio für Mac verwenden, um ein Apple-Gerät für die Bereitstellung einzurichten, und wie Sie eine Anwendung bereitstellen. Wie sie dies manuell oder mit Visual Studio unter Windows tun können, erfahren Sie in den detaillierten Schritte im Leitfaden für die [manuelle Bereitstellung](~/ios/get-started/installation/device-provisioning/manual-provisioning.md).
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+- Visual Studio 2017 Version 15.7 (oder höher)
+
+Sie müssen außerdem mit einem Mac-Buildhost gekoppelt sein, der über folgende Eigenschaften verfügt:
+
+- Xcode 9 oder höher
+
+-----
 
 ## <a name="enabling-automatic-signing"></a>Aktivieren von „Automatische Signatur“
 
-Bevor Sie den automatischen Signierprozess starten, vergewissern Sie sich, dass Sie, wie im Leitfaden [Apple Account Management](~/cross-platform/macios/apple-account-management.md) beschrieben, in Visual Studio für Mac eine Apple-ID hinzugefügt haben. Nachdem Sie eine Apple-ID hinzugefügt haben, können Sie alle zugeordneten _Teams_ nutzen. So lassen sich Zertifikate, Profile und andere IDs dem Team zuzuordnen. Die Team-ID wird auch zum Erstellen eines App-ID-Präfix verwendet, das im Bereitstellungsprofil mit eingeschlossen werden soll. Dies erlaubt Apple sicherzustellen, dass Sie sind, wer Sie vorgeben zu sein.
+Bevor Sie den automatischen Signierprozess starten, vergewissern Sie sich, dass Sie, wie im Leitfaden [Apple Account Management](~/cross-platform/macios/apple-account-management.md) beschrieben, in Visual Studio eine Apple-ID hinzugefügt haben. Nachdem Sie eine Apple-ID hinzugefügt haben, können Sie alle zugeordneten _Teams_ nutzen. So lassen sich Zertifikate, Profile und andere IDs dem Team zuzuordnen. Die Team-ID wird auch zum Erstellen eines App-ID-Präfix verwendet, das im Bereitstellungsprofil mit eingeschlossen werden soll. Dies erlaubt Apple sicherzustellen, dass Sie sind, wer Sie vorgeben zu sein.
 
 Gehen Sie wie folgt vor, um Ihre App automatisch für die Bereitstellung auf einem iOS-Gerät zu signieren:
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 1. Öffnen Sie in Visual Studio für Mac ein iOS-Projekt.
 
@@ -47,11 +58,31 @@ Gehen Sie wie folgt vor, um Ihre App automatisch für die Bereitstellung auf ein
 
     Wenn das automatische Signieren fehlschlägt, wird im Abschnitt **Automatische Signatur** die Ursache des Fehlers angezeigt.
 
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+1. Koppeln Sie Visual Studio 2017 mit einem Mac, wie im Handbuch [Koppeln mit dem Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) beschrieben.
+
+2. Öffnen Sie die Bereitstellungsoptionen, indem Sie **Projekt > Bereitstellungseigenschaften...** auswählen.
+
+3. Wählen Sie das Schema **Automatische Bereitstellung** aus:
+
+    ![Auswahl des Schemas „Automatisch“](automatic-provisioning-images/prov4.png)
+
+4. Wählen Sie Ihr Team im Kombinationsfeld **Team** aus, um das automatische Signieren zu starten.
+
+    ![Auswahl des Teams](automatic-provisioning-images/prov3.png)
+
+4. Dadurch wird der automatische Signierprozess gestartet. Visual Studio versucht anschließend, eine App-ID, ein Bereitstellungsprofil und eine Signaturidentität zu generieren, um diese Artefakte für die Signatur zu verwenden. Sie können den Generierungsvorgang in der Buildausgabe sehen:
+
+    ![Buildausgabe, die die Generierung von Artefakten zeigt](automatic-provisioning-images/prov5.png)
+
+-----
+
 ## <a name="triggering-automatic-provisioning"></a>Auslösen der automatischen Bereitstellung
 
 Wenn das automatische Signieren aktiviert wurde, aktualisiert Visual Studio für Mac diese Artefakte bei Bedarf, sobald eines der folgenden Ereignisse eintritt:
 
-* Ein iOS-Gerät wird an Ihren Mac angeschlossen.
+* Ein iOS-Gerät wird an Ihren Mac angeschlossen
     - Hierbei wird automatisch geprüft, ob das Gerät im Apple Developer Portal registriert ist. Falls nicht, wird es hinzugefügt. Außerdem wird ein neues Bereitstellungsprofil generiert, das es enthält.
 * Die Bündel-ID der App wird geändert.
     - Dadurch wird die App-ID aktualisiert. Ein neues Bereitstellungsprofil wird erstellt, das diese App-ID enthält.

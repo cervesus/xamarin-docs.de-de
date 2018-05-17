@@ -7,22 +7,26 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: 020a5a2182458e759626b9bdbf45b62b6e13d71a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 31660ff1255878dbae15bda601da8e628aabd459
+ms.sourcegitcommit: c5bb1045b2f4607dafe3101ad1ea6ade23e44342
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>Aktualisieren von komponentenverweisen zu NuGet
 
-> [!NOTE]
+> [!IMPORTANT]
+> Der Komponentenspeicher ab 15 Mai 2018 dessen Veröffentlichungsfunktionalität wurde (diese Closure wurde ursprünglich [angekündigt](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) im November 2017).
+>
 > Xamarin-Komponenten sind in Visual Studio nicht mehr unterstützt und durch NuGet-Pakete ersetzt werden sollte. Führen Sie die nachstehenden Anweisungen zum Komponentenverweise manuell aus Projekten zu entfernen.
 
 Verweisen Sie mit den vorliegenden Anleitungen zum Hinzufügen von NuGet-Pakete auf [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) oder [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
+Eine Liste der beliebten Xamarin [-Plug-Ins und -Bibliotheken](https://github.com/xamarin/XamarinComponents/blob/master/README.md) ist verfügbar, in denen Alternativen zu den Komponenten zu finden, was als NuGet-Pacakges nicht verfügbar sind.
+
 ## <a name="manually-removing-component-references"></a>Manuelles Entfernen Komponentenverweise
 
-In Version für November 2017 war [angekündigt](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) , die von der Xamarin-Komponentenspeicher würde nicht mehr unterstützt werden. In dem Bestreben, die mit der Sunsetting Komponenten weitergehen unterstützen das 15.6 Release von Visual Studio und 7.4 Release von Visual Studio für Mac nicht mehr Komponenten in Ihrem Projekt. 
+Das 15.6 Release von Visual Studio und 7.4 Release von Visual Studio für Mac unterstützen Komponenten nicht mehr in Ihrem Projekt. 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -199,6 +203,6 @@ Viele Komponente Anbieter weiterhin zum Migrieren zu NuGet arbeiten, und anderen
 
 
 ## <a name="related-links"></a>Verwandte Links
-
+- [Liste der beliebten Xamarin-Plugins und Bibliotheken](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
 - [Installieren und Verwenden von NuGet-Paket (Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)
 - [Sowie ein NuGet-Paket (Mac)](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)

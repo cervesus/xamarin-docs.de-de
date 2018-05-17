@@ -5,12 +5,12 @@ ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
 author: topgenorth
 ms.author: toopge
-ms.date: 11/22/2017
-ms.openlocfilehash: 0f343e253a57de33d7e19e648862e6d11fa5af5f
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/14/2018
+ms.openlocfilehash: bbc935c2770fab1a853bb12fba2b7eb0283bb258
+ms.sourcegitcommit: b706fbe05344f7201fbe8f82d9dbbceb66060637
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Player Live-Setup
 
@@ -30,7 +30,9 @@ Ist Live Xamarin Player für Android-Geräten ohne Google Play erhältlich [Hock
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Es wird empfohlen, Benutzer können die [Xamarin Live Player app _iOS Vorschau_ ](https://aka.ms/liveplayeralpha) genießen Sie schnellen Zugriff auf die neuesten Verbesserungen über TestFlight.
+Es wird empfohlen, Benutzer können iOS-app Xamarin Live Player Vorschau, um schnellen Zugriff auf die neuesten Verbesserungen über TestFlight genießen. Durch den Zugriff auf die Xamarin-Live-Player, sind Sie auf dem Microsoft zustimmen, [Nutzungsbestimmungen](https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx) & [Privacy Statement](https://privacy.microsoft.com/en-us/privacystatement). Microsoft kann Ihre Kontaktinformationen verwendet, um Updates und Sonderangeboten zu Xamarin und andere Microsoft-Produkte und Dienste bereitzustellen. Sie können jederzeit kündigen.
+
+Führen Sie die Xamarin-Live-Player iOS Vorschau für den Zugriff auf die [TestFlight Registrierungsinformationen](https://fastring.xamarinliveplayer.com/), wonach Sie erhalten eine e-Mail von TestFlight zum Live-Player Xamarin iOS Preview installieren.
 
 -----
 

@@ -4,14 +4,14 @@ description: Um Funktionen zu einer Anwendung hinzuzufügen, ist oft eine zusät
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 03/15/2017
-ms.openlocfilehash: ff918ac104e7eab4f2e8c0d0be46df240138c97c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: asb3993
+ms.author: amburns
+ms.date: 05/06/2018
+ms.openlocfilehash: e6fc3d38fef7c7c3204d1413911ddfa9a486c67c
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="working-with-capabilities"></a>Arbeiten mit Funktionen
 
@@ -44,20 +44,18 @@ Diese Funktionen können mit Xamarin.iOS-Projekten verwendet werden. Die vollst�
 * Lesen von NFC-Tags
 
 
-Funktionen können entweder über Visual Studio für Mac oder manuell im Apple Developer Portal aktiviert werden. Bestimmte Funktionen, wie z.B. Wallet, Apple Pay und iCloud, erfordern eine zusätzliche Konfiguration der App-IDs.
+Funktionen können entweder über Visual Studio für Mac und Visual Studio 2017 oder manuell im Apple Developer Portal aktiviert werden. Bestimmte Funktionen, wie z.B. Wallet, Apple Pay und iCloud, erfordern eine zusätzliche Konfiguration der App-IDs.
 
-In diesem Leitfaden wird erläutert, wie Sie jeden dieser App-Dienste in Ihrer Anwendung sowohl in Visual Studio für Mac als auch manuell im Developer Center aktivieren können. Außerdem werden alle möglicherweise erforderlichen zusätzlichen Einstellungen beschrieben. 
+In diesem Leitfaden wird erläutert, wie Sie jeden dieser App-Dienste in Ihrer Anwendung automatisch in Visual Studio und manuell im Developer Center aktivieren können. Außerdem werden alle möglicherweise erforderlichen zusätzlichen Einstellungen beschrieben. 
 
 ## <a name="adding-app-services"></a>Hinzufügen von App-Diensten
 
-Damit die App die Funktionen verwenden kann, muss sie über ein gültiges Bereitstellungsprofil mit einer App-ID verfügen, in dem der richtige Dienst aktiviert ist. Sie können dieses Bereitstellungsprofil entweder automatisch in Visual Studio für Mac oder manuell im Apple Developer Center erstellen.
+Damit die App die Funktionen verwenden kann, muss sie über ein gültiges Bereitstellungsprofil mit einer App-ID verfügen, in dem der richtige Dienst aktiviert ist. Sie können dieses Bereitstellungsprofil entweder automatisch in Visual Studio für Mac und Visual Studio 2017 oder manuell im Apple Developer Center erstellen.
 
-In diesem Abschnitt wird erläutert, wie Sie die automatische Bereitstellung von Visual Studio für Mac oder das Developer Center zur Aktivierung der meisten Funktionen verwenden können. Einige Funktionen, wie z.B. Wallet, iCloud, Apple Pay und App-Gruppen, erfordern zusätzliche Konfigurationsschritte. Diese werden in den benachbarten Handbüchern ausführlich erläutert.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+In diesem Abschnitt wird erläutert, wie Sie die automatische Bereitstellung von Visual Studio oder das Developer Center zur Aktivierung der meisten Funktionen verwenden können. Einige Funktionen, wie z.B. Wallet, iCloud, Apple Pay und App-Gruppen, erfordern zusätzliche Konfigurationsschritte. Diese werden in den benachbarten Handbüchern ausführlich erläutert.
 
 > [!IMPORTANT]
-> Nicht alle Funktionen können in Visual Studio für Mac hinzugefügt und verwaltet werden. Die folgende Liste enthält die unterstützten Funktionen:
+> Nicht alle Funktionen können mit der automatischen Bereitstellung hinzugefügt und verwaltet werden. Die folgende Liste enthält die unterstützten Funktionen:
 >
 >* HealthKit 
 >* HomeKit 
@@ -72,10 +70,13 @@ In diesem Abschnitt wird erläutert, wie Sie die automatische Bereitstellung von
 >
 >Funktionen für Pushbenachrichtigungen, Game Center, In App-Käufe, Zuordnungen, Keychain-Freigabe, verknüpfte Domänen und Datenschutz werden derzeit nicht unterstützt. Um diese Funktionen hinzuzufügen, verwenden Sie die manuelle Bereitstellung, und führen Sie die Schritte im Abschnitt [Developer Center](#devcenter) aus.
 
+## <a name="using-the-ide"></a>Verwenden von IDE
 
-Funktionen werden der Datei **Entitlements.plist** in Visual Studio für Mac hinzugefügt. Führen Sie folgende Schritte aus, um Funktionen hinzuzufügen:
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-1. Öffnen Sie die Datei **Info.plist** Ihrer iOS-Anwendung, und stellen Sie sicher, dass **Signierung automatisch verwalten** ausgewählt ist. Falls Sie Hilfe benötigen, führen Sie die Schritte in der Anleitung [Automatische Bereitstellung](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) aus.
+Funktionen werden der Datei **Entitlements.plist** in Visual Studio für Mac hinzugefügt. Um Funktionen hinzuzufügen, führen Sie die folgenden Schritte aus:
+
+1. Öffnen Sie die Datei **Info.plist** Ihrer iOS-Anwendung, und wählen Sie das Schema **Automatische Bereitstellung** und Ihr **Team** aus dem Kombinationsfeld aus. Falls Sie Hilfe benötigen, führen Sie die Schritte in der Anleitung [Automatische Bereitstellung](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) aus.
 
     ![Option „Signierung automatisch verwalten“](images/manage-signing.png)
 
@@ -93,39 +94,29 @@ Funktionen werden der Datei **Entitlements.plist** in Visual Studio für Mac hin
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Da derzeit keine Unterstützung für die automatische Bereitstellung in Visual Studio 2017 vorhanden ist, müssen Sie das [Developer Center](#devcenter) verwenden, um eine App-ID mit dem korrekten Anwendungsdienst zu erstellen.
+Funktionen werden der Datei **Entitlements.plist** hinzugefügt. Um Funktionen in Visual Studio 2017 hinzuzufügen, führen Sie die folgenden Schritte aus:
+
+1. Koppeln Sie Visual Studio 2017 mit einem Mac, wie im Handbuch [Koppeln mit dem Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) beschrieben.
+
+2. Öffnen Sie die Bereitstellungsoptionen, indem Sie **Projekt > Bereitstellungseigenschaften...** auswählen.
+
+3. Wählen Sie das Schema **Automatische Bereitstellung** und Ihr **Team** aus dem Kombinationsfeld aus. Falls Sie Hilfe benötigen, führen Sie die Schritte in der Anleitung [Automatische Bereitstellung](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) aus.
+
+    ![Option „Signierung automatisch verwalten“](images/manage-signing-vs.png)
+
+4. Öffnen Sie die Datei **Entitlements.plist**, und wählen Sie die Funktion aus, die Sie hinzufügen möchten. Speichern Sie die Datei.
+
+    Durch Speichern von **Entitlement.plist** geschehen zwei Dinge:
+
+    * Diese Funktion wird Ihrer App-ID hinzugefügt.
+    * Die Schlüssel-Wert-Paar für Berechtigungen wird Ihrer Datei „entitlements.plist“ hinzugefügt.
 
 -----
 
-<!--
-<a name="xcode" />
-
-## Xcode
-
-Xamarin developers can also use Xcode to quickly create a provisioning profile with a suitable App ID. This process, described below, can be used for any app service in the list:
-
-1.  Open Xcode and create a ‘dummy’ project. Give the dummy project the same name as your Xamarin.iOS project. The bundle identifier should be identical to the bundle identifier of your Xamarin.iOS project:
-
-    ![Xcode Create Project](images/image1.png)
-
-2.  Ensure **Automatically manage signing** is selected:
-
-    ![Automatically manage signing selection](images/image2.png)
-
-3.  Once the app has been created, go to the tab named **Capabilities**:
-
-    ![Xcode Capabilities tab](images/image3.png)
-
-4.  Browse to the capability that you wish to add, and move the switch to the **ON** position.
-5.  This will create a provisioning profile with an App ID that contains the capability and adds the entitlement to the profile.
-6.  In Visual Studio for Mac / Visual Studio, browse to **Project Options > Bundle Signing** and set the provisioning profile to the one that was just created in Xcode:
-
-    ![Visual Studio for Mac Project Options](images/image4.png)
--->
 
 <a name="devcenter" />
 
-## <a name="developer-center"></a>Developer Center
+## <a name="using-the-developer-center"></a>Verwenden von Office Developer Center
 
 Die Verwendung des Developer Centers besteht aus zwei Schritten: Erstellen einer App-ID und Verwenden der App-ID zum Erstellen eines Bereitstellungsprofils. Diese Schritte sind weiter unten ausführlich beschrieben.
 
@@ -190,7 +181,7 @@ Erstellen Sie nun ein Bereitstellungsprofil, das diese App-ID enthält. Führen 
 
 8.  Klicken Sie zum Herunterladen des Profils auf die Schaltfläche **Herunterladen**. Doppelklicken Sie im Finder auf die Datei, um das Bereitstellungsprofil zu installieren.
 
-9. Wenn Sie Visual Studio für Mac verwenden, stellen Sie sicher, dass in der Datei **Info.plist** die Option **Signieren automatisch verwalten** deaktiviert ist.
+9. Stellen Sie bei Verwendung von Visual Studio sicher, dass die Option **Manuelle Bereitstellung** ausgewählt ist.
 
 10. Wechseln Sie in Visual Studio für Mac bzw. Visual Studio zu **Projektoptionen > Bündelsignierung**, und legen Sie das Bereitstellungsprofil auf das Projekt fest, das Sie gerade erstellt haben:
 
