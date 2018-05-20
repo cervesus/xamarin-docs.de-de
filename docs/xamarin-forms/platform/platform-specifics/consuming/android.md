@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/17/2017
-ms.openlocfilehash: dfc46b5caa14c1c02d1c2afaffecc701fea59e2c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8aa17c868ce1d0343eab6758c03aaf042c27130e
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="android-platform-specifics"></a>Android-Plattform-Besonderheiten
 
@@ -135,7 +135,7 @@ Das Ergebnis ist, Wischen Paging durch die Seiten angezeigt werden, indem eine [
 
 ## <a name="controlling-the-elevation-of-visual-elements"></a>Steuern die Erhöhung von visuellen Elementen
 
-Diese plattformspezifischen wird verwendet, um die Erhöhung der Rechte oder Z-Reihenfolge der visuellen Elemente auf Anwendungen steuern dieses Ziel API 21 oder größer. Die Erhöhung von ein visuelles Element bestimmt die Zeichnungsreihenfolge mit visuellen Elementen mit höheren Z-Werten occluding visuelle Elemente mit niedrigeren Z-Werten. Sie wird in XAML verwendet, durch Festlegen der `Elevation.Elevation` angefügten Eigenschaft, um eine `boolean` Wert:
+Diese plattformspezifischen wird verwendet, um die Erhöhung der Rechte oder Z-Reihenfolge der visuellen Elemente auf Anwendungen steuern dieses Ziel API 21 oder größer. Die Erhöhung von ein visuelles Element bestimmt die Zeichnungsreihenfolge mit visuellen Elementen mit höheren Z-Werten occluding visuelle Elemente mit niedrigeren Z-Werten. Sie wird in XAML verwendet, durch Festlegen der `VisualElement.Elevation` angefügten Eigenschaft, um eine `boolean` Wert:
 
 ```xaml
 <ContentPage ...
@@ -147,7 +147,7 @@ Diese plattformspezifischen wird verwendet, um die Erhöhung der Rechte oder Z-R
             <BoxView Color="Red" Opacity="0.2" HeightRequest="50" />
         </Grid>        
         <Grid Margin="0,20,0,0">
-            <Button Text="Button Above BoxView - Click Me" android:Elevation.Elevation="10"/>
+            <Button Text="Button Above BoxView - Click Me" android:VisualElement.Elevation="10"/>
             <BoxView Color="Red" Opacity="0.2" HeightRequest="50" />
         </Grid>
     </StackLayout>
@@ -196,7 +196,7 @@ public class AndroidElevationPageCS : ContentPage
 }
 ```
 
-Die `Button.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. Die `Elevation.SetElevation` Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) -Namespace wird verwendet, um die Höhe des visuellen Elements auf einen NULL-Werte zulassen festgelegt `float`. Darüber hinaus die `Elevation.GetElevation` Methode kann verwendet werden, um die Erhöhung der Rechte Wert ein visuelles Element abzurufen.
+Die `Button.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. Die `VisualElement.SetElevation` Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) -Namespace wird verwendet, um die Höhe des visuellen Elements auf einen NULL-Werte zulassen festgelegt `float`. Darüber hinaus die `VisualElement.GetElevation` Methode kann verwendet werden, um die Erhöhung der Rechte Wert ein visuelles Element abzurufen.
 
 Das Ergebnis ist, dass die Erhöhung der visuellen Elemente gesteuert werden kann, sodass visuelle Elemente mit höheren Z-Werten visuelle Elemente mit niedrigeren Z-Werten verdeckt. Aus diesem Grund in diesem Beispiel wird die zweite [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) oben gerendert wird die [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) da sie einen höheren Wert für die Erhöhung der Rechte verfügt:
 

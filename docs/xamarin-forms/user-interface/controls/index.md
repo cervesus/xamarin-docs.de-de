@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: fb6620e160af4c2c844fa694649c95abdac123f9
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 270904b87b1e37d4c4a74d997af50517fd6ffc5f
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="controls-reference"></a>Steuerelementreferenz
 
 _Eine Beschreibung aller visuellen Elemente, die zum Erstellen einer Xamarin.Forms-Anwendung verwendet werden soll._
 
-Die visuelle Oberfläche einer Xamarin.Forms-Anwendung wird von Objekten erstellt, die die systemeigenen Steuerelemente für jede Zielplattform zuordnen. Dadurch können Clientplattform-spezifische Anwendungen für iOS, Android und universellen Windows-Plattform mit Xamarin.Forms-Codes in einer [Standardbibliothek des .NET](~/cross-platform/app-fundamentals/net-standard.md) oder ein [freigegebenes Projekt](~/cross-platform/app-fundamentals/shared-projects.md).
+Die visuelle Oberfläche einer Xamarin.Forms-Anwendung wird von Objekten erstellt, die die systemeigenen Steuerelemente für jede Zielplattform zuordnen. Dadurch können Clientplattform-spezifische Anwendungen für iOS, Android und universellen Windows-Plattform mit Xamarin.Forms-Codes in einer [.NET Standardbibliothek](~/cross-platform/app-fundamentals/net-standard.md) oder ein [freigegebenes Projekt](~/cross-platform/app-fundamentals/shared-projects.md).
 
 Vier Hauptsteuerelement Gruppen verwendet, um die Benutzeroberfläche einer Xamarin.Forms-Anwendung erstellen, werden in den folgenden vier Artikeln gezeigt:
 

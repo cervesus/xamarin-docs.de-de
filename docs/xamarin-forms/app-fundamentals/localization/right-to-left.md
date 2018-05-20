@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 3201c3161d66163cabffdb36465356192bdd3843
-ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.openlocfilehash: ff9814291d5a28ec9e0bbb3c2a6fc6cce5d8ee25
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="right-to-left-localization"></a>Lokalisierung von rechts nach links
 
@@ -69,7 +69,7 @@ Das erforderliche rechts-nach-links-Gebietsschema sollte als einer unterstützte
 </array>
 ```
 
-![Datei "Info.plist" unterstützten Sprachen](rtl-images/ios-locales.png ""Info.plist" unterstützte Sprachen")
+![Datei "Info.plist" unterstützten Sprachen](rtl-images/ios-locales.png "\"Info.plist\" unterstützte Sprachen")
 
 Weitere Informationen finden Sie unter [Lokalisierung-Grundlagen in iOS](https://docs.microsoft.com/en-gb/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios).
 
@@ -149,6 +149,6 @@ Xamarin.Forms rechts-nach-links-Lokalisierung weist derzeit einige Einschränkun
 
 **Xamarin.Forms 3.0-rechts-nach-links-Unterstützung von [Xamarin University](https://university.xamarin.com/)**
 
-## <a name="related-links"></a>Verwandte links
+## <a name="related-links"></a>Verwandte Links
 
 - [TodoLocalizedRTL-Beispiel-App](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalizedRTL/)

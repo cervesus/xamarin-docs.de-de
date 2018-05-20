@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: c626008012ccdab2f8ed2c719b34a45471598d47
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 23cdc1871511fa75ba2686213d135822ca0fb971
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>Nutzen einen Windows Communication Foundation (WCF)-Webdienst
 
@@ -42,17 +42,17 @@ Der WCF-Dienst stellt die folgenden Vorgänge:
 
 |Vorgang|Beschreibung|Parameter|
 |--- |--- |--- |
-|GetTodoItems|Abrufen einer Liste von Aufgaben|
+|GetTodoItems|Abrufen einer Liste von To-Do-Elementen|
 |CreateTodoItem|Ein neues Aufgabenelement erstellen|Eine mithilfe von XML serialisierte TodoItem|
-|EditTodoItem|Aktualisieren einer Aufgabe|Eine mithilfe von XML serialisierte TodoItem|
-|DeleteTodoItem|Löschen einer Aufgabe|Eine mithilfe von XML serialisierte TodoItem|
+|EditTodoItem|Aktualisieren eines To-Do-Elements|Eine mithilfe von XML serialisierte TodoItem|
+|DeleteTodoItem|Löschen eines To-Do-Elements|Eine mithilfe von XML serialisierte TodoItem|
 
 Weitere Informationen zu dem in der Anwendung verwendeten Datenmodell finden Sie unter [die Daten modellieren,](~/xamarin-forms/data-cloud/walkthrough.md).
 
 > [!NOTE]
 > Die beispielanwendung nutzt die Xamarin-gehosteten WCF-Dienst, der nur-Lese Zugriff auf den Webdienst bereitstellt. Aus diesem Grund werden die Vorgänge, die zu erstellen, aktualisieren und Löschen von Daten die in der Anwendung verwendeten Daten nicht geändert. Eine hostfähige Version von der ASMX-Dienst ist jedoch verfügbar, in der **TodoWCFService** Ordner in der zugehörigen beispielanwendung. Diese hostfähigen Version von den WCF-Dienst ermöglicht vollständige erstellen, aktualisieren, lesen und löschen den Zugriff auf die Daten.
 
-Ein *Proxy* muss generiert werden, um einen WCF-Dienst zu nutzen, die die Anwendung für die Verbindung mit dem Dienst ermöglicht. Der Proxy erstellt wird, nutzen Dienstmetadaten, die die Methoden und die zugehörigen Dienstkonfiguration zu definieren. Diese Metadaten wird in Form eines Web Services Description Language (WSDL)-Dokuments verfügbar gemacht, die durch den Webdienst generiert wird. Der Proxy kann mithilfe von Microsoft WCF Web Service-Reference-Anbieter in Visual Studio 2017 zum Hinzufügen eines Dienstverweises für den Webdienst eine Standardbibliothek des .NET erstellt werden. Eine Alternative zum Erstellen des Proxys, die mit dem Microsoft WCF Web Verweis Dienstanbieter in Visual Studio 2017 wird das ServiceModel Metadata Utility Tool (svcutil.exe) verwenden. Weitere Informationen finden Sie unter [ServiceModel Metadata Utility Tool (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/).
+Ein *Proxy* muss generiert werden, um einen WCF-Dienst zu nutzen, die die Anwendung für die Verbindung mit dem Dienst ermöglicht. Der Proxy erstellt wird, nutzen Dienstmetadaten, die die Methoden und die zugehörigen Dienstkonfiguration zu definieren. Diese Metadaten wird in Form eines Web Services Description Language (WSDL)-Dokuments verfügbar gemacht, die durch den Webdienst generiert wird. Der Proxy kann mithilfe von Microsoft WCF Web Service-Reference-Anbieter in Visual Studio 2017 zum Hinzufügen eines Dienstverweises für den Webdienst in einer standardmäßigen .NET Bibliothek erstellt werden. Eine Alternative zum Erstellen des Proxys, die mit dem Microsoft WCF Web Verweis Dienstanbieter in Visual Studio 2017 wird das ServiceModel Metadata Utility Tool (svcutil.exe) verwenden. Weitere Informationen finden Sie unter [ServiceModel Metadata Utility Tool (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/).
 
 Die generierte Proxyklassen enthalten Methoden zum Verarbeiten der Webdienste, die das asynchrone Programmiermodell (APM)-Entwurfsmuster verwenden. Bei diesem Muster wird ein asynchroner Vorgang als zwei Methoden namens implementiert *BeginOperationName* und *EndOperationName*, das Starten und beenden Sie den asynchronen Vorgang.
 

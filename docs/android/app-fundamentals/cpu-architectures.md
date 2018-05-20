@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: dea5aaa16891893f649d5ec56f3e6b1ee9a18683
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: abfe22683de024f056d7798dc3ac2de13ebd953e
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="cpu-architectures"></a>CPU-Architekturen
 
@@ -29,7 +29,7 @@ Weitere Informationen zur Funktionsweise finden Sie unter [mit mehreren Kernen G
 
 Normalerweise explizit wählen Sie eine Architektur (oder -Architekturen) Wenn die app konfiguriert ist, für die **Version**. Wenn Ihre app konfiguriert ist, für **Debuggen**, **freigegebenen Laufzeit** und **Use Fast Deployment** Optionen aktiviert sind, wodurch die explizite Architektur Auswahl deaktiviert.
 
-Doppelklicken Sie in Visual Studio auf **Eigenschaften** unterhalb des Projekts in **Projektmappen-Explorer** , und wählen Sie die **Android Options** Seite. Klicken Sie auf die **Verpackung** Registerkarte, und überprüfen Sie, ob **freigegebenen Laufzeit** deaktiviert ist (dies ausschalten können Sie explizit auswählen, welche ABIs unterstützen). Klicken Sie auf die **erweitert** Registerkarte und klicken Sie unter **erweiterte Eigenschaften**, überprüfen Sie die Architekturen, die Sie unterstützen möchten:
+Visual Studio mit der Maustaste auf das Projekt unter dem **Projektmappen-Explorer** , und wählen Sie **Eigenschaften**. Unter der **Android Options** Seite Überprüfung der **Paketeigenschaften** Abschnitt, und überprüfen Sie, ob **freigegebenen Laufzeit** deaktiviert ist (dies ausschalten können Sie explizit Wählen Sie die ABIs unterstützen). Klicken Sie auf die **erweitert** Schaltfläche und wählen Sie unter **unterstützt Architekturen**, überprüfen Sie die Architekturen, die Sie unterstützen möchten:
 
 [![Auswählen von Armeabi und Armeabi v7a](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png#lightbox)
 

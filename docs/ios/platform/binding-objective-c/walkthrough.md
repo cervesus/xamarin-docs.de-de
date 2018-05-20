@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: 5954d705e403a3c8230c3125efcf836c3930c459
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 15e1f53d053046b4a51666647ac846366d3c858b
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Exemplarische Vorgehensweise: Binden einer iOS-Bibliothek für Objective-C
 
@@ -143,7 +143,7 @@ Der erste Schritt ist für uns InfoColorPicker Quellcode in der statischen Bibli
 
 8. Navigieren Sie aus dem Dialogfeld Hinzufügen von Dateien zu InfColorPicker Quellcodedateien, die wir gerade kopiert haben, markieren sie alle aus, und klicken Sie auf die **hinzufügen** Schaltfläche:
 
-    [![](walkthrough-images/image09.png "Wählen Sie alle aus, und klicken Sie auf die Schaltfläche "hinzufügen"")](walkthrough-images/image09.png#lightbox)
+    [![](walkthrough-images/image09.png "Wählen Sie alle aus, und klicken Sie auf die Schaltfläche \"hinzufügen\"")](walkthrough-images/image09.png#lightbox)
 
 9. Der Quellcode wird in unserem Projekt kopiert werden:
 
@@ -420,7 +420,7 @@ sdk: macosx10.11     arch: x86_64  i386
 sdk: watchos2.2      arch: armv7
 ```
 
-Aus den oben genannten können wir sehen, dass wir haben die `iphoneos8.1` SDK auf unseren Machine installiert. Mit diesen Informationen vorhanden, werden wir bereit, das Projekt InfColorPicker analysieren `.h` Dateien in den ersten **ApiDefinition.cs** und `StructsAndEnums.cs` für das Projekt InfColorPicker.
+Aus den oben genannten können wir sehen, dass wir haben die `iphoneos9.3` SDK auf unseren Machine installiert. Mit diesen Informationen vorhanden, werden wir bereit, das Projekt InfColorPicker analysieren `.h` Dateien in den ersten **ApiDefinition.cs** und `StructsAndEnums.cs` für das Projekt InfColorPicker.
 
 Geben Sie den folgenden Befehl in der Terminal-app:
 
