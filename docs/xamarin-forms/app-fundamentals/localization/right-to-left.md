@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: ff9814291d5a28ec9e0bbb3c2a6fc6cce5d8ee25
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: 92ca58374292c829df4098274abae870b355a7b0
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="right-to-left-localization"></a>Lokalisierung von rechts nach links
 
@@ -24,7 +24,7 @@ _Lokalisierung von rechts nach links bietet Unterstützung für rechts-nach-link
 Flussrichtung ist die Richtung, in der die Elemente der Benutzeroberfläche auf der Seite vom Auge gescannt werden. Einige Sprachen wie Arabisch und Hebräisch, erfordern, dass Elemente der Benutzeroberfläche in eine flussrichtung von rechts nach links angeordnet sind. Dies kann durch Festlegen der [ `VisualElement.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft. Diese Eigenschaft ruft ab oder legt die Richtung, in der UI-Elemente-Fluss innerhalb von übergeordneten Elementen, die ihr Layout steuert und sollte auf eine der festgelegt werden die [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection) Enumerationswerte:
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
-- [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
+- [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
 Festlegen der [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Eigenschaft [ `RightToLeft` ](xref:Xamarin.Forms.FlowDirection.RightToLeft) für ein Element in der Regel legt die Ausrichtung fest, das Recht, die rechts-nach-Links-Lesefolge und das Layout des Steuerelements von übertragen werden rechts-nach-links:

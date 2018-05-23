@@ -5,13 +5,13 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: ead498113f432e766fbd77ae2f01bc67c2273b60
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: bf0fa7d2caf7c8857bc1272f4471def04100383f
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/23/2018
 ---
-# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials Geocodierung
+# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials Geolocation
 
 ![Vorabversion NuGet](~/media/shared/pre-release.png)
 
@@ -19,7 +19,7 @@ Die **Geolocation** Klasse bietet APIs zum Abrufen der aktuellen Geolocation-Koo
 
 ## <a name="getting-started"></a>Erste Schritte
 
-Für den Zugriff auf die **Geolocation** Funktionen die folgenden spezifischen Plattform-Setup ist erforderlich.
+Für den Zugriff auf die **Geolocation** Funktionalität, die folgenden plattformspezifischen Setup erforderlich ist:
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
@@ -35,9 +35,9 @@ Grob und gut Speicherort Berechtigungen sind erforderlich und müssen in der And
 [assembly: UsesFeature("android.hardware.location.network", Required = false)]
 ```
 
-ODER Android-Manifest aktualisieren:
+Oder aktualisieren Sie die Android-Manifest:
 
-Öffnen der **AndroidManifest.xml** Datei unter dem **Eigenschaften** Ordner und fügen Sie die folgenden innerhalb eines der **manifest** Knoten.
+Öffnen der **AndroidManifest.xml** Datei unter dem **Eigenschaften** Ordner und fügen Sie die folgenden innerhalb eines der **manifest** Knoten:
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -47,15 +47,15 @@ ODER Android-Manifest aktualisieren:
 <uses-feature android:name="android.hardware.location.network" android:required="false" />
 ```
 
-Oder klicken Sie mit der rechten Maustaste auf das Android-Projekt, und öffnen Sie die Eigenschaften des Projekts. Unter **Android-Manifest** Suchen der **die erforderlichen Berechtigungen verfügen:** Bereichs- und überprüfen Sie die **ACCESS_COARSE_LOCATION** und **ACCESS_FINE_LOCATION**Berechtigungen. Dadurch wird automatisch aktualisiert die **AndroidManifest.xml** Datei.
+Oder mit der rechten Maustaste auf das Android-Projekt, und öffnen Sie die Eigenschaften des Projekts. Unter **Android-Manifest** Suchen der **die erforderlichen Berechtigungen verfügen:** Bereichs- und überprüfen Sie die **ACCESS_COARSE_LOCATION** und **ACCESS_FINE_LOCATION**Berechtigungen. Dadurch wird automatisch aktualisiert die **AndroidManifest.xml** Datei.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Ihre app ist erforderlich, um den Schlüssel verfügen über eine Ihrer **"Info.plist"** für NSLocationWhenInUseUsageDescription Zugriff auf den Standort eines Geräts.
+Ihre app **"Info.plist"** darf die `NSLocationWhenInUseUsageDescription` Schlüssel, um den Standort eines Geräts zuzugreifen.
 
 Die Plist-Editor öffnen, und fügen die **Datenschutz - Speicherort bei In Verwendung Verwendungsbeschreibung** Eigenschaft und füllen Sie einen Wert aus, um den Benutzer anzuzeigen.
 
-ODER bearbeiten Sie die Datei manuell, und fügen Sie Folgendes hinzu:
+Oder bearbeiten Sie die Datei manuell, und fügen Sie Folgendes hinzu:
 
 ```xml
 <key>NSLocationWhenInUseUsageDescription</key>
@@ -64,7 +64,7 @@ ODER bearbeiten Sie die Datei manuell, und fügen Sie Folgendes hinzu:
 
 # <a name="uwptabuwp"></a>[UNIVERSELLE WINDOWS-PLATTFORM](#tab/uwp)
 
-Sie müssen festlegen, die `Location` über die Berechtigung für die Anwendung. Dies kann geschehen, indem öffnen die **"Package.appxmanifest"** und Selecing der **Funktionen** Registerkarte und Überprüfung **Speicherort**.
+Sie müssen festlegen, die `Location` über die Berechtigung für die Anwendung. Dies kann geschehen, indem Sie öffnen die **"Package.appxmanifest"** und Selecing der **Funktionen** Registerkarte und Überprüfung **Speicherort**.
 
 -----
 
@@ -104,7 +104,7 @@ catch (Exception ex)
 }
 ```
 
-Des aktuellen Geräts Abfragen [Speicherort](xref:Xamarin.Essentials.Location) Koordinaten der `GetLocationAsync` verwendet werden können. Es wird empfohlen, eine vollständige übergeben `GeolocationRequest` und `CancellationToken` seit möglicherweise einige Zeit dauert, um den Standort eines Geräts abzurufen.
+Des aktuellen Geräts Abfragen [Speicherort](xref:Xamarin.Essentials.Location) Koordinaten, die `GetLocationAsync` verwendet werden können. Es wird empfohlen, eine vollständige übergeben `GeolocationRequest` und `CancellationToken` seit möglicherweise einige Zeit dauert, um den Standort eines Geräts abzurufen.
 
 ```csharp
 try
@@ -133,7 +133,7 @@ catch (Exception ex)
 
 ## <a name="geolocation-accuracy"></a>GeoLocation-Genauigkeit
 
-Die folgende Tabelle führt die Genauigkeit plattformspezifischen
+In der folgenden Tabelle sind die Genauigkeit pro Plattform aufgeführt:
 
 ### <a name="lowest"></a>Niedrigste
 

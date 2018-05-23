@@ -5,11 +5,11 @@ ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 871d164df982d1d170e8ba5bffd3bd6600a4cdda
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 14aabc319fefdbad86f29a9d27ce39b59da35e3e
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>System-Hilfsprogrammen Xamarin.Essentials-Datei
 
@@ -31,7 +31,7 @@ Im Verzeichnis der Anwendung zum Speichern von abzurufenden **Zwischenspeichern 
 var cacheDir = FileSystem.CacheDirectory;
 ```
 
-Um die Anwendung der obersten Ebene Diredctory für alle Dateien zu erhalten, die nicht Benutzerdatendateien sind. Diese Dateien werden mit dem Betriebssystem synchronisieren Framework gesichert. Finden Sie unter Plattform Implementierungsspezifika ist unten.
+Beim Abrufen von der obersten Ebene im Verzeichnis der Anwendung für alle Dateien, die nicht Benutzerdatendateien sind. Diese Dateien werden mit dem Betriebssystem synchronisieren Framework gesichert. Finden Sie unter Plattform Implementierungsspezifika ist unten.
 
 ```csharp
 var mainDir = FileSystem.AppDataDirectory;
@@ -54,7 +54,7 @@ var mainDir = FileSystem.AppDataDirectory;
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
 - **CacheDirectory** – gibt die [CacheDir](https://developer.android.com/reference/android/content/Context.html#getCacheDir) des aktuellen Kontexts.
-- **AppDataDirectory** – gibt die [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir) den aktuellen Kontext und sind mit gesichert [Autu Sicherung](https://developer.android.com/guide/topics/data/autobackup.html) auf API-23 und höher ab.
+- **AppDataDirectory** – gibt die [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir) den aktuellen Kontext und sind mit gesichert [automatische Sicherung](https://developer.android.com/guide/topics/data/autobackup.html) auf API-23 und höher ab.
 
 Fügen Sie alle Dateien in der **Bestand** Ordner in der Android Projekt, und markieren Sie den Buildvorgang als **AndroidAsset** mit `OpenAppPackageFileAsync`.
 

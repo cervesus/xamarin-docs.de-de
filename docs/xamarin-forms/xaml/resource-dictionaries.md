@@ -6,12 +6,12 @@ ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 05/07/2018
-ms.openlocfilehash: 47cca2f726b0af396ea1eb287cfa4e1f1bf19724
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.date: 05/21/2018
+ms.openlocfilehash: b9c15357895bae64176ef34a848b968917035f3d
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="resource-dictionaries"></a>Ressourcenverzeichnis
 
@@ -30,7 +30,7 @@ In XAML wird in gespeicherten Ressourcen eine `ResourceDictionary` abgerufen und
 Ressourcen werden definiert, einem [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) , legen Sie anschließend auf einen der folgenden `Resources` Eigenschaften:
 
 - Die [ `Resources` ](xref:Xamarin.Forms.Application.Resources) Eigenschaft einer Klasse, die abgeleitet [`Application`](xref:Xamarin.Forms.Application)
-- Die [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Eigenschaft einer Klasse, die abgeleitet ["VisualElement"](xref:Xamarin.Forms.Application)
+- Die [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Eigenschaft einer Klasse, die abgeleitet [`VisualElement`](xref:Xamarin.Forms.Application)
 
 Ein Programm Xamarin.Forms enthält nur eine Klasse, abgeleitet wird `Application` jedoch häufig nutzt viele abgeleitete Klassen `VisualElement`, einschließlich Seiten, Layouts und Steuerelemente. Eines dieser Objekte aufweisen kann seine `Resources` -Eigenschaftensatz auf eine `ResourceDictionary`. Auswählen eines Speicherorts für eine bestimmte `ResourceDictionary` wirkt sich darauf aus, in dem die Ressourcen verwendet werden können:
 

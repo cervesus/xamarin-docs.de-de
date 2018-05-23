@@ -6,11 +6,11 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 7e28e2513b74faa884fb7bc3d7194f1b02844734
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 81c6a5682fc91b49a0f7495f06e7f7b6d3f76330
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -24,33 +24,12 @@ Der Xamarin Profiler bietet eine Reihe von Instrumente zur Verfügung, für die 
 
 Dieses Handbuch allgemeine Profilerstellungsdaten Szenarien untersucht und bringt den Profiler als Tool zum Analysieren und Optimieren von IOS- und Android-Anwendungen.
 
-## <a name="contents"></a>Inhalt
-
-- [Herunterladen und installieren](#Download_and_Install)
-- [Profiler und Profilerstellung](#Profilers_and_Profiling)
-- [Xamarin Profiler](#Xamarin_Profiler)
-- [Profiler-Unterstützung](#Profiler_Support)
-- [Profiler-Grundlagen](#Profiler_Basics)
-    - [Die Profilerstellung in Ihrer App zulassen](#Allowing_Profiling_in_your_App)
-    - [Starten den Profiler](#Launching_the_Profiler)
-        - [Starten von Visual Studio für Mac](#Launching_from_Xamarin_Studio)
-        - [Starten von Visual Studio](#Launching_from_Visual_Studio)
-        - [Speichern und Laden von Profiler-Sitzungen](#Saving_and_Loading_Profiler_Sessions)
-        - [Profiler-Funktionen und Geräte](#Profiler_Features)
-    - [Zuordnungen](#Allocations)
-    - [Time-Profiler](#Time_Profiler)
-    - [Zyklen](#Cycles)
-- [Erstellen von Anwendungsprofilen](#Profiling_Applications)
-- [Zusammenfassung](#Summary)
-
 ## <a name="download-and-install"></a>Herunterladen und installieren
 
 > [!NOTE]
-> **Hinweis:** müssen Sie werden eine [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) Abonnenten zum Entsperren von dieser Funktion in dem entweder Visual Studio Enterprise unter Windows oder im Visual Studio für Mac auf einem Macintosh-Computer
+> Sie müssen werden eine [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) Abonnenten für diese Funktion entweder Visual Studio Enterprise unter Windows oder Visual Studio für Mac auf einem Macintosh-Computer zu entsperren
 
 Der Xamarin Profiler ist eine eigenständige Anwendung, und ist in Visual Studio für Mac und Visual Studio zum Aktivieren der profilerstellung mithilfe der IDE integriert.
-
-### <a name="download"></a>Herunterladen
 
 Laden Sie das Installationspaket für Ihre Plattform herunter:
 
@@ -58,7 +37,6 @@ Laden Sie das Installationspaket für Ihre Plattform herunter:
 - [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
 
 Nachdem das Download abgeschlossen ist, starten Sie das Installationsprogramm der Xamarin Profiler mit Ihrem System hinzufügen.
-
 
 ## <a name="profilers-and-profiling"></a>Profiler und Profilerstellung
 
@@ -121,13 +99,13 @@ Bevor Sie erfolgreich Profil Ihrer app erstellen können, müssen Sie die Profil
 
   **Erstellen Sie > iOS Debuggen > Profilerstellung aktivieren**
 
-  ![](images/ios-options-mac.png "iOS-Dialogfeld "Optionen" in Visual Studio für Mac")
+  ![](images/ios-options-mac.png "iOS-Dialogfeld \"Optionen\" in Visual Studio für Mac")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
   **Eigenschaften > iOS-Build > Profilerstellung aktivieren**
 
-  ![](images/ios-project-options-vs.png "iOS-Dialogfeld "Optionen" in Visual Studio")
+  ![](images/ios-project-options-vs.png "iOS-Dialogfeld \"Optionen\" in Visual Studio")
 
 -----
 
@@ -199,7 +177,6 @@ Sie laden können *.mlpd* Dateien in den Profiler, indem Sie die eigenständige 
 
 Weitere Informationen finden Sie unter [generieren .mlpd Dateien ](~/tools/profiler/troubleshooting.md#gen_mlpd).
 
-
 ## <a name="profiler-features"></a>Profiler-Funktionen
 
 Der Xamarin Profiler besteht aus fünf Abschnitte, wie unten gezeigt:
@@ -242,11 +219,11 @@ Es gibt verschiedenen Datenansichten in die Zuordnungen instrumentieren, die es 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-  [![](images/allocations3.png "Registerkarte "Zuordnungen"")](images/allocations3.png#lightbox) 
+  [![](images/allocations3.png "Registerkarte \"Zuordnungen\"")](images/allocations3.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations2-vs.png "Registerkarte "Zuordnungen"")](images/allocations2-vs.png#lightbox)
+  [![](images/allocations2-vs.png "Registerkarte \"Zuordnungen\"")](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -258,11 +235,11 @@ Die Inspektor-Ansicht für Zuordnungen bietet Optionen zum Filtern und Gruppiere
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-  [![](images/allocations2.png "Registerkarte "Aufruf"")](images/allocations2.png#lightbox) 
+  [![](images/allocations2.png "Registerkarte \"Aufruf\"")](images/allocations2.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations3-vs.png "Registerkarte "Aufruf"")](images/allocations3-vs.png#lightbox)
+  [![](images/allocations3-vs.png "Registerkarte \"Aufruf\"")](images/allocations3-vs.png#lightbox)
 
 -----
 
@@ -270,11 +247,11 @@ Die Inspektor-Ansicht für Zuordnungen bietet Optionen zum Filtern und Gruppiere
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-  [![](images/allocations4.png "Registerkarte "Momentaufnahmen"")](images/allocations4.png#lightbox) 
+  [![](images/allocations4.png "Registerkarte \"Momentaufnahmen\"")](images/allocations4.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations4-vs.png "Registerkarte "Momentaufnahmen"")](images/allocations4-vs.png#lightbox)
+  [![](images/allocations4-vs.png "Registerkarte \"Momentaufnahmen\"")](images/allocations4-vs.png#lightbox)
 
 -----
 
@@ -297,7 +274,6 @@ Im Diagramm zeichnen angezeigt, wie im folgenden Screenshot gezeigt, die Anzahl 
 [![Zeit Profiler Instrument – Liste der Beispiele](images/time3-vs.png)](images/time3-vs.png#lightbox) 
 
 -----
-
 
 - **Auslastungsaufrufstruktur** – zeigt aufgewendete Zeit in jeder Methode:
 
@@ -340,24 +316,7 @@ Wenn Sie ein Profil eine app mit einer anderen Konfiguration erstellen, werden S
 
 -----
 
-
 Wählen Sie **Update** um den Vorgang fortzusetzen.
-
-<!---
-## Profiling Android Applications
-
-
-Due to the recent inclusion of the profiling libraries into any new Android project template, you will find that when profiling any legacy applications you are greeted with the message dialog above.
-
-You will need to enable this to make sure that the profiling libraries are included in your Android application, for debug builds. This should not be checked for release builds as it creates overhead.
-
-
-## Profiling iOS Applications
-
-### Profiling tvOS
-
-## Profiling Mac Applications
--->
 
 ### <a name="sgen-garbage-collector-and-profiling"></a>SGen-Garbage Collector und Profilerstellung
 
@@ -374,7 +333,6 @@ Weitere Informationen zur arbeitsspeicherverwaltung von, finden Sie in der [Arbe
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Handbuch erläutert wir, welche die profilerstellung ist und wie es vorteilhaft sein, der Entwickler ist. Klicken Sie dann der Xamarin Profiler, bietet einige Verlauf und der Informationen in der Funktionsweise eingeführt. Schließlich wir die Funktionen von der Xamarin Profiler toured und untersucht die Zuordnungen und die Uhrzeit Profiler Instrumente.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

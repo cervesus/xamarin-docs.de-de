@@ -6,14 +6,16 @@ ms.assetid: CC6A0D52-E9FA-4270-B3FA-84660621D6D5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 10/13/2017
-ms.openlocfilehash: 517e21f2decd0dabbd03d752f13831a891ad7138
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/21/2018
+ms.openlocfilehash: 79e61db4c27a2d29b4ee0a9d39f2d25ea5d93303
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="advanced-concepts-and-internals"></a>Erweiterte Konzepte und Besonderheiten
+
+_Dieser Abschnitt enthält Themen, in denen die Architektur, API-Entwurf und Einschränkungen von Xamarin.Android erläutern. Darüber hinaus umfasst sie Themen über die die Garbage Collection-Implementierung und die Assemblys, die in Xamarin.Android verfügbar sind. Da Xamarin.Android ist [Open Source-](https://github.com/xamarin/xamarin-android), es ist auch möglich, der internen Funktionsweise von Xamarin.Android durch untersuchen den Quellcode zu verstehen._
 
 
 ##  <a name="architectureandroidinternalsarchitecturemd"></a>[Architektur](~/android/internals/architecture.md)
