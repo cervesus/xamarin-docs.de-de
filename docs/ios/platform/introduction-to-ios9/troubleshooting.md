@@ -145,7 +145,7 @@ Um dieses Problem zu beheben, führen Sie folgende Schritte aus:
 1. Starten Sie Xcode (die neueste Betaversion) bei der Entwicklung Mac.
 2. Wählen Sie **Geräte** aus der **Fenster** Menü zum Öffnen des Fensters Geräte: 
 
-    [![](troubleshooting-images/untrusted02.png "Fenster "Geräte"")](troubleshooting-images/untrusted02.png#lightbox)
+    [![](troubleshooting-images/untrusted02.png "Fenster \"Geräte\"")](troubleshooting-images/untrusted02.png#lightbox)
 3. Klicken Sie unter der **Geräte** side Bereich, wählen Sie Ihr Gerät, mit der rechten Maustaste und wählen Sie **Provisioning Profile anzeigen...** : 
 
     [![](troubleshooting-images/untrusted03.png "SShow Provisioning Profile")](troubleshooting-images/untrusted03.png#lightbox)
