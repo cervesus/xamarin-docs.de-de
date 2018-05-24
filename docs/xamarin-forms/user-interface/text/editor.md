@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: dc83defcb3eb69cf53c205793ce77029c0947c2f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 035365a22c487039ff811756d91ca0a8d392d628
+ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="editor"></a>Editor
 
@@ -19,8 +19,8 @@ _Für mehrzeilige Texteingabe_
 
 Die `Editor` Steuerelement wird verwendet, um die mehrzeilige Eingabe akzeptieren. Dieser Artikel umfasst folgende Themen:
 
-- **[Anpassung](#Customization)**  &ndash; Tastatur und Farboptionen.
-- **[Interaktivität](#Interactivity)**  &ndash; Ereignisse, die für überwacht werden können, um Interaktivität bereitzustellen.
+- **[Anpassung](#customization)**  &ndash; Tastatur und Farboptionen.
+- **[Interaktivität](#interactivity)**  &ndash; Ereignisse, die für überwacht werden können, um Interaktivität bereitzustellen.
 
 ## <a name="customization"></a>Anpassung
 
