@@ -204,7 +204,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die Bitmap gestreckt wird mit den Abmessungen des Rechtecks aus diesem Grund die Affe horizontal in diese Screenshots verzerrt wird:
 
-[![](bitmaps-images/basicbitmaps-small.png "Dreifacher Screenshot von der Seite "grundlegende Bitmaps"")](bitmaps-images/basicbitmaps-large.png#lightbox "triple Screenshot der Seite grundlegende Bitmaps")
+[![](bitmaps-images/basicbitmaps-small.png "Dreifacher Screenshot von der Seite \"grundlegende Bitmaps\"")](bitmaps-images/basicbitmaps-large.png#lightbox "triple Screenshot der Seite grundlegende Bitmaps")
 
 Das dritte Bild &mdash; dem Sie nur anzeigen können, wenn Sie das Programm auszuführen, und Laden ein Foto aus Ihren eigenen Bildbibliothek &mdash; wird ebenfalls innerhalb eines Rechtecks, aber des Rechtecks angezeigt Position und Größe angepasst werden, um die Bitmap Seitenverhältnis beibehalten. In dieser Berechnung ist etwas komplizierter, da es erfordert die Berechnung von einem Skalierungsfaktor basierend auf der Größe der Bitmap und Zielrechtecks und zentrieren das Rechteck in diesem Bereich:
 

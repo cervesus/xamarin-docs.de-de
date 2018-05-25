@@ -124,7 +124,7 @@ Nach des Freistellungspfads festlegen Bitmap angezeigt werden kann, und es an de
 
 Die **Pfad Texteffekt** Seite konvertiert ein einzelnes kaufmännisches und-Zeichen, einen Pfad zu einen 1D Pfad Effekt zu erstellen. Ein Paint-Objekt mit dieser Pfad Effekt wird dann zum Zeichnen der Kontur einer größeren Version des gleichen Zeichens verwendet:
 
-[![](text-paths-images/textpatheffect-small.png "Dreifacher Screenshot der Seite "Pfad Texteffekt"")](text-paths-images/textpatheffect-large.png#lightbox "dreifacher Screenshot der Seite "Pfad Texteffekt"")
+[![](text-paths-images/textpatheffect-small.png "Dreifacher Screenshot der Seite \"Pfad Texteffekt\"")](text-paths-images/textpatheffect-large.png#lightbox "dreifacher Screenshot der Seite \"Pfad Texteffekt\"")
 
 Viele Aufgaben in der [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) Klasse tritt in den Feldern und der Konstruktor. Die beiden `SKPaint` Objekte definiert, wie Felder für zwei unterschiedliche Zwecke verwendet werden: die erste (mit dem Namen `textPathPaint`) wird das kaufmännische und-Zeichen mit konvertiert eine `TextSize` von 50 auf einen Pfad für die Auswirkung der 1D Pfad. Die zweite (`textPaint`) wird verwendet, um die größere Version der das kaufmännische und-Zeichen mit diesem Pfad Effekt anzuzeigen. Aus diesem Grund die `Style` der dieses zweite Paint Objekt festgelegt ist `Stroke`, aber die `StrokeWidth` Eigenschaft ist nicht festgelegt werden, da diese Eigenschaft nicht erforderlich ist, bei Verwendung einer 1D Pfad Auswirkungen:
 

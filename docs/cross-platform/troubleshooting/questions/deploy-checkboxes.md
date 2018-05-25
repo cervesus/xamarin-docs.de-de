@@ -18,7 +18,7 @@ Seit Xamarin 3.5 Xamarin.iOS Projekte automatisch bereitgestellt, wenn Sie durch
 
 Aus diesem Grund die **bereitstellen** Kontrollkästchen sind in der Visual Studio Configuration Manager für Projekte Xamarin.iOS absichtlich deaktiviert:
 
-![](deploy-checkboxes-images/configuration.png "Visual Studio Configuration Manager mit der "Bereitstellung" das Kontrollkästchen für ein Xamarin.iOS-Projekt in Xamarin 3.5 deaktiviert")
+![](deploy-checkboxes-images/configuration.png "Visual Studio Configuration Manager mit der \"Bereitstellung\" das Kontrollkästchen für ein Xamarin.iOS-Projekt in Xamarin 3.5 deaktiviert")
 
 Diese Änderung schließt einen Fehler, der bei der Xamarin.iOS-app-Projekt nicht, zum Bereitstellen festgelegt wurde in früheren Versionen von Xamarin (Version 3.3 und früher) angezeigt werden konnte:
 

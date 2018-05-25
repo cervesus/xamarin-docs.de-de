@@ -96,7 +96,7 @@ Die XML-Darstellung für diese Schlüssel im **"Info.plist"** wird unten gezeigt
 
 Die **"Info.plist"** Einträge können auch hinzugefügt werden, **Quelle** Sicht beim Bearbeiten der **"Info.plist"** Datei:
 
-![Datei "Info.plist" für iOS 8](map-images/ios8-map-permissions.png "iOS 8 erforderliche Datei "Info.plist" Einträge")
+![Datei "Info.plist" für iOS 8](map-images/ios8-map-permissions.png "iOS 8 erforderliche Datei \"Info.plist\" Einträge")
 
 
 ### <a name="android"></a>Android

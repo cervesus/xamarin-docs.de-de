@@ -288,7 +288,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die Punkte werden basierend auf Sinusförmig oszillierende Wert interpoliert `t`. Die interpolierten Punkte werden dann verwendet, um eine Reihe von vier verbundenen Bézier-Kurven zu erstellen. So sieht die Animation ausgeführt wird, auf die drei Plattformen, die mit dem Status von einem Kreis in ein Quadrat aus:
 
-[![](beziers-images/squaringthecircle-small.png "Dreifacher Screenshot, der die Squaring der Seite "Kreis"")](beziers-images/squaringthecircle-large.png#lightbox "dreifacher Screenshot, der die Squaring der Seite "Kreis"")
+[![](beziers-images/squaringthecircle-small.png "Dreifacher Screenshot, der die Squaring der Seite \"Kreis\"")](beziers-images/squaringthecircle-large.png#lightbox "dreifacher Screenshot, der die Squaring der Seite \"Kreis\"")
 
 Solche eine Animation wäre ohne Kurven unmöglich, die algorithmisch flexibel genug ist, als Kreisbögen und gerade Linien dargestellt werden.
 

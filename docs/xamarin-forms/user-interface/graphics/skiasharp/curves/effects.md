@@ -547,7 +547,7 @@ Dieses Programm definiert, den im verwendete Pfad `Create1DPath` haben seine (0,
 
 Die **Förderband** Seite erstellt einen Pfad, der aussieht wie ein längliche Förderband transportiert die mit einem gekrümmten nach oben und unten wird dies auf die Dimensionen des Fensters angepasst. Dass der Pfad mit einem einfachen schraffiert ist `SKPaint` 20 Pixel breit und Grau, und klicken Sie dann erneut mit einem anderen gezeichnet `SKPaint` -Objekt mit einem `SKPathEffect` Objekt auf einen Pfad ähnelt ein wenig Bucket verweisen:
 
-[![](effects-images/conveyorbelt-small.png "Dreifacher Screenshot der Seite "Fließband"")](effects-images/conveyorbelt-large.png#lightbox "dreifacher Screenshot der Seite "Fließband"")
+[![](effects-images/conveyorbelt-small.png "Dreifacher Screenshot der Seite \"Fließband\"")](effects-images/conveyorbelt-large.png#lightbox "dreifacher Screenshot der Seite \"Fließband\"")
 
 Der (0, 0) des Pfads Bucket ist das Handle, das dies der Fall bei der `phase` Argument animiert wird, scheinen die Buckets um Förderband, vielleicht scooping oben Wasser am unteren und Dump-Sicherungen es aus der oben drehen.
 
@@ -923,7 +923,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Verwenden Sie diesen Effekt mit Verlauf oder füllen, die basierend auf der `Style` Eigenschaft von der `SKPaint` Objekt. Hier ist es auf allen drei Plattformen:
 
-[![](effects-images/anotherroundedheptagon-small.png "Dreifacher Screenshot der Seite eine andere gerundet Siebeneck")](effects-images/anotherroundedheptagon-large.png#lightbox "dreifacher Screenshot der Seite "einen anderen gerundet Siebeneck"")
+[![](effects-images/anotherroundedheptagon-small.png "Dreifacher Screenshot der Seite eine andere gerundet Siebeneck")](effects-images/anotherroundedheptagon-large.png#lightbox "dreifacher Screenshot der Seite \"einen anderen gerundet Siebeneck\"")
 
 Sie sehen, dass diese abgerundeten Siebeneck an das frühere Programm identisch ist. Wenn Sie überzeugt Weitere, die die Eckradius ist tatsächlich 100 anstatt 50 angegeben wird, der `SKPathEffect.CreateCorner` Aufruf, Sie können kommentieren Sie die letzte Anweisung im Programm und ausführliche Informationen finden Sie eine 100-Radius-Kreis überlagert, in der Ecke klicken.
 

@@ -98,7 +98,7 @@ canvas.ClipPath(keyholePath);
 
 Die `PaintSurface` Handler dann zurückgesetzt, die Transformationen mit einem Aufruf von `ResetMatrix` zu erweitern, um die vollständige Höhe des Bildschirms die Bitmap gezeichnet. Dieser Code wird davon ausgegangen, dass die Bitmap quadratische, ist also diese bestimmte Bitmap. Die Bitmap wird nur innerhalb des Bereichs, der durch den Beschneidungspfad definierten gerendert:
 
-[![](clipping-images/monkeythroughkeyhole-small.png "Dreifacher Screenshot, der die Affe über die Seite "Keyhole"")](clipping-images/monkeythroughkeyhole-large.png#lightbox "dreifacher Screenshot, der die Affe über die Seite "Keyhole"")
+[![](clipping-images/monkeythroughkeyhole-small.png "Dreifacher Screenshot, der die Affe über die Seite \"Keyhole\"")](clipping-images/monkeythroughkeyhole-large.png#lightbox "dreifacher Screenshot, der die Affe über die Seite \"Keyhole\"")
 
 Des Freistellungspfads ist beim aktiviert die Transformationen unterliegen die `ClipPath` Methode wird aufgerufen, und nicht zu den Transformationen faktisch Wenn ein Objekt (z. B. eine Bitmap) angezeigt wird. Beschneidungspfad ist Teil der Canvas-Zustand, der mit gespeichert wird die `Save` Methode und wiederhergestellt, mit der `Restore` Methode.
 

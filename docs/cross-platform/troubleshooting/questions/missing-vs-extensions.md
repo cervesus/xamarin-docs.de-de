@@ -48,7 +48,7 @@ In bestimmten Situationen tritt möglicherweise ein Xamarin-Installationsprogram
     Wenn die Erweiterungen (für Version 3.1.228) ordnungsgemäß installiert sind, wird im Ordner "" 60 Elemente sein:
 
 
-    ![](missing-vs-extensions-images/folder.png "Liste der "Xamarin\3.1.228.0" Ordnerinhalt auflisten im Explorer")
+    ![](missing-vs-extensions-images/folder.png "Liste der \"Xamarin\3.1.228.0\" Ordnerinhalt auflisten im Explorer")
 
 2. Nachdem Sie sichergestellt haben, dass dieser Ordner richtig aussieht, teilen Sie Visual Studio zum Einrichten der Erweiterung erneut versuchen:
 
