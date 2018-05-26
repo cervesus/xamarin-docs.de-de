@@ -6,12 +6,12 @@ ms.assetid: 0008682B-6CEF-0C1D-3200-56ECF58F5D3C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 366c75db49a7e0f4f559b13c0871071dee2f08e3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/22/2018
+ms.openlocfilehash: b509f6892b27afa053a6ee913826d913d7ad54a8
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="location-services"></a>Ortsbezogene Dienste
 
@@ -83,9 +83,15 @@ Der mit Standort-Anbieter ist die bevorzugte Methode für Android-Anwendungen zu
  
 Der mit Standort-Anbieter-API bietet eine Vielzahl von anderen Tools mit Standortbestimmung Anwendungen, einschließlich Geofencing und aktivitätsüberwachung zu ergänzen. In diesem Abschnitt werden wir den Fokus auf die Grundlagen der Einrichtung der `LocationClient`, Einrichten von Anbietern und vom Standort des Benutzers abrufen.
 
-Der mit Standort-Anbieter ist Teil des [Google Play-Dienste](http://developer.android.com/google/play-services/index.html). Das Google Play-Dienste-Paket muss installiert und ordnungsgemäß konfiguriert, in der Anwendung für den Speicherortanbieter mit Sicherung API zu arbeiten, und das Gerät muss die Google wiedergeben Services APK installiert haben.
+Der mit Standort-Anbieter ist Teil des [Google Play-Dienste](http://developer.android.com/google/play-services/index.html).
+Das Google Play-Dienste-Paket muss installiert und ordnungsgemäß konfiguriert, in der Anwendung für den Speicherortanbieter mit Sicherung API zu arbeiten, und das Gerät muss die Google wiedergeben Services APK installiert haben.
 
-Vor einem Xamarin.Android Anwendung kann den Speicherortanbieter mit Sicherung verwenden, es muss Hinzufügen der **Xamarin.GooglePlayServices.Maps** zum Projekt.
+Vor einem Xamarin.Android Anwendung kann den Speicherortanbieter mit Sicherung verwenden, es muss Hinzufügen der **Xamarin.GooglePlayServices.Maps** Paket zum Projekt. Zudem können die folgenden `using` Anweisungen, die die Klassen, die unten beschriebenen verweisen Quelldateien hinzugefügt werden sollen:
+
+```csharp
+using Android.Gms.Common;
+using Android.Gms.Location;
+```
 
 ### <a name="checking-if-google-play-services-is-installed"></a>Überprüft, ob es sich bei Google Play-Dienste installiert ist
 
@@ -350,7 +356,7 @@ Dieses Handbuch behandelt den Standort des Benutzers mit Android Location-Dienst
 
 - [Speicherort (Beispiel)](https://developer.xamarin.com/samples/Location/)
 - [FusedLocationProvider (Beispiel)](https://developer.xamarin.com/samples/FusedLocationProvider/)
-- [Google Play Services](http://developer.android.com/google/play-services/index.html)
+- [Google Play-Dienste](http://developer.android.com/google/play-services/index.html)
 - [Kriterien-Klasse](https://developer.xamarin.com/api/type/Android.Locations.Criteria/)
 - [LocationManager-Klasse](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/)
 - [LocationListener-Klasse](https://developer.xamarin.com/api/type/Android.Locations.ILocationListener/)
