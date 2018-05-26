@@ -232,6 +232,7 @@
 ### [Benutzerdefinierte Linkereinstellungen](deploy-test/linker.md)
 ### [Geräte mit mehreren Kernen](deploy-test/multicore-devices.md)
 ### [Leistung](deploy-test/performance.md)
+### [Profilerstellung](deploy-test/profiling.md)
 ### [Vorbereiten für die Veröffentlichung](deploy-test/release-prep/index.md)
 #### [ProGuard](deploy-test/release-prep/proguard.md)
 ### [Signieren des APK](deploy-test/signing/index.md)
