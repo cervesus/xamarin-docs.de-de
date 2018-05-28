@@ -5,12 +5,12 @@ ms.assetid: 8E3EFBB2-F8AD-C126-5F32-7FD140791E53
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/26/2018
-ms.openlocfilehash: ba936137dd868e9ba5eabc6df89bb98a0a178ba2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/21/2018
+ms.openlocfilehash: 6a4164ea4a56ee7c1b3c1abd05f7b1bb95aede4f
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="signing-the-android-application-package"></a>Signieren des Android-Anwendungspakets
 
@@ -113,9 +113,9 @@ Navigieren Sie zum gewünschten Speicherort, und klicken Sie auf **Speichern**. 
 
 [![Dialogfeld „Signierungskennwort“](images/vs/07-signing-password-vs-sml.png)](images/vs/07-signing-password-vs.png#lightbox)
 
-Nachdem der Signierungsvorgang abgeschlossen ist, klicken Sie auf **Ordner öffnen**:
+Nachdem der Signierungsvorgang abgeschlossen ist, klicken Sie auf **Distribution öffnen**:
 
-[![Schaltfläche „Ordner öffnen“](images/vs/08-open-folder-vs-sml.png)](images/vs/08-open-folder-vs.png#lightbox)
+[![Schaltfläche „Distribution öffnen“](images/vs/08-open-distribution-sml.png)](images/vs/08-open-distribution.png#lightbox)
 
 Dadurch öffnet Windows Explorer den Ordner, der die erstellte APK-Datei enthält. Jetzt hat Visual Studio die Xamarin.Android-Anwendung in ein APK kompiliert, das zur Verteilung bereit ist.
 Der folgende Screenshot zeigt ein Beispiel der für die Veröffentlichung bereiten App **MyApp.MyApp.apk**:

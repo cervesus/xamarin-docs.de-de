@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 9f7c9d1b410d9d1d699644148903fdc6cfeec4fd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c2e37de65cf7be461543704b67249dfa9833dba8
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Einführung in Xamarin.Forms
 
@@ -536,7 +536,7 @@ Der folgende Code ist ein Beispiel für die Durchführung einer Datenbindung in 
 <Entry Text="{Binding FirstName}" ... />
 ```
 
-Zwischen der Eigenschaft [`Entry.Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Text/) und der Eigenschaft `FirstName` des *Quellobjekts* wird eine Bindung eingerichtet. Am `Entry`-Steuerelement vorgenommene Änderungen werden automatisch an das `employeeToDisplay`-Objekt weitergegeben. Gleichermaßen aktualisiert das Xamarin.Forms-Bindungsmodul auch die Inhalte des `Entry`-Steuerelements, wenn Änderungen an der Eigenschaft `employeeToDisplay.FirstName` vorgenommen werden. Dies wird als *bidirektionale Bindung* bezeichnet. Damit die bidirektionale Bindung funktioniert, muss die Modellklasse die `INotifyPropertyChanged`-Schnittstelle implementieren.
+Zwischen der Eigenschaft [`Entry.Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Text/) und der Eigenschaft `FirstName` des *Quellobjekts* wird eine Bindung eingerichtet. Am `Entry`-Steuerelement vorgenommene Änderungen werden automatisch an das `employeeToDisplay`-Objekt weitergegeben. Gleichermaßen aktualisiert die Xamarin.Forms-Bindungs-Engine auch die Inhalte des `Entry`-Steuerelements, wenn Änderungen an der Eigenschaft `employeeToDisplay.FirstName` vorgenommen werden. Dies wird als *bidirektionale Bindung* bezeichnet. Damit die bidirektionale Bindung funktioniert, muss die Modellklasse die `INotifyPropertyChanged`-Schnittstelle implementieren.
 
 Obwohl die Eigenschaft [`BindingContext`](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) der `EmployeeDetailPage`-Klasse in XAML festgelegt werden kann, wird sie hier in CodeBehind auf die Instanz eines `Employee`-Objekts festgelegt:
 
@@ -567,7 +567,7 @@ public EmployeeDetailPage(Employee employeeToDisplay)
 }
 ```
 
-Dem [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-Konstruktor wird die Instanz eines `Employee`-Objekts übergeben. Er legt den [`BindingContext`](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) auf das Objekt fest, an das die Instanz gebunden werden soll. Ein [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)-Steuerelement wird instanziiert, und die Bindung zwischen der Eigenschaft [`Entry.Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Text/) und der Eigenschaft `FirstName` des *Quellobjekts* wird festgelegt. Am `Entry`-Steuerelement vorgenommene Änderungen werden automatisch an das `employeeToDisplay`-Objekt weitergegeben. Gleichermaßen aktualisiert das Xamarin.Forms-Bindungsmodul auch die Inhalte des `Entry`-Steuerelements, wenn Änderungen an der Eigenschaft `employeeToDisplay.FirstName` vorgenommen werden. Dies wird als *bidirektionale Bindung* bezeichnet. Damit die bidirektionale Bindung funktioniert, muss die Modellklasse die `INotifyPropertyChanged`-Schnittstelle implementieren.
+Dem [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-Konstruktor wird die Instanz eines `Employee`-Objekts übergeben. Er legt den [`BindingContext`](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) auf das Objekt fest, an das die Instanz gebunden werden soll. Ein [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)-Steuerelement wird instanziiert, und die Bindung zwischen der Eigenschaft [`Entry.Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Text/) und der Eigenschaft `FirstName` des *Quellobjekts* wird festgelegt. Am `Entry`-Steuerelement vorgenommene Änderungen werden automatisch an das `employeeToDisplay`-Objekt weitergegeben. Gleichermaßen aktualisiert die Xamarin.Forms-Bindungs-Engine auch die Inhalte des `Entry`-Steuerelements, wenn Änderungen an der Eigenschaft `employeeToDisplay.FirstName` vorgenommen werden. Dies wird als *bidirektionale Bindung* bezeichnet. Damit die bidirektionale Bindung funktioniert, muss die Modellklasse die `INotifyPropertyChanged`-Schnittstelle implementieren.
 
 Die `SetBinding`-Methode nimmt zwei Parameter an. Der erste Parameter gibt Informationen zum Bindungstyp an. Über den zweiten Parameter werden Informationen zu Bindungselementen und zur Vorgehensweise bei der Bindung bereitgestellt. In den meisten Fällen ist der zweite Parameter bloß eine Zeichenfolge, die den Namen der Eigenschaft in der [`BindingContext`](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) enthält. Die folgende Syntax wird für eine direkte Bindung an die `BindingContext` verwendet:
 
