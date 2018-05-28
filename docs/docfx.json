@@ -38,7 +38,7 @@
     "globalMetadata": {
       "feedback_system": "GitHub",
       "feedback_github_repo": "MicrosoftDocs/xamarin-docs.de-de",
-      "feedback_product_url": "https://developercommunity.visualstudio.com/"
+      "feedback_product_url": "https://developercommunity.visualstudio.com/",
       "breadcrumb_path": "/xamarin/breadcrumb/toc.json",
       "uhfHeaderId":"MSDocsHeader-Xamarin",
       "extendBreadcrumb": true
