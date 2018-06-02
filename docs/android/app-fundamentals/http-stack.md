@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 04/20/2018
-ms.openlocfilehash: bedcf0603fffc9886155881f91972203104ba155
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 765c51346ac63a00838fec52bde87b38091e2dd9
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34689473"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient-Stapel und Implementierung von SSL/TLS-Selektor für Android
 
@@ -89,9 +90,9 @@ Die Wahl zwischen `AndroidClientHandler` und `HttpClientHandler` hängt von den 
 
 Beginnend mit Xamarin.Android 8.3 `HttpClientHandler` standardmäßig Ausdrehen SSL (`btls`) als den zugrunde liegenden TLS-Anbieter. Der Ausdrehen SSL TLS-Anbieter bietet folgende Vorteile:
 
--   TLS 1.2 unterstützt.
+-   TLS 1.2 + unterstützt.
 -   Alle Android-Versionen unterstützt.
--   Er bietet TLS 1.2-Unterstützung für beide `HttpClient` und `WebClient`.
+-   Es bietet TLS 1.2 +-Unterstützung für beide `HttpClient` und `WebClient`.
 
 Der Nachteil der Verwendung von SSL Ausdrehen als fangen TLS-Anbieter ist, dass es die Größe der resultierenden APK erhöhen kann (ungefähr 1MB zusätzlicher APK-Größe pro unterstützten ABI hinzugefügt).
 
@@ -128,7 +129,7 @@ Diese Option "Project" steuert, welche zugrunde liegenden TLS-Bibliothek von all
 
 -----
 
-Beispiel:
+Zum Beispiel:
 
 ```csharp
 var client = new HttpClient();
@@ -154,7 +155,7 @@ Die dritte Option &ndash; Verwenden von Umgebungsvariablen &ndash; nachfolgend b
 
 Es gibt zwei Umgebungsvariablen, die für die Verwendung von TLS in Xamarin.Android beziehen:
 
-- `XA_HTTP_CLIENT_HANDLER_TYPE` &ndash; Diese Umgebungsvariable wird deklariert, den Standardwert `HttpMessageHandler` , die die Anwendung verwenden. Beispiel:
+- `XA_HTTP_CLIENT_HANDLER_TYPE` &ndash; Diese Umgebungsvariable wird deklariert, den Standardwert `HttpMessageHandler` , die die Anwendung verwenden. Zum Beispiel:
 
     ```csharp
     XA_HTTP_CLIENT_HANDLER_TYPE=Xamarin.Android.Net.AndroidClientHandler
