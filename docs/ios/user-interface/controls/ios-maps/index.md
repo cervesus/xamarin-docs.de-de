@@ -1,21 +1,20 @@
 ---
-title: Karten
-description: iOS umfasst die MapKit Framework vereinfacht, hinzufügen zu einer Anwendung zugeordnet ist. Mithilfe von Zuordnung Kit können iOS-Anwendungen interaktive Karten hinzufügen, die Funktionen, z. B. Schwenken und zoomen, Benutzerstandort einstellen und rich Strukturlayout-Grafiken anzeigen, auf einer Karte zu unterstützen. In diesem Artikel sind vertiefende Themen in mehrere der Map-Kit-Funktionen, die zeigt, wie ihnen das Erstellen von geografischer Funktionen in einer Anwendung nutzen
+title: Karten in Xamarin.iOS
+description: Dieses Dokument beschreibt das iOS-MapKit-Framework und wie er mit Xamarin.iOS verwendet wird. Es wird erläutert, wie zum Hinzufügen einer Zuordnung, Stil, schwenken und zoomen, arbeiten mit Benutzerstandort einstellen, Hinzufügen von Anmerkungen, arbeiten mit Legenden und für Überlagerungen und lokale Suche durchführen.
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 0249da1754083231fa4426ae4f42ce4ad73c3f51
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3649c8eb9c8c1a82940b8e2eece7d2bfd005d024
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790229"
 ---
-# <a name="maps"></a>Karten
-
-_iOS umfasst die MapKit Framework vereinfacht, hinzufügen zu einer Anwendung zugeordnet ist. Mithilfe von Zuordnung Kit können iOS-Anwendungen interaktive Karten hinzufügen, die Funktionen, z. B. Schwenken und zoomen, Benutzerstandort einstellen und rich Strukturlayout-Grafiken anzeigen, auf einer Karte zu unterstützen. In diesem Artikel sind vertiefende Themen in mehrere der Map-Kit-Funktionen, die zeigt, wie ihnen das Erstellen von geografischer Funktionen in einer Anwendung nutzen_
+# <a name="maps-in-xamarinios"></a>Karten in Xamarin.iOS
 
 Karten sind ein gängiges Feature in allen modernen mobilen Betriebssystemen. iOS bietet Unterstützung systemintern über das Map-Kit-Framework. Map-Kit können Anwendungen problemlos umfassende, interaktive Karten hinzufügen. Diese Zuordnungen können in einer Vielzahl von Möglichkeiten, wie z. B. Hinzufügen von Anmerkungen zum Kennzeichnen von Standorten auf einer Karte und Überlagern von Grafiken der willkürlichen Formen angepasst werden. Map-Kit hat auch integrierten Unterstützung für die aktuelle Position eines Geräts angezeigt.
 

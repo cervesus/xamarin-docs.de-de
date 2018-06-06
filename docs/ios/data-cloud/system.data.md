@@ -1,17 +1,19 @@
 ---
-title: <legacyBold>System.Data</legacyBold>
+title: "\"System.Data\", in Xamarin.iOS"
+description: Dieses Dokument beschreibt, wie "System.Data" und Mono.Data.Sqlite.dll auf SQLite-Daten in einem Xamarin.iOS-Anwendung zugreifen.
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b141dfac49e2cfa2dc80b7c0e4ca3a93968590a6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f20bdbdb9fe0d25e1ba545633e271af912aab3ba
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784715"
 ---
-# <a name="systemdata"></a><legacyBold>System.Data</legacyBold>
+# <a name="systemdata-in-xamarinios"></a>"System.Data", in Xamarin.iOS
 
 Xamarin.iOS 8.10 bietet Unterstützung für ["System.Data"](https://developer.xamarin.com/api/namespace/System.Data/), einschließlich der `Mono.Data.Sqlite.dll` ADO.NET-Anbieter. Die Unterstützung umfasst das Hinzufügen der folgenden [Assemblys](~/cross-platform/internals/available-assemblies.md):
 
@@ -20,7 +22,6 @@ Xamarin.iOS 8.10 bietet Unterstützung für ["System.Data"](https://developer.xa
 -  `System.Transactions.dll`
 -  `Mono.Data.Tds.dll`
 -  `Mono.Data.Sqlite.dll`
-
 
 <a name="Example" />
 
@@ -136,7 +137,7 @@ Beide **"System.Data"** und **Mono.Data.Sqlite** fehlen einige Funktionen.
 
 <a name="System.Data" />
 
-### <a name="systemdata"></a><legacyBold>System.Data</legacyBold>
+### <a name="systemdata"></a>System.Data
 
 Funktionalität fehlt in der **"System.Data.dll"** besteht aus:
 

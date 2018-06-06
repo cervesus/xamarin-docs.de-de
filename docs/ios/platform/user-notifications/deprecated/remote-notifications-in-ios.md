@@ -1,21 +1,20 @@
 ---
 title: Pushbenachrichtigungen in iOS
-description: Dieser Abschnitt befasst sich mit Pushbenachrichtigungen in iOS. Apple Push Notifications Gateway Service und die Rolle, die Wiedergabe in die publishing Benachrichtigungen an iOS-Anwendungen eingeführt. Es wird erläutert, wie die Sicherheitszertifikate erstellen, die notwendig sind, um Pushbenachrichtigungen zu aktivieren und zu besprechen. In diesem Abschnitt werden schließlich Teil der ordnungsaufgaben erläutert, die Anwendungsserver, zum Nachverfolgen der Clients für mobile Geräte ausführen müssen.
+description: Dieses Dokument beschreibt das Arbeiten mit Pushbenachrichtigungen in iOS 9 und früher. Es wird erläutert, Zertifikate zu registrieren, die mit den Apple Push Notifications Gateway Service (APNS) und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 3a86ce5e61576faec41b5fcddf899d731d2cc57a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7bb2a250b9d3cc0c8df02f432330f9fe1dc58f94
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788666"
 ---
 # <a name="push-notifications-in-ios"></a>Pushbenachrichtigungen in iOS
-
-_Dieser Abschnitt befasst sich mit Pushbenachrichtigungen in iOS. Apple Push Notifications Gateway Service und die Rolle, die Wiedergabe in die publishing Benachrichtigungen an iOS-Anwendungen eingeführt. Es wird erläutert, wie die Sicherheitszertifikate erstellen, die notwendig sind, um Pushbenachrichtigungen zu aktivieren und zu besprechen. In diesem Abschnitt werden schließlich Teil der ordnungsaufgaben erläutert, die Anwendungsserver, zum Nachverfolgen der Clients für mobile Geräte ausführen müssen._
 
 > [!IMPORTANT]
 > Die Informationen in diesem Abschnitt beziehen sich auf iOS 9 und vorherigen, es ist noch hier zur Unterstützung von älterer iOS-Versionen. IOS 10 und höher, finden Sie unter der [Benachrichtigungsframeworks User Guide](~/ios/platform/user-notifications/index.md) für die Unterstützung von lokalen und Remote-Benachrichtigung auf einem iOS-Gerät.

@@ -1,18 +1,20 @@
 ---
-title: Arbeiten mit App-Gruppen
+title: Arbeiten mit WatchOS App-Gruppen in Xamarin
+description: Dieses Dokument beschreibt app-Gruppen und deren Verwendung in einer Anwendung WatchOS. Es wird erläutert, wie eine app-Verwaltungsgruppe, die Bereitstellung von Anforderungen, Entitlements.plist Überlegungen und die Bereitstellung konfigurieren.
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 341f6b4f5049a39817f2923901472f35b254bead
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5736b25af3993e2da794422a1a6f040461532497
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790678"
 ---
-# <a name="working-with-app-groups"></a>Arbeiten mit App-Gruppen
+# <a name="working-with-watchos-app-groups-in-xamarin"></a>Arbeiten mit WatchOS App-Gruppen in Xamarin
 
 
 Durch eine App-Gruppe können unterschiedliche Anwendungen (oder eine Anwendung und ihre Erweiterungen) auf einen freigegebenen Dateispeicherort zugreifen. App-Gruppen können für folgende Daten verwendet werden:

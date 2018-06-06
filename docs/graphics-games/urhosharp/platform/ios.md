@@ -1,20 +1,19 @@
 ---
 title: UrhoSharp IOS- und tvos. außerdem wurden Unterstützung
-description: iOS und tvos. außerdem wurden bestimmte Setup- und Funktionen für UrhoSharp.
+description: Dieses Dokument erläutert, iOS und tvos. außerdem wurden für UrhoSharp unterstützen. Es wird beschrieben, wie ein Projekt erstellen, konfigurieren und starten Urho, und führen Sie eine benutzerdefinierte Einbetten von Urho.
 ms.prod: xamarin
 ms.assetid: 7B06567E-E789-4EA1-A2A9-F3B2212EDD23
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 322297e7782a06a2d900b12cd5afc5f469009f69
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7e8975b6885f6c902634e05aafca0b8ee60a981c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783973"
 ---
 # <a name="urhosharp-ios-and-tvos-support"></a>UrhoSharp IOS- und tvos. außerdem wurden Unterstützung
-
-_iOS und tvos. außerdem wurden bestimmte Setup- und Funktionen_
 
 Während Urho eine portable Klassenbibliothek ist, und ermöglicht die gleiche API über die verschiedenen Plattform verwendet werden, für die Spiellogik Sie weiterhin Urho in Ihren jeweiligen Treiber, Plattform und in einigen Fällen zu initialisieren müssen, sollten Sie bestimmte Funktionen der Plattform nutzen .
 

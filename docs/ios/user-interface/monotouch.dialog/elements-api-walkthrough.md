@@ -1,18 +1,19 @@
 ---
-title: Exemplarische Vorgehensweise – erstellen einer Anwendung mithilfe der API-Elemente
+title: Erstellen einer Xamarin.iOS-Anwendung, die mithilfe der API-Elemente
 description: In diesem Artikel baut auf den Informationen in der Einführung MonoTouch Dialogfeld Artikel. Er enthält eine exemplarische Vorgehensweise verwenden Sie die MonoTouch.Dialog (MT. D) Elemente API zum schnellen Einstieg Erstellen einer Anwendung mit MT. D.
 ms.prod: xamarin
 ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e4fbf744c6f967d09e0033212024c2e2398fb768
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 64f407288da72dbf51fb3388ddf36caea377f09c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790431"
 ---
-# <a name="walkthrough---creating-an-application-using-the-elements-api"></a>Exemplarische Vorgehensweise – erstellen einer Anwendung mithilfe der API-Elemente
+# <a name="creating-a-xamarinios-application-using-the-elements-api"></a>Erstellen einer Xamarin.iOS-Anwendung, die mithilfe der API-Elemente
 
 _In diesem Artikel baut auf den Informationen in der Einführung MonoTouch Dialogfeld Artikel. Er enthält eine exemplarische Vorgehensweise verwenden Sie die MonoTouch.Dialog (MT. D) Elemente API zum schnellen Einstieg Erstellen einer Anwendung mit MT. D._
 
@@ -165,7 +166,7 @@ In diesem Artikel dargestellt eine exemplarische Vorgehensweise, die wurde gezei
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MTDWalkthrough (sample)](https://developer.xamarin.com/samples/MTDWalkthrough/)
+- [MTDWalkthrough (Beispiel)](https://developer.xamarin.com/samples/MTDWalkthrough/)
 - [Screencast - Miguel de Icaza erstellt ein iOS-Anmeldebildschirm mit MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
 - [Screencast - problemlos iOS Benutzeroberflächen mit MonoTouch.Dialog erstellen](http://youtu.be/j7OC5r8ZkYg)
 - [Einführung in MonoTouch.Dialog](~/ios/user-interface/monotouch.dialog/index.md)

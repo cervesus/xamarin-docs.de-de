@@ -1,5 +1,5 @@
 ---
-title: Arbeiten mit Zeilenaktionen
+title: Arbeiten mit Zeilenaktionen in Xamarin.iOS
 description: Dieses Handbuch veranschaulicht, wie benutzerdefinierte Wischen Aktionen für die Tabellenzeilen mit UISwipeActionsConfiguration oder UITableViewRowAction
 ms.prod: xamarin
 ms.assetid: 340FB633-0C46-40AA-9963-FF17D7CA6858
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/25/2017
-ms.openlocfilehash: c257406f3ad81e8144b47e099c9a00f3fdae30cb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4be8b6dc66c9c047e6662067e7e3ecf81ab22893
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789940"
 ---
-# <a name="working-with-row-actions"></a>Arbeiten mit Zeilenaktionen
+# <a name="working-with-row-actions-in-xamarinios"></a>Arbeiten mit Zeilenaktionen in Xamarin.iOS
 
 _Dieses Handbuch veranschaulicht, wie benutzerdefinierte Wischen Aktionen für die Tabellenzeilen mit UISwipeActionsConfiguration oder UITableViewRowAction_
 
@@ -176,7 +177,7 @@ table.Delegate = tableDelegate;
 
 Wenn der obige Code ausgeführt wird und der Benutzer Kundenkarte auf eine Tabellenzeile Links der **Hi** Schaltfläche wird angezeigt, statt die **löschen** Schaltfläche, die standardmäßig angezeigt wird:
 
-[![](row-action-images/action01.png "Die Schaltfläche "Hi" angezeigt wird, anstatt die Schaltfläche "löschen"")](row-action-images/action01.png#lightbox)
+[![](row-action-images/action01.png "Die Schaltfläche \"Hi\" angezeigt wird, anstatt die Schaltfläche \"löschen\"")](row-action-images/action01.png#lightbox)
 
 Wenn der Benutzer tippt der **Hi** Schaltfläche `Hello World!` geschrieben wird an die Konsole in Visual Studio für Mac oder Visual Studio, wenn die Anwendung im Debugmodus ausgeführt wird.
 

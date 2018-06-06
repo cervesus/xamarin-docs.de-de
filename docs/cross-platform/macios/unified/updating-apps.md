@@ -1,23 +1,24 @@
 ---
 title: Aktualisieren vorhandene Apps auf einheitliche API
+description: Dieses enthält Dokumentenlinks zu verschiedenen Handbüchern, die zum Aktualisieren von Xamarin-Anwendungen für die einheitliche API zu beschreiben. Es wird erläutert, Xamarin.iOS apps Xamarin.Mac apps. Xamarin.Forms-apps, systemeigene Typen in plattformübergreifende apps und Bindung-Projekten.
 ms.prod: xamarin
 ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 588c01ef9f9ee014592c9d8dc72f2b8be20dfee3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 2d09be7b85980e5c5a8eb209dc1b4ff3136c34b3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781630"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>Aktualisieren vorhandene Apps auf einheitliche API
 
 > [!IMPORTANT]
-> **Klassische Profil Veraltung:** als neue Plattformen in Xamarin.iOS hinzugefügt werden beginnen wir schrittweise Funktionen aus dem klassischen Profil (monotouch.dll) als veraltet markiert. Beispielsweise wurde die Option nicht NRC (neue Ref-Anzahl) entfernt. Für alle einheitliche Anwendungen immer NRC aktiviert wurde (d. h. nicht NRC wurde nie eine Option) und sind keine Probleme bekannt. Zukünftige Versionen werden die Möglichkeit der Verwendung von Boehm als der Garbage Collector entfernt. Dies war auch eine Option für einheitliche Anwendungen nicht verfügbar. Die vollständige Entfernen des klassischen Unterstützung weiter fortfahren mit der Version von Xamarin.iOS 10.0 ist geplant.
-
-
-
+> Die Xamarin klassischen-API, die die einheitliche API vorangestellt wird, wurde als veraltet markiert. 
+> - Die letzte Version von Xamarin.iOS Unterstützung der klassischen-API (monotouch.dll) wurde Xamarin.iOS 9.10.
+> - Xamarin.Mac unterstützt nach wie vor die klassische API, aber es ist nicht mehr aktualisiert. Da er als veraltet ist, sollten Entwickler ihre Anwendungen für die einheitliche API verschieben.
 
 ## <a name="how-to-update-your-apps"></a>Gewusst wie: Aktualisieren Sie Ihre Apps
 
@@ -31,7 +32,7 @@ Es gibt drei Schritte, um Ihre apps zu aktualisieren:
 
 2. Verwenden Sie das Migrationstool in Visual Studio für Mac integriert, um Ihre Projektdateien und Namespaces zu aktualisieren.
 
-3. Verbleibende Compilerfehler, die im Zusammenhang mit dem neuen Update [64 Typen](~/cross-platform/macios/nativetypes.md) und [andere APIs](~/cross-platform/macios/unified/index.md#deprecated-typos) geändert wurden. Auschecken [diese Tipps](~/cross-platform/macios/unified/updating-tips.md) für Weitere Informationen zum manuellen Aktualisierungen, die erforderlich sind.
+3. Verbleibende Compilerfehler, die im Zusammenhang mit dem neuen Update [64 Typen](~/cross-platform/macios/nativetypes.md) und [andere APIs](~/cross-platform/macios/unified/overview.md#deprecated-typos) geändert wurden. Auschecken [diese Tipps](~/cross-platform/macios/unified/updating-tips.md) für Weitere Informationen zum manuellen Aktualisierungen, die erforderlich sind.
 
 Bestimmte Handbücher sind für jedes Produkt beim Aktualisieren Ihrer apps einheitliche API und der 64-Bit-Unterstützung verfügbar:
 
@@ -55,9 +56,6 @@ Dieser Artikel umfasst, verwenden die neue iOS Unified API systemeigene Typen (N
 
 Kunden, die Bindungen für Objective-C-Bibliotheken erstellt haben müssen zum Aktualisieren der bindungsprojekt, um die Änderungen in der zugrunde liegenden API entsprechen (wobei einige Typen jetzt 64-Bit-werden).
 Führen Sie diese Anweisungen, um [Aktualisieren eines vorhandenen Projekts der Bindung zur Unterstützung der einheitliche API](~/cross-platform/macios/unified/update-binding.md).
-
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

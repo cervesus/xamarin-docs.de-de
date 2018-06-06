@@ -1,21 +1,20 @@
 ---
-title: Wiedergabe von Sound mit AVAudioPlayer
-description: Dieser Artikel zeigt, wie eine Hilfsklasse, mit der die Wiedergabe von sound mithilfe einer AVAudioPlayer steuern.
+title: Wiedergabe von Sound in tvos. außerdem wurden mit AVAudioPlayer in Xamarin
+description: Dieser Artikel zeigt, wie eine Hilfsklasse, mit der die Wiedergabe von sound mithilfe einer AVAudioPlayer in einer Anwendung Xamarin.iOS steuern.
 ms.prod: xamarin
 ms.assetid: E0305572-DC64-48BB-BD97-0A5096E6CA04
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c50aea9c4c35e91c2baa98c94db2fd7c61136d69
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7d95a8ea6c22c0d897d8ccfe0c2ca401f6523783
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788629"
 ---
-# <a name="playing-sound-with-avaudioplayer"></a>Wiedergabe von Sound mit AVAudioPlayer
-
-_Dieser Artikel zeigt, wie eine Hilfsklasse, mit der die Wiedergabe von sound mithilfe einer AVAudioPlayer steuern._
+# <a name="playing-sound-in-tvos-with-avaudioplayer-in-xamarin"></a>Wiedergabe von Sound in tvos. außerdem wurden mit AVAudioPlayer in Xamarin
 
 ## <a name="about-the-avaudioplayer"></a>Informationen zu den AVAudioPlayer
 

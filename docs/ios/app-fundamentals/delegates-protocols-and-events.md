@@ -1,21 +1,20 @@
 ---
-title: Ereignisse, Protokolle und Delegaten
-description: Dieser Artikel erläutert die wichtigsten iOS-Technologien verwendet, um Rückrufe zu empfangen und Benutzeroberflächen-Steuerelemente mit Daten aufzufüllen. Diese Technologien sind Ereignisse, Protokolle und Delegaten. In diesem Artikel erklärt den Zweck jedes davon ist, und jede Verwendung von c#. Es wird veranschaulicht, wie Xamarin.iOS iOS-Steuerelemente verwendet, um bekannte .NET Ereignisse sowie wie Xamarin.iOS Objective-C-Konzepten wie Protokolle und Delegaten unterstützt (Objective-C-Delegaten darf nicht mit verwechselt werden C#-Delegaten). Dieser Artikel enthält auch Beispiele, die zeigen, wie Protokolle verwendet – sowohl als Grundlage für Objective-C-Delegaten, und in nicht-Delegat Szenarien sind.
+title: Ereignisse, Protokolle und Delegaten in Xamarin.iOS
+description: Dieses Dokument beschreibt das Arbeiten mit Ereignissen, Protokolle, und in Xamarin.iOS delegiert. Diese grundlegenden Konzepte sind weit verbreitete Xamarin.iOS Entwicklung.
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 4c2888eb2d0b1ae79e10ca764e7bf14a1afb6c59
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d0e4c23bffe689c9218da2f43b97d98f348513ad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784009"
 ---
-# <a name="events-protocols-and-delegates"></a>Ereignisse, Protokolle und Delegaten
-
-_Dieser Artikel erläutert die wichtigsten iOS-Technologien verwendet, um Rückrufe zu empfangen und Benutzeroberflächen-Steuerelemente mit Daten aufzufüllen. Diese Technologien sind Ereignisse, Protokolle und Delegaten. In diesem Artikel erklärt den Zweck jedes davon ist, und jede Verwendung von c#. Es wird veranschaulicht, wie Xamarin.iOS iOS-Steuerelemente verwendet, um bekannte .NET Ereignisse sowie wie Xamarin.iOS Objective-C-Konzepten wie Protokolle und Delegaten unterstützt (Objective-C-Delegaten darf nicht mit verwechselt werden C#-Delegaten). Dieser Artikel enthält auch Beispiele, die zeigen, wie Protokolle verwendet – sowohl als Grundlage für Objective-C-Delegaten, und in nicht-Delegat Szenarien sind._
+# <a name="events-protocols-and-delegates-in-xamarinios"></a>Ereignisse, Protokolle und Delegaten in Xamarin.iOS
 
 Xamarin.iOS verwendet Steuerelemente, um Ereignisse für die meisten Benutzerinteraktionen verfügbar zu machen.
 Xamarin.iOS Anwendungen nutzen diese Ereignisse im großen und ganzen genauso, wie herkömmliche .NET ausgeführten Aktionen. Beispielsweise die Xamarin.iOS UIButton-Klasse verfügt über ein Ereignis namens TouchUpInside und dieses Ereignis verarbeitet, als ob diese Klasse und das Ereignis in einer .NET-App wurden.
@@ -28,15 +27,13 @@ In diesem Artikel Sie über alle diese Themen erfahren, und Sie haben eine solid
 -  **Protokolle** – was Learning Protokolle sind und wie sie verwendet werden, und erstellen ein Beispiel, stellt Daten für eine Karte-Anmerkung.
 -  **Delegaten** – lernen über Objective-C-Delegaten durch Erweitern des Beispiels Karte, um die Benutzerinteraktion zu verarbeiten, die eine Anmerkung enthält, und lernen den Unterschied zwischen starke und schwache Delegaten und wann diese verwendet.
 
-
 Um Protokolle und Delegaten zu veranschaulichen, erstellen wir eine einfache Zuordnung-Anwendung, die von einer Anmerkung zu einer Zuordnung hinzugefügt wird, wie hier gezeigt:
 
  [![](delegates-protocols-and-events-images/01-map.png "Ein Beispiel für eine einfache Zuordnung-Anwendung, die eine Anmerkung zu einer Zuordnung fügt") ](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "eine Beispiel-Anmerkung zu einer Zuordnung hinzugefügt")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Vor dem bewältigt diese app Fortschritts, beginnen wir zunächst mit .NET Ereignisse unter der UIKit ansehen.
 
- <a name=".NET_Events_with_UIKit" />
-
+<a name=".NET_Events_with_UIKit" />
 
 ## <a name="net-events-with-uikit"></a>.NET Ereignisse mit UIKit
 
@@ -47,7 +44,6 @@ aButton.TouchUpInside += (o,s) => {
     Console.WriteLine("button touched");
 };
 ```
-
 Sie können dies auch mit einer C#-2.0-Format anonyme Methode wie die folgende implementieren:
 
 ```csharp

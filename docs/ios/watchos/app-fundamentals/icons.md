@@ -1,17 +1,19 @@
 ---
-title: Arbeiten mit Symbolen
+title: Arbeiten mit WatchOS Symbole in Xamarin
+description: Dieses Dokument beschreibt die verschiedenen Symbole für eine WatchOS-Anwendung und zum Einrichten einer Lösung für diese Symbole enthalten.
 ms.prod: xamarin
 ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a7cdecaa2ba6a8c9f28ef8598fec31506eee6852
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 150cca754de26edffcf97bb5d39b26166662c75b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790665"
 ---
-# <a name="working-with-icons"></a>Arbeiten mit Symbolen
+# <a name="working-with-watchos-icons-in-xamarin"></a>Arbeiten mit WatchOS Symbole in Xamarin
 
 Apple Watch-Lösungen erfordern zwei Sätze von Symbole:
 
@@ -31,7 +33,7 @@ Apple Watch-Lösungen erfordern zwei Sätze von Symbole:
 
 Befolgen Sie diese Anweisungen für jedes Projekt, um sicherzustellen, dass Ihre iOS-app und Watch-app den richtigen Namen und das Symbol zeigen:
 
-### <a name="ios-app"></a>iOS App
+### <a name="ios-app"></a>iOS-App
 
 Finden Sie in der [iOS Anwendungssymbolen geführt](~/ios/app-fundamentals/images-icons/app-icons.md) sicherzustellen, dass Ihre iOS-app-Symbole ordnungsgemäß konfiguriert sind.
 
@@ -46,7 +48,7 @@ Die Zeichenfolge, die neben der Watch-app in der [für die Apple Watch-app](~/io
 <string>Your App Name</string>
 ```
 
-### <a name="apple-watch-app"></a>Apple Watch App
+### <a name="apple-watch-app"></a>Apple Watch-App
 
 Einmal Ihre [übergeordnete app](~/ios/watchos/app-fundamentals/parent-app.md) ihm zugehörigen Symbole wurde konfiguriert werden, müssen Sie die Watch-app eine Anwendung Symbol Asset-Katalog hinzu.
 

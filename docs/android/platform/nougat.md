@@ -6,12 +6,13 @@ ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: fe544f8ac677987f8921ccb1c11b8930811b9553
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/02/2018
+ms.openlocfilehash: 15698767ae71b68a26138169771f7f397bddd95a
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732517"
 ---
 # <a name="nougat-features"></a>Nougat-Funktionen
 
@@ -20,7 +21,7 @@ _Wie die ersten Schritte mit Xamarin.Android zum Entwickeln von apps für Androi
 Dieser Artikel bietet ein Überblick über die Funktionen in Android Nougat wird erläutert, wie Android Nougat Entwicklung Xamarin.Android Vorbereitung und enthält Links zu Beispielanwendungen, die veranschaulichen, wie Android Nougat-Features verwenden Xamarin.Android-apps.
 
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 [Android Nougat](https://developer.android.com/about/versions/nougat/android-7.0.html) Google nachverfolgung kommentieren, Android 6.0 Marshmallow ist. Xamarin.Android bietet Unterstützung für **Android 7.x Bindungen** in Xamarin Android 7.0 und höher. Android Nougat fügt viele neue APIs für die unten beschriebenen Nougat Features hinzu. Diese APIs sind für Xamarin.Android-apps verfügbar, wenn Sie Xamarin.Android 7.0 verwenden.
 
@@ -46,13 +47,13 @@ In diesem Artikel wird erläutert, wie für den Einstieg in das Erstellen von ap
 
 Folgendes ist erforderlich, um die neuen Funktionen für Android Nougat in Xamarin-basierten apps zu verwenden:
 
--   **Visual Studio oder Visual Studio für Mac** &ndash; verwenden Sie Visual Studio, Version 4.2.0.628 oder höher von Xamarin für Visual Studio ist erforderlich. Wenn Sie Visual Studio für Mac, Version 6.1.0 oder später von Visual Studio arbeiten für Mac erforderlich ist.
+-   **Visual Studio oder Visual Studio für Mac** &ndash; verwenden Sie Visual Studio, Version 4.2.0.628 oder höhere Version des Visual Studio-Tools für Xamarin ist erforderlich. Wenn Sie Visual Studio für Mac, Version 6.1.0 oder später von Visual Studio arbeiten für Mac erforderlich ist.
 
--   **Xamarin.Android** &ndash; Xamarin.Android 7.0 or later must be installed and configured with either Visual Studio or Visual Studio for Mac.
+-   **Xamarin.Android** &ndash; Xamarin.Android 7.0 oder höher muss installiert und konfiguriert mit Visual Studio oder Visual Studio für Mac.
 
 -   **Android SDK** -Android SDK 7.0 (24-API) oder höher muss installiert sein über den Android SDK Manager.
 
--   **Java Developer Kit** &ndash; Xamarin Android 7.0 development requires [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) or later if you are developing for API level 24 or greater (JDK 8 also supports API levels earlier than 24). Die 64-Bit-Version des JDK 8 ist erforderlich, wenn Sie benutzerdefinierte Steuerelemente oder das Vorschauprogramm Forms verwenden.
+-   **Java Developer Kit** &ndash; Xamarin Android 7.0-Entwicklung erforderlich [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) oder höher, wenn Sie für die API-Ebene 24 entwickeln oder größer (JDK 8 unterstützt auch API-Ebenen älter als 24). Die 64-Bit-Version des JDK 8 ist erforderlich, wenn Sie benutzerdefinierte Steuerelemente oder das Vorschauprogramm Forms verwenden.
 
 > [!IMPORTANT]
 > Xamarin.Android unterstützt JDK 9 nicht.

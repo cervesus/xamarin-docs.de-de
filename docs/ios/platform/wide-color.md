@@ -1,19 +1,20 @@
 ---
-title: Breite Farbskala
-description: Dieser Artikel behandelt die Breite Farbskala und wie es in einem Xamarin.iOS oder Xamarin.Mac verwendet werden kann.
+title: Breite Farbskala in Xamarin.iOS
+description: Dieses Dokument beschreibt die Breite Farbskala und wie es in einem Xamarin.iOS oder Xamarin.Mac verwendet werden kann. Darüber hinaus einen allgemeinen Überblick über viele wichtige farbbezogene Konzepte wie Farbräumen, Kanäle und Grundfarben.
 ms.prod: xamarin
 ms.assetid: 576E978A-F182-489A-83E4-D8CDC6890B24
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 5f56b396715159cbc1539ae9a7f30cc7ad2236bf
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 173919e0d5feda6ab7d34895cc834c5f36d737a8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788780"
 ---
-# <a name="wide-color"></a>Breite Farbskala
+# <a name="wide-color-in-xamarinios"></a>Breite Farbskala in Xamarin.iOS
 
 _Dieser Artikel behandelt die Breite Farbskala und wie es in einem Xamarin.iOS oder Xamarin.Mac verwendet werden kann._
 
@@ -384,7 +385,7 @@ Wie iOS 10 mit der `UIGraphicsImageRenderer` Klasse, die oben dargestellte Intel
 Wenn die app muss wissen, wie Rendering auf erfolgt eine `UIView` oder `UIViewController`, können Sie die neue überprüfen `DisplayGamut` Eigenschaft von der `UITraitCollection` Klasse. Dieser Wert eine `UIDisplayGamut` Enum Folgendes:
 
 - P3
-- Srgb
+- SRGB
 - Nicht angegeben.
 
 Wenn die app steuern die Farbraum verwendet wird möchte, ein Bild gezeichnet werden soll, kann ein neues verwenden `ContentsFormat` Eigenschaft von der `CALayer` an den gewünschten Farbraum. Dieser Wert kann eine `CAContentsFormat` Enum Folgendes:

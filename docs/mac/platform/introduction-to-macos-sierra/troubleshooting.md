@@ -1,30 +1,31 @@
 ---
-title: Problembehandlung
-description: Dieser Artikel enthält einige Tipps zur Problembehandlung für die Arbeit mit MacOS Sierra in Xamarin.Mac-apps.
+title: Xamarin.Mac - MacOS Sierra Problembehandlung
+description: Dieses Dokument enthält einige Tipps zur Problembehandlung für die Arbeit mit MacOS Sierra in Xamarin.Mac-apps. Tipps beziehen sich auf dem Mac App Store, Apple Pay Binärkompatibilität, CFNetwork, CloudKit und mehr.
 ms.prod: xamarin
 ms.assetid: 323DD5EE-87CE-48E4-B234-1CF61B45A019
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/22/2016
-ms.openlocfilehash: 7ea4ec48399b42ce69b0346b1a88a1d9fb9fbf6e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5b2571d9562fd137257e2dd0ea2ada8f071bab92
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792319"
 ---
-# <a name="troubleshooting"></a>Problembehandlung
+# <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin.Mac - MacOS Sierra Problembehandlung
 
 _Dieser Artikel enthält einige Tipps zur Problembehandlung für die Arbeit mit MacOS Sierra in Xamarin.Mac-apps._
 
-er die folgenden Abschnitte Listen einige bekannte Probleme, die auftreten können, wenn MacOS Sierra mit Xamarin.mac und die Lösung dieser Probleme verwenden:
+Den folgenden Abschnitten werden einige bekannte Probleme, die auftreten können, wenn MacOS Sierra mit Xamarin.mac und die Lösung dieser Probleme verwenden:
 
 - [App Store](#App-Store)
 - [Apple Pay](#Apple-Pay)
 - [Binäre Kompatibilität](#Binary-Compatibility)
-- [CFNetwork HTTP Protocol](#CFNetwork-HTTP-Protocol)
+- [CFNetwork HTTP-Protokoll](#CFNetwork-HTTP-Protocol)
 - [CloudKit](#CloudKit)
-- [CoreImage](#CoreImage)
+- [Core-Image](#CoreImage)
 - [Benachrichtigungen](#Notifications)
 - [NSUserActivity](#NSUserActivity)
 - [Safari](#Safari)
@@ -57,7 +58,7 @@ Bekannte Probleme:
 
 <a name="CFNetwork-HTTP-Protocol" />
 
-## <a name="cfnetwork-http-protocol"></a>CFNetwork HTTP Protocol
+## <a name="cfnetwork-http-protocol"></a>CFNetwork HTTP-Protokoll
 
 Die `HTTPBodyStream` Eigenschaft von der `NSMutableURLRequest` "Class" muss festgelegt werden, in eine geöffnete Stream seit `NSURLConnection` und `NSURLSession` nun ausschließlich diese Anforderung erzwingen.
 
@@ -69,7 +70,7 @@ Vorgänge mit langer zurückgegeben wird ein _"Sie haben keine Berechtigung zum 
 
 <a name="CoreImage" />
 
-## <a name="coreimage"></a>CoreImage
+## <a name="core-image"></a>Core-Image
 
 Die `CIImageProcessor` -API unterstützt nun eine beliebige Eingabe Abbildanzahl. `CIImageProcessor` API, die in MacOS Sierra Beta 1 enthalten war, werden entfernt.
 

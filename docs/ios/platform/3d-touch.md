@@ -1,19 +1,20 @@
 ---
-title: Einführung in 3D Touch
-description: In diesem Artikel erläutert die Verwendung der neuen iPhone 6 s und iPhone 6 s Plus 3D Touch Aktionen in Ihrer app.
+title: Einführung in 3D Touch Xamarin.iOS
+description: Dieser Artikel beschreibt, wie 3D Fingereingabe eingeführt, mit dem iPhone 6 s und iPhone 6 s Plus. Diese Gesten aktivieren, Druck/Kleinschreibung "," Peek / "und" Pop, und schnelle Aktionen.
 ms.prod: xamarin
 ms.assetid: 806D051E-3791-40F7-9776-4E4D3E56F7F3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a0d89315b82f4931538cdabe64aade7986b2a42e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f6eb71409317661cdd571c708db062e06e63ff55
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786582"
 ---
-# <a name="introduction-to-3d-touch"></a>Einführung in 3D Touch
+# <a name="introduction-to-3d-touch-in-xamarinios"></a>Einführung in 3D Touch Xamarin.iOS
 
 _In diesem Artikel erläutert die Verwendung der neuen iPhone 6 s und iPhone 6 s Plus 3D Touch Aktionen in Ihrer app._
 
@@ -438,7 +439,7 @@ Wenn mit der neuesten Version von Xcode und den iOS-Simulator auf einem Mac komp
 
 Um diese Funktionalität zu aktivieren, führen Sie jede app in simulierten iPhone-Hardware, die 3D Touch unterstützt (iPhone 6 s und höher). Wählen Sie als Nächstes die **Hardware** in der iOS-Simulator, und aktivieren Sie im Menü der **verwenden Trackpad Force für 3D Touch** Menüelement:
 
-[![](3d-touch-images/simulator01.png "Wählen Sie im Menü Hardware im iOS-Simulator aus, und Aktivieren der "Force" verwenden Trackpad für 3D Touch-Menüelement")](3d-touch-images/simulator01.png#lightbox)
+[![](3d-touch-images/simulator01.png "Wählen Sie im Menü Hardware im iOS-Simulator aus, und Aktivieren der \"Force\" verwenden Trackpad für 3D Touch-Menüelement")](3d-touch-images/simulator01.png#lightbox)
 
 Mit dieser Funktion aktiv ist können Sie schwieriger auf dem Mac Trackpad drücken, um 3D Touch ebenso wie auf echten iPhone Hardware zu aktivieren.
 

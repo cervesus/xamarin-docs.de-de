@@ -1,21 +1,20 @@
 ---
-title: HealthKit
-description: HealthKit ist ein Framework, eingeführt in iOS 8, die einen zentralisierte, koordinierten und sicheren Datenspeicher für Integrität bezogene Informationen bereitstellt. Das Betriebssystem wird sichergestellt, dass der Datenschutz und Sicherheit der Zustandsinformationen und mit der Integrität-app ein Dashboard für den Benutzer. Mit der Berechtigung des Benutzers können Anwendungen lesen und Schreiben von einer Vielzahl von Zustandsinformationen.
+title: HealthKit in Xamarin.iOS
+description: Dieses Dokument beschreibt HealthKit, ein Framework, eingeführt in iOS 8, die einen zentralisierte, koordinierten und sicheren Datenspeicher für Integrität bezogene Informationen bereitstellt. Es wird erläutert, wie eine HealthKit app bereitgestellt und das Schreiben von Code, der die HealthKit-Framework verwendet.
 ms.prod: xamarin
 ms.assetid: E3927A21-507C-43BA-A2AD-957716BA9B52
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a569bcff3ac33d008788bb0b946bd027fa5c0ea8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 06c0231bbb9aa7b82b92e0a8c2157b8be9c8b05b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787532"
 ---
-# <a name="healthkit"></a>HealthKit
-
-_HealthKit ist ein Framework, eingeführt in iOS 8, die einen zentralisierte, koordinierten und sicheren Datenspeicher für Integrität bezogene Informationen bereitstellt. Das Betriebssystem wird sichergestellt, dass der Datenschutz und Sicherheit der Zustandsinformationen und mit der Integrität-app ein Dashboard für den Benutzer. Mit der Berechtigung des Benutzers können Anwendungen lesen und Schreiben von einer Vielzahl von Zustandsinformationen._
+# <a name="healthkit-in-xamarinios"></a>HealthKit in Xamarin.iOS
 
 Integrität Kit bietet einen sicheren Datenspeicher für Integritätsdienst-bezogene Informationen des Benutzers. Integrität Kit apps können mit explizite Berechtigung des Benutzers, lesen und Schreiben in diese Datenspeicher und Benachrichtigungen erhalten, wenn die relevante Daten hinzugefügt werden. Apps können die Daten darstellen, oder des Benutzers kann von Apple bereitgestellten Integrität app verwenden, um ein Dashboard alle ihre Daten anzuzeigen.
 
@@ -165,7 +164,7 @@ Endbenutzer müssen Schritte positive kann eine app Integrität Kit Daten lesen 
 
 Der Benutzer kann später mithilfe des Integritäts-app Berechtigungen ändern **Quellen** Dialogfeld:
 
-[![](healthkit-images/image11.png "Der Benutzer kann die Berechtigungen, die mit Health apps-Dialogfeld "Datenquellen" ändern.")](healthkit-images/image11.png#lightbox)
+[![](healthkit-images/image11.png "Der Benutzer kann die Berechtigungen, die mit Health apps-Dialogfeld \"Datenquellen\" ändern.")](healthkit-images/image11.png#lightbox)
 
 Da Integritätsinformationen extrem sensibel ist, sollten app-Entwickler ihre Programme defensiv, unter der Annahme schreiben, dass die Berechtigungen werden abgelehnt und geändert, während die app ausgeführt wird. Die am häufigsten verwendete Technik ist, zum Anfordern von Berechtigungen in der `UIApplicationDelegate.OnActivated` Methode und die Benutzeroberfläche nach Bedarf ändern.
 

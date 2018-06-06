@@ -1,19 +1,20 @@
 ---
-title: Projektverweise
-description: Erläuterung der Beziehung zwischen der iOS-app, eine Watch-app und eine Watch-Erweiterung.
+title: WatchOS Projektverweise in Xamarin
+description: Dieses Dokument beschreibt die Beziehung zwischen einer iOS-app, eine Watch-app und eine Watch-app-Erweiterung. Es wird erläutert, Projektverweise und Paket Bezeichner.
 ms.prod: xamarin
 ms.assetid: C366E062-C33D-406A-B3FF-CBE82E5D1E7E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: f3573e8b578ca567ea9d7360eb132aead4c24f37
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1bd950d0929beae7133b0eb8ef6b2a69bc116f50
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791487"
 ---
-# <a name="project-references"></a>Projektverweise
+# <a name="watchos-project-references-in-xamarin"></a>WatchOS Projektverweise in Xamarin
 
 _Erläuterung der Beziehung zwischen der iOS-app, eine Watch-app und eine Watch-Erweiterung._
 
@@ -61,18 +62,18 @@ Diese Abbildung ist die **Watch-Erweiterung** Datei "Info.plist", mit der **Watc
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
     
-![](project-references-images/infoplist-extension.png "Diesem Screenshot ist die Datei von der Watch-Erweiterung "Info.plist"")
+![](project-references-images/infoplist-extension.png "Diesem Screenshot ist die Datei von der Watch-Erweiterung \"Info.plist\"")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
     
-![](project-references-images/infoplist-extension-vs.png "Diesem Screenshot ist die Datei von der Watch-Erweiterung "Info.plist"")
+![](project-references-images/infoplist-extension-vs.png "Diesem Screenshot ist die Datei von der Watch-Erweiterung \"Info.plist\"")
 
 -----
 
 Diese Abbildung ist die **Watch-App** Datei "Info.plist".
 Die aktuelle **überwachen OS** Version ist 8.2, damit die **Bereitstellungsziel** für die Watch-App sollte **8.2**. Beachten Sie, dass wenn Sie Xcode 6.3 installiert haben, dieser Wert werden, bis 8.3 festgelegt kann-sie ändern sollten, 8.2.
 
-![](project-references-images/infoplist-watchapp.png "Der Apple Watch-Datei "Info.plist"")
+![](project-references-images/infoplist-watchapp.png "Der Apple Watch-Datei \"Info.plist\"")
 
 Das Bereitstellungsziel entweder für die Watch-App kann sich von der Watch-Erweiterung und iOS-App unterscheiden.
 

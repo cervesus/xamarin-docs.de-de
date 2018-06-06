@@ -1,21 +1,20 @@
 ---
-title: Symbol "App-Store"
-description: Dieser Artikel behandelt die einschließlich und verwalten ein Standardimage-Medienobjekt in einem Xamarin.iOS-app als ein Symbol "App-Store" verwendet werden soll.
+title: App-Store-Symbole in Xamarin.iOS
+description: Dieses Dokument beschreibt, wie Asset-Kataloge zu verwenden, um ein App-Store-Symbol für eine Anwendung Xamarin.iOS zu verwalten. Zuvor wurden App Store Symbole mit iTunes Connect verwaltet.
 ms.prod: xamarin
 ms.assetid: BFB5665A-F557-46E1-B35E-870CC2026AD9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/26/2017
-ms.openlocfilehash: f8d993ccb23817e237b9cef8074b881f3ea4b3a2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 749dbf01af382a54fe24652706f6a605ac7b20b4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783609"
 ---
-# <a name="app-store-icon"></a>Symbol "App-Store"
-
-_Dieser Artikel behandelt die einschließlich und verwalten ein Standardimage-Medienobjekt in einem Xamarin.iOS-app als ein Symbol "App-Store" verwendet werden soll._
+# <a name="app-store-icons-in-xamarinios"></a>App-Store-Symbole in Xamarin.iOS
 
 Vor dem Xcode 9 wurden alle Symbole der App Store über iTunes Connect hinzugefügt. Dies ist jedoch nicht mehr der Fall. App Store Symbole müssen jetzt werden als Bestandteil Ihres Projekts-Pakets und innerhalb einer Asset-Katalog hinzugefügt. Apps, die kein Symbol für die App Store enthalten, werden vom Apple zurückgewiesen.
 

@@ -1,5 +1,5 @@
 ---
-title: Bildern und Symbolen
+title: Bilder und Symbole in Xamarin.iOS
 description: Dieser Abschnitt enthält eine Vielzahl von Artikeln, die Arbeiten mit Bildern in einem Xamarin.iOS-app, wie beispielsweise verwenden sie als Symbole abdecken, starten Sie Bildschirme oder einschließlich sie Steuerelemente und Bereitstellen von Symbolen für benutzerdefinierte Dokumenttypen.
 ms.prod: xamarin
 ms.assetid: 0AB8CC07-11E4-0D75-4119-AED1A1252424
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: fd191c898d5bb015d2d394d42db1049bb0128fb7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 444e3cbd88dfd3ff50153d858367ecd0310d240a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784051"
 ---
-# <a name="images-and-icons"></a>Bildern und Symbolen
+# <a name="images-and-icons-in-xamarinios"></a>Bilder und Symbole in Xamarin.iOS
 
 _Dieser Abschnitt enthält eine Vielzahl von Artikeln, die Arbeiten mit Bildern in einem Xamarin.iOS-app, wie beispielsweise verwenden sie als Symbole abdecken, starten Sie Bildschirme oder einschließlich sie Steuerelemente und Bereitstellen von Symbolen für benutzerdefinierte Dokumenttypen._
 

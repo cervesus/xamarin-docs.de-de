@@ -7,12 +7,13 @@ ms.technology: xamarin-android
 ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 3eb3bdd7b060b661d5202c63a879f1c88d2ccdcb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: 3776a0554e5ae496f9e39612ec9bab971c6f1f88
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732761"
 ---
 # <a name="oreo-features"></a>Oreo-Funktionen
 
@@ -133,8 +134,8 @@ Wenn Sie versuchen, die Standardeinstellung Google-GUI-basierte AVD-Manager star
 
 Diese Meldung wird angezeigt, da Google nicht mehr eine Standlone GUI AVD-Manager enthält, die API 26,0 und höher unterstützt. Für Android 8.0 Oreo müssen Sie verwenden den Xamarin Android-Emulator-Manager oder der Befehlszeile `avdmanager` mit dem Tool für Android Oreo virtuelle Geräte zu erstellen.
 
-Um den Xamarin Android-Geräte-Manager zu erstellen und Verwalten von virtuellen Geräten durchgeführt werden, finden Sie unter [Xamarin Android-Geräte-Manager](~/android/get-started/installation/android-emulator/xamarin-device-manager.md).
-Führen Sie die Schritte im nächsten Abschnitt, um virtuelle Geräte ohne den Xamarin Android-Emulator-Manager zu erstellen.
+Um die Android-Geräte-Manager zu erstellen und Verwalten von virtuellen Geräten durchgeführt werden, finden Sie unter [Verwalten von virtuellen Geräten mit Android-Geräte-Manager](~/android/get-started/installation/android-emulator/device-manager.md).
+Führen Sie die Schritte im nächsten Abschnitt, um virtuelle Geräte ohne Android-Geräte-Manager zu erstellen.
 
 
 #### <a name="creating-virtual-devices-using-avdmanager"></a>Erstellen von virtuellen Geräte mithilfe von avdmanager
@@ -190,7 +191,7 @@ Nach der Verwendung von **Avdmanager** um Ihr virtuelles Gerät erstellen, wird 
 
 -----
 
-Weitere Informationen zum Konfigurieren von Android-Emulator zum Testen und Debuggen, finden Sie unter [Google Android-Emulator](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Weitere Informationen zum Konfigurieren von Android-Emulator zum Testen und Debuggen, finden Sie unter [Debuggen mit Android-Emulators für Google](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
 
 Wenn Sie z. B. eine Nexus oder ein Pixel ein physisches Gerät verwenden, können entweder Aktualisieren Ihres Geräts über automatisch über die Updates per Funk (OTA) oder Herunterladen ein Abbilds und flash Ihr Gerät direkt. Weitere Informationen zum manuellen Aktualisieren Ihres Geräts auf Android Oreo finden Sie unter [Factory Images für Nexus und Pixel-Geräte](https://developers.google.com/android/images).
 

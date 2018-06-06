@@ -1,5 +1,5 @@
 ---
-title: Bilder
+title: Bilder in Xamarin.Mac
 description: In diesem Artikel wird das Arbeiten mit Bildern und Symbolen in einer Anwendung Xamarin.Mac behandelt. Erstellen und Verwalten der Images erforderlich, um das Symbol für Ihre Anwendung erstellen und Verwenden von Bildern in C#-Code und Xcodes Benutzeroberflächen-Generator beschrieben.
 ms.prod: xamarin
 ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: dc33dc78c09c0b5b7cb7533afdd2f95b8ebd9c4e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ae0a42051d56eb8bf002c61dfbc60c99924ff301
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792095"
 ---
-# <a name="images"></a>Bilder
+# <a name="images-in-xamarinmac"></a>Bilder in Xamarin.Mac
 
 _In diesem Artikel wird das Arbeiten mit Bildern und Symbolen in einer Anwendung Xamarin.Mac behandelt. Erstellen und Verwalten der Images erforderlich, um das Symbol für Ihre Anwendung erstellen und Verwenden von Bildern in C#-Code und Xcodes Benutzeroberflächen-Generator beschrieben._
 
-
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 Bei der Arbeit mit c# und .NET in einer Anwendung Xamarin.Mac haben Sie Zugriff auf das gleiche Bild und Symbol für tools, die ein Entwickler arbeiten in *Objective-C* und *Xcode* verfügt.
 

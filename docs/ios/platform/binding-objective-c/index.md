@@ -1,6 +1,6 @@
 ---
 title: Binden von iOS-Bibliotheken
-description: Gewusst wie systemeigene Bibliotheken für iOS (und CocoaPods), in die Xamarin-apps zugegriffen werden kann.
+description: Dieses Dokument beschreibt die zum Erstellen der C#-Bindungen in Objective-C-Code, wodurch systemeigene Bibliotheken und CocoaPods in einem Xamarin.iOS-Anwendung nutzen.
 ms.prod: xamarin
 ms.assetid: EBDC50DC-B44B-4003-AB2B-1EEB868A5E01
 ms.technology: xamarin-ios
@@ -8,15 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 268900c7ab7b317b0b20f4c1ead2360fd6f9bbf0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b054595568a34616a01f2c3f3c7d85f968c3f1fa
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787167"
 ---
 # <a name="binding-ios-libraries"></a>Binden von iOS-Bibliotheken
-
-_Gewusst wie systemeigene Bibliotheken für iOS (und CocoaPods), in die Xamarin-apps zugegriffen werden kann._
 
 Führen Sie diese Links erfahren Sie mehr über das Binden von Objective-C-Bibliotheken und CocoaPods für Xamarin.iOS und Xamarin.Mac aus:
 
@@ -39,7 +38,7 @@ Objektive Sharpie 3.0 eingeführt, die Fähigkeit zur Cocoapods direkte Bindung!
 Diese Seite enthält eine schrittweise Anleitung zum Erstellen einer iOS-Bindung-Projekts mithilfe der open Source [ **InfColorPicker** ](https://github.com/InfinitApps/InfColorPicker) Objective-C-Projekt als Beispiel. Die **InfColorPicker** Bibliothek stellt eine wiederverwendbare modellansichtcontroller, mit denen den Benutzer eine Farbe anhand der HSB-Darstellung Farbauswahl Benutzerfreundlicher machen auswählen können.
 Objektive Sharpie wird verwendet um des Bindungsvorgangs zu unterstützen.
 
-## <a name="xamarin-university-lightning-lecture"></a>Xamarin University Lightning Lecture
+## <a name="xamarin-university-lightning-lecture"></a>Xamarin University Blitze Vorlesungsraum
 
 > [!VIDEO https://youtube.com/embed/ZUoPLcmnf1o]
 

@@ -1,18 +1,20 @@
 ---
-title: Teile der Tabelle und Funktionen
+title: Teile der Tabelle und die Funktionalität in Xamarin.iOS
+description: Dieses Dokument beschreibt die verschiedenen Komponenten von einer UITableView in iOS. Es wird erläutert, Abschnittsnamen, Zellen, Abschnitt Fußzeilen, den Index und Bearbeitungsmodus.
 ms.prod: xamarin
 ms.assetid: B4139C8B-28F2-4C0F-297F-BF5432C5A915
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: be8ad21847aed3d8ad9bda7ac45b070e5ad868bc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c7c9f810798c3d02078b48e17a2ab951cb36aa12
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789875"
 ---
-# <a name="table-parts-and-functionality"></a>Teile der Tabelle und Funktionen
+# <a name="table-parts-and-functionality-in-xamarinios"></a>Teile der Tabelle und die Funktionalität in Xamarin.iOS
 
 Eine UITableView kann einen Stil "gruppierten" oder "einfachen", und besteht aus folgenden Teilen:
 
@@ -77,7 +79,7 @@ Der Zweck der einzelnen Klassen wird im folgenden beschrieben:
 
 - **UITableView** – eine Sicht, die eine Auflistung von Zellen innerhalb eines fortlaufenden Containers enthält. Tabellenansicht in der Regel verwendet den gesamten Bildschirm in einer iPhone-app aber möglicherweise als Teil einer größeren Ansicht auf dem iPad vorhanden sein (oder in einem Popover angezeigt). 
 - **UITableViewCell** – eine Sicht, die eine einzelne Zelle (oder Zeile) in einer Tabelle darstellen. Es gibt vier Arten von integrierten Zelle, und es ist möglich, benutzerdefinierte Zellen sowohl in c# oder mit iOS-Designer erstellen. 
-- **UITableViewSource** – Xamarin.iOS-exclusive abstract class that provides all the methods required to display a table, including row count, returning a cell view for each row, handling row selection and many other optional features. Sie *müssen* Unterklasse diese Option, um eine funktionierende UITableView abrufen. 
+- **UITableViewSource** – Xamarin.iOS ausschließliche abstrakte Klasse, die die Methoden, die erforderlich sind, zum Anzeigen einer Tabelle, einschließlich der Anzahl der Zeilen, eine Ansicht der Zelle für jede Zeile zurückgeben, Behandeln von Zeilenauswahl und viele weitere optionale Funktionen bereitstellt. Sie *müssen* Unterklasse diese Option, um eine funktionierende UITableView abrufen. 
 - **NSIndexPath** – Contains Zeilen- und Abschnitt Eigenschaften, die die Position einer Zelle in einer Tabelle eindeutig identifizieren. 
 - **UITableViewController** – eine sofort verwendbare UIViewController, die eine UITableView hartcodiert als Ansicht und zugegriffen werden kann, über die TableView-Eigenschaft verfügt. 
 - **UIViewController** – Wenn die Tabelle nicht den gesamten Bildschirm Sie hinzufügen belegen können, eine UITableView auf alle UIViewController, mit deren Rahmen entsprechend festgelegt. 

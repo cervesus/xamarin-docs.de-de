@@ -6,16 +6,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/26/2018
-ms.openlocfilehash: f4d737e31304a88f3ec293f90267a35ed1f2c7a5
-ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
+ms.openlocfilehash: d1b6c663be5745455f332afc11c185869579fde3
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732904"
 ---
 # <a name="customizing-a-listviews-appearance"></a>Anpassen der Darstellung einer ListView
 
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 Die Darstellung einer ListView wird durch das Layout der angezeigten Zeilen vorgegeben. So ändern Sie die Darstellung einer `ListView`, verwenden Sie eine andere Zeilenlayout.
 
@@ -125,7 +126,7 @@ lv.ChoiceMode = Android.Widget.ChoiceMode.Single; // 1
 
 // Use this block if targeting Gingerbread or lower
 /*
-lv.ChoiceMode = Android.Widget.ChoiceMode.Single; // Single
+lv.ChoiceMode = 1; // Single
 //lv.ChoiceMode = 0; // none
 //lv.ChoiceMode = 2; // Multiple
 //lv.ChoiceMode = 3; // MultipleModal

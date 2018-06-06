@@ -1,5 +1,5 @@
 ---
-title: Erweiterte Nachrichten-App-Erweiterungen
+title: Erweiterte Nachrichten-App-Erweiterungen in Xamarin.iOS
 description: In diesem Artikel erfahren erweiterte Techniken zum Arbeiten mit Nachricht-App-Erweiterungen in einem Xamarin.iOS-Lösung, die Nachrichten-app integriert und stellt neue Funktionen für den Benutzer.
 ms.prod: xamarin
 ms.assetid: 394A1FDA-AF70-4493-9B2C-4CFE4BE791B6
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: cd2cabf98c83bba7502e8533e482713a9c43f67a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eca3dcc19714251184092fbe136d0078f1ca8d54
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788018"
 ---
-# <a name="advanced-message-app-extensions"></a>Erweiterte Nachrichten-App-Erweiterungen
+# <a name="advanced-message-app-extensions-in-xamarinios"></a>Erweiterte Nachrichten-App-Erweiterungen in Xamarin.iOS
 
 _In diesem Artikel erfahren erweiterte Techniken zum Arbeiten mit Nachricht-App-Erweiterungen in einem Xamarin.iOS-Lösung, die Nachrichten-app integriert und stellt neue Funktionen für den Benutzer._
 

@@ -1,18 +1,20 @@
 ---
-title: Konfiguration
+title: Konfigurieren von SQLite in Xamarin.iOS
+description: Dieses Dokument beschreibt, wie den Speicherort für eine SQLite-Datenbankdatei in einem Xamarin.iOS-Anwendung zu bestimmen. Diese Konzepte sind unabhängig von den Mechanismus der ausgewählten Daten relevant.
 ms.prod: xamarin
 ms.assetid: E5582F4B-AD74-420F-9E6D-B07CFB420B3A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: f4a1bc65fbba68b59196702978633eaf46bc44c5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 57645c0bb947a60a3d74436b752210d1bac18124
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784380"
 ---
-# <a name="configuration"></a>Konfiguration
+# <a name="configuring-sqlite-in-xamarinios"></a>Konfigurieren von SQLite in Xamarin.iOS
 
 Um SQLite in Ihrer Anwendung Xamarin.iOS zu verwenden, müssen Sie den richtigen Speicherort für die Datenbankdatei zu ermitteln.
 

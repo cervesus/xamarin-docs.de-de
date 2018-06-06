@@ -1,18 +1,20 @@
 ---
-title: Exemplarische Vorgehensweise – Touch mit iOS
+title: 'Exemplarische Vorgehensweise: Verwenden von Touch in Xamarin.iOS'
+description: Dieses Dokument beschreibt, wie Toucheingabe in Abstimmung der Beispiel-Touch-Interaktionen, Geste Prüfer und Merkmale der benutzerdefinierten Aktion Xamarin.iOS-Anwendungen behandelt.
 ms.prod: xamarin
 ms.assetid: 13F8289B-7A80-4959-AF3F-57874D866DCA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 58066ef0071c8105658f0d766e8f038b2bd3ddf2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fff49599d3843bb09d407316d6964ca54b6a1004
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784789"
 ---
-# <a name="walkthrough--using-touch-in-ios"></a>Exemplarische Vorgehensweise – Touch mit iOS
+# <a name="walkthrough-using-touch-in-xamarinios"></a>Exemplarische Vorgehensweise: Verwenden von Touch in Xamarin.iOS
 
 Diese exemplarische Vorgehensweise veranschaulicht das Schreiben von Code, der auf verschiedene Arten von touchereignissen reagiert. Jedes Beispiel ist in einem separaten Fenster enthalten:
 
@@ -316,7 +318,7 @@ Der folgende Screenshot ist ein Beispiel für diese Aktivitäten:
 
 In diesem Abschnitt werden wir die Konzepte in vorherigen Abschnitten zum Erstellen einer benutzerdefinierten Geste Erkennung anwenden. Die benutzerdefinierte Aktion Erkennung wird Unterklassen `UIGestureRecognizer`, und wird dann erkennen, wenn der Benutzer einen "V" zeichnet auf dem Bildschirm eine Bitmap zu wechseln. Der folgende Screenshot ist ein Beispiel dieses Bildschirms:
 
- [![](ios-touch-walkthrough-images/image8.png "Die app erkennt, wenn der Benutzer einen "V" auf dem Bildschirm zeichnet.")](ios-touch-walkthrough-images/image8.png#lightbox)
+ [![](ios-touch-walkthrough-images/image8.png "Die app erkennt, wenn der Benutzer einen \"V\" auf dem Bildschirm zeichnet.")](ios-touch-walkthrough-images/image8.png#lightbox)
 
 Führen Sie die Schritte zum Erstellen einer benutzerdefinierten Geste Erkennung:
 
@@ -493,9 +495,9 @@ Jetzt kann die Klasse starten neue beim nächsten des Benutzers mit der Anwendun
 
 1. Führen Sie die Anwendung, und versuchen Sie, zeichnen einen "V" auf dem Bildschirm. Ändern, wird das Bild angezeigt werden sollte angezeigt werden, wie in den folgenden Screenshots dargestellt:
     
-    [![](ios-touch-walkthrough-images/image9.png "Die Schaltfläche "ausgecheckt"")](ios-touch-walkthrough-images/image9.png#lightbox)
+    [![](ios-touch-walkthrough-images/image9.png "Die Schaltfläche \"ausgecheckt\"")](ios-touch-walkthrough-images/image9.png#lightbox)
     
-    [![](ios-touch-walkthrough-images/image10.png "Die Schaltfläche "deaktiviert"")](ios-touch-walkthrough-images/image10.png#lightbox)
+    [![](ios-touch-walkthrough-images/image10.png "Die Schaltfläche \"deaktiviert\"")](ios-touch-walkthrough-images/image10.png#lightbox)
 
 
 

@@ -1,19 +1,20 @@
 ---
-title: Multi-Touch-Finger-Überwachung
-description: Dieses Dokument veranschaulicht, wie zum Nachverfolgen von touchereignissen aus mehreren Finger
+title: Multi-Touch-Finger in Xamarin.iOS nachverfolgen
+description: Dieses Dokument beschreibt, wie einzelne Finger in Multitouch-Gesten in einer app Xamarin.iOS nachverfolgt wird. Es basiert auf einem finger-painting app-Beispiel.
 ms.prod: xamarin
 ms.assetid: 48E8B20D-0833-43D2-976A-0605DDB386E3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 178bd0a68166f033293b2d807fea449355c1c584
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 85dbd3c158408026f4ecef5fb2b01c265747140e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784402"
 ---
-# <a name="multi-touch-finger-tracking"></a>Multi-Touch-Finger-Überwachung
+# <a name="multi-touch-finger-tracking-in-xamarinios"></a>Multi-Touch-Finger in Xamarin.iOS nachverfolgen
 
 _Dieses Dokument veranschaulicht, wie zum Nachverfolgen von touchereignissen aus mehreren Finger_
 

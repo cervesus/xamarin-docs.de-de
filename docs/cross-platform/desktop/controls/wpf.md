@@ -1,14 +1,16 @@
 ---
 ms.assetid: 1BB412D1-FC3D-4E69-8B01-B976A3DB6328
 title: 'WPF im Vergleich zu. Xamarin.Forms: Ähnlichkeiten und Unterschiede'
+description: Dieses Dokument verglichen und Unterschiede aufgezeigt WPF in Xamarin.Forms. Es wird erläutert, Steuerelementvorlagen, XAML-bindungsinfrastruktur, Datenvorlagen, ItemsControl, UserControl, Navigation und URLs.
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: ac30a29a2b4982b2f995c9f717cf1893ca5d8b8a
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: 232ddd5ea06891c70125adc9b8bf77f3e857dbd6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781968"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF im Vergleich zu. Xamarin.Forms: Ähnlichkeiten und Unterschiede
 
@@ -169,7 +171,7 @@ Für Phone-Geräte, die verschiedene _Bildschirme_ sind häufig die Lösung und 
 |--- |--- |
 |Stapelbasierte (Push-/Pop)|NavigationPage|
 |Master/Detail|MasterDetailPage|
-|Registerkarten|TabbedPage|
+|Tabstopps|TabbedPage|
 |Streichen Sie nach links/rechts|CarouselView|
 
 Die `NavigationPage` die am häufigsten verwendete Ansatz ist, und jede Seite hat eine `Navigation` Eigenschaft, die mithilfe von Push übertragen oder pop-Seiten, die ein- und ausschalten Navigationsstapel verwendet werden kann. Dies ist die nächstgelegenen Equivelent auf die `NavigationService` in WPF gefunden.

@@ -1,22 +1,20 @@
 ---
-title: Tippen Sie auf
-description: Touchscreens auf viele der heutigen Geräte ermöglichen Benutzern Geräten auf eine natürliche und intuitive Weise schnell und effizient interagieren. Diese Aktivität ist nicht nur auf einfache Touch Erkennung beschränkt – es ist möglich, auch Gesten verwenden. Zwei-Finger-Zoom Bewegung ist z. B. ein sehr gängiges Beispiel dieser – durch einen Teil des Bildschirms mit zwei Fingern fest, denen der Benutzer vergrößern oder verkleinern kann pinching an. Dieses Handbuch untersucht Touch- und Gesten in iOS.
+title: Behandlung von Touch Xamarin.iOS Apps
+description: Dieses enthält Dokumentenlinks zu Anleitungen, die zum Arbeiten mit Touch, Multitouch-Gesten und 3D Touch in einer app Xamarin.iOS beschreiben.
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/23/2017
-ms.openlocfilehash: f34b502e3c0d67f33d41bc489f7ec1d93356af99
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eb8dce8b13345c13a6f95ae7784bd135e7d1f1f5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784161"
 ---
-# <a name="touch"></a>Tippen Sie auf
-
-_Touchscreens auf viele der heutigen Geräte ermöglichen Benutzern Geräten auf eine natürliche und intuitive Weise schnell und effizient interagieren. Diese Aktivität ist nicht nur auf einfache Touch Erkennung beschränkt – es ist möglich, auch Gesten verwenden. Zwei-Finger-Zoom Bewegung ist z. B. ein sehr gängiges Beispiel dieser – durch einen Teil des Bildschirms mit zwei Fingern fest, denen der Benutzer vergrößern oder verkleinern kann pinching an. Dieses Handbuch untersucht Touch- und Gesten in iOS._
-
+# <a name="handling-touch-in-xamarinios-apps"></a>Behandlung von Touch Xamarin.iOS Apps
 
 Wie bei anderen mobilen Plattformen hat iOS vielfältige Weise Toucheingabe zu behandeln. Es kann Multi-Touch unterstützen – viele Kontaktpunkte auf dem Bildschirm – und komplexe Gesten. Dieses Handbuch enthält einige der Konzepte sowie den Besonderheiten des Touch- und Gesten auf iOS-Implementierung.
 
@@ -38,8 +36,6 @@ Dieses Handbuch dient als Einführung in die Fingereingabe iOS. Weitere Informat
 
 * [3D Touch](~/ios/platform/3d-touch.md)
 * [Übermitteln von haptischem Feedback](~/ios/user-interface/ios-ui/haptic-feedback.md)
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

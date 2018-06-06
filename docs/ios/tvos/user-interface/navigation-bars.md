@@ -1,21 +1,20 @@
 ---
-title: Arbeiten mit Navigation Controller
-description: Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Navigationsleisten innerhalb einer Xamarin.tvOS-app.
+title: Arbeiten mit tvos. außerdem wurden Navigationsleisten in Xamarin
+description: Dieses Dokument beschreibt das Arbeiten mit Navigationsleisten in einer app für tvos. außerdem wurden mit Xamarin erstellten. Es wird erläutert, Navigationsleisten in einem Storyboard einrichten und reagieren auf Ereignisse über diese Schaltflächen.
 ms.prod: xamarin
 ms.assetid: 74E396B7-87F0-46F7-BC6C-827DB8884C97
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8a9a1c852137a2bcc0d46615e69eef0a245a9768
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b6c8ff8551c91578b9399b88e90e94c6af12ac68
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789290"
 ---
-# <a name="working-with-navigation-controllers"></a>Arbeiten mit Navigation Controller
-
-_Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Navigationsleisten innerhalb einer Xamarin.tvOS-app._
+# <a name="working-with-tvos-navigation-bars-in-xamarin"></a>Arbeiten mit tvos. außerdem wurden Navigationsleisten in Xamarin
 
 Navigationsleisten können an den Anfang Ansichten einen Titel und eine optionale Schaltflächen Navigationsleiste angezeigt hinzugefügt werden. In der Regel werden sie verwendet, wenn der Benutzer eine Hauptseite, wie eine Tabellenansicht, Auflistung oder ein Menü zu einer Unteransicht mit den Details des ausgewählten Elements navigiert.
 
@@ -26,9 +25,6 @@ Zusätzlich zu den Titel (die im mittleren Bereich angezeigt wird), Navigationsl
 > [!IMPORTANT]
 > Navigationsleisten sind standardmäßig vollständig transparent. Sollte geachtet werden, stellen Sie sicher, dass der Inhalt der Navigationsleiste über den Inhalt darunter lesbar bleibt. Z. B. wenn Inhalt in einer Tabelle anzeigen oder die Auflistung darunter einen Bildlauf durchführt.
 
-
-
-
 <a name="Navigation-Bars-and-Storyboards" />
 
 ## <a name="navigation-bars-and-storyboards"></a>Navigationsleisten und Storyboards
@@ -36,7 +32,6 @@ Zusätzlich zu den Titel (die im mittleren Bereich angezeigt wird), Navigationsl
 Die einfachste Möglichkeit zum Arbeiten mit Navigationsleisten in einer app Xamarin.tvOS werden diese Benutzeroberfläche der Anwendung, die mit der iOS-Designer hinzufügen.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
-
 
 1. In der **Lösung Pad**, doppelklicken Sie auf `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
 1. Ziehen Sie eine **Navigationsleiste** aus der **Toolbox** und legen Sie sie in der Ansicht am oberen Rand des Bildschirms: 
@@ -77,9 +72,6 @@ Die einfachste Möglichkeit zum Arbeiten mit Navigationsleisten in einer app Xam
 
 > [!IMPORTANT]
 > Während es möglich ist, z. B. Ereignisse weisen `TouchUpInside` auf ein UI-Element (z. B. eine UIButton) in der iOS-Designer nie aufgerufen wird da Apple TV hat eine Fingereingabe Bildschirm oder Berührungsereignisse unterstützen. Sie sollten immer verwenden die `Primary Action` Ereignis aus, wenn Ereignishandler für tvos. außerdem wurden die Elemente der Benutzeroberfläche erstellen.
-
-
-
 
 Der folgende Code bietet ein Beispiel für Ereignishandler auf drei verschiedene BarButtonItems: `ShowFirstHotel`, `ShowSecondHotel`, und `ShowThirdHotel`. Wenn jedes Element geklickt wird, wird das Hintergrundbild `HotelImage` geändert wird. Dies ist die View-Controller bearbeitet (Beispiel `ViewController.cs`) Datei:
 

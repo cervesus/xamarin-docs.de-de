@@ -1,21 +1,20 @@
 ---
-title: Anwendungssymbole
-description: Dieser Artikel behandelt die einschließlich und verwalten ein Standardimage-Medienobjekt in einem Xamarin.iOS-app als ein Symbol "App" verwendet werden soll.
+title: Anwendungssymbole in Xamarin.iOS
+description: 'Dieses Dokument beschreibt, wie mit verschiedenen Anwendungssymbolen in Xamarin.iOS arbeiten: das Symbol für die Anwendung selbst, Spotlight-Symbole, die Einstellungen Symbole und iTunes-Bildmaterial.'
 ms.prod: xamarin
 ms.assetid: B7791574-4A0F-4CB6-8C18-36D40B5C91EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: 3bf9286fe641d836f0877bfe2e17263bf9d7356e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3c07f2573aa8ac6e28b2cd6bff56a773e6206aea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783996"
 ---
-# <a name="application-icons"></a>Anwendungssymbole
-
-_Dieser Artikel behandelt die einschließlich und verwalten ein Standardimage-Medienobjekt in einem Xamarin.iOS-app als ein Symbol "App" verwendet werden soll._
+# <a name="application-icons-in-xamarinios"></a>Anwendungssymbole in Xamarin.iOS
 
 Die folgenden Themen werden im Detail behandelt:
 
@@ -31,13 +30,13 @@ Auf die gleiche Weise, dass eine app Xamarin.iOS Bildanlagen für UI-Steuereleme
 
 - **Symbol "Anwendung"** -alle iOS-app muss ein Anwendungssymbol definieren. Dies ist das Symbol, das der Benutzer tippen sollen auf der iOS-Startseite auf die app zu starten. Darüber hinaus wird dieses Symbol von Game Center "," ggf. verwendet. Beispiel: 
 
-    [![](app-icons-images/000.png "Symbol "Anwendung"")](app-icons-images/000-full.png#lightbox)
+    [![](app-icons-images/000.png "Symbol \"Anwendung\"")](app-icons-images/000-full.png#lightbox)
 - **Symbol "Spotlight** – Wenn der Benutzer den Namen einer App in einem Spotlight-Suche eingibt dieses Symbol wird angezeigt. Beispiel: 
 
-    [![](app-icons-images/000a.png "Symbol "Spotlight"")](app-icons-images/000a-full.png#lightbox)
+    [![](app-icons-images/000a.png "Symbol \"Spotlight\"")](app-icons-images/000a-full.png#lightbox)
 - **Symbol "Einstellungen"** – Wenn der Benutzer gibt die **Einstellungen** app auf seinem iOS-Gerät, dieses Symbol wird am Ende angezeigt werden die **Einstellungen** Liste für die app. Beispiel: 
 
-    [![](app-icons-images/000b.png "Symbol "Einstellungen"")](app-icons-images/000b-full.png#lightbox)
+    [![](app-icons-images/000b.png "Symbol \"Einstellungen\"")](app-icons-images/000b-full.png#lightbox)
 
 Die folgenden Asset Bildgrößen und Lösungen ist erforderlich sein, um unterstützen alle die Symboltypen, die von einer Xamarin.iOS-app für iOS 5 über iOS 9 (oder höher) erforderlich sind:
 
@@ -45,53 +44,53 @@ Die folgenden Asset Bildgrößen und Lösungen ist erforderlich sein, um unterst
 
 - **iPhone: iOS 9 und 10 (iPhone 6 und 7 Plus)**
 
-    ||3x|
+    ||3 x|
     |---|---|
     |Anwendungssymbol|180 x 180|
     |Spotlight|120x120|
-    |Einstellungen|87x87|
+    |Einstellungen|87 x 87|
 
-- **iPhone: iOS 7 & 8**
+- **iPhone: iOS 7 und 8**
 
-    ||1x|2x|
+    ||1 x|2x|
     |---|---|---|
     |Anwendungssymbol|60x60<sup>1</sup>|120x120|
-    |Spotlight|40x40<sup>2</sup>|80x80|
+    |Spotlight|40 x 40<sup>2</sup>|80 x 80|
     |Einstellungen|-|-|
 
-- **iPhone: iOS 5 & 6**
+- **iPhone: iOS 5 und 6**
 
-    ||1x|2x|
+    ||1 x|2x|
     |---|---|---|
-    |Anwendungssymbol|57x57|114x114|
+    |Anwendungssymbol|57x57|114 x 114|
     |Spotlight|29x29|58 x 58|
-    |Einstellungen|29x29<sup>3, 4</sup>|58 x 58<sup>3, 4</sup>|
+    |Einstellungen|29 x 29<sup>3, 4</sup>|58 x 58<sup>3, 4</sup>|
 
 ### <a name="ipad-icon-sizes"></a>iPad Symbolgrößen
 
-- **iPad: iOS 9 & 10**
+- **iPad: iOS 9 und 10**
 
-    ||2x (iPad Pro)|
+    ||2 x (iPhone Pro)|
     |---|---|
     |Anwendungssymbol|167x167<sup>6</sup>|
-    |Spotlight|120x120<sup>6</sup>|
-    |Einstellungen|58x58<sup>5</sup>|
+    |Spotlight|120 x 120<sup>6</sup>|
+    |Einstellungen|58 x 58<sup>5</sup>|
 
-- **iPad: iOS 7 & 8**
+- **iPad: iOS 7 und 8**
 
-    ||1x|2x|
+    ||1 x|2x|
     |---|---|---|
-    |Anwendungssymbol|76x76|152x152|
-    |Spotlight|40x40|80x80|
+    |Anwendungssymbol|76x76|152 x 152|
+    |Spotlight|40x40|80 x 80|
     |Einstellungen|-|-|
 
-- **iPad: iOS 5 & 6**
+- **iPad: iOS 5 und 6**
 
-    ||1x|2x|
+    ||1 x|2x|
     |---|---|---|
-    |Anwendungssymbol|72x72|144x144|
-    |Spotlight|50x50|100x100|
-    |Einstellungen|29x29<sup>3, 5</sup>|58x58<sup>3, 5</sup>|
+    |Anwendungssymbol|72x72|144 x 144|
+    |Spotlight|50x50|100 x 100|
+    |Einstellungen|29 x 29<sup>3, 5</sup>|58 x 58<sup>3, 5</sup>|
 
  1. Sowohl Visual Studio für Mac und Xcode unterstützt Festlegen von 1 X-Image für iOS 7 nicht mehr.
  2. Festlegen eines 1 X-Images für iOS 7 wird nicht unterstützt, wenn Asset Kataloge verwenden.
@@ -114,7 +113,7 @@ Wenn eine Asset-Katalog verwenden möchten, führen Sie folgende Schritte aus:
 
 1. Doppelklicken Sie auf die `Info.plist` in der Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
 2. Führen Sie einen Bildlauf nach unten, um die **App-Symbole** Abschnitt.
-3. Aus der **Quelle** Dropdownliste sicher **AppIcons** ausgewählt ist: 
+3. Aus der **Quelle** Dropdownliste sicher **AppIcon** ausgewählt ist: 
 
     ![](app-icons-images/migrate01.png "Stellen Sie sicher, dass AppIcons ausgewählt ist")
 4. Aus der **Projektmappen-Explorer**, doppelklicken Sie auf die `Assets.xcassets` Datei zur Bearbeitung zu öffnen: 
@@ -131,7 +130,7 @@ Wenn eine Asset-Katalog verwenden möchten, führen Sie folgende Schritte aus:
 
 1. Doppelklicken Sie auf die **"Info.plist"** in der Datei die **Projektmappen-Explorer**:
 
-    ![](app-icons-images/icon01w.png "Wählen Sie die Datei "Info.plist"")
+    ![](app-icons-images/icon01w.png "Wählen Sie die Datei \"Info.plist\"")
 2. Klicken Sie auf die **visuelle Anlagen** Registerkarte, und klicken Sie auf die **verwenden Asset-Katalog** unter Schaltfläche **App-Symbole**: 
 
     ![](app-icons-images/icon02w.png "Wählen Sie die Registerkarte visuelle Objekte")

@@ -1,18 +1,20 @@
 ---
-title: Verwenden von ARKit mit UrhoSharp
+title: Verwenden von ARKit mit UrhoSharp in Xamarin.iOS
+description: Dieses Dokument wird beschrieben, wie Sie eine app ARKit in Xamarin.iOS einrichten und dann prüft, wie Frames, zum Anpassen der Kamera, gerendert werden Ebenen erkennen zum Arbeiten mit Beleuchtung und vieles mehr. Es wird auch erläutert, UrhoSharp und Schreiben von Code für HoloLens.
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/01/2016
-ms.openlocfilehash: 95c9c602d0bfe1b77fda453a137dfdfc12a975c9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0d70b1f751d5aa6b6c8fa578f53ba1ac8260cfa1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787102"
 ---
-# <a name="using-arkit-with-urhosharp"></a>Verwenden von ARKit mit UrhoSharp
+# <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Verwenden von ARKit mit UrhoSharp in Xamarin.iOS
 
 Durch die Einführung des [ARKit](https://developer.apple.com/arkit/), Apple machte es einfache für Entwickler zum Erstellen von Anwendungen augmented Reality-Modus. ARKit verfolgen Sie die genaue Position des Geräts und verschiedene Flächen auf der ganzen Welt erkennen kann, und nun ist es Aufgabe des Entwicklers, die Daten stammen aus ARKit in Ihren Code in blend.
 

@@ -1,20 +1,19 @@
 ---
 title: UrhoSharp Plattformunterstützung
-description: Cross Platform 3D/2D Spiel- und Visualisierung-Modul
+description: Dieses enthält Dokumentenlinks zu verschiedenen Handbüchern, die beschreiben, wie einem vorhandenen systemeigenen Projekt für eine bestimmte Plattform Urho hinzugefügt. Es wird erläutert, Android, iOS, tvos. außerdem wurden, MacOS, Windows und Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 6205E430-1036-4CC3-8E97-AA5554E3D468
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: b9fdb205148824282d527f2483e027b14d786ff2
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 9179b0913566ee5c70fbbfabe4c17ee3b98fbeca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783384"
 ---
 # <a name="urhosharp-platform-support"></a>UrhoSharp Plattformunterstützung
-
-_Cross Platform 3D/2D Spiel- und Visualisierung-Modul_
 
 In diesem Abschnitt wird erläutert, wie einem vorhandenen systemeigenen Projekt für Ihre Plattform Urho hinzugefügt und wie Sie bestimmte Plattformintegration nutzen.
 

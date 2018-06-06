@@ -1,6 +1,6 @@
 ---
-title: Problembehandlung
-description: In diesem Artikel deckt bekannten Problemen, die beim Arbeiten mit Unterstützung für tvos. außerdem wurden die Xamarin auftreten können.
+title: Problembehandlung bei tvos. außerdem wurden-apps mit Xamarin
+description: Dieser Artikel bietet verschiedene Tipps zur Problembehandlung während der Entwicklung mit Xamarin erstellten tvos. außerdem wurden-App. Bekanntes Problem und bestimmte Fehler beschrieben.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 124E4953-4DFA-42B0-BCFC-3227508FE4A6
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 86106fa5ca53e93ccffb4dd141914c01ab65a506
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e69157cf9c8a9b9405e31edb2906754328653ccb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789202"
 ---
-# <a name="troubleshooting"></a>Problembehandlung
+# <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Problembehandlung bei tvos. außerdem wurden-apps mit Xamarin
 
 _In diesem Artikel deckt bekannten Problemen, die beim Arbeiten mit Unterstützung für tvos. außerdem wurden die Xamarin auftreten können._
 
@@ -120,7 +121,7 @@ In diesem Fall Bearbeiten Ihrer `Info.plist` Datei, und stellen Sie sicher, dass
 
 Kompilieren Sie Ihre app für Release und iTunes Connect erneut übermitteln.
 
-### <a name="task-mtouch-execution----failed"></a>Task "MTouch" execution -- FAILED
+### <a name="task-mtouch-execution----failed"></a>Task "MTouch" – Fehler bei der Ausführung
 
 Wenn Sie eine 3rd Party-Bibliothek (z. B. MonoGame) verwenden und die Kompilierung Version bei der eine lange Reihe von Fehlermeldungen Endziffern `Task "MTouch" execution -- FAILED`, versuchen Sie es hinzufügen `-gcc_flags="-framework OpenAL"` auf Ihre **zusätzliche Touch Argumente**:
 

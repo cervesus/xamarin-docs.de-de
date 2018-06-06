@@ -1,19 +1,20 @@
 ---
-title: Alternative App-Symbole
-description: Dieser Artikel umfasst alternativen app Symbole in Xamarin.iOS verwendet.
+title: Alternative App-Symbole in Xamarin.iOS
+description: Dieses Dokument beschreibt die Verwendung von alternativen app-Symbole in Xamarin.iOS. Es wird erläutert, wie diese Symbole zu einem Xamarin.iOS-Projekt hinzugefügt, zum Ändern der Datei "Info.plist" und das Symbol für die app programmgesteuert zu verwalten.
 ms.prod: xamarin
 ms.assetid: 302fa818-33b9-4ea1-ab63-0b2cb312299a
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 8d9f27d58a881878aabeda4326805eec726c247c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1d37a29982454367c35bfdfad205abce0eb025af
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784109"
 ---
-# <a name="alternate-app-icons"></a>Alternative App-Symbole
+# <a name="alternate-app-icons-in-xamarinios"></a>Alternative App-Symbole in Xamarin.iOS
 
 _Dieser Artikel umfasst alternativen app Symbole in Xamarin.iOS verwendet._
 
@@ -66,7 +67,7 @@ Führen Sie folgende Schritte aus:
 
 Das resultierende **"Info.plist"** Datei sollte folgendermaßen aussehen Abschluss:
 
-![](alternate-app-icons-images/icons03.png "Die vollständige Datei "Info.plist"")
+![](alternate-app-icons-images/icons03.png "Die vollständige Datei \"Info.plist\"")
 
 Oder wie diesen, wenn, die in einem Text-Editor geöffnet:
 
@@ -161,7 +162,7 @@ Wenn die app ausgeführt wird, und die Benutzer wählen Sie ein alternatives Sym
 
 Wenn der Benutzer wieder auf das Symbol "primary" wechselt, wird eine Warnung wie folgt angezeigt:
 
-![](alternate-app-icons-images/icons05.png "Eine Beispiel-Warnung, wenn eine app auf das Symbol "primary" geändert")
+![](alternate-app-icons-images/icons05.png "Eine Beispiel-Warnung, wenn eine app auf das Symbol \"primary\" geändert")
 
 <a name="Summary" />
 

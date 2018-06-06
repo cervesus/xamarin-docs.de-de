@@ -1,29 +1,26 @@
 ---
-title: Systemeigene Verweise
-description: Systemeigene Verweise bietet Ihnen die Möglichkeit, ein natives Framework in einem Projekt von Xamarin.iOS oder Xamarin.Mac oder Bindung einzubetten.
+title: Systemeigene Verweise iOS-, Mac und Bindungen Projekte
+description: Systemeigene Verweise bietet Ihnen die Möglichkeit, ein natives Framework in einem Xamarin.iOS, Xamarin.Mac oder bindungsprojekt einzubetten.
 ms.prod: xamarin
 ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c56e392420debb21998363cfffa288aec51691ea
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3a497d0bb4674014b8063cb1fbc91eec6e7ae5ea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781717"
 ---
-# <a name="native-references"></a>Systemeigene Verweise
+# <a name="native-references-in-ios-mac-and-bindings-projects"></a>Systemeigene Verweise in iOS, Mac und Bindungen-Projekten
 
 _Systemeigene Verweise bietet Ihnen die Möglichkeit, ein natives Framework in einem Projekt von Xamarin.iOS oder Xamarin.Mac oder Bindung einzubetten._
-
 
 Seit iOS 8.0 oder höher wurde es möglich, ein eingebettetes Framework zum Freigeben von Code für app-Erweiterungen und die Haupt-app in Xcode zu erstellen. Mithilfe der systemeigenen Verweis-Funktion werden in Xamarin.iOS diese eingebetteten Frameworks (erstellt mit Xcode) genutzt.
  
 > [!IMPORTANT]
 > Es nicht möglich ist, erstellen eingebettete Frameworks aus jeder Art von Xamarin.iOS oder Xamarin.Mac Projekte werden, können Sie systemeigene Verweise nur für den Verbrauch von vorhandenen systemeigenen (Objective-C)-Frameworks.
-
-
-
 
 <a name="Terminology" />
 
@@ -79,7 +76,7 @@ Führen Sie die Schritte sind erforderlich, um ein Framework in einem Xamarin.iO
     [![](native-references-images/ref01.png "Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Projektnamen, und wählen Sie die systemeigenen Verweis hinzufügen")](native-references-images/ref01.png#lightbox)
 3. Aus der **öffnen** Dialogfeld Feld, wählen Sie den Namen der systemeigenen Rahmen, die Sie einbetten möchten und klicken Sie auf die **öffnen** Schaltfläche: 
 
-    [![](native-references-images/ref02.png "Wählen Sie den Namen von systemeigenen Framework einbetten, und klicken Sie auf die Schaltfläche "Öffnen"")](native-references-images/ref02.png#lightbox)
+    [![](native-references-images/ref02.png "Wählen Sie den Namen von systemeigenen Framework einbetten, und klicken Sie auf die Schaltfläche \"Öffnen\"")](native-references-images/ref02.png#lightbox)
 4. Das Framework wird das Projekt Struktur hinzugefügt werden: 
 
     [![](native-references-images/ref03.png "Das Framework wird die Struktur von Projekten hinzugefügt werden")](native-references-images/ref03.png#lightbox)

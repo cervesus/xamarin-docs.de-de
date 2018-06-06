@@ -1,5 +1,5 @@
 ---
-title: Arbeiten mit Eigenschaftenlisten
+title: Arbeiten mit Eigenschaftenlisten in Xamarin.iOS
 description: Dieses Dokument stellt Visual Studio für Mac Computer grafischen und der erweiterten Eigenschaft Eigenschaftenliste (plist)-Editor für die Arbeit mit der Datei "Info.plist" und Entitlements.plist bereit. Es wird veranschaulicht, Festlegen von Symbolen und starten-Images für iOS-Anwendungen von innerhalb von Visual Studio für Mac.
 ms.prod: xamarin
 ms.assetid: 5E687043-0443-377C-9A12-9C5A05958646
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f6ee7a606243f5d21d827546b528ca5d9d3f0281
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6b22acab3fb19a6209fac8dcf6a0870763e601d2
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784467"
 ---
-# <a name="working-with-property-lists"></a>Arbeiten mit Eigenschaftenlisten
+# <a name="working-with-property-lists-in-xamarinios"></a>Arbeiten mit Eigenschaftenlisten in Xamarin.iOS
 
 _Dieses Dokument stellt Visual Studio für Mac Computer grafischen und der erweiterten Eigenschaft Eigenschaftenliste (plist)-Editor für die Arbeit mit der Datei "Info.plist" und Entitlements.plist bereit. Es wird veranschaulicht, Festlegen von Symbolen und starten-Images für iOS-Anwendungen von innerhalb von Visual Studio für Mac._
 
@@ -23,7 +24,7 @@ Visual Studio für Mac verfügt über eine grafische plist-Editor, der erleichte
 
 Die Eigenschaftenliste Informationen ( `Info.plist`) ist eine erforderliche iOS-Datei, die Informationen zur Anwendungskonfiguration an das System bereitstellt. Visual Studio für Mac des benutzerdefinierten `Info.plist` Features im Editor links im Editor-Fenster auf drei Bereiche, die durch die Registerkarten am unteren gesteuert:
 
- [![](property-lists-images/tabs.png "Die Datei "Info.plist"-Editor-Registerkarten unten links im Editor-Fenster")](property-lists-images/tabs.png#lightbox)
+ [![](property-lists-images/tabs.png "Die Datei \"Info.plist\"-Editor-Registerkarten unten links im Editor-Fenster")](property-lists-images/tabs.png#lightbox)
 
 Jeder Bereich steuert verschiedene Eigenschaften, wie im folgenden erläutert:
 

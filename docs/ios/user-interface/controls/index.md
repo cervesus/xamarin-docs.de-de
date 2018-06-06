@@ -1,23 +1,22 @@
 ---
-title: Steuerelemente
-description: Xamarin.iOS macht alle systemeigenen User Interface-Objekte, die von Apple bereitgestellten verfügbar. Werden sie einfach Xamarin.iOS-apps, die mit der iOS-Designer-Generator des Xcode-Schnittstelle hinzugefügt oder programmgesteuert. Unabhängig davon, welche Methode Sie wählen, Xamarin.iOS alle Benutzeroberflächeneigenschaften Objekt und Methoden in c# verfügbar macht.
+title: Benutzeroberflächen-Steuerelemente in Xamarin.iOS
+description: Dieses enthält Dokumentenlinks zu Anleitungen, die verschiedene iOS Steuerelemente der Benutzeroberfläche Xamarin.iOS Entwickler zu beschreiben. Verknüpfter Inhalt erläutert Warnungen, Schaltflächen, Auflistungsansichten, Bilder, manuelle Kamera Steuerelemente, Karten, Bezeichnungen, Bildlaufbereich, Datumsauswahl und mehr.
 ms.prod: xamarin
 ms.assetid: C00EA232-ADCC-42AD-BF86-B526414A21C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 82b2998319d4e78ee4f58a6d024032a509724537
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 477cb4e479224b9e795f3460e0f59e0aa2038630
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790041"
 ---
-# <a name="controls"></a>Steuerelemente
+# <a name="user-interface-controls-in-xamarinios"></a>Benutzeroberflächen-Steuerelemente in Xamarin.iOS
 
-_Xamarin.iOS macht alle systemeigenen User Interface-Objekte, die von Apple bereitgestellten verfügbar. Werden sie einfach Xamarin.iOS-apps, die mit der iOS-Designer-Generator des Xcode-Schnittstelle hinzugefügt oder programmgesteuert. Unabhängig davon, welche Methode Sie wählen, Xamarin.iOS alle Benutzeroberflächeneigenschaften Objekt und Methoden in c# verfügbar macht._
-
-Dieses Dokument werden einige der am häufigsten verwendeten iOS Steuerelemente der Benutzeroberfläche und deren Verwendung vorgestellt.
+Dieses Dokument führt einige der am häufigsten verwendeten iOS Steuerelemente der Benutzeroberfläche und deren Verwendung.
 
 ## <a name="alertsalertsmd"></a>[Benachrichtigungen](alerts.md)
 

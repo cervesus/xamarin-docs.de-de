@@ -1,18 +1,20 @@
 ---
-title: Registrieren von Anwendungen im Hintergrund ausgeführt.
+title: Registrierung von Xamarin.iOS Anwendungen im Hintergrund ausgeführt.
+description: Dieses Dokument beschreibt, wie zum Registrieren einer Anwendung Xamarin.iOS im Hintergrund ausgeführt wird. Es wird erläutert, Audio-apps, VoIP-apps, externe Zubehör und Bluetooth und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 58ee68f765372094d68c3cf30ed6a631a67fe313
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f4774f6b4f5412c44dc985bd40129a178b1e813c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783674"
 ---
-# <a name="registering-applications-to-run-in-the-background"></a>Registrieren von Anwendungen im Hintergrund ausgeführt.
+# <a name="registering-xamarinios-apps-to-run-in-the-background"></a>Registrierung von Xamarin.iOS Anwendungen im Hintergrund ausgeführt.
 
 Registrieren Sie einzelne Aufgaben für den Hintergrund Berechtigungen funktioniert für einige Anwendungen, aber was geschieht, wenn eine Anwendung ständig aufgerufen wird, um wichtige, lang andauernde, Aufgaben wie das Abrufen von Anweisungen für den Benutzer über GPS? Solche Anwendungen sollte stattdessen als bekannte Hintergrund erforderlichen Anwendungen registriert werden.
 

@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 805b27139d644d0fac4a7c5a9e9b2c2c331d7130
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 38805c09136405a7a241cfaeb8fa8cb6fb1a5d5f
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732722"
 ---
 # <a name="introduction-to-effects"></a>Einführung in die Effekte
 
@@ -53,7 +54,7 @@ Auswirkungen müssen keine Typinformationen über den Container, Steuerelement o
 
 Jede Clientplattform-spezifische `PlatformEffect` Klasse macht die folgenden Methoden, die zum Implementieren eines Effekts überschrieben werden müssen:
 
-- [`OnAttached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnAttached()/) – wird aufgerufen, wenn eine Auswirkung auf ein Steuerelement Xamarin.Forms angefügt ist. Eine überschriebene Version dieser Methode, die in jeder Klasse Platfom-spezifische Effekt ist der Ort zum Ausführen der Anpassung des Steuerelements, zusammen mit der Ausnahmebehandlung für den Fall, dass die Auswirkungen auf das angegebene Xamarin.Forms-Steuerelement angewendet werden kann.
+- [`OnAttached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnAttached()/) – wird aufgerufen, wenn eine Auswirkung einer Xamarin.Forms-Steuerelement zugeordnet ist. Eine überschriebene Version dieser Methode, die in jeder Klasse Platfom-spezifische Effekt ist der Ort zum Ausführen der Anpassung des Steuerelements, zusammen mit der Ausnahmebehandlung für den Fall, dass die Auswirkungen auf das angegebene Xamarin.Forms-Steuerelement angewendet werden kann.
 - [`OnDetached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnDetached()/) – wird aufgerufen, wenn Sie ein Effekt aus einem Steuerelement Xamarin.Forms getrennt wird. Eine überschriebene Version dieser Methode, die in jeder Klasse plattformspezifischen wirksam ist die Stelle, um eine Auswirkung Bereinigung ausführen, z. B. Deduplizierung registrieren einen Ereignishandler ausführen.
 
 Darüber hinaus die `PlatformEffect` macht die [ `OnElementPropertyChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E.OnElementPropertyChanged/p/System.ComponentModel.PropertyChangedEventArgs/) -Methode, die auch überschrieben werden kann. Diese Methode wird aufgerufen, wenn eine Eigenschaft des Elements geändert wurde. Eine überschriebene Version dieser Methode, die in jeder Klasse plattformspezifischen Effekt ist der Ort mit bindbare eigenschaftenänderungen auf das Steuerelement Xamarin.Forms reagieren. Ein Kontrollkästchen für die Eigenschaft, die geändert werden sollten immer vorgenommen werden, wie diese Außerkraftsetzung oft aufgerufen werden kann.

@@ -1,18 +1,20 @@
 ---
-title: Arbeiten mit Einstellungen
+title: Arbeiten mit WatchOS Einstellungen in Xamarin
+description: Dieses Dokument beschreibt das Arbeiten mit Einstellungen für WatchOS in Xamarin. Es wird erläutert, Hinzufügen von Einstellungen zu einer Projektmappe Watch-app verwenden diese Einstellungen in der app, und die Apple Watch-app auf dem iPhone.
 ms.prod: xamarin
 ms.assetid: 4B2EB192-F0A2-4010-B141-0431520594C0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 6de70eae1eb1c498336a62b4d7be5e2805de11f9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6cfbcf3b4383588819490838c2a54cdb4faf9403
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790876"
 ---
-# <a name="working-with-settings"></a>Arbeiten mit Einstellungen
+# <a name="working-with-watchos-settings-in-xamarin"></a>Arbeiten mit WatchOS Einstellungen in Xamarin
 
 Apple Watch-apps können die gleiche Einstellungen Funktionalität als iOS-apps – die Einstellungen-Benutzeroberfläche wird angezeigt, der **Apple Watch** iPhone-app aber die Werte in der iPhone-app und auch der Watch-Erweiterung verfügbar sind.
 
@@ -55,7 +57,7 @@ var isEnabled = shared.BoolForKey ("enabled_preference");
 var userName = shared.StringForKey ("name_preference");
 ```
 
-## <a name="apple-watch-app"></a>Apple Watch App
+## <a name="apple-watch-app"></a>Apple Watch-App
 
 [![](settings-images/settings-app-sml.png "Die neue Apple Watch-app auf dem iPhone")](settings-images/settings-app.png#lightbox)
 

@@ -1,16 +1,17 @@
 ---
 title: BouncingGame-details
-description: In dieser exemplarischen Vorgehensweise wird gezeigt, wie ein einfache springenden Ball-Spiel mithilfe von CocosSharp implementiert.
+description: Dieses Dokument enthält eine exemplarische Vorgehensweise für die Erstellung von BouncingGame, ein einfaches springenden Ball Spiel CocosSharp integriert.
 ms.prod: xamarin
 ms.assetid: AC9FD56F-6E4A-40DA-8168-45A761D869FD
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2018
-ms.openlocfilehash: d12d6fb8ecfcba5e5093b2af4790a51ef8cf8e47
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 1a2423fcbeec0c3414b766a6c9e6f64ab53f4bf9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783106"
 ---
 # <a name="bouncinggame-details"></a>BouncingGame-details
 
@@ -97,15 +98,15 @@ Der obige Code erstellt ein einzelnes `CCSprite` und fügt es als untergeordnete
 
 Wir fügen die Dateien direkt in das Stammverzeichnis **Content** Ordner für iOS und Android. Hierzu mit der rechten Maustaste oder Steuerelement klicken Sie auf die **Content** Ordner in der iOS-Projekt, und wählen **hinzufügen** > **Dateien hinzufügen...** Navigieren Sie zu, in denen wir zuvor den Inhalt entzippt, und wählen Sie **paddle.png**. Wenn Informationen zum Hinzufügen der das in Ordner aufgefordert werden, wählen wir die **Kopie** Option:
 
-![Der Add File zum Dialogfeld "Ordner"](bouncing-game-images/image2.png "der Add File zum Dialogfeld "Ordner"")
+![Der Add File zum Dialogfeld "Ordner"](bouncing-game-images/image2.png "der Add File zum Dialogfeld \"Ordner\"")
 
 Als Nächstes fügen wir die Datei auf das Android-Projekt. Mit der rechten Maustaste oder Steuerelement mit einem Klick auf den Inhaltsordner (Dies ist der **Bestand** Ordner auf Android-Projekte), und wählen Sie **hinzufügen** > **Dateien hinzufügen...** . Diesmal, navigieren Sie zu des iOS-Projekts **Content** Ordner. Wenn Sie Informationen zum Hinzufügen der das aufgefordert werden, wählen Sie die **einen Link hinzufügen** Option:
 
-![Der Add File zum Dialogfeld "Ordner"](bouncing-game-images/addalink.png "der Add File zum Dialogfeld "Ordner"")
+![Der Add File zum Dialogfeld "Ordner"](bouncing-game-images/addalink.png "der Add File zum Dialogfeld \"Ordner\"")
 
 Wird besprochen, warum Dateien musste für beide Projekte unten hinzugefügt werden. Jedes Projekt **Content** Ordner enthalten jetzt die **paddle.png** Datei:
 
-![Der Inhalt des Ordners "Content"](bouncing-game-images/image3.png "den Inhalt des Ordners "Content"")
+![Der Inhalt des Ordners "Content"](bouncing-game-images/image3.png "den Inhalt des Ordners \"Content\"")
 
 Beim Ausführen des Spiels sehen wir die `CCSprite` gezeichnet werden:
 
@@ -419,7 +420,7 @@ In dieser exemplarischen Vorgehensweise wird dargestellt, Erstellen eines plattf
 
 In dieser exemplarischen Vorgehensweise behandelt nur einen kleinen Teil der was das Spiele CocosSharp-Modul bietet. Informationen und exemplarische Vorgehensweisen auf anderen CocosSharp Themen finden Sie unter [den Rest der CocosSharp Anleitungen](~/graphics-games/cocossharp/index.md).
 
-## <a name="related-links"></a>Verwandte links
+## <a name="related-links"></a>Verwandte Links
 
 - [Abgeschlossene Spiel (Beispiel)](https://developer.xamarin.com/samples/mobile/BouncingGame/)
 - [Inhalt (Beispiel)](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Content.zip?raw=true)

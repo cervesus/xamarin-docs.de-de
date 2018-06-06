@@ -1,17 +1,19 @@
 ---
-title: Selektoren Objective-C
+title: Objective-C-Selektoren in Xamarin.iOS
+description: Dieses Dokument erläutert, wie für die Interaktion mit Objective-C-Selektoren in c#. Die Vorgehensweisen zum Aufrufen von Selektoren und technische Überlegungen behandelt, die berücksichtigt werden müssen, wenn dies zu erheblichen beschrieben.
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 60f107bda29b351c119f5702b0ca797d7d16b0b1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 25276851879ba828361d3236cbf7896cf748588c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787041"
 ---
-# <a name="objective-c-selectors"></a>Selektoren Objective-C
+# <a name="objective-c-selectors-in-xamarinios"></a>Objective-C-Selektoren in Xamarin.iOS
 
 Die Objective-C-Sprache basiert auf *Selektoren*. Ein Selektor ist eine Nachricht, die auf ein Objekt gesendet werden können oder eine *Klasse*. [Xamarin.iOS](~/ios/internals/api-design/index.md) Maps Selektoren auf Instanzmethoden Instanz und Klasse Selektoren statischen Methoden.
 
@@ -141,7 +143,7 @@ Nachdem Sie einen Auswahlnamen haben, können Sie erstellen eine [ObjCRuntime.Se
 
 <a name="Calling_objc_msgSend()" />
 
-### <a name="calling-objcmsgsend"></a>Calling objc_msgSend()
+### <a name="calling-objcmsgsend"></a>Objc_msgSend() aufrufen
 
  `objc_msgSend()` Dient zum Senden einer Nachricht (Selektor) an ein Objekt. Diese Funktionsreihe dauert mindestens zwei erforderlichen Argumente: dem Selektor Ziel (eine Instanz oder die Klasse behandeln), dem Selektor selbst und dann alle Argumente, die für die bestimmte Auswahl erforderlich. Müssen die Instanz und der Auswahlzeiger Argumente `System.IntPtr`, und alle übrigen Argumente müssen mit dem Typ überein der Selektor, z. B. erwartet ein `nint` für eine `int`, oder ein `System.IntPtr` für alle `NSObject`-abgeleitete Typen. Verwenden der [NSObject.Handle](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/) -Eigenschaft zum Abrufen einer `IntPtr` für eine Instanz der Objective-C-Typ.
 

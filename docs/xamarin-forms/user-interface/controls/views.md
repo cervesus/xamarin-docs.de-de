@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: b370c27a212f876231764851c894bf683ae460c3
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: aafad29a30130c9ec088121e03a986034f002e1c
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733086"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms-Ansichten
 
@@ -21,7 +22,7 @@ Ansichten sind Benutzeroberflächenobjekte wie z. B. Schaltflächen, Bezeichnung
 
 ## <a name="views-for-presentation"></a>Ansichten für die Präsentation
 
-### <a name="label"></a>Bezeichnung
+### <a name="label"></a>Label
 
 |     |     |
 | --- | --- |
@@ -69,7 +70,7 @@ Ansichten sind Benutzeroberflächenobjekte wie z. B. Schaltflächen, Bezeichnung
 
 |     |     |
 | --- | --- |
-| [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) ist ein rechteckiges-Objekt, in dem Text angezeigt und welche löst eine [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/) Ereignis aus, wenn sie wird gedrückt wurde.<br /><br />[API-Dokumentation](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) | [![Schaltfläche Beispiel](views-images/Button.png "Schaltfläche Beispiel")](views-images/Button-Large.png#lightbox "Schaltfläche Beispiel")<br /> [C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ButtonDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml) mit [CodeBehind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml.cs) |
+| [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) ist ein rechteckiges-Objekt, in dem Text angezeigt und welche löst eine [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/) Ereignis aus, wenn sie wird gedrückt wurde.<br /><br />[API-Dokumentation](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) / [Handbuch](~/xamarin-forms/user-interface/button.md) / [Beispiel](https://developer.xamarin.com/samples/UserInterface/ButtonDemos/) | [![Schaltfläche Beispiel](views-images/Button.png "Schaltfläche Beispiel")](views-images/Button-Large.png#lightbox "Schaltfläche Beispiel")<br /> [C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ButtonDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml) mit [CodeBehind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="searchbar"></a>SearchBar
@@ -81,7 +82,7 @@ Ansichten sind Benutzeroberflächenobjekte wie z. B. Schaltflächen, Bezeichnung
 
 ## <a name="views-for-setting-values"></a>Ansichten für das Festlegen von Werten 
 
-### <a name="slider"></a>Slider
+### <a name="slider"></a>Schieberegler
 
 |     |     |
 | --- | --- |
@@ -155,7 +156,7 @@ Diese beiden Klassen werden von der [ `InputView` ](https://developer.xamarin.co
 
 |     |     |
 | --- | --- |
-| [`ProgressBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/) verwendet eine Animation an, dass die Anwendung über einen längeren Aktivität voranschreitet. Legen Sie die [ `Progress` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ProgressBar.Progress/) Eigenschaft, um Werte zwischen 0 und 1, um den Fortschritt anzuzeigen.<br /><br />Wenn die Aktivität Bearbeitung unbekannt ist, verwenden eine [ `ActivityIndicator` ](#activityindicator) stattdessen.<br /><br />[API-Dokumentation](https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/) | [![Beispiel für "ProgressBar"](views-images/ProgressBar.png ""ProgressBar" Beispiel")](views-images/ProgressBar-Large.png#lightbox ""ProgressBar"-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ProgressBarDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml) mit [CodeBehind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml.cs) |
+| [`ProgressBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/) verwendet eine Animation an, dass die Anwendung über einen längeren Aktivität voranschreitet. Legen Sie die [ `Progress` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ProgressBar.Progress/) Eigenschaft, um Werte zwischen 0 und 1, um den Fortschritt anzuzeigen.<br /><br />Wenn die Aktivität Bearbeitung unbekannt ist, verwenden eine [ `ActivityIndicator` ](#activityindicator) stattdessen.<br /><br />[API-Dokumentation](https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/) | [![Beispiel für "ProgressBar"](views-images/ProgressBar.png "\"ProgressBar\" Beispiel")](views-images/ProgressBar-Large.png#lightbox "\"ProgressBar\"-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ProgressBarDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml) mit [CodeBehind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml.cs) |
 |     |     |
 
 ## <a name="views-that-display-collections"></a>Sichten, die Auflistungen anzeigen.

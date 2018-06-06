@@ -1,6 +1,6 @@
 ---
 title: WatchOS Problembehandlung
-description: Bekannte Probleme und problemumgehungen bei der Verwendung Entwicklungsprobleme WatchOS.
+description: Dieses Dokument beschreibt bekannte Probleme und problemumgehungen bei der Entwicklung für WatchOS mit Xamarin. Bilder mit Problemen, manuellen Hinzufügen von Dateien Controller Interface, eine Watch-app über die Befehlszeile aus starten und vieles mehr beschrieben.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
@@ -8,11 +8,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 6e7a7dd09d65b88831136662d8718886aaf483c5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4e84028336669738c40da9e37cd22f32ba11dfc1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791764"
 ---
 # <a name="watchos-troubleshooting"></a>WatchOS Problembehandlung
 
@@ -51,7 +52,7 @@ Diese Seite enthält zusätzliche Informationen und problemumgehungen für Featu
 - Möglicherweise ein Fehler "die Anwendung verfügt über keine integrierte" beim Versuch, die app zu starten. Dieser Schritt erfolgt nach einem **Bereinigen** Wenn das Startup-Projekt auf das Erweiterungsprojekt Überwachung festgelegt ist.
     Die Korrektur besteht darin, wählen Sie **erstellen > Rebuild All** und starten Sie die app dann erneut.
 
-### <a name="visual-studio"></a>Visual Studio
+### <a name="visual-studio"></a>Visual Studio
 
 Die iOS-Designer zu unterstützen, für die Überwachung Kit *erfordert* die Projektmappe ordnungsgemäß konfiguriert werden. Wenn das Projekt verweist nicht festgelegt werden (finden Sie unter [Gewusst wie: Festlegen von verweisen](~/ios/watchos/get-started/project-references.md)) und dann auf die Entwurfsoberfläche nicht ordnungsgemäß funktionieren.
 
@@ -96,7 +97,7 @@ Es ist einfach, entfernen Sie den alpha-Kanal zur Verwendung von Mac OS X die **
 
 2. Ziehen Sie ein neues `InterfaceController` auf das Storyboard:
 
-    ![](troubleshooting-images/add-1.png "A InterfaceController")
+    ![](troubleshooting-images/add-1.png "Eine InterfaceController")
 
 3. Sie können Steuerelemente auf dem Controller Schnittstelle (z. b. ziehen Sie jetzt Schaltflächen und Bezeichnungen) aber keine erstellen Steckdosen oder Aktionen noch, da es ist keine **h** Headerdatei. Die folgenden Schritte führt dazu, dass die erforderlichen **h** Header-Datei erstellt werden soll.
 
@@ -164,7 +165,7 @@ Es ist einfach, entfernen Sie den alpha-Kanal zur Verwendung von Mac OS X die **
 
     ![](troubleshooting-images/add-6.png "Öffnen das Storyboard im Schnittstelle-Generator")
 
-8. Wählen Sie die neue Schnittstelle Controller, und weisen Sie ihm den Klassennamen, dem Sie z. B. oben definiert. `MyInterfaceController`
+8. Wählen Sie die neue Schnittstelle Controller, und weisen Sie ihm den Klassennamen, dem Sie z. B. oben definiert. `MyInterfaceController`.
 Wenn alles ordnungsgemäß funktioniert hat, es sollte angezeigt werden automatisch in die **Klasse:** Dropdown-Liste, und Sie können es von dort aus auswählen.
 
     ![](troubleshooting-images/add-4.png "Festlegen einer benutzerdefinierten Klasse")

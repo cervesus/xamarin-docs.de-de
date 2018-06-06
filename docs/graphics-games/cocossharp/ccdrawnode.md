@@ -1,16 +1,17 @@
 ---
 title: Zeichnen von Geometry mit CCDrawNode
-description: CCDrawNode stellt Methoden zum Zeichnen primitive Objekte, z. B. Linien, Kreise und Dreiecke bereit.
+description: Dieses Dokument beschreibt CCDrawNode, die Methoden für die primitiven Zeichnungsobjekte, z. B. Linien, Kreise und Dreiecke bereitstellt.
 ms.prod: xamarin
 ms.assetid: 46A3C3CE-74CC-4A3A-AB05-B694AE182ADB
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 83d973ed013d1448915ee553069c1366922d28b6
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 00ccf089e88d726aff09605aa88076139399a7dc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782884"
 ---
 # <a name="drawing-geometry-with-ccdrawnode"></a>Zeichnen von Geometry mit CCDrawNode
 
@@ -434,7 +435,7 @@ drawNode.DrawTriangleList (verts);
 
 Diese Anleitung wird erläutert, wie zum Erstellen einer `CCDrawNode` und Primitive basierende Renderingvorgänge ausgeführt. Es bietet ein Beispiel für jeden Draw-Aufrufe.
 
-## <a name="related-links"></a>Verwandte links
+## <a name="related-links"></a>Verwandte Links
 
 - [CCDrawNode API](https://developer.xamarin.com/api/type/CocosSharp.CCDrawNode/)
 - [Das vollständige Codebeispiel](https://developer.xamarin.com/samples/mobile/CCDrawNode/)

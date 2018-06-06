@@ -1,21 +1,20 @@
 ---
-title: Arbeiten mit Seitensteuerelement
-description: Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Seitensteuerelement innerhalb einer Xamarin.tvOS-app.
+title: Arbeiten mit tvos. außerdem wurden die Steuerelemente der Seite in Xamarin
+description: Dieses Dokument beschreibt die Arbeit mit Seitensteuerelemente in Apps mit Xamarin tvos. außerdem wurden. Es enthält eine allgemeine Beschreibung der Steuerelemente der Seite erläutert, wie diese in Storyboards einrichten und untersucht, wie auf der Seite Änderungsereignisse reagieren.
 ms.prod: xamarin
 ms.assetid: 19198D46-7BBE-4D04-9BFA-7D1C5C9F9FC6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 1cb07c050aeb2ee72e34048baab991df2d5775d0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bf020f230afc2eb2a09d863424bd4eb56ea1bde6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789157"
 ---
-# <a name="working-with-page-control"></a>Arbeiten mit Seitensteuerelement
-
-_Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Seitensteuerelement innerhalb einer Xamarin.tvOS-app._
+# <a name="working-with-tvos-page-controls-in-xamarin"></a>Arbeiten mit tvos. außerdem wurden die Steuerelemente der Seite in Xamarin
 
 In einigen Fällen müssen Sie eine Reihe von Seiten oder Bilder in Ihrer app Xamarin.tvOS anzuzeigen. Ein Steuerelement wurde entwickelt, welche Seite aufzuzeigen ein Benutzer auf Out die maximale Anzahl von Seiten ist. Ein Steuerelement zeigt eine Reihe von Punkten mit einem dunklen Oval Hintergrund strukturiert. Anzeigen der aktuellen Seite einen ausgefüllten Punkt, alle anderen Seiten, die als leere Punkte anzeigen. Das Seitensteuerelement wird die äußere die meisten Punkte zugeschnitten werden soll, wenn zu viele seine Hintergrundbereich zu groß.
 
@@ -43,7 +42,7 @@ Die einfachste Möglichkeit zum Arbeiten mit Steuerelemente der Seite in einer a
     [![](page-controls-images/page02.png "Ein Steuerelement")](page-controls-images/page02.png#lightbox)
 1. In der **Registerkarte "Widget"** von der **Eigenschaften Pad**, können Sie verschiedene Eigenschaften des Steuerelements Seite z. B. anpassen seine **aktuelle Seite** und **Seitenanzahl**: 
 
-    [![](page-controls-images/page03.png "Die Registerkarte "Widget"")](page-controls-images/page03.png#lightbox)
+    [![](page-controls-images/page03.png "Die Registerkarte \"Widget\"")](page-controls-images/page03.png#lightbox)
 1. Fügen Sie anschließend Steuerelemente oder Gesten zur Ansicht, um rückwärts und Vorwärts durch die Auflistung von Seiten.
 1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie in C#-Code auf sie reagieren können. Zum Beispiel: 
 
@@ -60,7 +59,7 @@ Die einfachste Möglichkeit zum Arbeiten mit Steuerelemente der Seite in einer a
     [![](page-controls-images/page02-vs.png "Ein Steuerelement")](page-controls-images/page02-vs.png#lightbox)
 1. In der **Registerkarte "Widget"** von der **Eigenschaften-Explorer**, können Sie verschiedene Eigenschaften des Steuerelements Seite z. B. Anpassen der **aktuelle Seite** und **Seitenanzahl**: 
 
-    [![](page-controls-images/page03-vs.png "Die Registerkarte "Widget"")](page-controls-images/page03-vs.png#lightbox)
+    [![](page-controls-images/page03-vs.png "Die Registerkarte \"Widget\"")](page-controls-images/page03-vs.png#lightbox)
 1. Fügen Sie anschließend Steuerelemente oder Gesten zur Ansicht, um rückwärts und Vorwärts durch die Auflistung von Seiten.
 1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie in C#-Code auf sie reagieren können. Zum Beispiel: 
 
@@ -72,9 +71,6 @@ Die einfachste Möglichkeit zum Arbeiten mit Steuerelemente der Seite in einer a
 
 > [!IMPORTANT]
 > Während es möglich ist, z. B. Ereignisse weisen `TouchUpInside` auf ein UI-Element (z. B. eine UIButton) in der iOS-Designer nie aufgerufen wird da Apple TV hat eine Fingereingabe Bildschirm oder Berührungsereignisse unterstützen. Sie sollten immer verwenden die `Primary Action` Ereignis aus, wenn Ereignishandler für tvos. außerdem wurden die Elemente der Benutzeroberfläche erstellen.
-
-
-
 
 Bearbeiten Sie die View-Controller (Beispiel `ViewController.cs`) Datei, und fügen Sie den Code, um die geänderten Seiten zu behandeln. Zum Beispiel:
 

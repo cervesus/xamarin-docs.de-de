@@ -1,15 +1,17 @@
 ---
 title: Installieren von .NET einbetten
+description: Dieses Dokument beschreibt das Einbetten von .NET zu installieren. Es wird erläutert, wie die Tools von Hand ausgeführt wie Bindungen generiert automatisch, wie Sie benutzerdefinierte MSBuild-Ziele und die erforderlichen Postbuildschritte verwenden.
 ms.prod: xamarin
 ms.assetid: 47106AF3-AC6E-4A0E-B30B-9F73C116DDB3
 author: chamons
 ms.author: chhamo
 ms.date: 4/18/2018
-ms.openlocfilehash: 1675889dceb1d364abe74461b32aa4c895a144a0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 057a1f3f662b2dbe2f8aee277505e1d6e8798084
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793794"
 ---
 # <a name="installing-net-embedding"></a>Installieren von .NET einbetten
 

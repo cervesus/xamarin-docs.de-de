@@ -1,5 +1,5 @@
 ---
-title: CallKit
+title: CallKit in Xamarin.iOS
 description: Dieser Artikel behandelt die neuen CallKit-API, Apple iOS 10 und wie Sie es in Xamarin.iOS VOIP-apps implementieren freigegeben.
 ms.prod: xamarin
 ms.assetid: 738A142D-FFD2-4738-B3ED-57C273179848
@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 67c761aa6656b571f16632dd1a076ff11737a424
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c674802eac9105d60471b6b130615e1b7efc1b28
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787200"
 ---
-# <a name="callkit"></a>CallKit
+# <a name="callkit-in-xamarinios"></a>CallKit in Xamarin.iOS
 
 _Dieser Artikel behandelt die neuen CallKit-API, Apple iOS 10 und wie Sie es in Xamarin.iOS VOIP-apps implementieren freigegeben._
-
 
 Die neue CallKit-API in iOS 10 bietet eine Möglichkeit für VOIP-apps für iPhone-Benutzeroberfläche integriert und bieten eine vertraute Oberfläche für den Endbenutzer auftreten. Mit dieser API Benutzer anzeigen und interagieren mit VOIP-Aufrufe von des iOS-Geräts Sperrbildschirm und verwalten können Kontakte mit der Phone-app **Favoriten** und **zuletzt geöffnete** Ansichten.
 
@@ -76,7 +76,7 @@ Wenn möchte, dass die app mit dem System kommunizieren, verwendet der `CXCallUp
 
 [![](callkit-images/callkit03.png "Bei der Kommunikation mit dem System über eine CXProvider")](callkit-images/callkit03.png#lightbox)
 
-### <a name="the-cxcallcontroller"></a>The CXCallController
+### <a name="the-cxcallcontroller"></a>Die CXCallController
 
 Die `CXCallController` ermöglicht einer app informiert das System des lokalen Benutzeraktionen wie der Benutzer einen VOIP-Anruf ab. Durch die Implementierung einer `CXCallController` Ruft mit anderen Typen von Aufrufen im System Interaktion zwischen die app ab. Wenn es ist bereits ein aktive Telefonie-Aufruf ausgeführt wird, z. B. `CXCallController` können die VOIP-app, setzen Sie diesen Aufruf anhalten und starten oder einen VOIP-Anruf zu beantworten.
 
@@ -1037,7 +1037,7 @@ In diesem Abschnitt werden einige zusätzliche Details behandelt, die der Entwic
 - Die Konfiguration des Anbieters
 - Aktionsfehler
 - System-Einschränkungen
-- VOIP Audio
+- VOIP-Audio
 
 ### <a name="provider-configuration"></a>Die Konfiguration des Anbieters
 
@@ -1110,7 +1110,7 @@ public class ProviderDelegate : CXProviderDelegate
 }
 ```
 
-### <a name="voip-audio"></a>VOIP Audio
+### <a name="voip-audio"></a>VOIP-Audio
 
 CallKit bietet verschiedene Vorteile für die Behandlung von Audio-Ressourcen, die eine iOS-10-VOIP-app während eines Aufrufs der live VOIP erfordern. Einer der größten Vorteile ist, dass der app audio-Sitzung wird Prioritäten erhöhten, bei der Ausführung in iOS 10. Dies ist die gleiche Prioritätsstufe als das integrierte Phone und FaceTime apps und diese erweiterte Prioritätsstufe hindert andere ausgeführte apps unterbrechen die VOIP-app-audio-Sitzung.
 

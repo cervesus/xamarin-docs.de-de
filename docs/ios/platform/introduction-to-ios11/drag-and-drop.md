@@ -1,19 +1,20 @@
 ---
-title: Drag & Drop
-description: Implementieren von Drag & Drop für iOS 11
+title: Drag & Drop in Xamarin.iOS
+description: Dieses Dokument beschreibt die zum Implementieren von Drag und drop in Xamarin.iOS-apps, die mit den APIs in iOS 11 eingeführt. Insbesondere, es wird erläutert, Aktivieren von Drag & drop in UITableView.
 ms.prod: xamarin
 ms.assetid: 0D39C4C3-D169-42F8-B3FA-7F98CF0B6F1F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/05/2016
-ms.openlocfilehash: fa6fcb2c4f5f17011307b31e4644889d066b71a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7c41f96dae88047e64ec1e74838e3efab55958cc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786963"
 ---
-# <a name="drag-and-drop"></a>Drag & Drop
+# <a name="drag-and-drop-in-xamarinios"></a>Drag & Drop in Xamarin.iOS
 
 _Implementieren von Drag & Drop für iOS 11_
 

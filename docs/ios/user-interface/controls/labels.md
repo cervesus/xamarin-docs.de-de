@@ -1,18 +1,20 @@
 ---
-title: Bezeichnungen
+title: Bezeichnungen in Xamarin.iOS
+description: Dieses Dokument wird erläutert, wie Bezeichnungen in Xamarin.iOS verwendet wird. Es wird beschrieben, wie Bezeichnungen programmgesteuert oder mit dem iOS-Designer erstellen.
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 8a5b2c12cfbca18280a8044d3d8c599d848de91d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 653c6cf8e7d0d3499402ec4f0d62cdd118707176
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789888"
 ---
-# <a name="labels"></a>Bezeichnungen
+# <a name="labels-in-xamarinios"></a>Bezeichnungen in Xamarin.iOS
 
 Die `UILabel` Steuerelement dient zum Anzeigen von einzelnen und mehreren Zeilen nur-Text zu lesen. 
 

@@ -1,20 +1,19 @@
 ---
-title: Dokument-Auswahl
-description: Die Auswahl einer Dokument modellansichtcontroller gewährt Benutzerzugriff auf Dateien außerhalb einer Anwendung Sandkasten. Es ist ein einfacher Mechanismus zur Freigabe von Dokumenten zwischen apps. Außerdem können komplexere Workflows, da der Benutzer ein einzelnes Dokument mit mehreren Anwendungen bearbeiten können. Dieser Artikel enthält eine Einführung zur Verwendung der Dokument-Auswahl in einem Xamarin.iOS-Anwendung und die Änderungen in Dokumenten mit iCloud zu ihrer Unterstützung erforderlich.
+title: Dokument-Auswahl in Xamarin.iOS
+description: Dieses Dokument beschreibt die iOS-Dokument-Auswahl und erläutert, wie es in Xamarin.iOS verwenden. Einen Blick auf iCloud, Dokumente, allgemeine Setupcode, Dokument-Anbieter-Erweiterungen und dauert.
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: d9b98611c7d269e590ce6fe2ce0270ef71dacf1e
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: efa1b589ad4afe26d8b87c3db1777660b3e27be6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786885"
 ---
-# <a name="document-picker"></a>Dokument-Auswahl
-
-_Die Auswahl einer Dokument modellansichtcontroller gewährt Benutzerzugriff auf Dateien außerhalb einer Anwendung Sandkasten. Es ist ein einfacher Mechanismus zur Freigabe von Dokumenten zwischen apps. Außerdem können komplexere Workflows, da der Benutzer ein einzelnes Dokument mit mehreren Anwendungen bearbeiten können. Dieser Artikel enthält eine Einführung zur Verwendung der Dokument-Auswahl in einem Xamarin.iOS-Anwendung und die Änderungen in Dokumenten mit iCloud zu ihrer Unterstützung erforderlich._
+# <a name="document-picker-in-xamarinios"></a>Dokument-Auswahl in Xamarin.iOS
 
 Die Auswahl einer Dokument können Dokumente apps gemeinsam genutzt werden. Diese Dokumente können in iCloud oder in eine andere app-Verzeichnis gespeichert werden. Dokumente werden über den Satz von freigegebenen [Dokument Anbieter Erweiterungen](~/ios/platform/extensions.md) hat der Benutzer auf seinem Gerät installiert. 
 
@@ -39,7 +38,7 @@ Um die neuen Funktionen von der Auswahl einer Dokument zu implementieren, haben 
 -  iOS-Geräte können den Inhalt des Ordners iCloud Mac OS zugreifen.
 
 > [!IMPORTANT]
-> Apple [bietet Tools](https://developer.apple.com/support/allowing-users-to-manage-data/) Entwickler der Europäischen Union allgemeine Daten Schutz vor (GDPR) ordnungsgemäß verarbeiten können.
+> Apple [stellt Tools zur Verfügung](https://developer.apple.com/support/allowing-users-to-manage-data/), die Entwickler dabei unterstützen, die Datenschutz-Grundverordnung (DSGVO) der Europäischen Union umzusetzen.
 
 ## <a name="what-is-a-document"></a>Was ist ein Dokument?
 

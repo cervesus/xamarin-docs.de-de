@@ -1,19 +1,20 @@
 ---
-title: Testen auf Geräten überwachen
-description: Bereitstellen von Apps auf Ihrer Apple Watch testen
+title: Testen auf Apple Watch-Geräten
+description: Dieses Dokument beschreibt, wie eine WatchOS app zu Testzwecken auf einem tatsächlichen Apple Watch mit Xamarin erstellten bereitgestellt werden. Es wird erläutert, Geräte, bereitstellungsprofile, testen, und stellt einige Tipps zur Problembehandlung.
 ms.prod: xamarin
 ms.assetid: A72A7D38-FAE8-4DD2-843D-54B74C5078D7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: d1d00a4d561551435e7d2333520dc614a79dcad3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a960d81d41ff127fa3316e6190dfbf4881305c02
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790860"
 ---
-# <a name="testing-on-watch-devices"></a>Testen auf Geräten überwachen
+# <a name="testing-on-apple-watch-devices"></a>Testen auf Apple Watch-Geräten
 
 Nachdem Sie ausgeführt haben die [Bereitstellungsschritte](~/ios/watchos/deploy-test/index.md) zum Erstellen von App-IDs und App-Gruppen (falls erforderlich), verwenden Sie die Anweisungen auf dieser Seite können Sie:
 

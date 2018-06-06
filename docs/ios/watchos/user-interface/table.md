@@ -1,18 +1,20 @@
 ---
-title: Table-Steuerelement
+title: WatchOS Table-Steuerelemente in Xamarin
+description: Dieses Dokument beschreibt, wie WatchOS Table-Steuerelemente in Xamarin verwendet wird. Es wird erläutert, Hinzufügen einer Tabelle, eine Zeile hinzufügen, erstellen und Auffüllen von Zeilen, reagieren auf datenabzweigungen und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 7C14126D-9591-4387-A588-3C4521F11C55
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 3f596b424292dd0f4db08429bc7c5d4a885d3954
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: afb8f9a96fa14877cbd0352869e23972719a4480
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791357"
 ---
-# <a name="table-control"></a>Table-Steuerelement
+# <a name="watchos-table-controls-in-xamarin"></a>WatchOS Table-Steuerelemente in Xamarin
 
 Die WatchOS `WKInterfaceTable` Steuerelement ist deutlich einfacher als Gegenstück iOS, jedoch führt eine ähnliche Funktion. Erstellen eine bildlauffähigen Liste mit Zeilen, können benutzerdefinierte Layouts besitzen, und das Reagieren auf um Ereignisse zu berühren.
 

@@ -6,12 +6,13 @@ ms.assetid: F136AAE0-C6D2-4B0F-8F8C-7A6A94877266
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/02/2018
-ms.openlocfilehash: d1fc8a1c511e86615108d1df841c28256f23191f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/30/2018
+ms.openlocfilehash: df359fae545079c7ac1d7106ec86e9297f183f90
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732774"
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>Welche Android SDK-Paketen sollte ich installiere?
 
@@ -42,11 +43,8 @@ Nur für das SDK-Plattform für API 23 installieren müssen.
 Müssen Sie für die API 15 und 23 SDK-Plattformen zu installieren. Beachten Sie, dass Sie nicht benötigen, die API-Ebenen zwischen dem Minimum und dem Ziel installiert (auch wenn Sie Backporting auf diesen API-Ebenen befinden).
 
 ## <a name="system-images"></a>Von Betriebssystemabbildern
-Diese sind nur erforderlich, wenn Sie die Out-of-Box-Android-Emulatoren von Google verwenden möchten. 
 
-- [Den standardemulator konfigurieren](~/android/get-started/installation/android-emulator/index.md)
-
-- [Gewusst wie: beschleunigen Sie die standardemulator](~/android/get-started/installation/android-emulator/index.md)
+Diese sind nur erforderlich, wenn Sie die Out-of-Box-Android-Emulatoren von Google verwenden möchten. Weitere Informationen finden Sie unter [Android-Emulator-Setup](~/android/get-started/installation/android-emulator/index.md)
 
 ## <a name="extras"></a>Extras
 Android SDK Extras sind in der Regel nicht erforderlich. Es ist jedoch hilfreich zu bekannt sein, da sie je nach Ihrer Anwendungsfall erforderlich sein können.

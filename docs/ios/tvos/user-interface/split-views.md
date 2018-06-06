@@ -1,22 +1,20 @@
 ---
-title: Arbeiten mit Split-View-Controller
-description: Dieser Artikel umfasst das Entwerfen und Arbeiten mit Split-View-Controller innerhalb einer Xamarin.tvOS-app.
+title: Arbeiten mit tvos. außerdem wurden Split-View-Controller in Xamarin
+description: Dieses Dokument beschreibt die Arbeit mit tvos. außerdem wurden Teilen von Ansichten in einer mit Xamarin erstellten app. Er bietet einen allgemeinen Überblick über die Split-View-Controller, wie sie mit Storyboards, den Zugriff auf die Ansichten Master- und Detailtabelle und anzeigen und Ausblenden von Masteransicht verwendet.
 ms.prod: xamarin
 ms.assetid: 21248CFB-5A94-4C19-B223-C72E0DC5F1D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 25151eb2929e2bc61dba27a9937ffdf4ee224626
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2dd07cd8a4e92d6d39be50ba670441d965ed4d13
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789430"
 ---
-# <a name="working-with-split-view-controllers"></a>Arbeiten mit Split-View-Controller
-
-_Dieser Artikel umfasst das Entwerfen und Arbeiten mit Split-View-Controller innerhalb einer Xamarin.tvOS-app._
-
+# <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>Arbeiten mit tvos. außerdem wurden Split-View-Controller in Xamarin
 
 Ein Split-View-Controller präsentiert und verwaltet eine Master "und" Detail-View-Controller Seite-an-Seite, auf dem Bildschirm zur gleichen Zeit. Split-View-Controller verwendet werden, persistent, den Fokus erhalten kann Inhalt in die Masteransicht (dem kleineren Bereich auf der linken Seite) dargestellt und im Zusammenhang Details in der Detailansicht (dem größeren Bereich auf der rechten Seite).
 

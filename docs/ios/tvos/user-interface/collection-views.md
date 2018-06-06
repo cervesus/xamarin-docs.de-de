@@ -1,21 +1,20 @@
 ---
-title: Arbeiten mit Auflistungsansichten
-description: Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Auflistungsansichten innerhalb einer Xamarin.tvOS-app.
+title: Arbeiten mit tvos. außerdem wurden Auflistungsansichten in Xamarin
+description: Dieses Dokument beschreibt das Arbeiten mit Auflistungsansichten in einer app für tvos. außerdem wurden mit Xamarin erstellten. Er bedient Auflistung Ansichtslayouts, Zellen und zusätzlichen Ansichten, reagieren auf Ereignisse und vieles mehr erstellen.
 ms.prod: xamarin
 ms.assetid: 5125C4C7-2DDF-4C19-A362-17BB2B079178
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7fa38aa81e5929bdc88ceebd153d86cfcd92f20e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b411ac6bb8d1492511f9e5d2234731ae64c3a82
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789277"
 ---
-# <a name="working-with-collection-views"></a>Arbeiten mit Auflistungsansichten
-
-_Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Auflistungsansichten innerhalb einer Xamarin.tvOS-app._
+# <a name="working-with-tvos-collection-views-in-xamarin"></a>Arbeiten mit tvos. außerdem wurden Auflistungsansichten in Xamarin
 
 Auflistungsansichten ermöglichen eine Gruppe von Inhalt mithilfe von beliebigen Layouts angezeigt werden sollen. Mithilfe der integrierten Unterstützung, ermöglichen sie die einfache Erstellung Raster-ähnliches oder linearen Layouts beim unterstützen auch benutzerdefinierte Layouts.
 
@@ -128,7 +127,7 @@ Führen Sie wir Folgendes:
     [![](collection-views-images/collection09.png "Legen Sie die Klasse den CityCollectionViewCell")](collection-views-images/collection09.png#lightbox)
 1. In der **Registerkarte "Widget"** sicher, dass die **Layout** ist `Flow` und **Scroll Richtung** ist `Vertical` für die Auflistungsansicht: 
 
-    [![](collection-views-images/collection10.png "Die Registerkarte "Widget"")](collection-views-images/collection10.png#lightbox)
+    [![](collection-views-images/collection10.png "Die Registerkarte \"Widget\"")](collection-views-images/collection10.png#lightbox)
 1. Wählen Sie die Zelle der Auflistung anzeigen, und legen seine **Identität** auf `CityCell` in der **Registerkarte "Widget"**: 
 
     [![](collection-views-images/collection11.png "Legen Sie die Identität auf CityCell")](collection-views-images/collection11.png#lightbox)
@@ -166,7 +165,7 @@ Führen Sie wir Folgendes:
     [![](collection-views-images/collection09vs.png "Legen Sie die Klasse den CityCollectionViewCell")](collection-views-images/collection09vs.png#lightbox)
 1. In der **Registerkarte "Widget"** sicher, dass die **Layout** ist `Flow` und **Scroll Richtung** ist `Vertical` für die Auflistungsansicht: 
 
-    [![](collection-views-images/collection10vs.png "Registerkarte "%tdas Widget"")](collection-views-images/collection10vs.png#lightbox)
+    [![](collection-views-images/collection10vs.png "Registerkarte \"%tdas Widget\"")](collection-views-images/collection10vs.png#lightbox)
 1. Wählen Sie die Zelle der Auflistung anzeigen, und legen seine **Identität** auf `CityCell` in der **Registerkarte "Widget"**: 
 
     [![](collection-views-images/collection11vs.png "Legen Sie die Identität auf CityCell")](collection-views-images/collection11vs.png#lightbox)

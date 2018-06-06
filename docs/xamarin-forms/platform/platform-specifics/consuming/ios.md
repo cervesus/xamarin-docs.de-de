@@ -6,12 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2018
-ms.openlocfilehash: cc6cb282565e08f7ce4401e5317fba518a74a8f3
-ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
+ms.date: 05/30/2018
+ms.openlocfilehash: 762a604186cf8657ce2f3732081cd82612b1b7ef
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732995"
 ---
 # <a name="ios-platform-specifics"></a>iOS-Plattform-Besonderheiten
 
@@ -29,6 +30,7 @@ Bei iOS kann enthält Xamarin.Forms folgenden Plattform-Angaben:
 - Festlegen der Sichtbarkeit der Status für eine [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). Weitere Informationen finden Sie unter [Festlegen der Sichtbarkeit der Status auf einer Seite](#set_status_bar_visibility).
 - Steuern, ob eine [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) behandelt eine Touch-Geste oder übergibt es an seinen Inhalt. Weitere Informationen finden Sie unter [verzögern Content Fingereingaben in einem ScrollView](#delay_content_touches).
 - Festlegen der Trennzeichen für ein [ `ListView` ](xref:Xamarin.Forms.ListView). Weitere Informationen finden Sie unter [die Trennzeichen festlegen, auf eine Listenansicht](#listview-separatorstyle).
+- Deaktivieren Sie ältere Farbe-Modus auf einem unterstützten [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [deaktivieren Farbe Legacymodus](#legacy-color-mode).
 
 <a name="blur" />
 
@@ -506,6 +508,47 @@ Das Ergebnis ist, die ein angegebenes [ `SeparatorStyle` ](xref:Xamarin.Forms.Pl
 
 > [!NOTE]
 > Nachdem die Trennzeichen festgelegt wurde, `FullWidth`, es kann nicht geändert werden, an `Default` zur Laufzeit.
+
+<a name="legacy-color-mode" />
+
+## <a name="disabling-legacy-color-mode"></a>Deaktivieren die Vorgängerversion Färbung aktiviert
+
+Einige der Xamarin.Forms Ansichten an eine ältere Färbung aktiviert Funktionen. In diesem Modus kann bei der [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) -Eigenschaft der Ansicht auf festgelegt ist `false`, die Sicht werden die Farben, die vom Benutzer mit der systemeigenen Standardfarben für den deaktivierten Zustand überschrieben. Für die Abwärtskompatibilität Kompatibilität diese ältere Färbung aktiviert das Standardverhalten für die unterstützten Ansichten bleibt.
+
+Diese plattformspezifischen wird dieser älteren Färbung aktiviert, deaktiviert, sodass Farben für eine Sicht vom Benutzer festgelegt bleiben, auch wenn die Sicht deaktiviert ist. Sie wird in XAML verwendet, durch Festlegen der [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsLegacyColorModeEnabledProperty) -Eigenschaft auf `false`:
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        ...
+        <Button Text="Button"
+                TextColor="Blue"
+                BackgroundColor="Bisque"
+                ios:VisualElement.IsLegacyColorModeEnabled="False" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Alternativ können sie in c# mithilfe der fluent-API genutzt werden:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+_legacyColorModeDisabledButton.On<iOS>().SetIsLegacyColorModeEnabled(false);
+```
+
+Die `VisualElement.On<iOS>` Methode gibt an, dass dieser plattformspezifische nur auf iOS ausgeführt wird. Die [ `VisualElement.SetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Boolean)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace wird verwendet, um Kontrolle, ob die legacy-Farben-Modus deaktiviert ist. Darüber hinaus die [ `VisualElement.GetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})) Methode kann verwendet werden, um zurück, ob die ältere Farbe Modus deaktiviert ist.
+
+Das Ergebnis ist, dass die ältere Färbung aktiviert deaktiviert werden kann, Farben, die vom Benutzer für eine Sicht festgelegt selbst bleiben, wenn die Sicht deaktiviert ist:
+
+![](ios-images/legacy-color-mode-disabled.png "Ältere Farbe Modus deaktiviert")
+
+> [!NOTE]
+> Beim Festlegen einer [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) für eine Sicht, die ältere Färbung aktiviert vollständig ignoriert. Weitere Informationen zu visuelle Zustände, finden Sie unter [der Xamarin.Forms visuellen Status-Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
 
 ## <a name="summary"></a>Zusammenfassung
 

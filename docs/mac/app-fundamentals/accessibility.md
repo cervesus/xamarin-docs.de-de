@@ -1,17 +1,18 @@
 ---
 title: Zugriff auf macOS
-description: Dieses Handbuch beschreibt die Features für die Erstellung einer Xamarin.Mac-Anwendung.
+description: Dieses Dokument beschreibt die Barrierefreiheitsfunktionen in einer app Xamarin.Mac MacOS arbeiten. Es wird erläutert, beschreibt Benutzeroberflächenelemente in Storyboards und Code, benutzerdefinierte Steuerelemente und Tests Eingabehilfen.
 ms.prod: xamarin
 ms.assetid: D7F4892B-501A-4271-A7E0-BDD1586B63AD
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: ad04e0276c046f133a6f71abb38912343d2d86b6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b2406654a46428e8c22284f5c7d114b07a463251
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791162"
 ---
 # <a name="accessibility-on-macos"></a>Zugriff auf macOS
 
@@ -75,7 +76,7 @@ Beim ersten es gestartet wird, die **Eingabehilfen Inspektor** benötigen die Be
 
 Der Bildschirm "Einstellungen" (falls auf der linken unteren Ecke erforderlich) und Teilstriche Entsperren der **Eingabehilfen Inspektor**:
 
-![Bildschirm "Einstellungen" Aktivieren von Eingabehilfen-Inspektor](accessibility-images/accessibility-inspector-2.png "Bildschirm "Einstellungen" Aktivieren von Eingabehilfen-Inspektor")
+![Bildschirm "Einstellungen" Aktivieren von Eingabehilfen-Inspektor](accessibility-images/accessibility-inspector-2.png "Bildschirm \"Einstellungen\" Aktivieren von Eingabehilfen-Inspektor")
 
 Nach der Aktivierung wird der Inspektor angezeigt, als ein unverankertes Fenster, das auf dem Bildschirm verschoben werden kann. Der folgende Screenshot zeigt den Inspektor neben einem Beispiel-app für Mac ausgeführt wird. Wie das Fenster der Mauszeiger bewegt wird, werden der Inspektor alle zugegriffen werden kann Eigenschaften der einzelnen Steuerelemente angezeigt:
 

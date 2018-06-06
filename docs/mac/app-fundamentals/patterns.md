@@ -1,19 +1,20 @@
 ---
-title: Allgemeine Muster und Ausdrücke
-description: Dieses Dokument beschreibt das Model View Controller-Muster, Quelle und des Delegats Datenmuster und Protokolle.
+title: Allgemeine Muster und Idiome in Xamarin.Mac
+description: Dieses Dokument beschreibt allgemeiner Entwurfsmuster, die beim Erstellen von Xamarin.Mac apps verwendet. Es wird erläutert, das Model View Controller-Muster, Quelle und des Delegats Datenmuster und Protokolle.
 ms.prod: xamarin
 ms.assetid: BF0A3517-17D8-453D-87F7-C8A34BEA8FF5
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/17/2016
-ms.openlocfilehash: cf499c555ddbefbdb5a7fae3ae8929a17e0d0cd7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f6bba5575edf2dcbddbd354b590e03f9fed06291
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791536"
 ---
-# <a name="common-patterns-and-idioms"></a>Allgemeine Muster und Ausdrücke
+# <a name="common-patterns-and-idioms-in-xamarinmac"></a>Allgemeine Muster und Idiome in Xamarin.Mac
 
 In der gesamten die Apple-APIs über c# verfügbar gemacht sind bestimmte Idiome und Muster immer wieder. Wenn Sie Erfahrung mit der Programmierung mit Xamarin.iOS haben, können diese bekannt vorkommen. Dokumentation wird häufig auf diese Muster und Idiome wiederholt, verwiesen, damit über ein gutes Verständnis davon können Sie der Dokumentation sinnvoll sein, das sich befindet.
 

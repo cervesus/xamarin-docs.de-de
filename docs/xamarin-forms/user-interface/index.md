@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 3485a7ebf9c54c2aa084dd11f32cd028cbc68aff
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 84106cf8f699616fae772a6f149681840abca0e5
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733047"
 ---
 # <a name="user-interface"></a>Benutzeroberfläche
 
@@ -24,6 +25,10 @@ Xamarin.Forms enthält einen eigenen Animation-Infrastruktur, die zum Erstellen 
 ## <a name="boxviewboxviewmd"></a>[BoxView](boxview.md)
 
 Die `BoxView` ist nur ein einfaches farbiges Rechteck, jedoch für dekorativen Elemente rudimentäre Grafiken sowie zum Abrufen von interaktiv interaktive Fingereingabe verwendet werden können.
+
+## <a name="buttonbuttonmd"></a>[Button](button.md) (Schaltfläche)
+
+Die `Button` reagiert auf eine tippen oder klicken Sie auf, die eine Anwendung zum Ausführen einer bestimmten Aufgabe weiterleitet.
 
 ## <a name="colorscolorsmd"></a>[Farben](colors.md)
 
@@ -85,7 +90,7 @@ Xamarin.Forms verfügt über mehrere Ansichten zur Darstellung und Empfangen von
 
 Xamarin.Forms-Designs definieren ein bestimmtes Erscheinungsbild für Standardsteuerelemente. Nachdem Sie ein Design Ressourcenwörterbuch für die Anwendung hinzugefügt haben, ändert sich die Darstellung der Standardsteuerelemente.
 
-## <a name="visual-state-managervisual-state-managermd"></a>[Visual-Status-Manager](visual-state-manager.md)
+## <a name="visual-state-managervisual-state-managermd"></a>[Manager für den visuellen Zustand](visual-state-manager.md)
 
 Die visuellen Status-Manager bietet eine strukturierte Methode zum Auslösen von Änderungen in der Benutzeroberfläche von Code, z. B. Layout, die Änderungen in der geräteausrichtung oder die Größe anpasst.
 

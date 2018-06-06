@@ -1,19 +1,20 @@
 ---
 ms.assetid: 65F6A634-9CB0-4BB8-A013-7CA0334F6100
 title: Plattformübergreifende für Desktop-Entwickler
-description: Xamarin ermöglicht Ihnen das Erstellen von apps für Windows, Android, iOS und Mac mithilfe Ihrer Kenntnisse Windows Forms- oder WPF über.
+description: Dieses enthält Dokumentenlinks zu verschiedenen Handbüchern, die für WPF und Windows Forms-Entwickler Xamarin.Forms beschreiben. Die verknüpfte Inhalte untersucht Anwendungslebenszyklus, Benutzeroberflächen-Steuerelemente, Anleitungen und Beispielen portieren.
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 0794d931dd57971efcbd0ea5b42159e3524ea6b0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 21c74b8c0ccaffb2b3b8205a3bdda9101b99f072
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34779953"
 ---
 # <a name="cross-platform-for-desktop-developers"></a>Plattformübergreifende für Desktop-Entwickler
 
-Dieser Abschnitt enthält Informationen, damit von WPF und Windows.Forms-Entwicklern vertraut, mobile app-Entwicklung mit Xamarin, indem Querverweise auf ihre vorhandenen Kenntnisse und mobile Idiome und Beispielen für desktop-apps auf Mobile portieren.
+Dieser Abschnitt enthält Informationen, um WPF und Windows Forms-Entwickler beim mobile app-Entwicklung mit Xamarin vertraut machen, indem Sie ihre vorhandenen Kenntnisse Querverweisen unterstützen und Erfahrung mit mobile Idiome und mit Beispielen Portieren von desktop-apps auf mobile.
 
 ## <a name="app-lifecycle-comparisonlifecyclemd"></a>[Vergleich der App-Lebenszyklus](lifecycle.md)
 

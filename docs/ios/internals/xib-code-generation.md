@@ -1,18 +1,20 @@
 ---
-title: .XIB Codegenerierung
+title: Codegenerierung in Xamarin.iOS .xib
+description: Dieses Dokument beschreibt, wie Xamarin.iOS Code aus, um zu C#-, visual Steuerelemente programmgesteuert zugänglich machen Zuordnungsdateien .xib generiert.
 ms.prod: xamarin
 ms.assetid: 365991A8-E07A-0420-D28E-BC4D32065E1A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: b887dbf09693452f62f744669ad9713927020cea
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 064e17393747a36cd761cb2464e3239cfc17141c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786147"
 ---
-# <a name="xib-code-generation"></a>.XIB Codegenerierung
+# <a name="xib-code-generation-in-xamarinios"></a>Codegenerierung in Xamarin.iOS .xib
 
 > [!IMPORTANT]
 >  Dieses Dokument erläutert die Visual Studio für Mac Integration in Xcodes Benutzeroberflächen-Generator nur, wie Aktionen und Ausgänge nicht in die Xamarin-Designer für iOS verwendet werden. Weitere Informationen zu den iOS-Designer, überprüfen Sie die [iOS Designer](~/ios/user-interface/designer/index.md) Dokument.
@@ -31,7 +33,7 @@ Benutzerdefinierte Klassen definiert werden können, einem **.xib** -Datendatei 
 
 ## <a name="generating-code"></a>Generieren von Code
 
-Für eine beliebige **{0} .xib** -Datei mit dem Buildvorgang *Seite*, wenn eine **{0}.xib.designer.cs** Datei auch im Projekt vorhanden ist, generiert Visual Studio für Mac partielle Klassen in der Designer-Datei für alle Benutzerklassen sie in finden der **.xib** -Datei mithilfe von Eigenschaften für die Steckdosen und partielle Methoden für alle Aktionen. Codegenerierung wird einfach durch das Vorhandensein dieser Datei aktiviert.
+Für eine beliebige  **{0}.xib** -Datei mit dem Buildvorgang *Seite*, wenn eine  **{0}. xib.designer.cs** Datei auch vorhanden ist, im Visual Studio für Mac-Projekt partielle Klassen in die Designer-Datei für alle Benutzerklassen sie im finden generiert die **.xib** -Datei mithilfe von Eigenschaften für die Steckdosen und partielle Methoden für alle Aktionen. Codegenerierung wird einfach durch das Vorhandensein dieser Datei aktiviert.
 
 Die Designer-Datei wird automatisch aktualisiert, wenn die **.xib** -Konfigurationsdatei geändert und Visual Studio für Mac erhält den Fokus wieder. Die Designer-Datei sollte nicht manuell geändert werden, wie Änderungen überschrieben nächsten Visual Studio für Mac-Updates der Datei werden.
 
@@ -45,11 +47,11 @@ Klassen können nicht definiert werden, in mehr als einer **.xib**, oder sie kö
 
 ## <a name="non-designer-class-parts"></a>Teile der nicht-Designer-Klasse
 
-Partielle Designerklassen dürfen nicht als verwendet werden soll-ist. Steckdosen privat sind, und keine Basisklasse angegeben ist. Es wird erwartet, dass jede Klasse einen entsprechende "nicht-Designer"-Klasse Teil in einer anderen Datei hat die legt der Basisklasse, verwendet oder die Steckdosen verfügbar macht, und definiert die Konstruktoren, die zum Instanziieren der Klasse von systemeigenem Code, beim Laden der erforderlichsind**.xib**. Die Standardeinstellung **.xib** Vorlagen hierzu, jedoch für jede weiteren benutzerdefinierten Klassen definieren einer **.xib**, müssen Sie das Webpart nicht-Designer manuell hinzufügen.
+Partielle Designerklassen dürfen nicht als verwendet werden soll-ist. Steckdosen privat sind, und keine Basisklasse angegeben ist. Es wird erwartet, dass jede Klasse einen entsprechende "nicht-Designer"-Klasse Teil in einer anderen Datei hat die legt der Basisklasse, verwendet oder die Steckdosen verfügbar macht, und definiert die Konstruktoren, die zum Instanziieren der Klasse von systemeigenem Code, beim Laden der erforderlichsind **.xib**. Die Standardeinstellung **.xib** Vorlagen hierzu, jedoch für jede weiteren benutzerdefinierten Klassen definieren einer **.xib**, müssen Sie das Webpart nicht-Designer manuell hinzufügen.
 
 Der Grund hierfür ist die Notwendigkeit der Flexibilität. Beispielsweise könnte mehrere Klassen von CodeBehind Unterklasse, die eine gemeinsame abstrakte Klasse, die Unterklassen von IB als Unterklasse werden die Klasse verwaltet.
 
-Herkömmliche diese in den versetzt ist eine **{0}.xib.cs** neben der Datei die **{0}.xib.designer.cs** Designer-Datei.
+Diese in den versetzt konventionellen ist eine  **{0}. xib.cs** neben der Datei die  **{0}. xib.designer.cs** Designer-Datei.
 
 <a name="generated" />
 

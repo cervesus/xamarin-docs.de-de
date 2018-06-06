@@ -1,5 +1,5 @@
 ---
-title: Databases
+title: Datenbanken in Xamarin.Mac
 description: Dieser Artikel behandelt mit Codierung mit Schlüssel-Wert und Schlüssel-Wert prüfen, um die Datenbindung zwischen SQLite-Datenbanken und die Elemente der Benutzeroberfläche in Xcodes Benutzeroberflächen-Generator zu ermöglichen. Es werden auch mithilfe der SQLite.NET ORM SQLite Datenzugriff behandelt.
 ms.prod: xamarin
 ms.assetid: 44FAFDA8-612A-4E0F-8BB4-5C92A3F4D552
@@ -7,17 +7,18 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 33c1ab7092669bb1dbd4e7bfae628b58a0bf3726
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3bc40824396aba78b2645bf9701e8e0e659c8b0a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791991"
 ---
-# <a name="databases"></a>Databases
+# <a name="databases-in-xamarinmac"></a>Datenbanken in Xamarin.Mac
 
 _Dieser Artikel behandelt mit Codierung mit Schlüssel-Wert und Schlüssel-Wert prüfen, um die Datenbindung zwischen SQLite-Datenbanken und die Elemente der Benutzeroberfläche in Xcodes Benutzeroberflächen-Generator zu ermöglichen. Es werden auch mithilfe der SQLite.NET ORM SQLite Datenzugriff behandelt._
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 Bei der Arbeit mit c# und .NET in einer Anwendung Xamarin.Mac haben Sie Zugriff auf die gleichen SQLite-Datenbanken, die eine Xamarin.iOS oder Xamarin.Android Anwendung zugreifen können.
 

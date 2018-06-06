@@ -6,13 +6,14 @@ ms.assetid: b9009db8-e716-43aa-b40e-6f28a8eb1b82
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: 8a35c8e0cd03d5ff07405647b08275ef9ca3758d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: d7aeac2f433e8fdf231f5887f1537f15e2bd1976
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782221"
 ---
-# <a name="why-doesnt-visual-studio-include-my-referenced-library-project-in-my-build"></a>Visual Studio nicht warum sollte ich mein Projekt referenzierte Bibliothek in meinen Build integrieren
+# <a name="why-doesnt-visual-studio-include-my-referenced-library-project-in-my-build"></a>Integrieren Visual Studio nicht warum sollte ich mein Projekt referenzierte Bibliothek in meinen Build?
 
 Visual Studio verwendet die **Configuration Manager** um zu bestimmen, welche Projekte in einer Projektmappe automatisch in einer bestimmten Konfiguration der Erstellung oder Bereitstellung enthalten sind.
 

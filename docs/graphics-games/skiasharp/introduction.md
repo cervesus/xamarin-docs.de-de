@@ -1,16 +1,17 @@
 ---
 title: Eine Einführung in die SkiaSharp
-description: Dies bietet eine kurze Einführung in die Konzepte hinter SkiaSharp
+description: Dieses Dokument enthält eine kurze Einführung in SkiaSharp Kernkonzepte. Insbesondere wird abrufen und Zeichnen auf eine SKCanvas beschrieben.
 ms.prod: xamarin
 ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: 9e88009cc768e71336c48eb1fab5c5c4c8afa1a9
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: a42836a49560a73b9e35ef97bfb2ba83d15812e3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783060"
 ---
 # <a name="an-introduction-to-skiasharp"></a>Eine Einführung in die SkiaSharp
 

@@ -1,20 +1,19 @@
 ---
-title: 'Case Study: Tasky'
-description: Dieses Dokument beschreibt, wie die Prinzipien des Erstellen von plattformübergreifenden Anwendungen in der beispielanwendung Tasky Portable angewendet wurden. Es berührt auf mobile Anwendung entwerfen, Schreiben von gemeinsamen Code für die erneute Verwendung, und implementieren plattformspezifischen Projekte, die auf dem iOS, Android und Windows Phone-Plattformen abzielen.
+title: 'Plattformübergreifenden App Case Study: Tasky'
+description: Dieses Dokument beschreibt, wie die Tasky Portable-Beispiel-Anwendung entwickelt wurde, und wie eine plattformübergreifende mobile-Anwendung erstellt. Es wird erläutert, des app Anforderungen, Schnittstelle, Datenmodell, Kernfunktionalität, Implementierung und mehr.
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 1f8325bbc6b3f8aa40a08ca2c57605544ab0bc85
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 48650445d06ad3bc7ca6d4da84c9b8837f8a0f88
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782234"
 ---
-# <a name="case-study-tasky"></a>Case Study: Tasky
-
-_Dieses Dokument beschreibt, wie die Prinzipien des Erstellen von plattformübergreifenden Anwendungen in der beispielanwendung Tasky Portable angewendet wurden. Es berührt auf mobile Anwendung entwerfen, Schreiben von gemeinsamen Code für die erneute Verwendung, und implementieren plattformspezifischen Projekte, die auf dem iOS, Android und Windows Phone-Plattformen abzielen._
+# <a name="cross-platform-app-case-study-tasky"></a>Plattformübergreifenden App Case Study: Tasky
 
 *Tasky* *Portable* ist eine einfache Aufgabe List-Anwendung. Dieses Dokument erläutert, wie es entwickelt und erstellt, nach die Unterstützung von wurde die [Erstellen von plattformübergreifenden Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) Dokument. Die folgende Bereiche behandelt:
 
@@ -480,7 +479,7 @@ Die resultierenden Anwendungen werden auf jeder Plattform wie folgt aussehen:
 
 Die Anwendung verwendet die iOS-Standard-Benutzeroberflächendesign, z. B. die Schaltfläche "hinzufügen" in der Navigationsleiste positioniert wird, und unter Verwendung der integrierten **Pluszeichen (+)** Symbol. Darüber hinaus verwendet die standardmäßige `UINavigationController` Schaltfläche "zurück" Verhalten "und" unterstützt "Streifen löschen" in der Tabelle.
 
- [![](case-study-tasky-images/ios-taskylist.png "Außerdem verwendet das Standardverhalten für UINavigationController Schaltfläche "zurück" und unterstützt Streifen zu löschen, in der Tabelle") ](case-study-tasky-images/ios-taskylist.png#lightbox) [ ![ ] (case-study-tasky-images/ios-taskylist.png "darüber hinaus verwendet die standardmäßige UINavigationController Sichern Sie die Schaltfläche Verhalten und unterstützt Streifen zu löschen, in der Tabelle")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [![](case-study-tasky-images/ios-taskylist.png "Außerdem verwendet das Standardverhalten für UINavigationController Schaltfläche \"zurück\" und unterstützt Streifen zu löschen, in der Tabelle") ](case-study-tasky-images/ios-taskylist.png#lightbox) [ ![ ] (case-study-tasky-images/ios-taskylist.png "darüber hinaus verwendet die standardmäßige UINavigationController Sichern Sie die Schaltfläche Verhalten und unterstützt Streifen zu löschen, in der Tabelle")](case-study-tasky-images/ios-taskylist.png#lightbox)
 
  <a name="Android" />
 
@@ -488,7 +487,7 @@ Die Anwendung verwendet die iOS-Standard-Benutzeroberflächendesign, z. B. die S
 
 Die Android-app verwendet die integrierte Steuerelemente, einschließlich des integrierten Layouts für Zeilen, die erfordern einen Takt"angezeigt. Das Hardwaresystem/Back Verhalten wird zusätzlich zu den auf dem Bildschirm Zurückschaltfläche unterstützt.
 
- [![](case-study-tasky-images/android-taskylist.png "Das Hardwaresystem/Back Verhalten wird unterstützt, zusätzlich zu den auf dem Bildschirm Zurückschaltfläche")](case-study-tasky-images/android-taskylist.png#lightbox)[![](case-study-tasky-images/android-taskylist.png "das Hardwaresystem/Back Verhalten wird unterstützt, zusätzlich zu einer auf dem Bildschirm Schaltfläche "zurück"")](case-study-tasky-images/android-taskylist.png#lightbox)
+ [![](case-study-tasky-images/android-taskylist.png "Das Hardwaresystem/Back Verhalten wird unterstützt, zusätzlich zu den auf dem Bildschirm Zurückschaltfläche")](case-study-tasky-images/android-taskylist.png#lightbox)[![](case-study-tasky-images/android-taskylist.png "das Hardwaresystem/Back Verhalten wird unterstützt, zusätzlich zu einer auf dem Bildschirm Schaltfläche \"zurück\"")](case-study-tasky-images/android-taskylist.png#lightbox)
 
  <a name="Windows_Phone" />
 

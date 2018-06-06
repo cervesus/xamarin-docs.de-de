@@ -1,5 +1,6 @@
 ---
 title: Xamarin.iOS-Fehler
+description: Dieses Dokument beschreibt die verschiedenen von Mtouch verwendetes Tool zum Bündeln von Xamarin.iOS Anwendungen generierten Fehler. Fehler sind nach Code sortiert und eine vollständige Beschreibung angegeben.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9F76162B-D622-45DA-996B-2FBF8017E208
@@ -7,11 +8,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 71cddc07863002a887cada2bb0db0f8d25fd1a17
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: e9332ba34f113f56859065c74c24c116a331eceb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789446"
 ---
 # <a name="xamarinios-errors"></a>Xamarin.iOS-Fehler
 
@@ -581,7 +583,7 @@ Die Assembly, die in der Fehlermeldung genannten ist mehrmals in – Assembly-Bu
 
 Die Assemblys, die in der Fehlermeldung genannten wurden in Konflikt stehende Build-Ziele.
 
-Beispiel:
+Zum Beispiel:
 
     --assembly-build-target:Assembly1.dll=framework=MyBinary --assembly-build-target:Assembly2.dll=dynamiclibrary=MyBinary
 
@@ -593,7 +595,7 @@ In diesem Beispiel wird versucht, eine dynamische Bibliothek sowie ein Framework
 
 Die Assemblys, die in der Fehlermeldung genannten werden alle in eine einzelne statische Objekt kompiliert. Dies ist nicht zulässig, die an ein anderes statisches Objekt muss jede Assembly kompiliert werden.
 
-Beispiel:
+Zum Beispiel:
 
     --assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
 
@@ -2308,7 +2310,7 @@ Dieser Fehler wird gemeldet, nur zusammen mit [MT5212](#MT5212). Finden Sie unte
 
 ### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214: Verknüpfen von systemeigenen fehlgeschlagen ist, nicht definiertes Symbol: *. Dieses Symbol wurde verwiesen, wenn das verwaltete Element *. Stellen Sie sicher, dass alle erforderlichen Frameworks verwiesen wird und systemeigene Bibliotheken verknüpft wurden.
 
-Dieser Fehler wird gemeldet, wenn der verwaltete Code P/Invoke auf einer nativen Methode enthält, die nicht vorhanden ist. Beispiel:
+Dieser Fehler wird gemeldet, wenn der verwaltete Code P/Invoke auf einer nativen Methode enthält, die nicht vorhanden ist. Zum Beispiel:
 
 ```csharp
 using System.Runtime.InteropServices;

@@ -1,5 +1,5 @@
 ---
-title: Benutzerdefinierte Dokumenteigenschaften Symbole
+title: Benutzerdefinierte Dokumenteigenschaften Symbole in Xamarin.iOS
 description: Dieser Artikel behandelt die einschließlich und verwalten ein Standardimage-Medienobjekt in einem Xamarin.iOS-app als einen benutzerdefinierten Typ Dokumentsymbol verwendet werden soll.
 ms.prod: xamarin
 ms.assetid: 7A3F3C94-2578-4F53-9B8E-25714F48BDD6
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/23/2017
-ms.openlocfilehash: b369667bd728f7c8b6e8bcfed9cf5bca2916bf69
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 415500050e4e957ca635c4b18004716dd44a162d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784148"
 ---
-# <a name="custom-document-icons"></a>Benutzerdefinierte Dokumenteigenschaften Symbole
+# <a name="custom-document-icons-in-xamarinios"></a>Benutzerdefinierte Dokumenteigenschaften Symbole in Xamarin.iOS
 
 _Dieser Artikel behandelt die einschließlich und verwalten ein Standardimage-Medienobjekt in einem Xamarin.iOS-app als einen benutzerdefinierten Typ Dokumentsymbol verwendet werden soll._
 
@@ -28,13 +29,13 @@ Symbole können für verschiedene Größen, optimiert für die verschiedenen Lö
 
 Verwenden Sie diese Werte in Visual Studio für Mac zuzuweisen der **Dokumenttypen** Handlerbereich unter dem der **erweitert** Registerkarte die `Info.plist` -Editor, um den Dokumenttyp hinzufügen und Bildsymbole zuweisen. Hier ist z. B. einen Screenshot der Registrierung für PDF-Unterstützung:
 
- [![](custom-document-types-images/18.png "Abschnitt Dokumenttypen unter der Registerkarte "Erweitert" im Editor "Info.plist"")](custom-document-types-images/18.png#lightbox)
+ [![](custom-document-types-images/18.png "Abschnitt Dokumenttypen unter der Registerkarte \"Erweitert\" im Editor \"Info.plist\"")](custom-document-types-images/18.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Verwenden, um diese Werte in Visual Studio zum Zuweisen der **Dokumenttypen** Handlerbereich unter dem der **erweitert** Registerkarte die `Info.plist`:
 
- ![](custom-document-types-images/doc01w.png "Öffnen Sie den Abschnitt Dokumenttypen unter der Registerkarte "Erweitert"")
+ ![](custom-document-types-images/doc01w.png "Öffnen Sie den Abschnitt Dokumenttypen unter der Registerkarte \"Erweitert\"")
 
 Klicken Sie auf die **Dokumenttyp hinzufügen** Schaltfläche aus, und geben Sie die erforderlichen Felder:
 

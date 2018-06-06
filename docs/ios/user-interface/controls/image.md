@@ -1,18 +1,20 @@
 ---
-title: Anzeigen von Bildern
+title: Anzeigen von Bildern mit Xamarin.iOS
+description: Dieses Dokument beschreibt die Vorgehensweise beim Anzeigen von Bildern in Xamarin.iOS. Es werden die Bilder hinzufügen, um eine app entweder programmgesteuert oder über das iOS-Designer behandelt.
 ms.prod: xamarin
 ms.assetid: 67CA8DB6-769D-42BB-A137-3AF933789FE1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 406cfe813cbb58111769203f3b6c3fb0c2edad3c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f42cc5e4ab26c4c53d96e96420cbbba8036d6b5d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789829"
 ---
-# <a name="displaying-images"></a>Anzeigen von Bildern
+# <a name="displaying-images-with-xamarinios"></a>Anzeigen von Bildern mit Xamarin.iOS
 
 Hinzufügen von Bildern auf Ihre app sind zwei Schritte erforderlich: Fügen Sie zunächst die Bilder dem Projekt; Anschließend fügen Sie Steuerelemente und Code, um sie auf einem Bildschirm anzuzeigen. Finden Sie in der [arbeiten mit Bildern](~/ios/app-fundamentals/images-icons/index.md) Artikel ausführlichere Abdeckung des Bilds in Xamarin.iOS behandeln.
 
@@ -36,7 +38,7 @@ Um eine Bilddatei dem Projekt hinzuzufügen, zunächst mit der rechten Maustaste
 
 Wählen Sie das Bild (oder Bilder) in das Standarddialogfeld eingeschlossen werden sollen. Die Standardeinstellung Buildvorgang Bilder werden **BundleResource** – dieser Wert nicht überschrieben werden, sofern Sie keinen bestimmten Grund haben.
 
- [![](image-images/image32a.png "Dateien-Dialogfeld "hinzufügen"")](image-images/image32a.png#lightbox)
+ [![](image-images/image32a.png "Dateien-Dialogfeld \"hinzufügen\"")](image-images/image32a.png#lightbox)
 
 Das Bild wird hinzugefügt werden, auf das Projekt und geladen und im Code angezeigt werden kann. Diese bildschirmabbildung zeigt ein Bild, ein Projekt für iOS-Anwendung hinzugefügt:
 

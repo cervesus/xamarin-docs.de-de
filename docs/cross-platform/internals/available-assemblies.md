@@ -1,20 +1,19 @@
 ---
 title: Verfügbaren Assemblys
-description: Verfügbaren Assemblys in Xamarin.Mac, Xamarin.iOS und Xamarin.Android
+description: Dieses Dokument führt die Assemblys, die für die Verwendung in Xamarin.Mac, Xamarin.iOS und Xamarin.Android verfügbar. Es wird auch in der Dokumentation zu .NET Standardbibliotheken und portablen Klassenbibliotheken verknüpft.
 ms.prod: xamarin
 ms.assetid: AEF4ED0E-391F-4FA4-9F18-842BC24C272D
 author: asb3993
 ms.author: amburns
 ms.date: 03/13/2018
-ms.openlocfilehash: ef1dde061ffce4082922cc2eb2af1ae9b045aedd
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b73a818d3864c7c4d1d776e104d95090e87f5877
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781906"
 ---
 # <a name="available-assemblies"></a>Verfügbaren Assemblys
-
-_Verfügbaren Assemblys in Xamarin.Mac, Xamarin.iOS und Xamarin.Android_
 
 Xamarin.iOS Xamarin.Android und Xamarin.Mac alle im Lieferumfang von mehr als einem Dutzend Assemblys. Ebenso wie Silverlight eine erweiterte Teilmenge der desktop .NET-Assemblys ist, ist Xamarin-Plattformen auch eine erweiterte Teilmenge von mehreren Silverlight und desktop .NET-Assemblys.
 

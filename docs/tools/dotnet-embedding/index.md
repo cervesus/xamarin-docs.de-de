@@ -1,16 +1,17 @@
 ---
 title: Einbetten von .NET
-description: .NET Einbetten von vorhandenem .NET Code (C#-, F#- usw.), die von anderen Programmiersprachen genutzt werden können
+description: Können .NET Einbetten von vorhandenem .NET Code (C#-, f# und andere) von in anderen Programmiersprachen geschriebenem Code verarbeitet werden.
 ms.prod: xamarin
 ms.assetid: 617C38CA-B921-4A76-8DFC-B0A3DF90E48A
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f6edf25faa00bc7c90a52b76a6e90168ccd85b32
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 16f59498a49d10a43e04989136d8835bf78bd89d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793116"
 ---
 # <a name="net-embedding"></a>Einbetten von .NET
 
@@ -24,7 +25,7 @@ Einbetten von .NET basiert auf der [Embeddinator 4000](https://github.com/mono/E
 
 ## <a name="environments-and-languages"></a>Umgebungen und Sprachen
 
-Das Tool ist sowohl Beachten Sie die Umgebung aus, die verwendet werden, sowie die Sprache, die sie nutzen.   Beispielsweise lässt die iOS-Plattform nicht Just-in-Time (JIT)-Kompilierung, damit .NET einbetten statisch .NET Code in systemeigenen Code kompiliert wird, die in iOS verwendet werden kann.  Diese Enviroments wir einen Abruf JIT kompiliert, und anderen Umgebungen erlauben JIT-Kompilierung.
+Das Tool ist sowohl Beachten Sie die Umgebung aus, die verwendet werden, sowie die Sprache, die sie nutzen.   Beispielsweise lässt die iOS-Plattform nicht Just-in-Time (JIT)-Kompilierung, damit .NET einbetten statisch .NET Code in systemeigenen Code kompiliert wird, die in iOS verwendet werden kann.  In diesen Umgebungen, die wir einen JIT-Kompilierung Abruf, und anderen Umgebungen erlauben JIT-Kompilierung.
 
 Verschiedene Verbraucher Sprache, werden unterstützt, sodass er .NET Code als idiomatische Code in der Zielsprache bereitstellt.   Dies ist die Liste der unterstützten Sprachen derzeit:
 

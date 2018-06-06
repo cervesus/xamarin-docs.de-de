@@ -1,21 +1,20 @@
 ---
-title: Store-App-Änderungen
-description: Untersuchen die neuen Funktionen von iOS 11
+title: App Store Änderungen in iOS 11
+description: Dieses Dokument untersucht Änderungen auf den App Store in iOS-11. Eine Anwendung Symbol "Store", höher gestuften in-app-Einkäufe, Seite neu entworfenes Produkt, Kommunikation mit Ihren Kunden und in mehreren Phasen Versionen werden erörtert.
 ms.prod: xamarin
 ms.assetid: 4A7A03FD-B4F2-4969-8676-A17260730FD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 9c9355c047d2e7083ca787f473515163d8e6f5f1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 59f5d2c0c05ec2950ae7cc74e4f5aaa2565020f0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787389"
 ---
-# <a name="app-store-changes"></a>Store-App-Änderungen
-
-_Untersuchen die neuen Funktionen von iOS 11_
+# <a name="app-store-changes-in-ios-11"></a>App Store Änderungen in iOS 11
 
 IOS App Store wurde völlig neu entworfen, die nicht nur Benutzer den Store effizient zu navigieren können, sondern auch, die Sie als Entwickler, um die app Benutzern höher zu stufen. Diese Erweiterungen umfassen mit app-Käufen und Updates auf der Seite "Product". iOS 11 fügt auch Updates hinsichtlich kommunizieren mit Benutzern, das Symbol für Ihre app hinzufügen und Freigeben von Ihrer app für die Öffentlichkeit.
 

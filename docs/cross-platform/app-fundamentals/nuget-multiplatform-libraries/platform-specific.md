@@ -1,15 +1,17 @@
 ---
 title: Erstellen von neuen plattformspezifischen-Bibliotheksprojekte für NuGet
+description: Dieses Dokument beschreibt, wie ein einzelnes NuGet-Paket zu erstellen, das enthält plattformspezifischen Code für mehrere Plattformen.
 ms.prod: xamarin
 ms.assetid: D8BC4906-805F-4AFB-8D1A-88B7BF87E17F
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 901dbe032d62047668f265e8c7f79593b3fbfcce
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 00a02973d6016ad63e4317279515acc2b4e2e81b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780642"
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>Erstellen von neuen plattformspezifischen-Bibliotheksprojekte für NuGet
 
@@ -17,7 +19,7 @@ Multiplattform Library-Projekte, die auf bestimmte Plattformen wie iOS und Andro
 
 Die NuGet kann sowohl iOS und Android-spezifischen Code als auch .NET Code sowohl enthalten.
 
-Mehrere Assemblys erstellt und in einem einzelnen NuGet-Paket integriert. NuGet-Standards stellen Sie sicher, dass das Paket für alle unterstützten Projekttypen, z. B. Xamarin IOS- und Android-Projekte hinzugefügt werden kann.
+Mehrere Assemblys erstellt und in einem einzelnen NuGet-Paket integriert. NuGet-Standards stellen Sie sicher, dass das Paket für alle unterstützten Projekttypen, z. B. Xamarin.iOS und Android-Projekte hinzugefügt werden kann.
 
 ## <a name="steps-to-create-a-cross-platform-library-nuget"></a>Schritte zum Erstellen eine plattformübergreifende Bibliothek NuGet
 
@@ -51,7 +53,7 @@ Mehrere Assemblys erstellt und in einem einzelnen NuGet-Paket integriert. NuGet-
 
 7. Mit der rechten Maustaste auf das Projekt, und wählen Sie **NuGet-Pakete erstellen** (oder erstellen oder Bereitstellen der Projektmappe) und die **.nupkg** NuGet-Paket-Datei wird gespeichert, der **/bin/** Ordner ( einer Debug- oder Releasekonfiguration, je nach Konfiguration).
 
-  ![](platform-specific-images/create-nuget-package.png "NuGet-Paket-Datei wird im Ordner "Bin" einer Debug- oder Releasekonfiguration, je nach Konfiguration gespeichert werden")
+  ![](platform-specific-images/create-nuget-package.png "NuGet-Paket-Datei wird im Ordner \"Bin\" einer Debug- oder Releasekonfiguration, je nach Konfiguration gespeichert werden")
 
 
 ## <a name="verifying-the-output"></a>Überprüfen Sie die Ausgabe

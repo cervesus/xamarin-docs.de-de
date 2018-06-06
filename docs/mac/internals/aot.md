@@ -1,21 +1,22 @@
 ---
 title: Xamarin.Mac vor der Kompilierung
-description: Im Voraus der Uhrzeit (AOT) Kompilierung vor-und Nachteile und Überlegungen
+description: Dieses Dokument beschreibt vor der Kompilierung in Xamarin.Mac. Es vergleicht AOT Kompilierung auf JIT-Kompilierung wird erläutert, wie AOT aktivieren und untersucht, mit Hybrid AOT.
 ms.prod: xamarin
 ms.assetid: 38B8A017-5A58-429C-A6E9-9860A1DCEF63
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: d6be1d6e4a3cccef827862fb1fd54b202b0ce5fd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ec8474293fbb7372529e0f850e2d16db7ebf17be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792238"
 ---
 # <a name="xamarinmac-ahead-of-time-compilation"></a>Xamarin.Mac vor der Kompilierung
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 Zeit (AOT) ist im Voraus Kompilierung eine leistungsstarke Optimierungstechnik, die auch zur Verbesserung der Leistung beim Start an. Allerdings wirkt Sie sich auf auch die Buildzeit, Anwendungsgröße und Ausführung des Programms weitreichende Möglichkeiten. Um die Kompromisse zu verstehen, erzwingt, werden wir ein wenig mit der Kompilierung und Ausführung einer Anwendung beschäftigen.
 
@@ -59,7 +60,7 @@ AOT Optionen werden die Mac-Buildbereich in einem zukünftigen Update hinzugefü
 
 
 
-## <a name="hybrid-aot"></a>Hybrid AOT
+## <a name="hybrid-aot"></a>Hybride AOT
 
 Laden während der Ausführung einer Anwendung MacOS die Laufzeit standardmäßig Computercode von den systemeigenen Bibliotheken von AOT Kompilierung erzeugt. Es gibt jedoch einige Bereiche des Codes z. B. Trampolines, wobei JIT-Kompilierung erheblich mehr optimierte Ergebnissen führen kann. Dies erfordert die IL verwaltete Assemblys verfügbar sein. Bei iOS kann sind Anwendungen von der Verwendung der JIT-Kompilierung ausgeschlossen; Dieser Abschnitt des Codes sind AOT ebenfalls kompiliert.
 

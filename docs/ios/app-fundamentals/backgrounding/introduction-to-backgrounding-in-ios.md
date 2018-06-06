@@ -1,15 +1,17 @@
 ---
 title: Einführung in Backgrounding in iOS
+description: 'Dieses Dokument beschreibt backgrounding in iOS: Anwendungsstatus Anwendung Lebenszyklusmethoden und Hintergrund app aktualisieren.'
 ms.prod: xamarin
 ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 3a82a34a37e53e0c6922ef47717a4100576c2277
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c8084d8e218ba8e3468529795aaa5fd4eae30947
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783638"
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>Einführung in Backgrounding in iOS
 

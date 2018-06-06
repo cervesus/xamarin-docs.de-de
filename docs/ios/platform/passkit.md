@@ -1,5 +1,5 @@
 ---
-title: PassKit
+title: PassKit in Xamarin.iOS
 description: Wallet ist eine System-iOS-app, die gespeichert und angezeigt werden, Barcodes und andere Informationen zum Verknüpfen von Kundentransaktionen auf ihre Mobiltelefon mit der realen Welt.
 ms.prod: xamarin
 ms.assetid: 74B9973B-C1E8-B727-3F6D-59C1F98BAB3A
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: f1c8ac92c5ff7eed5116587ed13755ddee74a877
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0a4fd39e312cf96ac59eae97b1212f001c4ef799
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788347"
 ---
-# <a name="passkit"></a>PassKit
+# <a name="passkit-in-xamarinios"></a>PassKit in Xamarin.iOS
 
 _Wallet ist eine System-iOS-app, die gespeichert und angezeigt werden, Barcodes und andere Informationen zum Verknüpfen von Kundentransaktionen auf ihre Mobiltelefon mit der realen Welt._
 
@@ -94,9 +95,9 @@ Eine Pass-Datei ist tatsächlich ein ZIP-Archiv mit einem **.pkpass** Erweiterun
 -   **Pass.JSON** – erforderlich. Enthält alle Informationen für die Übergabe an.
 -   **Manifest.JSON** – erforderlich. Enthält die SHA1-Hashes für jede Datei in der Bahn mit Ausnahme der Signaturdatei und diese Datei (manifest.json).
 -   **Signatur** – erforderlich. Erstellt durch das Signieren der `manifest.json` Datei mit dem Zertifikat in iOS-Bereitstellungsportal generiert.
--  **logo.png** – optional.
--  **background.png** – optional.
--  **icon.png** – optional.
+-  **"Logo.png"** – optional.
+-  **Background.PNG** – optional.
+-  **Datei "Icon.png"** – optional.
 -  **Lokalisierbaren Zeichenfolgen Dateien** – optional.
 
 
@@ -104,7 +105,7 @@ Verzeichnisstruktur einer Pass-Datei wird unten angezeigt (Dies ist der Inhalt d
 
  [![](passkit-images/image4.png "Verzeichnisstruktur einer Pass-Datei wird hier angezeigt.")](passkit-images/image4.png#lightbox)
 
-### <a name="passjson"></a>pass.json
+### <a name="passjson"></a>Pass.JSON
 
 JSON ist das Format aus, da übergibt in der Regel auf einem Server erstellt werden – dies bedeutet, dass vom Generierungscode plattformunabhängigem ist auf dem Server. Die drei wichtigsten Arten von Informationen in jedem Durchlauf werden:
 
@@ -221,7 +222,7 @@ Da mit Ihrem private Schlüssel zum Signieren der Übergabe erforderlich ist, so
 
 Dieser Abschnitt enthält Anweisungen zum Einrichten von Details der Bereitstellung und Erstellen Ihrer ersten Durchlauf.
 
-### <a name="provisioning-passkit"></a>Provisioning PassKit
+### <a name="provisioning-passkit"></a>Bereitstellung PassKit
 
 In der Reihenfolge für eine Übergabe an den App Store eingeben muss er mit einem Entwicklerkonto verknüpft werden. Hier sind zwei Schritte erforderlich:
 
@@ -438,7 +439,7 @@ Wobei `pass.$(CFBundleIdentifier)` ist die ID mit übergeben, der erstellt wurde
 
 -----
 
-### <a name="debugging"></a>Debuggen
+### <a name="debugging"></a>Debugging
 
 Bereitstellen der Anwendung Probleme auftreten, überprüfen Sie, ob Sie den richtigen verwenden **Bereitstellungsprofil** und der `Entitlements.plist` ausgewählt ist, als die **benutzerdefinierte Berechtigungen** -Datei in die **iPhone Bundle signieren** Optionen.
 
@@ -540,7 +541,7 @@ NavigationController.PresentModalViewController (pkapvc, true);
 
 Die Übergabe erhält **hinzufügen** und **"Abbrechen"** Optionen:
 
- [![](passkit-images/image20.png "Die erfolgreich mit den Optionen hinzufügen und "Abbrechen" angezeigt")](passkit-images/image20.png#lightbox)
+ [![](passkit-images/image20.png "Die erfolgreich mit den Optionen hinzufügen und \"Abbrechen\" angezeigt")](passkit-images/image20.png#lightbox)
 
 ### <a name="replace-an-existing-pass"></a>Ersetzen Sie einen vorhandenen Durchlauf
 

@@ -1,5 +1,5 @@
 ---
-title: Anmerkungen und für Überlagerungen
+title: Anmerkungen und für Überlagerungen in Xamarin.iOS
 description: Dieser Artikel stellt eine schrittweise exemplarische Vorgehensweisen für das Arbeiten mit der Anmerkung und Overlay Funktionen der Karte Kit. Es wird gezeigt, wie eine Karte zu einer Anwendung hinzufügen, die eine Anmerkung und Overlay an der Position von der Xamarin entwickeln 2013-Konferenz anzeigt.
 ms.prod: xamarin
 ms.assetid: 1BC4F7FC-AE3C-46D7-A4D3-18E142F55B8E
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 9defbade6fafefb26d87e88665c491b3a559c1ae
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7d224f034afc9b841bbf82b2b15b92db2d7820c7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789579"
 ---
-# <a name="annotations-and-overlays--walkthrough"></a>Anmerkungen und für Überlagerungen – Exemplarische Vorgehensweise
+# <a name="annotations-and-overlays-in-xamarinios"></a>Anmerkungen und für Überlagerungen in Xamarin.iOS
 
 Die Anwendung, die wir in dieser exemplarischen Vorgehensweise erstellen möchten, wird unten gezeigt:
 
@@ -107,7 +108,7 @@ Fangen wir durch Erstellen eines neuen **iOS leeres Projekt**, und es einen ents
     
     und Zeichenfolge: 
 
-    `Maps Demo`
+    `Maps Demo`.
 
 
 ## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs – eine Klasse für benutzerdefinierte Anmerkungen

@@ -1,5 +1,5 @@
 ---
-title: HomeKit
+title: HomeKit in Xamarin.iOS
 description: HomeKit ist Apple Framework zum home Automatisierungsgeräten steuern. Dieser Artikel führt HomeKit und Konfigurieren von Test-Zubehör im Simulator HomeKit Zubehör und eine einfache Xamarin.iOS app schreiben, für die Interaktion mit diesen Zubehör behandelt.
 ms.prod: xamarin
 ms.assetid: 90C0C553-916B-46B1-AD52-1E7332792283
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 5699465330a4d2a5b983ec7661f80c1ed4f14bde
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0dfc6e9ba5098df66a72292d6c8b89ea1bbd1f97
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787460"
 ---
-# <a name="homekit"></a>HomeKit
+# <a name="homekit-in-xamarinios"></a>HomeKit in Xamarin.iOS
 
 _HomeKit ist Apple Framework zum home Automatisierungsgeräten steuern. Dieser Artikel führt HomeKit und Konfigurieren von Test-Zubehör im Simulator HomeKit Zubehör und eine einfache Xamarin.iOS app schreiben, für die Interaktion mit diesen Zubehör behandelt._
 
@@ -126,7 +127,7 @@ Mit einigen Beispiel virtuelle HomeKit Zubehör erstellt und konfiguriert könne
 
 Für iOS 10 neue (und höher), muss der Entwickler zum Hinzufügen der `NSHomeKitUsageDescription` Schlüssel für der app `Info.plist` Datei, und geben Sie eine Zeichenfolge deklarieren warum die app des Benutzers HomeKit Datenbank zugreifen möchte. Diese Zeichenfolge auf die Benutzer bei der ersten Zeit erhält Ausführen der app zu erstellen:
 
-[![](homekit-images/info01.png "Das Dialogfeld "Berechtigung HomeKit"")](homekit-images/info01.png#lightbox)
+[![](homekit-images/info01.png "Das Dialogfeld \"Berechtigung HomeKit\"")](homekit-images/info01.png#lightbox)
 
 Um diesen Schlüssel festzulegen, führen Sie folgende Schritte aus:
 
@@ -425,7 +426,7 @@ Die `HMCharacteristicType` Enum bietet eine Reihe von Merkmal Metadatenwerte, di
  - Hersteller
  - Modell
  - MotionDetected
- - name
+ - Name
  - ObstructionDetected
  - OccupancyDetected
  - OutletInUse
@@ -453,7 +454,7 @@ Die `HMCharacteristicType` Enum bietet eine Reihe von Merkmal Metadatenwerte, di
  - TargetTemperature
  - TargetVerticalTilt
  - TemperatureUnits
- - Version
+ - Zielplattform
 
 ### <a name="working-with-a-characteristics-value"></a>Arbeiten mit ein Merkmal Wert
 

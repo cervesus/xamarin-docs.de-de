@@ -1,5 +1,5 @@
 ---
-title: Neuer Benutzer Schnittstelle Stile
+title: tvos. außerdem wurden Benutzer Schnittstelle Formatvorlagen in Xamarin
 description: Dieser Artikel behandelt das Licht und dunkel UI-Designs, Apple tvos. außerdem wurden 10 und wie diese in einer app Xamarin.tvOS implementiert hinzugefügt wurde.
 ms.prod: xamarin
 ms.assetid: 8BC37683-AD9E-45CD-BE40-96965618AD1D
@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: da75a99e842b13d42251cdd1c5195ec66ff4a513
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43bfac29acb8b465fd1f3cdfd53c7664adeae18f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789170"
 ---
-# <a name="new-user-interface-styles"></a>Neuer Benutzer Schnittstelle Stile
+# <a name="tvos-user-interface-styles-in-xamarin"></a>tvos. außerdem wurden Benutzer Schnittstelle Formatvorlagen in Xamarin
 
 _Dieser Artikel behandelt das Licht und dunkel UI-Designs, Apple tvos. außerdem wurden 10 und wie diese in einer app Xamarin.tvOS implementiert hinzugefügt wurde._
 
 tvos. außerdem wurden 10 nun unterstützt einen dunklen und die Benutzeroberfläche Licht Design, dass alle von der Build in UIKit Steuerelemente wird automatisch angepasst, basierend auf die Einstellungen des Benutzers. Darüber hinaus wird der Entwickler kann manuell anpassen, Benutzeroberflächenelemente auf der Grundlage des Designs, die der Benutzer ausgewählt hat und einem bestimmten Design überschreiben kann.
-
 
 <a name="About-the-New-User-Interface-Styles" />
 
@@ -32,7 +32,7 @@ Benutzer kann dieses Design wechseln, navigieren Sie zu **Einstellungen** > **al
 
 Wenn die **dunkel** Design ausgewählt ist, alle Elemente der Benutzeroberfläche, wechselt zur hellen Text auf einem dunklen Hintergrund:
 
-[![](user-interface-styles-images/theme02.png "Das Design "dunkel"")](user-interface-styles-images/theme02.png#lightbox)
+[![](user-interface-styles-images/theme02.png "Das Design \"dunkel\"")](user-interface-styles-images/theme02.png#lightbox)
 
 Der Benutzer hat die Möglichkeit, wechseln Sie zu einem beliebigen Zeitpunkt das Design und empfiehlt sich daher basierend auf der aktuellen Aktivität, auf dem sich das Apple TV befindet oder die Uhrzeit.
 
@@ -175,7 +175,7 @@ Um Unterstützung von Merkmal zu aktivieren, führen Sie folgende Schritte aus:
     [![](user-interface-styles-images/theme05.png "Mit Xcode-Schnittstelle-Generator öffnen")](user-interface-styles-images/theme05.png#lightbox) 
 2. Um Merkmals Unterstützung zu aktivieren, wechseln Sie zu der **Datei Inspektor** und überprüfen Sie die **verwenden Merkmals Variationen** Eigenschaft in der **Schnittstelle-Generator-Dokument** Abschnitt: 
 
-    [![](user-interface-styles-images/theme06.png "Unterstützung von Merkmal "" aktivieren")](user-interface-styles-images/theme06.png#lightbox)
+    [![](user-interface-styles-images/theme06.png "Unterstützung von Merkmal \"" aktivieren")](user-interface-styles-images/theme06.png#lightbox)
 3. Bestätigen Sie die Änderung zum Merkmal ""-Varianten verwenden: 
 
     [![](user-interface-styles-images/theme07.png "Die Verwendung Merkmals Variationen Warnung")](user-interface-styles-images/theme07.png#lightbox)

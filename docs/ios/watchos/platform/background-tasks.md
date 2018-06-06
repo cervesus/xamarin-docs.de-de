@@ -1,21 +1,20 @@
 ---
-title: Hintergrundaufgaben
-description: Verwenden Sie die neue Hintergrundaufgaben WatchOS 3 sicherstellen, dass eine Watch-app immer die neuesten Daten und Andocken von Momentaufnahmen verfügt.
+title: WatchOS Hintergrundaufgaben in Xamarin
+description: Dieses Dokument beschreibt die Verwendung von Hintergrundaufgaben mit WatchOS in Xamarin, Typen von Hintergrundaufgaben betrachten, indem Sie Ressourcen, Implementieren von Hintergrundaufgaben, Planung, best Practices und mehr.
 ms.prod: xamarin
 ms.assetid: 2049C430-7566-45F8-9E3D-1446F484981E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/13/2017
-ms.openlocfilehash: 0279aed1e694e3b38dcb8189819d88740c37b6ad
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5ab53d4aea32cf41c492e286c18cbe85a619889a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792046"
 ---
-# <a name="background-tasks"></a>Hintergrundaufgaben
-
-_Verwenden Sie die neue Hintergrundaufgaben WatchOS 3 sicherstellen, dass eine Watch-app immer die neuesten Daten und Andocken von Momentaufnahmen verfügt._
+# <a name="watchos-background-tasks-in-xamarin"></a>WatchOS Hintergrundaufgaben in Xamarin
 
 Mit WatchOS 3 gibt es drei Hauptmethoden, eine Watch-app die Informationen auf dem neuesten Stand halten kann: 
 
@@ -106,7 +105,7 @@ Diese Aufgaben werden in den folgenden Abschnitten im Detail behandelt werden.
 
 Die `WKApplicationRefreshBackgroundTask` ist eine allgemeine Aufgabe, die geplant werden kann, um die app zu einem späteren Zeitpunkt reaktiviert haben:
 
-[![](background-tasks-images/update04.png "A WKApplicationRefreshBackgroundTask woken at a future date")](background-tasks-images/update04.png#lightbox)
+[![](background-tasks-images/update04.png "Eine zu einem späteren Zeitpunkt reaktiviert WKApplicationRefreshBackgroundTask")](background-tasks-images/update04.png#lightbox)
 
 Innerhalb der Runtime der Aufgabe, die app führen Sie beliebige lokale Verarbeitung z. B. Update eine Zeitachse Komplikation oder einige erforderliche Daten mit fetch kann eine `NSUrlSession`.
 

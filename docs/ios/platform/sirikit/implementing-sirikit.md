@@ -1,23 +1,22 @@
 ---
-title: Implementieren von SiriKit
-description: Dieser Artikel behandelt die erforderlichen Schritte zum SiriKit-Unterstützung in einem Xamarin.iOS-apps zu implementieren.
+title: Implementieren von SiriKit in Xamarin.iOS
+description: Dieses Dokument beschreibt die erforderlichen Schritte zum SiriKit-Unterstützung in einem Xamarin.iOS-apps zu implementieren. Es wird erläutert, Intents Erweiterungen und Intents UI-Erweiterungen.
 ms.prod: xamarin
 ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: a4f38e93cae3c9577a0b1e32067da2cfd2e4796d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: f0e5e05828305bd3656d70105b6e2ad06f9fdc81
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788848"
 ---
-# <a name="implementing-sirikit"></a>Implementieren von SiriKit
+# <a name="implementing-sirikit-in-xamarinios"></a>Implementieren von SiriKit in Xamarin.iOS
 
 _Dieser Artikel behandelt die erforderlichen Schritte zum SiriKit-Unterstützung in einem Xamarin.iOS-apps zu implementieren._
-
-
 
 Neue iOS 10, SiriKit ermöglicht eine Xamarin.iOS-app, um Dienste bereitzustellen, die für den Benutzer mithilfe von Siri und die Maps-app auf einem iOS-Gerät zugänglich sind. Dieser Artikel behandelt die erforderlichen Schritte zum SiriKit-Unterstützung in den Xamarin.iOS-apps zu implementieren, indem Sie die erforderlichen Intents Erweiterungen, Intents UI Extensions und das Vokabular.
 
@@ -34,7 +33,7 @@ Wenn der Benutzer eine Anforderung Siri im Zusammenhang mit einer der Dienste f�
 
 Dieses Handbuch stellt ein kurzes Beispiel, etwa SiriKit-Unterstützung in eine vorhandene app bereit. Für dieses Beispiel müssen die gefälschte MonkeyChat-app verwendet werden:
 
-[![](implementing-sirikit-images/monkeychat01.png "Das Symbol "MonkeyChat"")](implementing-sirikit-images/monkeychat01.png#lightbox)
+[![](implementing-sirikit-images/monkeychat01.png "Das Symbol \"MonkeyChat\"")](implementing-sirikit-images/monkeychat01.png#lightbox)
 
 MonkeyChat behält eine eigene Adressbuch des Benutzers Freunde, jeweils eines Anzeigenamens (z. B. Bobo z. B.) zugeordnet ist, und ermöglicht es dem Benutzer nach dem Bildschirmnamen jeder Freund Chats Text an.
 
@@ -255,13 +254,13 @@ Bevor die app fügt alle Benutzer bestimmte Vokabular oder die Intents Erweiteru
 
 Bearbeiten Sie der app `Info.plist` Datei, wechseln Sie zu der **Quelle** anzeigen und Hinzufügen der `NSSiriUsageDescription` Schlüssel mit einem Zeichenfolgenwert, der beschreibt, wie die app Siri und was verwenden soll Datentypen gesendet werden. Beispielsweise könnte die MonkeyChat app das "MonkeyChat Kontakte an Siri gesendet werden":
 
-[![](implementing-sirikit-images/request01.png "Die NSSiriUsageDescription in der Datei "Info.plist"-editor")](implementing-sirikit-images/request01.png#lightbox)
+[![](implementing-sirikit-images/request01.png "Die NSSiriUsageDescription in der Datei \"Info.plist\"-editor")](implementing-sirikit-images/request01.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Bearbeiten Sie der app `Info.plist` und fügen die `NSSiriUsageDescription` Schlüssel mit einem Zeichenfolgenwert, der beschreibt, wie die app Siri und was verwenden soll Datentypen gesendet werden. Beispielsweise könnte die MonkeyChat app das "MonkeyChat Kontakte an Siri gesendet werden":
 
-[![](implementing-sirikit-images/request01w.png "Die NSSiriUsageDescription in der Datei "Info.plist"-editor")](implementing-sirikit-images/request01w.png#lightbox)
+[![](implementing-sirikit-images/request01w.png "Die NSSiriUsageDescription in der Datei \"Info.plist\"-editor")](implementing-sirikit-images/request01w.png#lightbox)
 
 -----
 
@@ -490,7 +489,7 @@ Hinzufügen einer `AppIntentVocabulary.plist` -Datei in das app-Projekt, gehen S
     [![](implementing-sirikit-images/plist10.png "Fügen Sie einen neuen Schlüssel mit dem Typwörterbuch hinzu.")](implementing-sirikit-images/plist10.png#lightbox)
 12. Hinzufügen der `VocabularyItemPhrase` Schlüssel mit dem **Typ** von `String` und den Begriff die app definieren:
 
-    [![](implementing-sirikit-images/plist11.png "Fügen Sie der VocabularyItemPhrase-Schlüssel mit der Typzeichenfolge "und" den Begriff, die die app definieren")](implementing-sirikit-images/plist11.png#lightbox)
+    [![](implementing-sirikit-images/plist11.png "Fügen Sie der VocabularyItemPhrase-Schlüssel mit der Typzeichenfolge \"und\" den Begriff, die die app definieren")](implementing-sirikit-images/plist11.png#lightbox)
 13. Hinzufügen der `VocabularyItemPronunciation` Schlüssel mit dem **Typ** von `String` und die phonetische Aussprache des Begriffs:
 
     [![](implementing-sirikit-images/plist12.png "Fügen Sie der VocabularyItemPronunciation-Schlüssel mit der Zeichenfolge und die phonetische Aussprache des Begriffs")](implementing-sirikit-images/plist12.png#lightbox)
@@ -523,7 +522,7 @@ Hinzufügen einer `AppIntentVocabulary.plist` -Datei in das app-Projekt, gehen S
 
 1. Mit der rechten Maustaste in den Namen des Projekts die **Projektmappen-Explorer** , und wählen Sie **hinzufügen > Neues Element… > Apple > Property List > "Info.plist"**:
 
-    [![](implementing-sirikit-images/plist01.w157-sml.png "Fügen Sie eine neue Datei "Info.plist" hinzu.")](implementing-sirikit-images/plist01.w157.png#lightbox)
+    [![](implementing-sirikit-images/plist01.w157-sml.png "Fügen Sie eine neue Datei \"Info.plist\" hinzu.")](implementing-sirikit-images/plist01.w157.png#lightbox)
 
 2. Doppelklicken Sie auf die `AppIntentVocabulary.plist` in der Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
 3. Klicken Sie auf die **+** um einen Schlüssel hinzuzufügen, legen Sie die **Namen** auf `ParameterVocabularies` und die **Typ** auf `Array`:
@@ -555,7 +554,7 @@ Hinzufügen einer `AppIntentVocabulary.plist` -Datei in das app-Projekt, gehen S
     [![](implementing-sirikit-images/plist10w.png "Fügen Sie einen neuen Schlüssel mit dem Typwörterbuch hinzu.")](implementing-sirikit-images/plist10w.png#lightbox)
 12. Hinzufügen der `VocabularyItemPhrase` Schlüssel mit dem **Typ** von `String` und den Begriff die app definieren:
 
-    [![](implementing-sirikit-images/plist11w.png "Fügen Sie der VocabularyItemPhrase-Schlüssel mit der Typzeichenfolge "und" den Begriff, die die app definieren")](implementing-sirikit-images/plist11w.png#lightbox)
+    [![](implementing-sirikit-images/plist11w.png "Fügen Sie der VocabularyItemPhrase-Schlüssel mit der Typzeichenfolge \"und\" den Begriff, die die app definieren")](implementing-sirikit-images/plist11w.png#lightbox)
 13. Hinzufügen der `VocabularyItemPronunciation` Schlüssel mit dem **Typ** von `String` und die phonetische Aussprache des Begriffs:
 
     [![](implementing-sirikit-images/plist12w.png "Fügen Sie der VocabularyItemPronunciation-Schlüssel mit der Zeichenfolge und die phonetische Aussprache des Begriffs")](implementing-sirikit-images/plist12w.png#lightbox)

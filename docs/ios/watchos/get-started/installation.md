@@ -1,19 +1,20 @@
 ---
-title: Setup und Installation
-description: Die Entwicklung für WatchOS einrichten
+title: Installieren und Verwenden von WatchOS in Xamarin
+description: Dieses Dokument beschreibt, wie zum Installieren und Verwenden von WatchOS mit Xamarin. Es wird erläutert, Installation, WatchOS Projekt strukturieren, wie Sie mithilfe der iOS-Designer, Xcode-Integration und bietet Tipps zur Problembehandlung.
 ms.prod: xamarin
 ms.assetid: 69F21F15-198D-4B42-A703-21D35CAB0CCA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/05/2017
-ms.openlocfilehash: 976b7a78b70522e6ca9942c286792b53e4f11ae5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ea0c7b6a68077cde83fa211e4e6f3432b3e39d5c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791237"
 ---
-# <a name="installation"></a>Installation
+# <a name="installing-and-using-watchos-in-xamarin"></a>Installieren und Verwenden von WatchOS in Xamarin
 
 WatchOS 4 erfordert MacOS Sierra (10.12) mit Xcode 9.
 
@@ -204,7 +205,7 @@ Daraufhin wird die **benutzerdefinierte Parameter** Fenster, in dem Sie auswähl
 
 
 
-## <a name="debugging"></a>Debuggen
+## <a name="debugging"></a>Debugging
 
 Debuggen wird in Visual Studio für Mac und Visual Studio unterstützt.
 Denken Sie daran, eine JSON-Benachrichtigungsdatei angeben beim Debuggen im Modus für Benachrichtigungen. Diese bildschirmabbildung zeigt einen Haltepunkt erreicht wird, in eine Watch-app:

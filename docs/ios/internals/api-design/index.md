@@ -1,19 +1,20 @@
 ---
-title: API-Entwurf
-description: Die Perspektive der Xamarin.iOS-API-Entwurf
+title: API-Entwurf von Xamarin.iOS
+description: Dieses Dokument beschreibt einige der grundlegenden Leitlinien, mit der Architekt die Xamarin.iOS-APIs und diese Beziehung zum Objective-c
 ms.prod: xamarin
 ms.assetid: 322D2724-AF27-6FFE-BD21-AA1CFE8C0545
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: da827c5bdd25bf841f5396b10d1eeb70e132dfeb
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: a7e508ddd086936a3ffea9d76cde7d896fe4d1f3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787353"
 ---
-# <a name="api-design"></a>API-Entwurf
+# <a name="xamarinios-api-design"></a>API-Entwurf von Xamarin.iOS
 
 Zusätzlich zu den Kern Base Class Libraries, die Teil der Mono, [Xamarin.iOS](http://www.xamarin.com/iOS) im Lieferumfang von Bindungen für verschiedene iOS-APIs ermöglichen Entwicklern das Erstellen von systemeigenen iOS-Anwendungen mit Mono.
 
@@ -95,7 +96,7 @@ Die [Foundation](https://developer.xamarin.com/api/namespace/Foundation/) -Names
 
 Xamarin.iOS spiegelt in c# die Hierarchie der Klassen von Objective-c. Z. B. die Objective-C-Basisklasse [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) ist in c# über [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/).
 
-Obwohl dieser Namespace Bindungen für die zugrunde liegenden Foundation Objective-C-Typen enthält, in einigen Fällen haben wir die zugrunde liegende Typen, .NET-oder Schematypen zugeordnet. Beispiel:
+Obwohl dieser Namespace Bindungen für die zugrunde liegenden Foundation Objective-C-Typen enthält, in einigen Fällen haben wir die zugrunde liegende Typen, .NET-oder Schematypen zugeordnet. Zum Beispiel:
 
 - Anstelle von [NSString](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html) und [NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html), die Common Language Runtime stellt diese als C#- [Zeichenfolge](https://developer.xamarin.com/api/type/System.String/)s und stark typisierte [Array](https://developer.xamarin.com/api/type/System.Array/)s in der gesamten die API.
 
@@ -378,7 +379,7 @@ Das Muster wird auch verwendet, um die Daten bei Bedarf für einige Steuerelemen
 Zusätzlich zu den stark typisierten Eigenschaft ist auch eine schwach typisierte Delegat, der ermöglicht den Entwickler, die Dinge unterschiedlich binden, falls gewünscht.
 Ein stark typisiertes Everywhere `Delegate` -Eigenschaft verfügbar gemacht wird, bei der Bindung des Xamarin.iOS, ein entsprechendes `WeakDelegate` Eigenschaft ist ebenfalls verfügbar gemacht.
 
-Bei Verwendung der `WeakDelegate`, Sie sind verantwortlich für ordnungsgemäß ergänzen die Klasse mithilfe der [exportieren](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) Attribut, um die Auswahl anzugeben. Beispiel:
+Bei Verwendung der `WeakDelegate`, Sie sind verantwortlich für ordnungsgemäß ergänzen die Klasse mithilfe der [exportieren](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) Attribut, um die Auswahl anzugeben. Zum Beispiel:
 
 ```csharp
 class Notifier : NSObject  {
@@ -623,13 +624,13 @@ Sie müssen nicht zu diesem Gedanken machen, wenn Visual Studio für Mac und Int
 
 Eine Kernkomponente von Objective-C-Programmierung ist Selektoren. Sie werden häufig über APIs stammen, die erfordern, dass Sie einen Selektor übergeben oder den Code So reagieren Sie auf einen Selektor erwartet.
 
-Erstellen neue Selektoren in c# ist sehr einfach: Sie erstellen Sie einfach eine neue Instanz der dem `ObjCRuntime.Selector` Klasse, und verwenden Sie das Ergebnis in einer beliebigen Stelle in der API, die dies erfordert. Beispiel:
+Erstellen neue Selektoren in c# ist sehr einfach: Sie erstellen Sie einfach eine neue Instanz der dem `ObjCRuntime.Selector` Klasse, und verwenden Sie das Ergebnis in einer beliebigen Stelle in der API, die dies erfordert. Zum Beispiel:
 
 ```csharp
 var selector_add = new Selector ("add:plus:");
 ```
 
-Für eine C#-Methode reagieren auf einen Anruf Selektor, müssen sie erbt von der `NSObject` Typ und die C#-Methode müssen mit dem Selektor Namen ergänzt werden die `[Export]` Attribut. Beispiel:
+Für eine C#-Methode reagieren auf einen Anruf Selektor, müssen sie erbt von der `NSObject` Typ und die C#-Methode müssen mit dem Selektor Namen ergänzt werden die `[Export]` Attribut. Zum Beispiel:
 
 ```csharp
 public class MyMath : NSObject {

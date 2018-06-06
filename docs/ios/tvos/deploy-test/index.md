@@ -1,5 +1,5 @@
 ---
-title: Bereitstellung und Testen
+title: Bereitstellen und Testen von Apps für tvos. außerdem wurden in Xamarin
 description: Dieser Abschnitt enthält Themen, die zum Testen einer app sowie dazu, wie es verteilt. Hier aufgeführten Themen enthalten, z. B. Tools zum Debuggen von Testern und wie Sie eine Anwendung auf den Apple TV-App-Store veröffentlichen Bereitstellung verwendet wird.
 ms.prod: xamarin
 ms.assetid: DA4B4BD7-DC09-4F61-BC07-36727AF52BA2
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: ab5b12e13095212a070c308b7e21d008c9aa2673
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b810d7cef05a4d4e26677eb0b18b9b72ca3995fc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788588"
 ---
-# <a name="deployment-and-testing"></a>Bereitstellung und Testen
+# <a name="deploying-and-testing-tvos-apps-in-xamarin"></a>Bereitstellen und Testen von Apps für tvos. außerdem wurden in Xamarin
 
 ## <a name="app-distributioniostvosdeploy-testapp-distributionindexmd"></a>[App-Verteilung](~/ios/tvos/deploy-test/app-distribution/index.md)
 

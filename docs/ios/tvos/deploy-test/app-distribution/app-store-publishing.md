@@ -1,21 +1,20 @@
 ---
 title: Die Veröffentlichung auf dem Apple TV-App Store
-description: Dieser Artikel zeigt, wie konfigurieren, erstellen und Veröffentlichen einer app Xamarin.tvOS für die Verteilung über den Apple TV-App Store. Er enthält eine schrittweise Anleitung, die zum Vorbereiten Ihrer app für die Verteilung, wie Apple Tools verwenden, um die app zur Überprüfung senden, und schließlich, wie Sie Ihre app auf den Apple TV-App Store veröffentlicht abdeckt.
+description: Dieses Dokument beschreibt, wie eine app auf dem Apple TV-App-Store veröffentlichen. Es wird erläutert, wie konfigurieren, bereitstellen, erstellen und senden eine Anwendung für tvos. außerdem wurden mit Xamarin.
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c72b161845f6d8492a47d95e51a80cf0b4f30271
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ac905caaf0bdefe7f0c5502be0bd63102ca5a813
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789303"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Die Veröffentlichung auf dem Apple TV-App Store
-
-_Dieser Artikel zeigt, wie konfigurieren, erstellen und Veröffentlichen einer app Xamarin.tvOS für die Verteilung über den Apple TV-App Store. Er enthält eine schrittweise Anleitung, die zum Vorbereiten Ihrer app für die Verteilung, wie Apple Tools verwenden, um die app zur Überprüfung senden, und schließlich, wie Sie Ihre app auf den Apple TV-App Store veröffentlicht abdeckt._
 
 Apple erfordert, dass apps über veröffentlicht werden, verteilen Sie nacheinander alle Geräte von Apple TV-Anwendungen die *Apple TV-App Store*, machen im App Store die Warenkorb praktischen Ort für tvos. außerdem wurden apps. Entwickler von vielen Arten von apps können in Großschreibung den massive Erfolg dieser einzelnen Punkt der Verteilung. Apple TV-App-Store ist eine schlüsselfertige Lösung, app-Entwickler-Verteilung und Zahlungssysteme anbietet.
 

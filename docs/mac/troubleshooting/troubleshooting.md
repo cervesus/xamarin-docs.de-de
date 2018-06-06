@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Mac-Tipps zur Problembehandlung
-description: Dieses Dokument beschreibt die Vorgehensweisen zum Beheben von Problemen beim Entwickeln von Anwendungen Xamarin.Mac.
+description: Dieses Dokument beschreibt die Vorgehensweisen zum Beheben von Problemen beim Entwickeln von Anwendungen Xamarin.Mac. Darüber hinaus erläutert Möglichkeiten, um Unterstützung zu erhalten.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5CBC6822-BCD7-4DAD-8468-6511250D41C4
@@ -8,15 +8,16 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3cec5465f3f30b230cc0f4f1b865209ed327a07c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5e6cd5b338034cfa9956244015d4585b4f005793
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792966"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Xamarin.Mac-Tipps zur Problembehandlung
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 In einigen Fällen Festfahren wir alle bei der Arbeit an einem Projekt auf die Unfähigkeit, erhalten eine API zur Funktionsweise der gewünschte oder bei dem Versuch, einen Fehler zu umgehen. Ziel von Xamarin ist, damit Sie erfolgreich in Ihrer mobilen und desktop-Anwendungen schreiben können, und wir haben einige Ressourcen zum bereitgestellt.
 

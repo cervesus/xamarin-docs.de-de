@@ -1,24 +1,25 @@
 ---
-title: Layoutoptionen
+title: Layoutoptionen in Xamarin.iOS
+description: Dieses Dokument beschreibt verschiedene Möglichkeiten zum Erstellen von Benutzeroberflächen in Xamarin.iOS. Es wird erläutert, automatisches Anpassen der Größe und automatisches Layout.
 ms.prod: xamarin
 ms.assetid: D8180FEC-F300-42C0-B029-66803E0C1A5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 8f197bbffeabb708769c48f0130aa27a86b14386
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bad29eae308c8ca9f7228a1cbdfd69940894cf34
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790115"
 ---
-# <a name="layout-options"></a>Layoutoptionen
+# <a name="layout-options-in-xamarinios"></a>Layoutoptionen in Xamarin.iOS
 
 Es gibt zwei unterschiedliche Mechanismen für das Layout steuern, wenn eine Sicht geändert oder gedreht wird:
 
 -  **Automatisches Anpassen der Größe** – Automatisches Anpassen der Größe der Inspektor im Designer bietet eine Möglichkeit zum Festlegen der `AutoresizingMask` Eigenschaften. Auf diese Weise können ein Steuerelement verankert werden, um die Ränder des Containers und/oder ihre Größe zu beheben. Automatisches Anpassen der Größe funktioniert in allen Versionen von iOS. Dies wird im folgenden ausführlicher beschrieben.
--  **AutoLayout** – ein Feature, eingeführt in iOS6, die eine präzisere Kontrolle über die Beziehungen zwischen den UI-Steuerelementen ermöglicht. Kontrolle über die Positionen von Elementen relativ zu anderen Elementen auf der Entwurfsoberfläche wird zugelassen. In diesem Thema wird ausführlich in die [Automatisches Layout mit dem Xamarin iOS-Designer](~/ios/user-interface/designer/designer-auto-layout.md) Handbuch.
-
+-  **Auto-Layout** – ein Feature, eingeführt in iOS 6, die eine präzisere Kontrolle über die Beziehungen zwischen den UI-Steuerelementen ermöglicht. Kontrolle über die Positionen von Elementen relativ zu anderen Elementen auf der Entwurfsoberfläche wird zugelassen. In diesem Thema wird ausführlich in die [Automatisches Layout mit dem Xamarin iOS-Designer](~/ios/user-interface/designer/designer-auto-layout.md) Handbuch.
 
 ## <a name="autosizing"></a>Automatisches Anpassen der Größe
 

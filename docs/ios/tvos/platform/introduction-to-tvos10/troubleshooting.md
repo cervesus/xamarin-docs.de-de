@@ -1,29 +1,28 @@
 ---
-title: Problembehandlung
-description: Dieser Artikel enthält einige Tipps zur Problembehandlung für die Arbeit mit tvos. außerdem wurden 10 in Xamarin.tvOS-apps.
+title: Problembehandlung bei tvos. außerdem wurden 10 erstellten Apps mit Xamarin
+description: Dieser Artikel enthält einige Tipps zur Problembehandlung für die Arbeit mit tvos. außerdem wurden 10 im Xamarin-apps. Probleme im Zusammenhang mit dem App Store, Binärkompatibilität, CFNetwork HttpProtocol, CloudKit, Core-Image, NSUserActivity und UIKit beschrieben.
 ms.prod: xamarin
 ms.assetid: EA5564BB-C415-49A2-B70C-3DBF5E0F3FAB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8875e658ead17820655a2401079627875c14958b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4332caca2804da52bb565fe382932af691c39dab
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788809"
 ---
-# <a name="troubleshooting"></a>Problembehandlung
+# <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>Problembehandlung bei tvos. außerdem wurden 10 erstellten Apps mit Xamarin
 
-_Dieser Artikel enthält einige Tipps zur Problembehandlung für die Arbeit mit tvos. außerdem wurden 10 in Xamarin.tvOS-apps._
-
-Den folgenden Abschnitten werden einige bekannte Probleme, die auftreten können, wenn tvos. außerdem wurden 10 mit Xamarin.tvOS und die Lösung dieser Probleme verwenden:
+Den folgenden Abschnitten werden einige bekannte Probleme, die auftreten können, wenn tvos. außerdem wurden 10 mit Xamarin und die Lösung dieser Probleme verwenden:
 
 - [App Store](#App-Store)
 - [Binäre Kompatibilität](#Binary-Compatibility)
-- [CFNetwork HTTP Protocol](#CFNetwork-HTTP-Protocol)
+- [CFNetwork HTTP-Protokoll](#CFNetwork-HTTP-Protocol)
 - [CloudKit](#CloudKit)
-- [CoreImage](#CoreImage)
+- [Core-Image](#CoreImage)
 - [NSUserActivity](#NSUserActivity)
 - [UIKit](#UIKit)
 
@@ -50,7 +49,7 @@ Bekannte Probleme:
 
 <a name="CFNetwork-HTTP-Protocol" />
 
-## <a name="cfnetwork-http-protocol"></a>CFNetwork HTTP Protocol
+## <a name="cfnetwork-http-protocol"></a>CFNetwork HTTP-Protokoll
 
 Die `HTTPBodyStream` Eigenschaft von der `NSMutableURLRequest` "Class" muss festgelegt werden, in eine geöffnete Stream seit `NSURLConnection` und `NSURLSession` nun ausschließlich diese Anforderung erzwingen.
 
@@ -62,7 +61,7 @@ Vorgänge mit langer zurückgegeben wird ein _"Sie haben keine Berechtigung zum 
 
 <a name="CoreImage" />
 
-## <a name="coreimage"></a>CoreImage
+## <a name="core-image"></a>Core-Image
 
 Die `CIImageProcessor` -API unterstützt nun eine beliebige Eingabe Abbildanzahl. `CIImageProcessor` API, die in der tvos. außerdem wurden 10 Beta 1 enthalten war, werden entfernt.
 
@@ -84,10 +83,6 @@ Bekannte Probleme:
  - tvos. außerdem wurden 10 ist erforderlich, den Entwickler Aufrufen `base.AwakeFromNib` beim Erstellen von Unterklassen für `UIViewController` und überschreiben die `AwakeFromNib` Methode.
  - Apps mit benutzerdefinierten `UIView` Unterklassen, die außer Kraft setzen `LayoutSubviews` und modifizierte Seiten das Layout vor dem Aufruf `base.LayoutSubviews` möglicherweise eine unendliche Layout-Schleife in tvos. außerdem wurden 10 auslösen.
  - Richtung-spezifische oder flippable Bilder Assets sind keine kippen beim Zuweisen zu `UIButton` Objekte.
-
-
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

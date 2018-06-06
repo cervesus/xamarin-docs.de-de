@@ -1,18 +1,20 @@
 ---
-title: Automatische Größenanpassung Zeilenhöhe
+title: Automatische Größenanpassung Zeilenhöhe in Xamarin.iOS
+description: Dieses Dokument beschreibt, wie apps Xamarin.iOS Ansicht Tabellenzeilen hinzugefügt, dessen Höhe auf Grundlage Inhalt variieren. Es wird erläutert, Zellenlayout in der iOS-Designer und Aktivieren des automatischen Größenänderung Höhe.
 ms.prod: xamarin
 ms.assetid: CE45A385-D40A-482A-90A0-E8382C2BFFB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 73e16c3381b639645463e3e8aaeed35224b67861
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3c6beb112947f5423de200fd5c8957ef28dd48f9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789966"
 ---
-# <a name="auto-sizing-row-height"></a>Automatische Größenanpassung Zeilenhöhe
+# <a name="auto-sizing-row-height-in-xamarinios"></a>Automatische Größenanpassung Zeilenhöhe in Xamarin.iOS
 
 IOS 8, Apple eingeführt die Fähigkeit zum Erstellen einer Tabellenansicht (`UITableView`), der automatisch vergrößern und verkleinern Sie die Höhe einer Zeile basierend auf der Größe des Inhalts mit Automatisches Layout, Größenklassen und -Einschränkungen können.
 

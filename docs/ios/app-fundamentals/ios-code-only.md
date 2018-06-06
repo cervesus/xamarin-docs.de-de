@@ -1,21 +1,20 @@
 ---
-title: Erstellen von iOS-Benutzeroberflächen in Code
-description: Xamarin.iOS bietet zwei Methoden zum Erstellen einer Benutzeroberfläche für Ihre app – mit dem Xamarin-Designer für iOS oder im Code. In diesem Artikel untersucht, wie Sie iOS Benutzeroberflächen vollständig im Code erstellen. Es wird gezeigt, wie von einer Vorlage um eine Anwendungsbildschirm in einem Controller zu erstellen, durch das Erstellen einer Hierarchie von Ansichten von UIKit gestartet. Klicken Sie dann, es wird erläutert, wie benutzerdefinierte Ansichten erstellen, die geladen werden können, in einem Controller.
+title: Erstellen von iOS-Benutzeroberflächen im Code in Xamarin.iOS
+description: Dieses Dokument beschreibt, wie Code verwenden, um eine neue Benutzeroberfläche für eine Xamarin.iOS-app zu erstellen. Es wird erläutert, View-Controller, erstellen eine Hierarchie anzeigen, behandeln eine Drehung und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: e2f377b11cfb1ff5027cc704de694184d2208c97
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 5e8abc2cea2e2ca8abfada8bc85379d93d183768
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784633"
 ---
-# <a name="creating-ios-user-interfaces-in-code"></a>Erstellen von iOS-Benutzeroberflächen in Code
-
-_Xamarin.iOS bietet zwei Methoden zum Erstellen einer Benutzeroberfläche für Ihre app – mit dem Xamarin-Designer für iOS oder im Code. In diesem Artikel untersucht, wie Sie iOS Benutzeroberflächen vollständig im Code erstellen. Es wird gezeigt, wie von einer Vorlage um eine Anwendungsbildschirm in einem Controller zu erstellen, durch das Erstellen einer Hierarchie von Ansichten von UIKit gestartet. Klicken Sie dann, es wird erläutert, wie benutzerdefinierte Ansichten erstellen, die geladen werden können, in einem Controller._
+# <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Erstellen von iOS-Benutzeroberflächen im Code in Xamarin.iOS
 
 Die Benutzeroberfläche einer iOS-App ist, wie eine Storefront – die Anwendung ruft in der Regel ein Fenster festlegen, aber es kann Auffüllen des Fensters mit, wie viele Objekte Sie benötigt, und die Objekte und die Modalitäten geändert werden, können je nachdem, was die app anzeigen möchte. Die Objekte in diesem Szenario – die Dinge, die der Benutzer sieht – werden als Ansichten bezeichnet. Zum Erstellen einer einzigen Seite in einer Anwendung Ansichten sind aufeinander gestapelt in einer Hierarchie mit Inhalt anzeigen und durch einen einzelnen Controller für die Ansicht die Hierarchie verwaltet wird. Anwendungen mit mehreren Bildschirmen weisen mehrere Hierarchien von Inhaltsansichten auf. Jede davon verfügt über ihren eigenen Ansichtscontroller, und die Anwendung platziert Ansichten in das Fenster, um je nach dem vom Benutzer verwendeten Bildschirm eine andere Hierarchie von Inhaltsansichten zu erstellen.
 
@@ -374,7 +373,7 @@ public class CustomViewController : UIViewController
 
 Festlegen von `SecureTextEntry = true` Blendet Sie aus den im eingegebenen Text die `UITextField` vom Benutzer wie unten dargestellt:
 
- [![](ios-code-only-images/image4a.png ""True" Blendet den Text, der vom Benutzer eingegebenen SecureTextEntry festlegen")](ios-code-only-images/image4a.png#lightbox)
+ [![](ios-code-only-images/image4a.png "\"True\" Blendet den Text, der vom Benutzer eingegebenen SecureTextEntry festlegen")](ios-code-only-images/image4a.png#lightbox)
 
 ### <a name="adding-the-button"></a>Die Schaltfläche hinzufügen
 

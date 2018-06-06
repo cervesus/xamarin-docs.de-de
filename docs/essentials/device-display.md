@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials Geräteinformationen anzeigen
-description: Die DeviceDisplay-Klasse enthält Informationen zu dem Gerät Bildschirm Metriken, die Anwendung ausgeführt wird.
+title: 'Xamarin.Essentials: Anzeige-Geräteinformationen'
+description: Dieses Dokument beschreibt die Klasse DeviceDisplay in Xamarin.Essentials, auf dem Bildschirm Metriken für das Gerät enthält, auf dem die Anwendung ausgeführt wird.
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 05701ff2bc9fceac8a0a490989e52d0327079d46
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 830b96bcc21397047cb5aaacb5c568bc2ee863c4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782371"
 ---
-# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials Geräteinformationen anzeigen
+# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials: Anzeige-Geräteinformationen
 
 ![Vorabversion NuGet](~/media/shared/pre-release.png)
 

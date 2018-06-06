@@ -1,17 +1,18 @@
 ---
 title: Grundlegendes zu Konzepten SiriKit
-description: Dieser Artikel behandelt die grundlegenden Konzepte, die für das Arbeiten mit SiriKit in einer app Xamarin.iOS benötigt werden.
+description: Dieses Dokument beschreibt die grundlegenden Konzepte für die Arbeit mit SiriKit in einem Xamarin.iOS-app erforderlich sind. Er erläutert, z. B. Intents und Intents UI Extensions SiriKit Berechtigungen Entwerfen einer überzeugenden Umgebung und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 99EC5C1E-484F-4371-8555-58C9F60DE37F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: 56325345204cd2017d688375d9d51c5c83f15e26
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 62b612f2e2725e5856a39e1d4d3fc1288282167a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788929"
 ---
 # <a name="understanding-sirikit-concepts"></a>Grundlegendes zu Konzepten SiriKit
 
@@ -56,7 +57,7 @@ Siri und Karten alle Interaktionen des Benutzers zu verwalten und mithilfe der B
 
 Dieser Abschnitt bietet einen Überblick darüber, wie SiriKit dem Benutzer die Interaktion mit der app mithilfe von Siri ermöglicht. Für dieses Beispiel müssen die gefälschte MonkeyChat-app verwendet werden:
 
-[![](understanding-sirikit-images/monkeychat01.png "Das Symbol "MonkeyChat"")](understanding-sirikit-images/monkeychat01.png#lightbox)
+[![](understanding-sirikit-images/monkeychat01.png "Das Symbol \"MonkeyChat\"")](understanding-sirikit-images/monkeychat01.png#lightbox)
 
 MonkeyChat behält eine eigene Adressbuch des Benutzers Freunde, jeweils eines Anzeigenamens (z. B. Bobo z. B.) zugeordnet ist, und ermöglicht es dem Benutzer nach dem Bildschirmnamen jeder Freund Chats Text an.
 

@@ -1,18 +1,20 @@
 ---
-title: Arbeiten mit Navigation
+title: Arbeiten mit WatchOS Navigation in Xamarin
+description: Dieses Dokument beschreibt das Arbeiten mit Navigation in einer Anwendung WatchOS. Es wird erläutert, modale Schnittstellen, die hierarchische Navigation und die seitenbasierte Schnittstellen.
 ms.prod: xamarin
 ms.assetid: 71A64C10-75C8-4159-A547-6A704F3B5C2E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 3cef621479db89bfe30c1e82bf5e12f18d0e46af
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c9bcfc388164060549ca7010d11671abfa8230ac
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790639"
 ---
-# <a name="working-with-navigation"></a>Arbeiten mit Navigation
+# <a name="working-with-watchos-navigation-in-xamarin"></a>Arbeiten mit WatchOS Navigation in Xamarin
 
 Die einfachste verfügbare Navigationsoption für die Überwachung ist eine einfache [modales Popupdialogfeld](#modal) , zusätzlich zu der aktuellen Szene angezeigt wird.
 

@@ -1,22 +1,22 @@
 ---
-title: Arbeiten mit Warnungen
-description: Dieser Artikel behandelt die Arbeit mit UIAlertController eine Warnmeldung, die der Benutzer im Xamarin.tvOS angezeigt.
+title: Arbeiten mit tvos. außerdem wurden Warnungen in Xamarin
+description: Dieses Dokument beschreibt die Arbeit mit tvos. außerdem wurden Warnungen in Xamarin. Es wird erläutert, die eine Warnung, Hinzufügen von Textfeldern und eine Hilfsklasse.
 ms.prod: xamarin
 ms.assetid: F969BB28-FF2C-4A7D-88CA-F8076AD48538
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: da4d2d952687c7e39276ca76af413b83c4519eea
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b5125f150a4d57ed27041da2944f4c161434cf93
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789082"
 ---
-# <a name="working-with-alerts"></a>Arbeiten mit Warnungen
+# <a name="working-with-tvos-alerts-in-xamarin"></a>Arbeiten mit tvos. außerdem wurden Warnungen in Xamarin
 
 _Dieser Artikel behandelt die Arbeit mit UIAlertController eine Warnmeldung, die der Benutzer im Xamarin.tvOS angezeigt._
-
 
 Wenn Sie müssen ein Eingreifen des Benutzers tvos. außerdem wurden erhalten oder Fragen Sie die Berechtigung zum Ausführen einer destruktiven Aktion (z. B. das Löschen einer Datei), können Sie eine Warnmeldung mit stellen die `UIAlertViewController`:
 

@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials-Datenübertragung
-description: Die Klasse DataTransfer ermöglicht einer Anwendung zur Freigabe von Daten, z. B. Links "Text" und "Web" für andere Anwendungen auf dem Gerät.
+title: 'Xamarin.Essentials: Datenübertragung'
+description: Die Klasse DataTransfer in Xamarin.Essentials ermöglicht einer Anwendung zur Freigabe von Daten, z. B. Links "Text" und "Web" für andere Anwendungen auf dem Gerät.
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: b03ec1330aff1210350adf2600c63d7d84bc1125
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 69d429b1cdbbbd6dbb53e3cefa89695666494ba7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782384"
 ---
-# <a name="xamarinessentials-data-transfer"></a>Xamarin.Essentials-Datenübertragung
+# <a name="xamarinessentials-data-transfer"></a>Xamarin.Essentials: Datenübertragung
 
 ![Vorabversion NuGet](~/media/shared/pre-release.png)
 

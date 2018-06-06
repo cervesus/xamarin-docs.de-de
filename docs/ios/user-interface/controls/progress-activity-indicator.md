@@ -1,18 +1,20 @@
 ---
-title: Status und Aktivität-Indikatoren
+title: Status und Aktivität-Indikatoren im Xamarin.iOS
+description: Dieses Dokument erläutert die Verwendung von Status und Aktivität Indikatoren in Xamarin.iOS. Es wird beschrieben, wie sie sowohl programmgesteuert als auch mit einem Storyboard verwenden.
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 58a492bed81a1d96a482c1396718da1c5e4af589
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 27ee788ec40bfd158dbc0d9926245b166e2954a9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790054"
 ---
-# <a name="progress-and-activity-indicators"></a>Status und Aktivität-Indikatoren
+# <a name="progress-and-activity-indicators-in-xamarinios"></a>Status und Aktivität-Indikatoren im Xamarin.iOS
 
 Ist es wahrscheinlicher, dass Ihre app hat beziehenden lang ausgeführter Aufgaben, z. B. beim Laden oder Verarbeiten von Daten und, dass diese Verzögerung eine Verzögerung bewirken kann, aktualisieren Sie die Benutzeroberfläche. Während dieser Zeit sollten Sie immer eine Statusanzeige verwenden, um dem Benutzer versichern, dass das System ausgelastet Arbeit ist. Dadurch werden das Benutzersteuerelement, an der die app ihre Anforderung arbeitet, die sie nicht für ihre Eingabe wartet und können bieten eine Möglichkeit der ausführlichen genau wie lange gewartet haben.
 

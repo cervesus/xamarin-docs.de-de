@@ -1,21 +1,20 @@
 ---
-title: Manuelle Kamera-Steuerelemente
-description: Das AVFoundation Framework erleichtert es als jemals für Benutzer auszuführenden großartige Fotos für manuelle Kamera Steuerelemente können. Mit diesem Framework, kann eine Anwendung direkte Kontrolle über die Kamera Fokus, weiß Saldo und Offenlegung Einstellungen dauern. Eine Anwendung können in Klammern Offenlegung Erfassungen auch um Images mit verschiedenen Offenlegung Einstellungen automatisch zu erfassen. In diesem Artikel dauert einen kurzen Blick auf die mit den manuellen Kamera-Steuerelementen in eine einfache iOS 8-mobile-Anwendung.
+title: Manuelle Kamera Steuerelemente in Xamarin.iOS
+description: Dieses Dokument beschreibt, wie das iOS-AVFoundation-Framework mit Xamarin.iOS zum manuellen Kamera Steuerelemente ermöglichen verwendet werden kann. Manuelle Kamera Steuerelemente ermöglichen einem Benutzer den Steuerelementfokus, weiß Saldo und Offenlegung von Einstellungen.
 ms.prod: xamarin
 ms.assetid: 56340225-5F3C-4BFC-9A79-61496D7FE5B5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 8545dce1b9232e396c4c9e71ad5f20649eef2417
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a0f605a38117df87a03801c3b9d86b0b7361c232
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790824"
 ---
-# <a name="manual-camera-controls"></a>Manuelle Kamera-Steuerelemente
-
-_Das AVFoundation Framework erleichtert es als jemals für Benutzer auszuführenden großartige Fotos für manuelle Kamera Steuerelemente können. Mit diesem Framework, kann eine Anwendung direkte Kontrolle über die Kamera Fokus, weiß Saldo und Offenlegung Einstellungen dauern. Eine Anwendung können in Klammern Offenlegung Erfassungen auch um Images mit verschiedenen Offenlegung Einstellungen automatisch zu erfassen. In diesem Artikel dauert einen kurzen Blick auf die mit den manuellen Kamera-Steuerelementen in eine einfache iOS 8-mobile-Anwendung._
+# <a name="manual-camera-controls-in-xamarinios"></a>Manuelle Kamera Steuerelemente in Xamarin.iOS
 
 Die manuelle Kamera Kontrollmechanismen, die von bereitgestellten der `AVFoundation Framework` in iOS 8, können Sie eine mobile Anwendung mit vollständiger Kontrolle über ein iOS-Gerät Kamera. Derartige Differenzierte Steuerung kann verwendet werden, erstellen professionelle Ebene Kamera Anwendungen und Interpreten Kompositionen bereitstellen, indem Sie die Parameter der Kamera beim Offlineschalten von ein noch Bild oder ein Video optimieren.
 
@@ -863,7 +862,7 @@ Die maximale weißen Saldo Gewinn ist derzeit vier (4) und kann von der `MaxWhit
 
 Die `DeviceWhiteBalanceGains` Eigenschaft kann verwendet werden, um die aktuellen Werte zu beobachten. Verwendung `SetWhiteBalanceModeLockedWithDeviceWhiteBalanceGains` , passen Sie das Guthaben erhält, wird die Kamera in der gesperrten weiß-Balance-Modus.
 
-#### <a name="conversion-routines"></a>Conversion Routines
+#### <a name="conversion-routines"></a>Konvertierungsroutinen
 
 Konvertierungsroutinen wurden hinzugefügt, um iOS 8 unterstützen Sie beim Konvertieren in und aus unabhängigen Farbräumen Gerät. Zum Implementieren der Konvertierungsroutinen der `AVCaptureWhiteBalanceChromaticityValues` Struktur mit den folgenden Membern hinzugefügt wurde:
 
@@ -1113,7 +1112,7 @@ Führen Sie Folgendes ein, um die View-Controller für manuelle weiß Saldo Steu
     [![](intro-to-manual-camera-controls-images/image19.png "Die Schieberegler werden automatisch verschoben, wie die Kamera weißen Saldo passt")](intro-to-manual-camera-controls-images/image19.png#lightbox)
 1. Tippen Sie auf das Segment gesperrt, und ziehen Sie die Temp "und" Farbton Schieberegler, um den weißen Saldo manuell anzupassen:
 
-    [![](intro-to-manual-camera-controls-images/image20.png "Ziehen Sie die Temp "und" Farbton Schieberegler, um den weißen Saldo manuell anzupassen")](intro-to-manual-camera-controls-images/image20.png#lightbox)
+    [![](intro-to-manual-camera-controls-images/image20.png "Ziehen Sie die Temp \"und\" Farbton Schieberegler, um den weißen Saldo manuell anzupassen")](intro-to-manual-camera-controls-images/image20.png#lightbox)
 1. Platzieren Sie mit dem gesperrt-Segment ausgewählter die physischen Karten bei sich am Anfang der Kamera grauen aus, und tippen Sie auf die grau Karte-Schaltfläche, um auf der Welt grau weißen ausgleichen:
 
     [![](intro-to-manual-camera-controls-images/image21.png "Tippen Sie auf die grau Karte-Schaltfläche, um auf der Welt grau weißen ausgleichen")](intro-to-manual-camera-controls-images/image21.png#lightbox)
@@ -1344,7 +1343,7 @@ Führen Sie Folgendes ein, um die View-Controller für Klammern Capture anschlie
 1. Speichern Sie die Änderungen der codieren, und führen Sie die Anwendung.
 1. Eine Szene Frame aus, und tippen Sie auf die Schaltfläche "erfassen Klammer":
 
-    [![](intro-to-manual-camera-controls-images/image24.png "Rahmen Sie eine Szene, und tippen Sie auf die Schaltfläche "erfassen Klammer"")](intro-to-manual-camera-controls-images/image24.png#lightbox)
+    [![](intro-to-manual-camera-controls-images/image24.png "Rahmen Sie eine Szene, und tippen Sie auf die Schaltfläche \"erfassen Klammer\"")](intro-to-manual-camera-controls-images/image24.png#lightbox)
 1. Streichen Sie nach rechts nach links, um die drei Grafiken genommene Klammern erfassen finden Sie unter:
 
     [![](intro-to-manual-camera-controls-images/image25.png "Streichen Sie nach rechts nach links, um die drei Grafiken genommene Klammern erfassen finden Sie unter")](intro-to-manual-camera-controls-images/image25.png#lightbox)

@@ -1,19 +1,20 @@
 ---
-title: Arbeiten mit Fortschrittsanzeigen
-description: Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Statusanzeigen innerhalb einer Xamarin.tvOS-app.
+title: Arbeiten mit tvos. außerdem wurden Statusanzeigen in Xamarin
+description: Dieses Dokument beschreibt das Arbeiten mit Statusanzeigen in einer app für tvos. außerdem wurden mit Xamarin erstellten. Es wird erläutert, Statusanzeigen und Aktivität Indikatoren.
 ms.prod: xamarin
 ms.assetid: 582B6D0C-1F16-4299-A9A6-5651E76009FE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/25/2018
-ms.openlocfilehash: d512dfddb3a6c81767f937272a4ffb1ab1a35372
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: f8812f6b3f8a461487dcaf548637c84b16631d6b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789215"
 ---
-# <a name="working-with-progress-indicators"></a>Arbeiten mit Fortschrittsanzeigen
+# <a name="working-with-tvos-progress-indicators-in-xamarin"></a>Arbeiten mit tvos. außerdem wurden Statusanzeigen in Xamarin
 
 _Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Statusanzeigen innerhalb einer Xamarin.tvOS-app._
 
@@ -132,7 +133,7 @@ Die `Progress` Eigenschaft wird verwendet, um die Menge der Aufgabe festgelegt, 
 
 In diesem Artikel wurden behandelt, Entwerfen und Arbeiten mit Statusanzeigen innerhalb einer Xamarin.tvOS-app.
 
-## <a name="related-links"></a>Verwandte links
+## <a name="related-links"></a>Verwandte Links
 
 - [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)

@@ -1,18 +1,20 @@
 ---
-title: Arbeiten mit Texteingabe
+title: Arbeiten mit WatchOS Texteingabe in Xamarin
+description: Dieses Dokument beschreibt die Texteingabe in Xamarin WatchOS. Es wird erläutert, die PresentTextInputController-Methode, Schreiben von nur-Text, Emojis und diktieren.
 ms.prod: xamarin
 ms.assetid: E9CDF1DE-4233-4C39-99A9-C0AA643D314D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 9dec6f754590abf6db8829f555376b423b7a7da7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da668333b3549c92264af7d4da4941ac6b5bf865
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791383"
 ---
-# <a name="working-with-text-input"></a>Arbeiten mit Texteingabe
+# <a name="working-with-watchos-text-input-in-xamarin"></a>Arbeiten mit WatchOS Texteingabe in Xamarin
 
 Der Apple Watch bietet keine Tastatur für Benutzer zur Eingabe von Text, aber einige Alternativen Watch-freundliche unterstützt wird:
 

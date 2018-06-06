@@ -1,22 +1,22 @@
 ---
-title: Suchen und Startbildschirm Widget-Erweiterungen
-description: Dieser Artikel behandelt die Erweiterungen, die mit dem Widget-System in iOS 10 Apple vereinbart hat.
+title: Suchen und Startseite Bildschirm Widget-Verbesserungen in iOS-10
+description: Dieses Dokument beschreibt die Erweiterungen, die um die Widgets im iOS-10, einschließlich Updates zu suchen und Startbildschirm Widgets Apple vereinbart hat.
 ms.prod: xamarin
 ms.assetid: D66FD9E1-9E23-4BB6-825C-ED19B8F72A81
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: e7a64738f29ab2b5c62659d721beb50db7c9adb5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8383f167f8c85459e996b83368281fa243317948
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788110"
 ---
-# <a name="search-and-home-screen-widget-enhancements"></a>Suchen und Startbildschirm Widget-Erweiterungen
+# <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>Suchen und Startseite Bildschirm Widget-Verbesserungen in iOS-10
 
 _Dieser Artikel behandelt die Erweiterungen, die mit dem Widget-System in iOS 10 Apple vereinbart hat._
-
 
 Apple wurde eingeführt, mehrere Erweiterungen für das System Widget, um sicherzustellen, dass die Widgets auf eine im Hintergrund laufende hervorragend aussehen, die auf dem neuen iOS-Sperrbildschirm 10 vorhanden ist. Darüber hinaus enthalten Widgets jetzt eine [NCWidgetDisplayMode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode) -Eigenschaft, kann der Entwickler wird beschrieben, wie viel Inhalt verfügbar ist, und ermöglicht es dem Benutzer zum Erweitern und reduzieren den Inhalt.
 

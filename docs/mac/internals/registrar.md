@@ -1,23 +1,24 @@
 ---
-title: Xamarin.Mac registrar
-description: Dieses Dokument beschreibt den Zweck des Xamarin.Mac-Registrierungsstelle und seiner Verwendung der verschiedenen Konfigurationen.
+title: Xamarin.Mac Registrierungsstelle
+description: Dieses Dokument beschreibt den Zweck der Xamarin.Mac-Registrierungsstelle und die statische dynamischer, statischer und teilweise (Hybrid) Nutzung Konfigurationen.
 ms.prod: xamarin
 ms.assetid: 7CAAA6B7-D654-4AD3-BAEC-9DD01210978A
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: 4b70ac2271b23b54e7942fdc870e0f49548e6154
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b6e971e608c8b9228523222cebc4d6dac9395def
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792418"
 ---
-# <a name="xamarinmac-registrar"></a>Xamarin.Mac registrar
+# <a name="xamarinmac-registrar"></a>Xamarin.Mac Registrierungsstelle
 
 _Dieses Dokument beschreibt den Zweck des Xamarin.Mac-Registrierungsstelle und seiner Verwendung der verschiedenen Konfigurationen._
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 Xamarin.Mac schließt die Lücke zwischen verwalteten weltweit (.NET) und des Kakao-Runtime verwaltete Klassen zum Aufrufen von nicht verwalteten Objective-C-Klassen und aufgerufen werden, wenn Ereignisse auftreten. Der Arbeitsaufwand zum Durchführen dieser "magische" müssen erfolgt durch die Registrierungsstelle und wird im Allgemeinen aus der Ansicht ausgeblendet.
 

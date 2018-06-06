@@ -1,17 +1,19 @@
 ---
-title: Releaseverlauf
+title: Objektive Sharpie-Versionsverlauf
+description: Dieses Dokument beschreibt den Revisionsverlauf des Ziels Sharpie, das Tool verwendet, um das Erstellen der C#-Bindungen für Objective-C-Code zu automatisieren.
 ms.prod: xamarin
 ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 9a29b131af706b9dedc808a156cdfaffa4173882
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: a173df769068a3834dfdc314675254af1f3594ed
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781730"
 ---
-# <a name="release-history"></a>Releaseverlauf
+# <a name="objective-sharpie-release-history"></a>Objektive Sharpie-Versionsverlauf
 
 ## <a name="34-october-11-2017"></a>3.4 (11 Oktober 2017)
 

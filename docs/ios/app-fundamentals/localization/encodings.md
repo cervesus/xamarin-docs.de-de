@@ -1,17 +1,19 @@
 ---
-title: Internationalisierung Codierungen
+title: Internationalisierung Codierungen in Xamarin.iOS
+description: Dieses Dokument beschreibt die Internationalisierung Codierungen in Xamarin.iOS, erläutern die verfügbaren Codierungen und wie sie eine app hinzugefügt.
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 60cfc5ac8238c853cc066afe2978f91ab9c0755e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4963b0f95ae48ee56462a82d2f82a8dcaa231a23
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784125"
 ---
-# <a name="internationalization-encodings"></a>Internationalisierung Codierungen
+# <a name="internationalization-encodings-in-xamarinios"></a>Internationalisierung Codierungen in Xamarin.iOS
 
 Nicht alle Codierungen sind in der Klassenbibliothek Xamarin.iOS standardmäßig eingeschlossen.
 
@@ -36,7 +38,7 @@ Sie können eine der folgenden auswählen:
  <a name="cjk" />
 
 
-## <a name="cjk"></a>cjk
+## <a name="cjk"></a>CJK-Schriftarten
 
 -  CP51932
 -  CP932
@@ -63,7 +65,7 @@ Sie können eine der folgenden auswählen:
  <a name="other" />
 
 
-## <a name="other"></a>andere
+## <a name="other"></a>Andere
 
 -  CP1251
 -  CP1257

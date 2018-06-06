@@ -1,18 +1,20 @@
 ---
-title: Verweisen auf systemeigene Bibliotheken
+title: Verweisen auf systemeigene Bibliotheken in Xamarin.iOS
+description: Dieses Dokument erläutert, wie systemeigene C-Bibliotheken in einem Xamarin.iOS-Anwendung zu verknüpfen. Es wird beschrieben, wie universelle systemeigene Bibliotheken und C-Zugriffsmethoden in c# zu erstellen.
 ms.prod: xamarin
 ms.assetid: 1DA80280-E78A-EC4B-8673-C249C8425CF5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/28/2016
-ms.openlocfilehash: 4d58e869dc1357faef71ea88ed6b5ea30aaf960d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bb27ba8b2d9c1b66448f22b7f80f17ba2e483544
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787724"
 ---
-# <a name="referencing-native-libraries"></a>Verweisen auf systemeigene Bibliotheken
+# <a name="referencing-native-libraries-in-xamarinios"></a>Verweisen auf systemeigene Bibliotheken in Xamarin.iOS
 
 Xamarin.iOS unterstützt systemeigene C-Bibliotheken und Objective-C-Bibliotheken verknüpfen. Dieses Dokument erläutert, wie Sie Ihre systemeigenen C-Bibliotheken in Ihrem Projekt Xamarin.iOS verknüpfen. Informationen zum Ausführen für Objective-C-Bibliotheken, finden Sie unter unsere [Objective-C-Typen binden](~/ios/platform/binding-objective-c/index.md) Dokument.
 

@@ -1,19 +1,20 @@
 ---
-title: Suche mit Web-Markup
-description: Hinzufügen von webbasierten Suchergebnisse, die zurück an Ihre app verknüpfen können.
+title: Suche mit Web-Markup in Xamarin.iOS
+description: Dieses Dokument beschreibt, wie webbasierte Suchergebnisse zu erstellen, die wieder mit einem Xamarin.iOS-app verknüpfen. Es wird erläutert, wie Webinhalte Indizierung, wodurch Ihre app-Website sichtbar ist, wird mithilfe der intelligenten app-Banner und universelle Links zu aktivieren.
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: bc3446419ef0e469f7184d60fe8876cd2e5da520
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 438a65de3eb78f849493e3478bce5522a325d0cd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787993"
 ---
-# <a name="search-with-web-markup"></a>Suche mit Web-Markup
+# <a name="search-with-web-markup-in-xamarinios"></a>Suche mit Web-Markup in Xamarin.iOS
 
 Für apps, die Zugriff auf ihre Inhalte über eine Website bereitstellen (nicht nur von innerhalb der app), Webinhalte kann mit speziellen Links, die von Apple gecrawlt werden wird, und geben Sie deep links, um Ihre app für iOS 9-Gerät des Benutzers gekennzeichnet werden.
 

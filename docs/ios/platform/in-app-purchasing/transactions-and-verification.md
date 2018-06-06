@@ -1,18 +1,20 @@
 ---
-title: Transaktionen und Überprüfung
+title: Transaktionen und Überprüfung Xamarin.iOS
+description: Dieses Dokument beschreibt, wie die Wiederherstellung von Ihrer vergangenen Käufe in einem Xamarin.iOS-app zu ermöglichen. Es beschreibt auch Methoden zum Sichern von Bestellungen und Produkte Server übermittelt.
 ms.prod: xamarin
 ms.assetid: 84EDD2B9-3FAA-B3C7-F5E8-C1E5645B7C77
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c8d86d0ce3119b3e104a65a170ab141484af44a7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2cb38df4bbabc3534f5c90c7695569d68349ccc3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786924"
 ---
-# <a name="transactions-and-verification"></a>Transaktionen und Überprüfung
+# <a name="transactions-and-verification-in-xamarinios"></a>Transaktionen und Überprüfung Xamarin.iOS
 
 ## <a name="restoring-past-transactions"></a>Wiederherstellen nach Transaktionen
 
@@ -191,7 +193,7 @@ Da der Remoteserver Weise überprüfen erfordert, ob eine inhaltsanforderung gü
    
  10. Die Anwendung ermöglicht das Produkt und ruft dann die StoreKit `FinishTransaction`. Die Anwendung kann dann optional den erworbenen Inhalt (z. B. Anzeigen der ersten Seite eines erworbenen Buch oder Magazin Problem) anzeigen.
 
-Eine alternative Implementierung für sehr große Produkt Inhaltsdateien kann vorsehen, dass die Bestätigung der Transaktion einfach in Schritt &#9; zu speichern, damit, dass die Transaktion schnell abgeschlossen werden kann und Bereitstellen einer Benutzeroberfläche für den Benutzer zum Herunterladen des Inhalts der tatsächlichen product zu einem späteren Zeitpunkt. Die nachfolgenden downloadanforderung kann die Inhaltsdatei erforderlichen Zugriff auf den gespeicherten Empfang erneut senden.
+Eine alternative Implementierung für sehr große Produkt Inhaltsdateien kann vorsehen, dass die Bestätigung der Transaktion einfach in Schritt 9 # zu speichern, damit, dass die Transaktion schnell abgeschlossen werden kann und Bereitstellen einer Benutzeroberfläche für den Benutzer zum Herunterladen des Inhalts der tatsächlichen product zu einem späteren Zeitpunkt. Die nachfolgenden downloadanforderung kann die Inhaltsdatei erforderlichen Zugriff auf den gespeicherten Empfang erneut senden.
 
 ### <a name="writing-server-side-receipt-verification-code"></a>Schreiben von Code für serverseitige Receipt-Überprüfung
 
@@ -201,7 +203,7 @@ Eine alternative Implementierung für sehr große Produkt Inhaltsdateien kann vo
    
  Extrahieren Sie die `SKPaymentTansaction.TransactionReceipt` Eigenschaft in der app. Dies sind die Daten, die an iTunes für die Überprüfung (Schritt 5 von #) gesendet werden müssen.
 
-Base64-codiert den Receipt-Transaktionsdaten (entweder in Schritt &#5; "oder" #6).
+Base64-codiert den Receipt-Transaktionsdaten (entweder in Schritt 5 # "oder" #6).
 
 Erstellen Sie eine einfache JSON-Nutzlast wie folgt:
 

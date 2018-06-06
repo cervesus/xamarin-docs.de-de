@@ -1,18 +1,20 @@
 ---
-title: WatchOS-Benutzeroberfläche
+title: WatchOS Benutzeroberflächen-Steuerelemente in Xamarin
+description: Dieses Dokument beschreibt die verschiedenen Steuerelemente, die für die Verwendung in Benutzeroberflächen WatchOS verfügbar sind. Es enthält eine Beschreibung der Bezeichnungen, Schaltflächen, Switches, Schieberegler, Bilder, Trennzeichen, Zuordnungen und mehr.
 ms.prod: xamarin
 ms.assetid: EDFAD203-02EA-4A74-9CE2-7B8513BC90E1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/19/2016
-ms.openlocfilehash: 73099768d876cad08571c3d0bf8340535eb1307b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b56cfed8f045d824996a004539533b27d66c8cb1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791409"
 ---
-# <a name="watchos-user-interface"></a>WatchOS-Benutzeroberfläche
+# <a name="watchos-user-interface-controls-in-xamarin"></a>WatchOS Benutzeroberflächen-Steuerelemente in Xamarin
 
 Die [ **WatchKitCatalog** ](https://github.com/xamarin/monotouch-samples/tree/master/watchOS/WatchKitCatalog) Beispiel zeigt verschiedene WatchOS-Steuerelemente. Die app Storyboard wird (klicken Sie zum Verkleinern die Tasten) im folgenden dargestellt:
 
@@ -22,10 +24,10 @@ Die programmgesteuerte Namen aller Steuerelemente vorangestellt `WKInterface` (z
 
 |Steuerelement|Beschreibung|Bildschirmabbildung|
 |---|---|---|
-|Bezeichnung|Verwendung `SetText` und andere Eigenschaften zur Steuerung der Darstellung von Text in ein Label-Steuerelement. `NSAttributedString` wird ebenfalls unterstützt.<br />[Katalog-code](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/LabelDetailController.cs)|![](Images/label.png)|
+|Label|Verwendung `SetText` und andere Eigenschaften zur Steuerung der Darstellung von Text in ein Label-Steuerelement. `NSAttributedString` wird ebenfalls unterstützt.<br />[Katalog-code](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/LabelDetailController.cs)|![](Images/label.png)|
 |Schaltfläche|Erstellen und Festlegen von Eigenschaften in das Storyboard. STRG + Ziehen, um das Hinzufügen einer `Action` implementiert einen Handler für, wenn darauf geklickt wird.<br />[Katalog-code](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/ButtonDetailController.cs)|![](Images/button.png)|
 |Schalter|Verwendung `SetOn` zum Steuern des Switch-Zustands.<br />[Katalog-code](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/SwitchDetailController.cs)|![](Images/switch.png)|
-|Slider|Viele verschiedene Formate sind möglich.<br />[Katalog-code](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/SliderDetailController.cs)|![](Images/slider.png)|
+|Schieberegler|Viele verschiedene Formate sind möglich.<br />[Katalog-code](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/SliderDetailController.cs)|![](Images/slider.png)|
 |Bild|Verwenden Sie `myImage.SetImage("MyWatchImage")` Laden von Bildern auf der Apple Watch oder `WKInterfaceDevice.CurrentDevice.AddCachedImage` für die wiederholte Verwendung auf der Apple Watch zwischengespeichert.<br />[Image-Steuerelement-Dokumentation](~/ios/watchos/user-interface/image.md)<br />[Katalog-code](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/ImageDetailController.cs)|![](Images/image.png)|
 |Trennzeichen|Verwenden Sie Trennzeichen, um attraktive Überwachungsfenster Benutzeroberflächen zu erstellen.<br />[Katalog-code](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/SeparatorDetailController.cs)|![](Images/separator.png)| 
 |Zuordnung|Kartenbilds wird der Apple Watch statisch angezeigt, aber Sie können zahlreiche Aspekte ihrer Darstellung, einschließlich des Hinzufügens von Pins steuern.<br />[Katalog-code](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/MapDetailController.cs)|![](Images/map.png)|

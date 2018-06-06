@@ -1,18 +1,20 @@
 ---
-title: Menu-Steuerelement (Force Touch)
+title: WatchOS Menu-Steuerelement (Force berühren) in Xamarin
+description: 'Dieses Dokument beschreibt, wie die WatchOS Force Touch-Geste in Xamarin. Es wird erläutert, wie Reaktion auf eine Fingereingabe Force Gewusst wie: Hinzufügen eines Menüs und Menüelemente ändern.'
 ms.prod: xamarin
 ms.assetid: 5A7F83FB-9BC4-4812-92C5-CEC8DAE8211E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4895f140acbc8a622cfb91c2fe9db6c5e9d9d1d7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4b973b925b99189416087224644c376864c56871
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791344"
 ---
-# <a name="menu-control-force-touch"></a>Menu-Steuerelement (Force Touch)
+# <a name="watchos-menu-control-force-touch-in-xamarin"></a>WatchOS Menu-Steuerelement (Force berühren) in Xamarin
 
 Überwachen-Kit bietet eine Force Touch-Geste, die löst ein Menü, wenn auf einem Watch-app-Bildschirm implementiert.
 

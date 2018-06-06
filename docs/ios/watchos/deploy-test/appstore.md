@@ -1,19 +1,20 @@
 ---
-title: Auf den App Store bereitstellen
-description: Bereitstellen von Watch-Apps für den App Store
+title: Bereitstellen von WatchOS Apps im App Store
+description: Dieses Dokument beschreibt, wie WatchOS-apps mit Xamarin auf dem App Store bereitstellen. Einen Blick auf den bereitstellungsprofilen der Verteilung und iTunes Connect dauert, und sie bietet außerdem einige Tipps zur Problembehandlung.
 ms.prod: xamarin
 ms.assetid: DBE16040-70D2-4F61-B5F3-C8D213DBC754
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a3c68a0720fbe18f35731cf1a19248c00f748877
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 70613c79c2ec0c81f1dbdc218b747f809f859767
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790983"
 ---
-# <a name="deploying-to-the-app-store"></a>Auf den App Store bereitstellen
+# <a name="deploying-watchos-apps-to-the-app-store"></a>Bereitstellen von WatchOS Apps im App Store
 
 > [!IMPORTANT]
 > Überprüfen Sie [Apple Watch Kit Übermittlung Handbuch](https://developer.apple.com/app-store/watch/), und finden Sie unter der [Problembehandlung](#Troubleshooting) Abschnitt für alle Probleme, die Sie möglicherweise.
@@ -73,7 +74,7 @@ Führen Sie die [Übersicht über app-Verteilung](~/ios/deploy-test/app-distribu
 
 Wenn Sie die app in iTunes Connect konfigurieren zu können, vergessen Sie nicht auf das Symbol "überwachen" und Screenshots hinzufügen:
 
-![](appstore-images/itunesconnect-watch-sml.png "Das Symbol "überwachen" und Screenshots in iTunes Connect")
+![](appstore-images/itunesconnect-watch-sml.png "Das Symbol \"überwachen\" und Screenshots in iTunes Connect")
 
 Die Symboldatei sollten 1024 x 1024 Pixel, und haben eine zirkuläre Maske, die darauf angewendet werden, wenn er angezeigt wird. Das Symbol "sollte einen alpha-Kanal nicht aufweisen.
 
@@ -114,13 +115,13 @@ Xcode wird Archive für Mac in Visual Studio erstellten automatisch angezeigt we
 
 2. Wechseln Sie zu der **Archive** Registerkarte, und wählen Sie das Archiv, das mit Visual Studio für Mac erstellt wurde:
 
-  ![](appstore-images/xc-archives.png "Die Registerkarte "Archive"")
+  ![](appstore-images/xc-archives.png "Die Registerkarte \"Archive\"")
 
 3. Optional **überprüfen...**  Archivs, wählen Sie dann **senden...**  um der upload der app in iTunes Connect.
 
 4. Wählen Sie das Entwicklungsteam (Wenn Sie mehrere angehören), und bestätigen Sie die Übermittlung:
 
-  ![](appstore-images/xc-submit1.png "Die Development-Bereich "Team"")
+  ![](appstore-images/xc-submit1.png "Die Development-Bereich \"Team\"")
 
 5. Finden Sie in iTunes Connect erneut aus, um die hochgeladene Binärdatei finden Sie unter. Wechseln Sie zur Konfigurationsseite für Ihre app, und wählen Sie **Vorabversion** in der oberen Menüleiste, finden Sie unter der **Builds** Liste:
 

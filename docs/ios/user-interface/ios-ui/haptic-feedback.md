@@ -1,25 +1,24 @@
 ---
-title: Haptic Übermitteln von Feedback
-description: Dieser Artikel behandelt die neuen Typen für haptic Feedback in iOS 10 und deren Implementierung in Xamarin.iOS verfügbar.
+title: Übermitteln von Feedback Haptic in Xamarin.iOS
+description: Dieses Dokument beschreibt, wie in einer app Xamarin.iOS haptic Feedback bereitstellen. Es wird erläutert, UIImpactFeedbackGenerator UINotificationFeedbackGenerator und UISelectionFeedbackGenerator.
 ms.prod: xamarin
 ms.assetid: 888106D1-58F4-453F-BACC-91D51FA39C80
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: f2d1bd73ea764cd5bf56775abd7c7357b039bc79
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d0dae6d6f50423474fbfebad5d630000e2160f6a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790187"
 ---
-# <a name="providing-haptic-feedback"></a>Haptic Übermitteln von Feedback
-
-_Dieser Artikel behandelt die neuen Typen für haptic Feedback in iOS 10 und deren Implementierung in Xamarin.iOS verfügbar._
+# <a name="providing-haptic-feedback-in-xamarinios"></a>Übermitteln von Feedback Haptic in Xamarin.iOS
 
 <a name="Overview" />
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 Auf dem iPhone 7 und iPhone umfasst 7 Plus Apple neue haptic Antworten, die zusätzliche Möglichkeiten für den Benutzer physisch initiiert bereitstellen. Haptic Feedback (häufig als Haptics bezeichnet) verwendet den Sinn der Fingereingabe (über erzwingen, Vibrationen oder während des Verschiebens) in Benutzeroberfläche entwerfen. Verwenden Sie diese neue praktisch Feedbackoptionen Aufmerksamkeit des Benutzers abrufen und ihre Aktionen zu vertiefen.
 

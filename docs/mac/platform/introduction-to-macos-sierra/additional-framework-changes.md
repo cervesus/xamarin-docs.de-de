@@ -1,21 +1,20 @@
 ---
 title: Zusätzliche MacOS Sierra Framework-Änderungen
-description: Dieser Artikel umfasst zusätzliche, kleinere Änderungen oder Erweiterungen von vorhandenen Frameworks für MacOS Sierra.
+description: Dieses Dokument beschreibt die geringfügigen Änderungen und Erweiterungen für vorhandene Frameworks, die in MacOS Sierra eingeführt. Er überprüft die Änderungen an das Framework beschleunigen, AppKit, AVFoundation, Core Daten, Core-Image, Foundation und vieles mehr.
 ms.prod: xamarin
 ms.assetid: CA701269-D11E-4DE3-89C1-58EF8993A482
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a1bc12629a84e9a06cc80882d141bf6a0c2f0c52
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3cfa2e9bcb0be4d65462914215045c9c7f01da5b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792592"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>Zusätzliche MacOS Sierra Framework-Änderungen
-
-_Dieser Artikel umfasst zusätzliche, kleinere Änderungen oder Erweiterungen von vorhandenen Frameworks für MacOS Sierra._
 
 <a name="Accelerate-Framework-Enhancements" />
 
@@ -108,7 +107,7 @@ Die folgende Verbesserungen GameKit Framework für MacOS Sierra vorgenommen wurd
 
 <a name="GamePlayKit-Framework-Enhancements" />
 
-## <a name="gameplaykit-framework-enhancements"></a>GamePlayKit Framework Enhancements
+## <a name="gameplaykit-framework-enhancements"></a>GamePlayKit Framework-Erweiterungen
 
 Die folgende Verbesserungen GamePlayKit Framework für MacOS Sierra vorgenommen wurden:
 
@@ -156,7 +155,7 @@ Die folgende Verbesserungen wurden vorgenommen, um die Fotos-Framework für MacO
 
 <a name="SceneKit-Framework-Enhancements" />
 
-## <a name="scenekit-framework-enhancements"></a>SceneKit Framework Enhancements
+## <a name="scenekit-framework-enhancements"></a>SceneKit Framework-Erweiterungen
 
 Die folgende Verbesserungen SceneKit Framework für MacOS Sierra vorgenommen wurden:
 
@@ -182,7 +181,7 @@ Die folgende Verbesserungen an der-Sicherheitsframework für MacOS Sierra vorgen
 
 <a name="SpriteKit-Framework-Enhancements" />
 
-## <a name="spritekit-framework-enhancements"></a>SpriteKit Framework Enhancements
+## <a name="spritekit-framework-enhancements"></a>SpriteKit Framework-Erweiterungen
 
 Die folgende Verbesserungen SpriteKit Framework für MacOS Sierra vorgenommen wurden:
 

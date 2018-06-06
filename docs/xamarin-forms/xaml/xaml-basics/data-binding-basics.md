@@ -7,11 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 4e3e090d826aa46d503f8c612250fd5122bc703e
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: a8adc0c16043048ec919f5a0f9f7c5ce25f08ef9
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733034"
 ---
 # <a name="part-4-data-binding-basics"></a>Teil 4. Data Binding-Grundlagen
 
@@ -388,7 +389,7 @@ Hier ist das Ergebnis:
 
 [![](data-binding-basics-images/listview3.png "Binden an eine Auflistung mit DataTemplate und Konverter")](data-binding-basics-images/listview3-large.png#lightbox "Binden an eine Auflistung mit DataTemplate und Typkonverter")
 
-Die `ListView` ist ziemlich ausgereift bei der Verarbeitung von Änderungen, die in der zugrunde liegenden dynamisch auftreten können Daten, sondern nur, wenn bestimmte Schritte. Wenn die Auflistung von Elementen zugewiesen der `ItemsSource` Eigenschaft von der `ListView` Änderungen während der Laufzeit –, ist, wenn Elemente hinzugefügt werden können, oder aus der Auflistung entfernt – verwenden eine `ObservableCollection` Klasse für diese Elemente. `ObservableCollection` implementiert die `INotifyCollectionChanged` -Schnittstelle, und `ListView` installiert einen Handler für das `CollectionChanged` Ereignis.
+Die `ListView` ist ziemlich ausgereift bei der Verarbeitung von Änderungen, die dynamisch in der zugrunde liegenden Daten, aber nur auftreten, wenn Sie bestimmte Schritte ausführen. Wenn die Auflistung von Elementen zugewiesen der `ItemsSource` Eigenschaft von der `ListView` Änderungen während der Laufzeit –, ist, wenn Elemente hinzugefügt werden können, oder aus der Auflistung entfernt – verwenden eine `ObservableCollection` Klasse für diese Elemente. `ObservableCollection` implementiert die `INotifyCollectionChanged` -Schnittstelle, und `ListView` installiert einen Handler für das `CollectionChanged` Ereignis.
 
 Wenn die Eigenschaften der Elemente selbst ändern, während der Laufzeit, und klicken Sie dann die Elemente in der Auflistung implementieren sollten die `INotifyPropertyChanged` Schnittstelle und Signal Änderungen von Eigenschaftswerten, die mit der `PropertyChanged` Ereignis. Dies wird im nächsten Teil dieser Reihe veranschaulicht [Teil 5. Aus dem Datenbindung an MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 

@@ -1,17 +1,18 @@
 ---
 title: Erste Schritte mit iOS 11
-description: Herunterladen Sie und installieren Sie Xcode 9
+description: Dieses Dokument beschreibt die Schritte, die abgeschlossen sein müssen, um das Entwickeln von Apps für iOS 11 beginnen. Es wird erläutert, wie Xcode herunterzuladen und Visual Studio 2017 zu aktualisieren.
 ms.prod: xamarin
 ms.assetid: 794EA2C4-884B-42AC-B8C4-8C8E5474B660
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/19/2016
-ms.openlocfilehash: 2982e8acd27207452b74320cb3ea17d2ffc7375e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 494ffa4ffef09eedf2ce38f33e2e2b216a9417bb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786911"
 ---
 # <a name="getting-started-with-ios-11"></a>Erste Schritte mit iOS 11
 
@@ -43,4 +44,4 @@ Nach der Installation von Xcode 9 auf Ihrem Mac, folgen Sie den Links auf der [9
 ## <a name="related-links"></a>Verwandte Links
 
 - [Laden Sie Xcode 9](https://developer.apple.com/download/)
-- [Download Xamarin.iOS 11](https://releases.xamarin.com/stable-release-15-3-5-with-xcode-9-support/)
+- [Herunterladen von Xamarin.iOS 11](https://releases.xamarin.com/stable-release-15-3-5-with-xcode-9-support/)

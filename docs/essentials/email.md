@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials-e-Mail
-description: Die e-Mail-Klasse ermöglicht einer Anwendung die Standard-e-Mail-Anwendung mit einer angegebenen Informationen, einschließlich der Betreff, Text und die Empfängerliste (TO, CC, BCC) zu öffnen.
+title: Xamarin.Essentials:-e-Mail
+description: Die e-Mail-Klasse in Xamarin.Essentials ermöglicht einer Anwendung die Standard-e-Mail-Anwendung mit einer angegebenen Informationen, einschließlich der Betreff, Text und Empfänger (TO, CC, BCC) zu öffnen.
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 3fee30e31dc18665d59f944462959fd3f8166968
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: aea2f429126180ae3d98bc665bed5574f416ea53
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782436"
 ---
-# <a name="xamarinessentials-email"></a>Xamarin.Essentials-e-Mail
+# <a name="xamarinessentials-email"></a>Xamarin.Essentials:-e-Mail
 
 ![Vorabversion NuGet](~/media/shared/pre-release.png)
 
@@ -41,12 +42,13 @@ public class EmailTest
                 To = recipients,
                 //Cc = ccRecipients,
                 //Bcc = bccRecipients
-            }
+            };
+            
             await Email.ComposeAsync(message);
         }
         catch (FeatureNotSupportedException fbsEx)
         {
-            // Sms is not supported on this device
+            // Email is not supported on this device
         }
         catch (Exception ex)
         {

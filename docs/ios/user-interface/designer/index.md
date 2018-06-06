@@ -1,55 +1,57 @@
 ---
-title: iOS-Designer
-description: Die Xamarin-Designer für iOS ist einem visuellen Designer für das iOS Storyboard und Benutzeroberflächen-Generator-Formate, die vollständig in Visual Studio für Mac und Visual Studio integriert ist. Die iOS-Designer verwaltet vollständige Kompatibilität mit der Storyboard and.xib Formate, sodass Dateien in Visual Studio für Mac oder in Visual Studio neben Xcodes Benutzeroberflächen-Generator bearbeitet werden können. Darüber hinaus unterstützt der Xamarin-Designer für iOS erweiterte Funktionen wie benutzerdefinierte Steuerelemente, die zur Entwurfszeit im Editor zu rendern.
+title: Erstellen von Benutzeroberflächen mit der iOS-Designer
+description: Dieses Dokument beschreibt, wie Sie die Xamarin-Designer für iOS verwenden, um eine app-Benutzeroberfläche mit Storyboards und .xib Dateien zu erstellen. Es links zu Dokumenten, die erläutern das Tool Verfügbarkeits-, die grundlegende Funktionalität, die ausführbar Steuerelemente und bieten Exemplarische Vorgehensweisen zu deren Verwendung.
 ms.prod: xamarin
 ms.assetid: E35EFB69-EBBA-40E3-ADBE-CB8016F17127
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/21/2017
-ms.openlocfilehash: 98d11b54ace70d4c4a82b2caebbe97cff02e0544
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/31/2018
+ms.openlocfilehash: eadc2147a44d6077436e394a4757d367ce42e5fa
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790002"
 ---
-# <a name="ios-designer"></a>iOS-Designer
-
-_Die Xamarin-Designer für iOS ist einem visuellen Designer für das iOS Storyboard und Benutzeroberflächen-Generator-Formate, die vollständig in Visual Studio für Mac und Visual Studio integriert ist. Die iOS-Designer verwaltet vollständige Kompatibilität mit der Storyboard and.xib Formate, sodass Dateien in Visual Studio für Mac oder in Visual Studio neben Xcodes Benutzeroberflächen-Generator bearbeitet werden können. Darüber hinaus unterstützt der Xamarin-Designer für iOS erweiterte Funktionen wie benutzerdefinierte Steuerelemente, die zur Entwurfszeit im Editor zu rendern._
+# <a name="building-user-interfaces-with-the-ios-designer"></a>Erstellen von Benutzeroberflächen mit der iOS-Designer
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
+=======
+# <a name="ios-designer"></a>iOS-Designer
 
-[![](images/designer-new1.png "Die iOS-Designer")](images/designer-new1.png#lightbox)
+_Die Xamarin-Designer für iOS ist einem visuellen Designer für das iOS Storyboard und Benutzeroberflächen-Generator-Formate, die vollständig in Visual Studio für Mac und Visual Studio integriert ist. Die iOS-Designer verwaltet vollständige Kompatibilität mit den Formaten Storyboard und .xib, sodass Dateien in Visual Studio für Mac oder in Visual Studio neben Xcodes Benutzeroberflächen-Generator bearbeitet werden können. Darüber hinaus unterstützt der Xamarin-Designer für iOS erweiterte Funktionen wie benutzerdefinierte Steuerelemente, die zur Entwurfszeit im Editor zu rendern._
+>>>>>>> master
 
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+[![iOS-Designer in Visual Studio für Mac](images/designer-vsmac-sml.png "iOS-Designer")](images/designer-vsmac.png#lightbox)
 
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](images/designer-vs.png "Die iOS-Designer")](images/designer-vs.png#lightbox)
-
+[![iOS-Designer in Visual Studio](images/designer-vs.png "iOS-Designer")](images/designer-vs.png#lightbox)
 
 -----
 
 ## <a name="availability"></a>Verfügbarkeit
 
-Die Xamarin-Designer für iOS ist unter Windows in Visual Studio für Mac und in Visual Studio 2015 und 2017 verfügbar.
+Die Xamarin-Designer für iOS ist in Visual Studio für Mac und in Visual Studio 2017 unter Windows verfügbar.
 
-Diese Handbücher vertraut mit dem Inhalt finden Sie im die [Einstieg führt](~/ios/get-started/index.md).
-
+Diese Handbücher vertraut mit dem Inhalt finden Sie im die [Xamarin.iOS Einstieg führt](~/ios/get-started/index.md).
 
 ## <a name="ios-designer-basicsintroductionmd"></a>[iOS-Designer-Grundlagen](introduction.md)
 
 Dieser Leitfaden behandelt die Funktionen des Xamarin iOS-Designers. Es umfasst Designer Grundlagen, wie der Designer zum Layout von Steuerelementen visuell verwenden und Bearbeiten von Eigenschaften angezeigt.
 
-##  <a name="designable-controls-overviewios-designable-controls-overviewmd"></a>[Übersicht über die entworfen Steuerelemente](ios-designable-controls-overview.md)
+## <a name="designable-controls-overviewios-designable-controls-overviewmd"></a>[Übersicht über die entworfen Steuerelemente](ios-designable-controls-overview.md)
 
 Dieses Handbuch sucht im Detail auf benutzerdefinierte Steuerelemente, wie sie erstellt werden und welche Anforderungen muss erfüllen auf der Entwurfsoberfläche gerendert werden. Darüber hinaus wird gezeigt, wie häufig auftretende Probleme zu debuggen, die auftreten können, wenn entworfen Steuerelemente verwendet werden kann.
 
-##  <a name="walkthrough---using-custom-controls-with-ios-designerios-designable-controls-walkthroughmd"></a>[Exemplarische Vorgehensweise – verwenden benutzerdefinierte Steuerelemente mit iOS-Designer](ios-designable-controls-walkthrough.md)
+## <a name="walkthrough---using-custom-controls-with-ios-designerios-designable-controls-walkthroughmd"></a>[Exemplarische Vorgehensweise – verwenden benutzerdefinierte Steuerelemente mit iOS-Designer](ios-designable-controls-walkthrough.md)
 
 Dieser Artikel bietet eine schrittweise exemplarische Vorgehensweise zeigt, wie ein benutzerdefiniertes Steuerelement erstellen und verwenden es im iOS-Designer. Es wird gezeigt, wie ein Steuerelement zur Verfügung zu stellen in der Toolbox des Designers daher Ziehen/auf eine Sicht nicht gelöscht kann werden. Es zeigt darüber hinaus, wie ein Steuerelement zu implementieren, damit es ordnungsgemäß zur Entwurfs- und Laufzeit gerendert wird, sowie zum Erstellen von Eigenschaften, die zur Entwurfszeit festgelegt werden können.
 
-##  <a name="auto-layout-with-the-xamarin-ios-designerdesigner-auto-layoutmd"></a>[Automatisches Layout mit Xamarin iOS-Designer](designer-auto-layout.md)
+## <a name="auto-layout-with-the-xamarin-ios-designerdesigner-auto-layoutmd"></a>[Automatisches Layout mit Xamarin iOS-Designer](designer-auto-layout.md)
 
 Dieses Handbuch enthält iOS Automatisches Layout und den neuen Einschränkungen Workflow in der iOS-Designer verfügbar.

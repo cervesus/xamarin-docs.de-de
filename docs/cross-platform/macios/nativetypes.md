@@ -1,29 +1,31 @@
 ---
-title: Systemeigene Typen
+title: Systemeigene Typen für IOS- und Mac OS
+description: Dieses Dokument beschreibt basierend auf der Zielarchitektur Kompilierung wie die Xamarin einheitliche API .NET-oder Schematypen 32 Bit und 64-Bit-systemeigene Typen nach Bedarf zugeordnet.
 ms.prod: xamarin
 ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 4d11d053cf4471a98cbba0f7c97be3bef39276fb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fc2b91a9265fcf09e4f58d5de27a1fdef9350b2d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781103"
 ---
-# <a name="native-types"></a>Systemeigene Typen
+# <a name="native-types-for-ios-and-macos"></a>Systemeigene Typen für IOS- und Mac OS
 
-Verwenden Sie den Kern der Differenz Mac und iOS-APIs ein Architektur-spezifische Datentypen, die immer auf 32-Bit auf 32-Bit-Plattformen und 64-Bit auf 64-Bit-Plattformen sind.
+Mac- und iOS-APIs verwenden architekturspezifischer Datentypen, die immer 32 Bits auf 32-Bit-Plattformen und 64 Bit unter 64-Bit-Plattformen sind.
 
-Objective-C beispielsweise ordnet die `NSInteger` Datentyp `int32_t` unter 32-Bit-Systemen und zu `int64_t` auf 64-Bit-Systemen.
+Objective-C beispielsweise ordnet die `NSInteger` Datentyp `int32_t` auf 32-Bit-Systeme und zu `int64_t` auf 64-Bit-Systemen.
 
-Ersetzen wir dieses Verhaltens auf unserem einheitliche API, entsprechend der vorherigen Verwendung `int` (die in .NET wird als definiert immer `System.Int32`) in einen neuen Datentyp: `System.nint`.  Sie können die "n" als Bedeutung "systemeigene" vorstellen, sodass die systemeigenen Integer-Datentyp der Plattform.
+Ersetzen wir dieses Verhaltens auf unserem einheitliche API, entsprechend der vorherigen Verwendung `int` (die in .NET wird als definiert immer `System.Int32`) in einen neuen Datentyp: `System.nint`. Sie können die "n" als Bedeutung "systemeigene" vorstellen, sodass die systemeigenen Integer-Datentyp der Plattform.
 
-Mit dieser neuen Datentypen wird der gleiche Quellcode für 32-Bit, 32-Bit und 64-Bit oder 64 Bits, je nach der Kompilierung Flags kompiliert.
+Mit dieser neuen Datentypen wird der gleiche Quellcode für 32-Bit und 64-Bit-Architekturen, je nach der Kompilierung Flags kompiliert.
 
 ## <a name="new-data-types"></a>Neue Datentypen
 
-Die folgende Tabelle zeigt die Änderungen in unseren Datentypen entsprechend dieser neuen 32/64-Bit-Umgebung:
+Die folgende Tabelle zeigt die Änderungen in unseren Datentypen entsprechend dieser neuen 32-/64-Bit-Umgebung:
 
 |Systemeigener Typ|32-Bit-Unterstützungstyp|64-Bit-Unterstützungstyp|
 |--- |--- |--- |
@@ -35,7 +37,7 @@ Wir haben diese Namen zu ermöglichen, dass Ihr C#-Code "Suchen", wenn Sie die g
 
 ### <a name="implicit-and-explicit-conversions"></a>Implizite und explizite Konvertierungen
 
-Der Entwurf der neuen Datentypen dient eine einzelne C#-Quelldatei auf natürliche Weise abhängig von der Host-Plattform und die Einstellungen für die .NET-Kompilierung 32 oder 64-Bit-Speicher verwenden können.
+Der Entwurf der neuen Datentypen dient eine einzelne C#-Quelldatei an natürlich 32 oder 64-Bit-Speicher je nach die Hostplattform und die Einstellungen für die .NET-Kompilierung verwenden können.
 
 Dieser erforderliche uns so entwerfen Sie einen Satz von implizite und explizite Konvertierungen in und aus der Clientplattform-spezifische Datentypen in der .NET ganzzahligen "oder" floating-Point-Datentypen.
 

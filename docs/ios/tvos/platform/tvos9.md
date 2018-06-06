@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: e2e3843506061cc79ad911404468477bf49dfe56
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c3c278666c5d57d00b4038ae6d3f2d7925e88537
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789023"
 ---
 # <a name="introduction-to-tvos-9"></a>Einführung in die tvos. außerdem wurden 9
 
 _In diesem Artikel werden alle neuen und geänderten-APIs und in tvos. außerdem wurden 9 verfügbaren Funktionen für Entwickler Xamarin.tvOS eingeführt._
-
 
 Apple hat die 4. Generierung von Apple TV-Hardware, wenn Sie eine überarbeitete, Touch-Enable Remote herausstellen, denen das neue Betriebssystem für tvos. außerdem wurden (basierend auf iOS 9) veröffentlicht.
 
@@ -44,7 +44,7 @@ tvos. außerdem wurden-apps, die auf den Apple TV ausgeführt haben und Funktion
 Die folgenden Features und Funktionen werden nicht unterstützt:
 
  - Apple Pay
- - App Sandbox
+ - App-Sandkasten
  - Zugehörige Domänen
  - HealthKit
  - HomeKit
@@ -67,7 +67,7 @@ Die neue Apple TV gelten die folgenden Hardwarespezifikationen:
  - 32GB und 64GB Speicher
  - 2GB RAM
  - 10/100 Mbit/s Ethernet
- - WiFi 802.11a/b/g/n/ac
+ - WiFi-802.11a/b/g/n/ac
  - Auflösung von 1080p
  - HDMI
  - USB-C-Anschluss (für Entwickler und nur der Diagnose verwenden)
@@ -106,7 +106,7 @@ Provisioning Profiles werden erstellt und installiert die gleiche Weise wie das 
 
 <a name="Apple-TV-Apps" />
 
-## <a name="apple-tv-apps"></a>Apple TV Apps
+## <a name="apple-tv-apps"></a>Apple TV-Apps
 
 Die neue Apple TV-Hardware und tvos. außerdem wurden 9 unterstützt zwei Arten von apps: herkömmliche und Client / Server-apps.
 

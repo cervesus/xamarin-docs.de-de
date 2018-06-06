@@ -1,17 +1,18 @@
 ---
-title: Informationen zur App-Xamarin.Essentials
-description: Die AppInfo-Klasse stellt Informationen zu Ihrer Anwendung bereit.
+title: 'Xamarin.Essentials: App-Informationen'
+description: Dieses Dokument beschreibt die AppInfo-Klasse in Xamarin.Essentials, die Informationen zu Ihrer Anwendung bereitstellt. Beispielsweise macht es der app-Name und Version.
 ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 4591f1256dc574299bb573ef9ec5afb35af7c542
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 25765fbbcbd2475bfcbc72ca5c4feefa8ef19d08
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782104"
 ---
-# <a name="xamarinessentials-app-information"></a>Informationen zur App-Xamarin.Essentials
+# <a name="xamarinessentials-app-information"></a>Xamarin.Essentials: App-Informationen
 
 ![Vorabversion NuGet](~/media/shared/pre-release.png)
 

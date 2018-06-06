@@ -1,19 +1,20 @@
 ---
-title: Hello, überwachen
-description: Erste Schritte mit Xamarin und watchOS
+title: Hello, WatchOS – Exemplarische Vorgehensweise
+description: Dieses Dokument enthält eine exemplarische Vorgehensweise zum Erstellen einer einfachen WatchOS-Anwendung mithilfe von Xamarin. Es wird beschrieben, wie in Visual Studio und Visual Studio für Mac arbeiten, arbeiten mit Storyboards und reagieren auf Ereignisse im Code.
 ms.prod: xamarin
 ms.assetid: AD1DA488-51AB-420A-A0B7-3AE69A964A40
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/14/2016
-ms.openlocfilehash: 2281fa801d32e8d8934767ae090503ca523d7eff
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 00d6080429450dce2c0491fa385cf4f179befba6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790996"
 ---
-# <a name="hello-watch"></a>Hello, überwachen
+# <a name="hello-watchos--walkthrough"></a>Hello, WatchOS – Exemplarische Vorgehensweise
 
 Nach dem Erstellen einer Lösung, die die Schritte in [Einrichtung und Installation](~/ios/watchos/get-started/installation.md), müssen Sie 3-Projekte:
 
@@ -47,7 +48,7 @@ Doppelklicken Sie auf die Interface.storyboard in Ihrer App überwachen, um den 
 1.  Legen Sie die ID und Titel des Controllers-Schnittstelle, **InterfaceController** und **Hi Überwachungsfenster**,
 1.  Überprüfen Sie die **Klasse** festgelegt ist, um **InterfaceController**
 
-    ![](hello-watch-images/interfacecontrollerattributes.png "Legen Sie die ID und Titel des Controllers-Schnittstelle auf InterfaceController "und" Hi überwachen")
+    ![](hello-watch-images/interfacecontrollerattributes.png "Legen Sie die ID und Titel des Controllers-Schnittstelle auf InterfaceController \"und\" Hi überwachen")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -58,7 +59,7 @@ Doppelklicken Sie auf die Interface.storyboard in Ihre Watch-App mit dem Xamarin
 1.  Klicken Sie auf der Schnittstelle Controller; und
 1.  Legen Sie die ID und Titel des Controllers-Schnittstelle, **InterfaceController** und **Hi Überwachungsfenster**.
 
-    ![](hello-watch-images/vs-interfacecontrollerattributes.png "Legen Sie die ID und Titel des Controllers-Schnittstelle auf InterfaceController "und" Hi überwachen")
+    ![](hello-watch-images/vs-interfacecontrollerattributes.png "Legen Sie die ID und Titel des Controllers-Schnittstelle auf InterfaceController \"und\" Hi überwachen")
 
 -----
 
@@ -130,13 +131,11 @@ partial class InterfaceController
 
 ```csharp
 int clickCount = 0;
-
 partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 {
   var msg = String.Format("Clicked {0} times", ++clickCount);
   myLabel.SetText(msg);
 }
-
 ```
 
 Dieser Code sollte relativ transparent sein: die Instanzvariable `clickCount` wird jedes Mal inkrementiert, die Funktion `OnButtonPress` aufgerufen wird. Der Text der `myLabel` diese Anzahl; entsprechend geändert wird `myLabel`, natürlich ist der Name eines die Steckdosen, die Sie in XCode erstellt haben. Die `partial` Funktion ist die Implementierung der Funktion, die verknüpft sind, mit dem Namen der Aktion, die Sie angegeben haben.

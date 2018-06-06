@@ -1,21 +1,20 @@
 ---
-title: iCloud
-description: Apple iCloud in iOS 5, die als Dienst Anwendungen zum Speichern von Daten auf der Apple Server, und es auf allen Geräten, die von derselben Person (per ihre Apple-ID) verwendeten synchronisiert eingeführt wird. Sie weist außerdem eine Sicherungskomponente, in dem die Daten auf Ihren Geräten werden an Apple Server gesichert. Dieses Dokument beschreibt, wie einige der iCloud von Apple bereitgestellten APIs zum Speichern und Abrufen von Daten von ihren Servern, mithilfe des C#-Beispiele für das Speichern von Volumedaten mit kleinem Umfang Schlüssel-Wert-Paare und zum Speichern von Dokumenten. Es wird auch erläutert, wie iCloud-Sicherung für den Entwurf der Anwendung beeinflussen kann.
+title: Über die iCloud mit Xamarin.iOS
+description: Dieses Dokument beschreibt die iCloud und dessen Verwendung im Xamarin.iOS Anwendungen. Es wird erläutert, Schlüssel-Wert-Speicher, dokumentspeicherung und iCloud-Sicherung.
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: a62d4621a8f3ace64401d64e35c806317a591c03
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 032d5f01ae63e5aececa14390300c28623c4f371
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785539"
 ---
-# <a name="icloud"></a>iCloud
-
-_Apple iCloud in iOS 5, die als Dienst Anwendungen zum Speichern von Daten auf der Apple Server, und es auf allen Geräten, die von derselben Person (per ihre Apple-ID) verwendeten synchronisiert eingeführt wird. Sie weist außerdem eine Sicherungskomponente, in dem die Daten auf Ihren Geräten werden an Apple Server gesichert. Dieses Dokument beschreibt, wie einige der iCloud von Apple bereitgestellten APIs zum Speichern und Abrufen von Daten von ihren Servern, mithilfe des C#-Beispiele für das Speichern von Volumedaten mit kleinem Umfang Schlüssel-Wert-Paare und zum Speichern von Dokumenten. Es wird auch erläutert, wie iCloud-Sicherung für den Entwurf der Anwendung beeinflussen kann._
+# <a name="using-icloud-with-xamarinios"></a>Über die iCloud mit Xamarin.iOS
 
 Die iCloud-Speicher-API in Ios5 kann Anwendungen Benutzerdokumente und anwendungsspezifische Daten an einem zentralen Ort speichern und diese Elemente von Geräten des Benutzers zugreifen.
 
@@ -32,7 +31,7 @@ Es gibt vier Arten von Speicher zur Verfügung:
 Dieses Dokument erläutert die ersten beiden Typen - Schlüssel-Wert-Paare und UIDocument Unterklassen- und wie diese Funktionen in Xamarin.iOS verwendet.
 
 > [!IMPORTANT]
-> Apple [bietet Tools](https://developer.apple.com/support/allowing-users-to-manage-data/) Entwickler der Europäischen Union allgemeine Daten Schutz vor (GDPR) ordnungsgemäß verarbeiten können.
+> Apple [stellt Tools zur Verfügung](https://developer.apple.com/support/allowing-users-to-manage-data/), die Entwickler dabei unterstützen, die Datenschutz-Grundverordnung (DSGVO) der Europäischen Union umzusetzen.
 
 ## <a name="requirements"></a>Anforderungen
 

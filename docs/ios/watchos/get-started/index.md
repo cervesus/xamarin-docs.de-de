@@ -1,19 +1,20 @@
 ---
-title: Erste Schritte mit watchOS
-description: Einführung in WatchOS und zum Überwachen von apps erstellen
+title: Erste Schritte mit WatchOS in Xamarin
+description: Dieses enthält Dokumentenlinks zu verschiedenen Handbüchern, die beschreiben, wie Sie zum Einstieg in WatchOS Entwicklung mithilfe von Xamarin. Verknüpften Inhalts bietet eine Einführung in WatchOS, WatchOS-Unterstützung für Xamarin Installation erläutert und wird gezeigt, wie zum Erstellen einer ersten Anwendung.
 ms.prod: xamarin
 ms.assetid: BB938008-C013-4A1D-8229-FEEE94F83BBD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 7eabcb9a9ea300eccf34737e634168defe2948e7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 66482d72bebabbc6fd5c4f4a252ac81d1b73dd05
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790892"
 ---
-# <a name="getting-started-with-watchos"></a>Erste Schritte mit watchOS
+# <a name="getting-started-with-watchos-in-xamarin"></a>Erste Schritte mit WatchOS in Xamarin
 
 _Einführung in WatchOS und zum Überwachen von apps erstellen_
 

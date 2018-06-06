@@ -1,18 +1,19 @@
 ---
-title: Überprüfen der Attribute
+title: Objektive Sharpie überprüfen Sie, ob Attribute
+description: Dieses Dokument beschreibt die [Verify]-Attribut, das vom Ziel Sharpie generiert. Die [Verify]-Attribut markiert für Entwickler, in dem sie manuell Ziel-Sharpie-Ausgabe überprüfen soll.
 ms.prod: xamarin
 ms.assetid: 107FBCEA-266B-4295-B7AA-40A881B82B7B
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: b9409b4351ed9233db0edf8e2dd9f516b9727fe0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 96e5bafc14c2d3aba03ccc137151a83ee8afeef9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780710"
 ---
-# <a name="verify-attributes"></a>Überprüfen der Attribute
-
+# <a name="objective-sharpie-verify-attributes"></a>Objektive Sharpie überprüfen Sie, ob Attribute
 
 Sie werden häufig feststellen, dass es sich bei Bindungen, die vom Ziel Sharpie erzeugten mit Anmerkung versehen sein der `[Verify]` Attribut. Diese Attribute geben, Sie sollten _überprüfen_ , Ziel Sharpie die richtige Eingabe wurde durch Vergleichen der Bindung mit der ursprünglichen C#/Objective-C-Deklaration (die in einem Kommentar oberhalb der gebundenen Deklaration bereitgestellt werden).
 
@@ -27,7 +28,7 @@ Nachdem Sie überprüft haben, dass die Bindung korrigieren oder wurden behoben,
 
 Der Hinweis-Argument für das Attribut angegebenen kann, werden mit den unten stehenden Dokumentation verwiesen. Dokumentation für eine beliebige erzeugten `[Verify]` Attribute werden in der Konsole als auch angegeben werden, nachdem die Bindung abgeschlossen wurde.
 
-|Überprüfen Sie Hinweis|Beschreibung|
+|`[Verify]` Hinweis|Beschreibung|
 |---|---|
 |InferredFromPreceedingTypedef|Der Name dieser Deklaration durch allgemeine Konvention aus abgeleitet wurde die sofort jeweils vorgehenden `typedef` in den ursprünglichen systemeigene Quellcode einfügen. Stellen Sie sicher, dass der abgeleitete Name korrekt sind, da diese Konvention mehrdeutig ist.|
 |ConstantsInterfaceAssociation|Es gibt keine Möglichkeit kinderleicht Nachweis, um zu bestimmen, welche Objective-C-Schnittstelle eine Variablendeklaration "extern" zugeordnet werden kann. Instanzen dieser gebunden sind, als `[Field]` Eigenschaften in einer teilweise-Schnittstelle in einer in der Nähe von "-" durch konkrete Oberfläche erzeugt eine intuitivere API, die möglicherweise eliminieren "Konstanten"-Schnittstelle vollständig.|

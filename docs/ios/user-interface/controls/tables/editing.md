@@ -1,18 +1,20 @@
 ---
-title: Bearbeiten
+title: Bearbeiten von Tabellen mit Xamarin.iOS
+description: Dieses Dokument beschreibt, wie Tabellen in Xamarin.iOS zu bearbeiten. Es wird erläutert, Streifen zu löschen, bearbeiten, Modus und Zeile einfügen.
 ms.prod: xamarin
 ms.assetid: EC197F25-E865-AFA3-E5CF-B33FAB7744A0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 161de0209217dde671b976afad90eaad18d8c7b0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28ebf1157a1bfc9f7bd910fd11365b29cecb9529
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789989"
 ---
-# <a name="editing"></a>Bearbeiten
+# <a name="editing-tables-with-xamarinios"></a>Bearbeiten von Tabellen mit Xamarin.iOS
 
 Features für die Bearbeitung der Tabelle sind aktiviert, durch Überschreiben der Methoden in einer `UITableViewSource` Unterklasse. Das einfachste Bearbeitungsverhalten ist Bewegung Streifen zu löschen, die mit einer einzelnen methodenüberschreibung implementiert werden kann.
 Komplexere bearbeiten (einschließlich verschieben Datenzeilen) kann mit der Tabelle im Bearbeitungsmodus erfolgen.

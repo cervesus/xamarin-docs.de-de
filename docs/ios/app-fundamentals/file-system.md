@@ -1,21 +1,20 @@
 ---
-title: Arbeiten mit dem Dateisystem
-description: Die gleichen System.IO-Klassen können Xamarin.iOS arbeiten mit Dateien und Verzeichnissen in iOS, die Sie in jeder .NET-Anwendung verwenden würden. Allerdings wird trotz der vertrauten Klassen und Methoden, ein iOS implementiert einige Einschränkungen auf die Dateien, die erstellt oder zugegriffen werden können und außerdem bietet spezielle Funktionen für bestimmte Verzeichnisse. In diesem Artikel werden diese Einschränkungen und Funktionen dargestellt, und veranschaulicht die Funktionsweise der Zugriff auf Dateien in einem Xamarin.iOS-Anwendung.
+title: Arbeiten mit dem Dateisystem in Xamarin.iOS
+description: Dieses Dokument beschreibt, wie mit dem Dateisystem in Xamarin.iOS arbeiten. Es wird erläutert, Verzeichnisse, Dateien, XML und JSON-Serialisierung, die Anwendung Sandkasten, Freigeben von Dateien über iTunes und vieles mehr lesen.
 ms.prod: xamarin
 ms.assetid: 37DF2F38-901E-8F8E-269A-5EE0CCD28C08
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 0706e416861e5636413577d38bf524ce9184bc4d
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 5bcfac7911ac589e08cd6c5db8c8ea15a3497eca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784240"
 ---
-# <a name="working-with-the-file-system"></a>Arbeiten mit dem Dateisystem
-
-_Die gleichen System.IO-Klassen können Xamarin.iOS arbeiten mit Dateien und Verzeichnissen in iOS, die Sie in jeder .NET-Anwendung verwenden würden. Allerdings wird trotz der vertrauten Klassen und Methoden, ein iOS implementiert einige Einschränkungen auf die Dateien, die erstellt oder zugegriffen werden können und außerdem bietet spezielle Funktionen für bestimmte Verzeichnisse. In diesem Artikel werden diese Einschränkungen und Funktionen dargestellt, und veranschaulicht die Funktionsweise der Zugriff auf Dateien in einem Xamarin.iOS-Anwendung._
+# <a name="working-with-the-file-system-in-xamarinios"></a>Arbeiten mit dem Dateisystem in Xamarin.iOS
 
 Können Sie Xamarin.iOS und `System.IO` Klassen in der *.NET Basisklassenbibliothek (Base Class Library, BCL)* auf iOS-Dateisystem zugreifen. Die `File` -Klasse können Sie erstellen, löschen und Lesen von Dateien, und die `Directory` -Klasse können Sie zum Erstellen, löschen oder aufführen des Inhalts von Verzeichnissen. Sie können auch `Stream` Unterklassen, die ein höheres Maß an Kontrolle über Dateioperationen (z. B. Komprimierung oder Position Suche innerhalb einer Datei) bereitstellen können.
 
@@ -29,15 +28,13 @@ Dieser Artikel beschreibt die Funktionen und Einschränkungen des iOS-Dateisyste
 
  <a name="General_File_Access" />
 
-
 ## <a name="general-file-access"></a>Allgemeine Dateizugriff
 
 Xamarin.iOS können Sie die Verwendung der .NET `System.IO` Klassen, die für Dateisystemvorgänge unter iOS.
 
 Die folgenden Codeausschnitte veranschaulichen einige allgemeinen Dateivorgänge. Finden Sie Sie alle nachfolgend in der `SampleCode.cs` Datei, in der beispielanwendung für diesen Artikel.
 
- <a name="Working_with_directories" />
-
+<a name="Working_with_directories" />
 
 ### <a name="working-with-directories"></a>Arbeiten mit Verzeichnissen
 
@@ -216,7 +213,7 @@ Wenn Sie die Anwendungspaket unter Mac OS durchsuchen, wird ein anderes Symbol a
 
 Um das Anwendungspaket für den Beispielcode anzuzeigen, mit der rechten Maustaste auf das Projekt in Visual Studio für Mac, und wählen **enthaltenden Ordner öffnen**. Navigieren Sie zu **"bin" /Debug/** sollten finden Sie ein Anwendungssymbol (vergleichbar mit dem folgenden Screenshot).
 
- [![](file-system-images/40-bundle.png "Navigieren Sie zu "bin" / Debug, um ein Anwendungssymbol ähnlich wie in diesem Screenshot suchen")](file-system-images/40-bundle.png#lightbox)
+ [![](file-system-images/40-bundle.png "Navigieren Sie zu \"bin\" / Debug, um ein Anwendungssymbol ähnlich wie in diesem Screenshot suchen")](file-system-images/40-bundle.png#lightbox)
 
 Mit der rechten Maustaste auf das Symbol, und wählen Sie **Anzeigen des Paketinhalts** den Inhalt des Verzeichnisses Anwendungspaket durchsuchen. Der Inhalt wird wie der Inhalt eines regulären Verzeichnisses angezeigt, wie hier gezeigt:
 

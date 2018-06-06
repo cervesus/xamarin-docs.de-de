@@ -1,19 +1,20 @@
 ---
-title: MacOS-Benutzeroberfläche
-description: Dieser Artikel enthält Links zu Anleitungen, die verschiedene MacOS UI-Steuerelemente beschrieben werden.
+title: Steuerelemente der Benutzeroberfläche in Xamarin.Mac macOS
+description: Dieses enthält Dokumentenlinks zu Anleitungen, die verschiedene Benutzeroberflächen-Steuerelemente Xamarin.Mac Entwickler zu beschreiben. Verknüpfte Inhalte übernehmen einen Blick auf Windows, Dialogfelder, Warnungen, Menüs, Symbolleisten, Tabellensichten, Gliederung Ansichten und mehr.
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: d40faa29f2fe278377bf4eae42a032f3dc9086ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 231d3a935cf251d0b2a1a3e6947abcb1c2133b90
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792953"
 ---
-# <a name="macos-user-interface"></a>MacOS-Benutzeroberfläche
+# <a name="macos-user-interface-controls-in-xamarinmac"></a>Steuerelemente der Benutzeroberfläche in Xamarin.Mac macOS
 
 _Dieser Artikel enthält Links zu Anleitungen, die verschiedene MacOS UI-Steuerelemente beschrieben werden._
 
@@ -71,6 +72,6 @@ Dieser Artikel behandelt das Erstellen von benutzerdefinierten Benutzeroberfläc
 
 Es wird auch empfohlen ansehen, die [Mac Samples Gallery](https://developer.xamarin.com/samples/mac/all/). Es enthält eine Fülle von Ready to Use-Code, mit denen Sie schnell ein Projekt Xamarin.Mac deaktiviert Grund kann.
 
-## <a name="related-links"></a>Verwandte links
+## <a name="related-links"></a>Verwandte Links
 
 - [MacOS von menschlichen Richtlinien zur Benutzeroberfläche](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

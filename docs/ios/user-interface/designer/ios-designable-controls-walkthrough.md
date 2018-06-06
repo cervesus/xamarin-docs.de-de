@@ -1,21 +1,20 @@
 ---
-title: Exemplarische Vorgehensweise – verwenden benutzerdefinierte Steuerelemente mit dem Xamarin-Designer für iOS
-description: Dieser Artikel bietet eine schrittweise exemplarische Vorgehensweise zeigt, wie ein benutzerdefiniertes Steuerelement zu erstellen und in die Xamarin-Designer für iOS verwenden. Es wird gezeigt, wie ein Steuerelement zur Verfügung zu stellen in der Toolbox des Designers daher Ziehen/auf eine Sicht nicht gelöscht kann werden. Es zeigt darüber hinaus, wie ein Steuerelement zu implementieren, damit es ordnungsgemäß zur Entwurfs- und Laufzeit gerendert wird, sowie zum Erstellen von Eigenschaften, die zur Entwurfszeit festgelegt werden können.
+title: Verwenden benutzerdefinierte Steuerelemente, mit der iOS-Designer
+description: Dieses Dokument beschreibt, wie ein benutzerdefiniertes Steuerelement zu erstellen und verwenden es mit dem Xamarin-Designer für iOS. Es wird gezeigt, wie das Steuerelement in der iOS-Designer-Toolbox verfügbar zu machen, das Steuerelement zu implementieren, damit es richtig gerendert und Entwerfen Zeit und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 4a7fb6cba82b52f2a3506df7a36b4813a88ff583
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dae675d65cb2be93ac828a1aebe560354630ab54
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790164"
 ---
-# <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>Exemplarische Vorgehensweise – verwenden benutzerdefinierte Steuerelemente mit dem Xamarin-Designer für iOS
-
-_Dieser Artikel bietet eine schrittweise exemplarische Vorgehensweise zeigt, wie ein benutzerdefiniertes Steuerelement zu erstellen und in die Xamarin-Designer für iOS verwenden. Es wird gezeigt, wie ein Steuerelement zur Verfügung zu stellen in der Toolbox des Designers daher Ziehen/auf eine Sicht nicht gelöscht kann werden. Es zeigt darüber hinaus, wie ein Steuerelement zu implementieren, damit es ordnungsgemäß zur Entwurfs- und Laufzeit gerendert wird, sowie zum Erstellen von Eigenschaften, die zur Entwurfszeit festgelegt werden können._
+# <a name="using-custom-controls-with-the-ios-designer"></a>Verwenden benutzerdefinierte Steuerelemente, mit der iOS-Designer
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -173,7 +172,7 @@ Dieses Handbuch setzt voraus, Vertrautheit mit den Inhalt in behandelt die [Eins
 
 1. Wählen Sie die **Bild anzeigen** , und ändern Sie seine **Image** Eigenschaft `Monkey.png`.
 
-    [![](ios-designable-controls-walkthrough-images/05new.png "Setting Image View Image property to Monkey.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
+    [! [] (Ios-entworfen-Steuerelemente-Exemplarische Vorgehensweise – Bilder/05new.png "Bild Einstellung Image-Eigenschaft auf Monkey.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
     
 1. Wie wir Größenklassen verwenden, müssen wir hier Bild zu beschränken. Klicken Sie auf das Bild zweimal, um diese Einschränkung Modus versetzen. Wir schränken Sie ihn an das Rechenzentrum durch Klicken auf das Handle Center anheften, und richten Sie es sowohl vertikal und horizontal:

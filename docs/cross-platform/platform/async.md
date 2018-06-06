@@ -1,24 +1,25 @@
 ---
-title: Async (Übersicht)
-description: 'Die neueste Version der C#-Sprache – Version 5 – eingeführt wurden zwei neue Schlüsselwörter, um asynchrone Vorgänge auszudrücken: Async und await. Diese Schlüsselwörter können Sie einfachen Code schreiben, der der Task Parallel Library zum Ausführen von lang ausgeführten Vorgänge (z. B. Netzwerkzugriff) nutzt in einem anderen Thread und einfacher Zugriff auf die Ergebnisse auf den Abschluss des Vorgangs. Die neuesten Versionen der Xamarin.iOS und Xamarin.Android asynchrone Unterstützung und "await": Dieses Dokument enthält erläuterungen und ein Beispiel zur Verwendung der neuen Syntax mit Xamarin.'
+title: Async Support Overview (Übersicht über die asynchrone Unterstützung)
+description: Dieses Dokument beschreibt die Programmierung mit Async und await Konzepten in c# 5 zum Schreiben von asynchronem Code vereinfachen.
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 5d6bb9581a4429502d9a70385b3ee2ff056f30ee
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 22878695d93ae79bbbfe1b99961587ff0bf957be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782007"
 ---
 # <a name="async-support-overview"></a>Async Support Overview (Übersicht über die asynchrone Unterstützung)
 
-_Die neueste Version der C#-Sprache – Version 5 – eingeführt wurden zwei neue Schlüsselwörter, um asynchrone Vorgänge auszudrücken: Async und await. Diese Schlüsselwörter können Sie einfachen Code schreiben, der der Task Parallel Library zum Ausführen von lang ausgeführten Vorgänge (z. B. Netzwerkzugriff) nutzt in einem anderen Thread und einfacher Zugriff auf die Ergebnisse auf den Abschluss des Vorgangs. Die neuesten Versionen der Xamarin.iOS und Xamarin.Android asynchrone Unterstützung und "await": Dieses Dokument enthält erläuterungen und ein Beispiel zur Verwendung der neuen Syntax mit Xamarin._
+_C#-5 eingeführte zwei Schlüsselwörter zur Vereinfachung der asynchronen Programing: Async und await. Diese Schlüsselwörter können Sie einfachen Code schreiben, der der Task Parallel Library zum Ausführen von lang ausgeführten Vorgänge (z. B. Netzwerkzugriff) nutzt in einem anderen Thread und einfacher Zugriff auf die Ergebnisse auf den Abschluss des Vorgangs. Die neuesten Versionen der Xamarin.iOS und Xamarin.Android asynchrone Unterstützung und "await": Dieses Dokument enthält erläuterungen und ein Beispiel zur Verwendung der neuen Syntax mit Xamarin._
 
 Die Xamarin asynchrone Unterstützung basiert auf der Grundlage Mono 3.0 und aktualisiert die API-Profil wird eine mobilgerätefreundliche-Version von Silverlight eine mobilgerätefreundliche-Version von .NET 4.5 ausgeführt werden.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 Dieses Dokument führt der neuen asynchronen und "await" Schlüsselwörter dann schrittweise einige einfache Beispiele, die Implementierung von asynchroner Methoden in Xamarin.iOS und Xamarin.Android.
 

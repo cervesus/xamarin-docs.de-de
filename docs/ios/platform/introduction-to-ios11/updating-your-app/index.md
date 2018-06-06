@@ -1,21 +1,20 @@
 ---
 title: Aktualisieren Ihre App für iOS-11
-description: Untersuchen die neuen Funktionen von iOS 11
+description: Dieses enthält Dokumentenlinks zu verschiedenen Handbüchern, die neuen Features für Entwickler von Xamarin.iOS mit der Version 11 e/as zu beschreiben. Klicken Sie beispielsweise Updates der visuellen Entwurf, App Store ändert, und Symbol "App" aktualisiert.
 ms.prod: xamarin
 ms.assetid: EC809504-9CF6-4949-B6EE-36384297E744
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 2581f729d85787021763f50f005e84d6bbb5db01
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ea57acbd6165f7b1abd8b9bd69873670c179f411
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787571"
 ---
 # <a name="updating-your-app-to-ios-11"></a>Aktualisieren Ihre App für iOS-11
-
-_Untersuchen die neuen Funktionen von iOS 11_
 
 In iOS 11 wurde Apple Architektur Updates, neue visuelle Änderungen und eine aktualisierte iTunes Connect Prozess eingeführt. Dieses Handbuch untersucht jede dieser Änderungen hilft Ihnen, Ihre Xamarin.iOS app für iOS 11 aktualisiert.
 

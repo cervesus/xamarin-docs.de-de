@@ -1,21 +1,20 @@
 ---
-title: iOS-Datenzugriff
-description: Die meisten Anwendungen auf eine Anforderung zum Speichern von Daten auf dem Gerät lokal. Wenn die Menge der Daten im Grunde klein ist, erfordert dies in der Regel eine Datenbank und eine Datenschicht in der Anwendung Zugriff auf die Datenbank zu verwalten. iOS hat die SQLite-Datenbank-Engine "integriert" und Zugriff zum Speichern und Abrufen von Daten durch die Xamarin Plattform vereinfacht. Dieses Dokument wird gezeigt, wie eine SQLite-Datenbank zuzugreifen.
+title: Xamarin.iOS-Datenzugriff
+description: Dieses enthält Dokumentenlinks zu Anleitungen, die zum Arbeiten mit lokalen Datenbanken in einer Anwendung Xamarin.iOS beschreiben. Verknüpften Inhalt erläutert SQLite.NET und ADO.NET.
 ms.prod: xamarin
 ms.assetid: 3AEDFD8D-FB10-4CEF-BE04-CCD14E95F02C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 47f2567d81f61568aad639330dc5133856e31936
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a986ea9931f62497e5a6863c84bd4041983d66d9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784575"
 ---
-# <a name="ios-data-access"></a>iOS-Datenzugriff
-
-_Die meisten Anwendungen auf eine Anforderung zum Speichern von Daten auf dem Gerät lokal. Wenn die Menge der Daten im Grunde klein ist, erfordert dies in der Regel eine Datenbank und eine Datenschicht in der Anwendung Zugriff auf die Datenbank zu verwalten. iOS hat die SQLite-Datenbank-Engine "integriert" und Zugriff zum Speichern und Abrufen von Daten durch die Xamarin Plattform vereinfacht. Dieses Dokument wird gezeigt, wie eine SQLite-Datenbank zuzugreifen._
+# <a name="xamarinios-data-access"></a>Xamarin.iOS-Datenzugriff
 
 Xamarin.iOS unterstützt Datenbankzugriff APIs, wie beispielsweise:
 
@@ -40,7 +39,6 @@ Xamarin.Forms-Anwendungen finden Sie unter [arbeiten mit Datenbanken](~/xamarin-
 -  [Verwenden von SQLite.NET ORM](using-sqlite-orm.md)
 -  [Verwenden von ADO.NET](using-adonet.md)
 -  [Verwenden von Daten in einer App](using-data-in-an-app.md)
-
 
 ## <a name="summary"></a>Zusammenfassung
 

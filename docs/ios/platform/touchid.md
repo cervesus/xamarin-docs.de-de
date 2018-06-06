@@ -1,19 +1,20 @@
 ---
-title: Touch ID
-description: Touch ID handelt es sich um Apple Fingerabdruck biometrische authentifizierungstechnologie.
+title: Touch ID in Xamarin.iOS
+description: Dieses Dokument beschreibt die Verwendung von Touch ID Apple Fingerabdruck biometrische authentifizierungstechnologie in Xamarin.iOS apps.
 ms.prod: xamarin
 ms.assetid: 4BC8EFD6-52FC-4793-BA69-D6BFF850FE5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: d9d70c37de5cb91c4cd1fdc77e27942d851c346b
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: b5db80d280d7ad3c43a438d5caae57fbd1928896
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788582"
 ---
-# <a name="touch-id"></a>Touch ID
+# <a name="touch-id-in-xamarinios"></a>Touch ID in Xamarin.iOS
 
 Touch ID wurde als Mittel zum Authentifizieren des Benutzers - ähnlich wie eine Kennung in iOS 7 eingeführt. Es wurde jedoch zum Entsperren des Geräts, den App Store, mithilfe der iTunes und Authentifizieren der iCloud-Schlüsselbund beschränkt.
 
@@ -51,8 +52,8 @@ Seit iOS 8 ist jetzt eine neue Vorhandensein Benutzerrichtlinie `SecAccessContro
 
 |Gerätekonfiguration|Auswertung von Richtlinien|Sicherungsverfahren|
 |--- |--- |--- |
-|Gerät ohne Kennung|Kein Zugriff|Keiner|
-|Gerät mit der Kennung|Erfordert die Kennung|Keiner|
+|Gerät ohne Kennung|Kein Zugriff|Keine|
+|Gerät mit der Kennung|Erfordert die Kennung|Keine|
 |Gerät mit Touch ID|Touch ID bevorzugt|Ermöglicht der Kennung|
 
 Alle Vorgänge in der sicheren Enclave können voneinander als vertrauenswürdig eingestuft. Dies bedeutet, dass wir das Authentifizierungsergebnis Touch ID verwenden können, um die Entschlüsselung der Schlüsselsammlung-Element zu autorisieren. Die sichere Enclave bleiben einen Zähler der fehlgeschlagenen Übereinstimmungen von Touch ID, in denen Fall ein Benutzer mit der Kennung zurücksetzen muss.

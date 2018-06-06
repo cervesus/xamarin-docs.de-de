@@ -1,21 +1,19 @@
 ---
-title: 'Exemplarische Vorgehensweise: Erstellen einer Anwendung mithilfe der Reflektions-API'
-description: Zusätzlich zu den Elementen-API, MonoTouch.Dialog (MT. D) von der ereignissteuerung eine Attribut-basierter Reflektions-API. Der Reflektions-API macht Erstellen von Bildschirmen mit MT. D so einfach wie ergänzen von Klassen mit Attributen. Dieser Artikel bietet erörtert erfahren, wie eine Anwendung mit der Reflektions-API zu erstellen.
+title: Erstellen einer Xamarin.iOS-Anwendung, die mithilfe der Reflektions-API
+description: Dieses Dokument beschreibt die MonoTouch.Dialog attributbasierte Reflektions-API, die basierend auf Klassen, die mit Attributen versehenen UI erstellt.
 ms.prod: xamarin
 ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e56eaeccb2e09d9f1ad84245bf41e2a4bf1b56f1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c60d2a8ca58fe807dc340125d0db21b6f9ddff9f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790508"
 ---
-# <a name="walkthrough-creating-an-application-using-the-reflection-api"></a>Exemplarische Vorgehensweise: Erstellen einer Anwendung mithilfe der Reflektions-API
-
-_Zusätzlich zu den Elementen-API, MonoTouch.Dialog (MT. D) von der ereignissteuerung eine Attribut-basierter Reflektions-API. Der Reflektions-API macht Erstellen von Bildschirmen mit MT. D so einfach wie ergänzen von Klassen mit Attributen. Dieser Artikel bietet erörtert erfahren, wie eine Anwendung mit der Reflektions-API zu erstellen._
-
+# <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Erstellen einer Xamarin.iOS-Anwendung, die mithilfe der Reflektions-API
 
 Die MT. D-Reflektions-API können Klassen werden mit Attributen ergänzt wurden, MT. D zum automatischen Erstellen von Bildschirmen verwendet. Die Reflektions-API bietet eine Bindung zwischen diesen Klassen und was auf dem Bildschirm angezeigt wird. Obwohl diese API die Differenzierte Steuerung, die die API-Elemente verfügt bietet, wird von automatisch auf die Hierarchie der Elemente basierend auf der Klasse Decoration Ausbau Komplexität reduziert.
 
@@ -36,7 +34,6 @@ Sehen wir uns ein Beispiel zum Veranschaulichen der Reflektions-API verwenden. I
  [![](reflection-api-walkthrough-images/01-expense-entry.png "In diesem Beispiel fügen wir eine einfache dateneingabebildschirm erstellen, wie hier gezeigt")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
  <a name="Creating_a_Class_with_MT.D_Attributes" />
-
 
 ## <a name="creating-a-class-with-mtd-attributes"></a>Erstellen eine Klasse mit MT. D-Attribute
 

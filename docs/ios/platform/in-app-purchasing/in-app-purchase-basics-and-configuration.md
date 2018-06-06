@@ -1,18 +1,20 @@
 ---
-title: In App-Käufe Grundlagen und Konfiguration
+title: In App-Käufe Grundlagen und-Konfiguration in Xamarin.iOS
+description: Dieses Dokument beschreibt die in-app-Käufen in Xamarin.iOS, relevante Informationen zu Regeln, Konfiguration und iTunes Connect diskutieren.
 ms.prod: xamarin
 ms.assetid: 11FB7F02-41B3-2B34-5A4F-69F12897FE10
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c08d27ce2f5d41b7de1d08ea73232e92f9fa8144
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9ded160ad4b31346c400e63d739a3dc21f6304d3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787242"
 ---
-# <a name="in-app-purchase-basics-and-configuration"></a>In App-Käufe Grundlagen und Konfiguration
+# <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>In App-Käufe Grundlagen und-Konfiguration in Xamarin.iOS
 
 In app-Einkäufe implementieren, muss die Anwendung die StoreKit-API auf dem Gerät nutzen können. StoreKit wird die gesamte Kommunikation mit Apple iTunes-Servern zum Abrufen von Produktinformationen und Ausführen von Transaktionen verwaltet. Die provisioning-Profil muss konfiguriert werden, für den Erwerb von app- und Produktinformationen in iTunes Connect eingegeben werden muss.
 
@@ -99,7 +101,7 @@ Erstellen Sie die App-ID, die Sie für den Erwerb von In-App eingerichtet haben,
 
 Klicken Sie auf **meine Apps** in iTunes Connect zum Erstellen oder bearbeiten den Eintrag einer iOS-Anwendung. Die Übersicht über die Anwendungsseite wird im folgenden dargestellt:
 
- [![](in-app-purchase-basics-and-configuration-images/image6.png "Die Anwendung-Seite "Übersicht"")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image6.png "Die Anwendung-Seite \"Übersicht\"")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
 
 Klicken Sie auf **In App-Einkäufe** erstellen oder bearbeiten Ihre Produkte für den Verkauf. Diese bildschirmabbildung zeigt die Beispiel-app mit verschiedenen Produkten, die bereits hinzugefügt:
 

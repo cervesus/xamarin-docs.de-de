@@ -1,5 +1,5 @@
 ---
-title: Auflistungsansichten
+title: Auflistungsansichten in Xamarin.iOS
 description: Auflistungsansichten können Inhalte mithilfe von beliebigen Layouts angezeigt werden sollen. Dateien können problemlos Raster-ähnliches Layouts ausgegeben, und unterstützt auch benutzerdefinierte Layouts erstellen.
 ms.prod: xamarin
 ms.assetid: F4B85F25-0CB5-4FEA-A3B5-D22FCDC81AE4
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 75ad331a265c14892f101b1aa7956d2cde3beec8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b9ba2f885364084d6bee67c460b4831c00c7ae55
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790626"
 ---
-# <a name="collection-views"></a>Auflistungsansichten
+# <a name="collection-views-in-xamarinios"></a>Auflistungsansichten in Xamarin.iOS
 
 _Auflistungsansichten können Inhalte mithilfe von beliebigen Layouts angezeigt werden sollen. Dateien können problemlos Raster-ähnliches Layouts ausgegeben, und unterstützt auch benutzerdefinierte Layouts erstellen._
 
@@ -188,7 +189,7 @@ In diesem Fall durch die Registrierung der `AnimalCell` Klasse iOS erstellt eine
  <a name="Delegate" />
 
 
-### <a name="delegate"></a>delegate
+### <a name="delegate"></a>Delegate
 
 Die `UICollectionView` Klasse verwendet einen Delegaten vom Typ `UICollectionViewDelegate` zur Unterstützung der Interaktion mit Inhalt in die `UICollectionView`. Dies ermöglicht eine Steuerung der:
 

@@ -1,17 +1,19 @@
 ---
-title: Neue Referenzsystem zählen
+title: Neue Verweiszählung System in Xamarin.iOS
+description: Dieses Dokument beschreibt erweiterte verweiszählung Xamarin System, die in allen Xamarin.iOS Anwendungen standardmäßig aktiviert.
 ms.prod: xamarin
 ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 00a792fb6ee55d5937046ebb321ffcb3aa8bdbd5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f2e40ca1fdd4a02d62e45004b75f3abefda781a5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786251"
 ---
-# <a name="new-reference-counting-system"></a>Neue Referenzsystem zählen
+# <a name="new-reference-counting-system-in-xamarinios"></a>Neue Verweiszählung System in Xamarin.iOS
 
 Verbesserte verweiszählung System für alle Anwendungen standardmäßig, Xamarin.iOS 9.2.1 eingeführt. Es kann viele Speicherprobleme zu vermeiden, die schwer zu verfolgen und korrigieren Sie in früheren Versionen von Xamarin.iOS wurden verwendet werden.
 

@@ -1,26 +1,26 @@
 ---
-title: Abonnements und Berichterstellung
+title: Abonnements und Berichterstattung in Xamarin.iOS
+description: Dieses Dokument beschreibt die Abonnements nicht erneuern, kostenlose Abonnements automatisch erneuerbar Abonnements und iTunes Connect für Berichte an diese Elemente verwenden.
 ms.prod: xamarin
 ms.assetid: 27EE4234-07F5-D2CD-DC1C-86E27C20141E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7ba47e8f0ec114845c14269e81bb7f078a5d4936
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e0873107a60b48e5ebfd8e159f3bf3b85d02867
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787028"
 ---
-# <a name="subscriptions-and-reporting"></a>Abonnements und Berichterstellung
+# <a name="subscriptions-and-reporting-in-xamarinios"></a>Abonnements und Berichterstattung in Xamarin.iOS
 
 ## <a name="about-non-renewing-subscriptions"></a>Informationen zu Abonnements nicht zu erneuern
 
 Nicht erneuern des Abonnements sind für Produkte vorgesehen, die die Verkaufszahlen für einen Dienst mit einer zeitbeschränkung z. B. (eine Woche Zugriff auf eine navigationsanwendung) oder zeitlich begrenzten Zugriff auf ein Datenarchiv darstellen.   
    
-   
-   
- Die Hauptunterschiede zwischen Abonnements nicht erneuern und anderen Typen:
+Die Hauptunterschiede zwischen Abonnements nicht erneuern und anderen Typen:
 
 -  Die Produktdefinition in iTunes Connect umfasst nicht den Begriff. Der Anwendungscode muss ableiten die Gültigkeitsdauer von der Produkt-ID sein. 
 -  Sie können mehrere Male (z. B. ein nutzbar Produkt) erworben werden. Anwendungen müssen zum Verwalten der Begriff/Ablauf von Abonnements und Erneuerung und verhindern, dass der Benutzer überlappende Abonnements erwerben. 
@@ -56,7 +56,7 @@ Aus dem iTunes Connect-Startseite auswählen **meine Apps**:
  
 Wählen Sie eine Anwendung, und klicken Sie auf die **In App-Einkäufe** Registerkarte:
 
-[![](subscriptions-and-reporting-images/image6.png "Klicken Sie auf der Registerkarte "In-App-Einkäufe"")](subscriptions-and-reporting-images/image6.png#lightbox)
+[![](subscriptions-and-reporting-images/image6.png "Klicken Sie auf der Registerkarte \"In-App-Einkäufe\"")](subscriptions-and-reporting-images/image6.png#lightbox)
 
 Wählen Sie in den unteren Rand der Seite, **anzeigen oder erstellen Sie einen gemeinsamen geheimen Schlüssel**:
    

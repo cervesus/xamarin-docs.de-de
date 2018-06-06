@@ -1,5 +1,5 @@
 ---
-title: Workout Apps
+title: WatchOS Trainings-Apps in Xamarin
 description: Dieser Artikel behandelt die Erweiterungen Apple hat versucht, Trainings-apps unter WatchOS 3 und wie diese in Xamarin implementiert.
 ms.prod: xamarin
 ms.assetid: F1D19635-A738-43E5-9873-1FC1BA44EEDF
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 96eb2eaca15ed0bccbb4c5cdb6a855fc7e0e3bb1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a9e1ed8c0808ad42d96ac84d79721a5c706a27ea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791705"
 ---
-# <a name="workout-apps"></a>Workout Apps
+# <a name="watchos-workout-apps-in-xamarin"></a>WatchOS Trainings-Apps in Xamarin
 
 _Dieser Artikel behandelt die Erweiterungen Apple hat versucht, Trainings-apps unter WatchOS 3 und wie diese in Xamarin implementiert._
 
@@ -96,7 +97,7 @@ Führen Sie folgende Schritte aus:
 1. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei `Entitlements.plist`, um sie zur Bearbeitung zu öffnen.
 2. Führen Sie einen Bildlauf nach unten, und überprüfen Sie **aktivieren HealthKit**: 
 
-    [![](workout-apps-images/auth01.png "Check Enable HealthKit")](workout-apps-images/auth01.png#lightbox)
+    [![](workout-apps-images/auth01.png "Überprüfen Sie HealthKit aktivieren")](workout-apps-images/auth01.png#lightbox)
 3. Speichern Sie die Änderungen in der Datei.
 4. Befolgen Sie die Anweisungen in der [explizite App-ID und Bereitstellungsprofil](~/ios/platform/healthkit.md) und [Zuordnen der App-ID und die Provisioning-Profil mit der Xamarin.iOS App](~/ios/platform/healthkit.md) Abschnitte der [Einführung in HealthKit](~/ios/platform/healthkit.md) Artikel, um die app richtig bereitstellen.
 5. Verwenden Sie abschließend die Anweisungen in der [Programmierung Integrität Kit](~/ios/platform/healthkit.md) und [Berechtigung aus der Benutzer anfordern](~/ios/platform/healthkit.md) Abschnitte der der [Einführung in HealthKit](~/ios/platform/healthkit.md) Artikel auf Anforderung die Autorisierung zum Zugriff auf die HealthKit Datenspeicher des Benutzers.

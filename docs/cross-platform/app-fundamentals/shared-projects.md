@@ -1,18 +1,19 @@
 ---
-title: Gemeinsam genutzte Projekte
+title: Verwenden freigegebener Projekte zur Freigabe von Code
 description: Gemeinsam genutzte Projekte können Sie die gemeinsamen Code schreiben, der durch eine Reihe von verschiedenen Anwendungsprojekte verwiesen wird. Der Code wird als Teil jeder verweisenden Projekts kompiliert und zählen Compilerdirektiven Clientplattform-spezifische Funktionalität in der gemeinsamen Codebasis integrieren können.
 ms.prod: xamarin
 ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 2910ada16aad2d8cb19cf0ee3a059c7df22b630e
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 749daac36cce26c9d24d04b89e933aab994791b4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781802"
 ---
-# <a name="shared-projects"></a>Gemeinsam genutzte Projekte
+# <a name="using-shared-projects-to-share-code"></a>Verwenden freigegebener Projekte zur Freigabe von Code
 
 _Gemeinsam genutzte Projekte können Sie die gemeinsamen Code schreiben, der durch eine Reihe von verschiedenen Anwendungsprojekte verwiesen wird. Der Code wird als Teil jeder verweisenden Projekts kompiliert und zählen Compilerdirektiven Clientplattform-spezifische Funktionalität in der gemeinsamen Codebasis integrieren können._
 

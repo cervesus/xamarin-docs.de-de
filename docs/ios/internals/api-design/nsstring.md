@@ -1,27 +1,28 @@
 ---
-title: NSString
+title: NSString in Xamarin.iOS und Xamarin.Mac
+description: Dieses Dokument beschreibt, wie Xamarin.iOS transparent konvertiert NSString Objekte in c# Zeichenfolgenobjekten, wenn dies nicht geschieht.
 ms.prod: xamarin
 ms.assetid: 785744B3-42E2-4590-8F41-435325E609B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 4b084c2f1066c5cfad90911d845aa7555c669130
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: baf36700ab4d608296a9a67e234ce613da9ca077
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786089"
 ---
-# <a name="nsstring"></a>NSString
+# <a name="nsstring-in-xamarinios-and-xamarinmac"></a>NSString in Xamarin.iOS und Xamarin.Mac
 
 Das Design von Xamarin.iOS und Xamarin.Mac aufruft, für die API verwenden, die systemeigene .NET Zeichenfolgentyp verfügbar zu machen `string`, für die Bearbeitung in C# geschrieben und anderen Programmiersprachen .NET und Zeichenfolge als Datentyp API, der anstelle der verfügbarmachen`NSString` -Datentyp.
-
 
 Dies bedeutet, dass Entwickler keine sollten, um Zeichenfolgen zu halten, die für den Aufruf von Xamarin.iOS & Xamarin.Mac-API (Unified) verwendet werden sollen, in eine Sonderform (`Foundation.NSString`), sie können den Mono verwenden weiterhin `System.String` für alle Vorgänge, und bei jedem eine API in Xamarin.iOS oder Xamarin.Mac muss eine Zeichenfolge, die unsere API-Bindung übernimmt die Marshallinginformationen.
 
 Z. B. die Objective-C "Text"-Eigenschaft für ein `UILabel` des Typs `NSString`, wird wie folgt deklariert:
 
-```csharp
+```objc
 @property(nonatomic, copy) NSString *text
 ```
 
@@ -39,14 +40,11 @@ Es gibt eine Handvoll von Drittanbietern Objective-C-APIs, die müssen nicht zwi
 
  <a name="Exceptions_to_the_Rule" />
 
-
 ## <a name="exceptions-to-the-rule"></a>Ausnahmen von der Regel
 
 In Xamarin.iOS und Xamarin.Mac haben wir eine Ausnahme von dieser Regel. Die Entscheidung zwischen Wenn zur Verfügung `string`s, und wir stellen, wenn ein except und verfügbar zu machen `NSString`s wird durchgeführt, wenn die `NSString` Methode konnte ausführen, wenn Sie einen zeigervergleich anstelle eines Vergleichs Inhalt.
 
-
 Dies kann vorkommen, wenn ein Objective-C-APIs eine öffentliche verwendet `NSString` -Konstanten als ein Token, das eine Aktion aus, statt den tatsächlichen Inhalt der Zeichenfolge vergleichen darstellt.
-
 
 In diesen Fällen `NSString` APIs bereitgestellt wurden, und es gibt eine Minderheit von APIs, die diese vorhanden ist. Beachten Sie auch, dass NSString-Eigenschaften in einigen Klassen verfügbar gemacht werden. Die `NSString` Eigenschaften für Elemente wie Benachrichtigungen verfügbar gemacht werden. Diese sind, dass Eigenschaften in der Regel sieht wie folgt aus:
 
@@ -55,7 +53,6 @@ class Foo {
      public NSString FooNotification { get; }
 }
 ```
-
 Benachrichtigungen sind für verwendeten Schlüssel der `NSNotification` Klasse, wenn Sie für ein bestimmtes Ereignis von der Laufzeit broadcast registrieren möchten.
 
 Schlüssel in der Regel wie folgt aussehen:

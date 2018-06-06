@@ -1,5 +1,5 @@
 ---
-title: Integrieren von Apps
+title: App-Nachrichtenintegration in Xamarin.iOS
 description: Diese Artikel anzeigen enthalten einen Nachrichten-App-Erweiterung wie in einem Xamarin.iOS-Projektmappe, die Integration mit der Nachrichten-app, um neue Funktionen für den Benutzer anzuzeigen.
 ms.prod: xamarin
 ms.assetid: 00AF2D4C-9BA8-4265-A11F-989C93BDF723
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/29/2016
-ms.openlocfilehash: a0471ba7b6cd612ecf781233381550e6abf800ce
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 91c0f8c536a672fb9ae2276aaa8f5ec4953ddf00
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787678"
 ---
-# <a name="message-app-integration"></a>Integrieren von Apps
+# <a name="message-app-integration-in-xamarinios"></a>App-Nachrichtenintegration in Xamarin.iOS
 
 _Diese Artikel anzeigen enthalten einen Nachrichten-App-Erweiterung wie in einem Xamarin.iOS-Projektmappe, die Integration mit der Nachrichten-app, um neue Funktionen für den Benutzer anzuzeigen._
 

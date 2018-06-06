@@ -1,21 +1,20 @@
 ---
-title: Einführung in die Storyboards
-description: Ein Storyboard ist eine visuelle Darstellung der Darstellung und Ablaufs der Anwendung. Xamarin einen Designer zum Zulassen von Xamarin.iOS Anwendungen nutzen von Storyboards, damit Sie Ihren Anwendungsbildschirm visuell entwerfen und Zugriff auf die Ansichten wurde eingeführt, Controller und segues mit c# mehr Kontrolle.
+title: Einführung in die Storyboards in Xamarin.iOS
+description: Dieses Dokument enthält eine Einführung in die Storyboards in Xamarin.iOS. Es wird beschrieben, wie ein Storyboard verwendet wird, um eine Benutzeroberfläche zu definieren, segues, und wie Sie die iOS-Designer verwenden, um Storyboard-Dateien zu bearbeiten.
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 647bd7d339dc56978752f7ab29de30cf8acb7e07
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3366da2f5dc869c7b075bf32be238a1ebd3145d7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790967"
 ---
-# <a name="introduction-to-storyboards"></a>Einführung in die Storyboards
-
-_Ein Storyboard ist eine visuelle Darstellung der Darstellung und Ablaufs der Anwendung. Xamarin einen Designer zum Zulassen von Xamarin.iOS Anwendungen nutzen von Storyboards, damit Sie Ihren Anwendungsbildschirm visuell entwerfen und Zugriff auf die Ansichten wurde eingeführt, Controller und segues mit c# mehr Kontrolle._
+# <a name="introduction-to-storyboards-in-xamarinios"></a>Einführung in die Storyboards in Xamarin.iOS
 
 In diesem Handbuch wird erläutert, welche ein Storyboard ist und einige der Hauptkomponenten – z. B. Segues untersuchen. Betrachten wir wie Storyboards erstellt und verwendet wird, werden können und welche Vorteile für Entwickler haben.
 
@@ -134,11 +133,11 @@ In manchen Fällen müssen Sie möglicherweise ein Storyboard einer zuvor nicht 
 
 1. Erstellen Sie eine neue Storyboarddatei zu suchen und **Datei > Neues Datei > iOS > Storyboard**, wie unten gezeigt: 
     
-    [![](images/new-storyboard-xs.png "Das Dialogfeld "neue Datei"")](images/new-storyboard-xs.png#lightbox)
+    [![](images/new-storyboard-xs.png "Das Dialogfeld \"neue Datei\"")](images/new-storyboard-xs.png#lightbox)
 
 2. Fügen Sie Ihr Name Storyboard der **Hauptbenutzeroberfläche** Teil der **"Info.plist"**, wie unten dargestellt:
     
-    [![](images/infoplist.png "Die Datei "Info.plist"-editor")](images/infoplist.png#lightbox)
+    [![](images/infoplist.png "Die Datei \"Info.plist\"-editor")](images/infoplist.png#lightbox)
     
     Dies ist die Entsprechung der Instanziierung der anfänglichen View-Controller in der `FinishedLaunching` Methode innerhalb der App-Delegat. Diese Option festgelegt ist, die Anwendung instanziiert ein Fenster (siehe unten), lädt die Haupt-Storyboard, und weist Sie eine Instanz von des Storyboards anfängliche-View-Controller (derjenige, der sich neben der sourceless Segue) als die `RootViewController` Eigenschaft des Fensters, und klicken Sie dann macht Das Fenster auf dem Bildschirm sichtbar ist.
 
@@ -153,11 +152,11 @@ In manchen Fällen müssen Sie möglicherweise ein Storyboard einer zuvor nicht 
 
 1. Erstellen Sie eine neue Storyboarddatei, indem Sie mit der rechten Maustaste auf das Projekt **hinzufügen > neuen Datei > iOS > leer Storyboard**, wie unten gezeigt: 
     
-    [![](images/new-storyboard-vs.png "Das Dialogfeld "Neues Element"")](images/new-storyboard-vs.png#lightbox)
+    [![](images/new-storyboard-vs.png "Das Dialogfeld \"Neues Element\"")](images/new-storyboard-vs.png#lightbox)
 
 2. Fügen Sie Ihr Storyboard Name der **Hauptbenutzeroberfläche** Abschnitt des iOS-Anwendung, wie unten dargestellt:
     
-    [![](images/ios-app.png "Die Datei "Info.plist"-editor")](images/ios-app.png#lightbox)
+    [![](images/ios-app.png "Die Datei \"Info.plist\"-editor")](images/ios-app.png#lightbox)
     
     Dies ist die Entsprechung der Instanziierung der anfänglichen View-Controller in der `FinishedLaunching` Methode innerhalb der App-Delegat. Diese Option festgelegt ist, die Anwendung instanziiert ein Fenster (siehe unten), lädt die Haupt-Storyboard, und weist Sie eine Instanz von des Storyboards anfängliche-View-Controller (derjenige, der sich neben der sourceless Segue) als die `RootViewController` Eigenschaft des Fensters, und klicken Sie dann macht Das Fenster auf dem Bildschirm sichtbar ist.
 
@@ -381,7 +380,7 @@ Um einen Verweis auf eine externe Storyboard hinzuzufügen, führen Sie folgende
 
 1. In der **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie **hinzufügen** > **neue Datei...**   >  **iOS** > **Storyboard**. Geben Sie einen **Namen** für das neue Storyboard und auf die **neu** Schaltfläche:
     
-    [![](images/ref01.png "Das Dialogfeld "neue Datei"")](images/ref01.png#lightbox)
+    [![](images/ref01.png "Das Dialogfeld \"neue Datei\"")](images/ref01.png#lightbox)
     
 2. Entwerfen Sie das Layout der das neue Storyboard Szenen wie gewohnt würde und die Änderungen zu speichern: 
     
@@ -395,7 +394,7 @@ Um einen Verweis auf eine externe Storyboard hinzuzufügen, führen Sie folgende
     
 5. In der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**, wählen Sie den Namen des der **Storyboard** , die Sie soeben erstellt haben: 
 
-    [![](images/ref04.png "Die Registerkarte "Widget"")](images/ref04.png#lightbox)
+    [![](images/ref04.png "Die Registerkarte \"Widget\"")](images/ref04.png#lightbox)
     
 6. STRG-Taste auf ein UI-Widget (z. B. eine Schaltfläche) auf einer vorhandenen Szene und erstellen Sie eine neue Segue auf die **Storyboard Verweis** , die Sie soeben erstellt haben: 
 
@@ -433,7 +432,7 @@ Um einen Verweis auf eine bestimmte Szene hinzufügen wie einer externen Storybo
     
 5. In der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**, wählen Sie den Namen des der **Storyboard** und die **Anwendungsverweis-ID** (Storyboard-ID) von der Szene, die Sie soeben erstellt haben: 
 
-    [![](images/ref09.png "Die Registerkarte "Widget" ")](images/ref09.png#lightbox)
+    [![](images/ref09.png "Die Registerkarte \"Widget\" ")](images/ref09.png#lightbox)
     
 6. STRG-Taste auf ein UI-Widget (z. B. eine Schaltfläche) auf einer vorhandenen Szene und erstellen Sie eine neue Segue auf die **Storyboard Verweis** , die Sie soeben erstellt haben: 
 
@@ -461,7 +460,7 @@ Um einen Verweis auf eine bestimmte Szene das gleiche Storyboard hinzuzufügen, 
 
 3. In der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**, geben Sie einen **Storyboard-ID** für der neuen Szene-View-Controller: 
 
-    [![](images/ref12.png "Die Registerkarte "Widget"")](images/ref12.png#lightbox)
+    [![](images/ref12.png "Die Registerkarte \"Widget\"")](images/ref12.png#lightbox)
     
 3. Ziehen Sie eine **Storyboard-Verweis** aus der **Toolbox** auf die Entwurfsoberfläche: 
 
@@ -469,7 +468,7 @@ Um einen Verweis auf eine bestimmte Szene das gleiche Storyboard hinzuzufügen, 
     
 5. In der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**Option **Anwendungsverweis-ID** (Storyboard-ID) der Szene, die Sie soeben erstellt haben: 
 
-    [![](images/ref13.png "Die Registerkarte "Widget"")](images/ref13.png#lightbox)
+    [![](images/ref13.png "Die Registerkarte \"Widget\"")](images/ref13.png#lightbox)
     
 6. STRG-Taste auf ein UI-Widget (z. B. eine Schaltfläche) auf einer vorhandenen Szene und erstellen Sie eine neue Segue auf die **Storyboard Verweis** , die Sie soeben erstellt haben: 
 

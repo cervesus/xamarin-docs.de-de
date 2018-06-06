@@ -1,20 +1,21 @@
 ---
-title: Verwenden die MonoGame PipelineTool
-description: Das Pipelinetool MonoGame dient zum Erstellen und Verwalten von Inhalt MonoGame-Projekte. Die Dateien in Projekten auf Inhalt vom Tool Monogame Pipeline verarbeitet und als .xnb-Dateien zur Verwendung in CocosSharp und MonoGame Anwendungen ausgegeben.
+title: Mithilfe des Tools MonoGame-Pipeline
+description: Das Pipelinetool MonoGame dient zum Erstellen und Verwalten von Inhalt MonoGame-Projekte. Die Dateien in Projekten auf Inhalt vom Tool MonoGame Pipeline verarbeitet und als .xnb-Dateien zur Verwendung in CocosSharp und MonoGame Anwendungen ausgegeben.
 ms.prod: xamarin
 ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 50e6c611e285cde9184eed242353ad08b2a941ee
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 347cb7e9d417f97cb6e8d78e67b1c76a378cd188
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783290"
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>Mithilfe des Tools MonoGame-Pipeline
 
-_Das Pipelinetool MonoGame dient zum Erstellen und Verwalten von Inhalt MonoGame-Projekte. Die Dateien in Projekten auf Inhalt vom Tool Monogame Pipeline verarbeitet und als .xnb-Dateien zur Verwendung in CocosSharp und MonoGame Anwendungen ausgegeben._
+_Das Pipelinetool MonoGame dient zum Erstellen und Verwalten von Inhalt MonoGame-Projekte. Die Dateien in Projekten auf Inhalt vom Tool MonoGame Pipeline verarbeitet und als .xnb-Dateien zur Verwendung in CocosSharp und MonoGame Anwendungen ausgegeben._
 
 Das Pipelinetool MonoGame stellt eine einfach zu bedienenden-Umgebung für die Konvertierung der Inhaltsdateien in **.xnb** Dateien zur Verwendung in CocosSharp und MonoGame-Anwendungen. Informationen zum Inhalt Pipelines und warum sie 3D-Spielentwicklung nützlich sind, finden Sie unter [dieser Einführung in das Content Pipelines](~/graphics-games/cocossharp/content-pipeline/introduction.md)
 
@@ -72,7 +73,7 @@ Nun, da wir einen Spielprojekt haben, können wir eine MonoGame Pipeline-Projekt
 
 Ändern der **Dateiname** auf **ContentProject** , und klicken Sie auf die **speichern** Schaltfläche:
 
-![](walkthrough-images/image8.png "Ändern Sie den Dateinamen in ContentProject, und klicken Sie auf die Schaltfläche "Speichern"")
+![](walkthrough-images/image8.png "Ändern Sie den Dateinamen in ContentProject, und klicken Sie auf die Schaltfläche \"Speichern\"")
 
 Nachdem das Projekt erstellt wurde, zeigt das Pipelinetool MonoGame Informationen über das Projekt beim Stamm **ContentProject** Element ausgewählt ist:
 
@@ -238,7 +239,7 @@ Bei der Ausführung wird unsere Spiel formuliert werden:
 
 In dieser exemplarischen Vorgehensweise wurde gezeigt, wie Sie das Pipelinetool MonoGame um .xnb Dateien aus einer Eingabe PNG-Datei zu erstellen sowie Gewusst wie: Erstellen einer neuen .xnb-Datei aus einer Datei .sprintefont neu erstellt. Es wurde auch erläutert, wie CocosSharp-Projekte zur Verwendung von .xnb Dateien strukturiert und wie diese Dateien zur Laufzeit geladen.
 
-## <a name="related-links"></a>Verwandte links
+## <a name="related-links"></a>Verwandte Links
 
 - [MonoGame Downloads](http://www.monogame.net/downloads/)
 - [MonoGame Pipeline-Dokumentation](http://www.monogame.net/documentation/?page=Pipeline)

@@ -1,5 +1,5 @@
 ---
-title: App-Transportsicherheit
+title: App-Transportsicherheit in Xamarin.iOS
 description: App-Transportsicherheit (ATS) erzwingt, sichere Verbindungen zwischen Internet-Ressourcen (z. B. die app-Back-End-Server) und Ihre app.
 ms.prod: xamarin
 ms.assetid: F8C5E444-2D05-4D9B-A2EF-EB052CD6F007
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: 7e3a191def7e0c06365f334b4a7708e5927eadf8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71632da89c6a276b427b36f91eb343ab0a5c515b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784321"
 ---
-# <a name="app-transport-security"></a>App-Transportsicherheit
+# <a name="app-transport-security-in-xamarinios"></a>App-Transportsicherheit in Xamarin.iOS
 
 _App-Transportsicherheit (ATS) erzwingt, sichere Verbindungen zwischen Internet-Ressourcen (z. B. die app-Back-End-Server) und Ihre app._
 
@@ -119,7 +120,7 @@ Nachteile:
 - Der WatchOS nicht verfügbar.
 - Einige Funktionen für "HttpClient" und die Optionen sind nicht verfügbar.
 
-#### <a name="nsurlsession-handler"></a>NSUrlSession Handler
+#### <a name="nsurlsession-handler"></a>NSUrlSession-Handler
 
 Der Handler NSUrlSession basierend basiert auf dem systemeigenen `NSUrlSession` API.
 
@@ -172,16 +173,16 @@ Jeder Schlüssel weist die folgenden Typ und die Bedeutung:
 
 - **NSAppTransportSecurity** (`Dictionary`) – enthält alle von der Einstellungsschlüssel und Werte für ATS.
 - **NSAllowsArbitraryLoads** (`Boolean`) – Wenn `YES` ATS für eine beliebige Domäne deaktiviert **nicht** abgelesen `NSExceptionDomains`. Für aufgelisteten Domänen werden die angegebene Sicherheitseinstellungen verwendet werden.
-- **NSAllowsArbitraryLoadsInWebContent** (`Boolean`) - If `YES` will allow web pages to load correctly while Apple Transport Security (ATS) protection is still enabled for the rest of the app.
+- **NSAllowsArbitraryLoadsInWebContent** (`Boolean`) – Wenn `YES` lässt Webseiten ordnungsgemäß geladen werden, während der Apple-Transport-Sicherheit (ATS)-Schutz für den Rest der app weiterhin aktiviert ist.
 - **NSExceptionDomains** (`Dictionary`) – eine Auflistung von Domänen, und die Sicherheitseinstellungen, die für eine bestimmte Domäne ATS verwendet werden soll.
-- **< Domain-name-for-exception-as-string >** (`Dictionary`) – eine Auflistung von Ausnahmen für eine bestimmte Domäne (z. b. `www.xamarin.com`) angezeigt wird.
+- **< Domain-name-for-exception-as-string >** (`Dictionary`) – eine Auflistung von Ausnahmen für eine bestimmte Domäne (z. b. `www.xamarin.com`).
 - **NSExceptionMinimumTLSVersion** (`String`) – die TLS-Mindestversion entweder als `TLSv1.0`, `TLSv1.1` oder `TLSv1.2` (Dies ist die Standardeinstellung).
-- **NSExceptionRequiresForwardSecrecy** (`Boolean`) - If `NO` the domain does not have to use a cipher with forward security. Der Standardwert ist `YES`.
+- **NSExceptionRequiresForwardSecrecy** (`Boolean`) – Wenn `NO` die Domäne muss es sich nicht in eine Chiffre mit forward Sicherheit verwenden. Der Standardwert ist `YES`.
 - **NSExceptionAllowsInsecureHTTPLoads** (`Boolean`) - If `NO` (the default) all communications with this domain must be in the `HTTPS` protocol.
-- **NSRequiresCertificateTransparency** (`Boolean`) - If `YES` the domain’s Secure Sockets Layer (SSL) must include valid transparency data. Der Standardwert ist `NO`.
+- **NSRequiresCertificateTransparency** (`Boolean`) – Wenn `YES` der Domäne Secure Sockets Layer (SSL) muss gültige Transparenzdaten enthalten. Der Standardwert ist `NO`.
 - **NSIncludesSubdomains** (`Boolean`) – Wenn `YES` diese Einstellungen außer Kraft setzen alle Unterdomänen dieser Domäne. Der Standardwert ist `NO`.
 - **NSThirdPartyExceptionMinimumTLSVersion** (`String`) – die TLS-Protokollversion, die verwendet werden, wenn die Domäne einen 3rd Party Dienst außerhalb der Kontrolle des Entwicklers ist.
-- **NSThirdPartyExceptionRequiresForwardSecrecy** (`Boolean`) - If `YES` a 3rd party domain requires forward secrecy.
+- **NSThirdPartyExceptionRequiresForwardSecrecy** (`Boolean`) – Wenn `YES` eine 3rd Party-Domäne erfordert forward Secrecy.
 - **NSThirdPartyExceptionAllowsInsecureHTTPLoads** (`Boolean`) - If `YES` the ATS will allow non-secure communication with 3rd party domains.
 
 <a name="optout" />
@@ -214,7 +215,7 @@ Wenn Ihre app Xamarin.iOS eine Anforderung mit einer unsicheren Domäne vornehme
 
 Innerhalb von Visual Studio für Mac, doppelklicken Sie auf die `Info.plist` in der Datei die **Projektmappen-Explorer**, wechseln Sie zu der **Quelle** anzeigen und die oben aufgeführten Schlüssel hinzufügen:
 
-[![](ats-images/ats01.png "Die Datenquellensicht an, der die Datei "Info.plist"")](ats-images/ats01.png#lightbox)
+[![](ats-images/ats01.png "Die Datenquellensicht an, der die Datei \"Info.plist\"")](ats-images/ats01.png#lightbox)
 
 
 Wenn Ihre app zum Laden und Anzeigen von Webinhalten von Standorten nicht sicheren benötigt, fügen Sie die folgenden für Ihre app **"Info.plist"** Datei zum Zulassen von Webseiten ordnungsgemäß geladen werden, während der Apple-Transport-Sicherheit (ATS)-Schutz für die restlichen weiterhin aktiviert ist der app:
@@ -239,7 +240,7 @@ Optional können Sie die folgenden Änderungen vornehmen, auf Ihre app **"Info.p
 
 Innerhalb von Visual Studio für Mac, doppelklicken Sie auf die `Info.plist` in der Datei die **Projektmappen-Explorer**, wechseln Sie zu der **Quelle** anzeigen und die oben aufgeführten Schlüssel hinzufügen:
 
-[![](ats-images/ats02.png "Die Datenquellensicht an, der die Datei "Info.plist"")](ats-images/ats02.png#lightbox)
+[![](ats-images/ats02.png "Die Datenquellensicht an, der die Datei \"Info.plist\"")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
 > Wenn Ihre Anwendung eine Verbindung mit der eine unsichere Website erfordert, sollten Sie **immer** Geben Sie die Domäne als eine Ausnahme mit `NSExceptionDomains` anstatt durch das ATS deaktivieren vollständig mit `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` sollte nur im Notfall Extremsituationen verwendet werden.

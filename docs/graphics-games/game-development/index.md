@@ -1,20 +1,19 @@
 ---
 title: Einführung in die 3D-Spielentwicklung mit Xamarin
-description: Die Art der 3D-Spielentwicklung kann von der Entwicklung von anderen Typen von apps erheblich abweichen. Dieser Artikel ist eine Einführung in die Entwicklung mit Technologien, die mit Xamarin.iOS und Xamarin.Android verwendet werden können. Es bietet eine allgemeine Erläuterung der wie Spiele vorgenommen werden und eine Stichprobe von Technologien für die Verwendung mit Xamarin.iOS und Xamarin.Android.
+description: Dieses Dokument enthält einen allgemeinen Überblick 3D-Spielentwicklung mit Xamarin, die beschreiben, wie Spiele vorgenommen werden und eine Stichprobe von Technologien für die Verwendung mit Xamarin.iOS und Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 543d3e2d4e53d1b88213ac82689073a9fb925820
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b1bd6d011cdc10352ce3b9258da7e16c2899d2d8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783915"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Einführung in die 3D-Spielentwicklung mit Xamarin
-
-_Die Art der 3D-Spielentwicklung kann von der Entwicklung von anderen Typen von apps erheblich abweichen. Dieser Artikel ist eine Einführung in die Entwicklung mit Technologien, die mit Xamarin.iOS und Xamarin.Android verwendet werden können. Es bietet eine allgemeine Erläuterung der wie Spiele vorgenommen werden und eine Stichprobe von Technologien für die Verwendung mit Xamarin.iOS und Xamarin.Android._
 
 Entwickeln von Spielen kann sehr spannend insbesondere angegeben, wie einfach es sein kann, um Ihre Arbeit auf mobilen Plattformen zu veröffentlichen. Dieser Artikel erläutert die Konzepte, und Technologien, die im Zusammenhang mit der Entwicklung, die Ihnen helfen erstellen Spiele, Ihr Ziel ist, um ein qualitativ hochwertiges AAA Spiel oder auf eine Anwendung für Fun zu erstellen.
 

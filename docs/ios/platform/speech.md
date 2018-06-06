@@ -1,5 +1,5 @@
 ---
-title: Spracherkennung
+title: Spracherkennung in Xamarin.iOS
 description: Dieser Artikel bietet neue Speech-API, und es wird gezeigt, wie in einer Xamarin.iOS-app fortlaufende Spracherkennung unterstützen und transkribieren Spracherkennung (von Livedaten oder aufgezeichnete Audiodatenströme) in Text zu implementieren.
 ms.prod: xamarin
 ms.assetid: 64FED50A-6A28-4833-BEAE-63CEC9A09010
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fa010f57d163cabe544176608cff2eb6efe872ad
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 00841a73f9da3c4c434419cdb37726b17c08cf31
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788360"
 ---
-# <a name="speech-recognition"></a>Spracherkennung
+# <a name="speech-recognition-in-xamarinios"></a>Spracherkennung in Xamarin.iOS
 
 _Dieser Artikel bietet neue Speech-API, und es wird gezeigt, wie in einer Xamarin.iOS-app fortlaufende Spracherkennung unterstützen und transkribieren Spracherkennung (von Livedaten oder aufgezeichnete Audiodatenströme) in Text zu implementieren._
 

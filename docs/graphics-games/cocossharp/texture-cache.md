@@ -1,16 +1,17 @@
 ---
-title: Mithilfe von CCTextureCache Textur-Caching
-description: Der CocosSharp CCTextureCache Klasse bietet ein gängiges Verfahren zum Organisieren, Cache, und entfernen Inhalt an. Er ist besonders nützlich für große Spiele, die nicht vollständig in den Arbeitsspeicher, vereinfacht den Prozess der Gruppierung und Freigeben von Texturen anpassen können.
+title: Textur Zwischenspeichern mithilfe von CCTextureCache
+description: Der CocosSharp CCTextureCache Klasse bietet ein gängiges Verfahren zum Organisieren, Cache, und entfernen Inhalt an. Er ist besonders nützlich für große Spiele, die nicht vollständig in den Arbeitsspeicher, vereinfacht den Prozess der Gruppierung und Freigeben von Texturen entsprechen können.
 ms.prod: xamarin
 ms.assetid: 1B5F3F85-9E68-42A7-B516-E90E54BA7102
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: bb75efea0914827f1d59a8e0943584597f91803a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: c217d8a935ae971aab472b05968c0251366362b2
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783687"
 ---
 # <a name="texture-caching-using-cctexturecache"></a>Textur Zwischenspeichern mithilfe von CCTextureCache
 
@@ -189,7 +190,7 @@ Die Dispose-Methode werden alle internen Strukturen, die gelöscht wird, des dur
 
 Diese Anleitung zeigt, wie die `CCTextureCache` Klasse, um den Saldo Arbeitsspeicher Verwendung und die Common Language Runtime-Leistung. `CCTexturCache.SharedTextureCache` kann explizit oder implizit zu laden und Zwischenspeichern von Texturen, für die Lebensdauer der Anwendung verwendet, während er sich `CCTextureCache` Instanzen dienen zum Entladen von Texturen, um die speicherauslastung zu reduzieren.
 
-## <a name="related-links"></a>Verwandte links
+## <a name="related-links"></a>Verwandte Links
 
 - [https://github.com/mono/CocosSharp](https://github.com/mono/CocosSharp)
 - [/api/type/CocosSharp.CCTextureCache/](https://developer.xamarin.com/api/type/CocosSharp.CCTextureCache/)

@@ -7,15 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 88821c5315fc338b5195e42ea4b2bc3e648e6ea1
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 6a0544a58245efed696b92c543fbaf5e7e1b8365
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732826"
 ---
 # <a name="introduction-to-dependencyservice"></a>Einführung in DependencyService
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 [`DependencyService`](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) ermöglicht apps Clientplattform-spezifische Funktionen von freigegebenem Code aufrufen. Diese Funktionen ermöglichen das Xamarin.Forms-apps, nichts zu tun, die eine systemeigene app durchführen können.
 
@@ -23,7 +24,7 @@ ms.lasthandoff: 04/27/2018
 
 ## <a name="how-dependencyservice-works"></a>Funktionsweise von DependencyService
 
-Xamarin.Forms-apps benötigen drei Komponenten mit `DependencyService`:
+Xamarin.Forms-apps benötigen Sie vier Komponenten zur Verwendung `DependencyService`:
 
 - **Schnittstelle** &ndash; die erforderliche Funktionalität wird durch eine Schnittstelle im freigegebenen Code definiert.
 - **Implementierung pro Plattform** &ndash; Klassen, die die Schnittstelle implementieren müssen auf jeder plattformprojekt hinzugefügt werden.
@@ -36,7 +37,7 @@ Die Struktur der Anwendung wird durch Folgendes Diagramm erläutert:
 
 ![](introduction-images/overview-diagram.png "DependencyService Anwendungsstruktur")
 
-### <a name="interface"></a>Interface
+### <a name="interface"></a>Schnittstelle
 
 Die Schnittstelle, die Sie entwerfen definieren Interaktion mit Clientplattform-spezifische Funktionen. Seien Sie vorsichtig, wenn Sie eine Komponente als eine Komponente oder ein NuGet-Paket die weiterzuleitenden entwickeln. API-Entwurf kann stellen oder ein Paket unterbrechen. Das folgende Beispiel gibt eine einfache Schnittstelle für sprechen, die bewirkt, dass die Implementierung für jede Plattform angepasst werden, ermöglicht Flexibilität bei der Angabe der Wörter zu sprechenden Text an:
 

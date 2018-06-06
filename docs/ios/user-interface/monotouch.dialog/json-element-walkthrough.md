@@ -1,21 +1,21 @@
 ---
-title: 'Exemplarische Vorgehensweise: Erstellen einer Benutzeroberfläche mithilfe einer JSON-Element'
+title: Erstellen eine Benutzeroberfläche in Xamarin.iOS mithilfe von JSON
 description: MonoTouch.Dialog (MT. D) bietet Unterstützung für dynamische UI generieren über JSON-Daten. In diesem Lernprogramm werden protokollsuchen wie eine JSONElement verwenden, um eine neue Benutzeroberfläche aus JSON zu erstellen, die entweder mit einer Anwendung enthalten, oder von einem remote-Url geladen.
 ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 322857295383d17da03507bdd5ac78753f8c0619
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f9ba2cce1650260aa889e8282c091012ef8bbddc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790652"
 ---
-# <a name="walkthrough-using-a-json-element-to-create-a-user-interface"></a>Exemplarische Vorgehensweise: Erstellen einer Benutzeroberfläche mithilfe einer JSON-Element
+# <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>Erstellen eine Benutzeroberfläche in Xamarin.iOS mithilfe von JSON
 
 _MonoTouch.Dialog (MT. D) bietet Unterstützung für dynamische UI generieren über JSON-Daten. In diesem Lernprogramm werden protokollsuchen wie eine JSONElement verwenden, um eine neue Benutzeroberfläche aus JSON zu erstellen, die entweder mit einer Anwendung enthalten, oder von einem remote-Url geladen._
-
 
 MT. D unterstützt beim Erstellen von Benutzeroberflächen, die im JSON-Format deklariert. Wenn Elemente deklariert werden JSON, MT. mit D wird automatisch die zugehörigen Elemente für Sie erstellt. JSON kann geladen werden, entweder von einer lokalen Datei, die eine analysierte `JsonObject` Instanz oder sogar eine remote-Url.
 

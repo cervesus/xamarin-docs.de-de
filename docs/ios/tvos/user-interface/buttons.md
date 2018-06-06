@@ -1,22 +1,20 @@
 ---
-title: Arbeiten mit Schaltflächen
-description: Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Schaltflächen innerhalb einer Xamarin.tvOS-app.
+title: Arbeiten mit tvos. außerdem wurden Schaltflächen in Xamarin
+description: Dieses Dokument beschreibt, wie mit den Schaltflächen in einer app für tvos. außerdem wurden mit Xamarin erstellten arbeiten. Es wird erläutert, wie mit den Schaltflächen im Code und in Storyboards arbeiten, und sie untersucht, wie auf eine Schaltfläche zu formatieren.
 ms.prod: xamarin
 ms.assetid: DA6EF400-A4E3-4245-A0D4-F2398CAE2C9B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: e915e96690fe67f0e704ec558313427f01753438
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3de732e9eee696ce21ffc5526afd44f29695a313
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789384"
 ---
-# <a name="working-with-buttons"></a>Arbeiten mit Schaltflächen
-
-_Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Schaltflächen innerhalb einer Xamarin.tvOS-app._
-
+# <a name="working-with-tvos-buttons-in-xamarin"></a>Arbeiten mit tvos. außerdem wurden Schaltflächen in Xamarin
 
 Eine Instanz der `UIButton` -Klasse zum Erstellen von schaltflächenstilen den Fokus erhalten kann, auswählbare in einem Fenster tvos. außerdem wurden. Wenn der Benutzer eine Schaltfläche auswählt, sendet er eine Aktionsnachricht auf das Zielobjekt Ihrer Xamarin.tvOS app reagieren, die dem Benutzer den eingabeendpunkt zulassen.
 
@@ -75,7 +73,7 @@ Die einfachste Möglichkeit zum Arbeiten mit Schaltflächen in einer app Xamarin
     [![](buttons-images/storyboard02.png "Eigenschaften von Schaltflächen")](buttons-images/storyboard02.png#lightbox)
 1. Als Nächstes wechseln Sie zu der **Registerkarte "Ereignisse"** und über das Netzwerk ein **Ereignis** aus der **Schaltfläche** und Aufruf der `ButtonPressed`: 
 
-    [![](buttons-images/storyboard03.png "Die Registerkarte "Ereignisse"")](buttons-images/storyboard03.png#lightbox)
+    [![](buttons-images/storyboard03.png "Die Registerkarte \"Ereignisse\"")](buttons-images/storyboard03.png#lightbox)
 1. Sie werden automatisch auf verlagert die `ViewController.cs` anzeigen, wo Sie die neue Aktion in Ihrem Code platzieren können, die **einrichten** und **nach unten** Pfeiltasten: 
 
     [![](buttons-images/storyboard04.png "Platzieren eine neue Aktion im code")](buttons-images/storyboard04.png#lightbox)
@@ -96,7 +94,7 @@ Die einfachste Möglichkeit zum Arbeiten mit Schaltflächen in einer app Xamarin
     [![](buttons-images/storyboard02vs.png "Im Eigenschaften-Explorer")](buttons-images/storyboard02vs.png#lightbox)
 1. Als Nächstes wechseln Sie zu der **Registerkarte "Ereignisse"** und über das Netzwerk ein **Ereignis** aus der **Schaltfläche** und Aufruf der `ButtonPressed`: 
 
-    [![](buttons-images/storyboard03vs.png "Die Registerkarte "Ereignisse"")](buttons-images/storyboard03vs.png#lightbox)
+    [![](buttons-images/storyboard03vs.png "Die Registerkarte \"Ereignisse\"")](buttons-images/storyboard03vs.png#lightbox)
 1. Speichern Sie die Änderungen auf alle Dateien.
 
 

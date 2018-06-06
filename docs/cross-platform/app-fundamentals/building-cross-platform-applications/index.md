@@ -1,24 +1,23 @@
 ---
-title: Erstellen von Cross-Platform-Anwendungen
+title: Erstellen von plattformübergreifenden Anwendungen
 description: Dieser Abschnitt beschreibt eine Zusammenfassung plus sechs Komponenten zum Erstellen von Anwendungen mit dem Xamarin-Entwicklungsplattform – aus Grundlegendes zur Funktionsweise von Xamarin beim Entwerfen von mobilen apps und klicken Sie dann testen und bereitstellen können, die verschiedene app-Stores.
 ms.prod: xamarin
 ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
 author: asb3993
 ms.author: amburns
 ms.date: 01/28/2016
-ms.openlocfilehash: fba13ab921949cd2361e78535d5ffc96952a1336
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3966b731531d617f105583210334a23071a6802b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780173"
 ---
-# <a name="sharing-code-options"></a>Optionen für die Codefreigabe
+# <a name="building-cross-platform-applications"></a>Erstellen von plattformübergreifenden Anwendungen
 
 Es gibt zwei Optionen zum Freigeben von Code für plattformübergreifende mobile-Anwendungen: Asset-Projekten gemeinsam genutzt und portablen Klassenbibliotheken. Diese Optionen sind [hier besprochenen](~/cross-platform/app-fundamentals/code-sharing.md); Weitere Informationen zu [portablen Klassenbibliotheken](~/cross-platform/app-fundamentals/pcl.md) und [freigegebene Projekte](~/cross-platform/app-fundamentals/shared-projects.md) ist ebenfalls verfügbar.
 
 <a name="Sections" />
-
-## <a name="building-cross-platform-mobile-apps"></a>Cross-Platform Mobile Apps erstellen
 
  [Übersicht](~/cross-platform/app-fundamentals/building-cross-platform-applications/overview.md)
 
@@ -36,13 +35,11 @@ Es gibt zwei Optionen zum Freigeben von Code für plattformübergreifende mobile
 
  <a name="Cross-Platform_Mobile_Application_Case_Studies" />
 
-
 ## <a name="case-studies"></a>Fallstudien
 
 Die Prinzipien, die im vorliegenden Dokument beschrieben werden in der Praxis in der beispielanwendung platziert *Tasky*, als auch [vorab erstellte Anwendungen](https://xamarin.com/prebuilt) wie [Xamarin CRM](https://xamarin.com/prebuilt/#xamarincrm).
 
  <a name="Tasky" />
-
 
 ### <a name="tasky"></a>Tasky
 
@@ -53,7 +50,6 @@ Es veranschaulicht die Grundlagen der Erstellung einer plattformübergreifenden-
 
 Lesen der [Tasky Fallstudie](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md).
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Abschnitt werden die Xamarin Anwendung Development Tools vorgestellt und erläutert, wie zum Erstellen von Anwendungen, die mehrere mobile Plattformen entwickeln.
@@ -63,8 +59,6 @@ Er umfasst einer mehrstufigen Architektur Strukturen Code für die erneute Verwe
 Beispiele sind enthalten, der allgemeine Funktionen der Anwendung (z. B. Datei- und Netzwerk-Vorgänge) und wie eine plattformübergreifende Möglichkeit erstellt werden kann.
 
 Schließlich kurz erläutert die Tests, und enthält Verweise auf eine Fallstudie, die diese Prinzipien in Aktion versetzt.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

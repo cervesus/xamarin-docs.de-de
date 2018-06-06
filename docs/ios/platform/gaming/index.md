@@ -1,5 +1,5 @@
 ---
-title: iOS-APIs spielen
+title: iOS Gaming-APIs in Xamarin.iOS
 description: Dieser Artikel behandelt die neuen Gaming-Erweiterungen bereitgestellt, die von iOS 9, die verwendet werden können, um Ihr Xamarin.iOS Spiels Grafiken und audio Features zu verbessern.
 ms.prod: xamarin
 ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 34d3d6980819510a3390e2c30069818d6dfd721f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 263c325816867e9eee32c92edf97f703b39bda7c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786859"
 ---
-# <a name="ios-gaming-apis"></a>iOS-APIs spielen
+# <a name="ios-gaming-apis-in-xamarinios"></a>iOS Gaming-APIs in Xamarin.iOS
 
 _Dieser Artikel behandelt die neuen Gaming-Erweiterungen bereitgestellt, die von iOS 9, die verwendet werden können, um Ihr Xamarin.iOS Spiels Grafiken und audio Features zu verbessern._
 
@@ -405,7 +406,7 @@ Mithilfe von Metall Leistung Shader-Klassen können Sie die höchste Leistung f�
 
 Die Metall Leistung Shader-Framework bietet eine Reihe von allgemeinen Shader wie z. B.:
 
-- **Gaussian Blur** (`MPSImageGaussianBlur`)
+- **Gauß Blur** (`MPSImageGaussianBlur`)
 - **Sobel Edge-Erkennung** (`MPSImageSobel`)
 - **Abbildung Histogramm** (`MPSImageHistogram`)
 

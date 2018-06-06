@@ -1,5 +1,6 @@
 ---
-title: Problembehandlung
+title: Tipps für die Problembehandlung für Xamarin.iOS
+description: Dieses Dokument enthält verschiedene Tipps zur Problembehandlung bei der Entwicklung von Xamarin.iOS Anwendungen nützlich. Fehlermeldungen als auch für andere potenzielle Probleme beschrieben.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
@@ -7,15 +8,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/0201
-ms.openlocfilehash: 6a179c1d63e9b5a7b8a42705d5c112a7b71a4906
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 26fe2fb848fb81940bc01a34c69b1b28897005dc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789352"
 ---
-# <a name="troubleshooting"></a>Problembehandlung
+# <a name="troubleshooting-tips-for-xamarinios"></a>Tipps für die Problembehandlung für Xamarin.iOS 
 
-## <a name="xamarinios-cannot-resolve-systemvaluetuple"></a>Xamarin.iOS cannot resolve System.ValueTuple
+## <a name="xamarinios-cannot-resolve-systemvaluetuple"></a>Xamarin.iOS kann nicht System.ValueTuple aufgelöst werden.
 
 Dieser Fehler tritt aufgrund einer Inkompatibilität mit Visual Studio.
 
@@ -36,7 +38,7 @@ Mit der Einführung von der Xamarin-Designer für iOS in Visual Studio für Mac 
 
 Sie können auch auf der Apple-verweisen [Nachrichtenplattform](https://developer.apple.com/library/ios/recipes/xcode_help-IB_connections/chapters/CreatingOutlet.html) und [Aktionen](https://developer.apple.com/library/ios/recipes/xcode_help-IB_connections/chapters/CreatingAction.html) Leitfäden an, um weitere Informationen zur Verwendung von Steckdosen und Aktionen im IB.
 
-## <a name="systemtextencodinggetencoding-throws-notsupportedexception"></a>System.Text.Encoding.GetEncoding throws NotSupportedException
+## <a name="systemtextencodinggetencoding-throws-notsupportedexception"></a>System.Text.Encoding.GetEncoding löst NotSupportedException aus.
 
 Sie verwenden möglicherweise eine Codierung, die nicht standardmäßig hinzugefügt wird. Überprüfen Sie die [Internationalisierung](~/ios/app-fundamentals/localization/index.md) Seite, um zu erfahren, wie die Unterstützung für weitere Codierung hinzuzufügen.
 

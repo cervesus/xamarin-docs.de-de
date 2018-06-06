@@ -1,21 +1,20 @@
 ---
-title: Visuelle Design-Updates
-description: Untersuchen die neuen Funktionen von iOS 11
+title: Visueller Entwurf Updates in iOS 11
+description: Dieses Dokument beschreibt visuellen Entwurf, die Updates in iOS 11 eingeführt. Es werden Änderungen an Navigationsleisten, Suche Controller, Ränder, Vollbild-Inhalt und Tabellensichten erläutert.
 ms.prod: xamarin
 ms.assetid: 7C300B94-0FAF-492E-A326-877419A1824B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 50858592ec6246fe825e80a3039f3640ebf708a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5bc29e021e30910c7fcc4c3b451d0a4dfe187d05
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787850"
 ---
-# <a name="visual-design-updates"></a>Visuelle Design-Updates
-
-_Untersuchen die neuen Funktionen von iOS 11_
+# <a name="visual-design-updates-in-ios-11"></a>Visueller Entwurf Updates in iOS 11
 
 Apple iOS 11 eingeführt neue visuelle Änderungen, einschließlich Updates auf der Navigationsleiste in der Suchleiste und Tabellensichten. Darüber hinaus wurden Verbesserungen vorgenommen, um mehr Flexibilität über Ränder und Vollbild-Inhalt zu ermöglichen. Diese Änderungen werden in diesem Handbuch behandelt.
 

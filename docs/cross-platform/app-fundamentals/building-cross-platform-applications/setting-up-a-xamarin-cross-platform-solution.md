@@ -1,15 +1,17 @@
 ---
 title: Teil 3 – Einrichten einer Xamarin-Cross-Plattformlösung
+description: Dieses Dokument beschreibt, wie eine plattformübergreifende-Lösung in Xamarin eingerichtet wird. Es Diskusse verschiedene für die Codefreigabe Strategien wie z. B. freigegebene Projekte und .NET Standard.
 ms.prod: xamarin
 ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: a13765805a3bc6be05522700960b032acbc864b5
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: f802e31d851915d33cb6dbf5866f8cba3ab90303
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781271"
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>Teil 3 – Einrichten einer Xamarin-Cross-Plattformlösung
 
@@ -106,7 +108,7 @@ In diesem Diagramm wird die Anwendungsarchitektur veranschaulicht:
 
 Diese bildschirmabbildung zeigt ein Setup Lösung mit freigegebenen Core-Projekts, IOS- und Android-Anwendungsprojekten. Das freigegebene Projekt enthält Code in Zusammenhang mit jeder der Architekturebenen (Business "," Dienst "," Daten "und" Data Access-Code):
 
- ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "Das freigegebene Projekt enthält Code in Zusammenhang mit jeder der Architekturebenen (Business "," Dienst "," Daten "und" Data Access-Code)")
+ ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "Das freigegebene Projekt enthält Code in Zusammenhang mit jeder der Architekturebenen (Business \",\" Dienst \",\" Daten \"und\" Data Access-Code)")
 
 
  <a name="Project_References" />

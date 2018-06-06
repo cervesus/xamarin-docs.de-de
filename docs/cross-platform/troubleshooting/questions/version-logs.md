@@ -1,16 +1,18 @@
 ---
 title: Wo finde ich meine Versionsinformationen und Protokolle?
+description: Dieses Dokument beschreibt, wo Sie nachschauen können um Versionsinformationen Xamarin und Protokolle zu suchen. Diese Informationen sind nützlich, beim Diagnostizieren von Problemen, Programmfehler oder Support erhalten.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 9234ee0553b2cc9376c0e4e39ffc0700deaacda1
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 0164c5b5cad972b2d8854aefd4403e287a50a6e0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782049"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>Wo finde ich meine Versionsinformationen und Protokolle?
 
@@ -48,7 +50,7 @@ Es ist in der Regel empfiehlt es sich, senden Sichern aller Daten aus der **Info
 
 **Hilfe > über > Details anzeigen > Informationen kopieren [Schaltfläche]**
 
-#### <a name="visual-studio"></a>Visual Studio
+#### <a name="visual-studio"></a>Visual Studio
 
 **Hilfe > zu Microsoft Visual Studio > Info kopieren [Schaltfläche]**
 
@@ -62,13 +64,13 @@ Es ist in der Regel empfiehlt es sich, senden Sichern aller Daten aus der **Info
 
 Öffnen Sie den Android SDK-Manager, und erstellen Sie einen Screenshot des oberen Rands **Tools** Abschnitt.
 
-![](https://kb.xamarin.com/customer/portal/attachments/337323 "Screenshot des Android SDK-Manager > Ordner "Tools"")
+![](https://kb.xamarin.com/customer/portal/attachments/337323 "Screenshot des Android SDK-Manager > Ordner \"Tools\"")
 
 #### <a name="visual-studio-for-mac"></a>Visual Studio für Mac
 
 **Extras > Öffnen Sie den Android SDK-Manager**
 
-#### <a name="visual-studio"></a>Visual Studio
+#### <a name="visual-studio"></a>Visual Studio
 
 Wählen Sie die SDK-Manager-Symbolleiste auf das Symbol ein:
 
@@ -169,7 +171,7 @@ Hierbei handelt es sich um die Protokolle von der `XamarinInstaller.dmg` Install
 
 (Beachten Sie, dass dieses Menüelement wird nur angezeigt, nachdem die app gestartet wurde.)
 
-### <a name="visual-studio"></a>Visual Studio
+### <a name="visual-studio"></a>Visual Studio
 
 **Ansicht > Ausgabe > Ausgabe anzeigen von: Debuggen**
 
@@ -181,7 +183,7 @@ Nach dem Ausführen der `adb` Befehl ein, und schließen Sie wieder die **androi
 
 Siehe auch die [Android Debugprotokoll](~/android/deploy-test/debugging/android-debug-log.md) Seite.
 
-#### <a name="visual-studio"></a>Visual Studio
+#### <a name="visual-studio"></a>Visual Studio
 
 1.  **Extras > Android > Android Adb Eingabeaufforderung starten**
 2.  Bereinigen Sie das Protokoll an: `adb logcat -c`
@@ -199,7 +201,7 @@ Siehe auch die [Android Debugprotokoll](~/android/deploy-test/debugging/android-
 
 *   Wählen Sie den Zugriff auf das Systemprotokoll **Debuggen > System-Protokoll öffnen...**  in die app für iOS-Simulator.
 
-    ![](https://kb.xamarin.com/customer/portal/attachments/382617 "Mit der Option "Open Systemprotokoll" Menü "Debuggen"")
+    ![](https://kb.xamarin.com/customer/portal/attachments/382617 "Mit der Option \"Open Systemprotokoll\" Menü \"Debuggen\"")
 
 *   Klicken Sie zum Anzeigen von Absturzberichten im Simulator Console.app öffnen, und navigieren Sie zu `~/Library/Logs > DiagnosticReports`.
 
@@ -213,7 +215,7 @@ Siehe auch die [Android Debugprotokoll](~/android/deploy-test/debugging/android-
 
 **Fenster > Geräte > ${DeviceName}**
 
-Absturzberichte stehen unter den **Ansicht Geräteprotokolle** Schaltfläche. Das Systemprotokoll auf dem Gerät angezeigt wird, am unteren Rand des Fensters unter der Offenlegung von-oben-Taste <img alt="Disclosure arrow" src="https://kb.xamarin.com/customer/portal/attachments/382618" style="width: 15px; height: 12px;" />sein.
+Absturzberichte stehen unter den **Ansicht Geräteprotokolle** Schaltfläche. Das Systemprotokoll auf dem Gerät angezeigt wird, am unteren Rand des Fensters unter der Offenlegung von-oben-Taste <img alt="Disclosure arrow" src="https://kb.xamarin.com/customer/portal/attachments/382618" style="width: 15px; height: 12px;" />.
 
 #### <a name="xcode-5"></a>Xcode 5
 

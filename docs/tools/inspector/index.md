@@ -1,19 +1,19 @@
 ---
 title: Xamarin Inspector
-description: Visualisieren und Debuggen der live-app
+description: Dieses enthält Dokumentenlinks zu Anleitungen, die beschreiben, wie zum Installieren und verwenden die Xamarin-Inspektor zu untersuchen und das Debuggen von Anwendungen.
 ms.prod: xamarin
 ms.assetid: A5CCD63C-18E5-4D19-AFEA-301FE4F8538A
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 87e78cb7a7b2d310bc77c1fd638a1cf32dad75a0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 8f33f61cd3c38dbce16f9a7afa103836aa454a0c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793086"
 ---
 # <a name="xamarin-inspector"></a>Xamarin Inspector
-
 
 Xamarin Arbeitsmappen & Inspektor führen eine interaktive C#-Konsole mit Tools, um Benutzer. Der Inspektor wird in der app Debuggen von Workflows, von der IDE, als eine Hilfe beim Debuggen oder die Diagnose dienen, beim Untersuchen von der ausgeführten app integriert.
 

@@ -1,21 +1,20 @@
 ---
-title: Arbeiten mit der übergeordneten Anwendung
-description: Freigeben von Daten zwischen der app für iOS "und" Überwachen in WatchOS 1
+title: Arbeiten mit der WatchOS übergeordnete Anwendung in Xamarin
+description: Dieses Dokument beschreibt das Arbeiten mit einem WatchOS übergeordnete Anwendung in Xamarin. Es wird erläutert, WatchKit app-Erweiterungen, iOS-apps und freigegebenem Speicher.
 ms.prod: xamarin
 ms.assetid: 9AD29833-E9CC-41A3-95D2-8A655FF0B511
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 769847cccb3e21fea4d8f45d8e5d0c0fb59bdd43
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3af2cce0d84e3934eeb89917990f111d29aadef1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790691"
 ---
-# <a name="working-with-the-parent-application"></a>Arbeiten mit der übergeordneten Anwendung
-
-_Freigeben von Daten zwischen der app für iOS "und" Überwachen in WatchOS 1_
+# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Arbeiten mit der WatchOS übergeordnete Anwendung in Xamarin
 
 > [!IMPORTANT]
 > Zugriff auf die übergeordnete Anwendung ausschließlich über den folgenden Beispielen, funktioniert auf WatchOS 1 Watch-apps.
@@ -59,7 +58,7 @@ WKInterfaceController.OpenParentApplication (new NSDictionary (), (replyInfo, er
 ```
 
 
-### <a name="ios-app"></a>iOS App
+### <a name="ios-app"></a>iOS-App
 
 Alle Aufrufe von einer Watch-app-Erweiterung über die iPhone-app weitergeleitet `HandleWatchKitExtensionRequest` Methode.
 Wenn Sie, die unterschiedliche Anforderungen in die Watch-app, und klicken Sie dann diese Methode zum Abfragen müssen die `userInfo` Wörterbuch bestimmen, wie die Anforderung zu verarbeiten.

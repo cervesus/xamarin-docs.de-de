@@ -1,19 +1,20 @@
 ---
-title: Ausnahme Marshalling
-description: Xamarin.iOS enthält neue Ereignisse, um Hilfe zu Ausnahmen, besonders in systemeigenem Code zu reagieren.
+title: Marshalling in Xamarin.iOS Ausnahme
+description: Dieses Dokument beschreibt die Arbeit mit systemeigenen und verwalteten Ausnahmen in einem Xamarin.iOS-app. Es werden Probleme, die auftreten können und eine Lösung für diese Probleme erläutert.
 ms.prod: xamarin
 ms.assetid: BE4EE969-C075-4B9A-8465-E393556D8D90
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/05/2017
-ms.openlocfilehash: bb9c16985d958772193093434350435ce477956a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dcf1074aacb6d139d107dac01fa86f459831d5f9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786742"
 ---
-# <a name="exception-marshaling"></a>Ausnahme Marshalling
+# <a name="exception-marshaling-in-xamarinios"></a>Marshalling in Xamarin.iOS Ausnahme
 
 _Xamarin.iOS enthält neue Ereignisse, um Hilfe zu Ausnahmen, besonders in systemeigenem Code zu reagieren._
 
@@ -108,7 +109,7 @@ Hier die einzigen verwalteten Frames werden Frames 8 bis 10, aber im Frame 0 der
 
 Codebeispiel:
 
-``` objective-c
+```objc
 -(id) setObject: (id) object forKey: (id) key
 {
     @try {
@@ -124,7 +125,7 @@ Und die `@finally` -Klausel wird nicht ausgeführt werden, da die Mono-Laufzeit,
 
 Eine Variante dieses verwaltete Ausnahme in verwaltetem Code und anschließend über systemeigene Rahmen abzurufenden entladen wird auf den ersten verwalteten `catch` Klausel:
 
-``` csharp
+```csharp
 class AppDelegate : UIApplicationDelegate {
     public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
     {
@@ -208,7 +209,7 @@ Dies ist auch üblich, das beim Debuggen Xamarin.Mac-apps auf einer früheren Ve
 
 Zusammenfassend lässt sich sagen, dass Objective-C-Laufzeit oder die Mono-Laufzeit entladen Frames, die sie nicht auf programmiert werden Handle kann dazu führen, dass nicht definierten Verhalten, wie Abstürze, Speicherverluste und andere Arten von Verhalten unvorhersehbar (mis).
 
-## <a name="solution"></a>Lösung
+## <a name="solution"></a>Projektmappe
 
 In Xamarin.iOS 10 und Xamarin.Mac 2.10 haben wir Unterstützung zum Abfangen von Ausnahmen von sowohl verwalteter als auch Objective-C auf alle verwalteten systemeigenen Grenze und für diese Ausnahme in den anderen Typ konvertieren hinzugefügt.
 

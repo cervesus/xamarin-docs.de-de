@@ -1,21 +1,19 @@
 ---
-title: Einführung in MonoTouch.Dialog
-description: Die MonoTouch.Dialog (MT. D) Toolkit ist ein unverzichtbares Framework für die schnelle Entwicklung von Benutzeroberflächen in Xamarin.iOS-Anwendung. MT. D ganz schnell und einfach komplexe Anwendungsbenutzeroberfläche bei Verwendung eines deklarativen Ansatzes, anstatt den zeitlichen Aufwand der Navigation Controller, Tabellen usw. zu definieren. Darüber hinaus MT. D ist einen flexiblen Satz von APIs, die bieten Entwicklern eine vollständige Kontrolle oder übergibt die Ansatz sowie zusätzliche Funktionen wie Pull zum Aktualisieren, Hintergrundbild laden, Support und dynamische UI generieren über JSON-Daten zu suchen. Dieses Handbuch enthält die verschiedenen Methoden zum Arbeiten mit MT. D, und klicken Sie dann tief in Verwendung erweiterter Artikel.
+title: Einführung in MonoTouch.Dialog für Xamarin.iOS
+description: Dieses Dokument beschreibt MonoTouch.Dialog (MT. D), ein Framework zum schnellen, deklarative Entwicklung von Benutzeroberflächen mit Xamarin.iOS. Es wird erläutert, wie die MonoTouch.Dialog-APIs verwenden, um eine Schnittstelle in Code oder JSON erstellen und Verwenden von Funktionen wie Pull zum Aktualisieren, suchen und Laden von Images "Hintergrund".
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: be979b35ffdd597dae74f1f661a381ae44433b10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6511d8deed1800a8ae655f749feccd249bf4a8c0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790837"
 ---
-# <a name="introduction-to-monotouchdialog"></a>Einführung in MonoTouch.Dialog
-
-_Die MonoTouch.Dialog (MT. D) Toolkit ist ein unverzichtbares Framework für die schnelle Entwicklung von Benutzeroberflächen in Xamarin.iOS-Anwendung. MT. D ganz schnell und einfach komplexe Anwendungsbenutzeroberfläche bei Verwendung eines deklarativen Ansatzes, anstatt den zeitlichen Aufwand der Navigation Controller, Tabellen usw. zu definieren. Darüber hinaus MT. D ist einen flexiblen Satz von APIs, die bieten Entwicklern eine vollständige Kontrolle oder übergibt die Ansatz sowie zusätzliche Funktionen wie Pull zum Aktualisieren, Hintergrundbild laden, Support und dynamische UI generieren über JSON-Daten zu suchen. Dieses Handbuch enthält die verschiedenen Methoden zum Arbeiten mit MT. D, und klicken Sie dann tief in Verwendung erweiterter Artikel._
-
+# <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Einführung in MonoTouch.Dialog für Xamarin.iOS
 
 MonoTouch.Dialog, bezeichnet als MT. D kurz, ist eine schnelle Entwicklung Toolkit, die Entwicklern ermöglicht, die Anwendung Bildschirme und die Navigation mit Informationen, anstatt den zeitlichen Aufwand des Erstellens von View-Controller, Tabellen usw. ausgebaut. Daher wird eine erhebliche Vereinfachung des Entwicklungs- und Code Reduzierung der Benutzeroberfläche bereitgestellt. Betrachten Sie beispielsweise das folgende Bildschirmfoto an:
 
@@ -174,7 +172,7 @@ new Section () {
 
 #### <a name="retrieving-element-value"></a>Abrufen von Elementwert
 
-In Kombination mit der `Element.Value` Eigenschaft kann der Rückruf in andere Elemente der festgelegte Wert abzurufen. Beachten Sie z. B. folgenden Code:
+In Kombination mit der `Element.Value` Eigenschaft kann der Rückruf in andere Elemente der festgelegte Wert abzurufen. Beachten Sie z. B. folgenden Code:
 
 ```csharp
 var element = new EntryElement (task.Name, "Enter task description",
@@ -321,11 +319,11 @@ Wenn die Zelle, die für die TimeElement ausgewählt ist, wird eine Zeitauswahl 
 
 ### <a name="datetime-element"></a>"DateTime"-Element
 
- [![](images/image22.png ""DateTime"-Element")](images/image22.png#lightbox)
+ [![](images/image22.png "\"DateTime\"-Element")](images/image22.png#lightbox)
 
 Wenn die Zelle für die DateTimeElement aktiviert ist, wird eine Auswahl von "DateTime" dargestellt, wie unten dargestellt:
 
- [![](images/image23.png "Wenn die Zelle für die DateTimeElement aktiviert ist, wird eine Auswahl von "DateTime" angezeigt, wie dargestellt")](images/image23.png#lightbox)
+ [![](images/image23.png "Wenn die Zelle für die DateTimeElement aktiviert ist, wird eine Auswahl von \"DateTime\" angezeigt, wie dargestellt")](images/image23.png#lightbox)
 
 ### <a name="html-element"></a>HTML-Element
 

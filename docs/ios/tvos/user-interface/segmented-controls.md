@@ -1,22 +1,20 @@
 ---
-title: Arbeiten mit segmentierte Steuerelemente
-description: Dieser Artikel umfasst das Entwerfen von und Arbeiten mit segmentierte Steuerelemente innerhalb einer Xamarin.tvOS-app.
+title: Arbeiten mit tvos. außerdem wurden segmentierte Steuerelemente in Xamarin
+description: Dieses Dokument beschreibt die Arbeit mit tvos. außerdem wurden segmentierte Steuerelemente in einer mit Xamarin erstellten app. Es wird erläutert, Segment Symbole und Text, Ereignisse, ändern die Darstellung des Steuerelements und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 23AD94CC-E93A-40B1-8E2B-ECD21FA355BE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d4eac932c7fad628a0a65127bceb641f34ea5d79
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8980f9fbf6996217dbcaec869e4c81598ac36552
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789238"
 ---
-# <a name="working-with-segmented-controls"></a>Arbeiten mit segmentierte Steuerelemente
-
-_Dieser Artikel umfasst das Entwerfen von und Arbeiten mit segmentierte Steuerelemente innerhalb einer Xamarin.tvOS-app._
-
+# <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Arbeiten mit tvos. außerdem wurden segmentierte Steuerelemente in Xamarin
 
 Ein segmentiertes Steuerelement bietet es sich um eine Reihe von linearen Elemente, von die jedes ein Symbol oder Text enthalten kann, und wird verwendet, um eine Gruppe von verwandten Auswahlmöglichkeiten für dem Benutzer bereitstellen.
 
@@ -64,7 +62,7 @@ Die einfachste Möglichkeit zum Arbeiten mit der Segment-Steuerelemente in einer
     [![](segmented-controls-images/segment02.png "Ein Segment-Steuerelement")](segmented-controls-images/segment02.png#lightbox)
 1. In der **Registerkarte "Widget"** von der **Eigenschaft Pad**, können Sie verschiedene Eigenschaften des Steuerelements Segment wie z. B. anpassen seine **Stil** und **Zustand**: 
 
-    [![](segmented-controls-images/segment03.png "Die Registerkarte "Widget"")](segmented-controls-images/segment03.png#lightbox)
+    [![](segmented-controls-images/segment03.png "Die Registerkarte \"Widget\"")](segmented-controls-images/segment03.png#lightbox)
 1. Verwenden der **Segmente** Feld zum Steuern der Anzahl der Segmente im Controller.
 1. Wählen Sie ein gegebenes Segment aus der **Segment Dropdownliste** die einzelnen Eigenschaften anpassen, wie z. B. **Titel** oder **Image** und steuern, ob ein gegebenes Segment ist  **Aktiviert** oder **ausgewählte** Wenn das Steuerelement angezeigt wird.
 1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie in C#-Code auf sie reagieren können. Zum Beispiel: 
@@ -80,7 +78,7 @@ Die einfachste Möglichkeit zum Arbeiten mit der Segment-Steuerelemente in einer
     [![](segmented-controls-images/segment02-vs.png "Ein Segment-Steuerelement")](segmented-controls-images/segment02-vs.png#lightbox)
 1. In der **Registerkarte "Widget"** von der **Property Explorer**, können Sie verschiedene Eigenschaften des Steuerelements Segment wie z. B. Anpassen der **Stil** und **Zustand**: 
 
-    [![](segmented-controls-images/segment03-vs.png "Die Registerkarte "Widget"")](segmented-controls-images/segment03-vs.png#lightbox)
+    [![](segmented-controls-images/segment03-vs.png "Die Registerkarte \"Widget\"")](segmented-controls-images/segment03-vs.png#lightbox)
 1. Verwenden der **Segmente** Feld zum Steuern der Anzahl der Segmente im Controller.
 1. Wählen Sie ein gegebenes Segment aus der **Segment Dropdownliste** die einzelnen Eigenschaften anpassen, wie z. B. **Titel** oder **Image** und steuern, ob ein gegebenes Segment ist  **Aktiviert** oder **ausgewählte** Wenn das Steuerelement angezeigt wird.
 1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie in C#-Code auf sie reagieren können. Zum Beispiel: 
@@ -209,10 +207,10 @@ SegmentedControl.SetBackgroundImage (UIImage.FromFile("background.png"), UIContr
 Wobei `UIControlState` gibt den Status des Steuerelements, das Sie das Bild für als festlegen:
 
 - Normal
-- Highlighted
+- Hervorgehoben
 - Deaktiviert
 - Ausgewählt
-- Focused
+- Mit Fokus
 
 Und `UIBarMetrics` gibt die Metriken, die als verwendet:
 

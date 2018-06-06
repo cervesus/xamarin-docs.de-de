@@ -1,20 +1,19 @@
 ---
 title: Apple-Plattform (iOS und Mac)
-description: In diesem Abschnitt wird die Strategien zum Freigeben von Code für Ihre Projekte Xamarin.iOS und Xamarin.Mac behandelt.
+description: 'Dieses Dokument beschreibt die verschiedenen Themen im Zusammenhang mit der Entwicklung von Xamarin.iOS und Xamarin.Mac: Code freigeben, die einheitliche API, binden Objective-C-Bibliotheken, systemeigene Verweise, systemeigene Typen und mehr.'
 ms.prod: xamarin
 ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 3c01ff4af699dd0374729b638470d1ef34aa7022
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b40758fa562e57415cd3c0818763ef0a7ce5dcca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781532"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Apple-Plattform (iOS und Mac)
-
-_In diesem Abschnitt wird die Strategien zum Freigeben von Code für Ihre Projekte Xamarin.iOS und Xamarin.Mac behandelt._
 
 ## <a name="code-sharing"></a>Freigeben von Code
 
@@ -48,8 +47,6 @@ Xamarin ermöglicht Ihnen die systemeigene Bibliotheken in Ihren apps Bindungen 
 
 ## <a name="native-referencesnative-referencesmd"></a>[Native Verweise](native-references.md)
 
-
-
 ##  <a name="macios-native-typesnativetypesmd"></a>[Systemeigene Typen Mac/iOS](nativetypes.md)
 
 Zur Unterstützung von 32 und 64-Bit-Code transparent in c# und f# werden neue Datentypen eingeführt.   Weitere Informationen finden sie hier Informationen.
@@ -62,7 +59,6 @@ Was Sie wissen müssen zur Unterstützung von 32- und 64-Bit-Anwendungen.
 
 In diesem Artikel erläutert die Verwendung der neuen iOS Unified API systemeigene Typen (`nint`, `nuint`, `nfloat`) in einer plattformübergreifenden-Anwendung, in dem Code nicht iOS-Geräte, z. B. Android oder Windows Phone-Betriebssysteme freigegeben ist.
 Einblick in die bei der systemeigenen Typen verwendet werden soll, und bietet mehrere mögliche Lösungen für Fälle, in dem der neue Typ mit plattformübergreifenden Code verwendet werden muss.
-
 
 ## <a name="httpclient-stack-and-ssltls-implementation-selectorhttp-stackmd"></a>[HttpClient-Stapel und SSL/TLS-Implementierungsauswahl](http-stack.md)
 

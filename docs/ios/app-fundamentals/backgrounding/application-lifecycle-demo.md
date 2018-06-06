@@ -1,18 +1,20 @@
 ---
-title: Application Lifecycle Demo
+title: Application Lifecycle Demo für Xamarin.iOS
+description: Dieses Dokument erläutert verschiedene Lebenszyklusereignisse behandelt, durch den Delegaten app in einer iOS-Anwendung veranschaulicht, wann und wie diese Ereignisse behandelt werden.
 ms.prod: xamarin
 ms.assetid: 5C8AACA6-49F8-4C6D-99C3-5F443C01B230
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f03cd7d74d09fc40b88cfbf44bf54c6da5f4c149
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 64c695065012e4bf796c219c260324d9b6278ca5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783583"
 ---
-# <a name="application-lifecycle-demo"></a>Application Lifecycle Demo
+# <a name="application-lifecycle-demo-for-xamarinios"></a>Application Lifecycle Demo für Xamarin.iOS
 
 In diesem Abschnitt werden wir eine Anwendung zu untersuchen, die die vier Statuszustände für die Anwendung und die Rolle des veranschaulicht die `AppDelegate` Methoden in benachrichtigen der Anwendung der Zustände Änderungszeitpunkt abrufen. Die Anwendung wird bei jeder Änderung die app Status Updates an die Konsole drucken:
 

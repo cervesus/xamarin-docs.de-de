@@ -1,21 +1,20 @@
 ---
-title: Wiedergabe von sound mit AVAudioPlayer
-description: Dieser Artikel zeigt, wie eine Hilfsklasse, mit der die Wiedergabe von sound mithilfe einer AVAudioPlayer steuern.
+title: Wiedergabe von sound mit AVAudioPlayer in Xamarin.Mac
+description: Dieses Dokument beschreibt, wie mit AVAudioPlayer in einer app Xamarin.Mac sound wiedergegeben wird. Es wird erläutert, AVAudioPlayer zu einem hohen und Links zu anderen Dokumentation, die es umfassender wird untersucht.
 ms.prod: xamarin
 ms.assetid: 4A683A94-F75D-4EAF-8497-E9443653250B
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 25e3285a1da1b6a112629001d5412fdd0788c705
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e5b9ec43189999f8a0aee29eb50221b494e2133
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791854"
 ---
-# <a name="playing-sound-with-avaudioplayer"></a>Wiedergabe von sound mit AVAudioPlayer
-
-_Dieser Artikel zeigt, wie eine Hilfsklasse, mit der die Wiedergabe von sound mithilfe einer AVAudioPlayer steuern._
+# <a name="playing-sound-with-avaudioplayer-in-xamarinmac"></a>Wiedergabe von sound mit AVAudioPlayer in Xamarin.Mac
 
 ## <a name="about-the-avaudioplayer"></a>Informationen zu den AVAudioPlayer
 
@@ -34,8 +33,6 @@ Sie können die `AVAudioPlayer` Klasse, um die folgenden Aktionen ausführen:
 ## <a name="playing-sounds-in-macos"></a>Wiedergabe von Tönen in macOS
 
 Da MacOS dieselben Audio Toolbox Klassen als iOS unterstützt, finden Sie unter unserer iOS [Playing Sound mit AVAudioPlayer](https://developer.xamarin.com/recipes/ios/media/sound/avaudioplayer/) Dokumentation für die vollständigen Details der Audiowiedergabe in einer app Xamarin.Mac.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 
