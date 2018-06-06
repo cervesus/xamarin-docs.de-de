@@ -1,19 +1,20 @@
 ---
-title: Problembehandlung
-description: Dieser Artikel enthält einige Tipps zur Problembehandlung für das Arbeiten mit iOS 9 in Xamarin.iOS-apps.
+title: Xamarin.iOS 9 – Problembehandlung
+description: Dieser Artikel bietet verschiedene Tipps zur Problembehandlung für das Arbeiten mit iOS 9 in Xamarin.iOS. Tipps werden XML-Analyse, Simulatoren Layout Einschränkungen, Netzwerkprobleme und viele andere Themen behandelt.
 ms.prod: xamarin
 ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 1b335fc6b19d87a46059511baf866433691b1b4d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c44d737efcf5092eb4b27d5311271005de65318b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787662"
 ---
-# <a name="troubleshooting"></a>Problembehandlung
+# <a name="xamarinios-9--troubleshooting"></a>Xamarin.iOS 9 – Problembehandlung
 
 _Dieser Artikel enthält einige Tipps zur Problembehandlung für das Arbeiten mit iOS 9 in Xamarin.iOS-apps._
 
@@ -134,7 +135,7 @@ Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScr
 
 **Fix:** wird dies für iOS 9 adressiert werden, aber es ist eine einfache Lösung, die Sie selbst in der Zwischenzeit anwenden können: nur als Ziel eine höhere iOS Version in Ihrem Projekt (Sie können versuchen, iOS 7 in diesem Fall). Andere Frameworks möglicherweise ähnliche Probleme aufweisen, z. B. das WebKit-Framework wurde in iOS 8 öffentlich gemacht (und, Zielplattform iOS 7 zu diesem Fehler; daher sollten Sie als Ziel iOS 8 WebKit in Ihrer app verwenden).
 
-## <a name="untrusted-enterprise-developer"></a>Untrusted Enterprise Developer
+## <a name="untrusted-enterprise-developer"></a>Nicht vertrauenswürdige Unternehmensentwickler
 
 Beim Versuch, den iOS 9-Version Ihrer App Xamarin.iOS auf echten iOS Hardware ausführen, erhalten Sie möglicherweise eine Meldung mit Ihrem Entwicklerkonto nicht auf dem Gerät als vertrauenswürdig eingestuft worden ist. Zum Beispiel:
 
@@ -190,8 +191,6 @@ Es sind mindestens zwei mögliche problemumgehungen für dieses Problem:
 Mit Xamarin.iOS ist es möglich, Sicht oder View Controller-Initialisierung innerhalb Konstruktoren stellen die aufgerufen werden, wenn etwas in verwaltetem Code verfügbar gemacht wird jedoch den iOS-Entwurf.
 
 Im Allgemeinen muss nicht initialisiert werden, die Rückruf können Objective-C-Code aus dem Konstruktor, da Sie nicht sicher sein können beim aufgerufen wird. Die auch bedeutet, dass ein geeigneter (andere ".ctor") oder Aufrufe von außer Kraft setzen (wie Objective-C keine Ereignisse aufweist), in denen diese Initialisierung durchgeführt werden soll.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

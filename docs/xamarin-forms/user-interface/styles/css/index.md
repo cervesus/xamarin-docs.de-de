@@ -1,5 +1,5 @@
 ---
-title: Formatieren Sie Xamarin.Forms-Apps mithilfe von Cascading Stylesheets
+title: Formatieren Sie Xamarin.Forms-Apps mithilfe von Cascading Stylesheets (CSS)
 description: Xamarin.Forms unterstützt Styling visuelle Elemente, die mithilfe von Cascading Stylesheets (CSS).
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 811abacff330bf7b6e6240691cb6a15ebbd9d242
-ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.openlocfilehash: 76ca67f7ac8a8e27e5f502455d48874c775fc172
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794084"
 ---
-# <a name="styling-xamarinforms-apps-using-cascading-style-sheets"></a>Formatieren Sie Xamarin.Forms-apps mithilfe von Cascading Stylesheets
+# <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Formatieren Sie Xamarin.Forms-apps mithilfe von Cascading Stylesheets (CSS)
 
 _Xamarin.Forms unterstützt Styling visuelle Elemente, die mithilfe von Cascading Stylesheets (CSS)._
 
@@ -372,7 +373,7 @@ Die folgenden CSS-Eigenschaften werden von Xamarin.Forms unterstützt (in der **
 |`color`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`|_Farbe_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Zeichenfolge_ \| `initial` |`font-family: Consolas;`|
-|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_doppelte_ \| _Namedsize_  \| `initial` |`font-size: 12;`|
+|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_doppelte_ \| _Namedsize_ \| `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_Double_ \| `initial` |`min-height: 250;`|
 |`margin`|`View`|_Linienstärke_ \| `initial` |`margin: 6 12;`|
@@ -397,7 +398,7 @@ Die folgenden CSS-Eigenschaften werden von Xamarin.Forms unterstützt (in der **
 
 Die folgenden Eigenschaften sind derzeit nicht unterstützt:
 
-- `all: initial`
+- `all: initial`.
 - Layout-Eigenschaften (Feld oder Rasterformat).
 - Eigenschaften, z. B. `font`, und `border`.
 
@@ -447,4 +448,4 @@ Die genaue Bedeutung der einzelnen `namedsize` Wert ist plattformabhängig und a
 ## <a name="related-links"></a>Verwandte Links
 
 - [MonkeyAppCSS (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)
-- [Formatieren Sie Xamarin.Forms-Apps, die mit der Verwendung von XAML-Stile](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](~/xamarin-forms/user-interface/styles/xaml/index.md)

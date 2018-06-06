@@ -1,19 +1,20 @@
 ---
-title: Bereitstellung und Testen
-description: Testen auf Geräten und auf den App Store hochladen
+title: Bereitstellen und Testen von WatchOS-Apps mit Xamarin
+description: Dieses Dokument beschreibt das Bereitstellen und Testen von WatchOS-apps mit Xamarin erstellten. Es bietet eine Checkliste für die Bereitstellung, explizite erläutert und die Platzhalter-app-IDs und untersucht, mit der app-Gruppen.
 ms.prod: xamarin
 ms.assetid: 98257399-E9B3-4BAB-9204-0E89117DEA6D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 47c63a01d435626fd1637b6ed5f5bb1755c717af
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 778583456e74bb7ed3a85dce96bcdbc487aef57a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790941"
 ---
-# <a name="deployment-and-testing"></a>Bereitstellung und Testen
+# <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Bereitstellen und Testen von WatchOS-Apps mit Xamarin
 
 ## <a name="deployment-checklist"></a>Bereitstellungsprüfliste
 
@@ -99,7 +100,7 @@ Doppelklicken Sie zum Bearbeiten der **Entitlements.plist** Datei in diesen Proj
 - iOS-App-Projekt
 - Überwachen-Erweiterungsprojekt
 
-sein.![Der Editor Entitlements.plist](images/entitlements-plist-sml.png)
+.![Der Editor Entitlements.plist](images/entitlements-plist-sml.png)
 
 Führen Sie **nicht** aktivieren Sie Berechtigungen in das Watch-App-Projekt. Es ist nicht erforderlich, um die Überwachung selbst aktiviert sein.
 

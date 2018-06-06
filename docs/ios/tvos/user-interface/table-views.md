@@ -1,5 +1,5 @@
 ---
-title: Arbeiten mit Tabellensichten
+title: Arbeiten mit tvos. außerdem wurden Tabellensichten in Xamarin
 description: Dieser Artikel umfasst das Entwerfen und Arbeiten mit Tabellensichten und View-Controller Tabelle innerhalb einer Xamarin.tvOS-app.
 ms.prod: xamarin
 ms.assetid: D8F80FA9-6400-4DB7-AFC9-A28A54AD04E8
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8864e85e4d657fc242f6c06b21c815f62055c9f4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8c74c2cc7598f50e57a6a450823e2b0ebca4b537
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789566"
 ---
-# <a name="working-with-table-views"></a>Arbeiten mit Tabellensichten
+# <a name="working-with-tvos-table-views-in-xamarin"></a>Arbeiten mit tvos. außerdem wurden Tabellensichten in Xamarin
 
 _Dieser Artikel umfasst das Entwerfen und Arbeiten mit Tabellensichten und View-Controller Tabelle innerhalb einer Xamarin.tvOS-app._
 
@@ -96,10 +97,10 @@ Um zu beginnen, machen Sie Folgendes:
     [![](table-views-images/table10.png "Die benutzerdefinierten Klassen in der Projektstruktur")](table-views-images/table10.png#lightbox)
 1. Klicken Sie dann wählen Sie der Tabellenansicht auf der Entwurfsoberfläche aus, und passen Sie bei Bedarf deren Eigenschaften. Z. B. die Anzahl der **Prototyp Zellen** und **Stil** (Plain oder gruppiert): 
 
-    [![](table-views-images/table11.png "Die Registerkarte "Widget"")](table-views-images/table11.png#lightbox)
+    [![](table-views-images/table11.png "Die Registerkarte \"Widget\"")](table-views-images/table11.png#lightbox)
 1. Für jede **Prototyp Zelle**, wählen Sie diese, und weisen Sie einen eindeutigen **Bezeichner** in der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**. Dieser Schritt ist _sehr wichtig_ wie Sie diesen Bezeichner später benötigen, wenn Sie die Tabelle füllen. Z. B. `AttrCell`: 
 
-    [![](table-views-images/table12.png "Die Registerkarte "Widget"")](table-views-images/table12.png#lightbox)
+    [![](table-views-images/table12.png "Die Registerkarte \"Widget\"")](table-views-images/table12.png#lightbox)
 1. Sie können auch auswählen, an der Zelle als eines der [Standard Zelle Tabellensichttypen](#Table-View-Cell-Types) über die **Stil** Dropdownliste oder legen sie den **benutzerdefinierte** und die Entwurfsoberfläche zum Layout der Zelle verwenden durch Ziehen in anderen UI Widgets aus der **Toolbox**: 
 
     [![](table-views-images/table13.png "Das Zellenlayout")](table-views-images/table13.png#lightbox)
@@ -131,13 +132,13 @@ Um zu beginnen, machen Sie Folgendes:
     [![](table-views-images/table08-vs.png "Layout der Benutzeroberfläche")](table-views-images/table08-vs.png#lightbox)
 1. Sie müssen jeden Teil der Tabellenansicht wählen und weisen sie eine benutzerdefinierte **Klassenname** in der **Widget** auf der Registerkarte die **Eigenschaften-Explorer** , damit Sie später in c# zugreifen zu können Code. Z. B. die **Tabelle-View-Controller**: 
 
-    [![](table-views-images/table09-vs.png "Die Registerkarte "Widget"")](table-views-images/table09-vs.png#lightbox)
+    [![](table-views-images/table09-vs.png "Die Registerkarte \"Widget\"")](table-views-images/table09-vs.png#lightbox)
 1. Stellen Sie sicher, dass es sich bei der Erstellung einer benutzerdefinierten Klasse für die **Tabelle-View-Controller**, die **Tabellenansicht** und ein beliebiger **Prototyp Zellen**. Visual Studio für Mac werden die benutzerdefinierten Klassen der Projekt-Struktur hinzugefügt, wie sie erstellt werden: 
 
     [![](table-views-images/table10-vs.png "Die benutzerdefinierten Klassen in der Projektstruktur")](table-views-images/table10-vs.png#lightbox)
 1. Klicken Sie dann wählen Sie der Tabellenansicht auf der Entwurfsoberfläche aus, und passen Sie bei Bedarf deren Eigenschaften. Z. B. die Anzahl der **Prototyp Zellen** und **Stil** (Plain oder gruppiert): 
 
-    [![](table-views-images/table11-vs.png "Die Registerkarte "Widget"")](table-views-images/table11-vs.png#lightbox)
+    [![](table-views-images/table11-vs.png "Die Registerkarte \"Widget\"")](table-views-images/table11-vs.png#lightbox)
 1. Für jede **Prototyp Zelle**, wählen Sie diese, und weisen Sie einen eindeutigen **Bezeichner** in der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**. Dieser Schritt ist _sehr wichtig_ wie Sie diesen Bezeichner später benötigen, wenn Sie die Tabelle füllen. Z. B. `AttrCell`: 
 
     [![](table-views-images/table12-vs.png "Zuweisen eines Bezeichners")](table-views-images/table12-vs.png#lightbox)
@@ -146,7 +147,7 @@ Um zu beginnen, machen Sie Folgendes:
     [![](table-views-images/table13-vs.png "Der Stil-Dropdownliste")](table-views-images/table13-vs.png#lightbox)
 1. Weisen Sie einen eindeutigen **Namen** jedes Benutzeroberflächenelement beim Entwurf Prototyp Zelle in der **Widget** auf der Registerkarte die **Eigenschaften-Explorer** , damit Sie später im C#-Code darauf zugreifen können: 
 
-    [![](table-views-images/table14-vs.png "Die Registerkarte "Widget"")](table-views-images/table14-vs.png#lightbox)
+    [![](table-views-images/table14-vs.png "Die Registerkarte \"Widget\"")](table-views-images/table14-vs.png#lightbox)
 1. Wiederholen Sie den obigen Schritt für alle Zellen in der Tabellenansicht Prototyp.
 1. Als Nächstes weisen Sie benutzerdefinierte Klassen, mit dem Rest der UI-Entwurf Layout der Ansicht und weisen eindeutige **Namen** auf jedes Element der Benutzeroberfläche in den Details anzeigen, damit sie sich auch in c# zugreifen können. Beispiel: 
 

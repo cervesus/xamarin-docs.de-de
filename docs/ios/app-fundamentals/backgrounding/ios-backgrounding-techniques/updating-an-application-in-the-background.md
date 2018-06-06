@@ -1,18 +1,20 @@
 ---
-title: Aktualisieren einer Anwendung im Hintergrund
+title: Eine App Xamarin.iOS im Hintergrund aktualisiert.
+description: Dieses Dokument beschreibt die verschiedenen Möglichkeiten, eine Xamarin.iOS-app aktualisieren, die im Hintergrund, z. B. Region zu überwachen, Abrufen im Hintergrund und remote-Benachrichtigungen.
 ms.prod: xamarin
 ms.assetid: A2B2231A-C045-4C11-8176-F9966485197A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 370d1cba71fa695e4e01dfb93241536a8df01b11
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 973c18528eee2096b29ba86e82ceff31ecf3e207
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784064"
 ---
-# <a name="updating-an-application-in-the-background"></a>Aktualisieren einer Anwendung im Hintergrund
+# <a name="updating-a-xamarinios-app-in-the-background"></a>Eine App Xamarin.iOS im Hintergrund aktualisiert.
 
 Hintergrundaktualisierungen versteht man anhand der Ergebnisse einer Anwendung, die angehalten wurde oder nicht ausgeführt, und es durch neuen Inhalt aktualisieren. iOS bietet drei Optionen zum Aktualisieren von Inhalt im Hintergrund:
 
@@ -43,7 +45,7 @@ IOS 6 benötigt eine Anwendung im Vordergrund eingeben Zeit zum Laden neue Inhal
 
 Bearbeiten Sie zum Implementieren der abrufen im Hintergrund *"Info.plist"* und überprüfen Sie die **Aktivieren von Hintergrundmodi** und **abrufen im Hintergrund** Kontrollkästchen:
 
- [![](updating-an-application-in-the-background-images/fetch.png "Bearbeiten Sie der Datei "Info.plist", und prüfen Sie die Kontrollkästchen Aktivieren von Hintergrundmodi und Fetch-Hintergrund")](updating-an-application-in-the-background-images/fetch.png#lightbox)
+ [![](updating-an-application-in-the-background-images/fetch.png "Bearbeiten Sie der Datei \"Info.plist\", und prüfen Sie die Kontrollkästchen Aktivieren von Hintergrundmodi und Fetch-Hintergrund")](updating-an-application-in-the-background-images/fetch.png#lightbox)
 
 Im nächsten Schritt in der `AppDelegate`, überschreiben die `FinishedLaunching` Methode, um das Intervall für die minimale Fetch festgelegt. In diesem Beispiel können wir das Betriebssystem entscheiden, wie häufig neue Inhalte abgerufen werden sollen:
 

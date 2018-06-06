@@ -1,21 +1,21 @@
 ---
 title: Erweiterte (manuell) Real-World-Beispiel
+description: Dieses Dokument beschreibt, wie die Ausgabe des Xcodebuild als Eingabe für die Ziel-Sharpie verwendet wird, die Einblick in die Wirkungsweise Ziel Sharpie hinter den Kulissen.
 ms.prod: xamarin
 ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 82bca525433e5c8fea3a29250afb83962f2e64fc
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7af9700a9b661280c2ee32a1f65cdc01234cbe37
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781255"
 ---
 # <a name="advanced-manual-real-world-example"></a>Erweiterte (manuell) Real-World-Beispiel
 
-
 **Dieses Beispiel verwendet die [POP-Bibliothek von Facebook](https://github.com/facebook/pop).**
-
 
 Dieser Abschnitt enthält einen erweiterten Ansatz für die Bindung, die wir, auf dem Apple verwenden `xcodebuild` , um zuerst das POP-Projekt zu erstellen, und klicken Sie dann Eingabe für Objective Sharpie manuell abzuleiten. Dies umfasst im Wesentlichen, was im Endeffekt im vorherigen Abschnitt Ziel Sharpie ausführt.
 

@@ -1,18 +1,20 @@
 ---
-title: Unterstützte und nicht unterstützte Frameworks
+title: Unterstützte und nicht unterstützte Frameworks in tvos. außerdem wurden
+description: 'Um die verfügbaren Anwendungen für tvos. außerdem wurden Funktionen zu verdeutlichen, dieses Dokument enthält zwei Listen mit Apple-Frameworks: von tvos. außerdem wurden unterstützt und von tvos. außerdem wurden nicht unterstützt.'
 ms.prod: xamarin
 ms.assetid: 28EF1337-3D0E-47AB-8A13-1B333A964FB6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: 4b368a8e4d449d8fa8d0d29dab19d227bb6eee4c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8ba33d028263385eca50f8174124bbe629e3f951
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789121"
 ---
-# <a name="supported-and-unsupported-frameworks"></a>Unterstützte und nicht unterstützte Frameworks
+# <a name="supported-and-unsupported-frameworks-in-tvos"></a>Unterstützte und nicht unterstützte Frameworks in tvos. außerdem wurden
 
 <a name="Supported-Frameworks" />
 
@@ -41,7 +43,7 @@ Dies ist eine Liste der für die Verwendung in Ihren apps Xamarin.tvOS von Apple
 * Foundation
 * GameController
 * GameKit
-* GamePlay
+* Spielverlauf
 * GLKit
 * ImageIO
 * MachO

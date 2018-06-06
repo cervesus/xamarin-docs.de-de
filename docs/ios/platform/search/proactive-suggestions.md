@@ -1,5 +1,5 @@
 ---
-title: Einführung in die proaktive Vorschläge
+title: Einführung in die proaktive Vorschläge in Xamarin.iOS
 description: In diesem Artikel wird gezeigt, wie proaktive Vorschläge in die app Xamarin.iOS Laufwerk Engagement verwendet werden, durch den Wechsel des Systems proaktiv hilfreiche Informationen automatisch für den Benutzer anzuzeigen.
 ms.prod: xamarin
 ms.assetid: 8DDD084A-0D1E-4DF7-B686-6309DCEFF5D3
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5b06dbf0e8e108616adb4f77910267aaa1ac71f4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f736e9dda00546ddef7cf03457813c7e3d10882b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788015"
 ---
-# <a name="introduction-to-proactive-suggestions"></a>Einführung in die proaktive Vorschläge
+# <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Einführung in die proaktive Vorschläge in Xamarin.iOS
 
 _In diesem Artikel wird gezeigt, wie proaktive Vorschläge in die app Xamarin.iOS Laufwerk Engagement verwendet werden, durch den Wechsel des Systems proaktiv hilfreiche Informationen automatisch für den Benutzer anzuzeigen._
 

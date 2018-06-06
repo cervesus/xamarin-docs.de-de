@@ -1,32 +1,32 @@
 ---
-title: TextKit
-description: Der Text-Kit-API bietet leistungsfähige Text Layout und Rendering-Funktionen in Xamarin.iOS.
+title: TextKit in Xamarin.iOS
+description: Dieses Dokument beschreibt, wie TextKit in Xamarin.iOS verwendet wird. TextKit stellt leistungsstarke Features Layout und Rendering.
 ms.prod: xamarin
 ms.assetid: 1D0477E8-CD1E-48A9-B7C8-7CA892069EFF
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 78ca0d9505c9f56dc6476bd04dab560a70b2c4b0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ac80d1d07f5649d377dd6fdefcb4911ba9ec2dcb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788334"
 ---
-# <a name="text-kit"></a>Text-Kit
+# <a name="textkit-in-xamarinios"></a>TextKit in Xamarin.iOS
 
-Text-Kit ist eine neue API, die leistungsstarke Text Layout und Rendering Funktionen bietet. Basiert auf niedriger Ebene Framework Core-Text, aber ist sehr viel einfacher zu verwenden als Core Text.
+TextKit ist eine neue API, die leistungsstarke Text Layout und Rendering Funktionen bietet. Die Low-Level Core Text Framework aufsetzt, aber ist sehr viel einfacher zu verwenden als Core Text.
 
-Damit die Funktionen des Text-Kit für Standardsteuerelemente verfügbar, wurden mehrere iOS Textsteuerelemente erneut implementiert, Text-Kit, einschließlich verwenden:
+Um die Funktionen von TextKit für standard-Steuerelemente verfügbar zu machen, mehrere iOS Textsteuerelemente wurden neu implementierten TextKit, verwenden einschließlich:
 
 -  UITextView
 -  UITextField
 -  UILabel
 
-
 ## <a name="architecture"></a>Architektur
 
-Text-Kit bietet eine mehrstufige Architektur, die eine den Text-Speicher aus dem Layout und die Anzeige Trennung, einschließlich der folgenden Klassen:
+TextKit bietet eine mehrstufige Architektur, die eine den Text-Speicher aus dem Layout und die Anzeige Trennung, einschließlich der folgenden Klassen:
 
 -  `NSTextContainer` – Stellt das Koordinatensystem und die Geometrie an, die zum Layout von Text verwendet wird.
 -  `NSLayoutManager` – Angeordnet Text ein, durch das Aktivieren von Text in Glyphen. 
@@ -37,7 +37,7 @@ Diese drei Klassen werden auf einer Sicht angewendet, die Text gerendert wird. D
 
 Die folgende Abbildung veranschaulicht diese Architektur:
 
- ![](textkit-images/textkitarch.png "Diese Abbildung zeigt die Text-Kit-Architektur")
+ ![](textkit-images/textkitarch.png "Diese Abbildung zeigt die TextKit-Architektur")
 
 ## <a name="text-storage-and-attributes"></a>Text-Speicher und Attribute
 
@@ -56,7 +56,7 @@ Nach dem `EndEditing` wird aufgerufen, werden die Änderungen an der Layout-Mana
 
 ## <a name="layout-with-exclusion-path"></a>Layout mit Ausschlusspfad
 
-Text-Kit auch Layout unterstützt und können für komplexe Szenarios wie z. B. mit mehreren Spalten und fließende Text angegebenen Pfade aufgerufen *Ausschluss Pfade*. Ausschluss-Pfade werden für des Textcontainers angewendet, die die Geometrie des Textlayouts, verursacht des Texts, um die angegebenen Pfade fließen ändert.
+TextKit auch Layout unterstützt und können für komplexe Szenarios wie z. B. mit mehreren Spalten und fließende Text angegebenen Pfade aufgerufen *Ausschluss Pfade*. Ausschluss-Pfade werden für des Textcontainers angewendet, die die Geometrie des Textlayouts, verursacht des Texts, um die angegebenen Pfade fließen ändert.
 
 Das Hinzufügen von ein Ausschlusspfad Einstellung erfordert die `ExclusionPaths` Eigenschaft für den Layout-Manager. Durch Festlegen dieser Eigenschaft führt dazu, dass den Layout-Manager für ungültig erklärt das Textlayout und der Text der Ausschlusspfad fließen.
 
@@ -139,10 +139,10 @@ public class ExclusionPathView : UITextView
 }
 ```
 
-Dieser Code fügt Unterstützung für das Zeichnen auf Textansicht mit Graphics Core. Da die `UITextView` Klasse ist jetzt erstellt, um Text-Kit für die Textrendering und Layout verwenden, können sie alle Funktionen des Text-Kits, z. B. das Festlegen der Ausschluss Pfade verwenden.
+Dieser Code fügt Unterstützung für das Zeichnen auf Textansicht mit Graphics Core. Da die `UITextView` Klasse ist jetzt erstellt, um TextKit für die Textrendering und Layout verwenden, können sie alle Funktionen von TextKit, z. B. das Festlegen der Ausschluss Pfade.
 
 > [!IMPORTANT]
-> Dieses Beispiel Unterklassen `UITextView` hinzuzufügende Touch-Unterstützung zu zeichnen. Erstellen von Unterklassen für `UITextView` ist nicht erforderlich, die Funktionen des Text-Kits zu erhalten.
+> Dieses Beispiel Unterklassen `UITextView` hinzuzufügende Touch-Unterstützung zu zeichnen. Erstellen von Unterklassen für `UITextView` ist nicht erforderlich, die Funktionen der TextKit zu erhalten.
 
 
 

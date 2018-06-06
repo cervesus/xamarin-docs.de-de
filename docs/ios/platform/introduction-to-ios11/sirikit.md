@@ -1,18 +1,20 @@
 ---
-title: SiriKit
+title: SiriKit Updates in iOS 11
+description: Dieses Dokument beschreibt, wie mit SiriKit iOS 11 arbeiten. Insbesondere überprüft er zum Arbeiten mit Aufgaben und Notizen und wie Sie alternative Namen für eine Anwendung bereitstellen.
 ms.prod: xamarin
 ms.assetid: 8F75300B-B591-42ED-9D17-001992A5C381
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/07/2017
-ms.openlocfilehash: a712f7da0d57e81872d7f779cf0eb52c30ee3bc2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28160b40c97b8cc62fae95d3643801f1c4cc5e93
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787584"
 ---
-# <a name="sirikit"></a>SiriKit
+# <a name="sirikit-updates-in-ios-11"></a>SiriKit Updates in iOS 11
 
 SiriKit wurde in iOS 10, mit einer Anzahl von Domänen (einschließlich fitnessaktivitäten, fuhr buchungs- und Aufrufe) eingeführt. Finden Sie in der [SiriKit Abschnitt](~/ios/platform/sirikit/index.md) SiriKit Konzepte und wie Sie SiriKit in Ihrer app zu implementieren.
 

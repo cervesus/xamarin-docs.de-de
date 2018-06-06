@@ -1,20 +1,19 @@
 ---
 title: Microsoft Azure Active Directory
-description: Mithilfe von Active Directory zum Authentifizieren von Benutzern in Xamarin mobilen Anwendungen.
+description: Dieses Dokument beschreibt, wie Azure Active Directory zum Authentifizieren von Benutzern in mobilen Anwendungen mit Xamarin erstellten.
 ms.prod: xamarin
 ms.assetid: 0A74766A-B583-47AF-986C-FEA8F5CBF9CD
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 7182b0ff308b952205c0d89ecb929695b0183e53
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 9d34b38cf30a9d5a21f5d106f78823a2b077ef7c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780570"
 ---
 # <a name="microsoft-azure-active-directory"></a>Microsoft Azure Active Directory
-
-_Mithilfe von Active Directory zum Authentifizieren von Benutzern in Xamarin mobilen Anwendungen._
 
 
 Azure Active Directory können Entwickler sichere Ressourcen wie Dateien, Verknüpfungen und Web-APIs, Office 365 und mit dem gleichen organisationskonto, mit denen Mitarbeiter anmelden, um ihre Systeme oder Überprüfen Sie ihre e-Mail-Nachrichten.

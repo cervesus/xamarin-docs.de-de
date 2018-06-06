@@ -1,5 +1,5 @@
 ---
-title: Multitasking für iPad
+title: Multitasking für iPad in Xamarin.iOS
 description: iOS 9 unterstützt zwei Web-apps auf der gleichen Zeit, Folie über oder geteilten Ansicht ausgeführt wird. Darüber hinaus wird die Wiedergabe im Bild Video unterstützt.
 ms.prod: xamarin
 ms.assetid: 0F2266D7-21FF-404D-A148-0CFDE76B12AA
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 553fd6e45df897037d6ad90ef9211eef0bf27aae
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7eacd9ece067d2ddf6363c0551055daa3df4433a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787954"
 ---
-# <a name="multitasking-for-ipad"></a>Multitasking für iPad
+# <a name="multitasking-for-ipad-in-xamarinios"></a>Multitasking für iPad in Xamarin.iOS
 
 _iOS 9 unterstützt zwei Web-apps auf der gleichen Zeit, Folie über oder geteilten Ansicht ausgeführt wird. Darüber hinaus wird die Wiedergabe im Bild Video unterstützt._
 
@@ -94,7 +95,7 @@ Weitere Informationen zum Vorbereiten Ihrer app für geteilte Ansicht finden Sie
 
 Das neue Bild im Bild-Funktion (auch bekannt als _PIP_) ermöglicht es dem Benutzer ein Video in einem kleinen schwebenden Fenster überwachen, die der Benutzer an einer beliebigen Stelle auf dem Bildschirm über andere ausgeführte apps positionieren kann.
 
-[![](multitasking-images/about03.png "Ein Beispiel für Bild in unverankerte Fenster "Bild"")](multitasking-images/about03.png#lightbox)
+[![](multitasking-images/about03.png "Ein Beispiel für Bild in unverankerte Fenster \"Bild\"")](multitasking-images/about03.png#lightbox)
 
 Als hat der Benutzer mit Folie über und geteilten Ansicht volle Kontrolle über ein Video in der Abbildung im Bild Modus beobachten. Ist Ihre app Hauptfunktion Video ansehen, benötigen sie einige Änderungen im PIP-Modus ordnungsgemäß verhält. Andernfalls werden keine Änderungen erforderlich, zur Unterstützung von PIP.
 
@@ -126,7 +127,7 @@ Auf iPads, die Folie über und geteilte Ansicht unterstützen, können Sie die f
 
 | **Ausrichtung** | **Primäre App** | **Sekundäre App** |
 |--- |--- |--- |
-| **Portrait** |75 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|25 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|
+| **Hochformat** |75 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|25 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|
 | **Querformat** |75 % des Bildschirms<br />Reguläre Horizontal<br />Reguläre vertikal|25 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|
 | **Querformat** |50 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|50 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|
 

@@ -1,19 +1,20 @@
 ---
-title: Tippen Sie in iOS
+title: Touch-Ereignisse und Aktionen in Xamarin.iOS
+description: Dieses Dokument beschreibt das Arbeiten mit Berührungsereignisse, Multitouch-Gesten, mehrere Gesten und benutzerdefinierten Gesten in Xamarin.iOS Anwendungen.
 ms.prod: xamarin
 ms.assetid: DA666DC9-446E-4CD1-B5A0-C6FFBC7E53AD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 9ed90a9c4ddcd398d834cb8c91553a57e7bd5ad8
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: 34073474ef3ef74f2fddbf487b3377224dc1aa3e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34689540"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784588"
 ---
-# <a name="touch-in-ios"></a>Tippen Sie in iOS
+# <a name="touch-events-and-gestures-in-xamarinios"></a>Touch-Ereignisse und Aktionen in Xamarin.iOS
 
 Es ist wichtig, zu verstehen, die Berührungsereignisse touch-APIs in einer iOS-Anwendung, wie sie alle physischen Interaktionen mit dem Gerät von zentraler Bedeutung sind. Alle Touch Interaktionen umfassen eine `UITouch` Objekt. In diesem Artikel erfahren wir, wie Sie die `UITouch` Klasse und den APIs Touch unterstützen. Es wird später auf unser wissen, wie Sie Gesten unterstützen erweitert.
 

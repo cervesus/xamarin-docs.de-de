@@ -1,23 +1,20 @@
 ---
-title: Arbeiten mit Text und Suchfelder
-description: Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Text und Suchfelder innerhalb einer Xamarin.tvOS-app.
+title: Arbeiten mit tvos. außerdem wurden Text und Suchfelder in Xamarin
+description: Dieses Dokument beschreibt das Arbeiten mit Text, und suchen Sie Felder in einer app für tvos. außerdem wurden mit Xamarin erstellten. Er bietet einen allgemeinen Überblick über die Felder "Text" und "Suche und Tastaturen, Storyboard-Integration und Suche Datenmodelle erläutert.
 ms.prod: xamarin
 ms.assetid: 9EE63CA6-2F31-4EE0-AAE5-82E18CFAC06C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 220c6e3d1c6f358c67a2f596c977f4d2132298a8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4bf71df62bd6ffd88f42d31809444cd7b3350b66
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789721"
 ---
-# <a name="working-with-text-and-search-fields"></a>Arbeiten mit Text und Suchfelder
-
-_Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Text und Suchfelder innerhalb einer Xamarin.tvOS-app._
-
-
+# <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>Arbeiten mit tvos. außerdem wurden Text und Suchfelder in Xamarin
 
 Wenn erforderlich, kann Ihre app Xamarin.tvOS kleine Teile des Texts fordern Sie vom Benutzer (z. B. Benutzer-IDs und Kennwörter) mit einem Text-Feld und die Bildschirmtastatur:
 
@@ -75,7 +72,7 @@ Weitere Informationen zum Arbeiten mit der Bildschirmtastatur, finden Sie in der
 
 <a name="Search" />
 
-## <a name="search"></a>Suchen
+## <a name="search"></a>Suche
 
 Ein Suchfeld einen speziellen Bildschirm ein Textfeld bereitstellen präsentieren und Bildschirmtastatur, die ermöglicht dem Benutzer, die eine Auflistung von Elementen zu filtern, die unterhalb der Tastatur angezeigt werden:
 
@@ -107,10 +104,10 @@ Führen Sie folgende Schritte aus:
     [![](text-fields-and-search-images/text02.png "Ein Textfeld")](text-fields-and-search-images/text02.png#lightbox)
 1. Wählen Sie die **Textfelder** , und geben Sie jeweils eine eindeutige **Namen** in der **Widget** auf der Registerkarte die **Eigenschaften Pad**: 
 
-    [![](text-fields-and-search-images/text03.png "Der Registerkarte "Widget" die Eigenschaften mit Leerstellen auffüllen")](text-fields-and-search-images/text03.png#lightbox)
+    [![](text-fields-and-search-images/text03.png "Der Registerkarte \"Widget\" die Eigenschaften mit Leerstellen auffüllen")](text-fields-and-search-images/text03.png#lightbox)
 1. In der **Textfeld** Abschnitt definieren Sie Elemente wie z. B. die **Platzhalter** -Hinweis und Standard **Wert**: 
 
-    [![](text-fields-and-search-images/text04.png "Textfeld "im Abschnitt")](text-fields-and-search-images/text04.png#lightbox)
+    [![](text-fields-and-search-images/text04.png "Textfeld \"im Abschnitt")](text-fields-and-search-images/text04.png#lightbox)
 1. Einen Bildlauf nach unten, um Eigenschaften zu definieren, wie z. B. **Rechtschreibprüfung**, **Großschreibung** und der standardmäßige **Tastatur**: 
 
     [![](text-fields-and-search-images/text05.png "Rechtschreibprüfung, Groß-/Kleinschreibung und den Standardtyp der Tastatur")](text-fields-and-search-images/text05.png#lightbox) 
@@ -124,10 +121,10 @@ Führen Sie folgende Schritte aus:
     [![](text-fields-and-search-images/text02-vs.png "Ein Textfeld")](text-fields-and-search-images/text02-vs.png#lightbox)
 1. Wählen Sie die **Textfelder** , und geben Sie jeweils eine eindeutige **Namen** in der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**: 
 
-    [![](text-fields-and-search-images/text03-vs.png "Die Registerkarte "Widget"")](text-fields-and-search-images/text03-vs.png#lightbox)
+    [![](text-fields-and-search-images/text03-vs.png "Die Registerkarte \"Widget\"")](text-fields-and-search-images/text03-vs.png#lightbox)
 1. In der **Textfeld** Abschnitt definieren Sie Elemente wie z. B. die **Platzhalter** -Hinweis und Standard **Wert**: 
 
-    [![](text-fields-and-search-images/text04-vs.png "Textfeld "im Abschnitt")](text-fields-and-search-images/text04-vs.png#lightbox)
+    [![](text-fields-and-search-images/text04-vs.png "Textfeld \"im Abschnitt")](text-fields-and-search-images/text04-vs.png#lightbox)
 1. Einen Bildlauf nach unten, um Eigenschaften zu definieren, wie z. B. **Rechtschreibprüfung**, **Großschreibung** und der standardmäßige **Tastatur**: 
 
     [![](text-fields-and-search-images/text05-vs.png "Rechtschreibprüfung, Groß-/Kleinschreibung und den Standardtyp der Tastatur")](text-fields-and-search-images/text05-vs.png#lightbox) 
@@ -159,11 +156,11 @@ Führen Sie folgende Schritte aus:
     [![](text-fields-and-search-images/search02.png "Eine Auflistung-View-Controller")](text-fields-and-search-images/search02.png#lightbox)
 1. In der **Widget** auf der Registerkarte die **Eigenschaften Pad**, verwenden `SearchResultsViewController` für die **Klasse** und `SearchResults` für die **Storyboard-ID**: 
 
-    [![](text-fields-and-search-images/search03.png "Die Registerkarte "Widget"")](text-fields-and-search-images/search03.png#lightbox)
+    [![](text-fields-and-search-images/search03.png "Die Registerkarte \"Widget\"")](text-fields-and-search-images/search03.png#lightbox)
 1. Wählen Sie die **Zelle Prototyp** auf der Entwurfsoberfläche angezeigt.
 1. In der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**, verwenden Sie `SearchResultCell` für die **Klasse** und `ImageCell` für die **Bezeichner**: 
 
-    [![](text-fields-and-search-images/search04.png "Die Registerkarte "Widget"")](text-fields-and-search-images/search04.png#lightbox)
+    [![](text-fields-and-search-images/search04.png "Die Registerkarte \"Widget\"")](text-fields-and-search-images/search04.png#lightbox)
 1. Layout des Entwurfs von der **Zelle Prototyp** und Verfügbarmachen von jedem Element mit einer eindeutigen **Namen** in der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**: 
 
     [![](text-fields-and-search-images/search05.png "Layout der Entwurf des Prototyps Zelle")](text-fields-and-search-images/search05.png#lightbox)
@@ -177,11 +174,11 @@ Führen Sie folgende Schritte aus:
     [![](text-fields-and-search-images/seach02-vs.png "Eine Auflistung-View-Controller")](text-fields-and-search-images/seach02-vs.png#lightbox)
 1. In der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**, verwenden Sie `SearchResultsViewController` für die **Klasse** und `SearchResults` für die **Storyboard-ID**: 
 
-    [![](text-fields-and-search-images/search03-vs.png "Die Registerkarte "Widget"")](text-fields-and-search-images/search03-vs.png#lightbox)
+    [![](text-fields-and-search-images/search03-vs.png "Die Registerkarte \"Widget\"")](text-fields-and-search-images/search03-vs.png#lightbox)
 1. Wählen Sie die **Zelle Prototyp** auf der Entwurfsoberfläche angezeigt.
 1. In der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**, verwenden Sie `SearchResultCell` für die **Klasse** und `ImageCell` für die **Bezeichner**: 
 
-    [![](text-fields-and-search-images/search04-vs.png "Die Registerkarte "Widget"")](text-fields-and-search-images/search04-vs.png#lightbox)
+    [![](text-fields-and-search-images/search04-vs.png "Die Registerkarte \"Widget\"")](text-fields-and-search-images/search04-vs.png#lightbox)
 1. Layout des Entwurfs von der **Zelle Prototyp** und Verfügbarmachen von jedem Element mit einer eindeutigen **Namen** in der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**: 
 
     [![](text-fields-and-search-images/search05-vs.png "Layout der Entwurf des Prototyps Zelle")](text-fields-and-search-images/search05-vs.png#lightbox)

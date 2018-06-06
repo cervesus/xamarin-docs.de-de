@@ -1,20 +1,19 @@
 ---
 title: Xamarin Profiler, Problembehandlung
-description: Problembehandlung bei der Xamarin Profiler
+description: Dieses Dokument enthält Informationen zur Problembehandlung im Zusammenhang mit der Xamarin Profiler. Probleme im Zusammenhang mit Protokollierung und Diagnoseinformationen, die IDE und anderen Themen beschrieben.
 ms.prod: xamarin
 ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 9e2f9a35f37513ce0cb785f2bd922aeccf42dd8e
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 247a18cf7f645ea90d100cb3f4900f30ac7754cc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793850"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler, Problembehandlung
-
-_Problembehandlung bei der Xamarin Profiler_
 
 ## <a name="logging-and-diagnostics"></a>Protokollierung und-Diagnose
 
@@ -25,6 +24,7 @@ Die Xamarin-Team helfen, Probleme zu verfolgen, wenn Sie uns Informationen berei
 - Die **.mlpd** für die Profilerstellungssitzung (siehe unten) generiert wird.
 
 ### <a name="getting-log-outputs"></a>Abrufen von Protokoll Ausgaben
+
 Auf einem Mac Protokolle gespeichert werden, um `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log`.
 
 Unter Windows werden diese auf gespeichert `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` Geben Sie auch das aktuelle Protokoll, wenn Sie ein Problem übermitteln.
@@ -49,7 +49,6 @@ Die **.mlpd** für eine aktuelle Sitzung auch kann, können Sie durch Auswahl ge
 
 ![](troubleshooting-images/image17-vs.png "Speichern von .mlpd-Datei in Visual Studio")
 
-
 Es ist wichtig zu beachten, dass **.mlpd** enthalten eine Vielzahl von Informationen und die Dateigröße wird groß sein.
 
 ## <a name="troubleshooting"></a>Problembehandlung
@@ -70,7 +69,6 @@ Die folgende Liste zeigt allgemeine Einschränkungen, problemumgehungen, sowie T
 - Stellen Sie sicher, dass Sie angemeldet sind in und ordnungsgemäß authentifiziert.
 - [Visual Studio] Sie müssen unter Verwendung [Visual Studio Enterprise](https://www.visualstudio.com/vs/enterprise/) und eine gültige Enterprise-Lizenz verfügen.
 
-
 #### <a name="i-get-an-error-when-i-try-to-launch-the-profiler"></a>Ich erhalte eine Fehlermeldung, wenn ich versuche, den Profiler zu starten.
 
 Wenn Sie in diesem Fehlerdialogfeld ausführen, wenn den Profiler in Visual Studio verwenden:
@@ -83,14 +81,11 @@ Wird normalerweise aufgrund eines konnte nicht gestartet werden, den Simulator /
 
 Wenn Sie einen Thread, die speziell überwacht werden sollen verfügen, wäre es ideal zum Benennen von Threads an, die sehr ab seiner Erstellung, sodass Get abrufen `ThreadName` anstelle von `0x0`. Beispielsweise Threadname als UI festlegen können Sie den folgenden Code:
 
-
 ```csharp
 RunOnUiThread (() => {
   Thread.CurrentThread.Name  = "UI";
 });
 ```
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

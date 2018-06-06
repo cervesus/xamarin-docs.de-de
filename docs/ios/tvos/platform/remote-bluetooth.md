@@ -1,22 +1,20 @@
 ---
-title: Siri Remote und Bluetooth-Controller
-description: Dieser Artikel behandelt die neuen Siri Remote und Bluetooth Gamecontroller in Ihren apps Xamarin.tvOS unterstützen.
+title: Siri Remote und Bluetooth-Controller für tvos. außerdem wurden in Xamarin
+description: In diesem Artikel wird beschrieben, wie zum Arbeiten mit der Siri Remote und Bluetooth Gamecontroller in tvos. außerdem wurden-apps mit Xamarin geschrieben wird.
 ms.prod: xamarin
 ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5b5893278acad999efd94c89f1ca923100f5cf7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3fc2abed202f8b2e6993890ca4e6b3c6875522e5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789189"
 ---
-# <a name="siri-remote-and-bluetooth-controllers"></a>Siri Remote und Bluetooth-Controller
-
-_Dieser Artikel behandelt die neuen Siri Remote und Bluetooth Gamecontroller in Ihren apps Xamarin.tvOS unterstützen._
-
+# <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri Remote und Bluetooth-Controller für tvos. außerdem wurden in Xamarin
 
 Benutzer der app Xamarin.tvOS werden nicht werden interagieren mit der Schnittstelle direkt als mit iOS, in dem sie tippen Sie auf Bilder auf dem Gerätebildschirm jedoch indirekt von über den Raum mithilfe, der [Siri Remote](#The-Siri-Remote).
 
@@ -38,7 +36,7 @@ Herausforderung darin ein app-Entwickler tvos. außerdem wurden ist das Erstelle
 
 Siri Remoteinstanz verfügt über die folgenden Features und die erwartete Verwendung innerhalb Ihrer app tvos. außerdem wurden:
 
-|Feature|Allgemein-App-Nutzung|Spiel App-Nutzung|
+|Funktion|Allgemein-App-Nutzung|Spiel App-Nutzung|
 |---|---|---|
 |**Touch-Oberfläche**<br />Streichen Sie nach, um zu navigieren, drücken Sie die EINGABETASTE, um auszuwählen, und halten Sie für Kontextmenüs.|**Tap/Wischen**<br />UI-Navigation zwischen den Fokus erhalten kann.<br /><br />**Klicken Sie auf**<br />Aktiviert die ausgewählte (bildschärfenmodus)-Element.|**Tap/Wischen**<br />Spiel Entwurf abhängig und kann als eine Steuerkreuz durch Tippen auf die Ränder verwendet werden.<br /><br />**Klicken Sie auf**<br />Führen Sie die primäre Maustaste-Funktion.|
 |**Menü**<br />Drücken Sie, um zum vorherigen Bildschirm oder einem Menü zurückzukehren.|Kehrt zum vorherigen Bildschirm zurück und beendet, Apple TV-Startbildschirm aus dem Haupt-app-Bildschirm.|Anhalten und fortsetzen Spielzüge, kehrt zum vorherigen Bildschirm zurück und wird beendet, Apple TV-Startbildschirm aus dem Haupt-app-Bildschirm.|
@@ -75,9 +73,6 @@ Darüber hinaus Menü Schaltfläche drückt können erkannt werden mithilfe eine
 
 > [!IMPORTANT]
 > Sie sollten **immer** die Wiedergabe und Pause-Taste auf der Remoteinstanz eine Funktion zuweisen. Mit einer nicht-funktionale Schaltfläche können Sie Ihre app unterbrochen, um den Endbenutzer aussehen vornehmen. Wenn Sie eine gültige Funktion für Schaltflächenname besitzen, weisen Sie die gleiche Funktion wie die primäre Maustaste (berühren Oberfläche klicken).
-
-
-
 
 <a name="Gestures-and-Storyboards" />
 
@@ -285,7 +280,7 @@ Gamecontroller können verwendet werden, um Spielverlauf verbessern, und geben S
 
 Eine Gamecontroller verfügt über die folgenden Features und die erwartete Verwendung innerhalb Ihrer app tvos. außerdem wurden:
 
-|Feature|Allgemein-App-Nutzung|Spiel App-Nutzung|
+|Funktion|Allgemein-App-Nutzung|Spiel App-Nutzung|
 |---|---|---|
 |**D-Pad**|Benutzeroberflächenelemente (ändert den Fokus) navigiert.|Hängt von Spiel.|
 |**A**|Aktiviert das ausgewählte (bildschärfenmodus)-Element.|Primäre Schaltfläche Funktion ausführt, und vergewissert sich Dialogfeldaktionen.|
@@ -334,7 +329,7 @@ Apple hat mehrere bestimmte Anforderungen, die erfüllt sein müssen, wenn Ihre 
 
 Um Gamecontroller-Unterstützung in Ihrer app Xamarin.tvOS aktivieren möchten, doppelklicken Sie auf die `Info.plist` in der Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen:
 
-[![](remote-bluetooth-images/game02.png "Die Datei "Info.plist"-editor")](remote-bluetooth-images/game02.png#lightbox)
+[![](remote-bluetooth-images/game02.png "Die Datei \"Info.plist\"-editor")](remote-bluetooth-images/game02.png#lightbox)
 
 Klicken Sie unter der **Gamecontroller** Abschnitt, aktivieren Sie das Kontrollkästchen durch **Gamecontroller aktivieren**, überprüfen Sie alle Gamecontroller-Typen, die von der app unterstützt werden.
 

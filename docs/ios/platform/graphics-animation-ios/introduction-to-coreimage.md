@@ -1,23 +1,24 @@
 ---
-title: CoreImage
-description: CoreImage ist ein neues Framework mit iOS 5 zum Bereitstellen von bildverarbeitungs- und live-Funktionalität der video-Erweiterung eingeführt wurden. In diesem Artikel stellt diese Funktionen mit Xamarin.iOS Beispiele.
+title: Core-Image in Xamarin.iOS
+description: Core-Image ist ein neues Framework mit iOS 5 zum Bereitstellen von bildverarbeitungs- und live-Funktionalität der video-Erweiterung eingeführt wurden. In diesem Artikel stellt diese Funktionen mit Xamarin.iOS Beispiele.
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0bb2c3b8b563da53e432ad16e6518ada67a4655e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6032554a0ddbda26ff5de94f6035bc4f8c15a22a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786631"
 ---
-# <a name="coreimage"></a>CoreImage
+# <a name="core-image-in-xamarinios"></a>Core-Image in Xamarin.iOS
 
-_CoreImage ist ein neues Framework mit iOS 5 zum Bereitstellen von bildverarbeitungs- und live-Funktionalität der video-Erweiterung eingeführt wurden. In diesem Artikel stellt diese Funktionen mit Xamarin.iOS Beispiele._
+_Core-Image ist ein neues Framework mit iOS 5 zum Bereitstellen von bildverarbeitungs- und live-Funktionalität der video-Erweiterung eingeführt wurden. In diesem Artikel stellt diese Funktionen mit Xamarin.iOS Beispiele._
 
-CoreImage ist ein neues Framework eingeführt, die unter iOS 5, die eine Reihe von integrierten Filter und die Auswirkungen für Bilder und Videos, einschließlich Gesicht gelten bereitstellt.
+Core-Image ist ein neues Framework eingeführt, die unter iOS 5, die eine Reihe von integrierten Filter und die Auswirkungen für Bilder und Videos, einschließlich Gesicht gelten bereitstellt.
 
 Dieses Dokument enthält einfache Beispiele für:
 
@@ -26,7 +27,7 @@ Dieses Dokument enthält einfache Beispiele für:
 -  Eine Liste der verfügbaren Filter.
 
 
-Diese Beispiele sollen Ihnen beim Einstieg helfen CoreImage Funktionen in Ihre Anwendungen Xamarin.iOS einbinden.
+Diese Beispiele sollen Ihnen beim Einstieg helfen Core-Image-Funktionen in Ihre Anwendungen Xamarin.iOS einbinden.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -34,7 +35,7 @@ Sie müssen die neueste Version von Xcode verwenden.
 
 ## <a name="face-detection"></a>Vordere Erkennung
 
-Die CoreImage Gesicht-Funktion zur Erkennung wird nur der Aussage – er versucht, die Flächen in einem Foto zu identifizieren, und gibt die Koordinaten der alle Flächen, die er erkennt. Diese Informationen kann verwendet werden, um die Anzahl der Personen in einem Bild, zeichnen Indikatoren für das Abbild aus (z. b. für "Tags" Personen in einem Foto), oder etwas anderes können Sie sich vorstellen.
+Die Core-Image Gesicht-Funktion zur Erkennung wird nur der Aussage – er versucht, die Flächen in einem Foto zu identifizieren, und gibt die Koordinaten der alle Flächen, die er erkennt. Diese Informationen kann verwendet werden, um die Anzahl der Personen in einem Bild, zeichnen Indikatoren für das Abbild aus (z. b. für "Tags" Personen in einem Foto), oder etwas anderes können Sie sich vorstellen.
 
 Diesen Code aus CoreImage\SampleCode.cs veranschaulicht das Erstellen und Verwenden von Gesicht Erkennung auf ein eingebettetes Bild:
 
@@ -219,11 +220,11 @@ Jeden aufgelisteten Filter wurde als Klasse in Xamarin.iOS, ausgesetzt, sodass S
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde wie einige der neuen Ios5 CoreImage-Framework-Funktionen wie Gesicht Erkennung und Anwenden von Filtern auf ein Bild verwenden wird. Es gibt Dutzende von anderen Bild-Filter in das Framework für die Verwendung verfügbar.
+In diesem Artikel wurde wie einige der neuen Ios5 Core-Image-Framework-Funktionen wie Gesicht Erkennung und Anwenden von Filtern auf ein Bild verwenden wird. Es gibt Dutzende von anderen Bild-Filter in das Framework für die Verwendung verfügbar.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Core-Image (Beispiel)](https://developer.xamarin.com/samples/CoreImage/)
 - [Vertrag und Helligkeit eine Rezept Bild anpassen](https://developer.xamarin.com/recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
-- [Mithilfe von CoreImage filtern](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
+- [Mithilfe von Filtern für Core-Image](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
 - [CIFilter-Klassenreferenz](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)

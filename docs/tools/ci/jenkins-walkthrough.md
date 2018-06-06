@@ -1,16 +1,17 @@
 ---
 title: Verwendung von Jenkins mit Xamarin
-description: Diese Anleitung wird veranschaulicht, wie Jenkins als fortlaufende Integration-Server einrichten und automatisieren Kompilieren von mobilen Anwendungen mit Xamarin erstellt wurden. Es wird beschrieben, wie Jenkins unter OS X installieren, um ihn zu konfigurieren, richten Sie Aufträge Xamarin.iOS und Xamarin.Android Anwendungen zu kompilieren, wenn Änderungen an das Verwaltungssystem von Source Code übergeben werden.
+description: Dieses Dokument beschreibt die Verwendung von Jenkins für fortlaufende Integration mit Xamarin-Anwendungen. Es wird erläutert, wie zu installieren, konfigurieren und Verwenden von Jenkins.
 ms.prod: xamarin
 ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 1052507bfbf06e264f9e9da89be1e0f35fa70ce1
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7e9069c698f82e9ec9c5009286c2a36b6722b7a8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793945"
 ---
 # <a name="using-jenkins-with-xamarin"></a>Verwendung von Jenkins mit Xamarin
 
@@ -88,11 +89,11 @@ Wenn es zum Anpassen von Jenkins erforderlich ist, klicken Sie auf die **Standar
 
 Sobald Jenkins ausgeführt wird, empfiehlt es sich, sie als ein Element für die Anmeldung festzulegen, damit sie jedes Mal die Benutzeranmeldenamen in auf dem Computer gestartet wird. Hierzu können Sie indem Sie mit der rechten Maustaste auf das Symbol "Jenkins" im Dock und **Optionen... Öffnen Sie bei der Anmeldung**, wie im folgenden Screenshot gezeigt:
 
- [![](jenkins-walkthrough-images/image8.png "Sie können dazu mit der rechten Maustaste auf das Symbol "Jenkins" im Dock und Auswählen von OptionsOpen bei der Anmeldung, wie in diesem Screenshot dargestellt")](jenkins-walkthrough-images/image8.png#lightbox)
+ [![](jenkins-walkthrough-images/image8.png "Sie können dazu mit der rechten Maustaste auf das Symbol \"Jenkins\" im Dock und Auswählen von OptionsOpen bei der Anmeldung, wie in diesem Screenshot dargestellt")](jenkins-walkthrough-images/image8.png#lightbox)
 
 Dies führt dazu, dass Jenkins.App automatisch bei jedem Starten der Benutzer anmeldet, aber nicht bei der Computer hochgefahren. Es ist möglich, ein Benutzerkonto angeben, die OS X zum automatisch anmelden beim Systemstart verwendet. Öffnen der **Systemeinstellungen**, und wählen Sie die **Benutzer & Gruppen** Symbol wie in diesem Screenshot gezeigt:
 
- [![](jenkins-walkthrough-images/image9.png "Öffnen Sie die Systemeinstellungen, und wählen Sie das Symbol "Benutzergruppen" aus, wie in diesem Screenshot dargestellt.")](jenkins-walkthrough-images/image9.png#lightbox)
+ [![](jenkins-walkthrough-images/image9.png "Öffnen Sie die Systemeinstellungen, und wählen Sie das Symbol \"Benutzergruppen\" aus, wie in diesem Screenshot dargestellt.")](jenkins-walkthrough-images/image9.png#lightbox)
 
 Klicken Sie auf die **Anmeldeoptionen** aus, und klicken Sie dann das Konto, OS X für die Anmeldung beim Systemstart verwendet.
 
@@ -111,7 +112,7 @@ Wählen Sie auf dieser Seite **Jenkins > Jenkins verwalten > Verwalten von Plug-
 
 Dies zeigt die **Jenkins Plug-In-Manager** Seite. Wenn Sie auf der Registerkarte "verfügbar" klicken, sehen Sie eine Übersicht über 600-Plug-Ins, die heruntergeladen und installiert werden kann. Dies wird im folgenden Screenshot gezeigt:
 
- [![](jenkins-walkthrough-images/image12.png "Wenn Sie auf der Registerkarte "verfügbar" klicken, sehen eine Liste von mehr als 600-Plug-Ins Sie, die heruntergeladen und installiert werden kann")](jenkins-walkthrough-images/image12.png#lightbox)
+ [![](jenkins-walkthrough-images/image12.png "Wenn Sie auf der Registerkarte \"verfügbar\" klicken, sehen eine Liste von mehr als 600-Plug-Ins Sie, die heruntergeladen und installiert werden kann")](jenkins-walkthrough-images/image12.png#lightbox)
 
 Durchführen eines Bildlaufs durch alle 600-Plug-Ins ermitteln, ein paar zeitraubend sein können und fehleranfällig. Jenkins bietet ein Suchfeld Filter in der oberen rechten Ecke der Schnittstelle. Verwenden dieses Feld Filter zum Suchen wird suchen und installiert eine oder alle der folgenden Erweiterungen vereinfacht:
 
@@ -134,7 +135,7 @@ Bei Auswahl dieser Option Sie gelangen auf die **System konfigurieren [Jenkins]*
 
 Die MSBuild-Plug-in muss so konfiguriert werden, dass verwenden **/Library/Frameworks/Mono.framework/Commands/xbuild** zum Kompilieren von Visual Studio für Mac Projektmappen- und Projektdateien-Dateien. Führen Sie einen Bildlauf nach unten der **System konfigurieren [Jenkins]** bis Seite der **MSBuild hinzufügen** Schaltfläche angezeigt wird, wie im folgenden Screenshot gezeigt:
 
- [![](jenkins-walkthrough-images/image15.png "Nach unten der Seite "System Jenkins konfigurieren", bis die Schaltfläche "MSBuild hinzufügen" angezeigt wird")](jenkins-walkthrough-images/image15.png#lightbox)
+ [![](jenkins-walkthrough-images/image15.png "Nach unten der Seite \"System Jenkins konfigurieren\", bis die Schaltfläche \"MSBuild hinzufügen\" angezeigt wird")](jenkins-walkthrough-images/image15.png#lightbox)
 
 Klicken Sie auf diese Schaltfläche, und füllen Sie die **Namen** und **Pfad** auf **MSBuild** Felder des Formulars, das angezeigt wird. Der Name des Ihrer **MSBuild** Installation muss einen aussagekräftigeren Namen, während die **Pfad zum MSBuild** muss der Pfad zur `xbuild`, dem es sich gewöhnlich   **/Library/Frameworks / Mono.framework/Commands/xbuild**. Nachdem wir die Änderungen speichern, indem Sie auf die speichern "oder" am unteren Rand der Seite die Schaltfläche "anwenden", Jenkins zeilenfilterausdruck verwenden `xbuild` Ihre Lösungen zu kompilieren.
 
@@ -145,7 +146,7 @@ Dieser Abschnitt ist obligatorisch, wenn Sie TFS für die quellcodeverwaltung ve
 In der Reihenfolge für eine OS X-Arbeitsstation für die Interaktion mit einem TFS-Server muss das Team Explorer Everywhere auf der Arbeitsstation installiert sein. Team Explorer Everywhere ist eine Reihe von Tools von Microsoft, plattformübergreifenden Befehlszeilenclient für den Zugriff auf TFS enthält. Team Explorer Everywhere können von Microsoft heruntergeladen und installiert werden in drei Schritten:
 
 1. Entpacken Sie die Archivdatei, zu einem Verzeichnis, das dem Benutzerkonto zugegriffen werden kann. Sie können z. B. Entzippen Sie die Datei auf **~/tee**.
-2. Konfigurieren Sie den Pfad-Shell oder das System, um den Ordner, der die Dateien enthält, die in Schritt 1 oben extrahiert wurden. Ein auf ein Objekt angewendeter
+2. Konfigurieren Sie den Pfad-Shell oder das System, um den Ordner, der die Dateien enthält, die in Schritt 1 oben extrahiert wurden. Beispiel:
 
         echo export PATH~/tee/:$PATH' >> ~/.bash_profile
 
@@ -176,7 +177,7 @@ Auf der **globalen Sicherheit konfigurieren** Seite Überprüfung der **Sicherhe
 
 Schalten Sie das Optionsfeld für **'Jenkins-Benutzerdatenbank** in der **Realm-Abschnitt "Sicherheit"**, und sicherstellen, dass **Benutzerberechtigungen zum Registrieren** wird überprüft, wie im veranschaulicht die bildschirmabbildung von folgenden:
 
- [![](jenkins-walkthrough-images/image20.png "Schalten Sie das Optionsfeld für Jenkins eigenen Benutzerdatenbank im Abschnitt Bereich "Sicherheit", und stellen Sie sicher, dass Benutzern erlauben, registrieren Sie sich auch aktiviert ist")](jenkins-walkthrough-images/image20.png#lightbox)
+ [![](jenkins-walkthrough-images/image20.png "Schalten Sie das Optionsfeld für Jenkins eigenen Benutzerdatenbank im Abschnitt Bereich \"Sicherheit\", und stellen Sie sicher, dass Benutzern erlauben, registrieren Sie sich auch aktiviert ist")](jenkins-walkthrough-images/image20.png#lightbox)
 
 Schließlich starten Sie Jenkins und erstellen Sie ein neues Konto. Das erste Konto, das erstellt wird, ist das Root-Konto, und dieses Konto wird automatisch an einen Administrator heraufgestuft werden. Navigieren Sie zurück zu den **globalen Sicherheit konfigurieren** Seite, und überprüfen Sie deaktivieren die **Matrix basierende Sicherheit** Optionsfeld. Der Root-Konto sollte Vollzugriff gewährt werden, und das anonyme Konto sollten nur-Lese Zugriff erhält, wie im folgenden Screenshot gezeigt:
 
@@ -191,7 +192,7 @@ Im Falle eines Kennwort vergessen haben oder die Sperre Jenkins-Wide ist es mög
 
 1. Jenkins zu beenden. Wenn Sie Jenkins.app verwenden, können Sie dazu mit der rechten Maustaste auf das Symbol "Jenkins.App" im Dock und Auswählen von Quit im Menü, das wird angezeigt:
 
-    ![](jenkins-walkthrough-images/image19.png "Symbol "App" in der Andocken und Quit im Menü auswählen wird angezeigt, die")
+    ![](jenkins-walkthrough-images/image19.png "Symbol \"App\" in der Andocken und Quit im Menü auswählen wird angezeigt, die")
 2. Öffnen Sie die Datei **~/.jenkins/config.xml** in einem Text-Editor.
 3. Ändern Sie den Wert, der die `<usesecurity></usesecurity>` Element aus `true` auf `false`.
 4. Löschen der `<authorizationstrategy></authorizationstrategy>` und die `<securityrealm></securityrealm>` Elemente aus der Datei.
@@ -263,7 +264,7 @@ Die einfachste Methode zum Überprüfen, ob das Quellcodeverwaltungssystem ordnu
 
 Wenn ein Build gestartet wurde, zeigt das Dialogfeld "Verlauf erstellen" eine blinkende blaue Kreis, eine Statusanzeige angezeigt, die Build-Nummer und die Uhrzeit, die der Build, ähnlich wie im folgenden Bildschirmfoto gestartet:
 
-![](jenkins-walkthrough-images/image30.png "Wenn ein Build gestartet wurde, zeigt das Dialogfeld "Verlauf erstellen" eine blinkende blaue Kreis, eine Statusanzeige angezeigt, die Build-Nummer und die Uhrzeit, die zu der Build gestartet")
+![](jenkins-walkthrough-images/image30.png "Wenn ein Build gestartet wurde, zeigt das Dialogfeld \"Verlauf erstellen\" eine blinkende blaue Kreis, eine Statusanzeige angezeigt, die Build-Nummer und die Uhrzeit, die zu der Build gestartet")
 
 Wenn der Auftrag erfolgreich ist, wird ein Kreis angezeigt. Wenn der Auftrag ein Fehler auftritt, wird ein roter Kreis angezeigt.
 
@@ -281,7 +282,7 @@ Der Pfad zum Arbeitsbereich wird in einer Umgebungsvariablen mit dem Namen gespe
 
 Es ist möglich, den Arbeitsbereichsordner in Jenkins zu durchsuchen, indem Navigieren auf der Angebotsseite für einen Auftrag, und klicken Sie dann auf die **Arbeitsbereich** Link im linken Menü. Der folgende Screenshot zeigt ein Beispiel für die im Arbeitsbereich "für einen Auftrag mit dem Namen" **HelloWorld**:
 
-![](jenkins-walkthrough-images/image32.png "Diese Abbildung zeigt ein Beispiel des Arbeitsbereichs für einen Auftrag mit dem Namen "HelloWorld"")
+![](jenkins-walkthrough-images/image32.png "Diese Abbildung zeigt ein Beispiel des Arbeitsbereichs für einen Auftrag mit dem Namen \"HelloWorld\"")
 
 ### <a name="build-triggers"></a>Erstellen von Triggern
 
@@ -300,7 +301,7 @@ Xamarin.iOS Projekte kompiliert werden können, an der Befehlszeile mit `xbuild`
 
 Führen Sie einen Bildlauf nach unten, um die **erstellen** Abschnitt. Klicken Sie auf der **Add Buildschritt** Schaltfläche und wählen Sie **ausführen Shell**, wie der folgende Screenshot veranschaulicht:
 
-![](jenkins-walkthrough-images/image33.png "Klicken Sie auf die Schaltfläche "Build-Schritt hinzufügen", und wählen Sie die Execute-shell")
+![](jenkins-walkthrough-images/image33.png "Klicken Sie auf die Schaltfläche \"Build-Schritt hinzufügen\", und wählen Sie die Execute-shell")
 
 
 [!include[](~/tools/ci/includes/commandline-compile-of-xamarin-ios-ipa.md)]
@@ -318,7 +319,7 @@ Diese beiden Schritte werden in den nächsten beiden Abschnitten ausführlicher 
 
 Klicken Sie auf die **Add Buildschritt** aus, und wählen Sie **Erstellen eines Visual Studio-Projekt oder einer Projektmappe mithilfe von MSBuild**, wie im folgenden Screenshot gezeigt:
 
-![](jenkins-walkthrough-images/image36.png "Erstellen der APK klicken Sie auf die Schaltfläche Build Schritt "hinzufügen", und wählen Sie Build ein Visual Studio-Projekt oder eine Projektmappe mithilfe von MSBuild")
+![](jenkins-walkthrough-images/image36.png "Erstellen der APK klicken Sie auf die Schaltfläche Build Schritt \"hinzufügen\", und wählen Sie Build ein Visual Studio-Projekt oder eine Projektmappe mithilfe von MSBuild")
 
 Nachdem das Projekt mit der Buildschritt hinzugefügt wird, geben Sie die Felder, die angezeigt werden. Der folgende Screenshot ist ein Beispiel für das abgeschlossene Formular:
 

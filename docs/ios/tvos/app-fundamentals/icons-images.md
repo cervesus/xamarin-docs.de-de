@@ -1,21 +1,20 @@
 ---
-title: Arbeiten mit Symbolen und Bilder
-description: Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Symbolen und Bilder innerhalb einer Xamarin.tvOS-app.
+title: Arbeiten mit tvos. außerdem wurden Symbole und Bilder in Xamarin
+description: Dieses Dokument beschreibt das Arbeiten mit Symbolen und Bilder in einer app für tvos. außerdem wurden mit Xamarin erstellten. Es wird erläutert, starten Sie Bilder, Bilder mit Ebenen und das Symbol "app".
 ms.prod: xamarin
 ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c888ecf3d7e0f21734f2b89176eed56bf778dbf9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 59cbc53acf3ab7da12826b9d3cffb821631a0500
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788796"
 ---
-# <a name="working-with-icons-and-images"></a>Arbeiten mit Symbolen und Bilder
-
-_Dieser Artikel umfasst das Entwerfen von und Arbeiten mit Symbolen und Bilder innerhalb einer Xamarin.tvOS-app._
+# <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Arbeiten mit tvos. außerdem wurden Symbole und Bilder in Xamarin
 
 Erstellen von fesselnden Symbole und Bilder sind ein wichtiger Bestandteil der Entwicklung einer faszinierend benutzerfreundlichkeit für Ihre apps für Apple TV. Dieses Handbuch befasst sich die erforderlichen Schritte zum Erstellen und schließen Sie die Grafiken erforderlichen Ressourcen für Ihre apps Xamarin.tvOS:
 
@@ -41,7 +40,7 @@ Start-Images sind keine Gelegenheit für Werbung oder künstlerischen Ausdruck, 
 
 |Starten der Bildgröße|Hinweise|
 |---|---|
-|1920x1080px|Non-layered .png files only|
+|1920x1080px|Nur für nicht überlappende PNG-Dateien|
 
 Apple macht die folgenden Vorschläge zum Starten der app-Image entwerfen:
 
@@ -133,7 +132,7 @@ Weitere Informationen zum Erstellen und Anzeigen einer Vorschau in den Ebenen-Im
 
 Ihre app Xamarin.tvOS müssen nicht nur ein App-Symbol für die Apple TV-Startseite, sondern auch ein Symbol für den App Store. Das Symbol "App" wird die Ihres ersten ändern, um eine hervorragende Eindruck für Ihre potenziellen Benutzer und sollte Ihre app Zweck auf einen Blick vermitteln.
 
-[![](icons-images-images/icon01.png "Das Symbol "App"")](icons-images-images/icon01.png#lightbox)
+[![](icons-images-images/icon01.png "Das Symbol \"App\"")](icons-images-images/icon01.png#lightbox)
 
 Alle Apps muss eine kleine und eine große Version von dessen Symbol "App" angeben. Des kleinen Symbols wird auf dem Bildschirm Apple TV-Startseite verwendet werden, wenn die app installiert wird. Die große Version wird von dem App Store. "Große Symbole" App sollte imitieren, die das Aussehen und Verhalten von der Version des kleinen Symbols an.
 
@@ -312,10 +311,10 @@ Führen Sie folgende Schritte aus:
 
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Info.plist` um ihn zur Bearbeitung zu öffnen: 
 
-    [![](icons-images-images/info01.png "Die Datei "Info.plist"")](icons-images-images/info01.png#lightbox)
+    [![](icons-images-images/info01.png "Die Datei \"Info.plist\"")](icons-images-images/info01.png#lightbox)
 2. In der **"Info.plist" Editor**, wählen Sie den Katalog Bestand (konfigurierten oben in der [Festlegen von App-Symbole](#Setting-the-App-Icons) Abschnitt) für die **App-Symbole**: 
 
-    [![](icons-images-images/info02.png "Die Datei "Info.plist"-Editor")](icons-images-images/info02.png#lightbox)
+    [![](icons-images-images/info02.png "Die Datei \"Info.plist\"-Editor")](icons-images-images/info02.png#lightbox)
 3. Wählen Sie als Nächstes den Bestand-Katalog (konfigurierten oben in der [Einstellen des Bildes starten](#Setting-the-Launch-Image) Abschnitt) für die **starten Bilder**.
 4. Speichern Sie die Änderungen.
 

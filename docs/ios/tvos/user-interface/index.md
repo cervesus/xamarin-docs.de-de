@@ -1,5 +1,5 @@
 ---
-title: Benutzeroberfläche
+title: Erstellen von tvos. außerdem wurden von Benutzeroberflächen mit Xamarin
 description: Allgemeine Benutzerfreundlichkeit (UX) Coverage einschließlich Steuerelemente der Benutzeroberfläche (UI), verwenden Sie Xcodes Benutzeroberflächen-Generator und UX Entwurfsprinzipien beim Arbeiten mit Xamarin.tvOS.
 ms.prod: xamarin
 ms.assetid: 8CF80705-B36A-42D6-B66B-52BC8586FA5A
@@ -7,17 +7,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: a30bd02a9545717175daf1381730afce6b72218d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc29510b90a3651f7547f38c234b6e2904016f83
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789066"
 ---
-# <a name="user-interface"></a>Benutzeroberfläche
+# <a name="building-tvos-user-interfaces-with-xamarin"></a>Erstellen von tvos. außerdem wurden von Benutzeroberflächen mit Xamarin
 
 _Allgemeine Benutzerfreundlichkeit (UX) Coverage einschließlich Steuerelemente der Benutzeroberfläche (UI), verwenden Sie Xcodes Benutzeroberflächen-Generator und UX Entwurfsprinzipien beim Arbeiten mit Xamarin.tvOS._
 
-Bei der Arbeit mit c# und .NET in einer app Xamarin.tvOS haben Sie Zugriff auf die gleiche Benutzeroberfläche-Steuerelemente, die ein Entwickler in Objective-C, Swift und Xcode Arbeiten ausführt. Da Xamarin.tvOS direkt mit Xcode integriert ist, können Sie Xcodes Benutzeroberflächen-Generator zu erstellen und Verwalten Ihrer Benutzer-Schnittstellen (oder erstellen sie optional direkt im C#-Code) verwenden.
+Bei der Arbeit mit c# und .NET in einem tvos. außerdem Xamarin-basierten wurden, müssen Sie Zugriff auf die gleiche Benutzeroberfläche-Steuerelemente, die ein Entwickler in Objective-C, Swift und Xcode Arbeiten ausführt. Xcode des Benutzeroberflächen-Generator dient zum Erstellen und verwalten Ihre Benutzer-Schnittstellen (oder erstellen sie optional direkt im C#-Code).
 
 Die unten aufgeführten Handbücher bieten ausführliche Informationen zum Arbeiten mit UI-Elemente in einer app Xamarin.tvOS tvos. außerdem wurden. Wird mit hoher vorgeschlagen, dass Sie über arbeiten die [Hello tvos. außerdem wurden Quick Start Guide](~/ios/tvos/get-started/hello-tvos.md) zuerst, wie er enthält wichtige Konzepte und Techniken, die in jeder Artikel verwendet werden.
 

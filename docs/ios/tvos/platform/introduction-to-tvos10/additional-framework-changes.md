@@ -1,28 +1,26 @@
 ---
 title: Zusätzliche tvos. außerdem wurden 10 Frameworks Änderungen
-description: Dieser Artikel umfasst zusätzliche, kleinere Änderungen oder Erweiterungen von vorhandenen Frameworks für tvos. außerdem wurden 10.
+description: Dieses Dokument beschreibt kleinere Änderungen und Verbesserungen an vorhandenen Frameworks in iOS 10 vorgenommen wurden. Es wird erläutert, Updates für AVFoundation, AVKit, Core Daten, Core Grafiken, Foundation, GameKit, GameplayKit und vieles mehr.
 ms.prod: xamarin
 ms.assetid: F771640A-F92E-4954-82D5-2D720434971E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c53726b91a0cd3e79041b9b1d51e9f7fbb1c79bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 326fb6a23048ba3d3e1d33f42c8da2fff8544c25
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788874"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>Zusätzliche tvos. außerdem wurden 10 Frameworks Änderungen
-
-_Dieser Artikel umfasst zusätzliche, kleinere Änderungen oder Erweiterungen von vorhandenen Frameworks für tvos. außerdem wurden 10._
-
 
 Zusätzlich zu den wichtigsten Änderungen zu tvos. außerdem wurden machte Apple Änderungen und Verbesserungen für mehrere vorhandene Frameworks in tvos. außerdem wurden 10.
 
 <a name="AV-Foundation-Framework" />
 
-## <a name="av-foundation-framework-additions"></a>AV-Foundation Framework Ergänzungen
+## <a name="avfoundation-framework-additions"></a>AVFoundation Framework Ergänzungen
 
 Das AVFoundation-Framework beinhaltet die folgenden Verbesserungen:
 

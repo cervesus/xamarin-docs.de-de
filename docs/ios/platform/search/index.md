@@ -1,20 +1,21 @@
 ---
-title: Neue Such-APIs
+title: Such-APIs in Xamarin.iOS
 description: Dieser Artikel behandelt die neuen App-Such-APIs bereitgestellt, die von iOS 9 verwenden, um Benutzern das Suchen nach Informationen und Funktionen in Ihren apps Xamarin.iOS ermöglichen.
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 5dcd3d9665befaa82fd0f5677a4a662f633ed45b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc62ad34af0b9b98f0475599a08946122badd21e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788175"
 ---
-# <a name="new-search-apis"></a>Neue Such-APIs
+# <a name="search-apis-in-xamarinios"></a>Such-APIs in Xamarin.iOS
 
-_Dieser Artikel behandelt die neuen App-Such-APIs bereitgestellt, die von iOS 9 verwenden, um Benutzern das Suchen nach Informationen und Funktionen in Ihren apps Xamarin.iOS ermöglichen._
+_Dieser Artikel behandelt der App-Such-APIs bereitgestellt, die von iOS 9 verwenden, um Benutzern das Suchen nach Informationen und Funktionen in Ihren apps Xamarin.iOS ermöglichen._
 
 Suche wurde in iOS 9 hervorragende neue Möglichkeiten, um den Zugriff auf Informationen und Funktionen in einem Xamarin.iOS-app bereitgestellt erweitert. Verwenden die neuen App-Such-APIs, ist app-Inhalte über die Spotlight und Safari Suchergebnissen Übergabe und Siri Erinnerungen und Vorschläge als durchsuchbar festgelegt. Dadurch können Benutzer, Aktivitäten und innerhalb Ihrer app umfassende Informationen rasch zuzugreifen.
 

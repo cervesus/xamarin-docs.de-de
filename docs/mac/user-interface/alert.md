@@ -1,5 +1,5 @@
 ---
-title: Benachrichtigungen
+title: Warnungen in Xamarin.Mac
 description: In diesem Artikel wird das Arbeiten mit Warnungen in einer Anwendung Xamarin.Mac behandelt. Erstellen und Anzeigen von Warnungen von C#-Code und reagieren auf Benutzerinteraktionen beschrieben.
 ms.prod: xamarin
 ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a451d0a5535915d9e52f687ae07ea028c0ccd5ef
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1eb781fe02213de6a994f56e321316b93a128b60
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792641"
 ---
-# <a name="alerts"></a>Benachrichtigungen
+# <a name="alerts-in-xamarinmac"></a>Warnungen in Xamarin.Mac
 
 _In diesem Artikel wird das Arbeiten mit Warnungen in einer Anwendung Xamarin.Mac behandelt. Erstellen und Anzeigen von Warnungen von C#-Code und reagieren auf Benutzerinteraktionen beschrieben._
 
@@ -59,7 +60,7 @@ alert.RunModal ();
 
 Der obige Code zeigt eine Warnung mit dem Anwendungen-Symbol, das auf das Symbol "Warnung", einen Titel, eine Warnmeldung und eine einzelne überlagert **OK** Schaltfläche:
 
-[![](alert-images/alert01.png "Eine Warnung mit einer Schaltfläche "OK"")](alert-images/alert01.png#lightbox)
+[![](alert-images/alert01.png "Eine Warnung mit einer Schaltfläche \"OK\"")](alert-images/alert01.png#lightbox)
 
 Apple bietet verschiedene Eigenschaften, die verwendet werden können, um eine Warnung anzupassen:
 

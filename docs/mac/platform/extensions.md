@@ -1,19 +1,20 @@
 ---
-title: Xamarin.Mac Extension Support
-description: Dieser Artikel behandelt die Unterstützung der Erweiterung in Xamarin.Mac Version 2.10 (und höher).
+title: Xamarin.Mac Unterstützung
+description: Dieses Dokument beschreibt Xamarin.Mac Unterstützung für Finder, Freigabe und heute Erweiterungen. Er überprüft, Einschränkungen und bekannten Problemen, die Links zu einer exemplarischen Vorgehensweise und Beispiel-app, und bietet Tipps zum Arbeiten mit Erweiterungen.
 ms.prod: xamarin
 ms.assetid: 4148F1BE-DFA0-46B6-9FCD-425A6541F510
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 03936c75d31bfd01e741ad2c09096c925dc9dbfc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4cef6e89b89ef41a0c93b687c9df11a8aa971ed5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792377"
 ---
-# <a name="xamarinmac-extension-support"></a>Xamarin.Mac Extension Support
+# <a name="xamarinmac-extension-support"></a>Xamarin.Mac Unterstützung
 
 In der Vorschau Xamarin.Mac 2.10 wurde Unterstützung für mehrere MacOS Erweiterungspunkte hinzugefügt:
 

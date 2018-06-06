@@ -1,5 +1,5 @@
 ---
-title: Dialogfelder
+title: Dialogfelder in Xamarin.Mac
 description: In diesem Artikel wird das Arbeiten mit Dialogfeldern und modale Fenster in einer Anwendung Xamarin.Mac behandelt. Es beschreibt das Erstellen von modalen Fenstern in Xcode und Schnittstelle-Generator arbeiten mit Standarddialoge und interagieren mit diesen Steuerelementen im C#-Code.
 ms.prod: xamarin
 ms.assetid: 55451990-B77B-4D44-B8BB-F874EC503B0C
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: cd0b57cc40d3f7cffd4d5711ec04a7225be870e9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7d9a93c8503d7e25f098e871378a22455b597e90
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792693"
 ---
-# <a name="dialogs"></a>Dialogfelder
+# <a name="dialogs-in-xamarinmac"></a>Dialogfelder in Xamarin.Mac
 
 Bei der Arbeit mit c# und .NET in einer Anwendung Xamarin.Mac haben Sie Zugriff auf die gleichen Dialogfelder und modale Fenster, die ein Entwickler arbeiten in unter *Objective-C* und *Xcode* verfügt. Da Xamarin.Mac direkt mit Xcode integriert ist, können Sie die Xcode _Schnittstelle-Generator_ zu erstellen und Verwalten Ihrer modale Fenster (oder erstellen sie optional direkt im C#-Code).
 
@@ -61,7 +62,7 @@ Ein Fenster Voreinstellungen ist ein nicht modales Dialogfeld, das die Einstellu
 
 Das Dialogfeld "Öffnen" weisen den Benutzern eine konsistente Möglichkeit zum Suchen und öffnen ein Element in einer Anwendung:
 
-[![](dialog-images/dialog03.png "Ein Dialogfeld "Öffnen"")](dialog-images/dialog03.png#lightbox)
+[![](dialog-images/dialog03.png "Ein Dialogfeld \"Öffnen\"")](dialog-images/dialog03.png#lightbox)
 
 
 ### <a name="print-and-page-setup-dialogs"></a>Druck- und Seite Setup-Dialogfelder
@@ -92,7 +93,7 @@ Das Dialogfeld "Speichern" ermöglicht Benutzern eine konsistente Weise Element 
 
 Und die **erweitert** Zustand:
 
-[![](dialog-images/save02.png "Einen erweiterten Dialogfeld "Speichern"")](dialog-images/save02.png#lightbox)
+[![](dialog-images/save02.png "Einen erweiterten Dialogfeld \"Speichern\"")](dialog-images/save02.png#lightbox)
 
 Die **minimale** Speichern Dialogfeld kann auch als Blatt angezeigt werden:
 

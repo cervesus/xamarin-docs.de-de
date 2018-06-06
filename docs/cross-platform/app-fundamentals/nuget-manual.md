@@ -1,16 +1,17 @@
 ---
 title: Manuelles Erstellen von NuGet-Pakete für Xamarin
-description: Diese Seite enthält einige Tipps, wie die NuGet-Pakete erstellen, die auf die Xamarin-Plattform abzielen.
+description: Dieses Dokument enthält Tipps, wie die NuGet-Pakete erstellen, die auf die Xamarin-Plattform abzielen. Es werden NuGet-Paket Xamarin Profile, PCL NuGets mit Platform-Abhängigkeiten beschrieben sowie links zu verschiedenen Open-Source-Beispiele.
 ms.prod: xamarin
 ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 510c27cb54b91c837ca6f6b7a93f944f13097f0c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: cc39ade2ccc1192461bcfa19c98b7f9925b667a0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781419"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>Manuelles Erstellen von NuGet-Pakete für Xamarin
 
@@ -58,7 +59,6 @@ Um zu verdeutlichen:
 - **Xamarin.iOS10** entspricht Xamarin.iOS 1.0 und höher
 - **Xamarin.iOS1.0** entspricht auch Xamarin.iOS 1.0 und höher
 
-
 ## <a name="pcl-nugets-with-platform-dependencies"></a>PCL NuGets mit Platform-Abhängigkeiten
 
 PCL-Profile sind beschränkt, in welche .NET Framework-APIs, die sie zugreifen können und sie können plattformspezifischen Code sicherlich nicht verfügbar. Diese Links 3rd Party werden verschiedene Ansätze zum Erstellen von NuGet-Pakete, die PCL und systemeigene APIs verwenden, damit die Kompatibilität für Xamarin und andere Plattformen beschrieben:
@@ -76,7 +76,6 @@ Einige Open-Source-Beispiele, denen Sie verwenden können:
 - [**ModernHttpClient** ](https://www.nuget.org/packages/modernhttpclient/) – Ihre app mit System.Net.Http schreiben, aber legen Sie diese Bibliothek im und geht erheblich schneller (Ansicht [Quelle](https://github.com/paulcbetts/ModernHttpClient)).
 - [**Splat** ](https://www.nuget.org/packages/Splat/) – eine Bibliothek Dinge plattformübergreifende vornehmen, die sein soll (Ansicht [Quelle](https://github.com/paulcbetts/Splat)).
 - [**NGraphics** ](https://www.nuget.org/packages/NGraphics/) -eine plattformübergreifende Bibliothek für das Rendern von Vektorgrafiken auf .NET (Ansicht [Quelle](https://github.com/praeclarum/NGraphics/blob/master/NGraphics.nuspec)).
-
 
 ## <a name="related-links"></a>Verwandte Links
 

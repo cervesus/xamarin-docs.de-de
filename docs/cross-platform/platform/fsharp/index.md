@@ -1,18 +1,19 @@
 ---
-title: F#
-description: F# ist eine stark typisierte funktionale Programmiersprache .NET ausgeführt werden soll
+title: Verwenden von f# mit Xamarin
+description: F# ist eine stark typisierte funktionale Programmiersprache, die für die Ausführung auf .NET entwickelt wurde. Dieses Dokument enthält eine allgemeine Übersicht über seine Funktionen und Links zu Beispielen, die mit f# erstellt.
 ms.prod: xamarin
 ms.assetid: 506410BD-F89C-4FEB-8915-760FE250A206
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 1679c0fa561a5b96463050d82fca3854bb819b52
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 2a6c666878c16cbb4aca6fbaa3c9f8d0c656d0bc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781148"
 ---
-# <a name="f35"></a>F&#35;
+# <a name="using-f-with-xamarin"></a>Verwenden von f# mit Xamarin
 
 F# ist eine Open-Source, plattformübergreifende, funktionsorientierte Programmiersprache für .NET.
 

@@ -1,5 +1,5 @@
 ---
-title: API-Darstellung
+title: Darstellung API in Xamarin.iOS
 description: iOS können Sie visuelle eigenschafteneinstellungen auf der Ebene einer statischen Klasse statt auf einzelne Objekte anwenden, damit die Änderung auf alle Instanzen des Steuerelements in der Anwendung gilt.
 ms.prod: xamarin
 ms.assetid: C1727F0C-82B1-D085-D46F-C6383FF04B16
@@ -7,19 +7,20 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 7c7e4909cc12f49411c527af12fc0e4855979804
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 02b33550451506ef4756f0f7d4400b4f98cef368
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790252"
 ---
-# <a name="appearance-api"></a>API-Darstellung
+# <a name="appearance-api-in-xamarinios"></a>Darstellung API in Xamarin.iOS
 
 _iOS können Sie visuelle eigenschafteneinstellungen auf der Ebene einer statischen Klasse statt auf einzelne Objekte anwenden, damit die Änderung auf alle Instanzen des Steuerelements in der Anwendung gilt._
 
 Diese Funktionalität wird in Xamarin.iOS bereitgestellt, über einen statischen `Appearance` Eigenschaft für alle UIKit-Steuerelemente, die sie unterstützen. Visuelle Darstellung (Eigenschaften wie als Bild für Farbton Farbe und Hintergrund) kann daher problemlos angepasst werden, auf um Ihre Anwendung ein einheitliches Erscheinungsbild zu verleihen. Die Darstellung-API wurde in iOS 5 eingeführt, und zwar einige Teile davon in iOS 9 veraltet sind ist immer noch eine gute Möglichkeit, einige Erstellen von Formaten und Designumgebung Effekte in Xamarin.iOS apps zu erzielen.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 iOS können Sie anpassen, die Darstellung von vielen UIKit Steuerelemente stellen die Standardsteuerelemente entsprechen, um das branding, die, das Sie für Ihre Anwendung anwenden möchten.
 

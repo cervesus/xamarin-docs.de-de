@@ -1,18 +1,20 @@
 ---
-title: Speichern Sie, Abrufen von Informationen und Verwaltungskit (Übersicht)
+title: Übersicht über die StoreKit und Abrufen von Produktinformationen in Xamarin.iOS
+description: Dieses Dokument enthält eine Übersicht über StoreKit. Es beschreibt die Klassen, die mit StoreKit, StoreKit Aktivitäten testen, Anzeigen von Produkten für den Verkauf, Behandlung von ungültigen Produkte und Anzeigen von lokalisierten Preise verwendet.
 ms.prod: xamarin
 ms.assetid: FC21192E-6325-4389-C060-E92DBB5EBD87
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f4ecd2942a99f80854fd340be454f9d8fefa5a36
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 964b97e82db8e79cb32598d0c955fac3ab122314
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787223"
 ---
-# <a name="store-kit-overview-and-retrieving-product-information"></a>Speichern Sie, Abrufen von Informationen und Verwaltungskit (Übersicht)
+# <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>Übersicht über die StoreKit und Abrufen von Produktinformationen in Xamarin.iOS
 
 Die Benutzeroberfläche für eine in-app-Käufe wird in den nachstehenden Screenshots dargestellt.
 Bevor jede Transaktion stattfindet, muss die Anwendung abrufen, Preis und eine Beschreibung für die Anzeige des Produkts. Klicken Sie dann, wenn der Benutzer drückt **kaufen**, die Anwendung sendet eine Anfrage an StoreKit, die das Bestätigungsdialogfeld und Apple-ID-Anmeldung verwaltet. Vorausgesetzt, dass die Transaktion dann erfolgreich ist, StoreKit benachrichtigt den Anwendungscode, muss die speichern Sie das Transaktionsergebnis und geben Sie die Benutzer mit Zugriff auf ihren Kauf.   

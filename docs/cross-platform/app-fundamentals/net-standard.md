@@ -1,19 +1,21 @@
 ---
-title: .NET-Standard
+title: Verwenden .NET Standardbibliotheken zum Freigeben von Code
+description: Dieses Dokument beschreibt, wie .NET Standardbibliotheken Code freigeben. Es wird erläutert, eine .NET Standardbibliothek erstellen, bearbeiten die Einstellungen und ihn in einer Anwendung verwenden.
 ms.prod: xamarin
 ms.assetid: 8C30F8D3-1920-453E-9E8B-D40696736FF2
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: c70a1cb1aa05426ba6d54d8af3787f014883bfa1
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 448bbc0630388f6bf45056c90cc75586996d0623
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781032"
 ---
-# <a name="net-standard"></a>.NET-Standard
+# <a name="using-net-standard-libraries-to-share-code"></a>Verwenden .NET Standardbibliotheken zum Freigeben von Code
 
-## <a name="using-net-standard-library-projects-to-share-code"></a>Freigeben von Code über den .NET Standard-Bibliotheksprojekte
+## <a name="net-standard"></a>.NET-Standard
 
 Die .NET-Standardbibliothek ist eine formale Spezifikation von .NET-APIs, die für alle .NET-Laufzeiten verfügbar sein sollen. Die Motivation hinter der Standardbibliothek ist das Herstellen einer umfassenderen Einheitlichkeit im .NET-Ökosystem.
 Auch wenn [ECMA-335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) weiterhin für Einheitlichkeit im .NET-Laufzeitverhalten sorgt, gibt es keine ähnliche Spezifikation für die .NET-Basisklassenbibliotheken (BCL) für Implementierungen der .NET-Bibliothek.
@@ -85,7 +87,7 @@ Sie können innerhalb Ihrer Version von ändern `netstandard` durch Ändern der 
 
 Sobald eine Standardbibliothek des .NET erstellt wurde, können Sie einen Verweis darauf aus einem kompatiblen Anwendung oder Library-Projekt auf die gleiche Weise hinzufügen, Sie normalerweise fügen Sie Verweise hinzu. Klicken Sie in Visual Studio mit der rechten Maustaste auf den Knoten "Verweise", und wählen Sie `Add Reference...` wechseln Sie zu der `Solution : Projects` Registerkarte wie gezeigt:
 
-![](net-standard-images/vs04.png "In Visual Studio mit der rechten Maustaste auf den Knoten "Verweise" und wählen Sie Verweis hinzufügen... und wechseln Sie dann auf der Registerkarte Projektmappenprojekte wie dargestellt")
+![](net-standard-images/vs04.png "In Visual Studio mit der rechten Maustaste auf den Knoten \"Verweise\" und wählen Sie Verweis hinzufügen... und wechseln Sie dann auf der Registerkarte Projektmappenprojekte wie dargestellt")
 
 -----
 

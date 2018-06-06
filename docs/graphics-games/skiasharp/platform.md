@@ -1,18 +1,19 @@
 ---
-title: Spezifische Details SkiaSharp-Plattform
-description: Informationen zum Inhalt Ihres SKSurface in Ihre systemeigene Anwendung einfügen.
+title: SkiaSharp plattformspezifischen Hinweise
+description: Dieses Dokument beschreibt die Clientplattform-spezifische relevante Details zu SkiaSharp. Es enthält Beispielcode für iOS-, Android-, Mac OS, Windows und Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 3f40c7ea0b118816b7be373617795db9158c1450
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: bcec8f2c850396f45cba795555b924d3cbc4ef22
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783528"
 ---
-# <a name="platform-specific-integration"></a>Bestimmte Plattformintegration
+# <a name="skiasharp-platform-specific-notes"></a>SkiaSharp plattformspezifischen Hinweise
 
 Die folgenden Beispielen weisen der Image-Spaltenpuffern manuell, ist dies ein allgemeines Muster für die Plattform veranschaulichen dies in einem vorhandenen RBGA Puffer, die von der Plattform bereitgestellten gezeichnet werden soll.
 

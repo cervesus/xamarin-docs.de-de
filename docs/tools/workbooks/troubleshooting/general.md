@@ -1,14 +1,16 @@
 ---
 title: Bekannte Probleme und Problemumgehungen
+description: Dieses Dokument beschreibt bekannte Probleme und problemumgehungen für Xamarin-Arbeitsmappen. Es wird erläutert, CultureInfo Probleme und JSON-Probleme.
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 186faf3fc4f93d1c9a4af9e3e9f72afd569fed8b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b6dc3b119d3e85369a71638f2519b2ef0c85446c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794032"
 ---
 # <a name="known-issues--workarounds"></a>Bekannte Probleme und Problemumgehungen
 
@@ -56,7 +58,7 @@ Es ist ein [Fehler in dem Monaco-Editor] [ monaco-bug] in Safari/WebKit, die in 
 
 ## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>SkiaSharp-Renderer fehlen in Arbeitsmappen 1.3.
 
-Arbeitsmappen 1.3 ab, wurde entfernt und die SkiaSharp Renderern, die wir ausgeliefert wurden in Arbeitsmappen 0.99.0, zugunsten SkiaSharp bietet den Renderern mit sich selbst, indem Sie unsere [SDK] [/ Führungslinien/Cross-Platform/Arbeitsmappen/Sdk /].
+Arbeitsmappen 1.3 ab, wurde entfernt und die SkiaSharp Renderern, die wir ausgeliefert wurden in Arbeitsmappen 0.99.0, zugunsten SkiaSharp bietet den Renderern mit sich selbst, indem Sie unsere [SDK](~/tools/workbooks/sdk/index.md).
 
 ### <a name="workaround"></a>Problemumgehung
 

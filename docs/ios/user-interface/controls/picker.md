@@ -1,19 +1,20 @@
 ---
-title: Datumsauswahl
-description: Dieser Leitfaden behandelt entwerfen und Arbeiten mit Bildlaufbereich in einem Xamarin.iOS-app.
+title: Die Datumsauswahl in Xamarin.iOS
+description: Dieses Dokument beschreibt das Entwerfen und Arbeiten mit Picker-Steuerelemente in einem Xamarin.iOS-app. Es wird erläutert, wie eine Auswahl im Code und in der iOS-Designer implementieren.
 ms.prod: xamarin
 ms.assetid: A2369EFC-285A-44DD-9E80-EC65BC3DF041
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/02/2017
-ms.openlocfilehash: e213124e870f1cca96a6078fd26bc7eeb1af55a1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7f46d354af86027d1e2656171c6595562d3555a6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789911"
 ---
-# <a name="picker"></a>Datumsauswahl
+# <a name="picker-control-in-xamarinios"></a>Die Datumsauswahl in Xamarin.iOS
 
 Das Kontoauswahl-Steuerelement zeigt 'Wheel Like'-Steuerelements, das eine bildlauffähige Liste von Werten mit den ausgewählten Wert wird hervorgehoben enthält. Benutzer drehen Sie das Mausrad, um die gewünschte Option.
 
@@ -202,7 +203,7 @@ datePickerView.MinuteInterval = 10;
 
 Es gibt vier Modi, die der Datumsauswahl mithilfe können, um festgelegt werden die [ `UIDatePicker.Mode` ](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.Mode/) Eigenschaft. Die folgende Liste zeigt ein Beispiel der einzelnen Aktionen und ihre Implementierung:
 
-#### <a name="time"></a>zeit
+#### <a name="time"></a>Zeit
 
 Der Time-Modus zeigt die Zeit mit einer Stunde und Minute-Auswahl und eine optionale Bezeichnung von AM oder PM. Es wird festgelegt, mit der `UIDatePickerMode.Time` Eigenschaft. Zum Beispiel:
 
@@ -273,7 +274,7 @@ var finishCountdown = currentTime.AddSeconds(countDownTimerTime);
 dateLabel.Text = "Alarm set for:" + coundownTimeformat.ToString(finishCountdown);
 ```
 
-#### <a name="formatting"></a>Formatierung 
+#### <a name="formatting"></a>Format 
 
 Die Werte der Uhrzeit-, Datums- und DateAndTime Modi können aufgezeichnet werden, mithilfe der `Date` Eigenschaft auf die UIDatePicker (z. B.: `datePickerView.Date`), vom Typ NSDate. Verwenden Sie zum Formatieren dieses Datums in etwas mehr lesbare [ `NSDateFormatter` ](https://developer.xamarin.com/api/type/Foundation.NSDateFormatter/). Die folgenden Beispiele zeigen, wie einige der verfügbaren Eigenschaften für diese Klasse verwendet werden.
 

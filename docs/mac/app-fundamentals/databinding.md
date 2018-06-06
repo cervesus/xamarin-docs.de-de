@@ -1,5 +1,5 @@
 ---
-title: Datenbindung und Schlüssel-Wert-Codierung
+title: Datenbindung und Schlüssel-Wert-Codierung in Xamarin.Mac
 description: Dieser Artikel behandelt mit Codierung mit Schlüssel-Wert und Schlüssel-Wert prüfen, um Daten Anbindung an Benutzeroberflächenelemente in Xcodes Benutzeroberflächen-Generator zu ermöglichen.
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
@@ -7,17 +7,18 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 48ee5d4e4a0a53de49fbba46d79424e03af6fe5c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 88567e47f488a94fcf7334584a678c9689b83306
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792137"
 ---
-# <a name="data-binding-and-key-value-coding"></a>Datenbindung und Schlüssel-Wert-Codierung
+# <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Datenbindung und Schlüssel-Wert-Codierung in Xamarin.Mac
 
 _Dieser Artikel behandelt mit Codierung mit Schlüssel-Wert und Schlüssel-Wert prüfen, um Daten Anbindung an Benutzeroberflächenelemente in Xcodes Benutzeroberflächen-Generator zu ermöglichen._
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 Bei der Arbeit mit c# und .NET in einer Anwendung Xamarin.Mac haben Sie Zugriff auf den gleichen Schlüssel-Wert-Codierung und die Daten Bindung Techniken, die ein Entwickler arbeiten in *Objective-C* und *Xcode* verfügt. Da Xamarin.Mac direkt mit Xcode integriert ist, können Sie die Xcode _Schnittstelle-Generator_ zum Binden von Daten mit Benutzeroberflächenelemente keinen Code schreiben.
 

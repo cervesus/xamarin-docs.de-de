@@ -1,19 +1,20 @@
 ---
-title: Storyboards-Schnellstart
-description: Abrufen gestarteten Gebäude MacOS Benutzeroberflächen mit Storyboards.
+title: Storyboards in Xamarin.Mac – Schnellstart
+description: Dieses Dokument enthält eine Einführung in das Schnellstart erstellen MacOS Benutzeroberflächen mit Storyboards in Xamarin.Mac. Es wird beschrieben, wie eine Segue und erstellen ein Fenster Voreinstellungen.
 ms.prod: xamarin
 ms.assetid: 20719B5D-8147-4E8A-A23C-8D575C7ACCEE
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: 0c366de844b119736763f7d419d6bc9bb3fbfc0a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2bf91a51a55583e2ba8ca1fc09eb3dcd0d9986cf
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792570"
 ---
-# <a name="starting-a-new-storyboard-based-project"></a>Starten ein neues Storyboard-basiertes Projekt
+# <a name="storyboards-in-xamarinmac--quick-start"></a>Storyboards in Xamarin.Mac – Schnellstart
 
 Beginnen Sie als eine kurze Einführung zur Verwendung von Storyboards zum Definieren einer Xamarin.Mac-app-Benutzeroberfläche ein neues Xamarin.Mac-Projekt. Klicken Sie auf **Mac** > **App** > **Cocoa-App** und dann auf **Weiter**:
 

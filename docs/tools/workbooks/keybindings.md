@@ -1,14 +1,16 @@
 ---
 title: Tastenkombinationen für Xamarin Arbeitsmappen-Editor
+description: Dieses Dokument beschreibt die Tastenkombinationen für die Verwendung im Xamarin-Arbeitsmappen-Editor verfügbar. Insbesondere prüft es verschiedene Möglichkeiten, die Return-Taste verwendet wird.
 ms.prod: xamarin
 ms.assetid: 6375A371-3215-4A7C-B97B-A19E58BE96D6
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 1258a40a527ab47cee78b17454ac818e53c60ad2
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b0ba268367ebf6a9eb55bd00dd84014de247649b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793903"
 ---
 # <a name="xamarin-workbooks-editor-keyboard-shortcuts"></a>Tastenkombinationen für Xamarin Arbeitsmappen-Editor
 

@@ -1,19 +1,20 @@
 ---
-title: Arbeiten mit Standardeinstellungen für Benutzer
-description: Dieser Artikel behandelt die Arbeit mit NSUserDefault Standardeinstellungen in einer Xamarin iOS-App oder eine Erweiterung zu speichern.
+title: Arbeiten mit Standardeinstellungen für Benutzer in Xamarin.iOS
+description: Dieser Artikel behandelt die Arbeit mit NSUserDefaults Standardeinstellungen in einer Xamarin iOS-app oder eine Erweiterung zu speichern. Ferner wird die NSUserDefaults auf hoher Ebene beschrieben und erläutert, wie zum Lesen und Schreiben von Werten.
 ms.prod: xamarin
 ms.assetid: DAE7FFC4-B8C9-4D9E-886A-9B2388452EEB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: aa28e7d5636b06c8ab1e46457537431b5d1c7f1a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3befe77e990887773d408a3b9b6ec2e8cd371540
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784609"
 ---
-# <a name="working-with-user-defaults"></a>Arbeiten mit Standardeinstellungen für Benutzer
+# <a name="working-with-user-defaults-in-xamarinios"></a>Arbeiten mit Standardeinstellungen für Benutzer in Xamarin.iOS
 
 _Dieser Artikel behandelt die Arbeit mit NSUserDefault Standardeinstellungen in einem Xamarin.iOS-App oder eine Erweiterung zu speichern._
 

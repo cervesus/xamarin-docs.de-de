@@ -1,18 +1,20 @@
 ---
-title: Suche mit NSUserActivity
+title: Suche mit NSUserActivity in Xamarin.iOS
+description: Dieses Dokument beschreibt, wie ein NSUserActivity, Spotlight und Safari durchsuchbar machen zu indizieren. Es wird erläutert, wie auf die Auswahl einer NSUserActivity in den Suchergebnissen angezeigter reagieren.
 ms.prod: xamarin
 ms.assetid: 0B28B284-C7C9-4C0D-A782-D471FBBC4CAE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 803fcce359bbe27ea19901afa766f5b7f4692e0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4b053f66e9b6b7715cbe52c4e43d9db32db48f4c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788207"
 ---
-# <a name="search-with-nsuseractivity"></a>Suche mit NSUserActivity
+# <a name="search-with-nsuseractivity-in-xamarinios"></a>Suche mit NSUserActivity in Xamarin.iOS
 
 `NSUserActivity` iOS 8 eingeführt wurde, und wird verwendet, um die Daten für die Übergabe bereitstellen.
 Sie können Sie Aktivitäten in bestimmte Teile Ihrer app zu erstellen, die dann in eine andere Instanz Ihrer App ausführen auf einem anderen iOS-Gerät deaktiviert übergeben werden kann. Das empfangende Gerät können Sie die Aktivität gestartet wird, auf dem vorherigen Gerät Entnahme oben rechts, in denen der Benutzer aufgehört fortsetzen. Weitere Informationen finden Sie unter Übergabe, finden Sie unter unsere [Einführung in die Übergabe](~/ios/platform/handoff.md) Dokumentation.

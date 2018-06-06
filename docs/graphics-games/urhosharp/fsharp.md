@@ -1,20 +1,19 @@
 ---
 title: UrhoSharp der Programmierung mit f#
-description: 'Vorgehensweise: erstellen eine einfache UrhoSharp-Anwendung mit f# in Visual Studio für Mac'
+description: Dieses Dokument beschreibt das Erstellen einer einfachen Hello World UrhoSharp-Anwendung mit f# in Visual Studio für Mac.
 ms.prod: xamarin
 ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: d2b21204d1d328831419308827e1a2de2b6aef1c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 64d69de70d6bc6f23b9907b498622b00c42b6f50
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783271"
 ---
 # <a name="programming-urhosharp-with-f"></a>UrhoSharp der Programmierung mit f#
-
-_Vorgehensweise: erstellen eine einfache UrhoSharp-Anwendung mit f# in Visual Studio für Mac_
 
 Mit f#-mit dem gleichen Bibliotheken und Konzepte von C#-Programmierer kann UrhoSharp programmiert werden. Die [UrhoSharp verwenden](~/graphics-games/urhosharp/using.md) Artikel vermittelt einen Überblick über das Modul UrhoSharp und gelesen werden sollen, bevor Sie in diesem Artikel.
 

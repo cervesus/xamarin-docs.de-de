@@ -1,16 +1,17 @@
 ---
 title: Xamarin Player Live-App
-description: Bearbeiten und Testen von apps in Echtzeit auf Ihrem IOS- oder Android-Gerät
+description: Dieses Dokument beschreibt den Xamarin Live Player auf Gerät live-app, die verwendet werden kann, um eine Vorschau der Änderungen am Code anzuzeigen. Es wird erläutert, Setup, Beispiele, Protokolle, Einstellungen, die Verwaltung von Geräten und vieles mehr.
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: topgenorth
 ms.author: toopge
 ms.date: 05/14/2017
-ms.openlocfilehash: 3d4d34c6945387f5878ea708faf630d2545a750e
-ms.sourcegitcommit: b706fbe05344f7201fbe8f82d9dbbceb66060637
+ms.openlocfilehash: 88f7f62650484007c221aa7baaa684f872e0a8e9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794149"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Player Live-App
 

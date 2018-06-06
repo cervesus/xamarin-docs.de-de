@@ -1,5 +1,5 @@
 ---
-title: Stapelansicht
+title: Stack-Ansichten in Xamarin.iOS
 description: Dieser Artikel behandelt dem neuen UIStackView-Steuerelement in einem Xamarin.iOS-app zum Verwalten einer Gruppe von Unteransichten entweder in einer horizontal oder vertikal angeordnet Stack verwenden.
 ms.prod: xamarin
 ms.assetid: 20246E87-2A49-438A-9BD7-756A1B50A617
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: aec1c4ceb562f528d6bcef7e4de0f2708952d2a5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a894efebe4089adefeb02007bd394c13fc77974c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790099"
 ---
-# <a name="stack-view"></a>Stapelansicht
+# <a name="stack-views-in-xamarinios"></a>Stack-Ansichten in Xamarin.iOS
 
 _Dieser Artikel behandelt dem neuen UIStackView-Steuerelement in einem Xamarin.iOS-app zum Verwalten einer Gruppe von Unteransichten entweder in einer horizontal oder vertikal angeordnet Stack verwenden._
 

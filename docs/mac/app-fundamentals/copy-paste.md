@@ -1,5 +1,5 @@
 ---
-title: Durch Kopieren und Einfügen
+title: Kopieren und Einfügen in Xamarin.Mac
 description: Dieser Artikel behandelt die Arbeit mit der Zwischenablage kopieren und Einfügen in eine Anwendung Xamarin.Mac. Es wird gezeigt, wie zum Arbeiten mit standard-Datentypen, die mehrere apps und wie benutzerdefinierte Daten innerhalb einer bestimmten app unterstützt gemeinsam genutzt werden können.
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
@@ -7,17 +7,18 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: cf81666403f687ce997e20f6f5f097dc9fcf1421
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: becdec771949584919595c84b13ae9e05bfd377b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791896"
 ---
-# <a name="copy-and-paste"></a>Durch Kopieren und Einfügen
+# <a name="copy-and-paste-in-xamarinmac"></a>Kopieren und Einfügen in Xamarin.Mac
 
 _Dieser Artikel behandelt die Arbeit mit der Zwischenablage kopieren und Einfügen in eine Anwendung Xamarin.Mac. Es wird gezeigt, wie zum Arbeiten mit standard-Datentypen, die mehrere apps und wie benutzerdefinierte Daten innerhalb einer bestimmten app unterstützt gemeinsam genutzt werden können._
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 Bei der Arbeit mit c# und .NET in einer Anwendung Xamarin.Mac haben Sie Zugriff auf die gleiche Montagefläche (Kopieren und Einfügen) Unterstützung, die ein Entwickler arbeiten in Objective-C verfügt.
 
@@ -1279,7 +1280,7 @@ Dieser Artikel hat eine ausführliche Übersicht über das Arbeiten mit der Zwis
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MacCopyPaste (sample)](https://developer.xamarin.com/samples/mac/MacCopyPaste/)
+- [MacCopyPaste (Beispiel)](https://developer.xamarin.com/samples/mac/MacCopyPaste/)
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
 - [Montagefläche Programmierhandbuch](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PasteboardGuide106/Articles/pbGettingStarted.html)
 - [MacOS von menschlichen Richtlinien zur Benutzeroberfläche](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

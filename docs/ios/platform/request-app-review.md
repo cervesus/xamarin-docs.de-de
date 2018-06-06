@@ -1,19 +1,20 @@
 ---
-title: Prüfung der änderungsanforderungen-App
-description: Dieser Artikel behandelt der RequestReview-Methode, Apple iOS 10 und wie er in Xamarin.iOS implementiert hinzugefügt.
+title: App-Überprüfung im Xamarin.iOS anfordern
+description: Dieser Artikel beschreibt die RequestReview-Methode, Apple iOS 10 hinzugefügt, und erläutert, wie er in Xamarin.iOS implementieren.
 ms.prod: xamarin
 ms.assetid: 6408e707-b7dc-4557-b931-16a4d79b8930
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 2fff227581d6eeca69d7a770308d9793a4831baf
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2b329ebad5faaa635d9a791f8760bd5f521de591
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788156"
 ---
-# <a name="request-app-review"></a>Prüfung der änderungsanforderungen-App
+# <a name="request-app-review-in-xamarinios"></a>App-Überprüfung im Xamarin.iOS anfordern
 
 _Dieser Artikel behandelt der RequestReview-Methode, Apple iOS 10 und wie er in Xamarin.iOS implementiert hinzugefügt._
 
