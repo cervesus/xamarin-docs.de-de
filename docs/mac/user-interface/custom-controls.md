@@ -1,21 +1,20 @@
 ---
-title: Erstellen benutzerdefinierter Steuerelemente
-description: Dieser Artikel beschreibt, wie benutzerdefinierte Steuerelemente erstellen und im Benutzeroberflächen-Generator mit ihnen arbeiten.
+title: Erstellen von benutzerdefinierten Steuerelementen in Xamarin.Mac
+description: Dieses Dokument beschreibt, wie benutzerdefinierte Steuerelemente in Xamarin.Mac erstellt wird. Es wird gezeigt, wie das benutzerdefinierte Steuerelement erstellen, verfolgen den Status, zeichnen die Schnittstelle, reagieren auf Benutzereingaben und verwenden Sie das Steuerelement in einer Anwendung.
 ms.prod: xamarin
 ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e1ab3977df96e241fa2a5a80f6cabd74d7d775f8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e4c2b2c9ee7bae3d6489fec6b22881653ec53043
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792677"
 ---
-# <a name="creating-custom-controls"></a>Erstellen von benutzerdefinierten Steuerelementen
-
-_Dieser Artikel beschreibt, wie benutzerdefinierte Steuerelemente erstellen und im Benutzeroberflächen-Generator mit ihnen arbeiten._
+# <a name="creating-custom-controls-in-xamarinmac"></a>Erstellen von benutzerdefinierten Steuerelementen in Xamarin.Mac
 
 Bei der Arbeit mit c# und .NET in einer Anwendung Xamarin.Mac haben Sie Zugriff auf die gleiche Benutzersteuerelemente, die ein Entwickler arbeiten in unter *Objective-C*, *Swift* und *Xcode* ist . Da Xamarin.Mac direkt mit Xcode integriert ist, können Sie die Xcode _Schnittstelle-Generator_ zu erstellen und verwalten Ihre Benutzer-Steuerelemente (oder erstellen sie optional direkt im C#-Code).
 

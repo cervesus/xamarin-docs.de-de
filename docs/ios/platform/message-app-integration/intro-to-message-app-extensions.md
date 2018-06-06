@@ -1,5 +1,5 @@
 ---
-title: Grundlagen der Nachrichten-App-Erweiterung
+title: Grundlagen der App-Erweiterung Nachricht in Xamarin.iOS
 description: Dieser Artikel zeigt enthalten wie eine Nachrichten-App-Erweiterung in einem Xamarin.iOS-Lösung, die Nachrichten-app integriert und stellt neue Funktionen für den Benutzer.
 ms.prod: xamarin
 ms.assetid: 0CFB494C-376C-449D-B714-9E82644F9DA3
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: 73ca0974a42bf661a89327148b68341114297084
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: bc06d73543b9e0bd1e8715fc722b0a95af7d9f07
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787909"
 ---
-# <a name="message-app-extension-basics"></a>Grundlagen der Nachrichten-App-Erweiterung
+# <a name="message-app-extension-basics-in-xamarinios"></a>Grundlagen der App-Erweiterung Nachricht in Xamarin.iOS
 
 _Dieser Artikel zeigt enthalten wie eine Nachrichten-App-Erweiterung in einem Xamarin.iOS-Lösung, die Nachrichten-app integriert und stellt neue Funktionen für den Benutzer._
 
@@ -126,7 +127,7 @@ Erstellen Sie eine benutzerdefinierte Aufkleber Erfahrung, führen Sie folgende 
     [![](intro-to-message-app-extensions-images/message02.png "Geben Sie einen Erweiterungsnamen")](intro-to-message-app-extensions-images/message02.png#lightbox)
 5. Klicken Sie auf die **erstellen** Schaltfläche, um die Erweiterung zu erstellen: 
 
-    [![](intro-to-message-app-extensions-images/message03.png "Klicken Sie auf die Schaltfläche "erstellen"")](intro-to-message-app-extensions-images/message03.png#lightbox)
+    [![](intro-to-message-app-extensions-images/message03.png "Klicken Sie auf die Schaltfläche \"erstellen\"")](intro-to-message-app-extensions-images/message03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 

@@ -1,18 +1,19 @@
 ---
-title: Eingebettete frameworks
-description: Dieses Dokument beschreibt, wie Anwendungsentwickler Benutzer Frameworks in ihren apps einbetten können.
+title: Eingebettete Frameworks in Xamarin.iOS
+description: Dieses Dokument beschreibt, wie Code mit eingebetteten Frameworks in einer Anwendung Xamarin.iOS freigeben. Dies kann mit dem Tool Mtouch oder systemeigener Verweise erfolgen.
 ms.prod: xamarin
 ms.assetid: F8C61020-4106-46F1-AECB-B56C909F42CB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: f223d8ef6e89cc44822b8a831dbba3cf71d727c9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e42f0940fe3fc132c9d381907aad5afbe474c4ad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787291"
 ---
-# <a name="embedded-frameworks"></a>Eingebettete frameworks
+# <a name="embedded-frameworks-in-xamarinios"></a>Eingebettete Frameworks in Xamarin.iOS
 
 _Dieses Dokument beschreibt, wie Anwendungsentwickler Benutzer Frameworks in ihren apps einbetten können._
 

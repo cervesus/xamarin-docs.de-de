@@ -1,15 +1,16 @@
 ---
 ms.assetid: 4D47185C-8998-4903-AE64-7E2A67F9DF7A
 title: Vergleich der UI-Steuerelemente
-description: Verstehen Sie die ähnlichkeiten und Unterschiede zwischen den Steuerelementen verfügbar auf jeder Plattform.
+description: Dieses Dokument bietet einen Vergleich zwischen Xamarin.Forms, Windows Forms und WPF-UI-Steuerelementen. Es wird auch mit anderen Dokumentation, die WPF in Xamarin.Forms vergleicht verknüpft.
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 01dead601f1d4ba50140d5cd9d280ebd5412225a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: d97756952d7de724e1ef573092456e24294a74db
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782345"
 ---
 # <a name="ui-controls-comparison"></a>Vergleich der UI-Steuerelemente
 
@@ -39,7 +40,7 @@ Erfahren Sie mehr über die [ähnlichkeiten und Unterschiede zwischen WPF und Xa
 |[HelpProvider](https://msdn.microsoft.com/library/system.windows.forms.helpprovider(v=vs.110).aspx)|Kein entsprechendes Steuerelement (verwenden Sie QuickInfos).|-|
 |[HScrollBar-Steuerelement](https://msdn.microsoft.com/library/system.windows.forms.hscrollbar(v=vs.110).aspx)|[Bildlaufleiste](https://msdn.microsoft.com/library/system.windows.controls.primitives.scrollbar(v=vs.110).aspx) (Bildlauf ist in Containersteuerelemente integriert)|Verwenden Sie ScrollView|
 |[ImageList](https://msdn.microsoft.com/library/system.windows.forms.imagelist(v=vs.110).aspx)|-|-|
-|[Bezeichnung](https://msdn.microsoft.com/library/system.windows.forms.label(v=vs.110).aspx)|[Bezeichnung](https://msdn.microsoft.com/library/system.windows.controls.label(v=vs.110).aspx)|Bezeichnung|
+|[Bezeichnung](https://msdn.microsoft.com/library/system.windows.forms.label(v=vs.110).aspx)|[Bezeichnung](https://msdn.microsoft.com/library/system.windows.controls.label(v=vs.110).aspx)|Label|
 |[LinkLabel](https://msdn.microsoft.com/library/system.windows.forms.linklabel(v=vs.110).aspx)|Kein entsprechendes Steuerelement (Sie können die [Hyperlink](https://msdn.microsoft.com/library/system.windows.documents.hyperlink(v=vs.110).aspx) -Klasse zum Hosten von Links innerhalb des fortlaufenden Inhalts).|-|
 |[ListBox](https://msdn.microsoft.com/library/system.windows.forms.listbox(v=vs.110).aspx)|[ListBox](https://msdn.microsoft.com/library/system.windows.controls.listbox(v=vs.110).aspx)|Verwenden von ListView|
 |[ListView](https://msdn.microsoft.com/library/system.windows.forms.listview(v=vs.110).aspx)|[ListView](https://msdn.microsoft.com/library/system.windows.controls.listview(v=vs.110).aspx)|ListView|
@@ -72,7 +73,7 @@ Erfahren Sie mehr über die [ähnlichkeiten und Unterschiede zwischen WPF und Xa
 |[ToolStrip](https://msdn.microsoft.com/library/system.windows.forms.toolstrip(v=vs.110).aspx)|[ToolBar](https://msdn.microsoft.com/library/system.windows.controls.toolbar(v=vs.110).aspx)|Page.ToolbarItems und ToolbarItem|
 |[ToolStripContainer](https://msdn.microsoft.com/library/system.windows.forms.toolstripcontainer(v=vs.110).aspx), [ToolStripDropDown](https://msdn.microsoft.com/library/system.windows.forms.toolstripdropdown(v=vs.110).aspx), [ToolStripDropDownMenu](https://msdn.microsoft.com/library/system.windows.forms.toolstripdropdownmenu(v=vs.110).aspx), [ToolStripPanel](https://msdn.microsoft.com/library/system.windows.forms.toolstrippanel(v=vs.110).aspx)|[Symbolleiste](https://msdn.microsoft.com/library/system.windows.controls.toolbar(v=vs.110).aspx) mit Komposition.|Page.ToolbarItems und ToolbarItem mit Komposition|
 |[QuickInfo](https://msdn.microsoft.com/library/system.windows.forms.tooltip(v=vs.110).aspx)|[QuickInfo](https://msdn.microsoft.com/library/system.windows.controls.tooltip(v=vs.110).aspx)|Verwenden von Funktionen zur Barrierefreiheit|
-|[TrackBar](https://msdn.microsoft.com/library/system.windows.forms.trackbar(v=vs.110).aspx)|[Schieberegler](https://msdn.microsoft.com/library/system.windows.controls.slider(v=vs.110).aspx)|Slider|
+|[TrackBar](https://msdn.microsoft.com/library/system.windows.forms.trackbar(v=vs.110).aspx)|[Schieberegler](https://msdn.microsoft.com/library/system.windows.controls.slider(v=vs.110).aspx)|Schieberegler|
 |[TreeView](https://msdn.microsoft.com/library/system.windows.forms.treeview(v=vs.110).aspx)|[TreeView](https://msdn.microsoft.com/library/system.windows.controls.treeview(v=vs.110).aspx)|Erwägen Sie in einem NavigationPage hierarchische ListView|
 |[UserControl](https://msdn.microsoft.com/library/system.windows.forms.usercontrol(v=vs.110).aspx)|[UserControl](https://msdn.microsoft.com/library/system.windows.controls.usercontrol(v=vs.110).aspx)|Anzeigen und auch benutzerdefinierte-Renderer|
 |[VScrollBar](https://msdn.microsoft.com/library/system.windows.forms.vscrollbar(v=vs.110).aspx)|[ScrollBar](https://msdn.microsoft.com/library/system.windows.controls.primitives.scrollbar(v=vs.110).aspx)|Verwenden Sie ScrollView|

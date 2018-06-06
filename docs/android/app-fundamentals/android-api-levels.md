@@ -6,12 +6,13 @@ ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 8f284fefd260764c6f09d78d2518bfd115782cd2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/01/2018
+ms.openlocfilehash: b942bb1be3441b1fb1a8bd65016914b3ecddbb26
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732319"
 ---
 # <a name="understanding-android-api-levels"></a>Grundlegendes zu Android-API-Ebenen
 
@@ -29,6 +30,10 @@ Xamarin.Android macht drei projekteinstellungen der Android-API-Ebene:
 -   [Android-Version als Ziel](#target) &ndash; gibt die Version von Android, die Ihre app ist für die Ausführung auf ausgelegt. Diese API-Ebene dient zur *ausführen* Zeit von Android.
 
 Bevor Sie eine API-Ebene für das Projekt konfigurieren können, müssen Sie die SDK-Plattform-Komponenten für diese API-Ebene installieren. Weitere Informationen zum Herunterladen und Installieren von Android SDK-Komponenten finden Sie unter [Android SDK-Installation](~/android/get-started/installation/android-sdk.md).
+
+> [!NOTE]
+> Ab August 2018, die Konsole der Google wiedergeben setzt voraus, dass neue apps als API-Ebene 26 (Android 8.0 Ziel) oder höher.
+Vorhandene apps müssen für die API-Ebene 26 oder höhere Versionen ab November 2018 gelten. Weitere Informationen finden Sie unter [Verbesserung der app-Sicherheit und Leistung auf Google Play nach Jahren kommen](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -116,7 +121,7 @@ Darüber hinaus Xamarin.Android definiert *Versionscodes erstellen* , der den de
 
 -   **API-12 (Android 3.1.x)** &ndash; _Wabe_, Mai 2011 veröffentlicht. Erstellen von Code von version `Android.OS.BuildVersionCodes.HoneyCombMr1`
 
--   **API 11 (Android 3.0.x)** &ndash; _Honeycomb_, released February 2011. Erstellen von Code von version `Android.OS.BuildVersionCodes.HoneyComb`
+-   **API-11 (Android 3.0.x)** &ndash; _Wabe_, Februar 2011 veröffentlicht. Erstellen von Code von version `Android.OS.BuildVersionCodes.HoneyComb`
 
 -   **API-10 (Android 2.3.3-2.3.4)** &ndash; _Gingerbread_, Februar 2011 veröffentlicht. Erstellen von Code von version `Android.OS.BuildVersionCodes.GingerBreadMr1`
 
@@ -126,7 +131,7 @@ Darüber hinaus Xamarin.Android definiert *Versionscodes erstellen* , der den de
 
 -   **API-7 (Android 2.1.x)** &ndash; _Eclair_, Januar 2010 veröffentlicht. Erstellen von Code von version `Android.OS.BuildVersionCodes.EclairMr1`
 
--   **API 6 (Android 2.0.1)** &ndash; _Eclair_, released December 2009. Erstellen von Code von version `Android.OS.BuildVersionCodes.Eclair01`
+-   **API-6 (Android 2.0.1)** &ndash; _Eclair_, Dezember 2009 veröffentlicht. Erstellen von Code von version `Android.OS.BuildVersionCodes.Eclair01`
 
 -   **API-5 (Android 2.0)** &ndash; _Eclair_, November 2009 veröffentlicht. Erstellen von Code von version `Android.OS.BuildVersionCodes.Eclair`
 
@@ -173,10 +178,6 @@ Die *Zielframework* (auch bekannt als `compileSdkVersion`) ist die bestimmte And
 Das Zielframework identifiziert, welche Versionen der Bibliothek für Ihre Anwendung verknüpft ist &ndash; Dadurch wird bestimmt, welche APIs, die Sie in Ihrer app verwenden können. Angenommen, Sie verwenden möchten die [NotificationBuilder.SetCategory](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetCategory/p/System.String/) Methode, die in Android 5.0 Lollipop eingeführt wurde, müssen Sie das Zielframework auf festlegen **API-Ebene 21 (Lollipop)** oder höher. Wenn Sie Zielframework des Projekts an eine API, z. B. Ebene festlegen **API-Ebene 19 (KitKat)** , und wiederholen Sie zum Aufrufen der `SetCategory` -Methode in Ihrem Code erhalten Sie einen Compilerfehler.
 
 Es wird empfohlen, immer beim Kompilieren mit der *neueste* verfügbare Zielframework-Version. Auf diese Weise bietet Ihnen hilfreich Warnmeldungen für alle nicht mehr unterstützte APIs, die von Ihrem Code aufgerufen werden kann. Anhand der neuesten Version des Zielframeworks ist besonders wichtig, wenn Sie die aktuellen Support Library-Versionen verwenden &ndash; jede Bibliothek erwartet, dass Ihre app auf diesem Unterstützungsbibliothek minimale API-Ebene kompiliert oder größer sein. 
-
-> [!NOTE]
-> Ab August 2018, die Konsole der Google wiedergeben setzt voraus, dass neue apps als API-Ebene 26 (Android 8.0 Ziel) oder höher.
-Vorhandene apps müssen für die API-Ebene 26 oder höhere Versionen ab November 2018 gelten. Weitere Informationen finden Sie unter [Verbesserung der app-Sicherheit und Leistung auf Google Play nach Jahren kommen](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)

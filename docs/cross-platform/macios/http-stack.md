@@ -1,18 +1,19 @@
 ---
-title: HttpClient-Stapel und SSL/TLS-Implementierung Selektor für iOS/macOS
-description: Der Stapel für "HttpClient" und der SSL/TLS-Implementierung Auswahlzeiger bestimmt die "HttpClient" und SSL/TLS-Implementierung, die von der Xamarin-app für iOS, tvos. außerdem wurden oder MacOS verwendet wird.
+title: "\"HttpClient\" und SSL/TLS-Implementierung Selektor für iOS/macOS"
+description: Der Stapel für "HttpClient" und SSL/TLS-Implementierung Auswahl bestimmt die "HttpClient" und SSL/TLS-Implementierung, die von der Xamarin-app für iOS, tvos. außerdem wurden oder MacOS verwendet wird.
 ms.prod: xamarin
 ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: dcbdb4d20bca9764731b08e551a4d3b8a26a2ab4
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 9de2c97933bd33111a751be51e06dffe09794f15
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782267"
 ---
-# <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient-Stapel und SSL/TLS-Implementierung Selektor für iOS/macOS
+# <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>"HttpClient" und SSL/TLS-Implementierung Selektor für iOS/macOS
 
 Die **"HttpClient" Implementierung Selektor** Xamarin.iOS, Xamarin.tvOS und Xamarin.Mac steuert die `HttpClient` Implementierung zu verwenden. Wechseln können Sie eine Implementierung, iOS, tvos. außerdem wurden oder MacOS native Transporte verwendet (`NSUrlSession` oder `CFNetwork`, je nachdem, auf dem Betriebssystem). Der Vorteil ist TLS 1.2-Unterstützung, kleinere Binärdateien und schnellere downloads. Der Nachteil ist, dass dies erfordert, dass die Ereignisschleife ausgeführt werden, damit asynchrone Vorgänge ausgeführt werden.
 

@@ -1,20 +1,20 @@
 ---
-title: Arbeiten mit Tabellen und Zellen
-description: Anzeigen von Xamarin.iOS UITableView mit Daten
+title: Arbeiten mit Tabellen und Zellen im Xamarin.iOS
+description: Dieses enthält Dokumentenlinks zu verschiedenen Handbüchern, die beschreiben, wie Daten mit dem UITableView-Steuerelement in einem Xamarin.iOS-app angezeigt.
 ms.prod: xamarin
 ms.assetid: 04DF47DD-4E17-75D7-AC7C-8CF4A574CD21
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/06/2016
-ms.openlocfilehash: a1cda3632a75c7e462e763a34fdb5b586237b670
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ebdad2cc8e3083bee5acc127660b5641f42c731f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790015"
 ---
-# <a name="working-with-tables-and-cells"></a>Arbeiten mit Tabellen und Zellen
-
+# <a name="working-with-tables-and-cells-in-xamarinios"></a>Arbeiten mit Tabellen und Zellen im Xamarin.iOS
 
 In diesem Abschnitt stellt die Klassen, die zum Erstellen und Anzeige von Tabellen und enthält Beispiele zur Verwendung in Xamarin.iOS. Es wird behandelt, verwenden die standarddarstellung für Tabellen, Anpassen des Layouts, implementieren bearbeiten und die Verwendung der Xamarin-iOS-Designer eine Tabelle visuell zu entwerfen. In einigen Fällen ist die Anzeige offensichtlich eine Liste von Zeilen (z. B. die Musik-app) und anderen Fällen ist es schwierig zu erkennen, das Table-Steuerelement (z. B. die Bearbeitung in der Kontakte-app oder einer Konversation in Nachrichten-app).
 
@@ -26,7 +26,6 @@ In diesen Artikeln dauert einen umfassenden Einblick in die Arbeit mit Tabellen,
 -   **Anzeigen von Daten in Tabellen** – veranschaulichen das Erstellen und Auffüllen einer Tabelle, verwenden unterschiedliche Formate für Tabellen und Zellen und Vermeiden von Arbeitsspeicherproblemen durch Wiederverwenden der Zelle Objekte. 
 -   **Erweiterte Verwendung** – Erstellen von benutzerdefinierten Zellen, und verwenden Sie die Bearbeitungsfunktionen der UITableView-Klasse. 
 -   **Erstellen einer Tabelle visuell** – mit dem Xamarin-Designer für iOS eine tabellenbasierten-Schnittstelle mit einem Storyboard erstellen. 
-
 
 ## <a name="contents"></a>Inhalt
 
@@ -43,7 +42,6 @@ In diesen Artikeln dauert einen umfassenden Einblick in die Arbeit mit Tabellen,
  [Erstellen von Tabellen in einem Storyboard](~/ios/user-interface/controls/tables/creating-tables-in-a-storyboard.md)
  
  [Automatische Größenanpassung der Zeilenhöhe](~/ios/user-interface/controls/tables/autosizing-row-height.md)
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -1,17 +1,18 @@
 ---
-title: Übersicht
-description: Details der Funktionsweise des Bindungsvorgangs
+title: Übersicht über die Objective-C-Bindungen
+description: Dieses Dokument enthält eine Übersicht über unterschiedliche Möglichkeiten zum Erstellen der C#-Bindungen für Objective-C-Code, einschließlich Befehlszeile Bindungen, Bindung Projekte und Ziel Sharpie. Es wird auch erläutert, wie die Bindung funktioniert.
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: ce2e45a1985c64b5c479bd41140d7270fae97aee
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: f9f981a9024ad9b1f780efbadeeb7e1f1636a8ae
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781743"
 ---
-# <a name="overview"></a>Übersicht
+# <a name="overview-of-objective-c-bindings"></a>Übersicht über die Objective-C-Bindungen
 
 _Details der Funktionsweise des Bindungsvorgangs_
 

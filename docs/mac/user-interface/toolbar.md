@@ -1,5 +1,5 @@
 ---
-title: Symbolleisten
+title: Symbolleisten in Xamarin.Mac
 description: Dieser Artikel beschreibt das Arbeiten mit Symbolleisten in einer Anwendung Xamarin.Mac. Außerdem werden beim Erstellen und Verwalten von Symbolleisten in Xcode und Benutzeroberflächen-Generator, diese in Code verfügbar machen und Arbeiten mit diesen programmgesteuert behandelt.
 ms.prod: xamarin
 ms.assetid: C8D228CE-C860-47E1-85FD-69864BF91F20
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 729c5c69d80c52047585d1026d7c675f3267f34e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 11c01a2b2378ddc519185996deb78ba5bcbd2d1a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792887"
 ---
-# <a name="toolbars"></a>Symbolleisten
+# <a name="toolbars-in-xamarinmac"></a>Symbolleisten in Xamarin.Mac
 
 _Dieser Artikel beschreibt das Arbeiten mit Symbolleisten in einer Anwendung Xamarin.Mac. Außerdem werden beim Erstellen und Verwalten von Symbolleisten in Xcode und Benutzeroberflächen-Generator, diese in Code verfügbar machen und Arbeiten mit diesen programmgesteuert behandelt._
 
@@ -59,13 +60,13 @@ Verwenden Sie das gleiche Menü, um die Symbolleiste an eine geringere Größe a
 
 Klicken Sie im Menü kann auch zum Anpassen der Symbolleiste:
 
-![Das Dialogfeld "verwendet, um eine Symbolleiste anzupassen](toolbar-images/info07.png "das Dialogfeld" verwendet, um eine Symbolleiste anzupassen.")
+![Das Dialogfeld "verwendet, um eine Symbolleiste anzupassen](toolbar-images/info07.png "das Dialogfeld\" verwendet, um eine Symbolleiste anzupassen.")
 
 Beim Einrichten einer Symbolleiste in Xcodes Benutzeroberflächen-Generator kann ein Entwickler zusätzliche Symbolleistenelemente bereitstellen, die nicht Teil der standardmäßigen Konfiguration sind. Benutzer der Anwendung können dann die Symbolleiste anpassen, hinzufügen und Entfernen dieser vordefinierten Elemente nach Bedarf. Natürlich kann die Symbolleiste auf die Standardkonfiguration zurückgesetzt werden.
 
 Die Symbolleiste zum automatischen Verbindung mit dem **Ansicht** Menü können Benutzer zu verbergen, anzeigen und anpassen:
 
-![Symbolleistenelemente im Menü "Ansicht"](toolbar-images/info08.png "Symbolleistenelemente im Menü "Ansicht"")
+![Symbolleistenelemente im Menü "Ansicht"](toolbar-images/info08.png "Symbolleistenelemente im Menü \"Ansicht\"")
 
 Finden Sie unter der [integrierte Funktionen für Menüs](~/mac/user-interface/menu.md) Dokumentation.
 
@@ -149,7 +150,7 @@ Die folgenden Elemente in der Symbolleiste können hinzugefügt werden:
 
 Um ein Element zu einer Symbolleiste hinzuzufügen, wählen Sie die Symbolleiste in der **Schnittstellenhierarchie** , und klicken Sie auf eines seiner Elemente, verursacht im Dialogfeld "anpassen" angezeigt werden. Ziehen Sie anschließend ein neues Element aus der **Bibliothek Inspektor** auf die **Symbolleistenelemente zulässig** Bereich:
 
-![Im Dialogfeld "Symbolleiste anpassen" der Symbolleistenelemente zulässig](toolbar-images/add01.png "die zulässige Symbolleistenelemente im Dialogfeld "Symbolleiste anpassen"")
+![Im Dialogfeld "Symbolleiste anpassen" der Symbolleistenelemente zulässig](toolbar-images/add01.png "die zulässige Symbolleistenelemente im Dialogfeld \"Symbolleiste anpassen\"")
 
 Um sicherzustellen, dass ein neues Element Teil der Standardsymbolleiste ist, ziehen Sie es auf die **Symbolleiste Standardelemente** Bereich: 
 
@@ -179,7 +180,7 @@ Mehrere Kakao-Benutzeroberflächenautomatisierungs-Elemente wie z. B. die Suchfe
 
 Um dies zu testen, öffnen Sie die Symbolleiste in der **Schnittstellenhierarchie** und wählen Sie ein Symbolleistenelement, um das Dialogfeld "Anpassung" zu öffnen. Ziehen Sie eine **suchen (Feld)** aus der **Bibliothek Inspektor** auf die **Symbolleistenelemente zulässig** Bereich:
 
-![Verwenden das Dialogfeld "Symbolleiste-Anpassung"](toolbar-images/add05.png "verwenden das Dialogfeld "Symbolleiste-Anpassung"")
+![Verwenden das Dialogfeld "Symbolleiste-Anpassung"](toolbar-images/add05.png "verwenden das Dialogfeld \"Symbolleiste-Anpassung\"")
 
 Hier verwenden Sie Schnittstelle-Generator zu suchen (Feld) konfigurieren und Verfügbarmachen von es Code über eine Aktion oder eine Steckdose.
 

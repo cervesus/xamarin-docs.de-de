@@ -1,18 +1,19 @@
 ---
-title: Einschränkungen
-description: Einige Einschränkungen von der Xamarin-Live-Player
+title: Einschränkungen von Xamarin Live Player
+description: Dieses Dokument beschreibt die Einschränkungen von der Xamarin-Live-Player. Es erläutert die geräteanforderungen, bietet es funktioniert mit Projekttypen und anderen verschiedenen Themen.
 ms.prod: xamarin
 ms.assetid: 36A1531E-630A-4B7C-A333-4E67E5DC023C
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2018
-ms.openlocfilehash: a3aea31f32e3bf6227cce2e3340e3d04828472a0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: ea71391382f9e1ecb80cbf5f2d5bf127e0d6d1be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793674"
 ---
-# <a name="limitations"></a>Einschränkungen
+# <a name="limitations-of-xamarin-live-player"></a>Einschränkungen von Xamarin Live Player
 
 ![Vorschaufunktion](~/media/shared/preview.png)
 
@@ -36,6 +37,7 @@ Die Live-Player Xamarin-app unterstützt die folgenden Geräte:
 Es gibt einige Einschränkungen auf die Dinge, die Xamarin-Live-Player ausgeführt werden kann, einschließlich der folgenden Elemente:
 
 ### <a name="xamarinforms"></a>Xamarin.Forms
+
 - Benutzerdefinierte Renderer werden nicht unterstützt.
 - Effekte werden nicht unterstützt.
 - Benutzerdefinierte Steuerelemente mit benutzerdefinierten bindbare Eigenschaften werden nicht unterstützt.
@@ -44,9 +46,11 @@ Es gibt einige Einschränkungen auf die Dinge, die Xamarin-Live-Player ausgefüh
 - Asset-Kataloge unter iOS werden nicht unterstützt.
 
 ### <a name="other-project-types"></a>Andere Projekttypen
+
 - Live-Player ist nicht vorgesehen, für systemeigenes Android oder iOS-Projekte (die Android-XML-Index oder Storyboards für die Benutzeroberfläche zu verwenden).
 
-### <a name="misc"></a>Sonstiges
+### <a name="misc"></a>Sonst.
+
 - Eingeschränkte Unterstützung für die Reflektion (derzeit einige beliebte NuGets, z. B. SQLite und Json.NET betrifft). Andere NuGets möglicherweise immer noch unterstützt werden.
 - Einige Systemklassen nicht überschrieben werden kann (z. B. eine Unterklasse kann nicht implementiert werden).
 - Einige Plattformfunktionen, die Bereitstellung erforderlich, können nicht in der Live-Player Xamarin-app (jedoch er bei allgemeinen Vorgängen wie Foto-Katalog-Zugriff konfiguriert wurde) funktionieren.
@@ -55,7 +59,6 @@ Es gibt einige Einschränkungen auf die Dinge, die Xamarin-Live-Player ausgefüh
 - Erweiterte Szenarien mit benutzerdefinierten generischen Klassen und Schnittstellen wird möglicherweise nicht unterstützt.
 
 Melden Sie alle weiteren Probleme auf [Bugzilla](https://aka.ms/live-player-report-issue).
-
 
 ## <a name="related-links"></a>Verwandte Links
 

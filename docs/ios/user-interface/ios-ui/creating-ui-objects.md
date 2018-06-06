@@ -1,18 +1,20 @@
 ---
-title: Erstellen von Benutzeroberflächenobjekten
+title: Erstellen von Benutzeroberflächenobjekten in Xamarin.iOS
+description: Dieses Dokument enthält einen Überblick über die zum Erstellen einer Benutzeroberfläche in Xamarin.iOS. Es wird erläutert, die iOS-Designer, Xcode Schnittstelle-Generator, C#- und Storyboards.
 ms.prod: xamarin
 ms.assetid: 4D6B136C-744A-4936-8655-A77E62BA7A60
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 5229beb7a882049daf58d3a3e62da6fed25a1f48
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c688dcdf7498b0a2860d1878d893beae4f5cf8fc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790151"
 ---
-# <a name="creating-user-interface-objects"></a>Erstellen von Benutzeroberflächenobjekten
+# <a name="creating-user-interface-objects-in-xamarinios"></a>Erstellen von Benutzeroberflächenobjekten in Xamarin.iOS
 
 Apple-Gruppen im Zusammenhang mit Funktionen in "Frameworks" die Xamarin.iOS Namespaces entsprechen. `UIKit` ist der Namespace, der alle Steuerelemente der Benutzeroberfläche für iOS enthält.
 
@@ -21,7 +23,6 @@ Wenn Code ein Steuerelement der Benutzeroberfläche, z. B. eine Bezeichnung oder
 ```csharp
 using UIKit;
 ```
-
 
 Alle Steuerelemente, die in diesem Kapitel beschriebenen sind im UIKit-Namespace und Namen der Steuerelementklasse jeder Benutzer hat die `UI` Präfix.
 
@@ -92,7 +93,7 @@ Weitere Informationen wie Xcodes Benutzeroberflächen-Generator in Visual Studio
 Wenn Sie programmgesteuert ein Benutzerobjekt-Schnittstelle mithilfe von c# (in einer Sicht oder die View-Controller, z. B.) erstellen möchten, gehen Sie folgendermaßen vor:
 
 -  Deklarieren Sie eine Ebene Klassenfeld für das Benutzerobjekt-Schnittstelle. Erstellen des Steuerelements selbst einmal in `ViewDidLoad` beispielsweise. Das Objekt kann dann in der gesamten Lebenszyklusmethoden des Controllers anzeigen (z. b. verwiesen werden
-`ViewWillAppear`) angezeigt wird.
+`ViewWillAppear`).
 -  Erstellen einer `CGRect` , die den Frame des Steuerelements (seine X- und Y-Koordinaten auf dem Bildschirm "" sowie die Breite und Höhe) definiert. Sie müssen sicherstellen, dass eine `using CoreGraphics` für diese Richtlinie.
 -  Rufen Sie den Konstruktor zum Erstellen, und weisen Sie das Steuerelement.
 -  Legen Sie Eigenschaften oder Ereignishandler.

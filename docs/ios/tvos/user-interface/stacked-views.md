@@ -1,22 +1,20 @@
 ---
-title: Arbeiten mit gestapelten anzeigen
-description: Dieser Artikel umfasst das Entwerfen und Verwenden von innerhalb einer app Xamarin.tvOS gestapelt anzeigen.
+title: Arbeiten mit tvos. außerdem wurden gestapelte Ansichten in Xamarin
+description: Dieses Dokument beschreibt, wie tvos. außerdem wurden gestapelte Sichten in einer app mit Xamarin erstellten gearbeitet wird. Es gibt einen Überblick über gestapelte Ansichten und erläutert, automatisches Layout, Position und Größe ein gestapeltes anzeigen, häufig verwendet, Integration mit Storyboards und mehr.
 ms.prod: xamarin
 ms.assetid: 00B07F85-F30B-4DD4-8664-A61D0A1CDB0E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: a6300e4da47022199c0503e6be63b0c90f15654d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e718e525c23e78fbf846209602a07bf0f3f386e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789371"
 ---
-# <a name="working-with-stacked-view"></a>Arbeiten mit gestapelten anzeigen
-
-_Dieser Artikel umfasst das Entwerfen und Verwenden von innerhalb einer app Xamarin.tvOS gestapelt anzeigen._
-
+# <a name="working-with-tvos-stacked-views-in-xamarin"></a>Arbeiten mit tvos. außerdem wurden gestapelte Ansichten in Xamarin
 
 Der Stapel Ansichtssteuerelement (`UIStackView`) nutzt die Funktionen von Automatisches Layout und Klassen Größe einen Stapel mit Unteransichten, horizontal oder vertikal zu verwalten, das dynamisch von Änderungen am Inhalt und der Bildschirmgröße des Geräts Apple TV-Werten.
 
@@ -112,7 +110,7 @@ Die einfachste Möglichkeit zur Bearbeitung von Stapel Sichten in einer app Xama
     [![](stacked-views-images/layout03.png "Eine Stapelansicht")](stacked-views-images/layout03.png#lightbox)
 1. Wählen Sie in die Stapelansicht der **Registerkarte "Widget"** von der **Eigenschaften aufgefüllt** wählen **füllen** für die **Ausrichtung**, **ausfüllen Gleichermaßen** für die **Verteilung** , und geben Sie `25` für die **Abstand**: 
 
-    [![](stacked-views-images/layout04.png "Die Registerkarte "Widget"")](stacked-views-images/layout04.png#lightbox)
+    [![](stacked-views-images/layout04.png "Die Registerkarte \"Widget\"")](stacked-views-images/layout04.png#lightbox)
 1. Positionieren Sie die Stapelansicht auf dem Bildschirm, in dem Sie soll, und fügen die Einschränkungen, um in den erforderlichen Speicherort zu gewährleisten.
 1. Wählen Sie die einzelnen Elemente, und ziehen Sie sie in die Stapelansicht: 
 
@@ -136,7 +134,7 @@ Die einfachste Möglichkeit zur Bearbeitung von Stapel Sichten in einer app Xama
     [![](stacked-views-images/layout03-vs.png "Eine Stapelansicht")](stacked-views-images/layout03-vs.png#lightbox)
 1. Wählen Sie in die Stapelansicht der **Registerkarte "Widget"** von der **Eigenschaften-Explorer** wählen **füllen** für die **Ausrichtung**, **ausfüllen Gleichermaßen** für die **Verteilung** , und geben Sie `25` für die **Abstand**: 
 
-    [![](stacked-views-images/layout04-vs.png "Die Registerkarte "Widget"")](stacked-views-images/layout04-vs.png#lightbox)
+    [![](stacked-views-images/layout04-vs.png "Die Registerkarte \"Widget\"")](stacked-views-images/layout04-vs.png#lightbox)
 1. Positionieren Sie die Stapelansicht auf dem Bildschirm, in dem Sie soll, und fügen die Einschränkungen, um in den erforderlichen Speicherort zu gewährleisten.
 1. Wählen Sie die einzelnen Elemente, und ziehen Sie sie in die Stapelansicht: 
 

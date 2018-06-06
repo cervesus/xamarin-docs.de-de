@@ -1,21 +1,20 @@
 ---
-title: Verbesserte Benutzerbenachrichtigungen
-description: Dieser Artikel umfasst alle von den Verfahren, die Benachrichtigung der Benutzer von iOS 10 und wie Sie Ihre Verwendung in einer app Xamarin.iOS erweitert wurden.
+title: Verbesserte Benutzerbenachrichtigungen in Xamarin.iOS
+description: Dieser Artikel beschreibt in iOS 10 eingeführte Benutzerbenachrichtigungen-Framework. Es wird erläutert, lokale Benachrichtigungen, remote Benachrichtigungen Benachrichtigung Management, Benachrichtigungsaktionen und mehr.
 ms.prod: xamarin
 ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: b27d415240f3b8cd25c4bc54f6d176c50e42a250
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 29c529d57d35b0ab2b7bf2e80f8d295a8d059c5e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788653"
 ---
-# <a name="enhanced-user-notifications"></a>Verbesserte Benutzerbenachrichtigungen
-
-_Dieser Artikel umfasst alle von den Verfahren, die Benachrichtigung der Benutzer von iOS 10 und wie Sie Ihre Verwendung in einer app Xamarin.iOS erweitert wurden._
+# <a name="enhanced-user-notifications-in-xamarinios"></a>Verbesserte Benutzerbenachrichtigungen in Xamarin.iOS
 
 Neue für iOS-10, ermöglicht das Framework für die Bereitstellung und Verarbeitung von lokalen und remote-Benachrichtigungen, erhalten. Mit diesem Framework, kann eine app oder App-Erweiterung die Übermittlung von lokalen Benachrichtigungen planen durch eine Reihe von Bedingungen, z. B. Speicherort oder die Uhrzeit angeben.
 

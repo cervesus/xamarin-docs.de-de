@@ -1,21 +1,21 @@
 ---
 title: Inspektor Installations- und Anforderungen
-description: Zum Herunterladen, installieren und verwenden Sie die Xamarin-Inspektor.
+description: Dieses Dokument enthält Anweisungen zur Installation der Xamarin-Inspektor und erläutert die unterstützten Betriebssysteme, IDEs und app-Plattformen.
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 5bbd5c64f53e191d5ac629e20df87c2b7ca4ec00
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 80bf3cb4e8e27355ccf6213dbfd07a17e992961b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793807"
 ---
 # <a name="inspector-installation-and-requirements"></a>Inspektor Installations- und Anforderungen
 
 ## <a name="download-and-installation"></a>Download und Installation
-
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
@@ -56,7 +56,6 @@ Aktive app Inspektion ist für Enterprise-Kunden zur Verfügung.
 |Android|Unterstützt XS und Visual Studio|Android abzielen muss > = 4.0.3 mit **Fastdev** aktiviert.<br />Google, Visual Studio oder Xamarin Android-Emulatoren muss verwendet werden. 7 Android-Emulatoren können die Überprüfung zu diesem Zeitpunkt nicht zulässig.|
 |WPF|Nur unterstützt in Visual Studio unter Windows.|
 
-
 <a name="reporting-bugs" />
 
 ## <a name="reporting-bugs"></a>Melden von Fehlern
@@ -81,7 +80,7 @@ Xamarin Studio
 - **Xamarin Studio > Informationen zu Xamarin Studio > Details anzeigen > Informationen kopieren**
 - Fügen Sie in den Bericht "Fehlerstatus"
 
-Visual Studio
+Visual Studio
 
 - **Hilfe > Informationen zu Visual Studio > Info kopieren**
 - Informieren Sie uns Ihre Betriebssystemversion und gibt an, ob Sie 32-Bit oder 64-Bit-Windows ausgeführt werden.
@@ -107,7 +106,7 @@ Xamarin Studio
 
 - `~/Library/Logs/XamarinStudio-6.0/Ide.log`
 
-Visual Studio
+Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
 - Der Inhalt von Visual Studio **Ausgabe** Bereich möglicherweise informativ.
@@ -147,7 +146,7 @@ Wenn Sie Arbeitsmappen & Inspektor selbst mit einem heruntergeladenen Installer 
 
 > **Start > Einstellungen > System > Apps & Features**
 
-![](install-images/windows-remove.png "Xamarin-Arbeitsmappen und Inspektor gemäß "Apps & Features"")
+![](install-images/windows-remove.png "Xamarin-Arbeitsmappen und Inspektor gemäß \"Apps & Features\"")
 
 **Befolgen Sie die Prozedur für Installer für Visual Studio, stellen Sie sicher, dass Arbeitsmappen noch & Inspektor wird nicht erneut ohne Ihr Wissen installiert abrufen.**
 
@@ -167,6 +166,5 @@ Für frühere Versionen müssen Sie manuell Folgendes entfernen:
 
 1. Löschen Sie die Workbooks-App unter `"/Applications/Xamarin Workbooks.app"`.
 2. Löschen Sie die Inspector-App unter `"Applications/Xamarin Inspector.app"`.
-2. Löschen Sie die Add-ins `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` und `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`.
-3. Löschen Sie Inspector und die unterstützenden Dateien hier: `/Library/Frameworks/Xamarin.Interactive.framework` und `/Library/Frameworks/Xamarin.Inspector.framework`.
-
+3. Löschen Sie die Add-ins `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` und `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`.
+4. Löschen Sie Inspector und die unterstützenden Dateien hier: `/Library/Frameworks/Xamarin.Interactive.framework` und `/Library/Frameworks/Xamarin.Inspector.framework`.

@@ -1,17 +1,18 @@
 ---
 title: iOS Sicherheits- und Datenschutzfunktionen
-description: Dieser Artikel behandelt die Arbeit mit Sicherheit und Datenschutz für IOS- und wie sie eine app Xamarin.iOS auswirken.
+description: Dieses Dokument beschreibt, Sicherheits- und Datenschutzfunktionen e/as, und es wird erläutert, wie sie mit Xamarin.iOS verwenden. Akzeptiert einen Blick auf die Aktualisierungen, die im iOS 10 und wie Sie private Benutzerdaten zugreifen.
 ms.prod: xamarin
 ms.assetid: 718C8721-C359-4650-878A-D68E159A3F53
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 2ce6dadf2236c326fcbc2021509795182329010e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fd50e42536aabe16de3e44146d28950970dd801d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784415"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS Sicherheits- und Datenschutzfunktionen
 
@@ -86,7 +87,7 @@ Xamarin.iOS for Visual Studio aktuelle unterstützt keine Bearbeitung der sicher
 3. Fügen Sie den folgenden Knoten aus, um die erforderlichen Beschreibung hinzu: `<string>Allows the app to control HomeKit enabled devices.</string>`
 4. Die `Info.plist` Datei sollte folgendermaßen aussehen: 
 
-    [![](security-privacy-images/info02vs.png "Die Datei "Info.plist" sollte wie folgt aussehen.")](security-privacy-images/info02vs.png#lightbox)
+    [![](security-privacy-images/info02vs.png "Die Datei \"Info.plist\" sollte wie folgt aussehen.")](security-privacy-images/info02vs.png#lightbox)
 4. Speichern Sie die Änderungen in der Datei.
 5. Zurück zu Visual Studio und zu den Recompile der app.
 

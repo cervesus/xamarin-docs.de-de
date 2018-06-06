@@ -1,19 +1,20 @@
 ---
-title: Application Fundamentals (Anwendungsgrundlagen)
-description: Kernkonzepte für die Anwendung
+title: Grundlagen der Xamarin.iOS-Anwendung
+description: Dieses enthält Dokumentenlinks zu verschiedenen Anleitungen, die für die Entwicklung von Xamarin.iOS, wie Sicherheit auf Transportebene app, grundlegende Konzepte beschrieben backgrounding, Ereignisse und threading.
 ms.prod: xamarin
 ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/21/2017
-ms.openlocfilehash: d8dc1e25de527357fe6ad3ad1328a930e0e4dc70
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cdace50d851b2c99f9241b869f248e58d5b93377
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784496"
 ---
-# <a name="application-fundamentals"></a>Application Fundamentals (Anwendungsgrundlagen)
+# <a name="xamarinios-application-fundamentals"></a>Grundlagen der Xamarin.iOS-Anwendung
 
 Dieser Abschnitt enthält eine Anleitung für einige der häufiger Aufgaben Dinge oder Konzepte, mit denen Entwickler Beachten Sie beim Entwickeln von Anwendungen Xamarin.iOS (früher MonoTouch) werden müssen.
 

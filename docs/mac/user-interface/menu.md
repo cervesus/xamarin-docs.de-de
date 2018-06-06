@@ -1,5 +1,5 @@
 ---
-title: Menüs
+title: Menüs in Xamarin.Mac
 description: In diesem Artikel wird das Arbeiten mit Menüs in einer Anwendung Xamarin.Mac behandelt. Erstellen und Verwalten von Menüs und Menüelemente in Xcode und Benutzeroberflächen-Generator und Arbeiten mit diesen programmgesteuerten beschrieben.
 ms.prod: xamarin
 ms.assetid: 5D367F8E-3A76-4995-8A89-488530FAD802
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 50c9cf333ff7965bbdfbb964a2301e677eb6aa59
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cb89d1df60bafe14dcc989666f0eeb5d757e4017
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792920"
 ---
-# <a name="menus"></a>Menüs
+# <a name="menus-in-xamarinmac"></a>Menüs in Xamarin.Mac
 
 _In diesem Artikel wird das Arbeiten mit Menüs in einer Anwendung Xamarin.Mac behandelt. Erstellen und Verwalten von Menüs und Menüelemente in Xcode und Benutzeroberflächen-Generator und Arbeiten mit diesen programmgesteuerten beschrieben._
 
@@ -200,7 +201,7 @@ Wir führen Sie nun die Anwendung, und öffnen Sie die **Datei** Menü:
 
 Beachten Sie, dass die **öffnen** Menüelement ist jetzt aktiviert. Wenn wir diese Option auswählen, wird das Dialogfeld "Öffnen" angezeigt:
 
-![Ein Dialogfeld "Öffnen"](menu-images/appmenu10.png "ein Dialogfeld "Öffnen"")
+![Ein Dialogfeld "Öffnen"](menu-images/appmenu10.png "ein Dialogfeld \"Öffnen\"")
 
 Wenn wir auf die **öffnen** Schaltfläche unsere Warnmeldung wird angezeigt:
 

@@ -6,11 +6,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 32a7a7dd50edcc3eefe76429ddb1e5581447993e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 03a3c411c7031ece32a8987b480f96ad39909201
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793949"
 ---
 # <a name="mvvm"></a>MVVM
 
@@ -175,7 +176,7 @@ Dieser Ansatz hat den Vorteil, dass eine app verfügt über eine einzelne Klasse
 
 Alle Ansichtsmodell und Modellklassen, die für eine Sicht zugänglich sind sollten implementieren die `INotifyPropertyChanged` Schnittstelle. Implementieren diese Schnittstelle in einem Modell anzeigen oder eine Modellklasse kann die Klasse für änderungsbenachrichtigungen auf datengebundene Steuerelemente in der Ansicht bereitstellen, wenn der zugrunde liegenden Eigenschaftswert ändert.
 
-App sollte die richtige Verwendung von änderungsbenachrichtigung, so entworfen werden, durch die folgenden Anforderungen erfüllen:
+Apps sollten für die korrekte Verwendung von änderungsbenachrichtigung, so entworfen werden, indem Sie die folgenden Anforderungen erfüllen:
 
 -   Immer durch das Auslösen einer `PropertyChanged` -Ereignis, wenn eine öffentliche Eigenschaft-Wert geändert wird. Sollte nicht davon ausgegangen, durch das Auslösen der `PropertyChanged` Ereignis kann aufgrund von Kenntnisse wie XAML-Bindung erfolgt ignoriert werden.
 -   Immer durch das Auslösen einer `PropertyChanged` Ereignis für eine beliebige berechnete Eigenschaften, deren Werte werden durch andere Eigenschaften in der Ansicht verwendet, Modell oder ein.
@@ -366,4 +367,4 @@ Mithilfe der MVVM-Muster, die Benutzeroberfläche der app und die zugrunde liege
 ## <a name="related-links"></a>Verwandte Links
 
 - [Download-e-Book (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (sample)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [eShopOnContainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

@@ -1,18 +1,20 @@
 ---
-title: Arbeiten mit der UI-Thread
+title: Arbeiten mit UI-Thread in Xamarin.iOS
+description: Dieses Dokument beschreibt, wie im UI-Thread in Xamarin.iOS arbeiten. Erläutert die Ausführung der UI-Threads, enthält ein Beispiel für Background Thread und untersucht Async/await.
 ms.prod: xamarin
 ms.assetid: 98762ACA-AD5A-4E1E-A536-7AF3BE36D77E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 72f161001509519fb02a652f23eaa7805a55f7ca
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4328b84625aff4c92d6e97029ced7dde747d4fc4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790408"
 ---
-# <a name="working-with-the-ui-thread"></a>Arbeiten mit der UI-Thread
+# <a name="working-with-the-ui-thread-in-xamarinios"></a>Arbeiten mit UI-Thread in Xamarin.iOS
 
 Benutzeroberflächen für die Anwendung sind immer Singlethread, sogar in Multithreaded-Geräte – es gibt nur eine Darstellung des Bildschirms, und alle Änderungen an der Anzeige über einen einzelnen "Zugriffspunkt" koordiniert werden müssen. Dadurch wird verhindert, dass mehrere Threads dasselbe Pixel (z. B.) gleichzeitig zu aktualisieren versuchen.
 
