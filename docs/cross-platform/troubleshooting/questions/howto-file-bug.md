@@ -1,15 +1,17 @@
 ---
 title: Wann und wie sollte ich einen Fehlerbericht Datei?
+description: Dieses Dokument wird beschrieben, wann, wo und wie einen Fehlerbericht Datei. Darüber hinaus Bericht "Fehlerstatus", dass die bewährte Methoden, die am besten Engineers ermöglichen das Problem zu diagnostizieren.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 8AD9CFBF-282A-4C1F-95E9-25F21141B052
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: d5471195b5051725b41b8f28b3959db362297669
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 08a782e9637442a43e9c63305ddf161403519169
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781942"
 ---
 # <a name="when-and-how-should-i-file-a-bug-report"></a>Wann und wie sollte ich einen Fehlerbericht Datei?
 
@@ -21,7 +23,7 @@ Fehler in der hier für die Xamarin Bugzilla Fehler Tracker-Datei: [ https://bug
 
 Sie haben eine Reihe von Schritten, die Sie glauben, dass der Xamarin-Ingenieure werden können, verwenden Sie zum Reproduzieren eines Problems, das vom Xamarin verursacht wird.
 
-ODER
+OR
 
 Insbesondere, wenn Sie auch präzise Umständen im Zusammenhang mit der das Problem beschreiben können, können Sie sorgfältig die sichtbaren Symptome das Problem beschreiben. <sup> [[1]](#note-1)</sup>
 

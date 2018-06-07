@@ -1,15 +1,17 @@
 ---
 title: Erste Schritte mit Android
+description: Dieses Dokument beschreibt, wie die ersten Schritte mit Android mit .NET einbetten. Es wird erläutert, installieren .NET einbetten, erstellen eine Bibliothek für Android-Projekt mit der generierten Ausgabe in einem Android Studio-Projekt und andere Aspekte.
 ms.prod: xamarin
 ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
 author: topgenorth
 ms.author: toopge
 ms.date: 03/28/2018
-ms.openlocfilehash: 57bedba786de82094ef43a6982d2df1bcab1de9c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 6fbd46578f07692f266d97279031f1893bb96a1f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793916"
 ---
 # <a name="getting-started-with-android"></a>Erste Schritte mit Android
 
@@ -281,6 +283,6 @@ dependencies {
 * [Das open-Source-Projekt verwendet werden sollen](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
 * [Fehlercodes und Beschreibungen](~/tools/dotnet-embedding/errors.md)
 
-## <a name="related-links"></a>Verwandte links
+## <a name="related-links"></a>Verwandte Links
 
 - [Wetter-Beispiel (Android)](https://github.com/jamesmontemagno/embeddinator-weather)

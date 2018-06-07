@@ -1,33 +1,35 @@
 ---
-title: SpriteKit
+title: SpriteKit in Xamarin.iOS
+description: Dieses Dokument beschreibt SpriteKit, Apple 2D Grafiken Framework, die SceneKit integriert, physikalische und Animation enthält, bietet Unterstützung für Beleuchtung und Schattierung und vieles mehr. SpriteKit kann verwendet werden, zum Erstellen von 2D spielen.
 ms.prod: xamarin
 ms.assetid: 93971DAE-ED6B-48A8-8E61-15C0C79786BB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 967fd5b25213478c89d1ab849b6c0b7ac66d0e20
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b74b5a722aab240b55ed96bea2a33b162d7817eb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786768"
 ---
-# <a name="spritekit"></a>SpriteKit
+# <a name="spritekit-in-xamarinios"></a>SpriteKit in Xamarin.iOS
 
-Sprite Kit, das Spiel 2D Framework von Apple, verfügt über einige interessante neue Features in iOS 8 und OS X Yosemite. Dazu zählen die Integration in Szene Kit, Shader-Unterstützung, Beleuchtung, Schatten, Einschränkungen, normale Zuordnung Generation und physikalische Erweiterungen. Insbesondere sollten es die neuen Funktionen für physikalische sehr einfach, ein Spiel realistische Effekte hinzufügen.
+SpriteKit, das Framework 2D Grafiken von Apple, verfügt über einige interessante neue Features in iOS 8 und OS X Yosemite. Dazu zählen die Integration in SceneKit, Shader-Unterstützung, Beleuchtung, Schatten, Einschränkungen, normale Zuordnung Generation und physikalische Erweiterungen. Insbesondere sollten es die neuen Funktionen für physikalische sehr einfach, ein Spiel realistische Effekte hinzufügen.
 
 ## <a name="physics-bodies"></a>Physikalische stellen
 
-Sprite-Kit umfasst eine 2D, feste Text physikalische API. Jede Sprite verfügt über einen zugeordneten physikalische Text (`SKPhysicsBody`), die physikalische Eigenschaften wie z. B. Masse und Unstimmigkeiten sowie die Geometrie des Texts in der Welt physikalische definiert.
+SpriteKit umfasst eine 2D, feste Text physikalische API. Jede Sprite verfügt über einen zugeordneten physikalische Text (`SKPhysicsBody`), die physikalische Eigenschaften wie z. B. Masse und Unstimmigkeiten sowie die Geometrie des Texts in der Welt physikalische definiert.
 
 ## <a name="creating-a-physics-body-from-a-texture"></a>Erstellen einen physikalische Text aus einer Textur
-Sprite Kit unterstützt jetzt die Textur physikalische Hauptteil einer Sprite abgeleitet. Dies vereinfacht die Konflikte zu implementieren, die natürlicher aussehen.
+SpriteKit unterstützt jetzt die Textur physikalische Hauptteil einer Sprite abgeleitet. Dies vereinfacht die Konflikte zu implementieren, die natürlicher aussehen.
 
 Angenommen, beachten Sie in der folgenden Konflikt wie die Banane und Affe nahezu auf die Oberfläche des jedes Image in Konflikt stehen:
  
 ![](spritekit-images/image13.png "Die Banane und Affe in Konflikt stehen, nahezu auf die Oberfläche des jedes Bild")
 
-Sprite Kit ermöglicht Erstellen solcher physikalische Text mit einer einzigen Codezeile. Rufen Sie einfach `SKPhysicsBody.Create` mit der Struktur und die Größe: Sprite. PhysicsBody = SKPhysicsBody.Create (Sprite. Textur, Sprite. Größe);
+SpriteKit ermöglicht Erstellen solcher physikalische Text mit einer einzigen Codezeile. Rufen Sie einfach `SKPhysicsBody.Create` mit der Struktur und die Größe: Sprite. PhysicsBody = SKPhysicsBody.Create (Sprite. Textur, Sprite. Größe);
 
 ## <a name="alpha-threshold"></a>Alpha-Schwellenwert
 
@@ -45,7 +47,7 @@ Die Auswirkung des Rollouts alpha-Schwellenwerts wie folgt Feinabstimmung den vo
  
 ## <a name="physics-fields"></a>Physikalische Felder
 
-Eine andere hervorragende Ergänzung Sprite Kit ist das neue physikalische Feld unterstützen. Damit können Sie Aktionen wie das Vortex-Felder hinzufügen radiale Schwerpunkt und Spring-Felder, um nur einige zu nennen.
+Eine andere hervorragende Ergänzung zum SpriteKit ist das neue physikalische Feld unterstützen. Damit können Sie Aktionen wie das Vortex-Felder hinzufügen radiale Schwerpunkt und Spring-Felder, um nur einige zu nennen.
 
 Physikalische Felder werden erstellt, die mithilfe der SKFieldNode-Klasse, die eine Szene genau wie alle anderen hinzugefügt wird `SKNode`. Es gibt eine Vielzahl von Factorymethoden auf `SKFieldNode` andere physikalische Felder erstellen. Sie können ein Feld für die Steifheit erstellen, durch den Aufruf `SKFieldNode.CreateSpringField()`, ein Feld radiale Schwerpunkt durch Aufrufen `SKFieldNode.CreateRadialGravityField()`usw.
 

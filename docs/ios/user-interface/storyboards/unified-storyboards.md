@@ -1,21 +1,20 @@
 ---
-title: Einheitliche Storyboards
-description: Einheitliche Storyboards ermöglichen iOS Entwickler zum Erstellen der Benutzeroberfläche mit einer einzelnen Storyboard, anstatt mehrere Storyboards, auf die erweiterbare Palette Gerät Bildschirmgrößen abzudecken. In diesem Artikel wurde entwickelt, um eine detailliertere Übersicht über die in den Betrieb des einheitliche Storyboards innerhalb von Xamarin.iOS zu gewähren.
+title: Einheitliche Storyboards in Xamarin.iOS
+description: Dieses Dokument beschreibt die einheitliche Storyboards in Xamarin.iOS. Einheitliche Storyboards ermöglichen Entwicklern das zur Unterstützung mehrerer Bildschirmgrößen mit einer einzelnen Schnittstelle-Definition.
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: d84afd0d33a6115d5d3ef9ea9b68d3370f9bb946
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6d3324a6485f2d240ec339f6ce7f03aafe51c80c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792020"
 ---
-# <a name="unified-storyboards"></a>Einheitliche Storyboards
-
-_Einheitliche Storyboards ermöglichen iOS Entwickler zum Erstellen der Benutzeroberfläche mit einer einzelnen Storyboard, anstatt mehrere Storyboards, auf die erweiterbare Palette Gerät Bildschirmgrößen abzudecken. In diesem Artikel wurde entwickelt, um eine detailliertere Übersicht über die in den Betrieb des einheitliche Storyboards innerhalb von Xamarin.iOS zu gewähren._
+# <a name="unified-storyboards-in-xamarinios"></a>Einheitliche Storyboards in Xamarin.iOS
 
 iOS 8 umfasst einen neuen, einfacher zu verwendende Mechanismus zum Erstellen der Benutzeroberfläche – das einheitliche Storyboard. Mit einem einzelnen Storyboard aller der unterschiedliche Hardware Bildschirmgrößen abdecken, schnelle und reaktionsschnelle Sichten erstellt werden können, einer "Design-einmal, Verwendung n-" Stil.
 
@@ -201,7 +200,7 @@ Auf einem iPhone, wobei die Größe-Klasse in beide Ausrichtungen compact ist, z
 
 Der Entwickler muss in einer Anwendung, bei denen der Entwickler sowohl die Master- und Detailtabelle auf einem iPhone im Querformat anzeigen möchte, fügen Sie einen übergeordneten Container der Split-View-Controller und überschreiben die Merkmal ""-Auflistung. Wie in der folgenden Abbildung dargestellt:
 
- [![](unified-storyboards-images/cascadingclasses03.png "Der Entwickler muss fügen Sie einen übergeordneten Container der Split-View-Controller und überschreiben die Auflistung Merkmal """)](unified-storyboards-images/cascadingclasses03.png#lightbox)
+ [![](unified-storyboards-images/cascadingclasses03.png "Der Entwickler muss fügen Sie einen übergeordneten Container der Split-View-Controller und überschreiben die Auflistung Merkmal \""")](unified-storyboards-images/cascadingclasses03.png#lightbox)
 
 Ein `UIView` festgelegt ist, als das übergeordnete Element des Split-View-Controller und die `SetOverrideTraitCollection` Methode wird aufgerufen, für die Sicht eine neue Auflistung des Merkmals übergeben und als Ziel der Split-View-Controller. Neue Merkmal ""-Sammlung außer Kraft setzt die `HorizontalSizeClass`, bei der Einstellung `Regular`, damit der Split-View-Controller sowohl die Master- und Detailtabelle Ansichten auf einem iPhone im Querformat angezeigt werden.
 
@@ -651,7 +650,7 @@ Beenden Sie die iPhone-Simulator aus, und führen Sie die Anwendung auf dem iPad
 
 Erneut aus, klicken Sie auf die **wählen Spiel** Schaltfläche und des Elements-View-Controller wird im Abschnitt "Details" Split-View-Controller gezeigt:
 
- [![](unified-storyboards-images/segue05.png "Die Elemente View-Controller gezeigt, die im Abschnitt "Details" des Controllers geteilte Ansicht")](unified-storyboards-images/segue05.png#lightbox)
+ [![](unified-storyboards-images/segue05.png "Die Elemente View-Controller gezeigt, die im Abschnitt \"Details\" des Controllers geteilte Ansicht")](unified-storyboards-images/segue05.png#lightbox)
 
 ### <a name="excluding-an-element-from-a-size-class"></a>Ein Element ausschließen aus einer Klasse Größe
 
@@ -679,7 +678,7 @@ Und wenn die Anwendung auf dem iPhone-Simulator ausgeführt wird, ist das Elemen
 
  [![](unified-storyboards-images/exclude05.png "Das Element fehlt, wenn der ausgeführten app in der iPhone-Simulator")](unified-storyboards-images/exclude05.png#lightbox)
 
-Um einen Ausschluss Groß-/Kleinschreibung von einem Element zu entfernen, wählen Sie einfach das Element in der **Entwurfsoberfläche**, einen Bildlauf zum unteren Rand der **Property Explorer** , und klicken Sie auf die **-**Schaltfläche neben die Groß-/Kleinschreibung zu entfernen.
+Um einen Ausschluss Groß-/Kleinschreibung von einem Element zu entfernen, wählen Sie einfach das Element in der **Entwurfsoberfläche**, einen Bildlauf zum unteren Rand der **Property Explorer** , und klicken Sie auf die **-** Schaltfläche neben die Groß-/Kleinschreibung zu entfernen.
 
 Um eine Implementierung der Storyboards Unified anzuzeigen, sehen die `UnifiedStoryboard` Beispiel Xamarin iOS 8-Anwendung, die auf dieses Dokument angefügt.
 
@@ -724,10 +723,10 @@ Führen Sie folgende Schritte aus:
 7. Speichern Sie die Änderungen zu `LaunchScreen.xib`.
 8. Wählen Sie die **Anwendungen Ziel** und **allgemeine** Registerkarte:
 
-    [![](unified-storyboards-images/dls06.png "Wählen Sie das Ziel der Anwendungen und die Registerkarte "Allgemein"")](unified-storyboards-images/dls06.png#lightbox)
+    [![](unified-storyboards-images/dls06.png "Wählen Sie das Ziel der Anwendungen und die Registerkarte \"Allgemein\"")](unified-storyboards-images/dls06.png#lightbox)
 9. Klicken Sie auf die **wählen Sie "Info.plist"** auswählen die `Info.plist` für die Xamarin-app, und klicken Sie auf die **auswählen** Schaltfläche:
 
-    [![](unified-storyboards-images/dls07.png "Wählen Sie die Datei "Info.plist" für die Xamarin-app")](unified-storyboards-images/dls07.png#lightbox)
+    [![](unified-storyboards-images/dls07.png "Wählen Sie die Datei \"Info.plist\" für die Xamarin-app")](unified-storyboards-images/dls07.png#lightbox)
 10. In der **App-Symbole und starten Sie Bilder** , öffnen Sie im Abschnitt der **starten Bildschirm Datei** Dropdownliste, und wählen Sie die `LaunchScreen.xib` oben erstellten:
 
     [![](unified-storyboards-images/dls08.png "Wählen Sie die LaunchScreen.xib")](unified-storyboards-images/dls08.png#lightbox)

@@ -1,19 +1,20 @@
 ---
-title: Arbeiten mit Storyboards
-description: Beim Erstellen von Benutzeroberflächen MacOS, mit Storyboards mithilfe von Xcode.
+title: Arbeiten mit Storyboards in Xamarin.Mac
+description: Dieses Dokument beschreibt das Arbeiten mit Storyboards in Xamarin.Mac, wie sie aus dem Code, den Lebenszyklus der anzeigen-Controller und der Beantworter Kette laden untersuchen, segues, Fenster Controller, Geste Prüfer und mehr.
 ms.prod: xamarin
 ms.assetid: DF4DF7C2-DDD7-4A32-B375-5C5446301EC5
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3b72affd9b101b0a139301fec9f2bed343310507
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 72986ed4247c3b6f66f6f1813d74bf0a95d0de53
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792839"
 ---
-# <a name="storyboards"></a>Storyboards
+# <a name="working-with-storyboards-in-xamarinmac"></a>Arbeiten mit Storyboards in Xamarin.Mac
 
 Ein Storyboard werden alle für die einer bestimmten app in eine Übersicht über die View-Controller unterteilt die Benutzeroberfläche definiert. In Xcode Schnittstelle-Generator befindet sich jede dieser Controller in einem eigenen Szene ein.
 
@@ -21,7 +22,7 @@ Ein Storyboard werden alle für die einer bestimmten app in eine Übersicht übe
 
 Das Storyboard ist eine Ressourcendatei (mit den Erweiterungen der `.storyboard`), ruft in der Xamarin.Mac-app-Paket enthalten, wenn kompiliert und geliefert wird. Um das Storyboard ab, für die app zu definieren, bearbeiten sie die `Info.plist` Datei, und wählen die **Hauptbenutzeroberfläche** aus dem Dropdownfeld: 
 
-[![](indepth-images/sb01.png "Die Datei "Info.plist"-editor")](indepth-images/sb01.png#lightbox)
+[![](indepth-images/sb01.png "Die Datei \"Info.plist\"-editor")](indepth-images/sb01.png#lightbox)
 
 <a name="Loading-from-Code" />
 

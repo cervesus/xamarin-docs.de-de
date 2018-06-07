@@ -1,18 +1,20 @@
 ---
-title: Erwerb von nutzbar Produkte
+title: Erwerb von Xamarin.iOS nutzbar Produkte
+description: Dieses Dokument beschreibt nutzbar Produkte in Xamarin.iOS. Einmalige Verwendung Teile der Funktionalität, z. B. Währung Spiels werden nutzbar Produkte.
 ms.prod: xamarin
 ms.assetid: E0CB4A0F-C3FA-3933-58A7-13246971D677
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5c2c84c044ff41cced2c97e414502faff45341ec
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9c53af1055736512c42f83a58011b7b3a42bcd5b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786976"
 ---
-# <a name="purchasing-consumable-products"></a>Erwerb von nutzbar Produkte
+# <a name="purchasing-consumable-products-in-xamarinios"></a>Erwerb von Xamarin.iOS nutzbar Produkte
 
 Nutzbar Produkte sind die am einfachsten zu implementieren, da keine Notwendigkeit 'Wiederherstellen besteht'. Sie sind hilfreich für Produkte wie Währung Spiels oder einen einmalcode Teil der Funktionalität. Nutzbar Produkte über-und-Failover von Benutzer können erneut erneut erwerben.
 
@@ -23,8 +25,6 @@ Im Beispielcode zu diesem Dokument wird veranschaulicht, integrierte Produkte �
 [![Das Kaufverhalten Visualisierung verarbeiten](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
    
  Der grundlegende Workflow wird:   
-   
-   
    
  1. Fügt die app ein `SKPayment` an die Warteschlange. Bei Bedarf der Benutzer wird aufgefordert, ihre Apple-ID und aufgefordert, die Zahlung zu bestätigen.   
    

@@ -1,30 +1,31 @@
 ---
-title: PhotoKit
-description: Foto Kit kann apps für die System-Bildbibliothek Abfragen und erstellen Sie benutzerdefinierte Benutzeroberfläche zum Anzeigen und ändern den Inhalt.
+title: PhotoKit in Xamarin.iOS
+description: Dieses Dokument beschreibt PhotoKit, Erörterung der Model-Objekte, wie Sie Abfragedaten-Modell, und Speichern von Änderungen an der Fotobibliothek.
 ms.prod: xamarin
 ms.assetid: 7FDEE394-3787-40FA-8372-76A05BF184B3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: c721064f62f8e2255de2b4ea2d0438e3ed630d39
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4aeeec5b96e24c654407ad672930c0cb78592450
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787896"
 ---
-# <a name="photokit"></a>PhotoKit
+# <a name="photokit-in-xamarinios"></a>PhotoKit in Xamarin.iOS
 
-_Foto Kit kann apps für die System-Bildbibliothek Abfragen und erstellen Sie benutzerdefinierte Benutzeroberfläche zum Anzeigen und ändern den Inhalt._
-
-Foto-Kit ist ein neues Framework, das ermöglicht es Anwendungen, die systembilderbibliothek Abfragen und die Erstellung benutzerdefinierter Benutzeroberflächen zum Anzeigen und ändern den Inhalt. Umfasst eine Reihe von Klassen, die Bild und video Bestand sowie Auflistungen von Ressourcen wie z. B. Alben und Ordner darstellen.
+PhotoKit ist ein neues Framework, das ermöglicht es Anwendungen, die systembilderbibliothek Abfragen und die Erstellung benutzerdefinierter Benutzeroberflächen zum Anzeigen und ändern den Inhalt. Umfasst eine Reihe von Klassen, die Bild und video Bestand sowie Auflistungen von Ressourcen wie z. B. Alben und Ordner darstellen.
 
 ## <a name="model-objects"></a>Model-Objekte
-Foto Kit stellt diese Ressourcen in was Modellobjekte aufgerufen. Die Model-Objekte, die Fotos und Videos selbst darstellen, sind vom Typ `PHAsset`. Ein `PHAsset` enthält Metadaten, z. B. Medientyp für das Medienobjekt und seine Erstellungsdatum.
+
+PhotoKit stellt diese Ressourcen in was Modellobjekte aufgerufen. Die Model-Objekte, die Fotos und Videos selbst darstellen, sind vom Typ `PHAsset`. Ein `PHAsset` enthält Metadaten, z. B. Medientyp für das Medienobjekt und seine Erstellungsdatum.
 Auf ähnliche Weise die `PHAssetCollection` und `PHCollectionList` Klassen enthalten Metadaten Asset Sammlungen und Sammlung Listen bzw. Asset-Auflistungen sind Gruppen von Ressourcen, wie z. B. alle Fotos und Videos für ein bestimmtes Jahr. Sammlung Listen auch und Gruppen der Medienobjekt-Auflistungen, z. B. Fotos und Videos, die nach Jahr gruppiert.
 
 ## <a name="querying-model-data"></a>Abfragen von Modelldaten
-Foto Kit vereinfacht den Modelldaten Abfrage über eine Vielzahl von Fetch-Methoden. Beispielsweise, um alle Images abzurufen, würde rufen Sie `PFAsset.Fetch`, und übergeben Sie die `PHAssetMediaType.Image` Medientyp.
+
+PhotoKit vereinfacht den Modelldaten Abfrage über eine Vielzahl von Fetch-Methoden. Beispielsweise, um alle Images abzurufen, würde rufen Sie `PFAsset.Fetch`, und übergeben Sie die `PHAssetMediaType.Image` Medientyp.
 
     PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 

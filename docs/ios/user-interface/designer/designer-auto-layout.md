@@ -1,21 +1,20 @@
 ---
 title: Automatisches Layout mit dem Xamarin-Designer für iOS
-description: Dieses Handbuch enthält iOS Automatisches Layout und den neuen Einschränkungen Workflow in die Xamarin-Designer für iOS verfügbar.
+description: Dieses Handbuch stellt iOS Automatisches Layout, und es wird beschrieben, wie der Xamarin-Designer zum Erstellen und Bearbeiten von Layouts Verwenden von Einschränkungen für iOS verwenden. Außerdem wird erläutert, Ändern von Einschränkungen in Code animieren Einschränkung Änderungen und vieles mehr.
 ms.prod: xamarin
 ms.assetid: CAC7A715-55BB-45E2-BB6D-2168D36D428F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 2023483f817c365d2cfad6945b281d630317693b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 876bf3de19d2bcce7d951facc92d5b05a928cd38
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790200"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Automatisches Layout mit dem Xamarin-Designer für iOS
-
-_Dieses Handbuch enthält iOS Automatisches Layout und den neuen Einschränkungen Workflow in die Xamarin-Designer für iOS verfügbar._
 
 Automatisches Layout (auch als "adaptive Layout" bezeichnet) ist ein reaktionsfähiges Design-Ansatz. Im Gegensatz zu den transitional Layoutsystem, in dem jedes Element Speicherort hartcodiert bis zu einem Zeitpunkt auf dem Bildschirm ist, automatisches Layout geht *Beziehungen* -die Positionen von Elementen relativ zu anderen Elementen auf der Entwurfsoberfläche angezeigt. Das Herzstück des Automatisches Layout ist die Einschränkungen und Regeln, die die Platzierung eines Elements oder einer Gruppe von Elementen im Kontext von anderen Elementen auf dem Bildschirm zu definieren. Da die Elemente nicht an einer bestimmten Position auf dem Bildschirm gebunden sind, können Einschränkungen eine adaptive Layout zu erstellen, die für verschiedene Bildschirmgrößen und Gerät Ausrichtungen gut aussieht.
 
@@ -176,7 +175,7 @@ Für den Zugriff auf eine Einschränkung in Code, müssen Sie zuerst sie in der 
     [![](designer-auto-layout-images/modify01.png "Gliederung Document Explorer")](designer-auto-layout-images/modify01.png#lightbox)
 3. Als Nächstes weisen Sie einem **Namen** der Einschränkung in der **Widget** auf der Registerkarte die **Eigenschaften-Explorer**:
 
-    [![](designer-auto-layout-images/modify02.png "Die Registerkarte "Widget"")](designer-auto-layout-images/modify02.png#lightbox)
+    [![](designer-auto-layout-images/modify02.png "Die Registerkarte \"Widget\"")](designer-auto-layout-images/modify02.png#lightbox)
 4. Speichern Sie die Änderungen.
 
 Mit den oben beschriebenen Änderungen vorhanden können Sie die Einschränkung im Code zugreifen und ihre Eigenschaften ändern. Die folgenden können Sie z. B. die Höhe der angefügte Ansicht auf 0 (null) festgelegt:

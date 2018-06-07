@@ -1,15 +1,17 @@
 ---
 title: Binden von Objective-C-Bibliotheken
+description: Dieses Dokument enthält eine allgemeine Übersicht über die zum Erstellen der C#-Bindungen in Objective-C-Code, der beschreibt, wie Ereignisse, Methoden und benutzerdefinierte Steuerelemente binden.
 ms.prod: xamarin
 ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: fddde9dbef0e4dfb03707a970d4263983d4cf85d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: f7c4be4254ce3e3301c0c1e98d37134f5524c23b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782319"
 ---
 # <a name="binding-objective-c-libraries"></a>Binden von Objective-C-Bibliotheken
 
@@ -1368,6 +1370,6 @@ Zum Zeitpunkt der Xamarin.iOS v3. 2, wir unterstützen erben von Protokollen, di
 
 In der Vergangenheit wir benötigt das Protokoll in jede Implementierung kopiert, aber in diesen Fällen nun wir können die `MKShape` Klasse erben die `MKOverlay` Protokoll, und es werden die erforderlichen Methoden automatisch generieren.
 
-## <a name="related-links"></a>Verwandte links
+## <a name="related-links"></a>Verwandte Links
 
 - [Bindung-Beispiel](https://developer.xamarin.com/samples/BindingSample/)

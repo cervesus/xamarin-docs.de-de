@@ -1,5 +1,5 @@
 ---
-title: .XIB-Dateien
+title: .XIB-Dateien in Xamarin.Mac
 description: In diesem Artikel wird das Arbeiten mit .xib erstellten Dateien in Xcodes Benutzeroberflächen-Generator erstellen und Verwalten von Benutzeroberflächen für eine Anwendung Xamarin.Mac behandelt.
 ms.prod: xamarin
 ms.assetid: 6AF3D216-448D-4B2D-9026-74E4FFF5923A
@@ -7,20 +7,21 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c1f575f5d3d5f0fbe82d5e0d08103b9261944602
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3ef536ddb19ed60975368bd022e57c34c6f473dc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792273"
 ---
-# <a name="xib-files"></a>.XIB-Dateien
+# <a name="xib-files-in-xamarinmac"></a>.XIB-Dateien in Xamarin.Mac
 
 _In diesem Artikel wird das Arbeiten mit .xib erstellten Dateien in Xcodes Benutzeroberflächen-Generator erstellen und Verwalten von Benutzeroberflächen für eine Anwendung Xamarin.Mac behandelt._
 
 > [!NOTE]
 > Die bevorzugte Methode zum Erstellen einer Benutzeroberfläche für eine app Xamarin.Mac ist mit Storyboards. In dieser Dokumentation wurde aus Verlaufsgründen und zum Arbeiten mit älteren Xamarin.Mac Projekten beibehalten wurde. Weitere Informationen finden Sie unter unsere [Einführung in Storyboards](~/mac/platform/storyboards/index.md) Dokumentation.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 Bei der Arbeit mit c# und .NET in einer Anwendung Xamarin.Mac Sie haben Zugriff auf die gleichen Elemente der Benutzeroberfläche und tools, die ein Entwickler arbeiten in *Objective-C* und *Xcode* verfügt. Da Xamarin.Mac direkt mit Xcode integriert ist, können Sie die Xcode _Schnittstelle-Generator_ zu erstellen und Verwalten Ihrer Benutzerschnittstellen (oder erstellen sie optional direkt im C#-Code).
 

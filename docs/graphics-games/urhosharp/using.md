@@ -1,20 +1,19 @@
 ---
-title: Verwenden von UrhoSharp
-description: Übersicht über das UrhoSharp-Modul
+title: Verwenden von UrhoSharp zum Erstellen eines Spiels 3D
+description: Dieses Dokument enthält eine Übersicht über UrhoSharp, beschreiben Szenen, Komponenten, Formen, Kameras, Aktionen, Benutzereingaben, Sound und vieles mehr.
 ms.prod: xamarin
 ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 8eed81817620b3f68510ab2e043c3aeaafb6e78a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: eb1e93e47528e801da08f402f452e0e8ce5014d8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784038"
 ---
-# <a name="using-urhosharp"></a>Verwenden von UrhoSharp
-
-_Übersicht über das UrhoSharp-Modul_
+# <a name="using-urhosharp-to-build-a-3d-game"></a>Verwenden von UrhoSharp zum Erstellen eines Spiels 3D
 
 Bevor Sie Ihr erste Spiel schreiben, mit den Grundlagen beruhendes abgerufen werden sollen: zum Einrichten der Szene, wie Ressourcen geladen werden (Dies enthält Bildmaterial) und zum Erstellen von einfachen Interaktionen für das Spiel.
 
@@ -142,7 +141,7 @@ Die einfachste Möglichkeit zum Hinzufügen von Verhalten für eine Komponente i
 
 Alternativ können Sie steuern, was genau an die Komponente geschieht durch Aktualisieren die Komponenteneigenschaften für jeden Zeitrahmen (im Abschnitt framebasierte Verhalten erläutert).
 
-### <a name="actions"></a>Aktionen
+### <a name="actions"></a>Vorgänge
 
 Sie können ganz einfach mit Aktionen Knoten Verhalten hinzufügen.  Aktionen können verschiedene Eigenschaften des Knotens ändern und führen Sie sie über einen Zeitraum oder Wiederholen sie eine Anzahl von Malen mit einer bestimmten Animation Kurve.
 

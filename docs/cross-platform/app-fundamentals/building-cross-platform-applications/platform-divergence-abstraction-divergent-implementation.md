@@ -1,15 +1,17 @@
 ---
 title: 'Teil 4: Umgang mit mehreren Plattformen'
+description: Dieses Dokument beschreibt, wie Anwendung abweichungen basierend auf der Plattform oder der Funktion behandelt wird. Es wird erläutert, Bildschirmgröße, Navigation Metaphern, Fingereingabe und Gesten, Pushbenachrichtigungen und Schnittstelle Paradigmen wie Listen und Registerkarten.
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 0988eef07ead9b2cbb6a447ac54f80bcb80e66bf
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: c00519ecc4c8a8d85e993a6002d131f227eb9764
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781607"
 ---
 # <a name="part-4---dealing-with-multiple-platforms"></a>Teil 4: Umgang mit mehreren Plattformen
 

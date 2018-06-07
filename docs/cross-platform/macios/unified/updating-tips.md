@@ -1,14 +1,16 @@
 ---
 title: Tipps zum Aktualisieren von Code für die einheitliche-API
+description: Dieses Dokument erläutert häufige Fehler und verschiedene nützliche Tipps beim Aktualisieren einer Anwendung die Xamarin Unified-API verwenden.
 ms.prod: xamarin
 ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 640f95e0083c73288cc8e1f183b06bd28a7b4e07
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: cab27d5dc38eeab65728f242c6f11fd445601a88
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782117"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>Tipps zum Aktualisieren von Code für die einheitliche-API
 
@@ -20,7 +22,6 @@ Es ist ein [Fehler](https://bugzilla.xamarin.com/show_bug.cgi?id=25569) in der a
 
 ```console
 Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not find a storyboard named 'xxx' in bundle NSBundle...
-
 ```
 
 Sie können Folgendes verwenden, um dieses Problem zu beheben, suchen Sie die folgenden Build Zieldatei Aktionen ausführen:
@@ -82,9 +83,9 @@ Schließen einige Dinge, die möglicherweise manuell behoben werden müssen:
     vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
     ```
 
- * Die NSObject `.ctor(IntPtr)` Konstruktor wurde geändert öffentlich sein, um geschützte ([um zu verhindern, dass die falsche Verwendung](~/cross-platform/macios/unified/index.md#NSObject_ctor)).
+ * Die NSObject `.ctor(IntPtr)` Konstruktor wurde geändert öffentlich sein, um geschützte ([um zu verhindern, dass die falsche Verwendung](~/cross-platform/macios/unified/overview.md#NSObject_ctor)).
 
- * `NSAction` wurde [ersetzt](~/cross-platform/macios/unified/index.md#NSAction) mit dem Starndard .NET `Action`. Einige einfache (einzelnen Parameter) Delegaten auch durch ersetzt wurden `Action<T>`.
+ * `NSAction` wurde [ersetzt](~/cross-platform/macios/unified/overview.md#NSAction) mit dem Starndard .NET `Action`. Einige einfache (einzelnen Parameter) Delegaten auch durch ersetzt wurden `Action<T>`.
 
 Schließlich finden Sie in der [klassischen v einheitliche API-Unterschiede](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) um Änderungen an APIs im Code zu suchen. Suche [auf dieser Seite](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) hilft suchen Classic-APIs und was sie auf aktualisiert haben.
 

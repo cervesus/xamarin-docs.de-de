@@ -1,21 +1,20 @@
 ---
-title: EventKit
-description: Dieses Handbuch enthält eine Übersicht über das Zugreifen auf und Arbeiten mit Kalendern, CalendarEvents und Hinweise zu Daten, die in der Calendar-Datenbank gespeichert, über die EventKit verfügbar gemacht. Es umfasst die wichtigsten Berechtigungsklassen und ihrer Rolle in EventKit-Programmierung sowie eine Anzahl von häufig anfallender Aufgaben bezüglich der EventKit-Framework.
+title: EventKit in Xamarin.iOS
+description: Dieses Dokument beschreibt EventKit und zu dessen Verwendung in Xamarin.iOS. Es wird erläutert, Kalender und Kalenderereignisse Erinnerungen, sucht Klassen, die häufig verwendet, wenn das Programmieren mit EventKit und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 00E88629-357D-1FCD-4FCE-1330D5D9D32C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a8439586ac92f8139cf9341611125352c85706e5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3522870d3e063d1e12660094a311e9850bcefa13
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786713"
 ---
-# <a name="eventkit"></a>EventKit
-
-_Dieses Handbuch enthält eine Übersicht über das Zugreifen auf und Arbeiten mit Kalendern, CalendarEvents und Hinweise zu Daten, die in der Calendar-Datenbank gespeichert, über die EventKit verfügbar gemacht. Es umfasst die wichtigsten Berechtigungsklassen und ihrer Rolle in EventKit-Programmierung sowie eine Anzahl von häufig anfallender Aufgaben bezüglich der EventKit-Framework._
+# <a name="eventkit-in-xamarinios"></a>EventKit in Xamarin.iOS
 
 iOS verfügt über zwei kalenderbezogener Anwendungen integrierte: der Kalender-Anwendung, und die Erinnerungen-Anwendung. Es ist einfach genug, um zu verstehen, wie die Anwendung Kalender Kalenderdaten verwaltet, aber die Anwendung Erinnerungen ist weniger offensichtlich. Erinnerungen können tatsächlich haben die Daten, wenn sie fällig, wenn sie abgeschlossen sind, sind sie in Form eines zugeordnet usw. Daher speichert iOS alle Kalenderdaten, ob es Kalenderereignisse oder Erinnerungen, in einer einzigen Stelle aufgerufen werden der *Kalenderdatenbank*.
 

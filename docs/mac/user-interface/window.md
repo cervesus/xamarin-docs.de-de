@@ -1,5 +1,5 @@
 ---
-title: Windows
+title: Windows in Xamarin.Mac
 description: In diesem Artikel wird das Arbeiten mit Windows- und Bereiche in einer Anwendung Xamarin.Mac behandelt. Erstellen von Windows und Bereiche in Xcode und Schnittstelle-Generator Laden aus dem Storyboards und .xib Dateien und Arbeiten mit diesen programmgesteuerten beschrieben.
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f45bc69b74d98c7b9130f2caeaee91b184c38d87
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 39efcf3554469219cc29d70ee059fe645c41280d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794071"
 ---
-# <a name="windows"></a>Windows
+# <a name="windows-in-xamarinmac"></a>Windows in Xamarin.Mac
 
 _In diesem Artikel wird das Arbeiten mit Windows- und Bereiche in einer Anwendung Xamarin.Mac behandelt. Erstellen von Windows und Bereiche in Xcode und Schnittstelle-Generator Laden aus dem Storyboards und .xib Dateien und Arbeiten mit diesen programmgesteuerten beschrieben._
 
@@ -240,7 +241,7 @@ Standardmäßig eine neue Xamarin.Mac-Anwendung zeigt automatisch das Fenster de
 
 Da wir das Design dieser oben im Fenster geändert haben, enthält es jetzt einen Standard-Symbolleiste und **Textansicht** Steuerelement. Im folgenden Abschnitt die `Info.plist` Datei ist verantwortlich für die Anzeige dieses Fensters:
 
-[![](window-images/display00.png "Bearbeiten der Datei "Info.plist"")](window-images/display00.png#lightbox)
+[![](window-images/display00.png "Bearbeiten der Datei \"Info.plist\"")](window-images/display00.png#lightbox)
 
 Die **Hauptbenutzeroberfläche** Dropdownliste wird verwendet, um das Storyboard auswählen, die als die Haupt-app-Benutzeroberfläche verwendet wird (in diesem Fall `Main.storyboard`).
 
@@ -721,7 +722,7 @@ Um ein neues Fenster hinzuzufügen, führen Sie folgende Schritte aus:
 
 Wenn wir führen Sie den Code, und wählen Sie die **Einstellungen...**  aus der **Anwendungsmenü**, das Fenster wird angezeigt:
 
-[![](window-images/new04.png "Eine Beispiel-Menü "Einstellungen"")](window-images/new04.png#lightbox)
+[![](window-images/new04.png "Eine Beispiel-Menü \"Einstellungen\"")](window-images/new04.png#lightbox)
 
 <a name="Working_with_Panels" />
 

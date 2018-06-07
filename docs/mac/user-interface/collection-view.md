@@ -1,5 +1,5 @@
 ---
-title: Auflistungsansichten
+title: Auflistungsansichten in Xamarin.Mac
 description: Dieser Artikel beschreibt das Arbeiten mit Auflistungsansichten in einer app Xamarin.Mac. Es umfasst erstellen und Verwalten von Auflistungsansichten in Xcode und Benutzeroberflächen-Generator und programmgesteuert mit ihnen arbeiten.
 ms.prod: xamarin
 ms.assetid: 6EE32256-5948-4AE4-8133-6D0B3F4173E8
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/24/2017
-ms.openlocfilehash: f391a9df8a0d4012637c503bc95c6de2185dd2f9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8e354b1ce273b10758a7d8c1361055b972839943
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792556"
 ---
-# <a name="collection-views"></a>Auflistungsansichten
+# <a name="collection-views-in-xamarinmac"></a>Auflistungsansichten in Xamarin.Mac
 
 _Dieser Artikel beschreibt das Arbeiten mit Auflistungsansichten in einer app Xamarin.Mac. Es umfasst erstellen und Verwalten von Auflistungsansichten in Xcode und Benutzeroberflächen-Generator und programmgesteuert mit ihnen arbeiten._
 

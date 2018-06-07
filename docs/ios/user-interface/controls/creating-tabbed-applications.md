@@ -1,21 +1,20 @@
 ---
-title: Auf der Registerkarte Balken und Registerkartenleiste-Controller
-description: iOS-Anwendungen, die über eine Registerkartennavigation Benutzeroberfläche werden erstellt, mit der UITabBarController-Klasse. In diesem Artikel werden protokollsuchen zum Einrichten einer im Registerkartenformat-Anwendung, die mehrere Controller und Ansichten enthält. Klicken Sie dann untersucht, wie eine UITabBarController geladen, wenn es nicht der Stamm-Controller, z. B. nach dem Anmeldebildschirm.
+title: Auf der Registerkarte Balken und Registerkartenleiste Controller im Xamarin.iOS
+description: Dieses Dokument beschreibt iOS Registerkarte Leiste Controller und wie sie mit Xamarin.iOS verwendet. Es zeigt, wie eine UITabBarController einrichten, arbeiten mit Bildern, Badge Werte und Arbeiten mit Ereignissen festgelegt.
 ms.prod: xamarin
 ms.assetid: 7C772899-2900-F139-D642-F3C4F3F14DDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: c3c57cceed7271ebbe707172db892a246003426b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d8b096774e60ec0e0b69e109fa5da53c25e66d25
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789757"
 ---
-# <a name="tab-bars-and-tab-bar-controllers"></a>Auf der Registerkarte Balken und Registerkartenleiste-Controller
-
-_iOS-Anwendungen, die über eine Registerkartennavigation Benutzeroberfläche werden erstellt, mit der UITabBarController-Klasse. In diesem Artikel werden protokollsuchen zum Einrichten einer im Registerkartenformat-Anwendung, die mehrere Controller und Ansichten enthält. Klicken Sie dann untersucht, wie eine UITabBarController geladen, wenn es nicht der Stamm-Controller, z. B. nach dem Anmeldebildschirm._
+# <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Auf der Registerkarte Balken und Registerkartenleiste Controller im Xamarin.iOS
 
 Im Registerkartenformat Anwendungen werden in iOS verwendet, zur Unterstützung von Benutzeroberflächen, in denen mehrere Bildschirme zugegriffen werden kann, ohne bestimmte Reihenfolge. Über die `UITabBarController` -Klasse, Unterstützung für solche Szenarien mit mehreren Bildschirm problemlos zu Anwendungen integrieren können. `UITabBarController` übernimmt der Multi-Bildschirm-Verwaltung, sodass des Anwendungsentwicklers die Details jeder Bildschirm konzentrieren.
 
@@ -333,7 +332,7 @@ In unserem Storyboard verwenden wir das Segues, um die Übergänge zwischen den 
  
 So richten Sie unsere Registerkarten ein **STRG + klicken** aus der TabBarController auf die einzelnen unsere View-Controller in der Reihenfolge von eins bis drei, und wählen Sie die Beziehung **Registerkarte** aus dem Kontextmenü aus, wie unten gezeigt:
 
-[![](creating-tabbed-applications-images/context-menu.png "Wählen Sie die Registerkarte "-Beziehung")](creating-tabbed-applications-images/context-menu.png#lightbox)
+[![](creating-tabbed-applications-images/context-menu.png "Wählen Sie die Registerkarte \"-Beziehung")](creating-tabbed-applications-images/context-menu.png#lightbox)
 
 Das Storyboard in etwa den folgenden Screenshot:
 
