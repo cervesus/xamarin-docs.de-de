@@ -6,18 +6,18 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 05/08/2018
-ms.openlocfilehash: a714ac55c3a49b91cb21e3ba1793b9bccd7d1be2
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 06/05/2018
+ms.openlocfilehash: 0d512342f1c978c84341d20c298a9fa750800d84
+ms.sourcegitcommit: 5db075bdd0b62d5d1d1567c267303a6a1888c8f2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34806802"
 ---
 # <a name="firebase-job-dispatcher"></a>Auftrag wurde vom Verteiler firebase
 
 _Dieses Handbuch erläutert, wie beim Planen der Verarbeitung im Hintergrund mithilfe der Auftrag wurde vom Verteiler Firebase-Bibliothek von Google._
 
-![Firebase Auftrag Verteiler in der Vorschau](~/media/shared/preview.png)
 
 ## <a name="overview"></a>Übersicht
 
@@ -65,9 +65,6 @@ Der Auftrag wurde vom Verteiler Firebase ist die Android-API Level 9 oder höher
 Um mit der Dispatcher Firebase beginnen, zuerst Hinzufügen der [Xamarin.Firebase.JobDispatcher NuGet-Paket](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher) Xamarin.Android-Projekt. Suchen Sie das NuGet-Paket-Manager für die **Xamarin.Firebase.JobDispatcher** Paket (d. h. vor der Veröffentlichung).
 
 Nach dem Hinzufügen der Auftrag wurde vom Verteiler Firebase-Bibliothek, erstellen Sie eine `JobService` Klasse, und Planen Sie mit einer Instanz der Ausführung der `FirebaseJobDispatcher`.
-
-> [!NOTE]
-> Das Ziel die aktuelle Bindung für den Firebase Auftrag Verteiler ist eine alte Version der Bibliothek. Das ist ein [bekannter Fehler [(https://bugzilla.xamarin.com/show_bug.cgi?id=59046)] verhindert die Bindung aus aktualisiert wird auf eine neuere Version des Verteilers Auftrag Firebase abzielen.
 
 
 ### <a name="creating-a-jobservice"></a>Erstellen eine JobService
@@ -293,7 +290,6 @@ Dieses Handbuch erläutert, wie mit, dass der Auftrag wurde vom Verteiler Fireba
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Bindungen-Generator schlägt fehl mit Fehler Schwerwiegender AUSNAHMEFEHLER: System.ArgumentNullException: Wert darf nicht null sein.](https://bugzilla.xamarin.com/show_bug.cgi?id=59046)
 - [Xamarin.Firebase.JobDispatcher für NuGet](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)
 - [Firebase-Auftrag-Verteiler auf GitHub](https://github.com/firebase/firebase-jobdispatcher-android)
 - [Xamarin.Firebase.JobDispatcher-Bindung](https://github.com/xamarin/XamarinComponents/tree/master/Android/FirebaseJobDispatcher)
