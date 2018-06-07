@@ -17,21 +17,21 @@ ms.locfileid: "34806789"
 
 ## <a name="net-standard"></a>.NET-Standard
 
-Die .NET-Standardbibliothek ist eine formale Spezifikation von .NET-APIs, die für alle .NET-Laufzeiten verfügbar sein sollen. Die Motivation hinter der Standardbibliothek ist das Herstellen einer umfassenderen Einheitlichkeit im .NET-Ökosystem.
+Die .NET Standard-Bibliothek ist eine formale Spezifikation von .NET-APIs, die für alle .NET-Laufzeiten verfügbar sein sollen. Die Motivation hinter der Standard-Bibliothek ist das Herstellen einer umfassenderen Einheitlichkeit im .NET-Ökosystem.
 Auch wenn [ECMA-335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) weiterhin für Einheitlichkeit im .NET-Laufzeitverhalten sorgt, gibt es keine ähnliche Spezifikation für die .NET-Basisklassenbibliotheken (BCL) für Implementierungen der .NET-Bibliothek.
 
-Sie können sozusagen eine vereinfachte nächste Generation von [Portable Class Library](https://msdn.microsoft.com/library/gg597391.aspx).
-Es ist eine eine einheitliche API für alle .NET Plattformen einschließlich .NET Core Library. Sie gerade erstellen eine einzelne .NET Standardbibliothek und verwenden ihn aus jeder Laufzeit, die .NET Standard-Plattform unterstützt.
+Sie können es sich als eine vereinfachte nächste Generation der [Portable Class Library](https://msdn.microsoft.com/library/gg597391.aspx) vorstellen.
+Es ist eine einzige Bibliothek mit einheitlicher API für alle .NET-Plattformen einschließlich .NET Core. Sie erstellen nur eine einzige .NET Standard-Bibliothek und verwenden diese in jeder Laufzeit, welche die .NET Standard-Plattform unterstützt.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio für Mac
 
-Dieser Abschnitt führt Sie durch die Schritte zum Erstellen und Verwenden einer .NET Standardbibliothek, die mit Visual Studio für Mac Finden Sie im Beispielabschnitt von .NET Standard-Bibliothek für eine vollständige Implementierung.
+Dieser Abschnitt zeigt die Schritte zum Erstellen und Verwenden einer .NET Standard-Bibliothek mit Visual Studio für Mac. Eine vollständige Implementierung finden Sie im Beispielabschnitt der .NET Standard-Bibliothek.
 
-### <a name="creating-a-net-standard-library"></a>Erstellen eine Standardbibliothek des .NET
+### <a name="creating-a-net-standard-library"></a>Erstellen einer .NET Standard-Bibliothek
 
-Der Projektmappe eine Standardbibliothek des .NET hinzuzufügen ist ziemlich unkompliziert.
+Der Projektmappe eine .NET Standard-Bibliothek hinzuzufügen ist ziemlich unkompliziert.
 
 1. Klicken Sie im Dialogfeld "Neues Projekt hinzufügen" Wählen Sie die `.NET Core` Kategorie, und wählen Sie dann `Class Library(.NET Core)`.
 
@@ -57,13 +57,13 @@ Sie können innerhalb Ihrer Version von ändern `netstandard` durch Ändern der 
 
 ## <a name="visual-studio-2017-windows"></a>Visual Studio 2017 (Windows)
 
-In diesem Abschnitt führt Sie durch die Schritte zum Erstellen und verwenden eine mithilfe von Visual Studio .NET-Standardbibliothek. Finden Sie im Beispielabschnitt von .NET Standard-Bibliothek für eine vollständige Implementierung.
+In diesem Abschnitt führt Sie durch die Schritte zum Erstellen und verwenden eine mithilfe von Visual Studio .NET-Standardbibliothek. Eine vollständige Implementierung finden Sie im Beispielabschnitt der .NET Standard-Bibliothek.
 
-### <a name="creating-a-net-standard-library"></a>Erstellen eine Standardbibliothek des .NET
+### <a name="creating-a-net-standard-library"></a>Erstellen einer .NET Standard-Bibliothek
 
 #### <a name="visual-studio-2017"></a>Visual Studio 2017
 
-Der Projektmappe eine Standardbibliothek des .NET hinzuzufügen ist ziemlich unkompliziert.
+Der Projektmappe eine .NET Standard-Bibliothek hinzuzufügen ist ziemlich unkompliziert.
 
 1. Klicken Sie im Dialogfeld "Neues Projekt hinzufügen" Wählen Sie die `.NET Standard` Kategorie, und wählen Sie dann `Class Library(.NET Standard)`.
 
