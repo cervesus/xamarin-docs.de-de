@@ -1,4 +1,4 @@
----
+﻿---
 title: Verwenden .NET Standardbibliotheken zum Freigeben von Code
 description: Dieses Dokument beschreibt, wie .NET Standardbibliotheken Code freigeben. Es wird erläutert, eine .NET Standardbibliothek erstellen, bearbeiten die Einstellungen und ihn in einer Anwendung verwenden.
 ms.prod: xamarin
@@ -33,31 +33,31 @@ Dieser Abschnitt zeigt die Schritte zum Erstellen und Verwenden einer .NET Stand
 
 Der Projektmappe eine .NET Standard-Bibliothek hinzuzufügen ist ziemlich unkompliziert.
 
-1. Klicken Sie im Dialogfeld "Neues Projekt hinzufügen" Wählen Sie die `.NET Core` Kategorie, und wählen Sie dann `Class Library(.NET Core)`.
+1. Wählen Sie im Dialogfeld „Neues Projekt hinzufügen“ die Kategorie „.NET Core“ aus, und wählen Sie dann „Klassenbibliothek (.NET Core)“ aus.
 
-  **Hinweis:** dieser Vorlage wird umbenannt werden, um `.NET Standard` in einer zukünftigen Version von Visual Studio für Mac.
+  **Hinweis:** Diese Vorlage wird in einer zukünftigen Version von Visual Studio für Mac in „.NET Standard“ umbenannt werden.
 
-  ![Erstellen einer Klassenbibliothek von .NET Core](net-standard-images/vsm01.png "erstellen eine neue Klassenbibliothek für .NET Core")
+  ![Erstellen einer neuen .NET Core-Klassenbibliothek](net-standard-images/vsm01.png "Erstellen einer neuen .NET Core-Klassenbibliothek")
 
-2. Das standardmäßige .NET-Steuerelementbibliothek-Projekt wird angezeigt, wie im Projektmappen-Explorer angezeigt. Der Knoten für die Abhängigkeiten hervor, dass die Bibliothek verwendet die [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/).
+2. Das .NET Standard-Bibliotheksprojekt wird im Projektmappen-Explorer wie dargestellt angezeigt. Der Knoten mit den Abhängigkeiten zeigt, dass die Bibliothek die [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/) verwendet.
 
-  ![Abhängigkeiten von Knoten in der Projektmappe gibt .NET Standard an.](net-standard-images/vsm02.png)
+  ![NETStandard.Library in der Projektmappe](net-standard-images/vsm02.png "NETStandard.Library in der Projektmappe")
 
-#### <a name="editing-net-standard-library-settings"></a>Bearbeiten der Einstellungen für .NET-Standardbibliothek
+#### <a name="editing-net-standard-library-settings"></a>Einstellungen einer .NET Standard-Bibliothek bearbeiten
 
-Die Standardbibliothek .NET Einstellungen angezeigt und geändert werden, indem Sie mit der rechten Maustaste auf das Projekt und auswählen können `Options` wie in diesem Screenshot gezeigt:
+Die Einstellungen der .NET Standard-Bibliothek können angezeigt und geändert werden, indem Sie mit der rechten Maustaste auf das Projekt klicken und „Optionen“ wählen, wie in diesem Screenshot gezeigt:
 
-![Bearbeiten von .NET Standard Zielframeworks in Projektoptionen](net-standard-images/vsm03.png "bearbeiten Sie die Version für das Zielframework .NET Standard in Projektoptionen")
+  ![Bearbeiten von .NET Standard Zielframeworks in Projektoptionen](net-standard-images/vsm03.png "Bearbeiten Sie die Version des .NET Standard Zielframeworks in den Projektoptionen")
 
-Sie können innerhalb Ihrer Version von ändern `netstandard` durch Ändern der `Target Framework` Dropdown-Wert.
+Dort können Sie Ihre Version von „.NET Standard“ durch Ändern des Dropdown-Werts „Zielframework“ anpassen.
 
-**Darüber hinaus gilt:** können Sie bearbeiten die `.csproj` direkt zum Ändern dieses Werts.
+**Darüber hinaus gilt:** Sie können die `.csproj`-Datei zum Ändern dieses Werts direkt bearbeiten.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ## <a name="visual-studio-2017-windows"></a>Visual Studio 2017 (Windows)
 
-In diesem Abschnitt führt Sie durch die Schritte zum Erstellen und verwenden eine mithilfe von Visual Studio .NET-Standardbibliothek. Eine vollständige Implementierung finden Sie im Beispielabschnitt der .NET Standard-Bibliothek.
+Dieser Abschnitt zeigt die Schritte zum Erstellen und Verwenden einer .NET Standard-Bibliothek mit Visual Studio. Eine vollständige Implementierung finden Sie im Beispielabschnitt der .NET Standard-Bibliothek.
 
 ### <a name="creating-a-net-standard-library"></a>Erstellen einer .NET Standard-Bibliothek
 
@@ -65,29 +65,29 @@ In diesem Abschnitt führt Sie durch die Schritte zum Erstellen und verwenden ei
 
 Der Projektmappe eine .NET Standard-Bibliothek hinzuzufügen ist ziemlich unkompliziert.
 
-1. Klicken Sie im Dialogfeld "Neues Projekt hinzufügen" Wählen Sie die `.NET Standard` Kategorie, und wählen Sie dann `Class Library(.NET Standard)`.
+1. Wählen Sie im Dialogfeld „Neues Projekt hinzufügen“ die Kategorie „.NET Standard“ aus, und wählen Sie dann „Klassenbibliothek (.NET Standard)“ aus.
 
-  ![Erstellen eine neue .NET Standard Klassenbibliothek](net-standard-images/vs01.png "erstellen neue .NET Standard-Klassenbibliothek")
+  ![Erstellen einer neuen .NET Standard-Klassenbibliothek](net-standard-images/vs01.png "Erstellen einer neuen .NET Standard-Klassenbibliothek")
 
-2. Das standardmäßige .NET-Steuerelementbibliothek-Projekt wird angezeigt, wie im Projektmappen-Explorer angezeigt. Der Knoten für die Abhängigkeiten hervor, dass die Bibliothek verwendet die [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/).
+2. Das .NET Standard-Bibliotheksprojekt wird im Projektmappen-Explorer wie dargestellt angezeigt. Der Knoten mit den Abhängigkeiten zeigt, dass die Bibliothek die [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/) verwendet.
 
-  ![Im Projektordner NETStandard.Library](net-standard-images/vs02.png ".NET Standard Projekt in der Projektmappe")
+  ![NETStandard.Library in der Projektmappe](net-standard-images/vs02.png "NETStandard.Library in der Projektmappe")
 
-#### <a name="editing-net-standard-library-settings"></a>Bearbeiten der Einstellungen für .NET-Standardbibliothek
+#### <a name="editing-net-standard-library-settings"></a>Einstellungen einer .NET Standard-Bibliothek bearbeiten
 
-Die Standardbibliothek .NET Einstellungen angezeigt und geändert werden, indem Sie mit der rechten Maustaste auf das Projekt und auswählen können `Properties` wie in diesem Screenshot gezeigt:
+Die Einstellungen der .NET Standard-Bibliothek können angezeigt und geändert werden, indem Sie mit der rechten Maustaste auf das Projekt klicken und „Eigenschaften“ wählen, wie in diesem Screenshot gezeigt:
 
-![Bearbeiten von .NET standard Zielframeworks in den Projekteigenschaften](net-standard-images/vs03.png "verweisen auf eine .NET Standardbibliothek die gleiche Weise wie andere Projekte")
+  ![Bearbeiten von .NET Standard-Zielframeworks in Projekteigenschaften](net-standard-images/vs03.png "Bearbeiten Sie die Version des .NET Standard-Zielframeworks in den Projekteigenschaften")
 
-Sie können innerhalb Ihrer Version von ändern `netstandard` durch Ändern der `Target Framework` Dropdown-Wert.
+Dort können Sie Ihre Version von „.NET Standard“ durch Ändern des Dropdown-Werts „Zielframework“ anpassen.
 
-**Darüber hinaus gilt:** können Sie bearbeiten die `.csproj` direkt zum Ändern dieses Werts.
+**Darüber hinaus gilt:** Sie können die `.csproj`-Datei zum Ändern dieses Werts direkt bearbeiten.
 
-#### <a name="using-net-standard-library"></a>Mithilfe der Standardbibliothek für .NET
+#### <a name="using-net-standard-library"></a>Verwenden einer .NET Standard-Bibliothek
 
-Sobald eine Standardbibliothek des .NET erstellt wurde, können Sie einen Verweis darauf aus einem kompatiblen Anwendung oder Library-Projekt auf die gleiche Weise hinzufügen, Sie normalerweise fügen Sie Verweise hinzu. Klicken Sie in Visual Studio mit der rechten Maustaste auf den Knoten "Verweise", und wählen Sie `Add Reference...` wechseln Sie zu der `Solution : Projects` Registerkarte wie gezeigt:
+Sobald eine .NET Standard-Bibliothek erstellt wurde, können Sie aus allen kompatiblen Anwendungen oder Bibliotheksprojekten einen Verweis auf die gleiche Weise hinzufügen, wie Sie normalerweise Verweise hinzufügen. Klicken Sie in Visual Studio mit der rechten Maustaste auf den Knoten „Verweise“, und wählen Sie „Verweis hinzufügen...“ aus. Wechseln Sie anschließend wie hier gezeigt zur Registerkarte „Projekte: Projektmappe“:
 
-![Verweisen auf eine Standardbibliothek des .NET](net-standard-images/vs04.png "In Visual Studio mit der rechten Maustaste auf den Knoten \"Verweise\" und wählen Sie Verweis hinzufügen... und wechseln Sie dann auf der Registerkarte Projektmappenprojekte wie dargestellt")
+  ![Verweisen auf eine .NET Standard-Bibliothek](net-standard-images/vs04.png "Klicken Sie in Visual Studio mit der rechten Maustaste auf den Knoten \"Verweise\", wählen Sie \"Verweis hinzufügen...\", und wechseln Sie dann auf die Registerkarte der Projektmappen-Projekte wie dargestellt")
 
 -----
 
