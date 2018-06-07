@@ -1,17 +1,18 @@
 ---
 title: Einführung in iOS 6
-description: iOS 6 enthält eine Vielzahl neuer Technologien für die Entwicklung von apps, die C#-Entwickler Xamarin.iOS 6 Skriptentwicklern bereitstellt.
+description: Dieses enthält Dokumentenlinks zu Anleitungen, die in Ios6 eingeführte Funktionen zu beschreiben. Auflistungsansichten, PassKit, soziale Framework und Änderungen an StoreKit werden alle erläutert.
 ms.prod: xamarin
 ms.assetid: 242DA7E3-8FD8-5F20-285D-603259CA622D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8f3be80ffb8156c24c96b03fda8eac3907ca88bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cf623c7788137106ddbb2c23c69465f205a5a400
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787613"
 ---
 # <a name="introduction-to-ios-6"></a>Einführung in iOS 6
 
@@ -28,12 +29,12 @@ Dieses Dokument listet einige der interessanteren verfügbaren neuen Funktionen 
 Auflistungsansichten können Inhalte mithilfe von beliebigen Layouts angezeigt werden sollen. Raster-ähnliches Layouts ausgegeben, einfach zu erstellen, während Sie benutzerdefinierte Layouts sowie unterstützende Dateien können. Weitere Informationen finden Sie unter der [Einführung zu Auflistungsansichten](~/ios/user-interface/controls/uicollectionview.md) [ ](~/ios/user-interface/controls/uicollectionview.md)Handbuch.
 
 
-## <a name="introduction-to-pass-kitiosplatformpasskitmd"></a>[Einführung in die Kit übergeben.](~/ios/platform/passkit.md)
+## <a name="introduction-to-passkitiosplatformpasskitmd"></a>[Introduction to PassKit](~/ios/platform/passkit.md) (Einführung in PassKit)
 
-Das Kit übergeben-Framework ermöglicht Anwendungen, für die Interaktion mit digitalen übergibt, die in der app Passbook verwaltet werden. Weitere Informationen finden Sie unter der [Einführung übergeben Kit-Handbuch](~/ios/platform/passkit.md).
+Im PassKit können Anwendungen für die Interaktion mit digitalen übergibt, die in der app Passbook verwaltet werden. Weitere Informationen finden Sie unter der [Einführung übergeben Kit-Handbuch](~/ios/platform/passkit.md).
 
 
-##  <a name="introduction-to-event-kitiosplatformeventkitmd"></a>[Einführung in die Ereignis-Kit](~/ios/platform/eventkit.md)
+##  <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[Einführung in EventKit](~/ios/platform/eventkit.md)
 
 Das EventKit-Framework bietet eine Möglichkeit zum Zugriff auf Kalender, Kalenderereignisse und Daten in Erinnerungen Kalender-Datenbank gespeichert. Zugriff auf die Kalender und Kalender Ereignisse wurde verfügbar seit iOS 4, aber Ios6 macht jetzt den Zugriff auf Daten von Erinnerungen. Weitere Informationen finden Sie unter der [ich](~/ios/platform/eventkit.md) [Ntroduction auf EventKit](~/ios/platform/eventkit.md) Handbuch.
 
@@ -43,7 +44,7 @@ Das EventKit-Framework bietet eine Möglichkeit zum Zugriff auf Kalender, Kalend
 Das soziale Framework bietet eine einheitliche API, für die Interaktion mit sozialen Netzwerken, einschließlich Twitter und Facebook sowie SinaWeibo für Benutzer in China. Weitere Informationen finden Sie unter der [Einführung in die sozialen Framework](~/ios/platform/social-framework.md) Handbuch.
 
 
-##  <a name="changes-to-store-kitchanges-to-storekitmd"></a>[Änderungen zum Speichern von Kit](changes-to-storekit.md)
+##  <a name="changes-to-storekitchanges-to-storekitmd"></a>[Änderungen an StoreKit](changes-to-storekit.md)
 
 Apple hat zwei neue Funktionen im Store Kit eingeführt: erwerben und herunterladen iTunes oder App-Store-Inhalt von innerhalb Ihrer app und hosting von Inhaltsdateien für in-app-Käufe!. Weitere Informationen finden Sie unter der [Änderungen an den Store Kit](changes-to-storekit.md) Handbuch.
 
@@ -87,7 +88,7 @@ Erneut aufrufen `Dispose` wie oben beschrieben sollten nur selten erforderlich. 
 Für den Fall Zustand zu speichern, können Anwendungen führen hierzu finden Sie unter `ViewWillDisappear` und `ViewDidDisappear` anstelle von `ViewWillUnload`.
 
 
-### <a name="iphone-5-resolution"></a>iPhone 5 Resolution
+### <a name="iphone-5-resolution"></a>iPhone 5 Auflösung
 
 iPhone 5-Geräte haben eine 640 x 1136-Lösung. Anwendungen, die das Ziel von früheren Versionen von iOS erscheinen letterboxed bei Ausführung auf einem iPhone 5, wie unten dargestellt:
 
