@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: c93681c3bfd8de8d813cbe98a7ac28b3ee8b74fc
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 5f23b65fab24b447a9f534ed7403797a60cc284f
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847224"
 ---
 # <a name="customizing-an-entry"></a>Einen Eintrag anpassen
 
@@ -105,11 +106,11 @@ Der Prozess zum Erstellen der benutzerdefinierten Rendererklasse lautet wie folg
 
 Das folgende Diagramm veranschaulicht die Zuständigkeiten aller Projekte in der beispielanwendung, sowie die Beziehungen zwischen ihnen:
 
-![](entry-images/solution-structure.png ""Myentry" benutzerdefinierter Renderer Projekt Zuständigkeiten")
+![](entry-images/solution-structure.png "\"Myentry\" benutzerdefinierter Renderer Projekt Zuständigkeiten")
 
 Die `MyEntry` plattformspezifischen Steuerelement gerendert wird `MyEntryRenderer` Klassen, die Ableitung der `EntryRenderer` Klasse für jede Plattform. Dies führt in den einzelnen `MyEntry` Steuerelements mit einer plattformspezifischen Hintergrundfarbe gerendert wird, wie in den folgenden Screenshots dargestellt:
 
-![](entry-images/screenshots.png ""Myentry" Steuerelement auf jeder Plattform")
+![](entry-images/screenshots.png "\"Myentry\" Steuerelement auf jeder Plattform")
 
 Die `EntryRenderer` -Klasse verfügbar macht die `OnElementChanged` -Methode, die aufgerufen wird, wenn Sie das Xamarin.Forms-Steuerelement erstellt wird, um das entsprechende systemeigene Steuerelement rendern. Diese Methode nimmt ein `ElementChangedEventArgs` Parameter, enthält `OldElement` und `NewElement` Eigenschaften. Diese Eigenschaften repräsentieren die Xamarin.Forms-Element, den Renderer *wurde* angefügt, und das Xamarin.Forms-Element, den Renderer *ist* angefügt sind, bzw. In der beispielanwendung der `OldElement` -Eigenschaft `null` und `NewElement` Eigenschaft enthält einen Verweis auf die `MyEntry` Steuerelement.
 
