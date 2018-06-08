@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: ddd779fc7eb1a10e74c68504367083ff0efcdfcd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 7beb9e66a6e6bc29de36fcd605c5daa0098e75a2
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848537"
 ---
 # <a name="listview"></a>ListView
 
@@ -41,8 +42,8 @@ ListView wurde eine Reihe von Komponenten, die für die systemeigene Funktionali
 
 - **[Zellen](customizing-cell-appearance.md)**  &ndash; Daten in einem ListView werden in Zellen angezeigt. Jede Zelle entspricht einer Datenzeile. Integrierte Zellen zur Auswahl vorhanden sind, oder Sie können eigene benutzerdefinierte Zelle definieren. Integrierte und benutzerdefinierte Zellen können in XAML oder Code verwendet oder definiert werden.
   - **[Integrierte](customizing-cell-appearance.md#Built_in_Cells)**  &ndash; aus Zellen, insbesondere TextCell und ImageCell erstellt, können sich hervorragend für die Leistung zu erzielen, sein, da diese systemeigenen Steuerelementen für jede Plattform entsprechen.
-    - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash; eine Textzeichenfolge, optional mit Details Text angezeigt. Detail-Text wird als eine zweite Zeile in einer kleineren Schriftart mit einem Akzentfarbe gerendert.
-    - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash; zeigt ein Bild mit Text. Wird als eine TextCell mit einem Bild auf der linken Seite angezeigt.
+       - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash; eine Textzeichenfolge, optional mit Details Text angezeigt. Detail-Text wird als eine zweite Zeile in einer kleineren Schriftart mit einem Akzentfarbe gerendert.
+       - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash; zeigt ein Bild mit Text. Wird als eine TextCell mit einem Bild auf der linken Seite angezeigt.
   - **[Benutzerdefinierte Zellen](customizing-cell-appearance.md#customcells)**  &ndash; benutzerdefinierte Zellen sind hervorragend, wenn Sie komplexe Daten bereitstellen müssen. Beispielsweise konnte eine benutzerdefinierte Ansicht verwendet werden, um eine Liste von Songs ermöglicht, einschließlich Album und Interpreten darzustellen:
 
 ![](images/image-cell-default.png "ListView mit ImageCells")

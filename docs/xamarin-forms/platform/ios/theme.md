@@ -6,11 +6,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
-ms.openlocfilehash: 280ca523d3e3b4f5037d626cc5fd0bd5b31d0e8b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f14479d353d24910f66afd35f968a232ec31657c
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847282"
 ---
 # <a name="adding-ios-specific-formatting"></a>Hinzufügen von iOS-spezifische Formatierung
 
@@ -39,11 +40,11 @@ nav.BarTextColor = Color.White;
 
 Das Ergebnis wird der Bildschirm Codeausschnitt unten dargestellt. Beachten Sie, dass die Leiste Statuselemente Schwarz sind (Dies kann nicht festgelegt werden in Xamarin.Forms, da es sich um eine plattformspezifische-Funktion ist).
 
-![](theme-images/status-default-sml.png "iOS Theming")
+![](theme-images/status-default-sml.png "iOS Designumgebung")
 
 Im Idealfall die Statusleiste auch wäre weißen - etwas wir erreichen direkt in das iOS-Projekt. Fügen Sie die folgenden Einträge, die **"Info.plist"** zum Erzwingen der Statusleiste weiß sein:
 
-![](theme-images/info-plist.png "iOS Einträge der Datei "Info.plist"")
+![](theme-images/info-plist.png "iOS Einträge der Datei \"Info.plist\"")
 
 oder bearbeiten Sie die entsprechenden **"Info.plist"** Datei direkt einzuschließen:
 
@@ -56,7 +57,7 @@ oder bearbeiten Sie die entsprechenden **"Info.plist"** Datei direkt einzuschlie
 
 Nun, wenn die Anwendung ausgeführt wird, die Navigationsleiste grün ist und der Text weiß (aufgrund von Xamarin.Forms Formatierung ist) *und* Text in der Statusleiste wird auch weißen Dank iOS-spezifischen Konfigurationsaufgaben:
 
-![](theme-images/status-white-sml.png "iOS Theming")
+![](theme-images/status-white-sml.png "iOS Designumgebung")
 
 <a name="uiappearance"/>
 

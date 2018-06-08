@@ -6,12 +6,13 @@ ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 02/24/2017
-ms.openlocfilehash: d23f89ed8ad7956f7a366280a14ccc12ba3dac0c
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.date: 05/31/2018
+ms.openlocfilehash: 9b87145773bf16b15c391c5c5d6d136b7aa76e39
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848355"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Verwendung von XAML-Vorschau für Xamarin.Forms
 
@@ -55,6 +56,17 @@ Die Optionen am oberen Rand des Vorschaufensters sind:
 Einige Layouts möglicherweise schwer zu visualisieren ohne Daten an Steuerelemente der Benutzeroberfläche gebunden. Um die Vorschau nützlicher zu gestalten, weisen Sie einige statische Daten die Steuerelemente von hartcodierten einen Bindungskontext (entweder im Code-Behind oder mit XAML).
 
 Finden Sie in der James [Blogbeitrag zum Hinzufügen von Entwurfszeitdaten](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data) zum Binden an eine statische ViewModel in XAML finden Sie unter.
+
+## <a name="detecting-design-mode"></a>Erkennen von Entwurfsmodus
+
+Die statische [ `DesignMode.IsDesignModeEnabled` ](xref:Xamarin.Forms.DesignMode.IsDesignModeEnabled) -Eigenschaft analysiert werden, um festzustellen, ob die Anwendung, in der Vorschau ausgeführt wird. Dadurch können Sie Code angeben, die nur ausgeführt, wenn die Anwendung, in der Vorschau ausgeführt wird:
+
+```csharp
+if (DesignMode.IsDesignModeEnabled)
+{
+  // Previewer only code  
+}
+```
 
 ## <a name="troubleshooting"></a>Problembehandlung
 

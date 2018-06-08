@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: eaa57e90ef71f13a53737aa6540e5b5bd9126ad2
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 7171142951a2893233233bb8a1c44c5a84c57b5c
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848199"
 ---
 # <a name="localization"></a>Lokalisierung
 
@@ -54,7 +55,7 @@ Die Basis-Ressourcendatei (RESX) enthält die standardmäßige sprachenzeichenfo
 
 Wählen Sie einen aussagekräftigen Namen wie **AppResources** , und drücken Sie **OK**.
 
-[![Fügen Sie die Ressourcendatei](text-images/resx-new-file-sml.png "Dialogfeld "neue Datei"")](text-images/resx-new-file.png#lightbox "Dialogfeld "neue Datei"")
+[![Fügen Sie die Ressourcendatei](text-images/resx-new-file-sml.png "Dialogfeld \"neue Datei\"")](text-images/resx-new-file.png#lightbox "Dialogfeld \"neue Datei\"")
 
 Zwei Dateien werden dem Projekt hinzugefügt werden:
 
@@ -386,7 +387,7 @@ public class Localize : UsingResxLocalization.ILocalize
             switch (iOSLanguage)
             {
                 case "ms-MY":   // "Malaysian (Malaysia)" not supported .NET culture
-                case "ms-SG":   // "Malaysian (Singapore)" not supported .NET culture
+                case "ms-SG":    // "Malaysian (Singapore)" not supported .NET culture
                     netLanguage = "ms"; // closest supported
                     break;
                 case "gsw-CH":  // "Schwiizertüütsch (Swiss German)" not supported .NET culture
@@ -429,7 +430,7 @@ public class Localize : UsingResxLocalization.ILocalize
 
 Es gibt einige systemdefinierte Benutzeroberflächenelemente, die automatisch von iOS, z. B. übersetzt werden die **Fertig** auf die Schaltfläche der `Picker` Steuerelement. So erzwingen iOS verwenden, um diese Elemente zu übersetzen, wir benötigen, um anzugeben, welche Sprachen in unterstützt, der **"Info.plist"** Datei. Sie können diese Werte über hinzufügen **"Info.plist" > Quelle** wie hier gezeigt:
 
-![Lokalisierung Schlüssel in der Datei "Info.plist"](text-images/info-plist.png "Lokalisierung Schlüssel in der Datei "Info.plist"")
+![Lokalisierung Schlüssel in der Datei "Info.plist"](text-images/info-plist.png "Lokalisierung Schlüssel in der Datei \"Info.plist\"")
 
 Öffnen Sie alternativ die **"Info.plist"** Datei in einem XML-Editor, und bearbeiten Sie die Werte direkt:
 

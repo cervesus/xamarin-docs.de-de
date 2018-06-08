@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 4210f672cdc68acc45b1f547dcc2e6933298df93
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 7af9248e706e615ea3e693a58a5f7664e8dc4daa
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847811"
 ---
 # <a name="tabbed-page"></a>Seite im Registerformat
 
@@ -25,7 +26,7 @@ Die folgenden Screenshots zeigen eine [ `TabbedPage` ](https://developer.xamarin
 
 Die folgenden Screenshots konzentrieren sich auf die Registerkarte "-Format auf jeder Plattform:
 
-![](tabbed-page-images/tabbedpage-components.png "Registerkarte "TabbedPage"-Komponenten")
+![](tabbed-page-images/tabbedpage-components.png "Registerkarte \"TabbedPage\"-Komponenten")
 
 Das Layout einer [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/), die Registerkarten "und" ist abhängig von der Plattform:
 

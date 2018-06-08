@@ -6,12 +6,13 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/22/2017
-ms.openlocfilehash: 035365a22c487039ff811756d91ca0a8d392d628
-ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
+ms.date: 05/31/2018
+ms.openlocfilehash: 317d4f140daeccc525c4267fca43e6164a8f7827
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848316"
 ---
 # <a name="editor"></a>Editor
 
@@ -26,7 +27,7 @@ Die `Editor` Steuerelement wird verwendet, um die mehrzeilige Eingabe akzeptiere
 
 ### <a name="setting-and-reading-text"></a>Festlegen und Lesen von Text
 
-Wie andere Sichten darstellen von Text-Editor macht die `Text` Eigenschaft. `Text` kann verwendet werden, um festzulegen, und Lesen Sie den Text, präsentiert von der `Editor`. Im folgende Beispiel wird veranschaulicht, Text in XAML festlegen:
+Die `Editor`, wie andere Sichten Text vorlegen macht die `Text` Eigenschaft. Diese Eigenschaft kann verwendet werden, festlegen und Lesen Sie den Text, präsentiert von der `Editor`. Das folgende Beispiel veranschaulicht das Festlegen der `Text` Eigenschaft in XAML:
 
 ```xaml
 <Editor Text="I am an Editor" />
@@ -44,6 +45,20 @@ Um Text zu lesen, Zugriff auf die `Text` Eigenschaft in c#:
 var text = MyEditor.Text;
 ```
 
+### <a name="limiting-input-length"></a>Beschränken der Länge Eingabe
+
+Die [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Eigenschaft kann verwendet werden, um die Eingabe Länge beschränkt werden, der für zulässig ist die [ `Editor` ](xref:Xamarin.Forms.Editor). Diese Eigenschaft sollte eine positive ganze Zahl festgelegt werden:
+
+```xaml
+<Editor ... MaxLength="10" />
+```
+
+```csharp
+var editor = new Editor { ... MaxLength = 10 };
+```
+
+Ein [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) der Eigenschaftswert 0 gibt an, dass keine Eingabe möglich ist, und der Wert `int.MaxValue`, dies ist der Standardwert für eine [ `Editor` ](xref:Xamarin.Forms.Editor), gibt an, dass keine effektive Höchstwert für die Anzahl der Zeichen, die eingegeben werden können.
+
 ### <a name="keyboards"></a>Tastaturen
 
 Der Tastatur, die angezeigt werden, wenn Benutzer interagieren ein `Editor` programmgesteuert festgelegt werden können, über die [ ``Keyboard`` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Keyboard/) Eigenschaft.
@@ -58,6 +73,23 @@ Die Optionen für die Tastaturtyp sind:
 - **URL** &ndash; für die Eingabe Dateipfade & Webadressen verwendet
 
 Ist ein [Beispiel für jede Tastatur](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) in unserer Rezepte-Abschnitt.
+
+### <a name="enabling-and-disabling-spell-checking"></a>Aktivieren und Deaktivieren der Rechtschreibprüfung
+
+Die [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Eigenschaft steuert, ob Rechtschreibprüfung aktiviert ist. Standardmäßig ist die Eigenschaft auf festgelegt `true`. Wenn der Benutzer Text eingibt, werden orthographische angegeben.
+
+Für einige Szenarien für das Text-Eintrag, z. B. einen Benutzernamen eingeben Rechtschreibprüfung bietet jedoch ein negatives Erlebnis und daher sollte deaktiviert durch Festlegen der [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Eigenschaft `false`:
+
+```xaml
+<Editor ... IsSpellCheckEnabled="false" />
+```
+
+```csharp
+var editor = new Editor { ... IsSpellCheckEnabled = false };
+```
+
+> [!NOTE]
+> Wenn die [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) -Eigenschaftensatz auf `false`, und eine benutzerdefinierte Tastatur nicht verwendet wird, die systemeigene Rechtschreibprüfung deaktiviert. Jedoch wenn eine [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) hat wurde Satz, der deaktiviert die Rechtschreibprüfung zur Überprüfung der z. B. [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), die `IsSpellCheckEnabled` Eigenschaft wird ignoriert. Aus diesem Grund kann nicht die Eigenschaft verwendet werden, aktivieren Sie die Rechtschreibprüfung für eine `Keyboard` , von denen explizit deaktiviert.
 
 ### <a name="colors"></a>Farben
 

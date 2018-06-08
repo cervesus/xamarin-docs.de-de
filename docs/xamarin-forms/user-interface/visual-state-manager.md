@@ -8,11 +8,12 @@ ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: 14553bc9484ecc236fb4ceefd687ec7742109758
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3c0330d8d6d07112350db007d0500d57c236dc24
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848023"
 ---
 # <a name="the-xamarinforms-visual-state-manager"></a>Xamarin.Forms Visual-Status-Manager
 
@@ -711,7 +712,7 @@ Es mag, als ob die Code-Behind-Datei Ausrichtung Änderungen behandeln direkt du
 
 **Xamarin.Forms 3.0 Visual-Status-Manager, von [Xamarin University](https://university.xamarin.com/)**
 
-## <a name="related-links"></a>Verwandte links
+## <a name="related-links"></a>Verwandte Links
 
 - [VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)
 

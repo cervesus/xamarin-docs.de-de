@@ -6,24 +6,28 @@ ms.assetid: 68E8EF8A-42E7-4939-8ABE-64D060E609D9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 03/12/2018
-ms.openlocfilehash: 0ab9d3c83b849e5ab5aac8bce9c581abd0312237
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/04/2018
+ms.openlocfilehash: 09b0bd788d9ac436e0270b447556ad2b0a848f99
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848563"
 ---
 # <a name="using-datepicker"></a>DatePicker verwenden
 
 _Eine Xamarin.Forms-Sicht, die dem Benutzer ermöglicht, ein Datum auswählen_
 
-Der Xamarin.Forms [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) die Plattform Datumsauswahl Steuerelement ruft auf und ermöglicht es dem Benutzer ein Datum auswählen. `DatePicker` werden fünf Eigenschaften definiert:
+Der Xamarin.Forms [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) die Plattform Datumsauswahl Steuerelement ruft auf und ermöglicht es dem Benutzer ein Datum auswählen. `DatePicker` werden acht Eigenschaften definiert:
 
 - [`MinimumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) Der Typ [ `DateTime` ](https://developer.xamarin.com/api/type/System.DateTime/), die standardmäßig des ersten Tages des Jahres 1900.
 - [`MaximumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) Der Typ `DateTime`, die den Standardwert bis zum letzten Tag des Jahres 2100.
 - [`Date`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) Der Typ `DateTime`, die dem ausgewählten Datum wird auf den Wert standardmäßig- [ `DateTime.Today` ](https://developer.xamarin.com/api/property/System.DateTime.Today/).
 - [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Format/) vom Typ `string`, [standard](/dotnet/standard/base-types/standard-date-and-time-format-strings/) oder [benutzerdefinierte](/dotnet/standard/base-types/custom-date-and-time-format-strings/) .NET-Formatzeichenfolge, dessen Standard "D", die lange Datum Muster.
 - [`TextColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.TextColor/) Der Typ [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/), die Farbe, mit das ausgewählte Datum angezeigt, deren Standard [ `Color.Default` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/).
+- [`FontAttributes`](xref:Xamarin.Forms.DatePicker.FontAttributes) Der Typ [ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes), die standardmäßig die [ `FontAtributes.None` ](xref:Xamarin.Forms.FontAttributes.None).
+- [`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily) Der Typ `string`, die standardmäßig die `null`.
+- [`FontSize`](xref:Xamarin.Forms.DatePicker.FontSize) Der Typ `double`, die standardmäßig die -1.0.
 
 Die `DatePicker` ausgelöst wird eine [ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/) Ereignis aus, wenn der Benutzer wählt ein Datum aus.
 
@@ -32,7 +36,7 @@ Die `DatePicker` ausgelöst wird eine [ `DateSelected` ](https://developer.xamar
 
 Intern können die `DatePicker` wird sichergestellt, dass `Date` zwischen `MinimumDate` und `MaximumDate`(einschließlich). Wenn `MinimumDate` oder `MaximumDate` festgelegt ist, damit `Date` befindet sich nicht zwischen, `DatePicker` passen den Wert des `Date`.
 
-Alle fünf Eigenschaften werden durch gestützt [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) Objekte, was bedeutet, dass sie die formatiert werden können, und die Eigenschaften können Ziele von datenbindungen. Die `Date` Eigenschaft hat einen Standardmodus für die Bindung des [ `BindingMode.TwoWay` ](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/), was bedeutet, dass es ein Ziel einer Bindung in einer Anwendung sein kann, verwendet der [Model-View-ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) Architektur.
+Alle acht Eigenschaften werden durch gestützt [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) Objekte, was bedeutet, dass sie die formatiert werden können, und die Eigenschaften können Ziele von datenbindungen. Die `Date` Eigenschaft hat einen Standardmodus für die Bindung des [ `BindingMode.TwoWay` ](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/), was bedeutet, dass es ein Ziel einer Bindung in einer Anwendung sein kann, verwendet der [Model-View-ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) Architektur.
 
 ## <a name="initializing-the-datetime-properties"></a>Initialisieren der Eigenschaften "DateTime"
 
@@ -67,13 +71,15 @@ In diesem Beispiel werden alle drei Eigenschaften mit den entsprechenden Eigensc
 
 Wenn die `DatePicker` enthält eine Bindung nicht auf seine `Date` -Eigenschaft, eine Anwendung sollte einen Handler zum Anfügen der `DateSelected` Ereignis darüber informiert, wenn der Benutzer ein neues Datum auswählt.
 
+Informationen zum Festlegen von Schriftarteigenschaften finden Sie unter [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md).
+
 ## <a name="datepicker-and-layout"></a>DatePicker und layout
 
 Es ist möglich, eine nicht eingeschränkte horizontales Layout-Option verwenden, z. B. `Center`, `Start`, oder `End` mit `DatePicker`:
 
 ```xaml
-<DatePicker ··· 
-            HorizontalOptions="Center" 
+<DatePicker ···
+            HorizontalOptions="Center"
             ··· />
 ```
 
@@ -138,7 +144,7 @@ Hier wird die Verwendung von XAML-Datei ein:
 </ContentPage>
 ```
 
-Jede `DatePicker` erhält eine `Format` Eigenschaft von "D" für einen langen Datumsformat. Beachten Sie auch, dass die `endDatePicker` Objekt besitzt eine Bindung, die als Ziel verwendet die `MinimumDate` Eigenschaft. Bindungsquelle ist auf dem ausgewählten `Date` Eigenschaft von der `startDatePicker` Objekt. Dadurch wird sichergestellt, dass das Enddatum immer zu einem späteren Zeitpunkt als oder gleich dem Startdatum ist. Zusätzlich zu den beiden `DatePicker` Objekte eine `Switch` ist mit der Bezeichnung "Include beide Tage insgesamt". 
+Jede `DatePicker` erhält eine `Format` Eigenschaft von "D" für einen langen Datumsformat. Beachten Sie auch, dass die `endDatePicker` Objekt besitzt eine Bindung, die als Ziel verwendet die `MinimumDate` Eigenschaft. Bindungsquelle ist auf dem ausgewählten `Date` Eigenschaft von der `startDatePicker` Objekt. Dadurch wird sichergestellt, dass das Enddatum immer zu einem späteren Zeitpunkt als oder gleich dem Startdatum ist. Zusätzlich zu den beiden `DatePicker` Objekte eine `Switch` ist mit der Bezeichnung "Include beide Tage insgesamt".
 
 Die beiden `DatePicker` Ansichten verfügen über Handler verknüpft die `DateSelected` -Ereignis und die `Switch` an ein Handler angefügt seine `Toggled` Ereignis. Diese Ereignishandler sind in der CodeBehind-Datei und eine neue Berechnung der Tage zwischen den beiden Datumsangaben auslösen:
 
@@ -183,7 +189,7 @@ Nach zwei Datumsangaben ausgewählt sind, zeigt die Anwendung die Anzahl der Tag
 
 [![Tage zwischen Datumsangaben Ergebnis](datepicker-images/DaysBetweenDatesResult.png "Tage zwischen Datumsangaben Ergebnis")](datepicker-images/DaysBetweenDatesResult-Large.png#lightbox "Tage zwischen Datumsangaben Ergebnis")
 
-## <a name="related-links"></a>Verwandte links
+## <a name="related-links"></a>Verwandte Links
 
 - [DaysBetweenDates-Beispiel](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
 - [DatePicker-API](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/)

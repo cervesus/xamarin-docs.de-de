@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 3fc5b24474230fd2b2477f020ac24cd72996d7b1
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 49be5b812c5ef66907e7ebf74906c25bfbb076b6
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847162"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
@@ -67,7 +68,7 @@ public App ()
 
 Dies bewirkt, dass die `Page1Xaml` [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) Instanz, wo der aktiven Seite und die Seite "Root" der Anwendung wird im Navigationsbereich Stapel verschoben werden. Dies wird in den folgenden Screenshots veranschaulicht:
 
-![](hierarchical-images/mainpage.png "Seite "Root" der Navigationsstapel")
+![](hierarchical-images/mainpage.png "Seite \"Root\" der Navigationsstapel")
 
 > [!NOTE]
 > Die [ `RootPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.NavigationPage.RootPage/) Eigenschaft von einem [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) Instanz ermöglicht den Zugriff auf die erste Seite im Navigationsstapel.

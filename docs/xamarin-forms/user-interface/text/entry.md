@@ -6,24 +6,25 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/22/2017
-ms.openlocfilehash: 2e40effa7bc54b7b7cf73edaa882256fed521a95
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/31/2018
+ms.openlocfilehash: a45a4edb93920cfe1d0289da44ee664e41c25cf1
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847847"
 ---
 # <a name="entry"></a>Eingabe
 
 _Einzeilige Text- oder Kennwort eingeben_
 
-Xamarin.Forms `Entry` für einzeilige Texteingabe verwendet wird. `Entry`, wie der Editor-Ansicht unterstützt mehrere Tastaturtypen. Darüber hinaus `Entry` kann als ein Kennwortfeld verwendet werden.
+Die Xamarin.Forms `Entry` für einzeilige Texteingabe verwendet wird. Die `Entry`, z. B. die `Editor` anzeigen, unterstützt mehrere Tastaturtypen. Darüber hinaus die `Entry` kann als ein Kennwortfeld verwendet werden.
 
 ## <a name="display-customization"></a>Anzeige-Anpassung
 
 ### <a name="setting-and-reading-text"></a>Festlegen und Lesen von Text
 
-Eintrag, wie andere Sichten Text vorlegen macht die `Text` Eigenschaft. `Text` kann verwendet werden, um festzulegen, und Lesen Sie den Text, präsentiert von der `Entry`. Das folgende Beispiel veranschaulicht das Festlegen des Texts in XAML:
+Die `Entry`, wie andere Sichten Text vorlegen macht die `Text` Eigenschaft. Diese Eigenschaft kann verwendet werden, festlegen und Lesen Sie den Text, präsentiert von der `Entry`. Das folgende Beispiel veranschaulicht das Festlegen der `Text` Eigenschaft in XAML:
 
 ```xaml
 <Entry Text="I am an Entry" />
@@ -44,6 +45,20 @@ var text = MyEntry.Text;
 > [!NOTE]
 > Die Breite des ein `Entry` können definiert werden, indem seine `WidthRequest` Eigenschaft. Hängen die Breite des kein `Entry` definierende basierend auf dem Wert von dessen `Text` Eigenschaft.
 
+### <a name="limiting-input-length"></a>Beschränken der Länge Eingabe
+
+Die [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Eigenschaft kann verwendet werden, um die Eingabe Länge beschränkt werden, der für zulässig ist die [ `Entry` ](xref:Xamarin.Forms.Entry). Diese Eigenschaft sollte eine positive ganze Zahl festgelegt werden:
+
+```xaml
+<Entry ... MaxLength="10" />
+```
+
+```csharp
+var entry = new Entry { ... MaxLength = 10 };
+```
+
+Ein [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) der Eigenschaftswert 0 gibt an, dass keine Eingabe möglich ist, und der Wert `int.MaxValue`, dies ist der Standardwert für eine [ `Entry` ](xref:Xamarin.Forms.Entry), gibt an, dass keine effektive Höchstwert für die Anzahl der Zeichen, die eingegeben werden können.
+
 ### <a name="keyboards"></a>Tastaturen
 
 Der Tastatur, die angezeigt werden, wenn Benutzer interagieren ein `Entry` programmgesteuert festgelegt werden können, über die `Keyboard` Eigenschaft.
@@ -58,6 +73,23 @@ Die Optionen für die Tastaturtyp sind:
 - **URL** &ndash; für die Eingabe, Dateipfade und Webadressen verwendet
 
 Ist ein [Beispiel für jede Tastatur](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) in unserer Rezepte-Abschnitt.
+
+### <a name="enabling-and-disabling-spell-checking"></a>Aktivieren und Deaktivieren der Rechtschreibprüfung
+
+Die [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Eigenschaft steuert, ob Rechtschreibprüfung aktiviert ist. Standardmäßig ist die Eigenschaft auf festgelegt `true`. Wenn der Benutzer Text eingibt, werden orthographische angegeben.
+
+Für einige Szenarien für das Text-Eintrag, z. B. einen Benutzernamen eingeben Rechtschreibprüfung bietet jedoch ein negatives Erlebnis und daher sollte deaktiviert durch Festlegen der [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Eigenschaft `false`:
+
+```xaml
+<Entry ... IsSpellCheckEnabled="false" />
+```
+
+```csharp
+var entry = new Entry { ... IsSpellCheckEnabled = false };
+```
+
+> [!NOTE]
+> Wenn die [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) -Eigenschaftensatz auf `false`, und eine benutzerdefinierte Tastatur nicht verwendet wird, die systemeigene Rechtschreibprüfung deaktiviert. Jedoch wenn eine [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) hat wurde Satz, der deaktiviert die Rechtschreibprüfung zur Überprüfung der z. B. [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), die `IsSpellCheckEnabled` Eigenschaft wird ignoriert. Aus diesem Grund kann nicht die Eigenschaft verwendet werden, aktivieren Sie die Rechtschreibprüfung für eine `Keyboard` , von denen explizit deaktiviert.
 
 ### <a name="placeholders"></a>Platzhalter
 

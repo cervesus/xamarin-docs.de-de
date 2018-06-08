@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/03/2016
-ms.openlocfilehash: 7ce541134e6db9a26699f96ab3114ced2ad22244
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 4770076a0bf31ebd3cdf8f1b83da076a4dcc83ef
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847890"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Verwenden von CocosSharp in Xamarin.Forms
 
@@ -61,7 +62,7 @@ Das CocosSharp.Forms NuGet-Paket enthält die `CocosSharpView` -Klasse, die zum 
 Hinzufügen der **CocosSharp.Forms** NuGet und **CocosSharp** wird werden automatisch ebenfalls hinzugefügt.
 Zu diesem Zweck mit der Maustaste auf die <span class="UIItem">Pakete</span> Ordner im .NET Standard-Bibliotheksprojekt, und wählen <span class="UIItem">Pakete hinzufügen... </span>. Geben Sie den Suchbegriff <span class="UIItem">CocosSharp.Forms</span>Option <span class="UIItem">CocosSharp für Xamarin.Forms</span>, klicken Sie dann auf <span class="UIItem">Paket hinzufügen</span>.
 
-![](cocossharp-images/image1.png "Pakete-Dialogfeld "hinzufügen"")
+![](cocossharp-images/image1.png "Pakete-Dialogfeld \"hinzufügen\"")
 
 Beide **CocosSharp** und **CocosSharp.Forms** NuGet-Pakete werden dem Projekt hinzugefügt werden:
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 6a0544a58245efed696b92c543fbaf5e7e1b8365
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 1cf84203d78b0f41e506a3d9505da94b676184fe
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732826"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34846879"
 ---
 # <a name="introduction-to-dependencyservice"></a>Einführung in DependencyService
 
-## <a name="overview"></a>Überblick
+## <a name="overview"></a>Übersicht
 
 [`DependencyService`](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) ermöglicht apps Clientplattform-spezifische Funktionen von freigegebenem Code aufrufen. Diese Funktionen ermöglichen das Xamarin.Forms-apps, nichts zu tun, die eine systemeigene app durchführen können.
 
@@ -37,7 +37,7 @@ Die Struktur der Anwendung wird durch Folgendes Diagramm erläutert:
 
 ![](introduction-images/overview-diagram.png "DependencyService Anwendungsstruktur")
 
-### <a name="interface"></a>Schnittstelle
+### <a name="interface"></a>Interface
 
 Die Schnittstelle, die Sie entwerfen definieren Interaktion mit Clientplattform-spezifische Funktionen. Seien Sie vorsichtig, wenn Sie eine Komponente als eine Komponente oder ein NuGet-Paket die weiterzuleitenden entwickeln. API-Entwurf kann stellen oder ein Paket unterbrechen. Das folgende Beispiel gibt eine einfache Schnittstelle für sprechen, die bewirkt, dass die Implementierung für jede Plattform angepasst werden, ermöglicht Flexibilität bei der Angabe der Wörter zu sprechenden Text an:
 

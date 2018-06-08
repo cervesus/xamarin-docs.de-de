@@ -6,12 +6,13 @@ ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/20/2017
-ms.openlocfilehash: be131bdbfeceabd72494708cdfe9a263da9bbbd8
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 04/06/2018
+ms.openlocfilehash: 0609d15248f1827b892ae02a877382ca0ffbed18
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847630"
 ---
 # <a name="platform-features"></a>Plattformfeatures
 
@@ -41,10 +42,6 @@ Xamarin.Forms verfügt jetzt über Preview-Unterstützung für GTK-apps.
 
 Xamarin.Forms verfügt jetzt über Preview-Unterstützung für Mac OS-apps.
 
-## <a name="wpfwpfmd"></a>[WPF](wpf.md)
-
-Xamarin.Forms verfügt jetzt über Preview-Unterstützung für Windows Presentation Foundation (WPF)-apps.
-
 ## <a name="native-formsnative-formsmd"></a>[Native Formulare](native-forms.md)
 
 Systemeigene Forms zulassen Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-abgeleitete Seiten von systemeigene universelle Windows-Plattform (UWP), Xamarin.iOS und Xamarin.Android Projekte verwendet wird.
@@ -61,6 +58,14 @@ Plattform Einzelheiten können Sie Funktionen zu nutzen, die nur auf eine bestim
 
 Stehen eine Vielzahl von Open-Source-Plug-ins auf Github, Nuget sowie der Komponentenspeicher Xamarin, um Xamarin.Forms-apps zu erweitern.
 
+## <a name="tizentizenmd"></a>[tizen](tizen.md)
+
+Tizen .NET ermöglicht das Erstellen von .NET-Anwendungen, mit Xamarin.Forms und Tizen .NET Framework.
+
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
 Xamarin.Forms verfügt über Unterstützung für die universelle Windows-Plattform (UWP) unter Windows 10. Dieser Artikel enthält Informationen zum Hinzufügen einer uwp-Projekt zu einer vorhandenen Xamarin.Forms-Projektmappe.
+
+## <a name="wpfwpfmd"></a>[WPF](wpf.md)
+
+Xamarin.Forms verfügt jetzt über Preview-Unterstützung für Windows Presentation Foundation (WPF)-apps.
