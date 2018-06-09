@@ -1,20 +1,20 @@
 ---
-title: Datumsauswahl
-description: Die Auswahl einer Ansicht ist ein Steuerelement für die Auswahl eines Text aus einer Liste von Daten.
+title: Xamarin.Forms-Auswahl
+description: Die Auswahl einer Xamarin.Forms zeigt eine kurze Liste der Elemente, von denen der Benutzer ein Element auswählen kann. In diesem Artikel wird erläutert, wie die Datumsauswahl-Klasse, die Auswahl eines Textelements aus einer Liste von Daten verwendet wird.
 ms.prod: xamarin
 ms.assetid: D4815A4B-104B-4294-951B-BD8F2EC33C86
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/04/2018
-ms.openlocfilehash: 7f0050351ca28d7f8afeb82a85e82e51d399824b
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 82ae36a7be139e2a93d0e5c43c4bad355c49f217
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847497"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245038"
 ---
-# <a name="picker"></a>Datumsauswahl
+# <a name="xamarinforms-picker"></a>Xamarin.Forms-Auswahl
 
 _Die Auswahl einer Ansicht ist ein Steuerelement für die Auswahl eines Text aus einer Liste von Daten._
 

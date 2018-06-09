@@ -1,19 +1,20 @@
 ---
-title: Matrixtransformationen
-description: Eingehendere Untersuchung SkiaSharp Transformationen mit vielseitigen Transformationsmatrix
+title: Matrixtransformationen in SkiaSharp
+description: In diesem Artikel SkiaSharp Transformationen mit vielseitigen Transformationsmatrix Artikel eine umfassendere und wird dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 90fadf0081f86e7739d75c0710caeaf1775c423e
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 816a5f47a4a4f5c01a1fb20b5c8e7a2fc83a64b0
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244876"
 ---
-# <a name="matrix-transforms"></a>Matrixtransformationen
+# <a name="matrix-transforms-in-skiasharp"></a>Matrixtransformationen in SkiaSharp
 
 _Eingehendere Untersuchung SkiaSharp Transformationen mit vielseitigen Transformationsmatrix_
 
@@ -63,7 +64,7 @@ Verwenden die standardmäßigen Matrixmultiplikation, lauten wie folgt die konve
 
 x' = x
 
-y' = y
+y "= y
 
 z' = 1
 
@@ -87,7 +88,7 @@ Die Multiplikation ist jetzt wie folgt aus:
 
 Hier sind die Transformation Formeln:
 
-x' = x + tx
+X "= X +" TX "
 
 y "= y +" ty "
 
@@ -101,9 +102,9 @@ Skalierungsfaktoren haben den Standardwert 1. Beim Aufrufen der `Scale` Methode 
 
 Die Transformation Formeln lauten wie folgt:
 
-x' = sx · x
+X "Sx · = x
 
-y' = sy · y
+y "Sy · = y
 
 Nach dem Aufruf der Transformationsmatrix `Skew` die zwei Argumente in die Matrixzellen angrenzend an die Skalierungsfaktoren enthält:
 
@@ -129,7 +130,7 @@ Für einen Aufruf `RotateDegrees` oder `RotateRadians` für α-Winkel der Transf
 
 Hier sind die Transformation Formeln:
 
-x' = cos(α) · x - sin(α) · y
+X "= cos(α) · X - sin(α) · y
 
 y "= sin(α) · X - cos(α) · y
 
@@ -256,7 +257,7 @@ SKMatrix.Concat(ref R, ref A, ref B);
 
 Diese führen die folgenden Multiplikation:
 
-R = B × A
+R = B × EIN
 
 Die anderen Methoden werden nur zwei Parameter aufweisen. Der erste Parameter geändert, und bei der Rückgabe aus dem Aufruf der Methode ist, enthält das Produkt von zwei Matrizen. Die beiden `PostConcat` Methoden werden aufgerufen, wie folgt:
 
@@ -280,7 +281,7 @@ SKMatrix.PreConcat(ref A, ref B);
 
 Diese Aufrufe führen Sie den folgenden Vorgang:
 
-A = B × A
+A = B × EIN
 
 Die Versionen der Methodenaufrufen mit allen `ref` Argumente beim Aufrufen der zugrunde liegenden Implementierungen etwas effizienter sind, jedoch ist es möglicherweise verwirrend Personen Ihren Code lesen und vorausgesetzt, dass etwas mit einem `ref` Argument ist durch die Methode geändert. Darüber hinaus ist es häufig sinnvoll, ein Argument zu übergeben, das Ergebnis eines ist die `Make` Methoden, zum Beispiel:
 

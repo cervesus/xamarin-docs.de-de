@@ -1,18 +1,18 @@
 ---
 title: Erstellen eines benutzerdefinierten Layouts
-description: Xamarin.Forms definiert vier Klassen für Layout – StackLayout, AbsoluteLayout RelativeLayout und Raster, und jede ordnet die untergeordneten Elemente auf andere Weise. In einigen Fällen ist es jedoch erforderlich, zum Organisieren von Seiteninhalt mithilfe eines Layouts dargestellt, die nicht von Xamarin.Forms bereitgestellt. In diesem Artikel wird erläutert, wie eine benutzerdefiniertes Layout-Klasse schreiben und eine Ausrichtung Akzent WrapLayout-Klasse, die ordnet seine untergeordneten Elemente horizontal über die Seite, und klicken Sie dann dient als Wrapper für die Anzeige von nachfolgenden untergeordneten Elemente, um zusätzliche Zeilen veranschaulicht.
+description: In diesem Artikel wird erläutert, wie eine benutzerdefiniertes Layout-Klasse schreiben und eine Ausrichtung Akzent WrapLayout-Klasse, die ordnet seine untergeordneten Elemente horizontal über die Seite, und klicken Sie dann dient als Wrapper für die Anzeige von nachfolgenden untergeordneten Elemente, um zusätzliche Zeilen veranschaulicht.
 ms.prod: xamarin
 ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 7f2a443ded0d6b41db237e9842cd80e016bb5251
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: f225a80a1c386668b71d1cdd47409eb017f19033
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847745"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244934"
 ---
 # <a name="creating-a-custom-layout"></a>Erstellen eines benutzerdefinierten Layouts
 

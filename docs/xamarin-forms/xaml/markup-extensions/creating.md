@@ -1,22 +1,22 @@
 ---
 title: Erstellen von XAML-Markuperweiterungen
-description: Definieren Sie Ihre eigenen benutzerdefinierten XAML-Markuperweiterungen
+description: In diesem Artikel wird erläutert, wie Sie Ihre eigenen benutzerdefinierten Xamarin.Forms XAML-Markuperweiterungen definieren. Eine XAML-Markuperweiterung ist eine Klasse, die IMarkupExtension IMarkupExtension-Schnittstelle implementiert.
 ms.prod: xamarin
 ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 1a484aa4a19473c5a4f60b3d7bab78af7a20eecd
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b185ea3b7260ff2be8a4dec5dc713f24dc6e6095
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848251"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245702"
 ---
 # <a name="creating-xaml-markup-extensions"></a>Erstellen von XAML-Markuperweiterungen
 
-Auf der Ebene des programmgesteuerten eine XAML-Markuperweiterung ist eine Klasse, implementiert die [ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/) oder [ `IMarkupExtension<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension%3CT%3E/) Schnittstelle. Sie können den Quellcode der standardmäßigen Markuperweiterungen finden Sie unten im Untersuchen der [ **MarkupExtensions** Directory](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) des Xamarin.Forms GitHub-Repositorys. 
+Auf der Ebene des programmgesteuerten eine XAML-Markuperweiterung ist eine Klasse, implementiert die [ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/) oder [ `IMarkupExtension<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension%3CT%3E/) Schnittstelle. Sie können den Quellcode der standardmäßigen Markuperweiterungen finden Sie unten im Untersuchen der [ **MarkupExtensions** Directory](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) des Xamarin.Forms GitHub-Repositorys.
 
 Es ist auch möglich, Ihre eigenen benutzerdefinierten XAML-Markuperweiterungen definieren, durch Ableiten von `IMarkupExtension` oder `IMarkupExtension<T>`. Verwenden Sie das generische Formular aus, wenn die Markuperweiterung einen Wert eines bestimmten Typs erhält. Dies ist der Fall bei einiger der Markuperweiterungen Xamarin.Forms:
 
@@ -26,7 +26,7 @@ Es ist auch möglich, Ihre eigenen benutzerdefinierten XAML-Markuperweiterungen 
 - `BindingExtension` leitet sich von `IMarkupExtension<BindingBase>`
 - `ConstraintExpression` leitet sich von `IMarkupExtension<Constraint>`
 
-Die beiden `IMarkupExtension` Schnittstellen definieren nur eine Methode mit dem Namen `ProvideValue`: 
+Die beiden `IMarkupExtension` Schnittstellen definieren nur eine Methode mit dem Namen `ProvideValue`:
 
 ```csharp
 public interface IMarkupExtension
@@ -92,7 +92,7 @@ Die **HSL-Farbe Demo** Seite zeigt einer Vielzahl von Möglichkeiten, die `HslCo
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <StackLayout>
         <BoxView>
             <BoxView.Color>
@@ -121,7 +121,7 @@ Beachten Sie, dass bei `HslColorExtension` ist ein XML-Tag, die vier Eigenschaft
 
 ## <a name="a-markup-extension-for-accessing-bitmaps"></a>Eine Markuperweiterung für den Zugriff auf Bitmaps
 
-Das Argument für `ProvideValue` ist ein Objekt, implementiert die [ `IServiceProvider` ](https://developer.xamarin.com/api/type/System.IServiceProvider/) -Schnittstelle, die in .NET definiert ist `System` Namespace. Diese Schnittstelle verfügt über ein Element, eine Methode namens `GetService` mit einem `Type` Argument. 
+Das Argument für `ProvideValue` ist ein Objekt, implementiert die [ `IServiceProvider` ](https://developer.xamarin.com/api/type/System.IServiceProvider/) -Schnittstelle, die in .NET definiert ist `System` Namespace. Diese Schnittstelle verfügt über ein Element, eine Methode namens `GetService` mit einem `Type` Argument.
 
 Die `ImageResourceExtension` Klasse, die unten zeigt eine mögliche Verwendung der `IServiceProvider` und `GetService` zum Abrufen einer `IXmlLineInfoProvider` -Objekt, das Aufschluss kann Zeile und das Zeichen, der angibt, in denen ein bestimmter Fehler aufgetreten ist. In diesem Fall eine Ausnahme ausgelöst wird bei der `Source` Eigenschaft nicht festgelegt wurde:
 
@@ -152,7 +152,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` ist hilfreich, wenn eine XAML-Datei auf eine Bilddatei, die als eingebettete Ressource in der standardmäßigen .NET Library-Projekts gespeichert muss. Er verwendet die `Source` zum Aufrufen der statischen Eigenschaft `ImageSource.FromResource` Methode. Diese Methode muss es sich um ein vollständig qualifizierter Ressourcenname, besteht aus den Assemblynamen, den Namen des Ordners und der Dateiname, die durch Punkte getrennt. Die `ImageResourceExtension` nicht müssen der Assemblyname Teil daran, dass er erhält der Name der Assembly mit Reflektion und voran, damit die `Source` Eigenschaft. Unabhängig davon, `ImageSource.FromResource` muss aufgerufen werden, aus der Assembly, die die Bitmap, was bedeutet enthält, dass diese Erweiterung der Verwendung von XAML-Ressource von einer externen Bibliothek kann nicht verwendet werden, wenn die Images auch in diese Bibliothek sind. (Siehe die [ **eingebettete Bilder** ](~/xamarin-forms/user-interface/images.md#embedded_images) Artikel finden Sie weitere Informationen zum Zugreifen auf Bitmaps, die als eingebettete Ressourcen gespeichert.) 
+`ImageResourceExtension` ist hilfreich, wenn eine XAML-Datei auf eine Bilddatei, die als eingebettete Ressource in der standardmäßigen .NET Library-Projekts gespeichert muss. Er verwendet die `Source` zum Aufrufen der statischen Eigenschaft `ImageSource.FromResource` Methode. Diese Methode muss es sich um ein vollständig qualifizierter Ressourcenname, besteht aus den Assemblynamen, den Namen des Ordners und der Dateiname, die durch Punkte getrennt. Die `ImageResourceExtension` nicht müssen der Assemblyname Teil daran, dass er erhält der Name der Assembly mit Reflektion und voran, damit die `Source` Eigenschaft. Unabhängig davon, `ImageSource.FromResource` muss aufgerufen werden, aus der Assembly, die die Bitmap, was bedeutet enthält, dass diese Erweiterung der Verwendung von XAML-Ressource von einer externen Bibliothek kann nicht verwendet werden, wenn die Images auch in diese Bibliothek sind. (Siehe die [ **eingebettete Bilder** ](~/xamarin-forms/user-interface/images.md#embedded_images) Artikel finden Sie weitere Informationen zum Zugreifen auf Bitmaps, die als eingebettete Ressourcen gespeichert.)
 
 Obwohl `ImageResourceExtension` erfordert die `Source` festzulegende Eigenschaft, die `Source` Eigenschaft in einem Attribut angegeben ist, als die Content-Eigenschaft der Klasse. Dies bedeutet, dass die `Source=` Teil des Ausdrucks in geschweiften Klammern kann ausgelassen werden. In der **Image Ressource Demo** Seite der `Image` zwei Images, die mit den Namen des Ordners und der Dateiname, die durch Punkte getrennt Elemente abgerufen werden:
 
@@ -167,7 +167,7 @@ Obwohl `ImageResourceExtension` erfordert die `Source` festzulegende Eigenschaft
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <Image Source="{local:ImageResource Images.SeatedMonkey.jpg}"
                Grid.Row="0" />
 
@@ -198,7 +198,7 @@ Die `GetService` Aufruf mit dem Argument `typeof(IProvideValueTarget)` tatsächl
 
 ## <a name="conclusion"></a>Schlussbemerkung
 
-Verwendung von XAML-Markuperweiterungen spielen eine wichtige Rolle in XAML durch die Erweiterung der Möglichkeit, Attribute aus einer Vielzahl von Quellen festzulegen. Darüber hinaus, wenn die vorhandenen XAML-Markuperweiterungen nicht bereitstellen, was genau Sie benötigen, können Sie auch eigene schreiben. 
+Verwendung von XAML-Markuperweiterungen spielen eine wichtige Rolle in XAML durch die Erweiterung der Möglichkeit, Attribute aus einer Vielzahl von Quellen festzulegen. Darüber hinaus, wenn die vorhandenen XAML-Markuperweiterungen nicht bereitstellen, was genau Sie benötigen, können Sie auch eigene schreiben.
 
 
 ## <a name="related-links"></a>Verwandte Links

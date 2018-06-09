@@ -1,19 +1,20 @@
 ---
-title: Navigation
-description: Xamarin.Forms bietet eine Reihe von anderen Seite Navigation Erfahrungen, abhängig von den verwendeten Seitentyp.
+title: Xamarin.Forms-Navigation
+description: Dieses Handbuch erläutert die Navigation in Xamarin.Forms-apps auszuführen. Xamarin.Forms bietet eine Reihe von anderen Seite Navigation Erfahrungen, abhängig von den verwendeten Seitentyp.
 ms.prod: xamarin
 ms.assetid: BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 1a184e1ebfd9d87ba82642ebdfc30a8d3f92cce1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 90aedee42af7ed1788110e832fb3b435d870ee77
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241955"
 ---
-# <a name="navigation"></a>Navigation
+# <a name="xamarinforms-navigation"></a>Xamarin.Forms-Navigation
 
 _Xamarin.Forms bietet eine Reihe von anderen Seite Navigation Erfahrungen, abhängig von den verwendeten Seitentyp._
 
@@ -42,4 +43,3 @@ Xamarin.Forms bietet auch Unterstützung für modale Seiten. Eine modale Seite e
 ## <a name="displaying-pop-upspop-upsmd"></a>[Anzeigen von Popups](pop-ups.md)
 
 Xamarin.Forms stellt zwei pop-Einrichtung-ähnliche Elemente der Benutzeroberfläche: eine Warnung und einer Aktion-Tabelle. Diese Elemente der Benutzeroberfläche können Benutzer einfache Fragen stellen und als Anleitung für die Benutzer über die Aufgaben verwendet werden.
-

@@ -1,5 +1,5 @@
 ---
-title: Zugriff
+title: Xamarin.Forms-Eingabehilfen
 description: Erstellen eine barrierefreie Anwendung stellt sicher, dass die Anwendung von Personen verwendet werden kann, die die Benutzeroberfläche mit einem Bereich von Anforderungen und Erfahrungen, die für eine Methode.
 ms.prod: xamarin
 ms.assetid: 99B8A8E8-6F5E-46BC-9639-1C4A6D301049
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: e4fb151b9664df7236d2c22ed54db09bf7bc65b8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 813100acad03684fa9db5343534aee7ca13400c1
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241854"
 ---
-# <a name="accessibility"></a>Zugriff
+# <a name="xamarinforms-accessibility"></a>Xamarin.Forms-Eingabehilfen
 
 _Erstellen eine barrierefreie Anwendung stellt sicher, dass die Anwendung von Personen verwendet werden kann, die die Benutzeroberfläche mit einem Bereich von Anforderungen und Erfahrungen, die für eine Methode._
 
@@ -31,7 +32,7 @@ Xamarin.Forms-Anwendungen in der Regel auf mehrere Plattformen ausgerichtet, d. 
 
 - [**iOS testen**](~/ios/app-fundamentals/accessibility.md)
 - [**Android testen**](~/android/app-fundamentals/accessibility.md)
-- [**Windows AccScope (MSDN)**](https://msdn.microsoft.com/library/windows/desktop/dn433239)
+- [**Windows-AccScope (MSDN)**](https://msdn.microsoft.com/library/windows/desktop/dn433239)
 
 
 ## <a name="related-links"></a>Verwandte Links

@@ -1,19 +1,20 @@
 ---
-title: Verwendung von XAML-Kompilierung
-description: XAML kann optional auch direkt mit dem XAML-Compiler (XAMLC) in der Zwischensprache (Intermediate Language, IL) kompiliert werden.
+title: Verwendung von XAML-Kompilierung in Xamarin.Forms
+description: In diesem Artikel wird erläutert, wie XAML optional direkt in intermediate Language (IL) mit Xamarin.Forms XAML-Compiler (XAMLC) kompiliert werden kann.
 ms.prod: xamarin
 ms.assetid: 9A2D10A6-5DFC-485F-A75A-2F7B98314025
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/21/2016
-ms.openlocfilehash: fc4c7df6011fdf8d263b9fca88a5ffb551ec78e3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0128fecebe9f6ba8f55e965a8fa65787d03d9ded
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245744"
 ---
-# <a name="xaml-compilation"></a>Verwendung von XAML-Kompilierung
+# <a name="xaml-compilation-in-xamarinforms"></a>Verwendung von XAML-Kompilierung in Xamarin.Forms
 
 _XAML kann optional auch direkt in intermediate Language (IL) mit der Verwendung von XAML-Compiler (XAMLC) kompiliert werden._
 

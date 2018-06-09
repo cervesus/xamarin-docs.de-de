@@ -1,16 +1,18 @@
 ---
 title: Kommunikation zwischen lose gekoppelte Komponenten
+description: 'In diesem Kapitel wird erläutert, wie die eShopOnContainers mobile-Anwendung veröffentlichen implementiert-abonnieren-Muster, sodass meldungsbasierte Kommunikation zwischen Komponenten, die unpraktisch, Objekt und Typverweise verknüpft sind '
 ms.prod: xamarin
 ms.assetid: 1194af33-8a91-48d2-88b5-b84d77f2ce69
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 01669573f215c5a13bb918c9f9ba80aa5ca528c9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 797032d17babe986de1357c6ac3291a4960d87ff
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245080"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>Kommunikation zwischen lose gekoppelte Komponenten
 
@@ -126,4 +128,4 @@ Der Xamarin.Forms [ `MessagingCenter` ](https://developer.xamarin.com/api/type/X
 ## <a name="related-links"></a>Verwandte Links
 
 - [Download-e-Book (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (sample)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [eShopOnContainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

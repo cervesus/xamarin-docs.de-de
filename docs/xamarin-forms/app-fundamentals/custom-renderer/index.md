@@ -1,19 +1,20 @@
 ---
-title: Benutzerdefinierte Renderer
-description: Xamarin.Forms Benutzeroberflächen werden mit den systemeigenen Steuerelementen der Zielplattform, behalten die entsprechenden Aussehen und Verhalten für jede Plattform von Xamarin.Forms Anwendungen gestatten gerendert. Benutzerdefinierte Renderer können Entwickler, die diesen Prozess, um das Aussehen und Verhalten von Xamarin.Forms-Steuerelementen auf jeder Plattform anpassen außer Kraft setzen.
+title: Xamarin.Forms benutzerdefinierten Renderern
+description: Benutzerdefinierte Renderer können Entwickler, die das Rendering von der systemeigenen Steuerelementen für jede Plattform, um das Aussehen und Verhalten von Xamarin.Forms Steuerelementen anzupassen außer Kraft setzen.
 ms.prod: xamarin
 ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 6a2ee4b09426e6b4ff6dac7e1fd5221fc5b6d750
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a88462052906e68fd85a07161e8b5bb63a61e69d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239889"
 ---
-# <a name="custom-renderers"></a>Benutzerdefinierte Renderer
+# <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms benutzerdefinierten Renderern
 
 _Xamarin.Forms Benutzeroberflächen werden mit den systemeigenen Steuerelementen der Zielplattform, behalten die entsprechenden Aussehen und Verhalten für jede Plattform von Xamarin.Forms Anwendungen gestatten gerendert. Benutzerdefinierte Renderer können Entwickler, die diesen Prozess, um das Aussehen und Verhalten von Xamarin.Forms-Steuerelementen auf jeder Plattform anpassen außer Kraft setzen._
 
@@ -55,7 +56,7 @@ In diesem Artikel wird veranschaulicht, wie zum Erstellen eines benutzerdefinier
 
 ## <a name="implementing-a-video-playervideo-playerindexmd"></a>[Implementieren einen video player](video-player/index.md)
 
-In diesem Artikel wird gezeigt, wie zum Schreiben von Renderern zur Implementierung einer benutzerdefinierten `VideoPlayer` Steuerelement, die Videos aus dem Web, Videos, die als Anwendungsressourcen eingebettet oder Videos, die in der video-Bibliothek auf dem Gerät des Benutzers gespeicherten spielen können. Verschiedene Techniken werden veranschaulicht, einschließlich der Methoden und schreibgeschützte bindbare Eigenschaften implementieren. 
+In diesem Artikel wird gezeigt, wie zum Schreiben von Renderern zur Implementierung einer benutzerdefinierten `VideoPlayer` Steuerelement, die Videos aus dem Web, Videos, die als Anwendungsressourcen eingebettet oder Videos, die in der video-Bibliothek auf dem Gerät des Benutzers gespeicherten spielen können. Verschiedene Techniken werden veranschaulicht, einschließlich der Methoden und schreibgeschützte bindbare Eigenschaften implementieren.
 
 
 ## <a name="related-links"></a>Verwandte Links

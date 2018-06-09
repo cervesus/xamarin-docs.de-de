@@ -1,22 +1,24 @@
 ---
 title: Laden die Anwendung Ressourcen videos
+description: In diesem Artikel wird erläutert, wie beim Laden von Videos, die als Anwendungsressourcen in einer video playeranwendung mithilfe von Xamarin.Forms gespeichert wird.
 ms.prod: xamarin
 ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 89c424ee80a4ebf6363a836e752b72ee9bc5cd5a
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: f28b0dc8e25cb2e498f4101175005f05a5c5a6ef
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241031"
 ---
 # <a name="loading-application-resource-videos"></a>Laden die Anwendung Ressourcen videos
 
 Die benutzerdefinierten Renderer für die `VideoPlayer` Ansicht Videodateien, die in den einzelnen plattformprojekten als Anwendungsressourcen eingebettet wurden wiedergegeben werden. Allerdings die aktuelle Version des `VideoPlayer` keinen Zugriff auf Ressourcen in eine .NET Standardbibliothek eingebettet.
 
-Um diese Ressourcen zu laden, erstellen Sie eine Instanz des `ResourceVideoSource` durch Festlegen der `Path` Eigenschaft für den Dateinamen (oder den Ordner und Dateiname) der Ressource. Rufen Sie alternativ die statische `VideoSource.FromResource` Methode, um die Ressource verweisen. Schalten Sie dann die `ResourceVideoSource` -Objekt an die `Source` Eigenschaft `VideoPlayer`. 
+Um diese Ressourcen zu laden, erstellen Sie eine Instanz des `ResourceVideoSource` durch Festlegen der `Path` Eigenschaft für den Dateinamen (oder den Ordner und Dateiname) der Ressource. Rufen Sie alternativ die statische `VideoSource.FromResource` Methode, um die Ressource verweisen. Schalten Sie dann die `ResourceVideoSource` -Objekt an die `Source` Eigenschaft `VideoPlayer`.
 
 ## <a name="storing-the-video-files"></a>Speichern der video-Dateien
 
@@ -30,13 +32,13 @@ In der **VideoPlayerDemos** Lösung, die **VideoPlayerDemos.iOS** Projekt enthä
 
 ### <a name="android-video-resources"></a>Android Videoressourcen
 
-In einem Android-Projekt müssen in einem Unterordner des Videos gespeichert werden **Ressourcen** mit dem Namen **unformatierten**. Die **unformatierten** Ordner darf keine Unterordner enthalten. Geben Sie die Datei eine `Build Action` von `AndroidResource`. Legen Sie die `Path` Eigenschaft `ResourceVideoSource` zum Dateinamen, z. B. **MyFile.mp4**. 
+In einem Android-Projekt müssen in einem Unterordner des Videos gespeichert werden **Ressourcen** mit dem Namen **unformatierten**. Die **unformatierten** Ordner darf keine Unterordner enthalten. Geben Sie die Datei eine `Build Action` von `AndroidResource`. Legen Sie die `Path` Eigenschaft `ResourceVideoSource` zum Dateinamen, z. B. **MyFile.mp4**.
 
-Die **VideoPlayerDemos.Android** Projekt enthält einen Unterordner des **Ressourcen** mit dem Namen **unformatierten**, enthält eine Datei namens **AndroidApiVideo.mp4**. 
+Die **VideoPlayerDemos.Android** Projekt enthält einen Unterordner des **Ressourcen** mit dem Namen **unformatierten**, enthält eine Datei namens **AndroidApiVideo.mp4**.
 
 ### <a name="uwp-video-resources"></a>Uwp-video-Ressourcen
 
-In einem Uwp-Projekt können Sie Videos in einem beliebigen Ordner im Projekt speichern. Geben Sie der Datei ein `Build Action` von `Content`. Legen Sie die `Path` Eigenschaft `ResourceVideoSource` auf den Ordner und den Dateinamen, z. B. **MyFolder/MyVideo.mp4**. 
+In einem Uwp-Projekt können Sie Videos in einem beliebigen Ordner im Projekt speichern. Geben Sie der Datei ein `Build Action` von `Content`. Legen Sie die `Path` Eigenschaft `ResourceVideoSource` auf den Ordner und den Dateinamen, z. B. **MyFolder/MyVideo.mp4**.
 
 Die **VideoPlayerDemos.UWP** Projekt enthält einen Ordner namens **Videos** mit der Datei **UWPApiVideo.mp4**.
 
@@ -169,7 +171,7 @@ Die **Videoressourcen wiedergeben** auf der Seite der **VideoPlayerDemos** Lösu
 </ContentPage>
 ```
 
-Wenn die iOS-Ressource in gespeichert ist die **Ressourcen** Ordner, und wenn die Ressource für die universelle Windows-Plattform im Stammordner des Projekts gespeichert wird, können Sie den gleichen Dateinamen verwenden, für die drei Plattformen. Wenn das der Fall ist, können Sie direkt mit diesem Namen Festlegen der `Source` Eigenschaft `VideoPlayer`. 
+Wenn die iOS-Ressource in gespeichert ist die **Ressourcen** Ordner, und wenn die Ressource für die universelle Windows-Plattform im Stammordner des Projekts gespeichert wird, können Sie den gleichen Dateinamen verwenden, für die drei Plattformen. Wenn das der Fall ist, können Sie direkt mit diesem Namen Festlegen der `Source` Eigenschaft `VideoPlayer`.
 
 Hier wird die Seite, die auf drei Plattformen ausgeführt:
 

@@ -1,23 +1,24 @@
 ---
-title: Xamarin.Forms Cells
-description: Xamarin.Forms Zellen können Listenansichten und TableViews hinzugefügt werden.
+title: Xamarin.Forms Zellen
+description: Xamarin.Forms Zellen können Listenansichten und TableViews hinzugefügt werden. In diesem Artikel werden die Zellen enthalten in Xamarin.Forms aufgelistet.
 ms.prod: xamarin
 ms.assetid: 77DA0C89-35D6-4C09-A072-3ADE53FD56CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: dbc28f3d58b43bb53db39da2dcdf1ba722169264
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0947027b43eacd0bac269ebf7a779746e0d22866
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243355"
 ---
-# <a name="xamarinforms-cells"></a>Xamarin.Forms Cells
+# <a name="xamarinforms-cells"></a>Xamarin.Forms Zellen
 
 _Xamarin.Forms Zellen können Listenansichten und TableViews hinzugefügt werden._
 
-Ein *Zelle* ist eine spezielle Element für Elemente in einer Tabelle verwendet und es wird beschrieben, wie jedes Element in einer Liste gerendert werden soll. Die [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/) Klasse abgeleitet [ `Element` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/), von dem [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/) auch abgeleitet wird. Eine Zelle ist nicht selbst ein visuelles Element; Es wird stattdessen eine Vorlage zum Erstellen eines visuellen Elements. 
+Ein *Zelle* ist eine spezielle Element für Elemente in einer Tabelle verwendet und es wird beschrieben, wie jedes Element in einer Liste gerendert werden soll. Die [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/) Klasse abgeleitet [ `Element` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/), von dem [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/) auch abgeleitet wird. Eine Zelle ist nicht selbst ein visuelles Element; Es wird stattdessen eine Vorlage zum Erstellen eines visuellen Elements.
 
 `Cell` dient ausschließlich mit [ `ListView` ](views.md#listView) und [ `TableView` ](views.md#tableView) Steuerelemente. Weitere Informationen zum verwenden und Anpassen von Zellen, finden Sie in der [ `ListView` ](~/xamarin-forms/user-interface/listview/index.md) und [ `TableView` ](~/xamarin-forms/user-interface/tableview.md) Dokumentation.
 

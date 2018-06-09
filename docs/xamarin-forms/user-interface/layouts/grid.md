@@ -1,20 +1,20 @@
 ---
-title: Raster
-description: Ansichten werden in einem Raster dargestellt.
+title: Xamarin.Forms-Raster
+description: In diesem Artikel wird erläutert, wie die Xamarin.Forms-Raster-Klasse, die zum Darstellen von Ansichten in Raster, die Zeilen und Spalten verarbeiten verwendet wird.
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 6ff36f511c5194017afd34601fc9ea2f89b1e2d4
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: a50144f5e0962bd74858bb7731e30cef5dd31b6d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848108"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245152"
 ---
-# <a name="grid"></a>Raster
+# <a name="xamarinforms-grid"></a>Xamarin.Forms-Raster
 
 [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) unterstützt das Anordnen von Ansichten in Zeilen und Spalten. Zeilen und Spalten können festgelegt werden, um proportional Größen oder absolute Größen haben. Die `Grid` Layout sollten nicht mit herkömmlichen Tabellen verwechselt werden und dient nicht zum Präsentieren von Tabellendaten. `Grid` Es muss nicht das Konzept der Zeile, Spalte oder Zelle, die Formatierung. Im Gegensatz zu HTML-Tabellen `Grid` ist ausschließlich für das Layout des Inhalt vorgesehen.
 

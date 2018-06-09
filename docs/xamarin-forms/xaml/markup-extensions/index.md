@@ -1,17 +1,18 @@
 ---
 title: Verwendung von XAML-Markuperweiterungen
-description: Erweitern Sie den Bereich von Quellen, die über das XAML-Attributen festgelegt ist
+description: Der Artikel wird erläutert, wie Xamarin.Forms XAML-Markuperweiterungen verwenden, um die Leistungsfähigkeit und Flexibilität von XAML zu erweitern, können Sie die Attribute des Elements aus anderen Quellen als literaltextzeichenfolgen festgelegt werden.
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: b81bc4b31edd1d8b8f5f43f97885c38e889dd32c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c6f1853c5864eed8484e7746755c6fa80a28a49b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245884"
 ---
 # <a name="xaml-markup-extensions"></a>Verwendung von XAML-Markuperweiterungen
 
@@ -33,7 +34,7 @@ In beiden Fällen die Textzeichenfolge festlegen, um die `Color` Attribut konver
 
 Möglicherweise bevorzugen Sie stattdessen zum Festlegen der `Color` Attribut aus einem Wert in einem Ressourcenwörterbuch, den Wert einer statischen Eigenschaft einer Klasse, die Sie erstellt haben, oder über eine Eigenschaft vom Typ `Color` eines anderen Elements auf der Seite oder konstruierten aus Trennen Sie Werte für Farbton, Sättigung und Helligkeit.
 
-Alle diese Optionen sind mit der Verwendung von XAML-Markuperweiterungen möglich. Aber lassen Sie nicht den Ausdruck "Markuperweiterungen" erschrecken Sie: Verwendung von XAML-Markuperweiterungen sind *nicht* Erweiterungen in XML. Selbst bei Verwendung von XAML-Markuperweiterungen ist XAML immer gültige XML-Daten. 
+Alle diese Optionen sind mit der Verwendung von XAML-Markuperweiterungen möglich. Aber lassen Sie nicht den Ausdruck "Markuperweiterungen" erschrecken Sie: Verwendung von XAML-Markuperweiterungen sind *nicht* Erweiterungen in XML. Selbst bei Verwendung von XAML-Markuperweiterungen ist XAML immer gültige XML-Daten.
 
 Eine Markuperweiterung ist genau genommen nur eine andere Möglichkeit, ein Attribut eines Elements express. Verwendung von XAML-Markuperweiterungen werden in der Regel durch eine attributeinstellung, die in der geschweiften Klammern eingeschlossen ist zu identifizieren:
 
@@ -49,7 +50,7 @@ Dieser Artikel ist in zwei Teile unterteilt:
 
 Verwenden Sie die Verwendung von XAML-Markuperweiterungen in Xamarin.Forms definiert.
 
-## <a name="creating-xaml-markup-extensionscreatingmd"></a>[Erstellen von XAML-Markuperweiterungen](creating.md) 
+## <a name="creating-xaml-markup-extensionscreatingmd"></a>[Erstellen von XAML-Markuperweiterungen](creating.md)
 
 Schreiben Sie Ihre eigenen benutzerdefinierten XAML-Markuperweiterungen.
 

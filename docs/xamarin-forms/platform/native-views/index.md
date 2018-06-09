@@ -1,19 +1,20 @@
 ---
-title: Systemeigene Ansichten
-description: Systemeigene Ansichten von iOS, Android und die universelle Windows-Plattform (UWP) können direkt von Xamarin.Forms verwiesen werden. Eigenschaften und Ereignishandler für systemeigene Sichten festgelegt werden können, und sie können mit Xamarin.Forms Sichten interagieren.
+title: Systemeigene Ansichten in Xamarin.Forms
+description: Systemeigene Ansichten von iOS, Android und die universelle Windows-Plattform (UWP) können direkt von Xamarin.Forms verwiesen werden, und können sie mit Xamarin.Forms Sichten interagieren.
 ms.prod: xamarin
 ms.assetid: 2294a023-d763-41de-a9da-c2bfc239a132
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 06459b9b44ac6991cacc8d9fdfccbf2ecabfcac0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b2ce371767b5f22af421ab99cdb291b2dbcf1143
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244327"
 ---
-# <a name="native-views"></a>Systemeigene Ansichten
+# <a name="native-views-in-xamarinforms"></a>Systemeigene Ansichten in Xamarin.Forms
 
 _Systemeigene Ansichten von iOS, Android und die universelle Windows-Plattform (UWP) können direkt von Xamarin.Forms verwiesen werden. Eigenschaften und Ereignishandler für systemeigene Sichten festgelegt werden können, und sie können mit Xamarin.Forms Sichten interagieren._
 

@@ -1,20 +1,20 @@
 ---
-title: Eingabe
-description: Einzeilige Text- oder Kennwort eingeben
+title: Xamarin.Forms-Eintrag
+description: In diesem Artikel wird erläutert, wie die Xamarin.Forms-Eintrag-Klasse verwenden, um einzeilige Text- oder Kennworteingabe in einer Anwendung zu akzeptieren.
 ms.prod: xamarin
 ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: a45a4edb93920cfe1d0289da44ee664e41c25cf1
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b6188b986589a56229ad2e092d4100ff3f75dbe4
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847847"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245552"
 ---
-# <a name="entry"></a>Eingabe
+# <a name="xamarinforms-entry"></a>Xamarin.Forms-Eintrag
 
 _Einzeilige Text- oder Kennwort eingeben_
 

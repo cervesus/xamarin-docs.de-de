@@ -1,17 +1,18 @@
 ---
 title: Der Translate-Transformation
-description: Erfahren Sie, wie die übersetzen-Transformation verwenden, um SkiaSharp Grafiken zu verschieben
+description: Dieser Artikel Examiens übersetzen-Transformation verwenden, um SkiaSharp Grafiken in Xamarin.Forms Anwendungen zu verschieben und wird dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 98bf81df3eed951893c6bb717d933cfb61e029d3
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: dbc7ffe5c3828876579ba72a387c86d8221c1641
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244821"
 ---
 # <a name="the-translate-transform"></a>Der Translate-Transformation
 
@@ -72,7 +73,7 @@ Durch Einfügung aufeinander folgenden Rechtecke nach unten:
 
 Wenn die akkumulierten Übersetzung Faktoren sind `dx` und `dy`, und der Angabe in einer Zeichnung-Funktion (`x`, `y`), und klicken Sie dann das Objekt, an dem Punkt gerendert wird (`x'`, `y'`), wobei:
 
-x' = x + dx
+X "= X + Dx
 
 y "= y + dy
 

@@ -1,18 +1,20 @@
 ---
-title: Einführung
+title: Einführung in Enterprise-App-Entwicklung
+description: Dieses Kapitel bietet eine Einführung in Enterprise-app-Entwicklung und die mobilen Anwendung für eShopOnContainers führt.
 ms.prod: xamarin
 ms.assetid: cbce0659-fa03-447a-86ec-140438143230
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: a4f1f6ba820221be7553405f570911d3dc66a657
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9deb685c92092ceb0e1c775a1e53ac1bce5a4a57
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242959"
 ---
-# <a name="introduction"></a>Einführung
+# <a name="introduction-to-enterprise-app-development"></a>Einführung in Enterprise-App-Entwicklung
 
 Unabhängig von Plattform müssen Entwickler von Unternehmens-apps beinhaltet einige Herausforderungen stellen:
 
@@ -130,7 +132,7 @@ Die eShopOnContainers mobile app-Projektmappe organisiert den Quellcode und ande
 
 Die Klassen aus der mobilen app eShopOnContainers können in jeder app Xamarin.Forms mit geringfügigen oder ohne Änderungen erneut verwendet werden.
 
-##### <a name="eshoponcontainerscore-project"></a>eShopOnContainers.Core Project
+##### <a name="eshoponcontainerscore-project"></a>eShopOnContainers.Core Projekt
 
 EShopOnContainers.Core PCL-Projekt enthält die folgenden Ordner:
 
@@ -166,4 +168,4 @@ Entwickler von Unternehmens-apps sind mehrere Herausforderungen, die die Archite
 ## <a name="related-links"></a>Verwandte Links
 
 - [Download-e-Book (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (sample)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [eShopOnContainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

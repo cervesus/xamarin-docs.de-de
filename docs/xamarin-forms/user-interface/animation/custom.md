@@ -1,20 +1,20 @@
 ---
-title: Benutzerdefinierte Animationen
-description: Die Animation-Klasse ist der Baustein von allen Xamarin.Forms Animationen mit den Erweiterungsmethoden in den ViewExtensions-Klasse, erstellen eine oder mehrere Animationsobjekte. Dieser Artikel veranschaulicht, wie die Animation-Klasse zum Erstellen und "Abbrechen" Animationen mehrere Animationen zu synchronisieren, und Erstellen von benutzerdefinierten Animationen, die Eigenschaften zu animieren, die durch die vorhandenen Methoden für die Animation animiert werden nicht.
+title: Benutzerdefinierte Animationen in Xamarin.Forms
+description: Dieser Artikel veranschaulicht, wie die Xamarin.FOrms-Animation-Klasse zum Erstellen und "Abbrechen" Animationen mehrere Animationen zu synchronisieren, und Erstellen von benutzerdefinierten Animationen, die Eigenschaften zu animieren, die durch die vorhandenen Methoden für die Animation animiert werden nicht.
 ms.prod: xamarin
 ms.assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 238268a3ad2b82494f1d096d0cbeba97edb90366
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 74430f6c158e74569f1b2cbfa0b6a85e8d40fbcf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847783"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242975"
 ---
-# <a name="custom-animations"></a>Benutzerdefinierte Animationen
+# <a name="custom-animations-in-xamarinforms"></a>Benutzerdefinierte Animationen in Xamarin.Forms
 
 _Die Animation-Klasse ist der Baustein von allen Xamarin.Forms Animationen mit den Erweiterungsmethoden in den ViewExtensions-Klasse, erstellen eine oder mehrere Animationsobjekte. Dieser Artikel veranschaulicht, wie die Animation-Klasse zum Erstellen und "Abbrechen" Animationen mehrere Animationen zu synchronisieren, und Erstellen von benutzerdefinierten Animationen, die Eigenschaften zu animieren, die durch die vorhandenen Methoden für die Animation animiert werden nicht._
 

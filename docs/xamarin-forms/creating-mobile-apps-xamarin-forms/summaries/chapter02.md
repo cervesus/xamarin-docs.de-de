@@ -1,16 +1,18 @@
 ---
 title: Zusammenfassung der Kapitel 2. Aufbau einer App
+description: 'Beim Erstellen mobiler Apps mit Xamarin.Forms: Zusammenfassung der Chapter 2. Aufbau einer App'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 81bcc8e2f8627264820a859123e1be1a9f960a92
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 208cf28341ceaa43d1c56b4f5086dc98febee6be
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242746"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Zusammenfassung der Kapitel 2. Aufbau einer App
 
@@ -142,11 +144,11 @@ Die `Device.OnPlatform` Methoden werden verwendet, um plattformspezifischen Code
 
 Die `Device.OnPlatform` Methoden, die `Device.OS` -Eigenschaft, und die `TargetPlatform` Enumeration sind alle jetzt als veraltet markiert. Verwenden Sie stattdessen die [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) -Eigenschaft, und Vergleichen der `string` Rückgabewert mit den folgenden statischen Feldern:
 
-- [`iOS`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.iOS/), die Zeichenfolge "iOS" 
+- [`iOS`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.iOS/), die Zeichenfolge "iOS"
 - [`Android`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.Android/), die Zeichenfolge "Android"
 - [`UWP`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.UWP/), die Zeichenfolge "UWP" verweist auf die Windows-Runtime-Plattform
 - [`Windows`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.Windows/), die Zeichenfolge "Windows" für Windows-Runtime (Windows 8.1 und Windows Phone 8.1)
-- [`WinPhone`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.WinPhone/), die Zeichenfolge "WinPhone" für Windows Phone 8.0 
+- [`WinPhone`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.WinPhone/), die Zeichenfolge "WinPhone" für Windows Phone 8.0
 
 Die [ `Device.Idiom` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.Idiom/) statische schreibgeschützte Eigenschaft verknüpft ist. Dies gibt ein Mitglied der [ `TargetIdiom` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetIdiom/), dem umfasst folgende Member:
 

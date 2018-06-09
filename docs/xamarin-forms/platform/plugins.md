@@ -1,19 +1,20 @@
 ---
-title: Plug-Ins
-description: Fügen Sie einfaches nativen Funktionen zu Xamarin.Forms-apps hinzu
+title: Verarbeiten, und erstellen Xamarin.Forms-Plug-Ins
+description: In diesem Artikel erläutert, wie zu nutzen und Xamarin.Forms-Plug-Ins zu erstellen. Plug-Ins werden normalerweise verwendet, um systemeigene Plattformfunktionen leicht verfügbar zu machen.
 ms.prod: xamarin
 ms.assetid: 8A06A420-A9D0-4BCB-B9AF-3AEA6A648A8B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2016
-ms.openlocfilehash: 5770d13c46998872752820b7a0cbb222a04c3ff8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dff9fad0da30475a0fb91c0af76a25ea50d34439
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242556"
 ---
-# <a name="plugins"></a>Plug-Ins
+# <a name="consuming-and-creating-xamarinforms-plugins"></a>Verarbeiten, und erstellen Xamarin.Forms-Plug-Ins
 
 Es gibt viele native Plattformfunktionen, die auf allen Plattformen vorhanden sind, aber haben geringfügig APIs. Entwickler schreiben, um eine abstrakte plattformübergreifende-Schnittstelle für diese Funktionen zu erstellen, die sie auch für andere Benutzer freigeben können-Plug-Ins.
 
@@ -23,7 +24,7 @@ Zu diesen Funktionen gehören: Akkustatus, Kompass während des Verschiebens Sen
 
 Die Xamarin-Community viele plattformübergreifende-Plug-Ins mit Xamarin.Forms - kompatiblen erstellt hat eine große Auflistung finden Sie unter:
 
-[**Xamarin Plugins**](https://github.com/xamarin/plugins)
+[**Xamarin-Plug-Ins**](https://github.com/xamarin/plugins)
 
 Eine Anleitung zum Hinzufügen von NuGet-Pakete zu Ihrem Projekt, finden Sie unter exemplarischen auf [einschließlich NuGet-Paket im Projekt](/visualstudio/mac/nuget-walkthrough/).
 

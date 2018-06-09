@@ -1,17 +1,18 @@
 ---
 title: Beim Erstellen mobiler Apps mit Xamarin.Forms Buch erste Edition
-description: Erfahren Sie Xamarin.Forms, mit der elektronische Version des Buchs von Charles Petzold Mobile Apps erstellen.
+description: Erfahren Sie Xamarin.Forms-Anwendungsentwicklung mit der elektronische Version des Buchs von Charles Petzold Mobile Apps erstellen.
 ms.prod: xamarin
 ms.assetid: CDE99818-689B-4376-9DC4-C4102AC0F931
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/03/2016
-ms.openlocfilehash: 6e98adc4cc9dbf1ef6483d552d859b4925d51fe9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 84ed08419c49617ee0fcde57682e512ecb9ee6d7
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241701"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book-first-edition"></a>Beim Erstellen mobiler Apps mit Xamarin.Forms Buch erste Edition
 
@@ -85,7 +86,7 @@ Online [Kapitel Zusammenfassungen](summaries/index.md) beschreiben den Inhalt de
 </tr>
 <tr style="background:#ecf0f1">
   <td style="border:0px;">
-    <h4>Kapitel 7. XAML vs. Code</h4>
+    <h4>Kapitel 7. Verwendung von XAML-im Vergleich zu Code</h4>
   </td>
   <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf">PDF herunterladen</a> </td>
   <td style="border:0px;" align="right"><a href="summaries/chapter07.md">Zusammenfassung</a></td>

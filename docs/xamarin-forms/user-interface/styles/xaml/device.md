@@ -1,20 +1,20 @@
 ---
-title: Geräte-Stile
-description: Xamarin.Forms enthält sechs dynamische Formate, bekannt als Gerät Formate, in der Device.Styles-Klasse.
+title: Geräte-Stile in Xamarin.Forms
+description: Xamarin.Forms enthält sechs dynamische Formate, bekannt als Gerät Formate, in der Device.Styles-Klasse. In diesem Artikel erläutert, wie die Geräte-Stile in einer Xamarin.Forms-Anwendung nutzen.
 ms.prod: xamarin
 ms.assetid: 7FF19ED1-0822-4238-9435-AD970317A2F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: cd2b6219a9a8e880bd48b31706a8abc8a977ca11
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 6b5d4623bb331f4bf52faa096afeacb21d6d7489
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848160"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245594"
 ---
-# <a name="device-styles"></a>Geräte-Stile
+# <a name="device-styles-in-xamarinforms"></a>Geräte-Stile in Xamarin.Forms
 
 _Xamarin.Forms enthält sechs dynamische Formate, bekannt als Gerät Formate, in der Device.Styles-Klasse._
 

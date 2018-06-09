@@ -1,18 +1,18 @@
 ---
 title: Xamarin.Forms-Ansichten
-description: Xamarin.Forms-Ansichten sind die Bausteine von plattformübergreifenden mobilen Benutzeroberflächen.
+description: Xamarin.Forms-Ansichten sind die Bausteine von plattformübergreifenden mobilen Benutzeroberflächen. In diesem Artikel werden die Ansichten aufgeführt, die in Xamarin.Forms enthalten sind.
 ms.prod: xamarin
 ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: aafad29a30130c9ec088121e03a986034f002e1c
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 414df933716c7ce5d9422e8a2b9be89ba7eff3a9
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733086"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243517"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms-Ansichten
 
@@ -22,7 +22,7 @@ Ansichten sind Benutzeroberflächenobjekte wie z. B. Schaltflächen, Bezeichnung
 
 ## <a name="views-for-presentation"></a>Ansichten für die Präsentation
 
-### <a name="label"></a>Label
+### <a name="label"></a>Bezeichnung
 
 |     |     |
 | --- | --- |
@@ -80,9 +80,9 @@ Ansichten sind Benutzeroberflächenobjekte wie z. B. Schaltflächen, Bezeichnung
 | [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) Zeigt einen Bereich für den Benutzer auf den Typ einer Textzeichenfolge und einer Schaltfläche (oder eine Taste auf der Tastatur), der signalisiert die Anwendung gesucht werden soll. Die [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.Text/) Eigenschaft ermöglicht den Zugriff auf den Text ein, und die [ `SearchButtonPressed` ](https://developer.xamarin.com/api/event/Xamarin.Forms.SearchBar.SearchButtonPressed/) Ereignis zeigt an, die gedrückt wurde.<br /><br />[API-Dokumentation](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) | [![Beispiel für SearchBar](views-images/SearchBar.png "SearchBar Beispiel")](views-images/SearchBar-Large.png#lightbox "SearchBar-Beispiel")<br /> [C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SearchBarDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml) mit [CodeBehind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml.cs) |
 |     |     |
 
-## <a name="views-for-setting-values"></a>Ansichten für das Festlegen von Werten 
+## <a name="views-for-setting-values"></a>Ansichten für das Festlegen von Werten
 
-### <a name="slider"></a>Schieberegler
+### <a name="slider"></a>Slider
 
 |     |     |
 | --- | --- |
@@ -96,7 +96,7 @@ Ansichten sind Benutzeroberflächenobjekte wie z. B. Schaltflächen, Bezeichnung
 | [`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) ermöglicht dem Benutzer, wählen Sie eine `double` aus einem Bereich inkrementelle Werte, die mit dem angegebenen Wert der [ `Minimum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Minimum/), [ `Maximum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Maximum/), und [ `Increment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Increment/) Eigenschaften.<br /><br />[API-Dokumentation](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) | [![Beispiel mit zugeordnetem](views-images/Stepper.png "zugeordnetem Beispiel")](views-images/Stepper-Large.png#lightbox "zugeordnetem-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
 |     |     |
 
-### <a name="switch"></a>Schalter 
+### <a name="switch"></a>Schalter
 
 |     |     |
 | --- | --- |

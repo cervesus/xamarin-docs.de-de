@@ -1,17 +1,18 @@
 ---
 title: Verwenden Xamarin.Forms-e-Book Enterprise-Anwendungsmuster
-description: Architekturrichtlinien für die Entwicklung von Xamarin.Forms-unternehmensanwendungen anwendbare, verwaltbare und getestet werden können
+description: Diese e-Book bietet architekturbezogene Anleitungen für die Entwicklung von Xamarin.Forms-unternehmensanwendungen anwendbare, verwaltbare und getestet werden können.
 ms.prod: xamarin
 ms.assetid: 28cfed6c-6175-4223-a8cc-798d40bf0832
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: b7f69e987eb4f628dfaf5422bc1ce52108d90634
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c401465d8a57abe1d5a1cfaf9ee2616888332ea3
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242162"
 ---
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Verwenden Xamarin.Forms-e-Book Enterprise-Anwendungsmuster
 
@@ -83,4 +84,4 @@ Dieses Projekt bietet eine Community-Website, auf der können Sie Fragen stellen
 ## <a name="related-links"></a>Verwandte Links
 
 - [Download-e-Book (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (sample)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [eShopOnContainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

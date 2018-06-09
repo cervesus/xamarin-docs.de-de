@@ -1,17 +1,18 @@
 ---
 title: Verwendung von XAML-Standard (Vorschau)-Steuerelemente
-description: Untersuchen die Verwendung von XAML-Standard-Vorschau in Xamarin.Forms erste Schritte
+description: In diesem Artikel wird erklärt, die Verwendung von XAML-Standardsteuerelemente in Xamarin.Forms verfügbar.
 ms.prod: xamarin
 ms.assetid: 287E6631-D1C5-46C5-8905-AB53D34E365D
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
-ms.openlocfilehash: 2fc7fb9581f344e0d54bd9f690d334eda78cc97a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1b01d0773f0c2150db575875b770957eb6452f41
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245566"
 ---
 # <a name="xaml-standard-preview-controls"></a>Verwendung von XAML-Standard (Vorschau)-Steuerelemente
 
@@ -23,7 +24,7 @@ Es gibt auch eine Liste der Steuerelemente, die neue Eigenschaft und Enumeration
 
 ## <a name="controls"></a>Steuerelemente
 
-|Xamarin.Forms|XAML Standard|
+|Xamarin.Forms|Verwendung von XAML-Standard|
 |--- |--- |
 |Frame|Rahmen|
 |Datumsauswahl|ComboBox|
@@ -39,12 +40,12 @@ Es gibt auch eine Liste der Steuerelemente, die neue Eigenschaft und Enumeration
 
 |Xamarin.Forms-Steuerelemente mit aktualisierten Eigenschaften|Xamarin.Forms-Eigenschaft oder eine Enumerationsklasse|Verwendung von XAML-Standard entspricht.|
 |--- |--- |--- |
-|Schaltfläche, Eintrag, Bezeichnung, DatePicker, Editor, SearchBar, TimePicker|TextColor|Vordergrund|
+|Schaltfläche, Eintrag, Bezeichnung, DatePicker, Editor, SearchBar, TimePicker|textColor|Vordergrund|
 |VisualElement|BackgroundColor|Hintergrund *|
-|Auswahl, einer Schaltfläche|BorderColor, OutlineColor|BorderBrush|
+|Auswahl, einer Schaltfläche|BorderColor OutlineColor|BorderBrush|
 |Schaltfläche|BorderWidth|BorderThickness|
 |ProgressBar|Status|Wert|
-|Schaltfläche, Eintrag, Bezeichnung, Editor, SearchBar, Spanne, Schriftart|FontAttributesBold, kursiv, keine|FontStyleItalic, Normal|
+|Schaltfläche, Eintrag, Bezeichnung, Editor, SearchBar, Spanne, Schriftart|FontAttributesBold, kursiv, keine|FontStyleItalic – Normal|
 |Schaltfläche, Eintrag, Bezeichnung, Editor, SearchBar, Spanne, Schriftart|FontAttributes|FontWeights * fett, Normal|
 |InputView|KeyboardDefault, Url, Anzahl, Telefon, Text, Chat, per e-Mail senden|InputScopeNameValue * Standard, Url, Anzahl, "telephoneNumber", Text, Chat, EmailNameOrAddress|
 |StackPanel|StackOrientation|Ausrichtung *|

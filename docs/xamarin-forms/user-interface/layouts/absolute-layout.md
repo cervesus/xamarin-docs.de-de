@@ -1,20 +1,20 @@
 ---
-title: AbsoluteLayout
-description: Verwenden Sie AbsoluteLayout Pixel perfekte Benutzeroberflächen zu erstellen.
+title: Xamarin.Forms AbsoluteLayout
+description: In diesem Artikel wird erläutert, wie die Xamarin.Forms AbsoluteLayout Klasse Pixel perfekte Benutzeroberflächen zu erstellen. Diese Klasse Position und Größe von untergeordneten Elementen, die Größe und Position oder Absolute Werte proportional.
 ms.prod: xamarin
 ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 506a9a4916cf2cf9105d59f56648e339d664a3d2
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: f36334bca9e7401f35d4b6181b47c0f64923f652
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848387"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244456"
 ---
-# <a name="absolutelayout"></a>AbsoluteLayout
+# <a name="xamarinforms-absolutelayout"></a>Xamarin.Forms AbsoluteLayout
 
 [`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) Position und Größe untergeordnete-Elemente, die Größe und Position oder Absolute Werte proportional. Untergeordnete Ansichten möglicherweise positioniert und Größe mit proportional oder statische Werte und proportional und statische Werte kombiniert werden können.
 

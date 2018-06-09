@@ -1,20 +1,20 @@
 ---
-title: Stil-Vererbung
-description: Stile können von anderen Formatvorlagen Duplizierung zu reduzieren, und aktivieren die Wiederverwendung erben.
+title: Stil-Vererbung in Xamarin.Forms
+description: Stile können von anderen Formatvorlagen Duplizierung zu reduzieren, und aktivieren die Wiederverwendung erben. In diesem Artikel wird erläutert, wie Stil Vererbung in einer Xamarin.Forms-Anwendung ausgeführt wird.
 ms.prod: xamarin
 ms.assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 7b489e90daec2659a6d11b2776731582bdf368ff
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: aff47769fad065e03de4c62af1be1d67b903eb0a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848420"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245093"
 ---
-# <a name="style-inheritance"></a>Stil-Vererbung
+# <a name="style-inheritance-in-xamarinforms"></a>Stil-Vererbung in Xamarin.Forms
 
 _Stile können von anderen Formatvorlagen Duplizierung zu reduzieren, und aktivieren die Wiederverwendung erben._
 

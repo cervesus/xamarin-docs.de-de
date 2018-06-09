@@ -1,19 +1,20 @@
 ---
-title: Punkte und Bindestriche enthalten
-description: Die Komplexität der Zeichnung SkiaSharp punktierter und gestrichelter Linien "Master"
+title: Punkte und Bindestriche im SkiaSharp
+description: In diesem Artikel wird erklärt, wie Sie die Komplexität der Zeichnung SkiaSharp punktierter und gestrichelter Linien "master", und dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.assetid: 8E9BCC13-830C-458C-9FC8-ECB4EAE66078
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 1e295ac424c311472ff175d4627c5fb12641d31f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 5571f2d1824cef72e192a19d15f9af03276f7523
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243872"
 ---
-# <a name="dots-and-dashes"></a>Punkte und Bindestriche enthalten
+# <a name="dots-and-dashes-in-skiasharp"></a>Punkte und Bindestriche im SkiaSharp
 
 _Die Komplexität der Zeichnung SkiaSharp punktierter und gestrichelter Linien "Master"_
 

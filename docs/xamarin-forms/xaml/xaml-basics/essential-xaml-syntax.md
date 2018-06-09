@@ -1,17 +1,18 @@
 ---
 title: Teil 2. Grundlegende XAML-Syntax
-description: XAML ist hauptsächlich für das Instanziieren und Initialisieren von Objekten. Aber häufig Eigenschaften müssen festgelegt werden, um komplexe Objekte, die einfach als XML-Zeichenfolgen dargestellt werden können, und in einigen Fällen müssen durch eine Klasse definierte Eigenschaften festgelegt werden, auf eine untergeordnete Klasse. Diese beiden Anforderungen erfordern die wesentlichen Features der XAML-Syntax von Eigenschaftenelemente und angefügte Eigenschaften.
+description: In diesem Artikel wird erläutert, die wichtige Features der XAML-Syntax für Eigenschaftenelemente und angefügte Eigenschaften.
 ms.prod: xamarin
 ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: d0129ec9872d8e5270ed8f0072cff0035d4f5255
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 62223a4c56198271513b0b15587bb588e71b28cc
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245845"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Teil 2. Grundlegende XAML-Syntax
 

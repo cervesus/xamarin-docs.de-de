@@ -1,19 +1,20 @@
 ---
-title: Bindungspfad
-description: Verwenden Sie die datenbindungen untergeordnete Zugriffseigenschaften und Elemente der Auflistung
+title: Xamarin.Forms Bindungspfad
+description: In diesem Artikel wird das Xamarin.Forms-datenbindungen zu verwenden, um den Zugriff auf untergeordnete Eigenschaften und Elemente der Auflistung mit dem Path-Eigenschaft der Bindungsklasse erläutert.
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: f75cfcf4bfd5ffa71699f62b30145b732421d964
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d7c3b1ba991380451b4a82c389c4d46e950bc914
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240472"
 ---
-# <a name="binding-path"></a>Bindungspfad
+# <a name="xamarinforms-binding-path"></a>Xamarin.Forms Bindungspfad
 
 In allen vorherigen Datenbindungsfunktionen Beispielen die [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) Eigenschaft von der `Binding` Klasse (oder die [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.Path/) Eigenschaft von der `Binding` Markuperweiterung) festgelegt wurde Um eine einzelne Eigenschaft. Es ist möglich, legen Sie `Path` auf eine *untergeordnete Eigenschaft* (eine Eigenschaft einer Eigenschaft), oder auf einen Member einer Auflistung.
 
@@ -29,7 +30,7 @@ Die `Time` Eigenschaft `TimePicker` ist vom Typ `TimeSpan`, aber vielleicht möc
 {Binding Source={x:Reference timePicker},
          Path=Time.TotalSeconds}
 ```
-         
+
 Die `Time` -Eigenschaft ist vom Typ `TimeSpan`, verfügt über eine `TotalSeconds` Eigenschaft. Die `Time` und `TotalSeconds` Eigenschaften sind einfach verbundenen mit einem Punkt. Die Elemente in der `Path` Zeichenfolge verweist immer auf Eigenschaften und nicht auf die Typen dieser Eigenschaften.
 
 Beispiel und einigen weiteren Bildschirmen, in angezeigt werden der **Pfad Variationen** Seite:
@@ -50,7 +51,7 @@ Beispiel und einigen weiteren Bildschirmen, in angezeigt werden der **Pfad Varia
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <StackLayout Margin="10, 0">
         <TimePicker x:Name="timePicker" />
 
@@ -61,7 +62,7 @@ Beispiel und einigen weiteren Bildschirmen, in angezeigt werden der **Pfad Varia
         <Label Text="{Binding Source={x:Reference page},
                               Path=Content.Children.Count,
                               StringFormat='There are {0} children in this StackLayout'}" />
-        
+
         <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},
                               Path=DateTimeFormat.DayNames[3],
                               StringFormat='The middle day of the week is {0}'}" />
@@ -156,7 +157,7 @@ Die den Typ der Bindungsquelle, anzeigt oder `DataBindingDemos.PathVariationsPag
 
 Der Typ des der `Content` Eigenschaft wird jetzt offen gelegt werden `Xamarin.Forms.StackLayout`. Hinzufügen der `Children` Eigenschaft, um die `Path` und der Typ ist `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`, also in einer Klasse, die interne Xamarin.Forms, jedoch offensichtlich einen Sammlungstyp. Fügen Sie einen Index, und der Typ ist `Xamarin.Forms.Label`. Auf diese Weise fortgesetzt.
 
-Da Xamarin.Forms den Bindungspfad verarbeitet, installiert eine `PropertyChanged` Handler für jedes Objekt im Pfad, der implementiert die `INotifyPropertyChanged` Schnittstelle. Angenommen, die letzte Bindung antwortet auf eine Änderung in der ersten `Label` da die `Text` -Eigenschaft ändert. 
+Da Xamarin.Forms den Bindungspfad verarbeitet, installiert eine `PropertyChanged` Handler für jedes Objekt im Pfad, der implementiert die `INotifyPropertyChanged` Schnittstelle. Angenommen, die letzte Bindung antwortet auf eine Änderung in der ersten `Label` da die `Text` -Eigenschaft ändert.
 
 Wenn eine Eigenschaft in den Bindungspfad keine implementiert `INotifyPropertyChanged`, Änderungen an dieser Eigenschaft werden ignoriert. Einige Änderungen konnte den Bindungspfad vollständig ungültig, weshalb Sie diese Technik verwenden sollten, nur, wenn die Zeichenfolge von Eigenschaften und untergeordnete Eigenschaften nie ungültig.
 

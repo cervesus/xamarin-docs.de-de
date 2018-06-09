@@ -1,17 +1,18 @@
 ---
 title: Authentifizieren von Benutzern mit einer Azure-Cosmos-DB-Dokument-Datenbank
-description: Azure DB Cosmos-Dokument-Datenbanken unterstützen partitionierte Sammlungen enthalten, die mehrere Server und Partitionen, und unterstützt eine unbegrenzte Speicherdauer und Durchsatz erstrecken können. In diesem Artikel wird erläutert, wie Zugriffssteuerung mit partitionierte Sammlungen kombiniert, damit ein Benutzer nur ihre eigenen Dokumente in einer Xamarin.Forms-Anwendung zugreifen kann.
+description: In diesem Artikel wird erläutert, wie Zugriffssteuerung mit Azure-Cosmos-Datenbank partitionierte Sammlungen kombiniert, damit ein Benutzer nur ihre eigenen Dokumente in einer Xamarin.Forms-Anwendung zugreifen kann.
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 0132f849a066976896295da8b8b67ed8bf3c3e8d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 031a48e5e10100b2c57ac067a0dda916c93d20da
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241610"
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>Authentifizieren von Benutzern mit einer Azure-Cosmos-DB-Dokument-Datenbank
 
@@ -273,5 +274,5 @@ In diesem Artikel wird erläutert, wie Zugriffssteuerung mit partitionierte Samm
 - [Sichern des Zugriffs auf Azure-Cosmos-DB-Daten](/azure/cosmos-db/secure-access-to-data/)
 - [Zugriffssteuerung in der SQL-API](/rest/api/documentdb/access-control-on-documentdb-resources/).
 - [Partitionieren und Skalierung in Azure-Cosmos-DB](/azure/cosmos-db/partition-data/)
-- [Azure Cosmos DB Client Library](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
-- [Azure Cosmos DB API](https://msdn.microsoft.com/library/azure/dn948556.aspx)
+- [Azure-Cosmos-DB-Clientbibliothek](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
+- [Azure-Cosmos-DB-API](https://msdn.microsoft.com/library/azure/dn948556.aspx)

@@ -1,19 +1,20 @@
 ---
-title: Zeichnen eines Kreises einfache
-description: Grundlagen der SkiaSharp zeichnen, einschließlich explizite und paint
+title: Zeichnen ein einfacher Kreis in SkiaSharp
+description: Dieser Artikel erläutert die Grundlagen der SkiaSharp Zeichnung explizite und Paint in Xamarin.Forms-Anwendungen, einschließlich und wird dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9e5b18bd6a565639e2ca22f4637a67c4f48717f6
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 68085894e0e4783a3a16428d331b6993ab967c5a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243583"
 ---
-# <a name="drawing-a-simple-circle"></a>Zeichnen eines Kreises einfache
+# <a name="drawing-a-simple-circle-in-skiasharp"></a>Zeichnen ein einfacher Kreis in SkiaSharp
 
 _Grundlagen der SkiaSharp zeichnen, einschließlich explizite und paint_
 

@@ -1,19 +1,20 @@
 ---
-title: Application Fundamentals (Anwendungsgrundlagen)
-description: Untersuchen die Grundlagen der Entwicklung Xamarin.Forms
+title: Grundlagen der Xamarin.Forms-Anwendung
+description: Untersuchen die Grundlagen der Xamarin.Forms die Anwendungsentwicklung, einschließlich aller der erforderlichen Kernkonzepte über Schliff z. B. Eingabehilfen und Lokalisierung.
 ms.prod: xamarin
 ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 2bd050e6eba33b543c52a80bb42b184200164c14
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: f843f4b1c20daba2a504bd0e70ae51f4d0405c06
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240245"
 ---
-# <a name="application-fundamentals"></a>Application Fundamentals (Anwendungsgrundlagen)
+# <a name="xamarinforms-application-fundamentals"></a>Grundlagen der Xamarin.Forms-Anwendung
 
 ## <a name="accessibilityaccessibilityindexmd"></a>[Barrierefreiheit](accessibility/index.md)
 

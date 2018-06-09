@@ -1,19 +1,20 @@
 ---
-title: Grundlegende Animation
-description: Erfahren Sie, wie Grafiken SkiaSharp animieren
+title: Grundlegende Animation in SkiaSharp
+description: In diesem Artikel wird erläutert, wie Grafiken SkiaSharp in Xamarin.Forms Anwendungen animieren, und dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 859677a3dcfcddd0b333c9ddf60c01e2093b6a5b
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 08583a62719927b900c6aeede1b3b4398ed803de
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243342"
 ---
-# <a name="basic-animation"></a>Grundlegende Animation
+# <a name="basic-animation-in-skiasharp"></a>Grundlegende Animation in SkiaSharp
 
 _Erfahren Sie, wie Grafiken SkiaSharp animieren_
 

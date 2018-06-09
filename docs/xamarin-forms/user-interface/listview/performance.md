@@ -1,28 +1,24 @@
 ---
 title: ListView-Leistung
-description: Stellen Sie sicher hervorragende Leistung mit Ihrer ListView-basierten app.
+description: Obwohl ListView eine leistungsstarke Ansicht zum Anzeigen von Daten ist, gibt es einige Einschränkungen. In diesem Artikel erläutert die gute Leistung mit Xamarin.Forms ListView in einer Anwendung zu gewährleisten.
 ms.prod: xamarin
 ms.assetid: 1B085639-652C-4862-86EB-5D55D32B9395
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: dcd4881e2ad7f1bb4af5455805da1dd2cade3605
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4803a612e2b06e458f2859dbbbd30b970f0fc8ea
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244902"
 ---
 # <a name="listview-performance"></a>ListView-Leistung
 
 Beim Schreiben von mobilen Anwendungen, wichtig ist die Leistung. Benutzer haben Sie smooth Durchführen eines Bildlaufs und schnellen Ladezeiten erwartet stammen. Wegen eines Fehlers beim Ihrer Benutzer Erwartungen werden Kosten Sie Bewertungen in den App Store, oder sich für eine Line-of-Business-Anwendung Kosten Ihrem Unternehmen Zeit und Geld.
 
 Obwohl [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) ist eine leistungsstarke Ansicht zum Anzeigen von Daten aus, es gelten einige Einschränkungen. Durchführen eines Bildlaufs Leistung kann beeinträchtigt werden, wenn benutzerdefinierte Zellen zu verwenden, insbesondere, wenn sie in der Schachtelungshierarchie Ansicht Hierarchien enthalten oder verwenden bestimmte Layouts, die viele der Messung erfordern. Glücklicherweise sind Techniken, die Sie verwenden können, um Leistungseinbußen zu vermeiden.
-
-In diesem Artikel werden die folgenden Themen behandelt:
-
-- **[Zwischenspeicherstrategie](#cachingstrategy)**
-- **[Verbessern der Leistung von ListView](#improving-performance)**
 
 <a name="cachingstrategy" />
 

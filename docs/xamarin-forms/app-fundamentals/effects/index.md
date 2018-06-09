@@ -1,19 +1,20 @@
 ---
-title: Effekte
-description: Xamarin.Forms Benutzeroberflächen werden mit den systemeigenen Steuerelementen der Zielplattform, behalten die entsprechenden Aussehen und Verhalten für jede Plattform von Xamarin.Forms Anwendungen gestatten gerendert. Effekte ermöglichen die native Steuerelemente für jede Plattform angepasst werden, ohne dass hierfür ein benutzerdefinierter Renderer-Implementierung.
+title: Xamarin.Forms Effekte
+description: Effekte ermöglichen die native Steuerelemente für jede Plattform angepasst werden, ohne dass hierfür ein benutzerdefinierter Renderer-Implementierung.
 ms.prod: xamarin
 ms.assetid: 8AF168A7-4CD9-4603-B961-15B8B1543784
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: 63d7750294321a28dbde833f72fe6b7277ada397
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc1c600aa6d5ede079fe0af83370393d4f0e298f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239695"
 ---
-# <a name="effects"></a>Effekte
+# <a name="xamarinforms-effects"></a>Xamarin.Forms Effekte
 
 _Xamarin.Forms Benutzeroberflächen werden mit den systemeigenen Steuerelementen der Zielplattform, behalten die entsprechenden Aussehen und Verhalten für jede Plattform von Xamarin.Forms Anwendungen gestatten gerendert. Effekte ermöglichen die native Steuerelemente für jede Plattform angepasst werden, ohne dass hierfür ein benutzerdefinierter Renderer-Implementierung._
 

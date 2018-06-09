@@ -1,17 +1,18 @@
 ---
 title: Suchen nach Daten mit Azure Search
-description: Azure Search ist ein Cloud-Dienst, der Indizierung und Abfragefunktionen für hochgeladene Daten bereitstellt. Dies entfernt die Anforderungen an die Infrastruktur und die Suche Algorithmus Komplexitäten, die normalerweise bei der Implementierung von Suchfunktionen in einer Anwendung verknüpft sind. Dieser Artikel veranschaulicht, wie der Microsoft Azure Search-Bibliothek zur Integration von Azure Search in einer Xamarin.Forms-Anwendung.
+description: Dieser Artikel veranschaulicht, wie der Microsoft Azure Search-Bibliothek zur Integration von Azure Search in einer Xamarin.Forms-Anwendung.
 ms.prod: xamarin
 ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: b0542b330e54a41a0cbe6ffe364def78ab6386b8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bb1ebec25d747f1188f39e9c9032145bcdc3cb97
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242127"
 ---
 # <a name="searching-data-with-azure-search"></a>Suchen nach Daten mit Azure Search
 
@@ -278,4 +279,4 @@ Dieser Artikel veranschaulicht, wie der Microsoft Azure Search-Bibliothek verwen
 
 - [Azure-Suchdienst (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureSearch/)
 - [Azure Search-Dokumentation](/azure/search/)
-- [Microsoft Azure Search Library](https://www.nuget.org/packages/Microsoft.Azure.Search/)
+- [Bibliothek für Microsoft Azure suchen](https://www.nuget.org/packages/Microsoft.Azure.Search/)

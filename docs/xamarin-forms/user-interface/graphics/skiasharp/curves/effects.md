@@ -1,19 +1,20 @@
 ---
-title: Pfad Effekte
-description: Ermitteln der verschiedenen Pfad Auswirkungen, mit die Pfade für Kontur zuweisen und ausfüllen verwendet werden können
+title: Pfad Effekte in SkiaSharp
+description: Dieser Artikel beschreibt die verschiedenen SkiaSharp Pfad Auswirkungen, die Pfade verwendet werden, für die Kontur zuweisen und ausfüllen wird dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 76192f48bedebb183c64c83e34c3908cc85d591c
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 2071a2fb140d0e9c78d4c86d6aa70d3606dc1f98
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244109"
 ---
-# <a name="path-effects"></a>Pfad Effekte
+# <a name="path-effects-in-skiasharp"></a>Pfad Effekte in SkiaSharp
 
 _Ermitteln der verschiedenen Pfad Auswirkungen, mit die Pfade für Kontur zuweisen und ausfüllen verwendet werden können_
 
@@ -400,7 +401,7 @@ Die `PaintSurface` Ereignishandler erstellt eine Bézier-Kurve, die Schleifen, u
 
 Die im angegebenen Pfad die `SKPathEffect.Create1DPath` Methode immer gefüllt wird. Die im angegebenen Pfad die `DrawPath` Methode schraffiert ist immer, wenn die `SKPaint` Objekt hat seine `PathEffect` -Eigenschaft auf einen 1D Pfad Effekt festgelegt. Beachten Sie, dass die `pathPaint` Objekt hat keine `Style` Einstellung, die normalerweise standardmäßig `Fill`, jedoch der Pfad unabhängig davon schraffiert ist.
 
-Das Feld verwendet wird, der `Translate` Beispiel beträgt 20 Pixel, die quadratische, und die `advance` -Argument 24 festgelegt wird. Dieser Unterschied bewirkt, dass eine Lücke zwischen den Feldern, wenn die Zeile ungefähr horizontalen oder vertikalen ist, aber die Felder etwas überlappen, wenn die Zeile diagonalen ist, da die diagonale des Felds 28,3 Pixel ist. 
+Das Feld verwendet wird, der `Translate` Beispiel beträgt 20 Pixel, die quadratische, und die `advance` -Argument 24 festgelegt wird. Dieser Unterschied bewirkt, dass eine Lücke zwischen den Feldern, wenn die Zeile ungefähr horizontalen oder vertikalen ist, aber die Felder etwas überlappen, wenn die Zeile diagonalen ist, da die diagonale des Felds 28,3 Pixel ist.
 
 Die Rautenform in die `Rotate` Beispiel ist auch 20 Pixel breit. Die `advance` auf 20 festgelegt ist, damit weiterhin die Punkte berühren, wie die Raute zusammen mit der Krümmung der Linie gedreht wird.
 
@@ -585,9 +586,9 @@ public class ConveyorBeltPage : ContentPage
         bucketPath.AddRect(new SKRect(-5, -3, 25, 3));
 
         // Sides
-        bucketPath.AddRoundedRect(new SKRect(25, -19, 27, 18), 10, 10, 
+        bucketPath.AddRoundedRect(new SKRect(25, -19, 27, 18), 10, 10,
                                   SKPathDirection.CounterClockwise);
-        bucketPath.AddRoundedRect(new SKRect(63, -19, 65, 18), 10, 10, 
+        bucketPath.AddRoundedRect(new SKRect(63, -19, 65, 18), 10, 10,
                                   SKPathDirection.CounterClockwise);
 
         // Five slats
@@ -595,20 +596,20 @@ public class ConveyorBeltPage : ContentPage
         {
             bucketPath.MoveTo(25, -19 + 8 * i);
             bucketPath.LineTo(25, -13 + 8 * i);
-            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                              SKPathDirection.CounterClockwise, 65, -13 + 8 * i);
             bucketPath.LineTo(65, -19 + 8 * i);
-            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                              SKPathDirection.Clockwise, 25, -19 + 8 * i);
             bucketPath.Close();
         }
 
         // Arc to suggest the hidden side
         bucketPath.MoveTo(25, -17);
-        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                          SKPathDirection.Clockwise, 65, -17);
         bucketPath.LineTo(65, -19);
-        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                          SKPathDirection.CounterClockwise, 25, -19);
         bucketPath.Close();
 
@@ -619,7 +620,7 @@ public class ConveyorBeltPage : ContentPage
     ...
 ```
 
-Der Bucket Erstellung Code wird mit zwei Transformationen, die den Bucket etwas größeres stellen, und schalten Sie ihn seitwärts abgeschlossen. Diese Transformationen anwenden ist einfacher als die Koordinaten für die im vorherigen Code anpassen. 
+Der Bucket Erstellung Code wird mit zwei Transformationen, die den Bucket etwas größeres stellen, und schalten Sie ihn seitwärts abgeschlossen. Diese Transformationen anwenden ist einfacher als die Koordinaten für die im vorherigen Code anpassen.
 
 Die `PaintSurface` Handler beginnt, indem Sie einen Pfad für die Förderband selbst definieren. Dies ist einfach ein paar Zeilen und zwei Semikolons Kreise, die mit 20 Pixel breit dunkelgrauen Linie gezeichnet werden:
 
@@ -642,10 +643,10 @@ public class ConveyorBeltPage : ContentPage
         {
             // Straight verticals capped by semicircles on top and bottom
             conveyerPath.MoveTo(width, verticalMargin);
-            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large, 
+            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large,
                                SKPathDirection.Clockwise, 2 * width, verticalMargin);
             conveyerPath.LineTo(2 * width, info.Height - verticalMargin);
-            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large, 
+            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large,
                                SKPathDirection.Clockwise, width, info.Height - verticalMargin);
             conveyerPath.Close();
 
@@ -665,8 +666,8 @@ public class ConveyorBeltPage : ContentPage
             float phase = -t * spacing;
 
             // Create the buckets PathEffect
-            using (SKPathEffect bucketsPathEffect = 
-                        SKPathEffect.Create1DPath(bucketPath, spacing, phase, 
+            using (SKPathEffect bucketsPathEffect =
+                        SKPathEffect.Create1DPath(bucketPath, spacing, phase,
                                                   SKPath1DPathEffectStyle.Rotate))
             {
                 // Set it to the Paint object and draw the path again
@@ -680,7 +681,7 @@ public class ConveyorBeltPage : ContentPage
 
 Die Logik für das Zeichnen der Förderband funktioniert nicht im Querformat.
 
-Die Buckets sollte ungefähr 200 Pixel auf Förderband auseinander angeordnet. Förderband ist jedoch wahrscheinlich kein Vielfaches von 200 Pixel long, d. h. als die `phase` Argument `SKPathEffect.Create1DPath` ist animierenden werden Buckets in und aus dem Vorhandensein angezeigt. 
+Die Buckets sollte ungefähr 200 Pixel auf Förderband auseinander angeordnet. Förderband ist jedoch wahrscheinlich kein Vielfaches von 200 Pixel long, d. h. als die `phase` Argument `SKPathEffect.Create1DPath` ist animierenden werden Buckets in und aus dem Vorhandensein angezeigt.
 
 Aus diesem Grund die Anwendung zuerst berechnet einen Wert namens `length` also die Länge des Förderband. Weil gerade Linien und Semikolon Kreise Förderband besteht, ist dies eine einfache Weise berechnen. Als Nächstes wird die Anzahl der Buckets berechnet, indem die Division `length` von 200. Dies wird auf die nächste Ganzzahl gerundet und aufgeteilt, dass Zahl, klicken Sie dann ist `length`. Das Ergebnis ist ein Abstand für eine ganze Zahl der Buckets an. Die `phase` Argument ist nur ein Bruchteil der.
 
@@ -708,11 +709,11 @@ Die [ `SKPathEffect.Create2DLines` ](https://developer.xamarin.com/api/member/Sk
 public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
 ```
 
-Die `width` -Argument gibt die Strichbreite Schraffur Zeilen. Die `matrix` Parameter ist eine Kombination von skalierungs- und optionale Drehung. Der Skalierungsfaktor gibt das Skia verwendet wird, um Speicherplatz, der die Zeilen Schraffur Pixel-Inkrement an. Die Trennung zwischen den Zeilen ist der Skalierungsfaktor minus der `width` Argument. Wenn der Skalierungsfaktor kleiner als oder gleich ist der `width` Wert, zwischen den Zeilen Schraffur wird kein Speicherplatz vorhanden sein, und der Bereich erscheint gefüllt werden soll. Geben Sie den Wert für die horizontale und vertikale Skalierung. 
+Die `width` -Argument gibt die Strichbreite Schraffur Zeilen. Die `matrix` Parameter ist eine Kombination von skalierungs- und optionale Drehung. Der Skalierungsfaktor gibt das Skia verwendet wird, um Speicherplatz, der die Zeilen Schraffur Pixel-Inkrement an. Die Trennung zwischen den Zeilen ist der Skalierungsfaktor minus der `width` Argument. Wenn der Skalierungsfaktor kleiner als oder gleich ist der `width` Wert, zwischen den Zeilen Schraffur wird kein Speicherplatz vorhanden sein, und der Bereich erscheint gefüllt werden soll. Geben Sie den Wert für die horizontale und vertikale Skalierung.
 
 Standardmäßig sind schraffierte Linien horizontal. Wenn die `matrix` Parameter enthält, Drehung, Schraffur Zeilen werden im Uhrzeigersinn gedreht.
 
-Die **Schraffur füllen** Seite zeigt die Auswirkung dieser Pfad. Die [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Klasse definiert drei Pfad Effekte als Felder, das erste für horizontale schraffierte Linien mit einer Breite von 3 Pixel mit einer Skalierung Faktor, der angibt, deren Abstand voneinander 6 Pixel. Die Trennung zwischen den Zeilen ist daher 3 Pixel. Das zweite Pfad wird für 24 Pixel auseinander (also die Trennung ist 18 Pixel), die gesamte Fläche vertikal schraffierte Linien mit einer Breite von 6 Pixel und die dritte für diagonale schraffierte 12 Pixel breit gleichmäßigen Abständen 36 Pixel auseinander Zeilen. 
+Die **Schraffur füllen** Seite zeigt die Auswirkung dieser Pfad. Die [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Klasse definiert drei Pfad Effekte als Felder, das erste für horizontale schraffierte Linien mit einer Breite von 3 Pixel mit einer Skalierung Faktor, der angibt, deren Abstand voneinander 6 Pixel. Die Trennung zwischen den Zeilen ist daher 3 Pixel. Das zweite Pfad wird für 24 Pixel auseinander (also die Trennung ist 18 Pixel), die gesamte Fläche vertikal schraffierte Linien mit einer Breite von 6 Pixel und die dritte für diagonale schraffierte 12 Pixel breit gleichmäßigen Abständen 36 Pixel auseinander Zeilen.
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -721,10 +722,10 @@ public class HatchFillPage : ContentPage
 
     SKPathEffect horzLinesPath = SKPathEffect.Create2DLine(3, SKMatrix.MakeScale(6, 6));
 
-    SKPathEffect vertLinesPath = SKPathEffect.Create2DLine(6, 
+    SKPathEffect vertLinesPath = SKPathEffect.Create2DLine(6,
         Multiply(SKMatrix.MakeRotationDegrees(90), SKMatrix.MakeScale(24, 24)));
 
-    SKPathEffect diagLinesPath = SKPathEffect.Create2DLine(12, 
+    SKPathEffect diagLinesPath = SKPathEffect.Create2DLine(12,
         Multiply(SKMatrix.MakeScale(36, 36), SKMatrix.MakeRotationDegrees(45)));
 
     SKPaint strokePaint = new SKPaint
@@ -761,14 +762,14 @@ public class HatchFillPage : ContentPage
 
         using (SKPath roundRectPath = new SKPath())
         {
-            // Create a path 
+            // Create a path
             roundRectPath.AddRoundedRect(
                 new SKRect(50, 50, info.Width - 50, info.Height - 50), 100, 100);
 
             // Horizontal hatch marks
             fillPaint.PathEffect = horzLinesPath;
             fillPaint.Color = SKColors.Red;
-            canvas.DrawPath(roundRectPath, fillPaint); 
+            canvas.DrawPath(roundRectPath, fillPaint);
 
             // Vertical hatch marks
             fillPaint.PathEffect = vertLinesPath;
@@ -808,18 +809,18 @@ Die [ `SKPathEffect.Create2DPath` ](https://developer.xamarin.com/api/member/Ski
 public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
 ```
 
-Die `SKMatrix` Skalierungsfaktoren anzugeben, die horizontale und vertikale Zwischenräume des replizierten Pfads. Jedoch können nicht gedreht werden die mit diesem Pfad `matrix` Argument; Sie des Pfads gedreht wird, drehen Sie den Pfad selbst mithilfe der `Transform` definierte Methode `SKPath`. 
+Die `SKMatrix` Skalierungsfaktoren anzugeben, die horizontale und vertikale Zwischenräume des replizierten Pfads. Jedoch können nicht gedreht werden die mit diesem Pfad `matrix` Argument; Sie des Pfads gedreht wird, drehen Sie den Pfad selbst mithilfe der `Transform` definierte Methode `SKPath`.
 
 Der Pfad des replizierten wird normalerweise mit der linken und oberen Rand der Benutzeranmeldebildschirm anstelle ausgefüllten ausgerichtet. Sie können dieses Verhalten überschreiben, durch die Bereitstellung der Übersetzung Faktoren zwischen 0 und der Skalierungsfaktoren horizontalen und vertikalen Offsets von der linken und oberen Seiten angeben.
 
-Die **Pfad Kachel auszufüllen** Seite zeigt die Auswirkung dieser Pfad. Der Pfad zum Anordnen des Bereichs wird definiert als Feld in der [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) Klasse. Horizontalen und vertikalen Koordinaten Bereich von – 40 bis 40, was bedeutet, dass dieser Pfad 80 Pixel quadratische ist: 
+Die **Pfad Kachel auszufüllen** Seite zeigt die Auswirkung dieser Pfad. Der Pfad zum Anordnen des Bereichs wird definiert als Feld in der [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) Klasse. Horizontalen und vertikalen Koordinaten Bereich von – 40 bis 40, was bedeutet, dass dieser Pfad 80 Pixel quadratische ist:
 
 ```csharp
 public class PathTileFillPage : ContentPage
 {
     SKPath tilePath = SKPath.ParseSvgPathData(
-        "M -20 -20 L 2 -20, 2 -40, 18 -40, 18 -20, 40 -20, " + 
-        "40 -12, 20 -12, 20 12, 40 12, 40 40, 22 40, 22 20, " + 
+        "M -20 -20 L 2 -20, 2 -40, 18 -40, 18 -20, 40 -20, " +
+        "40 -12, 20 -12, 20 12, 40 12, 40 40, 22 40, 22 20, " +
         "-2 20, -2 40, -20 40, -20 8, -40 8, -40 -8, -20 -8 Z");
     ...
     void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -840,7 +841,7 @@ public class PathTileFillPage : ContentPage
                 paint.PathEffect = pathEffect;
 
                 canvas.DrawRoundRect(
-                    new SKRect(50, 50, info.Width - 50, info.Height - 50), 
+                    new SKRect(50, 50, info.Width - 50, info.Height - 50),
                     100, 100, paint);
             }
         }
@@ -935,7 +936,7 @@ In einigen Fällen fehlerlos geraden Computer Grafiken sind nicht sehr, was Sie 
 public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, UInt32 seedAssist)
 ```
 
-Dieser Pfad Effekt können für Kontur zuweisen oder füllen. Zeilen werden in verbundene Segmente getrennt – die geschätzte Zeitdauer gemäß `segLength` – und in verschiedene Richtungen erweitern. Das Ausmaß der Abweichung vom die ursprüngliche Zeile wird angegeben, indem `deviation`. 
+Dieser Pfad Effekt können für Kontur zuweisen oder füllen. Zeilen werden in verbundene Segmente getrennt – die geschätzte Zeitdauer gemäß `segLength` – und in verschiedene Richtungen erweitern. Das Ausmaß der Abweichung vom die ursprüngliche Zeile wird angegeben, indem `deviation`.
 
 Das letzte Argument handelt es sich um einen Ausgangswert verwendet, um die pseudozufällige Sequenz verwendet, um die Auswirkungen zu generieren. Der Effekt Jitter sieht für verschiedene Ausgangswerte etwas anders. Das Argument hat den Standardwert 0 (null), was bedeutet, dass die Auswirkungen identisch ist, wenn Sie das Programm ausführen. Wenn Sie unterschiedliche Jitter möchten, wenn der Bildschirm aktualisiert wird, können Sie den Ausgangswert festlegen, auf die `Millisecond` Eigenschaft ein `DataTime.Now` Wert (z. B.).
 
@@ -1016,7 +1017,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
     using (SKPaint paint = new SKPaint())
     {
-        paint.Style = SKPaintStyle.Stroke; 
+        paint.Style = SKPaintStyle.Stroke;
         paint.StrokeWidth = 5;
         paint.Color = SKColors.Blue;
 
@@ -1144,7 +1145,7 @@ public partial class TapToOutlineThePathPage : ContentPage
         using (SKPath circlePath = new SKPath())
         {
             circlePath.AddCircle(info.Width / 2, info.Height / 2,
-                                 Math.Min(info.Width / 2, info.Height / 2) - 
+                                 Math.Min(info.Width / 2, info.Height / 2) -
                                  redThickStroke.StrokeWidth);
 
             if (!outlineThePath)
@@ -1217,9 +1218,9 @@ using (SKPath linkPath = new SKPath())
 }
 ```
 
-Die `outlinePath` Objekt wird dann die Empfänger der Gliederung des `linkPath` Wenn es mit den Eigenschaften, die im angegebenen schraffiert ist `strokePaint`. 
+Die `outlinePath` Objekt wird dann die Empfänger der Gliederung des `linkPath` Wenn es mit den Eigenschaften, die im angegebenen schraffiert ist `strokePaint`.
 
-Ein weiteres Beispiel, die auf diese Weise kommt weiter für den Pfad in verwendet eine `SKPathEffect.Create2DPath` Methoden. 
+Ein weiteres Beispiel, die auf diese Weise kommt weiter für den Pfad in verwendet eine `SKPathEffect.Create2DPath` Methoden.
 
 ## <a name="combining-path-effects"></a>Kombination von Pfad Effekte
 
@@ -1270,7 +1271,7 @@ public class CatsInFramePage : ContentPage
         StrokeWidth = 5
     };
 
-    SKPath scallopPath = 
+    SKPath scallopPath =
         SKPath.ParseSvgPathData("M 0 0 L 50 0 A 60 60 0 0 1 -50 0 Z");
 
     SKPaint framePaint = new SKPaint
@@ -1316,7 +1317,7 @@ public class CatsInFramePage : ContentPage
             outlinedCatPath);
 
         // Create a 1D path effect from the scallop path
-        SKPathEffect strokeEffect = 
+        SKPathEffect strokeEffect =
             SKPathEffect.Create1DPath(scallopPath, 75, 0, SKPath1DPathEffectStyle.Rotate);
 
         // Set the sum the effects to frame paint
@@ -1358,11 +1359,11 @@ Die **Strichlinien Schraffur** füllt eine Ellipse, die mit Schraffur Zeilen, di
 ```csharp
 public class DashedHatchLinesPage : ContentPage
 {
-    static SKPathEffect dashEffect = 
+    static SKPathEffect dashEffect =
         SKPathEffect.CreateDash(new float[] { 30, 30 }, 0);
 
     static SKPathEffect hatchEffect = SKPathEffect.Create2DLine(20,
-        Multiply(SKMatrix.MakeScale(60, 60), 
+        Multiply(SKMatrix.MakeScale(60, 60),
                  SKMatrix.MakeRotationDegrees(45)));
 
     SKPaint paint = new SKPaint()
@@ -1395,8 +1396,8 @@ public class DashedHatchLinesPage : ContentPage
 
         canvas.Clear();
 
-        canvas.DrawOval(info.Width / 2, info.Height / 2, 
-                        0.45f * info.Width, 0.45f * info.Height, 
+        canvas.DrawOval(info.Width / 2, info.Height / 2,
+                        0.45f * info.Width, 0.45f * info.Height,
                         paint);
     }
     ...

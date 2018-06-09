@@ -1,17 +1,18 @@
 ---
 title: Authentifizieren von RESTful-Webdienst
-description: HTTP unterstützt die Verwendung von mehreren Authentifizierungsmechanismen zum Steuern des Zugriffs auf Ressourcen. Standardauthentifizierung bietet Zugriff auf Ressourcen, um nur die Clients, die über die richtigen Anmeldeinformationen verfügen. In diesem Artikel veranschaulicht die Standardauthentifizierung verwenden, um den Zugriff auf Ressourcen von RESTful-Web-Dienst zu schützen.
+description: Standardauthentifizierung bietet Zugriff auf Ressourcen, um nur die Clients, die über die richtigen Anmeldeinformationen verfügen. In diesem Artikel erläutert die Standardauthentifizierung verwenden, um den Zugriff auf Ressourcen von RESTful-Web-Dienst zu schützen.
 ms.prod: xamarin
 ms.assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 3160fcced190f74fcfb44c6259451e00995de0fa
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 42680ed8b79560f6f4f9f12892f7da5637a7af16
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240960"
 ---
 # <a name="authenticating-a-restful-web-service"></a>Authentifizieren von RESTful-Webdienst
 

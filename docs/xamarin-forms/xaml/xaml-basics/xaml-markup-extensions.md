@@ -1,17 +1,18 @@
 ---
 title: Teil 3. Verwendung von XAML-Markuperweiterungen
-description: Verwendung von XAML-Markuperweiterungen bilden eine wichtige Funktion in XAML, die ermöglichen, Eigenschaften festgelegt werden, um Objekte oder Werte, die aus anderen Quellen indirekt verwiesen werden. Verwendung von XAML-Markuperweiterungen sind besonders wichtig für das Freigeben von Objekten, und verweisen auf die Konstanten, die in einer Anwendung verwendet, aber sie finden ihre größte Hilfsprogramm im datenbindungen.
+description: Verwendung von XAML-Markuperweiterungen bilden eine wichtige Funktion in XAML, die ermöglichen, Eigenschaften festgelegt werden, um Objekte oder Werte, die aus anderen Quellen indirekt verwiesen werden.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
-ms.openlocfilehash: c110223eae2bb06f64adf3e09977d97cc7b5d71b
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 6fcb051d2c24c7da169106b06ad5ebfc91edafa6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245910"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Teil 3. Verwendung von XAML-Markuperweiterungen
 
@@ -321,8 +322,8 @@ Trotz der Ähnlichkeit der entsprechenden Namen `x:Static` und `StaticResource` 
 
 - eine öffentliche statische Feld
 - eine öffentliche statische Eigenschaft
-- eine öffentliche konstantes Feld 
-- einen Enumerationsmember. 
+- eine öffentliche konstantes Feld
+- einen Enumerationsmember.
 
 Die `StaticResource` Markuperweiterung wird vom XAML-Implementierungen, die ein Ressourcenverzeichnis definieren unterstützt während `x:Static` ist ein integraler Bestandteil von XAML-Code als das `x` Präfix ergibt.
 
@@ -366,7 +367,7 @@ namespace XamlSamples
                     PagePadding = new Thickness(5, 0, 5, 0);
                     TitleFont = Font.SystemFontOfSize(40, FontAttributes.Bold);
                     break;
-                    
+
                 case Device.UWP:
                     PagePadding = new Thickness(5, 0, 5, 0);
                     TitleFont = Font.SystemFontOfSize(50, FontAttributes.Bold);

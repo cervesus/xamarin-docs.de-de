@@ -1,17 +1,18 @@
 ---
 title: Grundlagen der Verwendung von XAML-Xamarin.Forms
-description: Erste Schritte mit plattformübergreifenden Markup für mobile Geräte
+description: Dieses Handbuch erläutert, wie zum Einstieg in plattformübergreifenden XAML für mobile Geräte. XAML ermöglicht Entwicklern das Definieren von Benutzeroberflächen in Xamarin.Forms-Anwendungen, die mithilfe von Code, sondern Markup.
 ms.prod: xamarin
 ms.assetid: 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 991d928c2c58f05098a41c84aba295a31636ab96
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 627267b95bb2d810a60f84c51e38bf5387fe1f99
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245962"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Grundlagen der Verwendung von XAML-Xamarin.Forms
 
@@ -35,7 +36,7 @@ Verwendung von XAML-Themen werden behandelt, ausführlicher in vielen Kapiteln d
 <table style="border:0px; box-shadow:0 0px 0px" cellpadding="0" cellspacing="2" border="0" width="85%">
 <tr style="background:#ecf0f1">
   <td style="border:0px;">
-    <h4>Kapitel 7. XAML vs. Code</h4>
+    <h4>Kapitel 7. Verwendung von XAML-im Vergleich zu Code</h4>
   </td>
   <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf">PDF herunterladen</a> </td>
   <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md">Zusammenfassung</a></td>

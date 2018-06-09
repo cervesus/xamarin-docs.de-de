@@ -1,17 +1,18 @@
 ---
 title: Einrichten der Windows-Projekte
-description: Hinzufügen von neuen Windows-Projekten zu einer vorhandenen Xamarin.Forms-Projektmappe
+description: Ältere Xamarin.Forms-Lösungen (oder solche, die auf MacOS erstellt) keine Projekte der universellen Windows-Plattform, und daher wird in diesem Artikel erläutert, wie einer vorhandenen Xamarin.Forms-Projektmappe ein neues uwp-Projekt hinzugefügt.
 ms.prod: xamarin
 ms.assetid: A0774D2E-6994-4D91-84E8-DAB66FC92320
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: aed240dd403957e5935666d4179a6d642c411b86
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 81cad7b178948ebfcf6f424be9ab62d6b6be5b92
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242636"
 ---
 # <a name="setup-windows-projects"></a>Einrichten der Windows-Projekte
 
@@ -31,21 +32,21 @@ So fügen Sie einer uwp-app hinzu, die auf Windows 10-Smartphones, Tablets und D
 
  1. Mit der rechten Maustaste auf die Projektmappe, und wählen Sie **hinzufügen > Neues Projekt...**  und Hinzufügen einer **leere App (universelle Windows)** Projekt:
 
-  ![](universal-images/add-wu.png "Dialogfeld "Neues Projekt" hinzufügen")
+  ![](universal-images/add-wu.png "Dialogfeld \"Neues Projekt\" hinzufügen")
 
  2. In der **neue universelle Windows-Plattform-Projekt** Dialogfeld wählen die Minimum und Ziel-Versionen von Windows 10, unter dem die app ausgeführt wird:
 
-  ![](universal-images/target-version.png "Dialogfeld "Neues universelle Windows Plattform-Projekt"")
+  ![](universal-images/target-version.png "Dialogfeld \"Neues universelle Windows Plattform-Projekt\"")
 
  3. Mit der rechten Maustaste auf das uwp-Projekt, und wählen Sie **NuGet-Pakete verwalten...**  und Hinzufügen der **Xamarin.Forms** Paket. Stellen Sie sicher, dass auf die gleiche Version des Pakets Xamarin.Forms auch andere Projekte in der Lösung aktualisiert wurden.
 
  4. Stellen Sie sicher, dass das neue uwp-Projekt erstellt werden der **erstellen > Configuration Manager** Fenster (dies wahrscheinlich wird nicht Volumenamen standardmäßig). Tick der **erstellen** und **bereitstellen** Felder für das universelle Projekt:
 
-  [![](universal-images/configuration-sml.png "Fenster "Konfigurations-Manager"")](universal-images/configuration.png#lightbox "Fenster "Konfigurations-Manager"")
+  [![](universal-images/configuration-sml.png "Fenster \"Konfigurations-Manager\"")](universal-images/configuration.png#lightbox "Fenster \"Konfigurations-Manager\"")
 
  5. Mit der rechten Maustaste auf das Projekt, und wählen **hinzufügen > Verweis** , und erstellen Sie einen Verweis auf das Anwendungsprojekt Xamarin.Forms (.NET Standard oder freigegebenes Projekt).
 
-  ![](universal-images/addref-sml.png "Dialogfeld "Verweis-Manager"")
+  ![](universal-images/addref-sml.png "Dialogfeld \"Verweis-Manager\"")
 
  6. Bearbeiten Sie im uwp-Projekt **App.xaml.cs** einschließen der `Init` Methodenaufruf innerhalb der `OnLaunched` Methode um Linie 52:
 

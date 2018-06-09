@@ -1,20 +1,20 @@
 ---
-title: Darstellung der Liste
-description: Anpassen von Listenansichten mit Kopfzeilen, Fußzeilen, Gruppen und Zellen variabler Höhe.
+title: Anpassen der Darstellung von ListView
+description: In diesem Artikel erläutert die Listenansichten in Xamarin.Forms Anwendungen mithilfe von Kopfzeilen, Fußzeilen, Gruppen und Zellen variabler Höhe anpassen.
 ms.prod: xamarin
 ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 6b460e25aa5b97953069caa5456003b6cab2c8a8
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: febf712848b81c09a4e25c824acc097e8b65e409
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848386"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245139"
 ---
-# <a name="list-appearance"></a>Darstellung der Liste
+# <a name="customizing-listview-appearance"></a>Anpassen der Darstellung von ListView
 
 `ListView` enthält Optionen zum Steuern der Darstellung von der gesamten Liste zusätzlich zu den zugrunde liegenden `ViewCell`s. Zu den Optionen gehören:
 

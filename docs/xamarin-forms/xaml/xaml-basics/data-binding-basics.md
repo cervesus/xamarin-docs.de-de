@@ -1,18 +1,18 @@
 ---
 title: Teil 4. Data Binding-Grundlagen
-description: Datenbindungen können Eigenschaften von zwei Objekten, die verknüpft werden, damit eine Änderung in einem bewirkt, dass eine Änderung in den anderen bestehen. Dies ist ein sehr wichtiges Tool, und während der datenbindungen, die vollständig im Code definiert werden können, stellt XAML Verknüpfungen und Vereinfachung. Daher ist eine der wichtigsten Markuperweiterungen in Xamarin.Forms binden.
+description: Datenbindungen können Eigenschaften von zwei Objekten, die verknüpft werden, damit eine Änderung in einem bewirkt, dass eine Änderung in den anderen bestehen.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: a8adc0c16043048ec919f5a0f9f7c5ce25f08ef9
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 117ddd033faedda871c33ba10c246739309e2e86
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733034"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245949"
 ---
 # <a name="part-4-data-binding-basics"></a>Teil 4. Data Binding-Grundlagen
 
@@ -86,7 +86,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 Die Eigenschaften können sich auf einer Zeile oder in mehrere Zeilen aufgeteilt:
 
 ```csharp
-Text="{Binding Value, 
+Text="{Binding Value,
                StringFormat='The angle is {0:F0} degrees'}"
 ```
 
@@ -102,13 +102,13 @@ So sieht das ausgeführte Programm aus:
 
 [![](data-binding-basics-images/sliderbinding.png "View-View-Bindungen")](data-binding-basics-images/sliderbinding-large.png#lightbox "Ansicht-Bindungen ")
 
-## <a name="the-binding-mode"></a>Den Bindungsmodus 
+## <a name="the-binding-mode"></a>Den Bindungsmodus
 
 Eine einzige Ansicht kann datenbindungen auf mehreren Eigenschaften haben. Jedoch jede Sicht kann nur einen haben `BindingContext`, sodass mehrere datenbindungen für diese Sicht alle müssen Eigenschaften des gleichen Objekts verweisen.
 
 Die Lösung auf diese und andere Probleme die beinhaltet die `Mode` Eigenschaft, die auf einen Member festgelegt wird die `BindingMode` Enumeration:
 
-- `Default` 
+- `Default`
 - `OneWay` – Werte aus der Quelle an das Ziel übertragen werden
 - `OneWayToSource` – Werte vom Ziel zur Quelle übertragen werden
 - `TwoWay` – Werte beide Richtungen übertragen werden, zwischen Quelle und Ziel
@@ -324,7 +324,7 @@ Viel besser. Jetzt ist die einzige erforderliche zum Einrichten der Elementvorla
 </ContentPage>
 ```
 
-Beachten Sie die Verwendung von `OnPlatform` definieren Sie die Größe des eine `BoxView` und die Höhe der `ListView` Zeilen. Obwohl die Werte für alle drei Plattformen identisch sind, konnte auf das Markup problemlos für andere Werte zum Optimieren der Anzeige angepasst werden können. 
+Beachten Sie die Verwendung von `OnPlatform` definieren Sie die Größe des eine `BoxView` und die Höhe der `ListView` Zeilen. Obwohl die Werte für alle drei Plattformen identisch sind, konnte auf das Markup problemlos für andere Werte zum Optimieren der Anzeige angepasst werden können.
 
 ## <a name="binding-value-converters"></a>Bindung Wertkonverter
 
@@ -366,7 +366,7 @@ namespace XamlSamples
 }
 ```
 
-Die `ConvertBack` Methode wird eine Rolle nicht an diesem Programm wiedergegeben werden, da die Bindungen nur unidirektionale aus der Quelle zum Ziel sind. 
+Die `ConvertBack` Methode wird eine Rolle nicht an diesem Programm wiedergegeben werden, da die Bindungen nur unidirektionale aus der Quelle zum Ziel sind.
 
 Eine Bindung verweist auf eine Bindung-Konverter, für die `Converter` Eigenschaft. Ein Konverter für die Bindung kann auch akzeptieren einen Parameter angegeben wird, mit der `ConverterParameter` Eigenschaft. Für einige Vielseitigkeit ist dies an, wie der Multiplikator angegeben wird. Der Konverter Bindung überprüft der Konverterparameter für eine gültige `double` Wert.
 

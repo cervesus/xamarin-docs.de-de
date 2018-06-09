@@ -1,17 +1,18 @@
 ---
 title: Tippen Sie auf Manipulationen
-description: Matrixtransformationen verwenden, um Touch ziehen, Pinch und Drehung implementieren
+description: In diesem Artikel wird erläutert, wie die Matrixtransformationen zu verwenden, um Touch ziehen, Pinch und Drehung implementieren, und dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2018
-ms.openlocfilehash: e8e5cc7b1a00f9822c4cbb4859a02b7546102ca0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a53fe287e74070adb22c2a7c67d4b7cc10b35d3e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244285"
 ---
 # <a name="touch-manipulations"></a>Tippen Sie auf Manipulationen
 
@@ -753,9 +754,9 @@ public partial class SingleFingerCornerScalePage : ContentPage
 }
 ```
 
-Dies `SKMatrix` -Objekt von der Touch-Logik, die unten gezeigten geändert wird. 
+Dies `SKMatrix` -Objekt von der Touch-Logik, die unten gezeigten geändert wird.
 
-Die restliche Code-Behind-Datei ist die `TouchEffect` -Ereignishandler. Beginnt die die aktuelle Position des Fingers zum Konvertieren einer `SKPoint` Wert. Für die `Pressed` Aktionstyp, der Handler wird überprüft, ob keine andere Finger den Bildschirm berührt und der Finger ist innerhalb der Grenzen der Bitmap. 
+Die restliche Code-Behind-Datei ist die `TouchEffect` -Ereignishandler. Beginnt die die aktuelle Position des Fingers zum Konvertieren einer `SKPoint` Wert. Für die `Pressed` Aktionstyp, der Handler wird überprüft, ob keine andere Finger den Bildschirm berührt und der Finger ist innerhalb der Grenzen der Bitmap.
 
 Der entscheidende Teil des Codes ist ein `if` Anweisung, die im Zusammenhang mit beiden Aufrufe von der `Math.Pow` Methode. Dieser mathematische überprüft, ob der Finger Speicherort außerhalb einer Ellipse, die die Bitmap ausfüllt. Wenn dies der Fall ist, handelt es sich um eine Skalierungsoperation. Der Finger ist in der Nähe von einer der Ecken der Bitmap und eine Dreh-und Angelpunkt wird bestimmt, dass der entgegengesetzten Ecke ist. Wenn der Finger innerhalb dieser Ellipse ist, handelt es sich um eine Balance Normalbetrieb:
 

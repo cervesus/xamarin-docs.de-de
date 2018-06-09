@@ -1,17 +1,18 @@
 ---
 title: Erste Schritte mit DataPages
+description: In diesem Artikel wird erläutert, wie für den Einstieg in das Erstellen einer einfachen datengesteuerte-Seite mit Xamarin.Forms DataPages wird.
 ms.prod: xamarin
 ms.assetid: 6416E5FA-6384-4298-BAA1-A89381E47210
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d5e73839f889234c816bfff08f3e46dade8dffc9
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 1fb8a06111271d453c578cd3d2db97ec8689c995
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846840"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243076"
 ---
 # <a name="getting-started-with-datapages"></a>Erste Schritte mit DataPages
 
@@ -21,7 +22,7 @@ ms.locfileid: "34846840"
 > DataPages erfordert eine [Xamarin.Forms Design](~/xamarin-forms/user-interface/themes/index.md) Verweis auf das Rendern.
 
 
-Zunächst erstellen eine einfache Datenlaufwerk-Seite in der Vorschau DataPages, führen Sie die folgenden Schritte aus. Diese Demo verwendet ein hartcodierten-Stil ("Ereignisse") in der Vorschau Builds funktioniert nur mit bestimmten JSON-Format im Code.
+Zunächst erstellen eine einfache datengesteuerte-Seite in der Vorschau DataPages, führen Sie die folgenden Schritte aus. Diese Demo verwendet ein hartcodierten-Stil ("Ereignisse") in der Vorschau Builds funktioniert nur mit bestimmten JSON-Format im Code.
 
 [![](get-started-images/demo-sml.png "DataPages-Beispielanwendung")](get-started-images/demo.png#lightbox "DataPages-Beispielanwendung")
 

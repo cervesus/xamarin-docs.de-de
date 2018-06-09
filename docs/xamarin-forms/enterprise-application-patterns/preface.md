@@ -1,18 +1,20 @@
 ---
-title: Ihm etwas voranzustellen
+title: Ihm etwas voranzustellen, um Unternehmens-App-Entwicklung
+description: Das Kapitel enthält ein Präfix zum Enterprise-Anwendungsmuster mit Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: fbf32a44-1d33-4e16-a904-dc7ee5991e7c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: e9dd5f663fc98ac1e869721517e9a3d0fb2033bb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fd085d2fb12e82233f6d3be2e2773a84539f837b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242367"
 ---
-# <a name="preface"></a>Ihm etwas voranzustellen
+# <a name="preface-to-enterprise-app-development"></a>Ihm etwas voranzustellen, um Unternehmens-App-Entwicklung
 
 Diese e-Book enthält Anleitungen zum Erstellen von plattformübergreifenden-Unternehmens-apps mit Xamarin.Forms. Xamarin.Forms ist eine plattformübergreifende Toolkit, mit dem Entwickler auf einfache Weise eigene Benutzeroberfläche Schnittstelle Layouts erstellen, die für Plattformen, einschließlich iOS, Android und die universelle Windows-Plattform (UWP) freigegeben werden können. Es bietet eine umfassende Lösung für Unternehmen, die Mitarbeiter (B2E), Business-to-Business (B2B) und Business für Consumer (B2C)-Anwendungen, bietet die Möglichkeit, Code auf allen Zielplattformen freigeben möchten, und die Gesamtbetriebskosten (TCO) zu senken unterstützt.
 
@@ -42,4 +44,4 @@ Wahlweise können Sie dieses Handbuch Teammitgliedern, um sicherzustellen, dass 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Download-e-Book (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (sample)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [eShopOnContainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

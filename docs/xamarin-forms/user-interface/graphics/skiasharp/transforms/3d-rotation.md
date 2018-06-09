@@ -1,19 +1,20 @@
 ---
-title: 3D Drehungen
-description: Verwenden Sie nicht affine Transformationen 2D Objekte im 3D-Raum drehen.
+title: 3D Drehungen in SkiaSharp
+description: In diesem Artikel wird erläutert, wie mit nicht affinen Transformationen 2D Objekte im 3D-Raum drehen und wird dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 2f5562475db17b7451fe7cb2ee8bbf4ccb782a87
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: ad4bce6eff7df65185fc3bd754c747fd0db0c9f1
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244298"
 ---
-# <a name="3d-rotations"></a>3D Drehungen
+# <a name="3d-rotations-in-skiasharp"></a>3D Drehungen in SkiaSharp
 
 _Verwenden Sie nicht affine Transformationen 2D Objekte im 3D-Raum drehen._
 
@@ -74,11 +75,11 @@ Diese Koordinaten zurück in die 3D-Bereich konvertieren, bei denen W 1, das "X 
 
 x" = x' / w'
 
-y" = y' / w'
+y"y =" / w "
 
-z" = z' / w'
+Z"Z =" / w "
 
-w" = w' / w' = 1
+w"w =" / w "= 1
 
 Dieser Division durch w "Perspektive im 3D-Bereich bereitstellt. Wenn w "gleich 1 ist, und klicken Sie dann keine Perspektive auftritt.
 
@@ -160,9 +161,9 @@ Wenn eine von 4 x 4-Transformationsmatrix in einer 2D-Grafiksystem verwendet wir
 
 Dieser Wert 0 für die Z-Ergebnissen in Transformation Formeln, die keine Zellen in der dritten Zeile der Matrix beinhalten:
 
-x' = M11·x + M21·y + M41
+X "= M11·x + M21·y + M41
 
-y' = M12·x + M22·y + M42
+y "= M12·x + M22·y + M42
 
 Z' = M13·x + M23·y + M43
 
@@ -172,7 +173,7 @@ Darüber hinaus Z' Koordinate wird ebenfalls hier nicht relevant. Wenn ein 3D-Ob
 
 x" = x' / w'
 
-y" = y' / w'
+y"y =" / w "
 
 Dies bedeutet, dass die dritte Zeile *und* dritte Spalte die 4 x 4-Matrix kann ignoriert werden.
 
@@ -205,9 +206,9 @@ Jetzt kann verwendet werden, um einen 2D-Skalierungsvorgang Punkt zu transformie
 
 Die Transformation-Formeln sind:
 
-x' = cos(α)·x
+X "= cos (α) ·x
 
-y' = y
+y "= y
 
 Z' = (sin (α) / Tiefe) ·x + 1
 

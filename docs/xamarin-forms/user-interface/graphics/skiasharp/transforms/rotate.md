@@ -1,17 +1,18 @@
 ---
 title: Die Rotationstransformation
-description: Untersuchen Sie die Auswirkung und Animationen, die mit der SkiaSharp Rotationstransformation möglich
+description: In diesem Artikel wird erklärt, wobei die Auswirkung und Animationen, die mit der SkiaSharp Rotationstransformation möglich und wird dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 354844f69c0b8755a15a3325c39e35b97d44f94d
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 514ecd16fedd7d3fda39fe20641cf0ee9ecb119e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244619"
 ---
 # <a name="the-rotate-transform"></a>Die Rotationstransformation
 
@@ -35,7 +36,7 @@ Rotation ist für die Erhöhung der Winkel im Uhrzeigersinn. (Obwohl Drehung auf
 
 Die Transformation Formeln für die Drehung sind komplexer als die Skalierung zu übersetzen. Ein Winkel von α sind die Transformation Formeln:
 
-x' = x•cos(α) – y•sin(α)   
+X "= x•cos(α) – y•sin(α)   
 
 y "= x•sin(α) + y•cos(α)
 

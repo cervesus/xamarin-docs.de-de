@@ -1,18 +1,20 @@
 ---
-title: Erstellen ein benutzerdefiniertes Design
+title: Erstellen eines benutzerdefinierten Xamarin.Forms-Designs
+description: In diesem Artikel erläutert, wie ein benutzerdefiniertes Xamarin.Forms-Design zum Verweisen auf die in einer app zu erstellen.
 ms.prod: xamarin
 ms.assetid: 4FE08ADC-093F-47FA-B33C-20CF08B5D7E0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: c9bc532902e9cfcc080220a05e41401e893783e4
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 018193cf0b198fd87f0f09cbfeba52e9d2a0f68b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245574"
 ---
-# <a name="creating-a-custom-theme"></a>Erstellen ein benutzerdefiniertes Design
+# <a name="creating-a-custom-xamarinforms-theme"></a>Erstellen eines benutzerdefinierten Xamarin.Forms-Designs
 
 ![](~/media/shared/preview.png "Diese API ist derzeit als Vorschau verfügbar")
 

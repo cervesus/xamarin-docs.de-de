@@ -1,19 +1,20 @@
 ---
-title: SVG-Pfaddaten
-description: Definieren von Textzeichenfolgen im Scalable Vector Graphics-Format verwenden
+title: SVG-Pfaddaten in SkiaSharp
+description: In diesem Artikel wird erläutert, wie zum Definieren von SkiaSharp mithilfe von Textzeichenfolgen im Scalable Vector Graphics-Format und wird dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: fe9699894224d9a33b3a79e9b5bcd4cd41c635dd
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 0453374c59c3b12842b7fb1524cc150329d84b7f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243973"
 ---
-# <a name="svg-path-data"></a>SVG-Pfaddaten
+# <a name="svg-path-data-in-skiasharp"></a>SVG-Pfaddaten in SkiaSharp
 
 _Definieren von Textzeichenfolgen im Scalable Vector Graphics-Format verwenden_
 
@@ -287,7 +288,7 @@ public class PathDataCatPage : ContentPage
 
 Hier wird das Programm auf allen drei Plattformen ausgeführt:
 
-[![](path-data-images/pathdatacat-small.png "Dreifacher Screenshot der Seite Pfad Daten Cat")](path-data-images/pathdatacat-large.png#lightbox "dreifacher Screenshot von der Seite "Pfad Daten Cat"")
+[![](path-data-images/pathdatacat-small.png "Dreifacher Screenshot der Seite Pfad Daten Cat")](path-data-images/pathdatacat-large.png#lightbox "dreifacher Screenshot von der Seite \"Pfad Daten Cat\"")
 
 Normalerweise, wenn ein `SKPath` Objekt als ein Feld definiert ist, müssen die Kontur des Pfads in den Konstruktor oder eine andere Methode definiert werden. Bei Verwendung von SVG-Pfaddaten jedoch haben Sie angezeigt, dass der Pfad vollständig in der Field-Definition angegeben werden kann.
 

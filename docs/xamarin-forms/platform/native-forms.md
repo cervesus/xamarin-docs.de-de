@@ -1,19 +1,20 @@
 ---
-title: Systemeigene Formulare
-description: Systemeigene Forms ermöglichen Xamarin.Forms ContentPage verwendet abgeleitete Seiten von systemeigene universelle Windows-Plattform (UWP), Xamarin.iOS und Xamarin.Android Projekte verwendet wird. Systemeigene Projekte können Seiten ContentPage verwendet abgeleitete nutzen, die dem Projekt oder von einer .NET Standardbibliothek .NET Standardbibliothek oder freigegebenes Projekt direkt hinzugefügt werden. In diesem Artikel wird erläutert, wie ContentPage verwendet abgeleitete Seiten verarbeitet werden, die direkt auf systemeigene Projekte hinzugefügt werden und wie zwischen ihnen zu navigieren.
+title: Xamarin.Forms in Xamarin Native-Projekten
+description: In diesem Artikel wird erläutert, wie Seiten ContentPage verwendet abgeleitete nutzen, die direkt für Xamarin native Projekte hinzugefügt werden, und wie zwischen ihnen zu navigieren.
 ms.prod: xamarin
 ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: a103d360221650ee4f679ee285dbedd65e62f947
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: ca62b9fec3223e8da62d8e4cc6e1f69a58f335a0
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243274"
 ---
-# <a name="native-forms"></a>Systemeigene Formulare
+# <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms in Xamarin Native-Projekten
 
 _Systemeigene Forms ermöglichen Xamarin.Forms ContentPage verwendet abgeleitete Seiten von systemeigene universelle Windows-Plattform (UWP), Xamarin.iOS und Xamarin.Android Projekte verwendet wird. Systemeigene Projekte können Seiten ContentPage verwendet abgeleitete nutzen, die dem Projekt oder von einer .NET Standardbibliothek .NET Standardbibliothek oder freigegebenes Projekt direkt hinzugefügt werden. In diesem Artikel wird erläutert, wie ContentPage verwendet abgeleitete Seiten verarbeitet werden, die direkt auf systemeigene Projekte hinzugefügt werden und wie zwischen ihnen zu navigieren._
 

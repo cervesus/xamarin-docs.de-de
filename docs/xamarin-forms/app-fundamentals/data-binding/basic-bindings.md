@@ -1,19 +1,20 @@
 ---
-title: Grundlegende Bindungen
-description: Ziele für die Datenbindung, Datenquellen und Bindungskontext
+title: Xamarin.Forms Basic Bindungen
+description: In diesem Artikel wird erläutert, wie mit Xamarin.Forms die Datenbindung, mindestens ein Paar von Eigenschaften zwischen zwei Objekten verknüpft, von denen in der Regel ein Benutzeroberflächen-Objekt ist. Diesen beiden Objekten sind das Ziel und Quelle aufgerufen.
 ms.prod: xamarin
 ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 065258acacb8469b90dd2ca04286f0686dc90063
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f932b7dfbcccb8f1c6ccb726f5e48c2df6e93c6c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241688"
 ---
-# <a name="basic-bindings"></a>Grundlegende Bindungen
+# <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms Basic Bindungen
 
 Eine Xamarin.Forms-Datenbindung verknüpft ein Paar von Eigenschaften zwischen zwei Objekten, die mindestens, die eine der in der Regel ein Benutzeroberflächen-Objekt ist. Diese zwei Objekte heißen die *Ziel* und die *Quelle*:
 
@@ -47,7 +48,7 @@ Obwohl datenbindungen vollständig in XAML in der Regel angegeben sind, ist es h
 
 Die `Slider` für einen Bereich von 0 bis 360 festgelegt ist. Der Zweck dieses Programm ist zum Drehen der `Label` durch Bearbeiten der `Slider`.
 
-Ohne datenbindungen, legen Sie die `ValueChanged` -Ereignis der `Slider` mit einem Ereignishandler, die greift auf die `Value` Eigenschaft der `Slider` und legt diesen Wert auf die `Rotation` Eigenschaft der `Label`. Die Datenbindung automatisiert, das dem Auftrag; der Ereignishandler und den Code in ihr sind nicht mehr erforderlich. 
+Ohne datenbindungen, legen Sie die `ValueChanged` -Ereignis der `Slider` mit einem Ereignishandler, die greift auf die `Value` Eigenschaft der `Slider` und legt diesen Wert auf die `Rotation` Eigenschaft der `Label`. Die Datenbindung automatisiert, das dem Auftrag; der Ereignishandler und den Code in ihr sind nicht mehr erforderlich.
 
 Sie können eine Bindung für eine Instanz einer Klasse, die abgeleitet festlegen [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/), darunter `Element`, `VisualElement`, `View`, und `View` ableitungen.  Die Bindung ist für das Zielobjekt immer festgelegt werden. Die Bindung verweist auf das Quellobjekt. Um die Datenbindung festzulegen, verwenden Sie die folgenden beiden Elemente der Zielklasse:
 
@@ -73,7 +74,7 @@ public partial class BasicCodeBindingPage : ContentPage
 
 Die `Label` Objekt ist das Bindungsziel, damit ist das Objekt, auf die diese Eigenschaft festgelegt ist und auf dem die Methode aufgerufen wird. Die `BindingContext` Eigenschaft gibt an, die Bindungsquelle, also die `Slider`.
 
-Die `SetBinding` Methode für das Bindungsziel aufgerufen wird, sondern gibt an, die Zieleigenschaft und die Source-Eigenschaft. Die Eigenschaft wird angegeben, als ein `BindableProperty` Objekt: `Label.RotationProperty`. Die Source-Eigenschaft als Zeichenfolge angegeben wird, und gibt an, die `Value` Eigenschaft `Slider`. 
+Die `SetBinding` Methode für das Bindungsziel aufgerufen wird, sondern gibt an, die Zieleigenschaft und die Source-Eigenschaft. Die Eigenschaft wird angegeben, als ein `BindableProperty` Objekt: `Label.RotationProperty`. Die Source-Eigenschaft als Zeichenfolge angegeben wird, und gibt an, die `Value` Eigenschaft `Slider`.
 
 Die `SetBinding` Methode stellt eine der wichtigsten Regeln von datenbindungen:
 
@@ -120,7 +121,7 @@ Die **grundlegenden XAML-Bindung** Seite ist identisch mit **Standardbindung Cod
 Wie Code, in die Datenbindung festgelegt ist, auf das Zielobjekt, also die `Label`. Es sind zwei XAML-Markuperweiterungen beteiligt. Dies sind sofort erkennbar, die durch die geschweifte Klammertrennzeichen:
 
 - Die `x:Reference` Markuperweiterung ist erforderlich, um das Quellobjekt, verweisen die `Slider` mit dem Namen `slider`.
-- Die `Binding` Markup Extension Links die `Rotation` Eigenschaft der `Label` auf die `Value` Eigenschaft der `Slider`. 
+- Die `Binding` Markup Extension Links die `Rotation` Eigenschaft der `Label` auf die `Value` Eigenschaft der `Slider`.
 
 Finden Sie im Artikel [XAML-Markuperweiterungen](~/xamarin-forms/xaml/markup-extensions/index.md) für Weitere Informationen über Markuperweiterungen für XAML. Die `x:Reference` Markuperweiterung wird unterstützt, indem Sie die [ `ReferenceExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ReferenceExtension/) Klasse. `Binding` wird unterstützt, indem Sie die [ `BindingExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.BindingExtension/) Klasse. Wie der XML-Namespacepräfixe anzugeben, `x:Reference` ist Teil der Spezifikation XAML 2009 während `Binding` ist Bestandteil des Xamarin.Forms. Beachten Sie, dass keine Anführungszeichen in der geschweiften Klammern angezeigt werden.
 
@@ -185,13 +186,13 @@ public partial class AlternativeCodeBindingPage : ContentPage
 }
 ```
 
-Die `Binding` Konstruktor verfügt über 6 Parameter, sodass der `source` Parameter ein benanntes Argument angegeben wird. Das Argument ist der `slider` Objekt. 
+Die `Binding` Konstruktor verfügt über 6 Parameter, sodass der `source` Parameter ein benanntes Argument angegeben wird. Das Argument ist der `slider` Objekt.
 
 Dieses Programm ausführen, kann ein wenig überraschend sein:
 
 [![Alternativer Code Bindung](basic-bindings-images/alternativecodebinding-small.png "alternativer Code Bindung")](basic-bindings-images/alternativecodebinding-large.png#lightbox "alternativer Code Bindung")
 
-Die iOS-Bildschirm auf der linken Seite zeigt wie sieht das beim ersten der Seite öffnen. Wobei ist die `Label`? 
+Die iOS-Bildschirm auf der linken Seite zeigt wie sieht das beim ersten der Seite öffnen. Wobei ist die `Label`?
 
 Das Problem besteht darin, die die `Slider` hat einen Anfangswert von 0. Dies bewirkt, dass die `Scale` Eigenschaft von der `Label` auf 0 (null) und überschreiben den Standardwert 1 ebenfalls festgelegt werden. Dadurch wird die `Label` wird anfänglich nicht sichtbar. Wie zeigen die Screenshots Android und universelle Windows-Plattform (UWP), können Sie ändern die `Slider` vornehmen der `Label` erneut angezeigt, aber seine anfängliche verschwinden irritierend ist.
 
@@ -246,7 +247,7 @@ Obwohl XAML-Markuperweiterungen in der Regel durch geschweifte Klammern getrennt
                  Path="Value" />
     </Label.Scale>
 </Label>
-``` 
+```
 
 Jetzt die `Source` und `Path` Eigenschaften sind reguläre Verwendung von XAML-Attributen: die Werte in Anführungszeichen angezeigt werden und die Attribute werden nicht durch ein Komma getrennt. Die `x:Reference` Markuperweiterung kann auch einem Objektelement werden:
 
@@ -267,9 +268,9 @@ Jetzt die `Source` und `Path` Eigenschaften sind reguläre Verwendung von XAML-A
 
 Diese Syntax ist häufig nicht, aber manchmal ist es erforderlich, wenn komplexe Objekte daran beteiligt sind.
 
-Legen Sie die bisher gezeigten Beispiele der `BindingContext` Eigenschaft und die `Source` Eigenschaft `Binding` auf eine `x:Reference` Markuperweiterung auf einer anderen Ansicht auf der Seite verweisen. Diese beiden Eigenschaften sind vom Typ `Object`, und sie können auf jedes Objekt, das Eigenschaften enthält, die zum Binden von Datenquellen geeignet sind festgelegt werden. 
+Legen Sie die bisher gezeigten Beispiele der `BindingContext` Eigenschaft und die `Source` Eigenschaft `Binding` auf eine `x:Reference` Markuperweiterung auf einer anderen Ansicht auf der Seite verweisen. Diese beiden Eigenschaften sind vom Typ `Object`, und sie können auf jedes Objekt, das Eigenschaften enthält, die zum Binden von Datenquellen geeignet sind festgelegt werden.
 
-In den Artikeln im voraus, werden Sie feststellen, dass Sie festlegen können die `BindingContext` oder `Source` Eigenschaft, um eine `x:Static` Markuperweiterung auf den Wert des eine statische Eigenschaft oder ein Feld verweisen oder eine `StaticResource` Markuperweiterung auf ein Objekt in verweisen eine Ressourcenverzeichnis oder direkt auf ein Objekt, das in der Regel (aber nicht immer) einer Instanz von einem ViewModel. 
+In den Artikeln im voraus, werden Sie feststellen, dass Sie festlegen können die `BindingContext` oder `Source` Eigenschaft, um eine `x:Static` Markuperweiterung auf den Wert des eine statische Eigenschaft oder ein Feld verweisen oder eine `StaticResource` Markuperweiterung auf ein Objekt in verweisen eine Ressourcenverzeichnis oder direkt auf ein Objekt, das in der Regel (aber nicht immer) einer Instanz von einem ViewModel.
 
 Die `BindingContext` Eigenschaft kann auch festgelegt werden, um eine `Binding` Objekt, damit die `Source` und `Path` Eigenschaften des `Binding` definieren, den Bindungskontext.
 
@@ -294,7 +295,7 @@ Die **Bindung Kontext Vererbung** Beispiel ist eine einfache Veranschaulichung d
 
         <StackLayout VerticalOptions="FillAndExpand"
                      BindingContext="{x:Reference slider}">
-            
+
             <Label Text="TEXT"
                    FontSize="80"
                    HorizontalOptions="Center"
@@ -309,14 +310,14 @@ Die **Bindung Kontext Vererbung** Beispiel ist eine einfache Veranschaulichung d
                      Rotation="{Binding Value}" />
         </StackLayout>
 
-        <Slider x:Name="slider" 
+        <Slider x:Name="slider"
                 Maximum="360" />
-        
+
     </StackLayout>
 </ContentPage>
 ```
 
-Die `BindingContext` Eigenschaft der `StackLayout` festgelegt ist, um die `slider` Objekt. Diesem Bindungskontext von sowohl geerbt wird die `Label` und die `BoxView`, die beide von wofür ihre `Rotation` Eigenschaften festlegen, um die `Value` Eigenschaft der `Slider`: 
+Die `BindingContext` Eigenschaft der `StackLayout` festgelegt ist, um die `slider` Objekt. Diesem Bindungskontext von sowohl geerbt wird die `Label` und die `BoxView`, die beide von wofür ihre `Rotation` Eigenschaften festlegen, um die `Value` Eigenschaft der `Slider`:
 
 [![Binden von Kontext Vererbung](basic-bindings-images/bindingcontextinheritance-small.png "binden Kontext Vererbung")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "binden Kontext Vererbung")
 

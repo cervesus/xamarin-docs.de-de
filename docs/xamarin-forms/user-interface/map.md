@@ -1,19 +1,20 @@
 ---
-title: Zuordnung
-description: Xamarin.Forms nutzt die systemeigene APIs-Zuordnung auf jeder Plattform.
+title: Xamarin.Forms-Karte
+description: In diesem Artikel wird erläutert, wie mit Xamarin.Forms Map-Klasse verwenden, die systemeigene APIs-Zuordnung auf jeder Plattform um zur Verfügung zu stellen eine vertrauten Umgebung für Benutzer zugeordnet wird.
 ms.prod: xamarin
 ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 6063732e08680974b8d4a2358bfd85b176b36aec
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 9bd4c810db0397d84803be7c38f625b9b047c3da
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245474"
 ---
-# <a name="map"></a>Zuordnung
+# <a name="xamarinforms-map"></a>Xamarin.Forms-Karte
 
 _Xamarin.Forms nutzt die systemeigene APIs-Zuordnung auf jeder Plattform._
 
@@ -80,7 +81,7 @@ Für den Zugriff auf iOS-Standortdiensten auf, müssen Sie die folgenden Schlüs
 - iOS 10 und früher
     - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – für die Verwendung von Standortdiensten, wenn die app verwendet wird
     - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – für die Verwendung von Standortdiensten jederzeit    
-    
+
 Um die iOS 11 und früheren Versionen zu unterstützen, können Sie alle drei Schlüssel einschließen: `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, und `NSLocationAlwaysUsageDescription`.
 
 Die XML-Darstellung für diese Schlüssel im **"Info.plist"** wird unten gezeigt. Aktualisieren Sie die `string` Werte widerspiegeln, wie Ihre Anwendung die Speicherortinformationen verwendet:

@@ -1,19 +1,20 @@
 ---
-title: Validierung
+title: Die Validierung in Unternehmens-Apps
+description: In diesem Kapitel wird erläutert, wie die mobilen Anwendung für eShopOnContainers Validierung von Benutzereingaben ausführt. Dies schließt Validierungsregeln angeben, das Auslösen der Überprüfung und das Anzeigen von Validierungsfehlern.
 ms.prod: xamarin
 ms.assetid: 56e4f0fc-48d9-4033-91ec-173bb46a5e4d
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 484f3b3d45e41d0dd0406681250ac90943a1cdde
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 6a7f244b78d5b48dd219f59f1191993d62663bbf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847588"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243176"
 ---
-# <a name="validation"></a>Validierung
+# <a name="validation-in-enterprise-apps"></a>Die Validierung in Unternehmens-Apps
 
 Jede app, die Benutzereingaben akzeptiert, sollten sicherstellen, dass die Eingabe gültig ist. Eine app könnten Sie z. B. Eingabe überprüfen, die eine bestimmte Länge ist, enthält nur Zeichen in einem bestimmten Bereich oder entspricht ein bestimmtes Format. Ohne Validierung kann ein Benutzer Daten angeben, die bewirkt, die app dass zu Fehlern. Validierung erzwingt Geschäftsregeln, und verhindert, dass einen Angreifer Räumen schädliche Daten.
 

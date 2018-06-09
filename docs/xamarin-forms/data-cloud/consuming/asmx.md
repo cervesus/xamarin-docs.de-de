@@ -1,17 +1,18 @@
 ---
 title: Verarbeiten eines ASP.NET-Webdiensts (ASMX)
-description: ASMX bietet die Möglichkeit, Webdienste erstellen, die Nachrichten, die mit einfachen Objekt Access Protocol (SOAP) senden. SOAP ist ein Plattform- und sprachenunabhängiges Protokoll zum Erstellen von und Zugreifen auf Webdienste. Consumer von ASMX-Dienst müssen nicht alles Plattform, das Objektmodell oder Programmiersprache ab, die zum Implementieren des Diensts kennen. Sie müssen verstehen, wie SOAP-Nachrichten senden und empfangen. In diesem Artikel veranschaulicht, wie einen ASMX-SOAP-Dienst aus einer Xamarin.Forms-Anwendung zu nutzen.
+description: In diesem Artikel veranschaulicht, wie einen ASMX-SOAP-Dienst aus einer Xamarin.Forms-Anwendung zu nutzen.
 ms.prod: xamarin
 ms.assetid: D5533964-5528-4D35-9C2B-FAFB632472AC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: c45f0de039abc3f98b7c269f183e2883a495910b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6ec8168a8da64dbf3dfeb805856a4d91c9ec78ca
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242062"
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>Verarbeiten eines ASP.NET-Webdiensts (ASMX)
 
@@ -40,10 +41,10 @@ Der ASMX-Dienst stellt die folgenden Vorgänge:
 
 |Vorgang|Beschreibung|Parameter|
 |--- |--- |--- |
-|GetTodoItems|Abrufen einer Liste von Aufgaben|
+|GetTodoItems|Abrufen einer Liste von To-Do-Elementen|
 |CreateTodoItem|Ein neues Aufgabenelement erstellen|Eine mithilfe von XML serialisierte TodoItem|
-|EditTodoItem|Aktualisieren einer Aufgabe|Eine mithilfe von XML serialisierte TodoItem|
-|DeleteTodoItem|Löschen einer Aufgabe|Eine mithilfe von XML serialisierte TodoItem|
+|EditTodoItem|Aktualisieren eines To-Do-Elements|Eine mithilfe von XML serialisierte TodoItem|
+|DeleteTodoItem|Löschen eines To-Do-Elements|Eine mithilfe von XML serialisierte TodoItem|
 
 Weitere Informationen zu dem in der Anwendung verwendeten Datenmodell finden Sie unter [die Daten modellieren,](~/xamarin-forms/data-cloud/walkthrough.md).
 
@@ -217,5 +218,5 @@ Dieser Artikel veranschaulicht, wie einen ASMX-Webdienst aus einer Xamarin.Forms
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [TodoASMX (sample)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoASMX/)
+- [TodoASMX (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoASMX/)
 - [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult(v=vs.110).aspx)

@@ -1,19 +1,20 @@
 ---
-title: Gesten
-description: Geste Prüfer können verwendet werden, um eine Benutzerinteraktion mit vielen Elementen einer Xamarin.Forms-Anwendung zu erkennen.
+title: Xamarin.Forms-Gesten
+description: Dieses Handbuch erläutert, wie Xamarin.Forms Geste Prüfer verwendet werden können, um eine Benutzerinteraktion mit vielen Elementen einer Xamarin.Forms-Anwendung zu erkennen.
 ms.prod: xamarin
 ms.assetid: 0E197A51-2304-4C09-A710-C7FF24A89F15
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 621110686e52c1558f74108789aa216c349436bc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1c055d7ab02ad3233c38f2123793c4a4f49479cb
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240365"
 ---
-# <a name="gestures"></a>Gesten
+# <a name="xamarinforms-gestures"></a>Xamarin.Forms-Gesten
 
 _Geste Prüfer können verwendet werden, um eine Benutzerinteraktion mit vielen Elementen einer Xamarin.Forms-Anwendung zu erkennen._
 
@@ -30,4 +31,3 @@ Zwei-Finger Bewegung wird zum Ausführen von interaktiven Zoom verwendet und wir
 ## <a name="adding-a-pan-gesture-recognizerpanmd"></a>[Hinzufügen einer Schwenken Gestenhandler-Erkennung](pan.md)
 
 Schwenk Bewegung dient zum Erkennen von ziehen und wird implementiert, mit der [ `PanGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PanGestureRecognizer/) Klasse.
-

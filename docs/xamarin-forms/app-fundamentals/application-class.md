@@ -1,20 +1,20 @@
 ---
-title: App-Klasse
-description: Die App-Klasse, die entweder C#- oder XAML-Funktionen
+title: Xamarin.Forms-App-Klasse
+description: Dieser Artikel beschreibt die Funktionen von der App-Klasse, d., die h. eine Eigenschaft, auf der ersten Seite für die app festzulegen, und eine permanente Wörterbuch für einfache Werte über Änderungen im abonnementlebenszyklus Zustand speichern.
 ms.prod: xamarin
 ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 4b502b0d6eea37e0b5b374cfd4740cf6a5ced478
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 15fb866d2cde9409f401d6d021b22b8cb0468795
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846389"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240540"
 ---
-# <a name="app-class"></a>App-Klasse
+# <a name="xamarinforms-app-class"></a>Xamarin.Forms-App-Klasse
 
 Die `Application` Basisklasse bietet die folgenden Funktionen, die in Ihrem Standard-Projekte verfügbar gemacht werden `App` Unterklasse:
 

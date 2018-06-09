@@ -1,18 +1,18 @@
 ---
 title: Hierarchische Navigation
-description: Die NavigationPage-Klasse bietet die hierarchische Navigation, in denen der Benutzer Seiten vorwärts und rückwärts nach Bedarf navigieren kann. Die Klasse implementiert die Navigation als einen Stapel Last in, First Out (LIFO) von Page-Objekten. In diesem Artikel veranschaulicht, wie die NavigationPage-Klasse, die zum Ausführen der Navigation in einem Stapel von Seiten verwendet wird.
+description: Dieser Artikel veranschaulicht, wie die NavigationPage-Klasse, die zum Ausführen der Navigation in einem Stapel von Last in, First Out (LIFO)-Seiten verwendet wird.
 ms.prod: xamarin
 ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 49be5b812c5ef66907e7ebf74906c25bfbb076b6
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 20dfb6e935d08c35da73a81fb401a613aa6c9bac
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847162"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242455"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
@@ -48,7 +48,7 @@ Das Layout einer [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xam
 
 - Bei iOS kann eine Navigationsleiste am oberen Rand der Seite, die einen Titel anzeigt und dessen, vorhanden ist eine *wieder* Schaltfläche, die zur vorherigen Seite zurückgibt.
 - Auf Android-Geräten eine Navigationsleiste am oberen Rand der Seite, einen Titel, ein Symbol anzeigt, vorhanden ist und ein *wieder* Schaltfläche, die zur vorherigen Seite zurückgibt. Das Symbol wird definiert, der `[Activity]` -Attribut, das ergänzt die `MainActivity` Klasse im Android plattformspezifische Projekt.
-- Klicken Sie auf die universelle Windows-Plattform existiert eine Navigationsleiste am oberen Rand der Seite, die einen "Titel" anzeigt. 
+- Klicken Sie auf die universelle Windows-Plattform existiert eine Navigationsleiste am oberen Rand der Seite, die einen "Titel" anzeigt.
 
 Auf allen Plattformen, den Wert der [ `Page.Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) Eigenschaft wird als Titel der Seite angezeigt.
 

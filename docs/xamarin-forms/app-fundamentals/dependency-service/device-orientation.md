@@ -1,17 +1,18 @@
 ---
 title: Überprüfen der Geräteausrichtung
-description: Mit der geräteausrichtung Zugriff von freigegebenem Code DependencyService
+description: In diesem Artikel wird erläutert, wie für die Klasse Xamarin.Forms DependencyService geräteausrichtung von freigegebenem Code den Zugriff auf.
 ms.prod: xamarin
 ms.assetid: 5F60975F-47DB-4361-B97C-2290D6F77D2F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 09cd92b436be97f5490ac74890e4b0723bcd5701
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: e21531b7f39d3876d91eea8fa6cb9e409a9deffa
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240055"
 ---
 # <a name="checking-device-orientation"></a>Überprüfen der Geräteausrichtung
 

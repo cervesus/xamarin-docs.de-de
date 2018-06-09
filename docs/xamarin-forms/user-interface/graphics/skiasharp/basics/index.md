@@ -1,17 +1,18 @@
 ---
 title: Grundlagen der SkiaSharp Zeichnung
-description: Grundlagen der SkiaSharp Grafiken Konzepte und Koordinaten
+description: Dieses Handbuch erläutert die Grundlagen der SkiaSharp Grafiken Konzepte und Koordinaten in Xamarin.Forms-Anwendungen.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 25141E3E-D22E-44B1-A647-7E6FA0C9737B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: d602a03d7ac5943e45fd502981b39aefc4e8bc06
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 736921665664e559263fd56a456c5504a90124b3
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244018"
 ---
 # <a name="skiasharp-drawing-basics"></a>Grundlagen der SkiaSharp Zeichnung
 

@@ -1,25 +1,26 @@
 ---
-title: Pfade und Text
-description: Untersuchen Sie die Schnittmenge von Pfaden und text
+title: Pfade und Text in SkiaSharp
+description: In diesem Artikel wird erklärt, die Schnittmenge der SkiaSharp Pfade und Text, und wird dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 9b3f906a23ed0d51237a244f3944104acc76e259
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 305ee2946d3a291e6237d5a2860eda7331193b23
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243904"
 ---
-# <a name="paths-and-text"></a>Pfade und Text
+# <a name="paths-and-text-in-skiasharp"></a>Pfade und Text in SkiaSharp
 
 _Untersuchen Sie die Schnittmenge von Pfaden und text_
 
-In modernen Graphics-Systemen sind Textschriftarten Auflistungen von Zeichen Gliederungen quadratische Bézier-Kurven in der Regel definiert. Folglich umfassen viele moderne Graphics-Systeme eine Funktion zum Konvertieren von Textzeichen in einem Grafikpfad. 
+In modernen Graphics-Systemen sind Textschriftarten Auflistungen von Zeichen Gliederungen quadratische Bézier-Kurven in der Regel definiert. Folglich umfassen viele moderne Graphics-Systeme eine Funktion zum Konvertieren von Textzeichen in einem Grafikpfad.
 
-Sie haben bereits gesehen, dass Sie können die Umrisse von Textzeichen zeichnen sowie auszufüllen. Dies ermöglicht Ihnen, diese Zeichen werden mit einem bestimmten Strichbreite und sogar einen Pfad Effekt anzuzeigen, wie beschrieben in der [ **Pfad Effekte** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) Artikel. Es ist jedoch auch möglich, konvertieren eine Zeichenfolge in ein `SKPath` Objekt. Dies bedeutet, dass Text Gliederungen für Clipping mit Techniken verwendet werden können, die in beschrieben wurden die [ **Clipping mit Pfade und Regionen** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) Artikel. 
+Sie haben bereits gesehen, dass Sie können die Umrisse von Textzeichen zeichnen sowie auszufüllen. Dies ermöglicht Ihnen, diese Zeichen werden mit einem bestimmten Strichbreite und sogar einen Pfad Effekt anzuzeigen, wie beschrieben in der [ **Pfad Effekte** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) Artikel. Es ist jedoch auch möglich, konvertieren eine Zeichenfolge in ein `SKPath` Objekt. Dies bedeutet, dass Text Gliederungen für Clipping mit Techniken verwendet werden können, die in beschrieben wurden die [ **Clipping mit Pfade und Regionen** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) Artikel.
 
 Neben dem Verwenden eines Effekts Pfad, um ein Zeichenumriss zu zeichnen, können Sie auch Pfad bei Ihnen die Auswirkungen, die auf eine Pfade basieren von Zeichenfolgen abgeleitet sind erstellen, und Sie können sogar kombinieren, die zwei Auswirkungen:
 
@@ -37,7 +38,7 @@ Die [ `GetTextPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint
 public SKPath GetTextPath (String text, Single x, Single y)
 ```
 
-Die `x` und `y` Argumente angeben, den Ausgangspunkt der Baseline an der linken Seite des Texts. Diese Rolle dabei spielen, die gleiche hier als der `DrawText` Methode `SKCanvas`. In diesem Pfad müssen die Basislinie des linken Rands des Texts der Koordinaten (X, y). 
+Die `x` und `y` Argumente angeben, den Ausgangspunkt der Baseline an der linken Seite des Texts. Diese Rolle dabei spielen, die gleiche hier als der `DrawText` Methode `SKCanvas`. In diesem Pfad müssen die Basislinie des linken Rands des Texts der Koordinaten (X, y).
 
 Die `GetTextPath` Methode ist übertrieben, wenn lediglich sollen die gewünschten Eintragungen oder den resultierenden Pfad mit Strichen zu zeichnen. Die normale `DrawText` -Methode ermöglicht es Ihnen dies. Die `GetTextPath` Methode eignet sich eher für andere Aufgaben im Zusammenhang mit Pfaden.
 
@@ -114,7 +115,7 @@ public class ClippingTextPage : ContentPage
 
         // Display bitmap to fill window but maintain aspect ratio
         SKRect rect = new SKRect(0, 0, info.Width, info.Height);
-        canvas.DrawBitmap(bitmap, 
+        canvas.DrawBitmap(bitmap,
             rect.AspectFill(new SKSize(bitmap.Width, bitmap.Height)));
     }
 }
@@ -141,7 +142,7 @@ public class TextPathEffectPage : ContentPage
         TextSize = littleSize
     };
 
-    SKPaint textPaint = new SKPaint 
+    SKPaint textPaint = new SKPaint
     {
         Style = SKPaintStyle.Stroke,
         Color = SKColors.Black
@@ -160,7 +161,7 @@ public class TextPathEffectPage : ContentPage
         textPathPaint.MeasureText(character, ref textPathPaintBounds);
 
         // Create textPath centered around (0, 0)
-        SKPath textPath = textPathPaint.GetTextPath(character, 
+        SKPath textPath = textPathPaint.GetTextPath(character,
                                                     -textPathPaintBounds.MidX,
                                                     -textPathPaintBounds.MidY);
         // Create the path effect
@@ -324,7 +325,7 @@ Die `TextSize` Eigenschaft `textPaint` dann angepasst, sodass die Breite des Tex
 
 [![](text-paths-images/circulartext-small.png "Dreifacher Screenshot der Seite zirkuläre Text")](text-paths-images/circulartext-large.png#lightbox "dreifacher Screenshot der Seite zirkuläre Text")
 
-Der Text selbst wurde gewählt, um auch etwas Zirkular sein: das Wort "Circle" sowohl das Subjekt des Satzes und das Objekt von einem Präposition enthalten ist. 
+Der Text selbst wurde gewählt, um auch etwas Zirkular sein: das Wort "Circle" sowohl das Subjekt des Satzes und das Objekt von einem Präposition enthalten ist.
 
 ## <a name="related-links"></a>Verwandte Links
 

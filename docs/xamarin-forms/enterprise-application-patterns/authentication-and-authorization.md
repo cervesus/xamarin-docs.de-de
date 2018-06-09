@@ -1,16 +1,18 @@
 ---
 title: Authentifizierung und Autorisierung
+description: In diesem Kapitel wird erläutert, wie die mobilen Anwendung für eShopOnContainers Authentifizierung und Autorisierung für die Datenvolumes Microservices ausführt.
 ms.prod: xamarin
 ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 9c6f3ae19b3e1b89220cbdf0985f4bdf789f2209
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e6cfa566ab455841b3f11e4a857dcf678083417
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242426"
 ---
 # <a name="authentication-and-authorization"></a>Authentifizierung und Autorisierung
 
@@ -93,7 +95,7 @@ Nach dem Aufruf der `services.AddIdentityServer` -Methode, zusätzliche fluent-A
 -   Anmeldeinformationen, die zum Signieren verwendet werden.
 -   API und Identität Ressourcen, die Benutzer anfordern können der Zugriff auf.
 -   Clients, die mit Token anzufordern herstellen möchte.
--   ASP.NET Core Identity.
+-   ASP.NET Core-Identität.
 
 >💡 **Tipp**: dynamisch geladen wird, die IdentityServer 4-Konfiguration. IdentityServer-4-APIs ermöglichen die Konfiguration von IdentityServer aus einer Liste der in-Memory-Konfigurationsobjekte. In der Anwendung eShopOnContainers Verweis sind diese Auflistungen im Arbeitsspeicher an, in der Anwendung hartcodiert. Allerdings können in Produktionsszenarien sie geladen dynamisch aus einer Konfigurationsdatei oder aus einer Datenbank werden.
 
@@ -478,4 +480,4 @@ Die mobile Anwendung fordert von Sicherheitstoken aus IdentityServer, zum Authen
 ## <a name="related-links"></a>Verwandte Links
 
 - [Download-e-Book (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (sample)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [eShopOnContainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

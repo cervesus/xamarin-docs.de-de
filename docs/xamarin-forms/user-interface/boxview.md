@@ -1,20 +1,20 @@
 ---
-title: BoxView
-description: Verwenden Sie ein farbiges Rechteck für die Ergänzung, Grafiken und Interaktion.
+title: Xamarin.Forms BoxView
+description: In diesem Artikel wird erläutert, wie ein farbiges Rechteck für die Ergänzung, Grafiken und Interaktion in einer Xamarin.Forms-Anwendung verwendet wird.
 ms.prod: xamarin
 ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 356d0effe55638902b6ee599a0d9fb7e9b8ade2d
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: edb2785362f2cc7377d9adb0c1a89a6fa2b08111
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848407"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244314"
 ---
-# <a name="boxview"></a>BoxView
+# <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
 [`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) Rendert ein einfaches Rechteck angegebenen Breite, Höhe und Farbe. Sie können `BoxView` für Decoration rudimentäre Grafiken und Interaktion mit dem Benutzer durch berühren.
 
@@ -45,7 +45,7 @@ Die `Color` -Eigenschaft ist vom Typ `Color`; die Eigenschaft kann festgelegt we
 
 Die `WidthRequest` und `HeightRequest` Eigenschaften spielen eine Rolle nur, wenn die `BoxView` ist *uneingeschränkte* im Layout. Dies ist der Fall, wenn der Layoutcontainer muss wissen, das untergeordnete Element festlegen, z. B. wenn die `BoxView` ist ein untergeordnetes Element einer Zelle automatisch angepasst, in der `Grid` Layout. Ein `BoxView` ist auch nicht eingeschränkte wenn seine `HorizontalOptions` und `VerticalOptions` Eigenschaften außer auf Werte festgelegt sind `LayoutOptions.Fill`. Wenn die `BoxView` ist, dass nicht eingeschränkte, aber die `WidthRequest` und `HeightRequest` sind keine Eigenschaften festgelegt, und die Breite und Höhe werden mit Standardwerten von 40 Einheiten oder ungefähr 1/4-Zoll auf mobilen Geräten festgelegt.
 
-Die `WidthRequest` und `HeightRequest` Eigenschaften werden ignoriert, wenn die `BoxView` ist *eingeschränkte* im Layout, in dem Fall der Layoutcontainer legt eine eigene Größe für die `BoxView`. 
+Die `WidthRequest` und `HeightRequest` Eigenschaften werden ignoriert, wenn die `BoxView` ist *eingeschränkte* im Layout, in dem Fall der Layoutcontainer legt eine eigene Größe für die `BoxView`.
 
 Ein `BoxView` eingeschränkt, die in einer Dimension und in den anderen uneingeschränkten werden können. Z. B. wenn die `BoxView` ist ein untergeordnetes Element von einem vertikalen `StackLayout`, die vertikale Dimension von der `BoxView` ist uneingeschränkten und die horizontale Abmessung wird im Allgemeinen eingeschränkt. Es sind jedoch Ausnahmen für diese Dimension horizontale: Wenn die `BoxView` hat seine `HorizontalOptions` -Eigenschaft auf einen anderen Wert festgelegt wurde, außer `LayoutOptions.Fill`, und klicken Sie dann die horizontale Abmessung auch uneingeschränkte ist. Es ist auch möglich, für die `StackLayout` selbst über eine uneingeschränkte horizontale Abmessung in diesem Fall müssen die `BoxView` werden auch horizontal nicht eingeschränkte.
 
@@ -60,7 +60,7 @@ Die [ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/Box
     <BoxView Color="CornflowerBlue"
              WidthRequest="160"
              HeightRequest="160"
-             VerticalOptions="Center" 
+             VerticalOptions="Center"
              HorizontalOptions="Center" />
 
 </ContentPage>
@@ -149,7 +149,7 @@ Es ist auch möglich, verwenden Sie eine `BoxView` HTML gleichkommt `hr` (horizo
 <BoxView HeightRequest="3" />
 ```
 
-Sie können schließlich eine vertikale Linie auf einer Seite des einen Textabsatz zeichnen, schließen Sie beide die `BoxView` und `Label` in einem horizontalen `StackLayout`. In diesem Fall wird die Höhe des der `BoxView` ist identisch mit die Höhe des `StackLayout`, unterliegt der die Höhe des der `Label`: 
+Sie können schließlich eine vertikale Linie auf einer Seite des einen Textabsatz zeichnen, schließen Sie beide die `BoxView` und `Label` in einem horizontalen `StackLayout`. In diesem Fall wird die Höhe des der `BoxView` ist identisch mit die Höhe des `StackLayout`, unterliegt der die Höhe des der `Label`:
 
 ```xaml
 <StackLayout Orientation="Horizontal">
@@ -242,7 +242,7 @@ public class NamedColor
 }
 ```
 
-Das Programm visuelle Elemente werden in der XAML-Datei beschrieben. Die `ItemsSource` Eigenschaft von der `ListView` festgelegt ist, um die statische `NamedColor.All` -Eigenschaft, d., die h. die `ListView` zeigt alle einzelnen `NamedColor` Objekte: 
+Das Programm visuelle Elemente werden in der XAML-Datei beschrieben. Die `ItemsSource` Eigenschaft von der `ListView` festgelegt ist, um die statische `NamedColor.All` -Eigenschaft, d., die h. die `ListView` zeigt alle einzelnen `NamedColor` Objekte:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -290,7 +290,7 @@ Das Programm visuelle Elemente werden in der XAML-Datei beschrieben. Die `ItemsS
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-</ContentPage> 
+</ContentPage>
 ```
 
 Die `NamedColor` Objekte werden formatiert, indem die `ViewCell` -Objekt, das als die Datenvorlage der festzulegen ist die `ListView`. Diese Vorlage enthält einen `BoxView` , deren `Color` Eigenschaft gebunden ist die `Color` Eigenschaft von der `NamedColor` Objekt.
@@ -388,15 +388,15 @@ public partial class MainPage : ContentPage
     static readonly int[, ,] numberPatterns = new int[10, 7, 5]
     {
         {
-            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 1, 1}, { 1, 0, 1, 0, 1}, 
+            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 1, 1}, { 1, 0, 1, 0, 1},
             { 1, 1, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}
         },
         {
-            { 0, 0, 1, 0, 0}, { 0, 1, 1, 0, 0}, { 0, 0, 1, 0, 0}, { 0, 0, 1, 0, 0}, 
+            { 0, 0, 1, 0, 0}, { 0, 1, 1, 0, 0}, { 0, 0, 1, 0, 0}, { 0, 0, 1, 0, 0},
             { 0, 0, 1, 0, 0}, { 0, 0, 1, 0, 0}, { 0, 1, 1, 1, 0}
         },
         {
-            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 0, 0, 0, 0, 1}, { 0, 0, 0, 1, 0}, 
+            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 0, 0, 0, 0, 1}, { 0, 0, 0, 1, 0},
             { 0, 0, 1, 0, 0}, { 0, 1, 0, 0, 0}, { 1, 1, 1, 1, 1}
         },
         {
@@ -404,27 +404,27 @@ public partial class MainPage : ContentPage
             { 0, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}
         },
         {
-            { 0, 0, 0, 1, 0}, { 0, 0, 1, 1, 0}, { 0, 1, 0, 1, 0}, { 1, 0, 0, 1, 0}, 
+            { 0, 0, 0, 1, 0}, { 0, 0, 1, 1, 0}, { 0, 1, 0, 1, 0}, { 1, 0, 0, 1, 0},
             { 1, 1, 1, 1, 1}, { 0, 0, 0, 1, 0}, { 0, 0, 0, 1, 0}
         },
         {
-            { 1, 1, 1, 1, 1}, { 1, 0, 0, 0, 0}, { 1, 1, 1, 1, 0}, { 0, 0, 0, 0, 1}, 
+            { 1, 1, 1, 1, 1}, { 1, 0, 0, 0, 0}, { 1, 1, 1, 1, 0}, { 0, 0, 0, 0, 1},
             { 0, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}
         },
         {
-            { 0, 0, 1, 1, 0}, { 0, 1, 0, 0, 0}, { 1, 0, 0, 0, 0}, { 1, 1, 1, 1, 0}, 
+            { 0, 0, 1, 1, 0}, { 0, 1, 0, 0, 0}, { 1, 0, 0, 0, 0}, { 1, 1, 1, 1, 0},
             { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}
         },
         {
-            { 1, 1, 1, 1, 1}, { 0, 0, 0, 0, 1}, { 0, 0, 0, 1, 0}, { 0, 0, 1, 0, 0}, 
+            { 1, 1, 1, 1, 1}, { 0, 0, 0, 0, 1}, { 0, 0, 0, 1, 0}, { 0, 0, 1, 0, 0},
             { 0, 1, 0, 0, 0}, { 0, 1, 0, 0, 0}, { 0, 1, 0, 0, 0}
         },
         {
-            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}, 
+            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0},
             { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}
         },
         {
-            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 1}, 
+            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 1},
             { 0, 0, 0, 0, 1}, { 0, 0, 0, 1, 0}, { 0, 1, 1, 0, 0}
         },
     };
@@ -528,24 +528,24 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Dieses Programm verwendet werden, die relative Positionierung und Sizing-Funktion von `AbsoluteLayout`. Die Breite und Höhe der einzelnen `BoxView` Bruchzahlen, insbesondere 85 % 1, dividiert durch die Anzahl der horizontalen und vertikalen Punkte festgelegt werden. Die Positionen werden auch auf Bruchzahlen festgelegt. 
+Dieses Programm verwendet werden, die relative Positionierung und Sizing-Funktion von `AbsoluteLayout`. Die Breite und Höhe der einzelnen `BoxView` Bruchzahlen, insbesondere 85 % 1, dividiert durch die Anzahl der horizontalen und vertikalen Punkte festgelegt werden. Die Positionen werden auch auf Bruchzahlen festgelegt.
 
 Da sind die Positionen und Größen relativ zu der Gesamtgröße der der `AbsoluteLayout`, die `SizeChanged` Handler für die Seite muss nur festgelegt werden. eine `HeightRequest` von der `AbsoluteLayout`:
 
 ```csharp
 public partial class MainPage : ContentPage
 {
-    
+
     ···
-    
+
     void OnPageSizeChanged(object sender, EventArgs args)
     {
         // No chance a display will have an aspect ratio > 41:7
         absoluteLayout.HeightRequest = vertDots * Width / horzDots;
     }
-    
+
     ···
-    
+
 }
 ```
 
@@ -556,9 +556,9 @@ Der endgültige Code in die `MainPage` -Klasse verarbeitet den Zeitgeberrückruf
 ```csharp
 public partial class MainPage : ContentPage
 {
-   
+
     ···
- 
+
     bool OnTimer()
     {
         DateTime dateTime = DateTime.Now;
@@ -596,7 +596,7 @@ Eine Matrix-Uhr scheinen einer Anwendung offensichtlich sein `BoxView`, aber `Bo
 
 [![BoxView Uhr](boxview-images/boxviewclock-small.png "BoxView Uhr")](boxview-images/boxviewclock-large.png#lightbox "BoxView Uhr")
 
-Alle visuellen Elemente in der [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) Programm sind untergeordnete Elemente des ein `AbsoluteLayout`. Diese Elemente haben eine Größe von mithilfe der `LayoutBounds` -Eigenschaft, und gedreht, mit der `Rotation` Eigenschaft. 
+Alle visuellen Elemente in der [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) Programm sind untergeordnete Elemente des ein `AbsoluteLayout`. Diese Elemente haben eine Größe von mithilfe der `LayoutBounds` -Eigenschaft, und gedreht, mit der `Rotation` Eigenschaft.
 
 Die drei `BoxView` Elemente für die Zeiger der Uhr instanziiert die XAML-Datei, jedoch keine positioniert oder angepasst werden:
 
@@ -613,13 +613,13 @@ Die drei `BoxView` Elemente für die Zeiger der Uhr instanziiert die XAML-Datei,
 
     <AbsoluteLayout x:Name="absoluteLayout"
                     SizeChanged="OnAbsoluteLayoutSizeChanged">
-        
+
         <BoxView x:Name="hourHand"
                  Color="Black" />
-        
+
         <BoxView x:Name="minuteHand"
                  Color="Black" />
-        
+
         <BoxView x:Name="secondHand"
                  Color="Black" />
     </AbsoluteLayout>
@@ -631,9 +631,9 @@ Der Konstruktor der CodeBehind-Datei instanziiert den 60 `BoxView` Elemente für
 ```csharp
 public partial class MainPage : ContentPage
 {
-      
+
     ···
- 
+
     BoxView[] tickMarks = new BoxView[60];
 
     public MainPage()
@@ -649,9 +649,9 @@ public partial class MainPage : ContentPage
 
         Device.StartTimer(TimeSpan.FromSeconds(1.0 / 60), OnTimerTick);
     }
-  
+
     ···
- 
+
 }
 ```
 
@@ -678,9 +678,9 @@ public partial class MainPage : ContentPage
     static readonly HandParams secondParams = new HandParams(0.02, 1.1, 0.85);
     static readonly HandParams minuteParams = new HandParams(0.05, 0.8, 0.9);
     static readonly HandParams hourParams = new HandParams(0.125, 0.65, 0.9);
- 
+
     ···
- 
+
  }
 ```
 
@@ -689,9 +689,9 @@ Die `SizeChanged` Ereignishandler bestimmt den Mittelpunkt und den Radius des de
 ```csharp
 public partial class MainPage : ContentPage
 {
- 
+
     ···
- 
+
     void OnAbsoluteLayoutSizeChanged(object sender, EventArgs args)
     {
         // Get the center and radius of the AbsoluteLayout.
@@ -729,9 +729,9 @@ public partial class MainPage : ContentPage
         // Set the AnchorY property for rotations.
         boxView.AnchorY = handParams.Offset;
     }
- 
+
     ···
- 
+
 }
 ```
 
@@ -742,9 +742,9 @@ Die Hände geraten sind in der Rückruffunktion Timer gedreht:
 ```csharp
 public partial class MainPage : ContentPage
 {
- 
+
     ···
-     
+
     bool OnTimerTick()
     {
         // Set rotation angles for hour and minute hands.

@@ -1,20 +1,20 @@
 ---
-title: Dynamische Formate
-description: Stile nicht reagieren auf eigenschaftenänderungen, und für die Dauer einer Anwendung unverändert bleiben. Beispielsweise wird nicht nach dem Zuweisen einer Formatvorlage auf ein visuelles Element, wenn eine der Setter Instanzen entfernt, geändert wird, oder eine neue Setter-Instanz, die hinzugefügt, die Änderungen auf das visuelle Element angewendet werden. Allerdings können Anwendungen auf Änderungen an Formatvorlagen zur Laufzeit dynamisch zu reagieren, dynamische Ressourcen nutzen.
+title: Dynamische Formate in Xamarin.Forms
+description: In diesem Artikel wird erläutert, wie eine Xamarin.Forms-Anwendung auf Änderungen an Formatvorlagen dynamisch zur Laufzeit reagieren kann, mithilfe der dynamischen Ressourcen.
 ms.prod: xamarin
 ms.assetid: 13D4FA4B-DF10-42BF-B001-2C49367FC216
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: e0cfcbaef70f58622a21315637279740f568ada8
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 0f82e0cfde29921ea768000f17b93d04f8ad307e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848069"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245220"
 ---
-# <a name="dynamic-styles"></a>Dynamische Formate
+# <a name="dynamic-styles-in-xamarinforms"></a>Dynamische Formate in Xamarin.Forms
 
 _Stile nicht reagieren auf eigenschaftenänderungen, und für die Dauer einer Anwendung unverändert bleiben. Beispielsweise wird nicht nach dem Zuweisen einer Formatvorlage auf ein visuelles Element, wenn eine der Setter Instanzen entfernt, geändert wird, oder eine neue Setter-Instanz, die hinzugefügt, die Änderungen auf das visuelle Element angewendet werden. Allerdings können Anwendungen auf Änderungen an Formatvorlagen zur Laufzeit dynamisch zu reagieren, dynamische Ressourcen nutzen._
 

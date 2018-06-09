@@ -1,19 +1,20 @@
 ---
-title: Design "dunkel"
+title: Xamarin.Forms dunklen Design
+description: In diesem Artikel erläutert, wie die Xamarin.Forms Design "dunkel" in einer app nutzen.
 ms.prod: xamarin
 ms.assetid: 43A3798D-6F05-4734-AF5E-97235B46D9B9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 676ed2d5f99c1f39904b2afe045cee21c0eab09c
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 1fc329f506afde04b0dc59dc637d999865aafbe1
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847263"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245923"
 ---
-# <a name="dark-theme"></a>Design "dunkel"
+# <a name="xamarinforms-dark-theme"></a>Xamarin.Forms dunklen Design
 
 ![](~/media/shared/preview.png "Diese API ist derzeit als Vorschau verfügbar")
 
@@ -69,4 +70,3 @@ Hier ist ein Beispiel für Schaltflächen und Bezeichnungen in das Design "dunke
 ```
 
 Die [vollständige Liste der integrierten Klassen](~/xamarin-forms/user-interface/themes/index.md) zeigt, welche Formate für einige häufig verwendete Steuerelemente verfügbar sind.
-

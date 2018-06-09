@@ -1,17 +1,18 @@
 ---
 title: Authentifizieren von Benutzern mit Azure Mobile Apps
-description: Azure Mobile Apps verwenden eine Vielzahl von externen Identitätsanbieter zum Authentifizieren und autorisieren Benutzer der Anwendung, einschließlich Facebook, Google, Microsoft, Twitter und Azure Active Directory zu unterstützen. Berechtigungen können für Tabellen festgelegt werden, um den Zugriff nur für authentifizierte Benutzer einzuschränken. In diesem Artikel wird erläutert, wie Azure Mobile Apps zu verwenden, um den Authentifizierungsvorgang in einer Xamarin.Forms-Anwendung verwalten.
+description: In diesem Artikel wird erläutert, wie Azure Mobile Apps zu verwenden, um den Authentifizierungsvorgang in einer Xamarin.Forms-Anwendung verwalten.
 ms.prod: xamarin
 ms.assetid: D50D6F56-8B19-44E7-81F3-E0E1C6E240
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 5f5c69601c11a3c0d25bc804c60883841b0fb30d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fc6206a22d7527ea38a39ab034c424bfe7730abb
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241714"
 ---
 # <a name="authenticating-users-with-azure-mobile-apps"></a>Authentifizieren von Benutzern mit Azure Mobile Apps
 
@@ -185,8 +186,8 @@ In diesem Artikel wurde erläutert, wie Azure Mobile Apps zu verwenden, um den A
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [TodoAzureAuth (sample)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzureAuth/)
+- [TodoAzureAuth (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzureAuth/)
 - [Verwenden einer mobilen Anwendung für Azure](~/xamarin-forms/data-cloud/consuming/azure.md)
 - [Hinzufügen von Authentifizierung zu Ihrer app Xamarin.Forms](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users/)
-- [Azure Mobile Client SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
+- [Azure Mobile Client-SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
 - [MobileServiceClient](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient(v=azure.10).aspx)

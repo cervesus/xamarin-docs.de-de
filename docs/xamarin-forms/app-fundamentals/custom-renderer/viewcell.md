@@ -1,18 +1,18 @@
 ---
 title: Anpassen einer ViewCell
-description: Eine Xamarin.Forms-ViewCell ist eine Zelle, die hinzugefügt werden kann, eine ListView oder TableView, die eine Entwickler benutzerdefinierte Sicht enthält. In diesem Artikel veranschaulicht, wie einen benutzerdefinierten Renderer für eine ViewCell, die in einem Xamarin.Forms ListView-Steuerelement gehostet wird. Dies beendet die Xamarin.Forms-Layout-Berechnungen nicht während des Bildlaufs ListView wiederholt aufgerufen.
+description: Eine Xamarin.Forms-ViewCell ist eine Zelle, die hinzugefügt werden kann, eine ListView oder TableView, die eine Entwickler benutzerdefinierte Sicht enthält. In diesem Artikel veranschaulicht, wie einen benutzerdefinierten Renderer für eine ViewCell, die in einem Xamarin.Forms ListView-Steuerelement gehostet wird.
 ms.prod: xamarin
 ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: ec7e8ef619ba065c0e9d81b71f267eb70a68bd14
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 2011049180aa47b7be68486d4f30bd356e2ba813
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847705"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241802"
 ---
 # <a name="customizing-a-viewcell"></a>Anpassen einer ViewCell
 

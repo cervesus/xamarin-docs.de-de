@@ -1,5 +1,5 @@
 ---
-title: Lokale Datenbanken
+title: Xamarin.Forms lokale Datenbanken
 description: Xamarin.Forms unterstützt Datenbank datengesteuerten Anwendungen, die mit dem Datenbankmodul SQLite, wodurch es möglich ist, laden und Speichern von Objekten im freigegebenen Code. In diesem Artikel wird beschrieben, wie Xamarin.Forms lesen und Schreiben von Daten in einer lokalen SQLite.Net mit SQLite-Datenbank.
 ms.prod: xamarin
 ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: d97fc792e2eb14f7e432d377811d1318c99b9602
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: 91df4d36dd8d98712063a30773f927a82676b18e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34689447"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243609"
 ---
-# <a name="local-databases"></a>Lokale Datenbanken
+# <a name="xamarinforms-local-databases"></a>Xamarin.Forms lokale Datenbanken
 
 _Xamarin.Forms unterstützt Datenbank datengesteuerten Anwendungen, die mit dem Datenbankmodul SQLite, wodurch es möglich ist, laden und Speichern von Objekten im freigegebenen Code. In diesem Artikel wird beschrieben, wie Xamarin.Forms lesen und Schreiben von Daten in einer lokalen SQLite.Net mit SQLite-Datenbank._
 
-## <a name="overview"></a>Überblick
+## <a name="overview"></a>Übersicht
 
 Xamarin.Forms-Anwendungen können die [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) Paket integrieren Sie Datenbankvorgängen in freigegebenen Code durch Verweisen auf die `SQLite` Klassen, die in der NuGet geliefert. Datenbankvorgänge können definiert werden, in der standardmäßigen .NET Bibliotheksprojekt Xamarin.Forms-Projektmappe mit plattformspezifischen Projekte, die einen Pfad zum Speicherort der Datenbank zurückgegeben.
 

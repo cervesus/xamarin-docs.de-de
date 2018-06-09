@@ -1,6 +1,6 @@
 ---
 title: Senden von Pushbenachrichtigungen von Azure Mobile Apps
-description: Azure Benachrichtigungshubs stellen eine skalierbare pushinfrastruktur für das Senden von Pushbenachrichtigungen mobile von beliebigen Back-Ends an beliebige mobile Plattformen die Komplexität von einem Back-End-müssen für die Kommunikation mit verschiedenen plattformbenachrichtigungssysteme Geschäftslogikkomponenten bei. In diesem Artikel wird erläutert, wie Azure-Benachrichtigungshubs zum Senden von Pushbenachrichtigungen von einer Instanz von Azure Mobile Apps zu einer Xamarin.Forms-Anwendung verwendet wird.
+description: In diesem Artikel wird erläutert, wie Azure-Benachrichtigungshubs zum Senden von Pushbenachrichtigungen von einer Instanz von Azure Mobile Apps zu einer Xamarin.Forms-Anwendung verwendet wird.
 ms.prod: xamarin
 ms.assetid: A1EF400F-73F4-43E9-A0C3-1569A0F34A3B
 ms.technology: xamarin-forms
@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 28aba0ec33dc88e3e87f51fbdd28d5ec8a72d3c3
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: d5bf0e614ef3777bc956e66c0b737bfb8a5b9e0c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847601"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243765"
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>Senden von Pushbenachrichtigungen von Azure Mobile Apps
 

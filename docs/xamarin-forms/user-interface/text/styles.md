@@ -1,33 +1,25 @@
 ---
-title: Stile
-description: Textstil in Xamarin.Forms
+title: Xamarin.Forms-Text-Formate
+description: In diesem Artikel wird erläutert, wie zum Formatieren von Text in Xamarin.Forms-Anwendungen. Formatvorlagen einmal definiert und durch zahlreiche Ansichten verwendet werden können, aber ein Format kann nur mit Ansichten eines bestimmten Typs verwendet werden.
 ms.prod: xamarin
 ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 42d5da5c4171347de8c4befc773e498803fd9f36
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b8cc6493c3574180e7938050075c5a70ecebeebf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848446"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245321"
 ---
-# <a name="styles"></a>Stile
+# <a name="xamarinforms-text-styles"></a>Xamarin.Forms-Text-Formate
 
-_Textstil in Xamarin.Forms_
-
+_Formatieren von Text in Xamarin.Forms_
 
 Stile können verwendet werden, um die Darstellung der Bezeichnungen, Einträge und Editoren anzupassen. Formatvorlagen einmal definiert und durch zahlreiche Ansichten verwendet werden können, aber ein Format kann nur mit Ansichten eines bestimmten Typs verwendet werden.
 Stile können weitergegeben werden, eine `Key` und selektiv mithilfe eines bestimmten Steuerelements angewendet `Style` Eigenschaft.
-
-In diesem Artikel werden die folgenden Themen behandelt:
-
-- **[Formatvorlagen](#Built-In_Styles)**  &ndash; Formatvorlagen Stil textbasierte Ansichten in der gesamten Ihrer app verwenden.
-- **[Benutzerdefinierte Stile](#Custom_Styles)**  &ndash; benutzerdefinierte Stile definieren, wenn die integrierten Optionen ist nicht ausreichend.
-- **[Anwenden von Stilen](#Applying_Styles)**  &ndash; benutzerdefinierte und integrierte Stile übernehmen, um Ihre Ansichten.
-- **[Eingabehilfen](#Accessibility)**  &ndash; stellen Sie sicher, dass Text barrierefreiheiteinstellungen berücksichtigt.
 
 <a name="Built-In_Styles" />
 

@@ -1,18 +1,20 @@
 ---
-title: Unittests
+title: Testen von Unternehmens-Apps Einheit
+description: In diesem Kapitel wird erläutert, wie Komponententests in der mobilen eShopOnContainers-Anwendung ausgeführt wird.
 ms.prod: xamarin
 ms.assetid: 4af82e52-f99b-4cad-b278-1745f190c240
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 57201a32f5ffc0ae962f6db851a25a737e1cb17d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 06cd89e0b0871eac723e8580340173f77821e4ed
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242530"
 ---
-# <a name="unit-testing"></a>Unittests
+# <a name="unit-testing-enterprise-apps"></a>Testen von Unternehmens-Apps Einheit
 
 Mobile apps haben eindeutige Probleme, denen Desktop- und webbasierte Anwendungen keine Gedanken. Mobile Benutzer von den Geräten, die sie durch die Netzwerkkonnektivität, indem Sie die Verfügbarkeit von Diensten und einen Bereich von anderen Faktoren verwenden, unterscheidet sich. Aus diesem Grund sollte mobiler apps getestet werden, wie sie in der wirklichen Welt verwendet werden sollen, um die Qualität, Zuverlässigkeit und Leistung zu verbessern. Es gibt viele Arten von Tests, die für eine app, einschließlich Komponententests, Integrationstests zu legen, und testen, mit Komponententests wird die am häufigsten verwendete Form des Testens Benutzeroberfläche ausgeführt werden soll.
 
@@ -227,4 +229,4 @@ Testen von Modellen und Modelle anzeigen von MVVM Anwendungen ist identisch mit 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Download-e-Book (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (sample)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [eShopOnContainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

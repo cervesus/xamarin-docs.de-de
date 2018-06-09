@@ -1,17 +1,18 @@
 ---
 title: Hinzufügen von Intelligenz mit Cognitive-Diensten
-description: Microsoft-Cognitive sind ein Satz von APIs, SDKs und Dienste, die für Entwickler ihre Anwendungen intelligenter machen, indem Sie zusätzliche Funktionen wie gesichtserkennung, Spracherkennung und Sprache Verständnis verfügbar. Dieser Artikel bietet eine Einführung in die beispielanwendung, die zeigt, wie einige der Microsoft Cognitive-Dienst-APIs aufgerufen werden.
+description: Dieser Artikel bietet eine Einführung in eine beispielanwendung, die zeigt, wie einige der Microsoft Cognitive-Dienst-APIs aufgerufen werden.
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 86253e42db7da2da6eb8b03e2d4a4b3c943b7e17
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: c577aaf1991082baaf34248ee31899902f692d0b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241522"
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>Hinzufügen von Intelligenz mit Cognitive-Diensten
 

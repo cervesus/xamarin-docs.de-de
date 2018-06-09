@@ -1,16 +1,18 @@
 ---
 title: Zusammenfassung der Kapitel 25. Seite "-Varianten
+description: 'Beim Erstellen mobiler Apps mit Xamarin.Forms: Zusammenfassung der Chapter 25. Seite "-Varianten'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 951ae41763d8338d5adf73fb46ebc6defa64f8f8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ecee7866f4bf9ac1a4f706853434dce2b9cef7f6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241154"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>Zusammenfassung der Kapitel 25. Seite "-Varianten
 
@@ -58,7 +60,7 @@ XAML-Datei fest, die auch die [ `IsPresented` ](https://developer.xamarin.com/ap
 
 ### <a name="your-own-user-interface"></a>Eine eigene Benutzeroberfläche
 
-Obwohl Xamarin.Forms eine Benutzeroberfläche für den Wechsel zwischen den Master- und Detailtabelle Ansichten enthält, können Sie eigene angeben. Dazu:
+Obwohl Xamarin.Forms eine Benutzeroberfläche für den Wechsel zwischen den Master- und Detailtabelle Ansichten enthält, können Sie eigene angeben. Gehen Sie hierzu wie folgt vor:
 
 - Legen Sie die [ `IsGestureEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsGestureEnabled/) Eigenschaft `false` Streifen deaktivieren
 - Überschreiben Sie die [ `ShouldShowToolbarButton` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton()/) -Methode und der Rückgabewert `false` auf Windows 8.1 und Windows Phone 8.1 die Schaltflächen der Symbolleiste ausblenden.

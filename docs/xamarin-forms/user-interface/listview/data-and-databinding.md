@@ -1,17 +1,18 @@
 ---
 title: ListView-Datenquellen
-description: Erfahren Sie, wie Ihre ListView mit Daten aufzufüllen.
+description: In diesem Artikel wird erläutert, wie Xamarin.Forms ListView mit Daten aufgefüllt und zum Binden von Daten mit einem ListView.
 ms.prod: xamarin
 ms.assetid: B5571660-1E82-4379-95C3-0725288CF5D9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 6f0553f2887d4acb1015da71395be3f316e9acee
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: aa9c23266329c03b3b28c7795f67290bbc23c4bf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245539"
 ---
 # <a name="listview-data-sources"></a>ListView-Datenquellen
 

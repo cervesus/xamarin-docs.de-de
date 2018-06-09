@@ -1,16 +1,18 @@
 ---
 title: Zusammenfassung der Chapter 1. Wie ist Xamarin.Forms angebracht?
+description: 'Beim Erstellen mobiler Apps mit Xamarin.Forms: Zusammenfassung der Chapter 1. Wie ist Xamarin.Forms angebracht?'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 534c36a16acdc10ffb6f6b6703296a672875286e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2897229b0749b1a6ead805d6ad063603a77f8f0d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240459"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Zusammenfassung der Chapter 1. Wie ist Xamarin.Forms angebracht?
 

@@ -1,17 +1,18 @@
 ---
 title: Teil 5. Aus Datenbindungen zu MVVM
-description: Das Model-View-ViewModel (MVVM)-Architekturschema wurde durch XAML Bedenken erfunden. Das Muster erzwingt eine Trennung zwischen den drei Softwareebenen – der Verwendung von XAML-Benutzeroberfläche wird aufgerufen, die Ansicht befindet die zugrunde liegenden Daten des Modells aufgerufen; und ein Vermittler zwischen der Ansicht und das Modell als ViewModel bezeichnet. Die Ansicht und das ViewModel sind häufig über datenbindungen, die in der XAML-Datei definierten verbunden. BindingContext für die Sicht ist in der Regel eine Instanz des ViewModel.
+description: Das Muster MVVM erzwingt eine Trennung zwischen den drei Softwareebenen – der Verwendung von XAML-Benutzeroberfläche wird aufgerufen, die Ansicht befindet die zugrunde liegenden Daten des Modells aufgerufen; und ein Vermittler zwischen der Ansicht und das Modell als ViewModel bezeichnet.
 ms.prod: xamarin
 ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 95cd79a4bd6da47757cfeb12a2862ccb5a66fee2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e9f38377299e8094162dd2d2d73174e6f2b40369
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245770"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Teil 5. Aus Datenbindungen zu MVVM
 
@@ -649,7 +650,7 @@ public class PageDataViewModel
         };
     }
 
-    public static IList<PageDataViewModel> All { private set; get; } 
+    public static IList<PageDataViewModel> All { private set; get; }
 }
 ```
 
