@@ -1,18 +1,18 @@
 ---
 title: Einführung in Xamarin.Forms
-description: Xamarin.Forms ist eine plattformübergreifende nativ gesicherte Benutzeroberflächen-Toolkit-Abstraktion, mit der Entwickler ohne großen Aufwand Benutzeroberflächen für Android, iOS und die Universelle Windows-Plattform erstellen können. Die Benutzeroberflächen werden mit den nativen Steuerelementen der Zielplattform gerendert. Dadurch können Anwendungen von Xamarin.Forms das Erscheinungsbild der einzelnen Plattformen beibehalten. Dieser Artikel enthält eine Einführung in Xamarin.Forms und Informationen zu den ersten Schritten beim Schreiben von Anwendungen.
+description: Dieser Artikel enthält eine Einführung in Xamarin.Forms und Informationen zu den ersten Schritten beim Schreiben von Anwendungen.
 ms.prod: xamarin
 ms.assetid: f619595f-3ee7-439b-a1bc-d13e5106e6e9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 43282196b1c5b6e43927554d2189e54fc532915a
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 15a26ce633e8321e9101289276c9da302e5bd8cc
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848524"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35243693"
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Einführung in Xamarin.Forms
 
