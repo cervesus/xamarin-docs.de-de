@@ -1,21 +1,22 @@
 ---
-title: Die Befehlsschnittstelle
-description: Implementieren der `Command` Eigenschaft mit dem Datenbindung
+title: Die Xamarin.Forms-Schnittstelle
+description: In diesem Artikel wird erläutert, wie die Befehlseigenschaft mit Xamarin.Forms datenbindungen implementiert wird. Die Befehle Schnittstelle bietet eine alternative Methode zum Implementieren von Befehlen, die der Architektur MVVM wesentlich besser geeignet ist.
 ms.prod: xamarin
 ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 7f8b40624b9434347f69a473eed3bdff5c1d3d33
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 37fe5bbcfa3dbc6aa5483c89b49c1698a00ecbb6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241311"
 ---
-# <a name="the-command-interface"></a>Die Befehlsschnittstelle
+# <a name="the-xamarinforms-command-interface"></a>Die Xamarin.Forms-Schnittstelle
 
-In der Model-View-ViewModel (MVVM)-Architektur datenbindungen definiert sind, zwischen Eigenschaften im ViewModel, in der Regel ist eine Klasse, die abgeleitet `INotifyPropertyChanged`, und Eigenschaften in der Sicht, die sich im Allgemeinen die Verwendung von XAML-Datei handelt. In einigen Fällen weist eine Anwendung Anforderungen, die diese Eigenschaft Bindungen hinausgehen, durch das Anfordern des Benutzers Befehle ausführen, die ein Element im ViewModel beeinflussen. Diese Befehle sind in der Regel durch Klicken auf eine Schaltfläche signalisiert oder finger Taps und sie werden normalerweise verarbeitet, in der CodeBehind-Datei in einen Handler für die `Clicked` -Ereignis für die `Button` oder `Tapped` -Ereignis für eine `TapGestureRecognizer`. 
+In der Model-View-ViewModel (MVVM)-Architektur datenbindungen definiert sind, zwischen Eigenschaften im ViewModel, in der Regel ist eine Klasse, die abgeleitet `INotifyPropertyChanged`, und Eigenschaften in der Sicht, die sich im Allgemeinen die Verwendung von XAML-Datei handelt. In einigen Fällen weist eine Anwendung Anforderungen, die diese Eigenschaft Bindungen hinausgehen, durch das Anfordern des Benutzers Befehle ausführen, die ein Element im ViewModel beeinflussen. Diese Befehle sind in der Regel durch Klicken auf eine Schaltfläche signalisiert oder finger Taps und sie werden normalerweise verarbeitet, in der CodeBehind-Datei in einen Handler für die `Clicked` -Ereignis für die `Button` oder `Tapped` -Ereignis für eine `TapGestureRecognizer`.
 
 Die Befehle Schnittstelle bietet eine alternative Methode zum Implementieren von Befehlen, die der Architektur MVVM wesentlich besser geeignet ist. Das ViewModel selbst darf Befehle, die Methoden, die in Reaktion auf eine bestimmte Aktivität in der Ansicht, z. B. ausgeführt werden eine `Button` klicken Sie auf. Datenbindungen zwischen diesen Befehlen definiert werden und die `Button`.
 
@@ -32,7 +33,7 @@ Die `Command` und `CommandParameter` Eigenschaften werden auch von den folgenden
 - [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) und daher [ `ImageCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/), die sich daraus ableitet `TextCell`
 - [`TapGestureRecognizer`](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)
 
-[`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) definiert eine [ `SearchCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommand/) Eigenschaft vom Typ `ICommand` und ein [ `SearchCommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommandParameter/) Eigenschaft. Die [ `RefreshCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RefreshCommand/) Eigenschaft [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) wird auch vom Typ `ICommand`. 
+[`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) definiert eine [ `SearchCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommand/) Eigenschaft vom Typ `ICommand` und ein [ `SearchCommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommandParameter/) Eigenschaft. Die [ `RefreshCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RefreshCommand/) Eigenschaft [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) wird auch vom Typ `ICommand`.
 
 All diese Befehle können in einem ViewModel in einer Weise behandelt werden, die nicht von der bestimmten Benutzeroberflächen-Objekt in der Sicht abhängig ist.
 
@@ -57,7 +58,7 @@ Um die Befehlsschnittstelle verwenden zu können, enthält Ihre ViewModel Eigens
 public ICommand MyCommand { private set; get; }
 ```
 
-Eine Klasse, die implementiert muss auch auf das ViewModel verweisen die `ICommand` Schnittstelle. Diese Klasse wird in Kürze beschrieben werden. In der Ansicht der `Command` Eigenschaft von einem `Button` an diese Eigenschaft gebunden ist: 
+Eine Klasse, die implementiert muss auch auf das ViewModel verweisen die `ICommand` Schnittstelle. Diese Klasse wird in Kürze beschrieben werden. In der Ansicht der `Command` Eigenschaft von einem `Button` an diese Eigenschaft gebunden ist:
 
 ```xaml
 <Button Text="Execute command"
@@ -136,7 +137,7 @@ public class PersonViewModel : INotifyPropertyChanged
 }
 ```
 
-Die `PersonCollectionViewModel` gezeigt unten erstellt neue Objekte des Typs `PersonViewModel` und ermöglicht dem Benutzer, die in den Daten zu füllen. Zu diesem Zweck definiert die Klasse Eigenschaften `IsEditing` des Typs `bool` und `PersonEdit` vom Typ `PersonViewModel`. Darüber hinaus die Klasse definiert drei Eigenschaften des Typs `ICommand` und eine Eigenschaft namens `Persons` des Typs `IList<PersonViewModel>`: 
+Die `PersonCollectionViewModel` gezeigt unten erstellt neue Objekte des Typs `PersonViewModel` und ermöglicht dem Benutzer, die in den Daten zu füllen. Zu diesem Zweck definiert die Klasse Eigenschaften `IsEditing` des Typs `bool` und `PersonEdit` vom Typ `PersonViewModel`. Darüber hinaus die Klasse definiert drei Eigenschaften des Typs `ICommand` und eine Eigenschaft namens `Persons` des Typs `IList<PersonViewModel>`:
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -199,7 +200,7 @@ Bevor Sie den Konstruktor der Untersuchen der `PersonCollectionViewModel` Klasse
         <Grid.BindingContext>
             <local:PersonCollectionViewModel />
         </Grid.BindingContext>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -216,7 +217,7 @@ Bevor Sie den Konstruktor der Untersuchen der `PersonCollectionViewModel` Klasse
         <!-- Entry Form -->
         <Grid Grid.Row="1"
               IsEnabled="{Binding IsEditing}">
-            
+
             <Grid BindingContext="{Binding PersonEdit}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -230,11 +231,11 @@ Bevor Sie den Konstruktor der Untersuchen der `PersonCollectionViewModel` Klasse
                 </Grid.ColumnDefinitions>
 
                 <Label Text="Name: " Grid.Row="0" Grid.Column="0" />
-                <Entry Text="{Binding Name}" 
+                <Entry Text="{Binding Name}"
                        Grid.Row="0" Grid.Column="1" />
 
                 <Label Text="Age: " Grid.Row="1" Grid.Column="0" />
-                <StackLayout Orientation="Horizontal" 
+                <StackLayout Orientation="Horizontal"
                              Grid.Row="1" Grid.Column="1">
                     <Stepper Value="{Binding Age}"
                              Maximum="100" />
@@ -315,7 +316,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
     {
         (SubmitCommand as Command).ChangeCanExecute();
     }
-    
+
     void RefreshCanExecutes()
     {
         (NewCommand as Command).ChangeCanExecute();
@@ -359,9 +360,9 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
             },
             canExecute: () =>
             {
-                return PersonEdit != null && 
-                       PersonEdit.Name != null && 
-                       PersonEdit.Name.Length > 1 && 
+                return PersonEdit != null &&
+                       PersonEdit.Name != null &&
+                       PersonEdit.Name.Length > 1 &&
                        PersonEdit.Age > 0;
             });
 
@@ -373,7 +374,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-Die `canExecute` für Funktion `SubmitCommand` wird jedes Mal aufgerufen, ist eine Eigenschaft geändert, der `PersonViewModel` Objekt bearbeitet wird. Es gibt `true` nur, wenn die `Name` Eigenschaft ist mindestens ein Zeichen lang sein, und `Age` ist größer als 0. Zu diesem Zeitpunkt wird die **Absenden** Schaltfläche aktiviert wird. 
+Die `canExecute` für Funktion `SubmitCommand` wird jedes Mal aufgerufen, ist eine Eigenschaft geändert, der `PersonViewModel` Objekt bearbeitet wird. Es gibt `true` nur, wenn die `Name` Eigenschaft ist mindestens ein Zeichen lang sein, und `Age` ist größer als 0. Zu diesem Zeitpunkt wird die **Absenden** Schaltfläche aktiviert wird.
 
 Die `execute` für Funktion **senden** entfernt den durch geänderte Eigenschaften ausgelöste Handler aus der `PersonViewModel`, fügt das Objekt, das die `Persons` -Auflistung, und alles, was zum anfänglichen Bedingungen zurückgegeben.
 
@@ -401,7 +402,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
             canExecute: () =>
             {
                 return IsEditing;
-            }); 
+            });
     }
 
     ···
@@ -417,7 +418,7 @@ Es ist nicht erforderlich, Sie definieren die `execute` und `canExecute` Methode
 
 ## <a name="using-command-parameters"></a>Verwenden die Befehlsparameter
 
-Dies kann manchmal praktisch sein, für eine oder mehrere Schaltflächen (oder andere Objekte der Benutzeroberfläche), die denselben `ICommand` Eigenschaft im ViewModel. In diesem Fall verwenden Sie die `CommandParameter` Eigenschaft zur Unterscheidung zwischen den Schaltflächen. 
+Dies kann manchmal praktisch sein, für eine oder mehrere Schaltflächen (oder andere Objekte der Benutzeroberfläche), die denselben `ICommand` Eigenschaft im ViewModel. In diesem Fall verwenden Sie die `CommandParameter` Eigenschaft zur Unterscheidung zwischen den Schaltflächen.
 
 Sie können weiterhin die `Command` Klasse für diese freigegebenen `ICommand` Eigenschaften. Die Klasse definiert ein [alternative Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command.Command/p/System.Action%7BSystem.Object%7D/System.Func%7BSystem.Object,System.Boolean%7D/) nimmt `execute` und `canExecute` Methoden mit Parametern vom Typ `Object`. Dies ist wie die `CommandParameter` wird an diese Methoden übergeben.
 
@@ -442,7 +443,7 @@ Die **Decimal Tastatur** Seite veranschaulicht dieses Verfahren erfahren, wie ei
         <Grid.BindingContext>
             <local:DecimalKeypadViewModel />
         </Grid.BindingContext>
-        
+
         <Grid.Resources>
             <ResourceDictionary>
                 <Style TargetType="Button">
@@ -465,51 +466,51 @@ Die **Decimal Tastatur** Seite veranschaulicht dieses Verfahren erfahren, wie ei
                 Command="{Binding ClearCommand}" />
 
         <Button Text="&#x21E6;"
-                Grid.Row="1" Grid.Column="2" 
+                Grid.Row="1" Grid.Column="2"
                 Command="{Binding BackspaceCommand}" />
 
         <Button Text="7"
-                Grid.Row="2" Grid.Column="0" 
+                Grid.Row="2" Grid.Column="0"
                 Command="{Binding DigitCommand}"
                 CommandParameter="7" />
 
         <Button Text="8"
-                Grid.Row="2" Grid.Column="1" 
+                Grid.Row="2" Grid.Column="1"
                 Command="{Binding DigitCommand}"
                 CommandParameter="8" />
-        
+
         <Button Text="9"
-                Grid.Row="2" Grid.Column="2" 
+                Grid.Row="2" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="9" />
 
         <Button Text="4"
-                Grid.Row="3" Grid.Column="0" 
+                Grid.Row="3" Grid.Column="0"
                 Command="{Binding DigitCommand}"
                 CommandParameter="4" />
 
         <Button Text="5"
-                Grid.Row="3" Grid.Column="1" 
+                Grid.Row="3" Grid.Column="1"
                 Command="{Binding DigitCommand}"
                 CommandParameter="5" />
 
         <Button Text="6"
-                Grid.Row="3" Grid.Column="2" 
+                Grid.Row="3" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="6" />
 
         <Button Text="1"
-                Grid.Row="4" Grid.Column="0" 
+                Grid.Row="4" Grid.Column="0"
                 Command="{Binding DigitCommand}"
                 CommandParameter="1" />
 
         <Button Text="2"
-                Grid.Row="4" Grid.Column="1" 
+                Grid.Row="4" Grid.Column="1"
                 Command="{Binding DigitCommand}"
                 CommandParameter="2" />
 
         <Button Text="3"
-                Grid.Row="4" Grid.Column="2" 
+                Grid.Row="4" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="3" />
 
@@ -519,7 +520,7 @@ Die **Decimal Tastatur** Seite veranschaulicht dieses Verfahren erfahren, wie ei
                 CommandParameter="0" />
 
         <Button Text="&#x00B7;"
-                Grid.Row="5" Grid.Column="2" 
+                Grid.Row="5" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="." />
     </Grid>
@@ -532,7 +533,7 @@ Hier wird die Anwendung in Aktion:
 
 [![Decimal Tastatur](commanding-images/decimalkeyboard-small.png "Decimal Tastatur")](commanding-images/decimalkeyboard-large.png#lightbox "Decimal Tastatur")
 
-Beachten Sie, dass die Schaltfläche für das Dezimaltrennzeichen in alle drei Screenshots deaktiviert ist, da die eingegebene Nummer bereits ein Dezimaltrennzeichen enthält. 
+Beachten Sie, dass die Schaltfläche für das Dezimaltrennzeichen in alle drei Screenshots deaktiviert ist, da die eingegebene Nummer bereits ein Dezimaltrennzeichen enthält.
 
 Die `DecimalKeypadViewModel` definiert ein `Entry` Eigenschaft vom Typ `string` (Dies ist die einzige Eigenschaft, die Trigger ein `PropertyChanged` Ereignis) und drei Eigenschaften des Typs `ICommand`:
 
@@ -587,7 +588,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
             });
 
         ···
-    
+
     }
 
     void RefreshCanExecutes()
@@ -597,7 +598,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
     }
 
     ···
-    
+
 }
 ```
 
@@ -638,7 +639,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
     }
 
     ···
-    
+
 }
 ```
 
@@ -674,13 +675,13 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
     }
 
     ···
-    
+
 }
 ```
 
 Die `execute` Methode fügt das Zeichenfolgenargument für die `Entry` Eigenschaft. Jedoch wenn das Ergebnis mit einer NULL (aber keine 0 (null) und ein Dezimaltrennzeichen) beginnt klicken Sie dann diese anfängliche 0 (null) entfernt werden, mithilfe der `Substring` Funktion.
 
-Die `canExecute` -Methode zurückkehrt `false` nur, wenn das Argument das Dezimaltrennzeichen ist (angibt, dass das Dezimaltrennzeichen gedrückt wird) und `Entry` enthält bereits ein Dezimaltrennzeichen. 
+Die `canExecute` -Methode zurückkehrt `false` nur, wenn das Argument das Dezimaltrennzeichen ist (angibt, dass das Dezimaltrennzeichen gedrückt wird) und `Entry` enthält bereits ein Dezimaltrennzeichen.
 
 Alle der `execute` -Methode `RefreshCanExecutes`, wodurch wiederum `ChangeCanExecute` für beide `DigitCommand` und `ClearCommand`. Dadurch wird sichergestellt, dass das Dezimaltrennzeichen und RÜCKTASTE Schaltflächen aktiviert werden oder deaktiviert auf der aktuellen Sequenz von eingegebenen Ziffern Grundlage.
 
@@ -753,13 +754,13 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Der Standardkonstruktor legt die `NavigateCommand` Eigenschaft, um eine `execute` -Methode, die instanziiert die `System.Type` Parameter und wechselt anschließend darauf. Da die `PushAsync` Aufruf erfordert eine `await` -Operator, der `execute` Methode muss als asynchrones gekennzeichnet werden. Dies wird erreicht, mit der `async` -Schlüsselwort vor der Parameterliste. 
+Der Standardkonstruktor legt die `NavigateCommand` Eigenschaft, um eine `execute` -Methode, die instanziiert die `System.Type` Parameter und wechselt anschließend darauf. Da die `PushAsync` Aufruf erfordert eine `await` -Operator, der `execute` Methode muss als asynchrones gekennzeichnet werden. Dies wird erreicht, mit der `async` -Schlüsselwort vor der Parameterliste.
 
 Zudem wird der Konstruktor der `BindingContext` Rand der Seite auf sich selbst, damit die Bindungen verweisen die `NavigateCommand` in dieser Klasse.
 
 Die Reihenfolge des Codes in diesem Konstruktor macht einen Unterschied: die `InitializeComponent` Aufruf bewirkt, dass den XAML-Code analysiert werden, jedoch zu diesem Zeitpunkt die Bindung an eine Eigenschaft mit dem Namen `NavigateCommand` kann nicht aufgelöst werden, da `BindingContext` auf festgelegt ist `null`. Wenn die `BindingContext` wird im Konstruktor festgelegt *vor* `NavigateCommand` festgelegt ist, und klicken Sie dann die Bindung aufgelöst, wenn werden kann `BindingContext` festgelegt ist, jedoch zu diesem Zeitpunkt `NavigateCommand` ist immer noch `null`. Festlegen von `NavigateCommand` nach `BindingContext` hat keine Auswirkungen auf die Bindung aus, da eine Änderung an `NavigateCommand` wird nicht ausgelöst eine `PropertyChanged` Ereignis und die Bindung nicht kennen, `NavigateCommand` ist jetzt gültig.
 
-Festlegen von sowohl `NavigateCommand` und `BindingContext` (in beliebiger Reihenfolge) vor dem Aufruf von `InitializeComponent` funktionieren, da beide Komponenten der Bindung festgelegt werden, wenn der XAML-Parser die Bindungsdefinition feststellt. 
+Festlegen von sowohl `NavigateCommand` und `BindingContext` (in beliebiger Reihenfolge) vor dem Aufruf von `InitializeComponent` funktionieren, da beide Komponenten der Bindung festgelegt werden, wenn der XAML-Parser die Bindungsdefinition feststellt.
 
 Datenbindungen können manchmal schwierig sein, wie Sie in dieser Reihe von Artikeln gesehen haben, sie werden jedoch leistungsfähigen und vielseitigen, und helfen, die zum Organisieren von Code durch die Trennung der zugrunde liegende Logik von der Benutzeroberfläche.
 

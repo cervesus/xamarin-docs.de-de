@@ -1,6 +1,6 @@
 ---
 title: Indizieren Sie die Anwendung und Deep Links
-description: Indizieren Sie die Anwendung ermöglicht Anwendungen, die andernfalls vergessen würde, nachdem ein Paar wird verwendet, um die relevanten bleiben, indem Sie in den Suchergebnissen angezeigt wird. Deep Links ermöglicht Anwendungen, die auf ein Suchergebnis reagieren, die Anwendungsdaten, in der Regel durch Navigieren zu einer Seite aus dem deep-Link enthält. In diesem Artikel wird veranschaulicht, wie Anwendung Indizierung verwenden und deep links, um Xamarin.Forms Anwendungsinhalt auf IOS- und Android-Geräte durchsuchbar zu machen.
+description: In diesem Artikel wird veranschaulicht, wie Anwendung Indizierung verwenden und deep links, um Xamarin.Forms Anwendungsinhalt auf IOS- und Android-Geräte durchsuchbar zu machen.
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
@@ -8,11 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2016
-ms.openlocfilehash: d302e24ee74290eecd3dd9ad3f81921d6654cc10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9cc5177a585af1569385840ab8c370993984ca2b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242491"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Indizieren Sie die Anwendung und Deep Links
 
@@ -27,7 +28,7 @@ Xamarin.Forms Anwendung Indizierung und deep Links bieten eine API für die Ver�
 
 Die beispielanwendung veranschaulicht eine Todo List-Anwendung, in dem die Daten in einer lokalen SQLite-Datenbank gespeichert werden, wie in den folgenden Screenshots dargestellt:
 
-![](deep-linking-images/screenshots.png ""Todolist"-Anwendung")
+![](deep-linking-images/screenshots.png "\"Todolist\"-Anwendung")
 
 Jede `TodoItem` Instanz, die vom Benutzer erstellten indiziert wird. Clientplattform-spezifische Suche kann dann zum Suchen der indizierter Daten aus der Anwendung verwendet werden. Beim Tippen auf ein Ergebniselement Suche für die Anwendung die Anwendung gestartet wird, die `TodoItemPage` navigiert wird, und die `TodoItem` auf die verwiesen wird der umfassende Link wird angezeigt.
 

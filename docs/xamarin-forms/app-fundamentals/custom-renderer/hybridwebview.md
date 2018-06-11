@@ -1,18 +1,18 @@
 ---
 title: Implementieren eine HybridWebView
-description: Xamarin.Forms benutzerdefinierte Benutzeroberflächen-Steuerelemente müssen vom View-Klasse abgeleitet werden, die verwendet wird, um Layouts und Steuerelemente auf dem Bildschirm zu platzieren. In diesem Artikel veranschaulicht, wie einen benutzerdefinierten Renderer für ein benutzerdefiniertes HybridWebView-Steuerelement, die veranschaulicht, wie der plattformspezifischen Websteuerelemente um C#-Code, der aufgerufen wird, werden von JavaScript zuzulassen, zu verbessern.
+description: In diesem Artikel veranschaulicht, wie einen benutzerdefinierten Renderer für ein benutzerdefiniertes HybridWebView-Steuerelement, die veranschaulicht, wie der plattformspezifischen Websteuerelemente um C#-Code, der aufgerufen wird, werden von JavaScript zuzulassen, zu verbessern.
 ms.prod: xamarin
 ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 3926fd5c19ad187deef16c4beb0812b3947e9544
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: d2cce7598fde4cf59a91940161e605860847623e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847240"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241298"
 ---
 # <a name="implementing-a-hybridwebview"></a>Implementieren eine HybridWebView
 
