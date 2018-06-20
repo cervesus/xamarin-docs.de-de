@@ -7,12 +7,13 @@ ms.assetid: 4b3ac51d-18dd-4034-87b4-4365194e4ece
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: dcfc5e406e60ac72fb1ca1e9cfb0395d17074b2c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/18/2018
+ms.openlocfilehash: 979bf4572e0e0865c2254c3e1c2f707c8eecae8d
+ms.sourcegitcommit: 57f9a9ba2f199697cb75e7be67f1a372c35a861b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36269659"
 ---
 # <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>Wie aktualisieren kann ich die Java Development Kit (JDK) Version?
 
@@ -38,7 +39,7 @@ Xamarin.Android verwendet Java Development Kit (JDK), um die Integration mit dem
 
 4.  Öffnen Sie Visual Studio, und Aktualisieren der **Java Development Kit Speicherort** , zeigen Sie auf das neue JDK unter **Tools > Optionen > Xamarin > Android-Einstellungen > Java Development Kit-Speicherort > Änderung**:
 
-    ![Path-Einstellung für das JDK Android Einstellung für die IDE-Optionen auf der Seite](update-jdk-images/image4.png)
+    [![Path-Einstellung für das JDK Android Einstellung für die IDE-Optionen auf der Seite](update-jdk-images/image4-sml.png)](update-jdk-images/image4.png#lightbox)
 
 Achten Sie darauf, dass Sie Visual Studio neu starten nach dem Aktualisieren des Speicherorts.
 

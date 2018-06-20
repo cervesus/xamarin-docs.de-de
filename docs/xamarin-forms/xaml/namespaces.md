@@ -6,13 +6,13 @@ ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 07/10/2017
-ms.openlocfilehash: faa4998869b918caaf5bc4252dc81a5745199c93
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/18/2018
+ms.openlocfilehash: 25299bc3b56c2fbb748db202e43e75be183cce66
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245832"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209296"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>Verwendung von XAML-Namespaces in Xamarin.Forms
 
@@ -43,11 +43,12 @@ Die folgende Tabelle enthält die `x` Namespaceattributen von Xamarin.Forms unte
 |`x:Arguments`|Gibt die Konstruktorargumente für einen nicht trivialen Konstruktor oder eine Objektdeklaration der Factory-Methode.|
 |`x:Class`|Gibt den Namen Namespace- und Klassennamen für eine Klasse, die in XAML definiert. Der Klassenname muss der Klassenname des Code-Behind-Datei übereinstimmen. Beachten Sie, dass dieses Konstrukt nur im Stammelement einer XAML-Datei angezeigt werden kann.|
 |`x:FactoryMethod`|Gibt eine Factorymethode, die verwendet werden kann, um ein Objekt zu initialisieren.|
+|`x:FieldModifier`|Gibt die Zugriffsebene für generierte Felder für benannte XAML-Elemente.|
 |`x:Key`|Gibt einen eindeutigen benutzerdefinierten Schlüssel für jede Ressource in einem `ResourceDictionary`. Der Schlüssel-Wert wird verwendet, um die Verwendung von XAML-Ressource abgerufen werden soll, und wird normalerweise verwendet, als Argument für die `StaticResource` Markuperweiterung.|
 |`x:Name`|Gibt den Namen des Runtime-Objekt für die Verwendung von XAML-Element. Festlegen von `x:Name` ähnelt dem Deklarieren einer Variablen im Code.|
 |`x:TypeArguments`|Gibt die generischen Typargumente an den Konstruktor eines generischen Typs an.|
 
-Weitere Informationen zu den `x:Arguments`, `x:FactoryMethod`, und `x:TypeArguments` Attribute finden Sie unter [übergeben von Argumenten in XAML](~/xamarin-forms/xaml/passing-arguments.md).
+Weitere Informationen zu den `x:FieldModifier` -Attribut angegeben wird, finden Sie unter [Feldmodifizierern](~/xamarin-forms/xaml/field-modifiers.md). Weitere Informationen zu den `x:Arguments`, `x:FactoryMethod`, und `x:TypeArguments` Attribute finden Sie unter [übergeben von Argumenten in XAML](~/xamarin-forms/xaml/passing-arguments.md).
 
 In XAML erben Namespacedeklarationen vom übergeordneten Element zum untergeordneten Element. Aus diesem Grund erben, wenn Sie einen Namespace im Stammelement einer XAML-Datei definieren, alle Elemente innerhalb dieser Datei die Namespacedeklaration.
 

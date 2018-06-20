@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: e9f38377299e8094162dd2d2d73174e6f2b40369
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e83f8a585c4badc31bffaea53bb2f183e7b11fc9
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245770"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268861"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Teil 5. Aus Datenbindungen zu MVVM
 
@@ -290,7 +290,7 @@ Die folgende XAML-Datei enthält eine `BoxView` , deren `Color` Eigenschaft gebu
 </ContentPage>
 ```
 
-Die Bindung auf jedem `Label` ist die Standardeinstellung `OneWay`. Es muss nur der Wert angezeigt. Aber die Bindung auf jedem `Slider` ist `TwoWay`. Dies ermöglicht die `Slider` von ViewModel initialisiert werden. Beachten Sie, dass die `Color` -Eigenschaftensatz auf `Blue` Wenn ViewModel instanziiert wird. Nur eine Änderung in der `Slider` muss auch einen neuen Wert für die Eigenschaft in das ViewModel festgelegt, das dann eine neue Farbe berechnet.
+Die Bindung auf jedem `Label` ist die Standardeinstellung `OneWay`. Es muss nur der Wert angezeigt. Aber die Bindung auf jedem `Slider` ist `TwoWay`. Dies ermöglicht die `Slider` von ViewModel initialisiert werden. Beachten Sie, dass die `Color` -Eigenschaftensatz auf `Aqua` Wenn ViewModel instanziiert wird. Nur eine Änderung in der `Slider` muss auch einen neuen Wert für die Eigenschaft in das ViewModel festgelegt, das dann eine neue Farbe berechnet.
 
 [![](data-bindings-to-mvvm-images/hslcolorscroll.png "Mithilfe von bidirektionalen Datenbindungen MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "bidirektionaler Datenbindungen mit MVVM")
 

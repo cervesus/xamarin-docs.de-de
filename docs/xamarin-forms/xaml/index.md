@@ -6,12 +6,13 @@ ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 10/24/2016
-ms.openlocfilehash: bb3b4c4f80171f676e8b5f9a7464f4da890a4643
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/18/2018
+ms.openlocfilehash: c040c12829708418d0a705b8e9f930989900c678
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209426"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>eXtensible Application Markup Language (XAML)
 
@@ -45,6 +46,10 @@ XAML verwendet die `xmlns` XML-Attribut für Namespacedeklarationen. Dieser Arti
 ## <a name="xaml-markup-extensionsmarkup-extensionsindexmd"></a>[XAML-Markuperweiterungen](markup-extensions/index.md)
 
 XAML umfasst Markuperweiterungen zum Festlegen von Attributen auf Werten oder Objekten hinter was mit einfachen Zeichenfolgen ausgedrückt werden kann. Dazu gehören Konstanten, statische Eigenschaften und Felder, Ressourcenverzeichnis und datenbindungen verweisen.
+
+## <a name="field-modifiersfield-modifiersmd"></a>[Feldmodifizierern](field-modifiers.md)
+
+Die `x:FieldModifier` Namespace-Attribut gibt die Zugriffsebene für generierte Felder für benannte XAML-Elemente.
 
 ## <a name="passing-argumentspassing-argumentsmd"></a>[Übergeben von Argumenten](passing-arguments.md)
 

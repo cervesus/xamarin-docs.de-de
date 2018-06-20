@@ -6,13 +6,13 @@ ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/31/2018
-ms.openlocfilehash: 91df4d36dd8d98712063a30773f927a82676b18e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/18/2018
+ms.openlocfilehash: 123e65f1efe31935167ca8684e89e7c0b4505443
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243609"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209218"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms lokale Datenbanken
 
@@ -36,7 +36,7 @@ In diesem Abschnitt wird gezeigt, wie die SQLite.Net NuGet-Pakete auf einer Xama
 
 ### <a name="xamarinsforms-net-standard-or-pcl-project"></a>Xamarins.Forms .NET Standard- oder PCL-Projekt
 
-Um SQLite Unterstützung einer Xamarin.Forms-Projekt hinzugefügt haben, verwenden Sie NuGet Search-Funktion gefunden **Sqlite-Net-Pcl** und das Paket installieren:
+Um SQLite Unterstützung einer Xamarin.Forms-Projekt hinzugefügt haben, verwenden Sie NuGet Search-Funktion gefunden **Sqlite-Net-Pcl** und das aktuellste Paket installieren:
 
 ![Hinzufügen von NuGet SQLite.NET PCL Paket](databases-images/vs2017-sqlite-pcl-nuget.png "NuGet SQLite.NET PCL Paket hinzufügen")
 
@@ -47,7 +47,7 @@ Es gibt eine Reihe von NuGet-Paketen mit ähnlichen Namen, das richtige Paket wu
 - **NuGet-Link:** [Sqlite-Net-Pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!TIP]
-> Verwenden der **Sqlite-Net-Pcl** NuGet auch in .NET Standard-Projekten.
+> Verwenden der **Sqlite-Net-Pcl** NuGet-Paket auch in .NET Standard-Projekten.
 
 Sobald der Verweis hinzugefügt wurde, Schreiben Sie eine Schnittstelle, die Clientplattform-spezifische Funktionalität abstrahiert, um den Speicherort der Datenbankdatei zu ermitteln. Die im Beispiel verwendete Schnittstelle definiert eine einzelne Methode:
 
@@ -126,15 +126,11 @@ public Task<int> DeleteItemAsync(TodoItem item)
 > [!NOTE]
 > Der Vorteil der Verwendung der asynchronen SQLite.Net-API wird diese Datenbank, die Vorgänge in Hintergrundthreads verschoben werden. Darüber hinaus besteht keine Notwendigkeit, zusätzliche Verarbeitung von Code, da die API es übernimmt Parallelität zu schreiben.
 
-Alle dem Datenzugriffscode wird geschrieben, in der PCL-Projekt, um über alle Plattformen hinweg gemeinsam genutzt werden. Nur einen lokalen Pfad für die Datenbank bereit ist plattformspezifischen Code, wie in den folgenden Abschnitten beschrieben.
+Alle Datenzugriffscode ist geschrieben, in der .NET Standard-Bibliotheksprojekt für alle Plattformen gemeinsam genutzt werden. Nur einen lokalen Pfad für die Datenbank bereit ist plattformspezifischen Code, wie in den folgenden Abschnitten beschrieben.
 
 <a name="PCL_iOS" />
 
 ### <a name="ios-project"></a>iOS-Projekt
-
-Um iOS-Anwendung konfigurieren zu können, fügen Sie das gleiche NuGet-Paket, das iOS-Projekt mit der *NuGet* Fenster:
-
-![Hinzufügen von NuGet SQLite.NET PCL Paket](databases-images/vsmac-sqlite-nuget.png "NuGet SQLite.NET PCL Paket hinzufügen")
 
 Der einzige Code, der erforderlich ist der `IFileHelper` Implementierung, die den Dateipfad für die Daten bestimmt. Der folgende Code platziert die SQLite-Datenbank-Datei in die **Library-Datenbanken** Ordner innerhalb der Anwendung Sandkasten. Finden Sie unter der [iOS arbeiten mit dem Dateisystem](~/ios/app-fundamentals/file-system.md) Dokumentation weitere Informationen zu den verschiedenen Verzeichnissen, die für den Speicher verfügbar sind.
 
@@ -166,11 +162,7 @@ Beachten Sie, die den Code enthält die `assembly:Dependency` Attribut, damit di
 
 ### <a name="android-project"></a>Android-Projekt
 
-Um die Android-Anwendung konfigurieren zu können, fügen Sie das gleiche NuGet-Paket mit dem Android-Projekt mithilfe der *NuGet* Fenster:
-
-![](databases-images/vsmac-sqlite-nuget.png "Fügen Sie NuGet SQLite.NET PCL-Paket hinzu")
-
-Nachdem dieser Verweis hinzugefügt wurde, ist der einzige Code erforderlich, die `IFileHelper` Implementierung, die den Dateipfad für die Daten bestimmt.
+Der einzige Code, der erforderlich ist der `IFileHelper` Implementierung, die den Dateipfad für die Daten bestimmt:
 
 ```csharp
 [assembly: Dependency(typeof(FileHelper))]
@@ -191,11 +183,7 @@ namespace Todo.Droid
 
 ### <a name="windows-10-universal-windows-platform-uwp"></a>Windows 10 Universelle Windows-Plattform (UWP)
 
-Um die uwp-Anwendung konfigurieren zu können, fügen Sie das gleiche NuGet-Paket zu uwp-Projekt unter Verwendung der *NuGet* Fenster:
-
-![Hinzufügen von NuGet SQLite.NET PCL Paket](databases-images/vs2017-sqlite-uwp-nuget.png "NuGet SQLite.NET PCL Paket hinzufügen")
-
-Nachdem Sie den Verweis hinzugefügt wird, implementieren die `IFileHelper` -Schnittstelle mit der plattformspezifischen `Windows.Storage` -API, um den Pfad der Datendatei zu bestimmen.
+Implementieren der `IFileHelper` -Schnittstelle mit der plattformspezifischen `Windows.Storage` -API, um den Pfad der Datendatei zu bestimmen:
 
 ```csharp
 using Windows.Storage;

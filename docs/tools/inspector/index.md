@@ -5,17 +5,17 @@ ms.prod: xamarin
 ms.assetid: A5CCD63C-18E5-4D19-AFEA-301FE4F8538A
 author: topgenorth
 ms.author: toopge
-ms.date: 03/29/2017
-ms.openlocfilehash: 8f33f61cd3c38dbce16f9a7afa103836aa454a0c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: 823905c425b74659bbc0733ebb1f86eb1ce5fa11
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793086"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268790"
 ---
 # <a name="xamarin-inspector"></a>Xamarin Inspector
 
-Xamarin Arbeitsmappen & Inspektor führen eine interaktive C#-Konsole mit Tools, um Benutzer. Der Inspektor wird in der app Debuggen von Workflows, von der IDE, als eine Hilfe beim Debuggen oder die Diagnose dienen, beim Untersuchen von der ausgeführten app integriert.
+Der Xamarin-Inspektor integriert in die app Debuggen von Workflows, der die IDE, sodass Sie interaktiv C#-Code ausführt oder Eigenschaften der Benutzeroberfläche, die als eine Hilfe beim Debuggen oder die Diagnose beim Untersuchen von der ausgeführten app überprüfen.
 
 Aktive app Inspektion ist für Enterprise-Kunden zur Verfügung. Lassen Sie uns wissen, ob Sie [Auftreten von Fehlern](~/tools/inspector/install.md#reporting-bugs). Wir haben eine [Forum](https://forums.xamarin.com/categories/inspector) zu!
 
@@ -23,7 +23,7 @@ Aktive app Inspektion ist für Enterprise-Kunden zur Verfügung. Lassen Sie uns 
 
 ## <a name="installation-and-requirementstoolsinspectorinstallmd"></a>[Installation und Anforderungen](~/tools/inspector/install.md)
 
-Informationen zum Abrufen von Xamarin Arbeitsmappen & Inspektor auf Ihrem Mac oder Windows-Computer installiert.
+Informationen zum Abrufen der Xamarin-Inspektor, die auf dem Mac oder Windows-Computer installiert werden.
 
 ## <a name="inspecting-live-applicationstoolsinspectorinspectmd"></a>[Überprüfen von Live-Anwendungen](~/tools/inspector/inspect.md)
 
