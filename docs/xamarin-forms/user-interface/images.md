@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 6d3e5e61069723b0910b092da6631d5dc4ad8629
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b0fd644f1f3b49a949a3a9ba9aca4c0770f17013
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244544"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291350"
 ---
 # <a name="images-in-xamarinforms"></a>Bilder in Xamarin.Forms
 
@@ -153,8 +153,11 @@ Wenn Sie eingebettete Bilder in Ordnern innerhalb des Projekts ablegen, werden d
 Übergibt der Code zum Laden eines eingebetteten Bilds der **Ressourcen-ID** auf die [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) Methode wie unten dargestellt:
 
 ```csharp
-var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg") };
+var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(EmbeddedImages).GetTypeInfo().Assembly) };
 ```
+
+> [!NOTE]
+> Zum Anzeigen von eingebetteten Bildern im Releasemodus auf die universelle Windows-Plattform zu unterstützen, es ist notwendig, verwenden Sie die Überladung der `ImageSource.FromResource` , die die Quellassembly zu durchsuchende für das Bild angibt.
 
 Zurzeit besteht keine implizite Konvertierung für die Ressourcen-IDs. Sie müssen stattdessen verwenden [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) oder `new ResourceImageSource()` eingebettete Bilder zu laden.
 
@@ -182,12 +185,15 @@ public class ImageResourceExtension : IMarkupExtension
    }
 
    // Do your translation lookup here, using whatever method you require
-   var imageSource = ImageSource.FromResource(Source);
+   var imageSource = ImageSource.FromResource(Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
 
    return imageSource;
  }
 }
 ```
+
+> [!NOTE]
+> Zum Anzeigen von eingebetteten Bildern im Releasemodus auf die universelle Windows-Plattform zu unterstützen, es ist notwendig, verwenden Sie die Überladung der `ImageSource.FromResource` , die die Quellassembly zu durchsuchende für das Bild angibt.
 
 Verwenden Sie diese Erweiterung hinzufügen ein benutzerdefinierten `xmlns` in XAML, unter Verwendung des richtigen Namespace und Assembly für das Projekt. Die Bildquelle kann dann mithilfe dieser Syntax festgelegt werden: `{local:ImageResource WorkingWithImages.beach.jpg}`. Ein vollständiges Beispiel für die Verwendung von XAML-wird unten gezeigt:
 
@@ -224,9 +230,15 @@ foreach (var res in assembly.GetManifestResourceNames())
 }
 ```
 
-#### <a name="images-embedded-in-other-projects-dont-appear"></a>In anderen Projekten eingebetteten Bilder werden nicht angezeigt.
+#### <a name="images-embedded-in-other-projects"></a>In anderen Projekten eingebetteten Bilder
 
-`Image.FromResource` Sucht nur nach Images in derselben Assembly wie die aufrufende Code `FromResource`. Anhand der Debugcode weiter oben aufgeführten können bestimmen, welche Assemblys durch ändern eine bestimmte Ressource enthalten die `typeof()` Anweisung, um eine `Type` bekannt, dass in den jeweiligen Assemblys.
+Wird standardmäßig die `ImageSource.FromResource` -Methode sucht nur für Bilder in derselben Assembly wie der aufrufende Code die `ImageSource.FromResource` Methode. Anhand der Debugcode weiter oben aufgeführten können bestimmen, welche Assemblys durch ändern eine bestimmte Ressource enthalten die `typeof()` Anweisung, um eine `Type` bekannt, dass in den jeweiligen Assemblys.
+
+Allerdings kann die Quellassembly zu durchsuchenden für ein eingebettetes Bild angegeben werden, als Argument an die `ImageSource.FromResource` Methode:
+
+```csharp
+var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTypeInfo().Assembly);
+```
 
 <a name="Downloading_Images" />
 
@@ -316,7 +328,6 @@ Finden Sie in der Dokumentation für [iOS arbeiten mit Bildern](~/ios/app-fundam
 Xamarin.Forms bietet eine Vielzahl von Möglichkeiten, die eine plattformübergreifende Anwendung abfangen, indem für das gleiche Bild plattformübergreifend verwendet werden oder für plattformspezifische Images angegeben werden Bilder einschließt. Heruntergeladenen Abbilder werden auch automatisch zwischengespeichert, ein gängiges Szenario für die Codierung zu automatisieren.
 
 Symbol und Splashscreen Anwendungsbilder Einrichtung sind und für Anwendungen, die nicht Xamarin.Forms - konfiguriert führen Sie die gleiche Anweisungen für plattformspezifische apps verwendet.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

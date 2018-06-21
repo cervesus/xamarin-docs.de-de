@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/21/2018
-ms.openlocfilehash: b9c15357895bae64176ef34a848b968917035f3d
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: c2e6a5624baba251061bcd324fcb849e3d95ebfd
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291034"
 ---
 # <a name="resource-dictionaries"></a>Ressourcenverzeichnis
 
@@ -251,7 +252,7 @@ Beim Zusammenführen der [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDic
 
 1. Die Ressourcen, die lokal auf das Ressourcenwörterbuch.
 1. Die Ressourcen in das Ressourcenwörterbuch, die zusammengeführt wurde über das veraltete [ `MergedWith` ](xref:Xamarin.Forms.ResourceDictionary.MergedWith) Eigenschaft.
-1. Die Ressourcen in die Ressourcenwörterbücher, die über zusammengeführt wurden die `MergedDictionaries` Auflistung, in der sie, in aufgelistet sind Reihenfolge der `MergedDictionaries` Eigenschaft.
+1. Die Ressourcen in die Ressourcenwörterbücher, die über zusammengeführt wurden die `MergedDictionaries` Auflistung, in der sie, in aufgelistet sind umgekehrter Reihenfolge der `MergedDictionaries` Eigenschaft.
 
 > [!NOTE]
 > Ressourcenverzeichnis suchen kann einen rechenintensiven Vorgang sein, wenn eine Anwendung mehrere enthält große Ressourcenwörterbücher. Vermeiden Sie unnötige Suchläufe, sollten Sie daher sicherstellen, dass jede Seite in einer Anwendung nur Ressourcenverzeichnis verwendet, die auf der Seite "geeignet sind.
