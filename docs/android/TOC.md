@@ -113,7 +113,6 @@
 ## [Plattformfeatures](platform/index.md)
 ### [Android Beam](platform/android-beam.md)
 ### [Android-Manifest](platform/android-manifest.md)
-### [Einbetten von .NET in Java](platform/embedding-net-in-java.md)
 ### [Fingerabdruckauthentifizierung](platform/fingerprint-authentication/index.md)
 #### [Erste Schritte](platform/fingerprint-authentication/get-started.md)
 #### [Überprüfung auf Fingerabdrücke](platform/fingerprint-authentication/scanning.md)
