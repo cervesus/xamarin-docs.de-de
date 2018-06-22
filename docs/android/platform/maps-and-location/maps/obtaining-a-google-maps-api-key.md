@@ -5,12 +5,13 @@ ms.assetid: D5969C57-3444-465E-D6FF-249AEE62E127
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: c37fce491b2e6f5e0211fcc6aa7906643a1bac2a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/20/2018
+ms.openlocfilehash: 5a162ba15bbb6d6dcdf7debe01fb12b3b08a843e
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309789"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>Abrufen einer Google-API-Schlüssel zugeordnet ist
 
@@ -104,41 +105,37 @@ Certificate fingerprints:
 
 Verwenden Sie den Fingerabdruck des SHA-1 (aufgelistet nach **SHA1**) weiter unten in diesem Handbuch.
 
-
 ## <a name="creating-an-api-project"></a>Erstellen eines API-Projekts
 
 Nachdem Sie die SHA-1-Fingerabdruck eines Signaturzertifikat Keystore abgerufen haben, ist es notwendig, erstellen ein neues Projekt in der Google APIs Console (bzw. den Google Maps Android-API v2-Dienst zu einem vorhandenen Projekt hinzufügen).
 
-1. In einem Browser, navigieren Sie zu der [Google-Entwicklerkonsole](https://console.developers.google.com/):, und klicken Sie auf **Projekt erstellen**:
+1. In einem Browser, navigieren Sie zu der [Google Entwickler Konsole API & Services-Dashboard](https://console.developers.google.com/apis/dashboard/) , und klicken Sie auf **wählen Sie ein Projekt**. Klicken Sie auf einen Projektnamen ein, oder ein neues erstellen, indem Sie auf **neues Projekt**:
 
    [![Schaltfläche für Google Developer Console-Projekt zum Erstellen](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png#lightbox)
 
-2. In der **neues Projekt** Dialogfeld, das angezeigt wird, geben Sie den Namen des Projekts.
-   Das Dialogfeld wird eine eindeutige Projekt-ID, die auf den Projektnamen basiert produzieren, wie im folgenden Beispiel gezeigt:
+2. Wenn Sie ein neues Projekt erstellt haben, geben Sie den Namen des Projekts in der **neues Projekt** Dialogfeld, das angezeigt wird. Dieses Dialogfeld wird eine eindeutige ID produzieren, die auf den Projektnamen basiert. Klicken Sie anschließend auf die **erstellen** Schaltfläche wie im folgenden Beispiel gezeigt:
 
    [![Neues Projekt wird mit dem Namen XamarinMapsDemo](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png#lightbox)
 
-3. Klicken Sie auf die Schaltfläche **Erstellen**. Das Projekt wird nach einer Minute erstellt, und Sie gelangen auf die **API Manager** Seite. In der **Bibliothek** auf **Google Maps Android-API**:
+3. Das Projekt wird nach einer Minute erstellt, und Sie gelangen auf die **Dashboard** Seite des Projekts. Klicken Sie dort auf **aktivieren APIS und-Dienste,**:
 
    [![Klicken Sie auf die Google Maps Android-API in der Bibliothek-Abschnitt](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
 
-4. Am oberen Rand der **Google Maps Android-API** auf **aktivieren** um den Dienst für dieses Projekt zu aktivieren:
+4. Aus der **API-Bibliothek** auf **Maps-SDK für Android**. Klicken Sie auf der nächsten Seite auf **aktivieren** um den Dienst für dieses Projekt zu aktivieren:
 
    [![Klicken Sie auf die Schaltfläche "aktivieren" im Abschnitt Dashboard](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
 
-
-An diesem Punkt der API-Projekt erstellt wurde, und die Google Maps Android-API v2 hinzugefügt wurde. Allerdings können Sie erst verwenden, diese API in Ihrem Projekt Anmeldeinformationen dafür zu erstellen. Als Nächstes betrachten wir eine API-Schlüssel und einer Anwendung Xamarin.Android Zulassungsliste erstellen, damit Sie diesen Schlüssel autorisiert wird.
-
+An diesem Punkt der API-Projekt erstellt wurde, und Google Maps Android-API v2 hinzugefügt wurde. Allerdings können Sie erst verwenden, diese API in Ihrem Projekt Anmeldeinformationen dafür zu erstellen. Im nächste Abschnitt erläutert, wie ein API-Schlüssel und die weiße Liste eine Xamarin.Android-Anwendung erstellen, damit Sie diesen Schlüssel autorisiert ist.
 
 ## <a name="obtaining-the-api-key"></a>Abrufen von API-Schlüssel
 
 Nach der **Google-Entwicklerkonsole** -API-Projekt wurde erstellt, es ist notwendig, einen Android-API-Schlüssel zu erstellen. Xamarin.Android Anwendungen benötigen einen API-Schlüssel auf, bevor ihnen der Zugriff auf Android-Map-API v2 erteilt werden.
 
-1. In der **Google Maps Android-API** Seite, die angezeigt wird (nach dem Klicken auf **aktivieren** im vorherigen Schritt), klicken Sie auf die **wechseln Sie zu Anmeldeinformationen** Schaltfläche:
+1. In der **Maps-SDK für Android** Seite, die angezeigt wird (nach dem Klicken auf **aktivieren** im vorherigen Schritt), wechseln Sie zu der **Anmeldeinformationen** Registerkarte, und klicken Sie auf die **erstellen Anmeldeinformationen** Schaltfläche:
 
-   [![Diese API ist aktiviert Nachricht](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
+   [![SDK für Android Anmeldeinformationen Nachricht zuordnet](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
 
-2. In der **Anmeldeinformationen** auf die **welche Anmeldeinformationen benötige ich?** Schaltfläche:
+2. Klicken Sie auf **API-Schlüssel**:
 
    [![Hinzufügen von Anmeldeinformationen auf Ihr Dialogfeld "Projekt"](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs.png#lightbox)
 
@@ -166,7 +163,17 @@ Nach der **Google-Entwicklerkonsole** -API-Projekt wurde erstellt, es ist notwen
 
    [![XamarinMapsDemoKey wird in der Liste der API-Schlüssel angezeigt.](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
 
+## <a name="connect-the-project-to-a-billable-account"></a>Verbinden Sie das Projekt mit einem abrechenbare-Konto
 
+Ab Juni, 11 2018, funktioniert API-Schlüssel nicht, wenn das Projekt nicht mit einem abrechenbare-Konto verbunden ist, (selbst wenn der Dienst für mobile apps weiterhin kostenlos ist).
+
+1. Klicken Sie auf die Schaltfläche Hamburger-Menü, und wählen Sie die **Abrechnung** Seite:
+
+   [![Die Abrechnung Hamburger Menüabschnitt auswählen](obtaining-a-google-maps-api-key-images/13-goto-billing-vs-sml.png)](obtaining-a-google-maps-api-key-images/13-goto-billing-vs.png#lightbox)
+
+2. Verknüpfen Sie das Projekt mit einer Abrechnungskonto durch Klicken auf **verknüpfen Sie ein Abrechnungskonto** gefolgt von **ABRECHNUNGSKONTO erstellen** angezeigten Popupfenster (Wenn Sie kein Konto verfügen, Sie werden werden geführt, um eine neue zu erstellen):
+
+   [![Link-Projekt, um Abrechnungskonto](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs-sml.png)](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs.png#lightbox)
 
 ## <a name="adding-the-key-to-your-project"></a>Den Schlüssel hinzufügen zum Projekt
 
@@ -177,15 +184,13 @@ Fügen Sie schließlich diese API-Schlüssel, der **AndroidManifest.XML** Datei 
     android:versionName="4.10" package="com.xamarin.docs.android.mapsandlocationdemo"
     android:versionCode="10">
 ...
-
   <application android:label="@string/app_name">
     <!-- Put your Google Maps V2 API Key here. -->
-    <meta-data android:name="com.google.android.geo.API_KEY" android:value="YOUR_API_KEY" />
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YOUR_API_KEY" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
   </application>
 </manifest>
 ```
-
 
 ## <a name="related-links"></a>Verwandte Links
 

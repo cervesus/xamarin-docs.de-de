@@ -6,13 +6,13 @@ ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/18/2018
-ms.openlocfilehash: 123e65f1efe31935167ca8684e89e7c0b4505443
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.date: 06/21/2018
+ms.openlocfilehash: feec4993a0719a083d713e084552b18aead8ee42
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209218"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36310139"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms lokale Datenbanken
 
@@ -20,7 +20,7 @@ _Xamarin.Forms unterstützt Datenbank datengesteuerten Anwendungen, die mit dem 
 
 ## <a name="overview"></a>Übersicht
 
-Xamarin.Forms-Anwendungen können die [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) Paket integrieren Sie Datenbankvorgängen in freigegebenen Code durch Verweisen auf die `SQLite` Klassen, die in der NuGet geliefert. Datenbankvorgänge können definiert werden, in der standardmäßigen .NET Bibliotheksprojekt Xamarin.Forms-Projektmappe mit plattformspezifischen Projekte, die einen Pfad zum Speicherort der Datenbank zurückgegeben.
+Xamarin.Forms-Anwendungen können die [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) Paket integrieren Sie Datenbankvorgängen in freigegebenen Code durch Verweisen auf die `SQLite` Klassen, die in der NuGet geliefert. In der .NET Standard-Bibliotheksprojekt von Xamarin.Forms-Projektmappe können Datenbankvorgänge definiert werden.
 
 Der zugehörige [beispielanwendung](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo) ist eine einfache Aufgabenlisten Anwendung. Die folgenden Screenshots zeigen, wie das Beispiel auf jeder Plattform wird angezeigt:
 
@@ -30,13 +30,7 @@ Der zugehörige [beispielanwendung](https://github.com/xamarin/xamarin-forms-sam
 
 ## <a name="using-sqlite"></a>Verwenden von SQLite
 
-In diesem Abschnitt wird gezeigt, wie die SQLite.Net NuGet-Pakete auf einer Xamarin.Forms-Projektmappe hinzufügen, Schreiben von Methoden zum Ausführen von Datenbankvorgängen und verwenden Sie die [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md) um einen Speicherort zum Speichern der Datenbank auf jeder Plattform zu bestimmen.
-
-<a name="XamarinForms_PCL_Project" />
-
-### <a name="xamarinsforms-net-standard-or-pcl-project"></a>Xamarins.Forms .NET Standard- oder PCL-Projekt
-
-Um SQLite Unterstützung einer Xamarin.Forms-Projekt hinzugefügt haben, verwenden Sie NuGet Search-Funktion gefunden **Sqlite-Net-Pcl** und das aktuellste Paket installieren:
+Um eine Xamarin.Forms .NET Standardbibliothek SQLite-Unterstützung hinzugefügt haben, verwenden Sie NuGet Search-Funktion gefunden **Sqlite-Net-Pcl** und das aktuellste Paket installieren:
 
 ![Hinzufügen von NuGet SQLite.NET PCL Paket](databases-images/vs2017-sqlite-pcl-nuget.png "NuGet SQLite.NET PCL Paket hinzufügen")
 
@@ -46,19 +40,10 @@ Es gibt eine Reihe von NuGet-Paketen mit ähnlichen Namen, das richtige Paket wu
 - **ID:** Sqlite-Net-Pcl
 - **NuGet-Link:** [Sqlite-Net-Pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
-> [!TIP]
-> Verwenden der **Sqlite-Net-Pcl** NuGet-Paket auch in .NET Standard-Projekten.
+> [!NOTE]
+> Verwenden Sie ungeachtet der Paketname der **Sqlite-Net-Pcl** NuGet-Paket auch in .NET Standard-Projekten.
 
-Sobald der Verweis hinzugefügt wurde, Schreiben Sie eine Schnittstelle, die Clientplattform-spezifische Funktionalität abstrahiert, um den Speicherort der Datenbankdatei zu ermitteln. Die im Beispiel verwendete Schnittstelle definiert eine einzelne Methode:
-
-```csharp
-public interface IFileHelper
-{
-  string GetLocalFilePath(string filename);
-}
-```
-
-Nachdem die Schnittstelle definiert wurde, verwenden Sie die [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md) erhalten eine Implementierung und erhalten einen lokalen Pfad (Beachten Sie, dass diese Schnittstelle wurde noch nicht implementiert). Der folgende Code Ruft eine Implementierung ab, der `App.Database` Eigenschaft:
+Nachdem der Verweis hinzugefügt wurde, fügen Sie eine Eigenschaft, die `App` Klasse, die einen lokalen Pfad zum Speichern der Datenbank zurückgibt:
 
 ```csharp
 static TodoItemDatabase database;
@@ -69,14 +54,15 @@ public static TodoItemDatabase Database
   {
     if (database == null)
     {
-      database = new TodoItemDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("TodoSQLite.db3"));
+      database = new TodoItemDatabase(
+        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TodoSQLite.db3"));
     }
     return database;
   }
 }
 ```
 
-Die `TodoItemDatabase` Konstruktor wird unten gezeigt:
+Die `TodoItemDatabase` -Konstruktor, der den Pfad für die Datenbankdatei als Argument akzeptiert, wird unten gezeigt:
 
 ```csharp
 public TodoItemDatabase(string dbPath)
@@ -86,7 +72,7 @@ public TodoItemDatabase(string dbPath)
 }
 ```
 
-Dieser Ansatz wird eine einzelne datenbankverbindung, die geöffnet gehalten wird, während die Anwendung ausgeführt wird, daher und vermeidet die Kosten öffnen und Schließen der Datei jedes Mal, wenn ein Datenbankvorgang ausgeführt wird, erstellt.
+Führt der Vorteil, dass die Datenbank verfügbar machen, wie ein Singleton ist, dass eine einzelne datenbankverbindung erstellt wird, der beim Ausführen der Anwendung geöffnet ist, daher und einen Datenbankvorgang vermeidet die Kosten öffnen und Schließen der Datei jedes Mal ausgeführt wird.
 
 Im weiteren Verlauf der `TodoItemDatabase` Klasse enthält SQLite-Abfragen, die über Plattformen hinweg ausführen. Beispielcode für die Abfrage wird unten angezeigt (Weitere Informationen zur Syntax finden Sie der [SQLite.NET verwenden](~/cross-platform/app-fundamentals/index.md) Artikel):
 
@@ -126,87 +112,11 @@ public Task<int> DeleteItemAsync(TodoItem item)
 > [!NOTE]
 > Der Vorteil der Verwendung der asynchronen SQLite.Net-API wird diese Datenbank, die Vorgänge in Hintergrundthreads verschoben werden. Darüber hinaus besteht keine Notwendigkeit, zusätzliche Verarbeitung von Code, da die API es übernimmt Parallelität zu schreiben.
 
-Alle Datenzugriffscode ist geschrieben, in der .NET Standard-Bibliotheksprojekt für alle Plattformen gemeinsam genutzt werden. Nur einen lokalen Pfad für die Datenbank bereit ist plattformspezifischen Code, wie in den folgenden Abschnitten beschrieben.
-
-<a name="PCL_iOS" />
-
-### <a name="ios-project"></a>iOS-Projekt
-
-Der einzige Code, der erforderlich ist der `IFileHelper` Implementierung, die den Dateipfad für die Daten bestimmt. Der folgende Code platziert die SQLite-Datenbank-Datei in die **Library-Datenbanken** Ordner innerhalb der Anwendung Sandkasten. Finden Sie unter der [iOS arbeiten mit dem Dateisystem](~/ios/app-fundamentals/file-system.md) Dokumentation weitere Informationen zu den verschiedenen Verzeichnissen, die für den Speicher verfügbar sind.
-
-```csharp
-[assembly: Dependency(typeof(FileHelper))]
-namespace Todo.iOS
-{
-  public class FileHelper : IFileHelper
-  {
-    public string GetLocalFilePath(string filename)
-    {
-      string docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-      string libFolder = Path.Combine(docFolder, "..", "Library", "Databases");
-
-      if (!Directory.Exists(libFolder))
-      {
-        Directory.CreateDirectory(libFolder);
-      }
-
-      return Path.Combine(libFolder, filename);
-    }
-  }
-}
-```
-
-Beachten Sie, die den Code enthält die `assembly:Dependency` Attribut, damit diese Implementierung auffindbar ist die `DependencyService`.
-
-<a name="PCL_Android" />
-
-### <a name="android-project"></a>Android-Projekt
-
-Der einzige Code, der erforderlich ist der `IFileHelper` Implementierung, die den Dateipfad für die Daten bestimmt:
-
-```csharp
-[assembly: Dependency(typeof(FileHelper))]
-namespace Todo.Droid
-{
-  public class FileHelper : IFileHelper
-  {
-    public string GetLocalFilePath(string filename)
-    {
-        string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-        return Path.Combine(path, filename);
-    }
-  }
-}
-```
-
-<a name="PCL_UWP" />
-
-### <a name="windows-10-universal-windows-platform-uwp"></a>Windows 10 Universelle Windows-Plattform (UWP)
-
-Implementieren der `IFileHelper` -Schnittstelle mit der plattformspezifischen `Windows.Storage` -API, um den Pfad der Datendatei zu bestimmen:
-
-```csharp
-using Windows.Storage;
-...
-
-[assembly: Dependency(typeof(FileHelper))]
-namespace Todo.UWP
-{
-  public class FileHelper : IFileHelper
-  {
-    public string GetLocalFilePath(string filename)
-    {
-      return Path.Combine(ApplicationData.Current.LocalFolder.Path, filename);
-    }
-  }
-}
-```
-
 ## <a name="summary"></a>Zusammenfassung
 
 Xamarin.Forms unterstützt Datenbank datengesteuerten Anwendungen, die mit dem Datenbankmodul SQLite, wodurch es möglich ist, laden und Speichern von Objekten im freigegebenen Code.
 
-Dieser Artikel konzentriert sich auf **Zugriff auf** einer SQLite-Datenbank, indem Sie xamarin.Forms verwenden. Weitere Informationen zum Arbeiten mit SQLite.Net selbst finden Sie in der [SQLite.NET unter Android](~/android/data-cloud/data-access/using-sqlite-orm.md) oder [SQLite.NET auf iOS](~/ios/data-cloud/data/using-sqlite-orm.md) Dokumentation. Die meisten SQLite.Net-Code ist über alle Plattformen hinweg freigegeben werden. Konfigurieren nur den Speicherort der Datenbankdatei SQLite erfordert Clientplattform-spezifische Funktionen.
+Dieser Artikel konzentriert sich auf **Zugriff auf** einer SQLite-Datenbank, indem Sie xamarin.Forms verwenden. Weitere Informationen zum Arbeiten mit SQLite.Net selbst finden Sie in der [SQLite.NET unter Android](~/android/data-cloud/data-access/using-sqlite-orm.md) oder [SQLite.NET auf iOS](~/ios/data-cloud/data/using-sqlite-orm.md) Dokumentation.
 
 ## <a name="related-links"></a>Verwandte Links
 

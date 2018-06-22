@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: f843f4b1c20daba2a504bd0e70ae51f4d0405c06
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d75cac7a21b2c74a6627845cdda8e4c04e72bddc
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240245"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309774"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Grundlagen der Xamarin.Forms-Anwendung
 
@@ -47,6 +47,10 @@ Die `DependencyService` stellt einen einfachen Locator bereit, sodass Sie zu Sch
 ## <a name="effectseffectsindexmd"></a>[Effekte](effects/index.md)
 
 Effekte ermöglichen die native Steuerelemente für jede Plattform angepasst werden, und für kleine Styling Änderungen in der Regel verwendet werden.
+
+## <a name="filesfilesmd"></a>[Dateien](files.md)
+
+Dateibearbeitung mit Xamarin.Forms kann mithilfe von Code in eine .NET Standardbibliothek oder mithilfe von eingebetteten Ressourcen erreicht werden.
 
 ## <a name="gesturesgesturesindexmd"></a>[Gesten](gestures/index.md)
 
