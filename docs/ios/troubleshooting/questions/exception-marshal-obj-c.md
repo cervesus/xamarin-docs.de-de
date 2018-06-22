@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30775974"
 ---
 # <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-object"></a>Warum wird meine app für iOS 9 ausgeführt, mit: System.Exception: Fehler beim Objective-C-Objekt Marshallen?
 

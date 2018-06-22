@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30790664"
 ---
 # <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik-unexpected-top-level-error"></a>Warum fehl Meine Xamarin.Forms.Maps Android-Projekt mit COMPILETODALVIK Fehler der obersten Ebene?
 

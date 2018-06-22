@@ -12,6 +12,7 @@ ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34050051"
 ---
 # <a name="native-views-in-c"></a>Systemeigene Ansichten in c#
 
@@ -292,7 +293,7 @@ stackLayout.Children.Add(brokenControl);
 
 Jedoch, da die `CustomControl.ArrangeOverride` immer Überschreibung die Hälfte der Breite des angeforderten, die Sicht auf die Hälfte der verfügbaren Breite des Geräts abgeschnitten, wie im folgenden Screenshot gezeigt:
 
-![](code-images/winrt-bad-measurement.png "Universelle Windows-Plattform benutzerdefiniertes Steuerelement mit ungültigen "ArrangeOverride" Implementierung")
+![](code-images/winrt-bad-measurement.png "Universelle Windows-Plattform benutzerdefiniertes Steuerelement mit ungültigen \"ArrangeOverride\" Implementierung")
 
 Eine Lösung für dieses Problem besteht darin, geben Sie eine `ArrangeOverrideDelegate` Implementierung, die beim Hinzufügen der Ansicht, um die [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), wie im folgenden Codebeispiel wird gezeigt:
 
@@ -311,7 +312,7 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 
 Diese Methode verwendet die gebotenen Breite der `CustomControl.ArrangeOverride` -Methode, aber multipliziert zwei. Dadurch wird die benutzerdefinierte Ansicht korrekt angezeigt werden, belegen die Breite des Geräts, wie im folgenden Screenshot gezeigt:
 
-![](code-images/winrt-good-measurement.png "Universelle Windows-Plattform benutzerdefiniertes Steuerelement mit dem Delegaten "ArrangeOverride"")
+![](code-images/winrt-good-measurement.png "Universelle Windows-Plattform benutzerdefiniertes Steuerelement mit dem Delegaten \"ArrangeOverride\"")
 
 ## <a name="summary"></a>Zusammenfassung
 

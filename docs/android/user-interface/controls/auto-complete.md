@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30764449"
 ---
 # <a name="auto-complete"></a>Automatische Vervollständigung
 
@@ -192,4 +193,4 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 *Teile dieser Seite werden basierend auf der Arbeit erstellt und von Android Open Source-Projekt gemeinsam genutzt und verwendet entsprechend Begriffe, die in beschriebenen Änderungen der* 
  [ *Creative Commons 2.5 Namensnennung Lizenz* ](http://creativecommons.org/licenses/by/2.5/) *. Dieses Lernprogramm basiert auf der* 
  [ *Android automatische vollständige Lernprogramm*](http://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
-*.*
+ *.*

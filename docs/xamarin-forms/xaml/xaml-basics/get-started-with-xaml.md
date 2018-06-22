@@ -12,6 +12,7 @@ ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34049726"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Teil 1. Erste Schritte mit XAML
 
@@ -27,13 +28,13 @@ Um zu beginnen, Ihre erste Verwendung von XAML-Datei bearbeiten, verwenden Sie V
 
 Verwenden Sie in Windows, Visual Studio, wählen Sie **Datei > Neu > Projekt** aus dem Menü. In der **neues Projekt** wählen Sie im Dialogfeld **Visual c# > plattformübergreifend** auf der linken Seite, und klicken Sie dann **Mobile App (Xamarin.Forms)** aus der Liste im mittleren Bereich. 
 
-![](get-started-with-xaml-images/win/newprojectdialog.w157.png "Dialogfeld "Neues Projekt"")
+![](get-started-with-xaml-images/win/newprojectdialog.w157.png "Dialogfeld \"Neues Projekt\"")
 
 Wählen Sie einen Speicherort für die Projektmappe, geben sie einen Namen der **XamlSamples** (oder alle von Ihnen gewünschten gewünscht), und drücken Sie die **OK**.
 
 Wählen Sie auf dem nächsten Bildschirm die **leere App** Vorlage und der **.NET Standard** Strategie für die Freigabe von Code:
 
-![](get-started-with-xaml-images/win/newcrossplatformapp.png "Dialogfeld "neue App"")
+![](get-started-with-xaml-images/win/newcrossplatformapp.png "Dialogfeld \"neue App\"")
 
 Press **OK**. 
 
@@ -43,19 +44,19 @@ Vier Projekte in der Projektmappe erstellt werden: die **XamlSamples** .NET-Stan
 
 Wählen Sie in Visual Studio für Mac **Datei > Neues Projektmappen** aus dem Menü. In der **neues Projekt** wählen Sie im Dialogfeld **mehrere Plattformen > App** auf der linken Seite und **leere Forms App** (*nicht* **Forms-App** ) aus der Vorlagenliste:
 
-![](get-started-with-xaml-images/mac/newprojectdialog1.png "Der Dialogfeld "Neues Projekt" 1")
+![](get-started-with-xaml-images/mac/newprojectdialog1.png "Der Dialogfeld \"Neues Projekt\" 1")
 
 Drücken Sie **Weiter**.
 
 Klicken Sie im Dialogfeld "Weiter" benennen Sie dem Projekt der **XamlSamples** (oder alle von Ihnen gewünschten gewünscht). Stellen Sie sicher, dass die **verwenden .NET Standard** Optionsfeld aktiviert:
 
-![](get-started-with-xaml-images/mac/newprojectdialog2.png "Der Dialogfeld "Neues Projekt" 2")
+![](get-started-with-xaml-images/mac/newprojectdialog2.png "Der Dialogfeld \"Neues Projekt\" 2")
 
 Drücken Sie **Weiter**. 
 
 Im folgenden Dialogfeld können Sie einen Speicherort für das Projekt auswählen:
 
-![](get-started-with-xaml-images/mac/newprojectdialog3.png "Der Dialogfeld "Neues Projekt" 3")
+![](get-started-with-xaml-images/mac/newprojectdialog3.png "Der Dialogfeld \"Neues Projekt\" 3")
 
 Drücken Sie **erstellen**
 
@@ -148,13 +149,13 @@ Für weitere interessante Visualisierungen, müssen Sie, lediglich weitere inter
 
 Andere XAML-basierte hinzufügen `ContentPage` Klassen zum Projekt, wählen Sie die **XamlSamples** .NET Standardbibliothek Projekt, und rufen die **Projekt > Neues Element hinzufügen** Menüelement. Am linken Rand der **neues Element hinzufügen** wählen Sie im Dialogfeld **Visual C#-** und **Xamarin.Forms**. Wählen Sie aus der Liste **Inhaltsseite** (nicht **Inhaltsseite (c#)**, die eine Seite reinen erstellt oder **Inhaltsansicht**, eine Seite ist). Benennen Sie der Seite, z. B. **HelloXamlPage.xaml**:
 
-![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "Dialogfeld "Neues Element" hinzufügen")
+![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "Dialogfeld \"Neues Element\" hinzufügen")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Andere XAML-basierte hinzufügen `ContentPage` Klassen zum Projekt, wählen Sie die **XamlSamples** .NET Standardbibliothek Projekt, und rufen die **Datei > neue Datei** Menüelement. Am linken Rand der **neue Datei** wählen Sie im Dialogfeld **Forms** auf der linken Seite und **Forms ContentPage verwendet Xaml** (nicht **Forms ContentPage verwendet**, welche erstellt eine Seite reinen oder **Inhaltsansicht**, eine Seite ist). Benennen Sie der Seite, z. B. **HelloXamlPage**:
 
-![](get-started-with-xaml-images/mac/newfiledialog.png "Dialogfeld "neue Datei"")
+![](get-started-with-xaml-images/mac/newfiledialog.png "Dialogfeld \"neue Datei\"")
 
 -----
 

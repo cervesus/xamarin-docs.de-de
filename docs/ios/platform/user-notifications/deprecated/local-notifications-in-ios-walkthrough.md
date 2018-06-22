@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30776780"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>Exemplarische Vorgehensweise – mit lokalen Benachrichtigungen in Xamarin.iOS
 
@@ -28,7 +29,7 @@ Können Sie eine einfache Anwendung erstellen, die lokale Benachrichtigungen in 
 1. Klicken Sie in Visual Studio für Mac erstellen Sie eine neue Ansicht iOS-Projektmappe, und rufen sie `Notifications`.
 1. Öffnen der `Main.storyboard` Datei, und ziehen Sie eine Schaltfläche in der Ansicht. Benennen Sie die Schaltfläche **Schaltfläche**, und weisen Sie ihm den Titel **Benachrichtigung hinzufügen**. Sie können auch einige festlegen möchten [Einschränkungen](~/ios/user-interface/designer/designer-auto-layout.md) auf die Schaltfläche an diesem Punkt: 
 
-    ![](local-notifications-in-ios-walkthrough-images/image3.png "Einige Einschränkungen auf die Schaltfläche "" festlegen")
+    ![](local-notifications-in-ios-walkthrough-images/image3.png "Einige Einschränkungen auf die Schaltfläche \"" festlegen")
 1. Bearbeiten der `ViewController` Klasse, und fügen Sie den folgenden Ereignishandler für die ViewDidLoad-Methode:
 
     ```csharp
@@ -115,7 +116,7 @@ Können Sie eine einfache Anwendung erstellen, die lokale Benachrichtigungen in 
 
 1. Abschließend führen Sie die Anwendung an. Auf iOS werden 8 Sie aufgefordert, Benachrichtigungen ermöglichen. Klicken Sie auf **OK** , und klicken Sie dann auf die **Benachrichtigung hinzufügen** Schaltfläche. Nach einer kurzen Pause sollten Sie das Dialogfeld Warnung sehen, wie in den folgenden Screenshots dargestellt:
 
-    ![](local-notifications-in-ios-walkthrough-images/image0.png "Bestätigen die Möglichkeit zum Senden von Benachrichtigungen") ![ ] (local-notifications-in-ios-walkthrough-images/image1.png "hinzufügen Benachrichtigung Schaltfläche") ![ ] (local-notifications-in-ios-walkthrough-images/image2.png "das Benachrichtigungsdialogfeld "Warnung"")
+    ![](local-notifications-in-ios-walkthrough-images/image0.png "Bestätigen die Möglichkeit zum Senden von Benachrichtigungen") ![ ] (local-notifications-in-ios-walkthrough-images/image1.png "hinzufügen Benachrichtigung Schaltfläche") ![ ] (local-notifications-in-ios-walkthrough-images/image2.png "das Benachrichtigungsdialogfeld \"Warnung\"")
 
 ## <a name="summary"></a>Zusammenfassung
 

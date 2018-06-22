@@ -10,6 +10,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33922521"
 ---
 # <a name="performance-and-visual-effects-with-ccrendertexture"></a>Leistung und visuelle Effekte mit CCRenderTexture
 
@@ -69,7 +70,7 @@ Getesteten Codes ist eine Vereinfachung in eine vollständige gefundenen werden 
 
 CocosSharp bietet ein Einblick in die Renderingleistung, verfügbar machen, die Zeichnen-Aufrufe pro-Frame ausgeführt. Unsere `GameLayer.AddedToScene` Methode legt die `GameView.Stats.Enabled` zu `true`, wodurch Leistungsinformationen auf der linken unteren Ecke des Bildschirms angezeigt:
 
-![](ccrendertexture-images/image2.png "Die GameLayer.AddedToScene Methode legt die GameView.Stats.Enabled auf "true", wodurch auf der linken unteren Ecke des Bildschirms angezeigten Leistungsinformationen")
+![](ccrendertexture-images/image2.png "Die GameLayer.AddedToScene Methode legt die GameView.Stats.Enabled auf \"true\", wodurch auf der linken unteren Ecke des Bildschirms angezeigten Leistungsinformationen")
 
 Beachten Sie, dass trotz der drei Karten auf Bildschirm 19 Draw-Aufrufe (jede Karte Ergebnisse in sechs zeichnen-Befehle, die Konten der Leistung Informationen für eine oder mehrere Text). Draw-Aufrufe haben einen entscheidenden Einfluss auf die Leistung eines Spiels, damit CocosSharp eine Reihe von Verfahren zum Verringern der ihnen bietet. Ein Verfahren wird beschrieben, der [CCSpriteSheet Handbuch](~/graphics-games/cocossharp/ccspritesheet.md). Eine andere Technik ist die Verwendung der `CCRenderTexture` auf jede Entität zu einem Aufruf reduziert werden, weil wir in diesem Handbuch untersuchen.
 
@@ -170,7 +171,7 @@ Wie bereits erwähnt kann diese Art der Reduzierung einen entscheidenden Einflus
 
 Einmal die `useRenderTextures` festgelegt ist, um `true`, transparente Karten unterschiedlich dargestellt werden:
 
-![](ccrendertexture-images/image7.png "Nach der UseRenderTextures auf "true" werden transparent Karten festlegen werden anders gerendert.")
+![](ccrendertexture-images/image7.png "Nach der UseRenderTextures auf \"true\" werden transparent Karten festlegen werden anders gerendert.")
 
 Vergleichen wir die transparente Roboter Karte mit Render Texturen (links) und ohne (rechts):
 

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/27/2018
+ms.locfileid: "32018878"
 ---
 # <a name="displaying-pop-ups"></a>Anzeigen von Popups
 
@@ -69,7 +70,7 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayActionSheet](pop-ups-images/action2-sml.png "Aktion Eigenschaftenblatt-Dialogfeld mit der Schaltfläche "löschen"")](pop-ups-images/action2.png#lightbox "Aktion Eigenschaftenblatt-Dialogfeld mit der Schaltfläche "löschen"")
+[![DisplayActionSheet](pop-ups-images/action2-sml.png "Aktion Eigenschaftenblatt-Dialogfeld mit der Schaltfläche \"löschen\"")](pop-ups-images/action2.png#lightbox "Aktion Eigenschaftenblatt-Dialogfeld mit der Schaltfläche \"löschen\"")
 
 ## <a name="summary"></a>Zusammenfassung
 

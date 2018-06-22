@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30785317"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvos. außerdem wurden Quick Start Guide
 
@@ -303,7 +304,7 @@ Führen Sie folgende Schritte aus:
     [![](hello-tvos-images/designer12.png "Ändern Sie den Titel Schaltflächen, Click Me")](hello-tvos-images/designer12.png#lightbox)
 10. Wiederholen Sie die Schritte 5 bis 8 oben, um die Schaltfläche im Fenster tvos. außerdem wurden zu beschränken. Allerdings anstatt zu ziehen das T-Handle an den Anfang des Fensters (wie in Schritt &#7;), ziehen Sie es an das Ende der Bezeichnung:
 
-    [![](hello-tvos-images/designer14.png "Beschränken Sie die Schaltfläche """)](hello-tvos-images/designer14.png#lightbox)
+    [![](hello-tvos-images/designer14.png "Beschränken Sie die Schaltfläche \""")](hello-tvos-images/designer14.png#lightbox)
 11. Ziehen Sie eine andere Bezeichnung unter der Schaltfläche, seine Größe ändern, um die gleiche Breite wie die erste Bezeichnung, und legen seine **Ausrichtung** auf **Center**:
 
     [![](hello-tvos-images/designer15.png "Ziehen Sie eine andere Bezeichnung unter der Schaltfläche, Größe, um die gleiche Breite wie die erste Bezeichnung sein, und legen Sie die Ausrichtung auf Center")](hello-tvos-images/designer15.png#lightbox)
@@ -338,7 +339,7 @@ In dieser beispielanwendung wird die Schaltfläche geklickt wird möchten wir _e
 1. Wählen Sie in Xamarin iOS-Designer die Schaltfläche "View-Controller" ein.
 2. Wählen Sie in das Auffüllzeichen Eigenschaften der **Ereignisse** Registerkarte:
 
-    [![](hello-tvos-images/event1.png "Die Registerkarte "Ereignisse"")](hello-tvos-images/event1.png#lightbox)
+    [![](hello-tvos-images/event1.png "Die Registerkarte \"Ereignisse\"")](hello-tvos-images/event1.png#lightbox)
 3. Suchen Sie das TouchUpInside-Ereignis, und weisen Sie ihm einen Ereignishandler namens `Clicked`:
 
     [![](hello-tvos-images/event2.png "Das TouchUpInside-Ereignis")](hello-tvos-images/event2.png#lightbox)
@@ -358,7 +359,7 @@ Wenn die Schaltfläche geklickt wird, sollten die Bezeichnung aktualisieren basi
 1. Öffnen Sie das Storyboard aus, und wählen Sie die Bezeichnung im unteren Bereich des View-Controller.
 2. Wählen Sie in das Auffüllzeichen Eigenschaften der **Widget** Registerkarte:
 
-    [![](hello-tvos-images/name1.png "Wählen Sie die Registerkarte "Widget"")](hello-tvos-images/name1.png#lightbox)
+    [![](hello-tvos-images/name1.png "Wählen Sie die Registerkarte \"Widget\"")](hello-tvos-images/name1.png#lightbox)
 3. Klicken Sie unter **Identität > Name**, hinzufügen `ClickedLabel`:
 
     [![](hello-tvos-images/name2.png "Set ClickedLabel")](hello-tvos-images/name2.png#lightbox)

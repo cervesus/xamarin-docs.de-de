@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33921910"
 ---
 # <a name="entities-in-cocossharp"></a>Entitäten in CocosSharp
 
@@ -112,14 +113,14 @@ Weitere Informationen zum Umgang mit CocosSharp Lösungen finden Sie unsere [Adm
 
 Nachdem das Projekt erstellt wurde, wird es in enthaltenen Dateien hinzufügen [diese Inhalte Zip-Datei](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Entities.zip?raw=true). Zu diesem Zweck herunterladen Sie die Zip-Datei und Entpacken Sie es. Fügen Sie beide **ship.png** und **bullet.png** auf die **Content** Ordner. Die **Content** Ordner werden innerhalb der **Bestand** Ordner auf Android-Geräten und im Stammverzeichnis des Projekts unter iOS werden. Nachdem hinzugefügt, sehen wir beide Dateien in den **Content** Ordner:
 
-![](entities-images/image2.png "Nachdem hinzugefügt, sollten beide Dateien im Ordner "Content" sein.")
+![](entities-images/image2.png "Nachdem hinzugefügt, sollten beide Dateien im Ordner \"Content\" sein.")
 
 
 ## <a name="creating-the-ship-entity"></a>Die Ship-Entität erstellen
 
 Die `Ship` Klasse des Spiels erste Entität sein wird. Hinzufügen einer `Ship` Klasse, erstellen Sie zunächst einen Ordner namens **Entitäten** auf der Stammebene des Projekts. Hinzufügen einer neuen Klasse in der **Entitäten** Ordner mit dem Namen `Ship`:
 
-![](entities-images/image3.png "Fügen Sie eine neue Klasse im Ordner "Entitäten" Ship aufgerufen")
+![](entities-images/image3.png "Fügen Sie eine neue Klasse im Ordner \"Entitäten\" Ship aufgerufen")
 
 Die erste Änderung stellen wir zu unserem `Ship` Klasse ist, können sie die von erben die `CCNode` Klasse. `CCNode` Dient als Basisklasse für Klassen für allgemeine CocosSharp wie `CCSprite` und `CCLayer`, und erhalten Sie die folgende Funktionalität:
 

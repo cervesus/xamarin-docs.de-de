@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33921559"
 ---
 # <a name="fruity-falls-game-details"></a>Spiel Fruity greift-details
 
@@ -18,7 +19,7 @@ _Dieses Handbuch prüft das Spiel Fruity fällt, die allgemeine CocosSharp und 3
 
 Fruity greift ist ein einfaches, physikalische-basiertes Spiel, in dem der Spieler rote und gelbe Obst in farbigen Buckets, um Punkte sortiert. Das Ziel des Spiels ist, so viele Punkte wie möglich zu sammeln, ohne dass ein solches Obst löschen in der falschen "bin", das Spiel zu beenden.
 
-![](fruity-falls-images/image1.png "Das Ziel des Spiels ist, wie viele Punkte wie möglich zu sammeln, ohne dass ein solches Obst löschen in die falschen "bin", beenden das Spiel")
+![](fruity-falls-images/image1.png "Das Ziel des Spiels ist, wie viele Punkte wie möglich zu sammeln, ohne dass ein solches Obst löschen in die falschen \"bin\", beenden das Spiel")
 
 Fruity greift erweitert, das in eingeführte Konzepte der [BouncingGame Handbuch](~/graphics-games/cocossharp/bouncing-game.md) durch Hinzufügen der folgenden Elemente:
 
@@ -181,7 +182,7 @@ Die `extraPointsLabel` Farbe so angepasst, dass Sie um mit dem Image Obst Kontra
 
 Fruity greift implementiert eine benutzerdefinierte Kollision-Lösung, die mit Objekten im Ordner "Geometry":
 
-![](fruity-falls-images/image5.png "Fruity greift implementiert eine benutzerdefinierte Kollision-Lösung, die mit Objekten im Ordner "Geometry"")
+![](fruity-falls-images/image5.png "Fruity greift implementiert eine benutzerdefinierte Kollision-Lösung, die mit Objekten im Ordner \"Geometry\"")
 
 Kollisionen in Fruity greift wird implementiert, entweder die `Circle` oder `Polygon` Objekt, in der Regel mit einer dieser zwei Typen, die als untergeordnetes Element einer Entität hinzugefügt wird. Z. B. die `Fruit` Objekt verfügt über eine `Circle` aufgerufen `Collision` die Datenbankmodells in seiner `CreateCollision` Methode:
 
@@ -288,7 +289,7 @@ public static class GameCoefficients
 
 Wenn dieser Wert auf `true` ermöglicht die Wiedergabe der Kollisionen Bereiche:  
 
-![](fruity-falls-images/image6.png "Wenn dieser Wert auf "true" ermöglicht die Wiedergabe der Kollisionen Bereiche")
+![](fruity-falls-images/image6.png "Wenn dieser Wert auf \"true\" ermöglicht die Wiedergabe der Kollisionen Bereiche")
 
 Kollisionen Logik beginnt der `GameScene.Activity` Methode:
 
@@ -437,7 +438,7 @@ Die Grafiken für Fruity greift erstellt wurde mit den folgenden Zielen:
 
 Fruity greift umfasst alle des Inhalts im Ordner "Bilder" im Android-Projekt:
 
-![](fruity-falls-images/image7.png "Fruity greift umfasst alle des Inhalts im Ordner "Bilder" im Android-Projekt")
+![](fruity-falls-images/image7.png "Fruity greift umfasst alle des Inhalts im Ordner \"Bilder\" im Android-Projekt")
 
 Diese gleichen Dateien, die in der iOS-Projekt, um Verdoppelungen vermeiden, verknüpft sind, und so Änderungen zu den Dateien Auswirkungen auf beide Projekte:
 

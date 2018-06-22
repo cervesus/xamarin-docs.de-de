@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30781924"
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 Übersicht über die Benutzeroberfläche
 
@@ -45,7 +46,7 @@ Darüber hinaus die `UIBarButtonItemStyle.Bordered` Stil ist veraltet. Festlegen
 
 Die `UIBarButtonItemStyle.Done` Stil wurde nicht als veraltet. Allerdings wird eine randlos Schaltfläche nur mit einem fett formatierten Text-Format wie gezeigt auch erstellt:
 
- ![](ios7-ui-images/barbuttondone.png "Beispiel-UIBarButtonItem in "Fertig" ändert Stil")
+ ![](ios7-ui-images/barbuttondone.png "Beispiel-UIBarButtonItem in \"Fertig\" ändert Stil")
 
 ### <a name="uialertview"></a>UIAlertView
 
