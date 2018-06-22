@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33921936"
 ---
 # <a name="coin-time-game-details"></a>Spiel münzwurfs Zeit-details
 
@@ -429,7 +430,7 @@ Die unteren-Kachel in der Tür enthält die Eigenschaften zum Erstellen einer En
 
 Da nur die unteren Kachel die Tür entfernt wird, wenn die Tür-Instanz erstellt wird, ist zusätzliche Logik erforderlich, um die obersten Kachel zur Laufzeit zu entfernen. Der oberste Kachel weist eine **RemoveMe** -Eigenschaftensatz auf **"true"**:
 
-![](cointime-images/image18.png "Der oberste Kachel weist eine RemoveMe-Eigenschaft auf "true"")
+![](cointime-images/image18.png "Der oberste Kachel weist eine RemoveMe-Eigenschaft auf \"true\"")
 
 
 

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33921663"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>Teil 2 – Implementieren der WalkingGame
 
@@ -60,7 +61,7 @@ Zum Hinzufügen des Spiels Inhalt mit der Maustaste auf die **Inhalt** Ordner, u
 
 Die Ordners "Content" enthält jetzt die charactersheet.png-Datei:
 
-![](part2-images/image2.png "Die Ordners "Content" enthält jetzt die charactersheet.png-Datei")
+![](part2-images/image2.png "Die Ordners \"Content\" enthält jetzt die charactersheet.png-Datei")
 
 Als Nächstes fügen wir Code zum Laden Sie die Datei charactersheet.png und erstellen Sie eine `Texture2D`. Möchten Sie diese öffnen die `Game1.cs` Datei, und fügen Sie das folgende Feld den Game1.cs Klasse hinzu:
 
