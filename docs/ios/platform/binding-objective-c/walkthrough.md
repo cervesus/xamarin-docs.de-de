@@ -12,6 +12,7 @@ ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/19/2018
+ms.locfileid: "34335215"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Exemplarische Vorgehensweise: Binden einer iOS-Bibliothek für Objective-C
 

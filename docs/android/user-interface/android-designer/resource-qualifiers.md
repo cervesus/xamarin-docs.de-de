@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30771891"
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>Ressourcenqualifizierer und zu den Visualisierungsoptionen
 
@@ -260,7 +261,7 @@ Wenn ein Design ausgewählt ist, wird der Entwurfsoberfläche aktualisiert, um d
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Design "hell" steht jetzt](resource-qualifiers-images/vs/16-light-theme.png "Design "hell" ist jetzt verfügbar")
+![Design "hell" steht jetzt](resource-qualifiers-images/vs/16-light-theme.png "Design \"hell\" ist jetzt verfügbar")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 

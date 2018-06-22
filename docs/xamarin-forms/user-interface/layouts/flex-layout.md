@@ -13,6 +13,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33921835"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Die Xamarin.Forms-FlexLayout
 
@@ -587,7 +588,7 @@ Die `Grow` -Eigenschaft spielt eine Rolle bei der `Wrap` -Eigenschaftensatz auf 
 
 In der **Vergrößerung Experiment** Seite fünf `Label` Elemente abwechselnde Farben sind in einer Spalte und zwei angeordnet `Slider` Elemente können Sie Anpassen der `Grow` Eigenschaft des zweiten und vierten `Label`. Der iOS-Screenshot ganz links zeigt die standardmäßige `Grow` Eigenschaften 0:
 
-[![Die Seite "Experiment Grow"](flex-layout-images/GrowExperiment.png "der Seite "Experiment vergrößern"")](flex-layout-images/GrowExperiment-Large.png#lightbox)
+[![Die Seite "Experiment Grow"](flex-layout-images/GrowExperiment.png "der Seite \"Experiment vergrößern\"")](flex-layout-images/GrowExperiment-Large.png#lightbox)
 
 Wenn alle ein untergeordnetes Element eine Positive gewährt wird `Grow` Wert sind, werden diese untergeordneten den verbleibenden Platz einnimmt, wie Android Screenshot veranschaulicht. Dieser Speicherplatz kann auch zwischen zwei oder mehr untergeordnete Elemente zugeordnet werden. Im uwp-Screenshot der `Grow` Eigenschaft des zweiten `Label` auf 0,5 festgelegt ist während der `Grow` Eigenschaft des vierten `Label` 1,5, wodurch das vierte erhalten `Label` dreimal so viel von der verbleibende Speicherplatz als der zweite `Label`.
 

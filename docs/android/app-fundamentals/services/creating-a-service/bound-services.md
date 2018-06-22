@@ -12,6 +12,7 @@ ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33850573"
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Gebunden Sie Dienste werden im Xamarin.Android.
 

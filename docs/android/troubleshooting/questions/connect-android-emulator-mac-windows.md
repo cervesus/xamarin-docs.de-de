@@ -12,6 +12,7 @@ ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/05/2018
+ms.locfileid: "30823063"
 ---
 # <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>Ist es möglich, mit der Android-Emulatoren Verbinden von Windows-VM auf einem Mac ausgeführt?
 

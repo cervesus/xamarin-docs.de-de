@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30787908"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Verwenden einer Sandbox eine Xamarin.Mac-app
 
@@ -150,7 +151,7 @@ Als Nächstes müssen wir die neuen App-ID und das Profil auf dem Entwicklungsco
     ![Bearbeiten von Konten in Xcode](sandboxing-images/sign11.png "Konten in Xcode bearbeiten")
 2. Klicken Sie auf die **Details anzeigen...**  Schaltfläche: 
 
-    ![Klicken auf die Schaltfläche "Details anzeigen"](sandboxing-images/sign12.png "auf die Schaltfläche "Details anzeigen"")
+    ![Klicken auf die Schaltfläche "Details anzeigen"](sandboxing-images/sign12.png "auf die Schaltfläche \"Details anzeigen\"")
 3. Klicken Sie auf die **aktualisieren** Schaltfläche (in der unteren linken Ecke).
 4. Klicken Sie auf die **Fertig** Schaltfläche.
 
