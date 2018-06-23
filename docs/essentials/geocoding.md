@@ -5,12 +5,12 @@ ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 0b6cbf9ee5621466285656a5efee68ccc2c85211
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 001cca2524e495d64c6781d8a2fc5cb58e771e6e
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783027"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321443"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: Geocodierung
 
@@ -32,7 +32,7 @@ Ohne zusätzliche Einrichtung erforderlich.
 
 # <a name="uwptabuwp"></a>[UNIVERSELLE WINDOWS-PLATTFORM](#tab/uwp)
 
-Ein Bing Maps-API-Schlüssel ist erforderlich, Geocoding Funcationality verwenden. Registrieren Sie sich für eine kostenlose [Bing Maps](https://www.bingmapsportal.com/) Konto. Klicken Sie unter **Mein Konto > Meine Schlüssel** einen neuen Schlüssel erstellen und füllen Sie Informationen basierend auf Ihren Anwendungstyp.
+Ein Bing Maps-API-Schlüssel ist erforderlich, Geocoding Funcationality verwenden. Registrieren Sie sich für eine kostenlose [Bing Maps](https://www.bingmapsportal.com/) Konto. Klicken Sie unter **Mein Konto > Meine Schlüssel** einen neuen Schlüssel erstellen und füllen Sie Informationen basierend auf Ihren Anwendungstyp (sein sollten **öffentlichen Windows-App (universelle Windows-Plattform, 8.x und früher)** für uwp-apps).
 
 In einer frühen Phase Ihrer Anwendung zu überdenken, bevor das Aufrufen einer **Geocodierung** Methoden legen Sie den API-Schlüssel:
 

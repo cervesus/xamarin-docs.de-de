@@ -5,12 +5,12 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: d9fd5b5fd0d4dc29f4d2531521370618f97e3846
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4909cb3b874b1397fad10c92d8d655fadcbe8d85
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783157"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321339"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Sicherer Speicher
 
@@ -78,13 +78,13 @@ Alle verschlüsselten Werte werden entfernt, wenn die app vom Gerät deinstallie
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-[Schlüsselbund](https://developer.xamarin.com/api/type/Android.Security.KeyChain/) dient zum sicheren Speichern von Werten auf iOS-Geräten.  Die `SecRecord` verwendet zum Speichern des Werts hat eine `Service` Wert festgelegt wird, um **[YOUR-APP-Bündel-ID] .xamarinessentials**.
+[Schlüsselbund](https://developer.xamarin.com/api/type/Security.SecKeyChain/) dient zum sicheren Speichern von Werten auf iOS-Geräten.  Die `SecRecord` verwendet zum Speichern des Werts hat eine `Service` Wert festgelegt wird, um **[YOUR-APP-Bündel-ID] .xamarinessentials**.
 
 In einigen Fällen Schlüsselsammlung mit iCloud synchronisiert ist, und Deinstallieren der Anwendung möglicherweise nicht die sichere Werte von iCloud und anderen Geräten des Benutzers entfernen.
 
 # <a name="uwptabuwp"></a>[UNIVERSELLE WINDOWS-PLATTFORM](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/en-us/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) wird verwendet, um Encryped Werte sicher auf uwp-Geräten.
+[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) wird verwendet, um Encryped Werte sicher auf uwp-Geräten.
 
 Encryped Werte werden im gespeichert `ApplicationData.Current.LocalSettings`, innerhalb eines Containers mit einem Namen eines **[YOUR-APP-ID] .xamarinessentials**.
 
