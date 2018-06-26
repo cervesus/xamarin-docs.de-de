@@ -49,7 +49,7 @@ Diese Screenshots zeigen diese Steuerelemente mit:
 * Design "hell" (nur geringfügige Unterschiede, sodass kein Design)
 * Dunkles Design
 
-![](images/standard-none-sml.png "Steuerelemente ohne Designumgebung") ![ ] (images/standard-light-sml.png "Steuerelemente mit Design \"hell\"") ![ ] (images/standard-dark-sml.png "Steuerelemente mit Design \"dunkel\"")
+![](images/standard-none-sml.png "Steuerelemente ohne Designumgebung") ![](images/standard-light-sml.png "Steuerelemente mit Design \"hell\"") ![](images/standard-dark-sml.png "Steuerelemente mit Design \"dunkel\"")
 
 <a name="styleclass" />
 
@@ -69,7 +69,7 @@ Die [Licht](light.md) und [dunkel](dark.md) Designs beide definieren drei versch
 
 Dies rendert mit helle und dunkle wie folgt:
 
-![](images/boxview-light-sml.png "Mit einem Design \"hell\" StyleClass BoxView") ![ ] (images/boxview-dark-sml.png "BoxView mit einem StyleClass Design \"dunkel\"")
+![](images/boxview-light-sml.png "Mit einem Design \"hell\" StyleClass BoxView") ![](images/boxview-dark-sml.png "BoxView mit einem StyleClass Design \"dunkel\"")
 
 <a name="builtin" />
 
