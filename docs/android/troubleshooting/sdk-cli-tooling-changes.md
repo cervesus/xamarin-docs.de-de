@@ -7,13 +7,13 @@ ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/02/2018
-ms.openlocfilehash: b0d9458238c4b3ac9ceeeb7d7ce4e2ca8b0b6de3
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/21/2018
+ms.openlocfilehash: 4e808736fd92fa40ecbf0c24938c0fedd7afcff9
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732865"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935450"
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Änderungen an den Tools von Android SDK
 
@@ -56,7 +56,7 @@ Es wird ein neues Programm aufgerufen **Sdkmanager** in der **Tools/Bin** Ordner
 
 **Hinzugefügt In:** Android SDK-Tools 25.3.0 (März 2017) und höher.
 
-Es wird ein neues Programm aufgerufen **Avdmanager** in der **Tools/Bin** Ordner Ihres Android SDK. Dieses Tool wird verwendet, um die AVDs für Android-Emulators für Google beizubehalten. Weitere Informationen zur Verwendung dieses Tools finden Sie unter [Avdmanager](https://developer.android.com/studio/command-line/avdmanager.html).
+Es wird ein neues Programm aufgerufen **Avdmanager** in der **Tools/Bin** Ordner Ihres Android SDK. Dieses Tool wird verwendet, um die AVDs für den Android-Emulator beizubehalten. Weitere Informationen zur Verwendung dieses Tools finden Sie unter [Avdmanager](https://developer.android.com/studio/command-line/avdmanager.html).
 
 ### <a name="downgrading"></a>Ausführen eines Downgrades für
 

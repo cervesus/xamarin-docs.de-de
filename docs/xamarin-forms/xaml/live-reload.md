@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 756f0570ce792450cfcaf6b1c5161a95a6cb80c8
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 15de334500ea25d22657c257a4a4fc6887cc122c
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848303"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935427"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin Live neu laden
 
@@ -119,6 +119,7 @@ Nein. Tatsächlich können Sie sogar starten Sie alle Ihre Anwendung unterstütz
 ## <a name="known-issues"></a>Bekannte Probleme
 
 * Nur unterstützt in Visual Studio.
+* Verknüpfen von muss festgelegt werden, um **Don't Link** oder **Link Framework SDKs nur** 
 * Erneutes Laden der gesamten app-Ressourcen (d. h. **App.xaml** oder freigegebenen Ressourcenwörterbücher), app Navigation wird zurückgesetzt. Dies wird in der nächsten Preview-Version behoben werden.
 * XAML bearbeiten, während die universelle Windows-Plattform Debuggen ein Absturzes Laufzeit verursachen. Problemumgehung: Verwenden Sie **Starten ohne Debugging (STRG + F5)** anstelle von **starten (F5) Debuggen**.
 

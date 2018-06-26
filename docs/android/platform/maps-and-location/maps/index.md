@@ -1,20 +1,20 @@
 ---
-title: Karten
+title: Verwendung von Google Maps und Speicherort mit Xamarin.Android
 description: In diesem Artikel erläutert, wie Zuordnungen und den Speicherort mit Xamarin.Android verwendet wird. Alles von der Nutzung der integrierten Karten-Anwendung direkt mit der Google ordnet Android-API V2 behandelt.
 ms.prod: xamarin
 ms.assetid: 425E0ED2-5380-6EBE-7059-256B6E9128B8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e57dc07aefbd1c80a53f4225f5f44fe72a9ddb9a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/25/2018
+ms.openlocfilehash: a861e43152870933ba684bf693a1bd3d3ac5bd0b
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763328"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935372"
 ---
-# <a name="maps"></a>Karten
+# <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>Verwendung von Google Maps und Speicherort mit Xamarin.Android
 
 _In diesem Artikel erläutert, wie Zuordnungen und den Speicherort mit Xamarin.Android verwendet wird. Alles von der Nutzung der integrierten Karten-Anwendung direkt mit der Google ordnet Android-API V2 behandelt._
 
@@ -32,9 +32,8 @@ Erklären Sie sie zuerst, wie Android integrierte Karten Anwendung genutzt und w
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MapsAndLocationDemo_v3 (sample)](https://developer.xamarin.com/samples/monodroid/MapsAndLocationDemo_v3/)
+- [MapsAndLocationDemo_v3 (Beispiel)](https://developer.xamarin.com/samples/monodroid/MapsAndLocationDemo_v3/)
 - [Aktivitätslebenszyklus](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [Abrufen eines API-Schlüssels für Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [Google-APIs-Add-On](http://code.google.com/android/add-ons/google-apis/reference/index.html?com/google/android/maps/package-summary.html)
 - [Liste von Intents: Aufrufen von Google-Anwendungen auf Android-Geräte](http://developer.android.com/guide/appendix/g-app-intents.html)
 - [Speicherort und Karten](http://developer.android.com/guide/topics/location/index.html)

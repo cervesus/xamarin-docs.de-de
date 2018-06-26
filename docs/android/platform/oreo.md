@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 3776a0554e5ae496f9e39612ec9bab971c6f1f88
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: a23072427a74119bfa339fea8a695cd13b775685
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732761"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935102"
 ---
 # <a name="oreo-features"></a>Oreo-Funktionen
 
@@ -191,7 +191,7 @@ Nach der Verwendung von **Avdmanager** um Ihr virtuelles Gerät erstellen, wird 
 
 -----
 
-Weitere Informationen zum Konfigurieren von Android-Emulator zum Testen und Debuggen, finden Sie unter [Debuggen mit Android-Emulators für Google](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Weitere Informationen zum Konfigurieren von Android-Emulator zum Testen und Debuggen, finden Sie unter [Debuggen auf Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md).
 
 Wenn Sie z. B. eine Nexus oder ein Pixel ein physisches Gerät verwenden, können entweder Aktualisieren Ihres Geräts über automatisch über die Updates per Funk (OTA) oder Herunterladen ein Abbilds und flash Ihr Gerät direkt. Weitere Informationen zum manuellen Aktualisieren Ihres Geräts auf Android Oreo finden Sie unter [Factory Images für Nexus und Pixel-Geräte](https://developers.google.com/android/images).
 

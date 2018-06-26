@@ -6,12 +6,12 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 7e9069c698f82e9ec9c5009286c2a36b6722b7a8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8094f1ab78252e6d6bd8f5991bcb567b36ed1e9b
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793945"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935344"
 ---
 # <a name="using-jenkins-with-xamarin"></a>Verwendung von Jenkins mit Xamarin
 
@@ -146,7 +146,7 @@ Dieser Abschnitt ist obligatorisch, wenn Sie TFS für die quellcodeverwaltung ve
 In der Reihenfolge für eine OS X-Arbeitsstation für die Interaktion mit einem TFS-Server muss das Team Explorer Everywhere auf der Arbeitsstation installiert sein. Team Explorer Everywhere ist eine Reihe von Tools von Microsoft, plattformübergreifenden Befehlszeilenclient für den Zugriff auf TFS enthält. Team Explorer Everywhere können von Microsoft heruntergeladen und installiert werden in drei Schritten:
 
 1. Entpacken Sie die Archivdatei, zu einem Verzeichnis, das dem Benutzerkonto zugegriffen werden kann. Sie können z. B. Entzippen Sie die Datei auf **~/tee**.
-2. Konfigurieren Sie den Pfad-Shell oder das System, um den Ordner, der die Dateien enthält, die in Schritt 1 oben extrahiert wurden. Beispiel:
+2. Konfigurieren Sie den Pfad-Shell oder das System, um den Ordner, der die Dateien enthält, die in Schritt 1 oben extrahiert wurden. Ein auf ein Objekt angewendeter
 
         echo export PATH~/tee/:$PATH' >> ~/.bash_profile
 
@@ -385,7 +385,7 @@ Sobald die Buildvorgänge vorhanden sind, ist es empfiehlt sich, das Auslösen e
 
 ### <a name="submitting-tests-to-test-cloud"></a>Übermitteln von Tests mit Test-Cloud
 
-Automatisierte Tests können Test Cloud Shellbefehle übermittelt werden. Weitere Informationen zum Einrichten eines Testlaufs in Xamarin Test Cloud haben wir Handbücher für die Verwendung von [Xamarin.UITest](https://developer.xamarin.com/guides/testcloud/uitest/working-with/submitting-tests-to-xamarin-test-cloud/) oder [Calabash](https://developer.xamarin.com/guides/testcloud/calabash/working-with/submitting-tests-to-xamarin-test-cloud/).
+Automatisierte Tests können Test Cloud Shellbefehle übermittelt werden. Weitere Informationen zum Einrichten eines Testlaufs in Xamarin Test Cloud finden Sie in diesem Handbuch für die Verwendung von [Xamarin.UITest](/appcenter/test-cloud/preparing-for-upload/uitest/).
 
 
 ## <a name="summary"></a>Zusammenfassung

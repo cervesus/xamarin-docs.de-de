@@ -6,13 +6,13 @@ ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 9be9b91a0ed7e7607469bf8d74087b6f93677559
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/21/2018
+ms.openlocfilehash: baa8df87caf2c05d7b6202d5160c930e51656e10
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732982"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36934978"
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Debuggen von Android Abnutzung in einem Emulator
 
@@ -22,7 +22,7 @@ _Dieser Artikel wird erläutert, wie Debuggen einer Anwendung Xamarin.Android Ab
 
 Anwendungsentwicklung Android Dach erfordert die Anwendung ausführen, entweder auf physischer Hardware oder einem Emulator oder Simulator verwenden. Die beste, aber nicht immer zweckmäßigste, Herangehensweise ist die Verwendung von Hardware. In vielen Fällen kann es einfacher und kostengünstiger simulieren/Android Dach Hardware verwenden einen Emulator aus, wie unten beschrieben zu emulieren. Wenn Sie noch nicht vertraut sind, mit der Prozess der Bereitstellung und Ausführung von Dach Android-apps finden Sie unter [Hallo, Abnutzung](~/android/wear/get-started/hello-wear.md).
 
-## <a name="configure-the-google-android-emulator"></a>Konfigurieren des Google Android-Emulators
+## <a name="configure-the-android-emulator"></a>Konfigurieren Sie die Android-Emulator
 
 Um Ihre Abnutzung-app in einem Emulator auszuführen, müssen Sie installieren den Android SDK-Android-Emulator und für Android Dach zu konfigurieren. Allgemeine Android SDK-Emulator Installations- und Konfigurationsschritte Informationen finden Sie unter [Android-Emulator-Setup](~/android/get-started/installation/android-emulator/index.md).
 
@@ -48,4 +48,4 @@ Beim Ausführen der App muss der Emulator nicht jedes Mal beendet und anschließ
  
 ## <a name="summary"></a>Zusammenfassung
  
-Diese Anleitung wird erläutert, wie zum Konfigurieren von Google Android-Emulator für die Entwicklung von Abnutzung und ein Abnutzung virtuelles Gerät für das Debuggen zu starten.
+Dieses Handbuch erläutert, wie der Android-Emulator für Abnutzung Entwicklung konfigurieren und ein Abnutzung virtuelles Gerät für das Debuggen zu starten.

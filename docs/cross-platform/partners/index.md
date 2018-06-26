@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: F42526FF-2B0D-4A9D-B129-CECF680ED0DE
 author: conceptdev
 ms.author: crdun
-ms.date: 06/19/2017
-ms.openlocfilehash: 8f52c6783335bd7bc26bc9886dee670489ffba09
-ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
+ms.date: 06/25/2018
+ms.openlocfilehash: 4a3045b6f35930b61598f7038974722801c38c2e
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291774"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935515"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>Zertifizierte Beratungsunternehmen Partner zum Übermitteln von mobiler-Lösungen
 
@@ -56,7 +56,6 @@ _Aufgelistet nach primären Standort, bieten viele Partner Dienste über Grenzen
 |[Ciber USA](http://www.ciber.com/)|Greenwood Ort, USA|Erste digitale Transformation Clouddienste, eindeutige Zugriffstasten und fokussierte Talent Dienste stellen wir Ihre Zukunft möglich.|
 |[CIE Digital-Labs](http://www.ciedigital.com/)|Los Angeles, USA; Irvine, USA|CIE digitale Labs ist zum verstehen, dass das Geschäft unseren Partnern Gesicht Herausforderungen und Innovation neue softwarelösungen, die measureable Enterprise-Wert zu bringen.|
 |[Klarheit Ventures](https://www.clarity-ventures.com)|Austin, "TX"|Klarheit ist gut abgerundet, Professional, alle Webdiensterweiterung Ihres Unternehmens. Entwerfen vom Team creative nichts Ihre Geschäftsidentität Bildschirm vom Bildschirm...|
-|[Code Mio. Technologien](https://codemilltech.com/)|Madison, USA|Code Mio. ist Boutique consulting und Schulung fest, die von Microsoft und Xamarin MVP Matt Soucoup gegründet. Spezialisiert in Xamarin und Azure-Entwicklung |
 |[Wissen Technologielösungen](http://www.cognizant.com)|Buenos Aires, Argentinien; Auckland, Neuseeland; Melbourne, Australien; Sydney, Australien; Brisbane, Australien; Brussels, Belgien; Brasilien, SAN Paulo; Toronto, Kanada; Shanghai, China; Heredia, Costa Rica; Jersey City, NJ, USA; San Francisco, Kalifornien, USA; Teaneck, NJ, USA|Cognizant kombiniert begeistert sich für Kundenzufriedenheit, Technologieinnovation, Tiefe Branche und Business Process-Kenntnisse und eine globale, gemeinsame Belegschaft, die die Zukunft der Arbeit verkörpert|
 |[Kohärente Lösungen, Inc.](http://www.coherentsolutions.com)|New York, NY; München; Minsk, Belarus|Kohärente Lösungen ist ein Softwareentwicklung consulting und Unternehmen, die Kunden geschäftlichen Probleme gelöst werden, durch das Kombinieren von globalen Fachkenntnisse Innovation und Kreativität freien Lauf outsourcing|
 |[Cruxlab](https://cruxlab.com/)|Los Angeles, USA|Wir erstellen benutzerdefinierte digitale Produkte Startups bis hin zu Unternehmen, für Endbenutzer und Unternehmen|
@@ -65,10 +64,10 @@ _Aufgelistet nach primären Standort, bieten viele Partner Dienste über Grenzen
 |[DEG](http://www.degdigital.com)|Overland Park, USA|DEG erstellt intelligente digitale Marketing, Commerce und Zusammenarbeit Strategien, die Organisationen ihre Wettbewerbsvorteile verstärken und seine Ziele erreichen können|
 |[DevRabbit](http://www.devrabbit.com)|SAN Ramon, USA|DevRabbit ist eine US-basiert consulting fest, die an den technischen bietet der Technik-Lösungen für Enterprise Mobility, Webanwendungsentwicklung und Cloud zu lesen.|
 |[Digineer](http://www.digineer.com)|Plymouth, MN|Digineer stellt Enterprise-Projekt, Geschäftsanalysen, app-Dev und Business Intelligence und "Personal" services|
-|[DigitasLBi Sverige AB](http://www.digitaslbi.com)|München; Europa; Asien Pasific;  Naher Osten; Afrika|DigitasLBi ist ein internationale Communications-Element, mit denen Unternehmen digitale Welt navigieren kann.|
+|[DigitasLBi Sverige AB](http://www.digitaslbi.com)|München; Europa; Asien-Pazifik;  Naher Osten; Afrika|DigitasLBi ist ein internationale Communications-Element, mit denen Unternehmen digitale Welt navigieren kann.|
 |[DMI](https://dminc.com/)|Bethesda, MD|Erstellt, um Unternehmen, selbst für die verbundenen World neu zu erfinden unterstützen, bieten wir eine eindeutige Mischung verschiedener Funktionen und eine neue Denkweise Treibstoff Innovation soll.|
 |[DOOR3](http://door3.com/)|New York, USA|In einer Welt mit creative Behörden, große Beratungsunternehmen haben und die spezielle Implementierung Cafés, sind wir unterschiedlich. Wir unser Kerngeschäft treten, aber wir treten für unsere Kunden mehr.|
-|[DreamTeam Mobile](http://dreamteam-mobile.com)|Washington, D.C., USA|DreamTeam Moible Erstellen systemeigener iOS-, Android, Windows und Mac-apps mithilfe von Xamarin Swift und systemeigene zu reagieren. Systemeigene apps für mehrere Plattformen erstellen gemeinsam mit codebases|
+|[DreamTeam Mobile](http://dreamteam-mobile.com)|Washington, D.C., USA|DreamTeam Mobile Erstellen systemeigener iOS-, Android, Windows und Mac-apps mithilfe von Xamarin Swift und systemeigene zu reagieren. Systemeigene apps für mehrere Plattformen erstellen gemeinsam mit codebases|
 |[Durwella](http://www.durwella.com)|Houston, USA|Durwella ist ein Softwareunternehmen für Lösungen, die der Schwerpunkt auf wissenschaftliche und technische Projekte liegt|
 |[EastBanc-Technologien](http://www.eastbanctech.com)|Washington, D.C., USA|EastBanc-Technologien ist ein plattformagnostische vollständigen Lebenszyklus Softwareentwicklungsunternehmen flexible Technologie lösungsbereitstellung|
 |[Rand Webware, Inc.](https://edgewebware.com)|Miamisburg, OH|Web- und mobile app-Design und/oder Entwicklung Dienste bietet Edge Webware, Inc.|
@@ -79,7 +78,7 @@ _Aufgelistet nach primären Standort, bieten viele Partner Dienste über Grenzen
 |[Angelegenheit Software Technologies Inc.](http://www.techendeavour.com)|Austin, "TX"|Angelegenheit des Berater bewerten Enterprise Mobile Reife und Hilfe bei der Adressierung strategische Mobility Anforderungen der Organisation auf allen Ebenen|
 |[Verbesserte Systeme Consulting](http://www.enhancedsystems.com)|Johnson City, TN|Erweitert: Consulting Systems, Inc. bietet Hilfe eines Experten effizient Entwurf, Entwicklung und Integration Services für Unternehmen, die zum Erstellen neuer Geschäftsanwendungen oder vorhandene Suchvorgänge|
 |[Envoc](http://envoc.com/)|Baton Rouge, LA|Wir vorhanden am Schnittpunkt der Kreativität freien Lauf und zum Übermitteln von ausgezeichnete Erfahrungen und Innovation-Technologie|
-|[EPAM-Systeme](https://www.epam.com)|Newtown am Main, Frankfurt|EPAM Systeme, Inc ist eine führende globale Produktentwicklung und digitale Plattform engineering Services Unternehmen|
+|[EPAM-Systeme](https://www.epam.com)|Newtown am Main, Frankfurt; New York City; Philadelphia; Chicago; San Francisco; Los Angeles; London; Minsk; St Petersburg; Budapest|EPAM Systeme, Inc ist eine führende globale Produktentwicklung und digitale Plattform engineering Services Unternehmen|
 |[Experis Ciber b.v.](http://www.ciber.com)|Troy, MI |Ciber ist eine globale IT Beratungsunternehmen mit mehr als 2,900 Mitarbeitern und Filialen in Nordamerika und Indien|
 |[Vorspulen LLC](http://www.fastforward.sh/)|Paris, MA|Schneller Vorwärtscursor entwickelte Anwendungen allen wichtigen native Betriebssystemen, über alle Gerätetypen und Ihre Arbeit Internet der Dinge|
 |[Fincons-Gruppe](http://www.finconsgroup.com)|Los Angeles, CA; New York, NY; London, Großbritannien|Fincoins gruppendienste und -Lösungen bieten konkrete Antworten auf echten Anforderungen von Großkunden und KMU, sowohl für Technologien und Prozesse, die Innovation benötigten garantieren.|
@@ -88,7 +87,7 @@ _Aufgelistet nach primären Standort, bieten viele Partner Dienste über Grenzen
 |[FusionComputing, Inc.](http://www.fusioncomputing.com)|Douglasville, Georgia|Wir entwickeln plattformübergreifenden systemeigenen Anwendungen, damit Sie Ihre Kunden auf jedem Gerät erreichen können.|
 |[Griffin Lösungen Gruppe](http://griffinsolutionsgroup.com)|Alpharetta, GA|Da wir begeistert sich zur Lösung geschäftlicher Probleme haben, wurde Griffin Lösungen Gruppe gegründet. Wir anwenden jahrelange Erfahrungen in einer Vielzahl von Branchen, die unsere Kunden zu helfen, Entscheidungen über die richtige Technologie|
 |[Harman verbundene Dienste, Inc.](http://www.harman.com)|Mountain-Sicht, CA; Hartford, CT; Seattle, WA; Newark, NJ; London, Großbritannien; Berlin, Deutschland; Moskau, Russische Föderation|Harman Entwürfe und Engineers verbunden Produkten und Lösungen für anerkannten Autoherstellern Verbraucher und Unternehmen weltweit, einschließlich der verbundenen Car-Systeme, Audio- und visual-Produkte und Automatisierung von unternehmenslösungen. und verbundenen Diensten|
-|[HCL-Technologien](https://www.hcltech.com/)|Noida, Uttar Pradesh, Indien; Mississauga, ON, Kanada; New York, "NY" beginnen, USA; Brasilien, SAN Paulo; Mexico City, CDMX, Mexiko; London, Großbritannien; Sydney, Australien|HCL-Technologien ist eine globale Next Generation Technologieunternehmen, das Unternehmen für die digitale Alter reimagine Unternehmen unterstützt|
+|[HCL-Technologien](https://www.hcltech.com/)|Noida, Uttar Pradesh, Indien; Mississauga, ON, Kanada; New York, "NY" beginnen, USA; Brasilien, SAN Paulo; Mexico City, CDMX, Mexiko; London, Großbritannien; Sydney, Australien|HCL Technologien ist ein globaler Next Generation Technologieunternehmen, die der Identifikation von Unternehmen angenommen, Unternehmen erneut für die digitale ALTER|
 |[Hexaware Technologies Ltd](http://hexaware.com/)|Iselin, New Jersey.|Hexaware ist ein Anbieter von IT-, ermöglicht und Beratung |
 |[Hohe IT-Gruppe, LLC](http://hightg.com)|Kansas City, Kansas|Benutzerdefinierte Softwareentwicklungsunternehmen|
 |[Hitcents](http://hitcents.com)|Bowling Grün, KI; Los Angeles, Kalifornien, USA; San Francisco, Kalifornien, USA; Shanghai Shanghai, China|Hitcents nicht nur apps zu erstellen; Sie erstellen eine Erfahrung, die nur eine einzige Plattform überschritten wird. Außerdem unterstützen Sie die App 24/7, damit jeder Benutzer überall und auf Ihre app zugreifen kann.|
@@ -239,7 +238,7 @@ _Aufgelistet nach primären Standort, bieten viele Partner Dienste über Grenzen
 |[Fluss Pilotprojekte CVBA](http://www.flowpilots.com)|Antwerpen, Belgien|Flow Pilotprojekte Entwürfe, builds, bereitstellt und verwaltet die digitale Tools, mit deren Hilfe Kunden Umsatzerlöse zu erhöhen, verringern die Kosten oder bringen ihren Mitarbeitern Freiheit und Flexibilität.|
 |[KENZE](http://www.kenze.be)|Mechelen, Belgien|Microsoft .NET Projecten En Gerelateerde Technologieën.  De getrocknet oder geräuchert Belangrijkste Pijlers Binnen de Organisatie Zijn Mensen, Kennis En Mensenkennis, Zij Vormen de Basis Voor Kwalitatieve Succesvolle Projecten En Tevreden Klanten werden soll. |
 |[Levelapp](http://www.levelapp.be)|Hoeilaart, Belgien|Wir sind Levelapp eine vollständige mobile Agentur. Wir werden als Softwareentwickler fungiert. Wir Cross Plattformen Anwendungen erstellen, die Groß, und der strategischen Vision gebautes. Kundenfeedback Wert auf Ihre Kunden, Partner und Mitarbeiter. |
-|[Realdolmen](http://www.realdolmen.com/)|Huizingen, Belgien; Kontich, Belgien; Lummen, Belgien; Ghent, Belgien; Harelbeke, Belgien; Namur, Belgien; Mons, Belgien|Mobile ist der neue Standard an. Fast alle Unternehmen benötigen mobile Dienste oder Anwendungen, um wettbewerbsfähig zu bleiben. Jedoch reicht nicht aus eine Strategie für die mobile auf einem eigenen; Alles, was muss in Ihrer Infrastruktur mit allgemeinen Aufgaben zur Erstkonfiguration, einschließlich der Cloud, Sicherheit, ERP usw. vollständig integriert werden. Am Realdolmen rufen wir dies einem Unternehmen verbunden. <link>|
+|[Realdolmen](http://www.realdolmen.com/)|Huizingen, Belgien; Kontich, Belgien; Lummen, Belgien; Ghent, Belgien; Harelbeke, Belgien; Namur, Belgien; Mons, Belgien|Mobile ist der neue Standard an. Fast alle Unternehmen benötigen mobile Dienste oder Anwendungen, um wettbewerbsfähig zu bleiben. Jedoch reicht nicht aus eine Strategie für die mobile auf einem eigenen; Alles, was muss in Ihrer Infrastruktur mit allgemeinen Aufgaben zur Erstkonfiguration, einschließlich der Cloud, Sicherheit, ERP usw. vollständig integriert werden. Am Realdolmen rufen wir dies einem Unternehmen verbunden.|
 
 
 ## <a name="brazil"></a>Brazilien
@@ -574,7 +573,7 @@ _Aufgelistet nach primären Standort, bieten viele Partner Dienste über Grenzen
 |[Billennium](http://billennium.pl/)|Warschau, Polen |Billennium hat langjährigen Erfahrung bei der Entwicklung von Business innovative Tools und -Lösungen.|
 |[Rand einer Lösungen SP Z o.o.](http://www.edge1s.com)|Warschau, Polen |Wir geben Wissen und Erfahrung qualifiziertes IT-Berater. Innerhalb jedes Diensts in unserem Portfolio garantiert Microsoft einen flexiblen Ansatz zu Anforderungen und Erwartungen des Clients|
 |[NETBULLS SP Z o.o.](http://www.netbulls.io)|Bialystok, Polen|Rufen Sie Ihre Ideen skilfully Markt. Ohne verwendeter £$ €, Uhrzeit oder entschuldigungen. |
-|[Sii](http://www.sii.pl/en)|Warschau, Polen; Paris, Frankreich; Madrid, Spanien; Berlin, Deutschland; Amsterdam, Niederlande; Brussels, Belgien; Luxemburg City, Luxemburg; Genf (Schweiz); Marrakesh, Marokko; Prag, Czechia; Bukarest, Rumänien; Toronto, ON, Kanada; Santiago, regionale Santiago-Region, Chile; Buenos Aires, autonome Buenos Aires City, Argentinien; Bogot√ °, Bogota, Kolumbien; Delhi, Indien|Sii ist die führende IT Serviceunternehmen Polen digitale Transformation Programme aus seiner Konzeption auf die erfolgreiche Lieferung und höher unterstützen. Wir bieten Erfahrung im Bereitstellen von Unternehmens- und verbraucherszenarios apps Gerätekommunikation, big Data Zeichenfolgenbehandlung und offline zuerst aktivieren.|
+|[Sii](http://www.sii.pl/en)|Warschau, Polen; Paris, Frankreich; Madrid, Spanien; Berlin, Deutschland; Amsterdam, Niederlande; Brussels, Belgien; Luxemburg City, Luxemburg; Genf (Schweiz); Marrakesh, Marokko; Prag, Czechia; Bukarest, Rumänien; Toronto, ON, Kanada; Santiago, regionale Santiago-Region, Chile; Buenos Aires, autonome Buenos Aires City, Argentinien; Bogotá, Bogota, Kolumbien; Delhi, Indien|Sii ist die führende IT Serviceunternehmen Polen digitale Transformation Programme aus seiner Konzeption auf die erfolgreiche Lieferung und höher unterstützen. Wir bieten Erfahrung im Bereitstellen von Unternehmens- und verbraucherszenarios apps Gerätekommunikation, big Data Zeichenfolgenbehandlung und offline zuerst aktivieren.|
 
 
 ## <a name="portugal"></a>Portugal

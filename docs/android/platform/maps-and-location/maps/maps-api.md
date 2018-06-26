@@ -1,19 +1,20 @@
 ---
-title: Maps-API
+title: Verwenden die Google Maps-API in der Anwendung
+description: Wie Google Maps-API v2-Funktionen in Ihrer Anwendung Xamarin.Android implementiert.
 ms.prod: xamarin
 ms.assetid: C0589878-2D04-180E-A5B9-BB41D5AF6E02
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: fc16178a4068b2dcf22fc19047e0ef403e83633f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/25/2018
+ms.openlocfilehash: a0e010a8300eb4b4452737e34d2f55a35ab95428
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30773523"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935138"
 ---
-# <a name="maps-api"></a>Maps-API
+# <a name="using-the-google-maps-api-in-your-application"></a>Die Google Maps-API verwenden in der Anwendung.
 
 Mithilfe der Maps-Anwendung eignet sich hervorragend, aber in einigen Fällen sollen Maps direkt in der Anwendung. Zusätzlich zu den integrierten ordnet Anwendung Google bietet außerdem eine [native Zuordnungs-API für Android](https://developers.google.com/maps/documentation/android/).
 Die Maps-API eignet sich für Fälle, in denen steuerungsmöglichkeiten für die Zuordnung beibehalten werden sollen. Aufgaben, die mit der Maps-API möglich sind enthalten:
@@ -315,7 +316,7 @@ Die Android Maps-API bietet APIs, mit denen eine Aktivität zum Ändern der Sich
 
 Zuordnungen werden als eine flache Ebene auf dem Bildschirm, basierend auf die Mercator-Projektion modelliert. Die Kartenansicht wird, die von einem *Kamera* gerade nach unten auf dieser Ebene suchen. Die Kameraposition kann durch Ändern der Position, Zoom, Neigung und Einfluss gesteuert werden. Die [CameraUpdate](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdate) Klasse wird verwendet, um den Speicherort der Kamera zu verschieben. `CameraUpdate` Objekte werden nicht direkt instanziiert werden, stattdessen die Maps-API bietet die [CameraUpdateFactory](http://developer.android.com/reference/com/google/android/gms/maps/CameraUpdateFactory.html) Klasse.
 
-Einmal eine `CameraUpdate` Objekt erstellt wurde, es wird als Parameter übergeben, entweder die [GoogleMap.MoveCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#moveCamera(com.google.maps.CameraUpdate)) oder [GoogleMap.AnimateCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.maps.CameraUpdate)) Methoden. Die `MoveCamera` Methode aktualisiert die Zuordnung während der sofort die `AnimateCamera` Methode stellt einen Übergang smooth, animierten.
+Einmal eine `CameraUpdate` Objekt erstellt wurde, es wird als Parameter übergeben, entweder die [GoogleMap.MoveCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#moveCamera%28com.google.maps.CameraUpdate%29) oder [GoogleMap.AnimateCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera%28com.google.maps.CameraUpdate%29) Methoden. Die `MoveCamera` Methode aktualisiert die Zuordnung während der sofort die `AnimateCamera` Methode stellt einen Übergang smooth, animierten.
 
 Dieser Codeausschnitt ist ein einfaches Beispiel zum Verwenden der `CameraUpdateFactory` zum Erstellen einer `CameraUpdate` , die die Zoomstufe der Karte um eins erhöht:
 
@@ -328,7 +329,7 @@ if (_map != null) {
 }
 ```
 
-Die Maps-API bietet eine [CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html) aggregiert die alle möglichen Werte für die Kameraposition. Eine Instanz dieser Klasse kann angegeben werden, um die [CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition(com.google.android.gms.maps.model.CameraPosition)) Methode zurückgegeben wird, wird ein `CameraUpdate` Objekt. Die Maps-API enthält auch die [CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) -Klasse, die zum Erstellen eine fluent-API bietet `CameraPosition` Objekte.
+Die Maps-API bietet eine [CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html) aggregiert die alle möglichen Werte für die Kameraposition. Eine Instanz dieser Klasse kann angegeben werden, um die [CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition%28com.google.android.gms.maps.model.CameraPosition%29) Methode zurückgegeben wird, wird ein `CameraUpdate` Objekt. Die Maps-API enthält auch die [CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) -Klasse, die zum Erstellen eine fluent-API bietet `CameraPosition` Objekte.
 Der folgende Codeausschnitt zeigt ein Beispiel zum Erstellen einer `CameraUpdate` aus einem `CameraPosition` und verwenden, um die Kameraposition zu ändern einer `GoogleMap`:
 
 ```csharp
@@ -372,7 +373,7 @@ Die Maps-API bietet eine [Marker](https://developers.google.com/maps/documentati
 
 ##### <a name="adding-a-marker"></a>Einen Marker hinzufügen
 
-Um eine Zuordnung einen Marker hinzugefügt haben, ist es notwendig erstellen Sie ein neues [MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions) Objekt, und rufen Sie anschließend die [AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker(com.google.android.gms.maps.model.MarkerOptions)) Methode auf eine `GoogleMap` Instanz. Diese Methode zurückgegeben wird ein [Marker](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker) Objekt.
+Um eine Zuordnung einen Marker hinzugefügt haben, ist es notwendig erstellen Sie ein neues [MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions) Objekt, und rufen Sie anschließend die [AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker%28com.google.android.gms.maps.model.MarkerOptions%29) Methode auf eine `GoogleMap` Instanz. Diese Methode zurückgegeben wird ein [Marker](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker) Objekt.
 
 ```csharp
 MapFragment mapFrag = (MapFragment) FragmentManager.FindFragmentById(Resource.Id.my_mapfragment_container);
@@ -382,7 +383,7 @@ if (_map != null) {
     MarkerOptions markerOpt1 = new MarkerOptions();
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
-    _map.AddMarker(marker1);
+    _map.AddMarker(markerOpt1);
 }
 ```
 
@@ -402,7 +403,7 @@ Diese Methode nimmt einen [BitmapDescriptor](http://developer.android.com/refere
 
 -   `FromBitmap(Bitmap image)` &ndash; Verwenden Sie die angegebene Bitmap als Symbol.
 
--   `FromFile(string fileName` &ndash; Erstellen Sie das benutzerdefinierte Symbol aus der Datei im angegebenen Pfad.
+-   `FromFile(string fileName)` &ndash; Erstellen Sie das benutzerdefinierte Symbol aus der Datei im angegebenen Pfad.
 
 -   `FromResource(int resourceId)` &ndash; Erstellen Sie ein benutzerdefiniertes Symbol aus der angegebenen Ressource an.
 
@@ -417,12 +418,12 @@ if (_map != null)
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
     markerOpt1.InvokeIcon(BitmapDescriptorFactory.DefaultMarker (BitmapDescriptorFactory.HueCyan));
-    _map.AddMarker(marker1);
+    _map.AddMarker(markerOpt1);
 }
 ```
 
 
-#### <a name="info-windows"></a>Info Windows
+#### <a name="info-windows"></a>Info-Windows
 
 *Info Windows* sind spezielle Windows diese Popup Informationen für den Benutzer angezeigt, wenn sie eine bestimmte Marke Tippen Sie auf. Standardmäßig wird das Informationsfenster den Inhalt des Titels für die Markierung angezeigt. Wenn der Titel nicht zugewiesen wurde, wird kein Infofenster angezeigt. Nur ein Fenster "Info" möglicherweise zu einem Zeitpunkt angezeigt werden.
 
@@ -515,7 +516,7 @@ Der folgende Codeausschnitt veranschaulicht das Zeichnen eines Kreises:
 CircleOptions circleOptions = new CircleOptions ();
 circleOptions.InvokeCenter (new LatLng(37.4, -122.1));
 circleOptions.InvokeRadius (1000);
-_map.AddCircle (CircleOptions);
+_map.AddCircle (circleOptions);
 ```
 
 
@@ -610,8 +611,7 @@ Beachten Sie, dass ein Infofenster einen statischen ist `View` der wird als ein 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Google Play Services](http://developer.android.com/google/play-services/index.html)
+- [Google Play-Dienste](http://developer.android.com/google/play-services/index.html)
 - [Google ordnet Android-API v2](https://developers.google.com/maps/documentation/android/)
 - [Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)
 - [Abrufen eines Google Maps-API-Schlüssels](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [Problem 57880: Aktualisiert, nicht aber AVD Google Play-Dienste](https://code.google.com/p/android/issues/detail?id=57880)
