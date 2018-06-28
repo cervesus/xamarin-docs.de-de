@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 15de334500ea25d22657c257a4a4fc6887cc122c
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 12b677c8cc4a709a865d2eaee3ea44a6babf1b05
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935427"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066649"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin Live neu laden
 
@@ -28,7 +28,7 @@ Live-Reload ist derzeit nur in Visual Studio 2017 verfügbar.
 
 ## <a name="requirements"></a>Anforderungen
 
-* [Visual Studio 2017 Version 15.7 oder höher](https://www.visualstudio.com/vs/) oder höher mit der **Mobile Entwicklung mit .NET** arbeitsauslastung.
+* [Visual Studio 2017 Version 15.7 oder höher](https://visualstudio.microsoft.com/vs/) oder höher mit der **Mobile Entwicklung mit .NET** arbeitsauslastung.
 * [Xamarin.Forms 3.0.0 oder höher](https://www.nuget.org/packages/Xamarin.Forms/) oder höher.
 
 ## <a name="getting-started"></a>Erste Schritte

@@ -5,12 +5,12 @@ ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: f0f6eebbd12041a7be2d8e2dc00a9146b40d675f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a42086f70eb81a761358655b3effb9f8f934c8d4
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783073"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37067323"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Erste Schritte mit Xamarin.Essentials
 
@@ -22,7 +22,7 @@ Xamarin.Essentials bietet eine einzelne plattformübergreifende-API, die arbeite
 
 Xamarin.Essentials unterstützt die folgenden Plattformen und Betriebssysteme:
 
-| Plattform | Zielplattform |
+| Plattform | Version |
 | --- | --- |
 | Android | 4.4 (API-19) oder höher |
 | iOS |10,0 oder höher |
@@ -63,6 +63,10 @@ Xamarin.Essentials steht als NuGet-Paket, das alle vorhandenen oder neuen Projek
 5. Xamarin.Essentials fordert plattformspezifischen-Setup:
 
     # <a name="androidtabandroid"></a>[Android](#tab/android)
+
+    Xamarin.Essentials unterstützt als Mindestversion Android 4.4, API-Ebene 19, entspricht jedoch der Android-Zielversion für das Kompilieren muss 8.1, API-Ebene 27 entspricht. (In Visual Studio werden diese beiden Versionen im Dialogfeld "Projekteigenschaften" das Android-Projekt, in der Registerkarte "Android-Manifest" festgelegt. In Visual Studio für Mac können sie im Dialogfeld Projektoptionen für das Android-Projekt, in der Registerkarte "Android-Anwendung" festgelegt.) 
+    
+    Xamarin.Essentials installiert Version 27.0.2 Xamarin.Android.Support-Bibliotheken, die dies erfordert. Alle anderen Xamarin.Android.Support-Bibliotheken, die die Anwendung erfordert, sollten auch auf Version mithilfe des NuGet-Paket-Managers 27.0.2 aktualisiert werden. Alle Xamarin.Android.Support-Bibliotheken, die von der Anwendung verwendeten sollte identisch sein und muss mindestens Version 27.0.2. Finden Sie in der [Website](troubleshooting.md) bei Problemen den Xamarin.Essentials NuGet hinzufügen oder Aktualisieren von NuGets in der Projektmappe.
 
     In der Android-Projekts `MainLauncher` oder eine beliebige `Activity` also gestartete Xamarin.Essentials muss initialisiert werden, der `OnCreate` Methode:
 
