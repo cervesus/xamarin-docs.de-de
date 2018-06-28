@@ -1,19 +1,20 @@
 ---
 title: Bündeln für den Mac App Store
-description: Dieser Leitfaden enthält Informationen zum Bündeln einer Xamarin.Mac-App für die Veröffentlichung im Mac App Store.
+description: In diesem Dokument wird das Bündeln einer Xamarin.Mac-App für die Veröffentlichung im Mac App Store beschrieben. Dabei werden Optionen zum Codesignieren und das Erstellen von Code erläutert.
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 88d813331dfce437f3668ada8f008bbbd5fdc3de
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3aeda97fa4a5a63d51623335c0721026b2394d2f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792059"
 ---
-# <a name="bundle-for-mac-app-store"></a>Für den Mac App Store bündeln
+# <a name="bundling-for-the-mac-app-store"></a>Bündeln für den Mac App Store
 
 In diesem Abschnitt werden die Grundlagen der Erstellung einer Anwendung mit Visual Studio für Mac beschrieben, die im Mac App Store angeboten werden soll. Auf der Grundlage von zusätzlichen Funktionen (wie dem Zugang zu iCloud und Pushbenachrichtigungen) ist möglicherweise zusätzliches Setup notwendig, dessen Beschreibung den Rahmen dieses Artikels sprengen würde.
 

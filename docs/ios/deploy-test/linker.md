@@ -1,18 +1,20 @@
 ---
-title: Verknüpfung unter iOS
+title: Verknüpfen von Xamarin.iOS-Apps
+description: In diesem Dokument wird der Xamarin.iOS-Linker beschrieben, der zum Löschen von nicht verwendetem Code aus einer Xamarin.iOS-App verwendet wird, um deren Größe zu verringern.
 ms.prod: xamarin
 ms.assetid: 3A4B2178-F264-0E93-16D1-8C63C940B2F9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/24/2017
-ms.openlocfilehash: 1d83a152c0949abe0221f6eb6dfb42f4e79eaf38
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f80faa961fe4bef45df33c411d914ba80e605c75
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785579"
 ---
-# <a name="linking-on-ios"></a>Verknüpfung unter iOS
+# <a name="linking-xamarinios-apps"></a>Verknüpfen von Xamarin.iOS-Apps
 
 Beim Erstellen Ihrer Anwendung ruft Visual Studio für Mac oder Visual Studio ein Tool namens **mtouch** auf, das einen Linker für verwalteten Code enthält. Es wird verwendet, um die Funktionen, die die Anwendung nicht verwendet, aus den Klassenbibliotheken zu entfernen. Ziel ist es, die Größe der Anwendung so zu reduzieren, dass sie nur mit den notwendigen Bits ausgeliefert wird.
 

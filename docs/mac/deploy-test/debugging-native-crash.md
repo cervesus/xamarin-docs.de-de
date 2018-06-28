@@ -1,19 +1,20 @@
 ---
-title: Debuggen eines nativen Absturzes
-description: In dieser Anleitung wird beschrieben, wie Sie Ausnahmen debuggen, die aus der Objective-C-Laufzeit stammen.
+title: Debuggen eines nativen Absturzes in einer Xamarin.Mac-App
+description: In dieser Dokument wird beschrieben, wie Sie Ausnahmen debuggen, die aus der Objective-C-Runtime stammen. Dabei werden unter anderem Assertionsfehler, Rückruffehler und das Bubbling von Ausnahmen erläutert.
 ms.prod: xamarin
 ms.assetid: B0C0CE31-2737-4969-8EA5-D39D3333E9C2
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 211f85c32fae3ed947e01890916e0a646981a51b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 66ef76c4305e572d5cc45c142f38d89d6f17eeb0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792124"
 ---
-# <a name="debugging-a-native-crash"></a>Debuggen eines nativen Absturzes
+# <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>Debuggen eines nativen Absturzes in einer Xamarin.Mac-App
 
 ## <a name="overview"></a>Übersicht
 

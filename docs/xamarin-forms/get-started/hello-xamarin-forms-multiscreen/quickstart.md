@@ -1,16 +1,18 @@
 ---
 title: Xamarin.Forms Multiscreen-Schnellstart
+description: In diesem Artikel wird erläutert, wie Sie die Phoneword-Anwendung durch Hinzufügen eines zweiten Bildschirms erweitern, um die Anrufliste für die Anwendung nachzuverfolgen.
 ms.prod: quickstart
 ms.assetid: 255d93b9-518c-4e5d-a9cd-4dd8a7945a7f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 066f084187a486ca2f88882890b5e9ad277b8cff
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c931b4f74fbfbbb7396e492cb7ad7ae5d0097bad
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35242390"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Xamarin.Forms Multiscreen-Schnellstart
 
@@ -57,7 +59,7 @@ Erweitern Sie die Phoneword-Anwendung wie folgt:
 
     Speichern Sie die Änderungen für **CallHistoryPage.xaml**, indem Sie **STRG+S** drücken und die Datei schließen.
 
-5. Doppelklicken Sie im **Projektmappen-Explorer** auf **App.xaml.cs**, um es zu öffnen:
+5. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei **App.xaml-cs** im freigegebenen **Phoneword**-Projekt, um diese zu öffnen:
 
     ![](quickstart-images/vs/open-app-class.png "„App.Xaml.cs“ öffnen")
 
@@ -88,7 +90,7 @@ Erweitern Sie die Phoneword-Anwendung wie folgt:
 
     Speichern Sie die Änderungen an **App.xaml.cs**, indem Sie **STRG+S** drücken, und schließen Sie die Datei.
 
-7. Doppelklicken Sie im **Projektmappen-Explorer** auf **MainPage.xaml**, um es zu öffnen:
+7. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei **MainPage.xaml** im freigegebenen **Phoneword**-Projekt, um diese zu öffnen:
 
     ![](quickstart-images/vs/open-mainpage-xaml.png "„MainPage.xaml“ öffnen")
 

@@ -1,19 +1,20 @@
 ---
-title: Problembehandlung
-description: Tipps und Tricks für eine problemlose Bereitstellung
+title: 'Tests und Bereitstellung für Xamarin.iOS: Problembehandlung'
+description: Dieses Dokument enthält Tipps zur Problembehandlung beim Codesignieren und Bereitstellen, bei TestFlight und beim Kopieren des iOS-App-Bündels vom Mac-Buildhost zu Windows.
 ms.prod: xamarin
 ms.assetid: 65286D09-F74D-4F22-B6CD-D1BCD7FC7992
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: fe7425bbf6440317cc856d2c727874298f66bc33
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 056b9ba5c1625093cd7fdd2914fa5df919a2f426
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785384"
 ---
-# <a name="troubleshooting"></a>Problembehandlung
+# <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Tests und Bereitstellung für Xamarin.iOS: Problembehandlung
 
 ## <a name="code-signing--provisioning"></a>Hinzufügen von Codesignaturen und Bereitstellen von Code
 
@@ -32,7 +33,6 @@ Das Hinzufügen von Codesignaturen und Bereitstellen von Code mit iOS kann mühs
 * Stellen Sie sicher, dass alle erforderlichen Zertifikate und die zugehörigen privaten Schlüssel verfügbar sind. Jedes Team benötigt ein Entwicklerzertifikat zur Installation von Apps auf eigenen Geräten und ein Verteilungszertifikat zur Installation auf anderen Geräten.
 
 * Starten Sie Xcode und Visual Studio für Mac/Visual Studio neu, wenn ein neues Bereitstellungsprofil oder Zertifikat installiert wird.
-
 
 ## <a name="testflight"></a>TestFlight
 

@@ -1,5 +1,5 @@
 ---
-title: IPA-Unterstützung
+title: IPA-Unterstützung in Xamarin.iOS
 description: In diesem Artikel erfahren Sie, wie Sie eine IPA-Datei erstellen können, die zum Bereitstellen einer App mit der Ad-hoc-Verteilung verwendet werden kann oder zur internen Verteilung internen Anwendungen.
 ms.prod: xamarin
 ms.assetid: D253C2DB-852E-6FC6-C9FD-574730B8DB19
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d63624ed486079f44e9756ee84612863e6176d7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 288ac813f23f281a1bbed375cadf5faa9d4ff9d0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784875"
 ---
-# <a name="ipa-support"></a>IPA-Unterstützung
+# <a name="ipa-support-in-xamarinios"></a>IPA-Unterstützung in Xamarin.iOS
 
 _In diesem Artikel erfahren Sie, wie Sie eine IPA-Datei erstellen können, die zum Bereitstellen einer App mit der Ad-hoc-Verteilung verwendet werden kann oder zur internen Verteilung interner Anwendungen._
 

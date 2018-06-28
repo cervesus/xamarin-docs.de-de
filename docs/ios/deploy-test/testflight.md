@@ -1,19 +1,20 @@
 ---
-title: Verwenden von TestFlight
-description: TestFlight ist jetzt im Besitz von Apple und ist die primäre Methode zum Beta-Testen Ihrer Xamarin.iOS-Apps. Dieser Artikel führt Sie durch alle Schritte des TestFlight-Prozesses, vom Hochladen Ihrer App bis hin zum Arbeiten mit iTunes Connect.
+title: Verwenden von TestFlight zum Verteilen von Xamarin.iOS-Apps
+description: TestFlight ist jetzt im Besitz von Apple und die wichtigste Methode zum Betatesten Ihrer Xamarin.iOS-Apps. Dieser Artikel führt Sie durch alle Schritte des TestFlight-Prozesses, vom Hochladen Ihrer App bis hin zum Arbeiten mit iTunes Connect.
 ms.prod: xamarin
 ms.assetid: BA880768-2BC8-41E4-B57E-A56F8EED4690
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 5a6e90aab3aae408d4daace81875e44f075818bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: efb0a59ac43ca3e0c4959caa8478a51512e29a3a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785686"
 ---
-# <a name="using-testflight"></a>Verwenden von TestFlight
+# <a name="using-testflight-to-distribute-xamarinios-apps"></a>Verwenden von TestFlight zum Verteilen von Xamarin.iOS-Apps
 
 _TestFlight ist jetzt im Besitz von Apple und die wichtigste Methode zum Betatesten Ihrer Xamarin.iOS-Apps. Dieser Artikel führt Sie durch alle Schritte des TestFlight-Prozesses: vom Hochladen Ihrer App bis hin zum Arbeiten mit iTunes Connect._
 

@@ -1,21 +1,20 @@
 ---
-title: Veröffentlichen im App Store
-description: In diesem Artikel wird beschrieben, wie Sie eine Xamarin.iOS-Anwendung für die Verteilung über den App Store konfigurieren, erstellen und veröffentlichen. In dieser Anleitung wird erklärt, wie Sie eine Anwendung für die Verteilung vorbereiten, wie Sie sie mithilfe der Tools von Apple zur Überprüfung übermitteln und wie Sie Ihre Anwendung schließlich im App Store veröffentlichen.
+title: Veröffentlichen von Xamarin.iOS-Apps im App Store
+description: In diesem Artikel wird beschrieben, wie Sie eine Xamarin.iOS-Anwendung für die Verteilung im App Store konfigurieren, erstellen und veröffentlichen.
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 5d78cb81f27ce7478719ff9f11f4eb38fddc3981
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b8bea29e71e055621e7d0b85d3736ec6cc9ba3b4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785699"
 ---
-# <a name="publishing-to-the-app-store"></a>Veröffentlichen im App Store
-
-_In diesem Artikel wird beschrieben, wie Sie eine Xamarin.iOS-Anwendung für die Verteilung über den App Store konfigurieren, erstellen und veröffentlichen. In dieser Anleitung wird erklärt, wie Sie eine Anwendung auf die Verteilung vorbereiten, wie Sie sie mithilfe der Tools von Apple zur Überprüfung übermitteln und wie Sie Ihre Anwendung schließlich im App Store veröffentlichen._
+# <a name="publishing-xamarinios-apps-to-the-app-store"></a>Veröffentlichen von Xamarin.iOS-Apps im App Store
 
 Apple erfordert die Veröffentlichung von Apps über den *App Store*, damit sie an alle iOS-Geräte verteilt werden können. Dadurch wird der App Store zur zentralen Anlaufstelle für iOS-Anwendungen. Entwickler vieler verschiedener Arten von Anwendungen profitieren vom großen Erfolg dieser zentralen Verteilungsstelle mit über 500.000 verfügbaren Anwendungen. Der App Store bietet App-Entwicklern als sofort einsetzbare Lösung sowohl Verteilung als auch Zahlungssysteme.
 

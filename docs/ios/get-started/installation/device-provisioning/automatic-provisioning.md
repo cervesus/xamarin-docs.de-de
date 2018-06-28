@@ -1,5 +1,5 @@
 ---
-title: Automatische Bereitstellung
+title: Automatische Bereitstellung für Xamarin.iOS
 description: Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieses Handbuch beschreibt die Verwendung der Option „Automatische Signatur“, um Entwicklungszertifikate und -profile anzufordern.
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/22/2018
-ms.openlocfilehash: d324e469ba392b14c635990d607bf04c949ad5db
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: 323174b4a37a12828a32acb398fef63cd9b849e3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785816"
 ---
-# <a name="automatic-provisioning"></a>Automatische Bereitstellung
+# <a name="automatic-provisioning-for-xamarinios"></a>Automatische Bereitstellung für Xamarin.iOS
 
 _Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieses Handbuch beschreibt die Verwendung der Option „Automatische Signatur“, um Entwicklungszertifikate und -profile anzufordern._
 

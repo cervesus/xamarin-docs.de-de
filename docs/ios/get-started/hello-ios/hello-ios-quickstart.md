@@ -1,6 +1,6 @@
 ---
-title: Hallo, iOS-Schnellstart
-description: Dieser zweiteilige Leitfaden beschreibt, wie Sie mit Visual Studio für Mac oder Visual Studio eine einfache Xamarin.iOS-Anwendung erstellen. Außerdem erhalten Sie Einblick in die grundlegenden Aspekte der Entwicklung von iOS-Anwendungen mit Xamarin. Es werden die Tools, Konzepte und Schritte eingeführt, die zum Erstellen und Bereitstellen einer Xamarin.iOS-Anwendung erforderlich sind.
+title: 'Schnellstart: Hallo, iOS'
+description: In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie eine einfache Xamarin.iOS-Anwendung namens „Hallo, iOS“ erstellen. Im Rahmen dessen werden die grundlegenden Tools und Konzepte eingeführt, die zum Erstellen von Xamarin.iOS-Anwendungen verstanden werden müssen.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: D3868F3A-4EED-BDDF-45AA-665102C39634
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: c82343b3ec36512a8cfd7ba3b96862eac14bfafd
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: d9f5894f03bbfaa2145aec462dbd0ede7774354a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785985"
 ---
-# <a name="helloios-quickstart"></a>Schnellstart für Hallo.iOS
+# <a name="hello-ios--quickstart"></a>Schnellstart: Hallo, iOS
 
 Dieses Handbuch beschreibt, wie Sie eine Anwendung erstellen, die eine vom Benutzer eingegebene alphanumerische Telefonnummer in eine numerische Telefonnummer übersetzt und anschließend diese Nummer anruft. Die endgültige Anwendung sieht wie folgt aus:
 

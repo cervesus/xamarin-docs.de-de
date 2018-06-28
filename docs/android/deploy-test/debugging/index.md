@@ -6,22 +6,23 @@ ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/25/2018
-ms.openlocfilehash: a4ce36e28bd5b6dcf78d248b1f2ba951cad9b286
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: e1c2a591450d8a5fd0aebe2bceb1d914a711512e
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732218"
 ---
 # <a name="debugging"></a>Debuggen
 
 In diesem Abschnitt wird beschrieben, wie das Debuggen einer Xamarin.Android-App auf Geräten oder in Emulatoren erfolgt.
+
 ## <a name="debugging-overview"></a>Übersicht über das Debugging
 
 Die Entwicklung von Android-Anwendungen erfordert das Ausführen der Anwendung, entweder auf physischer Hardware oder in einem Emulator. Die beste, aber nicht immer zweckmäßigste, Herangehensweise ist die Verwendung von Hardware. In vielen Fällen kann es einfacher und kostengünstiger sein, Android-Hardware mithilfe einer der unten beschriebenen Emulatoren zu simulieren/emulieren.
 
-
-### <a name="google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Google Android-Emulator](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+### <a name="debugging-with-the-google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Debuggen mit dem Google Android-Emulator](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
 
 In diesen Artikeln wird erläutert, wie der Standardemulator verwendet wird, der mit Android SDK bereitgestellt wird. Dieser Emulator ist für Visual Studio für Windows und Visual Studio für Mac verfügbar.
 

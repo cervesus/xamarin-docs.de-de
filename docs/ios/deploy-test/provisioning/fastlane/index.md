@@ -1,21 +1,20 @@
 ---
 title: Einführung in fastlane für iOS
-description: Dieser Leitfaden beschreibt die verschiedenen fastlane-Tools zum Hinzufügen einer Codesignatur bei iOS-Anwendungen.
+description: Dieser Leitfaden beschreibt die verschiedenen fastlane-Tools zum Hinzufügen einer Codesignatur bei iOS-Anwendungen. Es wird beschrieben, wie Sie fastlane-Tools aktualisieren, installieren und verwenden.
 ms.prod: xamarin
 ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 68c252edecc4ebffb764c0de328ab605975471c4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ffb7e0a088bcd227f45b97229f089ef59d4d6608
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785488"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Einführung in fastlane für iOS
-
-_Dieser Leitfaden beschreibt die verschiedenen fastlane-Tools zum Hinzufügen einer Codesignatur bei iOS-Anwendungen._
 
 Fastlane ist ein Open Source-Projekt, das der Vereinfachung des verwirrenden und häufig mühsamen Freigabeprozesses von iOS- und Android-Apps dienen soll. Es enthält verschiedene Dienstprogramme, von denen jedes einen bestimmten Aspekt der App-Freigabe behandelt:
 

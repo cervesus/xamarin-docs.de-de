@@ -1,5 +1,5 @@
 ---
-title: Zertifikate und Bezeichner
+title: Zertifikate und Bezeichner in Xamarin.Mac
 description: Dieser Leitfaden enthält Informationen zum Erstellen der notwendigen Zertifikate und Bezeichner, die für das Veröffentlichen einer Xamarin.Mac-App benötigt werden.
 ms.prod: xamarin
 ms.assetid: 393d0066-7f6f-4ac3-a48d-4b5db65bc4cd
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: d94819be2c014aec5edfae19959ce949ee8dcd4b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b86f731009380db7e9e8980114272ddd38d2f0da
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792874"
 ---
-# <a name="certificates-and-identifiers"></a>Zertifikate und Bezeichner
+# <a name="certificates-and-identifiers-in-xamarinmac"></a>Zertifikate und Bezeichner in Xamarin.Mac
 
 _Dieser Leitfaden enthält Informationen zum Erstellen der notwendigen Zertifikate und Bezeichner, die für das Veröffentlichen einer Xamarin.Mac-App benötigt werden._
 

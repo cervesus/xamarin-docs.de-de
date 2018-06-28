@@ -1,21 +1,20 @@
 ---
-title: Veröffentlichen im App Store
-description: Dieser Leitfaden führt Sie durch die Bereitstellung einer Xamarin.Mac-App mit Visual Studio für Mac. Darin wird beschrieben, wie Sie ein Mac-Entwicklerkonto einrichten, und Sie werden beim Erstellen der Zertifikate für die Codesignatur begleitet. Darüber hinaus wird gezeigt, wie Sie diese Zertifikate verwenden können, um Mac-Apps zu erstellen, die Sie direkt oder über den Mac App Store verteilen können.
+title: Veröffentlichen von Xamarin.Mac-Apps im Mac App Store
+description: In diesem Dokument wird die Bereitstellung einer Xamarin.Mac-App mit Visual Studio für Mac beschrieben. Dabei wird die Einrichtung eines Mac-Entwicklerkontos, das Erstellen von Zertifikaten für die Codesignierung und das Verwenden dieser Zertifikate für das Erstellen von Mac-Apps, die direkt oder über den Mac App Store verteilt werden können, erläutert.
 ms.prod: xamarin
 ms.assetid: D26C5E54-EAD2-5487-264D-4263AEA1EBF2
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3b21dd0adfd96e1190660aa97b2850f968b5473f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eba359dac70e31325235f6145fe06902e25df7af
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791965"
 ---
-# <a name="publishing-to-the-app-store"></a>Veröffentlichen im App Store
-
-_Dieser Leitfaden führt Sie durch die Bereitstellung einer Xamarin.Mac-App mit Visual Studio für Mac. Darin wird beschrieben, wie Sie ein Mac-Entwicklerkonto einrichten, und Sie werden beim Erstellen der Zertifikate für die Codesignatur begleitet. Darüber hinaus wird gezeigt, wie Sie diese Zertifikate verwenden können, um Mac-Apps zu erstellen, die Sie direkt oder über den Mac App Store verteilen können._
+# <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>Veröffentlichen von Xamarin.Mac-Apps im Mac App Store
 
 ## <a name="overview"></a>Übersicht
 

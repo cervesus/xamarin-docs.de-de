@@ -1,21 +1,20 @@
 ---
 title: Erstellen von Xamarin.iOS-Anwendungsprofilen mit Instruments
-description: Verwenden von Instruments für eine Xamarin.iOS-Anwendung auf einem Gerät oder im Simulator
+description: In diesem Dokumentation wird beschrieben, wie Sie die Instruments-App von Apple für die Profilerstellung für eine Xamarin.iOS-App verwenden können, die auf einem Gerät oder auf einem Emulator installiert ist.
 ms.prod: xamarin
 ms.assetid: 70A8CAC8-20C2-655B-37C3-ACF9EA7874D8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a5c44531a8f05529b169390f25b2946133411098
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 25129d532af0b146afedf28865649ffc9e38ee17
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785611"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Erstellen von Xamarin.iOS-Anwendungsprofilen mit Instruments
-
-_Verwenden von Instruments für eine Xamarin.iOS-Anwendung auf einem Gerät oder im Simulator_
 
 Xcode **Instruments** ist ein Tool, das zur Erstellung von Xamarin.iOS-App-Profilen auf einem Gerät oder im Simulator verwendet werden kann. Mono verwendet das Just-in-Time-Modell zum Kompilieren von Code und analysiert die anfallenden Daten nicht, was auch für Instruments gilt. Es kann daher schwierig sein, die Ergebnisse von auf Simulatoren basierenden Anwendungen, die Instruments nutzen, zu verwerten.
 Aufgrund dieses Problems wird in dieser Anleitung darauf eingegangen, wie die Entwickler-App zum Analysieren von Instruments-Ausgaben verwendet werden kann, die in diesem Dokument dargestellt werden.
