@@ -6,12 +6,12 @@ ms.assetid: 9F730444-06E8-4B3F-8A19-CA95CD484FFA
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2018
-ms.openlocfilehash: 17deacf115042a2fcd6bad9e22a630eadb432d44
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 12a661a7cb0e92046e56c5c2ece6e8504252ca10
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36269017"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066857"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>Installieren der Xamarin-Vorschauversion unter Windows
 
@@ -21,7 +21,7 @@ Wie in den vorherigen Versionen werden die Alpha- und die Betaversion sowie stab
 - **Vorschauversion**: entspricht den _Alpha_-, und _Beta_-Kanälen in Visual Studio für Mac
 
 > [!TIP] 
-> Um Vorabfeatures auszuprobieren, können Sie die Option [Download the Visual Studio 2017 Preview installer](https://www.visualstudio.com/vs/preview/) (Installer für Visual Studio 2017-Vorschauversion herunterladen) wählen. Damit können Sie **Vorschauversionen** von Visual Studio parallel zur stabilen (Vorschau-)Version installieren. Weitere Informationen zu Neuerungen in Visual Studio 2017 finden Sie in den [Versionsanmerkungen](/visualstudio/releasenotes/vs2017-preview-relnotes).
+> Um Vorabfeatures auszuprobieren, können Sie die Option [Download the Visual Studio 2017 Preview installer](https://visualstudio.microsoft.com/vs/preview/) (Installer für Visual Studio 2017-Vorschauversion herunterladen) wählen. Damit können Sie **Vorschauversionen** von Visual Studio parallel zur stabilen (Vorschau-)Version installieren. Weitere Informationen zu Neuerungen in Visual Studio 2017 finden Sie in den [Versionsanmerkungen](/visualstudio/releasenotes/vs2017-preview-relnotes).
 
 Die Vorschauversion von Visual Studio enthält möglicherweise die zugehörigen Vorschauversionen von Xamarin-Funktionen. Zu diesen gehören:
 

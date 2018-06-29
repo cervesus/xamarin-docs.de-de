@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: f7ba0620a4639ff62e2d75d7cf8f02fcc01faac5
-ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
+ms.openlocfilehash: 2cb2167f534251e15455e11b6a2c85f53fb48b8c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33113472"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37067000"
 ---
 # <a name="publishing-independently"></a>Unabhängiges Veröffentlichen
 
@@ -28,7 +28,7 @@ Vier Lizenzen stehen für die Entwicklung, Bereitstellung und Verteilung von Xam
 
 -   **Visual Studio Enterprise**: für Teams beliebiger Größe (nur Windows). Diese Lizenz umfasst Unternehmensfunktionen, ein Standard- oder Cloud-Abonnement.
 
-Besuchen Sie [visualstudio.com](https://www.visualstudio.com/xamarin/), um sich die Community-Edition herunterzuladen oder mehr über den Erwerb der Professional- und Enterprise-Editionen zu erfahren.
+Besuchen Sie [visualstudio.com](https://visualstudio.microsoft.com/xamarin/), um sich die Community-Edition herunterzuladen oder mehr über den Erwerb der Professional- und Enterprise-Editionen zu erfahren.
 
 
 ## <a name="allow-installation-from-unknown-sources"></a>Installieren von Anwendungen aus unbekannten Quellen zulassen
