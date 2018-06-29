@@ -5,12 +5,12 @@ ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 99529f08348254dff7577b7e82da739fabd63a14
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8229a372659e7918457a9d2f358b871e1a3f5978
+ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781864"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37080490"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: Beschleunigungsmesser
 
@@ -89,6 +89,8 @@ Beispiele:
 - **Spiel** – Rate für Spiele, die (nicht unbedingt UI-Thread zurückgeben) geeignet ist.
 - **Normal** – Standardsatz für Bildschirm Ausrichtung wird geeignet ist.
 - **UI** – Rate für die allgemeine Benutzeroberfläche geeignet ist.
+
+Wenn der Ereignishandler nicht unbedingt im UI-Thread ausgeführt, und verwenden, wenn der Ereignishandler benötigt Zugriff auf Elemente der Benutzeroberfläche, die [ `MainThread.BeginInvokeOnMainThread` ](main-thread.md) Methode, um diesen Code im UI-Thread auszuführen.
 
 ## <a name="api"></a>API
 

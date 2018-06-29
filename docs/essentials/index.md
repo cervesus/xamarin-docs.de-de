@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 5fec06fd6f0c13a75040d940a11811ef97c3bcc3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 97dc5494f37da1590178bc90feb673889598bdd7
+ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782738"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37080489"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -44,8 +44,11 @@ Führen Sie die Handbücher, um diese Xamarin.Essentials-Funktionen in Ihre Anwe
 * [GeoLocation](geolocation.md?context=xamarin/xamarin-forms) – das Gerät GPS-Koordinaten abrufen.
 * [Gyroskop](gyroscope.md?context=xamarin/xamarin-forms) – Nachverfolgen der Drehung um drei Primärachsen des Geräts.
 * [Magnetometer](magnetometer.md?context=xamarin/xamarin-forms) – geräteausrichtung relativ zu der Erde elektromagnetischen Feld zu erkennen.
+* [MainThread](main-thread.md?content=xamarin/xamarin-forms) – führen Sie Code auf den Hauptthread der Anwendung. 
 * [Öffnen Sie Browser](open-browser.md?context=xamarin/xamarin-forms) – schnell und einfach einen Browser mit einer bestimmten Website öffnen.
+* [Ausrichtung Sensor](orientation-sensor.md?context=xamarin/xamarin-forms) – Abrufen die Ausrichtung des Geräts in drei dimensionalen Raum.
 * [Wählhilfe](phone-dialer.md?context=xamarin/xamarin-forms) – öffnen die Wählhilfe.
+* [Power](power.md?context=xamarin/xamarin-forms) – das Gerät Energie Bildschirmschoner Status abzufragen.
 * [Voreinstellungen](preferences.md?context=xamarin/xamarin-forms) – schnell und einfach hinzufügen persistente Voreinstellungen.
 * [Bildschirm Sperren](screen-lock.md?context=xamarin/xamarin-forms) – dem Gerätebildschirm aktiv bleiben.
 * [Sicherer Speicher](secure-storage.md?context=xamarin/xamarin-forms) – sichere Speichern von Daten.

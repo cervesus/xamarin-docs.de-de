@@ -5,12 +5,12 @@ ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 30ef4c7c155b09c06c8bc36404b92c2a91b7eb0d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 63818014a9b3bdbef479055cbbcfbf8d348080fc
+ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782293"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37080498"
 ---
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials: Kompass
 
@@ -74,6 +74,8 @@ public class CompassTest
 - **Spiel** – Rate für Spiele, die (nicht unbedingt UI-Thread zurückgeben) geeignet ist.
 - **Normal** – Standardsatz für Bildschirm Ausrichtung wird geeignet ist.
 - **UI** – Rate für die allgemeine Benutzeroberfläche geeignet ist.
+
+Wenn der Ereignishandler nicht unbedingt im UI-Thread ausgeführt, und verwenden, wenn der Ereignishandler benötigt Zugriff auf Elemente der Benutzeroberfläche, die [ `MainThread.BeginInvokeOnMainThread` ](main-thread.md) Methode, um diesen Code im UI-Thread auszuführen.
 
 ## <a name="platform-implementation-specifics"></a>Plattform Implementierungsspezifika
 
