@@ -12,7 +12,7 @@ ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/04/2018
 ---
-# <a name="working-with-the-android-manifest"></a>Arbeiten mit der Android-Manifest
+# <a name="working-with-the-android-manifest"></a>Arbeiten mit dem Android-Manifest
 
 
 ## <a name="overview"></a>Übersicht
