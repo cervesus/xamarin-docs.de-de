@@ -7,21 +7,24 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 42d287285fc9b8842dfb0c86b627d1d5c84189e1
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b763407797cf635908cf34cce4f1a6a06325000d
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784815"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209258"
 ---
 # <a name="app-store-distribution"></a>App Store-Verteilung
 
 Nachdem eine Xamarin.iOS-Anwendung entwickelt wurde, ist der nächste Schritt im Lebenszyklus der Softwareentwicklung die Verteilung der Anwendung an Benutzer mithilfe des iTunes App Stores. Dies ist die gängigste Methode zum Verteilen von Anwendungen. Indem eine Anwendung im App Store von Apple veröffentlicht wird, kann Sie weltweit für Verbraucher verfügbar gemacht werden.
 
 > [!IMPORTANT]
-> **Beachten Sie**, dass Sie an einem Apple-Entwicklerprogramm für Einzelpersonen oder Organisationen teilnehmen **müssen**, um iTunes Connect verwenden und somit eine App im App Store veröffentlichen zu können. Wenn Sie Mitglied eines Apple Developer **Enterprise** Programs sind, können Sie die Schritte auf dieser Seite nicht ausführen.
+> Apple [hat mitgeteilt](https://developer.apple.com/news/?id=05072018a), dass ab Juli 2018 alle Apps und Updates, die an den App Store gesendet werden, mit dem iOS 11 SDK erstellt worden sein und das [iPhone X-Display unterstützen](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md) müssen.
 
 Das Verteilen einer Anwendung erfordert genau wie das Entwickeln einer Anwendung, dass Anwendungen mit dem entsprechenden *Bereitstellungsprofil* bereitgestellt werden. Bereitstellungsprofile sind Dateien, die Informationen zur Codesignierung sowie die Identität der Anwendung und den beabsichtigten Verteilungsmechanismus enthalten. Sie enthalten auch Informationen darüber, für welche Geräte eine App bereitgestellt wird, wenn die Verteilung nicht über den App Store stattfindet.
+
+> [!IMPORTANT]
+> **Beachten Sie**, dass Sie an einem Apple-Entwicklerprogramm für Einzelpersonen oder Organisationen teilnehmen **müssen**, um iTunes Connect verwenden und somit eine App im App Store veröffentlichen zu können. Wenn Sie Mitglied eines Apple Developer **Enterprise** Programs sind, können Sie die Schritte auf dieser Seite nicht ausführen.
 
 <a name="provisioning" />
 

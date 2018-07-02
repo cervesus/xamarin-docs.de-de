@@ -7,14 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: b8bea29e71e055621e7d0b85d3736ec6cc9ba3b4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 489d9fa569b083f5cb655dc503ab4fa551810b6d
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785699"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209473"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>Veröffentlichen von Xamarin.iOS-Apps im App Store
+
+> [!IMPORTANT]
+> Apple [hat mitgeteilt](https://developer.apple.com/news/?id=05072018a), dass ab Juli 2018 alle Apps und Updates, die an den App Store gesendet werden, mit dem iOS 11 SDK erstellt worden sein und das [iPhone X-Display unterstützen](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md) müssen.
 
 Apple erfordert die Veröffentlichung von Apps über den *App Store*, damit sie an alle iOS-Geräte verteilt werden können. Dadurch wird der App Store zur zentralen Anlaufstelle für iOS-Anwendungen. Entwickler vieler verschiedener Arten von Anwendungen profitieren vom großen Erfolg dieser zentralen Verteilungsstelle mit über 500.000 verfügbaren Anwendungen. Der App Store bietet App-Entwicklern als sofort einsetzbare Lösung sowohl Verteilung als auch Zahlungssysteme.
 
@@ -231,7 +234,7 @@ Das Xamarin-Plug-In für Visual Studio unterstützt derzeit nicht den Archivieru
 1. Wählen Sie **iOS-Bundle-Signierung** aus, und ändern Sie das Bereitstellungsprofil in ein App Store-Bereitstellungsprofil:
 
     ![](publishing-to-the-app-store-images/ipa01.png "Wählen Sie „iOS-Bündelsignierung“ aus, und ändern Sie das Bereitstellungsprofil in ein App Store-Bereitstellungsprofil")
-1. Wählen Sie **iOS-IPA-Optionen** aus, und wählen Sie anschließend aus der Dropdownliste **Konfiguration** die Option **Ad-hoc** aus (wenn „Ad-hoc“ nicht angezeigt wird, wählen Sie stattdessen **Freigabe** aus):
+1. Wählen Sie **iOS IPA-Optionen > Konfiguration > Ad-Hoc** aus (sollte **Ad-Hoc** nicht zur Auswahl stehen, wählen Sie stattdessen **Release** (Freigeben) aus), und aktivieren Sie das Kontrollkästchen zum Erstellen einer IPA-Datei:
 
     ![](publishing-to-the-app-store-images/imagevs02.png "Wählen Sie „Ad-Hoc“ in der Dropdownliste „Konfiguration“ aus")
 
