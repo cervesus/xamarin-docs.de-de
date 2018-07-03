@@ -6,13 +6,13 @@ ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/02/2018
-ms.openlocfilehash: 888f126d3e58b0300ba7ce3ad1cb5a8001fc545a
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: a7c1aeafd94d7e2639617cda13312ee8a09e2c94
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733587"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935327"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Verwalten virtueller Geräte mit Android Device Manager
 
@@ -28,7 +28,7 @@ In diesem Artikel wird erläutert, wie virtuelle Android-Geräte mit Android Dev
 
 [![Screenshot von Android Device Manager auf der Registerkarte „Geräte“](device-manager-images/win/01-devices-dialog-sml.png)](device-manager-images/win/01-devices-dialog.png#lightbox)
 
-Android Device Manager wird verwendet, um _virtuelle Android-Geräte_ (AVDs) zu erstellen und zu konfigurieren, die im [Google Android-Emulator](~/android/deploy-test/debugging/android-sdk-emulator/index.md) ausgeführt werden.
+Mit dem Android Device Manager können _virtuelle Android-Geräte_ (AVDs) erstellt und konfiguriert werden, die sich im [Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) ausführen lassen.
 Jedes virtuelle Android-Gerät stellt eine Emulatorkonfiguration dar, die ein physisches Android-Gerät simuliert. Dadurch wird das Ausführen und Testen Ihrer App mit einer Vielzahl von Konfigurationen ermöglicht, die verschiedene physische Android-Geräte simulieren.
 
 ## <a name="requirements"></a>Anforderungen
@@ -48,7 +48,7 @@ Starten Sie Android Device Manager über das Menü **Extras**, indem Sie auf **E
 
 [![Start über das Menü „Extras“](device-manager-images/win/04-tools-menu-sml.png)](device-manager-images/win/04-tools-menu.png#lightbox)
 
-Wenn beim Starten folgendes Fehlerdialogfeld angezeigt wird, finden Sie unter [Behandlung von Problemen beim Setup des Emulators](~/android/get-started/installation/android-emulator/troubleshooting.md) Anweisungen zur Umgehung dieses Problems:
+Wenn beim Starten das folgende Fehlerdialogfeld angezeigt wird, finden Sie unter [Android-Emulator-Problembehandlung](~/android/get-started/installation/android-emulator/troubleshooting.md) Anweisungen zur Umgehung dieses Problems:
 
 ![Android SDK: Instanzfehler](device-manager-images/win/32-sdk-error.png)
 
@@ -165,7 +165,7 @@ Das Menü „Zusätzliche Optionen“ enthält folgende Elemente:
 
     [![Ergebnis beim Klicken auf „Im Explorer anzeigen“](device-manager-images/win/24-reveal-in-explorer-sml.png)](device-manager-images/win/24-reveal-in-explorer.png#lightbox)
 
--   **Auf Werkseinstellungen zurücksetzen:** Setzt das ausgewählte Gerät auf die Standardeinstellungen zurück. Dabei werden alle Benutzeränderungen am internen Zustand des Geräts, die während der Ausführung vorgenommen wurden, gelöscht. Dabei wird die aktuelle [Quick Boot](~/android/deploy-test/debugging/android-sdk-emulator/running-the-emulator.md#quick-boot)-Momentaufnahme gelöscht (falls vorhanden). Dies wirkt sich nicht auf Änderungen aus, die während der Erstellung und Bearbeitung des virtuellen Geräts vorgenommen werden. Es wird ein Dialogfeld mit der Erinnerung angezeigt, dass das Zurücksetzen nicht rückgängig gemacht werden kann. Klicken Sie auf **Wipe user data** (Benutzerdaten löschen), um das Zurücksetzen zu bestätigen.
+-   **Auf Werkseinstellungen zurücksetzen:** Setzt das ausgewählte Gerät auf die Standardeinstellungen zurück. Dabei werden alle Benutzeränderungen am internen Zustand des Geräts, die während der Ausführung vorgenommen wurden, gelöscht. Dabei wird die aktuelle [Quick Boot](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)-Momentaufnahme gelöscht (falls vorhanden). Dies wirkt sich nicht auf Änderungen aus, die während der Erstellung und Bearbeitung des virtuellen Geräts vorgenommen werden. Es wird ein Dialogfeld mit der Erinnerung angezeigt, dass das Zurücksetzen nicht rückgängig gemacht werden kann. Klicken Sie auf **Wipe user data** (Benutzerdaten löschen), um das Zurücksetzen zu bestätigen.
 
 -   **Löschen:** Löscht das ausgewählte virtuelle Gerät dauerhaft.
     Es wird ein Dialogfeld mit der Erinnerung angezeigt, dass das Löschen eines Geräts nicht rückgängig gemacht werden kann. Klicken Sie auf **Löschen**, wenn Sie sich sicher sind, dass Sie das Gerät löschen möchten.
@@ -181,7 +181,7 @@ In diesem Artikel wird erläutert, wie virtuelle Android-Geräte mit Android Dev
 > Dieser Leitfaden gilt nur für Visual Studio für Mac.
 Xamarin Studio ist nicht mit Android Device Manager kompatibel.
 
-Android Device Manager wird verwendet, um *virtuelle Android-Geräte* (AVDs) zu erstellen und zu konfigurieren, die im [Google Android-Emulator](~/android/deploy-test/debugging/android-sdk-emulator/index.md) ausgeführt werden.
+Mit dem Android Device Manager können *virtuelle Android-Geräte* (AVDs) erstellt und konfiguriert werden, die sich im [Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) ausführen lassen.
 Jedes virtuelle Android-Gerät stellt eine Emulatorkonfiguration dar, die ein physisches Android-Gerät simuliert. Dadurch wird das Ausführen und Testen Ihrer App mit einer Vielzahl von Konfigurationen ermöglicht, die verschiedene physische Android-Geräte simulieren.
 
 ## <a name="requirements"></a>Anforderungen
@@ -320,15 +320,113 @@ Das Menü „Zusätzliche Optionen“ enthält folgende Elemente:
 
 -----
 
+## <a name="troubleshooting"></a>Problembehandlung
+
+In den folgenden Abschnitten wird erläutert, wie Sie Probleme diagnostizieren und umgehen, die auftreten können, wenn Sie den Android Device Manager zum Konfigurieren virtueller Geräte verwenden.
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+### <a name="android-sdk-in-non-standard-location"></a>Speicherort von Android SDK weicht vom Standard ab
+
+Üblicherweise wird Android SDK an folgendem Speicherort installiert:
+
+**C:\\Programme (x86)\\Android\\android-sdk**
+
+Wenn das SDK nicht an diesem Speicherort installiert wurde, wird Ihnen beim Starten des Android Device Managers möglicherweise diese Fehlermeldung angezeigt:
+
+![Android SDK: Instanzfehler](troubleshooting-images/win/01-sdk-error.png)
+
+Gehen Sie folgendermaßen vor, um dieses Problem zu umgehen:
+
+1. Navigieren Sie vom Windows-Desktop zu **C:\\Benutzer\\*Benutzername*\\AppData\\Roaming\\XamarinDeviceManager**:
+
+    ![Speicherort der Protokolldatei von Android Device Manager](troubleshooting-images/win/02-log-files.png)
+
+2. Doppelklicken Sie auf eine der Protokolldateien, um diese zu öffnen und den **Konfigurationsdateipfad** zu suchen. Zum Beispiel:
+
+    [![Konfigurationsdateipfad in der Protokolldatei](troubleshooting-images/win/03-config-file-path-sml.png)](troubleshooting-images/win/03-config-file-path.png#lightbox)
+
+3. Navigieren Sie zu diesem Speicherort, und doppelklicken Sie auf **user.config**, um die Datei zu öffnen. 
+
+4. Suchen Sie in **user.config** das Element **&lt;UserSettings&gt;**, und fügen Sie diesem das Attribut **AndroidSdkPath** hinzu. Legen Sie dieses Attribut auf den Pfad fest, unter dem Android SDK auf Ihrem Computer installiert wurde, und speichern Sie die Datei. **&lt;UserSettings&gt;** würde beispielsweise folgendermaßen aussehen, wenn Android SDK unter **C:\\Programme\\Android\\SDK** installiert wäre:
+        
+    ```xml
+    <UserSettings SdkLibLastWriteTimeUtcTicks="636409365200000000" AndroidSdkPath="C:\Programs\Android\SDK" />
+    ```
+
+Nachdem Sie diese Änderung an **user.config** vorgenommen haben, sollten Sie den Android Device Manager starten können.
+
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Momentaufnahme deaktiviert WLAN unter Android Oreo
+
+Wenn Sie ein virtuelles Android-Gerät für Android Oreo mit simuliertem WLAN-Zugriff konfiguriert haben, verursacht ein Neustart des virtuellen Android-Geräts nach einer Momentaufnahme eventuell eine Deaktivierung des WLAN-Zugriffs.
+
+Sie können Folgendes tun, um dieses Problem zu umgehen:
+
+1. Wählen Sie das virtuelle Android-Gerät im Android Device Manager aus.
+
+2. Klicken Sie im Menü „Zusätzliche Optionen“ auf **Im Explorer anzeigen**.
+
+3. Navigieren Sie zu **Momentaufnahme > default_boot**.
+
+4. Löschen Sie die Datei **snapshot.pb**:
+
+    ![Speicherort der Datei „snapshot.pb“](troubleshooting-images/win/05-delete-snapshot.png)
+
+5. Starten Sie das virtuelle Android-Gerät neu. 
+
+Nach diesen Veränderungen startet das virtuelle Android-Gerät neu in einem Zustand, in dem das WLAN wieder funktioniert.
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Momentaufnahme deaktiviert WLAN unter Android Oreo
+
+Wenn Sie ein virtuelles Android-Gerät für Android Oreo mit simuliertem WLAN-Zugriff konfiguriert haben, verursacht ein Neustart des virtuellen Android-Geräts nach einer Momentaufnahme eventuell eine Deaktivierung des WLAN-Zugriffs.
+
+Sie können Folgendes tun, um dieses Problem zu umgehen:
+
+1. Wählen Sie das virtuelle Android-Gerät im Android Device Manager aus.
+
+2. Klicken Sie im Menü „Zusätzliche Optionen“ auf **Im Finder zeigen**.
+
+3. Navigieren Sie zu **Momentaufnahme > default_boot**.
+
+4. Löschen Sie die Datei **snapshot.pb**:
+
+    [![Speicherort der snapshot.pb-Datei](troubleshooting-images/mac/02-delete-snapshot-sml.png)](troubleshooting-images/mac/02-delete-snapshot.png#lightbox)
+
+5. Starten Sie das virtuelle Android-Gerät neu. 
+
+Nach diesen Veränderungen startet das virtuelle Android-Gerät neu in einem Zustand, in dem das WLAN wieder funktioniert.
+
+-----
+
+### <a name="generating-a-bug-report"></a>Erstellen eines Fehlerberichts
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Wenn Sie mit dem Android Device Manager auf einen Fehler stoßen, der mit den oben genannten Tipps zur Problembehandlung nicht gelöst werden kann, erstellen Sie bitte einen Fehlerbericht, indem Sie einen Rechtsklick auf die Titelleiste ausführen und dann auf **Fehlerbericht erstellen** klicken:
+
+[![Ort des Menüelements zum Erstellen eines Fehlerberichts](troubleshooting-images/win/04-bug-report-sml.png)](troubleshooting-images/win/04-bug-report.png#lightbox)
+
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+Wenn Sie mit dem Android Device Manager auf einen Fehler stoßen, der mit den oben genannten Tipps zur Problembehandlung nicht gelöst werden kann, erstellen Sie bitte einen Fehlerbericht, indem Sie auf **Hilfe > Fehlerbericht erstellen** klicken:
+
+[![Ort des Menüelements zum Erstellen eines Fehlerberichts](troubleshooting-images/mac/01-bug-report-sml.png)](troubleshooting-images/mac/01-bug-report.png#lightbox)
+
+
+-----
+
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Leitfaden wurde die Anwendung „Android Device Manager“ vorgestellt, die in Visual Studio für Mac und Visual Studio-Tools für Xamarin verfügbar ist. Es wurden grundlegende Features wie das Starten und Beenden des Android-Emulators, das Auswählen eines virtuellen Android-Geräts für die Ausführung, das Erstellen von neuen virtuellen Geräten sowie das Bearbeiten von virtuellen Geräten erläutert. Darüber hinaus wurde erläutert, wie Hardwareprofileigenschaften für die weitere Anpassung bearbeitet werden können.
+In diesem Leitfaden wurde die Anwendung „Android Device Manager“ vorgestellt, die in Visual Studio für Mac und Visual Studio-Tools für Xamarin verfügbar ist. Es wurden grundlegende Features wie das Starten und Beenden des Android-Emulators, das Auswählen eines virtuellen Android-Geräts für die Ausführung, das Erstellen von neuen virtuellen Geräten sowie das Bearbeiten von virtuellen Geräten erläutert. Außerdem wurde beschrieben, wie durch die Bearbeitung von Profilhardwareeigenschaften zusätzliche Anpassungen vorgenommen werden können. Des Weiteren wurden Tipps zum Umgang mit häufigen Problemen dargestellt.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Änderungen an den Tools des Android SDK](~/android/troubleshooting/sdk-cli-tooling-changes.md)
-- [Debuggen mit dem Android SDK-Emulator](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+- [Debugging on the Android Emulator (Debuggen auf dem Android-Emulator)](~/android/deploy-test/debugging/debug-on-emulator.md)
 - [Anmerkungen zu dieser Version von SDK Tools (Google)](https://developer.android.com/studio/releases/sdk-tools)
 - [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)

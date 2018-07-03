@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 288ac813f23f281a1bbed375cadf5faa9d4ff9d0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4fd64a1ebf05dd149304f49d8282ee1b38bfcf03
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784875"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321362"
 ---
 # <a name="ipa-support-in-xamarinios"></a>IPA-Unterstützung in Xamarin.iOS
 
@@ -132,10 +132,10 @@ In einigen Fällen, wie z.B. in einer CI-Umgebung, ist es möglicherweise notwen
 
      ![](ipa-support-images/imagexs03.png "Wählen Sie in der Liste „iTunesMetadata.plist“ aus")
 
-1. Rufen Sie **xbuild** (oder für Classic API **mdtool**) direkt auf, oder übergeben Sie diese Eigenschaft über die Befehlszeile:
+1. Rufen Sie **msbuild** direkt auf, und übergeben Sie diese Eigenschaft auf der Befehlszeile:
 
     ```bash
-    /Library/Frameworks/Mono.framework/Commands/xbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
+    /Library/Frameworks/Mono.framework/Commands/msbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
     ```
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -178,7 +178,7 @@ Eine neue **MSBuild**-Eigenschaft `IpaPackageDir` wurde hinzugefügt, um das Anp
 
 Die neue Eigenschaft kann auf unterschiedliche Weise verwendet werden:
 
-Für eine Ausgabe der **IPA**-Datei in das frühere Standardverzeichnis (wie in Xamarin.iOS 9.6 und früher) können Sie die `IpaPackageDir`-Eigenschaft z.B. mit einer der folgenden Methoden auf `$(OutputPath)` festlegen. Beide Methoden sind mit allen Unified API-Xamarin.iOS-Builds, einschließlich IDE-Builds, sowie Befehlszeilenbuilds, die **xbuild**, **msbuild** oder **mdtool** verwenden, kompatibel:
+Für eine Ausgabe der **IPA**-Datei in das frühere Standardverzeichnis (wie in Xamarin.iOS 9.6 und früher) können Sie die `IpaPackageDir`-Eigenschaft z.B. mit einer der folgenden Methoden auf `$(OutputPath)` festlegen. Beide Methoden sind mit allen Unified API-Xamarin.iOS-Builds kompatibel. Hierzu zählen sowohl IDE-Builds als auch Befehlszeilenbuilds, die **msbuild**, **xbuild** oder **mdtool** verwenden:
 
 - Die erste Möglichkeit besteht darin, die `IpaPackageDir`-Eigenschaft in einem `<PropertyGroup>`-Element in einer **MSBuild**-Datei festzulegen. Sie könnten z.B. die folgende `<PropertyGroup>` am Ende der iOS-App-Projektdatei **CSPROJ** hinzufügen (unmittelbar vor dem `</Project>`-Endtag):
 
@@ -212,19 +212,17 @@ Für eine Ausgabe der **IPA**-Datei in das frühere Standardverzeichnis (wie in 
     </PropertyGroup>
     ```
 
-Eine alternative Methode für **msbuild**- oder **xbuild**-Befehlszeilenbuilds ist das Hinzufügen eines `/p:`-Befehlszeilenarguments, um die `IpaPackageDir`-Eigenschaft festzulegen. Beachten Sie, dass **msbuild** in diesem Fall `$()`-Ausdrücke nicht erweitert, die in der Befehlszeile übergeben werden. Daher kann die `$(OutputPath)`-Syntax nicht verwendet werden. Geben Sie stattdessen einen vollständigen Pfadnamen an. Der Mono-Befehl **xbuild** erweitert zwar `$()`-Ausdrücke, doch sollten Sie trotzdem lieber einen vollständigen Pfadnamen verwenden, da **xbuild** letztendlich in zukünftigen Versionen gegenüber der [plattformübergreifenden **msbuild**](http://www.mono-project.com/docs/about-mono/releases/4.4.0/#msbuild-preview-for-os-x)-Version als veraltet gekennzeichnet wird.
+Eine alternative Methode für **msbuild**- oder **xbuild**-Befehlszeilenbuilds ist das Hinzufügen eines `/p:`-Arguments, um die `IpaPackageDir`-Eigenschaft festzulegen. Beachten Sie, dass **msbuild** in diesem Fall `$()`-Ausdrücke nicht erweitert, die in der Befehlszeile übergeben werden. Daher kann die `$(OutputPath)`-Syntax nicht verwendet werden. Geben Sie stattdessen einen vollständigen Pfadnamen an. Obwohl der Mono-Befehl **xbuild** `$()`-Ausdrücke erweitert, sollten Sie dennoch einen vollständigen Pfadnamen verwenden, da **xbuild** als veraltet gekennzeichnet wurde und von der [plattformübergreifenden **msbuild**](https://www.mono-project.com/docs/about-mono/releases/5.0.0/#msbuild)-Version abgelöst wurde.
 
 Ein vollständiges Beispiel mit dieser Methode könnte unter Windows etwa folgendermaßen aussehen:
-
 
 ```bash
 msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:ServerAddress="192.168.1.3" /p:ServerUser="macuser" /p:IpaPackageDir="%USERPROFILE%\Builds" /t:Build SingleViewIphone1.sln
 ```
-
 Unter Mac könnte es folgendermaßen aussehen:
 
 ```bash
-xbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
+msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
 ```
 
 <a name="installipa" />
