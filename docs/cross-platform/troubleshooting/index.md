@@ -1,34 +1,30 @@
 ---
-title: Problembehandlung von Xamarin
-description: Dieses Dokumentenlinks zu Inhalten, häufig gestellte Fragen zur Entwicklung von Xamarin wird beschrieben, wie Komponentenverweise auf NuGet aktualisieren Supportoptionen erläutert und produktspezifische Fragen beantwortet.
+title: Problembehandlung für Xamarin
+description: Dieses Dokument enthält Links zu Inhalten, dass Antworten, häufig gestellte Fragen zur Entwicklung von Xamarin, beschreibt die Vorgehensweise beim Aktualisieren von komponentenverweisen auf NuGet, wird der Support-Optionen beschrieben und produktspezifische Fragen beantwortet.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 4513D391-9850-4CDC-BE9B-7FF4B14FEFFC
 author: asb3993
 ms.author: amburns
-ms.date: 02/18/2018
-ms.openlocfilehash: 7a10a20290872005233bfffd5ec861f7372be4a8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 05/10/2018
+ms.openlocfilehash: fe2cfacaa8658357a1c6629b1c1e8676efebd452
+ms.sourcegitcommit: 90be517ed7a1dbd221da5be5d1a7228d36f164d0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782062"
+ms.lasthandoff: 07/04/2018
+ms.locfileid: "37792552"
 ---
-# <a name="xamarin-troubleshooting"></a>Problembehandlung von Xamarin
+# <a name="xamarin-troubleshooting"></a>Problembehandlung für Xamarin
 
 ## <a name="general-issues"></a>Allgemeine Probleme
 
 ### <a name="frequently-asked-questionsquestionsindexmd"></a>[Häufig gestellte Fragen](questions/index.md)
 
-Häufig gestellte Fragen zu der Xamarin-Plattform und Antworten speziell für Visual Studio.
+Häufig gestellte Fragen zur Xamarin-Plattform und Visual Studio-spezifische Antworten.
 
 ### <a name="updating-component-references-to-nugetcomponent-nugetmd"></a>[Aktualisieren von Komponentenverweisen auf NuGet](component-nuget.md)
 
-Vorgehensweise beim Aktualisieren von vorhandener Xamarin-Projektmappen, um Komponentenverweise auf NuGet-Pakete zu ändern.
-
-### <a name="support-optionssupport-optionsmd"></a>[Supportoptionen](support-options.md)
-
-Supportoptionen Sie für Xamarin-Produkte.
+Wie Sie vorhandene Xamarin-Lösungen zum Ändern von komponentenverweisen auf NuGet-Pakete zu aktualisieren.
 
 ## <a name="product-specific-questions"></a>Produktspezifische Fragen
 
