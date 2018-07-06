@@ -1,24 +1,24 @@
 ---
-title: Real-World-Beispiel für die Verwendung von CocoaPods
-description: Dieses Dokument veranschaulicht, wie Objective Sharpie c# Bindungsdefinitionen von einem CocoaPod automatisch zu generieren.
+title: Praktisches Beispiel mithilfe von CocoaPods
+description: Dieses Dokument veranschaulicht, wie Objective Sharpie zu verwenden, um die Bindungsdefinitionen C# -Code aus einem CocoaPod automatisch zu generieren.
 ms.prod: xamarin
 ms.assetid: 233B781D-5841-4250-9F63-0585231D2112
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2018
-ms.openlocfilehash: 026b2c46f7c294d4ac4a110376131ec83c7c112e
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: bac34f662e24c6b08a67cd8da1f41b37b43b3faf
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33947393"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855207"
 ---
-# <a name="real-world-example-using-cocoapods"></a>Real-World-Beispiel für die Verwendung von CocoaPods
+# <a name="real-world-example-using-cocoapods"></a>Praktisches Beispiel mithilfe von CocoaPods
 
 > [!NOTE]
 > Dieses Beispiel verwendet die [AFNetworking CocoaPod](https://cocoapods.org/pods/AFNetworking).
 
-Neu in Version 3.0, Ziel Sharpie CocoaPods Bindung unterstützt, und enthält auch einen Befehl (`sharpie pod`) herunterladen, konfigurieren und erstellen ganz einfach CocoaPods vornehmen. Sie sollten [CocoaPods Kennenlernen](https://cocoapods.org) verwenden Sie diese Funktion in der Regel vor.
+Neues in Version 3.0, Ziel Sharpie unterstützt, binden CocoaPods und enthält auch einen Befehl (`sharpie pod`), herunterladen, konfigurieren und erstellen CocoaPods sehr einfach. Sie sollten [machen Sie sich mit CocoaPods](https://cocoapods.org) verwenden Sie diese Funktion in der Regel vor.
 
 ## <a name="creating-a-binding-for-a-cocoapod"></a>Erstellen eine Bindung für eine CocoaPod
 
@@ -48,7 +48,7 @@ Init Options:
                    it even if one already exists
 ```
 
-Mehrere Namen für CocoaPod und subspec kann angegeben werden, um `init`.
+Mehrere CocoaPod-Namen und subspec kann angegeben werden, um `init`.
 
 ```bash
 $ sharpie pod init ios AFNetworking
@@ -73,7 +73,7 @@ Sobald Ihre CocoaPod eingerichtet wurde, können Sie jetzt die Bindung erstellen
 $ sharpie pod bind
 ```
 
-Dies führt zu CocoaPod Xcode-Projekt wird erstellt und dann ausgewertet und vom Ziel Sharpie analysiert. Ein Großteil der Konsolenausgabe generiert werden, aber Sie sollten dazu führen, die Bindungsdefinition am Ende:
+Dies führt in der CocoaPod-Xcode-Projekt wird erstellt und dann ausgewertet und vom Ziel Sharpie analysiert. Ein Großteil der Ausgabe der Konsole generiert werden, aber Sie sollten dazu führen, in der Bindungsdefinition am Ende:
 
 ```bash
 (... lots of build output ...)
@@ -89,9 +89,10 @@ Done.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Nach der Generierung der **ApiDefinitions.cs** und **StructsAndEnums.cs** Dateien, sehen Sie sich die folgende Dokumentation zum Generieren einer Assembly in Ihren apps verwenden:
+Nach dem Generieren der **ApiDefinitions.cs** und **StructsAndEnums.cs** -Dateien, sehen Sie sich die folgende Dokumentation zum Generieren eine Assembly, die in Ihren apps verwenden:
 
-- [Übersicht über die Bindung Objective-C](~/cross-platform/macios/binding/overview.md)
+- [Übersicht über die Datenbindung Objective-C](~/cross-platform/macios/binding/overview.md)
 - [Binden von Objective-C-Bibliotheken](~/cross-platform/macios/binding/objective-c-libraries.md)
-- [Exemplarische Vorgehensweise: Binden einer iOS-Objective-C-Bibliothek](~/ios/platform/binding-objective-c/walkthrough.md)
-
+- [Exemplarische Vorgehensweise: Binden einer iOS Objective-C-Bibliothek](~/ios/platform/binding-objective-c/walkthrough.md)
+- [Xamarin University-Kurs: Erstellen einer Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University-Kurs: Erstellen einer Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

@@ -1,39 +1,39 @@
 ---
 title: Übersicht über die Objective-C-Bindungen
-description: Dieses Dokument enthält eine Übersicht über unterschiedliche Möglichkeiten zum Erstellen der C#-Bindungen für Objective-C-Code, einschließlich Befehlszeile Bindungen, Bindung Projekte und Ziel Sharpie. Es wird auch erläutert, wie die Bindung funktioniert.
+description: Dieses Dokument enthält eine Übersicht über verschiedene Möglichkeiten zum Erstellen von Bindungen c# für Objective-C-Code, einschließlich der Befehlszeilen-Bindungen, bindungsprojekte und Ziel Sharpie. Es wird auch erläutert, wie die Bindung funktioniert.
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: f9f981a9024ad9b1f780efbadeeb7e1f1636a8ae
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 97d0c5b9f61d4dafe144d2b2f22df6d465cbbccb
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781743"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855272"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Übersicht über die Objective-C-Bindungen
 
 _Details der Funktionsweise des Bindungsvorgangs_
 
-Binden einer Objective-C-Bibliothek für die Verwendung mit Xamarin akzeptiert drei Schritte:
+Binden eine Objective-C-Bibliothek für die Verwendung mit Xamarin verwendet drei Schritte:
 
-1. Schreiben Sie eine C#-"API-Definition" wird beschrieben, wie die systemeigene API wird verfügbar gemacht in .NET und wie die zugrunde liegenden Objective-c zugeordnet Dies erfolgt mithilfe von standardmäßigen c# erstellt, z. B. `interface` und verschiedene Bindung **Attribute** (finden Sie in diesem [einfaches Beispiel](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
+1. Schreiben einer C# -Code "API-Definition" für beschrieben, wie die systemeigene API ist verfügbar gemacht in .NET, und wie sie die zugrunde liegenden Objective-c zugeordnet Dies erfolgt mithilfe von standardmäßigen C#-Konstrukte wie `interface` und verschiedene Bindung **Attribute** (finden Sie in diesem [einfaches Beispiel](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
 
-2. Einmal haben Sie "API-Definition" in c# geschrieben, kompilieren, um eine "Bindung"-Assembly zu erzeugen. Dies kann auf die [ **Befehlszeile** ](#commandline) oder über eine [ **bindungsprojekt** ](#bindingproject) in Visual Studio für Mac oder im Visual Studio.
+2. Einmal haben Sie der "API-Definition" in c# geschrieben, kompilieren, um eine "Bindung"-Assembly zu erzeugen. Dies kann erfolgen auf der [ **Befehlszeile** ](#commandline) oder eine [ **bindungsprojekt** ](#bindingproject) in Visual Studio für Mac oder Visual Studio.
 
-3. "Bindung" Assembly wird dann in das Anwendungsprojekt Xamarin hinzugefügt, damit Sie die systemeigene Funktionalität, die mithilfe der API, die Sie definiert zugreifen können.
-  Das bindungsprojekt ist vollständig unabhängig von Ihrer Anwendungsprojekte.
+3. Die Assembly "Bindung" wird dann an Ihre Xamarin-Application-Projekt hinzugefügt, damit Sie die systemeigene Funktionalität, die mit der API, die Sie definiert zugreifen können.
+  Das bindungsprojekt erfolgt unabhängig von der Ihre Anwendungsprojekte.
 
-**Hinweis:** Schritt 1 kann automatisiert werden, mit Unterstützung des [ **Ziel Sharpie**](#objectivesharpie). Er überprüft die Objective-C-API und generiert eine vorgeschlagene c# "API-Definition". Sie können anpassen, die Dateien vom Ziel Sharpie erstellt und in einem bindungsprojekt (oder in der Befehlszeile) verwenden die bindungsassembly zu erstellen. Objektive Sharpie erstellt keine Bindungen selbst, sondern lediglich einem optionalen Teil eines größeren Prozesses.
+**Hinweis:** Schritt 1 kann automatisiert werden, mit der Hilfe von [ **Ziel Sharpie**](#objectivesharpie). Er untersucht die Objective-C-API und generiert eine vorgeschlagene c# "API-Definition". Sie können anpassen, die Dateien vom Ziel Sharpie erstellt und sie in einem bindungsprojekt (oder in der Befehlszeile) die bindungsassembly zu erstellen. Objektive Sharpie erstellt keine Bindungen selbst, sondern lediglich ein optionaler Teil eines größeren Prozesses.
 
-Sie können auch weitere technische Details zu lesen [Funktionsweise](#howitworks), die hilft Ihnen, Ihre Bindungen zu schreiben.
+Lesen Sie auch weitere technische Details von [Funktionsweise](#howitworks), derer Sie Ihre Bindungen zu schreiben.
 
 <a name="Command_Line_Bindings" /><a name="commandline" />
 
-## <a name="command-line-bindings"></a>Command Line-Bindungen
+## <a name="command-line-bindings"></a>Befehls-Line-Bindungen
 
-Sie können die `btouch-native` für Xamarin.iOS (oder `bmac-native` bei Verwendung von Xamarin.Mac) Bindungen direkt zu erstellen. Es funktioniert, indem Sie übergeben die C#-API-Definitionen, die Sie manuell erstellt haben (oder Ziel Sharpie) an das Tool über die Befehlszeile (`btouch-native` für iOS oder `bmac-native` für Mac).
+Sie können die `btouch-native` für Xamarin.iOS (oder `bmac-native` bei Verwendung von Xamarin.Mac) Bindungen direkt zu erstellen. Dies erfolgt durch das Übergeben der c#-API-Definitionen, die Sie manuell erstellt haben (oder Ziel Sharpie), das Befehlszeilentool (`btouch-native` für iOS oder `bmac-native` für Mac).
 
 
 Die allgemeine Syntax zum Aufrufen dieser Tools ist:
@@ -48,34 +48,34 @@ bash$ /Developer/MonoTouch/usr/bin/btouch-native -e cocos2d.cs -s:enums.cs -x:ex
 bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 ```
 
-Der obige Befehl generiert die Datei `cocos2d.dll` im aktuellen Verzeichnis ab, und es enthält die vollständig gebundene Bibliothek, die Sie in Ihrem Projekt verwenden können. Dies ist das Tool, das Visual Studio für Mac verwendet wird, um die Bindungen zu erstellen, wenn Sie ein bindungsprojekt verwenden (beschrieben [unten](#bindingproject)).
+Der obige Befehl generiert die Datei `cocos2d.dll` im aktuellen Verzeichnis, und es enthält die vollständig gebundene Bibliothek, die Sie in Ihrem Projekt verwenden können. Dies ist das Tool, das Visual Studio für Mac verwendet, um die Bindungen zu erstellen, bei der Verwendung von ein bindungsprojekt (beschrieben [unten](#bindingproject)).
 
 
 <a name="bindingproject" />
 
-## <a name="binding-project"></a>Bindungsprojekt
+## <a name="binding-project"></a>Projekt wird gebunden
 
-Eine bindungsprojekt in Visual Studio für Mac oder Visual Studio (Visual Studio unterstützt nur Bindungen für iOS) erstellt werden kann und erleichtert es, bearbeiten und erstellen Sie die API-Definitionen für die Bindung (im Gegensatz zu über die Befehlszeile).
+Ein bindungsprojekt kann in Visual Studio für Mac oder Visual Studio (Visual Studio unterstützt nur iOS-Bindungen) erstellt werden, und erleichtert es, bearbeiten und Erstellen von API-Definitionen für die Bindung (und nicht über die Befehlszeile).
 
-Führen Sie [Handbuch mit ersten Schritten](~/cross-platform/macios/binding/objective-c-libraries.md#Getting_Started) Informationen zum Erstellen und verwenden ein bindungsprojekt, um eine Bindung zu erstellen.
+Gehen Sie folgendermaßen vor [Handbuch mit ersten Schritten](~/cross-platform/macios/binding/objective-c-libraries.md#Getting_Started) Informationen zum Erstellen und verwenden Sie ein bindungsprojekt, um eine Bindung zu erstellen.
 
 <a name="objectivesharpie" />
 
 ## <a name="objective-sharpie"></a>Objektive Sharpie
 
-Objektive Sharpie ist einer anderen, separaten Befehlszeilentool, mit denen mit den ersten Schritten zum Erstellen einer Bindung kann. Eine Bindung wird nicht von sich selbst erstellt, sondern Standardsite automatisch des ersten Schritts generieren Sie eine API-Definition für die systemeigene Zielbibliothek.
+Objektive Sharpie ist ein weiterer, separate-Befehlszeilentools, die mit den ersten Schritten zum Erstellen einer Bindung unterstützen. Eine Bindung wird nicht von sich selbst erstellt, sondern den ersten Schritt zum Generieren von einer API-Definition für die native Zielbibliothek automatisiert.
 
-Lesen der [Ziel Sharpie Docs](~/cross-platform/macios/binding/objective-sharpie/index.md) erfahren Sie, wie zum Analysieren von systemeigenen Bibliotheken, systemeigene Frameworks und CocoaPods in API-Definitionen, die in den Bindungen erstellt werden können.
+Lesen der [Ziel Sharpie-Dokumentation](~/cross-platform/macios/binding/objective-sharpie/index.md) zu erfahren, wie Sie native Bibliotheken, nativen Frameworks und CocoaPods in API-Definitionen zu analysieren, die in den Bindungen erstellt werden können.
 
 <a name="howitworks" />
 
 ## <a name="how-binding-works"></a>Funktionsweise der Bindung
 
-Es ist möglich, verwenden Sie die [[registrieren]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) Attribut [[Exportieren]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) -Attribut, und [manuelle Objective-C-Selektor-Aufruf](~/ios/internals/objective-c-selectors.md) zusammen, um manuell neu (zuvor binden ungebundene) Objective-C-Typen.
+Es ist möglich, verwenden Sie die [[registrieren]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) Attribut [[Export]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) -Attribut und [manuellen Objective-C-Selektor-Aufruf](~/ios/internals/objective-c-selectors.md) zusammen, um manuell neu (zuvor binden ungebunden) Objective-C-Typen.
 
-Suchen Sie zunächst einen Typ, den Sie binden möchten. Erläuterung Zwecke (und Einfachheit), wir außerdem binden Sie die [NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) Typ (die bereits gebunden wurde [Foundation.NSEnumerator](https://developer.xamarin.com/api/type/Foundation.NSEnumerator/); die Implementierung, die unten ist beispielsweise nur Zwecke).
+Suchen Sie zunächst einen Typ, den Sie binden möchten. Diskussion zu (und Einfachheit), wird eine Bindung wird der [NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) Typ (die bereits im gebundenen [Foundation.NSEnumerator](https://developer.xamarin.com/api/type/Foundation.NSEnumerator/); die nachfolgende Implementierung ist einfach, z. B. Zwecke).
 
-Zweitens muss den C#-Typ erstellt werden. Wir möchten wahrscheinlich dadurch in einem anderen Namespace platziert; Da Objective-C-Namespaces nicht unterstützt, benötigen wir verwenden die `[Register]` Attribut, um den Typnamen zu ändern, die mit der Objective-C-Laufzeit Xamarin.iOS registriert werden. Der C#-Typ erben muss ebenfalls aus [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
+Zweitens müssen wir die c#-Typs zu erstellen. Wir möchten wahrscheinlich dies in einem Namespace platzieren; Da Objective-C-Namespaces nicht unterstützt, müssen wir verwenden die `[Register]` Attribut so ändern Sie den Typnamen, die Xamarin.iOS mit Objective-C-Laufzeit registriert werden. Der C#-Typ muss auch eine Vererbung von [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
 
 ```csharp
 namespace Example.Binding {
@@ -87,7 +87,7 @@ namespace Example.Binding {
 }
 ```
 
-Im dritten, überprüfen Sie die Dokumentation für Objective-C und erstellen Sie [ObjCRuntime.Selector](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/) Instanzen für jede Auswahl, die Sie verwenden möchten. Platzieren Sie diese innerhalb der Klassendefinition:
+Drittens: Überprüfen Sie die Objective-C-Dokumentation und erstellen Sie [ObjCRuntime.Selector](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/) Instanzen für jede Auswahl, die Sie verwenden möchten. Platzieren Sie diese in den Text der Klasse:
 
 ```csharp
 static Selector selInit       = new Selector("init");
@@ -95,7 +95,7 @@ static Selector selAllObjects = new Selector("allObjects");
 static Selector selNextObject = new Selector("nextObject");
 ```
 
-Vierte, müssen der Typ Konstruktoren angeben. Sie *müssen* Verketten der Konstruktoraufruf an den Konstruktor der Basisklasse. Die `[Export]` Attribute ermöglichen Objective-C-Code zum Aufrufen von Konstruktoren mit dem angegebenen Selektor Namen:
+Viertens: Ihr Typ müssen den Konstruktoren. Sie *müssen* Ihre Konstruktoraufruf an den Konstruktor der Basisklasse zu verketten. Die `[Export]` Attribute ermöglichen, Objective-C-Code aufrufen, die Konstruktoren, mit dem angegebenen Selektor-Namen:
 
 ```csharp
 [Export("init")]
@@ -115,7 +115,7 @@ public NSEnumerator(IntPtr handle)
 }
 ```
 
-Fünfter, stellen Sie in Schritt 3 für jede der Selektoren Methoden deklariert. Verwendet diese `objc_msgSend()` um die Auswahl für das systemeigene Objekt aufzurufen. Beachten Sie die Verwendung von [Runtime.GetNSObject()](https://developer.xamarin.com/api/member/ObjCRuntime.Runtime.GetNSObject/(System.IntPtr)) Konvertieren einer `IntPtr` in ein geeignetes typisiertes `NSObject` (Sub)-Typ. Wenn Sie die Methode aus Objective-C-Code, der Member aufgerufen werden soll *müssen* werden **virtuellen**.
+Fünfter, geben Sie, dass die Methoden für jede der Selektoren in Schritt 3 deklariert. Verwendet diese `objc_msgSend()` die Auswahl für das systemeigene Objekt aufzurufende. Beachten Sie die Verwendung von [Runtime.GetNSObject()](https://developer.xamarin.com/api/member/ObjCRuntime.Runtime.GetNSObject/(System.IntPtr)) konvertieren eine `IntPtr` in einem ordnungsgemäß typisierten `NSObject` (Sub)-Typ. Wenn Sie möchten, dass die Methode, die in Objective-C-Code, der Member aufgerufen werden können *müssen* werden **virtuellen**.
 
 ```csharp
 [Export("nextObject")]
@@ -137,7 +137,7 @@ public virtual NSArray AllObjects {
 }
 ```
 
-Gesamtbild:
+Zusammenfassung:
 
 ```csharp
 using System;
@@ -186,3 +186,7 @@ namespace Example.Binding {
 }
 ```
 
+## <a name="related-links"></a>Verwandte Links
+
+- [Xamarin University-Kurs: Erstellen einer Bibliothek für Objective-C-Bindungen](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University-Kurs: Erstellen einer Bibliothek Objective-C-Bindungen mit objektive Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
