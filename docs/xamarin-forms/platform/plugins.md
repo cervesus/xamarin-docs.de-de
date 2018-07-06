@@ -1,67 +1,70 @@
 ---
-title: Verarbeiten, und erstellen Xamarin.Forms-Plug-Ins
-description: In diesem Artikel erläutert, wie zu nutzen und Xamarin.Forms-Plug-Ins zu erstellen. Plug-Ins werden normalerweise verwendet, um systemeigene Plattformfunktionen leicht verfügbar zu machen.
+title: Nutzung und das Erstellen von Xamarin.Forms-Plug-Ins
+description: In diesem Artikel wird erläutert, wie zu nutzen, und Erstellen von Xamarin.Forms-Plug-Ins wird. -Plug-Ins werden normalerweise verwendet, um native Plattformfunktionen leicht verfügbar zu machen.
 ms.prod: xamarin
 ms.assetid: 8A06A420-A9D0-4BCB-B9AF-3AEA6A648A8B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/07/2016
-ms.openlocfilehash: dff9fad0da30475a0fb91c0af76a25ea50d34439
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 07/05/2018
+ms.openlocfilehash: 4d121c2dfcca380e1735da1a4ca47c42d1957b8a
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242556"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37854739"
 ---
-# <a name="consuming-and-creating-xamarinforms-plugins"></a>Verarbeiten, und erstellen Xamarin.Forms-Plug-Ins
+# <a name="consuming-and-creating-xamarinforms-plugins"></a>Nutzung und das Erstellen von Xamarin.Forms-Plug-Ins
 
-Es gibt viele native Plattformfunktionen, die auf allen Plattformen vorhanden sind, aber haben geringfügig APIs. Entwickler schreiben, um eine abstrakte plattformübergreifende-Schnittstelle für diese Funktionen zu erstellen, die sie auch für andere Benutzer freigeben können-Plug-Ins.
+Es gibt viele systemeigene Plattformfunktionen, die auf allen Plattformen vorhanden sind, aber leicht unterschiedliche APIs. Eine Möglichkeit für Entwickler, die diese Funktionen zu verwenden ist, erstellen eine abstrakte Schnittstelle für die plattformübergreifende, und klicken Sie dann diese Schnittstelle implementieren, in die verschiedenen Plattformen. Klicken Sie dann die Xamarin.Forms-Anwendung greift auf dieser plattformimplementierungen, die mit [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
-Zu diesen Funktionen gehören: Akkustatus, Kompass während des Verschiebens Sensoren, Geolocation, Sprachausgabe und vieles mehr. -Plug-Ins ermöglichen diese Funktionen durch Xamarin.Forms Anwendungen leicht zugegriffen werden kann.
+Entwickler können diese Arbeit freigeben, indem Sie das Schreiben einer _-Plug-Ins_ und auf NuGet veröffentlichen.
+
+> [!NOTE]
+> Viele plattformübergreifende Funktionen, die bisher nur in-Plug-Ins verfügbar sind jetzt Teil des Open-Source **[Xamarin.Essentials](~/essentials/index.md)** Bibliothek. Zu diesen Funktionen gehören: Akkustatus, Kompass, Bewegungssensoren, Geolocation, Sprachsynthese und viel mehr. In Zukunft **Xamarin.Essentials** werden die Hauptquelle von plattformübergreifenden Features für Xamarin.Forms-Anwendungen. Obwohl Entwickler weiterhin erstellen und veröffentlichen Plug-Ins können, sollten Sie in der Mitwirkung an **Xamarin.Essentials**.
 
 ## <a name="finding-and-adding-plugins"></a>Suchen und Hinzufügen von Plug-Ins
 
-Die Xamarin-Community viele plattformübergreifende-Plug-Ins mit Xamarin.Forms - kompatiblen erstellt hat eine große Auflistung finden Sie unter:
+Die Xamarin-Community hat viele plattformübergreifende-Plug-Ins erstellt werden, die mit Xamarin.Forms kompatibel sind. Eine umfangreiche Sammlung finden Sie unter:
 
-[**Xamarin-Plug-Ins**](https://github.com/xamarin/plugins)
+[**Xamarin-Plug-Ins**](https://github.com/xamarin/XamarinComponents)
 
-Eine Anleitung zum Hinzufügen von NuGet-Pakete zu Ihrem Projekt, finden Sie unter exemplarischen auf [einschließlich NuGet-Paket im Projekt](/visualstudio/mac/nuget-walkthrough/).
+Eine Anleitung zum Hinzufügen von NuGet-Pakete zu Ihrem Projekt werden soll, finden Sie in dieser exemplarischen Vorgehensweise auf [einschließen eines NuGet-Pakets in Ihr Projekt](/visualstudio/mac/nuget-walkthrough/).
 
+## <a name="creating-plugins"></a>Erstellen von-Plug-Ins
 
-## <a name="creating-plugins"></a>Erstellen von Plug-Ins
+Es ist auch möglich, erstellen und veröffentlichen Ihre eigenen Plug-Ins als Nuget-Pakete (und Xamarin-Komponenten). Viele vorhandene-Plug-Ins sind Open-Source, damit Sie ihren Code, um zu verstehen, wie sie Writtern wurden überprüfen können.
 
-Es ist auch möglich, zum Erstellen und Veröffentlichen Ihrer eigenen Plug-Ins als NuGet-Pakete (und Xamarin-Komponenten). Viele vorhandene-Plug-Ins sind Open Source-können Sie ihren Code aus, um zu verstehen, wie sie Writtern wurden überprüfen.
+Z. B. die Liste der Plug-Ins unten sind alle open Source, und sie entsprechen einige Beispiele, in der [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md) Abschnitt:
 
-Z. B. die Liste der Plug-Ins unten werden alle open-Source und entsprechen der Beispiele in der [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md) Abschnitt:
+- **Sprachsynthese** von James Montemagno &ndash; [GitHub](https://github.com/jamesmontemagno/TextToSpeechPlugin) und [NuGet  ](https://www.nuget.org/packages/Xam.Plugins.TextToSpeech)
+- **Akkustatus** von James Montemagno &ndash; [GitHub](https://github.com/jamesmontemagno/BatteryPlugin) und [NuGet](https://www.nuget.org/packages/Xam.Plugin.Battery)
 
-- **Sprachausgabe** von James Montemagno &ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/TextToSpeech) und [NuGet](https://www.nuget.org/packages/Xam.Plugin.Battery)
-- **Akkustatus** von James Montemagno &ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery) und [NuGet](https://www.nuget.org/packages/Xam.Plugins.TextToSpeech/)
+Die Github-Projekte können einen guten Ausgangspunkt zum Erstellen Ihrer eigenen Plug-Ins plattformübergreifenden bereitstellen, wie diese Anweisungen für [Erstellen eines Plug-Ins für Xamarin](https://github.com/xamarin/XamarinComponents#create-a-plugin-for-xamarin).
 
-Diese Projekte Github können einen guten Ausgangspunkt zum Erstellen Ihrer eigenen Plug-Ins über Plattformen hinweg bereitstellen, wie diese Anweisungen für [erstellen ein Plug-In für Xamarin](https://github.com/xamarin/plugins#create-a-plugin-for-xamarin).
+### <a name="structuring-cross-platform-plugin-projects"></a>Strukturieren von Cross-Platform-Plug-in-Projekte
 
-### <a name="structuring-cross-platform-plugin-projects"></a>Strukturieren plattformübergreifende-Plug-in-Projekte
+Es gibt, zwar keine speziellen Anforderungen für das Entwerfen eines NuGet-Pakets gibt es einige Richtlinien zum Erstellen eines Pakets für plattformübergreifende apps.
 
-Es gibt, zwar keine speziellen Anforderungen für das Entwerfen von NuGet-Paket gibt es einige Richtlinien zum Erstellen eines Pakets für die plattformübergreifende apps.
+In der Vergangenheit bestand aus einer plattformübergreifenden-Plug-in in der Regel die folgenden Komponenten:
 
-Ein Plug-In für die plattformübergreifende sollte in der Regel die folgenden Komponenten umfassen:
+- PCL mit einer Schnittstelle, die die API für das Plug-in darstellt.
+- iOS, Android und universelle Windows-Plattform (UWP)-Klassenbibliotheken mit einer Implementierung der Schnittstelle.
 
-- PCL mit einer Schnittstelle, die die API für das Plug-in darstellt,
-- iOS, Android und Windows-Klassenbibliotheken mit einer Implementierung der Schnittstelle.
+Lesen James Montemagno [Blogbeitrag](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms/) beschreiben den Prozess der Erstellung von Plug-Ins für Xamarin.
 
-Lesen James Montemagno [Blogbeitrag](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms/) Beschreiben des Prozesses für Xamarin-Plug-Ins zu erstellen.
+Jüngerer können-Plug-Ins werden erstellt werden mit einer einzigen Plattform mit festgelegten Zielversionen ausreicht. Dieser Ansatz wird erläutert, in der montemagnos [Blogbeitrag](https://montemagno.com/converting-xamarin-libraries-to-sdk-style-multi-targeted-projects/). Dieser Ansatz wird im oben verknüpften montemagnoss-Plug-Ins verwendet und auch das Format dient **Xamarin.Essentials**.
 
-Es ist empfehlenswert, vermeiden Sie Verweise auf Xamarin.Forms direkt über ein plug-in.
-Dadurch kann Versionskonflikt Probleme erstellt, wenn andere Entwickler versuchen, das plug-in verwendet. Versuchen Sie stattdessen die API so entwerfen, dass es von einer Anwendung Xamarin oder .NET verwendet werden kann.
+Es wird empfohlen, vermeiden Sie Verweise auf Xamarin.Forms direkt über ein plug-in.
+Dadurch kann Versionskonflikt Probleme erstellt, wenn andere Entwickler versuchen, das plug-in verwendet. Versuchen Sie stattdessen die API so entwerfen, dass sie von jeder Anwendung Xamarin oder .NET verwendet werden kann.
 
-### <a name="publishing-nuget-packages"></a>Veröffentlichen von NuGet-Pakete
+### <a name="publishing-nuget-packages"></a>Veröffentlichen von NuGet-Paketen
 
-NuGet-Pakete ein **Nuspec** -Datei, die eine XML-Datei ist, die definiert, welche Teile des Projekts in das Paket veröffentlicht werden. Die **Nuspec** Datei enthält auch Informationen zu dem Paket, z. B. Id, Titel und Autoren.
+NuGet-Pakete ein **Nuspec** Datei, d.h. eine XML-Datei, die definiert, welche Teile des Projekts in das Paket veröffentlicht werden. Die **Nuspec** -Datei enthält auch Informationen zu dem Paket, z. B. Id, Titel und Autoren.
 
-Finden Sie unter [NuGet Dokumentation](http://docs.nuget.org/create/creating-and-publishing-a-package) für Weitere Informationen zum Erstellen und Veröffentlichen von NuGet-Pakete.
-
+Finden Sie unter [NuGets-Dokumentation](/nuget/create-packages/creating-a-package.md) für Weitere Informationen zum Erstellen und Veröffentlichen von NuGet-Pakete.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Erstellen von Wiederverwendbaren-Plug-Ins für Xamarin.Forms](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms)
-- [Mit & beim Entwickeln von Plug-Ins für Xamarin (Video)](https://university.xamarin.com/guestlectures/using-developing-plugins-for-xamarin)
+- [Mit & Entwickeln von Plug-Ins für Xamarin (Video)](https://university.xamarin.com/guestlectures/using-developing-plugins-for-xamarin)

@@ -1,76 +1,76 @@
 ---
 title: Authentifizieren von Benutzern mit einem Identitätsanbieter
-description: In diesem Artikel erläutert die Xamarin.Auth verwenden, um den Authentifizierungsvorgang in einer Xamarin.Forms-Anwendung zu verwalten.
+description: In diesem Artikel wird erläutert, wie Xamarin.Auth zum Verwalten des Authentifizierungsprozesses in einer Xamarin.Forms-Anwendung verwendet wird.
 ms.prod: xamarin
 ms.assetid: D44745D5-77BB-4596-9B8C-EC75C259157C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 361b5e5583b10b7ea07abd1460350d6445cae1c2
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 504b2789ef61b0339d1c32e92c852a779a193b52
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241259"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37854765"
 ---
 # <a name="authenticating-users-with-an-identity-provider"></a>Authentifizieren von Benutzern mit einem Identitätsanbieter
 
-_Xamarin.Auth ist eine plattformübergreifende-SDK für die Authentifizierung von Benutzern und speichern ihre Konten. Es umfasst OAuth-Authentifikatoren, die Unterstützung für die Nutzung der Identitätsanbieter z. B. Google, Microsoft, Facebook und Twitter. In diesem Artikel erläutert die Xamarin.Auth verwenden, um den Authentifizierungsvorgang in einer Xamarin.Forms-Anwendung zu verwalten._
+_Xamarin.Auth ist ein Plattform-SDK für die Authentifizierung von Benutzern, und speichern ihre Konten an. Es enthält die OAuth-Authentifikatoren, die Unterstützung bieten, für die Nutzung von Identitätsanbietern wie Google, Microsoft, Facebook und Twitter. In diesem Artikel wird erläutert, wie Xamarin.Auth zum Verwalten des Authentifizierungsprozesses in einer Xamarin.Forms-Anwendung verwendet wird._
 
-OAuth ist ein offener Standard für die Authentifizierung und ermöglicht einen Besitzer der Ressource um einem Ressourcenanbieter zu benachrichtigen, dass die Berechtigung erteilt werden sollte, um eine dritte Partei, um ihre Informationen zugreifen, ohne die Identität der Besitzer der Ressource freigeben. Ein Beispiel hierfür wäre zur Aktivierung eines Benutzers einem Identitätsanbieter (z. B. Google, Microsoft, Facebook oder Twitter) benachrichtigt, dass eine Anwendung auf ihre Daten zugreifen, ohne Freigabe der Identität des Benutzers Berechtigung gewährt werden soll. Es wird häufig als ein Ansatz für Benutzer verwendet, Websites und Anwendungen, die mit einem Identitätsanbieter, ohne dass ihr Kennwort auf der Website oder Anwendung anmelden.
+OAuth ist ein offener Standard für die Authentifizierung und ermöglicht einen Besitzer der Ressource um einem Ressourcenanbieter zu benachrichtigen, dass es sich bei Berechtigungen gewährt werden soll, an Dritte weiter um ihre Informationen zugreifen, ohne die Identität der Besitzer der Ressource freigeben zu müssen. Ein Beispiel dafür wäre die einen Benutzer zum Identitätsanbieter (z. B. Google, Microsoft, Facebook oder Twitter) benachrichtigen, dass die Berechtigung gewährt werden soll, um eine Anwendung auf ihre Daten zugreifen, ohne die Identität des Benutzers freigeben zu müssen aktiviert werden. Es wird häufig als Ansatz für Benutzer verwendet, Websites und Anwendungen, die mit einem Identitätsanbieter, ohne dass ihr Kennwort auf die Website oder Anwendung anmelden.
 
-Eine allgemeine Übersicht über den Authentifizierungsablauf beim Verarbeiten eines OAuth-Identitätsanbieter lautet wie folgt:
+Eine allgemeine Übersicht über den Ablauf der Authentifizierung bei der Nutzung von OAuth-Identitätsanbieter lautet wie folgt aus:
 
-1. Die Anwendung navigiert, einen Browser mit einem Identitätsanbieter-URL.
-1. Der Identitätsanbieter Benutzerauthentifizierung behandelt und gibt einen Autorisierungscode an die Anwendung zurück.
+1. Die Anwendung navigiert, einen Browser mit einer URL des Identitätsanbieters.
+1. Der Identitätsanbieter Benutzerauthentifizierung verarbeitet und an die Anwendung einen Autorisierungscode zurück.
 1. Die Anwendung tauscht den Autorisierungscode gegen ein Zugriffstoken vom Identitätsanbieter an.
-1. Die Anwendung verwendet das Zugriffstoken zum Zugriff auf APIs in den Identitätsanbieter, z. B. eine API für grundlegende Daten angefordert werden.
+1. Die Anwendung verwendet das Zugriffstoken für den Identitätsanbieter, z. B. eine API zum Anfordern von Daten mit basic-Benutzer den Zugriff auf APIs.
 
-Die beispielanwendung veranschaulicht, wie Xamarin.Auth verwenden, um einen einheitlichen Authentifizierungsablauf für Google zu implementieren. Während Sie Google als Identitätsanbieter in diesem Thema verwendet wird, ist der Ansatz gleichermaßen anwendbar für anderer Identitätsanbieter entgegen. Weitere Informationen zur Authentifizierung mithilfe von Google OAuth 2.0-Endpunkts finden Sie unter [OAuth2.0 verwenden, um Google-APIs zugreifen](https://developers.google.com/identity/protocols/OAuth2) Google-Website.
+Die beispielanwendung veranschaulicht, wie Xamarin.Auth verwenden, um eine systemeigene Authentifizierungsablauf für Google zu implementieren. Während Sie Google als Identitätsanbieter in diesem Thema verwendet wird, ist der Ansatz mit anderen Identitätsanbietern gleichermaßen anwendbar. Weitere Informationen zur Authentifizierung mithilfe Googles OAuth 2.0-Endpunkts finden Sie unter [mithilfe von oauth2. 0, Google-APIs zugreifen](https://developers.google.com/identity/protocols/OAuth2) Googles-Website.
 
 > [!NOTE]
-> In iOS 9 und höher erzwingt App-Transport-Sicherheit (ATS) sichere Verbindungen zwischen Internetressourcen (z. B. die app-Back-End-Server) und der app, um das unbeabsichtigten Weitergabe von vertraulichen Informationen zu verhindern. Da ATS in apps für iOS 9 erstellt standardmäßig aktiviert ist, werden alle Verbindungen unterliegen ATS sicherheitsanforderungen. Wenn Verbindungen mit diesen Anforderungen nicht erfüllen, werden sie mit einer Ausnahme fehl.
-> ATS können von hinzugewählt werden, ist es nicht möglich ist, verwenden Sie die `HTTPS` -Protokolls und sichere Kommunikation für Ressourcen im Internet. Dies kann erreicht werden, indem Sie die app aktualisiert **"Info.plist"** Datei. Weitere Informationen finden Sie unter [App Transportsicherheit](~/ios/app-fundamentals/ats.md).
+> In iOS 9 und höher erzwingt (App Transport Security, ATS) sichere Verbindungen zwischen der Internet-Ressourcen (z. B. die app Back-End-Server) und die app, und verhindert versehentliche Offenlegung vertraulicher Informationen. Da ATS in apps für iOS 9, die standardmäßig aktiviert ist, werden alle Verbindungen unterliegen ATS-sicherheitsanforderungen. Wenn die Verbindungen nicht über diese Anforderungen erfüllen, werden sie mit einer Ausnahme fehlschlagen.
+> ATS können von entschieden werden, ist dies nicht möglich, verwenden Sie die `HTTPS` -Protokolls und Sichern der Kommunikation für Ressourcen im Internet. Dies kann erreicht werden, durch die Aktualisierung der app **"Info.plist"** Datei. Weitere Informationen finden Sie unter [App Transport Security](~/ios/app-fundamentals/ats.md).
 
 ## <a name="using-xamarinauth-to-authenticate-users"></a>Verwenden von Xamarin.Auth zum Authentifizieren von Benutzern
 
-Xamarin.Auth unterstützt zwei Ansätze für Anwendungen für die Interaktion mit einem Identitätsanbieter-autorisierungsendpunkt an:
+Xamarin.Auth unterstützt zwei Ansätze, um Anwendungen für die Interaktion mit autorisierungsendpunkt des Identitätsanbieters:
 
-1. Verwenden eine eingebettete Webansicht. Während dies üblich wurde, wird nicht mehr aus den folgenden Gründen empfohlen:
+1. Verwenden eine eingebettete Webansicht. Während dies üblicherweise wurde, wird nicht mehr aus den folgenden Gründen empfohlen:
 
-    - Die Anwendung, die der Webseitenansicht hostet, kann Anmeldeinformationen für den vollständigen Authentifizierung des Benutzers, nicht nur das OAuth Authorization Grant zugreifen, die für die Anwendung bestimmt wurde. Dies verstößt gegen das Prinzip der geringsten Rechte, wie die Anwendung Zugriff auf leistungsfähigeren Anmeldeinformationen hat als potenziell erhöht die Angriffsfläche der Anwendung erfordert.
-    - Die hostanwendung konnte erfassen, Benutzernamen und Kennwörter, automatisch Formulare und benutzerzustimmung, umgehen und Sitzungscookies kopieren und verwenden, um authentifizierte Aktionen als Benutzer ausführen.
-    - Eingebettete Webansichten freigeben nicht des Authentifizierungsstatus mit anderen Anwendungen oder Webbrowser des Geräts, da der Benutzer für jede autorisierungsanforderung anmelden, die ein kleiner als benutzererfahrung betrachtet wird.
-    - Einige Autorisierungs-Endpunkten Schritte zu erkennen und zu blockieren Autorisierung-Anforderungen, die von Webansichten stammen.
+    - Die Anwendung, die Webansicht hostet, kann die Anmeldeinformationen des Benutzers vollständige Authentifizierung, nicht nur die OAuth-autorisierungsgewährung zugreifen, die für die Anwendung bestimmt ist. Dies verstößt gegen das Prinzip der geringsten Rechte, wie die Anwendung Zugriff auf leistungsfähigere Anmeldeinformationen, die hat als potenziell erhöht die Angriffsfläche der Anwendung erfordert.
+    - Die hostanwendung konnte erfassen, Benutzernamen und Kennwörter, automatisch Senden von Formularen und umgehen Zustimmung des Benutzers, und Sitzungscookies zu kopieren und verwenden, um authentifizierte Aktionen als Benutzer ausführen.
+    - Eingebettete Webansichten freigeben nicht des Authentifizierungsstatus mit anderen Anwendungen oder Webbrowser des Geräts, dass der Benutzer sich anmelden für jede autorisierungsanforderung ein tiefgestelltes Bedienungserlebnis angesehen wird.
+    - Einige Autorisierungs-Endpunkten Maßnahmen zum Erkennen und Blockieren von autorisierungsanforderungen, die von Webansichten stammen.
 
-1. Das Gerät Webbrowser verwenden, der die empfohlene Vorgehensweise ist. Die Verwendbarkeit einer Anwendung mit dem Gerätebrowser für OAuth-Anforderungen verbessert werden, da die Benutzer müssen nur zur Anmeldung an den Identitätsanbieter einmal pro Gerät Wechselkurse der Anmeldung und Autorisierung Datenflüsse in der Anwendung zu verbessern. Die Gerätebrowser bietet verbesserte Sicherheit auch, wie Anwendungen, um zu überprüfen und Ändern von Inhalt in einer Webansicht, aber nicht die im Browser angezeigte Inhalt können. Dies ist der Ansatz in diesem Artikel und Beispiel-Anwendung.
+1. Mithilfe der Webbrowser des Geräts, die der empfohlene Ansatz ist. Mithilfe des Geräte-Browsers für die OAuth-Anforderungen verbessert die Verwendbarkeit einer Anwendung, wie die Benutzer müssen nur den betreffenden Identitätsanbieter anzeigt, einmal pro Gerät, Verbessern der konvertierungsraten-Anmeldung und Autorisierung von Flows in der Anwendung anmelden. Der Gerätebrowser bietet verbesserte Sicherheit auch, wie Anwendungen sind in der Lage, um zu überprüfen und Ändern von Inhalt in eine Webansicht, aber nicht im Browser angezeigten Inhalt. Dies ist der Ansatz in diesem Artikel und Beispiel-Anwendung.
 
-Ein allgemeinen Überblick darüber, wie die beispielanwendung Xamarin.Auth verwendet, um Benutzer zu authentifizieren und ihre grundlegenden Daten abzurufen, ist in der folgenden Abbildung dargestellt:
+Ein allgemeinen Überblick darüber, wie die beispielanwendung Xamarin.Auth zum Authentifizieren von Benutzern und ihren grundlegenden Datenabruf verwendet, wird im folgenden Diagramm dargestellt:
 
-![](oauth-images/google-auth.png "Verwenden für die Authentifizierung bei Google Xamarin.Auth")
+![](oauth-images/google-auth.png "Verwenden von Xamarin.Auth zum Authentifizierung über Google")
 
-Die Anwendung fordert eine Authentifizierung mit Google die `OAuth2Authenticator` Klasse. Eine Authentifizierungsantwort wird zurückgegeben, nachdem der Benutzer erfolgreich mit Google über ihre Anmeldeseite authentifiziert hat ein Zugriffstoken enthält. Klicken Sie dann die Anwendung sendet eine Anfrage an Google für grundlegende Daten mithilfe der `OAuth2Request` -Klasse, mit dem Zugriffstoken wird in der Anforderung enthalten.
+Die Anwendung sendet eine Authentifizierungsanforderung an Google nutzen die `OAuth2Authenticator` Klasse. Eine Authentifizierungsantwort wird zurückgegeben, sobald der Benutzer erfolgreich mit Google über ihre Anmeldeseite authentifiziert hat ein Zugriffstoken enthält. Klicken Sie dann die Anwendung sendet eine Anforderung an Google für die basic-Benutzerdaten mithilfe der `OAuth2Request` Klasse, mit dem Zugriffstoken wird in der Anforderung enthalten.
 
 ### <a name="setup"></a>Setup
 
-Ein Projekt für die Google-API-Konsole muss erstellt werden, um Google-Anmeldung mit einer Xamarin.Forms-Anwendung zu integrieren. Dies kann folgendermaßen erfüllt werden:
+Ein Projekt für die Google-API-Konsole muss erstellt werden, um Google-Anmeldung in einer Xamarin.Forms-Anwendung zu integrieren. Dies kann folgendermaßen erfüllt werden:
 
-1. Wechseln Sie zu der [Google-API-Konsole](http://console.developers.google.com) -Website, und melden Sie sich mit Google-Kontoanmeldeinformationen.
-1. Wählen Sie ein vorhandenes Projekt, oder erstellen Sie eine neue, aus der Dropdownliste Projekt.
-1. Wählen Sie in der Randleiste unter "API-Manager" **Anmeldeinformationen**, und wählen Sie dann die **OAuth Consent Bildschirmregisterkarte**. Wählen Sie eine **e-Mail-Adresse**, geben Sie eine **Produktname, die Benutzern angezeigt wird,**, und drücken Sie die **speichern**.
-1. In der **Anmeldeinformationen** Registerkarte die **Anmeldeinformationen erstellen** Dropdown-Liste, und wählen **OAuth-Client-ID**.
+1. Wechseln Sie zu der [Google-API-Konsole](http://console.developers.google.com) Website, und melden Sie sich mit Anmeldeinformationen von Google-Konto an.
+1. Wählen Sie aus den Projekt-Dropdown-Pfeil ein vorhandenes Projekt oder erstellen Sie eine neue.
+1. Wählen Sie in der Randleiste unter "API-Manager" **Anmeldeinformationen**, und wählen Sie dann die **OAuth Consent Bildschirmregisterkarte**. Wählen Sie eine **e-Mail-Adresse**, geben Sie eine **Produktnamen, die Benutzern angezeigt wird,**, und drücken Sie die **speichern**.
+1. In der **Anmeldeinformationen** Registerkarte die **Anmeldeinformationen erstellen** Dropdown-Liste aus, und wählen Sie **OAuth-Client-ID**.
 1. Klicken Sie unter **Anwendungstyp**, wählen Sie die Plattform, die die mobile Anwendung ausgeführt wird (**iOS** oder **Android**).
-1. Füllen Sie die erforderlichen Details ein, und wählen Sie die **erstellen** Schaltfläche.
+1. Geben Sie die erforderlichen Details ein, und wählen Sie die **erstellen** Schaltfläche.
 
 > [!NOTE]
-> Eine Client-ID können eine Anwendung aktivierten Google-APIs zuzugreifen, und für mobile Anwendungen für eine einzelne Plattform eindeutig ist. Aus diesem Grund eine **OAuth-Client-ID** erstellt werden soll, für jede Plattform, die Google-Anmeldung verwenden.
+> Eine Client-ID kann eine Anwendung, die Zugriff auf Google-APIs aktiviert, und für mobile Anwendungen auf einer einzigen Plattform eindeutig ist. Aus diesem Grund eine **OAuth-Client-ID** erstellt werden soll, für jede Plattform, die Google-Anmeldung verwenden.
 
-Nach Ausführung dieser Schritte können Xamarin.Auth So initiieren Sie ein "oauth2" Authentifizierungsablauf mit Google verwendet werden.
+Nach der Durchführung dieser Schritte kann Xamarin.Auth zum Initiieren einer OAuth2-authentifizierungsfluss bei Google verwendet werden.
 
-### <a name="creating-and-configuring-an-authenticator"></a>Erstellen und konfigurieren ein Authentifikator
+### <a name="creating-and-configuring-an-authenticator"></a>Erstellen und konfigurieren einen Authentifikator
 
-Der Xamarin.Auth `OAuth2Authenticator` -Klasse ist verantwortlich für die Behandlung der OAuth-authentifizierungsdatenfluss. Das folgende Codebeispiel zeigt die Instanziierung der `OAuth2Authenticator` Klasse bei der Authentifizierung mithilfe der Webbrowser des Geräts ausführen:
+Die Xamarin.Auth `OAuth2Authenticator` -Klasse ist verantwortlich für die Behandlung von OAuth-authentifizierungsflusses. Das folgende Codebeispiel zeigt die Instanziierung der `OAuth2Authenticator` Klasse bei der Authentifizierung mithilfe der Webbrowser des Geräts ausführen:
 
 ```csharp
 var authenticator = new OAuth2Authenticator(
@@ -84,73 +84,73 @@ var authenticator = new OAuth2Authenticator(
     true);
 ```
 
-Die `OAuth2Authenticator` Klasse erfordert eine Anzahl von Parametern, die Folgendes gilt:
+Die `OAuth2Authenticator` Klasse erfordert eine Reihe von Parametern, die Folgendes gilt:
 
-- **Client-ID** – Hierdurch wird den Client, der die Anforderung, abgerufen werden kann, aus dem Projekt in der [Google-API-Konsole](http://console.developers.google.com).
+- **Client-ID** – Dies wird vom Client aus dem Projekt im abgerufen werden kann, die die Anforderung identifiziert die [Google-API-Konsole](http://console.developers.google.com).
 - **Geheimer Clientschlüssel** – Dies dürfte `null` oder `string.Empty`.
-- **Bereich** – dies identifiziert die von der Anwendung angeforderten API-Zugriff und der Wert informiert die Zustimmung-Bildschirm, der dem Benutzer angezeigt wird. Weitere Informationen zu Bereichen finden Sie unter [Autorisieren von API-Anforderung](https://developers.google.com/+/web/api/rest/oauth) Google-Website.
-- **Autorisieren Sie URL** – Hierdurch wird die URL, in dem der Autorisierungscode aus abgerufen werden wird.
-- **Umleitungs-URL** – Hierdurch wird die URL, an die Antwort gesendet werden wird. Der Wert dieses Parameters muss übereinstimmen, einen der Werte, die in angezeigt wird der **Anmeldeinformationen** Registerkarte für das Projekt in der [Google-Entwicklerkonsole](https://console.developers.google.com/).
-- **AccessToken Url** – Hierdurch wird die URL zum Anfordern von Zugriffstoken nach dem Abrufen eines Autorisierungscodes verwendet.
-- **GetUserNameAsync Func** – ein Optionaler `Func` , die verwendet werden wird, den Benutzernamen des Kontos asynchron abgerufen werden, nachdem er erfolgreich authentifiziert wird.
-- **Verwenden Sie einheitliche Benutzeroberfläche** – `boolean` Wert, der angibt, ob der Webbrowser des Geräts zu verwenden, um die Authentifizierungsanforderung auszuführen.
+- **Bereich** – dies identifiziert die API-Zugriff, die von der Anwendung angefordert wird, und der Wert informiert im Zustimmungsdialogfeld angezeigt, die dem Benutzer angezeigt wird. Weitere Informationen zu geltungsbereichen finden Sie unter [autorisieren-API-Anforderung](https://developers.google.com/+/web/api/rest/oauth) Googles-Website.
+- **Autorisieren Sie die URL** – dies identifiziert die URL, in dem der Autorisierungscode aus abgerufen werden wird.
+- **Umleitungs-URL** – dies identifiziert die URL, in dem die Antwort gesendet wird. Der Wert dieses Parameters muss einer der Werte, die in angezeigt entsprechen der **Anmeldeinformationen** Registerkarte für das Projekt in der [Google Developers Console](https://console.developers.google.com/).
+- **AccessToken Url** – dies identifiziert die URL zum Anfordern von Zugriffstoken, nachdem Sie ein Autorisierungscode abgerufen wird.
+- **GetUserNameAsync Func** – ein optionales `Func` wird, wird für asynchron den Benutzernamen des Kontos abzurufen, nachdem sie erfolgreich authentifiziert wurde.
+- **Verwenden Sie die Native Benutzeroberfläche** – `boolean` Wert, der angibt, ob der Webbrowser zu verwenden, um die Authentifizierungsanforderung auszuführen.
 
-### <a name="setup-authentication-event-handlers"></a>Setup-Ereignishandler für die Authentifizierung
+### <a name="setup-authentication-event-handlers"></a>Ereignishandler für die Authentifizierung einrichten
 
-Vor dem Bereitstellen der Benutzeroberfläche, einen Ereignishandler für das `OAuth2Authenticator.Completed` Ereignis muss registriert werden, wie im folgenden Codebeispiel gezeigt:
+Bevor Sie die Präsentation der Benutzeroberfläche, die einen Ereignishandler für die `OAuth2Authenticator.Completed` Ereignis muss registriert werden, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 authenticator.Completed += OnAuthCompleted;
 ```
 
-Dieses Ereignis wird ausgelöst, wenn der Benutzer erfolgreich authentifiziert oder bricht der Anmeldeseite ab.
+Dieses Ereignis wird ausgelöst, wenn der Benutzer erfolgreich authentifiziert oder bricht die Anmeldung ab.
 
-Optional, einen Ereignishandler für das `OAuth2Authenticator.Error` Ereignis kann auch registriert werden.
+Optional, einen Ereignishandler für die `OAuth2Authenticator.Error` Ereignis auch registriert werden kann.
 
-### <a name="presenting-the-sign-in-user-interface"></a>Präsentieren die Anmeldebenutzeroberfläche-Schnittstelle
+### <a name="presenting-the-sign-in-user-interface"></a>Darstellen der Benutzeroberfläche-Anmeldung
 
-Die Anmeldebenutzeroberfläche-Schnittstelle kann mit Xamarin.Auth Anmeldung Referent, die in jede plattformprojekt initialisiert werden muss, die dem Benutzer angezeigt. Im folgenden Codebeispiel wird veranschaulicht, wie eine Anmeldung Vortragende in zu initialisieren der `AppDelegate` Klasse im iOS-Projekt:
+Die Schnittstelle des angemeldeten Benutzers kann mit der eine Darstellung der Xamarin.Auth-Anmeldung, die in jedes plattformprojekt initialisiert werden muss, die dem Benutzer angezeigt. Im folgenden Codebeispiel wird veranschaulicht, wie zum Initialisieren des Vortragenden Anmeldung in der `AppDelegate` Klasse im iOS-Projekt:
 
 ```csharp
 global::Xamarin.Auth.Presenters.XamarinIOS.AuthenticationConfiguration.Init();
 ```
 
-Im folgenden Codebeispiel wird veranschaulicht, wie eine Anmeldung Vortragende in zu initialisieren der `MainActivity` Klasse im Android-Projekt:
+Im folgenden Codebeispiel wird veranschaulicht, wie zum Initialisieren des Vortragenden Anmeldung in der `MainActivity` Klasse im Android-Projekt:
 
 ```csharp
 global::Xamarin.Auth.Presenters.XamarinAndroid.AuthenticationConfiguration.Init(this, bundle);
 ```
 
-Das Projekt der portablen Klassenbibliothek (PCL) kann Anmeldung Referenten. Klicken Sie dann wie folgt aufrufen:
+Die .NET Standard-Bibliotheksprojekts kann der Präsentator Anmeldung klicken Sie dann wie folgt aufrufen:
 
 ```csharp
 var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
 presenter.Login(authenticator);
 ```
 
-Beachten Sie, dass das Argument für die `Xamarin.Auth.Presenters.OAuthLoginPresenter.Login` Methode ist die `OAuth2Authenticator` Instanz. Wenn die `Login` Methode wird aufgerufen, die Anmeldebenutzeroberfläche-Schnittstelle wird für den Benutzer auf einer Registerkarte angezeigt, über Webbrowser des Geräts, die in den folgenden Screenshots angezeigt wird:
+Beachten Sie, dass das Argument für die `Xamarin.Auth.Presenters.OAuthLoginPresenter.Login` Methode ist die `OAuth2Authenticator` Instanz. Wenn die `Login` -Methode wird aufgerufen, die die Schnittstelle des angemeldeten Benutzers wird an den Benutzer auf einer Registerkarte angezeigt, über Webbrowser des Geräts, das in den folgenden Screenshots dargestellt ist:
 
 ![](oauth-images/login.png "Google-Anmeldung")
 
-### <a name="processing-the-redirect-url"></a>Verarbeiten der Umleitungs-URL
+### <a name="processing-the-redirect-url"></a>Verarbeitet die Umleitungs-URL
 
-Nachdem der Benutzer den Authentifizierungsprozess abgeschlossen ist, gibt Steuerelement aus der Registerkarte des Webbrowsers für die Anwendung zurück. Dies erfolgt durch registrieren ein benutzerdefinierte URL-Schema für die umleitungs-URL, die den Authentifizierungsprozess, und klicken Sie dann erkennen und behandeln die benutzerdefinierte URL nach dem Senden der es zurückgegeben wird.
+Nachdem der Benutzer den Authentifizierungsprozess abgeschlossen ist, gibt die Kontrolle an die Anwendung aus der Registerkarte des Webbrowsers zurück. Dies erfolgt durch die Registrierung eines benutzerdefinierten URL-Schemas für die umleitungs-URL, die zurückgegeben wird, aus der Authentifizierungsprozess, und klicken Sie dann erkennen und behandeln die benutzerdefinierte URL ein, nach der sie gesendet wird.
 
-Wenn Sie ein benutzerdefinierte URL-Schema zum Zuordnen einer Anwendung auswählen, müssen Anwendungen ein Schema basierend auf einem Namen unter ihrer Kontrolle verwenden. Dies kann erreicht werden, indem Sie den Bezeichnernamen Paket für iOS und dem Paketnamen unter Android verwenden und dann umkehren, um die URL-Schema stellen. Allerdings weisen einige Identitätsanbieter, z. B. Google, Client-IDs, die basierend auf Domänennamen, die dann rückgängig gemacht und als URL-Schema verwendet. Wenn Google Client-Id erstellt z. B. `902730282010-ks3kd03ksoasioda93jldas93jjj22kr.apps.googleusercontent.com`, URL-Schema werden `com.googleusercontent.apps.902730282010-ks3kd03ksoasioda93jldas93jjj22kr`. Beachten Sie, dass nur ein einzelnes `/` können nach dem Schema-Komponente angezeigt werden. Ein vollständiges Beispiel für eine umleitungs-URL unter Verwendung eines benutzerdefinierten URL-Schemas also `com.googleusercontent.apps.902730282010-ks3kd03ksoasioda93jldas93jjj22kr:/oauth2redirect`.
+Bei der Auswahl eines benutzerdefinierten URL-Schemas, eine Anwendung zugeordnet werden soll, müssen Anwendungen ein Schema basierend auf einem an ihre jeweiligen verwenden. Dies kann erreicht werden, indem Sie den Namen der Bundle-Bezeichner unter iOS und den Paketnamen unter Android und umkehren, um das URL-Schema stellen Sie dann. Allerdings weisen einige Identitätsanbietern wie Google, Client-IDs, die basierend auf den Domänennamen, die dann rückgängig gemacht und als URL-Schema verwendet werden. Wenn es sich bei Google Client-Id erstellt z. B. `902730282010-ks3kd03ksoasioda93jldas93jjj22kr.apps.googleusercontent.com`, das URL-Schema werden `com.googleusercontent.apps.902730282010-ks3kd03ksoasioda93jldas93jjj22kr`. Beachten Sie, dass nur ein einzelnes `/` können angezeigt werden, nachdem die Schemakomponente. Ein vollständiges Beispiel für eine umleitungs-URL, die mit einem benutzerdefinierten URL-Schema aus diesem Grund wird `com.googleusercontent.apps.902730282010-ks3kd03ksoasioda93jldas93jjj22kr:/oauth2redirect`.
 
-Wenn der Webbrowser eine Antwort vom Identitätsanbieter, die ein benutzerdefinierte URL-Schema enthält erhält, wird versucht, die URL zu laden, was die fehl. Stattdessen wird die benutzerdefinierte URL-Schema für das Betriebssystem gemeldet, durch das Auslösen eines Ereignisses. Das Betriebssystem wird dann für registrierte Schemas überprüft, und wenn wird eins gefunden, das Betriebssystem wird starten Sie die Anwendung, die das Schema registriert, und die umleitungs-URL zu senden.
+Wenn der Webbrowser eine Antwort vom Identitätsanbieter, die ein benutzerdefiniertes URL-Schema enthält erhält, versucht, die URL, zu laden, was die fehl. Stattdessen wird die benutzerdefinierte URL-Schema für das Betriebssystem gemeldet, durch Auslösen eines Ereignisses. Das Betriebssystem prüft dann, ob registrierte Schemas, und falls vorhanden, das Betriebssystem wird starten Sie die Anwendung, die das Schema registriert, und die umleitungs-URL senden.
 
-Der Mechanismus zum Registrieren eines benutzerdefinierten URL-Schemas mit dem Betriebssystem und behandeln das Schema ist für jede Plattform spezifisch.
+Der Mechanismus zum Registrieren eines benutzerdefinierten URL-Schemas mit dem Betriebssystem, und behandeln das Schema ist für jede Plattform spezifisch.
 
 #### <a name="ios"></a>iOS
 
-Bei iOS kann ein benutzerdefinierte URL-Schema im registriert **"Info.plist"**, wie im folgenden Screenshot gezeigt:
+Unter iOS, wird ein benutzerdefiniertes URL-Schema in registriert **"Info.plist"**, wie im folgenden Screenshot gezeigt:
 
 ![](oauth-images/info-plist.png "URL-Schema-Registrierung")
 
-Die **Bezeichner** Werte ist möglich, und die **Rolle** Wert festgelegt werden muss, um **Viewer**. Die **Url-Schemas** -Wert, der mit beginnt `com.googleusercontent.apps`, aus der iOS-Client-Id für das Projekt abgerufen werden kann, um auf [Google-API-Konsole](http://console.developers.google.com).
+Die **Bezeichner** Werte sind möglich, und die **Rolle** Wert muss festgelegt werden, um **Viewer**. Die **Url-Schemas** -Wert, der mit beginnt `com.googleusercontent.apps`, aus dem iOS-Client-Id für das Projekt abgerufen werden kann, um auf [Google-API-Konsole](http://console.developers.google.com).
 
-Wenn der Identitätsanbieter die autorisierungsanforderung abgeschlossen ist, wird er an die Anwendung umleitungs-URL umgeleitet. Da die URL ein benutzerdefiniertes Schema verwendet wird, führt dies zu iOS, die die Anwendung gestartet, in der URL als Parameter starten, in denen Verarbeitung erfolgt durch Übergeben der `OpenUrl` außer Kraft setzen, der der Anwendungsverzeichnis `AppDelegate` -Klasse, die im folgenden Codebeispiel gezeigt wird:
+Wenn der Identitätsanbieter die autorisierungsanforderung abgeschlossen ist, erfolgt eine Umleitung an den umleitungs-URL der Anwendung. Da die URL ein benutzerdefiniertes Schema verwendet, führt dies zu iOS, die die Anwendung gestartet, übergeben Sie in der URL als Parameter starten, in dem vom verarbeitet die `OpenUrl` außer Kraft setzen, von der Anwendung `AppDelegate` -Klasse, die im folgenden Codebeispiel gezeigt wird:
 
 ```csharp
 public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
@@ -165,11 +165,11 @@ public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
 }
 ```
 
-Die `OpenUrl` -Methode konvertiert die empfangene URL aus einer `NSUrl` in ein .NET `Uri`, vor der Verarbeitung der umleitungs-URL mit der `OnPageLoading` einer öffentlichen Methode `OAuth2Authenticator` Objekt. Dies bewirkt, dass Xamarin.Auth, um die Registerkarte des Webbrowsers zu schließen und die empfangenen OAuth-Daten zu analysieren.
+Die `OpenUrl` -Methode konvertiert die empfangene-URL aus einer `NSUrl` in ein .NET `Uri`, vor der Verarbeitung der umleitungs-URL mit der `OnPageLoading` Methode einer öffentlichen `OAuth2Authenticator` Objekt. Dies bewirkt, dass Xamarin.Auth auf die Registerkarte des Webbrowsers zu schließen, und klicken Sie zum Analysieren der empfangenen OAuth-Daten.
 
 #### <a name="android"></a>Android
 
-Auf Android-Geräten wird ein benutzerdefinierte URL-Schema durch Angabe registriert eine [ `IntentFilter` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) -Attribut auf die `Activity` behandelt, die das Schema. Wenn der Identitätsanbieter die autorisierungsanforderung abgeschlossen ist, wird er an die Anwendung umleitungs-URL umgeleitet. Wie die URL ein benutzerdefiniertes Schema verwendet, führt dies zu Android die Anwendung gestartet, in der URL als Parameter starten, in denen Verarbeitung erfolgt durch Übergeben der `OnCreate` Methode der `Activity` registriert, um die benutzerdefinierte URL-Schema zu behandeln. Das folgende Codebeispiel zeigt die Klasse aus der beispielanwendung, die die benutzerdefinierte URL-Schema behandelt:
+Unter Android wird ein benutzerdefiniertes URL-Schema registriert ist, durch Angeben einer [ `IntentFilter` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) -Attribut für die `Activity` behandelt, die das Schema. Wenn der Identitätsanbieter die autorisierungsanforderung abgeschlossen ist, erfolgt eine Umleitung an den umleitungs-URL der Anwendung. Da die URL ein benutzerdefiniertes Schema verwendet, Android, die die Anwendung gestartet wird, übergeben Sie in der URL als Parameter starten, in dem sie vom verarbeitet wird der `OnCreate` Methode der `Activity` registriert, um die benutzerdefinierte URL-Schema zu behandeln. Das folgende Codebeispiel zeigt die Klasse aus der beispielanwendung, die die benutzerdefinierte URL-Schema behandelt:
 
 ```csharp
 [Activity(Label = "CustomUrlSchemeInterceptorActivity", NoHistory = true, LaunchMode = LaunchMode.SingleTop )]
@@ -195,16 +195,16 @@ public class CustomUrlSchemeInterceptorActivity : Activity
 }
 ```
 
-Die `DataSchemes` Eigenschaft von der [ `IntentFilter` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) muss festgelegt werden, um die umgekehrten Clientbezeichner, die aus der Android-Client-Id für das Projekt auf abgerufen werden [Google-API-Konsole](http://console.developers.google.com).
+Die `DataSchemes` Eigenschaft der [ `IntentFilter` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) muss festgelegt werden, um die umgekehrten Client-ID, die von der Android-Client-Id für das Projekt abgerufen werden, auf [Google-API-Konsole](http://console.developers.google.com).
 
-Die `OnCreate` -Methode konvertiert die empfangene URL aus einer `Android.Net.Url` in ein .NET `Uri`, vor der Verarbeitung der umleitungs-URL mit der `OnPageLoading` einer öffentlichen Methode `OAuth2Authenticator` Objekt. Dies bewirkt, dass Xamarin.Auth, schließen Sie die Registerkarte des Webbrowsers, und die empfangenen OAuth-Daten zu analysieren.
+Die `OnCreate` -Methode konvertiert die empfangene-URL aus einer `Android.Net.Url` in ein .NET `Uri`, vor der Verarbeitung der umleitungs-URL mit der `OnPageLoading` Methode einer öffentlichen `OAuth2Authenticator` Objekt. Dies bewirkt, dass Xamarin.Auth zum Schließen der Registerkarte des Webbrowsers, und analysieren Sie die empfangenen OAuth-Daten.
 
 > [!IMPORTANT]
-> Auf Android-Geräten Xamarin.Auth verwendet die `CustomTabs` API für die Kommunikation mit dem Webbrowser und Betriebssystem. Allerdings ist nicht gewährleistet, die eine `CustomTabs` kompatiblen Browser auf dem Gerät des Benutzers installiert werden soll.
+> Unter Android Xamarin.Auth verwendet die `CustomTabs` -API, um die Kommunikation mit dem Webbrowser und Betriebssystem. Allerdings es ist nicht sichergestellt, dass eine `CustomTabs` kompatiblen Browser auf dem Gerät des Benutzers installiert werden.
 
 ### <a name="examining-the-oauth-response"></a>Untersuchen die OAuth-Antwort
 
-Nach der Analyse der empfangenen OAuth Daten Xamarin.Auth löst die `OAuth2Authenticator.Completed` Ereignis. Im Ereignishandler für dieses Ereignis besitzt die `AuthenticatorCompletedEventArgs.IsAuthenticated` Eigenschaft kann verwendet werden, um zu identifizieren, ob die Authentifizierung erfolgreich war, wie im folgenden Codebeispiel wird dargestellt:
+Nach der Analyse der empfangenen Daten OAuth Xamarin.Auth löst die `OAuth2Authenticator.Completed` Ereignis. Im Ereignishandler für dieses Ereignis das `AuthenticatorCompletedEventArgs.IsAuthenticated` Eigenschaft kann verwendet werden, ermitteln Sie, ob die Authentifizierung erfolgreich war, ein, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 async void OnAuthCompleted(object sender, AuthenticatorCompletedEventArgs e)
@@ -217,11 +217,11 @@ async void OnAuthCompleted(object sender, AuthenticatorCompletedEventArgs e)
 }
 ```
 
-Die von einer erfolgreichen Authentifizierung erfassten Daten finden Sie in der `AuthenticatorCompletedEventArgs.Account` Eigenschaft. Dies schließt ein Zugriffstoken, das zum Signieren von Anforderungen für Daten an eine API, die vom Identitätsanbieter verwendet werden kann.
+Die Daten gesammelt, die einer erfolgreichen Authentifizierung werden in der `AuthenticatorCompletedEventArgs.Account` Eigenschaft. Dies schließt ein Zugriffstoken, die zum Signieren von Anforderungen für Daten an eine API bereitgestellt, die vom Identitätsanbieter verwendet werden kann.
 
-### <a name="making-requests-for-data"></a>Datenanforderungen vorgenommen.
+### <a name="making-requests-for-data"></a>Anfragen für Daten
 
-Nach die Anwendung ein Zugriffstoken abruft, müssen sie dient zum Senden von Anforderungen an die `https://www.googleapis.com/oauth2/v2/userinfo` -API, um grundlegende Daten vom Identitätsanbieter. Wird diese Anforderung mit der Xamarin.Auth `OAuth2Request` Klasse, die eine Anforderung darstellt, der mit einem Konto aus abgerufenen authentifiziert wird ein `OAuth2Authenticator` Instanz, wie im folgenden Codebeispiel gezeigt:
+Nachdem die Anwendung ein Zugriffstoken abruft, es wird zum Anfordern der `https://www.googleapis.com/oauth2/v2/userinfo` -API zur Anforderung grundlegende Benutzerdaten vom Identitätsanbieter. Anforderung wird mit der Xamarin.Auth `OAuth2Request` -Klasse, die eine Anforderung darstellt, die mit einem Konto aus abgerufenen authentifiziert werden ein `OAuth2Authenticator` -Instanz, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 // UserInfoUrl = https://www.googleapis.com/oauth2/v2/userinfo
@@ -234,39 +234,39 @@ if (response != null)
 }
 ```
 
-Sowie die HTTP-Methode und die URL-API der `OAuth2Request` Instanz gibt auch an ein `Account` Instanz, die das Zugriffstoken enthält, die die Anforderung an die vom angegebenen URL signiert die `Constants.UserInfoUrl` Eigenschaft. Der Identitätsanbieter zurückgegeben grundlegende Benutzerdaten als eine JSON-Antwort, einschließlich der Benutzer-Name und e-Mail-Adresse, vorausgesetzt, dass das Zugriffstoken als gültig erkennt. Die JSON-Antwort dann gelesen und in deserialisiert die `user` Variable.
+Sowie die HTTP-Methode und die API-URL die `OAuth2Request` Instanz gibt auch an eine `Account` -Instanz, die das Zugriffstoken enthält, die die Anforderung an die URL gemäß signiert die `Constants.UserInfoUrl` Eigenschaft. Der Identitätsanbieter zurückgegeben grundlegende Benutzerdaten als eine JSON-Antwort, einschließlich der Benutzer und e-Mail-Adresse, vorausgesetzt, dass das Zugriffstoken als gültig erkennt. Klicken Sie dann die JSON-Antwort gelesen und in deserialisiert die `user` Variable.
 
-Weitere Informationen finden Sie unter [eine Google-API Aufrufen](https://developers.google.com/identity/protocols/OAuth2InstalledApp#callinganapi) Google-Entwickler-Portal.
+Weitere Informationen finden Sie unter [eine Google-API Aufrufen](https://developers.google.com/identity/protocols/OAuth2InstalledApp#callinganapi) im Google Entwickler-Portal.
 
-### <a name="storing-and-retrieving-account-information-on-devices"></a>Speichern und Abrufen von Kontoinformationen auf Geräten
+### <a name="storing-and-retrieving-account-information-on-devices"></a>Speichern und Abrufen von Informationen auf Geräten
 
-Xamarin.Auth sicher gespeichert `Account` Speichern von Objekten in einem Konto, damit Anwendungen immer keine Benutzer erneut zu authentifizieren. Die `AccountStore` Klasse ist verantwortlich für das Speichern von Kontoinformationen und von Keychain-Diensten in iOS, gesichert ist und die `KeyStore` Klasse in Android.
+Sicheres Speichern von Xamarin.Auth `Account` Objekte in einem Konto zu speichern, sodass Anwendungen nicht immer verfügen Benutzer erneut authentifizieren. Die `AccountStore` Klasse ist zuständig für die Speicherung von Kontoinformationen und wird von den Keychain-Diensten in iOS, gesichert und die `KeyStore` Klasse in Android.
 
-Das folgende Codebeispiel zeigt, wie ein `Account` -Objekts sicher gespeichert wird:
+Im folgenden Codebeispiel wird veranschaulicht, wie ein `Account` Objekt wird sicher gespeichert werden:
 
 ```csharp
 AccountStore.Create ().Save (e.Account, Constants.AppName);
 ```
 
-Gespeicherte Konten sind eindeutig identifiziert mithilfe eines Schlüssels besteht aus des Kontos `Username` Eigenschaft und eine Dienst-ID, d. h. eine Zeichenfolge, die beim Abrufen von Konten aus dem Store Konto verwendet wird. Wenn ein `Account` zuvor gespeichert wurde, wird Aufrufen der `Save` Methode erneut überschreibt es.
+Gespeicherte Konten werden eindeutig identifiziert mithilfe eines Schlüssels des Kontos bestehen `Username` -Eigenschaft und eine Dienst-ID, d. h. eine Zeichenfolge, die beim Abrufen von Konten aus dem Store Konto verwendet wird. Wenn ein `Account` zuvor gespeichert wurde, wird Aufrufen der `Save` Methode erneut überschreibt es.
 
-`Account` Objekte für ein Dienst kann, durch Aufrufen abgerufen werden der `FindAccountsForService` Methode, wie im folgenden Codebeispiel gezeigt:
+`Account` Objekte für ein Dienst kann, durch den Aufruf abgerufen werden der `FindAccountsForService` Methode, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 var account = AccountStore.Create ().FindAccountsForService (Constants.AppName).FirstOrDefault();
 ```
 
-Die `FindAccountsForService` Methode gibt ein `IEnumerable` Auflistung von `Account` Objekte, mit dem ersten Element in der Auflistung, der als das übereinstimmende Konto festgelegt.
+Die `FindAccountsForService` Methode gibt ein `IEnumerable` Auflistung von `Account` Objekte, mit dem ersten Element in der Auflistung, der als das passende Konto festgelegt.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde erläutert, wie Xamarin.Auth verwenden, um den Authentifizierungsvorgang in einer Xamarin.Forms-Anwendung zu verwalten. Xamarin.Auth bietet die `OAuth2Authenticator` und `OAuth2Request` Klassen, die von Anwendungen mit Xamarin.Forms verwendet werden, z. B. Google, Microsoft, Facebook und Twitter-Identitätsanbieter zu nutzen.
+In diesem Artikel wurde erläutert, wie Xamarin.Auth zu verwenden, um die Verwaltung des Authentifizierungsprozesses in einer Xamarin.Forms-Anwendung ermöglichen. Xamarin.Auth bietet die `OAuth2Authenticator` und `OAuth2Request` Klassen, die von Xamarin.Forms-Anwendungen verwendet werden, um Identitätsanbieter wie Google, Microsoft, Facebook und Twitter zu nutzen.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [OAuthNativeFlow (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/OAuthNativeFlow/)
 - [OAuth 2.0 für systemeigene Apps](https://tools.ietf.org/html/draft-ietf-oauth-native-apps-12)
-- [Mithilfe von Google-APIs den Zugriff auf OAuth2.0](https://developers.google.com/identity/protocols/OAuth2)
+- [Mit OAuth 2.0, den Zugriff auf Google-APIs](https://developers.google.com/identity/protocols/OAuth2)
 - [Xamarin.Auth (NuGet)](https://www.nuget.org/packages/xamarin.auth/)
 - [Xamarin.Auth (GitHub)](https://github.com/xamarin/Xamarin.Auth)
