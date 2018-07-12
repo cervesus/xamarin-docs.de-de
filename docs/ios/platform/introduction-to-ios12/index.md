@@ -1,6 +1,6 @@
 ---
 title: Einführung in iOS 12
-description: Dieses Dokument enthält eine allgemeine Beschreibung der einige iOS 12-APIs für die Xamarin-Preview-Version C#-Bindungen bietet.
+description: Dieses Dokument enthält eine allgemeine Beschreibung einiger iOS-12-APIs, die für die Xamarin Preview Release c#-Bindungen bietet.
 ms.prod: xamarin
 ms.assetid: 99EA7090-315D-493C-87D3-26AB73D9E1A9
 ms.technology: xamarin-ios
@@ -8,57 +8,57 @@ author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/25/2018
 ms.openlocfilehash: 05ccae0415e450365a50fe4dbd8412ccd38b48ac
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37067348"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38830427"
 ---
 # <a name="introduction-to-ios-12"></a>Einführung in iOS 12
 
 ![Vorschau](~/media/shared/preview.png)
 
 > [!WARNING]
-> Die Xamarin iOS-12-Unterstützung ist zurzeit als Vorschau verfügbar, d. h., er möglicherweise Fehler enthalten ist nicht die Funktion abgeschlossen, und kann geändert werden. Verwenden Sie diese für nur experimentieren.
+> Xamarin iOS-12-Unterstützung ist gegenwärtig im vorschaustadium, d. h., er möglicherweise Fehler enthalten ist nicht die Features, und möglicherweise geändert. Verwenden sie nur für Experimente.
 
 > [!NOTE]
-> - Überprüfen Sie die [Einstieg](get-started.md) Handbuch eine Anleitung zum Erstellen von iOS-12-apps mit Xamarin beginnen.
-> - Weitere Informationen finden Sie unter der [Anmerkungen zu dieser Version](https://releases.xamarin.com/preview-release-xcode-10-beta/) für die Xamarin-Vorschauversion.
+> - Überprüfen Sie die [Einstieg](get-started.md) Anleitung finden Sie Anweisungen zum Einstieg in die Erstellung von iOS-12-apps mit Xamarin.
+> - Weitere Informationen finden Sie in der [Anmerkungen zu dieser Version](https://releases.xamarin.com/preview-release-xcode-10-beta/) für die Xamarin-Vorschauversion.
 
-Dieses Dokument enthält eine allgemeine Beschreibung der einige iOS 12-APIs für die Xamarin-Preview-Version C#-Bindungen bietet.
+Dieses Dokument enthält eine allgemeine Beschreibung einiger iOS-12-APIs, die für die Xamarin Preview Release c#-Bindungen bietet.
 
 ## <a name="arkit-2"></a>ARKit 2
 
-ARKit ist das augmented Reality-Modus-Framework mit iOS enthalten. ARKit 2 ermöglicht mehreren Benutzern, die miteinander interagieren, in eine Szene augmented Reality-Modus ermöglicht es Objekten im Raum beizubehalten und zu einem späteren Zeitpunkt darauf zurückgeben und für die 2D- und 3D bilderkennung und nachverfolgung bietet. iOS 12 bietet auch AR schnelle Suchen, eine Möglichkeit zum Rendern von Usdz AR-Modelle in Ihren apps.
+ARKit werden augmented Reality-Framework mit iOS enthalten ist. ARKit 2 ermöglicht mehreren Benutzern, die miteinander interagieren, in einer Szene augmented Reality-Modus ermöglicht es Objekten im Raum beizubehalten und zu einem späteren Zeitpunkt darauf zurückgeben, sowie für 2D und 3D bilderkennung und Überwachung. iOS 12 bietet auch AR schnelle Suchen, eine Möglichkeit zum Rendern von Usdz AR-Modelle in Ihren apps.
 
-## <a name="siri-shortcuts"></a>Siri Verknüpfungen
+## <a name="siri-shortcuts"></a>Siri-Tastenkombinationen
 
-Siri Verknüpfungen können Entwickler Siri ihre Anwendungen besser integriert. Mit Tastenkombinationen, Siri können Benutzer Sprachbefehle zum Öffnen von Inhalt oder Kickoff Aufgaben in ihren apps verwenden. Siri erfahren Sie, wenn bestimmte Tastenkombinationen sind eher verwendet werden, und sie für den Benutzer über Benachrichtigungen vorschlagen.
+Siri-Tastenkombinationen können Entwickler ihre Anwendungen in Siri besser zu integrieren. Siri-Verknüpfungen können Benutzer Sprachbefehle zum Öffnen von Inhalt oder das Starten von Aufgaben in ihren apps verwenden. Siri erfahren Sie, wenn bestimmte Tastenkombinationen sind eher verwendet werden, und sie dem Benutzer über Benachrichtigungen vorschlagen.
 
-## <a name="notification-improvements"></a>Verbesserungen der Benachrichtigung
+## <a name="notification-improvements"></a>Verbesserungen bei Benachrichtigungen
 
-In iOS 12 ermöglichen die gruppierte Benachrichtigungen vorhanden benutzerbenachrichtigungen in-app oder in Bezug auf Threads Gruppierungen. Summary-Text kann verwendet werden, um weitere Informationen zu einer Benachrichtigungsgruppe geben.
+In iOS 12 ermöglichen gruppierte Benachrichtigungen vorhanden benutzerbenachrichtigungen in-app oder in Bezug auf Threads Gruppierungen. Zusammenfassungstext kann verwendet werden, um weitere Informationen zu einer Benachrichtigungsgruppe bereitzustellen.
 
-Benachrichtigung Content Erweiterungen in iOS 12 für individuelle Benutzeroberflächen und dynamische Aktionen ermöglichen. Diese Funktionen ermöglichen es umfangreichere, desto relevantere Erfahrungen in benutzerbenachrichtigungen.
+Notification-Content-Erweiterungen in iOS 12 für benutzerdefinierte Oberflächen und dynamische Aktionen ermöglichen. Diese Funktionen ermöglichen umfangreichere, desto relevanter in benutzerbenachrichtigungen.
 
 ## <a name="core-ml-2-natural-language-framework"></a>Core ML 2: die natürliche sprachframework
 
-Dieses Framework natürlicher Sprache, Teil 2 Core ML kann Anwendungen verschiedene Sprache Analysen durchzuführen. Beispielsweise kann es Wortarten identifizieren, und bestimmen Sie die Sprache, dargestellt durch einen Textblock verwendet werden.
+Dieses Framework natürlicher Sprache, Teil 2 von Core ML, kann Anwendungen verschiedene Arten von sprachanalyse durchführen. Beispielsweise kann verwendet werden, zum Identifizieren von Wortarten, und ermitteln die Sprache, die durch einen Textblock dargestellt wird.
 
 ## <a name="carplay"></a>CarPlay
 
-In iOS-12 können Drittanbieter-apps Karten und Aktivieren von Turn navigationsanweisungen in CarPlay übermitteln mithilfe des neuen CarPlay-Frameworks.
+In iOS 12 können Drittanbieter-apps Karten und Turn-von-Turn navigationsanweisungen CarPlay übermitteln mithilfe des neuen CarPlay-Frameworks.
 
 ## <a name="automatic-strong-passwords"></a>Automatische sichere Kennwörter
 
-iOS-12 wird vorschlagen und Speichern von Benutzernamen und Kennwörter für Anwendungen, die mit einem Konto-Bildschirm erstellen. Die vorgeschlagene Kennwörter können generiert werden, basierend auf einem Standard-20-Zeichenformat oder anhand von Regeln für Entwickler angegebenes Kennwort. Diese Funktion macht der zugeordneten Domänen verwenden und Inhaltstypen für neue Benutzername und Kennwortfelder angegeben.
+iOS 12 wird empfohlen, und speichern Sie Benutzernamen und das sichere Kennwörter für Anwendungen, die einen Bildschirm "Konto erstellen". Die vorgeschlagene Kennwörter können generiert werden, basierend auf den Standardwert, 20 Zeichen-Format oder Entwicklern Kennwortregeln. Dieses Feature macht zugehörige Domänen verwenden und Inhaltstypen in neuen Benutzernamen und ein neues Kennwortfelder angegeben.
 
-## <a name="autofill-credential-provider-extensions"></a>AutoAusfüllen Anmeldeinformationen Anbieter Erweiterungen
+## <a name="autofill-credential-provider-extensions"></a>AutoAusfüllen-Anmeldeinformationen-Anbietererweiterungen
 
-Mit iOS-12 können Drittanbieter-Kennwort-Manager zu eine Erweiterung zum Bereitstellen von Benutzername und Kennwort Anmeldefelder Werte bereitstellen.
+In iOS 12 können Drittanbieter-Kennwort-Manager-Anwendungen eine Erweiterung zum Bereitstellen von Benutzername und Kennwort Anmeldefelder Werte bereitstellen.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Get-bereit für den iOS-12 (Apple)](https://developer.apple.com/ios/)
-- [iOS 12 Vorschau (Apple)](https://www.apple.com/ios/ios-12-preview/)
-- Xamarin-Vorschau [Anmerkungen zu dieser Version](https://releases.xamarin.com/preview-release-xcode-10-beta/)
+- [Machen Sie sich bereit für iOS-12 (Apple)](https://developer.apple.com/ios/)
+- [iOS 12 Preview (Apple)](https://www.apple.com/ios/ios-12-preview/)
+- Xamarin-Vorschauversion [Anmerkungen zu dieser Version](https://releases.xamarin.com/preview-release-xcode-10-beta/)

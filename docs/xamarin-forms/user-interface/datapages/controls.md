@@ -1,6 +1,6 @@
 ---
-title: DataPages Steuerelemente-Referenz
-description: In diesem Artikel wird die Steuerelemente, die im Xamarin.Forms DataPages-NuGet-Paket verfügbar sind.
+title: Steuerelementreferenz DataPages
+description: Dieser Artikel enthält die Steuerelemente, die in Xamarin.Forms DataPages NuGet-Paket verfügbar sind.
 ms.prod: xamarin
 ms.assetid: 891615D0-E8BD-4ACC-A7F0-4C3725FBCC31
 ms.technology: xamarin-forms
@@ -8,23 +8,23 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: c907d55f09d334e167c831a19f9d0edc4c97732f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243128"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38866521"
 ---
-# <a name="datapages-controls-reference"></a>DataPages Steuerelemente-Referenz
+# <a name="datapages-controls-reference"></a>Steuerelementreferenz DataPages
 
-![](~/media/shared/preview.png "Diese API ist derzeit als Vorschau verfügbar")
+![](~/media/shared/preview.png "Diese API ist derzeit als Vorschauversion")
 
 > [!IMPORTANT]
 > DataPages erfordert eine [Xamarin.Forms Design](~/xamarin-forms/user-interface/themes/index.md) Verweis auf das Rendern.
 
 
-Der Xamarin.Forms-DataPages Nuget umfasst eine Reihe von Kontrollmechanismen, die datenquellenbindung nutzen können.
+Das Xamarin.Forms-DataPages Nuget umfasst eine Reihe von Steuerelementen, die datenquellenbindung nutzen können.
 
-Um diese Steuerelemente nicht in XAML verwenden, stellen Sie sicher, der Namespace eingefügt wurde, z. B. finden Sie unter der `xmlns:pages` folgende Deklaration:
+Um diese Steuerelemente in XAML verwenden zu können, stellen Sie sicher, den Namespace eingefügt wurde, z. B. die `xmlns:pages` folgende Deklaration:
 
 ```xaml
 <ContentPage
@@ -34,7 +34,7 @@ Um diese Steuerelemente nicht in XAML verwenden, stellen Sie sicher, der Namespa
     x:Class="DataPagesDemo.Detail">
 ```
 
-Die folgenden Beispiele enthalten `DynamicResource` Verweise an, die in das Projekt Ressourcen Wörterbuch funktioniert vorhanden sein müsste. Es gibt auch ein Beispiel zum Erstellen einer [benutzerdefiniertes Steuerelement](#custom)
+Die folgenden Beispiele enthalten `DynamicResource` Verweise im Ressourcen-Wörterbuch funktioniert des Projekts vorhanden sein muss. Es gibt auch ein Beispiel zum Erstellen einer [benutzerdefiniertes Steuerelement](#custom)
 
 ## <a name="built-in-controls"></a>Integrierte Steuerelemente
 
@@ -49,8 +49,8 @@ Die `HeroImage` Steuerelement verfügt über vier Eigenschaften:
 
 * Text
 * Detail
-* "ImageSource" erwartet
-* Seitenverhältnis
+* "ImageSource"
+* Aspekt
 
 ```xaml
 <pages:HeroImage
@@ -62,26 +62,26 @@ Die `HeroImage` Steuerelement verfügt über vier Eigenschaften:
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "HeroImage Steuerelement unter Android") ![ ] (controls-images/heroimage-dark-android.png "HeroImage Steuerelement unter Android")
+![](controls-images/heroimage-light-android.png "HeroImage-Steuerelement für Android") ![ ] (controls-images/heroimage-dark-android.png "HeroImage-Steuerelement für Android")
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "HeroImage-Steuerelement auf iOS") ![ ] (controls-images/heroimage-dark-ios.png "HeroImage-Steuerelement für iOS")
+![](controls-images/heroimage-light-ios.png "HeroImage-Steuerelement für iOS") ![ ] (controls-images/heroimage-dark-ios.png "HeroImage-Steuerelement für iOS")
 
 
 <a name="listitem" />
 
 ### <a name="listitem"></a>ListItem
 
-Die `ListItem` Layout des Steuerelements ähnelt dem systemeigenen iOS und Android-Liste oder Tabelle Zeilen, jedoch auch als reguläre Ansicht verwendet werden können. Im Beispiel wird der Code, darunter gehostet gezeigt eine `StackLayout`, aber es kann auch in datengebundenen Scolling List-Steuerelemente verwendet werden.
+Die `ListItem` Layout des Steuerelements ähnelt natives iOS und Android-Liste oder Tabelle Zeilen, aber es auch als normalen Ansichten verwendet werden kann. Im Beispiel wird darunter Code gehostet gezeigt eine `StackLayout`, aber es kann auch in Listensteuerelementen datengebundenen Scolling verwendet werden.
 
 Es gibt fünf Eigenschaften:
 
 * Titel
 * Detail
-* "ImageSource" erwartet
+* "ImageSource"
 * PlaceholdImageSource
-* Seitenverhältnis
+* Aspekt
 
 ```xaml
 <StackLayout Spacing="0">
@@ -97,24 +97,24 @@ Diese Screenshots zeigen die `ListItem` auf IOS- und Android-Plattformen verwend
 
 **Android**
 
-![](controls-images/listitem-light-android.png "ListItem-Steuerelement unter Android") ![ ] (controls-images/listitem-dark-android.png "\"ListItem\"-Steuerelement unter Android")
+![](controls-images/listitem-light-android.png "ListItem-Steuerelement für Android") ![ ] (controls-images/listitem-dark-android.png "ListItem-Steuerelement für Android")
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "ListItem-Steuerelement auf iOS") ![ ] (controls-images/listitem-dark-ios.png "ListItem-Steuerelement für iOS")
+![](controls-images/listitem-light-ios.png "ListItem-Steuerelement für iOS") ![ ] (controls-images/listitem-dark-ios.png "ListItem-Steuerelement für iOS")
 
 
 ## <a name="custom-control-example"></a>Beispiel für ein benutzerdefiniertes Steuerelement
 
-Das Ziel von diesem benutzerdefinierten `CardView` Steuerelement ist, damit die systemeigene Android CardView ähneln.
+Das Ziel von diesem benutzerdefinierten `CardView` Steuerelement ist, die den systemeigenen Android CardView-ähnelt.
 
 Es werden drei Eigenschaften enthalten:
 
 * Text
 * Detail
-* "ImageSource" erwartet
+* "ImageSource"
 
-Das Ziel ist ein benutzerdefiniertes Steuerelement, das den folgenden Code aussieht (Beachten Sie, dass eine benutzerdefinierte `xmlns:local` ist erforderlich, die auf die aktuelle Assembly verweist):
+Das Ziel ist ein benutzerdefiniertes Steuerelement, das den folgenden Code aussehen (Beachten Sie, dass ein benutzerdefiniertes `xmlns:local` ist erforderlich, die auf die aktuelle Assembly verweist):
 
 ```xaml
 <local:CardView
@@ -124,33 +124,33 @@ Das Ziel ist ein benutzerdefiniertes Steuerelement, das den folgenden Code aussi
 />
 ```
 
-Sie sollten die Screenshots unter Verwendung von Farben für die integrierte hellen und dunklen Design formuliert werden:
+Es sollte wie in den Screenshots unter Verwendung von Farben, die für die integrierte hellen und dunklen Design aussehen:
 
 **Android**
 
-![](controls-images/cardview-light-android.png "CardView benutzerdefinierte Steuerelement im Android") ![ ] (controls-images/cardview-dark-android.png "CardView-benutzerdefiniertes Steuerelement auf Android-Geräten")
+![](controls-images/cardview-light-android.png "CardView-benutzerdefinierte Steuerelement für Android") ![ ] (controls-images/cardview-dark-android.png "CardView-benutzerdefinierte Steuerelement für Android")
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "CardView benutzerdefiniertes Steuerelement auf iOS") ![ ] (controls-images/cardview-dark-ios.png "CardView benutzerdefiniertes Steuerelement auf iOS")
+![](controls-images/cardview-light-ios.png "CardView-benutzerdefiniertes Steuerelement unter iOS") ![ ] (controls-images/cardview-dark-ios.png "CardView-benutzerdefiniertes Steuerelement unter iOS")
 
 <a name="custom" />
 
-### <a name="building-the-custom-cardview"></a>Erstellen von benutzerdefinierten CardView
+### <a name="building-the-custom-cardview"></a>Erstellen der benutzerdefinierten CardView-
 
 1. [DataView-Unterklasse.](#1)
-2. [Definieren Sie Schriftart, Layout und Ränder](#2)
-3. [Erstellen Sie Stile für das Steuerelement untergeordnete Elemente.](#3)
-4. [Erstellen Sie das Layout-Steuerelementvorlage](#4)
-5. [Fügen Sie der Design-spezifischen Ressourcen hinzu](#5)
-6. [Legen Sie das ControlTemplate für die CardView-Klasse](#6)
-7. [Fügen Sie das Steuerelement zu einer Seite](#7)
+2. [Definieren Sie Schriftart, Layout und Rändern](#2)
+3. [Erstellen Sie Formate für die untergeordneten Elemente des Steuerelements.](#3)
+4. [Erstellen der Layout-Steuerelementvorlage](#4)
+5. [Fügen Sie die designspezifischen Ressourcen](#5)
+6. [Legen Sie das ControlTemplate für die CardView--Klasse](#6)
+7. [Das Steuerelement zu einer Seite hinzufügen](#7)
 
 <a name="1" />
 
 #### <a name="1-dataview-subclass"></a>1. DataView-Unterklasse.
 
-Die C#-Unterklasse für `DataView` definiert die bindungsfähigen Eigenschaften für das Steuerelement.
+Die C#-Unterklasse für `DataView` definiert, das die bindbaren Eigenschaften des Steuerelements.
 
 ```csharp
 public class CardView : DataView
@@ -190,11 +190,11 @@ public class CardView : DataView
 
 <a name="2" />
 
-#### <a name="2-define-font-layout-and-margins"></a>2. Definieren Sie Schriftart, Layout und Ränder
+#### <a name="2-define-font-layout-and-margins"></a>2. Definieren Sie Schriftart, Layout und Rändern
 
-Der Steuerelement-Designer würde diese Werte als Teil des Entwurfs Benutzeroberfläche für das benutzerdefinierte Steuerelement herauszufinden. Clientplattform-spezifische Spezifikationen erforderlich ist, sind die `OnPlatform` Element verwendet wird.
+Der Steuerelement-Designer würden diese Werte als Teil der Entwurf der Benutzeroberfläche für das benutzerdefinierte Steuerelement herauszufinden. Clientplattform-spezifische Spezifikationen erforderlich ist, sind die `OnPlatform` Element wird verwendet.
 
-Beachten Sie, die auf einige Werte verweisen `StaticResource`s – Diese definiert werden [Schritt 5](#5).
+Beachten Sie, die auf einige Werte verweisen `StaticResource`s. diese im definiert werden [Schritt 5](#5).
 
 ```xml
 <!-- CARDVIEW FONT SIZES -->
@@ -248,9 +248,9 @@ Beachten Sie, die auf einige Werte verweisen `StaticResource`s – Diese definie
 
 <a name="3" />
 
-#### <a name="3-create-styles-for-the-controls-children"></a>3. Erstellen Sie Stile für das Steuerelement untergeordnete Elemente.
+#### <a name="3-create-styles-for-the-controls-children"></a>3. Erstellen Sie Formate für die untergeordneten Elemente des Steuerelements.
 
-Einen Verweis auf die Elemente, die um zu erstellenden die untergeordneten Elemente, die verwendet werden, in das benutzerdefinierte Steuerelement definiert:
+Verweisen Sie auf alle Elemente, die definiert, die die untergeordneten Elemente, die verwendet werden, in das benutzerdefinierte Steuerelement erstellen:
 
 ```xml
 <!-- EXPLICIT STYLES (will be Classes) -->
@@ -280,9 +280,9 @@ Einen Verweis auf die Elemente, die um zu erstellenden die untergeordneten Eleme
 
 <a name="4" />
 
-#### <a name="4-create-the-control-layout-template"></a>4. Erstellen Sie das Layout-Steuerelementvorlage
+#### <a name="4-create-the-control-layout-template"></a>4. Erstellen der Layout-Steuerelementvorlage
 
-Der visuelle Entwurf des benutzerdefinierten Steuerelements wird in der Vorlage für ein Steuerelement mithilfe der oben definierten Ressourcen explizit deklariert:
+Das visuelle Design des benutzerdefinierten Steuerelements wird in der Steuerelementvorlage, die mithilfe der oben definierten Ressourcen explizit deklariert:
 
 ```xml
 <!--- CARDVIEW -->
@@ -324,11 +324,11 @@ Der visuelle Entwurf des benutzerdefinierten Steuerelements wird in der Vorlage 
 
 <a name="5" />
 
-#### <a name="5-add-the-theme-specific-resources"></a>5. Fügen Sie der Design-spezifischen Ressourcen hinzu
+#### <a name="5-add-the-theme-specific-resources"></a>5. Fügen Sie die designspezifischen Ressourcen
 
-Da dies ein benutzerdefiniertes Steuerelement ist, fügen Sie die Ressourcen, die das Design, das Sie verwenden das Ressourcenwörterbuch entsprechen:
+Da es sich um ein benutzerdefiniertes Steuerelement handelt, fügen Sie die Ressourcen, die das Design, das Sie verwenden das Ressourcenverzeichnis entsprechen:
 
-##### <a name="light-theme-colors"></a>Farben Design "hell"
+##### <a name="light-theme-colors"></a>Design "hell"-Farben
 
 ```xaml
 <Color x:Key="iOSCardViewBackgroundColor">#FFFFFF</Color>
@@ -341,7 +341,7 @@ Da dies ein benutzerdefiniertes Steuerelement ist, fügen Sie die Ressourcen, di
 <Color x:Key="iOSCardViewDetailTextColor">#8F8E94</Color>
 ```
 
-##### <a name="dark-theme-colors"></a>Farben Design "dunkel"
+##### <a name="dark-theme-colors"></a>Design "dunkel" Farben
 
 ```xaml
 <!-- CARD VIEW COLORS -->
@@ -357,9 +357,9 @@ Da dies ein benutzerdefiniertes Steuerelement ist, fügen Sie die Ressourcen, di
 
 <a name="6" />
 
-#### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. Legen Sie das ControlTemplate für die CardView-Klasse
+#### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. Legen Sie das ControlTemplate für die CardView--Klasse
 
-Stellen Sie schließlich sicher erstellte C#-Klasse. [Schritt 1](#1) verwendet die Steuerelementvorlage in definierten [Schritt 4](#4) mithilfe einer `Style` `Setter` Element
+Stellen Sie sicher die C#-Klasse, die im erstellten [Schritt 1](#1) verwendet die Steuerelementvorlage definiert, die [Schritt 4](#4) mit einer `Style` `Setter` Element
 
 ```xml
 <Style TargetType="local:CardView">
@@ -371,9 +371,9 @@ Stellen Sie schließlich sicher erstellte C#-Klasse. [Schritt 1](#1) verwendet d
 
 <a name="7" />
 
-#### <a name="7-add-the-control-to-a-page"></a>7. Fügen Sie das Steuerelement zu einer Seite
+#### <a name="7-add-the-control-to-a-page"></a>7. Das Steuerelement zu einer Seite hinzufügen
 
-Die `CardView` Steuerelement kann jetzt auf eine Seite hinzugefügt werden. Das folgende Beispiel zeigt es in gehosteten eine `StackLayout`:
+Die `CardView` Steuerelement kann jetzt zu einer Seite hinzugefügt werden. Das folgende Beispiel zeigt hosten einem `StackLayout`:
 
 ```xaml
 <StackLayout Spacing="0">

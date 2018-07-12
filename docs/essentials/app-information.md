@@ -1,22 +1,22 @@
 ---
 title: 'Xamarin.Essentials: App-Informationen'
-description: Dieses Dokument beschreibt die AppInfo-Klasse in Xamarin.Essentials, die Informationen zu Ihrer Anwendung bereitstellt. Beispielsweise macht es der app-Name und Version.
+description: Dieses Dokument beschreibt die AppInfo-Klasse in Xamarin.Essentials, die Informationen zu Ihrer Anwendung bereitstellt. Beispielsweise macht es app-Name und Version.
 ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 7e79b3003f41b8de22950624e44e8c9e0e7e7e31
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080273"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831506"
 ---
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials: App-Informationen
 
-![Vorabversion NuGet](~/media/shared/pre-release.png)
+![Vorabversionen von NuGet](~/media/shared/pre-release.png)
 
-Die **AppInfo** Klasse enthält Informationen zu Ihrer Anwendung.
+Die **AppInfo** Klasse stellt Informationen zu Ihrer Anwendung bereit.
 
 ## <a name="using-appinfo"></a>Mithilfe der AppInfo
 
@@ -53,7 +53,7 @@ Die **AppInfo** -Klasse kann auch eine Seite mit Einstellungen, die vom Betriebs
 AppInfo.OpenSettings();
 ```
 
-Diese Seite "Einstellungen" ermöglicht den Benutzer Berechtigungen zu ändern und andere Clientplattform-spezifische Aufgaben.
+Diese Seite "Einstellungen" ermöglicht den Benutzer Anwendungsberechtigungen ändern und andere plattformspezifische Aufgaben.
 
 ## <a name="api"></a>API
 
