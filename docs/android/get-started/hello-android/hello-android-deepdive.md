@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: bae3e7323596cc88f2b76aceeb5a4d1df4ce2d0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f62842c3b2aea93d28303b7f47c5d50df6381387
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30774381"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998426"
 ---
 # <a name="hello-android-deep-dive"></a>Hallo, Android: Ausführliche Erläuterungen
 
@@ -98,9 +98,9 @@ Eine Projektmappe namens **Phoneword** wurde erstellt. In dieser wurde das Andro
 
 Betrachten Sie die Elemente innerhalb des Projekts, um jeden Ordner und seinen Zweck zu sehen:
 
--   **Eigenschaften**: Enthält die Datei [AndroidManifest.xml](~/android/platform/android-manifest.md), die alle Anforderungen für die Xamarin.Android-Anwendung beschreibt, einschließlich des Namens, der Versionsnummer und der Berechtigungen. Der Ordner **Eigenschaften** enthält ebenfalls [AssemblyInfo.cs](http://msdn.microsoft.com/en-us/library/microsoft.visualbasic.applicationservices.assemblyinfo(v=vs.110).aspx), eine Metadatendatei der .NET-Assembly. Es wird empfohlen, diese Datei mit grundlegenden Informationen zu Ihrer Anwendung zu füllen.
+-   **Eigenschaften**: Enthält die Datei [AndroidManifest.xml](~/android/platform/android-manifest.md), die alle Anforderungen für die Xamarin.Android-Anwendung beschreibt, einschließlich des Namens, der Versionsnummer und der Berechtigungen. Der Ordner **Eigenschaften** enthält ebenfalls [AssemblyInfo.cs](xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo), eine Metadatendatei der .NET-Assembly. Es wird empfohlen, diese Datei mit grundlegenden Informationen zu Ihrer Anwendung zu füllen.
 
--   **Verweise**: Enthält die Assemblys, die zum Erstellen und Ausführen der Anwendung erforderlich sind. Wenn Sie das Verzeichnis „Verweise“ erweitern, werden Ihnen die Verweise zu .NET-Assemblys angezeigt, z.B. [System](http://msdn.microsoft.com/en-us/library/system%28v=vs.110%29.aspx), System.Core und [System.xml](http://msdn.microsoft.com/en-us/library/system.xml%28v=vs.110%29.aspx), sowie ein Verweis zur Mono.Android-Assembly von Xamarin.
+-   **Verweise**: Enthält die Assemblys, die zum Erstellen und Ausführen der Anwendung erforderlich sind. Wenn Sie das Verzeichnis „Verweise“ erweitern, werden Ihnen die Verweise zu .NET-Assemblys angezeigt, z.B. [System](xref:System), System.Core und [System.xml](xref:System.Xml), sowie ein Verweis zur Mono.Android-Assembly von Xamarin.
 
 
 -   **Objekte**: Enthält die Dateien, die die Anwendung für die Ausführung benötigt, einschließlich Schriftarten, lokalen Datendateien und Textdateien. Auf die hier enthaltenen Dateien kann über die generierte `Assets`-Klasse zugegriffen werden. Weitere Informationen zu Android-Objekten finden Sie im Xamarin-Leitfaden[Using Android Assets (Verwenden von Android-Objekten)](~/android/app-fundamentals/resources-in-android/android-assets.md).

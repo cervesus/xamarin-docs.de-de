@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 538ca831e51069f345a8a7a53aa844352c207faa
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: a4e27f1810a16b5d13838d2e2c1067950586fab3
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268835"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996180"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Xamarin.Forms Multiscreen-Schnellstart
 
@@ -63,7 +63,7 @@ Erweitern Sie die Phoneword-Anwendung wie folgt:
 
     ![](quickstart-images/vs/open-app-class.png "„App.Xaml.cs“ öffnen")
 
-6. Importieren Sie in **App.xaml.cs** den `System.Collections.Generic`-Namespace, fügen Sie die Deklaration der Eigenschaft `PhoneNumbers` hinzu, initialisieren Sie die Eigenschaft im `App`-Konstruktor, und initialisieren Sie die Eigenschaft [`MainPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/), sodass sie eine [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) ist. Die `PhoneNumbers`-Auflistung wird zum Speichern einer Liste jeder übersetzten Telefonnummer verwendet, die von der Anwendung aufgerufen wird:
+6. Importieren Sie in **App.xaml.cs** den `System.Collections.Generic`-Namespace, fügen Sie die Deklaration der Eigenschaft `PhoneNumbers` hinzu, initialisieren Sie die Eigenschaft im `App`-Konstruktor, und initialisieren Sie die Eigenschaft [`MainPage`](xref:Xamarin.Forms.Application.MainPage), sodass sie eine [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ist. Die `PhoneNumbers`-Auflistung wird zum Speichern einer Liste jeder übersetzten Telefonnummer verwendet, die von der Anwendung aufgerufen wird:
 
     ```csharp
     using System.Collections.Generic;
@@ -94,7 +94,7 @@ Erweitern Sie die Phoneword-Anwendung wie folgt:
 
     ![](quickstart-images/vs/open-mainpage-xaml.png "„MainPage.xaml“ öffnen")
 
-8. Fügen Sie in **MainPage.xaml** ein [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)-Steuerelement am Ende des [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)-Steuerelements hinzu. Die Schaltfläche wird verwendet, um zur Aufrufliste zu navigieren:
+8. Fügen Sie in **MainPage.xaml** ein [`Button`](xref:Xamarin.Forms.Button)-Steuerelement am Ende des [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Steuerelements hinzu. Die Schaltfläche wird verwendet, um zur Aufrufliste zu navigieren:
 
     ```xaml
     <StackLayout VerticalOptions="FillAndExpand"
@@ -209,7 +209,7 @@ Erweitern Sie die Phoneword-Anwendung wie folgt:
 
     ![](quickstart-images/xs/open-app-class.png "„App.Xaml.cs“ öffnen")
 
-7. Importieren Sie in **App.xaml.cs** den `System.Collections.Generic`-Namespace, fügen Sie die Deklaration der Eigenschaft `PhoneNumbers` hinzu, initialisieren Sie die Eigenschaft im `App`-Konstruktor, und initialisieren Sie die Eigenschaft [`MainPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/), sodass sie eine [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) ist. Die `PhoneNumbers`-Auflistung wird zum Speichern einer Liste jeder übersetzten Telefonnummer verwendet, die von der Anwendung aufgerufen wird:
+7. Importieren Sie in **App.xaml.cs** den `System.Collections.Generic`-Namespace, fügen Sie die Deklaration der Eigenschaft `PhoneNumbers` hinzu, initialisieren Sie die Eigenschaft im `App`-Konstruktor, und initialisieren Sie die Eigenschaft [`MainPage`](xref:Xamarin.Forms.Application.MainPage), sodass sie eine [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ist. Die `PhoneNumbers`-Auflistung wird zum Speichern einer Liste jeder übersetzten Telefonnummer verwendet, die von der Anwendung aufgerufen wird:
 
     ```csharp
     using System.Collections.Generic;
@@ -240,7 +240,7 @@ Erweitern Sie die Phoneword-Anwendung wie folgt:
 
     ![](quickstart-images/xs/open-mainpage-xaml.png "„MainPage.xaml“ öffnen")
 
-9. Fügen Sie in **MainPage.xaml** ein [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)-Steuerelement am Ende des [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)-Steuerelements hinzu. Die Schaltfläche wird verwendet, um zur Aufrufliste zu navigieren:
+9. Fügen Sie in **MainPage.xaml** ein [`Button`](xref:Xamarin.Forms.Button)-Steuerelement am Ende des [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Steuerelements hinzu. Die Schaltfläche wird verwendet, um zur Aufrufliste zu navigieren:
 
     ```xaml
     <StackLayout VerticalOptions="FillAndExpand"

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 37d99add473203d90cb1b420536827e34e834a2b
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: d7719f231a6d70594985a1158340104d68367ffe
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209322"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998607"
 ---
 # <a name="xamarinforms-performance"></a>Leistung von Xamarin.Forms
 
@@ -59,7 +59,7 @@ XAMLC ist standardmäßig deaktiviert, damit die Abwärtskompatibilität sicherg
 
 ## <a name="choose-the-correct-layout"></a>Auswählen des richtigen Layouts
 
-Ein Layout, in dem mehrere untergeordnete Elemente angezeigt werden können, das jedoch nur über ein untergeordnetes Element verfügt, ist Vergeudung. Im folgenden Codebeispiel wird ein [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) mit einem untergeordneten Element dargestellt:
+Ein Layout, in dem mehrere untergeordnete Elemente angezeigt werden können, das jedoch nur über ein untergeordnetes Element verfügt, ist Vergeudung. Im folgenden Codebeispiel wird ein [`StackLayout`](xref:Xamarin.Forms.StackLayout) mit einem untergeordneten Element dargestellt:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -73,7 +73,7 @@ Ein Layout, in dem mehrere untergeordnete Elemente angezeigt werden können, das
 </ContentPage>
 ```
 
-Dies ist Vergeudung, und das [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)-Element sollte wie im folgenden Codebeispiel gezeigt entfernt werden:
+Dies ist Vergeudung, und das [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Element sollte wie im folgenden Codebeispiel gezeigt entfernt werden:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -85,7 +85,7 @@ Dies ist Vergeudung, und das [`StackLayout`](https://developer.xamarin.com/api/t
 </ContentPage>
 ```
 
-Darüber hinaus sollten Sie nicht versuchen, die Darstellung eines bestimmten Layouts durch Kombinieren anderer Layouts zu reproduzieren. Dies führt dazu, dass unnötige Layoutberechnungen durchgeführt werden. Versuchen Sie beispielsweise nicht, ein [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)-Layout durch eine Kombination aus [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)-Instanzen zu reproduzieren. Das folgende Codebeispiel veranschaulicht dieses Fehlverhalten beispielhaft:
+Darüber hinaus sollten Sie nicht versuchen, die Darstellung eines bestimmten Layouts durch Kombinieren anderer Layouts zu reproduzieren. Dies führt dazu, dass unnötige Layoutberechnungen durchgeführt werden. Versuchen Sie beispielsweise nicht, ein [`Grid`](xref:Xamarin.Forms.Grid)-Layout durch eine Kombination aus [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Instanzen zu reproduzieren. Das folgende Codebeispiel veranschaulicht dieses Fehlverhalten beispielhaft:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -115,7 +115,7 @@ Darüber hinaus sollten Sie nicht versuchen, die Darstellung eines bestimmten La
 </ContentPage>
 ```
 
-Dies ist Vergeudung, da unnötige Layoutberechnungen durchgeführt werden. Stattdessen kann das gewünschte Layout besser wie im folgenden Codebeispiel gezeigt über ein [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) erreicht werden:
+Dies ist Vergeudung, da unnötige Layoutberechnungen durchgeführt werden. Stattdessen kann das gewünschte Layout besser wie im folgenden Codebeispiel gezeigt über ein [`Grid`](xref:Xamarin.Forms.Grid) erreicht werden:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -163,7 +163,7 @@ Schnelle Renderer reduzieren die Inflations- und Renderingkosten von Xamarin.For
 
 ## <a name="reduce-unnecessary-bindings"></a>Reduzieren unnötiger Bindungen
 
-Verwenden Sie keine Bindungen für Inhalte, die problemlos statisch festgelegt werden können. Das Binden von Daten, die nicht gebunden werden müssen, bringt keine Vorteile mit sich, da Bindungen nicht kostengünstig sind. Das Festlegen von `Button.Text = "Accept"` ist beispielsweise mit weniger Aufwand verbunden als das Binden von [`Button.Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Text/) an die Eigenschaft `string` mit dem Wert „Akzeptieren“.
+Verwenden Sie keine Bindungen für Inhalte, die problemlos statisch festgelegt werden können. Das Binden von Daten, die nicht gebunden werden müssen, bringt keine Vorteile mit sich, da Bindungen nicht kostengünstig sind. Das Festlegen von `Button.Text = "Accept"` ist beispielsweise mit weniger Aufwand verbunden als das Binden von [`Button.Text`](xref:Xamarin.Forms.Button.Text) an die Eigenschaft `string` mit dem Wert „Akzeptieren“.
 
 <a name="optimizelayout" />
 
@@ -171,36 +171,36 @@ Verwenden Sie keine Bindungen für Inhalte, die problemlos statisch festgelegt w
 
 Xamarin.Forms 2 hat eine optimierte Layout-Engine eingeführt, die sich auf Layoutupdates auswirkt. Befolgen Sie die nachstehenden Richtlinien, um die bestmögliche Layoutleistung zu erreichen:
 
-- Verringern Sie die Tiefe der Layouthierarchien durch die Angabe von [`Margin`](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)-Eigenschaftswerten. Diese ermöglichen die Erstellung von Layouts mit weniger Umbrüchen in Ansichten. Weitere Informationen finden Sie unter [Seitenränder und Textabstand](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
-- Versuchen Sie bei der Verwendung eines [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), sicherzustellen, dass so wenige Zeilen und Spalten wie möglich auf die Größe [`Auto`](https://developer.xamarin.com/api/property/Xamarin.Forms.GridLength.Auto/) festgelegt werden. Durch jede Zeile oder Spalte, deren Größe automatisch angepasst wird, wird verursacht, dass die Layout-Engine zusätzliche Layoutberechnungen durchführt. Verwenden Sie stattdessen wenn möglich Zeilen und Spalten mit festen Größen. Alternativ können Sie mit dem [`GridUnitType.Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/)-Enumerationswert Zeilen und Spalten festlegen, die einen proportionalen Speicherplatz belegen sollen. Voraussetzung hierfür ist, dass die übergeordnete Struktur diese Layoutrichtlinien einhält.
-- Legen Sie die Eigenschaften [`VerticalOptions`](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) und [`HorizontalOptions`](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) eines Layouts nur dann fest, wenn dies erforderlich ist. Die Standardwerte von [`LayoutOptions.Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/) und [`LayoutOptions.FillAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/) ermöglichen die beste Layoutoptimierung. Das Ändern dieser Eigenschaften ist mit Kosten und Speicherplatzbelegung verbunden, selbst dann, wenn sie auf die Standardwerte festgelegt werden.
-- Vermeiden Sie möglichst die Verwendung eines [`RelativeLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/). Dies führt dazu, dass die CPU erheblich mehr Arbeit übernehmen muss.
-- Vermeiden Sie bei Verwendung eines [`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) möglichst die Verwendung der Eigenschaft [`AbsoluteLayout.AutoSize`](https://developer.xamarin.com/api/property/Xamarin.Forms.AbsoluteLayout.AutoSize/).
-- Stellen Sie bei Verwendung eines [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) sicher, dass für [`LayoutOptions.Expands`](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Expands/) nur ein untergeordnetes Element festgelegt ist. Mit dieser Eigenschaft wird sichergestellt, dass das angegebene untergeordnete Element den größten Bereich belegt, der im `StackLayout` verfügbar ist. Zudem ist es Vergeudung, diese Berechnungen mehrmals durchzuführen.
-- Rufen Sie keine Methode der [`Layout`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/)-Klasse auf, da dies zur Durchführung teurer Layoutberechnungen führt. Die Wahrscheinlichkeit ist groß, dass das gewünschte Layoutverhalten stattdessen durch Festlegen der Eigenschaften [`TranslationX`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/) und [`TranslationY`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) abgerufen werden kann. Alternativ können Sie Unterklassen für die [`Layout<View>`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/)-Klasse erstellen, um das gewünschte Layoutverhalten zu erzielen.
-- Aktualisieren Sie [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)-Instanzen nicht häufiger als erforderlich. Die Änderung der Bezeichnungsgröße kann dazu führen, dass das gesamte Bildschirmlayout neu berechnet wird.
-- Legen Sie die Eigenschaft [`Label.VerticalTextAlignment`](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.VerticalTextAlignment/) nur dann fest, wenn dies erforderlich ist.
-- Legen Sie den [`LineBreakMode`](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.LineBreakMode/) aller [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)-Instanzen möglichst auf [`NoWrap`](https://developer.xamarin.com/api/field/Xamarin.Forms.LineBreakMode.NoWrap/) fest.
+- Verringern Sie die Tiefe der Layouthierarchien durch die Angabe von [`Margin`](xref:Xamarin.Forms.View.Margin)-Eigenschaftswerten. Diese ermöglichen die Erstellung von Layouts mit weniger Umbrüchen in Ansichten. Weitere Informationen finden Sie unter [Seitenränder und Textabstand](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
+- Versuchen Sie bei der Verwendung eines [`Grid`](xref:Xamarin.Forms.Grid), sicherzustellen, dass so wenige Zeilen und Spalten wie möglich auf die Größe [`Auto`](xref:Xamarin.Forms.GridLength.Auto) festgelegt werden. Durch jede Zeile oder Spalte, deren Größe automatisch angepasst wird, wird verursacht, dass die Layout-Engine zusätzliche Layoutberechnungen durchführt. Verwenden Sie stattdessen wenn möglich Zeilen und Spalten mit festen Größen. Alternativ können Sie mit dem [`GridUnitType.Star`](xref:Xamarin.Forms.GridUnitType.Star)-Enumerationswert Zeilen und Spalten festlegen, die einen proportionalen Speicherplatz belegen sollen. Voraussetzung hierfür ist, dass die übergeordnete Struktur diese Layoutrichtlinien einhält.
+- Legen Sie die Eigenschaften [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) und [`HorizontalOptions`](xref:Xamarin.Forms.View.VerticalOptions) eines Layouts nur dann fest, wenn dies erforderlich ist. Die Standardwerte von [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) und [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) ermöglichen die beste Layoutoptimierung. Das Ändern dieser Eigenschaften ist mit Kosten und Speicherplatzbelegung verbunden, selbst dann, wenn sie auf die Standardwerte festgelegt werden.
+- Vermeiden Sie möglichst die Verwendung eines [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout). Dies führt dazu, dass die CPU erheblich mehr Arbeit übernehmen muss.
+- Vermeiden Sie bei Verwendung eines [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) möglichst die Verwendung der Eigenschaft [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize).
+- Stellen Sie bei Verwendung eines [`StackLayout`](xref:Xamarin.Forms.StackLayout) sicher, dass für [`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) nur ein untergeordnetes Element festgelegt ist. Mit dieser Eigenschaft wird sichergestellt, dass das angegebene untergeordnete Element den größten Bereich belegt, der im `StackLayout` verfügbar ist. Zudem ist es Vergeudung, diese Berechnungen mehrmals durchzuführen.
+- Rufen Sie keine Methode der [`Layout`](xref:Xamarin.Forms.Layout)-Klasse auf, da dies zur Durchführung teurer Layoutberechnungen führt. Die Wahrscheinlichkeit ist groß, dass das gewünschte Layoutverhalten stattdessen durch Festlegen der Eigenschaften [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) und [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) abgerufen werden kann. Alternativ können Sie Unterklassen für die [`Layout<View>`](xref:Xamarin.Forms.Layout`1)-Klasse erstellen, um das gewünschte Layoutverhalten zu erzielen.
+- Aktualisieren Sie [`Label`](xref:Xamarin.Forms.Label)-Instanzen nicht häufiger als erforderlich. Die Änderung der Bezeichnungsgröße kann dazu führen, dass das gesamte Bildschirmlayout neu berechnet wird.
+- Legen Sie die Eigenschaft [`Label.VerticalTextAlignment`](xref:Xamarin.Forms.Label.VerticalTextAlignment) nur dann fest, wenn dies erforderlich ist.
+- Legen Sie den [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) aller [`Label`](xref:Xamarin.Forms.Label)-Instanzen möglichst auf [`NoWrap`](xref:Xamarin.Forms.LineBreakMode.NoWrap) fest.
 
 <a name="optimizelistview" />
 
 ## <a name="optimize-listview-performance"></a>Optimieren der ListView-Leistung
 
-Bei Verwendung eines [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)-Steuerelements müssen einige Benutzeroberflächen optimiert werden:
+Bei Verwendung eines [`ListView`](xref:Xamarin.Forms.ListView)-Steuerelements müssen einige Benutzeroberflächen optimiert werden:
 
 - **Initialisierung**: Das Zeitintervall beginnt mit der Erstellung des Steuerelements und endet, wenn die Elemente auf dem Bildschirm angezeigt werden.
 - **Bildlauf**: Die Möglichkeit, einen Bildlauf durch die Liste durchzuführen, und die Sicherstellung, dass die Benutzeroberfläche nicht hinter Fingerbewegungen zurückbleibt.
 - **Interaktion** für das Hinzufügen, Löschen und Auswählen von Elementen.
 
-Für das [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)-Steuerelement ist eine Anwendung erforderlich, mit der Daten- und Zellenvorlagen bereitgestellt werden können. Wie dies erreicht wird, hat großen Einfluss auf die Leistung des Steuerelements. Weitere Informationen finden Sie unter [ListView Performance](~/xamarin-forms/user-interface/listview/performance.md) (ListView-Leistung).
+Für das [`ListView`](xref:Xamarin.Forms.ListView)-Steuerelement ist eine Anwendung erforderlich, mit der Daten- und Zellenvorlagen bereitgestellt werden können. Wie dies erreicht wird, hat großen Einfluss auf die Leistung des Steuerelements. Weitere Informationen finden Sie unter [ListView Performance](~/xamarin-forms/user-interface/listview/performance.md) (ListView-Leistung).
 
 <a name="optimizeimages" />
 
 ## <a name="optimize-image-resources"></a>Optimieren von Bildressourcen
 
-Das Anzeigen von Bildressourcen kann den Speicherbedarf der App erheblich erhöhen. Sie sollten daher nur erstellt werden, wenn dies erforderlich ist. Und sie sollten freigegeben werden, sobald die Anwendung sie nicht mehr benötigt. Wenn beispielsweise eine Anwendung ein Bild anzeigt, indem sie die zugehörigen Daten aus einem Datenstrom liest, müssen Sie sicherstellen, dass dieser Datenstrom nur erstellt wird, wenn dies erforderlich ist, und dass er freigegeben wird, sobald er nicht mehr benötigt wird. Dies kann erreicht werden, indem der Datenstrom bei Erstellung der Seite erstellt wird, oder bei Auslösung des [`Page.Appearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)-Ereignisses, und der Datenstrom anschließend bei Auslösung des [`Page.Disappearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Disappearing/)-Ereignisses verworfen wird.
+Das Anzeigen von Bildressourcen kann den Speicherbedarf der App erheblich erhöhen. Sie sollten daher nur erstellt werden, wenn dies erforderlich ist. Und sie sollten freigegeben werden, sobald die Anwendung sie nicht mehr benötigt. Wenn beispielsweise eine Anwendung ein Bild anzeigt, indem sie die zugehörigen Daten aus einem Datenstrom liest, müssen Sie sicherstellen, dass dieser Datenstrom nur erstellt wird, wenn dies erforderlich ist, und dass er freigegeben wird, sobald er nicht mehr benötigt wird. Dies kann erreicht werden, indem der Datenstrom bei Erstellung der Seite erstellt wird, oder bei Auslösung des [`Page.Appearing`](xref:Xamarin.Forms.Page.Appearing)-Ereignisses, und der Datenstrom anschließend bei Auslösung des [`Page.Disappearing`](xref:Xamarin.Forms.Page.Disappearing)-Ereignisses verworfen wird.
 
-Wenn Sie ein Bild für die Anzeige mit der [`ImageSource.FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/)-Methode herunterladen, müssen Sie das heruntergeladene Bild zwischenspeichern, indem Sie sicherstellen, dass die Eigenschaft [`UriImageSource.CachingEnabled`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CachingEnabled/) auf `true` festgelegt ist. Weitere Informationen finden Sie unter [Arbeiten mit Bildern](~/xamarin-forms/user-interface/images.md).
+Wenn Sie ein Bild für die Anzeige mit der [`ImageSource.FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri))-Methode herunterladen, müssen Sie das heruntergeladene Bild zwischenspeichern, indem Sie sicherstellen, dass die Eigenschaft [`UriImageSource.CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled) auf `true` festgelegt ist. Weitere Informationen finden Sie unter [Arbeiten mit Bildern](~/xamarin-forms/user-interface/images.md).
 
 Weitere Informationen finden Sie unter [Optimieren von Bildressourcen](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages).
 
@@ -208,9 +208,9 @@ Weitere Informationen finden Sie unter [Optimieren von Bildressourcen](~/cross-p
 
 ## <a name="reduce-the-visual-tree-size"></a>Reduzieren der Größe der visuellen Struktur
 
-Durch eine Reduzierung der Anzahl von Elementen auf einer Seite wird der Seitenrenderer schneller. Es gibt zwei Haupttechniken, um dies zu erreichen. Bei der ersten Technik werden Elemente ausgeblendet, die nicht sichtbar sind. Die Eigenschaft [`IsVisible`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/) der einzelnen Elemente bestimmt, ob die Elemente Teil der visuellen Struktur sein sollten. Daher sollten Sie das Element entfernen oder die zugehörige Eigenschaft `IsVisible` auf `false` festlegen, wenn ein Element nicht sichtbar ist, da es ausgeblendet wird.
+Durch eine Reduzierung der Anzahl von Elementen auf einer Seite wird der Seitenrenderer schneller. Es gibt zwei Haupttechniken, um dies zu erreichen. Bei der ersten Technik werden Elemente ausgeblendet, die nicht sichtbar sind. Die Eigenschaft [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) der einzelnen Elemente bestimmt, ob die Elemente Teil der visuellen Struktur sein sollten. Daher sollten Sie das Element entfernen oder die zugehörige Eigenschaft `IsVisible` auf `false` festlegen, wenn ein Element nicht sichtbar ist, da es ausgeblendet wird.
 
-Bei der zweiten Technik werden unnötige Elemente entfernt. Im folgenden Codebeispiel wird ein Seitenlayout dargestellt, in dem eine Reihe von [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)-Elementen angezeigt wird:
+Bei der zweiten Technik werden unnötige Elemente entfernt. Im folgenden Codebeispiel wird ein Seitenlayout dargestellt, in dem eine Reihe von [`Label`](xref:Xamarin.Forms.Label)-Elementen angezeigt wird:
 
 ```xaml
 <ContentPage.Content>
@@ -330,5 +330,5 @@ In diesem Artikel wurden Techniken zum Verbessern der Leistung von Xamarin.Forms
 - [Schnelle Renderer](~/xamarin-forms/internals/fast-renderers.md)
 - [Layoutkomprimierung](~/xamarin-forms/user-interface/layouts/layout-compression.md)
 - [Beispiel für die Größenänderung von Bildern mit Xamarin.Forms](https://developer.xamarin.com/samples/xamarin-forms/XamFormsImageResize/)
-- [XamlCompilation](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilation/)
-- [XamlCompilationOptions](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilationOptions/)
+- [XamlCompilation](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)
+- [XamlCompilationOptions](xref:Xamarin.Forms.Xaml.XamlCompilationOptions)
