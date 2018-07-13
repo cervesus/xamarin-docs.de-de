@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: ff707cdf73665ae07881d2d17ec837a4cfacaca0
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: c706d50962fb707208203a97374d4ae26f141ebf
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935370"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998262"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms-Device-Klasse
 
@@ -24,11 +24,11 @@ Neben den Methoden und Eigenschaften zum Code des ereignisdateiziels auf bestimm
 
 ## <a name="providing-platform-specific-values"></a>Clientplattform-spezifische Werte bereitstellen
 
-Vor dem Xamarin.Forms 2.3.4 konnte anhand die Plattform, die die Anwendung ausgeführt wurde abgerufen werden die [ `Device.OS` ](xref:Xamarin.Forms.Device.OS) -Eigenschaft und durch vergleichen, die [ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS), [ `TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android), [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone), und [ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows) -Enumerationswerte fest. Auf ähnliche Weise eines der [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) Überladungen verwendet werden, um Werte für ein Steuerelement die plattformspezifische bereitzustellen.
+Vor dem Xamarin.Forms 2.3.4 konnte anhand die Plattform, die die Anwendung ausgeführt wurde abgerufen werden die [ `Device.OS` ](xref:Xamarin.Forms.Device.OS) -Eigenschaft und durch vergleichen, die [ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS), [ `TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android), [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone), und [ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows) -Enumerationswerte fest. Auf ähnliche Weise eines der [ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) Überladungen verwendet werden, um Werte für ein Steuerelement die plattformspezifische bereitzustellen.
 
-Allerdings haben da Xamarin.Forms 2.3.4 diese APIs als veraltet markiert ersetzt und wurde. Die [ `Device` ](xref:Xamarin.Forms.Device) Klasse enthält jetzt öffentliche Zeichenfolgenkonstanten, die Cloudplattformen identifizieren [ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS), [ `Device.Android` ](xref:Xamarin.Forms.Device.Android), `Device.WinPhone`() als veraltet markiert), `Device.WinRT` (veraltet), [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP), und [ `Device.macOS` ](xref:Xamarin.Forms.Device.macOS). Auf ähnliche Weise die [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) Überladungen wurden durch ersetzt die [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) und [ `On` ](xref:Xamarin.Forms.On) APIs.
+Allerdings haben da Xamarin.Forms 2.3.4 diese APIs als veraltet markiert ersetzt und wurde. Die [ `Device` ](xref:Xamarin.Forms.Device) Klasse enthält jetzt öffentliche Zeichenfolgenkonstanten, die Cloudplattformen identifizieren [ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS), [ `Device.Android` ](xref:Xamarin.Forms.Device.Android), `Device.WinPhone`() als veraltet markiert), `Device.WinRT` (veraltet), [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP), und [ `Device.macOS` ](xref:Xamarin.Forms.Device.macOS). Auf ähnliche Weise die [ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) Überladungen wurden durch ersetzt die [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) und [ `On` ](xref:Xamarin.Forms.On) APIs.
 
-In c# können Plattform-spezifische Werte angegeben werden durch das Erstellen einer `switch` -Anweisung für die [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) -Eigenschaft, und anschließend `case` Anweisungen für die erforderlichen Plattformen:
+In c# können Plattform-spezifische Werte angegeben werden durch das Erstellen einer `switch` -Anweisung für die [ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform) -Eigenschaft, und anschließend `case` Anweisungen für die erforderlichen Plattformen:
 
 ```csharp
 double top;
@@ -46,7 +46,7 @@ switch (Device.RuntimePlatform)
 layout.Margin = new Thickness(5, top, 5, 0);
 ```
 
-Die [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) und [ `On` ](xref:Xamarin.Forms.On) Klassen bieten die gleiche Funktionalität in XAML:
+Die [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) und [ `On` ](xref:Xamarin.Forms.On) Klassen bieten die gleiche Funktionalität in XAML:
 
 ```xaml
 <StackLayout>
@@ -60,7 +60,7 @@ Die [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlat
 </StackLayout>
 ```
 
-Die [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) -Klasse ist eine generische Klasse und muss deshalb instanziiert werden, mit einem `x:TypeArguments` -Attribut, das mit dem Zieltyp übereinstimmt. In der [ `On` ](xref:Xamarin.Forms.On) -Klasse, die [ `Platform` ](xref:Xamarin.Forms.On.Platform) Attribut kann eine einzelne akzeptieren `string` Wert oder mehrere durch Kommas getrennte `string` Werte.
+Die [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) -Klasse ist eine generische Klasse und muss deshalb instanziiert werden, mit einem `x:TypeArguments` -Attribut, das mit dem Zieltyp übereinstimmt. In der [ `On` ](xref:Xamarin.Forms.On) -Klasse, die [ `Platform` ](xref:Xamarin.Forms.On.Platform) Attribut kann eine einzelne akzeptieren `string` Wert oder mehrere durch Kommas getrennte `string` Werte.
 
 > [!IMPORTANT]
 > Bereitstellen eines falschen `Platform` -Attributwert in der `On` Klasse führt nicht zu einem Fehler. Stattdessen führt der Code ohne den plattformspezifischen-Wert, der angewendet wird.
@@ -75,6 +75,7 @@ Die `Device.Idiom` können verwendet werden, um Layouts oder Funktionen, die je 
 -  **Tablet** : iPad, Windows-Geräte und Android-Geräte mehr als 600 Dips ^
 -  **Desktop** – nur in zurückgegeben [UWP-apps](~/xamarin-forms/platform/windows/installation/index.md) auf Windows 10-Desktopcomputern (gibt `Phone` auf mobilen Windows-Geräten, die auch in Szenarien mit Continuum)
 -  **TV** – Tizen TV-Geräten
+-  **Sehen Sie sich** – Tizen Watch-Geräten
 -  **Nicht unterstützte** : nicht verwendeter
 
 *^ Dips ist nicht unbedingt die Anzahl der physischen Pixel*
@@ -172,7 +173,7 @@ Wenn der Code in den Timer mit der Benutzeroberfläche interagiert (z. B. das Fe
 
 ## <a name="devicebegininvokeonmainthread"></a>Device.BeginInvokeOnMainThread
 
-Elemente der Benutzeroberfläche sollten niemals von Hintergrundthreads, z. B. Code für einen Timer oder einen Abschlusshandler für asynchrone Vorgänge wie webanforderungen zugegriffen werden. Alle Hintergrund-Code, der zum Aktualisieren der Benutzeroberfläche muss sollten umhüllt [ `BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/). Dies ist die Entsprechung der `InvokeOnMainThread` unter iOS, `RunOnUiThread` unter Android und `Dispatcher.RunAsync` für die universelle Windows-Plattform.
+Elemente der Benutzeroberfläche sollten niemals von Hintergrundthreads, z. B. Code für einen Timer oder einen Abschlusshandler für asynchrone Vorgänge wie webanforderungen zugegriffen werden. Alle Hintergrund-Code, der zum Aktualisieren der Benutzeroberfläche muss sollten umhüllt [ `BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)). Dies ist die Entsprechung der `InvokeOnMainThread` unter iOS, `RunOnUiThread` unter Android und `Dispatcher.RunAsync` für die universelle Windows-Plattform.
 
 Der Xamarin.Forms-Code ist:
 

@@ -1,58 +1,58 @@
 ---
-title: Festlegen von Eingabehilfen-Werte für Elemente der Benutzeroberfläche
-description: In diesem Artikel wird erläutert, wie die Klasse AutomationProperties verwendet, damit eine Bildschirmsprachausgabe zu den Elementen auf der Seite äußern kann.
+title: Festlegen von Eingabehilfen-Werte für die Elemente der Benutzeroberfläche
+description: In diesem Artikel wird erläutert, wie die Klasse AutomationProperties verwendet, damit eine Sprachausgabe auf der Seite zu den Elementen sprechen kann.
 ms.prod: xamarin
 ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: ad7b1c41f34c14a81910d5be30fd6484919e8d39
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 576fe34b0536c83825aa39bdd7111143d9474225
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241883"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998910"
 ---
-# <a name="setting-accessibility-values-on-user-interface-elements"></a>Festlegen von Eingabehilfen-Werte für Elemente der Benutzeroberfläche
+# <a name="setting-accessibility-values-on-user-interface-elements"></a>Festlegen von Eingabehilfen-Werte für die Elemente der Benutzeroberfläche
 
-_Xamarin.Forms ermöglicht Zugriff auf Werte auf die Elemente der Benutzeroberfläche mithilfe von angefügten Eigenschaften aus der AutomationProperties-Klasse, die wiederum von einheitlichen Zugriff auf die Werte festgelegt werden. In diesem Artikel wird erläutert, wie die Klasse AutomationProperties verwendet, damit eine Bildschirmsprachausgabe zu den Elementen auf der Seite äußern kann._
+_Mit Xamarin.Forms können Eingabehilfen-Werte, die auf Elemente der Benutzeroberfläche mithilfe von angefügten Eigenschaften von der AutomationProperties-Klasse, die wiederum Satz native Eingabehilfen-Werte festgelegt werden. In diesem Artikel wird erläutert, wie die Klasse AutomationProperties verwendet, damit eine Sprachausgabe auf der Seite zu den Elementen sprechen kann._
 
 ## <a name="overview"></a>Übersicht
 
-Xamarin.Forms ermöglicht Zugriff auf Werte für die Elemente der Benutzeroberfläche über die folgenden angefügten Eigenschaften festgelegt werden:
+Mit Xamarin.Forms können Eingabehilfen-Werte für die Elemente der Benutzeroberfläche über die folgenden angefügten Eigenschaften festgelegt werden soll:
 
 - `AutomationProperties.IsInAccessibleTree` – Gibt an, ob das Element für eine barrierefreie Anwendung verfügbar ist. Weitere Informationen finden Sie unter [AutomationProperties.IsInAccessibleTree](#isinaccessibletree).
-- `AutomationProperties.Name` – eine kurze Beschreibung des Elements, das als Bezeichner für die Spracherkennung aktivieren für das Element dient. Weitere Informationen finden Sie unter [AutomationProperties.Name](#name).
-- `AutomationProperties.HelpText` – eine längere Beschreibung für das Element, das als QuickInfo-Text, die dem Element zugeordneten betrachtet werden kann. Weitere Informationen finden Sie unter [AutomationProperties.HelpText](#helptext).
-- `AutomationProperties.LabeledBy` – können Sie ein anderes Element aus, um Informationen über Eingabehilfen für das aktuelle Element zu definieren. Weitere Informationen finden Sie unter [AutomationProperties.LabeledBy](#labeledby).
+- `AutomationProperties.Name` – eine kurze Beschreibung des Elements, das als ein Bezeichner für die Spracherkennung aktivieren, für das Element dient. Weitere Informationen finden Sie unter [AutomationProperties.Name](#name).
+- `AutomationProperties.HelpText` – eine längere Beschreibung des Elements, das als dem Element zugeordnete QuickInfo-Text verstanden werden kann. Weitere Informationen finden Sie unter [AutomationProperties.HelpText](#helptext).
+- `AutomationProperties.LabeledBy` – ermöglicht es einem anderen Element, um Informationen zur Barrierefreiheit für das aktuelle Element zu definieren. Weitere Informationen finden Sie unter [AutomationProperties.LabeledBy](#labeledby).
 
-Diese angefügte Eigenschaften Satz native Eingabehilfen-Werte, damit über das Element eine Sprachausgabe äußern kann. Weitere Informationen über angefügte Eigenschaften finden Sie unter [angefügte Eigenschaften](~/xamarin-forms/xaml/attached-properties.md).
+Diese angefügt native Eingabehilfen-Werte von Eigenschaften festgelegt, damit eine Sprachausgabe über das Element sprechen kann. Weitere Informationen zu angefügten Eigenschaften finden Sie unter [angefügte Eigenschaften](~/xamarin-forms/xaml/attached-properties.md).
 
 > [!IMPORTANT]
-> Mithilfe der `AutomationProperties` angefügte Eigenschaften Ausführung des UI-Tests unter Android beeinträchtigt werden können. Die [ `AutomationId` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.AutomationId/), `AutomationProperties.Name` und `AutomationProperties.HelpText` Eigenschaften werden beide festlegen den systemeigenen `ContentDescription` -Eigenschaft, mit der `AutomationProperties.Name` und `AutomationProperties.HelpText` Eigenschaftswerte Vorrang vor den `AutomationId`Wert (wenn beide `AutomationProperties.Name` und `AutomationProperties.HelpText` festgelegt ist, werden die Werte verkettet werden). Dies bedeutet, dass alle Tests, die Suche nach `AutomationId` schlägt fehl, wenn `AutomationProperties.Name` oder `AutomationProperties.HelpText` sind auch für das Element festlegen. In diesem Szenario Benutzeroberflächentests geändert werden darf, suchen Sie den Wert der `AutomationProperties.Name` oder `AutomationProperties.HelpText`, oder eine Verkettung der beiden.
+> Mithilfe der `AutomationProperties` angefügte Eigenschaften können die Ausführung des UI-Tests unter Android beeinträchtigen. Die [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId), `AutomationProperties.Name` und `AutomationProperties.HelpText` Eigenschaften beide setze die systemeigene `ContentDescription` -Eigenschaft, mit der `AutomationProperties.Name` und `AutomationProperties.HelpText` Eigenschaftswerte, die Vorrang vor den `AutomationId`Wert (wenn beide `AutomationProperties.Name` und `AutomationProperties.HelpText` festgelegt sind, werden die Werte werden verkettet). Dies bedeutet, dass alle Tests nach `AutomationId` schlägt fehl, wenn `AutomationProperties.Name` oder `AutomationProperties.HelpText` auch nach dem Element festgelegt werden. In diesem Szenario UI-Tests geändert werden darf, suchen Sie nach den Wert der `AutomationProperties.Name` oder `AutomationProperties.HelpText`, oder eine Verkettung beider.
 
-Jede Plattform weist unterschiedliche Bildschirmsprachausgaben zu erzählen Eingabehilfen-Werte:
+Jede Plattform gibt es verschiedene Sprachausgabe, Erzählen Sie die Eingabehilfen-Werte zu:
 
-- iOS hat VoiceOver. Weitere Informationen finden Sie unter [Test Zugriff auf Ihr Gerät mit VoiceOver](https://developer.apple.com/library/content/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html) auf developer.apple.com.
-- Android bietet TalkBack. Weitere Informationen finden Sie unter [Zugriff auf Ihre App testen](https://developer.android.com/training/accessibility/testing.html#talkback) auf developer.android.com.
-- Windows verfügt über die Sprachausgabe. Weitere Informationen finden Sie unter [überprüfen Haupt-app-Szenarien mit Sprachausgabe](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator/).
+- iOS enthält VoiceOver. Weitere Informationen finden Sie unter [Test Zugriff auf Ihr Gerät mit VoiceOver](https://developer.apple.com/library/content/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html) auf developer.apple.com.
+- Android hat TalkBack. Weitere Informationen finden Sie unter [Zugriff auf Ihre App testen](https://developer.android.com/training/accessibility/testing.html#talkback) auf developer.android.com.
+- Windows verfügt über die Sprachausgabe. Weitere Informationen finden Sie unter [Haupt-app-Szenarien zu überprüfen, indem Sie mithilfe von Microsoft-Sprachausgabe](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator/).
 
-Allerdings ist das genaue Verhalten von einer Sprachausgabe auf dem Softwareupdatepunkt und Benutzerkonfiguration davon abhängig. Die meisten Bildschirmsprachausgaben gelesen z. B. bei Erhalt des Fokus, die einem Steuerelement zugeordneten Text, sodass Benutzer sich selbst zu orientieren, wie sie die Steuerelemente auf der Seite navigieren. Einige Bildschirmsprachausgaben können auch der Benutzeroberfläche für die gesamte Anwendung, wenn eine Seite angezeigt wird, wodurch den Benutzer von aller verfügbaren nur zu Informationszwecken Inhalt der Seite erhalten, bevor Sie versuchen, navigieren.
+Allerdings ist das genaue Verhalten der Sprachausgabe auf dem Softwareupdatepunkt und Konfiguration des Benutzers abhängig. Die meisten Sprachausgaben lesen z. B. den Text eines Steuerelements zugeordnet wird, wenn es den Fokus erhält, Benutzern ermöglichen, sich zu orientieren, wie sie zwischen den Steuerelementen auf der Seite wechseln. Einige Bildschirmsprachausgaben werden auch die Benutzeroberfläche für die gesamte Anwendung lesen, wenn eine Seite angezeigt wird, wodurch den Benutzer alle den Inhalt der Seite verfügbaren nur zu Informationszwecken erhalten, bevor Sie versuchen, sie navigieren.
 
-Sprachausgaben lesen Sie auch unterschiedliche zugriffsmöglichkeiten-Werte. In der beispielanwendung:
+Sprachausgaben lesen Sie auch verschiedene Eingabehilfen-Werte. In der beispielanwendung:
 
 - VoiceOver liest die `Placeholder` Wert, der die `Entry`, gefolgt von Anweisungen für die Verwendung des Steuerelements.
-- TalkBack liest die `Placeholder` Wert, der die `Entry`, gefolgt von der `AutomationProperties.HelpText` Werts, gefolgt vom Anweisungen für die Verwendung des Steuerelements.
-- Sprachausgabe liest die `AutomationProperties.LabeledBy` Wert, der die `Entry`, gefolgt von Anweisungen zur Verwendung des Steuerelements.
+- TalkBack liest die `Placeholder` Wert, der die `Entry`, gefolgt von der `AutomationProperties.HelpText` Werts, gefolgt von Anweisungen für die Verwendung des Steuerelements.
+- Die Sprachausgabe liest die `AutomationProperties.LabeledBy` Wert der `Entry`, indem Sie die Anweisungen zur Verwendung des Steuerelements gefolgt.
 
-Darüber hinaus Sprachausgabe priorisieren wird `AutomationProperties.Name`, `AutomationProperties.LabeledBy`, und klicken Sie dann `AutomationProperties.HelpText`. Auf Android-Geräten kann TalkBack Kombinieren der `AutomationProperties.Name` und `AutomationProperties.HelpText` Werte. Aus diesem Grund wird empfohlen, dass Eingabehilfen gründliche Tests für jede Plattform, um eine optimale Leistung sicherzustellen, dass durchgeführt wird.
+Darüber hinaus wird die Sprachausgabe bevorzugen `AutomationProperties.Name`, `AutomationProperties.LabeledBy`, und klicken Sie dann `AutomationProperties.HelpText`. Unter Android TalkBack kombinieren, kann die `AutomationProperties.Name` und `AutomationProperties.HelpText` Werte. Aus diesem Grund empfiehlt es sich, dass der Zugriff auf umfassende Tests auf jeder Plattform aus, um sicherzustellen, dass eine optimale Leistung durchgeführt wird.
 
 <a name="isinaccessibletree" />
 
 ## <a name="automationpropertiesisinaccessibletree"></a>AutomationProperties.IsInAccessibleTree
 
-Die `AutomationProperties.IsInAccessibleTree` angefügte Eigenschaft ist eine `boolean` , die bestimmt, ob das Element zugegriffen werden kann und daher sichtbar ist, um die Sprachausgabe ist. Er muss festgelegt werden, um `true` zu verwenden, den Zugriff auf andere angefügte Eigenschaften. Dies kann in XAML wie folgt erfolgen:
+Die `AutomationProperties.IsInAccessibleTree` angefügte Eigenschaft ist eine `boolean` , die bestimmt, ob das Element zugegriffen werden kann und somit sichtbar ist, um der Sprachausgabe. Er muss festgelegt sein, um `true` verwenden Sie den Zugriff auf andere angefügten Eigenschaften. Dies kann in XAML wie folgt erreicht werden:
 
 ```xaml
 <Entry AutomationProperties.IsInAccessibleTree="true" />
@@ -66,13 +66,13 @@ AutomationProperties.SetIsInAccessibleTree(entry, true);
 ```
 
 > [!NOTE]
-> Beachten Sie, dass die [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) Methode kann auch verwendet werden, Festlegen der `AutomationProperties.IsInAccessibleTree` angefügte Eigenschaft – `entry.SetValue(AutomationProperties.IsInAccessibleTreeProperty, true);`
+> Beachten Sie, dass die [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) Methode kann auch verwendet werden, Festlegen der `AutomationProperties.IsInAccessibleTree` angefügte Eigenschaft: `entry.SetValue(AutomationProperties.IsInAccessibleTreeProperty, true);`
 
 <a name="name" />
 
 ## <a name="automationpropertiesname"></a>AutomationProperties.Name
 
-Die `AutomationProperties.Name` Wert der angefügten Eigenschaft sollte eine kurze, beschreibende Textzeichenfolge, die von eine Sprachausgabe verwendet wird, um ein Element bekannt sein. Für Elemente, die eine Bedeutung haben, die zum Verständnis des Inhalts oder mit der Benutzeroberfläche interagieren wichtig ist, sollte diese Eigenschaft festgelegt werden. Dies kann in XAML wie folgt erfolgen:
+Die `AutomationProperties.Name` Wert der angefügten Eigenschaft muss eine kurze, beschreibende Textzeichenfolge, die eine Sprachausgabe verwendet wird, um ein Element bekanntgeben zu können. Für Elemente, die eine Bedeutung, die haben für das Verständnis des Inhalts oder der Interaktion mit der Benutzeroberfläche wichtig ist, sollte diese Eigenschaft festgelegt werden. Dies kann in XAML wie folgt erreicht werden:
 
 ```xaml
 <ActivityIndicator AutomationProperties.IsInAccessibleTree="true"
@@ -88,13 +88,13 @@ AutomationProperties.SetName(activityIndicator, "Progress indicator");
 ```
 
 > [!NOTE]
-> Beachten Sie, dass die [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) Methode kann auch verwendet werden, Festlegen der `AutomationProperties.Name` angefügte Eigenschaft – `activityIndicator.SetValue(AutomationProperties.NameProperty, "Progress indicator");`
+> Beachten Sie, dass die [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) Methode kann auch verwendet werden, Festlegen der `AutomationProperties.Name` angefügte Eigenschaft: `activityIndicator.SetValue(AutomationProperties.NameProperty, "Progress indicator");`
 
 <a name="helptext" />
 
 ## <a name="automationpropertieshelptext"></a>AutomationProperties.HelpText
 
-Die `AutomationProperties.HelpText` angefügte Eigenschaft sollte auf Text zur Beschreibung der Benutzeroberflächen-Elements festgelegt werden, und kann sein, um herauszufinden, der als QuickInfo-Text zu dem Element gehört. Dies kann in XAML wie folgt erfolgen:
+Die `AutomationProperties.HelpText` angefügte Eigenschaft sollte festgelegt werden, um Text, der das Benutzeroberflächenelement beschreibt und zugeordnet sein kann sich der als QuickInfo-Text des Elements. Dies kann in XAML wie folgt erreicht werden:
 
 ```xaml
 <Button Text="Toggle ActivityIndicator"
@@ -111,15 +111,15 @@ AutomationProperties.SetHelpText(button, "Tap to toggle the activity indicator")
 ```
 
 > [!NOTE]
-> Beachten Sie, dass die [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) Methode kann auch verwendet werden, Festlegen der `AutomationProperties.HelpText` angefügte Eigenschaft – `button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`
+> Beachten Sie, dass die [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) Methode kann auch verwendet werden, Festlegen der `AutomationProperties.HelpText` angefügte Eigenschaft: `button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`
 
-Auf manchen Plattformen zur Bearbeitung steuert, wie z. B. ein [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)die `HelpText` Eigenschaft kann in einigen Fällen nicht angegeben und mit Platzhaltertext ersetzt. "Geben Sie beispielsweise Ihr Name" ist ein guter Kandidat für die [ `Entry.Placeholder` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Placeholder/) -Eigenschaft, die den Text im Steuerelement vor dem tatsächlichen Benutzereingaben platziert.
+Auf manchen Plattformen ist für die Bearbeitung steuert, wie z. B. eine [ `Entry` ](xref:Xamarin.Forms.Entry), `HelpText` Eigenschaft kann manchmal weggelassen und mit dem Platzhaltertext ersetzt werden. "Geben Sie beispielsweise Ihren Namen ein." ist ein guter Kandidat für die [ `Entry.Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder) -Eigenschaft, die den Text im Steuerelement vor der tatsächlichen Benutzereingaben platziert.
 
 <a name="labeledby" />
 
 ## <a name="automationpropertieslabeledby"></a>AutomationProperties.LabeledBy
 
-Die `AutomationProperties.LabeledBy` angefügte Eigenschaft ermöglicht es, ein anderes Element aus, um Informationen über Eingabehilfen für das aktuelle Element zu definieren. Z. B. eine [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) neben einer [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) kann verwendet werden, um was beschreiben die `Entry` darstellt. Dies kann in XAML wie folgt erfolgen:
+Die `AutomationProperties.LabeledBy` angefügte Eigenschaft ermöglicht es einem anderen Element, um Informationen zur Barrierefreiheit für das aktuelle Element zu definieren. Z. B. eine [ `Label` ](xref:Xamarin.Forms.Label) neben einer [ `Entry` ](xref:Xamarin.Forms.Entry) kann verwendet werden, um was beschreiben die `Entry` darstellt. Dies kann in XAML wie folgt erreicht werden:
 
 ```xaml
 <Label x:Name="label" Text="Enter your name: " />
@@ -137,14 +137,14 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 ```
 
 > [!NOTE]
-> Beachten Sie, dass die [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) Methode kann auch verwendet werden, Festlegen der `AutomationProperties.IsInAccessibleTree` angefügte Eigenschaft – `entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`
+> Beachten Sie, dass die [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) Methode kann auch verwendet werden, Festlegen der `AutomationProperties.IsInAccessibleTree` angefügte Eigenschaft: `entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wird erläutert, wie festzulegende Eingabehilfen-Werte für den Benutzer Elemente der Benutzeroberfläche in einer Xamarin.Forms-Anwendung mithilfe von angefügten Eigenschaften aus der `AutomationProperties` Klasse. Diese Eigenschaften Satz native Eingabehilfen-Werte angefügt, sodass Bildschirmsprachausgaben zu den Elementen auf der Seite äußern kann.
+In diesem Artikel wurde erläutert, wie festzulegende Eingabehilfen-Werte für den Benutzer Elemente der Benutzeroberfläche in einer Xamarin.Forms-Anwendung mithilfe von angefügten Eigenschaften aus der `AutomationProperties` Klasse. Diese angefügt native Eingabehilfen-Werte von Eigenschaften festgelegt, damit eine Sprachausgabe auf der Seite zu den Elementen sprechen kann.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Angefügte Eigenschaften](~/xamarin-forms/xaml/attached-properties.md)
-- [Eingabehilfen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
+- [Barrierefreiheit (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)

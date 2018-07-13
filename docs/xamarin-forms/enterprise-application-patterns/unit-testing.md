@@ -1,41 +1,41 @@
 ---
-title: Testen von Unternehmens-Apps Einheit
-description: In diesem Kapitel wird erläutert, wie Komponententests in der mobilen eShopOnContainers-Anwendung ausgeführt wird.
+title: Unit-Testing Unternehmens-Apps
+description: In diesem Kapitel wird erläutert, wie Komponententests in der eShopOnContainers-mobile-app ausgeführt wird.
 ms.prod: xamarin
 ms.assetid: 4af82e52-f99b-4cad-b278-1745f190c240
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 06cd89e0b0871eac723e8580340173f77821e4ed
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 02aeedd5498c47950e2fbc0d218de05bc0bb3204
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242530"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998682"
 ---
-# <a name="unit-testing-enterprise-apps"></a>Testen von Unternehmens-Apps Einheit
+# <a name="unit-testing-enterprise-apps"></a>Unit-Testing Unternehmens-Apps
 
-Mobile apps haben eindeutige Probleme, denen Desktop- und webbasierte Anwendungen keine Gedanken. Mobile Benutzer von den Geräten, die sie durch die Netzwerkkonnektivität, indem Sie die Verfügbarkeit von Diensten und einen Bereich von anderen Faktoren verwenden, unterscheidet sich. Aus diesem Grund sollte mobiler apps getestet werden, wie sie in der wirklichen Welt verwendet werden sollen, um die Qualität, Zuverlässigkeit und Leistung zu verbessern. Es gibt viele Arten von Tests, die für eine app, einschließlich Komponententests, Integrationstests zu legen, und testen, mit Komponententests wird die am häufigsten verwendete Form des Testens Benutzeroberfläche ausgeführt werden soll.
+Mobile apps haben eindeutige Probleme, Desktop- und webbasierten Anwendungen nicht kümmern. Mobile Benutzer von den Geräten, die sie durch die Netzwerkverbindung getrennt wird, indem Sie die Verfügbarkeit von Diensten und einen Bereich von anderen Faktoren verwenden, unterscheiden sich. Aus diesem Grund sollte mobiler apps getestet werden, wie sie in der Praxis verwendet werden werden, um die Qualität, Zuverlässigkeit und Leistung zu verbessern. Es gibt viele Arten von Tests, die für eine app, einschließlich Komponententests, Integrationstests und testen, mit Komponententests werden das am häufigsten verwendete Form des Testens der Benutzeroberfläche ausgeführt werden soll.
 
-Ein Komponententest nimmt eine kleine Einheit der Anwendung, in der Regel eine Methode, isoliert es aus der Rest des Codes und stellt sicher, dass es sich erwartungsgemäß verhält. Das Ziel besteht darin, dass jede Funktionseinheit wie erwartet, sodass Fehler in der app verteilt nicht überprüfen. Erkennen eines Fehlers, wo es auftritt, ist jedoch effizienter, die Auswirkungen eines Fehlers indirekt zu einem sekundären Zeitpunkt des Fehlers prüfen.
+Ein Komponententest nimmt eine kleine Einheit der app, in der Regel eine Methode, wird es vom Rest des Codes isoliert und stellt sicher, dass sie sich erwartungsgemäß verhält. Ziel ist es, überprüfen Sie, dass jede Einheit der Funktionalität führt erwartungsgemäß funktioniert, sodass Fehler in der gesamten app weitergegeben werden, nicht. Erkennen eines Fehlers, in dem er auftritt, ist jedoch effizienter, beobachten die Auswirkungen eines Fehlers indirekt an einen sekundären Point of Failure.
 
-UnitTests hat die stärksten Auswirkungen auf die Qualität des Codes auf, wenn es sich um ein wesentlicher Bestandteil der Software-Entwicklungsworkflow ist. Als eine Methode geschrieben wurde, sollte Komponententests geschrieben werden können, die dem Verhalten der Methode als Reaktion auf Standard, Grenze und falsche Fälle der Eingabedaten und die Überprüfung alle expliziten oder impliziten Annahmen durch den Code überprüfen. Alternativ werden mit testgesteuerte Entwicklung Komponententests vor dem Code geschrieben. In diesem Szenario dienen Komponententests als Entwurfsdokumentation und als funktionale Spezifikationen der Funktionen.
+Komponententests hat die stärksten Auswirkungen auf die Qualität des Codes auf, wenn es sich um ein wesentlicher Bestandteil der Software-Entwicklungsworkflow ist. Sobald eine Methode geschrieben wurde, sollte Komponententests geschrieben werden, dass dem Verhalten der Methode als Reaktion auf Standard, Grenzen und falsche Anfragen von Eingabedaten, und die Überprüfung alle expliziten oder impliziten Annahmen durch den Code überprüfen, ob. Sie können auch mit testgesteuerte Entwicklung, Komponententests vor dem Code wurden erstellt. In diesem Szenario werden Komponententests als Entwurfsdokumentation und als funktionale Spezifikationen der fungieren.
 
 > [!NOTE]
-> Komponententests sind sehr gut für Regression – d. h. Funktionen, die Arbeit verwendet, jedoch wurde durch eine fehlerhafte Update gestört wurde.
+> Komponententests sind sehr effektiv für Regression – d. h. Funktionen, die zum Arbeiten verwendet, jedoch wurde von einem fehlerhaften Update gestört wurde.
 
-In der Regel verwenden Sie Komponententests anordnen Act assert Muster:
+In der Regel verwenden Sie Komponententests Arrange-Act-assert-Muster:
 
 -   Die *anordnen* Teil der Komponententestmethode Objekte initialisiert und legt den Wert der Daten, die zu testende Methode übergeben werden.
--   Die *fungieren* Abschnitt Ruft die Methode im Test mit erforderlichen Argumenten.
--   Die *assert* Abschnitt wird überprüft, ob die Aktion an, der die zu testende Methode wie erwartet.
+-   Die *fungieren* Abschnitt Ruft die Methode unter testbedingungen mit erforderlichen Argumenten.
+-   Die *assert* Abschnitt stellt sicher, dass die Aktion an, der die zu testende Methode wie erwartet verhält.
 
-Dieses Muster wird sichergestellt, dass Komponententests lesbar und konsistent.
+Mit diesem Muster wird sichergestellt, dass Komponententests lesbar und konsistent.
 
-## <a name="dependency-injection-and-unit-testing"></a>Abhängigkeiteneinschleusung und Komponententests
+## <a name="dependency-injection-and-unit-testing"></a>Dependency Injection und Komponententests
 
-Einer der Beweggründe für die Übernahme einer lose verknüpften Architektur ist, dass sie Komponententests vereinfacht. Einer der Typen mit Autofac registriert ist die `OrderService` Klasse. Das folgende Codebeispiel zeigt einen Überblick über diese Klasse:
+Einer der Beweggründe für die Einführung einer lose gekoppelten Architektur ist, dass es sich um Komponententests ermöglicht. Einer der Typen mit Autofac registriert ist die `OrderService` Klasse. Das folgende Codebeispiel zeigt einen Überblick über diese Klasse:
 
 ```csharp
 public class OrderDetailViewModel : ViewModelBase  
@@ -50,34 +50,34 @@ public class OrderDetailViewModel : ViewModelBase
 }
 ```
 
-Die `OrderDetailViewModel` -Klasse verfügt über eine Abhängigkeit auf der `IOrderService` geben, der der Container aufgelöst wird, wenn er instanziiert einen `OrderDetailViewModel` Objekt. Allerdings anstatt erstellen ein `OrderService` Objekt Komponententest der `OrderDetailViewModel` -Klasse, ersetzen Sie stattdessen die `OrderService` Objekt mit einem Mock für die Tests. Abbildung 10 – 1 zeigt diese Beziehung.
+Die `OrderDetailViewModel` -Klasse verfügt über eine Abhängigkeit auf der `IOrderService` geben, der der Container aufgelöst wird, wenn es instanziiert einen `OrderDetailViewModel` Objekt. Jedoch statt erstellen ein `OrderService` Objekt um einen Komponententest durchführen der `OrderDetailViewModel` -Klasse, stattdessen ersetzen die `OrderService` Objekt mit der ein Mock im Rahmen der Tests. Abbildung 10-1 zeigt diese Beziehung.
 
 ![](unit-testing-images/unittesting.png "Klassen, die die IOrderService-Schnittstelle implementieren")
 
-**Abbildung 10 – 1:** Klassen, die die IOrderService-Schnittstelle implementieren
+**Abbildung 10-1:** Klassen, die die IOrderService-Schnittstelle implementieren
 
-Dieser Ansatz ermöglicht die `OrderService` Objekt übergeben werden die `OrderDetailViewModel` -Klasse zur Laufzeit und im Interesse der Prüfbarkeit, sie können die `OrderMockService` Klasse übergeben werden der `OrderDetailViewModel` Klasse zum Zeitpunkt der Tests. Der Hauptvorteil dieses Ansatzes ist, dass sie Komponententests ausgeführt werden, ohne dass unhandlich Ressourcen wie Webdienste oder Datenbanken ermöglicht.
+Dieser Ansatz ermöglicht es der `OrderService` Objekt, das Übergeben der `OrderDetailViewModel` Klasse zur Laufzeit, und klicken Sie im Interesse der testbarkeit, sie können die `OrderMockService` Klasse übergeben die `OrderDetailViewModel` Klasse während der Testphase. Der Hauptvorteil dieses Ansatzes ist, dass Komponententests ohne umständliche Ressourcen wie Web-Dienste oder Datenbanken ausgeführt werden können.
 
-## <a name="testing-mvvm-applications"></a>Testen von Anwendungen mit MVVM
+## <a name="testing-mvvm-applications"></a>Testen von MVVM-Anwendungen
 
-Testen von Modellen und Modelle anzeigen von MVVM Anwendungen ist identisch mit Tests andere Klassen bilden, und die gleichen Tools und Techniken – z. B. Komponententests und imitieren, können verwendet werden. Es gibt jedoch einige Muster, die typisch für Modell sind und die Ansicht Modellklassen, die von bestimmten Einheit Testverfahren profitieren können.
+Testen der Modelle und Ansichtsmodelle von MVVM-Anwendungen ist identisch mit dem Testen andere Klassen bilden, und die gleichen Tools und Techniken – z. B. die Komponententests und Mocks, können verwendet werden. Es gibt jedoch einige Muster, die typisch für Modell und ViewModel-Klassen, die von bestimmten Einheit Testverfahren profitieren können.
 
 > [!TIP]
-> Testen Sie ein Ziel mit jeder Komponententest. Seien Sie nicht möchten, stellen eine Einheit Übung mehr als einen Aspekt des Verhaltens der Einheit testen. Auf diese Weise führt zu Tests, die schwer zu lesen und zu aktualisieren. Sie können auch zu Verwirrung führen, beim Interpretieren eines Fehlers.
+> Testen Sie eins mit jeder Komponententest. Seien Sie nicht versucht, eine Übung mehr als einen Aspekt des Verhaltens für die Einheit des test-Einheit zu machen. Auf diese Weise führt Tests, die schwer zu lesen und zu aktualisieren. Es kann auch zu Verwirrung führen, wenn einen Fehler.
 
-Verwendet der eShopOnContainers-Verwaltungsrichtlinien für mobile Apps [xUnit](https://xunit.github.io/) Komponententests, ausführen, die zwei verschiedene Arten von Komponententests unterstützt:
+Die eShopOnContainers-mobile app verwendet [xUnit](https://xunit.github.io/) zum Ausführen von Komponententests, die zwei verschiedene Arten von Komponententests unterstützt:
 
--   Fakten sind Tests, die immer "true" werden die invariante Bedingungen zu testen.
--   Theorien sind Tests, die nur "true" für einen bestimmten Satz von Daten sind.
+-   Fakten sind Tests, die immer "true", sind der invariante Bedingungen zu testen.
+-   Theorien sind Tests, die nur für einen bestimmten Satz von Daten "true" sind.
 
-Mit der mobilen app eShopOnContainers enthaltenen Komponententests sind Fakt Tests, und daher wird jede Komponententestmethode ergänzt, mit der `[Fact]` Attribut.
+Mit der mobilen app von eShopOnContainers enthaltenen Komponententests sind Tatsache Tests aus, und daher wird jede Komponententestmethode ergänzt, mit der `[Fact]` Attribut.
 
 > [!NOTE]
-> durch einen Test Runner werden Tests xUnit ausgeführt. Führen Sie zum Ausführen von Test Runner das eShopOnContainers.TestRunner-Projekt für die erforderliche Plattform aus.
+> xUnit-Tests werden von einem Test Runner ausgeführt. Führen Sie zum Ausführen von Test Runner die eShopOnContainers.TestRunner-Projekt für die erforderliche Plattform ein.
 
 ### <a name="testing-asynchronous-functionality"></a>Testen der asynchronen Funktionalität
 
-Beim Implementieren des Steuerelementmusters MVVM aufrufvorgängen Modelle anzeigen in der Regel auf Dienste, häufig asynchron. Tests für Code, der in der Regel diese Vorgänge ruft werden Mocks als Ersatz für welche Dienste tatsächlich verwenden. Im folgenden Codebeispiel wird veranschaulicht, asynchrone Funktionen durch das Übergeben von eines simulierten Diensts an einem Ansichtsmodell getestet:
+Wenn Sie das MVVM-Muster zu implementieren, rufen Sie anzeigemodelle in der Regel Vorgänge für Dienste, häufig asynchron. Tests für Code, der diese Vorgänge, in der Regel aufruft verwenden Sie Mocks als Ersatz für welche Dienste tatsächlich. Im folgenden Codebeispiel wird veranschaulicht, Testen von asynchronen Funktionalität durch ein mock-Dienst in einem View Model übergeben:
 
 ```csharp
 [Fact]  
@@ -93,15 +93,15 @@ public async Task OrderPropertyIsNotNullAfterViewModelInitializationTest()
 }
 ```
 
-Diese Komponententests überprüft, ob die `Order` Eigenschaft von der `OrderDetailViewModel` Instanz weist einen Wert nach der `InitializeAsync` Methode wurde aufgerufen. Die `InitializeAsync` Methode wird aufgerufen, wenn das Ansichtsmodell entsprechende Ansicht zu der navigiert wird. Weitere Informationen über die Navigation finden Sie unter [Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md).
+Testet dieser Komponententest überprüft, ob die `Order` Eigenschaft der `OrderDetailViewModel` Instanz hat einen Wert, nachdem die `InitializeAsync` Methode wurde aufgerufen. Die `InitializeAsync` Methode wird aufgerufen, wenn die entsprechende Ansicht des Ansichtsmodells zu dem navigiert wird. Weitere Informationen zur Navigation finden Sie unter [Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md).
 
-Wenn die `OrderDetailViewModel` Instanz erstellt, die es erwartet ein `OrderService` Instanz als Argument angegeben werden. Allerdings die `OrderService` Ruft Daten von einem Webdienst ab. Aus diesem Grund eine `OrderMockService` -Instanz, die eine Pseudoversion wird von der `OrderService` Klasse, die als Argument angegeben ist die `OrderDetailViewModel` Konstruktor. Nachdem des Ansichtsmodells `InitializeAsync` Methode aufgerufen wird, ruft die `IOrderService` Vorgänge simulierte Daten werden abgerufen, statt mit einem Webdienst kommuniziert.
+Wenn die `OrderDetailViewModel` Instanz erstellt, es erwartet, dass ein `OrderService` -Instanz als Argument angegeben werden. Allerdings die `OrderService` Ruft Daten aus einem Webdienst ab. Aus diesem Grund eine `OrderMockService` -Instanz, die eine Pseudoversion wird von der `OrderService` Klasse, die als Argument angegeben ist die `OrderDetailViewModel` Konstruktor. Dann, wenn des Ansichtsmodells `InitializeAsync` Methode wird aufgerufen, ruft die `IOrderService` Vorgänge simulierte Daten ist nicht mit einem Webdienst kommuniziert, sondern abgerufen.
 
-### <a name="testing-inotifypropertychanged-implementations"></a>Testen der INotifyPropertyChanged-Implementierungen
+### <a name="testing-inotifypropertychanged-implementations"></a>Testen von Implementierungen von "INotifyPropertyChanged"
 
-Implementieren der `INotifyPropertyChanged` Schnittstelle ermöglicht es, Ansichten, auf die Änderungen zu reagieren, die aus Sicht stammen und Modelle. Diese Änderungen sind nicht auf Daten in Steuerelementen beschränkt – sie werden auch verwendet, um die Sicht, z. B. Ansichtszustände-Modell zu steuern, Animationen gestartet werden soll oder Steuerelemente zu deaktivierenden verursachen.
+Implementieren der `INotifyPropertyChanged` Schnittstelle ermöglicht es, Ansichten, um auf Änderungen reagieren, die aus der Sicht stammen Ansichtsmodelle und Modelle. Diese Änderungen sind nicht auf Daten in Steuerelementen beschränkt – sie werden auch verwendet, die Ansicht, z. B. Ansichtszustände-Modell zu steuern, die dazu führen, dass Animationen gestartet werden oder Steuerelemente deaktiviert werden soll.
 
-Eigenschaften, die direkt von den Komponententest aktualisiert werden können, können durch das Anfügen an eines ereignishandlers getestet werden die `PropertyChanged` Ereignis und überprüfen, ob das Ereignis ausgelöst wird, nachdem Sie einen neuen Wert für die Eigenschaft festgelegt haben. Im folgenden Codebeispiel wird veranschaulicht, einen solchen Test:
+Eigenschaften, die direkt vom Komponententest aktualisiert werden können, können durch Anhängen eines ereignishandlers zu getestet werden die `PropertyChanged` Ereignis- und überprüft, ob das Ereignis ausgelöst wird, nachdem Sie einen neuen Wert für die Eigenschaft festgelegt haben. Das folgende Codebeispiel zeigt einen solchen Test:
 
 ```csharp
 [Fact]  
@@ -123,11 +123,11 @@ public async Task SettingOrderPropertyShouldRaisePropertyChanged()
 }
 ```
 
-Komponententest ruft die `InitializeAsync` Methode der `OrderViewModel` Klasse, wodurch seine `Order` Eigenschaft aktualisiert werden. Der Komponententest übergeben wird, bereitgestellt, die die `PropertyChanged` Ereignis wird ausgelöst, für die `Order` Eigenschaft.
+Testet dieser Komponententest ruft die `InitializeAsync` Methode der `OrderViewModel` Klasse, wodurch die `Order` zu aktualisierenden Eigenschaft. Der Komponententest wird bestanden, bereitgestellt, die die `PropertyChanged` Ereignis wird ausgelöst, für die `Order` Eigenschaft.
 
-### <a name="testing-message-based-communication"></a>Testen die meldungsbasierte Kommunikation
+### <a name="testing-message-based-communication"></a>Testen die nachrichtenbasierte Kommunikation
 
-Ansicht modelliert, bei denen die [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) Klasse, um die Kommunikation zwischen lose verknüpfte Klassen kann Einheit getestet werden durch Abonnieren der Nachricht gesendet werden, indem der Code unter dem Test, wie im folgenden Codebeispiel wird veranschaulicht:
+Anzeigemodelle, verwenden die [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) Klasse für die Kommunikation zwischen lose gekoppelten Klassen kann Komponententests getestet werden durch Abonnieren der Nachricht gesendet werden, indem der zu testenden Code, wie im folgenden Codebeispiel wird veranschaulicht:
 
 ```csharp
 [Fact]  
@@ -148,11 +148,11 @@ public void AddCatalogItemCommandSendsAddProductMessageTest()
 }
 ```
 
-Diese Komponententests überprüft, ob die `CatalogViewModel` veröffentlicht die `AddProduct` Nachricht als Antwort auf seine `AddCatalogItemCommand` ausgeführt wird. Da die [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) Klasse Multicastnachricht Abonnements unterstützt, die der Komponententest abonnieren kann die `AddProduct` Nachricht, und führen Sie einen Rückrufdelegaten als Antwort auf abgerufen wird. Legt dieser Rückrufdelegat, angegeben als Lambda-Ausdruck, ein `boolean` Feld, das von verwendet wird, die `Assert` Anweisung, um das Verhalten des Tests überprüfen.
+Diese Komponententests überprüft, ob die `CatalogViewModel` veröffentlicht die `AddProduct` Nachricht als Antwort auf seine `AddCatalogItemCommand` ausgeführt wird. Da die [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) Klasse Multicastnachricht-Abonnements unterstützt, kann der Komponententest Abonnieren der `AddProduct` Nachricht, und führen Sie einen Callback-Delegaten als Reaktion auf erhalten. Callback-Delegaten, angegeben als ein Lambda-Ausdruck legt eine `boolean` Feld, das verwendet wird die `Assert` Anweisung, um das Verhalten des Tests zu überprüfen.
 
-### <a name="testing-exception-handling"></a>Testen die Behandlung von Ausnahmen
+### <a name="testing-exception-handling"></a>Testen der Behandlung von Ausnahmen
 
-Komponententests können geschrieben werden auch dieser Überprüfung an, der für ungültige Aktionen oder Eingaben, bestimmte Ausnahmen ausgelöst werden wie im folgenden Codebeispiel gezeigt:
+Komponententests können auch geschrieben werden, überprüfen Sie, die für ungültige Aktionen oder Eingaben, bestimmte Ausnahmen ausgelöst werden wie im folgenden Codebeispiel wird veranschaulicht:
 
 ```csharp
 [Fact]  
@@ -168,15 +168,15 @@ public void InvalidEventNameShouldThrowArgumentExceptionText()
 }
 ```
 
-Komponententest löst eine Ausnahme aus, da die [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Steuerelement verfügt nicht über ein Ereignis namens `OnItemTapped`. Die `Assert.Throws<T>` Methode ist eine generische Methode, in dem `T` ist der Typ der erwarteten Ausnahme. Das Argument zu übergeben, um die `Assert.Throws<T>` Methode ist ein Lambda-Ausdruck, der die Ausnahme ausgelöst wird. Aus diesem Grund wird der Komponententest übergeben, vorausgesetzt, dass der Lambda-Ausdruck löst einen `ArgumentException`.
+Testet dieser Komponententest wird eine Ausnahme ausgelöst, da die [ `ListView` ](xref:Xamarin.Forms.ListView) -Steuerelement verfügt nicht über ein Ereignis namens `OnItemTapped`. Die `Assert.Throws<T>` Methode ist eine generische Methode, in denen `T` ist der Typ der erwarteten Ausnahme. Das Argument zu übergeben, um die `Assert.Throws<T>` Methode ist ein Lambda-Ausdruck, der die Ausnahme ausgelöst wird. Aus diesem Grund der Komponententest wird bestanden, vorausgesetzt, dass der Lambda-Ausdruck löst einen `ArgumentException`.
 
->💡 **Tipp**: vermeiden Sie das Schreiben von Komponententests, die Meldungs-Ausnahme zu untersuchen. Ausnahme Meldungs-Zeit ändern können, und daher Komponententests, die abhängig von deren Vorhandensein als anfälligen betrachtet werden.
+>💡 **Tipp**: zu vermeiden, Schreiben von Komponententests, die Zeichenfolgen für Ausnahme zu untersuchen. Zeichenfolgen für Ausnahme im Laufe der Zeit ändern können, und Komponententests, die auf ihr Vorhandensein beruhen daher gelten als anfälligen.
 
-### <a name="testing-validation"></a>Testen der Gültigkeitsüberprüfung
+### <a name="testing-validation"></a>Testen der Validierung
 
-Es gibt zwei Aspekte für das Testen von der Implementierung der Validierung: testen möchten, ob alle Validierungsregeln ordnungsgemäß implementiert werden, und testen, die die `ValidatableObject<T>` Klasse erwartungsgemäß.
+Es gibt zwei Aspekte zum Testen der Implementierung der Validierung: testen, ob alle Validierungsregeln ordnungsgemäß implementiert werden, und testen, die die `ValidatableObject<T>` Klasse wie erwartet ausgeführt wird.
 
-Validierungslogik ist in der Regel einfach zu testen, da sie in der Regel ein eigenständiger Prozess ist, in dem die Ausgabe für die Eingabe hängt ab. Es darf Tests auf den Ergebnissen des Aufrufs der `Validate` Methode für jede Eigenschaft, die mindestens eine zugeordnete Validierungsregel aufweist, wie im folgenden Codebeispiel wird veranschaulicht:
+Validierungslogik ist in der Regel einfach zu testen, da sie in der Regel einen eigenständigen Prozess ist, bei der Eingabe die Ausgabe abhängig ist. Vorhanden sein soll Tests die Ergebnisse eines Aufrufs der `Validate` Methode für jede Eigenschaft, die mindestens eine zugehörige Überprüfungsregel, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 [Fact]  
@@ -192,9 +192,9 @@ public void CheckValidationPassesWhenBothPropertiesHaveDataTest()
 }
 ```
 
-Diese Komponententests überprüft, dass die Überprüfung ist, wenn erfolgreich die beiden `ValidatableObject<T>` Eigenschaften in der `MockViewModel` Instanz sowohl über Daten verfügen.
+Diese Komponententests überprüft, dass die Überprüfung erfolgreich ist, wenn die beiden `ValidatableObject<T>` Eigenschaften in der `MockViewModel` Instanz sowohl über Daten verfügen.
 
-Und überprüfen, dass die Überprüfung ist erfolgreich, Komponententests für die Überprüfung sollte auch Überprüfen der Werte von der `Value`, `IsValid`, und `Errors` -Eigenschaft jedes `ValidatableObject<T>` Instanz, um sicherzustellen, dass die Klasse wie erwartet verhält. Im folgenden Codebeispiel wird veranschaulicht, einen Komponententest, der dies tut:
+Und überprüfen, dass die Überprüfung erfolgreich ist, Komponententests für die Validierung hinaus sollten Sie überprüfen die Werte der `Value`, `IsValid`, und `Errors` Eigenschaft der einzelnen `ValidatableObject<T>` Instanz, um sicherzustellen, dass die Klasse wie erwartet ausgeführt wird. Im folgenden Codebeispiel wird veranschaulicht, einen Komponententest, der ihn durchführt:
 
 ```csharp
 [Fact]  
@@ -215,18 +215,18 @@ public void CheckValidationFailsWhenOnlyForenameHasDataTest()
 }
 ```
 
-Diese Komponententests überprüft, dass die Überprüfung schlägt fehl, wenn die `Surname` Eigenschaft von der `MockViewModel` verfügt nicht über alle Daten, und die `Value`, `IsValid`, und `Errors` -Eigenschaft jedes `ValidatableObject<T>` Instanz sind richtig festgelegt.
+Diese Komponententests überprüft, dass die Überprüfung schlägt fehl, wenn die `Surname` Eigenschaft der `MockViewModel` verfügt nicht über alle Daten, und die `Value`, `IsValid`, und `Errors` Eigenschaft der einzelnen `ValidatableObject<T>` Instanz korrekt eingestellt sind.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Ein Komponententest nimmt eine kleine Einheit der Anwendung, in der Regel eine Methode, isoliert es aus der Rest des Codes und stellt sicher, dass es sich erwartungsgemäß verhält. Das Ziel besteht darin, dass jede Funktionseinheit wie erwartet, sodass Fehler in der app verteilt nicht überprüfen.
+Ein Komponententest nimmt eine kleine Einheit der app, in der Regel eine Methode, wird es vom Rest des Codes isoliert und stellt sicher, dass sie sich erwartungsgemäß verhält. Ziel ist es, überprüfen Sie, dass jede Einheit der Funktionalität führt erwartungsgemäß funktioniert, sodass Fehler in der gesamten app weitergegeben werden, nicht.
 
-Das Verhalten eines Objekts getesteten kann durch Ersetzen der abhängigen Objekte mit Pseudoobjekten, mit die das Verhalten der abhängigen Objekte simuliert isoliert werden. Dadurch können die Komponententests ausgeführt werden, ohne dass unhandlich Ressourcen wie Webdienste oder Datenbanken.
+Durch Ersetzen von abhängigen Objekte mit Pseudoobjekten, die das Verhalten der abhängige Objekte zu simulieren, kann das Verhalten eines Objekts im Test isoliert werden. Dadurch können die Komponententests ausgeführt werden, ohne umständliche Ressourcen wie Web-Dienste oder Datenbanken.
 
-Testen von Modellen und Modelle anzeigen von MVVM Anwendungen ist identisch mit Tests andere Klassen bilden, und die gleichen Tools und Techniken können verwendet werden.
+Testen der Modelle und Ansichtsmodelle von MVVM-Anwendungen ist identisch mit dem Testen andere Klassen bilden, und die gleichen Tools und Techniken können verwendet werden.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Download-e-Book (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [E-Book (2Mb PDF-Datei) herunterladen](https://aka.ms/xamarinpatternsebook)
+- ["eshoponcontainers" (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

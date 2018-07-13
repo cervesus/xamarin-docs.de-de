@@ -1,32 +1,32 @@
 ---
-title: Akkustatus überprüfen
-description: In diesem Artikel wird erläutert, wie die Xamarin.Forms-DependencyService-Klasse, die Zugriff auf Akku-Informationen für jede Plattform systemintern verwendet wird.
+title: Überprüfen des Akkustatus
+description: In diesem Artikel wird erläutert, wie die Xamarin.Forms DependencyService-Klasse, die Zugriff auf Akkuinformationen für jede Plattform systemintern verwendet wird.
 ms.prod: xamarin
 ms.assetid: CF1C5A73-84ED-407D-BDC5-EB1D83D2D3DB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 74e191cd6a87626e887d45f823e65d57000d7463
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cbb4a01ac2c6d933fe40a0b3c2571d1fe3ce75c0
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241083"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998393"
 ---
-# <a name="checking-battery-status"></a>Akkustatus überprüfen
+# <a name="checking-battery-status"></a>Überprüfen des Akkustatus
 
-Dieser Artikel führt durch die Erstellung einer Anwendung, die den Akkustatus überprüft. In diesem Artikel basiert auf den Akku-Plug-in von James Montemagno. Weitere Informationen finden Sie unter der [GitHub-Repository](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery).
+Dieser Artikel führt durch die Erstellung einer Anwendung, die Akkustatus überprüft. Dieser Artikel basiert auf den Akku-Plug-in von James Montemagno. Weitere Informationen finden Sie unter den [GitHub-Repository](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery).
 
-Da Xamarin.Forms nicht zum Überprüfen des aktuellen Akkustatus enthalten ist, müssen diese Anwendung mit [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) systemeigene APIs nutzen.  Dieser Artikel befasst sich mit der folgenden Schritte aus, für die Verwendung von `DependencyService`:
+Da Xamarin.Forms nicht für die Überprüfung des aktuellen Status des Akkus enthalten ist, müssen diese Anwendung mit [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) systemeigene APIs nutzen.  Dieser Artikel behandelt die folgenden Schritte aus, für die Verwendung von `DependencyService`:
 
-- **[Zum Erstellen der Schnittstelle](#Creating_the_Interface)**  &ndash; zu verstehen, wie die Schnittstelle im gemeinsamen Code erstellt wird.
-- **[iOS Implementierung](#iOS_Implementation)**  &ndash; erfahren Sie, wie die Schnittstelle in systemeigenem Code für iOS zu implementieren.
-- **[Android-Implementierung](#Android_Implementation)**  &ndash; erfahren Sie, wie die Schnittstelle für Android in systemeigenem Code zu implementieren.
-- **[Universelle Windows-Plattform-Implementierung](#UWPImplementation)**  &ndash; erfahren Sie, wie die Schnittstelle in systemeigenem Code für die universelle Windows-Plattform (UWP) zu implementieren.
-- **[Implementieren im freigegebenen Code](#Implementing_in_Shared_Code)**  &ndash; erfahren, wie `DependencyService` in die systemeigene Implementierung von freigegebenem Code aufrufen.
+- **[Zum Erstellen der Schnittstelle](#Creating_the_Interface)**  &ndash; zu verstehen, wie die Schnittstelle in freigegebenem Code erstellt wird.
+- **[iOS-Implementierung](#iOS_Implementation)**  &ndash; erfahren Sie, wie die Schnittstelle in nativem Code für iOS zu implementieren.
+- **[Android-Implementierung](#Android_Implementation)**  &ndash; erfahren Sie, wie die Schnittstelle für Android in nativem Code zu implementieren.
+- **[Implementierung der universellen Windows-Plattform](#UWPImplementation)**  &ndash; erfahren Sie, wie die Schnittstelle in nativem Code für die universelle Windows-Plattform (UWP) zu implementieren.
+- **[In freigegebenem Code implementieren](#Implementing_in_Shared_Code)**  &ndash; erfahren Sie, wie Sie mit `DependencyService` , die native Implementierung von freigegebenem Code aufzurufen.
 
-Nach Abschluss der Anwendung über `DependencyService` hat die folgende Struktur:
+Abschließend wird die Anwendung mit `DependencyService` wird die folgende Struktur aufweisen:
 
 ![](battery-info-images/battery-diagram.png "DependencyService Anwendungsstruktur")
 
@@ -34,7 +34,7 @@ Nach Abschluss der Anwendung über `DependencyService` hat die folgende Struktur
 
 ## <a name="creating-the-interface"></a>Erstellen der Schnittstelle
 
-Erstellen Sie zunächst eine Schnittstelle im freigegebenen Code, der die gewünschte Funktionalität ausdrückt. Im Falle eines Akkus, überprüfen die Anwendung ist die relevante Informationen den Prozentsatz der Akku verbleibenden, ob das Gerät wird aufgeladen oder nicht, und wie das Gerät mit Strom versorgt wird:
+Erstellen Sie zunächst eine Schnittstelle in freigegebenem Code, der die gewünschte Funktionalität ausdrückt. Im Falle eines Akkus, überprüfen die Anwendung ist die relevante Informationen der Prozentsatz der die verbleibende Akkukapazität, ob das Gerät aufgeladen oder nicht, und wie das Gerät mit Strom versorgt wird:
 
 ```csharp
 namespace DependencyServiceSample
@@ -66,16 +66,16 @@ namespace DependencyServiceSample
 }
 ```
 
-Mit der Programmierung für diese Schnittstelle im freigegebenen Code können Xamarin.Forms-app auf die Power-Verwaltungs-APIs auf jeder Plattform zugreifen.
+Mit der Programmierung für diese Schnittstelle in den freigegebenen Code lässt sich auf die Xamarin.Forms-app auf die Power-Verwaltungs-APIs auf jeder Plattform aus.
 
 > [!NOTE]
-> Klassen, die die Schnittstelle implementieren, benötigen einen parameterlosen Konstruktor zur Bearbeitung der `DependencyService`. Konstruktoren können nicht von Schnittstellen definiert werden.
+> Klassen, die die Schnittstelle implementieren, müssen einen parameterlosen Konstruktor für die Arbeit mit der `DependencyService`. Von Schnittstellen können keine Konstruktoren definiert werden.
 
 <a name="iOS_Implementation" />
 
 ## <a name="ios-implementation"></a>iOS-Implementierung
 
-Die `IBattery` -Schnittstelle muss in jedem Anwendungsprojekt plattformspezifischen implementiert werden. Die iOS-Implementierung verwendet das systemeigene [ `UIDevice` ](https://developer.xamarin.com/api/type/UIKit.UIDevice/) APIs den Zugriff auf Akku Informationen. Beachten Sie, dass die folgende Klasse über einen parameterlosen Konstruktor verfügt, damit die `DependencyService` neue Instanzen erstellen können:
+Die `IBattery` -Schnittstelle muss in jedem Anwendungsprojekt plattformspezifischen-implementiert werden. Die iOS-Implementierung verwendet das systemeigene [ `UIDevice` ](https://developer.xamarin.com/api/type/UIKit.UIDevice/) APIs, um den Zugriff auf Akkuinformationen. Beachten Sie, dass die folgende Klasse über einen parameterlosen Konstruktor hat, damit die `DependencyService` neue Instanzen erstellen können:
 
 ```csharp
 using UIKit;
@@ -138,7 +138,7 @@ namespace DependencyServiceSample.iOS
 }
 ```
 
-Fügen Sie schließlich diese `[assembly]` Attribut über die Klasse (und die außerhalb der Namespaces, die definiert wurden), einschließlich der erforderlichen `using` Anweisungen:
+Fügen Sie abschließend Folgendes `[assembly]` Attribut oberhalb der Klasse (und die außerhalb der Namespaces, die definiert wurden), einschließlich der erforderlichen `using` Anweisungen:
 
 ```csharp
 using UIKit;
@@ -152,13 +152,13 @@ namespace DependencyServiceSample.iOS
     ...
 ```
 
-Dieses Attribut wird die Klasse als eine Implementierung von registriert die `IBattery` -Schnittstelle, dies bedeutet, dass `DependencyService.Get<IBattery>` im freigegebenen Code zum Erstellen einer Instanz des Zertifikats verwendet werden können:
+Dieses Attribut registriert die Klasse als eine Implementierung der `IBattery` -Schnittstelle, die das bedeutet, dass `DependencyService.Get<IBattery>` in freigegebenem Code verwendet werden können, um eine Instanz davon erstellen:
 
 <a name="Android_Implementation" />
 
 ## <a name="android-implementation"></a>Android-Implementierung
 
-Die Android-Implementierung verwendet die [ `Android.OS.BatteryManager` ](https://developer.xamarin.com/api/type/Android.OS.BatteryManager/) API. Diese Implementierung ist komplexer als die iOS-Version, erfordern Überprüfungen mangelndes Akku Berechtigungen behandelt:
+Die Android-Implementierung verwendet die [ `Android.OS.BatteryManager` ](https://developer.xamarin.com/api/type/Android.OS.BatteryManager/) API. Diese Implementierung ist komplexer als der iOS-Version, die überprüft, behandeln fehlende Akku Berechtigungen erfordern:
 
 ```csharp
 using System;
@@ -295,7 +295,7 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-Fügen Sie der `[assembly]` Attribut über die Klasse (und die außerhalb der Namespaces, die definiert wurden), einschließlich der erforderlichen `using` Anweisungen:
+Fügen Sie Folgendes `[assembly]` Attribut oberhalb der Klasse (und die außerhalb der Namespaces, die definiert wurden), einschließlich der erforderlichen `using` Anweisungen:
 
 ```csharp
 ...
@@ -309,13 +309,13 @@ namespace DependencyServiceSample.Droid
     ...
 ```
 
-Dieses Attribut wird die Klasse als eine Implementierung von registriert die `IBattery` -Schnittstelle, dies bedeutet, dass `DependencyService.Get<IBattery>` kann verwendet werden, der gemeinsam verwendeten Code kann eine Instanz davon erstellen.
+Dieses Attribut registriert die Klasse als eine Implementierung der `IBattery` -Schnittstelle, die das bedeutet, dass `DependencyService.Get<IBattery>` kann verwendet werden, der freigegebene Code kann eine Instanz davon erstellen.
 
 <a name="UWPImplementation" />
 
-## <a name="universal-windows-platform-implementation"></a>Universelle Windows-Plattform-Implementierung
+## <a name="universal-windows-platform-implementation"></a>Implementierung der universellen Windows-Plattform
 
-Die uwp-Implementierung verwendet die `Windows.Devices.Power` APIs den Zugriff auf Akku Statusinformationen zu erhalten:
+Die UWP-Implementierung verwendet die `Windows.Devices.Power` APIs zum Abrufen von Informationen zum Akku:
 
 ```csharp
 using DependencyServiceSample.UWP;
@@ -409,13 +409,13 @@ namespace DependencyServiceSample.UWP
 }
 ```
 
-Die `[assembly]` -Attribut über die Namespacedeklaration registriert die Klasse als eine Implementierung von der `IBattery` -Schnittstelle, dies bedeutet, dass `DependencyService.Get<IBattery>` im freigegebenen Code zum Erstellen einer Instanz des Zertifikats verwendet werden können.
+Die `[assembly]` Attribut über der Namespacedeklaration registriert die Klasse als eine Implementierung der `IBattery` -Schnittstelle, die das bedeutet, dass `DependencyService.Get<IBattery>` in freigegebenem Code verwendet werden können, um eine Instanz davon erstellen.
 
 <a name="Implementing_in_Shared_Code" />
 
-## <a name="implementing-in-shared-code"></a>Implementieren im freigegebenen Code
+## <a name="implementing-in-shared-code"></a>In freigegebenem Code implementieren
 
-Nun, da die Schnittstelle für jede Plattform implementiert wurde, kann die freigegebene Anwendung geschrieben werden, zu nutzen. Die Anwendung besteht aus einer Seite mit einer Schaltfläche, die bei getippt Updates dessen Text mit dem aktuellen Batteriestatus. Er verwendet die `DependencyService` zum Abrufen einer Instanz von der `IBattery` Schnittstelle. Zur Laufzeit werden diese Instanz die Clientplattform-spezifische Implementierung, die uneingeschränkten Zugriff auf die systemeigene SDK verfügt.
+Nun, da die Schnittstelle für jede Plattform implementiert wurde, kann die freigegebene Anwendung geschrieben werden, zu nutzen. Die Anwendung besteht aus einer Seite mit einer Schaltfläche tippen, die bei Aktualisierungen auf den Text mit dem aktuellen Status des Akkus. Er verwendet den `DependencyService` zum Abrufen einer Instanz von der `IBattery` Schnittstelle. Zur Laufzeit werden diese Instanz die plattformspezifischen Implementierungen, die uneingeschränkten Zugriff auf das systemeigene SDK verfügt.
 
 ```csharp
 public MainPage ()
@@ -469,7 +469,7 @@ public MainPage ()
 }
 ```
 
-Ausführen der Anwendung auf iOS, führt Android, oder universelle Windows-Plattform und auf die Schaltfläche in den Text der Schaltfläche aktualisiert werden, um den aktuellen Status der Stromversorgung des Geräts widerzuspiegeln.
+Ausführen dieser Anwendung unter iOS, führt Android oder UWP und auf die Schaltfläche den Text der Schaltfläche entsprechend den aktuellen Status des Geräts aktualisieren.
 
 ![](battery-info-images/battery.png "Akku-Status-Beispiel")
 
@@ -477,5 +477,5 @@ Ausführen der Anwendung auf iOS, führt Android, oder universelle Windows-Platt
 ## <a name="related-links"></a>Verwandte Links
 
 - [DependencyService (Beispiel)](https://developer.xamarin.com/samples/DependencyService)
-- [Verwenden DependencyService (Beispiel)](https://developer.xamarin.com/samples/UsingDependencyService/)
+- [Verwenden von DependencyService (Beispiel)](https://developer.xamarin.com/samples/UsingDependencyService/)
 - [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://github.com/xamarin/xamarin-forms-samples)

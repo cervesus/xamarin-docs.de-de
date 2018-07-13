@@ -1,31 +1,31 @@
 ---
-title: Xamarin.Forms-Text-Formate
-description: In diesem Artikel wird erläutert, wie zum Formatieren von Text in Xamarin.Forms-Anwendungen. Formatvorlagen einmal definiert und durch zahlreiche Ansichten verwendet werden können, aber ein Format kann nur mit Ansichten eines bestimmten Typs verwendet werden.
+title: Xamarin.Forms-Textformate
+description: In diesem Artikel wird erläutert, wie Sie Formatieren von Text in Xamarin.Forms-Anwendungen. Stile einmal definiert und von vielen Ansichten verwendet werden können, aber ein Style kann nur mit Ansichten eines bestimmten Typs verwendet werden.
 ms.prod: xamarin
 ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: b8cc6493c3574180e7938050075c5a70ecebeebf
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 73aa3115e92d1e3954f5ae3eb8dcb84abf9d9efb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245321"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998767"
 ---
-# <a name="xamarinforms-text-styles"></a>Xamarin.Forms-Text-Formate
+# <a name="xamarinforms-text-styles"></a>Xamarin.Forms-Textformate
 
 _Formatieren von Text in Xamarin.Forms_
 
-Stile können verwendet werden, um die Darstellung der Bezeichnungen, Einträge und Editoren anzupassen. Formatvorlagen einmal definiert und durch zahlreiche Ansichten verwendet werden können, aber ein Format kann nur mit Ansichten eines bestimmten Typs verwendet werden.
-Stile können weitergegeben werden, eine `Key` und selektiv mithilfe eines bestimmten Steuerelements angewendet `Style` Eigenschaft.
+Stile können verwendet werden, um die Darstellung der Bezeichnungen, Einträge und Editoren anzupassen. Stile einmal definiert und von vielen Ansichten verwendet werden können, aber ein Style kann nur mit Ansichten eines bestimmten Typs verwendet werden.
+Stile können zugewiesen werden eine `Key` und selektiv mithilfe eines bestimmten Steuerelements angewendet `Style` Eigenschaft.
 
 <a name="Built-In_Styles" />
 
-## <a name="built-in-styles"></a>Formatvorlagen
+## <a name="built-in-styles"></a>Integrierte Formate
 
-Xamarin.Forms umfassen mehrere [integrierte](http://developer.xamarin.com/api/type/Xamarin.Forms.Device+Styles/) Stile für häufige Szenarien:
+Xamarin.Forms umfasst mehrere [integrierte](xref:Xamarin.Forms.Device.Styles) Formatvorlagen für gängige Szenarien:
 
 - `BodyStyle`
 - `CaptionStyle`
@@ -34,27 +34,27 @@ Xamarin.Forms umfassen mehrere [integrierte](http://developer.xamarin.com/api/ty
 - `SubtitleStyle`
 - `TitleStyle`
 
-Um einen der integrierten Stile anzuwenden, verwenden die `DynamicResource` Markuperweiterung das Format an:
+Um eine der integrierten Formatvorlagen anzuwenden, verwenden die `DynamicResource` Markup Extension, um das Format angeben:
 
 ```xaml
 <Label Text="I'm a Title" Style="{DynamicResource TitleStyle}"/>
 ```
 
-In c# werden integrierte Formate aus ausgewählt `Device.Styles`:
+In c# werden die integrierte Formatvorlagen aus ausgewählt `Device.Styles`:
 
 ```csharp
 label.Style = Device.Styles.TitleStyle;
 ```
 
-![](styles-images/builtinstyles.png "Stile des Gerätebeispiel")
+![](styles-images/builtinstyles.png "Stile-Gerätebeispiel")
 
 <a name="Custom_Styles" />
 
 ## <a name="custom-styles"></a>Benutzerdefinierte Stile
 
-Stile der Setter bestehen und Setter von Eigenschaften bestehen und die Werte der Eigenschaften festgelegt, um.
+Formate von Settern bestehen und Settern bestehen aus Eigenschaften und die Werte der Eigenschaften festgelegt.
 
-Ein benutzerdefinierter Stil für eine Bezeichnung mit rotem Text Größe 30 würde in c# wie folgt definiert werden:
+In c# würde wie folgt ein benutzerdefinierter Stil für eine Bezeichnung mit rotem Text Größe 30 definiert werden:
 
 ```csharp
 var LabelStyle = new Style (typeof(Label)) {
@@ -86,7 +86,7 @@ In XAML:
 </ContentPage.Content>
 ```
 
-Beachten Sie, dass die Ressourcen (einschließlich aller Stile) definierten `ContentPage.Resources`, also ein gleichgeordnetes Element eines je vertrauter `ContentPage.Content` Element.
+Beachten Sie, dass die Ressourcen (einschließlich alle Stile) in definierten `ContentPage.Resources`, d.h. ein gleichgeordnetes Element eines je vertrauter `ContentPage.Content` Element.
 
 ![](styles-images/customstyle.png "Beispiel für benutzerdefinierte Stile")
 
@@ -94,15 +94,15 @@ Beachten Sie, dass die Ressourcen (einschließlich aller Stile) definierten `Con
 
 ## <a name="applying-styles"></a>Anwenden von Stilen
 
-Nachdem Sie ein Stil erstellt wurde, kann es auf alle Vergleichen von Sichten angewendet werden seine `TargetType`.
+Nachdem ein Stil erstellt wurde, kann es an alle entsprechenden der Ansicht angewendet werden die `TargetType`.
 
-Benutzerdefinierte Stile gelten in XAML werden für Sichten durch Angabe ihrer `Style` Eigenschaft mit einer `StaticResource` Markuperweiterung verweisen auf die gewünschte Formatvorlage:
+In XAML, benutzerdefinierte Stile auf Ansichten durch Angabe angewendet werden ihre `Style` Eigenschaft mit einem `StaticResource` Markuperweiterung, die die gewünschte verweisstil:
 
 ```xaml
 <Label Text="Check out my style." Style="{StaticResource LabelStyle}" />
 ```
 
-In c#, Formatvorlagen können entweder direkt auf einer Sicht angewendet oder hinzugefügt und abgerufen werden von einer Seite `ResourceDictionary`. So fügen Sie direkt hinzu:
+In c# Stile können entweder direkt auf eine Ansicht angewendet oder hinzugefügt und aus einer Seite abgerufen `ResourceDictionary`. So fügen Sie direkt hinzu:
 
 ```csharp
 var label = new Label { Text = "Check out my style.", Style = LabelStyle };
@@ -115,13 +115,13 @@ this.Resources.Add ("LabelStyle", LabelStyle);
 label.Style = (Style)Resources["LabelStyle"];
 ```
 
-Formatvorlagen sind unterschiedlich, angewendet werden, da sie so reagieren Sie auf die Einstellungen für die Barrierefreiheit benötigen. Anwenden von Formatvorlagen in XAML wird die `DynamicResource` Markuperweiterung verwendet wird:
+Integrierte Stile werden unterschiedlich angewendet werden, da sie auf die Einstellungen für die Barrierefreiheit reagieren müssen. Anwenden von integrierten Formatvorlagen in XAML, die `DynamicResource` Markuperweiterung verwendet wird:
 
 ```xaml
 <Label Text="I'm a Title" Style="{DynamicResource TitleStyle}"/>
 ```
 
-In c# werden integrierte Formate aus ausgewählt `Device.Styles`:
+In c# werden die integrierte Formatvorlagen aus ausgewählt `Device.Styles`:
 
 ```csharp
 label.Style = Device.Styles.TitleStyle;
@@ -129,24 +129,24 @@ label.Style = Device.Styles.TitleStyle;
 
 ## <a name="accessibility"></a>Zugriff
 
-Die integrierten Stile vorhanden sein, um Eingabehilfen Voreinstellungen respektieren erleichtern. Wenn Sie keines der integrierten Formate zu verwenden, werden Schriftgrade Ihren Bedürfnissen automatisch herauf, wenn Benutzer ihre Voreinstellungen Eingabehilfen entsprechend festlegen.
+Die integrierten Stile vorhanden sein, um die Einstellungen für Barrierefreiheit respektiert vereinfachen. Wenn Sie keines der integrierten Formate zu verwenden, erhöht Schriftgrade Ihren Bedürfnissen entsprechend automatisch, wenn Benutzer ihre Einstellungen für Barrierefreiheit entsprechend festlegen.
 
-Betrachten Sie das folgende Beispiel der gleichen Seite Sichten erstellt, in denen die integrierten Stile mit barrierefreiheiteinstellungen aktiviert und deaktiviert:
+Beachten Sie im folgende Beispiel der gleichen Seite Sichten erstellt, in denen die integrierten Formatvorlagen mit Einstellungen für die Barrierefreiheit aktiviert und deaktiviert:
 
 Deaktiviert:
 
-![](styles-images/pre-access.png "Gerät Stile mit Eingabehilfen deaktiviert")
+![](styles-images/pre-access.png "Gerätestile mit Barrierefreiheit deaktiviert")
 
 Aktiviert:
 
-![](styles-images/post-access.png "Gerät Stile Eingabehilfen aktiviert")
+![](styles-images/post-access.png "Gerätestile Barrierefreiheit aktiviert")
 
-Um Zugriff zu gewährleisten, sicher, dass die integrierten Stile als Grundlage für alle Formatvorlagen bezogenen Text innerhalb Ihrer app verwendet werden und Sie Stile einheitlich verwenden. Finden Sie unter [Stile](~/xamarin-forms/user-interface/styles/index.md) Weitere Einzelheiten zu erweitern und Arbeiten mit Formatvorlagen im Allgemeinen.
+Um Zugriff zu gewährleisten, stellen Sie sicher, dass die integrierte Formatvorlagen, die als Grundlage für alle textbezogenen Formatvorlagen in Ihrer app verwendet werden, und Sie konsistent Formatvorlagen verwenden. Finden Sie unter [Stile](~/xamarin-forms/user-interface/styles/index.md) ausführliche Informationen zum Erweitern von und Arbeiten mit Stilen im Allgemeinen.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beim Erstellen mobiler Apps mit Xamarin.Forms, Kapitel 12](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
+- [Erstellen von mobilen Apps mit Xamarin.Forms, Kapitel 12](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
 - [Stile](~/xamarin-forms/user-interface/styles/index.md)
 - [Text (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [Stil](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
+- [Stil](xref:Xamarin.Forms.Style)
