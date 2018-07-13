@@ -1,42 +1,42 @@
 ---
-title: Einen Eintrag anpassen
-description: Das Steuerelement Xamarin.Forms Eintrag ermöglicht eine einzelne Textzeile bearbeitet werden. Dieser Artikel veranschaulicht, wie zum Erstellen eines benutzerdefinierten Renderers für das Steuerelement Eintrag und Entwickler können das Standardrendering zurückgreifen systemeigene mit ihren eigenen plattformspezifische Anpassungen zu überschreiben.
+title: Anpassen eines Eintrags
+description: Das Steuerelement zur Eingabe von Xamarin.Forms können eine einzelne Textzeile bearbeitet werden. In diesem Artikel wird veranschaulicht, wie zum Erstellen eines benutzerdefinierten Renderers für das Steuerelement Eintrag ermöglicht Entwicklern das native Standardrendering mit ihren eigenen plattformspezifische Anpassungen überschrieben wird.
 ms.prod: xamarin
 ms.assetid: 7B5DD10D-0411-424F-88D8-8A474DF16D8D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 5f23b65fab24b447a9f534ed7403797a60cc284f
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 30326b8d52f39268015bdcbee1b84b9d9e5516b9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847224"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998959"
 ---
-# <a name="customizing-an-entry"></a>Einen Eintrag anpassen
+# <a name="customizing-an-entry"></a>Anpassen eines Eintrags
 
-_Das Steuerelement Xamarin.Forms Eintrag ermöglicht eine einzelne Textzeile bearbeitet werden. Dieser Artikel veranschaulicht, wie zum Erstellen eines benutzerdefinierten Renderers für das Steuerelement Eintrag und Entwickler können das Standardrendering zurückgreifen systemeigene mit ihren eigenen plattformspezifische Anpassungen zu überschreiben._
+_Das Steuerelement zur Eingabe von Xamarin.Forms können eine einzelne Textzeile bearbeitet werden. In diesem Artikel wird veranschaulicht, wie zum Erstellen eines benutzerdefinierten Renderers für das Steuerelement Eintrag ermöglicht Entwicklern das native Standardrendering mit ihren eigenen plattformspezifische Anpassungen überschrieben wird._
 
-Jedes Xamarin.Forms-Steuerelement verfügt über eine begleitende Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Wenn ein [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) einer Xamarin.Forms-Anwendung in iOS-Steuerelement gerendert wird die `EntryRenderer` Klasse instanziiert, das wiederum ein systemeigenes instanziiert `UITextField` Steuerelement. Auf der Android-Plattform die `EntryRenderer` Klasse instanziiert ein `EditText` Steuerelement. Auf die universelle Windows-Plattform (UWP), die `EntryRenderer` Klasse instanziiert einen `TextBox` Steuerelement. Weitere Informationen zu den Renderer und systemeigene Steuerelementklassen, die Xamarin.Forms-Steuerelemente zuordnen, finden Sie unter [Renderer-Basisklassen und systemeigenen Steuerelementen](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Alle Xamarin.Forms-Steuerelements verfügt über eine zugehörige Renderer für jede Plattform, die eine Instanz eines systemeigenen Steuerelements erstellt. Wenn ein [ `Entry` ](xref:Xamarin.Forms.Entry) -Steuerelements von einer Xamarin.Forms-Anwendung unter iOS die `EntryRenderer` Klasse instanziiert wird, das wiederum ein systemeigenes instanziiert `UITextField` Steuerelement. Auf der Android-Plattform die `EntryRenderer` Klasse instanziiert ein `EditText` Steuerelement. Auf der universellen Windows-Plattform (UWP), die `EntryRenderer` Klasse instanziiert ein `TextBox` Steuerelement. Weitere Informationen zu den Renderer und nativen Steuerelements-Klassen, die Xamarin.Forms-Steuerelemente zuordnen, finden Sie unter [Renderer-Basisklassen und Native Steuerelemente](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Das folgende Diagramm veranschaulicht die Beziehung zwischen der [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Steuerelement und den entsprechenden systemeigenen Steuerelementen, die ihn implementieren:
+Das folgende Diagramm veranschaulicht die Beziehung zwischen der [ `Entry` ](xref:Xamarin.Forms.Entry) Steuerelement und den entsprechenden systemeigenen Steuerelementen, die sie implementieren:
 
-![](entry-images/entry-classes.png "Beziehung zwischen Eingabe und Implementieren von systemeigenen Steuerelementen")
+![](entry-images/entry-classes.png "Beziehung zwischen Eintrag und systemeigene Steuerelemente implementieren")
 
-Des Renderingprozesses kann Vorteil ausgeführt werden, um plattformspezifische Anpassungen zu implementieren, durch das Erstellen eines benutzerdefinierten Renderers für das [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Steuerelement auf jeder Plattform. Die Verfahrensweise für diesen Vorgang lautet wie folgt:
+Das Rendern zu kann nutzen erstellt werden, um plattformspezifische Anpassungen zu implementieren, durch das Erstellen eines benutzerdefinierten Renderers für das [ `Entry` ](xref:Xamarin.Forms.Entry) Steuerelement auf jeder Plattform. Der Prozess hierfür lautet wie folgt aus:
 
-1. [Erstellen Sie](#Creating_the_Custom_Entry_Control) ein benutzerdefiniertes Steuerelement mit Xamarin.Forms.
-1. [Nutzen](#Consuming_the_Custom_Control) das benutzerdefinierte Steuerelement aus Xamarin.Forms.
+1. [Erstellen Sie](#Creating_the_Custom_Entry_Control) eines benutzerdefinierten Xamarin.Forms-Steuerelements.
+1. [Nutzen](#Consuming_the_Custom_Control) das benutzerdefinierte Steuerelement von Xamarin.Forms.
 1. [Erstellen Sie](#Creating_the_Custom_Renderer_on_each_Platform) der benutzerdefinierten Renderers für das Steuerelement auf jeder Plattform.
 
-Jedes Element wird nun wiederum zum Implementieren der besprochen werden ein [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Steuerelement, das eine andere Hintergrundfarbe für jede Plattform verfügt.
+Jedes Element jetzt erläutert wiederum zum Implementieren einer [ `Entry` ](xref:Xamarin.Forms.Entry) -Steuerelement mit einer anderen Hintergrundfarbe auf jeder Plattform.
 
 <a name="Creating_the_Custom_Entry_Control" />
 
-## <a name="creating-the-custom-entry-control"></a>Erstellen des benutzerdefinierten Eintrags-Steuerelements
+## <a name="creating-the-custom-entry-control"></a>Erstellen des benutzerdefinierten Eintrag-Steuerelements
 
-Eine benutzerdefinierte [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Steuerelement erstellt werden, indem die Erstellung von Unterklassen von der `Entry` zu steuern, wie im folgenden Codebeispiel gezeigt:
+Eine benutzerdefinierte [ `Entry` ](xref:Xamarin.Forms.Entry) Steuerelement kann erstellt werden, indem Unterklassen der `Entry` zu steuern, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public class MyEntry : Entry
@@ -44,13 +44,13 @@ public class MyEntry : Entry
 }
 ```
 
-Die `MyEntry` Steuerelement wird in das .NET Standard-Steuerelementbibliothek-Projekt erstellt und ist einfach ein [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Steuerelement. Anpassung des Steuerelements durchgeführt werden in den benutzerdefinierten Renderer, sodass keine weitere Implementierungsdetails in erforderlich ist der `MyEntry` Steuerelement.
+Die `MyEntry` Steuerelement wird in .NET Standard Library-Projekt erstellt und ist einfach ein [ `Entry` ](xref:Xamarin.Forms.Entry) Steuerelement. Anpassung des Steuerelements durchgeführt werden in den benutzerdefinierten Renderer, sodass keine zusätzliche Implementierung erforderlich ist der `MyEntry` Steuerelement.
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>Nutzen das benutzerdefinierte Steuerelement
 
-Die `MyEntry` Steuerelement kann verwiesen werden in XAML in .NET Standard-Bibliotheksprojekt durch deklarieren einen Namespace für den Speicherort der und verwenden das Namespacepräfix für das Steuerelement. Im folgenden Codebeispiel wird veranschaulicht wie die `MyEntry` Steuerelement genutzt werden kann, durch die entsprechende Verwendung von XAML-Seite:
+Die `MyEntry` Steuerelement kann verwiesen werden in XAML in .NET Standard Library-Projekt durch deklarieren einen Namespace für den Speicherort und verwenden das Namespacepräfix für das Steuerelement, das. Das folgende Codebeispiel zeigt die `MyEntry` Steuerelement kann von einer XAML-Seite verwendet werden:
 
 ```xaml
 <ContentPage ...
@@ -62,9 +62,9 @@ Die `MyEntry` Steuerelement kann verwiesen werden in XAML in .NET Standard-Bibli
 </ContentPage>
 ```
 
-Die `local` nichts Namespacepräfix kann benannt werden. Allerdings die `clr-namespace` und `assembly` Werte müssen die Details des benutzerdefinierten Steuerelements übereinstimmen. Sobald der Namespace deklariert ist, dass das Präfix verwendet wird, um auf das benutzerdefinierte Steuerelement zu verweisen.
+Die `local` Namespacepräfix kann eine beliebige Bezeichnung. Allerdings die `clr-namespace` und `assembly` -Werte müssen die Details des benutzerdefinierten Steuerelements entsprechen. Sobald der Namespace deklariert ist, dass das Präfix verwendet wird, um auf das benutzerdefinierte Steuerelement zu verweisen.
 
-Im folgenden Codebeispiel wird veranschaulicht wie die `MyEntry` Steuerelement genutzt werden kann, um eine C#-Seite:
+Das folgende Codebeispiel zeigt die `MyEntry` Steuerelement durch einen C# -Code genutzt werden kann:
 
 ```csharp
 public class MainPage : ContentPage
@@ -87,7 +87,7 @@ public class MainPage : ContentPage
 }
 ```
 
-Dieser Code instanziiert einen neuen [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) -Objekt, das angezeigt wird, wird eine [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) und `MyEntry` Steuerelement sowohl vertikal und horizontal auf der Seite zentriert.
+Dieser Code instanziiert ein neues [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) -Objekt, das angezeigt wird, wird eine [ `Label` ](xref:Xamarin.Forms.Label) und `MyEntry` Steuerelement sowohl vertikal und horizontal auf der Seite zentriert.
 
 Ein benutzerdefinierter Renderer kann jetzt jedes Anwendungsprojekt zum Anpassen der Darstellung des Steuerelements auf jeder Plattform hinzugefügt werden.
 
@@ -95,32 +95,32 @@ Ein benutzerdefinierter Renderer kann jetzt jedes Anwendungsprojekt zum Anpassen
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>Erstellen benutzerdefinierten Renderer auf jeder Plattform
 
-Der Prozess zum Erstellen der benutzerdefinierten Rendererklasse lautet wie folgt:
+Der Prozess zum Erstellen der benutzerdefinierten Renderer-Klasse sieht folgendermaßen aus:
 
-1. Erstellen Sie eine Unterklasse von der `EntryRenderer` -Klasse, die das systemeigene Steuerelement rendert.
-1. Überschreiben Sie die `OnElementChanged` -Methode, die systemeigene Steuerelement und Schreiben Logik zum Anpassen des Steuerelements rendert. Diese Methode wird aufgerufen, wenn das entsprechende Xamarin.Forms-Steuerelement erstellt wird.
-1. Hinzufügen einer `ExportRenderer` -Attribut auf die benutzerdefinierten Renderer-Klasse, um anzugeben, dass es zum Rendern des Steuerelements Xamarin.Forms verwendet werden soll. Dieses Attribut wird verwendet, um den benutzerdefinierten Renderer mit Xamarin.Forms zu registrieren.
+1. Erstellen Sie eine Unterklasse von der `EntryRenderer` -Klasse, die das native Steuerelement rendert.
+1. Überschreiben der `OnElementChanged` -Methode, die die native Steuerelement und schreiben die Logik zum Anpassen des Steuerelements gerendert wird. Diese Methode wird aufgerufen, wenn das entsprechende Xamarin.Forms-Steuerelement erstellt wird.
+1. Hinzufügen einer `ExportRenderer` -Attribut der benutzerdefinierten Renderer-Klasse, um anzugeben, dass es zum Rendern des Xamarin.Forms-Steuerelements verwendet werden soll. Dieses Attribut wird verwendet, um den benutzerdefinierten Renderer mit Xamarin.Forms zu registrieren.
 
 > [!NOTE]
-> Ist er optional einen benutzerdefinierten Renderer in jedem plattformprojekt bereitstellen. Wenn ein benutzerdefinierter Renderer nicht registriert ist, wird der Standardrenderer für die Basisklasse für das Steuerelement verwendet werden.
+> Dies ist optional, um einen benutzerdefinierten Renderer in jedem plattformprojekt bereitzustellen. Wenn ein benutzerdefinierter Renderer nicht registriert ist, wird der Standard-Renderer für die Basisklasse des Steuerelements verwendet werden.
 
-Das folgende Diagramm veranschaulicht die Zuständigkeiten aller Projekte in der beispielanwendung, sowie die Beziehungen zwischen ihnen:
+Das folgende Diagramm veranschaulicht die Verantwortlichkeiten der einzelnen Projekte in der beispielanwendung, sowie die Beziehungen zwischen ihnen:
 
-![](entry-images/solution-structure.png "\"Myentry\" benutzerdefinierter Renderer Projekt Zuständigkeiten")
+![](entry-images/solution-structure.png "\"Myentry\" benutzerdefinierte Renderer Project-Aufgaben")
 
-Die `MyEntry` plattformspezifischen Steuerelement gerendert wird `MyEntryRenderer` Klassen, die Ableitung der `EntryRenderer` Klasse für jede Plattform. Dies führt in den einzelnen `MyEntry` Steuerelements mit einer plattformspezifischen Hintergrundfarbe gerendert wird, wie in den folgenden Screenshots dargestellt:
+Die `MyEntry` -Steuerelement gerendert wird, indem Sie plattformspezifische `MyEntryRenderer` , alle abgeleiteten Klassen der `EntryRenderer` -Klasse für jede Plattform. Dies führt in jeder `MyEntry` Steuerelements mit einer plattformspezifischen Hintergrundfarbe gerendert wird, wie in den folgenden Screenshots dargestellt:
 
-![](entry-images/screenshots.png "\"Myentry\" Steuerelement auf jeder Plattform")
+![](entry-images/screenshots.png "\"Myentry\"-Steuerelement auf jeder Plattform")
 
-Die `EntryRenderer` -Klasse verfügbar macht die `OnElementChanged` -Methode, die aufgerufen wird, wenn Sie das Xamarin.Forms-Steuerelement erstellt wird, um das entsprechende systemeigene Steuerelement rendern. Diese Methode nimmt ein `ElementChangedEventArgs` Parameter, enthält `OldElement` und `NewElement` Eigenschaften. Diese Eigenschaften repräsentieren die Xamarin.Forms-Element, den Renderer *wurde* angefügt, und das Xamarin.Forms-Element, den Renderer *ist* angefügt sind, bzw. In der beispielanwendung der `OldElement` -Eigenschaft `null` und `NewElement` Eigenschaft enthält einen Verweis auf die `MyEntry` Steuerelement.
+Die `EntryRenderer` -Klasse macht die `OnElementChanged` -Methode, die aufgerufen wird, wenn das Xamarin.Forms-Steuerelement erstellt wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert eine `ElementChangedEventArgs` Parameter mit `OldElement` und `NewElement` Eigenschaften. Diese Eigenschaften repräsentieren die Xamarin.Forms-Element, die den Renderer *wurde* angefügt, und das Xamarin.Forms-Element, die den Renderer *ist* angefügt wird, bzw. In diesem Beispiel die `OldElement` Eigenschaft `null` und `NewElement` Eigenschaft enthält einen Verweis auf die `MyEntry` Steuerelement.
 
-Eine überschriebene Version von den `OnElementChanged` Methode in der `MyEntryRenderer` Klasse bietet die Möglichkeit zum Durchführen der systemeigenen-Steuerelement. Durch ein typisierter Verweis auf das systemeigene Steuerelement verwendet wird, auf der Plattform zugegriffen werden kann die `Control` Eigenschaft. Darüber hinaus kann ein Verweis auf das Xamarin.Forms-Steuerelement, das gerendert wird abgerufen werden, über die `Element` -Eigenschaft, obwohl sie nicht in der beispielanwendung verwendet wird.
+Eine außer Kraft gesetzte Version von der `OnElementChanged` -Methode in der die `MyEntryRenderer` Klasse ist der Ort, um die Anpassung von systemeigenen Steuerelementen auszuführen. Ein typisierter Verweis auf das native Steuerelement verwendet wird, auf der Plattform möglich über die `Control` Eigenschaft. Darüber hinaus kann ein Verweis auf das Xamarin.Forms-Steuerelement, das gerendert wird abgerufen werden, über die `Element` -Eigenschaft, obwohl sie nicht in der beispielanwendung verwendet wird.
 
-Jede Klasse benutzerdefinierter Renderer mit ergänzt wird ein `ExportRenderer` -Attribut, das den Renderer mit Xamarin.Forms registriert. Das Attribut nimmt zwei Parameter: den Typnamen des Steuerelements Xamarin.Forms gerendert wird, und der Typname der benutzerdefinierten Renderer. Die `assembly` Präfix für das Attribut gibt an, dass das Attribut für die gesamte Assembly angewendet wird.
+Mit jeder benutzerdefinierten Renderer-Klasse ergänzt wird ein `ExportRenderer` -Attribut, das den Renderer mit Xamarin.Forms registriert. Das-Attribut nimmt zwei Parameter: den Typnamen des Xamarin.Forms-Steuerelements gerendert wird, und der Typname des benutzerdefinierten Renderers. Die `assembly` Präfix, das das Attribut gibt an, dass das Attribut für die gesamte Assembly gilt.
 
-Die folgenden Abschnitte beschreiben die Implementierung der einzelnen plattformspezifischen `MyEntryRenderer` benutzerdefinierter Renderer-Klasse.
+Die folgenden Abschnitte beschreiben die Implementierung der einzelnen plattformspezifischen `MyEntryRenderer` benutzerdefinierten Renderer-Klasse.
 
-### <a name="creating-the-custom-renderer-on-ios"></a>Erstellen die benutzerdefinierten Renderers für iOS
+### <a name="creating-the-custom-renderer-on-ios"></a>Erstellen den benutzerdefinierten Renderer für iOS
 
 Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für die iOS-Plattform:
 
@@ -146,11 +146,11 @@ namespace CustomRenderer.iOS
 }
 ```
 
-Der Aufruf der Basisklasse `OnElementChanged` -Methode instanziiert ein iOS `UITextField` Steuerelement, mit einem Verweis auf das Steuerelement wird an des Renderers zugewiesen `Control` Eigenschaft. Klicken Sie dann Festlegen der Hintergrundfarbe hell Violett mit der `UIColor.FromRGB` Methode.
+Der Aufruf der Basisklasse `OnElementChanged` Methode instanziiert ein iOS `UITextField` Steuerelement, mit einem Verweis auf das Steuerelement zugewiesen wird, für des Renderers des `Control` Eigenschaft. Wird die Farbe des Hintergrunds für die helle Violett mit festgelegt die `UIColor.FromRGB` Methode.
 
-### <a name="creating-the-custom-renderer-on-android"></a>Erstellen von benutzerdefinierten Renderers für Android
+### <a name="creating-the-custom-renderer-on-android"></a>Erstellen den benutzerdefinierten Renderer für Android
 
-Das folgende Codebeispiel zeigt die benutzerdefinierten Renderers für das Android-Plattform:
+Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für die Android-Plattform:
 
 ```csharp
 using Xamarin.Forms.Platform.Android;
@@ -177,11 +177,11 @@ namespace CustomRenderer.Android
 }
 ```
 
-Der Aufruf der Basisklasse `OnElementChanged` -Methode instanziiert ein Android `EditText` Steuerelement, mit einem Verweis auf das Steuerelement wird an des Renderers zugewiesen `Control` Eigenschaft. Festlegen der Hintergrundfarbe klicken Sie dann auf hellgrün mit der `Control.SetBackgroundColor` Methode.
+Der Aufruf der Basisklasse `OnElementChanged` Methode instanziiert eine Android `EditText` Steuerelement, mit einem Verweis auf das Steuerelement zugewiesen wird, für des Renderers des `Control` Eigenschaft. Wird die Farbe des Hintergrunds für die hellgrün mit festgelegt die `Control.SetBackgroundColor` Methode.
 
-### <a name="creating-the-custom-renderer-on-uwp"></a>Erstellen von benutzerdefinierten Renderers für universelle Windows-Plattform
+### <a name="creating-the-custom-renderer-on-uwp"></a>Erstellen benutzerdefinierten Renderer auf UWP
 
-Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für universelle Windows-Plattform:
+Das folgende Codebeispiel zeigt den benutzerdefinierten Renderer für UWP:
 
 ```csharp
 [assembly: ExportRenderer(typeof(MyEntry), typeof(MyEntryRenderer))]
@@ -202,11 +202,11 @@ namespace CustomRenderer.UWP
 }
 ```
 
-Der Aufruf der Basisklasse `OnElementChanged` -Methode instanziiert einen `TextBox` Steuerelement, mit einem Verweis auf das Steuerelement wird an des Renderers zugewiesen `Control` Eigenschaft. Die Farbe des Hintergrunds wird dann auf Zyan festgelegt, durch das Erstellen einer `SolidColorBrush` Instanz.
+Der Aufruf der Basisklasse `OnElementChanged` Methode instanziiert ein `TextBox` Steuerelement mit einem Verweis auf das Steuerelement, das an des Renderers, der zugewiesen werden `Control` Eigenschaft. Die Hintergrundfarbe wird festgelegt auf Cyanblau durch das Erstellen einer `SolidColorBrush` Instanz.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde veranschaulicht, wie einen benutzerdefiniertes Steuerelement-Renderer für die Xamarin.Forms erstellen [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) -Steuerelement, und Entwickler können das Standardrendering zurückgreifen systemeigene mit ihren eigenen plattformspezifischen Rendering außer Kraft setzen. Benutzerdefinierte Renderer bieten einen sehr effizienter Ansatz zum Anpassen der Darstellung von Xamarin.Forms-Steuerelementen. Sie können für kleine Styling Änderungen oder anspruchsvolle plattformspezifischen Layout und Verhalten Anpassung verwendet werden.
+In diesem Artikel wurde veranschaulicht, wie erstellen Sie einen benutzerdefiniertes Steuerelement-Renderer für die Xamarin.Forms [ `Entry` ](xref:Xamarin.Forms.Entry) -Steuerelement ermöglicht es Entwicklern, native standarddarstellung mit ihren eigenen plattformspezifischen Rendering außer Kraft zu setzen. Benutzerdefinierte Renderer bieten einen sehr effizienter Ansatz zum Anpassen der Darstellung von Xamarin.Forms-Steuerelementen. Sie können für kleine Formatierungsänderungen oder komplexe plattformspezifische Layout und verhaltensanpassung verwendet werden.
 
 
 ## <a name="related-links"></a>Verwandte Links
