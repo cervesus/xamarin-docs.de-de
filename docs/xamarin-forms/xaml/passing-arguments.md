@@ -1,37 +1,37 @@
 ---
 title: Übergeben von Argumenten in XAML
-description: Dieser Artikel beschreibt die Verwendung von XAML-Attributen, die verwendet werden können, Argumente an nicht standardmäßige Konstruktoren, Factorymethoden aufrufen, und geben Sie ein generisches Argument übergeben.
+description: In diesem Artikel wird veranschaulicht, wie die XAML-Attribute, die verwendet werden können, um Argumente an nicht standardmäßige Konstruktoren, die zum Aufrufen der Factorymethoden, und geben Sie ein generisches Argument übergeben.
 ms.prod: xamarin
 ms.assetid: 8F3B267F-499E-4D79-9193-FCA99F199519
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2016
-ms.openlocfilehash: c6ba3de9e50fd2ac452d9eeac169e4c1afd52ae0
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 51b72d9143895543715c519a65cf8c82aa4d12f7
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848433"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996547"
 ---
 # <a name="passing-arguments-in-xaml"></a>Übergeben von Argumenten in XAML
 
-_Dieser Artikel beschreibt die Verwendung von XAML-Attributen, die verwendet werden können, Argumente an nicht standardmäßige Konstruktoren, Factorymethoden aufrufen, und geben Sie ein generisches Argument übergeben._
+_In diesem Artikel wird veranschaulicht, wie die XAML-Attribute, die verwendet werden können, um Argumente an nicht standardmäßige Konstruktoren, die zum Aufrufen der Factorymethoden, und geben Sie ein generisches Argument übergeben._
 
 ## <a name="overview"></a>Übersicht
 
-Es ist häufig zum Instanziieren von Objekten mit Konstruktoren, die Argumente erforderlich sind, oder durch Aufrufen einer statischen Erstellungsmethode. Dies kann in XAML mit erreicht werden die `x:Arguments` und `x:FactoryMethod` Attribute:
+Es ist häufig erforderlich, Instanziieren von Objekten mit Konstruktoren, die Argumente erforderlich sind, oder durch Aufrufen einer statischen Erstellungsmethode. Dies kann in XAML mit erreicht werden die `x:Arguments` und `x:FactoryMethod` Attribute:
 
-- Die `x:Arguments` Attribut wird verwendet, um Konstruktorargumente für einen nicht trivialen Konstruktor oder eine Objektdeklaration der Factory-Methode angeben. Weitere Informationen finden Sie unter [Konstruktorargumente übergeben](#constructor_arguments).
-- Die `x:FactoryMethod` Attribut wird verwendet, um eine Factorymethode angeben, die verwendet werden kann, um ein Objekt zu initialisieren. Weitere Informationen finden Sie unter [Aufrufen der Factorymethoden](#factory_methods).
+- Die `x:Arguments` Attribut wird verwendet, um die Konstruktorargumente für einen nicht standardmäßigen Konstruktor oder für eine Factory-Methodendeklaration Objekt angeben. Weitere Informationen finden Sie unter [Konstruktorargument übergeben](#constructor_arguments).
+- Die `x:FactoryMethod` Attribut wird verwendet, um eine Factorymethode angeben, die zum Initialisieren eines Objekts verwendet werden kann. Weitere Informationen finden Sie unter [Aufrufen der Factorymethoden](#factory_methods).
 
-Darüber hinaus die `x:TypeArguments` Attribut kann verwendet werden, um die generischen Typargumente an den Konstruktor eines generischen Typs angeben. Weitere Informationen finden Sie unter [generischen Typargument angeben](#generic_type_arguments).
+Darüber hinaus die `x:TypeArguments` -Attribut kann verwendet werden, um die generischen Typargumente an den Konstruktor eines generischen Typs anzugeben. Weitere Informationen finden Sie unter [er ein generisches Typargument angibt](#generic_type_arguments).
 
 <a name="constructor_arguments" />
 
 ## <a name="passing-constructor-arguments"></a>Übergeben von Argumenten-Konstruktor
 
-Argumente übergeben werden können, in einen nicht standardmäßigen Konstruktor mit der `x:Arguments` Attribut. Jedes Konstruktorargument muss in einem XML-Element getrennt werden, die den Typ des Arguments darstellt. Xamarin.Forms unterstützt die folgenden Elemente für grundlegende Typen:
+Argumente übergeben werden können, an einem nicht standardmäßigen Konstruktor mit der `x:Arguments` Attribut. Jedes Konstruktorargument muss in einem XML-Element getrennt werden, die den Typ des Arguments darstellt. Xamarin.Forms unterstützt die folgenden Elemente für grundlegende Typen:
 
 - `x:Object`
 - `x:Boolean`
@@ -48,7 +48,7 @@ Argumente übergeben werden können, in einen nicht standardmäßigen Konstrukto
 - `x:Array`
 - `x:DateTime`
 
-Das folgende Codebeispiel veranschaulicht die Verwendung der `x:Arguments` Attribut mit drei [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) Konstruktoren:
+Das folgende Codebeispiel veranschaulicht die Verwendung der `x:Arguments` Attribut mit drei [ `Color` ](xref:Xamarin.Forms.Color) Konstruktoren:
 
 ```xaml
 <BoxView HeightRequest="150" WidthRequest="150" HorizontalOptions="Center">
@@ -85,19 +85,19 @@ Das folgende Codebeispiel veranschaulicht die Verwendung der `x:Arguments` Attri
 </BoxView>
 ```
 
-Die Anzahl der Elemente innerhalb der `x:Arguments` Tag und die Arten von diesen Elementen müssen einem der entsprechen den [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) Konstruktoren. Die `Color` [Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Color.Color/p/System.Double/) mit einem einzelnen Parameter erfordert einen Graustufenwert von 0 (Schwarz) und 1 (weiß). Die `Color` [Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Color.Color/p/System.Double/System.Double/System.Double/) mit drei Parametern erfordert einen Rot-, Grün- und blauen-Wert im Bereich von 0 bis 1. Die `Color` [Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Color.Color/p/System.Double/System.Double/System.Double/System.Double/) mit vier Parametern einen alpha-Kanal als vierten Parameter hinzugefügt.
+Die Anzahl der Elemente in der `x:Arguments` Tag und die Typen dieser Elemente, müssen einem der entsprechen der [ `Color` ](xref:Xamarin.Forms.Color) Konstruktoren. Die `Color` [Konstruktor](xref:Xamarin.Forms.Color.%23ctor(System.Double)) mit einem einzigen Parameter erfordert einen graustufentextur-Wert von 0 (Schwarz) auf 1 (weiß). Die `Color` [Konstruktor](xref:Xamarin.Forms.Color.%23ctor(System.Double,System.Double,System.Double)) mit drei Parametern erfordert einen Zahl zwischen 0 und 1 roten, grünen und blauen-Wert. Die `Color` [Konstruktor](xref:Xamarin.Forms.Color.%23ctor(System.Double,System.Double,System.Double,System.Double)) mit vier Parametern einen alpha-Kanal als vierten Parameter hinzugefügt.
 
-Die folgenden Screenshots zeigen das Ergebnis des Aufrufs jedes [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) Konstruktor mit den Werten des angegebenen Arguments:
+Die folgenden Screenshots zeigen das Ergebnis des Aufrufs jedes [ `Color` ](xref:Xamarin.Forms.Color) Konstruktor mit dem angegebenen Argument-Werte:
 
-![](passing-arguments-images/passing-arguments.png "X: Arguments angegeben BoxView.Color")
+![](passing-arguments-images/passing-arguments.png "BoxView.Color mit X: Arguments angegeben wird")
 
 <a name="factory_methods" />
 
 ## <a name="calling-factory-methods"></a>Aufrufen der Factorymethoden
 
-Factorymethoden können in XAML aufgerufen werden, indem Sie der Methode angeben mithilfe der `x:FactoryMethod` Attribut und seine Argumente, die mit der `x:Arguments` Attribut. Eine Factorymethode ist eine `public static` Methode, die Objekte oder Werte desselben Typs wie die Klasse oder Struktur, die die Methoden definiert zurückgibt.
+Factorymethoden können in XAML aufgerufen werden, durch Angeben der Methode mithilfe der `x:FactoryMethod` -Attribut und dessen Argumente mithilfe der `x:Arguments` Attribut. Eine Factorymethode ist eine `public static` -Methode, die zurückgegeben werden, Objekte oder Werte desselben Typs wie die Klasse oder Struktur, die die Methoden definiert.
 
-Die [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) Struktur definiert eine Reihe von Factorymethoden, und im folgenden Codebeispiel wird veranschaulicht, aufrufenden drei Elemente:
+Die [ `Color` ](xref:Xamarin.Forms.Color) Struktur definiert eine Reihe von Factorymethoden und im folgenden Codebeispiel wird veranschaulicht, aufrufende drei Parameter:
 
 ```xaml
 <BoxView HeightRequest="150" WidthRequest="150" HorizontalOptions="Center">
@@ -135,11 +135,11 @@ Die [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) Str
 </BoxView>
 ```
 
-Die Anzahl der Elemente innerhalb der `x:Arguments` Tag und die Typen der diese Elemente müssen die Argumente der aufgerufenen Factorymethode entsprechen. Die [ `FromRgba` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/) Factorymethode erfordert vier [ `Int32` ](https://docs.microsoft.com/dotnet/api/system.int32) Parameter, die die Werte Rot, Grün, Blau und alpha, die zwischen 0 und 255 bzw. darstellen. Die [ `FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/) Factorymethode erfordert vier [ `Double` ](https://docs.microsoft.com/dotnet/api/system.double) Parameter, die den Farbton, Sättigung Helligkeit und Alphawerte, zwischen 0 und 1 bzw. darstellen. Die [ `FromHex` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/) Factorymethode erfordert eine [ `String` ](https://docs.microsoft.com/dotnet/api/system.string) , die die Hexadezimalwerte darstellt (A) RGB-Farbe.
+Die Anzahl der Elemente in der `x:Arguments` übereinstimmen Tag und die Typen dieser Elemente, die Argumente von der Factory-Methode aufgerufen wird. Die [ `FromRgba` ](xref:Xamarin.Forms.Color.FromRgba(System.Int32,System.Int32,System.Int32,System.Int32)) Factorymethode erfordert vier [ `Int32` ](https://docs.microsoft.com/dotnet/api/system.int32) -Parameter, die die roten, grünen, blauen und alpha-Werte, zwischen 0 und 255 bzw. darstellen. Die [ `FromHsla` ](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double)) Factorymethode erfordert vier [ `Double` ](https://docs.microsoft.com/dotnet/api/system.double) -Parameter, die den Farbton, Sättigung, Helligkeit und alpha-Werte zwischen 0 und 1 bzw. darstellen. Die [ `FromHex` ](xref:Xamarin.Forms.Color.FromHex(System.String)) Factorymethode erfordert eine [ `String` ](https://docs.microsoft.com/dotnet/api/system.string) , die den Hexadezimalwert darstellt (A) RGB-Farbe.
 
-Die folgenden Screenshots zeigen das Ergebnis des Aufrufs jedes [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) Factory-Methode mit den Werten des angegebenen Arguments:
+Die folgenden Screenshots zeigen das Ergebnis des Aufrufs jedes [ `Color` ](xref:Xamarin.Forms.Color) Factorymethode, die mit den Werten des angegebenen Arguments:
 
-![](passing-arguments-images/factory-methods.png "X: FactoryMethod-und X: Arguments angegeben BoxView.Color")
+![](passing-arguments-images/factory-methods.png "BoxView.Color mit X: FactoryMethod- und X: Arguments angegeben wird")
 
 <a name="generic_type_arguments" />
 
@@ -161,15 +161,15 @@ Generische Typargumente für den Konstruktor eines generischen Typs können ange
 </ContentPage>
 ```
 
-Die [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) Klasse ist eine generische Klasse und müssen instanziiert werden, mit einer `x:TypeArguments` Attribut, das den Zieltyp entspricht. In der [ `On` ](https://developer.xamarin.com/api/type/Xamarin.Forms.On/) -Klasse, die [ `Platform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.On.Platform/) Attribut akzeptiert ein einzelnes `string` Wert oder mehrere durch Kommas getrennte `string` Werte. In diesem Beispiel wird die [ `StackLayout.Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) Eigenschaftensatz an einen plattformspezifischen [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/).
+Die [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) -Klasse ist eine generische Klasse und instanziiert werden müssen, mit einer `x:TypeArguments` -Attribut, das mit dem Zieltyp übereinstimmt. In der [ `On` ](xref:Xamarin.Forms.On) -Klasse, die [ `Platform` ](xref:Xamarin.Forms.On.Platform) Attribut kann eine einzelne akzeptieren `string` Wert oder mehrere durch Kommas getrennte `string` Werte. In diesem Beispiel die [ `StackLayout.Margin` ](xref:Xamarin.Forms.View.Margin) -Eigenschaftensatz auf eine plattformspezifische [ `Thickness` ](xref:Xamarin.Forms.Thickness).
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel veranschaulicht die Verwendung von XAML-Attributen, die verwendet werden können, Argumente an nicht standardmäßige Konstruktoren, Factorymethoden aufrufen, und geben Sie ein generisches Argument übergeben.
+In diesem Artikel wird gezeigt, mithilfe der XAML-Attribute, die verwendet werden können, um Argumente an nicht standardmäßige Konstruktoren, die zum Aufrufen der Factorymethoden, und geben Sie ein generisches Argument übergeben.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [XAML-Namespaces](~/xamarin-forms/xaml/namespaces.md)
-- [Übergeben von Konstruktorargumente (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/xaml/passingconstructorarguments/)
+- [Übergeben von Argumenten-Konstruktor (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/xaml/passingconstructorarguments/)
 - [Aufrufen der Factorymethoden (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/xaml/callingfactorymethods/)

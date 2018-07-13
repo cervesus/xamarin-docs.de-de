@@ -1,62 +1,62 @@
 ---
 title: Xamarin.Forms-Raster
-description: In diesem Artikel wird erläutert, wie die Xamarin.Forms-Raster-Klasse, die zum Darstellen von Ansichten in Raster, die Zeilen und Spalten verarbeiten verwendet wird.
+description: In diesem Artikel wird erläutert, wie Sie die Xamarin.Forms-Raster-Klasse verwenden, um Ansichten in Rastern darzustellen, die Zeilen und Spalten besitzen wird.
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: a50144f5e0962bd74858bb7731e30cef5dd31b6d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 01dd59d5e94b473316b03f9035d38305fad42880
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245152"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994501"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms-Raster
 
-[`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) unterstützt das Anordnen von Ansichten in Zeilen und Spalten. Zeilen und Spalten können festgelegt werden, um proportional Größen oder absolute Größen haben. Die `Grid` Layout sollten nicht mit herkömmlichen Tabellen verwechselt werden und dient nicht zum Präsentieren von Tabellendaten. `Grid` Es muss nicht das Konzept der Zeile, Spalte oder Zelle, die Formatierung. Im Gegensatz zu HTML-Tabellen `Grid` ist ausschließlich für das Layout des Inhalt vorgesehen.
+[`Grid`](xref:Xamarin.Forms.Grid) unterstützt das Anordnen von Ansichten in Zeilen und Spalten. Zeilen und Spalten können festgelegt werden, um proportionale Größe bzw. absolute Größen zu erhalten. Die `Grid` Layout sollten nicht mit herkömmlichen Tabellen verwechselt werden und dient nicht zur Darstellung von Tabellendaten. `Grid` Es muss nicht das Konzept der Zeile, Spalte oder Zelle, die Formatierung. Im Gegensatz zu HTML-Tabellen `Grid` dient ausschließlich für das Inhaltslayout.
 
-[![](grid-images/layouts-sml.png "Xamarin.Forms Layouts")](grid-images/layouts.png#lightbox "Xamarin.Forms Layouts")
+[![](grid-images/layouts-sml.png "Xamarin.Forms-Layouts")](grid-images/layouts.png#lightbox "Xamarin.Forms-Layouts")
 
-Dieser Artikel umfasst folgende Themen:
+Dieser Artikel behandelt:
 
 - **[Zweck](#Purpose)**  &ndash; Allgemeine Verwendungsmöglichkeiten für `Grid`.
-- **[Verwendung](#Usage)**  &ndash; wie `Grid` auf den gewünschten Entwurf zu erzielen.
+- **[Nutzung](#Usage)**  &ndash; mit `Grid` Erreichen des gewünschten Entwurfs.
   - **[Zeilen und Spalten](#Rows_and_Columns)**  &ndash; geben Zeilen und Spalten für die `Grid`.
-  - **[Platzieren die Ansichten](#Placing_Views)**  &ndash; Ansichten im Raster in bestimmten Zeilen und Spalten hinzufügen.
-  - **[Abstand](#Spacing)**  &ndash; die Leerzeichen zwischen den Zeilen und Spalten konfigurieren.
-  - **[Spannen](#Spans)**  &ndash; konfigurieren Sie die Elemente, die über mehrere Zeilen oder Spalten umfassen.
+  - **[Platzieren Ansichten](#Placing_Views)**  &ndash; Ansichten in das Raster an bestimmten Zeilen und Spalten hinzufügen.
+  - **[Der Abstand](#Spacing)**  &ndash; die Leerzeichen zwischen den Zeilen und Spalten konfigurieren.
+  - **[Spannen](#Spans)**  &ndash; Konfigurieren von Elementen, die über mehrere Zeilen oder Spalten erstrecken.
 
-![](grid-images/grid.png "Raster zum Durchsuchen von")
+![](grid-images/grid.png "Durchsuchen von Raster")
 
 ## <a name="purpose"></a>Zweck
 
-`Grid` kann verwendet werden, um Sichten in einem Raster anordnen. Dies ist eine Anzahl von Fällen nützlich:
+`Grid` kann verwendet werden, um Ansichten in einem Raster anzuordnen. Dies ist in einer Reihe von Fällen nützlich:
 
-- Anordnen von Schaltflächen in einem Rechner-Anwendung
-- Anordnen von Schaltflächen/Optionen in einem Raster an, wie die IOS- oder Android Startbildschirme
-- Anordnen von Ansichten, damit sie gleicher Größe in einer Dimension (wie in einigen Symbolleisten) sind.
+- Anordnen von Schaltflächen in einer app Rechner
+- Anordnen von Schaltflächen/Auswahl in einem Raster an, wie die IOS- oder Android Startbildschirme
+- Anordnen von Ansichten, sodass sie gleicher Größe in einer Dimension (wie in einige Symbolleisten) sind
 
 ## <a name="usage"></a>Verwendung
 
-Im Gegensatz zu herkömmlichen Tabellen `Grid` leitet die Anzahl und Größe der Zeilen und Spalten aus dem Inhalt nicht. Stattdessen `Grid` hat `RowDefinitions` und `ColumnDefinitions` Sammlungen. Diese Dateien enthalten Definitionen der, wie viele Zeilen und Spalten angeordnet werden. Ansichten werden hinzugefügt, um `Grid` mit den angegebenen Zeilen- und Spaltenindizes, die zu identifizieren, welche Zeile und Spalte eine Sicht in platziert werden soll.
+Im Gegensatz zu herkömmlichen Tabellen `Grid` leitet nicht die Anzahl und Größe der Zeilen und Spalten aus dem Inhalt. Stattdessen `Grid` hat `RowDefinitions` und `ColumnDefinitions` Sammlungen. Diese enthalten Definitionen für wie viele Zeilen und Spalten angeordnet werden werden. Ansichten werden hinzugefügt, um `Grid` mit den angegebenen Zeilen- und Spaltenindizes, die zu identifizieren, welchen Zeilen und Spalten in eine Ansicht platziert werden soll.
 
 <a name="Rows_and_Columns" />
 
 ### <a name="rows-and-columns"></a>Zeilen und Spalten
 
-Zeilen-und Spalteninformationen befindet sich in `Grid`des `RowDefinitions`  &  `ColumnDefinitions` Eigenschaften, die einzelnen Sammlungen werden von [ `RowDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RowDefinition/) und [ `ColumnDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColumnDefinition/)-Objekt zugeordnet. `RowDefinition` verfügt über eine einzelne Eigenschaft `Height`, und `ColumnDefinition` verfügt über eine einzelne Eigenschaft `Width`. Die Optionen für die Höhe und Breite werden wie folgt aus:
+Zeilen-und Spalteninformationen befindet sich in `Grid`des `RowDefinitions`  &  `ColumnDefinitions` Eigenschaften, die einzelnen Sammlungen sind der [ `RowDefinition` ](xref:Xamarin.Forms.RowDefinition) und [ `ColumnDefinition` ](xref:Xamarin.Forms.ColumnDefinition)-Objekten. `RowDefinition` verfügt über eine einzelne Eigenschaft `Height`, und `ColumnDefinition` verfügt über eine einzelne Eigenschaft `Width`. Die Optionen für die Höhe und Breite sind wie folgt aus:
 
-- **Automatische** &ndash; automatisch Größen an den Inhalt in der Zeile oder Spalte. Als angegebenen [ `GridUnitType.Auto` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/) in c# oder als `Auto` in XAML.
-- **Proportional(*)** &ndash; Größen von Zeilen und Spalten als Teile des verbleibenden Speicherplatzes. Als Wert angegeben und `GridUnitType.Star` in C# geschrieben und als `#*` in XAML mit `#` wird von den gewünschten Wert. Angeben einer Zeile/Spalte und `*` wird dazu führen, dass sie den verfügbaren Platz auszufüllen.
-- **Absolute** &ndash; -Größen von Spalten und Zeilen mit bestimmten, feste Werte für Höhe und Breite. Als Wert angegeben und `GridUnitType.Absolute` in C# geschrieben und als `#` in XAML mit `#` wird von den gewünschten Wert.
+- **Automatische** &ndash; automatisch Größen an den Inhalt in der Zeile oder Spalte. Als angegebenen [ `GridUnitType.Auto` ](xref:Xamarin.Forms.GridUnitType) in c# oder als `Auto` in XAML.
+- **Proportional(*)** &ndash; Größen von Zeilen und Spalten als Proportion des verbleibenden Speicherplatzes. Als Wert angegeben und `GridUnitType.Star` in C# geschrieben und als `#*` in XAML, mit `#` wird von den gewünschten Wert. Angeben einer Zeile/Spalte und `*` bewirkt, dass sie den verfügbaren Platz auszufüllen.
+- **Absolute** &ndash; Größen der Spalten und Zeilen mit bestimmten festen Höhe und Breite Werten. Als Wert angegeben und `GridUnitType.Absolute` in C# geschrieben und als `#` in XAML, mit `#` wird von den gewünschten Wert.
 
 > [!NOTE]
-> Breitenwerte für Spalten werden festgelegt, als "*" in der Standardeinstellung in Xamarin.Forms, wodurch sichergestellt wird, dass die Spalte mit den verfügbaren Platz ausfüllen wird.
+> Die Breitenwerte für Spalten werden festgelegt, als "*" werden standardmäßig in Xamarin.Forms, die sicherstellt, dass es sich bei die Spalte den verfügbaren Platz ausfüllt.
 
-Erwägen Sie eine app, die drei Zeilen und zwei Spalten erforderlich ist. In die untersten Zeile muss genau 200px hoch sein, und die oberste Zeile muss zweimal so hoch wie die mittlere Zeile sein. Die linke Spalte breit genug, um den Inhalt angepasst werden muss, und die rechte Spalte muss den verbleibenden Platz auszufüllen.
+Betrachten Sie eine app, die drei Zeilen und zwei Spalten aus. Die untere Zeile muss genau randleistenabschnitt 200 Pixel hoch sein, und die oberste Zeile zweimal so groß wie die mittlere Zeile werden muss. Die linke Spalte muss für den Inhalt ausreichend sein, und die rechte Spalte muss den verbleibenden Platz auszufüllen.
 
 In XAML:
 
@@ -86,11 +86,11 @@ grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (200) }
 
 <a name="Placing_Views" />
 
-### <a name="placing-views-in-a-grid"></a>Platzieren Sichten in einem Raster
+### <a name="placing-views-in-a-grid"></a>Platzieren von Ansichten in einem Raster
 
-Platzieren von Ansichten in einer `Grid` müssen Sie deren hinzufügen als untergeordnete Elemente in den Entwurfsbereich, und klicken Sie dann angeben, welche Zeile und Spalte, die sie in gehören.
+Platzieren von Ansichten in einer `Grid` müssen Sie deren hinzufügen als untergeordnete Elemente in das Raster, und klicken Sie dann angeben, welchen Zeilen und Spalten, die sie in gehören.
 
-In XAML verwenden `Grid.Row` und `Grid.Column` für jede einzelne Sicht Platzierung angeben. Beachten Sie, dass `Grid.Row` und `Grid.Column` Geben Sie an, die anhand der nullbasierten Listen mit Zeilen und Spalten. Dies bedeutet, dass in einem 4 x 4-Raster der oberste linke Zelle ist (0,0) und obersten rechten Zelle (3,3).
+Verwenden Sie in XAML, `Grid.Row` und `Grid.Column` für jede einzelne Sicht Platzierung angeben. Beachten Sie, dass `Grid.Row` und `Grid.Column` geben an, die basierend auf die nullbasierte Listen von Zeilen und Spalten. Dies bedeutet, dass in einem 4 x 4-Raster der oberste linke Zelle ist (0,0) und die untere rechte Zelle (3,3).
 
 Die `Grid` gezeigt unten enthält vier Zellen:
 
@@ -136,9 +136,9 @@ grid.Children.Add(bottomLeft, 0, 1);
 grid.Children.Add(bottomRight, 1, 1);
 ```
 
-Der obige Code erstellt Raster mit vier Bezeichnungen, zwei Spalten und zwei Zeilen. Beachten Sie, dass jede Bezeichnung dieselbe Größe aufweisen, wird und dass die Zeilen erweitert werden, um den gesamten verfügbaren Speicherplatz zu verwenden.
+Der obige Code wird ein Raster mit vier Bezeichnungen, zwei Spalten und zwei Zeilen erstellt. Beachten Sie, dass jede Bezeichnung die gleiche Größe hat, und, dass die Zeilen erweitert werden, um die gesamte verfügbare Speicherplatz verwenden.
 
-Im obigen Beispiel Sichten hinzugefügt werden die [ `Grid.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.Children/) Auflistung mithilfe der [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/) Überladung auf, die linke und obere Argumente angibt. Bei Verwendung der [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/) Überladung, der angibt, nach links, rechts, oben und unten Argumente, während er sich links und oberen Argumente verweist immer auf die Zellen innerhalb der [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), rechts und unten Argumente scheinbar auf Zellen verweisen, die sich außerhalb der `Grid`. Dies ist, da das rechte Argument muss immer größer als das linke Argument aufweisen, und die unteren-Argument immer größer als der Top-Argument sein muss. Das folgende Beispiel zeigt den entsprechenden Code mit `Add` Überladungen:
+Im obigen Beispiel-Ansichten werden hinzugefügt, um die [ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children) Sammlung mithilfe der [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/) Überladung, die linken und oberen Argumente angibt. Bei Verwendung der [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/) Überladung, der angibt, nach links, rechts, oben und unten Argumente, während Sie links und oben Argumente verweist immer auf die Zellen in der [ `Grid` ](xref:Xamarin.Forms.Grid), rechts und unten Argumente können angezeigt werden, verweisen auf Zellen, die außerhalb der `Grid`. Dies ist, da das rechte Argument immer größer als das linke Argument sein muss, und die unteren Argument muss immer größer als die Top-Argument. Das folgende Beispiel zeigt den entsprechenden Code mit `Add` Überladungen:
 
 ```csharp
 // left, top
@@ -156,12 +156,12 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2);
 
 ### <a name="spacing"></a>Abstand
 
-`Grid` verfügt über Eigenschaften, um den Abstand zwischen Zeilen und Spalten zu steuern.  Die folgenden Eigenschaften stehen für die Anpassung der `Grid`:
+`Grid` verfügt über Eigenschaften zum Steuern der Abstand zwischen den Zeilen und Spalten.  Die folgenden Eigenschaften stehen für die Anpassung der `Grid`:
 
 - **ColumnSpacing** &ndash; den Abstand zwischen Spalten.
-- **RowSpacing** &ndash; den Abstand zwischen Zeilen.
+- **"RowSpacing"** &ndash; den Abstand zwischen Zeilen.
 
-Der folgende XAML-Code gibt eine `Grid` mit zwei Spalten, eine Zeile, und 5 px Abstand zwischen Spalten:
+Gibt an, der folgende XAML ein `Grid` mit zwei Spalten und eine Zeile 5 Pixel der Abstand zwischen Spalten:
 
 ```xaml
 <Grid ColumnSpacing="5">
@@ -182,17 +182,17 @@ grid.ColumnDefnitions.Add(new ColumnDefinition { Width = new GridLength (1, Grid
 
 ### <a name="spans"></a>Span-Eigenschaften
 
-Häufig bei der Arbeit mit einem Raster besteht ein Element, das mehr als eine Zeile oder Spalte einnehmen sollte. Betrachten Sie eine einfachen Rechner-Anwendung:
+Häufig bei der Arbeit mit einem Raster besteht ein Element, das mehr als eine Zeile oder Spalte einnehmen sollte. Betrachten Sie eine einfachen Taschenrechner-Anwendung:
 
 ![](grid-images/calculator.png "Calulator-Anwendung")
 
-Beachten Sie, dass die Schaltfläche "0" zwei Spalten, wie die integrierte Rechner für jede Plattform umfasst. Dies erfolgt mit der `ColumnSpan` Eigenschaft, die angibt, wie viele Spalten ein Element einnehmen sollte. Der XAML-Code für diese Schaltfläche:
+Beachten Sie, dass die Schaltfläche "0" zwei Spalten, genau wie integrierte Rechner für jede Plattform umfasst. Dies erfolgt mithilfe der `ColumnSpan` Eigenschaft, die angibt, wie viele Spalten ein Element belegen soll. Der XAML für diese Schaltfläche:
 
 ```xaml
 <Button Text = "0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
 ```
 
-Auch in c#:
+Und in c#:
 
 ```csharp
 Button zeroButton = new Button { Text = "0" };
@@ -200,9 +200,9 @@ controlGrid.Children.Add (zeroButton, 0, 4);
 Grid.SetColumnSpan (zeroButton, 2);
 ```
 
-Beachten Sie im Code der statischen Methoden der `Grid` Klasse werden verwendet, um die Positionierung Änderungen, einschließlich Änderungen an den ausführen `ColumnSpan` und `RowSpan`. Außerdem werden Beachten Sie, dass im Gegensatz zu anderen Eigenschaften, die zu einem beliebigen Zeitpunkt festgelegt werden können, mithilfe der statischen Methoden festgelegte Eigenschaften bereits müssen im Raster, bevor sie geändert werden.
+Beachten Sie in statischen Methoden der Code die `Grid` -Klasse verwendet, um die Positionierung, einschließlich der Änderungen an Änderungen führen `ColumnSpan` und `RowSpan`. Außerdem werden Beachten Sie, dass im Gegensatz zu anderen Eigenschaften, die zu einem beliebigen Zeitpunkt festgelegt werden können, Eigenschaften festgelegt, die statische Methoden verwenden, bereits muss im Raster, bevor sie geändert werden.
 
-Der vollständigen XAML-Code für die oben genannten Rechner-Anwendung sieht folgendermaßen aus:
+Der vollständige XAML für die oben genannten Rechner-Anwendung sieht folgendermaßen aus:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -294,7 +294,7 @@ BackgroundColor="#404040">
 </ContentPage>
 ```
 
-Beachten Sie, dass sowohl die Beschriftung oben im Raster die Schaltfläche "NULL" Occuping mehr als eine Spalte. Obwohl ähnlich aufgebaut verschachtelte Raster erreicht werden konnten die `ColumnSpan`  &  `RowSpan` Ansatz ist einfacher.
+Beachten Sie, dass sowohl die Bezeichnung am oberen Rand des Rasters und die Schaltfläche "NULL" Occuping mehr als einer Spalte. Auch wenn ein Layout ähnlich wie verschachtelte Raster erreicht werden konnte die `ColumnSpan`  &  `RowSpan` Ansatz ist einfacher.
 
 Die C#-Implementierung:
 
@@ -383,7 +383,7 @@ public CalculatorGridCode ()
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beim Erstellen mobiler Apps mit Xamarin.Forms, Kapitel 17](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
-- [Raster](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)
+- [Erstellen von mobilen Apps mit Xamarin.Forms Kapitel 17](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
+- [Raster](xref:Xamarin.Forms.Grid)
 - [Layout (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble-Beispiel (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)

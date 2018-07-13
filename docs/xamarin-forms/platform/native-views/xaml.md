@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 4afdf1210a435e4631b1fe43e9415f4f9f599350
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: b7ea75c13d84cf9fe74d7a606f6127aaa6bbe3b2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935490"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996333"
 ---
 # <a name="native-views-in-xaml"></a>Native Ansichten in XAML
 
@@ -44,7 +44,7 @@ Um auf eine einheitliche Ansicht aus einer CodeBehind-Datei verweisen, verwenden
 
 ## <a name="consuming-native-views"></a>Nutzen Native Ansichten
 
-Im folgenden Codebeispiel wird veranschaulicht, nutzen native Ansichten für jede Plattform eine xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/):
+Im folgenden Codebeispiel wird veranschaulicht, nutzen native Ansichten für jede Plattform eine xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage):
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -63,11 +63,11 @@ Im folgenden Codebeispiel wird veranschaulicht, nutzen native Ansichten für jed
 </ContentPage>
 ```
 
-Sowie das Festlegen der `clr-namespace` und `assembly` für einen Namespace einheitlichen Ansicht einer `targetPlatform` muss auch angegeben werden. Sollte auf einen der Werte festgelegt werden die [ `TargetPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetPlatform/) -Enumeration und wird in der Regel festgelegt werden, um `iOS`, `Android`, oder `Windows`. Zur Laufzeit die XAML-Parser ignoriert alle XML-Namespacepräfixe, die eine `targetPlatform` entspricht, die nicht die Plattform, auf dem die Anwendung ausgeführt wird.
+Sowie das Festlegen der `clr-namespace` und `assembly` für einen Namespace einheitlichen Ansicht einer `targetPlatform` muss auch angegeben werden. Sollte auf einen der Werte festgelegt werden die [ `TargetPlatform` ](xref:Xamarin.Forms.TargetPlatform) -Enumeration und wird in der Regel festgelegt werden, um `iOS`, `Android`, oder `Windows`. Zur Laufzeit die XAML-Parser ignoriert alle XML-Namespacepräfixe, die eine `targetPlatform` entspricht, die nicht die Plattform, auf dem die Anwendung ausgeführt wird.
 
 Jede Namespacedeklaration kann verwendet werden, um auf einer beliebigen Klasse oder Struktur aus dem angegebenen Namespace zu verweisen. Z. B. die `ios` Namespace-Deklaration kann verwendet werden, auf einer beliebigen Klasse oder Struktur aus dem iOS `UIKit` Namespace. Eigenschaften der systemeigenen Ansicht können über XAML festgelegt werden, aber die Eigenschaft und die Objekt-Typen müssen übereinstimmen. Z. B. die `UILabel.TextColor` -Eigenschaftensatz auf `UIColor.Red` mithilfe der `x:Static` Markuperweiterung und `ios` Namespace.
 
-Bindbare Eigenschaften und angefügte bindbare Eigenschaften können auch festgelegt werden auf native Ansichten unter Verwendung der `Class.BindableProperty="value"` Syntax. Jede systemeigene Ansicht ist eine plattformspezifische umschlossen `NativeViewWrapper` -Instanz, die von abgeleitet ist die [ `Xamarin.Forms.View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) Klasse. Überträgt die Einstellung eine bindbare Eigenschaft oder die angefügten bindbare Eigenschaft in einer einheitlichen Ansicht den Wert der Eigenschaft an den Wrapper. Beispielsweise kann ein zentriertes horizontales Layout angegeben werden, durch Festlegen von `View.HorizontalOptions="Center"` in der einheitlichen Ansicht.
+Bindbare Eigenschaften und angefügte bindbare Eigenschaften können auch festgelegt werden auf native Ansichten unter Verwendung der `Class.BindableProperty="value"` Syntax. Jede systemeigene Ansicht ist eine plattformspezifische umschlossen `NativeViewWrapper` -Instanz, die von abgeleitet ist die [ `Xamarin.Forms.View` ](xref:Xamarin.Forms.View) Klasse. Überträgt die Einstellung eine bindbare Eigenschaft oder die angefügten bindbare Eigenschaft in einer einheitlichen Ansicht den Wert der Eigenschaft an den Wrapper. Beispielsweise kann ein zentriertes horizontales Layout angegeben werden, durch Festlegen von `View.HorizontalOptions="Center"` in der einheitlichen Ansicht.
 
 > [!NOTE]
 > Beachten Sie, dass die Stile mit nativer Sichten verwendet werden können, da Stile nur Eigenschaften als Ziel verwenden können, die durch gesichert werden `BindableProperty` Objekte.
@@ -113,14 +113,14 @@ Eigenschaften der systemeigenen Ansichten können auch die Datenbindung verwende
 
 ```
 
-Die Seite enthält eine [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) , deren [ `IsEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/) Eigenschaft bindet an die `NativeSwitchPageViewModel.IsSwitchOn` Eigenschaft. Die [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) der Seite auf eine neue Instanz der festgelegt ist die `NativeSwitchPageViewModel` Klasse in der CodeBehind-Datei mit der ViewModel-Klasse implementiert die `INotifyPropertyChanged` Schnittstelle.
+Die Seite enthält eine [ `Entry` ](xref:Xamarin.Forms.Entry) , deren [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) Eigenschaft bindet an die `NativeSwitchPageViewModel.IsSwitchOn` Eigenschaft. Die [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) der Seite auf eine neue Instanz der festgelegt ist die `NativeSwitchPageViewModel` Klasse in der CodeBehind-Datei mit der ViewModel-Klasse implementiert die `INotifyPropertyChanged` Schnittstelle.
 
 Diese Seite enthält auch einen systemeigenen Switch für jede Plattform. Jede native Switch verwendet ein [ `TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay) Bindung an das update der `NativeSwitchPageViewModel.IsSwitchOn` Eigenschaft. Aus diesem Grund werden, wenn der Schalter deaktiviert ist, die `Entry` deaktiviert ist, und wenn der Schalter aktiviert, ist die `Entry` aktiviert ist. Die folgenden Screenshots zeigen diese Funktion auf jeder Plattform:
 
 ![](xaml-images/native-switch-disabled.png "Systemeigene deaktiviert")
 ![](xaml-images/native-switch-enabled.png "systemeigenen Switch aktiviert")
 
-Bidirektionale Bindungen werden automatisch unterstützt, vorausgesetzt, dass die Eigenschaft "native" implementiert `INotifyPropertyChanged`, beobachten von Schlüssel-Wert (KVO) unter iOS unterstützt, oder ist eine `DependencyProperty` in UWP. Allerdings unterstützen viele native Sichten Benachrichtigung der Eigenschaftenänderung nicht. Für diesen Ansichten können Sie angeben einer [ `UpdateSourceEventName` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.UpdateSourceEventName/) Eigenschaftswert als Teil des Bindungsausdrucks. Diese Eigenschaft sollte auf den Namen eines Ereignisses in der einheitlichen Ansicht festgelegt werden, das signalisiert wird, wenn sich die Zieleigenschaft geändert hat. Klicken Sie dann, wenn der Wert des Schalters native geändert wird, die `Binding` Klasse mitgeteilt, dass der Benutzer die Switch-Wert geändert hat und die `NativeSwitchPageViewModel.IsSwitchOn` Eigenschaftswert aktualisiert wird.
+Bidirektionale Bindungen werden automatisch unterstützt, vorausgesetzt, dass die Eigenschaft "native" implementiert `INotifyPropertyChanged`, beobachten von Schlüssel-Wert (KVO) unter iOS unterstützt, oder ist eine `DependencyProperty` in UWP. Allerdings unterstützen viele native Sichten Benachrichtigung der Eigenschaftenänderung nicht. Für diesen Ansichten können Sie angeben einer [ `UpdateSourceEventName` ](xref:Xamarin.Forms.Binding.UpdateSourceEventName) Eigenschaftswert als Teil des Bindungsausdrucks. Diese Eigenschaft sollte auf den Namen eines Ereignisses in der einheitlichen Ansicht festgelegt werden, das signalisiert wird, wenn sich die Zieleigenschaft geändert hat. Klicken Sie dann, wenn der Wert des Schalters native geändert wird, die `Binding` Klasse mitgeteilt, dass der Benutzer die Switch-Wert geändert hat und die `NativeSwitchPageViewModel.IsSwitchOn` Eigenschaftswert aktualisiert wird.
 
 <a name="passing_arguments" />
 
@@ -199,12 +199,12 @@ Weitere Informationen zum Übergeben von Argumenten in XAML finden Sie unter [ü
 
 ## <a name="referring-to-native-views-from-code"></a>Verweisen auf Native Ansichten aus Code
 
-Obwohl es nicht möglich, den Namen einer einheitlichen Ansicht mit ist der `x:Name` -Attribut, es ist möglich, eine native anzeigen-Instanz, die in einer XAML-Datei aus der CodeBehind-Datei in einem Projekt für freigegebenen Zugriff deklariert abzurufen, vorausgesetzt, dass die systemeigene Ansicht ein untergeordnetes Element von einem ist[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) gibt, die eine `x:Name` Attributwert. Klicken Sie dann, empfiehlt sich in Anweisungen für bedingte Kompilierung in der CodeBehind-Datei Folgendes:
+Obwohl es nicht möglich, den Namen einer einheitlichen Ansicht mit ist der `x:Name` -Attribut, es ist möglich, eine native anzeigen-Instanz, die in einer XAML-Datei aus der CodeBehind-Datei in einem Projekt für freigegebenen Zugriff deklariert abzurufen, vorausgesetzt, dass die systemeigene Ansicht ein untergeordnetes Element von einem ist[ `ContentView` ](xref:Xamarin.Forms.ContentView) gibt, die eine `x:Name` Attributwert. Klicken Sie dann, empfiehlt sich in Anweisungen für bedingte Kompilierung in der CodeBehind-Datei Folgendes:
 
-1. Abrufen der [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) Eigenschaft Wert ein, und wandeln sie in einem plattformspezifischen `NativeViewWrapper` Typ.
+1. Abrufen der [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) Eigenschaft Wert ein, und wandeln sie in einem plattformspezifischen `NativeViewWrapper` Typ.
 1. Abrufen der `NativeViewWrapper.NativeElement` Eigenschaft und wandeln Sie sie in den Ansichtstyp der einheitlichen.
 
-Die systemeigene API kann dann auf die systemeigene Ansicht für die gewünschten Vorgänge aufgerufen werden. Dieser Ansatz bietet dem Vorteil, dass auch, dass mehrere native XAML-Ansichten für verschiedene Plattformen untergeordnete Elemente des gleichen sein können [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/). Im folgenden Codebeispiel wird diese Technik veranschaulicht:
+Die systemeigene API kann dann auf die systemeigene Ansicht für die gewünschten Vorgänge aufgerufen werden. Dieser Ansatz bietet dem Vorteil, dass auch, dass mehrere native XAML-Ansichten für verschiedene Plattformen untergeordnete Elemente des gleichen sein können [ `ContentView` ](xref:Xamarin.Forms.ContentView). Im folgenden Codebeispiel wird diese Technik veranschaulicht:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -234,7 +234,7 @@ Die systemeigene API kann dann auf die systemeigene Ansicht für die gewünschte
 </ContentPage>
 ```
 
-Im obigen Beispiel sind die nativen Ansichten für jede Plattform untergeordnete Elemente des [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) -Steuerelemente, mit der `x:Name` Attributwert verwendet wird, zum Abrufen der `ContentView` im Code-Behind:
+Im obigen Beispiel sind die nativen Ansichten für jede Plattform untergeordnete Elemente des [ `ContentView` ](xref:Xamarin.Forms.ContentView) -Steuerelemente, mit der `x:Name` Attributwert verwendet wird, zum Abrufen der `ContentView` im Code-Behind:
 
 ```csharp
 public partial class NativeViewInsideContentViewPage : ContentPage
@@ -276,9 +276,9 @@ public partial class NativeViewInsideContentViewPage : ContentPage
 }
 ```
 
-Die [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) -Eigenschaft zugegriffen wird, zum Abrufen der umschlossenen einheitlichen Ansicht als eine plattformspezifische `NativeViewWrapper` Instanz. Die `NativeViewWrapper.NativeElement` -Eigenschaft klicken Sie dann zum Abrufen der einheitlichen Ansicht als den systemeigenen Typ zugegriffen wird. Der systemeigene Ansicht-API wird dann aufgerufen, um die gewünschten Vorgänge auszuführen.
+Die [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) -Eigenschaft zugegriffen wird, zum Abrufen der umschlossenen einheitlichen Ansicht als eine plattformspezifische `NativeViewWrapper` Instanz. Die `NativeViewWrapper.NativeElement` -Eigenschaft klicken Sie dann zum Abrufen der einheitlichen Ansicht als den systemeigenen Typ zugegriffen wird. Der systemeigene Ansicht-API wird dann aufgerufen, um die gewünschten Vorgänge auszuführen.
 
-IOS- und Android native-Schaltflächen dieselbe `OnButtonTap` Ereignishandler, da jede Schaltfläche "systemeigene" verarbeitet ein `EventHandler` als Reaktion auf ein touchereignis delegieren. Die universelle Windows-Plattform (UWP), verwendet jedoch eine Separate `RoutedEventHandler`, die wiederum nutzt die `OnButtonTap` -Ereignishandler in diesem Beispiel. Wenn daher eine native Schaltfläche geklickt wird, die `OnButtonTap` -Ereignishandler ausgeführt wird, die skaliert und dreht das native Steuerelement innerhalb der [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) mit dem Namen `contentViewTextParent`. Die folgenden Screenshots veranschaulichen dies zu auf jeder Plattform:
+IOS- und Android native-Schaltflächen dieselbe `OnButtonTap` Ereignishandler, da jede Schaltfläche "systemeigene" verarbeitet ein `EventHandler` als Reaktion auf ein touchereignis delegieren. Die universelle Windows-Plattform (UWP), verwendet jedoch eine Separate `RoutedEventHandler`, die wiederum nutzt die `OnButtonTap` -Ereignishandler in diesem Beispiel. Wenn daher eine native Schaltfläche geklickt wird, die `OnButtonTap` -Ereignishandler ausgeführt wird, die skaliert und dreht das native Steuerelement innerhalb der [ `ContentView` ](xref:Xamarin.Forms.ContentView) mit dem Namen `contentViewTextParent`. Die folgenden Screenshots veranschaulichen dies zu auf jeder Plattform:
 
 ![](xaml-images/contentview.png "ContentView, die ein natives Steuerelement enthält.")
 
@@ -319,7 +319,7 @@ Im folgenden Codebeispiel wird veranschaulicht, dass eine Xamarin.Forms-Startsei
 </ContentPage>
 ```
 
-Die Seite enthält eine [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) , die vom Benutzer über ein natives Steuerelement ausgewählten Obst anzeigt. Die `Label` bindet an die `SubclassedNativeControlsPageViewModel.SelectedFruit` Eigenschaft. Die [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) der Seite auf eine neue Instanz der festgelegt ist die `SubclassedNativeControlsPageViewModel` Klasse in der CodeBehind-Datei mit der ViewModel-Klasse implementiert die `INotifyPropertyChanged` Schnittstelle.
+Die Seite enthält eine [ `Label` ](xref:Xamarin.Forms.Label) , die vom Benutzer über ein natives Steuerelement ausgewählten Obst anzeigt. Die `Label` bindet an die `SubclassedNativeControlsPageViewModel.SelectedFruit` Eigenschaft. Die [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) der Seite auf eine neue Instanz der festgelegt ist die `SubclassedNativeControlsPageViewModel` Klasse in der CodeBehind-Datei mit der ViewModel-Klasse implementiert die `INotifyPropertyChanged` Schnittstelle.
 
 Diese Seite enthält auch eine native Picker-Ansicht für jede Plattform. Jede systemeigene Ansicht zeigt die Auflistung der Früchte durch die Bindung der `ItemSource` Eigenschaft, um die `SubclassedNativeControlsPageViewModel.Fruits` Auflistung. Dies ermöglicht dem Benutzer eine Frucht ist, wählen Sie, wie in den folgenden Screenshots gezeigt:
 

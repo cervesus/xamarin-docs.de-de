@@ -1,40 +1,40 @@
 ---
 title: Xamarin.Forms-Navigation
-description: Dieses Handbuch erläutert die Navigation in Xamarin.Forms-apps auszuführen. Xamarin.Forms bietet eine Reihe von anderen Seite Navigation Erfahrungen, abhängig von den verwendeten Seitentyp.
+description: Dieses Handbuch erklärt, wie Navigation in Xamarin.Forms-apps ausgeführt wird. Xamarin.Forms bietet es sich um eine Reihe von der anderen seitennavigationen, abhängig von den Seitentyp, der verwendet wird.
 ms.prod: xamarin
 ms.assetid: BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 90aedee42af7ed1788110e832fb3b435d870ee77
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 202f044ebd7dd5b110b94d2aa60eeb7151150607
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241955"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994727"
 ---
 # <a name="xamarinforms-navigation"></a>Xamarin.Forms-Navigation
 
-_Xamarin.Forms bietet eine Reihe von anderen Seite Navigation Erfahrungen, abhängig von den verwendeten Seitentyp._
+_Xamarin.Forms bietet es sich um eine Reihe von der anderen seitennavigationen, abhängig von den Seitentyp, der verwendet wird._
 
-![](images/page-types.png "Xamarin.Forms Seitentypen")
+![](images/page-types.png "Typen von Xamarin.Forms-Startseite")
 
 ## <a name="hierarchical-navigationhierarchicalmd"></a>[Hierarchische Navigation](hierarchical.md)
 
-Die [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)-Klasse stellt eine hierarchische Navigation bereit, bei welcher der Benutzer wie gewünscht in der Vorwärts- und in der Rückwärtsrichtung durch Seiten navigieren kann. Die Klasse implementiert die Navigation als LIFO-Stapel (Last-In-First-out) von [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)-Objekten.
+Die [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Klasse stellt eine hierarchische Navigation bereit, bei welcher der Benutzer wie gewünscht in der Vorwärts- und in der Rückwärtsrichtung durch Seiten navigieren kann. Die Klasse implementiert die Navigation als LIFO-Stapel (Last-In-First-out) von [`Page`](xref:Xamarin.Forms.Page)-Objekten.
 
 ## <a name="tabbedpagetabbed-pagemd"></a>[TabbedPage](tabbed-page.md)
 
-Der Xamarin.Forms [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) besteht aus einer Liste von Registerkarten und ein größerer Detailbereich verfügbar, und jede Registerkarte Laden des Inhalts in den Bereich "Details".
+Die Xamarin.Forms [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) besteht aus einer Liste der Registerkarten und einen größeren Detailbereich, und jede Registerkarte Inhalt wird in den Bereich "Details" geladen.
 
 ## <a name="carouselpagecarousel-pagemd"></a>[CarouselPage](carousel-page.md)
 
-Der Xamarin.Forms [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) wird eine Seite, die Benutzer nebeneinander navigieren Sie können zum Navigieren durch die Seiten des Inhalts, wie einem Katalog.
+Die Xamarin.Forms [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) ist eine Seite, die Benutzer von Seite zu Seite navigieren können, für die Navigation durch Seiten, Inhalte, z. B. einen Katalog.
 
 ## <a name="masterdetailpagemaster-detail-pagemd"></a>[MasterDetailPage](master-detail-page.md)
 
-Der Xamarin.Forms [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) eine Seite, die verwaltet zwei Seiten verwandter Informationen – einer Masterseite, in dem Elemente dargestellt, und eine Detailseite, in dem Informationen zu Elementen auf der Seite "master" dargestellt wird.
+Die Xamarin.Forms [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) ist eine Seite, die zwei Seiten verwandter Informationen – eine Masterseite, die Elemente darstellt, und eine Detailseite, die Details zu Elementen auf der Masterseite präsentiert verwaltet.
 
 ## <a name="modal-pagesmodalmd"></a>[Modale Seiten](modal.md)
 
@@ -42,4 +42,4 @@ Xamarin.Forms bietet auch Unterstützung für modale Seiten. Eine modale Seite e
 
 ## <a name="displaying-pop-upspop-upsmd"></a>[Anzeigen von Popups](pop-ups.md)
 
-Xamarin.Forms stellt zwei pop-Einrichtung-ähnliche Elemente der Benutzeroberfläche: eine Warnung und einer Aktion-Tabelle. Diese Elemente der Benutzeroberfläche können Benutzer einfache Fragen stellen und als Anleitung für die Benutzer über die Aufgaben verwendet werden.
+Xamarin.Forms stellt zwei pop-Registrierung-ähnliche Elemente der Benutzeroberfläche: eine Warnung und ein aktionsblatt. Diese Elemente der Benutzeroberfläche können Benutzer einfache Fragen stellen und Benutzerhandbuch durch Aufgaben verwendet werden.

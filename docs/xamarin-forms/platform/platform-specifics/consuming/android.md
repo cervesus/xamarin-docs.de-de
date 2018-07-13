@@ -1,40 +1,41 @@
 ---
-title: Android-Plattform-Besonderheiten
-description: Plattform Einzelheiten können Sie Funktionen zu nutzen, die nur auf eine bestimmte Plattform verfügbar ist ohne Implementierung benutzerdefinierter Renderer oder Auswirkungen. Dieser Artikel veranschaulicht, wie die Android-Plattform-Einzelheiten zu nutzen, die in Xamarin.Forms integriert werden.
+title: Android Plattformeigenschaften
+description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel veranschaulicht, wie die Android-Plattform-Einzelheiten zu nutzen, die in Xamarin.Forms integriert sind.
 ms.prod: xamarin
 ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/30/2018
-ms.openlocfilehash: 705c3037505b61bfb364772187e0ce8ead14b27f
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.date: 07/11/2018
+ms.openlocfilehash: 5ed11e4afb4c061eb7b9dd8f10c67090b4134888
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847770"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996385"
 ---
-# <a name="android-platform-specifics"></a>Android-Plattform-Besonderheiten
+# <a name="android-platform-specifics"></a>Android Plattformeigenschaften
 
-_Plattform Einzelheiten können Sie Funktionen zu nutzen, die nur auf eine bestimmte Plattform verfügbar ist ohne Implementierung benutzerdefinierter Renderer oder Auswirkungen. Dieser Artikel veranschaulicht, wie die Android-Plattform-Einzelheiten zu nutzen, die in Xamarin.Forms integriert werden._
+_Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel veranschaulicht, wie die Android-Plattform-Einzelheiten zu nutzen, die in Xamarin.Forms integriert sind._
 
-Auf Android-Geräten enthält Xamarin.Forms folgenden Plattform-Angaben:
+Unter Android enthält Xamarin.Forms folgenden Besonderheiten die Plattform –:
 
-- Festlegen des Betriebsmodus einer Bildschirmtastatur. Weitere Informationen finden Sie unter [durch Festlegen des Weiche Tastatur Eingabemodus](#soft_input_mode).
-- Aktivieren schnelle Bildläufe in einem [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Weitere Informationen finden Sie unter [aktivieren schnelle Bildläufe in einem ListView](#fastscroll).
-- Aktivieren der Streifen zwischen Seiten in einem [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/). Weitere Informationen finden Sie unter [aktivieren Streifen zwischen Seiten in einem TabbedPage](#enable_swipe_paging).
-- Steuern der Z-Reihenfolge visueller Elemente zum Bestimmen der Zeichnungsreihenfolge. Weitere Informationen finden Sie unter [steuern die Erhöhung der visuellen Elemente](#elevation).
-- Das Deaktivieren der [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) und [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) Seite Lebenszyklusereignisse auf Anhalten und fortsetzen, für Anwendungen, AppCompat verwenden. Weitere Informationen finden Sie unter [Deaktivieren der Disappearing und angezeigten Seite Lebenszyklusereignisse](#disable_lifecycle_events).
-- Steuern, ob eine [ `WebView` ](xref:Xamarin.Forms.WebView) gemischte Inhalte anzeigen können. Weitere Informationen finden Sie unter [aktivieren gemischten Inhalt in einem WebView](#webview-mixed-content).
+- Festlegen des Betriebsmodus einer Bildschirmtastatur. Weitere Informationen finden Sie unter [Festlegen des Modus der weiche Tastatur Eingabe](#soft_input_mode).
+- Aktivieren schnelle Bildläufe eine [ `ListView` ](xref:Xamarin.Forms.ListView) Weitere Informationen finden Sie unter [ermöglichen schnelle Bildlauf in einer ListView](#fastscroll).
+- Aktivieren, Wischen zwischen den Seiten einer [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Weitere Informationen finden Sie unter [aktivieren Streifen zwischen Seiten in einer "tabbedpage"](#enable_swipe_paging).
+- Steuern der Z-Reihenfolge der visuellen Elemente um Zeichnungsreihenfolge zu bestimmen. Weitere Informationen finden Sie unter [steuern die Erhöhung der visuellen Elemente](#elevation).
+- Deaktivieren der [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) und [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) Seite Lebenszyklusereignisse für anhalten und fortsetzen, für Anwendungen, die AppCompat verwenden. Weitere Informationen finden Sie unter [Deaktivieren der Disappearing und Seitenlebenszyklus-Ereignisse angezeigt werden](#disable_lifecycle_events).
+- Steuern, ob eine [ `WebView` ](xref:Xamarin.Forms.WebView) gemischte Inhalte anzeigen können. Weitere Informationen finden Sie unter [aktivieren gemischter Inhalt in einer WebView](#webview-mixed-content).
 - Festlegen der Eingabemethoden-Editor-Optionen für die Bildschirmtastatur für eine [ `Entry` ](xref:Xamarin.Forms.Entry). Weitere Informationen finden Sie unter [Einstellung Eintrag Eingabemethoden-Editor-Optionen](#entry-imeoptions).
-- Deaktivieren Sie ältere Farbe-Modus auf einem unterstützten [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [deaktivieren Farbe Legacymodus](#legacy-color-mode).
-- Verwenden der standardauffüllung und Schattenwerte von Android-Schaltflächen. Weitere Informationen finden Sie unter [mithilfe von Android-Schaltflächen](#button-padding-shadow).
+- Deaktivieren auf einer unterstützten legacy Farbmodus [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [deaktivieren Farbe Legacymodus](#legacy-color-mode).
+- Verwenden die standardauffüllung und den Volumeschattenkopie-Werte, der Android-Schaltflächen. Weitere Informationen finden Sie unter [Using Android Buttons](#button-padding-shadow).
+- Festlegen der Platzierung der Symbolleiste und die Farbe für eine [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Weitere Informationen finden Sie unter [Einstellung "tabbedpage" Symbolleiste Platzierung und die Farbe](#tabbedpage-toolbar).
 
 <a name="soft_input_mode" />
 
-## <a name="setting-the-soft-keyboard-input-mode"></a>Den Eingabemodus Bildschirmtastatur festlegen
+## <a name="setting-the-soft-keyboard-input-mode"></a>Der Bildschirmtastatur Eingabemodus
 
-Diese plattformspezifischen wird verwendet, um den Betriebsmodus für einen Bereich zur Eingabe von Bildschirmtastatur festgelegt und in XAML durch Festlegen von belegt die [ `Application.WindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty/) -Eigenschaft auf den Wert der [ `WindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust/) Enumeration:
+Diese plattformspezifischen wird verwendet, um den Betriebsmodus für eine Bildschirmtastatur Eingabebereich festgelegt, und in XAML verwendet wird, durch Festlegen der [ `Application.WindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty) angefügte Eigenschaft auf den Wert der [ `WindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) Enumeration:
 
 ```xaml
 <Application ...
@@ -44,7 +45,7 @@ Diese plattformspezifischen wird verwendet, um den Betriebsmodus für einen Bere
 </Application>
 ```
 
-Alternativ können sie in c# mithilfe der fluent-API genutzt werden:
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -54,17 +55,17 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
 ```
 
-Die `Application.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. Die [ `Application.UseWindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.UseWindowSoftInputModeAdjust/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust/) Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) -Namespace wird verwendet, um die Bildschirmtastatur Eingabebereich Betriebsmodus mit Festlegen der [ `WindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust/) Enumeration, die Bereitstellung von zwei Werten: [ `Pan` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Pan/) und [ `Resize` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize/). Die `Pan` Wert verwendet die [ `AdjustPan` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustPan/) Anpassung-Option, die Größe des Fensters nicht während ein Eingabesteuerelements den Fokus besitzt. Stattdessen werden der Inhalt des Fensters geschwenkt so, dass der aktuelle Fokus die Bildschirmtastatur verdeckt. Die `Resize` Wert verwendet die [ `AdjustResize` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustResize/) Anpassung-Option, die Größe des Fensters ändern, während ein Eingabesteuerelements den Fokus, um Platz für die Bildschirmtastatur besitzt.
+Die `Application.On<Android>` Methode gibt an, dass diese plattformspezifischen nur unter Android ausgeführt wird. Die [ `Application.UseWindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.UseWindowSoftInputModeAdjust(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace wird verwendet, um die Bildschirmtastatur Eingabebereich Betriebsmodus mit Festlegen der [ `WindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) Enumeration, die Bereitstellung von zwei Werten: [ `Pan` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Pan) und [ `Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize). Die `Pan` Wert verwendet die [ `AdjustPan` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustPan/) Anpassung-Option, die Größe des Fensters ändern nicht, wenn ein Steuerelement den Fokus besitzt. Stattdessen werden der Inhalt des Fensters verschoben, damit an, dass der aktuelle Fokus die Bildschirmtastatur verdeckt. Die `Resize` Wert verwendet die [ `AdjustResize` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustResize/) Anpassung-Option, mit der die Fenstergröße wird, wenn ein Eingabesteuerelements, um Platz für die Bildschirmtastatur fokussierte.
 
-Das Ergebnis ist, dass die Bildschirmtastatur Bereich Betriebsmodus kann festgelegt werden Eingabe, wenn eine Eingabe Steuerelement den Fokus hat:
+Das Ergebnis ist, dass die Bildschirmtastatur Bereich Betriebsmodus kann festgelegt werden Eingabe, wenn ein Steuerelement den Fokus besitzt:
 
-[![](android-images/pan-resize.png "Bildschirmtastatur funktioniert Modus plattformspezifischen")](android-images/pan-resize-large.png#lightbox "Soft Keyboard Operating Mode Plaform-Specific")
+[![](android-images/pan-resize.png "Bildschirmtastatur-Betrieb-Modus plattformspezifische")](android-images/pan-resize-large.png#lightbox "Soft Keyboard Operating Mode Plaform-Specific")
 
 <a name="fastscroll" />
 
 ## <a name="enabling-fast-scrolling-in-a-listview"></a>Aktivieren schnelle Bildläufe in einem ListView
 
-Diese plattformspezifischen wird verwendet, um schnelle Durchführen eines Bildlaufs durch die Daten im Aktivieren einer [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). Sie wird in XAML verwendet, durch Festlegen der `ListView.IsFastScrollEnabled` angefügten Eigenschaft, um eine `boolean` Wert:
+Diese plattformspezifischen wird verwendet, um schnell einen Bildlauf durch die Daten im ermöglichen eine [ `ListView` ](xref:Xamarin.Forms.ListView). Es ist in XAML verwendet, durch Festlegen der `ListView.IsFastScrollEnabled` angefügten Eigenschaft, um eine `boolean` Wert:
 
 ```xaml
 <ContentPage ...
@@ -81,7 +82,7 @@ Diese plattformspezifischen wird verwendet, um schnelle Durchführen eines Bildl
 </ContentPage>
 ```
 
-Alternativ können sie in c# mithilfe der fluent-API genutzt werden:
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -94,21 +95,21 @@ listView.GroupDisplayBinding = new Binding("Key");
 listView.On<Android>().SetIsFastScrollEnabled(true);
 ```
 
-Die `ListView.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. Die `ListView.SetIsFastScrollEnabled` Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) -Namespace wird verwendet, um schnelle Durchführen eines Bildlaufs durch die Daten im Aktivieren einer [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). Darüber hinaus die `SetIsFastScrollEnabled` Methode kann verwendet werden, um umzuschalten, schnelle Bildläufe durch Aufrufen der `IsFastScrollEnabled` -Methode zurückgegeben wird, ob schnelle Bildlauf aktiviert ist:
+Die `ListView.On<Android>` Methode gibt an, dass diese plattformspezifischen nur unter Android ausgeführt wird. Die `ListView.SetIsFastScrollEnabled` Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace wird verwendet, um schnell einen Bildlauf durch die Daten im ermöglichen eine [ `ListView` ](xref:Xamarin.Forms.ListView). Darüber hinaus die `SetIsFastScrollEnabled` Methode kann verwendet werden, um umzuschalten, schnelle Bildläufe durch Aufrufen der `IsFastScrollEnabled` Methode zurückgeben soll, ob schnelle Bildlauf aktiviert ist:
 
 ```csharp
 listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScrollEnabled());
 ```
 
-Das Ergebnis ist, schnell einen Bildlauf durch die Daten in einem [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) kann aktiviert werden, die ändert der Größe des Ziehpunkts Scroll:
+Das Ergebnis ist, schnell einen Bildlauf durch die Daten in einem [ `ListView` ](xref:Xamarin.Forms.ListView) kann aktiviert werden, welche Änderungen es sich um die Größe des bildlaufziehpunkts:
 
-[![](android-images/fastscroll.png "ListView FastScroll plattformspezifischen")](android-images/fastscroll-large.png#lightbox "ListView FastScroll Plaform-Specific")
+[![](android-images/fastscroll.png "ListView FastScroll plattformspezifische")](android-images/fastscroll-large.png#lightbox "ListView FastScroll Plaform-Specific")
 
 <a name="enable_swipe_paging" />
 
-## <a name="enabling-swiping-between-pages-in-a-tabbedpage"></a>Streifen zwischen Seiten in einem TabbedPage aktivieren
+## <a name="enabling-swiping-between-pages-in-a-tabbedpage"></a>Aktivieren das Streifen zwischen Seiten in einer "tabbedpage"
 
-Diese plattformspezifischen wird verwendet, um aktivieren Streifen mit einem horizontalen Finger Bewegung zwischen Seiten in einem [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/). Sie wird in XAML verwendet, durch Festlegen der [ `TabbedPage.IsSwipePagingEnabled` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.IsSwipePagingEnabledProperty/) angefügten Eigenschaft, um eine `boolean` Wert:
+Diese plattformspezifischen wird verwendet, um ermöglichen ein Lesegerät mit einer horizontalen Finger Bewegung zwischen Seiten in einem [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Es ist in XAML verwendet, durch Festlegen der [ `TabbedPage.IsSwipePagingEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.IsSwipePagingEnabledProperty) angefügten Eigenschaft, um eine `boolean` Wert:
 
 ```xaml
 <TabbedPage ...
@@ -119,7 +120,7 @@ Diese plattformspezifischen wird verwendet, um aktivieren Streifen mit einem hor
 </TabbedPage>
 ```
 
-Alternativ können sie in c# mithilfe der fluent-API genutzt werden:
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -130,9 +131,9 @@ On<Android>().SetOffscreenPageLimit(2)
              .SetIsSwipePagingEnabled(true);
 ```
 
-Die `TabbedPage.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. Die [ `TabbedPage.SetIsSwipePagingEnabled` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetIsSwipePagingEnabled/p/Xamarin.Forms.BindableObject/System.Boolean/) Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) -Namespace wird verwendet, um zwischen Seiten in ein Lesegerät Aktivieren einer [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/). Darüber hinaus die `TabbedPage` -Klasse in der `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` Namespace verfügt auch über eine [ `EnableSwipePaging` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.EnableSwipePaging/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage%7D/) Methode, die diese plattformspezifische ermöglicht und eine [ `DisableSwipePaging` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.DisableSwipePaging/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage%7D/) -Methode, die deaktiviert Diese plattformspezifischen. Die [ `TabbedPage.OffscreenPageLimit` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.OffscreenPageLimitProperty/) angefügten Eigenschaft, und [ `SetOffscreenPageLimit` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetOffscreenPageLimit/p/Xamarin.Forms.BindableObject/System.Int32/) -Methode werden verwendet, um die Anzahl der Seiten festzulegen, die im Leerlauf auf beiden Seiten der aktuellen Seite beibehalten werden sollen.
+Die `TabbedPage.On<Android>` Methode gibt an, dass diese plattformspezifischen nur unter Android ausgeführt wird. Die [ `TabbedPage.SetIsSwipePagingEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetIsSwipePagingEnabled(Xamarin.Forms.BindableObject,System.Boolean)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace wird verwendet, um zwischen Seiten in ein Lesegerät zu aktivieren einer [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Darüber hinaus die `TabbedPage` -Klasse in der `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` Namespace verfügt auch über eine [ `EnableSwipePaging` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.EnableSwipePaging(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})) Methode, die diese plattformspezifischen ermöglicht und eine [ `DisableSwipePaging` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.DisableSwipePaging(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})) -Methode, die deaktiviert Diese plattformspezifischen. Die [ `TabbedPage.OffscreenPageLimit` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.OffscreenPageLimitProperty) angefügten Eigenschaft, und [ `SetOffscreenPageLimit` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetOffscreenPageLimit(Xamarin.Forms.BindableObject,System.Int32)) -Methode werden verwendet, um die Anzahl der Seiten festlegen, die im Leerlauf auf beiden Seiten der aktuellen Seite beibehalten werden sollen.
 
-Das Ergebnis ist, Wischen Paging durch die Seiten angezeigt werden, indem eine [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) aktiviert ist:
+Das Ergebnis ist, wischbewegungen Paging durch die Seiten angezeigt werden, indem eine [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) aktiviert ist:
 
 ![](android-images/tabbedpage-swipe.png)
 
@@ -140,7 +141,7 @@ Das Ergebnis ist, Wischen Paging durch die Seiten angezeigt werden, indem eine [
 
 ## <a name="controlling-the-elevation-of-visual-elements"></a>Steuern die Erhöhung von visuellen Elementen
 
-Diese plattformspezifischen wird verwendet, um die Erhöhung der Rechte oder Z-Reihenfolge der visuellen Elemente auf Anwendungen steuern dieses Ziel API 21 oder größer. Die Erhöhung von ein visuelles Element bestimmt die Zeichnungsreihenfolge mit visuellen Elementen mit höheren Z-Werten occluding visuelle Elemente mit niedrigeren Z-Werten. Sie wird in XAML verwendet, durch Festlegen der `VisualElement.Elevation` angefügten Eigenschaft, um eine `boolean` Wert:
+Diese plattformspezifischen wird verwendet, um die Erhöhung der Rechte oder Z-Reihenfolge der visuellen Elemente auf Anwendungen steuern, die auf API 21 oder höher. Die Höhe ein visuelles Element bestimmt die Zeichnungsreihenfolge mit visuellen Elementen mit höheren Z-Werten, die occluding visuelle Elemente mit niedrigeren Z-Werte. Es ist in XAML verwendet, durch Festlegen der `VisualElement.Elevation` angefügten Eigenschaft, um eine `boolean` Wert:
 
 ```xaml
 <ContentPage ...
@@ -159,7 +160,7 @@ Diese plattformspezifischen wird verwendet, um die Erhöhung der Rechte oder Z-R
 </ContentPage>
 ```
 
-Alternativ können sie in c# mithilfe der fluent-API genutzt werden:
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -201,22 +202,22 @@ public class AndroidElevationPageCS : ContentPage
 }
 ```
 
-Die `Button.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. Die `VisualElement.SetElevation` Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) -Namespace wird verwendet, um die Höhe des visuellen Elements auf einen NULL-Werte zulassen festgelegt `float`. Darüber hinaus die `VisualElement.GetElevation` Methode kann verwendet werden, um die Erhöhung der Rechte Wert ein visuelles Element abzurufen.
+Die `Button.On<Android>` Methode gibt an, dass diese plattformspezifischen nur unter Android ausgeführt wird. Die `VisualElement.SetElevation` Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace wird verwendet, um die Höhe des visuellen Elements auf eine auf NULL festlegbare festgelegt `float`. Darüber hinaus die `VisualElement.GetElevation` Methode kann verwendet werden, um die Erhöhung der Rechte Wert ein visuelles Element abgerufen werden soll.
 
-Das Ergebnis ist, dass die Erhöhung der visuellen Elemente gesteuert werden kann, sodass visuelle Elemente mit höheren Z-Werten visuelle Elemente mit niedrigeren Z-Werten verdeckt. Aus diesem Grund in diesem Beispiel wird die zweite [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) oben gerendert wird die [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) da sie einen höheren Wert für die Erhöhung der Rechte verfügt:
+Das Ergebnis ist, dass die Höhe der visuellen Elemente so, dass visuelle Elemente mit höheren Z-Werten visuelle Elemente mit niedrigeren Z-Werten verdeckt gesteuert werden kann. Aus diesem Grund in diesem Beispiel wird die zweite [ `Button` ](xref:Xamarin.Forms.Button) gerendert wird, über die [ `BoxView` ](xref:Xamarin.Forms.BoxView) da sie einen höheren Wert für die Erhöhung der Rechte verfügt:
 
 ![](android-images/elevation.png)
 
 <a name="disable_lifecycle_events" />
 
-## <a name="disabling-the-disappearing-and-appearing-page-lifecycle-events"></a>Deaktivieren die Lebenszyklusereignisse des verschwinden und angezeigten Seite
+## <a name="disabling-the-disappearing-and-appearing-page-lifecycle-events"></a>Deaktivieren die verschwinden und angezeigten Seitenlebenszyklus-Ereignisse
 
-Diese plattformspezifischen dient zum Deaktivieren der [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) und [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) Page-Ereignisse für die Anwendung anhalten und Fortsetzen der jeweils für Anwendungen, AppCompat verwenden. Darüber hinaus enthält es die Möglichkeit zu steuern, ob die Bildschirmtastatur auf fortsetzen, angezeigt wird, wenn er auf Pause "," angezeigt wurde, vorausgesetzt, dass der Betriebsmodus der Bildschirmtastatur auf festgelegt ist [ `WindowSoftInputModeAdjust.Resize` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize/).
+Diese plattformspezifischen wird zum Deaktivieren der [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) und [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) Seitenereignisse Anwendung anhalten und Fortsetzen der jeweils für Anwendungen, die AppCompat verwenden. Darüber hinaus enthält es die Möglichkeit, um zu steuern, ob die Bildschirmtastatur bei Reaktivierung angezeigt wird, wenn es auf Pause angezeigt wurde, vorausgesetzt, dass der Betriebsmodus, der die Bildschirmtastatur, um festgelegt ist [ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize).
 
 > [!NOTE]
-> Beachten Sie, dass diese Ereignisse standardmäßig aktiviert sind, bereits bestehendem Verhalten für Anwendungen beibehalten, die die Ereignisse abhängig. Das Deaktivieren dieser Ereignisse macht AppCompat dieses Ereigniszyklus vor AppCompat dieses Ereigniszyklus übereinstimmen.
+> Beachten Sie, dass diese Ereignisse standardmäßig aktiviert sind, vorhandenes Verhalten für Anwendungen beibehalten, die auf den Ereignissen basieren. Deaktivieren diese Ereignisse kann der AppCompat-Ereigniszyklus der Pre-AppCompat-Ereigniszyklus übereinstimmen.
 
-Diese plattformspezifischen in XAML verwendet werden kann, durch Festlegen der [ `Application.SendDisappearingEventOnPause` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPauseProperty/), [ `Application.SendAppearingEventOnResume` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResumeProperty/), und [ `Application.ShouldPreserveKeyboardOnResume` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResumeProperty/) angefügte Eigenschaften zu `boolean` Werte:
+Diese plattformspezifischen kann in XAML verwendet werden, durch Festlegen der [ `Application.SendDisappearingEventOnPause` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPauseProperty), [ `Application.SendAppearingEventOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResumeProperty), und [ `Application.ShouldPreserveKeyboardOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResumeProperty) angefügte Eigenschaften zu `boolean` Werte:
 
 ```xaml
 <Application ...
@@ -229,7 +230,7 @@ Diese plattformspezifischen in XAML verwendet werden kann, durch Festlegen der [
 </Application>
 ```
 
-Alternativ können sie in c# mithilfe der fluent-API genutzt werden:
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -244,17 +245,17 @@ Xamarin.Forms.Application.Current.On<Android>()
      .ShouldPreserveKeyboardOnResume(true);
 ```
 
-Die `Application.Current.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. Die [ `Application.SendDisappearingEventOnPause` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPause/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/System.Boolean/) Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/) -Namespace dient zum Aktivieren oder Deaktivieren von Auslösen von Ereignissen der [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) Page-Ereignisklasse, wenn die Anwendung Wechselt in den Hintergrund. Die [ `Application.SendAppearingEventOnResume` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResume/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/System.Boolean/) Methode dient zum Aktivieren oder Deaktivieren von Auslösen von Ereignissen der [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) Page-Ereignisklasse, wenn die Anwendung aus dem Hintergrund zurückkehrt. Die [ `Application.ShouldPreserveKeyboardOnResume` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResume/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/System.Boolean/) Methode wird verwendet, Steuerelement, ob der Bildschirmtastatur auf fortsetzen, angezeigt wird, wenn er auf Pause "," angezeigt wurde bereitgestellt, dass der Betriebsmodus der Bildschirmtastatur festgelegt ist, um [ `WindowSoftInputModeAdjust.Resize` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize/).
+Die `Application.Current.On<Android>` Methode gibt an, dass diese plattformspezifischen nur unter Android ausgeführt wird. Die [ `Application.SendDisappearingEventOnPause` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPause(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat) -Namespace wird verwendet, aktiviert oder deaktiviert das Auslösen der [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) -Ereignis der Seite, wenn die Anwendung Wechselt in den Hintergrund. Die [ `Application.SendAppearingEventOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResume(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean)) Methode dient zum Aktivieren oder deaktivieren das Auslösen der [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) Seitenereignis, wenn die Anwendung im Hintergrund fortgesetzt wird. Die [ `Application.ShouldPreserveKeyboardOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResume(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean)) Methode wird verwendet, Kontrolle, ob die Bildschirmtastatur bei Reaktivierung angezeigt wird, wenn es auf Pause angezeigt wurde bereitgestellt, der Betriebsmodus, der die Bildschirmtastatur eingerichtet wird, um [ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize).
 
-Das Ergebnis ist, die [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) und [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) Page-Ereignisse wird nicht ausgelöst werden, auf die Anwendung anhalten und fortsetzen bzw. und, auch wenn die Bildschirmtastatur wurde angezeigt wird, wenn die Anwendung wurde angehalten, es wird auch angezeigt, wenn die Anwendung wird fortgesetzt:
+Das Ergebnis ist, die [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) und [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) Seitenereignisse wird nicht ausgelöst werden, auf die Anwendung anhalten und fortsetzen bzw. und, auch wenn die Bildschirmtastatur wurde angezeigt wird, wenn die Anwendung wurde angehalten, es wird auch angezeigt, wenn die Anwendung fortgesetzt wird:
 
-[![](android-images/keyboard-on-resume.png "Lebenszyklus Ereignisse plattformspezifischen")](android-images/keyboard-on-resume-large.png#lightbox "Lebenszyklus Ereignisse plattformspezifischen")
+[![](android-images/keyboard-on-resume.png "Lebenszyklus Ereignisse Clientplattform-spezifische")](android-images/keyboard-on-resume-large.png#lightbox "Lebenszyklus Ereignisse Clientplattform-spezifische")
 
 <a name="webview-mixed-content" />
 
-## <a name="enabling-mixed-content-in-a-webview"></a>Gemischten Inhalt in einem WebView aktivieren
+## <a name="enabling-mixed-content-in-a-webview"></a>Gemischten Inhalt in einer WebView aktivieren
 
-Diese plattformspezifischen steuert, ob eine [ `WebView` ](xref:Xamarin.Forms.WebView) können gemischten Inhalt anzeigen in Anwendungen, die auf die API 21 oder höher abzielen. Gemischter Inhalt ist, das über eine HTTPS-Verbindung anfänglich geladen wird, aber die Ressourcen (z. B. Bildern, Audio, Video, Stylesheets, Skripts) über eine HTTP-Verbindung lädt. Sie wird in XAML verwendet, durch Festlegen der [ `WebView.MixedContentMode` ](x:ref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.MixedContentModeProperty) -Eigenschaft auf den Wert der [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) Enumeration:
+Diese plattformspezifischen steuert, ob eine [ `WebView` ](xref:Xamarin.Forms.WebView) können gemischten Inhalt anzeigen in Anwendungen, die auf API 21 oder höher abzielen. Gemischte Inhalte sind Inhalte, die anfänglich über eine HTTPS-Verbindung geladen, aber die Ressourcen (z. B. Bilder, Audio, Video, Stylesheets, Skripts) über eine HTTP-Verbindung lädt. Es ist in XAML verwendet, durch Festlegen der [ `WebView.MixedContentMode` ](x:ref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.MixedContentModeProperty) angefügte Eigenschaft auf den Wert der [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) Enumeration:
 
 ```xaml
 <ContentPage ...
@@ -263,7 +264,7 @@ Diese plattformspezifischen steuert, ob eine [ `WebView` ](xref:Xamarin.Forms.We
 </ContentPage>
 ```
 
-Alternativ können sie in c# mithilfe der fluent-API genutzt werden:
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -273,21 +274,21 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 webView.On<Android>().SetMixedContentMode(MixedContentHandling.AlwaysAllow);
 ```
 
-Die `WebView.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. Die [ `WebView.SetMixedContentMode` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.SetMixedContentMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.WebView},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace wird verwendet, um Kontrolle, ob gemischte Inhalte angezeigt werden kann, mit der [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) Enumeration, die Bereitstellung von drei möglicher Werten:
+Die `WebView.On<Android>` Methode gibt an, dass diese plattformspezifischen nur unter Android ausgeführt wird. Die [ `WebView.SetMixedContentMode` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.SetMixedContentMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.WebView},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace wird verwendet, um Kontrolle, ob die gemischte Inhalte angezeigt werden kann, mit der [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) Enumeration, die Bereitstellung von drei möglicher Werten:
 
-- [`AlwaysAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.AlwaysAllow) – Gibt an, dass die [ `WebView` ](xref:Xamarin.Forms.WebView) lässt HTTPS Ursprung aus einem Ursprung der HTTP-Inhalt geladen.
-- [`NeverAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.NeverAllow) – Gibt an, dass die [ `WebView` ](xref:Xamarin.Forms.WebView) lässt sich nicht auf HTTPS Ursprung aus einem Ursprung der HTTP-Inhalt geladen.
-- [`CompatibilityMode`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.CompatibilityMode) – Gibt an, dass die [ `WebView` ](xref:Xamarin.Forms.WebView) wird versucht, mit dem Ansatz, der die aktuelle Webbrowser des Geräts kompatibel sein. Einige HTTP-Inhalt kann von einer HTTPS-Ursprung geladen werden darf, und anderen Typen von Inhalt werden blockiert. Die Typen von Inhalten, die zugelassen oder blockiert werden, können mit jeder Version des Betriebssystems ändern.
+- [`AlwaysAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.AlwaysAllow) – Gibt an, dass die [ `WebView` ](xref:Xamarin.Forms.WebView) können einen HTTPS-Ursprung zum Laden von Inhalten aus einer HTTP-Ursprung.
+- [`NeverAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.NeverAllow) – Gibt an, dass die [ `WebView` ](xref:Xamarin.Forms.WebView) lässt sich nicht auf einen HTTPS-Ursprung zum Laden von Inhalten aus einer HTTP-Ursprung.
+- [`CompatibilityMode`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.CompatibilityMode) – Gibt an, dass die [ `WebView` ](xref:Xamarin.Forms.WebView) wird versucht, mit dem die aktuelle Webbrowser-Ansatz kompatibel sein. Einige HTTP-Inhalt berechtigt, auf die von einer HTTPS-Ursprung geladen werden, und andere Arten von Inhalten blockiert werden. Die Typen von Inhalten, die blockiert oder zugelassen werden, können mit jeder Version des Betriebssystems ändern.
 
-Das Ergebnis ist, die ein angegebenes [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) Wert angewendet wird, um die [ `WebView` ](xref:Xamarin.Forms.WebView), die steuert, ob gemischte Inhalte angezeigt werden kann:
+Das Ergebnis ist, die einem angegebenen [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) Wert gilt für die [ `WebView` ](xref:Xamarin.Forms.WebView), die steuert, ob gemischte Inhalte angezeigt werden kann:
 
-[![WebView gemischten Inhalt Behandlung plattformspezifischen](android-images/webview-mixedcontent.png "WebView gemischten Inhalt Behandlung plattformspezifischen")](android-images/webview-mixedcontent-large.png#lightbox "WebView gemischten Inhalt Behandlung plattformspezifischen")
+[![WebView gemischten plattformspezifische für die Verarbeitung von Inhalten](android-images/webview-mixedcontent.png "WebView gemischten plattformspezifische für die Verarbeitung von Inhalten")](android-images/webview-mixedcontent-large.png#lightbox "WebView gemischten plattformspezifische für die Verarbeitung von Inhalten")
 
 <a name="entry-imeoptions" />
 
 ## <a name="setting-entry-input-method-editor-options"></a>Einstellung Eintrag Eingabemethoden-Editor-Optionen
 
-Diese plattformspezifischen legt die Eingabemethode-Editor (IME)-Optionen für die Bildschirmtastatur für eine [ `Entry` ](xref:Xamarin.Forms.Entry). Dies schließt die Aktionsschaltfläche Benutzer festlegen, in der unteren Ecke der Bildschirmtastatur und die Interaktionen mit der `Entry`. Sie wird in XAML verwendet, durch Festlegen der [ `Entry.ImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty) -Eigenschaft auf den Wert der [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) Enumeration:
+Diese plattformspezifischen legt die Eingabemethode-Editor (IME) Optionen für die Bildschirmtastatur für eine [ `Entry` ](xref:Xamarin.Forms.Entry). Dies beinhaltet das Festlegen der Schaltfläche "Benutzer-Aktion" in der unteren Ecke die Bildschirmtastatur und die Interaktionen mit der `Entry`. Es ist in XAML verwendet, durch Festlegen der [ `Entry.ImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty) angefügte Eigenschaft auf den Wert der [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) Enumeration:
 
 ```xaml
 <ContentPage ...
@@ -299,7 +300,7 @@ Diese plattformspezifischen legt die Eingabemethode-Editor (IME)-Optionen für d
 </ContentPage>
 ```
 
-Alternativ können sie in c# mithilfe der fluent-API genutzt werden:
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -309,33 +310,33 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 entry.On<Android>().SetImeOptions(ImeFlags.Send);
 ```
 
-Die `Entry.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. Die [ `Entry.SetImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.SetImeOptions(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Entry},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace wird verwendet, um die Eingabemethode Aktion Option für die Bildschirmtastatur für die [ `Entry` ](xref:Xamarin.Forms.Entry), mit der [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) Enumeration, die die folgenden Werte:
+Die `Entry.On<Android>` Methode gibt an, dass diese plattformspezifischen nur unter Android ausgeführt wird. Die [ `Entry.SetImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.SetImeOptions(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Entry},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace wird verwendet, um die Eingabemethode Action-Option für die Bildschirmtastatur für Festlegen der [ `Entry` ](xref:Xamarin.Forms.Entry), mit der [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) Enumeration, die die folgenden Werte:
 
-- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Default) – Gibt an, dass keine bestimmte aktionsschlüssel ist erforderlich, dass das zugrunde liegende Steuerelement selbst, wenn erzeugt werden können. Diese werden entweder `Next` oder `Done`.
-- [`None`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.None) – Gibt an, dass kein aktionsschlüssel zur Verfügung gestellt werden.
-- [`Go`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Go) – Zeigt an, dass der aktionsschlüssel führt einen Vorgang "go" eingegebener benötigt des Benutzers an das Ziel des Texts.
-- [`Search`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Search) – Gibt an, dass der aktionsschlüssel einen "Suchen"-Vorgang ausführt, benötigt des Benutzers die Ergebnisse der Suche nach dem sie eingegeben haben.
-- [`Send`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Send) – Gibt an, dass der aktionsschlüssel eine "Senden" an, der den Text an ihr Ziel übermittelt ausgeführt werden.
-- [`Next`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Next) – Gibt an, dass der aktionsschlüssel führt eine "Weiter" an, wobei des Benutzers in das nächste Feld, von denen Text akzeptiert.
-- [`Done`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Done) – Gibt an, dass der aktionsschlüssel eine "fertige" an, und schließen die Bildschirmtastatur ausgeführt werden.
-- [`Previous`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Previous) – Gibt an, dass der aktionsschlüssel führt eine "frühere" an, wobei des Benutzers zum vorherigen Feld, von denen Text akzeptiert.
-- [`ImeMaskAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.ImeMaskAction) – die Maske Aktionsoptionen auswählen.
-- [`NoPersonalizedLearning`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoPersonalizedLearning) – Gibt an, dass die Rechtschreibprüfung wird weder vom Benutzer Informationen noch Korrekturvorschläge basierend auf was der Benutzer zuvor eingegeben hat.
-- [`NoFullscreen`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoFullscreen) – Gibt an, dass die Benutzeroberfläche nicht Fullscreen eingefügt werden sollen.
-- [`NoExtractUi`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoExtractUi) – Gibt an, dass keine Benutzeroberfläche für die extrahierten Text angezeigt wird.
-- [`NoAccessoryAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoAccessoryAction) – Gibt an, dass keine Benutzeroberfläche für benutzerdefinierte Aktionen angezeigt werden.
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Default) – Gibt an, dass keine bestimmte Aktion-Schlüssel ist erforderlich, dass das zugrunde liegende Steuerelement selbst, wenn erzeugt werden können. Entweder `Next` oder `Done`.
+- [`None`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.None) – Gibt an, dass kein aktionsschlüssel zur Verfügung gestellt wird.
+- [`Go`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Go) – Gibt an, dass der aktionsschlüssel führt einen Vorgang "go", um den Benutzer an das Ziel des Texts Eingabe.
+- [`Search`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Search) – Gibt an, dass der aktionsschlüssel wird eine Operation mit "Suche", um den Benutzer auf die Ergebnisse der Suche nach dem sie eingegeben haben.
+- [`Send`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Send) – Gibt an, dass der aktionsschlüssel einen "Senden"-Vorgang, auf der Bereitstellung von den Text an das Ziel ausgeführt wird.
+- [`Next`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Next) – Gibt an, dass der aktionsschlüssel wird einen "Weiter" Vorgang ausführen, um den Benutzer zum nächsten Feld, das Text akzeptiert.
+- [`Done`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Done) – Gibt an, dass der aktionsschlüssel einen "erledigt"-Vorgang schließen die Bildschirmtastatur ausgeführt werden.
+- [`Previous`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Previous) – Gibt an, dass der aktionsschlüssel wird einen "früheren" Vorgang ausführen, um den Benutzer zum vorherigen Feld, das Text akzeptiert.
+- [`ImeMaskAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.ImeMaskAction) – der Maske zur Aktionsoptionen auswählen.
+- [`NoPersonalizedLearning`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoPersonalizedLearning) – Gibt an, dass die Rechtschreibprüfung wird weder lernen Sie von der Benutzer noch basierte auf was der Benutzer zuvor eingegeben hat Korrekturen vorzuschlagen.
+- [`NoFullscreen`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoFullscreen) – Gibt an, dass die Benutzeroberfläche nicht im Vollbildmodus gespeichert werden sollen.
+- [`NoExtractUi`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoExtractUi) – Gibt an, dass keine Benutzeroberfläche für den extrahierten Text angezeigt wird.
+- [`NoAccessoryAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoAccessoryAction) – Gibt an, dass keine Benutzeroberfläche für benutzerdefinierte Aktionen angezeigt wird.
 
-Das Ergebnis ist, die ein angegebenes [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) Wert angewendet wird, um die Bildschirmtastatur für die [ `Entry` ](xref:Xamarin.Forms.Entry), wodurch die Eingabemethoden-Editor-Optionen:
+Das Ergebnis ist, die einem angegebenen [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) Wert angewendet wird, um die Bildschirmtastatur für die [ `Entry` ](xref:Xamarin.Forms.Entry), die den Eingabemethoden-Editor-Optionen festlegt:
 
-[![Eintrag Eingabe Methode Editor plattformspezifischen](android-images/entry-imeoptions.png "Eintrag Eingabe Methode Editor plattformspezifischen")](android-images/entry-imeoptions-large.png#lightbox "Eintrag Eingabe Methode Editor plattformspezifischen")
+[![Eintrag input Methode Editor plattformspezifische](android-images/entry-imeoptions.png "Eintrag input Methode Editor plattformspezifische")](android-images/entry-imeoptions-large.png#lightbox "Eintrag input Methode Editor plattformspezifische")
 
 <a name="legacy-color-mode" />
 
-## <a name="disabling-legacy-color-mode"></a>Deaktivieren die Vorgängerversion Färbung aktiviert
+## <a name="disabling-legacy-color-mode"></a>Deaktivieren die Farbe der Legacymodus
 
-Einige der Xamarin.Forms Ansichten an eine ältere Färbung aktiviert Funktionen. In diesem Modus kann bei der [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) -Eigenschaft der Ansicht auf festgelegt ist `false`, die Sicht werden die Farben, die vom Benutzer mit der systemeigenen Standardfarben für den deaktivierten Zustand überschrieben. Für die Abwärtskompatibilität Kompatibilität diese ältere Färbung aktiviert das Standardverhalten für die unterstützten Ansichten bleibt.
+Einige der Xamarin.Forms-Ansichten bieten eines ältere Farbmodus. In diesem Modus bei der [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) -Eigenschaft der Ansicht nastaven NA hodnotu `false`, die Ansicht überschreibt die Farben, die vom Benutzer mit den systemeigenen Standardfarben für den deaktivierten Zustand festgelegt wird. Für die Abwärtskompatibilität dieser älteren Farbmodus-Kompatibilität für das Standardverhalten für die unterstützten Ansichten bleibt.
 
-Diese plattformspezifischen wird dieser älteren Färbung aktiviert, deaktiviert, sodass Farben für eine Sicht vom Benutzer festgelegt bleiben, auch wenn die Sicht deaktiviert ist. Sie wird in XAML verwendet, durch Festlegen der [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.VisualElement.IsLegacyColorModeEnabledProperty) -Eigenschaft auf `false`:
+Diese plattformspezifischen deaktiviert dieser Modus ältere Farbe, damit Farben, die für eine Sicht vom Benutzer festgelegt bleiben, selbst wenn die Sicht deaktiviert ist. Es ist in XAML verwendet, durch Festlegen der [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.VisualElement.IsLegacyColorModeEnabledProperty) angefügte Eigenschaft zu `false`:
 
 ```xaml
 <ContentPage ...
@@ -351,7 +352,7 @@ Diese plattformspezifischen wird dieser älteren Färbung aktiviert, deaktiviert
 </ContentPage>
 ```
 
-Alternativ können sie in c# mithilfe der fluent-API genutzt werden:
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -361,20 +362,20 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 _legacyColorModeDisabledButton.On<Android>().SetIsLegacyColorModeEnabled(false);
 ```
 
-Die `VisualElement.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. Die [ `VisualElement.SetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.VisualElement.SetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.VisualElement},System.Boolean)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace wird verwendet, um Kontrolle, ob die legacy-Farben-Modus deaktiviert ist. Darüber hinaus die [ `VisualElement.GetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.VisualElement.GetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.VisualElement})) Methode kann verwendet werden, um zurück, ob die ältere Farbe Modus deaktiviert ist.
+Die `VisualElement.On<Android>` Methode gibt an, dass diese plattformspezifischen nur unter Android ausgeführt wird. Die [ `VisualElement.SetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.VisualElement.SetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.VisualElement},System.Boolean)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace wird verwendet, um Kontrolle, ob die älteren Farbmodus deaktiviert ist. Darüber hinaus die [ `VisualElement.GetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.VisualElement.GetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.VisualElement})) Methode kann verwendet werden, um zurück, ob es sich bei der älteren Farbmodus deaktiviert ist.
 
-Das Ergebnis ist, dass die ältere Färbung aktiviert deaktiviert werden kann, Farben, die vom Benutzer für eine Sicht festgelegt selbst bleiben, wenn die Sicht deaktiviert ist:
+Das Ergebnis ist, dass die ältere Farbmodus deaktiviert werden kann, Farben, die für eine Sicht vom Benutzer festgelegt auch bleiben, wenn die Sicht deaktiviert ist:
 
-![](android-images/legacy-color-mode-disabled.png "Ältere Farbe Modus deaktiviert")
+![](android-images/legacy-color-mode-disabled.png "Ältere Farbmodus deaktiviert")
 
 > [!NOTE]
-> Beim Festlegen einer [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) für eine Sicht, die ältere Färbung aktiviert vollständig ignoriert. Weitere Informationen zu visuelle Zustände, finden Sie unter [der Xamarin.Forms visuellen Status-Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
+> Beim Festlegen einer [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) für eine Sicht, die ältere Farbmodus vollständig ignoriert wird. Weitere Informationen zu visuellen Status finden Sie unter [die Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
 
 <a name="button-padding-shadow" />
 
 ## <a name="using-android-buttons"></a>Verwenden von Android-Schaltflächen
 
-Diese plattformspezifischen steuert, ob es sich bei Xamarin.Forms Schaltflächen die standardauffüllung und den Volumeschattenkopie-Werte von Android Schaltflächen verwenden. Sie wird in XAML verwendet, durch Festlegen der [ `Button.UseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPaddingProperty) und [ `Button.UseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadowProperty) angefügten Eigenschaften `boolean` Werte:
+Diese plattformspezifischen steuert, ob es sich bei Xamarin.Forms-Schaltflächen die standardauffüllung und den Volumeschattenkopie-Werte, der Android-Schaltflächen verwenden. Es ist in XAML verwendet, durch Festlegen der [ `Button.UseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPaddingProperty) und [ `Button.UseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadowProperty) angefügte Eigenschaften zu `boolean` Werte:
 
 ```xaml
 <ContentPage ...
@@ -388,7 +389,7 @@ Diese plattformspezifischen steuert, ob es sich bei Xamarin.Forms Schaltflächen
 </ContentPage>
 ```
 
-Alternativ können sie in c# mithilfe der fluent-API genutzt werden:
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -398,21 +399,64 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 button.On<Android>().SetUseDefaultPadding(true).SetUseDefaultShadow(true);
 ```
 
-Die `Button.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. Die [ `Button.SetUseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.SetUseDefaultPadding(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button},System.Boolean)) und[ `Button.SetUseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.SetUseDefaultShadow(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button},System.Boolean)) Methoden in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace dienen zum Steuerelement, ob standardmäßig die Schaltflächen der Xamarin.Forms verwenden Auffüllung und Schattenwerte Android Schaltflächen. Darüber hinaus die [ `Button.UseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPadding(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button})) und [ `Button.UseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadow(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button})) Methoden können verwendet werden, um zurück, ob eine Schaltfläche padding-Wert und der Standardwert für Schattenkopien, jeweils standardmäßig verwendet.
+Die `Button.On<Android>` Methode gibt an, dass diese plattformspezifischen nur unter Android ausgeführt wird. Die [ `Button.SetUseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.SetUseDefaultPadding(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button},System.Boolean)) und[ `Button.SetUseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.SetUseDefaultShadow(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button},System.Boolean)) Methoden in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace werden verwendet, um Kontrolle, ob Schaltflächen von Xamarin.Forms die Standardeinstellung verwenden Abstand und Schattenwerte von Android-Schaltflächen. Darüber hinaus die [ `Button.UseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPadding(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button})) und [ `Button.UseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadow(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button})) Methoden können verwendet werden, um zurück, ob eine Schaltfläche bzw. padding-Wert und Standardwert Schattenkopien zugewiesen wurde, verwendet.
 
-Das Ergebnis ist, dass Xamarin.Forms Schaltflächen die standardauffüllung und den Volumeschattenkopie-Werte von Android Schaltflächen verwenden können:
+Das Ergebnis ist, dass Xamarin.Forms-Schaltflächen die standardauffüllung und den Volumeschattenkopie-Werte, der Android-Schaltflächen verwenden können:
 
-![](android-images/button-padding-and-shadow.png "Ältere Farbe Modus deaktiviert")
+![](android-images/button-padding-and-shadow.png "Ältere Farbmodus deaktiviert")
 
-Beachten Sie, dass im Screenshot oben jedes [ `Button` ](xref:Xamarin.Forms.Button) verfügt über identische Definitionen, außer dass die rechten `Button` verwendet die standardauffüllung und Schattenwerte von Android-Schaltflächen.
+Beachten Sie, dass im Screenshot oben jedes [ `Button` ](xref:Xamarin.Forms.Button) verfügt über identische Definitionen, außer dass die rechten `Button` verwendet die standardauffüllung und den Volumeschattenkopie-Werte, der Android-Schaltflächen.
+
+<a name="tabbedpage-toolbar" />
+
+## <a name="setting-tabbedpage-toolbar-placement-and-color"></a>Festlegen von "tabbedpage" Symbolleiste Platzierung und Farbe
+
+Diese Plattformeigenschaften werden verwendet, um die Position und die Farbe der Symbolleiste für Festlegen einer [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Durch Festlegen von in XAML verwendet werden die [ `TabbedPage.ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.toolbarplacementproperty?view=xamarin-forms) angefügte Eigenschaft auf den Wert der [ `ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement?view=xamarin-forms) Enumeration, und die [ `TabbedPage.BarItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.baritemcolorproperty?view=xamarin-forms) und [ `TabbedPage.BarSelectedItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.barselecteditemcolorproperty?view=xamarin-forms) angefügte Eigenschaften zu einem [ `Color` ](xref:Xamarin.Forms.Color):
+
+```xaml
+<TabbedPage ...
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarItemColor="Black"
+            android:TabbedPage.BarSelectedItemColor="Red">
+    ...
+</TabbedPage>
+```
+
+Alternativ können sie aus c# mithilfe der fluent-API genutzt werden:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom)
+             .SetBarItemColor(Color.Black)
+             .SetBarSelectedItemColor(Color.Red);
+```
+
+Die `TabbedPage.On<Android>` Methode gibt an, dass diese Plattformeigenschaften nur unter Android ausgeführt werden. Die [ `TabbedPage.SetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.settoolbarplacement?view=xamarin-forms) Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace wird verwendet, um die Symbolleiste-Position festgelegt werden, auf eine [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), mit der [ `ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement?view=xamarin-forms) Enumeration, die die folgenden Werte:
+
+- [`Default`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Default) – Gibt an, dass die Symbolleiste am Standardspeicherort auf der Seite platziert ist. Dies ist die oberen Rand der Seite auf Smartphones und dem unteren Rand der Seite auf andere Idiome Gerät.
+- [`Top`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Top) – Gibt an, dass die Symbolleiste am oberen Rand der Seite platziert ist.
+- [`Bottom`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Bottom) – Gibt an, dass die Symbolleiste am unteren Rand der Seite platziert ist.
+
+Darüber hinaus die [ `TabbedPage.SetBarItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.setbaritemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_SetBarItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__Xamarin_Forms_Color_) und [ `TabbedPage.SetBarSelectedItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.setbarselecteditemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_SetBarSelectedItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__Xamarin_Forms_Color_) Methoden werden verwendet, um die Farbe der Symbolleistenelemente und ausgewählte Symbolleistenelemente, bzw. festzulegen.
+
+> [!NOTE]
+> Die [ `GetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.gettoolbarplacement?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetToolbarPlacement_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__), [ `GetBarItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.getbaritemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetBarItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__), und [ `GetBarSelectedItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.getbarselecteditemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetBarSelectedItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__) Methoden können verwendet werden, um die Position und die Farbe des Abrufen der [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) Symbolleiste.
+
+Das Ergebnis ist, dass die Platzierung der Symbolleiste, die Farbe der Elemente der Symbolleiste und die Farbe des ausgewählten Symbolleistenelements für festgelegt werden, können eine [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage):
+
+![](android-images/tabbedpage-toolbar-placement.png)
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel veranschaulicht, wie die Android-Plattform-Einzelheiten zu nutzen, die in Xamarin.Forms integriert werden. Plattform Einzelheiten können Sie Funktionen zu nutzen, die nur auf eine bestimmte Plattform verfügbar ist ohne Implementierung benutzerdefinierter Renderer oder Auswirkungen.
+In diesem Artikel wurde veranschaulicht, wie die Android-Plattform-Einzelheiten zu nutzen, die in Xamarin.Forms integriert sind. Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
-- [AndroidSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)
-- [AndroidSpecific.AppCompat](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/)
+- [AndroidSpecific](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
+- [AndroidSpecific.AppCompat](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

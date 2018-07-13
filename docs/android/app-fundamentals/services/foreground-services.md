@@ -1,25 +1,25 @@
 ---
-title: Vordergrund-Dienste
+title: Vordergrunddienste
 ms.prod: xamarin
 ms.assetid: C10FD999-7A91-4708-B642-0C1B0901BD24
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/19/2018
-ms.openlocfilehash: 3088fa4b5cfa21ac57533ef331ffcc15414e14b4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 47e1eda2f701b654f81f664050847677fba8bcc5
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763747"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986033"
 ---
-# <a name="foreground-services"></a>Vordergrund-Dienste
+# <a name="foreground-services"></a>Vordergrunddienste
 
-Ein Foreground-Dienst ist ein besonderer Typ eines gebundenen Diensts oder einem gestarteten Dienst. Gelegentlich Services führt Aufgaben, die Benutzer aktiv kennen müssen, diese Dienste werden als bezeichnet _Vordergrund Services_. Ein Beispiel eines Diensts Vordergrund ist eine app, die den Benutzer beim autostrecke oder Fußweg Richtungen gewährt wird. Auch wenn die app im Hintergrund ist, ist es wichtig, dass der Dienst über ausreichende Ressourcen ordnungsgemäß funktioniert und dass der Benutzer eine schnelle und praktische Möglichkeit zum Zugriff auf die app verfügt. Für Android-app, dies bedeutet, dass Hintergrunddienst Vordergrund sollten höheren Priorität als eine "normale" Dienst erhalten ein Vordergrund-Dienst bereitstellen muss eine `Notification` , in denen Android wird angezeigt, solange der Dienst ausgeführt wird.
+Ein Foreground-Dienst ist ein spezieller Typ von einer gebundenen oder einen Dienst wurde gestartet. Gelegentlich Services führt Aufgaben, die Benutzer aktiv kennen müssen, diese Dienste werden als bezeichnet _vordergrunddienste_. Ein Beispiel für einen Dienst Vordergrund ist eine app, die den Benutzer beim fahren oder gehen erfahren Sie, wie bereit ist. Auch wenn die app im Hintergrund ist, ist es dennoch wichtig, dass der Dienst über genügend Ressourcen ordnungsgemäß funktioniert hat und der Benutzer eine schnelle und praktische Möglichkeit zum Zugriff auf die app verfügt. Für eine Android-app, das bedeutet, dass ein Foreground-Dienst erhalten eine höheren Priorität als ein "regular" Dienst muss es sich um eine Bereitstellung eines Diensts Vordergrund einer `Notification` , in denen Android wird angezeigt, solange der Dienst ausgeführt wird.
  
-Um einen Vordergrund-Dienst zu starten, muss die app Priorität verteilen, die zum Starten des Diensts Android informiert. Dann muss der Dienst selbst als Dienst Vordergrund mit Android registrieren. Apps, die unter Android 8.0 (oder höher) ausgeführt werden, sollten verwenden die `Context.StartForegroundService` Methode, um den Dienst zu starten, obwohl verwendet werden apps, die auf Geräten mit einer älteren Version von Android ausgeführt werden soll `Context.StartService`
+Um ein Foreground-Dienst zu starten, muss die app einen Intent verteilen, die mitteilt, Android, die zum Starten des Diensts. Klicken Sie dann muss der Dienst selbst als Dienst Vordergrund mit Android registrieren. Apps, die unter Android 8.0 (oder höher) ausgeführt werden sollten verwenden die `Context.StartForegroundService` Methode, um den Dienst zu starten, während apps, die auf Geräten mit einer älteren Version von Android ausgeführt werden, verwenden sollten `Context.StartService`
 
-Diese C#-Erweiterungsmethode ist ein Beispiel zum Starten eines Diensts Vordergrund. Auf Android 8.0 und höher verwendet die `StartForegroundService` -Methode, andernfalls das ältere `StartService` verwendet wird.  
+Diese C#-Erweiterungsmethode ist ein Beispiel zum Starten eines Diensts Vordergrund. Unter Android 8.0 und höher verwendet die `StartForegroundService` Methode, die andernfalls die ältere `StartService` verwendet wird.  
 
 ```csharp
 public static void StartForegroundServiceComapt<T>(this Context context, Bundle args = null) where T : Service
@@ -41,18 +41,18 @@ public static void StartForegroundServiceComapt<T>(this Context context, Bundle 
 }
 ```
 
-## <a name="registering-as-a-foreground-service"></a>Registrieren als Hintergrunddienst Vordergrund
+## <a name="registering-as-a-foreground-service"></a>Registrieren als Dienst Vordergrund
 
-Nachdem ein Foreground-Dienst gestartet wurde, müssen sie selbst mit Android registrieren, durch den Aufruf der [ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/). Wenn der Dienst gestartet wurde, mit der `Service.StartForegroundService` Methode registriert aber nicht selbst dann Android beenden Sie den Dienst und die app als nicht reagierend gekennzeichnet wird.
+Nachdem ein Foreground-Dienst gestartet wurde, müssen sie selbst mit Android registrieren, durch den Aufruf der [ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/). Wenn der Dienst gestartet wird, mit der `Service.StartForegroundService` Methode aber nicht registriert, und klicken Sie dann für Android wird den Dienst beenden und die app als nicht reagierend gekennzeichnet.
 
-`StartForeground` verwendet zwei Parameter, die beide erforderlich sind:
+`StartForeground` akzeptiert zwei Parameter, die beide erforderlich sind:
  
-* Ein Ganzzahlwert, der in der Anwendung zum Identifizieren des Diensts eindeutig ist.
+* Ein ganzzahliger Wert, der in der Anwendung zum Identifizieren des Diensts eindeutig ist.
 * Ein `Notification` -Objekt, das in der Statusleiste für Android angezeigt werden, solange der Dienst ausgeführt wird.
 
-Android wird in der Statusleiste für die Benachrichtigung angezeigt, solange der Dienst ausgeführt wird. Die Benachrichtigung, zumindest, stellt einen visuellen Hinweis für dem Benutzer bereit, die der Dienst ausgeführt wird. Im Idealfall sollte die Benachrichtigung der Benutzer mit einer Verknüpfung zu der Anwendung oder möglicherweise einige Aktionsschaltflächen, steuern Sie die Anwendung bereitstellen. Ein Beispiel hierfür ist, ein Musikplayer &ndash; die Benachrichtigung, die angezeigt wird, ist möglicherweise Schaltflächen zum Anhalten/Musik, um auf den vorherigen Titel rewind oder zum nächsten Musiktitel überspringen wiedergeben. 
+Android wird in der Statusleiste für die Benachrichtigung angezeigt, solange der Dienst ausgeführt wird. Die Benachrichtigung mindestens bietet einen visuellen Hinweis für dem Benutzer, die der Dienst ausgeführt wird. Im Idealfall sollte die Benachrichtigung der Benutzer mit einer Verknüpfung zu der Anwendung oder möglicherweise einige Aktionsschaltflächen zur Steuerung der Anwendungs bereitstellen. Ein Beispiel hierfür ist ein Musikplayer &ndash; die Benachrichtigung, die angezeigt wird, handelt es sich möglicherweise um Schaltflächen zum Anhalten/Wiedergeben von Musik, auf die vorherige "Song" rewind oder zum nächsten Musiktitel zu überspringen. 
 
-Dieser Codeausschnitt ist ein Beispiel für einen Dienst als Vordergrund Dienst registrieren:   
+Dieser Codeausschnitt ist ein Beispiel für einen Dienst als Vordergrund Dienst zu registrieren:   
 
 ```csharp
 // This is any integer value unique to the application.
@@ -78,21 +78,21 @@ public override StartCommandResult OnStartCommand(Intent intent, StartCommandFla
 }
 ```
 
-Die vorherige Benachrichtigung zeigt eine statusleistenbenachrichtigung, ähnlich der folgenden ist:
+Die vorherige Benachrichtigung wird eine statusleistenbenachrichtigung angezeigt, dar, die etwa wie folgt:
 
-![Darstellung die Benachrichtigung in der Statusleiste des](foreground-services-images/foreground-services-01.png "Bild zeigt die Benachrichtigung in der Statusleiste")
+![Bild, auf dem die Benachrichtigung in der Statusleiste](foreground-services-images/foreground-services-01.png "Bild, auf dem die Benachrichtigung in der Statusleiste")
 
-Diese bildschirmabbildung zeigt die erweiterte Benachrichtigung im Benachrichtigungsbereich mit zwei Aktionen, die den Benutzer zum Steuern des Diensts zu ermöglichen:
+Dieser Screenshot zeigt die erweiterte Benachrichtigung im Benachrichtigungsbereich mit zwei Aktionen, mit die den Benutzer den Dienst steuern können:
 
-![Darstellung des erweiterte Benachrichtigung](foreground-services-images/foreground-services-02.png "Darstellung des erweiterte Benachrichtigung.")
+![Bild, auf dem die erweiterte Benachrichtigung](foreground-services-images/foreground-services-02.png "Bild, auf dem die erweiterte Benachrichtigung.")
 
-Weitere Informationen zu Benachrichtigungen finden Sie in der [lokale Benachrichtigungen](~/android/app-fundamentals/notifications/local-notifications.md) Teil der [Android-Benachrichtigungen](~/android/app-fundamentals/notifications/index.md) Handbuch.
+Weitere Informationen zu Benachrichtigungen finden Sie in der [lokale Benachrichtigungen](~/android/app-fundamentals/notifications/local-notifications.md) Teil der [Android-Benachrichtigungen](~/android/app-fundamentals/notifications/index.md) Guide.
 
-## <a name="unregistering-as-a-foreground-service"></a>Aufheben der Registrierung als Hintergrunddienst Vordergrund
+## <a name="unregistering-as-a-foreground-service"></a>Aufheben der Registrierung als Foreground-Dienst
 
-Ein Dienst kann deserialisiert auflisten selbst als Dienst Vordergrund durch Aufrufen der Methode `StopForeground`. `StopForeground` den Dienst wird nicht beendet, doch er entfernt die Benachrichtigungssymbol und signalisiert Android, die diesen Dienst bei Bedarf heruntergefahren werden kann.
+Ein Dienst kann aufheben auflisten selbst als Dienst Vordergrund durch Aufrufen der Methode `StopForeground`. `StopForeground` den Dienst wird nicht beendet, aber es entfernt das Benachrichtigungssymbol und Signale Android, die dieser Dienst bei Bedarf heruntergefahren werden kann.
 
-Statusleistenbenachrichtigung an, die angezeigt wird, kann auch durch Übergabe entfernt werden `true` an die Methode: 
+Statusleistenbenachrichtigung an, die angezeigt wird, kann ebenfalls entfernt werden, durch Übergabe `true` an die Methode: 
 
 ```csharp
 StopForeground(true);
@@ -103,6 +103,6 @@ Wenn der Dienst, mit einem Aufruf von angehalten wird `StopSelf` oder `StopServi
 ## <a name="related-links"></a>Verwandte Links
 
 - [Android.App.Service](https://developer.xamarin.com/api/type/Android.App.Service/)
-- [Android.App.Service.StartForegrond](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)
+- [Android.App.Service.StartForeground](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)
 - [Lokale Benachrichtigungen](~/android/app-fundamentals/notifications/local-notifications.md)
 - [ForegroundServiceDemo (Beispiel)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/ServiceSamples/ForegroundServiceDemo/)
