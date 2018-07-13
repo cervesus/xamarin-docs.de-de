@@ -1,42 +1,42 @@
 ---
-title: Anpassen der Darstellung von ListView
-description: In diesem Artikel erläutert die Listenansichten in Xamarin.Forms Anwendungen mithilfe von Kopfzeilen, Fußzeilen, Gruppen und Zellen variabler Höhe anpassen.
+title: Anpassen der Darstellung der ListView
+description: In diesem Artikel wird erläutert, wie zum Anpassen von Listenansichten in Xamarin.Forms-Anwendungen mithilfe von Kopfzeilen, Fußzeilen, Gruppen und Zellen mit variabler Höhe werden.
 ms.prod: xamarin
 ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: febf712848b81c09a4e25c824acc097e8b65e409
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1326a1326b4a88459e4e0a01ef590e770e3a88c0
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245139"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997347"
 ---
-# <a name="customizing-listview-appearance"></a>Anpassen der Darstellung von ListView
+# <a name="customizing-listview-appearance"></a>Anpassen der Darstellung der ListView
 
-`ListView` enthält Optionen zum Steuern der Darstellung von der gesamten Liste zusätzlich zu den zugrunde liegenden `ViewCell`s. Zu den Optionen gehören:
+`ListView` enthält Optionen zum Steuern der Darstellung der gesamten Liste zusätzlich zu den zugrunde liegenden `ViewCell`s. Zu den Optionen gehören:
 
-- [**Gruppieren von** ](#Grouping) &ndash; Elemente im ListView für einfachere Navigation und verbesserte Organisation gruppiert werden sollen.
-- [**Kopf- und Fußzeilen** ](#Headers_and_Footers) &ndash; Anzeigeinformationen am Anfang und Ende der Sicht, die mit den anderen Elementen einen Bildlauf durchführt.
-- [**Zeile Trennzeichen** ](#Row_Separators) &ndash; Trennzeichen Linien zwischen Elementen ein- oder auszublenden.
-- [**Zeilen mit Variablen Höhe** ](#Row_Heights) &ndash; Standardmäßig werden alle Zeilen die gleiche Höhe, aber dies kann geändert werden, damit Zeilen mit unterschiedlichen Höhen angezeigt werden können.
+- [**Gruppieren von** ](#Grouping) &ndash; gruppieren Sie Elemente in ListView für einfachere Navigation und verbesserte Organisation.
+- [**Kopf- und Fußzeilen** ](#Headers_and_Footers) &ndash; Informationen am Anfang und Ende der Ansicht, die mit den anderen Elementen führt einen Bildlauf angezeigt.
+- [**Zeile Trennzeichen** ](#Row_Separators) &ndash; Trennzeichen Linien zwischen den Elementen ein- oder auszublenden.
+- [**Zeilen mit Variablen Höhe** ](#Row_Heights) &ndash; standardmäßig alle Zeilen, die die gleiche Höhe sind, aber dies kann geändert werden, um Zeilen mit unterschiedlichen Größen angezeigt werden können.
 
 <a name="Grouping" />
 
 ## <a name="grouping"></a>Gruppieren
-Häufig können große Datenmengen unhandlich, wenn in einer fortlaufend bildlauffähigen Liste dargestellt werden. Aktivieren des Gruppierung kann die erforderlichen Erfahrungsgrad des Benutzers in diesen Fällen verbessern, indem besser organisieren des Inhalts, und aktivieren die plattformspezifischen-Steuerelemente, die Navigieren durch Daten zu vereinfachen.
+Häufig können große Mengen von Daten unhandlich, wenn in einer scrollliste fortlaufend dargestellt werden. Aktivierung Gruppierung verbessert die benutzerfreundlichkeit in diesen Fällen durch besser organisieren des Inhalts, und aktivieren plattformspezifische-Steuerelemente, die Daten der Navigation zu vereinfachen.
 
-Wenn Gruppierung aktiviert ist, für eine `ListView`, eine Kopfzeile wird für jede Gruppe hinzugefügt.
+Wenn der Gruppierung für aktiviert ist eine `ListView`, eine Headerzeile für jede Gruppe hinzugefügt wird.
 
 So aktivieren Sie die Gruppierung:
 
 - Erstellen Sie eine Liste mit Listen (eine Liste der Gruppen, jede Gruppe wird eine Liste von Elementen).
-- Legen Sie die `ListView`des `ItemsSource` auf diese Liste.
+- Legen Sie die `ListView`des `ItemsSource` an.
 - Legen Sie `IsGroupingEnabled` auf "true".
-- Legen Sie [ `GroupDisplayBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupDisplayBinding/) zum Binden an die Eigenschaft der Gruppen, die als Titel der Gruppe verwendet wird.
-- [Optional] Legen Sie [ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/) zum Binden an die Eigenschaft der Gruppen, die als den Kurznamen für die Gruppe verwendet wird. Der kurze Name wird für den Sprunglisten (rechten Spalte auf iOS) verwendet.
+- Legen Sie [ `GroupDisplayBinding` ](xref:Xamarin.Forms.ListView.GroupDisplayBinding) an die Eigenschaft der Gruppen gebunden werden soll, der als Titel der Gruppe verwendet wird.
+- [Optional] Legen Sie [ `GroupShortNameBinding` ](xref:Xamarin.Forms.ListView.GroupShortNameBinding) an die Eigenschaft der Gruppen gebunden werden soll, die als den Kurznamen für die Gruppe verwendet wird. Der kurze Name wird für die Sprunglisten (rechten Spalte unter iOS) verwendet.
 
 Starten Sie durch Erstellen einer Klasse für die Gruppen:
 
@@ -56,9 +56,9 @@ public class PageTypeGroup : List<PageModel>
     }
 ```
 
-Im obigen Code `All` ist die Liste, die an unsere ListView als Bindungsquelle zugewiesen wird. `Title` und `ShortName` sind die Eigenschaften, die für Gruppenköpfen verwendet werden.
+Im obigen Code `All` ist die Liste, die unsere ListView als Bindungsquelle zugewiesen wird. `Title` und `ShortName` sind die Eigenschaften, die für die Gruppenüberschriften verwendet werden.
 
-In diesem Stadium `All` ist eine leere Liste. Fügen Sie einen statischen Konstruktor aus, sodass beim Start der Anwendung die Liste aufgefüllt wird:
+In dieser Phase `All` ist eine leere Liste. Fügen Sie einen statischen Konstruktor aus, sodass beim Start der Anwendung die Liste aufgefüllt wird:
 
 ```csharp
 static PageTypeGroup()
@@ -81,9 +81,9 @@ static PageTypeGroup()
 }
 ```
 
-Im obigen Code kann es auch aufrufen `Add` für Elemente eines `groups`, wobei es sich um Instanzen eines Typs `PageTypeGroup`. Dies ist möglich, da `PageTypeGroup` erbt von `List<PageModel>`. Dies ist ein Beispiel für die Liste der Listen Muster wie oben beschrieben.
+Wir können auch aufrufen, in dem Code oben `Add` Elemente eines `groups`, die Instanzen des Typs sind `PageTypeGroup`. Dies ist möglich, da `PageTypeGroup` erbt `List<PageModel>`. Dies ist ein Beispiel für die Liste der Listen-Muster, die wie oben beschrieben.
 
-Hier wird der XAML-Code für die Anzeige von gruppierte Liste:
+Hier ist die XAML zur Anzeige der gruppierten Liste:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -106,20 +106,20 @@ x:Class="DemoListView.GroupingViewPage"
 </ContentPage>
 ```
 
-Daraus ergibt sich Folgendes:
+Dies hat folgende Auswirkungen:
 
-![](customizing-list-appearance-images/grouping-depth.png "Beispiel für das ListView gruppieren")
+![](customizing-list-appearance-images/grouping-depth.png "ListView-Grouping-Beispiels")
 
 Beachten Sie, dass wir:
 
-- Legen Sie `GroupShortNameBinding` auf die `ShortName` -Eigenschaft in der Gruppenklasse definiert
-- Legen Sie `GroupDisplayBinding` auf die `Title` -Eigenschaft in der Gruppenklasse definiert
+- Legen Sie `GroupShortNameBinding` auf die `ShortName` in unserer Gruppenklasse definierte Eigenschaft
+- Legen Sie `GroupDisplayBinding` auf die `Title` in unserer Gruppenklasse definierte Eigenschaft
 - Legen Sie `IsGroupingEnabled` auf "true"
-- Geändert die `ListView`des `ItemsSource` der gruppierte Liste
+- Geändert der `ListView`des `ItemsSource` der gruppierte Liste
 
 ### <a name="customizing-grouping"></a>Anpassen der Gruppierung
 
-Wenn in der Liste gruppieren aktiviert wurde, kann auch dem Gruppenheader angepasst werden.
+Wenn die Gruppierung in der Liste aktiviert wurde, kann der der Gruppenheader auch angepasst werden.
 
 Ähnlich wie die `ListView` verfügt über eine `ItemTemplate` zum definieren, wie Zeilen angezeigt werden, `ListView` verfügt über eine `GroupHeaderTemplate`.
 
@@ -161,12 +161,12 @@ x:Class="DemoListView.GroupingViewPage">
 <a name="Headers_and_Footers" />
 
 ## <a name="headers-and-footers"></a>Kopf- und Fußzeilen
-Es ist möglich, dass eine Listenansicht zum Präsentieren von Kopf- und Fußzeilen, die einen Bildlauf durch die Elemente der Liste. Kopf- und Fußzeilen können Zeichenfolgen oder ein etwas komplizierteren Layout sein. Beachten Sie, dass dies getrennt von [im Abschnitt Gruppen](#Grouping).
+Es ist möglich, für eine ListView zur Darstellung von Kopf- und Fußzeilen, die Scrollen mit den Elementen der Liste. Die Kopf- und Fußzeilen können Zeichenfolgen oder ein etwas komplizierteres Layout sein. Beachten Sie, dass dies unabhängig vom ist [im Abschnitt Gruppen](#Grouping).
 
-Sie können festlegen, die `Header` und/oder `Footer` in eine einfache Zeichenfolge Wert, oder Sie können sie festlegen, eine komplexere Layout.
-Es gibt auch `HeaderTemplate` und `FooterTemplate` Eigenschaften, mit denen Sie komplexe Layouts für Kopf- und Fußzeilen erstellen Datenbindung unterstützen.
+Sie können festlegen, die `Header` und/oder `Footer` auf eine einfache Zeichenfolge-Wert, oder Sie festlegen können sie zu einem komplexeren Layout.
+Es gibt auch `HeaderTemplate` und `FooterTemplate` Eigenschaften, mit denen Sie erstellen eine komplexere Layouts für die Kopf- und Fußzeile Datenbindung unterstützen.
 
-Um eine einfache Kopf-/Fußzeile zu erstellen, legen Sie nur die Kopf- oder Fußzeile-Eigenschaften, auf den Text, die, den Sie anzeigen möchten. In Code:
+Um eine einfache Kopfzeile/Fußzeile zu erstellen, müssen festlegen Sie die Kopf- oder Fußzeile Eigenschaften nur auf den Text an, die, den Sie anzeigen möchten. In Code:
 
 ```csharp
 ListView HeaderList = new ListView() {
@@ -181,9 +181,9 @@ In XAML:
 <ListView  x:Name="HeaderList"  Header="Header" Footer="Footer"></ListView>
 ```
 
-![](customizing-list-appearance-images/header-default.png "ListView mit Kopf- und Fußzeilen")
+![](customizing-list-appearance-images/header-default.png "ListView mit Header und Footer")
 
-Um eine benutzerdefinierte Kopf- und Fußzeile zu erstellen, definieren Sie Ansichten für Kopf- und Fußzeilen:
+Um eine benutzerdefinierte Kopf- und Fußzeile zu erstellen, definieren Sie die Kopf- und Fußzeile Ansichten:
 
 ```xaml
 <ListView.Header>
@@ -207,12 +207,12 @@ Um eine benutzerdefinierte Kopf- und Fußzeile zu erstellen, definieren Sie Ansi
 <a name="Row_Separators" />
 
 ## <a name="row-separators"></a>Zeilentrennzeichen
-Trennlinien zwischen abfragedarstellung `ListView` Elemente standardmäßig auf IOS- und Android. Wenn Sie lieber die Trennlinien auf IOS- und Android ausblenden möchten, legen Sie die `SeparatorVisibility` Eigenschaft für die Listenansicht. Die Optionen für `SeparatorVisibility` sind:
+Trennzeichen für Zeilen werden angezeigt, zwischen `ListView` Elemente werden standardmäßig unter iOS und Android. Wenn Sie die Trennlinien unter iOS und Android ausblenden möchten, legen Sie die `SeparatorVisibility` Eigenschaft Ihre ListView. Die Optionen für `SeparatorVisibility` sind:
 
-* **Standard** -zeigt eine Trennlinie auf IOS- und Android.
+* **Standard** -zeigt eine Trennlinie unter iOS und Android.
 * **Keine** -Blendet das Trennzeichen auf allen Plattformen.
 
-Standardsichtbarkeit:
+Standardmäßige Sichtbarkeit:
 
 C#:
 
@@ -244,7 +244,7 @@ XAML:
 
 ![](customizing-list-appearance-images/separator-none.png "ListView ohne Zeilentrennzeichen")
 
-Sie können auch festlegen, die Farbe der Linie als Trennzeichen über die `SeparatorColor` Eigenschaft:
+Sie können auch festlegen, die Farbe der Trennlinie über die `SeparatorColor` Eigenschaft:
 
 C#:
 
@@ -261,17 +261,17 @@ XAML:
 ![](customizing-list-appearance-images/separator-custom.png "ListView mit Grün-Zeilentrennzeichen")
 
 > [!NOTE]
-> Durch Festlegen dieser Eigenschaften auf Android-Geräten nach dem Laden der `ListView` einem großen Leistungsverlust.
+> Eine dieser Eigenschaften unter Android festlegen, nach dem Laden der `ListView` einem großen Leistungsverlust.
 
 <a name="Row_Heights" />
 
 ## <a name="row-heights"></a>Zeilenhöhe
-Alle Zeilen in einem ListView haben die gleiche Höhe standardmäßig. ListView verfügt über zwei Eigenschaften, die verwendet werden können, um dieses Verhalten zu ändern:
+Alle Zeilen in einer ListView nutzen, gilt die gleiche Höhe. ListView verfügt über zwei Eigenschaften, die verwendet werden können, um dieses Verhalten zu ändern:
 
 - `HasUnevenRows` &ndash; `true`/`false` Wert Zeilen haben unterschiedliche Höhen, wenn auf festgelegt `true`. Wird standardmäßig auf `false` festgelegt.
-- `RowHeight` &ndash; Legt die Höhe jeder Zeile wann `HasUnevenRows` ist `false`.
+- `RowHeight` &ndash; Legt die Höhe der einzelnen Datenzeile, wenn `HasUnevenRows` ist `false`.
 
-Sie können die Höhe aller Zeilen festlegen, durch Festlegen der `RowHeight` Eigenschaft auf die `ListView`.
+Sie können die Höhe aller Zeilen festlegen, durch Festlegen der `RowHeight` Eigenschaft für die `ListView`.
 
 ### <a name="custom-fixed-row-height"></a>Benutzerdefinierte feste Zeilenhöhe
 
@@ -292,8 +292,8 @@ XAML:
 
 ### <a name="uneven-rows"></a>Ungleiche Zeilen
 
-Wenn Sie einzelne Zeilen haben unterschiedliche Höhen verwenden möchten, legen Sie die `HasUnevenRows` Eigenschaft `true`.
-Beachten Sie, dass die Zeilenhöhe manuell einmal festgelegt werden keine `HasUnevenRows` vorsieht `true`, da die Höhe von Xamarin.Forms automatisch berechnet werden.
+Wenn Sie einzelne Zeilen anhand unterschiedlicher Höhe haben möchten, legen Sie die `HasUnevenRows` Eigenschaft `true`.
+Beachten Sie, dass die Zeilenhöhe manuell festgelegt werden, sobald keine `HasUnevenRows` festgelegt wurde `true`, da die Höhe von Xamarin.Forms automatisch berechnet werden.
 
 
 C#:
@@ -310,9 +310,9 @@ XAML:
 
 ![](customizing-list-appearance-images/height-uneven.png "ListView mit ungleiche Zeilen")
 
-### <a name="runtime-resizing-of-rows"></a>Common Language Runtime-Größenänderung von Zeilen
+### <a name="runtime-resizing-of-rows"></a>Common Language Runtime Ändern der Größe von Zeilen
 
-Einzelne `ListView` Zeilen programmgesteuert zur Laufzeit bereitgestellt, die geändert werden können die `HasUnevenRows` -Eigenschaftensatz auf `true`. Die [ `Cell.ForceUpdateSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.ForceUpdateSize()/) Methode aktualisiert die Größe für eine Zelle, selbst wenn es derzeit nicht angezeigt wird wie im folgenden Codebeispiel wird veranschaulicht:
+Einzelne `ListView` Zeilen programmgesteuert zur Laufzeit bereitgestellt, die geändert werden können die `HasUnevenRows` -Eigenschaftensatz auf `true`. Die [ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize) Methode aktualisiert die Größe einer Zelle, auch wenn es derzeit nicht angezeigt wird wie im folgenden Codebeispiel wird veranschaulicht:
 
 ```csharp
 void OnImageTapped (object sender, EventArgs args)
@@ -327,18 +327,18 @@ void OnImageTapped (object sender, EventArgs args)
 }
 ```
 
-Die `OnImageTapped` -Ereignishandler ausgeführt wird, als Antwort auf eine [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) in einer Zelle wird abgerufen, und nimmt die Größe der der `Image` in der Zelle angezeigt wird, sodass es ganz einfach angezeigt wird.
+Die `OnImageTapped` Ereignishandler wird ausgeführt, als Reaktion auf eine [ `Image` ](xref:Xamarin.Forms.Image) in einer Zelle getippt wird, und erhöht die Größe des der `Image` in der Zelle angezeigt wird, sodass sie ganz einfach betrachtet wird.
 
-![](customizing-list-appearance-images/dynamic-row-resizing.png "ListView mit Common Language Runtime Zeilengröße")
+![](customizing-list-appearance-images/dynamic-row-resizing.png "ListView mit Common Language Runtime-Zeile Größenänderung")
 
-Beachten Sie, dass sichere Möglichkeit, dass eine Verringerung der Leistung, wenn diese Funktion verwendet wird.
+Beachten Sie, dass ist es sehr wahrscheinlich, dass eine Verringerung der Leistung aus, wenn dieses Feature übermäßig beansprucht wird.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Gruppierung (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
-- [Benutzerdefinierte Ansicht der Renderer (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
-- [Dynamisches Ändern der Größe von Zeilen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/DynamicUnevenListCells/)
-- [Anmerkungen zu dieser Version 1.4](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
-- [Anmerkungen zu dieser Version 1.3](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)
+- [Benutzerdefinierte Renderer-Ansicht (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
+- [Dynamische Ändern der Größe von Zeilen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/DynamicUnevenListCells/)
+- [die Anmerkungen zu dieser Version 1.4](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
+- [1.3 – Anmerkungen zu dieser](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

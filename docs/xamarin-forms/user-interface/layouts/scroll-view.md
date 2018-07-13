@@ -1,43 +1,43 @@
 ---
 title: Xamarin.Forms ScrollView
-description: In diesem Artikel wird erläutert, wie die Klasse Xamarin.Forms ScrollView zum Präsentieren von Layouts, die nicht auf einem Bildschirm passt und für die Inhalte, die für die Tastatur Platz zu machen.
+description: In diesem Artikel wird erläutert, wie Sie die Xamarin.Forms-ScrollView-Klasse verwenden, um Layouts zu präsentieren, die nicht auf einem Bildschirm passt, und welche Inhalte, die für die Tastatur Platz zu machen.
 ms.prod: xamarin
 ms.assetid: 7B542872-B3D1-49B3-B15E-0E98F53C1F6E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/22/2016
-ms.openlocfilehash: 72897013842d464ff9d46825e2b111efbaeb79b8
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 07/10/2018
+ms.openlocfilehash: f2bccc9140c4c1c9d5d543a4240178f9301852bb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245233"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997360"
 ---
 # <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
-[`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) enthält Layouts und können sie einen Bildlauf außerhalb des Bildschirms. `ScrollView` wird auch verwendet, um erlauben Ansichten automatisch in der sichtbare Teil des Bildschirms verschoben werden, wenn die Tastatur angezeigt wird.
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) Layouts enthält, und führen Sie einen Bildlauf außerhalb des Bildschirms können sie aus. `ScrollView` wird auch verwendet, können Sie Ansichten automatisch in den sichtbaren Bereich des Bildschirms verschieben, wenn die Tastatur angezeigt wird.
 
-[![](scroll-view-images/layouts-sml.png "Xamarin.Forms Layouts")](scroll-view-images/layouts.png#lightbox "Xamarin.Forms Layouts")
+[![](scroll-view-images/layouts-sml.png "Xamarin.Forms-Layouts")](scroll-view-images/layouts.png#lightbox "Xamarin.Forms-Layouts")
 
 Dieser Artikel behandelt Folgendes:
 
 - **[Zweck](#Purpose)**  &ndash; Zweck `ScrollView` und wann sie verwendet wird.
-- **[Verwendung](#Usage)**  &ndash; wie `ScrollView` in der Praxis.
-- **[Eigenschaften](#Properties)**  &ndash; öffentlichen Eigenschaften, die gelesen und geändert werden können.
+- **[Nutzung](#Usage)**  &ndash; mit `ScrollView` in der Praxis.
+- **[Eigenschaften](#Properties)**  &ndash; öffentliche Eigenschaften, die gelesen und geändert werden können.
 - **[Methoden](#Methods)**  &ndash; öffentliche Methoden, die aufgerufen werden können, um die Ansicht zu scrollen.
-- **[Ereignisse](#Events)**  &ndash; Ereignisse, die zum Lauschen auf Änderungen in der Ansicht Zustände verwendet werden können.
+- **[Ereignisse](#Events)**  &ndash; Ereignisse, die zum Lauschen auf Änderungen in der Ansicht Zuständen verwendet werden können.
 
 ## <a name="purpose"></a>Zweck
 
-`ScrollView` kann verwendet werden, um sicherzustellen, dass größere Sichten auch für kleinere Telefone anzuzeigen. Beispielsweise kann ein Layout, das auf einem iPhone 6 s funktioniert auf einem iPhone 4 s zugeschnitten werden. Mit einem `ScrollView` entschied abgeschnittenen Teile des Layouts, die auf den kleineren Bildschirm angezeigt werden.
+`ScrollView` kann verwendet werden, um sicherzustellen, dass größere Ansichten auf kleinere Smartphones angezeigt. Beispielsweise kann ein Layout, das auf einem iPhone 6 s funktioniert auf einem iPhone 4 s abgeschnitten werden. Mit einem `ScrollView` die abgeschnittenen Teile des Layouts auf den kleineren Bildschirm angezeigt werden können.
 
 ## <a name="usage"></a>Verwendung
 
 > [!NOTE]
-> `ScrollView`s sollte nicht geschachtelt werden. Darüber hinaus `ScrollView`s muss nicht mit anderen Steuerelementen, die einen Bildlauf durchzuführen, z. B. bereitstellen verschachtelt sein `ListView` und `WebView`.
+> `ScrollView`s sollte nicht geschachtelt werden. Darüber hinaus `ScrollView`s sollte nicht geschachtelt werden, mit anderen Steuerelementen, die einen Bildlauf, wie z. B. bereitstellen `ListView` und `WebView`.
 
-`ScrollView` macht eine `Content` Eigenschaft, die mit einer einzigen Ansicht oder dem Layout festgelegt werden kann. Betrachten Sie dieses Beispiel ein Layout mit einem sehr großen BoxView, gefolgt von einem `Entry`:
+`ScrollView` Stellt eine `Content` Eigenschaft, die auf einer einzelnen Ansicht oder das Layout festgelegt werden kann. Betrachten Sie dieses Beispiel ein Layout mit einem sehr großen BoxView, gefolgt von einem `Entry`:
 
 ```xaml
 <ContentPage.Content>
@@ -60,29 +60,30 @@ stack.Children.Add(new BoxView { BackgroundColor = Color.Red,    HeightRequest =
 stack.Children.Add(new Entry());
 ```
 
-Bevor Sie den Bildlauf nach unten, nur die `BoxView` wird angezeigt:
+Vor dem Bildlauf nach unten, nur die `BoxView` wird angezeigt:
 
 ![](scroll-view-images/scroll-start.png "BoxView in ScrollView")
 
-Beachten Sie, dass, wenn der Benutzer beginnt, geben Sie Text in die `Entry`, per Bildlauf die Ansicht auf dem Bildschirm sichtbar bleiben:
+Beachten Sie, dass, wenn der Benutzer beginnt, geben Sie Text in die `Entry`, die Ansicht einen Bildlauf durchführt, dass es auf dem Bildschirm sichtbar beibehalten:
 
 ![](scroll-view-images/scroll-end.png "Eintrag im ScrollView")
 
 ## <a name="properties"></a>Eigenschaften
 
-ScrollView hat die folgenden Eigenschaften:
+`ScrollView` definiert die folgenden Eigenschaften an:
 
-- **Inhalt** &ndash; Ruft ab oder legt ihn fest in anzuzeigenden Ansicht an die `ScrollView`.
-- **[ContentSize](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/)**  &ndash; schreibgeschützt ist, ruft die Größe des Inhalts, besitzt eine Breite und Höhe Komponente ab. Dies ist eine bindbare Eigenschaft
-- **[Ausrichtung](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollOrientation/)**  &ndash; Dies ist eine [ `ScrollOrientation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollOrientation/), eine Enumeration, die festgelegt werden können, um `Horizontal`, `Vertical`, oder `Both`.
-- **ScrollX** &ndash; schreibgeschützt ist, ruft die aktuelle Bildlaufposition in der X-Dimension ab.
-- **ScrollY** &ndash; schreibgeschützt ist, ruft die aktuelle Bildlaufposition in der Y-Dimension ab.
+- [`ContentSize`](xref:Xamarin.Forms.ScrollView.ContentSizeProperty) Ruft eine [ `Size` ](xref:Xamarin.Forms.Size) Wert, der die Größe des Inhalts darstellt.
+- [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) Ruft ab oder legt einen [ `ScrollOrientation` ](xref:Xamarin.Forms.ScrollOrientation) Enumerationswert, der die hauptscrollrichtung stehenden Richtung darstellt, der `ScrollView`.
+- [`ScrollX`](xref:Xamarin.Forms.ScrollView.ScrollXProperty) Ruft eine `double` , das das aktuelle X Bildlaufposition darstellt.
+- [`ScrollY`](xref:Xamarin.Forms.ScrollView.ScrollYProperty) Ruft eine `double` , das die aktuelle Y Bildlaufposition darstellt.
+- [`HorizontalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.HorizontalScrollBarVisibilityProperty) Ruft ab oder legt einen [ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility) Wert, der darstellt, wenn die horizontale Schiebeleiste sichtbar ist.
+- [`VerticalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.VerticalScrollBarVisibilityProperty) Ruft ab oder legt einen [ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility) Wert, der darstellt, wenn die vertikale Schiebeleiste sichtbar ist.
 
 ## <a name="methods"></a>Methoden
 
-`ScrollView` Stellt eine `ScrollToAsync` -Methode, die verwendet werden kann, um einen Bildlauf Koordinaten zu verwenden oder durch Angeben einer bestimmten Sicht, die sichtbar gemacht werden sollen.
+`ScrollView` Stellt eine `ScrollToAsync` -Methode, die verwendet werden kann, um einen Bildlauf mit den Koordinaten oder durch Angeben einer bestimmten Sicht, die sichtbar gemacht werden soll.
 
-Wenn Koordinaten zu verwenden, geben die `x` und `y` Koordinaten, zusammen mit der ein boolescher Wert, der angibt, ob das Durchführen eines Bildlaufs animiert werden soll:
+Wenn Koordinaten zu verwenden, geben die `x` und `y` Koordinaten, zusammen mit der ein boolescher Wert, der angibt, ob der Bildlauf animiert werden soll:
 
 ```csharp
 scroll.ScrollToAsync(0, 150, true); //scrolls so that the position at 150px from the top is visible
@@ -90,18 +91,18 @@ scroll.ScrollToAsync(0, 150, true); //scrolls so that the position at 150px from
 scroll.ScrollToAsync(label, ScrollToPosition.Start, true); //scrolls so that the label is at the start of the list
 ```
 
-Bildläufe an ein bestimmtes Element der `ScrollToPosition` Enumeration gibt an, in dem in der Ansicht wird das Element angezeigt:
+Beim Scrollen an ein bestimmtes Element, das `ScrollToPosition` Enumeration gibt, in dem in der Ansicht wird das Element angezeigt:
 
-- **Center** &ndash; verschiebt das Element in die Mitte der den sichtbaren Teil der Ansicht.
-- **End** &ndash; verschiebt das Element am Ende den sichtbaren Teil der Ansicht.
-- **MakeVisible** &ndash; verschiebt das Element, damit es in der Ansicht angezeigt wird.
-- **Starten Sie** &ndash; verschiebt das Element am Anfang der sichtbare Teil der Ansicht.
+- **Center** &ndash; führt einen Bildlauf durch das Element in der Mitte des sichtbaren Teil der Ansicht.
+- **End** &ndash; führt einen Bildlauf durch das Element am Ende der sichtbare Teil der Ansicht.
+- **MakeVisible** &ndash; führt einen Bildlauf durch das Element, damit es in der Ansicht angezeigt wird.
+- **Starten Sie** &ndash; führt einen Bildlauf durch das Element am Anfang der sichtbare Teil der Ansicht.
 
-Die `IsAnimated` Eigenschaft gibt an, wie die Sicht ein Bildlauf durchgeführt wird. Bei festlegen auf "true", die eine reibungslose Animation verwendet werden, wird anstatt sofort genommen wird der Inhalt in der Ansicht.
+Die `IsAnimated` Eigenschaft gibt an, wie die Ansicht ein Bildlauf durchgeführt wird. Bei Festlegung auf true festgelegt ist, eine flüssige Animation verwendet werden, wird anstatt sofort den Inhalt in die Ansicht verschoben.
 
 ## <a name="events"></a>Ereignisse
 
-`ScrollView` Stellt nur ein Ereignis `Scrolled`. `Scrolled` wird ausgelöst, wenn die Sicht Durchführen eines Bildlaufs abgeschlossen ist. Der Ereignishandler für `Scrolled` akzeptiert `ScrolledEventArgs`, verfügt über die `ScrollX` und `ScrollY` Eigenschaften. Das folgende Beispiel zeigt, wie eine Bezeichnung mit der aktuellen Position des aktualisiert eine `ScrollView`:
+`ScrollView` nur ein Ereignis definiert `Scrolled`. `Scrolled` wird ausgelöst, wenn die Ansicht einen Bildlauf beendet wurde. Der Ereignishandler für `Scrolled` nimmt `ScrolledEventArgs`, die die `ScrollX` und `ScrollY` Eigenschaften. Das folgende Beispiel zeigt, wie Sie eine Bezeichnung mit der aktuellen Position des aktualisieren eine `ScrollView`:
 
 ```csharp
 Label label = new Label { Text = "Position: " };
@@ -111,7 +112,7 @@ scroll.Scrolled += (object sender, ScrolledEventArgs e) => {
 };
 ```
 
-Beachten Sie, dass Bildlaufpositionen negativ ist, aufgrund der Bounce Auswirkungen, wenn Sie am Ende einer Liste blättern können.
+Beachten Sie, dass Bildlaufpositionen negativ ist, aufgrund der Bounce-Auswirkung, wenn am Ende einer Liste scrollen können.
 
 
 ## <a name="related-links"></a>Verwandte Links

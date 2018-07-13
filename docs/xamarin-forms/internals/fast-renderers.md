@@ -1,48 +1,48 @@
 ---
-title: Xamarin.Forms Fast-Renderer
-description: Dieser Artikel führt schnelle Renderern, die der wiederverwendungen und Rendering Kosten eines Steuerelements Xamarin.Forms auf Android-Geräten zu reduzieren, indem Sie die resultierende systemeigene Steuerelement-Hierarchie vereinfachen.
+title: Xamarin.Forms schnelle Renderer
+description: Dieser Artikel enthält schnelle Renderern, die die Inflations- und renderingkosten von einer Xamarin.Forms-Steuerelement für Android zu reduzieren, indem Sie die resultierende native Steuerelementhierarchie vereinfachen.
 ms.prod: xamarin
 ms.assetid: 097f87f2-d891-4f3c-be02-fb7d195a481a
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 40cc095da41aaae5cb474987d8b03f7cf4a17322
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e4b060c703077e140e0f0d2f8c4c2b824c890e8d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243060"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997118"
 ---
-# <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms Fast-Renderer
+# <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms schnelle Renderer
 
-_Dieser Artikel führt schnelle Renderern, die der wiederverwendungen und Rendering Kosten eines Steuerelements Xamarin.Forms auf Android-Geräten zu reduzieren, indem Sie die resultierende systemeigene Steuerelement-Hierarchie vereinfachen._
+_Dieser Artikel enthält schnelle Renderern, die die Inflations- und renderingkosten von einer Xamarin.Forms-Steuerelement für Android zu reduzieren, indem Sie die resultierende native Steuerelementhierarchie vereinfachen._
 
-Traditionell, bestehen die meisten der ursprünglichen Steuerelement-Renderer unter Android zwei Ansichten:
+In der Vergangenheit bestehen die meisten der ursprünglichen steuerelementrenderer für Android von zwei Ansichten:
 
-- Ein systemeigenes zu steuern, wie z. B. eine `Button` oder `TextView`.
-- Ein Container `ViewGroup` , die Teil der Arbeit Layout, Geste Behandlung und andere Aufgaben verarbeitet.
+- Ein natives Steuerelement, z. B. eine `Button` oder `TextView`.
+- Ein Container `ViewGroup` , die Teil der Arbeit Layout, Verarbeitung und andere Aufgaben verarbeitet.
 
-Dieser Ansatz hat jedoch eine Leistung Implikation insofern, dass zwei Ansichten für jedes logische Steuerelement erstellt werden Vortäuschen einer komplexeren visuellen Struktur, die erfordert mehr Arbeitsspeicher und vieles mehr Verarbeitung aus, um auf dem Bildschirm gerendert.
+Dieser Ansatz hat jedoch eine Leistung Implikation, zwei Ansichten für jedes logische Steuerelement erstellt werden. Dies führt eine komplexere visuelle Struktur, die erfordert mehr Arbeitsspeicher und vieles mehr Verarbeitung auf dem Bildschirm gerendert werden soll.
 
-Schnelle Renderer Reduzieren der wiederverwendungen und Rendering Kosten eines Xamarin.Forms-Steuerelements in einer einzigen Ansicht an. Aus diesem Grund wird statt zwei Ansichten erstellen, und die Struktur der Sicht hinzugefügt, die nur eine erstellt. Dies verbessert die Leistung, indem Sie weniger Objekte, womit wiederum eine weniger komplexe Ansicht-Struktur, erstellen und weniger Arbeitsspeicher verwenden (was auch weniger Pausen der Garbage Collections zur Folge).
+Schnelle Renderer reduzieren die Inflations- und renderingkosten von Xamarin.Forms-Steuerelements in einer einzigen Ansicht an. Aus diesem Grund wird anstelle von zwei Ansichten erstellen, und der Struktur hinzugefügt, die nur eine erstellt. Dies verbessert die Leistung, indem Sie weniger Objekte, was wiederum bedeutet eine Struktur für weniger komplexe, erstellen und weniger arbeitsspeichernutzung (wodurch auch weniger Pausen der Garbage Collections).
 
-Schnelle Renderer stehen für die folgenden Steuerelemente in Xamarin.Forms 2.4 auf Android-Geräten zur Verfügung:
+Schnelle Renderer sind für die folgenden Steuerelemente in Xamarin.Forms 2.4 unter Android verfügbar:
 
-- [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)
-- [`Image`](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)
-- [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)
+- [`Button`](xref:Xamarin.Forms.Button)
+- [`Image`](xref:Xamarin.Forms.Image)
+- [`Label`](xref:Xamarin.Forms.Label)
 
-Funktionell unterscheiden sich diese schnelle Renderer nicht auf dem ursprünglichen Renderer. Allerdings sie sind derzeit experimentellen und kann nur verwendet werden, indem Sie die folgende Codezeile, Hinzufügen der `MainActivity` Klasse vor dem Aufruf `Forms.Init`:
+Funktionell unterscheiden sich diese schnelle Renderer nicht auf dem ursprünglichen Renderer. Allerdings sie derzeit experimentell und kann nur verwendet werden, durch die folgende Zeile des Codes zum Hinzufügen Ihrer `MainActivity` Klasse vor dem Aufruf `Forms.Init`:
 
 ```csharp
 Forms.SetFlags("FastRenderers_Experimental");
 ```
 
 > [!NOTE]
-> Schnelle Renderer gelten nur für app Compat Android Back-End, daher wird diese Einstellung auf Pre-app/Compat Aktivitäten ignoriert.
+> Schnelle Renderer gelten nur für die app Compat Android Back-End, damit diese Einstellung auf Pre-app Compat Aktivitäten ignoriert wird.
 
-Verbesserte Leistung beim variiert für jede Anwendung, die je nach Komplexität des Layouts. Leistungsverbesserungen der X2 sind z. B. möglich, beim Durchführen eines Bildlaufs durch einen [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) enthält Tausende von Zeilen mit Daten, die, in denen die Zellen in jeder Zeile werden Steuerelemente, die schnelle Renderern verwendet werden, was dazu führt das glatter Durchführen eines Bildlaufs.
+Leistungsverbesserungen variiert für jede Anwendung, die je nach Komplexität des Layouts. Leistungsverbesserungen X2 sind z. B. möglich, beim Durchführen eines Bildlaufs durch einen [ `ListView` ](xref:Xamarin.Forms.ListView) mit Tausenden von Zeilen mit Daten, die, in denen die Zellen in jeder Zeile sind Steuerelemente, die schnellere Renderern verwendet werden, was dazu führt sichtbar reibungsloseren scrollen.
 
 
 ## <a name="related-links"></a>Verwandte Links

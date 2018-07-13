@@ -1,30 +1,30 @@
 ---
-title: Xamarin.Forms Bindung Wertkonverter
-description: In diesem Artikel erläutert umgewandelt oder Konvertieren von Werten innerhalb einer Xamarin.Forms Bindung durch die Implementierung eines Wertkonverters (das auch ein Konverter für die Bindung oder Bindung Wertkonverter ist).
+title: Binden von Wertkonvertern Xamarin.Forms
+description: In diesem Artikel wird erläutert, wie umwandeln oder konvertieren Werte in einer Xamarin.Forms-Datenbindung, durch die Implementierung eines Wertkonverters (die auch als ein Binding-Konverter oder Wertkonverter für die Bindung bezeichnet) wird.
 ms.prod: xamarin
 ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: a5bd52d43ef93013537f30c7d5e0c31cbf336d07
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 28892692133020de1fa5a6eb007bb3f9bcf2612b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241828"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997479"
 ---
-# <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms Bindung Wertkonverter
+# <a name="xamarinforms-binding-value-converters"></a>Binden von Wertkonvertern Xamarin.Forms
 
-Datenbindungen Datenübertragung in der Regel aus einer Quelleigenschaft auf eine Zieleigenschaft und in einigen Fällen von der Zieleigenschaft an die Quelleigenschaft. Diese Übertragung ist einfach, wenn die Quell- und Eigenschaften vom selben Typ sind oder wenn ein Typ in den anderen Typen über eine implizite Konvertierung konvertiert werden kann. Wenn das nicht der Fall ist, muss eine Konvertierung vom Typ stattfinden.
+Datenbindungen übertragen von Daten in der Regel aus einer Quelleigenschaft auf eine Zieleigenschaft, und klicken Sie in einigen Fällen von der Zieleigenschaft die Source-Eigenschaft. Diese Übertragung ist einfach, wenn die Quelle und Ziel-Eigenschaften vom gleichen Typ sind, oder wenn ein Typ in den anderen Typ über eine implizite Konvertierung konvertiert werden kann. Wenn dies nicht der Fall ist, muss eine typkonvertierung durchgeführt werden.
 
-In der [ **Zeichenfolgenformatierung** ](string-formatting.md) Artikel wurde erläutert, wie Sie verwenden können die `StringFormat` -Eigenschaft einer Bindung auf einen beliebigen Typ in eine Zeichenfolge zu konvertieren. Für andere Typen von Konvertierungen, müssen Sie einige speziellen Code in einer Klasse zu schreiben, implementiert die [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) Schnittstelle. (Die universelle Windows-Plattform enthält eine ähnliche Klasse namens [ `IValueConverter` ](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) in der `Windows.UI.Xaml.Data` -Namespace, aber dies `IValueConverter` befindet sich in der `Xamarin.Forms` Namespace.) Klassen implementiert, `IValueConverter` heißen *Wert Typkonverter*, jedoch werden sie häufig auch bezeichnet als *binden Typkonverter* oder *binden Wertkonverter*.
+In der [ **Zeichenfolgenformatierung** ](string-formatting.md) Artikel haben Sie gesehen, wie Sie verwenden können die `StringFormat` Eigenschaft eine Datenbindung an einen beliebigen Typ in eine Zeichenfolge zu konvertieren. Für andere Typen von Konvertierungen, müssen Sie einige spezielle Code in einer Klasse zu schreiben, implementiert die [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) Schnittstelle. (Die universelle Windows-Plattform enthält eine ähnliche Klasse, die mit dem Namen [ `IValueConverter` ](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) in die `Windows.UI.Xaml.Data` Namespaces, sondern dies `IValueConverter` befindet sich in der `Xamarin.Forms` Namespace.) Klassen, in denen `IValueConverter` heißen *Wert Konverter*, aber sie sind auch bezeichnet als *binding-Konverter* oder *Binden von Wertkonvertern*.
 
 ## <a name="the-ivalueconverter-interface"></a>Die IValueConverter-Schnittstelle
 
-Angenommen, Sie möchten eine Datenbindung definieren, in dem die Quelleigenschaft vom Typ ist `int` die Zieleigenschaft ist jedoch ein `bool`. Soll dieser Datenbindung zum Erzeugen einer `false` Wert, wenn die Quelle für die ganze Zahl gleich 0 ist und `true` andernfalls.  
+Angenommen, Sie möchten, um eine Datenbindung zu definieren, in denen die Quelleigenschaft vom Typ ist `int` die Zieleigenschaft ist jedoch ein `bool`. Soll dieser Datenbindung zum Erzeugen einer `false` Wert, wenn die Quelle für die ganze Zahl gleich 0 (null) ist und `true` andernfalls.  
 
-Hierzu können Sie mit einer Klasse, implementiert die `IValueConverter` Schnittstelle:
+Hierzu können Sie mit einer Klasse, die implementiert die `IValueConverter` Schnittstelle:
 
 ```csharp
 public class IntToBoolConverter : IValueConverter
@@ -41,15 +41,15 @@ public class IntToBoolConverter : IValueConverter
 }
 ```
 
-Festlegen, dass eine Instanz dieser Klasse, die [ `Converter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Converter/) Eigenschaft der `Binding` Klasse oder die [ `Converter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.Converter/) Eigenschaft der `Binding` Markuperweiterung. Diese Klasse wird dem Datenbindung.
+Festlegen, dass eine Instanz dieser Klasse, die [ `Converter` ](xref:Xamarin.Forms.Binding.Converter) Eigenschaft der `Binding` Klasse oder die [ `Converter` ](xref:Xamarin.Forms.Xaml.BindingExtension.Converter) Eigenschaft der `Binding` Markuperweiterung. Diese Klasse wird die Datenbindung.
 
-Die `Convert` Methode wird aufgerufen, wenn Daten aus der Quelle, die das Ziel verschoben `OneWay` oder `TwoWay` Bindungen. Die `value` Parameter ist das Objekt oder einen Wert aus der Datenbindungsquelle. Die Methode muss einen Wert vom Typ des Ziels Datenbindungsfunktionen zurückgeben. Die Methode, die hier gezeigten Umwandlungen der `value` Parameter an eine `int` und vergleicht ihn dann mit 0 für eine `bool` Rückgabewert.
+Die `Convert` Methode wird aufgerufen, wenn Daten aus der Quelle in das Ziel in Verschiebt `OneWay` oder `TwoWay` Bindungen. Die `value` -Parameter ist das Objekt oder der Wert aus der Quelle für die Datenbindung. Die Methode muss einen Wert vom Typ des Ziels Datenbindung zurückgeben. Die Methode, die hier Umwandlungen der `value` Parameter, um eine `int` und vergleicht sie anschließend mit 0 für eine `bool` Wert zurückgeben.
 
-Die `ConvertBack` Methode wird aufgerufen, wenn Daten aus der Zieldatenbank verschoben werden, mit der Datenquelle im `TwoWay` oder `OneWayToSource` Bindungen. `ConvertBack` führt die umgekehrte Konvertierung: Es wird vorausgesetzt der `value` Parameter ist ein `bool` aus dem Ziel und konvertiert sie in ein `int` Rückgabewert für die Quelle.
+Die `ConvertBack` Methode wird aufgerufen, wenn Daten vom Ziel zur Quelle in Verschiebt `TwoWay` oder `OneWayToSource` Bindungen. `ConvertBack` führt die umgekehrte Konvertierung: Es wird davon ausgegangen der `value` -Parameter ist ein `bool` aus dem Ziel, und konvertiert sie in einer `int` -Wert für die Quelle zurückgegeben.
 
-Wenn die Datenbindung auch enthält eine `StringFormat` festlegen, der Wertkonverter wird aufgerufen, bevor das Ergebnis als Zeichenfolge formatiert sind.
+Wenn die Datenbindung auch enthält eine `StringFormat` festlegen, der Wertkonverter wird aufgerufen, bevor das Ergebnis als Zeichenfolge formatiert wird.
 
-Die **Schaltflächen aktivieren** auf der Seite der [ **Daten Bindung Demos** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) Beispiel wird veranschaulicht, wie diese Wertkonverter in einer Bindung verwendet. Die `IntToBoolConverter` in die Seite Ressourcenwörterbuch instanziiert wird. Klicken Sie dann mit verwiesen wird eine `StaticResource` Markuperweiterung festzulegende der `Converter` Eigenschaft zwei datenbindungen. Es ist üblich, Typkonverter von Daten zwischen mehreren datenbindungen auf der Seite freigeben:
+Die **aktivieren Schaltflächen** auf der Seite die [ **Datenbindung Demos** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) Beispiel veranschaulicht, wie diese Wertkonverter in einer Datenbindung zu verwenden. Die `IntToBoolConverter` im Ressourcenverzeichnis der Seite instanziiert wird. Darauf verwiesen wird dann mit einem `StaticResource` -Markuperweiterung festgelegt die `Converter` -Eigenschaft in zwei datenbindungen. Es ist üblich, Datenkonverter zwischen mehreren datenbindungen, die auf der Seite gemeinsam zu nutzen:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -91,25 +91,25 @@ Die **Schaltflächen aktivieren** auf der Seite der [ **Daten Bindung Demos** ](
 </ContentPage>
 ```
 
-Wenn ein Wertkonverter auf mehreren Seiten der Anwendung verwendet wird, können Sie es im Ressourcenverzeichnis in Instanziieren der **App.xaml** Datei.
+Wenn Sie ein Wertkonverter auf mehreren Seiten der Anwendung verwendet wird, können Sie Sie instanziieren im Ressourcenverzeichnis in den **"App.xaml"** Datei.
 
-Die **Schaltflächen aktivieren** Seite zeigt eine allgemeine erforderlich, wenn eine `Button` führt einen Vorgang basierend auf Text, der die Benutzertypen in eine `Entry` anzeigen. Wenn nichts in typisiert wurde die `Entry`die `Button` sollte deaktiviert werden. Jede `Button` enthält eine Datenbindung für die `IsEnabled` Eigenschaft. Der Datenbindungsquelle ist die `Length` Eigenschaft von der `Text` -Eigenschaft des entsprechenden `Entry`. Wenn für das `Length` Eigenschaft ist nicht "0", "der Wertkonverter zurück `true` und die `Button` aktiviert ist:
+Die **Schaltflächen aktivieren** Seite zeigt eine allgemeine erforderlich, wenn eine `Button` führt einen Vorgang, der basierend auf den Text, der der Benutzer, in eingibt eine `Entry` anzeigen. Wenn "nothing" in typisiert wurde die `Entry`, `Button` sollte deaktiviert werden. Jede `Button` enthält eine Datenbindung für die `IsEnabled` Eigenschaft. Die Quelle für die Datenbindung ist der `Length` Eigenschaft der `Text` -Eigenschaft des entsprechenden `Entry`. Wenn das `Length` Eigenschaft ist nicht 0 (null) Gibt zurück, der Wertkonverter `true` und `Button` aktiviert ist:
 
 [![Aktivieren Sie die Schaltflächen](converters-images/enablebuttons-small.png "Schaltflächen aktivieren")](converters-images/enablebuttons-large.png#lightbox "Schaltflächen aktivieren")
 
-Beachten Sie, dass die `Text` Eigenschaft in jedem `Entry` auf eine leere Zeichenfolge initialisiert wird. Die `Text` Eigenschaft `null` standardmäßig, und die Daten Bindung funktioniert nicht in diesem Fall.
+Beachten Sie, dass die `Text` Eigenschaft in den einzelnen `Entry` auf eine leere Zeichenfolge initialisiert wird. Die `Text` Eigenschaft `null` standardmäßig, und die Daten Bindung funktioniert nicht in diesem Fall.
 
-Einige Wertkonverter sind speziell für bestimmte Anwendungen geschrieben, während andere generalisiert sind. Wenn Sie wissen, dass ein Wertkonverter in nur verwendet werden, `OneWay` Bindungen, und klicken Sie dann die `ConvertBack` Methode kann einfach zurückkehren `null`.
+Einige Wertkonverter werden speziell für bestimmte Anwendungen geschrieben, während andere verallgemeinert werden. Wenn Sie wissen, dass ein Wertkonverter in verwendet werden, `OneWay` Bindungen, und klicken Sie dann die `ConvertBack` Methode einfach zurückgeben `null`.
 
-Die `Convert` implizit oben gezeigten Methode setzt voraus, dass die `value` Argument ist vom Typ `int` und der Rückgabewert muss vom Typ `bool`. Auf ähnliche Weise die `ConvertBack` Methode setzt voraus, dass die `value` Argument ist vom Typ `bool` und der Rückgabewert ist `int`. Wenn das nicht der Fall ist, wird eine Laufzeitausnahme ausgelöst.
+Die `Convert` implizit oben gezeigten Methode setzt voraus, dass die `value` Argument ist vom Typ `int` und der Rückgabewert muss vom Typ `bool`. Auf ähnliche Weise die `ConvertBack` Methode setzt voraus, dass die `value` Argument ist vom Typ `bool` und der Rückgabewert ist `int`. Wenn dies nicht der Fall ist, wird eine Laufzeitausnahme ausgelöst.
 
-Sie können Wertkonverter verallgemeinert werden und akzeptiert verschiedene Typen von Daten schreiben. Die `Convert` und `ConvertBack` Methoden können die `as` oder `is` Operatoren mit den `value` Parameter, oder durch Aufrufen `GetType` geeignet für diesen Parameter, dessen Typ, und führen Sie etwas zu bestimmen. Der erwartete Typ des Rückgabewerts für jede Methode ist gegeben, durch die `targetType` Parameter. In manchen Fällen werden Wertkonverter mit datenbindungen, die von den unterschiedlichen Zieltypen verwendet. der Wertkonverter können die `targetType` Argument beim Ausführen einer Konvertierung für den richtigen Typ.
+Sie können den Wertkonverter mehr generalisiert werden und akzeptiert verschiedene Arten von Daten schreiben. Die `Convert` und `ConvertBack` Methoden können die `as` oder `is` Operatoren mit den `value` -Parameter oder durch Aufrufen `GetType` für diesen Parameter, um dessen Typ ein, und führen Sie etwas zu bestimmen, auf die entsprechende. Der erwartete Typ des Rückgabewerts der Methode, angegeben durch die `targetType` Parameter. In einigen Fällen werden die Wertkonverter mit datenbindungen, die von unterschiedlichen Zieltypen verwendet. der Wertkonverter können die `targetType` Argument beim Ausführen einer Konvertierung für den richtigen Typ.
 
-Wenn die Konvertierung ausgeführt wird für die verschiedenen Kulturen unterschiedlich ist, verwenden die `culture` -Parameter für diesen Zweck. Die `parameter` Argument `Convert` und `ConvertBack` wird weiter unten in diesem Artikel erläutert.
+Wenn die Konvertierung ausgeführt wird für die verschiedenen Kulturen unterschiedlich ist, verwenden die `culture` Parameter für diesen Zweck. Die `parameter` Argument `Convert` und `ConvertBack` wird weiter unten in diesem Artikel.
 
-## <a name="binding-converter-properties"></a>Konverter Bindungseigenschaften
+## <a name="binding-converter-properties"></a>Binding-Konverter-Eigenschaften
 
-Wertklassen der Konverter können es sich um Eigenschaften und generische Parameter aufweisen. Diese bestimmten Wertkonverter konvertiert eine `bool` aus der Quelle in ein Objekt vom Typ `T` für das Ziel:
+Wertkonverterklassen können es sich um Eigenschaften und generische Parameter aufweisen. Dieser bestimmte Wertkonverter konvertiert eine `bool` aus der Quelle in ein Objekt des Typs `T` für das Ziel:
 
 ```csharp
 public class BoolToObjectConverter<T> : IValueConverter
@@ -130,7 +130,7 @@ public class BoolToObjectConverter<T> : IValueConverter
 }
 ```
 
-Die **Switch Indikatoren** Seite wird veranschaulicht, wie sie zum Anzeigen des Werts verwendet werden kann ein `Switch` anzeigen. Jedoch Wertkonverter als Ressourcen in einem Ressourcenwörterbuch zu instanziieren, zeigt diese Seite eine Alternative: jeder Wertkonverter zwischen instanziiert wird `Binding.Converter` Property-Element Tags. Die `x:TypeArguments` gibt an, dem generischen Argument und `TrueObject` und `FalseObject` beide auf Objekte dieses Typs festgelegt sind:
+Die **Switch Indikatoren** Seite erläutert, wie sie verwendet werden kann, um den Wert der an eine `Switch` anzeigen. Obwohl es üblich, Value Converter als Ressourcen in einem Ressourcenverzeichnis instanziiert ist, wird auf dieser Seite zeigt eine Alternative: jeder Wertkonverter wird instanziiert, zwischen `Binding.Converter` Eigenschaftenelement Tags. Die `x:TypeArguments` das generische Argument, und `TrueObject` und `FalseObject` auf Objekte dieses Typs festlegen:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -234,17 +234,17 @@ Die **Switch Indikatoren** Seite wird veranschaulicht, wie sie zum Anzeigen des 
 </ContentPage>
 ```
 
-In den letzten der drei `Switch` und `Label` -Paaren, mit das generische Argument festgelegt ist `Style`, und der gesamte `Style` Objekte werden bereitgestellt, für die Werte der `TrueObject` und `FalseObject`. Diese außer Kraft setzen, die implizite Formatvorlage für `Label` im Ressourcenverzeichnis festgelegt, sodass die Eigenschaften in diesem Format explizit zugewiesen sind die `Label`. Umschalten der `Switch` bewirkt, dass das entsprechende `Label` um die Änderung zu übernehmen:
+In den letzten drei `Switch` und `Label` -Paaren, das generische Argument nastaven NA hodnotu `Style`, und der gesamte `Style` Objekte werden bereitgestellt, für die Werte der `TrueObject` und `FalseObject`. Diese außer Kraft setzen, die impliziten Stil für `Label` im Ressourcenverzeichnis festgelegt, also die Eigenschaften in dieser Art werden explizit zugewiesen die `Label`. Umschalten der `Switch` bewirkt, dass die entsprechenden `Label` entsprechend die Änderung:
 
 [![Wechseln Sie Indikatoren](converters-images/switchindicators-small.png "wechseln Indikatoren")](converters-images/switchindicators-large.png#lightbox "Indikatoren wechseln")
 
-Es ist auch möglich, verwenden Sie [ `Triggers` ](~/xamarin-forms/app-fundamentals/triggers.md) ähnliche Änderungen in der Benutzeroberfläche, basierend auf andere Sichten implementiert.
+Es ist auch möglich mit [ `Triggers` ](~/xamarin-forms/app-fundamentals/triggers.md) ähnliche Änderungen in der Benutzeroberfläche, basierend auf den anderen Ansichten zu implementieren.
 
 ## <a name="binding-converter-parameters"></a>Konverter Bindungsparameter
 
-Die `Binding` Klasse definiert ein [ `ConverterParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.ConverterParameter/) -Eigenschaft, und die `Binding` Markuperweiterung definiert auch einen [ `ConverterParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.ConverterParameter/) Eigenschaft. Wenn diese Eigenschaft festgelegt ist, wird der Wert wird zum Übergeben der `Convert` und `ConvertBack` Methoden als der `parameter` Argument. Auch wenn die Instanz von der Wertkonverter von mehreren datenbindungen, gemeinsam genutzt wird die `ConverterParameter` für etwas unterschiedlichen Konvertierungen verschieden sein können.
+Die `Binding` -Klasse definiert eine [ `ConverterParameter` ](xref:Xamarin.Forms.Binding.ConverterParameter) -Eigenschaft, und die `Binding` Markuperweiterung definiert auch eine [ `ConverterParameter` ](xref:Xamarin.Forms.Xaml.BindingExtension.ConverterParameter) Eigenschaft. Wenn diese Eigenschaft wird festgelegt, wird der Wert, um übergeben wird die `Convert` und `ConvertBack` Methoden wie die `parameter` Argument. Auch wenn die Instanz für einen Wertkonverter, wenn mehrere datenbindungen aufgeteilt werden, die `ConverterParameter` können etwas andere Konvertierungen unterschiedlich sein.
 
-Die Verwendung von `ConverterParameter` wird ein Farbauswahl Programm veranschaulicht. In diesem Fall die `RgbColorViewModel` verfügt über drei Eigenschaften des Typs `double` mit dem Namen `Red`, `Green`, und `Blue` , die verwendet wird, zum Erstellen einer `Color` Wert:
+Die Verwendung von `ConverterParameter` wird mit einem Programm Farbauswahl veranschaulicht. In diesem Fall die `RgbColorViewModel` verfügt über drei Eigenschaften des Typs `double` mit dem Namen `Red`, `Green`, und `Blue` , die zum Erstellen verwendet eine `Color` Wert:
 
 ```csharp
 public class RgbColorViewModel : INotifyPropertyChanged
@@ -338,9 +338,9 @@ public class RgbColorViewModel : INotifyPropertyChanged
 }
 ```
 
-Die `Red`, `Green`, und `Blue` Eigenschaften Bereich zwischen 0 und 1. Allerdings empfiehlt es sich, dass die Komponenten als zweistelligen Hexadezimalwerten angezeigt werden.
+Die `Red`, `Green`, und `Blue` Eigenschaften Bereich zwischen 0 und 1. Allerdings empfiehlt es sich, dass die Komponenten werden als hexadezimale Werte zwei Ziffern angezeigt.
 
-Um diese als hexadezimale Werte in XAML anzuzeigen, sie müssen 255 multipliziert, in eine ganze Zahl konvertiert und dann mit einer Spezifikation des "X2" formatiert sind, der `StringFormat` Eigenschaft. Die ersten beiden Aufgaben (255 multipliziert, und die Konvertierung in eine ganze Zahl), die von der Wertkonverter verarbeitet werden können. Um der Wertkonverter wie generalisiert wie möglich zu machen, den Multiplikationsfaktor angegeben werden kann, mit der `ConverterParameter` -Eigenschaft, d. h. er wird die `Convert` und `ConvertBack` Methoden als der `parameter` Argument:
+Um diese als hexadezimale Werte in XAML anzuzeigen, sie müssen 255 multipliziert, in eine ganze Zahl konvertiert und dann mit einer Spezifikation eines "X2" im Format der `StringFormat` Eigenschaft. Die ersten beiden Aufgaben (Multiplikation mit 255 und Konvertieren in eine ganze Zahl) können von den Wertkonverter behandelt werden. Um den Wertkonverter als generalisiert wie möglich zu gestalten, kann mit der Multiplikationsfaktor angegeben werden die `ConverterParameter` -Eigenschaft, d. h. er gibt die `Convert` und `ConvertBack` Methoden wie die `parameter` Argument:
 
 ```csharp
 public class DoubleToIntConverter : IValueConverter
@@ -371,17 +371,17 @@ public class DoubleToIntConverter : IValueConverter
 }
 ```
 
-Die `Convert` konvertiert aus einer `double` auf `int` beim Multiplikation mit der `parameter` Wert; die `ConvertBack` teilt die ganze Zahl `value` Argument nach `parameter` und gibt eine `double` Ergebnis. (Im unten gezeigten Programm der Wertkonverter dient nur im Zusammenhang mit die zeichenfolgenformatierung, also `ConvertBack` wird nicht verwendet.)
+Die `Convert` konvertiert eine `double` zu `int` beim Multiplizieren mit der `parameter` Wert; die `ConvertBack` teilt die ganze Zahl `value` Argument nach `parameter` und gibt eine `double` Ergebnis. (Im unten gezeigten-Programm der Wertkonverter dient nur in Verbindung mit der Formatierung von Zeichenfolgen, also `ConvertBack` wird nicht verwendet.)
 
-Der Typ des der `parameter` Argument ist wahrscheinlich variieren, je nachdem, ob die Datenbindung in Code oder in XAML definiert ist. Wenn die `ConverterParameter` Eigenschaft `Binding` festgelegt ist im Code, es ist wahrscheinlich auf einen numerischen Wert festgelegt werden:
+Der Typ des der `parameter` Argument ist wahrscheinlich variieren, je nachdem, ob die Datenbindung im Code oder in XAML definiert ist. Wenn die `ConverterParameter` Eigenschaft `Binding` festgelegt ist im Code, es ist wahrscheinlich auf einen numerischen Wert festgelegt werden:
 
 ```csharp
 binding.ConverterParameter = 255;
 ```
 
-Die `ConverterParameter` -Eigenschaft ist vom Typ `Object`, sodass der C#-Compiler das literal 255 als ganze Zahl interpretiert, und legt die Eigenschaft auf diesen Wert fest.
+Die `ConverterParameter` Eigenschaft ist vom Typ `Object`, sodass der C#-Compiler das literal 255 als ganze Zahl interpretiert und legt die Eigenschaft auf diesen Wert fest.
 
-In XAML wird jedoch die `ConverterParameter` ist es wahrscheinlich, dass wie folgt festgelegt werden:
+In XAML, jedoch die `ConverterParameter` ist wahrscheinlich, wie folgt festgelegt werden:
 
 ```xaml
 <Label Text="{Binding Red,
@@ -390,11 +390,11 @@ In XAML wird jedoch die `ConverterParameter` ist es wahrscheinlich, dass wie fol
                       StringFormat='Red = {0:X2}'}" />
 ```
 
-Die 255 sieht wie eine Zahl ist, aber, da `ConverterParameter` ist vom Typ `Object`, der XAML-Parser behandelt die 255 als Zeichenfolge.
+Die 255 sieht wie eine Zahl, aber aus, da `ConverterParameter` ist vom Typ `Object`, der XAML-Parser behandelt die 255 als Zeichenfolge.
 
-Aus diesem Grund enthält der oben gezeigte Wertkonverter eine Separate `GetParameter` Methode, die zu den Einsatzgebieten von behandelt `parameter` Typ `double`, `int`, oder `string`.  
+Aus diesem Grund enthält der oben gezeigte Wertkonverter ein separates `GetParameter` Methode, die Fälle, in denen behandelt `parameter` Typ `double`, `int`, oder `string`.  
 
-Die **RGB-Farbauswahl** Seite instanziiert `DoubleToIntConverter` in seiner Ressourcenwörterbuch, befolgen die Definition von zwei impliziten Stilen:
+Die **RGB-Farbauswahl** Seite instanziiert `DoubleToIntConverter` in dessen Ressourcenverzeichnis, befolgen die Definition von zwei implizite Stile:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -456,7 +456,7 @@ Die **RGB-Farbauswahl** Seite instanziiert `DoubleToIntConverter` in seiner Ress
 </ContentPage>    
 ```
 
-Die Werte der `Red` und `Green` Eigenschaften werden angezeigt, mit einem `Binding` Markuperweiterung. Die `Blue` Eigenschaft instanziiert jedoch die `Binding` Klasse zu veranschaulichen, wie eine explizite `double` Wert kann festgelegt werden, um `ConverterParameter` Eigenschaft.
+Die Werte der `Red` und `Green` Eigenschaften werden angezeigt, mit einem `Binding` Markuperweiterung. Die `Blue` Eigenschaft instanziiert jedoch die `Binding` Klasse wie eine explizite veranschaulicht `double` Wert kann festgelegt werden, um `ConverterParameter` Eigenschaft.
 
 Hier ist das Ergebnis:
 
@@ -466,4 +466,4 @@ Hier ist das Ergebnis:
 ## <a name="related-links"></a>Verwandte Links
 
 - [Binden von Daten-Demos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Daten Bindung Kapitel Xamarin.Forms Buchs](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Im Kapitel Daten-Bindung von Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

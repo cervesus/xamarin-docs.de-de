@@ -1,26 +1,26 @@
 ---
-title: Hinzufügen einer Schwenken Gestenhandler-Erkennung
-description: In diesem Artikel wird erläutert, wie eine Geste zum Schwenken, horizontal und vertikal ziehen ein Bild, damit alle Inhalte Bild angezeigt werden können, wenn sie in einen Viewport, der kleiner als die Dimensionen des Bilds angezeigt wird.
+title: Hinzufügen einer Pan Stiftbewegungs-Erkennung
+description: In diesem Artikel wird erläutert, wie eine Geste schwenken, horizontal und vertikal ziehen ein Bild, sodass alle den Bildinhalt angezeigt werden können, wenn es kleiner als die Bildgröße eine relativ zum Viewport angezeigt wird.
 ms.prod: xamarin
 ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: d3e4dfc57678ff75fb8f9761360748d94aeefcc2
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 45c0a1452916f193236e5ba741f8e8e19b6691aa
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35239983"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996805"
 ---
-# <a name="adding-a-pan-gesture-recognizer"></a>Hinzufügen einer Schwenken Gestenhandler-Erkennung
+# <a name="adding-a-pan-gesture-recognizer"></a>Hinzufügen einer Pan Stiftbewegungs-Erkennung
 
-_Schwenk Bewegung dient zum Erkennen von ziehen und wird mit der PanGestureRecognizer-Klasse implementiert. Ein übliches Szenario für die Aktion zum Schwenken ist, ein Bild horizontal und vertikal zu ziehen, sodass alle Inhalte Bild angezeigt werden können, wenn sie in einen Viewport, der kleiner als die Dimensionen des Bilds angezeigt wird. Dies wird erreicht, indem Sie das Bild innerhalb des Viewports verschieben und wird in diesem Artikel veranschaulicht._
+_Die Geste Pan dient zum Erkennen von ziehen und wird mit der PanGestureRecognizer-Klasse implementiert. Ein häufiges Szenario für die Pan-Aktion ist, ein Bild horizontal und vertikal zu ziehen, sodass alle den Bildinhalt angezeigt werden können, wenn es kleiner als die Bildgröße eine relativ zum Viewport angezeigt wird. Dies wird erreicht, indem Sie das Bild innerhalb des Viewports verschieben und in diesem Artikel gezeigt wird._
 
 ## <a name="overview"></a>Übersicht
 
-Damit ein Benutzeroberflächenelement draggable mit Pan Bewegung ist, erstellen eine [ `PanGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PanGestureRecognizer/) -Instanz verwenden, behandeln die [ `PanUpdated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.PanGestureRecognizer.PanUpdated/) Ereignis, und fügen Sie die neue Geste Erkennung der [ `GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/) Auflistung auf das Element der Debuggerbenutzeroberfläche. Das folgende Codebeispiel zeigt eine `PanGestureRecognizer` angefügt, um eine [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) Element:
+Um ein Element der Benutzeroberfläche mit dieser Bewegung Pan ziehbar zu gestalten, erstellen eine [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) -Instanz, behandeln Sie die [ `PanUpdated` ](xref:Xamarin.Forms.PanGestureRecognizer.PanUpdated) -Ereignis, und fügen Sie der neuen stiftbewegungs-Erkennung, um die [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) Auflistung in das Benutzeroberflächenelement. Das folgende Codebeispiel zeigt eine `PanGestureRecognizer` angefügt, um eine [ `Image` ](xref:Xamarin.Forms.Image) Element:
 
 ```csharp
 var panGesture = new PanGestureRecognizer();
@@ -30,7 +30,7 @@ panGesture.PanUpdated += (s, e) => {
 image.GestureRecognizers.Add(panGesture);
 ```
 
-Dies kann auch in XAML erreicht werden, wie im folgenden Codebeispiel gezeigt:
+Dies kann auch in XAML, erreicht werden, wie im folgenden Codebeispiel gezeigt:
 
 ```xaml
 <Image Source="MonoMonkey.jpg">
@@ -52,9 +52,9 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
 > [!NOTE]
 > Richtige Schwenken unter Android erfordert die [Xamarin.Forms 2.1.0-pre1 NuGet-Paket](https://www.nuget.org/packages/Xamarin.Forms/2.1.0.6501-pre1) mindestens.
 
-## <a name="creating-a-pan-container"></a>Erstellen eines Containers zum Schwenken
+## <a name="creating-a-pan-container"></a>Erstellen eines Containers Schwenken
 
-Dieser Abschnitt enthält eine generalisierte Hilfsklasse, die Freihandform schwenken, führt dies in der Regel eignet sich für das Navigieren in Bildern oder Zuordnungen. Behandlung von Schwenken Bewegung zum Ausführen eines Ziehvorgangs erfordert einige mathematische Funktionen, um die Benutzeroberfläche zu transformieren. Diese mathematische wird verwendet, um nur innerhalb der Grenzen des umschlossenen Benutzeroberflächenelement ziehen. Das folgende Codebeispiel zeigt die `PanContainer`-Klasse:
+Dieser Abschnitt enthält eine generalisierte Hilfsklasse, die führt Freihandform schwenken, die in der Regel durch Navigieren in Bildern oder Zuordnungen geeignet ist. Behandeln die Pan-Geste zum Ausführen eines Ziehvorgangs erfordert einiger Berechnungen aus, um die Benutzeroberfläche zu transformieren. Diese mathematischen wird verwendet, nur innerhalb der Grenzen des das umschlossene Benutzeroberflächenelement ziehen. Das folgende Codebeispiel zeigt die `PanContainer`-Klasse:
 
 ```csharp
 public class PanContainer : ContentView
@@ -77,7 +77,7 @@ public class PanContainer : ContentView
 }
 ```
 
-Diese Klasse kann auf ein Benutzeroberflächenelement umbrochen werden, sodass zum Schwenken Bewegung umschlossene Benutzeroberflächenelement Ziehen wird. Das folgende Beispiel zeigt für die Verwendung von XAML-Code die `PanContainer` wrapping ein [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) Element:
+Ein Element der Benutzeroberfläche kann diese Klasse umbrochen werden, damit die Pan-Geste das umschlossene Benutzeroberflächenelement ziehen. Das folgende Beispiel zeigt für die XAML-Code der `PanContainer` umschließen einer [ `Image` ](xref:Xamarin.Forms.Image) Element:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -94,7 +94,7 @@ Diese Klasse kann auf ein Benutzeroberflächenelement umbrochen werden, sodass z
 </ContentPage>
 ```
 
-Im folgenden Codebeispiel wird veranschaulicht wie die `PanContainer` dient als Wrapper für ein [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) Element in einer C#-Seite:
+Das folgende Codebeispiel zeigt die `PanContainer` dient als Wrapper für ein [ `Image` ](xref:Xamarin.Forms.Image) Element in einer C#-Seite:
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -117,9 +117,9 @@ public class HomePageCS : ContentPage
 }
 ```
 
-In beiden Beispielen die [ `WidthRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) und [ `HeightRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) Eigenschaften werden festgelegt, um die Werte für Breite und Höhe des Bilds angezeigt wird.
+In beiden Beispielen die [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest) und [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) Eigenschaften festgelegt werden, auf die Werte für Breite und Höhe des Bilds angezeigt wird.
 
-Wenn die [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) Element empfängt eine Geste zum Schwenken, wird das angezeigte Bild gezogen werden. Der Ziehvorgang erfolgt durch die `PanContainer.OnPanUpdated` -Methode, die im folgenden Codebeispiel gezeigt wird:
+Wenn die [ `Image` ](xref:Xamarin.Forms.Image) Element erhält eine Geste für ein schwenken, wird das angezeigte Bild gezogen werden. Für der Ziehvorgang erfolgt durch die `PanContainer.OnPanUpdated` -Methode, die im folgenden Codebeispiel gezeigt wird:
 
 ```csharp
 void OnPanUpdated (object sender, PanUpdatedEventArgs e)
@@ -142,21 +142,21 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
 }
 ```
 
-Diese Methode aktualisiert den sichtbaren Inhalt umbrochenen Element der Benutzeroberfläche, basierend auf der Benutzeraktion zum schwenken. Dies erfolgt mithilfe der Werte von der [ `TotalX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PanUpdatedEventArgs.TotalX/) und [ `TotalY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PanUpdatedEventArgs.TotalY/) Eigenschaften der [ `PanUpdatedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PanUpdatedEventArgs/) Instanz um die Richtung zu berechnen und Abstand von der schwenken. Die `App.ScreenWidth` und `App.ScreenHeight` Eigenschaften geben Sie die Höhe und Breite des Viewports und werden von den jeweiligen plattformspezifischen Projekten auf die Bildschirmbreite und Höhenwerte des Geräts Bildschirm festgelegt. Das umschlossene Element gezogen wird dann durch Festlegen seiner [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/) und [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) Eigenschaften auf die berechneten Werte.
+Diese Methode aktualisiert den sichtbaren Inhalt des umschlossenen Element der Benutzeroberfläche, basierend auf der Benutzeraktion schwenken. Dies erfolgt mithilfe der Werte von der [ `TotalX` ](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalX) und [ `TotalY` ](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalY) Eigenschaften der [ `PanUpdatedEventArgs` ](xref:Xamarin.Forms.PanUpdatedEventArgs) Instanz um die Richtung zu berechnen und die Entfernung von der Pfanne. Die `App.ScreenWidth` und `App.ScreenHeight` Eigenschaften geben Sie die Höhe und Breite des Viewports und werden von den jeweiligen plattformspezifischen Projekten auf die Bildschirmbreite und die Werte für die Höhe Bildschirm des Geräts festgelegt. Das umschlossene Benutzer-Element gezogen wird dann durch Festlegen seiner [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX) und [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY) Eigenschaften, die die berechneten Werte.
 
-Wenn Inhalt in einem Element schwenken, die nicht den gesamten Bildschirm belegen, die Höhe und Breite des Viewports abgerufen werden können aus des Elements [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) und [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) Eigenschaften.
+Wenn der Inhalt in einem Element zu schwenken, die nicht den gesamten Bildschirm einnehmen wird, die Höhe und Breite des Viewports erhalten Sie von des Elements [ `Height` ](xref:Xamarin.Forms.VisualElement.Height) und [ `Width` ](xref:Xamarin.Forms.VisualElement.Width) Eigenschaften.
 
 > [!NOTE]
-> Hochauflösende Bilder anzeigen kann eine app Speicherbedarf erheblich erhöhen. Sie sollten daher nur erstellt, wenn erforderlich und freigegeben werden, sollte sobald die app nicht mehr benötigt. Weitere Informationen finden Sie unter [Optimieren von Bildressourcen](~/xamarin-forms/deploy-test/performance.md#optimizeimages).
+> Anzeigen von Bildern mit hoher Auflösung kann den Speicherbedarf einer app erheblich erhöhen. Sie sollten daher nur erstellt, wenn erforderlich, und freigegeben werden soll, sobald die app nicht mehr benötigt. Weitere Informationen finden Sie unter [Optimieren von Bildressourcen](~/xamarin-forms/deploy-test/performance.md#optimizeimages).
 
 ## <a name="summary"></a>Zusammenfassung
 
-Schwenk Bewegung dient zum Erkennen von ziehen und wird implementiert, mit der [ `PanGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PanGestureRecognizer/) Klasse.
+Die Geste Pan dient zum Erkennen von ziehen und wird implementiert, mit der [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) Klasse.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [PanGesture (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/PanGesture/)
-- [GestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/)
-- [PanGestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.PanGestureRecognizer/)
+- [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
+- [PanGestureRecognizer](xref:Xamarin.Forms.PanGestureRecognizer)
