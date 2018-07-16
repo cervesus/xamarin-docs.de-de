@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/22/2018
-ms.openlocfilehash: 323174b4a37a12828a32acb398fef63cd9b849e3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a0c3179dc8e349c23d5521230e0957d1be9384ec
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785816"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986186"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Automatische Bereitstellung für Xamarin.iOS
 
@@ -71,7 +71,7 @@ Gehen Sie wie folgt vor, um Ihre App automatisch für die Bereitstellung auf ein
 
 1. Koppeln Sie Visual Studio 2017 mit einem Mac, wie im Handbuch [Koppeln mit dem Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) beschrieben.
 
-2. Öffnen Sie die Bereitstellungsoptionen, indem Sie **Projekt > Bereitstellungseigenschaften...** auswählen.
+2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Eigenschaften** aus. Navigieren Sie zur Registerkarte **iOS-Bundlesignierung**.
 
 3. Wählen Sie das Schema **Automatische Bereitstellung** aus:
 
