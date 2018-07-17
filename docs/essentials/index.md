@@ -22,13 +22,15 @@ Bieten eindeutigen Betriebssystem und Plattform-APIs, Entwickler Zugriff auf all
 
 ## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[Erste Schritte mit Xamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
 
-Führen Sie die [Handbuch mit ersten Schritten](get-started.md) zum Installieren der **Xamarin.Essentials** NuGet-Paket in Ihrem vorhandenen oder neuen Xamarin.Forms, Android, iOS oder UWP-Projekte.
+Folgen Sie den Anweisungen im [Leitfaden für erste Schritte](get-started.md), um das NuGet-Paket **Xamarin.Essentials** in Ihren vorhandenen oder neuen Xamarin.Forms-, Android-, iOS- oder UWP-Projekten zu installieren.
+
 
 ## <a name="feature-guides"></a>Anleitungen zu Features
 
 Führen Sie die Anleitungen, um diese Features Xamarin.Essentials in Ihre Anwendungen integrieren:
 
-* [Beschleunigungsmesser](accelerometer.md?context=xamarin/xamarin-forms) – Datenabruf für Beschleunigung des Geräts in drei dimensionalen Raum.
+* [Beschleunigungsmesser](accelerometer.md?context=xamarin/xamarin-forms): Hiermit können Sie Daten zur Beschleunigung des Geräts im dreidimensionalen Raum abrufen.
+
 * [App-Informationen](app-information.md?context=xamarin/xamarin-forms) – finden Sie Informationen zu der Anwendung.
 * [Akku](battery.md?context=xamarin/xamarin-forms) – ganz einfach erkennen, Akkustand, Quelle und Status
 * [Zwischenablage](clipboard.md?context=xamarin/xamarin-forms) – schnell und einfach festlegen oder Lesen von Text in die Zwischenablage.
@@ -47,12 +49,12 @@ Führen Sie die Anleitungen, um diese Features Xamarin.Essentials in Ihre Anwend
 * [MainThread](main-thread.md?content=xamarin/xamarin-forms) – Ausführen von Code auf den Hauptthread der Anwendung. 
 * [Öffnen Sie Browser](open-browser.md?context=xamarin/xamarin-forms) – schnell und einfach öffnen Sie einen Browser auf eine bestimmte Website.
 * [Ausrichtungssensor](orientation-sensor.md?context=xamarin/xamarin-forms) – rufen Sie die Ausrichtung des Geräts in drei dimensionalen Raum.
-* [Wählhilfe](phone-dialer.md?context=xamarin/xamarin-forms) : Öffnen die Wählhilfe.
+* [Wählhilfe](phone-dialer.md?context=xamarin/xamarin-forms): Hiermit können Sie die Wählhilfe öffnen.
 * [Power](power.md?context=xamarin/xamarin-forms) – des Geräts energiesparend Status zu erhalten.
 * [Voreinstellungen](preferences.md?context=xamarin/xamarin-forms) – schnell und einfach hinzufügen persistente Einstellungen.
 * [Sperrbildschirm](screen-lock.md?context=xamarin/xamarin-forms) – halten Sie den Bildschirm des Geräts aktiv.
-* [Sicherer Speicher](secure-storage.md?context=xamarin/xamarin-forms) – sichere Speichern von Daten.
-* [SMS](sms.md?context=xamarin/xamarin-forms) – für das Senden eine SMS-Nachricht zu erstellen.
+* [Sicherer Speicher](secure-storage.md?context=xamarin/xamarin-forms): Hiermit können Sie Daten sicher speichern.
+* [SMS](sms.md?context=xamarin/xamarin-forms): Hiermit können Sie eine SMS-Nachricht für den Versand erstellen.
 * [Sprachsynthese](text-to-speech.md?context=xamarin/xamarin-forms) – Vocalize Text auf dem Gerät.
 * [Versionsnachverfolgung](version-tracking.md?context=xamarin/xamarin-forms) : verfolgen Sie die Version der Anwendungen und Buildnummern.
 * [Vibrieren](vibrate.md?context=xamarin/xamarin-forms) – stellen Sie das Gerät, das Vibrieren.
@@ -63,4 +65,4 @@ Suchen nach Hilfe, wenn Sie auf Probleme gestoßen sind.
 
 ## <a name="api-documentationxrefxamarinessentials"></a>[API-Dokumentation](xref:Xamarin.Essentials)
 
-Durchsuchen Sie die API-Dokumentation für jede Funktion Xamarin.Essentials.
+Durchsuchen Sie die API-Dokumentation nach den einzelnen Features von Xamarin.Essentials.
