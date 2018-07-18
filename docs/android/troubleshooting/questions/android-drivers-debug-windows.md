@@ -6,13 +6,13 @@ ms.assetid: 36EC7341-A2A4-409C-BD4F-330BAC505123
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 7b3a4c2f807839897a099959fe3a6ea9ec25df78
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: ee3f2b1e1ff6a3ac1bec2d73d4af6e740979aa04
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732748"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066870"
 ---
 # <a name="what-usb-drivers-do-i-need-to-debug-android-on-windows"></a>Welche USB-Treiber ist zum Debuggen von Android unter Windows erforderlich?
 
@@ -28,7 +28,7 @@ Je nach den Manfacturer kann es schwierig, Auffinden der genaue USB-Treiber erfo
 
 - [Testen der App Mitte](https://docs.microsoft.com/appcenter/test-cloud/) – Cloud Services ausführen auf Hunderten von real Android-Geräte zu testen.
 
-- [Visual Studio-Emulator für Android](https://www.visualstudio.com/en-us/features/msft-android-emulator-vs.aspx)
+- [Visual Studio-Emulator für Android](https://visualstudio.microsoft.com/vs/msft-android-emulator/)
 
-- [Debuggen mit der Google Android-Emulator](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+- [Debuggen auf Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md)
 

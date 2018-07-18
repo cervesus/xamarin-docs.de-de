@@ -1,19 +1,20 @@
 ---
-title: Bereitstellung und Testen
-description: Dieses Dokument führt Sie zu Leitfäden, die Symbole, die Leistung sowie die Veröffentlichung im App Store erläutern.
+title: Bereitstellen und Testen von Xamarin.Mac-Apps
+description: In diesem Dokument finden Sie Links zu verschiedenen Leitfäden, in denen beschrieben wird, wie Sie Xamarin.Mac-Apps bereitstellen und testen können. Es sind Links zu Leitfäden enthalten, in denen Anwendungssymbole, die Leistung und die Veröffentlichung im App Store erläutert werden.
 ms.prod: xamarin
 ms.assetid: 2FF314C7-D926-9FEC-57A6-F421A0ED3A46
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/17/2018
-ms.openlocfilehash: 7e0af30b412a0a4c9d73009dad5d66d7762edbb9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4bf1643be8c7a8fc5371c2dda5cf8d5bf1b5ec1f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792082"
 ---
-# <a name="deployment-and-testing"></a>Bereitstellung und Testen
+# <a name="deploying-and-testing-xamarinmac-apps"></a>Bereitstellen und Testen von Xamarin.Mac-Apps
 
 ## <a name="application-iconapp-iconmd"></a>[Application Icon (Anwendungssymbol)](app-icon.md)
 

@@ -1,19 +1,20 @@
 ---
-title: Durchführen einer Kopplung mit einem Mac
-description: In diesem Leitfaden wird beschrieben, wie Sie das Feature „Mit Mac koppeln“ verwenden, um Visual Studio 2017 mit einem Mac-Buildhost zu verbinden.
+title: Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung
+description: In diesem Leitfaden wird beschrieben, wie Sie das Feature „Mit Mac koppeln“ verwenden, um Visual Studio 2017 mit einem Mac-Buildhost zu verbinden. Dabei werden die Aktivierung der Remoteanmeldung auf dem Mac, das Herstellen einer Verbindung mit dem Mac von Visual Studio 2017 aus und das manuelle Hinzufügen eines Mac-Buildhosts zum Windows-Computer erläutert.
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 04/16/2018
-ms.openlocfilehash: e2f9b23bb298b0bb01f7e5491963daed4521ac9c
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.date: 05/29/2018
+ms.openlocfilehash: c4e28c1f3e058977d6f9072b70f17717a2b27585
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786076"
 ---
-# <a name="pair-to-mac"></a>Durchführen einer Kopplung mit einem Mac
+# <a name="pair-to-mac-for-xamarinios-development"></a>Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung
 
 _In diesem Leitfaden wird beschrieben, wie Sie die Option „Mit Mac koppeln“ verwenden, um Visual Studio 2017 mit einem Mac-Buildhost verbinden._
 
@@ -38,6 +39,7 @@ Das Feature „Mit Mac koppeln“ ermöglicht den folgenden Entwicklungsworkflow
 - Die Windows-Befehlszeile kann zur Erstellung von iOS-Anwendungen verwendet werden.
 
 > [!NOTE]
+> 
 > Führen Sie zunächst die folgenden Schritte aus, bevor Sie die Anweisungen in diesem Leitfaden beachten: 
 > 
 > - Installieren Sie auf einem Windows-Computer [Visual Studio 2017](~/cross-platform/get-started/installation/windows.md).
@@ -161,6 +163,7 @@ Ab der [Version 15.6 von Visual Studio 2017](https://docs.microsoft.com/visualst
 > [!IMPORTANT]
 > - Xcode kann nicht durch das Feature „Mit Mac koppeln“ installiert werden. Sie müssen die IDE daher manuell auf dem Mac-Buildhost installieren. Xcode ist für die Entwicklung mit Xamarin.iOS erforderlich.
 > - Für die automatische Bereitstellung eines Macs muss die Remoteanmeldung auf dem Mac aktiviert sein. Außerdem muss ein Windows-Computer über ein Netzwerk auf den Mac zugreifen können. Weitere Informationen finden Sie unter [Aktivieren der Remoteanmeldung auf dem Mac](#enable-remote-login-on-the-mac).
+> - Für die automatische Mac-Bereitstellung sind 3 GB freier Speicherplatz auf dem Mac erforderlich, um Xamarin.iOS zu installieren.
 
 Das Feature „Mit Mac koppeln“ installiert die erforderliche Software oder aktualisiert diese, wenn Visual Studio 2017 [eine Verbindung mit dem Mac herstellt](#connect-to-the-mac-from-visual-studio-2017).
 

@@ -13,6 +13,7 @@ ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33798355"
 ---
 # <a name="implementing-fragments---walkthrough"></a>Implementieren von Fragmenten - Exemplarische Vorgehensweise
 

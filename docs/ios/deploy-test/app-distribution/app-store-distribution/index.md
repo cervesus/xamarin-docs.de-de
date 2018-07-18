@@ -1,28 +1,30 @@
 ---
 title: App Store-Verteilung
-description: Dieses Dokument behandelt die Anforderungen für die Verteilung an den Mac App Store.
+description: In diesem Artikel wird beschrieben, wie Sie eine Xamarin.iOS-Anwendung im App Store veröffentlichen. Außerdem wird das Erstellen eines Verteilungszertifikat und eines Verteilungsbereitstellungsprofils erläutert, außerdem wird erklärt, wie Sie iTunes Connect konfigurieren und die App übermitteln.
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 7a38c77dde7a66f2db194cd8888a2c32a3529a9a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b763407797cf635908cf34cce4f1a6a06325000d
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209258"
 ---
 # <a name="app-store-distribution"></a>App Store-Verteilung
-
-_Dieses Dokument behandelt die Anforderungen für die Verteilung an den App Store von Apple._
 
 Nachdem eine Xamarin.iOS-Anwendung entwickelt wurde, ist der nächste Schritt im Lebenszyklus der Softwareentwicklung die Verteilung der Anwendung an Benutzer mithilfe des iTunes App Stores. Dies ist die gängigste Methode zum Verteilen von Anwendungen. Indem eine Anwendung im App Store von Apple veröffentlicht wird, kann Sie weltweit für Verbraucher verfügbar gemacht werden.
 
 > [!IMPORTANT]
-> **Beachten Sie**, dass Sie an einem Apple-Entwicklerprogramm für Einzelpersonen oder Organisationen teilnehmen **müssen**, um iTunes Connect verwenden und somit eine App im App Store veröffentlichen zu können. Wenn Sie Mitglied eines Apple Developer **Enterprise** Programs sind, können Sie die Schritte auf dieser Seite nicht ausführen.
+> Apple [hat mitgeteilt](https://developer.apple.com/news/?id=05072018a), dass ab Juli 2018 alle Apps und Updates, die an den App Store gesendet werden, mit dem iOS 11 SDK erstellt worden sein und das [iPhone X-Display unterstützen](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md) müssen.
 
 Das Verteilen einer Anwendung erfordert genau wie das Entwickeln einer Anwendung, dass Anwendungen mit dem entsprechenden *Bereitstellungsprofil* bereitgestellt werden. Bereitstellungsprofile sind Dateien, die Informationen zur Codesignierung sowie die Identität der Anwendung und den beabsichtigten Verteilungsmechanismus enthalten. Sie enthalten auch Informationen darüber, für welche Geräte eine App bereitgestellt wird, wenn die Verteilung nicht über den App Store stattfindet.
+
+> [!IMPORTANT]
+> **Beachten Sie**, dass Sie an einem Apple-Entwicklerprogramm für Einzelpersonen oder Organisationen teilnehmen **müssen**, um iTunes Connect verwenden und somit eine App im App Store veröffentlichen zu können. Wenn Sie Mitglied eines Apple Developer **Enterprise** Programs sind, können Sie die Schritte auf dieser Seite nicht ausführen.
 
 <a name="provisioning" />
 

@@ -1,45 +1,45 @@
 ---
-title: Markieren eine Kreisbereiche auf einer Karte
-description: In diesem Artikel wird erläutert, wie eine Karte, um eine zirkuläre Bereich der Karte zu markieren eine zirkuläre Überlagerung hinzugefügt. Während der IOS- und Android-APIs bieten die zirkuläre Overlay zur Zuordnung hinzufügen, wird das Overlay auf UWP als ein Polygon gerendert.
+title: Markieren einer runden Fläche auf einer Karte
+description: In diesem Artikel wird erläutert, wie eine Zuordnung, zum Markieren einer runden Fläche der Karte eine zirkuläre Überlagerung hinzugefügt. Zwar iOS und Android APIs für das zirkuläre Overlay zur Karte hinzufügen, wird das Overlay auf UWP als ein Polygon gerendert.
 ms.prod: xamarin
 ms.assetid: 6FF8BD15-074E-4E6A-9522-F9E2BE32EF12
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 06ea1e788add0064571f01dc1080147e64bb8397
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3064296d4c78a3342fb27afc971c37a029987e5e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240284"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998556"
 ---
-# <a name="highlighting-a-circular-area-on-a-map"></a>Markieren eine Kreisbereiche auf einer Karte
+# <a name="highlighting-a-circular-area-on-a-map"></a>Markieren einer runden Fläche auf einer Karte
 
-_In diesem Artikel wird erläutert, wie eine Karte, um eine zirkuläre Bereich der Karte zu markieren eine zirkuläre Überlagerung hinzugefügt._
+_In diesem Artikel wird erläutert, wie eine Zuordnung, zum Markieren einer runden Fläche der Karte eine zirkuläre Überlagerung hinzugefügt._
 
 ## <a name="overview"></a>Übersicht
 
-Overlay ist eine geschichteten Grafik auf einer Karte. Overlays unterstützen grafische Zeichnungsinhalt, die mit der Zuordnung skaliert werden, da es vergrößert wird. Die folgenden Screenshots zeigen das Ergebnis einer Zuordnung eine zirkuläre Überlagerung hinzugefügt:
+Eine Überlagerung ist eine überlappende Grafik auf einer Karte. Überlagerungen unterstützen grafischen Zeichnungsinhalt, die mit der Zuordnung skaliert werden soll, wie es vergrößert wird. Die folgenden Screenshots zeigen das Ergebnis der Addition von einem kreisförmigen Overlay zu einer Zuordnung an:
 
 ![](circle-map-overlay-images/screenshots.png)
 
-Wenn eine [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) einer Xamarin.Forms-Anwendung in iOS-Steuerelement gerendert wird die `MapRenderer` Klasse instanziiert, die instanziiert wiederum ein systemeigenes `MKMapView` Steuerelement. Auf der Android-Plattform die `MapRenderer` Klasse instanziiert ein systemeigenes `MapView` Steuerelement. Auf die universelle Windows-Plattform (UWP), die `MapRenderer` Klasse instanziiert ein systemeigenes `MapControl`. Des Renderingprozesses kann Vorteil ausgeführt werden, um Clientplattform-spezifische Zuordnung Anpassungen zu implementieren, durch das Erstellen eines benutzerdefinierten Renderers für eine `Map` auf jeder Plattform. Die Verfahrensweise für diesen Vorgang lautet wie folgt:
+Wenn eine [ `Map` ](xref:Xamarin.Forms.Maps.Map) -Steuerelements von einer Xamarin.Forms-Anwendung unter iOS die `MapRenderer` Klasse instanziiert wird, die instanziiert wiederum eines systemeigenes `MKMapView` Steuerelement. Auf der Android-Plattform die `MapRenderer` Klasse instanziiert ein systemeigenes `MapView` Steuerelement. Auf der universellen Windows-Plattform (UWP), die `MapRenderer` Klasse instanziiert ein systemeigenes `MapControl`. Das Rendern zu erstellt werden kann nutzen plattformspezifische Zuordnung Anpassungen zu implementieren, durch das Erstellen eines benutzerdefinierten Renderers für eine `Map` auf jeder Plattform. Der Prozess hierfür lautet wie folgt aus:
 
 1. [Erstellen Sie](#Creating_the_Custom_Map) einer benutzerdefinierten Xamarin.Forms-Karte.
 1. [Nutzen](#Consuming_the_Custom_Map) die benutzerdefinierte Zuordnung von Xamarin.Forms.
-1. [Anpassen](#Customizing_the_Map) die Zuordnung durch das Erstellen eines benutzerdefinierten Renderers für die Zuordnung auf jeder Plattform.
+1. [Anpassen von](#Customizing_the_Map) der Zuordnung durch das Erstellen eines benutzerdefinierten Renderers für die Zuordnung auf jeder Plattform.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/") Initialisiert und vor der Verwendung konfiguriert werden müssen. Weitere Informationen finden Sie unter [`Maps Control`](~/xamarin-forms/user-interface/map.md)
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) Initialisiert und vor der Verwendung konfiguriert werden müssen. Weitere Informationen finden Sie unter [`Maps Control`](~/xamarin-forms/user-interface/map.md)
 
-Informationen zum Anpassen einer Karte, die mithilfe eines benutzerdefinierten Renderers finden Sie unter [Anpassen einer Karte Pin](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
+Informationen zum Anpassen einer Karte mithilfe eines benutzerdefinierten Renderers finden Sie unter [Anpassen einer Kartennadel](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 
 <a name="Creating_the_Custom_Map" />
 
-### <a name="creating-the-custom-map"></a>Erstellen die benutzerdefinierte Karte
+### <a name="creating-the-custom-map"></a>Die benutzerdefinierte Karte erstellen
 
-Erstellen einer `CustomCircle` Klasse, die verfügt `Position` und `Radius` Eigenschaften:
+Erstellen Sie eine `CustomCircle` Klasse, die verfügt `Position` und `Radius` Eigenschaften:
 
 ```csharp
 public class CustomCircle
@@ -49,7 +49,7 @@ public class CustomCircle
 }
 ```
 
-Erstellen Sie dann eine Unterklasse von der [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) Klasse bereit, die eine Eigenschaft vom Typ fügt `CustomCircle`:
+Erstellen Sie dann auf eine Unterklasse von der [ `Map` ](xref:Xamarin.Forms.Maps.Map) Klasse bereit, die eine Eigenschaft des Typs fügt `CustomCircle`:
 
 ```csharp
 public class CustomMap : Map
@@ -62,7 +62,7 @@ public class CustomMap : Map
 
 ### <a name="consuming-the-custom-map"></a>Nutzen die benutzerdefinierte Karte
 
-Nutzen der `CustomMap` Steuerelement durch Deklarieren einer Instanz des Zertifikats in der XAML-Seite-Instanz:
+Nutzen der `CustomMap` Steuerelement durch deklarieren eine Instanz davon in der XAML-Seite-Instanz:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -75,7 +75,7 @@ Nutzen der `CustomMap` Steuerelement durch Deklarieren einer Instanz des Zertifi
 </ContentPage>
 ```
 
-Alternativ können Sie nutzen die `CustomMap` Steuerelement durch Deklarieren einer Instanz des Zertifikats in der C#-Seite-Instanz:
+Verwenden Sie alternativ die `CustomMap` Steuerelement durch deklarieren eine Instanz davon in der C#-Seite-Instanz:
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -93,7 +93,7 @@ public class MapPageCS : ContentPage
 }
 ```
 
-Initialisieren der `CustomMap` nach Bedarf zu steuern:
+Initialisieren der `CustomMap` nach Bedarf steuern:
 
 ```csharp
 public partial class MapPage : ContentPage
@@ -120,17 +120,17 @@ public partial class MapPage : ContentPage
 }
 ```
 
-Fügt diese Initialisierung [ `Pin` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Pin/) und `CustomCircle` Instanzen, die benutzerdefinierte Karte und die Kartenansicht mit positioniert das [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)/) -Methode, die die Position und Zoom ändert auf der Karte durch das Erstellen einer [ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/) aus einer [ `Position` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/) und ein [ `Distance` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/).
+Fügt diese Initialisierung [ `Pin` ](xref:Xamarin.Forms.Maps.Pin) und `CustomCircle` Instanzen, die benutzerdefinierte Karte und positioniert die Map-Ansicht mit den [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) -Methode, die ändert sich die Position und Zoom auf der Karte durch das Erstellen einer [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan) aus einer [ `Position` ](xref:Xamarin.Forms.Maps.Position) und [ `Distance` ](xref:Xamarin.Forms.Maps.Distance).
 
 <a name="Customizing_the_Map" />
 
-### <a name="customizing-the-map"></a>Anpassen der Zuordnung
+### <a name="customizing-the-map"></a>Anpassen der Karte
 
-Ein benutzerdefinierter Renderer muss jetzt jedes Anwendungsprojekt zirkuläre Overlay hinzufügen, zu der Zuordnung hinzugefügt werden.
+Ein benutzerdefinierter Renderer muss jedes Anwendungsprojekt aus, um die zirkuläre Überlagerung zur Karte hinzufügen jetzt hinzugefügt werden.
 
-#### <a name="creating-the-custom-renderer-on-ios"></a>Erstellen die benutzerdefinierten Renderers für iOS
+#### <a name="creating-the-custom-renderer-on-ios"></a>Erstellen den benutzerdefinierten Renderer für iOS
 
-Erstellen Sie eine Unterklasse von der `MapRenderer` Klasse, und überschreiben die `OnElementChanged` Methode, um die zirkuläre Überlagerung hinzuzufügen:
+Erstellen Sie eine Unterklasse von der `MapRenderer` Klasse, und überschreiben seine `OnElementChanged` Methode, um die zirkuläre Überlagerung hinzuzufügen:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -170,11 +170,11 @@ namespace MapOverlay.iOS
 
 ```
 
-Diese Methode führt die folgende Konfiguration, vorausgesetzt, dass die benutzerdefinierten Renderers ein neues Xamarin.Forms-Element zugeordnet ist:
+Diese Methode führt die folgende Konfiguration, vorausgesetzt, dass der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt ist:
 
-- Die `MKMapView.OverlayRenderer` Eigenschaft auf einen entsprechenden Delegaten festgelegt ist.
-- Der Kreis wird erstellt, indem Sie einen statischen `MKCircle` Objekt, das den Mittelpunkt des Kreises und den Radius der Kreisradius in Metern angibt.
-- Der Kreis wird zur Zuordnung hinzugefügt, indem die `MKMapView.AddOverlay` Methode.
+- Die `MKMapView.OverlayRenderer` -Eigenschaftensatz auf einen entsprechenden Delegaten.
+- Der Kreis wird durch Festlegen einer statischen erstellt `MKCircle` -Objekt, das den Mittelpunkt des Kreises und den Radius des Kreises in Metern angibt.
+- Der Kreis wird zur Karte hinzugefügt, durch Aufrufen der `MKMapView.AddOverlay` Methode.
 
 Implementieren Sie anschließend die `GetOverlayRenderer` Methode, um die Wiedergabe der Überlagerung anzupassen:
 
@@ -198,9 +198,9 @@ public class CustomMapRenderer : MapRenderer
 }
 ```
 
-#### <a name="creating-the-custom-renderer-on-android"></a>Erstellen von benutzerdefinierten Renderers für Android
+#### <a name="creating-the-custom-renderer-on-android"></a>Erstellen den benutzerdefinierten Renderer für Android
 
-Erstellen Sie eine Unterklasse von der `MapRenderer` Klasse, und überschreiben die `OnElementChanged` und `OnMapReady` Methoden, um die zirkuläre Überlagerung hinzuzufügen:
+Erstellen Sie eine Unterklasse von der `MapRenderer` Klasse, und überschreiben seine `OnElementChanged` und `OnMapReady` Methoden, um die zirkuläre Überlagerung hinzuzufügen:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -248,11 +248,11 @@ namespace MapOverlay.Droid
 }
 ```
 
-Die `OnElementChanged` Methodenaufrufe der `MapView.GetMapAsync` -Methode, die die zugrunde liegende ruft `GoogleMap` , die an die Sicht gebunden ist, vorausgesetzt, dass die benutzerdefinierten Renderers ein neues Xamarin.Forms-Element zugeordnet ist. Einmal die `GoogleMap` Instanz verfügbar ist, wird die `OnMapReady` Methode wird aufgerufen, wobei Kreises durch Instanziierung erstellt wird ein `CircleOptions` Objekt, das den Mittelpunkt des Kreises und den Radius der Kreisradius in Metern angibt. Der Kreis wird dann zur Zuordnung hinzugefügt, durch Aufrufen der `NativeMap.AddCircle` Methode.
+Die `OnElementChanged` Methodenaufrufe der `MapView.GetMapAsync` -Methode, die die zugrunde liegende ruft `GoogleMap` , die an die Sicht gebunden ist, vorausgesetzt, dass der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt ist. Einmal die `GoogleMap` Instanz verfügbar ist, die `OnMapReady` Methode wird aufgerufen, und, in der Kreis erstellt wird, durch die Instanziierung einer `CircleOptions` -Objekt, das den Mittelpunkt des Kreises und den Radius des Kreises in Metern angibt. Der Kreis wird dann zur Karte hinzugefügt, durch den Aufruf der `NativeMap.AddCircle` Methode.
 
-#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Erstellen von benutzerdefinierten Renderers für universelle Windows-Plattform
+#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Erstellen den benutzerdefinierten Renderer für die universelle Windows-Plattform
 
-Erstellen Sie eine Unterklasse von der `MapRenderer` Klasse, und überschreiben die `OnElementChanged` Methode, um die zirkuläre Überlagerung hinzuzufügen:
+Erstellen Sie eine Unterklasse von der `MapRenderer` Klasse, und überschreiben seine `OnElementChanged` Methode, um die zirkuläre Überlagerung hinzuzufügen:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -296,12 +296,12 @@ namespace MapOverlay.UWP
 }
 ```
 
-Diese Methode führt die folgenden Vorgänge aus, vorausgesetzt, dass die benutzerdefinierten Renderers ein neues Xamarin.Forms-Element zugeordnet ist:
+Diese Methode führt die folgenden Vorgänge, vorausgesetzt, dass der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt ist:
 
-- Die Kreis-Position und den Radius werden abgerufen, von der `CustomMap.Circle` Eigenschaft und übergeben der `GenerateCircleCoordinates` -Methode, die Breiten- und Längengrad generiert Koordinaten für den Umfang des Kreises. Der Code für diese Hilfsmethode wird unten gezeigt.
-- Der Kreis Umkreis Koordinaten werden in konvertiert eine `List` von `BasicGeoposition` Koordinaten.
-- Der Kreis wird erstellt, indem die Instanziierung einer `MapPolygon` Objekt. Die `MapPolygon` Klasse wird verwendet, um eine Form "multipunkteingabe" auf der Karte angezeigt, durch Festlegen seiner `Path` Eigenschaft, um eine `Geopath` Objekt, das die Koordinaten der Form "enthält.
-- Das Polygon gerendert wird auf der Karte, hinzufügen zu der `MapControl.MapElements` Auflistung.
+- Die Kreis-Position und die RADIUS-werden abgerufen, von der `CustomMap.Circle` Eigenschaft und an die `GenerateCircleCoordinates` -Methode, die Breiten- und Längengrad generiert Koordinaten für den Umfang des Kreises. Der Code für diese Hilfsmethode ist unten dargestellt.
+- Die Koordinaten des Kreises Umkreis werden in konvertiert eine `List` von `BasicGeoposition` Koordinaten.
+- Der Kreis wird erstellt, durch die Instanziierung einer `MapPolygon` Objekt. Die `MapPolygon` Klasse wird verwendet, um eine Form mit mehreren Punkten auf der Karte angezeigt, durch Festlegen der `Path` Eigenschaft, um eine `Geopath` -Objekt, das die Koordinaten der Form enthält.
+- Das Polygon auf der Karte gerendert wird, indem sie zum Hinzufügen der `MapControl.MapElements` Auflistung.
 
 
 ```
@@ -328,11 +328,11 @@ List<Position> GenerateCircleCoordinates(Position position, double radius)
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde erläutert, wie einer Karte, um eine zirkuläre Bereich der Karte zu markieren eine zirkuläre Überlagerung hinzugefügt wird.
+In diesem Artikel wurde erläutert, wie eine zirkuläre Überlagerung auf einer Karte zum Markieren einer runden Fläche der Karte hinzufügen.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Zirkuläre Zuordnung Ovlerlay (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/circle/)
 - [Anpassen einer Kartennadel](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
-- [Xamarin.Forms.Maps](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/)
+- [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

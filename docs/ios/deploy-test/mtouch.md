@@ -1,23 +1,23 @@
 ---
-title: mtouch
+title: Verwenden von mtouch zum Bündeln von Xamarin.iOS-Apps
+description: In diesem Dokument wird das Tool „mtouch“ beschrieben, das viele der Schritte durchführt, die für das Bündeln einer Xamarin.iOS-App, das Starten in einem Emulator und das Bereitstellen auf einem physischen Gerät erforderlich sind.
 ms.prod: xamarin
 ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 933ad24a8778ffbee3a1b6089c6ebcf33d26bf84
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9aaa79f929898f6765b97ab0a0c4a30a271d945a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784952"
 ---
-# <a name="mtouch"></a>mtouch
-
+# <a name="using-mtouch-to-bundle-xamarinios-apps"></a>Verwenden von mtouch zum Bündeln von Xamarin.iOS-Apps
 
 iPhone-Anwendungen werden als Anwendungspakete zur Verfügung gestellt. Hierbei handelt es sich um Verzeichnisse mit der Erweiterung `.app`, die Ihren Code, Daten, Konfigurationsdateien sowie ein Manifest enthalten, welche vom iPhone verwendet werden, um Informationen zu Ihrer Anwendung zu sammeln.
 
 Der Prozess zum Konvertieren einer ausführbaren .NET-Datei in eine Anwendung wird in der Regel vom Befehl `mtouch` gesteuert. Dabei handelt es sich um ein Tool, dass viele der zum Aktivieren der Anwendung in einem Bündel erforderlichen Schritte enthält. Dieses Tool wird auch verwendet, um Ihre Anwendung im Simulator zu starten und die Software auf einem echten iPhone oder iPod Touch bereitzustellen.
-
 
 ## <a name="detailed-instructions"></a>Ausführliche Anweisungen
 

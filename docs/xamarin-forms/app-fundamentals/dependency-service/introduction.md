@@ -1,45 +1,45 @@
 ---
-title: Einführung in DependencyService
-description: In diesem Artikel wird erläutert, wie die Klasse Xamarin.Forms DependencyService auf systemeigene Plattformfunktionen Zugriff funktioniert.
+title: Einführung in die DependencyService
+description: In diesem Artikel wird die Funktionsweise von Xamarin.Forms DependencyService Klasse zum Zugriff auf systemeigene Plattformfunktionen erläutert.
 ms.prod: xamarin
 ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 0b81d429b0488603c7a487421cb7f32c1f3cf890
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 558a05b5fdc4c4f08194b708de886bca342dd860
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240992"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995413"
 ---
-# <a name="introduction-to-dependencyservice"></a>Einführung in DependencyService
+# <a name="introduction-to-dependencyservice"></a>Einführung in die DependencyService
 
 ## <a name="overview"></a>Übersicht
 
-[`DependencyService`](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) ermöglicht apps Clientplattform-spezifische Funktionen von freigegebenem Code aufrufen. Diese Funktionen ermöglichen das Xamarin.Forms-apps, nichts zu tun, die eine systemeigene app durchführen können.
+[`DependencyService`](xref:Xamarin.Forms.DependencyService) erlaubt apps das plattformspezifische Funktionen über freigegebenen Code aufgerufen. Diese Funktionalität ermöglicht das Xamarin.Forms-apps, nichts tun, die eine native app ausführen können.
 
-`DependencyService` ist ein Abhängigkeitskonfliktlöser. In der Praxis ist eine Schnittstelle definiert und `DependencyService` findet die korrekte Implementierung dieser Schnittstelle aus den verschiedenen plattformprojekten.
+`DependencyService` ist ein Abhängigkeitskonfliktlöser. In der Praxis ist eine Schnittstelle definiert und `DependencyService` sucht die richtige Implementierung dieser Schnittstelle aus den verschiedenen Plattform-Projekten.
 
 ## <a name="how-dependencyservice-works"></a>Funktionsweise von DependencyService
 
 Xamarin.Forms-apps benötigen Sie vier Komponenten zur Verwendung `DependencyService`:
 
-- **Schnittstelle** &ndash; die erforderliche Funktionalität wird durch eine Schnittstelle im freigegebenen Code definiert.
-- **Implementierung pro Plattform** &ndash; Klassen, die die Schnittstelle implementieren müssen auf jeder plattformprojekt hinzugefügt werden.
-- **Registrierung** &ndash; jede implementierende Klasse muss registriert werden, mit `DependencyService` über ein Metadatenattribut. Registrierung ermöglicht `DependencyService` finden die implementierende Klasse, und stellen Sie es zur Laufzeit anstelle der Schnittstelle bereit.
-- **Aufruf von DependencyService** &ndash; freigegebene Code muss explizit aufrufen `DependencyService` für Implementierungen der-Schnittstelle um Unterstützung bitten.
+- **Schnittstelle** &ndash; die erforderliche Funktionalität wird durch eine Schnittstelle in freigegebenem Code definiert.
+- **Implementierung pro Plattform** &ndash; Klassen, die die Schnittstelle implementieren müssen jedes plattformprojekt hinzugefügt werden.
+- **Registrierung** &ndash; jeder Klasse implementieren muss registriert werden, mit `DependencyService` über ein Metadatenattribut. Registrierung ermöglicht `DependencyService` die implementierende Klasse suchen und anstelle der Schnittstelle zur Laufzeit bereitstellen.
+- **Aufrufen, um DependencyService** &ndash; freigegebene Code muss explizit aufrufen `DependencyService` , Implementierungen der Schnittstelle abzufragen.
 
-Beachten Sie, dass die Implementierungen für jede Plattform-Projekts in der Projektmappe bereitgestellt werden müssen. Plattformprojekte ohne Implementierungen werden zur Laufzeit fehlschlagen.
+Beachten Sie, dass Implementierungen für jede Plattform-Projekt in der Projektmappe bereitgestellt werden müssen. Plattform-Projekten ohne Implementierungen werden zur Laufzeit fehlschlagen.
 
-Die Struktur der Anwendung wird durch Folgendes Diagramm erläutert:
+Die Struktur der Anwendung wird mithilfe des folgenden Diagramms erläutert:
 
 ![](introduction-images/overview-diagram.png "DependencyService Anwendungsstruktur")
 
 ### <a name="interface"></a>Interface
 
-Die Schnittstelle, die Sie entwerfen definieren Interaktion mit Clientplattform-spezifische Funktionen. Seien Sie vorsichtig, wenn Sie eine Komponente als eine Komponente oder ein NuGet-Paket die weiterzuleitenden entwickeln. API-Entwurf kann stellen oder ein Paket unterbrechen. Das folgende Beispiel gibt eine einfache Schnittstelle für sprechen, die bewirkt, dass die Implementierung für jede Plattform angepasst werden, ermöglicht Flexibilität bei der Angabe der Wörter zu sprechenden Text an:
+Die Schnittstelle, die Sie entwerfen, wird die Interaktion mit plattformspezifischen Features definiert. Seien Sie vorsichtig, wenn Sie entwickeln eine Komponente als eine Komponente oder ein Nuget-Paket gemeinsam genutzt werden. API-Entwurf kann stellen oder ein Paket unterbrechen. Das folgende Beispiel gibt an, eine einfache Schnittstelle für sprechen-Text, der zu sprechende Flexibilität bei der Angabe der Wörter ermöglicht, sondern bleibt die Implementierung, die für die einzelnen Plattformen angepasst werden:
 
 ```csharp
 public interface ITextToSpeech {
@@ -47,9 +47,9 @@ public interface ITextToSpeech {
 }
 ```
 
-### <a name="implementation-per-platform"></a>Implementierung plattformspezifischen
+### <a name="implementation-per-platform"></a>Implementierung pro Plattform
 
-Sobald eine geeignete Benutzeroberfläche entworfen wurde, muss diese Schnittstelle in das Projekt für jede Plattform implementiert werden, die das Ziel. Z. B. die folgende Klasse implementiert die `ITextToSpeech` Schnittstelle auf iOS:
+Sobald eine geeignete Benutzeroberfläche entworfen wurde, muss diese Schnittstelle in das Projekt für jede Plattform implementiert werden, die das Ziel. Z. B. die folgende Klasse implementiert die `ITextToSpeech` Schnittstelle unter iOS:
 
 ```csharp
 namespace UsingDependencyService.iOS
@@ -75,7 +75,7 @@ namespace UsingDependencyService.iOS
 
 ### <a name="registration"></a>Registrierung
 
-Jede Implementierung der Schnittstelle muss registriert werden `DependencyService` mit einem Metadatenattribut. Im folgende Code wird die Implementierung für iOS registriert:
+Jede Implementierung der Schnittstelle registriert werden muss `DependencyService` mit einem Metadatenattribut. Der folgende Code registriert die Implementierung für iOS:
 
 ```csharp
 [assembly: Dependency (typeof (TextToSpeech_iOS))]
@@ -85,7 +85,7 @@ namespace UsingDependencyService.iOS
 }
 ```
 
-Gesamtbild, sieht die Clientplattform-spezifische Implementierung:
+Technologien kombinieren, sieht die plattformspezifische Implementierung wie folgt aus:
 
 ```csharp
 [assembly: Dependency (typeof (TextToSpeech_iOS))]
@@ -110,13 +110,13 @@ namespace UsingDependencyService.iOS
 }
 ```
 
-Hinweis:, die die Registrierung auf Namespace-Ebene nicht auf Klassenebene ausgeführt wird.
+Hinweis:, die auf Namespace-Ebene, nicht auf Klassenebene ist die Registrierung erfolgt.
 
-#### <a name="universal-windows-platform-net-native-compilation"></a>Universelle Windows Plattform .NET Native Kompilierung
+#### <a name="universal-windows-platform-net-native-compilation"></a>Universelle Windows-Plattform .NET Native-Kompilierung
 
-Führen Sie die uwp-Projekte, die die .NET Native Kompilierung-Option verwenden, sollte ein [etwas andere Konfiguration](~/xamarin-forms/platform/windows/installation/index.md#target-invocation-exception) Xamarin.Forms zu initialisieren. .NET native Kompilierung werden auch geringfügig Registrierung für Abhängigkeitsdienste erforderlich.
+Führen Sie die UWP-Projekte, die die .NET Native-Kompilierung-Option verwenden sollten eine [etwas andere Konfiguration](~/xamarin-forms/platform/windows/installation/index.md#target-invocation-exception) beim Initialisieren von Xamarin.Forms. .NET native-Kompilierung erfordert etwas andere Registrierung auch für Abhängigkeitsdienste.
 
-In der **App.xaml.cs** Datei, die manuell registrieren jedes Abhängigkeitsdienst definiert im uwp-Projekt mithilfe der `Register<T>` Methode, wie unten dargestellt:
+In der **"App.Xaml.cs"** Datei, manuell registrieren jedes Abhängigkeitsdienst definiert, in der UWP-Projekt mithilfe der `Register<T>` Methode, wie unten gezeigt:
 
 ```csharp
 Xamarin.Forms.Forms.Init(e, assembliesToInclude);
@@ -124,26 +124,26 @@ Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 Xamarin.Forms.DependencyService.Register<TextToSpeechImplementation>();
 ```
 
-Hinweis: die manuelle Registrierung mit `Register<T>` ist nur wirksam, die in Version builds mithilfe von .NET Native-Kompilierung. Wenn Sie diese Zeile weglassen, Debug-Builds weiterhin funktioniert, aber Releasebuilds schlägt fehl, Abhängigkeitsdienst geladen.
+Hinweis: die manuelle Registrierung mit `Register<T>` ist nur wirksam, die im Release-builds mithilfe von .NET Native-Kompilierung. Wenn Sie diese Zeile auslassen, Debug-Builds weiterhin funktionieren, aber Releasebuilds schlägt fehl, zum Laden des Dependency-Diensts.
 
-### <a name="call-to-dependencyservice"></a>Aufruf von DependencyService
+### <a name="call-to-dependencyservice"></a>Aufrufen, um DependencyService
 
-Nachdem das Projekt mit der Implementierung für jede Plattform und eine gemeinsame Schnittstelle eingerichtet wurde, verwenden Sie `DependencyService` um die richtige Implementierung bei Laufzeit abzurufen:
+Nachdem das Projekt mit der eine allgemeine Schnittstelle und Implementierungen für jede Plattform eingerichtet wurde, verwenden Sie `DependencyService` um die richtige Implementierung bei Laufzeit abzurufen:
 
 ```csharp
 DependencyService.Get<ITextToSpeech>().Speak("Hello from Xamarin Forms");
 ```
 
-`DependencyService.Get<T>` findet die korrekte Implementierung der Schnittstelle `T`.
+`DependencyService.Get<T>` sehen Sie die richtige Implementierung der Schnittstelle `T`.
 
-### <a name="solution-structure"></a>Projektmappenstruktur
+### <a name="solution-structure"></a>Lösungsstruktur
 
-Die [UsingDependencyService Beispielprojektmappe](https://developer.xamarin.com/samples/UsingDependencyService/) unten für iOS und Android, mit der oben beschriebenen Änderungen am Code hervorgehoben ist.
+Die [UsingDependencyService Beispielprojektmappe](https://developer.xamarin.com/samples/UsingDependencyService/) unten für iOS und Android, durch die oben beschriebenen codeänderungen markiert ist.
 
- [![iOS und Android-Lösung](introduction-images/solution-sml.png "DependencyService Beispiel Projektmappenstruktur")](introduction-images/solution.png#lightbox "DependencyService Beispiel Projektmappenstruktur")
+ [![iOS und Android-Lösung](introduction-images/solution-sml.png "DependencyService Beispiel Projektmappenstruktur")](introduction-images/solution.png#lightbox "DependencyService Beispiel Lösungsstruktur")
 
 > [!NOTE]
-> Sie **müssen** eine Implementierung in jedem plattformprojekt bereitstellen. Wenn keine Implementierung registriert ist, und klicken Sie dann die `DependencyService` konnte nicht aufgelöst werden die `Get<T>()` Methode zur Laufzeit.
+> Sie **müssen** eine Implementierung in jedem plattformprojekt bereitstellen. Wenn keine Implementierung der Schnittstelle registriert ist, und klicken Sie dann die `DependencyService` kann nicht aufgelöst werden die `Get<T>()` Methode zur Laufzeit.
 
 
 ## <a name="related-links"></a>Verwandte Links

@@ -1,30 +1,30 @@
 ---
 title: Xamarin.Forms-Eintrag
-description: In diesem Artikel wird erläutert, wie die Xamarin.Forms-Eintrag-Klasse verwenden, um einzeilige Text- oder Kennworteingabe in einer Anwendung zu akzeptieren.
+description: In diesem Artikel wird erläutert, wie Sie die Xamarin.Forms-Eintrag-Klasse verwenden, um einzeiligen Text oder Kennworteingabe in einer Anwendung zu akzeptieren.
 ms.prod: xamarin
 ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: b6188b986589a56229ad2e092d4100ff3f75dbe4
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 95afdfde878759d4a598e200d16fe6fb1fa2005e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245552"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998231"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms-Eintrag
 
-_Einzeilige Text- oder Kennwort eingeben_
+_Einzeiligen Text oder das Kennwort eingeben_
 
-Die Xamarin.Forms `Entry` für einzeilige Texteingabe verwendet wird. Die `Entry`, z. B. die `Editor` anzeigen, unterstützt mehrere Tastaturtypen. Darüber hinaus die `Entry` kann als ein Kennwortfeld verwendet werden.
+Die Xamarin.Forms `Entry` als Eingabe für einzeiligen Text verwendet. Die `Entry`, z. B. die `Editor` anzeigen, die mehrere Tastaturtypen unterstützt. Darüber hinaus die `Entry` kann als ein Feld "Kennwort" verwendet werden.
 
-## <a name="display-customization"></a>Anzeige-Anpassung
+## <a name="display-customization"></a>Anzeigen der Anpassung
 
 ### <a name="setting-and-reading-text"></a>Festlegen und Lesen von Text
 
-Die `Entry`, wie andere Sichten Text vorlegen macht die `Text` Eigenschaft. Diese Eigenschaft kann verwendet werden, festlegen und Lesen Sie den Text, präsentiert von der `Entry`. Das folgende Beispiel veranschaulicht das Festlegen der `Text` Eigenschaft in XAML:
+Die `Entry`, wie andere Ansichten darstellen von Text macht den `Text` Eigenschaft. Diese Eigenschaft kann verwendet werden, festlegen und Lesen Sie den Text an, das von der `Entry`. Das folgende Beispiel veranschaulicht das Festlegen der `Text` -Eigenschaft in XAML:
 
 ```xaml
 <Entry Text="I am an Entry" />
@@ -43,11 +43,11 @@ var text = MyEntry.Text;
 ```
 
 > [!NOTE]
-> Die Breite des ein `Entry` können definiert werden, indem seine `WidthRequest` Eigenschaft. Hängen die Breite des kein `Entry` definierende basierend auf dem Wert von dessen `Text` Eigenschaft.
+> Die Breite des ein `Entry` definiert werden, indem Sie die Einstellung der `WidthRequest` Eigenschaft. Hängen nicht von der Breite des ein `Entry` definiert basierend auf den Wert der `Text` Eigenschaft.
 
-### <a name="limiting-input-length"></a>Beschränken der Länge Eingabe
+### <a name="limiting-input-length"></a>Geben Sie die Länge beschränken
 
-Die [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Eigenschaft kann verwendet werden, um die Eingabe Länge beschränkt werden, der für zulässig ist die [ `Entry` ](xref:Xamarin.Forms.Entry). Diese Eigenschaft sollte eine positive ganze Zahl festgelegt werden:
+Die [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Eigenschaft kann verwendet werden, um die Eingabe begrenzt, die zulässige Menge für die [ `Entry` ](xref:Xamarin.Forms.Entry). Diese Eigenschaft muss eine positive ganze Zahl festgelegt werden:
 
 ```xaml
 <Entry ... MaxLength="10" />
@@ -57,28 +57,28 @@ Die [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Eigenschaft kann ver
 var entry = new Entry { ... MaxLength = 10 };
 ```
 
-Ein [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) der Eigenschaftswert 0 gibt an, dass keine Eingabe möglich ist, und der Wert `int.MaxValue`, dies ist der Standardwert für eine [ `Entry` ](xref:Xamarin.Forms.Entry), gibt an, dass keine effektive Höchstwert für die Anzahl der Zeichen, die eingegeben werden können.
+Ein [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) der Eigenschaftswert 0 gibt an, dass keine Eingabe zulässig ist, und den Wert `int.MaxValue`, dies ist der Standardwert für eine [ `Entry` ](xref:Xamarin.Forms.Entry), gibt an, dass keine effektive Höchstwert für die Anzahl der Zeichen, die eingegeben werden können.
 
 ### <a name="keyboards"></a>Tastaturen
 
-Der Tastatur, die angezeigt werden, wenn Benutzer interagieren ein `Entry` programmgesteuert festgelegt werden können, über die `Keyboard` Eigenschaft.
+Die Tastatur, die angezeigt werden, wenn Benutzer mit interagieren ein `Entry` programmgesteuert festgelegt werden können, über die `Keyboard` Eigenschaft.
 
-Die Optionen für die Tastaturtyp sind:
+Die Optionen für den Tastaturtyp sind:
 
-- **Standardmäßige** &ndash; der Standardtastatur
-- **Chat** &ndash; für Texte & Stellen verwendet, in denen Emoji eignen sich
-- **E-Mail** &ndash; verwendet, wenn e-Mail-Adressen eingeben.
+- **Standardmäßige** &ndash; die Standardtastatur
+- **Chat** &ndash; für Hilfsmittel und stellen verwendet, in denen Emoji eignen sich
+- **E-Mail-Adresse** &ndash; verwendet werden, wenn Sie e-Mail-Adressen eingeben
 - **Numerische** &ndash; verwendet, wenn Zahlen eingeben
 - **Telefon** &ndash; verwendet, bei der Eingabe von Telefonnummern
-- **URL** &ndash; für die Eingabe, Dateipfade und Webadressen verwendet
+- **URL** &ndash; verwendet für die Eingabe von Dateipfaden und von Webadressen
 
-Ist ein [Beispiel für jede Tastatur](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) in unserer Rezepte-Abschnitt.
+Gibt es eine [Beispiel für die einzelnen Tastatur](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) im Abschnitt mit Anleitungen.
 
-### <a name="enabling-and-disabling-spell-checking"></a>Aktivieren und Deaktivieren der Rechtschreibprüfung
+### <a name="enabling-and-disabling-spell-checking"></a>Aktivieren und deaktivieren die Rechtschreibprüfung
 
-Die [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Eigenschaft steuert, ob Rechtschreibprüfung aktiviert ist. Standardmäßig ist die Eigenschaft auf festgelegt `true`. Wenn der Benutzer Text eingibt, werden orthographische angegeben.
+Die [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Eigenschaft steuert, ob Rechtschreibprüfung ist aktiviert. Standardmäßig ist die Eigenschaft auf festgelegt `true`. Wenn der Benutzer Text eingibt, werden von Rechtschreibfehlern angegeben.
 
-Für einige Szenarien für das Text-Eintrag, z. B. einen Benutzernamen eingeben Rechtschreibprüfung bietet jedoch ein negatives Erlebnis und daher sollte deaktiviert durch Festlegen der [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Eigenschaft `false`:
+Für einige Szenarien für das Text-Eintrag, z. B. den Benutzernamen eingeben Rechtschreibprüfung bietet jedoch eine negative Erfahrung und daher sollte deaktiviert werden, indem die [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Eigenschaft `false`:
 
 ```xaml
 <Entry ... IsSpellCheckEnabled="false" />
@@ -89,11 +89,11 @@ var entry = new Entry { ... IsSpellCheckEnabled = false };
 ```
 
 > [!NOTE]
-> Wenn die [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) -Eigenschaftensatz auf `false`, und eine benutzerdefinierte Tastatur nicht verwendet wird, die systemeigene Rechtschreibprüfung deaktiviert. Jedoch wenn eine [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) hat wurde Satz, der deaktiviert die Rechtschreibprüfung zur Überprüfung der z. B. [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), die `IsSpellCheckEnabled` Eigenschaft wird ignoriert. Aus diesem Grund kann nicht die Eigenschaft verwendet werden, aktivieren Sie die Rechtschreibprüfung für eine `Keyboard` , von denen explizit deaktiviert.
+> Wenn die [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) -Eigenschaftensatz auf `false`, und eine benutzerdefinierte Tastatur nicht verwendet wird, die native Rechtschreibprüfung wird deaktiviert. Jedoch wenn eine [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) hat wurde Satz, der deaktiviert die Rechtschreibprüfung überprüfen, wie z. B. [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` Eigenschaft wird ignoriert. Aus diesem Grund kann nicht die Eigenschaft verwendet werden, aktivieren Sie die Rechtschreibprüfung für eine `Keyboard` , die explizit deaktiviert.
 
 ### <a name="placeholders"></a>Platzhalter
 
-`Entry` kann festgelegt werden, um Platzhaltertext angezeigt, wenn sie Benutzereingaben nicht gespeichert werden. In der Praxis ist dies häufig in Formularen sehen, um zu verdeutlichen, den Inhalt, der für ein bestimmtes Feld geeignet ist. Textfarbe Platzhalter kann nicht angepasst werden und identisch, unabhängig von der `TextColor` Einstellung. Wenn Ihre Strategie für eine benutzerdefinierte Platzhalter Farbe erfordert, müssen Sie ein ausweichen auf einen [benutzerdefinierten Renderers](). Die folgenden erstellt ein `Entry` mit "Username" als Platzhalter in XAML:
+`Entry` kann festgelegt werden, um Platzhaltertext angezeigt werden soll, wenn sie Benutzereingaben nicht gespeichert werden. In der Praxis ist dies häufig in Formularen angezeigt, um den Inhalt zu verdeutlichen, der für ein bestimmtes Feld geeignet ist. Textfarbe der Platzhalter kann nicht angepasst werden und identisch unabhängig von der `TextColor` festlegen. Wenn Ihrem Entwurf für eine benutzerdefinierte Platzhalter-Farbe aufruft, müssen Sie ein ausweichen auf einen [benutzerdefinierter Renderer](). Die folgende erstellt eine `Entry` mit "Username" als Platzhalter in XAML:
 
 ```xaml
 <Entry Placeholder="Username" />
@@ -105,11 +105,11 @@ In C#:
 var MyEntry = new Entry { Placeholder = "Username" };
 ```
 
-![](entry-images/placeholder.png "Beispiel für einen Indexeintrag Platzhalter")
+![](entry-images/placeholder.png "Beispiel für einen Platzhalter Indexeintrag")
 
 ### <a name="password-fields"></a>Kennwortfelder
 
-`Entry` Stellt die `IsPassword` Eigenschaft. Wenn `IsPassword` ist `true`, den Inhalt des Felds werden als schwarze Kreise angezeigt werden:
+`Entry` Stellt die `IsPassword` Eigenschaft. Wenn `IsPassword` ist `true`, den Inhalt des Felds wird als schwarze Kreise angezeigt:
 
 In XAML:
 
@@ -125,7 +125,7 @@ var MyEntry = new Entry { IsPassword = true };
 
 ![](entry-images/password.png "Beispiel für einen Indexeintrag IsPassword")
 
-Platzhalter können verwendet werden, mit Instanzen von `Entry` als Kennwortfelder konfiguriert sind:
+Platzhalter können verwendet werden, mit Instanzen von `Entry` , der als Kennwortfelder konfiguriert werden:
 
 In XAML:
 
@@ -144,12 +144,12 @@ var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 
 ### <a name="colors"></a>Farben
 
-Eintrag kann festgelegt werden, um einen benutzerdefinierten Hintergrund und Textfarben über die folgenden bindbaren Eigenschaften verwenden:
+Eintrag kann festgelegt werden, um einen benutzerdefinierten Hintergrund und Textfarben über die folgenden bindbare Eigenschaften verwenden:
 
 - **TextColor** &ndash; legt die Farbe des Texts fest.
 - **BackgroundColor** &ndash; legt die Farbe des Texthintergrunds gezeigt fest.
 
-Besondere Sorgfalt ist erforderlich, um sicherzustellen, dass Farben auf jeder Plattform verwendet werden kann können. Da jede Plattform unterschiedliche Standardwerte für Text- und Hintergrundfarben aufweist, müssen Sie häufig sowohl festlegen, wenn Sie eine festlegen.
+Besondere Sorgfalt ist erforderlich, um sicherzustellen, dass Farben auf jeder Plattform verwendet werden können. Da jede Plattform unterschiedliche Standardwerte für Text- und Hintergrundfarben verfügt, müssen Sie häufig, beide Werte festzulegen, wenn Sie eine Eigenschaft festgelegt.
 
 Verwenden Sie den folgenden Code, um die Textfarbe eines Eintrags festzulegen:
 
@@ -168,7 +168,7 @@ entry.TextColor = Color.Green;
 
 ![](entry-images/textcolor.png "Beispiel für einen Indexeintrag TextColor")
 
-Beachten Sie, dass der Platzhalter nicht betroffen, durch das angegebene `TextColor`.
+Beachten Sie, dass der Platzhalter nicht betroffen, mit dem angegebenen `TextColor`.
 
 So legen die Farbe des Hintergrunds in XAML:
 
@@ -185,18 +185,18 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 
 ![](entry-images/textbackgroundcolor.png "Beispiel für einen Indexeintrag BackgroundColor")
 
-Achten Sie darauf, um sicherzustellen, dass die Hintergrund- und Textfarben gewählten auf jeder Plattform verwendet werden können und keine Platzhaltertext verdecken.
+Achten Sie darauf, um sicherzustellen, dass die Hintergrund- und Textfarben können auf jeder Plattform verwendet werden können und keine Platzhaltertext verdecken.
 
 ## <a name="events-and-interactivity"></a>Ereignisse und Interaktivität
 
-Eintrag zwei Ereignisse verfügbar gemacht werden:
+Eintrag macht zwei Ereignisse:
 
-- [TextChanged](http://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) &ndash; ausgelöst, wenn der Text im Eintrag ändert. Stellt den Text an, vor und nach der Änderung.
-- [Abgeschlossen](http://developer.xamarin.com/api/event/Xamarin.Forms.Entry.Completed/) &ndash; ausgelöst, wenn der Benutzer die Eingabe beendet wurde, durch Drücken der EINGABETASTE auf der Tastatur drücken.
+- [TextChanged](xref:Xamarin.Forms.Entry.TextChanged) &ndash; wird ausgelöst, wenn der Text im Eintrag geändert wird. Stellt den Text an, vor und nach der Änderung.
+- [Abgeschlossen](xref:Xamarin.Forms.Entry.Completed) &ndash; wird ausgelöst, wenn der Benutzer die Eingabe beendet wurde, durch Drücken der EINGABETASTE auf der Tastatur.
 
 ### <a name="completed"></a>Abgeschlossen
 
-Die `Completed` Ereignis wird verwendet, um auf den Abschluss einer Interaktion mit einem Eintrag zu reagieren. `Completed` wird ausgelöst, wenn der Benutzer Eingabe mit einem Feld endet, indem Sie die EINGABETASTE auf der Tastatur eingeben. Der Handler für das Ereignis ist ein allgemeines Ereignis-Handler, dauert des Absenders und `EventArgs`:
+Die `Completed` Ereignis wird verwendet, um auf den Abschluss einer Interaktion mit einem Eintrag zu reagieren. `Completed` wird ausgelöst, wenn der Benutzer Eingaben mit einem Feld beendet, indem Sie die return-Taste auf der Tastatur eingeben. Der Handler für das Ereignis wird von einem generischen Ereignishandler an, dass des Absenders und `EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -211,7 +211,7 @@ Das abgeschlossene Ereignis kann in XAML abonniert werden:
 <Entry Completed="Entry_Completed" />
 ```
 
-und c#:
+und C# -Code:
 
 ```csharp
 var entry = new Entry ();
@@ -220,9 +220,9 @@ entry.Completed += Entry_Completed;
 
 ### <a name="textchanged"></a>TextChanged
 
-Die `TextChanged` Ereignis wird verwendet, um auf eine Änderung im Inhalt eines Felds zu reagieren.
+Die `TextChanged` Ereignis wird verwendet, um auf eine Änderung in den Inhalt eines Felds zu reagieren.
 
-`TextChanged` wird ausgelöst, wenn die `Text` von der `Entry` ändert. Der Handler für das Ereignis akzeptiert eine Instanz von `TextChangedEventArgs`. `TextChangedEventArgs` ermöglicht den Zugriff auf die alten und neuen Werte von der `Entry` `Text` über die `OldTextValue` und `NewTextValue` Eigenschaften:
+`TextChanged` wird ausgelöst, wenn die `Text` von der `Entry` Änderungen. Der Handler für das Ereignis benötigt eine Instanz der `TextChangedEventArgs`. `TextChangedEventArgs` ermöglicht den Zugriff auf die alten und neuen Werte der `Entry` `Text` über die `OldTextValue` und `NewTextValue` Eigenschaften:
 
 ```csharp
 void Entry_TextChanged (object sender, TextChangedEventArgs e)
@@ -238,7 +238,7 @@ Die `TextChanged` Ereignis in XAML abonniert werden kann:
 <Entry TextChanged="Entry_TextChanged" />
 ```
 
-und c#:
+und C# -Code:
 
 ```csharp
 var entry = new Entry ();
@@ -249,4 +249,4 @@ entry.TextChanged += Entry_TextChanged;
 ## <a name="related-links"></a>Verwandte Links
 
 - [Text (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [Eintrag-API](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)
+- [API-Eintrag](xref:Xamarin.Forms.Entry)

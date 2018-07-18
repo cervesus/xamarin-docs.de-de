@@ -1,55 +1,49 @@
 ---
-title: Erstellen einer Xamarin.iOS-Anwendung, die mithilfe der API-Elemente
-description: In diesem Artikel baut auf den Informationen in der Einführung MonoTouch Dialogfeld Artikel. Er enthält eine exemplarische Vorgehensweise verwenden Sie die MonoTouch.Dialog (MT. D) Elemente API zum schnellen Einstieg Erstellen einer Anwendung mit MT. D.
+title: Erstellen einer Xamarin.iOS-Anwendung mithilfe der Elemente-API
+description: Dieser Artikel baut auf den Informationen in der Einführung zu MonoTouch-Dialogfeld Artikel. Es bietet eine exemplarische Vorgehensweise, die zeigt, wie Sie mit der MonoTouch.Dialog (MT.) (D) Elemente API einen schnellen Einstieg Erstellen einer Anwendung mit MT. D.
 ms.prod: xamarin
 ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 64f407288da72dbf51fb3388ddf36caea377f09c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: dcd6f1260be3414c515010c2fd615910c7b5c054
+ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790431"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39038341"
 ---
-# <a name="creating-a-xamarinios-application-using-the-elements-api"></a>Erstellen einer Xamarin.iOS-Anwendung, die mithilfe der API-Elemente
+# <a name="creating-a-xamarinios-application-using-the-elements-api"></a>Erstellen einer Xamarin.iOS-Anwendung mithilfe der Elemente-API
 
-_In diesem Artikel baut auf den Informationen in der Einführung MonoTouch Dialogfeld Artikel. Er enthält eine exemplarische Vorgehensweise verwenden Sie die MonoTouch.Dialog (MT. D) Elemente API zum schnellen Einstieg Erstellen einer Anwendung mit MT. D._
+_Dieser Artikel baut auf den Informationen in der Einführung zu MonoTouch-Dialogfeld Artikel. Es bietet eine exemplarische Vorgehensweise, die zeigt, wie Sie mit der MonoTouch.Dialog (MT.) (D) Elemente API einen schnellen Einstieg Erstellen einer Anwendung mit MT. D._
 
-In dieser exemplarischen Vorgehensweise verwenden wir die MT. D-API-Elemente einen Master / Detail-Stil der Anwendung zu erstellen, eine Aufgabenliste anzeigt. Wenn der Benutzer wählt die <span class="ui"> + </span> Schaltfläche in der Navigationsleiste wird eine neue Zeile zur Tabelle für die Aufgabe hinzugefügt werden. Auswählen der zeilenupdates wird auf dem Detailbildschirm navigieren, die uns so aktualisieren Sie die Beschreibung der Aufgabe und das Fälligkeitsdatum zulässt, wie unten gezeigt:
+In dieser exemplarischen Vorgehensweise verwenden wir das masterziel D Elemente-API zum Erstellen eines Master / Detail-Stils, der Anwendung, die eine Aufgabenliste anzeigt. Wenn der Benutzer wählt die <span class="ui"> + </span> Schaltfläche in der Navigationsleiste wird eine neue Zeile in die Tabelle für die Aufgabe hinzugefügt werden. Auswählen der zeilenupdates wird der Detailbildschirm navigieren Sie zu, die uns so aktualisieren Sie die Beschreibung des Tasks "und" Fälligkeitsdatum, ermöglicht, wie unten gezeigt:
 
- [![](elements-api-walkthrough-images/01-task-list-app.png "Auswählen der zeilenupdates wird zu den Detailbildschirm navigieren, die zum Aktualisieren der Beschreibung der Aufgabe und das Fälligkeitsdatum ermöglicht")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
+ [![](elements-api-walkthrough-images/01-task-list-app.png "Auswählen der zeilenupdates wird auf den Detailbildschirm navigieren, die Bezeichnung ermöglicht uns die Taskbeschreibung und dem Fälligkeitsdatum aktualisieren")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
- <a name="Elements_API_Walkthrough" />
+ ## <a name="setting-up-mtd"></a>Masterziel einrichten D
 
+MT. D ist mit Xamarin.iOS verteilt. Um es zu verwenden, mit der Maustaste auf die **Verweise** Knoten eine Xamarin.iOS-Projekt in Visual Studio 2017 oder Visual Studio für Mac und Hinzufügen eines Verweises auf die **MonoTouch.Dialog-1-** Assembly. Fügen Sie dann `using MonoTouch.Dialog` Anweisungen in Ihrer Quelle code nach Bedarf.
 
-## <a name="elements-api-walkthrough"></a>Exemplarische Vorgehensweise Elemente-API
+## <a name="elements-api-walkthrough"></a>Elemente-API-Exemplarische Vorgehensweise
 
-In der [Einführung zum Dialogfeld "MonoTouch"](~/ios/user-interface/monotouch.dialog/index.md) Artikel erhalten wir ein gutes Verständnis der verschiedenen Teile des MT. D. Ermöglicht die Verwendung der API-Elemente, diese jedoch in eine Anwendung eingefügt werden soll.
+In der [Einführung in MonoTouch-Dialogfeld](~/ios/user-interface/monotouch.dialog/index.md) Artikel, erhielten wir ein solides Grundwissen über die verschiedenen Teile des masterzielservers D. Wir verwenden Sie die Elemente-API, Sie sie alle zusammen in einer Anwendung einsetzen.
 
- <a name="Setting_up_the_Multi-Screen_Application" />
+## <a name="setting-up-the-multi-screen-application"></a>Einrichten der multiscreen-Anwendung
 
+Zum Starten des Prozesses der Bildschirm MonoTouch.Dialog erstellt eine `DialogViewController`, und fügt dann ein `RootElement`.
 
-## <a name="setting-up-the-multi-screen-application"></a>Einrichten der Anwendung für Multi-Bildschirm
+Um einer multiscreen-Anwendung mit MonoTouch.Dialog erstellen zu können, müssen wir:
 
-Um den Erstellungsprozess für den Bildschirm zu starten, MonoTouch.Dialog erstellt eine `DialogViewController`, und fügt dann ein `RootElement`.
-
-Um eine Anwendung mit mehreren Bildschirm mit MonoTouch.Dialog erstellen zu können, muss Folgendes:
-
-1.  Erstellen Sie eine  `UINavigationController.`
-1.  Erstellen Sie eine  `DialogViewController.`
-1.  Hinzufügen der `DialogViewController` als Stammverzeichnis für die  `UINavigationController.` 
+1.  Erstellen einer `UINavigationController.`
+1.  Erstellen einer `DialogViewController.`
+1.  Hinzufügen der `DialogViewController` als Stamm der  `UINavigationController.` 
 1.  Hinzufügen einer `RootElement` auf der  `DialogViewController.`
-1.  Hinzufügen `Sections` und `Elements` auf die  `RootElement.` 
-
-
- <a name="Using_A_UINavigationController" />
-
+1.  Hinzufügen `Sections` und `Elements` auf der  `RootElement.` 
 
 ### <a name="using-a-uinavigationcontroller"></a>Verwenden eine UINavigationController
 
-Zum Erstellen einer Anwendung im Stil Navigation wir erstellen müssen eine `UINavigationController`, und fügen Sie es als die `RootViewController` in der `FinishedLaunching` Methode der `AppDelegate`. Vornehmen der `UINavigationController` arbeiten mit MonoTouch.Dialog, fügen wir eine `DialogViewController` auf die `UINavigationController` wie unten dargestellt:
+Um eine Anwendung für die Navigation-Stil zu erstellen, müssen wir erstellen eine `UINavigationController`, und fügen Sie es als die `RootViewController` in die `FinishedLaunching` Methode der `AppDelegate`. Vornehmen der `UINavigationController` arbeiten Sie mit MonoTouch.Dialog, fügen wir eine `DialogViewController` auf die `UINavigationController` wie unten dargestellt:
 
 ```csharp
 public override bool FinishedLaunching (UIApplication app, 
@@ -70,33 +64,27 @@ public override bool FinishedLaunching (UIApplication app,
 }
 ```
 
-Der obige Code erstellt eine Instanz von einem `RootElement` und übergibt ihn in die `DialogViewController`. Die `DialogViewController` verfügt immer über einen `RootElement` am Anfang der Hierarchie. In diesem Beispiel wird die `RootElement` wird erstellt, mit der Zeichenfolge "Aufgabenliste" die als Titel des Controllers für die Navigation Navigationsleiste dient. An diesem Punkt würde Ausführen der Anwendung den Bildschirm unten dargestellt werden:
+Der obige Code erstellt eine Instanz von einem `RootElement` und übergibt ihn in die `DialogViewController`. Die `DialogViewController` verfügt immer über eine `RootElement` am Anfang der Hierarchie. In diesem Beispiel die `RootElement` wird erstellt, mit der Zeichenfolge "To Do List," der als Titel des navigationscontrollers Navigationsleiste dient. An diesem Punkt würde die Ausführung der Anwendung den unten angezeigten Bildschirm darstellen:
 
- [![](elements-api-walkthrough-images/02-to-do-list-screen-.png "Ausführen der Anwendung wird den hier gezeigten Bildschirm vorgelegt.")](elements-api-walkthrough-images/02-to-do-list-screen-.png#lightbox)
+ [![](elements-api-walkthrough-images/02-to-do-list-screen-.png "Ausführen der Anwendung werden die hier gezeigten Bildschirm angezeigt werden.")](elements-api-walkthrough-images/02-to-do-list-screen-.png#lightbox)
 
-Sehen wir, wie mithilfe des MonoTouch.Dialog hierarchischen Struktur von `Sections` und `Elements` weitere Bildschirme hinzufügen.
+Sehen wir uns mit der MonoTouch.Dialog hierarchische Struktur der `Sections` und `Elements` weitere Bildschirme hinzufügen.
 
- <a name="Creating_the_Dialog_Screens" />
+### <a name="creating-the-dialog-screens"></a>Erstellen die Dialogfeld-Bildschirme
 
-
-### <a name="creating-the-dialog-screens"></a>Erstellen das Dialogfeld Bildschirme
-
-Ein `DialogViewController` ist eine `UITableViewController` Unterklasse, die MonoTouch.Dialog verwendet wird, um Bildschirme hinzuzufügen. MonoTouch.Dialog erstellt Bildschirme durch Hinzufügen einer `RootElement` auf eine `DialogViewController`, wie oben veranschaulichte Filtermenü. Die `RootElement` können `Section` Instanzen, die in den Abschnitten in einer Tabelle darstellen.
-In den Abschnitten bestehen aus Elementen, die anderen Abschnitte oder sogar andere `RootElements`. Durch die Schachtelung `RootElements`, MonoTouch.Dialog erstellt automatisch eine Anwendung Navigation-Format, wie wir als Nächstes sehen.
-
- <a name="Using_DialogViewController" />
-
+Ein `DialogViewController` ist eine `UITableViewController` Unterklasse, die MonoTouch.Dialog verwendet wird, um die Bildschirme hinzufügen. MonoTouch.Dialog erstellt Bildschirme durch Hinzufügen einer `RootElement` auf eine `DialogViewController`, wie wir oben gesehen haben. Die `RootElement` können `Section` Instanzen, die in den Abschnitten einer Tabelle darstellen.
+In den Abschnitten bestehen aus der Elemente, die anderen Abschnitte oder sogar anderen `RootElements`. Mit Verschachtelung `RootElements`, MonoTouch.Dialog erstellt automatisch eine Navigationsstil Anwendung als Nächstes sehen.
 
 ### <a name="using-dialogviewcontroller"></a>Verwenden von DialogViewController
 
-Die `DialogViewController`, wird eine `UITableViewController` -Unterklasse, verfügt über eine `UITableView` als seinen Ansichtszustand. In diesem Beispiel wir hinzuzufügenden Elemente in der Tabelle jedes Mal die <span class="ui"> + </span> Schaltfläche abgerufen wird. Da die `DialogViewController` wurde hinzugefügt, um eine `UINavigationController`, verwenden wir die `NavigationItem`des `RightBarButton` hinzuzufügenden Eigenschaft der <span class="ui"> + </span> Schaltfläche, wie unten dargestellt:
+Die `DialogViewController`, wird eine `UITableViewController` -Unterklasse, verfügt über eine `UITableView` als Ansicht. In diesem Beispiel möchten wir Elemente in der Tabelle jedes Mal hinzufügen der <span class="ui"> + </span> Schaltfläche getippt wird. Da die `DialogViewController` wurde hinzugefügt, um eine `UINavigationController`, verwenden wir die `NavigationItem`des `RightBarButton` hinzuzufügende Eigenschaft der <span class="ui"> + </span> Schaltfläche wie unten dargestellt:
 
 ```csharp
 _addButton = new UIBarButtonItem (UIBarButtonSystemItem.Add);
 _rootVC.NavigationItem.RightBarButtonItem = _addButton;
 ```
 
-Wir der Erstellung der `RootElement` früher wir übergeben sie ein einzelnes `Section` Instanz fest, damit Elemente als eingerichtet werden konnte die <span class="ui"> + </span> Schaltfläche vom Benutzer abgerufen wird. Wir können den folgenden Code im Ereignis diesem Ereignishandler für die Schaltfläche ausführen:
+Wir die Erstellung der `RootElement` zuvor wir übergeben sie ein einzelnes `Section` -Instanz, damit wir Elemente hinzufügen, können die <span class="ui"> + </span> Schaltfläche getippt wird, vom Benutzer. Wir können den folgenden Code verwenden, um Handler für die Schaltfläche mit den im Ereignis diesem auszuführen:
 
 ```csharp
 _addButton.Clicked += (sender, e) => {
@@ -118,7 +106,7 @@ _addButton.Clicked += (sender, e) => {
 };
 ```
 
-Dieser Code erstellt ein neues `Task` Objekt jedes Mal die Schaltfläche abgerufen wird. Nachstehend sehen Sie die einfache Implementierung der `Task` Klasse:
+Dieser Code erstellt ein neues `Task` Objekt jedes Mal die Schaltfläche getippt wird. Das folgende Beispiel zeigt die einfache Implementierung der `Task` Klasse:
 
 ```csharp
 public class Task
@@ -135,42 +123,33 @@ public class Task
 }
 ```
 
- []()
+Der Aufgabe `Name` Eigenschaft wird zum Erstellen der `RootElement`die Beschriftung zusammen mit einem Counter-Variable, die mit dem Namen `n` , die für jede neue Aufgabe erhöht wird. MonoTouch.Dialog wandelt die Elemente in die Zeilen, die hinzugefügt werden, die `TableView` bei jeder `taskElement` hinzugefügt wird.
 
-Des Tasks `Name` Eigenschaft dient zum Erstellen der `RootElement`des Beschriftung zusammen mit der eine Zählervariable, die mit dem Namen `n` , wird für jeden neuen Vorgang erhöht. MonoTouch.Dialog wandelt die Elemente in den Zeilen, die hinzugefügt werden die `TableView` bei jeder `taskElement` hinzugefügt wird.
+## <a name="presenting-and-managing-dialog-screens"></a>Präsentieren und Verwalten von Dialogbildschirme
 
- <a name="Presenting_and_Managing_Dialog_Screens" />
+Wir verwendeten eine `RootElement` , damit MonoTouch.Dialog würde automatisch ausführliche jedes einzelnen Vorgangs einen neuen Bildschirm erstellen und zu dieser navigieren, wenn eine Zeile ausgewählt ist.
 
+Der Task-Detail-Bildschirm selbst besteht aus zwei Abschnitten; Jeder dieser Abschnitte enthält ein einzelnes Element. Das erste Element wird erstellt, aus einer `EntryElement` der Aufgabe eine bearbeitbare Zeile bereit `Description` Eigenschaft. Wenn das Element ausgewählt ist, wird eine Tastatur für die Textbearbeitung dargestellt, wie unten dargestellt:
 
-## <a name="presenting-and-managing-dialog-screens"></a>Bereitstellen und Verwalten von Dialogfelder
+ [![](elements-api-walkthrough-images/03-create-task.png "Wenn das Element ausgewählt ist, wird eine Tastatur für die Textbearbeitung angezeigt, siehe")](elements-api-walkthrough-images/03-create-task.png#lightbox)
 
-Es verwendet ein `RootElement` , damit MonoTouch.Dialog würde automatisch einen neuen Bildschirm für jede Aufgabe Details zu erstellen und ihm navigieren, wenn eine Zeile ausgewählt ist.
-
-Der Task Detailbildschirm selbst besteht aus zwei Abschnitten; den folgenden Abschnitten enthält ein einzelnes Element. Das erste Element wird erstellt, aus einer `EntryElement` eine bearbeitbare Zeile für der Aufgabe bereitstellen `Description` Eigenschaft. Wenn das Element ausgewählt ist, erhält eine Tastatur für die Textbearbeitung, wie unten dargestellt:
-
- [![](elements-api-walkthrough-images/03-create-task.png "Wenn das Element ausgewählt ist, wird eine Tastatur für die Textbearbeitung angezeigt, wie gezeigt")](elements-api-walkthrough-images/03-create-task.png#lightbox)
-
-Der zweite Abschnitt enthält eine `DateElement` , mit der uns die Verwaltung der Aufgabe `DueDate` Eigenschaft. Auswahl des Datums automatisch lädt eine Datumsauswahl wie gezeigt:
+Der zweite Abschnitt enthält eine `DateElement` können wir das Verwalten der Aufgabe `DueDate` Eigenschaft. Auswahl des Datums automatisch lädt eine Datumsauswahl, wie dargestellt:
 
  [![](elements-api-walkthrough-images/04-date-picker.png "Auswahl des Datums automatisch lädt eine Datumsauswahl als")](elements-api-walkthrough-images/04-date-picker.png#lightbox)
 
-Sowohl die `EntryElement` und `DateElement` Fällen (oder für ein bestimmtes Element im MonoTouch.Dialog-Dateneingabe), werden automatisch alle Änderungen an den Werten beibehalten. Wir können dadurch veranschaulichen, bearbeiten das Datum und und dann weiter navigieren hin-und zwischen dem Stamm Bildschirm und verschiedene Aufgabendetails, in denen die Werte in den Bildschirmen der Detail beibehalten werden.
-
- <a name="Summary" />
-
+Sowohl die `EntryElement` und `DateElement` Fällen (oder jedes Element Dateneingabe MonoTouch.Dialog), alle Änderungen auf die Werte werden automatisch beibehalten. Wir können dies demonstrieren, bearbeiten das Datum aus, und navigieren dann hin und her, zwischen dem Root-Bildschirm und verschiedene Aufgabendetails, in denen die Werte in dem Detailbildschirm beibehalten werden.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel dargestellt eine exemplarische Vorgehensweise, die wurde gezeigt, wie die MonoTouch.Dialog Elemente-API verwenden. Er behandelt die grundlegenden Schritte zum Erstellen einer Anwendung mit mehreren Bildschirm mit MT. D, einschließlich Informationen zum Verwenden einer `DialogViewController` sowie zum Hinzufügen von Elementen und Abschnitte, um Bildschirme zu erstellen. Darüber hinaus wurde gezeigt, es zum Verwenden von MT. D in Verbindung mit einem `UINavigationController`.
-
+Dieser Artikel enthält eine exemplarische Vorgehensweise, die wurde gezeigt, wie Sie mit der MonoTouch.Dialog-Elemente-API. Es behandelt die grundlegenden Schritte zum Erstellen einer multiscreen-Anwendung mit MT. D, einschließlich Informationen zum Verwenden einer `DialogViewController` und zum Hinzufügen der Elemente und Abschnitte, um Bildschirme zu erstellen. Darüber hinaus wird aufgezeigt, wie Sie mit der MT. D in Verbindung mit einem `UINavigationController`.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [MTDWalkthrough (Beispiel)](https://developer.xamarin.com/samples/MTDWalkthrough/)
 - [Screencast - Miguel de Icaza erstellt ein iOS-Anmeldebildschirm mit MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
 - [Screencast - problemlos iOS Benutzeroberflächen mit MonoTouch.Dialog erstellen](http://youtu.be/j7OC5r8ZkYg)
-- [Einführung in MonoTouch.Dialog](~/ios/user-interface/monotouch.dialog/index.md)
-- [Exemplarische Vorgehensweise Reflektion-API](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
+- [Einführung in die MonoTouch.Dialog](~/ios/user-interface/monotouch.dialog/index.md)
+- [Exemplarische Vorgehensweise Reflection-API](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [Exemplarische Vorgehensweise JSON-Element](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
 - [MonoTouch-Dialogfeld auf Github](https://github.com/migueldeicaza/MonoTouch.Dialog)
 - [TweetStation-Anwendung](https://github.com/migueldeicaza/TweetStation)

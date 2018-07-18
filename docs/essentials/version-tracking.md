@@ -1,24 +1,24 @@
 ---
-title: 'Xamarin.Essentials: Überwachung Version'
-description: Die Klasse VersionTracking in Xamarin.Essentials können Sie die Version der Anwendung zu überprüfen und Buildnummern zusammen mit z. B. zusätzliche Informationen anzeigen, als wäre sie das erste Mal von der Anwendung nie gestartet oder den vorherigen Build für die aktuelle Version zu erhalten Informationen und vieles mehr.
+title: 'Xamarin.Essentials: Die Version nachverfolgung'
+description: Die VersionTracking-Klasse in Xamarin.Essentials können Sie die Anwendungen-Version zu überprüfen und Buildnummern zusammen mit solchen zusätzliche Informationen angezeigt, als ob es sich um die erste ist Zeit die Anwendung, die jemals gestartet oder für die aktuelle Version erhalten Sie den vorherigen build Informationen und mehr.
 ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 2c092d6767045f0af956c5dab74801077dadb51f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783001"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815647"
 ---
-# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: Überwachung Version
+# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: Die Version nachverfolgung
 
-![Vorabversion NuGet](~/media/shared/pre-release.png)
+![Vorabversionen von NuGet](~/media/shared/pre-release.png)
 
-Die **VersionTracking** -Klasse können Sie die Version der Anwendung zu überprüfen und Buildnummern zusammen mit z. B. zusätzliche Informationen anzeigen, als wäre sie das erste Mal von der Anwendung nie gestartet oder für die aktuelle Version erhalten Sie die vorherigen Geben Sie Buildinformationen zu und mehr.
+Die **VersionTracking** Klasse können Sie die Anwendungen-Version zu überprüfen und Buildnummern zusammen mit solchen zusätzliche Informationen angezeigt, als ob es sich um die erste ist Zeit die Anwendung, die jemals gestartet oder für die aktuelle Version erhalten Sie die vorherige Erstellen Sie die Informationen und mehr.
 
-## <a name="using-version-tracking"></a>Mithilfe der Version nachverfolgung
+## <a name="using-version-tracking"></a>Mithilfe der nachverfolgung der Version
 
 Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
 
@@ -26,7 +26,7 @@ Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
 using Xamarin.Essentials;
 ```
 
-Zum ersten Mal Sie verwenden die **VersionTracking** Klasse Nachverfolgen von der aktuellen Version wird gestartet. Rufen Sie `Track` frühen nur in der Anwendung jedes Mal geladen wird, um sicherzustellen, dass die aktuelle Versionsinformationen nachverfolgt:
+Bei der ersten Verwendung der **VersionTracking** Klasse, die nachverfolgung der aktuellen Version wird gestartet. Rufen Sie `Track` früher nur in Ihrer Anwendung jedes Mal, es geladen wird, um sicherzustellen, dass die Informationen zur aktuellen Version wird nachverfolgt:
 
 ```csharp
 VersionTracking.Track();
@@ -70,13 +70,13 @@ var versionHistory = VersionTracking.VersionHistory;
 var buildHistory = VersionTracking.BuildHistory;
 ```
 
-## <a name="platform-implementation-specifics"></a>Plattform Implementierungsspezifika
+## <a name="platform-implementation-specifics"></a>Implementierung von Plattformeigenschaften
 
 Alle Versionsinformationen wird gespeichert, mit der [Voreinstellungen](preferences.md) -API in Xamarin.Essentials und wird mit einem Dateinamen gespeichert **[YOUR-APP-Paket-ID] .xamarinessentials**.
 
-Deinstallieren der Anwendung führt dazu, dass die _LocalSettings_, und alle Version Nachverfolgungsinformationen entfernt werden soll.
+Deinstallieren der Anwendung führt dazu, dass die _LocalSettings_, und alle Versionen, die zu entfernenden Überwachungsinformationen.
 
 ## <a name="api"></a>API
 
-- [Version Tracking-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
+- [Version-nachverfolgung-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
 - [Version Arbeitselementverfolgungs-API-Dokumentation](xref:Xamarin.Essentials.VersionTracking)

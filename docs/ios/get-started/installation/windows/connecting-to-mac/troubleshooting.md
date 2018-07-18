@@ -1,5 +1,5 @@
 ---
-title: Problembehandlung bei der Verbindung
+title: Behebung von Verbindungsproblemen für einen Xamarin.iOS-Buildhost
 description: Dieses Handbuch enthält die Schritte zur Problembehandlung für Probleme, die bei der Verwendung des neuen Verbindungs-Managers auftreten, einschließlich Konnektivitäts- und SSH-Problemen.
 ms.prod: xamarin
 ms.assetid: A1508A15-1997-4562-B537-E4A9F3DD1F06
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8aac58546e51525ae22c09218f90addef911669a
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 575e6705679539af6d3e5fae3ffc5721d9f79ba6
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291047"
 ---
-# <a name="connection-troubleshooting"></a>Problembehandlung bei der Verbindung
+# <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Behebung von Verbindungsproblemen für einen Xamarin.iOS-Buildhost
 
 _Dieses Handbuch enthält die Schritte zur Behandlung von Problemen, die bei der Verwendung des neuen Verbindungs-Managers auftreten, einschließlich Konnektivitäts- und SSH-Problemen._
 
@@ -90,7 +91,7 @@ Die Xamarin-Buildhostanwendung aus älteren Versionen von Xamarin.iOS ist nicht 
     ssh amyb@10.1.8.95 'ls'
     ```
     
-    Dies sollte die Inhalte des Basisverzeichnisses auf dem Mac auflisten. Wenn der `ls`-Befehl ordnungsgemäß funktioniert, die Verbindung von Visual Studio jedoch weiterhin fehlschlägt, sehen Sie sich den Abschnitt [Bekannte Probleme und Einschränkungen](#knownissues) zu spezifischen Komplikationen von Xamarin an. Wenn keines dieser Probleme mit Ihrem übereinstimmt, [reichen Sie einen neuen Fehlerbericht ein](https://bugzilla.xamarin.com/newbug), und fügen Sie die unter [Überprüfen der ausführlichen Protokolldateien](#verboselogs) beschriebenen Protokolle an.
+    Dies sollte die Inhalte des Basisverzeichnisses auf dem Mac auflisten. Wenn der `ls`-Befehl ordnungsgemäß funktioniert, die Verbindung von Visual Studio jedoch weiterhin fehlschlägt, sehen Sie sich den Abschnitt [Bekannte Probleme und Einschränkungen](#knownissues) zu spezifischen Komplikationen von Xamarin an. Wenn keines dieser Probleme mit Ihrem übereinstimmt, übermitteln Sie in der Entwicklercommunity einen neuen Fehlerbericht, indem Sie in Visual Studio zu **Hilfe > Feedback senden > Problem melden** navigieren und die unter [Ausführliche Protokolldateien](#verboselogs) beschriebenen Protokolle anhängen.
 
 10. Wenn **Schritt 8 fehlschlägt**, können Sie den folgenden Befehl im Terminal auf dem Mac ausführen, um festzustellen, ob der SSH-Server _alle_ Verbindungen akzeptiert:
 

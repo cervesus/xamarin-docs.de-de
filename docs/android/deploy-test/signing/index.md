@@ -1,31 +1,30 @@
 ---
 title: Signieren des Android-Anwendungspakets
+description: So signieren Sie das Android-Anwendungspaket (APK) für die Veröffentlichung
 ms.prod: xamarin
 ms.assetid: 8E3EFBB2-F8AD-C126-5F32-7FD140791E53
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/21/2018
-ms.openlocfilehash: 6a4164ea4a56ee7c1b3c1abd05f7b1bb95aede4f
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.date: 07/02/2018
+ms.openlocfilehash: 4afcf42750cd9366bfd9fa5855fe1e7c0f114162
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403311"
 ---
 # <a name="signing-the-android-application-package"></a>Signieren des Android-Anwendungspakets
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+Unter [Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)](~/android/deploy-test/release-prep/index.md) wurde der **Archiv-Manager** verwendet, um die App zu erstellen und zum Signieren und Veröffentlichen in ein Archiv abzulegen. In diesem Abschnitt wird erklärt, wie eine Android-Signierungsidentität und ein neues Signaturzertifikat für Android-Anwendungen erstellt werden und die archivierte App *ad hoc* auf dem Datenträger veröffentlicht wird. Das resultierende APK kann ohne Verwendung eines App Stores auf Android-Geräten quergeladen werden.
 
-In diesem Abschnitt wird der von Visual Studio bereitgestellte integrierte Workflow zur Veröffentlichung zum Signieren des APK beschrieben. Unter [Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)](~/android/deploy-test/release-prep/index.md) wurde der **Archiv-Manager** verwendet, um die App zu erstellen und zum Signieren und Veröffentlichen in ein Archiv abzulegen. In diesem Abschnitt wird erklärt, wie eine Android-Signierungsidentität und ein neues Signaturzertifikat für Android-Anwendungen erstellt werden und die archivierte App *ad hoc* auf dem Datenträger veröffentlicht wird.
-Das resultierende APK kann ohne Verwendung eines App Stores auf Android-Geräten quergeladen werden.
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Unter [Zur Veröffentlichung aktivieren](~/android/deploy-test/release-prep/index.md#archive) stellte das Dialogfeld **Verteilungskanal** zwei Möglichkeiten für die Verteilung dar. Wählen Sie **Ad-Hoc** aus:
 
 [![Dialogfeld „Verteilungskanal“](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
-
-In diesem Abschnitt verwenden wir den integrierten Veröffentlichungsworkflow von Visual Studio für Mac, um das APK (Android-Anwendungspaket) zu signieren. Unter [Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)](~/android/deploy-test/release-prep/index.md) haben wir den **Archiv-Manager** verwendet, um die App zu erstellen und zum Signieren und Veröffentlichen in ein Archiv abzulegen. In diesem Abschnitt erfahren wir, wie wir eine Android-Signierungsidentität und ein neues Signaturzertifikat für Android-Anwendungen erstellen und die archivierte App *ad hoc* auf dem Datenträger veröffentlichen können. Das resultierende APK kann ohne Verwendung eines App Stores auf Android-Geräten quergeladen werden.
 
 Unter [Zur Veröffentlichung aktivieren](~/android/deploy-test/release-prep/index.md#archive) stellte das Dialogfeld **Signieren und verteilen...** zwei Möglichkeiten für die Verteilung dar. Wählen Sie **Ad-Hoc** aus, und klicken Sie auf **Weiter**:
 
@@ -57,14 +56,14 @@ Das folgende Beispiel veranschaulicht die Art von Informationen, die angegeben w
 
 Die resultierende Keystore-Datei befindet sich an folgendem Speicherort:
 
-**C:\\Benutzer\\*BENUTZERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\alias\\alias.keystore**
+**C:\\Benutzer\\*BENUTZERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\*ALIAS*\\*ALIAS*.keystore**
 
-Die oben genannten Schritte können z.B. einen neuen Signaturschlüssel an folgendem Speicherort erstellen:
+Wenn Sie z.B. **chimp** als Alias verwenden, wird im Zuge der oben genannten Schritte ein neuer Signierungsschlüssel an folgendem Speicherort erstellt:
 
-**C:\\Benutzer\\*BENUTZERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\chimp\\chimp.keystore**
+**C:\\Benutzer\\*BENUTZERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\\chimp.keystore**
 
 > [!NOTE]
-> Achten Sie darauf, die resultierende Keystore-Datei an einem sicheren Speicherort zu speichern, da diese nicht in der Projektmappe enthalten ist. Wenn Sie Ihre Keystore-Datei verlieren (z.B. weil Sie einen anderen Computer verwenden oder Windows neu installiert haben), können Sie Ihre App nicht mit demselben Zertifikat wie vorherige Versionen signieren.
+> Achten Sie darauf, die daraus entstehende Keystore-Datei und das Kennwort an einem sicheren Speicherort zu speichern, da diese nicht in der Projektmappe enthalten sind. Wenn Sie Ihre Keystore-Datei verlieren (z.B. weil Sie einen anderen Computer verwenden oder Windows neu installiert haben), können Sie Ihre App nicht mit demselben Zertifikat wie vorherige Versionen signieren.
 
 Weitere Informationen zur Keystore-Datei finden Sie unter [Finding your Keystore's MD5 or SHA1 Signature (Suchen der MD5- oder SHA1-Signatur Ihrer Keystore-Datei)](~/android/deploy-test/signing/keystore-signature.md).
 
@@ -88,7 +87,7 @@ Die oben genannten Schritte können z.B. einen neuen Signaturschlüssel an folge
 
 
 > [!NOTE]
-> Achten Sie darauf, die resultierende Keystore-Datei an einem sicheren Speicherort zu speichern, da diese nicht in der Projektmappe enthalten ist. Wenn Sie Ihre Keystore-Datei verlieren (z.B. weil Sie einen anderen Computer verwenden oder Ihren Mac neu installiert haben), können Sie Ihre App nicht mit demselben Zertifikat wie vorherige Versionen signieren.
+> Achten Sie darauf, die daraus entstehende Keystore-Datei und das Kennwort an einem sicheren Speicherort zu speichern, da diese nicht in der Projektmappe enthalten sind. Wenn Sie Ihre Keystore-Datei verlieren (z.B. weil Sie einen anderen Computer verwenden oder macOS neu installiert haben), können Sie Ihre App nicht mit demselben Zertifikat wie vorherige Versionen signieren.
 
 Weitere Informationen zur Keystore-Datei finden Sie unter [Finding your Keystore's MD5 or SHA1 Signature (Suchen der MD5- oder SHA1-Signatur Ihrer Keystore-Datei)](~/android/deploy-test/signing/keystore-signature.md).
 

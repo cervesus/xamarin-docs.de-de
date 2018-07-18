@@ -1,48 +1,49 @@
 ---
-title: Systemeigene Ansichten in c#
-description: Systemeigene Ansichten von iOS-, Android- und uwp-können direkt von Xamarin.Forms-Seiten, die erstellt wurden, mithilfe von c# verwiesen werden. In diesem Artikel wird veranschaulicht, wie eine Xamarin.Forms-Layout mit c# erstellten systemeigene Ansichten hinzugefügt und wie das Layout an benutzerdefinierten Ansichten an, korrigieren Sie die Maßeinheit zur Verwendung der API überschrieben.
+title: Native Ansichten in c#
+description: Native Ansichten von iOS-, Android- und UWP können direkt von Xamarin.Forms-Seiten, die mit c# erstellte verwiesen werden. In diesem Artikel wird veranschaulicht, wie eine Xamarin.Forms-Layout mit c# erstellte native Ansichten hinzugefügt, und wie Sie das Layout der benutzerdefinierte Ansichten, korrigieren Sie die Messung API-Nutzung außer Kraft zu setzen.
 ms.prod: xamarin
 ms.assetid: 230F937C-F914-4B21-8EA1-1A2A9E644769
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: c3a79947b02e0f877fd4ea1b0ddb72486c222719
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: ad633f49c1c448529fa4c2b50483ec233c1ee841
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996193"
 ---
-# <a name="native-views-in-c"></a>Systemeigene Ansichten in c#
+# <a name="native-views-in-c"></a>Native Ansichten in c#
 
-_Systemeigene Ansichten von iOS-, Android- und uwp-können direkt von Xamarin.Forms-Seiten, die erstellt wurden, mithilfe von c# verwiesen werden. In diesem Artikel wird veranschaulicht, wie eine Xamarin.Forms-Layout mit c# erstellten systemeigene Ansichten hinzugefügt und wie das Layout an benutzerdefinierten Ansichten an, korrigieren Sie die Maßeinheit zur Verwendung der API überschrieben._
+_Native Ansichten von iOS-, Android- und UWP können direkt von Xamarin.Forms-Seiten, die mit c# erstellte verwiesen werden. In diesem Artikel wird veranschaulicht, wie eine Xamarin.Forms-Layout mit c# erstellte native Ansichten hinzugefügt, und wie Sie das Layout der benutzerdefinierte Ansichten, korrigieren Sie die Messung API-Nutzung außer Kraft zu setzen._
 
 ## <a name="overview"></a>Übersicht
 
-Jedes Xamarin.Forms-Steuerelement, das ermöglicht `Content` , um die festgelegt werden, oder mit einer `Children` Auflistung können plattformspezifische Ansichten hinzufügen. Z. B. eine iOS `UILabel` können nicht direkt hinzugefügt werden die [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) -Eigenschaft, oder auf die [ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) Auflistung. Beachten Sie jedoch, dass diese Funktionalität über die Verwendung von erfordert `#if` in Xamarin.Forms freigegebenes Projekt Projektmappen definiert und von Xamarin.Forms .NET Bibliothek Standardlösungen verfügbar ist.
+Alle Xamarin.Forms-Steuerelement, das ermöglicht `Content` , um die festgelegt werden, oder mit einem `Children` Auflistung können plattformspezifische Ansichten hinzufügen. Z. B. eine iOS `UILabel` können direkt hinzugefügt werden die [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) -Eigenschaft oder die [ `StackLayout.Children` ](xref:Xamarin.Forms.Layout`1.Children) Auflistung. Beachten Sie jedoch, dass diese Funktion erfordert `#if` definiert in Xamarin.Forms freigegebenes Projekt Lösungen und Lösungen für Xamarin.Forms .NET Standard-Bibliothek verfügbar ist.
 
-Führen Sie den folgenden Screenshots vor plattformspezifische Ansichten hinzugefügt, um eine Xamarin.Forms [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/):
+Die folgenden Screenshots veranschaulichen plattformspezifische hinzugefügt, um eine Xamarin.Forms-Ansichten [ `StackLayout` ](xref:Xamarin.Forms.StackLayout):
 
-[![](code-images/screenshots-sml.png "Enthält plattformspezifische Ansichten StackLayout")](code-images/screenshots.png#lightbox "StackLayout enthält plattformspezifische Ansichten")
+[![](code-images/screenshots-sml.png "Plattformspezifische Ansichten mit StackLayout")](code-images/screenshots.png#lightbox "StackLayout mit plattformspezifischen Ansichten")
 
-Die Möglichkeit zum Hinzufügen von plattformspezifischen Ansichten zu einem Layout Xamarin.Forms wird durch zwei Erweiterungsmethoden auf jeder Plattform aktiviert:
+Die Möglichkeit, eine Xamarin.Forms-Layouts plattformspezifische Ansichten hinzufügen, wird durch zwei Erweiterungsmethoden auf jeder Plattform aktiviert:
 
-- `Add` – Fügt eine plattformspezifische Ansicht für die [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) Auflistung eines Layouts.
-- `ToView` – akzeptiert eine plattformspezifische-Sicht und umschließt ihn als einen Xamarin.Forms [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) , die festgelegt werden können, als die `Content` Eigenschaft eines Steuerelements.
+- `Add` – Fügt eine plattformspezifische-Ansicht für die [ `Children` ](xref:Xamarin.Forms.Layout`1.Children) Auflistung eines Layouts.
+- `ToView` – wird eine bestimmte Ansicht und umschließt ihn als eine Xamarin.Forms [ `View` ](xref:Xamarin.Forms.View) , die festgelegt werden können, als die `Content` Eigenschaft eines Steuerelements.
 
-Verwenden diese Methoden in einem freigegebenen Xamarin.Forms-Projekt erfordert den entsprechenden plattformspezifischen Xamarin.Forms Namespace importiert:
+Mithilfe dieser Methoden in einem freigegebenen Xamarin.Forms-Projekt benötigt den entsprechenden plattformspezifischen Xamarin.Forms-Namespace importiert:
 
 - **iOS** – Xamarin.Forms.Platform.iOS
 - **Android** – Xamarin.Forms.Platform.Android
-- **Universelle Windows-Plattform (UWP)** – Xamarin.Forms.Platform.UWP
+- **Universelle Windows-Plattform (UWP)** : Xamarin.Forms.Platform.UWP
 
 ## <a name="adding-platform-specific-views-on-each-platform"></a>Hinzufügen von plattformspezifischen Ansichten auf jeder Plattform
 
-Die folgenden Abschnitte zeigen, wie ein Layout Xamarin.Forms auf jeder Plattform plattformspezifischen Sichten hinzugefügt wird.
+Die folgenden Abschnitte zeigen, wie eine Xamarin.Forms-Layouts auf jeder Plattform plattformspezifische Ansichten hinzugefügt wird.
 
 ### <a name="ios"></a>iOS
 
-Das folgende Codebeispiel veranschaulicht das Hinzufügen einer `UILabel` auf eine [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) und ein [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+Im folgenden Codebeispiel wird veranschaulicht, wie Hinzufügen einer `UILabel` auf eine [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) und [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var uiLabel = new UILabel {
@@ -55,11 +56,11 @@ stackLayout.Children.Add (uiLabel);
 contentView.Content = uiLabel.ToView();
 ```
 
-Das Beispiel setzt voraus, dass die `stackLayout` und `contentView` Instanzen zuvor in XAML oder c# erstellt wurden.
+Im Beispiel wird vorausgesetzt, dass die `stackLayout` und `contentView` Instanzen zuvor in XAML oder c# erstellt wurden.
 
 ### <a name="android"></a>Android
 
-Das folgende Codebeispiel veranschaulicht das Hinzufügen einer `TextView` auf eine [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) und ein [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+Im folgenden Codebeispiel wird veranschaulicht, wie Hinzufügen einer `TextView` auf eine [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) und [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var textView = new TextView (MainActivity.Instance) { Text = originalText, TextSize = 14 };
@@ -67,11 +68,11 @@ stackLayout.Children.Add (textView);
 contentView.Content = textView.ToView();
 ```
 
-Das Beispiel setzt voraus, dass die `stackLayout` und `contentView` Instanzen zuvor in XAML oder c# erstellt wurden.
+Im Beispiel wird vorausgesetzt, dass die `stackLayout` und `contentView` Instanzen zuvor in XAML oder c# erstellt wurden.
 
 ### <a name="universal-windows-platform"></a>Universelle Windows-Plattform
 
-Das folgende Codebeispiel veranschaulicht das Hinzufügen einer `TextBlock` auf eine [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) und ein [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+Im folgenden Codebeispiel wird veranschaulicht, wie Hinzufügen einer `TextBlock` auf eine [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) und [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var textBlock = new TextBlock
@@ -85,13 +86,13 @@ stackLayout.Children.Add(textBlock);
 contentView.Content = textBlock.ToView();
 ```
 
-Das Beispiel setzt voraus, dass die `stackLayout` und `contentView` Instanzen zuvor in XAML oder c# erstellt wurden.
+Im Beispiel wird vorausgesetzt, dass die `stackLayout` und `contentView` Instanzen zuvor in XAML oder c# erstellt wurden.
 
-## <a name="overriding-platform-measurements-for-custom-views"></a>Überschreiben die Plattform Messungen für benutzerdefinierte Ansichten
+## <a name="overriding-platform-measurements-for-custom-views"></a>Überschreiben die Eigenschaften der Plattform für benutzerdefinierte Ansichten
 
-Häufig nur korrekt implementieren benutzerdefinierte Ansichten auf jeder Plattform Maßeinheit zur Ermittlung der Layoutszenario für das sie entwickelt wurden. Angenommen, eine benutzerdefinierte Ansicht möglicherweise ausgelegt sind, nur die Hälfte der verfügbaren Breite des Geräts einnehmen. Allerdings ist nach für andere Benutzer freigegeben, die benutzerdefinierte Sicht erforderlich, um die vollständige verfügbare Breite des Geräts belegen möglich. Aus diesem Grund kann es notwendig, eine benutzerdefinierte Ansichten Messung Implementierung überschrieben werden, wenn in einem Layout Xamarin.Forms wiederverwendeten sein. Aus diesem Grund die `Add` und `ToView` Erweiterungsmethoden bieten Außerkraftsetzungen, die Messung Delegaten angegeben werden, mit denen das benutzerdefinierte Ansichtslayout überschreiben können, wenn sie eine Xamarin.Forms-Layout hinzugefügt wird.
+Benutzerdefinierte Ansichten auf jeder Plattform implementieren häufig nur ordnungsgemäß Maßeinheit für das Layoutszenario für das sie entwickelt wurden. Z. B. eine benutzerdefinierte Ansicht möglicherweise ausgelegt sind, nur die Hälfte der verfügbaren Breite des Geräts einnimmt. Nach dem für andere Benutzer freigegeben wird, kann die benutzerdefinierte Ansicht jedoch belegt die vollständigen verfügbare Breite des Geräts erforderlich sein. Aus diesem Grund kann es erforderlich, eine Messung-Implementierung von benutzerdefinierten Ansichten zu überschreiben, wenn in einer Xamarin.Forms-Layouts wiederverwendeten sein. Aus diesem Grund die `Add` und `ToView` Erweiterungsmethoden Geben Sie Außerkraftsetzungen, die Messung Delegaten angegeben werden, ermöglichen es, die das Layout für die benutzerdefinierte Ansicht überschreiben können, wenn es zu einer Xamarin.Forms-Layout hinzugefügt wird.
 
-In den folgenden Abschnitten veranschaulichen, wie das Layout der benutzerdefinierte Ansichten, korrigieren Sie die Maßeinheit zur Verwendung der API zu überschreiben.
+Die folgenden Abschnitte zeigen, wie Sie das Layout der benutzerdefinierten Ansichten, korrigieren Sie die Messung API-Nutzung außer Kraft zu setzen.
 
 ### <a name="ios"></a>iOS
 
@@ -112,7 +113,7 @@ public class CustomControl : UILabel
 }
 ```
 
-Eine Instanz dieser Sicht hinzugefügt wird eine [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), wie im folgenden Codebeispiel gezeigt:
+Eine Instanz der in dieser Ansicht wird hinzugefügt, um eine [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 var customControl = new CustomControl {
@@ -124,11 +125,11 @@ var customControl = new CustomControl {
 stackLayout.Children.Add (customControl);
 ```
 
-Jedoch, da die `CustomControl.SizeThatFits` immer Überschreibung eine Höhe von 150, die Ansicht mit den Leerraum oberhalb und unterhalb davon angezeigt, wie im folgenden Screenshot gezeigt:
+Aber da die `CustomControl.SizeThatFits` Außerkraftsetzung gibt immer eine Höhe von 150 zurück, die Ansicht mit Leerraum oberhalb und unterhalb, wie im folgenden Screenshot dargestellt angezeigt:
 
-![](code-images/ios-bad-measurement.png "iOS benutzerdefiniertes Steuerelement mit ungültigen SizeThatFits-Implementierung")
+![](code-images/ios-bad-measurement.png "iOS CustomControl mit ungültigen SizeThatFits-Implementierung")
 
-Eine Lösung für dieses Problem besteht darin, geben Sie einen `GetDesiredSizeDelegate` Implementierung, wie im folgenden Codebeispiel gezeigt:
+Eine Lösung für dieses Problem besteht darin, geben Sie einen `GetDesiredSizeDelegate` Implementierung wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 SizeRequest? FixSize (NativeViewWrapperRenderer renderer, double width, double height)
@@ -149,15 +150,15 @@ SizeRequest? FixSize (NativeViewWrapperRenderer renderer, double width, double h
 }
 ```
 
-Diese Methode verwendet die gebotenen Breite der `CustomControl.SizeThatFits` ersetzt die Methode, aber die Höhe des 150 für eine Höhe von 70. Wenn der `CustomControl` Instanz hinzugefügt der [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), die `FixSize` Methode kann angegeben werden, als der `GetDesiredSizeDelegate` , korrigieren Sie die fehlerhafte Messung von bereitgestellten der `CustomControl` Klasse:
+Diese Methode verwendet die Breite von bereitgestellten der `CustomControl.SizeThatFits` -Methode, ersetzt jedoch die Höhe von 150 für eine Höhe von 70. Bei der `CustomControl` Instanz hinzugefügt der [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), wird die `FixSize` Methode kann angegeben werden, als die `GetDesiredSizeDelegate` , beheben Sie die fehlerhafte Messung von bereitgestellten der `CustomControl` Klasse:
 
 ```csharp
 stackLayout.Children.Add (customControl, FixSize);
 ```
 
-Daraus ergibt sich der benutzerdefinierten Sicht ohne Leerraum oberhalb und unterhalb davon ordnungsgemäß angezeigt wird, wie im folgenden Screenshot gezeigt:
+Dies führt in der benutzerdefinierten Ansicht ohne Leerraum oberhalb und unterhalb, ordnungsgemäß angezeigt wird, wie im folgenden Screenshot gezeigt:
 
-![](code-images/ios-good-measurement.png "iOS benutzerdefiniertes Steuerelement mit GetDesiredSize Außerkraftsetzung")
+![](code-images/ios-good-measurement.png "iOS CustomControl mit GetDesiredSize außer Kraft setzen")
 
 ### <a name="android"></a>Android
 
@@ -183,7 +184,7 @@ public class CustomControl : TextView
 }
 ```
 
-Eine Instanz dieser Sicht hinzugefügt wird eine [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), wie im folgenden Codebeispiel gezeigt:
+Eine Instanz der in dieser Ansicht wird hinzugefügt, um eine [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 var customControl = new CustomControl (MainActivity.Instance) {
@@ -193,11 +194,11 @@ var customControl = new CustomControl (MainActivity.Instance) {
 stackLayout.Children.Add (customControl);
 ```
 
-Jedoch, da die `CustomControl.OnMeasure` immer Überschreibung die Hälfte der Breite des angeforderten, wird die Ansicht angezeigt, belegen nur die Hälfte die verfügbare Breite des Geräts, wie im folgenden Screenshot gezeigt:
+Aber da die `CustomControl.OnMeasure` außer Kraft setzen immer die Hälfte der die angeforderte Breite zurück, die Ansicht angezeigt, belegt nur die Hälfte die verfügbare Breite des Geräts, wie im folgenden Screenshot gezeigt:
 
-![](code-images/android-bad-measurement.png "Android benutzerdefiniertes Steuerelement mit ungültigen OnMeasure-Implementierung")
+![](code-images/android-bad-measurement.png "Android CustomControl mit ungültigen OnMeasure-Implementierung")
 
-Eine Lösung für dieses Problem besteht darin, geben Sie einen `GetDesiredSizeDelegate` Implementierung, wie im folgenden Codebeispiel gezeigt:
+Eine Lösung für dieses Problem besteht darin, geben Sie einen `GetDesiredSizeDelegate` Implementierung wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 SizeRequest? FixSize (NativeViewWrapperRenderer renderer, int widthConstraint, int heightConstraint)
@@ -216,15 +217,15 @@ SizeRequest? FixSize (NativeViewWrapperRenderer renderer, int widthConstraint, i
 }
 ```
 
-Diese Methode verwendet die gebotenen Breite der `CustomControl.OnMeasure` -Methode, aber multipliziert zwei. Wenn der `CustomControl` Instanz hinzugefügt der [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), die `FixSize` Methode kann angegeben werden, als der `GetDesiredSizeDelegate` , korrigieren Sie die fehlerhafte Messung von bereitgestellten der `CustomControl` Klasse:
+Diese Methode verwendet die Breite von bereitgestellten der `CustomControl.OnMeasure` -Methode, aber multipliziert zwei. Bei der `CustomControl` Instanz hinzugefügt der [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), wird die `FixSize` Methode kann angegeben werden, als die `GetDesiredSizeDelegate` , beheben Sie die fehlerhafte Messung von bereitgestellten der `CustomControl` Klasse:
 
 ```csharp
 stackLayout.Children.Add (customControl, FixSize);
 ```
 
-Dadurch wird die benutzerdefinierte Ansicht korrekt angezeigt werden, belegen die Breite des Geräts, wie im folgenden Screenshot gezeigt:
+Dadurch wird die benutzerdefinierte Ansicht wird korrekt angezeigt werden, belegt die Breite des Geräts, wie im folgenden Screenshot gezeigt:
 
-![](code-images/android-good-measurement.png "Android benutzerdefiniertes Steuerelement mit dem benutzerdefinierten GetDesiredSize Delegaten")
+![](code-images/android-good-measurement.png "Android CustomControl mit benutzerdefinierten GetDesiredSize Delegaten")
 
 ### <a name="universal-windows-platform"></a>Universelle Windows-Plattform
 
@@ -281,7 +282,7 @@ public class CustomControl : Panel
 }
 ```
 
-Eine Instanz dieser Sicht hinzugefügt wird eine [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), wie im folgenden Codebeispiel gezeigt:
+Eine Instanz der in dieser Ansicht wird hinzugefügt, um eine [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 var brokenControl = new CustomControl {
@@ -290,11 +291,11 @@ var brokenControl = new CustomControl {
 stackLayout.Children.Add(brokenControl);
 ```
 
-Jedoch, da die `CustomControl.ArrangeOverride` immer Überschreibung die Hälfte der Breite des angeforderten, die Sicht auf die Hälfte der verfügbaren Breite des Geräts abgeschnitten, wie im folgenden Screenshot gezeigt:
+Aber da die `CustomControl.ArrangeOverride` außer Kraft setzen immer die Hälfte der die angeforderte Breite zurück, die Ansicht wird auf die Hälfte der verfügbaren Breite des Geräts, abgeschnitten werden, wie im folgenden Screenshot gezeigt:
 
-![](code-images/winrt-bad-measurement.png "Universelle Windows-Plattform benutzerdefiniertes Steuerelement mit ungültigen "ArrangeOverride" Implementierung")
+![](code-images/winrt-bad-measurement.png "UWP-CustomControl mit ungültigen ArrangeOverride-Implementierung")
 
-Eine Lösung für dieses Problem besteht darin, geben Sie eine `ArrangeOverrideDelegate` Implementierung, die beim Hinzufügen der Ansicht, um die [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), wie im folgenden Codebeispiel wird gezeigt:
+Eine Lösung für dieses Problem besteht darin, geben Sie eine `ArrangeOverrideDelegate` Implementierung, die beim Hinzufügen der Ansicht, um die [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), wie im folgenden Codebeispiel wird veranschaulicht:
 
 ```csharp
 stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, finalSize) =>
@@ -309,13 +310,13 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 });
 ```
 
-Diese Methode verwendet die gebotenen Breite der `CustomControl.ArrangeOverride` -Methode, aber multipliziert zwei. Dadurch wird die benutzerdefinierte Ansicht korrekt angezeigt werden, belegen die Breite des Geräts, wie im folgenden Screenshot gezeigt:
+Diese Methode verwendet die Breite von bereitgestellten der `CustomControl.ArrangeOverride` -Methode, aber multipliziert zwei. Dadurch wird die benutzerdefinierte Ansicht wird korrekt angezeigt werden, belegt die Breite des Geräts, wie im folgenden Screenshot gezeigt:
 
-![](code-images/winrt-good-measurement.png "Universelle Windows-Plattform benutzerdefiniertes Steuerelement mit dem Delegaten "ArrangeOverride"")
+![](code-images/winrt-good-measurement.png "UWP-CustomControl mit ArrangeOverride-Delegaten")
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel wurde erläutert, wie eine Xamarin.Forms-Layout mit c# erstellten systemeigene Ansichten hinzugefügt und wie das Layout an benutzerdefinierten Ansichten an, korrigieren Sie die Maßeinheit zur Verwendung der API überschrieben.
+In diesem Artikel wird erläutert, wie eine Xamarin.Forms-Layout mit c# erstellte native Ansichten hinzugefügt, und wie Sie das Layout der benutzerdefinierte Ansichten, korrigieren Sie die Messung API-Nutzung außer Kraft zu setzen.
 
 
 ## <a name="related-links"></a>Verwandte Links

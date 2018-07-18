@@ -1,38 +1,39 @@
 ---
-title: Exemplarische Vorgehensweise – mit Touch in Android
+title: 'Exemplarische Vorgehensweise: Verwenden von Toucheingaben in Android'
 ms.prod: xamarin
 ms.assetid: E281F89B-4142-4BD8-8882-FB65508BF69E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/09/2018
-ms.openlocfilehash: 625ba800ce498f80c0344c67e26bd79360de4002
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: d379630e3b7fa2b42bd9530e1dccd75e9634dd2f
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935526"
 ---
-# <a name="walkthrough---using-touch-in-android"></a>Exemplarische Vorgehensweise – mit Touch in Android
+# <a name="walkthrough---using-touch-in-android"></a>Exemplarische Vorgehensweise: Verwenden von Toucheingaben in Android
 
-Lassen Sie uns finden Sie unter der Konzepte aus dem vorherigen Abschnitt in einer Anwendung verwenden. Es wird eine Anwendung mit vier Aktivitäten erstellt. Die erste Aktivität wird ein Menü oder eine Übersicht, die die anderen Aktivitäten zur Veranschaulichung der verschiedenen APIs gestartet wird. Der folgende Screenshot zeigt die Hauptaktivität:
+Lassen Sie uns finden Sie unter die Konzepte aus dem vorherigen Abschnitt in einer Anwendung verwenden. Wir erstellen eine Anwendung mit vier Aktivitäten. Ein Menü oder eine Übersicht, die die anderen Aktivitäten zur Veranschaulichung der verschiedenen APIs gestartet wird, wird die erste Aktivität sein. Der folgende Screenshot zeigt die Hauptaktivität:
 
-[![Beispiel-Screenshot mit Touch Me-Schaltfläche](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png#lightbox)
+[![Beispielscreenshot mit Touch Me-Schaltfläche](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png#lightbox)
 
-Die erste Aktivität, Touch-Beispiel zeigt wie Sie Ereignishandler für die Ansichten berühren. Die Bewegung Erkennungsmodul-Aktivität wird gezeigt, wie Unterklasse `Android.View.Views` und Ereignisse behandeln, als auch gezeigt, wie zwei-Finger-Gesten zu behandeln. Der dritte und letzte Aktivität **benutzerdefinierte Geste**, wird zeigen die Verwendung benutzerdefinierter Gesten. Um leichter zu verfolgen und aufnehmen, müssen wir in dieser exemplarischen Vorgehensweise in Abschnitte mit jeder Abschnitt, wobei schwerpunktmäßig auf eine der Aktivitäten zusammensetzen.
+Die erste Aktivität, die Touch-Beispiel zeigen, wie von Ereignishandlern für die Ansichten zu berühren. Die Aktivität Stiftbewegungs-Erkennung wird gezeigt, wie das Erstellen einer Unterklasse `Android.View.Views` und Ereignisse behandeln, als auch zeigen, wie Sie die Pinch-Gesten behandelt. Der dritte und letzte Aktivität **benutzerdefinierte Geste**, wird zeigen die Verwendung benutzerdefinierter stiftbewegungen. Um leichter zu folgen und absorb, werden wir in dieser exemplarischen Vorgehensweise in Abschnitte mit jedem Abschnitt mit dem Schwerpunkt auf eine der Aktivitäten aufzuteilen.
 
 ## <a name="touch-sample-activity"></a>Touch-Beispielaktivität
 
--   Öffnen Sie das Projekt **TouchWalkthrough\_starten**. Die **Activity\_main** als gehen alle festgelegt ist &ndash; es ist Aufgabe der Touch-Verhalten der Aktivität implementiert. Wenn Sie die Anwendung auszuführen, und klicken Sie auf **berühren Beispiel**, sollte die folgende Aktivität gestartet:
+-   Öffnen Sie das Projekt **TouchWalkthrough\_starten**. Die **MainActivity** startklar zu &ndash; ist dafür verantwortlich, die das Verhalten der Toucheingabe in der Aktivität zu implementieren. Wenn Sie die Anwendung auszuführen, und klicken Sie auf **Touch Beispiel**, sollte die folgende Aktivität starten:
 
     [![Screenshot der Aktivität mit Touch beginnt angezeigt](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
--   Nun, da wir bestätigt haben, dass die Aktivität wird gestartet, öffnen Sie die Datei **TouchActivity.cs** und fügen Sie einen Handler für das `Touch` -Ereignis für die `ImageView`:
+-   Nun, da wir bestätigt haben, dass die Aktivität wird gestartet, öffnen Sie die Datei **TouchActivity.cs** und Hinzufügen eines ereignishandlers für das `Touch` Ereignis die `ImageView`:
 
     ```csharp
     _touchMeImageView.Touch += TouchMeImageViewOnTouch;
     ```
 
--   Fügen Sie die folgende Methode hinzu **TouchActivity.cs**:
+-   Fügen Sie die folgende Methode **TouchActivity.cs**:
 
     ```csharp
     private void TouchMeImageViewOnTouch(object sender, View.TouchEventArgs touchEventArgs)
@@ -58,22 +59,22 @@ Die erste Aktivität, Touch-Beispiel zeigt wie Sie Ereignishandler für die Ansi
     }
     ```
 
-Beachten Sie, dass wir behandeln im obigen Code die `Move` und `Down` Aktion als identisch. Dafür ist, dass, obwohl der Benutzer nicht ihre möglicherweise deaktiviert Fingers die `ImageView`, möglicherweise verschieben oder die Auslastung des vom Benutzer ausgeübt kann geändert werden. Diese Art von Änderungen generiert eine `Move` Aktion.
+Im obigen Code Beachten Sie, dass wir behandeln die `Move` und `Down` Aktion als identisch. Dies ist da, obwohl der Benutzer nicht den Finger heben Sie möglicherweise aus der `ImageView`, es verschieben kann, oder der vom Benutzer üben Druck kann sich ändern. Diese Art von Änderungen generiert eine `Move` Aktion.
 
-Jedes Mal, wenn der Benutzer Fingereingaben der `ImageView`, `Touch` Ereignis wird ausgelöst, und unsere Ereignishandler zeigt an **berühren beginnt** auf dem Bildschirm, wie im folgenden Screenshot gezeigt:
+Jedes Mal, wenn die Workflows der Benutzer die `ImageView`, `Touch` Ereignis wird ausgelöst, und unser Handler wird die Meldung angezeigt **Touch beginnt** auf dem Bildschirm, wie im folgenden Screenshot gezeigt:
 
 [![Screenshot der Aktivität mit Touch beginnt](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
-Solange der Benutzer betrifft die `ImageView`, **berühren beginnt** angezeigt werden die `TextView`. Wenn der Benutzer ist nicht mehr durch berühren der `ImageView`, die Nachricht **berühren endet** angezeigt werden die `TextView`, wie im folgenden Screenshot gezeigt:
+Solange der Benutzer berührt die `ImageView`, **Touch beginnt** erscheint in der `TextView`. Wenn der Benutzer ist nicht mehr berührt die `ImageView`, die Nachricht **Touch endet** erscheint in der `TextView`, wie im folgenden Screenshot gezeigt:
 
 [![Screenshot der Aktivität mit Touch endet](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
 
 
-## <a name="gesture-recognizer-activity"></a>Geste Erkennungsmodul-Aktivität
+## <a name="gesture-recognizer-activity"></a>Geste Erkennung-Aktivität
 
-Nun wollen wir uns die Bewegung Erkennungsmodul Aktivität implementiert wird. Diese Aktivität zeigen, wie eine Ansicht auf dem Bildschirm ziehen und es wird eine Möglichkeit, implementieren zwei-Finger-Zoom veranschaulicht.
+Jetzt können die Aktivität Stiftbewegungs-Erkennung zu implementieren. Diese Aktivität wird eine Ansicht auf dem Bildschirm ziehen und veranschaulicht eine Möglichkeit zum Implementieren der Pinch-Finger-Zoom zu veranschaulichen.
 
--   Hinzufügen eine neue Aktivität der Anwendung namens `GestureRecognizer`.
+-   Fügen Sie eine neue Aktivität für die Anwendung `GestureRecognizer`.
     Bearbeiten Sie den Code für diese Aktivität aus, sodass sie den folgenden Code ähnelt:
 
     ```csharp
@@ -88,7 +89,7 @@ Nun wollen wir uns die Bewegung Erkennungsmodul Aktivität implementiert wird. D
     }
     ```
 
--   Hinzufügen einer neuen Android anzeigen, um das Projekt, und nennen Sie sie `GestureRecognizerView`. Fügen Sie diese Klasse die folgenden Variablen hinzu:
+-   Fügen Sie eine neue Android zeigen Sie auf das Projekt, und nennen Sie sie `GestureRecognizerView`. Fügen Sie die folgenden Variablen für diese Klasse ein:
 
     ```csharp
     private static readonly int InvalidPointerId = -1;
@@ -104,7 +105,7 @@ Nun wollen wir uns die Bewegung Erkennungsmodul Aktivität implementiert wird. D
     private float _scaleFactor = 1.0f;
     ```
 
--   Fügen Sie den folgenden Konstruktor hinzu `GestureRecognizerView`. Dieser Konstruktor wird hinzugefügt. eine `ImageView` an unsere Aktivität. An diesem Punkt im Code noch nicht kompiliert &ndash; müssen wir die Klasse erstellen `MyScaleListener` unterstützt, die beim Ändern der Größe der `ImageView` Wenn der Benutzer pinches es:
+-   Fügen Sie den folgenden Konstruktor hinzu `GestureRecognizerView`. Dieser Konstruktor wird hinzugefügt. eine `ImageView` unserer Aktivität. An dieser Stelle den Code noch nicht kompiliert werden &ndash; müssen wir die Klasse erstellen `MyScaleListener` soll, die zum Ändern der Größe der `ImageView` Wenn der Benutzer pinches es:
 
     ```csharp
     public GestureRecognizerView(Context context): base(context, null, 0)
@@ -115,7 +116,7 @@ Nun wollen wir uns die Bewegung Erkennungsmodul Aktivität implementiert wird. D
     }
     ```
 
--   Zum Zeichnen des Bilds für unsere Aktivität müssen wir überschreiben die `OnDraw` Methode der Ansichtsklasse wie im folgenden Codeausschnitt gezeigt. Dieser Code geht die `ImageView` an der angegebenen Position `_posX` und `_posY` sowie Größe wie das Bild entsprechend der Skalierungsfaktor:
+-   Um das Bild in unserer Aktivität zu zeichnen, müssen wir überschreiben die `OnDraw` -Methode der Klasse Ansicht wie im folgenden Codeausschnitt gezeigt. Dieser Code geht die `ImageView` an die Position, die anhand des `_posX` und `_posY` auch als die Bildgröße gemäß den Skalierungsfaktor:
 
     ```csharp
     protected override void OnDraw(Canvas canvas)
@@ -129,8 +130,8 @@ Nun wollen wir uns die Bewegung Erkennungsmodul Aktivität implementiert wird. D
     }
     ```
 
--   Als Nächstes müssen wir die Instanzvariable aktualisieren `_scaleFactor` pinches als der Benutzer die `ImageView`. Es wird eine Klasse mit dem Namen hinzufügen `MyScaleListener`. Diese Klasse wird für die Skalierung-Ereignisse, die von Android ausgelöst werden, wenn der Benutzer pinches überwachen die `ImageView`.
-    Fügen Sie die folgenden interne Klasse zu `GestureRecognizerView`. Diese Klasse ist eine `ScaleGesture.SimpleOnScaleGestureListener`. Diese Klasse ist eine Hilfsklasse, die Listener Unterklasse können, wenn Sie eine Teilmenge der Gesten interessiert sind:
+-   Als Nächstes müssen wir die Instanzvariable aktualisieren `_scaleFactor` pinches als der Benutzer die `ImageView`. Fügen wir eine Klasse namens `MyScaleListener`. Diese Klasse wird lauscht, für die skalierungsereignisse, die von Android ausgelöst werden, wenn der Benutzer pinches der `ImageView`.
+    Fügen Sie die folgende interne Klasse `GestureRecognizerView`. Diese Klasse ist eine `ScaleGesture.SimpleOnScaleGestureListener`. Diese Klasse ist eine Hilfsklasse, dass der Listener als Unterklasse verwenden können, wenn Sie eine Teilmenge der Bewegungen interessiert sind:
 
     ```csharp
     private class MyScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener
@@ -156,19 +157,19 @@ Nun wollen wir uns die Bewegung Erkennungsmodul Aktivität implementiert wird. D
                 _view._scaleFactor = 0.1f;
             }
 
-            _iconview.Invalidate();
+            _view.Invalidate();
             return true;
         }
     }
     ```
 
--   Die next-Methode, die wir in überschreiben, müssen `GestureRecognizerView` ist `OnTouchEvent`. Der folgende Code enthält die vollständige Implementierung dieser Methode. Es ist viel Code hier also ermöglicht, nehmen Sie sich, und sehen Sie, was passiert hier. Diese Methode wird als Erstes wird das Symbol "bei Bedarf skalieren &ndash; Dies erfolgt durch Aufrufen von `_scaleDetector.OnTouchEvent`. Als Nächstes verwenden wir herausfinden, welche Aktion diese Methode aufgerufen:
+-   Die nächste Methode, die wir in außer Kraft setzen müssen `GestureRecognizerView` ist `OnTouchEvent`. Der folgende Code Listet die vollständige Implementierung dieser Methode. Es ist viel Code hier also ermöglicht, eine Minute dauern, und sehen, was hier passiert. Diese Methode wird als Erstes wird das Symbol "bei Bedarf skalieren &ndash; Dies erfolgt durch Aufrufen von `_scaleDetector.OnTouchEvent`. Als Nächstes versuchen wir herauszufinden, welche Aktion diese Methode aufgerufen:
 
-    - Wenn der Benutzer den Bildschirm mit berührt, zeichnen wir die X- und Y-Positionen und die ID des ersten Zeigers, der den Bildschirm berührt.
+    - Wenn der Benutzer den Bildschirm mit berührt, zeichnen wir die X- und Y-Position und die ID der der erste Zeiger, der den Bildschirm berührt.
 
-    - Wenn der Benutzer die Fingereingabe auf dem Bildschirm verschoben, Abbildung wir, wie weit der Benutzer den Zeiger verschoben.
+    - Wenn der Benutzer die Touch auf dem Bildschirm verschoben, ermitteln wir, wie weit der Benutzer den Zeiger verschoben.
 
-    - Wenn der Benutzer seine Finger außerhalb des Bildschirms aufgehoben wurde, wird es beendet Gesten nachverfolgen.
+    - Wenn der Benutzer seinen Finger außerhalb des Bildschirms transformiert wurde, wird dann beenden wir die Gesten nachverfolgen.
 
     ```csharp
     public override bool OnTouchEvent(MotionEvent ev)
@@ -230,24 +231,24 @@ Nun wollen wir uns die Bewegung Erkennungsmodul Aktivität implementiert wird. D
     }
     ```
 
--   Jetzt führen Sie die Anwendung, und starten Sie die Bewegung Erkennungsmodul-Aktivität.
-    Zunächst sollte der Bildschirm der folgende Screenshot aussehen:
+-   Nun führen Sie die Anwendung, und starten Sie die Aktivität Stiftbewegungs-Erkennung.
+    Zunächst sollte der Bildschirm etwa wie im folgenden Screenshot aussehen:
 
-    [![Geste Erkennungsmodul Startbildschirm mit Android-Symbol](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
+    [![Stiftbewegungs-Erkennung Startbildschirm mit Android-Symbol](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
 
--   Jetzt Tippen Sie auf das Symbol, und ziehen Sie es auf dem Bildschirm. Wiederholen Sie dann die zwei-Finger-Zoom-Aktion. Irgendwann kann Ihren Bildschirm im folgenden Screenshot aussehen:
+-   Jetzt Tippen Sie auf das Symbol, und ziehen Sie es auf dem Bildschirm. Versuchen Sie es der Pinch-Finger-Zoom-Bewegung. Irgendwann kann es sich bei Ihr Bildschirm etwa wie im folgenden Screenshot aussehen:
 
-    [![Gesten Symbol "verschieben" auf dem Bildschirm](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
+    [![Bewegungen Verschiebesymbol auf dem Bildschirm](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
 
-An diesem Punkt sollten Sie erteilen selbst ein Pat auf der Rückseite: Sie haben zwei-Finger-Zoom nur in einer Android-Anwendung implementiert! Nehmen Sie eine kurze Unterbrechung vorliegt und Sie können auf die dritte und letzte Aktivität in dieser exemplarischen Vorgehensweise zu verschieben, auf &ndash; mithilfe von benutzerdefinierten Gesten.
+An diesem Punkt sollten Sie erteilen selbst ein persönliches Zugriffstoken auf der Rückseite: Sie haben die Pinch-Finger-Zoom einfach in eine Android-Anwendung implementiert! Nehmen Sie eine kurze Pause, und können auf die dritte und letzte Aktivität in dieser exemplarischen Vorgehensweise fortfahren &ndash; mithilfe von benutzerdefinierten stiftbewegungen.
 
-## <a name="custom-gesture-activity"></a>Benutzerdefinierte Gestenhandler-Aktivität
+## <a name="custom-gesture-activity"></a>Benutzerdefinierte Aktion-Aktivität
 
-Im letzten Bildschirm in dieser exemplarischen Vorgehensweise werden die benutzerdefinierte Gesten verwenden.
+Der letzten Seite in dieser exemplarischen Vorgehensweise werden die benutzerdefinierte stiftbewegungen verwenden.
 
-Im Rahmen dieser exemplarischen Vorgehensweise, die Bibliothek Gesten bereits mit Gestenhandler-Tool erstellt haben und wurde hinzugefügt, um das Projekt in der Datei **Ressourcen/raw/Gesten**. Mit dieser geringe Wartungsabläufe aus dem Weg können auf die letzte Aktivität in der exemplarischen Vorgehensweise erhalten.
+Im Rahmen dieser exemplarischen Vorgehensweise, die Gesten-Bibliothek bereits mit Gesten-Tool erstellt haben und wurde dem Projekt in der Datei hinzugefügt, **Ressourcen/raw/Gesten**. Mit diesem wenig Organisationsarbeit aus dem Weg können mit der letzten Aktivität in der exemplarischen Vorgehensweise erhalten in ein.
 
--   Fügen Sie eine Layoutdatei mit dem Namen **benutzerdefinierte\_Geste\_layout.axml** auf das Projekt mit dem folgenden Inhalt. Das Projekt enthält bereits alle Bilder der **Ressourcen** Ordner:
+-   Fügen Sie die Layoutdatei **benutzerdefinierte\_Geste\_layout.axml** auf das Projekt mit dem folgenden Inhalt. Das Projekt enthält bereits alle Images in die **Ressourcen** Ordner:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -273,15 +274,15 @@ Im Rahmen dieser exemplarischen Vorgehensweise, die Bibliothek Gesten bereits mi
     </LinearLayout>
     ```
 
--   Als Nächstes fügen Sie dem Projekt eine neue Aktivität hinzu, und nennen Sie sie `CustomGestureRecognizerActivity.cs`. Fügen Sie zwei Nachrichteninstanzvariablen der Klasse hinzu, wie in den folgenden zwei Codezeilen angezeigt:
+-   Als Nächstes fügen Sie dem Projekt eine neue Aktivität, und nennen Sie sie `CustomGestureRecognizerActivity.cs`. Fügen Sie zwei Instanzvariablen wie gezeigt in den folgenden zwei Zeilen Code der Klasse hinzu:
 
     ```csharp
     private GestureLibrary _gestureLibrary;
     private ImageView _imageView;
     ```
 
--   Bearbeiten der `OnCreate` Methode, die dieser Aktivität so, dass die It über den folgenden Code ähnelt. Ermöglicht, nehmen Sie sich zur Erläuterung, was in diesem Code. Führen Sie es als Erstes wird Instanziieren einer `GestureOverlayView` und festlegen, wie die Stammansicht der Aktivität.
-    Wir weisen auch einen Ereignishandler an das `GesturePerformed` -Ereignis `GestureOverlayView`. Als Nächstes es vergrößern die Layoutdatei, die zuvor erstellt wurde, und hinzufügen, die als eine untergeordnete Ansicht von der `GestureOverlayView`. Der letzte Schritt besteht, initialisieren Sie die Variable `_gestureLibrary` und Laden Sie die Datei Gesten aus den Anwendungsressourcen. Wenn die Datei Gesten aus irgendeinem Grund nicht geladen werden kann, ist es nicht viel, was diese Aktivität tun kann, damit er heruntergefahren wird:
+-   Bearbeiten der `OnCreate` Methode dieser Aktivität so, dass die It den folgenden Code ähnelt. Können eine Minute dauern zu erklären, was in diesem Code geht. Das erste, was wir tun wird instanziiert ein `GestureOverlayView` und festlegen, wie die Stammansicht der Aktivität.
+    Weisen wir auch einen Ereignishandler an das `GesturePerformed` Ereignis `GestureOverlayView`. Als Nächstes wir die Layoutdatei, die zuvor erstellte Vergrößerung und hinzufügen, die als eine untergeordnete Ansicht von der `GestureOverlayView`. Der letzte Schritt ist, um die Variable initialisieren `_gestureLibrary` und die Gesten-Datei aus den Anwendungsressourcen zu laden. Wenn die Gesten-Datei aus irgendeinem Grund nicht geladen werden kann, ist gibt es nicht, die diese Aktivität tun kann, damit er heruntergefahren wird:
 
     ```csharp
     protected override void OnCreate(Bundle bundle)
@@ -305,9 +306,9 @@ Im Rahmen dieser exemplarischen Vorgehensweise, die Bibliothek Gesten bereits mi
     }
     ```
 
--   Im letzten Schritt wir die Methode implementieren müssen `GestureOverlayViewOnGesturePerformed` wie im folgenden Codeausschnitt gezeigt. Wenn die `GestureOverlayView` eine Geste, erkennt er einen Rückruf an diese Methode. Wir versuchen, erhalten zuerst ein `IList<Prediction>` Objekte, die durch Aufrufen der Aktion entsprechen `_gestureLibrary.Recognize()`. Verwenden wir ein Bit von LINQ zum Abrufen der `Prediction` , besitzt die höchste Bewertung für die Aktion.
+-   Abschließend wir die Methode implementieren müssen `GestureOverlayViewOnGesturePerformed` wie im folgenden Codeausschnitt gezeigt. Wenn die `GestureOverlayView` eine stiftbewegung, erkennt er einen Rückruf an diese Methode. Das erste, was wir versuchen, Sie erhalten eine `IList<Prediction>` Objekten, die die Bewegung durch Aufrufen von entsprechen `_gestureLibrary.Recognize()`. Wir verwenden ein wenig LINQ zum Abrufen der `Prediction` , bei dem der höchsten Bewertung für die Bewegung.
 
-    Wenn es kein übereinstimmender wurde Gestenhandler mit hoch genug Ergebnis, und der Ereignishandler beendet, ohne jegliche. Andernfalls überprüfen Sie den Namen der Vorhersage und ändern das Bild angezeigt wird, basierend auf den Namen der Bewegung:
+    Wenn es kein passendes wurde Gestenhandler mit einer hohen genügend Bewertung der Ereignishandler und beendet dann ohne Benutzereingriff. Andernfalls wir überprüfen Sie den Namen der Vorhersage, und ändern das Bild angezeigt wird, basierend auf den Namen der Bewegung:
 
     ```csharp
     private void GestureOverlayViewOnGesturePerformed(object sender, GestureOverlayView.GesturePerformedEventArgs gesturePerformedEventArgs)
@@ -338,22 +339,22 @@ Im Rahmen dieser exemplarischen Vorgehensweise, die Bibliothek Gesten bereits mi
     }
     ```
 
--   Führen Sie die Anwendung, und die benutzerdefinierte Aktion Erkennungsmodul Aktivität gestartet. Es sollte etwa wie das folgende Bildschirmfoto aussehen:
+-   Führen Sie die Anwendung, und starten Sie die benutzerdefinierte Stiftbewegungs-Erkennung-Aktivität. Es sollte etwa wie im folgenden Screenshot aussehen:
 
     [![Screenshot mit mir Image überprüfen](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
 
-    Zeichnen Sie nun ein Häkchen auf dem Bildschirm, und die Bitmap angezeigt wird, sollte etwa wie in der nächsten Screenshots aussehen:
+    Zeichnen Sie nun ein Häkchen auf dem Bildschirm, und die angezeigten Bitmap sollte in etwa wie in den nächsten Screenshots aussehen:
 
     [![Gezeichneten Häkchen, Häkchen wird erkannt.](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
 
-    Zeichnen Sie schließlich eine Scribble auf dem Bildschirm. Das Kontrollkästchen sollte wieder auf das ursprüngliche Image ändern, wie im folgenden Screenshots gezeigt:
+    Zeichnen Sie ein Gekritzel auf dem Bildschirm. Das Kontrollkästchen sollte wieder auf das ursprüngliche Image ändern, wie im folgenden Screenshots gezeigt:
 
-    [![Scribble auf dem Bildschirm, ursprungsabbild wird angezeigt.](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
+    [![Scribble auf dem Bildschirm, das ursprüngliche Bild wird angezeigt.](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
-Sie haben jetzt einen Überblick über die Vorgehensweise beim Integrieren von Touch- und Gesten in einer Android-Anwendung mit Xamarin.Android.
+Sie haben nun einen Überblick über die Integration von Berührung und Gesten in einer Android-Anwendung mithilfe von Xamarin.Android.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Android berühren starten (Beispiel)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_start)
-- [Android berühren endgültigen (Beispiel)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_final)
+- [Android Touch starten (Beispiel)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_start)
+- [Android Touch endgültige (Beispiel)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_final)

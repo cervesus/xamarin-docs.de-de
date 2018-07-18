@@ -1,19 +1,20 @@
 ---
-title: Debuggen
-description: Zum Debuggen von Xamarin.iOS-Anwendungen kann der integrierte Debugger in Visual Studio für Mac oder Visual Studio verwendet werden.
+title: Debuggen von Xamarin.iOS-Apps
+description: In diesem Dokument wird beschrieben, wie der Debugger in Visual Studio für Mac oder Visual Studio 2017 zum Debuggen einer Xamarin.iOS-App verwendet werden kann. Dabei werden unter anderem das Festlegen von Breakpoints und das drahtlose Debuggen erläutert.
 ms.prod: xamarin
 ms.assetid: 05460010-99E1-DC38-F855-2D691EF54484
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e2e32170de258f46eb5a926db35bce33c0ca64de
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 494dfad0ba3d26147604ce1bca1de49fac318811
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785433"
 ---
-# <a name="debugging"></a>Debuggen
+# <a name="debugging-xamarinios-apps"></a>Debuggen von Xamarin.iOS-Apps
 
 _Zum Debuggen von Xamarin.iOS-Anwendungen kann der integrierte Debugger in Visual Studio für Mac oder Visual Studio verwendet werden._
 

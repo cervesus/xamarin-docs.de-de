@@ -1,5 +1,5 @@
 ---
-title: Anwendungssymbol
+title: Anwendungssymbol für Xamarin.Mac-Apps
 description: In diesem Artikel wird beschrieben, wie Sie die für das Anwendungssymbol einer Xamarin.Mac-Anwendung erforderlichen Bilder erstellen, wie Sie diese Bilder in eine ICNS-Datei bündeln, und wie Sie das Symbol zu dem Xamarin.Mac-Projekt hinzufügen.
 ms.prod: xamarin
 ms.assetid: 675b9405-d9a7-49f0-94ad-417f10a71d11
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3603e43b4b98d1387c718d0a6010d38aa01440c5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 685a29eea4b03361b185e25ae0e146be7b5e69b6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792033"
 ---
-# <a name="application-icon"></a>Anwendungssymbol
+# <a name="application-icon-for-xamarinmac-apps"></a>Anwendungssymbol für Xamarin.Mac-Apps
 
 _In diesem Artikel wird beschrieben, wie Sie die für das Anwendungssymbol einer Xamarin.Mac-Anwendung erforderlichen Bilder erstellen, wie Sie diese Bilder in eine ICNS-Datei bündeln, und wie Sie das Symbol zu dem Xamarin.Mac-Projekt hinzufügen._
 

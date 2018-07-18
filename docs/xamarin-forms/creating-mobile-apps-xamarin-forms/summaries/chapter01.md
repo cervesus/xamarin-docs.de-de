@@ -1,88 +1,88 @@
 ---
-title: Zusammenfassung der Chapter 1. Wie ist Xamarin.Forms angebracht?
-description: 'Beim Erstellen mobiler Apps mit Xamarin.Forms: Zusammenfassung der Chapter 1. Wie ist Xamarin.Forms angebracht?'
+title: Zusammenfassung der Kapitel 1. Wie Funktion hat xamarin.Forms?
+description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung der Kapitel 1. Wie Funktion hat xamarin.Forms?'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 2897229b0749b1a6ead805d6ad063603a77f8f0d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 58a8976b054ac7fad5c4e24f0561d1b4e468c1b2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240459"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995130"
 ---
-# <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Zusammenfassung der Chapter 1. Wie ist Xamarin.Forms angebracht?
+# <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Zusammenfassung der Kapitel 1. Wie Funktion hat xamarin.Forms?
 
-Einer der am häufigsten unliebsame Aufträge in der Programmierung ist eine Codebasis zwischen zwei Plattformen in eine andere portieren, insbesondere, wenn diese Plattform eine andere Programmiersprache umfasst. Eine Versuchung vorhanden ist, wenn Sie den Code, um es auch Umgestalten portieren, aber wenn beide Plattformen parallel verwaltet werden müssen, klicken Sie dann die Unterschiede zwischen den zwei Codebasen werden künftige Wartung schwieriger machen.
+Einer der am häufigsten unangenehme Aufträge in der Programmierung ist eine Codebasis zwischen zwei Plattformen zu einem anderen portieren, insbesondere dann, wenn die Plattform auf eine andere Programmiersprache umfasst. Beim Portieren von Code zum Gestalten Sie ihn auch Versuchung besteht, aber wenn beide Plattformen gleichzeitig verwaltet werden müssen, klicken Sie dann die Unterschiede zwischen der zwei Codebasen werden erschweren zukünftigen Wartung.
 
 ## <a name="cross-platform-mobile-development"></a>Plattformübergreifende mobile Entwicklung
 
-Dieses Problem ist üblich, wenn mobile Plattformen abzielen. Aktuell existieren zwei wichtigen mobilen Plattformen, die Apple-Familie von iPhones und iPads ausgeführt, das Betriebssystem iOS und Android-Betriebssysteme, die auf einer Vielzahl von Mobiltelefonen und Tablets ausgeführt wird. Eine andere wichtige Plattform ist Microsofts universelle Windows-Plattform (UWP), wodurch ein einzelnes Programm für Windows 10 und Windows 10 Mobile zu entwickeln.
+Dieses Problem ist üblich, bei der mobile Plattformen als Ziel. Derzeit vorhanden sind zwei wichtigen mobilen Plattformen, die Apple-Produktfamilie iPhones und iPads unter iOS-Betriebssystem und Android-Betriebssysteme, die auf einer Vielzahl von Smartphones und Tablets ausgeführt wird. Eine andere wichtige Plattform ist Microsofts universelle Windows Plattform (UWP), wodurch ein einzelnes Programm Windows 10 und Windows 10 Mobile als Ziel.
 
-Muss eine Softwareanbieter, die für diese drei Plattformen entwickeln möchte mit verschiedenen Benutzeroberflächen-Paradigmen, drei anderen entwicklungsumgebungen, drei verschiedene Programmierschnittstellen, verarbeiten und&mdash;vielleicht am häufigsten falsch&mdash; drei verschiedenen Programmiersprachen: Objective-C für iPhone und iPad für Android Java und c# für Windows.
+Muss ein Softwarehersteller, die für diese drei Zielplattformen möchte mit verschiedenen Benutzeroberflächen-Paradigmen, die drei verschiedenen entwicklungsumgebungen, drei verschiedene Programmierschnittstellen, verarbeiten und&mdash;vielleicht am häufigsten falsch&mdash; drei verschiedene Programmiersprachen: Objective-C für das iPhone und iPad, Java für Android und c# für Windows.
 
 ## <a name="the-c-and-net-solution"></a>Die Lösung für c# und .NET
 
-Obwohl Objective-C, Java und c# alle von der Programmiersprache C abgeleitet sind, haben sie durch sehr unterschiedliche Pfade entwickelt. C# ist die aktuellste Version der beiden Sprachen und wurde auf nützliche Weise verzichten wurde. Darüber hinaus c# ist eng in eine gesamte Programmierung Infrastruktur aufgerufen .NET mit Unterstützung für mathematische, Debuggen, Reflektion, Sammlungen, Globalisierung, Datei-e/a, Netzwerk, Sicherheit, threading, Webdienste, die Behandlung von Daten und XML- und JSON, lesen und schreiben.
+Obwohl die Objective-C, Java und C# -Code alle von der Programmiersprache C abgeleitet werden, haben sie durch sehr unterschiedliche Pfade weiterentwickelt. C# ist die aktuellste Version dieser Sprachen und verfügt über sehr praktischerweise Reifen wurde. Darüber hinaus c# ist eng verknüpft mit einer gesamten Programmierung Infrastruktur wird aufgerufen, .NET, die mathematische, Debuggen, Reflektion, Sammlungen, Globalisierung, e/a-, Netzwerk, Sicherheit, threading, Webdienste, Behandlung von Daten und XML unterstützt und JSON-Code lesen und schreiben.
 
-Xamarin bietet derzeit Tools, um die systemeigenen Mac, iOS und Android-APIs mit c# und .NET als Ziel. Diese Tools heißen Xamarin.Mac, Xamarin.iOS und Xamarin.Android, die zusammen als die Xamarin-Plattform bezeichnet. Dies sind die Bibliotheken und Bindungen, die den systemeigenen APIs dieser Plattformen mit .NET Idiome express.
+Xamarin bietet derzeit die Tools, um die native Mac, iOS und Android-APIs mit c# und .NET als Ziel festzulegen. Diese Tools heißen Xamarin.Mac, Xamarin.iOS und Xamarin.Android, die zusammen als der Xamarin-Plattform bezeichnet. Dies sind die Bibliotheken und Bindungen, die Ausdrücken, die nativen APIs dieser Plattformen mit .NET Ausdrücke.
 
-Die Xamarin-Plattform können Entwickler Anwendungen für Mac, iOS oder Android in c# schreiben. Jedoch wenn mehr als eine Plattform verwenden möchten, können sehr sinnvoll, einigen Teilen des Codes zwischen Zielplattformen freizugeben. Dies umfasst das Aufteilen des Programms in plattformabhängigen Code (in der Regel mit der Benutzeroberfläche), und plattformunabhängigen Code, die in der Regel nur die grundlegende .NET Framework erforderlich ist. Diese plattformunabhängigen Code kann entweder in eine Portable Klassenbibliothek (PCL) oder einem freigegebenen Projekt häufig aufgerufen wird, einen freigegebenen Asset-Projekts oder SAP befinden.
+Die Xamarin-Plattform können Entwickler um Anwendungen in c# zu schreiben, für Mac, iOS oder Android. Aber wenn mehr als eine Plattform, damit sehr sinnvoll, einen Teil des Codes für die Zielplattformen freigeben. Dies umfasst das Aufteilen des Programms in plattformabhängigen Code (in der Regel mit der Benutzeroberfläche), und die plattformunabhängigen Code auf, die in der Regel nur grundlegende .NET Framework erforderlich ist. Diese plattformunabhängigen Code kann entweder in eine Portable Klassenbibliothek (PCL) oder ein freigegebenes Projekt, das häufig bezeichnet ein freigegebenes Projekt für Asset oder SAP befinden.
 
 ## <a name="introducing-xamarinforms"></a>Einführung in Xamarin.Forms
 
-Wenn Sie mehrere mobile Plattformen zu verwenden, können Xamarin.Forms noch mehr Codefreigabe. Ein einzelnes Programm für Xamarin.Forms geschrieben kann fünf unterschiedliche Zielplattformen:
+Wenn mehrere mobile Plattformen abzielen, können Xamarin.Forms sogar noch mehr Freigeben von Code. Ein einzelnes Programm geschrieben, die für Xamarin.Forms kann fünf unterschiedliche Zielplattformen:
 
 - iOS für Programme, die auf dem iPhone, iPad und iPod Touch ausgeführt werden soll.
 - Android für Programme, die auf Android-Telefone und Tablets ausgeführt werden soll.
-- die universelle Windows-Plattform Ziel Windows 10 und Windows 10 Mobile
-- der Windows-Laufzeit-API von Windows 8.1
-- der Windows-Laufzeit-API des Windows Phone 8.1
+- die universelle Windows-Plattform, auf das Ziel Windows 10 und Windows 10 Mobile
+- der Windows-Runtime-API von Windows 8.1
+- der Windows-Runtime-API von Windows Phone 8.1
 
-Die aktuelle Xamarin.Forms-Projektmappenvorlagen enthalten keine Projekte von Vorlagen für Windows 8.1 und Windows Phone 8.1-Plattformen.
+Die aktuelle Lösungsvorlagen in Xamarin.Forms enthalten keine Projekte von Vorlagen für Windows 8.1 und Windows Phone 8.1-Plattformen.
 
-Der Großteil einer Xamarin.Forms-Programm ist in einer PCL oder ein SAP vorhanden. Alle Plattformen besteht eine kleine Anwendung-Stub, der in der PCL aufruft. Die Xamarin.Forms-APIs zuordnen in native Steuerelemente für jede Plattform, sodass jede Plattform des Merkmal Erscheinungsbilds verwaltet:
+Der größte Teil einer Xamarin.Forms-Anwendung, die in eine PCL oder eine SAP vorhanden ist. Alle Plattformen besteht eine kleine Anwendung-Stub, der in die PCL aufruft. Die Xamarin.Forms-APIs zuordnen in native Steuerelemente für jede Plattform, sodass jede Plattform das Merkmal Erscheinungsbild verwaltet:
 
-[![Dreifacher Screenshot der Plattform visuelle Elemente, die Freigabe](images/ch01fg03-small.png "Xamarin.Forms Controls on Each Platform")](images/ch01fg03-large.png#lightbox "Xamarin.Forms Controls on Each Platform")
+[![Dreifacher Screenshot der Plattform visuelle Elemente freigeben](images/ch01fg03-small.png "Xamarin.Forms Controls on Each Platform")](images/ch01fg03-large.png#lightbox "Xamarin.Forms Controls on Each Platform")
 
-Die Screenshots von links nach rechts um ein iPhone, einem Android-Telefon und einem Windows 10 Mobile-Telefon anzeigen. Auf jedem Bildschirm enthält die Seite eine Xamarin.Forms [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) für die Anzeige von Text, einen [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) zum Initiieren von Aktionen, eine [ `Switch` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) für Wählen einen Wert ein bzw. aus und ein [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) zum Angeben eines Werts in eine Breite Palette. Alle vier dieser Ansichten sind untergeordnete Elemente des eine [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) auf eine [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/).
+Die Screenshots von links nach rechts zeigen ein iPhone, einem Android-Smartphone und einem Windows 10 Mobile-Telefon. Auf den einzelnen Bildschirmen, die Seite enthält eine Xamarin.Forms [ `Label` ](xref:Xamarin.Forms.Label) zum Anzeigen von Text, ein [ `Button` ](xref:Xamarin.Forms.Button) für das Initiieren von Aktionen, eine [ `Switch` ](xref:Xamarin.Forms.Switch) für Wählen einen/aus-Wert, und ein [ `Slider` ](xref:Xamarin.Forms.Slider) für die Angabe eines Werts in einen durchgehenden Bereich. Alle vier dieser Ansichten sind untergeordnete Elemente von einem [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) auf eine [ `ContentPage` ](xref:Xamarin.Forms.ContentPage).
 
-Auch auf der Seite "angefügt ist eine Xamarin.Forms-Symbolleiste, bestehend aus mehreren [ `ToolbarItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) Objekte. Diese werden als Symbole oben auf IOS- und Android Bildschirme und am unteren Rand des Bildschirms für Windows 10 Mobile.
+Auch auf der Seite angefügt ist eine Xamarin.Forms-Symbolleiste, bestehend aus mehreren [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem) Objekte. Diese werden als Symbole oben auf den IOS- und Android-Bildschirm, und klicken Sie am unteren Rand des Bildschirms für Windows 10 Mobile.
 
-Xamarin.Forms unterstützt auch das XAML, die die Extensible Application Markup Language, die bei Microsoft für mehrere Anwendungsplattformen entwickelt. Alle visuellen Elemente des oben gezeigten Programms werden in XAML definiert, wie in der [ **PlatformVisuals** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01/PlatformVisuals) Beispiel.
+Xamarin.Forms unterstützt auch das XAML, der Extensible Application Markup Language, die bei Microsoft für mehrere Plattformen entwickelt. Alle visuellen Elemente des oben gezeigten-Programms sind in XAML definiert, wie in der [ **PlatformVisuals** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01/PlatformVisuals) Beispiel.
 
-Ein Programm Xamarin.Forms bestimmen Plattform ausgeführt wird und anderen Code entsprechend ausführen. Entwickler können Kundenlisten erfolgreicher, Schreiben benutzerdefinierten Code für die verschiedenen Plattformen und führen Sie diesen Code aus einem Programm Xamarin.Forms auf plattformunabhängige Weise. Entwickler können auch zusätzliche Steuerelemente erstellen, durch das Schreiben von Renderern für jede Plattform.
+Eine Xamarin.Forms-Anwendung kann ermitteln welcher Plattform er ausgeführt wird und anderen Code entsprechend ausführen. Entwickler können weitere leistungsstarke, Schreiben benutzerdefinierten Code für die verschiedenen Plattformen und führen ihn aus einer Xamarin.Forms-Anwendung, auf plattformunabhängige Weise. Entwickler können auch zusätzliche Steuerelemente erstellen, durch das Schreiben von Renderern für jede Plattform.
 
-Während Xamarin.Forms eine geeignete Lösung für Line-of-Business-Anwendungen oder für Prototypen oder machen eine schnelle Proof of Concept Demonstration ist, ist es weniger ideal für Anwendungen, die Vektorgrafiken oder komplexe Touch-Interaktion erforderlich ist.
+Xamarin.Forms ist eine gute Lösung für Line-of-Business-Anwendungen, oder für die Erstellung von Prototypen, und stellen eine kurze Demonstration des Proof of Concept-, es ist nur bedingt geeignet für Anwendungen, die müssen Vektorgrafiken oder komplexe Touch-Interaktionen.
 
-## <a name="your-development-environment"></a>Entwicklungsumgebung vorbereiten
+## <a name="your-development-environment"></a>Entwicklungsumgebung
 
-Die Entwicklungsumgebung, hängt davon ab, welche Plattformen, die Sie abzielen möchten und welche Maschinen verwenden möchten.
+Entwicklungsumgebung verwenden, hängt davon ab, welche Plattformen, die Sie abzielen möchten und was Sie Computer verwenden möchten.
 
-Wenn Sie auf iOS möchten, benötigen Sie einen Mac mit Xcode und Xamarin-Plattform installiert. Android sowie unterstützende erfordert das Installieren von Java und der erforderlichen SDKs. Sie können dann IOS- und Android mithilfe von Visual Studio für Mac abzielen
+Wenn Sie auf iOS abzielen möchten, benötigen Sie einen Mac mit Xcode und Xamarin-Plattform installiert. Unterstützung von Android sowie erfordert die Installation von Java und der erforderlichen SDKs. Sie können dann iOS und Android mithilfe von Visual Studio für Mac als Ziel
 
-Installieren von Visual Studio können Sie auf dem PC iOS, Android und alle Windows-Plattformen als Ziel. Allerdings erfordert die Zielplattform iOS von Visual Studio noch einen Mac mit Xcode und Xamarin-Plattform installiert.
+Installieren von Visual Studio Ihnen auf dem PC zu iOS, Android und alle Windows-Plattformen abzielen. Für iOS in Visual Studio erfordert jedoch immer noch einen Mac mit Xcode und Xamarin-Plattform installiert.
 
-Sie können die Programme, die entweder einem echten Gerät über USB an den Computer angeschlossen, oder auf einem Simulator testen.
+Sie können Programme auf entweder einem echten Gerät über USB an den Computer angeschlossen ist, oder auf einem Simulator testen.
 
 ## <a name="installation"></a>Installation
 
-Vor dem Erstellen, und erstellen eine Xamarin.Forms-Anwendung, sollten Sie versuchen, erstellen und separat erstellen Sie eine iOS-Anwendung, einer Android-Anwendung und einer UWP-Anwendung, abhängig von den Plattformen, Ziel und die Entwicklungsumgebung werden soll.
+Vor dem Erstellen und eine Xamarin.Forms-Anwendung erstellen, sollten Sie zum Erstellen und separat erstellen Sie eine iOS-Anwendung, eine Android-Anwendung und eine UWP-Anwendung, abhängig von den Plattformen, die Sie Ziel und die Entwicklungsumgebung vorbereiten möchten.
 
-Xamarin und Microsoft-Websites enthalten Informationen über die Vorgehensweise:
+Die Xamarin und Microsoft-Websites enthalten Informationen zur Vorgehensweise hierfür:
 
 - [Erste Schritte mit iOS](~/ios/get-started/index.md)
 - [Erste Schritte mit Android](~/android/get-started/index.md)
-- [Windows Dev Center](http://dev.windows.com)
+- [Windows Developer Center](http://dev.windows.com)
 
-Sie können einmal erstellen und Projekte für diesen einzelnen Plattformen ausgeführt werden, sollten Sie kein Problem erstellen und Ausführen einer Xamarin.Forms-Anwendung haben.
+Sie können einmal erstellen und Ausführen von Projekten für diese einzelne Plattformen, müssen Sie kein Problem erstellen und Ausführen einer Xamarin.Forms-Anwendung.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Chapter 1 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch01-Apr2016.pdf)
-- [Chapter 1-Beispiel](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)
+- [Kapitel 1 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch01-Apr2016.pdf)
+- [Kapitel 1-Beispiel](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)

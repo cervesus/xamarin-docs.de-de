@@ -1,30 +1,30 @@
 ---
-title: Bindung aus einer Xamarin.Forms-ControlTemplate
-description: Vorlagenbindungen können Binden von Inhaltssteuerelementen in einer Steuerelementvorlage auf Daten an der öffentlichen Eigenschaften aktivieren Eigenschaftswerte für Steuerelemente in der Steuerelementvorlage problemlos geändert werden. Dieser Artikel veranschaulicht, wie mit vorlagenbindungen Binden von Daten aus einer Steuerelementvorlage ausgeführt wird.
+title: Bindung von einer Xamarin.Forms-ControlTemplate
+description: Vorlagenbindungen können binden Steuerelemente in einer Steuerelementvorlage auf Daten an öffentliche Eigenschaften, aktivieren die Eigenschaftswerte für Steuerelemente in der Steuerelementvorlage problemlos geändert werden. In diesem Artikel veranschaulicht, wie mit vorlagenbindungen aus einer Steuerelementvorlage eine Datenbindung durchgeführt wird.
 ms.prod: xamarin
 ms.assetid: 794A663C-3A8D-438A-BD02-8E97C919B55F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 99d798ce2c74da0cf7fa0d497128db628a12ead5
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 86de2ad6009365b3debbe1a2310651002b023219
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241580"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995564"
 ---
-# <a name="binding-from-a-xamarinforms-controltemplate"></a>Bindung aus einer Xamarin.Forms-ControlTemplate
+# <a name="binding-from-a-xamarinforms-controltemplate"></a>Bindung von einer Xamarin.Forms-ControlTemplate
 
-_Vorlagenbindungen können Binden von Inhaltssteuerelementen in einer Steuerelementvorlage auf Daten an der öffentlichen Eigenschaften aktivieren Eigenschaftswerte für Steuerelemente in der Steuerelementvorlage problemlos geändert werden. Dieser Artikel veranschaulicht, wie mit vorlagenbindungen Binden von Daten aus einer Steuerelementvorlage ausgeführt wird._
+_Vorlagenbindungen können binden Steuerelemente in einer Steuerelementvorlage auf Daten an öffentliche Eigenschaften, aktivieren die Eigenschaftswerte für Steuerelemente in der Steuerelementvorlage problemlos geändert werden. In diesem Artikel veranschaulicht, wie mit vorlagenbindungen aus einer Steuerelementvorlage eine Datenbindung durchgeführt wird._
 
-Ein [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) wird verwendet, um die Eigenschaft eines Steuerelements in einer Steuerelementvorlage auf eine bindbare Eigenschaft für das übergeordnete Element des Binden der *Ziel* anzeigen, die die Steuerelementvorlage besitzt. Z. B. anstelle eines definieren des angezeigten Elementtexts [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) Instanzen innerhalb der [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/), können Sie eine vorlagenbindung Binden der [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) Eigenschaft bindbare Eigenschaften, die die anzuzeigende Text zu definieren.
+Ein [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding) wird verwendet, um die Eigenschaft eines Steuerelements in einer Steuerelementvorlage auf eine bindbare Eigenschaft für das übergeordnete Element des binden die *Ziel* anzeigen, die die Vorlage des Steuerelements besitzt. Z. B. statt der definieren des Texts von [ `Label` ](xref:Xamarin.Forms.Label) Instanzen innerhalb der [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate), können Sie eine vorlagenbindung zum Binden der [ `Label.Text` ](xref:Xamarin.Forms.Label.Text) Eigenschaft bindbare Eigenschaften, die den anzuzeigenden Text definieren.
 
-Ein [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) ähnelt dem einer vorhandenen [ `Binding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Binding/), außer dass die *Quelle* von einer `TemplateBinding` immer automatisch auf das übergeordnete Element des festgelegt die *Ziel* anzeigen, die die Steuerelementvorlage besitzt. Beachten Sie jedoch, dass die Verwendung einer `TemplateBinding` außerhalb von einem [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) wird nicht unterstützt.
+Ein [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding) ist vergleichbar mit einer vorhandenen [ `Binding` ](xref:Xamarin.Forms.Binding), außer dass die *Quelle* von einer `TemplateBinding` immer automatisch festgelegt ist, das dem übergeordneten der *Ziel* anzeigen, die die Vorlage des Steuerelements besitzt. Beachten Sie jedoch, dass die Verwendung einer `TemplateBinding` außerhalb von einem [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) wird nicht unterstützt.
 
-## <a name="creating-a-templatebinding-in-xaml"></a>Erstellen eine TemplateBinding in XAML
+## <a name="creating-a-templatebinding-in-xaml"></a>Erstellen ein TemplateBinding-Element in XAML
 
-In XAML eine [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) erstellt, wobei die [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.TemplateBindingExtension/) Markuperweiterung, wie im folgenden Codebeispiel gezeigt:
+In XAML eine [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding) wurde mit der [ `TemplateBinding` ](xref:Xamarin.Forms.Xaml.TemplateBindingExtension) Markuperweiterung, wie im folgenden Codebeispiel gezeigt:
 
 ```xaml
 <ControlTemplate x:Key="TealTemplate">
@@ -37,7 +37,7 @@ In XAML eine [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamari
 </ControlTemplate>
 ```
 
-Statt set der [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) Eigenschaften für statischen Text, die Eigenschaften können vorlagenbindungen zum Binden an die bindungsfähigen Eigenschaften für das übergeordnete Element des der *Ziel* anzeigen, der Besitzer ist, die [ `ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/). Beachten Sie jedoch, dass die vorlagenbindungen zu binden `Parent.HeaderText` und `Parent.FooterText`, anstatt `HeaderText` und `FooterText`. Grund dafür ist in diesem Beispiel die bindungsfähigen Eigenschaften definiert werden, auf der zweiten übergeordneten Ebene der dem *Ziel* zeigen an, anstatt das übergeordnete Element, wie im folgenden Codebeispiel wird veranschaulicht:
+Anstatt die [ `Label.Text` ](xref:Xamarin.Forms.Label.Text) Eigenschaften in statischen Text, die Eigenschaften können vorlagenbindungen zum Binden an bindbare Eigenschaften auf das übergeordnete Element der *Ziel* anzeigen, der Besitzer ist, der [ `ControlTemplate`](xref:Xamarin.Forms.ControlTemplate). Beachten Sie jedoch, dass die Bindung von vorlagenbindungen an `Parent.HeaderText` und `Parent.FooterText`, statt `HeaderText` und `FooterText`. Dies ist, da in diesem Beispiel, das die bindbaren Eigenschaften, auf die zweite übergeordnete definiert sind der *Ziel* anzuzeigen sein können, anstatt das übergeordnete Element, wie im folgenden Codebeispiel wird veranschaulicht:
 
 ```xaml
 <ContentPage ...>
@@ -47,7 +47,7 @@ Statt set der [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamari
 </ContentPage>
 ```
 
-Die *Quelle* der Vorlage Bindung immer automatisch auf das übergeordnete Element des festgelegt die *Ziel* anzeigen, das die Steuerelementvorlage besitzt, die hier ist die [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) -Instanz. Die Vorlage, die Bindung verwendet die [ `Parent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Parent/) das übergeordnete Element des zurückzugebende Eigenschaft der `ContentView` -Instanz, die ist die [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) Instanz. Aus diesem Grund mithilfe einer [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) in der [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) zum Binden an `Parent.HeaderText` und `Parent.FooterText` sucht bindbaren auf definierten Eigenschaften der `ContentPage`, als Im folgenden Codebeispiel gezeigt:
+Der *Quelle* der Vorlage Bindung wird immer automatisch festgelegt, das übergeordnete Element des der *Ziel* anzeigen, das die Vorlage für ein Steuerelement besitzt, die hier ist der [ `ContentView` ](xref:Xamarin.Forms.ContentView) -Instanz. Die Vorlage, die Bindung verwendet die [ `Parent` ](xref:Xamarin.Forms.Element.Parent) das übergeordnete Element der zurückzugebende Eigenschaft der `ContentView` -Instanz, die ist die [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) Instanz. Daher wird die Verwendung einer [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding) in die [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) zum Binden an `Parent.HeaderText` und `Parent.FooterText` sucht die bindbaren Eigenschaften, die auf definiert sind die `ContentPage`, als Im folgenden Codebeispiel veranschaulicht:
 
 ```csharp
 public static readonly BindableProperty HeaderTextProperty =
@@ -64,13 +64,13 @@ public string FooterText {
 }
 ```
 
-Daraus ergibt sich die Darstellung in den folgenden Screenshots dargestellt:
+Dadurch wird die Darstellung, die in den folgenden Screenshots gezeigt:
 
-![](template-binding-images/teal-theme.png "Blaugrünen Steuerelementvorlage Vorlagenbindungen verwenden")
+![](template-binding-images/teal-theme.png "Blaugrünen Steuerelementvorlage, die mithilfe von Vorlagenbindungen")
 
-## <a name="creating-a-templatebinding-in-c35"></a>Erstellen eine TemplateBinding in C&#35;
+## <a name="creating-a-templatebinding-in-c35"></a>Erstellen ein TemplateBinding-Element, in C&#35;
 
-In c# ist ein [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) wird erstellt, indem Sie mit der `TemplateBinding` -Konstruktor, wie im folgenden Codebeispiel wird veranschaulicht:
+In c# eine [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding) wird erstellt, indem Sie mit der `TemplateBinding` -Konstruktor, wie im folgenden Codebeispiel wird veranschaulicht:
 
 ```csharp
 class TealTemplate : Grid
@@ -88,7 +88,7 @@ class TealTemplate : Grid
 }
 ```
 
-Statt set der [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) Eigenschaften für statischen Text, die Eigenschaften können vorlagenbindungen zum Binden an die bindungsfähigen Eigenschaften für das übergeordnete Element des der *Ziel* anzeigen, der Besitzer ist, die [ `ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/). Die vorlagenbindung wird erstellt, mit der [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) -Methode angeben einer [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) Instanz als zweiten Parameter. Beachten Sie, die an die vorlagenbindungen binden `Parent.HeaderText` und `Parent.FooterText`, da die bindungsfähigen Eigenschaften auf der zweiten übergeordneten Ebene des definiert sind die *Ziel* zeigen an, anstatt das übergeordnete Element, wie im folgenden Codebeispiel wird veranschaulicht:
+Anstatt die [ `Label.Text` ](xref:Xamarin.Forms.Label.Text) Eigenschaften in statischen Text, die Eigenschaften können vorlagenbindungen zum Binden an bindbare Eigenschaften auf das übergeordnete Element der *Ziel* anzeigen, der Besitzer ist, der [ `ControlTemplate`](xref:Xamarin.Forms.ControlTemplate). Die vorlagenbindung wird erstellt, mit der [ `SetBinding` ](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) -Methode angeben einer [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding) Instanz als zweiten Parameter. Beachten Sie, die an die vorlagenbindungen binden `Parent.HeaderText` und `Parent.FooterText`, da die bindbaren Eigenschaften, auf die zweite übergeordnete definiert sind der *Ziel* anzuzeigen sein können, anstatt das übergeordnete Element, wie im folgenden Codebeispiel wird veranschaulicht:
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -108,13 +108,13 @@ public class HomePageCS : ContentPage
 }
 ```
 
-Die bindungsfähigen Eigenschaften werden definiert, auf die `ContentPage`, wie zuvor beschrieben.
+Die bindbare Eigenschaften definiert die `ContentPage`, wie bereits kurz erwähnt.
 
-### <a name="binding-a-bindableproperty-to-a-viewmodel-property"></a>Binden einer BindableProperty an eine ViewModel-Eigenschaft
+### <a name="binding-a-bindableproperty-to-a-viewmodel-property"></a>Binden eine BindableProperty an eine ViewModel-Eigenschaft
 
-Wie bereits erwähnt, eine [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) Eigenschaft eines Steuerelements in einer Steuerelementvorlage bindet, auf eine bindbare Eigenschaft für das übergeordnete Element von der *Ziel* anzeigen, die die Steuerelementvorlage besitzt. Diese bindungsfähigen Eigenschaften können dagegen Eigenschaften in ViewModels gebunden werden.
+Wie bereits erwähnt, ein [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding) bindet die Eigenschaft eines Steuerelements in einer Steuerelementvorlage auf eine bindbare Eigenschaft für das übergeordnete Element des der *Ziel* anzeigen, die die Vorlage des Steuerelements besitzt. Im Gegenzug können diese bindbaren Eigenschaften auf Eigenschaften in ViewModels gebunden werden.
 
-Das folgende Codebeispiel definiert zwei Eigenschaften auf einem ViewModel:
+Das folgende Codebeispiel definiert zwei Eigenschaften auf ein "ViewModel" an:
 
 ```csharp
 public class HomePageViewModel
@@ -124,7 +124,7 @@ public class HomePageViewModel
 }
 ```
 
-Die `HeaderText` und `FooterText` ViewModel-Eigenschaften zu, wie im folgenden Beispiel der Verwendung von XAML-Code dargestellt gebunden werden können:
+Die `HeaderText` und `FooterText` ViewModel-Eigenschaften zu, wie in den folgenden XAML-Codebeispiel gezeigt gebunden werden können:
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:SimpleTheme;assembly=SimpleTheme"
@@ -138,7 +138,7 @@ Die `HeaderText` und `FooterText` ViewModel-Eigenschaften zu, wie im folgenden B
 </ContentPage>
 ```
 
-Die `HeaderText` und `FooterText` bindbare Eigenschaften gebunden sind, um die `HomePageViewModel.HeaderText` und `HomePageViewModel.FooterText` Eigenschaften, die aufgrund der Einstellung der [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) mit einer Instanz von der `HomePageViewModel` Klasse. Insgesamt dadurch Steuerelementeigenschaften in der [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) an [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) Instanzen auf der [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), die wiederum Binden an ViewModel-Eigenschaften.
+Die `HeaderText` und `FooterText` bindbare Eigenschaften gebunden sind, um die `HomePageViewModel.HeaderText` und `HomePageViewModel.FooterText` Eigenschaften, die aufgrund der Einstellung der [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) mit einer Instanz von der `HomePageViewModel` Klasse. Alles in allem dadurch Steuerelementeigenschaften in der [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) gebunden wird [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) auf Instanzen der [ `ContentPage` ](xref:Xamarin.Forms.ContentPage), die wiederum Binden an Eigenschaften von "ViewModel".
 
 Der äquivalente C#-Code ist im folgenden Codebeispiel zu sehen:
 
@@ -156,20 +156,20 @@ public class HomePageCS : ContentPage
 }
 ```
 
-Weitere Informationen zum Binden von Daten in ViewModels finden Sie unter [aus Datenbindungen, MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
+Weitere Informationen zur Datenbindung in ViewModels finden Sie unter [von Datenbindungen zu MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel gezeigten mithilfe von vorlagenbindungen zum Binden von Daten aus einer Steuerelementvorlage ausführen. Vorlagenbindungen können Binden von Inhaltssteuerelementen in einer Steuerelementvorlage auf Daten an der öffentlichen Eigenschaften aktivieren Eigenschaftswerte für Steuerelemente in der Steuerelementvorlage problemlos geändert werden.
+In diesem Artikel veranschaulicht die Verwendung von vorlagenbindungen zum Ausführen von Datenbindung in einer Steuerelementvorlage. Vorlagenbindungen können binden Steuerelemente in einer Steuerelementvorlage auf Daten an öffentliche Eigenschaften, aktivieren die Eigenschaftswerte für Steuerelemente in der Steuerelementvorlage problemlos geändert werden.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Data Binding-Grundlagen](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-- [Aus Datenbindungen zu MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
-- [Einfache Design mit Template Binding (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebinding/)
-- [Einfache Design mit Template Binding und ViewModel (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebindingandviewmodel/)
-- [TemplateBinding](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)
-- [ControlTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)
-- [ContentView](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)
+- [Grundlagen der Datenbindung](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+- [Von Datenbindungen zu MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [Einfaches Design mit Vorlagenbindung (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebinding/)
+- [Einfaches Design mit Vorlagenbindung und "ViewModel" (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebindingandviewmodel/)
+- [TemplateBinding](xref:Xamarin.Forms.TemplateBinding)
+- [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)
+- [ContentView](xref:Xamarin.Forms.ContentView)

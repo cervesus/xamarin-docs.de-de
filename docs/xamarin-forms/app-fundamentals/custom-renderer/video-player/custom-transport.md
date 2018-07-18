@@ -1,28 +1,28 @@
 ---
-title: Benutzerdefinierte video Transport-Steuerelemente
-description: In diesem Artikel wird erläutert, wie benutzerdefinierte Steuerelemente in einer video playeranwendung mithilfe von Xamarin.Forms implementiert wird.
+title: Benutzerdefinierte videotransport-Steuerelemente
+description: In diesem Artikel wird erläutert, wie benutzerdefinierte Steuerelemente in einer video-Player-Anwendung mithilfe von Xamarin.Forms implementiert wird.
 ms.prod: xamarin
 ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a20c68d5f86dad852a4425206846292c1c6c5838
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 84870de28ffd30b2d29fb5d8fbea815e1fd0d9c4
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241659"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996437"
 ---
-# <a name="custom-video-transport-controls"></a>Benutzerdefinierte video Transport-Steuerelemente
+# <a name="custom-video-transport-controls"></a>Benutzerdefinierte videotransport-Steuerelemente
 
-Die Transport-Steuerelemente von einem Videoplayer umfassen die Schaltflächen, die die Funktionen ausführen **wiedergeben**, **anhalten**, und **beenden**. Diese Schaltflächen sind mit vertrauten Symbole anstelle von Text, in der Regel identifiziert und die **wiedergeben** und **anhalten** Funktionen zu einer Schaltfläche in der Regel kombiniert.
+Die Transport-Steuerelemente, der ein Videoplayer enthalten, die Schaltflächen, die die Funktionen ausführen **spielen**, **anhalten**, und **beenden**. Diese Schaltflächen werden mit vertrauten Symbole anstelle von Text in der Regel identifiziert und die **spielen** und **anhalten** Funktionen werden in der Regel in eine Schaltfläche kombiniert.
 
-Wird standardmäßig die `VideoPlayer` zeigt Transportsteuerelemente von jeder Plattform unterstützt werden. Beim Festlegen der `AreTransportControlsEnabled` Eigenschaft `false`, diese Steuerelemente werden unterdrückt. Dann können Sie steuern die `VideoPlayer` programmgesteuert oder stellen Sie eine eigene Steuerelemente bereit.
+In der Standardeinstellung die `VideoPlayer` zeigt Transportsteuerelemente, die von jeder Plattform unterstützt werden. Beim Festlegen der `AreTransportControlsEnabled` Eigenschaft `false`, diese Steuerelemente werden unterdrückt. Dann können Sie steuern die `VideoPlayer` programmgesteuert oder stellen Sie Ihre eigenen Transport-Steuerelemente.
 
-## <a name="the-play-pause-and-stop-methods"></a>Die Wiedergabe, Pause und Stop-Methoden
+## <a name="the-play-pause-and-stop-methods"></a>Die Wiedergabe, Anhalten und beenden-Methoden
 
-Die `VideoPlayer` Klasse definiert drei Methoden, die mit dem Namen `Play`, `Pause`, und `Stop` bereit, die durch das Auslösen von Ereignissen implementiert:
+Die `VideoPlayer` Klasse definiert drei Methoden, die mit dem Namen `Play`, `Pause`, und `Stop` , werden durch das Auslösen von Ereignissen implementiert:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -54,11 +54,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-Ereignishandler für diese Ereignisse werden festgelegt, indem die `VideoPlayerRenderer` -Klasse in jede Plattform, wie unten dargestellt:
+Ereignishandler für diese Ereignisse werden festgelegt, indem die `VideoPlayerRenderer` Klasse in jede Plattform, wie unten dargestellt:
 
-### <a name="ios-transport-implementations"></a>iOS transport Implementierungen
+### <a name="ios-transport-implementations"></a>iOS-Implementierungen transport
 
-Der iOS-Version `VideoPlayerRenderer` verwendet die `OnElementChanged` -Methode zum Festlegen der Handler für diese drei Ereignisse bei der `NewElement` Eigenschaft ist nicht `null` und trennt die Ereignishandler bei `OldElement` ist nicht `null`:
+Die iOS-Version von `VideoPlayerRenderer` verwendet die `OnElementChanged` Methode zum Festlegen der Handler für diese drei Ereignisse bei der `NewElement` Eigenschaft ist nicht `null` und trennt die Ereignishandler beim `OldElement` ist nicht `null`:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -107,11 +107,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Die Ereignishandler werden durch Aufrufen von Methoden für implementiert die `AVPlayer` Objekt. Es ist keine `Stop` Methode für die `AVPlayer`, sodass es simuliert wird, indem Sie das Video anhalten und verschieben die Position, an den Anfang.
+Die Ereignishandler werden durch Aufrufen von Methoden für implementiert die `AVPlayer` Objekt. Es gibt keine `Stop` -Methode für `AVPlayer`, sodass es simuliert wird, durch das Video angehalten, und verschieben die Position, an den Anfang.
 
-### <a name="android-transport-implementations"></a>Android-Transport-Implementierungen
+### <a name="android-transport-implementations"></a>Android transportimplementierungen
 
-Die Android-Implementierung ähnelt der iOS-Implementierung. Die Handler für die drei Funktionen werden festgelegt, wenn `NewElement` nicht `null` und wann getrennt `OldElement` nicht `null`:
+Die Android-Implementierung ist ähnlich wie die iOS-Implementierung. Der Handler für die drei Funktionen werden festgelegt, wenn `NewElement` nicht `null` und wenn trennen `OldElement` nicht `null`:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -158,11 +158,11 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-Die drei Funktionen aufrufen durch definierte Methoden `VideoView`.
+Die drei Funktionen aufrufen definierte Methoden `VideoView`.
 
-### <a name="uwp-transport-implementations"></a>Uwp-Transport-Implementierungen
+### <a name="uwp-transport-implementations"></a>UWP-Transport-Implementierungen
 
-Die uwp-Implementierung der drei Transportfunktionen ist sehr ähnlich, IOS- und Android-Implementierungen:
+Die UWP-Implementierung der drei Transportfunktionen ähnelt IOS- und Android-Implementierungen:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -208,13 +208,13 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-## <a name="the-video-player-status"></a>Der Videoplayer-status
+## <a name="the-video-player-status"></a>Der video-Player-status
 
-Implementieren der **wiedergeben**, **anhalten**, und **beenden** Funktionen ist nicht ausreichend für die Transport-Steuerelemente unterstützen. Häufig die **wiedergeben** und **anhalten** Befehle werden implementiert, mit der Schaltfläche "Angleichen", die ändert seine Darstellung, um anzugeben, ob das Video derzeit mit unterschiedlichen "oder" angehalten wird. Darüber hinaus darf nicht die Schaltfläche auch aktiviert werden, wenn das Video noch nicht geladen wurde.
+Implementieren der **spielen**, **anhalten**, und **beenden** Funktionen ist nicht ausreichend für die Transport-Steuerelemente unterstützen. Häufig die **spielen** und **anhalten** Befehle werden implementiert, mit der Schaltfläche mit den gleichen seine Darstellung ändert, um anzugeben, ob das Video derzeit während der Wiedergabe oder angehalten ist. Darüber hinaus darf nicht die Schaltfläche auch aktiviert werden, wenn das Video wurde noch nicht geladen.
 
-Diese Anforderungen impliziert, dass der Videoplayer muss eine aktuelle Status angezeigt wird, zur Verfügung, wenn sie Wiedergabe oder angehalten oder noch nicht bereit für die Wiedergabe eines Videos ist. (Drei Plattformen unterstützen auch die Eigenschaften, die an, ob das Video angehalten werden kann, oder auf eine neue Position verschoben werden kann, aber diese Eigenschaften gelten für Streamingvideos anstatt Videodateien wiedergeben, werden, damit sie nicht in unterstützt werden die `VideoPlayer` hier beschrieben.)
+Diese Anforderungen impliziert, dass der Videoplayer muss einem aktuellen Status, der angibt, zur Verfügung, wenn sie angehalten oder wird von Spielen oder noch nicht bereit für die Wiedergabe eines Videos ist. (Drei Plattformen unterstützen auch die Eigenschaften, die angibt, ob das Video angehalten werden kann, oder an eine neue Position verschoben werden kann, aber diese Eigenschaften gelten für Streamingvideo anstelle von Videodateien wiedergeben, werden, damit sie nicht in unterstützt werden die `VideoPlayer` hier beschrieben.)
 
-Die **VideoPlayerDemos** -Projekt enthält eine `VideoStatus` Enumeration mit drei Membern:
+Die **VideoPlayerDemos** -Projekt enthält eine `VideoStatus` Enumeration mit drei Elementen:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -228,7 +228,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-Die `VideoPlayer` Klasse definiert eine reine Real bindbare Eigenschaft mit dem Namen `Status` vom Typ `VideoStatus`. Diese Eigenschaft wird als schreibgeschützt definiert, da es nur von der Plattform-Renderer festgelegt werden soll:
+Die `VideoPlayer` -Klasse definiert eine reine Real bindbare Eigenschaft, die mit dem Namen `Status` des Typs `VideoStatus`. Diese Eigenschaft wird als schreibgeschützt definiert, da sie nur von der Plattform-Renderer festgelegt werden soll:
 
 ```csharp
 using System;
@@ -260,9 +260,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-In der Regel ist, müsste eine bindbare Eigenschaft schreibgeschützt sind und ein privates `set` Zugriffsmethode auf die `Status` Eigenschaft, damit Sie von innerhalb der Klasse festgelegt werden kann. Für eine `View` Ableitung vom Renderer, jedoch unterstützt die Eigenschaft muss festgelegt werden von außerhalb der Klasse, aber nur von der Plattform-Renderer.
+In der Regel würde eine bindbare Eigenschaft schreibgeschützt besitzen einen privaten `set` Accessors für den `Status` Eigenschaft, damit Sie von innerhalb der Klasse festgelegt werden kann. Für eine `View` Ableitung, die von Renderern, jedoch unterstützt die Eigenschaft muss festgelegt werden von außerhalb der Klasse, aber nur von der Plattform-Renderer.
 
-Aus diesem Grund wird eine andere Eigenschaft mit dem Namen definiert `IVideoPlayerController.Status`. Dies ist eine explizite Implementierung und mit einem möglich erfolgt die `IVideoPlayerController` Schnittstelle, die die `VideoPlayer` -Klasse implementiert:
+Aus diesem Grund wird eine andere Eigenschaft mit dem Namen definiert `IVideoPlayerController.Status`. Dies ist eine explizite schnittstellenimplementierung und erfolgt durch die `IVideoPlayerController` Schnittstelle, die die `VideoPlayer` -Klasse implementiert:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -276,11 +276,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-Dies ist ähnlich wie die [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) steuern verwendet der [ `IWebViewController` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IWebViewController/) Schnittstelle zum Implementieren der `CanGoBack` und `CanGoForward` Eigenschaften. (Finden Sie unter den Quellcode der [ `WebView` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/WebView.cs) und seine-Renderer für Details.)
+Dies ist ähnlich wie die [ `WebView` ](xref:Xamarin.Forms.WebView) -Steuerelement verwendet die [ `IWebViewController` ](xref:Xamarin.Forms.IWebViewController) Schnittstelle zum Implementieren der `CanGoBack` und `CanGoForward` Eigenschaften. (Finden Sie unter den Quellcode der [ `WebView` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/WebView.cs) und der Renderer für Details.)
 
-Dies ermöglicht es einer Klasse außerhalb `VideoPlayer` festzulegende der `Status` Eigenschaft durch Verweisen auf die `IVideoPlayerController` Schnittstelle. (Sie müssen den Code in Kürze Siehe.) Die Eigenschaft kann von anderen Klassen als auch festgelegt werden, aber es ist unwahrscheinlich, dass versehentlich festgelegt werden. Allem voran sind die `Status` Eigenschaft kann nicht über eine Bindung festgelegt werden.
+Dadurch kann für eine Klasse außerhalb `VideoPlayer` Festlegen der `Status` Eigenschaft durch Verweisen auf die `IVideoPlayerController` Schnittstelle. (Sie müssen den Code in Kürze sehen.) Die Eigenschaft kann von anderen Klassen auch festgelegt werden, aber es ist unwahrscheinlich, dass versehentlich festgelegt werden. Vor allem die `Status` Eigenschaft nicht festgelegt werden, bis eine Datenbindung.
 
-Zur Unterstützung der Renderer beim Schutz von dies `Status` -Eigenschaft wurde aktualisiert, die `VideoPlayer` Klasse definiert ein `UpdateStatus` Ereignis, das ausgelöst jeder Zehntelsekunde:
+Bei der die Renderer beim Schutz von dieser `Status` -Eigenschaft wurde aktualisiert, die `VideoPlayer` -Klasse definiert ein `UpdateStatus` Ereignis, das ausgelöst jeder Zehntel Sekunde:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -304,7 +304,7 @@ namespace FormsVideoLibrary
 
 ### <a name="the-ios-status-setting"></a>Die Einstellung der iOS-status
 
-IOS `VideoPlayerRenderer` legt einen Handler für die `UpdateStatus` Ereignis (und trennt dieser Handler Wenn des zugrunde liegenden `VideoPlayer` Element nicht vorhanden ist), und den Ereignishandler verwendet, um festzulegen der `Status` Eigenschaft:
+IOS `VideoPlayerRenderer` legt einen Handler für die `UpdateStatus` Ereignis (und trennt dieser Handler bei den zugrunde liegenden `VideoPlayer` Element ist nicht vorhanden), und den Handler verwendet, um festzulegen der `Status` Eigenschaft:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -358,11 +358,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Zwei Eigenschaften des `AVPlayer` zugegriffen werden muss: die [ `Status` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) Eigenschaft vom Typ `AVPlayerStatus` und [ `TimeControlStatus` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) Eigenschaft vom Typ `AVPlayerTimeControlStatus`. Beachten Sie, dass die `Element` Eigenschaft (also die `VideoPlayer`) umgewandelt werden muss, um `IVideoPlayerController` festzulegende der `Status` Eigenschaft.
+Zwei Eigenschaften des `AVPlayer` zugegriffen werden muss: die [ `Status` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) Eigenschaft vom Typ `AVPlayerStatus` und [ `TimeControlStatus` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) Eigenschaft vom Typ `AVPlayerTimeControlStatus`. Beachten Sie, dass die `Element` Eigenschaft (d.h. die `VideoPlayer`) umgewandelt werden muss `IVideoPlayerController` Festlegen der `Status` Eigenschaft.
 
 ### <a name="the-android-status-setting"></a>Die Einstellung für Android-status
 
-Die [ `IsPlaying` ](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/) Eigenschaft von der Android `VideoView` ist ein boolescher Wert, der nur gibt an, ob das Video mit unterschiedlichen "oder" angehalten. Zum bestimmen, ob die `VideoView` können weder Play noch das Video anhalten noch, die `Prepared` -Ereignis `VideoView` müssen behandelt werden. Diese zwei Handler werden festgelegt, der `OnElementChanged` -Methode, und getrennt, während die `Dispose` außer Kraft setzen:
+Die [ `IsPlaying` ](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/) Eigenschaft von der Android `VideoView` ist ein boolescher Wert, der nur gibt an, ob das Video wieder oder wurde angehalten. Bestimmt, ob die `VideoView` weder Play können auch das Video aber, die `Prepared` Ereignis `VideoView` müssen verarbeitet werden. In diesen zwei Handler festgelegt sind das `OnElementChanged` -Methode und getrennte während der die `Dispose` außer Kraft setzen:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -415,7 +415,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-Die `UpdateStatus` Handler verwendet die `isPrepared` Feld (festgelegt der `Prepared` Handler) und die `IsPlaying` festzulegende Eigenschaft der `Status` Eigenschaft:
+Die `UpdateStatus` Ereignishandler verwendet die `isPrepared` Feld (Legen Sie in der `Prepared` Handler) und die `IsPlaying` festzulegende Eigenschaft der `Status` Eigenschaft:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -447,9 +447,9 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-### <a name="the-uwp-status-setting"></a>Die uwp-Status-Einstellung
+### <a name="the-uwp-status-setting"></a>Die Einstellung der UWP-status
 
-UWP `VideoPlayerRenderer` nutzt die `UpdateStatus` Ereignis jedoch nicht benötigt für die Einstellung der `Status` Eigenschaft. Die `MediaElement` definiert eine [ `CurrentStateChanged` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentStateChanged) Ereignis, das den Renderer ermöglicht beim benachrichtigt werden, die [ `CurrentState` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentState) -Eigenschaft geändert hat. Die Eigenschaft wurde getrennt, der `Dispose` außer Kraft setzen:
+Die UWP `VideoPlayerRenderer` nutzt die `UpdateStatus` Ereignis, aber es nicht benötigt wird für die Einstellung der `Status` Eigenschaft. Die `MediaElement` definiert eine [ `CurrentStateChanged` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentStateChanged) Ereignis, mit dem den Renderer bei Zustellung der [ `CurrentState` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentState) -Eigenschaft geändert hat. Die Eigenschaft wird getrennt, der `Dispose` außer Kraft setzen:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -487,7 +487,7 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-Die `CurrentState` -Eigenschaft ist vom Typ [ `MediaElementState` ](/uwp/api/windows.ui.xaml.media.mediaelementstate), und ordnet Sie einfach im `VideoStatus`:
+Die `CurrentState` Eigenschaft ist vom Typ [ `MediaElementState` ](/uwp/api/windows.ui.xaml.media.mediaelementstate), und ordnet Sie ganz einfach in `VideoStatus`:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -520,25 +520,25 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="play-pause-and-stop-buttons"></a>Wiedergabe, Pause und Beenden von Schaltflächen
 
-Verwenden von Unicode-Zeichen für symbolische **wiedergeben**, **anhalten**, und **beenden** Bilder ist problematisch. Die [sonstige technische](https://unicode-table.com/en/blocks/miscellaneous-technical/) Abschnitt im Unicode-Standard definiert drei Symbolzeichen scheinbar für diesen Zweck geeignet. Diese lauten wie folgt:
+Mithilfe von Unicode-Zeichen für symbolische **spielen**, **anhalten**, und **beenden** Images ist problematisch. Die [verschiedene technische](https://unicode-table.com/en/blocks/miscellaneous-technical/) Abschnitt der Unicode-Standard definiert drei Symbolzeichen scheinbar für diesen Zweck geeignet. Diese lauten wie folgt:
 
 - 0x23F5 (schwarze mittlere nach rechts zeigendes Dreieck) oder &#x23F5; für **wiedergeben**
 - 0x23F8 (doppelter senkrechter Strich) oder &#x23F8; für **anhalten**
-- 0x23F9 (schwarze Quadrat) oder &#x23F9; für **beenden**
+- 0x23F9 (schwarzes Quadrat) oder &#x23F9; für **beenden**
 
-Unabhängig davon wie diese Symbole in Ihrem Browser angezeigt werden (und verschiedene Browsern unterschiedlich behandeln), sie werden nicht angezeigt konsistent auf Plattformen von Xamarin.Forms unterstützt. Auf IOS- und uwp-Geräten die **anhalten** und **beenden** Zeichen haben eine grafische Darstellung des mit einem blauen Hintergrund 3D und einem weißen Vordergrund. Dies ist die Groß-/Kleinschreibung auf Android-Geräten, auf dem das Symbol einfach Blau ist nicht. Allerdings die 0x23F5 Codepunkt für **wiedergeben** besitzt, dass die gleiche Darstellung auf UWP, und es auch nicht auf IOS- und Android unterstützt wird.
+Unabhängig davon, ob wie diese Symbole, die in Ihrem Browser angezeigt werden (und die verschiedenen Browser verarbeiten sie unterschiedlich), sie werden nicht angezeigt konsistent auf Xamarin.Forms unterstützten Plattformen. Auf IOS- und UWP-Geräte die **anhalten** und **beenden** Zeichen lang sein, eine grafische Darstellung, mit einem blauen Hintergrund für 3D und einen weißen Vordergrund. Ist dies nicht der Fall unter Android, in dem das Symbol einfach Blau ist. Allerdings die 0x23F5 Codepunkt für **spielen** besitzt keine, dass die gleiche Darstellung auf der UWP und nicht einmal unter iOS und Android unterstützt wird.
 
-Aus diesem Grund kann die 0x23F5 Codepoint für verwendet werden **wiedergeben**. Ein guter Ersatz ist:
+Aus diesem Grund nicht für den Codepunkt 0x23F5 verwendet werden **spielen**. Ein guter Ersatz ist:
 
 - 0x25B6 (schwarze nach rechts zeigendes Dreieck) oder &#x25B6; für **wiedergeben**
 
-Dies wird von allen drei Plattformen unterstützt, außer dass es sich um eine einfache schwarzen Dreiecks handelt, die keinen die 3D-Darstellung des ähnelt **anhalten** und **beenden**. Eine Möglichkeit besteht darin, den 0x25B6 Codepoint mit einem variant zu befolgen:
+Dies wird von allen drei Plattformen unterstützt, außer dass es sich um eine einfache schwarze Dreieck handelt, die nicht die 3D-Darstellung der ähnelt **anhalten** und **beenden**. Eine Möglichkeit besteht darin, folgen den 0x25B6 Codepoint mit einem variant-Code:
 
-- 0x25B6 gefolgt von 0xFE0F (Variant 16) oder &#x25B6; &#xFE0F; für **wiedergeben**
+- 0x25B6 gefolgt von 0xFE0F (16-Variante) oder &#x25B6; &#xFE0F; für **wiedergeben**
 
-Dies ist im unten gezeigten Markup verwendet. Bei iOS kann dadurch die **wiedergeben** gleichen 3D-Darstellung als symbol der **anhalten** und **beenden** Schaltflächen, aber die Variante funktioniert nicht unter Android und UWP.
+Dies ist im nachstehenden Markup verwendet werden. Unter iOS, die sie erhalten die **spielen** symbol 3D genauso dargestellt wie die **anhalten** und **beenden** Schaltflächen, aber die Variante, die unter Android und UWP funktioniert nicht.
 
-Die **Custom-Transporteigenschaften** Seite legt die **AreTransportControlsEnabled** Eigenschaft **"false"** und enthält eine `ActivityIndicator` angezeigt, wenn das Video geladen wird, und zwei Schaltflächen. `DataTrigger` Objekte werden zum Aktivieren und Deaktivieren der `ActivityIndicator` und die Schaltflächen aus, und die erste Schaltfläche zwischen wechseln **wiedergeben** und **anhalten**:
+Die **Custom-Transporteigenschaften** Seite legt die **AreTransportControlsEnabled** Eigenschaft **"false"** sowie eine `ActivityIndicator` angezeigt, wenn das Video geladen wird, und zwei Schaltflächen. `DataTrigger` Objekte werden zum Aktivieren und Deaktivieren der `ActivityIndicator` und die Schaltflächen und zum Wechseln zwischen der ersten Schaltfläche **spielen** und **anhalten**:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -611,9 +611,9 @@ Die **Custom-Transporteigenschaften** Seite legt die **AreTransportControlsEnabl
 </ContentPage>
 ```
 
-Datentrigger werden ausführlich im Artikel beschrieben [Trigger Data](~/xamarin-forms/app-fundamentals/triggers.md#data).
+Datentrigger werden ausführlich im Artikel beschrieben [Datentrigger](~/xamarin-forms/app-fundamentals/triggers.md#data).
 
-Die Code-Behind-Datei hat die Handler für die Schaltfläche `Clicked` Ereignisse:
+Die Code-Behind-Datei hat die Handler für die Schaltfläche mit den `Clicked` Ereignisse:
 
 ```csharp
 namespace VideoPlayerDemos
@@ -645,17 +645,17 @@ namespace VideoPlayerDemos
 }
 ```
 
-Da `AutoPlay` auf festgelegt ist `false` in der **CustomTransport.xaml** -Datei müssen Sie die drücken die **wiedergeben** -Schaltfläche, wenn es aktiviert wird, um das Video zu starten. Die Schaltflächen werden definiert, sodass ihre textentsprechungen die Unicode-Zeichen, die weiter oben erläuterten begleitet werden. Bei der Wiedergabe des Videos, haben die Schaltflächen eine konsistente Darstellung auf jeder Plattform:
+Da `AutoPlay` nastaven NA hodnotu `false` in die **CustomTransport.xaml** -Datei müssen Sie drücken die **spielen** -Schaltfläche, wenn es aktiviert wird, um das Video zu beginnen. Die Schaltflächen werden definiert, sodass die Unicode-Zeichen, die weiter oben erläuterten durch ihre textentsprechungen begleitet werden. Schaltflächen sind eine konsistente Darstellung auf jeder Plattform, wenn die Wiedergabe:
 
-[![Wiedergabe von benutzerdefinierten Transportbindungselementen](custom-transport-images/customtransportplaying-small.png "benutzerdefinierten Transports wiedergeben")](custom-transport-images/customtransportplaying-large.png#lightbox "benutzerdefinierten Transports wiedergeben")
+[![Wiedergabe von benutzerdefinierten Transport](custom-transport-images/customtransportplaying-small.png "benutzerdefinierten Transports wiedergeben")](custom-transport-images/customtransportplaying-large.png#lightbox "benutzerdefinierten Transports wiedergeben")
 
-Jedoch unter Android und universelle Windows-Plattform die **wiedergeben** Schaltfläche sieht sehr unterschiedlich, wenn das Video angehalten wird:
+Aber unter Android und UWP die **spielen** Schaltfläche sieht anders, wenn das Video angehalten wird:
 
 [![Benutzerdefinierter Transport angehalten](custom-transport-images/customtransportpaused-small.png "benutzerdefinierter Transport angehalten")](custom-transport-images/customtransportpaused-large.png#lightbox "benutzerdefinierter Transport angehalten")
 
-In einer produktionsanwendung sollten Sie möglicherweise eigene Bitmap-Images für die Schaltflächen zu verwenden, um visuelle Einheitlichkeit zu erzielen.
+In einer produktionsanwendung sollten Sie wahrscheinlich Ihre eigenen Images Bitmap für die Schaltflächen zu verwenden, um visuelle Einheitlichkeit zu erzielen.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Video Player Demos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Videodemos Player (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

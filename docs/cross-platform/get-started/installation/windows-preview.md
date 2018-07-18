@@ -1,15 +1,17 @@
 ---
 title: Installieren der Xamarin-Vorschauversion unter Windows
+description: In diesem Artikel wird beschrieben, wie Sie eine Vorschauversion von Xamarin in Visual Studio 2017 installieren, indem Sie den Kanal für die Veröffentlichung von Vorschauversionen verwenden.
 ms.prod: xamarin
 ms.assetid: 9F730444-06E8-4B3F-8A19-CA95CD484FFA
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2018
-ms.openlocfilehash: 20b9bbfcdcc698f19c6400cd738ba7f6d5db7e44
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 12a661a7cb0e92046e56c5c2ece6e8504252ca10
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066857"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>Installieren der Xamarin-Vorschauversion unter Windows
 
@@ -19,7 +21,7 @@ Wie in den vorherigen Versionen werden die Alpha- und die Betaversion sowie stab
 - **Vorschauversion**: entspricht den _Alpha_-, und _Beta_-Kanälen in Visual Studio für Mac
 
 > [!TIP] 
-> Um Vorabfeatures auszuprobieren, können Sie die Option [Download the Visual Studio 2017 Preview installer](https://www.visualstudio.com/vs/preview/) (Installer für Visual Studio 2017-Vorschauversion herunterladen) wählen. Damit können Sie **Vorschauversionen** von Visual Studio parallel zur stabilen (Vorschau-)Version installieren. Weitere Informationen zu Neuerungen in Visual Studio 2017 finden Sie in den [Versionsanmerkungen](/visualstudio/releasenotes/vs2017-preview-relnotes).
+> Um Vorabfeatures auszuprobieren, können Sie die Option [Download the Visual Studio 2017 Preview installer](https://visualstudio.microsoft.com/vs/preview/) (Installer für Visual Studio 2017-Vorschauversion herunterladen) wählen. Damit können Sie **Vorschauversionen** von Visual Studio parallel zur stabilen (Vorschau-)Version installieren. Weitere Informationen zu Neuerungen in Visual Studio 2017 finden Sie in den [Versionsanmerkungen](/visualstudio/releasenotes/vs2017-preview-relnotes).
 
 Die Vorschauversion von Visual Studio enthält möglicherweise die zugehörigen Vorschauversionen von Xamarin-Funktionen. Zu diesen gehören:
 
@@ -27,7 +29,8 @@ Die Vorschauversion von Visual Studio enthält möglicherweise die zugehörigen 
 - Xamarin.iOS
 - Xamarin.Android
 - Xamarin Profiler
-- Xamarin Workbooks/Inspector
+- Xamarin Workbooks
+- Xamarin Inspector
 - Xamarin Remote iOS Simulator
 
 Der folgende Screenshot des **Vorschauversionsinstallers** zeigt sowohl Optionen für die Vorschauversion als auch für das Release (beachten Sie die grauen Versionsnummern: Version 15.0 ist das Release und Version 15.1 ist die Vorschauversion):

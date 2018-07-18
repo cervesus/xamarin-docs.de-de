@@ -1,6 +1,6 @@
 ---
-title: Hallo, Mac
-description: Dieser Leitfaden führt Sie durch die Erstellung einer ersten Xamarin.Mac-App und stellt dabei die Entwicklungstoolkette inklusive Visual Studio für Mac, Xcode und Interface Builder vor. Zudem werden Outlets und Aktionen eingeführt, die UI-Steuerelemente für Code verfügbar machen. Zuletzt wird veranschaulicht, wie Sie eine Xamarin.Mac-Anwendung erstellen, ausführen und testen.
+title: 'Hallo, Mac: Exemplarische Vorgehensweise'
+description: In diesem Dokument wird das Erstellen einer Xamarin.Mac-App veranschaulicht, zudem ist eine Einführung in Visual Studio für Mac, Xcode und Interface Builder enthalten. Dabei wird das Verfügbarmachen von UI-Steuerelementen für Code über Outlets und Aktionen sowie das Erstellen, Ausführen und Testen einer Xamarin.Mac-App erläutert.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 37D0E9E6-979B-7069-B3BE-C5F0AF99BA72
@@ -8,13 +8,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: e5d87d42765480c97da392cf07b6599108895321
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 438bb8141818ccdb1aaf2fa604707d2fb7601cd5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792784"
 ---
-# <a name="hello-mac"></a>Hallo, Mac
+# <a name="hello-mac--walkthrough"></a>Hallo, Mac: Exemplarische Vorgehensweise
 
 Mit Xamarin.Mac können Sie vollständig native Mac-Apps in C# und .NET mit den gleichen OS X-Bibliotheken und -Schnittstellensteuerelementen entwickeln, die auch bei der Entwicklung von *Objective-C* und *Xcode* verwendet werden. Da Xamarin.Mac direkt in Xcode integriert wird, können Entwickler mit _Interface Builder_ von Xcode Benutzeroberflächen von Anwendungen erstellen (optional geht dies auch direkt in C#-Code).
 
@@ -98,7 +99,7 @@ Schauen Sie sich die Dateien im Projekt an:
 -   `Info.plist`: Diese Datei enthält App-Eigenschaften wie z.B. den Namen und das Symbol der Anwendung usw.
 -   `Entitlements.plist`: Diese Datei enthält die Berechtigungen der Anwendung und ermöglicht den Zugriff auf z.B. Sandboxing- und iCloud-Support.
 -  `Main.storyboard`: In dieser Datei wird die Benutzeroberfläche (Fenster und Menüs) einer Anwendung definiert, und es werden die Verbindungen zwischen Fenstern mit Segues beschrieben. Storyboards sind XML-Dateien, die eine Definition der Ansichten enthalten (Benutzeroberflächenelemente). Diese Datei kann von Interface Builder in Xcode erstellt und verwaltet werden.
--   `ViewController.cs`: Dies ist der Controller des Hauptfensters. Controller werden in einem anderen Artikel ausführlicher besprochen. Für den Moment reicht es, sich den Controller als Hauptmodul einer jeden Ansicht vorzustellen.
+-   `ViewController.cs`: Dies ist der Controller des Hauptfensters. Controller werden in einem anderen Artikel ausführlicher besprochen. Für den Moment reicht es, sich den Controller als Haupt-Engine einer jeden Ansicht vorzustellen.
 -   `ViewController.designer.cs`: Diese Datei enthält Grundlagencode, der bei der Integration in die Benutzeroberfläche des Hauptbildschirms hilft.
 
 In den folgenden Abschnitten werden diese Dateien kurz behandelt. Sie werden später ausführlicher besprochen. Allerdings wird empfohlen, sich jetzt schon grundlegend mit ihnen vertraut zu machen.

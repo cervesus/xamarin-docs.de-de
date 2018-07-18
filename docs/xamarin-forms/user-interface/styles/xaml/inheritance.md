@@ -1,30 +1,30 @@
 ---
-title: Stil-Vererbung in Xamarin.Forms
-description: Stile können von anderen Formatvorlagen Duplizierung zu reduzieren, und aktivieren die Wiederverwendung erben. In diesem Artikel wird erläutert, wie Stil Vererbung in einer Xamarin.Forms-Anwendung ausgeführt wird.
+title: Stilvererbung in Xamarin.Forms
+description: Stile können andere Stile Duplizierung zu reduzieren, und aktivieren die Wiederverwendung erben. In diesem Artikel wird erläutert, wie stilvererbung in einer Xamarin.Forms-Anwendung ausgeführt wird.
 ms.prod: xamarin
 ms.assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: aff47769fad065e03de4c62af1be1d67b903eb0a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f8cf3287c6d713d91a0217bd30ca2ee927534aea
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245093"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995332"
 ---
-# <a name="style-inheritance-in-xamarinforms"></a>Stil-Vererbung in Xamarin.Forms
+# <a name="style-inheritance-in-xamarinforms"></a>Stilvererbung in Xamarin.Forms
 
-_Stile können von anderen Formatvorlagen Duplizierung zu reduzieren, und aktivieren die Wiederverwendung erben._
+_Stile können andere Stile Duplizierung zu reduzieren, und aktivieren die Wiederverwendung erben._
 
-## <a name="style-inheritance-in-xaml"></a>Stil-Vererbung in XAML
+## <a name="style-inheritance-in-xaml"></a>Stilvererbung in XAML
 
-Stil-Vererbung wird ausgeführt, indem die [ `Style.BasedOn` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BasedOn/) Eigenschaft zu einem vorhandenen [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/). In XAML, dies erfolgt durch Festlegen der `BasedOn` Eigenschaft, um eine `StaticResource` Markuperweiterung, die ein zuvor erstelltes verweist auf `Style`. In c# ist dies erfolgt durch Festlegen der `BasedOn` Eigenschaft, um eine `Style` Instanz.
+Stilvererbung wird ausgeführt, indem die [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn) Eigenschaft zu einem vorhandenen [ `Style` ](xref:Xamarin.Forms.Style). In XAML, erfolgt dies durch Festlegen der `BasedOn` Eigenschaft, um eine `StaticResource` Markuperweiterung, die ein zuvor erstelltes verweist `Style`. In C# geschrieben, erfolgt dies durch Festlegen der `BasedOn` Eigenschaft, um eine `Style` Instanz.
 
-Formatvorlagen, die von einer Basis-Formatvorlage erben zählen [ `Setter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/) Instanzen für neue Eigenschaften oder verwenden, um Formatvorlagen aus dem Basis-Stil zu überschreiben. Darüber hinaus müssen Formatvorlagen, die von einer Basis-Formatvorlage erben Ziel verwenden denselben Typ oder ein Typ, der den Typ, der das Ziel des grundlegenden Format abgeleitet. Z. B. wenn ein Basis-Formatvorlage [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) Instanzen, Stile, die auf der Basis-Formatvorlage basieren paketaktualisierungen `View` Instanzen oder Typen, die Ableitung der `View` Klasse, z. B. [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) und [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) Instanzen.
+Formatvorlagen, die von einer grundlegenden Stil erben zählen [ `Setter` ](xref:Xamarin.Forms.Setter) Instanzen für die neuen Eigenschaften verwenden, um die Stile, die von den grundlegenden Stil zu überschreiben. Formatvorlagen, die von einer grundlegenden Stil erben müssen darüber hinaus verweisen, den gleichen Typ oder ein Typ, der vom Ziel von den grundlegenden Stil Typ abgeleitet ist. Angenommen, einem grundlegenden Stil für [ `View` ](xref:Xamarin.Forms.View) -Instanzen, Stile, die auf den grundlegenden Stil basieren können als Ziel `View` Instanzen oder von abgeleiteten Typen dem `View` Klasse, z. B. [ `Label` ](xref:Xamarin.Forms.Label) und [ `Button` ](xref:Xamarin.Forms.Button) Instanzen.
 
-Der folgende Code zeigt *explizite* formatieren Vererbung in einer XAML-Seite:
+Der folgende Code veranschaulicht *explizite* formatieren Sie Vererbung in einer XAML-Seite:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.StyleInheritancePage" Title="Inheritance" Icon="xaml.png">
@@ -60,22 +60,22 @@ Der folgende Code zeigt *explizite* formatieren Vererbung in einer XAML-Seite:
 </ContentPage>
 ```
 
-Die `baseStyle` Ziele [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) Instanzen, und legt die [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) und [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) Eigenschaften. Die `baseStyle` nicht direkt für alle Steuerelemente festgelegt ist. Stattdessen `labelStyle` und `buttonStyle` erben, zusätzliche bindbare Eigenschaftswerte festlegen. Die `labelStyle` und `buttonStyle` gelten dann für die [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) Instanzen und [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) Instanz durch Festlegen ihrer [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) Eigenschaften. Daraus ergibt sich die Darstellung in den folgenden Screenshots dargestellt:
+Die `baseStyle` Ziele [ `View` ](xref:Xamarin.Forms.View) Instanzen aus, und legt sie fest der [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) und [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) Eigenschaften. Die `baseStyle` nicht direkt für alle Steuerelemente festgelegt ist. Stattdessen `labelStyle` und `buttonStyle` erben, Festlegen von Werten für zusätzliche bindbare Eigenschaft. Die `labelStyle` und `buttonStyle` gelten dann für die [ `Label` ](xref:Xamarin.Forms.Label) Instanzen und [ `Button` ](xref:Xamarin.Forms.Button) Instanz durch Festlegen ihrer [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaften. Dadurch wird die Darstellung, die in den folgenden Screenshots gezeigt:
 
 [![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
 > [!NOTE]
-> Eine implizite Formatvorlage aus einem expliziten Stil abgeleitet werden, aber ein expliziter Stil kann nicht in einem impliziten Stil abgeleitet werden.
+> Ein impliziter Stil von expliziter Stil abgeleitet werden kann, aber ein expliziter Stil kann nicht in ein impliziter Stil abgeleitet werden.
 
-### <a name="respecting-the-inheritance-chain"></a>Die Vererbungskette ressourcenbezogene
+### <a name="respecting-the-inheritance-chain"></a>Unter Beachtung der Vererbungskette
 
-Ein Format kann nur von Stilen auf derselben Ebene oder höher, erben in der Hierarchie anzeigen. Dies bedeutet Folgendes:
+Ein Stil kann nur von Stilen auf derselben Ebene oder höher, erben in der Hierarchie anzeigen. Dies bedeutet Folgendes:
 
-- Eine Anwendungsressource Ebene kann nur von anderen Ebene Anwendungsressourcen erben.
-- Ebene Anwendungsressourcen und andere Ebene Page-Ressourcen kann eine Ebene Seitenressource erben.
-- Eine Steuerelement-Level-Ressource, die von Ebene Anwendungsressourcen, Ebene Page-Ressourcen und andere Ressourcen der Steuerelement-Ebenen erben kann.
+- Eine Ressource auf Ebene kann nur von anderen auf Anwendungsressourcen erben.
+- Eine Seite-Ressource auf kann auf Ressourcen der Anwendung und andere Ebene Seitenressourcen erben.
+- Eine Steuerelement-Ressource auf kann auf Anwendungsressourcen, Ebene Seitenressourcen und andere Ebene Steuerung von Ressourcen erben.
 
-Diese Vererbungskette wird in das folgende Codebeispiel veranschaulicht:
+Diese Vererbungskette wird im folgenden Codebeispiel veranschaulicht:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.StyleInheritancePage" Title="Inheritance" Icon="xaml.png">
@@ -104,11 +104,11 @@ Diese Vererbungskette wird in das folgende Codebeispiel veranschaulicht:
 </ContentPage>
 ```
 
-In diesem Beispiel `labelStyle` und `buttonStyle` Ebene Ressourcen sind zwar `baseStyle` ist eine Seite-Level-Ressource. Allerdings while `labelStyle` und `buttonStyle` Vererben `baseStyle`, es ist nicht möglich, dass `baseStyle` zu vererben `labelStyle` oder `buttonStyle`, da ihre jeweiligen Positionen in der Hierarchie anzeigen.
+In diesem Beispiel `labelStyle` und `buttonStyle` sind Ressourcen der Ebene, während `baseStyle` wird eine Seite-Ressource auf. Allerdings while `labelStyle` und `buttonStyle` erben `baseStyle`, es ist nicht möglich, dass `baseStyle` das erben `labelStyle` oder `buttonStyle`, da ihre jeweiligen Positionen in der Hierarchie von Inhaltsansichten.
 
-## <a name="style-inheritance-in-c35"></a>Stil-Vererbung in C&#35;
+## <a name="style-inheritance-in-c35"></a>Style-Vererbung in C&#35;
 
-Der entsprechende C#-Seite, in dem [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) Instanzen wird direkt zugewiesen der [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) Eigenschaften der Steuerelemente erforderlich, wird im folgenden Codebeispiel gezeigt:
+Der entsprechende C#-Seite, in denen [ `Style` ](xref:Xamarin.Forms.Style) Instanzen direkt zugewiesen sind die [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaften der Steuerelemente erforderlich, wird im folgenden Codebeispiel wird angezeigt:
 
 ```csharp
 public class StyleInheritancePageCS : ContentPage
@@ -151,18 +151,18 @@ public class StyleInheritancePageCS : ContentPage
 }
 ```
 
-Die `baseStyle` Ziele [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) Instanzen, und legt die [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) und [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) Eigenschaften. Die `baseStyle` nicht direkt für alle Steuerelemente festgelegt ist. Stattdessen `labelStyle` und `buttonStyle` erben, zusätzliche bindbare Eigenschaftswerte festlegen. Die `labelStyle` und `buttonStyle` gelten dann für die [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) Instanzen und [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) Instanz durch Festlegen ihrer [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) Eigenschaften.
+Die `baseStyle` Ziele [ `View` ](xref:Xamarin.Forms.View) Instanzen aus, und legt sie fest der [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) und [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) Eigenschaften. Die `baseStyle` nicht direkt für alle Steuerelemente festgelegt ist. Stattdessen `labelStyle` und `buttonStyle` erben, Festlegen von Werten für zusätzliche bindbare Eigenschaft. Die `labelStyle` und `buttonStyle` gelten dann für die [ `Label` ](xref:Xamarin.Forms.Label) Instanzen und [ `Button` ](xref:Xamarin.Forms.Button) Instanz durch Festlegen ihrer [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaften.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Stile können von anderen Formatvorlagen Duplizierung zu reduzieren, und aktivieren die Wiederverwendung erben. Stil-Vererbung wird ausgeführt, indem die [ `Style.BasedOn` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BasedOn/) Eigenschaft zu einem vorhandenen [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/).
+Stile können andere Stile Duplizierung zu reduzieren, und aktivieren die Wiederverwendung erben. Stilvererbung wird ausgeführt, indem die [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn) Eigenschaft zu einem vorhandenen [ `Style` ](xref:Xamarin.Forms.Style).
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [XAML-Markuperweiterungen](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Grundlegende Formate (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
-- [Arbeiten mit Formatvorlagen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [Stil](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Setter-Methode](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [Einfache Stile (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+- [Arbeiten mit Stilen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [Stil](xref:Xamarin.Forms.Style)
+- [Set-Methode](xref:Xamarin.Forms.Setter)

@@ -1,29 +1,30 @@
 ---
-title: Behandlung von Problemen des Google Android-Emulators
-description: Erkennen und Beheben von Problemen des Google Android-Emulators
+title: Android-Emulator-Problembehandlung
+description: In diesem Artikel wird erläutert, wie Sie Probleme diagnostizieren und umgehen, die bei der Verwendung des Android-Emulators auftreten können.
 ms.prod: xamarin
-ms.assetid: 4B05C3C5-E1F6-47A9-B098-C31E630194F6
+ms.assetid: 4F053CC9-9378-47CB-8002-978A6558C4D0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/04/2018
-ms.openlocfilehash: 001fc21a519a251715d24b43acfdd4251b5fbc91
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 06/22/2018
+ms.openlocfilehash: 241f38cbfe013776b2e36b8102ae4b90cf610d80
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935281"
 ---
-# <a name="google-android-emulator-troubleshooting"></a>Behandlung von Problemen des Google Android-Emulators
+# <a name="android-emulator-troubleshooting"></a>Android-Emulator-Problembehandlung
 
-In diesem Artikel werden die häufigsten Warnmeldungen und Probleme des Google Android-Emulators und entsprechende Lösungen vorgestellt.
- 
+_In diesem Artikel werden die gängigsten Warnmeldungen und Probleme beschrieben, die beim Konfigurieren und Ausführen des Android-Emulators auftreten können. Außerdem finden Sie hier Tipps und Hinweise zum Umgehen von Problemen._
+
 <a name="perfwarn" />
 
 ## <a name="performance-warnings"></a>Leistungswarnungen
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Ab Visual Studio 2017 Version 15.4 wird möglicherweise ein Leistungsdialogfeld angezeigt, wenn Sie Ihre App zum ersten Mal im Android SDK Emulator bereitstellen. Diese Warnungsdialogfelder werden unten erklärt.
+Ab Visual Studio 2017 Version 15.4 wird möglicherweise ein Dialogfeld mit einer Leistungswarnung angezeigt, wenn Sie Ihre App zum ersten Mal im Android-Emulator bereitstellen. Diese Warnungsdialogfelder werden unten erklärt.
 
 ### <a name="computer-does-not-contain-an-intel-procesor"></a>Computer Does Not Contain an Intel Processor (Der Computer enthält keinen Intel-Prozessor).
 
@@ -67,8 +68,7 @@ SERVICE_NAME: intelhaxm
     WAIT_HINT          : 0x0
 ```
 
-
-Wenn der **Status** nicht auf **Wird ausgeführt** festgelegt ist, sehen Sie sich [How to Use the Intel Hardware Accelerated Execution Manager (So verwenden Sie Intel Hardware Accelerated Execution Manager (HAXM))](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator) an, um das Problem zu beheben.
+Wenn `STATE` nicht auf `RUNNING` festgelegt ist, erfahren Sie unter [How to Use the Intel Hardware Accelerated Execution Manager (Verwenden von Intel Hardware Accelerated Execution Manager)](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator), wie Sie das Problem beheben.
 
 
 ### <a name="other-failures"></a>Andere Fehler
@@ -84,9 +84,10 @@ Wenn Sie es vorziehen, keine Leistungswarnungen zu erhalten, können Sie diese d
 
 [![Deaktivieren von Warnungen zu AVD-Beschleunigung](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png#lightbox)
 
+
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-Ab Visual Studio für Mac, Build 7.2 (Build 559) oder höher wird möglicherweise ein Leistungsdialogfeld angezeigt, wenn Sie Ihre App zum ersten Mal im Google Android-Emulator bereitstellen. Diese Warnungsdialogfelder werden unten erklärt.
+Ab Release 7.2 (Build 559) von Visual Studio für Mac wird möglicherweise ein Dialogfeld mit einer Leistungswarnung angezeigt, wenn Sie Ihre App zum ersten Mal im Android-Emulator bereitstellen. Diese Warnungsdialogfelder werden unten erklärt.
 
 ### <a name="haxm-is-not-installed"></a>HAXM is Not Installed (HAXM ist nicht installiert).
 
@@ -109,17 +110,11 @@ Dieses Dialogfeld wird angezeigt, wenn der Emulator aus unbekannten Gründen nic
 
 -----
 
-
-## <a name="solutions-to-common-problems"></a>Lösungen für häufige Probleme
-
-Viele beim Google Android-Emulator häufig auftretende Probleme können behoben werden, indem Sie die Konfiguration Ihres Computers ändern oder zusätzliche Software installieren. Im folgenden Abschnitt werden diese Probleme sowie mögliche Lösungen beschrieben.
-
-
-### <a name="deployment-issues"></a>Probleme bei der Bereitstellung
+## <a name="deployment-issues"></a>Probleme bei der Bereitstellung
 
 Wenn Sie eine Fehlermeldung erhalten, dass das APK auf dem Emulator nicht installiert werden konnte, oder dass Android Debug Bridge (**adb**) nicht ausgeführt werden konnte, stellen Sie sicher, dass das Android SDK eine Verbindung mit Ihrem Emulator herstellen kann. Gehen Sie dazu folgendermaßen vor:
 
-1. Starten Sie den Emulator über den **AVD-Manager** (Android Virtual Device). Klicken Sie dazu auf Ihr virtuelles Gerät und anschließend auf **Start**.
+1. Starten Sie den Emulator über den **Android Device Manager** (wählen Sie Ihr virtuelles Gerät aus, und klicken Sie auf **Start**).
 
 2. Öffnen Sie eine Eingabeaufforderung, und wechseln Sie zum Ordner, in dem **adb** installiert ist. Unter Windows kann dies z.B. **C:\\Programme (x86)\\Android\\android-sdk\\platform-tools\\adb.exe** sein.
 
@@ -139,48 +134,40 @@ Wenn Sie eine Fehlermeldung erhalten, dass das APK auf dem Emulator nicht instal
 5. Wenn der Emulator nicht in dieser Liste angezeigt wird, starten Sie den **Android SDK Manager**, wenden Sie alle Updates an, und versuchen Sie erneut, den Emulator zu starten.
 
 
-
-### <a name="haxm-issues"></a>Probleme mit HAXM
+## <a name="haxm-issues"></a>Probleme mit HAXM
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Wenn der Google Android-Emulator nicht ordnungsgemäß gestartet wird, liegt dies häufig an Problemen mit HAXM. Probleme mit HAXM werden häufig durch Konflikte mit anderen Virtualisierungstechnologien, durch falsche Einstellungen oder durch einen veralteten HAXM-Treiber verursacht.
+Wenn der Android-Emulator nicht ordnungsgemäß gestartet wird, liegt dies häufig an Problemen mit HAXM. Probleme mit HAXM werden häufig durch Konflikte mit anderen Virtualisierungstechnologien, durch falsche Einstellungen oder durch einen veralteten HAXM-Treiber verursacht.
 
 <a name="virt-conflicts" />
 
-#### <a name="haxm-virtualization-conflicts"></a>HAXM-Virtualisierungskonflikte
+### <a name="haxm-virtualization-conflicts"></a>HAXM-Virtualisierungskonflikte
 
 HAXM kann mit anderen Technologien, die die Virtualisierung verwenden, in Konflikt stehen, wie etwa Hyper-V, Windows Device Guard und einige Antivirussoftware:
 
-- **Hyper-V** &ndash; Wenn Sie Windows mit aktiviertem Hyper-V verwenden, führen Sie die Schritte in [Deaktivieren von Hyper-V](#disable-hyperv) durch.
+- **Hyper-V:** Wenn Sie eine Version von Windows vor dem **Windows 10-Update vom April 2018 (Build 1803)** verwenden und Hyper-V aktiviert ist, führen Sie die Schritte unter [Deaktivieren von Hyper-V](#disable-hyperv) aus.
 
 - **Device Guard** &ndash; Device Guard und Credential Guard können verhindern, dass Hyper-V unter Windows deaktiviert werden kann. Informationen zum Deaktivieren von Device Guard und Credential Guard finden Sie unter [Deaktivieren von Device Guard](#disable-devguard).
 
 - **Antivirussoftware** &ndash; Wenn Sie eine Antivirussoftware ausführen, die die hardwareunterstützte Virtualisierung verwendet, wie etwa Avast, deaktivieren oder deinstallieren Sie diese Software, starten Sie den Computer neu, und versuchen Sie erneut, den Android SDK Emulator zu starten.
 
 
-#### <a name="incorrect-bios-settings"></a>Falsche BIOS-Einstellungen
+### <a name="incorrect-bios-settings"></a>Falsche BIOS-Einstellungen
 
-Wenn Sie HAXM auf einem Windows-PC verwenden, funktioniert HAXM nur dann, wenn Virtualization Technology (Intel VT-x) im BIOS aktiviert ist. Wenn VT-x deaktiviert ist, erhalten Sie eine Fehlermeldung wie die folgende, wenn Sie versuchen, den Google Android-Emulator zu starten:
+Wenn Sie HAXM auf einem Windows-PC verwenden, funktioniert HAXM nur dann, wenn Virtualization Technology (Intel VT-x) im BIOS aktiviert ist. Wenn VT-x deaktiviert ist, erhalten Sie eine Fehlermeldung wie die folgende, wenn Sie versuchen, den Android-Emulator zu starten:
 
 **This computer meets the requirements for HAXM, but Intel Virtualization Technology (VT-x) is not turned on.** (Dieser Computer erfüllt die HAXM-Anforderungen, aber Intel Virtualization Technology ist nicht aktiviert).
 
 Um diesen Fehler zu korrigieren, starten Sie den Computer im BIOS, aktivieren Sie sowohl VT-x als auch SLAT (Second Level Address Translation), und starten Sie den Computer dann wieder unter Windows.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
-
-Wenn der Google Android-Emulator nicht ordnungsgemäß gestartet wird, liegt dies häufig an Problemen mit HAXM. Probleme mit HAXM werden häufig durch Konflikte mit anderen Virtualisierungstechnologien, durch falsche Einstellungen oder durch einen veralteten HAXM-Treiber verursacht. Installieren Sie den HAXM-Treiber erneut. Die dazu erforderlichen Schritte werden unter [Installieren von HAXM](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm) beschrieben.
-
------
-
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 <a name="disable-hyperv" />
 
 ### <a name="disabling-hyper-v"></a>Hyper-V deaktivieren
 
-Wenn Sie Windows mit aktiviertem Hyper-V verwenden, müssen Sie es deaktivieren und Ihren Computer neu starten, um HAXM installieren und verwenden zu können. Sie können Hyper-V über die Systemsteuerung mit den folgenden Schritten deaktivieren:
+Wenn Sie eine Version von Windows vor dem **Windows 10-Update vom April 2018 (Build 1803)** verwenden und Hyper-V aktiviert ist, müssen Sie Hyper-V deaktivieren und den Computer neu starten, um HAXM installieren und verwenden zu können. Wenn Sie das **Windows 10-Update vom April 2018 (Build 1803)** oder höher verwenden, kann der Android-Emulator Version 27.2.7 oder höher Hyper-V (anstelle von HAXM) für die Hardwarebeschleunigung verwenden. Es ist also nicht notwendig, Hyper-V zu deaktivieren.
+
+Sie können Hyper-V über die Systemsteuerung mit den folgenden Schritten deaktivieren:
 
 1. Geben Sie im Windows-Suchfeld **Programme** ein, und klicken Sie anschließend auf das Suchergebnis **Programme und Funktionen**.
 
@@ -196,13 +183,13 @@ Alternativ können Sie folgendes PowerShell-Cmdlet verwenden, um Hyper-V zu deak
 
 `Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor`
 
-Intel HAXM und Microsoft Hyper-V können nicht gleichzeitig aktiviert sein. Es gibt momentan keine Möglichkeit, zwischen Hyper-V und HAXM zu wechseln, ohne den Computer neu starten zu müssen. Wenn Sie den [Visual Studio-Emulator für Android](~/android/deploy-test/debugging/visual-studio-android-emulator.md) verwenden möchten, der von Hyper-V abhängig ist, können Sie den Android SDK Emulator nicht ohne Neustart verwenden. Um sowohl Hyper-V als auch HAXM verwenden zu können, erstellen Sie wie unter [Creating a no hypervisor boot entry (Erstellen eines Booteintrags ohne Hypervisor)](https://blogs.msdn.microsoft.com/virtual_pc_guy/2008/04/14/creating-a-no-hypervisor-boot-entry/) beschrieben ein Multibootsetup.
+Intel HAXM und Microsoft Hyper-V können nicht gleichzeitig aktiviert sein. Es gibt keine Möglichkeit, zwischen Hyper-V und HAXM zu wechseln, ohne den Computer neu starten zu müssen. 
 
 In einigen Fällen wird Hyper-V durch die oben aufgeführten Schritte nicht deaktiviert, wenn Device Guard und Credential Guard aktiviert sind. Wenn Sie Hyper-V nicht deaktivieren können (oder es vermeintlich deaktiviert ist, aber die Installation von HAXM dennoch fehlschlägt), führen Sie die Schritte im nächsten Abschnitt durch, um Device Guard und Credential Guard zu deaktivieren.
 
 <a name="disable-devguard" />
 
-#### <a name="disabling-device-guard"></a>Deaktivieren von Device Guard
+### <a name="disabling-device-guard"></a>Deaktivieren von Device Guard
 
 Device Guard und Credential Guard können verhindern, dass Hyper-V unter Windows deaktiviert werden kann. Dies stellt häufig ein Problem für mit einer Domäne verknüpfte Computer dar, die von einer besitzenden Organisation konfiguriert und gesteuert werden.
 Führen Sie unter Windows 10 die folgenden Schritte aus, um zu prüfen, ob **Device Guard** ausgeführt wird:
@@ -248,10 +235,9 @@ Wenn Device Guard aktiviert ist, können Sie es mit den folgenden Schritten deak
 
 Wenn Hyper-V immer noch nicht deaktiviert ist, verhindern die Richtlinien Ihres mit einer Domäne verknüpften Computers möglicherweise das Deaktivieren von Device Guard oder Credential Guard. In diesem Fall können Sie von Ihrem Domänenadministrator eine Ausnahme anfordern, die es Ihnen ermöglicht, Credential Guard zu deaktivieren. Alternativ können Sie einen Computer verwenden, der nicht mit einer Domäne verknüpft ist, um HAXM verwenden zu können.
 
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-# <a name="visual-studiotabvsmac"></a>[Visual Studio](#tab/vsmac)
-
-Hyper-V ist unter OS X oder MacOS nicht verfügbar.
+Wenn der Android-Emulator nicht ordnungsgemäß gestartet wird, liegt dies häufig an Problemen mit HAXM. Probleme mit HAXM werden häufig durch Konflikte mit anderen Virtualisierungstechnologien, durch falsche Einstellungen oder durch einen veralteten HAXM-Treiber verursacht. Installieren Sie den HAXM-Treiber erneut. Die dazu erforderlichen Schritte werden unter [Installieren von HAXM](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm) beschrieben.
 
 -----
 

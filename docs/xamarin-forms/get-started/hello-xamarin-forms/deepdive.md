@@ -1,18 +1,19 @@
 ---
 title: Ausführliche Erläuterungen zu Xamarin.Forms
+description: In diesem Artikel werden die Grundlagen der Anwendungsentwicklung mit Xamarin.Forms erläutert. Zu den behandelten Themen zählen die Struktur einer Xamarin.Forms-Anwendung, die Architektur- und Anwendungsgrundlagen sowie die Benutzeroberfläche.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: d97aa580-1eb9-48b3-b15b-0d7421ea7ae
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/10/2018
-ms.openlocfilehash: b51389a7ab6506908cb21f6657820575efdc0615
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.date: 06/13/2018
+ms.openlocfilehash: f51992ec5311bdf0c7df7478651398f6ed8491a9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846763"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996232"
 ---
 # <a name="xamarinforms-deep-dive"></a>Ausführliche Erläuterungen zu Xamarin.Forms
 
@@ -61,15 +62,11 @@ Diese Projekte sind folgende:
 
 ## <a name="anatomy-of-a-xamarinforms-application"></a>Aufbau einer Xamarin.Forms-Anwendung
 
-Der folgende Screenshot zeigt den Inhalt des Phoneword PCL-Projekts in Visual Studio für Mac:
+Der folgende Screenshot zeigt den Inhalt des Phoneword .NET Standard-Bibliotheksprojekts in Visual Studio für Mac:
 
-![](deepdive-images/xs/pcl-project.png "Inhalt des Phoneword PCL-Projekts")
+![](deepdive-images/xs/library-project.png "Inhalt des Phoneword .NET Standard-Bibliotheksprojekts")
 
-Das Projekt besteht aus drei Ordnern:
-
-- **Verweise**: Enthält die Assemblys, die zum Erstellen und Ausführen der Anwendung erforderlich sind. Durch Erweitern des Ordners „.NET Portable-Teilmenge“ können Sie die Verweise auf .NET-Assemblys wie [System](http://msdn.microsoft.com/library/system%28v=vs.110%29.aspx), System.Core und [System.Xml](http://msdn.microsoft.com/library/system.xml%28v=vs.110%29.aspx) einblenden. Durch Erweitern des Ordners **Von Paketen** lassen sich Verweise auf die Xamarin.Forms-Assemblys anzeigen.
-- **Pakete**: Das Verzeichnis „Pakete“ enthält [NuGet](https://www.nuget.org)-Pakete, die die Verwendung von Drittanbieterbibliotheken in Ihrer Anwendung vereinfachen. Diese Pakete können auf die neuesten Releases aktualisiert werden, indem Sie mit der rechten Maustaste auf den Ordner klicken und die Updateoption im Popupmenü auswählen.
-- **Eigenschaften**: Enthält **AssemblyInfo.cs**, eine Metadatendatei der .NET-Assembly. Es wird empfohlen, diese Datei mit grundlegenden Informationen zu Ihrer Anwendung zu füllen. Weitere Informationen zu dieser Datei finden Sie unter [AssemblyInfo-Klasse](http://msdn.microsoft.com/library/microsoft.visualbasic.applicationservices.assemblyinfo(v=vs.110).aspx) auf MSDN.
+Das Projekt verfügt über den Knoten **Abhängigkeiten**, der die Knoten **NuGet** und **SDK** enthält. Der **NuGet**-Knoten enthält das Xamarin.Forms-NuGet-Paket, das dem Projekt hinzugefügt wurde. Der **SDK**-Knoten enthält das `NETStandard.Library`-Metapaket, das auf alle NuGet-Pakete verweist, die .NET Standard definieren.
 
 -----
 
@@ -80,7 +77,6 @@ Das Projekt besteht aus mehreren Dateien:
 - **IDialer.cs**: Die `IDialer`-Schnittstelle, die angibt, dass die `Dial`-Methode von der implementierenden Klasse bereitgestellt werden muss.
 - **MainPage.xaml**: Das XAML-Markup für die `MainPage`-Klasse, die die UI für die Seite definiert, die beim Start der Anwendung angezeigt wird
 - **MainPage.xaml.cs**: Das CodeBehind-Modell für die `MainPage`-Klasse, das die Geschäftslogik enthält, die ausgeführt wird, wenn der Benutzer mit der Seite interagiert
-- **packages.config**: (nur Visual Studio für Mac) Eine XML-Datei mit Informationen über die NuGet-Pakete, die vom Projekt verwendet werden, um erforderliche Pakete und ihre jeweiligen Versionen nachzuverfolgen. Sowohl Visual Studio für Mac als auch Visual Studio können so konfiguriert werden, dass fehlende NuGet-Pakete automatisch wiederhergestellt werden, wenn der Quellcode für andere Benutzer freigegeben wird. Der Inhalt dieser Datei wird vom NuGet-Paket-Manager gesteuert und sollte nicht manuell bearbeitet werden.
 - **PhoneTranslator.cs**: Die Geschäftslogik, die eine Buchstabenwahl in eine Rufnummer konvertiert, die über **MainPage.xaml.cs** aufgerufen wird
 
 Weitere Informationen zum Aufbau einer Xamarin.iOS-Anwendung finden Sie unter [Hello, iOS: Deep Dive (Hallo iOS: Ausführliche Informationen)](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy). Weitere Informationen zum Aufbau einer Xamarin.Android-Anwendung finden Sie unter [Hello, Android: Deep Dive (Hallo Android: Ausführliche Informationen)](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
@@ -98,8 +94,6 @@ Eine Xamarin.Forms-Anwendung ist genauso aufgebaut wie eine traditionelle plattf
 Eine Xamarin.Forms-Anwendung ist genauso aufgebaut wie eine traditionelle plattformübergreifende Anwendung. Freigegebener Code wird in der Regel in einer .NET Standard-Bibliothek platziert und von plattformspezifischen Anwendungen genutzt. Die folgende Abbildung bietet für die Phoneword-Anwendung einen Überblick über diese Beziehung:
 
 ![](deepdive-images/xs/architecture.png "Phoneword-Architektur")
-
-Weitere Informationen zu PCLs finden Sie unter [Introduction to Portable Class Libraries (Einführung in portable Klassenbibliotheken)](~/cross-platform/app-fundamentals/pcl.md).
 
 -----
 
@@ -124,7 +118,7 @@ namespace Phoneword
 }
 ```
 
-Dieser Code legt die `MainPage`-Eigenschaft der `App`-Klasse auf eine neue Instanz der [`MainPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/)-Klasse fest. Außerdem aktiviert das [`XamlCompilation`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilationAttribute/)-Attribut den XAML-Compiler, sodass XAML direkt in der Zwischensprache kompiliert wird. Weitere Informationen finden Sie unter [XAML Compilation (XAML-Kompilierung)](~/xamarin-forms/xaml/xamlc.md).
+Dieser Code legt die `MainPage`-Eigenschaft der `App`-Klasse auf eine neue Instanz der [`MainPage`](xref:Xamarin.Forms.Application.MainPage)-Klasse fest. Außerdem aktiviert das [`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)-Attribut den XAML-Compiler, sodass XAML direkt in der Zwischensprache kompiliert wird. Weitere Informationen finden Sie unter [XAML Compilation (XAML-Kompilierung)](~/xamarin-forms/xaml/xamlc.md).
 
 ## <a name="launching-the-application-on-each-platform"></a>Starten der Anwendung auf jeder Plattform
 
@@ -152,23 +146,26 @@ Die `FinishedLaunching`-Außerkraftsetzung initialisiert das Xamarin.Forms-Frame
 
 ### <a name="android"></a>Android
 
-Für das Aufrufen der Xamarin.Forms-Startseite in Android enthält das Phoneword.Droid-Projekt Code, der eine `Activity` mit dem `MainLauncher`-Attribut erstellt, wobei die Aktivität wie im folgenden Codebeispiel gezeigt von der `FormsApplicationActivity`-Klasse erbt:
+Für das Aufrufen der Xamarin.Forms-Startseite in Android enthält das Phoneword.Droid-Projekt Code, der eine `Activity` mit dem `MainLauncher`-Attribut erstellt, wobei die Aktivität wie im folgenden Codebeispiel gezeigt von der `FormsAppCompatActivity`-Klasse erbt:
 
 ```csharp
 namespace Phoneword.Droid
 {
-    [Activity(Label = "Phoneword",
-              Icon = "@drawable/icon",
+    [Activity(Label = "Phoneword", 
+              Icon = "@mipmap/icon", 
+              Theme = "@style/MainTheme", 
               MainLauncher = true,
               ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         internal static MainActivity Instance { get; private set; }
 
         protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle);
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
 
+            base.OnCreate(bundle);
             Instance = this;
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
@@ -217,14 +214,14 @@ Die Xamarin.Forms-Anwendung wird mit der `LoadApplication`-Methode geladen.
 
 Es gibt vier Hauptsteuerelementgruppen, mit denen die Benutzeroberfläche einer Xamarin.Forms-Anwendung erstellt wird.
 
-1. **Seiten**: Xamarin.Forms-Seiten stellen Bildschirme plattformübergreifender mobiler Anwendung dar. Die Phoneword-Anwendung verwendet die [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-Klasse, um einen einzelnen Bildschirm anzuzeigen. Weitere Informationen zu Seiten finden Sie unter [Xamarin.Forms Pages (Xamarin.Forms-Seiten)](~/xamarin-forms/user-interface/controls/pages.md).
-1. **Layouts**: Xamarin.Forms-Layouts sind Container, die zum Erstellen von Ansichten in Form von logischen Strukturen verwendet werden. Die Phoneword-Anwendung verwendet die [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)-Klasse, um Steuerelemente in einem horizontalen Stapel anzuordnen. Weitere Informationen zu Seiten finden Sie unter [Xamarin.Forms Layouts (Xamarin.Forms-Layouts)](~/xamarin-forms/user-interface/controls/layouts.md).
-1. **Ansichten**: Xamarin.Forms-Ansichten sind die Steuerelemente auf der Benutzeroberfläche, z.B. Bezeichnungen, Schaltflächen und Textfelder. Die Phoneword-Anwendung verwendet die Steuerelemente [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) und [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/). Weitere Informationen zu Ansichten finden Sie unter [Xamarin.Forms Views (Xamarin.Forms-Ansichten)](~/xamarin-forms/user-interface/controls/views.md).
+1. **Seiten**: Xamarin.Forms-Seiten stellen Bildschirme plattformübergreifender mobiler Anwendung dar. Die Phoneword-Anwendung verwendet die [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Klasse, um einen einzelnen Bildschirm anzuzeigen. Weitere Informationen zu Seiten finden Sie unter [Xamarin.Forms Pages (Xamarin.Forms-Seiten)](~/xamarin-forms/user-interface/controls/pages.md).
+1. **Layouts**: Xamarin.Forms-Layouts sind Container, die zum Erstellen von Ansichten in Form von logischen Strukturen verwendet werden. Die Phoneword-Anwendung verwendet die [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse, um Steuerelemente in einem horizontalen Stapel anzuordnen. Weitere Informationen zu Seiten finden Sie unter [Xamarin.Forms Layouts (Xamarin.Forms-Layouts)](~/xamarin-forms/user-interface/controls/layouts.md).
+1. **Ansichten**: Xamarin.Forms-Ansichten sind die Steuerelemente auf der Benutzeroberfläche, z.B. Bezeichnungen, Schaltflächen und Textfelder. Die Phoneword-Anwendung verwendet die Steuerelemente [`Label`](xref:Xamarin.Forms.Label), [`Entry`](xref:Xamarin.Forms.Entry) und [`Button`](xref:Xamarin.Forms.Button). Weitere Informationen zu Ansichten finden Sie unter [Xamarin.Forms Views (Xamarin.Forms-Ansichten)](~/xamarin-forms/user-interface/controls/views.md).
 1. **Zellen**: Xamarin.Forms Zellen sind spezielle Elemente für Listenelemente und beschreiben, wie jedes Element in einer Liste gezeichnet werden soll. Die Phoneword-Anwendung verwendet keinerlei Zellen. Weitere Informationen zu Zellen finden Sie unter [Xamarin.Forms Cells (Xamarin.Forms-Zellen)](~/xamarin-forms/user-interface/controls/cells.md).
 
 Zur Laufzeit wird jedes Steuerelement seinem nativen Äquivalent zugeordnet. Dieses wird dann gerendert.
 
-Wenn die Phoneword-Anwendung auf einer Plattform ausgeführt wird, zeigt sie einen einzigen Bildschirm an, der [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) in Xamarin.Forms entspricht. `Page` stellt unter Android eine *ViewGroup*, unter iOS einen *Ansichtscontroller* oder eine *Seite* auf der universellen Windows-Plattform dar. Die Phoneword-Anwendung instanziiert auch ein [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-Objekt, das die `MainPage`-Klasse darstellt, deren XAML-Markup im folgenden Codebeispiel gezeigt wird:
+Wenn die Phoneword-Anwendung auf einer Plattform ausgeführt wird, zeigt sie einen einzigen Bildschirm an, der [`Page`](xref:Xamarin.Forms.Page) in Xamarin.Forms entspricht. `Page` stellt unter Android eine *ViewGroup*, unter iOS einen *Ansichtscontroller* oder eine *Seite* auf der universellen Windows-Plattform dar. Die Phoneword-Anwendung instanziiert auch ein [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt, das die `MainPage`-Klasse darstellt, deren XAML-Markup im folgenden Codebeispiel gezeigt wird:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -241,13 +238,13 @@ Wenn die Phoneword-Anwendung auf einer Plattform ausgeführt wird, zeigt sie ein
 </ContentPage>
 ```
 
-Die `MainPage`-Klasse verwendet ein [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)-Steuerelement, um Steuerelemente auf dem Bildschirm unabhängig von seiner Größe automatisch anzuordnen. Alle untergeordneten Elemente werden nacheinander vertikal und in der Reihenfolge positioniert, in der sie hinzugefügt wurden. Das `StackLayout`-Steuerelement enthält ein [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)-Steuerelement zum Anzeigen von Text auf der Seite, ein [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)-Steuerelement zum Akzeptieren von Textbenutzereingaben und zwei [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)-Steuerelemente zum Ausführen von Code als Reaktion auf Fingereingabeereignisse.
+Die `MainPage`-Klasse verwendet ein [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Steuerelement, um Steuerelemente auf dem Bildschirm unabhängig von seiner Größe automatisch anzuordnen. Alle untergeordneten Elemente werden nacheinander vertikal und in der Reihenfolge positioniert, in der sie hinzugefügt wurden. Das `StackLayout`-Steuerelement enthält ein [`Label`](xref:Xamarin.Forms.Label)-Steuerelement zum Anzeigen von Text auf der Seite, ein [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement zum Akzeptieren von Textbenutzereingaben und zwei [`Button`](xref:Xamarin.Forms.Button)-Steuerelemente zum Ausführen von Code als Reaktion auf Fingereingabeereignisse.
 
 Weitere Informationen zu XAML in Xamarin.Forms finden Sie unter [Xamarin.Forms XAML Basics (XAML-Grundlagen von Xamarin.Forms)](~/xamarin-forms/xaml/xaml-basics/index.md).
 
 ### <a name="responding-to-user-interaction"></a>Reagieren auf eine Benutzerinteraktion
 
-Ein in XAML definiertes Objekt kann ein Ereignis auslösen, das in der CodeBehind-Datei behandelt wird. Das folgende Codebeispiel zeigt die `OnTranslate`-Methode in der CodeBehind-Datei für die `MainPage`-Klasse, die als Reaktion auf das [`Clicked`](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/)-Ereignis ausgeführt wird, das über die Schaltfläche *Übersetzen* ausgelöst wird.
+Ein in XAML definiertes Objekt kann ein Ereignis auslösen, das in der CodeBehind-Datei behandelt wird. Das folgende Codebeispiel zeigt die `OnTranslate`-Methode in der CodeBehind-Datei für die `MainPage`-Klasse, die als Reaktion auf das [`Clicked`](xref:Xamarin.Forms.Button.Clicked)-Ereignis ausgeführt wird, das über die Schaltfläche *Übersetzen* ausgelöst wird.
 
 ```csharp
 void OnTranslate(object sender, EventArgs e)
@@ -275,13 +272,13 @@ Die Verknüpfung der Schaltfläche „Übersetzen“ mit der `OnTranslate`-Metho
 
 Mit der Phoneword-Anwendung für Xamarin.Forms wurden verschiedene neue Konzepte eingeführt, die den Rahmen dieses Artikels übersteigen. Dies sind z.B. folgende Konzepte:
 
-- Aktivieren und Deaktivieren von Schaltflächen (buttons). Ein [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) kann durch Änderungen der [`IsEnabled`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/)-Eigenschaft ein- und ausgeschaltet werden. Im folgenden Codebeispiel wird beispielsweise `callButton` deaktiviert:
+- Aktivieren und Deaktivieren von Schaltflächen (buttons). Ein [`Button`](xref:Xamarin.Forms.Button) kann durch Änderungen der [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled)-Eigenschaft ein- und ausgeschaltet werden. Im folgenden Codebeispiel wird beispielsweise `callButton` deaktiviert:
 
     ```csharp
     callButton.IsEnabled = false;
     ```
 
-- Anzeigen eines Warndialogfelds. Wenn der Benutzer die **Anrufschaltfläche** drückt, zeigt die Phoneword-Anwendung ein *Warndialogfeld* mit der Option an, einen Anruf zu tätigen oder abzubrechen. Mit der [`DisplayAlert`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/System.String/)-Methode wird wie im folgenden Codebeispiel dargestellt das Dialogfeld erstellt:
+- Anzeigen eines Warndialogfelds. Wenn der Benutzer die **Anrufschaltfläche** drückt, zeigt die Phoneword-Anwendung ein *Warndialogfeld* mit der Option an, einen Anruf zu tätigen oder abzubrechen. Mit der [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String,System.String))-Methode wird wie im folgenden Codebeispiel dargestellt das Dialogfeld erstellt:
 
     ```csharp
     await this.DisplayAlert (
@@ -291,7 +288,7 @@ Mit der Phoneword-Anwendung für Xamarin.Forms wurden verschiedene neue Konzepte
             "No");
     ```
 
-- Zugreifen auf native Funktionen über die [`DependencyService`](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/)-Klasse. Die Phoneword-Anwendung verwendet die `DependencyService`-Klasse, um die `IDialer`-Schnittstelle in plattformspezifische Telefonanwahlimplementierungen aufzulösen. Dies wird im folgenden Codebeispiel aus dem Phoneword-Projekt dargestellt:
+- Zugreifen auf native Funktionen über die [`DependencyService`](xref:Xamarin.Forms.DependencyService)-Klasse. Die Phoneword-Anwendung verwendet die `DependencyService`-Klasse, um die `IDialer`-Schnittstelle in plattformspezifische Telefonanwahlimplementierungen aufzulösen. Dies wird im folgenden Codebeispiel aus dem Phoneword-Projekt dargestellt:
 
     ```csharp
     async void OnCall (object sender, EventArgs e)
@@ -302,7 +299,7 @@ Mit der Phoneword-Anwendung für Xamarin.Forms wurden verschiedene neue Konzepte
     }
     ```
 
-  Weitere Informationen zur [`DependencyService`](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/)-Klasse finden Sie unter [Accessing Native Features via the DependencyService (Zugreifen auf native Funktionen über DependencyService)](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
+  Weitere Informationen zur [`DependencyService`](xref:Xamarin.Forms.DependencyService)-Klasse finden Sie unter [Accessing Native Features via the DependencyService (Zugreifen auf native Funktionen über DependencyService)](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
 - Tätigen eines Telefonanrufs mit einer URL. Die Phoneword-Anwendung verwendet `OpenURL`, um die Telefon-App des Systems zu starten. Die URL besteht wie im folgenden Codebeispiel aus dem iOS-Projekt gezeigt aus einem `tel:`-Präfix, gefolgt von der Rufnummer, die aufgerufen werden soll:
 
@@ -310,7 +307,7 @@ Mit der Phoneword-Anwendung für Xamarin.Forms wurden verschiedene neue Konzepte
     return UIApplication.SharedApplication.OpenUrl (new NSUrl ("tel:" + number));
     ```
 
-- Optimieren des Plattformlayouts. Mit der [`Device`](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/)-Klasse können Entwickler das Anwendungslayout und die Funktionen plattformbezogen anpassen. Dies wird im folgenden Codebeispiel gezeigt, in dem andere [`Padding`](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)-Werte für verschiedene Plattformen verwendet werden, um jede Seite korrekt anzuzeigen:
+- Optimieren des Plattformlayouts. Mit der [`Device`](xref:Xamarin.Forms.Device)-Klasse können Entwickler das Anwendungslayout und die Funktionen plattformbezogen anpassen. Dies wird im folgenden Codebeispiel gezeigt, in dem andere [`Padding`](xref:Xamarin.Forms.Layout.Padding)-Werte für verschiedene Plattformen verwendet werden, um jede Seite korrekt anzuzeigen:
 
     ```xaml
     <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" ... >

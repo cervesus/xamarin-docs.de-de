@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30762525"
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>Veröffentlichen im Amazon App Store
 

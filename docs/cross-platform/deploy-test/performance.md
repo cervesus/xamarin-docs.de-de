@@ -1,16 +1,17 @@
 ---
 title: Leistung und Sicherheit
-description: Tipps zum Verbessern der Leistung Ihrer Apps und zum Gewährleisten einer sicheren Kommunikation.
+description: Dieser Artikel enthält Links zu verschiedenen Leitfäden, die die Verfahren zum Verbessern der Leistung von Xamarin.iOS-, Xamarin.Android- und Xamarin.Mac-Anwendungen beschreiben.
 ms.prod: xamarin
 ms.assetid: 3E0886A7-B0ED-44CC-8DE3-5B274FBBE2E5
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2017
-ms.openlocfilehash: 507175cd73aa008c1bb120b0e42d9e98fc4c849a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 6c226095c43a389f491dd2af9a158ceb4420b637
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780583"
 ---
 # <a name="performance-and-security"></a>Leistung und Sicherheit
 

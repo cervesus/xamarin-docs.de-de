@@ -1,5 +1,5 @@
 ---
-title: App-Verteilung – Übersicht
+title: Übersicht über die Xamarin.iOS-App-Verteilung
 description: Dieser Artikel bietet eine Übersicht über Verteilungstechniken, die für Xamarin.iOS-Anwendungen verfügbar sind, und verweist auf noch ausführlichere Dokumente zu diesem Thema.
 ms.prod: xamarin
 ms.assetid: 341D36DB-BB07-FA94-BCC9-5F8C0B18C179
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 76de5b46559676e36b9d1f9b71575323beec414e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 815277e9a4f9384d92bf17376f426cacd40dbc9f
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209439"
 ---
-# <a name="app-distribution-overview"></a>App-Verteilung – Übersicht
+# <a name="xamarinios-app-distribution-overview"></a>Übersicht über die Xamarin.iOS-App-Verteilung
 
 _Dieser Artikel bietet eine Übersicht über Verteilungstechniken, die für Xamarin.iOS-Anwendungen verfügbar sind, und verweist auf noch ausführlichere Dokumente zu diesem Thema._
 
@@ -34,6 +35,9 @@ Für jedes dieser Szenarios müssen Anwendungen mit dem entsprechenden *Bereitst
 <a name="App_Store_Distribution"/>
 
 ## <a name="app-store-distribution"></a>App Store-Verteilung
+
+> [!IMPORTANT]
+> Apple [hat mitgeteilt](https://developer.apple.com/news/?id=05072018a), dass ab Juli 2018 alle Apps und Updates, die an den App Store gesendet werden, mit dem iOS 11 SDK erstellt worden sein und das [iPhone X-Display unterstützen](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md) müssen.
 
 Dies ist die wichtigste Methode zur Verteilung von iOS-Anwendungen an Benutzer mit iOS-Geräten. Alle Apps, die im App Store eingereicht werden, müssen von Apple genehmigt werden.
 

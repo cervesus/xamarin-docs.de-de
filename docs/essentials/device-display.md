@@ -1,22 +1,22 @@
 ---
 title: 'Xamarin.Essentials: Anzeige-Geräteinformationen'
-description: Dieses Dokument beschreibt die Klasse DeviceDisplay in Xamarin.Essentials, auf dem Bildschirm Metriken für das Gerät enthält, auf dem die Anwendung ausgeführt wird.
+description: Dieses Dokument beschreibt die DeviceDisplay-Klasse in Xamarin.Essentials, Bildschirm-Metriken für das Gerät bereitgestellt, auf denen die Anwendung ausgeführt wird.
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 830b96bcc21397047cb5aaacb5c568bc2ee863c4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 3060d56e14fb0d3801a96ec0fe6e24c9efda4dac
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782371"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38816515"
 ---
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials: Anzeige-Geräteinformationen
 
-![Vorabversion NuGet](~/media/shared/pre-release.png)
+![Vorabversionen von NuGet](~/media/shared/pre-release.png)
 
-Die **DeviceDisplay** -Klasse stellt Informationen über das Gerät Bildschirm Metriken, die die Anwendung ausgeführt wird.
+Die **DeviceDisplay** Klasse enthält Informationen, Informationen zu Metriken der Bildschirm des Geräts, den die Anwendung ausgeführt wird.
 
 ## <a name="using-devicedisplay"></a>Verwenden von DeviceDisplay
 
@@ -26,9 +26,9 @@ Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
 using Xamarin.Essentials;
 ```
 
-## <a name="screen-metrics"></a>Bildschirm Metriken
+## <a name="screen-metrics"></a>Bildschirm-Metriken
 
-Zusätzlich zu den grundlegenden Geräteinformationen der **DeviceDisplay** -Klasse enthält Informationen über den Bildschirm und die Ausrichtung des Geräts.
+Zusätzlich zu den grundlegenden Informationen der **DeviceDisplay** -Klasse enthält Informationen über den Bildschirm und die Ausrichtung des Geräts.
 
 ```csharp
 // Get Metrics
@@ -50,7 +50,7 @@ var height = metrics.Height;
 var density = metrics.Density;
 ```
 
-Die **DeviceDisplay** Klasse auch verfügbar macht und jedes öffentliche Ereignis, die abonniert werden kann, die ein Ereignis aus, wenn eine metrische Änderungen Bildschirm auslöst:
+Die **DeviceDisplay** Klasse macht ein Ereignis, das abonniert werden kann, die ausgelöst wird, wenn alle metrikänderungen Bildschirm auch verfügbar:
 
 ```csharp
 public class ScreenMetricsTest
@@ -61,7 +61,7 @@ public class ScreenMetricsTest
         DeviceDisplay.ScreenMetricsChanaged += OnScreenMetricsChanged;
     }
 
-    void OnScreenMetricsChanged(ScreenMetricsChanagedEventArgs  e)
+    void OnScreenMetricsChanged(ScreenMetricsChangedEventArgs  e)
     {
         // Process changes
         var metrics = e.Metrics;
@@ -72,4 +72,4 @@ public class ScreenMetricsTest
 ## <a name="api"></a>API
 
 - [DeviceDisplay-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceDisplay)
-- [DeviceDisplay API-Dokumentation](xref:Xamarin.Essentials.DeviceDisplay)
+- [DeviceDisplay-API-Dokumentation](xref:Xamarin.Essentials.DeviceDisplay)

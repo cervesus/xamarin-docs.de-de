@@ -1,45 +1,45 @@
 ---
-title: Markieren eine Route auf einer Karte
-description: In diesem Artikel wird erläutert, wie auf einer Karte eine Polylinie Überlagerung hinzugefügt wird. Eine Polylinie Overlay besteht aus einer Reihe von verbundenen Liniensegmenten, die normalerweise verwendet werden, bilden eine Form, die erforderlich ist, oder eine Route auf einer Karte anzeigen.
+title: Markieren einer Route auf einer Karte
+description: In diesem Artikel wird erläutert, wie einem Polyline-Overlay zu einer Karte hinzufügen. Einem Polyline-Overlay besteht aus einer Reihe verbundener Liniensegmente an, die in der Regel verwendet werden, zum Anzeigen einer Route auf einer Karte oder bilden eine beliebige Form, die erforderlich sind.
 ms.prod: xamarin
 ms.assetid: FBFDC715-1654-4188-82A0-FC522548BCFF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 8b80f9569e9377ca76798911cda64d8c0ee28d93
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 786f050495d4682b719178f2723c482929544678
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846642"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998719"
 ---
-# <a name="highlighting-a-route-on-a-map"></a>Markieren eine Route auf einer Karte
+# <a name="highlighting-a-route-on-a-map"></a>Markieren einer Route auf einer Karte
 
-_In diesem Artikel wird erläutert, wie auf einer Karte eine Polylinie Überlagerung hinzugefügt wird. Eine Polylinie Overlay besteht aus einer Reihe von verbundenen Liniensegmenten, die normalerweise verwendet werden, bilden eine Form, die erforderlich ist, oder eine Route auf einer Karte anzeigen._
+_In diesem Artikel wird erläutert, wie einem Polyline-Overlay zu einer Karte hinzufügen. Einem Polyline-Overlay besteht aus einer Reihe verbundener Liniensegmente an, die in der Regel verwendet werden, zum Anzeigen einer Route auf einer Karte oder bilden eine beliebige Form, die erforderlich sind._
 
 ## <a name="overview"></a>Übersicht
 
-Overlay ist eine geschichteten Grafik auf einer Karte. Overlays unterstützen grafische Zeichnungsinhalt, die mit der Zuordnung skaliert werden, da es vergrößert wird. Die folgenden Screenshots zeigen das Ergebnis der Addition von einem Polylinie Overlay zu einer Zuordnung:
+Eine Überlagerung ist eine überlappende Grafik auf einer Karte. Überlagerungen unterstützen grafischen Zeichnungsinhalt, die mit der Zuordnung skaliert werden soll, wie es vergrößert wird. Die folgenden Screenshots zeigen das Ergebnis der Addition von einem Polyline-Overlay zu einer Zuordnung an:
 
 ![](polyline-map-overlay-images/screenshots.png)
 
-Wenn eine [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) einer Xamarin.Forms-Anwendung in iOS-Steuerelement gerendert wird die `MapRenderer` Klasse instanziiert, die instanziiert wiederum ein systemeigenes `MKMapView` Steuerelement. Auf der Android-Plattform die `MapRenderer` Klasse instanziiert ein systemeigenes `MapView` Steuerelement. Auf die universelle Windows-Plattform (UWP), die `MapRenderer` Klasse instanziiert ein systemeigenes `MapControl`. Des Renderingprozesses kann Vorteil ausgeführt werden, um Clientplattform-spezifische Zuordnung Anpassungen zu implementieren, durch das Erstellen eines benutzerdefinierten Renderers für eine `Map` auf jeder Plattform. Die Verfahrensweise für diesen Vorgang lautet wie folgt:
+Wenn eine [ `Map` ](xref:Xamarin.Forms.Maps.Map) -Steuerelements von einer Xamarin.Forms-Anwendung unter iOS die `MapRenderer` Klasse instanziiert wird, die instanziiert wiederum eines systemeigenes `MKMapView` Steuerelement. Auf der Android-Plattform die `MapRenderer` Klasse instanziiert ein systemeigenes `MapView` Steuerelement. Auf der universellen Windows-Plattform (UWP), die `MapRenderer` Klasse instanziiert ein systemeigenes `MapControl`. Das Rendern zu erstellt werden kann nutzen plattformspezifische Zuordnung Anpassungen zu implementieren, durch das Erstellen eines benutzerdefinierten Renderers für eine `Map` auf jeder Plattform. Der Prozess hierfür lautet wie folgt aus:
 
 1. [Erstellen Sie](#Creating_the_Custom_Map) einer benutzerdefinierten Xamarin.Forms-Karte.
 1. [Nutzen](#Consuming_the_Custom_Map) die benutzerdefinierte Zuordnung von Xamarin.Forms.
-1. [Anpassen](#Customizing_the_Map) die Zuordnung durch das Erstellen eines benutzerdefinierten Renderers für die Zuordnung auf jeder Plattform.
+1. [Anpassen von](#Customizing_the_Map) der Zuordnung durch das Erstellen eines benutzerdefinierten Renderers für die Zuordnung auf jeder Plattform.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) Initialisiert und vor der Verwendung konfiguriert werden müssen. Weitere Informationen finden Sie unter [`Maps Control`](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) Initialisiert und vor der Verwendung konfiguriert werden müssen. Weitere Informationen finden Sie unter [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
-Informationen zum Anpassen einer Karte, die mithilfe eines benutzerdefinierten Renderers finden Sie unter [Anpassen einer Karte Pin](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
+Informationen zum Anpassen einer Karte mithilfe eines benutzerdefinierten Renderers finden Sie unter [Anpassen einer Kartennadel](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 
 <a name="Creating_the_Custom_Map" />
 
-### <a name="creating-the-custom-map"></a>Erstellen die benutzerdefinierte Karte
+### <a name="creating-the-custom-map"></a>Die benutzerdefinierte Karte erstellen
 
-Erstellen Sie eine Unterklasse von der [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) Klasse bereit, die Fügt eine `RouteCoordinates` Eigenschaft:
+Erstellen Sie eine Unterklasse von der [ `Map` ](xref:Xamarin.Forms.Maps.Map) Klasse bereit, die Fügt eine `RouteCoordinates` Eigenschaft:
 
 ```csharp
 public class CustomMap : Map
@@ -59,7 +59,7 @@ Die `RouteCoordinates` Eigenschaft speichert eine Auflistung von Koordinaten zur
 
 ### <a name="consuming-the-custom-map"></a>Nutzen die benutzerdefinierte Karte
 
-Nutzen der `CustomMap` Steuerelement durch Deklarieren einer Instanz des Zertifikats in der XAML-Seite-Instanz:
+Nutzen der `CustomMap` Steuerelement durch deklarieren eine Instanz davon in der XAML-Seite-Instanz:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -72,7 +72,7 @@ Nutzen der `CustomMap` Steuerelement durch Deklarieren einer Instanz des Zertifi
 </ContentPage>
 ```
 
-Alternativ können Sie nutzen die `CustomMap` Steuerelement durch Deklarieren einer Instanz des Zertifikats in der C#-Seite-Instanz:
+Verwenden Sie alternativ die `CustomMap` Steuerelement durch deklarieren eine Instanz davon in der C#-Seite-Instanz:
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -90,7 +90,7 @@ public class MapPageCS : ContentPage
 }
 ```
 
-Initialisieren der `CustomMap` nach Bedarf zu steuern:
+Initialisieren der `CustomMap` nach Bedarf steuern:
 
 ```csharp
 public partial class MapPage : ContentPage
@@ -108,17 +108,17 @@ public partial class MapPage : ContentPage
 }
 ```
 
-Diese Initialisierung gibt eine Reihe von Breiten- und Längengrad Koordinaten, definieren Sie die Route auf der Karte hervorgehoben werden. Klicken Sie dann auf die Position der Kartenansicht mit der [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)/) -Methode, die ändert die Position und die Zoomstufe der Karte durch das Erstellen einer [ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/) aus einem [ `Position` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/) und ein [ `Distance` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/).
+Diese Initialisierung gibt eine Reihe von Breiten- und Längengrad Koordinaten, um die Route definieren, auf der Karte hervorgehoben werden. Klicken Sie dann auf die Position der Map-Ansicht mit den [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) -Methode, die ändert sich die Position und die Zoomstufe der Karte durch das Erstellen einer [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan) aus einer [ `Position` ](xref:Xamarin.Forms.Maps.Position) und [ `Distance` ](xref:Xamarin.Forms.Maps.Distance).
 
 <a name="Customizing_the_Map" />
 
-### <a name="customizing-the-map"></a>Anpassen der Zuordnung
+### <a name="customizing-the-map"></a>Anpassen der Karte
 
-Ein benutzerdefinierter Renderer muss nun jede-Anwendungsprojekt auf der Karte die Polylinie Überlagerung hinzugefügt hinzugefügt werden.
+Ein benutzerdefinierter Renderer muss jetzt jedem Projekt der Anwendung das Polyline-Overlay zur Karte hinzufügen hinzugefügt werden.
 
-#### <a name="creating-the-custom-renderer-on-ios"></a>Erstellen die benutzerdefinierten Renderers für iOS
+#### <a name="creating-the-custom-renderer-on-ios"></a>Erstellen den benutzerdefinierten Renderer für iOS
 
-Erstellen Sie eine Unterklasse von der `MapRenderer` Klasse, und überschreiben die `OnElementChanged` Methode, um die Überlagerung Polylinie hinzuzufügen:
+Erstellen Sie eine Unterklasse von der `MapRenderer` Klasse, und überschreiben seine `OnElementChanged` Methode, um das Polyline-Overlay hinzuzufügen:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -164,12 +164,12 @@ namespace MapOverlay.iOS
 
 ```
 
-Diese Methode führt die folgende Konfiguration, vorausgesetzt, dass die benutzerdefinierten Renderers ein neues Xamarin.Forms-Element zugeordnet ist:
+Diese Methode führt die folgende Konfiguration, vorausgesetzt, dass der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt ist:
 
-- Die `MKMapView.OverlayRenderer` Eigenschaft auf einen entsprechenden Delegaten festgelegt ist.
-- Die Auflistung der Breiten-und Längenkoordinaten werden abgerufen, von der `CustomMap.RouteCoordinates` Eigenschaft und gespeichert als ein Array von `CLLocationCoordinate2D` Instanzen.
-- Die Polylinie wird erstellt, durch Aufrufen der statischen `MKPolyline.FromCoordinates` -Methode, die Breiten- und Längengrad der einzelnen Punkt angibt.
-- Die Polylinie wird zur Zuordnung hinzugefügt, indem die `MKMapView.AddOverlay` Methode.
+- Die `MKMapView.OverlayRenderer` -Eigenschaftensatz auf einen entsprechenden Delegaten.
+- Die Auflistung der Breiten-und Längenkoordinaten werden abgerufen, von der `CustomMap.RouteCoordinates` Eigenschaft und als ein Array von gespeichert `CLLocationCoordinate2D` Instanzen.
+- Das Polyline-Objekt wird erstellt, durch Aufrufen der statischen `MKPolyline.FromCoordinates` -Methode, die den Breiten- und Längengrad der einzelnen Punkten angibt.
+- Das Polyline-Objekt zur Karte hinzugefügt wird, indem die `MKMapView.AddOverlay` Methode.
 
 Implementieren Sie anschließend die `GetOverlayRenderer` Methode, um die Wiedergabe der Überlagerung anzupassen:
 
@@ -195,9 +195,9 @@ public class CustomMapRenderer : MapRenderer
 }
 ```
 
-#### <a name="creating-the-custom-renderer-on-android"></a>Erstellen von benutzerdefinierten Renderers für Android
+#### <a name="creating-the-custom-renderer-on-android"></a>Erstellen den benutzerdefinierten Renderer für Android
 
-Erstellen Sie eine Unterklasse von der `MapRenderer` Klasse, und überschreiben die `OnElementChanged` und `OnMapReady` Methoden, um die Überlagerung Polylinie hinzuzufügen:
+Erstellen Sie eine Unterklasse von der `MapRenderer` Klasse, und überschreiben seine `OnElementChanged` und `OnMapReady` Methoden, um das Polyline-Overlay hinzuzufügen:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -246,11 +246,11 @@ namespace MapOverlay.Droid
 }
 ```
 
-Die `OnElementChanged` Methode ruft die Auflistung der Breiten- und Längenkoordinaten aus der `CustomMap.RouteCoordinates` Eigenschaft und speichert sie in einer Membervariablen gespeichert. Er ruft dann die `MapView.GetMapAsync` -Methode, die die zugrunde liegende ruft `GoogleMap` , die an die Sicht gebunden ist, vorausgesetzt, dass die benutzerdefinierten Renderers ein neues Xamarin.Forms-Element zugeordnet ist. Einmal die `GoogleMap` Instanz verfügbar ist, wird der `OnMapReady` Methode wird aufgerufen, wo die Polylinie durch Instanziierung erstellt wird eine `PolylineOptions` Objekt, das die Breiten- und Längengrad der einzelnen Punkt angibt. Die Polylinie wird dann zur Zuordnung hinzugefügt, durch Aufrufen der `NativeMap.AddPolyline` Methode.
+Die `OnElementChanged` Methode ruft die Auflistung der Breiten- und Längenkoordinaten aus der `CustomMap.RouteCoordinates` Eigenschaft und speichert sie in einer Membervariablen gespeichert. Es ruft dann die `MapView.GetMapAsync` -Methode, die die zugrunde liegende ruft `GoogleMap` , die an die Sicht gebunden ist, vorausgesetzt, dass der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt ist. Einmal die `GoogleMap` Instanz verfügbar ist, die `OnMapReady` Methode wird aufgerufen, und, wo das Polyline-Objekt erstellt wird, durch die Instanziierung einer `PolylineOptions` Objekt, das den Breiten- und Längengrad der einzelnen Punkten angibt. Das Polyline-Objekt wird dann zur Karte hinzugefügt, durch den Aufruf der `NativeMap.AddPolyline` Methode.
 
-#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Erstellen von benutzerdefinierten Renderers für universelle Windows-Plattform
+#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Erstellen den benutzerdefinierten Renderer für die universelle Windows-Plattform
 
-Erstellen Sie eine Unterklasse von der `MapRenderer` Klasse, und überschreiben die `OnElementChanged` Methode, um die Überlagerung Polylinie hinzuzufügen:
+Erstellen Sie eine Unterklasse von der `MapRenderer` Klasse, und überschreiben seine `OnElementChanged` Methode, um das Polyline-Overlay hinzuzufügen:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -289,19 +289,19 @@ namespace MapOverlay.UWP
 }
 ```
 
-Diese Methode führt die folgenden Vorgänge aus, vorausgesetzt, dass die benutzerdefinierten Renderers ein neues Xamarin.Forms-Element zugeordnet ist:
+Diese Methode führt die folgenden Vorgänge, vorausgesetzt, dass der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt ist:
 
-- Die Auflistung der Breiten-und Längenkoordinaten werden abgerufen, von der `CustomMap.RouteCoordinates` Eigenschaft und konvertierte in eine `List` von `BasicGeoposition` Koordinaten.
-- Die Polylinie wird erstellt, durch die Instanziierung einer `MapPolyline` Objekt. Die `MapPolygon` Klasse wird verwendet, um eine Zeile auf der Karte angezeigt werden, durch Festlegen seiner `Path` Eigenschaft, um eine `Geopath` Objekt, das die Zeile Koordinaten enthält.
-- Die Polylinie wird auf der Karte gerendert, indem sie zum Hinzufügen der `MapControl.MapElements` Auflistung.
+- Die Auflistung der Breiten-und Längenkoordinaten werden abgerufen, von der `CustomMap.RouteCoordinates` Eigenschaft und in konvertiert eine `List` von `BasicGeoposition` Koordinaten.
+- Das Polyline-Objekt wird erstellt, durch die Instanziierung einer `MapPolyline` Objekt. Die `MapPolygon` Klasse wird verwendet, um eine Zeile auf der Karte angezeigt, durch Festlegen seiner `Path` Eigenschaft, um eine `Geopath` -Objekt, das die zeilenkoordinaten enthält.
+- Das Polyline-Objekt auf der Karte gerendert wird, indem sie zum Hinzufügen der `MapControl.MapElements` Auflistung.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wird erläutert, wie eine Karte, um eine Route auf einer Karte anzeigen oder bilden eine Form, die erforderlich ist, eine Polylinie Überlagerung hinzugefügt.
+In diesem Artikel wurde erläutert, wie Hinzufügen von einem Polyline-Overlay zu einer Karte zum Anzeigen einer Route auf einer Karte oder bilden eine beliebige Form, die erforderlich sind.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Polylinie Zuordnung Ovlerlay (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
 - [Anpassen einer Kartennadel](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
-- [Xamarin.Forms.Maps](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/)
+- [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

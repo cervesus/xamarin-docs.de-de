@@ -1,19 +1,20 @@
 ---
-title: Hinzufügen von Codesignaturen und Bereitstellen von Code
-description: Themen für Fortgeschrittene
+title: Codesignatur und Bereitstellung für Xamarin.iOS-Apps
+description: Dieses Dokument enthält Links zu Leitfäden, die das Bereitstellen von Geräten, das Arbeiten mit Funktionen, Berechtigungen, der Datei „Info.plist“ und fastlane beschreiben.
 ms.prod: xamarin
 ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/18/2017
-ms.openlocfilehash: ff9d9e779f246c0cd2fde4332f6c80aae4b43d49
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cfbb36dc7298563987bcd688927649366094ae89
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785531"
 ---
-# <a name="code-signing-and-provisioning"></a>Hinzufügen von Codesignaturen und Bereitstellen von Code
+# <a name="code-signing-and-provisioning-for-xamarinios-apps"></a>Codesignatur und Bereitstellung für Xamarin.iOS-Apps
 
 ## <a name="device-provisioning--introductioniosget-startedinstallationdevice-provisioningindexmd"></a>[Bereitstellen eines Geräts – Einführung](~/ios/get-started/installation/device-provisioning/index.md)
 
@@ -24,7 +25,6 @@ Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in de
 Verwenden von App-Diensten zur Erweiterung der iOS-App-Funktionen
 
 Um Funktionen zu einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitstellungseinrichtung erforderlich. In diesem Leitfaden werden die erforderlichen Einstellungen für alle Funktionen erläutert.
-
 
 ## <a name="working-with-entitlementsentitlementsmd"></a>[Arbeiten mit Berechtigungen](entitlements.md)
 
@@ -37,4 +37,3 @@ Ein Referenzleitfaden für „Info.plist“-Schlüssel.
 ## <a name="introduction-to-fastlane-for-iosiosdeploy-testprovisioningfastlaneindexmd"></a>[Einführung in fastlane für iOS](~/ios/deploy-test/provisioning/fastlane/index.md)
 
 Dieser Leitfaden beschreibt die verschiedenen fastlane-Tools zum Hinzufügen einer Codesignatur bei iOS-Anwendungen.
-

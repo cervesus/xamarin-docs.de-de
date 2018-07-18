@@ -1,6 +1,6 @@
 ---
-title: Erste Schritte mit iOS
-description: Von Hallo Welt bis Hallo App Store
+title: Erste Schritte mit Xamarin.iOS
+description: Dieses Dokument enthält Links zu Anweisungen, in denen die Einrichtung von Xamarin.iOS und das Erstellen einer ersten Anwendung beschrieben werden. Außerdem enthält es Informationen zu Xamarin für Objective-C-Entwickler.
 ms.prod: xamarin
 ms.assetid: FA802CCF-3BA4-4F26-A7BF-FBB7D0AA889B
 ms.technology: xamarin-ios
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/23/2016
-ms.openlocfilehash: be25d976cc58d6c1dd0154cbdc06aab7039c544e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 237480c91a40e6ee08481664ce3981af10f97599
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785594"
 ---
-# <a name="getting-started-with-ios"></a>Erste Schritte mit iOS
+# <a name="getting-started-with-xamarinios"></a>Erste Schritte mit Xamarin.iOS
 
 Xamarin.iOS ermöglicht es Entwicklern, native iOS-Anwendungen mit den gleichen Steuerelementen der Benutzeroberfläche zu erstellen, die in Objective-C und Xcode verfügbar sind, jedoch mit der Flexibilität und Eleganz einer modernen Sprache (C#), der Leistungsfähigkeit der .NET-Basisklassenbibliothek (BCL) und zwei herausragenden integrierten Entwicklungsumgebungen: Visual Studio für Mac und Visual Studio. Diese Reihe erläutert das Einrichten und Installieren von Xamarin.iOS und behandelt die Grundlagen der Xamarin.iOS-Entwicklung.
 

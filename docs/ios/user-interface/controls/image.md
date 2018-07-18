@@ -1,89 +1,86 @@
 ---
 title: Anzeigen von Bildern mit Xamarin.iOS
-description: Dieses Dokument beschreibt die Vorgehensweise beim Anzeigen von Bildern in Xamarin.iOS. Es werden die Bilder hinzufügen, um eine app entweder programmgesteuert oder über das iOS-Designer behandelt.
+description: Dieses Dokument beschreibt die Vorgehensweise beim Anzeigen von Bildern in Xamarin.iOS. Hinzufügen von Bildern zu einer app wird hierin, entweder programmgesteuert oder über das iOS-Designer.
 ms.prod: xamarin
 ms.assetid: 67CA8DB6-769D-42BB-A137-3AF933789FE1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/21/2017
-ms.openlocfilehash: f42cc5e4ab26c4c53d96e96420cbbba8036d6b5d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 07/13/2018
+ms.openlocfilehash: 9777b4abf6e7f370178bcff2cb40666612888a9f
+ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789829"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39038377"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Anzeigen von Bildern mit Xamarin.iOS
 
-Hinzufügen von Bildern auf Ihre app sind zwei Schritte erforderlich: Fügen Sie zunächst die Bilder dem Projekt; Anschließend fügen Sie Steuerelemente und Code, um sie auf einem Bildschirm anzuzeigen. Finden Sie in der [arbeiten mit Bildern](~/ios/app-fundamentals/images-icons/index.md) Artikel ausführlichere Abdeckung des Bilds in Xamarin.iOS behandeln.
+Hinzufügen von Bildern zu Ihrer app sind zwei Schritte erforderlich: Fügen Sie zunächst die Images auf Ihr Projekt, Anschließend fügen Sie Steuerelemente und Code auf einem Bildschirm anzeigen. Finden Sie in der [arbeiten mit Bildern](~/ios/app-fundamentals/images-icons/index.md) detaillierte Abdeckung der Bildbehandlung in Xamarin.iOS-Artikel.
 
-## <a name="adding-images-to-your-app"></a>Hinzufügen von Bildern zu Ihrer App
+## <a name="adding-images-to-your-app"></a>Hinzufügen von Bildern zu Ihrer app
 
-Bilder in einen beliebigen Ordner in Ihrem Visual Studio für Mac-Lösung hinzugefügt werden können und, wenn die **Buildvorgang** auf festgelegt ist **Content** und dann die Datei mit Ihrer app eingeschlossen und angezeigt werden können.
+Bilder können in einen beliebigen Ordner in Ihrer Visual Studio für Mac-Lösung hinzugefügt werden und, wenn die **Buildvorgang** nastaven NA hodnotu **Content** und klicken Sie dann die Datei in Ihrer app enthalten sein wird und angezeigt werden kann.
 
-Visual Studio für Mac unterstützt auch ein besonderes Verzeichnis mit dem Namen der Ressourcen, die auch Bilddateien enthalten kann. Dateien im Ordner "Ressourcen" müssen die **Buildvorgang** festgelegt **BundleResource**.
+Visual Studio für Mac unterstützt auch ein spezielles Verzeichnis namens **Ressourcen** kann auch Bilddateien enthalten. Dateien im Ordner "Ressourcen" müssen die **Buildvorgang** festgelegt **BundleResource**.
 
-Diese bildschirmabbildung zeigt die **Buildvorgang** Optionen werden angezeigt, wenn eine Datei geklickt wird:
+Dieser Screenshot zeigt die **Buildvorgang** Optionen werden angezeigt, wenn eine Datei geklickt wird:
 
  [![](image-images/image30a.png "Erstellen Sie im Menü Aktion")](image-images/image30a.png#lightbox)
 
-Visual Studio für Mac werden in der Regel, wählen Sie den richtigen **Buildvorgang** automatisch, aber Sie sollten diese Einstellungen beachtet werden, insbesondere dann, wenn Sie Dateien in Ihrem Projekt verschieben.
+Visual Studio für Mac wird in der Regel wählen Sie den richtigen **Buildvorgang** automatisch Sie sollten jedoch beachten Sie diese Einstellungen, insbesondere dann, wenn Sie Dateien in Ihrem Projekt verschieben.
 
-### <a name="adding-an-image-file"></a>Hinzufügen einer Bilddatei
+### <a name="adding-an-image-file"></a>Bilddatei hinzufügen
 
-Um eine Bilddatei dem Projekt hinzuzufügen, zunächst mit der rechten Maustaste des Projekts und wählen Sie **Dateien hinzufügen...**
+Um Ihr Projekt eine Bilddatei hinzugefügt haben, zuerst mit der rechten Maustaste in des Projekts, und wählen Sie **Dateien hinzufügen...**
 
  [![](image-images/image31a.png "Hinzufügen von Dateien im Menü")](image-images/image31a.png#lightbox)
 
-Wählen Sie das Bild (oder Bilder) in das Standarddialogfeld eingeschlossen werden sollen. Die Standardeinstellung Buildvorgang Bilder werden **BundleResource** – dieser Wert nicht überschrieben werden, sofern Sie keinen bestimmten Grund haben.
+Wählen Sie das Bild (oder Bilder) in das Dialogfeld für die standard-Datei eingeschlossen werden sollen. Der Standardwert Buildvorgang für Bilder gelten **BundleResource** – diesen Wert nicht überschreiben, es sei denn, Sie einen bestimmten Grund haben.
 
- [![](image-images/image32a.png "Dateien-Dialogfeld \"hinzufügen\"")](image-images/image32a.png#lightbox)
+ [![](image-images/image32a.png "Dateien, Dialogfeld \"hinzufügen\"")](image-images/image32a.png#lightbox)
 
-Das Bild wird hinzugefügt werden, auf das Projekt und geladen und im Code angezeigt werden kann. Diese bildschirmabbildung zeigt ein Bild, ein Projekt für iOS-Anwendung hinzugefügt:
+Das Bild wird hinzugefügt werden, zu Ihrem Projekt und verfügbar sind, geladen und im Code angezeigt werden. Dieser Screenshot zeigt ein Bild, ein iOS-Anwendungsprojekt hinzugefügt:
 
  [![](image-images/image33a.png "Bild in-Projekt")](image-images/image33a.png#lightbox)
 
-### <a name="what-is-the-resources-directory"></a>Was ist die Ressourcen-Verzeichnis?
+### <a name="what-is-the-resources-directory"></a>Was ist das Verzeichnis "Resources"?
 
-Dateien, die im Ressourcenverzeichnis platziert werden anders behandelt als reguläre Dateien – den Inhalt des Ordners Ressourcen werden in das Stammverzeichnis der Anwendung kopiert und von dort in Ihrem Code verwiesen werden können. Dies kann aus vielen Gründen nützlich sein:
+Dateien aus der **Ressourcen** Verzeichnis werden anders behandelt als reguläre Dateien – den Inhalt der **Ressourcen** Ordner werden in das Stammverzeichnis der Anwendung kopiert und dort in verwiesen werden kann Ihren Code. Dies kann aus vielen Gründen nützlich sein:
 
--  Speichern die Bilder, die in der Anwendung-Eigenschaften, z. B. die Standard-Startbildern und Anwendungssymbolen konfiguriert.
--  Speichern die anderen Bilder und Dateien separat aus dem Code, sie sind also einfacher zu verwalten (Unterverzeichnisse werden beibehalten, wenn die Ressourcen der Verzeichnisinhalt kopiert werden).
-
-
-Ressourcenverzeichnis ist besonders nützlich, ein Klassenbibliotheksprojekt, da der Code verarbeiten kann, dass diese Bilder in das Stammverzeichnis der Anwendung, erleichtert es, gemeinsam genutzte Codebibliotheken zu schreiben, die erfordern, Image, Audio-, Video-, XML- oder anderen kopiert werden Dateien.
+-  Speichern die Images, die in den Eigenschaften der Anwendung, z. B. den Start Standardbilder und Anwendungssymbole konfiguriert.
+-  Speichern die anderen Bilder und Dateien aus dem Code getrennt, daher sind einfacher zu verwalten (Unterverzeichnisse werden beibehalten, wenn die Inhalte des Ressourcen-Verzeichnisses kopiert werden).
 
 
+Die **Ressourcen** Directory ist ein Bibliotheksprojekt, besonders nützlich, da der Code annehmen kann, dass es sich bei dieser Images kopiert werden sollen, in das Stammverzeichnis der verarbeitenden Anwendung leichter schreiben, die freigegebene Codebibliotheken, die erfordern Bild, sound, Video, XML oder andere Dateien.
 
-Ressourcenverzeichnis muss daher mit dem Namen, und alle Dateien sollte die Buildaktion festgelegt **BundleResource**
+Die **Ressourcen** Verzeichnis muss also den Namen, und alle Dateien sollte die Buildaktion festgelegt **BundleResource**.
 
-## <a name="displaying-the-image"></a>Das Bild anzuzeigen
+## <a name="displaying-the-image"></a>Das Bild anzeigen
 
-Um ein Image mithilfe des Designers anzuzeigen, ein Bild anzeigen als Container verwendet werden sollte und ein einzelnes Bild oder eine Animation des Images anzeigen. Die **Image Ansicht** Symbol aus der Toolbox wird unten gezeigt:
+Verwenden Sie in der iOS-Designer, ein **Image View** um ein Bild oder animiertes Reihe von Bildern anzuzeigen. Die **Image View** Symbol aus der Toolbox wird unten gezeigt:
 
  [![](image-images/image35a.png "ImageView in Toolbox")](image-images/image35.png#lightbox)
 
-Ziehen Sie die **Image Ansicht** aus der **Toobox** auf die View-Controller. Klicken Sie anschließend unter ** Anzeigen > Image ** die Dropdown-Liste stellt eine Liste aller verfügbaren Images-Dateien im Projekt bereit. Wählen Sie eins der Image-Ansicht hinzuzufügen.
+Ziehen Sie die **Image View** aus der **Toolbox** auf den View-Controller. Klicken Sie unter **Image View > Image** die Dropdown Liste wird eine Liste aller verfügbaren Images-Dateien in Ihrem Projekt bereitzustellen. Wählen Sie diese um es die Image-Ansicht hinzuzufügen.
 
  [![](image-images/image36a.png "ImageView in Toolbox")](image-images/image36.png#lightbox)
 
 ### <a name="displaying-the-image-programmatically"></a>Das Bild anzeigen programmgesteuert
 
-Da blocks.jpg sich im Stammverzeichnis des Ressourcenverzeichnis befindet wird zur Laufzeit in das Anwendungspaket Stamm verfügbar sein. Zum Anzeigen dieses Bilds in einem ImageView Steuerelement verwenden Sie folgenden Code:
+Da **SF Monkey.jpg** befindet sich im Stammverzeichnis der **Ressourcen** Directory, sie werden zur Laufzeit in das anwendungsbündel Stamm verfügbar. Um dieses Image in ein Image-Steuerelement anzuzeigen, verwenden Sie den folgenden Code:
 
 ```csharp
-imageview1.Image = UIImage.FromBundle ("SF Monkey.png");
+imageview1.Image = UIImage.FromBundle("SF Monkey.png");
 ```
 
-Wenn wir das Bild im platziert hatten `/Resources/Pics/blocks.jpg` und der Code den Pics-Ordner im Pfad enthalten:
+Wenn wir das Bild in platziert hat **Ressourcen/Pics/SF Monkey.jpg**, und klicken Sie dann den Code einfügen, würde die **Pics** Ordner im Pfad:
 
 ```csharp
-imageview1.Image = UIImage.FromBundle ("Pics/SF Monkey.png");
+imageview1.Image = UIImage.FromBundle("Pics/SF Monkey.png");
 ```
 
-Ressourcendatei verweist müssen niemals auf die `Resources` Ordner.
-
+Ressourcendatei verweist nicht erforderlich, auf die **Ressourcen** Ordner.
 
 ## <a name="related-links"></a>Verwandte Links
 

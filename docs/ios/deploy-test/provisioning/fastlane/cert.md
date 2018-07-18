@@ -1,16 +1,18 @@
 ---
 title: Fastlane für iOS – Cert
+description: 'In diesem Artikel wird Fastlane beschrieben. Ein Tool, das viele Bestandteile des Bereitstellungsprozesses der iOS-Anwendung automatisiert: Das Anfordern von Zertifikaten, das Hinzufügen eines Geräts in das Entwicklerportal von Apple, das Erstellen einer App-ID und mehr.'
 ms.prod: xamarin
 ms.assetid: 900FA6FF-F3C9-4D35-993E-B0D88E6B1883
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0b9db3d7b8f28e4b3e1bbb1ec167c73414845be3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fac90f4738046f91183a1acd080a0d0e480c6cbf
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785196"
 ---
 # <a name="fastlane-for-ios--cert"></a>Fastlane für iOS – Cert
 

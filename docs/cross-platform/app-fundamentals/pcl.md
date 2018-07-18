@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33919045"
 ---
 # <a name="introduction-to-portable-class-libraries"></a>Einführung in portablen Klassenbibliotheken
 
@@ -174,7 +175,7 @@ Sobald eine PCL-Projekt erstellt wurde, können Sie einen Verweis darauf aus ein
 
 
 
-[![](pcl-images/image8.png "In Visual Studio für Mac mit der rechten Maustaste auf den Knoten "Verweise", und wählen Sie Verweise bearbeiten und dann wechseln Sie zur Registerkarte "Projekte" gezeigten")](pcl-images/image8.png#lightbox)
+[![](pcl-images/image8.png "In Visual Studio für Mac mit der rechten Maustaste auf den Knoten \"Verweise\", und wählen Sie Verweise bearbeiten und dann wechseln Sie zur Registerkarte \"Projekte\" gezeigten")](pcl-images/image8.png#lightbox)
 
 
 
@@ -276,7 +277,7 @@ Sobald eine PCL-Projekt erstellt wurde, können Sie einen Verweis darauf aus ein
 
 
 
-[![](pcl-images/image16.png ""Projekte" gezeigten")](pcl-images/image16.png#lightbox)
+[![](pcl-images/image16.png "\"Projekte\" gezeigten")](pcl-images/image16.png#lightbox)
 
 
 

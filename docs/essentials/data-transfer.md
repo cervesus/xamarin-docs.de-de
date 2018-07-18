@@ -1,22 +1,22 @@
 ---
 title: 'Xamarin.Essentials: Datenübertragung'
-description: Die Klasse DataTransfer in Xamarin.Essentials ermöglicht einer Anwendung zur Freigabe von Daten, z. B. Links "Text" und "Web" für andere Anwendungen auf dem Gerät.
+description: Die DataTransfer-Klasse in Xamarin.Essentials ermöglicht eine Anwendung zum Freigeben von Daten, z. B. Text und Web Links zu anderen Anwendungen auf dem Gerät.
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 69d429b1cdbbbd6dbb53e3cefa89695666494ba7
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c1ed298e1317d0a3f78f4dbd9fc89a2b01c6958c
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782384"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855109"
 ---
 # <a name="xamarinessentials-data-transfer"></a>Xamarin.Essentials: Datenübertragung
 
-![Vorabversion NuGet](~/media/shared/pre-release.png)
+![Vorabversionen von NuGet](~/media/shared/pre-release.png)
 
-Die **DataTransfer** Klasse ermöglicht einer Anwendung, z. B. Text und Web Verknüpfungen für andere Anwendungen auf dem Gerät Daten gemeinsam nutzen.
+Die **DataTransfer** -Klasse kann eine Anwendung zum Freigeben von Daten, z. B. Text und Web Links zu anderen Anwendungen auf dem Gerät.
 
 ## <a name="using-data-transfer"></a>Verwenden die Datenübertragung
 
@@ -26,7 +26,7 @@ Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
 using Xamarin.Essentials;
 ```
 
-Die Funktionalität zum Übertragen von Daten durch den Aufruf funktioniert die `RequestAsync` Methode mit einem Anforderung-Nutzlast, die Informationen zur Freigabe für andere Anwendungen umfasst. Text- und Uri können gemischt werden, und jede Plattform Filterung anhand des Inhalts behandelt.
+Die Funktionalität zum Übertragen von Daten erfolgt durch Aufrufen der `RequestAsync` -Methode mit einer Anforderungsnutzlast für Daten, die Informationen zum Freigeben für andere Anwendungen enthält. Text und Uri können kombiniert werden, und jede Plattform Filterung basierend auf den Inhalt behandelt.
 
 ```csharp
 
@@ -52,19 +52,27 @@ public class DataTransferTest
 }
 ```
 
-Benutzeroberfläche für die externe Anwendung freigeben, die angezeigt wird, wenn die Anforderung erfolgt:
+Die Benutzeroberfläche an externe Anwendung freigeben, die angezeigt wird, wenn die Anforderung gesendet wird:
 
 ![Datenübertragung](data-transfer-images/data-transfer.png)
 
-## <a name="platform-differences"></a>Platform-Unterschiede
+## <a name="platform-differences"></a>Plattformunterschiede
 
-| Plattform | Unterschied |
-| --- | --- |
-| Android | Eigenschaft "Subject" wird für die gewünschte Betreff einer Nachricht verwendet. |
-| iOS | Betreff, die nicht verwendet werden. |
-| iOS | Der Titel nicht verwendet. |
-| UWP | Titel wird standardmäßig auf den Anwendungsnamen, sofern nichts anderes festgelegt. |
-| UWP | Betreff, die nicht verwendet werden. |
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+* `Subject` Eigenschaft wird für die gewünschte Betreff einer Nachricht verwendet.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+* `Subject` nicht verwendet.
+* `Title` nicht verwendet. 
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+* `Title` wird standardmäßig die Anwendungsname Wenn nicht festgelegt.
+* `Subject` nicht verwendet.
+
+-----
 
 ## <a name="api"></a>API
 

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33921299"
 ---
 # <a name="using-tiled-with-cocossharp"></a>Mit Kacheleffekt mit CocosSharp
 
@@ -175,7 +176,7 @@ Wenn die Glücksspiel Kasten Eigenschaften nicht angezeigt werden, mit der recht
 
 Gekachelte Eigenschaften werden mit einem Namen und einen Wert implementiert. Um eine Eigenschaft hinzuzufügen, klicken Sie auf die **+** Schaltfläche, geben Sie den Namen **IsTreasure**, klicken Sie auf **OK**, geben Sie dann den Wert **"true"**: 
 
-![](tiled-images/image11.png "Um eine Eigenschaft hinzuzufügen, klicken Sie auf die Schaltfläche "", geben Sie den Namen IsTreasure, klicken Sie auf OK, und geben Sie den Wert "true"")
+![](tiled-images/image11.png "Um eine Eigenschaft hinzuzufügen, klicken Sie auf die Schaltfläche \"", geben Sie den Namen IsTreasure, klicken Sie auf OK, und geben Sie den Wert \"true\"")
 
 Vergessen Sie nicht zum Speichern der .tmx-Datei nach dem Ändern der Eigenschaften.
 

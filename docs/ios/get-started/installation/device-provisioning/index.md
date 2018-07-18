@@ -1,21 +1,20 @@
 ---
-title: Bereitstellung von Geräten
-description: Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieser Leitfaden behandelt das Anfordern von Entwicklungszertifikaten und -profilen, das Arbeiten mit App-Diensten und das Bereitstellen einer App auf Geräten.
+title: Gerätebereitstellung für Xamarin.iOS
+description: In diesem Artikel wird beschrieben, wie Sie ein Gerät bereitstellen, damit es zum Testen einer Anwendung verwendet werden kann. Außerdem wird erläutert, wie Sie eine App konfigurieren, damit sie Funktionen wie Pushbenachrichtigungen verwenden kann.
 ms.prod: xamarin
 ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 5265ee366c7e3c0e79e54d320d3d6eb57c2fd92d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 9721cc40319f0b4d6f0869eabccb84256122fb02
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785787"
 ---
-# <a name="device-provisioning"></a>Bereitstellung von Geräten
-
-_Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieser Leitfaden behandelt das Anfordern von Entwicklungszertifikaten und -profilen, das Arbeiten mit App-Diensten und das Bereitstellen einer App auf Geräten._
+# <a name="device-provisioning-for-xamarinios"></a>Gerätebereitstellung für Xamarin.iOS
 
 Beim Entwickeln einer Xamarin.iOS-Anwendung ist es wichtig diese durch Bereitstellen der App auf einem physischen Gerät zu testen, zusätzlich zur Ausführung der Anwendung im Simulator. Bei Ausführung auf einem Gerät kann es aufgrund von Hardwarebeschränkungen, z.B. in Bezug auf den Arbeitsspeicher oder die Netzwerkkonnektivität, zu gerätespezifischen Problemen und Leistungseinbußen kommen. Um auf einem physischen Gerät zu testen, muss das Gerät *bereitgestellt* und Apple darüber informiert werden, dass das Gerät für Tests verwendet wird.
 

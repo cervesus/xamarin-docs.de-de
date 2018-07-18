@@ -1,51 +1,51 @@
 ---
-title: Erstellen der Plattform-Besonderheiten
-description: In diesem Artikel veranschaulicht, wie einen Effekt über einen plattformspezifischen verfügbar zu machen.
+title: Erstellen von Plattformeigenschaften
+description: In diesem Artikel wird veranschaulicht, wie einen Effekt über eine plattformspezifische verfügbar gemacht wird.
 ms.prod: xamarin
 ms.assetid: 0D0E6274-6EF2-4D40-BB77-3D8E53BCD24B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/23/2016
-ms.openlocfilehash: a07ff2e206a08ee40355733ab2c1026f29de2f2f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1d9f07a089eabedf07bef49c9815fe7e93128f09
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242783"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997255"
 ---
-# <a name="creating-platform-specifics"></a>Erstellen der Plattform-Besonderheiten
+# <a name="creating-platform-specifics"></a>Erstellen von Plattformeigenschaften
 
-_Anbieter können ihre eigenen Plattform-Besonderheiten mit Effekte erstellen. Ein Effekt bietet die spezifische Funktionalität, die dann über eine plattformspezifische verfügbar gemacht wird. Das Ergebnis ist ein Effekt, der leichter über XAML und über die fluent-API-Code genutzt werden kann. In diesem Artikel veranschaulicht, wie einen Effekt über einen plattformspezifischen verfügbar zu machen._
+_Anbieter können ihre eigenen Plattformeigenschaften mit Effekte erstellen. Ein Effekt bietet es sich um die spezifische Funktionalität, die dann über eine plattformspezifische verfügbar gemacht wird. Das Ergebnis ist ein Effekt, der leichter über XAML oder über eine fluent API-Code genutzt werden kann. In diesem Artikel wird veranschaulicht, wie einen Effekt über eine plattformspezifische verfügbar gemacht wird._
 
 ## <a name="overview"></a>Übersicht
 
-Der Erstellungsprozess für eine plattformspezifische lautet wie folgt:
+Der Prozess zum Erstellen einer plattformspezifischen lautet wie folgt aus:
 
-1. Implementieren Sie die spezifische Funktionalität als Effekt. Weitere Informationen finden Sie unter [Erstellen eines Effekts](~/xamarin-forms/app-fundamentals/effects/creating.md).
-1. Erstellen Sie eine plattformspezifische-Klasse, die den Effekt verfügbar machen soll. Weitere Informationen finden Sie unter [Erstellen einer Klasse plattformspezifischen](#creating).
-1. Implementieren Sie in der Klasse plattformspezifischen einer angefügten Eigenschaft, damit die plattformspezifischen durch XAML genutzt werden können. Weitere Informationen finden Sie unter [Hinzufügen einer angefügten Eigenschaft](#attached_property).
-1. Implementieren Sie in der Klasse plattformspezifischen Erweiterungsmethoden, damit die Clientplattform-spezifische, durch eine fluent-Code-API genutzt werden können. Weitere Informationen finden Sie unter [Hinzufügen von Erweiterungsmethoden](#extension_methods).
-1. Ändern Sie die Auswirkungen-Implementierung, damit die Auswirkungen nur angewendet, wenn für dieselbe Plattform als die Auswirkung der plattformspezifischen aufgerufen wurde. Weitere Informationen finden Sie unter [den Effekt](#creating_the_effect).
+1. Implementieren Sie die spezifische Funktionalität als einen Effekt. Weitere Informationen finden Sie unter [erstellen einen Effekt](~/xamarin-forms/app-fundamentals/effects/creating.md).
+1. Erstellen Sie eine plattformspezifische-Klasse, die den Effekt verfügbar macht. Weitere Informationen finden Sie unter [Erstellen einer plattformspezifischen Klasse](#creating).
+1. Implementieren Sie in der plattformspezifischen-Klasse einer angefügten Eigenschaft, damit die plattformspezifischen über XAML verwendet werden kann. Weitere Informationen finden Sie unter [Hinzufügen einer angefügten Eigenschaft](#attached_property).
+1. Implementieren Sie in der Klasse plattformspezifische Erweiterungsmethoden bereit, um die plattformspezifischen über eine fluent API-Code genutzt werden können. Weitere Informationen finden Sie unter [Erweiterungsmethoden hinzufügen](#extension_methods).
+1. Ändern Sie die Implementierung der Effekt, sodass die Auswirkungen nur angewendet, wenn die plattformspezifischen auf derselben Plattform wie der Effekt aufgerufen wurde. Weitere Informationen finden Sie unter [erstellen die Auswirkungen](#creating_the_effect).
 
-Das Ergebnis ein Effekts als eine plattformspezifische verfügbar machen, ist, dass die Auswirkungen leichter über XAML und einer fluent-Code-API genutzt werden kann.
+Das Ergebnis ein Effekts als eine plattformspezifische verfügbar zu machen ist, dass die Auswirkung einfacher über die XAML und über eine fluent API-Code genutzt werden kann.
 
 > [!NOTE]
-> Ist vorgesehen, dass der Anbieter diese Technik zum Erstellen von eigenen Plattform-Besonderheiten zur Vereinfachung der Nutzung von Benutzern verwenden. Während Benutzer ihre eigenen Plattform-Besonderheiten erstellen wählen können, sollte darauf hingewiesen werden, dass sie mehr Code als erstellen und Nutzen eines Effekts erfordert.
+> Ist vorgesehen, dass Anbieter diese Technik zum Erstellen von eigenen Plattformeigenschaften, zur Vereinfachung der Nutzung von Benutzern verwenden. Während der Benutzer auswählen können, um ihre eigenen Plattformeigenschaften zu erstellen, darauf hinzuweisen, dass sie mehr Code als das Erstellen und nutzen einen Effekt erfordert.
 
-Die beispielanwendung für veranschaulicht eine `Shadow` plattformspezifischen, die einen Schatten vom angezeigte Text hinzufügt eine [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) Steuerelement:
+Die beispielanwendung zeigt eine `Shadow` plattformspezifische, die den Text durch einen Schatten hinzufügt eine [ `Label` ](xref:Xamarin.Forms.Label) Steuerelement:
 
 ![](creating-images/screenshots.png "Clientplattform-spezifische Shadowing")
 
-Die Anwendung implementiert die `Shadow` plattformspezifischen auf jeder Plattform zur Vereinfachung der verstehen. Abgesehen von der jede Clientplattform-spezifische Auswirkungen Implementierung ist die Implementierung der Schattenkopie-Klasse jedoch weitgehend für jede Plattform. Dieses Handbuch behandelt daher die Implementierung der Schattenkopie-Klasse und der zugehörigen Auswirkungen auf eine einzelne Plattform.
+Die Beispiel-Anwendung implementiert die `Shadow` plattformspezifische auf jeder Plattform zum einfacheren Verständnis. Abgesehen von der jede Clientplattform-spezifische Auswirkungen Implementierung ist jedoch die Implementierung der Volumeschattenkopie-Klasse für jede Plattform weitgehend identisch. Dieses Handbuch behandelt daher die Implementierung der Volumeschattenkopie-Klasse und der zugehörigen Auswirkungen auf eine einzelne Plattform.
 
-Weitere Informationen zu Auswirkungen finden Sie unter [Customizing Controls mit Effekten](~/xamarin-forms/app-fundamentals/effects/index.md).
+Weitere Informationen zu den Auswirkungen, finden Sie unter [Customizing Controls mit Effekten](~/xamarin-forms/app-fundamentals/effects/index.md).
 
 <a name="creating" />
 
 ## <a name="creating-a-platform-specific-class"></a>Erstellen einer plattformspezifischen-Klasse
 
-Ein plattformspezifisches wird als erstellt eine `public static` Klasse:
+Eine plattformspezifische wird als erstellt eine `public static` Klasse:
 
 ```csharp
 namespace MyCompany.Forms.PlatformConfiguration.iOS
@@ -63,7 +63,7 @@ Den folgenden Abschnitten werden die Implementierung der `Shadow` plattformspezi
 
 ### <a name="adding-an-attached-property"></a>Hinzufügen einer angefügten Eigenschaft
 
-Eine angefügte Eigenschaft muss hinzugefügt werden, um die `Shadow` plattformspezifischen zum Zulassen der Nutzung durch XAML:
+Eine angefügte Eigenschaft muss hinzugefügt werden, um die `Shadow` plattformspezifische zum Zulassen der Nutzung durch XAML:
 
 ```csharp
 namespace MyCompany.Forms.PlatformConfiguration.iOS
@@ -136,18 +136,18 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 }
 ```
 
-Die `IsShadowed` angefügte Eigenschaft wird verwendet, um das Hinzufügen der `MyCompany.LabelShadowEffect` Auswirkungen, und entfernen Sie sie aus dem Steuerelement, das `Shadow` Klasse angefügt ist. Dies angefügte Eigenschaft registriert die `OnIsShadowedPropertyChanged` Methode, die ausgeführt wird, wenn der Wert der Eigenschaft ändert. Wiederum diese Methode ruft die `AttachEffect` oder `DetachEffect` Methode zum Hinzufügen oder entfernen die Auswirkungen basierend auf den Wert der `IsShadowed` -Eigenschaft. Der Effekt hinzugefügt oder entfernt Sie aus dem Steuerelement durch Ändern des Steuerelements [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) Auflistung.
+Die `IsShadowed` angefügte Eigenschaft wird verwendet, um das Hinzufügen der `MyCompany.LabelShadowEffect` Auswirkungen, und entfernt sie aus, das Steuerelement, das `Shadow` Klasse, die angefügt wird. Diese angefügte Eigenschaft registriert die `OnIsShadowedPropertyChanged` -Methode, die ausgeführt werden, wenn der Wert der Eigenschaft geändert wird. Diese Methode wiederum ruft die `AttachEffect` oder `DetachEffect` Methode zum Hinzufügen oder entfernen die Auswirkung basierend auf den Wert der `IsShadowed` angefügte Eigenschaft. Der Effekt wird hinzugefügt oder entfernt Sie aus dem Steuerelement, durch Ändern des Steuerelements [ `Effects` ](xref:Xamarin.Forms.Element.Effects) Auflistung.
 
 > [!NOTE]
-> Beachten Sie, dass die Auswirkungen behoben ist, durch die Angabe eines Werts, das besteht aus einer Verkettung der Gruppenname Auflösung und eindeutiger Bezeichner, der für die Implementierung Auswirkungen angegeben wird. Weitere Informationen finden Sie unter [Erstellen eines Effekts](~/xamarin-forms/app-fundamentals/effects/creating.md).
+> Beachten Sie, dass die Auswirkungen aufgelöst wird, durch Angabe eines Werts, das besteht aus einer Verkettung der Auflösung von Namen und eindeutiger Bezeichner, der für die Implementierung der Effekt angegeben wird. Weitere Informationen finden Sie unter [erstellen einen Effekt](~/xamarin-forms/app-fundamentals/effects/creating.md).
 
-Weitere Informationen über angefügte Eigenschaften finden Sie unter [angefügte Eigenschaften](~/xamarin-forms/xaml/attached-properties.md).
+Weitere Informationen zu angefügten Eigenschaften finden Sie unter [angefügte Eigenschaften](~/xamarin-forms/xaml/attached-properties.md).
 
 <a name="extension_methods" />
 
-### <a name="adding-extension-methods"></a>Hinzufügen von Erweiterungsmethoden [c#]
+### <a name="adding-extension-methods"></a>Hinzufügen von Erweiterungsmethoden
 
-Erweiterungsmethoden [c#] müssen hinzugefügt werden, um die `Shadow` plattformspezifischen zum Zulassen der Nutzung über die fluent-API-Code:
+Erweiterungsmethoden müssen hinzugefügt werden, um die `Shadow` plattformspezifische zum Zulassen der Nutzung über eine fluent API-Code:
 
 ```csharp
 namespace MyCompany.Forms.PlatformConfiguration.iOS
@@ -175,13 +175,13 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 }
 ```
 
-Die `IsShadowed` und `SetIsShadowed` Erweiterungsmethoden Aufrufen der Get und set-Accessoren für die `IsShadowed` angefügten Eigenschaft, der bzw. Jede Erweiterungsmethode arbeitet, auf die `IPlatformElementConfiguration<iOS, FormsElement>` Typ, der angibt, dass die plattformspezifischen aufgerufen werden kann, auf [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) Instanzen IOS.
+Die `IsShadowed` und `SetIsShadowed` Erweiterungsmethoden Aufrufen der Get und set-Accessoren für die `IsShadowed` angefügten Eigenschaft, der bzw. Jede Erweiterungsmethode verarbeitet die `IPlatformElementConfiguration<iOS, FormsElement>` Typ, der angibt, dass die plattformspezifischen für aufgerufen werden kann [ `Label` ](xref:Xamarin.Forms.Label) Instanzen IOS.
 
 <a name="creating_the_effect" />
 
-### <a name="creating-the-effect"></a>Erstellen die Auswirkung
+### <a name="creating-the-effect"></a>Erstellen die Auswirkungen
 
-Die `Shadow` plattformspezifischen fügt die `MyCompany.LabelShadowEffect` auf eine [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), und entfernt wird. Das folgende Codebeispiel zeigt die `LabelShadowEffect` Implementierung für das iOS-Projekt:
+Die `Shadow` plattformspezifische fügt die `MyCompany.LabelShadowEffect` auf eine [ `Label` ](xref:Xamarin.Forms.Label), und entfernt sie. Das folgende Codebeispiel zeigt die `LabelShadowEffect` Implementierung für das iOS-Projekt:
 
 ```csharp
 [assembly: ResolutionGroupName("MyCompany")]
@@ -234,15 +234,15 @@ namespace ShadowPlatformSpecific.iOS
 }
 ```
 
-Die `UpdateShadow` -Methode legt `Control.Layer` Eigenschaften zum Erstellen des Schattens bereitgestellt, die die `IsShadowed` auf gesetzte angehängte Eigenschaft `true`, und vorausgesetzt, dass die `Shadow` plattformspezifischen für dieselbe Plattform aufgerufen wurde, die Effekt wird für implementiert. Diese Überprüfung wird ausgeführt, mit der `OnThisPlatform` Methode.
+Der `UpdateShadow` Methode legt `Control.Layer` Eigenschaften zum Erstellen des Schattens bereitgestellt, die die `IsShadowed` angefügte Eigenschaft auf festgelegt ist `true`, und vorausgesetzt, dass die `Shadow` plattformspezifische auf derselben Plattform aufgerufen wurde, die Effekt wird für implementiert. Diese Überprüfung wird ausgeführt, mit der `OnThisPlatform` Methode.
 
-Wenn die `Shadow.IsShadowed` angefügt eigenschaftswertänderungen zur Laufzeit, muss der Auswirkungen durch das Entfernen des Schattens zu reagieren. Aus diesem Grund eine überschriebene Version der der `OnElementPropertyChanged` Methode wird verwendet, so reagieren Sie auf die Änderung bindbare Eigenschaft durch Aufrufen der `UpdateShadow` Methode.
+Wenn die `Shadow.IsShadowed` angefügt Änderungen von Eigenschaftswerten zur Laufzeit muss die Auswirkungen durch das Entfernen des Schattens zu reagieren. Aus diesem Grund einer überschriebenen Version der dem `OnElementPropertyChanged` Methode dient zum Reagieren auf die bindbare Eigenschaft-Änderung durch Aufrufen der `UpdateShadow` Methode.
 
-Weitere Informationen zum Erstellen eines Effekts finden Sie unter [Erstellen eines Effekts](~/xamarin-forms/app-fundamentals/effects/creating.md) und [Effekt-Parameter übergeben, als angefügte Eigenschaften](~/xamarin-forms/app-fundamentals/effects/passing-parameters/attached-properties.md).
+Weitere Informationen zum Erstellen eines Effekts finden Sie unter [erstellen einen Effekt](~/xamarin-forms/app-fundamentals/effects/creating.md) und [Auswirkung-Parameter übergeben, als angefügte Eigenschaften](~/xamarin-forms/app-fundamentals/effects/passing-parameters/attached-properties.md).
 
 ## <a name="consuming-a-platform-specific"></a>Nutzen eine plattformspezifische
 
-Die `Shadow` plattformspezifischen belegt wurde in XAML durch Festlegen der `Shadow.IsShadowed` angefügten Eigenschaft, um eine `boolean` Wert:
+Die `Shadow` plattformspezifische ist in XAML verwendet, durch Festlegen der `Shadow.IsShadowed` angefügten Eigenschaft, um eine `boolean` Wert:
 
 ```xaml
 <ContentPage xmlns:ios="clr-namespace:MyCompany.Forms.PlatformConfiguration.iOS" ...>
@@ -252,7 +252,7 @@ Die `Shadow` plattformspezifischen belegt wurde in XAML durch Festlegen der `Sha
 </ContentPage>
 ```
 
-Alternativ können sie in c# mithilfe der fluent-API genutzt werden:
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -263,11 +263,11 @@ using MyCompany.Forms.PlatformConfiguration.iOS;
 shadowLabel.On<iOS>().SetIsShadowed(true);
 ```
 
-Weitere Informationen zu Plattform-Besonderheiten nutzen, finden Sie unter [Plattform-Besonderheiten nutzen](~/xamarin-forms/platform/platform-specifics/consuming/index.md).
+Weitere Informationen zur Nutzung von Plattformeigenschaften finden Sie unter [nutzen Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/consuming/index.md).
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel veranschaulicht, wie einen Effekt über einen plattformspezifischen verfügbar zu machen. Das Ergebnis ist ein Effekt, der leichter über XAML und über die fluent-API-Code genutzt werden kann.
+In diesem Artikel veranschaulicht, wie Sie einen Effekt über eine plattformspezifische verfügbar zu machen. Das Ergebnis ist ein Effekt, der leichter über XAML oder über eine fluent API-Code genutzt werden kann.
 
 
 ## <a name="related-links"></a>Verwandte Links

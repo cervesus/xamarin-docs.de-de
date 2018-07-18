@@ -89,5 +89,4 @@
 #### [Warum integriert Visual Studio mein referenziertes Bibliotheksprojekt nicht in meinen Build?](troubleshooting/questions/vs-config-manager.md)
 
 ### [Aktualisieren von Komponentenverweisen auf NuGet](troubleshooting/component-nuget.md)
-### [Supportoptionen](troubleshooting/support-options.md)
 ## [Beispiele](samples/index.yml)

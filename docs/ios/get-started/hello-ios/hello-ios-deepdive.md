@@ -1,6 +1,6 @@
 ---
 title: 'Hallo, iOS: Ausführliche Erläuterungen'
-description: Dieser zweiteilige Leitfaden beschreibt, wie Sie mit Visual Studio für Mac oder Visual Studio eine einfache Xamarin.iOS-Anwendung erstellen. Außerdem erhalten Sie Einblick in die grundlegenden Aspekte der Entwicklung von iOS-Anwendungen mit Xamarin. Es werden die Tools, Konzepte und Schritte eingeführt, die zum Erstellen und Bereitstellen einer Xamarin.iOS-Anwendung erforderlich sind.
+description: In diesem Dokument wird die Beispielanwendung „Hallo, iOS“ ausführlicher beschrieben. Dabei werden unter anderem die Architektur, die Benutzeroberfläche, die Hierarchie der Inhaltsansicht, das Testen und die Entwicklung erläutert.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 61ba3a7e-fe11-4439-8bc8-9809512b8eff
@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 71bfccdcab73b651f458dd8d9c5396bffd55004b
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: f7869f572bfd6f6c8a0bc710c6e28671c22ad7eb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786399"
 ---
-# <a name="hello-ios-deep-dive"></a>Hallo, iOS: Ausführliche Erläuterungen
+# <a name="hello-ios--deep-dive"></a>Hallo, iOS: Ausführliche Erläuterungen
 
 In der exemplarischen Vorgehensweise zum Schnellstart wurde das Erstellen und Ausführen einer einfachen Xamarin.iOS-Anwendung eingeführt. Nun ist es an der Zeit, ein tieferes Verständnis für die Funktionsweise von iOS-Anwendungen zu entwickeln, sodass Sie komplexere Programme erstellen können. Dieses Handbuch führt durch die Schritte der Hallo, iOS-Anleitung, um das Verständnis der grundlegenden Konzepte der Entwicklung von iOS-Anwendungen zu ermöglichen.
 
 Folgende Themen werden in diesem Artikel besprochen:
-
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 

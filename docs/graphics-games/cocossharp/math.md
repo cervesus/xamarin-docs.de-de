@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33921578"
 ---
 # <a name="2d-math-with-cocossharp"></a>2D mathematischen Funktionen mit CocosSharp
 
@@ -282,7 +283,7 @@ Bisher haben wir an, wie einen Offset in einen Winkel konvertieren gesucht. In d
 
 Grundsätzlich kann Geschwindigkeit berechnet werden, indem zunächst definieren die gewünschte Geschwindigkeit, wenn nicht gedreht, und klicken Sie dann drehen, Geschwindigkeit zu der Winkel, den eine Entität mit Internetzugriff wird. Dieses Konzept erklären sollen, können als ein 2-dimensionale Geschwindigkeits-(und) visualisiert werden *Vektor* (dem als Pfeil in der Regel gezeichnet wird). Einen Vektor mit X-Wert Geschwindigkeit = 100 "und" Y = 0 kann wie folgt visuell dargestellt werden:
 
-![](math-images/image7.png "Einen Vektor mit X-Wert Geschwindigkeit = 100 "und" Y = 0 kann wie folgt visuell dargestellt werden")
+![](math-images/image7.png "Einen Vektor mit X-Wert Geschwindigkeit = 100 \"und\" Y = 0 kann wie folgt visuell dargestellt werden")
 
 Dieses Vektors kann gedreht werden, um eine neue Geschwindigkeit führen. Den Vektor durch (mithilfe von gegen den Uhrzeigersinn drehen) in 45-Grad drehen ergibt sich z. B. sich Folgendes:
 

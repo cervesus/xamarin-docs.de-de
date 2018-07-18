@@ -1,20 +1,19 @@
 ---
 title: Einführung in den Lebenszyklus der mobilen Softwareentwicklung
-description: In diesem Artikel wird der Lebenszyklus der Softwareentwicklung in Bezug auf mobile Anwendungen beschrieben und einige der Überlegungen erläutert, die zum Erstellen mobiler Projekte erforderlich sind. Entwickler, die direkt einsteigen und mit dem Erstellen von Anwendungen beginnen möchten, können diesen Leitfaden überspringen und später für ein breiteres Verständnis der mobilen Entwicklung weiterlesen.
+description: In diesem Dokument werden unter anderem der Lebenszyklus der mobilen Softwareentwicklung, das UX-Design, das UI-Design, die Entwicklung, die Stabilisierung und die Verteilung beschrieben.
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: c93a063c9c933e1b9f397d172115471473cf8f35
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 8a95f89ad41ab793d8c26631f1a967180b4c1779
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782332"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Einführung in den Lebenszyklus der mobilen Softwareentwicklung
-
-_In diesem Artikel wird der Lebenszyklus der Softwareentwicklung in Bezug auf mobile Anwendungen beschrieben und einige der Überlegungen erläutert, die zum Erstellen mobiler Projekte erforderlich sind. Entwickler, die direkt einsteigen und mit dem Erstellen von Anwendungen beginnen möchten, können diesen Leitfaden überspringen und später für ein breiteres Verständnis der mobilen Entwicklung weiterlesen._
 
 Das Erstellen mobiler Anwendungen kann so einfach sein: Öffnen Sie die IDE, schreiben Sie etwas, führen Sie einen kurzen Test durch, und senden Sie das Ergebnis dann an einen App Store. All dies ist an einem Nachmittag erledigt. Es kann jedoch auch ein sehr komplexer Vorgang sein, der strenge Vorabentwürfe, Nutzbarkeitstests, QA-Tests auf tausenden Geräten, einen vollständigen Beta-Lebenszyklus und anschließend die Bereitstellung einer Reihe verschiedener Methoden enthält.
 

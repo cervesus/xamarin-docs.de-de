@@ -1,5 +1,5 @@
 ---
-title: Ad-hoc-Verteilung
+title: Ad-Hoc-Verteilung für Xamarin.iOS-Apps
 description: Dieser Artikel bietet einen Überblick über Ad-hoc-Verteilungstechniken, die in erster Linie zum Testen einer Xamarin.iOS-Anwendung mit einer großen Gruppe von Personen verwendet werden.
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 9b862a39d8fb8fe079b83b8842281fad5ec903e4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0907c3bcca9e0955e5ad9f8ed48adac03202cbaa
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784802"
 ---
-# <a name="ad-hoc-distribution"></a>Ad-hoc-Verteilung
+# <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Ad-Hoc-Verteilung für Xamarin.iOS-Apps
 
 _Dieser Artikel bietet einen Überblick über Ad-hoc-Verteilungstechniken, die in erster Linie zum Testen einer Xamarin.iOS-Anwendung mit einer großen Gruppe von Personen verwendet werden._
 

@@ -7,16 +7,19 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 3cf27e48fe23b9a0f035689e55a72fcc706ab266
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 73d74b59ef6e59028eec7cad19feec21908b6329
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241330"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269043"
 ---
 # <a name="consuming-an-azure-mobile-app"></a>Verwenden einer mobilen Anwendung für Azure
 
 _Azure Mobile Apps können Sie zum Entwickeln von apps mit skalierbare Back-Ends mit Unterstützung für mobile-Authentifizierung, offline-Synchronisierung und Push-Benachrichtigungen in Azure App Service, gehostet. Dieser Artikel, die nur für Azure Mobile Apps, die eine Node.js-Back-End verwenden gilt, werden die Abfragen, einfügen, aktualisieren und Löschen von Daten in einer Tabelle in einer Instanz von Azure-Mobile-Apps erläutert._
+
+> [!NOTE]
+> Beginnend am 30. Juni, werden alle neuen Azure Mobile Apps mit TLS 1.2 standardmäßig erstellt werden. Darüber hinaus hat auch empfohlen, dass für vorhandene Azure-Mobile-Apps neu konfiguriert werden, um TLS 1.2 verwenden. Informationen zum Erzwingen von TLS 1.2 auf einer Azure-Mobile-App finden Sie unter [erzwingen TLS 1.2](/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-1112). Informationen zum Konfigurieren von Xamarin-Projekte zur Verwendung von TLS 1.2 finden Sie unter [Transport Layer Security (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md).
 
 Informationen zum Erstellen einer Azure-Mobile-Apps-Instanz, die von Xamarin.Forms genutzt werden können, finden Sie unter [erstellen Sie eine app Xamarin.Forms](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/). Nach der folgenden Anweisungen, die herunterladbaren Beispiel-Anwendung konfiguriert werden kann durch Festlegen die Instanz von Azure Mobile Apps nutzen die `Constants.ApplicationURL` an die URL der Azure-Mobile Apps-Instanz. Klicken Sie dann beim Ausführen der beispielanwendung werden sie mit der Azure-Mobile Apps-Instanz verbunden, wie im folgenden Screenshot gezeigt:
 

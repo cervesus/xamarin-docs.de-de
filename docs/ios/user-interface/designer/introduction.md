@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30784257"
 ---
 # <a name="ios-designer-basics"></a>iOS-Designer-Grundlagen
 
@@ -238,11 +239,11 @@ In früheren Versionen des iOS-Designer ein-/ausgeschaltet zwischen Rahmen und E
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-![Schaltfläche Bearbeiten Frame](introduction-images/12a-frameeditingmode-vsmac.png "Frame-Schaltfläche "Bearbeiten" "")
+![Schaltfläche Bearbeiten Frame](introduction-images/12a-frameeditingmode-vsmac.png "Frame-Schaltfläche \"Bearbeiten\" \"")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Schaltfläche Bearbeiten Frame](introduction-images/12a-frameeditingmode-vs.png "Frame-Schaltfläche "Bearbeiten" "")
+![Schaltfläche Bearbeiten Frame](introduction-images/12a-frameeditingmode-vs.png "Frame-Schaltfläche \"Bearbeiten\" \"")
 
 -----
 

@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 author: topgenorth
 ms.author: toopge
-ms.date: 03/30/2017
-ms.openlocfilehash: fa8806345a364a70535a91b2ba99e3bfee8d47bc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: 6e37b1ac3d0fb78b5737ebe97b5a28ab40adb648
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794019"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269056"
 ---
 # <a name="debugging-integrations"></a>Debuggen von Integrationen
 
@@ -23,8 +23,8 @@ Auf MacOS, protokollmeldungen angezeigt, in dem sowohl die Protokoll-Viewer-Men�
 
 Das Clientprotokoll ist an den folgenden Speicherorten auf MacOS und Windows:
 
-- Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
-- Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
+- Mac: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
+- Windows: `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
 Eins zu berücksichtigen ist, die beim Laden von Integrationen nutzen, über die üblichen `#r` Mechanismus während der Entwicklung, die Assembly für die Integration wird upgradetest werden als eine _Abhängigkeit_ der Arbeitsmappe und verpackt, wobei es ist ein absoluter Pfad nicht verwendet. Dies kann dazu führen, dass die Änderungen nicht verteilt wurde, angezeigt werden, als ob nichts das Neuerstellen der Integration hat.
 
@@ -39,7 +39,7 @@ Beide Sätze von Tools ermöglichen es Ihnen, JavaScript/TypeScript Quelltext an
 Um die Developer-Tools für Xamarin-Arbeitsmappen auf einem Mac zu aktivieren, führen Sie den folgenden Befehl in Ihrem Terminal aus:
 
 ```shell
-defaults write com.xamarin.Inspector WebKitDeveloperExtras -bool true
+defaults write com.xamarin.Workbooks WebKitDeveloperExtras -bool true
 ```
 
 und starten Sie die Xamarin-Arbeitsmappen. Sobald dies geschehen ist, sehen Sie **Element überprüfen** angezeigt werden, in Ihrem Rechtsklick-Kontextmenü, und eine neue **Developer** Bereich wird in Arbeitsmappen Voreinstellungen verfügbar sein. Diese Option können Sie wählen, ob Sie die Developer-Tools, die beim Start geöffnet werden soll:

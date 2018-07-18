@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms DataPages
-description: Dieser Artikel führt Xamarin.Forms DataPages, stellen eine API, um schnell und problemlos mit vorgefertigten Ansichten binden eine Datenquelle.
+description: Dieser Artikel enthält die Xamarin.Forms-DataPages, stellen eine API, um schnell und problemlos eine Datenquelle mit vordefinierten Ansichten binden.
 ms.prod: xamarin
 ms.assetid: DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95
 ms.technology: xamarin-forms
@@ -8,69 +8,69 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 2a74b636a41a72b26776157a774f0a33ef45a075
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243329"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815886"
 ---
 # <a name="xamarinforms-datapages"></a>Xamarin.Forms DataPages
 
-![](~/media/shared/preview.png "Diese API ist derzeit als Vorschau verfügbar")
+![](~/media/shared/preview.png "Diese API ist derzeit als Vorschauversion")
 
 > [!IMPORTANT]
 > DataPages erfordert eine [Xamarin.Forms Design](~/xamarin-forms/user-interface/themes/index.md) Verweis auf das Rendern.
 
-Xamarin.Forms DataPages Evolve 2016 vorgestellt wurden und als Vorschau für Kunden, um zu testen und Bereitstellen von Feedback verfügbar sind.
+Xamarin.Forms DataPages auf Evolve 2016 angekündigt wurden und sind als Vorschau für Kunden, testen und Feedback zur Verfügung.
 
-DataPages bieten eine API, um schnell und einfach mit vorgefertigten Ansichten eine Datenquelle binden. Listenelemente Detailseiten die Daten werden automatisch gerendert und Designs mit angepasst werden können.
+DataPages Geben Sie eine API, um schnell und einfach zu eine Datenquelle mit vordefinierten Ansichten binden. Auflisten von Elementen Detailseiten rendert die Daten automatisch und können unter Verwendung von Designs angepasst werden.
 
-Um zu sehen, wie die Evolve Keynote Demo funktioniert, sehen Sie sich die [Handbuch mit ersten Schritten](get-started.md).
+Um anzuzeigen, wie die Evolve-Keynote-Demo funktioniert, sehen Sie sich die [Handbuch mit ersten Schritten](get-started.md).
 
-[![](images/demo-sml.png "DataPages-Beispielanwendung")](images/demo.png#lightbox "DataPages-Beispielanwendung")
+[![](images/demo-sml.png "Beispielanwendung DataPages")](images/demo.png#lightbox "DataPages-Beispielanwendung")
 
 ## <a name="introduction"></a>Einführung
 
-Datenquellen und die zugehörigen Datenseiten können Entwickler schnell und einfach eine unterstützten Datenquelle nutzen und Rendern Designs mit integrierte Benutzeroberfläche Gerüstbau, die angepasst werden kann.
+Datenquellen und den zugehörigen Seiten ermöglichen Entwicklern, schnell und einfach eine unterstützte Datenquelle verwenden und es mithilfe des integrierten Gerüstbau, die Benutzeroberfläche angepasst werden kann, mit Designs zu rendern.
 
-DataPages werden zu einer Xamarin.Forms-Anwendung hinzugefügt, dazu den **Xamarin.Forms.Pages** NuGet-Paket.
+DataPages werden zu einer Xamarin.Forms-Anwendung hinzugefügt, durch Einschließen der **Xamarin.Forms.Pages** Nuget-Paket.
 
 ### <a name="data-sources"></a>Datenquellen
 
-Die Vorschau hat einige vordefinierte Datenquellen, die für die Verwendung zur Verfügung:
+Die Vorschau hat einige vorgefertigte Datenquellen, die für die Verwendung zur Verfügung:
 
 * **JsonDataSource**
 * **AzureDataSource** (trennen Sie Nuget)
 * **AzureEasyTableDataSource** (trennen Sie Nuget)
 
-Finden Sie unter der [Handbuch mit ersten Schritten](get-started.md) für ein Beispiel zur Verwendung einer `JsonDataSource`.
+Finden Sie unter den [Handbuch mit ersten Schritten](get-started.md) ein Beispiel mit einem `JsonDataSource`.
 
 
 ### <a name="pages--controls"></a>Seiten und Steuerelemente
 
-Die folgenden Seiten und Steuerelemente sind enthalten, um einfache Bindung mit den angegebenen Datenquellen zu ermöglichen:
+Die folgenden Seiten und Steuerelemente werden eingeschlossen, um die einfache Bindung mit den angegebenen Datenquellen zuzulassen:
 
-* **ListDataPage** – finden Sie unter der [Einstieg Beispiel](get-started.md).
-* **DirectoryPage** – eine Liste mit Gruppen aktiviert.
-* **PersonDetailPage** – ein einzelnes Datenelement anzeigen, die für einen bestimmten Objekttyp (eine Kontakt-Eintrag) angepasst.
-* **"DataView"** – eine Ansicht, um Daten aus der Quelldatenbank auf generische Weise verfügbar zu machen.
-* **CardView** – eine Ansicht, ein Bild, Titeltext und Description-Text enthält, formatiert.
-* **HeroImage** – eine Image-Rendering-Sicht.
-* **"ListItem"** – eine vorkonfigurierte Ansicht mit einem Layout nativer IOS- und Android Listenelemente ähnelt.
+* **ListDataPage** – finden Sie unter den [Einstieg Beispiel](get-started.md).
+* **"Directorypage"** – eine Liste mit aktivierter Gruppierung.
+* **PersonDetailPage** – ein einzelnes Datenelement anzeigen, die für einen bestimmten Objekttyp (einen Kontakteintrag) angepasst.
+* **DataView** – eine Ansicht, um Daten aus der Quelle in generischer Form verfügbar zu machen.
+* **CardView** – im Stil an, die ein Bild, Titeltext und Beschreibungstext enthält.
+* **HeroImage** – eine Image-Rendering-Ansicht.
+* **ListItem** : eine vorkonfigurierte Ansicht mit einem Layout ähnelt native IOS- und Android-Listenelemente.
 
-Finden Sie unter der [DataPages steuert Verweis](controls.md) Beispiele.
+Finden Sie unter den [DataPages Steuerelemente Referenz](controls.md) Beispiele.
 
 
 
-### <a name="under-the-hood"></a>Hinter den Kulissen
+### <a name="under-the-hood"></a>Im Hintergrund
 
-Eine Datenquelle Xamarin.Forms unterliegen die `IDataSource` Schnittstelle.
+Eine Xamarin.Forms-Datenquelle entspricht der `IDataSource` Schnittstelle.
 
-Die Infrastruktur Xamarin.Forms interagiert mit einer Datenquelle über die folgenden Eigenschaften:
+Die Xamarin.Forms-Infrastruktur interagiert mit einer Datenquelle über die folgenden Eigenschaften:
 
 * `Data` – eine schreibgeschützte Liste von Datenelementen, die angezeigt werden können.
-* `IsLoading` – Ein boolescher Wert, der angibt, ob die Daten geladen und für das Rendering verfügbar sind.
-* `[key]` – nach einem Indexer, um die Elemente abgerufen werden sollen.
+* `IsLoading` – Ein boolescher Wert, der angibt, ob die Daten geladen und für das verfügbar ist.
+* `[key]` – ein Indexer zum Abrufen von Elementen.
 
-Es gibt zwei Methoden `MaskKey` und `UnmaskKey` , die verwendet werden kann, und ausblenden () Elementeigenschaften (d. h. verhindern sie gerendert wird).
-Der Schlüssel entspricht der eine benannte Eigenschaft für das Element Datenobjekt.
+Es gibt zwei Methoden `MaskKey` und `UnmaskKey` , die verwendet werden kann, (oder ausblenden) Elementeigenschaften (d. h. verhindern sie gerenderte).
+Der Schlüssel entspricht das eine benannte Eigenschaft für das Datenobjekt für das Element.

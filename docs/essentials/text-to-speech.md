@@ -1,24 +1,24 @@
 ---
-title: 'Xamarin.Essentials: Sprachausgabe'
-description: Die in Xamarin.Essentials ermöglicht eine Anwendung nutzen in Sprach sprechen Back Text vom Gerät und verfügbaren Abfragesprachen, die das Modul unterstützen, kann die integrierten TextToSpeech-Klasse.
+title: 'Xamarin.Essentials: Sprachsynthese'
+description: Die TextToSpeech-Klasse in Xamarin.Essentials ermöglicht eine Anwendung nutzen die integrierten im Text-Sprach-Engines Back Text sprechen, auf dem Gerät und auch Abfragen verfügbaren Sprachen, die die Engine unterstützen kann.
 ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 9383411074bc43af1034138aadbb6ac5494c2c01
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782800"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815660"
 ---
-# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: Sprachausgabe
+# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: Sprachsynthese
 
-![Vorabversion NuGet](~/media/shared/pre-release.png)
+![Vorabversionen von NuGet](~/media/shared/pre-release.png)
 
-Die **TextToSpeech** Klasse ermöglicht einer Anwendung, die die integrierte nutzen in Sprach sprechen Back Text vom Gerät und verfügbaren Abfragesprachen, die das Modul unterstützen kann.
+Die **TextToSpeech** Klasse ermöglicht einer Anwendung, die den integrierten nutzen in Text-Sprach-Engines Back Text sprechen, auf dem Gerät und auch Abfragen verfügbaren Sprachen, die die Engine unterstützen kann.
 
-## <a name="using-text-to-speech"></a>Mithilfe der Sprachausgabe
+## <a name="using-text-to-speech"></a>Verwenden die Sprachsynthese
 
 Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
 
@@ -26,7 +26,7 @@ Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
 using Xamarin.Essentials;
 ```
 
-Die Sprachausgabe-Funktionalität kann durch Aufrufen der `SpeakAsync` Methode mit Text und optionale Parameter und gibt nach Abschluss der Aussprache. 
+Die Funktionalität für die Sprachsynthese erfolgt durch Aufrufen der `SpeakAsync` -Methode mit Text und optionale Parameter und gibt nach Abschluss der Äußerung. 
 
 ```csharp
 public async Task SpeakNowDefaultSettings()
@@ -46,7 +46,7 @@ public void SpeakNowDefaultSettings2()
 }
 ```
 
-Diese Methode akzeptiert einen optionalen CancellationToken die Aussprache zu beenden, sobald er gestartet wird. 
+Diese Methode akzeptiert in eine optionale CancellationToken der Äußerung zu beenden, sobald sie gestartet wird. 
 ```csharp
 CancellationTokenSource cts;
 public async Task SpeakNowDefaultSettings()
@@ -66,7 +66,7 @@ public void CancelSpeech()
 }
 ```
 
-Sprachausgabe wird automatisch Speech-Anforderungen aus demselben Thread eine Warteschlange gestellt. 
+Sprachsynthese wird automatisch die sprachanforderungen aus demselben Thread Warteschlange. 
 
 ```csharp
 bool isBusy = false;
@@ -90,9 +90,9 @@ public void SpeakMultiple()
 }
 ```
 
-### <a name="speech-settings"></a>Speech-Einstellungen
+### <a name="speech-settings"></a>Einstellungen für die Spracherkennung
 
-Sichern Sie zur besseren Steuerung, wie das Audio gesprochen wird mit `SpeakSettings` ermöglicht das Festlegen der Lautstärke, Tonhöhe und Gebietsschema.
+Zur besseren Steuerung, wie das Audio gesprochen wird mit später wieder `SpeakSettings` , die ermöglicht das Festlegen von Volumes, Tonhöhe, und dem Gebietsschema.
 
 ```csharp
 public async Task SpeakNow()
@@ -111,12 +111,12 @@ Im folgenden sind die unterstützten Werte für diese Parameter:
 
 | Parameter | Minimum | Maximum |
 | --- | :---: | :---: |
-| Tonhöhe | 0 | 2.0 |
-| Volume | 0 | 1,0 |
+| Schriftbreite | 0 | 2.0 |
+| Volume | 0 | 1.0 |
 
 ### <a name="speech-locales"></a>Spracherkennung Gebietsschemas
 
-Jede Plattform bietet Gebietsschemas um Back Text in mehreren Sprachen und Akzente gesprochen werden soll. Jede Plattform weist unterschiedliche Codes und Methoden zum angeben, weshalb Essentials bietet eine plattformübergreifende `Locale` Klasse und eine Methode für Abfragen darauf mit `GetLocalesAsync`.
+Jede Plattform bietet Gebietsschemas um Back Text in mehreren Sprachen und Akzente gesprochen. Jede Plattform gibt es verschiedene Codes und Methoden zum angeben, weshalb Essentials bietet eine plattformübergreifende `Locale` -Klasse und eine Möglichkeit zum Abfragen mit `GetLocalesAsync`.
 
 ```csharp
 public async Task SpeakNow()
@@ -139,10 +139,10 @@ public async Task SpeakNow()
 
 ## <a name="limitations"></a>Einschränkungen
 
-- Aussprache Warteschlange ist nicht gewährleistet, wenn Sie über mehrere Threads hinweg aufgerufen wird.
-- Hintergrund Audiowiedergabe wird offiziell nicht unterstützt.
+- Äußerung Warteschlange ist nicht garantiert werden, wenn Sie über mehrere Threads aufgerufen wird.
+- Hintergrund-Audiowiedergabe wird offiziell nicht unterstützt.
 
 ## <a name="api"></a>API
 
 - [TextToSpeech-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/TextToSpeech)
-- [TextToSpeech API-Dokumentation](xref:Xamarin.Essentials.TextToSpeech)
+- [TextToSpeech-API-Dokumentation](xref:Xamarin.Essentials.TextToSpeech)

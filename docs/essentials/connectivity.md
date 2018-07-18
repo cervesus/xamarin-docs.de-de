@@ -1,32 +1,32 @@
 ---
-title: 'Xamarin.Essentials: Verbindung'
-description: Die Konnektivität-Klasse in Xamarin.Essentials können Sie die Änderungen in das Gerät die netzwerkbedingungen überwachen, überprüfen Sie den aktuellen Netzwerkzugriff und wie er derzeit verbunden ist.
+title: 'Xamarin.Essentials: Konnektivität'
+description: Die Konnektivität-Klasse in Xamarin.Essentials können Sie die Änderungen in das Gerät die netzwerkbedingungen zu überwachen, überprüfen Sie den aktuellen Netzwerkzugriff haben und wie sie derzeit verbunden ist.
 ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 54c165e15e725caaecb1573b74cfe295170db141
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782865"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38848608"
 ---
-# <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: Verbindung
+# <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: Konnektivität
 
-![Vorabversion NuGet](~/media/shared/pre-release.png)
+![Vorabversionen von NuGet](~/media/shared/pre-release.png)
 
-Die **Konnektivität** Klasse können Sie überwachen, Änderungen in das Gerät die netzwerkbedingungen, überprüfen Sie den aktuellen Netzwerkzugriff, und wie er derzeit verbunden ist.
+Die **Konnektivität** Klasse können Sie Änderungen in das Gerät die netzwerkbedingungen, überprüfen Sie den aktuellen Netzwerkzugriff und wie sie derzeit verbunden ist.
 
 ## <a name="getting-started"></a>Erste Schritte
 
-Für den Zugriff auf die **Konnektivität** Funktionen die folgenden spezifischen Plattform-Setup ist erforderlich.
+Für den Zugriff auf die **Konnektivität** Funktionalität die folgende Plattform Einrichtung erforderlich ist.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
 Die `AccessNetworkState` -Berechtigung ist erforderlich und muss in der Android-Projekt konfiguriert werden. Dies kann auf folgende Weise hinzugefügt werden:
 
-Öffnen der **AssemblyInfo.cs** Datei unter dem **Eigenschaften** Ordner und hinzufügen:
+Öffnen der **"AssemblyInfo.cs"** -Datei unter dem **Eigenschaften** Ordner und hinzufügen:
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.AccessNetworkState)]
@@ -34,25 +34,25 @@ Die `AccessNetworkState` -Berechtigung ist erforderlich und muss in der Android-
 
 ODER Android-Manifest aktualisieren:
 
-Öffnen der **AndroidManifest.xml** Datei unter dem **Eigenschaften** Ordner und fügen Sie die folgenden innerhalb eines der **manifest** Knoten.
+Öffnen der **"androidmanifest.xml"** -Datei unter dem **Eigenschaften** Ordner und fügen Sie Folgendes in der die **manifest** Knoten.
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-Oder klicken Sie mit der rechten Maustaste auf das Android-Projekt, und öffnen Sie die Eigenschaften des Projekts. Unter **Android-Manifest** Suchen der **die erforderlichen Berechtigungen verfügen:** Bereichs- und überprüfen Sie die **der Zugriffsebene "Netzwerk"** Berechtigung. Dadurch wird automatisch aktualisiert die **AndroidManifest.xml** Datei.
+Oder klicken Sie mit der rechten Maustaste auf das Android-Projekt, und öffnen Sie die Eigenschaften des Projekts. Unter **Android-Manifest** finden Sie die **erforderliche Berechtigungen:** Bereichs- und überprüfen Sie die **Netzwerk Zugriffsstatus** Berechtigung. Dadurch wird automatisch aktualisiert. die **"androidmanifest.xml"** Datei.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 Ohne zusätzliche Einrichtung erforderlich.
 
-# <a name="uwptabuwp"></a>[UNIVERSELLE WINDOWS-PLATTFORM](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 Ohne zusätzliche Einrichtung erforderlich.
 
 -----
 
-## <a name="using-connectivity"></a>Mit der Konnektivität
+## <a name="using-connectivity"></a>-Konnektivität
 
 Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
 
@@ -71,15 +71,15 @@ if (current == NetworkAccess.Internet)
 }
 ```
 
-[Netzwerkzugriff](xref:Xamarin.Essentials.NetworkAccess) fallen in folgenden Kategorien:
+[Netzwerkzugriff](xref:Xamarin.Essentials.NetworkAccess) lässt sich in den folgenden Kategorien aufteilen:
 
-* **Internet** – lokale und vorhandenem Internetzugriff.
-* **ConstrainedInternet** – Zugriff auf das Internet eingeschränkt. Gibt an die gebundenen-portalkonnektivität lokaler Zugriff auf Web-Portal wird bereitgestellt, wobei ein Zugriff auf das Internet erfordert, dass bestimmte Anmeldeinformationen über ein Portal bereitgestellt werden.
+* **Internet** – lokal und vorhandenem Internetzugriff.
+* **ConstrainedInternet** – Zugriff auf das Internet beschränkt. Gibt an, captive Portal-Konnektivität, in denen der lokale Zugriff auf ein Webportal bereitgestellt, aber Zugriff auf das Internet erfordert, dass bestimmte Anmeldeinformationen über ein Portal bereitgestellt werden.
 * **Lokale** – lokale nur Netzwerkzugriff.
-* **Keine** – keine Konnektivität verfügbar ist.
-* **Unbekannte** – Internetverbindung nicht erkannt.
+* **Keine** – es ist keine Verbindung zur Verfügung.
+* **Unbekannter** – kann nicht über Internetkonnektivität bestimmt.
 
-Sie können überprüfen, welche Art von [Verbindungsprofils](xref:Xamarin.Essentials.ConnectionProfile) das Gerät aktiv verwendet wird:
+Sie können überprüfen, welche Art von [Verbindungsprofil](xref:Xamarin.Essentials.ConnectionProfile) das Gerät ist aktiv verwenden:
 
 ```csharp
 var profiles = Connectivity.Profiles;
@@ -89,7 +89,7 @@ if (profiles.Contains(ConnectionProfile.WiFi))
 }
 ```
 
-Bei jedem Zugriff auf Änderungen, die Verbindungsprofils oder Netzwerk erhalten Sie ein Ereignis auslösen:
+Wenn der Verbindungsprofil oder im Netzwerk auf Änderungen erhalten Sie ein Ereignis ausgelöst:
 
 ```csharp
 public class ConnectivityTest
@@ -110,7 +110,7 @@ public class ConnectivityTest
 
 ## <a name="limitations"></a>Einschränkungen
 
-Es ist wichtig zu beachten, dass es möglich ist, `Internet` wird von gemeldet `NetworkAccess` vollen Zugriff auf das Web ist jedoch nicht verfügbar. Aufgrund der Funktionsweise von Verbindungen auf jeder Plattform können sie nur sicherstellen, dass eine Verbindung verfügbar ist. Das Gerät kann z. B. mit einem Wi-Fi-Netzwerk verbunden werden, aber der Router vom Internet getrennt ist. In dieser Instanz Internet möglicherweise gemeldet, aber eine aktive Verbindung ist nicht verfügbar.
+Es ist wichtig zu beachten, dass es möglich, `Internet` wird von gemeldet `NetworkAccess` vollen Zugriff auf das Web ist jedoch nicht verfügbar. Aufgrund der Funktionsweise der Konnektivität auf jeder Plattform können sie nur sicherstellen, dass eine Verbindung verfügbar ist. Beispielsweise kann das Gerät mit einem Wi-Fi-Netzwerk verbunden, aber der Router vom Internet getrennt wird. In diesem Fall Internet gemeldet werden kann, aber eine aktive Verbindung ist nicht verfügbar.
 
 ## <a name="api"></a>API
 

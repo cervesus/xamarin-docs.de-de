@@ -1,21 +1,22 @@
 ---
-title: Manuelle Bereitstellung
-description: Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieser Leitfaden behandelt das Anfordern von Entwicklungszertifikaten und -profilen, das Arbeiten mit App-Diensten und das Bereitstellen einer App auf Geräten.
+title: Manuelle Bereitstellung für Xamarin.iOS
+description: Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieses Handbuch beschreibt die Verwendung der manuellen Bereitstellung zum Einrichten von Entwicklungszertifikaten und -profilen.
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: f604d41990a7a592a3d5207e7a12075c35ae661f
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: c0404a1fd8f7e878638b9483c65c637f6b4faa66
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786102"
 ---
-# <a name="manual-provisioning"></a>Manuelle Bereitstellung
+# <a name="manual-provisioning-for-xamarinios"></a>Manuelle Bereitstellung für Xamarin.iOS
 
-_Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieser Leitfaden behandelt das Anfordern von Entwicklungszertifikaten und -profilen, das Arbeiten mit App-Diensten und das Bereitstellen einer App auf Geräten._
+_Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieses Handbuch beschreibt die Verwendung der manuellen Bereitstellung zum Einrichten von Entwicklungszertifikaten und -profilen._
 
 <a name="signingidentity" />
 

@@ -1,74 +1,75 @@
 ---
 title: Authentifizieren von Benutzern mit Azure Active Directory B2C
-description: Azure Active Directory B2C ist eine Cloud-identitätsverwaltungslösung für kundenorientierten Web- und mobilen Anwendungen. Dieser Artikel veranschaulicht, wie Microsoft-Authentifizierungsbibliothek und Azure Active Directory B2C Consumer identitätsverwaltung in einer mobilen Anwendung integrieren.
+description: Azure Active Directory B2C ist eine Cloudlösung für die Verwaltung von Identitäten für kundenorientierte Web- und mobile Anwendungen. In diesem Artikel wird veranschaulicht, wie Microsoft-Authentifizierungsbibliothek und Azure Active Directory B2C verwenden, um die Verwaltung von Kundenidentitäten in eine mobile Anwendung integrieren.
 ms.prod: xamarin
 ms.assetid: B0A5DB65-0585-4A00-B908-22CCC286E6B6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 627c6773c099c9cf45f871a9bb73a201bf98271a
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: b6989782c438ec41911cc9317d9f911d6518132d
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38872721"
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>Authentifizieren von Benutzern mit Azure Active Directory B2C
 
-_Azure Active Directory B2C ist eine Cloud-identitätsverwaltungslösung für kundenorientierten Web- und mobilen Anwendungen. Dieser Artikel veranschaulicht, wie Microsoft-Authentifizierungsbibliothek und Azure Active Directory B2C Consumer identitätsverwaltung in einer mobilen Anwendung integrieren._
+_Azure Active Directory B2C ist eine Cloudlösung für die Verwaltung von Identitäten für kundenorientierte Web- und mobile Anwendungen. In diesem Artikel wird veranschaulicht, wie Microsoft-Authentifizierungsbibliothek und Azure Active Directory B2C verwenden, um die Verwaltung von Kundenidentitäten in eine mobile Anwendung integrieren._
 
-![](~/media/shared/preview.png "Diese API ist derzeit Vorabversion")
+![](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich")
 
 > [!NOTE]
-> Die [Microsoft-Authentifizierungsbibliothek](https://www.nuget.org/packages/Microsoft.Identity.Client) noch in der Vorschau ist, aber für die Verwendung in einer produktiven Umgebung geeignet ist. Allerdings kann es aktuelle werden Änderungen an der API, internen Cache-Format und andere Mechanismen der Bibliothek, die sich auf Ihrer Anwendung auswirken kann.
+> Die [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client) ist weiterhin als Vorschau verfügbar, aber für die Verwendung in einer produktionsumgebung geeignet ist. Allerdings kann es wichtige werden Änderungen an der API, internen und Mechanismen für die Bibliothek, die Ihre Anwendung auswirken können.
 
 ## <a name="overview"></a>Übersicht
 
-Azure Active Directory B2C ist ein identitätsverwaltungsdienst bei kundenorientierten-Anwendungen, die Consumern, die Anwendung unter anmelden kann:
+Azure Active Directory B2C ist ein identitätsverwaltungsdienst für kundenorientierte Anwendungen, die Kunden bei Ihrer Anwendung anmelden kann:
 
-- Verwenden ihre vorhandenen sozialen Konten (Microsoft, Google, Facebook, Amazon, LinkedIn).
-- Erstellen neue Anmeldeinformationen (e-Mail-Adresse und Kennwort oder Benutzernamen und Kennwort). Diese Anmeldeinformationen werden als bezeichnet *lokale* Konten.
+- Verwenden ihren vorhandenen Konten sozialer Netzwerke (Microsoft, Google, Facebook, Amazon, LinkedIn).
+- Erstellen neue Anmeldeinformationen (e-Mail-Adresse und Kennwort oder Benutzername und Kennwort). Diese Anmeldeinformationen werden als bezeichnet *lokalen* Konten.
 
-Der Prozess für die Integration von Azure Active Directory B2C Identity-Management-Dienst in einer mobilen Anwendung lautet wie folgt:
+Der Prozess für die Integration der Azure Active Directory B2C-Identity-Management-Dienst in einer mobilen Anwendung lautet wie folgt aus:
 
 1. Erstellen eines Azure Active Directory B2C-Mandanten. Weitere Informationen finden Sie unter [Erstellen eines Azure Active Directory B2C-Mandanten im Azure-Portal](/azure/active-directory-b2c/active-directory-b2c-get-started/).
-1. Registrieren Sie Ihre mobile Anwendung mit dem Azure Active Directory B2C-Mandanten ein. Während der Registrierung weist eine **Anwendungs-ID** Identifizierung Ihrer Anwendung und einer **Umleitungs-URL** , weiterleiten, Antworten zurück an Ihre Anwendung verwendet werden kann. Weitere Informationen finden Sie unter [Azure Active Directory B2C: Registrieren Ihrer Anwendung](/azure/active-directory-b2c/active-directory-b2c-app-registration/).
-1. Erstellen Sie eine Anmelde und melden Sie sich die Richtlinie. Diese Richtlinie definiert die Erfahrungen, die während der Registrierung und melden Sie sich der Consumer durchlaufen werden, und gibt auch den Inhalt der Token die Anwendung erhält erfolgreich ausgeführt registrieren oder anmelden. Weitere Informationen finden Sie unter [Azure Active Directory B2C: integrierter Richtlinien](/azure/active-directory-b2c/active-directory-b2c-reference-policies/).
-1. Verwenden der [Microsoft-Authentifizierungsbibliothek](https://www.nuget.org/packages/Microsoft.Identity.Client) (MSAL) in der mobilen Anwendung um einen authentifizierungsworkflow mit Ihrem Azure Active Directory B2C-Mandanten zu initiieren.
+1. Registrieren Sie Ihre mobile Anwendung mit dem Azure Active Directory B2C-Mandanten an. Während der Registrierung weist eine **Anwendungs-ID** , die Ihre Anwendung eindeutig identifiziert und **Umleitungs-URL** , der zum Umleiten von Antworten zurück an Ihre Anwendung verwendet werden kann. Weitere Informationen finden Sie unter [Azure Active Directory B2C: Registrieren Ihrer Anwendung](/azure/active-directory-b2c/active-directory-b2c-app-registration/).
+1. Erstellen einer Richtlinie für Registrierung und Anmeldung. Diese Richtlinie wird definiert, die Benutzeroberflächen, die Kunden während der Registrierung und Anmeldung durchlaufen, und gibt auch den Inhalt der Token die Anwendung erhält erfolgreich Registrierungs- oder Anmelderichtlinie. Weitere Informationen finden Sie unter [Azure Active Directory B2C: integrierte Richtlinien](/azure/active-directory-b2c/active-directory-b2c-reference-policies/).
+1. Verwenden der [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client) (MSAL) in Ihre mobile Anwendung um einen authentifizierungsworkflow bei Ihrem Azure Active Directory B2C-Mandanten zu initiieren.
 
 > [!NOTE]
-> Sowie die Integration von Azure Active Directory B2C-identitätsverwaltung in mobilen Anwendungen, werden MSAL auch zum Integrieren von Azure Active Directory-identitätsverwaltung in mobilen Anwendungen verwendet. Dies kann durch eine mobile Anwendung mit Azure Active Directory zur Registrierung der [App-Registrierungsportal](https://apps.dev.microsoft.com/). Während der Registrierung weist eine **Anwendungs-ID** Identifizierung Ihrer Anwendung, die bei Verwendung von MSAL angegeben werden soll. Weitere Informationen finden Sie unter [zum Registrieren einer app mit dem Endpunkt v2. 0](/azure/active-directory/develop/active-directory-v2-app-registration/), und [authentifizieren Ihrer mobiler Apps mithilfe von Microsoft-Authentifizierungsbibliothek](https://blog.xamarin.com/authenticate-mobile-apps-using-microsoft-authentication-library/) im Xamarin-Blog.
+> Sowie das Integrieren der identitätsverwaltung für Azure Active Directory B2C in mobile Anwendungen, kann auch MSAL verwendet werden, Azure Active Directory-identitätsverwaltung in mobilen Anwendungen integrieren. Dies geschieht durch Registrieren einer mobilen Anwendung in Azure Active Directory auf die [App-Registrierungsportal](https://apps.dev.microsoft.com/). Während der Registrierung weist eine **Anwendungs-ID** Kennzeichnung Ihrer Anwendung, die bei Verwendung der MSAL angegeben werden. Weitere Informationen finden Sie unter [zum Registrieren einer app mit dem v2. 0-Endpunkt](/azure/active-directory/develop/active-directory-v2-app-registration/), und [authentifizieren Ihrer Mobile Apps mithilfe von Microsoft-Authentifizierungsbibliothek](https://blog.xamarin.com/authenticate-mobile-apps-using-microsoft-authentication-library/) im Xamarin-Blog.
 
-MSAL verwendet Webbrowser des Geräts zum Durchführen der Authentifizierung. Dies verbessert die Verwendbarkeit einer Anwendung, wie Benutzer müssen sich nur anmelden, nachdem jedes Gerät, in der Anwendung verbessern Wechselkurse für die Anmeldung und Autorisierung fließt. Die Gerätebrowser bietet auch eine verbesserte Sicherheit. Nachdem der Benutzer den Authentifizierungsprozess abgeschlossen ist, gibt Steuerelement aus der Registerkarte des Webbrowsers für die Anwendung zurück. Dies erfolgt durch registrieren ein benutzerdefinierte URL-Schema für die umleitungs-URL, die den Authentifizierungsprozess, und klicken Sie dann erkennen und behandeln die benutzerdefinierte URL nach dem Senden der es zurückgegeben wird. Weitere Informationen zum Auswählen eines benutzerdefinierten URL-Schemas finden Sie unter [wählen einen umleitungs-URI für das systemeigene app](/azure/active-directory-b2c/active-directory-b2c-app-registration#choosing-a-native-app-redirect-uri/).
+MSAL verwendet Webbrowser des Geräts, um die Authentifizierung durchzuführen. Dies verbessert die Verwendbarkeit einer Anwendung, die als Benutzer müssen sich nur anmelden nach pro-Gerät in der Anwendung verbessern konvertierungsraten-Anmeldung und Autorisierung übertragen. Der Browser für Gerät bietet auch eine verbesserte Sicherheit. Nachdem der Benutzer den Authentifizierungsprozess abgeschlossen ist, gibt die Kontrolle an die Anwendung aus der Registerkarte des Webbrowsers zurück. Dies erfolgt durch die Registrierung eines benutzerdefinierten URL-Schemas für die umleitungs-URL, die zurückgegeben wird, aus der Authentifizierungsprozess, und klicken Sie dann erkennen und behandeln die benutzerdefinierte URL ein, nach der sie gesendet wird. Weitere Informationen zum Auswählen eines benutzerdefinierten URL-Schemas finden Sie unter [Auswählen eines umleitungs-URI für das systemeigene app](/azure/active-directory-b2c/active-directory-b2c-app-registration#choosing-a-native-app-redirect-uri/).
 
 > [!NOTE]
-> Der Mechanismus zum Registrieren eines benutzerdefinierten URL-Schemas mit dem Betriebssystem und behandeln das Schema ist für jede Plattform spezifisch.
+> Der Mechanismus zum Registrieren eines benutzerdefinierten URL-Schemas mit dem Betriebssystem, und behandeln das Schema ist für jede Plattform spezifisch.
 
-Gibt an, jede Anforderung, die auf einen Azure Active Directory B2C-Mandanten gesendet wird eine *Richtlinie*. Richtlinien beschreiben Consumer Identität Erfahrungen z. B. registrieren oder anmelden. So kann z. B. eine Richtlinie registrieren Sie sich das Verhalten des Azure Active Directory B2C-Mandanten über die folgenden Einstellungen konfiguriert werden:
+Gibt an, jede Anforderung, die mit einem Azure Active Directory B2C-Mandanten gesendet wird eine *Richtlinie*. Richtlinien beschreiben Benutzeroberflächen im kundenidentität, z. B. Registrierung oder Anmeldung. Eine Registrierungsrichtlinie ermöglicht beispielsweise das Verhalten des Azure Active Directory B2C-Mandanten über die folgenden Einstellungen konfiguriert werden:
 
-- Kontotypen, die Consumer zur Anmeldung an die Anwendung verwenden können.
-- Daten, die bei der Registrierung von der Consumer gesammelt werden sollen.
+- Arten von Konten, mit denen Kunden bei der Anwendung anmelden.
+- Daten, die der Kunde bei der Registrierung werden.
 - Multi-Factor Authentication.
-- Registrierungsseite Inhalt.
-- Token Ansprüche, die die mobile Anwendung erhält, wenn die Richtlinie ausgeführt wurde.
+- Inhalt der Seite für die Registrierung.
+- Tokenansprüche, die die mobile Anwendung empfängt, wenn die Richtlinie ausgeführt wurde.
 
-Azure Active Directory-Mandanten kann mehrere Richtlinien verschiedener Typen enthalten, die in der Anwendung nach Bedarf verwendet werden können. Darüber hinaus können Richtlinien für Anwendungen, sodass Sie definieren und Ändern von Consumer Identität Erfahrungen ohne Änderung des Codes wiederverwendet werden. Weitere Informationen zu Richtlinien finden Sie unter [Azure Active Directory B2C: integrierter Richtlinien](/azure/active-directory-b2c/active-directory-b2c-reference-policies/).
+Azure Active Directory-Mandanten kann mehrere Richtlinien verschiedener Typen enthalten, die in Ihrer Anwendung nach Bedarf verwendet werden können. Darüber hinaus können Richtlinien für Anwendungen, sodass Sie definieren und Ändern der kundenidentität ohne Änderung des Codes, wiederverwendet werden. Weitere Informationen zu Richtlinien finden Sie unter [Azure Active Directory B2C: integrierte Richtlinien](/azure/active-directory-b2c/active-directory-b2c-reference-policies/).
 
 ## <a name="setup"></a>Setup
 
-Die Microsoft Authentication Library (MSAL) NuGet-Bibliothek muss auf die Portable Klassenbibliothek (PCL)-Projekt und die Plattformprojekte in einer Xamarin.Forms-Projektmappe hinzugefügt werden. Die folgenden Abschnitte enthalten weitere installationsanweisungen für die Verwendung von MSAL für die Kommunikation mit einem Azure Active Directory B2C-Mandanten aus einer mobilen Anwendung.
+Das Projekt der portablen Klassenbibliothek (PCL) und Platform-Projekten in einer Xamarin.Forms-Projektmappe muss die Microsoft Authentication Library (MSAL) NuGet-Bibliothek hinzugefügt werden. Die folgenden Abschnitte enthalten weitere installationsanweisungen für die Verwendung von MSAL für die Kommunikation mit einem Azure Active Directory B2C-Mandanten in einer mobilen Anwendung.
 
 ### <a name="portable-class-library"></a>Portable Klassenbibliothek
 
-PCLs, die MSAL nutzen müssen, um Profile7 verwenden umgeleitet zu werden. Weitere Informationen zu PCLs finden Sie unter [Introduction to Portable Class Libraries (Einführung in portable Klassenbibliotheken)](~/cross-platform/app-fundamentals/pcl.md).
+Portable Klassenbibliotheken, die MSAL verwenden, müssen neu zugewiesen werden, um Profile7 zu verwenden. Weitere Informationen zu PCLs finden Sie unter [Introduction to Portable Class Libraries (Einführung in portable Klassenbibliotheken)](~/cross-platform/app-fundamentals/pcl.md).
 
 ### <a name="ios"></a>iOS
 
-IOS, muss die benutzerdefinierte URL-Schema, die mit Azure Active Directory B2C registriert war in registriert werden **"Info.plist"**, wie im folgenden Screenshot gezeigt:
+Unter iOS, muss die benutzerdefinierte URL-Schema, die mit Azure Active Directory B2C registriert wurde im registriert werden **"Info.plist"**, wie im folgenden Screenshot gezeigt:
 
-![](azure-ad-b2c-images/customurl-ios.png "Registrieren eine benutzerdefinierte URL-Schema für iOS")
+![](azure-ad-b2c-images/customurl-ios.png "Registrieren einer benutzerdefinierten URL-Schemas unter iOS")
 
-Wenn Azure Active Directory B2C die autorisierungsanforderung abgeschlossen ist, wird er an der registrierte umleitungs-URL umgeleitet. Da die URL ein benutzerdefiniertes Schema verwendet wird, führt dies zu iOS, die die mobile Anwendung gestartet, in der URL als Parameter starten, in denen Verarbeitung erfolgt durch Übergeben der `OpenUrl` außer Kraft setzen, der der Anwendungsverzeichnis `AppDelegate` -Klasse, die in den folgenden Code gezeigt wird Beispiel:
+Wenn Azure Active Directory B2C die autorisierungsanforderung abgeschlossen ist, erfolgt eine Umleitung an die registrierte umleitungs-URL. Da die URL ein benutzerdefiniertes Schema verwendet, dies zu iOS führt, starten die mobile Anwendung, in der URL übergeben, als Parameter starten, in dem vom verarbeitet die `OpenUrl` außer Kraft setzen, von der Anwendung `AppDelegate` -Klasse, die in den folgenden Code gezeigt wird Beispiel:
 
 ```csharp
 using Microsoft.Identity.Client;
@@ -88,11 +89,11 @@ namespace TodoAzure.iOS
 }
 ```
 
-Der Code in die `OpenURL` Methode wird sichergestellt, dass die Steuerung an MSAL zurückgegeben, sobald der interaktiven Teil der authentifizierungsworkflow beendet wurde.
+Der Code in die `OpenURL` Methode wird sichergestellt, die Steuerung an MSAL zurückgegeben wird, wenn der interaktive Teil des Workflows für die Authentifizierung beendet wurde.
 
 ### <a name="android"></a>Android
 
-Auf Android-Geräten muss die benutzerdefinierte URL-Schema, die mit Azure Active Directory B2C registriert war in registriert werden **AndroidManifest.xml**, durch Hinzufügen einer `<activity>` Element innerhalb der vorhandenen `<application>` Element. Die `<activity>` -Element gibt die `IntentFilter` auf die `Activity` , behandelt das Schema, und wird im folgenden Beispiel gezeigt:
+Unter Android, muss die benutzerdefinierte URL-Schema, die mit Azure Active Directory B2C registriert wurde in registriert werden **"androidmanifest.xml"**, durch das Hinzufügen einer `<activity>` Element innerhalb der vorhandenen `<application>` Element. Die `<activity>` Element gibt die `IntentFilter` auf die `Activity` , behandelt das Schema und ist im folgenden Beispiel gezeigt:
 
 ```xml
 <application ...>
@@ -107,7 +108,7 @@ Auf Android-Geräten muss die benutzerdefinierte URL-Schema, die mit Azure Activ
 </application>
 ```
 
-Wenn Azure Active Directory B2C die autorisierungsanforderung abgeschlossen ist, wird er an der registrierte umleitungs-URL umgeleitet. Da die URL ein benutzerdefiniertes Schema verwendet wird, führt dies zu Android, die die mobile Anwendung gestartet, in der URL als Parameter starten, in denen Verarbeitung erfolgt durch Übergeben der `microsoft.identity.client.BrowserTabActivity`. Beachten Sie, dass die `data android:scheme` Eigenschaft muss festgelegt werden, um die benutzerdefinierte URL-Schema, die mit der Azure Active Directory B2C-Anwendung registriert ist.
+Wenn Azure Active Directory B2C die autorisierungsanforderung abgeschlossen ist, erfolgt eine Umleitung an die registrierte umleitungs-URL. Da die URL ein benutzerdefiniertes Schema verwendet, Android, die die mobile Anwendung gestartet wird, übergeben Sie in der URL als Parameter starten, in dem vom verarbeitet die `microsoft.identity.client.BrowserTabActivity`. Beachten Sie, dass die `data android:scheme` Eigenschaft muss festgelegt werden, um die benutzerdefinierte URL-Schema, das mit der Azure Active Directory B2C-Anwendung registriert ist.
 
 Darüber hinaus die `MainActivity` Klasse muss geändert werden, wie im folgenden Codebeispiel gezeigt:
 
@@ -117,7 +118,7 @@ using Microsoft.Identity.Client;
 namespace TodoAzure.Droid
 {
     ...
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    public class MainActivity : FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
@@ -139,31 +140,31 @@ namespace TodoAzure.Droid
 
 ```
 
-Die `OnCreate` Methode geändert wird, durch Zuweisen einer `UIParent` -Instanz, auf die `App.UiParent` Eigenschaft. Dadurch wird sichergestellt, dass der Authentifizierungsablauf im Kontext der aktuellen Aktivität erfolgt.
+Die `OnCreate` -Methode geändert, durch Zuweisen einer `UIParent` -Instanz, auf die `App.UiParent` Eigenschaft. Dadurch wird sichergestellt, dass der Ablauf der Authentifizierung im Kontext der aktuellen Aktivität auftritt.
 
-Der Code in die `OnActivityResult` Methode wird sichergestellt, dass die Steuerung an MSAL zurückgegeben, sobald der interaktiven Teil der authentifizierungsworkflow beendet wurde.
+Der Code in die `OnActivityResult` Methode wird sichergestellt, die Steuerung an MSAL zurückgegeben wird, wenn der interaktive Teil des Workflows für die Authentifizierung beendet wurde.
 
 ### <a name="universal-windows-platform"></a>Universelle Windows-Plattform
 
-Klicken Sie auf die universelle Windows-Plattform muss ohne zusätzliche Einrichtung MSAL verwenden.
+Klicken Sie auf der universellen Windows-Plattform ist ohne zusätzliche Einrichtung erforderlich, um MSAL verwenden.
 
 ## <a name="initialization"></a>Initialisierung
 
-Die Microsoft-Authentifizierungsbibliothek liegt bei Mitgliedern der die `PublicClientApplication` Klasse, um einen authentifizierungsworkflow zu initiieren. Die beispielanwendung deklariert und initialisiert ein `public` -Eigenschaft dieses Typs, mit dem Namen `ADB2CClient`in die `AuthenticationProvider` Klasse. Im folgenden Codebeispiel wird veranschaulicht, wie diese Eigenschaft initialisiert wird:
+Der Microsoft-Authentifizierungsbibliothek liegt bei Mitgliedern der der `PublicClientApplication` Klasse, um einen authentifizierungsworkflow zu initiieren. Die beispielanwendung deklariert und initialisiert ein `public` Eigenschaft dieses Typs, mit dem Namen `ADB2CClient`in die `AuthenticationProvider` Klasse. Im folgenden Codebeispiel wird veranschaulicht, wie diese Eigenschaft initialisiert wird:
 
 ```csharp
 ADB2CClient = new PublicClientApplication(Constants.ClientID, Constants.Authority);
 ```
 
-Wenn die mobile Anwendung mit dem Azure Active Directory B2C-Mandanten registriert wurde, während der Registrierung zugewiesen ein **Anwendungs-ID**. Diese ID muss angegeben werden, der `PublicClientApplication` Konstruktor, zusammen mit einer `Authority` Konstante, die besteht aus einer Basis-URL und die Azure Active Directory B2C-Richtlinie ausgeführt werden.
+Wenn die mobile Anwendung mit dem Azure Active Directory B2C-Mandanten registriert wurde, während der Registrierung zugewiesen ein **Anwendungs-ID**. Diese ID muss angegeben werden, der `PublicClientApplication` Konstruktor zusammen mit einem `Authority` -Konstante, die eine Basis-URL und die Azure Active Directory B2C-Richtlinie ausgeführt werden, besteht aus.
 
-## <a name="signing-in"></a>Anmelden
+## <a name="signing-in"></a>Anmeldung
 
-Die im Anmeldebildschirm ein, in der beispielanwendung wird in den folgenden Screenshots veranschaulicht:
+Der Anmeldebildschirm in der beispielanwendung wird in den folgenden Screenshots dargestellt:
 
 ![](azure-ad-b2c-images/login.png "Anmeldeseite")
 
-Anmelden mit Identitätsanbieter sozialer Netzwerke oder mit einem lokalen Konto, sind zulässig. Während Microsoft und Google, Facebook, wie oben gezeigt als Identitätsanbieter sozialer Netzwerke, verwendet werden können auch andere Identitätsanbieter verwendet werden.
+Anmeldung mit Identitätsanbietern aus sozialen Netzwerken oder mit einem lokalen Konto, sind zulässig. Während Microsoft, Google und Facebook, wie oben gezeigt als Identitätsanbietern aus sozialen Netzwerken verwendet werden können auch andere Identitätsanbieter verwendet werden.
 
 Im folgenden Codebeispiel wird veranschaulicht, wie der Anmeldevorgang aufgerufen wird:
 
@@ -182,15 +183,15 @@ public async Task<bool> LoginAsync(bool useSilent = false)
 
 ```
 
-Die `AcquireTokenAsync` Methode startet der Webbrowser des Geräts und zeigt die Authentifizierungsoptionen definiert, in der Azure Active Directory B2C-Richtlinie, die von der Richtlinie verwiesen wird, über angegeben wird die `Constants.Authority` konstant. Diese Richtlinie definiert die Features, mit denen Kunden durchlaufen werden bei der Registrierung, und melden Sie sich, und die Ansprüche an, dass die Anwendung erfolgreich empfangen wird, registrieren oder anmelden.
+Die `AcquireTokenAsync` Methode Webbrowser des Geräts startet und zeigt die Authentifizierungsoptionen, die definiert, in der Azure Active Directory B2C-Richtlinie, die von der Richtlinie, die auf die verwiesen wird durch angegeben wird die `Constants.Authority` Konstanten. Diese Richtlinie definiert die Benutzeroberflächen, die Kunden bei der Registrierung und Anmeldung durchlaufen, und die Ansprüche an, dass die Anwendung beim erfolgreichen Registrierungs- oder Anmelderichtlinie erhält.
 
-Das Ergebnis der `AcquireTokenAsync` Methodenaufruf ist ein `AuthenticationResult` Instanz. Wenn die Authentifizierung erfolgreich ist, ist die `AuthenticationResult` Instanz enthält ein Identitätstoken an, die lokal zwischengespeichert wird. Wenn die Authentifizierung nicht erfolgreich ist, ist die `AuthenticationResult` Instanz enthält Daten, der angibt, warum die Authentifizierung fehlgeschlagen ist.
+Das Ergebnis der `AcquireTokenAsync` Methodenaufruf ist ein `AuthenticationResult` Instanz. Wenn die Authentifizierung erfolgreich ist, ist die `AuthenticationResult` Instanz enthält ein Identitätstoken, die lokal zwischengespeichert wird. Wenn die Authentifizierung nicht erfolgreich ist, ist die `AuthenticationResult` Instanz enthält Daten, der angibt, warum die Authentifizierung fehlgeschlagen ist.
 
-In der beispielanwendung, wenn die Authentifizierung erfolgreich ist, ist die `TodoList` Seite navigiert wird.
+In diesem Beispiel, wenn die Authentifizierung erfolgreich ist, ist die `TodoList` Seite navigiert wird.
 
 ## <a name="silent-re-authentication"></a>Automatische erneute Authentifizierung
 
-Wenn die `LoginPage` im Beispiel für die Anwendung angezeigt wird, es wird versucht, ein Benutzertoken abzurufen, ohne Anzeige einer Benutzeroberfläche für die Authentifizierung. Dies wird erreicht, mit der `AcquireTokenSilentAsync` Methode, wie im folgenden Codebeispiel gezeigt:
+Wenn die `LoginPage` im Beispiel Anwendung angezeigt wird, es wird versucht, ein Benutzertoken abgerufen werden, ohne dass eine Benutzeroberfläche für die Authentifizierung. Dies wird erreicht, mit der `AcquireTokenSilentAsync` -Methode, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public async Task<bool> LoginAsync(bool useSilent = false)
@@ -210,7 +211,7 @@ public async Task<bool> LoginAsync(bool useSilent = false)
 }
 ```
 
-Die `AcquireTokenSilentAsync` Methode versucht, ein Benutzertoken aus dem Cache abgerufen werden, ohne dass der Benutzer zur Anmeldung. Verarbeitet das Szenario, in dem eine geeignete Token bereits im Cache aus früheren Sitzungen möglicherweise vorhanden. Wenn der Versuch zum Abrufen eines Token erfolgreich ist, ist die `TodoList` Seite navigiert wird. Wenn der Versuch zum Abrufen eines Token nicht erfolgreich ist, geschieht nichts, und der Benutzer muss die Wahl ein neuen Workflows für die Authentifizierung initiiert.
+Die `AcquireTokenSilentAsync` Methode versucht, ein Benutzertoken aus dem Cache abrufen, ohne dass der Benutzer sich anmelden. Diese behandelt das Szenario, in denen möglicherweise ein geeignetes Token bereits aus früheren Sitzungen im Cache vorhanden sein. Wenn der Versuch zum Abrufen eines Tokens erfolgreich ist, ist die `TodoList` Seite navigiert wird. Wenn der Versuch zum Abrufen eines Tokens nicht erfolgreich ist, geschieht nichts, und der Benutzer muss die Möglichkeit, einen neuer authentifizierungsworkflow für die zu initiieren.
 
 ## <a name="signing-out"></a>Abmelden
 
@@ -228,11 +229,11 @@ public async Task<bool> LogoutAsync()
 }
 ```
 
-Dadurch werden alle Authentifizierungstoken vom lokalen Cache gelöscht.
+Dadurch werden die Authentifizierungstoken aus dem lokalen Cache gelöscht.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel veranschaulicht, wie Microsoft Authentication Library (MSAL) und Azure Active Directory B2C verwenden, um die identitätsverwaltung Consumer in eine mobile Anwendung integriert wird. Azure Active Directory B2C ist eine Cloud-identitätsverwaltungslösung für kundenorientierten Web- und mobilen Anwendungen.
+In diesem Artikel wurde veranschaulicht, wie Microsoft Authentication Library (MSAL) und Azure Active Directory B2C verwenden, um die Verwaltung von Kundenidentitäten in eine mobile Anwendung integrieren. Azure Active Directory B2C ist eine Cloudlösung für die Verwaltung von Identitäten für kundenorientierte Web- und mobile Anwendungen.
 
 
 ## <a name="related-links"></a>Verwandte Links

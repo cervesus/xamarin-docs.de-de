@@ -5,19 +5,18 @@ ms.prod: xamarin
 ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: topgenorth
 ms.author: toopge
-ms.date: 03/29/2017
-ms.openlocfilehash: 16a0474c7fc9a496409e2133714b6d4374691dbc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: 67cc6b42901521226322d964514f19b4b639148b
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793478"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268822"
 ---
 # <a name="inspecting-live-applications"></a>Überprüfen des Live-Anwendungen
 
 Aktive app Inspektion ist für Enterprise-Kunden zur Verfügung.
 
-1. [Installieren Sie Xamarin Arbeitsmappen & Inspektor.](~/tools/inspector/install.md)
 1. Öffnen Sie einen [app-Projekt unterstützt](~/tools/inspector/install.md#supported-platforms) in Visual Studio für Mac oder im Visual Studio.
 1. Führen Sie die Anwendung im Debugmodus aus.
 1. Klicken Sie auf die **Inspect** auf der Symbolleiste der IDE (in Visual Studio die **aktuelle app überprüfen...**  Menüelement steht auch auf die **Tools** oder **Debuggen** Menü).

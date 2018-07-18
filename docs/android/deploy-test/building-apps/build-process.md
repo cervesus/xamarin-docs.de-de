@@ -6,11 +6,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 806ed841ec4db037a063bb458e1eed13226e08bd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: bf8dfb43115806f28935c6dec0ebd2d6d7bd2cdc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998240"
 ---
 # <a name="build-process"></a>Buildprozess
 
@@ -75,7 +76,7 @@ Die folgenden Buildziele sind für Xamarin.Android-Projekte definiert:
 
 ## <a name="build-properties"></a>Buildeigenschaften
 
-MSBuild-Eigenschaften steuern das Verhalten der Ziele. Sie werden in der Projektdatei (z.B. **MyApp.csproj**) in einem [PropertyGroup-Element von MSBuild](http://msdn.microsoft.com/en-us/library/t4w159bs.aspx) angegeben. 
+MSBuild-Eigenschaften steuern das Verhalten der Ziele. Sie werden in der Projektdatei (z.B. **MyApp.csproj**) in einem [PropertyGroup-Element von MSBuild](https://docs.microsoft.com/visualstudio/msbuild/propertygroup-element-msbuild) angegeben.
 
 -   **Konfiguration** &ndash; Gibt die zu verwendende Buildkonfiguration an, z.B. „Debug“ oder „Release“. Die Configuration-Eigenschaft wird verwendet, um Standardwerte für andere Eigenschaften zu ermitteln, die das Zielverhalten bestimmen. In der IDE können ggf. zusätzliche Konfigurationen erstellt werden.
 
@@ -85,7 +86,7 @@ MSBuild-Eigenschaften steuern das Verhalten der Ziele. Sie werden in der Projekt
 
 -   **DebugSymbols** &ndash; Ein boolescher Wert, der bestimmt, ob das Android-Paket *debuggt* werden kann (in Kombination mit der `$(DebugType)`-Eigenschaft). Ein Paket, das debuggt werden kann, enthält Debugsymbole, legt das `//application/@android:debuggable`-Attribut auf `true` fest und fügt automatisch die Berechtigung `INTERNET` hinzu, sodass ein Debugger an den Prozess angefügt werden kann. Eine Anwendung kann debuggt werden, wenn `DebugSymbols` den Wert `True` aufweist *und* `DebugType` entweder die leere Zeichenfolge oder `Full` ist.
 
--   **DebugType** &ndash; Gibt den [Typ von Debugsymbolen](http://msdn.microsoft.com/en-us/library/s5c8athz.aspx) an, die als Teil des Builds generiert werden sollen. Dies wirkt sich ebenfalls darauf aus, ob die Anwendung debuggt werden kann. Mögliche Werte:
+-   **DebugType** &ndash; Gibt den [Typ von Debugsymbolen](https://docs.microsoft.com/visualstudio/msbuild/csc-task) an, die als Teil des Builds generiert werden sollen. Dies wirkt sich ebenfalls darauf aus, ob die Anwendung debuggt werden kann. Mögliche Werte:
 
     - **Full**: Vollständige Symbole werden generiert. Wenn die MSBuild-Eigenschaft `DebugSymbols` ebenfalls den Wert `True` aufweist, kann das Anwendungspaket debuggt werden.
 
@@ -483,7 +484,7 @@ Um den oben generierten Keystore zu verwenden, verwenden Sie die Eigenschaftengr
 
 ## <a name="build-actions"></a>Buildvorgänge
 
-*Buildaktionen* werden [auf Dateien](http://msdn.microsoft.com/en-us/library/bb629388.aspx) im Projekt angewendet und steuern, wie die Datei verarbeitet wird. 
+*Buildaktionen* werden [auf Dateien](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items) im Projekt angewendet und steuern, wie die Datei verarbeitet wird. 
 
 <a name="AndroidEnvironment" />
 

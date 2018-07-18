@@ -1,59 +1,59 @@
 ---
 title: Hierarchische Navigation
-description: Dieser Artikel veranschaulicht, wie die NavigationPage-Klasse, die zum Ausführen der Navigation in einem Stapel von Last in, First Out (LIFO)-Seiten verwendet wird.
+description: In diesem Artikel wird veranschaulicht, wie die "NavigationPage"-Klasse, die zum Ausführen der Navigation in einem Stapel von Last in, First Out (LIFO)-Seiten verwendet wird.
 ms.prod: xamarin
 ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 20dfb6e935d08c35da73a81fb401a613aa6c9bac
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f8f8f9b4e5755e8b1707178fef633321b64e4e94
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242455"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994675"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
-_Die NavigationPage-Klasse bietet die hierarchische Navigation, in denen der Benutzer Seiten vorwärts und rückwärts nach Bedarf navigieren kann. Die Klasse implementiert die Navigation als einen Stapel Last in, First Out (LIFO) von Page-Objekten. In diesem Artikel veranschaulicht, wie die NavigationPage-Klasse, die zum Ausführen der Navigation in einem Stapel von Seiten verwendet wird._
+_Die "NavigationPage"-Klasse bietet es sich um eine hierarchische Navigation bereit, in dem der Benutzer können Navigation durch Seiten, und in der Rückwärtsrichtung wie gewünscht ist. Die Klasse implementiert die Navigation als Last in, First Out (LIFO) der Page-Objekte. In diesem Artikel wird veranschaulicht, wie die "NavigationPage"-Klasse, die zum Ausführen der Navigation in einem Stapel von Seiten verwendet wird._
 
-In diesem Artikel werden die folgenden Themen erläutert:
+In diesem Artikel werden die folgenden Themen behandelt:
 
-- [Ausführen von Navigation](#Performing_Navigation) – erstellen Sie die Seite "Root", Seiten auf Navigationsstapel übertragen, Seiten aus dem Navigationsbereich Stapel herunternehmen und Seitenübergänge zu animieren.
+- [Ausführen der Navigation](#Performing_Navigation) – erstellen Sie die Stammseite, Seiten auf den Navigationsstapel übertragen, Seiten, von dem Navigationsstapel entfernt und Seitenübergänge zu animieren.
 - [Übergeben von Daten beim Navigieren](#Passing_Data_when_Navigating) : Übergeben von Daten über einen Seitenkonstruktor, und eine `BindingContext`.
-- [Bearbeiten von Navigationsstapel](#Manipulating_the_Navigation_Stack) – bearbeiten den Stapel durch Einfügen, oder Entfernen von Seiten.
+- [Bearbeiten von dem Navigationsstapel](#Manipulating_the_Navigation_Stack) – bearbeiten den Stapel durch Einfügen oder Entfernen von Seiten.
 
 ## <a name="overview"></a>Übersicht
 
-Um von einer Seite in eine andere zu verschieben, wird eine Anwendung push eine neue Seite im Navigationsbereich Stapel, in dem sie die aktive Seite werden wie im folgenden Diagramm dargestellt:
+Um von einer Seite in ein anderes zu verschieben, wird eine Anwendung übertragen per push eine neue Seite in den Navigationsstapel, in dem sie die aktive Seite, werden wie im folgenden Diagramm dargestellt:
 
-![](hierarchical-images/pushing.png "Eine Seite an die Navigationsstapel weitergegeben werden.")
+![](hierarchical-images/pushing.png "Eine Seite übertragen auf den Navigationsstapel")
 
-Um zurück zur vorherigen Seite zurückzukehren, wird die Anwendung die aktuelle Seite Navigationsstapel angezeigt, und die oberste neue Seite wird die aktive Seite, wie im folgenden Diagramm dargestellt:
+Um zurück zur vorherigen Seite zurückzukehren, wird die Anwendung die aktuelle Seite, von dem Navigationsstapel angezeigt, und die neue oberste Seite wird die aktive Seite, wie im folgenden Diagramm dargestellt:
 
-![](hierarchical-images/popping.png "Eine Seite aus dem Navigationsbereich Stapel herunternehmen")
+![](hierarchical-images/popping.png "Eine Seite, von dem Navigationsstapel entfernt")
 
-Navigationsmethoden werden verfügbar gemacht, indem Sie die [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) Eigenschaft für ein beliebiges [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) abgeleitete Typen. Diese Methoden bieten die Möglichkeit, Seiten auf den Navigationsstapel in pop Seiten aus Navigationsstapel zu übertragen und stapelbearbeitung auszuführen.
+Navigationsmethoden werden verfügbar gemacht, indem die [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) Eigenschaft für jedes beliebige [ `Page` ](xref:Xamarin.Forms.Page) abgeleitete Typen. Diese Methoden bieten die Möglichkeit, um Seiten in den Navigationsstapel, zu Seiten, pop vom Navigationsstapel übertragen und stapelbearbeitung auszuführen.
 
 <a name="Performing_Navigation" />
 
-## <a name="performing-navigation"></a>Ausführen von Navigation
+## <a name="performing-navigation"></a>Ausführen der Navigation
 
-Bei der hierarchischen Navigation wird die [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)-Klasse verwendet, um durch einen Stapel von [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-Objekten zu navigieren. Die folgenden Screenshots zeigen die Hauptkomponenten der `NavigationPage` auf jeder Plattform:
+Bei der hierarchischen Navigation wird die [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Klasse verwendet, um durch einen Stapel von [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekten zu navigieren. Die folgenden Screenshots zeigen die wichtigsten Komponenten von der `NavigationPage` auf jeder Plattform:
 
-![](hierarchical-images/navigationpage-components.png "NavigationPage-Komponenten")
+![](hierarchical-images/navigationpage-components.png "\"NavigationPage\"-Komponenten")
 
-Das Layout einer [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) ist abhängig von der Plattform:
+Das Layout einer [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) ist abhängig von der Plattform:
 
-- Bei iOS kann eine Navigationsleiste am oberen Rand der Seite, die einen Titel anzeigt und dessen, vorhanden ist eine *wieder* Schaltfläche, die zur vorherigen Seite zurückgibt.
-- Auf Android-Geräten eine Navigationsleiste am oberen Rand der Seite, einen Titel, ein Symbol anzeigt, vorhanden ist und ein *wieder* Schaltfläche, die zur vorherigen Seite zurückgibt. Das Symbol wird definiert, der `[Activity]` -Attribut, das ergänzt die `MainActivity` Klasse im Android plattformspezifische Projekt.
-- Klicken Sie auf die universelle Windows-Plattform existiert eine Navigationsleiste am oberen Rand der Seite, die einen "Titel" anzeigt.
+- Unter iOS, existiert eine Navigationsleiste am oberen Rand der Seite, die einen Titel anzeigt, und, bei dem, ein *zurück* Schaltfläche, die zur vorherigen Seite zurückgibt.
+- Unter Android eine Navigationsleiste am oberen Rand der Seite mit einem Titel, ein Symbol, vorhanden ist und ein *wieder* Schaltfläche, die zur vorherigen Seite zurückgibt. Das Symbol wird definiert, der `[Activity]` -Attribut, das ergänzt die `MainActivity` Klasse im plattformspezifischen Projekt Android.
+- Für die universelle Windows-Plattform existiert eine Navigationsleiste am oberen Rand der Seite, die einen Titel anzeigt.
 
-Auf allen Plattformen, den Wert der [ `Page.Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) Eigenschaft wird als Titel der Seite angezeigt.
+Auf allen Plattformen, den Wert des der [ `Page.Title` ](xref:Xamarin.Forms.Page.Title) Eigenschaft wird als Titel der Seite angezeigt werden.
 
 > [!NOTE]
-> Es wird empfohlen, die eine `NavigationPage` aufgefüllt werden soll, mit `ContentPage` nur Instanzen.
+> Es wird empfohlen, eine `NavigationPage` gefüllt werden soll, mit `ContentPage` nur Instanzen.
 
 ### <a name="creating-the-root-page"></a>Erstellen die Seite "Root"
 
@@ -66,16 +66,16 @@ public App ()
 }
 ```
 
-Dies bewirkt, dass die `Page1Xaml` [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) Instanz, wo der aktiven Seite und die Seite "Root" der Anwendung wird im Navigationsbereich Stapel verschoben werden. Dies wird in den folgenden Screenshots veranschaulicht:
+Dies bewirkt, dass die `Page1Xaml` [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) -Instanz, auf den Navigationsstapel übertragen werden, wird es zur aktiven Seite und die Stammseite der Anwendung. Dies wird in den folgenden Screenshots gezeigt:
 
-![](hierarchical-images/mainpage.png "Seite \"Root\" der Navigationsstapel")
+![](hierarchical-images/mainpage.png "Stammseite der Navigationsstapel")
 
 > [!NOTE]
-> Die [ `RootPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.NavigationPage.RootPage/) Eigenschaft von einem [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) Instanz ermöglicht den Zugriff auf die erste Seite im Navigationsstapel.
+> Die [ `RootPage` ](xref:Xamarin.Forms.NavigationPage.RootPage) Eigenschaft eine [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) Instanz ermöglicht den Zugriff auf die erste Seite im Navigationsstapel.
 
-### <a name="pushing-pages-to-the-navigation-stack"></a>Seiten an Navigationsstapel weitergegeben werden.
+### <a name="pushing-pages-to-the-navigation-stack"></a>Seiten auf den Navigationsstapel übertragen
 
-Zu navigieren `Page2Xaml`, es ist erforderlich, das Aufrufen der [ `PushAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)/) Methode für die [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) -Eigenschaft der aktuellen Seite, wie im folgenden Codebeispiel wird:
+Zu navigieren `Page2Xaml`, es ist erforderlich, rufen Sie die [ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync*) Methode für die [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) -Eigenschaft der aktuellen Seite, wie im folgenden Codebeispiel veranschaulicht:
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -84,26 +84,26 @@ async void OnNextPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Dies bewirkt, dass die `Page2Xaml`-Instanz mithilfe von Push auf den Navigationsstapel übertragen wird, wo sie dann zur aktiven Seite wird. Dies wird in den folgenden Screenshots veranschaulicht:
+Dies bewirkt, dass die `Page2Xaml`-Instanz mithilfe von Push auf den Navigationsstapel übertragen wird, wo sie dann zur aktiven Seite wird. Dies wird in den folgenden Screenshots gezeigt:
 
-![](hierarchical-images/secondpage.png "Seite zu leisten Navigationsstapel")
+![](hierarchical-images/secondpage.png "Seite mithilfe von Push auf den Navigationsstapel übertragen")
 
-Wenn die [ `PushAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)/) Methode wird aufgerufen, die folgenden Ereignisse auftreten:
+Wenn die [ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync*) Methode wird aufgerufen, die folgenden Ereignisse auftreten:
 
-- Die aufrufende Seite `PushAsync` hat seine [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) Außerkraftsetzung aufgerufen.
-- Die Seite, zu dem navigiert verfügt über seine [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) Außerkraftsetzung aufgerufen.
+- Die Seite "aufrufende `PushAsync` hat seine [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) außer Kraft setzen, aufgerufen.
+- Die Seite, zu dem navigiert hat seine [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) außer Kraft setzen, aufgerufen.
 - Die `PushAsync` Aufgabe abgeschlossen ist.
 
-Allerdings ist die genaue Reihenfolge, in der diese Ereignisse auftreten, plattformabhängig. Weitere Informationen finden Sie unter [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charless Xamarin.Forms Buch.
+Allerdings ist die genaue Reihenfolge, in der diese Ereignisse auftreten, plattformabhängig. Weitere Informationen finden Sie unter [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles petzolds Xamarin.Forms Buch.
 
 > [!NOTE]
-> Aufrufe von der [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) und [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) Außerkraftsetzungen nicht als garantierte Anzeichen Seitennavigation behandelt werden. Bei iOS kann z. B. die `OnDisappearing` Außerkraftsetzung für die aktive Seite aufgerufen wird, wenn die Anwendung beendet wird.
+> Aufrufe von der [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) und [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) Außerkraftsetzungen nicht als garantierte Anzeichen für die Seitennavigation behandelt werden. Unter iOS, z. B. die `OnDisappearing` außer Kraft setzen, wird auf der aktiven Seite aufgerufen, wenn die Anwendung beendet wird.
 
 ### <a name="popping-pages-from-the-navigation-stack"></a>Abholvorgänge Seiten aus dem Navigationsstapel
 
 Die aktive Seite kann durch Drücken der Schaltfläche *Zurück* an dem Gerät per Pop von dem Navigationsstapel entfernt werden, und zwar unabhängig davon, ob es sich um eine physische Schaltfläche an dem Gerät oder um eine Schaltfläche auf dem Bildschirm handelt.
 
-Wenn Sie programmgesteuert zur ursprünglichen Seite zurückkehren möchten, muss die `Page2Xaml`-Instanz die [`PopAsync`](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopAsync()/)-Methode aufrufen. Dies wird im folgenden Codebeispiel veranschaulicht:
+Wenn Sie programmgesteuert zur ursprünglichen Seite zurückkehren möchten, muss die `Page2Xaml`-Instanz die [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync)-Methode aufrufen. Dies wird im folgenden Codebeispiel veranschaulicht:
 
 ```csharp
 async void OnPreviousPageButtonClicked (object sender, EventArgs e)
@@ -112,15 +112,15 @@ async void OnPreviousPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Dadurch wird die `Page2Xaml`-Instanz von dem Navigationsstapel entfernt, und die neue oberste Seite wird zur aktiven Seite. Wenn die [ `PopAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopAsync()/) Methode wird aufgerufen, die folgenden Ereignisse auftreten:
+Dadurch wird die `Page2Xaml`-Instanz von dem Navigationsstapel entfernt, und die neue oberste Seite wird zur aktiven Seite. Wenn die [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync) Methode wird aufgerufen, die folgenden Ereignisse auftreten:
 
-- Die aufrufende Seite `PopAsync` hat seine [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) Außerkraftsetzung aufgerufen.
-- Die Rückgabe an Seite verfügt über seine [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) Außerkraftsetzung aufgerufen.
-- Die `PopAsync` Aufgabe zurück.
+- Die Seite "aufrufende `PopAsync` hat seine [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) außer Kraft setzen, aufgerufen.
+- Die zurückgegebene Ergebnis auf Seite verfügt über seine [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) außer Kraft setzen, aufgerufen.
+- Die `PopAsync` Aufgabe zurückgibt.
 
-Allerdings ist die genaue Reihenfolge, in der diese Ereignisse auftreten, plattformabhängig. Weitere Informationen finden Sie unter [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charless Xamarin.Forms Buch.
+Allerdings ist die genaue Reihenfolge, in der diese Ereignisse auftreten, plattformabhängig. Weitere Informationen finden Sie unter [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles petzolds Xamarin.Forms Buch.
 
-Als auch [ `PushAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)/) und [ `PopAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopAsync()/) Methoden, die [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) Eigenschaft Rand jeder Seite bietet auch eine [ `PopToRootAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopToRootAsync()/) -Methode, die im folgenden Codebeispiel gezeigt wird:
+Als auch [ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync*) und [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync) Methoden, die [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) -Eigenschaft jeder Seite bietet auch eine [ `PopToRootAsync` ](xref:Xamarin.Forms.NavigationPage.PopToRootAsync) -Methode, die im folgenden Codebeispiel gezeigt wird:
 
 ```csharp
 async void OnRootPageButtonClicked (object sender, EventArgs e)
@@ -129,11 +129,11 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Diese Methode nimmt alle bis auf den Stamm [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) deaktiviert Navigationsstapel, sodass die Stammseite der Anwendung die aktive Seite.
+Diese Methode öffnet, alle bis auf den Stamm [ `Page` ](xref:Xamarin.Forms.Page) aus den Navigationsstapel, sodass die Stammseite der Anwendung zur aktiven Seite.
 
-### <a name="animating-page-transitions"></a>Animieren Seitenübergänge
+### <a name="animating-page-transitions"></a>Animieren von Seitenübergänge
 
-Die [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) Eigenschaft Rand jeder Seite enthält zudem außer Kraft gesetzte Push und pop Methoden wie eine `boolean` Parameter, der steuert, ob zum Anzeigen einer Seite Animation während der Navigation, wie im folgenden Code gezeigt. Beispiel:
+Die [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) -Eigenschaft jeder Seite bietet auch außer Kraft gesetzte Push- und pop-Methoden, die enthalten eine `boolean` Parameter, der steuert, ob zum Anzeigen einer Seite Animation während der Navigation, wie im folgenden Code gezeigt. Beispiel:
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -155,17 +155,17 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Festlegen der `boolean` Parameter `false` deaktiviert die Animation Seite Übergang beim Festlegen des Parameters auf `true` können Sie die Seite Übergangsanimationen, vorausgesetzt, dass sie von der zugrunde liegenden Plattform unterstützt wird. Die Push "und" Pop-Methoden, die dieser Parameter hat jedoch aktiviert die Animation standardmäßig.
+Festlegen der `boolean` Parameter `false` deaktiviert die Seitenübergänge Animation, beim Festlegen des Parameters auf `true` können Sie die Seite übergangsanimation, vorausgesetzt, dass sie von der zugrunde liegenden Plattform unterstützt wird. Die Push- und Pop-Methoden, die dieser Parameter hat jedoch aktiviert die Animation sind standardmäßig.
 
 <a name="Passing_Data_when_Navigating" />
 
 ## <a name="passing-data-when-navigating"></a>Übergeben von Daten beim Navigieren
 
-Manchmal ist es erforderlich, für eine Seite, um Daten während der Navigation zu einer anderen Seite zu übergeben. Zwei Techniken, um dies zu erreichen, werden Daten über einen Seitenkonstruktor, und legen der neuen Seite bestanden [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) an den Daten. Jede wird jetzt der Reihe nach erläutert werden.
+Manchmal ist es erforderlich, für eine Seite, um Daten während der Navigation zu einer anderen Seite zu übergeben. Zwei Techniken, um dies zu erreichen sind übergeben von Daten über einen Seitenkonstruktor, und legen der neuen Seite [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) an den Daten. Nun wird jeder wiederum erläutert werden.
 
-### <a name="passing-data-through-a-page-constructor"></a>Übergeben von Daten über eine Seite-Konstruktor
+### <a name="passing-data-through-a-page-constructor"></a>Übergeben von Daten über einen Konstruktor für die Seite
 
-Die einfachste Methode zum Übergeben von Daten während der Navigation zu einer anderen Seite ist über Konstruktorparameter Seite, die im folgenden Codebeispiel gezeigt wird:
+Die einfachste Methode zum Übergeben von Daten während der Navigation zu einer anderen Seite ist über Konstruktorparameter Seite, die in der im folgenden Codebeispiel gezeigt wird:
 
 ```csharp
 public App ()
@@ -174,9 +174,9 @@ public App ()
 }
 ```
 
-Dieser Code erstellt ein `MainPage` Instanz, in das aktuelle Datum und die Uhrzeit im ISO8601-Format übergeben, wird die eingebunden in eine [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) Instanz.
+Dieser Code erstellt eine `MainPage` Instanz, in das aktuelle Datum und die Uhrzeit im ISO8601-Format übergeben werden, die als Wrapper versehen einer [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) Instanz.
 
-Die `MainPage` Instanz empfängt die Daten über einen Konstruktorparameter aus, wie im folgenden Codebeispiel gezeigt:
+Die `MainPage` Instanz empfängt die Daten über einen Konstruktorparameter, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public MainPage (string date)
@@ -186,13 +186,13 @@ public MainPage (string date)
 }
 ```
 
-Die Daten werden dann auf der Seite angezeigt, durch Festlegen der [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) Eigenschaft, die in den folgenden Screenshots dargestellt:
+Die Daten werden dann auf der Seite angezeigt, durch Festlegen der [ `Label.Text` ](xref:Xamarin.Forms.Label.Text) Eigenschaft, die in den folgenden Screenshots dargestellt:
 
-![](hierarchical-images/passing-data-constructor.png "Daten, die über eine Seite-Konstruktor übergeben")
+![](hierarchical-images/passing-data-constructor.png "Daten, die über einen Konstruktor für die Seite übergeben")
 
-### <a name="passing-data-through-a-bindingcontext"></a>Übergeben von Daten über ein BindingContext
+### <a name="passing-data-through-a-bindingcontext"></a>Übertragen von Daten über eine BindingContext
 
-Eine alternative Methode zum Übergeben von Daten während der Navigation zu einer anderen Seite wird durch Festlegen der neuen Seite [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) auf die Daten, wie im folgenden Codebeispiel gezeigt:
+Eine alternative Methode zum Übergeben von Daten während der Navigation zu einer anderen Seite wird durch Festlegen der neuen Seite [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) auf die Daten, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 async void OnNavigateButtonClicked (object sender, EventArgs e)
@@ -210,9 +210,9 @@ async void OnNavigateButtonClicked (object sender, EventArgs e)
 }
 ```
 
-In diesem Code wird die [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) von der `SecondPage` -Instanz, auf die `Contact` Instanz, und wechselt anschließend zum der `SecondPage`.
+Dieser Code legt fest der [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) von der `SecondPage` -Instanz, auf die `Contact` Instanz, und klicken Sie dann navigiert zu der `SecondPage`.
 
-Die `SecondPage` verwendet dann die Datenbindung zum Anzeigen der `Contact` Instanzdaten, wie im folgenden Beispiel der Verwendung von XAML-Code dargestellt:
+Die `SecondPage` dann mithilfe der Datenbindung an die `Contact` Instanzdaten, wie in den folgenden XAML-Codebeispiel gezeigt:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -232,7 +232,7 @@ Die `SecondPage` verwendet dann die Datenbindung zum Anzeigen der `Contact` Inst
 </ContentPage>
 ```
 
-Im folgenden Codebeispiel wird veranschaulicht, wie die Datenbindung in c# durchgeführt werden kann:
+Im folgenden Codebeispiel wird veranschaulicht, wie die Datenbindung in C# -Code ausgeführt werden kann:
 
 ```csharp
 public class SecondPageCS : ContentPage
@@ -272,7 +272,7 @@ public class SecondPageCS : ContentPage
 }
 ```
 
-Die Daten werden dann auf der Seite angezeigt, durch eine Reihe von [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) steuert, wie in den folgenden Screenshots dargestellt:
+Die Daten werden dann auf der Seite angezeigt, durch eine Reihe von [ `Label` ](xref:Xamarin.Forms.Label) steuert, wie in den folgenden Screenshots gezeigt:
 
 ![](hierarchical-images/passing-data-bindingcontext.png "Daten, die über eine BindingContext übergeben")
 
@@ -280,19 +280,19 @@ Weitere Informationen zur Datenbindung finden Sie unter [Data Binding Basics](~/
 
 <a name="Manipulating_the_Navigation_Stack" />
 
-## <a name="manipulating-the-navigation-stack"></a>Bearbeiten von Navigationsstapel
+## <a name="manipulating-the-navigation-stack"></a>Bearbeiten von dem Navigationsstapel
 
-Die [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) Eigenschaft macht eine [ `NavigationStack` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INavigation.NavigationStack/) Eigenschaft aus der die Seiten im Navigationsstapel abgerufen werden können. Während Xamarin.Forms Zugriff auf die Navigationsstapel verwaltet die `Navigation` Eigenschaft ermöglicht die [ `InsertPageBefore` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.InsertPageBefore(Xamarin.Forms.Page,Xamarin.Forms.Page)/) und [ `RemovePage` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.RemovePage(Xamarin.Forms.Page)/) Methoden zum Bearbeiten der Stapel von einfügen Seiten oder entfernen.
+Die [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) Eigenschaft macht eine [ `NavigationStack` ](xref:Xamarin.Forms.INavigation.NavigationStack) Eigenschaft, die aus der die Seiten im Navigationsstapel abgerufen werden können. Während Xamarin.Forms Zugriff auf den Navigationsstapel, verwaltet die `Navigation` Eigenschaft enthält die [ `InsertPageBefore` ](xref:Xamarin.Forms.INavigation.InsertPageBefore*) und [ `RemovePage` ](xref:Xamarin.Forms.INavigation.RemovePage*) Methoden zur Bearbeitung im Stapels durch Einfügen Seiten oder entfernt werden.
 
-Die [ `InsertPageBefore` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.InsertPageBefore(Xamarin.Forms.Page,Xamarin.Forms.Page)/) Methode fügt eine angegebene Seite im Navigationsstapel vor einer vorhandenen angegebenen Seite, wie im folgenden Diagramm dargestellt:
+Die [ `InsertPageBefore` ](xref:Xamarin.Forms.INavigation.InsertPageBefore*) -Methode fügt eine angegebene Seite in den Navigationsstapel, bevor Sie eine vorhandene angegebene Seite, ein, wie im folgenden Diagramm dargestellt:
 
-![](hierarchical-images/insert-page-before.png "Einfügen einer Seite im Navigationsstapel")
+![](hierarchical-images/insert-page-before.png "Eine Seite einzufügen im Navigationsstapel.")
 
-Die [ `RemovePage` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.RemovePage(Xamarin.Forms.Page)/) Methode entfernt die angegebene Seite aus dem Navigationsstapel, wie im folgenden Diagramm dargestellt:
+Die [ `RemovePage` ](xref:Xamarin.Forms.INavigation.RemovePage*) Methode entfernt die angegebene Seite von dem Navigationsstapel, wie im folgenden Diagramm dargestellt:
 
-![](hierarchical-images/remove-page.png "Entfernen eine Seite aus dem Navigationsstapel")
+![](hierarchical-images/remove-page.png "Eine Seite entfernt von dem Navigationsstapel.")
 
-Mithilfe dieser Methoden kann eine benutzerdefinierte Navigation erzielen Sie, wie eine Anmeldeseite mit einer neuen Seite, die eine erfolgreiche Anmeldung nach ersetzen. Im folgenden Codebeispiel wird dieses Szenario veranschaulicht:
+Diese Methoden ermöglichen es sich um eine benutzerdefinierte Navigations-erzielen Sie, wie z. B. eine Anmeldeseite mit einer neuen Seite, die nach einer erfolgreichen Anmeldung ersetzt. Im folgenden Codebeispiel wird dieses Szenario veranschaulicht:
 
 ```csharp
 async void OnLoginButtonClicked (object sender, EventArgs e)
@@ -310,19 +310,19 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 ```
 
-Vorausgesetzt, dass die Anmeldeinformationen des Benutzers korrekt ist, werden die `MainPage` Instanz Navigationsstapel vor der aktuellen Seite eingefügt wird. Die [ `PopAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopAsync()/) Methode entfernt die aktuelle Seite Navigationsstapel, klicken Sie dann mit der `MainPage` Instanz als die aktive Seite.
+Vorausgesetzt, dass die Anmeldeinformationen des Benutzers korrekt ist, werden die `MainPage` Instanz wird in den Navigationsstapel vor der aktuellen Seite eingefügt. Die [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync) Methode entfernt die aktuelle Seite vom Navigationsstapel, klicken Sie dann mit der `MainPage` Instanz zur aktiven Seite zu.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel veranschaulicht, wie mithilfe der [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) Klasse, um die Navigation in einem Stapel von Seiten auszuführen. Diese Klasse bietet die hierarchische Navigation, in denen der Benutzer Seiten vorwärts und rückwärts nach Bedarf navigieren kann. Die Klasse implementiert die Navigation als LIFO-Stapel (Last-In-First-out) von [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)-Objekten.
+In diesem Artikel veranschaulicht, wie Sie mit der [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) Klasse, um die Navigation in einem Stapel von Seiten führen. Diese Klasse stellt eine hierarchische Navigation bereit, in dem der Benutzer können Navigation durch Seiten, und in der Rückwärtsrichtung wie gewünscht ist. Die Klasse implementiert die Navigation als LIFO-Stapel (Last-In-First-out) von [`Page`](xref:Xamarin.Forms.Page)-Objekten.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Seitennavigation](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
-- [Hierarchische (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
+- [Hierarchisch (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
 - [PassingData (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)
 - [LoginFlow (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)
-- [Vorgehensweise: Erstellen einer Anmeldung im Bildschirm-Fluss in Xamarin.Forms (Xamarin-University-Video) Beispiel](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip)
-- [Vorgehensweise: Erstellen einer Anmeldung im Bildschirm-Fluss in Xamarin.Forms (Xamarin-University-Video)](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
-- [NavigationPage](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)
+- [Vorgehensweise: Erstellen Sie ein Zeichen im Bildschirm-Fluss in Xamarin.Forms (Xamarin University-Video)-Beispiel](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip)
+- [Vorgehensweise: Erstellen Sie ein Zeichen im Bildschirm-Fluss in Xamarin.Forms (Xamarin University-Video)](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
+- ["NavigationPage"](xref:Xamarin.Forms.NavigationPage)

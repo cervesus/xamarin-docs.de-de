@@ -1,31 +1,31 @@
 ---
 title: Integrieren von Xamarin.Forms
-description: In diesem Artikel wird erläutert, wie SkiaSharp Grafiken erstellen, die anzufassenden reagieren und Xamarin.Forms-Elemente und wird dies mit Beispielcode veranschaulicht.
+description: In diesem Artikel erläutert das Erstellen von SkiaSharp-Grafiken, die auf Fingereingabe reagieren und Xamarin.Forms-Elemente, und dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 9233850686fa6b20f858bf3358fc46393685297f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 35aede1a541d0ff62f6a4a5b57256c389e5a8640
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243504"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997519"
 ---
 # <a name="integrating-with-xamarinforms"></a>Integrieren von Xamarin.Forms
 
-_Erstellen von SkiaSharp Grafiken, die auf die Fingereingabe und Xamarin.Forms-Elemente reagieren_
+_Erstellen von SkiaSharp-Grafiken, die auf Fingereingabe und Xamarin.Forms-Elemente reagieren_
 
-SkiaSharp Grafiken können mit dem Rest des Xamarin.Forms auf verschiedene Weise integrieren. Sie können einen Zeichenbereich SkiaSharp und Xamarin.Forms auf derselben Seite und sogar Position Xamarin.Forms Elemente auf einem Zeichenbereich SkiaSharp kombinieren:
+SkiaSharp-Grafiken können den Rest von Xamarin.Forms auf verschiedene Weise integriert werden. Sie können einen SkiaSharp-Zeichenbereich und Xamarin.Forms-Elemente auf derselben Seite und sogar Positionieren von Xamarin.Forms-Elementen auf einer Leinwand SkiaSharp kombinieren:
 
 ![](integration-images/integrationexample.png "Auswählen einer Farbe mit Schieberegler")
 
-Ein weiteres Verfahren zum Erstellen von interaktiven SkiaSharp Grafiken in Xamarin.Forms erfolgt über Touch.
-Die zweite Seite in der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm berechtigt ist **tippen ein-/ausschalten füllen**. Es zeichnet einen einfachen Kreis auf zwei Arten &mdash; ohne Füllung und mit einem "füllen" &mdash; von einer Tap ein-/ausgeschaltet. Die [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Klasse zeigt, wie Sie SkiaSharp Grafiken in Reaktion auf eine Benutzereingabe ändern können.
+Ein anderer Ansatz zum Erstellen von interaktiver Grafiken von SkiaSharp in Xamarin.Forms erfolgt über Touch.
+Die zweite Seite in der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm berechtigt ist **tippen ein-/ausschalten geben**. Es wird einen einfachen Kreis auf zwei Arten gezeichnet &mdash; ohne eine Fläche und eine Füllung &mdash; von einem fingertipp auf eine ein-/ausgeschaltet. Die [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Klasse zeigt, wie Sie SkiaSharp-Grafiken in Reaktion auf eine Benutzereingabe ändern können.
 
-Für diese Seite die `SKCanvasView` Klasse instanziiert wird, der [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) -Datei, die eine Xamarin.Forms auch setzt [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) für die Sicht:
+Für diese Seite die `SKCanvasView` Klasse instanziiert wird, der [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) -Datei, die außerdem eine Xamarin.Forms wird [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) in der Ansicht:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -44,7 +44,7 @@ Für diese Seite die `SKCanvasView` Klasse instanziiert wird, der [TapToggleFill
 
 Beachten Sie, dass die `skia` XML-Namespacedeklaration.
 
-Die `Tapped` Handler für das `TapGestureRecognizer` Objekt schaltet einfach den Wert ein boolesches Feld und ruft die [ `InvalidateSurface` ](https://developer.xamarin.com/api/member/SkiaSharp.Views.Forms.SKCanvasView.InvalidateSurface()/) Methode `SKCanvasView`:
+Die `Tapped` Handler für die `TapGestureRecognizer` Objekt einfach Schaltet den Wert ein boolesches Feld und ruft die [ `InvalidateSurface` ](https://developer.xamarin.com/api/member/SkiaSharp.Views.Forms.SKCanvasView.InvalidateSurface()/) -Methode der `SKCanvasView`:
 
 ```csharp
 bool showFill = true;
@@ -56,7 +56,7 @@ void OnCanvasViewTapped(object sender, EventArgs args)
 }
 ```
 
-Der Aufruf von `InvalidateSurface` effektiv generiert einen Aufruf der `PaintSurface` Handler, der verwendet die `showFill` Feld aufzufüllen, oder den Kreis nicht aufgefüllt werden:
+Der Aufruf von `InvalidateSurface` effektiv generiert einen Aufruf an die `PaintSurface` Handler, der verwendet die `showFill` Feld füllen, oder geben Sie den Kreis nicht:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -84,23 +84,23 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Die `StrokeWidth` Eigenschaft auf 50 festgelegt wurde, um den Unterschied hervorzuheben. Sie können auch die gesamte Linienstärke durch Zeichnen zuerst das innere und klicken Sie dann auf die Gliederung anzeigen. Standardmäßig Abbildungen Grafiken gezeichneten weiter unten in der `PaintSurface` Ereignishandler verdecken, die weiter oben in der Handler gezeichnet.
+Die `StrokeWidth` Eigenschaft ist auf 50 festgelegt wurde, den Unterschied hervorzuheben. Sie können auch die gesamte Linienstärke zeichnen das innere zuerst und dann auf die Gliederung sehen. Standardmäßig ermittelt Grafiken gezeichnet weiter unten in der `PaintSurface` Ereignishandler verdecken die weiter oben im Ereignishandler gezeichnet.
 
-Die **Farbe untersuchen** Seite veranschaulicht, wie Sie SkiaSharp Grafiken auch bei anderen Elementen Xamarin.Forms integrieren können, und auch zeigt den Unterschied zwischen zwei alternative Methoden zum Definieren von Farben in SkiaSharp. Die statische [ `SKColor.FromHsl` ](https://developer.xamarin.com/api/member/SkiaSharp.SKColor.FromHsl/p/System.Single/System.Single/System.Single/System.Byte/) Methode erstellt ein `SKColor` Wert auf Grundlage des Farbton-Sättigung-Helligkeit-Modells:
+Die **Farbe untersuchen** Seite veranschaulicht, wie Sie SkiaSharp-Grafiken auch mit anderen Elementen Xamarin.Forms integrieren können, und außerdem veranschaulicht den Unterschied zwischen zwei alternative Methoden zum Definieren von Farben in SkiaSharp. Die statische [ `SKColor.FromHsl` ](https://developer.xamarin.com/api/member/SkiaSharp.SKColor.FromHsl/p/System.Single/System.Single/System.Single/System.Byte/) -Methode erstellt eine `SKColor` Wert basierend auf den Farbton-Sättigung und Helligkeit-Modell:
 
 ```csharp
 public static SKColor FromHsl (Single h, Single s, Single l, Byte a)
 ```
 
-Die statische [ `SKColor.FromHsv` ](https://developer.xamarin.com/api/member/SkiaSharp.SKColor.FromHsv/p/System.Single/System.Single/System.Single/System.Byte/) Methode erstellt ein `SKColor` Wert auf Grundlage des ähnliche Farbton-Sättigung-Value-Modells:
+Die statische [ `SKColor.FromHsv` ](https://developer.xamarin.com/api/member/SkiaSharp.SKColor.FromHsv/p/System.Single/System.Single/System.Single/System.Byte/) -Methode erstellt eine `SKColor` -Wert auf Grundlage der ähnlich wie Hue-Saturation-Value-Modell:
 
 ```csharp
 public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
 ```
 
-In beiden Fällen die `h` Argument liegt zwischen 0 und 360. Die `s`, `l`, und `v` Argumente, die zwischen 0 und 100 liegen. Die `a` (Alpha oder Deckkraft) Argument liegt zwischen 0 und 255.
+In beiden Fällen die `h` Argument liegt zwischen 0 und 360 liegen. Die `s`, `l`, und `v` Argumente, die zwischen 0 und 100 liegen. Die `a` (Alpha oder der Durchlässigkeit) Argument liegt zwischen 0 und 255.
 
-Die [ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml) Datei erstellt zwei `SKCanvasView` Objekte in einem `StackLayout` Seite-an-Seite mit `Slider` und `Label` Ansichten, mit denen den Benutzer zur Auswahl von HSL können und HSV Farbwerte anzeigt:
+Die [ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml) Datei erstellt zwei `SKCanvasView` Objekte in einem `StackLayout` Seite-an-Seite mit `Slider` und `Label` Ansichten, mit denen der Benutzer die Auswahl von HSL und HSV RGB-Werte:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -180,9 +180,9 @@ Die [ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-sampl
 </ContentPage>
 ```
 
-Die beiden `SKCanvasView` Elemente sind in einer einzelnen Zelle `Grid` mit einem `Label` auf nach oben zum Anzeigen der resultierenden RGB-Wert.
+Die beiden `SKCanvasView` Elemente befinden sich in einer einzelnen Zelle `Grid` mit einem `Label` auf Top, um die resultierende RGB-Farbwert anzeigen.
 
-Die [ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs) Code-Behind-Datei ist relativ einfach. Die gemeinsam verwendete `ValueChanged` Handler für die drei `Slider` Elemente erklärt beide einfach `SKCanvasView` Elemente. Die `PaintSurface` Handler Deaktivieren der Canvas mit der Farbe, angegeben durch die `Slider` Elemente, und legen Sie außerdem die `Label` sich direkt auf der Basis von der `SKCanvasView` Elemente:
+Die [ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs) Code-Behind-Datei ist relativ einfach. Der gemeinsam verwendeten `ValueChanged` Handler für die drei `Slider` Elemente erklärt einfach beide `SKCanvasView` Elemente. Die `PaintSurface` Handler Löschen der Canvas mit der Farbe, angegeben durch die `Slider` Elemente, und legen Sie außerdem die `Label` sitzen auf der die `SKCanvasView` Elemente:
 
 ```csharp
 public partial class ColorExplorePage : ContentPage
@@ -227,15 +227,15 @@ public partial class ColorExplorePage : ContentPage
 }
 ```
 
-Im sowohl die HSL- und HSV Farbe der Farbtonwert reicht von 0 bis 360 und den bestimmenden Farbton der Farbe angibt. Hierbei handelt es sich um herkömmliche Farben der Rainbow: Rot, Orange, Gelb, Grün, Blau, Indigo, Violett geändert und erneut in einem Kreis in Rot.
+Der Farbtonwert im sowohl die HSL und HSV Farbe reicht von 0 bis 360, und den vorherrschenden Farbton der Farbe angibt. Hierbei handelt es sich um die herkömmlichen Farben des Regenbogens: Rot, Orange, Gelb, Grün, Blau, Indigo, Violet und zurück in einen Kreis zu rot.
 
-Im Modell HSL einen 0-Wert für die Helligkeit ist immer Schwarz und eine 100-Wert ist immer weiß. Wenn der Sättigungswert 0 ist, sind Helligkeitswerte zwischen 0 und 100 Graustufen. Erhöhen die Sättigung fügt Weitere Farben. Reine Farben (die RGB-Werte mit einer Komponente gleich 255, eine andere gleich 0 und der dritte im Bereich von 0 bis 255) auftreten, wenn die Sättigung liegt zwischen 100 und die Helligkeit "50 lautet".
+Klicken Sie im HSL-Modell einen 0-Wert für die Helligkeit ist immer Schwarz, und ein 100-Wert ist immer weiß. Wenn der Sättigungswert 0 ist, sind Helligkeitswerte zwischen 0 und 100 grauschattierungen an. Erhöhen die Sättigung fügt Weitere Farbe. Reine Farben (die RGB-Werte mit einer Komponente, die gleich 255, eine andere gleich 0 und der dritte im Bereich von 0 bis 255 sind) auftreten, wenn die Sättigung 100 ist ein, und die Helligkeit 50 ist.
 
-Führen im Modell HSV reine Farben aus, wenn es sich bei dem Sättigung und den Wert 100 sind. Wenn der Wert 0 ist, unabhängig von der alle anderen Einstellungen wird ist die Farbe Schwarz. Graustufen auftreten, wenn die Sättigung 0 und der Wert liegt zwischen 0 und 100 ist.
+Führen im Modell HSV reine Farben so ein, wenn sowohl der Überlastung des Netzwerks als auch der Wert 100 sind. Wenn der Wert 0 ist, unabhängig davon, alle anderen Einstellungen, ist die Farbe Schwarz. Grauschattierungen auftreten, wenn die Sättigung 0 und der Wert liegt zwischen 0 und 100 ist.
 
-Die beste Möglichkeit, ein Gefühl für die beiden Modelle mit ihnen experimentieren selbst ist jedoch:
+Die beste Möglichkeit, ein Gefühl für die zwei Modelle mit ihnen experimentieren selbst ist jedoch:
 
-[![](integration-images/colorexplore-large.png "Dreifacher Screenshot der Seite untersuchen Farbe")](integration-images/colorexplore-small.png#lightbox "dreifacher Screenshot der Seite Farbe durchsuchen")
+[![](integration-images/colorexplore-large.png "Dreifacher Screenshot der Seite untersuchen Farbe")](integration-images/colorexplore-small.png#lightbox "dreifachen Screenshot der Seite untersuchen Farbe")
 
 
 ## <a name="related-links"></a>Verwandte Links

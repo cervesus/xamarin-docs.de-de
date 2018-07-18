@@ -1,26 +1,26 @@
 ---
-title: Hinzufügen einer Tap Geste Gestenhandler-Erkennung
-description: In diesem Artikel wird erläutert, wie Tap Bewegung zur Erkennung von Tap in einer Xamarin.Forms-Anwendung verwendet wird. Tap-Erkennung wird mit der TapGestureRecognizer-Klasse implementiert.
+title: Hinzufügen einer Tap Geste Stiftbewegungs-Erkennung
+description: In diesem Artikel wird erläutert, wie Sie mit der tippbewegung zur Erkennung von Tippen Sie in einer Xamarin.Forms-Anwendung. Tippen Sie auf Erkennung wird mit der TapGestureRecognizer-Klasse implementiert.
 ms.prod: xamarin
 ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: bbe4ca7a1080459b8aeb33640be5158b15e97715
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e602ae1f140640d9a895b65d78feab3d0a3b7861
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240664"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994853"
 ---
-# <a name="adding-a-tap-gesture-gesture-recognizer"></a>Hinzufügen einer Tap Geste Gestenhandler-Erkennung
+# <a name="adding-a-tap-gesture-gesture-recognizer"></a>Hinzufügen einer Tap Geste Stiftbewegungs-Erkennung
 
-_Die Tap-Geste wird für die Erkennung von Tap verwendet und wird mit der TapGestureRecognizer-Klasse implementiert._
+_Die tippbewegung dient zur Erkennung von tippen, und es wird mit der TapGestureRecognizer-Klasse implementiert._
 
 ## <a name="overview"></a>Übersicht
 
-Um ein Element der Benutzeroberfläche mit der Tap-Geste klickbar gemacht werden, erstellen Sie eine [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) -Instanz verwenden, behandeln die [ `Tapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.TapGestureRecognizer.Tapped/) Ereignis und fügen Sie die neue Geste Erkennung der [ `GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/) Auflistung auf das Element der Debuggerbenutzeroberfläche. Das folgende Codebeispiel zeigt eine `TapGestureRecognizer` angefügt, um eine [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) Element:
+Um ein Element der Benutzeroberfläche geklickt werden kann, mit der tippbewegung machen, erstellen eine [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) -Instanz, behandeln Sie die [ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) Ereignis und fügen Sie der neuen stiftbewegungs-Erkennung, um die [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) Auflistung in das Benutzeroberflächenelement. Das folgende Codebeispiel zeigt eine `TapGestureRecognizer` angefügt, um eine [ `Image` ](xref:Xamarin.Forms.Image) Element:
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -30,19 +30,19 @@ tapGestureRecognizer.Tapped += (s, e) => {
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-Standardmäßig wird das Abbild auf einzelnen Taps reagieren. Legen Sie die [ `NumberOfTapsRequired` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired/) Eigenschaft Doppeltippen (oder mehr Taps, falls erforderlich) warten.
+Standardmäßig wird das Abbild auf einzelnen Tippen Antworten. Legen Sie die [ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) Eigenschaft warten, Doppeltippen (oder weitere Taps, falls erforderlich).
 
 ```csharp
 tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 ```
 
-Wenn [ `NumberOfTapsRequired` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired/) -Wert über 1, der Ereignishandler nur ausgeführt, wenn die datenabzweigungen in einem festgelegten Zeitraum auftreten (dies Zeitraum ist nicht konfigurierbar). Wenn die zweiten (oder nachfolgenden) Taps nicht innerhalb dieses Zeitraums auftreten, werden sie effektiv ignoriert, und "Tap Count" neu gestartet wird.
+Wenn [ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) festgelegt ist über 1, der Ereignishandler nur ausgeführt wird, wenn die Klicks innerhalb einer festgelegten Zeitspanne auftreten (dieser Zeitraum ist nicht konfigurierbar). Wenn es sich bei der zweiten (oder nachfolgender) Taps nicht innerhalb dieses Zeitraums auftreten, werden sie effektiv ignoriert und "Anzahl der Tippen Sie auf" neu gestartet wird.
 
 <a name="Using_Xaml" />
 
-## <a name="using-xaml"></a>Verwendung von Xaml
+## <a name="using-xaml"></a>Mithilfe von Xaml
 
-Eine Geste Erkennung kann in Xaml angefügten Eigenschaften mit einem Steuerelement hinzugefügt werden. Die Syntax zum Hinzufügen einer [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) wird zu einem Bild unten gezeigt (in diesem Fall definieren eine *Doppeltippen* Ereignis):
+Eine stiftbewegungs-Erkennung kann an ein Steuerelement in Xaml mit angefügten Eigenschaften hinzugefügt werden. Die Syntax zum Hinzufügen einer [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) wird zu einem Bild unten gezeigt (in diesem Fall definieren eine *Doppeltippen* Ereignis):
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -54,7 +54,7 @@ Eine Geste Erkennung kann in Xaml angefügten Eigenschaften mit einem Steuerelem
 </Image>
 ```
 
-Der Code für den Ereignishandler (im Beispiel) erhöht einen Zähler und dabei ändert sich das Bild Farbe auf Schwarz &amp; weiß.
+Der Code für den Ereignishandler (im Beispiel) erhöht einen Zähler, und ändert sich das Image von Farbe auf Schwarz &amp; weiß.
 
 ```csharp
 void OnTapGestureRecognizerTapped(object sender, EventArgs args)
@@ -70,9 +70,9 @@ void OnTapGestureRecognizerTapped(object sender, EventArgs args)
 }
 ```
 
-## <a name="using-icommand"></a>Mithilfe von ICommand
+## <a name="using-icommand"></a>Verwenden von ICommand
 
-Anwendungen, die in der Regel verwenden Sie das Mvvm-Muster verwenden `ICommand` statt direkt Verkabelung Ereignishandler. Die [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) kann problemlos unterstützen `ICommand` entweder durch die Bindung im Code festlegen:
+Anwendungen, die in der Regel verwenden Sie das Mvvm-Muster verwenden `ICommand` statt direkt Ereignishandler verknüpfen. Die [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) kann problemlos unterstützen `ICommand` entweder durch die Bindung im Code festlegen:
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -80,7 +80,7 @@ tapGestureRecognizer.SetBinding (TapGestureRecognizer.CommandProperty, "TapComma
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-oder bei Verwendung von Xaml:
+oder mit Xaml:
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -92,7 +92,7 @@ oder bei Verwendung von Xaml:
 </Image>
 ```
 
-Der vollständige Code für dieses Modell anzeigen, kann im Beispiel gefunden werden. Die relevanten `Command` Implementierungsdetails sind unten dargestellt:
+Der vollständige Code für dieses Ansichtsmodells finden Sie im Beispiel. Die relevanten `Command` Implementierungsdetails werden unten angezeigt:
 
 ```csharp
 public class TapViewModel : INotifyPropertyChanged
@@ -116,11 +116,11 @@ public class TapViewModel : INotifyPropertyChanged
 
 ## <a name="summary"></a>Zusammenfassung
 
-Die Tap-Geste für Tap-Erkennung verwendet wird, und wird implementiert, mit der [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) Klasse. Die Anzahl der abtaststellen Doppeltippen erkennen angegeben werden kann (oder Triple-Tap oder mehrere tippt) Verhalten.
+Die tippbewegung für Tap-Erkennung verwendet wird, und wird implementiert, mit der [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Klasse. Die Anzahl der abtaststellen kann angegeben werden, um die Erkennung von Doppeltippen Sie auf (oder Triple-tippen, oder mehrere tippt) Verhalten.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [TapGesture (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/TapGesture/)
-- [GestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/)
-- [TapGestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)
+- [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
+- [TapGestureRecognizer](xref:Xamarin.Forms.TapGestureRecognizer)

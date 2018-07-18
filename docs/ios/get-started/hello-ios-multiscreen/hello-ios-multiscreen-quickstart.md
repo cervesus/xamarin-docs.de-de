@@ -1,6 +1,6 @@
 ---
-title: Hello, iOS Multiscreen
-description: In diesem zweiteiligen Leitfaden wird die Phoneword-Anwendung, die Sie im Leitfaden „Hallo, iOS“ erstellt haben, um die Behandlung eines zweiten Bildschirms erweitert. Außerdem wird das Model-View-Controller-Entwurfsmuster eingeführt, die erste iOS-Navigation implementiert, und es werden die Struktur und Funktionen von iOS-Anwendungen ausführlich beschrieben.
+title: 'Schnellstart: Hallo, iOS Multiscreen'
+description: In diesem Artikel wird demonstriert, wie Sie die Phoneword-Beispielanwendung zum Hinzufügen eines zweiten Bildschirms erweitern. Außerdem werden der Model-View-Controller, die iOS-Navigation und andere Kernkonzepte der iOS-Entwicklung beschrieben.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: d72e6230-c9ee-4bee-90ec-877d256821aa
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 3b59b942b3c256418d60436a1c4ba8b4aea14aa4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 469032dc7caa46c6a89b350dc37bc9a93366066a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785670"
 ---
-# <a name="helloios-multiscreen-quickstart"></a>Schnellstart: Hallo, iOS Multiscreen
+# <a name="hello-ios-multiscreen--quickstart"></a>Schnellstart: Hallo, iOS Multiscreen
 
 In diesem Teil der exemplarischen Vorgehensweise wird der Phoneword-Anwendung ein zweiter Bildschirm hinzugefügt mit einer Liste der Telefonnummern, die mit der App angerufen wurden. Die endgültige Anwendung verfügt dann über einen zweiten Bildschirm, auf dem, wie im folgenden Screenshot veranschaulicht, die Anrufliste angezeigt wird:
 

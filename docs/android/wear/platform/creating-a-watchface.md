@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30772938"
 ---
 # <a name="creating-a-watch-face"></a>Erstellen ein Schriftbild an überwachen
 
@@ -46,11 +47,11 @@ Erstellen ein neues Android Dach Projekt mit der Bezeichnung **WatchFace** (Weit
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Dialogfeld "Neues Projekt"](creating-a-watchface-images/03-wear-project-vs-sml.png "Dach App auswählen, klicken Sie im Dialogfeld "Neues Projekt"")](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
+[![Dialogfeld "Neues Projekt"](creating-a-watchface-images/03-wear-project-vs-sml.png "Dach App auswählen, klicken Sie im Dialogfeld \"Neues Projekt\"")](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Dialogfeld "Neues Projekt"](creating-a-watchface-images/03-wear-project-xs-sml.png "Dach App auswählen, klicken Sie im Dialogfeld "Neues Projekt"")](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
+[![Dialogfeld "Neues Projekt"](creating-a-watchface-images/03-wear-project-xs-sml.png "Dach App auswählen, klicken Sie im Dialogfeld \"Neues Projekt\"")](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
 
 -----
 
@@ -71,13 +72,13 @@ Legen Sie den Paketnamen auf `com.xamarin.watchface`:
 
 Darüber hinaus einen Bildlauf nach unten, und aktivieren Sie die **INTERNET** und **WAKE_LOCK** Berechtigungen: 
 
-[![Erforderliche Berechtigungen für](creating-a-watchface-images/05-required-permissions-vs.png "Berechtigungen INTERNET aktivieren "und" WAKE_LOCK")](creating-a-watchface-images/05-required-permissions-vs.png#lightbox)
+[![Erforderliche Berechtigungen für](creating-a-watchface-images/05-required-permissions-vs.png "Berechtigungen INTERNET aktivieren \"und\" WAKE_LOCK")](creating-a-watchface-images/05-required-permissions-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Legen Sie die mindestens Android-Version auf **Android 5.1 (API-Ebene 22)**. Zudem ermöglichen die **Internet** und **WakeLock** Berechtigungen:
 
-[![Erforderliche Berechtigungen für](creating-a-watchface-images/05-required-permissions-xs.png "Berechtigungen Internet aktivieren "und" WakeLock")](creating-a-watchface-images/05-required-permissions-xs.png#lightbox)
+[![Erforderliche Berechtigungen für](creating-a-watchface-images/05-required-permissions-xs.png "Berechtigungen Internet aktivieren \"und\" WakeLock")](creating-a-watchface-images/05-required-permissions-xs.png#lightbox)
 
 -----
 

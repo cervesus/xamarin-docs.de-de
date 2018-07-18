@@ -1,48 +1,48 @@
 ---
-title: Anpassen der Darstellung ListView-Zelle
-description: In diesem Artikel wird erklärt, Optionen zum Darstellen von Daten in Xamarin.Forms-Anwendungen beim Nutzen der Vorteile der ListView-Steuerelement.
+title: Anpassen der Zellendarstellung ListView
+description: In diesem Artikel untersucht die Optionen zum Darstellen von Daten in Xamarin.Forms-Anwendungen, und nutzt die Vorteile des ListView-Steuerelements.
 ms.prod: xamarin
 ms.assetid: FD45CB91-1A8F-46FB-B432-6BC20492E456
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 86447afbabca1384f9e46f5128a9dc00253a798c
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 7a0f55b6d8a61f52f4ef137d83c56d86149bc3c9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244755"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996255"
 ---
-# <a name="customizing-listview-cell-appearance"></a>Anpassen der Darstellung ListView-Zelle
+# <a name="customizing-listview-cell-appearance"></a>Anpassen der Zellendarstellung ListView
 
-ListView präsentiert bildlauffähige Listen, die durch die Verwendung der angepasst werden können `ViewCell`s. `ViewCells` Dient zum Anzeigen von Text und Bilder, der angibt, eines wahr/falsch-Status und Empfangen von Benutzereingaben.
+ListView stellt bildlauffähige Listen, die durch die Verwendung von angepasst werden können `ViewCell`s. `ViewCells` kann für Anzeigen von Text und Bilder an, einen True/False-Status und Empfangen von Benutzereingaben verwendet werden.
 
-Es gibt zwei Ansätze zum Abrufen des Aussehens von ListView Zellen gewünschten:
+Es gibt zwei Ansätze zum Abrufen des Aussehens von ListView Zellen gewünschte:
 
-- **[Anpassen von integrierten Zellen](#Built_in_Cells)**  &ndash; einfacheren Implementierung und eine bessere Leistung auf Kosten der Berichtsebene.
+- **[Anpassen von integrierten Zellen](#Built_in_Cells)**  &ndash; einfacheren Implementierung und eine bessere Leistung auf Kosten der Anpassungsfähigkeit.
 - **[Erstellen von benutzerdefinierten Zellen](#customcells)**  &ndash; mehr Kontrolle über das Endergebnis, jedoch können Sie möglicherweise Leistungsprobleme auftreten, wenn nicht ordnungsgemäß implementiert.
 
 <a name="Built_in_Cells" />
 
 ## <a name="built-in-cells"></a>Erstellt in Zellen
-Xamarin.Forms verfügt über integrierte Zellen, die für viele einfache Anwendungen unterstützt:
+Xamarin.Forms verfügt über integrierte Zellen, die für viele einfache Anwendungen funktionieren:
 
-- **TextCell** &ndash; für die Anzeige von Text
+- **TextCell** &ndash; zum Anzeigen von Text
 - **ImageCell** &ndash; zum Anzeigen eines Bilds mit Text.
 
-Zwei zusätzliche Zellen, [ `SwitchCell` ](~/xamarin-forms/user-interface/tableview.md#switchcell) und [ `EntryCell` ](~/xamarin-forms/user-interface/tableview.md#entrycell) verfügbar sind, jedoch häufig bei Verwendung sind nicht `ListView`. Finden Sie unter [ `TableView` ](~/xamarin-forms/user-interface/tableview.md) für Weitere Informationen über diese Zellen.
+Zwei weitere Zellen, [ `SwitchCell` ](~/xamarin-forms/user-interface/tableview.md#switchcell) und [ `EntryCell` ](~/xamarin-forms/user-interface/tableview.md#entrycell) sind verfügbar, aber sie nicht häufig verwendet werden, mit `ListView`. Finden Sie unter [ `TableView` ](~/xamarin-forms/user-interface/tableview.md) für Weitere Informationen zu dieser Zellen.
 
 <a name="TextCell" />
 
 ### <a name="textcell"></a>TextCell
 
-[`TextCell`](http://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) ist eine Zelle für die Anzeige von Text, optional mit einer zweiten Zeile als Detail Text.
+[`TextCell`](xref:Xamarin.Forms.TextCell) ist eine Zelle für die Anzeige von Text, optional mit einer zweiten Zeile als Details Text.
 
-TextCells als systemeigene Steuerelemente zur Laufzeit gerendert werden, damit die Leistung sehr gut ist im Vergleich zu einer benutzerdefinierten `ViewCell`. TextCells können angepasst werden, weil Sie damit festlegen:
+TextCells als systemeigene Steuerelemente zur Laufzeit gerendert werden, damit die Leistung sehr gut ist im Vergleich zu einer benutzerdefinierten `ViewCell`. TextCells können angepasst werden, können Sie festlegen:
 
-- `Text` &ndash; der Text, der auf der ersten Zeile in großer Schriftart angezeigt wird.
-- `Detail` &ndash; der Text, der unterhalb der ersten Zeile in einer kleineren Schriftart dargestellt wird.
+- `Text` &ndash; der Text, der auf der ersten Zeile, in großer Schriftart angezeigt wird.
+- `Detail` &ndash; der Text, der unterhalb der ersten Zeile in einer kleineren Schriftart angezeigt wird.
 - `TextColor` &ndash; die Farbe des Texts.
 - `DetailColor` &ndash; die Farbe des Texts detail
 
@@ -54,15 +54,15 @@ TextCells als systemeigene Steuerelemente zur Laufzeit gerendert werden, damit d
 
 ### <a name="imagecell"></a>ImageCell
 
-[`ImageCell`](http://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/), z. B. `TextCell`, für die Anzeige von Text und sekundären Detail Text verwendet werden können und bietet hervorragende Leistung mithilfe von systemeigenen Steuerelementen für jede Plattform. `ImageCell` unterscheidet sich von `TextCell` insofern, dass sie ein Bild auf der linken Seite des Texts anzeigt.
+[`ImageCell`](xref:Xamarin.Forms.ImageCell), z. B. `TextCell`, für die Anzeige von Text und sekundären Detail Text verwendet werden kann und er bietet hohe Leistung aus, indem Sie mit nativen Steuerelementen der Plattformen. `ImageCell` unterscheidet sich von `TextCell` , da es ein Bild auf der linken Seite des Texts anzeigt.
 
-`ImageCell` ist nützlich, wenn Sie eine Liste von Daten mit der ein visueller Aspekt, z. B. eine Liste der Kontakte oder Filme anzuzeigen müssen. ImageCells können angepasst werden, weil Sie damit festlegen:
+`ImageCell` ist nützlich, wenn Sie eine Liste der Daten mit der ein visueller Aspekt, z. B. eine Liste der Kontakte oder Filme anzeigen müssen. ImageCells können angepasst werden, können Sie festlegen:
 
-- `Text` &ndash; der Text, der auf der ersten Zeile in großer Schriftart angezeigt wird
+- `Text` &ndash; der Text, der auf der ersten Zeile, in großer Schriftart angezeigt wird
 - `Detail` &ndash; der Text, der unterhalb der ersten Zeile in einer kleineren Schriftart angezeigt wird
 - `TextColor` &ndash; die Farbe des Texts
 - `DetailColor` &ndash; die Farbe des Texts detail
-- `ImageSource` &ndash; das Bild, das neben dem Text angezeigt
+- `ImageSource` &ndash; das Bild an neben dem Text angezeigt.
 
 ![](customizing-cell-appearance-images/image-cell-default.png "Standard-ImageCell-Beispiel")
 
@@ -71,18 +71,18 @@ TextCells als systemeigene Steuerelemente zur Laufzeit gerendert werden, damit d
 <a name="customcells" />
 
 ## <a name="custom-cells"></a>Benutzerdefinierte Zellen
-Wenn die integrierte Zellen nicht das erforderliche Layout bereitstellen, implementiert benutzerdefinierte Zellen das Layout erforderliche. Beispielsweise empfiehlt es sich eine Zelle mit zwei Bezeichnungen dar, die gleiche Gewichtung zu haben. Ein `TextCell` wäre nicht genügend da die `TextCell` verfügt über eine Bezeichnung, die kleiner ist. Die meisten Zelle Anpassungen hinzufügen, zusätzliche schreibgeschützte Daten (z. B. zusätzliche Bezeichnungen, Bilder oder andere Anzeigeinformationen).
+Die integrierten Zellen nicht das erforderliche Layout bereitstellen, implementiert benutzerdefinierte Zellen das Layout erforderliche. Beispielsweise empfiehlt es sich um eine Zelle mit zwei Bezeichnungen zu präsentieren, die gleich Gewichtung. Ein `TextCell` wäre nicht genügend, da die `TextCell` enthält eine Bezeichnung, die kleiner ist. Die meisten Anpassungen der Zelle hinzufügen zusätzliche schreibgeschützte Daten (z. B. zusätzliche Bezeichnungen, Bilder oder andere Anzeigeinformationen).
 
-Alle benutzerdefinierte Zellen abgeleitet müssen [ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), die dieselbe Basisklasse an, dass alle integrierten Zelle Typen verwenden.
+Alle benutzerdefinierte Zellen abgeleitet müssen [ `ViewCell` ](xref:Xamarin.Forms.ViewCell), der gleichen Basisklasse an, dass alle der Zelle integrierte Typen verwenden.
 
-Xamarin.Forms 2 eingeführt, ein neues [Zwischenspeichern von Abfragezeichenfolgen](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy) auf die `ListView` steuern, welche das Durchführen eines Bildlaufs leistungsverbesserung für einige Typen von benutzerdefinierten Zellen festgelegt werden kann.
+Xamarin.Forms 2 eingeführt, ein neues [Verhalten beim Zwischenspeichern](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy) auf die `ListView` steuern, welche zum Verbessern der bildlaufleistung für einige Typen von benutzerdefinierten Zellen festgelegt werden kann.
 
 Dies ist ein Beispiel für eine benutzerdefinierte Zelle:
 
-![](customizing-cell-appearance-images/custom-cell.png "Beispiel für benutzerdefinierte Zelle")
+![](customizing-cell-appearance-images/custom-cell.png "Beispiel für die benutzerdefinierte Zelle")
 
 ### <a name="xaml"></a>XAML
-Der XAML-Code, der oben genannten Layout erstellt wird, lautet wie folgt:
+Das XAML das obige Layout erstellen, lautet wie folgt:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -113,17 +113,17 @@ x:Class="demoListView.ImageCellPage">
 </ContentPage>
 ```
 
-Die obige XAML-Code ist deutlich machen. Schön:
+Der obige XAML macht viel. Wir unterteilen:
 
-- In die benutzerdefinierte Zelle geschachtelt ist ein `DataTemplate`, also in `ListView.ItemTemplate`. Dies ist die gleichen Prozess wie eine beliebige andere Zelle verwenden.
-- `ViewCell` ist der Typ der benutzerdefinierten Zelle. Das untergeordnete Element eines der `DataTemplate` Element muss vom oder den Typ ableiten `ViewCell`.
-- Beachten Sie, innerhalb der `ViewCell`, Layout erfolgt durch eine `StackLayout`. Dieses Layout kann wir die Farbe des Hintergrunds anpassen. Beachten Sie, dass jede beliebige Eigenschaft `StackLayout` also bindbare kann innerhalb einer benutzerdefinierten Zelle gebunden werden, auch wenn, hier nicht angezeigt wird.
+- Die benutzerdefinierte Zelle darin geschachtelt ist eine `DataTemplate`, d.h. in `ListView.ItemTemplate`. Dies ist genauso wie mit der eine beliebige andere Zelle.
+- `ViewCell` ist der Typ der benutzerdefinierten Zelle. Das untergeordnete Element die `DataTemplate` Element sein oder vom Typ abgeleitet werden muss `ViewCell`.
+- Beachten Sie, dass dieses innerhalb der `ViewCell`, Layout wird verwaltet, indem eine `StackLayout`. Dieses Layout ermöglicht uns, die die Hintergrundfarbe anpassen. Beachten Sie, dass eine beliebige Eigenschaft des `StackLayout` , bindbare kann innerhalb einer benutzerdefinierten Zelle gebunden werden, obwohl, hier nicht angezeigt werden.
 
 ### <a name="cnum"></a>C&num;
 
-Angeben einer benutzerdefinierten Zelle in c# ist etwas ausführlicher als die Verwendung von XAML-Entsprechung. Sehen wir uns das einmal genauer an:
+Durch das Angeben einer benutzerdefinierten Zelle in C# geschrieben ist ausführlicher als die XAML-Entsprechung. Sehen wir uns das einmal genauer an:
 
-Zuerst definieren Sie eine benutzerdefinierte Zellenklasse mit `ViewCell` als Basisklasse:
+Definieren Sie zuerst eine benutzerdefinierte Zellenklasse mit `ViewCell` als Basisklasse:
 
 ```csharp
 public class CustomCell : ViewCell
@@ -159,7 +159,7 @@ public class CustomCell : ViewCell
     }
 ```
 
-Im Konstruktor für die Seite mit den `ListView`, legen Sie die ListView `ItemTemplate` Eigenschaft, um ein neues `DataTemplate`:
+Im Konstruktor für die Seite mit den `ListView`, legen Sie das ListView `ItemTemplate` Eigenschaft, um ein neues `DataTemplate`:
 
 ```csharp
 public partial class ImageCellPage : ContentPage
@@ -172,13 +172,13 @@ public partial class ImageCellPage : ContentPage
     }
 ```
 
-Beachten Sie, dass der Konstruktor für `DataTemplate` nimmt einen Typ an. Typeof-Operator Ruft den CLR-Typ für `CustomCell`.
+Beachten Sie, dass der Konstruktor für `DataTemplate` akzeptiert einen Typ. Der Typeof-Operator Ruft die CLR-Typ `CustomCell`.
 
 <a name="binding-context-changes" />
 
-### <a name="binding-context-changes"></a>Bindungsänderungen Kontext
+### <a name="binding-context-changes"></a>Binden von Kontextänderungen
 
-Beim Binden an einen benutzerdefinierten Zellentyps [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) -Instanzen bestehen, die Anzeige von UI-Steuerelemente der `BindableProperty` Werte verwenden, sollten die [ `OnBindingContextChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.OnBindingContextChanged()/) Außerkraftsetzung Festlegen der anzuzeigenden jede Zelle, anstatt der Zelle Konstruktor, wie im folgenden Codebeispiel wird veranschaulicht:
+Beim Binden an einen benutzerdefinierten Zellentyps [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) Instanzen, die Anzeige von UI-Steuerelemente der `BindableProperty` Werte verwenden, sollten die [ `OnBindingContextChanged` ](xref:Xamarin.Forms.Cell.OnBindingContextChanged) überschreiben, um die Daten angezeigt werden jede Zelle, anstatt die Cell-Konstruktor ein, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public class CustomCell : ViewCell
@@ -221,14 +221,14 @@ public class CustomCell : ViewCell
 }
 ```
 
-Die [ `OnBindingContextChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.OnBindingContextChanged()/) Außerkraftsetzung wird aufgerufen, wenn die [ `BindingContextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.BindableObject.BindingContextChanged/) Ereignis wird ausgelöst, als Antwort auf den Wert von der [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) Eigenschaft ändern. Aus diesem Grund, wenn die `BindingContext` ändert die Anzeige von UI-Steuerelemente der [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) Werte sollten ihre Daten festgelegt. Beachten Sie, dass die `BindingContext` sollte überprüft werden eine `null` -Wert fest, wie dies von Xamarin.Forms für Garbagecollection festgelegt werden kann, die wiederum führt die `OnBindingContextChanged` überschreiben aufgerufen werden.
+Die [ `OnBindingContextChanged` ](xref:Xamarin.Forms.Cell.OnBindingContextChanged) Außerkraftsetzung wird aufgerufen, wenn die [ `BindingContextChanged` ](xref:Xamarin.Forms.BindableObject.BindingContextChanged) Ereignis wird ausgelöst, als Reaktion auf den Wert des der [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) Eigenschaft zu ändern. Aus diesem Grund, wenn die `BindingContext` geändert wird, die UI-Steuerelemente, die Anzeige der [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) Werte sollten ihre Daten festgelegt. Beachten Sie, dass die `BindingContext` sollte überprüft werden eine `null` -Wert fest, wie dies von Xamarin.Forms für die Garbagecollection festgelegt werden kann, die wiederum führt die `OnBindingContextChanged` außer Kraft setzen, die aufgerufen wird.
 
-Sie können Benutzeroberflächen-Steuerelemente binden, um die [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) Instanzen anzuzeigenden ihre Werte, die außer Kraft setzen müssen entfernt der `OnBindingContextChanged` Methode.
+Sie können Benutzeroberflächen-Steuerelemente binden, um die [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) Instanzen zum Anzeigen von deren Werte, außer Kraft setzen müssen entfernt die `OnBindingContextChanged` Methode.
 
 > [!NOTE]
-> Zum Überschreiben `OnBindingContextChanged`, stellen Sie sicher, dass der Basisklasse `OnBindingContextChanged` aufgerufen wird, damit registrierte Delegaten empfangen die `BindingContextChanged` Ereignis.
+> Beim Überschreiben von `OnBindingContextChanged`, stellen Sie sicher, dass der Basisklasse `OnBindingContextChanged` Methode wird aufgerufen, damit registrierte Delegaten empfangen die `BindingContextChanged` Ereignis.
 
-In XAML kann Binden von benutzerdefinierten Zellentyps an Daten erreicht werden wie im folgenden Codebeispiel gezeigt:
+In XAML kann das Binden von benutzerdefinierten Zellentyps an Daten erreicht werden wie im folgenden Codebeispiel gezeigt:
 
 ```xaml
 <ListView x:Name="listView">
@@ -240,9 +240,9 @@ In XAML kann Binden von benutzerdefinierten Zellentyps an Daten erreicht werden 
 </ListView>
 ```
 
-Bindet die `Name`, `Age`, und `Location` bindbare Eigenschaften in der `CustomCell` Instanz, auf die `Name`, `Age`, und `Location` Eigenschaften der einzelnen Objekte in der zugrunde liegenden Auflistung.
+Bindet die `Name`, `Age`, und `Location` bindbare Eigenschaften in der `CustomCell` Instanz, zu der `Name`, `Age`, und `Location` Eigenschaften jedes Objekts in der zugrunde liegenden Auflistung.
 
-Im folgenden Codebeispiel wird die entsprechende Bindung im C#-angezeigt:
+Die entsprechende Bindung im C# -Code wird im folgenden Codebeispiel dargestellt:
 
 ```csharp
 var customCell = new DataTemplate (typeof(CustomCell));
@@ -256,7 +256,7 @@ var listView = new ListView {
 };
 ```
 
-Auf IOS- und Android Wenn die [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) ist Wiederverwendung Elemente und benutzerdefinierte Zelle mithilfe eines benutzerdefinierten Renderers, der benutzerdefinierte Renderer muss änderungsbenachrichtigung korrekt implementieren. Wenn Zellen wiederverwendet werden wird ihre Eigenschaftswerte ändern, wenn der Bindungskontext mit einer verfügbaren Zelle aktualisiert wird, mit `PropertyChanged` Ereignisse, die ausgelöst wird. Weitere Informationen finden Sie unter [Anpassen einer ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md). Weitere Informationen zu der Zelle wiederverwenden, finden Sie unter [Zwischenspeichern Strategie](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
+Unter iOS und Android Wenn die [ `ListView` ](xref:Xamarin.Forms.ListView) wirft Elemente und die benutzerdefinierte Zelle wird einen benutzerdefinierten Renderer verwendet, der benutzerdefinierte Renderer muss eigenschaftenänderungen ordnungsgemäß implementieren. Wenn Zellen wiederverwendet werden ihre Eigenschaftswerte ändert, wenn der Bindungskontext mit einer Zelle für zur Verfügung, mit aktualisiert wird `PropertyChanged` Ereignisse, die ausgelöst wird. Weitere Informationen finden Sie unter [Anpassen einer ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md). Weitere Informationen zu der Zelle wiederverwenden, finden Sie unter [Strategie für die Zwischenspeicherung](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
 
 ## <a name="related-links"></a>Verwandte Links
 

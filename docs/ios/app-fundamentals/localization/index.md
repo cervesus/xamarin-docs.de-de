@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: 06758fd8fac62a63c309b173738a8ee889716143
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 7f05243196a9b916ac5c7b73df957262604ccb11
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785265"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268809"
 ---
 # <a name="localization-in-xamarinios"></a>Lokalisierung in Xamarin.iOS
 
@@ -55,6 +55,16 @@ Das aktuelle Gebietsschema kann von zwei Arten abgefragt werden:
 - `NSLocale.AutoUpdatingCurrentLocale.LocaleIdentifier`
 
 Der erste Wert kann vom Betriebssystem zwischengespeichert werden und daher möglicherweise nicht immer wider aktuell ausgewählten Gebietsschema des Benutzers. Verwenden Sie den zweiten Wert, um das aktuell ausgewählte Gebietsschema abzurufen.
+
+> [!NOTE]
+> Mono (.NET Runtime auf dem Xamarin.iOS basiert) und Apple iOS-APIs unterstützen keine identische Kopien von Kombinationen von Sprache bzw. der Region.
+> Aus diesem Grund ist es möglich, wählen Sie eine Sprache/Region-Kombination in der iOS- **Einstellungen** app, die nicht in einen gültigen Wert in Mono zugeordnet ist. Festlegen einer iPhone Sprache auf Englisch und die Region auf Spanien verursacht z. B. die folgenden APIs unterschiedliche Werte ergibt:
+> 
+> - `CurrentThead.CurrentCulture`: En-US (Mono-API)
+> - `CurrentThread.CurrentUICulture`: En-US (Mono-API)
+> - `NSLocale.CurrentLocale.LocaleIdentifier`: En_ES (Apple-API)
+>
+> Da Mono verwendet `CurrentThread.CurrentUICulture` Ressourcen auswählen und `CurrentThread.CurrentCulture` zum Formatieren von Datumsangaben und Währungen Mono-basierte Lokalisierung (z. B. mit RESX-Dateien) nicht zu erwarteten Ergebnissen führen für diese Sprache/Region-Kombinationen. Basieren Sie in diesen Situationen auf der Apple-APIs zum Lokalisieren von nach Bedarf.
 
 ### <a name="nscurrentlocaledidchangenotification"></a>NSCurrentLocaleDidChangeNotification
 

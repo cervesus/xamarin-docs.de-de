@@ -1,80 +1,84 @@
 ---
 title: Grundlagen der Xamarin.Forms-Anwendung
-description: Untersuchen die Grundlagen der Xamarin.Forms die Anwendungsentwicklung, einschließlich aller der erforderlichen Kernkonzepte über Schliff z. B. Eingabehilfen und Lokalisierung.
+description: Untersuchen die Grundlagen der Xamarin.Forms-Anwendungsentwicklung, einschließlich alle erforderliche Kerndienste Konzepte, bis zum Abschluss des Workflows, z. B. Barrierefreiheit und Lokalisierung.
 ms.prod: xamarin
 ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: f843f4b1c20daba2a504bd0e70ae51f4d0405c06
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 515dbd2683619cfcfb7a6c8ecac6bc147265ef7d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240245"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995611"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Grundlagen der Xamarin.Forms-Anwendung
 
 ## <a name="accessibilityaccessibilityindexmd"></a>[Barrierefreiheit](accessibility/index.md)
 
-Tipps zugänglich Funktionen (z. B. Unterstützungstools Lesemodus) mit Xamarin.Forms integriert.
+Tipps zugänglich-Funktionen (wie die Unterstützung von Sprachausgabe Tools) mit Xamarin.Forms zu integrieren.
 
 ## <a name="app-classapplication-classmd"></a>[App-Klasse](application-class.md)
 
-Die `Application` Klasse stellt den Startpunkt für Xamarin.Forms – jede app muss eine Unterklasse implementieren `App` für die erste Seite festgelegt. Sie bietet außerdem die `Properties` Auflistung für die Speicherung von einfachen. Sie können in c# oder in XAML definiert werden.
+Die `Application` Klasse ist der Ausgangspunkt für Xamarin.Forms – jede app muss eine Unterklasse implementieren `App` für die erste Seite festgelegt. Außerdem wird die `Properties` Sammlung für die Speicherung von einfachen Daten. Sie können in c# oder XAML definiert werden.
 
 ## <a name="app-lifecycleapp-lifecyclemd"></a>[App-Lebenszyklus](app-lifecycle.md)
 
-Die `Application` Klasse `OnStart`, `OnSleep`, und `OnResume` Methoden sowie modale Navigationsereignisse, ermöglichen es Ihnen die Anwendung Lebenszyklusereignisse mit benutzerdefiniertem Code zu behandeln.
+Die `Application` Klasse `OnStart`, `OnSleep`, und `OnResume` Methoden sowie modalen Navigation-Ereignissen, können Sie die Ereignisse des Anwendungslebenszyklus mit benutzerdefiniertem Code zu behandeln.
 
 ## <a name="behaviorsbehaviorsindexmd"></a>[Verhalten](behaviors/index.md)
 
-Benutzeroberflächen-Steuerelemente können durch Verwenden von Verhaltensweisen zum Hinzufügen von Funktionalität einfach ohne Erstellung von Unterklassen von erweitert werden.
+Steuerelemente der Benutzeroberfläche können problemlos ohne Unterklassen mithilfe von Verhalten zum Hinzufügen von Funktionen erweitert werden.
 
 ## <a name="custom-rendererscustom-rendererindexmd"></a>[Benutzerdefinierte Renderer](custom-renderer/index.md)
 
-Benutzerdefinierte rendert können Entwickler, die "das Standardrendering von Xamarin.Forms Steuerelemente zur Anpassung von Darstellung und das Verhalten auf jeder Plattform (mithilfe von systemeigenen SDKs bei Bedarf)-override".
+Benutzerdefinierte rendert können Entwickler, die "die standardmäßige Umsetzung von Xamarin.Forms-Steuerelemente zur Anpassung von deren Darstellung und Verhalten auf jeder Plattform (mithilfe systemeigener SDKs auf, falls gewünscht) override".
 
 ## <a name="data-bindingdata-bindingindexmd"></a>[Datenbindung](data-binding/index.md)
 
-Datenbindung verknüpft die Eigenschaften von zwei Objekten, dass Änderungen an einer Eigenschaft in der anderen Eigenschaft automatisch wiedergegeben werden. Binden von Daten ist ein wesentlicher Bestandteil der Model-View-ViewModel ([MVVM](~/xamarin-forms/enterprise-application-patterns/mvvm.md)) Anwendungsarchitektur.
+Datenbindung verknüpft die Eigenschaften von zwei Objekten, sodass Änderungen an einer Eigenschaft in der anderen Eigenschaft automatisch wiedergegeben werden. Die Datenbindung ist ein wesentlicher Bestandteil der Model-View-ViewModel ([MVVM](~/xamarin-forms/enterprise-application-patterns/mvvm.md)) Anwendungsarchitektur.
 
 ## <a name="dependency-servicedependency-serviceindexmd"></a>[Abhängigkeitsdienst](dependency-service/index.md)
 
-Die `DependencyService` stellt einen einfachen Locator bereit, sodass Sie zu Schnittstellen im freigegebenen Code Code und, plattformspezifische Implementierungen, die automatisch aufgelöst werden kann bereitstellen, vereinfacht die Clientplattform-spezifische Funktionen in Xamarin.Forms zu verweisen.
+Die `DependencyService` stellt einen einfachen Locator bereit, sodass Sie an Schnittstellen im freigegebenen Code Code und Bereitstellen von plattformspezifischen Implementierungen, die automatisch aufgelöst werden kann, vereinfacht das verweisen plattformspezifische Funktionalität in Xamarin.Forms.
 
 ## <a name="effectseffectsindexmd"></a>[Effekte](effects/index.md)
 
-Effekte ermöglichen die native Steuerelemente für jede Plattform angepasst werden, und für kleine Styling Änderungen in der Regel verwendet werden.
+Können durch Effekte native Steuerelemente auf den einzelnen Plattformen angepasst werden, und für kleine Formatierungsänderungen in der Regel verwendet werden.
+
+## <a name="filesfilesmd"></a>[Dateien](files.md)
+
+Dateiverarbeitung mit Xamarin.Forms kann mithilfe von Code in einer .NET Standard-Bibliothek oder mithilfe von eingebetteten Ressourcen erreicht werden.
 
 ## <a name="gesturesgesturesindexmd"></a>[Gesten](gestures/index.md)
 
-Der Xamarin.Forms [ `GestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/) Klasse tippen, verkleinern und Schwenken Gesten auf Benutzeroberflächen-Steuerelementen unterstützt.
+Die Xamarin.Forms [ `GestureRecognizer` ](xref:Xamarin.Forms.GestureRecognizer) Klasse unterstützt Tap, verkleinern und Schwenken Gesten auf Benutzeroberflächen-Steuerelementen.
 
 ## <a name="localizationlocalizationindexmd"></a>[Lokalisierung](localization/index.md)
 
-Integrierte Lokalisierung .NET Framework kann verwendet werden, um plattformübergreifende mehrsprachige Clientanwendungen mit Xamarin.Forms zu erstellen.
+Integrierte .NET Framework Lokalisierung kann zum Erstellen von plattformübergreifenden mehrsprachiger Anwendungen mit Xamarin.Forms verwendet werden.
 
 ## <a name="local-databasesdatabasesmd"></a>[Lokale Datenbanken](databases.md)
 
-Xamarin.Forms unterstützt Datenbank datengesteuerten Anwendungen, die mit dem Datenbankmodul SQLite, wodurch es möglich ist, laden und Speichern von Objekten im freigegebenen Code.
+Xamarin.Forms unterstützt die Datenbank-gestützten Anwendungen, die die SQLite-Datenbank-Engine, die es ermöglicht, laden und Speichern von Objekten in freigegebenem Code verwenden.
 
-## <a name="messaging-centermessaging-centermd"></a>[Messaging-Center](messaging-center.md)
+## <a name="messaging-centermessaging-centermd"></a>[Center-Messaging](messaging-center.md)
 
-Xamarin.Forms `MessagingCenter` ermöglicht das anzeigen, Modelle und andere Komponenten mit kommunizieren, ohne Informationen über miteinander neben einem einfachen Nachrichtenvertrag kennen zu müssen.
+Xamarin.Forms `MessagingCenter` ermöglicht das anzeigen, Modelle und andere Komponenten für die Kommunikation mit ohne nichts über den anderen neben einem einfachen Nachrichtenvertrag kennen zu müssen.
 
 ## <a name="navigationnavigationindexmd"></a>[Navigation](navigation/index.md)
 
-Xamarin.Forms stellt eine Reihe von anderen Seite Navigation Erfahrungen, abhängig von der `Page` geben verwendet wird.
+Xamarin.Forms stellt eine Reihe von der anderen seitennavigationen, abhängig von der `Page` geben verwendet wird.
 
 ## <a name="templatestemplatesindexmd"></a>[Vorlagen](templates/index.md)
 
-Steuerelementvorlagen bieten die Möglichkeit, leicht Design und Re-Design Anwendungsseiten zur Laufzeit während Datenvorlagen definieren die Darstellung von Daten auf unterstützte Steuerelemente werden können.
+Steuerelementvorlagen bieten die Möglichkeit, einfache Weise Designs und überarbeitet Anwendungsseiten zur Laufzeit, während Data-Vorlagen die Möglichkeit, definieren die Darstellung von Daten für unterstützte Steuerelemente bereitstellen.
 
 ## <a name="triggerstriggersmd"></a>[Trigger](triggers.md)
 
-Reagieren auf eigenschaftenänderungen und Ereignisse in XAML aus, um Steuerelemente zu aktualisieren.
+Aktualisieren Sie Steuerelemente durch Reaktion auf eigenschaftenänderungen und Ereignisse in XAML.
 
 
 ## <a name="related-links"></a>Verwandte Links

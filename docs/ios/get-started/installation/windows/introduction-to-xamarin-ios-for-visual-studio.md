@@ -1,21 +1,20 @@
 ---
 title: Einführung in Xamarin.iOS für Visual Studio
-description: In diesem Artikel wird gezeigt, wie Sie Xamarin.iOS-Anwendungen mit Visual Studio erstellen und testen können. Es wird geklärt, wie Sie mit Visual Studio neue iOS-Projekte und iOS-Anwendungen erstellen können, und wie Sie diese mit einem Mac, der sich in einem Netzwerk befindet, verwenden können, um den Compiler und Simulator von Apple und die Buildtoolkette von Xamarin zu hosten.
+description: In diesem Dokument wird beschrieben, wie Sie Xamarin.iOS-Apps mit Visual Studio erstellen und testen können. Dabei werden das Erstellen eines Projekts, das Ausführen und Debuggen einer App und das Herstellen einer Verbindung zwischen Windows und einem Mac-Buildhost erläutert.
 ms.prod: xamarin
 ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2018
-ms.openlocfilehash: fbd48deb0b18dcd3ac0d40e379e21d5967f81e0d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: e07119bee6478a503ca6c586fa3348206ccd16f7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786199"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Einführung in Xamarin.iOS für Visual Studio
-
-_In diesem Artikel wird gezeigt, wie Sie Xamarin.iOS-Anwendungen mit Visual Studio erstellen und testen können. Es wird geklärt, wie Sie mit Visual Studio neue iOS-Projekte und iOS-Anwendungen erstellen können, und wie Sie diese mit einem Mac, der sich in einem Netzwerk befindet, verwenden können, um den Compiler und Simulator von Apple und die Buildtoolkette von Xamarin zu hosten._
 
 Mit Xamarin für Windows können iOS-Anwendungen in Visual Studio geschrieben und getestet werden, wobei ein Mac, der sich in einem Netzwerk befindet, die Build- und Bereitstellungsdienste bietet.
 
@@ -27,7 +26,6 @@ Wenn Sie in Visual Studio für iOS entwickeln, hat dies mehrere Vorteile:
 -  Verwenden Sie die Ihnen vertrauten Visual Studio-Tools (wie z.B. **ReSharper** und **Team Foundation Server**) für alle Ihre plattformübergreifenden Projekte, einschließlich iOS-Quellcode.
 -  Arbeiten Sie mit der bekannten IDE und profitieren Sie gleichzeitig von Xamarin.iOS-Bindungen aller APIs von Apple.
 
-
 <a name="Requirements_and_Installation" />
 
 ## <a name="requirements-and-installation"></a>Anforderungen und Installation
@@ -38,7 +36,6 @@ Es stehen einige Konfigurationsoptionen zur Verfügung. Sie können sich also en
 
 -  Verwenden Sie einen Mac als Hauptcomputer für die Entwicklung, und führen Sie eine Windows-VM aus, auf der Visual Studio installiert ist. Es wird empfohlen, dass Sie eine VM-Software wie [Parallels](http://www.parallels.com/products/desktop/) oder [VMWare](http://www.vmware.com/products/fusion/) verwenden.
 -  Verwenden Sie einen Mac nur als Buildhost. In diesem Szenario ist er mit demselben Netzwerk wie der Windows-Computer verbunden, und die [notwendigen Tools](~/cross-platform/get-started/installation/windows.md#installation) sind auf dem Mac installiert.
-
 
 Führen Sie in beiden Fällen die folgenden Schritte aus:
 
@@ -64,7 +61,6 @@ Die für die Xamarin.iOS-Entwicklung relevanten Steuerelemente sind rot markiert
 -  **Projektmappenkonfiguration**: zur Auswahl der Konfiguration (z.B. Debug, Release)
 -  **Projektmappenplattform**: zur Auswahl des iPhones oder iPhone Simulators für die Bereitstellung
 
-
 ### <a name="ios-toolbar"></a>iOS-Symbolleiste
 
 Die iOS-Symbolleiste in Visual Studio sieht in jeder Visual Studio-Version ähnlich aus. Sie sind alle unten dargestellt:
@@ -77,10 +73,7 @@ Jedes Element wird unten erläutert:
 -  **iOS-Simulator anzeigen**: öffnet das Fenster des iOS-Simulators im Vordergrund
 -  **IPA-Datei auf Buildserver anzeigen**: öffnet den Finder auf dem Mac am Speicherort der IPA-Ausgabedatei der Anwendung
 
-
-
 ## <a name="ios-output-options"></a>iOS-Ausgabeoptionen
-
 
 ### <a name="output-window"></a>Ausgabefenster
 
@@ -108,29 +101,23 @@ Andere Standardausgabebereiche von Visual Studio, wie z.B. Debug und Build, sind
 
     [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild-Ausgabe")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
-
 ## <a name="ios-project-properties"></a>iOS-Projekteigenschaften
 
 Sie können auf die Projekteigenschaften von Visual Studio zugreifen, indem Sie mit der rechten Maustaste auf dem Projektnamen und anschließend im Kontextmenü auf *Eigenschaften* klicken. So können Sie Ihre iOS-Anwendung wie im unten stehenden Screenshot konfigurieren:
-
 
  ![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "Konfigurieren einer iOS-Anwendung")
 
 -  *iOS-Bundle-Signierung*: stellt eine Verbindung mit dem Mac her, um die Codesignierungsidentitäten und Bereitstellungsprofile aufzufüllen:
 
-
  ![](introduction-to-xamarin-ios-for-visual-studio-images/bundlesigning.png "Füllen Sie die Codesignieridentitäten und Bereitstellungsprofile auf")
 
 -  *iOS-IPA-Optionen*: Die IPA-Datei wird im Dateisystem des Macs gespeichert:
-
 
  ![](introduction-to-xamarin-ios-for-visual-studio-images/ipaoptions.png "iOS-IPA-Optionen")
 
 -  *iOS-Ausführungsoptionen*: Konfigurieren zusätzlicher Parameter:
 
  ![](introduction-to-xamarin-ios-for-visual-studio-images/iosrunoptions.png "iOS-Ausführungsoptionen")
-
-
 
 ## <a name="creating-a-new-project-for-ios-applications"></a>Erstellen eines neuen Projekts für iOS-Anwendungen
 
@@ -156,7 +143,6 @@ Um Ihrer Ansicht Objekte hinzuzufügen, fügen Sie über den Bereich **Toolbox**
 
  Weitere Informationen zur Verwendung des iOS Designers finden Sie in den Leitfäden zum [Designer](~/ios/user-interface/designer/index.md).
 
-
 ## <a name="running--debugging-ios-applications"></a>Ausführen und Debuggen von iOS-Anwendungen
 
 ### <a name="device-logging"></a>Geräteprotokollierung
@@ -175,7 +161,6 @@ Damit die Gerät in der ComboBox angezeigt werden, muss ein iOS-Projekt geladen 
 
 Über dieses Toolfenster haben Sie Zugriff auf Folgendes: eine Tabelle mit Protokolleinträgen, ein Dropdownmenü zur Geräteauswahl, Löschvorgänge für Protokolleinträge, ein Suchfeld und die Schaltflächen „Wiedergabe“, „Anhalten“ und „Pause“.
 
-
 ### <a name="set-debugging-stops"></a>Festlegen von Haltepunkten für das Debuggen
 
 Breakpoints können überall in Ihrer Anwendung festgelegt werden, um dem Debugger anzuzeigen, dass er dort die Ausführung des Programms vorübergehend anhalten soll. Klicken Sie zum Festlegen eines Breakpoints in Visual Studio im Randbereich Ihres Editors neben die Zeilennummer des Codes, wo Sie unterbrechen möchten:
@@ -185,7 +170,6 @@ Breakpoints können überall in Ihrer Anwendung festgelegt werden, um dem Debugg
 Beginnen Sie mit dem Debuggen, und verwenden Sie den Simulator oder das Gerät, um Ihre Anwendung zu einem Breakpoint zu navigieren. Wenn Sie einen Breakpoint erreichen, wird die Zeile gekennzeichnet und das normale Debuggingverhalten von Visual Studio wird aktiviert: Sie können in den Code springen, Code überspringen oder aus diesem heraus springen, lokale Variablen untersuchen oder das Direktfenster verwenden.
 
 In diesem Screenshot wird der iOS-Simulator gezeigt, der gleichzeitig mit Visual Studio mithilfe von Parallels unter OS X ausgeführt wird:
-
 
 ![](introduction-to-xamarin-ios-for-visual-studio-images/image19.png "In diesem Screenshot wird der iOS-Simulator gezeigt, der gleichzeitig mit Visual Studio mithilfe von Parallels unter OS X ausgeführt wird")
 

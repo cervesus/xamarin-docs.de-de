@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 04/20/2018
-ms.openlocfilehash: 9c17641312384634983c2cbb34fa923a9416c9f7
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 6b2e316eaf67e51801be4fcd670e80ec81c8ff08
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935398"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Broadcast-Ereignisempfängern, bei Xamarin.Android
 
@@ -24,7 +25,7 @@ Ein _broadcast Empfänger_ ist eine Android-Komponente, die eine Anwendung auf M
 Android gibt zwei Arten von Broadcasts:
 
 * **Explizite Broadcast** &ndash; diese Art von Broadcasts als Ziel eine bestimmte Anwendung. Die häufigste Verwendung von einer expliziten Broadcast ist eine Aktivität zu starten. Ein Beispiel für eine explizite Übertragung, wenn eine app eine Telefonnummer muss; Es wird eine beabsichtigte verteilen, die die Phone-app unter Android und übergeben Sie entlang der Telefonnummer gewählt, werden als Ziel verwendet. Android leitet dann die Absicht der Phone-App.
-* **Implizite Broadcase** &ndash; diese Broadcasts für alle apps auf dem Gerät weitergeleitet werden. Ein Beispiel für eine implizite Broadcasts ist die `ACTION_POWER_CONNECTED` Absicht. Diese Absicht wird jedes Mal veröffentlicht, Android, erkennt, dass der Akku auf dem Gerät geladen wird. Android leitet diese Absicht für alle apps, die für dieses Ereignis registriert wurden.
+* **Implizite Broadcast** &ndash; diese Broadcasts für alle apps auf dem Gerät weitergeleitet werden. Ein Beispiel für eine implizite Broadcasts ist die `ACTION_POWER_CONNECTED` Absicht. Diese Absicht wird jedes Mal veröffentlicht, Android, erkennt, dass der Akku auf dem Gerät geladen wird. Android leitet diese Absicht für alle apps, die für dieses Ereignis registriert wurden.
 
 Der Broadcastpakete Empfänger ist eine Unterklasse von der `BroadcastReceiver` geben und es müssen überschreiben die [ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/) Methode. Android führt `OnReceive` auf den Hauptthread, also diese Methode sollte entworfen werden schnell ausgeführt werden. Vorsicht beim Erstellen von Threads im `OnReceive` da Android den Prozess beenden kann, wenn die Methode abgeschlossen ist. Wenn broadcast Empfänger durchzuführenden lang ausgeführte Arbeit wird empfohlen, zu planen einer _Auftrag_ mithilfe der `JobScheduler` oder _Firebase Auftrag wurde vom Verteiler_. Planen der Arbeit mit einem Auftrag wird in einer separaten Handbuch besprochen.
 

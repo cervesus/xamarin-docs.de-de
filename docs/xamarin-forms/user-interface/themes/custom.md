@@ -1,32 +1,32 @@
 ---
 title: Erstellen eines benutzerdefinierten Xamarin.Forms-Designs
-description: In diesem Artikel erläutert, wie ein benutzerdefiniertes Xamarin.Forms-Design zum Verweisen auf die in einer app zu erstellen.
+description: In diesem Artikel wird erläutert, wie zum Erstellen eines benutzerdefinierten Xamarin.Forms-Designs, zum Verweisen auf die in einer app wird.
 ms.prod: xamarin
 ms.assetid: 4FE08ADC-093F-47FA-B33C-20CF08B5D7E0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 018193cf0b198fd87f0f09cbfeba52e9d2a0f68b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 34e923e4df76680ad8d0be5f2844ef56b32af4db
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245574"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38985990"
 ---
 # <a name="creating-a-custom-xamarinforms-theme"></a>Erstellen eines benutzerdefinierten Xamarin.Forms-Designs
 
-![](~/media/shared/preview.png "Diese API ist derzeit als Vorschau verfügbar")
+![](~/media/shared/preview.png "Diese API ist derzeit als Vorschauversion")
 
-Zusätzlich zum Hinzufügen von ein Design aus einem NuGet-Paket (z. B. die [Licht](~/xamarin-forms/user-interface/themes/light.md) und [dunkel](~/xamarin-forms/user-interface/themes/dark.md) Designs), Ihre eigenen Ressourcen Wörterbuch Designs erstellen, auf die verwiesen werden, können in Ihrer app.
+Zusätzlich zum Hinzufügen eines Designs aus Nuget-Paketen (z. B. die [Licht](~/xamarin-forms/user-interface/themes/light.md) und [dunkel](~/xamarin-forms/user-interface/themes/dark.md) Designs), Ihre eigenen Ressourcennamen Wörterbuch Designs erstellen, auf die verwiesen werden, können in Ihrer app.
 
 ## <a name="example"></a>Beispiel
 
-Die drei `BoxView`s gezeigt auf die [Designs Seite](~/xamarin-forms/user-interface/themes/index.md) sind entsprechend drei Klassen, die in zwei herunterladbaren Designs definiert formatiert.
+Die drei `BoxView`s angezeigt, auf die [Designs Seite](~/xamarin-forms/user-interface/themes/index.md) gemäß drei Klassen, die in den beiden Themen definiert formatiert sind.
 
-Um zu verstehen, wie diese funktionieren, erstellt das folgende Markup eine entsprechende-Formatvorlage, die Sie direkt zum Hinzufügen von konnte Ihre **App.xaml**.
+Um zu verstehen, wie diese funktionieren, das folgende Markup erstellt eine entsprechende Formatvorlage, die Sie direkt mit hinzufügen konnte Ihre **"App.xaml"**.
 
-Beachten Sie die `Class` -Attribut für `Style` (im Gegensatz zu der [ `x:Key` ](~/xamarin-forms/user-interface/styles/inheritance.md) Attribut, die in früheren Versionen von Xamarin.Forms verfügbar).
+Beachten Sie die `Class` Attribut für `Style` (im Gegensatz zu den [ `x:Key` ](~/xamarin-forms/user-interface/styles/inheritance.md) Attribut, die in früheren Versionen von Xamarin.Forms verfügbar).
 
 ```xml
 <ResourceDictionary>
@@ -64,16 +64,16 @@ Beachten Sie die `Class` -Attribut für `Style` (im Gegensatz zu der [ `x:Key` ]
 ```
 
 Sie werden feststellen, dass die `Rounded` -Klasse verweist auf einen benutzerdefinierten Effekt `CornerRadius`.
-Der Code für diesen Effekt erhält-mit eine benutzerdefinierten ordnungsgemäß darauf verweisen `xmlns` muss hinzugefügt werden, um die **App.xaml**des "Root"-Element:
+Der Code für diesen Effekt, sind nachfolgend - mit eine benutzerdefinierten richtig darauf verweisen `xmlns` muss hinzugefügt werden, um die **"App.xaml"** des "Root"-Element:
 
 ```csharp
 xmlns:local="clr-namespace:ThemesDemo;assembly=ThemesDemo"
 ```
 
-### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>C#-Code in der .NET Standard-Steuerelementbibliothek-Projekt oder ein freigegebenes Projekt
+### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>C#-Code in der .NET Standard Library-Projekt oder ein freigegebenes Projekt
 
 Der Code zum Erstellen einer Round-Ecke `BoxView` verwendet [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md).
-Die Eckradius mithilfe der angewendet wird eine `BindableProperty` und wird implementiert, durch Anwenden einer [wirksam](~/xamarin-forms/app-fundamentals/effects/index.md). Der Effekt erfordert plattformspezifischen Code in der [iOS](#ios) und [Android](#android) Projekte (siehe unten).
+Der Eckradius mithilfe der angewendet wird eine `BindableProperty` und wird von der Anwendung implementiert ein [Auswirkung](~/xamarin-forms/app-fundamentals/effects/index.md). Der Effekt ist erforderlich, plattformspezifischen Code in die [iOS](#ios) und [Android](#android) Projekte (siehe unten).
 
 ```csharp
 namespace ThemesDemo
@@ -85,8 +85,7 @@ namespace ThemesDemo
     private static void OnChanged<TEffect, TProp>(BindableObject bindable, object oldValue, object newValue)
               where TEffect : Effect, new()
     {
-        var view = bindable as View;
-        if (view == null)
+        if (!(bindable is View view))
         {
             return;
         }
@@ -128,7 +127,7 @@ namespace ThemesDemo
 
 <a name="ios" />
 
-### <a name="c-code-in-the-ios-project"></a>C#-Code in der iOS-Projekt
+### <a name="c-code-in-the-ios-project"></a>C#-Code im iOS-Projekt
 
 ```csharp
 using System;
@@ -184,7 +183,7 @@ namespace ThemesDemo.iOS
 
 <a name="android" />
 
-### <a name="c-code-in-the-android-project"></a>C#-Code in der Android-Projekt
+### <a name="c-code-in-the-android-project"></a>C#-Code im Android-Projekt
 
 ```csharp
 using System;
@@ -257,8 +256,8 @@ namespace ThemesDemo.Droid
 
 ## <a name="summary"></a>Zusammenfassung
 
-Durch definieren Stile für jedes Steuerelement, das benutzerdefinierten Darstellung erfordert, kann ein benutzerdefiniertes Design erstellt werden. Mehrere Formate für ein Steuerelement sollte von verschiedenen unterschieden werden `Class` im Ressourcenverzeichnis Attribute und dann angewendet, indem die `StyleClass` Attribut für das Steuerelement.
+Ein benutzerdefiniertes Design kann erstellt werden, durch die Definition der Formate für jedes Steuerelement, das benutzerdefinierten Darstellung ist erforderlich. Mehrere Formate für ein Steuerelement unterschieden werden soll, von verschiedenen `Class` Attribute im Ressourcenverzeichnis, und klicken Sie dann angewendet, indem die `StyleClass` Attribut für das Steuerelement.
 
-Ein Format kann auch nutzen [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md) weiter anpassen, die Darstellung eines Steuerelements.
+Ein Format kann auch nutzen [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md) Anpassen der Darstellung eines Steuerelements.
 
-[Impliziten Stilen](~/xamarin-forms/user-interface/styles/implicit.md) (ohne eine `x:Key` oder `Style` Attribut) weiterhin auf alle Steuerelemente angewendet werden, die entsprechen den `TargetType`.
+[Implizite Stile](~/xamarin-forms/user-interface/styles/implicit.md) (ohne eine `x:Key` oder `Style` Attribut) weiterhin auf alle Steuerelemente angewendet werden, die entsprechen den `TargetType`.

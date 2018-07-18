@@ -1,45 +1,45 @@
 ---
-title: Nutzen die Verwendung von XAML-Markuperweiterungen
-description: In diesem Artikel wird erläutert, wie Xamarin.Forms XAML-Markuperweiterungen verwenden, um die Leistungsfähigkeit und Flexibilität von XAML zu verbessern, können Sie die Attribute des Elements aus einer Vielzahl von Datenquellen festgelegt werden.
+title: Verwenden von XAML-Markuperweiterungen
+description: In diesem Artikel wird erläutert, wie Xamarin.Forms-XAML-Markuperweiterungen verwenden, um die Leistungsfähigkeit und Flexibilität von XAML zu verbessern, indem Sie Attribute des Elements aus einer Vielzahl von Datenquellen festgelegt werden können.
 ms.prod: xamarin
 ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 278677d45f997ac446c2a20967dc3501179bf8da
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 6f0c15976871129362fb3d6d3287215d1fba2cb9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245936"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995981"
 ---
-# <a name="consuming-xaml-markup-extensions"></a>Nutzen die Verwendung von XAML-Markuperweiterungen
+# <a name="consuming-xaml-markup-extensions"></a>Verwenden von XAML-Markuperweiterungen
 
-Verwendung von XAML-Markuperweiterungen verbessern die Leistungsfähigkeit und Flexibilität von XAML-Elementattribute aus einer Vielzahl von Datenquellen festgelegt werden können. Einige XAML-Markuperweiterungen sind Teil der Spezifikation von XAML 2009. Diese werden im XAML-Dateien mit der üblichen `x` Namespacepräfix und sind im Allgemeinen bezeichnet mit diesem Präfix. Diese werden in den folgenden Abschnitten beschrieben:
+XAML-Markuperweiterungen können die Leistungsfähigkeit und Flexibilität von XAML zu verbessern, indem Sie Attribute des Elements aus einer Vielzahl von Datenquellen festgelegt werden können. Einige XAML-Markuperweiterungen sind Teil der Spezifikation für die XAML 2009. Diese werden in XAML-Dateien mit der üblichen `x` Namespace-Präfix, und Sie werden häufig bezeichnet mit diesem Präfix. Diese werden in den folgenden Abschnitten beschrieben:
 
-- [`x:Static`](#static) &ndash; verweisen Sie statische Eigenschaften, Felder oder Enumerationsmember.
-- [`x:Reference`](#reference) &ndash; Verweis mit dem Namen Elemente auf der Seite.
+- [`x:Static`](#static) &ndash; Verweisen auf statische Eigenschaften, Felder oder Enumerationsmember.
+- [`x:Reference`](#reference) &ndash; der Verweis mit dem Namen Elemente auf der Seite.
 - [`x:Type`](#type) &ndash; Legen Sie ein Attribut auf eine `System.Type` Objekt.
 - [`x:Array`](#array) &ndash; ein Array von Objekten eines bestimmten Typs zu erstellen.
 - [`x:Null`](#null) &ndash; Legen Sie ein Attribut auf eine `null` Wert.
 
-Drei andere XAML-Markuperweiterungen in der Vergangenheit durch andere XAML-Implementierungen unterstützt und werden ebenfalls unterstützt, indem Sie Xamarin.Forms. Diese werden in anderen Artikeln ausführlicher beschrieben:
+Drei andere XAML-Markuperweiterungen verfügen in der Vergangenheit von anderen XAML-Implementierungen unterstützt wurde, und werden auch von Xamarin.Forms unterstützt. Diese werden in anderen Artikeln ausführlicher beschrieben:
 
-- `StaticResource` &ndash; Verweisen auf Objekte aus einem Ressourcenwörterbuch, wie im Artikel beschrieben [ **Ressourcenverzeichnis**](~/xamarin-forms/xaml/resource-dictionaries.md).
-- `DynamicResource` &ndash; Reagieren auf Änderungen in Objekten in einem Ressourcenwörterbuch, wie im Artikel beschrieben [ **dynamische Formate**](~/xamarin-forms/user-interface/styles/dynamic.md).
-- `Binding` &ndash; Richten Sie eine Verknüpfung zwischen Eigenschaften von zwei Objekten, wie im Artikel beschrieben [ **Datenbindung**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
-- `TemplateBinding` &ndash; Binden von Daten aus einer Steuerelementvorlage ausführt, wie im Artikel erläutert [**binden aus einer Steuerelementvorlage**] / Führungslinien/Xamarin-Forms/Anwendung-Grundlagen/Vorlagen /-Vorlagen/Vorlage-steuerelementbindung /)
+- `StaticResource` &ndash; Verweisen auf Objekte aus einem Ressourcenverzeichnis, wie in diesem Artikel beschrieben [ **Ressourcenverzeichnisse**](~/xamarin-forms/xaml/resource-dictionaries.md).
+- `DynamicResource` &ndash; Reagieren auf Änderungen an Objekten in einem Ressourcenverzeichnis in diesem Artikel beschriebenen [ **dynamische Stile**](~/xamarin-forms/user-interface/styles/dynamic.md).
+- `Binding` &ndash; Richten Sie eine Verknüpfung zwischen den Eigenschaften von zwei Objekten aus, wie in diesem Artikel beschrieben [ **Datenbindung**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+- `TemplateBinding` &ndash; führt eine Datenbindung aus einer Vorlage für ein Steuerelement, wie im folgenden Artikel beschrieben [**Bindung aus einer Steuerelementvorlage**] / Führungslinien/Xamarin-Forms/Anwendung-Grundlagen/Vorlagen/Steuerelement-Vorlagen/vorlagenbindung /)
 
-Die [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) Layout verwendet die benutzerdefinierte Markuperweiterung [ `ConstraintExpression` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ConstraintExpression/). Diese Markuperweiterung ist im Artikel beschriebenen [ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
+Die [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) Layout verwendet die benutzerdefinierte Markuperweiterung [ `ConstraintExpression` ](xref:Xamarin.Forms.ConstraintExpression). Diese Markuperweiterung ist in diesem Artikel beschriebenen [ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
 
 <a name="static" />
 
 ## <a name="xstatic-markup-extension"></a>x:Statische Markuperweiterung
 
-Die `x:Static` Markuperweiterung wird unterstützt, indem Sie die [ `StaticExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticExtension/) Klasse. Die Klasse verfügt über eine einzelne Eigenschaft mit dem Namen [ `Member` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.StaticExtension.Member/) des Typs `string` , dass Sie auf den Namen einer öffentlichen Konstante, statische Eigenschaft, statisches Feld oder Enumerationsmember festgelegt.
+Die `x:Static` Markuperweiterung wird unterstützt, indem die [ `StaticExtension` ](xref:Xamarin.Forms.Xaml.StaticExtension) Klasse. Die Klasse verfügt über eine einzelne Eigenschaft namens [ `Member` ](xref:Xamarin.Forms.Xaml.StaticExtension.Member) des Typs `string` , dass Sie den Namen der eine öffentliche Konstante, statische Eigenschaft, Feld oder Enumerationsmember festlegen.
 
-Eine gebräuchliche Möglichkeit zum Verwenden `x:Static` besteht darin, zuerst eine Klasse mit Konstanten oder statische Variablen, wie z. B. definieren diesem kleinen `AppConstants` -Klasse in der [ **MarkupExtensions** ](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/) Programm:
+Eine gebräuchliche Möglichkeit zum Verwenden `x:Static` besteht darin, zuerst eine Klasse mit einigen Konstanten oder statischen Variablen wie z. B. definieren diesem kleinen `AppConstants` -Klasse in der [ **MarkupExtensions** ](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/) Programm:
 
 ```csharp
 static class AppConstants
@@ -48,7 +48,7 @@ static class AppConstants
 }
 ```
 
-Die **X: Static-Demo** Seite veranschaulicht mehrere Möglichkeiten zum Verwenden der `x:Static` Markuperweiterung. Die ausführlichste Ansatz instanziiert die `StaticExtension` zwischen Klasse `Label.FontSize` Property-Element Tags:
+Die **X: Static Demo** Seite zeigt verschiedene Möglichkeiten zum Verwenden der `x:Static` Markuperweiterung. Die ausführlichste Ansatz instanziiert die `StaticExtension` Klasse zwischen `Label.FontSize` Eigenschaftenelement Tags:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -70,7 +70,7 @@ Die **X: Static-Demo** Seite veranschaulicht mehrere Möglichkeiten zum Verwende
 </ContentPage>
 ```
 
-XAML-Parser kann auch die `StaticExtension` Klasse als abgekürzt werden `x:Static`:
+Der XAML-Parser ermöglicht auch die `StaticExtension` Klasse als abgekürzt werden `x:Static`:
 
 ```xaml
 <Label Text="Label No. 2">
@@ -80,38 +80,38 @@ XAML-Parser kann auch die `StaticExtension` Klasse als abgekürzt werden `x:Stat
 </Label>
 ```
 
-Dies noch weiter vereinfacht werden, aber die Änderung führt einige neue Syntax: Einfügen besteht die `StaticExtension` Klasse und das Element in der geschweiften Klammern festlegen. Der resultierende Ausdruck festgelegt ist, direkt an die `FontSize` Attribut:
+Dies sogar noch weiter vereinfacht werden, aber die Änderung werden einige neue Syntax eingeführt: Es besteht aus zu platzieren, die `StaticExtension` -Klasse und der Member, die in geschweifte Klammern festlegen. Der resultierende Ausdruck festgelegt ist, direkt an die `FontSize` Attribut:
 
 ```xaml
 <Label Text="Label No. 3"
        FontSize="{x:StaticExtension Member=local:AppConstants.NormalFontSize}" />
 ```
 
-Beachten Sie, dass es *keine* Anführungszeichen in der geschweiften Klammern. Die `Member` Eigenschaft `StaticExtension` ist nicht mehr ein XML-Attribut. Stattdessen ist er Teil des Ausdrucks für die Markuperweiterung.
+Beachten Sie, dass es *keine* Anführungszeichen innerhalb der geschweiften Klammern. Die `Member` Eigenschaft `StaticExtension` ist nicht mehr ein XML-Attribut. Stattdessen ist er Teil des Ausdrucks für die Markuperweiterung.
 
-So fest, wie Sie abkürzen können `x:StaticExtension` zu `x:Static` , wenn Sie es als Element eines Objektelements verwenden, Sie können auch abkürzen es im Ausdruck in geschweiften Klammern:
+Wie Sie abkürzen können `x:StaticExtension` zu `x:Static` , wenn Sie es als Objektelement verwenden, Sie können auch abkürzen es im Ausdruck in geschweiften Klammern:
 
 ```xaml
 <Label Text="Label No. 4"
        FontSize="{x:Static Member=local:AppConstants.NormalFontSize}" />
 ```
 
-Die `StaticExtension` -Klasse verfügt über eine `ContentProperty` Attribut verweisen auf die Eigenschaft `Member`, die diese Eigenschaft als Inhalt Standardeigenschaft der Klasse kennzeichnet. Für die Verwendung von XAML-Markuperweiterungen, ausgedrückt in geschweifte Klammern setzen, vermeiden Sie die `Member=` Teil des Ausdrucks:
+Die `StaticExtension` -Klasse verfügt über eine `ContentProperty` Attribut mit Verweis auf die Eigenschaft `Member`, die diese Eigenschaft als Standard Content-Eigenschaft der Klasse kennzeichnet. Für XAML-Markuperweiterungen mit geschweiften Klammern ausgedrückt, Sie können vermeiden, die `Member=` Teil des Ausdrucks:
 
 ```xaml
 <Label Text="Label No. 5"
        FontSize="{x:Static local:AppConstants.NormalFontSize}" />
 ```
 
-Dies ist die am häufigsten verwendete Form der `x:Static` Markuperweiterung.
+Dies ist die am häufigsten verwendeten Form der `x:Static` Markuperweiterung.
 
-Die **statische Demo** Seite enthält zwei weitere Beispiele. Das Stamm-Tag, der XAML-Datei enthält eine XML-Namespacedeklaration für das .NET `System` Namespace:
+Die **statische Demo** Seite enthält zwei weitere Beispiele. Stammelement der XAML-Datei enthält eine XML-Namespacedeklaration für .NET `System` Namespace:
 
 ```xaml
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
 ```
 
-Dies ermöglicht die `Label` Schriftgrad auf das statische Feld festgelegt werden `Math.PI`. Das ergibt eine relativ kleine Text, sodass der `Scale` -Eigenschaftensatz auf `Math.E`:
+Auf diese Weise können die `Label` Schriftgrad auf das statische Feld festzulegende `Math.PI`. Dies führt zu eher klein Text, sodass die `Scale` -Eigenschaftensatz auf `Math.E`:
 
 ```xaml
 <Label Text="&#x03C0; &#x00D7; E sized text"
@@ -120,7 +120,7 @@ Dies ermöglicht die `Label` Schriftgrad auf das statische Feld festgelegt werde
        HorizontalOptions="Center" />
 ```
 
-Im abschließenden Beispiel zeigt die `Device.RuntimePlatform` Wert. Die `Environment.NewLine` statische Eigenschaft wird verwendet, um ein neue-Zeile-Zeichen zwischen den beiden einfügen `Span` Objekte:
+Im letzte Beispiel zeigt die `Device.RuntimePlatform` Wert. Die `Environment.NewLine` statische Eigenschaft wird verwendet, um ein neue-Zeile-Zeichen zwischen den beiden einfügen `Span` Objekte:
 
 ```xaml
 <Label HorizontalTextAlignment="Center"
@@ -135,7 +135,7 @@ Im abschließenden Beispiel zeigt die `Device.RuntimePlatform` Wert. Die `Enviro
 </Label>
 ```
 
-So sieht das Beispiel auf allen drei Plattformen ausgeführt:
+So sieht das Beispiel ausgeführt wird, auf allen drei Plattformen aus:
 
 [![X: Static-Demo](consuming-images/staticdemo-small.png "X: Static-Demo")](consuming-images/staticdemo-large.png#lightbox "X: Static-Demo")
 
@@ -143,11 +143,11 @@ So sieht das Beispiel auf allen drei Plattformen ausgeführt:
 
 ## <a name="xreference-markup-extension"></a>x:Reference-Markuperweiterung
 
-Die `x:Reference` Markuperweiterung wird unterstützt, indem Sie die [ `ReferenceExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ReferenceExtension/) Klasse. Die Klasse verfügt über eine einzelne Eigenschaft mit dem Namen [ `Name` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.ReferenceExtension.Name/) des Typs `string` , dass Sie auf den Namen eines Elements auf der Seite festgelegt, die einen Namen mit erhalten hat `x:Name`. Dies `Name` Eigenschaft ist für die Inhaltseigenschaft des `ReferenceExtension`, sodass `Name=` ist nicht erforderlich, wenn `x:Reference` wird in der geschweiften Klammern angezeigt.
+Die `x:Reference` Markuperweiterung wird unterstützt, indem die [ `ReferenceExtension` ](xref:Xamarin.Forms.Xaml.ReferenceExtension) Klasse. Die Klasse verfügt über eine einzelne Eigenschaft namens [ `Name` ](xref:Xamarin.Forms.Xaml.ReferenceExtension.Name) des Typs `string` , auf den Namen eines Elements auf der Seite festzulegen, der einen Namen erhalten hat `x:Name`. Dies `Name` -Eigenschaft ist die Content-Eigenschaft des `ReferenceExtension`, sodass `Name=` ist nicht erforderlich, wenn `x:Reference` in geschweiften Klammern angezeigt wird.
 
-Die `x:Reference` Markuperweiterung dient ausschließlich mit datenbindungen, die in den Artikel ausführlicher beschrieben werden [ **Datenbindung**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+Die `x:Reference` Markuperweiterung dient ausschließlich mit datenbindungen, die in diesem Artikel ausführlicher beschrieben werden [ **Datenbindung**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
-Die **X: Reference-Demo** Seite zeigt zwei Verwendungen von `x:Reference` mit datenbindungen, die erste, wo sie verwendet wird, legen Sie, die `Source` Eigenschaft der `Binding` Objekt und das zweite, wo sie verwendet wird, legen Sie, die `BindingContext` die Eigenschaft für zwei Bindungen:
+Die **X: Reference-Demo** Seite zeigt zwei Verwendungen von `x:Reference` mit datenbindungen, die erste, wo sie verwendet wird, legen Sie, die `Source` Eigenschaft der `Binding` Objekt und das zweite, in denen dient zum Festlegen, der `BindingContext` die Eigenschaft für zwei Bindungen:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -179,7 +179,7 @@ Die **X: Reference-Demo** Seite zeigt zwei Verwendungen von `x:Reference` mit da
 </ContentPage>
 ```
 
-Sowohl `x:Reference` Ausdrücke verwenden, die Kurzform der `ReferenceExtension` Klassennamen und Beseitigen der `Name=` Teil des Ausdrucks. Im ersten Beispiel das `x:Reference` Markuperweiterung eingebettet ist, der `Binding` Markuperweiterung. Beachten Sie, dass die `Source` und `StringFormat` Einstellungen werden durch Kommas getrennt. Hier wird das Programm auf allen drei Plattformen ausgeführt:
+Beide `x:Reference` Ausdrücke verwenden, die gekürzte Version des der `ReferenceExtension` Klassennamen, und Entfernen der `Name=` Teil des Ausdrucks. Im ersten Beispiel das `x:Reference` Markuperweiterung eingebettet ist, der `Binding` Markuperweiterung. Beachten Sie, dass die `Source` und `StringFormat` Einstellungen werden durch Kommas getrennt. Hier wird das Programm auf allen drei Plattformen ausgeführt wird:
 
 [![X: Reference-Demo](consuming-images/referencedemo-small.png "X: Reference-Demo")](consuming-images/referencedemo-large.png#lightbox "X: Reference-Demo")
 
@@ -187,15 +187,15 @@ Sowohl `x:Reference` Ausdrücke verwenden, die Kurzform der `ReferenceExtension`
 
 ## <a name="xtype-markup-extension"></a>x:Type-Markuperweiterung
 
-Die `x:Type` Markuperweiterung ist die Verwendung von XAML-Entsprechung der C#- [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/) Schlüsselwort. Entsprechender Unterstützung durch die [ `TypeExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.TypeExtension/) Klasse, die eine Eigenschaft mit dem Namen definiert [ `TypeName` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.TypeExtension.TypeName/) des Typs `string` , die auf eine Klasse oder Struktur Name festgelegt ist. Die `x:Type` Markup Extension gibt die [ `System.Type` ](https://developer.xamarin.com/api/type/System.Type/) Objekt dieser Klasse oder Struktur. `TypeName` ist die Inhaltseigenschaft des `TypeExtension`, sodass `TypeName=` ist nicht erforderlich, wenn `x:Type` mit geschweiften Klammern angezeigt.
+Die `x:Type` Markuperweiterung ist die XAML-Entsprechung der C#- [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/) Schlüsselwort. Wird von unterstützt die [ `TypeExtension` ](xref:Xamarin.Forms.Xaml.TypeExtension) Klasse, die eine Eigenschaft mit dem Namen definiert [ `TypeName` ](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) des Typs `string` , die auf eine Klasse oder Struktur Name festgelegt wird. Die `x:Type` Markup Extension gibt die [ `System.Type` ](xref:System.Type) Objekt der Klasse oder Struktur. `TypeName` die Inhaltseigenschaft ist `TypeExtension`, sodass `TypeName=` ist nicht erforderlich, wenn `x:Type` mit geschweiften Klammern angezeigt wird.
 
-In Xamarin.Forms, es gibt mehrere Eigenschaften, die Argumente des Typs haben `Type`. Beispiele hierfür sind die [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) Eigenschaft `Style`, und die [X: TypeArguments-](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments) Attribut zur Angabe von Argumenten in generischen Klassen verwendet. XAML-Parser führt jedoch die `typeof` Vorgang automatisch, und die `x:Type` Markuperweiterung wird in diesen Fällen nicht verwendet.
+In Xamarin.Forms, es gibt mehrere Eigenschaften, die Argumente des Typs haben `Type`. Beispiele hierfür sind die [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) Eigenschaft `Style`, und die [X: TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments) Attribut zur Angabe von Argumenten in generischen Klassen verwendet. Der XAML-Parser führt jedoch die `typeof` Vorgang automatisch, und die `x:Type` Markuperweiterung wird in diesen Fällen nicht verwendet.
 
-Zentral, in denen `x:Type` *ist* erforderlich ist, mit der `x:Array` Markuperweiterung, die in beschrieben ist die [nächsten Abschnitt](#array).
+Einem zentralen Ort, in denen `x:Type` *ist* erforderlich ist, mit der `x:Array` Markuperweiterung, die in beschrieben wird die [nächsten Abschnitt](#array).
 
-Die `x:Type` Markuperweiterung ist auch nützlich, wenn ein Menü zu erstellen, wobei ein Objekt eines bestimmten Typs jedes Elements entspricht. Die Zuordnung kann eine `Type` Objekts, für jedes Menüelement und instanziieren Sie das Objekt an, wenn das Menüelement aktiviert ist.
+Die `x:Type` Markuperweiterung ist auch nützlich, wenn ein Menü zu erstellen, wobei ein Objekt eines bestimmten Typs jedes Elements entspricht. Sie können Zuordnen einer `Type` -Objekt mit jedes Menüelement, und klicken Sie dann das Objekt zu instanziieren, wenn das Menüelement aktiviert ist.
 
-Dies ist wie das Navigationsmenü im `MainPage` in der **Markuperweiterungen** Programm funktioniert. Die **"MainPage.xaml"** -Datei enthält eine `TableView` mit jedem `TextCell` zu einer bestimmten Seite in der Anwendung entspricht:
+Dies ist wie das Navigationsmenü im `MainPage` in die **Markuperweiterungen** Programm funktioniert. Die **"MainPage.xaml"** -Datei enthält eine `TableView` mit jedem `TextCell` für eine bestimmte Seite in das Programm:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -234,7 +234,7 @@ Dies ist wie das Navigationsmenü im `MainPage` in der **Markuperweiterungen** P
 </ContentPage>
 ```
 
-Hier ist die Hauptseite der öffnenden in **Markuperweiterungen**:
+Hier ist die öffnendes-Hauptseite in **Markuperweiterungen**:
 
 [![Main Seite](consuming-images/mainpage-small.png "Main Seite")](consuming-images/mainpage-large.png#lightbox "Main Seite")
 
@@ -260,9 +260,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Die `NavigateCommand` Eigenschaft ist ein `Command` Objekt, das einen Execute-Befehl mit einem Argument vom Typ implementiert `Type` &mdash; den Wert des `CommandParameter`. Die Methode verwendet `Activator.CreateInstance` auf die Seite zu instanziieren und wechselt anschließend darauf. Der Konstruktor endet, durch Festlegen der `BindingContext` der Seite auf sich selbst, wodurch die `Binding` auf `Command` arbeiten. Finden Sie unter der [ **Datenbindung** ](~/xamarin-forms/app-fundamentals/data-binding/index.md) Artikel und insbesondere die [ **Commanding** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) Artikel finden Sie weitere Details über diese Art von Code.
+Die `NavigateCommand` -Eigenschaft ist eine `Command` Objekt, das einen Execute-Befehl mit einem Argument des Typs implementiert `Type` &mdash; den Wert der `CommandParameter`. Die Methode verwendet `Activator.CreateInstance` auf die Seite zu instanziieren und anschließend darauf. Der Konstruktor wird abgeschlossen, indem Sie die Einstellung der `BindingContext` Seitenrand, um sich selbst, wodurch die `Binding` auf `Command` funktioniert. Finden Sie unter den [ **Datenbindung** ](~/xamarin-forms/app-fundamentals/data-binding/index.md) Artikel und insbesondere die [ **Commanding** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) finden Sie weitere Details über diese Art von Code.
 
-Die **X: Type-Demo** Seite verwendet eine ähnliche Technik, Xamarin.Forms Elemente zu instanziieren und sie zum Hinzufügen einer `StackLayout`. Die XAML-Datei zunächst besteht aus drei `Button` Elemente mit ihren `Command` Eigenschaften festlegen, um eine `Binding` und `CommandParameter` Eigenschaften, die auf drei Xamarin.Forms Ansichtsarten festgelegt:
+Die **X: Type-Demo** Seite verwendet ein ähnliches Verfahren aus, um die Xamarin.Forms-Elemente zu instanziieren und zum Hinzufügen einer `StackLayout`. Die XAML-Datei zunächst besteht aus drei `Button` Elemente mit ihren `Command` Eigenschaften festgelegt, um eine `Binding` und `CommandParameter` Eigenschaften, die Typen von drei Xamarin.Forms-Ansichten:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -317,7 +317,7 @@ public partial class TypeDemoPage : ContentPage
 }
 ```
 
-Die Methode, ausgeführt wird, wenn eine `Button` gedrückt erstellt eine neue Instanz des Arguments wird, wird seine `VerticalOptions` -Eigenschaft, und fügt es der `StackLayout`. Die drei `Button` Elemente anschließend freigegeben wird, die Seite dynamisch erstellte Sichten:
+Die Methode, ausgeführt, wenn eine `Button` gedrückt wird erstellt eine neue Instanz des Arguments, legt die `VerticalOptions` -Eigenschaft und fügt es der `StackLayout`. Die drei `Button` Elemente teilen sich die Seite klicken Sie dann mit dynamisch erstellten Ansichten:
 
 [![X: Type-Demo](consuming-images/typedemo-small.png "X: Type-Demo")](consuming-images/typedemo-large.png#lightbox "X: Type-Demo")
 
@@ -325,12 +325,12 @@ Die Methode, ausgeführt wird, wenn eine `Button` gedrückt erstellt eine neue I
 
 ## <a name="xarray-markup-extension"></a>x:Array-Markuperweiterung
 
-Die `x:Array` Markuperweiterung können Sie ein Array im Markup zu definieren. Entsprechender Unterstützung durch die [ `ArrayExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ArrayExtension/) Klasse, die zwei Eigenschaften definiert:
+Die `x:Array` Markuperweiterung können Sie ein Array im Markup zu definieren. Wird von unterstützt die [ `ArrayExtension` ](xref:Xamarin.Forms.Xaml.ArrayExtension) Klasse, die zwei Eigenschaften definiert:
 
-- `Type` Der Typ `Type`, gibt den Typ der Elemente im Array an.
-- `Items` Der Typ `IList`, dies ist eine Auflistung der Elemente selbst. Dies ist die Inhaltseigenschaft des `ArrayExtension`.
+- `Type` Der Typ `Type`, die den Typ der Elemente im Array angibt.
+- `Items` Der Typ `IList`, dies ist eine Auflistung der Elemente selbst. Dies ist die Content-Eigenschaft des `ArrayExtension`.
 
-Die `x:Array` Markuperweiterung selbst nie in der geschweiften Klammern angezeigt wird. Stattdessen `x:Array` Start- und Endtags begrenzen Sie die Liste der Elemente. Legen Sie die `Type` Eigenschaft, um eine `x:Type` Markuperweiterung.
+Die `x:Array` Markuperweiterung selbst nie in geschweiften Klammern angezeigt wird. Stattdessen `x:Array` Start- und Endtags trennen Sie die Liste der Elemente. Legen Sie die `Type` Eigenschaft, um eine `x:Type` Markuperweiterung.
 
 Die **X: Array-Demo** Seite zeigt, wie `x:Array` Elemente hinzufügen einer `ListView` durch Festlegen der `ItemsSource` Eigenschaft in ein Array:
 
@@ -374,39 +374,39 @@ Die **X: Array-Demo** Seite zeigt, wie `x:Array` Elemente hinzufügen einer `Lis
 </ContentPage>        
 ```
 
-Die `ViewCell` erstellt eine einfache `BoxView` für jeden Eintrag Farbe:
+Die `ViewCell` erstellt ein einfaches `BoxView` für jeden Eintrag Farbe:
 
 [![X: Array-Demo](consuming-images/arraydemo-small.png "X: Array-Demo")](consuming-images/arraydemo-large.png#lightbox "X: Array-Demo")
 
-Es gibt mehrere Möglichkeiten zum Angeben der einzelnen `Color` Elemente in diesem Array. Sie können eine `x:Static` Markuperweiterung:
+Es gibt mehrere Möglichkeiten, geben Sie die einzelnen `Color` Elemente in diesem Array. Sie können eine `x:Static` Markuperweiterung:
 
 ```xaml
 <x:Static Member="Color.Blue" />
 ```
 
-Alternativ können Sie `StaticResource` um eine Farbe aus einem Ressourcenwörterbuch abzurufen:
+Sie können auch `StaticResource` eine Farbe aus einem Ressourcenverzeichnis abrufen:
 
 ```xaml
 <StaticResource Key="myColor" />
 ```
 
-Gegen Ende dieses Artikels sehen Sie eine benutzerdefinierte XAML-Markuperweiterung, die auch einen neuen Farbwert erstellt:
+Am Ende dieses Artikels sehen Sie eine benutzerdefinierte Markuperweiterung in XAML, die auch einen neuen Wert für die Farbe erstellt:
 
 ```xaml
 <local:HslColor H="0.5" S="1.0" L="0.5" />
 ```
 
-Wenn Arrays von gemeinsamen Typen wie Zeichenfolgen oder Zahlen zu definieren, verwenden Sie die Tags aufgeführt, die der [ **Konstruktorargumente übergeben** ](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) Artikel, um die Werte begrenzen.
+Wenn Arrays von gemeinsamen Typen wie Zeichenfolgen oder Zahlen zu definieren, verwenden Sie die Tags im der [ **Konstruktorargument übergeben** ](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) Artikel, um die Werte zu trennen.
 
 <a name="null" />
 
 ## <a name="xnull-markup-extension"></a>x:Null-Markuperweiterung
 
-Die `x:Null` Markuperweiterung wird unterstützt, indem Sie die [ `NullExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.NullExtension/) Klasse. Er verfügt über keine Eigenschaften und wird einfach die Verwendung von XAML-Entsprechung der C#- [ `null` ](/dotnet/csharp/language-reference/keywords/null/) Schlüsselwort.
+Die `x:Null` Markuperweiterung wird unterstützt, indem die [ `NullExtension` ](xref:Xamarin.Forms.Xaml.NullExtension) Klasse. Er verfügt über keine Eigenschaften und ist einfach die XAML-Entsprechung der C#- [ `null` ](/dotnet/csharp/language-reference/keywords/null/) Schlüsselwort.
 
-Die `x:Null` Markuperweiterung selten erforderlich ist, und nur selten verwendet, aber Sie müssen dafür zu finden, müssen Sie froh, die vorhanden sein.
+Die `x:Null` Markuperweiterung ist nur selten benötigt und selten verwendet, aber wenn Sie die Notwendigkeit von es finden können, werden Sie froh, die es vorhanden ist.
 
-Die **X: Null-Demo** Seite veranschaulicht ein Szenario bei `x:Null` kann zweckmäßig sein. Nehmen wir an, dass Sie einen impliziten definieren `Style` für `Label` , umfasst eine `Setter` festlegt, die die `FontFamily` Eigenschaft, um einen Familiennamen plattformabhängige:
+Die **X: Null-Demo** Seite veranschaulicht ein Szenario bei `x:Null` kann zweckmäßig sein. Nehmen wir an, dass Sie ein implizites definieren `Style` für `Label` , enthält eine `Setter` festlegt, die die `FontFamily` Eigenschaft, um einen Familiennamen plattformabhängige:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -445,23 +445,23 @@ Die **X: Null-Demo** Seite veranschaulicht ein Szenario bei `x:Null` kann zweckm
 </ContentPage>   
 ```
 
-Dann Sie, die für eine der ermittelt der `Label` Elemente, Sie möchten die eigenschafteneinstellungen in den impliziten `Style` mit Ausnahme von der `FontFamily`, als Standardwert verwendet werden soll. Können Sie einen anderen definieren `Style` für diesen Zweck, sondern ein einfacher Ansatz besteht darin, legen Sie die `FontFamily` Eigenschaft des entsprechenden `Label` auf `x:Null`, wie gezeigt, in der Mitte `Label`.
+Und Sie, die für eine der ermittelt der `Label` Elemente sollen alle Einstellungen der Eigenschaften in den impliziten `Style` mit Ausnahme von der `FontFamily`, die als Standardwert verwendet werden sollen. Sie definieren eine andere `Style` für diesen Zweck jedoch ein einfacherer Ansatz besteht darin, legen Sie die `FontFamily` Eigenschaft des entsprechenden `Label` zu `x:Null`, wie in der Mitte `Label`.
 
-Hier wird das Programm auf drei Plattformen ausgeführt wird:
+So sieht das Programm ausgeführt wird, auf die drei Plattformen aus:
 
 [![X: Null-Demo](consuming-images/nulldemo-small.png "X: Null-Demo")](consuming-images/nulldemo-large.png#lightbox "X: Null-Demo")
 
-Beachten Sie, dass diese vier von der `Label` Elemente haben eine Serifenschriftart jedoch im Center `Label` Schriftart sans-Serif "Standard" hat.
+Beachten Sie, dass diese vier von der `Label` Elemente haben eine Serifenschriftart jedoch das Center `Label` hat die Standard-Schriftart sans-Serif.
 
-## <a name="define-your-own-markup-extensions"></a>Ihre eigenen Markuperweiterungen definieren
+## <a name="define-your-own-markup-extensions"></a>Definieren Sie Ihre eigenen Markuperweiterungen
 
-Wenn Sie eine Notwendigkeit für eine XAML-Markuperweiterung, die nicht in Xamarin.Forms verfügbar ist gefunden haben, können Sie [erstellen Sie einen eigenen](creating.md).
+Wenn Sie müssen für eine XAML-Markuperweiterung, die nicht in Xamarin.Forms verfügbar ist gefunden haben, können Sie [erstellen Sie Ihre eigenen](creating.md).
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Markuperweiterungen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
-- [Verwendung von XAML-Markup Extensions Kapitel Xamarin.Forms Buchs](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
+- [XAML-Markup Extensions Kapitel von Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Dynamische Stile](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)

@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: 29fc698e6ed1cfe02ce329813342916d5e7a1651
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 92bcfc888c52f9f74c8484295666da8f5ef7a14c
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209335"
 ---
 # <a name="xamarin-for-java-developers"></a>Xamarin für Java-Entwickler
 
@@ -50,7 +51,7 @@ Es gibt jedoch auch zahlreiche Unterschiede zwischen Java und C#. Zum Beispiel:
 
 -   Java unterstützt keine Präprozessordirektiven wie `#define`.
 
--   Java unterstützt keine Integertypen ohne Vorzeichen, während C Integertypen ohne Vorzeichen bereitstellt, z.B. `ulong`, `uint`, `ushort` und `byte`.
+-   Java unterstützt keine Integertypen ohne Vorzeichen, während C# Integertypen ohne Vorzeichen bereitstellt, z.B. `ulong`, `uint`, `ushort` und `byte`.
 
 -   Java unterstützt keine Operatorüberladung. In C# können Sie Operatoren und Konvertierungen überladen.
 

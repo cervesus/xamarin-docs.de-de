@@ -1,32 +1,32 @@
 ---
 title: 'Xamarin.Essentials: Akku'
-description: Dieses Dokument beschreibt die Klasse Akku in Xamarin.Essentials, dem Sie die Geräteinformationen Akku und überwachen Sie Änderungen überprüfen können.
+description: Dieses Dokument beschreibt die Batterie-Klasse in Xamarin.Essentials, dem Sie die Informationen des Geräts Akku und überwachen Sie Änderungen überprüfen können.
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 35764b4c2270359a7c010e1186f882e236e17fd5
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 1ed0ef5e013967545e739733c887702325f60c3f
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782085"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855054"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: Akku
 
-![Vorabversion NuGet](~/media/shared/pre-release.png)
+![Vorabversionen von NuGet](~/media/shared/pre-release.png)
 
-Die **Akku** -Klasse können Sie des Geräts Batterieinformationen und überwachen Sie Änderungen zu überprüfen.
+Die **Akku** Klasse können Sie Akkuinformationen und überwachen Sie Änderungen des Geräts zu überprüfen.
 
 ## <a name="getting-started"></a>Erste Schritte
 
-Für den Zugriff auf die **Akku** Funktionen die folgenden spezifischen Plattform-Setup ist erforderlich.
+Für den Zugriff auf die **Akku** Funktionalität die folgende Plattform Einrichtung erforderlich ist.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
 Die `Battery` -Berechtigung ist erforderlich und muss in der Android-Projekt konfiguriert werden. Dies kann auf folgende Weise hinzugefügt werden:
 
-Öffnen der **AssemblyInfo.cs** Datei unter dem **Eigenschaften** Ordner und hinzufügen:
+Öffnen der **"AssemblyInfo.cs"** -Datei unter dem **Eigenschaften** Ordner und hinzufügen:
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Battery)]
@@ -34,25 +34,25 @@ Die `Battery` -Berechtigung ist erforderlich und muss in der Android-Projekt kon
 
 ODER Android-Manifest aktualisieren:
 
-Öffnen der **AndroidManifest.xml** Datei unter dem **Eigenschaften** Ordner und fügen Sie die folgenden innerhalb eines der **manifest** Knoten.
+Öffnen der **"androidmanifest.xml"** -Datei unter dem **Eigenschaften** Ordner und fügen Sie Folgendes in der die **manifest** Knoten.
 
 ```xml
 <uses-permission android:name="android.permission.BATTERY" />
 ```
 
-Oder klicken Sie mit der rechten Maustaste auf das Android-Projekt, und öffnen Sie die Eigenschaften des Projekts. Unter **Android-Manifest** Suchen der **die erforderlichen Berechtigungen verfügen:** Bereichs- und überprüfen Sie die **Akku** Berechtigung. Dadurch wird automatisch aktualisiert die **AndroidManifest.xml** Datei.
+Oder klicken Sie mit der rechten Maustaste auf das Android-Projekt, und öffnen Sie die Eigenschaften des Projekts. Unter **Android-Manifest** finden Sie die **erforderliche Berechtigungen:** Bereichs- und überprüfen Sie die **Akku** Berechtigung. Dadurch wird automatisch aktualisiert. die **"androidmanifest.xml"** Datei.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 Ohne zusätzliche Einrichtung erforderlich.
 
-# <a name="uwptabuwp"></a>[UNIVERSELLE WINDOWS-PLATTFORM](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 Ohne zusätzliche Einrichtung erforderlich.
 
 -----
 
-## <a name="using-battery"></a>Mithilfe der Akku
+## <a name="using-battery"></a>Mit einem Akku betrieben
 
 Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
 
@@ -60,7 +60,7 @@ Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
 using Xamarin.Essentials;
 ```
 
-Überprüfen Sie die aktuellen Akku-Informationen:
+Überprüfen Sie die aktuellen Akkuinformationen:
 
 ```csharp
 var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or -1.0 if unable to determine.
@@ -129,13 +129,23 @@ public class BatteryTest
 }
 ```
 
-## <a name="platform-differences"></a>Platform-Unterschiede
+## <a name="platform-differences"></a>Plattformunterschiede
 
-| Plattform | Unterschied |
-| --- | --- |
-| iOS | Gerät muss verwendet werden, um APIs zu testen. |
-| iOS | Ac oder Akku wird nur für PowerSource zurückgeben. |
-| UWP | Ac oder Akku wird nur für PowerSource zurückgeben. |
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+Keine Plattformunterschiede.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+* Gerät muss verwendet werden, um APIs zu testen. 
+* Gibt nur `Ac` oder `Battery` für `PowerSource`. 
+* Nicht möglich, Vibration abzubrechen.
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+* Gibt nur `Ac` oder `Battery` für `PowerSource`. 
+
+-----
 
 ## <a name="api"></a>API
 

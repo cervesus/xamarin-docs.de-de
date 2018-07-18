@@ -1,23 +1,21 @@
 ---
 title: Plattformübergreifende Leistung
-description: Sie haben verschiedene Möglichkeiten, die Leistung von Anwendungen zu verbessern, die mit Xamarin.Android erstellt wurden. Wenn Sie diese Kniffe kombinieren, können Sie die CPU-Auslastung und die Speichermenge, die von einer Anwendung verwendet wird, erheblich reduzieren. In diesem Artikel werden die Techniken beschrieben und erläutert.
+description: In diesem Dokument werden verschiedene Techniken beschrieben, die zum Verbessern der Leistung einer mobilen App verwendet werden können. Dabei werden unter anderem Profiler, IDisposable-Ressourcen, schwache Verweise, der SGen-Garbage Collector und Techniken zur Verringerung der Größe erläutert.
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: f011a92b4789da7328827f184449fd957abdf3ba
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: c529d1d42d582cb49a906ad6fc39a191a7389f58
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997438"
 ---
 # <a name="cross-platform-performance"></a>Plattformübergreifende Leistung
 
-_Sie haben verschiedene Möglichkeiten, die Leistung von Anwendungen zu verbessern, die mit der Xamarin-Plattform erstellt wurden. Wenn Sie diese Kniffe kombinieren, können Sie die CPU-Auslastung und die Speichermenge, die von einer Anwendung verwendet wird, erheblich reduzieren. In diesem Artikel werden die Methoden beschrieben und erläutert._
-
 Eine schlechte Anwendungsleistung kann sich auf unterschiedliche Weise bemerkbar machen. Die Anwendung reagiert scheinbar nicht mehr, der Bildlauf ist möglicherweise verlangsamt, und auch die Akkulaufzeit kann abnehmen. Leistungsoptimierung umfasst jedoch mehr als das bloße Implementieren eines effizienten Codes. Es muss ebenfalls berücksichtigt werden, wie der Benutzer die Leistung der Anwendung wahrnimmt. Wenn beispielsweise Vorgänge ausgeführt werden können, ohne dass der Benutzer daran gehindert wird, gleichzeitig andere Aktivitäten auszuführen, kann dies dazu beitragen die Benutzerfreundlichkeit zu verbessern.
-
 
 <a name="profiler" />
 
@@ -89,7 +87,7 @@ public void ReadText (string filename)
 
 Die `StreamReader`-Klasse implementiert `IDisposable`, und der `finally`-Block ruft die Methode `StreamReader.Dispose` auf, um die Ressource freizugeben.
 
-Weitere Informationen finden Sie unter [System.IDisposable](https://developer.xamarin.com/api/type/System.IDisposable/).
+Weitere Informationen finden Sie unter [System.IDisposable](xref:System.IDisposable).
 
 <a name="events" />
 
@@ -381,5 +379,5 @@ In diesem Artikel wurden Möglichkeiten beschrieben und erläutert, wie Sie die 
 - [Introduction to the Xamarin Profiler (Einführung in den Xamarin Profiler)](~/tools/profiler/index.md)
 - [Xamarin.Forms-Leistung](~/xamarin-forms/deploy-test/performance.md)
 - [Async Support Overview (Übersicht über die asynchrone Unterstützung)](~/cross-platform/platform/async.md)
-- [IDisposable](https://developer.xamarin.com/api/type/System.IDisposable/)
+- [IDisposable](xref:System.IDisposable)
 - [Avoiding Common Pitfalls in Xamarin Apps (Vermeiden häufiger Fehlerquellen in Xamarin-Apps) (Video)](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)
