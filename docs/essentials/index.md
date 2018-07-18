@@ -1,4 +1,4 @@
----
+﻿---
 title: Xamarin.Essentials
 description: Dieses Dokument enthält Links zu verschiedenen Leitfäden, die Xamarin.Essentials, beschreiben, die Entwickler plattformübergreifende APIs für ihre mobilen Anwendungen bietet.
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
