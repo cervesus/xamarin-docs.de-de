@@ -1,33 +1,33 @@
 ---
-title: Tippen Sie auf Manipulationen
-description: In diesem Artikel wird erläutert, wie die Matrixtransformationen zu verwenden, um Touch ziehen, Pinch und Drehung implementieren, und dies mit Beispielcode veranschaulicht.
+title: Manipulationen durch toucheingaben
+description: In diesem Artikel wird erläutert, wie mit Matrixtransformationen Touch ziehen, berührpunkte und Drehung implementiert, und dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2018
-ms.openlocfilehash: a53fe287e74070adb22c2a7c67d4b7cc10b35d3e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 2de5b9a3a6bf0d36330212a52ba5c7278b970efc
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244285"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130906"
 ---
-# <a name="touch-manipulations"></a>Tippen Sie auf Manipulationen
+# <a name="touch-manipulations"></a>Manipulationen durch toucheingaben
 
-_Matrixtransformationen verwenden, um Touch ziehen, Pinch und Drehung implementieren_
+_Verwenden von Matrixtransformationen zum Implementieren der Touch ziehen, berührpunkte und Drehung_
 
-In Multi-Touch-Umgebungen, wie z. B. die auf mobilen Geräten verwenden die Benutzer häufig ihre Finger um Objekte auf dem Bildschirm zu bearbeiten. Allgemeine Gesten wie einem Finger ziehen und eine zwei-Finger-Prise können verschieben und Objekten skalieren, oder sogar zu drehen. Diese Aktionen werden in der Regel mithilfe von Transformation Matrizen implementiert, und diesem Artikel erfahren Sie, wie das geht.
+In Umgebungen wie z. B. die auf mobilen Geräten Multitouch verwenden Benutzer häufig die Finger zum Bearbeiten von Objekten auf dem Bildschirm. Allgemeine Gesten wie ein Ziehvorgang nur einem Finger und eine zwei-Finger-Prise können verschieben und skaliert Objekte oder sogar drehen können. Für diese Gesten werden in der Regel mithilfe von Transform-Matrizen implementiert, und in diesem Artikel erfahren Sie, wie das geht.
 
-![](touch-images/touchmanipulationsexample.png "Eine Bitmap, die vorhanden ist, die Übersetzung, Skalierung und Drehung")
+![](touch-images/touchmanipulationsexample.png "Eine Bitmap, bei denen sich Übersetzung, Skalierung und Drehung")
 
-## <a name="manipulating-one-bitmap"></a>Bearbeiten einer Bitmap
+## <a name="manipulating-one-bitmap"></a>Bearbeiten eine Bitmap
 
-Die **berühren Manipulation** Touch Manipulationen an eine einzelne Bitmap veranschaulicht.
-Dieses Beispiel verwendet die Touch-Überwachung Effekte, die im Artikel dargestellt [Aufrufen Ereignisse von Auswirkungen](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md).
+Die **Touch-Bearbeitung** Touch-Manipulationen an einer einzelnen Bitmap veranschaulicht.
+In diesem Beispiel verwendet die Nachverfolgen von Touch-Auswirkungen, die in diesem Artikel vorgestellten [Aufrufen von Ereignissen von Auswirkungen](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md).
 
-Mehrere andere Dateien bieten Unterstützung für die **berühren Manipulation** Seite. Die erste ist die [ `TouchManipulationMode` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationMode.cs) -Enumeration, die gibt die verschiedenen Typen von Touch Manipulation implementiert durch den Code, der Sie angezeigt werden müssen:
+Mehrere andere Dateien bieten Unterstützung für die **Touch-Bearbeitung** Seite. Die erste ist die [ `TouchManipulationMode` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationMode.cs) Enumeration, der die verschiedenen Typen von Touch-Bearbeitung implementiert durch den Code, wird es, angibt:
 
 ```csharp
 enum TouchManipulationMode
@@ -41,11 +41,11 @@ enum TouchManipulationMode
 }
 ```
 
-`PanOnly` wird einem Finger ziehen, die bei der Übersetzung implementiert wird. Die nachfolgenden Optionen auch gehören Schwenken erfordern jedoch zwei Fingern fest: `IsotropicScale` ist ein zwei-Finger-Vorgang, der das Objekt in horizontaler und vertikaler Richtung gleichermaßen Skalierung ausgibt. `AnisotropicScale` ermöglicht das ungleich skalieren.
+`PanOnly` ist ein Ziehvorgang von nur einem Finger, die bei der Übersetzung implementiert wird. Alle nachfolgenden Optionen auch schwenken aber umfassen zwei Finger: `IsotropicScale` ist ein Pinch-Vorgang, der das Objekt, das Skalieren von Daten gleichmäßig in der horizontalen und vertikalen Richtungen ergibt. `AnisotropicScale` ermöglicht das Skalieren von ungleich.
 
-Die `ScaleRotate` Option ist für zwei-Finger-Skalierung und Drehung. Skalierung ist ein kugelstrahler. Implementieren zwei Finger Drehung mit anisotrope Skalierung ist problematisch, da die Finger-Bewegungen, die im Wesentlichen identisch sind.
+Die `ScaleRotate` Option ist für zwei-Finger-Skalierung und Drehung. Skalierung ist kugelstrahler. Implementieren zwei-Finger-Rotation mit anisotrope Skalierung ist problematisch, da die Finger-Bewegungen im Wesentlichen identisch sind.
 
-Die `ScaleDualRotate` Option Fügt einem Finger Drehung. Wenn Sie von ein einzelnen Finger das Objekt gezogen, wird das gezogene Objekt, damit die Mitte des Objekts mit dem Ziehen Initialisierungsvektor ausgerichtet zuerst um ihren Mittelpunkt gedreht.
+Die `ScaleDualRotate` Option wird nur einem Finger Drehung hinzugefügt. Wenn ein einzelner Finger das Objekt zieht, wird zuerst das gezogene Objekt um seinen Mittelpunkt gedreht, sodass der Mittelpunkt des Objekts mit dem Ziehen Initialisierungsvektor.
 
 Die [ **TouchManipulationPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml) -Datei enthält eine `Picker` mit den Elementen der `TouchManipulationMode` Enumeration:
 
@@ -92,9 +92,9 @@ Die [ **TouchManipulationPage.xaml** ](https://github.com/xamarin/xamarin-forms-
 </ContentPage>
 ```
 
-Unten ist ein `SKCanvasView` und eine `TouchEffect` angefügt, die in einer Zelle befindliches `Grid` , das er einschließt.
+Unten ist ein `SKCanvasView` und ein `TouchEffect` angefügt, die in einer Zelle befindliches `Grid` , das es einschließt.
 
-Die [ **TouchManipulationPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml.cs) Code-Behind-Datei hat eine `bitmap` Feld, aber es ist nicht vom Typ `SKBitmap`. Der Typ ist `TouchManipulationBitmap` (eine Klasse wird in Kürze angezeigt):
+Die [ **TouchManipulationPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml.cs) Code-Behind-Datei hat eine `bitmap` Feld, aber es ist nicht vom Typ `SKBitmap`. Der Typ ist `TouchManipulationBitmap` (eine Klasse, die Sie werden sehen gleich):
 
 ```csharp
 public partial class TouchManipulationPage : ContentPage
@@ -110,9 +110,8 @@ public partial class TouchManipulationPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            SKBitmap bitmap = SKBitmap.Decode(skStream);
+            SKBitmap bitmap = SKBitmap.Decode(stream);
             this.bitmap = new TouchManipulationBitmap(bitmap);
             this.bitmap.TouchManager.Mode = TouchManipulationMode.ScaleRotate;
         }
@@ -121,9 +120,9 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-Der Konstruktor instanziiert einen `TouchManipulationBitmap` Objekt, das an den Konstruktor übergeben ein `SKBitmap` aus einer eingebetteten Ressource abgerufen. Der Konstruktor wird beendet, indem Sie festlegen der `Mode` Eigenschaft von der `TouchManager` Eigenschaft der `TouchManipulationBitmap` Objekt, das Mitglied der der `TouchManipulationMode` Enumeration.
+Der Konstruktor instanziiert ein `TouchManipulationBitmap` Objekts auf und übergibt an den Konstruktor einer `SKBitmap` aus einer eingebetteten Ressource abgerufen. Der Konstruktor wird abgeschlossen, indem Sie festlegen der `Mode` Eigenschaft der `TouchManager` Eigenschaft der `TouchManipulationBitmap` Objekt, das ein Mitglied der `TouchManipulationMode` Enumeration.
 
-Die `SelectedIndexChanged` Handler für das `Picker` setzt dies auch `Mode` Eigenschaft:
+Die `SelectedIndexChanged` Handler für die `Picker` setzt auch dies `Mode` Eigenschaft:
 
 ```csharp
 public partial class TouchManipulationPage : ContentPage
@@ -143,7 +142,7 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-Die `TouchAction` Handler, der die `TouchEffect` instanziiert in der XAML-Datei ruft zwei Methoden im `TouchManipulationBitmap` mit dem Namen `HitTest` und `ProcessTouchEvent`:
+Die `TouchAction` Handler, der die `TouchEffect` instanziiert in der XAML-Datei ruft zwei Methoden in `TouchManipulationBitmap` mit dem Namen `HitTest` und `ProcessTouchEvent`:
 
 ```csharp
 public partial class TouchManipulationPage : ContentPage
@@ -193,13 +192,13 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-Wenn die `HitTest` -Methode zurückkehrt `true` &mdash; Dies bedeutet, dass ein Finger den Bildschirm innerhalb des Bereichs, der von der Bitmap belegt berührt hat &mdash; die Touch ID hinzugefügt wird die `TouchIds` Auflistung. Diese ID stellt die Reihenfolge der Berührungsereignisse für diese Finger dar, bis Sie den Finger vom Bildschirm hebt. Wenn mehrere Finger die Bitmap, tippen Sie dann die `touchIds` Auflistung enthält eine Touch ID für jeden Finger.
+Wenn die `HitTest` Methodenrückgabe `true` &mdash; bedeutet, dass ein Finger den Bildschirm innerhalb des Bereichs, der von der Bitmap berührt hat &mdash; und klicken Sie dann die Touch-ID hinzugefügt wird die `TouchIds` Auflistung. Diese ID stellt die Reihenfolge der Berührungsereignisse für Fingers dar, bis der Finger vom Bildschirm hebt. Wenn mehrere Finger Tippen Sie auf die Bitmap, die `touchIds` Auflistung enthält eine Touch-ID für jeden Finger.
 
-Die `TouchAction` Handler ruft auch die `ProcessTouchEvent` in Klasse `TouchManipulationBitmap`. Dies ist, wenn einige (aber nicht alle) von der tatsächlichen Fingereingabe Verarbeitung erfolgt.
+Die `TouchAction` Handler ruft auch die `ProcessTouchEvent` -Klasse im `TouchManipulationBitmap`. Hier kommt einige (aber nicht alle) an die echten Multitouch-Verarbeitung.
 
-Die [ `TouchManipulationBitmap` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationBitmap.cs) Klasse ist eine Wrapperklasse für `SKBitmap` enthält Code zum Rendern der Bitmap und Touch-Ereignisse verarbeiten. Funktioniert in Kombination mit mehr generalisiert Code in eine `TouchManipulationManager` -Klasse (die Sie in Kürze sehen).
+Die [ `TouchManipulationBitmap` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationBitmap.cs) -Klasse ist eine Wrapperklasse für `SKBitmap` , die Code für die Bitmap Rendern und Verarbeiten von touchereignissen enthält. Es funktioniert in Verbindung mit mehr generalisierten Code in einem `TouchManipulationManager` -Klasse (die Sie gleich sehen werden).
 
-Die `TouchManipulationBitmap` Konstruktor speichert die `SKBitmap` und instanziiert zwei Eigenschaften, die `TouchManager` Eigenschaft vom Typ `TouchManipulationManager` und `Matrix` Eigenschaft vom Typ `SKMatrix`:
+Die `TouchManipulationBitmap` Konstruktor speichert die `SKBitmap` und zwei Eigenschaften, instanziiert die `TouchManager` Eigenschaft vom Typ `TouchManipulationManager` und `Matrix` Eigenschaft vom Typ `SKMatrix`:
 
 ```csharp
 class TouchManipulationBitmap
@@ -225,9 +224,9 @@ class TouchManipulationBitmap
 }
 ```
 
-Dies `Matrix` Eigenschaft ist die kumulierte Transformation, die sich aus der Touch-Aktivität ergeben. Wie Sie sehen, wird jedes Touch-Ereignis aufgelöst, in einer Matrix, die dann verkettet ist, mit der `SKMatrix` vom gespeicherten Wert der `Matrix` Eigenschaft.
+Dies `Matrix` -Eigenschaft ist die kumulierte Transformation, die durch die Touch-Aktivität. Sie sehen, wird jedes touchereignis aufgelöst, in einer Matrix, die dann verkettet wird, mit der `SKMatrix` von gespeicherten Wert der `Matrix` Eigenschaft.
 
-Die `TouchManipulationBitmap` Objekt selbst zeichnet seine `Paint` Methode. Das Argument ist ein `SKCanvas` Objekt. Dies `SKCanvas` möglicherweise bereits eine Transformation, die darauf angewendet, sodass die `Paint` Methode verkettet die `Matrix` Eigenschaft der Bitmap für die vorhandene Transformation zugeordnet und im Zeichenbereich wird wiederhergestellt, wenn er abgeschlossen ist:
+Die `TouchManipulationBitmap` Objekt zeichnet sich selbst in die `Paint` Methode. Das Argument ist ein `SKCanvas` Objekt. Dies `SKCanvas` möglicherweise bereits eine Transformation angewendet wird, sodass der `Paint` Methode verkettet die `Matrix` Eigenschaft der Bitmap für die vorhandene Transformation zugeordnet, und im Zeichenbereich wird wiederhergestellt, wenn er abgeschlossen wurde:
 
 ```csharp
 class TouchManipulationBitmap
@@ -245,11 +244,11 @@ class TouchManipulationBitmap
 }
 ```
 
-Die `HitTest` -Methode zurückkehrt `true` , wenn der Benutzer den Bildschirm zu einem Zeitpunkt innerhalb der Grenzen der Bitmap berührt. Wie der Benutzer die Bitmap bearbeitet, wird die Bitmap gedreht werden kann, oder selbst (über eine Kombination aus anisotrope Skalierung und Drehung) werden in der Form eines Parallelogramms. Sie können jedoch, die die `HitTest` Methode muss sehr komplex analytisch Geometry in diesem Fall implementieren.
+Die `HitTest` Methodenrückgabe `true` , wenn der Benutzer den Bildschirm zu einem Zeitpunkt innerhalb der Grenzen der Bitmap berührt. Wie der Benutzer die Bitmap bearbeitet, wird die Bitmap gedreht werden kann, oder sogar (über eine Kombination aus anisotrope skalierungs- und drehungsvorgängen) werden in der Form eines Parallelogramms. Können Sie Angst haben, die die `HitTest` -Methode muss in diesem Fall recht komplexen analytische Geometrie zu implementieren.
 
-Allerdings ist eine Verknüpfung verfügbar:
+Es ist jedoch eine Verknüpfung zur Verfügung:
 
-Bestimmen, ob ein Punkt innerhalb der Grenzen eines Rechtecks, das transformierte liegt entspricht die bestimmen, ob ein umgekehrter transformierter Punkt innerhalb der Grenzen des Rechtecks BoundingBox liegt. Ist viel einfacher Berechnungen und sie können die komfortable `Contains` definierte Methode `SKRect`:
+Bestimmen, ob ein Punkt innerhalb der Grenzen eines transformierten Rechtecks liegt ist identisch mit bestimmen, ob ein umgekehrter transformierte Punkt innerhalb der Grenzen des Rechtecks untransformierten liegt. Das ist eine viel einfachere Berechnung aus, und sie können die komfortable `Contains` definierte Methode `SKRect`:
 
 ```csharp
 class TouchManipulationBitmap
@@ -275,7 +274,7 @@ class TouchManipulationBitmap
 }
 ```
 
-Die zweite öffentliche Methode in `TouchManipulationBitmap` ist `ProcessTouchEvent`. Wenn diese Methode aufgerufen wird, wurde es, dass das Touch-Ereignis für dieses bestimmte Bitmap gehört bereits eingerichtet. Die Methode verwaltet ein Wörterbuch mit [ `TouchManipulationInfo` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationInfo.cs) Objekte, die einfach am vorherigen Punkt und den neuen Punkt der einzelnen Finger ist:
+Die zweite öffentliche Methode in `TouchManipulationBitmap` ist `ProcessTouchEvent`. Wenn diese Methode aufgerufen wird, wurde es bereits eingerichtet, dass das touchereignis in dieser bestimmten Bitmap gehört. Die Methode verwaltet ein Dictionary [ `TouchManipulationInfo` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationInfo.cs) -Objekte, die einfach die vorherigen Punkt und dem neuen von jedem Finger ist:
 
 ```csharp
 class TouchManipulationInfo
@@ -286,7 +285,7 @@ class TouchManipulationInfo
 }
 ```
 
-Hier wird das Wörterbuch und die `ProcessTouchEvent` Methode selbst:
+Hier ist das Wörterbuch und die `ProcessTouchEvent` Methode selbst:
 
 ```csharp
 class TouchManipulationBitmap
@@ -329,11 +328,11 @@ class TouchManipulationBitmap
 }
 ```
 
-In der `Moved` und `Released` Ereignisse, die Methodenaufrufe `Manipulate`. Zu diesen Zeitpunkten der `touchDictionary` enthält ein oder mehrere `TouchManipulationInfo` Objekte. Wenn die `touchDictionary` enthält mindestens ein Element, es ist wahrscheinlich, die die `PreviousPoint` und `NewPoint` Werte ungleich sind, und die Verschiebung mit einem Finger darstellen. Wenn mehrere Finger berühren sich die Bitmap, das Wörterbuch mehr als ein Element enthält, aber nur eines dieser Elemente verfügt über verschiedene `PreviousPoint` und `NewPoint` Werte. Alle übrigen haben gleich `PreviousPoint` und `NewPoint` Werte.
+In der `Moved` und `Released` Ereignisse, die Methodenaufrufe `Manipulate`. Derzeit wird die `touchDictionary` enthält ein oder mehrere `TouchManipulationInfo` Objekte. Wenn die `touchDictionary` enthält mindestens ein Element, ist es wahrscheinlich, die die `PreviousPoint` und `NewPoint` Werte ungleich sind, und stellen die Bewegung des Fingers. Wenn mehrere Finger berühren sich die Bitmap, das Wörterbuch mehr als ein Element enthält, aber nur eines dieser Elemente andere gelten `PreviousPoint` und `NewPoint` Werte. Die restlichen haben gleich `PreviousPoint` und `NewPoint` Werte.
 
-Dies ist wichtig: die `Manipulate` Methode kann davon ausgehen, dass er die Verschiebung der nur ein Finger verarbeitet wird. Zum Zeitpunkt dieses Aufrufs werden keine der anderen Finger verschieben, und wenn sie eigentlich (wie wahrscheinlich) verschieben,-Bewegungen, die verarbeitet werden in späteren Aufrufen `Manipulate`.
+Dies ist wichtig: die `Manipulate` Methode kann davon ausgehen, dass die Verschiebung von nur einem Finger verarbeitet wird. Zum Zeitpunkt des Aufrufs keine anderen Finger verschieben sind, und wenn sie wirklich (wie wahrscheinlich ist) verschieben, werden dieser Verschiebungen in zukünftigen Aufrufen von verarbeitet `Manipulate`.
 
-Die `Manipulate` Methode zuerst das Wörterbuch in ein Array der Einfachheit halber kopiert. Etwas anderes als die ersten beiden Einträge ignoriert. Wenn mehr als zwei Finger versuchen, die Bearbeitung der Bitmap, werden die anderen ignoriert. `Manipulate` das letzte Element der `TouchManipulationBitmap`:
+Die `Manipulate` Methode kopiert zunächst das Wörterbuch in ein Array der Einfachheit halber. Etwas anderes als die ersten beiden Einträge werden ignoriert. Wenn mehr als zwei Finger versuchen, die Bearbeitung der Bitmap, werden die anderen ignoriert. `Manipulate` ist das letzte Mitglied `TouchManipulationBitmap`:
 
 ```csharp
 class TouchManipulationBitmap
@@ -370,13 +369,13 @@ class TouchManipulationBitmap
 }
 ```
 
-Wenn ein Finger Bitmap bearbeiten ist `Manipulate` Aufrufe der `OneFingerManipulate` Methode der `TouchManipulationManager` Objekt. Für zwei Finger ruft `TwoFingerManipulate`. Die Argumente für diese Methoden sind identisch: die `prevPoint` und `newPoint` Argumente darstellen, den Finger wieder an, die verschoben werden. Aber die `pivotPoint` Argument wird für die beiden Aufrufe unterschiedlich:
+Wenn ein Finger Bitmap bearbeitet `Manipulate` Aufrufe der `OneFingerManipulate` Methode der `TouchManipulationManager` Objekt. Für zwei Finger ruft `TwoFingerManipulate`. Die Argumente für diese Methoden sind identisch: die `prevPoint` und `newPoint` Argumente darstellen, den Finger, die verschoben werden. Aber die `pivotPoint` Argument ist für die beiden Aufrufe unterschiedlich:
 
-Für die Bearbeitung von einem Finger den `pivotPoint` steht im Mittelpunkt der Bitmap. Dies ist ein Finger Drehung zu ermöglichen. Für die Bearbeitung von zwei-Finger das Ereignis die Verschiebung der nur ein Finger gibt, damit die `pivotPoint` wird von den Finger wieder an, die nicht verschoben wird.
+Für die Bearbeitung von nur einem Finger den `pivotPoint` steht im Mittelpunkt der Bitmap. Dies ist auf nur einem Finger Rotation zu ermöglichen. Für die Bearbeitung von zwei-Finger gibt das Ereignis an das Verschieben von nur einem Finger, sodass die `pivotPoint` ist der Finger, die nicht verschoben wird.
 
-In beiden Fällen `TouchManipulationManager` gibt eine `SKMatrix` -Wert, der die Methode mit dem aktuellen verkettet `Matrix` Eigenschaft, die `TouchManipulationPage` verwendet, um das Bitmuster zu rendern.
+In beiden Fällen `TouchManipulationManager` gibt ein `SKMatrix` -Wert, der die Methode mit dem aktuellen verkettet `Matrix` Eigenschaft, die `TouchManipulationPage` verwendet, um die Bitmap zu rendern.
 
-`TouchManipulationManager` generalisiert ist und keine anderen Dateien außer verwendet `TouchManipulationMode`. Sie können diese Klasse ohne Änderung in den eigenen Anwendungen verwenden können. Er definiert eine einzelne Eigenschaft vom Typ `TouchManipulationMode`:
+`TouchManipulationManager` generalisiert werden, und verwendet keine anderen Dateien mit Ausnahme von `TouchManipulationMode`. Sie können diese Klasse ohne Änderungen in Ihren eigenen Anwendungen verwenden können. Definiert eine einzelne Eigenschaft vom Typ `TouchManipulationMode`:
 
 ```csharp
 class TouchManipulationManager
@@ -387,9 +386,9 @@ class TouchManipulationManager
 ```
 
 
-Aber Sie müssen wahrscheinlich vermeiden möchten die `AnisotropicScale` Option. Es ist sehr einfach, mit diese Option, um die Bearbeitung der Bitmap, sodass einer der Faktoren, die Skalierung auf 0 (null) ist. Stellt die Bitmap aus der Sicht, nie zurückzugebenden nicht mehr angezeigt. Wenn Sie die anisotrope Skalierung tatsächlich benötigen, sollten Sie verbessern die Logik, um unerwünschte Ergebnisse zu vermeiden.
+Aber Sie sollten vermeiden Sie die `AnisotropicScale` Option. Es ist sehr einfach, mit diese Option, um die Bitmap zu bearbeiten, sodass eine Skalierung Faktoren auf 0 (null) ist. Dadurch wird die Bitmap, die nicht mehr in der Sicht, nicht mehr angezeigt. Wenn Sie die anisotrope Skalierung wirklich benötigen, sollten Sie zur Verbesserung der der Logik, um unerwünschte Ergebnisse zu vermeiden.
 
-`TouchManipulationManager` binärencoder Vektoren, aber da es ist keine `SKVector` Struktur in SkiaSharp, `SKPoint` wird stattdessen verwendet. `SKPoint` unterstützt, die der Subtraktionsoperator und das Ergebnis als ein Vektor behandelt werden kann. Vektor-spezifische-Logik, die erforderlich sind, hinzugefügt werden wird eine `Magnitude` Berechnung:
+`TouchManipulationManager` verwendet von Vektoren, aber da gibt es keine `SKVector` Struktur in SkiaSharp, `SKPoint` wird stattdessen verwendet. `SKPoint` unterstützt, die der Subtraktionsoperator, und das Ergebnis als Vektor behandelt werden kann. Der Vektor-spezifische-Programmlogik, die hinzugefügt werden müssen, ist eine `Magnitude` Berechnung:
 
 ```csharp
 class TouchManipulationManager
@@ -402,9 +401,9 @@ class TouchManipulationManager
 }
 ```
 
-Wenn Drehung ausgewählt wurde, behandeln Sie zunächst die einem Finger und zwei-Finger textmanipulationsmethoden die Drehung. Wenn Drehung erkannt wird, wird die rotationskomponente effektiv entfernt. Was bleibt, wird als Schwenken und Skalierung interpretiert.
+Wenn Drehung ausgewählt wurde, behandeln Sie zunächst beide die Manipulation von nur einem Finger und zwei-Finger-Methoden die Drehung. Wenn Drehung erkannt wird, wird dann effektiv die drehungskomponente entfernt werden. Was übrig bleibt, wird als Schwenken und Skalierung interpretiert.
 
-So sieht die `OneFingerManipulate` Methode. Wenn ein Finger Rotation nicht aktiviert wurde, und klicken Sie dann die Logik einfach ist &mdash; einfach verwendet die vorherigen Punkt und den neuen Punkt So erstellen Sie einen Vektor mit dem Namen `delta` , entspricht genau Übersetzung. Mit einem Finger Drehung aktiviert verwendet die Methode Winkel aus der Dreh-und Angelpunkt (in der Mitte der Bitmap) mit dem vorherigen Punkt und den neuen Punkt erstellt eine Rotationsmatrix.
+Hier ist die `OneFingerManipulate` Methode. Wenn die Drehung mit nur einem Finger nicht aktiviert wurde, und klicken Sie dann die Logik ist einfach &mdash; sie einfach die vorherigen Punkt und den neuen Punkt zum Erstellen eines Vektors mit dem Namen verwendet `delta` , die genau auf die Übersetzung entspricht. Mit einer Drehung von nur einem Finger aktiviert verwendet die Methode Winkel aus der Dreh-und Angelpunkt (in der Mitte der Bitmap) auf den vorherigen Punkt und den neuen Punkt um eine Rotationsmatrix zu erstellen.
 
 ```csharp
 class TouchManipulationManager
@@ -455,7 +454,7 @@ class TouchManipulationManager
 }
 ```
 
-In der `TwoFingerManipulate` -Methode, der Dreh-und Angelpunkt ist die Position des Fingers, die in diesem bestimmten Touch-Ereignis nicht bewegt wird. Die Rotation ist vergleichbar mit einem Finger Drehung, und klicken Sie dann der Vektor mit dem Namen `oldVector` (basierend auf den vorherigen Zustand) ist für die Drehung angepasst. Die verbleibenden Bewegung wird als Skalierung interpretiert:
+In der `TwoFingerManipulate` -Methode der Dreh-und Angelpunkt ist die Position des Fingers, die in diesem bestimmten Touch-Ereignis nicht bewegt wird. Die Drehung ist die Rotation von nur einem Finger sehr ähnlich, und klicken Sie dann für der Vektor mit dem Namen `oldVector` (basierend auf vorherigen Punkt), die für die Rotation angepasst wird. Die verbleibende Bewegung wird als die Skalierung interpretiert:
 
 ```csharp
 class TouchManipulationManager
@@ -513,9 +512,9 @@ class TouchManipulationManager
 }
 ```
 
-Sie werden bemerken, dass keine explizite Übersetzung in dieser Methode vorhanden ist. Jedoch sowohl die `MakeRotation` und `MakeScale` Methoden basieren auf der Dreh-und Angelpunkt sowie implizite Übersetzung enthält. Bei Verwendung von zwei Fingern auf die Bitmap und ziehen sie in der gleichen Richtung `TouchManipulation` erhalten Sie eine Reihe von touchereignissen Wechsel zwischen den zwei Fingern fest. Wie jedes Finger bewegt, relativ zu den anderen, Skalierung oder Drehung Ergebnissen, aber es wird durch den andere Finger Bewegung negiert, und das Ergebnis ist Übersetzung.
+Sie werden feststellen, dass keine explizite Übersetzung in dieser Methode vorhanden ist. Jedoch sowohl die `MakeRotation` und `MakeScale` Methoden basieren auf der Dreh-und Angelpunkt sowie implizite Übersetzung enthält. Wenn Sie zwei Finger auf die Bitmap und ziehen sie in der gleichen Richtung verwenden `TouchManipulation` erhalten Sie eine Reihe von touchereignissen, die abwechselnd zwischen den beiden Fingern. Wie jedes fingerbewegung relativ zu anderen, Skalierung oder Drehung Ergebnissen, jedoch wird es von der andere Finger verschieben negiert, und das Ergebnis ist die Übersetzung.
 
-Der einzige verbleibende Teil der **berühren Manipulation** Seite ist die `PaintSurface` Ereignishandler in der `TouchManipulationPage` Code-Behind-Datei. Aufruft der `Paint` Methode der `TouchManipulationBitmap`, welche gilt die Matrix, die akkumulierten Touch-Aktivität darstellt:
+Der einzige verbleibende Teil der **Touch-Bearbeitung** Seite ist die `PaintSurface` Ereignishandler in der `TouchManipulationPage` Code-Behind-Datei. Dadurch wird die `Paint` -Methode der der `TouchManipulationBitmap`, die gilt, dass die Transformationsmatrix zur Darstellung der kumulierten Touch-Aktivität:
 
 ```csharp
 public partial class TouchManipulationPage : ContentPage
@@ -544,15 +543,15 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-Die `PaintSurface` Handler endet, durch Anzeigen einer `MatrixDisplay` Objekt zeigt die kumulierte Touch Matrix:
+Die `PaintSurface` Handler schließt mit der Anzeige einer `MatrixDisplay` Objekt zeigt die kumulierte Touch-Matrix:
 
-[![](touch-images/touchmanipulation-small.png "Dreifacher Screenshot der Seite berühren Manipulation")](touch-images/touchmanipulation-large.png#lightbox "dreifacher Screenshot der Seite berühren Manipulation")
+[![](touch-images/touchmanipulation-small.png "Dreifacher Screenshot der Seite für Touch-Bearbeitung")](touch-images/touchmanipulation-large.png#lightbox "dreifachen Screenshot der Seite für Touch-Bearbeitung")
 
-## <a name="manipulating-multiple-bitmaps"></a>Bearbeiten von mehreren Bitmaps
+## <a name="manipulating-multiple-bitmaps"></a>Bearbeiten mehrerer Bitmaps
 
-Einer der Vorteile der Isolation von Touch-die Verarbeitung von Code in Klassen wie z. B. `TouchManipulationBitmap` und `TouchManipulationManager` ist die Möglichkeit, diese Klassen in einem Programm wiederverwenden, die dem Benutzer ermöglicht, mehrere Bitmaps zu bearbeiten.
+Einer der Vorteile der Isolation von Touch-die Verarbeitung von Code in Klassen wie z. B. `TouchManipulationBitmap` und `TouchManipulationManager` ist die Möglichkeit, diese Klassen in einem Programm wieder verwenden, die dem Benutzer ermöglicht, mehrere Bitmaps zu bearbeiten.
 
-Die **Bitmap Punktdiagramm Ansicht** Seite veranschaulicht, wie dies funktioniert. Anstatt das Definieren eines Felds vom Typ `TouchManipulationBitmap`, die [ `BitmapScatterPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BitmapScatterViewPage.xaml.cs) Klasse definiert ein `List` Bitmap-Objekte:
+Die **Bitmap Punktdiagramm Ansicht** Seite erläutert, wie dies vonstatten geht. Anstatt das Definieren eines Felds vom Typ `TouchManipulationBitmap`, [ `BitmapScatterPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BitmapScatterViewPage.xaml.cs) -Klasse definiert eine `List` der Bitmap-Objekte:
 
 ```csharp
 public partial class BitmapScatterViewPage : ContentPage
@@ -575,9 +574,8 @@ public partial class BitmapScatterViewPage : ContentPage
                 resourceID.EndsWith(".jpg"))
             {
                 using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-                using (SKManagedStream skStream = new SKManagedStream(stream))
                 {
-                    SKBitmap bitmap = SKBitmap.Decode(skStream);
+                    SKBitmap bitmap = SKBitmap.Decode(stream);
                     bitmapCollection.Add(new TouchManipulationBitmap(bitmap)
                     {
                         Matrix = SKMatrix.MakeTranslation(position.X, position.Y),
@@ -592,9 +590,9 @@ public partial class BitmapScatterViewPage : ContentPage
 }
 ```
 
-Der Konstruktor in allen Bitmaps verfügbar als eingebettete Ressourcen lädt und hinzugefügt der `bitmapCollection`. Beachten Sie, dass die `Matrix` -Eigenschaft wird auf jedem initialisiert `TouchManipulationBitmap` Objekt, damit die linken oberen Ecken jede Bitmap um 100 Pixel versetzt werden.
+Der Konstruktor in allen Bitmaps verfügbar als eingebettete Ressourcen lädt und hinzugefügt der `bitmapCollection`. Beachten Sie, dass die `Matrix` -Eigenschaft wird auf jedem initialisiert `TouchManipulationBitmap` Objekt, sodass jede Bitmap die linke obere Ecken von 100 Pixel ausgeglichen werden.
 
-Die `BitmapScatterView` Seite auch Berührungsereignisse für mehrere Bitmaps behandeln muss. Anstatt definieren eine `List` Fingereingabe IDs der derzeit bearbeitet `TouchManipulationBitmap` Objekte aufweist, dieses Programm erfordert ein Wörterbuch:
+Die `BitmapScatterView` Seite muss außerdem touchereignisse für mehrere Bitmaps zu behandeln. Anstatt definieren eine `List` an Multitouch-IDs der aktuell bearbeitet `TouchManipulationBitmap` Objekten, die dieses Programm erfordert ein Wörterbuch:
 
 ```csharp
 public partial class BitmapScatterViewPage : ContentPage
@@ -658,13 +656,13 @@ public partial class BitmapScatterViewPage : ContentPage
 }
 ```
 
-Beachten Sie, dass der `Pressed` Logik durchläuft die `bitmapCollection` in umgekehrter Reihenfolge. Die Bitmaps überlappen häufig einander. Die Bitmaps weiter unten in der Auflistung liegen visuell zusätzlich zu Bitmaps weiter oben in der Auflistung. Wenn es mehrere Bitmaps unter den Finger wieder an, der auf dem Bildschirm drückt sind, muss das oberste Element der, die von diesem Finger bearbeitet wird.
+Beachten Sie, dass die `Pressed` Logik durchläuft die `bitmapCollection` in umgekehrter Reihenfolge. Die Bitmaps überlappen häufig einander. Die Bitmaps weiter unten in der Auflistung liegen visuell über die Bitmaps weiter oben in der Auflistung. Treten mehrere Bitmaps unter dem Finger, der auf dem Bildschirm klickt, muss der obersten der sein, die von den Fingers bearbeitet wird.
 
-Beachten Sie auch, dass die `Pressed` Logik wird dieser Bitmap an das Ende der Auflistung verschoben, sodass visuell an den Anfang der eine Ansammlung von anderen Bitmaps verschoben.
+Beachten Sie auch, dass die `Pressed` Logik wird diese Bitmap an das Ende der Auflistung verschoben, sodass visuell am Anfang eine Ansammlung von anderen Bitmaps verschoben wird.
 
-In der `Moved` und `Released` Ereignisse, die `TouchAction` Ereignishandler ruft die `ProcessingTouchEvent` Methode in `TouchManipulationBitmap` ebenso wie die ältere Anwendung.
+In der `Moved` und `Released` Ereignisse, die `TouchAction` Ereignishandler ruft die `ProcessingTouchEvent` -Methode in der `TouchManipulationBitmap` ebenso wie das Programm weiter oben.
 
-Schließlich die `PaintSurface` Ereignishandler ruft die `Paint` Methode jedes `TouchManipulationBitmap` Objekt:
+Zum Schluss die `PaintSurface` Ereignishandler ruft die `Paint` Methode `TouchManipulationBitmap` Objekt:
 
 ```csharp
 public partial class BitmapScatterViewPage : ContentPage
@@ -683,17 +681,17 @@ public partial class BitmapScatterViewPage : ContentPage
 }
 ```
 
-Der Code durchläuft die Auflistung und zeigt die eine Ansammlung von Bitmaps vom Anfang der auflistungs am Ende an:
+Der Code durchläuft die Auflistung und zeigt eine Ansammlung von Bitmaps vom Anfang der Auflistung am Ende:
 
-[![](touch-images/bitmapscatterview-small.png "Dreifacher Screenshot, der die Bitmap Punktdiagramm Ansichtsseite")](touch-images/bitmapscatterview-large.png#lightbox "dreifacher Screenshot, der die Bitmap Punktdiagramm Ansichtsseite")
+[![](touch-images/bitmapscatterview-small.png "Dreifacher Screenshot der Seite für Bitmap Punktdiagramm Ansicht")](touch-images/bitmapscatterview-large.png#lightbox "dreifachen Screenshot der Seite für Bitmap Punktdiagramm anzeigen")
 
-## <a name="single-finger-scaling"></a>Skalieren von einem Finger
+## <a name="single-finger-scaling"></a>Skalierung von einem Finger
 
-Eine Skalierungsoperation erfordert in der Regel eine zwei-Finger-Geste mit zwei Fingern fest. Allerdings ist es möglich, skalieren, dass den Finger, verschieben Sie die Ecken einer Bitmap mit einem einzelnen Finger zu implementieren.
+Eine Skalierung erfordert im Allgemeinen eine zusammendrückbewegung mit zwei Fingern. Allerdings ist es möglich, mit einem einzelnen Finger skalieren, indem Sie den Finger verschieben Sie die Ecken einer Bitmap zu implementieren.
 
-Dies wird dargestellt, der **Finger Ecke Skala** Seite. Da in diesem Beispiel eine etwas andere Art von Skalierung verwendet wird, dass, die es in implementiert die `TouchManipulationManager` -Klasse, diese Klasse nicht verwendet oder die `TouchManipulationBitmap` Klasse. Stattdessen wird die Touch-Logik im Code-Behind-Datei ein. Dies ist etwas einfacher Logik als üblich, da es nur einen Finger zu einem Zeitpunkt verfolgt, einfach ignoriert alle sekundären Finger den Bildschirm berührt werden können.
+Dies wird veranschaulicht, der **Finger Ecke Skala** Seite. Da in diesem Beispiel eine etwas andere Art der Skalierung verwendet wird, dass, die es in implementiert die `TouchManipulationManager` -Klasse, wird diese Klasse nicht verwendet oder die `TouchManipulationBitmap` Klasse. Stattdessen wird die gesamte Touch Logik in der CodeBehind-Datei. Dies ist etwas einfacher Logik als üblich, weil es nur mit einem Finger gleichzeitig verfolgt und ignoriert einfach alle sekundären Finger den Bildschirm berührt werden können.
 
-Die [ **SingleFingerCornerScale.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml) Seite instanziiert die `SKCanvasView` -Klasse und erstellt eine `TouchEffect` Objekt zum Nachverfolgen von touchereignissen:
+Die [ **SingleFingerCornerScale.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml) Seite instanziiert die `SKCanvasView` -Klasse und erstellt eine `TouchEffect` Objekt zum Nachverfolgen von Touch-Ereignissen:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -716,7 +714,7 @@ Die [ **SingleFingerCornerScale.xaml** ](https://github.com/xamarin/xamarin-form
 </ContentPage>
 ```
 
-Die [ **SingleFingerCornerScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml.cs) Datei lädt eine Bitmapressource aus der **Medien** Verzeichnis und zeigt ihn mit einer `SKMatrix` Objekt als definiert eine Feld:
+Die [ **SingleFingerCornerScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml.cs) Datei lädt eine Bitmapressource aus der **Media** Verzeichnis und zeigt sie mithilfe einer `SKMatrix` -Objekt als definiert eine Feld:
 
 ```csharp
 public partial class SingleFingerCornerScalePage : ContentPage
@@ -733,9 +731,8 @@ public partial class SingleFingerCornerScalePage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
 
@@ -754,11 +751,11 @@ public partial class SingleFingerCornerScalePage : ContentPage
 }
 ```
 
-Dies `SKMatrix` -Objekt von der Touch-Logik, die unten gezeigten geändert wird.
+Dies `SKMatrix` Objekt von der Touch-Logik, die unten gezeigten geändert wird.
 
-Die restliche Code-Behind-Datei ist die `TouchEffect` -Ereignishandler. Beginnt die die aktuelle Position des Fingers zum Konvertieren einer `SKPoint` Wert. Für die `Pressed` Aktionstyp, der Handler wird überprüft, ob keine andere Finger den Bildschirm berührt und der Finger ist innerhalb der Grenzen der Bitmap.
+Der Rest des Code-Behind-Datei ist die `TouchEffect` -Ereignishandler. Es beginnt mit der die aktuelle Position des Fingers zum Konvertieren einer `SKPoint` Wert. Für die `Pressed` Aktionstyp, der Handler überprüft, dass keine anderen Finger den Bildschirm berührt und dass der Finger innerhalb der Grenzen der Bitmap.
 
-Der entscheidende Teil des Codes ist ein `if` Anweisung, die im Zusammenhang mit beiden Aufrufe von der `Math.Pow` Methode. Dieser mathematische überprüft, ob der Finger Speicherort außerhalb einer Ellipse, die die Bitmap ausfüllt. Wenn dies der Fall ist, handelt es sich um eine Skalierungsoperation. Der Finger ist in der Nähe von einer der Ecken der Bitmap und eine Dreh-und Angelpunkt wird bestimmt, dass der entgegengesetzten Ecke ist. Wenn der Finger innerhalb dieser Ellipse ist, handelt es sich um eine Balance Normalbetrieb:
+Der entscheidende Teil des Codes ist ein `if` -Anweisung, die beiden Aufrufe von der `Math.Pow` Methode. Diese mathematischen überprüft, ob der Finger Speicherort außerhalb einer Ellipse, die die Bitmap ausfüllt. Wenn dies der Fall ist, handelt es sich um eine Skalierung ausgeführt. Der Finger in der Nähe von einer der Ecken der Bitmap ist, und eine Art Drehmoment wird bestimmt, dass der gegenüberliegenden Ecke ist. Wenn der Finger innerhalb dieser Ellipse ist, ist es ein regulärer schwenkansicht Vorgang:
 
 ```csharp
 public partial class SingleFingerCornerScalePage : ContentPage
@@ -851,9 +848,9 @@ public partial class SingleFingerCornerScalePage : ContentPage
 }
 ```
 
-Die `Moved` Aktionstyp berechnet eine Matrix, die ab dem Zeitpunkt der Finger Bildschirms bis zu diesem Zeitpunkt gedrückt die Touch-Aktivität entspricht. Diese Matrix mit der Matrix werden faktisch zum Zeitpunkt der Finger Bitmap gedrückt verkettet. Der Skalierungsvorgang ist immer relativ zur Ecke statt das Projekt, das der Finger berührt werden.
+Die `Moved` Aktionstyp berechnet eine Matrix, die für die Touch-Aktivität, ab dem Zeitpunkt der Finger-Bildschirms bis zu diesem Zeitpunkt gedrückt. Diese Matrix mit der Matrix werden wirksam zum Zeitpunkt der Finger Bitmap gedrückt verkettet. Skalierungsvorgangs bezieht sich immer auf die Ecke Gegensatz zu, die der Finger berührt.
 
-Für kleine oder längliche Bitmaps möglicherweise eine Ellipse, die innere belegen die meisten der Bitmap und lassen sehr kleine Bereiche an den Ecken die Bitmap zu skalieren. Möglicherweise bevorzugen Sie einen etwas anderen Ansatz, in diesem Fall können Sie dieses gesamte `if` Block, der festlegt `isScaling` auf `true` mit dem folgenden Code:
+Für kleine oder längliche Bitmaps kann eine innere Ellipse belegen die meisten der Bitmap und sehr kleine Bereiche an den Ecken die Bitmap skalieren lassen. Möglicherweise bevorzugen Sie einen etwas anderen Ansatz, in diesem Fall können Sie diese gesamte `if` Block, der festlegt `isScaling` zu `true` durch den folgenden Code:
 
 ```csharp
 float halfHeight = rect.Height / 2;
@@ -897,10 +894,10 @@ else
 }
 ```
 
-Dieser Code dividiert effektiv den Bereich der Bitmap in eine innere Rautenform und vier Dreiecke ab, an den Ecken. Dadurch können viel größere Bereiche an den Ecken ziehen und Skalieren die Bitmap.
+Dieser Code teilt effektiv den Bereich der Bitmap in einem inneren Raute und vier Dreiecke, an den Ecken. Dies ermöglicht eine viel größere Bereiche an den Ecken ziehen, und Skalieren die Bitmap.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [Aufrufen von Ereignissen von Effekten](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
+- [Aufrufen von Ereignissen von Auswirkungen](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

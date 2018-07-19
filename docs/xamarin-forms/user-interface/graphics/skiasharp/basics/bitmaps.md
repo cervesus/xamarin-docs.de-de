@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
-ms.date: 04/03/2017
-ms.openlocfilehash: dec6fa1534f14836ae98677ad33e280ff510fb97
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/17/2018
+ms.openlocfilehash: cbce6f414586597dc2b2788aa18b03228c128018
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995185"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130958"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>Bitmap-Grundlagen in SkiaSharp
 
@@ -22,7 +22,7 @@ Die Unterstützung von Bitmaps in SkiaSharp ist sehr umfangreich. Dieser Artikel
 
 ![](bitmaps-images/bitmapssample.png "Die Anzeige von zwei bitmaps")
 
-Eine SkiaSharp-Bitmap ist ein Objekt des Typs [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Es gibt viele Möglichkeiten, eine Bitmap zu erstellen, aber in diesem Artikel beschränkt sich auf die [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/SkiaSharp.SKStream/) -Methode, die aus der Bitmap lädt ein [ `SKStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStream/) -Objekt, das eine Bitmapdatei verweist. Es ist sinnvoll, verwenden Sie die [ `SKManagedStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKManagedStream/) abgeleitete Klasse `SKStream` , da sie einen Konstruktor verfügt, die eine .NET akzeptiert [ `Stream` ](xref:System.IO.Stream) Objekt.
+Eine SkiaSharp-Bitmap ist ein Objekt des Typs [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Es gibt viele Möglichkeiten, eine Bitmap zu erstellen, aber in diesem Artikel beschränkt sich auf die [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/System.IO.Stream/) -Methode, die die Bitmap in einer .NET-Konsolenanwendung lädt `Stream` Objekt.
 
 Die **grundlegende Bitmaps** auf der Seite die **SkiaSharpFormsDemos** Programm veranschaulicht, wie zum Laden von Bitmaps aus drei verschiedenen Quellen:
 
@@ -55,39 +55,46 @@ public class BasicBitmapsPage : ContentPage
 
 ## <a name="loading-a-bitmap-from-the-web"></a>Laden eine Bitmap aus dem Web
 
-Um eine Bitmap, die basierend auf einer URL zu laden, können Sie die [ `WebRequest` ](xref:System.Net.WebRequest) Klasse, wie gezeigt in den folgenden Code, der ausgeführt wird, der `BasicBitmapsPage` Konstruktor. Hier die URL verweist auf einen Bereich auf der Xamarin-Website mit einige Beispiel-Bitmaps. Ein Paket auf der Website ermöglicht das Anfügen von einer Spezifikation für die größenanpassung der Bitmap in eine bestimmte Breite:
+Um eine Bitmap, die basierend auf einer URL zu laden, können Sie die [ `HttpClient` ](/dotnet/api/system.net.http.httpclient?view=netstandard-2.0) Klasse. Sie sollten nur eine Instanz instanziieren `HttpClient` und wiederverwenden, also als ein Feld speichern:
 
 ```csharp
-Uri uri = new Uri("http://developer.xamarin.com/demo/IMG_3256.JPG?width=480");
-WebRequest request = WebRequest.Create(uri);
-request.BeginGetResponse((IAsyncResult arg) =>
+HttpClient httpClient = new HttpClient();
+```
+
+Bei Verwendung `HttpClient` mit iOS und Android-Anwendungen, sollten Sie Projekteigenschaften festlegen, wie beschrieben in den Dokumenten auf  **[Transport Layer Security (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)**.
+
+Da es am einfachsten, Sie zu verwenden, ist die `await` -Operator mit `HttpClient`, der Code kann nicht ausgeführt werden, der `BasicBitmapsPage` Konstruktor. Stattdessen ist er Teil der `OnAppearing` außer Kraft setzen. Hier die URL verweist auf einen Bereich auf der Xamarin-Website mit einige Beispiel-Bitmaps. Ein Paket auf der Website ermöglicht das Anfügen von einer Spezifikation für die größenanpassung der Bitmap in eine bestimmte Breite:
+
+
+```csharp
+protected override async void OnAppearing()
 {
+    base.OnAppearing();
+
+    // Load web bitmap.
+    string url = "https://developer.xamarin.com/demo/IMG_3256.JPG?width=480";
+
     try
     {
-        using (Stream stream = request.EndGetResponse(arg).GetResponseStream())
+        using (Stream stream = await httpClient.GetStreamAsync(url))
         using (MemoryStream memStream = new MemoryStream())
         {
-            stream.CopyTo(memStream);
+            await stream.CopyToAsync(memStream);
             memStream.Seek(0, SeekOrigin.Begin);
 
-            using (SKManagedStream skStream = new SKManagedStream(memStream))
-            {
-                webBitmap = SKBitmap.Decode(skStream);
-            }
-        }
+            webBitmap = SKBitmap.Decode(stream);
+            canvasView.InvalidateSurface();
+        };
     }
     catch
     {
     }
-
-    Device.BeginInvokeOnMainThread(() => canvasView.InvalidateSurface());
-
-}, null);
+}
 ```
 
-Wenn die Bitmap wurde erfolgreich heruntergeladen wurde, wird die Callback-Methode zum Übergeben der `BeginGetResponse` Methode ausgeführt wird. Die `EndGetResponse` Aufruf muss sich in einem `try` block für den Fall, dass ein Fehler aufgetreten ist. Die `Stream` -Objekts vom `GetResponseStream` ist nicht auf manchen Plattformen ist ausreichend, damit der Bitmapinhalt in kopiert werden eine `MemoryStream` Objekt. An diesem Punkt die `SKManagedStream` Objekt kann erstellt werden. Nun verweist auf die Bitmapdatei, die wahrscheinlichste Ursache, eine JPEG- oder PNG-Datei ist. Die `SKBitmap.Decode` -Methode decodiert die Bitmap-Datei und speichert die Ergebnisse in einem internen SkiaSharp-Format.
+Android wird eine Ausnahme ausgelöst, wenn mit der `Stream` Merry `GetStreamAsync` in die `SKBitmap.Decode` Methode da es einen langwierigen Vorgang in einem Hauptthread ausgeführt wird. Aus diesem Grund werden in den Inhalt der Bitmapdatei kopiert eine `MemoryStream` -Objekt unter Verwendung der `CopyToAsync`.
 
-Die Rückrufmethode übergeben werden, um `BeginGetResponse` ausgeführt wird, nachdem der Konstruktor ausgeführt hat, dies bedeutet, dass die `SKCanvasView` muss für ungültig erklärt werden, um zu ermöglichen die `PaintSurface` Handler, der die Anzeige zu aktualisieren. Allerdings die `BeginGetResponse` Rückruf in einem zweiten Thread der Ausführung ausgeführt wird, daher ist es erforderlich, verwenden Sie `Device.BeginInvokeOnMainThread` zum Ausführen der `InvalidateSurface` -Methode in der UI-Thread.
+Die statische `SKBitmap.Decode` Methode ist verantwortlich für das Bitmap-Dateien decodieren. Es funktioniert mit JPEG, PNG, GIF und mehrere andere beliebte Bitmapformate, und speichert die Ergebnisse in einem internen SkiaSharp-Format. An diesem Punkt die `SKCanvasView` muss für ungültig erklärt werden, damit kann die `PaintSurface` Handler, der die Anzeige zu aktualisieren. 
 
 ## <a name="loading-a-bitmap-resource"></a>Beim Laden einer Bitmapressource
 
@@ -100,19 +107,18 @@ string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
 Assembly assembly = GetType().GetTypeInfo().Assembly;
 
 using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-using (SKManagedStream skStream = new SKManagedStream(stream))
 {
-    resourceBitmap = SKBitmap.Decode(skStream);
+    resourceBitmap = SKBitmap.Decode(stream);
 }
 ```
 
-Dies `Stream` -Objekt direkt konvertiert werden kann ein `SKManagedStream` Objekt.
+Dies `Stream` Objekt übergeben werden, direkt an die `SKBitmap.Decode` Methode.
 
 ## <a name="loading-a-bitmap-from-the-photo-library"></a>Laden eine Bitmap aus der Fotobibliothek
 
 Es ist auch möglich, für den Benutzer ein Foto aus Bildbibliothek des Geräts zu laden. Diese Funktion wird nicht von Xamarin.Forms selbst bereitgestellt. Dieser Auftrag erfordert einen Abhängigkeitsdienst, z. B. in diesem Artikel beschriebenen [Auswählen eines Fotos aus der Bildbibliothek](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
 
-Die **IPicturePicker.cs** -Datei und die drei **PicturePickerImplementation.cs** Dateien aus diesem Artikel wurden die den verschiedenen Projekten kopiert die **SkiaSharpFormsDemos**Lösung, und der neue Namespacenamen gegeben. Darüber hinaus die Android **"mainactivity.cs"** wurde geändert, wie in diesem Artikel beschrieben, und das iOS-Projekt der Fotobibliothek mit nur zwei Zeilen im unteren Bereich der Zugriff auf eine Berechtigung erteilt wurde die **"Info.plist"**  Datei.
+Die **IPhotoLibrary.cs** Datei die **SkiaSharpFormsDemos** -Projekt und die drei **PhotoLibrary.cs** Dateien in die Plattformprojekte wurden aus diesem Artikel. Darüber hinaus die Android **"mainactivity.cs"** wurde geändert, wie in diesem Artikel beschrieben, und das iOS-Projekt der Fotobibliothek mit nur zwei Zeilen im unteren Bereich der Zugriff auf eine Berechtigung erteilt wurde die **"Info.plist"**  Datei.
 
 Die `BasicBitmapsPage` Konstruktor fügt ein `TapGestureRecognizer` auf die `SKCanvasView` Taps benachrichtigt werden sollen. Beim Empfang von einem tippen die `Tapped` Handler Ruft den Zugriff auf die Bild-Auswahl Abhängigkeitsdienst und ruft `GetImageStreamAsync`. Wenn eine `Stream` Objekt wird zurückgegeben, und klicken Sie dann die Inhalte werden kopiert, in einem `MemoryStream`, wie für andere Plattformen erforderlich. Der Rest des Codes ähnelt die beiden anderen Techniken:
 
@@ -122,22 +128,13 @@ TapGestureRecognizer tapRecognizer = new TapGestureRecognizer();
 tapRecognizer.Tapped += async (sender, args) =>
 {
     // Load bitmap from photo library
-    IPicturePicker picturePicker = DependencyService.Get<IPicturePicker>();
+    IPhotoLibrary photoLibrary = DependencyService.Get<IPhotoLibrary>();
 
-    using (Stream stream = await picturePicker.GetImageStreamAsync())
+    using (Stream stream = await photoLibrary.PickPhotoAsync())
     {
         if (stream != null)
         {
-            using (MemoryStream memStream = new MemoryStream())
-            {
-                stream.CopyTo(memStream);
-                memStream.Seek(0, SeekOrigin.Begin);
-
-                using (SKManagedStream skStream = new SKManagedStream(memStream))
-                {
-                    libraryBitmap = SKBitmap.Decode(skStream);
-                }
-            }
+            libraryBitmap = SKBitmap.Decode(stream);
             canvasView.InvalidateSurface();
         }
     }
