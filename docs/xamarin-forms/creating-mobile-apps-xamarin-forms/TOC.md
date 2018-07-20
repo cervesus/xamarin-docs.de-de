@@ -1,5 +1,4 @@
 # [Buch über das Erstellen von mobilen Apps mit Xamarin.Forms](index.md)
-## [Kapitelzusammenfassungen](summaries/index.md)
 ## [1. Welche Funktion hat Xamarin.Forms?](summaries/chapter01.md)
 ## [2. Aufbau einer App](summaries/chapter02.md)
 ## [3. Details zu Text](summaries/chapter03.md)

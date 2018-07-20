@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: D4F9C429-A6CF-40FA-AC68-3F149307A5F9
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: f06d0b312422889072be634768611ea1cc25088d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: 464fbdb043ac35eba7a4cc2d9ec76b78cc91ac5b
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997171"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156511"
 ---
 # <a name="summary-of-chapter-6-button-clicks"></a>Zusammenfassung der Kapitel 6. Schaltflächenklicks
 
@@ -80,10 +80,12 @@ Ein Aufruf von `OnStart` während des Programmstarts auftritt. Es ist nicht erfo
 
 Die [ **PersistentKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/PersistentKeypad) Beispiel ähnelt **SimplestKeypad** mit dem Unterschied, dass das Programm verwendet die `OnSleep` außer Kraft setzen, um den aktuellen Zehnertastatur-Eintrag zu speichern und der Page-Konstruktor, um diese Daten wiederherzustellen.
 
-
+> [!NOTE]
+> Ein weiteres Verfahren zum Speichern von Einstellungen für das Programm wird bereitgestellt, durch die Xamarin.Essentials [Voreinstellungen](~/essentials/preferences.md) Klasse.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Kapitel 6 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf)
 - [Kapitel 6-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
 - [Kapitel 6 F#-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
+- [Schaltfläche "Xamarin.Forms"](~/xamarin-forms/user-interface/button.md)
