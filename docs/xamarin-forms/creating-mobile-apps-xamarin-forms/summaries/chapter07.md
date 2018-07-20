@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 02e4ea44d87360deed361d161759fa3a2808100f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: d04012d5d2ea6a7617d5c7559aa3e1532dad15d1
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995156"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156911"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>Zusammenfassung der Kapitel 7. XAML und code
+
+> [!NOTE] 
+> Anmerkungen zu dieser Version auf dieser Seite Geben Sie Bereiche, in denen Xamarin.Forms aus den Informationen im Buch abweichend hat, an.
 
 Xamarin.Forms unterstützt eine XML-basierte Markupsprache Namens der Extensible Application Markup Language oder XAML ("xsämmel"). XAML bietet eine Alternative zur C#-definieren Sie das Layout der Benutzeroberfläche einer Xamarin.Forms-Anwendung, und klicken Sie im Definieren der Bindungen zwischen Elementen der Benutzeroberfläche und dem zugrunde liegenden Daten.
 
@@ -35,6 +38,9 @@ Manchmal muss eine Eigenschaft auf ein Objekt festgelegt werden, die als einfach
 ## <a name="adding-a-xaml-page-to-your-project"></a>Hinzufügen einer XAML-Seite zu Ihrem Projekt
 
 Eine Xamarin.Forms Portable Class Library kann eine XAML-Seite enthalten, bei seiner ersten Erstellung, oder Sie können eine XAML-Seite zu einem vorhandenen Projekt hinzufügen. Wählen Sie im Dialogfeld zum Hinzufügen eines neuen Elements das Element, das auf einer XAML-Seite verweist oder `ContentPage` und XAML. (Keinen `ContentView`.)
+
+> [!NOTE] 
+> Visual Studio-Optionen wurden geändert, da in diesem Kapitel geschrieben wurde.
 
 Es werden zwei Dateien erstellt: eine XAML-Datei mit dem Dateinamen Erweiterung .xaml und einer C#-Datei mit der Erweiterung. "XAML.cs" ausgedrückt. Die C#-Datei wird häufig als bezeichnet die *CodeBehind* der XAML-Datei. Die Code-Behind-Datei ist eine partielle Klassendefinition, die von abgeleitet `ContentPage`. Zur Buildzeit das XAML analysiert wird, und einer anderen partiellen Klassendefinition für die gleiche Klasse generiert. Die generierte Klasse enthält eine Methode namens `InitializeComponent` , die aus dem Konstruktor der CodeBehind-Datei aufgerufen wird.
 
@@ -72,10 +78,9 @@ Die [ **TextVariations** ](https://github.com/xamarin/xamarin-forms-book-samples
 
  [![Dreifacher Screenshot des Text-Varianten, die gemeinsame Nutzung](images/ch07fg03-small.png "formatierten Text Variationen")](images/ch07fg03-large.png#lightbox "Variationen für formatierten Text")
 
-
-
 ## <a name="related-links"></a>Verwandte Links
 
 - [Kapitel 7 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf)
 - [Kapitel 7-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
 - [Kapitel 7 F#-Beispiel](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
+- [XAML-Grundlagen](~/xamarin-forms/xaml/xaml-basics/index.md)

@@ -6,26 +6,32 @@ ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: b27df7f63ac83206c50858175dc2945937142f78
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: d863ce1c6195ddaef164c3a15817a4ff87a3c332
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995468"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156625"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>Zusammenfassung der Kapitel 13. Bitmaps
+
+> [!NOTE] 
+> Anmerkungen zu dieser Version auf dieser Seite Geben Sie Bereiche, in denen Xamarin.Forms aus den Informationen im Buch abweichend hat, an.
 
 Die Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) Element wird in eine Bitmap. Alle Xamarin.Forms-Plattformen unterstützen die JPEG, PNG, GIF und BMP-Dateiformate.
 
 Bitmaps in Xamarin.Forms stammen aus vier Stellen:
 
 - Über das Internet durch eine URL angegeben.
-- Als eine Ressource in der gemeinsamen portablen Klassenbibliothek
+- Als Ressource in der freigegebenen Bibliothek eingebettet
 - Als Ressource eingebettet ist, in die Plattform-Anwendungsprojekten
 - Von jedem beliebigen Standort, die von einer .NET verwiesen werden kann `Stream` Objekts, einschließlich `MemoryStream`
 
-Bitmapressourcen in der PCL sind plattformunabhängig, an, während Bitmapressourcen in die Plattformprojekte plattformspezifisch sind.
+Bitmapressourcen in der freigegebenen Bibliothek sind plattformunabhängig, während Bitmapressourcen in die Plattformprojekte plattformspezifisch sind.
+
+> [!NOTE] 
+> Der Text des Buchs stellt Verweise auf Portable Class Libraries, die von .NET Standard-Bibliotheken ersetzt wurden. Der Beispielcode aus dem Buch wurde zur Verwendung von .NET standard-Bibliotheken konvertiert.
 
 Die Bitmap wird angegeben, indem die [ `Source` ](xref:Xamarin.Forms.Image.Source) Eigenschaft `Image` auf ein Objekt des Typs [ `ImageSource` ](xref:Xamarin.Forms.ImageSource), eine abstrakte Klasse mit drei ableitungen:
 
@@ -63,7 +69,7 @@ Sie können eine Bitmap-Datei in eine PCL oder in einen Ordner in der PCL hinzuf
 Im Programm wird die `VerticalOptions` und `HorizontalOptions` Eigenschaften der `Image` zu `LayoutOptions.Center`, wodurch die `Image` uneingeschränkt Element. Die `Image` und die Bitmap haben die gleiche Größe:
 
 - Unter iOS und Android die `Image` ist die Größe in Pixel der Bitmap. Es gibt eine 1: 1-Zuordnung zwischen Bitmap und Bildschirmpixel.
-- Klicken Sie auf der Windows-Runtime-Plattformen die `Image` ist die Größe in Pixel der Bitmap in geräteunabhängigen Einheiten. Auf den meisten Geräten nimmt jedes Pixel der Bitmap mehrere Bildschirmpixel.
+- Für universelle Windows-Plattform die `Image` ist die Größe in Pixel der Bitmap in geräteunabhängigen Einheiten. Auf den meisten Geräten nimmt jedes Pixel der Bitmap mehrere Bildschirmpixel.
 
 Die [ **StackedBitmap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/StackedBitmap) Beispiel setzt eine `Image` in einer vertikalen `StackLayout` in XAML. Eine Markuperweiterung, die mit dem Namen [ `ImageResourceExtension` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter13/StackedBitmap/StackedBitmap/StackedBitmap/ImageResourceExtension.cs) können auf die eingebettete Ressource in XAML verweisen. Diese Klasse lädt nur die Ressourcen aus der Assembly, in dem sie die befindet, damit es in einer Bibliothek platziert werden kann.
 
@@ -82,7 +88,10 @@ Die [ **MadTeaParty** ](https://github.com/xamarin/xamarin-forms-book-samples/tr
 
 ### <a name="browsing-and-waiting"></a>Durchsuchen, und warten
 
-Die [ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser) Beispiel ermöglicht dem Benutzer, durchsuchen die vorhandene Images, die auf der Xamarin-Website gespeichert. Er verwendet den .NET `WebRequest` Klasse, um eine JSON-Datei mit der Liste von Bitmaps zu laden.
+Die [ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser) Beispiel ermöglicht dem Benutzer, durchsuchen die vorhandene Images, die auf der Xamarin-Website gespeichert. Er verwendet den .NET [ `WebRequest` ](xref:System.Net.WebRequest) Klasse, um eine JSON-Datei mit der Liste von Bitmaps zu laden.
+
+> [!NOTE]
+> Xamarin.Forms-Programme verwenden sollten [ `HttpClient` ](xref:System.Net.Http.HttpClient) statt [ `WebRequest` ](xref:System.Net.WebRequest) für den Zugriff auf Dateien über das Internet. 
 
 Das Programm verwendet eine [ `ActivityIndicator` ](xref:Xamarin.Forms.ActivityIndicator) um anzugeben, dass etwas passiert. Wie jede Bitmap lädt, die nur-Lese- [ `IsLoading` ](xref:Xamarin.Forms.Image.IsLoading) Eigenschaft `Image` ist `true`. Die `IsLoading` Eigenschaft wird durch eine bindbare Eigenschaft und gesichert, sodass eine `PropertyChanged` Ereignis wird ausgelöst, wenn diese Eigenschaft geändert wird. Die Anwendung fügt einen Handler an dieses Ereignis und verwendet die aktuelle Einstellung der `IsLoaded` Festlegen der [ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/) Eigenschaft der `ActivityIndicator`.
 
@@ -154,7 +163,7 @@ Für eine Bitmap mit einer quadratischen Zoll gerendert werden sollen die versch
 
 Die Bitmap wird immer auf 160 geräteunabhängige Einheiten gerendert. (Die Standardvorlage der Xamarin.Forms-Projektmappe enthält nur die Hdpi Xhdpi und Xxhdpi-Ordner.)
 
-Die Windows-Runtime-Projekte unterstützen eine Bitmap Benennungsschema, das ein Skalierungsfaktor in Pixel pro geräteunabhängige Einheit als Prozentwert, z. B. besteht:
+Das UWP-Projekt unterstützt ein Bitmap-Benennungsschema, das ein Skalierungsfaktor in Pixel pro geräteunabhängige Einheit als Prozentwert, z. B. besteht:
 
 - MyImage.scale-200.jpg am 320 Pixel im Quadrat
 
@@ -164,7 +173,7 @@ Beim Hinzufügen von Bitmaps für die Plattformprojekte, die **Buildvorgang** mu
 
 - iOS: **BundleResource**
 - Android: **AndroidResource**
-- Windows-Runtime: **Inhalt**
+- UWP: **Inhalt**
 
 Die [ **ImageTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap) Beispiel erstellt zwei schaltflächenähnliche-Objekten, die aus der `Image` Elemente mit einem `TapGestureRecognizer` installiert. Es richtet sich an, dass die Objekte einer-Zoll-quadratisch sein. Die `Source` Eigenschaft `Image` wird festgelegt, `OnPlatform` und `On` Objekte auf potenziell unterschiedliche Dateinamen auf den Plattformen zu verweisen. Die Bitmap-Images enthalten die Nummer ihrer Pixelgröße gibt, damit Sie sehen, welche Größe Bitmap abgerufen und gerendert wird.
 
@@ -188,10 +197,12 @@ IOS und Android erfordert, dass eine Seite, eine Symbolleiste angezeigt, werden.
 
 Sie können auch plattformspezifische Bitmaps Festlegen der [ `Image` ](xref:Xamarin.Forms.Button.Image) Eigenschaft `Button` in eine Bitmap des Quadrats 32 geräteunabhängige Einheiten, wie die [ **ButtonImage** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage) Beispiel.
 
-
+> [!NOTE]
+> Die Verwendung von Bildern auf Schaltflächen wurde verbessert. Finden Sie unter [mithilfe von Bitmaps mit Schaltflächen](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons).
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Kapitel 13 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf)
 - [Kapitel 13-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
 - [Working with Images (Arbeiten mit Bildern)](~/xamarin-forms/user-interface/images.md)
+- [Mithilfe von Bitmaps mit Schaltflächen](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons)

@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 36d208f2326c7584bc03c351b4a5b05a3f3928c9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: c82e222fd47f3a3f13043c076c488b4769659352
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995452"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156495"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>Zusammenfassung der Kapitel 5. Umgang mit Größen
+
+> [!NOTE] 
+> Anmerkungen zu dieser Version auf dieser Seite Geben Sie Bereiche, in denen Xamarin.Forms aus den Informationen im Buch abweichend hat, an.
 
 Mehrere Größen in Xamarin.Forms haben bisher gefunden wurde:
 
@@ -36,7 +39,10 @@ Programmierer, die für Apple iPhone und iPad-Geräte funktioniert weiterhin in 
 
 Android ist ähnlich. Programmierer, die in der Einheit arbeiten *Dichte unabhängigen Pixeln* (Dps), und die Beziehung zwischen den Dps und Pixel basieren auf 160 DP pro Zoll.
 
-Die Windows-Runtime hat auch Skalierungsfaktoren eingerichtet, die sehr nahe kommen 160 geräteunabhängige Einheiten pro Zoll implizieren.
+Windows-Telefone und-Mobilgeräte haben auch die Skalierungsfaktoren eingerichtet, die sehr nahe kommen 160 geräteunabhängige Einheiten pro Zoll implizieren.
+
+> [!NOTE]
+> Xamarin.Forms werden Windows-basierten Telefon- oder mobile Geräte nicht mehr unterstützt.
 
 Zusammengefasst kann ein Xamarin.Forms-Programmierer, die für Smartphones und Tablets davon ausgehen, dass alle Maßeinheiten in der folgenden Kriterien basieren:
 

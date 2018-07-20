@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: c4ad067778203759a54ed8141db0b82602e40f6c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: 083cb4ed57df989a55a26394cbf8440d53a9e769
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997451"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156660"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>Zusammenfassung der Kapitel 16. Datenbindung
+
+> [!NOTE] 
+> Anmerkungen zu dieser Version auf dieser Seite Geben Sie Bereiche, in denen Xamarin.Forms aus den Informationen im Buch abweichend hat, an.
 
 Programmierer oft sind das Schreiben von Ereignishandlern, die erkennen, wenn eine Eigenschaft eines Objekts geändert wurde, und verwenden, um den Wert einer Eigenschaft in ein anderes Objekt ändern. Dieser Prozess kann automatisiert werden, mit der Technik der *Datenbindung*. Datenbindungen werden in der Regel in XAML definiert und sind Teil der Definition der Benutzeroberfläche.
 
@@ -85,6 +88,9 @@ Legen Sie die [ `Mode` ](xref:Xamarin.Forms.BindingBase.Mode) Eigenschaft `Bindi
 - [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) Damit Änderungen an den Quell- und Zielservern jeweils anderen auswirken
 - [`Default`](xref:Xamarin.Forms.BindingMode.Default) Verwenden der [ `DefaultBindingMode` ](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode) angegeben, wenn das Ziel `BindableProperty` erstellt wurde. Falls keine angegeben wurde, wird der Standardwert ist `OneWay` für normale bindbare Eigenschaften und `OneWayToSource` für nur-Lese bindbare Eigenschaften.
 
+> [!NOTE]
+> Die `BindingMode` jetzt Enumeration enthält auch `OnTime` für die Anwendung einer Bindung aus, und nur bei Änderung der Bindungskontext nicht, wenn die Quelleigenschaft ändert.
+
 Eigenschaften, die wahrscheinlich die Ziele von datenbindungen in MVVM-Szenarien in der Regel sind verfügen über eine `DefaultBindingMode` von `TwoWay`. Diese lauten wie folgt:
 
 - `Value` Eigenschaft des `Slider` und `Stepper`
@@ -137,3 +143,4 @@ Die [ **NewCheckBoxDemo** ](https://github.com/xamarin/xamarin-forms-book-sample
 
 - [Kapitel 16 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf)
 - [Kapitel 16-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
+- [Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)

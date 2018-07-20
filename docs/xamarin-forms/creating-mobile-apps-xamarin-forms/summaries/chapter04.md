@@ -6,19 +6,22 @@ ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 3571774ddec4182f35cac6f13d4582235e2ff31a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: 49f2d96fb7f95ab880d5cfafa420afbbe933c1ad
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997425"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156716"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Zusammenfassung der Kapitel 4. Scrollen im Stapel
 
 In diesem Kapitel in erster Linie verwendet wird, in der Einführung des Konzepts der *Layout*, dies ist der allgemeine Begriff für die Klassen und Methoden, die Xamarin.Forms verwendet, um die visuelle Darstellung von mehreren Ansichten auf der Seite zu organisieren.
 
 Layout umfasst mehrere abgeleitete Klassen [ `Layout` ](xref:Xamarin.Forms.Layout) und [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1). In diesem Kapitel konzentriert sich auf [ `StackLayout` ](xref:Xamarin.Forms.StackLayout).
+
+> [!NOTE]
+> Die [ `FlexLayout` ](~/xamarin-forms/user-interface/layouts/flex-layout.md) eingeführt, die Xamarin.Forms 3.0 kann verwendet werden, es gibt Möglichkeiten, die ähnlich sind `StackLayout` jedoch flexibler.
 
 Außerdem eine Einführung in diesem Kapitel werden die [ `ScrollView` ](xref:Xamarin.Forms.ScrollView), [ `Frame` ](xref:Xamarin.Forms.Frame), und [ `BoxView` ](xref:Xamarin.Forms.BoxView) Klassen.
 
@@ -104,7 +107,7 @@ Einfügen einer `StackLayout` in eine `ScrollView` ist häufig, aber eben eine `
 
 Der Trick besteht darin, geben Sie die `ScrollView` untergeordnetes Element des der `StackLayout` eine `VerticalOptions` -Einstellung `FillAndExpand`. Dies wird veranschaulicht, der [ **BlackCat** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat) Beispiel.
 
-Die **BlackCat** Beispiel zeigt auch zum Definieren und die Anwendung zugreifen, die in der portablen Klassenbibliothek (PCL) eingebettet sind. Dies kann auch mit freigegebenen Asset-Projekten (SAPs) erreicht werden, aber der Prozess ist ein wenig komplizierter, als die [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) veranschaulicht.
+Die **BlackCat** Beispiel zeigt auch zum Definieren und die Anwendung zugreifen, die in der freigegebenen Bibliothek eingebettet sind. Dies kann auch mit freigegebenen Asset-Projekten (SAPs) erreicht werden, aber der Prozess ist ein wenig komplizierter, als die [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) veranschaulicht.
 
 
 
@@ -115,3 +118,4 @@ Die **BlackCat** Beispiel zeigt auch zum Definieren und die Anwendung zugreifen,
 - [Kapitel 4 F#-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
 - [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)
 - [ScrollView](~/xamarin-forms/user-interface/layouts/scroll-view.md)
+- [BoxView](~/xamarin-forms/user-interface/boxview.md)
