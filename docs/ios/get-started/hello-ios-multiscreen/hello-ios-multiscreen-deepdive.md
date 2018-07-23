@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: cdeea6d78ec1262a0b5b613b4f483012c9df2c19
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: eaf77dd68895a3fbf677e1d0aa68125d81d709c1
+ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785657"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39111224"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Ausführliche Erläuterungen: Hallo, iOS Multiscreen
 
@@ -24,7 +24,7 @@ Außerdem wird der Navigationscontroller ausführlich beschrieben und seine Verw
 
 <a name="Model_View_Controller" />
 
-## <a name="model-view-controller-mvc"></a>Model View Controller (MVC)
+## <a name="model-view-controller-mvc"></a>Model View Controller-Muster (MVC)
 
 Im [Hallo, iOS](~/ios/get-started/hello-ios/index.md)-Tutorial wurde erklärt, dass iOS-Anwendungen nur ein *Fenster* besitzen und dass Ansichtscontroller dafür zuständig sind, ihre *Hierarchien der Inhaltsansicht* in dieses Fenster zu laden. In der zweiten exemplarischen Vorgehensweise zu Phoneword wurde der Anwendung ein zweiter Bildschirm hinzugefügt und Daten (eine Liste mit Telefonnummern) zwischen den beiden Bildschirmen übergeben. Dies wird im folgenden Diagramm veranschaulicht:
 
@@ -43,7 +43,6 @@ Das MVC-Muster ist hilfreich, da es die verschiedenen Teile einer GUI-Anwendung 
 > [!NOTE]
 > Das MVC-Muster entspricht in etwa der Struktur von ASP.NET-Seiten oder WPF-Anwendungen. In diesen Beispielen stellt die Ansicht die für die Beschreibung der Benutzeroberfläche zuständige Komponente dar, die der ASPX-Seite (HTML) in ASP.NET oder der XAML-Seite in einer WPF-Anwendung entspricht. Der Controller ist die für die Verwaltung der Ansicht zuständige Komponente, die dem CodeBehind in ASP.NET oder WPF entspricht.
 
-
 ### <a name="model"></a>Modell
 
 Das Modellobjekt ist in der Regel eine anwendungsspezifische Darstellung von Daten, das in der Ansicht angezeigt oder eingegeben werden soll. Das Modell wird oft nur vage definiert. In der **Phoneword_iOS**-App ist das Modell beispielsweise die Liste mit Telefonnummern (dargestellt als Liste von Zeichenfolgen). Bei einer plattformübergreifenden Anwendung kann die Freigabe des **PhonewordTranslator**-Code für die iOS- und Android-Anwendungen ausgewählt werden. Auch dieser freigegebene Code kann das Modell darstellen.
@@ -54,7 +53,6 @@ In einigen Fällen kann die Modellkomponente von MVC auch leer sein. Sie können
 
 > [!NOTE]
 > In manchen Dokumentationen bezieht sich die Modellkomponente des MVC-Musters auf das gesamte Back-End der Anwendung und nicht nur auf die auf der Benutzeroberfläche angezeigten Daten. In diesem Leitfaden wird allerdings eine moderne Interpretation des Ausdrucks Modell verwendet. Die Unterscheidung ist jedoch nicht von großer Bedeutung.
-
 
 ### <a name="view"></a>Ansicht
 
@@ -68,7 +66,7 @@ Controller können auch andere Controller verwalten. Ein Controller kann beispie
 
 ## <a name="navigation-controller"></a>Navigationscontroller
 
-In der Phoneword-Anwendung wurde ein *Navigationscontroller* zur Verwaltung der Navigation zwischen mehreren Bildschirmen verwendet. Er ist ein spezialisierter `UIViewController`, der durch die `UINavigationController`-Klasse dargestellt wird. Der Navigationscontroller verwaltet nicht eine einzelne Hierarchie der Inhaltsansicht, sondern andere Ansichtscontroller sowie seine eigene spezielle Hierarchie der Inhaltsansicht in Form einer Navigationssymbolleiste. Diese enthält einen Titel, eine Zurück-Schaltfläche und weitere optionale Funktionen.
+In der Phoneword-Anwendung wurde ein Navigationscontroller zur Verwaltung der Navigation zwischen mehreren Bildschirmen verwendet. Er ist ein spezialisierter `UIViewController`, der durch die `UINavigationController`-Klasse dargestellt wird. Der Navigationscontroller verwaltet nicht eine einzelne Hierarchie der Inhaltsansicht, sondern andere Ansichtscontroller sowie seine eigene spezielle Hierarchie der Inhaltsansicht in Form einer Navigationssymbolleiste. Diese enthält einen Titel, eine Zurück-Schaltfläche und weitere optionale Funktionen.
 
 Der Navigationscontroller wird häufig in iOS-Anwendungen verwendet und stellt die Navigation für wesentliche iOS-Anwendungen bereit, wie z.B. für die App **Einstellungen**. Dies wird im folgenden Screenshot veranschaulicht:
 
@@ -86,27 +84,24 @@ Der Navigationscontroller erfüllt drei Hauptaufgaben:
     [![](hello-ios-multiscreen-deepdive-images/03.png "Dieses Diagramm veranschaulicht das „Herunternehmen“ einer Karte vom Stapel")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 
--  **Bereitstellen einer Titelleiste**: Der obere Teil des **Navigationscontrollers** wird *Titelleiste* genannt. Sie ist, wie im folgenden Diagramm dargestellt, für das Anzeigen des Titels des Ansichtscontrollers zuständig:  
+-  **Bereitstellen einer Titelleiste:** Der obere Teil des Navigationscontrollers wird *Titelleiste* genannt. Sie ist, wie im folgenden Diagramm dargestellt, für das Anzeigen des Titels des Ansichtscontrollers zuständig:  
 
     [![](hello-ios-multiscreen-deepdive-images/04.png "Die Titelleiste ist für die Anzeige des Titels des Ansichtscontrollers zuständig")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
+### <a name="root-view-controller"></a>Stammansichtscontroller
 
-
-
-### <a name="root-view-controller"></a>Root View Controller
-
-Da ein **Navigationscontroller** keine Hierarchien der Inhaltsansicht verwaltet, kann er keine eigenen Inhalte anzeigen.
-Stattdessen ist ein **Navigationscontroller** einem *Root View Controller* zugeordnet:
+Da ein Navigationscontroller keine Hierarchien der Inhaltsansicht verwaltet, kann er keine eigenen Inhalte anzeigen.
+Stattdessen wird ein Navigationscontroller einem *Stammansichtscontroller* zugeordnet:
 
  [![](hello-ios-multiscreen-deepdive-images/05.png "Ein Navigationscontroller ist einem Stammansichtscontroller zugeordnet")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
 
-Der Root View Controller stellt den ersten Ansichtscontroller im Stapel des **Navigationscontrollers** dar. Die Hierarchie der Inhaltsansicht des Root View Controllers ist die erste Hierarchie der Inhaltsansicht, die im Fenster geladen wird. Wenn die vollständige Anwendung auf dem Stapel des Navigationscontrollers abgelegt werden soll, können Sie, wie schon zuvor in der Phoneword-Anwendung, den Sourceless Segue zum **Navigationscontroller** verschieben und den Ansichtscontroller des ersten Bildschirms als Root View Controller festlegen:
+Der Stammansichtscontroller stellt den ersten Ansichtscontroller im Stapel des Navigationscontrollers dar. Die Hierarchie der Inhaltsansicht des Stammansichtscontrollers ist die erste Hierarchie der Inhaltsansicht, die im Fenster geladen wird. Wenn die vollständige Anwendung auf dem Stapel des Navigationscontrollers abgelegt werden soll, können Sie, wie schon zuvor in der Phoneword-Anwendung, den Sourceless Segue zum Navigationscontroller verschieben und den Ansichtscontroller des ersten Bildschirms als Stammansichtscontroller festlegen:
 
  [![](hello-ios-multiscreen-deepdive-images/06.png "„Sourceless Segue“ legt die ersten Ansichtscontrolleranzeigen als Stammansichtscontroller fest")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
 
 ### <a name="additional-navigation-options"></a>Zusätzliche Navigationsoptionen
 
-Der **Navigationscontroller** wird häufig zur Navigation in iOS verwendet, doch er ist nicht die einzige Möglichkeit. Ein [Registerkartenleistencontroller](~/ios/user-interface/controls/creating-tabbed-applications.md) teilt eine Anwendung in unterschiedliche Funktionsbereiche ein. Ein [Controller für geteilte Ansicht](https://developer.xamarin.com/recipes/ios/content_controls/split_view/use_split_view_to_show_two_controllers) erstellt Master- und Detailansichten. Ein [Flyout-Navigationscontroller](http://components.xamarin.com/view/flyoutnavigation) erstellt eine Navigation, die das Wischen von der Seite ermöglicht. Diese Controller können mit einem **Navigationscontroller** kombiniert werden, um eine intuitive Möglichkeit der Darstellung von Inhalt zu erhalten.
+Der Navigationscontroller wird häufig zur Navigation in iOS verwendet, doch er ist nicht die einzige Möglichkeit. Ein [Registerkartenleistencontroller](~/ios/user-interface/controls/creating-tabbed-applications.md) kann z.B. eine Anwendung in verschiedene funktionale Bereiche aufteilen, und ein [Controller für geteilte Ansichten](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/split_view/use_split_view_to_show_two_controllers) kann zum Erstellen von Master-/Detailansichten verwendet werden. Wenn Sie Navigationscontroller mit diesen anderen Navigationsparadigmen kombinieren, können Sie Inhalt in iOS auf viele unterschiedliche Arten präsentieren und durch diesen navigieren.
 
 ## <a name="handling-transitions"></a>Behandeln von Übergängen
 
@@ -202,7 +197,6 @@ Die Phoneword-Anwendung enthält weitere Konzepte, die jedoch nicht in diesem Le
 -  **Tabellenansichtscontroller**: Der `CallHistoryController` ist ein Tabellenansichtscontroller. Ein Tabellenansichtscontroller enthält eine Tabellenansicht, das häufigste Tool zum Anzeigen von Layout und Daten in iOS. Tabellen sind jedoch nicht Teil dieses Leitfadens. Weitere Informationen zu Tabellenansichtscontrollern finden Sie im Leitfaden [Working with Tables and Cells](~/ios/user-interface/controls/tables/index.md) (Arbeiten mit Tabellen und Zellen).
 -   **Storyboard-ID**: Durch das Festlegen der Storyboard-ID wird eine Ansichtscontroller-Klasse in Objective-C erstellt, die den CodeBehind für den Ansichtscontroller im Storyboard enthält. Suchen Sie mit der Storyboard-ID die Objective-C-Klasse, und instanziieren Sie den Ansichtscontroller im Storyboard. Weitere Informationen zu Storyboard-IDs finden Sie im Leitfaden [Introduction to Storyboards](~/ios/user-interface/storyboards/index.md) (Einführung in Storyboards).
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 Herzlichen Glückwunsch, Sie haben die iOS-Multiscreen-Anwendung fertiggestellt!
@@ -210,7 +204,6 @@ Herzlichen Glückwunsch, Sie haben die iOS-Multiscreen-Anwendung fertiggestellt!
 In diesem Handbuch wird das MVC-Muster eingeführt und zum Erstellen einer Anwendung mit mehreren Bildschirmen verwendet. Außerdem werden Navigationscontroller und deren Rolle bei der iOS-Navigation behandelt. Mit diesem soliden Grundwissen können Sie jetzt mit der Entwicklung Ihrer eigenen Xamarin.iOS-Anwendungen beginnen.
 
 Erfahren Sie nun mehr über das Erstellen von plattformübergreifenden Anwendungen mit Xamarin in den Leitfäden [Introduction to Mobile Development](~/cross-platform/get-started/introduction-to-mobile-development.md) (Einführung in die Entwicklung mobiler Anwendungen) und [Building Cross-Platform Applications](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) (Erstellen von plattformübergreifenden Anwendungen).
-
 
 ## <a name="related-links"></a>Verwandte Links
 

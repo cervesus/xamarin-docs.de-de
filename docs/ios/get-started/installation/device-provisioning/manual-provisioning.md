@@ -7,18 +7,19 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: c0404a1fd8f7e878638b9483c65c637f6b4faa66
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: dd0afe03adbd021717a88cd4409e3e1351ba9b50
+ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786102"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39111185"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Manuelle Bereitstellung für Xamarin.iOS
 
 _Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieses Handbuch beschreibt die Verwendung der manuellen Bereitstellung zum Einrichten von Entwicklungszertifikaten und -profilen._
 
-<a name="signingidentity" />
+> [!NOTE]
+> Die Anweisungen auf dieser Seite gelten für Entwickler, die das kostenpflichtige Apple Developer Program nutzen. Wenn Sie ein kostenloses Konto nutzen, erhalten Sie im Leitfaden zum [kostenlosen Bereitstellen](~/ios/get-started/installation/device-provisioning/free-provisioning.md) weitere Informationen zum Testen auf Geräten.
 
 ## <a name="creating-a-signing-identity"></a>Erstellen einer Signierungsidentität
 
@@ -27,9 +28,9 @@ Der erste Schritt beim Einrichten eines Entwicklungsgeräts besteht darin, eine 
 - Ein Entwicklungszertifikat
 - Ein privater Schlüssel
 
-Entwicklungszertifikate und die zugehörigen [Schlüssel](#keypairs) sind für einen iOS-Entwickler von entscheidender Bedeutung: Sie stellen Ihre Identität bei Apple fest und verknüpfen Sie mit einem bestimmten Gerät und Profil für die Entwicklung, ähnlich der digitalen Signatur auf Ihren Anwendungen. Apple überprüft Zertifikate, um den Zugriff auf die Geräte zu steuern, die für die Bereitstellung zugelassen sind.
+Entwicklungszertifikate und die zugehörigen [Schlüssel](#understanding-certificate-key-pairs) sind für einen iOS-Entwickler von entscheidender Bedeutung: Sie stellen Ihre Identität bei Apple fest und verknüpfen Sie mit einem bestimmten Gerät und Profil für die Entwicklung, ähnlich der digitalen Signatur auf Ihren Anwendungen. Apple überprüft Zertifikate, um den Zugriff auf die Geräte zu steuern, die für die Bereitstellung zugelassen sind.
 
-Entwicklungsteams, Zertifikate und Profile können verwaltet werden, indem Sie auf den Abschnitt [Certificates, Identifiers & Profiles](https://developer.apple.com/account/overview.action) (Zertifikate, Bezeichner & Profile) im Apple Member Center zugreifen. Apple erfordert eine Signierungsidentität, damit Sie Ihren Code für das Gerät oder den Simulator erstellen können.  
+Entwicklungsteams, Zertifikate und Profile können über den Abschnitt [Certificates, Identifiers & Profiles](https://developer.apple.com/account/overview.action) (Zertifikate, Bezeichner & Profile) im Apple Member Center verwaltet werden (Anmeldung erforderlich). Apple erfordert eine Signierungsidentität, damit Sie Ihren Code für das Gerät oder den Simulator erstellen können.  
 
 > [!IMPORTANT]
 > Beachten Sie, dass Sie jeweils nur über zwei iOS-Entwicklungszertifikate gleichzeitig verfügen können. Wenn Sie weitere erstellen möchten, müssen Sie ein vorhandenes widerrufen. Alle Computer, die ein gesperrtes Zertifikat verwenden, können ihre App nicht signieren.
@@ -70,8 +71,6 @@ Führen Sie folgende Schritte aus, um eine Signieridentität zu generieren:
 
     [![](manual-provisioning-images/keychain.png "Das Zertifikat in „Keychain-Zugriff“")](manual-provisioning-images/keychain.png#lightbox)
 
-<a name="keypairs" />
-
 ### <a name="understanding-certificate-key-pairs"></a>Grundlegendes zu Zertifikatschlüsselpaaren
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
@@ -95,7 +94,7 @@ Nachdem Sie Ihre Identität mit Apple hergestellt haben und ein Entwicklungszert
 
 <a name="adddevice" />
 
-## <a name="add-a-device"></a>Gerät hinzufügen
+## <a name="add-a-device"></a>Hinzufügen eines Geräts
 
 Wenn Sie ein Bereitstellungsprofil für die Entwicklung erstellen, müssen wir angeben, welche Geräte die Anwendung ausführen können. Um dies zu ermöglichen, können bis zu 100 Geräte pro Kalenderjahr zu unserem Developer Portal hinzugefügt werden, und von hier aus können wir die Geräte auswählen, die zu einem bestimmten Bereitstellungsprofil hinzugefügt werden. Führen Sie die nachfolgenden Schritte zum Hinzufügen eines Geräts zum Developer Portal auf Ihrem Mac aus:
 
@@ -135,7 +134,6 @@ Wenn Sie ein Bereitstellungsprofil für die Entwicklung erstellen, müssen wir a
 Wiederholen Sie die oben genannten Schritte für jedes iOS-Gerät, das zum Testen oder Debuggen einer Xamarin.iOS-Anwendung verwendet wird.
 
 Nach dem Hinzufügen des Geräts zum Entwicklerportal, ist es erforderlich, ein Bereitstellungsprofil zu erstellen, und das Gerät hinzuzufügen.
-
 
 <a name="provisioningprofile" />
 
@@ -228,8 +226,6 @@ Apple stellt eine Auswahl an speziellen Anwendungsdiensten, auch Funktionen gena
 * Erstellen Sie ein neues [Bereitstellungsprofil](#provisioningprofile), das diese App-ID enthält.
 * Legen Sie Berechtigungen im Xamarin.iOS-Projekt fest
 
-<a name="deploy" />
-
 ## <a name="deploying-to-a-device"></a>Bereitstellen auf einem Gerät
 
 An dieser Stelle sollte die Bereitstellung abgeschlossen sein, und die App kann nun auf dem Gerät bereitgestellt werden. Führen Sie dazu folgende Schritte aus:
@@ -276,7 +272,6 @@ Wenn die Einstellung auf **Automatisch** festgelegt ist, wählt Visual Studio f�
 ## <a name="summary"></a>Zusammenfassung
 
 Dieses Handbuch behandelt die erforderlichen Schritte zum Einrichten der Entwicklungsumgebung für Xamarin.iOS. Es wurde untersucht, wie eine Anwendung mit Informationen zum Entwickler, dem Team, den Geräten, auf denen eine App ausgeführt werden kann, und der individuellen App-ID codesigniert ist.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

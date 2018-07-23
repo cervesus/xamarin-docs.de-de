@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 241f38cbfe013776b2e36b8102ae4b90cf610d80
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 1d13a3dae509fea4a2e955c4ad206a81a57e75ed
+ms.sourcegitcommit: 6433b424410a850f504e0f934bbb5baf8f093e49
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935281"
+ms.lasthandoff: 07/16/2018
+ms.locfileid: "39067333"
 ---
 # <a name="android-emulator-troubleshooting"></a>Android-Emulator-Problembehandlung
 
@@ -87,7 +87,7 @@ Wenn Sie es vorziehen, keine Leistungswarnungen zu erhalten, können Sie diese d
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-Ab Release 7.2 (Build 559) von Visual Studio für Mac wird möglicherweise ein Dialogfeld mit einer Leistungswarnung angezeigt, wenn Sie Ihre App zum ersten Mal im Android-Emulator bereitstellen. Diese Warnungsdialogfelder werden unten erklärt.
+Ab Visual Studio für Mac Version 7.2 (Build 559) wird möglicherweise ein Dialogfeld mit einer Leistungswarnung angezeigt, wenn Sie Ihre App zum ersten Mal im Android-Emulator bereitstellen. Diese Warnungsdialogfelder werden unten erklärt.
 
 ### <a name="haxm-is-not-installed"></a>HAXM is Not Installed (HAXM ist nicht installiert).
 
