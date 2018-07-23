@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 68a38fc43cd744e0382f35baa83643a9f0f7e53d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: ab810a2fdfc659e2f5f24d2646c044e9c8638258
+ms.sourcegitcommit: 3697c2aa4208fe2ac954a8c0297394d3bcb53ede
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998985"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39175189"
 ---
-# <a name="ios-platform-specifics"></a>iOS Plattformeigenschaften
+# <a name="ios-platform-specifics"></a>iOS Plattformeigenschaften 
 
 _Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel veranschaulicht, wie die Plattformeigenschaften iOS nutzen, die in Xamarin.Forms integriert sind._
 
@@ -620,7 +620,7 @@ Das Ergebnis ist, die ein Schlagschatten aktiviert werden kann, auf eine [ `Visu
 
 Wenn eine [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) angefügt ist, auf eine Ansicht innerhalb einer Bildlaufansicht, alle der Pfanne Gesten erfasst werden, die `PanGestureRecognizer` und werden nicht an, dass der Bildlauf anzeigen. Aus diesem Grund wird ein Bildlauf Ansicht nicht mehr ausgeführt.
 
-Diese plattformspezifischen ermöglicht eine `PanGestureRecognizer` in einer fortlaufenden zu erfassen und freigeben die Bewegung Schwenken mit der Bildlauf angezeigt. Es ist in XAML verwendet, durch Festlegen der [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.pangesturerecognizershouldrecognizesimultaneouslyproperty?view=xamarin-forms) angefügte Eigenschaft zu `true`:
+Diese plattformspezifischen ermöglicht eine `PanGestureRecognizer` in einer fortlaufenden zu erfassen und freigeben die Bewegung Schwenken mit der Bildlauf angezeigt. Es ist in XAML verwendet, durch Festlegen der [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.PanGestureRecognizerShouldRecognizeSimultaneouslyProperty) angefügte Eigenschaft zu `true`:
 
 ```xaml
 <Application ...
@@ -640,7 +640,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 Xamarin.Forms.Application.Current.On<iOS>().SetPanGestureRecognizerShouldRecognizeSimultaneously(true);
 ```
 
-Die `Application.On<iOS>` Methode gibt an, dass diese plattformspezifischen nur unter iOS ausgeführt wird. Die [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.setpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) Methode in der [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace wird verwendet, um Kontrolle, ob eine stiftbewegungs-Erkennung Schwenken in einer fortlaufenden wird erfassen die Pan-Geste oder erfassen und freigeben die Pfanne die Geste mit der Bildlauf angezeigt. Darüber hinaus die [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.getpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) Methode kann verwendet werden, um zurück, ob die Geste Schwenken mit der Bildlauf Ansicht gemeinsam verwendet wird, die enthält die [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer).
+Die `Application.On<iOS>` Methode gibt an, dass diese plattformspezifischen nur unter iOS ausgeführt wird. Die [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.SetPanGestureRecognizerShouldRecognizeSimultaneously(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Application},System.Boolean)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace wird verwendet, um Kontrolle, ob eine stiftbewegungs-Erkennung Schwenken in einer fortlaufenden wird erfassen die Pan-Geste oder erfassen und freigeben die Pfanne die Geste mit der Bildlauf angezeigt. Darüber hinaus die [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.GetPanGestureRecognizerShouldRecognizeSimultaneously(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Application})) Methode kann verwendet werden, um zurück, ob die Geste Schwenken mit der Bildlauf Ansicht gemeinsam verwendet wird, die enthält die [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer).
 
 Aus diesem Grund mit diesem plattformspezifische aktiviert, wenn eine [ `ListView` ](xref:Xamarin.Forms.ListView) enthält eine [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)sowohl die `ListView` und die `PanGestureRecognizer` erhalten Sie die Pan-Bewegung und Verarbeiten Sie sie. Allerdings mit dieser plattformspezifischen deaktiviert, wenn eine `ListView` enthält eine `PanGestureRecognizer`, die `PanGestureRecognizer` Schwenken Bewegung zu erfassen und verarbeiten, wird und die `ListView` Schwenken Bewegung erhalten keine.
 
