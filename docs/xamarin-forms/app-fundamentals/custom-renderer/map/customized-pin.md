@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 4fee67f08e86c40709aa226c40c0f7721dc26800
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 351119a8b0089f78d4ce98729a1516c3cd7bae7b
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998303"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203084"
 ---
 # <a name="customizing-a-map-pin"></a>Anpassen einer Kartennadel
 
@@ -240,7 +240,7 @@ Die `GetViewForAnnotation` Methode wird aufgerufen, wenn die Position der Anmerk
 Die `GetViewForAnnotation` -Methode akzeptiert eine `IMKAnnotation` , die der Anmerkung Daten enthält, und gibt eine `MKAnnotationView` für die Anzeige auf der Karte, und wird im folgenden Codebeispiel wird angezeigt:
 
 ```csharp
-MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
+protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
 {
     MKAnnotationView annotationView = null;
 
@@ -273,12 +273,12 @@ Diese Methode wird sichergestellt, dass die Anmerkung wird als benutzerdefiniert
 1. Die `GetCustomPin` aufgerufen, um die benutzerdefinierte Pin-Daten für die Anmerkung zurück.
 1. Um Arbeitsspeicher zu sparen, wird der Anmerkung Ansicht für die Wiederverwendung durch den Aufruf von zusammengefasst [ `DequeueReusableAnnotation` ](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/).
 1. Die `CustomMKAnnotationView` -Klasse erweitert die `MKAnnotationView` Klasse mit `Id` und `Url` Eigenschaften, die identische Eigenschaften entsprechen, den `CustomPin` Instanz. Eine neue Instanz der dem `CustomMKAnnotationView` wird erstellt, vorausgesetzt, dass die Anmerkung ist `null`:
-  - Die `CustomMKAnnotationView.Image` -Eigenschaftensatz auf das Bild, das die Anmerkung in der Zuordnung dargestellt wird.
-  - Die `CustomMKAnnotationView.CalloutOffset` -Eigenschaftensatz auf eine `CGPoint` , der angibt, dass die Legende oberhalb der Anmerkung zentriert werden soll.
-  - Die `CustomMKAnnotationView.LeftCalloutAccessoryView` -Eigenschaftensatz auf ein Abbild von einem Monkey-Objekt, das auf der linken Seite der Anmerkungstitel und Adresse angezeigt wird.
-  - Die `CustomMKAnnotationView.RightCalloutAccessoryView` -Eigenschaftensatz auf eine *Informationen* Schaltfläche, die rechts neben den Anmerkungstitel und die Adresse angezeigt werden.
-  - Die `CustomMKAnnotationView.Id` -Eigenschaftensatz auf die `CustomPin.Id` von zurückgegebene Eigenschaft der `GetCustomPin` Methode. Dies ermöglicht die Anmerkung identifiziert werden, sodass sie [Legende kann angepasst werden, weitere](#Selecting_the_Annotation), falls gewünscht.
-  - Die `CustomMKAnnotationView.Url` -Eigenschaftensatz auf die `CustomPin.Url` von zurückgegebene Eigenschaft der `GetCustomPin` Methode. Der URL wird, navigiert werden, wenn der Benutzer [tippt auf die Schaltfläche wird angezeigt, in der richtigen Legende Zubehör Ansicht](#Tapping_on_the_Right_Callout_Accessory_View).
+    - Die `CustomMKAnnotationView.Image` -Eigenschaftensatz auf das Bild, das die Anmerkung in der Zuordnung dargestellt wird.
+    - Die `CustomMKAnnotationView.CalloutOffset` -Eigenschaftensatz auf eine `CGPoint` , der angibt, dass die Legende oberhalb der Anmerkung zentriert werden soll.
+    - Die `CustomMKAnnotationView.LeftCalloutAccessoryView` -Eigenschaftensatz auf ein Abbild von einem Monkey-Objekt, das auf der linken Seite der Anmerkungstitel und Adresse angezeigt wird.
+    - Die `CustomMKAnnotationView.RightCalloutAccessoryView` -Eigenschaftensatz auf eine *Informationen* Schaltfläche, die rechts neben den Anmerkungstitel und die Adresse angezeigt werden.
+    - Die `CustomMKAnnotationView.Id` -Eigenschaftensatz auf die `CustomPin.Id` von zurückgegebene Eigenschaft der `GetCustomPin` Methode. Dies ermöglicht die Anmerkung identifiziert werden, sodass sie [Legende kann angepasst werden, weitere](#Selecting_the_Annotation), falls gewünscht.
+    - Die `CustomMKAnnotationView.Url` -Eigenschaftensatz auf die `CustomPin.Url` von zurückgegebene Eigenschaft der `GetCustomPin` Methode. Der URL wird, navigiert werden, wenn der Benutzer [tippt auf die Schaltfläche wird angezeigt, in der richtigen Legende Zubehör Ansicht](#Tapping_on_the_Right_Callout_Accessory_View).
 1. Die [ `MKAnnotationView.CanShowCallout` ](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/) -Eigenschaftensatz auf `true` , damit die Legende angezeigt wird, wenn die Anmerkung angetippt wird.
 1. Die Anmerkung wird auf der Karte für die Anzeige zurückgegeben.
 
