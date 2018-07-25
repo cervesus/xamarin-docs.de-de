@@ -113,6 +113,8 @@
 ## [Plattformfeatures](platform/index.md)
 ### [Android Beam](platform/android-beam.md)
 ### [Android-Manifest](platform/android-manifest.md)
+### [Dateizugriff mit Xamarin.Android](platform/files/index.md)
+#### [Externer Speicher](platform/files/external-storage.md)
 ### [Fingerabdruckauthentifizierung](platform/fingerprint-authentication/index.md)
 #### [Erste Schritte](platform/fingerprint-authentication/get-started.md)
 #### [Überprüfung auf Fingerabdrücke](platform/fingerprint-authentication/scanning.md)
