@@ -1,50 +1,50 @@
 ---
 title: Core-Grafiken in Xamarin.iOS
-description: Dieser Artikel beschreibt die Core-Grafiken iOS-Frameworks. Es wird gezeigt, wie mit Graphics Core um Geometry, Bilder und PDF-Dateien zu zeichnen.
+description: Dieser Artikel beschreibt die wichtigste Grafik-iOS-Frameworks. Es zeigt, wie auf die wichtigste Grafik, die zum Zeichnen von Geometry, Bilder und PDF-Dateien verwenden.
 ms.prod: xamarin
 ms.assetid: 4A30F480-0723-4B8A-9049-7CEB6211304A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7d7124c7d09ca4e36ce22d60f578ea4a75d4a05b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 82c54074db722824c56ae3ae86620c804b8d109e
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786755"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241948"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Core-Grafiken in Xamarin.iOS
 
-_Dieser Artikel beschreibt die Core-Grafiken iOS-Frameworks. Es wird gezeigt, wie mit Graphics Core um Geometry, Bilder und PDF-Dateien zu zeichnen._
+_Dieser Artikel beschreibt die wichtigste Grafik-iOS-Frameworks. Es zeigt, wie auf die wichtigste Grafik, die zum Zeichnen von Geometry, Bilder und PDF-Dateien verwenden._
 
-iOS umfasst die [ *Graphics Core* ](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html) Framework auf niedriger Ebene zeichnen unterstützen. Diese Frameworks sind, was die umfassenden grafische Funktionen innerhalb UIKit zu aktivieren. 
+iOS enthält die [ *Core Graphics* ](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html) Framework auf niedriger Ebene zeichnen zu unterstützen. Diese Frameworks eignen, was die umfassenden grafische Funktionen in UIKit aktivieren. 
 
-Core-Grafiken ist ein auf niedriger Ebene 2D Graphics-Framework, mit der Zeichnung geräteunabhängige Grafiken. Alle 2D Zeichnen in UIKit verwendet intern Core Grafiken.
+Wichtigste Grafik ist ein auf niedriger Ebene 2D-Grafiken-Framework, mit der Zeichnung geräteunabhängige Grafiken. Alle Zeichnungen in UIKit 2D Core Graphics wird intern verwendet.
 
-Core-Grafiken unterstützt Zeichnen in eine Reihe von Szenarien, einschließlich:
+Wichtigste Grafik unterstützt das Zeichnen in eine Reihe von Szenarien, einschließlich:
 
 -  [Zeichnen auf dem Bildschirm über einen `UIView` ](#Drawing_in_a_UIView_Subclass) .
 -  [Darstellen von Bildern im Arbeitsspeicher oder auf dem Bildschirm](#Drawing_Images_and_Text).
--  Erstellen und Zeichnen in einer PDF-Datei.
+-  Erstellen und zeichnen eine PDF-Format.
 -  Lesen und zeichnen eine vorhandene PDF-Datei.
 
 
 ## <a name="geometric-space"></a>Geometrische Speicherplatz
 
-Unabhängig von dem Szenario alle Zeichnungen mit Graphics Core ausgeführt erfolgt in geometrische Speicherplatz, was bedeutet, dass die Funktionsweise in abstrakten Punkte statt in Pixel. Sie beschreiben, was gezeichneten hinsichtlich der Geometrie und Status, z. B. Farben, Linienarten usw. zeichnen soll, und Core Grafiken behandelt übersetzen alles in Pixel. Dieser Status wird ein grafikontext hinzugefügt, die Sie z. B. eine übertragen Canvas vorstellen können.
+Unabhängig vom Szenario, gilt alle Zeichnungen mit Core Graphics fertig erfolgt in geometrische Leerzeichen, was bedeutet, dass die Funktionsweise in abstrakten Punkte statt in Pixel. Sie beschreiben, was in Bezug auf die Geometrie und zeichnen Status, z. B. Farben, Linienstile usw. gezeichnet werden soll, und Core Graphics behandelt alles, was in Pixel zu übersetzen. Solchen Zustand wird auf einen Grafikkontext hinzugefügt, die Sie z. B. ein übertragen der Canvas vorstellen können.
 
 Es gibt einige Vorteile dieses Ansatzes:
 
--  Zeichnen von Code wird die dynamische und kann anschließend Grafiken zur Laufzeit ändern.
--  Mindert die Notwendigkeit für statische Bilder im Anwendungspaket kann Anwendungsgröße reduzieren.
--  Grafiken werden auf vielen Geräten stabiler zu Änderungen der Bildschirmauflösung.
+-  Zeichencode wird dynamisch und kann anschließend Grafiken zur Laufzeit ändern.
+-  Reduziert die Notwendigkeit für statische Bilder im Anwendungspaket kann die Anwendungsgröße reduzieren.
+-  Grafiken werden auf Geräten ausfallsicherer Änderungen.
 
 <a name="Drawing_in_a_UIView_Subclass"/>
 
-## <a name="drawing-in-a-uiview-subclass"></a>Zeichnen in einer Unterklasse UIView
+## <a name="drawing-in-a-uiview-subclass"></a>Zeichnen in einer UIView-Unterklasse
 
-Jede `UIView` verfügt über eine `Draw` Methode, die vom System aufgerufen wird, wenn diese gezeichnet werden muss. Zum Hinzufügen von Code zum Zeichnen einer Ansicht Unterklasse `UIView` und überschreiben `Draw`:
+Jede `UIView` verfügt über eine `Draw` -Methode, die vom System aufgerufen wird, wenn es gezeichnet werden muss. Hinzufügen von Code zum Zeichnen auf eine Ansicht, Unterklasse `UIView` und überschreiben `Draw`:
 
 ```csharp
 public class TriangleView : UIView
@@ -56,23 +56,23 @@ public class TriangleView : UIView
 }
 ```
 
-Zeichnen-Befehl sollte nie direkt aufgerufen werden. Er wird während der Ausführung der Schleife Verarbeitung vom System aufgerufen. Die erste Schleifendurchlauf ausführen, nachdem die Hierarchie anzeigen eine Sicht hinzugefügt wird seine `Draw` -Methode aufgerufen wird. Nachfolgende Aufrufe `Draw` auftreten, wenn die Sicht gekennzeichnet ist, gezeichnet werden soll, durch den Aufruf eines Kennzeichnung angegeben, dass `SetNeedsDisplay` oder `SetNeedsDisplayInRect` für die Sicht.
+Zeichnen-Befehl sollte nie direkt aufgerufen werden. Es wird vom System aufgerufen, während der Verarbeitung führen. Beim ersten Durchlaufen der ausführen-Schleife, nachdem eine Ansicht der Hierarchie von Inhaltsansichten hinzugefügt wird seine `Draw` Methode wird aufgerufen. Nachfolgende Aufrufe von `Draw` auftreten, wenn die Ansicht markiert ist, müssen Sie gezeichnet werden soll, durch Aufrufen von entweder `SetNeedsDisplay` oder `SetNeedsDisplayInRect` für die Sicht.
 
-### <a name="pattern-for-graphics-code"></a>Muster für den Grafik-Code
+### <a name="pattern-for-graphics-code"></a>Muster für die Grafik-Code
 
-Der Code in der `Draw` Implementierung sollte beschreiben, was sie gezeichneten benötigt. Der Code zum Zeichnen folgt einem Muster, in dem legt einige zeichnen Zustand und ruft eine Methode, um anzufordern, es gezeichnet werden. Dieses Muster kann wie folgt verallgemeinert werden:
+Der Code in die `Draw` Implementierung sollte beschreiben, was gezeichnet werden sollen. Der Code zum Zeichnen folgt einem Muster, in dem er legt einige zeichnen Zustand, und ruft eine Methode, um anzufordern, es gezeichnet werden. Dieses Muster kann wie folgt generalisiert werden:
 
-1. Abgerufen Sie ein grafikontext werden.
+1. Ein grafikontext zu erhalten.
 
-2. Richten Sie Zeichnungsattribute.
+2. Richten Sie die Attribute zu zeichnen.
 
-3. Erstellen Sie einige Geometry primitive zeichnen.
+3. Erstellen Sie eine Geometrie aus primitiven zeichnen.
 
-4. Rufen Sie eine Zeichnen-Befehl oder Striche-Methode.
+4. Rufen Sie eine zeichnen- oder Stroke-Methode.
 
 ### <a name="basic-drawing-example"></a>Beispiel für die grundlegenden Funktionen zum Zeichnen
 
-Betrachten Sie beispielsweise den folgenden Codeausschnitt an:
+Betrachten Sie z. B. des folgende Codeausschnitts aus:
 
 ```csharp
 //get graphics context
@@ -99,14 +99,14 @@ using (CGContext g = UIGraphics.GetCurrentContext ()) {
 }
 ```
 
-Wir aufgliedern mit diesem Code:
+Wir unterteilen diesen Code:
 
 ```csharp
 using (CGContext g = UIGraphics.GetCurrentContext ()) {
 ...
 }
 ```
-Durch diese Zeile ruft er zuerst dem aktuellen Grafikkontext zum Zeichnen verwendete ab. Sie können ein grafikontext als im Zeichenbereich vorstellen, dass die Zeichnung, erfolgt, enthält alle Status zu zeichnen, z. B. Strich und Füllfarben sowie die Geometrie gezeichnet werden soll.
+Mit der folgenden Zeile ruft er zuerst dem aktuellen Grafikkontext zum Zeichnen verwendete ab. Sie können ein grafikontext des Zeichenbereichs vorstellen, dass die Zeichnung, erfolgt, enthält alle Zustände über das Zeichnen, z. B. Strich und Füllfarben als auch die Geometrie gezeichnet werden soll.
 
 ```csharp
 g.SetLineWidth (10);
@@ -114,9 +114,9 @@ UIColor.Blue.SetFill ();
 UIColor.Red.SetStroke ();
 ``` 
 
-Nach Eingang eines Grafikkontexts richtet der Code einige Attribute zu verwendende zeichnen, oben gezeigt. In diesem Fall werden die Linienfarben Breite, Strich und Füllung festgelegt. Alle nachfolgenden Zeichnen verwendet dann diese Attribute, da sie in den Grafikkontext Zustand verwaltet werden.
+Nach dem Abrufen eines Grafikkontexts richtet der Code einige Attribute zur Verwendung beim Zeichnen, oben gezeigt. In diesem Fall werden die Linienfarben für Breite, Strich und Füllung festgelegt. Alle folgenden Zeichnungen wird dieser Attribute verwendet, da sie in den Grafikkontext Zustand verwaltet werden.
 
-So erstellen Sie Geometrie im Code verwendet eine `CGPath`, sodass einen Grafikpfad aus Linien und Kurven beschrieben werden. In diesem Fall fügt den Pfad Verbindungslinien ein Array von Punkten, die zum Bilden eines Dreiecks. Wie unten Graphics Core verwendet ein Koordinatensystem für Ansicht zeichnen angezeigt, ist der Ursprung, in dem in der oberen linken Ecke mit positiven X (direkt) nach rechts und Positive y-Richtung nach unten:
+So erstellen Sie den Code Geometrie verwendet eine `CGPath`, dadurch kann es sich um einen Grafikpfad aus Linien und Kurven beschrieben werden. In diesem Fall fügt der Pfad Pfeile, die ein Array von Punkten, um ein Dreieck zu erstellen. Wie unten Core Graphics verwendet ein Koordinatensystem für zeichnen-Ansicht angezeigt, ist der Ursprung, in dem in der oberen linken Ecke, durch die positive X-direkte nach rechts und die Positive-y-Richtung nach unten:
 
 ```csharp
 var path = new CGPath ();
@@ -129,15 +129,15 @@ new CGPoint (220, 200)});
 path.CloseSubpath ();
 ``` 
 
-Nachdem der Pfad erstellt wird, es ist hinzugefügt der Grafikkontext, damit Aufrufen `AddPath` und `DrawPath` bzw. zeichnen kann es.
+Nachdem der Pfad erstellt wurde, es ist hinzugefügt dem Grafikkontext, damit Aufrufen `AddPath` und `DrawPath` bzw. können ziehen Sie es.
 
-Die Ansicht wird unten gezeigt:
+Die resultierende Ansicht ist unten dargestellt:
 
- ![](core-graphics-images/00-bluetriangle.png "Das Beispiel Ausgabe Dreieck")
+ ![](core-graphics-images/00-bluetriangle.png "Das Beispiel-Ausgabe-Dreieck")
 
 ## <a name="creating-gradient-fills"></a>Erstellen von Farbverläufen
 
-Umfangreichere Formen der Zeichnung sind auch verfügbar. Beispielsweise ermöglicht Graphics Core Farbverläufe erstellen und Anwenden von Freistellungspfade. Um eine graduelle Füllung innerhalb des Pfads aus dem vorherigen Beispiel zu zeichnen, muss zunächst der Pfad als des Freistellungspfads festgelegt werden:
+Umfangreichere Formen der Zeichnung sind ebenfalls verfügbar. Beispielsweise können Core Graphics, Farbverläufe erstellen und Anwenden einer Beschneidungspfade. Um eine graduelle Füllung innerhalb des Pfads aus dem vorherigen Beispiel zu zeichnen, muss zunächst der Pfad als des Freistellungspfads festgelegt werden:
 
 ```csharp
 // add the path back to the graphics context so that it is the current path
@@ -146,7 +146,7 @@ g.AddPath (path);
 g.Clip ();
 ```
 
-Festlegen des Freistellungspfads alle nachfolgenden Zeichnen innerhalb der Geometrie des Pfads, z. B. der folgende Code schränkt den aktuellen Pfad zeichnet die einen linearen Farbverlauf:
+Den aktuellen Pfad festlegen, wie des Freistellungspfads in allen folgenden Zeichnungen innerhalb der Geometrie des Pfads, wie z. B. den folgenden Code, schränkt zeichnet die einen linearen Farbverlauf:
 
 ```csharp
 // the color space determines how Core Graphics interprets color information
@@ -165,30 +165,30 @@ Festlegen des Freistellungspfads alle nachfolgenden Zeichnen innerhalb der Geome
     }
 ```
 
-Diese Änderungen erzeugt einen Farbverlauf an, wie unten dargestellt:
+Diese Änderungen eine graduelle Füllung erstellen, wie unten dargestellt:
 
- ![](core-graphics-images/01-gradient-fill.png "Im Beispiel mit gradueller Füllung")
+ ![](core-graphics-images/01-gradient-fill.png "Im Beispiel mit Farbverlauf")
 
-## <a name="modifying-line-patterns"></a>Ändern von Linien
+## <a name="modifying-line-patterns"></a>Ändern Zeilenmuster
 
-Die Zeichnungsattribute Zeilen können auch mit Graphics Core geändert werden. Dies schließt das ändern, die Linienfarbe für Breite und Strich als auch das Muster der Linie selbst, wie im folgenden Code dargestellt:
+Die Zeichnungsattribute Zeilen können auch mit Core Graphics geändert werden. Dies schließt das Ändern der Breite und Strich die Linienfarbe sowie die Zeile-Muster selbst, wie im folgenden Code dargestellt:
 
 ```csharp
 //use a dashed line
 g.SetLineDash (0, new nfloat[] { 10, 4 * (nfloat)Math.PI });
 ```
 
-Dieser Code vor dem Zeichnen Vorgänge Ergebnisse hinzufügen in gestrichelten Striche 10 Einheiten mit 4 Einheiten des Abstands zwischen Bindestriche, long, wie unten dargestellt:
+Dieser Code vor dem Zeichnen Vorgänge Ergebnisse hinzufügen in gestrichelte Konturen 10 Einheiten mit 4 Einheiten Abstand zwischen der Gedankenstriche, long, wie unten dargestellt:
 
- ![](core-graphics-images/02-dashed-stroke.png "Dieser Code vor dem Zeichnen Operations Ergebnisse hinzufügen gestrichelte Konturen")
+ ![](core-graphics-images/02-dashed-stroke.png "Dieser Code vor dem Zeichnen Vorgänge Ergebnisse hinzufügen in gestrichelten Striche")
  
-Beachten Sie, dass bei Verwendung der einheitliche API in Xamarin.iOS der Arraytyp benötigt, ein `nfloat`, und auch explizit in Math.PI umgewandelt werden muss.
+Beachten Sie, dass bei der Verwendung der Unified API in Xamarin.iOS der Arraytyp benötigt, ein `nfloat`, und auch explizit in Math.PI umgewandelt werden muss.
 
 <a name="Drawing_Images_and_Text"/>
 
 ## <a name="drawing-images-and-text"></a>Zeichnen von Bildern und Text
 
-Zusätzlich zum Zeichnen von Pfaden in einer Ansicht Grafikkontext unterstützt Core Grafiken auch Bilder und Text. Um ein Bild gezeichnet werden soll, erstellen Sie einfach eine `CGImage` und übergeben sie an einer `DrawImage` aufrufen:
+Zusätzlich zum Zeichnen von Pfaden in einer Ansicht der Grafikkontext, unterstützt die wichtigste Grafik auch Bilder und Text. Um ein Bild zu zeichnen, erstellen Sie einfach eine `CGImage` und übergeben es an eine `DrawImage` aufrufen:
 
 ```csharp
 public override void Draw (CGRect rect)
@@ -201,13 +201,13 @@ public override void Draw (CGRect rect)
 }
 ```
 
-Allerdings ergibt dies ein Bild gezeichnet stehend, wie unten dargestellt:
+Allerdings erzeugt dies ein Bild zeichnen auf dem Kopf stehend, wie unten dargestellt:
 
- ![](core-graphics-images/03-upside-down-monkey.png "Ein Bild gezeichnet stehend")
+ ![](core-graphics-images/03-upside-down-monkey.png "Ein Bild auf dem Kopf stehend gezeichnet")
 
-Der Grund dafür ist Core Grafiken Ursprung zum Zeichnen des Bilds in der unteren linken Ecke, während die Ansicht in der oberen linken Ecke Ursprungssite verfügt. Aus diesem Grund, um das Bild ordnungsgemäß angezeigt wird, der Ursprung muss geändert werden, kann durch Ändern von erreicht werden die *aktuellen Transformationsmatrix* *(CTM)*. Die CTM definiert, in dem Punkt, auch bekannt als Leben *Benutzerspeicherplatz*. Invertieren der CTM entlang der y-Achse an, und verschieben sie durch die Grenzen Höhe in negative y-Richtung können das Bild gekippt.
+Der Grund dafür ist Core Graphics-Ursprung für das Zeichnen des Bilds in der unteren linken Ecke, während die Ansicht seinen Ursprung in der oberen linken Ecke aufweist. Aus diesem Grund, um das Image ordnungsgemäß anzuzeigen, der Ursprung muss geändert werden, kann durch Ändern erreicht werden die *aktuellen Transformationsmatrix* *(CTM)*. Die CTM definiert, in dem Punkt, auch bekannt als Leben *Benutzerbereich*. Invertieren der CTM in y-Richtung und verschieben es durch die Begrenzungen Höhe in negative y-Richtung können das Bild gekippt.
 
-Der Grafikkontext hat Hilfsmethoden zum Transformieren der CTM. In diesem Fall `ScaleCTM` "spiegelt" die Zeichnung und `TranslateCTM` an der oberen linken Ecke verlagert, wie unten dargestellt:
+Der Grafikkontext verfügt über Hilfsmethoden für die CTM zu transformieren. In diesem Fall `ScaleCTM` "spiegelt" die Zeichnung und `TranslateCTM` verschiebt er an der oberen linken Ecke, wie unten dargestellt:
 
 ```csharp
 public override void Draw (CGRect rect)
@@ -223,16 +223,16 @@ public override void Draw (CGRect rect)
 }   
 ```
 
-Wird das resultierende Image angezeigt Schriften aufrecht dargestellt:
+Klicken Sie dann das resultierende Image wird aufrechte:
 
  ![](core-graphics-images/04-upright-monkey.png "Das Beispiel angezeigte Bild aufrechten")
 
 > [!IMPORTANT]
-> Änderungen an den Grafikkontext gelten für alle nachfolgenden Zeichenvorgänge. Aus diesem Grund wirkt die CTM transformiert wird, zusätzliche Zeichnung sich. Beispielsweise, wenn Sie das Dreieck nach der Transformation CTM gezeichnet wurde, würde es stehend angezeigt.
+> Änderungen an den Grafikkontext gelten für alle nachfolgenden Zeichenvorgänge. Aus diesem Grund wirkt die CTM transformiert wird, alle zusätzliche Zeichnung. Z. B. Wenn Sie das Dreieck nach der Transformation CTM gezeichnet haben, scheint finden Sie verkehrt herum.
 
-### <a name="adding-text-to-the-image"></a>Hinzufügen von Text zu dem Bild
+### <a name="adding-text-to-the-image"></a>Hinzufügen von Text in der Abbildung
 
-Als umfasst Zeichnen von Text mit Graphics Core mit Pfade und Bilder, die gleiche Basismuster einige Grafikzustand und Aufrufen einer Methode gezeichnet werden soll. Im Fall von Text, wird die Methode zum Anzeigen von Text `ShowText`. Wenn auf das Abbild zeichnen Beispiel hinzugefügt wird, zeichnet der folgende Code mit Graphics Core Text:
+Wie auch Zeichnen von Text mit Core Graphics beim Pfade und Bilder, die gleiche grundlegende Muster einige Grafikzustand und Aufrufen einer Methode zum Zeichnen. Im Fall von Text, die Methode zum Anzeigen von Text ist `ShowText`. Wenn auf das Bild zeichnen Beispiel hinzugefügt wird, zeichnet der folgende Code mit Core Graphics Text:
 
 ```csharp
 public override void Draw (RectangleF rect)
@@ -260,31 +260,31 @@ public override void Draw (RectangleF rect)
 }
 ```
 
-Wie Sie sehen können, gleicht der Status der Grafik für das Zeichnen von Text festlegen Geometry zeichnen. Jedoch Zeichnen von Text, der Text zeichnen-Modus und der Schriftart angewendet sowie. Ein Schatten ist in diesem Fall auch angewendet, obwohl das Anwenden von Tiefen funktioniert gleichermaßen für den Pfad zeichnen.
+Wie Sie sehen, ähnelt festlegen den Status der Grafik für das Zeichnen von Text zum Zeichnen der Geometrie. Jedoch Zeichnen von Text, der Text zeichnen-Modus und die Schriftart angewendet sowie. Ein Schatten wird in diesem Fall auch angewendet, obwohl das Anwenden von Tiefen funktioniert gleichermaßen für den Pfad gezeichnet.
 
 Der resultierende Text wird mit dem Bild angezeigt, wie unten dargestellt:
 
  ![](core-graphics-images/05-text-on-image.png "Der resultierende Text wird mit dem Bild angezeigt.")
 
-## <a name="memory-backed-images"></a>Speicher gesicherte Bilder
+## <a name="memory-backed-images"></a>Arbeitsspeicher-Backup-Images
 
-Zusätzlich zu der Zeichnung Grafikkontext für eine Sicht gesichert Graphics Core unterstützt das Zeichnen von Arbeitsspeicher Bilder, auch bekannt als Zeichnen außerhalb des Bildschirms. Auf diese Weise benötigen Sie Folgendes:
+Zusätzlich zum Zeichnen in einer Ansicht der Grafikkontext gesichert Core Graphics unterstützt das Zeichnen von Arbeitsspeicher Bilder, auch bekannt als außerhalb des Bildschirms gezeichnet. Auf diese Weise sind erforderlich:
 
--  Ein grafikontext erstellen, die durch ein im Arbeitsspeicher unterstützt wird mithilfe einer Bitmap
--  Festlegen von Zeichnen-Status und dem Ausgeben von Zeichnen-Befehle
+-  Ein grafikontext erstellen, basiert auf einer in-Memory Bitmap
+-  Festlegen von Zeichnen-Zustand und dem Ausgeben von Zeichnen-Befehle
 -  Das Bild abrufen aus dem Kontext
 -  Entfernen den Kontext
 
 
-Im Gegensatz zu den `Draw` -Methode, sofern der Kontext durch die Sicht angegeben wird in diesem Fall erstellen Kontext auf zwei Arten:
+Im Gegensatz zu den `Draw` -Methode, die der Kontext durch die Ansicht bereitgestellt wird in diesem Fall Sie erstellen den Kontext auf zwei Arten:
 
 1. Durch Aufrufen von `UIGraphics.BeginImageContext` (oder `BeginImageContextWithOptions`)
 
 2. Durch Erstellen eines neuen `CGBitmapContextInstance`
 
- `CGBitmapContextInstance` ist nützlich, wenn Sie direkt mit dem Bild-Bits wie z. B. für Fälle arbeiten, in dem Sie einen benutzerdefiniertes Image Manipulation-Algorithmus verwenden. In allen anderen Fällen sollten Sie verwenden `BeginImageContext` oder `BeginImageContextWithOptions`.
+ `CGBitmapContextInstance` ist nützlich, wenn Sie direkt mit der Bild-Bits, z. B. für Fälle arbeiten, in dem Sie einen benutzerdefiniertes Image Manipulation-Algorithmus verwenden. In allen anderen Fällen sollten Sie verwenden `BeginImageContext` oder `BeginImageContextWithOptions`.
 
-Nachdem Sie einen Image Kontext haben, Hinzufügen von Zeichencode ist, genau so wie er in einem `UIView` Unterklasse. Beispielsweise kann das Codebeispiel oben verwendet, um ein Dreieck gezeichnet verwendet werden, auf ein Bild im Arbeitsspeicher nicht in dem gezeichnet werden soll. eine `UIView`, wie unten dargestellt:
+Nachdem Sie den Kontext eines Image haben, Hinzufügen von Zeichencode ist genau so wie in einem `UIView` Unterklasse. Beispielsweise kann im Codebeispiel weiter oben verwendet, um ein Dreieck zu zeichnen verwendet werden, zum Zeichnen zu einem Bild im Speicher statt in einer `UIView`, wie unten dargestellt:
 
 ```csharp
 UIImage DrawTriangle ()
@@ -324,7 +324,7 @@ UIImage DrawTriangle ()
 }
 ```
 
-Eine übliche Verwendung dieser Zeichnen einer Bitmap Speicher gesicherte wird zum Erfassen eines Abbilds von einem beliebigen `UIView`. Z. B. der folgende Code rendert eine Ansichtsebene an einen Kontext für die Bitmap und erstellt eine `UIImage` aus:
+Eine übliche Verwendung dieser Funktionen zum Zeichnen einer Bitmap im Speicher gesicherte wird zum Erfassen eines Images aus einer `UIView`. Z. B. der folgende Code der ansichtsschicht auf einen Kontext für die Bitmap gerendert, und erstellt eine `UIImage` aus:
 
 ```csharp
 UIGraphics.BeginImageContext (cellView.Frame.Size);
@@ -339,13 +339,13 @@ UIGraphics.EndImageContext ();
 
 ## <a name="drawing-pdfs"></a>Zeichnen von PDF-Dateien
 
-Zusätzlich zu den Bildern unterstützt Graphics Core PDF-Zeichnung. Wie Bilder, Sie können eine PDF-Datei im Arbeitsspeicher zu rendern sowie zum Rendern in das PDF-Datei lesen eine `UIView`.
+Zusätzlich zu Bildern unterstützt die wichtigste Grafik PDF-Zeichnung. Wie Bilder, Sie können eine PDF-Datei im Arbeitsspeicher zu rendern sowie zum Rendern in das PDF-Datei lesen eine `UIView`.
 
 ### <a name="pdf-in-a-uiview"></a>PDF-Datei in eine UIView
 
-Core-Grafiken unterstützt auch das Lesen von PDF-Datei aus einer Datei und Rendern es in einer Ansicht mit der `CGPDFDocument` Klasse. Die `CGPDFDocument` Klasse stellt eine PDF-Datei im Code und zum Lesen und Seiten Zeichnen verwendet werden können.
+Wichtigste Grafik unterstützt auch das Lesen von PDF-Datei aus einer Datei, und Rendern sie in einer Ansicht mithilfe der `CGPDFDocument` Klasse. Die `CGPDFDocument` Klasse stellt eine PDF-Datei im Code, und können gelesen, und Zeichnen von Seiten verwendet werden.
 
-Im folgenden code wird beispielsweise einer `UIView` Unterklasse liest eine PDF-Datei aus einer Datei in eine `CGPDFDocument`:
+Im folgenden code wird beispielsweise einem `UIView` Unterklasse liest eine PDF-Datei aus einer Datei in eine `CGPDFDocument`:
 
 ```csharp
 public class PDFView : UIView
@@ -365,7 +365,7 @@ public class PDFView : UIView
 }
 ```
 
-Die `Draw` Methode können Sie dann die `CGPDFDocument` zum Lesen einer Seite in `CGPDFPage` und durch den Aufruf zu rendern `DrawPDFPage`, wie unten dargestellt:
+Die `Draw` Methode können Sie dann die `CGPDFDocument` zum Lesen einer Seite in `CGPDFPage` und Rendern Sie sie durch Aufrufen von `DrawPDFPage`, wie unten dargestellt:
 
 ```csharp
 public override void Draw (CGRect rect)
@@ -393,11 +393,11 @@ public override void Draw (CGRect rect)
 }
 ```
 
-### <a name="memory-backed-pdf"></a>Speicher gesicherte PDF
+### <a name="memory-backed-pdf"></a>Arbeitsspeichergestützte PDF-Datei
 
-Für eine in-Memory-PDF, müssen Sie ein PDF-Kontext erstellt werden, durch den Aufruf `BeginPDFContext`. Zeichnung nach PDF ist präzise zu Seiten. Jeder Seite wird durch den Aufruf gestartet `BeginPDFPage` und durch den Aufruf abgeschlossen `EndPDFContent`, Grafiken, die den code in der Zwischenzeit. Ebenso wie mit Image-Zeichnung Arbeitsspeicher PDF Zeichnen verwendet einen Ursprung in der unteren linken, die berücksichtigt werden können unterstützt, indem Sie die CTM einfach ändern wie mit Bildern.
+Für eine in-Memory-PDF, müssen Sie PDF-Datei durch den Aufruf für die kontexterstellung `BeginPDFContext`. Zeichnen in PDF-Datei ist zu Seiten, die präzise. Jede Seite wird durch den Aufruf gestartet `BeginPDFPage` und durch den Aufruf abgeschlossen `EndPDFContent`, mit dem Grafik in der Zwischenzeit code. Ebenso wie mit Bild zeichnen Arbeitsspeicher PDF Zeichnen verwendet einen Ursprung in der unteren linken, die berücksichtigt werden kann unterstützt, durch die CTM einfach ändern wie mit Bildern.
 
-Der folgende Code zeigt das Zeichnen von Text in eine PDF-Datei:
+Der folgende Code zeigt, wie Zeichnen von Text auf einer PDF-Datei:
 
 ```csharp
 //data buffer to hold the PDF
@@ -420,16 +420,16 @@ using (CGContext g = UIGraphics.GetCurrentContext ()) {
 UIGraphics.EndPDFContent ();
 ```
 
-Der resultierende Text gezeichnet wird, um die PDF-Datei, klicken Sie dann im enthalten eine `NSData` , können gespeichert werden, hochgeladen, e-Mail usw.
+Der resultierende Text gezeichnet wird, um die PDF-Datei, klicken Sie dann im enthalten eine `NSData` , können gespeichert werden, hochgeladene, e-Mail usw.
 
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel erläutert die Grafikfunktionen über die *Graphics Core* Framework. Wurde erläutert, wie mit Graphics Core Zeichnen von Geometry, Bilder und PDF-Dateien im Kontext einer `UIView,` sowie für Grafiken Speicher gesicherte Kontexte.
+In diesem Artikel erläutert, die per Grafikfunktionen der *Core Graphics* Framework. Erläutert, wie Sie mit, dass die wichtigste Grafik um Geometrie, Bilder und PDF-Dateien innerhalb des Kontexts zu zeichnen eine `UIView,` sowie für Grafiken arbeitsspeichergestützte Kontexte.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Core Graphics-Beispiel](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
-- [Grafiken und Animationen Exemplarische Vorgehensweise](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
+- [Beispiel: Core-Grafiken](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
+- [Grafiken und Animation Exemplarische Vorgehensweise](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
 - [Core Animation](~/ios/platform/graphics-animation-ios/core-animation.md)
-- [Core Animation Rezepte](https://developer.xamarin.com/recipes/ios/animation/coreanimation)
+- [Core Animation Rezepte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

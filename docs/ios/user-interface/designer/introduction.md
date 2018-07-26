@@ -1,102 +1,102 @@
 ---
 title: iOS-Designer-Grundlagen
-description: Dieses Handbuch enthält die Xamarin-Designer für iOS an. Es zeigt, wie Sie den iOS-Designer verwenden, um das visuelle Layout Steuerelemente, wie Zugriff auf diese Steuerelemente im Code und Bearbeiten von Eigenschaften.
+description: Dieser Leitfaden beschreibt die Xamarin-Designer für iOS. Es wird veranschaulicht, wie Sie iOS-Designer zu verwenden, um das visuelle Layout von Steuerelementen, wie Sie diese Steuerelemente im Code zugreifen und wie Eigenschaften bearbeitet.
 ms.prod: xamarin
 ms.assetid: E7045E41-0DEF-416B-BCDB-52502350F61C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/31/2018
-ms.openlocfilehash: 7e36a402619813214e821f3060e053d76c99cfb7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6905eddbc4488b08f9c9e896efe5f980e0e03345
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30784257"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242367"
 ---
 # <a name="ios-designer-basics"></a>iOS-Designer-Grundlagen
 
-_Dieses Handbuch enthält die Xamarin-Designer für iOS an. Es zeigt, wie Sie den iOS-Designer verwenden, um das visuelle Layout Steuerelemente, wie Zugriff auf diese Steuerelemente im Code und Bearbeiten von Eigenschaften._
+_Dieser Leitfaden beschreibt die Xamarin-Designer für iOS. Es wird veranschaulicht, wie Sie iOS-Designer zu verwenden, um das visuelle Layout von Steuerelementen, wie Sie diese Steuerelemente im Code zugreifen und wie Eigenschaften bearbeitet._
 
-Die Xamarin-Designer für iOS ist eine visuelle Oberfläche ähnlich Xcodes Benutzeroberflächen-Generator und dem Android-Designer. Einige der zahlreichen Funktionen enthalten die nahtlose Integration in Visual Studio für Mac und Visual Studio 2015 und 2017, Drag & Drop-Bearbeitung, eine Schnittstelle zum Einrichten der Ereignishandler und die Möglichkeit, benutzerdefinierte Steuerelemente darzustellen.
+Der Xamarin-Designer für iOS ist eine visuelle Schnittstelle ähnelt Interface Builder von Xcode und dem Android Designer. Einige seiner zahlreichen Features umfassen nahtlose Integration in Visual Studio für Mac und Visual Studio 2015 und 2017, Drag & Drop-Bearbeitung, eine Schnittstelle für das Einrichten von Ereignishandlern und die Möglichkeit, benutzerdefinierte Steuerelemente darzustellen.
 
 ## <a name="requirements"></a>Anforderungen
 
-IOS ist auf Windows-Designer in Visual Studio für Mac und in Visual Studio 2015 und 2017 verfügbar. In Visual Studio 2015 oder 2017 erfordert iOS-Designer eine Verbindung mit einem ordnungsgemäß konfigurierten Mac-Build-Host an, obwohl Xcode nicht ausgeführt werden muss.
+IOS ist Designer, die auf Windows in Visual Studio für Mac und Visual Studio 2015 und 2017 verfügbar. In Visual Studio 2015 oder 2017 erfordert der iOS-Designer eine Verbindung mit einem ordnungsgemäß konfigurierten Mac-buildhost, wenn Xcode nicht ausgeführt werden muss.
 
-Dieses Handbuch setzt voraus, Vertrautheit mit den Inhalt in behandelt die [Einstieg führt](~/ios/get-started/index.md).
+Dieses Handbuch setzt voraus, Vertrautheit mit dem Inhalt in behandelt die [Einstieg führt](~/ios/get-started/index.md).
 
 <a name="how-it-works" />
 
-## <a name="how-the-ios-designer-works"></a>Wie funktioniert die iOS-Designer
+## <a name="how-the-ios-designer-works"></a>Funktionsweise von iOS-Designer
 
-In diesem Abschnitt wird beschrieben, wie die iOS-Designer erleichtert das Erstellen einer Benutzeroberfläche und mit dem Code verbunden.
+In diesem Abschnitt wird beschrieben, wie der iOS-Designer erleichtert das Erstellen einer Benutzeroberfläche und mit Code verbinden.
 
-Die iOS-Designer kann Entwickler Benutzeroberfläche einer Anwendung visuell zu entwerfen. Wie in der [Einführung in Storyboards](~/ios/user-interface/storyboards/index.md) Guide ein Storyboard beschreibt die Bildschirme (View Controller), aus denen eine app, die Elemente der Benutzeroberfläche (Views) belastet die View-Controller und die app Gesamtablauf Navigation . 
+Der iOS-Designer kann Entwickler Benutzeroberfläche einer Anwendung visuell entwerfen. Wie in der [Einführung in Storyboards](~/ios/user-interface/storyboards/index.md) Leitfaden beschreibt die Bildschirme (View Controller), aus denen eine app, die Elemente der Benutzeroberfläche (Ansichten) auf die View-Controller und die app Navigation Gesamtablauf platziert, ein Storyboard . 
 
-Eine modellansichtcontroller besteht aus zwei Teilen: eine visuelle Darstellung in der iOS-Designer und eine zugeordnete C#-Klasse:
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
-
-[![Eine Ansicht Controller in der iOS-Designer](introduction-images/1-storyboardwithviewcontroller-vsmac.png "einen Controller Ansicht in der iOS-Designer")](introduction-images/1-storyboardwithviewcontroller-vsmac-large.png#lightbox)
-
-[![Der Code für einen Controller Ansicht](introduction-images/2-viewcontrollercode-vsmac.png "den Code für einen Controller anzeigen")](introduction-images/2-viewcontrollercode-vsmac-large.png#lightbox)
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![Eine Ansicht Controller in der iOS-Designer](introduction-images/1-storyboardwithviewcontroller-vs.png "einen Controller Ansicht in der iOS-Designer")](introduction-images/1-storyboardwithviewcontroller-vs-large.png#lightbox)
-
-[![Der Code für einen Controller Ansicht](introduction-images/2-viewcontrollercode-vs.png "den Code für einen Controller anzeigen")](introduction-images/2-viewcontrollercode-vs-large.png#lightbox)
-
------
-
-Ein Controller für die Sicht bereit keine Funktionalität, in seinem Standardzustand; Es muss mit Steuerelementen aufgefüllt werden. Diese Steuerelemente befinden sich in der Ansicht Controller Ansicht der rechteckige Bereich, die gesamte Inhalt des Bildschirms enthält. Die meisten View-Controller enthalten allgemeine Steuerelemente wie Schaltflächen, Bezeichnungen und Textfelder, wie im folgenden Screenshot dargestellt, die eine Schaltfläche enthält modellansichtcontroller dargestellt wird: 
+Ein ansichtscontroller besteht aus zwei Teilen: eine visuelle Darstellung in der iOS-Designer und eine zugeordnete C#-Klasse:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Eine Schaltfläche enthält modellansichtcontroller](introduction-images/3-viewcontrollerwithbutton-vsmac.png "eine modellansichtcontroller Schaltfläche enthält.")](introduction-images/3-viewcontrollerwithbutton-vsmac-large.png#lightbox)
+[![Einen ansichtscontroller im iOS-Designer](introduction-images/1-storyboardwithviewcontroller-vsmac.png "einen ansichtscontroller im iOS-Designer")](introduction-images/1-storyboardwithviewcontroller-vsmac-large.png#lightbox)
+
+[![Der Code für einen ansichtscontroller](introduction-images/2-viewcontrollercode-vsmac.png "den Code für ein View-Controller")](introduction-images/2-viewcontrollercode-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Eine Schaltfläche enthält modellansichtcontroller](introduction-images/3-viewcontrollerwithbutton-vs.png "eine modellansichtcontroller Schaltfläche enthält.")](introduction-images/3-viewcontrollerwithbutton-vs-large.png#lightbox)
+[![Einen ansichtscontroller im iOS-Designer](introduction-images/1-storyboardwithviewcontroller-vs.png "einen ansichtscontroller im iOS-Designer")](introduction-images/1-storyboardwithviewcontroller-vs-large.png#lightbox)
+
+[![Der Code für einen ansichtscontroller](introduction-images/2-viewcontrollercode-vs.png "den Code für ein View-Controller")](introduction-images/2-viewcontrollercode-vs-large.png#lightbox)
 
 -----
 
-Einige Steuerelemente, z. B. Bezeichnungen mit statischen Text, können mit dem View-Controller hinzugefügt und gelassen werden. Allerdings müssen mehr häufig als nicht Steuerelemente programmgesteuert angepasst werden. Die Schaltfläche mit der oben hinzugefügten sollte z. B. etwas beim Tippen, erfolgen, sodass ein Ereignishandler im Code hinzugefügt werden muss.
+Ein View Controller bereit keine Funktionalität, in seinem Standardzustand; Es muss mit Steuerelementen aktualisiert werden. Diese Steuerelemente werden in der Ansicht des ansichtscontrollers, der rechteckige Bereich platziert, die alle des Bildschirms Inhalte enthält. Die meisten View-Controller enthalten allgemeine Steuerelemente wie Schaltflächen, Bezeichnungen und Textfeldern, wie im folgenden Screenshot dargestellt einen ansichtscontroller, das eine Schaltfläche angezeigt: 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-Um zugreifen und diese Bearbeiten der Schaltfläche im Code, müssen sie einen eindeutigen Bezeichner verfügen. Geben Sie einen eindeutigen Bezeichner durch Auswählen der Schaltfläche aus, öffnen die **Eigenschaften Pad**, verwendet wird und seine **Namen** Feld auf einen Wert wie "SubmitButton":
-
-[![Eine Schaltfläche Einstellungsname Eigenschaften Pad](introduction-images/4-settingbuttonname-vsmac.png "Einstellungsname eine Schaltfläche in den Eigenschaften mit Leerstellen auffüllen")](introduction-images/4-settingbuttonname-vsmac-large.png#lightbox)
+[![Einen ansichtscontroller, das eine Schaltfläche](introduction-images/3-viewcontrollerwithbutton-vsmac.png "einen View Controller-Schaltfläche enthält.")](introduction-images/3-viewcontrollerwithbutton-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Um zugreifen und diese Bearbeiten der Schaltfläche im Code, müssen sie einen eindeutigen Bezeichner verfügen. Geben Sie einen eindeutigen Bezeichner durch Auswählen der Schaltfläche aus, öffnen die **Fenster "Eigenschaften"**, verwendet wird und seine **Namen** auf einen Wert wie "SubmitButton" Feld:
-
-[![Eine Schaltfläche Einstellungsname im Eigenschaftenfenster](introduction-images/4-settingbuttonname-vs.png "Einstellungsname eine Schaltfläche im Eigenschaftenfenster")](introduction-images/4-settingbuttonname-vs-large.png#lightbox)
+[![Einen ansichtscontroller, das eine Schaltfläche](introduction-images/3-viewcontrollerwithbutton-vs.png "einen View Controller-Schaltfläche enthält.")](introduction-images/3-viewcontrollerwithbutton-vs-large.png#lightbox)
 
 -----
 
-Die Schaltfläche "" einen Namen besitzt, kann er im Code zugegriffen werden. Wie funktioniert dies jedoch?
+Einige Steuerelemente, z.B. Bezeichnungen, die mit statischen Text, mit dem ansichtscontroller hinzugefügt, und sich selbst überlassen werden können. Allerdings müssen meistens, Steuerelemente programmgesteuert angepasst werden. Z. B. tun etwas beim Tippen auf, die Schaltfläche Weiter oben hinzugefügt, daher muss ein Ereignishandler im Code hinzugefügt werden.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-In der **Lösung Pad**, navigieren Sie zu **ViewController.cs** , und klicken auf das Symbol für die Offenlegung von, die die View-Controller `ViewController` Klasse Definition Spannen zwei Dateien, von denen jede enthält eine [Teilklasse](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) Definition:
+Um Zugriff auf und ändern die Schaltfläche im Code, müssen sie einen eindeutigen Bezeichner verfügen. Geben Sie einen eindeutigen Bezeichner durch Auswählen der Schaltfläche, die Sie öffnen die **Pad "Eigenschaften"**, und legen seine **Name** Feld einen Wert wie "SubmitButton":
 
-[![Die beiden Dateien, bilden die ViewController-Klasse: ViewController.cs und ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "die beiden Dateien, bilden die ViewController-Klasse: ViewController.cs und ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
+[![Festlegen einer Schaltfläche namens im Bereich "Eigenschaften"](introduction-images/4-settingbuttonname-vsmac.png "Einstellungsname einer Schaltfläche im Bereich \"Eigenschaften\"")](introduction-images/4-settingbuttonname-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-In der **Projektmappen-Explorer**, navigieren Sie zu **ViewController.cs** , und klicken auf das Symbol für die Offenlegung von, die die View-Controller `ViewController` Klassendefinition umfasst zwei Dateien, jede enthält eine [Teilklasse](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) Definition:
+Um Zugriff auf und ändern die Schaltfläche im Code, müssen sie einen eindeutigen Bezeichner verfügen. Geben Sie einen eindeutigen Bezeichner durch Auswählen der Schaltfläche, die Sie öffnen die **Fenster "Eigenschaften"**, und legen seine **Name** Feld einen Wert wie "SubmitButton":
 
-[![Die beiden Dateien, bilden die ViewController-Klasse: ViewController.cs und ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "die beiden Dateien, bilden die ViewController-Klasse: ViewController.cs und ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
+[![Festlegen einer Schaltfläche Namen im Eigenschaftenfenster](introduction-images/4-settingbuttonname-vs.png "einer Schaltfläche-Namen im Fenster Eigenschaften festlegen")](introduction-images/4-settingbuttonname-vs-large.png#lightbox)
 
 -----
 
-- **ViewController.cs** aufgefüllt werden soll, mit benutzerdefiniertem Code im Zusammenhang mit der `ViewController` Klasse. In dieser Datei den `ViewController` Klasse kann für verschiedene iOS-View-Controller Lebenszyklusmethoden reagieren, Anpassen der Benutzeroberfläche und reagieren auf Benutzereingaben, z. B. Schaltfläche tippt.
+Nun, dass die Schaltfläche einen Namen besitzt, kann er im Code zugegriffen werden. Aber wie funktioniert das?
 
-- **ViewController.designer.cs** wird eine generierte Datei, die erstellt werden, von dem iOS-Designer können Sie die Schnittstelle visuell erstellt Code zuzuordnen. Da Änderungen an dieser Datei überschrieben werden, sollten sie nicht geändert werden. Eigenschaftendeklarationen in dieser Datei können sie Code in der `ViewController` -Klasse für den Zugriff auf, indem **Namen**, steuert die Menge von in der iOS-Designer. Öffnen von **ViewController.designer.cs** den folgenden Code zeigt:
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+In der **Lösungspad**, Navigation zu **ViewController.cs** und durch Klicken auf den Indikator für die Veröffentlichung von zeigt, dass des ansichtscontrollers `ViewController` Spannen von Klasse-Definition zwei Dateien, von denen jede enthält eine [Teilklasse](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) Definition:
+
+[![Die beiden Dateien, die der ViewController Klasse bilden: ViewController.cs und ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "die beiden Dateien, die der ViewController Klasse bilden: ViewController.cs und ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+In der **Projektmappen-Explorer**, Navigation zu **ViewController.cs** und durch Klicken auf den Indikator für die Veröffentlichung von zeigt, dass des ansichtscontrollers `ViewController` Klassendefinition umfasst zwei Dateien, von denen jede enthält eine [Teilklasse](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) Definition:
+
+[![Die beiden Dateien, die der ViewController Klasse bilden: ViewController.cs und ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "die beiden Dateien, die der ViewController Klasse bilden: ViewController.cs und ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
+
+-----
+
+- **ViewController.cs** gefüllt werden soll, mit benutzerdefiniertem Code im Zusammenhang mit der `ViewController` Klasse. In dieser Datei die `ViewController` Klasse kann Antworten auf verschiedenen iOS View Controller-Lebenszyklusmethoden, Anpassen der Benutzeroberfläche und reagieren auf Benutzereingaben, z. B. Schaltfläche tippt.
+
+- **ViewController.designer.cs** ist eine generierte Datei, die von iOS-Designer, um die Schnittstelle visuell erstellten Code zuzuordnen erstellt. Da Änderungen an dieser Datei überschrieben werden, sollte es nicht geändert werden. Eigenschaftendeklarationen in dieser Datei können sie Code in die `ViewController` Klasse für den Zugriff auf, indem **Namen**, steuert Satz nach oben in der iOS-Designer. Öffnen von **ViewController.designer.cs** zeigt den folgenden Code:
 
 ```csharp
 namespace Designer
@@ -119,41 +119,41 @@ namespace Designer
 }
 ```
 
-Die `SubmitButton` Eigenschaftendeklaration verbindet die gesamte `ViewController` Klasse – nicht nur die **ViewController.designer.cs** Datei – auf die Schaltfläche "" in das Storyboard definiert. Da **ViewController.cs** definiert Teil der `ViewController` -Klasse, hat sie Zugriff auf `SubmitButton`.
+Die `SubmitButton` Eigenschaftendeklaration verbindet die gesamte `ViewController` Klasse – nicht nur die **ViewController.designer.cs** auf die Schaltfläche definiert, in dem Storyboard-Datei. Da **ViewController.cs** definiert Teil der `ViewController` -Klasse, hat Sie Zugriff auf `SubmitButton`.
 
-Der folgende Screenshot zeigt, dass IntelliSense jetzt erkennt die `SubmitButton` verweisen in **ViewController.cs**:
+Der folgende Screenshot veranschaulicht, dass IntelliSense jetzt erkennt die `SubmitButton` verweisen in **ViewController.cs**:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![IntelliSense, erkennen den Verweis SubmitButton](introduction-images/6-submitbuttonintellisense-vsmac.png "IntelliSense erkennen die SubmitButton-Referenz")](introduction-images/6-submitbuttonintellisense-vsmac-large.png#lightbox)
+[![IntelliSense erkennt den Verweis SubmitButton](introduction-images/6-submitbuttonintellisense-vsmac.png "IntelliSense erkennt die SubmitButton-Referenz")](introduction-images/6-submitbuttonintellisense-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![IntelliSense, erkennen den Verweis SubmitButton](introduction-images/6-submitbuttonintellisense-vs.png "IntelliSense erkennen die SubmitButton-Referenz")](introduction-images/6-submitbuttonintellisense-vs-large.png#lightbox)
+[![IntelliSense erkennt den Verweis SubmitButton](introduction-images/6-submitbuttonintellisense-vs.png "IntelliSense erkennt die SubmitButton-Referenz")](introduction-images/6-submitbuttonintellisense-vs-large.png#lightbox)
 
 -----
 
-In diesem Abschnitt gezeigten hat wie eine Schaltfläche in der iOS-Designer erstellen und Zugriff auf die Schaltfläche im Code.
+In diesem Abschnitt haben Sie gesehen, wie eine Schaltfläche "erstellen" im iOS-Designer und Zugriff auf diese Schaltfläche im Code.
 
-Im weiteren Verlauf dieses Dokuments bietet eine weitere Übersicht des iOS-Designer.
+Im weiteren Verlauf dieses Dokuments bietet einen weiteren Überblick über den iOS-Designer.
 
 ## <a name="ios-designer-basics"></a>iOS-Designer-Grundlagen
 
-In diesem Abschnitt werden die Teile des iOS-Designer eingeführt und bietet einen Überblick über die zugehörigen Funktionen.
+Dieser Abschnitt führt die Teile der iOS-Designer und bietet einen Überblick über die Funktionen.
 
-### <a name="launching-the-ios-designer"></a>Starten die iOS-Designer
+### <a name="launching-the-ios-designer"></a>Starten den iOS-Designer
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-Xamarin.iOS-Projekte, die mit Visual Studio erstellt wurden, für Mac enthalten ein Storyboard. Um den Inhalt eines Drehbuchs anzuzeigen, doppelklicken Sie auf die .storyboard-Datei in die **Lösung Pad**:
+Xamarin.iOS-Projekte, die mit Visual Studio für Mac erstellt enthalten ein Storyboard. Um den Inhalt eines Storyboards anzuzeigen, doppelklicken Sie auf die Storyboard-Datei in die **Lösungspad**:
 
-[![Öffnen Sie ein Storyboard in der iOS-Designer](introduction-images/7-storyboardopen-vsmac.png "ein Storyboard in der iOS-Designer zu öffnen.")](introduction-images/7-storyboardopen-vsmac-large.png#lightbox)
+[![Öffnen Sie ein Storyboard in der iOS Designer](introduction-images/7-storyboardopen-vsmac.png "öffnen Sie ein Storyboard im iOS-Designer")](introduction-images/7-storyboardopen-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Die meisten Xamarin.iOS Projekte mit Visual Studio 2015 oder 2017 erstellt einschließen ein storyboard Um den Inhalt eines Drehbuchs anzuzeigen, doppelklicken Sie auf die .storyboard-Datei in die **Projektmappen-Explorer**:
+Die meisten Xamarin.iOS-Projekte, die mit Visual Studio 2015 oder 2017 erstellt wurden, enthalten ein Storyboard. Um den Inhalt eines Storyboards anzuzeigen, doppelklicken Sie auf die Storyboard-Datei in die **Projektmappen-Explorer**:
 
-[![Öffnen Sie ein Storyboard in der iOS-Designer](introduction-images/7-storyboardopen-vs.png "ein Storyboard in der iOS-Designer zu öffnen.")](introduction-images/7-storyboardopen-vs-large.png#lightbox)
+[![Öffnen Sie ein Storyboard in der iOS Designer](introduction-images/7-storyboardopen-vs.png "öffnen Sie ein Storyboard im iOS-Designer")](introduction-images/7-storyboardopen-vs-large.png#lightbox)
 
 -----
 
@@ -161,167 +161,167 @@ Die meisten Xamarin.iOS Projekte mit Visual Studio 2015 oder 2017 erstellt einsc
 
 ### <a name="ios-designer-features"></a>iOS-Designer-Funktionen
 
-Die iOS-Designer verfügt über sechs Hauptabschnitten:
+Der iOS-Designer verfügt über sechs Hauptabschnitte:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Abschnitte des iOS-Designer](introduction-images/8-sixpartsofiosdesigner-vsmac.png "Abschnitte des iOS-Designer")](introduction-images/8-sixpartsofiosdesigner-vsmac-large.png#lightbox)
+[![Teile des iOS Designers](introduction-images/8-sixpartsofiosdesigner-vsmac.png "Teile der iOS-Designer")](introduction-images/8-sixpartsofiosdesigner-vsmac-large.png#lightbox)
 
-1. **Entwurfsoberfläche** – primäre Arbeitsbereich für die iOS-Designer. Im Bereich "Dokument" gezeigt, kann der grafischen Erstellung von Benutzeroberflächen.
-2. **Einschränkungen Symbolleiste** – für den Wechsel zwischen Rahmen und Einschränkung bearbeiten Modus, zwei unterschiedliche Arten zum Positionieren von Elementen in einer Benutzeroberfläche bearbeiten können.
-3. **Toolbox** – Listet die Controller, Objekte, Steuerelemente, Datenansichten, Geste Prüfer, Windows und Steuerleisten, die auf die Entwurfsoberfläche gezogen und eine Benutzeroberfläche hinzugefügt werden können.
-4. **Eigenschaften mit Leerstellen auffüllen** – zeigt die Eigenschaften des ausgewählten Steuerelements, einschließlich der Identität, visuelle Stile, Barrierefreiheit, Layout und Verhalten.
-5. **Dokumentgliederung** – zeigt die Struktur von Steuerelementen, die das Layout für die Schnittstelle, die zu bearbeitenden bilden. Durch Klicken auf ein Element in der Struktur wird in der iOS-Designer ausgewählt und gezeigt, seiner Eigenschaften in der **Eigenschaften Pad**. Dies ist praktisch für die Auswahl eines bestimmten Steuerelements in einer Benutzeroberfläche mit tief geschachtelt.
-6. **Symbolleiste unten** – enthält Optionen zum Ändern der Anzeige von iOS-Designer auf der Datei .storyboard oder .xib Gerät, Ausrichtung und einen Zoom einschließlich.
+1. **Entwurfsoberfläche** – primäre Arbeitsbereich für die iOS-Designer. Im Bereich "Dokument" gezeigt, ermöglicht es der grafischen Erstellung von Benutzeroberflächen.
+2. **Symbolleiste für Einschränkungen** – für das Wechseln zwischen Rahmen und der Einschränkung bearbeiten Modus zwei unterschiedliche Arten zum Positionieren von Elementen in einer Benutzeroberfläche bearbeiten können.
+3. **Toolbox** – führt den Controller, Objekte, Steuerelemente, Datenansichten, Geste Erkennungen, Windows und Balken, der auf die Entwurfsoberfläche gezogen und eine Benutzeroberfläche hinzugefügt werden können.
+4. **Pad "Eigenschaften"** – zeigt die Eigenschaften des ausgewählten Steuerelements, einschließlich der Identität, visuelle Stile, Barrierefreiheit, Layout und Verhalten.
+5. **Dokumentgliederung** – zeigt die Struktur der Steuerelemente, aus denen das Layout für die Schnittstelle, die bearbeitet wird. Durch Klicken auf ein Element in der Struktur wird in der iOS-Designer ausgewählt, und zeigt die Eigenschaften in der **Pad "Eigenschaften"**. Dies ist praktisch für die Auswahl eines bestimmten Steuerelements in einer Benutzeroberfläche mit tief geschachtelt.
+6. **Untere Symbolleiste** – enthält Optionen zum Ändern der Anzeige von iOS-Designer auf der Storyboard oder XIB-Datei, einschließlich der Geräte, Ausrichtung und einen Zoom.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Abschnitte des iOS-Designer](introduction-images/8-sixpartsofiosdesigner-vs.png "Abschnitte des iOS-Designer")](introduction-images/8-sixpartsofiosdesigner-vs-large.png#lightbox)
+[![Teile des iOS Designers](introduction-images/8-sixpartsofiosdesigner-vs.png "Teile der iOS-Designer")](introduction-images/8-sixpartsofiosdesigner-vs-large.png#lightbox)
 
-1. **Entwurfsoberfläche** – primäre Arbeitsbereich für die iOS-Designer. Im Bereich "Dokument" gezeigt, kann der grafischen Erstellung von Benutzeroberflächen.
-2. **Einschränkungen Symbolleiste** – für den Wechsel zwischen Rahmen und Einschränkung bearbeiten Modus, zwei unterschiedliche Arten zum Positionieren von Elementen in einer Benutzeroberfläche bearbeiten können.
-3. **Toolbox** – Listet die Controller, Objekte, Steuerelemente, Datenansichten, Geste Prüfer, Windows und Steuerleisten, die auf die Entwurfsoberfläche gezogen und eine Benutzeroberfläche hinzugefügt werden können.
+1. **Entwurfsoberfläche** – primäre Arbeitsbereich für die iOS-Designer. Im Bereich "Dokument" gezeigt, ermöglicht es der grafischen Erstellung von Benutzeroberflächen.
+2. **Symbolleiste für Einschränkungen** – für das Wechseln zwischen Rahmen und der Einschränkung bearbeiten Modus zwei unterschiedliche Arten zum Positionieren von Elementen in einer Benutzeroberfläche bearbeiten können.
+3. **Toolbox** – führt den Controller, Objekte, Steuerelemente, Datenansichten, Geste Erkennungen, Windows und Balken, der auf die Entwurfsoberfläche gezogen und eine Benutzeroberfläche hinzugefügt werden können.
 4. **Fenster "Eigenschaften"** – zeigt die Eigenschaften des ausgewählten Steuerelements, einschließlich der Identität, visuelle Stile, Barrierefreiheit, Layout und Verhalten.
-5. **Dokumentgliederung** – zeigt die Struktur von Steuerelementen, die das Layout für die Schnittstelle, die zu bearbeitenden bilden. Durch Klicken auf ein Element in der Struktur wird in der iOS-Designer ausgewählt und gezeigt, seiner Eigenschaften in der **Fenster "Eigenschaften"**. Dies ist praktisch für die Auswahl eines bestimmten Steuerelements in einer Benutzeroberfläche mit tief geschachtelt.
-6. **Symbolleiste unten** – enthält Optionen zum Ändern der Anzeige von iOS-Designer auf der Datei .storyboard oder .xib Gerät, Ausrichtung und einen Zoom einschließlich.
+5. **Dokumentgliederung** – zeigt die Struktur der Steuerelemente, aus denen das Layout für die Schnittstelle, die bearbeitet wird. Durch Klicken auf ein Element in der Struktur wird in der iOS-Designer ausgewählt, und zeigt die Eigenschaften in der **Fenster "Eigenschaften"**. Dies ist praktisch für die Auswahl eines bestimmten Steuerelements in einer Benutzeroberfläche mit tief geschachtelt.
+6. **Untere Symbolleiste** – enthält Optionen zum Ändern der Anzeige von iOS-Designer auf der Storyboard oder XIB-Datei, einschließlich der Geräte, Ausrichtung und einen Zoom.
 
 -----
 
 ### <a name="design-workflow"></a>Entwerfen von Workflows
 
-#### <a name="adding-a-control-to-the-interface"></a>Hinzufügen eines Steuerelements auf die Schnittstelle
+#### <a name="adding-a-control-to-the-interface"></a>Hinzufügen eines Steuerelements auf die-Schnittstelle
 
-Um ein Steuerelement zu einer Schnittstelle hinzuzufügen, ziehen Sie es aus der **Toolbox** und legen Sie sie auf der Entwurfsoberfläche angezeigt. Beim Hinzufügen oder positionieren ein Steuerelement, markieren Sie Richtlinien für vertikale und horizontale häufig verwendete Layout Positionen wie vertikal zentrieren, horizontal zentrieren und Ränder:
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
- 
-![Markieren Sie am häufigsten verwendeten Layout Positionen auf der Entwurfsoberfläche Richtlinien](introduction-images/9-layoutguides-vsmac.png "markieren Sie am häufigsten verwendeten Layout Positionen auf der Entwurfsoberfläche Richtlinien")
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-![Markieren Sie am häufigsten verwendeten Layout Positionen auf der Entwurfsoberfläche Richtlinien](introduction-images/9-layoutguides-vs.png "markieren Sie am häufigsten verwendeten Layout Positionen auf der Entwurfsoberfläche Richtlinien")
-
------
-
-Die blaue gepunktete Linie im obigen Beispiel bietet Richtlinie visual Ausrichtung horizontal zentrieren, das Befehlsschaltflächen-Platzierung verwenden können.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
-
-#### <a name="context-menu-commands"></a>Kontextmenübefehle
-
-Ein Kontextmenü steht sowohl auf der Entwurfsoberfläche als auch in der **Dokumentgliederung**. Dieses Menü enthält Befehle, für die das ausgewählte Steuerelement und seinem übergeordneten Element, was beim Arbeiten mit Sichten in einer geschachtelten Hierarchie hilfreich ist:
-
-[![Im Kontextmenü den Befehl auf der Entwurfsoberfläche](introduction-images/10-contextmenudesignsurface-vsmac.png "im Kontextmenü den Befehl auf der Entwurfsoberfläche")](introduction-images/10-contextmenudesignsurface-vsmac-large.png#lightbox)
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
------
-
-### <a name="constraints-toolbar"></a>Einschränkungen-Symbolleiste
+Um eine Schnittstelle ein Steuerelement hinzuzufügen, ziehen Sie es aus der **Toolbox** und legen Sie sie auf der Entwurfsoberfläche angezeigt. Beim Hinzufügen oder ein Steuerelement zu positionieren, markieren Sie vertikale und horizontale Richtlinien häufig verwendete Layouts Positionen, z. B. VERTICALCENTER, horizontalen Mitte und Ränder:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
  
-[![Die Symbolleiste Aufrufattribute](introduction-images/11-constraintstoolbar-vsmac.png "der Einschränkungen-Symbolleiste")](introduction-images/11-constraintstoolbar-vsmac-large.png#lightbox)
+![Markieren Sie auf der Entwurfsoberfläche Richtlinien häufig verwendete Layouts Positionen](introduction-images/9-layoutguides-vsmac.png "markieren Sie auf der Entwurfsoberfläche Richtlinien Positionen für häufig verwendete Layouts")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Die Symbolleiste Aufrufattribute](introduction-images/11-constraintstoolbar-vs.png "der Einschränkungen-Symbolleiste")](introduction-images/11-constraintstoolbar-vs-large.png#lightbox)
+![Markieren Sie auf der Entwurfsoberfläche Richtlinien häufig verwendete Layouts Positionen](introduction-images/9-layoutguides-vs.png "markieren Sie auf der Entwurfsoberfläche Richtlinien Positionen für häufig verwendete Layouts")
 
 -----
 
-Die Einschränkungen-Symbolleiste aktualisiert wurde und jetzt besteht aus zwei Steuerelemente: Bearbeitungsmodus Frames / Einschränkung Modus ein-/ausschalten und die Update-Einschränkungen Bearbeiten / Aktualisieren der Frames-Schaltfläche.
-
-#### <a name="frame-editing-mode--constraint-editing-mode-toggle"></a>Frame Vorlagenbearbeitungsmodus / Einschränkung bearbeiten Modus ein-/ausschalten
-
-In früheren Versionen des iOS-Designer ein-/ausgeschaltet zwischen Rahmen und Einschränkung bearbeiten Modus bearbeiten Sie einen bereits ausgewählte Ansicht auf der Entwurfsoberfläche auf. Jetzt, schaltet ein umschaltbaren Steuerelements auf der Symbolleiste Einschränkungen zwischen diesen Modi bearbeiten.
-
-- Frame-Modus:
+Die blaue gepunktete Linie im obigen Beispiel bietet eine horizontalen Mitte visuellen Ausrichtung-Richtlinie für die Unterstützung bei der Platzierung der Schaltfläche.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-![Schaltfläche Bearbeiten Frame](introduction-images/12a-frameeditingmode-vsmac.png "Frame-Schaltfläche \"Bearbeiten\" \"")
+#### <a name="context-menu-commands"></a>Befehle im Kontextmenü
+
+Ein Kontextmenü zur Verfügung steht, sowohl auf der Entwurfsoberfläche als auch in der **Dokumentgliederung**. Dieses Menü enthält Befehle für die das ausgewählte Steuerelement und seinem übergeordneten Element, dies hilfreich ist bei der Verwendung von Ansichten in einer geschachtelten Hierarchie:
+
+[![Im Kontextmenü auf der Entwurfsoberfläche](introduction-images/10-contextmenudesignsurface-vsmac.png "im Kontextmenü auf der Entwurfsoberfläche")](introduction-images/10-contextmenudesignsurface-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Schaltfläche Bearbeiten Frame](introduction-images/12a-frameeditingmode-vs.png "Frame-Schaltfläche \"Bearbeiten\" \"")
-
 -----
 
-- Einschränkung Modus:
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
-
-![Einschränkung Bearbeiten Schaltfläche Modus](introduction-images/12b-constrainteditingmode-vsmac.png "Einschränkung bearbeiten-Modus-Schaltfläche")
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-![Einschränkung Bearbeiten Schaltfläche Modus](introduction-images/12b-constrainteditingmode-vs.png "Einschränkung bearbeiten-Modus-Schaltfläche")
-
------
-
-#### <a name="update-constraints--update-frames-button"></a>Einschränkungen bei der Aktualisierung / Frames Schaltfläche "Aktualisieren"
-
-Die Einschränkungen für die Update / Update frames Schaltfläche befindet sich rechts neben den Frame Vorlagenbearbeitungsmodus / Einschränkung bearbeiten Modus ein-/ausschalten.
-
-- Im Frame Vorlagenbearbeitungsmodus passt klicken auf diese Schaltfläche die Frames alle ausgewählten Elemente werden entsprechend ihren Einschränkungen aus.
-- Im Bearbeitungsmodus Einschränkung passt das Klicken auf diese Schaltfläche die Einschränkungen alle ausgewählten Elemente werden entsprechend ihrer Frames aus.
-
-### <a name="bottom-toolbar"></a>Unteren Symbolleiste
-
-Die unteren Symbolleiste bietet die Möglichkeit, wählen Sie das Gerät, Ausrichtung und einen Zoom verwendet, um ein Storyboard oder .xib-Datei in der iOS-Designer anzeigen:
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
-
-[![Der unteren Symbolleiste verwendet, um ein Gerät und die Ausrichtung für die Entwurfsoberfläche auswählen](introduction-images/13-bottomtoolbar-vsmac.png "der unteren Symbolleiste verwendet, um ein Gerät und die Ausrichtung für die Entwurfsoberfläche auswählen")](introduction-images/13-bottomtoolbar-vsmac-large.png#lightbox)
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![Der unteren Symbolleiste verwendet, um ein Gerät und die Ausrichtung für die Entwurfsoberfläche auswählen](introduction-images/13-bottomtoolbar-vs.png "der unteren Symbolleiste verwendet, um ein Gerät und die Ausrichtung für die Entwurfsoberfläche auswählen")](introduction-images/13-bottomtoolbar-vs-large.png#lightbox)
-
------
-
-#### <a name="device-and-orientation"></a>Geräte- und Ausrichtung
-
-Wenn die Kategorie erweitert ist, zeigt die unteren Symbolleiste alle Geräte, Ausrichtungen und/oder Anpassung gilt für das aktuelle Dokument. Klicken Sie auf diese Änderungen in der Ansicht auf der Entwurfsoberfläche angezeigt. 
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
-
-[![Die Symbolleiste unten erweitert, sodass Geräte und Ausrichtungen](introduction-images/14-bottomtoolbarexpanded-vsmac.png "der unteren Symbolleiste erweitert, um Geräte und Ausrichtungen anzuzeigen.")](introduction-images/14-bottomtoolbarexpanded-vsmac-large.png#lightbox)
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![Die Symbolleiste unten erweitert, sodass Geräte und Ausrichtungen](introduction-images/14-bottomtoolbarexpanded-vs.png "der unteren Symbolleiste erweitert, um Geräte und Ausrichtungen anzuzeigen.")](introduction-images/14-bottomtoolbarexpanded-vs-large.png#lightbox)
-
------
-
-Hinweis: Auswählen eines Geräts und die Ausrichtung ändert nur wie iOS-Designer den Entwurf in der Vorschau anzeigt. Unabhängig von der aktuellen Auswahl neu hinzugefügten Einschränkungen gelten für alle Geräte sowie Ausrichtungen, es sei denn, die **bearbeiten Traits** Schaltfläche wurde verwendet, um nichts anderes angeben.
-
-Wenn [Größe Klassen](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) sind [aktiviert](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes), die **bearbeiten Traits** Schaltfläche erscheint in der erweiterten unteren Symbolleiste.  Klicken auf die **bearbeiten Traits** Schaltfläche zeigt Optionen für das Erstellen einer Schnittstelle Variation basierend auf der Größe-Klasse, die durch das ausgewählte Gerät und Ausrichtung dargestellt. Betrachten Sie die folgenden Beispiele:
-
-- Wenn **iPhone SE** / **Hochformat**, wird ausgewählt, die Popover bietet Optionen zum Erstellen einer Schnittstelle Variation compact Breite, Höhe reguläre Größe-Klasse. 
-- Wenn **iPhone Pro 9.7"** / **Querformat** / **Vollbild** ist ausgewählt, die Popover bietet Optionen zum Erstellen einer Schnittstelle Variation für der normale Breite, Höhe reguläre Größe-Klasse.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
-
-[![Der unteren Symbolleiste, um eine Schnittstelle zu variieren von Größe Klasse verwendeten](introduction-images/15-edittraitsbutton-vsmac.png "der unteren Symbolleiste, um eine Schnittstelle zu variieren von Größe-Klasse verwendet wird")](introduction-images/15-edittraitsbutton-vsmac-large.png#lightbox)
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![Der unteren Symbolleiste, um eine Schnittstelle zu variieren von Größe Klasse verwendeten](introduction-images/15-edittraitsbutton-vs.png "der unteren Symbolleiste, um eine Schnittstelle zu variieren von Größe-Klasse verwendet wird")](introduction-images/15-edittraitsbutton-vs-large.png#lightbox)
-
------
-
-#### <a name="zoom-controls"></a>Zoom-Steuerelementen
-
-Die Entwurfsoberfläche unterstützt Zoomen über mehrere Steuerelemente:
+### <a name="constraints-toolbar"></a>Symbolleiste für Einschränkungen
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
  
-![Die Zoomsteuerelemente in der unteren Symbolleiste](introduction-images/16-zoomcontrols-vsmac.png "die Zoomsteuerelemente in der unteren Symbolleiste")
+[![Die Symbolleiste für Einschränkungen](introduction-images/11-constraintstoolbar-vsmac.png "die Symbolleiste für Einschränkungen")](introduction-images/11-constraintstoolbar-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Die Zoomsteuerelemente in der unteren Symbolleiste](introduction-images/16-zoomcontrols-vs.png "die Zoomsteuerelemente in der unteren Symbolleiste")
+[![Die Symbolleiste für Einschränkungen](introduction-images/11-constraintstoolbar-vs.png "die Symbolleiste für Einschränkungen")](introduction-images/11-constraintstoolbar-vs-large.png#lightbox)
+
+-----
+
+Die Symbolleiste für Einschränkungen aktualisiert wurde und jetzt besteht aus zwei Steuerelementen: der Frame im Bearbeitungsmodus / Einschränkung bearbeiten umschalten und die Einschränkungen für die Update / Frames Schaltfläche "Aktualisieren".
+
+#### <a name="frame-editing-mode--constraint-editing-mode-toggle"></a>Frame im Bearbeitungsmodus / Einschränkung bearbeiten umschalten
+
+In früheren Versionen von iOS-Designer ein-/ausgeschaltet klicken Sie auf ein bereits ausgewähltes Ansicht auf der Entwurfsoberfläche zwischen Frame-Modus und Bearbeitungsmodus Einschränkung bearbeiten. Nun, wechselt das Umschalten-Steuerelement in der Symbolleiste für Einschränkungen zwischen diesen Bearbeitungsmodi ein.
+
+- Framebearbeitungsmodus:
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+![Bearbeiten die Schaltfläche für Hilfemodus Frame](introduction-images/12a-frameeditingmode-vsmac.png "Frame-Schaltfläche \"Bearbeiten\" \"")
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+![Bearbeiten die Schaltfläche für Hilfemodus Frame](introduction-images/12a-frameeditingmode-vs.png "Frame-Schaltfläche \"Bearbeiten\" \"")
+
+-----
+
+- Bearbeitungsmodus der Einschränkung:
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+![Bearbeiten die Schaltfläche für Hilfemodus Einschränkung](introduction-images/12b-constrainteditingmode-vsmac.png "Einschränkung Bearbeiten Schaltfläche für Hilfemodus")
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+![Bearbeiten die Schaltfläche für Hilfemodus Einschränkung](introduction-images/12b-constrainteditingmode-vs.png "Einschränkung Bearbeiten Schaltfläche für Hilfemodus")
+
+-----
+
+#### <a name="update-constraints--update-frames-button"></a>Aktualisieren Sie Einschränkungen / aktualisieren Sie Frames Schaltfläche ""
+
+Die Einschränkungen für die Update / Update frames Schaltfläche befindet sich rechts neben der Frame im Bearbeitungsmodus / Einschränkung bearbeiten umschalten.
+
+- Im Frame im Bearbeitungsmodus passt klicken auf diese Schaltfläche die Frames, der alle ausgewählten Elemente entsprechend ihren Einschränkungen aus.
+- Im Bearbeitungsmodus der Einschränkung passt den Einschränkungen für alle ausgewählten Elemente entsprechend ihrer Frames an, wenn Sie auf diese Schaltfläche klicken.
+
+### <a name="bottom-toolbar"></a>Untere Symbolleiste
+
+Die unteren Symbolleiste bietet eine Möglichkeit zur Auswahl der Geräte, Ausrichtung und einen Zoom verwendet, um ein Storyboard oder XIB-Datei im iOS-Designer anzeigen:
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+[![Der unteren Symbolleiste verwendet, um ein Gerät und die Ausrichtung für die Entwurfsoberfläche auszuwählen](introduction-images/13-bottomtoolbar-vsmac.png "der unteren Symbolleiste verwendet, um ein Gerät und die Ausrichtung für die Entwurfsoberfläche auswählen")](introduction-images/13-bottomtoolbar-vsmac-large.png#lightbox)
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+[![Der unteren Symbolleiste verwendet, um ein Gerät und die Ausrichtung für die Entwurfsoberfläche auszuwählen](introduction-images/13-bottomtoolbar-vs.png "der unteren Symbolleiste verwendet, um ein Gerät und die Ausrichtung für die Entwurfsoberfläche auswählen")](introduction-images/13-bottomtoolbar-vs-large.png#lightbox)
+
+-----
+
+#### <a name="device-and-orientation"></a>Gerät und Ausrichtung
+
+Wenn die Kategorie erweitert ist, zeigt die unteren Symbolleiste an alle Geräte, Ausrichtungen und/oder Anpassungen, die für das aktuelle Dokument. Klicken Sie auf diese Änderungen in der Ansicht auf der Entwurfsoberfläche angezeigt. 
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+[![Die unteren Symbolleiste erweitert, sodass Geräte und -Ausrichtungen](introduction-images/14-bottomtoolbarexpanded-vsmac.png "der unteren Symbolleiste erweitert, um Geräte und -Ausrichtungen anzuzeigen.")](introduction-images/14-bottomtoolbarexpanded-vsmac-large.png#lightbox)
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+[![Die unteren Symbolleiste erweitert, sodass Geräte und -Ausrichtungen](introduction-images/14-bottomtoolbarexpanded-vs.png "der unteren Symbolleiste erweitert, um Geräte und -Ausrichtungen anzuzeigen.")](introduction-images/14-bottomtoolbarexpanded-vs-large.png#lightbox)
+
+-----
+
+Beachten Sie, dass durch Auswahl von einem Gerät und die Ausrichtung ändert sich nur wie iOS-Designer das Design zeigt in der Vorschau. Unabhängig von der aktuellen Auswahl neu hinzugefügte Einschränkungen gelten für alle Geräte und -Ausrichtungen, es sei denn, die **bearbeiten "traits"** Schaltfläche wurde verwendet, um nichts anderes angeben.
+
+Wenn [Größenklassen](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) sind [aktiviert](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes), **bearbeiten "traits"** Schaltfläche in der erweiterten unteren Symbolleiste angezeigt.  Klicken auf die **bearbeiten "traits"** Schaltfläche zeigt Optionen für das Erstellen einer Schnittstelle Variation basierend auf der Größenklasse, die durch das ausgewählte Gerät und Ausrichtung dargestellt wird. Betrachten Sie die folgenden Beispiele:
+
+- Wenn **iPhone SE** / **Hochformat**, wird ausgewählt, im Popover bietet Optionen, um eine Variante Schnittstelle für die compact Breite Größenklasse regulären Höhe zu erstellen. 
+- Wenn **iPad Pro 9,7"** / **Querformat** / **Vollbild** wird ausgewählt, im Popover bietet Optionen zum Erstellen von einer Variante Schnittstelle für die reguläre Breite und die regulären Höhe Größenklasse.
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+
+[![Der unteren Symbolleiste wird, eine Schnittstelle variieren nach Größenklasse](introduction-images/15-edittraitsbutton-vsmac.png "der unteren Symbolleiste, um eine Schnittstelle variieren nach Größenklasse verwendet wird")](introduction-images/15-edittraitsbutton-vsmac-large.png#lightbox)
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+[![Der unteren Symbolleiste wird, eine Schnittstelle variieren nach Größenklasse](introduction-images/15-edittraitsbutton-vs.png "der unteren Symbolleiste, um eine Schnittstelle variieren nach Größenklasse verwendet wird")](introduction-images/15-edittraitsbutton-vs-large.png#lightbox)
+
+-----
+
+#### <a name="zoom-controls"></a>Zoom-Steuerelemente
+
+Die Entwurfsoberfläche unterstützt das Zoomen über mehrere Steuerelemente:
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+ 
+![Die Zoom-Steuerelemente in der unteren Symbolleiste](introduction-images/16-zoomcontrols-vsmac.png "die Zoom-Steuerelemente in der unteren Symbolleiste")
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+![Die Zoom-Steuerelemente in der unteren Symbolleiste](introduction-images/16-zoomcontrols-vs.png "die Zoom-Steuerelemente in der unteren Symbolleiste")
 
 -----
 
@@ -330,28 +330,28 @@ Die Steuerelemente umfassen Folgendes:
 1. Zoom anpassen
 2. Verkleinern
 3. Vergrößern
-4. Tatsächliche Größe (Größe in Pixel für 1:1)
+4. Tatsächliche Größe (1:1-Pixel-Größe)
 
 Diese Steuerelemente passen Sie den Zoom auf der Entwurfsoberfläche angezeigt. Sie wirken sich nicht auf die Benutzeroberfläche der Anwendung zur Laufzeit aus.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-### <a name="properties-pad"></a>Eigenschaften mit Leerstellen auffüllen
+### <a name="properties-pad"></a>Pad "Eigenschaften"
 
-Verwenden der **Eigenschaften Pad** so bearbeiten Sie die Identität, visuelle Stile Eingabehilfen und das Verhalten eines Steuerelements. Der folgende Screenshot veranschaulicht die **Eigenschaften Pad** Optionen für eine Schaltfläche:
+Verwenden der **Pad "Eigenschaften"** so bearbeiten Sie die Identität, visuelle Stile, Barrierefreiheit und Verhalten eines Steuerelements. Der folgende Screenshot veranschaulicht die **Pad "Eigenschaften"** Optionen für eine Schaltfläche:
 
-[![Das Auffüllzeichen Eigenschaften für eine Schaltfläche](introduction-images/17-buttonpropertiespad-vsmac.png "der Eigenschaften Pad für eine Schaltfläche")](introduction-images/17-buttonpropertiespad-vsmac-large.png#lightbox)
-#### <a name="properties-pad-sections"></a>Eigenschaften Pad-Abschnitte
+[![Das Pad "Eigenschaften" für eine Schaltfläche](introduction-images/17-buttonpropertiespad-vsmac.png "das Pad \"Eigenschaften\" für eine Schaltfläche")](introduction-images/17-buttonpropertiespad-vsmac-large.png#lightbox)
+#### <a name="properties-pad-sections"></a>Eigenschaften-Pad-Abschnitte
 
-Die **Eigenschaften Pad** enthält drei Abschnitte:
+Die **Pad "Eigenschaften"** enthält drei Abschnitte:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ### <a name="properties-window"></a>Eigenschaftenfenster
 
-Verwenden der **Fenster "Eigenschaften"** so bearbeiten Sie die Identität, visuelle Stile Eingabehilfen und das Verhalten eines Steuerelements. Der folgende Screenshot veranschaulicht die **Fenster "Eigenschaften"** Optionen für eine Schaltfläche:
+Verwenden der **Fenster "Eigenschaften"** so bearbeiten Sie die Identität, visuelle Stile, Barrierefreiheit und Verhalten eines Steuerelements. Der folgende Screenshot veranschaulicht die **Fenster "Eigenschaften"** Optionen für eine Schaltfläche:
 
-[![Das Eigenschaftenfenster für eine Schaltfläche](introduction-images/17-buttonpropertieswindow-vs.png "das Eigenschaftenfenster für eine Schaltfläche")](introduction-images/17-buttonpropertieswindow-vs-large.png#lightbox)
+[![Fenster "Eigenschaften" für eine Schaltfläche](introduction-images/17-buttonpropertieswindow-vs.png "das Fenster \"Eigenschaften\" für eine Schaltfläche")](introduction-images/17-buttonpropertieswindow-vs-large.png#lightbox)
 
 #### <a name="properties-window-sections"></a>Eigenschaften-Fenster-Abschnitte
 
@@ -359,44 +359,44 @@ Die **Fenster "Eigenschaften"** enthält drei Abschnitte:
 
 -----
 
-1.  **Widget** – die Haupteigenschaften des Steuerelements, wie Name, Klasse, Stileigenschaften. Eigenschaften für die Verwaltung von Inhalt des Steuerelements werden hier in der Regel platziert.
-2.  **Layout** – Eigenschaften, die nachverfolgen die Position und Größe des Steuerelements, einschließlich Einschränkungen und Frames, werden hier aufgelistet.
-3.  **Ereignisse** – Ereignisse und Ereignishandler sind hier angegeben. Für die Behandlung von Ereignissen wie Toucheingabe, tippen, ziehen Sie nützlich. Ereignisse können auch direkt im Code verarbeitet werden.
+1.  **Widget** – die Haupteigenschaften des Steuerelements, z. B. Name, Klasse, Eigenschaften usw. Eigenschaften für die Verwaltung von Inhalt des Steuerelements werden normalerweise hier eingefügt.
+2.  **Layout** – Eigenschaften, die nachverfolgen die Position und Größe des Steuerelements, einschließlich Einschränkungen und Frames sind hier aufgeführt.
+3.  **Ereignisse** – Ereignisse und Ereignishandler werden hier angegeben. Nützlich zum Behandeln von Ereignissen, z. B. Touch, tippen, ziehen Sie usw. Ereignisse können auch direkt in Code behandelt werden.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-#### <a name="editing-properties-in-the-properties-pad"></a>Bearbeiten von Eigenschaften in den Eigenschaften mit Leerstellen auffüllen
+#### <a name="editing-properties-in-the-properties-pad"></a>Bearbeiten von Eigenschaften im Bereich "Eigenschaften"
 
-Neben dem visuelle Bearbeitung auf der Entwurfsoberfläche angezeigt, die iOS-Designer unterstützt Bearbeiten von Eigenschaften in der **Eigenschaften Pad**. Die verfügbaren Eigenschaften ändern sich des ausgewählten Steuerelements abhängig, wie in den nachstehenden Screenshots veranschaulicht:
+Zusätzlich zu visuelle Bearbeitung auf der Entwurfsoberfläche, der iOS-Designer unterstützt die Bearbeitung von Eigenschaften in der **Pad "Eigenschaften"**. Die verfügbaren Eigenschaften ändern sich entsprechend das ausgewählte Steuerelement, wie in den folgenden Screenshots dargestellt:
 
 [![Schaltfläche Eigenschaften](introduction-images/18a-buttonpropertiespad-vsmac.png "Schaltfläche Eigenschaften")](introduction-images/18a-buttonpropertiespad-vsmac-large.png#lightbox)
 
-[![Anzeigen der Eigenschaften von Domänencontroller](introduction-images/18b-viewcontrollerpropertiespad-vsmac.png "Controller Eigenschaften anzeigen")](introduction-images/18b-viewcontrollerpropertiespad-vsmac-large.png#lightbox)
+[![Anzeigen der Eigenschaften von Buildcontroller](introduction-images/18b-viewcontrollerpropertiespad-vsmac.png "Anzeigen der Eigenschaften von Buildcontroller")](introduction-images/18b-viewcontrollerpropertiespad-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 #### <a name="editing-properties-in-the-properties-window"></a>Bearbeiten von Eigenschaften im Eigenschaftenfenster
 
-Neben dem visuelle Bearbeitung auf der Entwurfsoberfläche angezeigt, die iOS-Designer unterstützt Bearbeiten von Eigenschaften in der **Fenster "Eigenschaften"**. Die verfügbaren Eigenschaften ändern sich des ausgewählten Steuerelements abhängig, wie in den nachstehenden Screenshots veranschaulicht:
+Zusätzlich zu visuelle Bearbeitung auf der Entwurfsoberfläche, der iOS-Designer unterstützt die Bearbeitung von Eigenschaften in der **Fenster "Eigenschaften"**. Die verfügbaren Eigenschaften ändern sich entsprechend das ausgewählte Steuerelement, wie in den folgenden Screenshots dargestellt:
 
 [![Schaltfläche Eigenschaften](introduction-images/18a-buttonpropertieswindow-vs.png "Schaltfläche Eigenschaften")](introduction-images/18a-buttonpropertieswindow-vs-large.png#lightbox)
 
-[![Anzeigen der Eigenschaften von Domänencontroller](introduction-images/18b-viewcontrollerpropertieswindow-vs.png "Controller Eigenschaften anzeigen")](introduction-images/18b-viewcontrollerpropertieswindow-vs-large.png#lightbox)
+[![Anzeigen der Eigenschaften von Buildcontroller](introduction-images/18b-viewcontrollerpropertieswindow-vs.png "Anzeigen der Eigenschaften von Buildcontroller")](introduction-images/18b-viewcontrollerpropertieswindow-vs-large.png#lightbox)
 
 -----
 
 > [!IMPORTANT]
-> Der Identitätsabschnitt des das Eigenschaften Pad jetzt zeigt eine **Modul** Feld. Es ist notwendig, füllen in diesem Abschnitt nur bei der Interaktion mit Swift-Klassen. Verwenden sie den Namen eines Moduls für Swift Klassen Geben Sie die Serversteuerelement sind.
+> Der Identitätsabschnitt des das Pad "Eigenschaften" jetzt zeigt eine **Modul** Feld. Es ist erforderlich, die in diesem Abschnitt geben Sie nur bei der Interaktion mit Swift-Klassen. Verwenden Sie, um den Modulnamen für Swift-Klassen, geben Sie die Namespaces sind.
 
 #### <a name="default-values"></a>Standardwerte
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-Viele Eigenschaften in der **Eigenschaften Pad** zeigen kein Wert oder einen Standardwert zurück. Allerdings kann der Code der Anwendung weiterhin diese Werte ändern. Die **Eigenschaften Pad** zeigt nicht die Werte, die im Code festlegen.
+Viele Eigenschaften in der **Pad "Eigenschaften"** zeigen kein Wert oder einen Standardwert zurück. Den Code der Anwendung kann diese Werte jedoch immer noch ändern. Die **Pad "Eigenschaften"** zeigt keine Werte im Code festlegen.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Viele Eigenschaften in der **Fenster "Eigenschaften"** zeigen kein Wert oder einen Standardwert zurück. Allerdings kann der Code der Anwendung weiterhin diese Werte ändern. Die **Fenster "Eigenschaften"** zeigt nicht die Werte, die im Code festlegen.
+Viele Eigenschaften in der **Fenster "Eigenschaften"** zeigen kein Wert oder einen Standardwert zurück. Den Code der Anwendung kann diese Werte jedoch immer noch ändern. Die **Fenster "Eigenschaften"** zeigt keine Werte im Code festlegen.
 
 -----
 
@@ -404,37 +404,37 @@ Viele Eigenschaften in der **Fenster "Eigenschaften"** zeigen kein Wert oder ein
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-Um benutzerdefinierte Ereignishandler für die verschiedenen Ereignisse anzugeben, verwenden die **Ereignisse** auf der Registerkarte die **Eigenschaften Pad**. Z. B. in folgender Screenshot einer `HandleClick` Methode verarbeitet der Schaltfläche **berühren sich innerhalb** Ereignis:
+Verwenden Sie zum Angeben benutzerdefinierter Ereignishandler für die verschiedenen Ereignisse der **Ereignisse** Registerkarte die **Pad "Eigenschaften"**. Z. B. im folgenden Screenshot eine `HandleClick` Methode verarbeitet der Schaltfläche " **berühren sich innerhalb von** Ereignis:
 
-[![Die Auffüllzeichen Eigenschaften mit einem Ereignishandler für eine Schaltfläche festlegen](introduction-images/19-buttonpropertiespadevents-vsmac.png "der Eigenschaften Pad mit einem Ereignishandler für eine Schaltfläche festlegen")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
+[![Das Pad "Eigenschaften", mit einem Ereignishandler festzulegen, die für eine Schaltfläche](introduction-images/19-buttonpropertiespadevents-vsmac.png "das Pad \"Eigenschaften\", mit einem Ereignishandler für eine Schaltfläche festlegen")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Verwenden Sie zum Angeben benutzerdefinierter Ereignishandler für verschiedene Ereignisse aus der **Ereignisse** auf der Registerkarte die **Fenster "Eigenschaften"**. Z. B. in folgender Screenshot einer `HandleClick` Methode verarbeitet der Schaltfläche **berühren sich innerhalb** Ereignis:
+Verwenden Sie zum Angeben benutzerdefinierter Ereignishandler für die verschiedenen Ereignisse der **Ereignisse** Registerkarte die **Fenster "Eigenschaften"**. Z. B. im folgenden Screenshot eine `HandleClick` Methode verarbeitet der Schaltfläche " **berühren sich innerhalb von** Ereignis:
 
-[![Eigenschaftenfenster mit einem Ereignishandler für eine Schaltfläche festlegen](introduction-images/19-buttonpropertieswindowevents-vs.png "das Eigenschaftenfenster, einem Ereignishandler für eine Schaltfläche festlegen")](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
+[![Eigenschaftenfenster mit einem Ereignishandler festzulegen, die für eine Schaltfläche](introduction-images/19-buttonpropertieswindowevents-vs.png "das Fenster \"Eigenschaften\", mit einem Ereignishandler für eine Schaltfläche festlegen")](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
 
 -----
 
-Sobald ein Ereignishandler angegeben wurde, muss der entsprechende View Controller-Klasse eine Methode mit dem gleichen Namen hinzugefügt werden. Andernfalls ein `unrecognized selector` Ausnahme tritt auf, wenn die Schaltfläche "" abgerufen werden:
+Sobald ein Ereignishandler angegeben wurde, muss die entsprechende Ansicht-Controller-Klasse eine Methode mit dem gleichen Namen hinzugefügt werden. Andernfalls ein `unrecognized selector` Ausnahme tritt auf, wenn die Schaltfläche getippt wird:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-[![Eine Ausnahme nicht erkannten Selektor](introduction-images/20-unrecognizedselector-vsmac.png "eine unbekannte Auswahlzeiger-Ausnahme")](introduction-images/20-unrecognizedselector-vsmac-large.png#lightbox)
+[![Eine Ausnahme unbekannten Selektor](introduction-images/20-unrecognizedselector-vsmac.png "eine unbekannte Selector-Ausnahme")](introduction-images/20-unrecognizedselector-vsmac-large.png#lightbox)
 
-Beachten Sie, die nach einem Ereignishandler in angegeben wurde die **Eigenschaften aufgefüllt**, die iOS-Designer wird sofort öffnen Sie die entsprechenden Codedatei und bieten die Methodendeklaration eingefügt. 
+Beachten Sie, die nach der ein Ereignishandler in angegeben wurde, die **Pad "Eigenschaften"**, des iOS Designers sofort die entsprechende Codedatei zu öffnen und bieten die Methodendeklaration eingefügt wird. 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Eine Ausnahme nicht erkannten Selektor](introduction-images/20-unrecognizedselector-vs.png "eine unbekannte Auswahlzeiger-Ausnahme")](introduction-images/20-unrecognizedselector-vs-large.png#lightbox)
+[![Eine Ausnahme unbekannten Selektor](introduction-images/20-unrecognizedselector-vs.png "eine unbekannte Selector-Ausnahme")](introduction-images/20-unrecognizedselector-vs-large.png#lightbox)
 
 -----
 
-Ein Beispiel, benutzerdefinierte Ereignishandler verwendet, finden Sie in der [Hello, iOS-erste Schritte](~/ios/get-started/hello-ios/index.md).
+Ein Beispiel, benutzerdefinierte Ereignishandler verwendet, finden Sie in der [Hallo, iOS, erste-Schritte-Handbuch](~/ios/get-started/hello-ios/index.md).
 
 ### <a name="outline-view"></a>Gliederungsansicht
 
-Die iOS-Designer können auch eine Schnittstellenhierarchie von Steuerelementen als Gliederung anzeigen. Die Gliederung ist verfügbar durch Auswahl der **Dokumentgliederung** Registerkarte wie folgt:
+Der iOS-Designer können auch eine Schnittstelle für die Hierarchie der Steuerelemente als Gliederung anzeigen. Die Gliederung finden Sie dazu die **Dokumentgliederung** Registerkarte wie folgt:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -446,41 +446,41 @@ Die iOS-Designer können auch eine Schnittstellenhierarchie von Steuerelementen 
 
 -----
 
-Das ausgewählte Steuerelement in der Gliederungsansicht bleibt synchron mit dem ausgewählten Steuerelement auf der Entwurfsoberfläche angezeigt.  Diese Funktion ist nützlich für das Auswählen eines Elements aus einer Schnittstellenhierarchie in der Schachtelungshierarchie.
+Das ausgewählte Steuerelement in der Gliederungsansicht bleibt synchron mit dem ausgewählten Steuerelement auf der Entwurfsoberfläche angezeigt.  Dieses Feature eignet sich für ein Element aus einer tief verschachtelten Schnittstellenhierarchie ausgewählt.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-## <a name="revert-to-xcode"></a>Kehren Sie zu Xcode
+## <a name="revert-to-xcode"></a>Wiederherstellen mit Xcode
 
-Es ist möglich, den iOS-Designer und Xcode Schnittstelle-Generator Synonym zu verwenden. Um ein Storyboard oder eine .xib-Datei in Xcode Schnittstelle-Generator zu öffnen, mit der Maustaste, auf die Datei, und wählen **Öffnen mit > Xcode Schnittstelle-Generator**, wie der folgende Screenshot veranschaulicht:
+Es ist möglich, die iOS-Designer und Interface Builder von Xcode austauschbar verwenden. Ein Storyboard oder eine XIB-Datei in Xcode Interface Builder öffnen, mit der Maustaste auf die Datei, und wählen Sie **Öffnen mit > Interface Builder von Xcode**, wie im folgenden Screenshot dargestellt:
 
-[![Öffnen ein Storyboard im Xcode Schnittstelle-Generator](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "ein Storyboard in Xcode Schnittstelle-Generator öffnen")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
+[![Öffnen ein Storyboard in Xcode Interface Builder](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "ein Storyboard in Xcode Interface Builder öffnen")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
 
-Nach Änderungen in Xcode Schnittstelle-Generator vornehmen, die Datei speichern und zurück zu Visual Studio für Mac. Die Änderungen werden dem Projekt Xamarin.iOS synchronisiert.
+Nach dem vornehmen von Änderungen in Xcode Interface Builder, die Datei speichern und zurück zu Visual Studio für Mac. Die Änderungen werden mit Xamarin.iOS-Projekt synchronisiert.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 -----
 
-## <a name="xib-support"></a>.XIB-Unterstützung
+## <a name="xib-support"></a>XIB-Unterstützung
 
-Die iOS-Designer unterstützt erstellen, bearbeiten und Verwalten von .xib-Dateien. Diese sind XML-Dateien, geschlossenes einzelne, benutzerdefinierte Ansichten, die Hierarchie von einer Anwendung anzeigen hinzugefügt werden können. Eine .xib-Datei stellt die Schnittstelle für eine einzelne Ansicht oder einen Bildschirm in einer Anwendung in der Regel dar, während ein Drehbuchs viele Bildschirme und die Übergänge zwischen diesen darstellt.
+Der iOS-Designer unterstützt das Erstellen, bearbeiten und Verwalten von XIB-Dateien. Diese sind XML-Dateien, geschlossenes einzelne, benutzerdefinierte Ansichten der Anwendung der Hierarchie von Inhaltsansichten hinzugefügt werden können. Eine XIB-Datei stellt die Schnittstelle für eine einzelne Ansicht oder einen Bildschirm in einer Anwendung, in der Regel dar, während ein Storyboard viele Bildschirme und die Übergänge zwischen ihnen darstellt.
 
-Es gibt viele Meinung dazu, die welche Lösung – .xib-Dateien, Storyboards oder Code – am besten zum Erstellen und verwalten eine neue Benutzeroberfläche funktioniert. In Wirklichkeit besteht keine perfekten Lösung, und es ist immer das beste Tool für den Auftrag zur hand Überlegung Wert. Dies bedeutet, dass .xib Dateien im Allgemeinen leistungsstärksten beim zur Darstellung von einer benutzerdefinierten Ansicht an mehreren Stellen in eine app, wie z. B. eine benutzerdefinierte Ansicht Tabellenzelle erforderlich sind. 
+Es gibt viele meinungen über die Lösung – XIB-Dateien, Storyboards oder Code – am besten für Sie erstellen und verwalten eine Benutzeroberfläche ist. Es gibt keine perfekte Lösung, und es ist immer in Betracht ziehen das beste Tool für den Auftrag zur Verfügung, in der Praxis. Allerdings XIB-Dateien in der Regel leistungsstärksten Wenn verwendet, um eine benutzerdefinierte Ansicht, die erforderlich sind, an mehreren Stellen in eine app, wie z. B. eine benutzerdefinierte tabellenansichtszelle darzustellen sind. 
 
-Weitere Dokumentation zur Verwendung von .xib-Dateien kann in den folgenden Rezepte gefunden werden:
+Weitere Informationen zur Verwendung von XIB-Dateien finden Sie in der folgenden Anleitungen:
 
-- [Verwenden Sie die Ansicht .xib-Vorlage](https://developer.xamarin.com/recipes/ios/general/templates/using_the_ios_view_xib_template/)
-- [Erstellen eine benutzerdefinierte TableViewCell mithilfe einer .xib](https://developer.xamarin.com/recipes/ios/content_controls/tables/custom-tableviewcell/)
-- [Erstellen eines mit einem .xib starten-Bildschirms](https://developer.xamarin.com/recipes/ios/general/templates/launchscreen-xib/)
+- [Mithilfe der Ansicht XIB-Vorlage](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/templates/using_the_ios_view_xib_template)
+- [Erstellen eine benutzerdefinierte TableViewCell mithilfe einer XIB](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/tables/custom-tableviewcell)
+- [Erstellen einen Startbildschirm mithilfe einer XIB](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/templates/launchscreen-xib)
 
-Weitere Informationen zur Verwendung von Storyboards finden Sie in der [Einführung in Storyboards](~/ios/user-interface/storyboards/index.md).
+Weitere Informationen zur Verwendung von Storyboards, finden Sie in der [Einführung in Storyboards](~/ios/user-interface/storyboards/index.md).
 
-Diese und andere iOS-Designer-bezogene Handbücher finden Sie in die Verwendung von Storyboards als standard Ansatz zum Erstellen von Benutzeroberflächen, da neue Projektvorlagen für die meisten Xamarin.iOS ein Storyboard standardmäßig enthalten.
+Diese und andere iOS-Designer-bezogene Anleitungen finden Sie auf die Verwendung von Storyboards als die Standardmethode zum Erstellen von Benutzeroberflächen, da die meisten Xamarin.iOS neue Projektvorlagen ein Storyboard standardmäßig bereit.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieses Handbuch bereitgestellt, eine Einführung in die iOS-Designer, beschreiben seine Funktionen und Gliedern die Tools zum Entwerfen von überzeugender Benutzeroberfläche bietet.
+Diese Anleitung enthält einer Einführung in die Beschreibung der Features und Gliedern die Tools, die er bietet für das Entwerfen schicke Benutzeroberflächen-Designer für IOS.
 
 ## <a name="related-links"></a>Verwandte Links
 
@@ -488,7 +488,7 @@ Dieses Handbuch bereitgestellt, eine Einführung in die iOS-Designer, beschreibe
 - [iOS entworfen Steuerelemente Exemplarische Vorgehensweise](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
 - [Hello, iOS](~/ios/get-started/hello-ios/index.md)
 - [Hello, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md)
-- [Übersicht über Android-Designer](~/android/user-interface/android-designer/index.md)
+- [Übersicht über Android Designer](~/android/user-interface/android-designer/index.md)
 - [Partielle Klassen und Methoden](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
-- [Einstieg in die Xamarin-Designer für iOS - weiterentwickelt 2014 (video)](https://www.youtube.com/watch?v=W4H9uLjoEjM)
-- [Verwenden die iOS-Designer zum eines Bildschirms starten (video) erstellen](https://university.xamarin.com/lightninglectures/using-the-ios-designer-to-create-a-launch-screen)
+- [Einstieg in die Xamarin-Designer für iOS – weiterentwickelt 2014 (video)](https://www.youtube.com/watch?v=W4H9uLjoEjM)
+- [Verwendung des iOS Designers einen Startbildschirm (video) erstellen.](https://university.xamarin.com/lightninglectures/using-the-ios-designer-to-create-a-launch-screen)
