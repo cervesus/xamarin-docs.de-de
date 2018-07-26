@@ -1,64 +1,64 @@
 ---
 title: Einführung in die Datenspeicherung in Xamarin.iOS-Apps
-description: Dieses Dokument beschreibt die verschiedenen bedeutet, dass die datenspeicherung in einer Anwendung Xamarin.iOS und finden Sie ausführliche Informationen zu den Vorteilen von SQLite.
+description: Dieses Dokument beschreibt verschiedene Möglichkeiten der Speicherung von Daten in einer Xamarin.iOS-Anwendung, und finden Sie ausführliche Informationen zu den Vorteilen von SQLite.
 ms.prod: xamarin
 ms.assetid: B1994468-FD06-4FD9-96B3-FCEBB13A972A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 3fc82e2a1a2cf8d25d934ca2194ecd7de1b8b7df
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c5324d7e7daa8fbefde1776743dbdc595463fe33
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784702"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241148"
 ---
 # <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Einführung in die Datenspeicherung in Xamarin.iOS-Apps
 
 ## <a name="when-to-use-a-database"></a>Wenn eine Datenbank verwenden
 
-Während die Speicher- und Verarbeitungsvorgängen Funktionen der mobilen Geräte zu erhöhen, werden Telefone und Tablets weiterhin zurückfallen Ihrem eigenen Schreibtisch &amp; Laptop-Entsprechungen. Aus diesem Grund lohnt es dauert einige Zeit in die Speicherarchitektur Daten für die app planen, statt nur vorausgesetzt, dass die richtige Antwort immer um eine Datenbank handelt. Es gibt eine Reihe von verschiedenen Optionen, die unterschiedliche Anforderungen, z. B. anzupassen:
+Während der Speicherung und Verarbeitung von Funktionen der mobilen Geräte zunehmen, Smartphones und Tablets weiterhin zurückfallen ihren Desktop &amp; Laptop-Entsprechungen. Aus diesem Grund lohnt es dauert einige Zeit in die datenspeicherungsarchitektur für Ihre app planen, anstatt nur vorausgesetzt, dass eine Datenbank immer über die richtige Antwort ist. Es gibt eine Reihe von verschiedenen Optionen, die unterschiedliche Anforderungen, wie z. B. entsprechen:
 
--  **Voreinstellungen** – iOS bietet einen eingebauten Mechanismus zum Speichern von einfachen Schlüssel-Wert-Paare von Daten. Wenn Sie einfache benutzereinstellungen oder kleine Mengen an Daten (z. B. Personalisierungsinformationen) speichern verwenden Sie das systemeigene Plattformfunktionen für diese Art von Informationen zu speichern. Für iOS können Sie auch iCloud-Synchronisierung für diese Daten können sowohl für die Sicherung und Synchronisierung für Benutzer mit mehreren Geräten nutzen.
--  **Textdateien** – Benutzereingaben oder Caches des heruntergeladenen Inhalts (z. b. HTML) kann direkt auf dem Dateisystem gespeichert werden. Verwenden Sie eine entsprechende Dateinamenskonvention helfen Ihnen beim Organisieren der Dateien und Daten suchen.
--  **Serialisiert die Datendateien** – Objekte als XML oder JSON im Dateisystem beibehalten werden können. .NET Framework enthält Bibliotheken, die Stellen serialisieren und Deserialisieren die Objekte einfach an. Verwenden Sie zum Organisieren von Datendateien entsprechende Namen ein.
--  **Datenbank** – die SQLite-Datenbankmodul verfügbar iOS ist und eignet sich zum Speichern strukturierter Daten, die Sie Abfragen, sortieren oder anderweitig bearbeiten müssen. Datenbankspeicher eignet sich für Listen mit Daten mit zahlreichen Eigenschaften.
--  **Bilddateien** – Obwohl es möglich, binäre Daten in der Datenbank auf einem mobilen Gerät gespeichert ist, wird empfohlen, diese direkt in das Dateisystem zu speichern. Bei Bedarf können Sie die Dateinamen in einer Datenbank an, ordnen Sie das Bild mit anderen Daten speichern. Beim Umgang mit großen Bilder oder große Bilder ist es empfiehlt sich, eine zwischenspeicherstrategie planen, die Dateien, die Sie nicht mehr benötigen löscht, um zu vermeiden, des Benutzers Speicher belegt.
+-  **Voreinstellungen** – iOS bietet einen integrierten Mechanismus für die Speicherung von einfachen Schlüssel-Wert-Paare von Daten. Wenn Sie einfache benutzerdefinierte Einstellungen oder kleine Mengen an Daten (z. B. Personalisierungsinformationen) speichern verwenden Sie native Funktionen der Plattform für diese Art von Informationen zu speichern. Für iOS können Sie auch der iCloud-Synchronisierung für diese Daten, sowohl für die Sicherung und Synchronisierung für Benutzer mit mehreren Geräten nutzen.
+-  **Textdateien** – Benutzereingaben oder Caches der heruntergeladene Inhalt (z. b. HTML) kann direkt auf das Dateisystem gespeichert werden. Verwenden Sie eine geeignete Benennungskonvention für Dateinamen, können Sie die Dateien zu organisieren und Suchen von Daten.
+-  **Serialisiert die Datendateien** – Objekte als XML oder JSON im Dateisystem beibehalten werden können. .NET Framework enthält Clientbibliotheken, serialisieren und Deserialisieren Objekte einfach an. Verwenden Sie geeignete Namen, um Datendateien zu organisieren.
+-  **Datenbank** – die SQLite-Datenbank-Engine verfügbaren iOS ist, und eignet sich für die Speicherung von strukturierten Daten, die Abfragen, sortieren oder in anderer Weise bearbeitet werden sollen. Datenbankspeicher eignet sich für Listen mit Daten mit vielen Eigenschaften.
+-  **Bilddateien** – Obwohl es möglich, speichern Binärdaten in der Datenbank auf einem mobilen Gerät ist, wird empfohlen, diese direkt in das Dateisystem zu speichern. Bei Bedarf können Sie die Dateinamen in einer Datenbank an, ordnen Sie das Image mit anderen Daten speichern. Beim Umgang mit großen Bildern oder viele Images ist es empfiehlt sich, Planen Sie eine cachingstrategie auf, die Dateien, die Sie nicht mehr benötigen löscht, um zu vermeiden, Nutzung von Speicherplatz des Benutzers.
 
 
-Wenn eine Datenbank die richtige Speichermechanismus für Ihre app ist, wird im weiteren Verlauf dieses Dokuments erläutert, wie SQLite auf der Xamarin-Plattform zu verwenden.
+Wenn eine Datenbank den richtigen Speichermechanismus für Ihre app ist, wird im weiteren Verlauf dieses Dokuments erläutert, wie SQLite auf der Xamarin-Plattform zu verwenden.
 
 ## <a name="advantages-of-using-a-database"></a>Vorteile der Verwendung einer Datenbank
 
-Es gibt eine Reihe von Vorteilen mit einer SQL-Datenbank in Ihrer mobilen app ein:
+Es gibt eine Reihe von Vorteilen, die mit einer SQL-Datenbank in Ihrer mobilen app ein:
 
 -  SQL-Datenbanken ermöglichen die effiziente Speicherung von strukturierten Daten.
--  Bei komplexen Abfragen können bestimmte Daten extrahiert werden.
--  Die Abfrageergebnisse können sortiert werden.
--  Abfrageergebnisse aggregiert werden können.
--  Entwickler, mit der vorhandenen Datenbank Fähigkeiten können ihre Kenntnisse zum Entwerfen der Zugriffscode Datenbank und die Daten nutzen.
--  Das Datenmodell aus der Serverkomponente der eine verbundene Anwendung möglicherweise (ganz oder teilweise) in der mobilen Anwendung erneut verwendet werden.
+-  Daten können in komplexen Abfragen extrahiert werden.
+-  Abfrageergebnisse können sortiert werden.
+-  Abfrageergebnisse können aggregiert werden.
+-  Entwickler, mit der vorhandenen datenbankfähigkeiten können ihr Wissen zum Entwurf der Datenbank und Data Access Code nutzen.
+-  Das Datenmodell aus die Komponente von einer verbundenen Anwendung möglicherweise (vollständig oder teilweise) in der mobilen Anwendung erneut verwendet werden.
 
 
-## <a name="sqlite-database-engine"></a>SQLite-Datenbankmodul
+## <a name="sqlite-database-engine"></a>SQLite-Datenbank-Engine
 
-SQLite ist ein Open Source-Datenbankmodul, die von Apple für ihre mobile-Plattform übernommen wurden. Das Datenbankmodul SQLite ist für iOS-integriert, damit es keine zusätzliche Arbeit für Entwickler ist zu nutzen. SQLite eignet sich gut für plattformübergreifende mobile Entwicklung, da:
+SQLite ist eine Open-Source-Datenbank-Engine, die von Apple für den jeweiligen mobilen Plattform übernommen wurde. Die SQLite-Datenbank-Engine ist für iOS integriert, daher keine zusätzliche Arbeit für Entwickler ist, die sie nutzen. SQLite eignet sich gut für plattformübergreifende mobile Entwicklung, da:
 
--  Das Datenbankmodul ist klein, schnell und einfach portabel.
--  Eine Datenbank wird in einer einzigen Datei gespeichert, was leicht auf mobilen Geräten zu verwalten ist.
--  Das Dateiformat ist einfach zu verwendende plattformübergreifend: ob 32- oder 64-Bit, und Big- oder little-Endian-Systeme.
--  Die meisten der SQL92-standard implementiert.
+-  Die Datenbank-Engine ist klein, schnell und einfach.
+-  Eine Datenbank befindet sich in einer einzigen Datei handelt es sich einfach zu auf mobilen Geräten verwalten.
+-  Das Dateiformat ist einfach zu verwenden, über Plattformen hinweg: ob 32- oder 64-Bit, und big oder little-Endian-Systeme.
+-  Die meisten von der standardmäßigen SQL92 implementiert.
 
 
-SQLite ist darauf ausgelegt, kleiner und schneller sein, sind einige Einschränkungen auf seine Verwendung:
+SQLite ist darauf ausgelegt, klein und schnell sein, gibt es einige Einschränkungen zur Nutzung:
 
 -  Einige OUTER Join-Syntax wird nicht unterstützt.
--  Nur Tabelle umbenennen und ADDCOLUMN werden unterstützt. Sie können keine andere Änderungen an Ihrem Schema ausführen.
+-  Nur Tabelle umbenennen und ADDCOLUMN werden unterstützt. Andere Änderungen an das Schema ist nicht möglich.
 -  Ansichten sind schreibgeschützt.
 
 
-Sie können weitere Informationen zu SQLite auf der Website - [SQLite.org](http://SQLite.org) - jedoch alle Informationen, die Sie mit Xamarin SQLite verwenden müssen, die in diesem Dokument enthalten ist und die zugehörigen Beispiele. Das Datenbankmodul SQLite ist für alle Versionen von iOS integriert.
+Sie können weitere Informationen zu SQLite auf der Website - [SQLite.org](http://SQLite.org) – jedoch alle Informationen, die Sie SQLite mit Xamarin verwenden müssen, die in diesem Dokument enthalten ist und die zugehörigen Beispiele. Die SQLite-Datenbank-Engine ist in allen Versionen von iOS integriert.
 Obwohl in diesem Kapitel nicht behandelt wird, ist SQLite auch auf Windows Phone und Windows-Anwendungen zur Verfügung.
 
 ## <a name="windows-and-windows-phone"></a>Windows und Windows Phone
@@ -71,6 +71,6 @@ Erfahren Sie mehr in der [Tasky](~/cross-platform/app-fundamentals/building-cros
 ## <a name="related-links"></a>Verwandte Links
 
 - [DataAccess Basic (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [DataAccess erweiterte (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [iOS Daten Rezepte](https://developer.xamarin.com/recipes/ios/data/sqlite/)
+- [DataAccess-erweitert (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [iOS-Daten-Rezepte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
 - [Xamarin.Forms-Datenzugriff](~/xamarin-forms/app-fundamentals/databases.md)

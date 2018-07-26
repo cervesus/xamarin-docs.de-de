@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/11/2016
-ms.openlocfilehash: cf474015b28d9708d69719b38348391091040a28
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b3a7858361d25f26807ea328e8bfdd30ca8d483b
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762583"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241876"
 ---
 # <a name="configuration"></a>Konfiguration
 
-Um SQLite in Ihrer Anwendung Xamarin.Android zu verwenden, müssen Sie den richtigen Speicherort für die Datenbankdatei zu ermitteln.
+Verwendung von SQLite in Ihre Xamarin.Android-Anwendung müssen Sie den richtigen Speicherort für die Datenbankdatei zu bestimmen.
 
 ## <a name="database-file-path"></a>Pfad der Datenbankdatei
 
-Unabhängig davon, welche Datenzugriffsmethode, die Sie verwenden, müssen Sie eine Datei erstellen, bevor Daten mit SQLite gespeichert werden können. Je nach Plattform anvisierten der Dateispeicherort unterschiedlich sind. Für Android können "Environment"-Klasse Sie so erstellen Sie einen gültigen Pfad an, wie im folgenden Codeausschnitt gezeigt:
+Unabhängig davon, welche Datenzugriffsmethode, die Sie verwenden, müssen Sie eine Datei erstellen, bevor Sie Daten mit SQLite gespeichert werden können. Speicherort der Datei wird sich unterscheiden, je nach Zielplattform, die Sie verwenden möchten. Für Android können "Environment"-Klasse Sie zum Erstellen eines gültigen Pfads an, wie im folgenden Codeausschnitt gezeigt:
 
 ```csharp
 string dbPath = Path.Combine (
@@ -28,9 +28,9 @@ string dbPath = Path.Combine (
 // dbPath contains a valid file path for the database file to be stored
 ```
 
-Es sind weitere Aspekte berücksichtigt werden, bei der Entscheidung, wo die Datenbankdatei gespeichert. Beispielsweise können auf Android Sie auswählen, ob internen oder externen Speicher verwenden.
+Es gibt andere Dinge berücksichtigen, bei der Entscheidung, wo die Datenbankdatei gespeichert. Beispielsweise können unter Android Sie auswählen, ob internen oder externen Speicher verwenden.
 
-Wenn Sie einen anderen Speicherort auf den verschiedenen Plattformen in Ihrer Anwendung plattformübergreifende verwenden möchten können eine Compiler-Direktive Sie wie gezeigt auf um einen anderen Pfad für jede Plattform zu generieren:
+Wenn Sie einen anderen Speicherort auf jeder Plattform in Ihrer plattformübergreifenden Anwendung verwenden möchten können eine Compiler-Anweisung Sie wie gezeigt um einen anderen Pfad für jede Plattform zu generieren:
 
 ```csharp
 var sqliteFilename = "MyDatabase.db3";
@@ -46,13 +46,13 @@ string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library f
 var path = Path.Combine (libraryPath, sqliteFilename);
 ```
 
-Hinweise zur Verwendung von im Dateisystems in Android, finden Sie in der [Dateien durchsuchen](https://developer.xamarin.com/recipes/android/data/Files/Browse_Files) Rezept. Finden Sie unter der [Building Cross Platform Applications](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) Dokument Weitere Informationen zur Verwendung von Compiler-Direktiven, um bestimmten Code für die jeweilige Plattform zu schreiben.
+Hinweise zur Verwendung von im Dateisystems in Android, finden Sie in der [Dateien durchsuchen](https://github.com/xamarin/recipes/tree/master/Recipes/android/data/files/browse_files) Anleitung. Finden Sie unter den [Building Cross Platform Applications](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) Dokument Weitere Informationen zur Verwendung von Compiler-Direktiven für jede Plattform spezifischen Code zu schreiben.
 
 ## <a name="threading"></a>Threading
 
-Sie sollten die gleiche Verbindung der SQLite-Datenbank nicht über mehrere Threads hinweg verwenden. Achten Sie darauf, dass zu öffnen, verwenden und schließen Sie alle Verbindungen, die Sie auf dem gleichen Thread erstellen.
+Sie sollten die gleiche Verbindung der SQLite-Datenbank nicht über mehrere Threads hinweg verwenden. Achten Sie darauf, dass öffnen, verwenden Sie aus, und schließen Sie alle Verbindungen, die Sie auf dem gleichen Thread erstellen.
 
-Um sicherzustellen, dass der Code nicht versucht, auf die SQLite-Datenbank aus mehreren Threads gleichzeitig zuzugreifen, führen Sie manuell eine Sperre, wenn Sie beabsichtigen, den Zugriff auf die Datenbank wie folgt:
+Um sicherzustellen, dass Ihr Code nicht versucht, die die SQLite-Datenbank von mehreren Threads gleichzeitig zugreifen, führen Sie manuell eine Sperre, wenn Sie beabsichtigen, den Zugriff auf die Datenbank, wie folgt:
 
 ```csharp
 object locker = new object(); // class level private field
@@ -62,12 +62,12 @@ lock (locker){
 }
 ```
 
-Jeglicher Datenbankzugriff (Lesevorgänge, Schreibvorgänge, Updates usw.), sollten mit der gleichen Sperre eingeschlossen werden. Muss darauf geachtet werden eine Deadlocksituation vermeiden, indem Sie sicherstellen, dass die Arbeit in der Lock-Klausel einfach gehalten ist und nicht auf an anderen Methoden, die auch eine Sperre annehmen können.
+Jeglicher Datenbankzugriff (Lesevorgänge, Schreibvorgänge, Updates usw.) sollten mit die gleiche Sperre eingeschlossen werden. Muss darauf geachtet werden, die eine Deadlocksituation zu vermeiden, indem Sie sicherstellen, dass die Arbeit in der Sperre-Klausel einfach gehalten ist und wird Sie an andere Methoden, die auch sperren können nicht aufgerufen.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [DataAccess Basic (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [DataAccess erweiterte (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Android Daten Rezepte](https://developer.xamarin.com/recipes/android/data/)
+- [DataAccess-erweitert (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Rezepte für Android-Daten](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
 - [Xamarin.Forms-Datenzugriff](~/xamarin-forms/app-fundamentals/databases.md)

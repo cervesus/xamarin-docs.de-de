@@ -1,33 +1,33 @@
 ---
-title: Verwenden von Graphics Core und Core Animation in Xamarin.iOS
-description: Dieser Artikel veranschaulicht Schritt für Schritt zum Erstellen einer Anwendung, die Core-Grafiken und Core Animation verwendet. Es wird gezeigt, wie auf dem Bildschirm als Antwort auf Benutzer Touch gezeichnet werden soll und wie ein Bild entlang eines Pfads animiert.
+title: Verwenden von Core Grafiken und Core-Animationen in Xamarin.iOS
+description: Dieser Artikel veranschaulicht Schritt für Schritt zum Erstellen einer Anwendung, die wichtigste Grafik und Core Animation verwendet. Es zeigt, wie auf dem Bildschirm als Reaktion auf die Toucheingabe Benutzers gezeichnet sowie wie Sie ein Bild, das entlang eines Pfads zu animieren.
 ms.prod: xamarin
 ms.assetid: 4B96D5CD-1BF5-4520-AAA6-2B857C83815C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7a4399a5d62e2000c2a15a65da8e0e427dc039e0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: cecfd7f3a9678f298af3ed547aa7b50a18238729
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787054"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242003"
 ---
-# <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>Verwenden von Graphics Core und Core Animation in Xamarin.iOS
+# <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>Verwenden von Core Grafiken und Core-Animationen in Xamarin.iOS
 
-In dieser exemplarischen Vorgehensweise werden wir einen Pfad mit Graphics Core als Antwort auf Fingereingaben zeichnen. Anschließend werden wir fügen eine `CALayer` mit einem Bild, das wir entlang des Pfads animiert werden soll.
+In dieser exemplarischen Vorgehensweise werden wir einen Pfad mit Core Graphics als Reaktion auf die Toucheingabe zu zeichnen. Anschließend fügen wir eine `CALayer` mit einem Bild, das wir entlang des Pfads animiert werden soll.
 
-Der folgende Screenshot zeigt die fertigen Anwendung:
+Der folgende Screenshot zeigt die fertige Anwendung:
 
-![](graphics-animation-walkthrough-images/00-final-app.png "Der fertigen Anwendung")
+![](graphics-animation-walkthrough-images/00-final-app.png "Die fertige Anwendung")
 
-Vor dem Beginn des Downloads der *GraphicsDemo* Beispiel, in dem diese Anleitung begleitet. Kann heruntergeladen werden [hier](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/) und befindet sich innerhalb der **GraphicsWalkthrough** Directory starten Sie das Projekt mit dem Namen **GraphicsDemo_starter** durch Doppelklicken auf, und Öffnen Sie die `DemoView` Klasse.
+Download zunächst die *GraphicsDemo* -Beispiel, das diesem Handbuch beigefügt ist. Es kann heruntergeladen werden [hier](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/) und befindet sich im die **GraphicsWalkthrough** Verzeichnis starten Sie das Projekt mit dem Namen **GraphicsDemo_starter** durch Doppelklicken auf diese, und Öffnen Sie die `DemoView` Klasse.
 
 ## <a name="drawing-a-path"></a>Zeichnen eines Pfads
 
 
-1. In `DemoView` Hinzufügen einer `CGPath` Variable auf die Klasse und in den Konstruktor zu instanziieren. Deklarieren Sie auch zwei `CGPoint` Variablen `initialPoint` und `latestPoint`, dass wir zum Erfassen des Berührungspunkt, aus der erstellen wir den Pfad, verwenden:
+1. In `DemoView` Hinzufügen einer `CGPath` -Variable auf die Klasse, und instanziiere es im Konstruktor. Auch deklariert zwei `CGPoint` Variablen, `initialPoint` und `latestPoint`, die wir von Touch-Punkts zu erfassen mithilfe, von dem wir den Pfad zu erstellen:
     
     ```csharp
     public class DemoView : UIView
@@ -45,7 +45,7 @@ Vor dem Beginn des Downloads der *GraphicsDemo* Beispiel, in dem diese Anleitung
     }
     ```
 
-2. Fügen Sie die folgenden using-Direktiven hinzu:
+2. Fügen Sie die folgenden using-Anweisungen hinzu:
 
     ```csharp
     using CoreGraphics;
@@ -53,7 +53,7 @@ Vor dem Beginn des Downloads der *GraphicsDemo* Beispiel, in dem diese Anleitung
     using Foundation;
     ```
 
-3. Als Nächstes überschreiben `TouchesBegan` und `TouchesMoved,` und fügen Sie die folgenden Implementierungen, um der ersten Fingereingabe und jeder nachfolgende Touch Punkt zu erfassen:
+3. Als Nächstes überschreiben `TouchesBegan` und `TouchesMoved,` und fügen Sie die folgenden Implementierungen zum Erfassen von anfänglichen Touch-Punkts und jedes nachfolgende Touch-Punkts:
 
     ```csharp
     public override void TouchesBegan (NSSet touches, UIEvent evt){
@@ -80,9 +80,9 @@ Vor dem Beginn des Downloads der *GraphicsDemo* Beispiel, in dem diese Anleitung
     }
     ```
 
-    `SetNeedsDisplay` wird jedes Mal Fingereingaben, in der Reihenfolge für verschieben aufgerufen `Draw` auf die nächste Ausführung Lauf aufgerufen werden.
+    `SetNeedsDisplay` wird werden jedes Mal aufgerufen, Workflows zu, in der Reihenfolge für verschieben `Draw` im nächsten Durchlauf der Ausführung der Schleife aufgerufen werden.
 
-4. Wir fügen Zeilen an den Pfad in der `Draw` -Methode und verwendet eine rote gestrichelte Linie zu zeichnen. [Implementieren `Draw` ](~/ios/platform/graphics-animation-ios/core-graphics.md) mit den folgenden Code:
+4. Wir fügen Zeilen an den Pfad in der `Draw` -Methode und verwendet eine rote gestrichelte Linie zeichnen mit. [Implementieren `Draw` ](~/ios/platform/graphics-animation-ios/core-graphics.md) mit den folgenden Code:
 
     ```csharp
     public override void Draw (CGRect rect){
@@ -118,13 +118,13 @@ Vor dem Beginn des Downloads der *GraphicsDemo* Beispiel, in dem diese Anleitung
 
 Wenn wir die Anwendung jetzt ausführen, können wir die zum Zeichnen auf dem Bildschirm berühren wie im folgenden Screenshot gezeigt:
 
-![](graphics-animation-walkthrough-images/01-path.png "Zeichnen auf dem Bildschirm")
+![](graphics-animation-walkthrough-images/01-path.png "Auf dem Bildschirm zeichnen")
 
-## <a name="animating-along-a-path"></a>Animieren entlang eines Pfads
+## <a name="animating-along-a-path"></a>Animieren von entlang eines Pfads
 
-Nun, da wir den Code, damit Benutzer auf den Pfad zeichnen können implementiert haben, fügen wir den Code, um eine Ebene entlang des Pfads gezeichneten animieren hinzu.
+Nun, da wir den Code, damit Benutzer, die zum Zeichnen des Pfads implementiert haben, fügen Sie den Code, um eine Ebene entlang des gezeichneten Pfads zu animieren.
 
-1. Fügen Sie zunächst eine [ `CALayer` ](~/ios/platform/graphics-animation-ios/core-animation.md) Variable auf die Klasse und erstellen Sie ihn im Konstruktor:
+1. Fügen Sie zunächst eine [ `CALayer` ](~/ios/platform/graphics-animation-ios/core-animation.md) -Variable auf die Klasse und erstellen Sie ihn im Konstruktor:
 
     ```csharp
     public class DemoView : UIView
@@ -149,9 +149,9 @@ Nun, da wir den Code, damit Benutzer auf den Pfad zeichnen können implementiert
             }
     ```
 
-2. Als Nächstes fügen wir die Ebene als eine Unterebene Ebene für die Ansicht, wenn der Benutzer von ihren Finger vom Bildschirm anhebt. Klicken Sie dann, wir erstellen eine Keyframe-Animation unter Verwendung des Pfads Animieren der Ebene `Position`.
+2. Als Nächstes fügen wir die Ebene als eine Ebene der Ebene von der Ansicht, wenn der Benutzer Sie ihren Finger vom Bildschirm abhebt. Anschließend erstellen wir eine Keyframe-Animation, die unter Verwendung des Pfads, Animieren der Ebene des `Position`.
 
-    Um dies zu erreichen, wir überschreiben müssen, die `TouchesEnded` und fügen Sie den folgenden Code hinzu:
+    Um dies zu erreichen, außer Kraft setzen wir müssen, die `TouchesEnded` und fügen Sie den folgenden Code hinzu:
 
     ```csharp
     public override void TouchesEnded (NSSet touches, UIEvent evt)
@@ -172,17 +172,17 @@ Nun, da wir den Code, damit Benutzer auf den Pfad zeichnen können implementiert
         }
     ```
 
-3. Führen Sie die Anwendung jetzt und nach dem Zeichnen, eine Ebene mit einem Bild wird hinzugefügt und reist entlang des gezeichneten Pfads:
+3. Führen Sie die Anwendung jetzt und nach dem Zeichnen, eine Ebene mit einem Bild wird hinzugefügt und wird dahin weitergeleitet entlang des gezeichneten Pfads:
 
-![](graphics-animation-walkthrough-images/00-final-app.png "Eine Ebene mit einem Bild wird hinzugefügt und verläuft entlang des Pfads gezeichneten")
+![](graphics-animation-walkthrough-images/00-final-app.png "Eine Ebene mit einem Bild wird hinzugefügt und wird dahin weitergeleitet entlang des gezeichneten Pfads")
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel durchlaufen wir ein Beispiel, das Grafiken und Animationen Konzepte miteinander verbunden. Zunächst hat wir gezeigt, wie Grafiken Core verwenden, um einen Pfad zu zeichnen, einem `UIView` als Antwort auf Benutzer Touch. Klicken Sie dann wir wurde gezeigt, wie Core Animation verwenden, um ein Bild entlang dieses Pfads zu treffen.
+In diesem Artikel durchlaufen wir ein Beispiel, das Grafiken und Animationen Konzepte miteinander verbunden. Zunächst wir gezeigt, wie mit Core Graphics zeichnen Sie einen Pfad eine `UIView` als Reaktion auf die Toucheingabe des Benutzers. Klicken Sie dann wurde gezeigt, wie das Core Animation nutzen, um ein Bild, das entlang dieses Pfads zu erstellen.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Core Animation](~/ios/platform/graphics-animation-ios/core-animation.md)
 - [Core Graphics](~/ios/platform/graphics-animation-ios/core-graphics.md)
-- [Core Animation Rezepte](https://developer.xamarin.com/recipes/ios/animation/coreanimation)
+- [Core Animation Rezepte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

@@ -1,48 +1,48 @@
 ---
 title: Anzeigen von Warnungen in Xamarin.iOS
-description: Dieses Dokument beschreibt die Vorgehensweise zum Anzeigen von Warnungen in Xamarin.iOS mit UIAlertController-APIs in iOS 8 eingeführt.
+description: Dieses Dokument beschreibt die Vorgehensweise zum Anzeigen von Warnungen in Xamarin.iOS mithilfe der APIs, die iOS 8 eingeführtes UIAlertController.
 ms.prod: xamarin
 ms.assetid: 61C671E9-3757-4052-86E4-28640025A34A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 88233cb1ac31b2669fdc38bbc9b0835a45c6b0ce
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 788e62b30dbf533df059b0c3805e04ecf7b857aa
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789593"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241333"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>Anzeigen von Warnungen in Xamarin.iOS
 
-Ab mit iOS 8 hat UIAlertController abgeschlossenen ersetzten UIActionSheet und UIAlertView die nun veraltet sind.
+Ab iOS 8, UIAlertController hat abgeschlossenen ersetzten UIActionSheet aus, und UIAlertView der sind jetzt veraltet.
 
-Im Gegensatz zu den Klassen, mit denen, die er ersetzt, die Unterklassen von UIView sind, ist die UIAlertController eine Unterklasse von UIViewController.
+Im Gegensatz zu den Klassen, die es ersetzt, die Unterklassen von UIView sind, ist die UIAlertController eine Unterklasse von UIViewController.
 
-Verwendung `UIAlertControllerStyle` an, dass der Typ der Warnung angezeigt. Diese Warnungstypen sind:
+Verwendung `UIAlertControllerStyle` an, dass die Art der Warnung angezeigt. Diese Warnungen sind:
 
 - **UIAlertControllerStyleActionSheet**
-    * Erforderliche iOS 8 Dies hätte eine UIActionSheet
+    * Vor iOS 8 Dies hätte eine UIActionSheet
 - **UIAlertControllerStyleAlert**
-    * Erforderliche iOS 8 Dies hätte UIAlertView 
+    * Vor iOS 8 Dies hätte uialertview-Element 
 
-Es gibt drei erforderlichen Schritte an, die bei einer Warnung Controller zu erstellen:
+Es gibt drei erforderlichen Schritte an, die beim Erstellen einen Warnungscontroller:
 
-- Erstellen Sie und konfigurieren Sie die Warnung mit a:
+- Erstellen Sie und konfigurieren Sie die Warnung mit:
     * Titel
     * message
-    * preferredStyle
+    * "preferredstyle"
     
 - (Optional) Hinzufügen eines Textfelds
 - Fügen Sie die erforderlichen Aktionen hinzu.
-- Präsentieren Sie die View-Controller
+- Stellen Sie den Ansichtscontroller
 
-Die einfachste Warnung enthält ein einzelnes Optionsfeld an, wie in diesem Screenshot gezeigt:
+Die einfachste Warnung enthält eine Schaltfläche aus, wie im folgenden Screenshot gezeigt:
 
  ![Warnung mit einer Schaltfläche](alerts-images/alert1.png)
 
-Der Code zum Anzeigen der einer einfachen Warnung lautet wie folgt:
+Der Code zum Anzeigen der einer einfachen Warnung lautet wie folgt aus:
 
 ```csharp
 okayButton.TouchUpInside += (sender, e) => {
@@ -58,7 +58,7 @@ okayButton.TouchUpInside += (sender, e) => {
 };
 ```
 
-In ähnlicher Weise erfolgt eine Warnung mit mehreren Optionen, aber zwei Aktionen hinzufügen. Das folgende Bildschirmfoto zeigt z. B. eine Warnung mit zwei Schaltflächen:
+Auf ähnliche Weise erfolgt eine Warnung mit mehreren Optionen, aber fügen Sie zwei Aktionen hinzu. Der folgende Screenshot zeigt beispielsweise eine Warnung mit zwei Schaltflächen:
 
  ![ Warnung mit zwei Schaltflächen](alerts-images/alert2.png)
 
@@ -77,11 +77,11 @@ okayCancelButton.TouchUpInside += ((sender, e) => {
 });
 ```
 
-Warnungen können auch eine Aktion Arbeitsblatt, mit dem folgenden Screenshot vergleichbarer anzeigen:
+Warnungen können auch ein aktionsblatt, ähnlich wie im folgenden Screenshot angezeigt:
 
- ![Aktion Blatt Warnung](alerts-images/alert3.png)
+ ![Aktion-Stylesheet-Warnung](alerts-images/alert3.png)
 
-Schaltflächen hinzugefügt werden, auf die Warnung mit der `AddAction` Methode:
+Schaltflächen hinzugefügt werden, auf die Warnung mit dem `AddAction` Methode:
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {
@@ -114,4 +114,4 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 ## <a name="related-links"></a>Verwandte Links
 
 - [Steuerelemente (Beispiel)](https://developer.xamarin.com/samples/Controls/)
-- [Warnung-Controller](https://developer.xamarin.com/recipes/ios/standard_controls/alertcontroller/)
+- [Warnungscontroller](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

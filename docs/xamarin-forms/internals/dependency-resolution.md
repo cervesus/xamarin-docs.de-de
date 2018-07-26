@@ -1,22 +1,22 @@
 ---
 title: Auflösung von Abhängigkeiten in Xamarin.Forms
-description: In diesem Artikel wird erläutert, wie eine Abhängigkeit Auflösungsmethode in Xamarin.Forms, einfügen, damit eine Anwendung Dependency Injection-Container Kontrolle über die Erstellung und Lebensdauer von benutzerdefinierten Renderern, Effekte und DependencyService Implementierungen verfügt .
+description: In diesem Artikel wird erläutert, wie beim Einfügen von einer Abhängigkeit Auflösungsmethode in Xamarin.Forms, damit eine Anwendung Dependency Injection-Container Kontrolle über die Erstellung und Lebensdauer von benutzerdefinierten Renderern, Effekte und DependencyService-Implementierungen kann.
 ms.prod: xamarin
 ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/23/2018
-ms.openlocfilehash: b9e49d32dd4b0b02c742cd829eafabd1c55230f0
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: 8235b6fb5fda2a414cf192dd66007d1d02f232aa
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203183"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242380"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Auflösung von Abhängigkeiten in Xamarin.Forms
 
-_In diesem Artikel wird erläutert, wie eine Abhängigkeit Auflösungsmethode in Xamarin.Forms, einfügen, damit eine Anwendung Dependency Injection-Container Kontrolle über die Erstellung und Lebensdauer von benutzerdefinierten Renderern, Effekte und DependencyService Implementierungen verfügt . Die Codebeispiele stammen aus der [Abhängigkeitsauflösung](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/) Beispiel._
+_In diesem Artikel wird erläutert, wie beim Einfügen von einer Abhängigkeit Auflösungsmethode in Xamarin.Forms, damit eine Anwendung Dependency Injection-Container Kontrolle über die Erstellung und Lebensdauer von benutzerdefinierten Renderern, Effekte und DependencyService-Implementierungen kann. Die Codebeispiele stammen aus der [Abhängigkeitsauflösung](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/) Beispiel._
 
 Im Rahmen einer Xamarin.Forms-Anwendung, die das Model-View-ViewModel (MVVM)-Muster verwendet, kann ein Container für Abhängigkeitsinjektion für das Registrieren und Auflösen von anzeigemodelle, und klicken Sie zum Registrieren von Diensten und sie dann in Ansichtsmodelle einzuschleusen verwendet werden. Während der Modellerstellung anzeigen fügt der Container alle Abhängigkeiten, die erforderlich sind. Wenn diese Abhängigkeiten nicht erstellt wurden, wird der Container erstellt, und löst zuerst die Abhängigkeiten. Weitere Informationen über Abhängigkeitsinjektion, einschließlich Beispiele für die Injektion von Abhängigkeiten in Modelle anzeigen, finden Sie unter [Dependency Injection](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
 
@@ -55,7 +55,7 @@ public partial class App : Application
 In diesem Beispiel wird die Auflösungsmethode Abhängigkeit auf einen Lambda-Ausdruck festgelegt, die den Container für Abhängigkeitsinjektion Autofac verwendet wird, um alle Typen aufzulösen, die mit dem Container registriert wurden. Andernfalls `null` zurückgegeben, das führt zu Xamarin.Forms, es wird versucht, den Typ aufzulösen.
 
 > [!NOTE]
-> Von DI-Containern verwendete API ist spezifisch für den Container. Die Codebeispiele in diesem Artikel verwenden Sie Autofac als ein Container für Abhängigkeitsinjektion, bietet der `IContainer` und `ContainerBuilder` Typen. Alternative Dependency Injection-Containern konnte in gleichem Maße verwendet werden, jedoch würden unterschiedliche APIs verwenden, als die hier vorgestellten.
+> Von DI-Containern verwendete API ist spezifisch für den Container. Die Codebeispiele in diesem Artikel verwenden Sie Autofac als ein Container für Abhängigkeitsinjektion, bietet der `IContainer` und `ContainerBuilder` Typen. Alternative Dependency Injection-Containern konnte in gleichem Maße verwendet werden, jedoch würden unterschiedliche APIs verwenden, als hier präsentiert werden.
 
 Beachten Sie, dass es nicht erforderlich ist, die Auflösungsmethode Abhängigkeit beim Starten der Anwendung festgelegt. Es kann zu einem beliebigen Zeitpunkt festgelegt werden. Die einzige Einschränkung besteht, dass Xamarin.Forms muss die Auflösungsmethode für die Abhängigkeit der Zeit kennen, die die Anwendung versucht, Typen, die gespeichert werden, in dem Container für Abhängigkeitsinjektion nutzen. Aus diesem Grund sind es Dienste, in dem Container für Abhängigkeitsinjektion, den während des Starts der Anwendung erforderlich sind, müssen die Auflösungsmethode Abhängigkeit zu einem frühen Zeitpunkt in den Lebenszyklus der Anwendung festgelegt werden. Auf ähnliche Weise, wenn der Dependency Injection-Container die Erstellung und Lebensdauer einer bestimmten verwaltet [ `Effect` ](xref:Xamarin.Forms.Effect), Xamarin.Forms müssen die Auflösungsmethode Abhängigkeit kennen, bevor versucht wird, erstellen Sie eine Ansicht, wird verwendet, die `Effect`.
 
@@ -170,7 +170,7 @@ void RegisterTypes()
 }
 ```
 
-In diesem Beispiel die `App.RegisterTypeWithParameters` -Methode registriert die `VideoPlayerRenderer` mit dem Dependency Injection-Container, mit der Registrierungsmethode um sicherzustellen, dass die `MainActivity` Instanz wird als injiziert die `Context` Argument, und die `Logger`Typ wird als injiziert den `ILogger` Argument.
+In diesem Beispiel die `App.RegisterTypeWithParameters` Methode registriert den `VideoPlayerRenderer` mit dem Dependency Injection-Container. Der Registrierungsmethode wird sichergestellt, dass die `MainActivity` Instanz wird als injiziert die `Context` Argument, und die `Logger` Typ wird als injiziert die `ILogger` Argument.
 
 ### <a name="registering-effects"></a>Registrieren von Effekten
 

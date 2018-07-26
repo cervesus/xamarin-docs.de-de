@@ -1,26 +1,26 @@
 ---
 title: Karten in Xamarin.iOS
-description: Dieses Dokument beschreibt das iOS-MapKit-Framework und wie er mit Xamarin.iOS verwendet wird. Es wird erläutert, wie zum Hinzufügen einer Zuordnung, Stil, schwenken und zoomen, arbeiten mit Benutzerstandort einstellen, Hinzufügen von Anmerkungen, arbeiten mit Legenden und für Überlagerungen und lokale Suche durchführen.
+description: Dieses Dokument beschreibt das iOS-MapKit-Framework und wie er mit Xamarin.iOS verwendet wird. Es wird erläutert, wie eine Karte, Stil, schwenken und zoomen, arbeiten mit Benutzerstandort, Hinzufügen von Anmerkungen, zusammenarbeiten, Legenden und für Überlagerungen und lokale Suche hinzufügen.
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 3649c8eb9c8c1a82940b8e2eece7d2bfd005d024
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 5343f53b77319b08424263103834ffcf10e261a0
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790229"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242065"
 ---
 # <a name="maps-in-xamarinios"></a>Karten in Xamarin.iOS
 
-Karten sind ein gängiges Feature in allen modernen mobilen Betriebssystemen. iOS bietet Unterstützung systemintern über das Map-Kit-Framework. Map-Kit können Anwendungen problemlos umfassende, interaktive Karten hinzufügen. Diese Zuordnungen können in einer Vielzahl von Möglichkeiten, wie z. B. Hinzufügen von Anmerkungen zum Kennzeichnen von Standorten auf einer Karte und Überlagern von Grafiken der willkürlichen Formen angepasst werden. Map-Kit hat auch integrierten Unterstützung für die aktuelle Position eines Geräts angezeigt.
+Zuordnungen sind ein Feature in allen modernen mobilen Betriebssystemen. iOS bietet Unterstützung systemintern über das Map-Kit-Framework. Map Kit können Anwendungen problemlos interaktive Karten hinzufügen. Diese Zuordnungen können in einer Vielzahl von Möglichkeiten, wie etwa das Hinzufügen von Anmerkungen, um die Speicherorte auf einer Karte zu markieren und Überlagern von Grafiken von willkürlichen Formen angepasst werden. Map Kit verfügt auch über integrierte Unterstützung für die aktuelle Position eines Geräts angezeigt.
 
 ## <a name="adding-a-map"></a>Hinzufügen einer Karte
 
-Hinzufügen einer Zuordnung zu einer Anwendung geschieht durch Hinzufügen einer `MKMapView` -Instanz, auf die Hierarchie anzeigen, wie unten dargestellt:
+Hinzufügen einer Zuordnung zu einer Anwendung erfolgt durch Hinzufügen einer `MKMapView` Instanz in der Hierarchie anzeigen, wie unten dargestellt:
 
 ```csharp
 // map is an MKMapView declared as a class variable
@@ -28,40 +28,40 @@ map = new MKMapView (UIScreen.MainScreen.Bounds);
 View = map;
 ```
 
- `MKMapView` ist eine `UIView` Unterklasse, die eine Zuordnung zeigt. Hinzufügen der Zuordnung mithilfe des obigen Codes erzeugt eine interaktive Zuordnung:
+ `MKMapView` ist eine `UIView` Unterklasse, die eine Zuordnung anzeigt. Hinzufügen der Zuordnung mit dem obigen Code wird eine interaktive Karte:
 
  ![](images/00-map.png "Eine Beispiel-Karte")
 
 ## <a name="map-style"></a>Map-Stil
 
- `MKMapView` unterstützt die 3 verschiedene Formaten von Zuordnungen. Um einen Stil für die Zuordnung zu anzuwenden, legen Sie einfach die `MapType` Eigenschaft auf einen Wert aus der `MKMapType` Enumeration:
+ `MKMapView` 3 verschiedenen Formate von Zuordnungen unterstützt werden. Wenn ein Format anwenden möchten, legen Sie einfach die `MapType` Eigenschaft auf einen Wert aus der `MKMapType` Enumeration:
  ```
 map.MapType = MKMapType.Standard; //road map
 map.MapType = MKMapType.Satellite;
 map.MapType = MKMapType.Hybrid;
  ```
-  Der folgende Screenshot zeigen die unterschiedlichen Zuordnung Stile, die verfügbar sind:
+  Der folgende Screenshot zeigt es sich um andere Zuordnung Stile an, die verfügbar sind:
 
- ![](images/01-mapstyles.png "Diesem Screenshot werden die unterschiedlichen Zuordnung-Formatvorlagen, die verfügbar sind")
+ ![](images/01-mapstyles.png "Dieser Screenshot zeigt die unterschiedlichen Zuordnung Stile an, die verfügbar sind")
 
 ## <a name="panning-and-zooming"></a>Schwenken und Zoomen
 
  `MKMapView` Unterstützung für die Zuordnung Interaktivitätsfunktionen enthält wie z. B.:
 
--  Vergrößern/verkleinern, über eine zwei-Finger-Geste
--  Über eine Geste Schwenken Schwenken
+-  Über eine zusammendrückbewegung Zoomen
+-  Über eine Geste für ein Pan Schwenken
 
 
-Diese Features können aktiviert oder deaktiviert, indem einfach die `ZoomEnabled` und `ScrollEnabled` Eigenschaften der `MKMapView` Instanz, in dem der Standardwert für beide "true" ist. Z. B. zum Anzeigen einer statischen Zuordnung einfach die entsprechenden Eigenschaften auf False festgelegt:
+Diese Features können aktiviert oder deaktiviert, indem einfach die `ZoomEnabled` und `ScrollEnabled` Eigenschaften der `MKMapView` Instanz, in dem der Standardwert für beide "true" ist. Beispielsweise um einer statischen Karte anzuzeigen, legen Sie einfach die entsprechenden Eigenschaften auf "false":
 
 ```csharp
 map.ZoomEnabled = false;
 map.ScrollEnabled = false;
 ```
 
-## <a name="user-location"></a>Benutzerstandort einstellen
+## <a name="user-location"></a>Benutzerstandort
 
-Zusätzlich zu den Benutzereingriff `MKMapView` verfügt auch über integrierte Unterstützung für den Speicherort des Geräts angezeigt. Dies geschieht mithilfe der *zentralen Standort* Framework. Bevor Sie den Standort des Benutzers zugreifen können, muss den Benutzer aufgefordert werden. Zu diesem Zweck erstellen Sie eine Instanz des `CLLocationManager` , und rufen Sie `RequestWhenInUseAuthorization`.
+Zusätzlich zur Benutzerinteraktion `MKMapView` verfügt auch über integrierte Unterstützung für den Standort des Geräts angezeigt. Dies geschieht mithilfe der *zentralen Standort* Framework. Bevor Sie den Standort des Benutzers zugreifen können, müssen Sie den Benutzer auffordern. Zu diesem Zweck erstellen Sie eine Instanz von `CLLocationManager` , und rufen Sie `RequestWhenInUseAuthorization`.
 
 ```csharp
 CLLocationManager locationManager = new CLLocationManager();
@@ -69,38 +69,38 @@ locationManager.RequestWhenInUseAuthorization();
 //locationManager.RequestAlwaysAuthorization(); //requests permission for access to location data while running in the background
 ```
 
-Beachten Sie, dass in Versionen von iOS 8.0, bei dem Versuch, rufen Sie vor der `RequestWhenInUseAuthorization` führt zu einem Fehler. Vergewissern Sie sich die iOS-Version vornehmen, von denen aufgerufen, wenn Sie, zur Unterstützung von Vorgängerversionen von 8 beabsichtigen.
+Beachten Sie, dass in Versionen von iOS 8.0, es wird versucht, rufen Sie vor der `RequestWhenInUseAuthorization` führt zu einem Fehler. Stellen Sie sicher, überprüfen Sie die iOS-Version vor dieser Aufruf verwenden, wenn Sie beabsichtigen, 8-Versionen unterstützt.
 
 Erfordert den Zugriff auf den Standort des Benutzers auch Änderungen an **"Info.plist"**. Die folgenden Schlüssel, die mit den Standortdaten zusammenhängen, sollten festgelegt werden:
 
 - **NSLocationWhenInUseUsageDescription**: Für den Zugriff auf den Standort des Benutzers während dieser mit Ihrer App interagiert.
 - **NSLocationAlwaysUsageDescription**: Für den Zugriff Ihrer App auf den Standort des Benutzers aus dem Hintergrund.
 
-Sie können diese Schlüssel hinzufügen, indem Sie öffnen **"Info.plist"** auswählen und *Quelle* am unteren Rand der Editor.
+Sie können diese Schlüssel hinzufügen, indem Sie Sie öffnen **"Info.plist"** und *Quelle* am unteren Rand der Editor.
 
-Nachdem Sie aktualisiert haben **"Info.plist"** und aufgefordert, die Benutzer die Berechtigung zum Zugriff auf ihren Speicherort, können Sie den Standort des Benutzers auf der Karte anzeigen, durch Festlegen der `ShowsUserLocation` Eigenschaft auf "true":
+Nachdem Sie aktualisiert haben **"Info.plist"** aufgefordert, den Benutzer für die Berechtigung zum Zugriff auf deren Speicherort, und Sie können den Standort des Benutzers auf der Karte anzeigen, indem Sie die Einstellung der `ShowsUserLocation` Eigenschaft auf "true":
 
 ```csharp
 map.ShowsUserLocation = true;
 ```
 
- ![](images/02-location-alert.png "Warnung Zugriff Speicherort zulassen")
+ ![](images/02-location-alert.png "Warnung Zugriff Standort zulassen")
  
 ## <a name="annotations"></a>Anmerkungen
 
- `MKMapView` unterstützt auch anzeigen von Bildern, die als Anmerkungen, auf einer Karte bezeichnet. Dabei kann es sich um benutzerdefinierte Bilder oder systemdefinierte Pins verschiedener Farben handeln. Das folgende Bildschirmfoto zeigt z. B. eine Zuordnung mit einem sowohl eine Pin und ein benutzerdefiniertes Image:
+ `MKMapView` unterstützt auch das Anzeigen von Bildern, Anmerkungen, die auf einer Karte genannt. Dies können entweder benutzerdefinierte Images oder systemdefinierte Pins verschiedener Farben sein. Der folgende Screenshot zeigt beispielsweise eine Karte mit einem sowohl eine Pin und einem benutzerdefinierten Image:
 
- ![](images/03-annotations.png "Diese bildschirmabbildung zeigt eine Zuordnung mit einem sowohl eine Pin und eines benutzerdefinierten Abbilds")
+ ![](images/03-annotations.png "Dieser Screenshot zeigt eine Zuordnung zu einem sowohl eine Pin und einem benutzerdefinierten Image")
 
 ### <a name="adding-an-annotation"></a>Hinzufügen einer Anmerkung
 
 Eine Anmerkung selbst besteht aus zwei Teilen:
 
--  Die `MKAnnotation` -Objekt, das Daten des Modells über die Anmerkung, z. B. den Titel und den Speicherort der Anmerkung enthält.
--  Die `MKAnnotationView` , das das Bild, das Anzeigen und optional eine Legende, die angezeigt wird, wenn der Benutzer die Anmerkung tippt enthält.
+-  Die `MKAnnotation` -Objekt, das Daten des Modells über die Anmerkung, z. B. den Titel und die Position der Anmerkung enthält.
+-  Die `MKAnnotationView` , enthält das Image für die Anzeige und optional eine Legende, die angezeigt wird, wenn der Benutzer auf die Anmerkung tippt.
 
 
-Zuordnung Kit verwendet die iOS-delegationsmuster zum Hinzufügen von Anmerkungen zu einer Zuordnung, in dem die `Delegate` Eigenschaft von der `MKMapView` festgelegt ist, mit einer Instanz von ein `MKMapViewDelegate`. Es handelt sich dieser Delegat-Implementierung, die verantwortlich für die Rückgabe der `MKAnnotationView` für eine Anmerkung.
+Map Kit verwendet das iOS-delegationsmuster zum Hinzufügen von Anmerkungen zu einer Zuordnung, in denen die `Delegate` Eigenschaft der `MKMapView` festgelegt ist, mit einer Instanz von einer `MKMapViewDelegate`. Es handelt sich des Delegaten-Implementierung, die verantwortlich für die Rückgabe ist die `MKAnnotationView` für eine Anmerkung.
 
 Um eine Anmerkung hinzuzufügen, zuerst die-Anmerkung wird hinzugefügt, durch den Aufruf `AddAnnotations` auf die `MKMapView` Instanz:
 
@@ -112,9 +112,9 @@ map.AddAnnotations (new MKPointAnnotation (){
 });
 ```
 
-Wenn die Position der Anmerkung auf der Karte angezeigt wird der `MKMapView` wird Aufrufen des Delegaten `GetViewForAnnotation` Methode zum Abrufen der `MKAnnotationView` angezeigt.
+Bei der die Position der Anmerkung sichtbar ist, in der Zuordnung wird die `MKMapView` wird Aufrufen des Delegaten `GetViewForAnnotation` -Methode zum Abrufen der `MKAnnotationView` angezeigt.
 
-Der folgende Code gibt z. B. eine vom System vorgegebene `MKPinAnnotationView`:
+Der folgende Code gibt z. B. eine vom System bereitgestellte `MKPinAnnotationView`:
 
 ```csharp
 string pId = "PinAnnotation";
@@ -139,7 +139,7 @@ public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObje
 
 ### <a name="reusing-annotations"></a>Wiederverwenden von Anmerkungen
 
-Um Speicher zu sparen `MKMapView` Anmerkung Ansicht's, für die Wiederverwendung, ähnlich wie bei "zusammengelegt" werden Tabellenzellen wiederverwendet werden können. Abrufen einer Anmerkung-Sicht aus dem Pool erfolgt mit einem Aufruf von `DequeueReusableAnnotation`:
+Um Arbeitsspeicher zu sparen `MKMapView` können Anmerkung anzeigen, für die Wiederverwendung, ähnlich wie die in einem Pool zusammengefasst werden Zellen der Tabelle werden wiederverwendet. Eine Anmerkung-Ansicht aus dem Pool abrufen erfolgt durch einen Aufruf von `DequeueReusableAnnotation`:
 
 ```csharp
 MKAnnotationView pinView = (MKPinAnnotationView)mapView.DequeueReusableAnnotation (pId);
@@ -147,13 +147,13 @@ MKAnnotationView pinView = (MKPinAnnotationView)mapView.DequeueReusableAnnotatio
 
 #### <a name="showing-callouts"></a>Anzeigen von Legenden
 
-Wie bereits erwähnt, kann eine Anmerkung optional eine Legende angezeigt. Legen Sie eine Legende einfach anzuzeigende `CanShowCallout` auf "true", auf die `MKAnnotationView`. Dadurch wird die Anmerkung Titel angezeigt wird, wenn die Anmerkung abgerufen werden, wie gezeigt:
+Wie bereits erwähnt, kann eine Anmerkung optional eine Legende angezeigt. Legen Sie eine Legende einfach anzuzeigenden `CanShowCallout` auf "true", auf die `MKAnnotationView`. Dadurch wird in der Anmerkung Titel angezeigt wird, wenn die Anmerkung angetippt wird, wie gezeigt:
 
- ![](images/04-callout.png "Die Anmerkungen Titel angezeigt wird")
+ ![](images/04-callout.png "Die Anmerkungen des Titels angezeigt wird")
 
 ### <a name="customizing-the-callout"></a>Anpassen der Legende
 
-Die Legende kann auch angepasst werden, um Links und rechts Zubehörs Ansichten anzuzeigen, wie unten dargestellt:
+Die Legende kann auch angepasst werden, um Ansichten für Links und rechts Zubehör, zeigen, wie unten dargestellt:
 
 ```csharp
 pinView.RightCalloutAccessoryView = UIButton.FromType (UIButtonType.DetailDisclosure);
@@ -162,9 +162,9 @@ pinView.LeftCalloutAccessoryView = new UIImageView(UIImage.FromFile ("monkey.png
 
 Dieser Code führt in der folgenden Beschriftung:
 
- ![](images/05-callout-accessories.png "Ein Beispiel-Legende")
+ ![](images/05-callout-accessories.png "Eine Legende mit einem Beispiel")
 
-Um den Benutzer Tippen auf die richtige Zubehör zu behandeln, implementieren Sie einfach die `CalloutAccessoryControlTapped` Methode in der `MKMapViewDelegate`:
+Um die richtige Zugriffsmethode tippen des Benutzers zu behandeln, implementieren Sie einfach die `CalloutAccessoryControlTapped` -Methode in der die `MKMapViewDelegate`:
 
 ```csharp
 public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotationView view, UIControl control)
@@ -173,37 +173,37 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 }
 ```
 
-### <a name="overlays"></a>Überlagert
+### <a name="overlays"></a>Überlagerungen
 
-Eine weitere Möglichkeit zum Ebene Grafiken auf einer Karte verwendeten überlagert. Overlays unterstützen grafische Zeichnungsinhalt, die mit der Zuordnung skaliert werden, da es vergrößert wird. iOS bietet Unterstützung für mehrere Typen von Überlagerungen, einschließlich:
+Eine weitere Möglichkeit zum Layer-Grafiken auf einer Karte verwendet überlagert. Überlagerungen unterstützen grafischen Zeichnungsinhalt, die mit der Zuordnung skaliert werden soll, wie es vergrößert wird. iOS bietet Unterstützung für mehrere Typen von Überlagerungen, einschließlich:
 
--  Polygone – häufig verwendet, um einen Bereich auf einer Karte zu markieren.
+-  Polygone - wird häufig verwendet, um eine Region auf einer Karte zu markieren.
 -  Polylinien - häufig angezeigt wird, wenn eine Route angezeigt.
--  Kreise - verwendet, um eine kreisbereiche einer Zuordnung zu markieren.
+-  Kreise - zum Markieren einer runden Fläche einer Zuordnung.
 
 
-Darüber hinaus können benutzerdefinierte Overlays erstellt werden, um beliebige Geometrien mit präzise, benutzerdefinierte Zeichnung Code anzuzeigen. Beispielsweise wäre Weather Netz ein guter Kandidat für eine benutzerdefinierte Überlagerung.
+Darüber hinaus können benutzerdefinierte Overlays erstellt werden, um beliebige Geometrien mit präzisen, benutzerdefinierten Zeichnungscode anzuzeigen. Beispielsweise wäre Wetter-Netz ein guter Kandidat für eine benutzerdefinierte Überlagerung.
 
 #### <a name="adding-an-overlay"></a>Hinzufügen einer Überlagerung
 
-Mit Anmerkungen vergleichbar, Hinzufügen einer Überlagerung umfasst 2 Teile:
+Ähnlich wie bei Anmerkungen Hinzufügen einer Überlagerung umfasst 2 Teile:
 
--  Erstellen ein Modellobjekt für die Überlagerung und das Hinzufügen zu den `MKMapView` .
--  Erstellen einer Ansicht für die Überlagerung in die `MKMapViewDelegate` .
+-  Erstellen ein Modellobjekt für die Überlagerung und zum Hinzufügen, die `MKMapView` .
+-  Erstellen einer Ansicht für den Vordergrund in der `MKMapViewDelegate` .
 
 
-Das Modell für die Überlagerung möglich `MKShape` Unterklasse. Enthält Xamarin.iOS `MKShape` Unterklassen für Polygone, Polylinien und Kreise, über die `MKPolygon`, `MKPolyline` und `MKCircle` bzw. Klassen.
+Das Modell für die Überlagerung möglich `MKShape` Unterklasse. Xamarin.iOS enthält `MKShape` Unterklassen für Polygone, Polylinien und Kreise, über die `MKPolygon`, `MKPolyline` und `MKCircle` bzw. Klassen.
 
-Der folgende Code z. B. dient zum Hinzufügen einer `MKCircle`:
+Z. B. der folgende Code wird zum Hinzufügen einer `MKCircle`:
 
 ```csharp
 var circleOverlay = MKCircle.Circle (mapCenter, 1000);
 map.AddOverlay (circleOverlay);
 ```
 
-Die Ansicht für die Überlagerung wird ein `MKOverlayView` -Instanz, die von zurückgegeben wird das `GetViewForOverlay` in der `MKMapViewDelegate`. Jede `MKShape` verfügt über eine entsprechende `MKOverlayView` , die weiß, wie die angegebene Form angezeigt. Für `MKPolygon` besteht `MKPolygonView`. Auf ähnliche Weise `MKPolyline` entspricht `MKPolylineView`, und für `MKCircle` besteht `MKCircleView`.
+Die Ansicht für eine Überlagerung ist ein `MKOverlayView` -Instanz, die von zurückgegeben wird die `GetViewForOverlay` in die `MKMapViewDelegate`. Jede `MKShape` verfügt über eine entsprechende `MKOverlayView` , die weiß, wie die angegebene Form anzuzeigen. Für `MKPolygon` besteht `MKPolygonView`. Auf ähnliche Weise `MKPolyline` entspricht `MKPolylineView`, und für `MKCircle` besteht `MKCircleView`.
 
-Im folgenden code gibt beispielsweise eine `MKCircleView` für eine `MKCircle`:
+Im folgenden Codebeispiel gibt ein `MKCircleView` für eine `MKCircle`:
 
 ```csharp
 public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject overlay)
@@ -215,31 +215,31 @@ public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject ove
 }
 ```
 
-Dies zeigt einen Kreis auf der Karte an, wie dargestellt:
+Dies zeigt einen Kreis auf der Karte, wie dargestellt:
 
  ![](images/06-circle-overlay.png "Ein Kreis, der auf der Karte angezeigt")
 
 ## <a name="local-search"></a>Lokale Suche
 
-iOS enthält eine lokale Such-API Zuordnung, mit dem asynchronen sucht in einer angegebenen geografischen Region relevante Punkte können.
+iOS enthält eine lokale Suche-API mit Map-Kit, das asynchrone Suchen nach Punkten Interesse an einer angegebenen geografischen Region möglich.
 
-Um eine lokale Suche auszuführen, muss eine Anwendung die folgenden Schritte ausführen:
+Um eine lokale Suche durchzuführen, muss eine Anwendung die folgenden Schritte ausführen:
 
 1.  Erstellen Sie `MKLocalSearchRequest` Objekt.
-1.  Erstellen einer `MKLocalSearch` -Objekt aus der `MKLocalSearchRequest` .
+1.  Erstellen Sie eine `MKLocalSearch` -Objekt aus der `MKLocalSearchRequest` .
 1.  Rufen Sie die `Start` Methode für die `MKLocalSearch` Objekt.
 1.  Abrufen der `MKLocalSearchResponse` Objekt in einem Rückruf.
 
 
-Der lokale Such-API selbst stellt keine Benutzeroberfläche bereit. Nicht selbst eine Karte verwendet werden müssen. Um lokale Suche praktische zu nutzen, muss eine Anwendung stellt einige Möglichkeit zum Angeben einer Suchabfrage und die Ergebnisse werden angezeigt. Darüber hinaus, da die Ergebnisse Standortdaten enthält, wird oft sinnvoll, diese auf einer Karte darzustellen, erleichtern.
+Die lokale Suche-API selbst stellt keine Benutzeroberfläche bereit. Es erfordert keine auch eine Zuordnung verwendet werden. Um die praktische Verwendung von lokalen Search vornehmen zu können, muss eine Anwendung eine Methode zum Angeben einer Abfrage und die Ergebnisse werden angezeigt. Darüber hinaus, da die Ergebnisse Daten enthält, wird es häufig damit diese auf einer Karte angezeigt sinnvoll.
 
 <a name="Adding_a_Local_Search_UI"/>
 
-### <a name="adding-a-local-search-ui"></a>Hinzufügen einer lokalen Suche UI
+### <a name="adding-a-local-search-ui"></a>Hinzufügen einer lokalen Suche Benutzeroberfläche
 
-Eine Möglichkeit zur Suche von Benutzereingaben wird mit einer `UISearchBar`, die im Lieferumfang von einer `UISearchController` und die Ergebnisse in einer Tabelle angezeigt.
+Eine Möglichkeit zur Suche Eingabe akzeptieren wird mit einer `UISearchBar`, die im Lieferumfang von einer `UISearchController` und zeigt Ergebnisse in einer Tabelle.
 
-Der folgende Code fügt der `UISearchController` (die hat einer Leiste Sucheigenschaft) in der `ViewDidLoad` Methode `MapViewController`:
+Der folgende Code fügt die `UISearchController` (diese hat es sich um einer sucheigenschaftenliste eine Leiste) in der `ViewDidLoad` -Methode der `MapViewController`:
 
 ```csharp
 //Creates an instance of a custom View Controller that holds the results
@@ -354,11 +354,11 @@ public class SearchResultsViewController : UITableViewController
 }
 ```
 
-### <a name="updating-the-search-results"></a>Aktualisieren die Suchergebnisse
+### <a name="updating-the-search-results"></a>Aktualisieren die Ergebnisse der Suche
 
-Die `SearchResultsUpdater` dient als Vermittler zwischen der `searchController`des Suchleiste und Suchergebnisse. 
+Die `SearchResultsUpdater` fungiert als Vermittler zwischen der `searchController`der Suchleiste und den Suchergebnissen angezeigt. 
 
-In diesem Beispiel wird, müssen Sie zuerst erstellen Sie die Search-Methode in der `SearchResultsViewController`. Zu diesem Zweck wir erstellen ein `MKLocalSearch` -Objekt und verwenden, um eine Suche nach Ausgeben einer `MKLocalSearchRequest`, einen Rückruf übergeben wird, um die Ergebnisse abgerufen werden die `Start` Methode der `MKLocalSearch` Objekt. Die Ergebnisse werden dann zurückgegeben, eine `MKLocalSearchResponse` Objekt ein Array von `MKMapItem` Objekte:
+In diesem Beispiel müssen wir zuerst erstellen Sie die Search-Methode in der `SearchResultsViewController`. Zu diesem Zweck wir erstellen eine `MKLocalSearch` Objekt aus, und verwenden, um eine Suche nach Ausgeben einer `MKLocalSearchRequest`, einen Rückruf übergeben wird, um die Ergebnisse abgerufen werden die `Start` -Methode der der `MKLocalSearch` Objekt. Die Ergebnisse werden dann zurückgegeben, eine `MKLocalSearchResponse` Objekt mit einem Array von `MKMapItem` Objekte:
 
 ```csharp
 public void Search (string forSearchString)
@@ -384,7 +384,7 @@ public void Search (string forSearchString)
 }
 ```
 
-Klicken Sie auf unserer `MapViewController` wir erstellen eine benutzerdefinierte Implementierung von `UISearchResultsUpdating`, zugewiesen der `SearchResultsUpdater` Eigenschaft unsere `searchController` in der [Hinzufügen einer lokalen Suche Benutzeroberfläche](#Adding_a_Local_Search_UI) Abschnitt:
+Klicken Sie auf unserer `MapViewController` wir erstellen eine benutzerdefinierte Implementierung der `UISearchResultsUpdating`, zugewiesen die `SearchResultsUpdater` Eigenschaft unserer `searchController` in der [Hinzufügen einer lokalen Suchbenutzeroberfläche](#Adding_a_Local_Search_UI) Abschnitt:
 
 ```csharp
 public class SearchResultsUpdator : UISearchResultsUpdating
@@ -398,20 +398,20 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 }
 ```
 
-Die oben genannten Implementierung wird eine Anmerkung zur Zuordnung, beim aus den Ergebnissen ein Element ausgewählt ist wie unten dargestellt:
+Die Implementierung oben hinzugefügt eine Anmerkung zur Zuordnung, wenn ein Element, in den Ergebnissen ausgewählt ist wie unten dargestellt:
 
- ![](images/08-search-results.png "Eine Anmerkung zur Zuordnung hinzugefügt werden, wenn ein Element, aus den Ergebnissen ausgewählt ist")
+ ![](images/08-search-results.png "Eine Anmerkung zur Karte hinzugefügt wird, wenn ein Element, aus den Ergebnissen ausgewählt ist")
  
 > [!IMPORTANT]
-> `UISearchController` wurde in iOS 8 implementiert. Wenn Sie älter als diese Geräte unterstützen möchten, müssen Sie verwenden `UISearchDisplayController`.
+> `UISearchController` IOS 8 wurde implementiert werden. Wenn Sie Geräte vor dies unterstützen möchten, müssen Sie verwenden `UISearchDisplayController`.
 
 
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel untersucht die *Zuordnung* *Kit* Framework für iOS. Erstens es erläutert, wie die `MKMapView` Klasse ermöglicht die interaktive Karten, die in einer Anwendung eingeschlossen werden. Klicken Sie dann zur Demonstration Maps mithilfe der Anmerkungen und für Überlagerungen weiter anpassen. Schließlich untersucht es die lokalen Suchfunktionen, die Zuordnung Kit mit iOS 6.1, hinzugefügt wurden, zur Verwendung Position basierend Abfragen für relevante Punkte ausführen und einer Zuordnung hinzugefügt werden.
+In diesem Artikel untersucht die *Zuordnung* *Kit* Framework für iOS. Zunächst er erläutert, wie die `MKMapView` Klasse ermöglicht es interaktive Zuordnungen, die in einer Anwendung enthalten sein. Klicken Sie dann es wurde veranschaulicht, wie Sie Zuordnungen mit Anmerkungen und Überlagerungen weiter anpassen. Schließlich wurde die lokale Suchfunktionen, die Map Kit mit iOS 6.1, hinzugefügt wurden, zur Verwendung positionsbasierten Abfragen nach interessanten Punkten ausführen und eine Karte hinzufügen.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SearchController](https://developer.xamarin.com/recipes/ios/content_controls/search-controller/)
+- [SearchController](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller)
 - [MapDemo (Beispiel)](https://developer.xamarin.com/samples/monotouch/MapDemo)
