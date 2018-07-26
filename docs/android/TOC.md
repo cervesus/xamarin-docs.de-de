@@ -9,6 +9,7 @@
 ##### [Geräteeigenschaften](get-started/installation/android-emulator/device-properties.md)
 ##### [Problembehandlung](get-started/installation/android-emulator/troubleshooting.md)
 #### [Setup eines Android-Geräts](get-started/installation/set-up-device-for-development.md)
+#### [Microsoft OpenJDK (Vorschau)](get-started/installation/openjdk.md)
 ### [Hallo, Android](get-started/hello-android/index.md)
 #### [Part 1: Quickstart (Teil 1: Schnellstart)](get-started/hello-android/hello-android-quickstart.md)
 #### [Part 2: Deep Dive (Teil 2: Ausführliche Erläuterungen)](get-started/hello-android/hello-android-deepdive.md)
