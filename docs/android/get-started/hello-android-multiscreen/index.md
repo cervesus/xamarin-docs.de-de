@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/02/2016
-ms.openlocfilehash: 6979d1f221a8b06b5d04d7a7f738dee86c4392e9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7db11e9c824ac46d2c9c8fce87f16154e8007ab4
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998390"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242484"
 ---
 # <a name="hello-android-multiscreen"></a>Hello, Android Multiscreen (Hallo, Android-Multiscreen)
 
@@ -32,4 +32,4 @@ Im zweiten Teil dieses Dokuments können Sie das Erstellte überprüfen. Zudem w
 
 - [Erste Schritte für Android](http://developer.android.com/training/index.html)
 - [Debuggen in Visual Studio](https://docs.microsoft.com/visualstudio/debugger/)
-- [Visual Studio für Mac-Anleitungen: Debuggen](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/)
+- [Visual Studio für Mac-Anleitungen: Debuggen](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging)

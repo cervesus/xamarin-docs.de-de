@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: c529d1d42d582cb49a906ad6fc39a191a7389f58
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: bd08e1f83f7b1752a2830bda1390ffae4f86b360
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997438"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242406"
 ---
 # <a name="cross-platform-performance"></a>Plattformübergreifende Leistung
 
@@ -340,7 +340,7 @@ Weitere Informationen finden Sie im Blogbeitrag [How To Keep Your Android App Si
 
 ## <a name="optimize-image-resources"></a>Optimieren von Bildressourcen
 
-Bilder gehören zu den speicherintensivsten Ressourcen, die Anwendungen verwenden können, und werden häufig mit hoher Auflösung erfasst. So werden zwar gestochen scharfe, lebendige Bilder erstellt, jedoch benötigen Anwendungen, die solche Bilder anzeigen, in der Regel mehr CPU-Auslastung, um das Bild zu decodieren, und mehr Speicher für das decodierte Bild. Es ist unwirtschaftlich, ein hochauflösendes Bild im Speicher zu decodieren, wenn es anschließend für die Anzeige auf eine kleinere Größe herunterskaliert wird. Reduzieren Sie stattdessen die CPU-Auslastung und die Speicherbeanspruchung, indem Sie mehrere Auflösungsversionen der gespeicherten Bilder erstellen, die nah bei den vorhergesagten Anzeigegrößen liegen. Beispiel: Ein Bild, das in einer Listenansicht angezeigt wird, benötigt wahrscheinlich eine niedrigere Auflösung als ein Bild für den Vollbildmodus. Darüber hinaus können die zentral herunterskalierten Versionen hochauflösender Bilder geladen werden, um sie effizient mit minimaler Speichernutzung anzuzeigen. Weitere Informationen finden Sie unter [Load Large Bitmaps Efficiently (Effizientes Laden großer Bitmaps)](https://developer.xamarin.com/recipes/android/resources/general/load_large_bitmaps_efficiently/).
+Bilder gehören zu den speicherintensivsten Ressourcen, die Anwendungen verwenden können, und werden häufig mit hoher Auflösung erfasst. So werden zwar gestochen scharfe, lebendige Bilder erstellt, jedoch benötigen Anwendungen, die solche Bilder anzeigen, in der Regel mehr CPU-Auslastung, um das Bild zu decodieren, und mehr Speicher für das decodierte Bild. Es ist unwirtschaftlich, ein hochauflösendes Bild im Speicher zu decodieren, wenn es anschließend für die Anzeige auf eine kleinere Größe herunterskaliert wird. Reduzieren Sie stattdessen die CPU-Auslastung und die Speicherbeanspruchung, indem Sie mehrere Auflösungsversionen der gespeicherten Bilder erstellen, die nah bei den vorhergesagten Anzeigegrößen liegen. Beispiel: Ein Bild, das in einer Listenansicht angezeigt wird, benötigt wahrscheinlich eine niedrigere Auflösung als ein Bild für den Vollbildmodus. Darüber hinaus können die zentral herunterskalierten Versionen hochauflösender Bilder geladen werden, um sie effizient mit minimaler Speichernutzung anzuzeigen. Weitere Informationen finden Sie unter [Load Large Bitmaps Efficiently (Effizientes Laden großer Bitmaps)](https://github.com/xamarin/recipes/tree/master/Recipes/android/resources/general/load_large_bitmaps_efficiently).
 
 Unabhängig von der Bildauflösung kann das Anzeigen von Bildressourcen den Speicherbedarf der App erheblich erhöhen. Sie sollten daher nur erstellt werden, wenn dies erforderlich ist. Und sie sollten freigegeben werden, sobald die Anwendung sie nicht mehr benötigt.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 494dfad0ba3d26147604ce1bca1de49fac318811
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4b21a69e49c8c7fd79de8edac9858c4714657f1c
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785433"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242315"
 ---
 # <a name="debugging-xamarinios-apps"></a>Debuggen von Xamarin.iOS-Apps
 
@@ -30,7 +30,7 @@ Der Xamarin.iOS-Debugger verwendet den [Mono Soft-Debugger](http://www.mono-proj
 
 ## <a name="setting-breakpoints"></a>Festlegen von Haltepunkten
 
-Wenn Sie bereit sind, das Debuggen der Anwendung zu beginnen, legen Sie im ersten Schritt [Haltepunkte für die Anwendung fest](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/). Dies erfolgt durch Klicken in den Randbereich des Editors neben die Zeilennummer des Codes, den Sie unterbrechen möchten:
+Wenn Sie bereit sind, das Debuggen der Anwendung zu beginnen, legen Sie im ersten Schritt [Haltepunkte für die Anwendung fest](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint). Dies erfolgt durch Klicken in den Randbereich des Editors neben die Zeilennummer des Codes, den Sie unterbrechen möchten:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -121,7 +121,7 @@ Anschließend können Sie die Bedingung eingeben, unter der der Haltepunkt auftr
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Zum Festlegen eines bedingten Haltepunkts in Visual Studio 2015 legen Sie zuerst [einen normalen Haltepunkt fest](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/). Klicken Sie mit der rechten Maustaste auf den Haltepunkt, um das Kontextmenü anzuzeigen:
+Zum Festlegen eines bedingten Haltepunkts in Visual Studio 2015 legen Sie zuerst [einen normalen Haltepunkt fest](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint). Klicken Sie mit der rechten Maustaste auf den Haltepunkt, um das Kontextmenü anzuzeigen:
 
  [![](debugging-in-xamarin-ios-images/image4vs.png "Das Kontextmenü des Haltepunkts")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 
@@ -241,6 +241,6 @@ Sobald Sie dies tun, können Sie Ihre Anwendung und einen Einzelschritt in belie
 
 - [Debuggen mit Xamarin](/visualstudio/mac/debugging/)
 - [Data Visualizations (Datenvisualisierungen)](/visualstudio/mac/data-visualizations/)
-- [Festlegen eines Haltepunkts](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/)
-- [Schritt-für-Schritt-Ausführung des Codes](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/)
-- [Von Ausgabeinformationen zum Protokollfenster](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/)
+- [Festlegen eines Haltepunkts](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)
+- [Schritt-für-Schritt-Ausführung des Codes](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code)
+- [Von Ausgabeinformationen zum Protokollfenster](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window)
