@@ -1,47 +1,48 @@
 ---
 title: Arbeiten mit WatchOS Symbole in Xamarin
-description: Dieses Dokument beschreibt die verschiedenen Symbole für eine WatchOS-Anwendung und zum Einrichten einer Lösung für diese Symbole enthalten.
+description: Dieses Dokument beschreibt die verschiedenen Symbole für eine WatchOS-Anwendung und eine Projektmappe einrichten, um diese Symbole einzuschließen.
 ms.prod: xamarin
 ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 150cca754de26edffcf97bb5d39b26166662c75b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 07/26/2018
+ms.openlocfilehash: e46ecc9d78ccc5dcfbe571c9ec5350fe6c391b7e
+ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790665"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39275923"
 ---
 # <a name="working-with-watchos-icons-in-xamarin"></a>Arbeiten mit WatchOS Symbole in Xamarin
 
-Apple Watch-Lösungen erfordern zwei Sätze von Symbole:
+Apple Watch-Lösungen erfordern zwei Sätze von Symbolen:
 
 * Die iOS-app-Symbole, die auf dem iPhone angezeigt werden.
-* Apple Watch-Symbole, die in einem Kreis im Überwachungsfenster-Menü und Benachrichtigung Bildschirme gerendert werden. Das Symbol "Watch-app" wird auch angezeigt, der [Apple Watch](~/ios/watchos/app-fundamentals/settings.md) iOS-app.
+* Apple Watch-Symbole, die in einem Kreis auf das Menü "überwachen" und in der Benachrichtigung Bildschirme gerendert werden. Das Watch-app-Symbol wird auch im der [Apple Watch](~/ios/watchos/app-fundamentals/settings.md) iOS-app.
 
 ## <a name="apple-watch-icons"></a>Apple Watch-Symbole
 
 | | | |
 |-|-|-|
-|iOS-App-Symbol|Wird angezeigt, auf dem iPhone und wird die übergeordnete Anwendung gestartet|![](icons-images/icon-ios.png)|
-|Symbol "Watch-App"|Wird auf der Apple Watch-Startbildschirm|![](icons-images/icon-home.png)|
-||Überwachen von Benachrichtigungen wird angezeigt|![](icons-images/notification-icon.png)|
-||Wird angezeigt, der [iOS Apple Watch-App](~/ios/watchos/app-fundamentals/settings.md)|![](icons-images/watch-app-sml.png)|
+|iOS-App-Symbol|Wird angezeigt, auf dem iPhone und startet die übergeordnete Anwendung|![iOS-app-Symbol](icons-images/icon-ios.png)|
+|Sehen Sie sich App-Symbol|Auf der Apple Watch-Startseite angezeigt wird|![WatchOS-app-Symbol](icons-images/icon-home.png)|
+||Sehen Sie sich Benachrichtigungen angezeigt wird|![WatchOS-Benachrichtigungssymbol](icons-images/notification-icon.png)|
+||Wird in der [iOS Apple Watch-App](~/ios/watchos/app-fundamentals/settings.md)|![iOS-Watch-App-Symbol](icons-images/watch-app-sml.png)|
 
-## <a name="configuring-your-solution"></a>Konfigurieren die Projektmappe
+## <a name="configuring-your-solution"></a>Konfigurieren Ihre Lösung
 
-Befolgen Sie diese Anweisungen für jedes Projekt, um sicherzustellen, dass Ihre iOS-app und Watch-app den richtigen Namen und das Symbol zeigen:
+Um sicherzustellen, dass Ihre iOS-app und der Watch-app mit den richtigen Namen und ein Symbol angezeigt, führen Sie diese Anweisungen für jedes Projekt aus:
 
 ### <a name="ios-app"></a>iOS-App
 
-Finden Sie in der [iOS Anwendungssymbolen geführt](~/ios/app-fundamentals/images-icons/app-icons.md) sicherzustellen, dass Ihre iOS-app-Symbole ordnungsgemäß konfiguriert sind.
+Finden Sie in der [Symbole für iOS-Anwendung geführt](~/ios/app-fundamentals/images-icons/app-icons.md) um sicherzustellen, dass Ihre iOS-app-Symbole ordnungsgemäß konfiguriert sind.
 
 #### <a name="infoplist"></a>Info.plist
 
-Die Zeichenfolge, die neben der Watch-app in der [für die Apple Watch-app](~/ios/watchos/app-fundamentals/settings.md) konfiguriert ist, der **iOS-app "Info.plist"**.
+Die Zeichenfolge, die neben die Watch-app in der [Apple Watch-app "Einstellungen"](~/ios/watchos/app-fundamentals/settings.md) konfiguriert ist, der **iOS-app "Info.plist"**.
 
-Überprüfen Sie, ob Ihre **"Info.plist"** hat eine `CFBundleName` Schlüssel und Wert (Hinweis: Dies unterscheidet sich von der `CFBundleDisplayName`, dass beide):
+Überprüfen Sie, ob Ihre **"Info.plist"** verfügt über eine `CFBundleName` Schlüssel und Wert (Hinweis: Dies unterscheidet sich von der `CFBundleDisplayName`, dass beide):
 
 ```xml
 <key>CFBundleName</key>
@@ -50,39 +51,39 @@ Die Zeichenfolge, die neben der Watch-app in der [für die Apple Watch-app](~/io
 
 ### <a name="apple-watch-app"></a>Apple Watch-App
 
-Einmal Ihre [übergeordnete app](~/ios/watchos/app-fundamentals/parent-app.md) ihm zugehörigen Symbole wurde konfiguriert werden, müssen Sie die Watch-app eine Anwendung Symbol Asset-Katalog hinzu.
+Sobald Ihre [übergeordnete app](~/ios/watchos/app-fundamentals/parent-app.md) wurde ihm zugehörigen Symbole konfiguriert werden, müssen Sie einen Ressourcenkatalog für Anwendung-Symbol auf der Watch-app hinzufügen.
 
-1. Mit der rechten Maustaste auf das Watch-App-Projekt, und wählen Sie **Datei > Hinzufügen > neuen Datei... > iOS > Asset-Katalog** Asset-Katalog zum Projekt hinzufügen.
+1. Mit der rechten Maustaste auf das Watch-App-Projekt, und wählen Sie **Datei > Hinzufügen > neue Datei… > iOS > Ressourcenkatalog** einen Asset-Katalog zum Projekt hinzufügen.
 
- ![](icons-images/newasset.png "Fügen Sie dem Projekt eine Asset-Katalog hinzu")
+ ![](icons-images/newasset.png "Einen Asset-Katalog zum Projekt hinzufügen")
 
-2. Doppelklicken Sie auf die **AppIcons.appiconset/Contents.json** Datei
+2. Doppelklicken Sie auf die **AppIcon.appiconset/Contents.json** Datei
 
-  ![](icons-images/xcassets-iconset-sml.png "Der Inhalt AppIcons")
+  ![](icons-images/xcassets-iconset-sml.png "Der Inhalt AppIcon")
 
-3. Fügen Sie alle WatchOS Images hinzu, wie in diesem Screenshot gezeigt:
+3. Fügen Sie alle der WatchOS-Images hinzu, wie im folgenden Screenshot gezeigt:
 
-  [![](icons-images/appicons-sml.png "Fügen Sie alle WatchOS Bilder hinzu, wie in diesem Screenshot dargestellt.")](icons-images/appicons.png#lightbox)
+  [![](icons-images/appicons-sml.png "Fügen Sie alle WatchOS-Images, wie im folgenden Screenshot gezeigt hinzu.")](icons-images/appicons.png#lightbox)
 
-  Verweisen auf [Richtlinien von Apple Symbol](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/IconandImageSizes.html) für die erforderliche Größen (Dimensionen werden auch auf dem Bildschirm angezeigt). Denken Sie daran, dass diese Symbole automatisch abgeschnitten werden werden, um in einem Kreis zu rendern.
+  Finden Sie unter [Apple Richtlinien](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/menu-icons/) für die erforderlichen Größen (die Dimensionen werden auch angezeigt, auf dem Bildschirm). Denken Sie daran, dass diese Symbole automatisch ausgeschnitten werden, um in einem Kreis zu rendern.
 
   Die Symbolliste sollte etwa wie folgt aussehen:
 
   ![](icons-images/xcassets-complete-sml.png "Die Symbolliste im Projektmappen-Explorer")
 
-4. Um sicherzustellen, dass das Asset-Katalog in der app enthalten ist, fügen Sie die folgenden Schlüssel und Wert der **Watch-App "Info.plist"**:
+4. Um sicherzustellen, dass der Asset-Katalog in der app enthalten ist, fügen Sie den folgenden Schlüssel und Wert der **Watch-App "Info.plist"**:
 
 ```xml
 <key>XSAppIconAssets</key>
-<string>Images.xcassets/AppIcons.appiconset</string>
+<string>Images.xcassets/AppIcon.appiconset</string>
 ```
 
-Sie können überprüfen, ob die Symbole sind richtig konfiguriert, indem Sie überprüfen die [Apple Watch-einstellungs-app](~/ios/watchos/app-fundamentals/settings.md) in der iPhone-Simulator oder Generieren einer [Benachrichtigung](~/ios/watchos/platform/notifications.md) und bestätigen das Symbol auf die Benachrichtigung angezeigt werden Bildschirm.
+Sie können überprüfen, ob die Symbole sind richtig konfiguriert, indem Sie überprüfen die [Apple Watch-app "Einstellungen"](~/ios/watchos/app-fundamentals/settings.md) in der iPhone-Simulator oder Generieren von einem [Benachrichtigung](~/ios/watchos/platform/notifications.md) und bestätigen das Symbol wird angezeigt, auf die Benachrichtigung der Bildschirm.
 
 > [!NOTE]
-> Symbole können nicht über einen alpha-Kanal verfügen (die app wird während der Übermittlung an den App Store abgelehnt, wenn ein alpha-Kanal vorhanden ist). Sie können überprüfen, ob ein alpha-Kanal vorhanden ist, und entfernen Sie ihn [mithilfe der Preview-app auf Mac OS X](~/ios/watchos/troubleshooting.md#noalpha).
+> Symbole keine alpha-Kanal (die app wird während der App-Store-Übermittlung zurückgewiesen, falls ein Alphakanal vorhanden ist). Sie können überprüfen, ob ein Alphakanal vorhanden ist, und entfernen sie [mithilfe der Preview-app unter Mac OS X](~/ios/watchos/troubleshooting.md#noalpha).
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Symbol "& Bilder Apple Handbuch](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/IconandImageSizes.html)
+- [Apple WatchOS-Symbol und Images-Handbuch](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/)
