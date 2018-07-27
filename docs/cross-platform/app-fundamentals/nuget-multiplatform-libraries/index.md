@@ -1,69 +1,67 @@
 ---
-title: NuGet-Projekte (Nugetizer 3000)
-description: Dieses Dokument beschreibt, wie das Nugetizer 3000-Tool zum automatischen Erstellen von NuGet-Pakete zum Code über Plattformen hinweg gemeinsam nutzen.
+title: Multi-Plattform-Library-Projekte mit NuGet (auch bekannt als Nugetizer 3000)
+description: Dieses Dokument beschreibt, wie das Nugetizer 3000-Tool zum automatischen Erstellen von NuGet-Pakete zum Code plattformübergreifend gemeinsam verwenden.
 ms.prod: xamarin
 ms.assetid: F0A5A9BB-86CD-44C9-8EE8-74D1E5E74A30
-author: asb3993
-ms.author: amburns
-ms.date: 11/22/2017
-ms.openlocfilehash: f79ed775173e05dd850fbc74c53127b63c0d5f34
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: conceptdev
+ms.author: crdun
+ms.date: 07/25/2018
+ms.openlocfilehash: 1d48bc28aa4477361ca8057fda91ee3258f36a73
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780769"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270427"
 ---
-# <a name="nuget-projects-nugetizer-3000"></a>NuGet-Projekte (Nugetizer 3000)
+# <a name="nuget-multiplatform-library-projects-nugetizer-3000"></a>NuGet-Bibliothek für mehrere Plattformen Projekte (Nugetizer 3000)
 
-_Erstellen Sie automatisch NuGet-Pakete zum Freigeben von Code plattformübergreifend mithilfe von "Nugetizer 3000"!_
+_Erstellen Sie automatisch NuGet-Pakete zum Teilen von Code über Plattformen hinweg "Nugetizer 3000"._
 
-Es ist möglich, zum automatischen Erstellen von NuGet-Pakete zum Freigeben von Code plattformübergreifend mithilfe der _Nugetizer 3000_. Dies ermöglicht die ist möglich, Erstellen von NuGet-Pakete aus vorhandenen Bibliotheksprojekte oder durch Erstellen eines neuen **Bibliotheksprojekt für mehrere Plattformen**.
+Es ist möglich, zum automatischen Erstellen von NuGet-Pakete zum Teilen von Code über Plattformen hinweg die _Nugetizer 3000_. Dies ermöglicht ist möglich, NuGet-Pakete erstellen, über vorhandene Bibliotheksprojekte oder durch Erstellen eines neuen **Multi-Plattform-Bibliotheksprojekt**.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Die Nugetizer 3000 ist im Lieferumfang von Visual Studio für Mac 6.2.
+Die Nugetizer 3000 ist im Lieferumfang von Visual Studio für Mac &ndash; suchen Sie nach der **Bibliothek > Mulitplatform Bibliothek** Projekttyp in der **Datei > Neu** Fenster:
 
-[![](images/mulitplatform-library-sml.png "Erstellen Sie neue Zeitfenster für die Bibliothek für mehrere Plattformen")](images/mulitplatform-library.png#lightbox)
+[![](images/mulitplatform-library-sml.png "Erstellen Sie neues Fenster für Multi-Plattform-Bibliothek")](images/mulitplatform-library.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Um die Nugetizer 3000 in Visual Studio verwenden, geben Sie [herunterzuladen, und führen Sie das VSIX-Installationsprogramm](http://bit.ly/nugetizer-2017).
+Um die Nugetizer 3000 in Visual Studio verwenden zu können, wenden Sie [herunterladen, und führen Sie das VSIX-Installationsprogramm](http://bit.ly/nugetizer-2017).
 
 -----
 
 ## <a name="building-nuget-packages"></a>Erstellen von NuGet-Pakete
 
-Nach der Konfiguration gibt jedem Build des Projekts ein vollständiges NuGet-Paket, der zum Freigeben von Code intern mit anderen apps verwendet oder in hochgeladen werden kann [NuGet.org](https://www.nuget.org).
+Nach der Konfiguration gibt jeden Build des Projekts ein vollständiges NuGet-Paket, die zum Freigeben von Code intern mit anderen apps verwendet oder in hochgeladen werden kann [NuGet.org](https://www.nuget.org).
 
-Es gibt drei Szenarien zum Verwenden dieser Funktion:
+Es gibt drei Szenarien für die Verwendung dieses Features:
 
 - [Vorhandene Bibliotheksprojekte](existing-library.md)
 
-  Erstellen Sie ein NuGet-Paket aus vorhandenen PCL (oder "Standard".NET)-Projekten.
+  Erstellen Sie ein NuGet-Paket aus vorhandenen PCL (oder .NET Standard)-Projekte an.
 
-- [Erstellen eines neuen Multiplattform-Bibliotheksprojekts](single-codebase.md)
+- [Erstellen eines neuen Projekts für die Bibliothek für mehrere Plattformen](single-codebase.md)
 
-  Erstellen Sie eine neue Bibliothek, die über NuGet, die mit einer PCL oder .NET Standard gemeinsamen Code nutzen.
+  Erstellen Sie eine neue Bibliothek, die gemeinsamen Code über NuGet, die mit einer PCL oder .NET Standard nutzen.
 
-- [Erstellen neuer plattformspezifischen Library-Projekte](platform-specific.md)
+- [Erstellen neuer Projekte der plattformspezifischen Bibliothek](platform-specific.md)
 
-  Erstellt eine neue Bibliothek und NuGet, die plattformspezifischen Code für iOS und Android enthält, und verwendet ein freigegebenes Projekt plattformspezifischen Projekte, iOS oder Android-spezifische Funktionen unterstützen und die gemeinsamen Code enthalten.
+  Erstellen Sie eine neue Bibliothek und NuGet ab, der plattformspezifischen Code für iOS und Android und ein freigegebenes Projekt verwendet, um die gemeinsamen Code und den plattformspezifischen Projekten zur Unterstützung von iOS oder Android-spezifische Funktionen enthalten.
 
-Finden Sie in der [Metadaten Handbuch](metadata.md) ausführliche Informationen über die erforderliche und optionale Metadaten, die NuGet-Paket hinzugefügt werden müssen.
+Finden Sie in der [Leitfaden zu Metadaten](metadata.md) ausführliche Informationen über die erforderliche und optionale Metadaten, die auf alle NuGet-Paket hinzugefügt werden muss.
 
+## <a name="further-nuget-information"></a>Weitere Informationen für NuGet
 
-## <a name="further-nuget-information"></a>Weitere Informationen von NuGet
+Erfahren Sie mehr über [manuelle Erstellen von NuGet-Pakete für Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md) und [einschließen ein NuGet-Pakets in einer app](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
-Erfahren Sie mehr über [manuell erstellen NuGets für Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md) und zum [enthalten ein NuGet-Paket in einer app](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+Microsofts [NuGet-Dokumentation](https://docs.microsoft.com/nuget/) enthält ausführlichere Informationen zu den **NUPKG** Format und mit NuGet-Pakete in Visual Studio.
 
-Microsofts [NuGet-Dokumentation](https://docs.microsoft.com/nuget/) enthält ausführlichere Informationen zu den **.nupkg** Format und mithilfe von NuGet-Pakete in Visual Studio.
-
-Der Entwurf Diskussion für NuGet-Paket-Projekte (auch als) NuGetizer 3000) wird über die [NuGet-GitHub-Repository](https://github.com/NuGet/Home/wiki/NuGetizer-3000).
-
+Die Informationen für NuGet-Paket-Projekte (auch als) NuGetizer 3000) steht auf der [NuGet GitHub-Repository](https://github.com/NuGet/Home/wiki/NuGetizer-3000).
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [NuGetizer 3000-Anwendungsfälle](https://github.com/NuGet/Home/wiki/NuGetizer-Core-Scenarios)
-- [Erstellen Sie manuell NuGet-Pakete für Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md)
+- [NuGetizer 3000 Anwendungsfälle](https://github.com/NuGet/Home/wiki/NuGetizer-Core-Scenarios)
+- [Manuelles Erstellen von NuGet-Paketen für Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md)
 - [NuGet-Dokumentation](https://docs.microsoft.com/nuget/)
 - [Anmerkungen zu dieser Version](https://developer.xamarin.com/releases/studio/xamarin.studio_6.2/xamarin.studio_6.2/#NuGetizer_3000)

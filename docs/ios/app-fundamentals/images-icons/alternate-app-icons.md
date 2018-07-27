@@ -1,73 +1,73 @@
 ---
 title: Alternative App-Symbole in Xamarin.iOS
-description: Dieses Dokument beschreibt die Verwendung von alternativen app-Symbole in Xamarin.iOS. Es wird erläutert, wie diese Symbole zu einem Xamarin.iOS-Projekt hinzugefügt, zum Ändern der Datei "Info.plist" und das Symbol für die app programmgesteuert zu verwalten.
+description: In diesem Dokument wird beschrieben, wie alternative app-Symbole in Xamarin.iOS verwendet wird. Es wird erläutert, wie Sie diese Symbole ein Xamarin.iOS-Projekt hinzufügen, ändern Sie die Datei "Info.plist" und Informationen zur programmgesteuerten Verwaltung von app Symbols.
 ms.prod: xamarin
 ms.assetid: 302fa818-33b9-4ea1-ab63-0b2cb312299a
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 1d37a29982454367c35bfdfad205abce0eb025af
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 3f009d84d1d38c379f65de52949c66f3e86fc654
+ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784109"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39275988"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Alternative App-Symbole in Xamarin.iOS
 
-_Dieser Artikel umfasst alternativen app Symbole in Xamarin.iOS verwendet._
+_Dieser Artikel befasst sich mit anderen app-Symbole in Xamarin.iOS._
 
-Apple hat mehrere Erweiterungen für iOS-10.3 hinzugefügt, mit denen eine app, deren Symbol verwalten können:
+Apple hat mehrere Erweiterungen auf iOS 10.3 hinzugefügt, mit denen eine app zum Verwalten von das entsprechende Symbols:
 
- - `ApplicationIconBadgeNumber` -Ruft ab oder legt das Signal für das Symbol "app" in der Springboard fest.
- - `SupportsAlternateIcons` -If `true` die app hat eine Alternative Gruppe von Symbolen.
- - `AlternateIconName` -Gibt den Namen des aktuell ausgewählten alternativen Symbols oder `null` Wenn das Symbol "primary" verwenden.
- - `SetAlternameIconName` -Verwenden Sie diese Methode, um das Symbol für die app des angegebenen alternativen Symbols zu wechseln.
+ - `ApplicationIconBadgeNumber` -Ruft ab oder legt den Badge, der das app-Symbol in der Springboard-Reihe.
+ - `SupportsAlternateIcons` -If `true` die app verfügt über eine Alternative Gruppe von Symbolen.
+ - `AlternateIconName` -Gibt den Namen des aktuell ausgewählten alternativen Symbols zurück oder `null` Wenn das primäre Symbol verwenden.
+ - `SetAlternameIconName` – Verwenden Sie diese Methode, um das Symbol der app in der angegebenen alternativen Symbol wechseln.
 
-![](alternate-app-icons-images/icons04.png "Eine Beispiel-Warnung, wenn eine app sein Symbol ändert sich")
+![](alternate-app-icons-images/icons04.png "Eine beispielwarnung, wenn eine app auf das Symbol ändert")
 
 <a name="Adding-Alternate-Icons" />
 
-## <a name="adding-alternate-icons-to-a-xamarinios-project"></a>Hinzufügen von alternativen Symbolen zu einem Xamarin.iOS-Projekt
+## <a name="adding-alternate-icons-to-a-xamarinios-project"></a>Hinzufügen von anderen Symbolen zu einer Xamarin.iOS-Projekt
 
-Um eine app So wechseln Sie zu einem anderen Symbol zu ermöglichen, wird eine Auflistung von Symbolbilder im Xamarin.iOS app-Projekt aufgenommen werden müssen. Diese Images können nicht hinzugefügt werden, zum Projekt mit den typischen `Assets.xcassets` -Methode, sie müssen hinzugefügt werden die **Ressourcen** Ordner direkt.
+Um eine app So wechseln Sie zu einem anderen Symbol zu ermöglichen, müssen eine Sammlung von Symbolbilder im Xamarin.iOS-app-Projekt aufgenommen werden. Diese Images können nicht hinzugefügt werden, um das Projekt mit der normalen `Assets.xcassets` -Methode, sie müssen hinzugefügt werden die **Ressourcen** Ordner direkt.
 
 Führen Sie folgende Schritte aus:
 
-1. Wählen Sie das Symbol "erforderlich" Bilder in einem Ordner, wählen Sie alle aus, und ziehen Sie sie auf die **Ressourcen** Ordner in der **Projektmappen-Explorer**:
+1. Wählen Sie die erforderlichen Symbolbilder in einem Ordner, wählen Sie alle aus, und ziehen Sie sie in der **Ressourcen** Ordner in der **Projektmappen-Explorer**:
 
-    ![](alternate-app-icons-images/icons00.png "Wählen Sie die Bilder Symbole aus einem Ordner")
+    ![](alternate-app-icons-images/icons00.png "Wählen Sie die Symbole-Images aus einem Ordner")
 
 2. Wählen Sie bei Aufforderung **Kopie**, **verwenden die gleiche Aktion für alle ausgewählten Dateien** , und klicken Sie auf die **OK** Schaltfläche:
 
-    ![](alternate-app-icons-images/icons02.png "Die Datei hinzufügen (Dialogfeld)")
+    ![](alternate-app-icons-images/icons02.png "Die Datei hinzufügen, um das Dialogfeld Ordner")
 
-3. Die **Ressourcen** Ordner sollte wie folgt nach Abschluss aussehen:
+3. Die **Ressourcen** Ordner sollte nach Abschluss folgendermaßen aussehen:
 
-    ![](alternate-app-icons-images/icons01.png "Ressourcenordner sollte wie folgt aussehen.")
+    ![](alternate-app-icons-images/icons01.png "Der Ordner \"Resources\" sollte wie folgt aussehen.")
 
 <a name="Modifying-the-Info.plist-File" />
 
 ## <a name="modifying-the-infoplist-file"></a>Ändern die Datei "Info.plist"
 
-Mit den erforderlichen Bildern hinzugefügt, die **Ressourcen** Ordner, der [CFBundleAlternateIcons](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW13) Schlüssel muss dem Projekt hinzugefügt werden **"Info.plist"** Datei. Dieser Schlüssel wird definiert, den Namen des dem Symbol "Neu" und die Bilder, die sie erstellen.
+Mit den erforderlichen Bilder hinzugefügt, die **Ressourcen** Ordner die [CFBundleAlternateIcons](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW13) Schlüssel des Projekts hinzugefügt werden müssen **"Info.plist"** Datei. Dieser Schlüssel wird definiert, den Namen des dem Symbol "Neu" und die Images, die Anwendung besteht.
 
 Führen Sie folgende Schritte aus:
 
 1. Doppelklicken Sie auf die **info.plist**-Datei im **Projektmappen-Explorer**, um sie zu öffnen und zu bearbeiten.
 2. Wechseln Sie zu der **Quelle** anzeigen.
-3. Hinzufügen einer **bündeln Symbole** Taste, und lassen Sie die **Typ** festgelegt **Wörterbuch**.
-4. Hinzufügen einer `CFBundleAlternateIcons` Taste, und legen Sie die **Typ** auf **Wörterbuch**.
-5. Hinzufügen einer `AppIcons2` Taste, und legen Sie die **Typ** auf **Wörterbuch**. Dadurch werden der Name des neuen alternativen app Symbolsatz.
-6. Hinzufügen einer `CFBundleIconFiles` Taste, und legen Sie die **Typ** auf **Array**
-7. Fügen Sie eine neue Zeichenfolge, die `CFBundleIconFiles` Array für jede Erweiterung eingepasst Icon-Datei und die `@2x`, `@3x`, usw. Suffixe (Beispiel `100_icon`). Wiederholen Sie diesen Schritt für jede Datei, aus der der alternativen Symbolsatz besteht.
-8. Hinzufügen einer `UIPrerenderedIcon` um einen der `AppIcons2` Wörterbuch vorhanden ist, legen die **Typ** auf **booleschen** und den Wert auf **keine**.
+3. Hinzufügen einer **bündeln Symbole** gedrückt, und lassen Sie die **Typ** festgelegt **Wörterbuch**.
+4. Hinzufügen einer `CFBundleAlternateIcons` gedrückt, und legen Sie die **Typ** zu **Wörterbuch**.
+5. Hinzufügen einer `AppIcon2` gedrückt, und legen Sie die **Typ** zu **Wörterbuch**. Dadurch werden der Name der neuen alternative app-Symbol.
+6. Hinzufügen einer `CFBundleIconFiles` gedrückt, und legen Sie die **Typ** zu **Array**
+7. Fügen Sie eine neue Zeichenfolge, die `CFBundleIconFiles` Array für jede Symboldatei, die die Erweiterung auslassen und die `@2x`, `@3x`, usw. Suffixe (Beispiel `100_icon`). Wiederholen Sie diesen Schritt für jede Datei, die den Satz von alternativen Symbol bildet.
+8. Hinzufügen einer `UIPrerenderedIcon` um einen der `AppIcon2` Wörterbuch vorhanden ist, legen die **Typ** zu **booleschen** und der Wert, der **keine**.
 9. Speichern Sie die Änderungen in der Datei.
 
-Das resultierende **"Info.plist"** Datei sollte folgendermaßen aussehen Abschluss:
+Die resultierende **"Info.plist"** Datei sollte aussehen wie folgt nach Abschluss:
 
-![](alternate-app-icons-images/icons03.png "Die vollständige Datei \"Info.plist\"")
+![](alternate-app-icons-images/icons03.png "Die fertige Datei \"Info.plist\"")
 
 Oder wie diesen, wenn, die in einem Text-Editor geöffnet:
 
@@ -107,11 +107,11 @@ Oder wie diesen, wenn, die in einem Text-Editor geöffnet:
 
 <a name="Managing-the-Apps-Icon" />
 
-## <a name="managing-the-apps-icon"></a>Verwalten des App Symbol 
+## <a name="managing-the-apps-icon"></a>Verwalten von App Symbols 
 
-Mit der Symbolbilder im Projekt Xamarin.iOS enthalten und die **"Info.plist"** Datei ordnungsgemäß konfiguriert, der Entwickler mithilfe eines viele neue Funktionen, die von iOS 10.3 hinzugefügt auf um das Symbol für die app zu steuern.
+Mit der Symbolbilder enthalten im Xamarin.iOS-Projekt und die **"Info.plist"** Datei ordnungsgemäß konfiguriert ist, der Entwickler mithilfe einer der vielen neuen Features in iOS 10.3 auf das Symbol der app steuern.
 
-Die `SupportsAlternateIcons` Eigenschaft von der `UIApplication` -Klasse kann der Entwickler, um festzustellen, ob eine app alternativen-Symbole unterstützt. Zum Beispiel:
+Die `SupportsAlternateIcons` Eigenschaft der `UIApplication` -Klasse kann der Entwickler, um festzustellen, ob eine app alternativen-Symbole unterstützt. Zum Beispiel:
 
 ```csharp
 // Can the app select a different icon?
@@ -119,14 +119,14 @@ PrimaryIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIco
 AlternateIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIcons;
 ```
 
-Die `ApplicationIconBadgeNumber` Eigenschaft von der `UIApplication` -Klasse kann der Entwickler zum Abrufen oder Festlegen der aktuellen Badge Anzahl das Symbol "app" in der Springboard. Der Standardwert ist 0 (null). Zum Beispiel:
+Die `ApplicationIconBadgeNumber` Eigenschaft der `UIApplication` Klasse kann der Entwickler zum Abrufen oder Festlegen der aktuellen Badge-Anzahl von app-Symbol in der Springboard-Reihe. Der Standardwert ist 0 (null). Zum Beispiel:
 
 ```csharp
 // Set the badge number to 1
 UIApplication.SharedApplication.ApplicationIconBadgeNumber = 1;
 ```
 
-Die `AlternateIconName` Eigenschaft von der `UIApplication` -Klasse ermöglicht es den Entwickler, die den Namen des aktuell ausgewählten alternativen app Symbols abzurufen, oder gibt `null` , wenn das Symbol "Primary" von der app verwendet wird. Zum Beispiel:
+Die `AlternateIconName` Eigenschaft der `UIApplication` Klasse ermöglicht dem Entwickler, die den Namen des Symbols, das aktuell ausgewählte alternative app abzurufen, oder sie gibt `null` , wenn die app das erste Symbol verwendet. Zum Beispiel:
 
 ```csharp
 // Get the name of the currently selected alternate
@@ -138,7 +138,7 @@ if (name != null ) {
 }
 ```
 
-Die `SetAlternameIconName` Eigenschaft von der `UIApplication` -Klasse kann der Entwickler so ändern Sie das Symbol "app". Übergeben Sie den Namen des Symbols auswählen oder `null` auf das Symbol "primary" zurückgegeben. Zum Beispiel:
+Die `SetAlternameIconName` Eigenschaft der `UIApplication` Klasse ermöglicht dem Entwickler, die das Symbol der app zu ändern. Übergeben Sie den Namen des Symbols auswählen oder `null` auf das Symbol "primäre" zurückgegeben. Zum Beispiel:
 
 ```csharp
 partial void UsePrimaryIcon (Foundation.NSObject sender)
@@ -156,19 +156,19 @@ partial void UseAlternateIcon (Foundation.NSObject sender)
 }
 ```
 
-Wenn die app ausgeführt wird, und die Benutzer wählen Sie ein alternatives Symbol, wird eine Warnung wie folgt angezeigt:
+Wenn die app ausgeführt wird, und der Benutzer durch Auswählen eines alternativen Symbols, wird eine Warnung wie folgt angezeigt:
 
-![](alternate-app-icons-images/icons04.png "Eine Beispiel-Warnung, wenn eine app sein Symbol ändert sich")
+![](alternate-app-icons-images/icons04.png "Eine beispielwarnung, wenn eine app auf das Symbol ändert")
 
-Wenn der Benutzer wieder auf das Symbol "primary" wechselt, wird eine Warnung wie folgt angezeigt:
+Wenn der Benutzer wieder auf das Symbol "primäre" wechselt, wird eine Warnung wie folgt angezeigt:
 
-![](alternate-app-icons-images/icons05.png "Eine Beispiel-Warnung, wenn eine app auf das Symbol \"primary\" geändert")
+![](alternate-app-icons-images/icons05.png "Eine beispielwarnung, wenn eine app auf das Symbol \"primäre\" geändert")
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden behandelt, alternative app-Symbole mit einem Xamarin.iOS-Projekt hinzufügt und verwendet diese innerhalb der app.
+In diesem Artikel wurden behandelt, alternative app-Symbole zu einem Xamarin.iOS-Projekt hinzugefügt, und verwenden diese innerhalb der app.
 
 
 

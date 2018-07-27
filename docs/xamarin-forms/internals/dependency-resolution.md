@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/23/2018
-ms.openlocfilehash: 8235b6fb5fda2a414cf192dd66007d1d02f232aa
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 2379c8ddc4bea6dd97bc4febd055dd8dfef39beb
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242380"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270487"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Auflösung von Abhängigkeiten in Xamarin.Forms
 
@@ -111,7 +111,7 @@ Wenn eine Anwendung eine Abhängigkeit Auflösung-Methode zum Auflösen von Type
 
 Folgende typregistrierung aus ein Plattform-Projekt, das `IContainer` Objekt muss erstellt werden, die erfolgt durch Aufrufen der `BuildContainer` Methode. Diese Methode ruft die Autofac `Build` Methode für die `ContainerBuilder` -Instanz, die einen neue Dependency Injection-Container erstellt, die die Registrierungen enthält, die vorgenommen wurden.
 
-In den folgenden Abschnitten, eine `Logger` Klasse bereit, die implementiert die `ILogger` Schnittstelle, die in-Klasse, Konstruktoren eingefügt wird. Die `Logger` Klasse implementiert, einfache Protokollierung Funktionen über die `Debug.WriteLine` -Methode und wird verwendet, um zu veranschaulichen, wie Dienste in benutzerdefinierten Renderern Effekte, eingefügt werden können und [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) Implementierungen.
+In den folgenden Abschnitten, eine `Logger` Klasse, die implementiert die `ILogger` Schnittstelle in der Klasse, Konstruktoren eingefügt wird. Die `Logger` Klasse implementiert, einfache Protokollierung Funktionen über die `Debug.WriteLine` -Methode und wird verwendet, um zu veranschaulichen, wie Dienste in benutzerdefinierten Renderern Effekte, eingefügt werden können und [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) Implementierungen.
 
 ### <a name="registering-custom-renderers"></a>Registrieren benutzerdefinierte Renderer
 
