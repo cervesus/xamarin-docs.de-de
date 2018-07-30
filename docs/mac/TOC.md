@@ -6,6 +6,7 @@
 ## [Application Fundamentals (Anwendungsgrundlagen)](app-fundamentals/index.md)
 ### [Barrierefreiheit](app-fundamentals/accessibility.md)
 ### [Allgemeine Muster und Ausdrücke](app-fundamentals/patterns.md)
+### [Konsolen-Apps](app-fundamentals/console.md)
 ### [macOS-APIs](app-fundamentals/mac-apis.md)
 ### [XIB-Dateien](app-fundamentals/xib.md)
 ### [Benutzeroberflächendesign ohne Storyboard/XIB](app-fundamentals/xibless-ui.md)
