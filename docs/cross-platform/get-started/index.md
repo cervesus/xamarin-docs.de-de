@@ -7,12 +7,12 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 3873236c64f1288a896c40d468f06b60f532a431
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 35c7605f9682bef9e93fb4f25404659662126a9d
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780795"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242026"
 ---
 # <a name="getting-started-with-xamarin"></a>Erste Schritte mit Xamarin
 
@@ -25,30 +25,29 @@ Sehen Sie sich vor Beginn die [Systemanforderungen](requirements.md) sowie die [
 
 Wenn Sie eine App erstellen möchten, die native Technologien für die Benutzeroberfläche nutzt, z.B. Android XML oder Xcode Storyboards, verwenden Sie eine dieser plattformspezifischen Anleitungen:
 
-* [Android Quick Start (Schnellstartanleitung für Android)](~/android/get-started/hello-android/hello-android-quickstart.md)
-* [iOS Quick Start (Schnellstartanleitung für iOS)](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
-* [Erste Schritte mit Mac](~/mac/get-started/hello-mac.md)
+- [Android Quick Start (Schnellstartanleitung für Android)](~/android/get-started/hello-android/hello-android-quickstart.md)
+- [iOS Quick Start (Schnellstartanleitung für iOS)](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
+- [Erste Schritte mit Mac](~/mac/get-started/hello-mac.md)
 
 ## <a name="getting-started-with-mobile-development"></a>Erste Schritte in der Entwicklung mobiler Anwendungen
 
 Um weitere Informationen zur Funktionsweise von Xamarin und zur Vorgehensweise mobiler App-Entwicklungsprojekte zu erhalten, lesen Sie die nachfolgenden Handbücher:
 
-###  <a name="introduction-to-mobile-developmentcross-platformget-startedintroduction-to-mobile-developmentmd"></a>[Introduction to Mobile Development (Einführung in die Entwicklung mobiler Anwendungen)](~/cross-platform/get-started/introduction-to-mobile-development.md)
+### <a name="introduction-to-mobile-developmentcross-platformget-startedintroduction-to-mobile-developmentmd"></a>[Introduction to Mobile Development (Einführung in die Entwicklung mobiler Anwendungen)](~/cross-platform/get-started/introduction-to-mobile-development.md)
 
 Dieses Dokument erläutert *wie Xamarin auf hoher Ebene funktioniert* und führt Sie durch die Handbücher für die ersten Schritte für iOS, Android und Xamarin.Forms.
 
-###  <a name="introduction-to-the-mobile-software-development-lifecyclecross-platformget-startedintroduction-to-mobile-sdlcmd"></a>[Introduction to the Mobile Software Development Lifecycle (Einführung in den Lebenszyklus der mobilen Softwareentwicklung)](~/cross-platform/get-started/introduction-to-mobile-sdlc.md)
+### <a name="introduction-to-the-mobile-software-development-lifecyclecross-platformget-startedintroduction-to-mobile-sdlcmd"></a>[Introduction to the Mobile Software Development Lifecycle (Einführung in den Lebenszyklus der mobilen Softwareentwicklung)](~/cross-platform/get-started/introduction-to-mobile-sdlc.md)
 
 Dieser Artikel beschreibt den Lebenszyklus der Softwareentwicklung in Bezug auf mobile Anwendungen und erläutert einige der Überlegungen, die zum Erstellen mobiler Projekte erforderlich sind. Entwickler, die direkt einsteigen und mit dem Erstellen von Anwendungen beginnen möchten, können diesen Leitfaden überspringen und später für ein breiteres Verständnis der mobilen Entwicklung weiterlesen.
 
-##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[Erstellen von plattformübergreifenden Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
+## <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[Erstellen von plattformübergreifenden Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
 
 Wenn Sie sich für Xamarin entscheiden und bei der Entwicklung Ihrer mobilen Anwendungen einige Aspekte im Auge behalten, können Sie auf allen mobilen Plattformen Code in enormem Umfang gemeinsam nutzen. Darüber hinaus können Sie die Markteinführungszeit verkürzen, vorhandenes Potenzial nutzen, die Kundennachfrage nach mobilem Zugriff erfüllen und Komplexität plattformübergreifend reduzieren.&nbsp;In diesem Dokument werden die wichtigsten Leitlinien für die Realisierung dieser Vorteile für Hilfs- und Produktivitätsanwendungen skizziert.
 
-###  <a name="introducing-visual-studio-for-machttpsdocsmicrosoftcomvisualstudiomac"></a>[Introducing Visual Studio for Mac (Einführung in Visual Studio für Mac)](https://docs.microsoft.com/visualstudio/mac/)
+### <a name="introducing-visual-studio-for-machttpsdocsmicrosoftcomvisualstudiomac"></a>[Einführung in Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/)
 
-Dieses Dokument bietet eine Übersicht über Visual Studio für Mac, die integrierte Entwicklungsumgebung (Integrated Development Environment, IDE).
-
+Erfahren Sie mehr zu Visual Studio für Mac, der integrierten Entwicklungsumgebung (IDE) für macOS.
 
 ## <a name="get-started-with-xamarin-university"></a>Erste Schritte mit Xamarin University
 

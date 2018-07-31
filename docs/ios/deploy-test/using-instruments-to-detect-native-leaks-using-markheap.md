@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 25129d532af0b146afedf28865649ffc9e38ee17
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9b6168eba91a87af88891b9e07e3dd395301cc48
+ms.sourcegitcommit: 021027b78cb2f8061b03a7c6ae59367ded32d587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785611"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39182207"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Erstellen von Xamarin.iOS-Anwendungsprofilen mit Instruments
 
@@ -27,11 +27,11 @@ Xcode Instruments kann nur auf einem Mac ausgeführt werden.
 
 Wählen Sie das Gerät aus, und führen Sie die Instruments-App aus:
 
-1.  Öffnen Sie das Xamarin.iOS-Projekt in Visual Studio für Mac.
-2.  Wählen Sie die Konfiguration **Debug|iPhone** (Debuggen|iPhone) aus.
-3.  Verbinden Sie das iOS-Gerät mit dem Computer.
-4.  Klicken Sie im Menü **Ausführen** auf **Auf Gerät hochladen**. Die Anwendung wird nun erstellt und auf das Gerät hochgeladen.
-5.  Klicken Sie im Menü **Tools** auf **Instrumente starten**.
+1. Öffnen Sie das Xamarin.iOS-Projekt in Visual Studio für Mac.
+2. Wählen Sie die Konfiguration **Debug|iPhone** (Debuggen|iPhone) aus.
+3. Verbinden Sie das iOS-Gerät mit dem Computer.
+4. Klicken Sie im Menü **Ausführen** auf **Auf Gerät hochladen**. Die Anwendung wird nun erstellt und auf das Gerät hochgeladen.
+5. Klicken Sie im Menü **Tools** auf **Instrumente starten**.
 
 
 Die Instrumente werden nun geöffnet, und das folgende Dialogfeld wird angezeigt:
@@ -65,4 +65,4 @@ In diesem Leitfaden wurde gezeigt, wie Sie Xcode Instruments starten, um eine iO
 ## <a name="related-links"></a>Verwandte Links
 
 - [Exemplarische Vorgehensweise: Instruments](~/ios/deploy-test/walkthrough-apples-instrument.md)
-- [Xamarin.iOS-Garbage Collection](https://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/)
+- [Xamarin.iOS-Garbage Collection (Blogbeitrag)](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

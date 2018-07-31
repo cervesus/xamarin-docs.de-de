@@ -1,5 +1,5 @@
 ---
-title: 'Hallo, iOS: Ausführliche Erläuterungen'
+title: Hallo, iOS – Ausführliche Erläuterungen
 description: In diesem Dokument wird die Beispielanwendung „Hallo, iOS“ ausführlicher beschrieben. Dabei werden unter anderem die Architektur, die Benutzeroberfläche, die Hierarchie der Inhaltsansicht, das Testen und die Entwicklung erläutert.
 ms.topic: quickstart
 ms.prod: xamarin
@@ -8,38 +8,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: f7869f572bfd6f6c8a0bc710c6e28671c22ad7eb
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 16920f27a1830dc6a3ab1a3cb0a267eb3b1d90ea
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786399"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203022"
 ---
-# <a name="hello-ios--deep-dive"></a>Hallo, iOS: Ausführliche Erläuterungen
+# <a name="hello-ios--deep-dive"></a>Hallo, iOS – Ausführliche Erläuterungen
 
 In der exemplarischen Vorgehensweise zum Schnellstart wurde das Erstellen und Ausführen einer einfachen Xamarin.iOS-Anwendung eingeführt. Nun ist es an der Zeit, ein tieferes Verständnis für die Funktionsweise von iOS-Anwendungen zu entwickeln, sodass Sie komplexere Programme erstellen können. Dieses Handbuch führt durch die Schritte der Hallo, iOS-Anleitung, um das Verständnis der grundlegenden Konzepte der Entwicklung von iOS-Anwendungen zu ermöglichen.
-
-Folgende Themen werden in diesem Artikel besprochen:
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
-
-- **Einführung in Visual Studio für Mac** – Einführung in Visual Studio für Mac und das Erstellen einer neuen Anwendung.
-- **Aufbau einer Xamarin.iOS-Anwendung**: Überblick über die wesentlichen Bestandteile einer Xamarin.iOS-Anwendung.
-- **Architektur und App-Grundlagen**: Überprüfung der Bestandteile einer iOS-Anwendung und der Beziehung zwischen ihnen.
-- **Benutzeroberfläche (User Interface, UI)**: Erstellen von Benutzeroberflächen mit dem iOS-Designer.
-- **Ansichtscontroller und der Ansichtslebenszyklus**: Einführung in den Ansichtslebenszyklus und Verwalten der Hierarchien von Inhaltsansichten mit dem Ansichtscontroller.
-- **Tests, Bereitstellung und Vollendung**: Stellen Sie Ihre Anwendung mit Ratschlägen zu Tests, zur Bereitstellung, zum Erstellen von Grafiken usw. fertig.
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-- **Einführung in Visual Studio**: Einführung in Visual Studio und Erstellen einer neuen Anwendung.
-- **Aufbau einer Xamarin.iOS-Anwendung**: Überblick über die wesentlichen Bestandteile einer Xamarin.iOS-Anwendung.
-- **Architektur und App-Grundlagen**: Überprüfung der Bestandteile einer iOS-Anwendung und der Beziehung zwischen ihnen.
-- **Benutzeroberfläche (User Interface, UI)**: Erstellen von Benutzeroberflächen mit dem iOS-Designer.
-- **Ansichtscontroller und der Ansichtslebenszyklus**: Einführung in den Ansichtslebenszyklus und Verwalten der Hierarchien von Inhaltsansichten mit dem Ansichtscontroller.
-- **Tests, Bereitstellung und Vollendung**: Stellen Sie Ihre Anwendung mit Ratschlägen zu Tests, zur Bereitstellung, zum Erstellen von Grafiken usw. fertig.
-
------
 
 Dieses Handbuch unterstützt Sie dabei, die Fertigkeiten und Kenntnisse zu entwickeln, die zum Erstellen einer iOS-Anwendung für einen Bildschirm erforderlich sind. Nachdem Sie dieses durchgearbeitet haben, sollten Sie die verschiedenen Bestandteile einer Xamarin.iOS-Anwendung und deren Zusammenwirken verstehen können.
 
@@ -64,8 +42,6 @@ In Visual Studio wird Code in _Projektmappen_ und *Projekten* organisiert. Eine 
 ![](hello-ios-deepdive-images/vs-image30.png "Screenshot der ursprünglichen Projektmappe")
 
 -----
-
-<a name="anatomy" />
 
 ## <a name="anatomy-of-a-xamarinios-application"></a>Aufbau einer Xamarin.iOS-Anwendung
 
@@ -322,7 +298,7 @@ Dies sind die grundlegenden Lebenszyklusmethoden und ihre Funktionen:
 
 Wenn ein benutzerdefinierter Code zu einer Phase des Lebenszyklus hinzugefügt wird, muss die *Basisimplementierung* dieses Lebenszyklus *überschrieben* werden. Dazu tippen Sie auf die vorhandene Lebenszylusmethode, zu der bereits Code hinzugefügt wurde, und erweitern sie mit zusätzlichem Code. Die grundlegende Implementierung wird innerhalb der Methode aufgerufen, um sicherzustellen, dass der ursprüngliche Code vor dem neuen Code ausgeführt wird. Ein Beispiel dafür wird im nächsten Abschnitt dargestellt.
 
-Weitere Informationen zum Arbeiten mit Ansichtscontrollern finden Sie im [Programmierhandbuch des Ansichtscontrollers für iOS](https://developer.apple.com/library/ios/featuredarticles/ViewControllerPGforiPhoneOS/ViewLoadingandUnloading/ViewLoadingandUnloading.html) von Apple und in der [Referenz zu UIViewController](https://developer.apple.com/library/ios/documentation/uikit/reference/UIViewController_Class/Reference/Reference.html).
+Weitere Informationen zum Arbeiten mit Ansichtscontrollern finden Sie im [Programmierhandbuch des Ansichtscontrollers für iOS](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html#//apple_ref/doc/uid/TP40007457-CH2-SW1) von Apple und in der [Referenz zu UIViewController](https://developer.apple.com/documentation/uikit/uiviewcontroller?language=objc).
 
 ### <a name="responding-to-user-interaction"></a>Reagieren auf eine Benutzerinteraktion
 
@@ -379,7 +355,7 @@ Die Phoneword-Anwendung enthält weitere Konzepte, die jedoch nicht in diesem Le
     CallButton.SetTitle ("Call", UIControlState.Normal);
     ```
 - **Aktivieren und Deaktivieren von Schaltflächen**: **Schaltflächen** können sich im Zustand `Enabled` oder `Disabled` befinden. Eine deaktivierte **Schaltfläche** reagiert nicht auf Benutzereingaben. Im folgenden Codebeispiel wird `CallButton`: CallButton.Enabled = false deaktiviert. Weitere Informationen zu Schaltflächen finden Sie im Handbuch zu [Schaltflächen](~/ios/user-interface/controls/buttons.md).
-- **Ausblenden der Tastatur**: Wenn der Benutzer auf das Textfeld tippt, blendet iOS die Tastatur ein, damit der Benutzer eine Eingabe durchführen kann. Es gibt leider keine integrierte Funktionalität zum Ausblenden der Tastatur. Der folgende Code wird zu `TranslateButton` hinzugefügt, um die Tastatur auszublenden, wenn der Benutzer auf `TranslateButton` drückt: PhoneNumberText.ResignFirstResponder (). Ein weiteres Beispiel für das Ausblenden der Tastatur finden Sie in der Anleitung [Ausblenden der Tastatur](https://developer.xamarin.com/recipes/ios/input/keyboards/dismiss_the_keyboard).
+- **Ausblenden der Tastatur**: Wenn der Benutzer auf das Textfeld tippt, blendet iOS die Tastatur ein, damit der Benutzer eine Eingabe durchführen kann. Es gibt leider keine integrierte Funktionalität zum Ausblenden der Tastatur. Der folgende Code wird zu `TranslateButton` hinzugefügt, um die Tastatur auszublenden, wenn der Benutzer auf `TranslateButton` drückt: PhoneNumberText.ResignFirstResponder (). Ein weiteres Beispiel für das Ausblenden der Tastatur finden Sie in der Anleitung [Ausblenden der Tastatur](https://github.com/xamarin/recipes/tree/master/Recipes/ios/input/keyboards/dismiss_the_keyboard).
 - **Durchführen eines Telefonanrufs mit URL**: In der Phoneword-App wird ein URL-Schema von Apple verwendet, um die Systemtelefon-App zu starten. Das benutzerdefinierte URL-Schema besteht wie im folgenden Code veranschaulicht aus einem „tel:“-Präfix und der übersetzten Telefonnummer:
 
     ```csharp
@@ -399,19 +375,19 @@ Die Phoneword-Anwendung enthält weitere Konzepte, die jedoch nicht in diesem Le
                 }
     ```
 
-Weitere Informationen zu iOS-Warnungsansichten finden Sie in der [Anleitung für den Warnungscontroller](https://developer.xamarin.com/recipes/ios/standard_controls/alertcontroller/).
+Weitere Informationen zu iOS-Warnungsansichten finden Sie in der [Anleitung für den Warnungscontroller](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller).
 
 ## <a name="testing-deployment-and-finishing-touches"></a>Tests, Bereitstellung und Vollendung
 
 Visual Studio für Mac und Visual Studio stellen beide viele Optionen zum Testen und Bereitstellen einer Anwendung bereit. In diesem Abschnitt werden Debugoptionen behandelt, das Testen von Anwendungen auf einem Gerät veranschaulicht und Tools für das Erstellen von benutzerdefinierten Anwendungssymbolen und Startbildern vorgestellt.
 
-### <a name="debugging-tools"></a>Debugtools
+### <a name="debugging-tools"></a>Debuggingtools
 
-Probleme im Anwendungscode können manchmal schwer zu diagnostizieren sein. Für die Diagnose von komplexen Codeproblemen können Sie [einen Haltepunkt festlegen](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/), [Code schrittweise durchlaufen](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/) oder [Informationen an das Protokollfenster ausgeben](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/).
+Probleme im Anwendungscode können manchmal schwer zu diagnostizieren sein. Für die Diagnose von komplexen Codeproblemen können Sie [einen Haltepunkt festlegen](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint), [Code schrittweise durchlaufen](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code) oder [Informationen an das Protokollfenster ausgeben](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window).
 
 ### <a name="deploy-to-a-device"></a>Bereitstellen für ein Gerät
 
-Der iOS-Simulator ist eine schnelle Möglichkeit zum Testen einer Anwendung. Der Simulator bietet eine Reihe von nützlichen Optimierungen für Tests, einschließlich simulierten Speicherorten, [simulierten Bewegungen](https://developer.xamarin.com/recipes/ios/multitasking/test_location_changes_in_simulator/) und vieles mehr. Benutzer werden die endgültige Anwendung jedoch nicht in einem Simulator verwenden. Alle Anwendungen sollten frühzeitig und häufig auf realen Geräten getestet werden.
+Der iOS-Simulator ist eine schnelle Möglichkeit zum Testen einer Anwendung. Der Simulator bietet eine Reihe von nützlichen Optimierungen für Tests, einschließlich simulierten Speicherorten, [simulierten Bewegungen](https://github.com/xamarin/recipes/tree/master/Recipes/ios/multitasking/test_location_changes_in_simulator) und vieles mehr. Benutzer werden die endgültige Anwendung jedoch nicht in einem Simulator verwenden. Alle Anwendungen sollten frühzeitig und häufig auf realen Geräten getestet werden.
 
 Ein Gerät benötigt Zeit für die Bereitstellung und erfordert ein Apple-Entwicklerkonto. Das Handbuch [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md) enthält umfassende Anweisungen, mit denen ein Gerät für die Entwicklung vorbereitet werden kann.
 
@@ -464,5 +440,5 @@ Im [nächsten Tutorial der Reihe „Erste Schritte“](~/ios/get-started/hello-i
 ## <a name="related-links"></a>Verwandte Links
 
 - [Hallo, iOS (Beispiel)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
-- [iOS-Eingaberichtlinien](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
-- [iOS-Bereitstellungsportal](https://developer.apple.com/ios/manage/overview/index.action)
+- [iOS-Eingaberichtlinien](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/)
+- [iOS-Bereitstellungsportal](http://developer.apple.com/account/#/overview)

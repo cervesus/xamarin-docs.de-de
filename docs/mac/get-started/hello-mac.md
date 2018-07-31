@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 438bb8141818ccdb1aaf2fa604707d2fb7601cd5
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f06bf6736b427a4d77ac34957d75cd321f3dae3a
+ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792784"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39275936"
 ---
 # <a name="hello-mac--walkthrough"></a>Hallo, Mac: Exemplarische Vorgehensweise
 
@@ -249,7 +249,7 @@ Die `Info.plist`-Datei enthält Informationen zur Xamarin.Mac-App wie z.B. deren
 
 [![](hello-mac-images/infoplist01.png "Der PLIST-Editor für Visual Studio für Mac")](hello-mac-images/infoplist01.png#lightbox)
 
-Zudem definiert sie das _Storyboard_, mit dem die Benutzeroberfläche für die Xamarin.Mac-App im Dropdownmenü **Main Interface** (Hauptschnittstelle) angezeigt wird. Im oben stehenden Beispiel bezieht sich `Main` im Dropdownmenü auf das `Main.storyboard` in der Quellstruktur des Projekts im **Projektmappen-Explorer**. Zudem definiert sie das Symbol der App, indem Sie den *Ressourcenkatalog* angibt, der diese enthält (in diesem Fall App-Symbole).
+Zudem definiert sie das _Storyboard_, mit dem die Benutzeroberfläche für die Xamarin.Mac-App im Dropdownmenü **Main Interface** (Hauptschnittstelle) angezeigt wird. Im oben stehenden Beispiel bezieht sich `Main` im Dropdownmenü auf das `Main.storyboard` in der Quellstruktur des Projekts im **Projektmappen-Explorer**. Zudem definiert sie das Symbol der App, indem Sie den *Asset-Katalog* angibt, der diese enthält (in diesem Fall **AppIcon**).
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 

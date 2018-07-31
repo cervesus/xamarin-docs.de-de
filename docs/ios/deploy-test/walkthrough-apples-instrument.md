@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 4241fe9fed260091de98ba47d68b0ad5d97ed626
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a751488b4063a594904393faa605d36c3414d2ec
+ms.sourcegitcommit: 021027b78cb2f8061b03a7c6ae59367ded32d587
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785774"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39182181"
 ---
 # <a name="walkthrough---using-apples-instruments-tool"></a>Exemplarische Vorgehensweise: Verwenden des Apple-Tools „Instruments“
 
@@ -23,40 +23,40 @@ Laden Sie zunächst das [MemoryDemo-Beispiel](https://developer.xamarin.com/samp
 
 ## <a name="diagnosing-the-memory-issues"></a>Diagnostizieren von Arbeitsspeicherproblemen
 
-1.  Starten Sie in Visual Studio für Mac die **Instrumente** über das Menüelement **Tools > Instrumente starten**.
-2.  Laden Sie die Anwendung auf das Gerät hoch, indem Sie das Menüelement **Ausführen > Auf Gerät hochladen** verwenden.
-3.  Wählen Sie die Vorlage **Zuordnungen** (orangefarbenes Symbol mit weißem Feld) aus.
+1. Starten Sie in Visual Studio für Mac die **Instrumente** über das Menüelement **Tools > Instrumente starten**.
+2. Laden Sie die Anwendung auf das Gerät hoch, indem Sie das Menüelement **Ausführen > Auf Gerät hochladen** verwenden.
+3. Wählen Sie die Vorlage **Zuordnungen** (orangefarbenes Symbol mit weißem Feld) aus.
 
     ![](walkthrough-apples-instrument-images/00-allocations-tempate.png "Auswählen der Vorlage „Zuordnungen“")
 
-4.  Wählen Sie die Anwendung **Memory Demo** aus der Liste **Choose a profiling template for:** (Profilerstellungsvorlage auswählen für:) im oberen Bereich des Fensters aus. Klicken Sie zunächst auf das iOS-Gerät, um das Menü zu erweitern, das die installierten Anwendungen anzeigt.
+4. Wählen Sie die Anwendung **Memory Demo** aus der Liste **Choose a profiling template for:** (Profilerstellungsvorlage auswählen für:) im oberen Bereich des Fensters aus. Klicken Sie zunächst auf das iOS-Gerät, um das Menü zu erweitern, das die installierten Anwendungen anzeigt.
 
     ![](walkthrough-apples-instrument-images/01-mem-demo.png "Auswählen der „Memory Demo“-Anwendung")
 
-5.  Drücken Sie auf die Schaltfläche **Auswählen** (unten rechts im Fenster), um **Instrumente** zu starten. Diese Vorlage zeigt zwei Elemente im oberen Bereich an: Zuordnungen und VM-Tracker.
+5. Drücken Sie auf die Schaltfläche **Auswählen** (unten rechts im Fenster), um **Instrumente** zu starten. Diese Vorlage zeigt zwei Elemente im oberen Bereich an: Zuordnungen und VM-Tracker.
 
-6.  Klicken Sie auf in Instruments auf die Schaltfläche **Aufnehmen** (roter Kreis oben links), um die Anwendung zu starten.
+6. Klicken Sie auf in Instruments auf die Schaltfläche **Aufnehmen** (roter Kreis oben links), um die Anwendung zu starten.
 
-7.  Wählen Sie im oberen Bereich die Zeile **VM-Tracker** aus. Da die App nun ausgeführt wird, enthält diese zwei Abschnitte: Dirty Size und Resident Size. Wählen Sie im Bereich **Inspektor** die Option **Show Display Settings** (Anzeigeeinstellungen anzeigen) (das Zahnradsymbol) aus, und aktivieren Sie dann das Kontrollkästchen **Automatic Snapshotting** (Automatische Momentaufnahme), das unten rechts auf diesem Screenshot angezeigt wird:
+7. Wählen Sie im oberen Bereich die Zeile **VM-Tracker** aus. Da die App nun ausgeführt wird, enthält diese zwei Abschnitte: Dirty Size und Resident Size. Wählen Sie im Bereich **Inspektor** die Option **Show Display Settings** (Anzeigeeinstellungen anzeigen) (das Zahnradsymbol) aus, und aktivieren Sie dann das Kontrollkästchen **Automatic Snapshotting** (Automatische Momentaufnahme), das unten rechts auf diesem Screenshot angezeigt wird:
 
     ![](walkthrough-apples-instrument-images/02-auto-snapshot.png "Auswählen der Option „Show Display Settings“ (Anzeigeeinstellungen anzeigen) (Zahnradsymbol) und anschließendes Aktivieren des Kontrollkästchens „Automatic Snapshotting“ (Automatische Momentaufnahme)")
 
-8.  Wählen Sie im oberen Bereich die Zeile **Zuordnungen** aus. Da die App nun ausgeführt wird, zeigt diese *All Heap and Anonymous VM* (Alle Heaps und anonymen VMs) an.
-9.  Wählen Sie im Bereich **Inspektor** die Option **Anzeigeeinstellungen anzeigen** (das Zahnradsymbol) aus, und klicken Sie dann auf die Schaltfläche **Mark Generation** (Markierungsgenerierung), um eine Baseline zu erstellen. Eine kleine rote Flagge wird im oberen Bereich des Fensters auf der Zeitachse angezeigt.
-10.  Scrollen Sie durch die Anwendung, und klicken Sie dann erneut auf **Markierungsgenerierung** (mehrmals wiederholen).
-11.  Klicken Sie auf die Schaltfläche **Beenden**.
-12.  Erweitern Sie den Knoten **Generierung**, der das größte **Wachstum** aufweist, und sortieren Sie nach **Wachstum** (absteigend).
-13.  Ändern Sie den Bereich **Inspektor** in **Show Extended Detail** (Erweiterte Details anzeigen) (das „E“), wodurch die **Stapelüberwachung** angezeigt wird.
+8. Wählen Sie im oberen Bereich die Zeile **Zuordnungen** aus. Da die App nun ausgeführt wird, zeigt diese *All Heap and Anonymous VM* (Alle Heaps und anonymen VMs) an.
+9. Wählen Sie im Bereich **Inspektor** die Option **Anzeigeeinstellungen anzeigen** (das Zahnradsymbol) aus, und klicken Sie dann auf die Schaltfläche **Mark Generation** (Markierungsgenerierung), um eine Baseline zu erstellen. Eine kleine rote Flagge wird im oberen Bereich des Fensters auf der Zeitachse angezeigt.
+10. Scrollen Sie durch die Anwendung, und klicken Sie dann erneut auf **Markierungsgenerierung** (mehrmals wiederholen).
+11. Klicken Sie auf die Schaltfläche **Beenden**.
+12. Erweitern Sie den Knoten **Generierung**, der das größte **Wachstum** aufweist, und sortieren Sie nach **Wachstum** (absteigend).
+13. Ändern Sie den Bereich **Inspektor** in **Show Extended Detail** (Erweiterte Details anzeigen) (das „E“), wodurch die **Stapelüberwachung** angezeigt wird.
 
-14.  Beachten Sie, dass der Knoten **<non-object>** einen übermäßigen Arbeitsspeicherzuwachs anzeigt. Klicken Sie auf den Pfeil neben diesem Knoten, um weitere Details anzuzeigen. Klicken Sie mit der rechten Maustaste auf die Stapelüberwachung, um einen **Quellort** zum Bereich hinzuzufügen:
+14. Beachten Sie, dass der Knoten **&lt;non-object>** einen übermäßigen Arbeitsspeicherzuwachs anzeigt. Klicken Sie auf den Pfeil neben diesem Knoten, um weitere Details anzuzeigen. Klicken Sie mit der rechten Maustaste auf die Stapelüberwachung, um einen **Quellort** zum Bereich hinzuzufügen:
 
     ![](walkthrough-apples-instrument-images/03-mem-growth.png "Hinzufügen des Quellspeicherorts zum Bereich")
 
-15.  Sortieren Sie nach **Größe**, und zeigen Sie die Ansicht **Extended Detail** (Erweiterte Details) an:
+15. Sortieren Sie nach **Größe**, und zeigen Sie die Ansicht **Extended Detail** (Erweiterte Details) an:
 
     ![](walkthrough-apples-instrument-images/04-extended-detail.png "Sortieren nach Größe und Anzeigen der Ansicht „Extended Detail“ (Erweiterte Details)")
 
-16.  Klicken Sie auf den gewünschten Eintrag in der Aufrufliste, um den zugehörigen Code anzeigen zu lassen:
+16. Klicken Sie auf den gewünschten Eintrag in der Aufrufliste, um den zugehörigen Code anzeigen zu lassen:
 
     ![](walkthrough-apples-instrument-images/05-related-code.png "Anzeigen von zugehörigem Code")
 
@@ -87,8 +87,7 @@ Nun, da die Anwendung ausgeführt wird, ist die Arbeitsspeicherauslastung erhebl
 
 Der verbesserte Code ist in Visual Studio für Mac in der Projektmappe **after** im [MemoryDemo-Beispiel](https://developer.xamarin.com/samples/monotouch/Profiling/MemoryDemo/) verfügbar.
 
-Dieser Communityblog über [Xamarin.iOS-Garbage Collection](https://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/) ist hilfreich für den Umgang mit Arbeitsspeicherproblemen mit Xamarin.iOS.
-
+Dieser Communityblog über [Xamarin.iOS-Garbage Collection](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/) ist hilfreich für den Umgang mit Arbeitsspeicherproblemen mit Xamarin.iOS.
 
 ## <a name="summary"></a>Zusammenfassung
 
@@ -96,8 +95,7 @@ In diesem Artikel wurde die Verwendung von Instruments zum Diagnostizieren von A
 Es wurde beschrieben, wie Instrumente von Visual Studio für Mac aus gestartet werden, wie die Vorlage für die Arbeitsspeicherzuordnung geladen wird und wie Momentaufnahmen verwendet werden, um Arbeitsspeicherprobleme zu ermitteln.
 Schließlich wurde die Anwendung erneut überprüft, um sicherzustellen, dass das Problem behoben wurde.
 
-
 ## <a name="related-links"></a>Verwandte Links
 
 - [MemoryDemo-Beispiel](https://developer.xamarin.com/samples/monotouch/Profiling/MemoryDemo/)
-- [Xamarin.iOS-Garbage Collection](https://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/)
+- [Xamarin.iOS-Garbage Collection (Blogbeitrag)](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 5b5f8c80e49d66ed3bd8b008c975d1cfeda93ed4
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 7399cab611b726eb7bb72928f504086fb842fb74
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38832383"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242432"
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms-Schnellstart
 
@@ -306,7 +306,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
     }
     ```
 
-    Speichern Sie die Änderungen an **PhoneDialer.cs**, indem Sie **STRG+S** drücken, und schließen Sie die Datei.
+    Beachten Sie, dass dieser Code voraussetzt, dass Sie die neueste Android-API verwenden. Speichern Sie die Änderungen an **PhoneDialer.cs**, indem Sie **STRG+S** drücken, und schließen Sie die Datei.
 
 21. Doppelklicken Sie im **Projektmappen-Explorer** im Projekt **Phoneword.Android** auf **MainActivity.cs**, um sie zu öffnen. Entfernen Sie anschließend den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden Code:
 
@@ -729,7 +729,7 @@ Erstellen Sie die Phoneword-Anwendung wie folgt:
     }
     ```
 
-    Speichern Sie die Änderungen an **PhoneDialer.cs**, indem Sie auf **Datei > Speichern** klicken (oder indem Sie **&#8984;+S** drücken), und schließen Sie die Datei.
+    Beachten Sie, dass dieser Code voraussetzt, dass Sie die neueste Android-API verwenden. Speichern Sie die Änderungen an **PhoneDialer.cs**, indem Sie auf **Datei > Speichern** klicken (oder indem Sie **&#8984;+S** drücken), und schließen Sie die Datei.
 
 21. Doppelklicken Sie im **Lösungspad** im Projekt **Phoneword.Droid** auf **MainActivity.cs**, um sie zu öffnen. Entfernen Sie anschließend den gesamten Vorlagencode, und ersetzen Sie ihn durch folgenden Code:
 

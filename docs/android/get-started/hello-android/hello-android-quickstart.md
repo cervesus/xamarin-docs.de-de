@@ -7,13 +7,13 @@ ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 9e4349b807c98e6f5cfbc55fa57153f99054d474
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 07/20/2018
+ms.openlocfilehash: beb90587e0d720de7770056c8b51264099edecdc
+ms.sourcegitcommit: fb55eba393e43bcc9e9d1fef9ef1f1310e99f620
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732465"
+ms.lasthandoff: 07/21/2018
+ms.locfileid: "39189020"
 ---
 # <a name="hello-android-quickstart"></a>Hallo, Android: Schnellstart
 
@@ -49,15 +49,8 @@ Bevor Sie beginnen, laden Sie bitte [Xamarin-App-Symbole & Startbildschirme](htt
 
 ## <a name="configuring-emulators"></a>Konfigurieren von Emulatoren
 
-Bei Verwendung des Google Android SDK-Emulators wird empfohlen, dass Sie den Emulator konfigurieren, um die Hardwarebeschleunigung verwenden zu können. Anweisungen zum Konfigurieren der Hardwarebeschleunigung finden Sie unter [Hardwarebeschleunigung für die Emulator-Leistung](~/android/get-started/installation/android-emulator/hardware-acceleration.md).
+Bei Verwendung des Android-Emulators wird empfohlen, dass Sie den Emulator konfigurieren, um die Hardwarebeschleunigung verwenden zu können. Anweisungen zum Konfigurieren der Hardwarebeschleunigung finden Sie unter [Hardwarebeschleunigung für die Emulator-Leistung](~/android/get-started/installation/android-emulator/hardware-acceleration.md).
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-Wenn Sie den Visual Studio-Emulator für Android verwenden, muss Hyper-V auf Ihrem Computer aktiviert sein. Weitere Informationen zum Konfigurieren von Visual Studio-Android-Emulator finden Sie unter [Systemanforderungen für den Visual Studio-Emulator für Android](https://msdn.microsoft.com/en-us/library/mt228280.aspx).
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
-
------
 
 ## <a name="walkthrough"></a>Exemplarische Vorgehensweise
 
@@ -66,16 +59,20 @@ Wenn Sie den Visual Studio-Emulator für Android verwenden, muss Hyper-V auf Ihr
 Starten Sie Visual Studio.  Klicken Sie auf **Datei > Neu > Projekt**, um ein neues Projekt zu erstellen.
 
 Klicken Sie im Dialogfeld **Neues Projekt** auf die Vorlage **Android-App**.
-Geben Sie dem neuen Projekt den Namen `Phoneword`. Klicken Sie auf **OK**, um das neue Projekt zu erstellen:
+Geben Sie dem neuen Projekt den Namen `Phoneword`. Klicken Sie auf **OK**:
 
-[![Neues Projekt ist Phoneword](hello-android-quickstart-images/vs/02-new-project-name-sml.w157.png)](hello-android-quickstart-images/vs/02-new-project-name.w157.png#lightbox)
+[![Neues Projekt ist Phoneword](hello-android-quickstart-images/vs/01-new-project-name-w157-sml.png)](hello-android-quickstart-images/vs/01-new-project-name-w157.png#lightbox)
+
+Klicken Sie im Dialogfeld **Neue Android-App** auf die Option **Leere App** und anschließend auf **OK**, um ein neues Projekt zu erstellen:
+
+[![Auswählen der Vorlage „Leere App“](hello-android-quickstart-images/vs/02-blank-app-w157-sml.png)](hello-android-quickstart-images/vs/02-blank-app-w157.png#lightbox)
 
 ### <a name="creating-the-layout"></a>Erstellen des Layouts
 
 Nachdem das neue Projekt erstellt wurde, erweitern Sie den **Ressourcen**-Ordner und dann den **Layout**-Ordner im **Projektmappen-Explorer**.
-Doppelklicken Sie auf **Main.axml**, um es in Android Designer zu öffnen. Dies ist die Layoutdatei für den App-Bildschirm:
+Doppelklicken Sie auf **activity_main.axml**, um sie in Android Designer zu öffnen. Dies ist die Layoutdatei für den App-Bildschirm:
 
-[![Main.axml öffnen](hello-android-quickstart-images/vs/04-open-layout-sml.png)](hello-android-quickstart-images/vs/04-open-layout.png#lightbox)
+[![Öffnen von activity main.axml](hello-android-quickstart-images/vs/04-open-layout-sml.png)](hello-android-quickstart-images/vs/04-open-layout.png#lightbox)
 
 Geben Sie in der **Toolbox** (der Bereich auf der linken Seite) `text` in das Suchfeld ein, und ziehen Sie ein **Text (groß)**-Widget auf die Entwurfsoberfläche (Bereich in der Mitte):
 
@@ -115,7 +112,7 @@ Im nächste Schritt fügen Sie Code hinzu, um alphanumerische Telefonnummern in 
 
 Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Visual C# > Code > Codedatei**, und nennen Sie die neue Datei **PhoneTranslator.cs**:
 
-[![PhoneTranslator.cs hinzufügen](hello-android-quickstart-images/vs/14-add-class-sml.w157.png)](hello-android-quickstart-images/vs/14-add-class.w157.png#lightbox)
+[![PhoneTranslator.cs hinzufügen](hello-android-quickstart-images/vs/14-add-class-sml-w157.png)](hello-android-quickstart-images/vs/14-add-class-w157.png#lightbox)
 
 Dadurch wird eine neue leere C#-Klasse erstellt. Fügen Sie folgenden Code in diese Datei ein:
 
@@ -287,6 +284,8 @@ Testen Sie die Anwendung am Schluss, indem Sie diese auf einem Android-Gerät od
 
 [![Screenshot der App, wenn sie abgeschlossen ist.](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png#lightbox)
 
+
+
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 Starten Sie Visual Studio für Mac im Ordner **Anwendungen** oder aus **Spotlight**. 
@@ -418,7 +417,7 @@ Speichern Sie die Änderungen in der **PhoneTranslator.cs**-Datei durch Klicken 
 Der nächste Schritt besteht im Hinzufügen von Code, um die Benutzeroberfläche zu verknüpfen, indem Sie zugrunde liegenden Code in die `MainActivity`-Klasse einfügen.
 Doppelklicken Sie auf **MainActivity.cs** im **Lösungspad**, um sie zu öffnen.
 
-Fügen Sie zunächst einen Ereignishandler zur Schaltfläche **Übersetzen** hinzu. Suchen Sie in der `MainActivity`-Klasse die Methode `OnCreate`. Fügen Sie den Schaltflächencode in `OnCreate` unter den `base.OnCreate(bundle)`- und `SetContentView (Resource.Layout.Main)`-Aufrufen hinzu. Entfernen Sie den Vorlagencode für die Verarbeitung der Schaltflächen, damit die `OnCreate`-Methode der folgenden Darstellung ähnelt:
+Fügen Sie zunächst einen Ereignishandler zur Schaltfläche **Übersetzen** hinzu. Suchen Sie in der `MainActivity`-Klasse die Methode `OnCreate`. Fügen Sie den Schaltflächencode in `OnCreate` unter den `base.OnCreate(bundle)`- und `SetContentView (Resource.Layout.Main)`-Aufrufen hinzu. Entfernen Sie jeden vorhandenen Code für die Schaltflächenverarbeitung (d.h. Code, der auf `Resource.Id.myButton` verweist und einen Klick-Handler dafür erstellt), sodass die Methode `OnCreate` der folgenden ähnelt:
 
 ```csharp
 using System;

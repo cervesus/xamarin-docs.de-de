@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 685a29eea4b03361b185e25ae0e146be7b5e69b6
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9c81138aea57c0027ad0f53e3116878ffb800eae
+ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792033"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39276040"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Anwendungssymbol für Xamarin.Mac-Apps
 
@@ -23,9 +23,9 @@ _In diesem Artikel wird beschrieben, wie Sie die für das Anwendungssymbol einer
 
 Ein Entwickler, der mit C# und .NET in einer Xamarin.Mac-Anwendung arbeitet, hat Zugang zu denselben Bild- und Symboltools wie ein Entwickler, der in *Objective-C* und *Xcode* arbeitet.
 
-Ein aussagekräftiges Symbol sollte den Hauptzweck der Xamarin.Mac-App darstellen und auf Funktionen hindeuten, die ein Benutzer von der Anwendung erwarten kann. In diesem Artikel wird beschrieben, wie Sie Bildanlagen erstellen, die sie für ein Anwendungssymbol benötigen, wie Sie diese Bildanlagen in eine `AppIcons.appiconset`-Datei bündeln und wie diese Datei anschließend in einer Xamarin.Mac-App verarbeitet wird.
+Ein aussagekräftiges Symbol sollte den Hauptzweck der Xamarin.Mac-App darstellen und auf Funktionen hindeuten, die ein Benutzer von der Anwendung erwarten kann. In diesem Artikel wird beschrieben, wie Sie Bildanlagen erstellen, die sie für ein Anwendungssymbol benötigen, wie Sie diese Bildanlagen in eine `AppIcon.appiconset`-Datei bündeln und wie diese Datei anschließend in einer Xamarin.Mac-App verarbeitet wird.
 
-![Der AppIcons.appiconset-Editor](app-icon-images/intro01.png "The AppIcons.appiconset editor")
+![Der AppIcons.appiconset-Editor](app-icon-images/intro01.png "Der AppIcons.appiconset-Editor")
 
 
 ## <a name="application-icon"></a>Anwendungssymbol
@@ -85,7 +85,7 @@ Führen Sie folgende Schritte aus:
 
 1. Öffnen Sie **Assets.xcassets** > **AppIcons.appiconset** im **Lösungspad**: 
 
-    ![Bearbeiten von AppIcons.appiconset](app-icon-images/intro01.png "Editing the AppIcons.appiconset")
+    ![Bearbeiten von AppIcons.appiconset](app-icon-images/intro01.png "Bearbeiten von AppIcons.appiconset")
 2. Klicken Sie für jede benötigte Symbolgröße auf das Symbol und wählen Sie die dazugehörige Bilddatei aus, die Sie zuvor erstellt haben: 
 
     [![Auswählen eines Symbolbilds](app-icon-images/intro02.png "Selecting an icon image")](app-icon-images/intro02-large.png#lightbox)
@@ -94,12 +94,12 @@ Führen Sie folgende Schritte aus:
 
 ## <a name="using-the-icon"></a>Verwenden des Symbols
 
-Sobald die `AppIcons.appiconset`-Datei erstellt wurde, muss sie dem Xamarin.Mac-Projekt in Visual Studio für Mac zugewiesen werden.
+Sobald die `AppIcon.appiconset`-Datei erstellt wurde, muss sie dem Xamarin.Mac-Projekt in Visual Studio für Mac zugewiesen werden.
 
 Führen Sie folgende Schritte aus:
 
 1. Doppelklicken Sie auf **Info.plist** im **Projektmappen-Explorer**, um die **Projektoptionen** zu öffnen.
-2. Klicken Sie im Abschnitt **Mac OS X Application Target (Anwendungsziel für Mac OS X Application Target)** auf **App-Symbole**, um die `AppIcons.appiconset`-Datei auszuwählen: 
+2. Klicken Sie im Abschnitt **Mac OS X Application Target (Anwendungsziel für Mac OS X Application Target)** auf **App-Symbole**, um die `AppIcon.appiconset`-Datei auszuwählen: 
 
     [![Festlegen der Symbole](app-icon-images/icon01.png "Setting the icon set")](app-icon-images/icon01-large.png#lightbox)
 3. Speichern Sie die Änderungen.
