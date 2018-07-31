@@ -1,68 +1,69 @@
 ---
 title: Bekannte Probleme und Problemumgehungen
-description: Dieses Dokument beschreibt bekannte Probleme und problemumgehungen für Xamarin-Arbeitsmappen. Es wird erläutert, CultureInfo Probleme und JSON-Probleme.
+description: Dieses Dokument beschreibt die bekannten Probleme und problemumgehungen für Xamarin Workbooks. Es wird erläutert, CultureInfo-Probleme, Probleme mit JSON und mehr.
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: b6dc3b119d3e85369a71638f2519b2ef0c85446c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 03/30/2017
+ms.openlocfilehash: d362698d2844ae6d96bba4929d509f5373742578
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794032"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350994"
 ---
 # <a name="known-issues--workarounds"></a>Bekannte Probleme und Problemumgehungen
 
-## <a name="persistence-of-cultureinfo-across-cells"></a>Dauerhaftigkeit von CultureInfo in Zellen
+## <a name="persistence-of-cultureinfo-across-cells"></a>Persistenz der CultureInfo in Zellen
 
-Festlegen von `System.Threading.CurrentThread.CurrentCulture` oder `System.Globalization.CultureInfo.CurrentCulture` über Arbeitsmappe Zellen auf Arbeitsmappen Mono-basierte Zielen (Mac, iOS und Android) aufgrund von nicht beibehalten eine [Fehler in der Mono `AppContext.SetSwitch` ] [ appcontext-bug] Implementierung .
+Festlegen von `System.Threading.CurrentThread.CurrentCulture` oder `System.Globalization.CultureInfo.CurrentCulture` behält nicht über die Zellen der Arbeitsmappe für Mono-basierte Arbeitsmappen-Ziele (Mac, iOS und Android) aufgrund einer [Fehler in der Mono- `AppContext.SetSwitch` ] [ appcontext-bug] Implementierung .
 
 ### <a name="workarounds"></a>Problemumgehung
 
-* Legen Sie die Anwendung Domäne lokale `DefaultThreadCurrentCulture`:
+* Legen Sie die Domäne-lokalen `DefaultThreadCurrentCulture`:
 ```csharp
 using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 ```
 
-* Oder Aktualisierung in Arbeitsmappen 1.2.1 oder höher ist, werden die Zuweisungen zu schreiben `System.Threading.CurrentThread.CurrentCulture` und `System.Globalization.CultureInfo.CurrentCulture` das gewünschte Verhalten (arbeiten für den Mono / Fehler) bereit.
+* Oder Update Arbeitsmappen 1.2.1 oder höher, werden die Zuweisungen zu schreiben `System.Threading.CurrentThread.CurrentCulture` und `System.Globalization.CultureInfo.CurrentCulture` für das gewünschte Verhalten (umgehen von Mono / Fehler) bereitstellen.
 
-## <a name="unable-to-use-newtonsoftjson"></a>Keine Newtonsoft.Json verwenden
+## <a name="unable-to-use-newtonsoftjson"></a>Kann nicht verwendet "newtonsoft.JSON"
 
 ### <a name="workaround"></a>Problemumgehung
 
 * Aktualisieren Sie auf Arbeitsmappen 1.2.1, wodurch Newtonsoft.Json 9.0.1 installiert werden.
-  Arbeitsmappen 1.3 derzeit in den alpha-Kanal Versionen 10 und höher unterstützt.
+  Arbeitsmappen 1.3, unterstützt derzeit im Alphakanal, Version 10 und höher.
 
 ### <a name="details"></a>Details
 
-Newtonsoft.Json 10 wurde veröffentlicht, das Deaktivieren von seiner Abhängigkeit Microsoft.CSharp, wodurch ein Konflikt mit der Arbeitsmappen der Version ausgeliefert wird, zur Unterstützung `dynamic`. Dies wird im Preview-Release Arbeitsmappen 1.3 adressiert, aber vorläufig aufweisen gearbeitet umgehen dieses durch anheften Newtonsoft.Json speziell für die Version 9.0.1.
+"Newtonsoft.JSON" 10 wurde veröffentlicht, die tatsächlich von der Abhängigkeit Microsoft.CSharp, wodurch ein Konflikt mit der Arbeitsmappen der Version ausgeliefert wird, zur Unterstützung `dynamic`. Dies ist in der Vorschauversion von Arbeitsmappen 1.3 behoben, aber vorerst wir haben daran gearbeitet Umgehung dieses Problems von angehefteten "newtonsoft.JSON" speziell für Version 9.0.1.
 
-NuGet-Pakete explizit je nach Newtonsoft.Json 10 oder höher werden nur in Arbeitsmappen 1.3 derzeit in den alpha-Kanal unterstützt.
+NuGet-Pakete, die explizit je nach "newtonsoft.JSON" 10 oder höher werden nur Arbeitsmappen 1.3, derzeit im Alphakanal unterstützt.
 
-## <a name="code-tooltips-are-blank"></a>Code QuickInfos sind leer
+## <a name="code-tooltips-are-blank"></a>Code-QuickInfos sind leer
 
-Es ist ein [Fehler in dem Monaco-Editor] [ monaco-bug] in Safari/WebKit, die in der Mac-Arbeitsmappen-app verwendet wird, das Code QuickInfos Rendering ohne Text ergibt.
+Es gibt eine [Fehler in dem Monaco-Editor] [ monaco-bug] in Safari/WebKit, die in der Mac-Workbooks-app verwendet wird, führt, die Code-QuickInfos Rendering ohne Text.
 
 ![](general-images/monaco-signature-help-bug.png)
 
 ### <a name="workaround"></a>Problemumgehung
 
-* Klicken auf die QuickInfo ein, sobald es angezeigt wird, erzwingt den Text gerendert.
+* Die QuickInfo auf, wenn es angezeigt wird, wird den Text, der Rendering erzwungen.
 
-* Oder aktualisieren Sie Arbeitsmappen 1.2.1 oder höher
+* Oder aktualisieren Sie die Arbeitsmappen 1.2.1 oder höher
 
 [appcontext-bug]: https://bugzilla.xamarin.com/show_bug.cgi?id=54448
 [monaco-bug]: https://github.com/Microsoft/monaco-editor/issues/408
 
-## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>SkiaSharp-Renderer fehlen in Arbeitsmappen 1.3.
+## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>SkiaSharp-Renderer werden in Arbeitsmappen 1.3 fehlt
 
-Arbeitsmappen 1.3 ab, wurde entfernt und die SkiaSharp Renderern, die wir ausgeliefert wurden in Arbeitsmappen 0.99.0, zugunsten SkiaSharp bietet den Renderern mit sich selbst, indem Sie unsere [SDK](~/tools/workbooks/sdk/index.md).
+Arbeitsmappen 1.3 ab, haben wir die SkiaSharp-Renderern, die wir haben in Arbeitsmappen 0.99.0, zugunsten von SkiaSharp die Renderer bereitgestellt, indem enthalten unsere [SDK](~/tools/workbooks/sdk/index.md).
 
 ### <a name="workaround"></a>Problemumgehung
 
-* Aktualisieren Sie SkiaSharp auf die neueste Version in NuGet. Dies ist zum Zeitpunkt der Verfassung 1.57.1.
+* Aktualisieren Sie SkiaSharp, auf die neueste Version in NuGet. Zum Zeitpunkt der Verfassung ist dies 1.57.1.
 
 ## <a name="related-links"></a>Verwandte Links
 

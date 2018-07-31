@@ -5,12 +5,12 @@ ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: ca6d4f1ec60a80b483c79dd75267144e67d80c0b
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 4a45587c79cfbbcd1198f100915e698289f74950
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831763"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353749"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: Einstellungen
 
@@ -83,6 +83,10 @@ Alle Daten werden gespeichert, in [freigegebene Einstellungen](https://developer
 ["Applicationdatacontainer"](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdatacontainer) wird verwendet, um die Werte auf dem Gerät zu speichern. Wenn kein `sharedName` entspricht der `LocalSettings` werden verwendet, andernfalls der Name wird verwendet, um einen neuen Container innerhalb des erstellen `LocalSettings`.
 
 --------------
+
+## <a name="persistence"></a>Persistenz
+
+Deinstallieren der Anwendung führt dazu, dass alle _Voreinstellungen_ entfernt werden soll. Es wird eine Ausnahme, die für apps, die als Ziel aus, und führen Sie auf Android 6.0 (API-Ebene 23) oder höher verwenden, die [ __automatische Sicherung__](https://developer.android.com/guide/topics/data/autobackup). Dieses Feature ist standardmäßig aktiviert und behält die app Daten, z.B. __freigegebene Einstellungen__, d. h. die **Voreinstellungen** APIs nutzt. Sie können dies deaktivieren, indem die folgenden Google [Dokumentation](https://developer.android.com/guide/topics/data/autobackup).
 
 ## <a name="limitations"></a>Einschränkungen
 

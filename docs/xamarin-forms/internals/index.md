@@ -6,13 +6,13 @@ ms.assetid: 2273a31c-4022-42ba-befe-0d23ce2ff3b5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/19/2017
-ms.openlocfilehash: ac9a90373878035ffa8ac0be9da8993bf189b6b3
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.date: 07/19/2018
+ms.openlocfilehash: 8ed643619e5a22e9a1febe419eb42d45901dec63
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241252"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350744"
 ---
 # <a name="advanced-concepts--internals"></a>Weiterführende Konzepte und Interna
 
@@ -26,4 +26,4 @@ In diesem Artikel wird erläutert, wie eine Xamarin.Forms-Anwendung zur Verwendu
 
 ## <a name="dependency-resolutiondependency-resolutionmd"></a>[Abhängigkeitsauflösung](dependency-resolution.md)
 
-In diesem Artikel wird erläutert, wie eine Abhängigkeit Auflösungsmethode in Xamarin.Forms einfügen, damit eine Anwendung Dependency Injection-Container Kontrolle über die Erstellung und Lebensdauer von benutzerdefinierten Renderern, Effekte, verfügt und `DependencyService` Implementierungen.
+In diesem Artikel wird erläutert, wie eine Abhängigkeit Auflösung-Methode in Xamarin.Forms eingefügt werden, so, dass Dependency Injection-Container einer Anwendung Kontrolle über die Erstellung und Lebensdauer von benutzerdefinierten Renderern, Effekte, hat und `DependencyService` Implementierungen.

@@ -5,12 +5,12 @@ ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: c1ed298e1317d0a3f78f4dbd9fc89a2b01c6958c
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 31e27556a6681b144084d2177cf3fde8fe8e5459
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855109"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353518"
 ---
 # <a name="xamarinessentials-data-transfer"></a>Xamarin.Essentials: Datenübertragung
 
@@ -64,13 +64,13 @@ Die Benutzeroberfläche an externe Anwendung freigeben, die angezeigt wird, wenn
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* `Subject` nicht verwendet.
-* `Title` nicht verwendet. 
+* `Subject` Nicht verwendet.
+* `Title` Nicht verwendet.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 * `Title` wird standardmäßig die Anwendungsname Wenn nicht festgelegt.
-* `Subject` nicht verwendet.
+* `Subject` Nicht verwendet.
 
 -----
 

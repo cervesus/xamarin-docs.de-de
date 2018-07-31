@@ -6,46 +6,47 @@ ms.assetid: 6C3082FB-C3F1-4661-BE45-64570E56DE7C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b8b61ba38491b2085233dd1b30a82bc57d2baaed
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/03/2018
+ms.openlocfilehash: 366308774a7302e54b0d47753256638e89d97b82
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30777930"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350981"
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>Kann ich Dateien hinzufügen oder Entfernen von Dateien aus einer IPA-Datei nach der Erstellung in Visual Studio?
 
-Ja, es ist möglich, aber in der Regel, dass Sie sich erneut anmelden muss die `.app` Paket nach der Änderung.
+Ja, es ist möglich, aber es ist in der Regel erforderlich, wenn Sie sich erneut anmelden die `.app` Paket nach der Änderung.
 
 Beachten Sie, dass das Ändern der `.ipa` Datei ist nicht erforderlich, während normaler Verwendung. In diesem Artikel wird nur zu Informationszwecken bereitgestellt.
 
 ## <a name="example-removing-a-file-from-a-ipa-archive"></a>Beispiel: Entfernen einer Datei aus einem `.ipa` Archiv
 
-In diesem Beispiel wird davon ausgegangen, dass der Name des Projekts Xamarin.iOS `iPhoneApp1` und `generated session id` ist `cc530d20d6b19da63f6f1c6f67a0a254`
+In diesem Beispiel wird davon ausgegangen, dass der Name des Xamarin.iOS-Projekts `iPhoneApp1` und `generated session id` ist `cc530d20d6b19da63f6f1c6f67a0a254`
 
-1.  Erstellen der `.ipa` Datei aus Visual Studio wie gewohnt.
+1.  Erstellen der `.ipa` Datei wie gewohnt in Visual Studio.
 
-2.  Wechseln in den Mac Host erstellen.
+2.  Mit dem Mac-buildhost wechseln.
 
-3.  Suchen Sie den Build in die `~/Library/Caches/Xamarin/mtbs/builds` Ordner. Sie können diesen Pfad in einfügen **Finder > wechseln Sie > wechseln Sie zum Ordner** auf den Ordner im Finder durchsuchen. Suchen Sie nach dem Ordner, der den Namen des Projekts entspricht. In diesem Ordner zu suchen, für den Ordner, der entspricht der `generated session id` des Builds. Dadurch werden wahrscheinlich die Unterordner, der Zeitpunkt der letzten Änderung hat.
+3.  Suchen Sie den Build in die `~/Library/Caches/Xamarin/mtbs/builds` Ordner. Sie können diesen Pfad in einfügen **Finder > wechseln > wechseln Sie zum Ordner** auf den Ordner im Finder durchsuchen. Suchen Sie nach dem Ordner, der den Namen des Projekts entspricht. In diesem Ordner zu suchen, für den Ordner, der entspricht der `generated session id` des Builds. Dies wird in den meisten Fällen den Unterordner sein, der Zeitpunkt der letzten Änderung aufweist.
 
 4.  Öffnen Sie ein neues `Terminal.app` Fenster.
 
-5.  Typ `cd ` in der Terminal.app-Fenster, und klicken Sie dann Drag & Drop die `generated session id` Ordner in der `Terminal.app` Fenster:
+5.  Typ `cd ` in die Terminal.app-Fenster, und klicken Sie dann Drag & Drop die `generated session id` Ordner in der `Terminal.app` Fenster:
 
-    ![](modify-ipa-images/session-id-folder.png "Suchen den Ordner der generierten Session-Id im Finder")
+    ![](modify-ipa-images/session-id-folder.png "Suchen die generierte Sitzungs-ID-Ordner in Finder")
 
-6.  Geben Sie die EINGABETASTE zum Ändern des Verzeichnisses, in dem `generated session id` Ordner.
+6.  Geben Sie die EINGABETASTE zum Ändern des Verzeichnisses, in der `generated session id` Ordner.
 
-7.  Entpacken Sie die `.ipa` -Datei in eine temporäre `old/` Ordner mit dem folgenden Befehl. Anpassen der `Ad-Hoc` und `iPhoneApp1` Namen für Ihr jeweiliges Projekt nach Bedarf.
+7.  Entzippen Sie die `.ipa` -Datei in ein temporäres `old/` Ordner mit dem folgenden Befehl. Anpassen der `Ad-Hoc` und `iPhoneApp1` Namen wie für Ihr spezielles Projekt erforderlich.
 
     > ditto -xk bin/iPhone/Ad-Hoc/iPhoneApp1-1.0.ipa old/
 
 8.  Behalten Sie die `Terminal.app` Fenster geöffnet.
 
-9.  Löschen Sie die gewünschten Dateien aus dem `.ipa`. Sie können auf das Papierkorbsymbol, mit dem Finder verschieben oder löschen Sie sie in der Befehlszeile mithilfe `Terminal.app`. Zum Anzeigen des Inhalts der `Payload/iPhone` Datei im Finder-Steuerelement auf die Datei, und wählen Sie **Paketinhalt anzeigen**.
+9.  Löschen Sie die gewünschten Dateien aus dem `.ipa`. Sie können entweder in den Papierkorb, die mit dem Finder verschieben oder löschen Sie sie in der Befehlszeile mit `Terminal.app`. Zum Anzeigen des Inhalts der `Payload/iPhone` im Finder zeigen, Strg + Klick die Datei und wählen Sie **Paketinhalt anzeigen**.
 
-10.  Mit den gleichen allgemeinen Ansatz wie in Schritt 3, suchen Sie nach der Protokolldatei unter `~/Library/Logs/Xamarin/MonoTouchVS/` , die beide den Namen des Projekts wurde und die `generated session id` im Namen: ![ ] (modify-ipa-images/build-log.png "suchen Sie das Projekt Buildprotokoll im Finder")
+10.  Mit den gleichen allgemeinen Ansatz, wie in Schritt 3, suchen Sie nach der Protokolldatei unter `~/Library/Logs/Xamarin/MonoTouchVS/` , die beide den Namen des Projekts ist und die `generated session id` im Namen: ![ ] (modify-ipa-images/build-log.png "finden Sie im Finder zeigen das Buildprotokoll für Projekt")
 
 11.  Öffnen Sie das Buildprotokoll aus Schritt 10, z. B. indem Sie darauf doppelklicken.
 
@@ -53,31 +54,31 @@ In diesem Beispiel wird davon ausgegangen, dass der Name des Projekts Xamarin.iO
 
 13.  Typ `/usr/bin/codesign ` in das Fenster Terminal.app aus Schritt 8.
 
-14.  Kopieren Sie alle Argumente ab `-v` über die Befehlszeile in Schritt 12, und fügen Sie sie in das Terminal.app ein.
+14.  Kopieren Sie alle Argumente ab `-v` über die Befehlszeile in Schritt 12, und fügen Sie sie in das Fenster Terminal.app.
 
-15.  Ändern Sie das letzte Argument ist der `.app` Paket befindet sich innerhalb der `old/Payload/` Ordner, und führen Sie den Befehl.
+15.  Ändern Sie das letzte Argument werden der `.app` Paket befindet sich innerhalb der `old/Payload/` Ordner, und führen Sie den Befehl.
 
 ```bash
 /usr/bin/codesign -v --force --sign SOME_LONG_STRING in/iPhone/Ad-Hoc/iPhoneApp1.app/ResourceRules.plist --entitlements obj/iPhone/Ad-Hoc/Entitlements.xcent old/Payload/iPhoneApp1.app
 ```
 
-16.  Ändern Sie in der `old/` Terminalfenster Verzeichnis:
+16.  Wechseln Sie in der `old/` Verzeichnis im Terminal:
 
 ```bash
 cd old
 ```
 
-17.  Den Inhalt des Verzeichnisses in ein neues ZIP `.ipa` Datei mithilfe der `zip` Befehl. Sie können ändern, die `"$HOME/Desktop/iPhoneApp1-1.0.ipa"` Argument zur Ausgabe der `.ipa` Datei, wo Sie möchten:
+17.  Zippen Sie den Inhalt des Verzeichnisses in ein neues `.ipa` Datei mithilfe der `zip` Befehl. Sie können ändern, die `"$HOME/Desktop/iPhoneApp1-1.0.ipa"` Argument für die Ausgabe der `.ipa` Datei, wo Sie möchten:
 
 ```bash
 zip -yr "$HOME/Desktop/iPhoneApp1-1.0.ipa" *
 ```
 
-## <a name="common-error-messages"></a>Fehlermeldungen
+## <a name="common-error-messages"></a>Häufige Fehlermeldungen
 
-Wenn dort `Invalid Signature. A sealed resource is missing or invalid.`, bedeutet, die in der Regel etwas innerhalb geändert wurde die `.app` -Bundle, und dass die `.app` Paket wurde nicht ordnungsgemäß erneut signiert anschließend. Beachten Sie, dass auch, wenn Sie möchten eine `.ipa` mit einem Verteilungsprofil Sie _müssen_ erstellen Sie die ursprüngliche `.ipa` mit einem Verteilungsprofil. Andernfalls die `Entitlements.xcent` nicht korrekt.
+Wenn dort `Invalid Signature. A sealed resource is missing or invalid.`, im Allgemeinen also etwas in geändert wurde der `.app` Paket, und dass die `.app` Paket wurde nicht korrekt neu signiert anschließend. Beachten Sie, dass wenn Sie möchten ein `.ipa` mit eines verteilungsprofils Sie _muss_ erstellen Sie die ursprüngliche `.ipa` mit einem Verteilungsprofil. Andernfalls die `Entitlements.xcent` wird "falsch" sein.
 
-So erteilen Sie ein konkrete Beispiel wie dieser Fehler auftreten kann, wenn das Ausführen der folgenden `codesign --verify` Befehl in der Terminal-Fenster nach Schritt 9 wird der Fehler zusammen mit dem die genaue Ursache des Fehlers angezeigt:
+Ein konkretes Beispiel wie dieser Fehler auftreten kann, gewähren, wenn Sie Folgendes ausführen, `codesign --verify` Befehl im Terminal-Fenster nach dem Schritt 9, wird Ihnen den Fehler zusammen mit die genaue Ursache des Fehlers:
 
 ```bash
 $ codesign -dvvv --no-strict --verify old/Payload/iPhoneApp1.app
@@ -85,6 +86,6 @@ old/Payload/iPhoneApp1.app: a sealed resource is missing or invalid
 file missing: /Users/macuser/Library/Caches/Xamarin/mtbs/builds/iPhoneApp1/cc530d20d6b19da63f6f1c6f67a0a254/old/Payload/iPhoneApp1.app/MyFile.png
 ```
 
-Und die App Store-Überprüfung meldet eine ähnliche Fehlermeldung angezeigt:
+Und der App Store-Überprüfungsprozess meldet eine ähnliche Fehlermeldung angezeigt:
 
-> Fehler ITMS-90035: "Ungültige Signatur. Eine versiegelte Ressource ist nicht vorhanden oder ungültig. Der binäre Pfad [iPhoneApp1.app/iPhoneApp1] enthält eine ungültige Signatur. Stellen Sie sicher, dass Sie Ihre Anwendung mit einer Verteilung, kein ad-hoc-Zertifikat oder ein Zertifikat Entwicklung angemeldet haben. Stellen Sie sicher, dass die Einstellungen der Code Signaturzertifikat in Xcode korrekt, auf der Zielebene sind (der alle Werte auf Projektebene außer Kraft). Vergewissern Sie sich außerdem, dass das Paket, das Sie hochladen mit einer Release-Ziel in Xcode nicht Simulator-Ziel erstellt wurde. Wenn Sie sicher, dass Ihr Code Signaturzertifikat-Einstellungen richtig sind sind, wählen Sie in Xcode "bereinigen All", löschen Sie das Verzeichnis "Build" im Finder und rebuild-Ziel-Version. Weitere Informationen finden Sie in [ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"
+> Fehler ITMS-90035: "Ungültige Signatur. Eine versiegelte Ressource ist nicht vorhanden oder ungültig. Die Binärdatei im Pfad [iPhoneApp1.app/iPhoneApp1] enthält eine ungültige Signatur. Stellen Sie sicher, dass Sie Ihre Anwendung ein verteilungszertifikat, nicht auf ein ad-hoc-Zertifikat oder ein Entwicklungszertifikat angemeldet haben. Stellen Sie sicher, dass die Einstellungen für die Codesignatur in Xcode auf der Zielebene (die alle Werte auf Projektebene außer Kraft setzen) korrekt sind. Darüber hinaus stellen Sie sicher, dass das Paket, das Sie hochladen erstellt wurde, verwenden ein Ziel für die Veröffentlichung in Xcode kein simulatorziel. Wenn Sie sicher, dass Ihre Einstellungen für die Codesignatur korrekt sind sind, wählen Sie "Clean All" in Xcode, löschen Sie das Verzeichnis "Build" im Finder und erstellen Sie Ihr Ziel Version neu. Weitere Informationen finden Sie in [ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"

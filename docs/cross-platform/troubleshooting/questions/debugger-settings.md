@@ -1,34 +1,35 @@
 ---
-title: Welche projekteinstellungen sind erforderlich, damit der Debugger?
+title: Welche projekteinstellungen sind für den Debugger erforderlich?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 3A024E4E-ACA3-4C7A-ADEF-541665D15779
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 67c4b51a518f5c7dba6ae372dbd9206dd3ef8e9f
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/08/2018
+ms.openlocfilehash: 646ef7f708be2de6a851ace25d69a7c2f0b18a83
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33919988"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350806"
 ---
-# <a name="what-project-settings-are-required-for-the-debugger"></a>Welche projekteinstellungen sind erforderlich, damit der Debugger?
+# <a name="what-project-settings-are-required-for-the-debugger"></a>Welche projekteinstellungen sind für den Debugger erforderlich?
 
-In der Reihenfolge für den Debugger so funktionieren wie erwartet (Haltepunkte, Anzeige Debugprotokolle usw.) muss angezeigten Informationen Instrumentation und Debug Developer aktiviert sein.
+Damit kann der Debugger funktioniert wie erwartet (Haltepunkte, Anzeige Debugprotokollen usw.) muss Entwickler Instrumentation und Debuggen Informationen anzeigen aktiviert sein.
 
 Führen Sie diese Schritte aus, um die umgebungseinstellungen zu überprüfen:
 
 ## <a name="visual-studio"></a>Visual Studio
-1. Öffnen Sie die Projektoptionen
-2. Wechseln Sie zu **erstellen > erweiterte...** Festlegen von Debuginformationen zu **vollständige**
+1. Öffnen Sie die Optionen für das Projekt
+2. Wechseln Sie zu **erstellen > Advanced...** Legen Sie die Informationen zum Debuggen auf **vollständige**
 3. Einstellungen für jede Plattform:
-   - Wechseln Sie zu **Android Options > Debugoptionen**. Tick der **aktivieren Entwickler Instrumentation** Feld.
+   - Wechseln Sie zu **Android-Optionen > Debugoptionen**. Tick der **Entwicklerinstrumentierung aktivieren** Feld.
    - Wechseln Sie zu **iOS-Build > Optionen-Debuggen**. Tick der **Debuggen aktivieren** Feld.
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio für Mac
-1. Öffnen Sie die Projektoptionen
-2. Wechseln Sie zu **erstellen > Compiler > Allgemeine Optionen**. Festlegen von Debuginformationen zu **vollständige**
+1. Öffnen Sie die Optionen für das Projekt
+2. Wechseln Sie zu **erstellen > Compiler > Allgemeine Optionen**. Legen Sie die Informationen zum Debuggen auf **vollständige**
 3. Einstellungen für jede Plattform:
-  - Wechseln Sie zu **erstellen > Android Build > Debugoptionen**. Tick der **aktivieren Entwickler Instrumentation** Feld.
-  - Wechseln Sie zu **erstellen > iOS Debug**. Tick der **Debuggen aktivieren** Feld.
+  - Wechseln Sie zu **erstellen > Android-Build > Debugoptionen**. Tick der **Entwicklerinstrumentierung aktivieren** Feld.
+  - Wechseln Sie zu **erstellen > iOS-Debugging**. Tick der **Debuggen aktivieren** Feld.
 

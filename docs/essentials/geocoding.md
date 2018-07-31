@@ -5,18 +5,18 @@ ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 063adba82d96e7fcc64d7ec49a0c0133e1cef8ef
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: a4d6e4d9b32e665893d82693a3c858630b63d372
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831447"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353674"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: Geocodierung
 
 ![Vorabversionen von NuGet](~/media/shared/pre-release.png)
 
-Die **Geocodierung** Klasse bietet APIs zu "Geocode" eine Placemark in eine mit Feldern fester Breite Koordinaten und umgekehrt "Geocode" Coordincates zu einem Placemark.
+Die **Geocodierung** Klasse bietet APIs zu "Geocode" eine Placemark in eine mit Feldern fester Breite Koordinaten und Umkehren von Geocode-Koordinaten auf einer Placemark.
 
 ## <a name="getting-started"></a>Erste Schritte
 
@@ -32,7 +32,7 @@ Ohne zusätzliche Einrichtung erforderlich.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Ein Bing Maps-API-Schlüssel ist erforderlich, geocodierung Funcationality verwenden. Melden Sie sich für ein kostenloses [Bing Maps](https://www.bingmapsportal.com/) Konto. Klicken Sie unter **Mein Konto > Meine Schlüssel** einen neuen Schlüssel erstellen und füllen Sie die Informationen basierend auf Ihren Anwendungstyp (sein sollten **öffentlichen Windows-App (UWP, 8.x und früher)** für UWP-apps).
+Ein Bing Maps-API-Schlüssel ist erforderlich, die geocodierung-Funktion nutzen. Melden Sie sich für ein kostenloses [Bing Maps](https://www.bingmapsportal.com/) Konto. Klicken Sie unter **Mein Konto > Meine Schlüssel** einen neuen Schlüssel erstellen und füllen Sie die Informationen basierend auf Ihren Anwendungstyp (sein sollten **öffentlichen Windows-App (UWP, 8.x und früher)** für UWP-apps).
 
 Am Anfang in Ihrer Anwendung Leben vor dem Aufruf einer **Geocodierung** Methoden legen Sie den API-Schlüssel:
 
@@ -70,11 +70,11 @@ catch (FeatureNotSupportedException fnsEx)
 }
 catch (Exception ex)
 {
-    // Handle exception that may have occured in geocoding
+    // Handle exception that may have occurred in geocoding
 }
 ```
 
-Die Höhe nicht immer verfügbar ist. Wenn sie nicht verfügbar ist, die `Altitude` Eigenschaft möglicherweise `null` oder der Wert 0 (null) sein. Wenn die Höhe verfügbar ist, ist der Wert, in Metern über über Sea-Ebene. 
+Die Höhe nicht immer verfügbar ist. Wenn sie nicht verfügbar ist, die `Altitude` Eigenschaft möglicherweise `null` oder der Wert 0 (null) sein. Wenn die Höhe verfügbar ist, ist der Wert, in Metern über über Sea-Ebene.
 
 Erste [Placemarks](xref:Xamarin.Essentials.Placemark) für einen vorhandenen Satz von Koordinaten:
 

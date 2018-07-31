@@ -1,122 +1,123 @@
 ---
 title: Apple Pay in Xamarin.iOS
-description: Dieses Handbuch untersucht das Einrichten der Umgebung Xamarin.iOS für die Verwendung mit Apple Pay zum Bezahlen der physischer waren, z. B. Nahrungsmittel Kunst, Unterhaltung und Mitgliedschaften über Ihre app. Es enthält Informationen zu den erforderlichen Bezeichner, Zertifikate und Berechtigungen.
+description: Dieses Handbuch beschreibt das Einrichten der Xamarin.iOS-Umgebung für die Verwendung mit der Apple Pay zum bezahlen physischer Güter, z. B. Essen, Unterhaltung und Mitgliedschaften über Ihre app. Sie enthält Informationen zu den erforderlichen Bezeichner, die Zertifikate und die Berechtigungen.
 ms.prod: xamarin
 ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 7033373cddb2503e5912eb17b1e72ece759cc3ad
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2017
+ms.openlocfilehash: f2a38a4305aa11c78f3e4e35265a86dc71642777
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786690"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351664"
 ---
 # <a name="apple-pay-in-xamarinios"></a>Apple Pay in Xamarin.iOS
 
-_Dieses Handbuch untersucht das Einrichten der Umgebung Xamarin.iOS für die Verwendung mit Apple Pay zum Bezahlen der physischer waren, z. B. Nahrungsmittel Kunst, Unterhaltung und Mitgliedschaften über Ihre app. Es enthält Informationen zu den erforderlichen Bezeichner, Zertifikate und Berechtigungen._
+_Dieses Handbuch beschreibt das Einrichten der Xamarin.iOS-Umgebung für die Verwendung mit der Apple Pay zum bezahlen physischer Güter, z. B. Essen, Unterhaltung und Mitgliedschaften über Ihre app. Sie enthält Informationen zu den erforderlichen Bezeichner, die Zertifikate und die Berechtigungen._
 
-Apple Pay wurde zusammen mit iOS 8 eingeführt, sodass Benutzer zum Bezahlen der physischer waren, z. B. Nahrungsmittel Kunst, Unterhaltung und Mitgliedschaften über ihre iOS-Geräte. Er ist für iPhone 6 und iPhone 6 Plus, und Sie können auch mit der Apple Watch für Store-Einkäufen gekoppelt werden. Bei Verwendung auf einem iPhone wird verwendet Touch ID eine Möglichkeit, um zu bestätigen, und Autorisieren eines Benutzers Kreditkarte oder Debitkarte zur Transaktionen.
+Apple Pay, wurde zusammen mit iOS 8 eingeführt, Benutzern das bezahlen physischer Güter wie Futter, Unterhaltung und Mitgliedschaften über ihre iOS-Geräte aktivieren. Es ist verfügbar, auf dem iPhone 6 und iPhone 6 Plus, und Sie können auch mit der Apple Watch-Store-Einkäufe kombiniert werden. Wenn auf einem iPhone verwendet wird, verwendet er Touch ID als eine Möglichkeit, um zu bestätigen und Transaktionen eines Benutzers Kredit- oder Debitkarte zu autorisieren.
 
 ## <a name="requirements"></a>Anforderungen
 
-Apple Pay ist nur verfügbar im iOS 8 und höher und erfordert daher mindestens Xcode 6.
+Apple Pay ist nur verfügbar in iOS 8 und höher, und aus diesem Grund erfordert mindestens Xcode 6.
 
 Die folgenden Elemente sind auch erforderlich, um Apple Pay in Ihrer app zu integrieren:
 
  - Zahlungsplattform-Prozessor
- - Anbieter-ID
+ - Händler-ID
  - Ein Apple Pay-Zertifikat
  - Apple Pay-Berechtigung
 
-Dieses Dokument werden diese Elemente ausführlicher betrachten.
+In diesem Dokument werden diese Elemente ausführlicher erläutert.
 
-## <a name="differences-between-apple-pay-and-iap"></a>Unterschiede zwischen dem Apple und IAP
+## <a name="differences-between-apple-pay-and-iap"></a>Unterschiede zwischen Apple Pay und IAP
 
-Der Hauptunterschied zwischen Apple Pay und *Erwerb von In-App* (IAP), bezieht sich auf die Produkte, die sie verkaufen. *Physische* waren über Apple Pay verkauft werden; Nahrungsmittel, Unterkunft und physischen Unterhaltung (z. B. im Kino Tickets) sind Beispiele für dieses. Im Gegensatz dazu IAP verkauft *virtuellen* waren, z. B. Premium oder zusätzlichen Inhalte und Abonnements – Reaktionszeiten zusätzliche Monate einen streamingdienst oder zusätzliche befinden sich in einem Spiel.
+Der Hauptunterschied zwischen Apple Pay und *In-App-Käufe* (IAP), bezieht sich auf die die Produkte, die sie verkaufen. *Physische* waren über Apple Pay verkauft werden, Essen, Unterbringung und physische Unterhaltung (z. B. Kino-Tickets) sind Beispiele für dieses. Im Gegensatz dazu IAP verkauft *virtuellen* waren, z. B. Premium oder Inhalte und -Abonnements – stellen Sie sich weitere Monate einen streamingdienst oder zusätzliche befindet sich in einem Spiel.
 
-Die Frameworks verwendet werden auch einen wesentlichen Unterschied; [PassKit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/) ist für die Apple Pay verwendet, während er sich [StoreKit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/) IAP Framework-API bereit.
+Die Frameworks verwendet, sind auch ein wichtiger Unterschied; [PassKit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/) ist zwar für Apple Pay verwendet, [StoreKit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/) bietet das Framework-API für IAP.
 
-Mit Apple Pay, Apple [Zustände](https://developer.apple.com/apple-pay/Getting-Started-with-Apple-Pay.pdf) , dass er "fallen keine Benutzer, Händler oder Entwickler mithilfe von Apple Pay für Zahlungen Kosten []". Im Gegensatz dazu hat IAP 30 % sind für jede Transaktion kostenpflichtig. Darüber hinaus mit Apple Pay, die Transaktion geht nicht über Apple überhaupt, stattdessen eine zahlungsplattform durchlaufen.
+Mit der Apple Pay, Apple [Zustände](https://developer.apple.com/apple-pay/Getting-Started-with-Apple-Pay.pdf) , dass es "nicht von Benutzern, Händlern oder Entwickler, mit Apple Pay für Zahlungen in Rechnung gestellt []". Im Gegensatz dazu weist IAP 30 % Gebühr für jede Transaktion an. Darüber hinaus mit der Apple Pay, die Transaktion geht nicht über Apple überhaupt übertrage, gelangt Sie stattdessen über eine zahlungsplattform.
 
-## <a name="using-a-payment-processor-platform"></a>Verwenden eine Zahlung Prozessorplattform
+## <a name="using-a-payment-processor-platform"></a>Verwenden Sie eine Zahlung-Prozessor-Plattform
 
-Eine der grundlegenden Bestandteile von Apple Pay ist die Verarbeitung von Zahlungen. Es ist, zwar möglich, dies selbst tun erfordert sie beträchtliche Kenntnisse der Kryptografie
-- finden Sie in der Apple- [Zahlung verarbeiten Handbuch](https://developer.apple.com/library/ios/ApplePay_Guide/ProcessPayment.html).
-Zahlung Verarbeitung Plattformen behandeln andererseits, diese Vorgänge für Sie, sodass Sie sich auf das Erstellen Ihrer app konzentrieren.
+Eine der grundlegenden Bestandteile von Apple Pay ist die Verarbeitung von Zahlungen. Es ist, zwar möglich, dies selbst übernehmen erfordert es wichtige Kenntnisse der Kryptografie
+- finden Sie im Apple [Zahlungsabwicklung Handbuch](https://developer.apple.com/library/ios/ApplePay_Guide/ProcessPayment.html).
+Zahlung Verarbeitung Plattformen verarbeiten auf der anderen Seite dieser Vorgänge für Sie, sodass Sie sich auf die Entwicklung Ihrer app konzentrieren.
 
-Zwei Optionen:
+Zwei Optionen umfassen:
 
-- **Stripe** -melden Sie sich bei [Stripe.com](https://stripe.com/) dieser APIs den Zugriff auf.
+- **Stripe** -melden Sie sich bei [Stripe.com](https://stripe.com/) auf ihre APIs zugreifen.
 
-- **JudoPay** -sehen Sie sich ihre [Xamarin-Beispielcode auf Github](https://github.com/Judopay/Xamarin-Sample-App), und melden Sie sich bei [JudoPay.com](https://www.judopay.com/).
+- **JudoPay** -sehen Sie sich ihre [Xamarin-Beispielcode auf Github](https://github.com/Judopay/Xamarin-Sample-App), und registrieren Sie sich auf [JudoPay.com](https://www.judopay.com/).
 
-## <a name="provisioning-for-apple-pay"></a>Für Apple Pay-Bereitstellung
+## <a name="provisioning-for-apple-pay"></a>Bereitstellung für Apple Pay
 
-Eine app so konfigurieren, verwenden Sie das Apple Pay, fordert Setup auf der Apple-Entwicklerportal und in Ihrer app. Es gibt eine Reihe von Schritten, die ausgeführt werden sollen, um Ihre app für Apple Pay erfolgreich bereitzustellen:
+Zum Konfigurieren des einer app für Apple Pay verwenden, müssen Setup im Apple Developer Portal und in Ihrer app. Es gibt eine Reihe von Schritten, die befolgt werden sollten, um Ihre app für Apple Pay, erfolgreich bereitzustellen:
 
-1. Erstellen Sie eine Händler-ID:
+1. Erstellen Sie einen Händler-ID:
     - Führen Sie die Schritte [hier](~/ios/deploy-test/provisioning/capabilities/apple-pay-capabilities.md#merchantid)
-2. Erstellen einer App-ID mithilfe der Funktion für Zahlen angewendet, und fügen Sie den Anbieter hinzu:
+2. Erstellen Sie eine App-ID mit der Apply Pay-Funktion, und fügen Sie den Händler hinzu:
     - Führen Sie die Schritte [hier](~/ios/deploy-test/provisioning/capabilities/apple-pay-capabilities.md#appid)
-3. Generieren Sie ein Zertifikat für die Anbieter-ID:
+3. Generieren Sie ein Zertifikat für die Händler-ID:
     - Führen Sie die Schritte [hier](~/ios/deploy-test/provisioning/capabilities/apple-pay-capabilities.md#certificate)
-4. Generieren Sie ein Bereitstellungsprofil mit der neu erstellte App-ID:
+4. Generieren Sie ein Bereitstellungsprofil mit dem neu erstellten App-ID:
     - Führen Sie die Schritte [hier](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning)
 5. Apple Pay Berechtigungen hinzufügen:
-    - Wählen Sie die Apple Pay Ansprüche als ausführliche [hier](~/ios/deploy-test/provisioning/entitlements.md), oder fügen Sie manuell das Schlüssel/Wert-Paar in die Datei aus [hier](~/ios/deploy-test/provisioning/entitlements.md)
+    - Wählen Sie die Apple Pay-Berechtigung wie [hier](~/ios/deploy-test/provisioning/entitlements.md), oder fügen Sie das Schlüssel/Wert-Paar manuell in die Datei aus [hier](~/ios/deploy-test/provisioning/entitlements.md)
 
 ## <a name="working-with-apple-pay"></a>Arbeiten mit Apple Pay
 
-Apple hat mehrere Erweiterungen Apple Pay in iOS 10 vorgenommen, mit denen Benutzer sicheren Zahlungen von Websites und über die Interaktion mit Siri und Zuordnungen vornehmen können.
+Apple hat mehrere Erweiterungen zu Apple Pay in iOS 10 vorgenommen, die der Benutzer auf sichere Zahlungen von Websites und durch die Interaktion mit Siri und Zuordnungen haben.
 
-Mit iOS-10 wurden mehrere neue APIs hinzugefügt, arbeiten mit iOS und WatchOS zur Unterstützung von dynamischen Zahlung Netzwerke und eine neue Sandkasten-testumgebung.
+Mit iOS 10 wurden mehrere neue APIs mit iOS und WatchOS zur Unterstützung von dynamischen Zahlung Netzwerke und eine neue Sandkasten-Test-Umgebung hinzugefügt.
 
 ### <a name="apple-pay-website-integration"></a>Apple Pay-Website-Integration
 
-Neu für iOS 10, der Entwickler kann integrieren, Apple Pay direkt in ihren Websites mit **ApplePay JS**. Suchen Sie die Website mit Safari in iOS- oder Mac OS können Zahlungen mit Apple Pay durch Überprüfen der Transaktions auf dem iPhone oder Apple Watch vornehmen. Weitere Informationen finden Sie in der Apple- [ApplePay JP Frameworkverweis](https://developer.apple.com/reference/applepayjs).
+Neue IOS 10, Entwickler kann integrieren, Apple Pay direkt in ihre Websites mit **ApplePay JS**. Überprüfen die Transaktion auf dem iPhone oder Apple Watch können Benutzer Durchsuchen der Website mit Safari unter iOS oder MacOS Zahlungen mit Apple Pay vornehmen. Weitere Informationen finden Sie unter Apple [ApplePay JP Frameworkverweis](https://developer.apple.com/reference/applepayjs).
 
-### <a name="passkit-framework-enhancements"></a>PassKit Framework-Erweiterungen
+### <a name="passkit-framework-enhancements"></a>PassKit-Framework-Erweiterungen
 
-In iOS-10, wurde das PassKit-Framework zur Unterstützung von Apple Pay außerhalb von erweitert `UIKit` und -Aussteller an ihre eigenen Karten in ihren apps zu ermöglichen.
+In iOS 10, das PassKit-Framework wurde erweitert, um Unterstützung von Apple Pay außerhalb von `UIKit` und belastungsrisiken präsentieren Sie ihre eigenen Karten in ihren apps zu ermöglichen.
 
 
-#### <a name="supporting-apple-pay-outside-of-uikit"></a>Unterstützung von Apple Pay außerhalb UIKit
+#### <a name="supporting-apple-pay-outside-of-uikit"></a>Unterstützung von Apple Pay außerhalb von UIKit
 
-Mithilfe von [PKPaymentAuthorizationController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontroller) und [PKPaymentAuthorixationControllerDelegate](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontrollerdelegate), eine app kann die gleiche Funktionalität von bereitgestellten unterstützen [ PKPaymentAuthorizationViewController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationviewcontroller) ohne UIKit. Während die neue API für die Unterstützung von Apple Pay auf der Apple Watch (und in bestimmten Intents sowie) erforderlich ist, ist es in anderen Situationen (z. B. vorhandene apps) optional. Allerdings schlägt Apple Verschieben an die neue API so bald wie möglich mit einer einzelnen Codebasis umfassende Apple Pay-Unterstützung in allen von der Entwickler apps bereitstellen. Weitere Informationen zu Intents und Siri-Integration finden Sie in unserer [Einführung in SiriKit](~/ios/platform/sirikit/index.md) Dokumentation.
+Mithilfe von [PKPaymentAuthorizationController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontroller) und [PKPaymentAuthorixationControllerDelegate](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontrollerdelegate), eine app kann die gleiche Funktionalität von bereitgestellten unterstützen [ PKPaymentAuthorizationViewController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationviewcontroller) ohne Verwendung von UIKit. Während dieser neuen API für die Unterstützung von Apple Pay auf der Apple Watch (und in bestimmten Intents sowie) erforderlich ist, ist es in anderen Situationen (z. B. vorhandener apps) optional. Allerdings empfiehlt Apple verschieben so bald wie möglich auf die neue API für eine Breite Apple Pay Unterstützung in allen von der Entwickler-apps mit einer einzigen Codebasis. Weitere Informationen zu Intents und Siri-Integration, informieren Sie sich unsere [Einführung in SiriKit](~/ios/platform/sirikit/index.md) Dokumentation.
 
-#### <a name="presenting-issuer-cards-from-within-apps"></a>Präsentieren Aussteller Karten in Apps
+#### <a name="presenting-issuer-cards-from-within-apps"></a>Darstellen von Aussteller Karten in Apps
 
-Mit iOS-10 haben neue Funktionen hinzugefügt, um PassKit-Framework, mit denen-Aussteller ihre Karten in ihren eigenen apps bereitstellen können. Entwickler kann Hinzufügen einer `PKPaymentButtonTypeInStore` UIButton für die app-Benutzeroberfläche, die eine Schaltfläche Apple Pay für eine Karte angezeigt werden.
+Mit iOS 10 haben neue Features hinzugefügt wurden, auf dem PassKit-Framework, die belastungsrisiken präsentieren Sie ihre Karten in ihren eigenen apps zu ermöglichen. Entwickler kann Hinzufügen einer `PKPaymentButtonTypeInStore` UIButton an der app-Benutzeroberfläche, die eine Schaltfläche "Apple Pay" für eine Karte angezeigt werden.
 
-Die `PresentPaymentPass` Methode der [PKPassLibrary](https://developer.apple.com/reference/passkit/pkpasslibrary) Klasse kann auch verwendet werden, um programmgesteuert auf die Karte anzuzeigen.
+Die `PresentPaymentPass` Methode der [PKPassLibrary](https://developer.apple.com/reference/passkit/pkpasslibrary) Klasse kann auch verwendet werden, um programmgesteuert auf die Karte angezeigt.
 
-### <a name="new-payment-network-support"></a>Neue Zahlung Network-Support
+### <a name="new-payment-network-support"></a>Neue Zahlungsmethode Netzwerkunterstützung
 
-Neu für iOS 10, eine app unterstützen automatisch ein neues Netzwerk für die Zahlung ab, sobald diese ohne dass Entwickler zu ändern, neu kompilieren die app und erneut auf den App Store verfügbar ist.
+Neue IOS 10, eine app unterstützen automatisch ein neues Netzwerk für die Zahlung ab, wenn es ohne dass der Entwickler zu ändern, kompilieren Sie die app neu und erneut auf den App Store verfügbar wird.
 
-Die neue [AvailableNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks) Methode der `PKPaymentNetwork` Klasse ermöglicht einer app, um die Netzwerke, die auf dem Gerät des Benutzers zur Laufzeit verfügbar zu ermitteln. Darüber hinaus die [SupportedNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks) Eigenschaft wurde erweitert, um die Zahlungsdienstanbieter Namen als Argument annehmen. Mit diesen Methoden kann eine app automatisch Netzwerkvorgänge unterstützen, die die Zahlungsdienstanbieter unterstützt.
+Die neue [AvailableNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks) Methode der `PKPaymentNetwork` Klasse ermöglicht einer app aus, um die Netzwerke, die auf dem Gerät des Benutzers zur Laufzeit zu ermitteln. Darüber hinaus die [SupportedNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks) Eigenschaft wurde erweitert, um die Zahlung des Anbieters Namen als Argument annehmen. Mit diesen Methoden kann eine app automatisch jedes Netzwerk unterstützen, die die Zahlungsdienstanbieter unterstützt.
 
-Weitere Informationen finden Sie unter unsere [Apple bezahlen Konfiguration](~/ios/platform/apple-pay.md) und Apple [bezahlen Apple-Handbuch](https://developer.apple.com/apple-pay/).
+Weitere Informationen finden Sie unter unserem [Apple Zahlen Konfiguration](~/ios/platform/apple-pay.md) und Apple [Zahlen Apple-Handbuch](https://developer.apple.com/apple-pay/).
 
-### <a name="new-testing-environment"></a>Neue Umgebung testen
+### <a name="new-testing-environment"></a>Neue Testumgebung
 
-Apple eingeführt mit iOS-10 eine neue Umgebung testen, die den Entwickler Test Zahlungskarten direkt auf einem iOS-Gerät bereitstellen kann. Diese neue Umgebung testen gibt verschlüsselte Zahlungsdaten zur app zurück.
+Mit iOS 10 eine neue testumgebung, die dem Entwickler erlaubt, Test-Zahlungskarten direkt auf einem iOS-Gerät bereitstellen, Apple eingeführt. Diese neue testumgebung gibt verschlüsselten-Testdaten für die Zahlung für die app zurück.
 
-Führen Sie folgende Schritte aus, um die neue Umgebung für Tests zu aktivieren:
+Führen Sie folgende Schritte aus, um die neue testumgebung zu aktivieren:
 
 1. Erstellen Sie einen neuen Test iCloud-Konto in iTunes Connect.
-2. Melden Sie sich das iOS-Gerät mit dem neuen Testen des Kontos.
-3. So testen Sie die app in die gewünschte Region fest
-4. Verwenden Sie einen Test Zahlung Karten aus dem [bezahlen Apple-Handbuch](https://developer.apple.com/apple-pay/) Zahlungen vornehmen.
+2. Melden Sie sich das iOS-Gerät mit dem neuen Konto für Tests.
+3. Legen Sie zum Testen der app in die gewünschte Region ein.
+4. Verwenden Sie eine der der Test-Zahlungskarten über die [Zahlen Apple-Handbuch](https://developer.apple.com/apple-pay/) tätigen von Zahlungen.
 
 > [!IMPORTANT]
-> Umschalten iCloud-Konten, schaltet das Gerät automatisch in die neue Umgebung testen. Apple jedoch weiterhin **erfordert** die app, die mit tatsächlichen getestet werden in einer produktiven Umgebung vor der Übermittlung im iTunes App Store-Karten.
+> Durch den Wechsel von iCloud-Konten, wechselt das Gerät automatisch zur neuen Umgebung testen. Allerdings weiterhin von Apple **erfordert** die app mit echten getestet werden, können in einer produktionsumgebung vor der Übermittlung im iTunes App Store.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel untersucht es die verschiedenen Elemente erforderlich, um Apple Pay innerhalb Ihrer app verwenden. Erläutert, wie eine Händler-ID zu erstellen und deren Verwendung in der **Entitlements.plist**, welche manuell geändert werden muss.
+In diesem Artikel vorgestellt, die die verschiedenen Elemente erforderlich, um Apple Pay in Ihrer app verwenden. Erläutert, wie Sie eine Händler-ID zu erstellen und deren Verwendung innerhalb der **"Entitlements.plist"**, dies muss manuell geändert werden.
 
 ## <a name="related-links"></a>Verwandte Links
 

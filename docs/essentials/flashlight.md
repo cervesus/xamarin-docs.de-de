@@ -5,12 +5,12 @@ ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a5c559653bff38c692f0b1d881d5d8f4cac3d383
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 8c471f64c14a2e41693c450e02f89e7ac845d060
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831410"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353359"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: Taschenlampe
 
@@ -96,9 +96,9 @@ catch (Exception ex)
 
 ## <a name="platform-implementation-specifics"></a>Implementierung von Plattformeigenschaften
 
-### <a name="androidtabandroid-specifics"></a>[Android](#tab/android-specifics)
+### <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Die Klasse Taschenlampe wurde Optmized je nach Betriebssystem des Geräts.
+Die Klasse Taschenlampe wurde optimiert, je nach Betriebssystem des Geräts.
 
 #### <a name="api-level-23-and-higher"></a>API-Ebene 23 oder höher
 
@@ -108,11 +108,11 @@ Auf neueren API-Ebenen [Torch Modus](https://developer.android.com/reference/and
 
 Eine Kamera Oberfläche Textur erstellt, um das Aktivieren oder Deaktivieren der `FlashMode` der Kamera Einheit. 
 
-### <a name="iostabios-specifics"></a>[iOS](#tab/ios-specifics)
+### <a name="iostabios"></a>[iOS](#tab/ios)
 
 [AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/) wird verwendet, um ein-und Ausschalten der Torch und Flash-Modus des Geräts.
 
-### <a name="uwptabuwp-specifics"></a>[UWP](#tab/uwp-specifics)
+### <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 [Lamp](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp) verwendet, um den ersten Lamp auf der Rückseite des Geräts aktivieren oder deaktivieren zu erkennen.
 

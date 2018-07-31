@@ -6,13 +6,13 @@ ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 07/23/2018
-ms.openlocfilehash: 762df7322607588344d570830dafc745a89ea165
-ms.sourcegitcommit: 9bb9e8297d3edd9a50585f4ba53c1b4f0bcd1d3e
+ms.date: 07/27/2018
+ms.openlocfilehash: 8e2bb43f885c162eb6dca0cf4a8ed14490ff092b
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39212003"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351563"
 ---
 # <a name="platform-features"></a>Plattformfeatures
 
@@ -45,6 +45,10 @@ Fragmente, die zeigt, wie eine flexiblere Entwürfe für viele verschiedene Bild
 
 Dieses Handbuch wird erläutert, wie Android 6.0 unterstützt _app-Verknüpfung_, eine Technik, die mobile apps in Websites auf URLs reagieren kann. Es besprechen, wie Sie app-Verknüpfung in einer Android 6.0-Anwendung zu implementieren und konfigurieren Sie eine Website zum Gewähren von Berechtigungen für die mobile app, app-Links für die Domäne zu behandeln.
 
+
+##  <a name="android-p-previewandroidplatformandroid-pmd"></a>[Android-P-Vorschau](~/android/platform/android-p.md)
+
+Dieser Artikel bietet einen Überblick über die neuen Funktionen in der Android-P-Vorschau, wird erläutert, wie Xamarin.Android für die Entwicklung von Android P vorbereiten und enthält Beispielcode, der veranschaulicht, wie Sie wichtige Android P-Features in Xamarin.Android-apps verwenden.
 
 
 ##  <a name="android-8-oreoandroidplatformoreomd"></a>[Android 8 Oreo](~/android/platform/oreo.md)

@@ -1,40 +1,41 @@
 ---
 title: Threading in Xamarin.iOS
-description: Dieses Dokument beschreibt, wie die System.Threading-APIs in einer Anwendung Xamarin.iOS verwenden. Es wird erläutert, die Task Parallel Library wird erstellen reaktionsfähiger Anwendungen und die Garbagecollection.
+description: In diesem Dokument wird beschrieben, wie die System.Threading-APIs in einer Xamarin.iOS-Anwendung verwendet wird. Es wird erläutert, die Task Parallel Library, Erstellen von reaktionsfähigen und Garbagecollection.
 ms.prod: xamarin
 ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 05d015d8d255ccc8c6230b1a89e098e187b22b37
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2017
+ms.openlocfilehash: 8e4ee10fdabdcbb4c6cefe02b15dc93459708364
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784916"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350419"
 ---
 # <a name="threading-in-xamarinios"></a>Threading in Xamarin.iOS
 
-Die Xamarin.iOS-Laufzeit bietet Entwicklern Zugriff auf die .NET threading-APIs, beide explizit bei der Verwendung von Threads (`System.Threading.Thread, System.Threading.ThreadPool`) als auch implizit bei asynchronen Delegaten Muster oder BeginXXX-Methoden sowie die vollständigen Bereich von APIs, die Unterstützung der Task Parallel Library.
+Die Xamarin.iOS-Runtime bietet Entwicklern Zugriff auf die .NET threading-APIs, sowohl explizit bei der Verwendung von Threads (`System.Threading.Thread, System.Threading.ThreadPool`) und implizit, wenn Sie mit der asynchronen Delegaten Muster oder BeginXXX-Methoden sowie die vollständige Auswahl von APIs, die Unterstützung der Task Parallel Library.
 
 
 
-Xamarin empfiehlt dringend die Verwendung der [Task Parallel Library](http://msdn.microsoft.com/library/dd460717.aspx) (TPL) zum Erstellen von Anwendungen für einige Gründe:
--  TPL Standardplaner delegiert die Ausführung der Aufgabe an den Threadpool dem wiederum dynamisch die Anzahl der Threads, die erforderlich vergrößert wird, da der Prozess findet, ein Szenario, in denen zu viele Threads um CPU-Zeit konkurrieren letztendlich, zu vermeiden. 
--  Es ist einfacher, sind im Wesentlichen Vorgänge in Bezug auf die TPL-Tasks. Können Sie bequem bearbeitet werden, zu planen, ihre Ausführung zu serialisieren oder viele parallel mit einem umfangreichen Satz von APIs zu starten. 
--  Es ist die Grundlage für die Programmierung mit den neuen C#-Async spracherweiterungen. 
+Xamarin empfiehlt dringend die Verwendung der [Task Parallel Library](http://msdn.microsoft.com/library/dd460717.aspx) (TPL) zum Erstellen von Anwendungen für verschiedene Gründe haben:
+-  Der Standard-Scheduler TPL delegiert Ausführung der Aufgabe an den Threadpool, die wiederum dynamisch, die Anzahl der Threads, die nicht benötigt ausgeweitet wird, da der Vorgang stattfindet und zugleich ein Szenario, in denen zu viele Threads CPU-Zeit konkurrieren letztlich. 
+-  Es ist einfacher zu bedenken, Vorgänge in Bezug auf die TPL-Tasks. Sie können ganz einfach bearbeiten diese, Planen sie, ihre Ausführung Serialisieren oder viele parallel mithilfe eines umfangreichen Satzes von APIs zu starten. 
+-  Es ist die Grundlage für die Programmierung mit den neuen c# Async spracherweiterungen. 
 
 
-Der Threadpool wächst langsam die Anzahl der Threads nach Ihren Anforderungen basierend auf der Anzahl der CPU-Kerne verfügbar, auf das System, die Systemlast und die Anforderungen Ihrer Anwendung. Sie können diese Threadpool verwenden, entweder durch Aufrufen von Methoden in `System.Threading.ThreadPool` oder unter Verwendung des standardmäßigen `System.Threading.Tasks.TaskScheduler` (Teil der *parallele Frameworks*).
+Der Threadpool wächst langsam die Anzahl der Threads nach Bedarf basierend auf der Anzahl der CPU-Kerne zur Verfügung, auf das System, die Systemlast und die Anwendung bei steigendem Bedarf. Sie können diesen Threadpool verwenden, entweder durch Aufrufen von Methoden in `System.Threading.ThreadPool` oder unter Verwendung des standardmäßigen `System.Threading.Tasks.TaskScheduler` (Teil der *parallele Frameworks*).
 
-Normalerweise verwenden Entwickler Threads, wenn sie reaktionsfähige Anwendungen erstellen können müssen, und sie nicht die Ausführung der Schleife Hauptbenutzeroberfläche blockieren möchten.
+In der Regel verwenden Entwickler Threads aus, wenn sie reaktionsfreudige Anwendungen erstellen können müssen und nicht sollen die Ausführung der Schleife Benutzeroberfläche zu blockieren.
 
  <a name="Developing_Responsive_Applications" />
 
 
-## <a name="developing-responsive-applications"></a>Reagiert die Anwendungsentwicklung
+## <a name="developing-responsive-applications"></a>Entwickeln-reaktionsschnelle Anwendungen
 
-Zugriff auf Elemente der Benutzeroberfläche sollte auf dem gleichen Thread beschränkt werden, die die Hauptschleife für Ihre Anwendung ausgeführt wird. Wenn Sie Änderungen an die Haupt-Benutzeroberfläche von einem anderen Thread vornehmen möchten, sollten Sie den Code mithilfe von Warteschlange [NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/type/Foundation.NSObject/), wie folgt:
+Zugriff auf Elemente der Benutzeroberfläche sollte auf dem gleichen Thread beschränkt werden, die die Hauptschleife für Ihre Anwendung ausgeführt wird. Wenn Sie die Benutzeroberfläche von einem anderen Thread ändern möchten, sollten Sie den Code mithilfe von Warteschlange [NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/type/Foundation.NSObject/), wie folgt aus:
 
 ```csharp
 MyThreadedRoutine ()  
@@ -51,16 +52,16 @@ MyThreadedRoutine ()
 }
 ```
 
-Oben wird den Code innerhalb der Delegaten im Kontext des Hauptthreads, ohne dass alle Racebedingungen, die potenziell die Anwendung abstürzt konnte aufgerufen.
+Die oben genannten Ruft den Code innerhalb der Delegaten im Kontext des Hauptthreads, ohne dass Racebedingungen, die möglicherweise die Anwendung abstürzen konnte.
 
  <a name="Threading_and_Garbage_Collection" />
 
 
-## <a name="threading-and-garbage-collection"></a>Threading und die Garbagecollection
+## <a name="threading-and-garbage-collection"></a>Threading und Garbagecollection
 
-Im Verlauf der Ausführung die Objective-C-Laufzeit erstellen und Freigeben von Objekten. Wenn Objekte werden für "Auto-Version" Objective-C-Laufzeit wird diese Objekte freigegeben gekennzeichnet der Thread die aktuelle `NSAutoReleasePool`. Xamarin.iOS erstellt eine `NSAutoRelease` Pool für jeden Thread aus der `System.Threading.ThreadPool` und für den Hauptthread. Diese Erweiterung werden alle Threads erstellt unter Verwendung des standardmäßigen TaskScheduler in System.Threading.Tasks behandelt.
+Im Verlauf der Ausführung der Objective-C-Laufzeit erstellen und Freigeben von Objekten. Der Thread die aktuelle, wenn Objekte werden für "Auto-Release" fest, die Objective-C-Laufzeit wird diese Objekte freigegeben, gekennzeichnet `NSAutoReleasePool`. Xamarin.iOS erstellt einen `NSAutoRelease` Pool für jeden Thread aus dem `System.Threading.ThreadPool` und für den Hauptthread. Diese Erweiterung umfasst alle Threads mit der standardmäßige TaskScheduler System.Threading.Tasks erstellt.
 
-Bei der Erstellung eigener Threads der Verwendung `System.Threading` ist erforderlich, geben Sie der Besitzer sind `NSAutoRelease` Pool, um zu verhindern, dass die Daten gelangen. Zu diesem Zweck müssen Sie lediglich umschließen Sie Ihr Thread in der folgenden Codeabschnitt:
+Bei der Erstellung eigener Threads mit `System.Threading` ist erforderlich, geben Sie der Besitzer `NSAutoRelease` Pool, um zu verhindern, dass die Daten vor Verlust schützen. Zu diesem Zweck einfach einen Wrapper für Ihr Thread in den folgenden Codeausschnitt:
 
 ```csharp
 void MyThreadStart (object arg)
@@ -71,7 +72,7 @@ void MyThreadStart (object arg)
 }
 ```
 
-Hinweis: Da Xamarin.iOS 5.2 Sie keine eigene bereitstellen `NSAutoReleasePool` mehr als eine automatisch für Sie bereitgestellt wird.
+Hinweis: Da Xamarin.iOS 5.2 Sie müssen keine eigene bieten `NSAutoReleasePool` mehr, da eine automatisch für Sie bereitgestellt wird.
 
 
 ## <a name="related-links"></a>Verwandte Links

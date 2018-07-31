@@ -1,27 +1,28 @@
 ---
-title: In Xamarin.iOS backgrounding
-description: Im Hintergrund verarbeitet oder backgrounding versteht man ermöglicht Anwendungen, die Aufgaben im Hintergrund, während eine andere Anwendung im Vordergrund ausgeführt wird. Dieses Handbuch dient als Einführung in iOS-Verarbeitung im Hintergrund.
+title: Hintergrundverarbeitung in Xamarin.iOS
+description: Hintergrund zu verarbeiten oder hintergrundverarbeitung ist der Prozess dadurch, dass Anwendungen, die Aufgaben im Hintergrund, während eine andere Anwendung im Vordergrund ausgeführt wird. Dieses Handbuch dient als Einführung in iOS-Verarbeitung im Hintergrund.
 ms.prod: xamarin
 ms.assetid: F377440C-C5D9-4267-85D8-2C816E3A0300
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b22f3ef3276129f7f46c23cc1d06666f151f5ac4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2018
+ms.openlocfilehash: 73344b790bf6d4719d9a92cfa9146578dffe04e9
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783541"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350767"
 ---
-# <a name="backgrounding-in-xamarinios"></a>In Xamarin.iOS backgrounding
+# <a name="backgrounding-in-xamarinios"></a>Hintergrundverarbeitung in Xamarin.iOS
 
-_Im Hintergrund verarbeitet oder backgrounding versteht man ermöglicht Anwendungen, die Aufgaben im Hintergrund, während eine andere Anwendung im Vordergrund ausgeführt wird. Dieses Handbuch dient als Einführung in iOS-Verarbeitung im Hintergrund._
+_Hintergrund zu verarbeiten oder hintergrundverarbeitung ist der Prozess dadurch, dass Anwendungen, die Aufgaben im Hintergrund, während eine andere Anwendung im Vordergrund ausgeführt wird. Dieses Handbuch dient als Einführung in iOS-Verarbeitung im Hintergrund._
 
-In mobilen Anwendungen backgrounding unterscheidet sich grundlegend als herkömmlichen Konzepts für Multitasking auf dem Desktop. Desktopcomputern bieten eine Vielzahl von Ressourcen, die für eine Anwendung, einschließlich Bildschirmfläche, Leistung und Arbeitsspeicher verfügbar. Anwendungen sind genutzt werden kann, und führen Sie die Seite-an-Seite und leistungsfähiger bleiben können. Auf einem mobilen Gerät sind Ressourcen weitaus beschränkt. Ist es schwierig, die mehr als eine Anwendung auf einem kleinen Bildschirm anzeigen und mit mehreren Anwendungen bei maximaler Geschwindigkeit würde den Akku abzuleiten. Backgrounding ist ein konstanter Kompromiss zwischen ermöglicht Anwendungen die Ressourcen, die Hintergrundaufgaben ausführen, die sie benötigen, um die Leistung erzielen und reaktionsfähig zu halten die foregrounded Anwendung und dem Gerät. IOS und Android haben Bereitstellungen für backgrounding, aber sie sehr unterschiedlich behandeln.
+Hintergrundverarbeitung in mobilen Anwendungen unterscheidet sich grundlegend, als das herkömmliche Konzept des Multitaskings auf dem Desktop. Desktop-Computer haben eine Vielzahl von Ressourcen, die für eine Anwendung, einschließlich der Platz auf dem Bildschirm, Leistung und Arbeitsspeicher verfügbar. Anwendungen sind, können Sie zum Ausführen von Seite-an-Seite, und bleiben leistungsstarke und verwendet werden. Auf einem mobilen Gerät sind die Ressourcen sehr viel stärker eingeschränkt. Es ist schwierig, die mehr als eine Anwendung auf einem kleinen Bildschirm angezeigt, und mit mehreren Anwendungen in vollem Tempo, würde den Akku abzuleiten. Hintergrundverarbeitung ist ein konstanter Kompromiss zwischen ermöglicht Anwendungen die Ressourcen zum Ausführen von Hintergrundaufgaben, die sie benötigen, um gut zu funktionieren, und halten die badgewert Anwendung und das Gerät reagiert. IOS und Android haben Bereitstellungen für die hintergrundverarbeitung, aber sie sehr unterschiedlich behandeln.
 
-In iOS backgrounding als Anwendungsstatus erkannt wird, und apps werden in und aus den Hintergrund Status abhängig vom Verhalten der app und der Benutzer verschoben. iOS bietet zudem mehrere Optionen für eine app Verkabelung für die Ausführung im Hintergrund, einschließlich der Aufforderung das Betriebssystem für die Zeit zum Abschluss einer wichtigen Aufgabe, die als Typ des bekannten Hintergrund-Bedarf-Anwendung ausgeführt und Aktualisieren von Inhalt von einer Anwendung an Intervalle.
+In iOS hintergrundverarbeitung wird als ein Anwendungszustand erkannt, und apps in den hintergrundzustand entsprechend dem Verhalten der app und der Benutzer verschoben werden. iOS bietet mehrere Optionen zum Verknüpfen einer app im Hintergrund, einschließlich fordert das Betriebssystem für die Zeit zum Abschließen der einer wichtigen Aufgabe, die als einer Art von bekannten Hintergrund-Bedarf-Anwendung, ausführen und Aktualisieren von Inhalt von einer Anwendung an Intervalle.
 
-In diesem Handbuch und zugehörigen exemplarischen Vorgehensweisen werden wir erfahren, wie Aufgaben im Hintergrund auszuführen. Wir werden wichtige Konzepte und bewährte Methoden behandelt und durchlaufen Sie anschließend eine realen Anwendung erstellt, die im Hintergrund Speicherort Updates empfängt.
+In diesem Handbuch und die zugehörigen Exemplarische Vorgehensweisen werden wir erfahren, wie Sie Aufgaben für die Anwendung im Hintergrund auszuführen. Wir behandeln die wichtigsten Konzepte und bewährte Methoden und durchlaufen Sie anschließend beim Erstellen einer realen app, die Speicherort-Updates im Hintergrund erhält.
 
 ## <a name="contents"></a>Inhalt
 
@@ -33,13 +34,13 @@ In diesem Handbuch und zugehörigen exemplarischen Vorgehensweisen werden wir er
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Handbuch werden die verschiedenen Methoden zum Ausführen der Verarbeitung im Hintergrund in iOS vorgestellt. Wir abgedeckt iOS-Anwendung Status und die Rolle spielt in der iOS-Anwendungslebenszyklus backgrounding untersucht. Darüber hinaus haben wir gelernt, wie wir einzelne Tasks oder gesamte Anwendungen für den Betrieb im Hintergrund in iOS registriert werden konnte. Schließlich gestärkt wir unser Verständnis von backgrounding auf iOS durch Erstellen von Anwendungen, die Updates im Hintergrund ausführen.
+In diesem Handbuch werden die verschiedenen Methoden zum Ausführen der hintergrundverarbeitung in iOS vorgestellt. Wir iOS-Anwendung-Zustände behandelt und die Rolle, die hintergrundverarbeitung spielt in der iOS-Lebenszyklus der Anwendung überprüft. Darüber hinaus haben Sie erfahren, wie wir einzelne Vorgänge oder ganze Anwendungen für die Ausführung im Hintergrund in iOS registriert werden konnte. Zum Schluss gestärkt wir unser Verständnis von der hintergrundverarbeitung in iOS durch Erstellen von Anwendungen, die Updates im Hintergrund ausführen.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Backgrounding unter Android](~/android/app-fundamentals/services/index.md)
+- [Hintergrundverarbeitung unter Android](~/android/app-fundamentals/services/index.md)
 - [LifecycleDemo (Beispiel)](https://developer.xamarin.com/samples/monotouch/LifecycleDemo/)
 - [Speicherort (Beispiel)](https://developer.xamarin.com/samples/monotouch/Location/)
 - [Einfache Hintergrundübertragung (Beispiel)](https://developer.xamarin.com/samples/monotouch/SimpleBackgroundTransfer/)

@@ -1,93 +1,94 @@
 ---
-title: Such-APIs in Xamarin.iOS
-description: Dieser Artikel behandelt die neuen App-Such-APIs bereitgestellt, die von iOS 9 verwenden, um Benutzern das Suchen nach Informationen und Funktionen in Ihren apps Xamarin.iOS ermöglichen.
+title: In Xamarin.iOS-Suche-APIs
+description: Dieser Artikel befasst sich mit den neuen App-Such-APIs unter iOS 9 bereitgestellt, dass Benutzer nach Informationen und Funktionen in Ihrer Xamarin.iOS-apps suchen können.
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bc62ad34af0b9b98f0475599a08946122badd21e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 03/20/2017
+ms.openlocfilehash: 4e73e1bc34df8628790a3734e5b3b32a687fdf14
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788175"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351651"
 ---
-# <a name="search-apis-in-xamarinios"></a>Such-APIs in Xamarin.iOS
+# <a name="search-apis-in-xamarinios"></a>In Xamarin.iOS-Suche-APIs
 
-_Dieser Artikel behandelt der App-Such-APIs bereitgestellt, die von iOS 9 verwenden, um Benutzern das Suchen nach Informationen und Funktionen in Ihren apps Xamarin.iOS ermöglichen._
+_Dieser Artikel befasst sich mit den App-Suche-APIs unter iOS 9 bereitgestellt, dass Benutzer nach Informationen und Funktionen in Ihrer Xamarin.iOS-apps suchen können._
 
-Suche wurde in iOS 9 hervorragende neue Möglichkeiten, um den Zugriff auf Informationen und Funktionen in einem Xamarin.iOS-app bereitgestellt erweitert. Verwenden die neuen App-Such-APIs, ist app-Inhalte über die Spotlight und Safari Suchergebnissen Übergabe und Siri Erinnerungen und Vorschläge als durchsuchbar festgelegt. Dadurch können Benutzer, Aktivitäten und innerhalb Ihrer app umfassende Informationen rasch zuzugreifen.
+Suche wurde erweitert, unter iOS 9, um hervorragende neue Möglichkeiten zum Zugriff auf Informationen und Funktionen in einer Xamarin.iOS-app bereitzustellen. Verwenden den neuen App-Suche-APIs, app-Inhalte durch Spotlight und Safari Suchergebnissen Übergabeanimationen und Siri-Erinnerungen und Vorschläge durchsuchbaren erfolgt. Dadurch können Benutzer schnell die Aktivitäten und Informationen, die Tiefe in Ihrer app zugreifen.
 
-Darüber hinaus erleichtern die neue Such-APIs Suche in Ihrer app ohne die vorherige Implementierung Suchabfrage zu integrieren. Aus diesem Grund Ansprüche Apple an, dass es sich normalerweise um ein paar Stunden zu einer iOS 9-app-Inhalte universell mithilfe der App suchen zu lassen dauert.
+Darüber hinaus erleichtern den neuen Such-APIs auf die Suche in Ihrer app ohne die vorherige Implementierung Suchfunktionen integrieren. Aus diesem Grund Ansprüche Apple an, dass in der Regel ein paar Stunden dauert nach einer iOS 9-app-Inhalte global gesucht werden mithilfe von App-Suche.
 
-[![](images/intro01.png "Ein Beispiel für iOS 9-app-Inhalte universell durchsuchbaren mithilfe der App-Suche")](images/intro01.png#lightbox)
+[![](images/intro01.png "Ein Beispiel für iOS 9-app-Inhalte global durchsuchbaren mithilfe von App-Suche")](images/intro01.png#lightbox)
 
-App-Suche besteht aus drei separaten-APIs:
+App-Suche besteht aus drei verschiedenen APIs:
 
-1. [**NSUserActivity** ](nsuseractivity.md) -Dies ist eine Erweiterung der Übergabe-API, die Apple iOS 8 veröffentlicht. Dient zur Verwendungsverlauf der app-Interaktion durchsuchbaren stellen sowohl öffentlich und privat) durch den Benutzer.
+1. [**NSUserActivity** ](nsuseractivity.md) – Dies ist eine Erweiterung der Übergabe-API, die Apple iOS 8 veröffentlicht. Es wird zum app-Interaktion Verlauf durchsuchbar machen sowohl öffentlich und privat) durch den Benutzer.
 
-2. [**Core Spotlight** ](corespotlight.md) -ermöglicht einer app zur Indizierung seines Inhalts in den Suchergebnissen angezeigt werden. Es funktioniert wie eine Datenbank-API, in denen Elemente hinzugefügt oder entfernt werden können und es ist die beste Methode zum Index privaten Inhalt innerhalb einer app.
+2. [**Core-Spotlight** ](corespotlight.md) -ermöglicht einer app zur Indizierung seines Inhalts in den Suchergebnissen angezeigt werden. Es funktioniert wie eine Datenbank-API, in dem Elemente hinzugefügt und entfernt werden können und es ist die beste Möglichkeit, private Indizieren von Inhalten in einer app.
 
-3. [**WebMarkup** ](web-markup.md) – für apps, die Zugriff auf ihre Inhalte über eine Weboberfläche bereitstellen (nicht nur von innerhalb der app). Webinhalte kann mit speziellen Links gekennzeichnet werden, die von Apple gecrawlt werden und bieten umfassende Verknüpfen mit Ihrer app auf iOS 9-Gerät des Benutzers.
+3. [**WebMarkup** ](web-markup.md) : für apps, die Zugriff auf ihre Inhalte über eine Webschnittstelle bereitstellen (nicht nur von innerhalb der app). Webinhalte kann mit speziellen Links gekennzeichnet werden, die von Apple wird gecrawlt und deep Links zu Ihrer app auf iOS 9-Gerät des Benutzers.
 
-## <a name="selecting-an-app-search-approach"></a>Auswählen eines Ansatzes für die App-Suche
+## <a name="selecting-an-app-search-approach"></a>Wählen eine App-Suche-Methode
 
-Entscheiden, welche der folgenden Methoden zu implementieren, hängt davon ab die Typen von Interaktion, die von Ihrer Anwendung bereitgestellt und der Typ des Inhalts, wenn es vorlegt.
+Entscheiden, welche der folgenden Methoden implementieren, hängt davon ab die Typen der Interaktion, die von Ihrer app bereitgestellt wird und der Typ des Inhalts, die es bereitstellt.
 
 Verwenden Sie die folgenden Richtlinien:
 
-- [**NSUserActivity** ](nsuseractivity.md) – verwenden Sie dieses Framework, um Suchvorgänge für die öffentlichen und privaten Inhalt und auch Suchvorgänge von Points für die Navigation innerhalb der app bereitzustellen.
+- [**NSUserActivity** ](nsuseractivity.md) – verwenden Sie dieses Framework durchsuchbarkeit verbessert sowohl die öffentlichen und privaten Inhalte als auch Auffindbarkeit Navigation Punkten in Ihrer app bereit.
 
-- [**Core Spotlight** ](corespotlight.md) – verwenden Sie dieses Framework private Daten, die auf dem Gerät gespeicherten Suchvorgänge bereit.
+- [**Core-Spotlight** ](corespotlight.md) – verwenden Sie dieses Framework, privater Daten, die auf dem Gerät gespeicherten Metadatenfeldern bereit.
 
-- [**Web-Markup** ](web-markup.md) – verwenden Sie dieses Framework, um Suchvorgänge für apps bereitzustellen, die ihre Inhalte nicht nur von innerhalb der app, sondern auch für die app-Website darstellen.
+- [**Web-Markup** ](web-markup.md) – verwenden Sie dieses Framework, um die Auffindbarkeit für apps bereit, mit denen ihre Inhalte nicht nur von innerhalb der app, sondern auch der app-Website darstellen.
 
-Jeder der Ansätze unterscheiden und können die App-Suche verwendet einzeln jedoch Apple diese Zusammenarbeit konzipiert. Wenn mehr als ein Ansatz verwenden, um ein bestimmtes Element zu indizieren, stellen Sie sicher, dass Sie die gleiche verwenden **Element-ID** auf jedem Ansatz, sodass diese Person Arbeit miteinander verknüpft.
+Die für die App-Suche verfügbar sind, unterscheiden sich und können dazu verwendet einzeln jedoch Apple diese Zusammenarbeit konzipiert. Wenn mehr als ein Ansatz zum Indizieren eines bestimmten Elements, stellen Sie sicher, dass Sie die gleiche verwenden **Element-ID** auf jedem Ansatz, also die Person Arbeitsaufgaben miteinander verknüpft.
 
-Mit mehr als ein Ansatz wird sichergestellt, dass nicht nur, dass Ihre Inhalte vom Endbenutzer gefunden werden wird, sondern trägt auch dazu bei, um die Rangfolge des Elements aus Suche zu verbessern.
+Mit mehr als ein Ansatz stellt nicht nur sicher, dass Ihre Inhalte vom Endbenutzer gefunden, aber auch wird die Rangfolge des Elements aus in Search verbessert.
 
-Während des Prozesses Rangfolge in wiegt für den Entwickler überwiegend transparenter Interaktionen der Benutzer mit einem bestimmten Element stark nach diesen Rang (z. B. die Benutzer Tippen Sie auf einen Link).
-Bereitstellen reichhaltiger, informative Elemente an, stellen Sie sicher, dass ein Benutzer begeistert sein wird für die Interaktion mit Ihrem Inhalt daher sein Rang auslösen.
+Während der Prozess der Rangfolge in wiegt für den Entwickler größtenteils transparent Benutzerinteraktion mit einem bestimmten Element stark nach dieser Rang (z. B. der Benutzer Tippen auf einen Link).
+Durch die Bereitstellung umfassender, informative Elemente, können Sie sicherstellen, dass ein Benutzer begeistert sein werden für die Interaktion mit Ihrer Inhalte, daher auslösen sein Rang.
 
-## <a name="what-content-to-index"></a>Welche Inhalte an Index
+## <a name="what-content-to-index"></a>Welche Inhalte Index
 
-Apple bietet die folgenden Vorschläge, welche Inhalte und Aktionen Suchindizes für in Ihrer app bereitgestellt:
+Apple bietet die folgenden Vorschläge, welche Inhalte und Aktionen zu Search-Indizes für die in Ihrer app:
 
- - Alle Inhalte angezeigt, erstellt oder curated vom Benutzer innerhalb Ihrer app.
- - Points für die Navigation und Funktionen innerhalb der app.
- - Elemente wie neue Nachrichten, die Inhalt oder andere Typen von Elementen, die von Ihrer Anwendung angezeigt, die kürzlich auf dem Gerät heruntergeladen wurden.
+ - Keine Inhalte angezeigt, erstellt oder zusammengestellten durch den Benutzer in Ihrer app.
+ - Navigationspunkte und Funktionen in der app.
+ - Dinge wie neue Nachrichten, Inhalt oder andere Arten von Elementen, die von Ihrer app angezeigt, die vor kurzem an das Gerät heruntergeladen wurden.
 
-## <a name="app-search-enhancements"></a>Suchen Sie App-Erweiterungen
+## <a name="app-search-enhancements"></a>Verbesserungen bei der App-Suche
 
-Core Spotlight in iOS 10 bietet mehrere Erweiterungen wie z. B. App suchen:
+Core Spotlight IOS 10 bietet mehrere Erweiterungen wie z. B. zum App-Suche an:
 
-- **Crowdsourced Deep-Link Beliebtheit (mit differenzielle Datenschutz)** -bietet eine Möglichkeit, die app mit Deep-Link-Inhalt in den Suchergebnissen angezeigter höher stufen.
-- **Suchen in der App** -verwenden Sie die neue `CSSearchQuery` -Klasse, in der app Spotlight-Suche Möglichkeit ähnlich wie die e-Mail-, Nachrichten und Anmerkungen zu dieser apps arbeiten bereitzustellen.
-- **Suchen Sie die Fortsetzung** – ermöglicht Benutzern das Starten einer Suche im Spotlight oder Safari, und öffnen Sie eine app und die Suche zu fortfahren.
-- **Visualisierung von Überprüfungsergebnissen** -Apple [App Search-API-Überprüfungstools](https://search.developer.apple.com/appsearch-validation-tool) zeigt jetzt eine visuelle Darstellung von Markup und umfassende Verknüpfen einer Website aus, wenn Tests preforming.
-- **Freigabe-App Image Message** -können Sie gängige in app-Images, die bereitgestellt werden, für die Freigabe in Nachrichten (über eine Nachrichten-App-Erweiterung) in der Spotlight-Suche angezeigt werden sollen.
+- **Per Crowdsourcing gesammelter Kommentare Deep-Link Beliebtheit (mit differenziellen Privacy)** -bietet eine Möglichkeit zur Förderung der Deep-Link-app-Inhalte in den Suchergebnissen angezeigt.
+- **In-App-Suche** -verwenden Sie die neue `CSSearchQuery` Klasse zu in-app-Spotlight-Suche Möglichkeit, die ähnlich wie die E-Mail, Nachrichten und Anmerkungen zu dieser apps arbeiten.
+- **Suchen Sie die Fortsetzung** – ermöglicht Benutzern das Starten einer Suche im Blickpunkt oder Safari, und öffnen Sie eine app, und diese Suche fortsetzen.
+- **Visualisierung von Überprüfungsergebnissen** -Apple [App-Suche-API-Überprüfungstool](https://search.developer.apple.com/appsearch-validation-tool) zeigt nun eine visuelle Darstellung von Markup und Deep linking einer Website aus, bei der Herstellung von Tests.
+- **Nachrichten-App Teilen von Bildern** -beliebten in-app-Images bereitgestellt werden, für die Freigabe in Nachrichten (über eine Nachrichten-App-Erweiterung), bei der Spotlight-Suche angezeigt werden können.
 
-Wenn Sie mehr erfahren möchten, finden Sie unter unsere [App Suche Erweiterungen](~/ios/platform/search/app-search-enhancements.md) Handbuch.
+Wenn Sie mehr erfahren möchten, informieren Sie sich unsere [Verbesserungen bei der Suche von App](~/ios/platform/search/app-search-enhancements.md) Handbuch.
 
 ### <a name="proactive-suggestions"></a>Proaktive Vorschläge
 
-iOS 10 präsentiert neue Methoden für die steuernde Engagement an eine app nach Wechsel des Systems proaktiv hilfreiche Informationen automatisch für den Benutzer zur richtigen Zeit jeweils anzuzeigen. Ebenso wie iOS bereitgestellt 9 die Möglichkeit zum Hinzufügen von umfassenden Suche der App mit Spotlight, Übergabe und Vorschläge zur Siri mit iOS 10, die eine app Funktionen verfügbar gemacht werden können, die vom System in den folgenden Speicherorten aus, die dem Benutzer angezeigt werden können:
+iOS 10 stellt neue Methoden für die treibende Engagement zu einer app durch den Wechsel des Systems proaktiv hilfreiche Informationen automatisch an den Benutzer zur richtigen Zeit jeweils vorhanden. Wie iOS bereitgestellten 9 die Möglichkeit zum Hinzufügen von detaillierten Suche der App mit Spotlight, Übergabeanimationen und Vorschläge für Siri mit iOS 10-app Funktionalität verfügbar gemacht werden können, die für dem Benutzer durch das System in den folgenden Speicherorten angezeigt werden kann:
 
-- Der App Switcher
-- Dem Sperrbildschirm
+- Der App-Switcher
+- Der Sperrbildschirm
 - CarPlay
 - Karten
-- Siri Interaktionen
-- QuickType-Vorschläge 
+- Siri-Interaktionen
+- QuickType Vorschläge 
 
-Eine app macht diese Funktion in das System für eine Sammlung von Technologien wie z. B. über [NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/), Web-Markup, Core Spotlight, MapKit und UIKit Media Player.
+Eine app macht diese Funktion in das System für eine Sammlung von Technologien wie z. B. über [NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/), Markup im Web, Core Spotlight, MapKit, Media Player und UIKit.
 
-Wenn Sie mehr erfahren möchten, finden Sie unter unsere [proaktive Vorschläge](~/ios/platform/search/proactive-suggestions.md) Handbuch.
+Wenn Sie mehr erfahren möchten, informieren Sie sich unsere [proaktive Vorschläge](~/ios/platform/search/proactive-suggestions.md) Guide.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel hat die neue abgedeckt-Suchdienst-API-Funktionen, iOS 9 zum Xamarin.iOS apps bereitstellt. Äquivalent [NSUserActivity](nsuseractivity.md), [Core Spotlight](corespotlight.md) und [Web Markup](web-markup.md) Methoden zum Indizieren von Inhalt. Mit der eine kurze Erläuterung der bei ein angegebenen Suchmuster Ansatz verwendet werden soll und welche Arten von Inhalten sollte abgeschlossen indiziert.
+In diesem Artikel wurden behandelt die neuen Funktionen von Such-API, iOS 9 bietet für Xamarin.iOS-apps. Äquivalent [NSUserActivity](nsuseractivity.md), [Core Spotlight](corespotlight.md) und [Webmarkup](web-markup.md) Methoden zum Indizieren des Inhalts. Abgeschlossen mit einer kurzen Erläuterung der wann ein Ansatz für die Suche verwendet werden sollten und welche Arten von Inhalten werden sollte indiziert.
 
 
 

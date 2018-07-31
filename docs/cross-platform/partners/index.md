@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 07/16/2018
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: fc4f851d25837690cd3412ca142a52b1312a08b3
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: d78c0e52b96403ad27a7c5ac69a367746781b589
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270201"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351742"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>Consultingpartner stehen für mobile Lösungen zertifiziert
 
@@ -112,6 +112,7 @@ _Aufgelistet nach dem primären Standort, Bereitstellen viele Partner Dienste, �
 |[Interknowlogy](http://www.interknowlogy.com/)|SAN Diego, Kalifornien, USA|Weltweit führender Anbieter in der benutzerdefinierten app-Entwicklung, nutzt InterKnowlogy aktuelle und zukünftige Technologien zum Bereitstellen der verbindungsmöglichkeiten per Touch, Geste und stimme|
 |[Intouch-Lösungen](http://www.intouchsol.com )|Overland Park, KS, USA London, Großbritannien; Chicago, IL, USA New York, NY, USA|Wir sind eine führende Digital-Agentur innerhalb der Pharma und im Gesundheitswesen Speicherplatz|
 |[iTexico](http://www.itexico.com)|Austin, Texas, USA|iTexico ist eine globale Technologie Softwareunternehmen, das Unternehmen mit mobilen Entwicklung innerhalb eines Projekts unterstützt in erster Linie "Äôs Lebenszyklus über Nearshore Outsourcing.|
+|[JBS](https://www.jbssolutions.com)|Pennsylvania, USA|JBS ist ein Lösungsanbieter für die benutzerdefinierte Software.|
 |[Kaonsoft](http://www.kaonsoft.net/)|Palo Alto, Kalifornien, USA; Chicago, IL, USA Geklappt, OH, USA Seongnam-Si, Gyeonggi-stimmen, Südkorea|Kaonsoft ist eine innovative Softwareunternehmen, das vollständige End-to-End-Lösungen zum Erstellen von Enterprise Mobility-Anwendungen für cross-Plattformen bereitstellt.|
 |[Katalyst Technologies Inc. ](http://www.katalysttech.com )|Evanston, IL, USA Atlanta, GA, USA Mumbai, Indien Maharashtra; Hyderabad, Telangana, Indien; Pune, Indien Maharashtra|Bei Katalyst glauben wir, dass Technologie wirklich ein Wegbereiter sein kann. Hat daher führende Unternehmen, die wir nicht nur vertrauen bereitstellen Produkte und Dienste, aber auch die Art ändern, für ihr Kerngeschäft mit benutzerdefinierten, beeindruckende Lösungen ausgeführt wird, die das Unternehmen umfassen.|
 |[Kleio Technologie LLC](http://kleiotechnology.com)|Royal Palm Strand, Ja, FL|Wir haben bisher eine Schulung, Marke und Identitäten gearbeitet. Wir untersuchen eines Clients Geschäftsproblem in Design, UX- und Content-Strategie zu beheben. Wir unterstützen Business auf den der Client benötigt erreichen und Rentabilität|

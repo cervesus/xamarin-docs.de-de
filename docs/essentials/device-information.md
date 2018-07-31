@@ -5,12 +5,12 @@ ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: b7246afca19607ef2f70288d4643696f4ac35d52
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 18fe081372cc190e5ead2045f36d63652f8702c3
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831486"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353801"
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials: Geräteinformationen
 
@@ -29,7 +29,7 @@ using Xamarin.Essentials;
 Die folgende Informationen werden über die API verfügbar gemacht:
 
 ```csharp
-// Device Model (SMG-950U)
+// Device Model (SMG-950U, iPhone10,6)
 var device = DeviceInfo.Model;
 
 // Manufacturer (Samsung)
@@ -72,7 +72,15 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="device-type"></a>Gerätetyp
 
-`DeviceInfo.DeviceType` korreliert eine Enumeration, um festzustellen, ob die Anwendung ausgeführt wird, auf einem physischen oder virtuellen Gerät ist. Ein virtuelles Gerät ist einem Simulator oder Emulator.
+`DeviceInfo.DeviceType` korreliert eine Enumeration, um festzustellen, ob die Anwendung auf einem physischen oder virtuellen Gerät ausgeführt wird. Ein virtuelles Gerät ist einem Simulator oder Emulator.
+
+## <a name="platform-implementation-specifics"></a>Implementierung von Plattformeigenschaften
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+iOS macht eine API für Entwickler, um den Namen des bestimmte iOS-Geräts abzurufen. Stattdessen eine Hardware-ID wird zurückgegeben, wie z. B. _iPhone10, 6_ , die auf dem iPhone X verweist. Eine Zuordnung von diesen Identifers werden nicht von Apple bereitgestellt, jedoch finden Sie unter [iPhone Wiki](https://www.theiphonewiki.com/wiki/Models) (eine nicht-Official-Source-Quelle).
+
+--------------
 
 ## <a name="api"></a>API
 

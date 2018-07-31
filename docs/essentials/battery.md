@@ -5,12 +5,12 @@ ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 1ed0ef5e013967545e739733c887702325f60c3f
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 1deafed85e9400bf7d4592fc06f71c22cc0015f0
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855054"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353453"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: Akku
 
@@ -29,7 +29,7 @@ Die `Battery` -Berechtigung ist erforderlich und muss in der Android-Projekt kon
 Öffnen der **"AssemblyInfo.cs"** -Datei unter dem **Eigenschaften** Ordner und hinzufügen:
 
 ```csharp
-[assembly: UsesPermission(Android.Manifest.Permission.Battery)]
+[assembly: UsesPermission(Android.Manifest.Permission.BatteryStats)]
 ```
 
 ODER Android-Manifest aktualisieren:
@@ -37,7 +37,7 @@ ODER Android-Manifest aktualisieren:
 Öffnen der **"androidmanifest.xml"** -Datei unter dem **Eigenschaften** Ordner und fügen Sie Folgendes in der die **manifest** Knoten.
 
 ```xml
-<uses-permission android:name="android.permission.BATTERY" />
+<uses-permission android:name="android.permission.BATTERY_STATS" />
 ```
 
 Oder klicken Sie mit der rechten Maustaste auf das Android-Projekt, und öffnen Sie die Eigenschaften des Projekts. Unter **Android-Manifest** finden Sie die **erforderliche Berechtigungen:** Bereichs- und überprüfen Sie die **Akku** Berechtigung. Dadurch wird automatisch aktualisiert. die **"androidmanifest.xml"** Datei.
@@ -93,7 +93,7 @@ switch (source)
     case BatteryPowerSource.Battery:
         // Being powered by the battery
         break;
-    case BatteryPowerSource.Ac:
+    case BatteryPowerSource.AC:
         // Being powered by A/C unit
         break;
     case BatteryPowerSource.Usb:
@@ -138,12 +138,12 @@ Keine Plattformunterschiede.
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 * Gerät muss verwendet werden, um APIs zu testen. 
-* Gibt nur `Ac` oder `Battery` für `PowerSource`. 
+* Gibt nur `AC` oder `Battery` für `PowerSource`.
 * Nicht möglich, Vibration abzubrechen.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-* Gibt nur `Ac` oder `Battery` für `PowerSource`. 
+* Gibt nur `AC` oder `Battery` für `PowerSource`.
 
 -----
 

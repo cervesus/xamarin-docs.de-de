@@ -5,12 +5,12 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: fae5f5f0f15d80e2f3bdce26b8beb5f6fae2f81f
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 2dfdb7051b269e73c68290a557849b9ae606c165
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830452"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353294"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Sicherer Speicher
 
@@ -51,13 +51,27 @@ using Xamarin.Essentials;
 Speichern Sie einen Wert für einen bestimmten _Schlüssel_ an einem sicheren Speicherort:
 
 ```csharp
-await SecureStorage.SetAsync("oauth_token", "secret-oauth-token-value");
+try
+{
+  await SecureStorage.SetAsync("oauth_token", "secret-oauth-token-value");
+}
+catch (Exception ex)
+{
+  // Possible that device doesn't support secure storage on device.
+}
 ```
 
 Zum Abrufen eines Werts aus dem sicheren Speicher:
 
 ```csharp
-var oauthToken = await SecureStorage.GetAsync("oauth_token");
+try
+{
+  var oauthToken = await SecureStorage.GetAsync("oauth_token");
+}
+catch (Exception ex)
+{
+  // Possible that device doesn't support secure storage on device.
+}
 ```
 
 > [!NOTE]
@@ -80,7 +94,7 @@ SecureStorage.RemoveAll();
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Die [Android-KeyStore](https://developer.android.com/training/articles/keystore.html) dient zum Speichern des Cipher-Schlüssels verwendet, um den Wert zu verschlüsseln, bevor es gespeichert wird eine [freigegebene Einstellungen](https://developer.android.com/training/data-storage/shared-preferences.html) mit einem Dateinamen **[YOUR-APP-Paket-ID] .xamarinessentials** .  Der Schlüssel in der freigegebenen Einstellungsdatei verwendet eine _MD5-Hash_ des Schlüssels übergeben die `SecureStorage` -APIs.
+Die [Android-KeyStore](https://developer.android.com/training/articles/keystore.html) dient zum Speichern des Cipher-Schlüssels verwendet, um den Wert zu verschlüsseln, bevor es gespeichert wird eine [freigegebene Einstellungen](https://developer.android.com/training/data-storage/shared-preferences.html) mit einem Dateinamen **[YOUR-APP-Paket-ID] .xamarinessentials** .  Der Schlüssel in der freigegebenen Einstellungsdatei verwendet eine _MD5-Hash_ des Schlüssels übergeben die `SecureStorage` APIs.
 
 ## <a name="api-level-23-and-higher"></a>API-Ebene 23 oder höher
 
@@ -90,7 +104,7 @@ Auf neueren API-Ebenen einer **AES** Schlüssel aus der Android-KeyStore abgeruf
 
 Für ältere API-Ebenen, nur die Android-KeyStore unterstützt das Speichern von **RSA** Schlüssel, der verwendet wird ein **RSA/ECB/PKCS1Padding** Verschlüsselung zum Verschlüsseln einer **AES** Schlüssel (nach dem Zufallsprinzip zur Laufzeit generiert wird) und in der freigegebenen Einstellungsdatei unter dem Schlüssel gespeichert _SecureStorageKey_, wenn eine nicht bereits generiert wurde.
 
-Alle verschlüsselten Werte werden entfernt werden, wenn die app vom Gerät deinstalliert wird.
+**SecureStorage** verwendet die [Voreinstellungen](preferences.md) -API und folgt den gleichen Datenpersistenz beschrieben, die in der [Voreinstellungen](preferences.md#persistence) Dokumentation. Wenn ein Gerät aus der API-Ebene 22 oder niedriger auf API-Ebene 23 oder höher aktualisiert wurde, diese Art der Verschlüsselung wird weiterhin verwendet werden, wenn die app deinstalliert wird oder **"RemoveAll"** aufgerufen wird.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -100,11 +114,11 @@ In einigen Fällen KeyChain-Daten mit iCloud synchronisiert werden, und Deinstal
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) wird verwendet, um verschlüsselter Werte sicher auf UWP-Geräte.
+[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) wird verwendet, um verschlüsselte Werte sicher auf UWP-Geräte.
 
-Verschlüsselter Werte werden im gespeichert `ApplicationData.Current.LocalSettings`, innerhalb eines Containers mit dem Namen **[YOUR-APP-ID] .xamarinessentials**.
+Verschlüsselte Werte werden im gespeichert `ApplicationData.Current.LocalSettings`, innerhalb eines Containers mit dem Namen **[YOUR-APP-ID] .xamarinessentials**.
 
-Deinstallieren der Anwendung führt dazu, dass die _LocalSettings_, sowie alle verschlüsselten Werte auch entfernt werden soll.
+**SecureStorage** verwendet die [Voreinstellungen](preferences.md) -API und folgt den gleichen Datenpersistenz beschrieben, die in der [Voreinstellungen](preferences.md#persistence) Dokumentation.
 
 -----
 

@@ -1,28 +1,29 @@
 ---
-title: 'Warum wird meine app für iOS 9 ausgeführt, mit: System.Exception: Fehler beim Objective-C-Objekt Marshallen?'
+title: 'Warum schlägt Meine iOS 9-app fehl mit: System.Exception: Fehler beim Marshallen des Objective-C-Objekts?'
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 8805ABEC-48D4-4CCB-A226-3A5B2ECE4BF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: f7382ac963249a3f3646a917d8700e3a12873ec9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/03/2018
+ms.openlocfilehash: 93666fcb39f0cd717c14eb07e6407801e9f0642e
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30775974"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350598"
 ---
-# <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-object"></a>Warum wird meine app für iOS 9 ausgeführt, mit: System.Exception: Fehler beim Objective-C-Objekt Marshallen?
+# <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-object"></a>Warum schlägt Meine iOS 9-app fehl mit: System.Exception: Fehler beim Marshallen des Objective-C-Objekts?
 
-Möglicherweise wird einen Fehler des Formulars angezeigt:
+Derartige Fehler möglicherweise angezeigt:
 
-> System.Exception: Fehler bei der Objective-C-Objekt marshallen... Eine Instanz des vorhandene verwaltete wurde für dieses Objekt nicht gefunden werden...
+> System.Exception: Fehler beim Marshallen des Objective-C-Objekts... Eine vorhandene verwaltete Instanz wurde für dieses Objekt nicht gefunden...
 
-API-Änderungen in iOS 9 erfordern, dass ein Rückruf-Konstruktor verwendet werden, wenn Aufrufen von nicht verwaltetem Code als der zugrunde liegenden API jetzt er davon ausgeht. Verwenden Sie die folgende Zeile, die Rückruf-Konstruktor der Klasse hinzu: 
+API-Änderungen in iOS 9 erfordern, dass ein Rückruf-Konstruktor verwendet werden, beim Aufrufen von nicht verwalteten Codes, als die zugrunde liegende API jetzt erwartet. Verwenden Sie die folgende Zeile, um den Rückruf-Konstruktor der Klasse hinzufügen: 
 
 `public foo (IntPtr handle) : base (handle) ` 
 
 ### <a name="next-steps"></a>Nächste Schritte
 
-Für weitere Unterstützung zu erhalten, wenden Sie sich an uns, oder bleibt dieses Problem auch nach der Nutzung der oben angegebenen Informationen finden Sie unter [welche Supportoptionen für Xamarin verfügbar sind?](~/cross-platform/troubleshooting/support-options.md) Informationen zu Kontaktoptionen Vorschläge, sowie zur die Datei eines neuen Fehlers bei Bedarf. 
+Weitere Unterstützung benötigen, kontaktieren uns, oder wenn dieses Problem bestehen bleibt, auch nach der Verwendung der oben genannten Informationen finden Sie unter [welche Supportoptionen für Xamarin verfügbar sind?](~/cross-platform/troubleshooting/support-options.md) auf Kontaktoptionen, Vorschläge, Informationen sowie zur einen neuen Bug-Datei bei Bedarf. 
