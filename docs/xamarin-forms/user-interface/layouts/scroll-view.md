@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: f2bccc9140c4c1c9d5d543a4240178f9301852bb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 54fdec74a6e1d0aee71ec0ca6809a5b40680de9f
+ms.sourcegitcommit: 0a1c392829454468dbe92f81d975e124a22b7014
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997360"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39360811"
 ---
 # <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
@@ -22,11 +22,11 @@ ms.locfileid: "38997360"
 
 Dieser Artikel behandelt Folgendes:
 
-- **[Zweck](#Purpose)**  &ndash; Zweck `ScrollView` und wann sie verwendet wird.
-- **[Nutzung](#Usage)**  &ndash; mit `ScrollView` in der Praxis.
-- **[Eigenschaften](#Properties)**  &ndash; öffentliche Eigenschaften, die gelesen und geändert werden können.
-- **[Methoden](#Methods)**  &ndash; öffentliche Methoden, die aufgerufen werden können, um die Ansicht zu scrollen.
-- **[Ereignisse](#Events)**  &ndash; Ereignisse, die zum Lauschen auf Änderungen in der Ansicht Zuständen verwendet werden können.
+- **[Zweck](#purpose)**  &ndash; Zweck `ScrollView` und wann sie verwendet wird.
+- **[Nutzung](#usage)**  &ndash; mit `ScrollView` in der Praxis.
+- **[Eigenschaften](#properties)**  &ndash; öffentliche Eigenschaften, die gelesen und geändert werden können.
+- **[Methoden](#methods)**  &ndash; öffentliche Methoden, die aufgerufen werden können, um die Ansicht zu scrollen.
+- **[Ereignisse](#events)**  &ndash; Ereignisse, die zum Lauschen auf Änderungen in der Ansicht Zuständen verwendet werden können.
 
 ## <a name="purpose"></a>Zweck
 

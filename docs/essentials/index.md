@@ -4,13 +4,13 @@ description: Dieses Dokument enthält Links zu verschiedenen Leitfäden, die Xam
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 6a49f16f935f058b002d260825cfb005df0c6eef
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.date: 07/30/2018
+ms.openlocfilehash: 5c625e32a70e196b5562225bdf985cd4b3a6f5db
+ms.sourcegitcommit: 0e1b64b0aa8fc0e78f0feff3c8b39a4cb8c1da61
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353762"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39361001"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -45,6 +45,7 @@ Führen Sie die Anleitungen, um diese Features Xamarin.Essentials in Ihre Anwend
 * [Geocodierung](geocoding.md?context=xamarin/xamarin-forms) – "Geocode" und der inversen geocodierung von Adressen und Koordinaten.
 * [GeoLocation](geolocation.md?context=xamarin/xamarin-forms) – GPS-Standorts des Geräts abrufen.
 * [Gyroskop](gyroscope.md?context=xamarin/xamarin-forms) – Nachverfolgen der Drehung um das Gerät die drei primären Achsen.
+* [Startprogramm](launcher.md?context=xamarin/xamarin-forms) – ermöglicht einer Anwendung, die einen URI zu öffnen, indem Sie das System.
 * [Magnetometer](magnetometer.md?context=xamarin/xamarin-forms) : Erkennen der Ausrichtung des Geräts, relativ zum Magnetfelds der Erde.
 * [MainThread](main-thread.md?content=xamarin/xamarin-forms) – Ausführen von Code auf den Hauptthread der Anwendung.
 * [Ordnet](maps.md?content=xamarin/xamarin-forms) – öffnen Sie die Maps-Anwendung an einem bestimmten Speicherort.
