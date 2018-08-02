@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 6f0c15976871129362fb3d6d3287215d1fba2cb9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a630d7c2acb95b7551c9f5f870078a0efcfc075c
+ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995981"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39393671"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Verwenden von XAML-Markuperweiterungen
 
@@ -24,12 +24,12 @@ XAML-Markuperweiterungen können die Leistungsfähigkeit und Flexibilität von X
 - [`x:Array`](#array) &ndash; ein Array von Objekten eines bestimmten Typs zu erstellen.
 - [`x:Null`](#null) &ndash; Legen Sie ein Attribut auf eine `null` Wert.
 
-Drei andere XAML-Markuperweiterungen verfügen in der Vergangenheit von anderen XAML-Implementierungen unterstützt wurde, und werden auch von Xamarin.Forms unterstützt. Diese werden in anderen Artikeln ausführlicher beschrieben:
+Zusätzliche XAML-Markuperweiterungen verfügen in der Vergangenheit von anderen XAML-Implementierungen unterstützt wurde, und werden auch von Xamarin.Forms unterstützt. Diese werden in anderen Artikeln ausführlicher beschrieben:
 
 - `StaticResource` &ndash; Verweisen auf Objekte aus einem Ressourcenverzeichnis, wie in diesem Artikel beschrieben [ **Ressourcenverzeichnisse**](~/xamarin-forms/xaml/resource-dictionaries.md).
 - `DynamicResource` &ndash; Reagieren auf Änderungen an Objekten in einem Ressourcenverzeichnis in diesem Artikel beschriebenen [ **dynamische Stile**](~/xamarin-forms/user-interface/styles/dynamic.md).
 - `Binding` &ndash; Richten Sie eine Verknüpfung zwischen den Eigenschaften von zwei Objekten aus, wie in diesem Artikel beschrieben [ **Datenbindung**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
-- `TemplateBinding` &ndash; führt eine Datenbindung aus einer Vorlage für ein Steuerelement, wie im folgenden Artikel beschrieben [**Bindung aus einer Steuerelementvorlage**] / Führungslinien/Xamarin-Forms/Anwendung-Grundlagen/Vorlagen/Steuerelement-Vorlagen/vorlagenbindung /)
+- `TemplateBinding` &ndash; führt eine Datenbindung aus einer Vorlage für ein Steuerelement, wie im folgenden Artikel beschrieben [ **Bindung aus einer Steuerelementvorlage**](/guides/xamarin-forms/application-fundamentals/templates/control-templates/template-binding/).
 
 Die [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) Layout verwendet die benutzerdefinierte Markuperweiterung [ `ConstraintExpression` ](xref:Xamarin.Forms.ConstraintExpression). Diese Markuperweiterung ist in diesem Artikel beschriebenen [ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
 

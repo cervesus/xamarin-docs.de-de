@@ -1,55 +1,53 @@
 ---
-title: PopUp-Menü
+title: Popupmenü
+description: Wie ein Popupmenü, das verankert ist eine bestimmte Ansicht hinzugefügt.
 ms.prod: xamarin
 ms.assetid: 1C58E12B-4634-4691-BF59-D5A3F6B0E6F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 08/18/2017
-ms.openlocfilehash: e7fad84133ca712c531ab0d12a67db78103c7cdd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 07/31/2018
+ms.openlocfilehash: d7cadde88e9ae7ee30815ee9323785038dbb1a39
+ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763149"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39393658"
 ---
-# <a name="popup-menu"></a>PopUp-Menü
+# <a name="popup-menu"></a>Popupmenü
 
-Die `PopupMenu` Klasse fügt Unterstützung für die Anzeige von Popupmenüs, die eine bestimmte Sicht zugeordnet sind. Die folgende Abbildung zeigt ein Popupmenü angezeigt auf eine Schaltfläche und das zweite Element hervorgehoben, wie diese Option ausgewählt ist:
+Die [PopupMenu](https://developer.xamarin.com/api/type/Android.Widget.PopupMenu/) (so genannte eine _Kontextmenü_) ist ein Menü, das eine bestimmte Ansicht verbunden ist. Im folgenden Beispiel enthält eine einzelne Aktivität eine Schaltfläche. Wenn der Benutzer die Schaltfläche tippt, wird ein Popupmenü mit drei Elementen angezeigt:
 
- [![Beispiel für eine PopopMenu mit drei Elementen drei](popup-menu-images/20-popupmenu.png)](popup-menu-images/20-popupmenu.png#lightbox)
-
-Android 4 hinzugefügt, verschiedene neue Funktionen zur `PopupMenu` , erleichtern ein wenig, nämlich arbeiten:
-
--   **Inflate** &ndash; der vergrößert werden soll-Methode steht jetzt direkt auf die PopupMenu-Klasse.
--   **DismissEvent** &ndash; der PopupMenu-Klasse verfügt jetzt über eine DismissEvent.
-
-Werfen wir einen Blick auf diese Verbesserungen. In diesem Beispiel haben wir eine einzelne Aktivität, die eine Schaltfläche enthält. Wenn der Benutzer die Schaltfläche klickt, wird ein Popup-Menü angezeigt, wie unten dargestellt:
-
- [![Beispiel für die app, die in einen Emulator mit den Schaltflächen und Popupmenü 3-Element](popup-menu-images/06-popupmenu.png)](popup-menu-images/06-popupmenu.png#lightbox)
+[![Beispiel für eine app mit einer Schaltfläche und drei Elementen Popup-Menü](popup-menu-images/01-app-example-sml.png)](popup-menu-images/01-app-example.png#lightbox)
 
 
-## <a name="creating-a-popup-menu"></a>Erstellen ein Popup-Menü
+## <a name="creating-a-popup-menu"></a>Erstellen eines Popup-Menüs
 
-Wenn wir erstellen eine Instanz von der `PopupMenu`, müssen wir ihren Konstruktor übergeben Sie einen Verweis auf die `Context`, sowie die Sicht, die Sie im Menü zugeordnet ist. In diesem Fall erstellen wir die `PopupMenu` im Click-Ereignishandler für unsere Schaltfläche die Bezeichnung `showPopupMenu`.
-Diese Schaltfläche ist auch die Sicht, müssen wir fügen, die `PopupMenu`, wie im folgenden Code gezeigt:
+Der erste Schritt ist, erstellen eine Ressourcendatei "im Menü" für das Menü, und versetzen Sie ihn in **ressourcenmenü/**. Das folgende XML ist beispielsweise der Code für die drei Elementen im Menü angezeigt, die im vorherigen Screenshot **Resources/menu/popup_menu.xml**:
 
-```csharp
-showPopupMenu.Click += (s, arg) => {
-    PopupMenu menu = new PopupMenu (this, showPopupMenu);
-}
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/item1"
+          android:title="item 1" />
+    <item android:id="@+id/item1"
+          android:title="item 2" />
+    <item android:id="@+id/item1"
+          android:title="item 3" />
+</menu>
 ```
 
-Android 3 erforderlich der Code, um das Menü aus einer XML-Ressource vergrößert werden soll, erhalten Sie zunächst einen Verweis auf eine `MenuInflator`, und rufen Sie anschließend die `Inflate` Methode mit den Ressourcen-ID der XML-Code, die enthalten das Menü und die Instanz im Menü, um in vergrößert werden soll. Ein derartiger Ansatz funktioniert weiterhin in Android 4 und höher als der folgende Code zeigt:
+Als Nächstes erstellen Sie eine Instanz des `PopupMenu` und Verankern sie die Anmerkung an seinem Ansichtszustand. Beim Erstellen einer Instanz von `PopupMenu`, übergeben Sie ihren Konstruktor einen Verweis auf die `Context` sowie die Ansicht, klicken Sie im Menü angefügt werden. Daher ist das Popupmenü während der Erstellung dieser Ansicht verankert.
+
+Im folgenden Beispiel die `PopupMenu` wird in der Click-Ereignishandler für die Schaltfläche erstellt (mit dem Namen `showPopupMenu`). Diese Schaltfläche ist auch die Sicht, die `PopupMenu` verankert ist, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
     PopupMenu menu = new PopupMenu (this, showPopupMenu);
-    menu.MenuInflater.Inflate (Resource.Menu.popup_menu, menu.Menu);
 };
 ```
 
-Seit Android 4, Sie können jedoch jetzt Aufrufen `Inflate` direkt auf die Instanz von der `PopupMenu`. Dadurch wird den Code präziser, wie hier gezeigt:
+Abschließend muss das Popupmenü *vergrößerte* mit der Menüressource, die zuvor erstellt wurde. Im folgenden Beispiel der Aufruf des Menüs [Inflate](https://developer.xamarin.com/api/member/Android.Views.LayoutInflater.Inflate/p/System.Int32/Android.Views.ViewGroup/) Methode hinzugefügt wird und die zugehörige [anzeigen](https://developer.xamarin.com/api/member/Android.Widget.PopupMenu.Show%28%29/) Methode wird aufgerufen, um es anzuzeigen:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -59,12 +57,10 @@ showPopupMenu.Click += (s, arg) => {
 };
 ```
 
-Im obigen Code nach dem Menü überhöhte Wir rufen Sie einfach `menu.Show` auf dem Bildschirm angezeigt.
 
+## <a name="handling-menu-events"></a>Behandeln von Menüereignissen
 
-## <a name="handling-menu-events"></a>Behandlung von Menüereignissen im
-
-Wenn der Benutzer ein Menüelement auswählt der `MenuItemClick` Ereignis wird ausgelöst, und klicken Sie im Menü wird abgeschaltet werden. Tippen Sie auf eine beliebige Stelle außerhalb des Menüs, wird es einfach schließen. In beiden Fällen ab Android 4, wenn das Menü geschlossen wird dessen `DismissEvent` ausgelöst werden soll. Der folgende Code fügt der Ereignishandler für beide die `MenuItemClick` und `DismissEvent` Ereignisse:
+Wenn der Benutzer ein Menüelement auswählt der [MenuItemClick](https://developer.xamarin.com/api/event/Android.Widget.PopupMenu.MenuItemClick/) klicken Sie auf Ereignis wird ausgelöst, und klicken Sie im Menü wird geschlossen. Durch Tippen auf eine beliebige Stelle außerhalb des Menüs wird es einfach geschlossen. In beiden Fällen, wenn Sie im Menü geschlossen wird dessen [DismissEvent](https://developer.xamarin.com/api/member/Android.Widget.PopupMenu.Dismiss%28%29/) ausgelöst. Der folgende Code fügt der Ereignishandler für beide die `MenuItemClick` und `DismissEvent` Ereignisse:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -78,7 +74,7 @@ showPopupMenu.Click += (s, arg) => {
     menu.DismissEvent += (s2, arg2) => {
         Console.WriteLine ("menu dismissed");
     };
-            menu.Show ();
+    menu.Show ();
 };
 ```
 
@@ -87,5 +83,3 @@ showPopupMenu.Click += (s, arg) => {
 ## <a name="related-links"></a>Verwandte Links
 
 - [PopupMenuDemo (Beispiel)](https://developer.xamarin.com/samples/monodroid/PopupMenuDemo/)
-- [Einführung in Eis Rustikal Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 Platform](http://developer.android.com/sdk/android-4.0.html)
