@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 657370705233e923b482b67fc5afed12631c8187
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 1dff0e614943805930cf7d838110c4a42eee6f48
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785027"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353203"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Interne Verteilung für Xamarin.iOS-Apps
 
@@ -98,7 +98,7 @@ Wie bei anderen erstellten Bereitstellungsprofilen ist eine App-ID erforderlich,
 1. Navigieren Sie im [Apple Developer Center](https://developer.apple.com/account/overview.action) zum Abschnitt *Certificate, Identifiers and Profiles* (Zertifikate, Bezeichner und Profile). Wählen Sie unter **Identifiers** (Bezeichner) **App IDs** (App-IDs) aus.
 2. Klicken Sie auf die Schaltfläche **+**, und geben Sie einen **Namen** ein, der Sie im Portal identifiziert.
 3. Das App-Präfix sollte bereits als Ihre Team-ID festgelegt werden, und kann nicht geändert werden. Wählen Sie entweder eine explizite oder Platzhalter-App-ID, und geben Sie eine Bundle-ID in einem umgekehrten DNS-Format ein, wie beispielsweise: **Explizit**: com.[Domänenname].[Anwendungsname] **Platzhalter**:com.[Domänenname].*
-4. Wählen Sie die gewünschten [Anwendungsdienste](~/ios/get-started/installation/device-provisioning/index.md#appservices), die Ihre Anwendung benötigt.
+4. Wählen Sie die gewünschten [Anwendungsdienste](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services), die Ihre Anwendung benötigt.
 5. Klicken Sie auf die Schaltfläche **Weiter**, und folgen Sie der Anleitung auf dem Bildschirm, um die neue App-ID zu erstellen.
 
 Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils haben, führen Sie die folgenden Schritte aus, um es zu erstellen:

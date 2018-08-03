@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/16/2018
-ms.openlocfilehash: 22ac17e211562eccbc49cc213e06079e77dd08c0
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: 0f2418994e02c9e83506071f14901d22af4b8a66
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111156"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353320"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Kostenlose Bereitstellung für Xamarin.iOS-Apps
 
@@ -35,7 +35,7 @@ So stellen Sie Ihre Xamarin.iOS-Anwendungen auf einem Gerät mit kostenloser Ber
 - Ihre Xamarin.iOS-App muss eine eindeutige App-ID verwenden und keine Platzhalter-ID.
 - Die in Ihrer App verwendete Bündel-ID muss in Ihrer Xamarin.iOS-App eindeutig sein und darf nicht schon in einer anderen App verwendet worden sein. Eine mit der kostenlosen Bereitstellung verwendete Bündel-ID **darf nicht** erneut verwendet werden.
 - Wenn Sie eine App bereits verteilt haben, können Sie diese App nicht mehr mit der kostenlosen Bereitstellung bereitstellen.
-- Wenn Ihre App App Services verwendet, müssen Sie ein Bereitstellungsprofil erstellen. Eine Anleitung hierzu finden Sie im Leitfaden zur [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md#appservices). 
+- Wenn Ihre App App Services verwendet, müssen Sie ein Bereitstellungsprofil erstellen. Eine Anleitung hierzu finden Sie im Leitfaden zur [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services). 
 
 Sehen Sie sich den Abschnitt [Einschränkungen](#limitations) in diesem Artikel an, um mehr Informationen zu den Einschränkungen der kostenlosen Bereitstellung zu erhalten. In den [Leitfäden zur App-Verteilung](~/ios/deploy-test/app-distribution/index.md) finden Sie mehr Informationen zur Verteilung von iOS-Anwendungen.
 
@@ -144,4 +144,4 @@ In diesem Leitfaden wurden die Vorteile und Einschränkungen der kostenlosen Ber
 ## <a name="related-links"></a>Verwandte Links
 
 - [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md)
-- [Bereitstellung für Anwendungsdienste](~/ios/get-started/installation/device-provisioning/index.md#appservices)
+- [Bereitstellung für Anwendungsdienste](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)
