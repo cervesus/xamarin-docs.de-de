@@ -329,6 +329,7 @@
 ### [Regeln für die Xamarin.iOS-Analyse](troubleshooting/xamarin-ios-analysis.md)
 ### [Fehlermeldungen (mtouch)](troubleshooting/mtouch-errors.md)
 ### [Häufig gestellte Fragen](troubleshooting/questions/index.md)
+#### [Debuggen mit Xcode](troubleshooting/questions/debugging-with-xcode.md)
 #### [Kann ich eine Mac-VM mit Xamarin verwenden?](troubleshooting/questions/mac-vm.md)
 #### [Herunterladen einer vorherigen Version von Xcode](troubleshooting/questions/previous-xcode.md)
 #### [Wo kann ich meine iOS SDK-Speicherorte festlegen?](troubleshooting/questions/ios-sdk.md)
