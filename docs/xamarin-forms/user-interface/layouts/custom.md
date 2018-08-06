@@ -409,8 +409,8 @@ Wenn die Seite mit den `WrapLayout` angezeigt wird, die beispielanwendung asynch
 Die folgenden Screenshots zeigen die `WrapLayout` nachdem es Querformat gedreht wird:
 
 ![](custom-images/landscape-ios.png "Beispiel für iOS-Anwendung im Querformat Screenshot")
-![](custom-images/landscape-android.png "Android-Anwendung im Querformat Beispielscreenshot") 
- ![ ] (custom-images/landscape-uwp.png " UWP-Anwendung im Querformat-Beispielscreenshot:")
+![](custom-images/landscape-android.png "Android-Anwendung im Querformat Beispielscreenshot")
+![](custom-images/landscape-uwp.png " UWP-Anwendung im Querformat-Beispielscreenshot:")
 
 Die Anzahl der Spalten in jeder Zeile hängt davon ab, die Größe des Fotos, die Bildschirmbreite und die Anzahl der Pixel pro geräteunabhängige Einheit. Die [ `Image` ](xref:Xamarin.Forms.Image) Elemente asynchron geladen, die Fotos, und daher die `WrapLayout` Klasse erhalten häufig Aufrufe an die [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) -Methode, wie jede `Image` Element erhält eine neue Größe basierend auf dem Foto geladen.
 
