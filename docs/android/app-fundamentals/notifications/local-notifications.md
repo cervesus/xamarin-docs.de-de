@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 6c8abbdb18bcaee405f8fe7fe8c22a930435c7e5
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 221fa9b70eeba2c4ca08433c627e5648470a7fac
+ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242445"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514530"
 ---
 # <a name="local-notifications"></a>Lokale Benachrichtigungen
 
@@ -366,8 +366,8 @@ Diese Meldung abgerufenen "Greetings aus MainActivity!" wird angezeigt, der `Sec
 Weitere Informationen zum Erstellen von ausstehende Intents finden Sie unter [PendingIntent](https://developer.xamarin.com/api/type/Android.App.PendingIntent/).
 
 
-<a name="notif-chan" />
-
+<a name="notif-chan"></a>
+<a name="notification-channels"></a>
 ## <a name="notification-channels"></a>Benachrichtigungskanäle
 
 Ab Android 8.0 (Oreo), können Sie die *benachrichtigungskanäle* Funktion, um einen anpassbaren Kanal für jeden Typ der Benachrichtigung zu erstellen, die Sie anzeigen möchten. Benachrichtigungskanäle erleichtern möglich, dass Sie die Gruppe Benachrichtigungen, damit alle Benachrichtigungen zu einem Kanal Anhang gesendet, das gleiche Verhalten. Beispielsweise müssen Sie möglicherweise einen Kanal, der für Benachrichtigungen vorgesehen ist, die sofortige Aufmerksamkeit erfordern, und einen separaten "ruhigerer" Kanal, der für informationsmeldungen verwendet wird.
