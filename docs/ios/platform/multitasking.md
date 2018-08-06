@@ -19,7 +19,7 @@ ms.locfileid: "34787954"
 
 _iOS 9 unterstützt zwei Web-apps auf der gleichen Zeit, Folie über oder geteilten Ansicht ausgeführt wird. Darüber hinaus wird die Wiedergabe im Bild Video unterstützt._
 
-![](multitasking-images/about02-sml.png "Bildschirm Beispiel teilen") ![ ] (multitasking-images/about03-sml.png "Bild-Beispiel")
+![](multitasking-images/about02-sml.png "Bildschirm Beispiel teilen") ![](multitasking-images/about03-sml.png "Bild-Beispiel")
 
 iOS 9 fügt Multitasking-Unterstützung für die Ausführung von zwei Web-apps zur gleichen Zeit auf bestimmte iPad-Hardware. Multitasking für iPad wird über die folgenden Funktionen unterstützt:
 

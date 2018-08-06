@@ -21,7 +21,7 @@ MT. D unterstützt die Erstellung von Benutzeroberflächen, die im JSON-Format d
 
 MT. D unterstützt das gesamte Spektrum an Funktionen, die bei Verwendung von JSON in der Elemente-API verfügbar sind. Die Anwendung im folgenden Screenshot wird z. B. vollständig mit JSON deklariert:
 
-[![](json-element-walkthrough-images/01-load-from-file.png "Zum Beispiel die Anwendung in diesem Screenshot ist vollständig deklariert mithilfe von JSON") ](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ] (json-element-walkthrough-images/01-load-from-file.png "z. B. die Anwendung in diesem Screenshot ist vollständig mit deklariert JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
+[![](json-element-walkthrough-images/01-load-from-file.png "Zum Beispiel die Anwendung in diesem Screenshot ist vollständig deklariert mithilfe von JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![](json-element-walkthrough-images/01-load-from-file.png "z. B. die Anwendung in diesem Screenshot ist vollständig mit deklariert JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 Sehen wir uns erneut das Beispiel aus der [Elemente-API-Exemplarische Vorgehensweise](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) Tutorial zeigt, wie zum Hinzufügen eines Task-Detail-Bildschirms mithilfe von JSON.
 

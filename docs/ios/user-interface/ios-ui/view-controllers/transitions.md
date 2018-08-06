@@ -43,7 +43,7 @@ showTwo.TouchUpInside += (object sender, EventArgs e) => {
 
 Ausführen der app, und tippen Sie auf die Schaltfläche bewirkt, dass die Standardanimation der zweite Controller-Sicht in der unteren animiert wie unten dargestellt:
 
- ![](transitions-images/no-custom-transition.png "Führt dazu, dass die Standardanimation der zweite Domänencontroller Sicht zu animierende in von unten nach Ausführen der app, und tippen Sie auf die Schaltfläche \""")
+ ![](transitions-images/no-custom-transition.png "Führt dazu, dass die Standardanimation der zweite Domänencontroller Sicht zu animierende in von unten nach Ausführen der app, und tippen Sie auf die Schaltfläche")
 
 Festlegen der `ModalPresentationStyle` und `TransitioningDelegate` führt zu einer benutzerdefinierten Animation für den Übergang:
 

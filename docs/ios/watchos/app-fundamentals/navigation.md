@@ -49,7 +49,7 @@ Modale Bildschirme können es sich um eine einzelne Szene oder die Verwendung ei
 
 Zeigt im Hintergrund beim Übersetzen, wie ein Stapel, die Navigation durch zurückgehen, ähnlich wie möglich `UINavigationController` funktioniert für iOS. Szenen können auf Navigationsstapel abgelegt und (entweder programmgesteuert oder durch Auswahl des Benutzers) geholt werden.
 
-![](navigation-images/hierarchy-1.png "Szenen geschoben werden können, auf dem Navigationsstapel") ![ ] (navigation-images/hierarchy-2.png "können im Hintergrund beim Übersetzen der Navigationsstapel geholt werden")
+![](navigation-images/hierarchy-1.png "Szenen geschoben werden können, auf dem Navigationsstapel") ![](navigation-images/hierarchy-2.png "können im Hintergrund beim Übersetzen der Navigationsstapel geholt werden")
 
 Wie bei iOS, wechselt einen linken Rand Wischen zurück zum übergeordneten Controller in einem Stapel hierarchische Navigation.
 
@@ -94,7 +94,7 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 Wischen Sie seitenbasierte Schnittstellen nach links-nach-rechts, ähnlich wie bei `UIPageViewController` funktioniert für iOS. Indikator-Punkte werden am unteren Rand des Bildschirms anzeigen, welche Seite derzeit angezeigt wird angezeigt.
 
-![](navigation-images/paged-1.png "Erste Beispielseite") ![ ] (navigation-images/paged-2.png "zweite Beispielseite") ![ ] (navigation-images/paged-5.png "fünfte Beispielseite")
+![](navigation-images/paged-1.png "Erste Beispielseite") ![](navigation-images/paged-2.png "zweite Beispielseite") ![](navigation-images/paged-5.png "fünfte Beispielseite")
 
 
 Verwenden, um einer Seite-basierte Schnittstelle für die app überwachen die Hauptbenutzeroberfläche vorzunehmen `ReloadRootControllers` mit einem Array der Schnittstelle Controller und Kontexte:

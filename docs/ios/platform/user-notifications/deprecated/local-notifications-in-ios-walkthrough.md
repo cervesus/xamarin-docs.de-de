@@ -116,7 +116,7 @@ Lassen Sie eine einfache Anwendung erstellen, die anzeigt, lokale Benachrichtigu
 
 1. Führen Sie schließlich die Anwendung ein. Unter iOS werden 8 Sie werden aufgefordert, um Benachrichtigungen zu ermöglichen. Klicken Sie auf **OK** , und klicken Sie dann auf die **-hinzufügungsbenachrichtigung** Schaltfläche. Nach einer kurzen Pause sehen Sie das Dialogfeld "Warnung", wie in den folgenden Screenshots gezeigt:
 
-    ![](local-notifications-in-ios-walkthrough-images/image0.png "Bestätigen die Möglichkeit zum Senden von Benachrichtigungen") ![ ] (local-notifications-in-ios-walkthrough-images/image1.png "der hinzufügen-Notification-Schaltfläche") ![ ] (local-notifications-in-ios-walkthrough-images/image2.png "im Warndialogfeld Benachrichtigung")
+    ![](local-notifications-in-ios-walkthrough-images/image0.png "Bestätigen die Möglichkeit zum Senden von Benachrichtigungen") ![](local-notifications-in-ios-walkthrough-images/image1.png "der hinzufügen-Notification-Schaltfläche") ![](local-notifications-in-ios-walkthrough-images/image2.png "im Warndialogfeld Benachrichtigung")
 
 ## <a name="summary"></a>Zusammenfassung
 

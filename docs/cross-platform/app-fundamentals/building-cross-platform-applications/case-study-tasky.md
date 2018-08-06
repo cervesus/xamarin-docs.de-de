@@ -479,7 +479,7 @@ Die resultierenden Anwendungen werden auf jeder Plattform wie folgt aussehen:
 
 Die Anwendung verwendet die iOS-Standard-Benutzeroberflächendesign, z. B. die Schaltfläche "hinzufügen" in der Navigationsleiste positioniert wird, und unter Verwendung der integrierten **Pluszeichen (+)** Symbol. Darüber hinaus verwendet die standardmäßige `UINavigationController` Schaltfläche "zurück" Verhalten "und" unterstützt "Streifen löschen" in der Tabelle.
 
- [![](case-study-tasky-images/ios-taskylist.png "Außerdem verwendet das Standardverhalten für UINavigationController Schaltfläche \"zurück\" und unterstützt Streifen zu löschen, in der Tabelle") ](case-study-tasky-images/ios-taskylist.png#lightbox) [ ![ ] (case-study-tasky-images/ios-taskylist.png "darüber hinaus verwendet die standardmäßige UINavigationController Sichern Sie die Schaltfläche Verhalten und unterstützt Streifen zu löschen, in der Tabelle")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [![](case-study-tasky-images/ios-taskylist.png "Außerdem verwendet das Standardverhalten für UINavigationController Schaltfläche \"zurück\" und unterstützt Streifen zu löschen, in der Tabelle")](case-study-tasky-images/ios-taskylist.png#lightbox) [ ![](case-study-tasky-images/ios-taskylist.png "darüber hinaus verwendet die standardmäßige UINavigationController Sichern Sie die Schaltfläche Verhalten und unterstützt Streifen zu löschen, in der Tabelle")](case-study-tasky-images/ios-taskylist.png#lightbox)
 
  <a name="Android" />
 
@@ -495,7 +495,7 @@ Die Android-app verwendet die integrierte Steuerelemente, einschließlich des in
 
 Die Windows Phone-app verwendet das Standardlayout, Auffüllen der app-Leiste am unteren Rand des Bildschirms, anstatt eine Navigationsleiste am oberen.
 
- [![](case-study-tasky-images/wp-taskylist.png "Die Windows Phone-app verwendet das Standardlayout, Auffüllen der app-Leiste am unteren Rand des Bildschirms, anstatt eine Navigationsleiste am oberen") ](case-study-tasky-images/wp-taskylist.png#lightbox) [ ![ ] (case-study-tasky-images/wp-taskylist.png "verwendet den Standard, der Windows Phone-app Layout die app-Leiste am unteren Rand des Bildschirms, anstatt eine Navigationsleiste am oberen Auffüllen")](case-study-tasky-images/wp-taskylist.png#lightbox)
+ [![](case-study-tasky-images/wp-taskylist.png "Die Windows Phone-app verwendet das Standardlayout, Auffüllen der app-Leiste am unteren Rand des Bildschirms, anstatt eine Navigationsleiste am oberen")](case-study-tasky-images/wp-taskylist.png#lightbox) [![](case-study-tasky-images/wp-taskylist.png "verwendet den Standard, der Windows Phone-app Layout die app-Leiste am unteren Rand des Bildschirms, anstatt eine Navigationsleiste am oberen Auffüllen")](case-study-tasky-images/wp-taskylist.png#lightbox)
 
  <a name="Summary" />
 

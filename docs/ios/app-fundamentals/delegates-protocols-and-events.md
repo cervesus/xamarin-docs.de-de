@@ -29,7 +29,7 @@ In diesem Artikel Sie über alle diese Themen erfahren, und Sie haben eine solid
 
 Um Protokolle und Delegaten zu veranschaulichen, erstellen wir eine einfache Zuordnung-Anwendung, die von einer Anmerkung zu einer Zuordnung hinzugefügt wird, wie hier gezeigt:
 
- [![](delegates-protocols-and-events-images/01-map.png "Ein Beispiel für eine einfache Zuordnung-Anwendung, die eine Anmerkung zu einer Zuordnung fügt") ](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "eine Beispiel-Anmerkung zu einer Zuordnung hinzugefügt")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
+ [![](delegates-protocols-and-events-images/01-map.png "Ein Beispiel für eine einfache Zuordnung-Anwendung, die eine Anmerkung zu einer Zuordnung fügt")](delegates-protocols-and-events-images/01-map.png#lightbox) [![](delegates-protocols-and-events-images/04-annotation-with-callout.png "eine Beispiel-Anmerkung zu einer Zuordnung hinzugefügt")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Vor dem bewältigt diese app Fortschritts, beginnen wir zunächst mit .NET Ereignisse unter der UIKit ansehen.
 

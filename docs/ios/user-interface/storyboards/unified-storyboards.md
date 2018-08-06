@@ -200,7 +200,7 @@ Auf einem iPhone, wobei die Größe-Klasse in beide Ausrichtungen compact ist, z
 
 Der Entwickler muss in einer Anwendung, bei denen der Entwickler sowohl die Master- und Detailtabelle auf einem iPhone im Querformat anzeigen möchte, fügen Sie einen übergeordneten Container der Split-View-Controller und überschreiben die Merkmal ""-Auflistung. Wie in der folgenden Abbildung dargestellt:
 
- [![](unified-storyboards-images/cascadingclasses03.png "Der Entwickler muss fügen Sie einen übergeordneten Container der Split-View-Controller und überschreiben die Auflistung Merkmal \""")](unified-storyboards-images/cascadingclasses03.png#lightbox)
+ [![](unified-storyboards-images/cascadingclasses03.png "Der Entwickler muss fügen Sie einen übergeordneten Container der Split-View-Controller und überschreiben die Auflistung Merkmal")](unified-storyboards-images/cascadingclasses03.png#lightbox)
 
 Ein `UIView` festgelegt ist, als das übergeordnete Element des Split-View-Controller und die `SetOverrideTraitCollection` Methode wird aufgerufen, für die Sicht eine neue Auflistung des Merkmals übergeben und als Ziel der Split-View-Controller. Neue Merkmal ""-Sammlung außer Kraft setzt die `HorizontalSizeClass`, bei der Einstellung `Regular`, damit der Split-View-Controller sowohl die Master- und Detailtabelle Ansichten auf einem iPhone im Querformat angezeigt werden.
 

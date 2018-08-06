@@ -157,7 +157,7 @@ Zum Aktualisieren ziehen als Benutzer geladen:
 
 ![](interactivity-images/refresh-start.png "ListView Pull In Ausführung befindlichen aktualisieren")
 
-Zum Aktualisieren ziehen als der Benutzer hat den Pull veröffentlicht. Dies ist, was dem Benutzer angezeigt, während Sie Liste aktualisieren: ![ ] (interactivity-images/refresh-in-progress.png "ListView Pull auf vollständige aktualisieren")
+Zum Aktualisieren ziehen als der Benutzer hat den Pull veröffentlicht. Dies ist, was dem Benutzer angezeigt, während Sie Liste aktualisieren: ![](interactivity-images/refresh-in-progress.png "ListView Pull auf vollständige aktualisieren")
 
 ListView stellt einige Ereignisse, die Sie zum Aktualisieren ziehen Ereignisse reagieren können.
 

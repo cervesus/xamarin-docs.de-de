@@ -22,7 +22,7 @@ ms.locfileid: "34788666"
 Pushbenachrichtigungen sollten kurze beibehalten und nur wenig Daten, um der mobilen Anwendung zu benachrichtigen, dass er die Serveranwendung für ein Update kontaktiert werden sollte. Z. B., wenn neue e-Mail eingeht, würde die Anwendung für die nur die mobile Anwendung benachrichtigen, die neue e-Mail angekommen ist. Die Benachrichtigung würde nicht die neue e-Mail sich selbst enthalten. Die mobile Anwendung würde dann rufen Sie die neue e-Mail-Nachrichten vom Server entsprechende wurde
 
 In der Mitte der Push-Benachrichtigungen in iOS ist die *Apple Push Notification-Gateway-Dienst (APNS)*. Dies ist ein Dienst bereitgestellt, die von Apple, die für das routing Benachrichtigungen von einem Anwendungsserver für iOS-Geräte zuständig ist.
-Das folgende Bild zeigt die Push Notification-Topologie für iOS: ![ ] (remote-notifications-in-ios-images/image4.png "dieses Bild zeigt die Push Notification-Topologie für iOS")
+Das folgende Bild zeigt die Push Notification-Topologie für iOS: ![](remote-notifications-in-ios-images/image4.png "dieses Bild zeigt die Push Notification-Topologie für iOS")
 
 Remote Benachrichtigungen selbst werden JSON-formatierte Zeichenfolgen, die das Format entsprechen und Protokolle, die im angegebenen [die Benachrichtigungsnutzlast](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1) Teil der [lokale und Push Notification Programmierhandbuch](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)in der [iOS-Entwicklerdokumentation](https://developer.apple.com/devcenter/ios/index.action).
 

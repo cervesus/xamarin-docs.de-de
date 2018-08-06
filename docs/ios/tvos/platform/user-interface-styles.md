@@ -175,7 +175,7 @@ Um Unterstützung von Merkmal zu aktivieren, führen Sie folgende Schritte aus:
     [![](user-interface-styles-images/theme05.png "Mit Xcode-Schnittstelle-Generator öffnen")](user-interface-styles-images/theme05.png#lightbox) 
 2. Um Merkmals Unterstützung zu aktivieren, wechseln Sie zu der **Datei Inspektor** und überprüfen Sie die **verwenden Merkmals Variationen** Eigenschaft in der **Schnittstelle-Generator-Dokument** Abschnitt: 
 
-    [![](user-interface-styles-images/theme06.png "Unterstützung von Merkmal \"" aktivieren")](user-interface-styles-images/theme06.png#lightbox)
+    [![](user-interface-styles-images/theme06.png "Unterstützung von Merkmal aktivieren")](user-interface-styles-images/theme06.png#lightbox)
 3. Bestätigen Sie die Änderung zum Merkmal ""-Varianten verwenden: 
 
     [![](user-interface-styles-images/theme07.png "Die Verwendung Merkmals Variationen Warnung")](user-interface-styles-images/theme07.png#lightbox)

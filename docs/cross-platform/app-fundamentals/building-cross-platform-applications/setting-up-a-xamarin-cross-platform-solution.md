@@ -121,7 +121,7 @@ Plattformspezifische Anwendungsprojekte verweisen auf den freigegebenen Code plu
 
 Die Anwendungsprojekte jede freigegebenes Projekt verweisen, und den Benutzeroberflächen-Code erforderlich, um vorhanden Funktionalität für den Benutzer enthalten, wie im folgenden Screenshots gezeigt:
 
-![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Die Anwendung projiziert, jeden Verweis freigegebenes Projekt") ![ ] (setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "die Anwendung projiziert, jeden Verweis freigegebenen Projekts")
+![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Die Anwendung projiziert, jeden Verweis freigegebenes Projekt") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "die Anwendung projiziert, jeden Verweis freigegebenen Projekts")
 
 
 Spezifische Beispiele für die Struktur von Projekten werden in der Fallstudien angegeben.

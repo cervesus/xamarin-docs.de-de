@@ -62,11 +62,11 @@ Die `HeroImage` Steuerelement verfügt über vier Eigenschaften:
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "HeroImage-Steuerelement für Android") ![ ] (controls-images/heroimage-dark-android.png "HeroImage-Steuerelement für Android")
+![](controls-images/heroimage-light-android.png "HeroImage-Steuerelement für Android") ![](controls-images/heroimage-dark-android.png "HeroImage-Steuerelement für Android")
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "HeroImage-Steuerelement für iOS") ![ ] (controls-images/heroimage-dark-ios.png "HeroImage-Steuerelement für iOS")
+![](controls-images/heroimage-light-ios.png "HeroImage-Steuerelement für iOS") ![](controls-images/heroimage-dark-ios.png "HeroImage-Steuerelement für iOS")
 
 
 <a name="listitem" />
@@ -97,11 +97,11 @@ Diese Screenshots zeigen die `ListItem` auf IOS- und Android-Plattformen verwend
 
 **Android**
 
-![](controls-images/listitem-light-android.png "ListItem-Steuerelement für Android") ![ ] (controls-images/listitem-dark-android.png "ListItem-Steuerelement für Android")
+![](controls-images/listitem-light-android.png "ListItem-Steuerelement für Android") ![](controls-images/listitem-dark-android.png "ListItem-Steuerelement für Android")
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "ListItem-Steuerelement für iOS") ![ ] (controls-images/listitem-dark-ios.png "ListItem-Steuerelement für iOS")
+![](controls-images/listitem-light-ios.png "ListItem-Steuerelement für iOS") ![](controls-images/listitem-dark-ios.png "ListItem-Steuerelement für iOS")
 
 
 ## <a name="custom-control-example"></a>Beispiel für ein benutzerdefiniertes Steuerelement
@@ -128,11 +128,11 @@ Es sollte wie in den Screenshots unter Verwendung von Farben, die für die integ
 
 **Android**
 
-![](controls-images/cardview-light-android.png "CardView-benutzerdefinierte Steuerelement für Android") ![ ] (controls-images/cardview-dark-android.png "CardView-benutzerdefinierte Steuerelement für Android")
+![](controls-images/cardview-light-android.png "CardView-benutzerdefinierte Steuerelement für Android") ![](controls-images/cardview-dark-android.png "CardView-benutzerdefinierte Steuerelement für Android")
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "CardView-benutzerdefiniertes Steuerelement unter iOS") ![ ] (controls-images/cardview-dark-ios.png "CardView-benutzerdefiniertes Steuerelement unter iOS")
+![](controls-images/cardview-light-ios.png "CardView-benutzerdefiniertes Steuerelement unter iOS") ![](controls-images/cardview-dark-ios.png "CardView-benutzerdefiniertes Steuerelement unter iOS")
 
 <a name="custom" />
 
