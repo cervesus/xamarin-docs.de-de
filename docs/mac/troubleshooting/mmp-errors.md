@@ -266,7 +266,7 @@ Eine letzte Stroh-Lösung mit einer älteren Version von Xamarin.Mac wäre, erfo
 
 <a name="MM2012" />
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: Nur die ersten {0} von {1} "Referenziert von" Warnungen angezeigt. ** Diese Meldung im Zusammenhang mit 2009 **
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: Nur die ersten {0} von {1} "Referenziert von" Warnungen angezeigt. ** Diese Meldung im Zusammenhang mit 2009 \*\*
 
 <a name="MM2013" />
 
@@ -274,7 +274,7 @@ Eine letzte Stroh-Lösung mit einer älteren Version von Xamarin.Mac wäre, erfo
 
 <a name="MM2014" />
 
-#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin.Mac Erweiterungen bieten keine Unterstützung verknüpfen. Die Anforderung für verknüpfen werden ignoriert. ** Diese Meldung ist in XM 3.6 veraltet **
+#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin.Mac Erweiterungen bieten keine Unterstützung verknüpfen. Die Anforderung für verknüpfen werden ignoriert. ** Diese Meldung ist in XM 3.6 veraltet \*\*
 
 <!-- 2015 used by mtouch -->
 
