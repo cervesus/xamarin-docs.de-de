@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: B73675D2-09A3-14C1-E41E-20352B819B53
 author: conceptdev
 ms.author: crdun
-ms.date: 07/18/2018
-ms.openlocfilehash: 82a73619e4c0507e8857cc91d88ababa870013de
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 08/06/2018
+ms.openlocfilehash: 98b5786ae4f071b4d8e8f854561db97aee037fdc
+ms.sourcegitcommit: aa7b0182d117e2af66ffaa4fa29b8c214ceecae1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270471"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39520284"
 ---
 # <a name="sharing-code-overview"></a>Übersicht über das Freigeben von code
 
@@ -19,7 +19,7 @@ _In diesem Dokument werden die verschiedenen Methoden des Verwendung gemeinsamen
 
 Es gibt drei Methoden zur Freigabe von Code zwischen plattformübergreifenden Anwendungen:
 
-- [**.NET standard-Bibliotheken** ](#Net_Standard) : .NET Standard-Projekte können implementieren den Code auf mehreren Plattformen gemeinsam verwendet werden, und können auf eine große Anzahl von .NET-APIs (abhängig von der Version) zugreifen. .NET Standard 1.0-1.6 implementieren zunehmend größer werdenden Sätze von APIs, während .NET Standard 2.0 die beste Abdeckung der bereitstellt.
+- [**.NET standard-Bibliotheken** ](#Net_Standard) : .NET Standard-Projekte können implementieren den Code auf mehreren Plattformen gemeinsam verwendet werden, und können auf eine große Anzahl von .NET-APIs (abhängig von der Version) zugreifen. .NET Standard 1.0-1.6 implementieren progressiv größere Mengen von APIs, während .NET Standard 2.0 die beste Abdeckung, der die BCL (einschließlich der .NET APIs im Xamarin-apps) bereitstellt.
 - [**Freigegebene Projekte** ](#Shared_Projects) – verwenden Sie den Typ des freigegebenen Projekts, um Ihren Quellcode zu organisieren, und verwenden `#if` Compilerdirektiven erforderlich, um plattformspezifischen Anforderungen verwalten.
 - [**Portable Klassenbibliotheken** ](#Portable_Class_Libraries) (veraltet) – Portable Class Libraries (PCLs) können mehrere Plattformen mit einer gemeinsamen API-Oberfläche, und verwenden Sie Schnittstellen, um plattformspezifische Funktionalität bereitzustellen. PCLs sind in den neuesten Versionen von Visual Studio veraltet &ndash; verwenden Sie stattdessen .NET Standard.
 
