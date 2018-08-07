@@ -1,46 +1,46 @@
 ---
-title: Ressourcenverzeichnis
-description: Verwendung von XAML-Ressourcen sind Objekte, die freigegeben und wieder in der gesamten einer Xamarin.Forms-Anwendung verwendet werden können.
+title: Ressourcenverzeichnisse
+description: XAML-Ressourcen sind Objekte, die freigegeben und erneut in einer Xamarin.Forms-Anwendung verwendet werden können.
 ms.prod: xamarin
 ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/21/2018
-ms.openlocfilehash: c2e6a5624baba251061bcd324fcb849e3d95ebfd
-ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
+ms.openlocfilehash: d305de651f6e770d02ca35f5f8f8ffcf08424e28
+ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291034"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39573645"
 ---
-# <a name="resource-dictionaries"></a>Ressourcenverzeichnis
+# <a name="resource-dictionaries"></a>Ressourcenverzeichnisse
 
-_Verwendung von XAML-Ressourcen sind Definitionen der Objekte, die freigegeben und wieder in der gesamten einer Xamarin.Forms-Anwendung verwendet werden können._
+_XAML-Ressourcen sind Definitionen der Objekte, die gemeinsam genutzt und in einer Xamarin.Forms-Anwendung erneut verwendet werden können._
 
-Diese Ressourcenobjekte werden in einem Ressourcenwörterbuch gespeichert. Dieser Artikel beschreibt das Erstellen und Nutzen eines Ressourcenverzeichnisses und Ressourcenwörterbücher zusammenführen.
+Diese Ressourcenobjekte werden in einem Ressourcenverzeichnis gespeichert. Dieser Artikel beschreibt, wie das Erstellen und nutzen ein Ressourcenverzeichnis und Ressourcenverzeichnisse zusammenführen.
 
 ## <a name="overview"></a>Übersicht
 
-Ein [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) ist ein Repository für Ressourcen, die von einer Xamarin.Forms-Anwendung verwendet werden. Typische Ressourcen, die im rowsetcache eine `ResourceDictionary` enthalten [Stile](~/xamarin-forms/user-interface/styles/index.md), [Steuerelementvorlagen](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md), [Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md), Farben und Konverter.
+Ein [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) ist ein Repository für Ressourcen, die von einer Xamarin.Forms-Anwendung verwendet werden. Typische Ressourcen, die in gespeichert werden eine `ResourceDictionary` enthalten [Stile](~/xamarin-forms/user-interface/styles/index.md), [Steuerelementvorlagen](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md), [Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md), Farben und Typkonverter.
 
-In XAML wird in gespeicherten Ressourcen eine `ResourceDictionary` abgerufen und auf Elemente mit angewendet werden können die `StaticResource` Markuperweiterung. In c# können Ressourcen auch definiert werden eine `ResourceDictionary` abgerufen und auf Elemente mithilfe eines Indexers zeichenfolgenbasierte angewendet. Es ist jedoch kaum einen Vorteil mithilfe einer `ResourceDictionary` in C# geschrieben, da freigegebene Objekte einfach werden als Felder oder Eigenschaften gespeichert und können direkt ohne zugegriffen müssen zuerst diese abrufen aus einem Wörterbuch.
+In XAML, Ressourcen, die im rowsetcache eine `ResourceDictionary` abgerufen und mit Elementen angewendet werden können die `StaticResource` Markuperweiterung. In c# können Ressourcen auch definiert werden eine `ResourceDictionary` abgerufen und mithilfe eines Indexers zeichenfolgenbasierten auf Elemente angewendet. Es ist jedoch wenig Vorteil der Verwendung einer `ResourceDictionary` in c# wie freigegebene Objekte einfach als Felder oder Eigenschaften gespeichert, und aufgerufen werden können direkt ohne zuerst müssen sie abrufen aus einem Wörterbuch.
 
-## <a name="creating-and-consuming-a-resourcedictionary"></a>Erstellen und nutzen ein: "ResourceDictionary"
+## <a name="creating-and-consuming-a-resourcedictionary"></a>Erstellen und Nutzen von einem ResourceDictionary
 
-Ressourcen werden definiert, einem [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) , legen Sie anschließend auf einen der folgenden `Resources` Eigenschaften:
+Ressourcen werden definiert, einem [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) , legen Sie dann auf einen der folgenden `Resources` Eigenschaften:
 
-- Die [ `Resources` ](xref:Xamarin.Forms.Application.Resources) Eigenschaft einer Klasse, die abgeleitet [`Application`](xref:Xamarin.Forms.Application)
-- Die [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Eigenschaft einer Klasse, die abgeleitet [`VisualElement`](xref:Xamarin.Forms.Application)
+- Die [ `Resources` ](xref:Xamarin.Forms.Application.Resources) Eigenschaft jeder Klasse, die von abgeleitet ist. [`Application`](xref:Xamarin.Forms.Application)
+- Die [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Eigenschaft jeder Klasse, die von abgeleitet ist. [`VisualElement`](xref:Xamarin.Forms.Application)
 
-Ein Programm Xamarin.Forms enthält nur eine Klasse, abgeleitet wird `Application` jedoch häufig nutzt viele abgeleitete Klassen `VisualElement`, einschließlich Seiten, Layouts und Steuerelemente. Eines dieser Objekte aufweisen kann seine `Resources` -Eigenschaftensatz auf eine `ResourceDictionary`. Auswählen eines Speicherorts für eine bestimmte `ResourceDictionary` wirkt sich darauf aus, in dem die Ressourcen verwendet werden können:
+Eine Xamarin.Forms-Anwendung enthält nur eine abgeleitete Klasse `Application` aber häufig viele abgeleitete Klassen `VisualElement`, einschließlich Seiten, Layouts und Steuerelemente. Eines dieser Objekte haben die `Resources` -Eigenschaftensatz auf eine `ResourceDictionary`. Auswählen eines Speicherorts für eine bestimmte `ResourceDictionary` Auswirkungen, wo die Ressourcen verwendet werden können:
 
-- Ressourcen in einem `ResourceDictionary` , z. B. eine Sicht zugeordnet ist `Button` oder `Label` kann nur auf dieses bestimmte Objekt angewendet werden, damit diese nicht sehr hilfreich ist.
-- Ressourcen in einem `ResourceDictionary` zu einem Layout angefügt sind, z. B. `StackLayout` oder `Grid` auf das Layout und die untergeordneten Elemente des Layouts angewendet werden können.
-- Ressourcen in einem `ResourceDictionary` definiert auf der Seite Ebene auf der Seite und aller diesem untergeordneten Elemente angewendet werden kann.
-- Ressourcen in einem `ResourceDictionary` definierten Anwendungs-Ebene in der gesamten Anwendung angewendet werden kann.
+- Ressourcen in einem `ResourceDictionary` , z. B. eine Ansicht angefügt ist `Button` oder `Label` können nur auf dieses bestimmte Objekt angewendet werden, damit dies nicht sehr nützlich ist.
+- Ressourcen in einem `ResourceDictionary` zu einem Layout angefügt sind, z. B. `StackLayout` oder `Grid` auf das Layout und alle untergeordneten Elemente dieses Layout angewendet werden können.
+- Ressourcen in einem `ResourceDictionary` definiert auf der Seite auf der Seite und alle untergeordneten angewendet werden kann.
+- Ressourcen in einem `ResourceDictionary` definiert die Anwendung kann auf in der gesamten Anwendung angewendet werden.
 
-Der folgende XAML-Code zeigt die Ressourcen, die in der Anwendungsebene definierten `ResourceDictionary` in der **App.xaml** Datei, die als Teil der Xamarin.Forms Standardprogramm erstellt:
+Der folgende XAML zeigt die Ressourcen, die in der Anwendungsebene definiert `ResourceDictionary` in die **"App.xaml"** Datei, die als Teil der standardmäßigen Xamarin.Forms-Anwendung erstellt:
 
 ```xaml
 <Application ...>
@@ -59,9 +59,9 @@ Der folgende XAML-Code zeigt die Ressourcen, die in der Anwendungsebene definier
 </Application>
 ```
 
-Dies `ResourceDictionary` definiert drei [ `Color` ](xref:Xamarin.Forms.Color) Ressourcen und ein [ `Style` ](xref:Xamarin.Forms.Style) Ressource. Weitere Informationen zu den `App` Klasse, finden Sie unter [App-Klasse](~/xamarin-forms/app-fundamentals/application-class.md).
+Dies `ResourceDictionary` definiert drei [ `Color` ](xref:Xamarin.Forms.Color) Ressourcen und ein [ `Style` ](xref:Xamarin.Forms.Style) Ressource. Weitere Informationen zu den `App` Klasse, finden Sie unter [Anwendungsklasse](~/xamarin-forms/app-fundamentals/application-class.md).
 
-Ab Xamarin.Forms 3.0 wird das explizite `ResourceDictionary` Tags sind nicht erforderlich. Die `ResourceDictionary` Objekt wird automatisch erstellt, und Sie können die Ressourcen direkt zwischen Einfügen der `Resources` Property-Element Tags:
+Ab den expliziten Xamarin.Forms 3.0 `ResourceDictionary` Tags sind nicht erforderlich. Die `ResourceDictionary` Objekt wird automatisch erstellt, und Sie können die Ressourcen direkt zwischen Einfügen der `Resources` Eigenschaftenelement Tags:
 
 ```xaml
 <Application ...>
@@ -78,7 +78,7 @@ Ab Xamarin.Forms 3.0 wird das explizite `ResourceDictionary` Tags sind nicht erf
 </Application>
 ```
 
-Jede Ressource weist einen Schlüssel, der dem angegebenen unter Verwendung der `x:Key` -Attribut, das Wörterbuchschlüssel in wird die `ResourceDictionary`. Der Schlüssel wird zum Abrufen einer Ressource aus der `ResourceDictionary` durch die [ `StaticResource` ](xref:Xamarin.Forms.Xaml.StaticResourceExtension) Markuperweiterung, wie im folgenden Beispiel der Verwendung von XAML-Code veranschaulicht, die zusätzliche Ressourcen, die in definierten zeigt die `StackLayout`:
+Jede Ressource verfügt über einen Schlüssel, der angegebenen unter Verwendung der `x:Key` -Attribut, das es Wörterbuchschlüssel in wird die `ResourceDictionary`. Der Schlüssel dient zum Abrufen einer Ressource aus der `ResourceDictionary` durch die [ `StaticResource` ](xref:Xamarin.Forms.Xaml.StaticResourceExtension) Markuperweiterung, wie in den folgenden XAML-Codebeispiel wird veranschaulicht, die zusätzliche Ressourcen, die in definierten zeigt die `StackLayout`:
 
 ```xaml
 <StackLayout Margin="0,20,0,0">
@@ -106,16 +106,16 @@ Jede Ressource weist einen Schlüssel, der dem angegebenen unter Verwendung der 
 </StackLayout>
 ```
 
-Die erste [ `Label` ](xref:Xamarin.Forms.Label) Instanz abgerufen und verarbeitet die `LabelPageHeadingStyle` Ressource auf Anwendungsebene definierten `ResourceDictionary`, mit der zweiten `Label` -Instanz abrufen und Verarbeiten der `LabelNormalStyle`Ressource in der Steuerelementebene definierten `ResourceDictionary`. Auf ähnliche Weise die [ `Button` ](xref:Xamarin.Forms.Button) Instanz abgerufen und verarbeitet die `NormalTextColor` Ressource auf Anwendungsebene definierten `ResourceDictionary`, und die `MediumBoldText` Ressource in der Steuerelementebene definierten `ResourceDictionary`. Daraus ergibt sich die Darstellung in den folgenden Screenshots dargestellt:
+Die erste [ `Label` ](xref:Xamarin.Forms.Label) Instanz abruft und verarbeitet die `LabelPageHeadingStyle` Ressource auf Anwendungsebene definiert `ResourceDictionary`, mit dem zweiten `Label` Instanz abrufen und Verarbeiten der `LabelNormalStyle`in die Steuerungsebene definierte Ressource `ResourceDictionary`. Auf ähnliche Weise die [ `Button` ](xref:Xamarin.Forms.Button) Instanz abruft und verarbeitet die `NormalTextColor` Ressource auf Anwendungsebene definiert `ResourceDictionary`, und die `MediumBoldText` in die Steuerungsebene definierte Ressource `ResourceDictionary`. Dadurch wird die Darstellung, die in den folgenden Screenshots gezeigt:
 
-[![](resource-dictionaries-images/screenshots-sml.png ": \"ResourceDictionary\" Ressourcen verbrauchen")](resource-dictionaries-images/screenshots.png#lightbox ": \"ResourceDictionary\" Ressourcen zu verbrauchen.")
+[![](resource-dictionaries-images/screenshots-sml.png "Ressourcenverbrauch ResourceDictionary")](resource-dictionaries-images/screenshots.png#lightbox "ResourceDictionary-Ressourcen zu verbrauchen.")
 
 > [!NOTE]
-> Ressourcen, die auf einer einzelnen Seite beziehen darf nicht in einer Anwendung Ebene Ressourcenwörterbuch, daher enthalten sein, die Ressourcen dann beim Anwendungsstart anstelle von analysiert werden, wenn eine Seite erforderlich. Weitere Informationen finden Sie unter [verringern die Größe der Anwendung Ressource Wörterbuch](~/xamarin-forms/deploy-test/performance.md).
+> Ressourcen, die auf eine einzelne Seite spezifisch sind, darf nicht in einer Anwendung auf Ressourcenverzeichnis, daher enthalten sein, die Ressourcen dann beim Start der Anwendung nicht analysiert werden soll, bei einer Seite erforderlich. Weitere Informationen finden Sie unter [Reduzieren der Größe des Ressourcenverzeichnisses der Anwendung](~/xamarin-forms/deploy-test/performance.md).
 
 ## <a name="overriding-resources"></a>Ressourcen überschreiben
 
-Wenn `ResourceDictionary` Freigeben von Ressourcen `x:Key` Attributwerte, Ressourcen, die niedriger ist definiert in der Hierarchie anzeigen Vorrang vor den definierten höher einrichten. Z. B. die `PageBackgroundColor` Ressource `Blue` Ebene wird an die Anwendung von einer Seitenebene überschrieben werden `PageBackgroundColor` Ressource festgelegt werden, um `Yellow`. Auf ähnliche Weise eine Seitenebene `PageBackgroundColor` Ressource wird durch eine Steuerelementebene überschrieben werden `PageBackgroundColor` Ressource. Diese Priorität wird im folgenden Beispiel der Verwendung von XAML-Code veranschaulicht:
+Wenn `ResourceDictionary` Ressourcen freigeben `x:Key` Attributwerte niedriger in der Hierarchie von Inhaltsansichten definierte Ressourcen Vorrang vor den definierten höher einrichten. Beispiel: Wenn die `PageBackgroundColor` Ressource `Blue` Ebene wird in der Anwendung von einer Seitenebene überschrieben werden `PageBackgroundColor` Ressourcensatz, zu `Yellow`. Auf ähnliche Weise eine Seitenebene `PageBackgroundColor` Ressource wird von der Steuerungsebene überschrieben `PageBackgroundColor` Ressource. Diese Priorität wird im folgenden XAML-Codebeispiel veranschaulicht:
 
 ```xaml
 <ContentPage ... BackgroundColor="{StaticResource PageBackgroundColor}">
@@ -141,19 +141,19 @@ Wenn `ResourceDictionary` Freigeben von Ressourcen `x:Key` Attributwerte, Ressou
 </ContentPage>
 ```
 
-Die ursprüngliche `PageBackgroundColor` und `NormalTextColor` Instanzen, die auf der Anwendungsebene definierten codierungsangaben durch die `PageBackgroundColor` und `NormalTextColor` Instanzen auf Seitenebene definiert. Aus diesem Grund die Hintergrundfarbe wird Blau, und der Text auf der Seite wird Gelb, wie in den folgenden Screenshots veranschaulicht:
+Die ursprüngliche `PageBackgroundColor` und `NormalTextColor` Instanzen, die auf der Anwendungsebene definiert werden überschrieben, indem die `PageBackgroundColor` und `NormalTextColor` Instanzen auf Seitenebene definiert. Aus diesem Grund die Hintergrundfarbe ist Blau, und der Text auf der Seite wird Gelb, wie in den folgenden Screenshots veranschaulicht:
 
-[![](resource-dictionaries-images/overridding-screenshots-sml.png "Überschreiben: \"ResourceDictionary\" Ressourcen")](resource-dictionaries-images/overridding-screenshots.png#lightbox ": \"ResourceDictionary\" Ressourcen überschreiben")
+[![](resource-dictionaries-images/overridding-screenshots-sml.png "Überschreiben ResourceDictionary Ressourcen")](resource-dictionaries-images/overridding-screenshots.png#lightbox "ResourceDictionary Ressourcen überschreiben")
 
-Beachten Sie jedoch, dass der Hintergrund der Statusleiste des der [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) weiterhin Gelb ist, da die [ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor) auf den Wert der Eigenschaft festgelegt ist die `PageBackgroundColor` Ressource in der Anwendung definiert Ebene `ResourceDictionary`.
+Beachten Sie jedoch, dass der Hintergrund-Leiste des der [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) weiterhin Gelb ist, da die [ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor) -Eigenschaftensatz auf den Wert des der `PageBackgroundColor` Ressource, die in der Anwendung definiert Ebene `ResourceDictionary`.
 
-Dies ist eine andere Methode im Wesentlichen `ResourceDictionary` Rangfolge: bei der Verwendung von XAML-Parser erkennt eine `StaticResource`, es nach einem übereinstimmenden Schlüssel gesucht, indem Wegstrecke einrichten, über die visuelle Struktur, mit der ersten Übereinstimmung findet. Wenn diese Suche auf der Seite beendet, und der Schlüssel können weiterhin wurde nicht gefunden wurde, sucht der XAML-Parser die `ResourceDictionary` angefügt, um die `App` Objekt. Wenn der Schlüssel nicht gefunden wird, wird eine Ausnahme ausgelöst.
+Hier ist eine andere Möglichkeit, sich vorzustellen `ResourceDictionary` Vorrang vor: Wenn die XAML-Parser erkennt eine `StaticResource`, es sucht nach einem übereinstimmenden Schlüssel, indem Sie sich über die visuelle Struktur zurücklegen, die erste Übereinstimmung findet. Wenn es sich bei dieser Suche wird beendet, auf der Seite, und der Schlüssel können weiterhin wurde nicht gefunden wurde, sucht der XAML-Parser die `ResourceDictionary` angefügt, um die `App` Objekt. Wenn der Schlüssel nicht gefunden wird, wird eine Ausnahme ausgelöst.
 
-## <a name="stand-alone-resource-dictionaries"></a>Eigenständige Ressourcenverzeichnis
+## <a name="stand-alone-resource-dictionaries"></a>Eigenständige Ressourcenverzeichnisse
 
-Eine abgeleitete Klasse `ResourceDictionary` kann auch in einer separaten eigenständige Datei sein. (Genauer gesagt, einer abgeleiteten Klasse `ResourceDictionary` in der Regel erfordert eine _Paar_ von Dateien, da die Ressourcen in einer XAML-Datei jedoch einen Code-Behind-Datei mit definiert sind ein `InitializeComponent` Aufruf ist auch erforderlich.) Die resultierende Datei kann dann zwischen Anwendungen freigegeben werden.
+Eine abgeleitete Klasse `ResourceDictionary` kann auch in einer separaten eigenständigen Datei sein. (Genauer gesagt, eine Klasse, die von abgeleiteten `ResourceDictionary` erfordert normalerweise, dass eine _Paar_ von Dateien, da die Ressourcen in einer XAML-Datei, aber mit einer CodeBehind-Datei definiert sind ein `InitializeComponent` Aufruf ist ebenfalls erforderlich.) Die resultierende Datei kann für Anwendungen genutzt werden.
 
-Um eine solche Datei zu erstellen, fügen Sie einen neuen **Inhaltsansicht** oder **Inhaltsseite** Element aus, um das Projekt (aber keine **Inhaltsansicht** oder **Inhaltsseite** mit nur eine C#-Datei). Ändern Sie im XAML-Datei und in C#-Datei den Namen der Basisklasse aus `ContentView` oder `ContentPage` auf `ResourceDictionary`. In der XAML-Datei ist der Name der Basisklasse Element der obersten Ebene.
+Um eine solche Datei zu erstellen, fügen Sie ein neues **Ansicht "Inhalt"** oder **Inhaltsseite** Elements zum Projekt (aber keine **Ansicht "Inhalt"** oder **Inhaltsseite** mit nur eine C#-Datei). Ändern Sie in der XAML-Datei und c#-Datei, den Namen der Basisklasse aus `ContentView` oder `ContentPage` zu `ResourceDictionary`. In der XAML-Datei ist der Name der Basisklasse Element der obersten Ebene.
 
 Das folgende XAML-Beispiel zeigt eine [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) mit dem Namen `MyResourceDictionary`:
 
@@ -180,7 +180,7 @@ Das folgende XAML-Beispiel zeigt eine [ `ResourceDictionary` ](xref:Xamarin.Form
 
 Dies `ResourceDictionary` enthält eine einzelne Ressource, die ein Objekt des Typs ist `DataTemplate`.
 
-Instanziieren Sie `MyResourceDictionary` verlegen zwischen einem Knotenpaar `Resources` Property-Element tags, z. B. einem `ContentPage`:
+Instanziieren Sie `MyResourceDictionary` Wenn man diese Anwendungen zwischen einem Paar von `Resources` Eigenschaftenelement tags, z. B. einem `ContentPage`:
 
 ```xaml
 <ContentPage ...>
@@ -191,20 +191,20 @@ Instanziieren Sie `MyResourceDictionary` verlegen zwischen einem Knotenpaar `Res
 </ContentPage>
 ```
 
-Eine Instanz von `MyResourceDictionary` festgelegt ist, um die `Resources` Eigenschaft der `ContentPage` Objekt.
+Eine Instanz von `MyResourceDictionary` nastaven NA hodnotu der `Resources` Eigenschaft der `ContentPage` Objekt.
 
-Dieser Ansatz hat jedoch einige Einschränkungen: die `Resources` Eigenschaft von der `ContentPage` verweist auf nur diese eine `ResourceDictionary`. In den meisten Fällen möchten Sie die Möglichkeit, einschließlich anderer `ResourceDictionary` Instanzen und vielleicht andere Ressourcen ebenfalls.
+Dieser Ansatz hat jedoch einige Einschränkungen: der `Resources` Eigenschaft der `ContentPage` verweist auf nur diese eine `ResourceDictionary`. In den meisten Fällen soll die Möglichkeit, einschließlich anderer `ResourceDictionary` Instanzen und möglicherweise andere Ressourcen als auch.
 
-Diese Aufgabe erfordert zusammengeführter Ressourcenwörterbücher.
+Diese Aufgabe erfordert zusammengeführte Ressourcenwörterbücher.
 
 ## <a name="merged-resource-dictionaries"></a>Zusammengeführte Ressourcenwörterbücher
 
-Zusammengeführter Ressourcenwörterbücher kombinieren, eine oder mehrere `ResourceDictionary` Instanzen in eine andere `ResourceDictionary`. Hierzu können Sie in einer XAML-Datei durch Festlegen der [ `MergedDictionaries` ](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) Eigenschaft, um eine oder mehrere Ressourcenverzeichnis, die in der Anwendung, die Seite oder die Steuerungsebene zusammengeführt werden `ResourceDictionary`.
+Zusammengeführte Ressourcenwörterbücher kombinieren, eine oder mehrere `ResourceDictionary` Instanzen in eine andere `ResourceDictionary`. Sie können dazu in einer XAML-Datei durch Festlegen der [ `MergedDictionaries` ](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) Eigenschaft, um eine oder mehrere Ressourcenverzeichnisse, die in der Anwendung, die Seite oder die Steuerungsebene zusammengeführt werden `ResourceDictionary`.
 
 > [!IMPORTANT]
-> `ResourceDictionary` definiert auch einen [ `MergedWith` ](xref:Xamarin.Forms.ResourceDictionary.MergedWith) Eigenschaft. Verwenden Sie diese Eigenschaft nicht. Es ist zum Zeitpunkt der Xamarin.Forms 3.0 veraltet.
+> `ResourceDictionary` definiert auch eine [ `MergedWith` ](xref:Xamarin.Forms.ResourceDictionary.MergedWith) Eigenschaft. Verwenden Sie diese Eigenschaft nicht. Es wurde seit Xamarin.Forms 3.0 als veraltet markiert.
 
-Und die Instanz des `MyResourceDictionary` können in jeder Anwendung, die Seite oder die Steuerungsebene zusammengeführt werden `ResourceDictionary`. Im folgenden Codebeispiel wird für XAML wird eine Seitenebene zusammengeführt wird `ResourceDictionary` mithilfe der `MergedDictionaries` Eigenschaft:
+Eine Instanz von `MyResourceDictionary` zusammengeführt werden können, in Anwendungen, Seite oder Steuerungsebene `ResourceDictionary`. Im folgende XAML-Codebeispiel in eine auf Seitenebene gemergt wird `ResourceDictionary` mithilfe der `MergedDictionaries` Eigenschaft:
 
 ```xaml
 <ContentPage ...>
@@ -219,7 +219,7 @@ Und die Instanz des `MyResourceDictionary` können in jeder Anwendung, die Seite
 </ContentPage>
 ```
 
-Das Markup zeigt nur eine Instanz von `MyResourceDictionary` hinzugefügte der `ResourceDictionary` , aber Sie können auch andere verweisen `ResourceDictionary` Instanzen innerhalb der `MergedDictionary` Property-Element Tags und andere Ressourcen außerhalb dieser Tags:
+Dieses Markup zeigt nur eine Instanz der `MyResourceDictionary` hinzugefügt wird die `ResourceDictionary` , aber Sie können auch andere verweisen `ResourceDictionary` Instanzen innerhalb der `MergedDictionary` Eigenschaftenelement Tags und andere Ressourcen außerhalb dieser Tags:
 
 ```xaml
 <ContentPage ...>
@@ -246,20 +246,20 @@ Das Markup zeigt nur eine Instanz von `MyResourceDictionary` hinzugefügte der `
 </ContentPage>
 ```
 
-Es kann nur eine `MergedDictionaries` im Abschnitt eine `ResourceDictionary`, aber Sie können beliebig viele ablegen `ResourceDictionary` Instanzen vorhanden, wie gewünscht.
+Es kann nur eine `MergedDictionaries` im Abschnitt eine `ResourceDictionary`, Sie können jedoch so viele `ResourceDictionary` Instanzen vorhanden, wie Sie möchten.
 
-Beim Zusammenführen der [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) Freigeben von Ressourcen identisch `x:Key` Attributwerte Xamarin.Forms verwendet die folgenden Ressourcen Vorrang vor:
+Beim Zusammenführen der [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) Freigeben von Ressourcen identisch `x:Key` Attributwerte, Xamarin.Forms verwendet die folgende Ressource Rangfolge:
 
-1. Die Ressourcen, die lokal auf das Ressourcenwörterbuch.
-1. Die Ressourcen in das Ressourcenwörterbuch, die zusammengeführt wurde über das veraltete [ `MergedWith` ](xref:Xamarin.Forms.ResourceDictionary.MergedWith) Eigenschaft.
-1. Die Ressourcen in die Ressourcenwörterbücher, die über zusammengeführt wurden die `MergedDictionaries` Auflistung, in der sie, in aufgelistet sind umgekehrter Reihenfolge der `MergedDictionaries` Eigenschaft.
+1. Die Ressourcen, die lokal auf das Ressourcenverzeichnis.
+1. Die Ressourcen im Ressourcenverzeichnis, die zusammengeführt wurde über die veraltete [ `MergedWith` ](xref:Xamarin.Forms.ResourceDictionary.MergedWith) Eigenschaft.
+1. Die Ressourcen in die Ressourcenverzeichnisse, die über zusammengeführt wurden die `MergedDictionaries` Auflistung, in der umgekehrten Reihenfolge sie in finden der `MergedDictionaries` Eigenschaft.
 
 > [!NOTE]
-> Ressourcenverzeichnis suchen kann einen rechenintensiven Vorgang sein, wenn eine Anwendung mehrere enthält große Ressourcenwörterbücher. Vermeiden Sie unnötige Suchläufe, sollten Sie daher sicherstellen, dass jede Seite in einer Anwendung nur Ressourcenverzeichnis verwendet, die auf der Seite "geeignet sind.
+> Ressourcenverzeichnisse suchen kann eine rechenintensive Aufgabe sein, wenn eine Anwendung mehrere enthält große Ressourcenwörterbücher. Um zu vermeiden, unnötige Suchläufe, sollten Sie daher sicherstellen, dass jede Seite in einer Anwendung nur Ressourcenverzeichnisse verwendet, die auf der Seite geeignet sind.
 
 ## <a name="merging-dictionaries-in-xamarinforms-30"></a>Das Zusammenführen von Wörterbüchern in Xamarin.Forms 3.0
 
-Beginnend mit Xamarin.Forms 3.0, den Prozess der Zusammenführung von [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) Instanzen geworden ist etwas einfacher und flexibler. Die `MergedDictionaries` Property-Element Tags sind nicht mehr erforderlich. Stattdessen Sie auf das Ressourcenwörterbuch Weitere hinzufügen `ResourceDictionary` Tag mit dem neuen [ `Source` ](xref:Xamarin.Forms.ResourceDictionary.Source) -Eigenschaft auf den Dateinamen der Verwendung von XAML-Datei mit den Ressourcen festgelegt:
+Beginnend mit Xamarin.Forms 3.0, Zusammenführen von [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) Instanzen ist etwas einfacher und flexibler geworden. Die `MergedDictionaries` Eigenschaftenelement Tags werden nicht mehr benötigt. Stattdessen, Sie fügen Sie in das Ressourcenverzeichnis ein weiteres `ResourceDictionary` Tag mit dem neuen [ `Source` ](xref:Xamarin.Forms.ResourceDictionary.Source) -Eigenschaft auf den Dateinamen der XAML-Datei mit den Ressourcen:
 
 ```xaml
 <ContentPage ...>
@@ -278,7 +278,7 @@ Beginnend mit Xamarin.Forms 3.0, den Prozess der Zusammenführung von [ `Resourc
 </ContentPage>
 ```
 
-Da Xamarin.Forms 3.0 automatisch instanziiert die `ResourceDictionary`, diese beiden äußeren `ResourceDictionary` Tags nicht mehr erforderlich sind:
+Da Xamarin.Forms 3.0 automatisch instanziiert die `ResourceDictionary`, diese beiden äußeren `ResourceDictionary` Tags sind nicht mehr erforderlich:
 
 ```xaml
 <ContentPage ...>
@@ -299,10 +299,10 @@ Dieser neuen Syntax ist _nicht_ Instanziieren der `MyResourceDictionary` Klasse.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wird erläutert, wie erstellen und nutzen einen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), und wie Ressourcenverzeichnis zusammengeführt. Ein `ResourceDictionary` können Ressourcen in einem zentralen Ort definiert und wieder in der gesamten einer Xamarin.Forms-Anwendung verwendet werden.
+In diesem Artikel wurde erläutert, wie das Erstellen und nutzen einen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), und wie Ressourcenverzeichnisse zusammengeführt. Ein `ResourceDictionary` können Ressourcen in einem zentralen Ort definiert und in einer Xamarin.Forms-Anwendung erneut verwendet werden.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Ressourcenverzeichnis (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/xaml/resourcedictionaries/)
+- [Ressourcenverzeichnisse (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/xaml/resourcedictionaries/)
 - [Stile](~/xamarin-forms/user-interface/styles/index.md)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
