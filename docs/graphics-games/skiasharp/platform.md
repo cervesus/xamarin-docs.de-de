@@ -1,23 +1,24 @@
 ---
-title: SkiaSharp plattformspezifischen Hinweise
-description: Dieses Dokument beschreibt die Clientplattform-spezifische relevante Details zu SkiaSharp. Es enthält Beispielcode für iOS-, Android-, Mac OS, Windows und Xamarin.Forms.
+title: SkiaSharp-Plattform-spezifische Notizen
+description: Dieses Dokument beschreibt die plattformspezifischen Details für SkiaSharp relevant. Er enthält Beispielcode für iOS, Android, MacOS, Windows und Xamarin.Forms.
 ms.prod: xamarin
+ms.techonology: xamarin-skiasharp
 ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: bcec8f2c850396f45cba795555b924d3cbc4ef22
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 05c6ae6553a2e869b9eb7e038abd7b1c34350551
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783528"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615807"
 ---
-# <a name="skiasharp-platform-specific-notes"></a>SkiaSharp plattformspezifischen Hinweise
+# <a name="skiasharp-platform-specific-notes"></a>SkiaSharp-Plattform-spezifische Notizen
 
-Die folgenden Beispielen weisen der Image-Spaltenpuffern manuell, ist dies ein allgemeines Muster für die Plattform veranschaulichen dies in einem vorhandenen RBGA Puffer, die von der Plattform bereitgestellten gezeichnet werden soll.
+Die folgenden Beispielen weisen Sie manuell die Image-Spaltenpuffern, dies geschieht, um ein allgemeines Muster für die Plattform zu veranschaulichen, der zum Zeichnen in einem vorhandenen RBGA-Puffer, die von der Plattform bereitgestellt wird.
 
-Sie müssen nicht dieses Technik verwenden, wenn Sie nicht möchten.  Es ist eine Überladung, die erstellt und dem Sicherungsspeicher für das Bild für Sie verwaltet.
+Sie müssen nicht diese Sprache verwenden, wenn Sie nicht möchten.  Es gibt eine Überladung, die erstellt und den Hintergrundspeicher für Ihr Image für Sie verwaltet.
 
 ## <a name="ios"></a>iOS
 
@@ -118,8 +119,8 @@ using (var bitmap = new Bitmap(width, height, PixelFormat.Format32bppPArgb)) {
 
 ## <a name="xamarinforms"></a>Xamarin.Forms
 
-Ihre Xamarin.Forms SkiaSharp einschließt Anwendungen finden Sie im Handbuch [verwenden SkiaSharp in Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
+Hinzufügen von SkiaSharp in Ihrer Xamarin.Forms Anwendungen finden Sie im Handbuch [mithilfe von SkiaSharp in Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp iOS Arbeitsmappe](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)
+- [SkiaSharp-iOS-Arbeitsmappe](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)

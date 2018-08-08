@@ -1,32 +1,32 @@
 ---
 title: Polylinien und parametrische Formeln
-description: In diesem Artikel wird erläutert, wie SkiaSharp verwenden, um eine beliebige Zeile Rendern Sie parametrische Formeln definieren können, und dies mit Beispielcode veranschaulicht.
+description: In diesem Artikel erläutert die Vorgehensweise zum Verwenden von SkiaSharp zum Rendern jeder Zeile mit parametrische Formeln zum definieren, und dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9539a21b7dbc91da63795639610886233ed705be
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 9118ca8e23e4c4a9023a1add89e26c4484979c8f
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245308"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615794"
 ---
 # <a name="polylines-and-parametric-equations"></a>Polylinien und parametrische Formeln
 
-_Verwenden Sie SkiaSharp, um eine beliebige Zeile zu rendern, die können Sie mit parametrische Formeln definieren_
+_Verwenden von SkiaSharp zum Rendern jeder Zeile, die Sie mit parametrische Formeln definieren können_
 
-In einem späteren Abschnitt dieses Handbuchs, sehen Sie die verschiedenen Methoden, die `SKPath` definiert werden, um bestimmte Arten von Kurven zu rendern. Allerdings ist es manchmal notwendig, einen Typ der Kurve zu zeichnen, die nicht direkt vom unterstützt `SKPath`. In einem solchen Fall können Sie jede Kurve gezeichnet werden soll, die Sie, mathematisch definieren können Polylinie (eine Sammlung von miteinander verbundenen Linien) verwenden. Wenn Sie die Zeilen klein genug und zahlreiche reicht das Ergebnis wie folgt eine Kurve sieht. Diese Spirale ist tatsächlich 3.600 wenig Zeilen:
+In einem späteren Teil dieses Handbuchs, sehen Sie die verschiedenen Methoden, die `SKPath` definiert werden, um bestimmte Arten von Kurven zu rendern. Allerdings ist es manchmal notwendig, einen Typ der Kurve zu zeichnen, die direkt von nicht unterstützt wird `SKPath`. In diesem Fall können Sie jede Kurve zu zeichnen, die Sie, mathematisch definieren können eine Polylinie (eine Sammlung von miteinander verbundenen Linien) verwenden. Wenn Sie die Zeilen klein und zahlreiche reicht das Ergebnis wie eine Kurve sieht. Diese Spirale ist tatsächlich 3.600 wenig Zeilen:
 
 ![](polylines-images/spiralexample.png "Eine Spirale")
 
-Im Allgemeinen ist es am besten, eine Kurve in Bezug auf ein Paar von Gleichungen parametrische definieren. Dies sind Formeln für X und Y, die Koordinaten eine dritte Variable bezeichnet hängen `t` Zeit. Die folgenden parametrischen Formeln definieren z. B. einen Kreis mit dem Radius 1 zentriert, an dem Punkt (0, 0) für *t* von 0 bis 1:
+Im Allgemeinen empfiehlt es sich um eine Kurve in Bezug auf ein Paar von parametrische Formeln zu definieren. Hierbei handelt es sich um Gleichungen, für die X- und Y, die koordiniert eine dritte Variable bezeichnet hängen `t` Zeit. Die folgenden parametrischen Formeln definieren z. B. einen Kreis mit einem Radius von 1, zentriert am Punkt (0, 0) für *t* von 0 bis 1:
 
- X = y cos(2πt) = sin(2πt)
+ X = cos(2πt) y = sin(2πt)
 
- Wenn Sie einen Radius verwenden möchten, die größer als 1, können Sie einfach die Sinus- und Kosinuswert Werte Multiplizieren mit diesem Radius und Sie ggf. die Mitte an einen anderen Speicherort verschieben, fügen Sie diese Werte hinzu:
+ Wenn Sie einen Radius verwenden möchten, die größer als 1, können Sie einfach den Sinus und Cosinus Werte Multiplizieren mit, Radius und wenn Sie die Mitte an einen anderen Speicherort verschieben möchten, fügen diese Werte:
 
  X = xCenter + radius·cos(2πt) y = yCenter + radius·sin(2πt)
 
@@ -34,7 +34,7 @@ Für eine Ellipse mit der horizontalen und vertikalen Achsen Parallel sind zwei 
 
 X = xCenter + xRadius·cos(2πt) y = yCenter + yRadius·sin(2πt)
 
-Sie können dann den entsprechenden SkiaSharp Code einfügen, die in einer Schleife, die die verschiedenen Punkte berechnet, und fügt diese an einen Pfad. Der folgende SkiaSharp Code erstellt ein `SKPath` Objekt für eine Ellipse, die die Anzeigeoberfläche ausfüllt. Die Schleife durchläuft die 360 Grad direkt aus. Das Center wird die Hälfte der Breite und Höhe der Anzeigeoberfläche und deshalb zwei Radien:
+Sie können dann den entsprechenden SkiaSharp-Code in einer Schleife einfügen, die die verschiedenen Punkte berechnet, und fügt diese in einen Pfad. Der folgende SkiaSharp-Code erstellt ein `SKPath` -Objekt für eine Ellipse, die die Anzeigeoberfläche ausfüllt. Die Schleife durchläuft die 360 Grad direkt aus. Das Center ist die Hälfte der Breite und Höhe der Anzeigeoberfläche und deshalb die zwei Radien:
 
 ```csharp
 SKPath path = new SKPath();
@@ -57,11 +57,11 @@ for (float angle = 0; angle < 360; angle += 1)
 path.Close();
 ```
 
-Dies führt zu einer Ellipse, die durch 360 wenig Zeilen definiert. Wenn er gerendert wurde, wird diese smooth angezeigt.
+Dies führt zu einer Ellipse, die durch 360 kleine Linien definiert. Wenn er gerendert wurde, wird es smooth angezeigt.
 
-Natürlich, Sie erstellen eine Ellipse, die eine Polylinie verwenden, da müssen `SKPath` enthält eine `AddOval` Methode, die es für Sie erledigt. Allerdings sollten Sie ein visuelles Objekt gezeichnet werden soll, die nicht von `SKPath`.
+Natürlich, Sie müssen nicht erstellen Sie eine Ellipse mit einem Polyline-Objekt, da `SKPath` enthält ein `AddOval` -Methode, die es für Sie übernimmt. Jedoch empfiehlt es sich um ein visuelles Objekt zu zeichnen, die nicht zur Verfügung `SKPath`.
 
-Die **Archimedean Spirale** verfügt über Code, ähnlich dem Ellipse Code jedoch einen wichtigen Unterschied. Es führt eine Schleife 360 Grad des Kreises 10-Mal fortlaufend Radius anpassen:
+Die **Archimedean Spirale** verfügt über Code, ähnlich wie der Ellipse-Code, aber mit einem bedeutsamen Unterschied. Es führt eine Schleife der 360 Grad des Kreises 10-Mal fortlaufend Anpassen des Radius:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -107,11 +107,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Das Ergebnis wird auch bezeichnet ein *arithmetische Spirale* , da das Offset zwischen jeder Schleife konstant ist:
+Das Ergebnis ist die Abkürzung ein *arithmetische Spirale* , da die Abweichung zwischen dem foreach-Schleife konstant ist:
 
-[![](polylines-images/archimedeanspiral-small.png "Dreifacher Screenshot der Seite Archimedean Spirale")](polylines-images/archimedeanspiral-large.png#lightbox "dreifacher Screenshot der Seite Archimedean Spirale")
+[![](polylines-images/archimedeanspiral-small.png "Dreifacher Screenshot der Seite Archimedean Spirale")](polylines-images/archimedeanspiral-large.png#lightbox "dreifachen Screenshot der Seite Archimedean Spirale")
 
-Beachten Sie, dass die `SKPath` wird erstellt, einem `using` Block. Dies `SKPath` benötigt mehr Arbeitsspeicher als die `SKPath` Objekte in den vorherigen Programmen, die anzeigt, die eine `using` Block ist besser geeignet ist, nicht verwalteten Ressourcen freizugeben.
+Beachten Sie, dass die `SKPath` wird erstellt, einem `using` Block. Dies `SKPath` belegt mehr Arbeitsspeicher als die `SKPath` Objekte in der vorherigen Programme, die deutet auf eine `using` Block ist besser geeignet ist, nicht verwalteten Ressourcen freizugeben.
 
 
 ## <a name="related-links"></a>Verwandte Links

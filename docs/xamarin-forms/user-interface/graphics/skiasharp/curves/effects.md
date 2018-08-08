@@ -1,57 +1,57 @@
 ---
-title: Pfad Effekte in SkiaSharp
-description: Dieser Artikel beschreibt die verschiedenen SkiaSharp Pfad Auswirkungen, die Pfade verwendet werden, für die Kontur zuweisen und ausfüllen wird dies mit Beispielcode veranschaulicht.
+title: SkiaSharp-Effekten Pfad
+description: Dieser Artikel erläutert die unterschiedlichen SkiaSharp-Pfad-Effekte, mit denen Pfade für die Kontur zuweisen, und füllen Sie verwendet werden soll, und dies mit Beispielcode wird veranschaulicht.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 2071a2fb140d0e9c78d4c86d6aa70d3606dc1f98
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 28f628fb4e8ab77e9c36e6e1972d7269ad0dad4d
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244109"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615677"
 ---
-# <a name="path-effects-in-skiasharp"></a>Pfad Effekte in SkiaSharp
+# <a name="path-effects-in-skiasharp"></a>SkiaSharp-Effekten Pfad
 
-_Ermitteln der verschiedenen Pfad Auswirkungen, mit die Pfade für Kontur zuweisen und ausfüllen verwendet werden können_
+_Ermitteln Sie die verschiedenen pfadeffekte, mit die Pfade für die Kontur zuweisen, und füllen Sie verwendet werden können_
 
-Ein *Pfad Auswirkungen* ist eine Instanz der [ `SKPathEffect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathEffect/) -Klasse, die mit einer der acht statischen erstellt wird `Create` Methoden. Die `SKPathEffect` Objekt legen Sie dann auf die [ `PathEffect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.PathEffect/) Eigenschaft ein `SKPaint` Objekt für eine Vielzahl von interessante Effekte Kontur eine Zeile mit einem kleinen replizierten Pfad zuweisen:
+Ein *Pfad Auswirkungen* ist eine Instanz der [ `SKPathEffect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathEffect/) -Klasse, die mit einem der acht statischen erstellt wird `Create` Methoden. Die `SKPathEffect` Objekt legen Sie dann auf die [ `PathEffect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.PathEffect/) Eigenschaft eine `SKPaint` Kontur Zuweisen einer Zeile mit einem kleinen replizierte Pfad-Objekt für eine Vielzahl von interessante Effekte, z.B.:
 
 ![](effects-images/patheffectsample.png "Das verknüpfte Kette-Beispiel")
 
-Pfad Effekte können Sie:
+Pfadeffekte können Sie:
 
 - Zeichnen Sie eine Zeile mit Punkte und Bindestriche enthalten
-- Zeichnen Sie eine Zeile mit jeder gefüllte Pfad
-- Füllen Sie einen Bereich mit schraffierte Linien
-- Füllen Sie einen Bereich mit einer unterteilten Pfad
+- Zeichnen Sie eine Zeile mit einen ausgefüllten Pfad
+- Geben Sie einen Bereich mit schraffurlinien
+- Geben Sie einen Bereich mit einem gekachelten Pfad
 - Stellen Sie spitze Ecken gerundet
-- Hinzufügen von zufälligen "jitter" Linien und Kurven
+- Hinzufügen von zufälligen "jitter", Linien und Kurven
 
-Darüber hinaus können Sie zwei oder mehr Pfad Effekte kombinieren.
+Darüber hinaus können Sie zwei oder mehr pfadeffekte kombinieren.
 
-In diesem Artikel auch veranschaulicht, wie die `GetFillPath` Methode `SKPaint` auf einen Pfad in einen anderen Pfad zu konvertieren, indem Sie Eigenschaften anwenden `SKPaint`, einschließlich `StrokeWidth` und `PathEffect`. Dies führt dazu, dass einige interessanten Techniken, wie das Abrufen von einem Pfad, der einen Überblick über einen anderen Pfad ist. `GetFillPath` ist auch hilfreich, im Zusammenhang mit Pfad Auswirkungen.
+In diesem Artikel auch veranschaulicht, wie die `GetFillPath` -Methode der `SKPaint` auf einen Pfad in einen anderen Pfad zu konvertieren, indem Sie die Anwendung von Eigenschaften des `SKPaint`, einschließlich `StrokeWidth` und `PathEffect`. Dies führt dazu, dass einige interessante Techniken, wie das Abrufen von einem Pfad, der einen Überblick über einen anderen Pfad ist. `GetFillPath` ist auch im Zusammenhang mit pfadeffekte hilfreich.
 
 ## <a name="dots-and-dashes"></a>Punkte und Bindestriche enthalten
 
-Die Verwendung der [ `PathEffect.CreateDash` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDash/p/System.Single[]/System.Single/) Methode wurde im Artikel beschriebenen [ **Punkte und Bindestriche**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md). Das erste Argument der Methode ist ein Array, eine gerade Anzahl von zwei oder mehr Werte, die abwechselnd Längen der Striche und Längen von Lücken zwischen der Bindestriche enthält:
+Die Verwendung der [ `PathEffect.CreateDash` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDash/p/System.Single[]/System.Single/) Methode wurde in diesem Artikel beschriebenen [ **Punkte und Gedankenstriche**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md). Das erste Argument der Methode ist ein Array, das eine gerade Anzahl von zwei oder mehr Werte, die abwechselnd Längen der Striche und Längen der Lücken zwischen der Bindestriche enthält:
 
 ```csharp
 public static SKPathEffect CreateDash (Single[] intervals, Single phase)
 ```
 
-Diese Werte sind *nicht* relativ zu die Konturbreite. Wenn die Strichbreite 10 ist, und Sie eine Linie quadratische Striche und Lücken quadratische besteht möchten, z. B. Festlegen der `intervals` array in {10, 10}. Die `phase` Argument gibt an, wo innerhalb des Strichmusters Zeile beginnt. Wenn Sie die Zeile mit dem die quadratische Lücke begonnen werden soll, legen Sie in diesem Beispiel `phase` auf 10.
+Diese Werte sind *nicht* Bezug auf die Strichbreite. Wenn die Strichbreite 10 ist, und eine Linie quadratischen Striche und quadratische Lücken bestehen möchten, z. B. Legen Sie die `intervals` array an {10, 10}. Die `phase` Argument gibt an, innerhalb des Strichmusters, an dem die Zeile beginnt. Wenn die Zeile mit dem die quadratischen Differenz begonnen werden soll, legen Sie in diesem Beispiel `phase` auf 10.
 
-Die Enden der betroffen sind der `StrokeCap` Eigenschaft `SKPaint`. Für Breite Strich Breiten, es ist üblich, zum Festlegen dieser Eigenschaft `SKStrokeCap.Round` gerundet wird, am Ende der Bindestriche. In diesem Fall werden die Werte in der `intervals` Array stimmen *nicht* enthalten die zusätzliche Länge durch die Rundung Dies bedeutet, dass ein zirkulärer Punkt erfordert die Angabe einer Breite von 0 (null). Verwenden Sie für eine Strichbreite von 10, zum Erstellen einer Zeile mit zirkuläre Punkte und Lücken zwischen den Punkten von der gleichen Durchmesser ein `intervals` Array von {0, 20}.
+Die Enden der betroffen sind der `StrokeCap` Eigenschaft `SKPaint`. Für große Stroke Breiten, es kommt sehr häufig zum Festlegen dieser Eigenschaft auf `SKStrokeCap.Round` die Enden der gerundet. In diesem Fall die Werte in der `intervals` Array *nicht* enthalten die zusätzliche Länge durch die Rundung, was bedeutet, dass ein zirkulärer Punkt erfordert die Angabe einer Breite von 0 (null). Verwenden Sie für eine Strichbreite von 10, um eine Zeile mit zirkuläre Punkte und Lücken zwischen den Rasterpunkten angibt, der den gleichen Durchmesser zu erstellen, eine `intervals` Array von {0, 20}.
 
-Die **gepunktet Text animiert** Seite ähnelt der **beschriebenen Text** Seite, die im Artikel beschriebenen [ **Integrieren von Text und Grafiken** ](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md) in Es zeigt beschriebenen Textzeichen durch Festlegen der `Style` Eigenschaft von der `SKPaint` -Objekt `SKPaintStyle.Stroke`. Darüber hinaus **gepunktet Text animiert** verwendet `SKPathEffect.CreateDash` erteilen kann dies eine punktierte Darstellung und das Programm auch eine Animation der `phase` Argument die `SKPathEffect.CreateDash` Methode, um die Punkte scheinen Reisen den Textqualifizierer eingeschlossen, Zeichen. So sieht die Seite im Querformat:
+Die **gepunktet Text animiert** Seite ähnelt der **von Text mit Kontur** Seite, die in diesem Artikel beschriebenen [ **die Integration von Text und Grafiken** ](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md) in Es zeigt Textzeichen beschrieben, durch Festlegen der `Style` Eigenschaft der `SKPaint` -Objekt `SKPaintStyle.Stroke`. Darüber hinaus **gepunktet Text animiert** verwendet `SKPathEffect.CreateDash` gewähren, die diese sich einer gepunkteten Darstellung und das Programm animiert ebenfalls die `phase` Argument der `SKPathEffect.CreateDash` Methode, um die Punkte, um den Text zu folgen scheint, Zeichen. Hier ist die Seite im Querformat ein:
 
-[![](effects-images/animateddottedtext-small.png "Dreifacher Screenshot der Seite gepunktet Text animiert")](effects-images/animateddottedtext-large.png#lightbox "dreifacher Screenshot der Seite animiert gepunktet Text")
+[![](effects-images/animateddottedtext-small.png "Dreifacher Screenshot der Seite gepunktet Text animiert")](effects-images/animateddottedtext-large.png#lightbox "dreifachen Screenshot der Seite animiert gepunktet Text")
 
-Die [ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Klasse zunächst werden einige Konstanten definieren, und überschreibt auch die `OnAppearing` und `OnDisappearing` Methoden für die Animation:
+Die [ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Klasse beginnt mit dem Definieren einiger Konstanten und überschreibt auch die `OnAppearing` und `OnDisappearing` Methoden für die Animation:
 
 ```csharp
 public class AnimatedDottedTextPage : ContentPage
@@ -93,7 +93,7 @@ public class AnimatedDottedTextPage : ContentPage
 }
 ```
 
-Die `PaintSurface` Handler beginnt mit der Erstellung einer `SKPaint` Objekt, um den Text anzuzeigen. Die `TextSize` Eigenschaft wird basierend auf der Breite des Bildschirms angepasst:
+Die `PaintSurface` Handler beginnt mit der Erstellung einer `SKPaint` Objekt, um den Text anzuzeigen. Die `TextSize` -Eigenschaft wird basierend auf der Breite des Bildschirms angepasst:
 
 ```csharp
 public class AnimatedDottedTextPage : ContentPage
@@ -147,19 +147,19 @@ public class AnimatedDottedTextPage : ContentPage
 }
 ```
 
-Gegen Ende der Methode die `SKPathEffect.CreateDash` -Methode wird aufgerufen, wobei die `dashArray` definiert ist als ein Feld aus, und die animierte `phase` Wert. Die `SKPathEffect` Instanz wird festgelegt, um die `PathEffect` Eigenschaft der `SKPaint` Objekt, um den Text anzuzeigen.
+Am Ende der Methode die `SKPathEffect.CreateDash` Methode wird aufgerufen, mit der `dashArray` , definiert ist, als ein Feld aus, und die animierte `phase` Wert. Die `SKPathEffect` Instanz wird festgelegt, um die `PathEffect` Eigenschaft der `SKPaint` Objekt, um den Text anzuzeigen.
 
-Sie können alternativ Festlegen der `SKPathEffect` -Objekt an die `SKPaint` Objekt vor dem Messen des Texts und zentrieren sie auf der Seite. In diesem Fall jedoch der animierten Punkte und Bindestriche enthalten dazu führen, dass einige Variante in der Größe des gerenderten Texts und der Text etwas Vibrieren tendenziell. (Probieren Sie es.)
+Alternativ können Sie festlegen der `SKPathEffect` -Objekt an die `SKPaint` Objekt vor dem gemessen wird des Texts, und es auf der Seite zu zentrieren. In diesem Fall jedoch die animierte Punkte und Bindestriche enthalten dazu führen, dass einige Variante in der Größe des gerenderten Texts und der Text ist ein wenig Vibrieren. (Probieren Sie es!)
 
-Sie werden bemerken, dass als die Textzeichen animierten Punkte Kreis vorhanden ein bestimmten Punkt im jede geschlossene Kurve ist, in dem die Punkte in und aus Vorhandensein pop scheinen. Dies ist, in dem der Pfad, der definiert, die Gliederung Zeichen beginnt und endet. Wenn die Pfadlänge kein ganzzahliges Vielfaches der Länge der Strichmuster (in diesem Fall 20 Pixel) ist, kann nur ein Teil des Musters am Ende des Pfads entsprechen.
+Sie werden bemerken, dass als den Kreis der animierten Punkte rund um die Textzeichen, ein bestimmten Punkt im jede geschlossene Kurve ist, in denen die Punkte scheint zu ein-und ausgehenden vorhanden ist. Dies ist, in dem der Pfad, der definiert, die Gliederung Zeichen beginnt und endet. Wenn die Länge des Pfads nicht ganzzahliges Vielfaches der die Länge des Strichmusters (in diesem Fall 20 Pixel) ist, und klicken Sie dann nur einen Teil dieses Muster am Ende des Pfads verwendet werden kann.
 
-Es ist möglich, passen Sie die Länge des Strichmuster an die Länge des Pfads an, aber, die erfordert, bestimmen die Länge des Pfads, eine Technik, die in einem zukünftigen Artikel behandelt.
+Es ist möglich, passen Sie die Länge des Strichmusters die Länge des Pfads anpassen, aber, die erfordert, bestimmen die Länge des Pfads, eine Technik, die in einem zukünftigen Artikel behandelt.
 
-Die **Punkt / Bindestrich Umwandlung** Programm erstellt eine Animation des eigentlichen Musters des Bindestrich, sodass Bindestriche scheint Teilen in Punkten, wieder zum Formular Bindestriche kombinieren:
+Die **Punkt / Dash Morph** Programm erstellt eine Animation des Strichmusters selbst aus, sodass Bindestriche scheint in Punkte, unterteilen, die erneut zu Formular Bindestrichen kombinieren:
 
-[![](effects-images/dotdashmorph-small.png "Dreifacher Screenshot der Seite Punkt Dash Umwandlung")](effects-images/dotdashmorph-large.png#lightbox "dreifacher Screenshot der Seite Punkt-Dash-Umwandlung")
+[![](effects-images/dotdashmorph-small.png "Dreifacher Screenshot der Seite Punkt Dash Morph")](effects-images/dotdashmorph-large.png#lightbox "dreifachen Screenshot der Seite Punkt Dash Morph")
 
-Die [ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) -Klasse überschreibt die `OnAppearing` und `OnDisappearing` Methoden ebenso wie das vorherige Programm hat, aber die Klasse definiert die `SKPaint` Objekt als Feld:
+Die [ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) -Klasse überschreibt die `OnAppearing` und `OnDisappearing` Methoden wie die oben stehenden Programms hat, aber die Klasse definiert die `SKPaint` Objekt als Feld:
 
 ```csharp
 public class DotDashMorphPage : ContentPage
@@ -241,11 +241,11 @@ public class DotDashMorphPage : ContentPage
 }
 ```
 
-Die `PaintSurface` Handler erstellt einen elliptischen Pfad basierend auf der Größe der Seite und einen langen Codeabschnitt, der festlegt führt die `dashArray` und `phase` Variablen. Wie die animierte Variable `t` liegt zwischen 0 und 1, der `if` Blöcke zusammensetzen von diesem Zeitpunkt in vier Quartale und in jedem dieser Quartale `tsub` auch reicht von 0 auf 1. Ganz am Ende des Programms erstellt die `SKPathEffect` und legt es auf die `SKPaint` -Objekts zum Zeichnen.
+Die `PaintSurface` Handler erstellt einen elliptischen Pfad basierend auf der Größe der Seite und einen langen Codeabschnitt, der festlegt führt die `dashArray` und `phase` Variablen. Wie die animierte Variable `t` liegt zwischen 0 und 1, die `if` Blöcke Aufteilen von diesem Zeitpunkt in vier Quartalen, und klicken Sie in jedem dieser Quartale `tsub` auch liegt zwischen 0 und 1. Am Ende, das Programm erstellt die `SKPathEffect` und legt es auf die `SKPaint` Objekt für das Zeichnen.
 
 ## <a name="from-path-to-path"></a>Vom Pfad zum Pfad
 
-Die [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/System.Single/) Methode `SKPaint` Wandelt einen Pfad in einen anderen anhand der Einstellungen in der `SKPaint` Objekt. Um anzuzeigen, wie dies funktioniert, ersetzen die `canvas.DrawPath` in der vorherigen Programm mit den folgenden Code aufrufen:
+Die [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/System.Single/) -Methode der `SKPaint` wandelt Sie einen Pfad in ein anderes auf Grundlage der Einstellungen in der `SKPaint` Objekt. Um anzuzeigen, wie dies funktioniert, ersetzen die `canvas.DrawPath` rufen Sie in der oben stehenden Programms durch den folgenden Code:
 
 ```csharp
 SKPath newPath = new SKPath();
@@ -258,15 +258,15 @@ canvas.DrawPath(newPath, newPaint);
 
 ```
 
-In diesem neuen Code die `GetFillPath` aufrufen, konvertiert der `ellipsePath` (Dies ist nur ein Oval) in `newPath`, die dann mit dem angezeigt wird `newPaint`. Die `newPaint` -Objekts wird mit allen Standardeinstellungen Eigenschaft mit dem Unterschied, dass die `Style` festgelegt wird basierend auf den booleschen Rückgabewert aus `GetFillPath`.
+In diesem neuen Code wird die `GetFillPath` aufrufen konvertiert die `ellipsePath` (Dies ist nur eine Ellipse) in `newPath`, die wird dann angezeigt, mit `newPaint`. Die `newPaint` -Objekt wird erstellt, mit allen Standardeinstellungen-Eigenschaft mit dem Unterschied, dass die `Style` -Eigenschaftensatz basierend auf der boolesche Rückgabewert aus `GetFillPath`.
 
-Die visuellen Elemente unterscheiden sich nur die Farbe, die festgelegt wird, in `ellipsePaint` , aber nicht `newPaint`. Anstatt die einfache Ellipse definiert, die `ellipsePath`, `newPath` enthält zahlreiche Pfad Konturen, die definieren, die Reihe von Punkte und Bindestriche enthalten. Dies ist das Ergebnis des Anwendens von verschiedenen Eigenschaften der `ellipsePaint` – `StrokeWidth`, `StrokeCap`, und `PathEffect` – auf `ellipsePath` und das Übertragen des resultierenden Pfads in `newPath`. Die `GetFillPath` Methodenrückgabe ein boolescher Wert, der angibt, und zwar unabhängig davon, ob der Zielpfad ist gefüllt werden soll; in diesem Beispiel ist des Rückgabewerts `true` zum Ausfüllen des Pfads.
+Die visuellen Elemente sind identisch, außer die Farbe, die festgelegt wird, im `ellipsePaint` , nicht jedoch `newPaint`. Anstatt die einfache Ellipse definiert, die `ellipsePath`, `newPath` enthält zahlreiche Pfad Konturen, die definieren, die Reihe von Punkte und Bindestriche enthalten. Dies ist das Ergebnis des Anwendens von verschiedenen Eigenschaften der `ellipsePaint` – `StrokeWidth`, `StrokeCap`, und `PathEffect` – um `ellipsePath` und die den resultierenden Pfad angegebene `newPath`. Die `GetFillPath` Methodenrückgabe ein boolescher Wert, der angibt, ob der angegebene Zielpfad ist gefüllt werden soll; in diesem Beispiel ist der Rückgabewert ist `true` für das Füllen des Pfads.
 
-Ändern Sie die `Style` festlegen in `newPaint` auf `SKPaintStyle.Stroke` und sehen Sie die einzelnen Pfad Konturen Linie als Trennzeichen ein Pixelbreite beschrieben.
+Versuchen Sie es ändern der `Style` festlegen in `newPaint` zu `SKPaintStyle.Stroke` sehen Sie die einzelnen Pfadkonturen, die durch eine Linie ein-Pixel-Width beschrieben.
 
-## <a name="stroking-with-a-path"></a>Mit einem Pfad Kontur zuweisen
+## <a name="stroking-with-a-path"></a>Kontur mit einem Pfad zuweisen
 
-Die [ `SKPathEffect.Create1DPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create1DPath/p/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPath1DPathEffectStyle/) Methode gleicht konzeptionell `SKPathEffect.CreateDash` mit dem Unterschied, dass Sie ein Muster der Striche und Lücken, anstatt einen Pfad angeben. Dieser Pfad wird mehrere Male auf Strich der Zeile oder Kurve repliziert.
+Die [ `SKPathEffect.Create1DPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create1DPath/p/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPath1DPathEffectStyle/) Methode ist konzeptionell identisch mit `SKPathEffect.CreateDash` mit dem Unterschied, dass Sie einen Pfad und nicht als ein Muster von Strichen und Lücken angeben. Dieser Pfad wird mehrere Male auf Strich die Linie oder Kurve repliziert.
 
 Die Syntax lautet:
 
@@ -276,19 +276,19 @@ public static SKPathEffect Create1DPath (SKPath path, Single advance,
 ```
 
 > [!IMPORTANT]
-> Achten Sie: Es wird eine Überladung der `Create1DPath` , die durch eine Enumeration-Argument des Typs definiert ist `SkPath1DPathEffect` mit einem kleingeschriebenen "k". Dieser Name ist ein Fehler, und daher, dass die Enumeration und Methode als veraltet markiert sind, aber es ist sehr einfach, für die als veraltet markierte Methode, die Teil des Codes werden und ist es schwierig, was genau finden Sie unter ist falsch.
+> In Betracht ziehen,: Es wird eine Überladung der `Create1DPath` , die mit einem Argument Enumeration vom Typ definiert ist `SkPath1DPathEffect` mit Kleinbuchstaben "k". Dieser Name ist ein Fehler, und daher, dass Enumeration und Methode veraltet sind, aber es ist sehr einfach, für die als veraltet markierte Methode, die Teil des Codes werden, ist es schwierig, genau das, was finden Sie unter ist falsch.
 
-Im Allgemeinen gilt: der Pfad, den Sie übergeben `Create1DPath` werden kleine und zentriert, um den Punkt (0, 0). Die `advance` Parameter gibt den Abstand zwischen den Rechenzentren Pfad an, wie der Pfad auf die Zeile repliziert wird. Normalerweise legen Sie dieses Argument auf die ungefähre Breite der den Pfad fest. Die `phase` Argument spielt die gleiche Rolle als es führt Sie in der `CreateDash` Methode.
+Im Allgemeinen gilt: der Pfad, der Sie übergeben `Create1DPath` werden kleine und zentriert, um den Punkt (0, 0). Die `advance` Parameter gibt den Abstand zwischen den Rechenzentren Pfad an, wie Sie der Pfad in der Zeile repliziert werden. Sie haben dieses Argument in der Regel auf die ungefähre Breite der den Pfad festlegen. Die `phase` Argument spielt die gleiche Rolle wie führt Sie in der `CreateDash` Methode.
 
-Die [ `SKPath1DPathEffectStyle` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath1DPathEffectStyle/) hat drei Member:
+Die [ `SKPath1DPathEffectStyle` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath1DPathEffectStyle/) weist drei Member auf:
 
 - [`Translate`](https://developer.xamarin.com/api/field/SkiaSharp.SKPath1DPathEffectStyle.Translate/)
 - [`Rotate`](https://developer.xamarin.com/api/field/SkiaSharp.SKPath1DPathEffectStyle.Rotate/)
 - [`Morph`](https://developer.xamarin.com/api/field/SkiaSharp.SKPath1DPathEffectStyle.Morph/)
 
-Die `Translate` Member führt dazu, dass den Pfad zu der in der gleichen Ausrichtung zu bleiben, da es entlang einer Linie oder eines Kurve repliziert wird. Für `Rotate`, des Pfads gedreht wird basierend auf die ausgewählte Tangente der Kurve. Der Pfad weist die normale Ausrichtung für horizontale Linien. `Morph` ähnelt dem `Rotate` mit dem Unterschied, dass der Pfad selbst auch gekrümmt, entsprechend der Krümmung der Linie gezeichnet wird.
+Die `Translate` Member führt dazu, dass den Pfad, in der gleichen Ausrichtung zu bleiben, während sie auf ein Linien- oder Kurvensegmente repliziert werden. Für `Rotate`, des Pfads gedreht wird basierend auf einer Tangente der Kurve. Der Pfad weist die normalen Ausrichtung für horizontale Linien an. `Morph` ist vergleichbar mit `Rotate` abgesehen davon, dass Sie der Pfad selbst auch gekrümmt ist entsprechend die Krümmung der Zeile wird mit Strichen gezeichnet wird.
 
-Die **1 D Pfad Auswirkungen** veranschaulicht diese drei Optionen. Die [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml) -Datei definiert eine Auswahl mit drei Elementen, die drei Member der Enumeration entspricht:
+Die **1 D Pfad Auswirkungen** Seite veranschaulicht diese drei Optionen. Die [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml) -Datei definiert eine Auswahl, die drei Elemente entsprechen den drei Membern der Enumeration enthält:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -324,7 +324,7 @@ Die **1 D Pfad Auswirkungen** veranschaulicht diese drei Optionen. Die [ **OneDi
 </ContentPage>
 ```
 
-Die [ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs) Code-Behind-Datei definiert drei `SKPathEffect` Objekte als Felder. Diese werden alle erstellt mit `SKPathEffect.Create1DPath` mit `SKPath` mit erstellte Objekte `SKPath.ParseSvgPathData`. Der erste ist ein einfaches Feld, das zweite ist eine Rautenform und der dritte ist ein Rechteck. Diese werden verwendet, die Stile für drei wirksam zu veranschaulichen:
+Die [ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs) Code-Behind-Datei definiert drei `SKPathEffect` Objekte als Felder. Diese werden alle mit erstellt `SKPathEffect.Create1DPath` mit `SKPath` mit erstellte Objekte `SKPath.ParseSvgPathData`. Die erste ist ein einfaches Feld, das zweite ist eine Raute, und die dritte ist ein Rechteck. Diese werden verwendet, um die Auswirkungen von drei Stile zu veranschaulichen:
 
 ```csharp
 public partial class OneDimensionalPathEffectPage : ContentPage
@@ -395,35 +395,35 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 }
 ```
 
-Die `PaintSurface` Ereignishandler erstellt eine Bézier-Kurve, die Schleifen, um sich selbst und greift auf die Auswahl, um zu ermitteln, welche `PathEffect` sollte verwendet werden, um es mit Strichen zu zeichnen. Die drei Optionen – `Translate`, `Rotate`, und `Morph` – werden von links nach rechts angezeigt:
+Die `PaintSurface` Ereignishandler erstellt eine, die Schleife durchläuft, um sich selbst, und greift auf die Auswahl, um zu ermitteln, welche Bézierkurve `PathEffect` sollte verwendet werden, um es zu zeichnen. Die drei Optionen – `Translate`, `Rotate`, und `Morph` – werden von links nach rechts angezeigt:
 
-[![](effects-images/1dpatheffect-small.png "Dreifacher Screenshot der Seite Pfad Auswirkungen 1D")](effects-images/1dpatheffect-large.png#lightbox "dreifacher Screenshot der Seite Pfad Auswirkungen 1D")
+[![](effects-images/1dpatheffect-small.png "Dreifacher Screenshot der Seite Pfad Auswirkungen 1D")](effects-images/1dpatheffect-large.png#lightbox "dreifachen Screenshot der Seite Pfad Auswirkungen 1D")
 
-Die im angegebenen Pfad die `SKPathEffect.Create1DPath` Methode immer gefüllt wird. Die im angegebenen Pfad die `DrawPath` Methode schraffiert ist immer, wenn die `SKPaint` Objekt hat seine `PathEffect` -Eigenschaft auf einen 1D Pfad Effekt festgelegt. Beachten Sie, dass die `pathPaint` Objekt hat keine `Style` Einstellung, die normalerweise standardmäßig `Fill`, jedoch der Pfad unabhängig davon schraffiert ist.
+Die im angegebenen Pfad die `SKPathEffect.Create1DPath` Methode wird immer ausgefüllt. Den im angegebenen Pfad die `DrawPath` Methode schraffiert ist immer, wenn die `SKPaint` Objekt verfügt über seine `PathEffect` -Eigenschaft auf einen 1D Pfad-Effekt. Beachten Sie, dass die `pathPaint` Objekt hat keine `Style` Einstellung, die normalerweise standardmäßig `Fill`, aber der Pfad ist unabhängig davon, ob mit Strichen gezeichnet.
 
-Das Feld verwendet wird, der `Translate` Beispiel beträgt 20 Pixel, die quadratische, und die `advance` -Argument 24 festgelegt wird. Dieser Unterschied bewirkt, dass eine Lücke zwischen den Feldern, wenn die Zeile ungefähr horizontalen oder vertikalen ist, aber die Felder etwas überlappen, wenn die Zeile diagonalen ist, da die diagonale des Felds 28,3 Pixel ist.
+Das Feld in verwendet die `Translate` Beispiel ist 20 Pixel im Quadrat, und die `advance` Argument auf 24 festgelegt ist. Dieser Unterschied führt dazu, dass eine Lücke zwischen den Feldern, wenn die Zeile ungefähr horizontal oder vertikal ist, aber die Felder ein wenig bei die Zeile diagonale ist, da die diagonale des Felds 28,3 Pixel überlappt.
 
-Die Rautenform in die `Rotate` Beispiel ist auch 20 Pixel breit. Die `advance` auf 20 festgelegt ist, damit weiterhin die Punkte berühren, wie die Raute zusammen mit der Krümmung der Linie gedreht wird.
+Die Raute, in der `Rotate` Beispiel ist auch 20 Pixel breit. Die `advance` auf 20 festgelegt ist, damit weiterhin die Punkte berühren, wie die Raute zusammen mit der Krümmung der Linie gedreht wird.
 
-Das Rechteck in die `Morph` Beispiel ist 50 Pixel breit und eine `advance` von 55 festlegen, um eine kleine zeitliche Lücke zwischen den Rechtecken zu machen, wie sie auf der Bézier-Kurve verbogen ist.
+Der rechteckige Form in die `Morph` Beispiel ist 50 Pixel breit und eine `advance` von 55 festlegen, um eine kleine zeitliche Lücke zwischen den Rechtecken zu machen, wie sie rund um die Bézierkurve verbogen ist.
 
-Wenn die `advance` Arguments ist kleiner als die Größe des Pfads, und dann die replizierten Pfade können sich überschneiden. Dies kann dazu führen, dass einige interessante Effekte werden. Die **verknüpften Kette** Seite zeigt eine Reihe von überlappende Kreise, die anscheinend mit eine Kette verknüpfte ähneln denen in der unterschiedliche Form von einer Oberleitung hängt:
+Wenn die `advance` -Argument ist kleiner als die Größe des Pfads, und klicken Sie dann die replizierten Pfade können sich überschneiden. Dies kann einige interessante Auswirkungen führen. Die **verknüpfte Kette** Seite zeigt eine Reihe von überlappende Kreise, die eine verknüpfte Kette, ähneln die hängt in der bestimmten Form von einem Oberleitung scheinen:
 
-[![](effects-images/linkedchain-small.png "Dreifacher Screenshot der Seite verknüpften Kette")](effects-images/linkedchain-large.png#lightbox "dreifacher Screenshot der Seite verknüpften Kette")
+[![](effects-images/linkedchain-small.png "Dreifacher Screenshot der Seite verknüpften Kette")](effects-images/linkedchain-large.png#lightbox "dreifachen Screenshot der Seite verknüpften Kette")
 
-Sehr nahe suchen, und Sie sehen, dass dies tatsächlich Kreise sind nicht. Jeder Link in der Kette ist zwei Bögen, Größe, und also sie für die Verbindung mit benachbarten Links scheint positioniert.
+Suchen Sie sehr nahe, und sehen Sie, dass dies tatsächlich Kreise sind nicht. Jeder Link in der Kette ist zwei Bögen, Größe und positioniert werden, damit sie für die Verbindung mit benachbarten Links scheinen.
 
-Eine Kette oder die Kabel uniform Gewichtung Verteilung hängt in Form einer Oberleitung. Ein Arch erstellt in Form einer invertierten Oberleitung profitiert von der eine gleichmäßige Verteilung der Druck von der die Gewichtung des ein Arch. Der Oberleitung hat eine scheinbar einfache mathematische Beschreibung:
+Eine Kette oder Kabel des uniform gewichtsverteilung hängt in Form einer Oberleitung. Ein Arch erstellt in Form einer invertierten Oberleitung profitiert von der eine gleichmäßige Verteilung der Druck von das Gewicht ein Arch. Der Oberleitung verfügt über eine scheinbar einfache mathematische Beschreibung:
 
-y = eine · COSH(x / a)
+y = ein – COSH(x / a)
 
-Die *Cosh* ist die hyperbolische Kosinus-Funktion. Für *x* gleich 0, *Cosh* 0 (null) und *y* gleich *eine*. Dies ist das Zentrum des der Oberleitung. Wie die *Kosinus* Funktion *Cosh* gilt als *sogar*, was bedeutet, dass *cosh(–x)* gleich *cosh(x)*, und die Werte für die Erhöhung positiv oder negativ Argumente zu erhöhen. Diese Werte beschrieben, die Kurven, die die Seiten des der Oberleitung bilden.
+Die *Cosh* ist die hyperbolische Kosinus-Funktion. Für *x* gleich 0 (null) *Cosh* ist 0 (null) und *y* gleich *eine*. Das ist der Mitte des der Oberleitung. Wie die *Kosinus* -Funktion *Cosh* gilt als *sogar*, was bedeutet, dass *cosh(–x)* gleich *cosh(x)*, und erhöhen Sie die Werte für die Steigerung der positiver oder negativer Arguments. Diese Werte beschreiben die Kurven, die die Seiten der Oberleitung bilden.
 
-Suchen den richtigen Wert der *eine* an der Oberleitung auf die Dimensionen der Seite "den Anschluss" ist keine direkte Berechnung. Wenn *w* und *h* sind die Breite und Höhe eines Rechtecks, den optimalen Wert für *eine* erfüllt die folgende Gleichung:
+Suchen den richtigen Wert von *eine* Anpassen der Oberleitung mit den Abmessungen des Telefons-Seite ist keine direkte Berechnung. Wenn *w* und *h* sind die Breite und Höhe eines Rechtecks, das den optimalen Wert für *eine* erfüllt die folgende Gleichung:
 
 COSH (w/2/a) = 1 + h / a
 
-Die folgende Methode in der [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs) Klasse enthält, auf Gleichheit durch einen Verweis auf die zwei Ausdrücke auf der linken Seite und rechts neben dem Gleichheitszeichen als `left` und `right`. Bei kleinen Werten für *eine*, `left` ist größer als `right`; bei großen Werten für *eine*, `left` ist kleiner als `right`. Die `while` Schleife eingeschränkt wird, auf einen optimalen Wert von *eine*:
+Die folgende Methode in der [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs) Klasse enthält, auf Gleichheit durch einen Verweis auf die beiden Ausdrücke auf der linken Seite und rechts neben dem Gleichheitszeichen als `left` und `right`. Bei kleinen Werten für *eine*, `left` ist größer als `right`; bei großen Werten für *eine*, `left` ist kleiner als `right`. Die `while` Schleife führt zu einer Einschränkung einer optimalen Wert, der *eine*:
 
 ```csharp
 float FindOptimumA(float width, float height)
@@ -452,7 +452,7 @@ float FindOptimumA(float width, float height)
 }
 ```
 
-Die `SKPath` -Objekt für die Links im Konstruktor der Klasse und die resultierenden erstellt wird `SKPathEffect` Objekt legen Sie dann auf die `PathEffect` Eigenschaft von der `SKPaint` -Objekt, das als ein Feld gespeichert wird:
+Die `SKPath` -Objekt für die Links in den Konstruktor der Klasse erstellt, und die resultierenden ist `SKPathEffect` Objekt legen Sie dann auf die `PathEffect` Eigenschaft der `SKPaint` -Objekt, das als Feld gespeichert wird:
 
 ```csharp
 public class LinkedChainPage : ContentPage
@@ -500,7 +500,7 @@ public class LinkedChainPage : ContentPage
 }
 ```
 
-Die Hauptaufgabe des der `PaintSurface` Handler ist, einen Pfad für die Oberleitung selbst erstellen. Nach der Bestimmung des optimalen *eine* und speichern ihn in die `optA` -Variable verwenden, es muss außerdem einen Offset vom oberen Rand des Fensters zu berechnen. Anschließend können sie eine Auflistung von kumuliert werden `SKPoint` Werte für die Oberleitung umwandeln, die in einem Pfad, und zeichnen Sie den Pfad für das zuvor erstellte `SKPaint` Objekt:
+Die wichtigste Aufgabe der `PaintSurface` Handler ist, um einen Pfad für die Oberleitung selbst zu erstellen. Nach der Bestimmung des optimalen *eine* und speichern ihn in das `optA` Variable muss auch eine Abweichung von den oberen Rand des Fensters zu berechnen. Anschließend können sie eine Auflistung von kumuliert `SKPoint` Werte für die Oberleitung aktivieren, die zu einem Pfad, und zeichnen Sie den Pfad mit dem zuvor erstellten `SKPaint` Objekt:
 
 ```csharp
 public class LinkedChainPage : ContentPage
@@ -544,15 +544,15 @@ public class LinkedChainPage : ContentPage
 }
 ```
 
-Dieses Programm definiert, den im verwendete Pfad `Create1DPath` haben seine (0, 0) in der Mitte zeigen. Dies scheint sinnvoll da der (0, 0) des Pfads ausgerichtet ist die Zeile oder die Kurve, die es hinzugefügt wird. Sie können jedoch eine nicht zentriert (0, 0) für einige Spezialeffekte zeigen.
+Dieses Programm definiert, den im verwendete Pfad `Create1DPath` haben die (0, 0) in der Mitte zeigen. Dies erscheint einleuchtend da der (0, 0) des Pfads der Zeile oder die Kurve, die es Verzieren ist ausgerichtet ist. Sie können jedoch einen nicht-zentriert (0, 0) zeigen Sie für einige Spezialeffekte zu erzeugen.
 
-Die **Förderband** Seite erstellt einen Pfad, der aussieht wie ein längliche Förderband transportiert die mit einem gekrümmten nach oben und unten wird dies auf die Dimensionen des Fensters angepasst. Dass der Pfad mit einem einfachen schraffiert ist `SKPaint` 20 Pixel breit und Grau, und klicken Sie dann erneut mit einem anderen gezeichnet `SKPaint` -Objekt mit einem `SKPathEffect` Objekt auf einen Pfad ähnelt ein wenig Bucket verweisen:
+Die **Fließband** Seite erstellt, einen Pfad, der ähnlich wie ein längliche Fließband mit einem gekrümmten oben und unten wird dies auf die Dimensionen des Fensters angepasst. Dieser Pfad wird mit einem einfachen Gestrichelt `SKPaint` -Objekt 20 Pixel breit und Grau, und klicken Sie dann erneut mit einem anderen Gestrichelt `SKPaint` Objekt mit einer `SKPathEffect` Objekt, das auf einen Pfad, der ähnlich wie einen wenig Bucket:
 
-[![](effects-images/conveyorbelt-small.png "Dreifacher Screenshot der Seite \"Fließband\"")](effects-images/conveyorbelt-large.png#lightbox "dreifacher Screenshot der Seite \"Fließband\"")
+[![](effects-images/conveyorbelt-small.png "Dreifacher Screenshot der Seite Fließband")](effects-images/conveyorbelt-large.png#lightbox "dreifachen Screenshot der Seite \"Fließband\"")
 
-Der (0, 0) des Pfads Bucket ist das Handle, das dies der Fall bei der `phase` Argument animiert wird, scheinen die Buckets um Förderband, vielleicht scooping oben Wasser am unteren und Dump-Sicherungen es aus der oben drehen.
+Der (0, 0) des Pfads Bucket ist der Handle, das dies der Fall bei der `phase` Argument animiert wird, scheinen die Buckets um Fließband, vielleicht scooping einrichten Wasser am unteren Rand, und Sichern sie sich am Anfang drehen.
 
-Die [ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs) Klasse implementiert, überschreibt der Animation dem `OnAppearing` und `OnDisappearing` Methoden. Der Pfad für den Bucket wird im Konstruktor der Seite definiert:
+Die [ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs) -Klasse implementiert die Animation mit Außerkraftsetzungen für die `OnAppearing` und `OnDisappearing` Methoden. Der Pfad für den Bucket wird im Konstruktor der Seite definiert:
 
 ```csharp
 public class ConveyorBeltPage : ContentPage
@@ -620,9 +620,9 @@ public class ConveyorBeltPage : ContentPage
     ...
 ```
 
-Der Bucket Erstellung Code wird mit zwei Transformationen, die den Bucket etwas größeres stellen, und schalten Sie ihn seitwärts abgeschlossen. Diese Transformationen anwenden ist einfacher als die Koordinaten für die im vorherigen Code anpassen.
+Der Code für die Datenbankerstellung Bucket wird mit zwei Transformationen, die den Bucket, der ein wenig erhöhen und aktivieren sie anschließend auf die Seite abgeschlossen. Diese Transformationen anwenden ist einfacher, alle Koordinaten im vorherigen Code anpassen.
 
-Die `PaintSurface` Handler beginnt, indem Sie einen Pfad für die Förderband selbst definieren. Dies ist einfach ein paar Zeilen und zwei Semikolons Kreise, die mit 20 Pixel breit dunkelgrauen Linie gezeichnet werden:
+Die `PaintSurface` Handler beginnt, durch einen Pfad für die Fließband selbst definieren. Dies ist lediglich ein paar Codezeilen und einem Paar von durch Kreise, die mit einer 20 Pixel breit dunkelgrauen Linie gezeichnet werden:
 
 ```csharp
 public class ConveyorBeltPage : ContentPage
@@ -679,15 +679,15 @@ public class ConveyorBeltPage : ContentPage
 }
 ```
 
-Die Logik für das Zeichnen der Förderband funktioniert nicht im Querformat.
+Die Logik für das Zeichnen der Fließband funktioniert nicht im Querformat.
 
-Die Buckets sollte ungefähr 200 Pixel auf Förderband auseinander angeordnet. Förderband ist jedoch wahrscheinlich kein Vielfaches von 200 Pixel long, d. h. als die `phase` Argument `SKPathEffect.Create1DPath` ist animierenden werden Buckets in und aus dem Vorhandensein angezeigt.
+Die Buckets sollte ungefähr 200 Pixel auseinander liegen, auf das Band verteilt werden. Förderband ist jedoch wahrscheinlich kein Vielfaches von 200 Pixel lang sein, was bedeutet, dass die `phase` Argument `SKPathEffect.Create1DPath` ist animiert ist, werden Buckets in und aus dem Vorhandensein angezeigt.
 
-Aus diesem Grund die Anwendung zuerst berechnet einen Wert namens `length` also die Länge des Förderband. Weil gerade Linien und Semikolon Kreise Förderband besteht, ist dies eine einfache Weise berechnen. Als Nächstes wird die Anzahl der Buckets berechnet, indem die Division `length` von 200. Dies wird auf die nächste Ganzzahl gerundet und aufgeteilt, dass Zahl, klicken Sie dann ist `length`. Das Ergebnis ist ein Abstand für eine ganze Zahl der Buckets an. Die `phase` Argument ist nur ein Bruchteil der.
+Aus diesem Grund die Anwendung zuerst berechnet einen Wert, der mit dem Namen `length` , die Länge des Förderband. Da die Fließband von geraden Linien und durch Kreise besteht, ist dies eine einfache Berechnung. Als Nächstes wird die Anzahl von Buckets berechnet, indem die Division `length` von 200. Dies wird auf die nächste Ganzzahl gerundet und unterteilt, dass die Zahl ist, klicken Sie dann `length`. Das Ergebnis ist ein Abstand für eine ganzzahlige Anzahl von Buckets an. Die `phase` Argument ist einfach ein Bruchteil.
 
 ## <a name="from-path-to-path-again"></a>Vom Pfad zum Pfad erneut
 
-Am unteren Rand der `DrawSurface` Ereignishandler in **Förderband**, kommentieren Sie Sie aus der `canvas.DrawPath` aufrufen, und Ersetzen Sie ihn durch den folgenden Code:
+Am unteren Rand der `DrawSurface` Ereignishandler in **Fließband**, kommentieren Sie die `canvas.DrawPath` aufrufen, und Ersetzen Sie ihn durch den folgenden Code:
 
 ```csharp
 SKPath newPath = new SKPath();
@@ -699,9 +699,9 @@ SKPaint newPaint = new SKPaint
 canvas.DrawPath(newPath, newPaint);
 ```
 
-Wie im vorherigen Beispiel der `GetFillPath`, sehen Sie, dass die Ergebnisse mit Ausnahme der Farbe identisch sind. Nach der Ausführung `GetFillPath`die `newPath` -Objekt enthält mehrere Kopien des Pfads Bucket, jeweils positioniert, in der gleichen erkennen, dass die Animation zum Zeitpunkt des Aufrufs positioniert.
+Wie im vorherigen Beispiel der `GetFillPath`, sehen Sie, dass die Ergebnisse mit Ausnahme der Farbe gleich sind. Nach der Ausführung `GetFillPath`, `newPath` Objekt enthält mehrere Kopien der Bucket-Pfad, jeweils positioniert, in der gleichen erkennen, dass die Animation zum Zeitpunkt des Aufrufs positioniert.
 
-## <a name="hatching-an-area"></a>Schraffurmuster, einen Bereich
+## <a name="hatching-an-area"></a>Schraffurmuster eines Bereichs
 
 Die [ `SKPathEffect.Create2DLines` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create2DLine/p/System.Single/SkiaSharp.SKMatrix/) Methode füllt einen Bereich mit parallelen Linien, die häufig aufgerufen *Schraffieren Zeilen*. Die Methode hat die folgende Syntax:
 
@@ -709,11 +709,11 @@ Die [ `SKPathEffect.Create2DLines` ](https://developer.xamarin.com/api/member/Sk
 public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
 ```
 
-Die `width` -Argument gibt die Strichbreite Schraffur Zeilen. Die `matrix` Parameter ist eine Kombination von skalierungs- und optionale Drehung. Der Skalierungsfaktor gibt das Skia verwendet wird, um Speicherplatz, der die Zeilen Schraffur Pixel-Inkrement an. Die Trennung zwischen den Zeilen ist der Skalierungsfaktor minus der `width` Argument. Wenn der Skalierungsfaktor kleiner als oder gleich ist der `width` Wert, zwischen den Zeilen Schraffur wird kein Speicherplatz vorhanden sein, und der Bereich erscheint gefüllt werden soll. Geben Sie den Wert für die horizontale und vertikale Skalierung.
+Die `width` -Argument gibt die Strichbreite der Positionen Schraffierung an. Die `matrix` Parameter ist eine Kombination von Skalierung und optionalen Drehung. Der Skalierungsfaktor gibt das Pixel-Inkrement, das Skia verwendet wird, um die Positionen Schraffierung an Speicherplatz an. Die Trennung zwischen den Zeilen ist der Skalierungsfaktor minus der `width` Argument. Wenn der Skalierungsfaktor kleiner als oder gleich der `width` Wert, es werden kein Leerzeichen zwischen den schraffurlinien und der Bereich erscheint gefüllt werden soll. Geben Sie den Wert für die horizontale und vertikale Skalierung.
 
-Standardmäßig sind schraffierte Linien horizontal. Wenn die `matrix` Parameter enthält, Drehung, Schraffur Zeilen werden im Uhrzeigersinn gedreht.
+Standardmäßig sind schraffurlinien horizontal. Wenn die `matrix` Parameter enthält, Drehung, die schraffurlinien werden im Uhrzeigersinn gedreht.
 
-Die **Schraffur füllen** Seite zeigt die Auswirkung dieser Pfad. Die [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Klasse definiert drei Pfad Effekte als Felder, das erste für horizontale schraffierte Linien mit einer Breite von 3 Pixel mit einer Skalierung Faktor, der angibt, deren Abstand voneinander 6 Pixel. Die Trennung zwischen den Zeilen ist daher 3 Pixel. Das zweite Pfad wird für 24 Pixel auseinander (also die Trennung ist 18 Pixel), die gesamte Fläche vertikal schraffierte Linien mit einer Breite von 6 Pixel und die dritte für diagonale schraffierte 12 Pixel breit gleichmäßigen Abständen 36 Pixel auseinander Zeilen.
+Die **Schraffur füllen** Seite zeigt dieser Pfad-Effekt. Die [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) -Klasse definiert drei pfadeffekte als Felder, die erste für horizontale schraffurlinien mit einer Breite von 3 Pixel mit einer Skalierung Faktor, der angibt, die sie verteilt 6 Pixel auseinander liegen. Die Trennung zwischen den Zeilen ist daher 3 Pixel. Die zweite Pfad wird für die vertikale schraffurlinien mit einer Breite von 6 Pixel Abstand voneinander entfernt (also die Trennung ist 18 Pixel), 24 Pixel und das dritte hingegen ist für die diagonale schraffierte 12 Pixel breit Abstand 36 Pixel zwischen Zeilen.
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -744,9 +744,9 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-Beachten Sie die Matrix `Multiply` Methode. Da die horizontalen und vertikalen Skalierungsfaktoren identisch sind, ist die Reihenfolge, in der die Skalierung und Drehung Matrizen multipliziert sind, unerheblich.
+Beachten Sie, dass die Matrix `Multiply` Methode. Da die horizontalen und vertikalen Skalierungsfaktoren identisch sind, spielt die Reihenfolge, in der die Skalierung und Drehung Matrizen multipliziert werden, keine Rolle.
 
-Die `PaintSurface` Handler verwendet diese drei Pfad Effekte mit drei verschiedenen Farben in Kombination mit `fillPaint` ein abgerundetes Rechteck, das die Seite angepasst zu füllen. Die `Style` festgelegte Eigenschaft `fillPaint` ignoriert wird, wenn die `SKPaint` Objekt enthält einen Pfad Effekt aus erstellt `SKPathEffect.Create2DLine`, Bereich gefüllt wird, unabhängig davon:
+Die `PaintSurface` Handler verwendet diesen drei pfadeffekte mit drei verschiedenen Farben in Kombination mit `fillPaint` , geben Sie ein abgerundetes Rechteck, das die Größe die Seite angepasst. Die `Style` -Eigenschaftensatz am `fillPaint` ignoriert wird, wenn die `SKPaint` Objekt enthält einen Pfad Effekt aus erstellt `SKPathEffect.Create2DLine`, ist unabhängig davon, ob der Bereich gefüllt:
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -793,27 +793,27 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-Wenn Sie sorgfältig die Ergebnisse betrachten, sehen Sie sich, dass das rote und blaue schraffierte Linien genau auf des abgerundeten Rechtecks beschränkt werden nicht. (Dies ist anscheinend ein Merkmal des zugrunde liegenden Codes Skia.) Wenn dies ungenügend ist, wird ein alternativer Ansatz für die diagonale schraffierte Linien in grün angezeigt: des abgerundeten Rechtecks verwendet wird, als einen Freistellungspfad und schraffurfarbe Zeilen auf die gesamte Seite gezeichnet werden.
+Wenn Sie die Ergebnisse sorgfältig betrachten, sehen Sie sich, dass die rote und blaue schraffurlinien genau auf die abgerundetes Rechteck beschränkt sind nicht. (Dies ist offensichtlich ein Merkmal des zugrunde liegenden Codes Skia.) Wenn dies nicht zufriedenstellend ist, wird ein alternativer Ansatz für die diagonale schraffurlinien in grün angezeigt: abgerundete Rechteck als einen Freistellungspfad verwendet wird und die schraffurlinien auf die gesamte Seite gezeichnet werden.
 
-Die `PaintSurface` Handler endet mit einem Aufruf des abgerundeten Rechtecks einfach zu zeichnen, sodass Ihnen die Abweichung mit dem roten und blauen schraffierte Linien angezeigt:
+Die `PaintSurface` Handler endet mit einem Aufruf von einfach die abgerundete Rechteck zu zeichnen, damit Sie die Abweichung mit dem roten und blauen schraffurlinien sehen können:
 
-[![](effects-images/hatchfill-small.png "Dreifacher Screenshot der Seite Schraffur füllen")](effects-images/hatchfill-large.png#lightbox "dreifacher Screenshot der Seite Schraffur ausfüllen")
+[![](effects-images/hatchfill-small.png "Dreifacher Screenshot der Seite ausfüllen Schraffur")](effects-images/hatchfill-large.png#lightbox "dreifachen Screenshot der Seite ausfüllen Schraffur")
 
-Die Android Bildschirm nicht tatsächlich, aussehen: die Skalierung des Screenshots der schmale rote Linien und thin Leerzeichen in scheinbar breiter rote Linien konsolidiert und breiter Leerzeichen verursacht hat.
+Die Android-Bildschirm nicht wirklich, sehen Sie: die Skalierung des Screenshots die schmale rote Linien und thin zu scheinbar breiter roten Linien zusammenfassen, auch größeren Leerzeichen verursacht hat.
 
 ## <a name="filling-with-a-path"></a>Füllen mit einem Pfad
 
-Die [ `SKPathEffect.Create2DPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create2DPath/p/SkiaSharp.SKMatrix/SkiaSharp.SKPath/) Bereich faktisch Kacheln können Sie einen Bereich mit einem Pfad zu füllen, die horizontal oder vertikal repliziert wird:
+Die [ `SKPathEffect.Create2DPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create2DPath/p/SkiaSharp.SKMatrix/SkiaSharp.SKPath/) Bereich können Sie einen Bereich mit einem Pfad zu füllen, die horizontal und vertikal, repliziert wird faktisch Kacheln:
 
 ```csharp
 public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
 ```
 
-Die `SKMatrix` Skalierungsfaktoren anzugeben, die horizontale und vertikale Zwischenräume des replizierten Pfads. Jedoch können nicht gedreht werden die mit diesem Pfad `matrix` Argument; Sie des Pfads gedreht wird, drehen Sie den Pfad selbst mithilfe der `Transform` definierte Methode `SKPath`.
+Die `SKMatrix` Skalierungsfaktoren anzugeben, den horizontalen und vertikalen Abstand des replizierten Pfads. Jedoch können nicht gedreht werden den Pfad, der mit diesem `matrix` Argument; Wunsch des Pfads gedreht wird drehen Sie den Pfad selbst mithilfe der `Transform` definierte Methode `SKPath`.
 
-Der Pfad des replizierten wird normalerweise mit der linken und oberen Rand der Benutzeranmeldebildschirm anstelle ausgefüllten ausgerichtet. Sie können dieses Verhalten überschreiben, durch die Bereitstellung der Übersetzung Faktoren zwischen 0 und der Skalierungsfaktoren horizontalen und vertikalen Offsets von der linken und oberen Seiten angeben.
+Der Pfad des replizierten wird normalerweise die linke und obere Rand des Bildschirms und nicht als der auszufüllende Bereich ausgerichtet. Sie können dieses Verhalten überschreiben, durch die Bereitstellung der Übersetzung Faktoren zwischen 0 und die Skalierungsfaktoren horizontale und vertikale abweichungen von den linken und oberen Seiten angeben.
 
-Die **Pfad Kachel auszufüllen** Seite zeigt die Auswirkung dieser Pfad. Der Pfad zum Anordnen des Bereichs wird definiert als Feld in der [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) Klasse. Horizontalen und vertikalen Koordinaten Bereich von – 40 bis 40, was bedeutet, dass dieser Pfad 80 Pixel quadratische ist:
+Die **Pfad Kachel auszufüllen** Seite zeigt dieser Pfad-Effekt. Der Pfad zum Unterteilen des Bereichs wird definiert als Feld in der [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) Klasse. Die horizontalen und vertikalen Koordinaten Bereich von – 40 bis 40, was bedeutet, dass dieser Pfad 80 Pixel im Quadrat ist:
 
 ```csharp
 public class PathTileFillPage : ContentPage
@@ -849,27 +849,27 @@ public class PathTileFillPage : ContentPage
 }
 ```
 
-In der `PaintSurface` Handler, der `SKPathEffect.Create2DPath` Aufrufe legt die horizontale und vertikale Zwischenräume 64, die dazu führen, dass die quadratischen 80-Pixel-Kacheln überlappen. Glücklicherweise ähnelt der Pfad ein Puzzle-Stück, Vernetzung ordentlich mit angrenzenden Kacheln:
+In der `PaintSurface` Handler auf, die `SKPathEffect.Create2DPath` Aufrufe legt den horizontalen und vertikalen Abstand auf 64, die dazu führen, dass die 80-Pixel-quadratischen Kacheln überlappen. Glücklicherweise ähnelt der Pfad einer Puzzleteil, das "meshing" gut mit angrenzenden Kacheln:
 
-[![](effects-images/pathtilefill-small.png "Dreifacher Screenshot der Seite Pfad Kachel auszufüllen")](effects-images/pathtilefill-large.png#lightbox "dreifacher Screenshot der Seite Pfad Kachel auszufüllen.")
+[![](effects-images/pathtilefill-small.png "Dreifacher Screenshot der Seite Pfad Kachel auszufüllen")](effects-images/pathtilefill-large.png#lightbox "dreifachen Screenshot der Seite Pfad Kachel auszufüllen.")
 
-Die Skalierung von der ursprünglichen Screenshot bewirkt, dass einige Verzerrung, insbesondere auf dem Android-Bildschirm.
+Die Skalierung von der ursprünglichen Screenshot führt dazu, dass einige Verzerrung, insbesondere auf die Android-Bildschirm.
 
-Beachten Sie, dass diese Kacheln immer die gesamte angezeigt und werden nie abgeschnitten. Auf den ersten beiden Screenshots ist sie nicht selbst offensichtlich, dass der Bereich, das ausgefüllt wurde ein abgerundetes Rechteck ist. Wenn Sie diese Kacheln zu einem bestimmten Bereich abschneiden möchten, verwenden Sie einen Freistellungspfad.
+Beachten Sie, dass diese Kacheln immer die gesamte angezeigt und werden nicht abgeschnitten. Klicken Sie auf den ersten beiden Screenshots ist es nicht auch offensichtlich, dass der auszufüllende Bereich ein abgerundetes Rechteck ist. Wenn diese Kacheln zu einem bestimmten Bereich abgeschnitten werden sollen, verwenden Sie einen Freistellungspfad an.
 
-Versuchen Sie die `Style` Eigenschaft der `SKPaint` -Objekt `Stroke`, und sehen Sie die einzelnen Kacheln beschriebenen statt gefüllt.
+Versuchen Sie die `Style` Eigenschaft der `SKPaint` -Objekt `Stroke`, sehen Sie die einzelnen Kacheln gefüllt, anstatt beschrieben.
 
-## <a name="rounding-sharp-corners"></a>Runden spitze Ecken
+## <a name="rounding-sharp-corners"></a>Runden von Ecken
 
-Die **Siebeneck gerundet** Programm angezeigt, der [ **drei Möglichkeiten, einen Bogen gezeichnet** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) Artikel verwendet einen Tangenten Bogen, um die Punkte einer Abbildung 7 doppelseitige Kurve. Die **eine andere gerundet Siebeneck** Seite zeigt einen viel einfacheren Ansatz, der einen Pfad Effekt erstellt, aus der [ `SKPathEffect.CreateCorner` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateCorner/p/System.Single/) Methode:
+Die **gerundet Siebeneck** Programm angezeigt wird, der [ **drei Möglichkeiten, einen Bogen zu zeichnen** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) Artikel verwendet einen Tangenten Bogen, um die Punkte einer Figur Gleichseitiges-Kurve. Die **eine andere gerundet Siebeneck** Seite werden viel einfacher, die einen Pfad Effekt aus erstellten verwendet die [ `SKPathEffect.CreateCorner` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateCorner/p/System.Single/) Methode:
 
 ```csharp
 public static SKPathEffect CreateCorner (Single radius)
 ```
 
-Obwohl das einzelne Argument heißt `radius` müssen Sie es auf die Hälfte der gewünschten Eckradius festlegen. (Dies ist ein Merkmal des zugrunde liegenden Codes Skia.)
+Obwohl das einzelne Argument dem Namen `radius` müssen Sie es auf die Hälfte der gewünschten Eckradius festlegen. (Dies ist ein Merkmal des zugrunde liegenden Codes Skia.)
 
-So sieht die `PaintSurface` Ereignishandler in der [ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs) Klasse:
+Hier ist die `PaintSurface` Ereignishandler in der [ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs) Klasse:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -922,26 +922,26 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Verwenden Sie diesen Effekt mit Verlauf oder füllen, die basierend auf der `Style` Eigenschaft von der `SKPaint` Objekt. Hier ist es auf allen drei Plattformen:
+Verwenden Sie diesen Effekt mit Kontur zuweisen oder füllen, die basierend auf der `Style` Eigenschaft der `SKPaint` Objekt. Hier ist es auf allen drei Plattformen:
 
-[![](effects-images/anotherroundedheptagon-small.png "Dreifacher Screenshot der Seite eine andere gerundet Siebeneck")](effects-images/anotherroundedheptagon-large.png#lightbox "dreifacher Screenshot der Seite \"einen anderen gerundet Siebeneck\"")
+[![](effects-images/anotherroundedheptagon-small.png "Dreifacher Screenshot der Seite eine andere gerundet Siebeneck")](effects-images/anotherroundedheptagon-large.png#lightbox "dreifachen Screenshot der Seite eine andere gerundet Siebeneck")
 
-Sie sehen, dass diese abgerundeten Siebeneck an das frühere Programm identisch ist. Wenn Sie überzeugt Weitere, die die Eckradius ist tatsächlich 100 anstatt 50 angegeben wird, der `SKPathEffect.CreateCorner` Aufruf, Sie können kommentieren Sie die letzte Anweisung im Programm und ausführliche Informationen finden Sie eine 100-Radius-Kreis überlagert, in der Ecke klicken.
+Sie sehen, dass diese abgerundeten Siebeneck an das Programm früher identisch ist. Bei Bedarf weitere zu überzeugen, die der Eckradius tatsächlich 100 anstatt die 50 angegeben wird, der `SKPathEffect.CreateCorner` aufrufen, Sie können die auskommentierung aufheben die abschließende Anweisung in die Anwendung und ein 100-Radius-Kreis in der Ecke angezeigt.
 
 ## <a name="random-jitter"></a>Zufällige Jitter
 
-In einigen Fällen fehlerlos geraden Computer Grafiken sind nicht sehr, was Sie möchten, und ein wenig hinsichtlich Ihrer Zufälligkeit erwünscht ist. In diesem Fall sollten Sie versuchen die [ `SKPathEffect.CreateDiscrete` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDiscrete/p/System.Single/System.Single/System.UInt32/) Methode:
+Mitunter die Arbeitsdomänencontroller geraden Zeilen der Computergrafiken sind nicht sehr, was Sie möchten, und ein wenig Zufälligkeit erwünscht ist. In diesem Fall sollten Sie versuchen die [ `SKPathEffect.CreateDiscrete` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDiscrete/p/System.Single/System.Single/System.UInt32/) Methode:
 
 ```csharp
 public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, UInt32 seedAssist)
 ```
 
-Dieser Pfad Effekt können für Kontur zuweisen oder füllen. Zeilen werden in verbundene Segmente getrennt – die geschätzte Zeitdauer gemäß `segLength` – und in verschiedene Richtungen erweitern. Das Ausmaß der Abweichung vom die ursprüngliche Zeile wird angegeben, indem `deviation`.
+Sie können diesbezüglich Pfad verwenden, für die Kontur zuweisen, oder füllen. Zeilen werden in verbundene Segmente unterteilt, deren ungefähre Länge angegeben ist, von `segLength` –, und erweitern Sie in verschiedene Richtungen. Das Ausmaß der Abweichung von der ursprünglichen Zeile wird angegeben, indem `deviation`.
 
-Das letzte Argument handelt es sich um einen Ausgangswert verwendet, um die pseudozufällige Sequenz verwendet, um die Auswirkungen zu generieren. Der Effekt Jitter sieht für verschiedene Ausgangswerte etwas anders. Das Argument hat den Standardwert 0 (null), was bedeutet, dass die Auswirkungen identisch ist, wenn Sie das Programm ausführen. Wenn Sie unterschiedliche Jitter möchten, wenn der Bildschirm aktualisiert wird, können Sie den Ausgangswert festlegen, auf die `Millisecond` Eigenschaft ein `DataTime.Now` Wert (z. B.).
+Das letzte Argument ist ein Ausgangswert verwendet, um die pseudozufällige Sequenz, die verwendet werden, für den Effekt zu generieren. Die Auswirkungen der Jitter sieht ein wenig anders für verschiedene Ausgangswerte. Das Argument hat den Standardwert 0 (null), was bedeutet, dass die Auswirkungen identisch ist, wenn Sie das Programm ausführen. Wenn Sie unterschiedliche Jitter möchten, wenn der Bildschirm aktualisiert wird, können Sie den Ausgangswert festlegen, auf die `Millisecond` Eigenschaft eine `DataTime.Now` Wert (z. B.).
 
 
-Die **Jitter experimentieren** Seite ermöglicht Ihnen das Experimentieren mit unterschiedlichen Werten im Verlauf eines Rechtecks:
+Die **Jitter experimentieren** Seite ermöglicht Ihnen das Experimentieren mit verschiedenen Werten in der Kontur Zuweisen eines Rechtecks:
 
 [![](effects-images/jitterexperiment-small.png "Screenshot der Seite Jitter Experiment dreifach")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
 
@@ -1001,7 +1001,7 @@ Das Programm ist Straightfoward. Die [ **JitterExperimentPage.xaml** ](https://g
 </ContentPage>
 ```
 
-Die `PaintSurface` Ereignishandler in der [ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs) Code-Behind-Datei wird aufgerufen, wenn eine `Slider` -Wert ändert. Sie ruft `SKPathEffect.CreateDiscrete` mit den beiden `Slider` Werte dann verwendet, um ein Rechteck mit Strichen zu zeichnen:
+Die `PaintSurface` Ereignishandler in der [ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs) Code-Behind-Datei wird aufgerufen, wenn eine `Slider` -Wert ändert. Ruft `SKPathEffect.CreateDiscrete` mit den beiden `Slider` Werte und verwendet, um ein Rechteck zu zeichnen:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1032,7 +1032,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Dieser Effekt können zum Ausfüllen auch diese zufälligen abweichungen in diesem Fall die Kontur des gefärbten Bereich unterliegt. Die **Jitter Text** Seite veranschaulicht die Verwendung dieser Effekt Pfad anzuzeigende Text. Hauptteil des Codes in der `PaintSurface` Handler die [ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs) Klasse dient zum Ändern der Größe und zentrieren Text:
+Sie können diesen Effekt verwenden, für das ausfüllen, diese zufällige abweichungen in diesem Fall die Kontur des ausgefüllten Bereichs unterliegt. Die **Jitter Text** Seite veranschaulicht die Verwendung von diesbezüglich Pfad anzuzeigende Text. Hauptteil des Codes in der `PaintSurface` Handler, der die [ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs) Klasse geht es um die Größe und den Text zentrieren:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1071,9 +1071,9 @@ Hier wird es im Querformat auf allen drei Plattformen ausgeführt:
 
 [![](effects-images/jittertext-small.png "Screenshot der Seite Text Jitter dreifach")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
 
-## <a name="path-outlining"></a>Gliedern von Pfad
+## <a name="path-outlining"></a>Pfad zu gliedern
 
-Sie haben bereits gesehen, zwei wenige Beispiele für die [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/System.Single/) Methode `SKPaint`, auch vorhanden ist ein [überladen](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/):
+Sie haben bereits gesehen, zwei kleine Beispiele für die [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/System.Single/) -Methode der `SKPaint`, das ist auch in einer [überladen](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/):
 
 ```csharp
 public Boolean GetFillPath (SKPath src, SKPath dst, Single resScale)
@@ -1081,13 +1081,13 @@ public Boolean GetFillPath (SKPath src, SKPath dst, Single resScale)
 public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resScale)
 ```
 
-Nur die ersten beiden Argumente erforderlich sind. Die Methode greift auf den Pfad verweist die `src` Argument, ändert die Pfaddaten, die basierend auf der Stricheigenschaften in der `SKPaint` Objekt (einschließlich der `PathEffect` Eigenschaft), und schreibt dann die Ergebnisse in die `dst` Pfad. Die `resScale` Parameter ermöglicht, reduzieren die Genauigkeit, um einen kleineren Zielpfad zu erstellen und die `cullRect` Argument Konturen außerhalb eines Rechtecks vermeiden kann.
+Nur die ersten beiden Argumente erforderlich sind. Die Methode greift auf den Pfad, der auf die verwiesen wird durch die `src` Argument ändert die Pfaddaten, die basierend auf den Stricheigenschaften in der `SKPaint` Objekt (einschließlich der `PathEffect` Eigenschaft), und schreibt dann die Ergebnisse in der `dst` Pfad. Die `resScale` Parameter ermöglicht, verringern Sie die Genauigkeit, um einen kleineren Zielpfad an, zu erstellen und die `cullRect` Argument Konturen außerhalb eines Rechtecks kann ausgeschlossen werden.
 
-Eine grundlegende Verwendung dieser Methode beinhaltet gar keine Auswirkungen Pfad. Wenn die `SKPaint` Objekt hat seine `Style` -Eigenschaftensatz auf `SKPaintStyle.Stroke`, an und führt *nicht* haben seine `PathEffect` festgelegt ist, `GetFillPath` erstellt einen Pfad ein, steht ein *Gliederung*von den Quellpfad, als wäre es durch die Paint-Eigenschaften gezeichnet wurde, hatte.
+Eine grundlegende Verwendung dieser Methode muss überhaupt keine pfadeffekte werden. Wenn die `SKPaint` Objekt verfügt über seine `Style` -Eigenschaft auf festgelegt `SKPaintStyle.Stroke`, und führt *nicht* haben die `PathEffect` festgelegt ist, `GetFillPath` erstellt einen Pfad, der darstellt ein *Gliederung*von den Quellpfad, als ob es durch die Eigenschaften für die Paint-Element gezeichnet worden.
 
-Z. B. wenn die `src` Pfad ist ein einfacher Kreis RADIUS 500 Personen durch, und die `SKPaint` Objekt gibt an, eine Strichbreite von 100, und klicken Sie dann die `dst` Pfad wird zwei konzentrische Kreise, eine mit einem Radius von 450 und der andere mit einem Radius von 550. Die Methode wird aufgerufen `GetFillPath` , da dies füllen `dst` Pfad entspricht dem Verlauf der `src` Pfad. Aber Sie können auch mit Strichen zu zeichnen die `dst` Pfad zu dem Pfad-Pfade finden Sie unter.
+Z. B. wenn die `src` Pfad ist ein einfacher Kreis RADIUS 500, und die `SKPaint` Objekt gibt an, eine Strichbreite von 100, und klicken Sie dann die `dst` Pfad wird der beiden konzentrischen Kreise, eine mit einem Radius von 450 und der andere mit einem Radius von 550. Die Methode wird aufgerufen, `GetFillPath` , da dies ausfüllen `dst` Pfad entspricht dem Verlauf der `src` Pfad. Aber Sie können auch zeichnen die `dst` Pfades darauf, den Pfad beschreibt.
 
-Die **Tippen Sie auf Gliederung der Pfad** wird dies veranschaulicht. Die `SKCanvasView` und `TapGestureRecognizer` instanziiert werden, der [ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml) Datei. Die [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs) Code-Behind-Datei definiert drei `SKPaint` Objekte als Felder, zwei für Verlauf mit Strichen zu zeichnen Breiten von 100 20 und die dritte für ausfüllen:
+Die **Tippen Sie auf, um den Umriss des Pfads** veranschaulicht dies. Die `SKCanvasView` und `TapGestureRecognizer` instanziiert werden, der [ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml) Datei. Die [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs) Code-Behind-Datei definiert drei `SKPaint` Objekte als Felder, zwei für die Kontur mit zuweisen zeichnen Breite von 100 20 und die dritte für den ausfüllen:
 
 ```csharp
 public partial class TapToOutlineThePathPage : ContentPage
@@ -1128,7 +1128,7 @@ public partial class TapToOutlineThePathPage : ContentPage
 }
 ```
 
-Wenn der Bildschirm nicht abgerufen wurde, die `PaintSurface` Handler verwendet die `blueFill` und `redThickStroke` Zeichnen von Objekten zum Rendern eines kreisförmigen Pfads:
+Wenn der Bildschirm nicht abgerufen wurde, die `PaintSurface` Ereignishandler verwendet die `blueFill` und `redThickStroke` Zeichnen von Objekten auf einen kreisförmigen Pfad zu rendern:
 
 ```csharp
 public partial class TapToOutlineThePathPage : ContentPage
@@ -1168,28 +1168,28 @@ public partial class TapToOutlineThePathPage : ContentPage
 }
 ```
 
-Der Kreis gefüllt und gezeichnet werden, wie zu erwarten:
+Der Kreis gefüllt und mit Strichen dargestellt, wie Sie erwarten:
 
-[![](effects-images/taptooutlinethepathnormal-small.png "Dreifacher Screenshot der normalen tippen, Gliederung Pfad Seite")](effects-images/taptooutlinethepathnormal-large.png#lightbox "dreifacher Screenshot der normalen tippen, Gliederung der Path-Seite")
+[![](effects-images/taptooutlinethepathnormal-small.png "Dreifacher Screenshot der Seite für normale Tippen Sie auf die Umrisspfad")](effects-images/taptooutlinethepathnormal-large.png#lightbox "dreifachen Screenshot der normalen Tippen Sie auf die Umrisspfad-Seite")
 
-Tippen Sie auf dem Bildschirm `outlineThePath` auf festgelegt ist `true`, und die `PaintSurface` Ereignishandler erstellt ein neuer `SKPath` -Objekt und verwendet diesen als der Zielpfad in einem Aufruf von `GetFillPath` auf die `redThickStroke` Paint-Objekt. Dieser Zielpfad dann gefüllt und mit Gestrichelt `redThinStroke`, wodurch Folgendes:
+Tippen Sie auf dem Bildschirm `outlineThePath` nastaven NA hodnotu `true`, und die `PaintSurface` Ereignishandler erstellt eine neue `SKPath` -Objekt und verwendet diesen als der angegebene Zielpfad in einem Aufruf von `GetFillPath` auf die `redThickStroke` Paint-Objekt. Klicken Sie dann diese Zielpfad gefüllt und mit Kontur in `redThinStroke`, sodass in der folgenden:
 
-[![](effects-images/taptooutlinethepathoutlined-small.png "Dreifacher Screenshot der grundsätzliche tippen, Gliederung Pfad Seite")](effects-images/taptooutlinethepathoutlined-large.png#lightbox "dreifacher Screenshot der grundsätzliche tippen, Gliederung der Path-Seite")
+[![](effects-images/taptooutlinethepathoutlined-small.png "Dreifacher Screenshot Seitenrand Tippen Sie auf die Umrisspfad Kontur")](effects-images/taptooutlinethepathoutlined-large.png#lightbox "dreifachen Screenshot Seitenrand Tippen Sie auf die Umrisspfad Kontur")
 
-Die zwei roten Kreise zeigen deutlich, dass der ursprüngliche Pfad für zirkuläre in zwei zirkuläre Konturen konvertiert wurde.
+Die beiden roten Kreise zeigen deutlich, dass der ursprüngliche Pfad für zirkuläre in zwei zirkuläre Konturen konvertiert wurde.
 
-Diese Methode kann sehr hilfreich bei der Entwicklung zu verwendende für Pfade werden der `SKPathEffect.Create1DPath` Methode. Die angegebenen Pfade in diesen Methoden werden immer gefüllt, wenn die Pfade repliziert werden. Wenn Sie nicht möchten, dass den gesamten Pfad gefüllt werden soll, müssen Sie sorgfältig die Umrisse definieren.
+Diese Methode kann sehr nützlich bei der Entwicklung von Pfaden für die Verwendung der `SKPathEffect.Create1DPath` Methode. Die angegebenen Pfade in diesen Methoden werden immer gefüllt, wenn die Pfade repliziert werden. Wenn Sie nicht möchten, dass den gesamten Pfad gefüllt werden soll, müssen Sie sorgfältig die Umrisse definieren.
 
-Beispielsweise ist in der **verknüpften Kette** Beispiel definiert, die Links mit einer Reihe von vier Bögen, jedes Paar von denen wurden basierend auf zwei Radien kann den Bereich des Pfads gefüllt werden soll. Es ist möglich, ersetzen Sie den Code in der `LinkedChainPage` Klasse dafür etwas anders.
+Z. B. in der **verknüpfte Kette** Beispiel definiert, die Links mit einer Reihe von vier Bögen, jedes Paar der basieren auf den zwei Radien, sich den Bereich des Pfads gefüllt werden soll. Es ist möglich, ersetzen Sie den Code in die `LinkedChainPage` Klasse dafür ein wenig anders.
 
-Zunächst sollten Sie neu zu definieren, die `linkRadius` Konstanten:
+Zunächst sollten Sie neu definieren die `linkRadius` Konstanten:
 
 ```csharp
 const float linkRadius = 27.5f;
 const float linkThickness = 5;
 ```
 
-Die `linkPath` ist jetzt nur zwei Bögen basierend auf dieser einzelnen Radius, mit der gewünschten Winkel starten und sweep Winkel:
+Die `linkPath` ist jetzt nur zwei Bögen basierend auf dieser einzelnen Radius, mit den gewünschten Winkel starten und beim Aufräumen Winkeln bearbeitete:
 
 ```csharp
 using (SKPath linkPath = new SKPath())
@@ -1218,13 +1218,13 @@ using (SKPath linkPath = new SKPath())
 }
 ```
 
-Die `outlinePath` Objekt wird dann die Empfänger der Gliederung des `linkPath` Wenn es mit den Eigenschaften, die im angegebenen schraffiert ist `strokePaint`.
+Die `outlinePath` Objekt kann dann die Empfänger der Kontur der `linkPath` Wenn es mit den Eigenschaften, die im angegebenen schraffiert ist `strokePaint`.
 
-Ein weiteres Beispiel, die auf diese Weise kommt weiter für den Pfad in verwendet eine `SKPathEffect.Create2DPath` Methoden.
+Ein weiteres Beispiel, die mit diesem Verfahren kommt als Nächstes für den Pfad in verwendet eine `SKPathEffect.Create2DPath` Methoden.
 
-## <a name="combining-path-effects"></a>Kombination von Pfad Effekte
+## <a name="combining-path-effects"></a>Kombinieren von Pfadeffekte
 
-Die zwei letzten statischen Erstellungsmethoden von `SKPathEffect` sind [ `SKPathEffect.CreateSum` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateSum/p/SkiaSharp.SKPathEffect/SkiaSharp.SKPathEffect/) und [ `SKPathEffect.CreateCompose` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateCompose/p/SkiaSharp.SKPathEffect/SkiaSharp.SKPathEffect/):
+Die beiden letzten statische Erstellungsmethoden der `SKPathEffect` sind [ `SKPathEffect.CreateSum` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateSum/p/SkiaSharp.SKPathEffect/SkiaSharp.SKPathEffect/) und [ `SKPathEffect.CreateCompose` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateCompose/p/SkiaSharp.SKPathEffect/SkiaSharp.SKPathEffect/):
 
 ```csharp
 public static SKPathEffect CreateSum (SKPathEffect first, SKPathEffect second)
@@ -1232,15 +1232,15 @@ public static SKPathEffect CreateSum (SKPathEffect first, SKPathEffect second)
 public static SKPathEffect CreateCompose (SKPathEffect outer, SKPathEffect inner)
 ```
 
-Diese beiden Methoden kombinieren von zwei Pfad Effekte um einen zusammengesetzten Pfad erstellen. Die `CreateSum` Methode erstellt einen Pfad Effekt, der ähnlich wie die beiden Pfad Effekte separat angewendet während `CreateCompose` gilt ein Pfad Effekt (die `inner`) und wendet dann die `outer` mit.
+Beide Methoden kombinieren, zwei pfadeffekte um einen zusammengesetzten Pfad-Effekt zu erstellen. Die `CreateSum` Methode erstellt einen Pfad ab, der ähnlich wie die beiden pfadeffekte separat angewendet wird während `CreateCompose` einen Pfad Effekt angewendet (die `inner`) und wendet dann die `outer` mit.
 
-Sie haben bereits gesehen, wie die `GetFillPath` Methode `SKPaint` können einen Pfad in einen anderen Pfad auf der Grundlage konvertieren `SKPaint` Eigenschaften (einschließlich `PathEffect`) Es ist also darf keine *zu* unverständliche, wie ein `SKPaint`Objekt kann diesen Vorgang ausführen, zweimal mit zwei Pfad Effekten angegeben, der `CreateSum` oder `CreateCompose` Methoden.
+Sie haben bereits gesehen, wie die `GetFillPath` -Methode der `SKPaint` können konvertieren Sie einen Pfad, an einen anderen Pfad basierend auf `SKPaint` Eigenschaften (einschließlich `PathEffect`), damit es sein, darf nicht *zu* mysteriöse, wie ein `SKPaint`Objekt kann diesen Vorgang ausführen, zweimal mit zwei Pfad Effekten, die im angegebenen die `CreateSum` oder `CreateCompose` Methoden.
 
-Eine offensichtliche Verwendung von `CreateSum` besteht im Definieren einer `SKPaint` Objekt, das füllt eines Pfads mit einem Pfad und den Pfad mit einem anderen Pfad Effekt Konturen. Dies wird dargestellt, der **Katzen im Frame** Beispiel, das ein Array von Katzen innerhalb eines Rahmens mit gewellte Kanten anzeigt:
+Eine offensichtliche Verwendung `CreateSum` besteht darin, definieren eine `SKPaint` Objekt, das einen Pfad mit einem Pfad Effekt füllt und den Pfad mit einem anderen Pfad wirksam die Striche. Dies wird veranschaulicht, der **Katzen im Frame** Beispiel, das ein Array von Katzen innerhalb eines Rahmens mit gewellte Kanten angezeigt:
 
-[![](effects-images/catsinframe-small.png "Dreifacher Screenshot der Seite Katzen im Frame")](effects-images/catsinframe-large.png#lightbox "dreifacher Screenshot der Seite Katzen im Frame")
+[![](effects-images/catsinframe-small.png "Dreifacher Screenshot der Seite für Katzen im Frame")](effects-images/catsinframe-large.png#lightbox "dreifachen Screenshot der Seite für Katzen im Frame")
 
-Die [ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs) Klasse beginnt, indem Sie mehrere Felder definieren. Sie möglicherweise erkennen, dass das erste Feld aus der [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) -Klasse aus den [ **SVG-Pfaddaten** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) Artikel. Der zweite Pfad basiert auf einer Zeile und Bogen nach dem Muster des Ausbuchten des Frames:
+Die [ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs) Klasse beginnt, indem Sie mehrere Felder definieren. Sie kennen das erste Feld aus der [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) -Klasse aus der [ **SVG-Pfaddaten** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) Artikel. Der zweite Pfad basiert auf einer Zeile und einen Bogen konvertiert nach dem Muster Ausbuchten des Frames:
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1282,9 +1282,9 @@ public class CatsInFramePage : ContentPage
 }
 ```
 
-Die `catPath` verwendet werden, der `SKPathEffect.Create2DPath` Methode Wenn die `SKPaint` Objekt `Style` -Eigenschaftensatz auf `Stroke`. Jedoch, wenn die `catPath` verwendet wird, direkt an diesem Programm, klicken Sie dann den gesamten Anfang der Cat ausgefüllt, und Whisker nicht selbst sichtbar. (Probieren Sie es.) Es ist erforderlich, die Gliederung des Pfades zu erhalten und verwenden die Gliederung in der `SKPathEffect.Create2DPath` Methode.
+Die `catPath` kann verwendet werden, der `SKPathEffect.Create2DPath` Methode Wenn die `SKPaint` Objekt `Style` -Eigenschaftensatz auf `Stroke`. Aber wenn die `catPath` wird verwendet, direkt in diesem Programm, klicken Sie dann den gesamten Anfang das Cat gefüllt, und Whisker nicht selbst sichtbar. (Probieren Sie es!) Es ist erforderlich, erhalten, dass der Pfad den Umriss, und Verwenden von dieser Gliederung in den `SKPathEffect.Create2DPath` Methode.
 
-Der Konstruktor übernimmt diese Aufgabe. Zuerst angewendet wird, zwei Transformationen `catPath` zum Verschieben der (0, 0) in die Mitte zeigen und Größe Herunterskalieren. `GetFillPath` Ruft alle Gliederungen der Konturen in `outlinedCatPath`, und dieses Objekt wird verwendet, der `SKPathEffect.Create2DPath` aufrufen. Die Skalierung Faktoren, die der `SKMatrix` Wert sind etwas größer als die horizontale und vertikale Größe des der Katze in bieten einen kleinen Puffer zwischen der Kacheln verläuft, während die Übersetzung Faktoren waren abgeleitet in einem gewissen empirisch so, dass eine vollständige Cat in angezeigt wird der linken oberen Ecke des Frames:
+Der Konstruktor führt diese Aufgabe aus. Sie zuerst angewendet wird, zwei Transformationen `catPath` zum Verschieben der (0, 0) zeigen Sie auf die Mitte und Größe Herunterskalieren. `GetFillPath` Ruft alle Gliederungen der Konturen in `outlinedCatPath`, und dieses Objekt wird verwendet, der `SKPathEffect.Create2DPath` aufrufen. Die Skalierung Faktoren die `SKMatrix` Wert sind geringfügig größer sein als die horizontale und vertikale Größe des der Katze zu wenig Puffer zwischen der Kacheln verläuft, während der Übersetzung Faktoren sind abgeleitete etwas empirisch, damit eine vollständige Katze in angezeigt wird der linke obere Ecke des Frames:
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1327,9 +1327,9 @@ public class CatsInFramePage : ContentPage
 }
 ```
 
-Der Konstruktor ruft dann `SKPathEffect.Create1DPath` für den gewellte Frame. Beachten Sie, dass die Breite des Pfads 100 Pixel beträgt, sondern der vorabversandmitteilung 75 Pixel, damit der replizierten Pfad überlappt wird, um den Rahmen aus. Der Konstruktor ruft die letzte Anweisung `SKPathEffect.CreateSum` die Effekte von zwei Pfaden kombinieren, und legen das Ergebnis auf der `SKPaint` Objekt.
+Anschließend ruft der Konstruktor `SKPathEffect.Create1DPath` für den gewellte Frame. Beachten Sie, dass die Breite des Pfads 100 Pixel beträgt, aber der vorabversandmitteilung 75 Pixel, damit der replizierte Pfad um den Frame überlappt wird. Der Konstruktor ruft die letzte Anweisung `SKPathEffect.CreateSum` Kombinieren der zwei pfadeffekte und das Ergebnis auf die `SKPaint` Objekt.
 
-Alle diese Aufgaben kann den `PaintSurface` Handler ganz einfach sein. Es muss nur definieren ein Rechteck, und zeichnen sie mit `framePaint`:
+All diese Arbeit ermöglicht die `PaintSurface` Handler, der ziemlich einfach sein. Es muss nur zum Definieren eines Rechtecks, und ziehen Sie es mit `framePaint`:
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1350,11 +1350,11 @@ public class CatsInFramePage : ContentPage
 }
 ```
 
-Die Algorithmen hinter die Pfad-Auswirkungen führen immer Kontur zuweisen oder füllen, die angezeigt werden, zum gesamten Pfad dadurch einige visuelle Elemente außerhalb des Rechtecks angezeigt werden können. Die `ClipRect` vor dem Aufrufen der `DrawRect` Aufruf gestattet die visuellen Elemente erheblich cleaner sein. (Probieren Sie es ohne Clipping.)
+Die bewährten Algorithmen hinter der pfadeffekte führen immer den gesamten Pfad zum Kontur zuweisen oder zu füllen, die angezeigt werden, wodurch einige visuelle Elemente außerhalb des Rechtecks angezeigt werden kann. Die `ClipRect` vor dem Aufrufen der `DrawRect` einrichtungsaufrufs können die Visualisierungen deutlich viel klarer sein. (Probieren Sie es ohne Clipping!)
 
-Es ist üblich, verwenden Sie `SKPathEffect.CreateCompose` einen anderen Pfad Effekt einige Jitter hinzu. Sie sicherlich selbst experimentieren können allerdings so sieht ein etwas anderes Beispiel:
+Es ist üblich, verwenden Sie `SKPathEffect.CreateCompose` etwas Jitter auftreten, einen anderen Pfad Effekt hinzufügen. Sie können sicherlich selbst experimentieren, aber hier ist ein etwas anderes Beispiel:
 
-Die **Strichlinien Schraffur** füllt eine Ellipse, die mit Schraffur Zeilen, die gestrichelte sind. Die meisten Aufgaben in der [ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs) Klasse erfolgt direkt in die Felddefinitionen. Diese Felder Definieren eines Effekts Dash und eine Schraffur wirksam. Sie definiert sind, als `static` , da sie dann in referenziert werden ein `SKPathEffect.CreateCompose` rufen Sie in der `SKPaint` Definition:
+Die **gestrichelte Schraffurlinien** füllt eine Ellipse mit schraffurlinien, die gestrichelt werden. Die meisten Aufgaben in der [ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs) Klasse erfolgt direkt in den Felddefinitionen. Diese Felder definieren Sie einen Effekt Dash und einen Effekt Schraffur. Sie definiert sind, als `static` , da diese dann in referenziert werden ein `SKPathEffect.CreateCompose` rufen Sie in der `SKPaint` Definition:
 
 ```csharp
 public class DashedHatchLinesPage : ContentPage
@@ -1382,7 +1382,7 @@ public class DashedHatchLinesPage : ContentPage
 }
 ```
 
-Die `PaintSurface` Handler müssen nur die standard-Overhead plus zwei aufrufen enthalten `DrawOval`:
+Die `PaintSurface` Handler müssen nur den standardmäßigen Aufwand sowie einen Aufruf von enthalten `DrawOval`:
 
 ```csharp
 public class DashedHatchLinesPage : ContentPage
@@ -1404,11 +1404,11 @@ public class DashedHatchLinesPage : ContentPage
 }
 ```
 
-Als Sie bereits ermittelt haben, die schraffierte Linien sind nicht genau mit dem inneren Bereich beschränkt, und in diesem Beispiel immer beginnen auf der linken Seite mit einem ganzen Bindestrich:
+Wenn Sie bereits festgestellt haben die, die schraffurlinien nicht genau mit dem inneren Bereich beschränkt sind und in diesem Beispiel immer beginnen auf der linken Seite mit einem ganzen Bindestrich:
 
-[![](effects-images/dashedhatchlines-small.png "Dreifacher Screenshot der Seite gestrichelte Schraffur Linien")](effects-images/dashedhatchlines-large.png#lightbox "dreifacher Screenshot der Seite gestrichelte schraffierte Linien")
+[![](effects-images/dashedhatchlines-small.png "Dreifacher Screenshot der Seite Schraffurlinien Gestrichelt")](effects-images/dashedhatchlines-large.png#lightbox "dreifachen Screenshot der Seite Schraffurlinien gestrichelt")
 
-Nun, da Sie Auswirkungen Pfad zwischen einfachen Punkte und Bindestriche enthalten und ungewöhnliche Kombinationen gesehen haben, verwenden Sie Ihre Vorstellungskraft hinzugefügt, und finden Sie unter erstellen können.
+Nun, da Sie pfadeffekte, reichen von einfachen Punkte und Striche seltsame Kombinationen aus gesehen haben, verwenden Sie Ihre Vorstellungskraft, und sehen Sie, was Sie erstellen können.
 
 
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/08/2018
-ms.openlocfilehash: 865a06e9fa430e195ce4ea3c6088785d9513dbf6
-ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
+ms.openlocfilehash: 4e1249b7a9c1e9797cbc758c3bd1b83f87d47431
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39030703"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615147"
 ---
 # <a name="introduction-to-ios-12"></a>Einführung in iOS 12
 
@@ -21,11 +21,12 @@ ms.locfileid: "39030703"
 > [!WARNING]
 > Xamarin iOS-12-Unterstützung ist gegenwärtig im vorschaustadium, d. h., er möglicherweise Fehler enthalten ist nicht die Features, und möglicherweise geändert. Verwenden sie nur für Experimente.
 
-> [!NOTE]
-> - Überprüfen Sie die [Einstieg](get-started.md) Anleitung finden Sie Anweisungen zum Einstieg in die Erstellung von iOS-12-apps mit Xamarin.
-> - Weitere Informationen finden Sie in der Xamarin-Vorschauversion [release Blogbeitrag](https://releases.xamarin.com/preview-release-xcode-10-beta-3/).
-
 Dieses Dokument enthält eine allgemeine Beschreibung einiger iOS-12-APIs, die für die Xamarin Preview Release c#-Bindungen bietet.
+
+Informationen zum Einstieg 12-iOS-apps mit Xamarin erstellen, sehen Sie sich:
+
+- Die [Handbuch mit ersten Schritten](get-started.md)
+- Die Xamarin-Vorschauversion [release Blogbeitrag](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
 
 ## <a name="arkit-2"></a>ARKit 2
 
@@ -69,8 +70,12 @@ iOS 11.3 eingeführt [Gesundheitsdaten](https://www.apple.com/healthcare/health-
 
 In iOS 12 unterstützen iMessage-apps Presentation-Kontexten, die die apps zum Ausführen als normaler iMessage-app oder im Rahmen eines Fotos oder Videos wirksam zu ermöglichen.
 
+## <a name="vision-framework"></a>Maschinelles sehen-framework
+
+Das Vision Framework enthält eine verbesserte gesichtserkennung, die in verschiedenen Ausrichtungen Gesichter erkennen kann. Darüber hinaus können Anforderung Revisionen jetzt verwendet werden, um eine bestimmte Vision Framework Algorithmusrevision auszuwählen.
+
 ## <a name="related-links"></a>Verwandte Links
 
 - [Machen Sie sich bereit für iOS-12 (Apple)](https://developer.apple.com/ios/)
 - [iOS 12 Preview (Apple)](https://www.apple.com/ios/ios-12-preview/)
-- Xamarin-Vorschauversion [release Blogbeitrag](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)
+- Xamarin-Vorschauversion [release Blogbeitrag](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)

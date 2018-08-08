@@ -1,52 +1,52 @@
 ---
-title: SkiaSharp Linien und Pfade
-description: In diesem Artikel wird erläutert, wie SkiaSharp zum Zeichnen von Linien und Grafikpfade in Xamarin.Forms-Anwendungen verwenden, und wird dies mit Beispielcode veranschaulicht.
+title: SkiaSharp-Linien und-Pfade
+description: In diesem Artikel wird erläutert, wie SkiaSharp, die zum Zeichnen von Linien und Grafikpfade in Xamarin.Forms-Anwendungen verwenden, und dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.assetid: 316A15FE-383D-4D06-8641-BAC7EE7474CA
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: a922f7ec91624e20a9afedb8063328bdb7a4d42d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 9febfabb7b44b1ec09abda4b352691b37565cb48
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243752"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615134"
 ---
-# <a name="skiasharp-lines-and-paths"></a>SkiaSharp Linien und Pfade
+# <a name="skiasharp-lines-and-paths"></a>SkiaSharp-Linien und-Pfade
 
-_Verwenden Sie SkiaSharp zum Zeichnen von Linien und Grafiken Pfade_
+_Verwenden von SkiaSharp zum Zeichnen von Linien und Grafiken Pfade_
 
-Die [vorherigen Abschnitt](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md) veranschaulicht, die die SkiaSharp `SKCanvas` Klasse enthält mehrere Methoden zum Zeichnen von Rechtecken, Ellipsen und abgerundeten Rechtecken. Inhalt dieses Abschnitts und in späteren Abschnitten behandelt die verschiedenen Klassen, die durch das Erstellen und Rendern verbunden *Grafikpfade*.
+Die [vorherigen Abschnitt](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md) veranschaulicht, die die SkiaSharp `SKCanvas` Klasse enthält mehrere Methoden zum Zeichnen von Rechtecken, Ellipsen und Rechtecke mit abgerundeten. Dieser Abschnitt und in späteren Abschnitten behandelt die verschiedenen Klassen, die Verbindung mit dem Erstellen und Rendern *Grafikpfade*.
 
-Der Grafikpfad ist der allgemeinste Ansatz zum Zeichnen von Linien und Kurven in SkiaSharp. In diesem Abschnitt erläutert die Verwendung einer `SKPath` Objekt gerade Linien gezeichnet werden soll, und verwenden eine Auflistung von kleinen geraden (aufgerufen eine *Polylinie*) Kurven gezeichnet werden soll, die Sie, mathematisch definieren können. Ein später Abschnitt wird erläutert, die verschiedene Arten von Kurven von unterstützten `SKPath`.
+Der Grafikpfad ist der allgemeinste Ansatz zum Zeichnen von Linien und Kurven in SkiaSharp. In diesem Abschnitt befasst sich mit einer `SKPath` Objekt gerade Linien zu zeichnen und eine Sammlung von kleinen gerade Linien verwenden (wird aufgerufen, eine *Polylinie*) zum Zeichnen von Kurven, die Sie, mathematisch definieren können. Ein später Abschnitt wird erläutert, die verschiedene Arten von Kurven von unterstützten `SKPath`.
 
-Die Beispielprogramme in diesem Abschnitt angezeigt wird, unter der Überschrift **Linien und Pfade** auf der Startseite von der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm, und klicken Sie in der [ **Pfade** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths) Ordner der Projektmappe.
+Die Beispielprogramme in diesem Abschnitt angezeigt wird, unter der Überschrift **Linien und-Pfade** auf der Startseite des der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm, und klicken Sie in der [ **Pfade** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths) Ordner der Projektmappe.
 
 ## <a name="lines-and-stroke-capslinesmd"></a>[Linien und Strichenden](lines.md)
 
-Erfahren Sie, wie SkiaSharp zum Zeichnen von Linien mit anderen Strichabschlüssen verwenden.
+Erfahren Sie, wie SkiaSharp zum Zeichnen von Linien mit anderen Strichenden verwenden.
 
 ## <a name="path-basicspathsmd"></a>[Grundlagen zu Pfaden](paths.md)
 
-Untersuchen Sie das SkiaSharp SKPath-Objekt für das Kombinieren von Linien und Kurven.
+Untersuchen Sie das SkiaSharp SKPath-Objekt, für das Kombinieren von Linien und Kurven.
 
 ## <a name="the-path-fill-typesfill-typesmd"></a>[Die Fülltypen für Pfade](fill-types.md)
 
-Ermitteln Sie die verschiedenen Effekte mit SkiaSharp Pfad ausfüllen Typen möglich.
+Entdecken Sie die verschiedenen Effekte, die mit Fülltypen für Pfade SkiaSharp möglich.
 
 ## <a name="polylines-and-parametric-equationspolylinesmd"></a>[Polylinien und parametrische Formeln](polylines.md)
 
-Verwenden Sie SkiaSharp, um eine beliebige Zeile zu rendern, die Sie mit parametrische Formeln definieren können.
+Verwenden von SkiaSharp zum Rendern jeder Zeile, die Sie mit parametrische Formeln definieren können.
 
 ## <a name="dots-and-dashesdotsmd"></a>[Punkte und Striche](dots.md)
 
-Die Komplexität der Zeichnung SkiaSharp punktierter und gestrichelter Linien "Master".
+Meistern Sie die feinheiten der punktierte und gestrichelte Linien im SkiaSharp zu zeichnen.
 
 ## <a name="finger-paintingfinger-paintmd"></a>[Zeichnen mit Fingern](finger-paint.md)
 
-Verwenden Sie die Finger im Zeichenbereich Paint-Ereignis.
+Verwenden Sie die Finger, um auf der Leinwand zeichnen.
 
 
 ## <a name="related-links"></a>Verwandte Links
