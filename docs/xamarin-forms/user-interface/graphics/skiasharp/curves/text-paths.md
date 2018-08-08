@@ -3,16 +3,16 @@ title: Pfade und Text in SkiaSharp
 description: In diesem Artikel untersucht die Schnittmenge von SkiaSharp-Pfade und Text, und dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: e7ce6994541ae947fa714d3c67acbc5d5d816975
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: 3576af56d48eec58f3fe5fee42aef143e2edea70
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130779"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615456"
 ---
 # <a name="paths-and-text-in-skiasharp"></a>Pfade und Text in SkiaSharp
 
