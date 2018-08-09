@@ -1,114 +1,112 @@
 ---
-title: Pushbenachrichtigungen in iOS
-description: Dieses Dokument beschreibt das Arbeiten mit Pushbenachrichtigungen in iOS 9 und früher. Es wird erläutert, Zertifikate zu registrieren, die mit den Apple Push Notifications Gateway Service (APNS) und vieles mehr.
+title: Senden von Pushbenachrichtigungen in iOS
+description: Dieses Dokument beschreibt das Arbeiten mit Pushbenachrichtigungen in iOS 9 und früher. Es wird erläutert, Zertifikaten, Registrieren mit der Apple Push Notifications Gateway Service (APNS) und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7bb2a250b9d3cc0c8df02f432330f9fe1dc58f94
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f11f5d1cbde0f5eae27215af8eb6544be46c0206
+ms.sourcegitcommit: ef04a4ae1b19c1854a8e4e8315516d4030f4bbd6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788666"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39654814"
 ---
-# <a name="push-notifications-in-ios"></a>Pushbenachrichtigungen in iOS
+# <a name="push-notifications-in-ios"></a>Senden von Pushbenachrichtigungen in iOS
 
 > [!IMPORTANT]
-> Die Informationen in diesem Abschnitt beziehen sich auf iOS 9 und vorherigen, es ist noch hier zur Unterstützung von älterer iOS-Versionen. IOS 10 und höher, finden Sie unter der [Benachrichtigungsframeworks User Guide](~/ios/platform/user-notifications/index.md) für die Unterstützung von lokalen und Remote-Benachrichtigung auf einem iOS-Gerät.
+> Die Informationen in diesem Abschnitt beziehen sich auf iOS 9 und vorherigen, es wurde keine hier zur Unterstützung von älterer iOS-Versionen. IOS 10 und höher, finden Sie unter den [Handbuch für die Benutzer-Notification-Framework](~/ios/platform/user-notifications/index.md) für die Unterstützung von sowohl lokale als auch Remote-Benachrichtigung auf iOS-Geräten.
 
-Pushbenachrichtigungen sollten kurze beibehalten und nur wenig Daten, um der mobilen Anwendung zu benachrichtigen, dass er die Serveranwendung für ein Update kontaktiert werden sollte. Z. B., wenn neue e-Mail eingeht, würde die Anwendung für die nur die mobile Anwendung benachrichtigen, die neue e-Mail angekommen ist. Die Benachrichtigung würde nicht die neue e-Mail sich selbst enthalten. Die mobile Anwendung würde dann rufen Sie die neue e-Mail-Nachrichten vom Server entsprechende wurde
+Erste Schritte mit Pushbenachrichtigungen sollte kurz gehalten werden und nur genügend Daten für der mobilen Anwendung zu benachrichtigen, dass sie die Server-Anwendung nach einem Update wenden. Z. B., wenn neue e-Mail eingeht, würde die Server-Anwendung nur die mobile Anwendung benachrichtigen, die neue e-Mail angekommen ist. Die Benachrichtigung würde die neue e-Mail selbst nicht enthalten. Die mobile Anwendung würde der neuen e-Mails klicken Sie dann vom Server abgerufen werden, während sie die entsprechenden war
 
-In der Mitte der Push-Benachrichtigungen in iOS ist die *Apple Push Notification-Gateway-Dienst (APNS)*. Dies ist ein Dienst bereitgestellt, die von Apple, die für das routing Benachrichtigungen von einem Anwendungsserver für iOS-Geräte zuständig ist.
+In der Mitte des Push-Benachrichtigungen unter iOS ist die *Apple Push Notification-Gateway-Dienst (APNS)*. Dies ist ein Dienst von Apple, die für das routing von Benachrichtigungen von einem Anwendungsserver auf iOS-Geräten zuständig ist.
 Das folgende Bild zeigt die Push Notification-Topologie für iOS: ![](remote-notifications-in-ios-images/image4.png "dieses Bild zeigt die Push Notification-Topologie für iOS")
 
-Remote Benachrichtigungen selbst werden JSON-formatierte Zeichenfolgen, die das Format entsprechen und Protokolle, die im angegebenen [die Benachrichtigungsnutzlast](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1) Teil der [lokale und Push Notification Programmierhandbuch](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)in der [iOS-Entwicklerdokumentation](https://developer.apple.com/devcenter/ios/index.action).
+Remotebenachrichtigungen selbst sind JSON-formatierte Zeichenfolgen, die das Format entsprechen, und Protokolle, die im angegebenen [die Benachrichtigungsnutzlast](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1) Teil der [lokalen und Push Notification Programming Guide](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)in die [iOS-Entwicklerdokumentation](https://developer.apple.com/devcenter/ios/index.action).
 
-Apple verwaltet zwei APNS-Umgebungen: eine *Sandkasten* und ein *Produktion* Umgebung. Der Sandkasten-Umgebung ist für den Test während der Entwicklungsphase gedacht und finden Sie unter `gateway.sandbox.push.apple.com` auf TCP-port 2195. Die produktionsumgebung sollen in Anwendungen verwendet werden, die bereitgestellt wurden, finden Sie unter `gateway.push.apple.com` auf TCP-port 2195.
+Apple verwaltet zwei Umgebungen von APNS: eine *Sandbox* und *Produktion* Umgebung. Die Sandbox-Umgebung für Tests während der Entwicklungsphase gedacht ist, und finden Sie unter `gateway.sandbox.push.apple.com` 2195 am TCP-port. Die produktionsumgebung dient in Anwendungen verwendet werden, die bereitgestellt wurden, und finden Sie unter `gateway.push.apple.com` 2195 am TCP-port.
 
 ## <a name="requirements"></a>Anforderungen
 
-Pushbenachrichtigung muss die folgenden Regeln beachten, die von der Architektur des APNS vorgegeben sind:
+Pushbenachrichtigung erhalten, muss die folgenden Regeln beachten, die von der Architektur von APNS vorgegeben werden:
 
--  **256 Byte Nachrichtengrenze** -die gesamte Nachrichtengröße der Benachrichtigung darf 256 Bytes nicht überschreiten.
--  **Keine Empfangsbestätigung** -APNS bietet keine den Absender mit Benachrichtigungen, die eine Nachricht an dem beabsichtigten Empfänger vorgenommen. Wenn das Gerät nicht erreichbar ist, und mehrere sequenzielle Benachrichtigungen gesendet werden, gehen alle Benachrichtigungen mit Ausnahme der letzten verloren. Nur die letzte Benachrichtigung wird an das Gerät übermittelt werden.
--  **Jede Anwendung erfordert ein gesichertes Zertifikat** -Kommunikation mit APNS über SSL erfolgen muss.
+-  **256 Byte Nachrichtengrenze** – die Größe der gesamten Nachricht der Benachrichtigung darf 256 Bytes nicht überschreiten.
+-  **Keine Empfangsbestätigung** -APNS bietet keine den Absender Benachrichtigung, die eine Nachricht an dem vorgesehenen Empfänger vorgenommen. Wenn das Gerät nicht erreichbar ist, und mehrere sequenzielle Benachrichtigungen gesendet werden, gehen alle Benachrichtigungen, mit Ausnahme der letzten verloren. Nur die neueste Benachrichtigung wird an das Gerät übermittelt werden.
+-  **Jede Anwendung erfordert ein Zertifikat für sicheres** -Kommunikation mit APNS über SSL erfolgen muss.
 
 
 ## <a name="creating-and-using-certificates"></a>Erstellen und Verwenden von Zertifikaten
 
-Einem eigenen Zertifikat ist für die Umgebungen, die im vorherigen Abschnitt erwähnten all erforderlich. In diesem Abschnitt wird beschrieben, wie ein Zertifikat erstellen, mit einem Bereitstellungsprofil zuordnen, und klicken Sie dann ein privater Informationsaustausch-Zertifikat für die Verwendung mit PushSharp erhalten.
+Ihr eigenes Zertifikat für jede der im vorherigen Abschnitt erwähnten Umgebungen erforderlich. In diesem Abschnitt wird beschrieben, wie ein Zertifikat erstellen, ordnen sie ein Bereitstellungsprofil und rufen Sie anschließend ein privater Informationsaustausch-Zertifikat für die Verwendung mit PushSharp.
 
-1.  Zum Erstellen go ein Zertifikate für den iOS-Bereitstellungsportal auf der Website von Apple, wie im folgenden Screenshot (Beachten Sie das Menüelement App-IDs auf der linken Seite) dargestellt:
+1.  Zum Erstellen wechseln Sie einer Zertifikate für den iOS-Bereitstellungsportals von Apple-Website wie im folgenden Screenshot (Beachten Sie das App-IDs-Menüelement auf der linken Seite) gezeigt:
 
-    [![](remote-notifications-in-ios-images/image5new.png "Die iOS-Bereitstellungsportal Apples-Website")](remote-notifications-in-ios-images/image5new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image5new.png "Die iOS-Bereitstellungsportal auf Apple-website")](remote-notifications-in-ios-images/image5new.png#lightbox)
 
-2.  Als Nächstes navigieren Sie zum Abschnitt App-IDs aus, und erstellen Sie eine neue app-ID ein, wie im folgenden Screenshot gezeigt:
+2.  Klicken Sie anschließend navigieren Sie zu der App-IDs-Bereich, und erstellen Sie eine neue app-ID ein, wie im folgenden Screenshot gezeigt:
 
-    [![](remote-notifications-in-ios-images/image6new.png "Navigieren Sie zum Abschnitt App-IDs und erstellen Sie eine neue app-ID")](remote-notifications-in-ios-images/image6new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image6new.png "Navigieren Sie zu der App-IDs-Bereich, und erstellen Sie eine neue app-ID")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
-3.  Wenn Sie beim Klicken auf die **+** Schaltfläche, Sie werden in der Lage, geben die Beschreibung und eine Paket-ID für die app-ID, wie in der nächste Screenshot dargestellt:
+3.  Wenn Sie beim Klicken auf die **+** Schaltfläche, Sie werden in der Lage, geben die Beschreibung und eine Bündel-ID für die app-ID, wie im folgenden Screenshot gezeigt:
 
-    [![](remote-notifications-in-ios-images/image7new.png "Geben Sie die Beschreibung und eine Paket-ID für die app-ID")](remote-notifications-in-ios-images/image7new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image7new.png "Geben Sie die Beschreibung und eine Bündel-ID für die app-ID")](remote-notifications-in-ios-images/image7new.png#lightbox)
 
-4. Stellen Sie sicher, dass **explizite App-ID** und, die die Paket-ID ist nicht mit Enden einer `*` . Dadurch wird einen Bezeichner, die sich gut für mehrere Anwendungen erstellt und Push Notification-Zertifikate müssen für eine einzelne Anwendung sein.
+4. Stellen Sie sicher, dass **Explicit App ID** und, die die Bündel-ID endet nicht mit einem `*` . Hiermit wird einen Bezeichner, der für mehrere Anwendungen gut ist, und Notification-Push-Zertifikate müssen für eine einzelne Anwendung sein.
 
-1. Wählen Sie unter "App-Dienste" **Pushbenachrichtigungen**:
+1. Wählen Sie die App-Dienste, **Pushbenachrichtigungen**:
 
-    [![](remote-notifications-in-ios-images/image8new.png "Aktivieren Sie Pushbenachrichtigungen")](remote-notifications-in-ios-images/image8new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image8new.png "Erste Schritte mit Pushbenachrichtigungen aktivieren")](remote-notifications-in-ios-images/image8new.png#lightbox)
 
-2. Drücken Sie **Absenden** Registrierung des neuen App-ID bestätigen:
+2. Drücken Sie **senden** , Registrierung von in die neue App-ID zu bestätigen:
 
-    [![](remote-notifications-in-ios-images/image9new.png "Registrierung der neuen App-ID bestätigen")](remote-notifications-in-ios-images/image9new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image9new.png "Bestätigen Sie die Registrierung von in die neue App-ID")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
-3.  Als Nächstes müssen Sie das Zertifikat für die app-ID erstellen. Suchen Sie im linken Navigationsbereich, **Zertifikate > alle** , und wählen Sie die `+` Schaltfläche, wie im folgenden Screenshot gezeigt:
+3.  Als Nächstes müssen Sie das Zertifikat für die app-ID erstellen. Navigieren Sie im linken Navigationsbereich zu **Zertifikate > alle** , und wählen Sie die `+` Schaltfläche wie im folgenden Screenshot gezeigt:
 
     [![](remote-notifications-in-ios-images/image10new.png "Erstellen Sie das Zertifikat für die app-ID")](remote-notifications-in-ios-images/image8.png#lightbox)
 
-4.  Bestimmen Sie, ob Sie ein Zertifikat Entwicklung oder Produktion verwenden möchten:
+4.  Wählen Sie, ob Sie ein Zertifikat für Entwicklung oder Produktion verwenden möchten:
 
-    [![](remote-notifications-in-ios-images/image11new.png "Wählen Sie ein Zertifikat Entwicklung oder Produktion")](remote-notifications-in-ios-images/image11new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image11new.png "Wählen Sie ein Zertifikat für Entwicklung oder Produktion")](remote-notifications-in-ios-images/image11new.png#lightbox)
 
-5. Und wählen Sie dann die neue App-ID, die wir gerade erstellt haben:
+5. Ein, und wählen Sie dann auf die neue App-ID, die wir gerade erstellt haben:
 
     [![](remote-notifications-in-ios-images/image12new.png "Wählen Sie die soeben erstellte neue App-ID")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
-6.  Anweisungen, die Sie durch die Erstellung dauert wird angezeigt ein *Zertifikatsignieranforderung* mithilfe der **Schlüsselbundverwaltung** Anwendung auf Ihrem Mac.
+6.  Dadurch werden die Anweisungen, mit denen Sie über den Prozess der Erstellung werden angezeigt ein *-Zertifikatsignieranforderung anfordern* mithilfe der **Keychain-Zugriff** Anwendung auf Ihrem Mac.
 
-7.  Nun, dass das Zertifikat erstellt wurde, muss sie verwendet werden als Teil des Buildprozesses zum Signieren der Anwendung, damit es bei APNs registrieren kann. Dies erfordert, erstellen und installieren Sie ein Bereitstellungsprofil, die das Zertifikat verwendet.
+7.  Nun, dass das Zertifikat erstellt wurde, muss sie verwendet werden als Teil des Buildprozesses zum Signieren der Anwendung, sodass es bei APNs registriert werden kann. Dies erfordert, erstellen und installieren ein Bereitstellungsprofil erstellen, die das Zertifikat verwendet.
 
-8.  Um eine Entwicklung Bereitstellungsprofil erstellen, navigieren Sie zu der **Provisioning Profile** Abschnitt, und befolgen Sie die Schritte zum Erstellen, mit der App-Id, die wir gerade erstellt haben.
+8.  Navigieren Sie zum Erstellen eines entwicklungsbereitstellungsprofils zu den **Bereitstellungsprofile** aus, und führen Sie die Schritte zum Erstellen, verwenden die App-Id, die wir gerade erstellt haben.
 
-9.  Öffnen Sie nach der Erstellung der Bereitstellungsprofil **Xcode-Planer** und aktualisieren Sie sie. Wenn die provisioning-Profil, die Sie erstellt wird, dass es möglicherweise erforderlich sein, das Profil von iOS-Bereitstellungsportal herunterladen und importieren Sie ihn manuell nicht angezeigt. Der folgende Screenshot zeigt ein Beispiel für den Planer mit dem für die Bereitstellung Profil hinzugefügt:
+9.  Nachdem Sie das Bereitstellungsprofil erstellt haben, öffnen Sie **Xcode-Organisator** und aktualisiert. Wenn das Bereitstellungsprofil, die Sie erstellt wird, dass es möglicherweise erforderlich sein, das Profil aus der iOS-Bereitstellungsportal herunterladen und manuell importieren nicht angezeigt. Der folgende Screenshot zeigt ein Beispiel der Planer, mit der Bereitstellung-Profil hinzugefügt:
 
-    [![](remote-notifications-in-ios-images/image13new.png "Dieser Screenshot zeigt ein Beispiel für den Planer mit dem für die Bereitstellung Profil hinzugefügt")](remote-notifications-in-ios-images/image13new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image13new.png "Dieser Screenshot zeigt ein Beispiel für den Planer mit der Bereitstellung-Profil hinzugefügt")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
-10.  An diesem Punkt müssen wir das Xamarin.iOS-Projekt, um die neu erstellten provisioning-Profil verwenden, konfigurieren. Dies erfolgt aus **Projektoptionen** Dialogfeld unter **iOS Bundle Signing** Registerkarte, wie im folgenden Screenshot gezeigt:
+10.  An dieser Stelle müssen wir so konfigurieren Sie das Xamarin.iOS-Projekt, um diese neu erstellte Bereitstellungsprofil verwenden. Dies erfolgt durch **Projektoptionen** Dialogfeld unter **iOS Bundle-Signierung** Registerkarte wie im folgenden Screenshot gezeigt:
 
-    [![](remote-notifications-in-ios-images/image11.png "Konfigurieren Sie das Projekt Xamarin.iOS Verwendung neu erstellten provisioning-Profil")](remote-notifications-in-ios-images/image11.png#lightbox)
+    [![](remote-notifications-in-ios-images/image11.png "Konfigurieren Sie das Xamarin.iOS-Projekt, um diese neu erstellte Bereitstellungsprofil verwenden")](remote-notifications-in-ios-images/image11.png#lightbox)
 
+An diesem Punkt ist die Anwendung für die Arbeit mit Pushbenachrichtigungen konfiguriert. Es gibt jedoch immer noch ein paar mehr Schritte erforderlich, mit dem Zertifikat. Dieses Zertifikat wird in DER-Format, das nicht kompatibel mit PushSharp, ist ein Personal Information Exchange (PKCS12)-Zertifikat erfordert. Führen Sie diese letzte Schritte aus, um das Zertifikat zu konvertieren, damit er von PushSharp verwendet werden kann:
 
+1.  **Herunterladen der Zertifikatdatei** -Anmeldung für den iOS-Bereitstellungsportal, wählen die Registerkarte "Zertifikate", wählen Sie das Zertifikat, das korrekte Bereitstellungsprofil, und wählen zugeordnet **herunterladen** .
+1.  **Öffnen Sie die Schlüsselbundverwaltung** -Anwendung ist eine Grafische Benutzeroberfläche, um das Kennwort-Management-System unter OS X.
+1.  **Importieren Sie das Zertifikat** : Wenn der zertifizierte noch nicht installiert ist, **Datei... Importieren von Elementen** Menü der Keychain-Zugriff. Navigieren Sie zu dem Zertifikat, das oben exportiert, und wählen Sie ihn.
+1.  **Exportieren des Zertifikats** : das Zertifikat zu erweitern, und der zugehörigen private Schlüssel angezeigt wird, mit der rechten Maustaste auf den Schlüssel und ausgewählten exportieren. Sie werden für einen Dateinamen und ein Kennwort für die exportierte Datei aufgefordert werden.
 
-An diesem Punkt wird die Anwendung für die Zusammenarbeit mit Pushbenachrichtigungen konfiguriert. Es gibt jedoch immer noch einige weitere Schritte, die mit dem Zertifikat erforderlich. Dieses Zertifikat wird im Format der-KODIERTE, die nicht kompatibel mit PushSharp, wird ein Personal Information Exchange (PKCS12) Zertifikat erforderlich ist. Um das Zertifikat zu konvertieren, damit er von PushSharp verwendet werden kann, führen Sie folgenden abschließenden Schritte aus:
-
-1.  **Laden Sie die Zertifikatdatei** -Anmeldung für den iOS-Bereitstellungsportal, ausgewählt haben, die Registerkarte "Zertifikate", wählen Sie das Zertifikat zugeordnet ist, mit der richtigen provisioning-Profil, und wählen Sie **herunterladen** .
-1.  **Öffnen Sie Schlüsselbundverwaltung** -Anwendung ist eine GUI-Schnittstelle, um das Verwaltungssystem Kennwort unter OS X.
-1.  **Importieren Sie das Zertifikat** – Wenn der zertifizierte noch nicht installiert ist, **Datei... Importieren von Elementen** aus dem Menü Schlüsselbundverwaltung. Navigieren Sie zu dem Zertifikat, das oben exportiert, und wählen Sie ihn.
-1.  **Exportieren des Zertifikats** – das Zertifikat zu erweitern, sodass Sie der zugehörigen private Schlüssel angezeigt wird, mit der rechten Maustaste auf den Schlüssel und Export auswählen. Sie werden für einen Dateinamen und ein Kennwort für die exportierte Datei aufgefordert werden.
-
-An diesem Punkt sind wir mithilfe von Zertifikaten fertig. Wir haben erstellt ein Zertifikat, das zum Signieren von iOS-Anwendungen verwendet werden, und konvertiert dieses Zertifikat in einem Format, das in einer Serveranwendung mit PushSharp verwendet werden kann. Nächste sehen wir uns die iOS-Anwendungen wie bei APNS zu interagieren.
+An diesem Punkt sind wir mit Zertifikaten fertig. Wir haben erstellt ein Zertifikat, das zum Signieren von iOS-Anwendungen verwendet werden, und konvertiert dieses Zertifikat in einem Format, das in einer Serveranwendung mit PushSharp verwendet werden kann. Nächste sehen wir uns an, wie iOS-Anwendungen mit APNS zu interagieren.
 
 ## <a name="registering-with-apns"></a>Registrierung mit APNS
 
-Bevor Sie ein iOS kann Anwendung remote Benachrichtigung erhalten, die sie bei APNS registrieren muss. APNS wird eine eindeutige Geräte-Token generieren und zurückzugeben, die für die iOS-Anwendung. IOS-Anwendung wird dann das gerätetoken vornehmen und registrieren Sie selbst dann für den Anwendungsserver ausgeführt. Sobald alle in diesem Fall Registrierung abgeschlossen ist, und der Anwendungsserver kann Pushbenachrichtigungen an das mobile Gerät.
+Bevor eine iOS kann Anwendung remote Benachrichtigung empfangen, die sie mit APNS registrieren muss. APNS wird eine eindeutige Geräte-Token generieren und zurückgeben, um die iOS-Anwendung. Die iOS-Anwendung wird führen Sie dann das gerätetoken und selbst dann mit dem Anwendungsserver registrieren. Nachdem Sie alle in diesem Fall Registrierung abgeschlossen ist, und der Anwendungsserver kann Pushbenachrichtigungen an das mobile Gerät.
 
-Theoretisch kann das gerätetoken jedes Mal eine iOS-Anwendung mit APNS registriert ändern, jedoch in der Praxis dies nicht, die häufig geschieht. Zur Optimierung kann eine Anwendung die neueste gerätetoken Zwischenspeichern und aktualisiert nur den Anwendungsserver ausgeführt, wenn er geändert wird. Das folgende Diagramm veranschaulicht den Prozess der Registrierung und Bezug eines gerätetokens:
+Theoretisch kann das gerätetoken jedes Mal eine iOS-Anwendung selbst bei APNS registriert ändern, jedoch in der Praxis dies nicht, die häufig geschieht. Als Optimierung kann eine Anwendung das neueste gerätetoken Zwischenspeichern und nur Application Server aktualisieren, wenn es geändert wird. Das folgende Diagramm veranschaulicht den Prozess der Registrierung und Abrufen eines gerätetokens:
 
- ![](remote-notifications-in-ios-images/image12.png "Dieses Diagramm veranschaulicht den Prozess der Registrierung und Bezug eines gerätetokens")
+ ![](remote-notifications-in-ios-images/image12.png "Dieses Diagramm veranschaulicht den Prozess der Registrierung und eine Geräte-Token abrufen")
 
-Registrierung mit APNS erfolgt der `FinishedLaunching` Methode durch Aufrufen der Anwendung-Delegatklasse `RegisterForRemoteNotificationTypes` auf dem aktuellen `UIApplication` Objekt. Bei der Registrierung von iOS-Anwendung mit APNS, müssen sie auch angeben, welche Arten von remote Benachrichtigungen sie erhalten sollen. Diese remote-Benachrichtigung-Typen sind in der Enumeration deklariert `UIRemoteNotificationType`. Der folgende Codeausschnitt ist ein Beispiel, wie eine iOS-Anwendung registrieren kann, um remote Warnung und Badge-Benachrichtigungen zu erhalten:
+Die Registrierung mit APNS erfolgt der `FinishedLaunching` Methode der Klasse durch Aufrufen von Delegaten `RegisterForRemoteNotificationTypes` auf dem aktuellen `UIApplication` Objekt. Wenn eine iOS-Anwendung mit APNS registriert wird, müssen sie auch angeben, welche Arten von remotebenachrichtigungen es empfangen möchte. Diese remote-Benachrichtigung-Typen werden in der Enumeration deklariert `UIRemoteNotificationType`. Der folgende Codeausschnitt ist ein Beispiel wie eine iOS-Anwendung registrieren kann, um die Warnung "und"-Badge remotebenachrichtigungen zu erhalten:
 
 ```csharp
 if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
@@ -124,7 +122,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
 }
 ```
 
-APNs-registrierungsanforderung geschieht im Hintergrund - beim Empfang der Antwort wird iOS wird rufen Sie die Methode `RegisteredForRemoteNotifications` in die `AppDelegate` -Klasse und übergeben Sie das Token registriertes Gerät. Das Token ist enthalten ein `NSData` Objekt. Der folgende Codeausschnitt zeigt, wie das gerätetoken abgerufen, APNS bereitgestellt:
+Die Anforderung der APNS-Registrierung erfolgt im Hintergrund – Wenn die Antwort empfangen wird, iOS wird die-Methode aufgerufen `RegisteredForRemoteNotifications` in die `AppDelegate` Klasse und übergeben Sie das Token registriertes Gerät. Das Token sind in einer `NSData` Objekt. Der folgende Codeausschnitt zeigt, wie das gerätetoken abrufen, APNS bereitgestellt:
 
 ```csharp
 public override void RegisteredForRemoteNotifications (
@@ -150,7 +148,7 @@ UIApplication application, NSData deviceToken)
 }
 ```
 
-Wenn die Registrierung schlägt fehl (z. B. das Gerät ist nicht mit dem Internet verbunden), iOS ruft `FailedToRegisterForRemoteNotifications` für die Anwendung Delegatklasse. Der folgende Codeausschnitt zeigt, wie eine Warnung für den Benutzer informiert wird, die Fehler bei der Registrierung angezeigt wird:
+Wenn die Registrierung ein Fehler auftritt, die aus irgendeinem Grund (z. B. das Gerät ist nicht verbunden mit dem Internet), ruft iOS `FailedToRegisterForRemoteNotifications` Delegatklasse für die Anwendung. Der folgende Codeausschnitt zeigt, wie eine Warnung für den Benutzer darüber zu informieren, die Fehler bei der Registrierung angezeigt wird:
 
 ```csharp
 public override void FailedToRegisterForRemoteNotifications (UIApplication application , NSError error)
@@ -159,30 +157,30 @@ public override void FailedToRegisterForRemoteNotifications (UIApplication appli
 }
 ```
 
-### <a name="device-token-housekeeping"></a>Gerät Token Housekeeping
+### <a name="device-token-housekeeping"></a>Geräte-Token-Wartungsaufgaben
 
-Gerätetoken werden ablaufen oder sich im Laufe der Zeit ändern. Aufgrund dieser Tatsache müssen serveranwendungen führen einige House bereinigen und löschen diese Token ist abgelaufen oder geändert wurden. Wenn eine Anwendung als Pushbenachrichtigung an ein Gerät, die einem abgelaufenen Token verfügt sendet, wird APNS erfassen und speichern Sie dieses Token abgelaufen. Server können dann abgefragt werden APNS, um herauszufinden, welche Token abgelaufen sind.
+Gerätetoken werden ablaufen oder sich die im Laufe der Zeit ändern. Aufgrund dieser Tatsache müssen serveranwendungen einige Haus bereinigen und löschen diese Token ist abgelaufen oder geänderten. Wenn eine Anwendung als Pushbenachrichtigungen an ein Gerät, das ein abgelaufenes Token verfügt sendet, wird APNS aufzeichnen und speichern Sie das abgelaufene Token. Server können dann Abfragen, APNS, um herauszufinden, welche Token abgelaufen sind.
 
-APNS verwendet, um bereitzustellen eine *Feedback Dienst* -einen HTTPS-Endpunkt, der über das Zertifikat authentifiziert, die erstellt wurde, um das Senden von Benachrichtigungen und sendet Back Daten per Push über welche Token abgelaufen sind. Dies wurde als veraltet eingestuft Apple und entfernt wurde.
+APNS verwendet wird, zu einer *Feedback Service* -einen HTTPS-Endpunkt, der über das Zertifikat authentifiziert, die erstellt wurde, zum Senden von Push Benachrichtigungen und sendet Daten über welche Token abgelaufen sind. Dies wurde als veraltet markiert, von Apple und entfernt.
 
-Stattdessen wird ein neue HTTP-Statuscode für die Groß-/Kleinschreibung, die zuvor von der Feedback-Dienst gemeldet wurde:
+Stattdessen wird ein neuer HTTP-Statuscode für den Fall, der zuvor von der Feedback-Dienst gemeldet wurde:
 
-> 410 - das gerätetoken ist nicht mehr für das Thema aktiv.
+> 410 - das Geräte-Token ist nicht mehr aktiv ist, für das Thema.
 
-Darüber hinaus einen neuen `timestamp` Schlüssel der JSON-Daten werden im Antworttext gezeigt:
+Darüber hinaus eine neue `timestamp` Schlüssel der JSON-Daten werden im Antworttext:
 
-> Wenn der Wert in der: Status 410 ist, der Wert dieses Schlüssels wird der letzten, an dem APNs wurde bestätigt, dass das gerätetoken nicht mehr gültig ist, für das Thema.
+> Wenn der Wert in der: Status-Header ist 410, der Wert dieses Schlüssels ist der letzte Zeitpunkt, die an der APNs wurde bestätigt, dass das gerätetoken nicht mehr gültig ist, für das Thema.
 >
-> Beenden Sie die Übertragung von Benachrichtigungen, bis das Gerät ein Token mit einem höheren Zeitstempel mit Ihrem Anbieter registriert.
+> Beendet das Senden von Pushbenachrichtigungen, bis das Gerät ein Token mit dem späteren Zeitstempel bei Ihrem Anbieter registriert.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Abschnitt stellen die grundlegenden Konzepte, um Pushbenachrichtigungen in iOS vor. Diese erläutert der Rolle von den Apple Push Notification Gateway Service (APNS). Es behandelt dann die Erstellung und Verwendung der Sicherheitszertifikate, die für APNS unverzichtbar sind. Schließlich dieses Dokuments fertig, mit einer Erläuterung dazu, wie Anwendungsserver können die *Feedback Services* abgelaufene gerätetoken Überwachung zu beenden.
+In diesem Abschnitt stellen die grundlegenden Konzepte, um Pushbenachrichtigungen in iOS vor. Es erläutert die Rolle von der Apple Push Notification Gateway Service (APNS). Sie behandelt dann die Erstellung und Verwendung der Sicherheitszertifikate, die für APNS unverzichtbar sind. Zum Schluss in diesem Dokument fertig, mit einer Erläuterung zur Verwendung der Anwendungsserver die *Feedback Services* zum Beenden der nachverfolgung abgelaufen gerätetoken.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Benachrichtigungen – Demonstrieren der lokalen und remote-Benachrichtigungen (Beispiel)](https://developer.xamarin.com/samples/monotouch/Notifications/)
+- [Benachrichtigungen – lokal und remote-Benachrichtigungen (Beispiel) veranschaulicht](https://developer.xamarin.com/samples/monotouch/Notifications/)
 - [Lokale und Pushbenachrichtigungen für Entwickler](https://developer.apple.com/notifications/)
 - [UIApplication](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
 - [UIRemoteNotificationType](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIRemoteNotificationType)
