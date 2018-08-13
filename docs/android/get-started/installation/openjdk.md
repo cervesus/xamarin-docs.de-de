@@ -1,28 +1,28 @@
 ---
-title: Microsoft OpenJDK-Verteilung (Vorschauversion)
-description: Eine Schritt-für-Schritt-Anleitung für die Konfiguration der Microsoft OpenJDK-Verteilung.
+title: Microsoft Mobile OpenJDK-Verteilung (Vorschauversion)
+description: Eine ausführliche Anleitung für die Konfiguration der Microsoft OpenJDK-Verteilung für die mobile Entwicklung.
 ms.prod: xamarin
 ms.assetid: B5F8503D-F4D1-44CB-8B29-187D1E20C979
 ms.technology: xamarin-android
 author: vyedin
 ms.author: vyedin
 ms.date: 07/22/2018
-ms.openlocfilehash: 6c1346918ca6881e551f6c5b89ab16ad13d3f804
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 2022337ebd65997c7b2492137193586278f2dffd
+ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242513"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39573593"
 ---
-# <a name="microsofts-openjdk-distribution-preview"></a>Microsoft OpenJDK-Verteilung (Vorschauversion)
+# <a name="microsofts-mobile-openjdk-distribution-preview"></a>Microsoft Mobile OpenJDK-Verteilung (Vorschauversion)
 
-_Dieses Handbuch beschreibt die Schritte zum Wechsel auf die Vorschauversion der Microsoft OpenJDK-Verteilung._
+_In diesem Leitfaden werden die Schritte zum Wechsel auf die Vorschauversion der Microsoft OpenJDK-Verteilung beschrieben. Die Verteilung ist für die mobile Entwicklung vorgesehen._
 
 ![Feature der Vorschauversion](~/media/shared/preview.png)
 
 ## <a name="overview"></a>Übersicht
 
-Beginnend mit Visual Studio 15.9 und Visual Studio für Mac 7.7 wird Visual Studio-Tools für Xamarin von Oracle's JDK zu einer kompakten OpenJDK -Version wechseln, die ausschließlich für die Android-Entwicklung gedacht ist:
+Ab Visual Studio 15.9 und Visual Studio für Mac 7.7 wechselt Visual Studio-Tools für Xamarin von JDK von Oracle zu einer **kompakten OpenJDK-Version, die ausschließlich für die Android-Entwicklung vorgesehen ist**:
 
 ![Neuer Workflow mit einer Webvorschau von OpenJDK in VS 15.8 Preview 5](openjdk-images/openjdk.png)
 
@@ -36,7 +36,7 @@ Die Vorteile dieses Wechsels sind:
 
 - Keine weiteren Probleme mit Servern und Installationsprogrammen von Drittanbietern.
 
-Wenn Sie früher auf die verbesserte Version umsteigen möchten, stehen Ihnen Builds der Microsoft OpenJDK-Verteilung zum Testen unter Windows und Mac zur Verfügung. Der Einrichtungsprozess wird im Folgenden beschrieben, und Sie können jederzeit wieder zum Oracle JDK zurückkehren.
+Wenn Sie früher auf die verbesserte Version umsteigen möchten, stehen Ihnen Builds der Microsoft Mobile OpenJDK-Verteilung zum Testen unter Windows und Mac zur Verfügung. Der Einrichtungsprozess wird im Folgenden beschrieben, und Sie können jederzeit wieder zum Oracle JDK zurückkehren.
 
 ## <a name="download"></a>Herunterladen
 
@@ -60,17 +60,17 @@ Ordnen Sie die IDE dem neuen JDK zu:
 
 - **Mac** &ndash; Klicken Sie auf **Tools > SDK Manager > Speicherorte**, und ändern Sie den Speicherort von **Java SDK (JDK)** in den vollständigen Pfad der OpenJDK-Installation. Im folgenden Beispiel ist dieser Pfad folgendermaßen festgelegt: **$HOME/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_1.8.0.9**.
 
-![Festlegen des JDK-Pfads für die Microsoft OpenJDK-Verteilung auf dem Mac](openjdk-images/vsm.png)
+![Festlegen des JDK-Pfads für die Microsoft Mobile OpenJDK-Verteilung für Mac](openjdk-images/vsm.png)
 
 - **Windows** &ndash; Klicken Sie auf **Werkzeuge > Optionen > Xamarin > Android-Einstellungen**, und ändern Sie den **Java Development Kit-Speicherort** in den vollständigen Pfad der OpenJDK-Installation. Im folgenden Beispiel ist dieser Pfad folgendermaßen festgelegt **C:\\Programmdateien\\Android\\Jdk\\microsoft_dist_openjdk_1.8.0.9**:
 
-![Festlegen des JDK-Pfads für die Microsoft OpenJDK-Verteilung für Windows](openjdk-images/vs.png)
+![Festlegen des JDK-Pfads für die Microsoft Mobile OpenJDK-Verteilung für Windows](openjdk-images/vs.png)
 
 ## <a name="revert"></a>Zurücksetzen
 
 Um zum Oracle JDK zurückzukehren, ändern Sie den Speicherort des Java SDK in den zuvor verwendeten Oracle JDK-Pfad und bauen Sie die Lösung neu auf. Auf Mac können Sie den Oracle JDK-Pfad wiederherstellen, indem Sie auf **Auf Standardwerte zurücksetzen** klicken.
 
-Wenn Sie Probleme mit der Microsoft OpenJDK-Verteilung haben, melden Sie diese bitte über das Feedback-Tool in Ihrer IDE, damit die Probleme schnell nachverfolgt und behoben werden können.
+Wenn Sie Probleme mit der Microsoft Mobile OpenJDK-Verteilung haben, melden Sie diese bitte über das Feedback-Tool in Ihrer IDE, damit die Probleme schnell nachverfolgt und behoben werden können.
 
 ## <a name="known-issues--planned-fix-dates"></a>Bekannte Probleme & Daten für geplante Fixes
 
@@ -78,4 +78,4 @@ Die `JAVA_HOME`-Umgebungsvariable wird möglicherweise nicht ordnungsgemäß zum
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel haben Sie erfahren, wie Sie Ihre IDE so konfigurieren, dass sie die Vorschauversion der Microsoft OpenJDK-Verteilung verwendet, die im späteren Verlauf von 2018 veröffentlicht werden soll.
+In diesem Artikel haben Sie erfahren, wie Sie Ihre IDE so konfigurieren, dass sie die Vorschauversion der Microsoft Mobile OpenJDK-Verteilung verwendet, die im späteren Verlauf von 2018 veröffentlicht werden soll.

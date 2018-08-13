@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 776e2b52d6b8860c5fb5fa16253c2e1d42aa962a
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: fcc2ce5e45cd9094a9987ce12267850e19da9d75
+ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241414"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39573515"
 ---
 # <a name="setup-and-installation"></a>Setup und Installation
 
@@ -39,6 +39,6 @@ In diesen Artikeln wird beschrieben, wie Sie den Android-Emulator zum Testen und
 
 In diesem Artikel wird erläutert, wie ein physisches Android-Gerät eingerichtet und mit einem Entwicklungscomputer verbunden wird, sodass das Gerät zum Ausführen und Debuggen von Xamarin.Android-Anwendungen verwendet werden kann.
 
-## <a name="microsoft-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[Microsoft OpenJDK (Vorschau)](~/android/get-started/installation/openjdk.md)
+## <a name="microsoft-mobile-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[Microsoft Mobile OpenJDK (Vorschau)](~/android/get-started/installation/openjdk.md)
 
-Dieses Handbuch beschreibt die Schritte zum Wechsel auf die Vorschauversion der Microsoft OpenJDK-Verteilung.
+Dieses Handbuch beschreibt die Schritte zum Wechsel auf die Vorschauversion der Microsoft OpenJDK-Verteilung. Die OpenJDK-Verteilung ist für die mobile Entwicklung vorgesehen.
