@@ -46,7 +46,7 @@ In diesem Beispiel wird davon ausgegangen, dass der Name des Xamarin.iOS-Projekt
 
 9.  Löschen Sie die gewünschten Dateien aus dem `.ipa`. Sie können entweder in den Papierkorb, die mit dem Finder verschieben oder löschen Sie sie in der Befehlszeile mit `Terminal.app`. Zum Anzeigen des Inhalts der `Payload/iPhone` im Finder zeigen, Strg + Klick die Datei und wählen Sie **Paketinhalt anzeigen**.
 
-10.  Mit den gleichen allgemeinen Ansatz, wie in Schritt 3, suchen Sie nach der Protokolldatei unter `~/Library/Logs/Xamarin/MonoTouchVS/` , die beide den Namen des Projekts ist und die `generated session id` im Namen: ![ ] (modify-ipa-images/build-log.png "finden Sie im Finder zeigen das Buildprotokoll für Projekt")
+10.  Mit den gleichen allgemeinen Ansatz, wie in Schritt 3, suchen Sie nach der Protokolldatei unter `~/Library/Logs/Xamarin/MonoTouchVS/` , die beide den Namen des Projekts ist und die `generated session id` im Namen: ![](modify-ipa-images/build-log.png "finden Sie im Finder zeigen das Buildprotokoll für Projekt")
 
 11.  Öffnen Sie das Buildprotokoll aus Schritt 10, z. B. indem Sie darauf doppelklicken.
 
