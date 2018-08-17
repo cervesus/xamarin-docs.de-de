@@ -1,32 +1,32 @@
 ---
 title: 'Xamarin.Essentials: Beschleunigungsmesser'
-description: Die Klasse des Beschleunigungsmessers in Xamarin.Essentials können Sie die Sensor für beschleunigungsmessung des Geräts, womit die Beschleunigung des Geräts in drei dimensionalen Raum zu überwachen.
+description: Mit der Accelerometer-Klasse in Xamarin.Essentials können Sie den Sensor für die Beschleunigungsmessung des Geräts überwachen, der die Beschleunigung des Geräts im dreidimensionalen Raum angibt.
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: b5a24e214eb129b4d53b94586632791c8827447b
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 53e7ca70184270662d27043387da836ad44432fe
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353840"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40184427"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: Beschleunigungsmesser
 
-![Vorabversionen von NuGet](~/media/shared/pre-release.png)
+![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
-Die **Beschleunigungsmesser** Klasse können Sie den Sensor für beschleunigungsmessung des Geräts überwachen, die die Beschleunigung des Geräts in drei dimensionalen Raum angibt.
+Mit der **Accelerometer**-Klasse können Sie den Sensor für die Beschleunigungsmessung des Geräts überwachen, der die Beschleunigung des Geräts im dreidimensionalen Raum angibt.
 
-## <a name="using-accelerometer"></a>Beschleunigungsmesser
+## <a name="using-accelerometer"></a>Verwenden der Accelerometer-Klasse
 
-Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
+Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Der Beschleunigungsmesser funktioniert durch Aufrufen der `Start` und `Stop` Methoden, um die Änderungen auf die Beschleunigung überwacht werden soll. Alle Änderungen gesendet werden, durch die `ReadingChanged` Ereignis. Hier ist Beispiel für die Verwendung:
+Accelerometer ruft die Methoden `Start` und `Stop` auf, um auf Änderungen der Beschleunigung zu lauschen. Änderungen werden über das `ReadingChanged`-Ereignis zurück gesendet. Sie können sie z.B. wie folgt verwenden:
 
 ```csharp
 
@@ -48,7 +48,7 @@ public class AccelerometerTest
         // Process Acceleration X, Y, and Z
     }
 
-    public void ToggleAcceleromter()
+    public void ToggleAccelerometer()
     {
         try
         {
@@ -69,23 +69,23 @@ public class AccelerometerTest
 }
 ```
 
-Beschleunigungsmesser Messwerte werden in G. zurückgemeldet. Eine G ist eine Einheit der Gravitation erzwingen, üben nach der Erde Schwerpunkte Feld gleich (9.81 m/s ^ 2).
+Ergebnisse des Beschleunigungsmessers werden in G angegeben. Mit der Einheit G wird eine Gravitationskraft angegeben, die der Kraft des Gravitationsfelds der Erde entspricht (9,81 m/s^2).
 
-Das Koordinatensystem ist relativ zum Bildschirm des Telefons in der standardausrichtung definiert. Die Achsen werden nicht ausgetauscht werden, wenn Änderungen der bildschirmausrichtung des Geräts.
+Das Koordinatensystem wird relativ zum Bildschirm des Mobilgeräts in seiner Standardausrichtung definiert. Die Achsen bleiben unverändert, wenn sich die Bildschirmausrichtung des Geräts ändert.
 
-Die x-Achse ist horizontal und zeigt auf der rechten Seite, die y-Achse ist vertikal und zeigt nach oben und die Z-Achse zeigt in Richtung der Außenseite der Vorderseite des Bildschirms. In diesem System verwendet haben Koordinaten hinter dem Bildschirm negative Z-Werte.
+Die X-Achse ist horizontal und zeigt nach rechts. Die Y-Achse ist vertikal und zeigt nach oben. Die Z-Achse verläuft abgewandt von der Vorderseite des Bildschirms. In diesem System sind Koordinaten hinter dem Bildschirm negative Z-Werte.
 
 Beispiele:
 
-* Wenn das Gerät flach auf einem Tisch liegt, und auf der linken Seite an der rechten Seite mithilfe von Push übertragen wird, ist der Wert von X Beschleunigung positiv.
+* Wenn das Gerät flach auf einem Tisch liegt und auf seiner linken Seite nach rechts geschoben wird, ist der X-Beschleunigungswert positiv.
 
-* Wenn das Gerät flach auf einem Tisch liegt, wird der Beschleunigungswert +1.00 G oder (+ 9.81 m/s ^ 2), entsprechen die Beschleunigung des Geräts (0 m/s ^ 2) minus beträgt (-9.81 m/s ^ 2) und normalisierten wie G.
+* Wenn das Gerät flach auf einem Tisch liegt, ist der Beschleunigungswert +1,00 G oder (+9,81 m/s^2), was der Beschleunigung des Geräts (0 m/s^2) abzüglich der Gravitationskraft (–9,81 m/s^2) entspricht, was in G normiert wird.
 
-* Wenn das Gerät flach auf einem Tisch liegt, und für den Himmel durch eine Beschleunigung von einer m/s mithilfe von Push übertragen wird ^ 2, der Beschleunigungswert entspricht einer 9.81 an, die Beschleunigung des Geräts entsprechen (+ m/s ^ 2) minus beträgt (-9.81 m/s ^ 2) und normalisierten in G.
+* Wenn das Gerät flach auf einem Tisch liegt und nach oben mit einer Beschleunigung von A m/s^2 bewegt wird, entspricht der Beschleunigungswert A+9,81, was der Beschleunigung des Geräts (+A m/s^2) minus der Gravitationskraft (–9,81 m/s^2) entspricht, was in G normiert wird.
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>API
 
-- [Beschleunigungsmesser-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
-- [Beschleunigungsmesser-API-Dokumentation](xref:Xamarin.Essentials.Accelerometer)
+- [Quellcode für einen Beschleunigungsmesser](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [Dokumentation für Beschleunigungsmesser-API](xref:Xamarin.Essentials.Accelerometer)
