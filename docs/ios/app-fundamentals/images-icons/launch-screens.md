@@ -1,209 +1,209 @@
 ---
-title: Starten Sie Bildschirme für Xamarin.iOS-Apps
-description: Dieser Artikel beschreibt, wie eine app starten Bildschirm für alle iOS-Geräten bei jeder Auflösung und Ausrichtung, die mit einem einzelnen Unified Storyboard zu erstellen.
+title: Startbildschirme für Xamarin.iOS-Apps
+description: In diesem Artikel wird erläutert, wie Sie eine app Startbildschirm für alle iOS-Geräte mit jeder Auflösung und Ausrichtung, die Verwendung eines einzelnen Unified Storyboards zu erstellen.
 ms.prod: xamarin
 ms.assetid: 31A489CA-756B-4B9B-B386-4BADF18EDD33
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2018
-ms.openlocfilehash: 0fbd38b643e7806932ba262becc72be2bae6ba4b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 40b8c38e89e96223bbf657ff06356d9fb2e9d9b3
+ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784613"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40251104"
 ---
-# <a name="launch-screens-for-xamarinios-apps"></a>Starten Sie Bildschirme für Xamarin.iOS-Apps
+# <a name="launch-screens-for-xamarinios-apps"></a>Startbildschirme für Xamarin.iOS-Apps
 
-_Dieser Artikel beschreibt, wie eine app starten Bildschirm für alle iOS-Geräten bei jeder Auflösung und Ausrichtung, die mit einem einzelnen Unified Storyboard zu erstellen._
+_In diesem Artikel wird erläutert, wie Sie eine app Startbildschirm für alle iOS-Geräte mit jeder Auflösung und Ausrichtung, die Verwendung eines einzelnen Unified Storyboards zu erstellen._
 
-Bevor Sie iOS 8 erforderlich, Erstellen eines Bildschirms Starten einer iOS-App den Entwickler, geben Sie ein Standardimage-Medienobjekt für jede der verschiedenen Formfaktoren Gerät und Lösungen, die in denen die app ausgeführt werden konnte. Seit iOS 8-Version jedoch wurde ursprünglich möglich, eine einzelne einheitliche Storyboard zu verwenden, erstellen Sie einen Bildschirm zu starten, die in allen Fällen richtig aussieht.
+Vor iOS 8 erforderlich, erstellen einen Startbildschirm für eine iOS-app vom Entwickler bieten ein Bildobjekt für jede der verschiedenen geräteausführungen und Lösungen, die in denen die app ausgeführt werden konnte. Seit der Veröffentlichung von iOS 8 hat allerdings war es möglich, eines einzelnen Unified Storyboards zu verwenden, um einen Startbildschirm zu erstellen, die in allen Fällen korrekt aussieht.
 
-Diese kurze exemplarische Vorgehensweise wird beschrieben, wie ein starten Bildschirm mit entweder ein Storyboard in einem neuen Projekt standardmäßig bereitgestellten oder ein Storyboard manuell hinzugefügt werden, um ein vorhandenes Projekt erstellt wird. Dann wird veranschaulicht, wie mithilfe der iOS-Designer fügen eine Bild-Ansicht und eine Bezeichnung Storyboard, um Einschränkungen für diese Sichten festzulegen und um sicherzustellen, dass das Storyboard für verschiedene Geräte und Ausrichtungen richtig aussieht.
+Diese kurze exemplarische Vorgehensweise beschreibt, wie erstellen Sie einen Startbildschirm mit entweder einem Storyboard, die standardmäßig in einem neuen Projekt bereitgestellt wird oder mit einem Storyboard manuell zu einem vorhandenen Projekt hinzugefügt wird. Es veranschaulicht dann mithilfe der iOS-Designer eine Image-Sicht und eine Bezeichnung hinzufügen, auf das Storyboard, um Einschränkungen für diese Ansichten festzulegen und um sicherzustellen, dass das Storyboard für verschiedene Geräte und Ausrichtungen korrekt aussieht.
 
 <a name="storyboard" />
 
-## <a name="managing-launch-screens-with-storyboards"></a>Sie Startbildschirme mit Storyboards verwalten
+## <a name="managing-launch-screens-with-storyboards"></a>Verwalten von Startbildschirme mit Storyboards
 
-In iOS 8 (und höher) kann der Entwickler eine spezielle Unified Storyboard um den Bildschirm starten, anstatt ein oder mehrere statische Launch-Abbilder bereitzustellen erstellen. Beim Starten Storyboard in der iOS-Designer zu erstellen, verwenden Sie Größenklassen und automatisches Layout, um unterschiedliche Layouts für andere Umgebungen zu definieren. Größenklassen und automatisches Layout verwenden, kann der Entwickler erstellen eine einzelne Startbildschirm, das auf allen Geräten gut aussieht und Umgebungen angezeigt.
+In iOS 8 (und höher) kann Entwickler von speziellen Unified Storyboards Geben Sie den Startbildschirm, anstatt eine oder mehrere statische startbilder erstellen. Beim Start eines Storyboards in der iOS-Designer zu erstellen, verwenden Sie Größenklassen und automatisches Layout, um verschiedene Layouts für andere Umgebungen zu definieren. Der Entwickler kann mithilfe von Größenklassen und automatisches Layout, erstellen eine einzelne Startbildschirm, die auf allen Geräten gut aussieht und Umgebungen anzeigen.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-1. Erstellen Sie ein neues Projekt in Visual Studio für Mac dazu **Datei > neue Projektmappe** auswählen und dann **einzelne Ansicht App**: 
+1. Erstellen Sie ein neues Projekt in Visual Studio für Mac dazu **Datei > neue Projektmappe** auswählen und dann **Einzelansicht-App**: 
 
-    ![Das Fenster Neues Projekt mit einzelne Ansicht Apps ausgewählt](launch-screens-images/launch01.png)
+    ![Das neue Projektfenster mit Einzelansicht-App ausgewählt](launch-screens-images/launch01.png)
 
-    - Wird standardmäßig ein neues Projekt umfasst eine **LaunchScreen.storyboard** Datei, die die Schnittstelle starten Bildschirm definiert. 
-    - Um ein vorhandenes Projekt stattdessen ein starten Bildschirm Storyboard hinzuzufügen, mit der Maustaste, auf den Namen des Projekts in der **Lösung Pad** , und wählen Sie **hinzufügen > neue Datei...**  und wählen Sie dann **starten Bildschirm**:
+    - Standardmäßig enthält ein neues Projekt eine **LaunchScreen.storyboard** -Datei, die die Startbildschirm-Schnittstelle definiert. 
+    - Um stattdessen Storyboard starten Bildschirm zu einem vorhandenen Projekt hinzuzufügen, mit der Maustaste, auf den Namen des Projekts in der **Lösungspad** , und wählen Sie **hinzufügen > neue Datei...**  und wählen Sie dann **Startbildschirm**:
 
-    ![Die neue Datei angezeigt, mit iOS starten Bildschirm ausgewählt](launch-screens-images/launch01b.png)
+    ![Klicken Sie im neuen Datei mit iOS Startbildschirm ausgewählt](launch-screens-images/launch01b.png)
 
     - Nennen Sie die Datei **LaunchScreen** oder einen anderen Namen Ihrer Wahl.
 
-2. Konfigurieren Sie das Projekt, um das entsprechende Storyboard für seine starten Bildschirm verwenden:
+2. Konfigurieren Sie das Projekt, um das entsprechende Storyboard für seine Startbildschirm verwenden:
 
-    - Doppelklicken Sie auf die **"Info.plist"** in der Datei die **Lösung Pad** um ihn zur Bearbeitung zu öffnen.
-    - In der **starten Bilder** Abschnitt, stellen Sie sicher, dass **starten Bildschirm** auf den Namen des entsprechenden Storyboards festgelegt ist:
+    - Doppelklicken Sie auf die **"Info.plist"** Datei die **Lösungspad** um ihn zur Bearbeitung zu öffnen.
+    - In der **Startbilder** Abschnitt, stellen Sie sicher, dass **Startbildschirm** auf den Namen des entsprechenden Storyboards festgelegt ist:
 
-    ![Der Bildschirm starten-Selektor in der Datei "Info.plist"](launch-screens-images/launch02.png)
+    ![Der Startbildschirm-Selektor in "Info.plist"](launch-screens-images/launch02.png)
 
-    - Wird standardmäßig ein neues Projekt für die Verwendung konfiguriert **LaunchScreen.storyboard** als der Bildschirm zu starten.
+    - Wird standardmäßig ein neues Projekt für die Verwendung konfiguriert **LaunchScreen.storyboard** als der Startbildschirm.
 
-3. Hinzufügen eines Bilds auf der **Assets.xcassets** Asset Katalog, damit es auf dem Bildschirm starten verfügbar ist. Weitere Informationen finden Sie unter der [Bilder hinzufügen, eine Asset-Katalog Image festgelegt](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Teil der [Anzeigen eines Bilds](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Handbuch.
+3. Fügen Sie ein Bild, um die **Assets.xcassets** Asset zu katalogisieren, sodass sie für die Verwendung auf dem Startbildschirm verfügbar ist. Weitere Informationen finden Sie unter den [Bilder hinzufügen, um eine Asset-Katalog-Image festzulegen](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Teil der [Anzeigen eines Bilds](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Guide.
 
-4. Öffnen **LaunchScreen.storyboard** durch Doppelklick im für die Bearbeitung der **Lösung Pad**.
+4. Open **LaunchScreen.storyboard** für die Bearbeitung durch Doppelklick im der **Lösungspad**.
 
-5. Wählen Sie ein Gerät und die Ausrichtung auf dem das Starten Bildschirm Storyboard in der iOS-Designer in der Vorschau anzeigen. Öffnen Sie Gerätebereich Auswahl auf der unteren Symbolleiste, und wählen Sie **iPhone 4 s** und **Hochformat**.
+5. Wählen Sie ein Gerät und die Ausrichtung für die das Starten Bildschirm Storyboard in der iOS-Designer-Vorschau. Öffnen Sie den Gerätebereich der Auswahl auf der unteren Symbolleiste, und wählen **iPhone 4 s** und **Hochformat**.
 
-    ![Der Gerätesymbolleiste-Auswahl](launch-screens-images/launch05.png)
+    ![Der Geräte-Auswahl-Symbolleiste](launch-screens-images/launch05.png)
 
-    - Hinweis: Auswählen eines Geräts und die Ausrichtung nur ändert, wie in der iOS-Designer den Entwurf Vorschau anzeigt. Unabhängig von der hier vorgenommenen Auswahl neu hinzugefügten Einschränkungen gelten für alle Geräte sowie Ausrichtungen, es sei denn, die **bearbeiten Traits** Schaltfläche wurde verwendet, um nichts anderes angeben. 
+    - Beachten Sie, dass durch Auswahl von einem Gerät und Ausrichtung nur ändert sich wie der iOS-Designer das Design zeigt eine Vorschau. Unabhängig davon, die hier vorgenommene Auswahl neu hinzugefügte Einschränkungen gelten für alle Geräte und -Ausrichtungen, es sei denn, die **bearbeiten "traits"** Schaltfläche wurde verwendet, um nichts anderes angeben. 
 
-6. Legen Sie die **Hintergrund** Farbe des Hauptansicht die View-Controller. Wählen Sie die Ansicht, indem Sie in der Mitte der View-Controller auf, und passen Sie die Farbe für den Hintergrund mithilfe der **Eigenschaften Pad**:
+6. Legen Sie die **Hintergrund** Farbe der Hauptansicht der View-Controller. Wählen Sie die Ansicht, indem Sie in der Mitte des Ansichtscontrollers auf, und passen Sie die Background-Farbe mit der **Pad "Eigenschaften"**:
 
-    ![Eine einzelne Ansicht durch eine violette Hintergrundfarbe](launch-screens-images/launch06.png)
+    ![Eine einzige Ansicht mit einem violetten Hintergrundfarbe](launch-screens-images/launch06.png)
 
-7. Hinzufügen einer **anzeigen** auf dem Bildschirm zu starten, und legen Sie als Quelle **Image**:
+7. Hinzufügen einer **Image View** auf dem Bildschirm zu starten, und legen seine Quelle **Image**:
 
-    - Ziehen Sie ein **Image Ansicht** aus der **Toolbox Pad** in die Mitte der Ansicht.
-    - Mit der **Bild anzeigen** ausgewählt, in der **Widget** im Abschnitt der **Eigenschaften aufgefüllt** Festlegen der **Image** Eigenschaft, um das Image wurde bereits festgelegt hinzugefügt, um die **Assets.xcassets** Asset-Katalog. Position und Größe der **Image Ansicht** nach Bedarf:
+    - Ziehen Sie ein **Image View** aus der **Pad "Toolbox"** in die Mitte der Ansicht.
+    - Mit der **Image View** ausgewählt haben, in der **Widget** Teil der **Pad "Eigenschaften"** Festlegen der **Image** Eigenschaft, um das Image wurde bereits festgelegt hinzugefügt, die **Assets.xcassets** Asset-Katalog. Position und Größe der **Image View** nach Bedarf:
     
-    ![Eine Sicht Image mit einer Gruppe der Image-Eigenschaft](launch-screens-images/launch07.png)
+    ![Ein Image View mit festgelegter Eigenschaft "Image"](launch-screens-images/launch07.png)
 
-8. Hinzufügen einer **Bezeichnung** unterhalb der **Bild anzeigen** und Verwenden der **Eigenschaften mit Leerstellen auffüllen** Festlegen seiner Attribute: 
+8. Hinzufügen einer **Bezeichnung** unten die **Image View** und verwenden Sie die **Pad "Eigenschaften"** , dessen Attribute festzulegen: 
 
-    ![Eine Bezeichnung mit einer Gruppe von Text und Farbe](launch-screens-images/launch08.png)
+    ![Eine Bezeichnung mit einem Satz von Text und Farbe](launch-screens-images/launch08.png)
 
-9. Wechseln Sie zur Einschränkung-Bearbeitungsmodus mit der rechten Schaltfläche in der **Einschränkungen Symbolleiste**:
+9. Wechseln Sie zur Einschränkungsbearbeitungsmodus, mit der rechten Schaltfläche in der **Symbolleiste für Einschränkungen**:
     
-    ![Die Einschränkung Bearbeitungsmodus-Schaltfläche](launch-screens-images/launch09.png)
+    ![Die Schaltfläche "Einschränkungsbearbeitungsmodus"](launch-screens-images/launch09.png)
 
-10. Fügen Sie eine Beschränkung der **anzeigen**, das die Höhe und Breite festlegen und es horizontal und vertikal zentrieren:
+10. Hinzufügen von Einschränkungen, die die **Image View**, Höhe und Breite festlegen und es horizontal und vertikal zentrieren:
 
-    ![Ein Image-Ansicht mit Layout-Einschränkungen](launch-screens-images/launch10.png)
+    ![Ein Image View Layout-Einschränkungen](launch-screens-images/launch10.png)
 
     - Weitere Informationen zum Hinzufügen von Einschränkungen finden Sie unter [Automatisches Layout mit dem Xamarin-Designer für iOS](~/ios/user-interface/designer/designer-auto-layout.md).
 
-11. Einschränkungen zum Hinzufügen der **Bezeichnung**, es horizontal zentrieren, und geben sie Ihnen eine Höhe und Breite und positionieren Sie es eine feste vertikalen Abstand von der **Image Ansicht**:
+11. Hinzufügen von Einschränkungen, die die **Bezeichnung**, es horizontal zentrieren, legen sie eine Höhe und Breite und positionieren Sie sie einer festen distance vertikal von der **Image View**:
 
-    ![Eine Bezeichnung mit Layout-Einschränkungen](launch-screens-images/launch11.png)
+    ![Eine Bezeichnung mit dem Layout-Einschränkungen](launch-screens-images/launch11.png)
 
-12. Testen Sie andere Geräte und die Ausrichtungen, um sicherzustellen, dass der Entwurf aussieht, wie in allen Szenarien vorgesehen. In Fällen, in denen Anpassungen für ein bestimmtes Gerät oder Ausrichtung vorgenommen werden müssen, verwenden die **bearbeiten Traits** Schaltfläche zum Hinzufügen von Nebenbedingungen für bestimmte Größenklassen:
+12. Testen Sie andere Geräte und Ausrichtungen, um sicherzustellen, dass der Entwurf sieht aus wie in allen Szenarien vorgesehen. In Fällen, in denen Anpassungen für ein bestimmtes Gerät oder Ausrichtung vorgenommen werden müssen, verwenden die **bearbeiten "traits"** um Nebenbedingungen für bestimmte Größenklassen hinzuzufügen:
 
-    ![Der Bildschirm starten als iPhone X Querformat](launch-screens-images/launch12.png)
+    ![Der Startbildschirm als ein iPhone X-Querformat](launch-screens-images/launch12.png)
 
-13. Speichern Sie die Änderungen auf das Storyboard. Führen Sie die app auf einem Simulator oder ein Gerät, und der Bildschirm gestartet werden angezeigt, wie die app gestartet wird.
+13. Speichern Sie die Änderungen auf das Storyboard an. Führen Sie die app auf ein Gerät oder Simulator, und der Startbildschirm werden angezeigt, wie die app gestartet wird.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Erstellen Sie ein neues Projekt. Wählen Sie in Visual Studio **Datei > Neu > Projekt > c# > iPhone & iPad > iOS-App (Xamarin)**:
+1. Erstellen Sie ein neues Projekt. Wählen Sie in Visual Studio **Datei > Neu > Projekt > Visual c# > iPhone & iPad > iOS-App (Xamarin)**:
 
-    ![Das Fenster Neues Projekt, mit der iOS-App (Xamarin) ausgewählt](launch-screens-images/launch01.w157.png)
+    ![Das neue Projektfenster, mit der iOS-App (Xamarin) ausgewählt](launch-screens-images/launch01.w157.png)
 
-    Wählen Sie die **einzelne Ansicht App** Vorlage, und klicken Sie dann auf **OK**:
+    Wählen Sie die **Einzelansicht-App** Vorlage, und klicken Sie dann auf **OK**:
 
-    ![Einzelne Sicht App-Vorlage](launch-screens-images/launch01-2.w157.png)
+    ![Einzelvorlage App anzeigen](launch-screens-images/launch01-2.w157.png)
 
-2. Wenn **Ressourcen > LaunchScreen.xib** vorhanden ist, der **Projektmappen-Explorer**, löschen Sie ihn, indem Sie mit der rechten Maustaste auf die Datei und **löschen**. Diese Datei wird durch ein Storyboard im nächsten Schritt ersetzt werden.
+2. Wenn **Ressourcen > LaunchScreen.xib** vorhanden ist, der **Projektmappen-Explorer**, löschen, indem Sie mit der rechten Maustaste auf die Datei, und wählen **löschen**. Diese Datei wird durch ein Storyboard im nächsten Schritt ersetzt werden.
 
-3. Erstellen Sie ein Storyboard mithilfe des Bildschirms starten. In der **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen > Neues Element...**  gefolgt von **leere Storyboard**. Nennen Sie das Storyboard **LaunchScreen.storyboard** , und klicken Sie auf **hinzufügen**:
+3. Erstellen Sie ein Storyboard, als der Startbildschirm verwenden. In der **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen > Neues Element...**  gefolgt von **leeres Storyboard**. Nennen Sie das Storyboard **LaunchScreen.storyboard** , und klicken Sie auf **hinzufügen**:
 
-    ![Klicken Sie im Fenster Neues Element hinzufügen mit leeren Storyboard ausgewählt](launch-screens-images/launch03.w157.png)
+    ![Neues Element hinzufügen Fensters leeres Storyboard ausgewählt](launch-screens-images/launch03.w157.png)
 
 4. Konfigurieren Sie das Projekt mit **LaunchScreen.storyboard** als der Bildschirm-Storyboard starten:
 
     - Doppelklicken Sie auf die **info.plist**-Datei im **Projektmappen-Explorer**, um sie zu öffnen und zu bearbeiten. 
-    - Auf der **visuelle Anlagen** Registerkarte **starten Bildschirm** auf **LaunchScreen**.
+    - Auf der **visuelle Anlagen** Registerkarte **Startbildschirm** zu **LaunchScreen**.
 
-    ![Der Bildschirm starten-Selektor in der Datei "Info.plist"](launch-screens-images/launch04-vs.png)
+    ![Der Startbildschirm-Selektor in "Info.plist"](launch-screens-images/launch04-vs.png)
 
-5. Hinzufügen eines Bilds eine Asset-Katalog im Projekt, damit es zur Verwendung auf dem Bildschirm gestartet wird:
+5. Fügen Sie ein Bild hinzu ein Asset-Katalog im Projekt, sodass sie für die Verwendung auf dem Startbildschirm verfügbar ist:
 
-    - In der **Projektmappen-Explorer**, mit der rechten Maustaste auf **Asset Kataloge** , und wählen Sie **Asset-Katalog hinzufügen**. Nennen Sie diesen neuen Asset-Katalog **Bestand**:
+    - In der **Projektmappen-Explorer**, mit der rechten Maustaste auf **Ressourcenkataloge** , und wählen Sie **Add Asset Catalog**. Nennen Sie diese neuen Ressourcenkatalog **Assets**:
 
-    ![Klicken Sie im Fenster Neues Element hinzufügen mit Asset-Katalog ausgewählt](launch-screens-images/launch05.w157.png)
+    ![Neues Element hinzufügen Fensters Asset-Katalog ausgewählt](launch-screens-images/launch05.w157.png)
 
-    - Hinzufügen einer neuen Bildersatz der **Bestand** Asset-Katalog, wie in beschrieben die [Bilder hinzufügen, eine Asset-Katalog Image festgelegt](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Teil der [Anzeigen eines Bilds](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Handbuch.
+    - Fügen Sie ein neues Image auf festgelegt der **Assets** Asset-Katalog, wie in beschrieben die [Bilder hinzufügen, um eine Asset-Katalog-Image festzulegen](~/ios/app-fundamentals/images-icons/displaying-an-image.md) im Abschnitt der [Anzeigen eines Bilds](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Guide.
 
-6. Open **LaunchScreen.storyboard** durch Doppelklick im für die Bearbeitung der **Projektmappen-Explorer**.
+6. Open **LaunchScreen.storyboard** für die Bearbeitung durch Doppelklick im der **Projektmappen-Explorer**.
 
-    - Um ein Storyboarddatei bearbeiten zu können, benötigt Visual Studio eine aktive Verbindung mit einem Mac-Build-Host. Finden Sie unter der [Herstellen einer Verbindung mit dem Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) -Handbuch.
+    - Um eine Storyboard-Datei bearbeiten zu können, benötigt Visual Studio eine aktive Verbindung mit einem Mac-buildhost. Finden Sie unter den [Herstellen einer Verbindung mit dem Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) -Handbuch.
 
-7. Wählen Sie ein Gerät und die Ausrichtung auf dem das Starten Bildschirm Storyboard in der iOS-Designer in der Vorschau anzeigen. Öffnen Sie Gerätebereich Auswahl auf der unteren Symbolleiste, und wählen Sie **iPhone 4 s** und **Hochformat**: 
+7. Wählen Sie ein Gerät und die Ausrichtung für die das Starten Bildschirm Storyboard in der iOS-Designer-Vorschau. Öffnen Sie den Gerätebereich der Auswahl auf der unteren Symbolleiste, und wählen **iPhone 4 s** und **Hochformat**: 
  
-    ![Der Gerätesymbolleiste-Auswahl](launch-screens-images/launch07-vs.png)
+    ![Der Geräte-Auswahl-Symbolleiste](launch-screens-images/launch07-vs.png)
 
-    - Hinweis: Auswählen eines Geräts und die Ausrichtung nur ändert, wie in der iOS-Designer den Entwurf Vorschau anzeigt. Unabhängig von der hier vorgenommenen Auswahl neu hinzugefügten Einschränkungen gelten für alle Geräte sowie Ausrichtungen, es sei denn, die **bearbeiten Traits** Schaltfläche wurde verwendet, um nichts anderes angeben. 
+    - Beachten Sie, dass durch Auswahl von einem Gerät und Ausrichtung nur ändert sich wie der iOS-Designer das Design zeigt eine Vorschau. Unabhängig davon, die hier vorgenommene Auswahl neu hinzugefügte Einschränkungen gelten für alle Geräte und -Ausrichtungen, es sei denn, die **bearbeiten "traits"** Schaltfläche wurde verwendet, um nichts anderes angeben. 
 
-8. Hinzufügen einer **Modellansichtcontroller** auf das Storyboard durch Ziehen von der **Toolbox** auf die Entwurfsoberfläche: 
+8. Hinzufügen einer **Ansichtscontroller** zum Storyboard durch Ziehen aus der **Toolbox** auf die Entwurfsoberfläche: 
 
-    ![Ein leeres View Controller auf die Entwurfsoberfläche hinzugefügt](launch-screens-images/launch08-vs.png)
+    ![Ein leeres View Controller hinzugefügt, auf die Entwurfsoberfläche](launch-screens-images/launch08-vs.png)
 
-9. Legen Sie die **Hintergrund** Farbe des Hauptansicht die View-Controller. Wählen Sie die Ansicht, indem Sie in der Mitte der View-Controller auf, und passen Sie die Farbe für den Hintergrund mit der die **Fenster "Eigenschaften"**:
+9. Legen Sie die **Hintergrund** Farbe der Hauptansicht der View-Controller. Wählen Sie die Ansicht, indem Sie in der Mitte des Ansichtscontrollers auf, und passen Sie die Background-Farbe mit der die **Fenster "Eigenschaften"**:
     
-    ![Eine einzelne Ansicht durch eine violette Hintergrundfarbe](launch-screens-images/launch09-vs.png)
+    ![Eine einzige Ansicht mit einem violetten Hintergrundfarbe](launch-screens-images/launch09-vs.png)
 
-10. Hinzufügen einer **anzeigen** auf dem Bildschirm zu starten, und legen Sie als Quelle **Image**:
+10. Hinzufügen einer **Image View** auf dem Bildschirm zu starten, und legen seine Quelle **Image**:
 
-    - Ziehen Sie ein **Image Ansicht** aus der **Toolbox** in die Mitte der Ansicht.
-    - Mit der **Bild anzeigen** noch ausgewählt, in der **Widget** im Abschnitt der **Fenster "Eigenschaften"** Festlegen der **Image** festzulegende Eigenschaft das Bild bereits hinzugefügt, um die **Bestand** Asset-Katalog. Position und Größe der **Image Ansicht** nach Bedarf:
+    - Ziehen Sie ein **Image View** aus der **Toolbox** in die Mitte der Ansicht.
+    - Mit der **Image View** noch ausgewählt ist, in der **Widget** Teil der **Fenster "Eigenschaften"** Festlegen der **Image** festzulegende Eigenschaft das Bild bereits hinzugefügt, um die **Assets** Asset-Katalog. Position und Größe der **Image View** nach Bedarf:
     
-    ![Eine Sicht Image mit einer Gruppe der Image-Eigenschaft](launch-screens-images/launch10-vs.png)
+    ![Ein Image View mit festgelegter Eigenschaft "Image"](launch-screens-images/launch10-vs.png)
 
-11. Hinzufügen einer **Bezeichnung** unterhalb der **Image Ansicht**:
+11. Hinzufügen einer **Bezeichnung** unterhalb der **Image View**:
 
-    - Ziehen Sie eine **Bezeichnung** aus der **Toolbox** auf der Entwurfsoberfläche platzieren sie unten die **anzeigen**.
+    - Ziehen Sie eine **Bezeichnung** aus der **Toolbox** auf der Entwurfsoberfläche ablegen, damit er unten die **Image View**.
     - Legen Sie Attribute für die **Bezeichnung** mithilfe der **Fenster "Eigenschaften"**:
 
-    ![Eine Bezeichnung mit einer Gruppe von Text und Farbe](launch-screens-images/launch11-vs.png) 
+    ![Eine Bezeichnung mit einem Satz von Text und Farbe](launch-screens-images/launch11-vs.png) 
 
-12. Wechseln Sie zur Einschränkung-Bearbeitungsmodus mit der rechten Schaltfläche in der **Einschränkungen Symbolleiste**:
+12. Wechseln Sie zur Einschränkungsbearbeitungsmodus, mit der rechten Schaltfläche in der **Symbolleiste für Einschränkungen**:
     
-    ![Die Einschränkung Bearbeitungsmodus-Schaltfläche](launch-screens-images/launch12-vs.png) 
+    ![Die Schaltfläche "Einschränkungsbearbeitungsmodus"](launch-screens-images/launch12-vs.png) 
 
-13. Fügen Sie eine Beschränkung der **anzeigen**, das die Höhe und Breite festlegen und es horizontal und vertikal zentrieren:
+13. Hinzufügen von Einschränkungen, die die **Image View**, Höhe und Breite festlegen und es horizontal und vertikal zentrieren:
 
-    ![Ein Image-Ansicht mit Layout-Einschränkungen](launch-screens-images/launch13-vs.png) 
+    ![Ein Image View Layout-Einschränkungen](launch-screens-images/launch13-vs.png) 
 
-    - Informationen zum Hinzufügen von Einschränkungen finden Sie unter [Automatisches Layout mit dem Xamarin-Designer für iOS](~/ios/user-interface/designer/designer-auto-layout.md).
+    - Weitere Informationen zum Hinzufügen von Einschränkungen, finden Sie unter [Automatisches Layout mit dem Xamarin-Designer für iOS](~/ios/user-interface/designer/designer-auto-layout.md).
 
-14. Einschränkungen zum Hinzufügen der **Bezeichnung**, es horizontal zentrieren, und geben sie Ihnen eine Höhe und Breite und positionieren Sie es eine feste vertikalen Abstand von der **Image Ansicht**:
+14. Hinzufügen von Einschränkungen, die die **Bezeichnung**, es horizontal zentrieren, legen sie eine Höhe und Breite und positionieren Sie sie einer festen distance vertikal von der **Image View**:
     
-    ![Eine Bezeichnung mit Layout-Einschränkungen](launch-screens-images/launch14-vs.png) 
+    ![Eine Bezeichnung mit dem Layout-Einschränkungen](launch-screens-images/launch14-vs.png) 
 
-15. Testen Sie andere Geräte und die Ausrichtungen, um sicherzustellen, dass der Entwurf aussieht, wie in allen Szenarien vorgesehen. In Fällen, in denen Anpassungen für ein bestimmtes Gerät oder Ausrichtung vorgenommen werden müssen, verwenden die **bearbeiten Traits** Schaltfläche zum Hinzufügen von Nebenbedingungen für bestimmte Größenklassen:
+15. Testen Sie andere Geräte und Ausrichtungen, um sicherzustellen, dass der Entwurf sieht aus wie in allen Szenarien vorgesehen. In Fällen, in denen Anpassungen für ein bestimmtes Gerät oder Ausrichtung vorgenommen werden müssen, verwenden die **bearbeiten "traits"** um Nebenbedingungen für bestimmte Größenklassen hinzuzufügen:
 
-    ![Der Bildschirm starten als iPhone X Querformat](launch-screens-images/launch15-vs.png) 
+    ![Der Startbildschirm als ein iPhone X-Querformat](launch-screens-images/launch15-vs.png) 
 
-16. Speichern Sie die Änderungen auf das Storyboard. Führen Sie die app auf einem Simulator oder ein Gerät, und der Bildschirm gestartet werden angezeigt, wie die app gestartet wird.
+16. Speichern Sie die Änderungen auf das Storyboard an. Führen Sie die app auf ein Gerät oder Simulator, und der Startbildschirm werden angezeigt, wie die app gestartet wird.
 
 -----
 
 > [!NOTE]
-> Ein Storyboard verwendet als Bildschirm starten _müssen_ enthalten nur die einfache, integrierte Benutzeroberflächenelemente und **kann nicht** Berechnungen ausführen oder eine benutzerdefinierte Klasse abgeleitet.
+> Ein Storyboard als einen Startbildschirm _müssen_ nur einfache, integrierte UI-Elemente enthalten und **kann nicht** Berechnungen ausführen oder eine benutzerdefinierte Klasse abgeleitet.
 
-Weitere Informationen zum Erstellen eines Bildschirms starten mit einem Storyboard Unified finden Sie unter der [dynamische starten Bildschirme](~/ios/user-interface/storyboards/unified-storyboards.md#dynamic-launch-screens) Teil der [Unified Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) Handbuch.
+Weitere Informationen zum Erstellen eines Bildschirms starten mit einem Storyboard Unified finden Sie unter den [dynamische Startbildschirme](~/ios/user-interface/storyboards/unified-storyboards.md#dynamic-launch-screens) Teil der [Unified Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) Guide.
 
-## <a name="migrating-to-launch-screen-storyboards"></a>Migrieren von Storyboards Bildschirm gestartet
+## <a name="migrating-to-launch-screen-storyboards"></a>Migrieren zum Bildschirm Storyboards zu starten
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-Bei der Aktualisierung einer vorhandenen app Verwendung des Storyboards für seine Bildschirme starten mit der rechten Maustaste klicken Sie auf die **Projektname** in der **Projektmappen-Explorer** , und wählen Sie **hinzufügen**  >  **Neue Datei...** . Wählen Sie **iOS** > **starten Bildschirm** , und klicken Sie auf die **neu** Schaltfläche:
+Bei der Aktualisierung einer vorhandenen app, um Storyboards zu verwenden, für die Startbildschirme mit der rechten Maustaste die **Projektname** in die **Projektmappen-Explorer** , und wählen Sie **hinzufügen**  >  **Neue Datei...** . Wählen Sie **iOS** > **Startbildschirm** , und klicken Sie auf die **neu** Schaltfläche:
 
-![](launch-screens-images/storyboard02.png "Wählen Sie ein iOS-Bildschirm starten")
+![](launch-screens-images/storyboard02.png "Wählen Sie ein iOS-Startbildschirm")
 
-Doppelklicken Sie anschließend auf die `Info.plist` in der Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen. Klicken Sie unter **starten Bildschirm**, wählen Sie die neue Storyboard-Datei, die oben erstellte.
+Doppelklicken Sie dann auf die `Info.plist` Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen. Klicken Sie unter **Startbildschirm**, wählen Sie die neue Storyboard-Datei, die oben erstellt haben.
 
-![](launch-screens-images/storyboard09.png "Wählen Sie die neue Storyboard-Datei, die oben erstellte")
+![](launch-screens-images/storyboard09.png "Wählen Sie die oben erstellte neue Storyboard-Datei")
 
 
-Das neue Storyboard als einen Startbildschirm verwenden möchten, führen Sie folgende Schritte aus:
+Führen Sie folgende Schritte aus, um das neue Storyboard als einen Startbildschirm zu verwenden:
 
-1. Doppelklicken Sie auf die `Info.plist` in der Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
-2. Einen Bildlauf zu der **Universal starten Bilder** Abschnitt des Editors öffnen die **starten Bildschirm** Dropdownliste, und wählen Sie dann der Namen des Storyboards oben erstellten: 
+1. Doppelklicken Sie auf die `Info.plist` Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
+2. Scrollen Sie zu der **universelle Startbilder** im Editor, öffnen die **Startbildschirm** Dropdownliste und wählen Sie der Namen des Storyboards oben erstellten: 
 
-    ![](launch-screens-images/storyboard08.png "Festlegen des Startbildschirms auf das storyboard")
+    ![](launch-screens-images/storyboard08.png "Im Startbildschirm festlegen auf das storyboard")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -213,22 +213,22 @@ Das neue Storyboard als einen Startbildschirm verwenden möchten, führen Sie fo
 2. Geben Sie einen Namen für den Startbildschirm, und klicken Sie auf die **hinzufügen** Schaltfläche: 
 
     ![](launch-screens-images/image013.png "Geben Sie einen Namen für den Startbildschirm")
-3. In der **Projektmappen-Explorer**, doppelklicken Sie auf die neu erstellte Storyboarddatei, um ihn zur Bearbeitung zu öffnen.
-4. Sicherstellen, dass die **Größe Klasse** auf festgelegt ist **alle: alle** und die **Ansicht als** ist **generische**: 
+3. In der **Projektmappen-Explorer**, doppelklicken Sie auf die neu erstellte Storyboarddatei, um es zur Bearbeitung zu öffnen.
+4. Sicherstellen, dass die **Größenklasse** nastaven NA hodnotu **alle: alle** und **anzeigen als** ist **generische**: 
 
-    ![](launch-screens-images/image016.png "Stellen Sie sicher, dass die Größe-Klasse auf einen festgelegt ist: alle und die Sicht als generische")
-5. Assembly Startbildschirms aus Größenklassen einfache Benutzeroberflächenelemente (z. B. `UIImageView`) und Bilder, die Sie in der Anwendung Paket aufgenommen haben: 
+    ![](launch-screens-images/image016.png "Stellen Sie sicher, dass die Größenklasse auf einen festgelegt ist: jeder und die Ansicht ist generisch")
+5. Assembly der Startbildschirm von Größenklassen, einfache Benutzeroberflächenelemente (z. B. `UIImageView`) und Images, die Sie in der Anwendung Paket aufgenommen haben: 
 
     ![](launch-screens-images/image017.png "Assembly der Startbildschirm im iOS-Designer")
-6. Speichern Sie die Änderungen auf das Storyboard.
+6. Speichern Sie die Änderungen auf das Storyboard an.
 
 -----
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Dynamische starten Bildschirme (Beispiel)](https://developer.xamarin.com/samples/monotouch/ios8/DynamicLaunchScreen/)
+- [Dynamische Startbildschirme (Beispiel)](https://developer.xamarin.com/samples/monotouch/ios8/DynamicLaunchScreen/)
 - [Einheitliche Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md)
 - [iOS-Designer-Grundlagen](~/ios/user-interface/designer/index.md)
-- [Hinzufügen von Bildern zu einem Bild, Asset-Katalog festgelegt.](~/ios/app-fundamentals/images-icons/displaying-an-image.md#asset-catalogs)
+- [Hinzufügen von Bildern zu einem Bild, Asset-Katalog festlegen](~/ios/app-fundamentals/images-icons/displaying-an-image.md#adding-images-to-an-asset-catalog-image-set)
 - [Automatisches Layout mit dem Xamarin-Designer für iOS](~/ios/user-interface/designer/designer-auto-layout.md)
-- [Human Interface-Richtlinien: Startbildschirm](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)
+- [Human Interface Guidelines: Starten des Bildschirms](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)

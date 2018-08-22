@@ -1,133 +1,107 @@
 ---
 redirect_url: /xamarin/tools/live-player/
-title: XAML Live-Vorschau
-description: Dieses Dokument erläutert, wie die Xamarin-Live-Player live Preview XAML-Seiten, nehmen Sie Änderungen an der XAML-Code und die Änderungen werden sofort auf Gerät angezeigt.
+title: XAML-Livevorschau
+description: Dieses Dokument erläutert, wie Sie mit dem Xamarin Live Player live Preview XAML-Seiten, nehmen Sie Änderungen an der XAML und die Änderungen sofort auf Gerät angezeigt wird.
 ms.prod: xamarin
 ms.assetid: 86E9A179-21F8-4F3A-A9CE-36F0FC5DB4A8
 author: topgenorth
 ms.author: toopge
-ms.date: 12/21/2017
-ms.openlocfilehash: cc68044342fca84e62e3b17770170e1d7a23f677
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/08/2018
+ms.openlocfilehash: 200d19aa0a13d0557e52cb90021190978838ed39
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793701"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40251167"
 ---
-# <a name="xaml-live-previewing"></a>XAML Live-Vorschau
+# <a name="xaml-live-previewing"></a>XAML-Livevorschau
 
-Einer der Vorteile von Xamarin Player Live ist die Fähigkeit, live Preview XAML-Seiten, nehmen Sie Änderungen an den Code in Visual Studio und die Änderungen werden sofort auf Ihrem Gerät angezeigt. Die live-Vorschau kann auf Ihrem IOS- oder Android-Gerät oder auf einem Simulator oder Emulator vorgenommen werden. Dieses Handbuch veranschaulicht, wie die live-Vorschau-Funktion verwenden, um einzelne XAML-Bildschirme anzeigen.
+Einer der Vorteile von Xamarin Live Player ist die Möglichkeit, live-Vorschau-XAML-Seiten, nehmen Sie Änderungen an den Code in Visual Studio und die Änderungen sofort auf Ihrem Gerät angezeigt werden. Die Livevorschau kann auf Ihrem Android-Gerät oder auf einem Simulator oder Emulator erfolgen. Diese Anleitung veranschaulicht, wie Sie mit der Livevorschau einzelne XAML-Bildschirme anzeigen.
 
 ## <a name="requirements"></a>Anforderungen
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Ein Computer unter Windows 7 oder höher.
-2. Visual Studio 2017 15.4 oder höher mit der **Mobile Entwicklung mit .NET** arbeitsauslastung installiert.
+1. Ein Computer, die Windows 7 oder höher ausgeführt wird.
+2. Visual Studio 2017 Version 15.4 oder höher mit der **Mobile Entwicklung mit .NET** arbeitsauslastung installiert.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Einen Mac mit OS X 10.11, MacOS 10.12 oder höher.
+1. Einen Mac mit OS X 10.11, MacOS Sierra 10.12 oder höher.
 2. Visual Studio für Mac 7.2 oder höher. Es wird empfohlen, die neueste Version.
 
 -----
 
 <a name="deploydevice" />
 
-## <a name="deploying-to-device"></a>Bereitstellen auf Gerät
+## <a name="deploying-to-device"></a>Bereitstellung auf Gerät
 
-Bevor Sie die Xamarin-Live-Player mit Ihres IOS- oder Android-Gerät verwenden können, müssen Sie die Live-Player Xamarin-app herunterladen und verbinden Sie es in Visual Studio, wie in beschrieben die [installieren](~/tools/live-player/install.md) Handbuch. Nachdem Sie Ihr Gerät zu Visual Studio erfolgreich gekoppelt haben, können Sie die live-Vorschau der Verwendung von XAML-Seite beginnen. 
+Bevor Sie den Xamarin Live Player mit Ihrem Android-Gerät verwenden können, müssen Sie die Xamarin Live Player-app herunterladen und verbinden Sie es in Visual Studio, wie in beschrieben die [installieren](~/tools/live-player/install.md) Guide. Nachdem Sie Ihr Gerät zu Visual Studio erfolgreich gekoppelt haben, können Sie die live-Vorschau Ihrer XAML-Seite beginnen. 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Öffnen Sie die XAML-Seite, die Sie live-Vorschau im Visual Studio-2017 Editor möchten:
+1. Öffnen Sie die XAML-Seite, die Sie live-Vorschau im Editor für Visual Studio 2017 möchten:
 
     ![](live-view-images/vs-image1.png)
 
-2. Legen Sie die Gerätekonfiguration auf **Debuggen | iPhone** für iOS oder **Debuggen** für Android, und wählen Sie die Live-Player-Gerät aus der Liste:
+2. Legen Sie die Gerätekonfiguration auf **Debuggen** , und wählen Sie aus der Liste der Live Player-Gerät:
 
     ![](live-view-images/vs-image2.png)
 
-3. Wählen Sie zum Ausführen dieser XAML-Seite als eine aktive Ansicht auf Ihrem Gerät **Tools > Xamarin Live Player > Führen Sie aktuellen Ansicht Live** in der Menüleiste:
+3. Wählen Sie zum Ausführen dieser XAML-Seite als eine Liveansicht auf Ihrem Gerät **Tools > Xamarin Live Player > aktuelle Ansicht der Liveausführung** in der Menüleiste:
 
     ![](live-view-images/vs-image3.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Öffnen Sie die XAML-Seite, die Sie Livevorschau in Visual Studio für Mac-Editor möchten:
+1. Öffnen Sie die XAML-Seite, die Sie live-Vorschau in Visual Studio für Mac-Editor möchten:
 
     ![](live-view-images/image1.png)
 
-2. Legen Sie die Gerätekonfiguration auf **Debuggen | iPhone** für iOS oder **Debuggen** für Android, und wählen Sie die Live-Player-Gerät aus der Liste:
+2. Legen Sie die Gerätekonfiguration auf **Debuggen** , und wählen Sie aus der Liste der Live Player-Gerät:
 
     ![](live-view-images/image2.png)
 
-3. Wählen Sie zum Ausführen dieser XAML-Seite als eine aktive Ansicht auf Ihrem Gerät **ausführen > Führen Sie aktuellen Ansicht Live** in der Menüleiste:
+3. Wählen Sie zum Ausführen dieser XAML-Seite als eine Liveansicht auf Ihrem Gerät **ausführen > aktuelle Ansicht der Liveausführung** in der Menüleiste:
 
     ![](live-view-images/image3.png)
 
 -----
 
-## <a name="deploying-to-android-emulator"></a>Auf Android-Emulator bereitstellen
+## <a name="deploying-to-android-emulator"></a>Für Android-Emulator bereitstellen
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Öffnen Sie die XAML-Seite, die Sie live-Vorschau im Visual Studio-2017 Editor möchten:
+1. Öffnen Sie die XAML-Seite, die Sie live-Vorschau im Editor für Visual Studio 2017 möchten:
 
     ![](live-view-images/vs-image1.png)
 
-2. Legen Sie die Gerätekonfiguration auf **Debuggen** für Android, und wählen Sie die Live-Player-Gerät aus der Liste:
+2. Legen Sie die Gerätekonfiguration auf **Debuggen** für Android, und wählen Sie aus der Liste der Live Player-Gerät:
 
     ![](live-view-images/vs-image4.png)
 
-3. Wählen Sie zum Ausführen dieser XAML-Seite als eine aktive Ansicht auf dem Android-Emulator **Tools > Xamarin Live Player > Live ausführen aktuelle Ansicht** in der Menüleiste:
+3. Wählen Sie zum Ausführen dieser XAML-Seite als eine Liveansicht der Android-Emulator **Tools > Xamarin Live Player > aktuelle Ansicht der Liveausführung** in der Menüleiste:
 
     ![](live-view-images/vs-image3.png)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-1. Öffnen Sie die XAML-Seite, die Sie Livevorschau in Visual Studio für Mac-Editor möchten:
+1. Öffnen Sie die XAML-Seite, die Sie live-Vorschau in Visual Studio für Mac-Editor möchten:
 
     ![](live-view-images/image7.png)
 
-2. Legen Sie die Gerätekonfiguration auf **Debuggen** für Android, und wählen Sie die Live-Player-Gerät aus der Liste:
+2. Legen Sie die Gerätekonfiguration auf **Debuggen** für Android, und wählen Sie aus der Liste der Live Player-Gerät:
 
     ![](live-view-images/image6.png)
 
-3. Wählen Sie zum Ausführen dieser XAML-Seite als eine aktive Ansicht auf Ihrem Gerät ausführen > Live ausführen aktuelle Ansicht in der Menüleiste:
+3. Wählen Sie zum Ausführen dieser XAML-Seite als eine Liveansicht auf Ihrem Gerät ausführen > aktuelle Ansicht der Liveausführung in der Menüleiste:
 
     ![](live-view-images/image3.png)
 
 -----
 
-## <a name="deploying-to-ios-simulator"></a>Bereitstellen auf iOS-Simulator
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-Zurzeit besteht keine Unterstützung für die Verwendung von live-XAML-Vorschau auf den Remote-iOS-Simulator unter Windows. Sie sollten stattdessen [auf einem Gerät bereitstellen](#deploydevice).
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
-
-1. Öffnen Sie die XAML-Seite, die Sie Livevorschau in Visual Studio für Mac-Editor möchten:
-
-    ![](live-view-images/image1.png)
-
-2. Legen Sie die Gerätekonfiguration auf **Debuggen | iPhoneSimulator** für iOS, und wählen Sie ein iOS-Simulator aus der Liste:
-
-    ![](live-view-images/image2.png)
-
-3. Wählen Sie **ausführen > Führen Sie aktuellen Ansicht Live** in der Menüleiste, starten Sie den Simulator und zeigen die XAML-Seite:
-
-    ![](live-view-images/image4.png)
-
-4. Nachdem der Simulator gestartet wurde, können Sie beginnen, den XAML-Code bearbeiten und Anzeigen einer Vorschau live angezeigt werden:
-
-    ![](live-view-images/image5.png)  
-
------
-
 ## <a name="related-links"></a>Verwandte Links
 
-- [Überblick zu Xamarin Player Live](https://xamarin.com/live)
+- [Überblick zu Xamarin Live Player](https://xamarin.com/live)
 - [Blogbeitrag](https://blog.xamarin.com/live-player/)
-- [Xamarin Player Live-Beispiele](~/tools/live-player/samples.md)
+- [Xamarin Live Player-Beispiele](~/tools/live-player/samples.md)

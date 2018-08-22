@@ -1,52 +1,52 @@
 ---
 title: Quelllisten in Xamarin.Mac
-description: In diesem Artikel wird das Arbeiten mit Quelllisten sind in einer Anwendung Xamarin.Mac behandelt. Es beschreibt die Erstellung und Verwaltung von Listen in Xcode und Benutzeroberflächen-Generator aus, und sie in C#-Code interagieren.
+description: Dieser Artikel behandelt die Arbeit mit Quelllisten in einer Xamarin.Mac-Anwendung. Es wird beschrieben, erstellen und verwalten Quelllisten in Xcode und Interface Builder in C#-Code mit ihnen interagieren.
 ms.prod: xamarin
 ms.assetid: 651A3649-5AA8-4133-94D6-4873D99F7FCC
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c93d4b0855fb96897da2018596766b16e5385ab4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: de51395192ab009f5c7fa338a4414ba553610b8c
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792771"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40251041"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Quelllisten in Xamarin.Mac
 
-_In diesem Artikel wird das Arbeiten mit Quelllisten sind in einer Anwendung Xamarin.Mac behandelt. Es beschreibt die Erstellung und Verwaltung von Listen in Xcode und Benutzeroberflächen-Generator aus, und sie in C#-Code interagieren._
+_Dieser Artikel behandelt die Arbeit mit Quelllisten in einer Xamarin.Mac-Anwendung. Es wird beschrieben, erstellen und verwalten Quelllisten in Xcode und Interface Builder in C#-Code mit ihnen interagieren._
 
-Bei der Arbeit mit c# und .NET in einer Anwendung Xamarin.Mac haben Sie Zugriff auf die gleiche Datenquelle aufgelistet, die ein Entwickler arbeiten in unter *Objective-C* und *Xcode* verfügt. Da Xamarin.Mac direkt mit Xcode integriert ist, können Sie die Xcode _Schnittstelle-Generator_ erstellen und verwalten Ihre Quelle Listen (oder erstellen sie optional direkt im C#-Code).
+Bei der Arbeit mit c# und .NET in einer Xamarin.Mac-Anwendung haben Sie Zugriff auf die gleiche Datenquelle aufgeführt sind, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und Verwalten Ihrer Quelllisten (oder erstellen sie optional direkt in c#-Code).
 
-Eine Liste der Quelle ist eine besondere Art von Ansicht der Gliederung verwendet, um die Quelle einer Aktion, wie der Randleiste in Finder oder iTunes anzuzeigen.
+Eine Liste der Quelle ist eine besondere Art von Gliederungsansicht verwendet, um die Quelle der Aktion, wie die Seitenleiste in Finder oder iTunes anzuzeigen.
 
-[![](source-list-images/source05.png "Ein Beispiel-Quellliste")](source-list-images/source05.png#lightbox)
+[![](source-list-images/source05.png "Eine Liste der Beispiel-Quelle")](source-list-images/source05.png#lightbox)
 
-In diesem Artikel werden die Grundlagen der Arbeit mit Listen Quelle in einer Anwendung Xamarin.Mac eingegangen. Wird mit hoher vorgeschlagen, dass Sie über arbeiten die [Hello, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Benutzeroberflächen-Generator](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) und [Steckdosen und Aktionen](~/mac/get-started/hello-mac.md#Outlets_and_Actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die in diesem Artikel verwendet werden.
+In diesem Artikel werden die Grundlagen der Arbeit mit Quelllisten in einer Xamarin.Mac-Anwendung beschrieben. Es wird dringend empfohlen, dass Sie über arbeiten die [Hallo, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und [Outlets und Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die wir in diesem Artikel verwenden.
 
-Sie möchten einen Blick auf die [Verfügbarmachen von C#-Klassen / Methoden für Objective-C-](~/mac/internals/how-it-works.md) Teil der [Xamarin.Mac Internals](~/mac/internals/how-it-works.md) dokumentieren, es wird erläutert, die `Register` und `Export` Befehle verwendet, um über das Netzwerk Ihrer C#-Klassen für Objective-C-Objekte und Elemente der Benutzeroberfläche von Volltextkatalogen.
+Empfiehlt es sich um einen Blick auf die [Verfügbarmachen von c#-Klassen / Methoden mit Objective-C](~/mac/internals/how-it-works.md) Teil der [Xamarin.Mac-Interna](~/mac/internals/how-it-works.md) dokumentieren, es wird erläutert, die `Register` und `Export` Befehle verwendet, um Ihre Klassen in c# für Objective-C-Objekte und Elemente der Benutzeroberfläche anschließen.
 
 <a name="Introduction_to_Outline_Views" />
 
-## <a name="introduction-to-source-lists"></a>Einführung in Listen
+## <a name="introduction-to-source-lists"></a>Einführung in die Quelllisten
 
-Wie bereits erwähnt, ist eine Quellliste an, dass eine besondere Art von Gliederungsansicht verwendet wird, um die Quelle einer Aktion, wie der Randleiste in Finder oder iTunes anzuzeigen. Eine Liste der Quelle ist ein Typ der Tabelle, die dem Benutzer ermöglicht erweitern oder reduzieren Zeilen mit hierarchischen Daten. Im Gegensatz zu einer Tabellenansicht Elemente in einer Quellliste sind nicht in einer flachen Liste, sie sind in einer Hierarchie, z. B. Dateien und Ordnern auf einer Festplatte organisiert. Wenn ein Element in einer Quellliste Weitere Elemente enthält, können Sie erweitert oder vom Benutzer reduziert werden.
+Wie bereits erwähnt, ist eine Quelle-Liste an, dass eine besondere Art von Gliederungsansicht verwendet wird, um die Quelle der Aktion, wie die Seitenleiste in Finder oder iTunes anzuzeigen. Eine Liste der Quelle wird einer Tabelle, die dem Benutzer ermöglicht erweitern oder Reduzieren von Zeilen von hierarchischen Daten. Im Gegensatz zu einer Tabellenansicht Elemente in einer Liste der Quelle nicht in einer flachen Liste, deren Organisation in einer Hierarchie, wie Dateien und Ordner auf einer Festplatte. Wenn ein Element in einer Liste der Datenquellen auf andere Elemente enthält, kann er erweitert oder reduziert, die vom Benutzer sein.
 
-Der Quellliste ist eine speziell formatierte Gliederungsansicht (`NSOutlineView`), die selbst ist eine Unterklasse der Tabellenansicht (`NSTableView`) und der Großteil des Verhaltens daher von der übergeordneten Klasse erbt. Daher werden viele Vorgänge, die von einer Gliederungsansicht unterstützt auch unterstützt von einer Quellliste. Eine Anwendung Xamarin.Mac hat die Kontrolle über diese Funktionen und der Quellliste-Parameter (entweder im Code oder Schnittstelle-Generator) konfigurieren, um gestattet oder verweigert bestimmte Vorgänge.
+Der Quellliste ist eine speziell formatierte Gliederungsansicht (`NSOutlineView`), die selbst handelt es sich um eine Unterklasse der Tabellenansicht (`NSTableView`) und der Großteil des Verhaltens, von der übergeordneten Klasse erbt. Daher werden viele Vorgänge, die von einer Gliederungsansicht unterstützt auch unterstützt von einer Quelle-Liste. Eine Xamarin.Mac-Anwendung hat die Kontrolle über diese Features, und Sie können der Quellliste-Parameter (entweder im Code oder in Interface Builder) zum Zulassen oder verbieten des bestimmte Vorgänge konfigurieren.
 
-Eine Quellliste seinem eigenen Daten nicht gespeichert, er verlässt sich stattdessen auf einer Datenquelle (`NSOutlineViewDataSource`), die Zeilen und Spalten, die erforderlich sind, klicken Sie auf einen Bedarf bereitzustellen.
+Eine Liste der Datenquellen speichert keine eigenen Daten, die stattdessen greift Sie auf eine Datenquelle (`NSOutlineViewDataSource`) um die Zeilen und Spalten, die erforderlich sind, klicken Sie auf einen Bedarf bereitzustellen.
 
-Eine Quellliste Verhalten kann angepasst werden, durch die Bereitstellung einer Unterklasse des Delegaten Gliederung anzeigen (`NSOutlineViewDelegate`) zur Unterstützung von Gliederung-Typ, um Funktionen auszuwählen, Artikel, Auswahl und Bearbeiten von benutzerdefinierten Nachverfolgungsdatensatzes und benutzerdefinierte Ansichten für einzelne Elemente.
+Eine Quellliste Verhalten kann angepasst werden, durch die Bereitstellung einer Unterklasse des Delegaten Gliederung anzeigen (`NSOutlineViewDelegate`) um Konturtyp zum Auswählen von Funktionen zu unterstützen, Element Auswahl "und" Bearbeiten "," benutzerdefinierte nachverfolgung "und" benutzerdefinierte Ansichten für einzelne Elemente.
 
-Da eine Quellliste Großteil der Verhalten und die Funktionen mit einer Tabellenansicht und einer Gliederungsansicht gemeinsam verwendet wird, möchten Sie möglicherweise durchlaufen unsere [Tabellensichten](~/mac/user-interface/table-view.md) und [Gliederung Ansichten](~/mac/user-interface/outline-view.md) Dokumentation vor dem Fortsetzen mit diesem Artikel.
+Da eine Quellliste Großteil dessen Verhalten und die Funktionen für eine Ansicht der Tabelle und einer Gliederungsansicht freigegeben hat, möchten Sie möglicherweise durchlaufen unsere [Tabellenansichten](~/mac/user-interface/table-view.md) und [Gliederungsansichten](~/mac/user-interface/outline-view.md) Dokumentation, bevor Sie den Vorgang fortsetzen In diesem Artikel.
 
 <a name="Working_with_Source_Lists" />
 
 ## <a name="working-with-source-lists"></a>Arbeiten mit Quelllisten
 
-Eine Liste der Quelle ist eine besondere Art von Ansicht der Gliederung verwendet, um die Quelle einer Aktion, wie der Randleiste in Finder oder iTunes anzuzeigen. Im Gegensatz zu Gliederung Ansichten bevor wir unsere Quellliste in Benutzeroberflächen-Generator zu definieren, erstellen wir die unterstützende Klassen in Xamarin.Mac.
+Eine Liste der Quelle ist eine besondere Art von Gliederungsansicht verwendet, um die Quelle der Aktion, wie die Seitenleiste in Finder oder iTunes anzuzeigen. Im Gegensatz zu Gliederungsansichten bevor wir unser Quellliste in Interface Builder definieren, erstellen wir die unterstützenden Klassen in Xamarin.Mac.
 
 Zunächst erstellen wir ein neues `SourceListItem` Klasse zum Speichern der Daten für unsere Quellliste. In der **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen** > **neue Datei...** Wählen Sie **allgemeine** > **leere Klasse**, geben Sie `SourceListItem` für die **Namen** , und klicken Sie auf die **neu** Schaltfläche:
 
@@ -352,7 +352,7 @@ namespace MacOutlines
 }
 ```
 
-Dadurch werden die Daten für unsere Quellliste angegeben.
+Dies stellt die Daten für unsere Quellliste bereit.
 
 In der **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen** > **neue Datei...** Wählen Sie **allgemeine** > **leere Klasse**, geben Sie `SourceListDelegate` für die **Namen** , und klicken Sie auf die **neu** Schaltfläche. Stellen Sie die `SourceListDelegate.cs` Datei aussehen wie folgt:
 
@@ -444,7 +444,7 @@ namespace MacOutlines
 }
 ```
 
-Dies stellt das Verhalten von unseren Quellliste bereit.
+Dadurch wird das Verhalten von unserem Quellliste bereitgestellt.
 
 Schließlich wird in der **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen** > **neue Datei...** Wählen Sie **allgemeine** > **leere Klasse**, geben Sie `SourceListView` für die **Namen** , und klicken Sie auf die **neu** Schaltfläche. Stellen Sie die `SourceListView.cs` Datei aussehen wie folgt:
 
@@ -524,35 +524,35 @@ namespace MacOutlines
 }
 ```
 
-Dies erstellt eine benutzerdefinierte, wiederverwendbare Unterklasse von `NSOutlineView` (`SourceListView`), die wir in der Quellliste in jeder Anwendung Xamarin.Mac Laufwerk, die wir machen können.
+Dies erstellt eine benutzerdefinierte, wiederverwendbare Unterklasse von `NSOutlineView` (`SourceListView`), die wir verwenden können, die der Quellliste in einer Xamarin.Mac-Anwendung zu versorgen, die wir stellen.
 
 <a name="Creating_and_Maintaining_Source_Lists_in_Xcode" />
 
-## <a name="creating-and-maintaining-source-lists-in-xcode"></a>Erstellen und Verwalten von Listen in Xcode
+## <a name="creating-and-maintaining-source-lists-in-xcode"></a>Erstellen und verwalten Quelllisten in Xcode
 
-Jetzt sehen wir unsere Quellliste in Benutzeroberflächen-Generator entwerfen. Doppelklicken Sie auf die `Main.storyboard` Datei zur Bearbeitung in der Benutzeroberflächen-Generator geöffnet, und ziehen eine geteilte Ansicht aus der **Bibliothek Inspektor**es die View-Controller hinzu, und legen Sie sie mit der Ansicht im Ändern der Größe der **Einschränkungen-Editor** :
+Nun, wir entwerfen unsere Quellliste in Interface Builder. Doppelklicken Sie auf die `Main.storyboard` Datei zur Bearbeitung in Interface Builder öffnen, und ziehen eine geteilte Ansicht aus der **Bibliotheksinspektor**, fügen Sie es mit dem Ansicht-Controller hinzu, und legen Sie sie mit der Ansicht im Ändern der Größe der **Einschränkungs-Editors** :
 
 [![](source-list-images/source00.png "Bearbeiten von Einschränkungen")](source-list-images/source00.png#lightbox)
 
-Ziehen Sie anschließend eine Liste der Quelle aus der **Bibliothek Inspektor**, fügen Sie es auf die linke Seite der geteilten Ansicht, und legen Sie ihn mit der Ansicht im Ändern der Größe der **Einschränkungen Editor**:
+Ziehen Sie anschließend eine Liste der Quelle aus der **Bibliotheksinspektor**, fügen sie Sie im linken Bildschirmbereich der geteilten Ansicht hinzu, und legen Sie sie mit der Ansicht im Ändern der Größe der **Einschränkungs-Editors**:
 
 [![](source-list-images/source02.png "Bearbeiten von Einschränkungen")](source-list-images/source02.png#lightbox)
 
-Als Nächstes wechseln Sie zu der **Identität Ansicht**, wählen Sie die Quelle, und ändern Sie ihn des **Klasse** auf `SourceListView`:
+Als Nächstes wechseln Sie zu der **Identität Ansicht**, wählen Sie die Quelle aus, und ändern Sie ihn der **Klasse** zu `SourceListView`:
 
-[![](source-list-images/source03.png "Der Name der Klasse festlegen")](source-list-images/source03.png#lightbox)
+[![](source-list-images/source03.png "Den Namen der Klasse festlegen")](source-list-images/source03.png#lightbox)
 
-Erstellen Sie abschließend eine **Nachrichtenplattform** für unsere Quellliste aufgerufen `SourceList` in die `ViewController.h` Datei:
+Erstellen Sie abschließend eine **Outlet** für unsere Quellliste aufgerufen `SourceList` in die `ViewController.h` Datei:
 
-[![](source-list-images/source04.png "Konfigurieren von einer Steckdose")](source-list-images/source04.png#lightbox)
+[![](source-list-images/source04.png "Konfigurieren eines Outlets")](source-list-images/source04.png#lightbox)
 
-Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode zu synchronisieren.
+Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode synchronisiert.
 
 <a name="Populating the Source List" />
 
-## <a name="populating-the-source-list"></a>Auffüllen der Quellliste aus
+## <a name="populating-the-source-list"></a>Auffüllen der Quellliste
 
-Ermöglicht das Bearbeiten der `RotationWindow.cs` Datei in Visual Studio für Mac, und stellen sie die `AwakeFromNib` Methode aussehen wie folgt:
+Ermöglicht das Bearbeiten der `RotationWindow.cs` Datei in Visual Studio für Mac, und legen Sie ihn der `AwakeFromNib` Methode sehen wie folgt:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -591,7 +591,7 @@ public override void AwakeFromNib ()
 }
 ```
 
-Die `Initialize ()` Methode gegen unsere Quellliste aufgerufen werden müssen **Nachrichtenplattform** _vor_ keine Elemente hinzugefügt werden. Für jede Gruppe von Elementen wir erstellen ein übergeordneten Elements und fügen Sie dann die untergeordneten Elemente mit dem Group-Element. Jede Gruppe wird dann der Quellliste Sammlung hinzugefügt `SourceList.AddItem (...)`. Die letzten beiden Zeilen laden Sie die Daten für die Quellliste, und es werden alle Gruppen erweitert:
+Die `Initialize ()` Methode für unsere Quellliste aufgerufen werden müssen, **Outlet** _vor_ keine Elemente hinzugefügt werden. Für jede Gruppe von Elementen erstellen wir ein übergeordnetes Element und dann die untergeordneten Elemente auf dieses Gruppenelement hinzufügen. Jede Gruppe wird anschließend der Quellliste Auflistung hinzuzufügenden `SourceList.AddItem (...)`. Die letzten beiden Zeilen laden Sie die Daten für die Source-Liste, und alle Gruppen erweitert:
 
 ```csharp
 // Display side list
@@ -599,7 +599,7 @@ SourceList.ReloadData ();
 SourceList.ExpandItem (null, true);
 ```
 
-Bearbeiten Sie schließlich die `AppDelegate.cs` Datei, und stellen die `DidFinishLaunching` Methode aussehen wie folgt:
+Schließlich Bearbeiten der `AppDelegate.cs` Datei, und stellen die `DidFinishLaunching` Methode sehen wie folgt:
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -614,13 +614,13 @@ public override void DidFinishLaunching (NSNotification notification)
 
 Wenn wir unsere Anwendung ausführen, wird Folgendes angezeigt:
 
-[![](source-list-images/source05.png "Eine Beispiel-app ausführen")](source-list-images/source05.png#lightbox)
+[![](source-list-images/source05.png "Eine Beispiel-app-Ausführung")](source-list-images/source05.png#lightbox)
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel hat eine ausführliche Übersicht über das Arbeiten mit Listen Quelle in einer Anwendung Xamarin.Mac übernommen. Wir haben gesehen, wie zum Erstellen und verwalten die Quelle führt in Xcodes Benutzeroberflächen-Generator und zum Arbeiten mit Datenquellen Listen in C#-Code.
+Dieser Artikel hat es sich um einen detaillierten Einblick in die Arbeit mit Quelllisten in einer Xamarin.Mac-Anwendung geführt. Wir haben gesehen, wie zum Erstellen und verwalten Quelllisten in Interface Builder von Xcode und wie Sie mit Quelllisten in C#-Code zu arbeiten.
 
 ## <a name="related-links"></a>Verwandte Links
 
@@ -629,7 +629,7 @@ Dieser Artikel hat eine ausführliche Übersicht über das Arbeiten mit Listen Q
 - [Tabellenansichten](~/mac/user-interface/table-view.md)
 - [Gliederungsansichten](~/mac/user-interface/outline-view.md)
 - [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
-- [Einführung in die Ansichten werden kann](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
+- [Einführung in die Ansichten beschrieben.](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
 - [NSOutlineView](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSOutlineView_Class/index.html#//apple_ref/doc/uid/TP40004079)
 - [NSOutlineViewDataSource](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSOutlineViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40004175)
 - [NSOutlineViewDelegate](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSOutlineViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40008609)

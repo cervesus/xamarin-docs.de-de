@@ -1,77 +1,77 @@
 ---
 title: Steuerelemente der Benutzeroberfläche in Xamarin.Mac macOS
-description: Dieses enthält Dokumentenlinks zu Anleitungen, die verschiedene Benutzeroberflächen-Steuerelemente Xamarin.Mac Entwickler zu beschreiben. Verknüpfte Inhalte übernehmen einen Blick auf Windows, Dialogfelder, Warnungen, Menüs, Symbolleisten, Tabellensichten, Gliederung Ansichten und mehr.
+description: Dieses Dokument enthält Links zu Leitfäden, die verschiedene Steuerelemente der Benutzeroberfläche für Xamarin.Mac-Entwickler zu beschreiben. Verknüpfter Inhalt untersucht, mit Windows, Dialogfelder, Warnungen, Menüs, Symbolleisten, Tabellenansichten, Gliederungsansichten und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: 231d3a935cf251d0b2a1a3e6947abcb1c2133b90
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b2392f05a03015f903918f15013919be14b99292
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792953"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40250970"
 ---
 # <a name="macos-user-interface-controls-in-xamarinmac"></a>Steuerelemente der Benutzeroberfläche in Xamarin.Mac macOS
 
-_Dieser Artikel enthält Links zu Anleitungen, die verschiedene MacOS UI-Steuerelemente beschrieben werden._
+_Dieser Artikel enthält Links in den Anleitungen, die verschiedenen MacOS-UI-Steuerelemente zu beschreiben._
 
-Bei der Arbeit mit c# und .NET in einer Anwendung Xamarin.Mac haben Sie Zugriff für denselben Benutzer Schnittstelle steuert, die ein Entwickler arbeiten in *Objective-C* und *Xcode* verfügt. Da Xamarin.Mac direkt mit Xcode integriert ist, können Sie die Xcode _Schnittstelle-Generator_ zu erstellen und Verwalten Ihrer Benutzerschnittstellen (oder erstellen sie optional direkt im C#-Code).
+Bei der Arbeit mit c# und .NET in einer Xamarin.Mac-Anwendung haben Sie Zugriff auf den gleichen Benutzer Schnittstelle steuert, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und verwalten Ihren Benutzeroberflächen (oder erstellen sie optional direkt in c#-Code).
 
-Die unten aufgeführten Handbücher bieten ausführliche Informationen zum Arbeiten mit MacOS UI-Elemente in einer Anwendung Xamarin.Mac. Wird mit hoher vorgeschlagen, dass Sie über arbeiten die [Hello, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Benutzeroberflächen-Generator](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) und [Steckdosen und Aktionen](~/mac/get-started/hello-mac.md#Outlets_and_Actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die in jeder Artikel verwendet werden.
+In folgenden Leitfäden erhalten Sie ausführliche Informationen zum Arbeiten mit MacOS-UI-Elemente in einer Xamarin.Mac-Anwendung. Es wird dringend empfohlen, dass Sie über arbeiten die [Hallo, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und [Outlets und Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die wir in jedem Artikel verwenden.
 
-Sie möchten einen Blick auf die [Verfügbarmachen von C#-Klassen / Methoden für Objective-C-](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c) im Abschnitt der [Xamarin.Mac Internals](~/mac/internals/how-it-works.md) dokumentieren Sie auch, wie es wird erläutert, die `Register` und `Export` Attribute, die zur Übertragung Ihrer C#-Klassen für Objective-C-Objekte und Elemente der Benutzeroberfläche von Volltextkatalogen.
+Empfiehlt es sich um einen Blick auf die [Verfügbarmachen von c#-Klassen / Methoden mit Objective-C](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c) Teil der [Xamarin.Mac-Interna](~/mac/internals/how-it-works.md) dokumentiert, es wird erläutert, die `Register` und `Export` Attribute, die, mit denen Ihre Klassen in c# für Objective-C-Objekte und Elemente der Benutzeroberfläche anschließen.
 
 ## <a name="windowsmacuser-interfacewindowmd"></a>[Windows](~/mac/user-interface/window.md)
 
-In diesem Artikel wird das Arbeiten mit Windows- und Bereiche in einer Anwendung Xamarin.Mac behandelt. Es umfasst erstellen und Verwalten von Windows und Bereiche in Xcode und Schnittstelle-Generator Laden von Windows und Bereiche aus .storyboard oder .xib-Dateien, mithilfe von Windows, und reagieren auf Windows in C#-Code.
+In diesem Artikel wird das Arbeiten mit Fenstern und Bereichen in einer Xamarin.Mac-Anwendung behandelt. Hierin sind erstellen und Verwalten von Windows und Bereiche in Xcode und Interface Builder, laden Windows bzw. Bereiche aus Storyboard oder XIB-Dateien, unter Verwendung von Windows und Windows in c#-Code reagieren.
 
 ## <a name="dialogsmacuser-interfacedialogmd"></a>[Dialogfelder](~/mac/user-interface/dialog.md)
 
-In diesem Artikel wird das Arbeiten mit Dialogfeldern und modale Fenster in einer Anwendung Xamarin.Mac behandelt. Es umfasst erstellen und Verwalten von modalen Fenstern in Xcode und Schnittstelle-Generator, arbeiten mit Standarddialoge, Anzeigen von und reagieren auf Windows in C#-Code.
+Dieser Artikel behandelt die Arbeit mit Dialogfeldern und modalen Fenstern in einer Xamarin.Mac-Anwendung. Hierin sind erstellen und Verwalten von modalen Fenstern in Xcode und Interface Builder, mit Standarddialogfeldern, arbeiten und Anzeigen von und reagieren auf Windows in C#-Code.
 
 ## <a name="alertsmacuser-interfacealertmd"></a>[Benachrichtigungen](~/mac/user-interface/alert.md)
 
-In diesem Artikel wird das Arbeiten mit Warnungen in einer Anwendung Xamarin.Mac behandelt. Es umfasst erstellen und Anzeigen von Warnungen von C#-Code und reagieren auf Warnungen.
+Dieser Artikel behandelt die Arbeit mit Warnungen in einer Xamarin.Mac-Anwendung. Hierin sind erstellen und Anzeigen von Warnungen aus c#-Code aus, und reagieren auf Warnungen.
 
 ## <a name="menusmacuser-interfacemenumd"></a>[Menüs](~/mac/user-interface/menu.md)
 
-Menüs sind in verschiedene Teile der Benutzeroberfläche für einen Macintosh-Anwendung verwendet. Hauptmenü der Anwendung am oberen Rand des Bildschirms Popupmenüs und Kontextmenüs, die an einer beliebigen Stelle in einem Fenster angezeigt werden können. Menüs sind ein wesentlicher Bestandteil der Benutzeroberfläche für einen Macintosh-Anwendung. In diesem Artikel wird das Arbeiten mit Kakao Menüs in einer Anwendung Xamarin.Mac behandelt.
+Menüs sind in verschiedenen Teilen der Benutzeroberfläche einer Mac-Anwendung verwendet. Hauptmenü der Anwendung am oberen Bildschirmrand, um Popup-Menüs und Kontextmenüs, die an einer beliebigen Stelle in einem Fenster angezeigt werden können. Menüs sind ein wesentlicher Bestandteil der Benutzeroberfläche einer Mac-Anwendung. Dieser Artikel behandelt die Arbeit mit Cocoa-Menüs in einer Xamarin.Mac-Anwendung.
 
 ## <a name="standard-controlsmacuser-interfacestandard-controlsmd"></a>[Standardsteuerelemente](~/mac/user-interface/standard-controls.md)
 
-Arbeiten mit den standardmäßigen AppKit Steuerelementen wie Schaltflächen, Bezeichnungen, Textfelder, Kontrollkästchen und segmentierte Steuerelemente in einer Anwendung Xamarin.Mac. Dieser Leitfaden behandelt eine Benutzeroberflächendesign in Xcodes Benutzeroberflächen-Generator hinzugefügt, das diese verfügbar machen, zum Code über Steckdosen und Aktionen sowie das Arbeiten mit AppKit Steuerelemente in C#-Code.
+Arbeiten mit den standardmäßigen AppKit-Steuerelementen wie Schaltflächen, Bezeichnungen, Textfelder, Kontrollkästchen und segmentierte Steuerelemente in einer Xamarin.Mac-Anwendung. Dieser Leitfaden behandelt das Hinzufügen zu einem Entwurf der Benutzeroberfläche in Interface Builder von Xcode für Code mit Outlets und Aktionen verfügbar zu machen, und Verwenden von AppKit-Steuerelementen in C#-Code.
 
 ## <a name="toolbarsmacuser-interfacetoolbarmd"></a>[Symbolleisten](~/mac/user-interface/toolbar.md)
 
-In diesem Artikel wird das Arbeiten mit Symbolleisten in einer Anwendung Xamarin.Mac behandelt. Dazu gehören, erstellen und Verwalten von Symbolleisten in Xcode und Benutzeroberflächen-Generator, wie die Symbolleistenelemente Code Steckdosen und Aktionen verwenden, aktivieren und deaktivieren Symbolleistenelemente und schließlich reagieren auf Symbolleistenelemente im C#-Code verfügbar gemacht wird.
+Dieser Artikel behandelt die Arbeit mit Symbolleisten in einer Xamarin.Mac-Anwendung. Hierin sind erstellen und Verwalten von Symbolleisten in Xcode und Interface Builder, wie Sie die Symbolleistenelemente für Code verwenden Outlets und Aktionen, aktivieren und deaktivieren die Elemente der Symbolleiste und schließlich auf Symbolleistenelemente reagieren in C#-Code verfügbar zu machen.
 
 ## <a name="table-viewsmacuser-interfacetable-viewmd"></a>[Tabellenansichten](~/mac/user-interface/table-view.md)
 
-In diesem Artikel wird das Arbeiten mit Tabellensichten in einer Anwendung Xamarin.Mac behandelt. Dazu gehören, erstellen und Verwalten von Tabellensichten in Xcode und Benutzeroberflächen-Generator, wie die Elemente die Tabellenansicht verfügbar machen mit Steckdosen und Aktionen in Code Tabellensichten Auffüllen und reagieren auf Elemente der Tabelle anzeigen in C#-Code.
+Dieser Artikel behandelt die Arbeit mit Tabellenansichten in einer Xamarin.Mac-Anwendung. Hierin sind erstellen und verwalten Tabellenansichten in Xcode und Interface Builder, wie Elemente die Tabellenansicht verfügbar zu machen, Code mit Outlets und Aktionen Auffüllen Tabellenansichten und reagieren auf tabellenansichtenelemente in C#-Code.
 
-## <a name="outline-viewsmacuser-interfaceoutline-viewmd"></a>[Gliederung-Ansichten](~/mac/user-interface/outline-view.md)
+## <a name="outline-viewsmacuser-interfaceoutline-viewmd"></a>[Gliederungsansichten](~/mac/user-interface/outline-view.md)
 
-In diesem Artikel wird das Arbeiten mit Gliederung Sichten in einer Anwendung Xamarin.Mac behandelt. Dazu gehören, erstellen und Verwalten von Gliederung Ansichten in Xcode und Benutzeroberflächen-Generator, wie die Gliederungsansicht verfügbar machen, Code mit Steckdosen und Aktionen Elemente, Gliederung Ansichten Auffüllen und reagieren auf Elemente im C#-Code anzeigen kann.
+Dieser Artikel behandelt die Arbeit mit Gliederungsansichten in einer Xamarin.Mac-Anwendung. Hierin sind erstellen und verwalten Gliederungsansichten in Xcode und Interface Builder, wie Elemente die Gliederungsansicht verfügbar machen für Code mit Outlets und Aktionen Auffüllen Gliederungsansichten und reagieren auf Anforderungen zum Anzeigen von Elementen im c#-Code beschrieben.
 
 ## <a name="source-listsmacuser-interfacesource-listmd"></a>[Quelllisten](~/mac/user-interface/source-list.md)
 
-In diesem Artikel wird das Arbeiten mit Quelllisten sind in einer Anwendung Xamarin.Mac behandelt. Erstellen und Verwalten von Quelllisten in Xcode und -Generator-Schnittstelle behandelt wie Quelle Listenelemente Code mithilfe von Steckdosen und Aktionen, Quelllisten Auffüllen und reagieren auf Quelle Listenelemente in C#-Code verfügbar gemacht wird.
+Dieser Artikel behandelt die Arbeit mit Quelllisten in einer Xamarin.Mac-Anwendung. Hierin sind erstellen und verwalten Quelllisten in Xcode und Interface Builder, wie Sie die quelllistenelemente für Code verwenden Outlets und Aktionen, Quelllisten ausfüllen und reagieren auf quelllistenelemente in C#-Code verfügbar zu machen.
 
 ## <a name="collection-viewsmacuser-interfacecollection-viewmd"></a>[Auflistungsansichten](~/mac/user-interface/collection-view.md)
 
-In diesem Artikel wird das Arbeiten mit Auflistungsansichten in einer Anwendung Xamarin.Mac behandelt. Dazu gehören, erstellen und Verwalten von Auflistungsansichten in Xcode und Benutzeroberflächen-Generator, wie die Elemente, die Auflistungsansicht verfügbar zu machen mit Steckdosen und Aktionen in Code Auflistungsansichten Auffüllen und reagieren auf Auflistungsansichten in C#-Code.
+In diesem Artikel wird das Arbeiten mit Auflistungsansichten in einer Xamarin.Mac-Anwendung behandelt. Hierin sind erstellen und verwalten Auflistungsansichten in Xcode und Interface Builder, wie die Elemente, die Auflistungsansicht verfügbar zu machen, Code mit Outlets und Aktionen auffüllen, und reagieren auf Auflistungsansichten in C#-Code.
 
 ## <a name="creating-custom-controlsmacuser-interfacecustom-controlsmd"></a>[Erstellen von benutzerdefinierten Steuerelementen](~/mac/user-interface/custom-controls.md)
 
-Dieser Artikel behandelt das Erstellen von benutzerdefinierten Benutzeroberflächen-Steuerelemente (durch Vererben von `NSControl`), zeichnen Sie eine benutzerdefinierte Schnittstelle für das Steuerelement, und Erstellen von benutzerdefinierten Aktionen, die mit Xcodes Benutzeroberflächen-Generator verwendet werden können.
+Diesem Artikel wird beschrieben, erstellen benutzerdefinierte Steuerelemente der Benutzeroberfläche (durch Erben von `NSControl`), zeichnen Sie eine benutzerdefinierte Schnittstelle für das Steuerelement und das Erstellen von benutzerdefinierter Aktionen, die mit Interface Builder von Xcode verwendet werden können.
 
-## <a name="mac-samples-gallery"></a>Mac-beispielgalerie
+## <a name="mac-samples-gallery"></a>Mac-Beispielkatalog
 
-Es wird auch empfohlen ansehen, die [Mac Samples Gallery](https://developer.xamarin.com/samples/mac/all/). Es enthält eine Fülle von Ready to Use-Code, mit denen Sie schnell ein Projekt Xamarin.Mac deaktiviert Grund kann.
+Darüber hinaus wird empfohlen ein Blick auf die [Mac Samples Gallery](https://developer.xamarin.com/samples/mac/all/). Es enthält eine Fülle von Code zu verwendende bereit, mit denen Sie eine Xamarin.Mac-Projekt schnell anfangen kann.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MacOS von menschlichen Richtlinien zur Benutzeroberfläche](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
+- [MacOS Human Interface Guidelines](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

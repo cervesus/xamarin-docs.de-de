@@ -1,101 +1,101 @@
 ---
 title: Dialogfelder in Xamarin.Mac
-description: In diesem Artikel wird das Arbeiten mit Dialogfeldern und modale Fenster in einer Anwendung Xamarin.Mac behandelt. Es beschreibt das Erstellen von modalen Fenstern in Xcode und Schnittstelle-Generator arbeiten mit Standarddialoge und interagieren mit diesen Steuerelementen im C#-Code.
+description: Dieser Artikel behandelt die Arbeit mit Dialogfeldern und modalen Fenstern in einer Xamarin.Mac-Anwendung. Es wird beschrieben, erstellen modale Fenster in Xcode und Interface Builder, mit Standarddialogfeldern arbeiten und interagieren mit diesen Steuerelementen im C#-Code.
 ms.prod: xamarin
 ms.assetid: 55451990-B77B-4D44-B8BB-F874EC503B0C
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 7d9a93c8503d7e25f098e871378a22455b597e90
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 2f28b52b4904b73f97cd9da575e90ef583e443da
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792693"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40251107"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Dialogfelder in Xamarin.Mac
 
-Bei der Arbeit mit c# und .NET in einer Anwendung Xamarin.Mac haben Sie Zugriff auf die gleichen Dialogfelder und modale Fenster, die ein Entwickler arbeiten in unter *Objective-C* und *Xcode* verfügt. Da Xamarin.Mac direkt mit Xcode integriert ist, können Sie die Xcode _Schnittstelle-Generator_ zu erstellen und Verwalten Ihrer modale Fenster (oder erstellen sie optional direkt im C#-Code).
+Bei der Arbeit mit c# und .NET in einer Xamarin.Mac-Anwendung haben Sie Zugriff auf die gleiche Dialogfeldern und modalen Windows, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und verwalten Ihre modalen Windows (oder erstellen sie optional direkt in c#-Code).
 
-Ein Dialogfeld angezeigt, die als Antwort auf eine Benutzeraktion wird und in der Regel enthält, dass Benutzer die Aktion abgeschlossen werden können. Ein Dialogfeld erfordert eine Antwort des Benutzers an, bevor sie geschlossen werden kann.
+Ein Dialogfeld angezeigt, die als Reaktion auf eine Benutzeraktion wird und in der Regel enthält, dass sämtlicher Benutzer die Aktion abgeschlossen werden können. Ein Dialogfeld ist eine Antwort des Benutzers erforderlich, bevor sie geschlossen werden kann.
 
-Windows kann, modale (z. B. ein Dialogfeld "Export", die verworfen werden muss, bevor die Anwendung fortgesetzt werden kann) oder in einem nicht modalen Status (z. B. einem Text-Editor, der mehrere Dokumente gleichzeitig geöffnet sein kann) verwendet werden.
+Windows kann sein, in einem nicht modalen Zustand (z. B. in einem Text-Editor, der mehrere Dokumente gleichzeitig geöffnet sein kann) verwendeten "oder" Modal (z. B. ein Dialogfeld "Exportieren", die geschlossen werden muss, bevor die Anwendung fortgesetzt werden kann).
 
 [![](dialog-images/dialog03.png "Ein geöffnetes Dialogfenster")](dialog-images/dialog03.png#lightbox)
 
-In diesem Artikel werden die Grundlagen der Arbeit mit Dialogfeldern und modale Fenster in einer Anwendung Xamarin.Mac eingegangen. Wird mit hoher vorgeschlagen, dass Sie über arbeiten die [Hello, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Benutzeroberflächen-Generator](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) und [Steckdosen und Aktionen](~/mac/get-started/hello-mac.md#Outlets_and_Actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die in diesem Artikel verwendet werden.
+In diesem Artikel werden die Grundlagen der Arbeit mit Dialogfeldern und modalen Windows in einer Xamarin.Mac-Anwendung beschrieben. Es wird dringend empfohlen, dass Sie über arbeiten die [Hallo, Mac](~/mac/get-started/hello-mac.md) Artikel zuerst, insbesondere die [Einführung in Xcode und Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und [Outlets und Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) Abschnitte, wie sie behandelt wichtige Konzepte und Techniken, die wir in diesem Artikel verwenden.
 
-Sie möchten einen Blick auf die [Verfügbarmachen von C#-Klassen / Methoden für Objective-C-](~/mac/internals/how-it-works.md) Teil der [Xamarin.Mac Internals](~/mac/internals/how-it-works.md) dokumentieren, es wird erläutert, die `Register` und `Export` Befehle verwendet, um über das Netzwerk Ihrer C#-Klassen für Objective-C-Objekte und Elemente der Benutzeroberfläche von Volltextkatalogen.
+Empfiehlt es sich um einen Blick auf die [Verfügbarmachen von c#-Klassen / Methoden mit Objective-C](~/mac/internals/how-it-works.md) Teil der [Xamarin.Mac-Interna](~/mac/internals/how-it-works.md) dokumentieren, es wird erläutert, die `Register` und `Export` Befehle verwendet, um Ihre Klassen in c# für Objective-C-Objekte und Elemente der Benutzeroberfläche anschließen.
 
 <a name="Introduction_to_Dialogs" />
 
 ## <a name="introduction-to-dialogs"></a>Einführung in Dialogfeldern
 
-Ein Dialogfeld wird angezeigt, in Reaktion auf eine Benutzeraktion (z. B. das Speichern einer Datei) und bietet eine Möglichkeit für Benutzer zum Abschließen dieser Aktion. Ein Dialogfeld erfordert eine Antwort des Benutzers an, bevor sie geschlossen werden kann.
+Ein Dialogfeld angezeigt wird, als Reaktion auf eine Benutzeraktion (z. B. Speichern einer Datei) und bietet eine Möglichkeit für Benutzer, um diese Aktion abzuschließen. Ein Dialogfeld ist eine Antwort des Benutzers erforderlich, bevor sie geschlossen werden kann.
 
-Gemäß den Apple an gibt es drei Möglichkeiten zum Präsentieren von einem Dialogfeld:
+Es gibt drei Möglichkeiten, um ein Dialogfeld zu präsentieren, gemäß den Apple:
 
-- **Dokumentieren Sie modale** -ein Dokument modales Dialogfeld verhindert, dass den Benutzer auf diese Weise Sonstiges innerhalb eines angegebenen Dokuments, solange sie geöffnet ist.
-- **App-modale** – eine App modales Dialogfeld verhindert, dass den Benutzer der Anwendung interagieren, solange sie geöffnet ist.
-- **Ohne Modus** A nicht modalen Dialogfeld ermöglicht Benutzern, die Einstellungen im Dialogfeld "" zu ändern, während Sie weiterhin mit dem Dokumentfenster interagieren.
+- **Dokumentieren Sie modale** -ein Dokument modales Dialogfeld wird verhindert, dass den Benutzer zusätzlichen Aufwand in ein bestimmtes Dokument an, bis es geschlossen wird.
+- **App Ansicht** : eine App modales Dialogfeld wird verhindert, dass den Benutzer der Anwendung interagieren, bis es geschlossen wird.
+- **Ohne Modus** ein nicht modalen Dialogfeld ermöglicht Benutzern, die Einstellungen im Dialogfeld zu ändern, während Sie weiterhin das Dokumentfenster interagieren.
 
 ### <a name="modal-window"></a>Modales Fenster
 
-Ein Standard, der `NSWindow` kann als ein benutzerdefiniertes Dialogfeld verwendet werden, indem er modal angezeigt:
+Ein Standard `NSWindow` kann als ein angepasstes Dialogfeld verwendet werden, indem sie modal angezeigt:
 
-[![](dialog-images/modal01.png "Ein Beispiel modale Fenster")](dialog-images/modal01.png#lightbox)
+[![](dialog-images/modal01.png "Ein Beispiel für modale Fenster")](dialog-images/modal01.png#lightbox)
 
-### <a name="document-modal-dialog-sheets"></a>Dokument modales Dialogfeld Blätter
+### <a name="document-modal-dialog-sheets"></a>Dokument modales Dialogfeld Tabellen
 
-Ein _Blatt_ ist ein modales Dialogfeld an, die angefügt wird, zu einem bestimmten Dokumentfenster verhindern, dass Benutzer von der Interaktion mit dem Fenster, bis sie das Dialogfeld schließen. Ein Blatt wird an das Fenster angefügt, von dem es entsteht, und nur jeweils ein Blatt gleichzeitig für ein Fenster geöffnet werden kann.
+Ein _Blatt_ ist ein modales Dialogfeld, das angefügt ist, zu einem bestimmten Dokumentfenster verhindert, dass Benutzer die Interaktion mit dem Fenster, bis sie das Dialogfeld zu schließen. Ein Blatt ist für das Fenster angefügt, aus dem hervorgeht, tritt ein, und nur eine Tabelle kann gleichzeitig für ein Fenster geöffnet sein.
 
-[![](dialog-images/sheet08.png "Ein Beispiel für modale Arbeitsblatt")](dialog-images/sheet08.png#lightbox)
+[![](dialog-images/sheet08.png "Eine Beispiel-modal-Blatt")](dialog-images/sheet08.png#lightbox)
 
-### <a name="preferences-windows"></a>Einstellungen für Windows
+### <a name="preferences-windows"></a>Einstellungen von Windows
 
-Ein Fenster Voreinstellungen ist ein nicht modales Dialogfeld, das die Einstellungen der Anwendung enthält, die der Benutzer nur selten ändert. Einstellungen für Windows sind häufig eine Symbolleiste, die dem Benutzer ermöglicht, zwischen verschiedenen Gruppen von Einstellungen zu wechseln:
+Ein Fenster "Einstellungen" ist ein nicht modales Dialogfeld mit den Einstellungen der Anwendung, die der Benutzer nur selten ändert. Einstellungen von Windows enthalten häufig eine Symbolleiste, die dem Benutzer ermöglicht, zwischen verschiedenen Gruppen von Einstellungen zu wechseln:
 
-[![](dialog-images/dialog02.png "Ein Beispiel-Preference-Fenster")](dialog-images/dialog02.png#lightbox)
+[![](dialog-images/dialog02.png "Ein Fenster der Beispiel-Einstellung")](dialog-images/dialog02.png#lightbox)
 
 ### <a name="open-dialog"></a>Dialogfeld "Öffnen"
 
-Das Dialogfeld "Öffnen" weisen den Benutzern eine konsistente Möglichkeit zum Suchen und öffnen ein Element in einer Anwendung:
+Das Dialogfeld "Öffnen" bietet Benutzern eine einheitliche Methode zum Suchen und öffnen Sie ein Element in einer Anwendung:
 
-[![](dialog-images/dialog03.png "Ein Dialogfeld \"Öffnen\"")](dialog-images/dialog03.png#lightbox)
+[![](dialog-images/dialog03.png "Ein Dialogfeld geöffnet")](dialog-images/dialog03.png#lightbox)
 
 
-### <a name="print-and-page-setup-dialogs"></a>Druck- und Seite Setup-Dialogfelder
+### <a name="print-and-page-setup-dialogs"></a>Druck- und Seiteneinrichtung-Dialogfelder
 
-MacOS bietet standard Druck- und Seite Setup Dialoge, die Ihre Anwendung angezeigt werden kann, damit Benutzer einen konsistenten Druck können auftreten, in jeder Anwendung, die sie verwenden.
+MacOS bietet Standarddruckvorgänge Seite Setup Dialogfelder, die Ihre Anwendung anzeigen können, damit Benutzer einen konsistenten Druck haben Erfahrung und in jede Anwendung, die sie verwenden.
 
-Das Druckdialogfeld können als beide frei schwebenden Dialogfeld angezeigt werden:
+Das Dialogfeld "Drucken" können als sowohl kostenlose unverankerte Dialogfeld angezeigt werden:
 
-[![](dialog-images/print01.png "Ein Dialogfeld Drucken")](dialog-images/print01.png#lightbox)
+[![](dialog-images/print01.png "Ein Dialogfeld \"Drucken\"-Feld")](dialog-images/print01.png#lightbox)
 
-Oder sie können als Blatt angezeigt werden:
+Oder er kann als Tabelle angezeigt werden:
 
-[![](dialog-images/print02.png "Ein Blatt drucken")](dialog-images/print02.png#lightbox)
+[![](dialog-images/print02.png "Ein Arbeitsblatt drucken")](dialog-images/print02.png#lightbox)
 
-Das Seiteneinrichtungsdialogfeld kann als beide frei schwebenden Dialogfeld angezeigt werden:
+Das Dialogfeld "Seite einrichten" können als sowohl kostenlose unverankerte Dialogfeld angezeigt werden:
 
-[![](dialog-images/print03.png "Eine Seite-Setupdialogfeld")](dialog-images/print03.png#lightbox)
+[![](dialog-images/print03.png "Ein Dialogfeld \"Seite einrichten\"")](dialog-images/print03.png#lightbox)
 
-Oder sie können als Blatt angezeigt werden:
+Oder er kann als Tabelle angezeigt werden:
 
-[![](dialog-images/print04.png "Eine Seite Setup Blatt")](dialog-images/print04.png#lightbox)
+[![](dialog-images/print04.png "Eine Seite-Setup-Tabelle")](dialog-images/print04.png#lightbox)
 
-### <a name="save-dialogs"></a>Speichern Sie die Dialogfenster
+### <a name="save-dialogs"></a>Speichern Sie die Dialogfelder
 
-Das Dialogfeld "Speichern" ermöglicht Benutzern eine konsistente Weise Element in einer Anwendung zu speichern. Das Dialogfeld "Speichern" verfügt über zwei Zustände: **minimale** (auch bekannt als "reduzierter"):
+Das Dialogfeld "Speichern" bietet Benutzern eine konsistente Weise Element in einer Anwendung zu speichern. Das Dialogfeld "Speichern" verfügt über zwei Zustände: **minimale** (auch bekannt als reduzierten):
 
-[![](dialog-images/save01.png "Ein Dialogfeld zum Speichern")](dialog-images/save01.png#lightbox)
+[![](dialog-images/save01.png "Ein Dialogfeld \"Speichern\"")](dialog-images/save01.png#lightbox)
 
 Und die **erweitert** Zustand:
 
 [![](dialog-images/save02.png "Einen erweiterten Dialogfeld \"Speichern\"")](dialog-images/save02.png#lightbox)
 
-Die **minimale** Speichern Dialogfeld kann auch als Blatt angezeigt werden:
+Die **minimale** Speichern Dialogfeld kann auch als Tabelle angezeigt werden:
 
 [![](dialog-images/save03.png "Eine minimale Blatt gespeichert")](dialog-images/save03.png#lightbox)
 
@@ -103,34 +103,34 @@ Wie können die **erweitert** Dialogfeld Speichern:
 
 [![](dialog-images/save04.png "Speichern Sie einen erweiterten Blatt")](dialog-images/save04.png#lightbox)
 
-Weitere Informationen finden Sie unter der [Dialoge](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowDialogs.html#//apple_ref/doc/uid/20000957-CH43-SW1) Abschnitt der Apple [OS X-Richtlinien für menschliche-Schnittstelle](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+Weitere Informationen finden Sie unter den [Dialogfelder](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowDialogs.html#//apple_ref/doc/uid/20000957-CH43-SW1) Abschnitt des Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 
 <a name="Adding_a_Modal_Window_to_a_Project" />
 
-## <a name="adding-a-modal-window-to-a-project"></a>Ein modales Fenster hinzufügen zu einem Projekt
+## <a name="adding-a-modal-window-to-a-project"></a>Ein modales Fenster hinzugefügt zu einem Projekt.
 
-Abgesehen von der main-Dokumentfenster müssen eine Xamarin.Mac-Anwendung möglicherweise andere Arten von Fenstern, die der Benutzer, z. B. Voreinstellungen oder Inspektor-Fenstern angezeigt.
+Abgesehen von der wichtigsten Dokumentfenster müssen eine Xamarin.Mac-Anwendung möglicherweise andere Typen von Windows für den Benutzer, z. B. Einstellungen oder Inspektor-Fenster angezeigt.
 
 Um ein neues Fenster hinzuzufügen, führen Sie folgende Schritte aus:
 
-1. In der **Projektmappen-Explorer**öffnen die `Main.storyboard` Datei zur Bearbeitung in Xcodes Benutzeroberflächen-Generator.
-2. Ziehen Sie ein neues **Modellansichtcontroller** in der Entwurfsoberfläche angezeigt:
+1. In der **Projektmappen-Explorer**öffnen die `Main.storyboard` Datei zur Bearbeitung in Interface Builder von Xcode.
+2. Ziehen Sie ein neues **Ansichtscontroller** in der Entwurfsoberfläche:
 
-    [![](dialog-images/new01.png "Auswählen eines Controllers Ansicht aus der Bibliothek")](dialog-images/new01.png#lightbox)
-3. In der **Identität Inspektor**, geben Sie `CustomDialogController` für die **Klassenname**: 
+    [![](dialog-images/new01.png "Wenn Sie einen Ansichtscontroller auswählen, aus der Bibliothek")](dialog-images/new01.png#lightbox)
+3. In der **Identitätsinspektor**, geben Sie `CustomDialogController` für die **Klassenname**: 
 
-    [![](dialog-images/new02.png "Der Name der Klasse festlegen")](dialog-images/new02.png#lightbox)
-4. Wechseln Sie zurück zu Visual Studio für Mac, lassen sie zum Synchronisieren mit Xcode und zum Erstellen der `CustomDialogController.h` Datei.
-5. Zurück zu Xcode und Entwerfen Ihrer Schnittstelle: 
+    [![](dialog-images/new02.png "Den Namen der Klasse festlegen")](dialog-images/new02.png#lightbox)
+4. Wechseln Sie zurück zu Visual Studio für Mac, zuzulassen, dass sie mit Xcode synchronisieren, und erstellen Sie die `CustomDialogController.h` Datei.
+5. Zurück zu Xcode, und Entwerfen Sie Ihre Schnittstelle: 
 
-    [![](dialog-images/new03.png "Entwerfen der Benutzeroberflächenautomatisierungs in Xcode")](dialog-images/new03.png#lightbox)
-6. Erstellen einer **modale Segue** im Hauptfenster der app mit dem neuen Sicht Controller durch Ziehen von Steuerelement aus dem Benutzeroberflächenautomatisierungs-Element, die im Dialogfeld, um das Dialogfeld "-Fenster geöffnet werden. Weisen Sie die **Bezeichner** `ModalSegue`: 
+    [![](dialog-images/new03.png "Entwerfen der Benutzeroberfläche in Xcode")](dialog-images/new03.png#lightbox)
+6. Erstellen Sie eine **modale Segue** über das Hauptfenster der app auf die neue View Controller durch Ziehen von Steuerelementen aus dem UI-Element, das im Dialogfeld, um das Dialogfeld "-Fenster geöffnet wird. Weisen Sie die **Bezeichner** `ModalSegue`: 
 
     [![](dialog-images/new06.png "Eine modale segue")](dialog-images/new06.png#lightbox)
-6. Über das Netzwerk von einem **Aktionen** und **Steckdosen**: 
+6. Über das Netzwerk von einem **Aktionen** und **Outlets**: 
 
     [![](dialog-images/new04.png "Konfigurieren eine Aktion")](dialog-images/new04.png#lightbox)
-6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode zu synchronisieren.
+6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac mit Xcode synchronisiert.
 
 Stellen Sie die `CustomDialogController.cs` Datei aussehen wie folgt:
 
@@ -220,9 +220,9 @@ namespace MacDialog
 }
 ```
 
-Dieser Code macht einige Eigenschaften den Titel und die Beschreibung des Dialogs festlegen und einige Ereignisse, zu reagieren, abgebrochen oder akzeptiert wird das Dialogfeld ".
+Dieser Code macht einige Eigenschaften, die den Titel und die Beschreibung des Dialogfelds festgelegt und einige Ereignisse zu reagieren, um das Dialogfeld abgebrochen oder akzeptiert wird.
 
-Als Nächstes Bearbeiten der `ViewController.cs` Datei außer Kraft, indem die `PrepareForSegue` Methode, und stellen sie wie folgt aussehen:
+Als Nächstes bearbeiten Sie die `ViewController.cs` Datei außer Kraft, indem die `PrepareForSegue` Methode und legen Sie ihn wie folgt aussehen:
 
 ```csharp
 public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
@@ -245,41 +245,41 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 }
 ```
 
-Dieser Code initialisiert das Segue, das wir in Xcodes Benutzeroberflächen-Generator, um das Dialogfeld definiert und richtet den Titel und Beschreibung. Er verarbeitet auch die Auswahl, die der Benutzer im Dialogfeld vornimmt.
+Dieser Code initialisiert den Segue, den wir in Interface Builder von Xcode auf unser Dialogfeld definiert und richtet den Titel und Beschreibung. Es übernimmt auch die Wahl, die der Benutzer im Dialogfeld vornimmt.
 
-Wir können unsere Anwendung auszuführen und das benutzerdefinierte Dialogfeld angezeigt:
+Wir können die Anwendung auszuführen und das benutzerdefinierte Dialogfeld angezeigt:
 
 [![](dialog-images/new05.png "Ein Beispiel für das Dialogfeld")](dialog-images/new05.png#lightbox)
 
-Weitere Informationen zur Verwendung von Windows in einer Anwendung Xamarin.Mac finden Sie unter unsere [arbeiten mit Fenstern](~/mac/user-interface/window.md) Dokumentation.
+Weitere Informationen zur Verwendung von Windows in einer Xamarin.Mac-Anwendung finden Sie unserem [arbeiten mit Windows](~/mac/user-interface/window.md) Dokumentation.
 
 <a name="Creating_a_Custom_Sheet" />
 
-## <a name="creating-a-custom-sheet"></a>Erstellen ein benutzerdefiniertes Stylesheet
+## <a name="creating-a-custom-sheet"></a>Erstellen eine benutzerdefinierte Tabelle
 
-Ein _Blatt_ ist ein modales Dialogfeld an, die angefügt wird, zu einem bestimmten Dokumentfenster verhindern, dass Benutzer von der Interaktion mit dem Fenster, bis sie das Dialogfeld schließen. Ein Blatt wird an das Fenster angefügt, von dem es entsteht, und nur jeweils ein Blatt gleichzeitig für ein Fenster geöffnet werden kann. 
+Ein _Blatt_ ist ein modales Dialogfeld, das angefügt ist, zu einem bestimmten Dokumentfenster verhindert, dass Benutzer die Interaktion mit dem Fenster, bis sie das Dialogfeld zu schließen. Ein Blatt ist für das Fenster angefügt, aus dem hervorgeht, tritt ein, und nur eine Tabelle kann gleichzeitig für ein Fenster geöffnet sein. 
 
-Führen Sie zum Erstellen einer benutzerdefinierten Blatt in Xamarin.Mac wir Folgendes:
+Führen Sie zum Erstellen einer benutzerdefinierten Tabelle in Xamarin.Mac wir Folgendes:
 
-1. In der **Projektmappen-Explorer**öffnen die `Main.storyboard` Datei zur Bearbeitung in Xcodes Benutzeroberflächen-Generator.
-2. Ziehen Sie ein neues **Modellansichtcontroller** in der Entwurfsoberfläche angezeigt:
+1. In der **Projektmappen-Explorer**öffnen die `Main.storyboard` Datei zur Bearbeitung in Interface Builder von Xcode.
+2. Ziehen Sie ein neues **Ansichtscontroller** in der Entwurfsoberfläche:
 
-    [![](dialog-images/new01.png "Auswählen eines Controllers Ansicht aus der Bibliothek")](dialog-images/new01.png#lightbox)
-2. Entwerfen der Benutzeroberfläche:
+    [![](dialog-images/new01.png "Wenn Sie einen Ansichtscontroller auswählen, aus der Bibliothek")](dialog-images/new01.png#lightbox)
+2. Entwerfen der Benutzeroberfläche an:
 
     [![](dialog-images/sheet01.png "Das Design der Benutzeroberfläche")](dialog-images/sheet01.png#lightbox)
-3. Erstellen einer **Blatt Segue** aus Ihrer Fenster "Main" mit dem neuen View-Controller: 
+3. Erstellen Sie eine **Blatt Segue** aus das Hauptfenster auf die neue View Controller: 
 
-    [![](dialog-images/sheet02.png "Der Typ des Blatts Segue auswählen")](dialog-images/sheet02.png#lightbox)
-4. In der **Identität Inspektor**, benennen Sie die View-Controller **Klasse** `SheetViewController`: 
+    [![](dialog-images/sheet02.png "Blatt Segue-Typ auswählen")](dialog-images/sheet02.png#lightbox)
+4. In der **Identitätsinspektor**, benennen Sie den Ansichtscontroller **Klasse** `SheetViewController`: 
 
-    [![](dialog-images/sheet03.png "Der Name der Klasse festlegen")](dialog-images/sheet03.png#lightbox)
-5. Definieren Sie alle erforderlichen **Steckdosen** und **Aktionen**: 
+    [![](dialog-images/sheet03.png "Den Namen der Klasse festlegen")](dialog-images/sheet03.png#lightbox)
+5. Definieren Sie alle erforderlichen **Outlets** und **Aktionen**: 
 
-    [![](dialog-images/sheet04.png "Definieren die erforderlichen Ausgänge und Aktionen")](dialog-images/sheet04.png#lightbox)
-6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac synchronisiert werden.
+    [![](dialog-images/sheet04.png "Definieren die erforderlichen Outlets und Aktionen")](dialog-images/sheet04.png#lightbox)
+6. Die Änderungen zu speichern und zurück zu Visual Studio für Mac, um zu synchronisieren.
 
-Als Nächstes Bearbeiten der `SheetViewController.cs` Datei, und stellen sie wie folgt aussehen:
+Als Nächstes bearbeiten Sie die `SheetViewController.cs` Datei, und stellen sie wie folgt aussehen:
 
 ```csharp
 using System;
@@ -375,7 +375,7 @@ namespace MacDialog
 }
 ```
 
-Als Nächstes Bearbeiten der `ViewController.cs` Datei, bearbeiten Sie die `PrepareForSegue` Methode, und stellen sie wie folgt aussehen:
+Als Nächstes bearbeiten Sie die `ViewController.cs` Datei, bearbeiten Sie die `PrepareForSegue` Methode und legen Sie ihn wie folgt aussehen:
 
 ```csharp
 public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
@@ -405,15 +405,15 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 }
 ```
 
-Wenn wir unsere Anwendung ausführen, und öffnen Sie das Blatt, wird es in das Fenster zugeordnet werden:
+Wenn wir die Anwendung auszuführen und das Blatt zu öffnen, wird es an das Fenster angefügt werden:
 
-[![](dialog-images/sheet08.png "Ein Beispiel-Arbeitsblatt")](dialog-images/sheet08.png#lightbox)
+[![](dialog-images/sheet08.png "Eine Beispiel-Blatt")](dialog-images/sheet08.png#lightbox)
 
 <a name="Creating_a_Preferences_Dialog" />
 
-## <a name="creating-a-preferences-dialog"></a>Erstellen ein Dialogfeld Voreinstellungen
+## <a name="creating-a-preferences-dialog"></a>Erstellen ein Dialogfeld "Einstellungen"
 
-Bevor wir die Preference-Ansicht im Benutzeroberflächen-Generator erstellen, müssen wir zum Hinzufügen eines benutzerdefinierten Segue-Typs zum Auslagern aus der Einstellungen behandeln. Fügen Sie dem Projekt eine neue Klasse, und rufen sie `ReplaceViewSeque `. Bearbeiten Sie die Klasse, und stellen sie wie folgt aussehen:
+Bevor wir den Entwurf, um die Ansicht "Einstellungen" in Interface Builder müssen wir einen benutzerdefinierten Segue-Typ zum Behandeln der Wechsel von den Einstellungen hinzufügen. Fügen Sie dem Projekt eine neue Klasse und nenne `ReplaceViewSeque `. Bearbeiten Sie die Klasse, und stellen sie wie folgt aussehen:
 
 ```csharp
 using System;
@@ -474,53 +474,53 @@ namespace MacWindows
 }
 ```
 
-Mit der benutzerdefinierten Segue erstellt haben können wir ein neues Fenster in Xcodes Benutzeroberflächen-Generator, behandeln unsere Voreinstellungen hinzufügen.
+Mit der benutzerdefinierten Segue erstellt haben können wir ein neues Fenster in Interface Builder von Xcode, um unsere Voreinstellungen zu behandeln hinzufügen.
 
 Um ein neues Fenster hinzuzufügen, führen Sie folgende Schritte aus:
 
-1. In der **Projektmappen-Explorer**öffnen die `Main.storyboard` Datei zur Bearbeitung in Xcodes Benutzeroberflächen-Generator.
-2. Ziehen Sie ein neues **Fenster Controller** in der Entwurfsoberfläche angezeigt:
+1. In der **Projektmappen-Explorer**öffnen die `Main.storyboard` Datei zur Bearbeitung in Interface Builder von Xcode.
+2. Ziehen Sie ein neues **Fenstercontroller** in der Entwurfsoberfläche:
 
-    [![](dialog-images/pref01.png "Wählen Sie einen Controller Fenster aus der Bibliothek")](dialog-images/pref01.png#lightbox)
+    [![](dialog-images/pref01.png "Wählen Sie aus der Bibliothek einen Fenstercontroller")](dialog-images/pref01.png#lightbox)
 3. Ordnen Sie das Fenster in der Nähe der **Menüleiste** Designer:
 
     [![](dialog-images/pref02.png "Das neue Fenster hinzufügen")](dialog-images/pref02.png#lightbox)
-4. Erstellen Sie Kopien der angefügten View-Controller an, wie in Ihrer Ansicht bevorzugt werden Registerkarten vorhanden sein:
+4. Erstellen Sie Kopien des angefügten View-Controller, wie in der Ansicht Einstellung Registerkarten fallen:
 
     [![](dialog-images/pref03.png "Die erforderliche View-Controller hinzufügen")](dialog-images/pref03.png#lightbox)
 5. Ziehen Sie ein neues **Symbolleiste Controller** aus der **Bibliothek**:
 
-    [![](dialog-images/pref04.png "Wählen Sie einen Controller Symbolleiste aus der Bibliothek")](dialog-images/pref04.png#lightbox)
-6. Ein, und legen Sie sie auf das Fenster in der Entwurfsoberfläche angezeigt:
+    [![](dialog-images/pref04.png "Wählen Sie einen Controller für die Symbolleiste aus der Bibliothek")](dialog-images/pref04.png#lightbox)
+6. Ein, und legen Sie sie im Fenster auf der Entwurfsoberfläche:
 
-    [![](dialog-images/pref05.png "Hinzufügen eines neuen Symbolleiste-Controllers")](dialog-images/pref05.png#lightbox)
-7. Layout der Entwurf der Symbolleiste angezeigt wird:
+    [![](dialog-images/pref05.png "Hinzufügen eines neuen Controllers für die Symbolleiste")](dialog-images/pref05.png#lightbox)
+7. Layout der Entwurf Ihrer Symbolleiste:
 
     [![](dialog-images/pref06.png "Layout der Symbolleiste")](dialog-images/pref06.png#lightbox)
-8. Steuerelement klicken und ziehen Sie aus allen **Symbolleisten-Schaltfläche** auf die Ansichten, die Sie soeben erstellt haben. Wählen Sie eine **benutzerdefinierte** segue Typ:
+8. Strg + Klick und ziehen Sie aus jeder **Symbolleisten-Schaltfläche** in den Ansichten, die Sie soeben haben erstellt. Wählen Sie eine **benutzerdefinierte** segue-Typ:
 
-    [![](dialog-images/pref07.png "Festlegen der Segue-Typs")](dialog-images/pref07.png#lightbox)
-9. Wählen Sie die neue Segue und legen Sie die **Klasse** auf `ReplaceViewSegue`:
+    [![](dialog-images/pref07.png "Segue-Typ")](dialog-images/pref07.png#lightbox)
+9. Der neue Segue auswählen und Festlegen der **Klasse** zu `ReplaceViewSegue`:
 
     [![](dialog-images/pref08.png "Festlegen der Segue-Klasse")](dialog-images/pref08.png#lightbox)
-10. In der **Menubar-Designer** wählen Sie auf der Entwurfsoberfläche angezeigt, aus dem Anwendungsmenü **Einstellungen...** , Steuerelement klicken und ziehen Sie in den Voreinstellungen Fenster zum Erstellen einer **anzeigen** segue:
+10. In der **Menüleiste Designer** auf der Entwurfsoberfläche, wählen Sie im Anwendungsmenü **Einstellungen...** , Strg + Klick und ziehen Sie in das Fenster "Einstellungen" zum Erstellen einer **anzeigen** segue:
 
-    [![](dialog-images/pref09.png "Festlegen der Segue-Typs")](dialog-images/pref09.png#lightbox)
-11. Die Änderungen zu speichern und zurück zu Visual Studio für Mac synchronisiert werden.
+    [![](dialog-images/pref09.png "Segue-Typ")](dialog-images/pref09.png#lightbox)
+11. Die Änderungen zu speichern und zurück zu Visual Studio für Mac, um zu synchronisieren.
 
-Wenn wir führen Sie den Code, und wählen Sie die **Einstellungen...**  aus der **Anwendungsmenü**, das Fenster wird angezeigt:
+Wenn wir den Code auszuführen, und wählen Sie die **Einstellungen...**  aus der **Anwendungsmenü**, das Fenster wird angezeigt:
 
-[![](dialog-images/pref10.png "Ein Beispiel-Voreinstellungen-Fenster")](dialog-images/pref10.png#lightbox)
+[![](dialog-images/pref10.png "Eine Beispiel-Fenster \"Einstellungen\"")](dialog-images/pref10.png#lightbox)
 
-Weitere Informationen zum Arbeiten mit Fenster und Symbolleisten finden Sie unter unsere [Windows](~/mac/user-interface/window.md) und [Symbolleisten](~/mac/user-interface/toolbar.md) Dokumentation.
+Weitere Informationen zum Arbeiten mit Windows und Symbolleisten finden Sie unserem [Windows](~/mac/user-interface/window.md) und [Symbolleisten](~/mac/user-interface/toolbar.md) Dokumentation.
 
 <a name="Saving-and-Loading-Preferences" />
 
 ### <a name="saving-and-loading-preferences"></a>Speichern und Laden von Einstellungen
 
-Wenn der Benutzer eine der Benutzervoreinstellungen für der App, ändert, werden diese Änderungen in einer typischen MacOS App automatisch gespeichert. Die einfachste Möglichkeit in einer app Xamarin.Mac Behandlung dieses Vorgangs ist die Erstellung eine einzelne Klasse zum Verwalten aller Einstellungen des Benutzers, und teilen Sie diese systemweite.
+Wenn der Benutzer eines der App-Benutzereinstellungen, ändert, werden diese Änderungen in einer typischen MacOS-App automatisch gespeichert. Die einfachste Möglichkeit, dies in einer Xamarin.Mac-app zu verarbeiten ist die Erstellung eine einzelne Klasse zum Verwalten aller benutzereinstellungen und teilen Sie sie systemweite.
 
-Fügen Sie zunächst ein neues `AppPreferences` -Klasse auf das Projekt und Vererben `NSObject`. Die Voreinstellungen werden entworfen werden, verwenden [zum Binden von Daten und Schlüssel-Wert-Codierung](~/mac/app-fundamentals/databinding.md) stellen die des Prozess zum Erstellen und verwalten die Voreinstellung forms viel einfacher. Da die Einstellungen für eine kleine Anzahl von einfachen Datentypen enthalten soll, verwenden Sie das integrierte `NSUserDefaults` zum Speichern und Abrufen von Werten.
+Fügen Sie zunächst ein neues `AppPreferences` -Klasse auf das Projekt, und erben von `NSObject`. Die Einstellungen werden mit entworfen werden, dass [Datenbindung und Schlüssel / Wert-Codierung](~/mac/app-fundamentals/databinding.md) die werden den Prozess zum Erstellen und verwalten die Einstellung einfacher bildet. Da die Einstellungen für eine kleine Menge von einfachen Datentypen enthalten soll, verwenden Sie das integrierte `NSUserDefaults` zum Speichern und Abrufen von Werten.
 
 Bearbeiten der `AppPreferences.cs` Datei, und stellen sie wie folgt aussehen:
 
@@ -683,9 +683,9 @@ namespace SourceWriter
 }
 ```
 
-Diese Klasse enthält einige Hilfsroutinen, z. B. `SaveInt`, `LoadInt`, `SaveColor`, `LoadColor`, usw., zum Arbeiten mit `NSUserDefaults` einfacher. Darüber hinaus seit `NSUserDefaults` verfügt nicht über eine integrierte Option zum Behandeln `NSColors`, die `NSColorToHexString` und `NSColorFromHexString` Methoden werden verwendet, um die Farben in webbasierten hexadezimale Zeichenfolgen zu konvertieren (`#RRGGBBAA` , in dem `AA` alpha Transparenz wird), werden kann einfach gespeichert und abgerufen.
+Diese Klasse enthält einige Hilfsroutinen, z. B. `SaveInt`, `LoadInt`, `SaveColor`, `LoadColor`, usw., denen das Arbeiten mit `NSUserDefaults` einfacher. Da außerdem `NSUserDefaults` verfügt nicht über eine integrierte Methode zum Verarbeiten `NSColors`, `NSColorToHexString` und `NSColorFromHexString` Methoden zum Konvertieren von Farben in hexadezimalen Zeichenfolgen webbasierte (`#RRGGBBAA` , in dem `AA` ist der alpha-Transparenz) sein kann, ganz einfach gespeichert und abgerufen.
 
-In der `AppDelegate.cs` Datei, erstellen Sie eine Instanz von der **AppPreferences** -Objekt, das app-Wide verwendet wird:
+In der `AppDelegate.cs` Datei, erstellen Sie eine Instanz von der **AppPreferences** -Objekt, das anwendungsweite verwendet wird:
 
 ```csharp
 using AppKit;
@@ -715,13 +715,13 @@ namespace SourceWriter
 
 <a name="Wiring-Preferences-to-Preference-Views" />
 
-### <a name="wiring-preferences-to-preference-views"></a>Verkabelung Voreinstellungen Preference-Ansichten
+### <a name="wiring-preferences-to-preference-views"></a>Verknüpfen Sie die Einstellung für den Preference-Ansichten
 
-Verbinden Sie anschließend die Preference-Klasse, Elemente der Benutzeroberfläche für die Preference-Fenster und Ansichten, die oben erstellte. Schnittstelle-Generator wählen Sie eine Einstellung-View-Controller, und wechseln Sie zu der **Identität Inspektor**, erstellen Sie eine benutzerdefinierte Klasse für den Controller: 
+Schließen Sie dann die Preference-Klasse für UI-Elemente für die Einstellung im Fenster und Ansichten, die oben erstellt haben. Klicken Sie in Interface Builder, wählen Sie einen Ansichtscontroller für die Einstellung, und wechseln Sie zu der **Identitätsinspektor**, erstellen Sie eine benutzerdefinierte Klasse für den Controller: 
 
-[![](dialog-images/prefs12.png "Der Identity-Inspektor")](dialog-images/prefs12.png#lightbox)
+[![](dialog-images/prefs12.png "Der Identitätsinspektor")](dialog-images/prefs12.png#lightbox)
 
-Wechseln Sie zurück zu Visual Studio für Mac, um die Änderungen zu synchronisieren, und öffnen Sie die neu erstellte Klasse für die Bearbeitung. Legen Sie die Klasse, die wie folgt aussehen:
+Wechseln Sie zurück zu Visual Studio für Mac zum Synchronisieren von Änderungen, und öffnen Sie die neu erstellte Klasse für die Bearbeitung. Legen Sie die Klasse, die wie folgt aussehen:
 
 ```csharp
 using System;
@@ -754,23 +754,23 @@ namespace SourceWriter
 }
 ```
 
-Beachten Sie, dass diese Klasse zwei Dinge durchgeführt hat: Erstens wird eine Hilfsprogramm `App` Eigenschaft, um den Zugriff auf die **AppDelegate** einfacher. Zweitens stellt die `Preferences` Eigenschaft macht die globale **AppPreferences** -Klasse für Datenbindung mit UI-Steuerelementen für diese Sicht platziert.
+Beachten Sie, dass diese Klasse zwei Dinge geschehen: als Erstes ist eine Hilfsprogramm `App` Eigenschaft, um den Zugriff auf die **AppDelegate** einfacher. Zweitens wird die `Preferences` Eigenschaft verfügbar macht, die globale **AppPreferences** -Klasse für die Datenbindung mit UI-Steuerelementen in dieser Ansicht platziert.
 
-Als Nächstes Doppelklicken klicken Sie auf die Storyboard-Datei, um öffnen Sie es erneut im Benutzeroberflächen-Generator (und finden Sie unter nur Änderungen oben). Ziehen Sie alle UI-Steuerelemente erforderlich, um die Voreinstellungen-Schnittstelle in die Sicht zu erstellen. Für jedes Steuerelement, wechseln Sie zu der **Inspektor binden** und Binden an die einzelnen Eigenschaften der **AppPreference** Klasse:
+Als Nächstes Doppelklicken klicken Sie auf die Storyboard-Datei, um erneut in Interface Builder öffnen (und nur über vorgenommenen Änderungen sehen). Ziehen Sie die UI-Steuerelementen erforderlich, um die Einstellungen-Schnittstelle in die Ansicht zu erstellen. Für jedes Steuerelement, wechseln Sie zu der **Bindung Inspektor** und Binden an die einzelnen Eigenschaften der **AppPreference** Klasse:
 
 [![](dialog-images/prefs13.png "Der Inspektor Bindung")](dialog-images/prefs13.png#lightbox)
 
-Wiederholen Sie die oben genannten Schritte für alle von Bereichen (View Controller) und Eigenschaften der Einstellung erforderlich.
+Wiederholen Sie die oben genannten Schritte für alle Bereiche (View Controller) und Eigenschaften der Einstellung erforderlich.
 
 <a name="Applying-Preference-Changes-to-All-Open-Windows" />
 
-### <a name="applying-preference-changes-to-all-open-windows"></a>Anwenden der Einstellung ändert sich in allen geöffneten Fenstern
+### <a name="applying-preference-changes-to-all-open-windows"></a>Anwenden von Einstellungen auf alle geöffneten Windows ändert
 
-Wie oben erwähnt, möglicherweise in einer typischen MacOS App, wenn der Benutzer eine der Benutzervoreinstellungen für der App, diese Änderungen ändert automatisch gespeichert und auf allen Windows-angewendet wurden der Benutzer in der Anwendung geöffnet haben.
+Wie bereits erwähnt, kann in einer typischen MacOS-App, wenn der Benutzer Änderungen an eines der App-Benutzereinstellungen, diese Änderungen vornimmt, werden automatisch gespeichert und auf allen Windows-angewendet der Benutzer in der Anwendung geöffnet haben.
 
-Eine sorgfältige Planung und Entwurf Ihrer app Voreinstellungen und Windows lässt dieser Prozess reibungslos und transparent für den Endbenutzer, mit einer minimalen Menge an Arbeit Codierung durchgeführt werden soll.
+Eine sorgfältige Planung und Entwurf Ihrer app Einstellungen und Windows kann dieser Prozess nahtlos und transparent für den Endbenutzer mit einer minimalen Menge an Arbeit Codierung auftreten.
 
-Für ein Fenster, das App-Einstellungen genutzt wird, fügen Sie die folgende Helper-Eigenschaft, um seine Inhalte View-Controller zum Zugriff auf unsere **AppDelegate** einfacher:
+Für alle Fenster, das App-Einstellungen verwenden, fügen Sie die folgende Hilfsprogramm-Eigenschaft, um die Content View-Controller zu den Zugriff auf unsere **AppDelegate** einfacher:
 
 ```csharp
 #region Application Access
@@ -780,7 +780,7 @@ public static AppDelegate App {
 #endregion
 ```
 
-Fügen Sie eine Klasse, um den Inhalt oder das Verhalten, die basierend auf die Einstellungen des Benutzers zu konfigurieren:
+Als Nächstes fügen Sie eine Klasse aus, um den Inhalt oder das Verhalten basierend auf den Einstellungen des Benutzers konfigurieren:
 
 ```csharp
 public void ConfigureEditor() {
@@ -793,7 +793,7 @@ public void ConfigureEditor() {
 }
 ``` 
 
-Sie müssen die Konfigurationsmethode aufrufen, wenn das Fenster erstmalig geöffnet wird, um sicherzustellen, dass es die Einstellungen des Benutzers entspricht:
+Sie müssen die Configuration-Methode aufrufen, wenn das Fenster erstmalig geöffnet wird, um sicherzustellen, dass sie die Einstellungen des Benutzers entspricht:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -806,7 +806,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-Als Nächstes Bearbeiten der `AppDelegate.cs` Datei, und fügen Sie die folgende Methode hinzu, wenden jede Einstellung ändert sich in allen geöffneten Fenstern hinzu:
+Als Nächstes bearbeiten Sie die `AppDelegate.cs` Datei, und fügen Sie die folgende Methode hinzu, wenden jede Einstellung ändert, um alle geöffneten Fenster hinzu:
 
 ```csharp
 public void UpdateWindowPreferences() {
@@ -823,7 +823,7 @@ public void UpdateWindowPreferences() {
 }
 ```
 
-Als Nächstes fügen Sie eine `PreferenceWindowDelegate` -Klasse auf das Projekt, und stellen sie wie folgt aussehen:
+Fügen Sie als Nächstes eine `PreferenceWindowDelegate` Klasse dem Projekt, und stellen sie wie folgt aussehen:
 
 ```csharp
 using System;
@@ -868,9 +868,9 @@ namespace SourceWriter
 }
 ```
 
-Dadurch wird bevorzugt Änderungen an alle geöffneten Fenster gesendet werden, wenn die Voreinstellung für Fenster geschlossen wird.
+Dadurch werden Änderungen Einstellung an alle geöffneten Windows gesendet werden, wenn die Einstellung Fenster geschlossen wird.
 
-Schließlich bearbeiten Sie die Voreinstellung Fenster Controller aus, und fügen Sie den oben erstellten Delegaten hinzu:
+Schließlich bearbeiten Sie die Fenstercontroller Einstellung, und fügen Sie den oben erstellten Delegaten hinzu:
 
 ```csharp
 using System;
@@ -901,15 +901,15 @@ namespace SourceWriter
 }
 ```
 
-Mit diesen Änderungen vorhanden Wenn der Benutzer die App-Einstellungen bearbeitet und das Fenster Einstellung schließt werden die Änderungen auf alle geöffneten Fenster angewendet werden:
+Mit der alle diese Änderungen vorgenommen Wenn der Benutzer die App Einstellungen bearbeitet und das Fenster Einstellung schließt werden die Änderungen auf alle geöffneten Windows angewendet werden:
 
-[![](dialog-images/prefs14.png "Ein Beispiel-Voreinstellungen-Fenster")](dialog-images/prefs14.png#lightbox)
+[![](dialog-images/prefs14.png "Eine Beispiel-Fenster \"Einstellungen\"")](dialog-images/prefs14.png#lightbox)
 
 <a name="The_Open_Dialog" />
 
 ## <a name="the-open-dialog"></a>Das Dialogfeld "Öffnen"
 
-Das Dialogfeld "Öffnen" bietet Benutzern eine einheitliche Methode zum Suchen und öffnen ein Element in einer Anwendung. Um ein Dialogfeld "Öffnen" in einer Anwendung Xamarin.Mac anzuzeigen, verwenden Sie den folgenden Code ein:
+Das Dialogfeld "Öffnen" bietet Benutzern eine einheitliche Methode zum Suchen und öffnen Sie ein Element in einer Anwendung. Um ein Dialogfeld "Öffnen" in einer Xamarin.Mac-Anwendung anzuzeigen, verwenden Sie den folgenden Code:
 
 ```csharp
 var dlg = NSOpenPanel.OpenPanel;
@@ -938,31 +938,31 @@ if (dlg.RunModal () == 1) {
 }
 ```
 
-Im obigen Code öffnen wir einem neuen Dokumentfenster angezeigt, um den Inhalt der Datei anzuzeigen. Sie müssen diese ersetzen Code mit der Funktionalität von der Anwendung erforderlich ist.
+Im obigen Code öffnen wir einem neuen Dokumentfenster angezeigt, um den Inhalt der Datei anzuzeigen. Sie müssen diese ersetzen Code mit der Funktionalität ist erforderlich, von der Anwendung.
 
-Die folgenden Eigenschaften stehen bei der Arbeit mit einem `NSOpenPanel`:
+Die folgenden Eigenschaften sind verfügbar, bei der Arbeit mit einem `NSOpenPanel`:
 
-- **CanChooseFiles** – Wenn `true` der Benutzer die Dateien auswählen kann.
-- **CanChooseDirectories** – Wenn `true` der Benutzer kann die Verzeichnisse auswählen.
+- **CanChooseFiles** – Wenn `true` der Benutzer kann die Dateien auswählen.
+- **CanChooseDirectories** – Wenn `true` der Benutzer kann Verzeichnisse auswählen.
 - **AllowsMultipleSelection** – Wenn `true` der Benutzer kann mehrere Dateien gleichzeitig auswählen.
-- **ResolveAliases** – Wenn `true` auswählen und Alias löst diesen Pfad der ursprünglichen Datei.
-- **AllowedFileTypes** -ist ein Zeichenfolgenarray der Dateitypen, die der Benutzer als entweder Erweiterung auswählen kann oder _UTI_. Der Standardwert ist `null`, womit alle Dateien geöffnet werden.
+- **ResolveAliases** – Wenn `true` auswählen und den Alias, löst Sie diesen in den ursprünglichen Dateipfad.
+- **AllowedFileTypes** -ist ein Zeichenfolgenarray der Dateitypen, die der Benutzer, als entweder eine Erweiterung auswählen können oder _UTI_. Der Standardwert ist `null`, wodurch alle Dateien geöffnet werden.
 
-Die `RunModal ()` -Methode zeigt das Dialogfeld "Öffnen" und ermöglicht dem Benutzer das Auswählen von Dateien oder Verzeichnisse (wie durch die Eigenschaften angegeben) und gibt `1` , wenn der Benutzer klickt auf die **öffnen** Schaltfläche.
+Die `RunModal ()` Methode zeigt das Dialogfeld "Öffnen" und ermöglicht dem Benutzer, wählen Sie Dateien oder Verzeichnisse (wie durch die Eigenschaften angegeben) und gibt `1` klickt der Benutzer die **öffnen** Schaltfläche.
 
-Das Dialogfeld "Öffnen" gibt die ausgewählten Dateien oder Verzeichnisse des Benutzers als Array von URLs in der `URL` Eigenschaft.
+Das Dialogfeld "Öffnen" gibt die ausgewählten Dateien oder Verzeichnisse des Benutzers als ein Array von URLs in die `URL` Eigenschaft.
 
-Wenn wir das Programm auszuführen, und wählen Sie die **öffnen...**  Element aus der **Datei** folgende Menü wird angezeigt: 
+Wenn wir das Programm auszuführen, und wählen Sie die **öffnen...**  Element aus der **Datei** folgende Menü angezeigt wird: 
 
 [![](dialog-images/dialog03.png "Ein geöffnetes Dialogfenster")](dialog-images/dialog03.png#lightbox)
 
 <a name="The_Print_and_Page_Setup_Dialogs" />
 
-## <a name="the-print-and-page-setup-dialogs"></a>Die Druck- und die Seite Setup-Dialogfelder
+## <a name="the-print-and-page-setup-dialogs"></a>Die Druck- und der Seiteneinrichtung-Dialogfelder
 
-MacOS bietet standard Druck- und Seite Setup Dialoge, die Ihre Anwendung angezeigt werden kann, damit Benutzer einen konsistenten Druck können auftreten, in jeder Anwendung, die sie verwenden.
+MacOS bietet Standarddruckvorgänge Seite Setup Dialogfelder, die Ihre Anwendung anzeigen können, damit Benutzer einen konsistenten Druck haben Erfahrung und in jede Anwendung, die sie verwenden.
 
-Der folgende Code zeigt die Standarddialog drucken:
+Der folgende Code zeigt das Standarddialogfeld Drucken:
 
 ```csharp
 public bool ShowPrintAsSheet { get; set;} = true;
@@ -989,15 +989,15 @@ void ShowDocument (NSObject sender) {
 
 ```
 
-Wenn wir setzen die `ShowPrintAsSheet` Eigenschaft `false`, führen Sie die Anwendung und das Dialogfeld "Drucken" anzuzeigen, wird Folgendes angezeigt:
+Wenn wir Festlegen der `ShowPrintAsSheet` Eigenschaft `false`, führen Sie die Anwendung und zeigt das Dialogfeld "Drucken", wird Folgendes angezeigt:
 
-[![](dialog-images/print01.png "Ein Dialogfeld Drucken")](dialog-images/print01.png#lightbox)
+[![](dialog-images/print01.png "Ein Dialogfeld \"Drucken\"-Feld")](dialog-images/print01.png#lightbox)
 
-Wenn legen Sie die `ShowPrintAsSheet` Eigenschaft `true`, führen Sie die Anwendung und das Dialogfeld "Drucken" anzuzeigen, wird Folgendes angezeigt:
+Wenn legen Sie die `ShowPrintAsSheet` Eigenschaft `true`, führen Sie die Anwendung und zeigt das Dialogfeld "Drucken", wird Folgendes angezeigt:
 
-[![](dialog-images/print02.png "Ein Blatt drucken")](dialog-images/print02.png#lightbox)
+[![](dialog-images/print02.png "Ein Arbeitsblatt drucken")](dialog-images/print02.png#lightbox)
 
-Der folgende Code zeigt das Dialogfeld "Layout Seite":
+Der folgende Code zeigt das Dialogfeld "Seite Layout":
 
 ```csharp
 [Export ("showLayout:")]
@@ -1020,23 +1020,23 @@ void ShowLayout (NSObject sender) {
 }
 ```
 
-Wenn wir setzen die `ShowPrintAsSheet` Eigenschaft `false`, führen Sie die Anwendung und das Dialogfeld "Seitenlayout" anzeigen, wird Folgendes angezeigt:
+Wenn wir Festlegen der `ShowPrintAsSheet` Eigenschaft `false`, führen Sie die Anwendung und zeigt das Dialogfeld "Seitenlayout", wird Folgendes angezeigt:
 
-[![](dialog-images/print03.png "Eine Seite-Setupdialogfeld")](dialog-images/print03.png#lightbox)
+[![](dialog-images/print03.png "Ein Dialogfeld \"Seite einrichten\"")](dialog-images/print03.png#lightbox)
 
-Wenn legen Sie die `ShowPrintAsSheet` Eigenschaft `true`, führen Sie die Anwendung und das Dialogfeld "Seitenlayout" anzeigen, wird Folgendes angezeigt:
+Wenn legen Sie die `ShowPrintAsSheet` Eigenschaft `true`, führen Sie die Anwendung und zeigt das Dialogfeld "Seitenlayout", wird Folgendes angezeigt:
 
-[![](dialog-images/print04.png "Eine Seite Setup Blatt")](dialog-images/print04.png#lightbox)
+[![](dialog-images/print04.png "Eine Seite-Setup-Tabelle")](dialog-images/print04.png#lightbox)
 
-Weitere Informationen zum Arbeiten mit die Druck- und die Seite Setup Dialogfelder finden Sie unter der Apple- [NSPrintPanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPrintPanel_Class/index.html#//apple_ref/doc/uid/TP40004092), [NSPageLayout](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPageLayout_Class/index.html#//apple_ref/doc/uid/TP40004080) und [Einführung in das Drucken](http://sdg.mesonet.org/people/brad/XCode3/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/#documentation/Cocoa/Conceptual/Printing/Printing.html#//apple_ref/doc/uid/10000083-SW1) (Dokumentation).
+Weitere Informationen zum Arbeiten mit die Druck- und die Seite Setup Dialogfelder finden Sie unter Apple [NSPrintPanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPrintPanel_Class/index.html#//apple_ref/doc/uid/TP40004092), [NSPageLayout](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPageLayout_Class/index.html#//apple_ref/doc/uid/TP40004080) und [Einführung in das Drucken](http://sdg.mesonet.org/people/brad/XCode3/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/#documentation/Cocoa/Conceptual/Printing/Printing.html#//apple_ref/doc/uid/10000083-SW1) Dokumentation.
 
 <a name="The_Save_Dialog" />
 
 ## <a name="the-save-dialog"></a>Der Speichervorgang Dialogfeld
 
-Das Dialogfeld "Speichern" ermöglicht Benutzern eine konsistente Weise Element in einer Anwendung zu speichern.
+Das Dialogfeld "Speichern" bietet Benutzern eine konsistente Weise Element in einer Anwendung zu speichern.
 
-Der folgende Code zeigt ein Standarddialog speichern:
+Der folgende Code wird das standardmäßige Dialogfeld "Speichern" angezeigt:
 
 ```csharp
 public bool ShowSaveAsSheet { get; set;} = true;
@@ -1072,31 +1072,31 @@ void ShowSaveAs (NSObject sender)
 }
 ```
 
-Die `AllowedFileTypes` Eigenschaft ist ein Zeichenfolgenarray der Dateitypen, die der Benutzer auswählen können, um die Datei zu speichern. Der Dateityp kann entweder als eine Erweiterung angegeben werden oder _UTI_. Der Standardwert ist `null`, womit auf einen beliebigen Dateityp verwendet werden.
+Die `AllowedFileTypes` -Eigenschaft ist ein Zeichenfolgenarray von Dateitypen, die der Benutzer auswählen kann, um die Datei zu speichern. Der Dateityp kann entweder als eine Erweiterung angegeben werden oder _UTI_. Der Standardwert ist `null`, wodurch auf einen beliebigen Dateityp verwendet werden.
 
-Wenn wir setzen die `ShowSaveAsSheet` Eigenschaft `false`, führen Sie die Anwendung, und wählen Sie **speichern unter...**  aus der **Datei** Menü wird Folgendes angezeigt:
+Wenn wir legen die `ShowSaveAsSheet` Eigenschaft `false`, führen Sie die Anwendung, und wählen Sie **speichern unter...**  aus der **Datei** Menü wird Folgendes angezeigt:
 
 [![](dialog-images/save01.png "Ein speichern (Dialogfeld)")](dialog-images/save01.png#lightbox)
 
-Der Benutzer kann das Dialogfeld erweitern:
+Der Benutzer kann es sich um das Dialogfeld erweitern:
 
 [![](dialog-images/save02.png "Einen erweiterten speichern (Dialogfeld)")](dialog-images/save02.png#lightbox)
 
-Wenn wir setzen die `ShowSaveAsSheet` Eigenschaft `true`, führen Sie die Anwendung, und wählen Sie **speichern unter...**  aus der **Datei** Menü wird Folgendes angezeigt:
+Wenn wir legen die `ShowSaveAsSheet` Eigenschaft `true`, führen Sie die Anwendung, und wählen Sie **speichern unter...**  aus der **Datei** Menü wird Folgendes angezeigt:
 
 [![](dialog-images/save03.png "Ein Blatt gespeichert")](dialog-images/save03.png#lightbox)
 
-Der Benutzer kann das Dialogfeld erweitern:
+Der Benutzer kann es sich um das Dialogfeld erweitern:
 
 [![](dialog-images/save04.png "Speichern Sie einen erweiterten Blatt")](dialog-images/save04.png#lightbox)
 
-Weitere Informationen zum Arbeiten mit das Dialogfeld "Speichern", finden Sie in der Apple- [NSSavePanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098) Dokumentation.
+Weitere Informationen zum Arbeiten mit das Dialogfeld "Speichern", finden Sie unter Apple [NSSavePanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098) Dokumentation.
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel hat eine ausführliche Übersicht über das Arbeiten mit modale Fenster, Blätter und Standardbetriebssystem Dialogfelder in einer Anwendung Xamarin.Mac übernommen. Wir haben gesehen, die verschiedene Typen und Verwendungen von modalen Fenstern, Blätter und Dialogfelder, wie zum Erstellen und Verwalten von modalen Fenstern und Blätter in Xcode Schnittstelle-Generator und zum Arbeiten mit modale Fenster des möchten, blättern und Dialogfelder in C#-Code.
+Dieser Artikel hat es sich um einen detaillierten Einblick in die Arbeit mit modalen Windows, Tabellen und das Standardbetriebssystem Dialogfelder in einer Xamarin.Mac-Anwendung geführt. Erläutert die verschiedenen Typen und Verwendungen von modalen Windows, Stylesheets und Dialogfeldern, wie Sie zum Erstellen und Verwalten von modalen Windows und Blätter in Xcode ist Interface Builder und Arbeiten mit modalen Windows, Stylesheets und Dialogfelder in C#-Code.
 
 ## <a name="related-links"></a>Verwandte Links
 
@@ -1107,5 +1107,5 @@ Dieser Artikel hat eine ausführliche Übersicht über das Arbeiten mit modale F
 - [Symbolleisten](~/mac/user-interface/toolbar.md)
 - [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Einführung in Windows](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)
-- [Einführung in die Blätter](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Sheets/Sheets.html#//apple_ref/doc/uid/10000002i)
+- [Einführung in Tabellen](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Sheets/Sheets.html#//apple_ref/doc/uid/10000002i)
 - [Einführung in das Drucken](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Printing/osxp_aboutprinting/osxp_aboutprt.html)

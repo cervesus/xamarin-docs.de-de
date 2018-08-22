@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: topgenorth
 ms.author: toopge
-ms.date: 05/14/2017
-ms.openlocfilehash: 88f7f62650484007c221aa7baaa684f872e0a8e9
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 08/08/2017
+ms.openlocfilehash: b3166aa440cbe2981d597771b360373fadc6451b
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830412"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40251105"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player-App
 
@@ -19,17 +19,17 @@ ms.locfileid: "38830412"
 
 Nachdem Sie die app auf Ihrem Telefon installiert haben, führen Sie die [Anweisungen zur Einrichtung des](~/tools/live-player/install.md) zur Verbindung mit Ihrem Computers. Führen Sie eine der der [Beispiel-apps](~/tools/live-player/samples.md) wieder funktioniert.
 
-Beim Start die Xamarin Live Player-app sieht wie folgt aus (unter iOS und Android bzw.):
+Klicken Sie auf Start sieht die Xamarin Live Player-app folgendermaßen aus:
 
-![Live Player-iOS-app-screenshot](player-images/app-iphone-sml.png) ![Live Player-Android-app-screenshot](player-images/app-android-sml.png)
+![Live Player-Android-app-screenshot](player-images/app-android-sml.png)
 
 Beim Drücken **mit Visual Studio koppeln**, verwenden Sie die Kamera, überprüfen Sie den Barcode auf Ihrem Computer angezeigt:
 
-![Screenshot des iOS-Barcode-scanner](player-images/scan-iphone-sml.png) ![Screenshot des Android Barcodescanner](player-images/scan-android-sml.png)
+![Screenshot des Android Barcodescanner](player-images/scan-android-sml.png)
 
 Wenn die Verbindung erfolgreich ist, der Code sollte auf dem Gerät ausgeführt fast sofort (z. B. die [-Rechnerbeispiel](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator)):
 
-![Beispiel-rechneranwendung, die auf dem Gerät ausgeführt wird](player-images/basic-calculator-iphone-sml.png)
+![Beispiel-rechneranwendung, die auf dem Gerät ausgeführt wird](player-images/basic-calculator-sml.png)
 
 ## <a name="options"></a>Optionen
 
@@ -51,7 +51,7 @@ Anzeigen von Protokollen, um Probleme zu diagnostizieren.
 
 ## <a name="managing-devices"></a>Verwalten von Geräten
 
-Um ein Gerät zum ersten Mal zu verbinden, folgen Sie den Anweisungen im [Datenbankanforderungen & Setup](~/tools/live-player/install.md). Sie können mehrere Geräte (z. B. eine iOS und Android) zu koppeln, und Sie können über die IDE verwalten.
+Um ein Gerät zum ersten Mal zu verbinden, folgen Sie den Anweisungen im [Datenbankanforderungen & Setup](~/tools/live-player/install.md). Sie können mehrere Geräte gekoppelt und über die IDE verwalten.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

@@ -1,53 +1,53 @@
 ---
 title: Transport Layer Security (TLS) 1.2
-description: Dieses Dokument beschreibt, wie Aktivierung von TLS 1.2 für Xamarin.Mac, Xamarin.iOS und Xamarin.Android Projekte. Veranschaulicht, wie Sie dazu in Visual Studio 2017 und Visual Studio für Mac.
+description: In diesem Dokument wird beschrieben, wie zum Aktivieren von TLS 1.2 für Xamarin.iOS, Xamarin.Android und Xamarin.Mac-Projekte. Es wird veranschaulicht, wie das geht in Visual Studio 2017 und Visual Studio für Mac.
 ms.prod: xamarin
 ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: 6f27d7713f2fe6426fa28f268b8e97838893aa76
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 88cbce6dbfee4e7aa1a0711d6da74f6f12abd4b7
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781396"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40251211"
 ---
 # <a name="transport-layer-security-tls-12"></a>Transport Layer Security (TLS) 1.2
 
-Verwenden die neueste Version des [ _Transport Layer Security_ (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) ist wichtig, sicherzustellen, dass Netzwerkkommunikation Anwendung sind sicherer.
+Verwenden die neueste Version des [ _Transport Layer Security_ (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) ist wichtig, sicherzustellen, dass Netzwerkkommunikation für die Anwendung sicherer sind.
 
 > [!WARNING]
-> **April, 2018** – aufgrund der erhöhten Sicherheit Anforderungen, einschließlich der PCI-Konformität Hauptversion Cloud-Anbieter und der Webserver unterstützen TLS-Versionen, die älter sind als 1.2 zu beenden.  Xamarin-Projekte erstellt, die in früheren Versionen von Visual Studio standardmäßig die frühere Versionen von TLS zu verwenden.
+> **April 2018** – erhöhte Sicherheit aufgrund der Anforderungen, einschließlich der PCI-Compliance Haupt-Cloudanbieter und Webserver werden erwartet, dass die Unterstützung von TLS-Versionen älter als 1.2 eingestellt.  Xamarin-Projekte erstellt, die in früheren Versionen von Visual Studio standardmäßig die ältere Versionen von TLS zu verwenden.
 >
-> Um sicherzustellen, dass Ihre apps mit diesen Servern und -Dienste, funktionieren weiterhin **sollten Sie Ihre Projekte Xamarin verwenden Sie die Einstellung, und klicken Sie dann erneut erstellen und erneut bereitstellen Ihrer apps aktualisieren** für Ihre Benutzer.
+> Um sicherzustellen, dass Ihre apps mit diesen Servern und Diensten, funktionieren weiterhin, **sollten Sie Ihren Xamarin-Projekten, zum Verwenden Sie die folgenden Einstellungen, und klicken Sie dann erneut erstellen, und erneut bereitstellen Ihrer apps aktualisieren** für Ihre Benutzer.
 
 Projekte verweisen müssen die **System.Net.Http** Assembly und konfiguriert werden, wie unten dargestellt.
 
-## <a name="update-android-to-tls-12"></a>Android TLS 1.2 zu aktualisieren.
+## <a name="update-xamarinandroid-to-tls-12"></a>Aktualisieren von Xamarin.Android auf TLS 1.2
 
-Update der **"HttpClient" Implementierung** und **SSL/TLS-Implementierung** Optionen aus, um die Sicherheit des TLS 1.2 zu aktivieren.
+Update der **HttpClient-Implementierung** und **SSL/TLS-Implementierung** Optionen zum Aktivieren von TLS 1.2-Sicherheit.
 
 > [!NOTE]
-> Erfordert Android 5.0 oder höher.
+> Ist Android 5.0 oder höher erforderlich.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Diese Einstellungen finden Sie in **Projekteigenschaften > Android Options** klicken und dann auf die **erweitert** Schaltfläche:
+Diese Einstellungen befinden sich **Projekteigenschaften > Android-Optionen** und dann auf die **erweitert** Schaltfläche:
 
 [![Konfigurieren von "HttpClient" und TLS in Visual Studio](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Diese Einstellungen finden Sie in **Projektoptionen > Erstellen > Android erstellen** Registerkarte:
+Diese Einstellungen befinden sich **Projektoptionen > Erstellen > Android-Build** Registerkarte:
 
 [![Konfigurieren von "HttpClient" und TLS in Visual Studio für Mac](transport-layer-security-images/android-mac-sml.png)](transport-layer-security-images/android-mac.png#lightbox)
 
 -----
 
-## <a name="update-ios-to-tls-12"></a>Update iOS verwenden, um TLS 1.2
+## <a name="update-xamarinios-to-tls-12"></a>Aktualisieren von Xamarin.iOS auf TLS 1.2
 
-Update der **"HttpClient" Implementierung** Option aus, um TSL 1.2 Sicherheit zu aktivieren.
+Update der **HttpClient-Implementierung** Option aus, um die Sicherheit von TSL 1.2 zu aktivieren.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -63,66 +63,69 @@ Mit dieser Einstellung finden Sie in **Projektoptionen > Erstellen > iOS-Build**
 
 -----
 
-## <a name="update-macos-to-tls-12-in-visual-studio-for-mac"></a>Aktualisieren von MacOS TLS 1.2 in Visual Studio für Mac
+## <a name="update-xamarinmac-to-tls-12"></a>Aktualisieren von Xamarin.Mac TLS 1.2
 
-Update der **"HttpClient" Implementierung** option **Projektoptionen > Erstellen > Mac erstellen** Tab, um TSL 1.2 Sicherheit zu aktivieren:
+Aktualisieren Sie in Visual Studio für Mac, um TLS 1.2 in einer Xamarin.Mac-app zu aktivieren, die **HttpClient-Implementierung** option **Projektoptionen > Erstellen > Mac Build**:
 
 [![Konfigurieren von "HttpClient" in Visual Studio für Mac](transport-layer-security-images/macos-mac-sml.png)](transport-layer-security-images/macos-mac.png#lightbox)
 
-## <a name="alternative-configuration-options"></a>Alternative Konfigurationsoptionen
+> [!WARNING]
+> Die bevorstehende Veröffentlichung von Xamarin.Mac 4.8 unterstützen nur MacOS 10.9 oder höher.
+> Ältere Versionen von Xamarin.Mac unterstützt MacOS 10.7 oder höher, aber diese älteren Versionen von MacOS verfügen nicht über ausreichende TLS-Infrastruktur zur Unterstützung von TLS 1.2. Xamarin.Mac 4.6 oder früher verwenden, um MacOS 10.7 oder MacOS 10.8 als Ziel.
 
-Dieser Abschnitt beschreibt die alternativen zu den oben gezeigten Konfigurationen TLS 1.2 unterstützt.
-Anwendungsentwickler sollten nur diese alternativen in Betracht ziehen, wenn sie verstehen, dass die Risiken einer verwenden verschiedene Ebenen der TLS-Unterstützung.
+## <a name="alternative-configuration-options"></a>Alternative Konfiguration-Optionen
+
+Dieser Abschnitt beschreibt die alternativen für die TLS 1.2 unterstützt Konfigurationen, die oben gezeigte.
+Anwendungsentwickler sollten diese alternativen nur, wenn sie verstehen, dass die Risiken der Verwendung der verschiedenen Ebenen der TLS-Unterstützung.
 
 ### <a name="httpclient-implementation"></a>HttpClient-Implementierung
 
-Xamarin-Entwickler wurden immer die systemeigenen Netzwerkklassen in ihrem Code verwenden, jedoch gibt es auch eine Option aus, der bestimmt, welche Netzwerkstapel verwendet wird, indem die `HttpClient` Klassen. Dies bietet eine vertraute .NET-API, die die Geschwindigkeit und Sicherheit bietet für die systemeigene Plattform Vorteile.
+Xamarin-Entwickler wurden immer in der Lage, die native Netzwerkklassen in ihrem Code verwenden, jedoch gibt es eine Option aus, der bestimmt, welche Netzwerkstapel wird auch verwendet, durch die `HttpClient` Klassen. Dies bietet eine vertraute .NET-API, die die Geschwindigkeit und Sicherheit Vorteile der nativen Plattform bietet.
 
 Folgende Optionen stehen zur Verfügung:
 
-- **Verwalteter Stapel** – die Netzwerkfunktionalität bereitgestellter Mono-oder
-- **Systemeigenen Stapel** – verschiedene Netzwerk-APIs, die von der zugrunde liegenden Plattformen (Android, iOS oder Mac OS) bereitgestellt.
+- **Verwaltete Stapel** – die Mono bereitgestellte Netzwerkfunktionalität, oder
+- **Systemeigenen Stapel** – verschiedene Netzwerk-APIs, die von den zugrunde liegenden Plattformen (Android, iOS und MacOS) bereitgestellt.
 
-Verwaltete Stapel bietet das höchste Maß an Kompatibilität mit vorhandenen .NET Code, aber er kann langsamer und größere ausführbare dazu.
+Der verwaltete Stapel bietet die höchste Ebene der Kompatibilität mit vorhandenem Code für .NET –, aber er kann langsamer und Größe der größeren ausführbaren Datei dazu.
 
-Die systemeigenen Optionen können schneller verarbeitet werden und haben eine höhere Sicherheit (einschließlich TLS 1.2), aber möglicherweise keine bereit, die Funktionen und Optionen von der `HttpClient` Klasse.
+Die nativen Optionen können schneller sein und eine bessere Sicherheit (einschließlich TLS 1.2), aber möglicherweise nicht alle Funktionen und Optionen des bereit die `HttpClient` Klasse.
 
 ### <a name="ssltls-implementation-android"></a>SSL/TLS-Implementierung (Android)
 
-Android-Projekt-Optionen können auch mit Ihnen bei der Auswahl der SSL/TLS-Implementierung zu unterstützen:
+Android-Projekt-Optionen können Sie auch wählen Sie die SSL/TLS-Implementierung, unterstützt:
 
-- **Mono/verwalteten** – TLS 1.1 auf Android-Geräten
-- **Systemeigene** – TLS 1.2 auf Android-Geräten.
+- **Mono/verwalteten** – TLS 1.1 unter Android
+- **Native** – TLS 1.2 unter Android.
 
-Neue Xamarin-Projekte standardmäßig die native Implementierung, die TLS 1.2 unterstützt (die für alle Projekte empfohlen wird), muss Sie jedoch wieder auf den verwalteten Code Wenn wechseln, können aus Gründen der Kompatibilität.
+Neue Xamarin-Projekte standardmäßig für die native Implementierung, die TLS 1.2 unterstützt (was für alle Projekte zu empfehlen ist), aber Sie wieder auf den verwalteten Code wechseln können Wenn Gründen der Kompatibilität erforderlich.
 
 > [!IMPORTANT]
-> Die **Mono/verwaltete** Option wurde [von IOS- und Mac entfernt](https://developer.xamarin.com/releases/ios/xamarin.ios_10/xamarin.ios_10.8/) Projekt Optionen.
+> Die **Mono bzw. einer verwalteten** Option wurde [von IOS- und Mac entfernt](https://developer.xamarin.com/releases/ios/xamarin.ios_10/xamarin.ios_10.8/) Projektoptionen.
 >
-> Die systemeigene Option ist immer auf IOS- und Mac-Plattformen verwendet.
+> Die Native-Option wird immer unter iOS und Mac-Plattformen verwendet.
 
-## <a name="platform-specific-details"></a>Clientplattform-spezifische Details
+## <a name="platform-specific-details"></a>Plattformspezifischen details
 
-Die oben genannten Zusammenfassung wird erläutert, die Einstellungen auf Projektebene für "HttpClient" und SSL/TLS-Implementierung in Xamarin-Projekten. Die Implementierung für "HttpClient" kann im Code auch dynamisch festgelegt werden. Diese plattformspezifischen Leitfäden für Weitere Informationen finden:
+Die oben genannten Zusammenfassung wird erläutert, die Einstellungen auf Projektebene für "HttpClient" und SSL/TLS-Implementierung in Xamarin-Projekte. Die HttpClient-Implementierung kann auch dynamisch im Code festgelegt werden. Diese plattformspezifischen Leitfäden Weitere Informationen finden Sie unter:
 
 - [**Android**](~/android/app-fundamentals/http-stack.md)
 - [**iOS und Mac**](~/cross-platform/macios/http-stack.md)
 
-
 ## <a name="summary"></a>Zusammenfassung
 
-Anwendungen sollten Transport Layer Security (TLS) 1.2 möglichst verwenden.
-Sie sollten aktualisieren Sie die Einstellungen in vorhandenen Anwendungen gemäß der Anleitung in diesem Artikel dann erneut erstellen und an Ihre Kunden erneut bereitstellen.
+Anwendungen sollten Transport Layer Security (TLS) 1.2 verwenden, wo immer dies möglich.
+Sie sollten aktualisieren Sie die Einstellungen in vorhandenen Anwendungen gemäß den Anweisungen in diesem Artikel und dann erneut erstellen und erneut für Ihre Kunden bereitstellen.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [App-Transportsicherheit](~/ios/app-fundamentals/ats.md)
 - [Xamarin.Android Environment](~/android/deploy-test/environment.md)
-- [Xamarin-Zyklus 9 (Februar 2017)](https://releases.xamarin.com/stable-release-cycle-9/)
+- [Xamarin Cycle 9 (Februar 2017)](https://releases.xamarin.com/stable-release-cycle-9/)
 - [TLS (Wikipedia)](https://en.wikipedia.org/wiki/Transport_Layer_Security)
-- [Mono 4.8 Release Notes - TLS 1.2-Unterstützung](http://www.mono-project.com/docs/about-mono/releases/4.8.0/#tls-12-support)
+- [Mono 4.8-Versionsanmerkungen - TLS 1.2-Unterstützung](http://www.mono-project.com/docs/about-mono/releases/4.8.0/#tls-12-support)
 - [BoringSSL](https://boringssl.googlesource.com/boringssl/)
-- [HttpClientHandler, "HttpClient" und "webrequesthandler" erläutert](https://blogs.msdn.microsoft.com/henrikn/2012/08/07/httpclient-httpclienthandler-and-webrequesthandler-explained/)
+- ["HttpClient" HttpClientHandler und WebRequestHandler erläutert](https://blogs.msdn.microsoft.com/henrikn/2012/08/07/httpclient-httpclienthandler-and-webrequesthandler-explained/)
 - [System.Net.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)
 - [System.Net.HttpClientHandler](https://msdn.microsoft.com/library/system.net.http.httpclienthandler(v=vs.118).aspx)
 - [System.Net.HttpMessageHandler](https://msdn.microsoft.com/library/system.net.http.httpmessagehandler(v=vs.118).aspx)
