@@ -111,7 +111,7 @@ public partial class HelloBitmapPage : ContentPage
 
 Die `PaintSurface` Handler rendert die Bitmap mehrere Male in Zeilen und Spalten der Anzeige. Beachten Sie, dass die `Clear` -Methode in der der `PaintSurface` Handler verfügt über ein Argument vom `SKColors.Aqua`, der den Hintergrund der Anzeigeoberfläche Farben:
 
-[![Hello, Bitmap! ] (drawing-images/HelloBitmap.png "Hello, Bitmap!")](drawing-images/HelloBitmap-Large.png#lightbox)
+[![Hello, Bitmap! ](drawing-images/HelloBitmap.png "Hello, Bitmap!")](drawing-images/HelloBitmap-Large.png#lightbox)
 
 Die Darstellung der Aquamarin-Hintergrund zeigt, dass die Bitmap mit Ausnahme des Texts transparent ist.
 
