@@ -76,7 +76,7 @@ try {
 
 Dies ist, da die Objective-C-stapelentlader nicht zu den verwalteten kennt `catch` -Klausel, und weder wird die `finally` -Klausel ausgeführt werden.
 
-Wenn im obigen Beispiel _ist_ effektiv ist da Objective-C eine Methode benachrichtigt wird, der nicht behandelten Ausnahmen für Objective-C, verfügt [ `NSSetUncaughtExceptionHandler` ] [ 2], welche Xamarin.iOS und Xamarin.Mac verwenden und zu diesem Zeitpunkt versucht, alle Objective-C-Ausnahmen in verwalteten Ausnahmen zu konvertieren.
+Wenn im obigen Beispiel _ist_ effektiv ist da Objective-C eine Methode benachrichtigt wird, der nicht behandelten Ausnahmen für Objective-C, verfügt [`NSSetUncaughtExceptionHandler`][2], welche Xamarin.iOS und Xamarin.Mac verwenden und zu diesem Zeitpunkt versucht, alle Objective-C-Ausnahmen in verwalteten Ausnahmen zu konvertieren.
 
 ## <a name="scenarios"></a>Szenarien
 
