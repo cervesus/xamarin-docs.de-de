@@ -85,7 +85,7 @@ xamarin.interactive.RendererRegistry.registerRenderer(
 );
 ```
 
-Hier `PersonRenderer` implementiert die `Renderer` Schnittstelle. Finden Sie unter der [Typings] [ typings] Weitere Details.
+Hier `PersonRenderer` implementiert die `Renderer` Schnittstelle. Finden Sie unter der [Typings][typings] Weitere Details.
 
 [typings]: https://github.com/xamarin/Workbooks/blob/master/SDK/typings/xamarin-interactive.d.ts
 [xir-color]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.Color/
