@@ -762,7 +762,7 @@ Um einen neuen Bereich hinzuzufügen, führen Sie folgende Schritte aus:
 5. Löschen Sie das vorhandene Fenster, und ziehen Sie ein Panel aus dem **Bibliotheksinspektor** in der die **Schnittstellen-Editor**: 
 
     [![](window-images/panels01.png "Löschen von vorhandenen Fenster")](window-images/panels01.png#lightbox)
-6. Verknüpfen Sie den Bereich bis zu der **Besitzer der Datei*-**Fenster*- **Outlet**: 
+6. Verknüpfen Sie den Bereich bis zu der **Besitzer der Datei*- **Fenster*- **Outlet**: 
 
     [![](window-images/panels02.png "Ziehen verknüpfen, um den Bereich")](window-images/panels02.png#lightbox)
 7. Wechseln Sie zu der **Identitätsinspektor** , und legen Sie im Bereich der Klasse auf `DocumentPanel`: 
