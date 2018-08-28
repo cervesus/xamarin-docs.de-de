@@ -25,7 +25,7 @@ Zusätzlich zu den allgemeinen Darstellungen bietet die SDK-Integration APIs zum
 
 ## <a name="external-representations"></a>Externe Darstellungen
 
-[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] bietet die Möglichkeit zum Registrieren einer [`RepresentationProvider`][repp], die eine Integration implementieren muss, zum Konvertieren von ein beliebiges Objekt in einem agnostisch Formular zum Rendern. Diese agnostischen Formen müssen implementieren die [ `ISerializableObject` ] [ serobj] Schnittstelle.
+[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] bietet die Möglichkeit zum Registrieren einer [`RepresentationProvider`][repp], die eine Integration implementieren muss, zum Konvertieren von ein beliebiges Objekt in einem agnostisch Formular zum Rendern. Diese agnostischen Formen müssen implementieren die [`ISerializableObject`][serobj] Schnittstelle.
 
 Implementieren der `ISerializableObject` Schnittstelle fügt eine Serialisierungsmethode, die genau steuert, wie die Objekte serialisiert werden. Die `Serialize` Methode erwartet, dass ein Entwickler genau angeben wird, welche Eigenschaften serialisiert werden und wie der endgültige Name werden. Ansehen der `Person` -Objekt in unserem [`KitchenSink` Beispiel] [Sample], können wir sehen, wie dies funktioniert:
 
