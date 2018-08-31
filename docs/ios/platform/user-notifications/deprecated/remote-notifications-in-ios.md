@@ -8,10 +8,10 @@ author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
 ms.openlocfilehash: f11f5d1cbde0f5eae27215af8eb6544be46c0206
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.sourcegitcommit: ee66db647ae9d94b54b1c5d9093075a620d0c6b4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2018
+ms.lasthandoff: 08/28/2018
 ms.locfileid: "39654814"
 ---
 # <a name="push-notifications-in-ios"></a>Senden von Pushbenachrichtigungen in iOS
@@ -81,12 +81,10 @@ Ihr eigenes Zertifikat für jede der im vorherigen Abschnitt erwähnten Umgebung
 
 8.  Navigieren Sie zum Erstellen eines entwicklungsbereitstellungsprofils zu den **Bereitstellungsprofile** aus, und führen Sie die Schritte zum Erstellen, verwenden die App-Id, die wir gerade erstellt haben.
 
-9.  Nachdem Sie das Bereitstellungsprofil erstellt haben, öffnen Sie **Xcode-Organisator** und aktualisiert. Wenn das Bereitstellungsprofil, die Sie erstellt wird, dass es möglicherweise erforderlich sein, das Profil aus der iOS-Bereitstellungsportal herunterladen und manuell importieren nicht angezeigt. Der folgende Screenshot zeigt ein Beispiel der Planer, mit der Bereitstellung-Profil hinzugefügt:
-
+9.  Nachdem Sie das Bereitstellungsprofil erstellt haben, öffnen Sie **Xcode-Organisator** und aktualisiert. Wenn das Bereitstellungsprofil, die Sie erstellt wird, dass es möglicherweise erforderlich sein, das Profil aus der iOS-Bereitstellungsportal herunterladen und manuell importieren nicht angezeigt. Der folgende Screenshot zeigt ein Beispiel der Planer, mit der Bereitstellung-Profil hinzugefügt:  
     [![](remote-notifications-in-ios-images/image13new.png "Dieser Screenshot zeigt ein Beispiel für den Planer mit der Bereitstellung-Profil hinzugefügt")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
-10.  An dieser Stelle müssen wir so konfigurieren Sie das Xamarin.iOS-Projekt, um diese neu erstellte Bereitstellungsprofil verwenden. Dies erfolgt durch **Projektoptionen** Dialogfeld unter **iOS Bundle-Signierung** Registerkarte wie im folgenden Screenshot gezeigt:
-
+10.  An dieser Stelle müssen wir so konfigurieren Sie das Xamarin.iOS-Projekt, um diese neu erstellte Bereitstellungsprofil verwenden. Dies erfolgt durch **Projektoptionen** Dialogfeld unter **iOS Bundle-Signierung** Registerkarte wie im folgenden Screenshot gezeigt:  
     [![](remote-notifications-in-ios-images/image11.png "Konfigurieren Sie das Xamarin.iOS-Projekt, um diese neu erstellte Bereitstellungsprofil verwenden")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 An diesem Punkt ist die Anwendung für die Arbeit mit Pushbenachrichtigungen konfiguriert. Es gibt jedoch immer noch ein paar mehr Schritte erforderlich, mit dem Zertifikat. Dieses Zertifikat wird in DER-Format, das nicht kompatibel mit PushSharp, ist ein Personal Information Exchange (PKCS12)-Zertifikat erfordert. Führen Sie diese letzte Schritte aus, um das Zertifikat zu konvertieren, damit er von PushSharp verwendet werden kann:
