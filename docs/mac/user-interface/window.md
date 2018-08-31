@@ -8,10 +8,10 @@ author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
 ms.openlocfilehash: b60b8a6a7c56347d6abf71f8c5149ddd556d3da8
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.sourcegitcommit: ee66db647ae9d94b54b1c5d9093075a620d0c6b4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2018
+ms.lasthandoff: 08/28/2018
 ms.locfileid: "40251249"
 ---
 # <a name="windows-in-xamarinmac"></a>Windows in Xamarin.Mac
@@ -762,7 +762,7 @@ Um einen neuen Bereich hinzuzufügen, führen Sie folgende Schritte aus:
 5. Löschen Sie das vorhandene Fenster, und ziehen Sie ein Panel aus dem **Bibliotheksinspektor** in der die **Schnittstellen-Editor**: 
 
     [![](window-images/panels01.png "Löschen von vorhandenen Fenster")](window-images/panels01.png#lightbox)
-6. Verknüpfen Sie den Bereich bis zu der **Besitzer der Datei*- **Fenster*- **Outlet**: 
+6. Verknüpfen Sie den Bereich bis zu der **Besitzer der Datei** - **Fenster** - **Outlet**: 
 
     [![](window-images/panels02.png "Ziehen verknüpfen, um den Bereich")](window-images/panels02.png#lightbox)
 7. Wechseln Sie zu der **Identitätsinspektor** , und legen Sie im Bereich der Klasse auf `DocumentPanel`: 
