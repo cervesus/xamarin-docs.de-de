@@ -6,24 +6,18 @@ ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: conceptdev
 ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: 6d16f01965b6b3bcba35cf14d4000f53a4400653
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 422eb24b86ba14ff4e5362db8aeec5775fab5833
+ms.sourcegitcommit: aa16f267c59725cc88bd84b049544ecfbec297ac
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241977"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43263516"
 ---
 # <a name="system-requirements"></a>Systemanforderungen
 
 Xamarin-Produkte sind abhängig von den Plattform SDKs von Apple und Google, um iOS oder Android als Ziel verwenden zu können, sodass unsere Systemanforderungen ihren entsprechen. Auf dieser Seite werden die Systemkompatibilität für die Xamarin-Plattform und für die empfohlene Entwicklungsumgebung sowie die SDK-Versionen erläutert.
 
-- [Development Environments (Entwicklungsumgebungen)](#devenv)
-- [macOS Requirements (macOS-Anforderungen)](#mac)
-- [Windows Requirements (Windows-Anforderungen)](#windows)
-
-Weitere Informationen zum Abrufen der Software und der erforderlichen SDKs finden Sie unter [installation instructions (Installationsanweisungen)](#install).
-
-<a name="devenv" />
+Weitere Informationen zum Abrufen der Software und der erforderlichen SDKs finden Sie unter [installation instructions (Installationsanweisungen)](#installation-instructions).
 
 ## <a name="development-environments"></a>Entwicklungsumgebungen
 
@@ -31,15 +25,12 @@ Diese Tabelle zeigt, welche Plattformen mit verschiedenen Entwicklungstool- und 
 
 [!include[](~/cross-platform/includes/development-environment.md)]
 
-
 > [!NOTE]
 > Zur Entwicklung von iOS auf Windows-Computern muss für die Remotekompilierung und das Debuggen [ein Mac-Computer im Netzwerk verfügbar sein](~/ios/get-started/installation/windows/connecting-to-mac/index.md). Sie können Visual Studio auch innerhalb einer Windows-VM auf einem Mac-Computer ausführen.
 
-<a name="mac" />
-
 ## <a name="macos-requirements"></a>macOS-Anforderungen
 
-Die Verwendung eines Mac-Computers für die Xamarin-Entwicklung erfordert folgende Software-/SDK-Versionen. Überprüfen Sie Ihre Betriebssystemversion, und folgen Sie den Anweisungen für den [Xamarin-Installer](#install).
+Die Verwendung eines Mac-Computers für die Xamarin-Entwicklung erfordert folgende Software-/SDK-Versionen. Überprüfen Sie Ihre Betriebssystemversion, und folgen Sie den Anweisungen für den [Xamarin-Installer](#installation-instructions).
 
 [!include[](~/cross-platform/includes/macos-requirements.md)]
 
@@ -48,11 +39,14 @@ Die Verwendung eines Mac-Computers für die Xamarin-Entwicklung erfordert folgen
 
 ### <a name="testing--debugging-on-macos"></a>Testen und Debuggen unter macOS
 
-Mobile Xamarin-Anwendungen können über USB für Tests und das Debuggen auf physischen Geräten bereitgestellt werden (Xamarin.Mac-Apps können direkt auf dem Entwicklungscomputer getestet werden; Apple Watch-Apps werden zunächst auf dem gekoppelten iPhone bereitgestellt).
+- Mobile Xamarin-Anwendungen können über USB für Tests und das Debuggen auf physischen Geräten bereitgestellt werden (Apple Watch-Apps werden zunächst auf dem gekoppelten iPhone bereitgestellt).
+- Xamarin.Mac-Apps können direkt auf dem Entwicklungscomputer getestet werden.
 
 [!include[](~/cross-platform/includes/macos-testing.md)]
 
-<a name="windows" />
+> [!WARNING]
+> Die anstehende Version Xamarin.Mac 4.8 unterstützt nur macOS 10.9 oder höher.
+> Ältere Versionen von Xamarin.Mac unterstützen macOS 10.7 oder höher, aber diese älteren Versionen von MacOS verfügen nicht über ausreichende TLS-Infrastruktur zur Unterstützung von TLS 1.2. Für macOS 10.7 oder macOS 10.8 sollten Sie Xamarin.Mac 4.6 oder niedriger verwenden.
 
 ## <a name="windows-requirements"></a>Windows-Anforderungen
 
@@ -63,18 +57,14 @@ Der Visual Studio 2017-Installer umfasst eine Option zum automatischen Installie
 [!include[](~/cross-platform/includes/windows-requirements.md)]
 
 > [!NOTE]
->
->- Xamarin für Visual Studio unterstützt jede Version von Visual Studio 2017 (Community, Professional und Enterprise).
->
->- Die Entwicklung von Xamarin.Forms-Apps für die universelle Windows-Plattform (UWP) erfordert Windows 10 mit Visual Studio 2017.
+> - Xamarin für Visual Studio unterstützt jede Version von Visual Studio 2017 (Community, Professional und Enterprise).
+> - Die Entwicklung von Xamarin.Forms-Apps für die universelle Windows-Plattform (UWP) erfordert Windows 10 mit Visual Studio 2017.
 
 ### <a name="testing--debugging-on-windows"></a>Testen und Debuggen unter Windows
 
-Mobile Xamarin-Anwendungen können über USB für Tests und das Debuggen auf physischen Geräten bereitgestellt werden (iOS-Geräte müssen mit dem Mac-Computer verbunden sein, nicht mit dem Computer, der Visual Studio ausführt).
+Mobile Xamarin-Anwendungen können über USB oder drahtlos für Tests und das Debuggen auf physischen Geräten bereitgestellt werden (iOS-Geräte müssen mit dem Mac-Computer verbunden sein, nicht mit dem Computer, auf dem Visual Studio ausgeführt wird).
 
 [!include[](~/cross-platform/includes/windows-testing.md)]
-
-<a name="install" />
 
 ## <a name="installation-instructions"></a>Installationsanweisungen
 
