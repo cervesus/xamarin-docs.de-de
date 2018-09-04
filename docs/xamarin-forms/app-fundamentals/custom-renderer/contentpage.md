@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 2369b249681b926476cf3938c51c99745eba9098
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.sourcegitcommit: 8888cb7d75f4469f2a1195b9a426a2e1fbf46bd8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 08/31/2018
 ms.locfileid: "38995741"
 ---
 # <a name="customizing-a-contentpage"></a>Anpassen einer ContentPage
@@ -197,7 +197,7 @@ namespace CustomRenderer.Droid
 
 Der Aufruf der Basisklasse `OnElementChanged` Methode instanziiert eine Android `ViewGroup` -Steuerelement, das eine Gruppe von Sichten ist. Der live-Kamera-Stream wird nur gerendert werden, vorausgesetzt, dass der Renderer ist nicht mit einem vorhandenen Xamarin.Forms-Element bereits angefügt wurde und vorausgesetzt, dass eine Seiteninstanz vorhanden ist, wird, indem der benutzerdefinierte Renderer gerendert wird.
 
-Die Seite wird dann durch den Aufruf einer Reihe von Methoden, mit denen angepasst der `Camera` -API zum Bereitstellen des livestreams von der Kamera und ein Foto, vor dem Aufzeichnen der `AddView` Methode wird aufgerufen, um die live-Kamera hinzuzufügen Benutzeroberfläche zum Streamen der `ViewGroup`.
+Die Seite wird dann durch den Aufruf einer Reihe von Methoden, mit denen angepasst der `Camera` -API zum Bereitstellen des livestreams von der Kamera und ein Foto, vor dem Aufzeichnen der `AddView` Methode wird aufgerufen, um die live-Kamera hinzuzufügen Benutzeroberfläche zum Streamen der `ViewGroup`. Beachten Sie, dass unter Android es auch erforderlich, außer Kraft setzen der `OnLayout` Methode zum Ausführen von Vorgängen von Measures und das Layout für die Sicht. Weitere Informationen finden Sie unter den [ContentPage Renderer Beispiel](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/contentpage/).
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>Erstellen die Seiten-Renderer für UWP
 
