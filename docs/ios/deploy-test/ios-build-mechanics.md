@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: df84e78709b0ff16087c4bb9816c5d45f6ec33ed
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4145368281c2967bd1311389e5e1b1432af2c9b8
+ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30772356"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43780499"
 ---
 # <a name="ios-build-mechanics"></a>Abläufe beim Erstellen von iOS-Builds
 
@@ -97,7 +97,7 @@ Unter Berücksichtigung der obigen Informationen bietet die nachstehende Liste e
 - Weitere Tipps
   - Ziehen Sie das Erstellen dem Neuerstellen vor, da beim Neuerstellen vor dem Erstellen des Builds eine Bereinigung erfolgt. Das Bereinigen kann sehr lange dauern, da Verweise entfernt werden, die verwendet werden könnten.
   - Nutzen Sie die Tatsache aus, dass der Simulator die Sandbox nicht erzwingt. Wenn Sie große Ressourcen wie Videos oder andere Objekte in Ihr Projekt einbinden, kann es bei jedem Start der Anwendung im Simulator zu aufwändigen Dateikopiervorgängen kommen. Vermeiden Sie diese aufwändigen Vorgänge, indem Sie diese Dateien im Basisverzeichnis ablegen und in Ihrer Anwendung über den vollständigen Dateipfad auf sie verweisen.  
-  - Verwenden Sie im Zweifelsfall das Flag `–time –time`, um Ihre Änderung zu messen.
+  - Verwenden Sie im Zweifelsfall das Flag `--time --time`, um Ihre Änderung zu messen.
 
 Der folgende Screenshot zeigt, wie Sie in Ihren iOS-Optionen diese Optionen für den Simulator festlegen:
 
@@ -137,7 +137,7 @@ Durch Minimieren der App-Größe verkürzt sich auch die Buildzeit. Das liegt da
 Die folgenden Dinge sollten vermieden werden:
 
 - FAT-Binärdateien (Debuggen) 
-- Deaktivieren des Linkers `–nolink` 
+- Deaktivieren des Linkers `--nolink` 
 - Deaktivieren der Entfernung von nicht verwendetem Code 
   - Symbole `--nosymbolstrip` 
   - IL (Release) `--nostrip`.  
@@ -151,7 +151,7 @@ Weitere Tipps
 - Vermeiden Sie das Bereitstellen großer statischer Dateien bei jedem Build (Debug). 
   - Verwenden Sie „UIFileSharingEnabled“ (Info.plist). 
     - Objekte können einmal hochgeladen werden. 
-- Verwenden Sie im Zweifelsfall das Flag `–time –time`, um Ihre Änderung zu messen.
+- Verwenden Sie im Zweifelsfall das Flag `--time --time`, um Ihre Änderung zu messen.
 
 Der folgende Screenshot zeigt, wie Sie in Ihren iOS-Optionen diese Optionen für den Simulator festlegen:
 
