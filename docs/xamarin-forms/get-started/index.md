@@ -32,7 +32,7 @@ Hier finden Sie eine Übersicht über die Plattformanforderungen für Apps, welc
 
 ## <a name="hello-xamarinformsxamarin-formsget-startedhello-xamarin-formsindexmd"></a>[Hello, Xamarin.Forms](~/xamarin-forms/get-started/hello-xamarin-forms/index.md)
 
-Dieser Leitfaden bietet eine Einführung in die Entwicklung einer Xamarin.Forms-Anwendung mithilfe von Visual Studio für Mac oder Visual Studio. Es werden Tools, Konzepte und Schritte aufgeführt, die zum Erstellen und Bereitstellen einer Xamarin.Forms-Anwendung erforderlich sind.
+Dieser Leitfaden bietet eine Einführung in die Entwicklung einer Xamarin.Forms-Anwendung mithilfe von Visual Studio für Mac oder Visual Studio. Es werden Tools, Konzepte und Schritte eingeführt, die zum Erstellen und Bereitstellen einer Xamarin.iOS-Anwendung erforderlich sind.
 
 ## <a name="hello-xamarinforms-multiscreenxamarin-formsget-startedhello-xamarin-forms-multiscreenindexmd"></a>[Hello, Xamarin.Forms Multiscreen](~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/index.md)
 
@@ -40,7 +40,7 @@ Dieser Leitfaden erweitert die zuvor erstellte Anwendung durch Einführung der N
 
 ## <a name="introduction-to-xamarinformsxamarin-formsget-startedintroduction-to-xamarin-formsmd"></a>[Introduction to Xamarin.Forms (Einführung in Xamarin.Forms)](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 
-Dieser Artikel behandelt einige der Schlüsselkonzepte für das Entwickeln von Anwendungen mithilfe von Xamarin.Forms, einschließlich [Views and Layouts (Ansichten und Layouts)](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Views_and_Layouts), das Control [ListView](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Lists_in_Xamarin_Forms), [Data Binding (Datenbindung)](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Data_Binding) und [Navigation](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Navigation).
+Dieser Artikel behandelt einige der Schlüsselkonzepte für das Entwickeln von Anwendungen mithilfe von Xamarin.Forms, einschließlich [Views and Layouts (Ansichten und Layouts)](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Views_and_Layouts), das Steuerelement [ListView](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Lists_in_Xamarin_Forms), [Data Binding (Datenbindung)](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Data_Binding) und [Navigation](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Navigation).
 
 
 ## <a name="get-started-with-xamarin-university"></a>Erste Schritte mit Xamarin University
