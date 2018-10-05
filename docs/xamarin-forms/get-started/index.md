@@ -17,9 +17,9 @@ ms.locfileid: "35242439"
 ---
 # <a name="getting-started-with-xamarinforms"></a>Erste Schritte mit Xamarin.Forms
 
-_Bei Xamarin.Forms handelt es sich um ein plattformübergreifendes Toolkit, mit dem Entwickler effizient native Benutzeroberflächenlayouts erstellen können. Diese können dann für Apps unter iOS, Android und für die Universelle Windows-Plattform (z.B. Windows 10) verwendet werden. Mit dieser Reihe erhalten Sie eine Einführung in die Grundlagen der Xamarin.Forms-Entwicklung und der Erstellung von Anwendungen für mehrere Plattformen und Multiscreens._
+_Xamarin.Forms ist ein plattformübergreifendes Toolkit für die Benutzeroberfläche, mit dem Entwickler effizient native Benutzeroberflächenlayouts erstellen können, die für Apps für iOS, Android und für die Universelle Windows-Plattform freigegeben werden können. Mit dieser Reihe werden die Grundlagen der Xamarin.Forms-Entwicklung eingeführt und die Erstellung von Anwendungen für mehrere Plattformen und Multiscreens abgedeckt._
 
-Hinweise zur Installation bzw. Einrichtung der Entwicklungsumgebung finden Sie unter [Xamarin.Forms Requirements (Anforderungen für Xamarin.Forms)](installation.md) und [Installation](~/cross-platform/get-started/installation/index.md).
+Eine Übersicht über die Installations- und Setupmethoden für die plattformübergreifende Entwicklung finden Sie unter [Xamarin.Forms Requirements (Anforderungen für Xamarin.Forms)](installation.md) und [Installation](~/cross-platform/get-started/installation/index.md).
 
 > [!div class="nextstepaction"]
 > [Xamarin.Forms-Schnellstart](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
