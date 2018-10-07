@@ -16,22 +16,22 @@ ms.locfileid: "35242354"
 ---
 # <a name="net-standard-20-support-in-xamarinforms"></a>.NET 2.0 Standardsupport in Xamarin.Forms
 
-_In diesem Artikel wird erläutert, wie eine Xamarin.Forms-Anwendung für die Verwendung von Standard 2.0 von .NET konvertiert wird._
+_In diesem Artikel wird erläutert, wie eine Xamarin.Forms-Anwendung konvertiert werden kann um .NET Standard 2.0 zu verwenden._
 
-.NET standard ist eine Spezifikation von .NET APIs, die auf alle Implementierungen von .NET verfügbar sein sollen. Dies erleichtert das Freigeben von Code in desktop-Anwendungen, mobile apps und Spiele und cloud-Dienste, durch das Kombinieren von identische APIs auf verschiedenen Plattformen. Informationen zu den von .NET Standard unterstützten Plattformen finden Sie unter [.NET implementierungsunterstützung](/dotnet/standard/net-standard#net-implementation-support/).
+.NET Standard ist eine Spezifikation von .NET APIs, die auf allen Implementierungen von .NET verfügbar sein sollen. Dies erleichtert das Teilen von Code zwischen Desktop-Anwendungen, Mobilen Apps und Spielen sowie Cloud-Diensten, durch die Verwendung von identische APIs auf verschiedenen Plattformen. Informationen zu den von .NET Standard unterstützten Plattformen finden Sie unter [.NET implementierungsunterstützung](/dotnet/standard/net-standard#net-implementation-support/).
 
-.NET Standardbibliotheken sind der Ersatz für Portable Klasse Bibliotheken (PCL). Eine Bibliothek, die auf .NET Standard abzielt ist immer noch eine PCL und wird als eine standardmäßige .NET basierende PCL bezeichnet. .NET Standardversionen bestimmte PCL-Profilen zugeordnet sind, und für Profile, die Zuordnung auf, die zwei Bibliothekstypen werden aufeinander verweisen können. Weitere Informationen finden Sie unter [PCL Kompatibilität](/dotnet/standard/net-standard#pcl-compatibility).
+.NET Standardbibliotheken sind der Ersatz für Portable Klassen Bibliotheken (PCL). Eine Bibliothek, die auf .NET Standard basiert ist immer noch eine PCL und wird als eine .NET Standard basierende PCL bezeichnet. Bestimmte PCL-Profile sind einer .NET Standard Version zugeordnet, und Profile die eine Zuordnung haben, können untereinander verweisen. Weitere Informationen finden Sie unter [PCL Kompatibilität](/dotnet/standard/net-standard#pcl-compatibility).
 
-Xamarin.Forms 2.4 können Xamarin.Forms Anwendungen Ziel .NET Standard 2.0 durch Ersetzen der PCL mit einer .NET Standard 2.0-Bibliothek. Dies kann wie folgt erreicht werden:
+Ab der Version 2.4 von Xamarin.Forms können Xamarin.Forms Anwendungen .NET Standard 2.0 verwenden und PCL Bibliotheken mit einer .NET Standard 2.0-Bibliothek ersetzen. Dies kann wie folgt erreicht werden:
 
-- Stellen Sie sicher [.NET Core 2.0](https://www.microsoft.com/net/download/core) installiert ist.
-- Aktualisieren Sie das Xamarin.Forms-Projektmappe, um Xamarin.Forms 2.4 oder höher verwenden.
-- Fügen Sie der Projektmappe, die auf .NET Standard 2.0 .NET Standardbibliothek hinzu.
-- Löschen Sie die Klasse, die die .NET Standardbibliothek hinzugefügt wird.
-- Fügen Sie der Standardbibliothek .NET Xamarin.Forms 2.4 (oder höher) NuGet-Paket hinzu.
-- Fügen Sie in den plattformprojekten einen Verweis auf die .NET Standardbibliothek, und entfernen Sie den Verweis zum PCL-Projekt, das die Xamarin.Forms-Benutzeroberflächenlogik enthält.
-- Kopieren Sie die Dateien aus dem PCL-Projekt der Standardbibliothek .NET.
-- Entfernen Sie das PCL-Projekt, das xamarin.Forms Benutzeroberflächenlogik enthält.
+- Stellen Sie sicher das [.NET Core 2.0](https://www.microsoft.com/net/download/core) installiert ist.
+- Aktualisieren Sie die Xamarin.Forms-Projektmappe, um Xamarin.Forms 2.4 oder höher zu verwenden.
+- Fügen Sie der Projektmappe eine auf .NET Standard 2.0 basierte Bibliothek hinzu.
+- Löschen Sie die Klasse, die der .NET Standard Bibliothek hinzugefügt wurde.
+- Fügen Sie der .NET Standard Bibliothek das Xamarin.Forms 2.4 (oder höher) NuGet-Paket hinzu.
+- Fügen Sie in den plattformprojekten einen Verweis auf die .NET Standard Bibliothek, und entfernen Sie den Verweis zum PCL-Projekt, das die Xamarin.Forms-Benutzeroberflächenlogik enthält.
+- Kopieren Sie die Dateien aus dem PCL-Projekt in die .NET Standard Bibliothek.
+- Entfernen Sie das PCL-Projekt, welches die Xamarin.Forms Benutzeroberflächenlogik enthält.
 
 
 ## <a name="related-links"></a>Verwandte Links
