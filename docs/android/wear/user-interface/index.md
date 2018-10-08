@@ -15,7 +15,9 @@ ms.lasthandoff: 05/03/2018
 ms.locfileid: "32436088"
 ---
 # <a name="user-interface"></a>Benutzeroberfläche
+
 In den folgenden Abschnitten werden verschiedene Tools und Bausteine zur Erstellung von Wear OS Apps vorgestellt.
  
 ##  <a name="controlsandroidwearuser-interfacecontrolsindexmd"></a>[Steuerelemente](~/android/wear/user-interface/controls/index.md)
+
 Beschreibt Wear OS spezifische Steuerelemente und stellt Links zu Beispielen zur Nutzung von Steuerelementen bereit.
