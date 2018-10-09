@@ -27,3 +27,4 @@ Hier wird beschrieben, wie der Zugriffe auf SQLite in Xamarin.Android durchgefü
 ## <a name="google-messagingandroiddata-cloudgoogle-messagingindexmd"></a>[Google-Messaging](~/android/data-cloud/google-messaging/index.md)
 
 Google bietet neben Firebase Cloud Messaging noch ältere Google Cloud Messaging-Dienste für messaging zwichen mobilen Apps und Server-Anwendungen. Dieser Abschnitt erklärt Schritt für Schritt wie die Google Dienste in Xamarin.Android verwendet werden um Pushbenachrichtigungen zu implementieren.
+
