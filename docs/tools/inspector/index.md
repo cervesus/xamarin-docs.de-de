@@ -15,9 +15,9 @@ ms.locfileid: "36268790"
 ---
 # <a name="xamarin-inspector"></a>Xamarin Inspector
 
-Der Xamarin-Inspektor integriert in die app Debuggen von Workflows, der die IDE, sodass Sie interaktiv C#-Code ausführt oder Eigenschaften der Benutzeroberfläche, die als eine Hilfe beim Debuggen oder die Diagnose beim Untersuchen von der ausgeführten app überprüfen.
+Xamarin Inspector wird in den App-Debugworkflow integriert, sodass Sie interaktiv C#-Code ausführen oder Eigenschaften der Benutzeroberfläche ändern können, um Hilfe beim Debuggen und Disagnostizieren Ihrer ausgeführten App zu erhalten.
 
-Aktive app Inspektion ist für Enterprise-Kunden zur Verfügung. Lassen Sie uns wissen, ob Sie [Auftreten von Fehlern](~/tools/inspector/install.md#reporting-bugs). Wir haben eine [Forum](https://forums.xamarin.com/categories/inspector) zu!
+Xamarin Inspector steht für Enterprise-Kunden zur Verfügung. Lassen Sie uns wissen, ob Sie [Fehler gefunden](~/tools/inspector/install.md#reporting-bugs) haben. Wir haben auch ein [Forum](https://forums.xamarin.com/categories/inspector)!
 
 [![](images/interactive-1.0.0-bike-inspect-3d-small.png "Live-app-Überprüfung ist für Enterprise-Kunden verfügbar")](images/interactive-1.0.0-bike-inspect-3d.png#lightbox)
 
