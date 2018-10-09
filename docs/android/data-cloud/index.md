@@ -18,14 +18,12 @@ ms.locfileid: "32436442"
 
 ## <a name="data-and-cloud-services"></a>Daten und Cloud-Dienste
 
-Xamarin.Android Anwendungen benötigen häufig Zugriff auf Daten (aus entweder einer lokalen Datenbank oder aus der Cloud), und viele dieser Apps Verarbeiten von Webdiensten, die mit einer Vielzahl von Technologien implementiert. Die Anleitungen in diesem Abschnitt untersuchen Sie zum Zugriff auf Daten und Aktivieren von Cloud-Diensten verwenden.
+Xamarin.Android Anwendungen benötigen häufig Zugriff auf Daten (aus entweder einer lokalen Datenbank oder aus der Cloud). Viele dieser Apps verarbeiten Daten von Webdiensten, die mit einer Vielzahl von Technologien implementiert sind. Diese Anleitung beschreibt wie der Zugriff auf cloudbasierte Daten und Diensten funktioniert.
 
 ## <a name="data-accessandroiddata-clouddata-accessindexmd"></a>[Datenzugriff](~/android/data-cloud/data-access/index.md)
 
-Dieser Abschnitt beschreibt-Datenzugriff in Xamarin.Android SQLite als Datenbankmodul verwenden.
+Hier wird beschrieben, wie der Zugriffe auf SQLite in Xamarin.Android durchgeführt werden.
  
 ## <a name="google-messagingandroiddata-cloudgoogle-messagingindexmd"></a>[Google-Messaging](~/android/data-cloud/google-messaging/index.md)
 
-Google bietet Firebase Cloud Messaging und älteren Google Cloud Messaging-Diensten für messaging zwischen mobilen apps und Server-Anwendungen erleichtern. Dieser Abschnitt enthält Übersichten für jeden Dienst gebotenen schrittweise Erklärung der Vorgehensweise, um diese Dienste verwenden, um remote Benachrichtigungen (so genannte Pushbenachrichtigungen) zu implementieren, in Xamarin.Android Anwendungen.
-
-
+Google bietet neben Firebase Cloud Messaging noch ältere Google Cloud Messaging-Dienste für messaging zwichen mobilen Apps und Server-Anwendungen. Dieser Abschnitt erklärt Schritt für Schritt wie die Google Dienste in Xamarin.Android verwendet werden um Pushbenachrichtigungen zu implementieren.
