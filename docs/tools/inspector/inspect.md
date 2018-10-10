@@ -1,5 +1,5 @@
 ---
-title: Überprüfen des Live-Anwendungen
+title: Überprüfen von Live-Anwendungen
 description: Dieses Dokument beschreibt, wie der Xamarin-Inspektor zu verwenden, um Anwendungen zu überprüfen. Darüber hinaus werden die Einschränkungen des Xamarin-Inspektor Tools erläutert.
 ms.prod: xamarin
 ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
@@ -13,9 +13,9 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 06/19/2018
 ms.locfileid: "36268822"
 ---
-# <a name="inspecting-live-applications"></a>Überprüfen des Live-Anwendungen
+# <a name="inspecting-live-applications"></a>Überprüfen von Live-Anwendungen
 
-Aktive app Inspektion ist für Enterprise-Kunden zur Verfügung.
+Die Überprüfung der Live-App steht für Enterprise-Kundne zur Verfügung.
 
 1. Öffnen Sie einen [app-Projekt unterstützt](~/tools/inspector/install.md#supported-platforms) in Visual Studio für Mac oder im Visual Studio.
 1. Führen Sie die Anwendung im Debugmodus aus.
