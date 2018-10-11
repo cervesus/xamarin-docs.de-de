@@ -27,6 +27,6 @@ Informationen zum Herunterladen von Xamarin Inspector und zur Installation auf e
 
 ## <a name="inspecting-live-applicationstoolsinspectorinspectmd"></a>[Überprüfen von Live-Anwendungen](~/tools/inspector/inspect.md)
 
-Erläutert, wie den Inspektor zu verwenden, um an eine app anfügen, während er ausgeführt wird aus der IDE, sodass Datenbankzustands untersucht und ohne Anhalten bearbeitet werden.
+Erläutert, wie der Inspektor zu verwenden ist, um eine App während der Ausführung zu untersuchen oder Ihren Zustand zu manipulieren, ohne die App anzuhalten.
 
 

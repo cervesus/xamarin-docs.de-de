@@ -17,7 +17,7 @@ ms.locfileid: "36268822"
 
 Die Überprüfung der Live-App steht für Enterprise-Kundne zur Verfügung.
 
-1. Öffnen Sie einen [app-Projekt unterstützt](~/tools/inspector/install.md#supported-platforms) in Visual Studio für Mac oder im Visual Studio.
+1. Öffnen Sie ein [unterstütztes App-Projekt](~/tools/inspector/install.md#supported-platforms) in Visual Studio für Mac oder Visual Studio.
 1. Führen Sie die Anwendung im Debugmodus aus.
 1. Klicken Sie auf die **Inspect** auf der Symbolleiste der IDE (in Visual Studio die **aktuelle app überprüfen...**  Menüelement steht auch auf die **Tools** oder **Debuggen** Menü).
 
@@ -27,9 +27,9 @@ Ein neue Xamarin-Inspektor-Client-Fenster wird mit einer neuen REPL-Eingabeauffo
 
 [![](inspect-images/inspector-0.7.0-map-inspect-small.png "Ein neue Xamarin-Inspektor-Client-Fenster wird geöffnet, mit einer neuen REPL-Eingabeaufforderung")](inspect-images/inspector-0.7.0-map-inspect.png#lightbox)
 
-Nachdem dieses Fenster angezeigt wird, müssen Sie eine interaktive C#-Eingabeaufforderung, die Sie verwenden können, um auszuführen und C#-Anweisungen und Ausdrücke auswerten. Was ist dies eindeutig, dass der Code im Kontext des Zielprozesses ausgewertet wird. In diesem Fall zeigen wir den Code für iOS-Anwendung angezeigt.
+Sobald dieses Fenster angezeigt wird, können Sie eine interaktive C#-Eingabeaufforderung verwenden, um C#-Anweisungen und Ausdrücke auszuwerten. Das Besondere dabei ist, dass der Code im Kontext des Zielprozesses ausgewertet wird. In diesem Fall zeigen wir den Code, der für die angezeigte iOS-Anwendung ausgeführt wird.
 
-Änderungen, die Sie in den Zustand der Anwendung werden auf den Zielprozess tatsächlich geschieht, damit Sie verwenden können live c# so ändern Sie die Anwendung oder können Sie den Status der Anwendung live überprüfen.
+Änderungen am Zustand der Anwendung werden tatsächlich im Zielprozess durchgeführt, Sie können also C# verwenden, um die Anwendung in Echtzeit zu ändern oder zu überprüfen.
 
 Beispielsweise IOS möchten wir unsere UIApplication Delegate-Klasse zu ermitteln, die unsere Haupt-Treiber ist (, in dem wir einen Großteil der Anwendungsstatus gespeichert):
 
