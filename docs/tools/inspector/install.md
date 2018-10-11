@@ -19,7 +19,7 @@ ms.locfileid: "37066922"
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-1. Herunterladen und installieren [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/) , und wählen Sie die **Mobile Entwicklung mit .NET** arbeitsauslastung.
+1. Laden Sie [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/) herunter, und führen Sie die Installation durch. Wählen Sie die Workload **Mobile-Entwicklung mit .NET** aus.
 1. [Melden Sie sich an](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio), um Ihr Enterprise-Abonnement zu aktivieren.
 1. [Überprüfen Sie](~/tools/inspector/inspect.md) Ihre eigene App!
 
@@ -53,7 +53,7 @@ Die Überprüfung von Live-Apps steht für Enterprise-Kunden zur Verfügung.
 |--- |--- |--- |
 |Mac|Nur unterstützt in Visual Studio für Mac|
 |iOS|Unterstützt in Visual Studio 2017 und Visual Studio für Mac| |
-|Android|Unterstützt in Visual Studio 2017 und Visual Studio für Mac|Android abzielen muss > = 4.0.3 mit **Fastdev** aktiviert.<br />Google, Visual Studio oder Xamarin Android-Emulatoren muss verwendet werden. 7 Android-Emulatoren können die Überprüfung zu diesem Zeitpunkt nicht zulässig.|
+|Android|Unterstützt in Visual Studio 2017 und Visual Studio für Mac|Muss Android mit Version 4.0.3 oder höher anzielen, für die **Fastdev** aktiviert ist.<br />Google-, Visual Studio- oder Xamarin Android-Emulatoren müssen verwendet werden. In Android 7-Emulatoren sind Überprüfungen derzeit womöglich nicht zulässig.|
 |WPF|Nur unterstützt in Visual Studio 2017|
 
 <a name="reporting-bugs" />
@@ -104,13 +104,13 @@ Visual Studio
 
 ### <a name="project-settings"></a>Projekteinstellungen
 
-Wenn Sie anfügen können, die **csproj** für das Projekt, das Sie untersuchen möchten, würde es sehr hilfreich sein. Dies ist einfacher, als Sie Fragen zu individuellen Einstellungen.
+Es wäre sehr hilfreich, wenn Sie die **csproj**-Datei für das Projekt, das Sie untersuchen möchten, anfügen können  Dies ist einfacher, als Ihnen Fragen zu individuellen Einstellungen zu stellen.
 
 Bestätigen Sie außerdem, dass die Debugkonfiguration ausgewählt ist.
 
 ### <a name="selected-devices"></a>Ausgewählte Geräte
 
-Für Android und iOS ist es wichtig, dass wir, welches Gerät Sie eine Verknüpfung wissen auf Debuggen, wenn Sie überprüfen möchten. Wir müssen wissen:
+Für Android und iOS ist es wichtig, dass wir wissen, welches Gerät Sie zum Debuggen ausgewählt haben: Wir müssen wissen:
 
 - Name des in der IDE dargestellten Geräts
 - Die Betriebssystemversion Ihres Geräts

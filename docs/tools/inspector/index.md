@@ -21,7 +21,7 @@ Xamarin Inspector steht für Enterprise-Kunden zur Verfügung. Lassen Sie uns wi
 
 [![](images/interactive-1.0.0-bike-inspect-3d-small.png "Die Überprüfung der Live-App steht für Enterprise-Kunden zur Verfügung")](images/interactive-1.0.0-bike-inspect-3d.png#lightbox)
 
-## <a name="installation-and-requirementstoolsinspectorinstallmd"></a>[Installation und Anforderungen](~/tools/inspector/install.md)
+## <a name="installation-and-requirementstoolsinspectorinstallmd"></a>[Installation und Voraussetzungen](~/tools/inspector/install.md)
 
 Informationen zum Herunterladen von Xamarin Inspector und zur Installation auf einem Mac oder Windows-Computer.
 

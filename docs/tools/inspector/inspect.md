@@ -19,7 +19,7 @@ Die Überprüfung der Live-App steht für Enterprise-Kundne zur Verfügung.
 
 1. Öffnen Sie ein [unterstütztes App-Projekt](~/tools/inspector/install.md#supported-platforms) in Visual Studio für Mac oder Visual Studio.
 1. Führen Sie die Anwendung im Debugmodus aus.
-1. Klicken Sie auf die **Inspect** auf der Symbolleiste der IDE (in Visual Studio die **aktuelle app überprüfen...**  Menüelement steht auch auf die **Tools** oder **Debuggen** Menü).
+1. Klicken Sie auf der Symbolleiste der IDE auf die Schaltfläche **Inspect** (Überprüfen) (in Visual Studio steht ebenfalls das Menüelement zum **Überprüfen der aktuellen App** über das Menü**Extras** oder **Debuggen** zur Verfügung).
 
 [![](inspect-images/mac-heres-the-button.png "Klicken Sie auf die Schaltfläche \"prüfen\", in der IDE-Symbolleiste")](inspect-images/mac-heres-the-button.png#lightbox)
 
