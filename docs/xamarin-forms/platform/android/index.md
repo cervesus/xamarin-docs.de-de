@@ -18,24 +18,24 @@ ms.locfileid: "35242403"
 
 ## <a name="platform-support"></a>Plattformunterstützung
 
-Die Standardeinstellung eines Xamarin.Forms Android-Projektes verwendet ein älteres Format des Steuerelement Rendererings, welches von Android 5.0 wurde verwendet. Anwendungen, die mit dieser Vorlage erstellt wurden haben `FormsApplicationActivity` als Basisklasse für die Hauptaktivität.
+Für das Xamarin.Forms-Standardprojekt für Android wurde ursprünglich ein älteres Format des Steuerelementrendererings verwendet, das allgemein vor Android 5.0 genutzt wurde. Anwendungen, die mithilfe der Vorlage erstellt wurden, besitzen`FormsApplicationActivity`als Basisklasse für die Hauptaktivität.
 
-## <a name="material-design-via-appcompat"></a>Material Design per AppCompat
+## <a name="material-design-via-appcompat"></a>Materialdesign über AppCompat
 
-Xamarin.Forms verfügt auch über ein optionales `FormsAppCompatActivity` , welches Android **AppCompat** Funktionen verwendet um Material Design zu implementieren.
+Xamarin.Forms verwendet nun auch die optionale `FormsAppCompatActivity`-Klasse als Basisklasse der Hauptaktivität. Sie verwendet **AppCompat**-Features von Android, um Materialdesigns zu implementieren.
 
-Um dem Xamarin.Forms-Android-Projekt Material Designs Themese hinzuzufügen, befolgen Sie die [installationsanweisungen für AppCompat Unterstützung](appcompat.md)
+Befolgen Sie die [Installationsanweisungen für die AppCompat-Unterstützung](appcompat.md), um Materialdesigns zu Ihrem Xamarin.Forms-Projekt für Android hinzuzufügen.
 
-So sieht das **Todo** Beispiel mit dem Standardwert `FormsApplicationActivity` aus:
+So sieht das **Todo**-Beispiel (Aufgaben) mit dem Standardwert `FormsApplicationActivity` aus:
 
 [![](images/before-appcompat-sml.png "TODO-Beispielanwendung ohne AppCompat")](images/before-appcompat.png#lightbox "TODO-Beispielanwendung ohne AppCompat")
 
-Und dies ist der gleiche Code nach dem Upgrade des Projekts auf `FormsAppCompatActivity` (und Hinzufügen der zusätzlicher Designinformationen):
+Nachfolgend ist der gleiche Code nach dem Upgrade des Projekts auf `FormsAppCompatActivity`dargestellt (weitere Designinformationen werden ebenso hinzugefügt):
 
 [![](images/post-appcompat-sml.png "TODO-Beispielanwendung mit AppCompat und Designumgebung")](images/post-appcompat.png#lightbox "TODO-Beispielanwendung mit AppCompat und Designs")
 
 > [!NOTE]
-> Bei Verwendung von `FormsAppCompatActivity`, sind die [Basisklassen für einige Android benutzerdefinierten Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md) unterschiedlich.
+> Unter Verwendung von `FormsAppCompatActivity` können sich die [Basisklassen für einige benutzerdefinierte Android-Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md) unterscheiden.
 
 
 ## <a name="related-links"></a>Verwandte Links
