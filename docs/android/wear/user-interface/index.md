@@ -1,5 +1,5 @@
 ---
-title: Erstellen die Benutzeroberfläche für Wear OS mit Xamarin.Android
+title: Erstellen der Benutzeroberfläche für Wear OS mit Xamarin.Android
 description: Erstellen von Benutzeroberflächen für Wear OS-Apps
 ms.prod: xamarin
 ms.assetid: 092A6E08-FB07-4AC2-A5BD-8A9D4E6268D8
@@ -16,7 +16,7 @@ ms.locfileid: "32436088"
 ---
 # <a name="user-interface"></a>Benutzeroberfläche
 
-In den folgenden Abschnitten werden verschiedene Tools und Bausteine zur Erstellung von Wear OS Apps vorgestellt.
+In den folgenden Abschnitten werden verschiedene Tools und Bausteine zur Erstellung von Wear OS-Apps vorgestellt.
  
 ##  <a name="controlsandroidwearuser-interfacecontrolsindexmd"></a>[Steuerelemente](~/android/wear/user-interface/controls/index.md)
 
