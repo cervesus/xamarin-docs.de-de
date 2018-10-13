@@ -18,7 +18,7 @@ ms.locfileid: "39350744"
 
 ## <a name="fast-renderersfast-renderersmd"></a>[Schnelle Renderer](fast-renderers.md)
 
-Dieser Artikel stellt `Fast Renderer` vor, welche die Inflations- und renderingkosten von Xamarin.Forms-Steuerelementen für Android reduzieren, indem Sie die resultierende native Steuerelementhierarchie vereinfachen.
+In diesem Artikel werden schnelle Renderer vorgestellt, welche die Inflations- und Renderingkosten von Xamarin.Forms-Steuerelementen für Android reduzieren, indem Sie die resultierende native Steuerelementhierarchie vereinfachen.
 
 ## <a name="net-standardnet-standardmd"></a>[.NET-Standard](net-standard.md)
 
