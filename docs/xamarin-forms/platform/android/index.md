@@ -9,7 +9,7 @@ ms.author: dabritch
 ms.date: 01/13/2016
 ms.openlocfilehash: 2eada518586f222d200ec19aeddc65107d7603b3
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/08/2018
 ms.locfileid: "35242403"
@@ -22,7 +22,7 @@ Für das Xamarin.Forms-Standardprojekt für Android wurde ursprünglich ein ält
 
 ## <a name="material-design-via-appcompat"></a>Materialdesign über AppCompat
 
-Xamarin.Forms verwendet nun auch die optionale `FormsAppCompatActivity`-Klasse als Basisklasse der Hauptaktivität. Sie verwendet **AppCompat**-Features von Android, um Materialdesigns zu implementieren.
+Xamarin.Forms verfügt auch über ein optionales `FormsAppCompatActivity` , verwendet **AppCompat** Features von Android Designs Material Entwurf zu implementieren.
 
 Befolgen Sie die [Installationsanweisungen für die AppCompat-Unterstützung](appcompat.md), um Materialdesigns zu Ihrem Xamarin.Forms-Projekt für Android hinzuzufügen.
 
