@@ -20,7 +20,7 @@ _In diesem Artikel wird erläutert, wie eine Xamarin.Forms-Anwendung konvertiert
 
 .NET Standard ist eine Spezifikation von .NET APIs, die auf allen Implementierungen von .NET verfügbar sein sollen. Dies erleichtert das Teilen von Code zwischen Desktopanwendungen, mobilen Apps und Spielen sowie Clouddiensten, indem identische APIs auf verschiedenen Plattformen verwendet werden. Informationen zu den von .NET Standard unterstützten Plattformen finden Sie unter [Unterstützung der .NET-Implementierung](/dotnet/standard/net-standard#net-implementation-support/).
 
-.NET Standardbibliotheken sind der Ersatz für Portable Klasse Bibliotheken (PCL). Eine Bibliothek, die auf .NET Standard abzielt ist immer noch eine PCL und wird als eine standardmäßige .NET basierende PCL bezeichnet. .NET Standardversionen bestimmte PCL-Profilen zugeordnet sind, und für Profile, die Zuordnung auf, die zwei Bibliothekstypen werden aufeinander verweisen können. Weitere Informationen finden Sie unter [PCL Kompatibilität](/dotnet/standard/net-standard#pcl-compatibility).
+.NET Standard-Bibliotheken sind der Ersatz für portable Klassenbibliotheken (PCL).  Eine Bibliothek, die .NET Standard anzielt, ist jedoch immer noch eine PCL und wird als eine auf .NET Standard basierende PCL bezeichnet. Bestimmte PCL-Profile sind einer .NET Standard-Version zugeordnet. Bei diesen Profilen können die beiden Bibliothekstypen aufeinander verweisen. Weitere Informationen finden Sie unter [PCL Kompatibilität](/dotnet/standard/net-standard#pcl-compatibility).
 
 Ab der Version Xamarin.Forms 2.4 können Xamarin.Forms-Anwendungen .NET Standard 2.0 verwenden, indem sie die portable Klassenbibliothek mit einer .NET Standard 2.0-Bibliothek ersetzen. Dies kann wie folgt erreicht werden:
 

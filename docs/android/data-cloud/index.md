@@ -1,6 +1,6 @@
 ---
 title: Daten und Clouddienste mit Xamarin.Android
-description: Die Anleitungen in diesem Abschnitt untersuchen Sie zum Zugriff auf Daten und Aktivieren von Cloud-Diensten verwenden.
+description: Diese Anleitung beschreibt, wie auf Daten zugegriffen wird und Clouddienste genutzt werden.
 ms.prod: xamarin
 ms.assetid: 54D9D34B-D4FA-473B-BD11-75D3762920B0
 ms.technology: xamarin-android
