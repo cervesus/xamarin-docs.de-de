@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2018
-ms.openlocfilehash: c0c433ab44c5b16fda6a01d520c41b31cb94bcc7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 0069e59c1c09e242a74573ae66c8efade7d7f2a5
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38998226"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms-Schieberegler
@@ -44,8 +44,8 @@ Die `Slider` definiert außerdem mehrere Eigenschaften, die die Darstellung ausw
 
 - [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty) ist die Leiste Farbe auf der linken Seite des Ziehpunkts.
 - [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty) ist die Leiste Farbe auf der rechten Seite des Ziehpunkts.
-- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) ist die Farbe des Thumb-Steuerelement. Diese Eigenschaft wird auf der universellen Windows-Plattform nicht unterstützt.
-- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) ist das Image für das Thumb-Steuerelement des Typs [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource). Diese Eigenschaft wird auf der universellen Windows-Plattform nicht unterstützt.
+- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) ist die Farbe des Thumb-Steuerelement.
+- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) ist das Image für das Thumb-Steuerelement des Typs [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource).
 
 > [!NOTE]
 > Die `ThumbColor` und `ThumbImage` Eigenschaften schließen sich gegenseitig. Wenn beide Eigenschaften festgelegt werden, die `ThumbImage` -Eigenschaft Vorrang.
@@ -109,7 +109,7 @@ Hier wird das Programm Geräte unter iOS, Android und universelle Windows-Plattf
 
 [![Grundlegende Schieberegler Code](slider-images/BasicSliderCode.png "grundlegende Schieberegler-Code")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-Die zweite `Label` zeigt den Text "(nicht initialisierte)", bis die `Slider` bearbeitet wird, Situationen die erste `ValueChanged` Ereignis ausgelöst werden. Beachten Sie, dass die Anzahl der Dezimalstellen, die angezeigt werden, für die drei Plattformen unterschiedlich ist. Diese Unterschiede beziehen sich auf die plattformimplementierungen aus, der die `Slider` und werden weiter unten in diesem Artikel im Abschnitt [Implementierung Plattformunterschiede](#implementations).
+Die zweite `Label` zeigt den Text "(nicht initialisierte)", bis die `Slider` bearbeitet wird, der bewirkt, dass der erstes `ValueChanged` Ereignis ausgelöst werden. Beachten Sie, dass die Anzahl der Dezimalstellen, die angezeigt werden, für die drei Plattformen unterschiedlich ist. Diese Unterschiede beziehen sich auf die plattformimplementierungen aus, der die `Slider` und werden weiter unten in diesem Artikel im Abschnitt [Implementierung Plattformunterschiede](#implementations).
 
 ### <a name="creating-a-slider-in-xaml"></a>Erstellen einen Schieberegler in XAML
 
@@ -228,7 +228,7 @@ Slider slider = new Slider
 };
 ```
 
-Festlegen von `Maximum` auf 20 ist kein Problem, da sie größer als der Standardwert ist `Minimum` 0 festlegen. Wenn `Minimum` festgelegt ist, wird der Wert ist kleiner als der `Maximum` Wert von 20.
+Festlegen von `Maximum` auf 20 ist kein Problem, da sie größer als der Standardwert ist `Minimum` Wert 0. Wenn `Minimum` festgelegt ist, wird der Wert ist kleiner als der `Maximum` Wert von 20.
 
 Das gleiche Problem tritt in XAML. Legen Sie die Eigenschaften in der Reihenfolge, die wird, dass sichergestellt `Maximum` ist immer größer als `Minimum`:
 
@@ -292,8 +292,6 @@ Die Android-Implementierung von `Slider` basiert auf dem Android [ `SeekBar` ](h
 Die UWP-Implementierung von `Slider` basiert auf der UWP [ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider) Steuerelement. Die `StepFrequency` Eigenschaft der UWP `Slider` festgelegt ist, um den Unterschied zwischen der `Maximum` und `Minimum` Eigenschaften unterteilt, 10, aber nicht größer als 1.
 
 Für die Standard-Bereich von 0 bis 1, beispielsweise die `StepFrequency` -Eigenschaftensatz auf 0,1. Als die `Slider` bearbeitet wird, die `Value` -Eigenschaft auf 0, 0.1, 0.2, 0.3, 0,4, 0,5, 0,6, 0,7, 0,8, 0,9 und 1.0 beschränkt ist. (Dies wird in der letzten Seite in der [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) Beispiel.) Wenn der Unterschied zwischen der `Maximum` und `Minimum` Eigenschaften ist 10 oder höher ist, klicken Sie dann `StepFrequency` ist auf 1 festgelegt, und die `Value` Eigenschaft verfügt über ganzzahlige Werte.
-
-Darüber hinaus die [ `ThumbColor` ](xref:Xamarin.Forms.Slider.ThumbColorProperty) und [ `ThumbImage` ](xref:Xamarin.Forms.Slider.ThumbImageProperty) Eigenschaften werden nicht in UWP unterstützt.
 
 ### <a name="the-stepslider-solution"></a>Die Lösung StepSlider
 

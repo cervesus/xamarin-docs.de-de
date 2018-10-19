@@ -4,39 +4,39 @@ description: In diesem Artikel wird erläutert, wie SkiaSharp, die zum Zeichnen 
 ms.prod: xamarin
 ms.assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 000bf24c1b06baab892f0b165c8b9eeebebce49d
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 6dc7737290bf7eacb3ba0e0bca0ddcfcd4aacba3
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615261"
 ---
 # <a name="lines-and-stroke-caps"></a>Linien und Strichenden
 
 _Erfahren Sie, wie SkiaSharp verwenden Sie zum Zeichnen von Linien mit anderen Strichenden_
 
-In SkiaSharp unterscheidet rendern eine einzelne Zeile aus einer Reihe verbundener gerader Linien zu rendern. Auch beim Zeichnen von Linien allerdings es ist häufig erforderlich, um den Zeilen eine bestimmte Strichbreite und desto breiter die Linie zu gewähren, umso wichtiger ist die Darstellung des Endes der Positionen, dem Namen der *Stroke Cap*:
+In SkiaSharp unterscheidet rendern eine einzelne Zeile aus einer Reihe verbundener gerader Linien zu rendern. Selbst wenn einzelne Zeilen zu zeichnen, ist es jedoch oft erforderlich, um den Zeilen zu eine bestimmten Strichbreite gewähren. Sobald diese Zeilen breiter sind, wird die Darstellung der Enden der Zeilen auch wichtig. Die Darstellung der das Ende der Zeile wird aufgerufen, die *Stroke Cap*:
 
 ![](lines-images/strokecapsexample.png "Die drei Stroke Caps-Optionen")
 
-Für das Zeichnen von Linien, `SKCanvas` definiert eine einfache [ `DrawLine` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawLine/p/System.Single/System.Single/System.Single/System.Single/SkiaSharp.SKPaint/) Methode, deren Argumente angeben, der Anfangs- und Endkoordinaten der Linie mit, einem `SKPaint` Objekt:
+Für das Zeichnen von Linien, `SKCanvas` definiert eine einfache [ `DrawLine` ](xref:SkiaSharp.SKCanvas.DrawLine(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) Methode, deren Argumente angeben, der Anfangs- und Endkoordinaten der Linie mit, einem `SKPaint` Objekt:
 
 ```csharp
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-In der Standardeinstellung die `StrokeWidth` Eigenschaft des neu instanziierten `SKPaint` Objekt ist 0 (null) und denselben Effekt wie der Wert 1 hat in beim Rendern einer Zeile von einem Pixel im Stärke. Dies scheint sehr dünne auf Geräten mit hoher Auflösung wie Smartphones, sollten Sie wahrscheinlich zum Festlegen der `StrokeWidth` auf einen höheren Wert. Aber sobald Sie das Zeichnen von Linien mit einer beträchtliche Dicke starten, ein weiteres Problem auslöst: wie den Beginn und Ende diese dicken Zeilen gerendert werden soll?
+In der Standardeinstellung die [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) Eigenschaft des neu instanziierten `SKPaint` Objekt ist 0 (null) und denselben Effekt wie der Wert 1 hat in beim Rendern einer Zeile von einem Pixel im Stärke. Dies scheint sehr dünne auf Geräten wie Smartphones, mit hoher Auflösung, sollten Sie wahrscheinlich zum Festlegen der `StrokeWidth` auf einen höheren Wert. Aber sobald Sie das Zeichnen von Linien mit einer beträchtliche Dicke starten, ein weiteres Problem auslöst: wie den Beginn und Ende diese dicken Zeilen gerendert werden soll?
 
-Die Darstellung der den Beginn und Ende von Zeilen wird aufgerufen, eine *Linienende* oder Skia, eine *Stroke Cap*. Das Wort "Obergrenze" in diesem Kontext bezieht sich auf eine Art von Hat &mdash; etwas, das auf das Ende der Zeile befindet. Festlegen der [ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/) Eigenschaft der `SKPaint` -Objekts auf einen der folgenden Elemente von der [ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/) Enumeration:
+Die Darstellung der den Beginn und Ende von Zeilen wird aufgerufen, eine *Linienende* oder Skia, eine *Stroke Cap*. Das Wort "Obergrenze" in diesem Kontext bezieht sich auf eine Art von Hat &mdash; etwas, das auf das Ende der Zeile befindet. Festlegen der [ `StrokeCap` ](xref:SkiaSharp.SKPaint.StrokeCap) Eigenschaft der `SKPaint` -Objekts auf einen der folgenden Elemente von der [ `SKStrokeCap` ](xref:SkiaSharp.SKStrokeCap) Enumeration:
 
-- [`Butt`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Butt/) (Standard)
-- [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
-- [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
+- `Butt` (Standard)
+- `Square`
+- `Round`
 
-Diese werden am besten mit einem Beispiel veranschaulicht. Der zweite Abschnitt der Startseite von der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm beginnt mit einer Seite mit dem Titel **Strichenden** basierend auf den [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) Klasse. Auf dieser Seite wird eine `PaintSurface` -Ereignishandler, der die drei Elemente von durchläuft die `SKStrokeCap` Enumeration, die den Namen des Enumerationsmembers angezeigt, und Zeichnen einer Linie mit diese Obergrenze, Strich:
+Diese werden am besten mit einem Beispiel veranschaulicht. Die **SkiaSharp-Linien und-Pfade** Teil der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm beginnt mit einer Seite mit dem Titel **Strichenden** basierend auf der [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) Klasse. Auf dieser Seite wird eine `PaintSurface` -Ereignishandler, der die drei Elemente von durchläuft die `SKStrokeCap` Enumeration, die den Namen des Enumerationsmembers angezeigt, und Zeichnen einer Linie mit diese Obergrenze, Strich:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -90,7 +90,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Für jedes Element der `SKStrokeCap` Enumeration, die Handler zeichnet zwei Zeilen, die mit einem Strichstärke von 50 Pixeln und eine neue Zeile, die im Vordergrund positioniert wird, mit einer Kontur Stärke von 2 Pixeln. Diese zweite Zeile soll lediglich die geometrische Start und Ende der Zeile, die unabhängig von der Linienstärke und eine Obergrenze Strich zu veranschaulichen:
+Für jedes Element der `SKStrokeCap` Enumeration, der Handler zeichnet zwei Zeilen, die mit einer Strichstärke von 50 Pixeln und eine neue Zeile, die im Vordergrund positioniert wird, mit der Strichstärke zwei Pixel. Diese zweite Zeile soll lediglich die geometrische Start und Ende der Zeile, die unabhängig von der Linienstärke und eine Obergrenze Strich zu veranschaulichen:
 
 [![](lines-images/strokecaps-small.png "Dreifacher Screenshot der Seite Strichenden")](lines-images/strokecaps-large.png#lightbox "dreifachen Screenshot der Seite Strichenden")
 
@@ -102,19 +102,20 @@ Die `SKCanvas` -Klasse enthält auch eine andere Methode für das Zeichnen von m
 DrawPoints (SKPointMode mode, points, paint)
 ```
 
-Die `points` -Parameter ist ein Array von `SKPoint` Werte und `mode` ist ein Mitglied der [ `SKPointMode` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPointMode/) -Enumeration, die hat drei Member:
+Die `points` -Parameter ist ein Array von `SKPoint` Werte und `mode` ist ein Mitglied der [ `SKPointMode` ](xref:SkiaSharp.SKPointMode) -Enumeration, die hat drei Member:
 
-- [`Points`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Points/) um die einzelnen Punkte zu rendern.
-- [`Lines`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Lines/) jedem Standortpaar der Verbindung
-- [`Polygon`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Polygon/) die Verbindung alle aufeinander folgenden Punkten
+- `Points` um die einzelnen Punkte zu rendern.
+- `Lines` jedem Standortpaar der Verbindung
+- `Polygon` die Verbindung alle aufeinander folgenden Punkten
 
-Die **mehrere Zeilen** Seite veranschaulicht diese Methode. Die [ `MultipleLinesPage` XAML-Datei](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml) instanziiert zwei `Picker` Ansichten, mit denen Sie auswählen, ein Mitglied der `SKPointMode` Enumeration und ein Mitglied der `SKStrokeCap` Enumeration:
+Die **mehrere Zeilen** Seite veranschaulicht diese Methode. Die [ **MultipleLinesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml) Datei instanziiert zwei `Picker` Ansichten, mit denen Sie auswählen, ein Mitglied der `SKPointMode` Enumeration und ein Mitglied der `SKStrokeCap` Enumeration:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
-             x:Class="SkiaSharpFormsDemos.MultipleLinesPage"
+             xmlns:skia="clr-namespace:SkiaSharp;assembly=SkiaSharp"
+             xmlns:skiaforms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="SkiaSharpFormsDemos.Paths.MultipleLinesPage"
              Title="Multiple Lines">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -132,11 +133,13 @@ Die **mehrere Zeilen** Seite veranschaulicht diese Methode. Die [ `MultipleLines
                 Grid.Row="0"
                 Grid.Column="0"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>Points</x:String>
-                <x:String>Lines</x:String>
-                <x:String>Polygon</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type skia:SKPointMode}">
+                    <x:Static Member="skia:SKPointMode.Points" />
+                    <x:Static Member="skia:SKPointMode.Lines" />
+                    <x:Static Member="skia:SKPointMode.Polygon" />
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
@@ -147,26 +150,28 @@ Die **mehrere Zeilen** Seite veranschaulicht diese Methode. Die [ `MultipleLines
                 Grid.Row="0"
                 Grid.Column="1"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>Butt</x:String>
-                <x:String>Round</x:String>
-                <x:String>Square</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type skia:SKStrokeCap}">
+                    <x:Static Member="skia:SKStrokeCap.Butt" />
+                    <x:Static Member="skia:SKStrokeCap.Round" />
+                    <x:Static Member="skia:SKStrokeCap.Square" />
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
         </Picker>
 
-        <skia:SKCanvasView x:Name="canvasView"
-                           PaintSurface="OnCanvasViewPaintSurface"
-                           Grid.Row="1"
-                           Grid.Column="0"
-                           Grid.ColumnSpan="2" />
+        <skiaforms:SKCanvasView x:Name="canvasView"
+                                PaintSurface="OnCanvasViewPaintSurface"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2" />
     </Grid>
 </ContentPage>
 ```
 
-Die `SelectedIndexChanged` Handler für beide `Picker` Ansichten einfach erklärt die `SKCanvasView` Objekt:
+Beachten Sie, dass die Namespacedeklarationen SkiaSharp da ein wenig anders sind die `SkiaSharp` Namespace ist erforderlich, um auf die Member der der `SKPointMode` und `SKStrokeCap` Enumerationen. Die `SelectedIndexChanged` Handler für beide `Picker` Ansichten einfach erklärt die `SKCanvasView` Objekt:
 
 ```csharp
 void OnPickerSelectedIndexChanged(object sender, EventArgs args)
@@ -180,7 +185,7 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs args)
 
 Dieser Handler muss prüfen, ob das Vorhandensein der `SKCanvasView` Objekt, da der erste des ereignishandlers ist wird aufgerufen, wenn die `SelectedIndex` Eigenschaft der `Picker` auf 0 festgelegt ist, in der XAML-Datei liegt, die die `SKCanvasView` instanziiert wurde.
 
-Die `PaintSurface` Handler greift auf eine generische Methode zum Abrufen von zwei ausgewählten Elemente aus der `Picker` Ansichten und die Konvertierung in-Enumerationswerte fest:
+Die `PaintSurface` Handler Ruft die beiden Enumerationswerte aus der `Picker` Ansichten:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -210,21 +215,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
         Style = SKPaintStyle.Stroke,
         Color = SKColors.DarkOrchid,
         StrokeWidth = 50,
-        StrokeCap = GetPickerItem<SKStrokeCap>(strokeCapPicker)
+        StrokeCap = (SKStrokeCap)strokeCapPicker.SelectedItem
     };
 
     // Render the points by calling DrawPoints
-    SKPointMode pointMode = GetPickerItem<SKPointMode>(pointModePicker);
+    SKPointMode pointMode = (SKPointMode)pointModePicker.SelectedItem;
     canvas.DrawPoints(pointMode, points, paint);
-}
-
-T GetPickerItem<T>(Picker picker)
-{
-    if (picker.SelectedIndex == -1)
-    {
-        return default(T);
-    }
-    return (T)Enum.Parse(typeof(T), picker.Items[picker.SelectedIndex]);
 }
 ```
 
@@ -243,5 +239,5 @@ Ist ein entscheidender Aspekt für die Arbeit mit Grafikpfade, ob Zeilen oder ni
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

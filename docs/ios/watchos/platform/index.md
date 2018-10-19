@@ -4,23 +4,19 @@ description: Dieses Dokument enthält Links zu verschiedenen Leitfäden, die Wat
 ms.prod: xamarin
 ms.assetid: 13F23E01-BAED-43EB-A70E-3B30EF53D379
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 06/25/2018
-ms.openlocfilehash: e915ec38ed29b6ef2a0710c9dad10cf339c3a3ab
-ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: 09200ba5968838edf829b30a50a8ad0f4a3ab3aa
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39030677"
 ---
 # <a name="watchos-platform-features"></a>WatchOS-Plattformfeatures
 
-## <a name="introduction-to-watchos-5introduction-to-watchos5indexmd"></a>[Einführung in WatchOS 5](introduction-to-watchos5/index.md)
-
-> [!WARNING]
-> Xamarin WatchOS-5-Unterstützung ist gegenwärtig im vorschaustadium, d. h., er möglicherweise Fehler enthalten ist nicht die Features, und möglicherweise geändert.
-> Verwenden sie nur für Experimente.
+## <a name="introduction-to-watchos-5introduction-to-watchos5indexmd"></a>[Einführung in watchOS 5](introduction-to-watchos5/index.md)
 
 Dieses Dokument enthält eine allgemeine Übersicht über neue und aktualisierte Features in WatchOS 5, die für die Verwendung verfügbar, beim Erstellen von WatchOS-apps mit Xamarin sind.
 

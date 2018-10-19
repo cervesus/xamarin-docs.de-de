@@ -4,35 +4,30 @@ description: Dieses Dokument enthält eine allgemeine Beschreibung einiger Watch
 ms.prod: xamarin
 ms.assetid: 775BE4E4-F408-4620-AED9-2B48C7B27F38
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 07/09/2018
-ms.openlocfilehash: 4cb05b1aa81dc8f2e7a4930ce797d7fe1164aeab
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: 6fbbd75c0daf960fd9fd01670bdea35126abfabe
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615508"
 ---
 # <a name="introduction-to-watchos-5"></a>Einführung in WatchOS 5
 
- ![Vorschau](~/media/shared/preview.png)
-
-> [!WARNING]
-> Xamarin WatchOS-5-Unterstützung ist gegenwärtig im vorschaustadium, d. h., er möglicherweise Fehler enthalten ist nicht die Features, und möglicherweise geändert. Verwenden sie nur für Experimente.
-
-Dieses Dokument enthält eine allgemeine Beschreibung einiger WatchOS-5-APIs, die für die Xamarin Preview Release c#-Bindungen bietet.
+Dieses Dokument enthält eine allgemeine Beschreibung der einige WatchOS 5 APIs.
 
 Informationen zum Einstieg WatchOS-5-apps mit Xamarin erstellen, sehen Sie sich:
 
 - Die [Handbuch mit ersten Schritten](~/ios/platform/introduction-to-ios12/get-started.md)
-- Die Xamarin-Vorschauversion [release Blogbeitrag](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
+- Die Xamarin-Vorschauversion [release Blogbeitrag](https://releases.xamarin.com/preview-release-xcode-10-beta-6/)
 
-## <a name="updated-workout-apis"></a>Aktualisierte Trainings-APIs
+## <a name="workout-improvements"></a>Trainings-Verbesserungen
 
-Aktualisierte Trainings-APIs in WatchOS 5 stellt neue Features bereit, für die Sammlung von Trainings, fitnessaktivitäten in HealthKit, automatisch Thema fortfahren, nachdem eine app stürzt ab, und Arbeiten mit einer Reihe von verwandten Mengendaten gespeichert werden.
+Das Trainings-APIs in WatchOS 5 stellt neue Features bereit, für die Sammlung von Trainings, fitnessaktivitäten in HealthKit, automatisch Thema fortfahren, nachdem eine app stürzt ab, und Arbeiten mit einer Reihe von verwandten Mengendaten gespeichert werden.
 
-## <a name="shortcuts-on-the-siri-watch-face"></a>Verknüpfungen auf dem Zifferblatt Ihrer Apple Watch Siri
+## <a name="siri-shortcuts"></a>Siri-Tastenkombinationen
 
 In WatchOS 5 zeigt das watchface Siri Verknüpfungen, Surface, app-Inhalte und die Funktionalität für Benutzer zu geeigneten Zeitpunkten. Siri lernt im Lauf der Zeit relevanten Verknüpfungen angezeigt, wenn sie am wahrscheinlichsten verwendet werden.
 
@@ -53,4 +48,3 @@ Natürlicher Sprachen-Framework ermöglicht Anwendungen das Ausführen von versc
 - [WatchOS-Apple-Entwickler (Apple)](https://developer.apple.com/watchOS/)
 - [Neuerungen in WatchOS (Apple) (Video)](https://developer.apple.com/videos/play/wwdc2018/206/)
 - [Sehen Sie sich (Apple)](https://www.apple.com/watch/)
-- Xamarin-Vorschauversion [release Blogbeitrag](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)

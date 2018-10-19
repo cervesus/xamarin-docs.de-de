@@ -1,5 +1,5 @@
 ---
-title: Hinzufügen einer Pinch-Stiftbewegungs-Erkennung
+title: Hinzufügen einer Pinch-stiftbewegungs-Erkennung
 description: In diesem Artikel wird erläutert, wie die Pinch-Geste zum Ausführen von interaktiven Zoom eines Bilds an die Pinch-Speicherort verwendet wird.
 ms.prod: xamarin
 ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 37befdcd4ccbcd49e3cebda92d55ae6f70da2ad6
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f67cbb136c42a4bc476c1715ea6fd15255d71dc7
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38998699"
 ---
-# <a name="adding-a-pinch-gesture-recognizer"></a>Hinzufügen einer Pinch-Stiftbewegungs-Erkennung
+# <a name="adding-a-pinch-gesture-recognizer"></a>Hinzufügen einer Pinch-stiftbewegungs-Erkennung
 
 _Die Pinch-Geste wird zum Ausführen von interaktiven Zoom verwendet, und es wird mit der PinchGestureRecognizer-Klasse implementiert. Ein häufiges Szenario für die Pinch-Geste ist zum Ausführen von interaktiven Zoom eines Bilds an der Pinch-Position. Dies wird erreicht, indem Sie den Inhalt des Viewports skalieren und in diesem Artikel gezeigt wird._
-
-## <a name="overview"></a>Übersicht
 
 Um ein Element der Benutzeroberfläche mit der Pinch-Geste zoombare machen, erstellen eine [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) -Instanz, behandeln Sie die [ `PinchUpdated` ](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated) -Ereignis, und fügen Sie der neuen stiftbewegungs-Erkennung, um die [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) Auflistung in das Benutzeroberflächenelement. Das folgende Codebeispiel zeigt eine `PinchGestureRecognizer` angefügt, um eine [ `Image` ](xref:Xamarin.Forms.Image) Element:
 
@@ -161,11 +159,6 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 ```
 
 Diese Methode aktualisiert die Zoomstufe des umschlossenen Element der Benutzeroberfläche anhand des Benutzers Pinch-Geste. Dies wird erreicht, indem Sie mithilfe der Werte der [ `Scale` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale), [ `ScaleOrigin` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin) und [ `Status` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status) Eigenschaften der [ `PinchGestureUpdatedEventArgs` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs) Instanz zum Berechnen des Skalierungsfaktor auf den Ursprung der Pinch-Geste angewendet werden soll. Das umschlossene Benutzer-Element wird durch Festlegen von klicken Sie dann auf den Ursprung der Pinch-Geste vergrößert die [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX), [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY), und [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) Eigenschaften, die die berechneten Werte.
-
-## <a name="summary"></a>Zusammenfassung
-
-Die Pinch-Geste wird zum Ausführen von interaktiven Zoom verwendet und wird implementiert, mit der [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) Klasse.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

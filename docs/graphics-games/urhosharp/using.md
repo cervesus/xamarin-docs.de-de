@@ -1,35 +1,35 @@
 ---
-title: Verwenden von UrhoSharp zum Erstellen eines Spiels 3D
-description: Dieses Dokument enthält eine Übersicht über UrhoSharp, beschreiben Szenen, Komponenten, Formen, Kameras, Aktionen, Benutzereingaben, Sound und vieles mehr.
+title: Verwenden von UrhoSharp zum Erstellen eines 3D-Spiels
+description: Dieses Dokument enthält einen Überblick über die von UrhoSharp, beschreiben Szenen, Komponenten, Formen, Kameras, Aktionen, Benutzereingaben, Sound und vieles mehr.
 ms.prod: xamarin
 ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: eb1e93e47528e801da08f402f452e0e8ce5014d8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 7d07733ebf62e6e12ccee05f9b72eaf1a74afad2
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "34784038"
 ---
-# <a name="using-urhosharp-to-build-a-3d-game"></a>Verwenden von UrhoSharp zum Erstellen eines Spiels 3D
+# <a name="using-urhosharp-to-build-a-3d-game"></a>Verwenden von UrhoSharp zum Erstellen eines 3D-Spiels
 
-Bevor Sie Ihr erste Spiel schreiben, mit den Grundlagen beruhendes abgerufen werden sollen: zum Einrichten der Szene, wie Ressourcen geladen werden (Dies enthält Bildmaterial) und zum Erstellen von einfachen Interaktionen für das Spiel.
+Bevor Sie Ihr erste Spiel schreiben, möchten Sie mit den Grundlagen vertraut zu erhalten: wie Ihrer Szene einrichten, um Ressourcen zu laden (Dies enthält Ihre Grafik) und um einfache Aktivitäten für Ihr Spiel zu erstellen.
 
 <a name="scenenodescomponentsandcameras"/>
 
-## <a name="scenes-nodes-components-and-cameras"></a>Szenen, die Knoten, Komponenten und Kameras
+## <a name="scenes-nodes-components-and-cameras"></a>Im Hintergrund, Knoten, Komponenten und Kameras
 
-Der Szene Modell kann als ein Szenendiagramm komponentenbasierter beschrieben werden. Die Szene besteht aus einer Hierarchie von Szenenknoten, beginnend mit den Stammknoten, der auch die gesamte Szene darstellt. Jede [ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/) hat eine 3D-Transformation (Position, Drehung und Skalierung), einen Namen, eine ID sowie eine beliebige Anzahl von Komponenten.  Schalten Sie einen Knoten Komponenten lebendig werden lassen, können sie vornehmen, fügen eine visuelle Darstellung ([`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel)), können sie Sound ausgeben ([`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource)), können sie eine Grenze Kollision usw. bieten.
+Das Modell für die Szene kann als szenengraph komponentenbasierter beschrieben werden. Die Szene besteht aus einer Hierarchie von Szenenknoten, beginnend mit den Stammknoten, der auch die gesamte Szene darstellt. Jede [ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/) verfügt über eine 3D-Transformation (Position, Drehung und Skalierung), einen Namen, eine ID sowie eine beliebige Anzahl von Komponenten.  Komponenten stellen eines Knotens zum Leben, sie können eine visuelle Darstellung hinzufügen ([`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel)), können sie Sound ausgeben ([`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource)), können sie eine Kollision Grenze usw. bieten.
 
-Können Ihre Szenen und Setup-Knoten, die mithilfe der [Urho Editor](#UrhoEditor), oder Sie können Aktionen aus dem C#-Code.  In diesem Dokument wird alles mithilfe von Code untersucht, wie sie zeigen, dass die Elemente, die erforderlichen Ergebnisse erzielen, auf dem Bildschirm angezeigt
+Sie können Ihre Szenen und die Setup-Knoten, die mit erstellen die [Urho Editor](#UrhoEditor), oder Sie können Aktionen von c#-Code.  In diesem Dokument wird alles mithilfe von Code erläutert, wie sie zeigen, dass die Elemente, die erforderlichen Aufgaben auf dem Bildschirm angezeigt werden
 
-Neben dem Einrichten der Szene, müssen Sie Setup eine [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/), dies wird bestimmt, was dem Benutzer angezeigt abgerufen wird.
+Zusätzlich zu Ihrer Szene eingerichtet haben, müssen Sie Setup eine [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/), dadurch wird bestimmt, was dem Benutzer angezeigt erhalten wird.
 
-### <a name="setting-up-your-scene"></a>Einrichten der Szene
+### <a name="setting-up-your-scene"></a>Das Einrichten Ihrer Szene
 
-Sie würden diese Form in der Regel die Startmethode erstellen:
+In der Regel würden Sie dieses Formular Ihrer Start-Methode erstellen:
 
 ```csharp
 var scene = new Scene ();
@@ -53,7 +53,7 @@ planeObject.SetMaterial(ResourceCache.GetMaterial("Materials/StoneTiled.xml"));
 
 ### <a name="components"></a>Komponenten
 
-Rendern von 3D-Objekten sound-Wiedergabe, physikalische und skriptgesteuerten Logik Updates sind alle aktiviert durch das Erstellen von verschiedenen Komponenten in die Knoten durch den Aufruf [ `CreateComponent<T>()` ](https://developer.xamarin.com/api/member/Urho.Node.CreateComponent%3CT%3E/p/Urho.CreateMode/System.UInt32/).  Richten Sie z. B. Ihre Knoten und hell Komponente wie folgt:
+Rendern 3D-Objekte, Soundwiedergabe "," Physik "und" geskriptete Logik Updates sind alle aktiviert durch das Erstellen von verschiedenen Komponenten in die Knoten durch den Aufruf [ `CreateComponent<T>()` ](https://developer.xamarin.com/api/member/Urho.Node.CreateComponent%3CT%3E/p/Urho.CreateMode/System.UInt32/).  Richten Sie z. B. Ihre Knoten und light-Komponente wie folgt:
 
 ```csharp
 // Create a directional light to the world so that we can see something. The
@@ -65,29 +65,30 @@ var lightNode = scene.CreateChild("DirectionalLight");
 lightNode.SetDirection (new Vector3(0.6f, -1.0f, 0.8f));
 ```
 
-Wir haben über einen Knoten mit dem Namen "`DirectionalLight`" und eine Richtung für, aber nichts anderes festgelegt.  Wir können jetzt den oben genannten Knoten in einem Knoten Licht ausgebende aktivieren, indem Anfügen einer [ `Light` ](https://developer.xamarin.com/api/type/Urho.Light/) Komponente, mit `CreateComponent`:
+Wir haben über einen Knoten mit dem Namen "`DirectionalLight`" und eine Richtung für, sondern nichts anderes festgelegt.  Wir können nun den oben aufgeführten Knoten auf einen Knoten leuchtende aktivieren, durch Anfügen einer [ `Light` ](https://developer.xamarin.com/api/type/Urho.Light/) Komponente, mit `CreateComponent`:
 
 ```csharp
 var light = lightNode.CreateComponent<Light>();
 ```
 
-Komponenten, die erstellt wurde, in der `Scene` selbst haben eine besondere Rolle: Szene Wide-Funktionalität zu implementieren. Sie sollten vor allen anderen Komponenten erstellt werden und umfassen Folgendes:
+Komponenten, die erstellt wurde, in der `Scene` selbst haben eine besondere Rolle: Gesamte Szene Funktionalität implementieren. Sie sollten erstellt werden, bevor alle anderen Komponenten und umfassen Folgendes:
 
-* [`Octree`](https://developer.xamarin.com/api/type/Urho.Octree/): räumliche Partitionierung implementiert und beschleunigte Sichtbarkeit Abfragen. Ohne diese 3D können Objekte nicht gerendert werden.
-* [`PhysicsWorld`](https://developer.xamarin.com/api/type/Urho.Physics.PhysicsWorld/): physikalische Simulation implementiert. Physikalische Komponenten wie z. B. [ `RigidBody` ](https://developer.xamarin.com/api/type/Urho.Physics.RigidBody/) oder [ `CollisionShape` ](https://developer.xamarin.com/api/type/Urho.Physics.CollisionShape/) kann ohne diese nicht ordnungsgemäß funktionieren.
-* [`DebugRenderer`](https://developer.xamarin.com/api/type/Urho.DebugRenderer/): implementiert Debuggen Geometrie rendern.
+* [`Octree`](https://developer.xamarin.com/api/type/Urho.Octree/): implementiert räumliche Partitionierung und Sichtbarkeit, Abfragen beschleunigt. Ohne diese 3D können Objekte nicht gerendert werden.
+* [`PhysicsWorld`](https://developer.xamarin.com/api/type/Urho.Physics.PhysicsWorld/): Physiksimulation implementiert. Komponenten wie z. B. Physik [ `RigidBody` ](https://developer.xamarin.com/api/type/Urho.Physics.RigidBody/) oder [ `CollisionShape` ](https://developer.xamarin.com/api/type/Urho.Physics.CollisionShape/) kann ohne diese nicht ordnungsgemäß funktionieren.
+* [`DebugRenderer`](https://developer.xamarin.com/api/type/Urho.DebugRenderer/): implementiert Debuggen Geometry rendern.
 
-Gewöhnliche Komponenten wie [ `Light` ](https://developer.xamarin.com/api/type/Urho.Light), [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera) oder [ `StaticModel` ](https://developer.xamarin.com/api/type/Urho.StaticModel) dürfen nicht erstellt werden, direkt in die [ `Scene` ](https://developer.xamarin.com/api/type/Urho.Scene), sondern vielmehr in untergeordnete Knoten.
+Normale Komponenten wie z. B. [ `Light` ](https://developer.xamarin.com/api/type/Urho.Light), [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera) oder [`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel)
+sollte nicht erstellt werden, direkt in die [ `Scene` ](https://developer.xamarin.com/api/type/Urho.Scene), aber eher in untergeordnete Knoten.
 
-Die Bibliothek enthält eine Vielzahl von Komponenten, die Sie zu Ihrer Knoten, um diese lebendig werden lassen anfügen können: Benutzer sichtbaren Elemente (Modelle) Sounds starre Texte Kollision Formen Kameras Lichtquellen Partikel Emissionen und vieles mehr.
+Die Bibliothek enthält eine Vielzahl von Komponenten, die an den Knoten für die von ihnen zum Leben zu erwecken angefügt werden können: Benutzer sichtbare Elemente (Modelle), Sounds, rigidbodys, Kollisionen Formen, Kameras, Lichtquellen, Partikel korrekturemitter ab und vieles mehr.
 
 ### <a name="shapes"></a>Formen
 
-Zur Vereinfachung sind die verschiedenen Formen als einfache Knoten im Namespace Urho.Shapes verfügbar.  Dazu gehören Dialogfeldern, Bereichen, Kegel, Zylinder und Ebenen.
+Zur Vereinfachung sind die verschiedenen Formen als einfache Knoten im Namespace Urho.Shapes zur Verfügung.  Dazu gehören die Felder, die Kugeln, Kegel, Touren und Ebenen.
 
-### <a name="camera-and-viewport"></a>Kamera- und Viewport
+### <a name="camera-and-viewport"></a>Kamera und Viewport
 
-Genau wie das Licht Kameras sind Komponenten, daher Sie die Komponente an einem Knoten angefügt müssen, wird dies folgendermaßen:
+Genau wie das Licht, Kameras sind Komponenten, daher Sie die Komponente mit einem Knoten anfügen müssen, dies geschieht wie folgt aus:
 
 ```csharp
 var CameraNode = scene.CreateChild ("camera");
@@ -95,72 +96,72 @@ camera = CameraNode.CreateComponent<Camera>();
 CameraNode.Position = new Vector3 (0, 5, 0);
 ```
 
-Mit dieser Option können Sie eine Kamera erstellt haben und Sie haben die Kamera in 3D weltweit platziert, der nächste Schritt besteht darin zu informieren der `Application` dies die Kamera ist, die Sie verwenden möchten, müssen dies erfolgt durch den folgenden Code:
+Auf diese Weise haben Sie eine Kamera, und Sie haben die Kamera in der 3D-Welt platziert, der nächste Schritt besteht darin zu informieren die `Application` dies die Kamera ist, die Sie verwenden möchten, müssen dies erfolgt durch den folgenden Code:
 
 ```csharp
 Renderer.SetViewPort (0, new Viewport (Context, scene, camera, null))
 ```
 
-Und nun sollten Sie sehen die Ergebnisse der Erstellung des sein.
+Und jetzt sollten Sie sehen die Ergebnisse der Erstellung Ihrer sein.
 
-### <a name="identification-and-scene-hierarchy"></a>Identifikation und Szene Hierarchie
+### <a name="identification-and-scene-hierarchy"></a>Identifikation und einer Szene
 
-Im Gegensatz zum Knoten haben Komponenten keine Namen; Komponenten innerhalb der gleichen Knoten werden nur identifiziert, von deren Typ und Index in der Komponentenliste des Knotens, der in der Reihenfolge der Erstellung gefüllt ist, Sie können z. B. Abrufen der [ `Light` ](https://developer.xamarin.com/api/type/Urho.Light) -Komponente aus der `lightNode` Objekt wie oben beschrieben:
+Im Gegensatz zu Knoten haben die Komponenten nicht Namen. Komponenten innerhalb der gleichen Knoten werden nur identifiziert, nach deren Typ und Index in der Komponentenliste des Knotens, der in der Reihenfolge der Erstellung gefüllt ist, Sie können z. B. Abrufen der [ `Light` ](https://developer.xamarin.com/api/type/Urho.Light) -Komponente aus der `lightNode` Objekt höher wie folgt aus:
 
 ```csharp
 var myLight = lightNode.GetComponent<Light>();
 ```
 
-Außerdem erhalten Sie eine Liste aller Komponenten durch Abrufen der [ `Components` ](https://developer.xamarin.com/api/property/Urho.Node.Components/) Eigenschaft die zurückgibt, eine `IList<Component>` , die Sie verwenden können.
+Sie können auch eine Liste aller Komponenten abrufen, durch Abrufen der [ `Components` ](https://developer.xamarin.com/api/property/Urho.Node.Components/) -Eigenschaft die zurückgibt ein `IList<Component>` , die Sie verwenden können.
 
-Beim Erstellen, erhalten Knoten und Komponenten Szene globale ganzzahligen IDs. Sie können mit den Funktionen aus der Szene abgefragt werden [ `GetNode(uint id)` ](https://developer.xamarin.com/api/member/Urho.Scene.GetNode/p/System.UInt32/) und [ `GetComponent(uint id)` ](https://developer.xamarin.com/api/member/Urho.Scene.GetComponent/p/System.UInt32/). Dies ist wesentlich schneller als das z. B. rekursive Namen-basierte Szene Knoten Abfragen.
+Beim Erstellen, erhalten beide Knoten und Komponenten Szene globalen ganzzahligen IDs. Sie können mithilfe der Funktionen aus der Szene abgefragt werden [ `GetNode(uint id)` ](https://developer.xamarin.com/api/member/Urho.Scene.GetNode/p/System.UInt32/) und [ `GetComponent(uint id)` ](https://developer.xamarin.com/api/member/Urho.Scene.GetComponent/p/System.UInt32/). Dies ist wesentlich schneller, z. B. rekursive Szene Namen-basierte Knoten Abfragen ausführen.
 
-Es ist kein integriertes Konzept für eine Entität oder ein Spiel-Objekt. Vielmehr ist es bis zu dem Programmierer, die die Knotenhierarchie entscheiden und in die Knoten aus, die keine skriptgesteuerte Logik zu platzieren. Frei Verschieben von Objekten in 3D weltweit würde in der Regel als untergeordnete Elemente des Stammknotens erstellt werden. Knoten können erstellt werden, entweder mit oder ohne mit [ `CreateChild()` ](https://developer.xamarin.com/api/member/Urho.Node.CreateChild/p/System.String/Urho.CreateMode/System.UInt32/). Eindeutigkeit von Knotennamen wird nicht erzwungen.
+Es gibt kein integriertes Konzept für eine Entität oder einem spielobjekt. Vielmehr ist es bis zu dem Programmierer entscheiden, die Knotenhierarchie und in welchen Knoten alle geskriptete Logik zu platzieren. Free: Verschieben von Objekten in der 3D-Welt würde in der Regel als untergeordnete Elemente des Stammknotens erstellt werden. Knoten können erstellt werden, entweder mit oder ohne mit [ `CreateChild()` ](https://developer.xamarin.com/api/member/Urho.Node.CreateChild/p/System.String/Urho.CreateMode/System.UInt32/). Eindeutigkeit der Namen der Knoten wird nicht erzwungen.
 
-Wenn einige hierarchische Komposition ist, ist es empfohlen (und tatsächlich erforderlich, da Komponenten nicht ihren eigenen 3D Transformationen verfügen), einen untergeordneten Knoten zu erstellen.
+Immer einige hierarchische Komposition vorhanden ist, es wird empfohlen (und sogar erforderlich sein, da die Komponenten keine eigene 3D-Transformationen) zum Erstellen eines untergeordneten Knotens.
 
-Z. B. wenn ein Zeichen ein Objekt in seine Hand gedrückt wurde, müssen das Objekt einen eigene Knoten aktivieren, der das Zeichen Hand Bone übergeordnet werden würde (auch eine [ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/)).  Die Ausnahme ist die physikalische [ `CollisionShape` ](https://developer.xamarin.com/api/type/Urho.Physics.CollisionShape), was offsetted und gedreht einzeln in Bezug auf den Knoten sein kann.
+Z. B. wenn ein Zeichen ein Objekt in der Hand gehalten hat, müssen das Objekt einen eigene Knoten, der des Zeichens Hand Knochenarbeit übergeordnet werden würde (auch eine [ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/)).  Die Ausnahme ist die Physik [ `CollisionShape` ](https://developer.xamarin.com/api/type/Urho.Physics.CollisionShape), was offsetted und gedreht einzeln in Bezug auf den Knoten sein kann.
 
-Beachten Sie, dass [ `Scene` ](https://developer.xamarin.com/api/type/Urho.Node/)der Transformation wird absichtlich als Optimierung ignoriert, bei der Berechnung der Welt abgeleitete Transformationen der untergeordneten Knoten, so dass die Änderung wirkt sich nicht, und es sollten bleiben unverändert (Position Ursprungs, die keine Drehung besitzen keine Skalierung.)
+Beachten Sie, dass [ `Scene` ](https://developer.xamarin.com/api/type/Urho.Node/)der Besitzer der Transformation wird absichtlich als Optimierung ignoriert, bei der Berechnung der Welt abgeleitete Transformationen der untergeordneten Knoten, so dass die Änderung wirkt sich nicht aus, und es sollte bleiben unverändert (die Position am Ursprung keine Drehung keine Skalierung.)
 
-[`Scene`](https://developer.xamarin.com/api/type/Urho.Node/) Knoten können kostenlos erneut übergeordnet werden. Im Gegensatz dazu gehören Komponenten immer auf den Knoten, den sie an, den und können nicht zwischen Knoten verschoben werden. Knoten und Komponenten ermöglichen eine [ `Remove()` ](https://developer.xamarin.com/api/member/Urho.Node.Remove()/) Funktion, um dies zu erreichen ohne das übergeordnete Element durchlaufen. Sobald der Knoten entfernt wurde, sind keine Vorgänge auf dem Knoten oder die betreffende Komponente nach dem Aufrufen dieser Funktion sicher.
+[`Scene`](https://developer.xamarin.com/api/type/Urho.Node/) Knoten können frei neu zugeordnet werden. Im Gegensatz dazu gehören Komponenten stets auf den Knoten, den sie an, den und Sie können nicht zwischen Knoten verschoben werden. Geben Sie sowohl die Knoten als auch die Komponenten einer [ `Remove()` ](https://developer.xamarin.com/api/member/Urho.Node.Remove()/) Funktion, um dies zu erreichen, ohne das übergeordnete Element durchlaufen. Sobald der Knoten entfernt wird, sind keine Vorgänge auf dem Knoten oder die betreffende Komponente nach dem Aufruf dieser Funktion sicher.
 
-Es ist auch möglich, erstellen Sie eine `Node` , die nicht zu einer Szene gehört. Dies ist nützlich, z. B. mit einer Kamera verschieben in eine Szene, die geladen werden oder gespeichert, da die anschließend die Kamera wird nicht zusammen mit der tatsächlichen Szene gespeichert werden und wird nicht zerstört werden, wenn die Szene geladen wird. Beachten Sie jedoch, dass diese Komponenten nicht ordnungsgemäß erstellen Geometry, physikalische oder Skript-Komponenten zu einem Knoten getrennt und dann später in eine Szene verschieben verursacht.
+Es ist auch möglich, Sie erstellen eine `Node` , die nicht zu einer Szene gehört. Dies ist nützlich, z. B. mit einer Kamera, die in einer Szene, die geladen werden oder gespeichert haben, verschieben, da dann die Kamera wird nicht zusammen mit der tatsächlichen Szene gespeichert werden und wird nicht zerstört werden, wenn die Szene geladen wird. Beachten Sie jedoch, dass diese Komponenten nicht ordnungsgemäß funktioniert verursacht Geometry "," Physik "oder" Skript Komponenten zu einer nicht angefügten Knoten erstellen und dann später in einer Szene verschieben.
 
-### <a name="scene-updates"></a>Szene updates
+### <a name="scene-updates"></a>Updates der Szene
 
-Eine Szene, deren Updates sind aktiviert (Standard) werden bei jeder Iteration Hauptschleife automatisch aktualisiert werden.  Der Anwendungsverzeichnis [ `SceneUpdate` ](https://developer.xamarin.com/api/event/Urho.Scene.SceneUpdate/) -Ereignishandler aufgerufen wird.
+Eine Szene, deren Updates sind aktiviert (Standard) werden bei jeder Iteration der Hauptschleife automatisch aktualisiert werden.  Der Anwendung [ `SceneUpdate` ](https://developer.xamarin.com/api/event/Urho.Scene.SceneUpdate/) -Ereignishandler wird aufgerufen, darauf.
 
-Knoten und Komponenten können durch die Deaktivierung der Szene Update ausgeschlossen werden, finden Sie unter [ `Enabled` ](https://developer.xamarin.com/api/member/Urho.Node.Enabled).  Das Verhalten hängt davon ab, auf die jeweilige Komponente, z. B. das Deaktivieren einer zeichenbaren Komponente auch; vereinfacht jedoch nicht sichtbar, während schaltet er das Deaktivieren einer Quellkomponente sound stumm. Wenn ein Knoten deaktiviert ist, werden alle zugehörigen Komponenten behandelt, als unabhängig von ihren eigenen Zustand aktivieren/deaktivieren deaktiviert.
+Knoten und Komponenten können von der Szene Update ausgeschlossen werden, indem Sie Sie deaktivieren, finden Sie unter [ `Enabled` ](https://developer.xamarin.com/api/member/Urho.Node.Enabled).  Das Verhalten hängt davon ab, auf die jeweilige Komponente, sondern z. B. das Deaktivieren einer drawable-Komponente auch es nicht sichtbar ist, während eine solide Quellkomponente deaktivieren sie schaltet stumm. Wenn ein Knoten deaktiviert ist, werden alle zugehörigen Komponenten behandelt, als unabhängig von ihren eigenen aktivieren/deaktivieren-Status deaktiviert.
 
 ## <a name="adding-behavior-to-your-components"></a>Hinzufügen des Verhaltens von Komponenten
 
-Die beste Möglichkeit, ein Spiel Struktur besteht darin, von Ihrer eigenen Komponente, die ein Akteur oder ein Element auf das Spiel zu kapseln.  Dadurch wird das Feature Self-Service enthalten, aus den Objekten verwendet, um ihn zum alten Verhalten anzuzeigen.
+Die beste Möglichkeit, Ihr Spiel Struktur ist, stellen eine eigene Komponente, die ein Akteur oder ein Element auf Ihr Spiel zu kapseln.  Dadurch wird die Funktion als eigenständige, über die Ressourcen, um das Verhalten angezeigt.
 
-Die einfachste Möglichkeit zum Hinzufügen von Verhalten für eine Komponente ist die Verwendung von Aktionen, die Anweisungen sind, können Sie die Warteschlange und, die mit c# asynchrone Programmierung kombinieren.  Dies ermöglicht das Verhalten für die Komponente zu sehr hohen Grad an und macht es einfacher zu verstehen, was geschieht.
+Die einfachste Möglichkeit zum Hinzufügen des Verhaltens zu einer Komponente ist die Verwendung von Aktionen, die Anweisungen sind, können Sie in die Warteschlange und kombinieren Sie dies mit c# Async-Programmierung.  Dadurch können das Verhalten für die Komponente, sehr hohe sein und ist es einfacher zu verstehen, was passiert.
 
-Alternativ können Sie steuern, was genau an die Komponente geschieht durch Aktualisieren die Komponenteneigenschaften für jeden Zeitrahmen (im Abschnitt framebasierte Verhalten erläutert).
+Alternativ können Sie steuern, was genau an die Komponente geschieht durch Aktualisieren Ihrer Komponenteneigenschaften auf die einzelnen Frames (im Abschnitt framebasierte Verhalten erläutert).
 
-### <a name="actions"></a>Vorgänge
+### <a name="actions"></a>Aktionen
 
-Sie können ganz einfach mit Aktionen Knoten Verhalten hinzufügen.  Aktionen können verschiedene Eigenschaften des Knotens ändern und führen Sie sie über einen Zeitraum oder Wiederholen sie eine Anzahl von Malen mit einer bestimmten Animation Kurve.
+Sie können ganz einfach über Aktionen Knoten Verhalten hinzufügen.  Aktionen können verschiedene Eigenschaften des Knotens ändern und führen Sie sie über eine bestimmte Zeitspanne oder Wiederholen diese in eine Anzahl von Malen mit einer bestimmten Animation-Kurve.
 
-Betrachten Sie beispielsweise einen Knoten "Cloud" auf der Szene, können Sie es ausblenden, wie folgt:
+Betrachten Sie beispielsweise einen Knoten "Cloud" auf die Szene, können Sie es eingeblendet, wie folgt:
 
 ```csharp
 await cloud.RunActionsAsync (new FadeOut (duration: 3))
 ```
 
-Aktionen sind unveränderlich-Objekte, die Sie die Aktion für verschiedene Objekte driving wiederverwenden können.
+Aktionen sind unveränderliche Objekte an, dem Sie die Aktion zum Steuern von verschiedenen Objekten wiederverwenden können.
 
-Eine allgemeine Vorgehensweise besteht darin, eine Aktion erstellen, die umgekehrte Vorgang ausführt:
+Eine allgemeine Vorgehensweise besteht darin, eine Aktion zu erstellen, die den umgekehrten Vorgang ausführt:
 
 ```csharp
 var gotoExit = new MoveTo (duration: 3, position: exitLocation);
 var return = gotoExit.Reverse ();
 ```
 
-Im folgende Beispiel wird das Objekt für Sie über einen Zeitraum von drei Sekunden ausgeblendet wird.  Sie können auch eine Aktion ausführen nach dem anderen, z. B. Sie könnten zuerst die Cloud verschieben und blenden Sie sie:
+Im folgende Beispiel wird das Objekt für die Sie über einen Zeitraum von drei Sekunden ausgeblendet wird.  Sie können auch eine Aktion ausführen und z. B. Sie könnten zunächst die Cloud verschieben und dann ausblenden:
 
 ```csharp
 await cloud.RunActionsAsync (
@@ -168,7 +169,7 @@ await cloud.RunActionsAsync (
     new FadeOut (duration: 3));
 ```
 
-Wenn Sie beide Aktionen an, die zur gleichen Zeit stattfinden soll, können Sie verwenden Sie die parallele Aktion und geben Sie alle Aktionen gewünschten parallel ausgeführt:
+Wenn beide Aktionen zur selben Zeit durchgeführt werden sollen, können Sie verwenden Sie die parallele Aktion, und geben alle die gewünschten Aktionen parallel ausgeführt:
 
 ```csharp
   await cloud.RunActionsAsync (
@@ -179,27 +180,27 @@ Wenn Sie beide Aktionen an, die zur gleichen Zeit stattfinden soll, können Sie 
 
 Im obigen Beispiel wird die Cloud verschieben und gleichzeitig ausblenden.
 
-Sie werden feststellen, dass diese c# mithilfe "await" können Sie das Verhalten linear vorstellen, Sie erzielen möchten.
+Sie werden feststellen, dass diese C#-verwenden "await", können Sie das Verhalten linear Denken Sie erreichen möchten.
 
 ### <a name="basic-actions"></a>Grundlegende Aktionen
 
-Dies sind die Aktionen, die in UrhoSharp unterstützt:
+Dies sind die Aktionen, die in von UrhoSharp unterstützt:
 
 * Verschieben von Knoten: [ `MoveTo` ](https://developer.xamarin.com/api/type/Urho.Actions.MoveTo), [ `MoveBy` ](https://developer.xamarin.com/api/type/Urho.Actions.MoveBy), [ `Place` ](https://developer.xamarin.com/api/type/Urho.Actions.Place), [ `BezierTo` ](https://developer.xamarin.com/api/type/Urho.Actions.BezierTo), [ `BezierBy` ](https://developer.xamarin.com/api/type/Urho.Actions.BezierBy) , [`JumpTo`](https://developer.xamarin.com/api/type/Urho.Actions.JumpTo), [`JumpBy`](https://developer.xamarin.com/api/type/Urho.Actions.JumpBy)
 * Drehen von Knoten: [ `RotateTo` ](https://developer.xamarin.com/api/type/Urho.Actions.RotateTo), [`RotateBy`](https://developer.xamarin.com/api/type/Urho.Actions.RotateBy)
-* Skalierung Knoten: [ `ScaleTo` ](https://developer.xamarin.com/api/type/Urho.Actions.ScaleTo), [`ScaleBy`](https://developer.xamarin.com/api/type/Urho.Actions.ScaleBy)
-* Ausblenden von Knoten: [ `FadeIn` ](https://developer.xamarin.com/api/type/Urho.Actions.FadeIn), [ `FadeTo` ](https://developer.xamarin.com/api/type/Urho.Actions.FadeTo), [ `FadeOut` ](https://developer.xamarin.com/api/type/Urho.Actions.FadeOut), [ `Hide` ](https://developer.xamarin.com/api/type/Urho.Actions.Hide), [`Blink`](https://developer.xamarin.com/api/type/Urho.Actions.Blink)
+* Skalierung von Knoten: [ `ScaleTo` ](https://developer.xamarin.com/api/type/Urho.Actions.ScaleTo), [`ScaleBy`](https://developer.xamarin.com/api/type/Urho.Actions.ScaleBy)
+* Überblenden von Knoten: [ `FadeIn` ](https://developer.xamarin.com/api/type/Urho.Actions.FadeIn), [ `FadeTo` ](https://developer.xamarin.com/api/type/Urho.Actions.FadeTo), [ `FadeOut` ](https://developer.xamarin.com/api/type/Urho.Actions.FadeOut), [ `Hide` ](https://developer.xamarin.com/api/type/Urho.Actions.Hide), [`Blink`](https://developer.xamarin.com/api/type/Urho.Actions.Blink)
 * Farben: [ `TintTo` ](https://developer.xamarin.com/api/type/Urho.Actions.TintTo), [`TintBy`](https://developer.xamarin.com/api/type/Urho.Actions.TintBy)
-* Zeitpunkt dar: [ `Hide` ](https://developer.xamarin.com/api/type/Urho.Actions.Hide), [ `Show` ](https://developer.xamarin.com/api/type/Urho.Actions.Show), [ `Place` ](https://developer.xamarin.com/api/type/Urho.Actions.Place), [ `RemoveSelf` ](https://developer.xamarin.com/api/type/Urho.Actions.RemoveSelf), [`ToggleVisibility`](https://developer.xamarin.com/api/type/Urho.Actions.ToggleVisibility)
+* Zeitpunkt: [ `Hide` ](https://developer.xamarin.com/api/type/Urho.Actions.Hide), [ `Show` ](https://developer.xamarin.com/api/type/Urho.Actions.Show), [ `Place` ](https://developer.xamarin.com/api/type/Urho.Actions.Place), [ `RemoveSelf` ](https://developer.xamarin.com/api/type/Urho.Actions.RemoveSelf), [`ToggleVisibility`](https://developer.xamarin.com/api/type/Urho.Actions.ToggleVisibility)
 * Schleifen: [ `Repeat` ](https://developer.xamarin.com/api/type/Urho.Actions.Repeat), [ `RepeatForever` ](https://developer.xamarin.com/api/type/Urho.Actions.RepeatForever), [`ReverseTime`](https://developer.xamarin.com/api/type/Urho.Actions.ReverseTime)
 
-Andere erweiterten Funktionen enthalten, die Kombination der [ `Spawn` ](https://developer.xamarin.com/api/type/Urho.Actions.Spawn) und [ `Sequence` ](https://developer.xamarin.com/api/type/Urho.Actions.Sequence) Aktionen.
+Die Kombination aus den anderen erweiterten Features zählen die [ `Spawn` ](https://developer.xamarin.com/api/type/Urho.Actions.Spawn) und [ `Sequence` ](https://developer.xamarin.com/api/type/Urho.Actions.Sequence) Aktionen.
 
-### <a name="easing---controlling-the-speed-of-your-actions"></a>Einfachere - Steuern der Geschwindigkeit Ihrer Aktionen
+### <a name="easing---controlling-the-speed-of-your-actions"></a>Beschleunigung: Steuern der Geschwindigkeit Ihrer Aktionen
 
-Einfachere ist eine Möglichkeit, die leitet die Möglichkeit, dass die Animation erweitern wird und sie können Animationen viel mehr angenehmeren.  Standardmäßig Ihre Aktionen verfügt über eine lineare Verhalten, z. B. eine [ `MoveTo` ](https://developer.xamarin.com/api/type/Urho.Actions.MoveTo) Aktion müsste eine sehr automatische Verschiebung.  Sie können Ihre Aktionen in einer Beschleunigung Aktion so ändern Sie das Verhalten, z. B. würde langsam Starten der datenverschiebung, zu beschleunigen und das Ende langsam erreichen umschließen ([`EasyInOut`](https://developer.xamarin.com/api/type/Urho.Actions.EasyInOut)).
+Einfachere ist eine Möglichkeit, die leitet die Möglichkeit, dass die Animation wird erweitern, und sie können Animationen sehr viel angenehmer.  Standardmäßig Ihre Aktionen haben einen linearen Verhalten, z. B. eine [ `MoveTo` ](https://developer.xamarin.com/api/type/Urho.Actions.MoveTo) Aktion müsste eine sehr robotic Verschiebung.  Sie können Ihre Aktionen in einer Beschleunigung-Aktion zum Ändern des Verhaltens, z. B. eine, die langsam Starten der datenverschiebung, beschleunigen und langsam aufgebraucht umschließen ([`EasyInOut`](https://developer.xamarin.com/api/type/Urho.Actions.EasyInOut)).
 
-Dazu müssen Sie eine bestehende Aktion in eine Beschleunigungsfunktionen Aktion, z. B. wrapping:
+Dazu müssen Sie eine vorhandene Aktion in eine Ads-Aktion, z. B. umschließen:
 
 ```csharp
 await cloud.RunActionAsync (
@@ -207,14 +208,14 @@ await cloud.RunActionAsync (
      new MoveTo (duration: 3, position: new Vector (0,0,15)), rate:1))
 ```
 
-Es gibt viele Beschleunigungsfunktionen Modi, das folgende Diagramm zeigt die verschiedenen Beschleunigungsfunktionen Typen und deren Verhalten auf den Wert des Objekts, das sie über den Zeitraum von Anfang bis Ende steuern:
+Es gibt viele Ads-Modi, das folgende Diagramm zeigt die verschiedenen Beschleunigungstypen und deren Verhalten auf dem Wert des Objekts, das sie über den Zeitraum, von Anfang bis Ende steuern, sind:
 
-![Einfachere Modi](using-images/easing.png "dieses Diagramm zeigt die verschiedenen Beschleunigungsfunktionen Typen und deren Verhalten auf den Wert des Objekts, das sie für den Zeitraum steuern sind")
+![Vereinfachen von Modi](using-images/easing.png "dieses Diagramm zeigt die verschiedenen Beschleunigungstypen und deren Verhalten auf dem Wert des Objekts, das sie über den Zeitraum steuern sind")
 
-### <a name="using-actions-and-async-code"></a>Verwenden von Aktionen und asynchronem Code
+### <a name="using-actions-and-async-code"></a>Verwenden von Aktionen und Async-Code
 
-In Ihrem [ `Component` ](https://developer.xamarin.com/api/type/Urho.Component/) -Unterklasse, sollten Sie eine asynchrone Methode, die Ihre Komponentenverhalten vorbereitet und die Funktionalität für ihn Laufwerke einführen.
-Und Sie diese mithilfe der C#-Methode aufrufen würde `await` Schlüsselwort von einem anderen Teil des Programms, entweder Ihre `Application.Start` Methode oder als Antwort auf einen Benutzer oder Story zeigen Sie in der Anwendung.
+In Ihrer [ `Component` ](https://developer.xamarin.com/api/type/Urho.Component/) -Unterklasse, sollten Sie eine asynchrone Methode, die bereitet des Verhaltens der Komponente und die Funktionalität von Festplatten für sie einführen.
+Und Sie diese mithilfe der C#-Methode aufrufen, würden `await` Schlüsselwort aus einem anderen Teil des Programms entweder Ihre `Application.Start` Methode oder als Reaktion auf einen Benutzer oder die Story zeigen Sie in Ihrer Anwendung.
 
 Zum Beispiel:
 
@@ -264,13 +265,13 @@ class Robot : Component {
 }
 ```
 
-In der `Launch` der oben genannten drei Aktionen Methoden gestartet werden: des Roboters stammen, in der Szene haben, diese Aktion wird die Position des Knotens über einen Zeitraum von 0,6 Sekunden ändern.  Da dies eine Async-Option ist, dies erfolgt gleichzeitig als die nächste Anweisung, die aufgerufen wird, `MoveRandomly`.  Diese Methode wird die Position des Robots parallel zu einem zufälligen Ort geändert werden.  Dies wird erreicht, indem Sie zwei Verrunden Aktionen, die Verschiebung an einen neuen Speicherort ausführen, und kehren zur ursprünglichen positionieren, und wiederholen Sie diesen Vorgang solange des Roboters aktiv ist.  Und um Dinge interessanter zu machen, des Roboters wird beibehalten behandeln gleichzeitig.  Das Behandeln von beginnt erst alle 0,1 Sekunden.
+In der `Launch` der oben genannten drei Aktionen Methoden gestartet werden: der Roboter in der Szene stammt, diese Aktion wirkt sich die Position des Knotens über einen Zeitraum von 0,6 Sekunden.  Da eine Async-Option verwendet wird, dies erfolgt gleichzeitig als die nächste Anweisung wird der Aufruf zum `MoveRandomly`.  Diese Methode wird die Position des Roboters parallel auf einem zufälligen Ort geändert werden.  Dies erfolgt durch zwei Verrunden Aktionen ausführen, die Bewegung auf einem neuen Speicherort und kehre zur ursprünglichen positionieren, und wiederholen Sie diesen Vorgang so lange der Roboter aktiv bleibt.  Und um die Dinge etwas interessanter zu machen, die Robots wird beibehalten Schießen gleichzeitig.  Die Schießen wird nur 0,1 Sekunden gestartet.
 
 ### <a name="frame-based-behavior-programming"></a>Verhalten framebasierte-Programmierung
 
-Wenn Sie das Verhalten der Komponente auf einen Frame nach dem anderen Basis anstelle von Aktionen steuern möchten, was Sie tun ist, überschreiben die [ `OnUpdate` ](https://developer.xamarin.com/api/member/Urho.Component.OnUpdate) Methode Ihrer [ `Component` ](https://developer.xamarin.com/api/type/Urho.Component) Unterklasse.  Diese Methode wird einmal pro Frame aufgerufen und wird aufgerufen, nur dann, wenn Sie die ReceiveSceneUpdates-Eigenschaft auf "true" festlegen.
+Wenn Sie das Verhalten der Komponente pro Frame für Frame anstelle von Aktionen steuern möchten, gehen Sie wie besteht im Überschreiben der [ `OnUpdate` ](https://developer.xamarin.com/api/member/Urho.Component.OnUpdate) Methode Ihrer [ `Component` ](https://developer.xamarin.com/api/type/Urho.Component) Unterklasse.  Diese Methode wird einmal pro Frame aufgerufen, und es wird nur aufgerufen, wenn Sie die ReceiveSceneUpdates-Eigenschaft auf "true" festlegen.
 
-Im folgenden wird gezeigt, wie zum Erstellen einer `Rotator` Komponente, die Sie dann auf einen Knoten zugeordnete bewirkt, den Knoten zum Drehen dass:
+Das folgende Beispiel zeigt, wie Sie erstellen eine `Rotator` Komponente, die klicken Sie dann auf einen Knoten, wodurch den Knoten zum Drehen verbunden ist:
 
 ```csharp
 class Rotator : Component {
@@ -290,7 +291,7 @@ class Rotator : Component {
 }
 ```
 
-Und wie Sie diese Komponente auf einen Knoten anfügen möchten:
+Und wie Sie diese Komponente zu einem Knoten anfügen würden:
 
 ```csharp
 Node boxNode = new Node();
@@ -298,11 +299,11 @@ var rotator = new Rotator() { RotationSpeed = rotationSpeed };
 boxNode.AddComponent (rotator);
 ```
 
-### <a name="combining-styles"></a>Kombinieren von Stilen
+### <a name="combining-styles"></a>Kombinieren von Formatvorlagen
 
-Können Sie das asynchrone/Action-basierte Modell für den Großteil des Verhaltens also hervorragend für auslösen und vergessen Programmierstils nach Art der Programmierung, aber Sie können auch eine Feinabstimmung durchzuführen Komponentenverhalten um auch einige Update-Code für jeden Zeitrahmen auszuführen.
+Können Sie das Async/Aktion-basierten Modell zum Programmieren das Verhalten der eignet sich für Fire-and-forget-Stil, der Programmierung hervorragend, aber Sie können auch Optimieren Ihrer Komponente zu Verhalten führen Sie auch Code Update auf die einzelnen Frames.
 
-Angenommen, in der Demo SamplyGame dient der `Enemy` Klasse codiert, die Aktionen der grundlegende Verhalten verwendet, aber zusätzlich wird gewährleistet, dass die Komponenten in Richtung der Benutzer verweisen, durch Festlegen der Richtung des Knotens ohne `Node.LookAt`:
+Z. B. in der Demo SamplyGame Hiermit wird der `Enemy` Klasse codiert, die Aktionen der grundlegende Verhalten verwendet, aber es wird auch sichergestellt, dass die Komponenten zum Benutzer hin verweisen, durch Festlegen der Richtung des Knotens mit `Node.LookAt`:
 
 ```csharp
     protected override void OnUpdate(SceneUpdateEventArgs args)
@@ -317,9 +318,9 @@ Angenommen, in der Demo SamplyGame dient der `Enemy` Klasse codiert, die Aktione
 
 ## <a name="loading-and-saving-scenes"></a>Laden und Speichern von Szenen
 
-Im Hintergrund werden geladen und im XML-Format gespeichert; finden Sie unter Funktionen [ `LoadXml` ](https://developer.xamarin.com/api/member/Urho.Scene.LoadXml) und [ `SaveXML()` ](https://developer.xamarin.com/api/member/Urho.Scene.SaveXml). Wenn eine Szene geladen wird, wird zunächst alle vorhandener Inhalt (untergeordnete Knoten und Komponenten) entfernt. Knoten und Komponenten, die mit temporären markiert sind die `Temporary` Eigenschaft wird nicht gespeichert werden. Der Serialisierer verarbeitet alle integrierten Komponenten und Eigenschaften jedoch nicht intelligent genug, um benutzerdefinierte Eigenschaften als auch in Ihrer Komponente Unterklassen definierten Felder zu behandeln. Jedoch gibt es zwei virtuelle Methoden dafür:
+Im Hintergrund geladen, und im XML-Format gespeichert werden können; finden Sie unter den Funktionen [ `LoadXml` ](https://developer.xamarin.com/api/member/Urho.Scene.LoadXml) und [ `SaveXML()` ](https://developer.xamarin.com/api/member/Urho.Scene.SaveXml). Wenn eine Szene geladen wird, wird zunächst alle vorhandenen Inhalte in (untergeordnete Knoten und Komponenten) entfernt. Knoten und Komponenten, die mit temporären markiert sind die `Temporary` Eigenschaft wird nicht gespeichert werden. Das Serialisierungsprogramm behandelt alle integrierten Komponenten und Eigenschaften, aber es ist nicht intelligent genug, um benutzerdefinierte Eigenschaften als auch in Ihrer Unterklassen der Komponente definierten Felder zu behandeln. Jedoch stellt zwei virtuelle Methoden dafür bereit:
 
-* [`OnSerialize`](https://developer.xamarin.com/api/member/Urho.Component.OnSerialize) wo Sie Sie benutzerdefinierte Status für die Serialisierung registrieren
+* [`OnSerialize`](https://developer.xamarin.com/api/member/Urho.Component.OnSerialize) wo Sie Sie benutzerdefinierte Zustände für die Serialisierung registrieren
 
 * [`OnDeserialized`](https://developer.xamarin.com/api/member/Urho.Component.OnDeserialize) in dem Sie Ihre gespeicherte benutzerdefinierte Status abrufen können.
 
@@ -354,15 +355,15 @@ class MyComponent : Component {
 }
 ```
 
-### <a name="object-prefabs"></a>Objekt Prefabs
+### <a name="object-prefabs"></a>Objekt prefabs (Vorlagen)
 
-Nur beim Laden oder speichern die gesamte Szenen ist nicht flexibel genug für Spiele, bei denen neue Objekte dynamisch erstellt werden müssen. Andererseits, werden komplexe Objekte erstellen und deren Eigenschaften im Code auch zeitraubend sein. Aus diesem Grund ist es auch möglich, einen Knoten der Szene speichern seiner untergeordneten Knoten, die Komponenten und die Attribute enthalten. Diese können später bequem als Gruppe geladen werden.  Gespeicherte Objekt wird häufig als eine Prefab bezeichnet. Hierfür gibt es drei Möglichkeiten:
+Nur Laden oder speichern die gesamte Szenen ist nicht flexibel genug für Spiele, in denen neue Objekte dynamisch erstellt werden müssen. Auf der anderen Seite werden komplexe Objekte erstellen und Festlegen ihrer Eigenschaften im Code auch mühsam sein. Aus diesem Grund ist es auch möglich, einen szeneknoten speichern Sie, der zugehörigen untergeordneten Knoten, die Komponenten und die Attribute enthält. Diese können später bequem als Gruppe geladen werden.  Eine solche gespeicherte Objekt wird häufig als eines prefabs bezeichnet. Hierfür gibt es drei Möglichkeiten:
 
-- Im Code durch Aufrufen von [ `Node.SaveXml` ](https://developer.xamarin.com/api/member/Urho.Node.SaveXml) auf dem Knoten
-- In der Editor den Knoten im Hierarchiefenster auswählen und "speichern, indem Knoten als" über das Menü "Datei".
-- Mit dem Befehl "Knoten" in `AssetImporter`, speichert der Szene-Knotenhierarchie und alle Modelle in der Eingabe-Medienobjekts (z. b. eine Collada-Datei)
+- Im Code durch den Aufruf [ `Node.SaveXml` ](https://developer.xamarin.com/api/member/Urho.Node.SaveXml) auf dem Knoten
+- Im Editor durch Auswahl des Knotens in das Fenster "Aufrufhierarchie" und "Save Knoten als" über das Menü "Datei".
+- Mit dem Befehl "Node" in `AssetImporter`, die speichert der szenenhierarchie für Knoten und alle Modelle enthalten im eingabeasset (z. b. eine Collada-Datei)
 
-Rufen Sie zum Instanziieren des gespeicherten Knotens in eine Szene [ `InstantiateXml()` ](https://developer.xamarin.com/api/member/Urho.Scene.InstantiateXml). Der Knoten wird als untergeordnetes Element der Szene erstellt werden, aber es kann kostenlos erneut danach übergeordnet werden. Position und Drehung zum Platzieren des Knotens angegeben werden müssen. Der folgende Code veranschaulicht, wie eine Prefab instanziieren `Ninja.xm` eine Szene mit der gewünschten Position und Drehung:
+Aufrufen, um den gespeicherten Knoten in einer Szene zu instanziieren, [ `InstantiateXml()` ](https://developer.xamarin.com/api/member/Urho.Scene.InstantiateXml). Der Knoten als untergeordnetes Element der Szene erstellt werden, aber es kann kostenlos erneut danach übergeordnet werden. Position und Drehung für das Platzieren des Knotens müssen angegeben werden. Der folgende Code zeigt, wie zum Instanziieren eines prefabs `Ninja.xm` zu einer Szene mit der gewünschten Position und Drehung:
 
 ```csharp
 var prefabPath = Path.Combine (FileSystem.ProgramDir,"Data/Objects/Ninja.xml");
@@ -375,9 +376,9 @@ using (var file = new File(Context, prefabPath, FileMode.Read))
 
 ## <a name="events"></a>Ereignisse
 
-UrhoObjects Auslösen einer Anzahl von Ereignissen, diese werden als C#-Ereignisse eingeblendet, in den verschiedenen Klassen, die sie generieren.  Zusätzlich zu den c#-Basis Ereignismodell, es ist auch möglich, verwenden Sie eine der `SubscribeToXXX` Methoden, mit denen Sie zum Abonnieren und eine abonnementtoken beibehalten, die später können Sie kündigen des Abonnements.  Der Unterschied ist, dass erstere können viele Aufrufer zu abonnieren, bei dem zweiten Ausdruck nur erlaubt es einem, jedoch ermöglicht der nützlicher Lambda-Stil für eine Methode verwendet werden soll, und noch, ermöglichen die einfache Entfernen des Abonnements.  Sie schließen sich gegenseitig aus.
+UrhoObjects Auslösen einer Anzahl von Ereignissen, diese werden als C#-Ereignisse aufgeführt, auf die verschiedenen Klassen, die sie generieren.  Zusätzlich zu den C# -Code-Basis Ereignismodell, es ist auch möglich, verwenden Sie eine der `SubscribeToXXX` Methoden, mit denen Sie zum Abonnieren und eine abonnementtoken beibehalten, die später können Sie das Abonnement kündigen.  Der Unterschied besteht darin, dass Erstere ermöglicht viele Aufrufe zum abonnieren, während das zweite Argument nur ermöglicht, ermöglicht jedoch der nützlicher Lambda-Stil-Ansatz verwendet werden soll, und kann noch, einfaches Entfernen des Abonnements.  Sie schließen sich gegenseitig aus.
 
-Wenn Sie ein Ereignis abonnieren, müssen Sie eine Methode bereitstellen, die ein Argument mit den entsprechenden Ereignisargumente.
+Wenn Sie ein Ereignis abonnieren, müssen Sie eine Methode bereitstellen, die ein Argument mit den entsprechenden Ereignisargumenten verwendet.
 
 Dies ist z. B. wie Sie einer Maustaste ausgelöste Ereignis abonnieren:
 
@@ -393,7 +394,7 @@ void HandleMouseButtonDown(MouseButtonDownEventArgs args)
 }
 ```
 
-Mit Lambda-Format:
+Mit Lambda-Style:
 
 ```csharp
 public void override Start ()
@@ -404,7 +405,7 @@ public void override Start ()
 }
 ```
 
-Manchmal möchten Sie den Empfang von Benachrichtigungen, für das Ereignis in diesen Fällen speichern den Rückgabewert des Aufrufs von `SubscribeTo` -Methode, und der Unsubscribe-Methode dafür aufrufen:
+Sie möchten manchmal keine Benachrichtigungen mehr empfangen, für das Ereignis in diesen Fällen speichern den Rückgabewert aus dem Aufruf von `SubscribeTo` -Methode, und rufen die Methode "Unsubscribe" auf:
 
 ```csharp
 Subscription mouseSub;
@@ -418,11 +419,11 @@ public void override Start ()
 }
 ```
 
-Der Parameter erhalten vom Ereignishandler ist eine stark typisierte Argumente Ereignisklasse, die speziell für jedes Ereignis werden und die Ereignisnutzlast enthält.
+Der Parameter empfangen, die vom Ereignishandler ist eine stark typisierte Ereignisargumentklasse, die speziell für jedes Ereignis werden und enthält die Nutzlast des Ereignisses.
 
-## <a name="responding-to-user-input"></a>Reagieren auf Benutzereingaben
+## <a name="responding-to-user-input"></a>Reagieren auf Benutzereingabe
 
-Sie können verschiedene Ereignisse aus, wie Tastatureingaben unten abonnieren durch Abonnieren des Ereignisses, und Antworten auf die Eingabe, die übermittelt werden:
+Sie können unten auf verschiedene Ereignisse wie Tastatureingaben abonnieren, durch das Abonnieren des Ereignisses und reagieren mit der Eingabe übermittelt werden:
 
 ```csharp
 Start ()
@@ -437,7 +438,7 @@ void HandleKeyDown (KeyDownEventArgs arg)
 }
 ```
 
-Aber in vielen Szenarien, die auf den aktuellen Status der Schlüssel kontrolliert werden, wenn sie werden aktualisiert, und aktualisieren Sie den Code entsprechend der Szene-Aktualisierungshandler werden sollen.  Beispielsweise kann die Folgendes verwendet, um basierend auf der Tastatur, geben Sie den Speicherort der Kamera aktualisieren:
+Aber in vielen Szenarien, die Sie möchten Ihre Szene Aktualisierungshandler, überprüfen Sie auf den aktuellen Status der Schlüssel, sobald diese werden aktualisiert, und aktualisieren Sie Ihren Code entsprechend.  Z. B. die folgenden dienen zur basierend auf der Tastatur, geben Sie den Speicherort des Kamera aktualisiert:
 
 ```csharp
 protected override void OnUpdate(float timeStep)
@@ -458,62 +459,63 @@ protected override void OnUpdate(float timeStep)
 }
 ```
 
-## <a name="resources-assets"></a>Ressourcen (Elemente)
+## <a name="resources-assets"></a>Ressourcen (Anlagen)
 
-Ressourcen umfassen die meisten Aufgaben in UrhoSharp aus, die aus Massenspeicher während der Initialisierung oder der Laufzeit geladen werden:
+Ressourcen gehören die meisten Aktionen in von UrhoSharp, die von Massenspeicher während der Initialisierung oder der Laufzeit geladen werden:
 
-- [`Animation`](https://developer.xamarin.com/api/type/Urho.Animation/) – verwendet für skeletal Animationen
-- [`Image`](https://developer.xamarin.com/api/type/Urho.Resources.Image) -Bilder in einer Vielzahl von Formaten Grafik gespeicherten darstellt
+- [`Animation`](https://developer.xamarin.com/api/type/Urho.Animation/) – zum skeletal-Animationen
+- [`Image`](https://developer.xamarin.com/api/type/Urho.Resources.Image) -Stellt in einer Vielzahl von Grafikformate gespeicherte Bilder
 - [`Model`](https://developer.xamarin.com/api/type/Urho.Model/) -3D-Modelle
 - [`Material`](https://developer.xamarin.com/api/type/Urho.Material) -Materialien, die zum Rendern von Modellen verwendet.
-- [`ParticleEffect`](https://developer.xamarin.com/api/type/Urho.ParticleEffect)- [Beschreibt](http://urho3d.github.io/documentation/1.4/_particles.html) wie ein Partikel Metadatenemitter funktioniert, finden Sie unter "[Partikel](#particles)" unten.
-- [`Shader`](https://developer.xamarin.com/api/type/Urho.Shader) -Benutzerdefinierte Shadern
-- [`Sound`](https://developer.xamarin.com/api/type/Urho.Audio.Sound) -Sound wiedergeben, finden Sie unter "[Sound](#sound)" unten.
+- [`ParticleEffect`](https://developer.xamarin.com/api/type/Urho.ParticleEffect)- [Beschreibt](http://urho3d.github.io/documentation/1.4/_particles.html) wie ein Partikel korrekturemitter funktioniert, finden Sie unter "[Partikel](#particles)" unten.
+- [`Shader`](https://developer.xamarin.com/api/type/Urho.Shader) – benutzerdefinierten Shadern
+- [`Sound`](https://developer.xamarin.com/api/type/Urho.Audio.Sound) -Sounds wiedergeben, finden Sie unter "[Sound](#sound)" unten.
 - [`Technique`](https://developer.xamarin.com/api/type/Urho.Technique/) -Material-Rendering-Techniken
 - [`Texture2D`](https://developer.xamarin.com/api/type/Urho.Urho2D.Texture2D/) -2D-Textur
-- [`Texture3D`](https://developer.xamarin.com/api/type/Urho.Texture3D/) -3D-Struktur
-- [`TextureCube`](https://developer.xamarin.com/api/type/Urho.TextureCube/) -Cube Struktur
+- [`Texture3D`](https://developer.xamarin.com/api/type/Urho.Texture3D/) -3D-Textur
+- [`TextureCube`](https://developer.xamarin.com/api/type/Urho.TextureCube/) -Cube Textur
 - `XmlFile`
 
-Verwaltet und geladen, indem die [ `ResourceCache` ](https://developer.xamarin.com/api/type/Urho.Resources.ResourceCache/) Subsystem (verfügbar als [ `Application.ResourceCache` ](https://developer.xamarin.com/api/property/Urho.Application.ResourceCache/)).
+Diese verwaltet werden und von geladen sind die [ `ResourceCache` ](https://developer.xamarin.com/api/type/Urho.Resources.ResourceCache/) Subsystem (verfügbar als [ `Application.ResourceCache` ](https://developer.xamarin.com/api/property/Urho.Application.ResourceCache/)).
 
-Die Ressourcen selbst werden durch ihre Dateipfade, relativ zum registrierte Ressourcenverzeichnisse oder Paketdateien identifiziert. Standardmäßig registriert das Modul die Ressourcenverzeichnisse `Data` und `CoreData`, oder das Pakete `Data.pak` und `CoreData.pak` , wenn sie vorhanden sind.
+Die Ressourcen selbst werden durch die Pfade, relativ zum registrierten Ressourcenverzeichnisse oder Dateien identifiziert. Standardmäßig registriert die Engine die Ressourcenverzeichnisse `Data` und `CoreData`, oder die Pakete `Data.pak` und `CoreData.pak` , wenn sie vorhanden sind.
 
 Wenn beim Laden einer Ressource fehlschlägt, wird ein Fehler protokolliert werden, und ein null-Verweis zurückgegeben.
 
-Das folgende Beispiel zeigt eine typische Möglichkeit Abrufen einer Ressource aus dem Cache Ressource von.  In diesem Fall eine Textur für ein Element der Benutzeroberfläche verwendet die `ResourceCache` Eigenschaft aus der `Application` Klasse.
+Das folgende Beispiel zeigt eine typische Möglichkeit das Abrufen von einer Ressource aus dem Cache für die Ressource.  In diesem Fall einer Textur für die ein Element der Benutzeroberfläche, verwendet der `ResourceCache` Eigenschaft aus der `Application` Klasse.
 
 ```csharp
 healthBar.SetTexture(ResourceCache.GetTexture2D("Textures/HealthBarBorder.png"));
 ```
 
-Ressourcen können auch manuell erstellt und in den Ressourcen-Cache gespeichert werden, als ob sie von der Festplatte geladen wurde.
+Ressourcen können auch manuell erstellt und mit dem Ressourcen-Cache gespeichert werden, als ob sie von der Festplatte geladen wurde.
 
-Arbeitsspeicher Budgets pro Ressourcentyp festgelegt werden können: Wenn Ressourcen mehr Arbeitsspeicher als die zulässige nutzen, die ältesten Ressourcen entfernt werden aus dem Cache, wenn verwendet nicht mehr. Standardmäßig werden die Arbeitsspeicher-Budgets auf unlimited festgelegt.
+Arbeitsspeicher-Budgets pro Ressourcentyp festgelegt werden können: Wenn Ressourcen mehr Arbeitsspeicher als die zulässige verwendet, die ältesten Ressourcen entfernt werden aus dem Cache, wenn kein verwenden mehr. Standardmäßig werden die Arbeitsspeicher-Budgets auf unbegrenzte festgelegt.
 
-### <a name="bringing-3d-models-and-images"></a>Kombinieren von 3D-Modelle und Bilder
+### <a name="bringing-3d-models-and-images"></a>Bringen 3D-Modelle und Images
 
-Urho3D versucht, nach Möglichkeit vorhandene Dateiformate verwenden, und definieren benutzerdefinierte Dateiformate nur, wenn dies absolut notwendig ist z. B. für Modelle (*.mdl) und für Animationen (*.ani). Für diese Arten von Elementen, Urho stellt einen Konverter - [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html) die viele gängige 3D Formate, z. B. Fbx, Dae, 3ds, und Obj usw. genutzt werden können.
+Urho3D versucht bestehenden Dateiformaten, wann immer möglich, und Definieren von benutzerdefinierten Dateiformaten nur, wenn es absolut notwendig ist z. B. für Modelle (*.mdl) und für Animationen (*.ani). Für diese Arten von Assets, bietet Urho einen Konverter - [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html) die können viele gängige 3D Formate wie z. B. Fbx Dae "," 3ds, "und" Obj "," usw. nutzen.
 
-Es gibt auch eine praktische add-in für Blender [ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) exportieren, die Ihre Medienobjekte Blender in das Format, das für die Urho3D geeignet ist.
+Es gibt auch eine praktische add-in für Blender [ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) exportieren, die Ihre Blender-Assets in das Format, das für die Urho3D geeignet ist.
 
-### <a name="background-loading-of-resources"></a>Das Laden der im Hintergrund von Ressourcen
+### <a name="background-loading-of-resources"></a>Laden von Ressourcen im Hintergrund
 
-In der Regel wird beim Anfordern von Ressourcen mithilfe eines der `ResourceCache`des `Get` -Methode, sie die sofort im Hauptthread, die mehrere Millisekunden für die erforderlichen Schritte wird möglicherweise erneut geladen werden (Datei vom Datenträger laden, Daten analysieren, hochladen, GPU bei Bedarf ) und kann daher dazu führen, Framerate löscht.
+In der Regel beim Anfordern von Ressourcen mit einer der der `ResourceCache`des `Get` -Methode, sie werden sofort im Hauptthread, der mehrere Millisekunden für alle erforderlichen Schritte dauern geladen (Datei vom Datenträger zu laden, Analysieren von Daten, in GPU hochladen, falls erforderlich ) und können daher Framerate löscht.
 
-Wenn Sie die im Voraus benötigten Ressourcen müssen Sie wissen, können Sie anfordern, damit durch den Aufruf in einem Hintergrundthread geladen werden `BackgroundLoadResource()`. Sie können auf die Ressource im Hintergrund geladen Ereignis abonnieren, indem die `SubscribeToResourceBackgroundLoaded` Methode. Sie werden feststellen, ob das Laden tatsächlich ein Erfolg oder Misserfolg wurde. Abhängig von der Ressource, die nur einen Teil des Ladevorgangs in einen Hintergrundthread verschoben werden kann, z. B. der migrationsbezogenen GPU Upload Schritt immer muss im Hauptthread ausgeführt werden. Beachten Sie, dass wenn Sie eine der Methoden für eine Ressource für das Laden Hintergrund in der Warteschlange befindlichen laden Ressource aufrufen, der Hauptthread installieren wird, bis der Ladevorgang abgeschlossen ist.
+Wenn Sie wissen, im Voraus welche Ressourcen Sie benötigen, können Sie anfordern, werden durch den Aufruf in einem Hintergrundthread geladen werden sollen `BackgroundLoadResource()`. Sie können auf die Ressource Hintergrund geladen-Ereignis abonnieren, indem die `SubscribeToResourceBackgroundLoaded` Methode. Sie werden sehen, ob das Laden tatsächlich ein Erfolg oder Misserfolg wurde. Abhängig von der Ressource, die nur ein Teil des Ladeprozesses in einen Hintergrundthread verschoben werden kann, z. B. der abschließen GPU-Upload-Schritt immer muss im Hauptthread ausgeführt werden. Beachten Sie, dass wenn Sie eine der Methoden für eine Ressource, für die im Hintergrund geladen, in der Warteschlange wird, zum Laden von Ressource aufrufen, der Hauptthread installieren wird, bis der Ladevorgang abgeschlossen ist.
 
-Der asynchrone Szene laden Funktionalität `LoadAsync()` und `LoadAsyncXML()` hat die Möglichkeit, im Hintergrund Laden der Ressourcen, die Sie zum Laden des Inhalts der Szene zunächst vor dem fortfahren. Kann auch auf die Ressourcen nur geladen, ohne Änderung der Szene durch Angabe verwendet werden die `LoadMode.ResourcesOnly`. Dies ermöglicht eine Szene oder Objekt prefab-Datei für schnelle Instanziierung vorbereiten.
+Die Funktion zum Laden von asynchronen Szene `LoadAsync()` und `LoadAsyncXML()` bietet die Option zum Laden der Hintergrund Ressourcen, die zum Laden des Inhalts der Szene zunächst vor dem fortfahren. Es kann auch nur die Ressourcen zu laden, ohne Änderung der Szene durch Angabe verwendet werden die `LoadMode.ResourcesOnly`. Dadurch wird eine Szene oder des Objekts prefab-Datei für schnelle Instanziierung vorbereiten.
 
-Die maximale Zeit (in Millisekunden) schließlich für jeden Frame aufgewendete Schlichten Hintergrund geladene Ressourcen werden, indem konfiguriert können die `FinishBackgroundResourcesMs` Eigenschaft auf die `ResourceCache`.
+Die maximale Zeit (in Millisekunden) zum Schluss für jeden Frame aufgewendete Abschluss Hintergrund geladene Ressourcen werden, durch Festlegen konfiguriert können der `FinishBackgroundResourcesMs` Eigenschaft für die `ResourceCache`.
 
 <a name="sound"/>
 
 ## <a name="sound"></a>Sound
 
-Sound ist ein wichtiger Teil des Spiels, und die UrhoSharp-Framework bietet eine Möglichkeit der Wiedergabe von Tönen im Spiel.  Wiedergeben von Sounds Anfügen einer [ `SoundSource` ](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource/) -Komponente in einen [ `Node` ](https://developer.xamarin.com/api/type/Urho.Node) und diese dann aus Ihren Ressourcen eine benannte Datei wiedergeben.
+Sound ist ein wichtiger Teil des Spiels, und die von UrhoSharp-Framework bietet eine Möglichkeit der Wiedergabe von Sound in einem Spiel.  Sound durch Anfügen einer [`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource/)
+Komponente einer [ `Node` ](https://developer.xamarin.com/api/type/Urho.Node) und diese wiedergeben klicken Sie dann aus Ihren Ressourcen einer benannten Datei.
 
-Wie erfolgt sieht folgendermaßen aus:
+Dies ist die Vorgehensweise ist:
 
 ```csharp
 var explosionNode = Scene.CreateChild();
@@ -527,11 +529,11 @@ soundSource.AutoRemove = true;
 
 ## <a name="particles"></a>Partikel
 
-Partikel bieten eine einfache Möglichkeit, einige einfachen und kostengünstigen Auswirkungen auf Ihre Anwendung hinzufügen.  Sie können Partikel im PEX-Format gespeicherte nutzen, der mit Tools wie [ http://onebyonedesign.com/flash/particleeditor/ ](http://onebyonedesign.com/flash/particleeditor/).
+Partikel bieten eine einfache Möglichkeit, einige Effekte einfach und kostengünstig, Ihre Anwendung hinzuzufügen.  Sie können Partikel, die in PEX-Format gespeicherte nutzen, der mithilfe von Tools wie [ http://onebyonedesign.com/flash/particleeditor/ ](http://onebyonedesign.com/flash/particleeditor/).
 
-Partikel sind Komponenten, die zu einem Knoten hinzugefügt werden können.  Sie müssen des Knotens Aufrufen `CreateComponent<ParticleEmitter2D>` Methode, um das Partikel erstellen und konfigurieren Sie dann durch Festlegen von der Auswirkung-Eigenschaft auf einen 2D-Skalierungsvorgang Effekt, des Partikels aus dem Cache Ressource geladen wird.
+Partikel sind Komponenten, die auf einen Knoten hinzugefügt werden können.  Sie müssen zum Aufrufen des Knotens `CreateComponent<ParticleEmitter2D>` Methode, um das Partikel erstellen und konfigurieren Sie dann durch der Effect-Eigenschaft auf einen Direct2D-Effekt einstellen, des Partikels aus dem Cache für die Ressource geladen wird.
 
-Beispielsweise können Sie diese Methode aufrufen, in der Komponente, um einige Partikel anzuzeigen, die als eine Explosion gerendert werden, wenn es trifft:
+Beispielsweise können Sie diese Methode aufrufen, in der Komponente, um einige Partikel anzuzeigen, die als Zahl gerendert werden, wenn er erreicht:
 
 ```csharp
 public async void Explode (Component target)
@@ -550,21 +552,22 @@ public async void Explode (Component target)
 }
 ```
 
-Der obige Code erstellen einen Explosion-Knoten, der die der aktuellen Komponente angefügt ist, die innerhalb dieses Knotens Explosion wir erstellen eine Metadatenemitter 2D Partikel, und konfigurieren Sie es durch Festlegen der Eigenschaft wirksam.  Wir führen Sie zwei Aktionen, eine, die den Knoten, um kleinere werden skaliert und eine, die an diese Größe 0,5 Sekunden bleibt.  Klicken Sie dann entfernen wir die Auflösung, die wodurch auch die Partikel Auswirkungen aus dem Bildschirm entfernt.
+Der obige Code erstellt einen Explosion-Knoten, der mit Ihrer aktuellen Komponente verbunden ist, die innerhalb dieses Knotens Explosion erstellen wir eine 2D Partikel korrekturemitter und konfigurieren Sie sie durch die Effect-Eigenschaft festlegen.  Wir führen Sie zwei Aktionen, eine, die den Knoten, um kleinere werden skaliert und eine, die es 0,5 Sekunden in dieser Größe verlässt.  Klicken Sie dann entfernen wir das unkontrollierte anwachsen, das wodurch auch die-partikeleffekt vom Bildschirm entfernt.
 
-Das oben genannten Partikel rendert wie folgt, wenn eine Textur Kugel mit:
+Das oben genannten Partikel Ausgabe bei Verwendung eine Kugel Textur sieht folgendermaßen aus:
 
-![Mit einer Textur Kugel Partikel](using-images/image-1.png "das oben genannten Partikel wie folgt gerendert wird, bei Verwendung eine Textur Kugel")
+![Partikel, mit einer Textur für die Kugel](using-images/image-1.png "das oben genannten Partikel Ausgabe sieht folgendermaßen aus bei Verwendung eine Textur für die Kugel")
 
-Und wie er aussieht, wenn Sie eine Textur Blöcke verwenden:
+Und wie es aussieht, wenn Sie eine Textur Blöcke verwenden:
 
-![Partikel mit einer Textur Feld](using-images/image-2.png "und sieht wie er aussieht, wenn eine Textur Blöcke verwenden")
+![Partikel, mit einer Textur Feld](using-images/image-2.png "und wie es aussieht, wenn eine Textur Blöcke verwenden")
 
-## <a name="multithreading-support"></a>Multithreadingunterstützung
+## <a name="multithreading-support"></a>Unterstützung von Multithreading
 
-UrhoSharp ist eine Singlethread Library.  Dies bedeutet, dass Sie nicht versuchen sollten, Aufrufen von Methoden in UrhoSharp aus einem Hintergrundthread, oder Sie besteht das Risiko, den Anwendungszustand beschädigen und wahrscheinlich, stürzt die Anwendung ab.
+Von UrhoSharp ist eine einzelne Threads Library.  Dies bedeutet, dass Sie nicht, zum Aufrufen von Methoden in von UrhoSharp aus einem Hintergrundthread versuchen sollten, oder Sie riskieren den Anwendungszustand beschädigen und wahrscheinlich Absturz Ihrer Anwendung.
 
-Wenn Sie Teil des Codes im Hintergrund ausgeführt und aktualisieren Sie dann auf die Hauptbenutzeroberfläche Urho-Komponenten möchten, können Sie mithilfe der [ `Application.InvokeOnMain(Action)` ](https://developer.xamarin.com/api/member/Urho.Application.InvokeOnMain) Methode.  Darüber hinaus können Sie c# "await" verwenden und die .NET task APIs verwendet, um sicherzustellen, dass der Code im entsprechenden Thread ausgeführt wird.
+Wenn Sie Code im Hintergrund ausgeführt, und aktualisieren Sie dann die Urho-Komponenten auf die Hauptbenutzeroberfläche möchten, können Sie die [`Application.InvokeOnMain(Action)`](https://developer.xamarin.com/api/member/Urho.Application.InvokeOnMain)
+-Methode.  Darüber hinaus können Sie C# -Code "await" verwenden und die .NET task-APIs, um sicherzustellen, dass der Code im entsprechenden Thread ausgeführt wird.
 
 ## <a name="urhoeditor"></a>UrhoEditor
 
@@ -572,9 +575,4 @@ Sie können den Urho-Editor für Ihre Plattform aus der [Urho Website](http://ur
 
 ## <a name="copyrights"></a>Urheberrechte
 
-Diese Dokumentation umfasst den ursprünglichen Inhalt von Xamarin Inc, jedoch umfassend in der open-Source-Dokumentation für das Projekt Urho3D zeichnet und Screenshots aus dem Cocos2D-Projekt enthält.
-
-## <a name="related-links"></a>Verwandte Links
-
-- [Planeten Erde Arbeitsmappe](https://developer.xamarin.com/workbooks/graphics/urhosharp/planetearth/planetearth.workbook)
-- [Untersuchen die Arbeitsmappe Koordinaten](https://developer.xamarin.com/workbooks/graphics/urhosharp/coordinates/ExploringUrhoCoordinates.workbook)
+Diese Dokumentation enthält die ursprünglichen Inhalte von Xamarin Inc., aber sehr häufig in der open-Source-Dokumentation für das Projekt Urho3D zeichnet und enthält Screenshots aus dem Projekt Cocos2D.

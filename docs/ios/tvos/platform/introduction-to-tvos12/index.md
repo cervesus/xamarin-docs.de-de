@@ -4,29 +4,21 @@ description: Dieses Dokument enthält eine allgemeine Übersicht der neuen und a
 ms.prod: xamarin
 ms.assetid: 037F7FFF-2155-4017-B99A-839CE7EC5C9C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 06/25/2018
-ms.openlocfilehash: 5cbec23aa81a4637a18f83d9955a78183dadaa21
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: f7fb8cc379a070b848c5154c9c1d4fbfc8186266
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615198"
 ---
 # <a name="introduction-to-tvos-12"></a>Einführung in TvOS 12
 
-![Vorschau](~/media/shared/preview.png)
+Dieses Dokument enthält eine allgemeine Übersicht über neue und aktualisierte TvOS 12.
 
-> [!WARNING]
-> Xamarin TvOS-12-Unterstützung ist gegenwärtig im vorschaustadium, d. h., er möglicherweise Fehler enthalten ist nicht die Features, und kann sich ändern. Verwenden sie nur für Experimente.
-
-Dieses Dokument enthält eine allgemeine Übersicht über neue und aktualisierte TvOS 12 Features, die für die Xamarin, die Preview Release aktuell c#-Bindungen bietet.
-
-Informationen zum Einstieg TvOS-12-apps mit Xamarin erstellen, sehen Sie sich:
-
-- Die [Handbuch mit ersten Schritten](~/ios/platform/introduction-to-ios12/get-started.md)
-- Die Xamarin-Vorschauversion [release Blogbeitrag](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
+Informationen zum Einstieg TvOS-12-apps mit Xamarin erstellen, sehen Sie sich die [Handbuch mit ersten Schritten](~/ios/platform/introduction-to-ios12/get-started.md).
 
 ## <a name="tvuikit"></a>TVUIKit
 
@@ -48,10 +40,13 @@ Das Vision Framework enthält eine verbesserte gesichtserkennung, die in verschi
 
 Natürlicher Sprachen-Framework ermöglicht Anwendungen das Ausführen von verschiedenen Arten von sprachanalyse. Beispielsweise kann verwendet werden, zum Identifizieren von Wortarten, und ermitteln die Sprache, die durch einen Textblock dargestellt wird.
 
+## <a name="deprecations"></a>Veralteten
+
+Mit TvOS 12 veraltet Apple OpenGL-ES, [und Entwickler werden angeregt](https://developer.apple.com/tvos/whats-new/) -Metal-Computern zu übernehmen.
+
 ## <a name="related-links"></a>Verwandte Links
 
 - [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
 - [TvOS-Apple-Entwickler (Apple)](https://developer.apple.com/tvos/)
 - [Neuerungen in TvOS-12 (Apple) (video)](https://developer.apple.com/videos/play/wwdc2018/208/)
 - [TV (Apple)](https://www.apple.com/tv/)
-- Xamarin-Vorschauversion [release Blogbeitrag](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)

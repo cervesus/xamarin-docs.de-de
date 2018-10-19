@@ -4,63 +4,60 @@ description: Dieses Dokument enthält eine allgemeine Beschreibung einiger iOS-1
 ms.prod: xamarin
 ms.assetid: 99EA7090-315D-493C-87D3-26AB73D9E1A9
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/08/2018
-ms.openlocfilehash: 4e1249b7a9c1e9797cbc758c3bd1b83f87d47431
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 81375e8c66e5504604d0d4cb3be34afd58f4269d
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615147"
 ---
 # <a name="introduction-to-ios-12"></a>Einführung in iOS 12
 
-![Vorschau](~/media/shared/preview.png)
-
-> [!WARNING]
-> Xamarin iOS-12-Unterstützung ist gegenwärtig im vorschaustadium, d. h., er möglicherweise Fehler enthalten ist nicht die Features, und möglicherweise geändert. Verwenden sie nur für Experimente.
-
 Dieses Dokument enthält eine allgemeine Beschreibung einiger iOS-12-APIs, die für die Xamarin Preview Release c#-Bindungen bietet.
 
-Informationen zum Einstieg 12-iOS-apps mit Xamarin erstellen, sehen Sie sich:
+Informationen zum Einstieg 12-iOS-apps mit Xamarin erstellen, finden Sie unter den [Handbuch mit ersten Schritten](get-started.md)
 
-- Die [Handbuch mit ersten Schritten](get-started.md)
-- Die Xamarin-Vorschauversion [release Blogbeitrag](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
-
-## <a name="arkit-2"></a>ARKit 2
+## <a name="arkit-2arkit2md"></a>[ARKit 2](arkit2.md)
 
 ARKit werden augmented Reality-Framework mit iOS enthalten ist. ARKit 2 ermöglicht mehreren Benutzern, die miteinander interagieren, in einer Szene augmented Reality-Modus ermöglicht es Objekten im Raum beizubehalten und zu einem späteren Zeitpunkt darauf zurückgeben und bietet 2D bilderkennung und nachverfolgung und 3D objekterkennung. iOS 12 bietet auch AR schnelle Suchen, eine Möglichkeit zum Rendern von Usdz AR-Modelle in Ihren apps.
 
-## <a name="siri-shortcuts"></a>Siri-Tastenkombinationen
+## <a name="siri-shortcutssiri-shortcutsmd"></a>[Siri-Tastenkombinationen](siri-shortcuts.md)
 
-Siri-Tastenkombinationen können Entwickler ihre Anwendungen in Siri besser zu integrieren. Siri-Verknüpfungen können Benutzer Sprachbefehle zum Öffnen von Inhalt oder das Starten von Aufgaben in ihren apps verwenden. Siri erfahren Sie, wenn bestimmte Tastenkombinationen sind eher verwendet werden, und sie dem Benutzer über Benachrichtigungen vorschlagen.
+Siri-Tastenkombinationen können Entwickler ihre Anwendungen in Siri besser zu integrieren. Mit Siri-Verknüpfungen können Benutzer die Sprachbefehle Inhalte öffnen oder das Initiieren von Hintergrundaufgaben oder sie können diese Aufgaben über Tastenkombinationen für die vorgeschlagene Siri auf dem Sperrbildschirm initiieren.
 
-## <a name="core-ml-2"></a>Core ML 2
+## <a name="core-ml-2coremlmd"></a>[Core ML 2](coreml.md)
 
 Core ML 2 reduziert die Größe der Anwendung über das Modell Quantisierung und flexible Modelle, verbessert die Leistung der Anwendung mit einem neuen batchvorhersage-APIs und benutzerdefinierte Modelle verwendet, um Fortschritte in Machine Learning zu unterstützen.
 
-## <a name="notification-improvements"></a>Verbesserungen bei Benachrichtigungen
+## <a name="notification-improvementsnotificationsindexmd"></a>[Verbesserungen bei Benachrichtigungen](notifications/index.md)
 
-In iOS 12 ermöglichen gruppierte Benachrichtigungen vorhanden benutzerbenachrichtigungen in-app oder in Bezug auf Threads Gruppierungen. Zusammenfassungstext kann verwendet werden, um weitere Informationen zu einer Benachrichtigungsgruppe bereitzustellen.
+In iOS 12 ermöglichen gruppierte Benachrichtigungen vorhanden benutzerbenachrichtigungen in-app oder in Bezug auf Threads Gruppierungen. Zusammenfassungstext enthält weitere Informationen zu einer Benachrichtigungsgruppe.
 
-Notification-Content-Erweiterungen in iOS 12 für benutzerdefinierte Oberflächen und dynamische Aktionen ermöglichen. Diese Funktionen ermöglichen umfangreichere, desto relevanter in benutzerbenachrichtigungen.
+Benutzerdefinierte Benutzeroberflächen und dynamische Aktionsschaltflächen ermöglichen Notification-Content-Erweiterungen in iOS 12.
 
-## <a name="natural-language-framework"></a>Natürlicher Sprachen-framework
+## <a name="natural-language-frameworknatural-languagemd"></a>[Natürlicher Sprachen-framework](natural-language.md)
 
-Natürlicher Sprachen-Framework ermöglicht Anwendungen das Ausführen von verschiedenen Arten von sprachanalyse. Beispielsweise kann verwendet werden, zum Identifizieren von Wortarten, und ermitteln die Sprache, die durch einen Textblock dargestellt wird.
+Natürlicher Sprachen-Framework ermöglicht Anwendungen das Ausführen von verschiedenen Arten von sprachanalyse. Sie können beispielsweise Wortarten zu identifizieren und bestimmt die Sprache, die durch einen Textblock dargestellt.
 
-## <a name="carplay"></a>CarPlay
+## <a name="vision-framework"></a>Maschinelles sehen-framework
 
-In iOS 12 können Drittanbieter-apps Karten und Turn-von-Turn navigationsanweisungen CarPlay übermitteln mithilfe des neuen CarPlay-Frameworks.
+Das Vision Framework enthält eine verbesserte gesichtserkennung, die in verschiedenen Ausrichtungen Gesichter erkennen kann. Anforderung Revisionen können auch bestimmte Vision Framework Algorithmusrevision auswählen.
 
-## <a name="automatic-strong-passwords"></a>Automatische sichere Kennwörter
+## <a name="photo-and-video-apis"></a>Fotos und video-APIs
 
-iOS 12 wird empfohlen, und speichern Sie Benutzernamen und das sichere Kennwörter für Anwendungen, die einen Bildschirm "Konto erstellen". Die vorgeschlagene Kennwörter können generiert werden, basierend auf den Standardwert, 20 Zeichen-Format oder Entwicklern Kennwortregeln. Dieses Feature macht zugehörige Domänen verwenden und Inhaltstypen in neuen Benutzernamen und ein neues Kennwortfelder angegeben.
+In iOS 12 gibt die Segmentierung Hochformat API Hochformat Effekte Maske – eine lineare Maske, die im Vordergrund aus dem Hintergrund der ein Bild im Hochformat grenzt und ist nützlich bei der Erstellung verschiedener Image Effekte zurück. iOS-12 ist es auch ist möglich, Tiefe Daten von der Kamera TrueDepth für Echtzeit-video-Effekte zu verwenden.
 
-## <a name="autofill-credential-provider-extensions"></a>AutoAusfüllen-Anmeldeinformationen-Anbietererweiterungen
+## <a name="passwords"></a>Kennwortangriffe
 
-In iOS 12 können Drittanbieter-Kennwort-Manager-Anwendungen eine Erweiterung zum Bereitstellen von Benutzername und Kennwort Anmeldefelder Werte bereitstellen.
+iOS 12 erleichtert es Benutzern und Entwicklern die Arbeit mit Kennwörtern:
+
+- Kennwort AutoAusfüllen und automatische sichere Kennwörter können sie automatisch zu generieren, speichern und verwenden Sie sichere Kennwörter in iOS-Anwendungen, die beim Registrieren für und sich bei einer Anwendung anmelden können.
+- Security Code AutoAusfüllen ist es möglich, SMS-basierte Authentifizierung-Codes, ohne manuelle Ausschneiden und einfügen oder merken.
+- Die `ASWebAuthenticationSession` -Klasse optimiert den Prozess der Arbeit mit Verbundauthentifizierung-Diensten.
+- AutoAusfüllen-Anmeldeinformationsanbieter-Erweiterungen ermöglichen es Drittanbieter-Kennwort-Anwendungen, Benutzernamen und Kennwörter Anmeldefelder anzugeben.
 
 ## <a name="healthkit-updates"></a>HealthKit-updates
 
@@ -70,12 +67,21 @@ iOS 11.3 eingeführt [Gesundheitsdaten](https://www.apple.com/healthcare/health-
 
 In iOS 12 unterstützen iMessage-apps Presentation-Kontexten, die die apps zum Ausführen als normaler iMessage-app oder im Rahmen eines Fotos oder Videos wirksam zu ermöglichen.
 
-## <a name="vision-framework"></a>Maschinelles sehen-framework
+## <a name="network-framework"></a>Netzwerk-framework
 
-Das Vision Framework enthält eine verbesserte gesichtserkennung, die in verschiedenen Ausrichtungen Gesichter erkennen kann. Darüber hinaus können Anforderung Revisionen jetzt verwendet werden, um eine bestimmte Vision Framework Algorithmusrevision auszuwählen.
+Netzwerk-Framework, das Netzwerk stack zugrunde liegende der `URLSession` APIs, die häufig in iOS-Anwendungen verwendet, ist jetzt verfügbar als eigenständiges Framework, erleichtert Ihnen die Arbeit mit TCP, UDP, TLS, IPv4/IPv6 und mehr.
+
+## <a name="carplay"></a>CarPlay
+
+In iOS 12 können Drittanbieter-apps Karten und Turn-von-Turn navigationsanweisungen CarPlay übermitteln mithilfe des neuen CarPlay-Frameworks.
+
+## <a name="deprecations"></a>Veralteten
+
+In iOS 12 hat Apple als veraltet markiert:
+
+- OpenGL-ES, [und Entwickler werden angeregt](https://developer.apple.com/ios/whats-new/) -Metal-Computern zu übernehmen.
+- [`UIWebView`](https://developer.xamarin.com/api/type/UIKit.UIWebView/), [zugunsten des `WKWebView` ](https://developer.apple.com/documentation/webkit/wkwebview?language=objc).
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Machen Sie sich bereit für iOS-12 (Apple)](https://developer.apple.com/ios/)
-- [iOS 12 Preview (Apple)](https://www.apple.com/ios/ios-12-preview/)
-- Xamarin-Vorschauversion [release Blogbeitrag](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)

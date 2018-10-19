@@ -1,32 +1,24 @@
 ---
 title: Einführung in MacOS Mojave
-description: Dieses Dokument enthält eine allgemeine Übersicht der neuen und aktualisierten Features in MacOS Mojave für die Xamarin Preview Release aktuell c#-Bindungen bietet.
+description: Dieses Dokument enthält eine allgemeine Übersicht der neuen und aktualisierten Features in MacOS Mojave.
 ms.prod: xamarin
 ms.assetid: 4A41CD85-C807-44C9-85AB-B5441B145A73
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 07/08/2018
-ms.openlocfilehash: 916a1323127ac9be387c9465fb660dd0e7569a93
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: ce293a7c97a2cb4975baef807ded9a8fd0a90476
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615833"
 ---
 # <a name="introduction-to-macos-mojave"></a>Einführung in MacOS Mojave
 
-![Vorschau](~/media/shared/preview.png)
+Dieses Dokument enthält eine allgemeine Übersicht der neuen und aktualisierten Features in MacOS Mojave.
 
-> [!WARNING]
-> Xamarin Unterstützung für die MacOS Mojave-SDK mit Xcode 10 verteilt ist gegenwärtig im vorschaustadium, was bedeutet, dass sie Fehler, enthält möglicherweise nicht abgeschlossen ist, und möglicherweise geändert. Verwenden sie nur für Experimente.
-
-Dieses Dokument enthält eine allgemeine Übersicht der neuen und aktualisierten Features in MacOS Mojave für die Xamarin Preview Release aktuell c#-Bindungen bietet.
-
-Zunächst entwickeln MacOS Mojave-apps mit Xamarin, sehen Sie sich:
-
-- Die [Handbuch mit ersten Schritten](~/mac/platform/introduction-to-macos-mojave/get-started.md)
-- Die Xamarin-Vorschauversion [release Blogbeitrag](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
+Zunächst entwickeln MacOS Mojave-apps mit Xamarin, sehen Sie sich die [Handbuch mit ersten Schritten](~/mac/platform/introduction-to-macos-mojave/get-started.md) für [Xamarin.Mac 5.0](https://developer.xamarin.com/releases/mac/xamarin.mac_5/xamarin.mac_5.0/).
 
 ## <a name="dark-mode"></a>Dunkel-Modus
 
@@ -44,8 +36,16 @@ Natürlicher Sprachen-Framework ermöglicht Anwendungen das Ausführen von versc
 
 Das Vision Framework enthält eine verbesserte gesichtserkennung, die in verschiedenen Ausrichtungen Gesichter erkennen kann. Darüber hinaus können Anforderung Revisionen jetzt verwendet werden, um eine bestimmte Vision Framework Algorithmusrevision auszuwählen.
 
+## <a name="network-framework"></a>Netzwerk-framework
+
+Netzwerk-Framework, das Netzwerk stack zugrunde liegende der `URLSession` APIs, die häufig in iOS-Anwendungen verwendet, ist jetzt verfügbar als eigenständiges Framework, erleichtert Ihnen die Arbeit mit TCP, UDP, TLS, IPv4/IPv6 und mehr.
+
+## <a name="deprecations"></a>Veralteten
+
+Mit MacOS Mojave, Apple wurde als veraltet OpenGL-ES und OpenCL, [und Entwickler werden angeregt](https://developer.apple.com/macos/whats-new/) Metal- und -Metal-Performance-Shader zu übernehmen.
+
 ## <a name="related-links"></a>Verwandte Links
 
 - [Xamarin.Mac-Beispiele](https://developer.xamarin.com/samples/mac/)
 - [MacOS – Apple Developer](https://developer.apple.com/macos/)
-- Xamarin-Vorschauversion [release Blogbeitrag](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
+- [Anmerkungen zur Version von Xamarin.Mac 5.0](https://developer.xamarin.com/releases/mac/xamarin.mac_5/xamarin.mac_5.0/)

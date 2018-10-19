@@ -3,14 +3,14 @@ title: Einschränkungen von Xamarin Live Player
 description: Dieses Dokument beschreibt die Einschränkungen von Xamarin Live Player. Es wird erläutert, Anforderungen an das Gerät, enthält es funktioniert mit Projekttypen und andere verschiedenen Themen besprochen.
 ms.prod: xamarin
 ms.assetid: 36A1531E-630A-4B7C-A333-4E67E5DC023C
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 99ed8d06331ac7e423791309da79d72d5a10d70f
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: aff6990df1b710190f11c2d7fa09c8399e94f8af
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "40251239"
 ---
 # <a name="limitations-of-xamarin-live-player"></a>Einschränkungen von Xamarin Live Player
@@ -53,7 +53,7 @@ Live Player ist nicht verfügbar für iOS.
 - F#-Projekte werden nicht unterstützt.
 - Erweiterte Szenarien mit benutzerdefinierten generische Klassen und Schnittstellen werden möglicherweise nicht unterstützt.
 
-Melden Sie Probleme mit zusätzlichen auf [Bugzilla](https://aka.ms/live-player-report-issue).
+Verwendung **Melden eines Problems** in [Visual Studio 2017](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017) oder [Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/report-a-problem) um Probleme mit Xamarin Live Player zu melden.
 
 ## <a name="related-links"></a>Verwandte Links
 
