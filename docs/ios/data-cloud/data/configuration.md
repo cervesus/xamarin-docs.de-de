@@ -1,6 +1,6 @@
 ---
 title: Konfigurieren von SQLite in Xamarin.iOS
-description: Dieses Dokument beschreibt, wie Sie den Speicherort für eine SQLite-Datenbank in einer Xamarin.iOS-Anwendung bestimmen. Diese Konzepte sind unabhängig von der Mechanismus für die ausgewählten Daten relevant.
+description: Dieses Dokument beschreibt, wie Sie den Speicherort für eine SQLite-Datenbank in einer Xamarin.iOS-Anwendung bestimmen. Diese Konzepte sind unabhängig von dem Mechanismus für die ausgewählten Daten relevant.
 ms.prod: xamarin
 ms.assetid: E5582F4B-AD74-420F-9E6D-B07CFB420B3A
 ms.technology: xamarin-ios
@@ -16,11 +16,11 @@ ms.locfileid: "39241265"
 ---
 # <a name="configuring-sqlite-in-xamarinios"></a>Konfigurieren von SQLite in Xamarin.iOS
 
-Xamarin.iOS-Anwendungen können SQLite Datenbanken verwenden. Dazu muss nur ein korrekter Speicherort für die Datenbankdatei angegeben werden.
+Xamarin.iOS-Anwendungen können SQLite-Datenbanken verwenden. Dazu muss nur ein korrekter Speicherort für die Datenbankdatei angegeben werden.
 
 ## <a name="database-file-path"></a>Pfad der Datenbankdatei
 
-Bevor Sie Daten in einer SQLite Datenbank speichern können, müssen Sie eine Datenbankdatei erstellen. Diese muss immer erstellt werden, unabhängig von der verwendeten Datenzugriffsmethode. Der Speicherort unterscheidet sich lediglich je nach Zielplattform. Für iOS wird für die Erstellung eines gültigen Pfads die "Environment"-Klasse verwendet:
+Bevor Sie Daten in einer SQLite-Datenbank speichern können, müssen Sie eine Datenbankdatei erstellen. Diese muss immer erstellt werden, unabhängig von der verwendeten Datenzugriffsmethode. Der Speicherort unterscheidet sich lediglich je nach Zielplattform. Für iOS wird für die Erstellung eines gültigen Pfads die "Environment"-Klasse verwendet:
 
 ```csharp
 string dbPath = Path.Combine (
@@ -31,7 +31,7 @@ string dbPath = Path.Combine (
 
 Bei der Speicherung und dem Pfad der Datenbankdatei gibt es noch weitere Dinge zu betrachten. Auf iOS sollte ein automatisches Backup der Datenbankdatei in Betracht gezogen werden (oder auch nicht).
 
-Bei plattformübergreifendenden Anwendungen können Sie eine Compiler-Anweisung verwenden um je nach Plattform den richtigen Pfad zu verwenden:
+Bei plattformübergreifendenden Anwendungen können Sie eine Compileranweisung verwenden, um je nach Plattform den richtigen Pfad zu verwenden:
 
 ```csharp
 var sqliteFilename = "MyDatabase.db3";
@@ -47,13 +47,13 @@ string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library f
 var path = Path.Combine (libraryPath, sqliteFilename);
 ```
 
-Im Artikel [arbeiten mit dem Dateisystem](~/ios/app-fundamentals/file-system.md) finden Sie weitere Informationen zu verschiedenen Speicherorten unter iOS. Der Artikel [Building Cross Platform Applications](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) beschreibt weitere Informationen über die Verwendung von Compiler-Direktiven für Plattformübergreifenden Code.
+Im Artikel [Arbeiten mit dem Dateisystem](~/ios/app-fundamentals/file-system.md) finden Sie weitere Informationen zu verschiedenen Speicherorten unter iOS. Der Artikel [Erstellen von plattformübergreifenden Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) enthält weitere Informationen über die Verwendung von Compilerdirektiven für plattformübergreifenden Code.
 
 ## <a name="threading"></a>Threading
 
-Sie sollten die gleiche Verbindung zur SQLite-Datenbank nicht über mehrere Threads hinweg verwenden. Achten Sie darauf, dass das Öffnen, Lesen, Schreiben und Schließen einer Verbindung, im selben Thread passiert.
+Sie sollten die gleiche Verbindung zur SQLite-Datenbank nicht über mehrere Threads hinweg verwenden. Achten Sie darauf, dass das Öffnen, Lesen, Schreiben und Schließen einer Verbindung im selben Thread passiert.
 
-Um sicherzustellen, dass Ihr Code nicht versucht, auf die SQLite-Datenbank von mehreren Threads gleichzeitig zuzugreifen, gibt es die Möglichkeit einer Sperre:
+Um sicherzustellen, dass Ihr Code nicht versucht, auf die SQLite-Datenbank von mehreren Threads gleichzeitig aus zuzugreifen, können Sie eine Sperre anwenden:
 
 ```csharp
 object locker = new object(); // class level private field
@@ -63,7 +63,7 @@ lock (locker){
 }
 ```
 
-Jeglicher Datenbankzugriff (Lesevorgänge, Schreibvorgänge, Updates usw.) sollten mit der gleichen Sperre gekapselt werden. Es muss darauf geachtet werden, eine Deadlocksituation zu vermeiden, indem Sie sicherstellen, dass die Arbeit in der Sperre-Klausel einfach gehalten ist. Methoden in der Sperre sollten nicht auf andere Methoden zugreifen, die jeweils andere Sperren einrichten..
+Jeglicher Datenbankzugriff (Lesevorgänge, Schreibvorgänge, Updates usw.) sollten mit der gleichen Sperre gekapselt werden. Vermeiden Sie eine Deadlocksituation, indem Sie sicherstellen, dass die Arbeit in der Sperre-Klausel einfach gehalten ist. Methoden in der Sperre sollten nicht auf andere Methoden zugreifen, die jeweils andere Sperren einrichten.
 
 
 ## <a name="related-links"></a>Verwandte Links
