@@ -1,6 +1,6 @@
 ---
 title: Erste Schritte mit Xamarin.Forms
-description: In diesem Leitfaden werden Sie in die Grundlagen der Xamarin.Forms-Entwicklung eingeführt, außerdem wird die Erstellung von Anwendungen für mehrere Plattformen und Multiscreens abgedeckt.
+description: Xamarin.Forms ist ein plattformübergreifendes Toolkit für die Benutzeroberfläche, mit dem Entwickler effizient native Benutzeroberflächenlayouts erstellen können, die für Apps für iOS, Android und für die Universelle Windows-Plattform freigegeben werden können. Mit dieser Reihe werden die Grundlagen der Xamarin.Forms-Entwicklung eingeführt und die Erstellung von Anwendungen für mehrere Plattformen und Multiscreens abgedeckt.
 ms.prod: xamarin
 ms.assetid: d87d7232-242c-4ec4-81e9-36103d7e8fcf
 ms.technology: xamarin-forms
@@ -8,18 +8,18 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 6ac76f41fc0646107102e0d5e59609c0f3969511
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: da5547de1f21b1f02462f47a4e6ffee43dd0d1bf
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35242439"
+ms.lasthandoff: 04/27/2018
+ms.locfileid: "32024325"
 ---
 # <a name="getting-started-with-xamarinforms"></a>Erste Schritte mit Xamarin.Forms
 
-_Bei Xamarin.Forms handelt es sich um ein plattformübergreifendes Toolkit, mit dem Entwickler effizient native Benutzeroberflächenlayouts erstellen können. Diese können dann für Apps unter iOS, Android und für die Universelle Windows-Plattform (z.B. Windows 10) verwendet werden. Mit dieser Reihe erhalten Sie eine Einführung in die Grundlagen der Xamarin.Forms-Entwicklung und der Erstellung von Anwendungen für mehrere Plattformen und Multiscreens._
+_Xamarin.Forms ist ein plattformübergreifendes Toolkit für die Benutzeroberfläche, mit dem Entwickler effizient native Benutzeroberflächenlayouts erstellen können, die für Apps für iOS, Android und für die Universelle Windows-Plattform freigegeben werden können. Mit dieser Reihe werden die Grundlagen der Xamarin.Forms-Entwicklung eingeführt und die Erstellung von Anwendungen für mehrere Plattformen und Multiscreens abgedeckt._
 
-Hinweise zur Installation bzw. Einrichtung der Entwicklungsumgebung finden Sie unter [Xamarin.Forms Requirements (Anforderungen für Xamarin.Forms)](installation.md) und [Installation](~/cross-platform/get-started/installation/index.md).
+Eine Übersicht über die Installations- und Setupmethoden für die plattformübergreifende Entwicklung finden Sie unter [Xamarin.Forms Requirements (Anforderungen für Xamarin.Forms)](installation.md) und [Installation](~/cross-platform/get-started/installation/index.md).
 
 > [!div class="nextstepaction"]
 > [Xamarin.Forms-Schnellstart](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
@@ -28,7 +28,7 @@ Hinweise zur Installation bzw. Einrichtung der Entwicklungsumgebung finden Sie u
 
 ## <a name="requirementsinstallationmd"></a>[Anforderungen](installation.md)
 
-Hier finden Sie eine Übersicht über die Plattformanforderungen für Apps, welche mit Xamarin.Forms entwickelt wurden sowie die Mindestsystemanforderungen für die Entwicklung mit Xamarin.Forms in Visual Studio für Mac und Visual Studio.
+Übersicht über die Plattformanforderungen für mit Xamarin.Forms entwickelte Apps sowie die Mindestsystemanforderungen für die Entwicklung mit Xamarin.Forms in Visual Studio für Mac und Visual Studio.
 
 ## <a name="hello-xamarinformsxamarin-formsget-startedhello-xamarin-formsindexmd"></a>[Hello, Xamarin.Forms](~/xamarin-forms/get-started/hello-xamarin-forms/index.md)
 
@@ -47,7 +47,7 @@ Dieser Artikel behandelt einige der Schlüsselkonzepte für das Entwickeln von A
 
 > [!VIDEO https://youtube.com/embed/NGvn-pGZFPA]
 
-**Erstellen Sie Ihre erste Xamarin.Forms-App mit Xamarin für Visual Studio mit der Hilfe von [Xamarin University](https://university.xamarin.com)**
+**Erstellen Ihrer ersten Xamarin.Forms-App mit Xamarin für Visual Studio durch [Xamarin University](https://university.xamarin.com)**
 
 
 ## <a name="related-links"></a>Verwandte Links
