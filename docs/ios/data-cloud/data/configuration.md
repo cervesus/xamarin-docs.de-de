@@ -16,11 +16,11 @@ ms.locfileid: "39241265"
 ---
 # <a name="configuring-sqlite-in-xamarinios"></a>Konfigurieren von SQLite in Xamarin.iOS
 
-Xamarin.iOS-Anwendungen können SQLite-Datenbanken verwenden. Dazu muss nur ein korrekter Speicherort für die Datenbankdatei angegeben werden.
+Verwendung von SQLite in Ihre Xamarin.iOS-Anwendung müssen Sie den richtigen Speicherort für die Datenbankdatei zu bestimmen.
 
 ## <a name="database-file-path"></a>Pfad der Datenbankdatei
 
-Bevor Sie Daten in einer SQLite-Datenbank speichern können, müssen Sie eine Datenbankdatei erstellen. Diese muss immer erstellt werden, unabhängig von der verwendeten Datenzugriffsmethode. Der Speicherort unterscheidet sich lediglich je nach Zielplattform. Für iOS wird für die Erstellung eines gültigen Pfads die "Environment"-Klasse verwendet:
+Unabhängig davon, welche Datenzugriffsmethode, die Sie verwenden, müssen Sie eine Datei erstellen, bevor Sie Daten mit SQLite gespeichert werden können. Speicherort der Datei wird sich unterscheiden, je nach Zielplattform, die Sie verwenden möchten. Für iOS können "Environment"-Klasse Sie zum Erstellen eines gültigen Pfads an, wie im folgenden Codeausschnitt gezeigt:
 
 ```csharp
 string dbPath = Path.Combine (
@@ -63,7 +63,7 @@ lock (locker){
 }
 ```
 
-Jeglicher Datenbankzugriff (Lesevorgänge, Schreibvorgänge, Updates usw.) sollten mit der gleichen Sperre gekapselt werden. Vermeiden Sie eine Deadlocksituation, indem Sie sicherstellen, dass die Arbeit in der Sperre-Klausel einfach gehalten ist. Methoden in der Sperre sollten nicht auf andere Methoden zugreifen, die jeweils andere Sperren einrichten.
+Jeglicher Datenbankzugriff (Lesevorgänge, Schreibvorgänge, Updates usw.) sollten mit die gleiche Sperre eingeschlossen werden. Muss darauf geachtet werden, die eine Deadlocksituation zu vermeiden, indem Sie sicherstellen, dass die Arbeit in der Sperre-Klausel einfach gehalten ist und wird Sie an andere Methoden, die auch sperren können nicht aufgerufen.
 
 
 ## <a name="related-links"></a>Verwandte Links
