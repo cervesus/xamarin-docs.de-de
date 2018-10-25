@@ -4,27 +4,27 @@ description: Dieser Leitfaden erläutert die Grundlagen von SkiaSharp-Graphics-K
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 25141E3E-D22E-44B1-A647-7E6FA0C9737B
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: cbd0b50d41908f41ef301f883050e9837dfcaace
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 91a5b65836f21fac22ee2f32af3abdf538b197f8
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615378"
 ---
 # <a name="skiasharp-drawing-basics"></a>SkiaSharp-Zeichnungen-Grundlagen
 
 _Erfahren Sie, die Grundlagen von SkiaSharp-Graphics-Konzepte und Koordinaten_
 
-Nachdem Sie das SkiaSharp-NuGet-Paket zu Ihrer Xamarin.Forms-Anwendung hinzugefügt haben, können Sie beginnen, verwenden von SkiaSharp-Grafiken. Die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Lösung umfasst mehrere Seiten, die SkiaSharp Programmiertechniken in progressiv erweiterte Lektionen zu veranschaulichen.
+Nachdem Sie das SkiaSharp-NuGet-Paket zu Ihrer Xamarin.Forms-Anwendung hinzugefügt haben, können Sie beginnen, verwenden von SkiaSharp-Grafiken. Die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Lösung umfasst zahlreiche Seiten, die SkiaSharp Programmiertechniken in progressiv erweiterte Lektionen zu veranschaulichen.
 
-Die Beispielprogramme in diesem Abschnitt angezeigt wird, unter der Überschrift **Grundlagen von SkiaSharp** auf der Startseite von der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm, und in der [ **Grundlagen** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics) Ordner der Projektmappe.
+Die Beispielprogramme in diesem Abschnitt angezeigt wird, unter der Überschrift **Grundlagen von SkiaSharp Zeichnung** auf der Startseite des der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) -Programm und in der [ **Grundlagen** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics) Ordner der Projektmappe.
 
 ## <a name="drawing-a-simple-circlecirclemd"></a>[Zeichnen eines einfachen Kreises](circle.md)
 
-Enthält die Grundlagen von SkiaSharp-Zeichnungen, einschließlich Leinwände und Paint.
+Erlernen der Grundlagen von SkiaSharp-Zeichnungen, einschließlich Leinwände, und Zeichnen von Objekten.
 
 ## <a name="integrating-with-xamarinformsintegrationmd"></a>[Integrieren von Xamarin.Forms](integration.md)
 
@@ -46,8 +46,11 @@ Informationen Sie zum Bestimmen der Größe von gerenderten Textzeichenfolgen in
 
 Bitmaps aus verschiedenen Quellen laden und anzeigen.
 
+## <a name="transparencytransparencymd"></a>[Transparenz](transparency.md)
+
+Verwenden Sie Transparenz, um mehrere Abbilder in einer zusammengesetzten Szene zu kombinieren.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

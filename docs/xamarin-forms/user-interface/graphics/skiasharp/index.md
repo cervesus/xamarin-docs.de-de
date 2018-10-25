@@ -1,19 +1,19 @@
 ---
-title: Verwenden von SkiaSharp in Xamarin.Forms
+title: SkiaSharp-Grafiken in Xamarin.Forms
 description: SkiaSharp ist ein 2D-Grafiken für .NET und c# unterstützt, die von der Open-Source-Skia-Grafik-Engine, die häufig in Google-Produkten verwendet wird. Dieses Handbuch erklärt, wie SkiaSharp für 2D-Grafiken in Ihrer Xamarin.Forms-Anwendungen verwendet wird.
 ms.prod: xamarin
 ms.assetid: 2C348BEA-81DF-4794-8857-EB1DFF5E11DB
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: f7d97b798bf2a5a75af0731a665fe212491a6516
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 05c4b00f1551ffe21b3042a7da6bf0483dacf620
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615872"
 ---
-# <a name="using-skiasharp-in-xamarinforms"></a>Verwenden von SkiaSharp in Xamarin.Forms
+# <a name="skiasharp-graphics-in-xamarinforms"></a>SkiaSharp-Grafiken in Xamarin.Forms
 
 _Verwenden von SkiaSharp für 2D-Grafiken in Ihrer Xamarin.Forms-Anwendungen_
 
@@ -31,18 +31,18 @@ SkiaSharp für Xamarin.Forms wird als ein NuGet-Paket verpackt. Nachdem Sie eine
 
 Wenn Ihre Xamarin.Forms-Anwendung iOS ausgerichtet ist, verwenden Sie Eigenschaftenseite des Projekts, um die mindestbereitstellungsziels auf iOS 8.0 zu ändern.
 
-In jeder C#-Seite, die SkiaSharp verwendet werden sollen eine `using` -Direktive für den [ `SkiaSharp` ](https://developer.xamarin.com/api/namespace/SkiaSharp/) -Namespace, der umfasst alle der SkiaSharp-Klassen, Strukturen und Enumerationen, die Sie in Ihren Grafiken verwenden Programmierung. Sollten Sie auch eine `using` -Direktive für den [ `SkiaSharp.Views.Forms` ](https://developer.xamarin.com/api/namespace/SkiaSharp.Views.Forms/) Namespace-URI für die Klassen, die spezifisch für Xamarin.Forms. Dies ist eine viel kleinere Namespace, wobei die wichtigste Klasse [ `SKCanvasView` ](https://developer.xamarin.com/api/type/SkiaSharp.Views.Forms.SKCanvasView/). Diese Klasse wird von der Xamarin.Forms `View` Klasse und Ihre SkiaSharp-Grafikausgabe hostet.
+In jeder C#-Seite, die SkiaSharp verwendet werden sollen eine `using` -Direktive für den [ `SkiaSharp` ](xref:SkiaSharp) -Namespace, der umfasst alle der SkiaSharp-Klassen, Strukturen und Enumerationen, die Sie in Ihren Grafiken verwenden Programmierung. Sollten Sie auch eine `using` -Direktive für den [ `SkiaSharp.Views.Forms` ](xref:SkiaSharp.Views.Forms) Namespace-URI für die Klassen, die spezifisch für Xamarin.Forms. Dies ist eine viel kleinere Namespace, wobei die wichtigste Klasse [ `SKCanvasView` ](xref:SkiaSharp.Views.Forms.SKCanvasView). Diese Klasse wird von der Xamarin.Forms `View` Klasse und Ihre SkiaSharp-Grafikausgabe hostet.
 
 > [!IMPORTANT]
 > Die `SkiaSharp.Views.Forms` Namespace enthält auch eine `SKGLView` abgeleitete Klasse `View` , aber OpenGL für Rendern von Grafiken verwendet. Zum Zwecke der Einfachheit halber wird in der vorliegenden beschränkt selbst `SKCanvasView`, während mit `SKGLView` stattdessen ist sehr ähnlich.
 
 ## <a name="skiasharp-drawing-basicsbasicsindexmd"></a>[Grundlagen von SkiaSharp-Zeichnungen](basics/index.md)
 
-Einige der einfachste Grafiken Abbildungen, die Sie mit SkiaSharp zeichnen können sind Kreise, Ovale und Rechtecke. Bei der Anzeige dieser Zahlen, erfahren Sie mehr über SkiaSharp-Koordinaten, Größen und Farben.
+Einige der einfachste Grafiken Abbildungen, die Sie mit SkiaSharp zeichnen können sind Kreise, Ovale und Rechtecke. Bei der Anzeige dieser Zahlen, erfahren Sie mehr über SkiaSharp-Koordinaten, Größen und Farben. Die Anzeige von Text und Bitmaps ist komplexer, aber in diesen Artikeln werden auch diese Techniken eingeführt.
 
 ## <a name="skiasharp-lines-and-pathspathsindexmd"></a>[SkiaSharp-Linien und -Pfade](paths/index.md)
 
-Ein Grafikpfad ist eine Reihe verbundener gerader Linien und Kurven. Pfade können gestrichelt, ausgefüllt wird, oder beides. Dieses Thema umfasst viele Aspekte der einschließlich Linienenden und Joins sowie gestrichelte Linie zeichnen und gepunkteten Linien, aber beendet, ohne die Kurve Geometrien.
+Ein Grafikpfad ist eine Reihe verbundener gerader Linien und Kurven. Pfade können gestrichelt, ausgefüllt wird, oder beides. In diesem Artikel umfasst viele Aspekte der einschließlich Linienenden und Joins sowie gestrichelte Linie zeichnen und gepunkteten Linien, aber beendet, ohne die Kurve Geometrien.
 
 ## <a name="skiasharp-transformstransformsindexmd"></a>[SkiaSharp-Transformationen](transforms/index.md)
 
@@ -56,8 +56,12 @@ Die Auswertung der Pfade, die mit dem Hinzufügen der Kurven in einer Pfadobjekt
 
 Bitmaps sind rechteckige Arrays von Bits, die für die Pixel der ein Anzeigegerät. Diese Artikelreihe veranschaulicht laden, speichern, anzeigen, erstellen, gezeichnet werden soll, animieren und Zugriff auf die Bits von SkiaSharp-Bitmaps.
 
+## <a name="skiasharp-effectseffectsindexmd"></a>[SkiaSharp-Auswirkungen](effects/index.md)
+
+Effekte sind Eigenschaften, die die normale Anzeige von Grafiken, einschließlich der Gradienten für lineare und runde Ausführungen ändern, bitmap-Kacheln, blend-Modi, blur- und andere.
+
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [SkiaSharp mit Xamarin.Forms Webinar (Video)](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)

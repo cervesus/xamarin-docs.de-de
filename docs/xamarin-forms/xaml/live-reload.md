@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 12b677c8cc4a709a865d2eaee3ea44a6babf1b05
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: ce48c4d271167b657505c52518e79c955e53b02e
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38860666"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin Live neu laden
@@ -26,10 +26,12 @@ Da Ihre app bei Verwendung von Live Reload kompiliert wird, funktioniert mit all
 
 Live neu laden ist derzeit nur in Visual Studio 2017 verfügbar.
 
+[![Nehmen Sie an der Chat an https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## <a name="requirements"></a>Anforderungen
 
-* [Visual Studio 2017 Version 15.7 oder höher](https://visualstudio.microsoft.com/vs/) oder höher mit der **Mobile Entwicklung mit .NET** arbeitsauslastung.
-* [Xamarin.Forms 3.0.0 oder höher](https://www.nuget.org/packages/Xamarin.Forms/) oder höher.
+* [Visual Studio 2017 Version 15.7 oder höher](https://visualstudio.microsoft.com/vs/) mit der **Mobile Entwicklung mit .NET** arbeitsauslastung.
+* [Xamarin.Forms 3.0.0 oder höher](https://www.nuget.org/packages/Xamarin.Forms/).
 
 ## <a name="getting-started"></a>Erste Schritte
 ### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Installieren Sie Xamarin Live neu laden von Visual Studio Marketplace
@@ -121,6 +123,8 @@ Nein. In der Tat können sogar starten Sie alle Ihre unterstützten Anwendungszi
 * Nur unterstützt in Visual Studio.
 * Verknüpfen von muss festgelegt werden, um **nicht verknüpfen** oder **Link nur Framework-SDKs** 
 * Erneutes Laden der gesamten app-Ressourcen (z. B. **"App.xaml"** oder freigegebenen Ressourcenverzeichnisse), app-Navigation wird zurückgesetzt. Dies wird in der nächsten Vorabversion behoben werden.
+* Erneutes Laden der ContentView derzeit erfordert die enthaltende Seite erneut zu laden. Dies wird in der nächsten Vorabversion behoben werden.
+* Elemente, die AutomationId möglicherweise einen Fehler erneut laden.
 * Bearbeiten von XAML beim Debuggen von UWP einen Absturz zur Laufzeit verursachen. Problemumgehung: Verwenden Sie **Starten ohne Debuggen (STRG + F5)** anstelle von **starten (F5) Debuggen**.
 
 ## <a name="troubleshooting"></a>Problembehandlung

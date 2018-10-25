@@ -6,12 +6,12 @@ ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/16/2018
-ms.openlocfilehash: 60bf0bdc5f1a4472dfd12424c3cc0375d3f34c24
-ms.sourcegitcommit: 11c1df7594064e4e141470e092e55cc50c138068
+ms.date: 10/23/2018
+ms.openlocfilehash: def97ab77781c7a7156d4c4178097184614f3e8b
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/23/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "35240352"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms-Datenbindung
@@ -64,6 +64,10 @@ Stellen Sie datenbindungen, die robuster, durch die Definition von fallback-Wert
 ## <a name="the-command-interfacecommandingmd"></a>[Die Befehlsschnittstelle](commanding.md)
 
 Implementieren der `Command` Eigenschaft mit datenbindungen.
+
+## <a name="compiled-bindingscompiled-bindingsmd"></a>[Kompilierte Bindungen](compiled-bindings.md)
+
+Verwenden Sie kompilierte Bindungen, um die Bindung die modellleistung zu verbessern.
 
 ## <a name="related-links"></a>Verwandte Links
 

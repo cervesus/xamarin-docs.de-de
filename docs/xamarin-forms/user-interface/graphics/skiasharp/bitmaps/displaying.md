@@ -4,14 +4,14 @@ description: Erfahren Sie, wie SkiaSharp Bitmaps in Pixeln Größen und erweiter
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 8E074F8D-4715-4146-8CC0-FD7A8290EDE9
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: cbe3166c4edb147f7179f2c719901b382db8ec80
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: f4cc13a5e8794eb5f2f883f35d6a0e4d34788507
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615313"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>Anzeigen von SkiaSharp-bitmaps
@@ -71,7 +71,7 @@ catch
 
 Beachten Sie, dass die `Stream` -Objekts vom `GetStreamAsync` in kopiert eine `MemoryStream`. Android lässt nicht zu den `Stream` aus `HttpClient` durch den Hauptthread in asynchronen Methoden außer verarbeitet werden. 
 
-Die [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/System.IO.Stream/) ist sehr viel Arbeit: die `Stream` übergebenes Objekt verweist auf einen Speicherblock, der eine gesamte Bitmap in einem von der allgemeinen Bitmapformate-Datei, in der Regel JPEG, PNG oder GIF enthält. Die `Decode` Methode bestimmen Sie das Format muss, und die Bitmapdatei klicken Sie dann in SkiaSharps-interne Bitmap-Format zu decodieren.
+Die [ `SKBitmap.Decode` ](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream)) ist sehr viel Arbeit: die `Stream` übergebenes Objekt verweist auf einen Speicherblock, der eine gesamte Bitmap in einem von der allgemeinen Bitmapformate-Datei, in der Regel JPEG, PNG oder GIF enthält. Die `Decode` Methode bestimmen Sie das Format muss, und die Bitmapdatei klicken Sie dann in SkiaSharps-interne Bitmap-Format zu decodieren.
 
 Nach dem der Code ruft `SKBitmap.Decode`, es werden möglicherweise ungültig. die `CanvasView` , damit die `PaintSurface` Handler kann anzeigen, die neu geladene Bitmap.
 
@@ -107,16 +107,16 @@ using (Stream stream = await picturePicker.GetImageStreamAsync())
 
 In der Regel solchen Code auch erklärt die `CanvasView` , damit die `PaintSurface` Handler kann die neue Bitmap angezeigt.
 
-Die `SKBitmap` -Klasse definiert einige nützliche Eigenschaften, einschließlich [ `Width` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Width/) und [ `Height` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Height/), der die Pixeldimensionen der Bitmap als auch viele Methoden, einschließlich anzeigen Methoden zum Erstellen von Bitmaps, um sie zu kopieren, und um Pixelbits verfügbar zu machen. 
+Die `SKBitmap` -Klasse definiert einige nützliche Eigenschaften, einschließlich [ `Width` ](xref:SkiaSharp.SKBitmap.Width) und [ `Height` ](xref:SkiaSharp.SKBitmap.Height), der die Pixeldimensionen der Bitmap als auch viele Methoden, einschließlich anzeigen Methoden zum Erstellen von Bitmaps, um sie zu kopieren, und um Pixelbits verfügbar zu machen. 
 
 ## <a name="displaying-in-pixel-dimensions"></a>Anzeigen von in die Pixeldimensionen
 
-Die SkiaSharp [ `Canvas` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCanvas/) Klasse definiert vier `DrawBitmap` Methoden. Diese Methoden ermöglichen die Bitmaps auf zwei grundlegend verschiedene Arten angezeigt werden: 
+Die SkiaSharp [ `Canvas` ](xref:SkiaSharp.SKCanvas) Klasse definiert vier `DrawBitmap` Methoden. Diese Methoden ermöglichen die Bitmaps auf zwei grundlegend verschiedene Arten angezeigt werden: 
 
 - Angeben einer `SKPoint` Wert (oder separate `x` und `y` Werte) werden Sie in die Pixeldimensionen die Bitmap angezeigt. Die Pixel der Bitmap werden direkt in Pixel der Videoanzeige zugeordnet.
 - Angeben eines Rechtecks bewirkt, dass die Bitmap, auf die Größe und Form des Rechtecks gestreckt wird. 
 
-Anzeigen eine Bitmap in die Pixeldimensionen mit [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKPoint/SkiaSharp.SKPaint/) mit einer `SKPoint` Parameter oder [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/System.Single/System.Single/SkiaSharp.SKPaint/) mit separaten `x` und `y` Parameter:
+Anzeigen eine Bitmap in die Pixeldimensionen mit [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKPoint,SkiaSharp.SKPaint)) mit einer `SKPoint` Parameter oder [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,System.Single,System.Single,SkiaSharp.SKPaint)) mit separaten `x` und `y` Parameter:
 
 ```csharp
 DrawBitmap(SKBitmap bitmap, SKPoint pt, SKPaint paint = null)
@@ -126,7 +126,21 @@ DrawBitmap(SKBitmap bitmap, float x, float y, SKPaint paint = null)
 
 Diese beiden Methoden sind funktional identisch. Der angegebene Punkt gibt den Speicherort der oberen linken Ecke der Bitmap relativ zur Leinwand an. Da die Pixel-Auflösung von mobilen Geräten so hoch ist, werden kleinere Bitmaps in der Regel ziemlich winzig auf diesen Geräten angezeigt.
 
-Der optionale `SKPaint` Parameter können Sie die Bitmap verwenden Mischmodi anzuzeigen, oder Filtern die Auswirkungen. Diese werden in späteren Artikeln veranschaulicht werden.
+Der optionale `SKPaint` Parameter können Sie die Bitmap Transparenz mit anzuzeigen. Zu diesem Zweck erstellen Sie eine `SKPaint` Objekt, und legen die `Color` -Eigenschaft auf eine `SKColor` Wert mit einem Alpha-Kanal kleiner als 1. Zum Beispiel:
+
+```csharp
+paint.Color = new SKColor(0, 0, 0, 0x80);
+```
+
+Der 0 x 80, der als letztes Argument übergeben, gibt die Transparenz von 50 % an. Sie können auch einen alpha-Kanal auf eine der vordefinierten Farben festlegen:
+
+```csharp
+paint.Color = SKColors.Red.WithAlpha(0x80);
+```
+
+Die Farbe an sich ist jedoch nicht relevant. Nur der Alphakanal wird untersucht, bei der Verwendung der `SKPaint` -Objekt in ein `DrawBitmap` aufrufen.
+
+Die `SKPaint` Objekt spielt ebenfalls eine Rolle beim Anzeigen von Bitmaps mit Füllmethoden oder Auswirkungen zu filtern. Diese werden in den Artikeln veranschaulicht [SkiaSharp-Zusammensetzung und Blend-Modi](../effects/blend-modes/index.md) und [SkiaSharp Bildfilter](../effects/image-filters.md).
 
 Die **Pixeldimensionen** auf der Seite die **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** Beispielprogramm zeigt eine Bitmapressource, die 320 Pixel breit und 240 Pixel hoch ist:
 
@@ -202,7 +216,7 @@ Dies `LoadBitmapResource` Methode in alle folgenden Samplings, die Bitmapressour
 
 ## <a name="stretching-to-fill-a-rectangle"></a>Strecken, um ein Rechteck zu füllen.
 
-Die `SKCanvas` -Klasse definiert außerdem eine [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKPaint/) -Methode, die Bitmap um ein Rechteck und ein anderes rendert [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKRect/SkiaSharp.SKPaint/) -Methode, eine rechteckige Teilmenge der Bitmap auf rendert, eine Rechteck:
+Die `SKCanvas` -Klasse definiert außerdem eine [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKPaint)) -Methode, die Bitmap um ein Rechteck und ein anderes rendert [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint)) -Methode, eine rechteckige Teilmenge der Bitmap auf rendert, eine Rechteck:
 
 ```
 DrawBitmap(SKBitmap bitmap, SKRect dest, SKPaint paint = null)
@@ -242,7 +256,7 @@ public class FillRectanglePage : ContentPage
 }
 ```
 
-Beachten Sie die Verwendung der neuen `BitmapExtensions.LoadBitmapResource` Methode zum Festlegen der `SKBitmap` Feld. Das Zielrechteck aus einer der [ `Rect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKImageInfo.Rect/) Eigenschaft `SKImageInfo`, beschreibt die Größe der Anzeigeoberfläche:
+Beachten Sie die Verwendung der neuen `BitmapExtensions.LoadBitmapResource` Methode zum Festlegen der `SKBitmap` Feld. Das Zielrechteck aus einer der [ `Rect` ](xref:SkiaSharp.SKImageInfo.Rect) Eigenschaft `SKImageInfo`, beschreibt die Größe der Anzeigeoberfläche:
 
 [![Ausfüllen des Rechtecks](displaying-images/FillRectangle.png "Ausfüllen des Rechtecks")](displaying-images/FillRectangle-Large.png#lightbox)
 
@@ -649,6 +663,6 @@ Diese Quelle Rechteck isoliert Head für das Monkey-Objekt, wie im folgenden Scr
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 

@@ -6,12 +6,12 @@ ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/06/2017
-ms.openlocfilehash: 558a05b5fdc4c4f08194b708de886bca342dd860
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 09/15/2018
+ms.openlocfilehash: 28c6daa361b7de09a0d9332b21f1b6f75e035850
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38995413"
 ---
 # <a name="introduction-to-dependencyservice"></a>Einführung in die DependencyService
@@ -20,7 +20,10 @@ ms.locfileid: "38995413"
 
 [`DependencyService`](xref:Xamarin.Forms.DependencyService) erlaubt apps das plattformspezifische Funktionen über freigegebenen Code aufgerufen. Diese Funktionalität ermöglicht das Xamarin.Forms-apps, nichts tun, die eine native app ausführen können.
 
-`DependencyService` ist ein Abhängigkeitskonfliktlöser. In der Praxis ist eine Schnittstelle definiert und `DependencyService` sucht die richtige Implementierung dieser Schnittstelle aus den verschiedenen Plattform-Projekten.
+`DependencyService` ist ein Service Locator. In der Praxis ist eine Schnittstelle definiert und `DependencyService` sucht die richtige Implementierung dieser Schnittstelle aus den verschiedenen Plattform-Projekten.
+
+> [!NOTE]
+> In der Standardeinstellung die [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) nur löst plattformimplementierungen aus, die parameterlose Konstruktoren besitzen. Allerdings kann eine Abhängigkeit Auflösungsmethode in Xamarin.Forms eingefügt werden, die DI-Containern oder Factorymethoden verwendet, um die plattformimplementierungen zu beheben. Dieser Ansatz kann plattformimplementierungen zu beseitigen, die über Konstruktoren mit Parametern verwendet werden. Weitere Informationen finden Sie unter [abhängigkeitsauflösung in Xamarin.Forms](~/xamarin-forms/internals/dependency-resolution.md).
 
 ## <a name="how-dependencyservice-works"></a>Funktionsweise von DependencyService
 
@@ -144,7 +147,6 @@ Die [UsingDependencyService Beispielprojektmappe](https://developer.xamarin.com/
 
 > [!NOTE]
 > Sie **müssen** eine Implementierung in jedem plattformprojekt bereitstellen. Wenn keine Implementierung der Schnittstelle registriert ist, und klicken Sie dann die `DependencyService` kann nicht aufgelöst werden die `Get<T>()` Methode zur Laufzeit.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

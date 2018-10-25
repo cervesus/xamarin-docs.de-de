@@ -6,23 +6,25 @@ ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 01/05/2018
-ms.openlocfilehash: a630d7c2acb95b7551c9f5f870078a0efcfc075c
-ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
+ms.date: 08/01/2018
+ms.openlocfilehash: e483716952aa97de4411733006f4fa12c3e6da98
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/01/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39393671"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Verwenden von XAML-Markuperweiterungen
 
-XAML-Markuperweiterungen können die Leistungsfähigkeit und Flexibilität von XAML zu verbessern, indem Sie Attribute des Elements aus einer Vielzahl von Datenquellen festgelegt werden können. Einige XAML-Markuperweiterungen sind Teil der Spezifikation für die XAML 2009. Diese werden in XAML-Dateien mit der üblichen `x` Namespace-Präfix, und Sie werden häufig bezeichnet mit diesem Präfix. Diese werden in den folgenden Abschnitten beschrieben:
+XAML-Markuperweiterungen können die Leistungsfähigkeit und Flexibilität von XAML zu verbessern, indem Sie Attribute des Elements aus einer Vielzahl von Datenquellen festgelegt werden können. Einige XAML-Markuperweiterungen sind Teil der Spezifikation für die XAML 2009. Diese werden in XAML-Dateien mit der üblichen `x` Namespace-Präfix, und Sie werden häufig bezeichnet mit diesem Präfix. In diesem Artikel werden die folgenden Markuperweiterungen erläutert:
 
-- [`x:Static`](#static) &ndash; Verweisen auf statische Eigenschaften, Felder oder Enumerationsmember.
-- [`x:Reference`](#reference) &ndash; der Verweis mit dem Namen Elemente auf der Seite.
-- [`x:Type`](#type) &ndash; Legen Sie ein Attribut auf eine `System.Type` Objekt.
-- [`x:Array`](#array) &ndash; ein Array von Objekten eines bestimmten Typs zu erstellen.
-- [`x:Null`](#null) &ndash; Legen Sie ein Attribut auf eine `null` Wert.
+- [`x:Static`](#static) – statische Eigenschaften, Felder oder Enumerationsmember zu verweisen.
+- [`x:Reference`](#reference) – Verweis mit dem Namen Elemente auf der Seite.
+- [`x:Type`](#type) – Legen Sie ein Attribut auf eine `System.Type` Objekt.
+- [`x:Array`](#array) – ein Array von Objekten eines bestimmten Typs zu erstellen.
+- [`x:Null`](#null) – Legen Sie ein Attribut auf eine `null` Wert.
+- [`OnPlatform`](#onplatform) – Benutzeroberfläche-Darstellung auf einer Basis pro Plattform anpassen.
+- [`OnIdiom`](#onidiom) – Anpassen der UI-Darstellung, die abhängig von der Sprache des Geräts auf die Anwendung ausgeführt wird.
 
 Zusätzliche XAML-Markuperweiterungen verfügen in der Vergangenheit von anderen XAML-Implementierungen unterstützt wurde, und werden auch von Xamarin.Forms unterstützt. Diese werden in anderen Artikeln ausführlicher beschrieben:
 
@@ -453,10 +455,89 @@ So sieht das Programm ausgeführt wird, auf die drei Plattformen aus:
 
 Beachten Sie, dass diese vier von der `Label` Elemente haben eine Serifenschriftart jedoch das Center `Label` hat die Standard-Schriftart sans-Serif.
 
+<a name="onplatform" />
+
+## <a name="onplatform-markup-extension"></a>OnPlatform-Markuperweiterung
+
+Die `OnPlatform` Markuperweiterung können Sie UI-Darstellung auf einer Basis pro Plattform anpassen. Es bietet die gleiche Funktionalität wie die [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) und [ `On` ](xref:Xamarin.Forms.On) Klassen, jedoch eine präzisere Darstellung.
+
+Die `OnPlatform` Markuperweiterung wird unterstützt, indem die [ `OnPlatformExtension` ](xref:Xamarin.Forms.Xaml.OnPlatformExtension) -Klasse, die die folgenden Eigenschaften definiert:
+
+- `Default` Der Typ `object`, dass Sie auf einen Standardwert festlegen, auf die Eigenschaften angewendet werden, die Plattformen darstellen.
+- `Android` Der Typ `object`, die Sie auf einen Wert festlegen, für Android verwendet werden soll.
+- `GTK` Der Typ `object`, die Sie auf einen Wert festlegen, für GTK-Plattformen verwendet werden soll.
+- `iOS` Der Typ `object`, die Sie auf einen Wert festlegen, für iOS verwendet werden soll.
+- `macOS` Der Typ `object`, die Sie auf einen Wert festlegen, unter MacOS angewendet werden.
+- `Tizen` Der Typ `object`, die Sie auf einen Wert festlegen, auf der Plattform Tizen angewendet werden.
+- `UWP` Der Typ `object`, die Sie auf einen Wert festlegen, für die universelle Windows-Plattform verwendet werden soll.
+- `WPF` Der Typ `object`, die Sie auf einen Wert festlegen, für die Windows Presentation Foundation-Plattform verwendet werden soll.
+- `Converter` Der Typ `IValueConverter`, die Sie festlegen, um eine `IValueConverter` Implementierung.
+- `ConverterParameter` Der Typ `object`, die Sie auf einen Wert festlegen, Übergabe an die `IValueConverter` Implementierung.
+
+> [!NOTE]
+> Der XAML-Parser lässt die [ `OnPlatformExtension` ](xref:Xamarin.Forms.Xaml.OnPlatformExtension) Klasse als abgekürzt werden `OnPlatform`.
+
+Die `Default` -Eigenschaft ist die Content-Eigenschaft des `OnPlatformExtension`. Aus diesem Grund für XAML-Markup-Ausdrücke mit geschweiften Klammern ausgedrückt, Sie können vermeiden, die `Default=` Teil des Ausdrucks, vorausgesetzt, dass es sich um das erste Argument ist.
+
+> [!IMPORTANT]
+> Der XAML-Parser wird vorausgesetzt, dass die Werte des richtigen Typs zu Eigenschaften, die Nutzung bereitgestellt werden die `OnPlatform` Markuperweiterung. Wenn typkonvertierung erforderlich ist, ist die `OnPlatform` Markuperweiterung versucht, die sie mit die Standard-Konverter von Xamarin.Forms bereitgestelltes ausführen. Es gibt jedoch einige Typumwandlungen, die durch die Standard-Konverter und in diesen Fällen nicht ausgeführt werden können die `Converter` Eigenschaft sollte festgelegt werden, um eine `IValueConverter` Implementierung.
+
+Die **OnPlatform-Demo** Seite zeigt, wie die `OnPlatform` Markuperweiterung:
+
+```xaml
+<BoxView Color="{OnPlatform Yellow, iOS=Red, Android=Green, UWP=Blue}"
+         WidthRequest="{OnPlatform 250, iOS=200, Android=300, UWP=400}"  
+         HeightRequest="{OnPlatform 250, iOS=200, Android=300, UWP=400}"
+         HorizontalOptions="Center" />
+```
+
+In diesem Beispiel alle drei `OnPlatform` Ausdrücke verwenden, die Kurzform der `OnPlatformExtension` Klassenname. Die drei `OnPlatform` Markup Extensions Satz der [ `Color` ](xref:Xamarin.Forms.BoxView.Color), [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest), und [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) Eigenschaften der [ `BoxView` ](xref:Xamarin.Forms.BoxView) auf iOS-, Android- und UWP unterschiedliche Werte. Markuperweiterungen geben auch Standardwerte für diese Eigenschaften auf den Plattformen, die angegeben sind, sodass die `Default=` Teil des Ausdrucks. Beachten Sie, dass die Markup-Erweiterungseigenschaften, die festgelegt werden, die durch Kommas getrennt werden.
+
+Hier wird das Programm auf allen drei Plattformen ausgeführt wird:
+
+[![OnPlatform-Demo](consuming-images/onplatformdemo-small.png "OnPlatform-Demo")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform-Demo")
+
+<a name="onidiom" />
+
+## <a name="onidiom-markup-extension"></a>OnIdiom-Markuperweiterung
+
+Die `OnIdiom` Markuperweiterungen können Sie zum Anpassen der UI-Darstellung, die abhängig von der Sprache des Geräts auf die Anwendung ausgeführt wird. Wird von unterstützt die [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension) -Klasse, die die folgenden Eigenschaften definiert:
+
+- `Default` Der Typ `object`, dass Sie auf einen Standardwert festlegen, auf die Eigenschaften angewendet werden, die Geräte-Ausdrücke darstellen.
+- `Phone` Der Typ `object`, die Sie auf einen Wert festlegen, auf Telefonen angewendet werden.
+- `Tablet` Der Typ `object`, die Sie auf einen Wert festlegen, auf Tablets angewendet werden.
+- `Desktop` Der Typ `object`, die Sie auf einen Wert festlegen, für die desktop-Plattformen verwendet werden soll.
+- `TV` Der Typ `object`, die Sie auf einen Wert festlegen, für TV-Plattformen verwendet werden soll.
+- `Watch` Der Typ `object`, die Sie auf einen Wert festlegen, für die Watch-Plattformen verwendet werden soll.
+- `Converter` Der Typ `IValueConverter`, die Sie festlegen, um eine `IValueConverter` Implementierung.
+- `ConverterParameter` Der Typ `object`, die Sie auf einen Wert festlegen, Übergabe an die `IValueConverter` Implementierung.
+
+> [!NOTE]
+> Der XAML-Parser lässt die [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension) Klasse als abgekürzt werden `OnIdiom`.
+
+Die `Default` -Eigenschaft ist die Content-Eigenschaft des `OnIdiomExtension`. Aus diesem Grund für XAML-Markup-Ausdrücke mit geschweiften Klammern ausgedrückt, Sie können vermeiden, die `Default=` Teil des Ausdrucks, vorausgesetzt, dass es sich um das erste Argument ist.
+
+> [!IMPORTANT]
+> Der XAML-Parser wird vorausgesetzt, dass die Werte des richtigen Typs zu Eigenschaften, die Nutzung bereitgestellt werden die `OnIdiom` Markuperweiterung. Wenn typkonvertierung erforderlich ist, ist die `OnIdiom` Markuperweiterung versucht, die sie mit die Standard-Konverter von Xamarin.Forms bereitgestelltes ausführen. Es gibt jedoch einige Typumwandlungen, die durch die Standard-Konverter und in diesen Fällen nicht ausgeführt werden können die `Converter` Eigenschaft sollte festgelegt werden, um eine `IValueConverter` Implementierung.
+
+Die **OnIdiom Demo** Seite zeigt, wie die `OnIdiom` Markuperweiterung:
+
+```xaml
+<BoxView Color="{OnIdiom Yellow, Phone=Red, Tablet=Green, Desktop=Blue}"
+         WidthRequest="{OnIdiom 100, Phone=200, Tablet=300, Desktop=400}"
+         HeightRequest="{OnIdiom 100, Phone=200, Tablet=300, Desktop=400}"
+         HorizontalOptions="Center" />
+```
+
+In diesem Beispiel alle drei `OnIdiom` Ausdrücke verwenden, die Kurzform der `OnIdiomExtension` Klassenname. Die drei `OnIdiom` Markup Extensions Satz der [ `Color` ](xref:Xamarin.Forms.BoxView.Color), [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest), und [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) Eigenschaften der [ `BoxView` ](xref:Xamarin.Forms.BoxView) auf unterschiedliche Werte auf das Telefon, Tablet und desktop-Ausdrücke. Markuperweiterungen geben auch Standardwerte für diese Eigenschaften für die Ausdrücke, die angegeben sind, sodass die `Default=` Teil des Ausdrucks. Beachten Sie, dass die Markup-Erweiterungseigenschaften, die festgelegt werden, die durch Kommas getrennt werden.
+
+Hier wird das Programm auf allen drei Plattformen ausgeführt wird:
+
+[![OnIdiom Demo](consuming-images/onidiomdemo-small.png "OnIdiom Demo")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom-Demo")
+
 ## <a name="define-your-own-markup-extensions"></a>Definieren Sie Ihre eigenen Markuperweiterungen
 
 Wenn Sie müssen für eine XAML-Markuperweiterung, die nicht in Xamarin.Forms verfügbar ist gefunden haben, können Sie [erstellen Sie Ihre eigenen](creating.md).
-
 
 ## <a name="related-links"></a>Verwandte Links
 

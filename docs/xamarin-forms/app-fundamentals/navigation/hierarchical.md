@@ -6,25 +6,17 @@ ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/10/2017
-ms.openlocfilehash: f8f8f9b4e5755e8b1707178fef633321b64e4e94
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 08/14/2018
+ms.openlocfilehash: a0a58cf05c97221a73cd0784b7859bb9c84cef86
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38994675"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
 _Die "NavigationPage"-Klasse bietet es sich um eine hierarchische Navigation bereit, in dem der Benutzer können Navigation durch Seiten, und in der Rückwärtsrichtung wie gewünscht ist. Die Klasse implementiert die Navigation als Last in, First Out (LIFO) der Page-Objekte. In diesem Artikel wird veranschaulicht, wie die "NavigationPage"-Klasse, die zum Ausführen der Navigation in einem Stapel von Seiten verwendet wird._
-
-In diesem Artikel werden die folgenden Themen behandelt:
-
-- [Ausführen der Navigation](#Performing_Navigation) – erstellen Sie die Stammseite, Seiten auf den Navigationsstapel übertragen, Seiten, von dem Navigationsstapel entfernt und Seitenübergänge zu animieren.
-- [Übergeben von Daten beim Navigieren](#Passing_Data_when_Navigating) : Übergeben von Daten über einen Seitenkonstruktor, und eine `BindingContext`.
-- [Bearbeiten von dem Navigationsstapel](#Manipulating_the_Navigation_Stack) – bearbeiten den Stapel durch Einfügen oder Entfernen von Seiten.
-
-## <a name="overview"></a>Übersicht
 
 Um von einer Seite in ein anderes zu verschieben, wird eine Anwendung übertragen per push eine neue Seite in den Navigationsstapel, in dem sie die aktive Seite, werden wie im folgenden Diagramm dargestellt:
 
@@ -312,10 +304,58 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 Vorausgesetzt, dass die Anmeldeinformationen des Benutzers korrekt ist, werden die `MainPage` Instanz wird in den Navigationsstapel vor der aktuellen Seite eingefügt. Die [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync) Methode entfernt die aktuelle Seite vom Navigationsstapel, klicken Sie dann mit der `MainPage` Instanz zur aktiven Seite zu.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="displaying-views-in-the-navigation-bar"></a>Anzeigen von Ansichten in der Navigationsleiste
 
-In diesem Artikel veranschaulicht, wie Sie mit der [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) Klasse, um die Navigation in einem Stapel von Seiten führen. Diese Klasse stellt eine hierarchische Navigation bereit, in dem der Benutzer können Navigation durch Seiten, und in der Rückwärtsrichtung wie gewünscht ist. Die Klasse implementiert die Navigation als LIFO-Stapel (Last-In-First-out) von [`Page`](xref:Xamarin.Forms.Page)-Objekten.
+Alle Xamarin.Forms [ `View` ](xref:Xamarin.Forms.View) können angezeigt werden, in der Navigationsleiste auf der ein [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage). Dies geschieht durch Festlegen der [ `NavigationPage.TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) angefügten Eigenschaft, um eine `View`. Angefügte Eigenschaft festgelegt werden kann, auf einem [ `Page` ](xref:Xamarin.Forms.Page), und wann die `Page` zu leisten ist eine `NavigationPage`, `NavigationPage` wird den Wert der Eigenschaft berücksichtigt.
 
+Das folgende Beispiel stammt aus dem [Title-Viewer-Beispiel](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/), veranschaulicht das Festlegen der [ `NavigationPage.TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) angefügte Eigenschaft in XAML:
+
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigationPageTitleView.TitleViewPage">
+    <NavigationPage.TitleView>
+        <Slider HeightRequest="44" WidthRequest="300" />
+    </NavigationPage.TitleView>
+    ...
+</ContentPage>
+```
+
+Hier ist das Äquivalent C# Code:
+
+```csharp
+public class TitleViewPage : ContentPage
+{
+    public TitleViewPage()
+    {
+        var titleView = new Slider { HeightRequest = 44, WidthRequest = 300 };
+        NavigationPage.SetTitleView(this, titleView);
+        ...
+    }
+}
+```
+
+Dies führt zu einem [ `Slider` ](xref:Xamarin.Forms.Slider) in der Navigationsleiste angezeigt wird, auf die [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage):
+
+[![Schieberegler TitleView](hierarchical-images/titleview-small.png "Schieberegler TitleView")](hierarchical-images/titleview-large.png#lightbox "Schieberegler TitleView")
+
+> [!IMPORTANT]
+> Viele Ansichten nicht in der Navigationsleiste angezeigt, es sei denn, die Größe der Ansicht mit angegeben wird die [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest) und [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) Eigenschaften. Alternativ kann die Ansicht eingebunden werden, einem [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) mit der [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) und [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) Eigenschaften, die auf die entsprechenden Werte festgelegt.
+
+Beachten Sie, dass, weil die [ `Layout` ](xref:Xamarin.Forms.Layout) Klasse leitet sich von der [ `View` ](xref:Xamarin.Forms.View) -Klasse, die [ `TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) angefügte Eigenschaft kann festgelegt werden, um ein Layout anzuzeigen. Klasse, die mehrere Ansichten enthält. Unter iOS und die universelle Windows-Plattform (UWP) die Höhe der Navigationsleiste kann nicht geändert werden, und daher Clipping tritt auf, wenn in die Ansicht angezeigt, in der Navigationsleiste auf größer als die Standardgröße der Navigationsleiste ist. Allerdings unter Android die Höhe der Navigationsleiste kann geändert werden durch Festlegen der [ `NavigationPage.BarHeight` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty) bindbare Eigenschaft eine `double` , das die neue Höhe darstellt. Weitere Informationen finden Sie unter [Festlegen der Höhe der Leiste Navigation auf einer "NavigationPage"](~/xamarin-forms/platform/platform-specifics/consuming/android.md#navigationpage-barheight).
+
+Alternativ kann eine erweiterte Navigationsleiste vorgeschlagen werden, platzieren Sie am oberen Rand der Inhalt der Seite, die Sie Farbe entsprechen, auf der Navigationsleiste auf einige des Inhalts in der Navigationsleiste und andere in einer Ansicht. Darüber hinaus unter iOS die Trennlinie und Schattenkopien, die am unteren Rand der Navigationsleiste können entfernt werden durch Festlegen der [ `NavigationPage.HideNavigationBarSeparator` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) bindbare Eigenschaft `true`. Weitere Informationen finden Sie unter [ausblenden-Trennzeichens. die Navigation auf einer "NavigationPage"](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#navigationpage-hideseparatorbar).
+
+> [!NOTE]
+> Die [ `BackButtonTitle` ](xref:Xamarin.Forms.NavigationPage.BackButtonTitleProperty), [ `Title` ](xref:Xamarin.Forms.Page.Title), [ `TitleIcon` ](xref:Xamarin.Forms.NavigationPage.TitleIconProperty), und [ `TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) Eigenschaften können alle definieren. Werte, die Platz auf der Navigationsleiste auf. Während die Größe der Navigation durch die Plattform und der Bildschirmgröße variiert, führt alle diese Eigenschaften festlegen zu Konflikte aufgrund der begrenzten Speicherplatz zur Verfügung. Anstatt zu versuchen, eine Kombination dieser Eigenschaften verwenden, können möglicherweise Sie Design Ihrer gewünschten Navigationsleiste besser erreichen können, indem Sie nur Festlegen der `TitleView` Eigenschaft.
+
+### <a name="limitations"></a>Einschränkungen
+
+Es gibt einige Einschränkungen zu beachten bei der Anzeige einer [ `View` ](xref:Xamarin.Forms.View) in der Navigationsleiste auf der ein [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage):
+
+- Unter iOS, Ansichten, die in der Navigationsleiste des platziert eine `NavigationPage` angezeigt werden, in eine andere Position, je nachdem, ob große Titel aktiviert sind. Weitere Informationen zum Aktivieren der große Titel finden Sie unter [große Titel anzeigen](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#large_title).
+- Unter Android werden Ansichten in der Navigationsleiste des Platzieren einer `NavigationPage` können nur ausgeführt werden, in apps, die Anwendungskompatibilität zu verwenden.
+- Es wird nicht empfohlen, große und komplexe Ansichten, z. B. platzieren [ `ListView` ](xref:Xamarin.Forms.ListView) und [ `TableView` ](xref:Xamarin.Forms.TableView), in der Navigationsleiste auf der ein `NavigationPage`.
 
 ## <a name="related-links"></a>Verwandte Links
 
@@ -323,6 +363,7 @@ In diesem Artikel veranschaulicht, wie Sie mit der [ `NavigationPage` ](xref:Xam
 - [Hierarchisch (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
 - [PassingData (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)
 - [LoginFlow (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)
+- [Titleview enthalten (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/)
 - [Vorgehensweise: Erstellen Sie ein Zeichen im Bildschirm-Fluss in Xamarin.Forms (Xamarin University-Video)-Beispiel](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip)
 - [Vorgehensweise: Erstellen Sie ein Zeichen im Bildschirm-Fluss in Xamarin.Forms (Xamarin University-Video)](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
 - ["NavigationPage"](xref:Xamarin.Forms.NavigationPage)

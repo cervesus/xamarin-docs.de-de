@@ -1,38 +1,44 @@
 ---
 title: Polylinien und parametrische Formeln
-description: In diesem Artikel erläutert die Vorgehensweise zum Verwenden von SkiaSharp zum Rendern jeder Zeile mit parametrische Formeln zum definieren, und dies mit Beispielcode veranschaulicht.
+description: In diesem Artikel wird erläutert, wie zum Verwenden von SkiaSharp zum Rendern einer Zeile, mit parametrische Formeln definieren können, und dies mit Beispielcode wird veranschaulicht.
 ms.prod: xamarin
 ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 9118ca8e23e4c4a9023a1add89e26c4484979c8f
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: d5896a9d4f1aac2ea90d544d638e4adf68d24140
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615794"
 ---
 # <a name="polylines-and-parametric-equations"></a>Polylinien und parametrische Formeln
 
-_Verwenden von SkiaSharp zum Rendern jeder Zeile, die Sie mit parametrische Formeln definieren können_
+_Verwenden von SkiaSharp zum Rendern jeder Zeile, die Sie, mit parametrische Formeln definieren können_
 
-In einem späteren Teil dieses Handbuchs, sehen Sie die verschiedenen Methoden, die `SKPath` definiert werden, um bestimmte Arten von Kurven zu rendern. Allerdings ist es manchmal notwendig, einen Typ der Kurve zu zeichnen, die direkt von nicht unterstützt wird `SKPath`. In diesem Fall können Sie jede Kurve zu zeichnen, die Sie, mathematisch definieren können eine Polylinie (eine Sammlung von miteinander verbundenen Linien) verwenden. Wenn Sie die Zeilen klein und zahlreiche reicht das Ergebnis wie eine Kurve sieht. Diese Spirale ist tatsächlich 3.600 wenig Zeilen:
+In der [ **SkiaSharp-Kurven und-Pfade** ](../curves/index.md) Abschnitt dieses Handbuchs, sehen Sie die verschiedenen Methoden, die [ `SKPath` ](xref:SkiaSharp.SKPath) definiert werden, um bestimmte Arten von Kurven zu rendern. Allerdings ist es manchmal notwendig, einen Typ der Kurve zu zeichnen, die direkt von nicht unterstützt wird `SKPath`. In diesem Fall können Sie jede Kurve zu zeichnen, die Sie, mathematisch definieren können eine Polylinie (eine Sammlung von miteinander verbundenen Linien) verwenden. Wenn Sie die Zeilen klein und zahlreiche reicht das Ergebnis wie eine Kurve sieht. Diese Spirale ist tatsächlich 3.600 wenig Zeilen:
 
 ![](polylines-images/spiralexample.png "Eine Spirale")
 
 Im Allgemeinen empfiehlt es sich um eine Kurve in Bezug auf ein Paar von parametrische Formeln zu definieren. Hierbei handelt es sich um Gleichungen, für die X- und Y, die koordiniert eine dritte Variable bezeichnet hängen `t` Zeit. Die folgenden parametrischen Formeln definieren z. B. einen Kreis mit einem Radius von 1, zentriert am Punkt (0, 0) für *t* von 0 bis 1:
 
- X = cos(2πt) y = sin(2πt)
+X = cos(2πt)
+
+y = sin(2πt)
 
  Wenn Sie einen Radius verwenden möchten, die größer als 1, können Sie einfach den Sinus und Cosinus Werte Multiplizieren mit, Radius und wenn Sie die Mitte an einen anderen Speicherort verschieben möchten, fügen diese Werte:
 
- X = xCenter + radius·cos(2πt) y = yCenter + radius·sin(2πt)
+X = xCenter + radius·cos(2πt)
+
+y = yCenter + radius·sin(2πt)
 
 Für eine Ellipse mit der horizontalen und vertikalen Achsen Parallel sind zwei Radien beteiligt:
 
-X = xCenter + xRadius·cos(2πt) y = yCenter + yRadius·sin(2πt)
+X = xCenter + xRadius·cos(2πt)
+
+y = yCenter + yRadius·sin(2πt)
 
 Sie können dann den entsprechenden SkiaSharp-Code in einer Schleife einfügen, die die verschiedenen Punkte berechnet, und fügt diese in einen Pfad. Der folgende SkiaSharp-Code erstellt ein `SKPath` -Objekt für eine Ellipse, die die Anzeigeoberfläche ausfüllt. Die Schleife durchläuft die 360 Grad direkt aus. Das Center ist die Hälfte der Breite und Höhe der Anzeigeoberfläche und deshalb die zwei Radien:
 
@@ -116,5 +122,5 @@ Beachten Sie, dass die `SKPath` wird erstellt, einem `using` Block. Dies `SKPath
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

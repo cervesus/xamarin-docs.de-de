@@ -6,12 +6,12 @@ ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/07/2017
-ms.openlocfilehash: 813a913c2c2fb27456c9a489c73b16d5892c4b8d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/26/2018
+ms.openlocfilehash: 3ae2fb8110b7e0a5c6c85c489897acc1a03be8d8
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38997051"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
@@ -35,13 +35,16 @@ In diesem Artikel werden die folgenden Themen behandelt:
 
 ## <a name="setting-boxview-color-and-size"></a>Einstellung BoxView Farbe und Größe
 
-Sehr häufig legen Sie die folgenden drei Eigenschaften des `BoxView`:
+In der Regel legen Sie die folgenden Eigenschaften der `BoxView`:
 
 - [`Color`](xref:Xamarin.Forms.BoxView.Color) die Farbe fest.
+- [`CornerRadius`](xref:Xamarin.Forms.BoxView.CornerRadius) um die Eckradius festzulegen.
 - [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) die Breite der Festlegen der `BoxView` in geräteunabhängigen Einheiten.
 - [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) die Höhe der Festlegen der `BoxView`.
 
 Die `Color` Eigenschaft ist vom Typ `Color`; die Eigenschaft kann festgelegt werden, um eine `Color` Wert, einschließlich der 141 statische schreibgeschützte Felder mit der Bezeichnung alphabetisch zwischen Farben `AliceBlue` zu `YellowGreen`.
+
+Die `CornerRadius` Eigenschaft ist vom Typ [ `CornerRadius` ](xref:Xamarin.Forms.CornerRadius); die Eigenschaft kann festgelegt werden, um ein einzelnes `double` Symbole mit einheitlicher Radiuswert Ecke, oder ein `CornerRadius` von vier definierten Struktur `double` Werte, die auf angewendet werden die oben links, oben rechts, unten links und unten rechts auf der `BoxView`.
 
 Die `WidthRequest` und `HeightRequest` Eigenschaften nur eine Rolle spielen, wenn die `BoxView` ist *uneingeschränkte* im Layout. Dies ist der Fall, wenn der Layoutcontainer muss wissen, das untergeordnete Element die Größe zu ändern, z. B. wenn die `BoxView` ist ein untergeordnetes Element einer automatischer Größenänderung Zelle in der `Grid` Layout. Ein `BoxView` ist auch uneingeschränkte wenn seine `HorizontalOptions` und `VerticalOptions` Eigenschaften nicht auf Werte festgelegt sind `LayoutOptions.Fill`. Wenn die `BoxView` uneingeschränkt ist, ist aber die `WidthRequest` und `HeightRequest` sind keine Eigenschaften festgelegt, und klicken Sie dann die Breite und Höhe werden mit Standardwerten von 40 Einheiten oder etwa 1/4 Zoll auf mobilen Geräten festgelegt.
 
@@ -58,6 +61,7 @@ Die [ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/Box
              x:Class="BasicBoxView.MainPage">
 
     <BoxView Color="CornflowerBlue"
+             CornerRadius="10"
              WidthRequest="160"
              HeightRequest="160"
              VerticalOptions="Center"

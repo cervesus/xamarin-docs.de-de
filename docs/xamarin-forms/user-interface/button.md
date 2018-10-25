@@ -1,32 +1,32 @@
 ---
-title: Xamarin.Forms-Schaltfläche
-description: Die Schaltfläche "" reagiert auf eine tippen oder klicken Sie auf, die eine Anwendung zum Ausführen einer bestimmten Aufgabe weiterleitet.
+title: Schaltfläche "Xamarin.Forms"
+description: Die Schaltfläche mit der reagiert auf ein tippen oder klicken Sie auf, die eine Anwendung, um eine bestimmte Aufgabe durchzuführen weiterleitet.
 ms.prod: xamarin
 ms.assetid: 62CAEB63-0800-44F4-9B8C-EE632138C2F5
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 06/01/2018
-ms.openlocfilehash: d74e0b2aa5be6e8eee2ce5cb54572dd4113d4d7d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 07/26/2018
+ms.openlocfilehash: ed711efe7f4b138b3ba61437dc96f8aa07d17aeb
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "35244915"
 ---
-# <a name="xamarinforms-button"></a>Xamarin.Forms-Schaltfläche
+# <a name="xamarinforms-button"></a>Schaltfläche "Xamarin.Forms"
 
-_Die Schaltfläche "" reagiert auf eine tippen oder klicken Sie auf, die eine Anwendung zum Ausführen einer bestimmten Aufgabe weiterleitet._
+_Die Schaltfläche mit der reagiert auf ein tippen oder klicken Sie auf, die eine Anwendung, um eine bestimmte Aufgabe durchzuführen weiterleitet._
 
-Die [ `Button` ](xref:Xamarin.Forms.Button) ist das grundlegendste interaktive-Steuerelement in allen Xamarin.Forms. Die `Button` zeigt eine kurze Textzeichenfolge, der angibt, einen Befehl, aber sie auch können in der Regel angezeigt wird, ein Bitmap-Bild oder eine Kombination von Text und ein Bild. Der Benutzer drückt die `Button` mit einem Finger oder darauf klickt mit der Maus auf den Befehl zu initiieren.
+Die [ `Button` ](xref:Xamarin.Forms.Button) ist das wichtigste über interaktive Steuerung aller Xamarin.Forms. Die `Button` werden angezeigt, die eine kurze Textzeichenfolge, der angibt, einen Befehl, aber es auch kann in der Regel angezeigt wird, ein Bitmap-Bild oder eine Kombination aus Text und ein Bild. Der Benutzer drückt die `Button` mit einem Finger oder darauf klickt, mit der Maus auf diesen Befehl zu initiieren.
 
-Die meisten der unten erläuterten Themen entsprechen Seiten in der [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos) Beispiel.
+Die meisten der nachstehend erläuterten Themen entsprechen zu Seiten in der [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos) Beispiel.
 
 ## <a name="handling-button-clicks"></a>Schaltfläche "klickt
 
-`Button` definiert eine [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) Ereignis, das ausgelöst wird, wenn der Benutzer tippt der `Button` mit einem Finger oder mit dem Mauszeiger Zeiger. Das Ereignis wird ausgelöst, wenn die Finger oder mit dem Mauszeiger über die Oberfläche des losgelassen wird die `Button`. Die `Button` benötigen ihre [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) -Eigenschaftensatz auf `true` dafür auf Klicks reagiert.
+`Button` definiert eine [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) Ereignis, das ausgelöst wird, wenn der Benutzer tippt der `Button` mit einem Finger oder der Maus-Zeiger. Das Ereignis wird ausgelöst, wenn der Finger oder der Maus über die Oberfläche des losgelassen wird, die `Button`. Die `Button` müssen die [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) -Eigenschaftensatz auf `true` dafür auf tippen zu reagieren.
 
-Die **grundlegende Schaltfläche klicken,** auf der Seite der [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos) Beispiel zeigt, wie beim Instanziieren einer `Button` in XAML und das Handle seine `Clicked` Ereignis. Die **BasicButtonClickPage.xaml** -Datei enthält eine `StackLayout` mit einer `Label` und ein `Button`:
+Die **einfachen Klick mit der** auf der Seite die [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos) Beispiel veranschaulicht, wie zum Instanziieren einer `Button` in XAML und behandeln die `Clicked` Ereignis. Die **BasicButtonClickPage.xaml** -Datei enthält eine `StackLayout` mit einer `Label` und `Button`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -50,11 +50,11 @@ Die **grundlegende Schaltfläche klicken,** auf der Seite der [ **ButtonDemos** 
 </ContentPage>
 ```
 
-Die `Button` tendenziell der gesamte Speicherplatz belegen, die für sie zulässig ist. Z. B., wenn Sie nicht Festlegen der `HorizontalOptions` Eigenschaft `Button` auf einen anderen Wert als `Fill`, die `Button` beanspruchen, die gesamte Breite des übergeordneten Objekts.
+Die `Button` tendenziell der gesamte Speicherplatz belegen, die für diese zulässig ist. Z. B., wenn Sie nicht Festlegen der `HorizontalOptions` Eigenschaft `Button` auf einen anderen Wert als `Fill`, `Button` die volle Breite seines übergeordneten Elements belegt.
 
-Wird standardmäßig die `Button` rechteckig, ist, aber Sie können die It abgerundete Ecken erteilen, mit der [ `CornerRadius` ](xref:Xamarin.Forms.Button.CornerRadius) Eigenschaft, die im Abschnitt unten beschrieben [ **Schaltfläche Darstellung** ](#button-appearance).
+Standardmäßig die `Button` rechteckig, aber Sie können die It abgerundete Ecken erteilen, mit der [ `CornerRadius` ](xref:Xamarin.Forms.Button.CornerRadius) -Eigenschaft, wie im Abschnitt unten beschrieben [ **Schaltfläche Darstellung** ](#button-appearance).
 
-Die [ `Text` ](xref:Xamarin.Forms.Button.Text) Eigenschaft gibt den angezeigten Text in der `Button`. Die [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) Ereignis festgelegt ist, um einen Ereignishandler namens `OnButtonClicked`. Mit diesem Handler befindet sich in der Code-Behind-Datei **BasicButtonClickPage.xaml.cs**:
+Die [ `Text` ](xref:Xamarin.Forms.Button.Text) Eigenschaft gibt an, der Text erscheint in der `Button`. Die [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) Ereignis festgelegt ist, um einen Ereignishandler namens `OnButtonClicked`. Dieser Handler befindet sich in der CodeBehind-Datei **BasicButtonClickPage.xaml.cs**:
 
 ```csharp
 public partial class BasicButtonClickPage : ContentPage
@@ -71,21 +71,21 @@ public partial class BasicButtonClickPage : ContentPage
 }
 ```
 
-Wenn die `Button` abgerufen wird, die `OnButtonClicked` Methode ausgeführt wird. Die `sender` Argument ist der `Button` Objekt für dieses Ereignis verantwortlich. Hiermit können Sie den Zugriff auf die `Button` -Objekt, oder zur Unterscheidung zwischen mehreren `Button` Objekte, die gemeinsame Nutzung der gleichen `Clicked` Ereignis.
+Wenn die `Button` getippt wird, die `OnButtonClicked` Methode ausgeführt wird. Die `sender` Argument ist der `Button` Objekt für dieses Ereignis verantwortlich. Hiermit können Sie den Zugriff auf die `Button` Objekt oder zur Unterscheidung zwischen mehreren `Button` Objekte, die gemeinsame Verwendung desselben `Clicked` Ereignis.
 
-Dieser spezielle `Clicked` Handler aufruft, eine Animationsfunktion, die dreht die `Label` 360 Grad in 1000 Millisekunden. Hier wird das Programm auf IOS- und Android-Geräte, und eine universelle Windows-Plattform (UWP)-Anwendung auf dem Windows 10 Desktop ausgeführt:
+Dieser spezielle `Clicked` Handler Ruft eine Animationsfunktion, die dreht das `Label` 360 Grad in 1000 Millisekunden. So sieht das Programm ausgeführt wird, auf IOS- und Android-Geräte und als universelle Windows-Plattform (UWP)-Anwendung auf dem Windows 10-Desktop aus:
 
-[![Grundlegende Schaltflächen-Klickereignis](button-images/BasicButtonClick.png "grundlegende Schaltflächen-Klickereignis")](button-images/BasicButtonClick-Large.png#lightbox "grundlegende Schaltflächen-Klickereignis")
+[![Grundlegende Schaltflächenklick](button-images/BasicButtonClick.png "einfachen Klick auf eine Schaltfläche")](button-images/BasicButtonClick-Large.png#lightbox "einfachen Klick auf die Schaltfläche")
 
-Beachten Sie, dass die `OnButtonClicked` Methode enthält die `async` Modifizierer da `await` innerhalb der Ereignishandler verwendet wird. Ein `Clicked` Ereignishandler erfordert die `async` Modifizierer nur, wenn der Text des Handlers verwendet `await`.
+Beachten Sie, dass die `OnButtonClicked` Methode enthält die `async` Modifizierer da `await` wird innerhalb des ereignishandlers verwendet. Ein `Clicked` Ereignishandler erfordert die `async` Modifizierer nur, wenn der Text des Handlers verwendet `await`.
 
-Jede Plattform rendert die `Button` in einen eigenen bestimmten Weise. In der [ **Schaltfläche Darstellung** ](#button-appearance) Abschnitt sehen Sie das Festlegen von Farben, und stellen die `Button` Rahmen für stärker angepassten eindeutigkeitsmetrik sichtbar. `Button` implementiert die [ `IFontElement` ](xref:Xamarin.Forms.Internals.IFontElement) Schnittstelle, damit er enthält [ `FontFamily` ](xref:Xamarin.Forms.Button.FontFamily), [ `FontSize` ](xref:Xamarin.Forms.Button.FontSize), und [ `FontAttributes` ](xref:Xamarin.Forms.Button.FontAttributes)Eigenschaften.
+Jede Plattform rendert die `Button` in eine eigene bestimmte Art und Weise. In der [ **Schaltfläche Darstellung** ](#button-appearance) Abschnitt erfahren Sie, wie Farben und die `Button` Rahmen bei stärker angepassten Darstellungen angezeigt. `Button` implementiert die [ `IFontElement` ](xref:Xamarin.Forms.Internals.IFontElement) Schnittstelle, damit er enthält [ `FontFamily` ](xref:Xamarin.Forms.Button.FontFamily), [ `FontSize` ](xref:Xamarin.Forms.Button.FontSize), und [ `FontAttributes` ](xref:Xamarin.Forms.Button.FontAttributes)Eigenschaften.
 
 ## <a name="creating-a-button-in-code"></a>Erstellen eine Schaltfläche in code
 
-Es ist üblich, instanziieren Sie ein `Button` in XAML, aber Sie können auch erstellen eine `Button` im Code. Dies kann zweckmäßig sein, wenn die Anwendung muss so erstellen mehrere Schaltflächen, die basierend auf Daten, die mit aufzählbar ist eine `foreach` Schleife.
+Es ist üblich, instanziieren Sie ein `Button` in XAML, aber Sie können auch erstellen, eine `Button` im Code. Dies kann zwar zweckmäßig sein, wenn Ihre Anwendung erstellen Sie mehrere Schaltflächen, die basierend auf Daten, die mit aufzählbar ist, muss ein `foreach` Schleife.
 
-Die **Code auf die Schaltfläche klicken** Seite veranschaulicht, wie eine Seite, die ist funktionell gleichwertig mit der **grundlegende klicken** Seite jedoch vollständig in c#:
+Die **Klick mit der Code** Seite erläutert, wie eine Seite erstellen, die funktionell gleichwertig mit der **einfachen Klick mit der** Seite jedoch vollständig in C#:
 
 ```csharp
 public class CodeButtonClickPage : ContentPage
@@ -122,37 +122,37 @@ public class CodeButtonClickPage : ContentPage
 }
 ```
 
-Alles wird im Konstruktor der Klasse durchgeführt. Da die `Clicked` Handler ist nur eine Anweisung, die lange, können Sie sehr einfach an das Ereignis angehängt werden:
+Alles wird in den Konstruktor der Klasse ausgeführt. Da die `Clicked` Handler ist nur eine Anweisung, die lange, kann Sie sehr einfach auf das Ereignis angefügt werden:
 
 ```csharp
 button.Clicked += async (sender, args) => await label.RelRotateTo(360, 1000);
 ```
 
-Natürlich können Sie den Ereignishandler als eine separate Methode definieren (ebenso wie die `OnButtonClick` Methode im **grundlegende klicken**), und fügen Sie diese Methode auf das Ereignis:
+Natürlich können Sie den Ereignishandler als eine separate Methode definieren (wie die `OnButtonClick` -Methode in der **einfachen Klick mit der**), und fügen Sie diese Methode an das Ereignis:
 
 ```csharp
 button.Clicked += OnButtonClicked;
 ```
 
-## <a name="disabling-the-button"></a>Deaktivieren die Schaltfläche ""
+## <a name="disabling-the-button"></a>Deaktivieren der Schaltfläche
 
-Manchmal ist eine Anwendung einen bestimmten Status, wobei ein bestimmter `Button` auf ist kein gültiger Vorgang. In diesen Fällen die `Button` sollte deaktiviert werden, indem seine `IsEnabled` Eigenschaft `false`. Das klassische Beispiel ist ein `Entry` -Steuerelement für einen Dateinamen, die zusammen mit einer geöffneten Datei `Button`: die `Button` sollten nur aktiviert, wenn Text in typisiert wurde die `Entry`.
-Können Sie eine `DataTrigger` für diese Aufgabe, die entsprechend der [ **Trigger Data** ](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers) Artikel.
+Manchmal ist eine Anwendung einen bestimmten Zustand, bei einer bestimmten `Button` auf ist kein gültiger Vorgang. In diesen Fällen die `Button` sollte deaktiviert werden, indem die `IsEnabled` Eigenschaft `false`. Das klassische Beispiel ist ein `Entry` -Steuerelement für einen Dateinamen, die zusammen mit einer geöffneten Datei `Button`: die `Button` sollte nur aktiviert, wenn Text in eingegeben wurde der `Entry`.
+Können Sie eine `DataTrigger` für diesen Task, siehe die [ **Datentrigger** ](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers) Artikel.
 
-## <a name="using-the-command-interface"></a>Mithilfe der Befehls-Benutzeroberfläche
+## <a name="using-the-command-interface"></a>Verwenden die Befehlsschnittstelle
 
-Es ist möglich, dass eine Anwendung so reagieren Sie auf `Button` Taps ohne Behandlung der `Clicked` Ereignis. Die `Button` implementiert eine alternative Benachrichtigungsmechanismus aufgerufen, die _Befehl_ oder _Befehle_ Schnittstelle. Dies umfasst zwei Eigenschaften:
+Es ist möglich, dass eine Anwendung auf reagieren `Button` Taps ohne Behandlung der `Clicked` Ereignis. Die `Button` implementiert eine alternative Benachrichtigungsmechanismus, der Namen der _Befehl_ oder _Befehle_ Schnittstelle. Dies besteht aus zwei Eigenschaften:
 
 - [`Command`](xref:Xamarin.Forms.Button.Command) Der Typ [ `ICommand` ](xref:System.Windows.Input.ICommand), eine Schnittstelle definiert, der [ `System.Windows.Input` ](xref:System.Windows.Input) Namespace.
-- [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) Eigenschaft vom Typ [ `Object` ](xref:System.Object).
+- [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) Eigenschaft des Typs [ `Object` ](xref:System.Object).
 
-Dieser Ansatz eignet sich insbesondere im Zusammenhang mit Datenbindung und insbesondere dann, wenn die Model-View-ViewModel (MVVM)-Architektur implementiert. Diese Themen werden erörtert, in den Artikeln [Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md), [aus Datenbindungen, MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md), und [MVVM](~/xamarin-forms/enterprise-application-patterns/mvvm.md).
+Dieser Ansatz eignet sich besonders im Zusammenhang mit Datenbindung und insbesondere dann, wenn die Model-View-ViewModel (MVVM)-Architektur zu implementieren. In diesen Themen werden in den Artikeln erläutert [Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md), [von Datenbindungen zu MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md), und [MVVM](~/xamarin-forms/enterprise-application-patterns/mvvm.md).
 
-In einer Anwendung MVVM definiert das ViewModel Eigenschaften vom Typ `ICommand` , klicken Sie dann in der XAML verbunden sind `Button` Elemente mit datenbindungen. Xamarin.Forms definiert außerdem [ `Command` ]((xref:Xamarin.Forms.Command`1)) und [ `Command<T>` ](xref:Xamarin.Forms.Command`1) Klassen implementiert, die `ICommand` Schnittstelle, und bei der Definition von Eigenschaften des Typs ViewModel`ICommand`.
+In einer MVVM-Anwendung, definiert das "ViewModel" Eigenschaften des Typs `ICommand` klicken Sie dann das XAML angeschlossenen `Button` Elemente mit datenbindungen. Xamarin.Forms definiert auch [ `Command` ]((xref:Xamarin.Forms.Command`1)) und [ `Command<T>` ](xref:Xamarin.Forms.Command`1) Klassen, in denen die `ICommand` Schnittstelle, und bei der Definition von Eigenschaften des Typs "ViewModel"`ICommand`.
 
-Befehle wird ausführlicher im Artikel beschrieben [ **die Befehlsschnittstelle** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) aber die **grundlegende Schaltfläche Befehl** auf der Seite der [  **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos) Beispiel zeigt die grundlegende Vorgehensweise.
+Befehle in diesem Artikel ausführlicher beschrieben wird [ **die Befehlsschnittstelle** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) jedoch **grundlegende Schaltflächenbefehl** auf der Seite die [  **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos) Beispiel zeigt die grundlegende Vorgehensweise.
 
-Die `CommandDemoViewModel` Klasse ist eine sehr einfache ViewModel, die eine Eigenschaft des Typs definiert `double` mit dem Namen `Number`, sowie zwei Eigenschaften vom Typ `ICommand` mit dem Namen `MultiplyBy2Command` und `DivideBy2Command`:
+Die `CommandDemoViewModel` -Klasse ist ein sehr einfaches "ViewModel", die eine Eigenschaft des Typs definiert `double` mit dem Namen `Number`, und zwei Eigenschaften vom Typ `ICommand` mit dem Namen `MultiplyBy2Command` und `DivideBy2Command`:
 
 ```csharp
 class CommandDemoViewModel : INotifyPropertyChanged
@@ -190,9 +190,9 @@ class CommandDemoViewModel : INotifyPropertyChanged
 }
 ```
 
-Die beiden `ICommand` Eigenschaften werden im Konstruktor der Klasse mit zwei Objekte des Typs initialisiert `Command`. Die `Command` Konstruktoren enthalten eine kleine Funktion (aufgerufen, die `execute` Konstruktorargument), verdoppelt oder halbiert die `Number` Eigenschaft.
+Die beiden `ICommand` Eigenschaften werden in den Konstruktor der Klasse mit zwei Objekte des Typs initialisiert `Command`. Die `Command` Konstruktoren sind eine nützliche Funktion (bezeichnet das `execute` Konstruktorargument), verdoppelt oder halbiert der `Number` Eigenschaft.
 
-Die **BasicButtonCommand.xaml** legt seine `BindingContext` mit einer Instanz von `CommandDemoViewModel`. Die `Label` Element und zwei `Button` Elemente enthalten, Bindungen, die drei Eigenschaften in `CommandDemoViewModel`:
+Die **BasicButtonCommand.xaml** legt die `BindingContext` mit einer Instanz von `CommandDemoViewModel`. Die `Label` -Element und zwei `Button` Elemente enthalten Bindungen in den drei Eigenschaften im `CommandDemoViewModel`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -224,13 +224,13 @@ Die **BasicButtonCommand.xaml** legt seine `BindingContext` mit einer Instanz vo
 </ContentPage>
 ```
 
-Wie die beiden `Button` Elemente abgerufen werden, die Befehle werden ausgeführt, und die Anzahl ändert, Wert:
+Wie die beiden `Button` Elemente abgerufen werden, die Befehle ausgeführt werden, und die Anzahl ändert, Wert:
 
-[![Schaltfläche "Standard"-Befehl](button-images/BasicButtonCommand.png "grundlegende Schaltfläche-Befehl")](button-images/BasicButtonCommand-Large.png#lightbox)
+[![Grundlegende Schaltflächenbefehl](button-images/BasicButtonCommand.png "grundlegende Schaltflächenbefehl")](button-images/BasicButtonCommand-Large.png#lightbox)
 
-Der Vorteil dieses Ansatzes über `Clicked` Handler ist, dass die Logik, die im Zusammenhang mit der Funktionalität von dieser Seite in der Code-Behind-Datei, anstatt das ViewModel befindet erzielen eine bessere Trennung der Benutzeroberfläche von der Geschäftslogik.
+Der Vorteil dieses Ansatzes über `Clicked` Handler ist, dass die gesamte Logik, die im Zusammenhang mit der Funktionalität von dieser Seite in "ViewModel" anstatt den Code-Behind-Datei befindet, erreichen eine bessere Trennung der Benutzeroberfläche von der Geschäftslogik.
 
-Es ist auch möglich, für die `Command` -Objekten, das Aktivieren und Deaktivieren von steuern die `Button` Elemente. Angenommen, Sie möchten zum Begrenzen des Bereichs der numerischen Werte zwischen 2<sup>10</sup> und 2<sup>&ndash;10</sup>. Sie können eine andere Funktion hinzufügen, an den Konstruktor (aufgerufen der `canExecute` Argument) zurückgibt `true` Wenn die `Button` aktiviert werden soll. Hier wird die Änderung an der `CommandDemoViewModel` Konstruktor:
+Es ist auch möglich, für die `Command` zu steuern, das Aktivieren und Deaktivieren der Objekte die `Button` Elemente. Nehmen wir beispielsweise an, die Sie den Bereich der numerischen Werte zwischen 2 beschränken möchten<sup>10</sup> und 2<sup>&ndash;10</sup>. Sie können eine andere Funktion hinzufügen, an den Konstruktor (wird aufgerufen, die `canExecute` Argument) zurückgibt `true` Wenn die `Button` aktiviert werden soll. Hier ist die Änderung der `CommandDemoViewModel` Konstruktor:
 
 ```csharp
 class CommandDemoViewModel : INotifyPropertyChanged
@@ -260,13 +260,13 @@ class CommandDemoViewModel : INotifyPropertyChanged
 }
 ```
 
-Die Aufrufe an die `ChangeCanExecute` Methode `Command` sind erforderlich, damit die `Command` Methode aufrufen kann die `canExecute` Methode und bestimmen, ob die `Button` sollte deaktiviert werden, oder nicht. Mit dieser Änderung des Codes, als die Anzahl erreicht den Grenzwert der `Button` deaktiviert wird:
+Die Aufrufe an die `ChangeCanExecute` -Methode der `Command` sind erforderlich, damit die `Command` Methode aufrufen kann die `canExecute` Methode und bestimmen Sie, ob der `Button` deaktiviert werden sollen, oder nicht. Mit dieser Änderung des Codes, wenn die Anzahl die Grenze dessen erreicht, die `Button` deaktiviert ist:
 
-[![Schaltfläche "Standard"-Befehl - geändert](button-images/BasicButtonCommandModified.png "grundlegende Schaltfläche Befehl - geändert")](button-images/BasicButtonCommandModified-Large.png#lightbox)
+[![Schaltfläche "Standard"-Befehl – geändert](button-images/BasicButtonCommandModified.png "grundlegende Schaltflächenbefehl - geändert")](button-images/BasicButtonCommandModified-Large.png#lightbox)
 
-Es ist möglich, dass mindestens zwei `Button` Elemente auf das gleiche gebunden werden `ICommand` Eigenschaft. Die `Button` Elemente mit unterschieden werden können die [ `CommandParameter` ](xref:Xamarin.Forms.Button.CommandParameter) Eigenschaft `Button`. In diesem Fall sollten die generischen [ `Command<T>` ](xref:Xamarin.Forms.Command`1) Klasse. Die `CommandParameter` Objekt wird dann als Argument übergeben der `execute` und `canExecute` Methoden. Dieses Verfahren wird gezeigt, im Detail in der [ **grundlegende Befehle** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding) Teil der [ **Befehlsschnittstelle** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding) Artikel.
+Es ist möglich, dass zwei oder mehr `Button` Elemente, die auf die gleiche gebunden werden `ICommand` Eigenschaft. Die `Button` Elemente können unterschieden werden, mit der [ `CommandParameter` ](xref:Xamarin.Forms.Button.CommandParameter) Eigenschaft `Button`. In diesem Fall sollten Sie die generischen [ `Command<T>` ](xref:Xamarin.Forms.Command`1) Klasse. Die `CommandParameter` Objekt wird dann als Argument für das Übergeben der `execute` und `canExecute` Methoden. Dieses Verfahren ist ausführlich gezeigt die [ **grundlegende Befehle** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding) Teil der [ **Befehlsschnittstelle** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding) Artikel.
 
-Die [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos) Beispiel verwendet auch diese Technik in seiner `MainPage` Klasse. Die **"MainPage.xaml"** -Datei enthält eine `Button` für jede Seite des Beispiels:
+Die [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos) Beispiel verwendet auch diese Technik in seine `MainPage` Klasse. Die **"MainPage.xaml"** -Datei enthält eine `Button` für jede Seite des Beispiels:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -312,9 +312,9 @@ Die [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/User
 </ContentPage>
 ```
 
-Jede `Button` hat seine `Command` Eigenschaft gebunden wird, um eine Eigenschaft namens `NavigateCommand`, und die `CommandParameter` auf festgelegt ist ein [ `Type` ](xref:System.Type) -Objekt, eine der Seitenklassen im Projekt entspricht.
+Jede `Button` hat seine `Command` -Eigenschaft gebunden werden, um eine Eigenschaft namens `NavigateCommand`, und die `CommandParameter` nastaven NA hodnotu eine [ `Type` ](xref:System.Type) Objekt entspricht, der auf einen der Page-Klassen im Projekt.
 
-Dass `NavigateCommand` -Eigenschaft ist vom Typ `ICommand` und im Code-Behind-Datei definiert ist:
+Dass `NavigateCommand` Eigenschaft ist vom Typ `ICommand` und im Code-Behind-Datei definiert ist:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -336,15 +336,15 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Der Konstruktor initialisiert die `NavigateCommand` Eigenschaft, um eine `Command<Type>` Objekt, da der `Type` ist der Typ des der `CommandParameter` Objektsatz in der XAML-Datei. Dies bedeutet, dass die `execute` Methode verfügt über ein Argument des Typs `Type` , entspricht dies `CommandParameter` Objekt. Die Funktion instanziiert die Seite, und wechselt anschließend darauf.
+Der Konstruktor initialisiert die `NavigateCommand` Eigenschaft, um eine `Command<Type>` Objekt, da der `Type` ist der Typ des der `CommandParameter` Objekt in der XAML-Datei festgelegt. Dies bedeutet, dass die `execute` Methode hat ein Argument des Typs `Type` , entspricht dies `CommandParameter` Objekt. Die Funktion die Seite instanziiert und wechselt anschließend darauf.
 
-Beachten Sie, der durch Festlegen der Konstruktor abgeschlossen ist seine `BindingContext` auf sich selbst. Dies ist notwendig, damit Eigenschaften in der XAML-Datei zum Binden an die `NavigateCommand` Eigenschaft.
+Beachten Sie, die der Konstruktor wird, durch Festlegen abgeschlossen seiner `BindingContext` auf sich selbst. Dies ist notwendig für Eigenschaften in der XAML-Datei zum Binden an die `NavigateCommand` Eigenschaft.
 
-## <a name="pressing-and-releasing-the-button"></a>Drücken und Loslassen der
+## <a name="pressing-and-releasing-the-button"></a>Drücken und Loslassen der Taste
 
-Neben den `Clicked` Ereignis `Button` definiert auch [ `Pressed` ](xref:Xamarin.Forms.Button.Pressed) und [ `Released` ](xref:Xamarin.Forms.Button.Released) Ereignisse. Die `Pressed` Ereignis tritt auf, wenn ein Finger drückt, auf eine `Button`, oder eine Maustaste gedrückt wird mit dem Mauszeiger auf positioniert das `Button`. Die `Released` Ereignis tritt auf, wenn die Finger oder der Maustaste losgelassen wird. Im Allgemeinen eine `Clicked` wird auch ausgelöst, zur gleichen Zeit wie der `Released` Ereignis jedoch wenn der Zeiger Finger oder Maus Weg von der Oberfläche des Folien der `Button` vor freigegeben wird, der `Clicked` Ereignis kann nicht auftreten.
+Neben der `Clicked` Ereignis `Button` definiert auch [ `Pressed` ](xref:Xamarin.Forms.Button.Pressed) und [ `Released` ](xref:Xamarin.Forms.Button.Released) Ereignisse. Die `Pressed` Ereignis tritt auf, wenn ein Finger auf drückt eine `Button`, oder eine Maustaste gedrückt wird mit dem Mauszeiger auf positioniert die `Button`. Die `Released` Ereignis tritt auf, wenn die Finger oder der Maustaste losgelassen wird. Im Allgemeinen eine `Clicked` Ereignis wird auch ausgelöst, zur gleichen Zeit wie die `Released` -Ereignis, aber die Folien Wenn des Finger oder der Maus Zeigers von der Oberfläche der `Button` freigegeben wird, bevor Sie die `Clicked` Ereignis erfolgen möglicherweise keine.
 
-Die `Pressed` und `Released` Ereignisse werden nicht oft verwendet, aber sie können für spezielle Zwecke verwendet werden, wie in der **drücken und Release-Schaltfläche** Seite. Die Verwendung von XAML-Datei enthält eine `Label` und ein `Button` Handler angefügten für die `Pressed` und `Released` Ereignisse:
+Die `Pressed` und `Released` Ereignisse werden nicht oft verwendet, aber sie können für besondere Zwecke verwendet werden, wie in der **drücken und die Schaltfläche "Release"** Seite. Die XAML-Datei enthält eine `Label` und `Button` mit angefügte Handler für die `Pressed` und `Released` Ereignisse:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -369,7 +369,7 @@ Die `Pressed` und `Released` Ereignisse werden nicht oft verwendet, aber sie kö
 </ContentPage>
 ```
 
-Die Code-Behind-Datei erstellt eine Animation der `Label` beim eine `Pressed` Ereignis tritt auf, aber die Drehung hält bei der ein `Released` Ereignis tritt auf:
+Code-Behind-Datei erstellt eine Animation die `Label` beim eine `Pressed` Ereignis auftritt, aber es hält die Drehung bei einer `Released` Ereignis tritt auf:
 
 ```csharp
 public partial class PressAndReleaseButtonPage : ContentPage
@@ -403,28 +403,31 @@ public partial class PressAndReleaseButtonPage : ContentPage
 }
 ```
 
-Das Ergebnis ist, die `Label` nur dreht, während ein Finger in Kontakt mit ist der `Button`, und beendet, wenn sich der Finger freigegeben wird:
+Das Ergebnis ist, die `Label` nur dreht, während es sich bei ein Finger in Kontakt stehen ist die `Button`, und endet, wenn der Finger veröffentlicht wird:
 
-[![Drücken Sie und Los](button-images/PressAndReleaseButton.png "drücken und los")](button-images/PressAndReleaseButton-Large.png)
+[![Drücken Sie die EINGABETASTE, und lassen Sie los](button-images/PressAndReleaseButton.png "drücken und lassen Sie los")](button-images/PressAndReleaseButton-Large.png)
 
-Diese Art von Verhalten weist eine Anwendung für Spiele: ein Finger belegt eine `Button` kann, ein auf Bildschirmobjekt, das in eine bestimmte Richtung zu verschieben.
+Diese Art von Verhalten hat-Anwendungen für Spiele: ein Finger frei, die auf eine `Button` kann ein auf Bildschirmobjekt, das auf eine bestimmte Richtung zu verschieben.
 
 <a name="button-appearance" />
 
-## <a name="button-appearance"></a>Schaltfläche Darstellung
+## <a name="button-appearance"></a>Darstellung der Schaltfläche
 
-Die `Button` erbt oder definiert verschiedene Eigenschaften, die seine Darstellung beeinflussen:
+Die `Button` erbt oder definiert mehrere Eigenschaften, die die Darstellung auswirken:
 
 - [`TextColor`](xref:Xamarin.Forms.Button.TextColor) entspricht der Farbe der `Button` Text
 - [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor) ist die Farbe des Hintergrunds auf den ausgewählten text
-- [`BorderColor`](xref:Xamarin.Forms.Button.BorderColor) entspricht der Farbe ein Bereich umgibt die `Button`
+- [`BorderColor`](xref:Xamarin.Forms.Button.BorderColor) entspricht der Farbe ein Bereich, umgibt die `Button`
 - [`FontFamily`](xref:Xamarin.Forms.Button.FontFamily) die Schriftfamilie ist für das Textfeld verwendet werden
 - [`FontSize`](xref:Xamarin.Forms.Button.FontSize) ist die Größe des Texts
-- [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes) Gibt an, ob der Text kursiv oder fett formatiert ist.
+- [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes) Gibt an, ob der Text kursiv und fett ist.
 - [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) ist die Breite des Rahmens
-- [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) Rundet die Ecken
+- [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) Runden der Ecken
 
-Die Auswirkungen von sechs dieser Eigenschaften (außer `FontFamily` und `FontAttributes`) werden veranschaulicht die **Darstellung Schaltfläche** Seite. Eine andere Eigenschaft [ `Image` ](xref:Xamarin.Forms.Button.Image), wird im Abschnitt erläutert [ **Schaltfläche Bitmaps mit**](#image-button).
+> [!NOTE]
+> Die `Button` -Klasse verfügt auch über [ `Margin` ](xref:Xamarin.Forms.View.Margin) und [ `Padding` ](xref:Xamarin.Forms.Button.Padding) Eigenschaften zum Steuern der Layoutverhalten der `Button`. Weitere Informationen finden Sie unter [Ränder und Abstände](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
+
+Die Auswirkungen von sechs dieser Eigenschaften (mit Ausnahme `FontFamily` und `FontAttributes`) werden veranschaulicht die **Darstellung Schaltfläche** Seite. Eine andere Eigenschaft, [ `Image` ](xref:Xamarin.Forms.Button.Image), wird im Abschnitt erläuterten [ **mithilfe von Bitmaps mit der Schaltfläche**](#image-button).
 
 Alle Ansichten und Bindungen in der **Darstellung Schaltfläche** Seite in der XAML-Datei definiert sind:
 
@@ -529,23 +532,23 @@ Alle Ansichten und Bindungen in der **Darstellung Schaltfläche** Seite in der X
 </ContentPage>
 ```
 
-Die `Button` am oberen Rand der Seite verfügt über die drei `Color` Eigenschaften gebunden werden, um `Picker` Elemente am unteren Rand der Seite. Die Elemente in der `Picker` Elemente sind Farben aus der `NamedColor` Klasse im Projekt enthalten. Drei `Slider` Elemente enthalten, bidirektionale Bindungen, die `FontSize`, `BorderWidth`, und `CornerRadius` Eigenschaften der `Button`.
+Die `Button` am oberen Rand der Seite hat drei `Color` Eigenschaften gebunden, um `Picker` Elemente am unteren Rand der Seite. Die Elemente in der `Picker` Elemente sind Farben aus der `NamedColor` Klasse im Projekt enthalten ist. Drei `Slider` Elemente enthalten, bidirektionale Bindungen, die `FontSize`, `BorderWidth`, und `CornerRadius` Eigenschaften der `Button`.
 
-Dieses Programm können Sie zum Experimentieren mit Kombinationen von all diese Eigenschaften:
+Dieses Programm ermöglicht Ihnen das Experimentieren mit Kombinationen von all diese Eigenschaften:
 
 [![Schaltfläche Darstellung](button-images/ButtonAppearance.png "Schaltfläche Darstellung")](button-images/ButtonAppearance-Large.png)
 
-Anzeigen der `Button` Rahmen, müssen Sie die festlegen eine `BorderColor` auf einen anderen Wert als `Default`, und die `BorderWidth` in einen positiven Wert.
+Um finden Sie unter der `Button` Rahmen, Sie müssen eine `BorderColor` auf einen anderen Wert als `Default`, und die `BorderWidth` auf einen positiven Wert.
 
-IOS, werden Sie feststellen, dass in das Innere eines großen Rahmenbreiten Eindringen der `Button` und bei der Anzeige von Text in Konflikt. Wenn Sie einen Rahmen mit einem iOS verwenden `Button`, wahrscheinlich sollten zum Starten und Beenden der `Text` Eigenschaft mit Leerzeichen seine Sichtbarkeit beibehalten werden sollen.
+Unter iOS, sehen Sie, dass große Rahmenbreiten in das Innere des Eindringen der `Button` und die Anzeige von Text in Konflikt geraten. Wenn Sie einen Rahmen mit einem iOS-verwenden `Button`, Sie sollten beginnen und enden die `Text` Eigenschaft Leerzeichen beibehalten die Sichtbarkeit.
 
 Auf UWP Auswählen einer `CornerRadius` , die Hälfte die Höhe des überschreitet die `Button` löst eine Ausnahme aus.
 
-## <a name="creating-a-toggle-button"></a>Erstellen einer Schaltfläche zum ein-/ausschalten
+## <a name="creating-a-toggle-button"></a>Erstellen eine Umschaltfläche
 
-Es ist möglich, Unterklasse `Button` so, dass sie z. B. einen-aus-Schalter funktioniert: Tippen Sie auf die Schaltfläche "Hilfe", um die Umschaltfläche auf, und tippen sie erneut, um es deaktivieren.
+Es ist möglich, Unterklasse `Button` , damit es funktioniert, beispielsweise ein Schalter zum Aktivieren / deaktivieren: Tippen Sie auf die Schaltfläche "Hilfe", um die Umschaltfläche auf, und tippen Sie auf ihn erneut aus, um ihn deaktivieren.
 
-Die folgenden `ToggleButton` Klasse abgeleitet `Button` und ein neues Ereignis mit dem Namen definiert `Toggled` und eine boolesche Eigenschaft, die mit dem Namen `IsToggled`. Hierbei handelt es sich um die gleichen zwei Eigenschaften definiert, indem Sie das Xamarin.Forms [ `Switch` ](xref:Xamarin.Forms.Switch):
+Die folgenden `ToggleButton` Klasse leitet sich von `Button` und definiert ein neues Ereignis mit dem Namen `Toggled` und eine boolesche Eigenschaft namens `IsToggled`. Hierbei handelt es sich um die gleichen zwei Eigenschaften, die durch die Xamarin.Forms definiert [ `Switch` ](xref:Xamarin.Forms.Switch):
 
 ```csharp
 class ToggleButton : Button
@@ -587,13 +590,13 @@ class ToggleButton : Button
 }
 ```
 
-Die `ToggleButton` Konstruktor fügt einen Handler, der die `Clicked` Ereignis so, dass die It den Wert ändern, kann die `IsToggled` Eigenschaft. Die `OnIsToggledChanged` Methode ausgelöst wird die `Toggled` Ereignis.
+Die `ToggleButton` Konstruktor fügt einen Handler, der die `Clicked` Ereignis so, dass die It den Wert ändern, kann die `IsToggled` Eigenschaft. Die `OnIsToggledChanged` Methode löst die `Toggled` Ereignis.
 
-Die letzte Zeile des der `OnIsToggledChanged` Methode ruft die statische `VisualStateManager.GoToState` Methode mit dem Text der beiden Zeichenfolgen "ToggledOn" und "ToggledOff". Informieren Sie sich über diese Methode und wie Ihre Anwendung auf visuelle Zustände im Artikel reagieren kann [ **der Xamarin.Forms visuellen Status-Manager**](~/xamarin-forms/user-interface/visual-state-manager.md).
+Die letzte Zeile der `OnIsToggledChanged` Methode ruft die statische `VisualStateManager.GoToState` Methode mit dem Text der beiden Zeichenfolgen "ToggledOn" und "ToggledOff". Erhalten Sie Informationen zu dieser Methode und wie Ihre Anwendung auf visuelle Zustände in diesem Artikel reagieren kann [ **die Xamarin.Forms Visual State Manager**](~/xamarin-forms/user-interface/visual-state-manager.md).
 
-Da `ToggleButton` führt den Aufruf für `VisualStateManager.GoToState`, muss die Klasse selbst enthalten zusätzlichen Funktionen so ändern Sie die Darstellung der Schaltfläche basierend auf seiner `IsToggled` Zustand. D. h. die Zuständigkeit für den XAML-Code, der hostet die `ToggleButton`.
+Da `ToggleButton` führt den Aufruf für `VisualStateManager.GoToState`, die Klasse selbst nicht unbedingt enthalten zusätzlichen Einrichtungen so ändern Sie die Darstellung der Schaltfläche auf der Grundlage der `IsToggled` Zustand. D. h. die Verantwortung für die XAML, die hostet die `ToggleButton`.
 
-Die **ein-/ausschalten Schaltflächendemo** Seite enthält zwei Instanzen des `ToggleButton`, einschließlich Markup visuellen Status-Manager, der festlegt der `Text`, `BackgroundColor`, und `TextColor` der Schaltfläche basierend auf den visuellen Status:
+Die **ein-/ausschalten Schaltflächendemo** Seite enthält zwei Instanzen von `ToggleButton`, einschließlich Markup Visual State-Manager, der festlegt der `Text`, `BackgroundColor`, und `TextColor` der Schaltfläche basierend auf den visuellen Zustand:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -665,7 +668,7 @@ Die **ein-/ausschalten Schaltflächendemo** Seite enthält zwei Instanzen des `T
 </ContentPage>
 ```
 
-Die `Toggled` Ereignishandler sind in der CodeBehind-Datei. Sie sind verantwortlich für die Einstellung der `FontAttributes` Eigenschaft von der `Label` basierend auf dem Status der Schaltflächen:
+Die `Toggled` Ereignishandler sind in der CodeBehind-Datei. Sie sind zuständig für die Einstellung der `FontAttributes` Eigenschaft der `Label` abhängig vom Status der Schaltflächen:
 
 ```csharp
 public partial class ToggleButtonDemoPage : ContentPage
@@ -701,55 +704,55 @@ public partial class ToggleButtonDemoPage : ContentPage
 }
 ```
 
-Hier wird das Programm auf iOS-, Android- und die universelle Windows-Plattform ausgeführt wird:
+So sieht das Programm ausgeführt wird, auf iOS-, Android- und UWP aus:
 
-[![Schalten Sie die Schaltflächendemo](button-images/ToggleButtonDemo.png "Schaltflächendemo umschalten")](button-images/ToggleButtonDemo-Large.png#lightbox)
+[![Wechseln Sie Schaltflächendemo](button-images/ToggleButtonDemo.png "Schaltflächendemo umschalten")](button-images/ToggleButtonDemo-Large.png#lightbox)
 
 <a name="image-button" />
 
-## <a name="using-bitmaps-with-buttons"></a>Verwenden von Bitmaps mit Schaltflächen
+## <a name="using-bitmaps-with-buttons"></a>Mithilfe von Bitmaps mit Schaltflächen
 
-Die `Button` Klasse definiert ein [ `Image` ](xref:Xamarin.Forms.Button.Image) -Eigenschaft, die auf ein Bitmapbild Anzeige ermöglicht die `Button`, entweder allein oder in Kombination mit Text. Sie können auch angeben, wie die Text- und Bilddateien angeordnet sind.
+Die `Button` -Klasse definiert ein [ `Image` ](xref:Xamarin.Forms.Button.Image) -Eigenschaft, die Ihnen ermöglicht, die auf ein Bitmapbild Anzeigen der `Button`, entweder allein oder in Kombination mit dem Text. Sie können auch angeben, wie dem Text und Bild angeordnet sind.
 
-Die `Image` -Eigenschaft ist vom Typ [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource), was bedeutet, dass die Bitmaps als Ressourcen in den einzelnen plattformprojekten und nicht in das .NET Standard-Steuerelementbibliothek-Projekt gespeichert werden müssen.
+Die `Image` Eigenschaft ist vom Typ [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource), was bedeutet, dass die Bitmaps, die als Ressourcen in die einzelnen Plattformprojekte und nicht in .NET Standard Library-Projekt gespeichert werden müssen.
 
-Jede Plattform unterstützt, indem Sie Xamarin.Forms kann Bilder in verschiedenen Größen für unterschiedliche Pixel-Lösungen von verschiedenen Geräten gespeichert werden, die auf die Anwendung möglicherweise ausgeführt. Diese Komponenten, die mehrere Bitmaps werden mit dem Namen oder auf eine Weise, dass das Betriebssystem die beste Übereinstimmung ausgewählt werden kann, für das Gerät Videoadapter des gespeicherten, Bildschirmauflösung.
+Jeder von Xamarin.Forms unterstützte Plattform können Images in mehreren Größen für unterschiedliche Pixel-Lösungen von verschiedenen Geräten gespeichert werden, die auf die Anwendung möglicherweise ausgeführt. Diese, die mehrerer Bitmaps werden mit dem Namen oder so, dass das Betriebssystem die beste Übereinstimmung auswählen kann, für das Gerät Bild des gespeicherten, Bildschirmauflösung.
 
-Für eine Bitmap auf eine `Button`, die optimale Größe wird in der Regel zwischen 32 und 64 geräteunabhängigen Einheiten, je nach Umfang Sie ihn haben möchten. Die Bilder in diesem Beispiel verwendete basieren auf eine Größe von 48 geräteunabhängigen Einheiten.
+Für eine Bitmap für einen `Button`, die optimale Größe ist in der Regel zwischen 32 und 64 geräteunabhängige Einheiten, je nachdem, wie groß Sie ihn haben möchten. Die in diesem Beispiel verwendeten Images basieren auf einer Größe von 48 geräteunabhängige Einheiten.
 
-In der iOS-Projekt die **Ressourcen** Ordner enthält drei Größen dieses Bilds:
+In der iOS-Projekt das **Ressourcen** Ordner enthält drei Größen dieses Bilds:
 
-- Eine quadratische 48 Pixel-Bitmap gespeichert als **/Resources/MonkeyFace.png**
-- Eine quadratische 96 Pixel-Bitmap gespeichert als **/Resource/MonkeyFace@2x.png**
+- Eine quadratische 48 Pixel-Bitmap, die als gespeicherte **/Resources/MonkeyFace.png**
+- Eine quadratische 96 Pixel-Bitmap, die als gespeichert **/Resource/MonkeyFace@2x.png**
 - Eine quadratische 144-Pixel-Bitmap, die als gespeichert **/Resource/MonkeyFace@3x.png**
 
-Alle drei Bitmaps ausgehändigten eine **Buildvorgang** von **BundleResource**.
+Es wurden alle drei Bitmaps übergeben, eine **Buildvorgang** von **BundleResource**.
 
-Für das Android-Projekt die Bitmaps, die alle den gleichen Namen aufweisen, aber sie werden in verschiedenen Unterordnern gespeichert die **Ressourcen** Ordner:
+Für das Android-Projekt die Bitmaps, die alle den gleichen Namen aufweisen, aber sie werden in verschiedenen Unterordnern gespeichert der **Ressourcen** Ordner:
 
-- Eine quadratische 72-Pixel-Bitmap, die als gespeicherte **/Resources/drawable-hdpi/MonkeyFace.png**
-- Eine quadratische 96 Pixel-Bitmap gespeichert als **/Resources/drawable-xhdpi/MonkeyFace.png**
+- Eine quadratische 72 Pixel-Bitmap, die als gespeicherte **/Resources/drawable-hdpi/MonkeyFace.png**
+- Eine quadratische 96 Pixel-Bitmap, die als gespeicherte **/Resources/drawable-xhdpi/MonkeyFace.png**
 - Eine quadratische 144-Pixel-Bitmap, die als gespeicherte **/Resources/drawable-xxhdpi/MonkeyFace.png**
 - Eine quadratische 192-Pixel-Bitmap, die als gespeicherte **/Resources/drawable-xxxhdpi/MonkeyFace.png**
 
-Diese ausgehändigten eine **Buildvorgang** von **AndroidResource**.
+Diese wurden übergeben, eine **Buildvorgang** von **AndroidResource**.
 
-In der uwp-Projekt Bitmaps können an einer beliebigen Stelle im Projekt gespeichert werden, aber sie werden in der Regel in einem benutzerdefinierten Ordner gespeichert oder die **Bestand** vorhandenen Ordner. Uwp-Projekt enthält diese Bitmaps:
+In der UWP-Projekt Bitmaps können gespeichert werden an einer beliebigen Stelle im Projekt, aber sie werden in der Regel in einem benutzerdefinierten Ordner gespeichert oder **Assets** vorhandenen Ordner. Das UWP-Projekt enthält diese Bitmaps:
 
-- Eine quadratische 48 Pixel-Bitmap gespeichert als **/Assets/MonkeyFace.scale-100.png**
-- Eine quadratische 96 Pixel-Bitmap gespeichert als **/Assets/MonkeyFace.scale-200.png**
+- Eine quadratische 48 Pixel-Bitmap, die als gespeicherte **/Assets/MonkeyFace.scale-100.png**
+- Eine quadratische 96 Pixel-Bitmap, die als gespeicherte **/Assets/MonkeyFace.scale-200.png**
 - Eine quadratische 192-Pixel-Bitmap, die als gespeicherte **/Assets/MonkeyFace.scale-400.png**
 
-Alle erhielten eine **Buildvorgang** von **Content**.
+Sie wurden alle übergeben eine **Buildvorgang** von **Content**.
 
-Können Sie angeben, wie die `Text` und `Image` Eigenschaften angeordnet sind, auf die `Button` mithilfe der [ `ContentLayout` ](xref:Xamarin.Forms.Button.ContentLayout) Eigenschaft `Button`. Diese Eigenschaft ist vom Typ [ `ButtonContentLayout` ](xref:Xamarin.Forms.Button.ButtonContentLayout), dies ist eine eingebettete Klasse in `Button`. Die [Konstruktor](xref:Xamarin.Forms.Button.ButtonContentLayout.%23ctor(Xamarin.Forms.Button.ButtonContentLayout.ImagePosition,System.Double)) verfügt über zwei Argumente:
+Können Sie angeben, wie die `Text` und `Image` Eigenschaften angeordnet sind, auf die `Button` mithilfe der [ `ContentLayout` ](xref:Xamarin.Forms.Button.ContentLayout) Eigenschaft `Button`. Diese Eigenschaft ist vom Typ [ `ButtonContentLayout` ](xref:Xamarin.Forms.Button.ButtonContentLayout), dies ist in eine eingebettete Klasse `Button`. Die [Konstruktor](xref:Xamarin.Forms.Button.ButtonContentLayout.%23ctor(Xamarin.Forms.Button.ButtonContentLayout.ImagePosition,System.Double)) weist zwei Argumente:
 
-- Ein Mitglied der [ `ImagePosition` ](xref:Xamarin.Forms.Button.ButtonContentLayout.ImagePosition) Enumeration: `Left`, `Top`, `Right`, oder `Bottom` , der angibt, wie die Bitmap relativ zu dem Text angezeigt wird.
+- Ein Mitglied der [ `ImagePosition` ](xref:Xamarin.Forms.Button.ButtonContentLayout.ImagePosition) Enumeration: `Left`, `Top`, `Right`, oder `Bottom` , der angibt, wie die Bitmap relativ zum Text angezeigt wird.
 - Ein `double` Wert für den Abstand zwischen der Bitmap und dem Text.
 
 Die Standardwerte sind `Left` und 10 Einheiten. Zwei schreibgeschützte Eigenschaften des `ButtonContentLayout` mit dem Namen [ `Position` ](xref:Xamarin.Forms.Button.ButtonContentLayout.Position) und [ `Spacing` ](xref:Xamarin.Forms.Button.ButtonContentLayout.Spacing) Geben Sie die Werte dieser Eigenschaften.
 
-In Code, erstellen Sie eine `Button` und legen Sie die `ContentLayout` Eigenschaft wie folgt:
+Erstellen Sie im Code eine `Button` und legen Sie die `ContentLayout` Eigenschaft wie folgt:
 
 ```csharp
 Button button = new Button
@@ -763,7 +766,7 @@ Button button = new Button
 };
 ```
 
-In XAML müssen Sie nur die Enumerationsmember oder den Abstand angeben, oder beide Typen in beliebiger Reihenfolge durch Kommas getrennt:
+In XAML müssen Sie nur den Enumerationsmember oder den Abstand angeben, oder beides in beliebiger Reihenfolge durch Kommas getrennt:
 
 ```xaml
 <Button Text="button text"
@@ -771,9 +774,9 @@ In XAML müssen Sie nur die Enumerationsmember oder den Abstand angeben, oder be
         ContentLayout="Right, 20" />
 ```
 
-Die **Bild Schaltflächendemo** Seite verwendet `OnPlatform` einen anderen Dateinamen an, für die iOS, Android und uwp--Dateien Bitmap. Wenn Sie verwenden möchten, verwenden den gleichen Dateinamen für alle drei Plattformen und vermeiden Sie die Verwendung von `OnPlatform`, Sie müssen die Bitmaps für universelle Windows-Plattform im Stammverzeichnis des Projekts zu speichern.
+Die **Image Schaltflächendemo** verwendet `OnPlatform` einen anderen Dateinamen an, für die iOS-, Android- und UWP-Dateien Bitmap. Wenn Sie verwenden möchten, verwenden den gleichen Dateinamen für alle drei Plattformen und vermeiden Sie die Verwendung von `OnPlatform`, Sie müssen die Bitmaps für UWP im Stammverzeichnis des Projekts zu speichern.
 
-Die erste `Button` auf die **Bild Schaltflächendemo** Seite legt die `Image` Eigenschaft jedoch nicht die `Text` Eigenschaft:
+Die erste `Button` auf die **Image Schaltflächendemo** Seite legt die `Image` Eigenschaft jedoch nicht die `Text` Eigenschaft:
 
 ```xaml
 <Button>
@@ -786,13 +789,13 @@ Die erste `Button` auf die **Bild Schaltflächendemo** Seite legt die `Image` Ei
 </Button>
 ```
 
-Wenn die Bitmaps für universelle Windows-Plattform im Stammverzeichnis des Projekts gespeichert sind, kann dieses Markup erheblich vereinfacht werden:
+Wenn die Bitmaps für UWP im Stammverzeichnis des Projekts gespeichert sind, kann dieses Markup erheblich vereinfacht werden:
 
 ```xaml
 <Button Image="MonkeyFace.png" />
 ```
 
-Zur Vermeidung von viele sich wiederholende Markup in der **ImageButtonDemo.xaml** Datei, einen impliziten `Style` wird auch zum Festlegen von definiert die `Image` Eigenschaft. Dies `Style` wird automatisch auf andere fünf angewendet `Button` Elemente. So sieht die vollständige Verwendung von XAML-Datei aus:
+Um viele wiederkehrende Markup zu vermeiden der **ImageButtonDemo.xaml** -Datei, eine implizite `Style` entsprechend definiert die `Image` Eigenschaft. Dies `Style` wird automatisch auf anderen fünf angewendet `Button` Elemente. Hier ist die vollständige XAML-Datei ein:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -840,13 +843,13 @@ Zur Vermeidung von viele sich wiederholende Markup in der **ImageButtonDemo.xaml
 </ContentPage>
 ```
 
-Die letzten vier `Button` -Elemente verwenden, der die `ContentLayout` Eigenschaft, um eine Position und Abstand für Text und Bitmap anzugeben:
+Die letzten vier `Button` Elemente machen verwenden die `ContentLayout` Eigenschaft, um eine Position und Abstand von Text und Bitmap anzugeben:
 
-[![Bild der Schaltflächendemo](button-images/ImageButtonDemo.png "Bild der Schaltflächendemo")](button-images/ImageButtonDemo-Large.png#lightbox)
+[![Abbildung Schaltflächendemo](button-images/ImageButtonDemo.png "Schaltflächendemo Image")](button-images/ImageButtonDemo-Large.png#lightbox)
 
-Sie haben nun gesehen, die verschiedenen Möglichkeiten, die Sie behandeln können `Button` Ereignisse und Ändern der `Button` Darstellung.
+Sie haben nun gesehen, die verschiedenen Möglichkeiten, die Sie behandeln können `Button` Ereignissen und Änderungen der `Button` Darstellung.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [ButtonDemos-Beispiel](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)
-- [API-Schaltfläche](xref:Xamarin.Forms.Button)
+- [Schaltfläche "API"](xref:Xamarin.Forms.Button)

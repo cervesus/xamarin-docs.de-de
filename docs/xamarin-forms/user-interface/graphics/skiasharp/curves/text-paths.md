@@ -4,14 +4,14 @@ description: In diesem Artikel untersucht die Schnittmenge von SkiaSharp-Pfade u
 ms.prod: xamarin
 ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 08/01/2017
-ms.openlocfilehash: 3576af56d48eec58f3fe5fee42aef143e2edea70
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 74bd4b5600f3d5ef8b64556a9e454bb7fb0e2d21
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615456"
 ---
 # <a name="paths-and-text-in-skiasharp"></a>Pfade und Text in SkiaSharp
@@ -20,19 +20,19 @@ _Untersuchen Sie die Schnittmenge der Pfade und text_
 
 In moderner Grafikhardware-Systemen handelt Schriftarten es sich um Sammlungen von Zeichenumrisse, in der Regel von quadratischen Bézierkurven definiert. Daher gilt: eine Funktion zum Konvertieren von Text-Zeichen in einen Grafikpfad vieler moderner Grafikhardware Systeme enthalten.
 
-Sie haben bereits gesehen, können Sie die Umrisse von Textzeichen zu zeichnen und als füllen sie. Dadurch können Sie diese Zeichenumrisse mit einer bestimmten Strichbreite und sogar einen Pfad Effekt anzuzeigen, wie beschrieben in der [ **Pfadeffekte** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) Artikel. Es ist jedoch auch möglich, konvertieren eine Zeichenfolge in eine `SKPath` Objekt. Dies bedeutet, dass die Textumrisse für Clipping mit Techniken verwendet werden können, die in beschrieben wurden die [ **Schneiden mit Pfaden und Regionen** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) Artikel.
+Sie haben bereits gesehen, können Sie die Umrisse von Textzeichen zu zeichnen und als füllen sie. Dadurch können Sie diese Zeichenumrisse mit einer bestimmten Strichbreite und sogar einen Pfad Effekt anzuzeigen, wie beschrieben in der [ **Pfadeffekte** ](effects.md) Artikel. Es ist jedoch auch möglich, konvertieren eine Zeichenfolge in eine `SKPath` Objekt. Dies bedeutet, dass die Textumrisse für Clipping mit Techniken verwendet werden können, die in beschrieben wurden die [ **Schneiden mit Pfaden und Regionen** ](clipping.md) Artikel.
 
-Neben verwenden einen Effekt Pfad, um eine Zeichenumriss zu zeichnen, Sie können auch erstellen, Pfad, die Auswirkungen, die auf eine basieren Zeichenfolgen abgeleitet werden, und Sie können sogar Kombinieren der zwei Auswirkungen:
+Neben verwenden einen Effekt Pfad, um eine Zeichenumriss zu zeichnen, Sie können auch erstellen pfadeffekte, die auf einem Pfad basieren, die von einer Zeichenfolge abgeleitet ist, und Sie können sogar Kombinieren der zwei Auswirkungen:
 
 ![](text-paths-images/pathsandtextsample.png "Pfad der Texteffekt")
 
-In der [vorherigen Artikel](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) Sie haben gesehen, wie die [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) -Methode der `SKPaint` erhalten einen Überblick über eine gestrichelte Pfad. Sie können diese Methode auch verwenden, mit Pfaden Zeichenumrisse abgeleitet.
+Im vorherigen Artikel auf [ **Pfadeffekte**](effects.md), Sie haben gesehen, wie die [ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single)) -Methode der `SKPaint` erhalten einen Überblick über eine gestrichelte Pfad. Sie können diese Methode auch verwenden, mit Pfaden Zeichenumrisse abgeleitet.
 
-In diesem Artikel wird schließlich eine andere Schnittmenge der Pfade und Text: der [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) -Methode der `SKCanvas` können Sie eine Textzeichenfolge angezeigt wird, sodass die Baseline des Texts auf einen gekrümmten Pfad folgt.
+In diesem Artikel wird schließlich eine andere Schnittmenge der Pfade und Text: der [ `DrawTextOnPath` ](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint)) -Methode der `SKCanvas` können Sie eine Textzeichenfolge angezeigt wird, sodass die Baseline des Texts auf einen gekrümmten Pfad folgt.
 
 ## <a name="text-to-path-conversion"></a>Text, der Pfad-Konvertierung
 
-Die [ `GetTextPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetTextPath/p/System.String/System.Single/System.Single/) -Methode der `SKPaint` konvertiert eine Zeichenfolge in eine `SKPath` Objekt:
+Die [ `GetTextPath` ](xref:SkiaSharp.SKPaint.GetTextPath(System.String,System.Single,System.Single)) -Methode der `SKPaint` konvertiert eine Zeichenfolge in eine `SKPath` Objekt:
 
 ```csharp
 public SKPath GetTextPath (String text, Single x, Single y)
@@ -73,7 +73,7 @@ public class ClippingTextPage : ContentPage
 }
 ```
 
-Die `PaintSurface` Handler beginnt mit der Erstellung einer `SKPaint` Objekt, das Text. Die `Typeface` festgelegt wird, sowie die `TextSize`, obwohl für diese bestimmte Anwendung der `TextSize` -Eigenschaft ist ausschließlich Arbirtrary. Beachten Sie außerdem gibt es keine `Style` festlegen.
+Die `PaintSurface` Handler beginnt mit der Erstellung einer `SKPaint` Objekt, das Text. Die `Typeface` festgelegt wird, sowie die `TextSize`, obwohl für diese bestimmte Anwendung der `TextSize` -Eigenschaft ist rein beliebiger. Beachten Sie außerdem gibt es keine `Style` festlegen.
 
 Die `TextSize` und `Style` eigenschafteneinstellungen sind nicht erforderlich, da dies `SKPaint` betriebssystemobjekts wird ausschließlich für die `GetTextPath` aufrufen, verwenden die Zeichenfolge "CODE". Der Handler für measures klicken Sie dann die resultierenden `SKPath` -Objekt aus und wendet drei Transformationen zum Zentrieren und skalieren Sie sie auf die Größe der Seite. Der Pfad kann dann als des Freistellungspfads festgelegt werden:
 
@@ -120,7 +120,7 @@ public class ClippingTextPage : ContentPage
 }
 ```
 
-Sobald des Freistellungspfads festgelegt ist, die Bitmap angezeigt werden kann, und es wird auf die Zeichenumrisse abgeschnitten werden. Beachten Sie die Verwendung der [ `AspectFill` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRect.AspectFill/p/SkiaSharp.SKSize/) -Methode der `SKRect` , die ein Rechteck für das Ausfüllen der Seite und unter Beibehaltung des Seitenverhältnisses berechnet.
+Sobald des Freistellungspfads festgelegt ist, die Bitmap angezeigt werden kann, und es wird auf die Zeichenumrisse abgeschnitten werden. Beachten Sie die Verwendung der [ `AspectFill` ](xref:SkiaSharp.SKRect.AspectFill(SkiaSharp.SKSize)) -Methode der `SKRect` , die ein Rechteck für das Ausfüllen der Seite und unter Beibehaltung des Seitenverhältnisses berechnet.
 
 Die **Texteffekts zum Pfad** Seite konvertiert ein einzelnes kaufmännisches und-Zeichen-Zeichen in einen Pfad zu einen 1D Pfad-Effekt zu erstellen. Ein Paint-Objekt mit diesem Pfad-Effekt wird zum Zeichnen der Überblick über eine größere Version des gleichen Zeichens verwendet:
 
@@ -209,7 +209,7 @@ Dass `MeasureText` Aufruf wird verwendet, um das Zeichen, auf der Seite zentrier
 
 ## <a name="outlines-of-character-outlines"></a>Beschreibung der Zeichenumrisse
 
-Normalerweise die [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) -Methode der `SKPaint` konvertiert einen Pfad zu einem anderen durch Anwenden von Paint-Eigenschaften, insbesondere die Stroke Breite und den Pfad Auswirkungen. Bei der Verwendung ohne Auswirkungen auf die Pfad, `GetFillPath` effektiv erstellt einen Pfad, der einen anderen Pfad beschreibt. Dies wurde veranschaulicht, der **Tippen Sie auf, um den Umriss des Pfads** auf der Seite die [ **Pfadeffekte** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) Artikel.
+Normalerweise die [ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single)) -Methode der `SKPaint` konvertiert einen Pfad zu einem anderen durch Anwenden von Paint-Eigenschaften, insbesondere die Stroke Breite und den Pfad Auswirkungen. Bei der Verwendung ohne Auswirkungen auf die Pfad, `GetFillPath` effektiv erstellt einen Pfad, der einen anderen Pfad beschreibt. Dies wurde veranschaulicht, der **Tippen Sie auf, um den Umriss des Pfads** auf der Seite die [ **Pfadeffekte** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) Artikel.
 
 Sie können auch aufrufen `GetFillPath` auf dem Pfad, der von zurückgegebene `GetTextPath` zunächst werden aber möglicherweise nicht genau, was dies sieht ungefähr folgendermaßen.
 
@@ -277,7 +277,7 @@ Sehen Sie sich genau und Sie sehen überlappt, in denen eine spitze Ecke ist der
 
 Text wird normalerweise auf eine horizontale Baseline angezeigt. Text gedreht werden kann, führen Sie vertikal oder diagonal angezeigt, aber die Baseline ist immer noch eine gerade Linie.
 
-Es gibt jedoch manchmal, wenn Sie Text entlang einer Kurve ausführen möchten. Dies ist der Zweck der [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) -Methode der `SKCanvas`:
+Es gibt jedoch manchmal, wenn Sie Text entlang einer Kurve ausführen möchten. Dies ist der Zweck der [ `DrawTextOnPath` ](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint)) -Methode der `SKCanvas`:
 
 ```csharp
 public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOffset, SKPaint paint)
@@ -285,7 +285,7 @@ public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOf
 
 Im ersten Argument angegebene Text wird durchgeführt, entlang des Pfads angegeben wird, als zweites Argument ausgeführt. Sie können beginnen, den Text mit einem Offset vom Anfang des Pfads mit dem `hOffset` Argument. Normalerweise bildet der Pfad die Baseline des Texts: Text Oberlängen sind auf einer Seite des Pfads und Text Unterlängen auf dem anderen. Aber Sie können den offset der Text-Baseline aus dem Pfad mit der `vOffset` Argument.
 
-Diese Methode hat keine Möglichkeit, eine Anleitung zum Einrichten der `TextSize` Eigenschaft `SKPaint` damit der Text, der Größe perfekt vom Anfang des Pfads bis zum Ende ausgeführt wird. In einigen Fällen können Sie dieser Größe selbst ermitteln. In anderen Fällen müssen Sie zum Messen der Path Funktionen verwenden, um in einem zukünftigen Artikel beschrieben werden.
+Diese Methode hat keine Möglichkeit, eine Anleitung zum Einrichten der `TextSize` Eigenschaft `SKPaint` damit der Text, der Größe perfekt vom Anfang des Pfads bis zum Ende ausgeführt wird. In einigen Fällen können Sie dieser Größe selbst ermitteln. In anderen Fällen müssen Sie die Pfad-messen-Funktionen verwenden, um im nächsten Artikel beschrieben werden, auf [ **Pfadinformationen und-Enumeration**](information.md).
 
 Die **zirkuläre Text** Programm umfließt Text mit einem Kreis. Es ist einfach, den Umfang eines Kreises, ermittelt werden, sodass es einfach, die Größe des Texts, der genau ist. Die `PaintSurface` Handler, der die [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) -Klasse berechnet einen Radius eines Kreises anhand der Größe der Seite. Diese Kreis wird `circularPath`:
 
@@ -328,5 +328,5 @@ Der Text wurde gewählt, um auch etwas zirkulär sein: das Wort "Circle" ist sow
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
