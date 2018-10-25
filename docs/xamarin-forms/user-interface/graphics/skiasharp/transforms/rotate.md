@@ -4,14 +4,14 @@ description: In diesem Artikel untersucht die Effekten und Animationen, die mit 
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 1f34c64ca7c1bc9d0d0202f35602976364ab6075
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 3726a93ccf43fd9a2afdc2c46bb63e0f6ef7ad51
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615248"
 ---
 # <a name="the-rotate-transform"></a>Die Drehungstransformation
@@ -22,7 +22,7 @@ Mit der Rotationstransformation befreien Sie sich SkiaSharp-Graphics-Objekten f�
 
 ![](rotate-images/rotateexample.png "Text, um einen Mittelpunkt gedreht")
 
-Zum Drehen eines grafischen Objekts, um den Punkt (0, 0), SkiaSharp unterstützt sowohl eine [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/) Methode und eine [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/) Methode:
+Zum Drehen eines grafischen Objekts, um den Punkt (0, 0), SkiaSharp unterstützt sowohl eine [ `RotateDegrees` ](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single)) Methode und eine [ `RotateRadians` ](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single)) Methode:
 
 ```csharp
 public void RotateDegrees (Single degrees)
@@ -30,9 +30,9 @@ public void RotateDegrees (Single degrees)
 public Void RotateRadians (Single radians)
 ```
 
-Ein Kreis von 360 Grad ist 2π Bogenmaß identisch, daher ist es einfach für die Konvertierung zwischen den zwei Einheiten. Verwenden Sie je nachdem, was praktisch ist. Alle trigonometrischen Funktionen in der statischen [ `Math` ](xref:System.Math) -Klasse verwenden Einheiten im Bogenmaß.
+Ein Kreis von 360 Grad ist Twoπ Bogenmaß identisch, daher ist es einfach für die Konvertierung zwischen den zwei Einheiten. Verwenden Sie je nachdem, was praktisch ist. Alle trigonometrischen Funktionen in .NET [ `Math` ](xref:System.Math) -Klasse verwenden Einheiten im Bogenmaß.
 
-Rotation ist zum Erhöhen der Winkel im Uhrzeigersinn. (Obwohl Drehung auf die kartesisches Koordinatensystem gegen den Uhrzeigersinn gemäß der Konvention ist, entspricht Drehung im Uhrzeigersinn um Y-Koordinaten, die laufende nach unten zu erhöhen.) Negativer Winkel und Winkel, die größer als 360 Grad zulässig sind.
+Rotation ist zum Erhöhen der Winkel im Uhrzeigersinn. (Obwohl Drehung auf die kartesisches Koordinatensystem gegen den Uhrzeigersinn gemäß der Konvention ist, entspricht Drehung im Uhrzeigersinn um Y-Koordinaten erhöhen, wie SkiaSharp ausfällt.) Negativer Winkel und Winkel, die größer als 360 Grad zulässig sind.
 
 Die Transformation Formeln für die Rotation sind komplexer als die für übersetzen und Skalierung. Für einen Winkel von α sind die Formeln für die Transformation:
 
@@ -40,7 +40,7 @@ X' = x•cos(α) – y•sin(α)
 
 y' = x•sin(α) + y•cos(α)
 
-Die **grundlegende Drehen** Seite zeigt die `RotateDegrees` Methode. Die [ `BasicRotate.xaml.cs` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs) Datei zeigt Text mit der zugehörigen Basislinie, die auf der Seite zentriert und wird auf der Grundlage einer `Slider` mit einem Bereich von –360 auf 360. Hier ist der relevante Teil der `PaintSurface` Handler:
+Die **grundlegende Drehen** Seite zeigt die `RotateDegrees` Methode. Die [ **BasicRotate.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs) Datei zeigt Text mit der zugehörigen Basislinie, die auf der Seite zentriert und wird auf der Grundlage einer `Slider` mit einem Bereich von –360 auf 360. Hier ist der relevante Teil der `PaintSurface` Handler:
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -60,7 +60,7 @@ Da die Drehung um die linke obere Ecke des Zeichenbereichs, für die meisten Win
 
 [![](rotate-images/basicrotate-small.png "Dreifacher Screenshot der Seite drehen Sie grundlegende")](rotate-images/basicrotate-large.png#lightbox "dreifachen Screenshot der Seite für grundlegende drehen")
 
-Sehr häufig sollten Sie ein zentraler Punkt angegebenen macht es irgendwann mit diesen Versionen von Drehen der [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/System.Single/System.Single/) und [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/System.Single/System.Single/) Methoden:
+Sehr häufig sollten Sie ein zentraler Punkt angegebenen macht es irgendwann mit diesen Versionen von Drehen der [ `RotateDegrees` ](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single,System.Single,System.Single)) und [ `RotateRadians` ](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single,System.Single,System.Single)) Methoden:
 
 ```csharp
 public void RotateDegrees (Single degrees, Single px, Single py)
@@ -88,13 +88,13 @@ Nun wird der Text gedreht, um den Punkt verwendet, um den Text, positionieren Si
 
 [![](rotate-images/centeredrotate-small.png "Dreifacher Screenshot der Seite zentriert Drehen")](rotate-images/centeredrotate-large.png#lightbox "dreifachen Screenshot der Seite zentriert drehen")
 
-Genau wie bei der zentrierte Version von der `Scale` -Methode, die zentriert die `RotateDegrees` Aufruf ist eine Verknüpfung:
+Wie bei der zentrierte Version von der `Scale` -Methode, die zentriert die `RotateDegrees` Aufruf ist eine Verknüpfung. Hier ist die Methode ein:
 
 ```csharp
 RotateDegrees (degrees, px, py);
 ```
 
-Dieser Ausdruck ist äquivalent zu Folgendem:
+Dieser Aufruf ist äquivalent zu folgendem:
 
 ```csharp
 canvas.Translate(px, py);
@@ -180,7 +180,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-Die `xCenter` und `yCenter` Werte geben an der Mitte der Canvas. Die `yText` Wert ist ein bisschen von dem offset. Dies gibt an, die Y-Koordinate, die erforderlich ist, um den Text zu positionieren, damit sie auf der Seite wirklich vertikal zentriert wird. Die `for` Schleife legt dann eine Rotation, dessen Mitte sich an der Mitte der Canvas. Die Rotation ist in Schritten von 30 Grad. Der Text gezeichnet wird, mit der `yText` Wert. Die Anzahl von Leerzeichen vor dem Wort "drehen" in der `text` Wert zum Herstellen die Verbindung zwischen diesen 12 Textzeichenfolgen anscheinend ein Dodecagon empirisch ermittelt wurde.
+Die `xCenter` und `yCenter` Werte geben an der Mitte der Canvas. Die `yText` Wert ist ein bisschen von dem offset. Dieser Wert ist die Y-Koordinate, die erforderlich ist, um den Text zu positionieren, damit sie auf der Seite wirklich vertikal zentriert wird. Die `for` Schleife legt dann eine Rotation basierend auf der Mitte der Canvas. Die Rotation ist in Schritten von 30 Grad. Der Text gezeichnet wird, mit der `yText` Wert. Die Anzahl von Leerzeichen vor dem Wort "drehen" in der `text` Wert zum Herstellen die Verbindung zwischen diesen 12 Textzeichenfolgen anscheinend ein Dodecagon empirisch ermittelt wurde.
 
 Eine Möglichkeit, diesen Code zu vereinfachen, ist den Winkel der Drehung um 30° jedes Mal nach der Schleife erhöht den `DrawText` aufrufen. Dadurch entfällt die Notwendigkeit für Aufrufe von `Save` und `Restore`. Beachten Sie, dass die `degrees` Variable wird nicht mehr innerhalb des Texts verwendet die `for` blockieren:
 
@@ -253,7 +253,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Die `revolveDegrees` und `rotateDegrees` Felder animiert werden. Dieses Programm verwendet eine andere Animation-Technik, die basierend auf der Xamarin.Forms `Animation` Klasse. (Diese Klasse wird beschrieben, [Kapitel 22 von *Erstellen mobiler Apps mit Xamarin.Forms*](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)) die `OnAppearing` Außerkraftsetzung erstellt zwei `Animation` Objekte mit Rückrufmethoden, und ruft dann `Commit` werden für die Dauer einer Animation:
+Die `revolveDegrees` und `rotateDegrees` Felder animiert werden. Dieses Programm verwendet eine andere Animation-Technik, die basierend auf der Xamarin.Forms [ `Animation` ](xref:Xamarin.Forms.Animation) Klasse. (Diese Klasse wird beschrieben, [Kapitel 22 von *Erstellen mobiler Apps mit Xamarin.Forms*](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)) die `OnAppearing` Außerkraftsetzung erstellt zwei `Animation` Objekte mit Rückrufmethoden, und ruft dann `Commit` werden für die Dauer einer Animation:
 
 ```csharp
 protected override void OnAppearing()
@@ -271,7 +271,7 @@ protected override void OnAppearing()
 }
 ```
 
-Die erste `Animation` Objekt animiert wird `revolveDegrees` von 0 bis 360 Grad mehr als 10 Sekunden. Das zweite Argument eine Animation `rotateDegrees` von 0 bis 360 Grad alle 1 Sekunde und auch erklärt die Oberfläche zum Generieren von einem weiteren Aufruf von der `PaintSurface` Handler. Die `OnDisappearing` Außerkraftsetzung bricht diese zwei Animationen ab:
+Die erste `Animation` Objekt animiert wird `revolveDegrees` der von 0 bis 360 Grad mehr als 10 Sekunden. Das zweite Argument eine Animation `rotateDegrees` der von 0 bis 360 Grad alle 1 Sekunde und auch erklärt die Oberfläche zum Generieren von einem weiteren Aufruf von der `PaintSurface` Handler. Die `OnDisappearing` Außerkraftsetzung bricht diese zwei Animationen ab:
 
 ```csharp
 protected override void OnDisappearing()
@@ -311,9 +311,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
         ...
     }
 }
+```
 
-```csharp
-There are 60 marks of two different sizes that must be drawn in a circle around the clock. The `DrawCircle` call draws that circle at the point (0, –90), which relative to the center of the clock corresponds to 12:00. The `RotateDegrees` call increments the rotation angle by 6 degrees after every tick mark. The `angle` variable is used solely to determine if a large circle or a small circle is drawn:
+Es gibt 60 Markierungen von zwei verschiedenen Größen, die rund um die Uhr in einem Kreis gezeichnet werden müssen. Die `DrawCircle` Aufruf zeichnet, Kreis, an dem Punkt (0, –90), das Bezug auf den Mittelpunkt der Uhr, 12:00 Uhr entspricht. Die `RotateDegrees` Aufruf erhöht den Drehwinkel in Schritten von 6 Grad nach jeder Teilstrich. Die `angle` Variable wird verwendet, nur um zu bestimmen, ob ein großer Kreis oder ein kleiner Kreis gezeichnet wird:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -366,8 +366,9 @@ Die Uhr ist sicherlich funktionsfähig, obwohl die Hände recht einfach gehalten
 
 [![](rotate-images/uglyanalogclock-small.png "Screenshot der Seite hässlichen analogen Uhr Text dreifach")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
 
+Eine noch attraktiver Uhr, finden Sie im Artikel [ **SVG-Pfaddaten in SkiaSharp**](../curves/path-data.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
