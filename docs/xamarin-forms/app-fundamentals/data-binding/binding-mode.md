@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/01/2018
-ms.openlocfilehash: a6eaf08d17f70c43f451361e27555a09c39f26a9
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 420c1de0691de419180dd497a9031ea5e7dd1054
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "37935666"
 ---
 # <a name="xamarinforms-binding-mode"></a>Bindungsmodus für Xamarin.Forms
@@ -312,6 +312,9 @@ Sie können den Bindungsmodus festlegen, um `OneWayToSource` in die **Alternativ
 ```
 
 Jetzt die `Slider` mit 1 initialisiert wird (der Standardwert von `Scale`) aber Bearbeiten der `Slider` hat keine Auswirkungen auf die `Scale` -Eigenschaft, sodass dies nicht sehr nützlich ist.
+
+> [!NOTE]
+> Die [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) -Klasse definiert außerdem [ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX) und [ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY) Eigenschaften, die skaliert werden können, die `VisualElement` anders als in der horizontaler bzw. vertikaler Richtung.
 
 Eine sehr nützliche Anwendung Überschreiben der Standardmodus für die Bindung mit `TwoWay` umfasst die `SelectedItem` Eigenschaft `ListView`. Der Standardmodus für die Bindung ist `OneWayToSource`. Wenn eine Bindung festgelegt ist, auf die `SelectedItem` -Eigenschaft zum Verweisen auf eine Quelleigenschaft in ein "ViewModel", und klicken Sie dann aus dieser Quelleigenschaft festgelegt ist die `ListView` Auswahl. Allerdings unter Umständen, Sie sollten auch die `ListView` aus dem ViewModel initialisiert werden.
 

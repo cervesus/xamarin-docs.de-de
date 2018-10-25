@@ -1,22 +1,22 @@
 ---
 title: Xamarin.Forms "DatePicker"
-description: "\"DatePicker\" ist die Xamarin.Forms-Sicht, die dem Benutzer ermöglicht, ein Datum auswählen. In diesem Artikel wird erläutert, wie ein \"DatePicker\" in einer Xamarin.Forms-Anwendung genutzt wird."
+description: "\"DatePicker\" handelt es sich um eine Xamarin.Forms-Sicht, die dem Benutzer ermöglicht, ein Datum auswählen. In diesem Artikel wird erläutert, wie ein \"DatePicker\" in einer Xamarin.Forms-Anwendung genutzt wird."
 ms.prod: xamarin
 ms.assetid: 68E8EF8A-42E7-4939-8ABE-64D060E609D9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/04/2018
-ms.openlocfilehash: 553957bfa06c7b7a9c5261e426ebee4190de5ebb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7917510e910223fc6ca276bf47b1878c19557a38
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38994925"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms "DatePicker"
 
-_Eine Xamarin.Forms-Sicht, die dem Benutzer ermöglicht, ein Datum auswählen_
+_Eine Xamarin.Forms-Sicht, die dem Benutzer ermöglicht, ein Datum auswählen._
 
 Die Xamarin.Forms [ `DatePicker` ](xref:Xamarin.Forms.DatePicker) ruft Datumsauswahl-Steuerelement von der Plattform und ermöglicht dem Benutzer ein Datum auswählen. `DatePicker` werden acht Eigenschaften definiert:
 
@@ -184,6 +184,9 @@ Wenn das Beispiel zuerst ausgeführt wird, sowohl `DatePicker` Ansichten werden 
 Tippen Sie auf eines der `DatePicker` zeigt Ruft die Datumsauswahl Plattform. Drei Plattformen Implementieren dieser Datumsauswahl sehr unterschiedlich, aber jeder Ansatz ist für Benutzer von dieser Plattform vertraut sind:
 
 [![Wählen Sie Tage zwischen Datumsangaben](datepicker-images/DaysBetweenDatesSelect.png "Tage zwischen Datumsangaben auswählen")](datepicker-images/DaysBetweenDatesSelect-Large.png#lightbox "Tage zwischen Datumsangaben auswählen")
+
+> [!TIP]
+> Unter Android die `DatePicker` Dialogfeld kann angepasst werden, durch Überschreiben der `CreateDatePickerDialog` -Methode in der ein benutzerdefinierter Renderer. Dies kann beispielsweise zusätzliche Schaltflächen im Dialogfeld hinzugefügt werden.
 
 Nachdem zwei Datumsangaben, die ausgewählt werden, zeigt die Anwendung die Anzahl der Tage zwischen diesen Datumswerten:
 

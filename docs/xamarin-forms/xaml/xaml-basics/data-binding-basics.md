@@ -1,40 +1,40 @@
 ---
-title: Teil 4. Data Binding-Grundlagen
-description: Datenbindungen können Eigenschaften von zwei Objekten, die verknüpft werden, damit eine Änderung in einem bewirkt, dass eine Änderung in den anderen bestehen.
+title: Teil 4. Grundlagen der Datenbindung
+description: Datenbindungen können Sie Eigenschaften von zwei Objekten, die verknüpft werden, damit eine Änderung in einer bewirkt, dass eine Änderung in der anderen.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 117ddd033faedda871c33ba10c246739309e2e86
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ee6571012764e7578fa9ee03493e9f96aa7b45eb
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "35245949"
 ---
-# <a name="part-4-data-binding-basics"></a>Teil 4. Data Binding-Grundlagen
+# <a name="part-4-data-binding-basics"></a>Teil 4. Grundlagen der Datenbindung
 
-_Datenbindungen können Eigenschaften von zwei Objekten, die verknüpft werden, damit eine Änderung in einem bewirkt, dass eine Änderung in den anderen bestehen. Dies ist ein sehr wichtiges Tool, und während der datenbindungen, die vollständig im Code definiert werden können, stellt XAML Verknüpfungen und Vereinfachung. Daher ist eine der wichtigsten Markuperweiterungen in Xamarin.Forms binden._
+_Datenbindungen können Sie Eigenschaften von zwei Objekten, die verknüpft werden, damit eine Änderung in einer bewirkt, dass eine Änderung in der anderen. Dies ist ein sehr wertvolles Tool, und während der datenbindungen, die vollständig in Code definiert werden können, Verknüpfungen und der Einfachheit halber XAML enthält. Daher ist eine der wichtigsten Markuperweiterungen in Xamarin.Forms binden._
 
 ## <a name="data-bindings"></a>Datenbindungen
 
-Datenbindungen connect-Eigenschaften von zwei Objekte mit dem Namen der *Quelle* und *Ziel*. Im Code sind zwei Schritte erforderlich: die `BindingContext` Eigenschaft des Zielobjekts muss festgelegt werden, mit dem Quellobjekt und dem `SetBinding` Methode (wird häufig in Verbindung mit der `Binding` Klasse) muss aufgerufen werden, für das Zielobjekt eine Eigenschaft, die gebunden Objekt, das eine Eigenschaft des Quellobjekts.
+Datenbindungen, die connect-Eigenschaften von zwei Objekte, mit dem Namen der *Quelle* und *Ziel*. Im Code sind zwei Schritte erforderlich: die `BindingContext` Eigenschaft des Zielobjekts muss festgelegt werden, mit dem Quellobjekt und die `SetBinding` Methode (wird häufig in Verbindung mit der `Binding` Klasse) muss für das Zielobjekt, binden Sie eine Eigenschaft, die aufgerufen werden Objekt, das eine Eigenschaft des Quellobjekts.
 
-Die Zieleigenschaft muss eine bindbare Eigenschaft an, was bedeutet, dass das Zielobjekt abgeleitet sein muss `BindableObject`. Die Onlinedokumentation Xamarin.Forms gibt an, welche Eigenschaften bindbare Eigenschaften sind. Eine Eigenschaft des `Label` wie z. B. `Text` bezieht sich auf die bindbare Eigenschaft `TextProperty`.
+Die Zieleigenschaft muss eine bindbare Eigenschaft an, was bedeutet, dass das Zielobjekt von abgeleitet werden, muss `BindableObject`. Die Xamarin.Forms-Onlinedokumentation gibt an, welche Eigenschaften bindbare Eigenschaften sind. Eine Eigenschaft des `Label` wie z. B. `Text` bezieht sich auf die bindbare Eigenschaft `TextProperty`.
 
-Im Markup, müssen Sie auch die gleichen beiden Schritte, die erforderlich sind, im Code ausführen mit dem Unterschied, dass die `Binding` Markuperweiterung erfolgt von der `SetBinding` aufrufen und die `Binding` Klasse.
+Im Markup müssen Sie auch die gleichen zwei Schritte, die erforderlich sind, im Code, Ausführen mit dem Unterschied, dass die `Binding` Markuperweiterung nimmt den Platz von der `SetBinding` aufrufen und die `Binding` Klasse.
 
-Wenn Sie die datenbindungen in XAML definiert, es gibt jedoch mehrere Möglichkeiten zur Festlegung der `BindingContext` des Zielobjekts. Es ist manchmal festgelegt, aus der Code-Behind-Datei, in einigen Fällen mit einer `StaticResource` oder `x:Static` Markuperweiterung, und gelegentlich auch als Inhalt `BindingContext` Property-Element Tags.
+Wenn Sie datenbindungen in XAML definieren, es gibt jedoch mehrere Möglichkeiten zum Festlegen der `BindingContext` des Zielobjekts. Manchmal festgelegt aus der CodeBehind-Datei, manchmal mit eine `StaticResource` oder `x:Static` Markuperweiterung, und gelegentlich auch als Inhalt der `BindingContext` Eigenschaftenelement Tags.
 
-Bindungen sind Verbindung die visuellen Elemente eines Programms mit einem zugrunde liegenden Datenmodell in der Regel in eine Realisierung der Anwendungsarchitektur MVVM (Model-View-ViewModel) am häufigsten verwendet, wie in beschrieben [Teil 5. Aus Datenbindungen, MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md), aber andere Szenarien sind möglich.
+Bindungen werden am häufigsten mit einem zugrunde liegenden Datenmodell, in der Regel in eine Realisierung der Architektur des MVVM (Model-View-ViewModel)-Anwendung, die Verbindung die visuellen Elemente eines Programms verwendet, wie unter [Teil 5. Von Datenbindungen zu MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md), aber andere Szenarien sind möglich.
 
-## <a name="view-to-view-bindings"></a>Bindungen Ansicht
+## <a name="view-to-view-bindings"></a>Ansicht-zu-Ansicht-Bindungen
 
-Sie können die datenbindungen zum Verknüpfen der beiden Ansichten auf derselben Seite Eigenschaften definieren. In diesem Fall legen Sie die `BindingContext` der das Ziel mit den `x:Reference` Markuperweiterung.
+Sie können die datenbindungen, die zum Verknüpfen der Eigenschaften von zwei Ansichten auf derselben Seite definieren. In diesem Fall legen Sie die `BindingContext` der das Ziel mit dem `x:Reference` Markuperweiterung.
 
-Hier ist eine XAML-Datei enthält eine `Slider` und zwei `Label` Ansichten, von denen gedreht wird die `Slider` Wert und ein anderes angezeigt der `Slider` Wert:
+Hier ist eine XAML-Datei mit einer `Slider` und zwei `Label` Ansichten, von denen gedreht wird, durch die `Slider` Wert und einen anderen angezeigt der `Slider` Wert:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -65,9 +65,9 @@ Hier ist eine XAML-Datei enthält eine `Slider` und zwei `Label` Ansichten, von 
 </ContentPage>
 ```
 
-Die `Slider` enthält ein `x:Name` -Attribut, das durch die zwei verwiesen wird `Label` Ansichten mithilfe der `x:Reference` Markuperweiterung.
+Die `Slider` enthält ein `x:Name` -Attribut, das die beiden verweist `Label` Ansichten mit der `x:Reference` Markuperweiterung.
 
-Die `x:Reference` bindungserweiterung definiert eine Eigenschaft namens `Name` in diesem Fall auf den Namen des das Verweiselement festlegen `slider`. Allerdings die `ReferenceExtension` Klasse, definiert die `x:Reference` Markuperweiterung definiert auch eine `ContentProperty` -Attribut für `Name`, was bedeutet, dass es nicht unbedingt erforderlich ist. Nur für verschiedene das erste `x:Reference` enthält "Name =", die zweite jedoch nicht:
+Die `x:Reference` bindungserweiterung definiert eine Eigenschaft namens `Name` , auf den Namen des Elements auf die verwiesen wird, legen Sie in diesem Fall `slider`. Allerdings die `ReferenceExtension` Klasse, die definiert die `x:Reference` Markuperweiterung definiert auch eine `ContentProperty` Attribut für `Name`, was bedeutet, dass sie nicht explizit erforderlich ist. Nur für verschiedene die erste `x:Reference` enthält "Name =" die zweite jedoch nicht:
 
 ```csharp
 BindingContext="{x:Reference Name=slider}"
@@ -75,7 +75,7 @@ BindingContext="{x:Reference Name=slider}"
 BindingContext="{x:Reference slider}"
 ```
 
-Die `Binding` Markuperweiterung selbst kann mehrere Eigenschaften aufweisen, ebenso wie die `BindingBase` und `Binding` Klasse. Die `ContentProperty` für `Binding` ist `Path`, aber die "Pfad =" Teil der Markuperweiterung kann ausgelassen werden, wenn der Pfad in das erste Element ist der `Binding` Markuperweiterung. Im ersten Beispiel ist "Pfad =" im zweite Beispiel lässt es aber:
+Die `Binding` Markuperweiterung selbst kann verfügen über verschiedene Eigenschaften, wie die `BindingBase` und `Binding` Klasse. Die `ContentProperty` für `Binding` ist `Path`, aber die "Path =" Teil der Markuperweiterung ausgelassen werden, wenn der Pfad in das erste Element ist die `Binding` Markuperweiterung. Im erste Beispiel ist "Path =" im zweite Beispiel lässt es aber:
 
 ```csharp
 Rotation="{Binding Path=Value}"
@@ -83,7 +83,7 @@ Rotation="{Binding Path=Value}"
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 ```
 
-Die Eigenschaften können sich auf einer Zeile oder in mehrere Zeilen aufgeteilt:
+Die Eigenschaften können alle in einer Zeile befinden oder in mehrere Zeilen aufgeteilt:
 
 ```csharp
 Text="{Binding Value,
@@ -92,30 +92,30 @@ Text="{Binding Value,
 
 Führen Sie an, was praktisch ist.
 
-Beachten Sie, dass die `StringFormat` Eigenschaft in der zweiten `Binding` Markuperweiterung. In Xamarin.Forms mit, Bindungen führen keine implizite typkonvertierungen und ein Zeichenfolgenobjekt als Zeichenfolge angezeigt werden sollen. Geben Sie einen Typkonverter oder verwenden Sie `StringFormat`. Im Hintergrund, die statische `String.Format` Methode wird verwendet, implementieren `StringFormat`. Die besteht möglicherweise ein Problem, da .NET Formatierungsangaben geschweifte Klammern umfassen auch zur Begrenzung von Markuperweiterungen verwendet werden. Dadurch wird ein Risiko verwirrend ist die Verwendung von XAML-Parser erstellt. Um dies zu vermeiden, legen Sie die gesamte Formatierungszeichenfolge in einfache Anführungszeichen eingeschlossen:
+Beachten Sie, dass die `StringFormat` Eigenschaft in der zweiten `Binding` Markuperweiterung. In Xamarin.Forms Bindungen führen keine implizite typkonvertierungen, und ein nichtzeichenfolgen-Objekt als Zeichenfolge angezeigt werden sollen. Sie müssen einen Typkonverter oder `StringFormat`. Hinter den Kulissen wird die statische `String.Format` Methode dient zum Implementieren `StringFormat`. Das ist möglicherweise ein Problem, da .NET Formatierungsangaben geschweifte Klammern, beinhalten die auch zum Trennen von Markuperweiterungen verwendet werden. Dadurch wird die Gefahr der verwirrend erscheinen des XAML-Parsers erstellt. Um dies zu vermeiden, fügen Sie die gesamte Formatierung Zeichenfolge in einfache Anführungszeichen einschließen:
 
 ```csharp
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 ```
 
-So sieht das ausgeführte Programm aus:
+Hier ist das aktive Programm:
 
-[![](data-binding-basics-images/sliderbinding.png "View-View-Bindungen")](data-binding-basics-images/sliderbinding-large.png#lightbox "Ansicht-Bindungen ")
+[![](data-binding-basics-images/sliderbinding.png "Ansicht-zu-Ansicht Bindungen")](data-binding-basics-images/sliderbinding-large.png#lightbox "Ansicht-zu-Ansicht-Bindungen ")
 
 ## <a name="the-binding-mode"></a>Den Bindungsmodus
 
-Eine einzige Ansicht kann datenbindungen auf mehreren Eigenschaften haben. Jedoch jede Sicht kann nur einen haben `BindingContext`, sodass mehrere datenbindungen für diese Sicht alle müssen Eigenschaften des gleichen Objekts verweisen.
+Eine einzelne Ansicht kann auf verschiedene Eigenschaften über datenbindungen verfügen. Jede Sicht kann jedoch haben nur eine `BindingContext`, sodass mehrere datenbindungen, die für diese Sicht alle müssen das gleiche Objekt verweisen.
 
-Die Lösung auf diese und andere Probleme die beinhaltet die `Mode` Eigenschaft, die auf einen Member festgelegt wird die `BindingMode` Enumeration:
+Die Lösung für dieses und andere Probleme umfasst die `Mode` -Eigenschaft, die auf einen Member festgelegt wird die `BindingMode` Enumeration:
 
 - `Default`
-- `OneWay` – Werte aus der Quelle an das Ziel übertragen werden
+- `OneWay` – Werte werden aus der Quelle zum Ziel übertragen
 - `OneWayToSource` – Werte vom Ziel zur Quelle übertragen werden
-- `TwoWay` – Werte beide Richtungen übertragen werden, zwischen Quelle und Ziel
+- `TwoWay` – Werte werden in beide Richtungen zwischen Quelle und Ziel übertragen
 
-Das folgende Programm zeigt häufig dazu verwendet die `OneWayToSource` und `TwoWay` Bindungsarten. Vier `Slider` Sichten dienen zur Steuerung der `Scale`, `Rotate`, `RotateX`, und `RotateY` Eigenschaften einer `Label`. Zunächst erscheint es wie diese vier Eigenschaften des der `Label` Datenbindungsfunktionen Ziele sollte sein werden, da jeder von festgelegt wird eine `Slider`. Allerdings die `BindingContext` von `Label` kann nur ein Objekt, und es gibt vier verschiedene Schieberegler.
+Das folgende Programm zeigt häufig dazu verwendet die `OneWayToSource` und `TwoWay` Bindungsmodi. Vier `Slider` Sichten dienen der Kontrolle der `Scale`, `Rotate`, `RotateX`, und `RotateY` Eigenschaften eine `Label`. Zunächst erscheint es als ob diese vier Eigenschaften der `Label` Datenbindung Ziele sollte sein werden, da jeder von festgelegt wird eine `Slider`. Allerdings die `BindingContext` von `Label` kann nur ein Objekt sein, und es gibt vier verschiedene Schieberegler.
 
-Aus diesem Grund Alle Bindungen in festgelegt sind scheinbar rückwärts Arten: die `BindingContext` jedes der vier Schieberegler auf festgelegt ist die `Label`, und die Bindungen festgelegt sind die `Value` Eigenschaften die Schieberegler. Mithilfe der `OneWayToSource` und `TwoWay` Modi, diese `Value` Eigenschaften lassen sich die Datenquelleneigenschaften, die die `Scale`, `Rotate`, `RotateX`, und `RotateY` Eigenschaften des der `Label`:
+Aus diesem Grund Alle Bindungen in festgelegt sind scheinbar rückwärts Möglichkeiten: die `BindingContext` jedes der vier Schieberegler nastaven NA hodnotu der `Label`, für die Bindungen festgelegt werden die `Value` Eigenschaften der Schieberegler. Mithilfe der `OneWayToSource` und `TwoWay` Modi diese `Value` Eigenschaften können die Datenquelleneigenschaften, die festgelegt die `Scale`, `Rotate`, `RotateX`, und `RotateY` Eigenschaften der `Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -194,25 +194,28 @@ Aus diesem Grund Alle Bindungen in festgelegt sind scheinbar rückwärts Arten: 
 </ContentPage>
 ```
 
-Die Bindungen für drei der `Slider` Ansichten sind `OneWayToSource`. Dies bedeutet, die die `Slider` Wert führt dazu, dass es sich bei eine Änderung in der Eigenschaft des seine `BindingContext`, also die `Label` mit dem Namen `label`. Diese drei `Slider` Ansichten dazu führen, dass Änderungen an der `Rotate`, `RotateX`, und `RotateY` Eigenschaften der `Label`.
+Die Bindungen für drei der `Slider` Ansichten sind `OneWayToSource`. Dies bedeutet, der `Slider` Wert führt dazu, dass es sich bei eine Änderung in der Eigenschaft des seine `BindingContext`, d.h. die `Label` mit dem Namen `label`. Diese drei `Slider` Ansichten dazu führen, dass Änderungen an der `Rotate`, `RotateX`, und `RotateY` Eigenschaften der `Label`.
 
-Allerdings die Bindung für die `Scale` Eigenschaft ist `TwoWay`. Grund hierfür ist, die `Scale` Eigenschaft hat den Standardwert 1 und mit einer `TwoWay` binden Ursachen der `Slider` ursprüngliche Wert auf 1 statt 0 festgelegt werden. Wäre, dass die Bindung `OneWayToSource`, `Scale` würde anfänglich-Eigenschaftensatz auf 0 aus der `Slider` default-Wert. Die `Label` würde nicht sichtbar, und für dem Benutzer eine gewissen Verwirrung verursachen können.
+Allerdings die Bindung für die `Scale` Eigenschaft `TwoWay`. Grund hierfür ist die `Scale` Eigenschaft hat den Standardwert 1 und mit einer `TwoWay` Bindung bewirkt, dass die `Slider` Initialwert auf 1 statt 0 festgelegt werden. Wäre, dass die Bindung `OneWayToSource`, `Scale` Eigenschaft anfangs auf 0 aus fest der `Slider` default-Wert. Die `Label` würde nicht sichtbar, und für dem Benutzer eine gewissen Verwirrung verursachen können.
 
- [![](data-binding-basics-images/slidertransforms.png "Abwärtskompatibilität Bindungen")](data-binding-basics-images/slidertransforms-large.png#lightbox "Abwärtskompatibilität Bindungen")
+ [![](data-binding-basics-images/slidertransforms.png "Abwärtskompatibilität Bindungen")](data-binding-basics-images/slidertransforms-large.png#lightbox "rückwärts Bindungen")
+
+ > [!NOTE]
+ > Die [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) -Klasse verfügt auch über [ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX) und [ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY) Eigenschaften, die Skalierung der `VisualElement` auf der x-Achse und y-Achse bzw.
 
 ## <a name="bindings-and-collections"></a>Bindungen und Sammlungen
 
-Nichts veranschaulicht die Leistungsfähigkeit XAML und datenbindungen besser als ein aus einer Vorlage gebildete `ListView`.
+Nichts illustriert die Leistung von XAML und datenbindungen besser als eine auf Vorlagen basierenden `ListView`.
 
-`ListView` definiert eine `ItemsSource` Eigenschaft vom Typ `IEnumerable`, werden die Elemente in dieser Sammlung angezeigt. Diese Elemente können Objekte eines beliebigen Typs sein. Standardmäßig `ListView` verwendet die `ToString` Methode jedes Elements dieses Element angezeigt wird. Manchmal ist nur wollten, aber in vielen Fällen `ToString` gibt nur die den vollqualifizierten Klassennamen des Objekts zurück.
+`ListView` definiert eine `ItemsSource` Eigenschaft vom Typ `IEnumerable`, und zeigt die Elemente in der Auflistung. Diese Elemente können Objekte eines beliebigen Typs sein. In der Standardeinstellung `ListView` verwendet die `ToString` -Methode jedes Elements dieses Element angezeigt wird. Manchmal ist dies nur erwünscht, aber in vielen Fällen `ToString` gibt nur den vollständig qualifizierten Klassennamen des Objekts.
 
-Jedoch die Elemente in der `ListView` Auflistung kann angezeigt werden, wie Sie, durch die Verwendung der möchten einen *Vorlage*, dem umfasst einer Klasse, die abgeleitet `Cell`. Die Vorlage wird geklont, für jedes Element in der `ListView`, und datenbindungen, die in der Vorlage festgelegt wurden in den einzelnen Klone übertragen werden.
+Allerdings die Elemente in der `ListView` Auflistung kann angezeigt werden, wie Sie, durch die Verwendung von möchten einer *Vorlage*, hierbei ist eine abgeleitete Klasse `Cell`. Die Vorlage geklont für jedes Element in der `ListView`, und der datenbindungen, die in der Vorlage festgelegt wurden, die in die einzelnen Klone übertragen werden.
 
-Sehr häufig, sollten Sie zum Erstellen einer benutzerdefinierten Zelle für diese Elemente mithilfe der `ViewCell` Klasse. Dieser Prozess ist etwas im Code unübersichtlich, aber in XAML wird es sehr einfach.
+Sehr häufig, sollten Sie zum Erstellen einer benutzerdefinierten Zelle für diese Elemente mithilfe der `ViewCell` Klasse. Dieser Prozess wird im Code etwas unübersichtlich, aber in XAML wird es sehr einfach.
 
-In der XamlSamples enthalten Projekt ist eine Klasse mit dem Namen `NamedColor`. Jede `NamedColor` Objekt hat `Name` und `FriendlyName` Eigenschaften des Typs `string`, und ein `Color` Eigenschaft vom Typ `Color`. Darüber hinaus `NamedColor` hat 141 statische schreibgeschützte Felder des Typs `Color` , Farben, die in der Xamarin.Forms definiert entspricht `Color` Klasse. Ein statischer Konstruktor erstellt ein `IEnumerable<NamedColor>` Sammlung mit `NamedColor` Objekte für diese statische Felder und die öffentliche statische zugewiesen `All` Eigenschaft.
+Die XamlSamples Projekt enthält eine Klasse namens `NamedColor`. Jede `NamedColor` Objekt verfügt über `Name` und `FriendlyName` Eigenschaften des Typs `string`, und ein `Color` Eigenschaft vom Typ `Color`. Darüber hinaus `NamedColor` hat 141 statische schreibgeschützte Felder vom Typ `Color` , die in der Xamarin.Forms definierten Farben entsprechen `Color` Klasse. Ein statischer Konstruktor erstellt ein `IEnumerable<NamedColor>` Sammlung mit `NamedColor` Objekte, die diese statischen Feldern entsprechen, und weist sie die öffentliche statische `All` Eigenschaft.
 
-Festlegen der statischen `NamedColor.All` Eigenschaft, um die `ItemsSource` des eine `ListView` ist ganz einfach mit der `x:Static` Markuperweiterung:
+Festlegen der statischen `NamedColor.All` Eigenschaft, um die `ItemsSource` von einer `ListView` ist einfach mit der `x:Static` Markuperweiterung:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -226,13 +229,13 @@ Festlegen der statischen `NamedColor.All` Eigenschaft, um die `ItemsSource` des 
 </ContentPage>
 ```
 
-Die resultierenden Anzeige legt fest, dass die Elemente des Typs tatsächlich sind `XamlSamples.NamedColor`:
+Die resultierenden Anzeige gibt an, dass die Elemente wirklich vom Typ sind `XamlSamples.NamedColor`:
 
 [![](data-binding-basics-images/listview1.png "Binden an eine Auflistung")](data-binding-basics-images/listview1-large.png#lightbox "Binden an eine Auflistung")
 
-Es ist nicht viele Informationen, aber die `ListView` bildlauffähiges und ausgewählt ist.
+Es ist nicht viele Informationen, aber die `ListView` ist bildlauffähigen und ausgewählt werden.
 
-Um eine Vorlage für die Elemente zu definieren, sollten Sie gliedern Sie die `ItemTemplate` -Eigenschaft, wie ein Eigenschaftenelement und legen Sie dafür eine `DataTemplate`, welche Verweise ein `ViewCell`. Um die `View` Eigenschaft von der `ViewCell` können Sie ein Layout für eine oder mehrere Ansichten zur Anzeige der einzelnen Elemente zu definieren. Hier ist ein einfaches Beispiel:
+Um eine Vorlage für die Elemente zu definieren, sollten Sie sich die `ItemTemplate` -Eigenschaft, wie ein Property-Element, und legen Sie dafür eine `DataTemplate`, das Klicken Sie dann auf eine `ViewCell`. Um die `View` Eigenschaft der `ViewCell` können Sie ein Layout von ein oder mehrere Ansichten zum Anzeigen der einzelnen Elemente zu definieren. Hier ist ein einfaches Beispiel:
 
 ```xaml
 <ListView ItemsSource="{x:Static local:NamedColor.All}">
@@ -248,11 +251,11 @@ Um eine Vorlage für die Elemente zu definieren, sollten Sie gliedern Sie die `I
 </ListView>
 ```
 
-Die `Label` -Elementgruppe ist die `View` Eigenschaft von der `ViewCell`. (Die `ViewCell.View` Tags sind nicht erforderlich, da die `View` Eigenschaft ist für die Inhaltseigenschaft des `ViewCell`.) Dieses Markup zeigt die `FriendlyName` -Eigenschaft jedes `NamedColor` Objekt:
+Die `Label` -Elementgruppe ist die `View` Eigenschaft der `ViewCell`. (Die `ViewCell.View` Tags sind nicht erforderlich, da die `View` -Eigenschaft ist die Content-Eigenschaft des `ViewCell`.) Dieses Markup zeigt die `FriendlyName` Eigenschaft der einzelnen `NamedColor` Objekt:
 
-[![](data-binding-basics-images/listview2.png "Binden an eine Auflistung mit einem DataTemplate")](data-binding-basics-images/listview2-large.png#lightbox "Binden an eine Auflistung mit DataTemplate")
+[![](data-binding-basics-images/listview2.png "Binden an eine Auflistung mit einem DataTemplate")](data-binding-basics-images/listview2-large.png#lightbox "Binden an eine Auflistung mit einem DataTemplate")
 
-Viel besser. Jetzt ist die einzige erforderliche zum Einrichten der Elementvorlage mit Informationen und die tatsächliche Farbe Fichte. Zur Unterstützung dieser Vorlage haben einige Werte und Objekte in der Seite Ressourcenwörterbuch definiert wurde:
+Viel besser. Jetzt ist alles, was erforderlich ist, um die Elementvorlage mit Informationen und die tatsächliche Farbe Fichte. Um diese Vorlage zu unterstützen, haben einige Werte und Objekte im Ressourcenverzeichnis der Seite definiert wurde:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -324,13 +327,13 @@ Viel besser. Jetzt ist die einzige erforderliche zum Einrichten der Elementvorla
 </ContentPage>
 ```
 
-Beachten Sie die Verwendung von `OnPlatform` definieren Sie die Größe des eine `BoxView` und die Höhe der `ListView` Zeilen. Obwohl die Werte für alle drei Plattformen identisch sind, konnte auf das Markup problemlos für andere Werte zum Optimieren der Anzeige angepasst werden können.
+Beachten Sie, dass die Verwendung von `OnPlatform` definieren Sie die Größe des eine `BoxView` und die Höhe der der `ListView` Zeilen. Obwohl die Werte für alle drei Plattformen identisch sind, kann auf das Markup problemlos für andere Werte zur Optimierung der Anzeige angepasst werden können.
 
-## <a name="binding-value-converters"></a>Bindung Wertkonverter
+## <a name="binding-value-converters"></a>Binden von Wertkonvertern
 
-Der vorherige **ListView Demo** XAML-Datei zeigt die einzelnen `R`, `G`, und `B` Eigenschaften von der Xamarin.Forms `Color` Struktur. Diese Eigenschaften sind vom Typ `double` und zwischen 0 und 1 liegen. Wenn Sie die hexadezimale Werte anzeigen möchten, einfach können keine `StringFormat` mit einer Formatierung Spezifikation "X2". Das funktioniert nur für ganze Zahlen und neben dem, der `double` Werte müssen durch 255 multipliziert werden soll.
+Die vorherige **ListView Demo** XAML-Datei zeigt die einzelnen `R`, `G`, und `B` Eigenschaften der Xamarin.Forms `Color` Struktur. Diese Eigenschaften sind vom Typ `double` und liegen zwischen 0 und 1. Wenn Sie die hexadezimale Werte anzeigen möchten, einfach können keine `StringFormat` mit einer Formatierung der Spezifikation "X2". Dies funktioniert nur für ganze Zahlen und außerdem die `double` Werte müssen durch 255 multipliziert werden sollen.
 
-Dieses kleine Problem behoben wurde eine *Wertkonverter*auch Namens eine *Bindung Konverter*. Dies ist eine Klasse, implementiert die `IValueConverter` -Schnittstelle, d. h., sie verfügt über zwei Methoden, die mit dem Namen `Convert` und `ConvertBack`. Die `Convert` Methode wird aufgerufen, wenn ein Wert aus der Quelle zum Ziel übertragen wird die `ConvertBack` -Methode ist für Übertragungen vom Ziel aufgerufen, um die Quelle in `OneWayToSource` oder `TwoWay` Bindungen:
+Dieses kleine Problem gelöst wurde, mit einem *Wertkonverter*auch Namens eine *Binding-Konverter*. Dies ist eine Klasse, die implementiert die `IValueConverter` Schnittstelle, d. h., sie verfügt über zwei Methoden, die mit dem Namen `Convert` und `ConvertBack`. Die `Convert` Methode wird aufgerufen, wenn ein Wert aus der Quelle zum Ziel übertragen wird die `ConvertBack` Methode wird vom Ziel für Übertragungen aufgerufen, an der Quelle in `OneWayToSource` oder `TwoWay` Bindungen:
 
 ```csharp
 using System;
@@ -366,11 +369,11 @@ namespace XamlSamples
 }
 ```
 
-Die `ConvertBack` Methode wird eine Rolle nicht an diesem Programm wiedergegeben werden, da die Bindungen nur unidirektionale aus der Quelle zum Ziel sind.
+Die `ConvertBack` Methode wird eine Rolle nicht in diesem Programm wiedergegeben werden, da die Bindungen nur eine Möglichkeit, aus der Quelle zum Ziel sind.
 
-Eine Bindung verweist auf eine Bindung-Konverter, für die `Converter` Eigenschaft. Ein Konverter für die Bindung kann auch akzeptieren einen Parameter angegeben wird, mit der `ConverterParameter` Eigenschaft. Für einige Vielseitigkeit ist dies an, wie der Multiplikator angegeben wird. Der Konverter Bindung überprüft der Konverterparameter für eine gültige `double` Wert.
+Eine Bindung verweist auf ein Binding-Konverter, mit der `Converter` Eigenschaft. Ein Binding-Konverter kann auch mit Angabe von Parametern akzeptieren die `ConverterParameter` Eigenschaft. Für einige Vielseitigkeit geht ist dies an, wie der Multiplikator, der angegeben wird. Die Binding-Konverter überprüft, ob den Konverter-Parameter für einen gültigen `double` Wert.
 
-Der Konverter wird im Ressourcenverzeichnis instanziiert, damit es in mehrere Bindungen verwendet werden kann:
+Der Konverter wird im Ressourcenverzeichnis instanziiert, damit sie zwischen mehreren Bindungen gemeinsam genutzt werden kann:
 
 ```xaml
 <local:DoubleToIntConverter x:Key="intConverter" />
@@ -387,15 +390,15 @@ Drei datenbindungen verweisen auf diese einzelne Instanz. Beachten Sie, dass die
 
 Hier ist das Ergebnis:
 
-[![](data-binding-basics-images/listview3.png "Binden an eine Auflistung mit DataTemplate und Konverter")](data-binding-basics-images/listview3-large.png#lightbox "Binden an eine Auflistung mit DataTemplate und Typkonverter")
+[![](data-binding-basics-images/listview3.png "Binden an eine Auflistung mit einem DataTemplate und Konverter")](data-binding-basics-images/listview3-large.png#lightbox "Binden an eine Auflistung mit einem DataTemplate und Konverter")
 
-Die `ListView` ist ziemlich ausgereift bei der Verarbeitung von Änderungen, die dynamisch in der zugrunde liegenden Daten, aber nur auftreten, wenn Sie bestimmte Schritte ausführen. Wenn die Auflistung von Elementen zugewiesen der `ItemsSource` Eigenschaft von der `ListView` Änderungen während der Laufzeit –, ist, wenn Elemente hinzugefügt werden können, oder aus der Auflistung entfernt – verwenden eine `ObservableCollection` Klasse für diese Elemente. `ObservableCollection` implementiert die `INotifyCollectionChanged` -Schnittstelle, und `ListView` installiert einen Handler für das `CollectionChanged` Ereignis.
+Die `ListView` ist ziemlich ausgereift ist, bei der Verarbeitung von Änderungen, die dynamisch in der zugrunde liegenden Daten, aber nur auftreten, wenn Sie bestimmte Schritte ausführen. Wenn die Auflistung von Elementen zugewiesen der `ItemsSource` Eigenschaft der `ListView` Änderungen während der Laufzeit –, ist, wenn Elemente hinzugefügt werden können, oder aus der Auflistung entfernt – verwenden Sie eine `ObservableCollection` -Klasse für diese Elemente. `ObservableCollection` implementiert die `INotifyCollectionChanged` -Schnittstelle und `ListView` installiert einen Handler für die `CollectionChanged` Ereignis.
 
-Wenn die Eigenschaften der Elemente selbst ändern, während der Laufzeit, und klicken Sie dann die Elemente in der Auflistung implementieren sollten die `INotifyPropertyChanged` Schnittstelle und Signal Änderungen von Eigenschaftswerten, die mit der `PropertyChanged` Ereignis. Dies wird im nächsten Teil dieser Reihe veranschaulicht [Teil 5. Aus dem Datenbindung an MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
+Wenn Eigenschaften für die Elemente selbst während der Laufzeit ändern, sollten die Elemente in der Sammlung implementieren, die `INotifyPropertyChanged` -Schnittstelle und Signal Änderungen an Eigenschaftswerten, die mit der `PropertyChanged` Ereignis. Dies wird im nächsten Teil dieser Reihe dargestellt [Teil 5. Aus einer Datenbindung zu MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 
 ## <a name="summary"></a>Zusammenfassung
 
-Datenbindungen stellen einen leistungsstarken Mechanismus zum Verknüpfen von Eigenschaften zwischen zwei Objekten innerhalb einer Seite oder zwischen visuellen Elementen und die zugrunde liegenden Daten. Aber bei der Anwendung arbeiten mit Datenquellen beginnt, wird eine verbreitete-Architekturschema als ein nützlich-Paradigma ergibt sich beginnt. Dieser Vorgang wird beschrieben [Teil 5. Aus Datenbindungen, MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
+Datenbindungen bieten einen leistungsfähigen Mechanismus zum Verknüpfen von Eigenschaften, die zwischen zwei Objekten innerhalb einer Seite oder zwischen visuellen Objekten und dem zugrunde liegenden Daten. Doch bei der Arbeit mit Datenquellen gestartet, beginnt ein Architekturmuster für gängige Anwendung als eine nützliche Paradigma eingebunden. Dies wird im behandelt [Teil 5. Von Datenbindungen zu MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 
 
 
@@ -403,6 +406,6 @@ Datenbindungen stellen einen leistungsstarken Mechanismus zum Verknüpfen von Ei
 
 - [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 - [Teil 1. Erste Schritte mit XAML (Beispiel)](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-- [Teil 2. Grundlegende XAML-Syntax (Beispiel)](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-- [Teil 3. Verwendung von XAML-Markuperweiterungen (Beispiel)](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [Teil 2. Essential XAML Syntax (Beispiel)](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+- [Teil 3. XAML-Markuperweiterungen (Beispiel)](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Teil 5. Aus einer Datenbindung zu MVVM (Beispiel)](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
