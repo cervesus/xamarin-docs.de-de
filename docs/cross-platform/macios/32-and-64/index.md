@@ -1,27 +1,27 @@
 ---
-title: Bedingungen bezüglich der 32-/64-Bit-Plattform
-description: Dieses Dokument beschreibt die verschiedenen Aspekte zu bedenken, Geschäftsgruppen mit 32 Bit und 64-Bit-Architekturen für eine Anwendung Xamarin.iOS oder Xamarin.Mac.
+title: 32/64-Bit-Plattform-Überlegungen
+description: Dieses Dokument beschreibt verschiedene Aspekte zu bedenken, wenn es sich bei 32-Bit und 64-Bit-Architekturen für eine Xamarin.iOS oder Xamarin.Mac-Anwendung als Ziel.
 ms.prod: xamarin
 ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
-author: bradumbaugh
-ms.author: brumbaug
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: c722efc0bc6e8a4ea29af603f88c0e0644c2ed8c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 31eb0bfae58ecdca40548e46d1d9d95828be67b4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781548"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120098"
 ---
-# <a name="3264-bit-platform-considerations"></a>Bedingungen bezüglich der 32-/64-Bit-Plattform
+# <a name="3264-bit-platform-considerations"></a>32/64-Bit-Plattform-Überlegungen
 
-IOS- und Mac OS in der Vergangenheit 32- und 64-Bit-apps unterstützt haben, aber Apple wurde allmählich auf 32-Bit-Unterstützung als veraltet.
+IOS- und MacOS in der Vergangenheit 32- und 64-Bit-apps unterstützt haben, aber Apple wurde allmählich auf 32-Bit-Unterstützung als veraltet.
 
-Seit iOS 11, 32-Bit-apps nicht mehr gestartet, und [alle Übermittlungen auf den App Store müssen 64-Bit-Unterstützung](https://developer.apple.com/news/?id=06282017b).
+Ab iOS 11, 32-Bit-apps nicht mehr gestartet, und [alle Übermittlungen an den Store-App müssen 64-Bit-Unterstützung](https://developer.apple.com/news/?id=06282017b).
 
-Ab Januar-2018 [neue apps auf dem Mac App Store übermittelt müssen 64-Bit-Unterstützung](https://developer.apple.com/news/?id=06282017a), und vorhandene apps müssen durch Juni 2018 aktualisiert werden.
+Ab Januar 2018 [neue für den Mac App Store eingereichte apps müssen 64-Bit-Unterstützung](https://developer.apple.com/news/?id=06282017a), und vorhandene apps müssen vom Juni 2018 aktualisiert werden.
 
-Die Xamarin klassische API (`XamMac.dll` und `monotouch.dll`) unterstützt nur 32-Bit-Anwendungen. Neue Xamarin.iOS und Xamarin.Mac Anwendungen verwenden jedoch den [einheitliche API](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS` und `Xamarin.Mac`) standardmäßig und können daher Ziel 32- und 64-Bit, nach Bedarf.
+Xamarin Classic-API (`XamMac.dll` und `monotouch.dll`) unterstützt nur 32-Bit-Anwendungen. Neue Xamarin.iOS- und Xamarin.Mac-Anwendungen verwenden jedoch die [Unified API](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS` und `Xamarin.Mac`) in der Standardeinstellung und kann daher Ziel 32- und 64-Bit, nach Bedarf.
 
 ## <a name="ios"></a>iOS
 
@@ -30,82 +30,82 @@ Die Xamarin klassische API (`XamMac.dll` und `monotouch.dll`) unterstützt nur 3
 ### <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Aktivieren die 64-Bit-builds von Xamarin.iOS-apps
 
 > [!WARNING]
-> Vergangene Gründen und zur älteren Xamarin.iOS-Projekte, die einheitliche API verschieben und 64-Bit-Unterstützung ist in diesem Abschnitt enthalten. Alle neuen Xamarin.iOS Projekte werden die einheitliche API und das Ziel 64-Bit wird standardmäßig verwendet.
+> In diesem Abschnitt ist enthalten, noch aus und Verschieben von älteren Xamarin.iOS-Projekte in der Unified API und 64-Bit-Unterstützung. Alle neuen Xamarin.iOS-Projekte werden standardmäßig der Unified API und des Ziels 64-Bit-verwendet werden.
 
-Für Xamarin.iOS mobile Anwendungen, die an die API Unified konvertiert wurden, müssen Entwickler manuell die Buildeinstellungen zum abzielen auf 64-Bit aktualisieren:
+Für mobile Xamarin.iOS-Anwendungen, die an die Unified API konvertiert wurden, müssen Entwickler die Buildeinstellungen manuell zum abzielen auf 64-Bit aktualisieren:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. In der **Lösung Pad**, doppelklicken Sie auf die app-Projekt öffnen die **Projektoptionen** Fenster.
+1. In der **Lösungspad**, doppelklicken Sie auf der app-Projekt, öffnen Sie die **Projektoptionen** Fenster.
 2. Wählen Sie **iOS-Build**.
-3. Für das iPhone-Simulator in die **unterstützt Architekturen** Dropdownliste, wählen Sie entweder **X86\_64** oder **i386 + X86\_64**:
+3. Für das iPhone-Simulator in der **unterstützte Architekturen** Dropdownliste, wählen Sie entweder **X86\_64** oder **i386 + X86\_64**:
 
-   [![Unterstützte Architekturen auf X86 festlegen\_64 oder i386 + X86\_64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
+   [![Festlegen von unterstützten Architekturen auf X86\_64 oder i386 + X86\_64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
 
-4. Wählen Sie für physische Geräte eine der verfügbaren **ARM64** Kombinationen aus:
+4. Wählen Sie für physische Geräte eine der verfügbaren **ARM64** Kombinationen:
 
-   [![Unterstützte Architekturen auf eine der ARM64 Kombinationen festlegen](Images/Image02.png "Einstellung unterstützt Architekturen auf einen der ARM64 Kombinationen")](Images/Image02-large.png#lightbox)
+   [![Festlegen von unterstützten Architekturen auf eine der Kombinationen ARM64](Images/Image02.png "Einstellung unterstützt Architekturen, die eine der Kombinationen ARM64")](Images/Image02-large.png#lightbox)
 
 5. Klicken Sie auf **OK**.
 6. Einen bereinigten Build auszuführen.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. In der **Projektmappen-Explorer**mit der rechten Maustaste auf den app-Projekt, und wählen Sie **Eigenschaften**.
+1. In der **Projektmappen-Explorer**mit der rechten Maustaste auf die app Projekt, und wählen Sie **Eigenschaften**.
 2. Wählen Sie **iOS-Build**.
-3. Legen Sie für das iPhone-Simulator, **unterstützt Architekturen** entweder **X86\_64** oder **i386 + X86\_64**: 
+3. Legen Sie für das iPhone-Simulator, **unterstützte Architekturen** entweder **X86\_64** oder **i386 + X86\_64**: 
 
-   [![Unterstützte Architekturen x86_64 oder i386 + X86 festlegen\_64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
+   [![Festlegen von unterstützten Architekturen auf x86_64 "oder" i386 "+" X86\_64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
 
-4. Wählen Sie für physische Geräte eine der verfügbaren **ARM64** Kombinationen aus:
+4. Wählen Sie für physische Geräte eine der verfügbaren **ARM64** Kombinationen:
     
-   [![Unterstützte Architekturen auf eine der ARM64 Kombinationen festlegen](Images/VS01.png "Einstellung unterstützt Architekturen auf einen der ARM64 Kombinationen")](Images/VS01-large.png#lightbox)
+   [![Festlegen von unterstützten Architekturen auf eine der Kombinationen ARM64](Images/VS01.png "Einstellung unterstützt Architekturen, die eine der Kombinationen ARM64")](Images/VS01-large.png#lightbox)
 
 5. Speichern Sie die Änderungen.
 6. Einen bereinigten Build auszuführen.
 
 -----
 
-ARMv7s wird nur von der A6-Prozessor enthalten in der iPhone 5 (oder höher) unterstützt. ARMv7-Code ist schneller und kleiner als die ARMv6 nur funktioniert mit dem iPhone 3GS- und höher und muss von Apple beim Abzielen auf dem iPad oder eine niedrigste zulässige iOS-Version 5.0. ARMv6 funktioniert auf allen Geräten, aber es wird nicht mehr unterstützt, vom Compiler mit Xcode 4.5 und höher ausgeliefert. 
+ARMv7s wird nur von den A6-Prozessor enthalten in der iPhone-5 (oder höher) unterstützt. ARMv7-Code ist schneller und kleiner als die ARMv6 nur funktioniert mit dem iPhone 3GS- und höher, und ist von Apple erforderlich, wenn das iPad oder eine niedrigste zulässige iOS-Version 5.0 ist. ARMv6 funktioniert auf allen Geräten, aber es wird vom Compiler geliefert, mit Xcode 4.5 und höher nicht mehr unterstützt. 
 
-ARM64 iOS 8 auf iPhone 6 oder anderen Geräten 64-Bit-Unterstützung ist erforderlich und muss von Apple beim Senden von neuen oder zum Beenden von Anwendungen im iTunes App Store aktualisieren.
+ARM64 ist erforderlich, um die iOS 8 auf dem iPhone 6 oder andere Geräte für die 64-Bit-Unterstützung und wird von Apple erforderlich sein, wenn neuer oder zum Aktualisieren Beenden von Anwendungen im iTunes App Store zu übermitteln.
 
-Um umfassende Informationen zu den Funktionen verschiedener iOS-Geräte, konsultieren Sie Apple [Gerätekompatibilität](https://developer.apple.com/library/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCompatibilityMatrix/DeviceCompatibilityMatrix.html) Dokument.
+Einen umfassenden Überblick über die Funktionen der verschiedenen iOS-Geräte werden soll, finden Sie in Apple [Gerätekompatibilität](https://developer.apple.com/library/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCompatibilityMatrix/DeviceCompatibilityMatrix.html) Dokument.
 
-### <a name="64-bit-and-binary-size-increases"></a>64-Bit- und binäre vergrößert
+### <a name="64-bit-and-binary-size-increases"></a>64-Bit- und Binärdateien Größe zunimmt
 
-Apps müssen während der Apple Übergang von 32-Bit zu 64-Bit-iOS auf 32-Bit und 64-Bit-Hardware ausgeführt werden. Aus diesem Grund können die Xamarin einheitliche API Entwickler sowohl als Ziel.
+Bei Apple-Umstellung von 32-Bit zu 64-Bit-iOS werden apps auf 32-Bit- und 64-Bit-Hardware ausgeführt werden müssen. Aus diesem Grund können die Xamarin Unified API Entwickler sowohl als Ziel.
 
-32-Bit und 64-Bit-Architekturen abzielen, wird die Größe einer Anwendung erheblich erhöht. Dadurch können jedoch so neuere Geräte optimierten Code ausgeführt wird, während ältere Geräte weiterhin unterstützt.
+Auf 32-Bit- und 64-Bit-Architekturen erhöht sich erheblich auf die Größe einer Anwendung aus. Dadurch können jedoch so neuere Geräte optimierten Code ausgeführt wird, unterstützt aber weiterhin die ältere Geräte.
 
 > [!IMPORTANT]
-> Wenn Sie die folgende Meldung angezeigt, wenn Sie eine iOS-Anwendung zum iTunes App Store übermitteln _"Warnung ITMS-9000: fehlende 64-Bit-Unterstützung. Ab dem 1. Februar 2015 neue iOS hochgeladen, auf den App Store-apps müssen umfassen auch die 64-Bit-Unterstützung und mit iOS 8-SDK in Xcode 6 oder höher erstellt werden. So aktivieren Sie 64-Bit-im Projekt sollten unter Verwendung des standardmäßigen Xcode Buildeinstellung "Standard-Architekturen" auf einem einzelnen Binärwert mit 32-Bit und 64-Bit-Code zu erstellen. "_ Sie unterstützten Architekturen auf eine der verfügbaren wechseln müssen **ARM64** Kombination (siehe oben), Recompile und erneutes Senden.
+> Wenn Sie die folgende Meldung angezeigt, wenn Sie eine iOS-Anwendung zu iTunes App Store, übermitteln _"Warnung ITMS-9000: 64-Bit-Unterstützung fehlen. Ab dem 1. Februar 2015, neue iOS-apps in der App-Store hochgeladen müssen 64-Bit-Unterstützung einschließen und mit iOS 8-SDK in Xcode 6 oder höher erstellt werden. So aktivieren Sie in Ihrem Projekt die 64-Bit es wird empfohlen, Xcode Buildeinstellung "Standard-Architekturen" standardmäßig eine einzelne Binärdatei mit 32-Bit- und 64-Bit-Code zu erstellen. "_ Sie müssen die unterstützten Architekturen ein Wechsel zu einer der verfügbaren **ARM64** Kombination aus (siehe oben), Neukompilierung und erneute senden.
 
 ## <a name="mac"></a>Mac
 
 > [!IMPORTANT]
-> Ab Januar 2018, müssen alle neuen Mac-apps, die auf dem Mac App Store übermittelt 64-Bit-unterstützen. Vorhandene Mac App Store-apps und ihre Updates müssen 64-Bit ab Juni 2018 unterstützen. Finden Sie unter [Apple Announcment](https://developer.apple.com/news/?id=06282017a) und [eine Anleitung, die beschreibt, wie Ihre apps Xamarin.Mac auf 64-Bit aktualisiert](~/cross-platform/macios/32-and-64/mac-64-bit.md).
+> Ab Januar 2018, müssen alle neuen Mac-apps, die an den Mac App Store übermittelt die 64-Bit-unterstützen. Vorhandenen Mac App Store-apps und ihre Updates müssen 64-Bit-ab Juni 2018 unterstützen. Finden Sie unter [Apple Announcment](https://developer.apple.com/news/?id=06282017a) und [eine Anleitung, die beschreibt, wie Sie Ihre Xamarin.Mac-apps auf 64-Bit aktualisieren](~/cross-platform/macios/32-and-64/mac-64-bit.md).
 
-Die meisten modernen Macintosh-Computer unterstützen die 32-Bit und 64-Bit-Anwendungen.   Mac OS 10.6 (Schneefall Leopard) wurde das letzte Betriebssystem auf 32-Bit-Systemen ausgeführt werden.   Die meisten Macs seit 2010 beiden Systemen unterstützt.
+Die meisten modernen Macintosh-Computer unterstützt sowohl 32-Bit-als auch 64-Bit-Anwendungen.   Mac OS 10.6 (Schnee Leopard) wurde das letzte Betriebssystem auf 32-Bit-Systemen ausgeführt werden.   Die meisten Macintosh-Computer, die seit 2010 Unterstützung beider Systeme veröffentlicht.
 
-Im Gegensatz zu iOS werden viele der neuen Frameworks eingeführt, die in den neuesten Versionen der MacOS nur in 64-Bit-Modus (CloudKit, EventKit, GameController, LocalAuthentication, MediaLibrary, MultipeerConnectivity, NotificationCenter, GLKit, SpriteKit, Social, unterstützt und MapKit, u. a.).
+Im Gegensatz zu iOS werden viele der neuen Frameworks eingeführt, die in früheren Versionen von MacOS nur in 64-Bit-Modus ausgeführt wird (CloudKit, EventKit, GameController, LocalAuthentication, MediaLibrary, MultipeerConnectivity, NotificationCenter, GLKit, SpriteKit, Social, unterstützt und MapKit, u. a.).
 
-Die einheitliche API ermöglichen Entwicklern das auswählen, welche Art von Anwendungen, die sie erzeugen möchten: 32-Bit oder 64-Bit.
+Die Unified API können Entwickler wählen, welche Art von Anwendungen, die sie erstellen möchten: 32-Bit oder 64-Bit.
 
-**32-Bit-Anwendungen** wird auf 32-Bit und 64-Bit-Macintosh-Computern ausführen, haben Sie einen Adressraum auf 32 Bits beschränkt und erfordern, dass alle Bibliotheken 32 Bits sind.
+**32-Bit-Anwendungen** wird auf 32-Bit- und 64-Bit-Macintosh-Computern ausführen, müssen Sie einen Adressraum, der auf 32 Bits beschränkt und erfordern, dass alle Bibliotheken 32 Bits sind.
 
-Normalerweise verwenden Sie diesen Modus haben 32-Bit-Abhängigkeiten, die nicht im 64-Bit-Modus ausgeführt werden, wenn Sie einen kleineren Download haben möchten, oder wenn es gibt keine Leistungsvorteile bei der Umstellung auf 64-Bit.
+Sie können diesen Modus werden in der Regel verwenden, wenn man 32-Bit-Abhängigkeiten, die nicht im 64-Bit-Modus ausgeführt werden, wenn Sie möchten einen kleineren Download oder es gibt keine Leistungsvorteile bei der Umstellung auf 64-Bit.
 
-Dieser Modus ist eingeschränkt, Sie nicht mehr auf die viele-Frameworks in MacOS auf dem Mavericks und MacOS Yosemite verwendet werden.
+In diesem Modus beschränkt, da Sie nicht viele Frameworks in MacOS Mavericks und MacOS Yosemite verwenden können.
 
-**64-Bit-Anwendungen** nur auf 64-Bit-Mac-Geräten ausgeführt wird.
+**64-Bit-Anwendungen** wird nur auf 64-Bit-Mac-Geräten ausgeführt werden.
 
-Für Mac ist dies der bevorzugte Modus des Vorgangs, wie die meisten Macs verwendet heute, 64-Bit-Modus unterstützen, und Sie Zugriff auf den vollständigen Satz von Apple bereitgestellten Frameworks haben.
+Für Mac ist dies der bevorzugte Modus zum des Vorgangs, wie die meisten Macs finden Sie unter verwenden heute, 64-Bit-Modus unterstützen, und Zugriff auf den vollständigen Satz von Frameworks, die von Apple bereitgestellten haben.
 
 ### <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>Aktivieren die 64-Bit-builds von Xamarin.Mac-apps
 
-Informationen zum Erstellen einer 64-Bit-app mit den Xamarin.Mac finden Sie unter der [Anwendungen auf 64-Bit aktualisieren Xamarin.Mac Unified](~/cross-platform/macios/32-and-64/mac-64-bit.md) Handbuch.
+Informationen zu eine 64-Bit-app mit Xamarin.Mac zu erstellen, finden Sie unter den [64-Bit-Anwendungen Aktualisieren von Xamarin.Mac Unified](~/cross-platform/macios/32-and-64/mac-64-bit.md) Guide.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Klassische Vs einheitliche API-Unterschiede](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [Klassischen Vs Unified API-Unterschiede](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

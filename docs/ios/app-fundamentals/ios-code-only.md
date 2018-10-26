@@ -4,21 +4,21 @@ description: Dieses Dokument beschreibt, wie Sie Code verwenden, um eine Benutze
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 688457ab25398e8c5b9848a7e58f6163db4c0a05
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 777ba2035511dfd632d64b11c2265e239a646b3a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242393"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109535"
 ---
-# <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Erstellen von iOS-Benutzeroberflächen im Code in Xamarin.iOS
+# <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Erstellen von Benutzeroberflächen im Code in Xamarin.iOS für iOS
 
 Die Benutzeroberfläche einer iOS-app ist, wie eine Storefront – die Anwendung erhält in der Regel ein Fenster, aber es kann Auffüllen mit wie vielen Objekten wie benötigt, und die Objekte und Anordnungen können abhängig von der app geändert werden anzeigen möchte. Die Objekte in diesem Szenario – die Dinge, die der Benutzer sieht – werden als Ansichten bezeichnet. Zum Erstellen eines einzigen Bildschirms in einer Anwendung Ansichten sind aufeinander gestapelt in einer Hierarchie von Inhaltsansichten, und die Hierarchie wird von einem einzelnen Ansichtscontroller verwaltet. Anwendungen mit mehreren Bildschirmen weisen mehrere Hierarchien von Inhaltsansichten auf. Jede davon verfügt über ihren eigenen Ansichtscontroller, und die Anwendung platziert Ansichten in das Fenster, um je nach dem vom Benutzer verwendeten Bildschirm eine andere Hierarchie von Inhaltsansichten zu erstellen.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem Fenster, den Ansichten, Unteransichten und dem Ansichtscontroller, die die Benutzeroberfläche auf den Gerätebildschirm bringen: 
 
@@ -26,7 +26,7 @@ Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem Fenster, den 
 
 Diese Hierarchien von Inhaltsansichten können erstellt werden, mithilfe der [Xamarin-Designer für iOS](~/ios/user-interface/designer/index.md) in Visual Studio, jedoch ist es gut geeignet, um ein grundlegendes Verständnis der vollständig in Code zu arbeiten. Dieser Artikel erläutert einige wichtige Punkte, einzurichten und mit der reinen Entwicklung der Benutzeroberfläche ab.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem Fenster, den Ansichten, Unteransichten und dem Ansichtscontroller, die die Benutzeroberfläche auf den Gerätebildschirm bringen: 
 
@@ -36,11 +36,11 @@ Diese Hierarchien von Inhaltsansichten können erstellt werden, mithilfe der [Xa
 
 -----
 
-## <a name="creating-a-code-only-project"></a>Erstellen eines Projekts nur mit Code
+## <a name="creating-a-code-only-project"></a>Erstellen eines Projekts nur mit code
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="ios-blank-project-template"></a>iOS leere Projektvorlage
+## <a name="ios-blank-project-template"></a>leere iOS-Projektvorlage
 
 Erstellen Sie zunächst ein iOS-Projekt in Visual Studio mithilfe der **Datei > Neues Projekt > Visual c# > iPhone & iPad > iOS-App (Xamarin)** Projekt unten:
 
@@ -54,14 +54,13 @@ Die leere Projektvorlage fügt 4 Dateien dem Projekt hinzu:
 
 [![Projektdateien](ios-code-only-images/empty-project.w157-sml.png "Projektdateien")](ios-code-only-images/empty-project.w157.png#lightbox)
 
-
 1. **Datei "appdelegate.cs"** -enthält eine `UIApplicationDelegate` -Unterklasse, die `AppDelegate` , dient zur Verarbeitung von Anwendungsereignissen iOS-. Das Anwendungsfenster wird erstellt, der `AppDelegate`des `FinishedLaunching` Methode.
 1. **Main.cs** -enthält den Einstiegspunkt für die Anwendung, die die Klasse gibt an, für die `AppDelegate` .
 1. **Datei "Info.plist"** -eigenschaftenlistendatei an, die Anwendungskonfigurationsinformationen enthält.
 1. **"Entitlements.plist"** – eigenschaftenlistendatei an, das Informationen zu den Funktionen und die Berechtigungen der Anwendung enthält.
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 ## <a name="ios-templates"></a>iOS-Vorlagen
 
@@ -72,20 +71,20 @@ Die folgenden Schritte führen Sie durch das Storyboard aus einer Anwendung zu e
 
 
 1. Verwenden Sie die Einzelansicht-App-Vorlage, um ein neues iOS-Projekt zu erstellen:
-    
+
     [![](ios-code-only-images/single-view-app.png "Verwenden Sie die Einzelansicht-App-Vorlage")](ios-code-only-images/single-view-app.png#lightbox)
 
 1. Löschen der `Main.Storyboard` und `ViewController.cs` Dateien. Führen Sie **nicht** Löschen der `LaunchScreen.Storyboard`. Die View-Controller sollten gelöscht werden, da es sich um den Code für den ansichtscontroller ist, die im Storyboard erstellt wird:
 1. Stellen Sie sicher, dass **löschen** über das Popup-Dialogfeld:
-    
+
     [![](ios-code-only-images/delete.png "Wählen Sie im Popupdialog löschen")](ios-code-only-images/delete.png#lightbox)
 
 1. Löschen Sie in der Datei "Info.plist", die Informationen innerhalb der **Bereitstellungsinformationen > Hauptschnittstelle** Option:
-    
+
     [![](ios-code-only-images/main-interface.png "Löschen Sie die Informationen in die Main-Interface-option")](ios-code-only-images/main-interface.png#lightbox)
 
 1. Fügen Sie abschließend den folgenden Code hinzu. Ihre `FinishedLaunching` -Methode in der die AppDelegate-Klasse:
-        
+
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             // create a new window instance based on the screen size
@@ -102,9 +101,7 @@ Der Code, der hinzugefügt wurde die `FinishedLaunching` -Methode im Schritt 5 o
 
 -----
 
-
-
-iOS-Anwendungen werden erstellt, mit der [MVC-Muster](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#Model_View_Controller). Der erste Bildschirm, in dem eine Anwendung angezeigt wird anhand des Fensters stammansichtscontroller erstellt. Finden Sie unter den [Hallo, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md) führen Sie für Weitere Informationen zu den MVC-selbst Muster.
+iOS-Anwendungen werden erstellt, mit der [MVC-Muster](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#model-view-controller-mvc). Der erste Bildschirm, in dem eine Anwendung angezeigt wird anhand des Fensters stammansichtscontroller erstellt. Finden Sie unter den [Hallo, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md) führen Sie für Weitere Informationen zu den MVC-selbst Muster.
 
 Die Implementierung für die `AppDelegate` hinzugefügt, indem die Vorlage erstellt das Anwendungsfenster, von dem es ist nur ein für alle iOS-Anwendung, und macht es sichtbar ist, durch den folgenden Code:
 
@@ -207,17 +204,17 @@ Hierdurch wird den Controller in der navigationscontroller geschachtelt werden, 
 
  [![](ios-code-only-images/image2.png "Der Controller in der navigationscontroller geschachtelt")](ios-code-only-images/image2.png#lightbox)
 
-## <a name="creating-a-view-controller"></a>Erstellen eines Ansichtscontrollers
+## <a name="creating-a-view-vontroller"></a>Erstellen eine Ansicht vontroller
 
 Nun, wir, dass wie zum Hinzufügen eines Controllers als gesehen haben die `RootViewController` des Fensters, untersucht, wie Sie einen benutzerdefinierten ansichtencontroller in Code zu erstellen.
 
 Fügen Sie eine neue Klasse mit dem Namen `CustomViewController` wie unten dargestellt:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](ios-code-only-images/customviewcontroller.w157-sml.png "Fügen Sie eine neue Klasse namens CustomViewController hinzu.")](ios-code-only-images/customviewcontroller.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 [![](ios-code-only-images/new-file.png "Fügen Sie eine neue Klasse namens CustomViewController hinzu.")](ios-code-only-images/new-file.png#lightbox)
 
@@ -236,8 +233,6 @@ namespace CodeOnlyDemo
     }
 }
 ```
-
-<a name="Initializing_the_View"/>
 
 ## <a name="initializing-the-view"></a>Initialisieren der Ansicht
 
@@ -413,7 +408,7 @@ submitButton.Layer.CornerRadius = 5f;
 Mit diesen Änderungen wird die Ansicht wie folgt aussehen:
 
 [![](ios-code-only-images/image6.png "Führen Sie ein Beispiel der Ansicht")](ios-code-only-images/image6.png#lightbox)
- 
+
 ## <a name="adding-multiple-views-to-the-view-hierarchy"></a>Hinzufügen mehrerer Ansichten zu der Hierarchie von Inhaltsansichten
 
 iOS bietet die Möglichkeit, mehrere Ansichten mit der Hierarchie von Inhaltsansichten hinzufügen `AddSubviews`.
@@ -424,7 +419,7 @@ View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton });
 
 ## <a name="adding-button-functionality"></a>Hinzufügen von Schaltflächenfunktionen
 
-Wenn eine Schaltfläche geklickt wird, werden Ihre Benutzer etwas passiert erwarten. Klicken Sie z. B. eine Warnung wird angezeigt, oder Navigation zu einem anderen Bildschirm ausgeführt wird. 
+Wenn eine Schaltfläche geklickt wird, werden Ihre Benutzer etwas passiert erwarten. Klicken Sie z. B. eine Warnung wird angezeigt, oder Navigation zu einem anderen Bildschirm ausgeführt wird.
 
 Fügen Sie Code, um einen zweiten ansichtscontroller auf den Navigationsstapel übertragen.
 
@@ -470,7 +465,7 @@ Dies jedoch nicht funktionieren, wenn die Ansicht für in Bearbeitung ist ein `U
 
 Wenn der Benutzer das Gerät zum Querformat wechselt, werden die Steuerelemente nicht entsprechend, ändern, wie im folgende Screenshot veranschaulicht:
 
- [![](ios-code-only-images/image7.png "Wenn der Benutzer das Gerät zum Querformat wechselt, werden die Steuerelemente nicht entsprechend ändern")](ios-code-only-images/image7.png#lightbox)
+[![](ios-code-only-images/image7.png "Wenn der Benutzer das Gerät zum Querformat wechselt, werden die Steuerelemente nicht entsprechend ändern")](ios-code-only-images/image7.png#lightbox)
 
 Eine Möglichkeit zur Behebung dieses Problems wird durch Festlegen der `AutoresizingMask` Eigenschaft zu den einzelnen Ansichten. In diesem Fall sollten die Steuerelemente horizontal gestreckt wird, damit wir jede festlegen würde `AutoresizingMask`. Im folgende Beispiel wird für `usernameField`, jedoch identisch, die auf jede minianwendung in der Hierarchie von Inhaltsansichten angewendet werden müssen.
 
@@ -480,7 +475,7 @@ usernameField.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 
 Nun, wenn wir auf dem Gerät oder Simulator drehen, wird angepasst alles, was den zusätzlichen Speicherplatz, wie unten dargestellt:
 
- [![](ios-code-only-images/image8.png "Alle Steuerelemente gestreckt wird, um den zusätzlichen Platz ausfüllen")](ios-code-only-images/image8.png#lightbox)
+[![](ios-code-only-images/image8.png "Alle Steuerelemente gestreckt wird, um den zusätzlichen Platz ausfüllen")](ios-code-only-images/image8.png#lightbox)
 
 ## <a name="creating-custom-views"></a>Erstellen benutzerdefinierter Ansichten
 
@@ -585,19 +580,19 @@ submitButton.TouchUpInside += delegate
 
 Wenn wir die Anwendung auszuführen, und tippen Sie auf die Schaltfläche "Senden", wird nun die neue Ansicht mit einem Kreis angezeigt:
 
- [![](ios-code-only-images/circles.png "Die neue Ansicht mit einem Kreis wird angezeigt.")](ios-code-only-images/circles.png#lightbox)
+[![](ios-code-only-images/circles.png "Die neue Ansicht mit einem Kreis wird angezeigt.")](ios-code-only-images/circles.png#lightbox)
 
 ## <a name="creating-a-launch-screen"></a>Erstellen eines Startbildschirms
 
-Ein [Startbildschirm](~/ios/app-fundamentals/images-icons/launch-screens.md) wird angezeigt, wenn Ihre app gestartet wird, als eine Möglichkeit, Ihren Benutzern anzuzeigen, dass es reagiert. Da einen Startbildschirm angezeigt wird, wenn Ihre app geladen wird, kann es im Code erstellt werden, wie die Anwendung weiterhin in den Arbeitsspeicher geladen wird. 
+Ein [Startbildschirm](~/ios/app-fundamentals/images-icons/launch-screens.md) wird angezeigt, wenn Ihre app gestartet wird, als eine Möglichkeit, Ihren Benutzern anzuzeigen, dass es reagiert. Da einen Startbildschirm angezeigt wird, wenn Ihre app geladen wird, kann es im Code erstellt werden, wie die Anwendung weiterhin in den Arbeitsspeicher geladen wird.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Wenn Ihre Erstellen einer iOS-Projekt in Visual Studio einen Startbildschirm dient in Form einer XIB-Datei, die sich in befinden die **Ressourcen** Ordner in Ihrem Projekt. 
+Wenn Sie ein iOS-Projekt in Visual Studio erstellen, einen Startbildschirm dient in Form einer XIB-Datei, die sich in befinden die **Ressourcen** Ordner in Ihrem Projekt.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Wenn Ihre erstellen Sie ein iOS-Projekt in Visual Studio für Mac, einen Startbildschirm für die Sie in der Form einer Storyboard-Datei bereitgestellt wird. 
+Wenn Sie ein iOS-Projekt in Visual Studio für Mac erstellen, wird eine Startbildschirm für Sie in der Form einer Storyboard-Datei bereitgestellt.
 
 -----
 
@@ -613,7 +608,7 @@ Weitere Informationen zum Erstellen eines Bildschirms zu starten finden Sie in d
 > [!IMPORTANT]
 > Ab iOS 9 empfiehlt Apple Storyboards als primäre Methode zum Erstellen eines Bildschirms starten verwendet werden soll.
 
-### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>Erstellen ein Image starten für vor iOS 8-Anwendungen
+### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>Erstellen ein startbilds, das für vor iOS 8-Anwendungen
 
 Zusätzlich zu einer XIB oder Storyboard-Startbildschirm kann ein statisches Bild verwendet werden, wenn Ihre Anwendung mit Versionen vor iOS 8 ausgerichtet ist. 
 
@@ -622,22 +617,17 @@ Diese statische Bilder kann in der Datei "Info.plist" oder als ein Asset-Katalog
 > [!IMPORTANT]
 > Wenn Ihre app keine Startbildschirm aufweist, werden Sie feststellen, dass sie nicht vollständig den Bildschirm passt. Wenn dies der Fall ist, Sie sollten sicherstellen sollen, oder zumindest eine 640 x 1136-Image mit dem Namen `Default-568@2x.png` zu Ihrer Datei "Info.plist". 
 
-
-
 ## <a name="summary"></a>Zusammenfassung
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 In diesem Artikel erläutert, wie Sie iOS-Anwendungen programmgesteuert in Visual Studio entwickeln. Wir haben uns angeschaut Gewusst wie: Erstellen eines Projekts aus eine leere Projektvorlage, erörtert, wie Sie erstellen und das Fenster einen Root View Controller hinzufügen. Wir hinaus wurde gezeigt, wie Sie Steuerelemente aus UIKit verwenden, um eine Hierarchie von Inhaltsansichten innerhalb eines Controllers zum Entwickeln von eines Bildschirms für die Anwendung zu erstellen. Als Nächstes wir untersucht, wie die Ansichten zu gestalten entsprechend in verschiedenen Ausrichtungen und erläutert, wie Sie eine benutzerdefinierte Ansicht erstellen, indem Unterklassen `UIView`, und wie die Ansicht in einem Controller zu laden. Schließlich haben wir, wie Sie einen Startbildschirm zu einer Anwendung hinzufügen.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 In diesem Artikel wurde beschrieben, wie zum Entwickeln von iOS-Anwendungen programmgesteuert in Visual Studio für Mac. Erläutert, wie Sie ein Projekt aus einer einzigen Ansicht Vorlage erstellen erörtert, wie Sie erstellen und das Fenster einen Root View Controller hinzufügen. Wir hinaus wurde gezeigt, wie Sie Steuerelemente aus UIKit verwenden, um eine Hierarchie von Inhaltsansichten innerhalb eines Controllers zum Entwickeln von eines Bildschirms für die Anwendung zu erstellen. Als Nächstes wir untersucht, wie die Ansichten zu gestalten entsprechend in verschiedenen Ausrichtungen und erläutert, wie Sie eine benutzerdefinierte Ansicht erstellen, indem Unterklassen `UIView`, und wie die Ansicht in einem Controller zu laden. Schließlich haben wir, wie Sie einen Startbildschirm zu einer Anwendung hinzufügen.
 
 -----
-
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -1,7 +1,7 @@
 
-Die folgende Befehlszeile, geben Sie einen Releasebuild der Lösung **SOLUTION_FILE.sln** für das iPhone. Der Speicherort der IPA kann festgelegt werden, indem die die `IpaPackageDir` Eigenschaft in der Befehlszeile:
+Die folgende Befehlszeile zum Angeben eines Releasebuilds der Lösung **SOLUTION_FILE.sln** für das iPhone. Der Speicherort der IPA kann festgelegt werden, durch Angabe der `IpaPackageDir` Eigenschaft in der Befehlszeile:
 
- - Auf dem Mac verwenden **Xbuild**:
+ - Auf dem Mac mit **Xbuild**:
 
         xbuild /p:Configuration="Release" \ 
            /p:Platform="iPhone" \ 
@@ -10,7 +10,7 @@ Die folgende Befehlszeile, geben Sie einen Releasebuild der Lösung **SOLUTION_F
 
 Die **Xbuild** Befehl befindet sich in der Regel im Verzeichnis **/Library/Frameworks/Mono.framework/Commands**.
 
- - Bei Verwendung von Windows **Msbuild**:
+ - Auf Windows, die mit **Msbuild**:
 
         msbuild /p:Configuration="Release" 
             /p:Platform="iPhone" 
@@ -19,7 +19,7 @@ Die **Xbuild** Befehl befindet sich in der Regel im Verzeichnis **/Library/Frame
             /t:Build MyProject.sln
 
 
-**MSBuild** wird nicht automatisch erweitert `$( )` von der Befehlszeile übergebenen Ausdrücken. Aus diesem Grund ist es wird empfohlen, einen vollständigen Pfad verwenden, der zum Einstellen der `IpaPackageDir` in der Befehlszeile.
+**MSBuild** wird nicht automatisch erweitert `$( )` Ausdrücke mithilfe der Befehlszeile übergeben. Aus diesem Grund ist es wird empfohlen, einen vollständigen Pfad verwenden, beim Festlegen der `IpaPackageDir` an der Befehlszeile eingeben.
 
 
-Finden Sie unter der [Anmerkungen zu dieser Version für iOS 9.8](https://developer.xamarin.com/releases/ios/xamarin.ios_9/xamarin.ios_9.8/#New_MSBuild_property_IpaPackageDir_to_customize_.ipa_output_location) Weitere Details zu den `IpaPackageDir` Eigenschaft.
+Finden Sie unter den [Anmerkungen zu dieser Version für iOS 9.8](https://developer.xamarin.com/releases/ios/xamarin.ios_9/xamarin.ios_9.8/#New_MSBuild_property_IpaPackageDir_to_customize_.ipa_output_location) um mehr über die `IpaPackageDir` Eigenschaft.

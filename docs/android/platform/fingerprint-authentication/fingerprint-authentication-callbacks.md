@@ -1,35 +1,35 @@
 ---
-title: Reagieren auf Authentifizierungsrückrufen
+title: Reagieren auf Authentifizierungsrückrufe
 ms.prod: xamarin
 ms.assetid: 6533AFC9-1A1C-4897-A154-4D4ECFE27761
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: b8a3ed64e66cd97faeff78b4d0b008a1a0b14477
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 17a1c94ad3b9bde67537ea7113352f0fc10d2a08
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765768"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110120"
 ---
-# <a name="responding-to-authentication-callbacks"></a>Reagieren auf Authentifizierungsrückrufen
+# <a name="responding-to-authentication-callbacks"></a>Reagieren auf Authentifizierungsrückrufe
 
-Der Fingerabdruck Scanner, die in einem eigenen Thread im Hintergrund ausgeführt, und abschließend wird er meldet die Ergebnisse der Überprüfung durch Aufrufen einer Methode des `FingerprintManager.AuthenticationCallback` im UI-Thread. Eine Android-Anwendung muss einen eigenen Handler bereitstellen, der erweitert diese abstrakte Klasse, implementieren die folgenden Methoden:
+Des fingerabdruckscanners in einem eigenen Thread im Hintergrund ausgeführt, und nach Abschluss Systemtabellennamen und meldet die Ergebnisse der Überprüfung durch Aufrufen einer Methode des `FingerprintManager.AuthenticationCallback` im UI-Thread. Eine Android-Anwendung muss seinen eigenen Handler angeben, der erweitert diese abstrakte Klasse, die alle der folgenden Methoden implementieren:
 
-* **`OnAuthenticationError(int errorCode, ICharSequence errString)`** &ndash; Wird aufgerufen, wenn ein nicht behebbarer Fehler vorliegt. Es ist keine weitere Aktion, die eine Anwendung oder ein Benutzer ausführen kann, um das Problem mit der Ausnahme möglicherweise erneut zu beheben.
+* **`OnAuthenticationError(int errorCode, ICharSequence errString)`** &ndash; Wird aufgerufen, wenn ein nicht behebbarer Fehler auftritt. Es ist nichts anderes, wie eine Anwendung oder Benutzer kann Beheben des Problems mit der Ausnahme möglicherweise erneut versuchen.
 * **`OnAuthenticationFailed()`** &ndash; Diese Methode wird aufgerufen, wenn ein Fingerabdruck wurde erkannt, aber nicht vom Gerät erkannt.
-* **`OnAuthenticationHelp(int helpMsgId, ICharSequence helpString)`** &ndash; Wird aufgerufen, wenn ein behebbarer Fehler, z. B. den Finger wird zum schnellen über der Scanner Magnetstreifenkarte vorhanden ist.
+* **`OnAuthenticationHelp(int helpMsgId, ICharSequence helpString)`** &ndash; Wird aufgerufen, wenn es ein behebbarer Fehler, z. B. den Finger Touchscreen-zu schnell über die Überprüfung.
 * **`OnAuthenticationSucceeded(FingerprintManagerCompati.AuthenticationResult result)`** &ndash; Wird aufgerufen, wenn ein Fingerabdruck erkannt wurde.
 
 Wenn eine `CryptoObject` verwendet wurde, beim Aufrufen von `Authenticate`, es wird empfohlen, rufen Sie `Cipher.DoFinal` in `OnAuthenticationSuccessful`.
-`DoFinal` löst eine Ausnahme aus, wenn das Verschlüsselungsverfahren zu manipulieren oder nicht ordnungsgemäß initialisiert wurde, gibt an, dass das Ergebnis des Scanners Fingerabdruck außerhalb der Anwendung manipuliert wurden möglicherweise.
+`DoFinal` wird eine Ausnahme ausgelöst, wenn das Verschlüsselungsverfahren manipuliert oder nicht ordnungsgemäß initialisiert wurde, gibt an, dass das Ergebnis des fingerabdruckscanners außerhalb der Anwendung manipuliert sein kann.
 
 
 > [!NOTE]
-> Es wird empfohlen, die Rückruf-Klasse relativ gemäßigte Gewichtung und frei von anwendungsspezifische Logik. Die Rückrufe sollten als eine "Datenverkehr kopieren" zwischen der Android-Anwendung und die Ergebnisse vom Fingerabdruck Scanner fungieren.
+> Es wird empfohlen, die für die Rückruf-Klasse relativ geringe Gewichtung und frei von anwendungsspezifische Logik. Die Rückrufe sollten als eine "Datenverkehrspolizist" zwischen der Android-Anwendung und die Ergebnisse von des fingerabdruckscanners fungieren.
 
-## <a name="a-sample-authentication-callback-handler"></a>Ein Beispiel Rückruf Authentifizierungshandler
+## <a name="a-sample-authentication-callback-handler"></a>Einen Rückrufhandler für Beispiel-Authentifizierung
 
 Die folgende Klasse ist ein Beispiel für eine minimale `FingerprintManager.AuthenticationCallback` Implementierung: 
 
@@ -91,70 +91,70 @@ class MyAuthCallbackSample : FingerprintManagerCompat.AuthenticationCallback
 }
 ```
 
-`OnAuthenticationSucceeded` überprüft, ob eine `Cipher` bereitgestellt wurde, um `FingerprintManager` Wenn `Authentication` aufgerufen wurde. Wenn dies der Fall ist, die `DoFinal` das Verschlüsselungsverfahren Methode aufgerufen wird. Dies schließt die `Cipher`, auf den ursprünglichen Zustand wiederherstellen. Wenn es dann ein Problem mit der Verschlüsselung wurde `DoFinal` löst eine Ausnahme aus, und der Authentifizierungsversuch angesehen wird als fehlgeschlagen betrachtet.
+`OnAuthenticationSucceeded` überprüft, ob eine `Cipher` demonstriert die `FingerprintManager` beim `Authentication` aufgerufen wurde. Wenn dies der Fall ist, die `DoFinal` Methode für das Verschlüsselungsverfahren aufgerufen wird. Dies schließt die `Cipher`, auf den ursprünglichen Zustand wiederherstellen. Wenn gab es ein Problem mit der Verschlüsselung, klicken Sie dann `DoFinal` löst eine Ausnahme aus, und der Authentifizierungsversuch fehlgeschlagen angesehen werden.
 
-Die `OnAuthenticationError` und `OnAuthenticationHelp` Rückrufe jedes empfangen eine ganze Zahl, der angibt, was das Problem auftrat. Im folgende Abschnitt wird erläutert, alle möglichen Hilfe oder Fehlercodes. Die zwei Rückrufe für ähnliche Zwecke verwendet &ndash; an die Anwendung darüber zu informieren, Fingerabdruckauthentifizierung fehlgeschlagen ist. Der Schweregrad werden unterschieden. `OnAuthenticationHelp` ist ein Benutzer behebbarer Fehler, z. B. den Fingerabdruck zu schnell Streifen. `OnAuthenticationError` mehr ein schwerer Fehler, z. B. ein beschädigter Fingerabdruck Scanner ist.
+Die `OnAuthenticationError` und `OnAuthenticationHelp` Rückrufe, die jede empfangen, eine ganze Zahl, der angibt, was das Problem war. Im folgende Abschnitt wird erläutert, alle möglichen Hilfe oder Fehlercodes. Die zwei Rückrufe dienen sehr ähnlichen Zwecken &ndash; auf die Anwendung zu informieren, dass die Fingerabdruckauthentifizierung ist fehlgeschlagen. Wie sie sich unterscheiden, ist der Schweregrad. `OnAuthenticationHelp` ist ein Benutzer behebbarer Fehler, wie z. B. das Wischen von des Fingerabdrucks nicht so schnell. `OnAuthenticationError` mehr ein schwerer Fehler, z. B. einen beschädigten fingerabdruckscanners ist.
 
-Beachten Sie, dass `OnAuthenticationError` wird aufgerufen, wenn die Überprüfung Fingerabdruck, über abgebrochen wird die `CancellationSignal.Cancel()` Nachricht. Die `errMsgId` Parameter hat den Wert 5 (`FingerprintState.ErrorCanceled`). Je nach den Anforderungen, die eine Implementierung der `AuthenticationCallbacks` dieser Situation möglicherweise anders als die anderen Fehler behandelt. 
+Beachten Sie, dass `OnAuthenticationError` wird aufgerufen, wenn die Überprüfung per Fingerabdruck, über abgebrochen wird die `CancellationSignal.Cancel()` Nachricht. Die `errMsgId` Parameter hat den Wert 5 (`FingerprintState.ErrorCanceled`). Je nach den Anforderungen, die eine Implementierung der `AuthenticationCallbacks` dies möglicherweise anders als die anderen Fehler behandelt. 
 
-`OnAuthenticationFailed` wird aufgerufen, wenn der Fingerabdruck wurde erfolgreich überprüft, aber alle Fingerabdruck beim Gerät angemeldet stimmte nicht überein. 
+`OnAuthenticationFailed` wird aufgerufen, wenn der Fingerabdruck wurde erfolgreich überprüft entsprach jedoch keine Fingerabdruck, der mit dem Gerät registriert. 
 
-## <a name="help-codes-and-error-message-ids"></a>Hilfe-Codes und Fehler Nachrichten-Ids 
+## <a name="help-codes-and-error-message-ids"></a>Help-Codes und Fehler Meldungs-Ids 
 
-Eine Liste und Beschreibung des Fehlercodes und Hilfe Codes finden Sie in der [Android SDK-Dokumentation](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html#FINGERPRINT_ACQUIRED_GOOD) für die FingerprintManager-Klasse. Xamarin.Android stellt diese Werte mit den `Android.Hardware.Fingerprints.FingerprintState` Enum:
-
-
--   **`AcquiredGood`** &ndash; (Wert 0) Das Image erworben wurde gut.
+Eine Liste und Beschreibung der Fehlercodes und der Help-Codes finden Sie unter den [Android SDK-Dokumentation](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html#FINGERPRINT_ACQUIRED_GOOD) für die FingerprintManager-Klasse. Xamarin.Android stellt diese Werte mit den `Android.Hardware.Fingerprints.FingerprintState` Enumeration:
 
 
--   **`AcquiredImagerDirty`** &ndash; (Wert 3) Der Fingerabdruck Image war aufgrund von potenziellen oder erkannte Schmutz auf der Sensor zu viel Rauschen verursacht. Beispielsweise ist es sinnvoll, diese nach mehreren zurückgeben `AcquiredInsufficient` oder die tatsächliche Erkennung von Schmutz auf der Sensor (fixierten Pixel, Adressbereiche usw.). Der Benutzer wird erwartet, Maßnahmen zum Bereinigen des Sensors, wenn dies zurückgegeben wird.
+-   **`AcquiredGood`** &ndash; (Wert 0) Das Bild, das abgerufen wurde gut.
 
 
--   **`AcquiredInsufficient`** &ndash; (Wert 2) Das Bild Fingerabdruck zu viel Rauschen verursacht aufgrund einer erkannten Bedingung (d. h. trockenen Design) oder ein möglicherweise dirty Sensor verarbeitet wurde (siehe `AcquiredImagerDirty`.
+-   **`AcquiredImagerDirty`** &ndash; (Wert 3) Der Fingerabdruck-Image wurde aufgrund eines vermuteten oder erkannt wurde, auf dem Sensor zu viel Rauschen verursacht. Beispielsweise ist es sinnvoll, dies nach mehreren zurück `AcquiredInsufficient` oder die tatsächliche Erkennung von wurde auf dem Sensor (fixierten Pixel, Adressbereiche usw.). Auszuführende Aktion, die den Sensor zu bereinigen, wenn dieser zurückgegeben wird, wird der Benutzer erwartet.
 
 
-
--   **`AcquiredPartial`** &ndash; (Wert 1) Nur eine teilweise Fingerabdruck Image wurde erkannt. Während der Anmeldung der Benutzer auf herrscht zum Lösen dieses Problems, z. B. der Fall sein sollte informiert werden &ldquo;Sensor, drücken Sie fest.&rdquo;
+-   **`AcquiredInsufficient`** &ndash; (Wert 2) Das Image per Fingerabdruck zu viel Rauschen verursacht, verarbeiten Sie aufgrund einer Bedingung aufgetreten (d. h. dry Skin) oder einem Sensor möglicherweise geändert wurde (siehe `AcquiredImagerDirty`.
 
 
 
--   **`AcquiredTooFast`** &ndash; (der Wert 5) Der Fingerabdruck Image wurde wegen der schnellen Bewegung unvollständig. Während für lineare Array Sensoren größtenteils geeignet, könnte dies auch vorkommen, wenn der Finger während der Übernahme verschoben wurde. Der Benutzer sollte aufgefordert, verschieben Sie den Finger langsamer (linear), oder lassen Sie den Finger auf dem Sensor länger.
+-   **`AcquiredPartial`** &ndash; (Wert 1) Nur eine partielle Fingerabdruck-Image wurde erkannt. Während der Registrierung sollte der Benutzer informiert werden in die auftreten, die zum Beheben dieses Problems, z. B. &ldquo;drücken Sie fest, auf dem Sensor.&rdquo;
 
 
 
-
--   **`AcquiredToSlow`** &ndash; (Wert 4) Der Fingerabdruck Image war aufgrund fehlender während des Verschiebens nicht lesbar. Dies ist die am besten geeigneten für lineare Array Sensoren, die eine Bewegung Wischen erfordern.
-
-
-
--   **`ErrorCanceled`** &ndash; (der Wert 5) Der Vorgang wurde abgebrochen, da fingerabdrucksensors nicht verfügbar ist. Dies kann z. B. vorkommen, wenn der Benutzer gewechselt ist, das Gerät gesperrt ist oder einen anderen ausstehenden Vorgang wird verhindert, dass diese aktiviert oder deaktiviert.
-
-
-
--   **`ErrorHwUnavailable`** &ndash; (Wert 1) Die Hardware ist nicht verfügbar. Versuchen Sie es später noch einmal.
+-   **`AcquiredTooFast`** &ndash; (der Wert 5) Der Fingerabdruck Image war unvollständig, da kurze Bewegungsdaten. Zwar hauptsächlich für lineare Array Sensoren geeignet, kann dies auch geschehen, wenn der Finger während der Übernahme verschoben wurde. Sollte der Benutzer gefragt werden, verschieben Sie den Finger langsamer (lineare), oder übernehmen Sie den Finger auf dem Sensor mehr.
 
 
 
 
--   **`ErrorLockout`** &ndash; (Wert 7) Der Vorgang wurde abgebrochen, da die API aufgrund zu viele Anmeldeversuche gesperrt ist.
+-   **`AcquiredToSlow`** &ndash; (Wert 4) Der Fingerabdruck-Image wurde aufgrund einer fehlenden während der Übertragung nicht lesbar. Dies ist am besten geeigneten für lineare Array Sensoren, die eine streifbewegung Bewegung zu erfordern.
+
+
+
+-   **`ErrorCanceled`** &ndash; (der Wert 5) Der Vorgang wurde abgebrochen, da fingerabdrucksensors nicht verfügbar ist. Dies kann z. B. bei der Benutzer wechselt, das Gerät gesperrt ist oder einem anderen ausstehenden Vorgang verhindert, dass diese aktiviert oder deaktiviert vorkommen.
+
+
+
+-   **`ErrorHwUnavailable`** &ndash; (Wert 1) Die Hardware ist nicht verfügbar. Versuchen Sie es später noch mal.
 
 
 
 
--   **`ErrorNoSpace`** &ndash; (Wert 4) Status "Fehler" für Vorgänge wie das Enrollment zurückgegeben; der Vorgang kann nicht abgeschlossen werden, da nicht genügend Speicherplatz zum Abschließen des Vorgangs noch vorhanden ist.
+-   **`ErrorLockout`** &ndash; (Wert 7) Der Vorgang wurde abgebrochen, da die API aufgrund von zu viele Anmeldeversuche gesperrt ist.
 
 
 
--   **`ErrorTimeout`** &ndash; (Wert 3) Status "Fehler" zurückgegeben, wenn die aktuelle Anforderung zu lang ausgeführt wurde. Dies soll verhindern, dass Programme fingerabdrucksensors unbegrenzt wartet. Das Timeout ist Plattform und Sensor-spezifische, aber in der Regel ungefähr 30 Sekunden.
+
+-   **`ErrorNoSpace`** &ndash; (Wert 4) Status "Fehler", die für Vorgänge wie die Registrierung zurückgegeben; der Vorgang kann nicht abgeschlossen werden, da nicht genügend Speicher zum Abschließen des Vorgangs noch vorhanden ist.
 
 
 
--   **`ErrorUnableToProcess`** &ndash; (Wert 2) Status "Fehler" zurückgegeben, wenn der Sensor das aktuelle Bild zu verarbeiten konnte.
+-   **`ErrorTimeout`** &ndash; (Wert 3) Der Fehlerstatus zurückgegeben, wenn die aktuelle Anforderung zu lang ausgeführt wurde. Dies soll verhindern, dass Programme fingerabdrucksensors auf unbestimmte Zeit warten. Das Timeout ist Plattform und das Sensor-spezifische, aber es ist in der Regel ungefähr 30 Sekunden.
+
+
+
+-   **`ErrorUnableToProcess`** &ndash; (Wert 2) Der Fehlerstatus zurückgegeben, wenn der Sensor konnte nicht das aktuelle Bild verarbeitet wurde.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Cipher](https://docs.oracle.com/javase/7/docs/api/javax/crypto/Cipher.html)
+- [Verschlüsselungsstärke](https://docs.oracle.com/javase/7/docs/api/javax/crypto/Cipher.html)
 - [AuthenticationCallback](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html)
 - [AuthenticationCallback](http://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.AuthenticationCallback.html)

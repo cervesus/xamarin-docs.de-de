@@ -4,15 +4,15 @@ description: Zeigen Sie eine Bitmap SkiaSharp, damit einige Bereich werden gestr
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: e5bfa076a8746abd6275e9d7a8393c7c8ab53294
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 71997acde4545fec801dfdc8147ab1a9ace7ab24
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615235"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119227"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>Segmentierte Anzeige der SkiaSharp-bitmaps
 
@@ -26,7 +26,7 @@ Diese Methoden werden in der Regel für das Rendern von Bitmaps, die Bestandteil
 
 ## <a name="the-nine-patch-display"></a>Die neun-Patch-Anzeige 
 
-Im Prinzip [ `DrawBitmapNinePatch` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmapNinePatch/p/SkiaSharp.SKBitmap/SkiaSharp.SKRectI/SkiaSharp.SKRect/SkiaSharp.SKPaint/) eine Bitmap in neun Rechtecke unterteilt:
+Im Prinzip [ `DrawBitmapNinePatch` ](xref:SkiaSharp.SKCanvas.DrawBitmapNinePatch(SkiaSharp.SKBitmap,SkiaSharp.SKRectI,SkiaSharp.SKRect,SkiaSharp.SKPaint)) eine Bitmap in neun Rechtecke unterteilt:
 
 ![Neun Patch](segmented-images/NinePatch.png "neun Patch")
 
@@ -119,14 +119,14 @@ SKRectI centerRect = new SKRectI(150, 150, 350, 350);
 
 Die beiden `DrawBitmapLattice` Methoden ähneln `DrawBitmapNinePatch`, aber sie sind für eine beliebige Anzahl horizontaler oder vertikaler Unterteilungen generalisiert. Diese Bereiche werden von Arrays mit Ganzzahlen, Pixel entspricht definiert. 
 
-Die [ `DrawBitmapLattice` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmapLattice/p/SkiaSharp.SKBitmap/System.Int32[]/System.Int32[]/SkiaSharp.SKRect/SkiaSharp.SKPaint/) Methode mit Parametern für diese Arrays von ganzen Zahlen scheint nicht funktioniert. Die [ `DrawBitmapLattice` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmapLattice/p/SkiaSharp.SKBitmap/SkiaSharp.SKLattice/SkiaSharp.SKRect/SkiaSharp.SKPaint/) Methode mit einem Parameter vom Typ `SKLattice` funktioniert, und das ist die in den unten gezeigten Beispielen verwendet.
+Die [ `DrawBitmapLattice` ](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,System.Int32[],System.Int32[],SkiaSharp.SKRect,SkiaSharp.SKPaint)) Methode mit Parametern für diese Arrays von ganzen Zahlen scheint nicht funktioniert. Die [ `DrawBitmapLattice` ](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,SkiaSharp.SKLattice,SkiaSharp.SKRect,SkiaSharp.SKPaint)) Methode mit einem Parameter vom Typ `SKLattice` funktioniert, und das ist die in den unten gezeigten Beispielen verwendet.
 
-Die [ `SKLattice` ](https://developer.xamarin.com/api/type/SkiaSharp.SKLattice/) Struktur definiert vier Eigenschaften:
+Die [ `SKLattice` ](xref:SkiaSharp.SKLattice) Struktur definiert vier Eigenschaften:
 
-- [`XDivs`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.XDivs/), ein Array von Ganzzahlen
-- [`YDivs`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.YDivs/), ein Array von Ganzzahlen
-- [`Flags`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.Flags/), ein Array von `SKLatticeFlags`, ein Enumerationstyp
-- [`Bounds`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.Bounds/) Der Typ `Nullable<SKRectI>` ein optionaler Quellrechteck innerhalb der Bitmap an
+- [`XDivs`](xref:SkiaSharp.SKLattice.XDivs), ein Array von Ganzzahlen
+- [`YDivs`](xref:SkiaSharp.SKLattice.YDivs), ein Array von Ganzzahlen
+- [`Flags`](xref:SkiaSharp.SKLattice.Flags), ein Array von `SKLatticeFlags`, ein Enumerationstyp
+- [`Bounds`](xref:SkiaSharp.SKLattice.Bounds) Der Typ `Nullable<SKRectI>` ein optionaler Quellrechteck innerhalb der Bitmap an
 
 Die `XDivs` Array unterteilt die Breite der Bitmap in vertikalen leisten. Die erste Strip erstreckt sich von 0 Pixel auf der linken Seite auf `XDivs[0]`. Diese entfernen, die in die Breite in Pixel gerendert wird. Die zweite Strip erstreckt sich von `XDivs[0]` zu `XDivs[1]`, und gestreckt wird. Erstreckt sich von der dritten Streifen `XDivs[1]` zu `XDivs[2]` und in die Breite in Pixel gerendert wird. Die letzte Streifen erstreckt sich von dem letzten Element des Arrays an den rechten Rand der Bitmap. Wenn das Array eine gerade Anzahl von Elementen hat, und klicken Sie dann die Breite in Pixel angezeigt wird. Andernfalls wird es gestreckt. Die Gesamtanzahl der vertikalen Streifen ist eine weitere als die Anzahl der Elemente im Array.
 
@@ -134,7 +134,7 @@ Die `YDivs` Array entspricht. Die Höhe des Arrays dividiert in horizontale Stre
 
 Zusammen, die `XDivs` und `YDivs` Array die Bitmap in Rechtecke unterteilen. Die Anzahl der Rechtecke ist gleich dem Produkt, der die Anzahl der horizontale Leisten und die Anzahl der vertikalen leisten.
 
-Gemäß Skia Dokumentation der `Flags` Array enthält ein Element für jedes Rechtecks, zuerst die oberste Zeile von Rechtecken, und klicken Sie dann der zweiten Zeile und So weiter. Die `Flags` Array ist vom Typ [ `SKLatticeFlags` ](https://developer.xamarin.com/api/type/SkiaSharp.SKLatticeFlags/), eine Enumeration mit folgenden Membern:
+Gemäß Skia Dokumentation der `Flags` Array enthält ein Element für jedes Rechtecks, zuerst die oberste Zeile von Rechtecken, und klicken Sie dann der zweiten Zeile und So weiter. Die `Flags` Array ist vom Typ [ `SKLatticeFlags` ](xref:SkiaSharp.SKLatticeFlags), eine Enumeration mit folgenden Membern:
 
 - `Default` mit dem Wert 0
 - `Transparent` mit dem Wert 1
@@ -225,5 +225,5 @@ Die **Lattice Anzeige** Seite generalisiert und dadurch die Erstellung der `Flag
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

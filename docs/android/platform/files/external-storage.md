@@ -4,15 +4,15 @@ description: Diesem Leitfaden wird Zugriff auf Dateien auf externen speichern, d
 ms.prod: xamarin
 ms.assetid: 40da10b2-a207-4f9c-a2dd-165d9b662f33
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 380100d38febf567fde94096455fd846d9d3d2d3
-ms.sourcegitcommit: 9bb9e8297d3edd9a50585f4ba53c1b4f0bcd1d3e
+ms.openlocfilehash: fa0ad282fedecec8f5ca4e94e7119c36ef182261
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39212207"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116016"
 ---
 # <a name="external-storage"></a>Externen Speicher
 
@@ -140,13 +140,13 @@ Alle Android-apps müssen deklarieren Sie eine der beiden Berechtigungen für de
 > [!NOTE]
 > Wenn der Benutzer erteilt `WRITE_EXTERNAL_STORAGE`, klicken Sie dann `READ_EXTERNAL_STORAGE` ist auch implizit erteilt. Es ist nicht erforderlich, um beide Berechtigungen in **"androidmanifest.xml"**.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Die Berechtigungen können auch hinzugefügt werden, mithilfe der **Android-Manifest** Registerkarte die **Projektmappeneigenschaften**:
 
 ![Projektmappen-Explorer - erforderlichen Berechtigungen für Visual Studio 2017](./images/required-permissions.w157.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Die Berechtigungen können auch hinzugefügt werden, mithilfe der **Android-Manifest** auf der Registerkarte die **Lösung Pad "Eigenschaften"**:
 

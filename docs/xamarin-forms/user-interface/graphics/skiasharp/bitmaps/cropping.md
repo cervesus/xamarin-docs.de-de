@@ -4,21 +4,21 @@ description: Erfahren Sie, wie SkiaSharp verwenden, um eine Benutzeroberfläche 
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 3dd9011d19e77f52d1fe89a37e4d992c23c72ab1
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 653904da37354db52ef6bbd303355e98ddc1582f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615547"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122633"
 ---
 # <a name="cropping-skiasharp-bitmaps"></a>Zuschneiden von SkiaSharp-bitmaps
 
 Die [ **erstellen und zeichnen SkiaSharp Bitmaps** ](drawing.md) Artikel beschrieben, wie ein `SKBitmap` Objekt übergeben werden, um eine `SKCanvas` Konstruktor. Jeder zeichnen-Methode wird aufgerufen, auf die Grafiken, Canvas bewirkt, dass auf die Bitmap gerendert werden soll. Einzubeziehen Zeichnungsmethoden `DrawBitmap`, was bedeutet, dass diese Technik ermöglicht das Übertragen von teilweise oder vollständig eine Bitmap in einem anderen Bitmap, vielleicht mit Transformationen angewendet.
 
-Können Sie diese Methode für das Abschneiden einer Bitmaps durch Aufrufen der [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKRect/SkiaSharp.SKPaint/) -Methode mit der Quelle und Ziel Rechtecke:
+Können Sie diese Methode für das Abschneiden einer Bitmaps durch Aufrufen der [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint)) -Methode mit der Quelle und Ziel Rechtecke:
 
 ```csharp
 canvas.DrawBitmap(bitmap, sourceRect, destRect);
@@ -744,7 +744,7 @@ In der `OnDoneButtonClicked` -Methode, das für die 15 Bitmaps erstellte Array i
 ImageSource[] imgSources = new ImageSource[15];
 ```
 
-`ImageSource` ist der Basistyp für Xamarin.Forms, der eine Bitmap kapselt. Glücklicherweise kann SkiaSharp, Konvertieren von Bitmaps von SkiaSharp in Xamarin.Forms-Bitmaps. Die **SkiaSharp.Views.Forms** Assembly definiert eine [ `SKBitmapImageSource` ](https://developer.xamarin.com/api/type/SkiaSharp.Views.Forms.SKBitmapImageSource/) abgeleitete Klasse `ImageSource` können jedoch erstellt werden basierend auf einer SkiaSharp `SKBitmap` Objekt. `SKBitmapImageSource` definiert auch Konvertierungen zwischen `SKBitmapImageSource` und `SKBitmap`, und das ist wie `SKBitmap` Objekte werden in einem Array als Xamarin.Forms Bitmaps gespeichert:
+`ImageSource` ist der Basistyp für Xamarin.Forms, der eine Bitmap kapselt. Glücklicherweise kann SkiaSharp, Konvertieren von Bitmaps von SkiaSharp in Xamarin.Forms-Bitmaps. Die **SkiaSharp.Views.Forms** Assembly definiert eine [ `SKBitmapImageSource` ](xref:SkiaSharp.Views.Forms.SKBitmapImageSource) abgeleitete Klasse `ImageSource` können jedoch erstellt werden basierend auf einer SkiaSharp `SKBitmap` Objekt. `SKBitmapImageSource` definiert auch Konvertierungen zwischen `SKBitmapImageSource` und `SKBitmap`, und das ist wie `SKBitmap` Objekte werden in einem Array als Xamarin.Forms Bitmaps gespeichert:
 
 ```csharp
 imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
@@ -762,5 +762,5 @@ Jetzt können Sie sie in der richtigen Reihenfolge wieder platzieren. Alle Kache
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

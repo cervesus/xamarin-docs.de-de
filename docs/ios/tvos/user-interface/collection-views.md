@@ -1,65 +1,65 @@
 ---
-title: Arbeiten mit tvos. außerdem wurden Auflistungsansichten in Xamarin
-description: Dieses Dokument beschreibt das Arbeiten mit Auflistungsansichten in einer app für tvos. außerdem wurden mit Xamarin erstellten. Er bedient Auflistung Ansichtslayouts, Zellen und zusätzlichen Ansichten, reagieren auf Ereignisse und vieles mehr erstellen.
+title: Arbeiten mit TvOS Auflistungsansichten in Xamarin
+description: Dieses Dokument beschreibt das Arbeiten mit Auflistungsansichten in einer TvOS-app mit Xamarin erstellt wurde. Hierin sind Auflistung Ansichtslayouts, Erstellen von Zellen und zusätzliche Ansichten, reagieren auf Ereignisse und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 5125C4C7-2DDF-4C19-A362-17BB2B079178
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9b411ac6bb8d1492511f9e5d2234731ae64c3a82
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f815afa6b1abb15348019b0c53333b4acb054008
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789277"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108027"
 ---
-# <a name="working-with-tvos-collection-views-in-xamarin"></a>Arbeiten mit tvos. außerdem wurden Auflistungsansichten in Xamarin
+# <a name="working-with-tvos-collection-views-in-xamarin"></a>Arbeiten mit TvOS Auflistungsansichten in Xamarin
 
-Auflistungsansichten ermöglichen eine Gruppe von Inhalt mithilfe von beliebigen Layouts angezeigt werden sollen. Mithilfe der integrierten Unterstützung, ermöglichen sie die einfache Erstellung Raster-ähnliches oder linearen Layouts beim unterstützen auch benutzerdefinierte Layouts.
+Auflistungsansichten können für eine Gruppe von Inhalten mithilfe von beliebigen Layouts angezeigt werden sollen. Verwenden die integrierten Unterstützung, ermöglichen sie die einfache Erstellung Raster-ähnliches oder linearen Layouts gleichzeitig unterstützt auch benutzerdefinierte Layouts.
 
-[![](collection-views-images/collection01.png "Beispiel-Auflistungsansicht")](collection-views-images/collection01.png#lightbox)
+[![](collection-views-images/collection01.png "Beispielansicht für die Sammlung")](collection-views-images/collection01.png#lightbox)
 
-Die Auflistungsansicht verwaltet eine Auflistung von Elementen, die mit einem Delegaten und einer Datenquelle Eingreifen des Benutzers und den Inhalt der Auflistung bereitstellen. Da die Auflistungsansicht auf ein Subsystem Layout, die unabhängig von der die Sicht selbst ist basiert, kann die Darstellung von die Auflistungsansicht Daten auf dynamische Bereitstellung ein anderes Layout leicht ändern.
+Die Auflistungsansicht verwaltet eine Auflistung von Elementen, die mithilfe eines Delegaten und einer Datenquelle Eingreifen des Benutzers und den Inhalt der Auflistung bereitstellen. Da die Auflistungsansicht in einem Subsystem Layout basiert, der die Sicht selbst unabhängig ist, kann die Darstellung der Auflistungsansicht Daten auf dynamische Bereitstellung von einem anderen Layout leicht ändern.
 
 <a name="About-Collection-Views" />
 
-## <a name="about-collection-views"></a>Informationen zu Auflistungsansichten
+## <a name="about-collection-views"></a>Über die Auflistungsansichten
 
-Wie bereits erwähnt, einer Auflistungsansicht (`UICollectionView`) verwaltet eine geordnete Auflistung von Elementen und stellt diese Elemente anpassbare Layouts zur Verfügung. Auflistungsansichten in ähnlicher Weise wie Tabellensichten arbeiten (`UITableView`), außer dass sie Layouts vorhanden Elemente in mehr als nur eine einzelne Spalte verwenden können.
+Wie bereits erwähnt, eine Auflistungsansicht (`UICollectionView`) verwaltet eine geordnete Auflistung von Elementen und zeigt diese Elemente mit anpassbaren Layouts. Auflistungsansichten funktionieren auf ähnliche Weise zu Tabellensichten (`UITableView`), es sei denn sie Layouts vorhanden Elemente in mehr als nur eine einzelne Spalte verwenden können.
 
-Bei Verwendung einer Auflistungsansicht in tvos. außerdem wurden die app ist verantwortlich für das Bereitstellen von Daten, die der Auflistung mit einer Datenquelle zugeordnet sind (`UICollectionViewDataSource`). Ansicht Sammlungsdaten können optional strukturiert und dargestellt werden in unterschiedliche Gruppen (Abschnitte) sein.
+Ihre app ist verantwortlich für das Bereitstellen der Daten im Zusammenhang mit der Auflistung unter Verwendung einer Datenquelle, bei Verwendung einer Auflistungsansicht in TvOS (`UICollectionViewDataSource`). Optional können Auflistung anzeigen von Daten organisiert und in unterschiedliche Gruppen (Abschnitte) angezeigt werden.
 
-Die Ansicht "Auflistung" zeigt die einzelnen Elemente, die auf dem Bildschirm, indem eine Zelle (`UICollectionViewCell`), die die Darstellung von Informationen aus der Auflistung (z. B. ein Bild und den Titel) einen bestimmten bereitstellt.
+Die Auflistungsansicht stellt die einzelnen Elemente, die auf dem Bildschirm, indem eine Zelle (`UICollectionViewCell`), die die Darstellung der eine bestimmte Information aus der Auflistung (z. B. ein Bild und Titel) bereitstellt.
 
-Zusätzliche Ansichten können optional die Auflistungsansicht Präsentation fungieren als Kopf- und Fußzeilen für die Abschnitte und Zellen hinzugefügt werden. Die Auflistungsansicht Layout ist verantwortlich für die Platzierung dieser Sichten zusammen mit den einzelnen Zellen definieren.
+Zusätzliche Ansichten können optional die Auflistungsansicht Präsentation fungieren als Kopf- und Fußzeilen für die Abschnitte und Zellen hinzugefügt werden. Die Auflistungsansicht Layout ist verantwortlich für die Platzierung von diesen Ansichten zusammen mit der die einzelnen Zellen definieren.
 
-Die Auflistungsansicht kann Antworten auf eine Benutzerinteraktion mithilfe eines Delegaten (`UICollectionViewDelegate`). Dieser Delegat ist auch verantwortlich für die Bestimmung, ob eine bestimmte Zelle den Fokus, abrufen kann, wenn eine Zelle markiert wurde oder wenn eine ausgewählt wurde. In einigen Fällen bestimmt der Delegat die Größe der einzelnen Zellen.
+Die Auflistungsansicht kann auf eine Benutzerinteraktion mit einem Delegaten reagieren (`UICollectionViewDelegate`). Dieser Delegat ist auch zuständig für das ermitteln, wenn eine bestimmte Zelle den Fokus besitzt, abrufen kann, wenn eine Zelle hervorgehoben wurden wurde oder eine ausgewählt wurde. In einigen Fällen bestimmt der Delegat, der Größe der einzelnen Zellen.
 
 <a name="Collection-View-Layouts" />
 
-## <a name="collection-view-layouts"></a>Auflistung Ansichtslayouts
+## <a name="collection-view-layouts"></a>Sammlung von Ansichtslayouts
 
-Ein wichtiges Feature von einer Auflistungsansicht ist die Trennung zwischen den Daten, die sie darstellen, ist und das zugehörige Layout. Eine Auflistung Ansichtslayout (`UICollectionViewLayout`) für die Bereitstellung der Organisation und den Speicherort der Zellen (und alle zusätzlichen Ansichten) mit in der Auflistungsansicht auf dem Bildschirm Präsentation zuständig ist.
+Ein wichtiges Feature von eine Auflistungsansicht ist die Trennung zwischen den Daten, die sie darstellen, ist und das zugehörige Layout. Eine Auflistung der Standardankündigung (`UICollectionViewLayout`) Dient zum Bereitstellen der Organisation und den Speicherort der Zellen (und keine zusätzlichen Ansichten) in der Auflistungsansicht auf dem Bildschirm Präsentation.
 
-Die einzelnen Zellen werden werden durch die Auflistungsansicht einer angefügten Datenquelle erstellt und dann angeordnet und durch die angegebene Auflistung Ansichtslayout angezeigt.
+Die einzelnen Zellen werden werden durch die Auflistungsansicht angefügten Datenquelle erstellt und dann angeordnet und durch die angegebene Auflistung Ansichtslayout angezeigt.
 
-Das Ansichtslayout Auflistung wird normalerweise bereitgestellt werden, wenn die Auflistungsansicht erstellt wird. Allerdings können Sie das Ansichtslayout Auflistung jederzeit ändern und die auf dem Bildschirm Präsentation von Daten für die Auflistungsansicht werden automatisch aktualisiert werden mit dem neuen Layout bereitgestellt.
+Das Ansichtslayout Auflistung erfolgt normalerweise, wenn die Auflistungsansicht erstellt wird. Allerdings können Sie das Ansichtslayout Sammlung zu einem beliebigen Zeitpunkt ändern, und die auf dem Bildschirm Darstellung von Daten für die Auflistungsansicht wird automatisch aktualisiert werden über das neue Layout bereitgestellt.
 
-Das Ansichtslayout Auflistung bietet mehrere Methoden, die zu animierende den Übergang zwischen zwei unterschiedliche Layouts (standardmäßig keine Animation ausgeführt wird) verwendet werden können. Darüber hinaus können Auflistung Ansichtslayouts mit Geste weitere Benutzerinteraktion animieren, die eine Änderung im Layout führt arbeiten.
+Das Ansichtslayout Auflistung bietet mehrere Methoden, die verwendet werden können, um den Übergang zwischen zwei unterschiedliche Layouts (standardmäßig keine Animation ausgeführt wird) zu animieren. Darüber hinaus können die Ansichtslayouts für die Sammlung mit Geste Erkennungen weiter Eingreifen des Benutzers zu animieren, die eine Änderung im Layout führt arbeiten.
 
 <a name="Creating-Cells-and-Supplementary-Views" />
 
 ## <a name="creating-cells-and-supplementary-views"></a>Erstellen von Zellen und zusätzliche Ansichten
 
-Eine Auflistungsansicht-Datenquelle ist nicht nur verantwortlich für das Bereitstellen von Daten, Sichern der Auflistung Elemente, sondern auch der Zellen, die verwendet werden, um den Inhalt anzuzeigen.
+Eine Auflistungsansicht-Datenquelle ist nicht nur verantwortlich für das Bereitstellen der Daten, Sichern der Auflistung der Elemente, sondern auch der Zellen, die verwendet werden, um den Inhalt anzuzeigen.
 
-Da Auflistungsansichten entwickelt wurden, um große Auflistungen von Elementen zu behandeln, können die einzelnen Zellen aus der Warteschlange entfernt und erneut verwendet, um zu verhindern, dass Einschränkungen beim Arbeitsspeicher überschritten werden. Es gibt zwei verschiedene Methoden zum Entfernen von Ansichten:
+Da Auflistungsansichten Behandeln von großen Auflistungen von Elementen konzipiert wurden, können die einzelnen Zellen aus der Warteschlange entfernt und erneut verwendet, um zu verhindern, dass das Speicherlimit überschritten werden. Es gibt zwei unterschiedliche Methoden zum Entfernen von Ansichten:
 
-- `DequeueReusableCell` -Erstellt, oder gibt eine Zelle des angegebenen Typs (wie in der app Storyboard angegeben).
-- `DequeueReusableSupplementaryView` -Erstellt, oder gibt eine zusätzliche Ansicht des angegebenen Typs (wie in der app Storyboard angegeben).
+- `DequeueReusableCell` : Erstellt, oder gibt eine Zelle des angegebenen Typs (wie in der app-Storyboard angegeben).
+- `DequeueReusableSupplementaryView` : Erstellt ein, oder gibt eine zusätzliche Ansicht des angegebenen Typs (wie in der app-Storyboard angegeben).
 
-Sie müssen vor dem Aufrufen dieser Methoden, die Klasse registrieren Storyboard oder `.xib` Datei, die zum Erstellen der Ansicht für die Zelle mit der Auflistungsansicht verwendet. Zum Beispiel:
+Sie müssen vor dem Aufrufen dieser Methoden, die Klasse, registrieren Storyboard oder `.xib` Datei verwendet, um mit dem die Auflistungsansicht der Zelle Ansicht erstellen. Zum Beispiel:
 
 ```csharp
 public CityCollectionView (IntPtr handle) : base (handle)
@@ -70,9 +70,9 @@ public CityCollectionView (IntPtr handle) : base (handle)
 }
 ```
 
-Wobei `typeof(CityCollectionViewCell)` enthält die Klasse, die die Ansicht unterstützt und `CityViewDatasource.CardCellId` stellt die ID verwendet, wenn die Zelle (oder Sicht) aus der Warteschlange entfernt wird.
+Wo `typeof(CityCollectionViewCell)` stellt die Klasse, die die Ansicht unterstützt und `CityViewDatasource.CardCellId` stellt die ID verwendet, wenn die Zelle (oder Ansicht), aus der Warteschlange entfernt wird.
 
-Nach die Zelle aus der Warteschlange entfernt wird, konfigurieren Sie ihn mit den Daten für das Element, den, das es darstellt, ist, und Sie zurück an die Auflistungsansicht für die Anzeige.
+Nach die Zelle aus der Warteschlange entfernt wird, konfigurieren es mit den Daten für das Element, den, das es darstellt, ist, und zur Auflistungsansicht für die Anzeige zurückgegeben.
 
 <a name="About-Collection-View-Controllers" />
 
@@ -80,93 +80,93 @@ Nach die Zelle aus der Warteschlange entfernt wird, konfigurieren Sie ihn mit de
 
 Eine Auflistung-View-Controller (`UICollectionViewController`) ist eine spezielle View-Controller (`UIViewController`), die Folgendes bereitstellt:
 
-- Es ist zuständig für das Laden der Auflistungsansicht aus seiner Storyboard oder `.xib` Datei- und Instanziierung der Ansicht. Wenn im Code erstellt, erstellt er automatisch eine neue, nicht konfigurierte Auflistungsansicht.
-- Wenn die Auflistungsansicht geladen ist, versucht der Controller, dessen Datenquelle und der Delegat aus dem Storyboard zu laden oder `.xib` Datei. Wenn keine verfügbar sind, legt er selbst als Quelle für beide fest.
-- Stellt sicher, dass die Daten geladen wird, bevor die Auflistungsansicht aufgefüllt wird, auf dem ersten angezeigt wird, und lädt und deaktivieren Sie die SELECT-Anweisung für jede nachfolgende Anzeige.
+- Er ist verantwortlich für das Laden der Auflistungsansicht aus das Storyboard oder `.xib` Datei- und Instanziierung der Ansicht. Wenn im Code erstellt wird, erstellt es automatisch eine neue, nicht konfigurierte Auflistungsansicht.
+- Nach dem Laden der Auflistungsansicht versucht der Controller, laden die Datenquelle und den Delegaten aus dem Storyboard oder `.xib` Datei. Wenn keiner verfügbar ist, wird sich selbst als Quelle für beide.
+- Stellt sicher, dass die Daten geladen werden, bevor die Auflistungsansicht, auf der ersten angezeigt gefüllt wird, und lädt erneut und löschen die SELECT-Anweisung für jede nachfolgende Anzeige.
 
-Darüber hinaus bietet das Collection-View-Controller überschreibbare Methoden, die verwendet werden können, wie z. B. Verwalten des Lebenszyklus der Auflistungsansicht `AwakeFromNib` und `ViewWillDisplay`.
+Darüber hinaus bietet der Sammlungsansichtscontroller überschreibbare Methoden, die verwendet werden können, um die Verwaltung des Lebenszyklus der Auflistungsansicht wie z. B. `AwakeFromNib` und `ViewWillDisplay`.
 
 <a name="Collection-Views-and-Storyboards" />
 
 ## <a name="collection-views-and-storyboards"></a>Auflistungsansichten und Storyboards
 
-Die einfachste Möglichkeit zum Arbeiten mit einer Auflistungsansicht in Ihrer app Xamarin.tvOS ist das Storyboard hinzufügen. Als ein kurzes Beispiel werden wir eine Beispiel-app erstellen, in dem ein Bild, Titel und eine Schaltfläche auswählen dargestellt. Wenn der Benutzer klicken Sie auf die Schaltfläche auswählen, wird eine Auflistungsansicht angezeigt, mit denen den Benutzer ein neues Image auswählen können. Wenn ein Bild ausgewählt ist, wird die Auflistungsansicht wird geschlossen, und das neue Image und Titel angezeigt werden.
+Die einfachste Möglichkeit zum Arbeiten mit einer Auflistungsansicht in Ihrer Xamarin.tvOS-app ist auf das Storyboard hinzu. Als kurzes Beispiel werden wir eine Beispiel-app zu erstellen, die ein Bild, Titel und eine auswählen-Schaltfläche darstellt. Wenn der Benutzer die auswählen-Schaltfläche klicken, wird eine Auflistungsansicht angezeigt werden, mit denen den Benutzer ein neues Image auswählen zu können. Wenn ein Bild ausgewählt ist, wird die Auflistungsansicht wird geschlossen, und das neue Bild und den Titel angezeigt.
 
-Führen Sie wir Folgendes:
+Lassen Sie uns wie folgt vor:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
     
-1. Starten Sie einen neuen **Ansicht tvos. außerdem wurden App** in Visual Studio für Mac.
-1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` Datei und in der iOS-Designer zu öffnen.
-1. Die vorhandene Sicht ein Bild anzeigen, eine Bezeichnung und eine Schaltfläche hinzu, und konfigurieren Sie sie wie folgt aussehen: 
+1. Starten Sie eine neue **Einzelansicht TvOS-App** in Visual Studio für Mac.
+1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` und öffnen Sie sie in der iOS-Designer.
+1. Der vorhandenen Ansicht fügen Sie eine Image-Sicht, eine Bezeichnung und eine Schaltfläche hinzu und konfigurieren Sie sie wie folgt aussehen: 
 
     [![](collection-views-images/collection02.png "Beispiel-layout")](collection-views-images/collection02.png#lightbox)
-1. Zuweisen einer **Namen** der Image-Ansicht und die Bezeichnung in der **Registerkarte "Widget"** von der **Eigenschaften-Explorer**. Zum Beispiel: 
+1. Zuweisen einer **Namen** der Bildansicht und die Bezeichnung in der **Widget-Registerkarte** von der **Eigenschaften-Explorer**. Zum Beispiel: 
 
-    [![](collection-views-images/collection03.png "Der Name der Einstellung")](collection-views-images/collection03.png#lightbox)
-1. Ziehen Sie anschließend eine Auflistung-View-Controller auf das Storyboard: 
+    [![](collection-views-images/collection03.png "Festlegen des Namens")](collection-views-images/collection03.png#lightbox)
+1. Als Nächstes ziehen Sie einen Ansichtscontroller für die Sammlung, in das Storyboard zu erhalten: 
 
-    [![](collection-views-images/collection04.png "Eine Auflistung-View-Controller")](collection-views-images/collection04.png#lightbox)
-1. Steuerelement ziehen über die Schaltfläche mit dem Auflistung View-Controller, und wählen Sie **Push** im Popupmenü: 
+    [![](collection-views-images/collection04.png "Eine Auflistung-Ansichtscontroller")](collection-views-images/collection04.png#lightbox)
+1. Steuerelement ziehen über die Schaltfläche auf den View-Controller-Auflistung, und wählen Sie **Push** im Popupmenü: 
 
     [![](collection-views-images/collection05.png "Wählen Sie im Popupmenü Push")](collection-views-images/collection05.png#lightbox)
-1. Wenn die app ausgeführt wird, wird dies stellen die Auflistungsansicht angezeigt werden, sobald der Benutzer die Schaltfläche klickt.
-1. Wählen Sie die Auflistungsansicht, und geben Sie die folgenden Werte in der **Registerkarte "Layout"** von der **Eigenschaften-Explorer**: 
+1. Wenn die app ausgeführt wird, wird diese stellen die Auflistungsansicht angezeigt werden, wenn der Benutzer die Schaltfläche klickt.
+1. Wählen Sie die Ansicht der Auflistung, und geben Sie die folgenden Werte in der **Registerkarte "Layout"** von der **Eigenschaften-Explorer**: 
 
-    [![](collection-views-images/collection06.png "Im Eigenschaften-Explorer")](collection-views-images/collection06.png#lightbox)
-1. Steuert die Größe der einzelnen Zellen und die Rahmenlinien zwischen den Zellen und äußeren Rand der Auflistungsansicht.
-1. Wählen Sie die Collection-View-Controller, und legen Sie die Klasse den `CityCollectionViewController` in der **Registerkarte "Widget"**: 
+    [![](collection-views-images/collection06.png "Die Eigenschaften-Explorer")](collection-views-images/collection06.png#lightbox)
+1. Steuert die Größe der einzelnen Zellen sowie die Rahmen zwischen den Zellen und die äußeren Rand der Auflistungsansicht.
+1. Wählen Sie den Ansichtscontroller für die Sammlung aus, und legen Sie die Klasse auf `CityCollectionViewController` in die **Widget Registerkarte**: 
 
-    [![](collection-views-images/collection07.png "Legen Sie die Klasse den CityCollectionViewController")](collection-views-images/collection07.png#lightbox)
-1. Wählen Sie die Auflistungsansicht, und legen Sie die Klasse den `CityCollectionView` in der **Registerkarte "Widget"**: 
+    [![](collection-views-images/collection07.png "Legen Sie die Klasse auf CityCollectionViewController")](collection-views-images/collection07.png#lightbox)
+1. Wählen Sie die Auflistungsansicht und legen Sie die Klasse auf `CityCollectionView` in die **Widget Registerkarte**: 
 
-    [![](collection-views-images/collection08.png "Legen Sie die Klasse den CityCollectionView")](collection-views-images/collection08.png#lightbox)
-1. Wählen Sie die Zelle der Auflistung anzeigen, und legen Sie die Klasse den `CityCollectionViewCell` in der **Registerkarte "Widget"**: 
+    [![](collection-views-images/collection08.png "Legen Sie die Klasse auf CityCollectionView")](collection-views-images/collection08.png#lightbox)
+1. Wählen Sie die Sammlungsansichtszelle und legen Sie die Klasse auf `CityCollectionViewCell` in die **Widget Registerkarte**: 
 
-    [![](collection-views-images/collection09.png "Legen Sie die Klasse den CityCollectionViewCell")](collection-views-images/collection09.png#lightbox)
-1. In der **Registerkarte "Widget"** sicher, dass die **Layout** ist `Flow` und **Scroll Richtung** ist `Vertical` für die Auflistungsansicht: 
+    [![](collection-views-images/collection09.png "Legen Sie die Klasse auf CityCollectionViewCell")](collection-views-images/collection09.png#lightbox)
+1. In der **Widget-Registerkarte** sicher, dass die **Layout** ist `Flow` und **Richtung der Bildlauf** ist `Vertical` für die Sammlung an: 
 
     [![](collection-views-images/collection10.png "Die Registerkarte \"Widget\"")](collection-views-images/collection10.png#lightbox)
-1. Wählen Sie die Zelle der Auflistung anzeigen, und legen seine **Identität** auf `CityCell` in der **Registerkarte "Widget"**: 
+1. Wählen Sie die Sammlungsansichtszelle und legen Sie seine **Identität** zu `CityCell` in die **Widget Registerkarte**: 
 
     [![](collection-views-images/collection11.png "Legen Sie die Identität auf CityCell")](collection-views-images/collection11.png#lightbox)
 1. Speichern Sie die Änderungen.
     
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
     
-1. Starten Sie einen neuen **Ansicht tvos. außerdem wurden App** in Visual Studio.
-1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` Datei und in der iOS-Designer zu öffnen.
-1. Die vorhandene Sicht ein Bild anzeigen, eine Bezeichnung und eine Schaltfläche hinzu, und konfigurieren Sie sie wie folgt aussehen: 
+1. Starten Sie eine neue **Einzelansicht TvOS-App** in Visual Studio.
+1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` und öffnen Sie sie in der iOS-Designer.
+1. Der vorhandenen Ansicht fügen Sie eine Image-Sicht, eine Bezeichnung und eine Schaltfläche hinzu und konfigurieren Sie sie wie folgt aussehen: 
 
     [![](collection-views-images/collection02vs.png "Konfigurieren Sie das layout")](collection-views-images/collection02vs.png#lightbox)
-1. Zuweisen einer **Namen** der Image-Ansicht und die Bezeichnung in der **Registerkarte "Widget"** von der **Eigenschaften-Explorer**. Zum Beispiel: 
+1. Zuweisen einer **Namen** der Bildansicht und die Bezeichnung in der **Widget-Registerkarte** von der **Eigenschaften-Explorer**. Zum Beispiel: 
 
-    [![](collection-views-images/collection03vs.png "Im Eigenschaften-Explorer")](collection-views-images/collection03vs.png#lightbox)
-1. Ziehen Sie anschließend eine Auflistung-View-Controller auf das Storyboard: 
+    [![](collection-views-images/collection03vs.png "Die Eigenschaften-Explorer")](collection-views-images/collection03vs.png#lightbox)
+1. Als Nächstes ziehen Sie einen Ansichtscontroller für die Sammlung, in das Storyboard zu erhalten: 
 
-    [![](collection-views-images/collection04vs.png "Eine Auflistung-View-Controller")](collection-views-images/collection04vs.png#lightbox)
-1. Steuerelement ziehen über die Schaltfläche mit dem Auflistung View-Controller, und wählen Sie **Push** im Popupmenü: 
+    [![](collection-views-images/collection04vs.png "Eine Auflistung-Ansichtscontroller")](collection-views-images/collection04vs.png#lightbox)
+1. Steuerelement ziehen über die Schaltfläche auf den View-Controller-Auflistung, und wählen Sie **Push** im Popupmenü: 
 
     [![](collection-views-images/collection05vs.png "Wählen Sie im Popupmenü Push")](collection-views-images/collection05vs.png#lightbox)
-1. Wenn die app ausgeführt wird, wird dies stellen die Auflistungsansicht angezeigt werden, sobald der Benutzer die Schaltfläche klickt.
+1. Wenn die app ausgeführt wird, wird diese stellen die Auflistungsansicht angezeigt werden, wenn der Benutzer die Schaltfläche klickt.
 1. Wählen Sie die Auflistungsansicht und klicken Sie in der **Registerkarte "Layout"** von der **Eigenschaften-Explorer** Geben Sie die **Breite** als _361_ und  **Höhe** als _256_ 
-1. Steuert die Größe der einzelnen Zellen und die Rahmenlinien zwischen den Zellen und äußeren Rand der Auflistungsansicht.
-1. Wählen Sie die Collection-View-Controller, und legen Sie die Klasse den `CityCollectionViewController` in der **Registerkarte "Widget"**: 
+1. Steuert die Größe der einzelnen Zellen sowie die Rahmen zwischen den Zellen und die äußeren Rand der Auflistungsansicht.
+1. Wählen Sie den Ansichtscontroller für die Sammlung aus, und legen Sie die Klasse auf `CityCollectionViewController` in die **Widget Registerkarte**: 
 
-    [![](collection-views-images/collection07vs.png "Legen Sie die Klasse den CityCollectionViewController")](collection-views-images/collection07vs.png#lightbox)
-1. Wählen Sie die Auflistungsansicht, und legen Sie die Klasse den `CityCollectionView` in der **Registerkarte "Widget"**: 
+    [![](collection-views-images/collection07vs.png "Legen Sie die Klasse auf CityCollectionViewController")](collection-views-images/collection07vs.png#lightbox)
+1. Wählen Sie die Auflistungsansicht und legen Sie die Klasse auf `CityCollectionView` in die **Widget Registerkarte**: 
 
-    [![](collection-views-images/collection08vs.png "Legen Sie die Klasse den CityCollectionView")](collection-views-images/collection08vs.png#lightbox)
-1. Wählen Sie die Zelle der Auflistung anzeigen, und legen Sie die Klasse den `CityCollectionViewCell` in der **Registerkarte "Widget"**: 
+    [![](collection-views-images/collection08vs.png "Legen Sie die Klasse auf CityCollectionView")](collection-views-images/collection08vs.png#lightbox)
+1. Wählen Sie die Sammlungsansichtszelle und legen Sie die Klasse auf `CityCollectionViewCell` in die **Widget Registerkarte**: 
 
-    [![](collection-views-images/collection09vs.png "Legen Sie die Klasse den CityCollectionViewCell")](collection-views-images/collection09vs.png#lightbox)
-1. In der **Registerkarte "Widget"** sicher, dass die **Layout** ist `Flow` und **Scroll Richtung** ist `Vertical` für die Auflistungsansicht: 
+    [![](collection-views-images/collection09vs.png "Legen Sie die Klasse auf CityCollectionViewCell")](collection-views-images/collection09vs.png#lightbox)
+1. In der **Widget-Registerkarte** sicher, dass die **Layout** ist `Flow` und **Richtung der Bildlauf** ist `Vertical` für die Sammlung an: 
 
-    [![](collection-views-images/collection10vs.png "Registerkarte \"%tdas Widget\"")](collection-views-images/collection10vs.png#lightbox)
-1. Wählen Sie die Zelle der Auflistung anzeigen, und legen seine **Identität** auf `CityCell` in der **Registerkarte "Widget"**: 
+    [![](collection-views-images/collection10vs.png "Registerkarte \"%tdas-Widget\"")](collection-views-images/collection10vs.png#lightbox)
+1. Wählen Sie die Sammlungsansichtszelle und legen Sie seine **Identität** zu `CityCell` in die **Widget Registerkarte**: 
 
     [![](collection-views-images/collection11vs.png "Legen Sie die Identität auf CityCell")](collection-views-images/collection11vs.png#lightbox)
 1. Speichern Sie die Änderungen.
@@ -174,23 +174,23 @@ Führen Sie wir Folgendes:
 
 -----
 
-Wenn wir ausgewählt hatten `Custom` für die Auflistungsansicht **Layout**, hätten wir ein benutzerdefiniertes Layout. Apple bietet eine integrierte `UICollectionViewFlowLayout` und `UICollectionViewDelegateFlowLayout` können problemlos Daten in einem Layout rasterbasierte vorweisen (diese werden verwendet, durch die `flow` Layoutstil). 
+Wenn wir uns entschieden hatte `Custom` für die Auflistungsansicht **Layout**, es wäre möglich gewesen, ein benutzerdefiniertes Layout. Apple bietet eine integrierte `UICollectionViewFlowLayout` und `UICollectionViewDelegateFlowLayout` , die können problemlos präsentieren von Daten in einem Layout mit Raster-basierte (diese werden verwendet, durch die `flow` Layoutstil). 
 
-Weitere Informationen zum Arbeiten mit Storyboards finden Sie unter unsere [Hello tvos. außerdem wurden Quick Start Guide](~/ios/tvos/get-started/hello-tvos.md).
+Weitere Informationen zum Arbeiten mit Storyboards, informieren Sie sich unsere [Hello, TvOS – Kurzanleitung](~/ios/tvos/get-started/hello-tvos.md).
 
 <a name="Providing-Data-for-the-Collection-View" />
 
-## <a name="providing-data-for-the-collection-view"></a>Bereitstellen von Daten für die Auflistungsansicht
+## <a name="providing-data-for-the-collection-view"></a>Bereitstellen von Daten für die Auflistung an
 
-Nachdem wir unsere Auflistungsansicht (und Auflistung View Controller) an unsere Storyboard hinzugefügt haben, müssen wir die Daten für die Sammlung bereitstellen. 
+Nun, da wir unsere Auflistungsansicht (und Sammlungsansichtscontroller) unserer Storyboard hinzugefügt haben, müssen wir die Daten für die Sammlung angeben. 
 
 <a name="The-Data-Model" />
 
 ### <a name="the-data-model"></a>Das Datenmodell
 
-Zunächst werden wir ein Modell für unsere Daten zu erstellen, der den Dateinamen für das anzuzeigende Bild, Titel und ein Flag für das Zulassen der Stadt ausgewählt werden.
+Zunächst werden wir ein Modell für die Daten zu erstellen, enthält den Dateinamen für die anzuzeigende Bild, Titel und einem Flag für das Zulassen der Stadt ausgewählt werden.
 
-Erstellen einer `CityInfo` Klasse, und stellen sie wie folgt aussehen:
+Erstellen Sie eine `CityInfo` Klasse, und stellen sie wie folgt aussehen:
 
 ```csharp
 using System;
@@ -218,9 +218,9 @@ namespace tvCollection
 }
 ```
 
-### <a name="the-collection-view-cell"></a>Die Auflistung Ansicht Zelle
+### <a name="the-collection-view-cell"></a>Die Sammlungsansichtszelle
 
-Nun müssen wir definieren, wie die Daten für jede Zelle angezeigt werden. Bearbeiten der `CityCollectionViewCell.cs` Datei (erstellt für Sie automatisch aus der Storyboard-Datei), und stellen sie wie folgt aussehen:
+Jetzt müssen wir definieren, wie die Daten für jede Zelle dargestellt werden. Bearbeiten der `CityCollectionViewCell.cs` (erstellte Datei für Sie automatisch aus der Storyboard-Datei), und stellen sie wie folgt aussehen:
 
 ```csharp
 using System;
@@ -273,28 +273,28 @@ namespace tvCollection
 }
 ```
 
-Für unsere tvos. außerdem wurden-app werden wir ein Abbild und einen optionalen Titel angezeigt. Wenn der angegebene Ort kann nicht ausgewählt werden, werden wir die Image-Sicht mithilfe des folgenden Codes Abblenden:
+Für unsere TvOS-app werden wir ein Abbild und einen optionalen Titel angezeigt werden. Wenn die angegebene Stadt nicht ausgewählt werden kann, werden wir die Image-Sicht, die mithilfe des folgenden Codes abblendet:
 
 ```csharp
 CityView.Alpha = (City.CanSelect) ? 1.0f : 0.5f;
 ```
 
-Wenn die Zelle mit dem Bild in den Fokus vom Benutzer geschaltet wird, möchten wir die integrierte Parallax Auswirkungen auf die folgende Eigenschaft festlegen:
+Wenn die Zelle mit dem Image im Fokus vom Benutzer aktiviert wird, verwendet werden soll die integrierte Parallaxeneffekt auf die folgende Eigenschaft festlegen:
 
 ```csharp
 CityView.AdjustsImageWhenAncestorFocused = true;
 ```
 
-Weitere Informationen zu navigieren und den Fokus, finden Sie unter unsere [arbeiten mit Navigationsbereich und den Fokus](~/ios/tvos/app-fundamentals/navigation-focus.md) und [Siri Remote und Bluetooth-Controller](~/ios/tvos/platform/remote-bluetooth.md) Dokumentation.
+Weitere Informationen zu Navigation und Fokus, finden Sie unserem [arbeiten mit Navigation und Fokus](~/ios/tvos/app-fundamentals/navigation-focus.md) und [Siri Remote- und Bluetooth-Controller](~/ios/tvos/platform/remote-bluetooth.md) Dokumentation.
 
 
 <a name="The-Collection-View-Data-Provider" />
 
-### <a name="the-collection-view-data-provider"></a>Der Datenanbieter der Auflistung anzeigen
+### <a name="the-collection-view-data-provider"></a>Der Datenanbieter der Sammlung anzeigen
 
-Erstellen Sie mit unseren Datenmodell erstellt und unsere Zelle-Layout definiert eine Datenquelle wir für unsere Auflistungsansicht. Die Datenquelle wird dafür verantwortlich, nicht nur die Daten sichern, sondern auch entfernen die Zellen aus, um die einzelnen Zellen, die auf dem Bildschirm angezeigt werden.
+Erstellen Sie mit unserem Datenmodell erstellt und unsere Zellenlayout definiert eine Datenquelle wir für unsere Auflistungsansicht. Die Datenquelle werden dafür verantwortlich, nicht nur die dahinterliegenden Daten, sondern auch dabei die Zellen für die einzelnen Zellen, die auf dem Bildschirm angezeigt.
 
-Erstellen einer `CityViewDatasource` Klasse, und stellen sie wie folgt aussehen:
+Erstellen Sie eine `CityViewDatasource` Klasse, und stellen sie wie folgt aussehen:
 
 ```csharp
 using System;
@@ -387,13 +387,13 @@ namespace tvCollection
 }
 ```
 
-Können Sie diese Klasse im Detail untersuchen. Erstens wir Vererben `UICollectionViewDataSource` , und geben Sie eine Verknüpfung auf die Zellen-ID (die wir in der iOS-Designer zugewiesen):
+Lassen Sie diese Klasse im Detail ansehen. Zunächst wir erben `UICollectionViewDataSource` , und geben Sie eine Verknüpfung auf die Zellen-ID (die wir im iOS-Designer zugewiesen):
 
 ```csharp
 public static NSString CardCellId = new NSString ("CityCell");
 ```
 
-Als Nächstes geben Sie Speicher für unsere Sammlungsdaten und geben Sie eine Klasse zum Auffüllen der Daten:
+Als Nächstes Bereitstellen von Speicher für unsere Daten und geben Sie eine Klasse, um die Daten zu füllen:
 
 ```csharp
 public List<CityInfo> Cities { get; set; } = new List<CityInfo>();
@@ -411,7 +411,7 @@ public void PopulateCities() {
 }
 ```
 
-Wir überschreiben die `NumberOfSections` -Methode und der Rückgabewert die Anzahl der Abschnitte (Gruppen von Elementen), die die Auflistung anzeigen ist. In diesem Fall besteht nur ein:
+Wir überschreiben die `NumberOfSections` Methode, und geben die Anzahl von Abschnitten (Gruppen von Elementen), die die Sammlung anzeigen. In diesem Fall besteht nur ein:
 
 ```csharp
 public override nint NumberOfSections (UICollectionView collectionView)
@@ -420,7 +420,7 @@ public override nint NumberOfSections (UICollectionView collectionView)
 }
 ```
 
-Als Nächstes geben wir die Anzahl der Elemente in der Auflistung mithilfe des folgenden Codes zurück:
+Als Nächstes geben wir die Anzahl der Elemente in der Sammlung, die mithilfe des folgenden Codes zurück:
 
 ```csharp
 public override nint GetItemsCount (UICollectionView collectionView, nint section)
@@ -429,7 +429,7 @@ public override nint GetItemsCount (UICollectionView collectionView, nint sectio
 }
 ```
 
-Schließlich dequeue wir eine wieder verwendbare Zelle aus, wenn die Auflistungsansicht anfordern, durch den folgenden Code:
+Abschließend entfernen wir eine wieder verwendbare Zelle, wenn die Auflistungsansicht anfordern, mit dem folgenden Code:
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)
@@ -444,31 +444,31 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 }
 ```
 
-Nach dem erhalten wir eine Auflistung Ansicht Zelle unserer `CityCollectionViewCell` Typ, wir weisen Sie ihm das angegebene Element.
+Nachdem wir einer Sammlungsansichtszelle von erhalten unsere `CityCollectionViewCell` Typ wir füllen Sie es mit dem angegebenen Element.
 
 <a name="Responding-to-User-Events" />
 
-## <a name="responding-to-user-events"></a>Reagieren auf Ereignisse
+## <a name="responding-to-user-events"></a>Reaktion auf Benutzerereignisse
 
-Da wir die Benutzer können aus der Auflistung ein Element ausgewählt werden soll, müssen wir Bereitstellen einer Sammlung anzeigen-Delegat, der diese Interaktion zu behandeln. Und es müssen zur Verfügung zu stellen eine Möglichkeit, können unsere aufrufende Sicht wissen, welches Element der Benutzer ausgewählt hat.
+Da soll den Benutzer ein Element aus die Sammlung auswählen können, müssen wir eine Sammlung anzeigen-Delegat, der diese Interaktion bereitstellen. Und wir müssen angeben, dass eine Möglichkeit, können unsere aufrufende Ansicht, die die Benutzer wissen, welches Element ausgewählt wurde.
 
 <a name="The-App-Delegate" />
 
 ### <a name="the-app-delegate"></a>Der App-Delegat
 
-Wir benötigen eine Möglichkeit, das aktuell ausgewählte Element aus der Auflistungsansicht zurück an die aufrufende Sicht beziehen. Wir werden eine benutzerdefinierte Eigenschaft wird auf mithilfe unserer `AppDelegate`. Bearbeiten der `AppDelegate.cs` Datei, und fügen Sie den folgenden Code hinzu:
+Wir benötigen eine Möglichkeit, das aktuell ausgewählte Element aus der Auflistungsansicht zurück an die aufrufende Sicht zu verbinden. Wir verwenden eine benutzerdefinierte Eigenschaft auf unsere `AppDelegate`. Bearbeiten der `AppDelegate.cs` Datei, und fügen Sie den folgenden Code hinzu:
 
 ```csharp
 public CityInfo SelectedCity { get; set;} = new CityInfo("City02.jpg", "Turning Circle", true);
 ```
 
-Definiert die Eigenschaft, und legt die Standard-Stadt, die anfänglich angezeigt wird. Später werden wir diese Eigenschaft, um die Auswahl des Benutzers anzeigen und auswählen zu ändernden ermöglichen nutzen.
+Dies definiert die Eigenschaft, und legt die Standard-Stadt, die anfänglich angezeigt wird. Später werden wir nutzen, diese Eigenschaft zum Anzeigen von der Auswahl des Benutzers ein, und wählen Sie aus, die geändert werden können.
 
 <a name="The-Collection-View-Delegate" />
 
 ### <a name="the-collection-view-delegate"></a>Der Delegat der Auflistung anzeigen
 
-Als Nächstes fügen Sie einen neuen `CityViewDelegate` -Klasse auf das Projekt, und stellen sie wie folgt aussehen:
+Als Nächstes fügen Sie einen neuen `CityViewDelegate` Klasse dem Projekt, und stellen sie wie folgt aussehen:
 
 
 ```csharp
@@ -523,9 +523,9 @@ namespace tvCollection
 }
 ```
 
-Werfen Sie näher auf diese Klasse an. Erstens wir Vererben `UICollectionViewDelegateFlowLayout`. Der Grund für die wir von dieser Klasse erben und nicht die `UICollectionViewDelegate` ist, dass wir die integrierte verwenden `UICollectionViewFlowLayout` unsere Elemente und nicht auf ein benutzerdefiniertes Layout-Typ darstellen.
+Werfen Sie einen genaueren Blick auf diese Klasse an. Zunächst wir erben `UICollectionViewDelegateFlowLayout`. Der Grund, die wir von dieser Klasse erben und nicht die `UICollectionViewDelegate` ist die Verwendung der integriertes `UICollectionViewFlowLayout` , unsere Elemente und nicht der Typ ein benutzerdefiniertes Layout zu präsentieren.
 
-Als Nächstes geben wir die Größe der einzelnen Elemente, die Verwendung dieses Codes zurück:
+Kehren wir die Größe für die einzelnen Elemente, die mit dem folgenden Code:
 
 ```csharp
 public override CGSize GetSizeForItem (UICollectionView collectionView, UICollectionViewLayout layout, NSIndexPath indexPath)
@@ -534,7 +534,7 @@ public override CGSize GetSizeForItem (UICollectionView collectionView, UICollec
 }
 ```
 
-Wir entscheiden dann, wenn eine Zelle den Fokus mithilfe des folgenden Codes abrufen kann: 
+Klicken Sie dann entscheiden wir, wenn eine bestimmte Zelle den Fokus mithilfe des folgenden Codes abrufen kann: 
 
 ```csharp
 public override bool CanFocusItem (UICollectionView collectionView, NSIndexPath indexPath)
@@ -548,9 +548,9 @@ public override bool CanFocusItem (UICollectionView collectionView, NSIndexPath 
 }
 ```
 
-Wir prüfen, um festzustellen, ob es sich bei ein bestimmter Teil der dahinter liegende Daten hat seine `CanSelect` Flag festgelegt, um `true` und gibt diesen Wert zurück. Weitere Informationen zu navigieren und den Fokus, finden Sie unter unsere [arbeiten mit Navigationsbereich und den Fokus](~/ios/tvos/app-fundamentals/navigation-focus.md) und [Siri Remote und Bluetooth-Controller](~/ios/tvos/platform/remote-bluetooth.md) Dokumentation.
+Wir überprüfen, um festzustellen, ob eine bestimmte Sicherung Daten hat seine `CanSelect` Flag festgelegt, um `true` und gibt diesen Wert zurück. Weitere Informationen zu Navigation und Fokus, finden Sie unserem [arbeiten mit Navigation und Fokus](~/ios/tvos/app-fundamentals/navigation-focus.md) und [Siri Remote- und Bluetooth-Controller](~/ios/tvos/platform/remote-bluetooth.md) Dokumentation.
 
-Schließlich Antworten es dem Benutzer das Auswählen eines Elements durch den folgenden Code:
+Zum Schluss reagieren wir auf den Benutzer, die Auswahl eines Elements mit den folgenden Code:
 
 ```csharp
 public override void ItemSelected (UICollectionView collectionView, NSIndexPath indexPath)
@@ -563,13 +563,13 @@ public override void ItemSelected (UICollectionView collectionView, NSIndexPath 
 }
 ```
 
-Legen wir den `SelectedCity` Eigenschaft unsere `AppDelegate` auf das Element, dass der Benutzer ausgewählt, und wir schließen die Collection-View-Controller Rückgabe an die Sicht, die uns aufgerufen. Wir noch keinen definiert die `ParentController` -Eigenschaft noch unser Auflistungsansicht können wir erledigen, weiter.
+Hier legen wir die `SelectedCity` Eigenschaft unserer `AppDelegate` auf das Element, dass vom Benutzer ausgewählten wir schließen und den Ansichtscontroller-Auflistung, an die Ansicht, die uns aufgerufen. Wir noch nicht definiert die `ParentController` Eigenschaft noch unsere Auflistungsansicht, machen wir also weiter.
 
 <a name="Configuring-the-Collection-View" />
 
 ## <a name="configuring-the-collection-view"></a>Konfigurieren die Auflistungsansicht
 
-Nun müssen wir unsere Auflistungsansicht bearbeiten, und weisen Sie unsere Datenquelle und Delegaten. Bearbeiten der `CityCollectionView.cs` (automatisch für uns erstellt aus unserem Storyboard) Datei, und stellen sie wie folgt aussehen:
+Nun müssen wir unsere Auflistungsansicht bearbeiten, und weisen Sie unsere Datenquelle und den Delegaten. Bearbeiten der `CityCollectionView.cs` Datei (für uns erstellt automatisch aus unserer Storyboard), und stellen sie wie folgt aussehen:
 
 ```csharp
 using System;
@@ -631,7 +631,7 @@ namespace tvCollection
 }
 ```
 
-Wir geben Sie zuerst eine Verknüpfung zum Zugriff auf unsere `AppDelegate`: 
+Zunächst bieten wir eine Verknüpfung zum Zugriff auf unsere `AppDelegate`: 
 
 ```csharp
 public static AppDelegate App {
@@ -639,7 +639,7 @@ public static AppDelegate App {
 }
 ```
 
-Als Nächstes stellen wir eine Verknüpfung, die Auflistungsansicht Datenquelle sowie eine Eigenschaft, um Zugriff auf die Auflistung-View-Controller (durch unsere oben Delegaten, um die Auflistung zu schließen, wenn der Benutzer eine Auswahl trifft verwendet):
+Anschließend geben wir eine Verknüpfung, die Auflistungsansicht Datenquelle sowie eine Eigenschaft, auf der Sammlung-View-Controller (durch unsere Delegaten, der oben genannten um der Auflistung zu schließen, wenn der Benutzer eine Auswahl trifft verwendet):
 
 ```csharp
 public CityViewDatasource Source {
@@ -649,7 +649,7 @@ public CityViewDatasource Source {
 public CityCollectionViewController ParentController { get; set;}
 ```
 
-Verwenden Sie dann den folgenden Code zum Initialisieren der Auflistungsansicht und weisen Sie unsere Zellenklasse, Datenquelle und Delegaten:
+Anschließend verwenden wir den folgenden Code die Auflistungsansicht zu initialisieren und weisen Sie den Cell-Klasse, die Datenquelle und den Delegaten:
 
 ```csharp
 public CityCollectionView (IntPtr handle) : base (handle)
@@ -661,7 +661,7 @@ public CityCollectionView (IntPtr handle) : base (handle)
 }
 ```
 
-Zum Schluss möchten wir den Titel unter dem Bild nur angezeigt werden, sobald der Benutzer hervorgehoben ist (bildschärfenmodus). Wir führen, die durch den folgenden Code:
+Schließlich möchten wir den Titel aus, unter dem Bild nur angezeigt werden, wenn der Benutzer die Markierung hat (bildschärfenmodus). Hierzu verwenden Sie den folgenden Code:
 
 ```csharp
 public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimationCoordinator coordinator)
@@ -682,14 +682,14 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 }
 ```
 
-Wir setzen die Transparence des vorherigen Elements Fokus um NULL (0), und die Transparence des nächsten Elements erhalten, den Fokus auf 100 %. Dieser Übergang abrufen sowie animiert.
+Legen wir die Transparence des vorherigen Elements, das den Fokus, wenn Sie NULL (0), und die Transparence des nächsten Elements erhalten, den Fokus auf 100 %. Dieser Übergang zu erhalten sowie animiert.
 
 
-## <a name="configuring-the-collection-view-controller"></a>Konfigurieren der Sammlung-View-Controller
+## <a name="configuring-the-collection-view-controller"></a>Konfigurieren des Sammlung-View-Controllers
 
-Nun müssen wir die endgültige Konfiguration auf unserem Auflistungsansicht ausführen und ermöglichen den Controller aus, um die Eigenschaft festgelegt, die es definiert wurden, sodass die Auflistungsansicht geschlossen werden kann, nachdem der Benutzer eine Auswahl trifft.
+Nun müssen wir die endgültige Konfiguration auf unserem Auflistungsansicht und dass der Controller zum Festlegen der Eigenschaft, die wir definiert werden, damit die Auflistungsansicht geschlossen werden kann, nachdem der Benutzer eine Auswahl trifft.
 
-Bearbeiten der `CityCollectionViewController.cs` (aus unserem Storyboard automatisch erstellte) Datei, und stellen sie wie folgt aussehen:
+Bearbeiten der `CityCollectionViewController.cs` (automatisch aus unserer Storyboard erstellte) Datei, und stellen sie wie folgt aussehen:
 
 ```csharp
 // This file has been autogenerated from a class added in the UI designer.
@@ -731,9 +731,9 @@ namespace tvCollection
 
 ## <a name="putting-it-all-together"></a>Alles zusammenführen 
 
-Nun mit dem alle Teile zusammengestellt zum Auffüllen und unsere Auflistungsansicht steuern wir die letzten Änderungen an unseren Hauptansicht für alles, was das Zusammenführen vornehmen müssen.
+Nun, da wir alle haben Teile zusammengestellt, die zum Auffüllen und unsere Auflistungsansicht steuern muss, die letzten Änderungen zu unserer wichtigsten, um alles vereinen zu können.
 
-Bearbeiten der `ViewController.cs` (aus unserem Storyboard automatisch erstellte) Datei, und stellen sie wie folgt aussehen:
+Bearbeiten der `ViewController.cs` (automatisch aus unserer Storyboard erstellte) Datei, und stellen sie wie folgt aussehen:
 
 ```csharp
 using System;
@@ -784,7 +784,7 @@ namespace MySingleView
 }
 ```
 
-Der folgende Code zeigt Anfangs an das ausgewählte Element aus der `SelectedCity` Eigenschaft von der `AppDelegate` und wird es erneut angezeigt, wenn der Benutzer eine Auswahl aus der Auflistungsansicht erzielt hat:
+Der folgende Code zeigt anfänglich das ausgewählte Element aus der `SelectedCity` Eigenschaft der `AppDelegate` und zeigt es, wenn der Benutzer eine Auswahl aus der Auflistung an vorgenommen hat:
 
 ```csharp
 public override void ViewWillAppear (bool animated)
@@ -800,36 +800,36 @@ public override void ViewWillAppear (bool animated)
 
 <a name="Testing-the-app" />
 
-## <a name="testing-the-app"></a>Testen der app
+## <a name="testing-the-app"></a>Testen der App
 
-Wenn Sie beim Erstellen und die Anwendung ausführen, wird die Hauptansicht alles vorhanden mit dem Standard-Ort angezeigt:
+Wenn Sie beim Erstellen und führen Sie die app wird die Hauptansicht nach Abschluss der Vorbereitung mit dem standardmäßigen Ort angezeigt:
 
-[![](collection-views-images/run01.png "Der Hauptbildschirm")](collection-views-images/run01.png#lightbox)
+[![](collection-views-images/run01.png "Hauptbildschirm")](collection-views-images/run01.png#lightbox)
 
 Wenn der Benutzer auf die **wählen Sie eine Ansicht** Schaltfläche, die Auflistungsansicht wird angezeigt:
 
 [![](collection-views-images/run02.png "Die Auflistungsansicht")](collection-views-images/run02.png#lightbox)
 
-Jeder Ort, den hat seine `CanSelect` -Eigenschaftensatz auf `false` angezeigt abgeblendet ist und der Benutzer wird nicht in der Lage, den Fokus auf den sie festgelegt. Wenn der Benutzer ein Element hervorgehoben (Stellen sie in den Fokus hat) der Titel angezeigt wird und sie können den Effekt Parallax Besonderheit Neigung das Bild in 3D.
+Jede Stadt, die die `CanSelect` -Eigenschaft auf festgelegt `false` erscheint abgeblendet ist und der Benutzer wird nicht in der Lage, den Fokus festgelegt. Wenn der Benutzer ein Element hervorgehoben (Stellen sie im Fokus) der Titel angezeigt wird, und sie können den Parallaxeneffekt, Besonderheit Neigung das Bild in 3D.
 
-Klickt der Benutzer ein Bild auswählen, wird die Auflistungsansicht wird geschlossen, und die Hauptansicht wird erneut angezeigt, mit dem neuen Image:
+Klickt der Benutzer eine wählen Sie das Abbild, die Auflistungsansicht wird geschlossen, und die Hauptansicht wird mit dem neuen Image erneut angezeigt:
 
 [![](collection-views-images/run03.png "Ein neues Image auf dem Startbildschirm")](collection-views-images/run03.png#lightbox)
 
 <a name="Creating-Custom-Layout-and-Reordering-Items" />
 
-## <a name="creating-custom-layout-and-reordering-items"></a>Erstellen benutzerdefinierte Layouts und Neuanordnen von Elementen
+## <a name="creating-custom-layout-and-reordering-items"></a>Erstellen von benutzerdefinierten Layouts und neuanordnung von Elementen
 
-Einer der wichtigsten Funktionen der Verwendung einer Auflistungsansicht ist die Fähigkeit zum Erstellen von benutzerdefinierten Layouts. Da tvos. außerdem wurden von iOS erbt, ist der Prozess zum Erstellen eines benutzerdefinierten Layouts identisch. Finden Sie in unserem [Einführung zu Auflistungsansichten](~/ios/user-interface/controls/uicollectionview.md) Dokumentation weitere Informationen.
+Einer der wichtigsten Features der Verwendung einer Auflistungsansicht ist die Möglichkeit, benutzerdefinierte Layouts zu erstellen. Da TvOS iOS erbt, ist der Prozess zum Erstellen eines benutzerdefinierten Layouts identisch. Informieren Sie sich unsere [Einführung in die Auflistungsansichten](~/ios/user-interface/controls/uicollectionview.md) finden Sie Dokumentation.
 
-Vor kurzem für iOS zu Auflistungsansichten hinzugefügt wurde 9 die Möglichkeit, leicht ermöglichen die neuanordnung von Elementen in der Auflistung. Erneut, da tvos. außerdem wurden 9 eine Teilmenge von iOS 9 ist, dies wird diese gleiche Weise. Finden Sie in unserer [Ansicht Sammlungsänderungen](~/ios/user-interface/controls/uicollectionview.md) Dokument Weitere Informationen.
+Vor kurzem für iOS zu Auflistungsansichten hinzugefügt wurde 9 die Möglichkeit, ermöglichen die neuanordnung von Elementen in der Auflistung. In diesem Fall da TvOS 9 eine Teilmenge von iOS 9 ist, dies erfolgt diese genauso. Informieren Sie sich unsere [Auflistung anzeigen von Änderungen](~/ios/user-interface/controls/uicollectionview.md) Dokument Weitere Informationen.
 
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden behandelt, Entwerfen und Arbeiten mit Auflistungsansichten innerhalb einer Xamarin.tvOS-app. Zuerst erläutert alle Elemente, aus denen die Auflistungsansicht besteht. Als Nächstes wurde es gezeigt, wie entwerfen und Implementieren einer Auflistungsansicht mithilfe eines Storyboards. Schließlich wird Links zu Informationen zum Erstellen von benutzerdefinierten Layouts und Neuanordnen von Elementen bereitgestellt.
+In diesem Artikel wurden behandelt, Entwerfen und Arbeiten mit Auflistungsansichten in ein Xamarin.tvOS-app. Zuerst erläutert alle Elemente, aus denen die Auflistungsansicht besteht. Als Nächstes wird aufgezeigt, wie Sie entwerfen und implementieren eine Auflistungsansicht mit einem Storyboard. Schließlich wird Links zu Informationen bereitgestellt, auf das Erstellen von benutzerdefinierten Layouts und neuanordnung von Elementen.
 
 
 
@@ -837,5 +837,5 @@ In diesem Artikel wurden behandelt, Entwerfen und Arbeiten mit Auflistungsansich
 
 - [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvos. außerdem wurden Handbücher für interaktive Workflowdienste-Schnittstelle](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [App-Programmierhandbuch für tvos. außerdem wurden](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [TvOS Human Interface-Handbücher](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [App-Programmierhandbuch für tvos verwendet.](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

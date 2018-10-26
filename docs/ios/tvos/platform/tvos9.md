@@ -1,36 +1,36 @@
 ---
-title: Einführung in die tvos. außerdem wurden 9
-description: In diesem Artikel werden alle neuen und geänderten-APIs und in tvos. außerdem wurden 9 verfügbaren Funktionen für Entwickler Xamarin.tvOS eingeführt.
+title: Einführung in TvOS 9
+description: Dieser Artikel enthält alle neuen und geänderten APIs und in TvOS 9 verfügbaren Features für Entwickler mit Xamarin.tvOS.
 ms.prod: xamarin
 ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: c3c278666c5d57d00b4038ae6d3f2d7925e88537
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: dda197f71b2a2ab3e0d61a838ab85d79b7a078c7
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789023"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104309"
 ---
-# <a name="introduction-to-tvos-9"></a>Einführung in die tvos. außerdem wurden 9
+# <a name="introduction-to-tvos-9"></a>Einführung in TvOS 9
 
-_In diesem Artikel werden alle neuen und geänderten-APIs und in tvos. außerdem wurden 9 verfügbaren Funktionen für Entwickler Xamarin.tvOS eingeführt._
+_Dieser Artikel enthält alle neuen und geänderten APIs und in TvOS 9 verfügbaren Features für Entwickler mit Xamarin.tvOS._
 
-Apple hat die 4. Generierung von Apple TV-Hardware, wenn Sie eine überarbeitete, Touch-Enable Remote herausstellen, denen das neue Betriebssystem für tvos. außerdem wurden (basierend auf iOS 9) veröffentlicht.
+Apple hat die 4. Generation von Apple TV-Hardware, eine neu gestaltete, Touch-Enable Remote featuring, denen das neue TvOS-Betriebssystem (basierend auf iOS 9) veröffentlicht.
 
-Zum ersten Mal öffnet tvos. außerdem wurden die Apple TV-Plattform für den Entwickler, und Sie können umfangreiche, faszinierend apps erstellen und über den integrierten Fernseher Apple App Store in einem Prozess, der den Funktionen schreiben und Freigeben von apps für iOS mit iTunes App freigeben Speicher.
+Zum ersten Mal öffnet TvOS für Apple TV-Plattform, für den Entwickler, sodass Sie zum Erstellen umfassender, immersiver apps und über die integrierte App-Store von Apple TV in einem Prozess, der den Funktionen schreiben und Freigeben von apps für iOS mithilfe des iTunes App freigeben Store.
 
-Wenn Sie bei der Entwicklung von Xamarin.iOS vertraut sind, sollten Sie den Übergang zu tvos. außerdem wurden relativ einfach suchen. Die meisten APIs und -Funktionen sind identisch, allerdings viele gängige APIs (z. B. WebKit) nicht verfügbar sind. Darüber hinaus arbeiten mit den mit der Remoteinstanz Siri bringt Entwurf, die nicht in Touchscreen basierend iOS-Geräte vorhanden sind.
+Wenn Sie mit der Xamarin.iOS-Entwicklung vertraut sind, sollten Sie den Übergang tvos recht einfach suchen. Die meisten APIs und Features sind identisch, allerdings sind viele allgemeine APIs (z. B. WebKit) nicht verfügbar. Darüber hinaus arbeiten mit der mit dem Remoterepository Siri bringt Entwurf, die nicht in Touchscreen-basierte iOS-Geräte vorhanden sind.
 
-Dieses Handbuch erhalten eine Einführung in alle neuen und geänderten-APIs und in tvos. außerdem wurden 9 verfügbaren Funktionen für Entwickler Xamarin.tvOS. Weitere Informationen zu tvos. außerdem wurden, finden Sie im Apple [entwickeln für die neue Apple TV](https://developer.apple.com/tvos/) Dokumentation.
+Dieses Handbuch erhalten eine Einführung in alle der neuen und geänderten APIs und in TvOS 9 verfügbaren Features für Entwickler mit Xamarin.tvOS. Weitere Informationen unter TvOS finden Sie unter Apple [entwickeln für die neue Apple TV](https://developer.apple.com/tvos/) Dokumentation.
 
 <a name="Supported-and-Unsupported-Capabilities" />
 
 ## <a name="supported-and-unsupported-capabilities"></a>Unterstützte und nicht unterstützte Funktionen
 
-tvos. außerdem wurden-apps, die auf den Apple TV ausgeführt haben und Funktionen Folgendes unterstützt:
+TvOS-apps für Apple TV haben die folgenden Features und Funktionen unterstützt:
 
  - App-Gruppen
  - Hintergrundmodi
@@ -38,13 +38,13 @@ tvos. außerdem wurden-apps, die auf den Apple TV ausgeführt haben und Funktion
  - Game Center
  - Gamecontroller
  - iCloud
- - In App-Käufe
+ - In-App-Käufe
  - Keychain-Freigabe
 
 Die folgenden Features und Funktionen werden nicht unterstützt:
 
  - Apple Pay
- - App-Sandkasten
+ - App-Sandbox
  - Zugehörige Domänen
  - HealthKit
  - HomeKit
@@ -55,29 +55,29 @@ Die folgenden Features und Funktionen werden nicht unterstützt:
  - Wallet
  - Konfiguration für drahtloses Zubehör
 
-Finden Sie in unserer [unterstützt Assemblys](~/ios/tvos/internals/assemblies.md) und [unterstützt Frameworks](~/ios/tvos/internals/frameworks.md) Dokumentation weitere Informationen.
+Informieren Sie sich unsere [Assemblys unterstützt](~/ios/tvos/internals/assemblies.md) und [Frameworks unterstützt](~/ios/tvos/internals/frameworks.md) finden Sie Dokumentation.
 
 <a name="Apple-TV-Hardware" />
 
 ## <a name="apple-tv-hardware"></a>Apple TV-Hardware
 
-Die neue Apple TV gelten die folgenden Hardwarespezifikationen:
+Neue Apple TV hat die folgenden Hardwarespezifikationen:
 
  - 64-Bit-A8-Prozessor
- - 32GB und 64GB Speicher
+ - 32GB- oder 64GB Speicher
  - 2GB RAM
  - 10/100 Mbit/s Ethernet
  - WiFi-802.11a/b/g/n/ac
  - Auflösung von 1080p
  - HDMI
- - USB-C-Anschluss (für Entwickler und nur der Diagnose verwenden)
- - Neue Siri Remote oder Apple TV Remote (basierend auf Region)
+ - USB-C-Anschluss (für Entwickler und nur für die Diagnose Verwendung)
+ - Neue Siri am Remote- oder Apple TV-Remoteserver (basierend auf Region)
 
-### <a name="siri-remote"></a>Siri Remote
+### <a name="siri-remote"></a>Siri-Remote
 
-Anhand des Bereichs, der angegebenen Apple TV-Remote geschaltet in Konfigurationen mit einem: Siri Remote- oder Apple TV-Remote.
+Basierend auf der Region, das angegebene Apple TV-Remote kommen in Konfigurationen mit einem: Siri Remote oder Apple TV-Remoteserver.
 
-Siri Remote ist in den folgenden Ländern verfügbar:
+Siri Remote ist in den folgenden Ländern zurzeit verfügbar:
 
  - Australien
  - Kanada
@@ -88,93 +88,93 @@ Siri Remote ist in den folgenden Ländern verfügbar:
  - Vereinigtes Königreich
  - USA
 
-Alle anderen Ländern werden der Apple TV-Remote angezeigt, die die Schaltfläche "Siri" mit einer Schaltfläche "Suchen", die von der Standardbildschirm für die Suche mit Texteingabe ersetzt für die Suche wird:
+Alle anderen Länder erhalten der Remotecomputer Apple TV, das die Schaltfläche "Siri" mit einer Schaltfläche "Suchen", die Sie dem Standardbildschirm für die Suche mit der Texteingabe ersetzt für die Suche bietet:
 
-[![](tvos9-images/remote02.png "Siri Remote")](tvos9-images/remote02.png#lightbox)
+[![](tvos9-images/remote02.png "Siri-Remote")](tvos9-images/remote02.png#lightbox)
 
-Weitere Informationen finden Sie unter unsere [Siri Remote und Bluetooth-Controller](~/ios/tvos/platform/remote-bluetooth.md) Dokumentation.
+Weitere Informationen finden Sie unserem [Siri Remote- und Bluetooth-Controller](~/ios/tvos/platform/remote-bluetooth.md) Dokumentation.
 
 <a name="Apple-TV-Provisioning" />
 
 ## <a name="apple-tv-provisioning"></a>Apple TV-Bereitstellung
 
-Genau wie für iOS entwickeln, ist die neue tvos. außerdem wurden die richtigen Bereitstellungsprofil für Entwicklung und Verteilung basierend auf dem die Team-Mitgliedschaft und Signieren von Identitäten, die Sie bereits eingerichtet haben bei Apple erforderlich.
+Genau wie für iOS entwickeln, ist die neue TvOS das korrekte Bereitstellungsprofil für die Entwicklung und Verteilung auf Basis der Teammitgliedschaft und Signierungsidentitäten, die Sie bereits eingerichtet haben bei Apple erforderlich.
 
-Es ist auch erforderlich, tvos. außerdem wurden Funktionen wie iCloud KVS oder CloudKit Datenspeicher zugreifen, ordnungsgemäße Bereitstellung. Finden Sie in unserer [Ressourcen und Datenspeicher](~/ios/tvos/app-fundamentals/resources-data-storage.md) Informationen zur Unterstützung von iCloud in Ihren apps Xamarin.tvOS.
+Es ist auch erforderlich, die TvOS-Funktionen wie iCloud KVS oder CloudKit-Datenspeicher zugreifen, ordnungsgemäße Bereitstellung. Informieren Sie sich unsere [Ressourcen und Datenspeicher](~/ios/tvos/app-fundamentals/resources-data-storage.md) Informationen zur Unterstützung von iCloud in Ihren apps Xamarin.tvOS.
 
-Provisioning Profiles werden erstellt und installiert die gleiche Weise wie das Arbeiten mit Xamarin.iOS-apps. Daher finden Sie in unserer iOS [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md) Weitere Einzelheiten s. Dokumentation.
+Bereitstellungsprofile erstellt und installiert die gleiche Weise wie das Arbeiten mit Xamarin.iOS-apps. Daher finden Sie in unserem iOS [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md) Dokumentation.
 
 <a name="Apple-TV-Apps" />
 
 ## <a name="apple-tv-apps"></a>Apple TV-Apps
 
-Die neue Apple TV-Hardware und tvos. außerdem wurden 9 unterstützt zwei Arten von apps: herkömmliche und Client / Server-apps.
+Die neue Apple TV-Hardware und TvOS 9 unterstützt zwei Arten von apps: herkömmliche und Client / Server-apps.
 
 <a name="Traditional-Apps" />
 
-### <a name="traditional-apps"></a>Herkömmliche-Apps
+### <a name="traditional-apps"></a>Herkömmliche Apps
 
-Herkömmliche apps werden aus dem Apple TV-App-Store erworben und direkt auf dem Gerät installiert sind. Spiele, Hilfsprogramme oder Media-apps, die mit dem gleichen Frameworks und Techniken Xamarin.iOS apps entwickelt wurden, können diese apps werden.
+Herkömmliche apps werden aus dem Apple TV App Store erworben und direkt auf dem Gerät installiert sind. Diese apps möglich, Spiele, Hilfsprogramme oder Media-apps, die mit die gleichen Frameworks und Techniken wie Xamarin.iOS-apps entwickelt werden.
 
-Apple TV-apps haben eine maximale Größe von 200MB und eine zusätzliche 2GB von Inhalten mithilfe von On-Demand-Ressourcen herunterladen können. Finden Sie in unserem [Ressourcen und Datenspeicher](~/ios/tvos/app-fundamentals/resources-data-storage.md) für Weitere Informationen.
+Apple TV-apps haben eine maximale Größe von 200MB und Herunterladen von Inhalten mithilfe von On-Demand-Ressourcen zusätzlich 2GB. Informieren Sie sich unsere [Ressourcen und Datenspeicher](~/ios/tvos/app-fundamentals/resources-data-storage.md) für Weitere Informationen.
 
-Finden Sie in unserer [Hello tvos. außerdem wurden Quick Start Guide](~/ios/tvos/get-started/hello-tvos.md) mit den Tools und Konzepten erforderlich, um mit Xamarin.tvOS tvos. außerdem wurden-apps entwickeln vertraut.
+Finden Sie in unserem [Hello, TvOS – Kurzanleitung](~/ios/tvos/get-started/hello-tvos.md) vertraut mit den Tools und Konzepte erforderlich, um mit Xamarin.tvOS TvOS-apps entwickeln.
 
 <a name="Summary" />
 
 ### <a name="client-server-apps"></a>Client / Server-Apps
 
-Zusätzlich zu den installierten apps herkömmlichen erleichtert Apple TV Clientserver webbasierte Medien-streaming-apps mithilfe von webtechnologien ("HTTPS", "XML" und "JavaScript") zu erstellen. Sie entwerfen die Benutzeroberfläche mithilfe von Apple TVML Markupsprache und JavaScript verwenden, um die app-Verhalten, die mithilfe von TVMLKit zu definieren.
+Zusätzlich zu der herkömmlichen installierten apps erleichtert Apple TV zum Erstellen von webbasierten Client / Server-Medien-streaming-apps mithilfe von webtechnologien ("HTTPS", "XML" und "JavaScript"). Sie entwerfen die Benutzeroberfläche von Apple TVML Markupsprache mit und Verwenden von JavaScript zum Definieren eines TVMLKit mithilfe der app-Verhaltens.
 
-Weitere Informationen finden Sie in der Apple- [Apple TV Markup Language Reference](https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/index.html#//apple_ref/doc/uid/TP40015064), [TVJS Frameworkverweis](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLJS/Reference/TVJSFrameworkReference/index.html#//apple_ref/doc/uid/TP40016076), [TVMLKit Frameworkverweis](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLKit/Reference/TVMLKit_Collection/index.html#//apple_ref/doc/uid/TP40016429), [zu HTTP-Livestreaming](https://developer.apple.com/library/prerelease/tvos/referencelibrary/GettingStarted/AboutHTTPLiveStreaming/about/about.html#//apple_ref/doc/uid/TP40013978) und [Authoring HLS-Spezifikation für App TV](https://developer.apple.com/services-account/download?path=/Documentation/HLS_Authoring_Specification_for_Apple_TV/HLS_Authoring_Specification_for_Apple_TV.pdf) Dokumentation.
+Weitere Informationen finden Sie unter Apple [Apple TV-Markupsprachreferenz](https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/index.html#//apple_ref/doc/uid/TP40015064), [TVJS Frameworkverweis](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLJS/Reference/TVJSFrameworkReference/index.html#//apple_ref/doc/uid/TP40016076), [TVMLKit Frameworkverweis](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLKit/Reference/TVMLKit_Collection/index.html#//apple_ref/doc/uid/TP40016429), [zu HTTP Live Streaming](https://developer.apple.com/library/prerelease/tvos/referencelibrary/GettingStarted/AboutHTTPLiveStreaming/about/about.html#//apple_ref/doc/uid/TP40013978) und [HLS Authoring-Spezifikation für Apple TV](https://developer.apple.com/services-account/download?path=/Documentation/HLS_Authoring_Specification_for_Apple_TV/HLS_Authoring_Specification_for_Apple_TV.pdf) Dokumentation.
 
 <a name="User-Interface-Challenges" />
 
-## <a name="user-interface-challenges"></a>Benutzer-Schnittstelle Herausforderungen
+## <a name="user-interface-challenges"></a>Herausforderungen für Benutzer-Schnittstelle
 
-Im Gegensatz zu iOS und OS X die Apple TV kein Touchscreen oder eine Maus, mit denen den Benutzer direkt auswählen und eine app oder ihr Inhalt interagieren können. Stattdessen diese Benutzer neue Siri Remoteinstanz oder einen Bluetooth-Game-Controller, um einer app-Benutzeroberfläche zu navigieren. Weitere Informationen finden Sie unter unsere [Siri Remote und Bluetooth-Controller](~/ios/tvos/platform/remote-bluetooth.md) Dokumentation.
+Im Gegensatz zu iOS und OS X Apple TV kein Touchscreen oder eine Maus, die den Benutzer direkt auswählen, und interagieren mit einer app oder den Inhalt zu ermöglichen. Stattdessen diese Benutzer der neuen Remotedebugging-Siri oder ein Spiel Bluetooth-Controller, um der app-Benutzeroberfläche zu navigieren. Weitere Informationen finden Sie unserem [Siri Remote- und Bluetooth-Controller](~/ios/tvos/platform/remote-bluetooth.md) Dokumentation.
 
-Darüber hinaus ist die allgemeine benutzerfreundlichkeit IOS- oder Mac-apps, die einzelnen Benutzeroberflächen werden tendenziell erheblich unterscheidet. Mit dem Apple TV tendenziell Benutzeroberflächen mehr sozialen Natur, in dem mehrere Personen können auf die Interaktion mit einer app und anderen Couch genutzt werden. Um eine erfolgreiche Apple TV-app-Erfahrung (eine neue app oder eine vorhandene Portieren) zu entwerfen, müssen diese Änderungen berücksichtigt werden. 
+Darüber hinaus ist die allgemeine benutzerfreundlichkeit IOS- oder Mac-apps, die einzelnen Benutzeroberflächen werden tendenziell erheblich unterscheiden. Mit Apple TV tendenziell Benutzeroberflächen mehr sozialer Natur, auf dem Sofa, die eine einzelne app und miteinander interagieren können, in denen mehrere Personen sitzen werden. Um eine erfolgreiche Apple TV app-Benutzeroberfläche (entweder eine neue app oder Portieren eine vorhandene) zu entwerfen, müssen diese Änderungen berücksichtigt werden. 
 
 <a name="Summary" />
 
-### <a name="working-with-focus-and-parallax-images"></a>Arbeiten mit einer Fokussierung und Parallax Bilder
+### <a name="working-with-focus-and-parallax-images"></a>Arbeiten mit Fokus und Parallax-Bildern
 
-Wie bereits erwähnt, werden Benutzern der Anwendung Xamarin.tvOS nicht Interaktion mit der Schnittstelle direkt als mit iOS verwendet werden, in dem sie Bilder auf dem Gerätebildschirm jedoch indirekt über den Raum, der mithilfe von Siri Remote Tippen Sie auf. Um darzustellen, und Behandeln dieser Benutzerinteraktionen, verwendet die Apple TV ein Fokus Basis-Modell. 
+Wie bereits erwähnt, werden Benutzer Ihrer Xamarin.tvOS-app nicht mit seinem-Schnittstelle direkt als mit iOS interagiert werden, in dem sie Bilder auf den Bildschirm des Geräts, sondern indirekt durch das Zimmer Siri Remote mit Tippen Sie auf. Um darzustellen, und dieser Benutzerinteraktionen verarbeiten, werden von Apple TV ein Fokus basierend-Modell verwendet. 
 
-Als fokusänderungen sind feine Animationen und Auswirkungen (z. B. die Parallax Auswirkung auf Bilder) verwendet, die Benutzeroberfläche Element eindeutig zu identifizieren, das gerade den Fokus besitzt.
+Als fokusänderungen sind feine Animation und Effekte (z. B. den Parallaxeneffekt auf Images) verwendet, das Element der Benutzeroberfläche eindeutig zu identifizieren, das gerade den Fokus besitzt.
 
-Wenn der Benutzer eine Geste langsame, kreisförmige auf der Remoteinstanz Siri herstellt, wird das Element mit Fokus in Echtzeit in Reaktion auf diese Bewegung sway. Wie die Schlingern auftritt, wird ein beleuchteten Sheen auf seines Abbilds machen die Oberfläche verwendet anscheinend angewendet. Nach einem bestimmten Zeitraum der Inaktivität Blendet alle Inhalte, die Out-of-Focus, und das Element fokussiert wächst auch größere.
+Wenn der Benutzer eine Geste für eine langsamere, runden auf dem Remotecomputer Siri trifft, wird das Element mit Fokus als Reaktion auf diese Bewegung in Echtzeit sway. Wie die Sway auftritt, wird ein beleuchtete Glanz auf das Bild, sodass der Oberfläche angezeigt, die verwendet werden angewendet. Nach einem bestimmten Zeitraum der Inaktivität alle Inhalte für die Out-of-Focus abgeblendet, und das Focused-Element wird immer noch größer.
 
-Weitere Informationen finden Sie unter unsere [arbeiten mit Navigationsbereich und den Fokus](~/ios/tvos/app-fundamentals/navigation-focus.md) und [arbeiten mit Symbolen und Bilder](~/ios/tvos/app-fundamentals/icons-images.md) Dokumentation.
+Weitere Informationen finden Sie unserem [arbeiten mit Navigation und Fokus](~/ios/tvos/app-fundamentals/navigation-focus.md) und [arbeiten mit Symbolen und Bildern](~/ios/tvos/app-fundamentals/icons-images.md) Dokumentation.
 
 <a name="The-Home-Screen" />
 
-### <a name="the-home-screen"></a>Der Startbildschirm
+### <a name="the-home-screen"></a>Die Startseite
 
-Die Apple TV-Startbildschirm zeigt alle apps, die installiert werden und bietet eine Möglichkeit, die Benutzereinstellungen zugreifen:
+Das Apple TV-Startbildschirm zeigt alle apps, die installiert werden und bietet eine Möglichkeit, die Benutzereinstellungen zugreifen:
 
-[![](tvos9-images/home01.png "Der Startbildschirm")](tvos9-images/home01.png#lightbox)
+[![](tvos9-images/home01.png "Die Startseite")](tvos9-images/home01.png#lightbox)
 
-Der Benutzer navigiert ein Raster mit app-Symbole Fingereingabe auf Siri Remote mit Fokus, wählen Sie eine app, und starten Sie ihn verwenden. Das Symbol "App" wird die Ihres ersten Wahrscheinlichkeit der Ausführung eine hervorragende Eindruck für Ihre potenziellen Benutzer und sollte Ihre app Zweck auf einen Blick vermitteln.
+Der Benutzer navigiert ein Raster mit app-Symbole, die mithilfe von Touchgesten auf dem Siri-Remotecomputer mit Fokus, wählen Sie eine app, und starten Sie sie. Das App-Symbol ist das Ihre erste Ihre chance, einen hervorragenden Eindruck für Ihre potenziellen Benutzer ist, und sprechen Zweck von Ihrer app auf einen Blick.
 
-Alle Apps muss eine kleine und eine große Version von dessen Symbol "App" angeben. Des kleinen Symbols wird auf dem Bildschirm Apple TV-Startseite verwendet werden, wenn die app installiert wird. Die große Version wird von dem App Store. "Große Symbole" App sollte imitieren, die das Aussehen und Verhalten von der Version des kleinen Symbols an.
+Jede app muss sowohl eine kleine als auch eine große Version der App-Symbol angeben. Das kleine Symbol wird auf dem Bildschirm Apple TV-Startseite verwendet werden, wenn die app installiert ist. Die große Version wird von der App Store verwendet. Die großen App-Symbol sollte es sich um das Aussehen und Verhalten der Version Minisymbols imitieren.
 
-Weitere Informationen finden Sie unter unsere [arbeiten mit Symbolen und Bilder](~/ios/tvos/app-fundamentals/icons-images.md) Dokumentation.
+Weitere Informationen finden Sie unserem [arbeiten mit Symbolen und Bildern](~/ios/tvos/app-fundamentals/icons-images.md) Dokumentation.
 
 <a name="The-Top-Shelf" />
 
 ### <a name="the-top-shelf"></a>Oberes Regal
 
-Wenn der Benutzer die app Xamarin.tvOS auf die Zeile nach oben auf dem Bildschirm Apple TV-Startseite aufgegeben hat, wird ein großes oben Regal Bild angezeigt, wenn es sich bei Ihrer app vom Benutzer ausgewählt wird. Dieses Bild sollte markieren Sie die Funktionen der app, oder geben Sie direkte Links zum jeweiligen Inhalt.
+Wenn der Benutzer Ihre Xamarin.tvOS-app auf der obersten Zeile, auf dem Bildschirm Apple TV-Startseite aufgegeben hat, wird eine große Top Shelf Image angezeigt, wenn es sich bei Ihrer app vom Benutzer ausgewählt wird. Dieses Image sollte markieren Sie die Funktionen Ihrer App oder enthalten direkte Links zum jeweiligen Inhalt.
 
 [![](tvos9-images/topshelf01.png "Oberes Regal")](tvos9-images/topshelf01.png#lightbox)
 
-Die oberen Regal Image kann entweder als eine einzelne statische bereitgestellt `.png` oder `.lsr` Dateien, oder es kann dynamisch erstellt werden zur Laufzeit als eine einzelne Zeile mit den Fokus erhalten kann Elemente.
+Die Top Shelf Image kann entweder als eine einzelne statische bereitgestellt `.png` oder `.lsr` Dateien, oder es kann dynamisch erstellt zur Laufzeit als eine einzelne Zeile den Fokus erhalten kann Elemente.
 
-Anstatt ein statisches Bild der Top-Regal können sie eine dynamische Zeile oder den Fokus erhalten kann Elemente oder einen dynamischen Satz von Durchführen eines Bildlaufs Banner enthalten. Sowohl diese dynamische Format können Sie markieren Sie den Inhalt von Ihrer app oder ein Sprung in die am häufigsten verwendeten Funktionen bereitgestellt.
+Anstatt eine statische Top Shelf Image zu verwenden, kann sie eine dynamische Zeile oder den Fokus erhalten kann Elemente oder einen dynamischen Satz von Durchführen eines Bildlaufs Banner enthalten. Beide dieser dynamische Format können Sie markieren Sie den Inhalt von Ihrer app oder ein Sprung in die am häufigsten verwendeten Funktionen bereitgestellt.
 
-Weitere Informationen finden Sie unter unsere [arbeiten mit Symbolen und Bilder](~/ios/tvos/app-fundamentals/icons-images.md) Dokumentation und Apple [TVServices Frameworkverweis](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412) Weitere Informationen zum Hinzufügen von sinnvolles Regal nach oben zu Ihrer app bereitstellen Dynamische oben Regal-Inhalt.
+Weitere Informationen finden Sie unsere [arbeiten mit Symbolen und Bildern](~/ios/tvos/app-fundamentals/icons-images.md) Dokumentation und Apple [TVServices Frameworkverweis](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412) für Weitere Informationen zum Hinzufügen einer Top Shelf-Erweiterung zu Ihrer app bereitstellen Dynamische Top Shelf-Inhalt.
 
 
 
@@ -185,6 +185,6 @@ Weitere Informationen finden Sie unter unsere [arbeiten mit Symbolen und Bilder]
 
 - [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvos. außerdem wurden Handbücher für interaktive Workflowdienste-Schnittstelle](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [App-Programmierhandbuch für tvos. außerdem wurden](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
-- [Erstellen von apps für tvos. außerdem wurden mit Xamarin (video)](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)
+- [TvOS Human Interface-Handbücher](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [App-Programmierhandbuch für tvos verwendet.](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [Erstellen von apps für TvOS mit Xamarin (video)](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)

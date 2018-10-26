@@ -4,14 +4,14 @@ description: Dieses Dokument beschreibt MonoTouch.Dialog (MT.) (D), ein Framewor
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: bee4b460552c7273021b16955b52ba3d95d3e07c
-ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
+author: lobrien
+ms.author: laobri
+ms.openlocfilehash: a948d5beca6c09dc77e5c86d3f281851e4839ff0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39038403"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107988"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Einführung in die MonoTouch.Dialog für Xamarin.iOS
 
@@ -176,7 +176,7 @@ new Section () {
 
 #### <a name="retrieving-element-value"></a>Abrufen der Wert des Elements
 
-In Kombination mit der `Element.Value` -Eigenschaft des Rückrufs kann rufen Sie den Wert festgelegt, die in anderen Elementen. Beachten Sie z. B. folgenden Code:
+In Kombination mit der `Element.Value` -Eigenschaft des Rückrufs kann rufen Sie den Wert festgelegt, die in anderen Elementen. Beachten Sie z. B. folgenden Code:
 
 ```csharp
 var element = new EntryElement (task.Name, "Enter task description",
@@ -261,7 +261,7 @@ Zu jedem Zeitpunkt den Zugriff auf die Value-Eigenschaft der Abrufen des Werts k
 
 Darüber hinaus die `KeyboardType` Eigenschaft kann zum Zeitpunkt der Erstellung auf der Tastatur Schriftstil gewünscht, für die Dateneingabe festgelegt werden. Dies kann verwendet werden, die mit den Werten der Tastatur konfigurieren `UIKeyboardType` wie im folgenden aufgeführt:
 
--  Numeric
+-  Numerisch
 -  Telefon
 -  URL
 -  E-Mail

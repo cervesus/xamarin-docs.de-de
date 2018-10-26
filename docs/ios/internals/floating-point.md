@@ -1,26 +1,26 @@
 ---
 title: Gleitkommaoperationen in Xamarin.iOS
-description: Dieses Dokument beschreibt, wie Xamarin.iOS 32-Bit und 64-Bit-Präzision Gleitkommaoperationen behandelt und zugehörige Auswirkungen auf die Leistung erläutert.
+description: Dieses Dokument beschreibt die Behandlung von Xamarin.iOS auf 32-Bit und 64-Bit-gleitkommavorgänge mit einfacher Genauigkeit und zugehörige Auswirkungen auf die Leistung erläutert.
 ms.prod: xamarin
 ms.assetid: 003F25C1-B430-4339-9C95-7DF527EBC699
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: ea5d69b52cbd4c76abb236bd1a272633dde440b7
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.openlocfilehash: c5ee1b833e309c78c7338298cbe5c8800afb1ba1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786160"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116237"
 ---
 # <a name="floating-point-operations-in-xamarinios"></a>Gleitkommaoperationen in Xamarin.iOS
 
-Xamarin.iOS führt standardmäßig 32 Bit und 64-Bit-Gleitkommaoperationen mit 64-Bit-Präzision auf ARM.  
+Xamarin.iOS führt standardmäßig 32-Bit und 64-Bit-Gleitkommaoperationen mit 64-Bit-präziser für ARM.  
 
-Während diese höhere Genauigkeit näher ist an was Entwickler von Gleitkommaoperationen in c# auf den Desktop, Mobil erwarten, kann Auswirkungen auf die Leistung erheblich sein.
+Während dieses höhere Genauigkeit näher ist an, was Entwickler von Gleitkommaoperationen in erwarten C# auf dem Desktop, auf dem Mobiltelefon, kann Auswirkungen auf die Leistung erheblich sein.
 
-Es ist möglich, 32-Bit-Gleitkommazahl Punkt Code zur Verwendung von 32-Bit-Gleitkommaoperationen zu kompilieren.  Zu diesem Zweck müssen Sie mindestens verwenden Xamarin.iOS 8.10 und Menge in Ihrer iOS-build-Optionen des Bereichs auf die "Mtouch zusätzlichen Argumente" Eintrag Zeile den folgenden Wert:
+Es ist möglich, den 32-Bit-Gleitkommazahl Punkt Code zur Verwendung von 32-Bit-Gleitkommaoperationen kompilieren.  Zu diesem Zweck müssen Sie mindestens verwenden Xamarin.iOS 8.10, und legen in Ihrer iOS-Optionen Bereich erstellen, auf die "Mtouch zusätzliche Argumente" Eintrag Zeile den folgenden Wert:
 
      --aot-options=-O=float32
 
-Diese informiert die statischen Compilern (entweder Mono des integrierten statische Compiler oder dem LLVM Energieversorgung) zum Ausführen von Gleitkommaoperationen mit 32-Bit-Gleitkommazahlen.
+Informiert die statischen Compiler (statischer Compiler von Mono integrierte, oder der LLVM-gestützte eine) mithilfe von 32-Bit-Gleitkommazahlen gleitkommavorgänge mit einfacher ausführen.

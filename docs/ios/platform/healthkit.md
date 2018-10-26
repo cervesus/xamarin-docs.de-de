@@ -1,115 +1,115 @@
 ---
 title: HealthKit in Xamarin.iOS
-description: Dieses Dokument beschreibt HealthKit, ein Framework, eingeführt in iOS 8, die einen zentralisierte, koordinierten und sicheren Datenspeicher für Integrität bezogene Informationen bereitstellt. Es wird erläutert, wie eine HealthKit app bereitgestellt und das Schreiben von Code, der die HealthKit-Framework verwendet.
+description: Dieses Dokument beschreibt HealthKit, ein Framework, eingeführt in iOS 8, die einen zentralisierten, koordinierten und sicheren Datenspeicher für integritätsbezogene Informationen bereitstellt. Es wird erläutert, wie Sie eine app HealthKit bereitstellen und wie Sie Code schreiben, die HealthKit-Framework verwendet.
 ms.prod: xamarin
 ms.assetid: E3927A21-507C-43BA-A2AD-957716BA9B52
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 06c0231bbb9aa7b82b92e0a8c2157b8be9c8b05b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: df0b0e8dd57129917f2d8dab07115551ca675acf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787532"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109223"
 ---
 # <a name="healthkit-in-xamarinios"></a>HealthKit in Xamarin.iOS
 
-Integrität Kit bietet einen sicheren Datenspeicher für Integritätsdienst-bezogene Informationen des Benutzers. Integrität Kit apps können mit explizite Berechtigung des Benutzers, lesen und Schreiben in diese Datenspeicher und Benachrichtigungen erhalten, wenn die relevante Daten hinzugefügt werden. Apps können die Daten darstellen, oder des Benutzers kann von Apple bereitgestellten Integrität app verwenden, um ein Dashboard alle ihre Daten anzuzeigen.
+Integrität Kit bietet einen sicheren Datenspeicher für integritätsbezogene Informationen des Benutzers. Integrität Kit apps können mit expliziten Berechtigungen des Benutzers, lesen und Schreiben in diese Datenspeicher und Benachrichtigungen erhalten, wenn die relevante Daten, die hinzugefügt werden. Apps können die Darstellung der Daten oder des Benutzers kann von Apple bereitgestellten Integrität app verwenden, um ein Dashboard für alle ihre Daten anzeigen.
 
-Da Integrität produktbezogene Daten daher vertrauliche und entscheidend, Integrität Kit stark typisiert ist, mit Einheiten und eine explizite Zuordnung mit dem Typ der aufgezeichneten Informationen (z. B. Blut Glucose Ebene oder Herzfrequenz). Darüber hinaus Health-Kit-apps müssen explizite Berechtigungen verwenden, muss anfordern des Zugriffs auf bestimmten Typen von Informationen, und der Benutzer muss explizit der appzugriff gewähren den Typen von Daten.
+Da integritätsbezogene Daten also vertrauliche und wichtige, Integrität Kit ist stark typisiert, mit berechnungseinheiten und eine explizite Zuordnung mit dem Typ des aufgezeichneten Informationen (z. B. "Blood Zucker-Ebene" oder "Herz"). Darüber hinaus Health-Kit-apps müssen explizite Berechtigungen verwenden, muss anfordern des Zugriffs auf die bestimmten Arten von Informationen, und der Benutzer muss explizit der app Zugriff gewähren auf diese Typen von Daten.
 
-In diesem Artikel werden vorgestellt:
+Dieser Artikel bietet eine Einführung:
 
-- Integritäts-Kit-sicherheitsanforderungen, einschließlich Bereitstellung von Anwendungen und Benutzer die Berechtigung zum Zugriff auf die Datenbank Integrität Kit anfordern;
-- Integritäts-Kit-Typsystem, das minimiert die Möglichkeit, falsch anwenden oder Daten Formatelementen;
-- Schreiben in den freigegebenen, systemweite Health-Kit-Datenspeicher.
+- Integrität Kitss sicherheitsanforderungen, einschließlich Bereitstellung von Anwendungen und Benutzer die Berechtigung zum Zugriff auf die Integrität Kit Datenbank anfordern;
+- Integrität Kitss-Typsystem, das minimiert die Wahrscheinlichkeit, dass falsch angewendet oder Formatelementen Daten;
+- Schreiben in den freigegebenen, systemweite-Health-Kit-Datenspeicher.
 
-In diesem Artikel wird nicht mehr erweiterte Themen, z. B. Abfragen der Datenbank, Konvertieren zwischen Maßeinheiten oder Empfangen von Benachrichtigungen zu neuen Daten behandelt.
+Dieser Artikel behandelt Themen für fortgeschrittenere Benutzer, z. B. eine Datenbankabfrage, Konvertierung von Maßeinheiten und Empfangen von Benachrichtigungen über neue Daten nicht.
 
-In diesem Artikel erstellen wir eine beispielanwendung, die zum Aufzeichnen des Benutzers Herzfrequenz von werden:
+In diesem Artikel erstellen wir eine beispielanwendung auf Herz des Benutzers aufgezeichnet werden:
 
-[![](healthkit-images/image01.png "Eine beispielanwendung, die Benutzer Herzfrequenz aufzeichnen")](healthkit-images/image01.png#lightbox)
+[![](healthkit-images/image01.png "Eine beispielanwendung, um das Herz der Benutzer zu erfassen.")](healthkit-images/image01.png#lightbox)
 
 ## <a name="requirements"></a>Anforderungen
 
-Im folgenden sind erforderlich, die in diesem Artikel vorgestellten Schritte ausführen:
+Folgendes ist erforderlich, um die in diesem Artikel vorgestellten Schritte auszuführen:
 
-- **Xcode 7 und iOS 8 (oder höher)** – Apple neuesten Xcode und iOS-APIs installiert und auf dem Computer des Entwicklers konfiguriert werden müssen.
-- **Visual Studio für Mac oder Visual Studio** – die neueste Version von Visual Studio für Mac installiert und auf dem Computer des Entwicklers konfiguriert werden.
-- **iOS 8 (oder höher) Gerät** – ein iOS-Gerät, das die neueste Version von iOS ausgeführt wird, 8 oder höher zum Testen.
+- **Xcode 7 und iOS 8 (oder höher)** – die neuesten Xcode und Apple iOS-APIs müssen installiert und konfiguriert werden, auf dem Computer des Entwicklers.
+- **Visual Studio für Mac oder Visual Studio** – die neueste Version von Visual Studio für Mac installiert und auf dem Computer des Entwicklers konfiguriert werden soll.
+- **iOS 8 (oder höher) Gerät** – ein iOS-Gerät die neueste Version von iOS 8 oder höher, für die Tests ausgeführt.
 
 > [!IMPORTANT]
-> Integrität Kit wurde in iOS 8 eingeführt. Aktuell, Integrität Kit ist nicht verfügbar, auf dem iOS-Simulator, und Debuggen ist die Verbindung mit einem physischen iOS-Gerät erforderlich.
+> Integrität Kit wurde in iOS 8 eingeführt. Derzeit Integrität Kit ist nicht verfügbar, auf dem iOS-Simulator, und Debuggen ist die Verbindung mit einem physischen iOS-Gerät erforderlich.
 
 
 
 
-## <a name="creating-and-provisioning-a-health-kit-app"></a>Erstellen und eine Health-Kit-App-Bereitstellung
-Bevor eine Xamarin iOS 8-Anwendung die HealthKit-API verwenden kann, müssen ordnungsgemäß konfiguriert und bereitgestellt werden. In diesem Abschnitt werden die erforderlichen Schritte zum setup für die Xamarin-Anwendung ordnungsgemäß behandelt.
+## <a name="creating-and-provisioning-a-health-kit-app"></a>Erstellen und Bereitstellen einer Health-Kit-App
+Bevor eine Xamarin-iOS 8-Anwendung die HealthKit-API verwenden kann, müssen ordnungsgemäß konfiguriert und bereitgestellt werden. In diesem Abschnitt werden die erforderlichen Schritte zum Einrichten von Ihrer Xamarin-Anwendung ordnungsgemäß behandelt.
 
 Integrität Kit apps erfordern:
 
 - Eine explizite **App-ID**.
-- Ein **Bereitstellungsprofil** zugeordnet sind, explizite **App-ID** und mit **Health Kit** Berechtigungen.
+- Ein **Bereitstellungsprofil** zugeordnet sind, explizite **App-ID** und **Integrität Kit** Berechtigungen.
 - Ein `Entitlements.plist` mit einem `com.apple.developer.healthkit` Eigenschaft vom Typ `Boolean` festgelegt `Yes`.
-- Ein `Info.plist` , deren `UIRequiredDeviceCapabilities` Schlüssel enthält einen Eintrag mit dem `String` Wert `healthkit`.
-- Die `Info.plist` benötigen auch entsprechende Datenschutz-Erklärung Einträge: einen `String` Erklärung für den Schlüssel `NSHealthUpdateUsageDescription` Wenn die app mit der Daten zu schreiben und eine `String` Erklärung für den Schlüssel `NSHealthShareUsageDescription` Wenn die app mit der Integrität Kit lesen Daten.
+- Ein `Info.plist` , deren `UIRequiredDeviceCapabilities` Schlüssel enthält einen Eintrag mit der `String` Wert `healthkit`.
+- Die `Info.plist` auch, müssen entsprechende Datenschutz-Erläuterung: eine `String` Erklärung für den Schlüssel `NSHealthUpdateUsageDescription` Wenn die app wird zum Schreiben von Daten und ein `String` Erklärung für den Schlüssel `NSHealthShareUsageDescription` Wenn die app zum Lesen der Health-Kit ist Daten.
 
-So ermitteln Sie weitere Informationen zum Bereitstellen einer iOS-app die [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md) Artikel in die Xamarin **Einstieg** Reihe beschreibt die Beziehung zwischen Developer Zertifikate, App-IDs Bereitstellung von Profilen und App-Berechtigungen.
+Weitere Informationen zur Bereitstellung einer iOS-app, die [Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md) Artikel in der Xamarin **Einstieg** Reihe beschreibt die Beziehung zwischen Entwicklerzertifikate, App-IDs, Bereitstellungsprofile und App-Berechtigungen.
 
 <a name="explicit-appid" />
 
-### <a name="explicit-app-id-and-provisioning-profile"></a>Explizite App-ID und ein Bereitstellungsprofil
+### <a name="explicit-app-id-and-provisioning-profile"></a>Explizite App-ID und eines Bereitstellungsprofils
 
-Die Erstellung von einer expliziten **App-ID** und eine entsprechende **Bereitstellungsprofil** erfolgt innerhalb von Apple [iOS Dev Center](https://developer.apple.com/devcenter/ios/index.action). 
+Die Erstellung einer expliziten **App-ID** und eine entsprechende **Bereitstellungsprofil** erfolgt im Apple [iOS Developer Center](https://developer.apple.com/devcenter/ios/index.action). 
 
-Ihre aktuellen **App-IDs** aufgelisteten innerhalb der [Zertifikate "," Bezeichner "und" Profile](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) Teil der Developer Center. Häufig zeigt diese Liste **ID** Werte der `*`gibt an, die **App-ID** - **Name** kann mit einer beliebigen Anzahl von Suffixen verwendet werden. Solche *Wildcard App IDs* kann nicht mit der Integrität Kit verwendet werden.
+Ihre aktuellen **App-IDs** finden Sie in der [Zertifikate, Bezeichner & Profile](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) Abschnitt im Dev Center. Diese Liste zeigt häufig **ID** Werte `*`, um anzugeben, die die **App-ID** - **Namen** kann mit einer beliebigen Anzahl von Suffixen verwendet werden. Solche *Wildcard App-IDs* kann nicht mit dem Health-Kit verwendet werden.
  
-So erstellen eine explizite **App-ID**, klicken Sie auf die **+** Schaltfläche in der oberen rechten Ecke, um führen die **Registrieren von iOS-App-ID** Seite:
+Eine explizite Erstellung **App-ID**, klicken Sie auf die **+** -Schaltfläche in der rechten oberen Ecke, die Sie zum Ausführen der **Registrieren von iOS-App-ID** Seite:
 
 
-[![](healthkit-images/image02.png "Registrieren einer app auf der Apple-Entwicklerportal")](healthkit-images/image02.png#lightbox)
+[![](healthkit-images/image02.png "Registrieren einer app auf Apple-Entwicklerportal")](healthkit-images/image02.png#lightbox)
 
-Wie in der Abbildung oben gezeigt, nach dem Erstellen einer app-Beschreibung, verwenden die **explizite App-ID** Abschnitt aus, um eine ID für Ihre Anwendung zu erstellen. In der **Anwendungsdienste** aktivieren Sie im Abschnitt **Health Kit** in der **Dienste aktivieren** Abschnitt.
+Verwenden Sie wie in der obigen Abbildung wird gezeigt, nach dem Erstellen einer app-Beschreibung, die **Explicit App ID** Abschnitt aus, um eine ID für Ihre Anwendung zu erstellen. In der **Anwendungsdienste** aktivieren Sie im Abschnitt **Integrität Kit** in die **Dienste aktivieren** Abschnitt.
 
-Wenn Sie fertig sind, drücken Sie die **Fortfahren** Schaltfläche zum Registrieren der **App-ID** in Ihrem Konto. Sie werden reaktiviert werden wieder die **Zertifikate, Bezeichner und Profile** Seite. Klicken Sie auf **Provisioning Profile** gelangen Sie zu der Liste der aktuellen provisioning Profile, und klicken Sie auf die **+** Schaltfläche in der oberen rechten Ecke zum Ausführen der **iOS hinzufügen Bereitstellungsprofil** Seite. Wählen Sie die **iOS-App-Entwicklung** aus, und klicken Sie auf **Fortfahren** zum Abrufen der **wählen Sie App-ID** Seite. Wählen Sie hier den expliziten **App-ID** , die Sie zuvor angegeben haben:
+Wenn Sie fertig sind, drücken Sie die **Weiter** Schaltfläche zum Registrieren der **App-ID** in Ihrem Konto. Sie gelangen zurück auf die **Zertifikate, Bezeichner und Profile** Seite. Klicken Sie auf **Bereitstellungsprofile** gelangen Sie zu der Liste der aktuellen bereitstellungsprofilen, und klicken Sie auf die **+** Schaltfläche in der Ecke oben rechts, die Sie zum Ausführen der **iOS hinzufügen Bereitstellungsprofil** Seite. Wählen Sie die **iOS-App-Entwicklung** aus, und klicken Sie auf **Weiter** , um zu erhalten die **Auswählen der App-ID** Seite. Hier wählen Sie den expliziten **App-ID** , die Sie zuvor angegeben haben:
 
 
 [![](healthkit-images/image03.png "Wählen Sie die explizite App-ID")](healthkit-images/image03.png#lightbox)
 
-Klicken Sie auf **Fortfahren** und über die verbleibenden Bildschirme, in dem Sie angeben können Ihre **Developer Zertifikate**, **Gerät(e)**, und ein **Namen** dafür **Bereitstellungsprofil**:
+Klicken Sie auf **Weiter** und durch die verbleibenden Bildschirme, in dem Sie angeben werden Ihre **Developer Zertifikate**, **Geräte**, und ein **Namen** für diesen **Bereitstellungsprofil**:
 
 [![](healthkit-images/image04.png "Generieren das Bereitstellungsprofil")](healthkit-images/image04.png#lightbox)
 
-Klicken Sie auf **generieren** und "await" die Erstellung Ihres Profils. Laden Sie die Datei, und doppelklicken Sie darauf, in Xcode zu installieren. Sie können überprüfen, ob die Installation unter **Xcode > Einstellungen > Konten > Details anzeigen...** Daraufhin sollte die gerade installierten provisioning-Profil, und weist sie das Symbol für Integrität Kit und andere spezielle Dienste in ihre **Berechtigungen** Zeile:
+Klicken Sie auf **generieren** und "await" die Erstellung Ihres Profils. Herunterzuladen Sie die Datei, und doppelklicken Sie darauf, um in Xcode zu installieren. Sie können überprüfen, ob die Installation unter **Xcode > Voreinstellungen > Konten > Details anzeigen...** Ihr gerade installierten Bereitstellungsprofil sollte angezeigt werden, und es sollte das Symbol für Health-Kit und andere spezielle Dienste in der **Berechtigungen** Zeile:
 
 [![](healthkit-images/image05.png "Profil in Xcode anzeigen")](healthkit-images/image05.png#lightbox)
 
 <a name="associating-appid" />
 
-### <a name="associating-the-app-id-and-provisioning-profile-with-your-xamarinios-app"></a>Zuordnen der App-ID und ein Bereitstellungsprofil für Ihre App Xamarin.iOS
+### <a name="associating-the-app-id-and-provisioning-profile-with-your-xamarinios-app"></a>Zuordnen der App-ID und ein Bereitstellungsprofil mit Ihrer Xamarin.iOS-App
 
-Nachdem Sie erstellt haben, und installiert eine entsprechende **Bereitstellungsprofil** wie beschrieben, normalerweise wäre es Zeit für eine Projektmappe in Visual Studio für Mac oder Visual Studio zu erstellen. Integrität Kit Zugriff ist auf iOS C#- oder f#-Projekt verfügbar.
+Nachdem Sie erstellt haben, und installiert eine entsprechende **Bereitstellungsprofil** wie beschrieben, normalerweise wäre es Zeit, eine Projektmappe in Visual Studio für Mac oder Visual Studio zu erstellen. Integrität der Kit Zugriff ist für alle iOS- C# oder F# Projekt.
 
-Anstatt Schritt für Schritt durch die ein Xamarin iOS 8-Projekt manuell erstellen, öffnen Sie die Beispiel-app, die für diesen Artikel (einschließlich einer vorgefertigten Storyboard und Code) angefügt. Um Ihre Integrität Kit aktiviert die Beispiel-app zuzuordnen **Bereitstellungsprofil**in der **Lösung Pad**mit der rechten Maustaste auf das Projekt, und bringen seine **Optionen** Dialogfeld. Wechseln Sie zu der **iOS-Anwendung** Bereich, und geben Sie den expliziten **App-ID** zuvor wie der app erstellt **Paket-ID**:
+Anstatt den Prozess zum Erstellen einer Xamarin iOS 8-Projekt manuell zu durchlaufen, öffnen Sie die Beispiel-app, die in diesem Artikel (die eine vorgefertigte Storyboard und Code enthält) hinzugefügt. Zuordnen die Beispiel-app mit dem Health-Kit aktiviert **Bereitstellungsprofil**in der **Lösungspad**mit der rechten Maustaste auf das Projekt, und rufen Sie die **Optionen** Dialogfeld. Wechseln Sie zu der **iOS-Anwendung** Bereich, und geben Sie den expliziten **App-ID** Sie zuvor erstellt haben wie der app die **Bündel-ID**:
 
 [![](healthkit-images/image06.png "Geben Sie die explizite App-ID")](healthkit-images/image06.png#lightbox)
 
-Wechseln Sie zu der **iOS Bundle Signing** Bereich. Der zuletzt installierten **Bereitstellungsprofil**, mit deren Zuordnung zu den expliziten **App-ID**, zur Verfügung, als die **Bereitstellungsprofil**:
+Wechseln Sie nun zur der **iOS Bundle-Signierung** Bereich. Ihre zuletzt installiert **Bereitstellungsprofil**, mit der Zuordnung zu den expliziten **App-ID**, zur Verfügung, als die **Bereitstellungsprofil**:
 
 [![](healthkit-images/image07.png "Wählen Sie das Bereitstellungsprofil")](healthkit-images/image07.png#lightbox)
 
-Wenn die **Bereitstellungsprofil** ist nicht verfügbar ist, doppelklicken Sie auf die **Paket-ID** in der **iOS-Anwendung** im Vergleich zu, die im angegebenen Bereich der **iOS Developer Center** und dass die **Bereitstellungsprofil** installiert ist (**Xcode > Einstellungen > Konten >... Details anzeigen** ).
+Wenn die **Bereitstellungsprofil** ist nicht verfügbar ist, überprüfen Sie die **Bündel-ID** in die **iOS-Anwendung** Bereich im Vergleich zu, die in der **iOS Dev Center** und dass die **Bereitstellungsprofil** installiert ist (**Xcode > Voreinstellungen > Konten > Details anzeigen...** ).
 
-Wenn die Integrität-Kit-fähigen **Bereitstellungsprofil** ist ausgewählt haben, klicken Sie auf **OK** zum Schließen des Dialogfelds Projektoptionen.
+Wenn der Health-Kit-aktivierte **Bereitstellungsprofil** wird ausgewählt, klicken Sie auf **OK** um das Dialogfeld "Projektoptionen" zu schließen.
 
-### <a name="entitlementsplist-and-infoplist-values"></a>Entitlements.plist und Werte der Datei "Info.plist"
+### <a name="entitlementsplist-and-infoplist-values"></a>"Entitlements.plist" und "Info.plist"-Werte
 
-Die Beispiel-app enthält ein `Entitlements.plist` -Datei (Dies ist erforderlich für die Integrität Kit apps aktiviert) und nicht in der Vorlage für alle Projekte enthalten. Wenn Ihr Projekt keine Ansprüche enthalten, mit der rechten Maustaste auf das Projekt, wählen Sie **Datei > Neues Datei... > iOS > Entitlements.plist** manuell hinzufügen.
+Die beispielanwendung enthält ein `Entitlements.plist` -Datei (mit erforderlich ist, für die Integrität Kit apps aktiviert), und nicht in der Vorlage für alle Projekte enthalten. Wenn Ihr Projekt keine Berechtigungen enthält, mit der rechten Maustaste auf das Projekt, wählen Sie **Datei > neue Datei… > iOS > "Entitlements.plist"** einen manuell hinzufügen.
 
-Letztlich Ihre `Entitlements.plist` benötigen die folgenden Schlüssel / Wert-Paar:
+Letztlich Ihre `Entitlements.plist` müssen die folgenden Schlüssel-Wert-Paar:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -123,7 +123,7 @@ Letztlich Ihre `Entitlements.plist` benötigen die folgenden Schlüssel / Wert-P
 
 ```
 
-Auf ähnliche Weise die `Info.plist` die app muss ein Wert von über `healthkit` zugeordneten der `UIRequiredDeviceCapabilities` Schlüssel:
+Auf ähnliche Weise die `Info.plist` für die app den Wert muss `healthkit` zugeordneten der `UIRequiredDeviceCapabilities` Schlüssel:
 
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
@@ -134,43 +134,43 @@ Auf ähnliche Weise die `Info.plist` die app muss ein Wert von über `healthkit`
 
 ```
 
-Die beispielanwendung, die mit diesem Artikel bereitgestellte enthält eine vorkonfigurierte `Entitlements.plist` , die alle erforderlichen Schlüssel enthält.
+Mit diesem Artikel bereitgestellte beispielanwendung enthält eine vorkonfigurierte `Entitlements.plist` , die alle erforderlichen Schlüssel enthält.
 
 <a name="programming" />
 
 ## <a name="programming-health-kit"></a>Programmierung Integrität Kit
 
-Die Integrität Kit Datenspeicher ist eine private, benutzerspezifische Datenspeicher, der von den apps gemeinsam verwendet wird. Da Integritätsinformationen so vertraulich ist, muss der Benutzer positive Schritte zum Datenzugriff ausführen. Dieser Zugriff kann teilweise werden (schreiben, aber nicht lesen, die Zugriff für einige Typen von Daten, aber keine anderen usw.) und kann jederzeit widerrufen werden. Integrität Kit Anwendungen sollten defensiv, Voraussetzung geschrieben werden, dass viele Benutzer zögern über ihre Integrität-bezogene Informationen gespeichert werden.
+Der Health-Kit-Datenspeicher ist ein privates, benutzerspezifische-Datenspeicher, der von den apps gemeinsam verwendet wird. Da Integritätsinformationen so vertraulich ist, muss der Benutzer eine positive Schritte zum Datenzugriff ausführen. Dieser Zugriff ist möglicherweise teilweise (schreiben, aber nicht lesen, die Zugriff für einige Arten von Daten, aber in anderen, usw.) und kann jederzeit widerrufen werden. Integrität Kit Anwendungen sollten defensiv, unter der Voraussetzung geschrieben werden, dass viele Benutzer zögern, zu deren integritätsbezogene Informationen gespeichert werden.
 
-Daten zur Clientintegrität Kit ist auf Apple angegebenen Typen. Diese Typen werden streng definiert: Einige z. B. Blut-Typ sind beschränkt auf die bestimmte Werte einer Enumeration Apple angegeben ist, während andere eine Größe, die mit einer Maßeinheit (z. B. Gramm Kalorien und Liter) kombinieren. Selbst Daten, die gemeinsam eine kompatible Maßeinheit unterscheiden sich durch ihre `HKObjectType`z. B. das Typsystem fängt einen falschen Versuch zum Speichern einer `HKQuantityTypeIdentifier.NumberOfTimesFallen` Wert, der einem Feld erwartet ein `HKQuantityTypeIdentifier.FlightsClimbed` , obwohl beide verwenden die` HKUnit.Count` Maßeinheit.
+Kit integritätsdaten ist auf Apple angegeben. Diese Typen sind streng definiert: einige, z. B. Typ hat, sind beschränkt auf die bestimmte Werte einer Enumeration ist Apple angegeben, während andere eine Größe mit einer Maßeinheit (z. B. Gramm, Kalorien und Liter) kombinieren. Sogar Daten, die gemeinsam eine kompatible Maßeinheit unterscheiden sich durch ihre `HKObjectType`; z. B. das Typsystem fängt einen falschen Versuch zum Speichern einer `HKQuantityTypeIdentifier.NumberOfTimesFallen` Wert, der ein Feld erwartet eine `HKQuantityTypeIdentifier.FlightsClimbed` , obwohl beide verwenden die` HKUnit.Count` die Maßeinheit an.
 
-Die Typen, die in den Datenspeicher Integrität Kit speicherbare sind alle Unterklassen des `HKObjectType`. `HKCharacteristicType` Speichern von Objekten biologischen Geschlecht, Blut Typ und Geburtsdatum. Weitere allgemeine aber sind `HKSampleType` Objekte, die Daten, die als Stichprobe werden darstellen, zu einem bestimmten Zeitpunkt oder über einen Zeitraum genommen. 
+Die Typen, die in den Health-Kit-Datenspeicher gespeichert sind, alle Unterklassen von `HKObjectType`. `HKCharacteristicType` Speichern von Objekten biologischen Geschlecht und Blut Typ Geburtsdatum. Gängiger sind jedoch `HKSampleType` -Objekte, die Daten darstellen, die zu einem bestimmten Zeitpunkt oder über einen Zeitraum entnommen werden. 
 
 [![](healthkit-images/image08.png "Diagramm der HKSampleType-Objekte")](healthkit-images/image08.png#lightbox)
 
-`HKSampleType` ist abstrakt und verfügt über vier konkreten Teilklassen. Es ist derzeit nur eine Art von `HKCategoryType` Daten, d. h. Analysis Energiesparmodus. Die Mehrzahl der Daten im Health Kit sind vom Typ `HKQuantityType` und speichern Sie ihre Daten in `HKQuantitySample` Objekte, die mit dem vertrauten Factoryentwurfsmuster erstellt werden:
+`HKSampleType` ist abstrakt und verfügt über vier konkreten Unterklassen. Es gibt derzeit nur eine Art von `HKCategoryType` Daten, die Analyse den Energiesparmodus ist. Die überwiegende Mehrheit von Daten im Health Kit sind vom Typ `HKQuantityType` und speichern Sie ihre Daten in `HKQuantitySample` -Objekte, die mithilfe von vertrauten Factoryentwurfsmusters erstellt werden:
 
-[![](healthkit-images/image09.png "Die Mehrzahl der Daten im Health Kit sind vom Typ HKQuantityType und speichern ihre Daten in Objekten HKQuantitySample")](healthkit-images/image09.png#lightbox)
+[![](healthkit-images/image09.png "Die überwiegende Mehrheit von Daten im Health Kit sind vom Typ HKQuantityType und speichern ihre Daten in HKQuantitySample-Objekten")](healthkit-images/image09.png#lightbox)
 
-`HKQuantityType` Typen von reichen `HKQuantityTypeIdentifier.ActiveEnergyBurned` auf `HKQuantityTypeIdentifier.StepCount`. 
+`HKQuantityType` Typen von reichen `HKQuantityTypeIdentifier.ActiveEnergyBurned` zu `HKQuantityTypeIdentifier.StepCount`. 
 
 <a name="requesting-permission" />
 
-### <a name="requesting-permission-from-the-user"></a>Zustimmung des Benutzers
+### <a name="requesting-permission-from-the-user"></a>Die Berechtigung vom Benutzer anfordert
 
-Endbenutzer müssen Schritte positive kann eine app Integrität Kit Daten lesen oder schreiben. Dies erfolgt über die Integrität-app, die auf Geräte mit iOS 8 bereits installiert ist. Beim ersten Health-Kit-app ausgeführt wird, erhält der Benutzer mit einem System gesteuert **Health Zugriff** Dialogfeld:
+Endbenutzer müssen positive Schritte, sodass eine Anwendung zum Lesen oder schreiben die Integrität-Kit-Daten ausführen. Dies erfolgt über die Integritätsdienst-app, die auf Geräte mit iOS 8 bereits installiert ist. Beim ersten eine Health-Kit-app ausgeführt wird, erhält der Benutzer mit einem System kontrolliert **Integrität Zugriff** Dialogfeld:
 
-[![](healthkit-images/image10.png "Erhält der Benutzer ein Dialogfeld für die System-gesteuerten Integrität Zugriff")](healthkit-images/image10.png#lightbox)
+[![](healthkit-images/image10.png "Der Benutzer ist ein System kontrolliert Integrität Access-Dialogfeld angezeigt")](healthkit-images/image10.png#lightbox)
 
-Der Benutzer kann später mithilfe des Integritäts-app Berechtigungen ändern **Quellen** Dialogfeld:
+Der Benutzer kann später mit der Integrität der app Berechtigungen ändern **Quellen** Dialogfeld:
 
-[![](healthkit-images/image11.png "Der Benutzer kann die Berechtigungen, die mit Health apps-Dialogfeld \"Datenquellen\" ändern.")](healthkit-images/image11.png#lightbox)
+[![](healthkit-images/image11.png "Der Benutzer kann die Berechtigungen, die über Integrität-apps-Dialogfeld \"Datenquellen\" ändern.")](healthkit-images/image11.png#lightbox)
 
-Da Integritätsinformationen extrem sensibel ist, sollten app-Entwickler ihre Programme defensiv, unter der Annahme schreiben, dass die Berechtigungen werden abgelehnt und geändert, während die app ausgeführt wird. Die am häufigsten verwendete Technik ist, zum Anfordern von Berechtigungen in der `UIApplicationDelegate.OnActivated` Methode und die Benutzeroberfläche nach Bedarf ändern.
+Da Integritätsinformationen ausgesprochen sensibel ist, sollten Anwendungsentwickler, die ihre Programme defensiv, unter der Annahme schreiben, dass Berechtigungen verweigert und geändert, während die app ausgeführt wird. Die am häufigsten verwendete Technik ist zum Anfordern von Berechtigungen in der `UIApplicationDelegate.OnActivated` Methode und ändern Sie die Benutzeroberfläche entsprechend.
 
-### <a name="permissions-walkthrough"></a>Berechtigungen Exemplarische Vorgehensweise
+### <a name="permissions-walkthrough"></a>Exemplarische Vorgehensweise die Berechtigungen
 
-Öffnen Sie im Projekt Integrität Kit bereitgestellt, die `AppDelegate.cs` Datei. Beachten Sie die Anweisung mithilfe `HealthKit`; am Anfang der Datei.
+Öffnen Sie in Ihrem Projekt Integrität Kit bereitgestellt, die `AppDelegate.cs` Datei. Beachten Sie, dass die Anweisung mithilfe `HealthKit`; am Anfang der Datei.
 
 
 Der folgende Code bezieht sich auf Integrität Kit Berechtigungen:
@@ -207,20 +207,20 @@ void ReactToHealthCarePermissions (bool success, NSError error)
 
 ```
 
-Der gesamte Code in diesen Methoden konnten erfolgen Inline `OnActivated`, aber die Beispiel-app separate Methoden verwendet, um ihre Absicht deutlicher zu machen: `ValidateAuthorization()` verfügt über die erforderlichen Schritte zum Anfordern des Zugriffs auf bestimmte Typen, die geschrieben werden (und lesen, bei Bedarf von die app) und `ReactToHealthCarePermissions()` ist ein Rückruf, der aktiviert wird, nachdem der Benutzer mit dem Dialogfeld "Berechtigungen" in der Health.app interagiert hat.
+Der gesamte Code in diesen Methoden können in ausgeführt werden, Inline `OnActivated`, aber die Beispiel-app verwendet separate Methoden, um ihre Absichten klarer zu machen: `ValidateAuthorization()` verfügt über die erforderlichen Schritte zum Anfordern des Zugriffs auf die bestimmte Typen, die geschrieben werden (und lesen, die bei Bedarf von die app) und `ReactToHealthCarePermissions()` ist ein Rückruf an, die aktiviert wird, nachdem der Benutzer das Dialogfeld "Berechtigungen" in der Health.app interagiert hat.
 
-Der Auftrag des `ValidateAuthorization()` wird zum Erstellen der Gruppe von `HKObjectTypes` , dass die Anwendung schreibt und Autorisierung zum Aktualisieren dieser Daten anfordern. In der Beispiel-app die `HKObjectType` ist für den Schlüssel `KHQuantityTypeIdentifierKey.HeartRate`. Dieser Typ wird dem Satz hinzugefügt `typesToWrite`, dagegen den Satz `typesToRead` leer gelassen wird. Diese Sätze und einem Verweis auf die `ReactToHealthCarePermissions()` -Rückruf übergeben wird `HKHealthStore.RequestAuthorizationToShare()`.
+Die Aufgabe des `ValidateAuthorization()` ist die Erstellung den Satz von `HKObjectTypes` , dass die app schreiben und Autorisierung zum Aktualisieren dieser Daten anfordern. In der Beispiel-app die `HKObjectType` ist für den Schlüssel `KHQuantityTypeIdentifierKey.HeartRate`. Dieser Typ wird dem Satz hinzugefügt `typesToWrite`, zwar den Satz `typesToRead` leer gelassen wird. Diese Sätze und einem Verweis auf die `ReactToHealthCarePermissions()` Rückruf übergeben wird, um `HKHealthStore.RequestAuthorizationToShare()`.
 
-Die `ReactToHealthCarePermissions()` Rückruf wird aufgerufen, nachdem der Benutzer mit dem Dialogfeld "Berechtigungen" interagiert hat und zwei Angaben übergeben wird: ein `bool` -Wert, der werden `true` , wenn der Benutzer mit dem Dialogfeld "Berechtigungen" und eine interagierthat`NSError`, falls ungleich Null, womit eine Art von Fehler präsentieren das Dialogfeld "Berechtigungen" zugeordnet.
+Die `ReactToHealthCarePermissions()` Rückruf wird aufgerufen, nachdem der Benutzer, mit dem Dialogfeld "Berechtigungen interagiert hat", und zwei Angaben übergeben: eine `bool` -Wert, der werden `true` , wenn der Benutzer das Dialogfeld "Berechtigungen" und eine interagierthat`NSError`, wenn Null, womit eine Art von Fehler bei der Übergabe des Dialogfeld "Berechtigungen".
 
 > [!IMPORTANT]
-> Zu den Argumenten dieser Funktion werden: die _Erfolg_ und _Fehler_ Parameter bedeuten nicht, ob der Benutzer die Berechtigung zum Health Kit Datenzugriff gewährt wurde! Sie nur ein Hinweis, dass der Benutzer die Möglichkeit, den Zugriff auf die Daten zu erlauben erteilt wurden.
+> Zu den Argumenten für diese Funktion deaktiviert ist: die _Erfolg_ und _Fehler_ Parameter nicht angegeben, ob der Benutzer die Zugriffsberechtigung für Health-Kit Daten erteilt hat. Sie geben nur an, dass der Benutzer die Möglichkeit, Zugriff auf die Daten erhalten hat.
 
-Um zu bestätigen, ob die app Zugriff auf die Daten der `HKHealthStore.GetAuthorizationStatus()` Einsatz und übergibt `HKQuantityTypeIdentifierKey.HeartRate`. Basierend auf den Status zurückgegeben, die die app aktiviert oder deaktiviert die Möglichkeit, Daten eingeben. Es ist keine Standardbenutzer-Erfahrung für den Umgang mit einer Verweigerung des Zugriffs, und es gibt zahlreiche mögliche Optionen. Der Status wird festgelegt in der Beispiel-app auf einem `HeartRateModel` Singleton-Objekt, das wiederum relevante Ereignisse auslöst.
+Um zu bestätigen, ob die app Zugriff auf die Daten, die `HKHealthStore.GetAuthorizationStatus()` verwendet wird, übergibt `HKQuantityTypeIdentifierKey.HeartRate`. Basierend auf den Status zurückgegeben, die app aktiviert oder deaktiviert die Möglichkeit, Daten einzugeben. Es ist keine Standardbenutzer-Benutzeroberfläche für den Umgang mit einer zugriffsverweigerung verursacht, und es gibt viele Möglichkeiten. Der Status wird festgelegt in der Beispiel-app auf einem `HeartRateModel` Singleton-Objekt, das wiederum relevante Ereignisse auslöst.
 
 ## <a name="model-view-and-controller"></a>Modell, Ansicht und Controller
 
-So überprüfen die `HeartRateModel` Singleton-Objekt, öffnen die `HeartRateModel.cs` Datei:
+Überprüfen der `HeartRateModel` Singleton-Objekt, öffnen die `HeartRateModel.cs` Datei:
 
 ```csharp
 using System;
@@ -333,23 +333,23 @@ namespace HKWork
 
 ```
 
-Der erste Abschnitt wird Code häufig zum Erstellen von generische Ereignisse und Ereignishandler. Der erste Teil der `HeartRateModel` -Klasse ist außerdem Textbaustein zum Erstellen eines Thread-sichere Singletonobjekts.
+Im erste Abschnitt wird die Codebausteine zum Erstellen von generische Ereignisse und Handler. Der erste Teil der `HeartRateModel` -Klasse ist auch Codebausteine zum Erstellen eines Thread-sichere Singletonobjekts.
 
-Klicken Sie dann `HeartRateModel` 3 Ereignisse verfügbar gemacht werden: 
+Klicken Sie dann `HeartRateModel` 3 Ereignisse verfügbar macht: 
 
-- `EnabledChanged` -Gibt an, dass Herzfrequenz Speicher aktiviert oder deaktiviert wurde (Beachten Sie, dass Speicher anfänglich deaktiviert ist). 
-- `ErrorMessageChanged` -Diese Beispiel-app haben wir ein sehr einfaches Modell für die Fehlerbehandlung: eine Zeichenfolge mit dem letzten Fehler. 
-- `HeartRateStored` -Wird ausgelöst, wenn eine Herzfrequenz in der Integrität-Kit-Datenbank gespeichert ist.
+- `EnabledChanged` : Gibt an, dass das Herz Speicher aktiviert oder deaktiviert wurde (Beachten Sie, dass Speicher ursprünglich deaktiviert ist). 
+- `ErrorMessageChanged` – Für diese Beispiel-app haben wir ein sehr einfaches Modell für die Fehlerbehandlung: eine Zeichenfolge mit dem letzten Fehler. 
+- `HeartRateStored` : Wird ausgelöst, wenn eine Herzfrequenz in der Health-Kit-Datenbank gespeichert ist.
 
-Beachten Sie, dass die, wenn diese Ereignisse ausgelöst werden, erfolgt über `NSObject.InvokeOnMainThread()`, wodurch Abonnenten für die Benutzeroberfläche zu aktualisieren. Alternativ können Sie die Ereignisse konnte dokumentiert werden, als ausgelösten in Hintergrundthreads aus, und die Zuständigkeit für das Sicherstellen der Kompatibilität konnte ihre Handler überlassen werden. Thread Überlegungen sind in Health Kit Anwendungen wichtig, da viele der Funktionen, z. B. die Erlaubnis asynchron sind, und führen Sie ihre Rückrufe für nicht-Main-Threads.
+Beachten Sie, dass die, wenn diese Ereignisse ausgelöst werden, müssen diese erfolgt über `NSObject.InvokeOnMainThread()`, wodurch Abonnenten für die Benutzeroberfläche zu aktualisieren. Alternativ können die Ereignisse dokumentiert werden, als in Hintergrundthreads ausgelöst wird, und die Verantwortung für das Sicherstellen der Kompatibilität kann ihre Handler überlassen werden. Thread-Überlegungen sind in Health Kit Anwendungen wichtig, da viele der Funktionen, z. B. der berechtigungsanforderung asynchron sind, und führen Sie die Rückrufe für nicht-Main-Threads.
 
-Der spezifische "heath"-Kit-Code in `HeartRateModel` befindet sich in zwei Funktionen `HeartRateInBeatsPerMinute()` und `StoreHeartRate()`. 
+Die "heath"-Kit-spezifischen Code in `HeartRateModel` befindet sich in die beiden Funktionen `HeartRateInBeatsPerMinute()` und `StoreHeartRate()`. 
 
-`HeartRateInBeatsPerMinute()` Konvertiert das Argument in eine stark typisierte Integrität Kit `HKQuantity`. Der Typ der Menge ist, die durch die `HKQuantityTypeIdentifierKey.HeartRate` und sind die Einheiten der Menge `HKUnit.Count` geteilt durch `HKUnit.Minute` (also die Einheit ist *pro Minute ist*). 
+`HeartRateInBeatsPerMinute()` Konvertiert das Argument in eine stark typisierte Integrität Kit `HKQuantity`. Der Typ der Menge ist, die gemäß der `HKQuantityTypeIdentifierKey.HeartRate` und die von der Menge `HKUnit.Count` geteilt durch `HKUnit.Minute` (das heißt, der die Einheit ist *beats pro Minute*). 
 
-Die `StoreHeartRate()` -Funktion akzeptiert eine `HKQuantity` (in der Beispiel-app erstellt eine `HeartRateInBeatsPerMinute()` ). Um die Daten zu überprüfen, verwendet er die `HKQuantity.IsCompatible()` Methode, die zurückgibt `true` Wenn Einheiten für das Objekt in der Einheiten im Argument konvertiert werden können. Wenn mit die Menge erstellt wurde `HeartRateInBeatsPerMinute()` wird offensichtlich zurückgegeben `true`, aber es würde ebenfalls zurückgegeben werden `true` , wenn die Menge, wie z. B. erstellt wurden *ist pro Stunde*. In der Regel `HKQuantity.IsCompatible()` können verwendet werden, um die Masse überprüfen Entfernung und Energie, die der Benutzer oder ein Gerät die Eingabe oder Anzeige in einem System Maßeinheit (z. B. englische Einheiten), aber die möglicherweise in einem anderen System (z. B. metrischen) gespeichert werden. 
+Die `StoreHeartRate()` -Funktion nimmt ein `HKQuantity` (in der Beispiel-app einen erstellt, indem `HeartRateInBeatsPerMinute()` ). Um die Daten zu überprüfen, verwendet der `HKQuantity.IsCompatible()` -Methode, die gibt `true` Wenn in der Einheiten im Argument der objektspezifischen Einheiten konvertiert werden können. Wenn die Menge mit erstellt wurde `HeartRateInBeatsPerMinute()` natürlich als Ergebnis erhalten `true`, doch es wird auch zurückgegeben `true` , wenn die Menge, wie z. B. erstellt wurden *überlegen ist pro Stunde*. Häufiger `HKQuantity.IsCompatible()` kann verwendet werden, zum Überprüfen der Masse, Abstand und Energie, die der Benutzer oder ein Gerät die Eingabe oder Anzeige in einem System, der Maßeinheit (z. B. Imperial Einheiten), aber die möglicherweise in einem anderen System (z. B. die metrischen Einheiten) gespeichert werden. 
 
-Sobald die Kompatibilität der Menge überprüft wurde, die `HKQuantitySample.FromType()` Factory-Methode wird verwendet, um einen stark typisierten erstellen `heartRateSample` Objekt. `HKSample` Objekte verfügen über ein Anfangs- und Enddatum Datum; für sofortige Messwerte sollte diese Werte entsprechen, wie im Beispiel werden. Im Beispiel auch nicht setzt alle Schlüssel-Wert-Daten seiner `HKMetadata` Argument, aber einer konnte Code wie den folgenden Code verwenden, um sensorspeicherorts angeben:
+Sobald die Kompatibilität der Menge überprüft wurde, die `HKQuantitySample.FromType()` Factorymethode wird verwendet, um einen stark typisierten erstellen `heartRateSample` Objekt. `HKSample` -Objekte haben ein Datum Start- und Endzeit. für die sofortige Sensorenmesswerte enthalten sollten diese Werte entsprechen, wie im Beispiel. Das Beispiel auch ist nicht festgelegt alle Schlüssel-Wert-Daten die `HKMetadata` Argument, aber einer kann Code wie den folgenden Code verwenden, um Sensor Speicherort anzugeben:
 
 ```csharp
 var hkm = new HKMetadata();
@@ -357,9 +357,9 @@ hkm.HeartRateSensorLocation = HKHeartRateSensorLocation.Chest;
 
 ```
 
-Sobald die `heartRateSample` wurde erstellt, der Code erstellt eine neue Verbindung mit der Datenbank mit der using Block. In diesem Block die `HKHealthStore.SaveObject()` Methode versucht, den asynchronen Schreibvorgang in der Datenbank. Der resultierende Aufruf an den Lambda-Ausdruck löst relevante Ereignisse entweder `HeartRateStored` oder `ErrorMessageChanged`.
+Sobald die `heartRateSample` wurde erstellt, der Code erstellt eine neue Verbindung mit der Datenbank mit der Block. In diesem Block den `HKHealthStore.SaveObject()` Methode versucht, den asynchronen Schreibvorgang in der Datenbank. Der resultierende Aufruf an den Lambda-Ausdruck löst relevante Ereignisse aus, entweder `HeartRateStored` oder `ErrorMessageChanged`.
 
-Nachdem das Modell programmiert wurde, ist es um zu sehen, wie der Controller den Zustand des Modells widerspiegelt. Öffnen Sie die `HKWorkViewController.cs` Datei. Der Konstruktor einfach verbindet die `HeartRateModel` Singleton, Ereignisbehandlungsmethoden (erneut, dies kann mit Lambda-Ausdrücken Inline ausgeführt werden, aber separate Methoden stellen die Absicht etwas leichter ersichtlich):
+Nun, da das Modell so programmiert sind, ist es Zeit, wie der Controller für den Zustand des Modells widerspiegelt. Öffnen Sie die `HKWorkViewController.cs` Datei. Der Konstruktor einfach verbindet die `HeartRateModel` Singleton um Ereignisbehandlungsmethoden (in diesem Fall könnte dies Inline mit Lambda-Ausdrücken, aber separate Methoden machen den Zweck, die etwas offensichtlicher):
 
 ```csharp
 public HKWorkViewController (IntPtr handle) : base (handle)
@@ -371,7 +371,7 @@ public HKWorkViewController (IntPtr handle) : base (handle)
 
 ```
 
-Hier werden die entsprechenden Handler aus:
+Hier sind die entsprechenden Handler:
 
 ```csharp
 void OnEnabledChanged (object sender, GenericEventArgs<bool> args)
@@ -393,54 +393,54 @@ void OnHeartBeatStored (object sender, GenericEventArgs<double> args)
 
 ```
 
-Natürlich in einer Anwendung mit einem Controller, es ist möglich, um die Erstellung eines separaten Model-Objekts und die Verwendung von Ereignissen für die ablaufsteuerung zu vermeiden, aber die Verwendung von Modellobjekte eignet sich besser für realen apps.
+Natürlich in einer Anwendung mit einem Controller, es wäre möglich, um die Erstellung eines separaten Model-Objekts und die Verwendung von Ereignissen für die ablaufsteuerung zu vermeiden, aber die Verwendung von Model-Objekte für WPF-Anwendungen besser geeignet ist.
 
 ## <a name="running-the-sample-app"></a>Ausführen der Beispielapp
 
-IOS-Simulator unterstützt Integrität Kit nicht. Debuggen muss auf ein physisches Gerät mit iOS 8 durchgeführt werden.
+IOS-Simulator unterstützt keine Integrität Kit. Debuggen muss auf einem physischen Gerät unter iOS 8 durchgeführt werden.
 
-Fügen Sie einem ordnungsgemäß bereitgestellt iOS 8-Gerät-Entwicklung mit Ihrem System. Wählen Sie diese als das Bereitstellungsziel in Visual Studio für Mac, und wählen Sie im **ausführen > Debuggen**.
+Anfügen eines entwicklungsgeräts ordnungsgemäß bereitgestellt iOS 8 auf Ihrem System. Wählen Sie sie als Bereitstellungsziel in Visual Studio für Mac, und wählen Sie im Menü **ausführen > Debuggen**.
 
 > [!IMPORTANT]
-> Fehler im Zusammenhang mit der Bereitstellung werden an diesem Punkt Oberfläche. Um Fehler zu beheben, überprüfen Sie zum Erstellen und die Bereitstellung eines Integrität Kit App Abschnitts oben aus. Die Komponenten sind: 
+> An diesem Punkt werden die Fehler im Zusammenhang mit der Bereitstellung auftreten. Um Fehler zu beheben, überprüfen Sie Sie erstellen und Bereitstellen von einem Integrität Kit App-Abschnitt oben. Die Komponenten sind: 
 >
-> - **iOS Dev Center** -explizite App-ID und Integrität Kit Provisioning-Profil aktiviert. 
-> - **Projekt Optionen** -Paket-ID (explizite App-ID) & Bereitstellungsprofil.
-> - **Quellcode** -Entitlements.plist & Datei "Info.plist"
+> - **iOS Developer Center** -explizite App-ID und die Integrität Kit aktiviert Bereitstellungsprofil. 
+> - **Projektoptionen** -Bündel-ID (explizite App-ID) und Bereitstellungsprofil.
+> - **Quellcode:** -"Entitlements.plist" und "Info.plist"
 
-Vorausgesetzt, dass Vorschriften ordnungsgemäß festgelegt wurden, wird die Anwendung gestartet. Bei Erreichen der `OnActivated` -Methode, er Integrität Kit Autorisierung anfordert. Dies durch das Betriebssystem kommt zum ersten Mal wird der Benutzer das folgende Dialogfeld angezeigt:
-
-
-[![](healthkit-images/image12.png "Der Benutzer wird in diesem Dialogfeld angezeigt werden")](healthkit-images/image12.png#lightbox)
-
-Konfigurieren Sie die Anwendung zum Aktualisieren von Herzfrequenz Daten und Ihre app wird erneut angezeigt. Die `ReactToHealthCarePermissions` Rückruf wird asynchron aktiviert werden. Dies bewirkt, dass die `HeartRateModel’s` `Enabled` -Eigenschaft zu ändern, die ausgelöst wird die `EnabledChanged` Ereignis, wodurch die `HKPermissionsViewController.OnEnabledChanged()` -Ereignishandler ausgeführt wird, wodurch die `StoreData` Schaltfläche. Das folgende Diagramm zeigt die Sequenz:
+Vorausgesetzt, dass Vorschriften ordnungsgemäß festgelegt wurden, wird Ihre Anwendung zu starten. Bei Erreichen der `OnActivated` -Methode, er Integrität Kit Autorisierung anfordert. Beim ersten dieser vom Betriebssystem, Fehler aufgetreten ist, wird der Benutzer das folgende Dialogfeld angezeigt:
 
 
-[![](healthkit-images/image13.png "Dieses Diagramm veranschaulicht die Abfolge von Ereignissen")](healthkit-images/image13.png#lightbox)
+[![](healthkit-images/image12.png "Dieses Dialogfeld wird dem Benutzer angezeigt werden")](healthkit-images/image12.png#lightbox)
 
-Drücken Sie die **Datensatz** Schaltfläche. Dies bewirkt, dass die `StoreData_TouchUpInside()` Handler ausgeführt wird, die versuchen, den Wert des analysiert die `heartRate` Textfeld Umwandeln in eine `HKQuantity` über die bereits vorgestellten `HeartRateModel.HeartRateInBeatsPerMinute()` Funktion, und übergeben Sie die Menge an `HeartRateModel.StoreHeartRate()`. Wie bereits gesagt, dies wird versucht, die Daten zu speichern und löst entweder eine `HeartRateStored` oder `ErrorMessageChanged` Ereignis.
+Ermöglichen Sie Ihrer app zum Aktualisieren von Daten mit Herz und Ihre app wird erneut angezeigt. Die `ReactToHealthCarePermissions` Rückruf asynchron aktiviert. Dies bewirkt, dass die `HeartRateModel’s` `Enabled` -Eigenschaft zu ändern, die ausgelöst wird die `EnabledChanged` -Ereignis, das bewirkt die `HKPermissionsViewController.OnEnabledChanged()` -Ereignishandler ausgeführt wird, wodurch die `StoreData` Schaltfläche. Das folgende Diagramm zeigt die Sequenz:
 
-Doppelklicken Sie auf die **Home** Schaltfläche auf Ihrem Gerät, und öffnen Sie Health-app. Klicken Sie auf die **Quellen** Registerkarte, und Sie sehen die Beispiel-app aufgeführt. Wählen Sie sie aus, und nicht die zulassen Sie Berechtigung zum Aktualisieren von Daten Herzfrequenz. Doppelklicken Sie auf die **Home** Schaltfläche und wechseln zurück zu Ihrer app. Noch einmal: `ReactToHealthCarePermissions()` wird aufgerufen, aber diesmal, da der Zugriff verweigert wird, die **StoreData** Schaltfläche wird deaktiviert (Beachten Sie, dass in diesem asynchron Fall und die Änderung in der Benutzeroberfläche kann für den Endbenutzer sichtbar sein).
+
+[![](healthkit-images/image13.png "Dieses Diagramm zeigt die Abfolge von Ereignissen")](healthkit-images/image13.png#lightbox)
+
+Drücken Sie die **Datensatz** Schaltfläche. Dies bewirkt, dass die `StoreData_TouchUpInside()` Handler ausgeführt wird, die versuchen, den Wert des analysiert die `heartRate` -Text-Feld konvertieren in ein `HKQuantity` über die zuvor beschriebenen `HeartRateModel.HeartRateInBeatsPerMinute()` Funktion, und übergeben Sie diese Menge an `HeartRateModel.StoreHeartRate()`. Wie bereits zuvor erwähnt, dies wird versucht, die Daten zu speichern und löst entweder eine `HeartRateStored` oder `ErrorMessageChanged` Ereignis.
+
+Doppelklicken Sie auf die **Startseite** auf Ihrem Gerät auf die Schaltfläche, und öffnen Sie die Integrität-app. Klicken Sie auf die **Quellen** Registerkarte, und Sie sehen die Beispiel-app aufgeführt. Wählen Sie diese, und nicht die zulassen Sie Berechtigung zum Aktualisieren von Daten mit Herz. Doppelklicken Sie auf die **Startseite** Schaltfläche und kehren zu Ihrer app zurück. Auch hier `ReactToHealthCarePermissions()` aufgerufen, aber dieses Mal verwenden, da der Zugriff verweigert wird, die **StoreData** Schaltfläche, deaktiviert (Beachten Sie, dass in diesem asynchron Fall und die Änderung in der Benutzeroberfläche ist möglicherweise für den Endbenutzer sichtbar).
 
 ## <a name="advanced-topics"></a>Weiterführende Themen
 
-Lesen von Daten aus dem Health Kit Datenbank ist das Schreiben von Daten sehr ähnlich: eine gibt die Arten von Daten, die eine Autorisierung für Anforderungen, zugreifen möchte, und diese Autorisierung gewährt wird, die Daten mit automatische Konvertierung zu kompatiblen Einheiten verfügbar sind Measure.
+Lesen von Daten aus dem Health-Kit Datenbank ähnelt das Schreiben von Daten: eine gibt die Arten von Daten, die eine Autorisierung Anforderungen zugreifen möchten, und diese Autorisierung gewährt, sind die Daten mit automatische Konvertierung zu kompatiblen Einheiten verfügbar Measure.
 
-Es gibt diverse komplexere Abfragefunktionen, die es ermöglichen, Prädikat-basierte Abfragen und Abfragen, die Updates ausführen, wenn relevante Daten aktualisiert werden. 
+Es gibt eine Reihe von komplexere Abfragefunktionen die ermöglichen, Prädikat-basierte Abfragen und Abfragen, die Updates ausführen, wenn relevante Daten aktualisiert werden. 
 
-Integrität Kit Anwendungsentwickler sollten Abschnitt Integrität Kit Apple [App überprüfen Richtlinien](https://developer.apple.com/app-store/review/guidelines/#healthkit).
+Entwickler von Anwendungen für Health-Kit prüfen den Health-Kit Teil von Apple [App-Richtlinien überprüfen](https://developer.apple.com/app-store/review/guidelines/#healthkit).
 
-Nachdem die Sicherheits- und Typsystem Modelle verstanden werden, ist speichern und Lesen von Daten in der freigegebenen Datenbank für die Integrität Kit ziemlich einfach. Viele der Funktionen in Health Kit asynchron ausgeführt werden, und Anwendungsentwickler müssen entsprechend ihrem Programm schreiben.
+Nachdem die Sicherheits- und das Typsystem Modelle zu verstehen sind, ist das Speichern und Lesen von Daten in der freigegebenen Datenbank für den Health-Kit ziemlich einfach. Viele der Funktionen in Health Kit asynchron ausgeführt werden, und Anwendungsentwickler müssen entsprechend ihrer Programme schreiben.
 
-Zum Zeitpunkt der Verfassung dieses Artikels gibt es derzeit keine Entsprechung Integrität Kit in Android oder Windows Phone.
+Zum Zeitpunkt der Verfassung dieses Artikels gibt es derzeit keine Entsprechung Integrität Kit, Android oder Windows Phone.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wir gesehen haben, wie Integrität Kit Anwendungen speichern können, abgerufen und der Integrität der Freigabe von Informationen zu verknüpften, gleichzeitig wird eine standardmäßige Health-app, die der Benutzerzugriff und die Kontrolle über diese Daten bereitgestellt. 
+In diesem Artikel wir gesehen haben, wie der Health-Kit Anwendungen das speichern können Informationen abrufen und die Systemüberwachung der Dateifreigabe, und bietet gleichzeitig eine standard-Integrität-app, die den Benutzerzugriff und die Kontrolle über diese Daten kann. 
 
-Außerdem haben wir gesehen, wie Datenschutz, Sicherheit und Datenintegrität Sicherheitsrisiken für Integrität bezogene Informationen überschreiben und apps mithilfe von Health Kit müssen befasst sich mit die Erhöhung der Komplexität in der Anwendung Verwaltungsaspekte (Bereitstellung), Schreiben von Code (Integrität-Kit-Typ System), und Benutzer (Benutzersteuerelement über System Dialogfelder und Health-app Berechtigungen) auftreten. 
+Wir haben auch gesehen, wie Datenschutz, Sicherheit und Integrität Sicherheitsrisiken für integritätsbezogene Informationen überschreiben und apps mithilfe des Integritäts-Kit müssen mit dem Anstieg in der Komplexität bei der Anwendung Verwaltungsaspekte (Bereitstellung), (Integrität Kitss Typ Codierung verarbeiten -System), und die benutzererfahrung (Benutzersteuerelement von Berechtigungen über die System-Dialogfelder und Integrität app). 
 
-Schließlich haben wir eine einfache Implementierung der Integrität Kit mithilfe der enthaltenen Beispiel-app, die Taktdaten in den Integritäts-Kit-Speicher geschrieben und verfügt über einen asynchronen unterstützende Entwurf betrachten.
+Schließlich haben wir einen Blick auf eine einfache Implementierung der Health-Kit mit der enthaltenen Beispiel-app, die heartbeatdaten in den Health-Kit-Speicher geschrieben und verfügt über einen asynchronen unterstützenden Entwurf.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -1,40 +1,40 @@
 ---
-title: Zugriff auf macOS
-description: Dieses Dokument beschreibt die Barrierefreiheitsfunktionen in einer app Xamarin.Mac MacOS arbeiten. Es wird erläutert, beschreibt Benutzeroberflächenelemente in Storyboards und Code, benutzerdefinierte Steuerelemente und Tests Eingabehilfen.
+title: Eingabehilfen unter macOS
+description: Dieses Dokument beschreibt, wie Sie mit Funktionen zur Barrierefreiheit von MacOS in einer Xamarin.Mac-app arbeiten. Es wird erläutert, beschreibt Benutzeroberflächenelemente in Storyboards und Code, benutzerdefinierte Steuerelemente und Zugriff auf Tests.
 ms.prod: xamarin
 ms.assetid: D7F4892B-501A-4271-A7E0-BDD1586B63AD
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: b2406654a46428e8c22284f5c7d114b07a463251
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: fdda52309ffdb0d32cc42a4dff052cd9050b1e4f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791162"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116614"
 ---
-# <a name="accessibility-on-macos"></a>Zugriff auf macOS
+# <a name="accessibility-on-macos"></a>Eingabehilfen unter macOS
 
-Diese Seite beschreibt, wie die MacOS Eingabehilfen-APIs zum Erstellen von apps, die gemäß der [Eingabehilfen Prüfliste](~/cross-platform/app-fundamentals/accessibility.md).
-Finden Sie in der [Android Eingabehilfen](~/android/app-fundamentals/accessibility.md) und [iOS Eingabehilfen](~/ios/app-fundamentals/accessibility.md) Seiten für andere Plattform-APIs.
+Diese Seite beschreibt, wie der MacOS-Eingabehilfen-APIs zum Erstellen von apps, die gemäß der [Checkliste für die Barrierefreiheit](~/cross-platform/app-fundamentals/accessibility.md).
+Finden Sie in der [Android Barrierefreiheit](~/android/app-fundamentals/accessibility.md) und [iOS Barrierefreiheit](~/ios/app-fundamentals/accessibility.md) Seiten für andere Plattform-APIs.
 
-Um die Arbeitsweise der Zugriff auf APIs in MacOS (ehemals: OS X), erste Überprüfung der [Zugriffsmodell für OS X](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXmodel.html).
+Um die Funktionsweise von Eingabehilfen-APIs in MacOS (ehemals: OS X), erste Überprüfung der [OS X-Zugriffsmodell](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXmodel.html).
 
 ## <a name="describing-ui-elements"></a>Beschreibt die Elemente der Benutzeroberfläche
 
-AppKit verwendet die `NSAccessibility` Protokoll APIs verfügbar zu machen, mit deren Hilfe die Benutzeroberfläche zugänglich zu machen. Dies schließt ein Standardverhalten aus, die versucht, legen Sie sinnvolle Werte für Eingabehilfeeigenschaften, z. B. einer Schaltfläche festlegen `AccessibilityLabel`. Die Bezeichnung ist in der Regel ein einzelnes Wort oder eine kurze Beschreibung des Steuerelements oder eine Sicht Ausdruck.
+AppKit verwendet die `NSAccessibility` Protokoll APIs verfügbar zu machen, mit deren Hilfe die Benutzeroberfläche zugänglich zu machen. Dies schließt ein Standardverhalten, das versucht, sinnvolle Werte für Eigenschaften von Bedienungshilfen, z. B. das Festlegen einer Schaltfläche festzulegen `AccessibilityLabel`. Die Bezeichnung ist in der Regel ein einzelnes Wort oder einen kurzen Ausdruck, die das Steuerelement oder der Ansicht beschreibt.
 
 ### <a name="storyboard-files"></a>Storyboard-Dateien
 
-Xamarin.Mac verwendet die Xcode-Benutzeroberflächen-Generator Storyboard-Dateien zu bearbeiten.
-Informationen über Eingabehilfen kann bearbeitet werden, der **Identität Inspektor** Wenn ein Steuerelement aktiviert ist auf der Entwurfsoberfläche angezeigt (wie im folgenden Screenshot gezeigt):
+Xamarin.Mac verwendet die Interface Builder von Xcode, um Storyboard-Dateien zu bearbeiten.
+Informationen zur Barrierefreiheit kann bearbeitet werden, der **identitätsinspektor** Wenn ein Steuerelement ausgewählt ist auf der Entwurfsoberfläche (wie im folgenden Screenshot gezeigt):
 
-[![Hinzufügen von Eingabehilfen in Xcodes Benutzeroberflächen-Generator](accessibility-images/xcode.png "Barrierefreiheit in Xcodes Benutzeroberflächen-Generator hinzufügen")](accessibility-images/xcode-large.png#lightbox)
+[![Hinzufügen von Eingabehilfen in Interface Builder von Xcode](accessibility-images/xcode.png "Hinzufügen von Eingabehilfen in Interface Builder von Xcode")](accessibility-images/xcode-large.png#lightbox)
 
 ### <a name="code"></a>Code
 
-Xamarin.Mac macht derzeit nicht als `AccessibilityLabel` Setter-Methode.  Fügen Sie die folgende Hilfsmethode, um die Eingabehilfen Bezeichnung festgelegt:
+Xamarin.Mac macht keine derzeit verfügbar als `AccessibilityLabel` Setter.  Fügen Sie die folgende Hilfsmethode, um die Barrierefreiheit Bezeichnung festgelegt:
 
 ```csharp
 public static class AccessibilityHelper
@@ -55,38 +55,38 @@ Diese Methode kann dann im Code verwendet werden, wie gezeigt:
 AccessibilityHelper.SetAccessibilityLabel (someButton, "New Accessible Description");
 ```
 
-Die `AccessibilityHelp` Eigenschaft ist eine Erläuterung der Wirkungsweise der Steuerelement- oder die Sicht und sollten nur hinzugefügt werden, wenn die Bezeichnung keine ausreichenden Informationen bereitstellt, kann. Der Hilfetext sollten weiterhin beibehalten werden so kurz wie möglich, für das Beispiel "löscht das Dokument".
+Die `AccessibilityHelp` Eigenschaft ist eine Erläuterung der Funktionsweise der-Steuerelement oder eine Sicht und sollte nur hinzugefügt werden, wenn die Bezeichnung keine ausreichenden Informationen bereitstellt, kann. Der Hilfetext sollten weiterhin beibehalten werden so kurz wie möglich, für das Beispiel "löscht das Dokument".
 
-Einige Benutzeroberflächenelemente sind nicht relevant für den Zugriff (z. B. eine Bezeichnung neben einer Eingabe, die eine eigene Eingabehilfen Bezeichnung und die Hilfe hat).
-Legen Sie in diesen Fällen `AccessibilityElement = false` , damit diese Steuerelemente oder Sichten von Bildschirmleseprogrammen oder anderen Tools für Barrierefreiheit übersprungen werden.
+Einige Benutzeroberflächenelemente sind nicht relevant für zugänglichen Zugriff (z. B. eine Bezeichnung neben der Eingabe, die über eine eigene Eingabehilfen-Bezeichnung und eine Hilfe verfügt).
+Legen Sie in diesen Fällen `AccessibilityElement = false` , damit diese Steuerelemente oder Ansichten von Bildschirmsprachausgaben sowie andere Tools für Barrierefreiheit wird übersprungen.
 
-Apple bietet [Richtlinien für Eingabehilfen](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/EnhancingtheAccessibilityofStandardAppKitControls.html) , erklärt die bewährten Methoden für Eingabehilfen-Text für Bezeichnungen und Hilfe.
+Apple bietet [Richtlinien für Eingabehilfen](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/EnhancingtheAccessibilityofStandardAppKitControls.html) , erläutert die bewährten Methoden für Eingabehilfen-Bezeichnungen und Hilfe-Text.
 
 ## <a name="custom-controls"></a>Benutzerdefinierte Steuerelemente
 
-Finden Sie in der Apple- [Richtlinien für zugegriffen werden kann, benutzerdefinierte Steuerelemente](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/ImplementingAccessibilityforCustomControls.html) ausführliche Informationen über die weiteren Schritte erforderlich.
+Finden Sie in Apple [Richtlinien für zugegriffen werden kann, benutzerdefinierte Steuerelemente](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/ImplementingAccessibilityforCustomControls.html) ausführliche Informationen über die weiteren Schritte erforderlich.
 
-## <a name="testing-accessibility"></a>Barrierefreiheit
+## <a name="testing-accessibility"></a>Testen der Barrierefreiheit
 
-MacOS bietet eine **Eingabehilfen Inspektor** , hilft Barrierefreiheitsfunktionen testen. Der Inspektor wird in Xcode enthalten.
+MacOS bietet eine **Barrierefreiheit Inspektor** , unterstützt die Barrierefreiheitsfunktionen testen. Der Inspector ist in Xcode enthalten.
 
-Beim ersten es gestartet wird, die **Eingabehilfen Inspektor** benötigen die Berechtigung zum Steuern des Computers über Zugriff auf:
+Beim ersten Start, die **Barrierefreiheit Inspektor** benötigen die Berechtigung zum Steuern der Computer über Zugriff auf:
 
 ![Anfordern der Berechtigung zum Ausführen von Eingabehilfen-Inspektor](accessibility-images/accessibility-inspector-1.png "Anfordern der Berechtigung zum Ausführen von Eingabehilfen-Inspektor")
 
-Der Bildschirm "Einstellungen" (falls auf der linken unteren Ecke erforderlich) und Teilstriche Entsperren der **Eingabehilfen Inspektor**:
+Entsperren Sie den Bildschirm "Einstellungen" (falls auf der linken unteren Ecke, erforderlich) und -Tick der **Barrierefreiheit Inspektor**:
 
-![Bildschirm "Einstellungen" Aktivieren von Eingabehilfen-Inspektor](accessibility-images/accessibility-inspector-2.png "Bildschirm \"Einstellungen\" Aktivieren von Eingabehilfen-Inspektor")
+![Bildschirm "Einstellungen" Barrierefreiheit Inspector aktivieren](accessibility-images/accessibility-inspector-2.png "Bildschirm \"Einstellungen\" auf die Barrierefreiheit Inspector zu aktivieren")
 
-Nach der Aktivierung wird der Inspektor angezeigt, als ein unverankertes Fenster, das auf dem Bildschirm verschoben werden kann. Der folgende Screenshot zeigt den Inspektor neben einem Beispiel-app für Mac ausgeführt wird. Wie das Fenster der Mauszeiger bewegt wird, werden der Inspektor alle zugegriffen werden kann Eigenschaften der einzelnen Steuerelemente angezeigt:
+Nach der Aktivierung wird der Inspektor angezeigt, als unverankertes Fenster, das auf dem Bildschirm verschoben werden kann. Der folgende Screenshot zeigt den Inspektor neben einer Beispiel-app für Mac ausgeführt wird. Wie sich der Cursor über dem Fenster bewegt wird, zeigt der Inspektor alle zugegriffen werden Eigenschaften der einzelnen Steuerelemente:
 
-[![Beispiel für Eingabehilfen Inspektor ausführen](accessibility-images/accessibility-example.png "Beispiel von Eingabehilfen-Inspektor ausgeführt wird")](accessibility-images/accessibility-example-large.png#lightbox)
+[![Beispiel für die Barrierefreiheit Inspector ausführen](accessibility-images/accessibility-example.png "Beispiel der Barrierefreiheit Inspector ausführen")](accessibility-images/accessibility-example-large.png#lightbox)
 
-Weitere Informationen finden Sie unter der [Barrierefreiheit für OS X-Handbuch](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html).
+Weitere Informationen finden Sie in der [Testen der Barrierefreiheit für OS X-Handbuch](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html).
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Plattformübergreifende Eingabehilfen](~/cross-platform/app-fundamentals/accessibility.md)
-- [Mac-Eingabehilfen](https://www.apple.com/accessibility/mac/)
+- [Cross-Platform-Barrierefreiheit](~/cross-platform/app-fundamentals/accessibility.md)
+- [Mac-Barrierefreiheit](https://www.apple.com/accessibility/mac/)

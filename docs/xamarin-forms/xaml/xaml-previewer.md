@@ -1,65 +1,77 @@
 ---
-title: Verwendung von XAML-Vorschau für Xamarin.Forms
-description: In diesem Artikel wird erläutert, wie die Verwendung von XAML-Vorschau verwenden, um die Xamarin.Forms-Layouts, das gerendert wird, während der Eingabe. Die Verwendung von XAML-Vorschau ist verfügbar in Visual Studio 2017 und Visual Studio für Mac.
+title: XAML-Vorschau für Xamarin.Forms
+description: In diesem Artikel wird erläutert, wie Sie mit, dass die XAML-Vorschau finden Sie unter Ihrer Xamarin.Forms-Layouts, das gerendert wird, während der Eingabe. Die XAML-Vorschau steht in Visual Studio 2017 und Visual Studio für Mac.
 ms.prod: xamarin
 ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/31/2018
-ms.openlocfilehash: 25c8e1a34f8be5ab2f8491e75fa5aac470d55bc8
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: def7a7a3bdd9e165252c5ad1928b89ec654e5d74
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245858"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108081"
 ---
-# <a name="xaml-previewer-for-xamarinforms"></a>Verwendung von XAML-Vorschau für Xamarin.Forms
+# <a name="xaml-previewer-for-xamarinforms"></a>XAML-Vorschau für Xamarin.Forms
 
-_Wir sehen Sie uns die Xamarin.Forms-Layouts, das gerendert wird, während der Eingabe!_
+_Finden Sie unter Ihrer Xamarin.Forms-Layouts, das gerendert wird, während der Eingabe._
 
 ## <a name="requirements"></a>Anforderungen
 
-Projekte erfordern das aktuellste Xamarin.Forms-NuGet-Paket für die Verwendung von XAML-Vorschau zu arbeiten. Anzeigen einer Vorschau von Android-apps erfordert [JDK 1.8 X64](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+Projekte erfordern das neueste Xamarin.Forms-NuGet-Paket für die XAML-Vorschau funktioniert. Vorschau von Android-apps erfordert [JDK 1.8 X64](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 
-Es sind weitere Informationen in den [Anmerkungen zu dieser Version](https://developer.xamarin.com/releases/studio/xamarin.studio_6.2/xamarin.studio_6.2/#Xamarin_Forms_Previewer).
+Weitere Informationen in den [Anmerkungen zu dieser Version](https://developer.xamarin.com/releases/studio/xamarin.studio_6.2/xamarin.studio_6.2/#Xamarin_Forms_Previewer).
 
 ## <a name="getting-started"></a>Erste Schritte
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Verwenden der **Ansicht > Weitere Fenster > Xamarin.Forms-Vorschau** Menü in Visual Studio zum Öffnen des Vorschaufensters. Verwenden der **Fenster > Neue vertikale Registerkartengruppe** -Menü, um die Seite-an-Seite zu positionieren.
+Die XAML-Vorschau ist standardmäßig aktiviert und kann gesteuert werden, aus der **Tools > Optionen > Xamarin > Forms Previewer** Dialogfeld. In diesem Dialogfeld können Sie die Standardansicht für das Dokument und die Ausrichtung der geteilten auswählen.
 
-[![ListView-Steuerelement-Vorschau in Visual Studio](xaml-previewer-images/xamlp-list-vs-sml.png "Forms-Vorschau in Visual Studio")](xaml-previewer-images/xamlp-list-vs.png#lightbox "Forms-Vorschau in Visual Studio")
+[![ListView-Steuerelement-Vorschau in Visual Studio](xaml-previewer-images/xamlp-options-vs.png "Forms-Vorschau-Optionen in Visual Studio")](xaml-previewer-images/xamlp-options-vs.png#lightbox "Forms-Vorschau-Optionen in Visual Studio")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+Wenn eine XAML-Seite, die der Editor teilt öffnen auf Grundlage der Einstellungen ausgewählt werden, der **Tools > Optionen > Xamarin > Forms-Vorschau** Dialogfeld. Allerdings können diese Einstellungen im Editor-Fenster geändert werden.
 
-Die **Vorschau** Schaltfläche im Editor angezeigt werden kann, durch einen XAML-Datei mit der rechten Maustaste und Auswählen von **Öffnen mit > Forms-Vorschau**. Im Vorschaufenster klicken Sie dann angezeigt oder ausgeblendet werden kann durch Drücken der **Vorschau** Schaltfläche in der oberen rechten Ecke des jedes Dokumentfenster XAML:
+## <a name="xaml-preview-controls"></a>XAML-Vorschau-Steuerelemente
+
+Oben im Editor-Fenster verfügt über die Schaltflächen auswählen, welcher Bereich verwendet werden, die oberste Schaltfläche mit dem Wechsel in das Entwurfsfenster, und die Schaltfläche unten, wechseln in den Quellcodebereich ist. Die mittlere Schaltfläche vertauscht die Reihenfolge im Bereich.
+
+[![ListView-Steuerelement-Vorschau in Visual Studio](xaml-previewer-images/xamlp-controls-vs.png "Forms-Vorschau-Bereich-Steuerelemente in Visual Studio")](xaml-previewer-images/xamlp-controls-vs.png#lightbox "Forms-Vorschau-Bereich-Steuerelemente in Visual Studio")
+
+Unten im Editor-Fenster verfügt über die Schaltflächen, die Bereiche, horizontal und vertikal zu teilen und zu erweitern oder reduzieren die aktuellen untergeordneten Bereich.
+
+[![ListView-Steuerelement-Vorschau in Visual Studio](xaml-previewer-images/xamlp-controls2-vs.png "Forms-Vorschau-Bereich-Steuerelemente in Visual Studio")](xaml-previewer-images/xamlp-controls2-vs.png#lightbox "Forms-Vorschau-Bereich-Steuerelemente in Visual Studio")
+
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+
+Die **Vorschau** Schaltfläche wird im Editor angezeigt, wenn Sie eine XAML-Seite zu öffnen. Im Vorschaufenster kann ein- oder ausgeblendet wird, drücken Sie die **Vorschau** Schaltfläche in der oberen rechten Ecke von einem beliebigen XAML-Dokument-Fenster:
 
 [![ListView-Steuerelement-Vorschau in Visual Studio für Mac](xaml-previewer-images/xamlp-list-sml.png "Forms-Vorschau in Visual Studio für Mac")](xaml-previewer-images/xamlp-list.png#lightbox "Forms-Vorschau in Visual Studio für Mac")
 
 -----
 
-## <a name="xaml-preview-options"></a>Verwendung von XAML-Vorschau-Optionen
+## <a name="xaml-preview-options"></a>Optionen für die Vorschauversion von XAML
 
 Die Optionen am oberen Rand des Vorschaufensters sind:
 
-* **Phone** – in einem Bildschirm Phone Größe Rendern
-* **Tablet** – in einem Tablet-Größe Bildschirm rendern (Beachten Sie, dass es Zoomsteuerelemente auf der unteren rechten Ecke des Bereichs)
-* **Android** – die Android-Version des Bildschirms anzeigen
-* **iOS** – die iOS-Version des Bildschirms anzeigen
-* Portait (Symbol) – verwendet Hochformat für die Vorschau
+* **Phone** : Rendern in einem Bildschirm Phone-Größe
+* **Tablet** – in einem Tablet-Size-Bildschirm rendern (Beachten Sie Zoom-Steuerelemente zu unten rechts im Bereich befinden.)
+* **Android** – zeigen Sie die Android-Version des Bildschirms
+* **iOS** – zeigen Sie die iOS-Version des Bildschirms
+* Portait (Symbol) – verwendet Hochformat, für die Vorschau
 * Querformat (Symbol) – verwendet Querformat für die Vorschau
 
-## <a name="adding-design-time-data"></a>Hinzufügen von Daten zur Entwurfszeit
+## <a name="adding-design-time-data"></a>Hinzufügen von Entwurfszeit-Daten
 
-Einige Layouts möglicherweise schwer zu visualisieren ohne Daten an Steuerelemente der Benutzeroberfläche gebunden. Um die Vorschau nützlicher zu gestalten, weisen Sie einige statische Daten die Steuerelemente von hartcodierten einen Bindungskontext (entweder im Code-Behind oder mit XAML).
+Einige Layouts möglicherweise schwer vorstellbar ohne Daten an Steuerelemente der Benutzeroberfläche gebunden. Um die Vorschau nützlicher zu machen, weisen Sie einige statischen Daten zu den Steuerelementen durch hartcodierung einen Bindungskontext (entweder im Code-Behind oder mithilfe von XAML).
 
-Finden Sie in der James [Blogbeitrag zum Hinzufügen von Entwurfszeitdaten](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data) zum Binden an eine statische ViewModel in XAML finden Sie unter.
+Finden Sie in der montemagnos [Blogbeitrag zum Hinzufügen von Entwurfszeitdaten](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data) zu erfahren, wie Sie an einem statischen ViewModel in XAML zu binden.
 
 ## <a name="detecting-design-mode"></a>Erkennen von Entwurfsmodus
 
-Die statische [ `DesignMode.IsDesignModeEnabled` ](xref:Xamarin.Forms.DesignMode.IsDesignModeEnabled) -Eigenschaft analysiert werden, um festzustellen, ob die Anwendung, in der Vorschau ausgeführt wird. Dadurch können Sie Code angeben, die nur ausgeführt, wenn die Anwendung, in der Vorschau ausgeführt wird:
+Die statische [ `DesignMode.IsDesignModeEnabled` ](xref:Xamarin.Forms.DesignMode.IsDesignModeEnabled) Eigenschaft untersucht werden kann, um zu bestimmen, ob die Anwendung, in der Vorschau ausgeführt wird. Dadurch können Sie Code an, die nur ausgeführt, wenn die Anwendung, in der Vorschau ausgeführt wird:
 
 ```csharp
 if (DesignMode.IsDesignModeEnabled)
@@ -72,17 +84,18 @@ if (DesignMode.IsDesignModeEnabled)
 
 Überprüfen Sie die folgenden Probleme und die [Xamarin-Foren](https://forums.xamarin.com/categories/xamarin-forms), wenn Probleme auftreten.
 
-### <a name="xaml-preview-isnt-showing"></a>Verwendung von XAML-Vorschau nicht angezeigt.
+### <a name="xaml-preview-isnt-showing"></a>XAML-Vorschau nicht angezeigt.
 
 Überprüfen Sie folgende Punkte:
 
-* Projekt sollte (kompilierte) erstellt werden, bevor Sie versuchen, die XAML-Dateien in der Vorschau anzeigen.
-* Der Designer-Agent muss Einrichtung erstmalig Sie eine XAML-Datei in der Vorschau anzeigen - eine Statusanzeige wird angezeigt, in der Vorschau, zusammen mit der statusmeldungen, bis das bereit ist.
-* Versuchen Sie es schließen und erneutes Öffnen der XAML-Datei.
+* Projekt soll (kompilierte) erstellt werden, bevor Sie versuchen, die XAML-Dateien (Vorschau).
+* Der Designer-Agent muss Setup beim ersten Verwenden Sie eine XAML-Datei in der Vorschau anzeigen: eine Statusanzeige erscheint in der Vorschau, zusammen mit der statusmeldungen, bis dieser bereit ist.
+* Versuchen Sie es zu schließen und die XAML-Datei erneut zu öffnen.
+* Sicherstellen, dass Ihre `App` -Klasse verfügt über einen parameterlosen Konstruktor.
 
-### <a name="invalid-xaml-the-android-project-needs-to-built-before-preview-can-be-created"></a>Ungültiges XAML: Das Android-Projekt erstellt, bevor der Vorschau kann erstellt werden muss
+### <a name="invalid-xaml-the-android-project-needs-to-built-before-preview-can-be-created"></a>Ungültige XAML: Android-Projekt muss erstellt werden, damit die Vorschau erstellt werden können
 
-Die Verwendung von XAML-Vorschau erfordert, dass das Projekt erstellt werden, vor dem Rendern einer Seite.
-Wenn die nachstehende Fehlermeldung am oberen Rand im Vorschaufenster angezeigt wird, erstellen Sie die Anwendung neu, und wiederholen Sie den Vorgang.
+Die XAML-Vorschau erfordert, dass das Projekt vor dem Rendern einer Seite erstellt werden.
+Wenn die folgende Fehlermeldung am oberen Rand im Vorschaufenster angezeigt wird, erstellen Sie die Anwendung neu, und versuchen Sie es erneut.
 
-![Fehlermeldung: Projekt muss zuerst erstellt](xaml-previewer-images/error-not-built-sml.png "Fehlermeldung: das Projekt neu erstellen")
+![Fehlermeldung: Projekt muss zuerst erstellt werden](xaml-previewer-images/error-not-built-sml.png "Fehlermeldung angezeigt: das Projekt neu erstellen")

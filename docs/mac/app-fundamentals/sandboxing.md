@@ -4,15 +4,15 @@ description: Dieser Artikel behandelt die Sandbox einer Xamarin.Mac-Anwendung zu
 ms.prod: xamarin
 ms.assetid: 06A2CA8D-1E46-410F-8C31-00EA36F0735D
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 9e6cfd39260b76c5097d8faa24f406f45681ac8d
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 6bf2f63e944e178d80f76fe363ef24410ff052ce
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251043"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123777"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Sandkasten einer Xamarin.Mac-app
 
@@ -67,7 +67,7 @@ Wir verifizieren, dass die Anwendung tatsächlich Sandbox und erfahren, wie Sie 
 
 Wir gehen Sie zum Erstellen von unserem Beispielprojekt:
 
-1. Starten Sie Visual Studio für Mac, und klicken Sie auf die **neue Projektmappe...** klicken.
+1. Starten Sie Visual Studio für Mac, und klicken Sie auf die **neue Projektmappe...** einen Fehler.
 2. Von der **neues Projekt** wählen Sie im Dialogfeld **Mac** > **App** > **Cocoa-App**: 
 
     [![Erstellen einer neuen Cocoa-App](sandboxing-images/sample01.png "Erstellen einer neuen Cocoa-App")](sandboxing-images/sample01-large.png#lightbox)

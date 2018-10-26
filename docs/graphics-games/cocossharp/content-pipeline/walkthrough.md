@@ -3,15 +3,15 @@ title: Mithilfe des Tools MonoGame-Pipeline
 description: Das Pipelinetool MonoGame dient zum Erstellen und Verwalten von Projekten mit MonoGame Inhalten. Die Dateien in Projekten mit Inhalten vom Tool MonoGame-Pipeline verarbeitet und als .xnb-Dateien für die Verwendung in Anwendungen von CocosSharp "und" MonoGame "ausgegeben.
 ms.prod: xamarin
 ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 347cb7e9d417f97cb6e8d78e67b1c76a378cd188
-ms.sourcegitcommit: 7ffbecf4a44c204a3fce2a7fb6a3f815ac6ffa21
+ms.openlocfilehash: fdc57e7028d3a16f9a9d2504caf1f2414d0ac94f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "34783290"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102983"
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>Mithilfe des Tools MonoGame-Pipeline
 
@@ -69,7 +69,7 @@ Nachdem das Projekt erstellt wurde, führen wir sie, um sicherzustellen, dass er
 
 ## <a name="creating-a-content-project"></a>Erstellen ein Inhaltsprojekt.
 
-Nun, da wir ein Spiele-Projekt haben, können wir ein MonoGame-Pipeline-Projekt erstellen. Dazu in der Select MonoGame Pipelinetool **Datei > neu...**  und navigieren Sie zum Ordner "Content" Ihres Projekts. Für Android, befindet sich der Ordner unter **[Projekt root]\BouncingGame.Android\Assets\Content\**. Für iOS, befindet sich der Ordner unter **[Projekt root]\BouncingGame.iOS\Content\**.
+Nun, da wir ein Spiele-Projekt haben, können wir ein MonoGame-Pipeline-Projekt erstellen. Dazu in der Select MonoGame Pipelinetool **Datei > neu...**  und navigieren Sie zum Ordner "Content" Ihres Projekts. Für Android, befindet sich der Ordner unter **[Projekt root]\BouncingGame.Android\Assets\Content\\**. Für iOS, befindet sich der Ordner unter **[Projekt root]\BouncingGame.iOS\Content\\**.
 
 Ändern der **Dateiname** zu **ContentProject** , und klicken Sie auf die **speichern** Schaltfläche:
 
@@ -135,24 +135,24 @@ Die Datei .spritefont ist tatsächlich eine XML-Datei die in einem Text-Editor, 
 
 
 ```xml
-    <!-- Modify this string to change the font that will be imported. -->
-    <FontName>Arial</FontName>
+    <!-- Modify this string to change the font that will be imported. -->
+    <FontName>Arial</FontName>
 
-    <!-- Size is a float value, measured in points. 
-    Modify this value to change the size of the font. -->
-    <Size>12</Size> 
+    <!-- Size is a float value, measured in points. 
+    Modify this value to change the size of the font. -->
+    <Size>12</Size> 
 ```
 
 Es wird die Datei in einem Text-Editor geöffnet. Als unsere **arial 36.spritefont** Name schon sagt, lassen wir die `FontName` als `Arial` jedoch ändern der `Size` Wert `36`:
 
 
 ```xml
-    <!-- Modify this string to change the font that will be imported. -->
-    <FontName>Arial</FontName>   
-  
-    <!-- Size is a float value, measured in points. 
-    Modify this value to change the size of the font. -->4/10/2016 12:57:28 PM 
-    <Size>36</Size>
+    <!-- Modify this string to change the font that will be imported. -->
+    <FontName>Arial</FontName>   
+  
+    <!-- Size is a float value, measured in points. 
+    Modify this value to change the size of the font. -->4/10/2016 12:57:28 PM 
+    <Size>36</Size>
 ```
  
 ## <a name="using-files-at-runtime"></a>Mithilfe von Dateien zur Laufzeit
@@ -175,41 +175,41 @@ Nach der Erstellung ändern wir die `GameScene.cs` -Datei den folgenden Code:
 
 
 ```csharp
-using System;
-using CocosSharp;
+using System;
+using CocosSharp;
 
-namespace BouncingGame
+namespace BouncingGame
 {
-    public class GameScene : CCScene
-    {
-        // All visual elements must be added to a CCLayer:
-        CCLayer mainLayer;
+    public class GameScene : CCScene
+    {
+        // All visual elements must be added to a CCLayer:
+        CCLayer mainLayer;
 
-        // The CCSprite is used to display the "ball" texture
-        CCSprite sprite;
-        // The CCLabelTtf is used to display the Arial36 sprite font
-        CCLabelTtf label;
+        // The CCSprite is used to display the "ball" texture
+        CCSprite sprite;
+        // The CCLabelTtf is used to display the Arial36 sprite font
+        CCLabelTtf label;
 
-        public GameScene(CCWindow mainWindow) : base(mainWindow)
-        {
-            // Instantiate the CCLayer first:
-            mainLayer = new CCLayer ();
-            AddChild (mainLayer);
+        public GameScene(CCWindow mainWindow) : base(mainWindow)
+        {
+            // Instantiate the CCLayer first:
+            mainLayer = new CCLayer ();
+            AddChild (mainLayer);
 
-            // Now we can create the Sprite using the ball.xnb file:
-            sprite = new CCSprite ("ball");
-            sprite.PositionX = 200;
-            sprite.PositionY = 200;
-            mainLayer.AddChild (sprite);
+            // Now we can create the Sprite using the ball.xnb file:
+            sprite = new CCSprite ("ball");
+            sprite.PositionX = 200;
+            sprite.PositionY = 200;
+            mainLayer.AddChild (sprite);
 
-            // The font name (arial) and size (36) need to match 
-            // the .spritefont definition and file name.  
-            label = new CCLabelTtf ("Using font 36", "arial", 36);
-            label.PositionX = 200;
-            label.PositionY = 300;
-            mainLayer.AddChild (label);
-        }
-    }
+            // The font name (arial) and size (36) need to match 
+            // the .spritefont definition and file name.  
+            label = new CCLabelTtf ("Using font 36", "arial", 36);
+            label.PositionX = 200;
+            label.PositionY = 300;
+            mainLayer.AddChild (label);
+        }
+    }
 } 
 ```
 
@@ -219,14 +219,14 @@ Wir müssen auch Code hinzufügen, um unseren neu erstellten laden `GameScene`. 
 
 
 ```csharp
-public override void ApplicationDidFinishLaunching (CCApplication application, CCWindow mainWindow)
+public override void ApplicationDidFinishLaunching (CCApplication application, CCWindow mainWindow)
 {
-    application.PreferMultiSampling = false;
-    application.ContentRootDirectory = "Content";
+    application.PreferMultiSampling = false;
+    application.ContentRootDirectory = "Content";
 
-    // New code:
-    GameScene gameScene = new GameScene (mainWindow);
-    mainWindow.RunWithScene (gameScene);
+    // New code:
+    GameScene gameScene = new GameScene (mainWindow);
+    mainWindow.RunWithScene (gameScene);
 } 
 ```
 

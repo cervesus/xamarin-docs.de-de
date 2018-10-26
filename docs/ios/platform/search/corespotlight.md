@@ -1,28 +1,28 @@
 ---
 title: Suche mit Core Spotlight in Xamarin.iOS
-description: Dieses Dokument beschreibt, wie Kerne Spotlight in einem Xamarin.iOS-Anwendung zu verwenden, um Links zu Inhalten innerhalb der app bereitzustellen. Es wird erläutert, wie erstellen, wiederherstellen, aktualisieren und durchsuchbaren Elemente löschen.
+description: Dieses Dokument beschreibt, wie Core Spotlight in einer Xamarin.iOS-Anwendung zu verwenden, um Links zu in-app-Inhalte bereitzustellen. Es wird erläutert, wie erstellen, wiederherstellen, aktualisieren und löschen Sie durchsuchbaren Elemente.
 ms.prod: xamarin
 ms.assetid: 1374914C-0F63-41BF-BD97-EBCEE86E57B1
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: a8bc3aaa43d7830b0a3baa0768d495458b1ecfad
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: fb9ddcc39bd33199dc370897250cd0d74597612f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788038"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110354"
 ---
 # <a name="search-with-core-spotlight-in-xamarinios"></a>Suche mit Core Spotlight in Xamarin.iOS
 
-Core Spotlight ist ein neues Framework für iOS 9, in dem eine Datenbank-ähnliche API zum Hinzufügen, bearbeiten oder Löschen von Links zu Inhalten innerhalb der app dargestellt. Elemente, die mit Core Spotlight hinzugefügt wurden, werden in der Spotlight-Suche auf dem iOS-Gerät verfügbar sein.
+Core Spotlight ist ein neues Framework für iOS 9, in dem eine datenbankähnliche-API hinzufügen, bearbeiten oder Löschen von Links zu Inhalten innerhalb Ihrer app dargestellt. Elemente, die mit Core Spotlight hinzugefügt wurden, werden in Spotlight-Suche auf iOS-Geräten verfügbar sein.
 
-Ein Beispiel für die Typen von Inhalten, die mit Core Spotlight indiziert werden können, finden Sie in der Apple-Nachrichten, E-Mail, Kalender und Anmerkungen zu dieser apps. Sie verwenden derzeit Core Spotlight Suchergebnisse bereit.
+Ein Beispiel für die Arten von Inhalten, die mit Core Spotlight indiziert werden können, finden Sie in der Apple Nachrichten, E-Mail, Kalender und Anmerkungen zu dieser apps. Sie verwenden derzeit Core Spotlight Suchergebnisse liefern.
 
-## <a name="creating-an-item"></a>Erstellen ein Element
+## <a name="creating-an-item"></a>Erstellen eines Elements
 
-Im folgenden finden ein Beispiel für ein Element erstellen und deren Indizierung mit Core Spotlight:
+Im folgenden finden ein Beispiel für ein Element erstellen und Indizierung mit Core Spotlight:
 
 ```csharp
 using CoreSpotlight;
@@ -47,11 +47,11 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 
 Diese Informationen würde wie folgt in einem Suchergebnis angezeigt:
 
-[![](corespotlight-images/corespotlight01.png "Core Spotlight-Suche-Ergebnis (Übersicht)")](corespotlight-images/corespotlight01.png#lightbox)
+[![](corespotlight-images/corespotlight01.png "Core Spotlight-Suche Ergebnis (Übersicht)")](corespotlight-images/corespotlight01.png#lightbox)
 
-## <a name="restoring-an-item"></a>Ein Element wiederherstellen
+## <a name="restoring-an-item"></a>Wiederherstellen eines Elements
 
-Beim Tippen auf ein Element hinzugefügt wird, auf das Suchergebnis über Core Spotlight für Ihre app die `AppDelegate` Methode `ContinueUserActivity` aufgerufen wird (diese Methode wird auch zum `NSUserActivity`). Zum Beispiel:
+Wenn der Benutzer, auf ein Element hinzugefügt wird, auf das Suchergebnis über Core Schwerpunktthema für Ihre app tippt die `AppDelegate` Methode `ContinueUserActivity` aufgerufen wird (diese Methode wird auch zum `NSUserActivity`). Zum Beispiel:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application,
@@ -74,22 +74,22 @@ public override bool ContinueUserActivity (UIApplication application,
 }
 ```
 
-Beachten Sie, dass dieses Mal werden die Kontrollkästchen für die Aktivität mit einem `ActivityType` von `CSSearchableItem.ActionType`.
+Beachten Sie, dass dieses Mal werden die Kontrollkästchen für die Aktivität mit einer `ActivityType` von `CSSearchableItem.ActionType`.
 
 ## <a name="updating-an-item"></a>Aktualisieren eines Elements
 
-Es gibt möglicherweise vorkommen, dass ein Index-Element, das wir mit Core Spotlight erstellt müssen geändert werden, wie z. B. eine Änderung im Titel oder Miniaturbild erforderlich ist. Um diese Änderung vorzunehmen, verwenden wir die gleiche Methode verwendet wurde, um zunächst den Index zu erstellen.
-Wir erstellen Sie ein neues `CSSearchableItem` mit derselben ID wie zum Erstellen des Artikels, und fügen Sie ein neues `CSSearchableItemAttributeSet` mit den geänderten Attributen:
+Es gibt möglicherweise Zeiten, wenn ein Index-Element, das wir mit Core Spotlight erstellt müssen geändert werden, wie z. B. eine Änderung im Titel oder Miniaturansicht erforderlich ist. Um diese Änderung vorzunehmen, verwenden wir die gleiche Methode wie zu Beginn den Index erstellt.
+Wir erstellen eine neue `CSSearchableItem` mit derselben ID, wie zum Erstellen des Elements, und fügen Sie einen neuen `CSSearchableItemAttributeSet` mit den geänderten Attributen:
 
-[![](corespotlight-images/corespotlight02.png "Aktualisieren ein Element (Übersicht)")](corespotlight-images/corespotlight02.png#lightbox)
+[![](corespotlight-images/corespotlight02.png "Übersicht über die ein Element aktualisieren")](corespotlight-images/corespotlight02.png#lightbox)
 
 Wenn dieses Element in der durchsuchbaren Index geschrieben wird, wird das vorhandene Element mit den neuen Informationen aktualisiert.
 
 ## <a name="deleting-an-item"></a>Löschen eines Elements
 
-Core Spotlight bietet mehrere Möglichkeiten, ein Index-Element zu löschen, wenn es nicht mehr benötigt wird.
+Core Spotlight bietet Ihnen mehrere Möglichkeiten, eine Index-Element zu löschen, wenn es nicht mehr benötigt wird.
 
-Zunächst können Sie ein Element durch seinen Bezeichner, z. B. löschen:
+Erstens können Sie ein Element durch seinen Bezeichner, z. B. löschen:
 
 ```csharp
 // Delete Items by ID
@@ -101,7 +101,7 @@ CSSearchableIndex.DefaultSearchableIndex.Delete(new string[]{"1","16"},(error) =
 });
 ```
 
-Als Nächstes können Sie eine Gruppe von Elementen der Index den Namen ihrer Domäne löschen. Zum Beispiel:
+Als Nächstes können Sie eine Gruppe von Elementen der Index nach ihren Domänennamen löschen. Zum Beispiel:
 
 ```csharp
 // Delete by Domain Name
@@ -124,13 +124,13 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteAll((error) => {
     }
 });
 ```
-## <a name="additional-core-spotlight-features"></a>Zusätzliche Spotlight-Kernfunktionen
+## <a name="additional-core-spotlight-features"></a>Zusätzliche Spotlight-Kernfeatures
 
-Core Spotlight hat die folgenden Funktionen, mit denen Sie um den Index genau als auch auf dem neuesten Stand zu halten:
+Schwerpunktthema in Core weist folgende Merkmale, mit denen Sie um den Index präzise und auf dem neuesten Stand zu halten:
 
-- **Batch-Unterstützung für die Aktualisierung** – Wenn Ihre app muss zum Erstellen oder Ändern einer großen Gruppe von Indizes zur gleichen Zeit, kann der gesamte Batch gesendet werden, auf die `Index` Methode der `CSSearchableIndex` Klasse in einem Aufruf.
-- **Reagieren auf Änderungen des Index** – über das `CSSearchableIndexDelegate` Ihrer app auf Änderungen und Benachrichtigungen aus dem Index durchsuchbaren reagieren kann.
-- **Anwenden von Data Protection** – verwenden den Schutz-Datenklassen, können Sie Sicherheit für die Elemente, die Sie der durchsuchbaren Index mit Core Spotlight hinzufügen implementieren.
+- **Batch-Unterstützung für die Aktualisierung** – Wenn Ihre app muss zum Erstellen oder eine große Gruppe von Indizes zur gleichen Zeit ändern, kann der gesamte Batch gesendet werden, auf die `Index` -Methode der der `CSSearchableIndex` Klasse in einem einzigen Aufruf.
+- **Reagieren auf Änderungen des Index** – über die `CSSearchableIndexDelegate` Ihrer app von Änderungen und Benachrichtigungen aus dem durchsuchbaren Index reagieren kann.
+- **Anwenden von Schutz von Daten** – verwenden die Schutz-Datenklassen, können Sie Sicherheit für die Elemente, die Sie hinzufügen, auf den durchsuchbaren Index mithilfe von Core Spotlight implementieren.
 
 
 

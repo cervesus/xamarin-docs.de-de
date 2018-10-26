@@ -1,58 +1,58 @@
 ---
-title: Zielframework für Xamarin.Mac
-description: Dieser Artikel behandelt die Zielframeworks (Base Class Libraries) für Xamarin.Mac verfügbar, und die Auswirkungen Ihrer Verwendung in Ihrem Projekt Xamarin.Mac.
+title: Ziel-Framework für Xamarin.Mac
+description: Dieser Artikel behandelt die Zielframeworks (Base Class Libraries) für die Xamarin.Mac verfügbar, und die Auswirkungen der Verwendung in Ihre Xamarin.Mac-Projekt.
 ms.prod: xamarin
 ms.assetid: AF21BE16-3F92-4121-AB4C-D51AC863D92D
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 11/10/2017
-ms.openlocfilehash: 28d312ae10ce736a1720384fe76714910c3ff8f5
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 15c93126f80917df45a5b80fb84397dc6ef0d5fd
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792501"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122867"
 ---
-# <a name="target-framework-for-xamarinmac"></a>Zielframework für Xamarin.Mac
+# <a name="target-framework-for-xamarinmac"></a>Ziel-Framework für Xamarin.Mac
 
-_Dieser Artikel behandelt die Zielframeworks (Base Class Libraries) für Xamarin.Mac verfügbar, und die Auswirkungen Ihrer Verwendung in Ihrem Projekt Xamarin.Mac._
+_Dieser Artikel behandelt die Zielframeworks (Base Class Libraries) für die Xamarin.Mac verfügbar, und die Auswirkungen der Verwendung in Ihre Xamarin.Mac-Projekt._
 
-![Ziel-Framework-Optionen für Xamarin.Mac](target-framework-images/select-target.png "Framework von Optionen für Xamarin.Mac als Ziel")
+![Ziel-Framework-Optionen für Xamarin.Mac](target-framework-images/select-target.png "als Ziel für Xamarin.Mac Framework-Optionen")
 
 ## <a name="background"></a>Hintergrund
 
-Jeder .NET Programm oder eine Bibliothek hängt davon ab, durch die Basisklassenbibliothek (BCL) bereitgestellte Funktionalität. Diese BCL enthält Assemblys wie Mscorlib, System, System.Net.Http und "System.xml", die die allgemeine Funktionalität, die in allen integrierten bereitstellen.
+Jeder .NET Programm oder die Bibliothek hängt davon ab, durch die Basisklassenbibliothek (BCL) für die Funktionalität. Diese BCL umfasst-Assemblys wie Mscorlib, System, System.Net.Http und "System.xml", die die allgemeine Funktionalität, die in allen Sprachen für .NET integriert bereitstellen.
 
-Im Laufe der Jahre haben gibt es mehrere verschiedene Versionen von diesem BCL, optimiert für verschiedene Anwendungsfälle entwickelt. Die BCL "desktop" enthält einen umfassenderen Satz an Bibliotheken zu schwer für andere Anwendungsfälle während Mobile konzentriert sich auf das sicherstellen, dass die APIs für verknüpfen, sicher sind, die möglicherweise entfernt nicht verwendeten Code, um die Anwendung zu verkleinern.
+Im Laufe der Jahre haben gibt es mehrere verschiedene Versionen der dieser BCL, optimiert für verschiedene Anwendungsfälle entwickelt. Die "desktop" BCL umfasst einen umfangreicheren Satz von Bibliotheken zu schwer für andere Anwendungsfälle, während Mobile konzentriert sich auf, um sicherzustellen, dass die APIs für die Verknüpfung, sind möglicherweise, der entfernt nicht verwendeten Code, um die Anwendung zu reduzieren.
 
-Keines dieser anderen Ziel-Frameworks, die noch wichtiger Verarbeitungsverhaltens handelt, die alle Assemblys in einem bestimmten Programm *müssen* kompatibel BCL-Assemblys als Ziel. Wenn dies nicht der Fall war, konnte Sie zwei Assemblys, die für verschiedene Versionen von verknüpft haben die **"System.dll"** Einwand über die Signatur eines bestimmten Typs. Eine freigegebene Bibliothek können entweder Ziel [.NET Standard 2](https://blog.xamarin.com/share-code-net-standard-2-0/), also die gleiche Teilmenge von der Zielframeworks oder ein bestimmtes Ziel-Framework.
+Einer von der wichtigeren folgen diese unterschiedlichen Ziel-Frameworks ist, alle Assemblys in einem bestimmten Programm *müssen* kompatiblen BCL-Assemblys als Ziel. Wenn dies nicht der Fall war, können Sie zwei Assemblys, die für verschiedene Versionen von verknüpft haben die **"System.dll"** Einwand über die Signatur eines bestimmten Typs. Eine freigegebene Bibliothek kann entweder Ziel [.NET Standard 2](https://blog.xamarin.com/share-code-net-standard-2-0/), dies ist die gleiche Teilmenge von Ziel-Frameworks oder ein bestimmtes Zielframework.
 
-Drei Zielframework-Optionen sind verfügbar für Xamarin.Mac, jeweils mit verschiedenen vor- und Nachteile:
+Drei Zielframework-Optionen stehen zur Verfügung, für die Xamarin.Mac, jeweils mit verschiedenen vor- und Nachteile:
 
-- **Moderne** (Mobile in ältere Dokumentation genannt) – eine Teilmenge sehr ähnlich, welche Befugnisse Xamarin.iOS, mit hoher Leistung und Größe optimiert. Dieses Ziel-Framework ist Linker sicher, damit diese Projekte können ihre endgültigen Speicherbedarf erheblich reduziert wird, durch das Entfernen von nicht verwendeten Codes.
+- **Moderne** (Mobile in die ältere Dokumentation genannt) – eine Teilmenge sehr ähnlich, welche Befugnisse Xamarin.iOS, hoher Leistung und Größe optimiert. Zielframework ist Linker sicher ist, sodass diese Projekte die endgültige Speicherbedarf erheblich reduziert, indem nicht verwendeter Code entfernt haben.
 
-- **Vollständige** (XM 4.5 in ältere Dokumentation genannt) – eine sehr ähnliche Teilmenge, die "desktop" BCL, mit wenigen kleine entfernen. Als das Zielframework weitgehend net45 (und höher) ist, problemlos beanspruchen viele Nugets, die keine entweder netstandard2 bereitstellen kann, oder bestimmte Xamarin.Mac erstellt. Es ist jedoch aufgrund der Verwendung von "System.Configuration" bei der Verknüpfung nicht kompatibel.
+- **Vollständige** (XM 4.5 in die ältere Dokumentation genannt) – eine sehr ähnlich Teilmenge an die BCL "desktop" mit ein paar kleinen entfernungen. Das Zielframework beinahe identisch, net45 (und höher) ist, problemlos nutzen viele NuGet-Pakete, die keine entweder netstandard2 bereitstellen oder bestimmte Xamarin.Mac erstellt. Es ist jedoch aufgrund der Verwendung von "System.Configuration" nicht kompatibel mit verknüpfen.
 
-- **Nicht unterstützte** (genannt System in der Dokumentation für ältere) – stattdessen mit einem BCL Xamarin.Mac gebotenen verknüpfen, verwenden das aktuelle System installiert Mono. Hier werden die Computerressourcen Satz von Assemblys, einschließlich einige bekannte problematisch sein (z. B. "System.Drawing"). Diese Option ist nur vorhanden, hat ein "Notfall", und es wird dringend empfohlen, andere Optionen ausgeschöpft, bevor Sie ihn verwenden. Wie der Name schon sagt, wird die Verwendung von Kanälen offizielle Unterstützung nicht unterstützt.
+- **Nicht unterstützte** (genannt System in die ältere Dokumentation) – stattdessen mit einer BCL von Xamarin.Mac bereitgestellten verknüpfen, verwenden die aktuelle System installierte Mono. Dadurch wird die vollen Satz von Assemblys, bekannt, dass problematisch sein, einschließlich (z. B. "System.Drawing"). Diese Option ist nur vorhanden, verfügt über "letztes Mittel", und es wird dringend empfohlen, um die anderen Optionen ausgeschöpft, bevor Sie sie verwenden. Wie der Name schon sagt, wird die Verwendung von offiziellen Support-Kanäle nicht unterstützt.
 
 ## <a name="setting-the-target-framework"></a>Festlegen des Zielframeworks
 
-Führen Sie folgende Schritte aus, um in den Ziel-Framework-Typ für ein Projekt Xamarin.Mac zu ändern:
+Führen Sie folgende Schritte aus, um in den Zielframework-Typ für eine Xamarin.Mac-Projekt zu ändern:
 
 1. Öffnen Sie das Xamarin.Mac-Projekt in Visual Studio für Mac.
 2. Doppelklicken Sie auf die Projektdatei im **Projektmappen-Explorer**, um die **Projektoptionen** zu öffnen.
-3. Aus der **allgemeine** Registerkarte, wählen Sie den Typ des **Zielframework** , die den Anforderungen Ihrer Anwendung am besten entspricht:
+3. Von der **allgemeine** Registerkarte, wählen Sie den Typ der **Zielframework** , die den Anforderungen Ihrer Anwendung passt:
 
-  [![Verwenden Sie das Fenster Projektoptionen zur ein Zielframeworks](target-framework-images/select-target-full.png "verwenden Sie das Fenster Projektoptionen zur ein Zielframeworks")](target-framework-images/select-target-full-large.png#lightbox)
+  [![Verwenden das Fenster "Projektoptionen" auf ein Zielframework](target-framework-images/select-target-full.png "mit, dass das Fenster \"Projektoptionen\" Wählen Sie ein Zielframework")](target-framework-images/select-target-full-large.png#lightbox)
 
 4. Klicken Sie auf **OK**, um die Änderungen zu speichern.
 
-Sie sollten **Bereinigen** und dann **neu erstellen** Xamarin.Mac Projekt nach dem Wechsel der Ziel-Framework-Typ.
+Sollten Sie **Bereinigen** und dann **Rebuild** Ihrer Xamarin.Mac-Projekt nach dem Wechsel des Ziel-Framework-Typs.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden kurz behandelt, die verschiedenen Typen von Zielframeworks (Base Class Libraries) verfügbar, eine Anwendung Xamarin.Mac und jede Art von Framework verwendet werden soll.
+In diesem Artikel wurden kurz behandelt, die verschiedenen Typen von Zielframeworks (Base Class Libraries) verfügbar, um einer Xamarin.Mac-Anwendung, und bei jeder Art von Framework verwendet werden soll.
 
 
 ## <a name="related-links"></a>Verwandte Links
@@ -61,4 +61,4 @@ In diesem Artikel wurden kurz behandelt, die verschiedenen Typen von Zielframewo
 - [Unified API](~/cross-platform/macios/unified/index.md)
 - [Portable Klassenbibliotheken](~/cross-platform/app-fundamentals/pcl.md)
 - [Assemblys](~/cross-platform/internals/available-assemblies.md)
-- [Aktualisieren vorhandener Mac-apps](~/cross-platform/macios/unified/updating-mac-apps.md)
+- [Aktualisieren von vorhandenen Mac-apps](~/cross-platform/macios/unified/updating-mac-apps.md)

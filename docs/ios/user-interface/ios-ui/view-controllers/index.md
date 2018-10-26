@@ -1,24 +1,24 @@
 ---
 title: View-Controller in Xamarin.iOS
-description: Dieses enthält Dokumentenlinks zu einer Anleitung, die beschreibt, wie die animierte Übergänge zwischen View-Controller in Xamarin.iOS angepasst.
+description: Dieses Dokument enthält Links, um eine Anleitung, die beschreibt, wie der animierten Übergänge zwischen ansichtscontrollern in Xamarin.iOS angepasst wird.
 ms.prod: xamarin
 ms.assetid: 15846D93-26A7-4E7E-B6DA-8E20FCD995E7
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/21/2017
-ms.openlocfilehash: ffc56b68e22792bacf30df4da48ec959c4a770af
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: ff440721cfb3217371f91b97425751f325dcaa50
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790310"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113747"
 ---
 # <a name="view-controllers-in-xamarinios"></a>View-Controller in Xamarin.iOS
 
 ## <a name="view-controller-transitionstransitionsmd"></a>[Übergänge von Ansichtscontrollern](transitions.md)
 
-UIKit fügt Unterstützung zum Anpassen der animierten Übergangs, der auftritt, bei der Darstellung von View-Controller hinzu. Diese Unterstützung ist im Lieferumfang von integrierten Controller sowie alle benutzerdefinierten Controller, die direkt von erben `UIViewController`. Darüber hinaus `UICollectionViewController` nutzt Controller Übergang Anpassung animierte Übergänge in der Auflistung anzeigen Layouts zu nutzen.
+UIKit fügt die Unterstützung der Anpassung der animierten Übergangs, der tritt auf, wenn der ansichtscontroller darstellen. Diese Unterstützung ist im Lieferumfang von integrierten Controller als auch alle benutzerdefinierten Controller, die direkt von erben `UIViewController`. Darüber hinaus `UICollectionViewController` nutzt die Vorteile der Controller-Übergang-Anpassung animierten Übergänge in den Ansichtslayouts Sammlung nutzen.
 
 ## <a name="related-links"></a>Verwandte Links
 

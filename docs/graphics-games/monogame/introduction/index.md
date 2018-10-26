@@ -1,51 +1,51 @@
 ---
-title: Einführung in die 3D-Spielentwicklung mit MonoGame
-description: Mehrteilige in dieser exemplarischen Vorgehensweise zeigt, wie MonoGame mithilfe eine einfache 2D-Anwendung zu erstellen.  Dazu gehören allgemeine Spiel Programmierkonzepte erläutert, wie z. B. Grafiken, die Eingabe Spiel, Entitäten und physikalische.
+title: Einführung in die Entwicklung von Spielen mit MonoGame
+description: Mehrteilige in dieser exemplarischen Vorgehensweise veranschaulicht zum Erstellen einer einfachen Direct2D-Anwendung, die mithilfe von MonoGame.  Hierin sind allgemeine Spiel Programmierkonzepte kennen, wie z. B. Grafiken, die Eingabe von Entitäten und Physik spielen.
 ms.prod: xamarin
 ms.assetid: D781401F-7A96-4098-9645-5F98AEAF7F71
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 46cc3a7e3bb6c58e04626c9d2cc9437c16ba19f5
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 4ab98d59bc74672f9531f4dbd3c33a6270582612
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 10/25/2018
 ms.locfileid: "33920805"
 ---
-# <a name="introduction-to-game-development-with-monogame"></a>Einführung in die 3D-Spielentwicklung mit MonoGame
+# <a name="introduction-to-game-development-with-monogame"></a>Einführung in die Entwicklung von Spielen mit MonoGame
 
-_Mehrteilige in dieser exemplarischen Vorgehensweise zeigt, wie MonoGame mithilfe eine einfache 2D-Anwendung zu erstellen.  Dazu gehören allgemeine Spiel Programmierkonzepte erläutert, wie z. B. Grafiken, die Eingabe Spiel, Entitäten und physikalische._
+_Mehrteilige in dieser exemplarischen Vorgehensweise veranschaulicht zum Erstellen einer einfachen Direct2D-Anwendung, die mithilfe von MonoGame.  Hierin sind allgemeine Spiel Programmierkonzepte kennen, wie z. B. Grafiken, die Eingabe von Entitäten und Physik spielen._
 
-Dieser Artikel beschreibt MonoGame-API-Technologie für die plattformübergreifende Spiele vornehmen. Eine vollständige Liste der Plattformen, finden Sie unter der [MonoGame Website](http://www.monogame.net/). In diesem Lernprogramm wird C#-Codebeispiele für verwendet zwar MonoGame ebenfalls mit f# voll funktionsfähig ist.
+Dieser Artikel beschreibt MonoGame-API-Technologie zum Erstellen von plattformübergreifenden spielen. Eine vollständige Liste der Plattformen, finden Sie unter den [MonoGame Website](http://www.monogame.net/). In diesem Tutorial verwenden C# Codebeispiele, obwohl MonoGame mit vollständig funktionsfähig ist F# ebenfalls.
 
-MonoGame ist eine plattformübergreifende, Hardware accelerated API Grafiken, audio, Spiel Zustandsverwaltung, Eingabe und eine Content Pipeline zum Importieren von Ressourcen bereitstellen. Im Gegensatz zu den meisten game-Module MonoGame nicht bereitstellen oder jede Struktur Muster oder ein Projekt zu erzwingen.  Dies bedeutet, dass Entwickler frei, um ihren Code zu organisieren, wie sie sind, bedeutet dies auch, dass einem gewissen Grad Setupcode benötigt wird, wenn zunächst ein neues Projekt zu starten.
+MonoGame ist eine plattformübergreifende, Hardwarebeschleunigung-API-Grafiken, Audio- und Spiele für die Zustandsverwaltung, Eingabe und eine Pipeline für Bildinhalte zum Importieren von Ressourcen bereitstellen. Im Gegensatz zu den meisten Spiele-Engines MonoGame nicht angeben oder jede Struktur Muster oder ein Projekt zu erzwingen.  Dies bedeutet, dass Entwickler können ihren Code zu organisieren, wie sie möchten, bedeutet auch, dass ein paar Codezeilen Setup erforderlich ist, wenn zuerst ein neues Projekt beginnen.
 
-Der erste Teil dieser exemplarischen Vorgehensweise konzentriert sich auf ein leeres Projekt einrichten. Der letzte Abschnitt behandelt, Schreiben alle unsere Spiellogik und den Inhalt – am häufigsten die plattformübergreifende sein wird.
+Der erste Teil dieser exemplarischen Vorgehensweise konzentriert sich auf ein leeres Projekt einrichten. Im letzte Abschnitt behandelt das Schreiben aller unserer Spiellogik und Text – die meisten der plattformübergreifend sein wird.
 
-Am Ende dieser exemplarischen Vorgehensweise wird es ein einfaches Spiel erstellt haben, in dem der Spieler ein animiertes Zeichen für die Fingereingabe steuern können.  Dies ist, zwar kein technisch eines vollständigen Spiels (da er keine gewinnen oder verlieren Bedingungen hat) veranschaulicht zahlreiche 3D-Spielentwicklung Konzepte und kann als Grundlage für viele Arten von Spiele verwendet werden. 
+Am Ende dieser exemplarischen Vorgehensweise werden wir ein einfaches Spiels erstellt haben, in dem der Spieler ein animiertes Zeichen mit Touch-Punkts steuern können.  Obwohl dies technisch gesehen eine vollständige Spiel (da es keine gewinnen oder verlieren Bedingungen hat) nicht ist, veranschaulicht zahlreiche Konzepte der Entwicklung von Spielen und dienen als Grundlage für eine Vielzahl von Spielen. 
 
 Das folgende Beispiel zeigt das Ergebnis dieser exemplarischen Vorgehensweise aus:
 
-![Animation Beispiel Spiel Zeichens nach der Maus](images/image1.gif)
+![Animation der Beispiel-game-Zeichen nach der Maus](images/image1.gif)
 
 ## <a name="monogame-and-xna"></a>Monogame und XNA
 
-Die Bibliothek MonoGame dient Microsoft XNA-Bibliothek in der Syntax und Funktionalität zu imitieren.  Alle MonoGame-Objekte, die unter dem Microsoft.Xna-Namespace – da die meisten XNA-Code in MonoGame verwendet werden, ohne weitere Änderungen vorhanden sind. 
+Die MonoGame-Bibliothek ist vorgesehen, um die Bibliothek von Microsoft XNA in Syntax und Funktionalität zu imitieren.  Alle MonoGame-Objekte, die unter dem Microsoft.Xna-Namespace – sodass die meisten XNA-Code in MonoGame verwendet werden, ohne weitere Änderungen vorhanden sind. 
 
-Entwickler, die mit XNA vertraut bereits mit MonoGames-Syntax vertraut sein, und Entwickler zusätzliche Informationen zum Arbeiten mit MonoGame suchen werden in der Lage, vorhandene online XNA Exemplarische Vorgehensweisen, API-Dokumentation und Diskussionen zu verweisen.
+Mit XNA vertraute Entwickler bereits mit MonoGames-Syntax vertraut sein, und Entwickler, die Weitere Informationen zum Arbeiten mit MonoGame werden in der Lage, vorhandene online XNA-Anleitungen, API-Dokumentation und Diskussionen zu verweisen.
 
 
-## <a name="walkthrough-parts"></a>Exemplarische Vorgehensweise Teile
+## <a name="walkthrough-parts"></a>Exemplarische Vorgehensweise Teilen
 
 - [Teil 1 – Erstellen eines plattformübergreifenden MonoGame-Projekts](~/graphics-games/monogame/introduction/part1.md)
-- [Teil 2 – Implementieren der WalkingGame](~/graphics-games/monogame/introduction/part2.md)
+- [Teil 2 – Implementieren von WalkingGame](~/graphics-games/monogame/introduction/part2.md)
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [WalkingGame MonoGame Projekt (Beispiel)](https://developer.xamarin.com/samples/mobile/WalkingGameMG/)
+- [WalkingGame MonoGame-Projekts (Beispiel)](https://developer.xamarin.com/samples/mobile/WalkingGameMG/)
 - [XNB Schriftarten iOS](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Content/fonts)
 - [XNB Schriftarten Android](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Assets/Content/fonts)
-- [MonoGame Android für NuGet](https://www.nuget.org/packages/MonoGame.Framework.Android/)
-- [MonoGame iOS für NuGet](https://www.nuget.org/packages/MonoGame.Framework.iOS/)
-- [MonoGame API-Dokumentation](http://www.monogame.net/documentation/?page=main)
+- [MonoGame Android auf NuGet](https://www.nuget.org/packages/MonoGame.Framework.Android/)
+- [MonoGame iOS auf NuGet](https://www.nuget.org/packages/MonoGame.Framework.iOS/)
+- [MonoGame-API-Dokumentation](http://www.monogame.net/documentation/?page=main)

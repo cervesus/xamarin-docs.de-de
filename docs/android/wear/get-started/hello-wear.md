@@ -1,68 +1,68 @@
 ---
-title: Hello, Abnutzung
-description: Erstellen Sie Ihrer ersten Android Dach app, und führen Sie sie auf ein Gerät oder Emulator Abnutzung. Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen eines kleinen Dach Android-Projekts, das auf eine Schaltfläche behandelt und zeigt einen Leistungsindikator klicken Sie auf dem Gerät Abnutzung. Es wird erläutert, wie Debuggen Sie die Anwendung mit einem Emulator Abnutzung oder ein Abnutzung-Gerät, das mit einem Android-Telefon über Bluetooth verbunden ist. Darüber hinaus eine Reihe von Tipps zum Debuggen für Android Dach.
+title: Hallo, Wear
+description: Erstellen Sie Ihrer ersten Android Wear-app, und führen Sie es auf einem Wear-Emulator oder Gerät. Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen von eines kleinen Projekts Android Wear, das auf eine Schaltfläche verarbeitet und zeigt einen Indikator klicken Sie auf dem Wear-Gerät. Es wird erläutert, wie zum Debuggen der app mit einem Wear-Emulator oder auf einem Wear-Gerät, das auf einem Android-Telefon über Bluetooth verbunden ist. Darüber hinaus eine Reihe von Tipps zum Debuggen für Android Wear.
 ms.prod: xamarin
 ms.assetid: 86BCD0E7-E9DC-40F1-9B44-887BC51BB48D
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/10/2018
-ms.openlocfilehash: 17c12c4ec818c21d6697932315874ea4f63e6109
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: a8e27063040ff91f72a1cbf932b1b277a5dee63d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33798413"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104920"
 ---
-# <a name="hello-wear"></a>Hello, Abnutzung
+# <a name="hello-wear"></a>Hallo, Wear
 
-_Erstellen Sie Ihrer ersten Android Dach app, und führen Sie sie auf ein Gerät oder Emulator Abnutzung. Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen eines kleinen Dach Android-Projekts, das auf eine Schaltfläche behandelt und zeigt einen Leistungsindikator klicken Sie auf dem Gerät Abnutzung. Es wird erläutert, wie Debuggen Sie die Anwendung mit einem Emulator Abnutzung oder ein Abnutzung-Gerät, das mit einem Android-Telefon über Bluetooth verbunden ist. Darüber hinaus eine Reihe von Tipps zum Debuggen für Android Dach._
+_Erstellen Sie Ihrer ersten Android Wear-app, und führen Sie es auf einem Wear-Emulator oder Gerät. Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen von eines kleinen Projekts Android Wear, das auf eine Schaltfläche verarbeitet und zeigt einen Indikator klicken Sie auf dem Wear-Gerät. Es wird erläutert, wie zum Debuggen der app mit einem Wear-Emulator oder auf einem Wear-Gerät, das auf einem Android-Telefon über Bluetooth verbunden ist. Darüber hinaus eine Reihe von Tipps zum Debuggen für Android Wear._
 
-![Screenshot der Abnutzung-app in diesem Lernprogramm durchgeführt werden](hello-wear-images/example.png)
+![Screenshot der Wear-app in diesem Lernprogramm ausgeführt werden](hello-wear-images/example.png)
 
-## <a name="your-first-wear-app"></a>Der erste Abnutzung-app
+## <a name="your-first-wear-app"></a>Ihre erste Wear-app
 
-Gehen Sie zum Erstellen Ihrer ersten Xamarin.Android Abnutzung app wie folgt vor:
+Um Ihre erste Xamarin.Android-Wear-app erstellen, gehen Sie wie folgt vor:
 
 ### <a name="1-create-a-new-android-project"></a>1. Erstellen eines neuen Android-Projekts
 
-Erstellen Sie ein neues **Android Dach Anwendung**:
+Erstellen Sie ein neues **Android Wear-Anwendung**:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Erstellen einer neuen Android Dach Anwendung klicken Sie im Dialogfeld "Neues Projekt"](hello-wear-images/vs/new-solution-sml.w157.png)](hello-wear-images/vs/new-solution.w157.png#lightbox)
+[![Erstellen eine neue Android Wear-Anwendung in das Dialogfeld "Neues Projekt"](hello-wear-images/vs/new-solution-sml.w157.png)](hello-wear-images/vs/new-solution.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Erstellen einer neuen Android Dach-Anwendung im Dialogfeld "neue Projektmappe"](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png#lightbox)
+[![Erstellen eine neue Android Wear-Anwendung in das Dialogfeld "neue Projektmappe"](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png#lightbox)
 
 -----
 
 
-Diese Vorlage enthält, die automatisch die **Wearable Bibliothek für Xamarin Android** NuGet (und Abhängigkeiten), damit Sie Zugriff auf spezifische Abnutzung Widgets haben. Wenn die Vorlage Abnutzung nicht angezeigt wird, überprüfen Sie die [Installation und Einrichtung](~/android/wear/get-started/installation.md) Handbuch zum Überprüfen, dass Sie unterstützten Android-SDK installiert haben. 
+Diese Vorlage enthält automatisch die **tragbare Xamarin Android-Bibliothek** NuGet (und Abhängigkeiten), damit Sie Zugriff auf Wear-spezifische Widgets müssen. Wenn die Wear-Vorlage nicht angezeigt wird, überprüfen Sie die [Installations- und Einrichtungsanleitung](~/android/wear/get-started/installation.md) Anleitung zum Überprüfen, dass Sie eine unterstützte Android-SDK installiert haben. 
 
 ### <a name="2-choose-the-correct-target-framework"></a>2. Wählen Sie den richtigen **Zielframework**
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Sicherstellen, dass **mindestens Android Ziel** festgelegt ist, um **Android 5.0.x (Lollipop)** oder höher: 
+Sicherstellen, dass **Android-Mindestversion** nastaven NA hodnotu **Android 5.0 (Lollipop)** oder höher: 
 
-[![Festlegen des Zielframeworks für Android 5.0 in Visual Studio](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
+[![Festlegen des Zielframeworks auf Android 5.0 in Visual Studio](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Stellen Sie sicher, das Zielframework auf festgelegt ist **Android 5.0.x (Lollipop)** oder höher:
+Stellen Sie sicher, das Zielframework nastaven NA hodnotu **Android 5.0 (Lollipop)** oder höher:
 
-[![Festlegen des Zielframeworks für Android 5.0 in Visual Studio für Mac](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
+[![Festlegen des Zielframeworks auf Android 5.0 in Visual Studio für Mac](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
 
 -----
 
-Weitere Informationen zum Festlegen des Zielframeworks finden Sie unter [Grundlegendes zu Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md).
+Weitere Informationen zum Festlegen des Zielframeworks finden Sie unter [Understanding Android API-Ebenen](~/android/app-fundamentals/android-api-levels.md).
 
 
 ### <a name="3-edit-the-mainaxml-layout"></a>3. Bearbeiten der **Main.axml** Layout
 
-Konfigurieren Sie das Layout enthält eine `TextView` und ein `Button` für das Beispiel: 
+Konfigurieren Sie das Layout enthält eine `TextView` und `Button` für das Beispiel: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -103,9 +103,9 @@ android:layout_height="match_parent">
 </FrameLayout>
 ```
 
-### <a name="4-edit-the-mainactivitycs-source"></a>4. Bearbeiten der **MainActivity.cs** Quelle
+### <a name="4-edit-the-mainactivitycs-source"></a>4. Bearbeiten der **"mainactivity.cs"** Quelle
 
-Fügen Sie den Code, um einen Zähler erhöht und zeigen Sie es bei jedem Klicken auf die Schaltfläche hinzu: 
+Fügen Sie den Code, um einen Zähler zu erhöhen und das anzeigen, wenn die Schaltfläche geklickt wird: 
 
 ```csharp
 [Activity (Label = "WearTest", MainLauncher = true, Icon = "@drawable/icon")]
@@ -129,51 +129,51 @@ public class MainActivity : Activity
 }
 ```
 
-### <a name="5-setup-an-emulator-or-device"></a>5. Einem Emulator oder Gerät einrichten
+### <a name="5-setup-an-emulator-or-device"></a>5. Richten Sie einen Emulator oder Gerät
 
-Der nächste Schritt, richten einen Emulator oder Gerät aus bereitstellen und Ausführen der app. Wenn Sie noch nicht vertraut sind, mit der Prozess der Bereitstellung und Ausführung von Xamarin.Android apps im Allgemeinen finden Sie unter der [Hello, Android Schnellstart](~/android/get-started/hello-android/hello-android-quickstart.md).
+Im nächste Schritt wird festgelegt, um einen Emulator oder Gerät, bereitstellen und Ausführen der app. Wenn Sie noch nicht vertraut sind, mit dem Prozess der Bereitstellung und Ausführung von Xamarin.Android-apps im Allgemeinen finden Sie unter den [Hello, Android: Schnellstart](~/android/get-started/hello-android/hello-android-quickstart.md).
 
-Wenn Sie nicht über ein Gerät Android Dach, z. B. ein Android Dach Smartwatch verfügen, können Sie die app in einem Emulator ausführen. Weitere Informationen zum Debuggen von Abnutzung apps in einem Emulator finden Sie unter [Debuggen Android Dach in einem Emulator](~/android/wear/deploy-test/debug-on-emulator.md).
+Wenn Sie nicht über ein Gerät Android Wear, wie eine Android Wear Smartwatch verfügen, können Sie die app in einem Emulator ausführen. Weitere Informationen zum Debuggen von Wear-apps in einem Emulator finden Sie unter [Android Wear in einem Emulator Debuggen](~/android/wear/deploy-test/debug-on-emulator.md).
 
-Wenn Sie ein Gerät Android Dach, z. B. ein Android Dach Smartwatch verfügen, können Sie die app auf dem Gerät, anstatt einen Emulator ausführen. Weitere Informationen zum Debuggen auf einem Gerät Abnutzung finden Sie unter [Debuggen auf einem Gerät Dach](~/android/wear/deploy-test/debug-on-device.md).
+Wenn Sie ein Android Wear-Gerät, z.B. einer Android Wear Smartwatch verfügen, können Sie die app auf dem Gerät anstatt mit einem Emulator ausführen. Weitere Informationen zum Debuggen auf einem Wear-Gerät finden Sie unter [Debuggen auf einem Wear-Gerät](~/android/wear/deploy-test/debug-on-device.md).
 
 
-### <a name="6-run-the-android-wear-app"></a>6. Führen Sie die app für Android Abnutzung
+### <a name="6-run-the-android-wear-app"></a>6. Führen Sie die Android Wear-app
 
-Das Gerät mit Android Dach sollte in der Pulldownmenü Gerät angezeigt werden. Achten Sie darauf, dass Sie die richtige Dach Android-Gerät oder AVD auswählen, bevor Sie das Debuggen starten. Klicken Sie nachdem das Gerät auswählen auf die wiedergeben-Schaltfläche, um die app auf dem Emulator oder Gerät bereitzustellen.
+Das Android Wear-Gerät sollte im Gerät Pulldown-Menü angezeigt werden. Achten Sie darauf, dass auf den richtigen Android Wear-Gerät oder AVD vor dem Debuggen. Klicken Sie nach der Auswahl des Geräts, auf die entsprechende Schaltfläche, um die app für den Emulator oder Gerät bereitzustellen.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Auswählen einer Dach AVD in Visual Studio-Gerät-Menü](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
+[![Ein AVD Wear auswählen in Visual Studio im Menü](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Ein AVD Dach auswählen in Visual Studio für Mac-Geräts im Menü](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
+[![Auswählen von einem Wear AVD in Visual Studio für Mac-Gerät im Menü](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
 
 -----
 
-Sie wird möglicherweise eine **nur eine Minute...**  Nachricht (oder einige andere interstitial Bildschirms) auf den ersten: 
+Sie sehen möglicherweise eine **gleich...**  Nachricht (oder einige andere interstitial Bildschirms) auf den ersten: 
 
 ![Sehen Sie sich, dass der Emulator nur eine Minute zeigt...](hello-wear-images/please-wait.png)
 
-Wenn Sie einen Emulator Überwachung verwenden, dauert es eine Weile, um die app zu starten. Bei Verwendung von Bluetooth dauert es mehr Zeit für die app bereitstellen, als würde über USB an. (Z. B. dauert etwa 5 Minuten, diese app auf ein LG G Watch bereitzustellen, die auf einem Telefon zu Nexus 5 Bluetooth verbunden ist.)
+Wenn Sie einen Watch-Emulator verwenden, dauert es eine Weile, um die app zu starten. Bei der Verwendung von Bluetooth dauert mehr Zeit für die app bereitstellen, als wäre Sie eine per USB. (Z. B. dauert etwa fünf Minuten lang diese app auf einer LG G Watch bereit, die auf einem Telefon zu Nexus 5 Bluetooth verbunden ist.)
 
-Nachdem die app erfolgreich bereitgestellt hat, sollte auf dem Bildschirm des Geräts Abnutzung einen Bildschirm wie folgt angezeigt:
+Nachdem die app erfolgreich bereitgestellt wurde, sollte der Bildschirm des Geräts Wear einen Bildschirm ähnlich dem folgenden angezeigt werden:
 
-[![Startbildschirm von Abnutzung-app](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
+[![Startbildschirm des Wear-app](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
 
-Tippen Sie auf die **CLICK ME!** Schaltfläche in der Abnutzung Gerät und zum finden Sie die Erhöhung der Anzahl mit jeder tippen:
+Tippen Sie auf die **CLICK ME!** Schaltfläche der Rückgabe die Wear-Gerät und die Erhöhung der Anzahl jedes durch Tippen auf:
 
-[![Screenshot der Dach app 3 Klicks](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
+[![Screenshot der Wear-app nach 3 Klicks](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
 
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Sehen Sie sich die [Dach Beispiele](https://developer.xamarin.com/samples/android/Android%20Wear/) einschließlich Dach Android-apps mit Begleit-Phone-apps.
+Sehen Sie sich die [Wear Beispiele](https://developer.xamarin.com/samples/android/Android%20Wear/) einschließlich Android Wear-apps mit Begleit-Phone-apps.
 
-Wenn Sie Ihre app zu verteilen möchten, finden Sie unter [arbeiten mit Verpackung](~/android/wear/deploy-test/packaging.md).
+Wenn Sie Ihre app verteilen möchten, finden Sie unter [arbeiten mit der Paketerstellung](~/android/wear/deploy-test/packaging.md).
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Klicken Sie auf die App Me (Beispiel)](https://developer.xamarin.com/samples/monodroid/wear/WearTest/)
+- [Klicken Sie auf App Me (Beispiel)](https://developer.xamarin.com/samples/monodroid/wear/WearTest/)

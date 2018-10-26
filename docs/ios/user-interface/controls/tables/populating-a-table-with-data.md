@@ -1,22 +1,22 @@
 ---
 title: Auffüllen einer Tabelle mit Daten in Xamarin.iOS
-description: Dieses Dokument beschreibt, wie eine Tabelle mit Daten in einer Anwendung Xamarin.iOS aufgefüllt wird. Es wird erläutert, UITableViewSource Zelle Wiederverwendung, einen Index und Kopf- und Fußzeilen hinzufügen.
+description: Dieses Dokument beschreibt, wie eine Tabelle in einer Xamarin.iOS-Anwendung mit Daten aufgefüllt wird. Es wird erläutert, UITableViewSource, Wiederverwendung der Zelle, ein Index, und die Kopf- und Fußzeilen hinzufügen.
 ms.prod: xamarin
 ms.assetid: 6FE64DDF-1029-EB9B-6EEC-1C7DFDFDF3AF
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 77167bb8938ec0b3dcd30b80235ee5d9a60b4ce0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 859afcf6ab9f3acfb56104fa68683ba28d913ce4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790067"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117128"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>Auffüllen einer Tabelle mit Daten in Xamarin.iOS
 
-Zum Hinzufügen von Zeilen zu einer `UITableView` Sie implementieren müssen eine `UITableViewSource` -Unterklasse und überschreiben die Methoden, die in der Tabelle anzeigen aufruft, um selbst aufzufüllen.
+Zum Hinzufügen von Zeilen zu einer `UITableView` Sie implementieren müssen, eine `UITableViewSource` -Unterklasse und überschreiben die Methoden, die in der Tabelle anzeigen Aufrufe auffüllen.
 
 Dieser Leitfaden behandelt:
 
@@ -30,15 +30,15 @@ Dieser Leitfaden behandelt:
 
 ## <a name="subclassing-uitableviewsource"></a>Erstellen von Unterklassen für UITableViewSource
 
-Ein `UITableViewSource` Unterklasse wird allen zugewiesen `UITableView`. Die Tabellenansicht fragt die Quellklasse, um zu bestimmen, wie selbst (z. B., wie viele Zeilen erforderlich sind und die Höhe jeder Zeile, falls abweichend vom Standard) gerendert. Am wichtigsten ist, stellt die Quelle jede Zelle anzeigen, die mit Daten aufgefüllt.
+Ein `UITableViewSource` Unterklasse zugewiesen wird, die jeder `UITableView`. Die Tabellenansicht fragt die Source-Klasse, um zu bestimmen, wie zum Rendern (z. B., wie viele Zeilen erforderlich sind und die Höhe der einzelnen Zeilen an, falls abweichend vom Standard). Wichtiger ist, stellt die Quelle jeder Zelle Ansicht mit Daten aufgefüllt.
 
-Es gibt nur zwei obligatorische Methoden erforderlich, damit eine Tabelle, die Daten angezeigt:
+Es gibt nur zwei erforderliche Methoden erforderlich, um eine Tabelle, die Daten anzuzeigen:
 
--   **RowsInSection** – return ein [ `nint` ](http://developer.xamarin.com/guides/cross-platform/macios/nativetypes/) die Anzahl von Zeilen mit Daten, die die Tabelle angezeigt werden sollte.
--   **GetCell** – return eine `UITableCellView` mit Daten für den entsprechenden Index der Zeile an die Methode übergebenen aufgefüllt.
+-   **RowsInSection** : Zurückgeben einer [ `nint` ](http://developer.xamarin.com/guides/cross-platform/macios/nativetypes/) die Anzahl von Zeilen mit Daten, die in der Tabelle angezeigt werden sollte.
+-   **GetCell** : Zurückgeben einer `UITableCellView` aufgefüllt, die mit Daten für den entsprechenden Zeilenindex, die an die Methode übergeben.
 
 
-Die Beispieldatei BasicTable **TableSource.cs** ist die einfachste mögliche Implementierung `UITableViewSource`. Im Codeausschnitt unten sehen Sie, dass er ein Array von Zeichenfolgen nimmt, die in der Tabelle anzeigen und eine Standardzellenformat mit jeder Zeichenfolge zurückgibt:
+Die Beispieldatei BasicTable **TableSource.cs** ist die einfachste mögliche Implementierung der `UITableViewSource`. Im folgenden Codeausschnitt ersichtlich, dass es ein Array von Zeichenfolgen akzeptiert, die in der Tabelle angezeigt und eine Standardzellenstil gibt, jeder Zeichenfolge enthält:
 
 ```csharp
 public class TableSource : UITableViewSource {
@@ -72,9 +72,9 @@ public class TableSource : UITableViewSource {
 }
 ```
 
-Ein `UITableViewSource` können eine beliebige Datenstruktur aus einem einfachen Zeichenfolgen-Array (wie im folgenden Beispiel gezeigt) eine Liste <> oder einer anderen Auflistung. Die Implementierung der `UITableViewSource` Methoden isoliert die Tabelle aus der Datenstruktur der zugrunde liegenden.
+Ein `UITableViewSource` können eine beliebige Datenstruktur, aus einem Array von einfachen Zeichenfolge (wie im folgenden Beispiel gezeigt) eine Liste <> oder einer anderen Auflistung. Die Implementierung der `UITableViewSource` Methoden wird in der Tabelle aus der zugrunde liegende Datenstruktur isoliert.
 
-Um diese Unterklasse verwenden zu können, erstellen Sie ein Array von Zeichenfolgen zum Erstellen der Datenquelle, und klicken Sie dann weisen Sie es mit einer Instanz von `UITableView`:
+Um diese Unterklasse verwenden möchten, erstellen Sie ein Zeichenfolgenarray zum Erstellen der Datenquelle, und klicken Sie dann weisen Sie es mit einer Instanz von `UITableView`:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -87,11 +87,11 @@ public override void ViewDidLoad ()
 }
 ```
 
-Die daraus resultierende Tabelle sieht wie folgt:
+Die daraus resultierende Tabelle sieht folgendermaßen aus:
 
- [![](populating-a-table-with-data-images/image3.png "Beispiel für die Tabelle ausgeführt wird")](populating-a-table-with-data-images/image3.png#lightbox)
+ [![](populating-a-table-with-data-images/image3.png "Beispiel für eine Tabelle ausgeführt wird")](populating-a-table-with-data-images/image3.png#lightbox)
 
-Die meisten Tabellen ermöglicht dem Benutzer, eine Zeile aus, um Sie auszuwählen, und führen Sie eine andere Aktion (z. B. Wiedergabe eines Musiktitels Aufrufen eines Kontakts oder einem anderen Bildschirm anzeigen) zu berühren. Um dies zu erreichen, gibt es einige Dinge, die erforderlich ist. Zunächst erstellen wir eine AlertController um eine Meldung angezeigt wird, wenn der Benutzer durch das Hinzufügen der folgenden, klicken Sie auf eine Zeile auf die `RowSelected` Methode:
+Die meisten Tabellen ermöglichen den Benutzer, tippen Sie auf eine Zeile aus, um Sie auszuwählen, und führen Sie eine andere Aktion (z. B. Wiedergabe eines Musiktitels, Aufruf eines Kontakts oder einem anderen Bildschirm anzeigen). Um dies zu erreichen, gibt es einige Dinge, die wir tun müssen. Zunächst erstellen wir eine AlertController um eine Meldung angezeigt, wenn der Benutzer klicken auf eine Zeile durch Hinzufügen der folgenden Optionen, um die `RowSelected` Methode:
 
 ```csharp
 public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
@@ -104,12 +104,12 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-Als Nächstes erstellen Sie eine Instanz von unseren View-Controller:
+Als Nächstes erstellen Sie eine Instanz des Controllers anzeigen:
 
 ```csharp
 HomeScreen owner;
 ```
-Fügen Sie einen Konstruktor, um UITableViewSource Klasse, die einen Controller Ansicht als Parameter akzeptiert und speichert es in einem Feld:
+Fügen Sie einen Konstruktor, der UITableViewSource-Klasse, die einen View Controller als Parameter akzeptiert und speichert es in einem Feld:
 
 ```csharp
 public TableSource (string[] items, HomeScreen owner)
@@ -119,12 +119,12 @@ public TableSource (string[] items, HomeScreen owner)
 
 }
 ```
-Ändern Sie die ViewDidLoad-Methode, in dem die UITableViewSource-Klasse erstellt wird, übergeben, die `this` Referenz:
+Ändern Sie die ViewDidLoad-Methode, in die UITableViewSource-Klasse erstellt wird, übergeben, die `this` Verweis:
 
 ```csharp
 table.Source = new TableSource(tableItems, this);
 ```
-Schließlich zurück Ihre `RowSelected` -Methode, rufen `PresentViewController` auf das zwischengespeicherte Feld:
+Schließlich zurück Ihre `RowSelected` -Methode, rufen `PresentViewController` auf das Feld "zwischengespeicherten":
 
 ```csharp
 public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
@@ -137,7 +137,7 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 ```
 
 
-Jetzt kann der Benutzer eine Zeile berühren, und eine Warnung wird angezeigt:
+Jetzt kann Benutzer eine Zeile berühren, und eine Warnung wird angezeigt:
 
 
 
@@ -146,11 +146,11 @@ Jetzt kann der Benutzer eine Zeile berühren, und eine Warnung wird angezeigt:
 
 ## <a name="cell-reuse"></a>Zelle Wiederverwendung
 
-In diesem Beispiel sind nur sechs Elemente, daher keine Zelle Wiederverwendung erforderlich besteht. Anzeigen von Hunderten oder Tausenden von Zeilen jedoch wäre es ein Abfall des Arbeitsspeichers zum Erstellen von Hunderten oder Tausenden von `UITableViewCell` Objekte, wenn nur wenige auf dem Bildschirm datensatzweise anzupassen.
+In diesem Beispiel sind nur sechs Elemente, es gibt also keine Zelle wiederverwenden, die erforderlich sind. Wenn Sie Hunderte oder Tausende von Zeilen anzeigen, jedoch wäre es eine arbeitsspeicherverschwendung, Hunderte oder Tausende von erstellen `UITableViewCell` Objekte, wenn nur einige zu einem Zeitpunkt auf dem Bildschirm passen.
 
-Um diese Situation zu vermeiden, wenn eine Zelle aus dem Bildschirm ausgeblendet, die eine Sicht in einer Warteschlange für die Wiederverwendung platziert wird. Wenn der Benutzer einen Bildlauf durchführt, ruft die Tabelle `GetCell` zum Anfordern von neuer Ansichten angezeigt – eine vorhandene Zelle wiederverwenden (die nicht aktuell angezeigt wird) rufen Sie einfach die `DequeueReusableCell` Methode. Wenn eine Zelle für die Wiederverwendung verfügbar, die zurückgegeben wird ist, andernfalls ein NULL-Wert zurückgegeben, und Code muss eine neue Instanz der Zelle erstellen.
+Um diese Situation zu vermeiden, wenn eine Zelle vom Bildschirm verschwindet, die in eine Warteschlange für die Wiederverwendung platziert wird. Der Benutzer scrollt, ruft die Tabelle `GetCell` zum Anfordern von neuer Ansichten angezeigt: eine vorhandene Zelle wiederverwendet werden (die nicht gerade angezeigt wird) rufen Sie einfach die `DequeueReusableCell` Methode. Wenn eine Zelle für die Wiederverwendung verfügbar, die es zurückgegeben wird ist, andernfalls wird Null zurückgegeben, und Ihr Code muss eine neue Instanz der Zelle erstellen zu können.
 
-Dieser Codeausschnitt aus dem Beispiel wird das Muster veranschaulicht:
+Dieser Codeausschnitt aus dem Beispiel veranschaulicht das Muster:
 
 ```csharp
 // request a recycled cell to save memory
@@ -160,15 +160,15 @@ if (cell == null)
     cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
 ```
 
-Die `cellIdentifier` effektiv separate Warteschlangen für verschiedene Arten von Zelle erstellt. In diesem Beispiel, dass alle Zellen der gleichen, sodass immer nur jeweils hartcodiert aussehen wird Bezeichner verwendet. Gäbe es verschiedene Typen von Zelle sollten sie jeweils zu einer anderen-Bezeichnerzeichenfolge folgt, haben, bei der sie instanziiert werden und wenn sie aus der Warteschlange für die Wiederverwendung angefordert werden.
+Die `cellIdentifier` effektiv erstellt separate Warteschlangen für verschiedene Arten der Zelle. In diesem Beispiel, dass alle Zellen die gleiche also nur eine hartcodierte aussehen wird Bezeichner verwendet. Gäbe es verschiedene Arten von Zelle müssen sie jeweils zu eine anderen ID-Zeichenfolge, verfügen, wenn sie instanziiert werden und wenn sie aus der Warteschlange für die Wiederverwendung angefordert werden.
 
 ### <a name="cell-reuse-in-ios-6"></a>Zelle Wiederverwendung in iOS 6 und höher
 
-iOS 6 hinzugefügt, eine Zelle Wiederverwendung Muster eine Einführung mit Auflistungsansichten ähnelt. Obwohl das oben dargestellte vorhandene Wiederverwendung Muster weiterhin unterstützt wird, für die Abwärtskompatibilität Kompatibilität, diesem neuen Muster vorzuziehen ist, wie die Notwendigkeit für die null-Prüfung auf die Zelle wird entfernt.
+iOS 6 hinzugefügt Zelle Wiederverwendung ähnlich vorgehen, die eine Einführung mit Auflistungsansichten. Obwohl das vorhandene Wiederverwendung-Muster, das oben gezeigte weiterhin unterstützt wird, für die Abwärtskompatibilität, diesem neuen Muster besser ist als die Notwendigkeit, die null-Überprüfung in der Zelle entfällt.
 
-Eine Anwendung mit dem neuen Muster registriert, die Zellenklasse oder Xib verwendet werden, durch den Aufruf eines `RegisterClassForCellReuse` oder `RegisterNibForCellReuse` im Konstruktor des Controllers. Nachdem Entfernen der Zelle in der `GetCell` -Methode einfach aufzurufen, `DequeueReusableCell` übergeben den Bezeichner, die Sie für die Zellenklasse oder Xib und der Indexpfad registriert.
+Mit dem neuen Muster für eine Anwendung registriert, die Cell-Klasse oder eine Xib verwendet werden, durch Aufrufen von entweder `RegisterClassForCellReuse` oder `RegisterNibForCellReuse` im Konstruktor des Controllers. Dann, wenn dabei die Zelle in der `GetCell` -Methode einfach Aufruf `DequeueReusableCell` übergeben den Bezeichner, die Sie für die Cell-Klasse oder Xib und den Indexpfad registriert.
 
-Der folgende Code registriert z. B. eine benutzerdefinierte Zellenklasse in einem UITableViewController:
+Der folgende Code registriert eine benutzerdefinierte Zellenklasse z. B. in einem UITableViewController an:
 
 ```csharp
 public class MyTableViewController : UITableViewController
@@ -183,7 +183,7 @@ public class MyTableViewController : UITableViewController
 }
 ```
 
-Mit der MyCell-Klasse registriert, die Zelle kann werden aus der Warteschlange entfernt der `GetCell` Methode der `UITableViewSource` ohne die Notwendigkeit für zusätzliche Überprüfung auf null, wie unten:
+Mit der Klasse "MyCell" registriert ist, kann die Zelle entfernt werden die `GetCell` Methode der `UITableViewSource` ohne die Notwendigkeit, die zusätzliche Überprüfung auf null, siehe unten:
 
 ```csharp
 class MyTableSource : UITableViewSource
@@ -201,7 +201,7 @@ class MyTableSource : UITableViewSource
 }
 ```
 
-Beachten Sie, wenn das neue Wiederverwendung Muster mit eine benutzerdefinierte Zellenklasse verwenden zu können, müssen Sie den Konstruktor implementieren, die eine `IntPtr`, wie im folgenden Codeausschnitt dargestellt wird, andernfalls Objective-C kann nicht so erstellen Sie eine Instanz der Zellenklasse:
+Beachten Sie, wenn das neue Wiederverwendung Muster für eine benutzerdefinierte Zellenklasse verwenden zu können, müssen Sie den Konstruktor implementieren, die eine `IntPtr`, wie im folgenden Codeausschnitt gezeigt wird, andernfalls Objective-C nicht möglich, eine Instanz der Zellenklasse erstellen:
 
 ```csharp
 public class MyCell : UITableViewCell
@@ -213,17 +213,17 @@ public class MyCell : UITableViewCell
 }
 ```
 
-Sehen Sie Beispiele für die im oben erläuterten Themen der **BasicTable** Beispiel in diesem Artikel verknüpft.
+Sehen Sie Beispiele für die im oben erläuterten Themen der **BasicTable** verknüpfte in diesem Artikel.
 
 <a name="Adding_an_Index" />
 
 ## <a name="adding-an-index"></a>Hinzufügen eines Indexes
 
-Ein Index hilft dem Benutzer, die einen Bildlauf durch lange Listen, die in der Regel alphabetisch sortiert werden, obwohl Sie indizieren können von Ihnen ausgewählten Kriterien werden sollen. Die **BasicTableIndex** Beispiel lädt eine längere Liste von Elementen aus einer Datei, um den Index zu veranschaulichen. Jedes Element im Index entspricht zu einem Abschnitt der Tabelle.
+Ein Index hilft dem Benutzer, die einen Bildlauf durch lange Listen, i. d. r. alphabetisch angeordnet werden, obwohl Sie indiziert werden können, von Ihnen ausgewählten Kriterien werden soll. Die **BasicTableIndex** Beispiel lädt eine viel größere Anzahl von Elementen aus einer Datei aus, um den Index zu veranschaulichen. Jedes Element im Index entspricht einer "Section" der Tabelle.
 
  [![](populating-a-table-with-data-images/image5.png "Die Index-Anzeige")](populating-a-table-with-data-images/image5.png#lightbox)
 
-Zur Unterstützung von "Abschnitte" z. B. Daten hinter der Tabelle gruppiert werden, müssen, damit das Beispiel BasicTableIndex erstellt eine `Dictionary<>` aus dem Array von Zeichenfolgen, die den ersten Buchstaben jedes Elements als Wörterbuchschlüssel verwenden:
+Zur Unterstützung von "Sections" müssen die Daten hinter der Tabelle gruppiert werden, damit das BasicTableIndex-Beispiel erstellt eine `Dictionary<>` aus dem Array von Zeichenfolgen, die den ersten Buchstaben jedes Elements als Wörterbuchschlüssel verwenden:
 
 ```csharp
 indexedTableItems = new Dictionary<string, List<string>>();
@@ -237,11 +237,11 @@ foreach (var t in items) {
 keys = indexedTableItems.Keys.ToArray ();
 ```
 
-Die `UITableViewSource` Unterklasse benötigt klicken Sie dann die folgenden Methoden hinzugefügt oder geändert, sodass verwendet die `Dictionary<>` :
+Die `UITableViewSource` Unterklasse benötigt klicken Sie dann die folgenden Methoden hinzugefügt oder geändert, um Sie verwenden die `Dictionary<>` :
 
--   **NumberOfSections** – diese Methode ist optional, wird standardmäßig nimmt der Tabelle ein Abschnitt. Beim Anzeigen eines Indexes sollte diese Methode die Anzahl der Elemente zurück, in den Index (z. B. 26, wenn der Index alle Buchstaben des englischen Alphabets enthält).
--   **RowsInSection** – gibt die Anzahl der Zeilen in einem angegebenen Bereich zurück.
--   **SectionIndexTitles** – gibt das Array von Zeichenfolgen, die verwendet wird, um den Index anzuzeigen. Der Beispielcode gibt ein Array von Buchstaben zurück.
+-   **NumberOfSections** – diese Methode ist optional, standardmäßig die Tabelle setzt ein Abschnitt. Beim Anzeigen eines Indexes sollte diese Methode die Anzahl der Elemente zurück, in den Index (z. B. 26, wenn der Index alle Buchstaben des englischen Alphabets enthält).
+-   **RowsInSection** – gibt die Anzahl der Zeilen in einem bestimmten Abschnitt zurück.
+-   **SectionIndexTitles** – gibt das Array von Zeichenfolgen, die verwendet wird, um den Index anzuzeigen. Der Code gibt ein Array von Buchstaben zurück.
 
 
 Die aktualisierte Methoden in der Beispieldatei **BasicTableIndex/TableSource.cs** wie folgt aussehen:
@@ -261,21 +261,21 @@ public override string[] SectionIndexTitles (UITableView tableView)
 }
 ```
 
-Indizes werden im Allgemeinen nur mit einfachen Tabellenformat verwendet.
+Indizes werden in der Regel nur mit einfachen Tabellenformat verwendet.
 
 
 <a name="Adding_Headers_and_Footers" />
 
 ## <a name="adding-headers-and-footers"></a>Hinzufügen von Kopf- und Fußzeilen
 
-Kopf- und Fußzeilen können verwendet werden, um Zeilen in einer Tabelle visuell zu gruppieren. Die Datenstruktur, die erforderlich ist sehr ähnlich, einen Index hinzufügen – `Dictionary<>` wirklich gut funktioniert. Anstatt das Alphabet um Zellen zu gruppieren, wird in diesem Beispiel wird die Gemüse botanischen Typ gruppieren.
+Kopf- und Fußzeilen können verwendet werden, um Zeilen in einer Tabelle visuell zu gruppieren. Die Datenstruktur, die erforderlich ist sehr ähnlich, mit dem Hinzufügen eines Indexes – `Dictionary<>` funktioniert wirklich gut. Statt des Alphabets, um Zellen zu gruppieren, wird in diesem Beispiel wird die Gemüse nach botanischen Typ gruppieren.
 Die Ausgabe sieht wie folgt aus:
 
- [![](populating-a-table-with-data-images/image6.png "Beispiel Kopf- und Fußzeilen")](populating-a-table-with-data-images/image6.png#lightbox)
+ [![](populating-a-table-with-data-images/image6.png "Beispiel-Kopf- und Fußzeilen")](populating-a-table-with-data-images/image6.png#lightbox)
 
-Um die Anzeige von Kopf- und Fußzeilen der `UITableViewSource` Unterklasse erfordert diese zusätzlichen Methoden:
+Zum Anzeigen von Kopf- und Fußzeilen der `UITableViewSource` Unterklasse erfordert diese zusätzlichen Methoden:
 
--   **TitleForHeader** – gibt den Text als Header verwenden
+-   **TitleForHeader** – gibt den Text zurück, die als Header verwenden.
 -   **TitleForFooter** – gibt den Text für die Verwendung der Fußzeile zurück.
 
 
@@ -292,7 +292,7 @@ public override string TitleForFooter (UITableView tableView, nint section)
 }
 ```
 
-Sie können die Darstellung von Kopf- und Fußzeilen mit einer Ansicht weiter anpassen-Objekt unter Verwendung der `GetViewForHeader` und `GetViewForFooter` methodenüberschreibungen auf `UITableViewSource`.
+Sie können die Darstellung von Kopf- und Fußzeile mit einer Ansicht weiter anpassen Objekt, um mithilfe der `GetViewForHeader` und `GetViewForFooter` methodenüberschreibungen auf `UITableViewSource`.
 
 
 ## <a name="related-links"></a>Verwandte Links

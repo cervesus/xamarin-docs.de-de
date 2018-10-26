@@ -1,68 +1,68 @@
 ---
 title: Fragmente
-description: Android 3.0 eingeführten Fragmente mit wie vielen unterschiedlichen Bildschirmgrößen auf Telefonen und Tablets gefunden flexiblere Entwürfe unterstützt. In diesem Artikel befasst sich mit Fragmenten Xamarin.Android Anwendungen entwickeln, sowie die Informationen zur Unterstützung von Fragmenten vorab Android 3.0 (API-Ebene 11)-Geräte.
+description: Fragmente, die zeigt, wie eine flexiblere Entwürfe für viele verschiedene Bildschirmgrößen finden Sie auf Smartphones und Tablets zu unterstützen, Android 3.0 eingeführt. Dieser Artikel behandelt wie Fragmente verwenden, um Xamarin.Android-Anwendungen zu entwickeln, und wie Fragmente auf vor Android 3.0 (API-Ebene 11)-Geräten unterstützt.
 ms.prod: xamarin
 ms.assetid: 1AFB4242-A337-F8E0-83D9-B8D850D7F384
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 08c2edb3acc15518c7d5a69f227fb9ef819887be
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc4441c7ee0c36af990297bad1b0c2f0e77123f3
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30767013"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113286"
 ---
 # <a name="fragments"></a>Fragmente
 
-_Android 3.0 eingeführten Fragmente mit wie vielen unterschiedlichen Bildschirmgrößen auf Telefonen und Tablets gefunden flexiblere Entwürfe unterstützt. In diesem Artikel befasst sich mit Fragmenten Xamarin.Android Anwendungen entwickeln, sowie die Informationen zur Unterstützung von Fragmenten vorab Android 3.0 (API-Ebene 11)-Geräte._
+_Fragmente, die zeigt, wie eine flexiblere Entwürfe für viele verschiedene Bildschirmgrößen finden Sie auf Smartphones und Tablets zu unterstützen, Android 3.0 eingeführt. Dieser Artikel behandelt wie Fragmente verwenden, um Xamarin.Android-Anwendungen zu entwickeln, und wie Fragmente auf vor Android 3.0 (API-Ebene 11)-Geräten unterstützt._
 
 ## <a name="fragments-overview"></a>Übersicht über die Fragmente
 
-Die größere Bildschirmgrößen finden Sie auf den meisten Tablet-PCs eine zusätzliche Ebene der Komplexität, Android-Entwicklung hinzugefügt – ein Layout für den kleine Bildschirm nicht notwendigerweise auch für größere Bildschirme und umgekehrt funktioniert entwickelt. Um die Anzahl der Komplikationen zu reduzieren, die dies eingeführt, Android 3.0 zwei neue Features hinzugefügt, *Fragmente* und *Supportpakete*.
+Der größere der Bildschirm finden Sie auf die meisten Tablets Android-Entwicklung ein zusätzliches Maß an Komplexität hinzugefügt, ein Layout für den kleine Bildschirm nicht unbedingt auch für größere Bildschirme und umgekehrt funktioniert entwickelt. Um die Anzahl von Komplikationen zu reduzieren, die dies eingeführt, Android 3.0 zwei neue Features hinzugefügt *Fragmente* und *Supportpakete*.
 
-Fragmente können als Benutzer Schnittstellenmodule betrachtet werden. Sie können den Entwickler, die die Benutzeroberfläche in isolierten, wiederverwendbare Teile zu unterteilen, die in separaten Aktivitäten ausgeführt werden kann. Zur Laufzeit entscheidet der Aktivitäten der Fragmente zu verwenden.
+Fragmente können als Schnittstelle Benutzermodul betrachtet werden. Sie können die Entwickler der Benutzeroberfläche in isolierten, wiederverwendbare Teile unterteilen, die in separaten Aktivitäten ausgeführt werden können. Zur Laufzeit entscheidet der Aktivitäten können entweder der Fragmente zu verwenden.
 
-Supportpakete aufgerufen wurden ursprünglich *Kompatibilität Bibliotheken* dürfen von Fragmenten auf Geräten verwendet werden, auf denen Versionen von Android vor Android 3.0 (API-Ebene 11) ausgeführt.
+Supportpakete aufgerufen wurden ursprünglich *Kompatibilität Bibliotheken* und Fragmente, die auf Geräten verwendet werden, auf denen Versionen von Android vor Android 3.0 (API-Ebene 11) ausgeführt.
 
-Die folgende Abbildung veranschaulicht z. B. wie eine einzelne Anwendung unterschiedliche Gerät Formfaktoren Fragmente vewendet.
+Die folgende Abbildung zeigt beispielsweise, wie eine einzelne Anwendung Fragmente auf verschiedenen geräteausführungen verwendet.
 
-[![Diagramm der Fragmente Tablets und Handsets Verwendung](images/00.png)](images/00.png#lightbox)
+[![Diagramm des wie Fragmente in Tablets und -Handsets verwendet werden](images/00.png)](images/00.png#lightbox)
 
-*Fragment ein* enthält eine Liste während *Fragment B* enthält Details für ein Element in der Liste ausgewählt. Wenn die Anwendung auf einem Tablet-PC ausgeführt wird, können sie beiden Fragmenten auf der gleichen Aktivität angezeigt. Wenn dieselbe Anwendung auf einem Mobilgerät (mit seiner kleinere Bildschirmgröße) ausgeführt wird, werden die Fragmente in zwei separaten Aktivitäten gehostet. Fragment A und B Fragment für beide Formfaktoren identisch sind, aber die Aktivitäten, die sie hosten unterscheiden.
+*Fragment ein* enthält eine Liste, während *Fragment B* enthält Details für ein Element in der Liste ausgewählt. Wenn die Anwendung auf einem Tablet PC ausgeführt wird, können sie beide Fragmente in der gleichen Aktivität anzeigen. Wenn dieselbe Anwendung auf einem Mobilgerät (mit der kleinere Bildschirmgröße) ausgeführt wird, werden die Fragmente in zwei separaten Aktivitäten gehostet. Fragment ein und Fragment B sind für beide Formfaktoren identisch, jedoch unterscheiden sich die Aktivitäten, die sie hosten.
 
-Zur Behebung einer Aktivität zu koordinieren und verwalten alle diese Fragmente eingeführt Android eine neue Klasse mit dem Namen der *FragmentManager*. Jede Aktivität verfügt über eine eigene Instanz von einem `FragmentManager` zum Hinzufügen, löschen und Suchen von Fragmente gehostet. Das folgende Diagramm veranschaulicht die Beziehung zwischen Fragmente und Aktivitäten:
+Damit können eine Aktivität, koordinieren und verwalten alle diese Fragmente, eingeführt Android eine neue Klasse namens der *FragmentManager*. Jede Aktivität verfügt über eine eigene Instanz von einem `FragmentManager` für das Hinzufügen, löschen und Suchen von Fragmenten gehostet. Das folgende Diagramm veranschaulicht die Beziehung zwischen Fragmenten und Aktivitäten:
 
 [![Diagramm zur Veranschaulichung der Beziehungen zwischen Aktivitäten, Fragment-Manager und Fragmente](images/01.png)](images/01.png#lightbox)
 
-In einigen Bezug können Fragmente als zusammengesetzte Steuerelemente oder Mini-Aktivitäten betrachtet werden. Sie bündeln, um Teile der Benutzeroberfläche in wieder verwendbaren Module, die dann unabhängig von Entwicklern in Aktivitäten verwendet werden können. Ein Fragment verfügt über eine Hierarchie anzeigen – ebenso wie eine Aktivität, aber im Gegensatz zu einer Aktivität kann es über Bildschirme freigegeben werden. Ansichten unterscheiden sich von Fragmenten, Fragmente enthalten, die ihre eigenen Lebenszyklus; Ansichten nicht der Fall ist.
+In einigen Punkten können Fragmente als zusammengesetzte Steuerelemente oder Mini-Aktivitäten betrachtet werden. Sie fassen die Teile der Benutzeroberfläche in wiederverwendbare Module, die unabhängig von Entwicklern in Aktivitäten verwendet werden können. Ein Fragment besitzt eine Hierarchie von Inhaltsansichten – genau wie eine Aktivität, aber im Gegensatz zu einer Aktivität können sie für Bildschirme genutzt werden. Ansichten unterscheiden sich in gleicher Weise von Fragmenten Fragmente enthalten, die ihre eigenen Lebenszyklus. Ansichten nicht der Fall ist.
 
-Während die Aktivität auf einem Host für eine oder mehrere Fragmente ist, ist es nicht unmittelbare Kenntnis der Fragmente selbst. Ebenso kennen die Fragmente nicht direkt von anderen Fragmenten auf der hosting-Aktivität. Allerdings Fragmente und Aktivitäten bewusst werden die `FragmentManager` in ihre Aktivität. Mithilfe der `FragmentManager`, es ist möglich, dass eine Aktivität oder ein Fragment, rufen Sie einen Verweis auf eine bestimmte Instanz eines Fragments, und klicken Sie dann Methoden in dieser Instanz. Auf diese Weise können die Aktivität oder Fragmente kommunizieren und Interaktion mit anderen Fragmenten.
+Während die Aktivität auf einem Host auf einen oder mehrere Fragmente ist, ist es nicht direkt zur Kenntnis der Fragmente selbst. Fragmente sind ebenso nicht direkt zur Kenntnis der anderen Fragmente in der hosting-Aktivität. Fragmente und Aktivitäten sind jedoch über die `FragmentManager` in ihrer Aktivität. Mithilfe der `FragmentManager`, es ist möglich, dass eine Aktivität oder ein Fragment, rufen Sie einen Verweis auf eine bestimmte Instanz eines Fragments, und rufen Sie dann die Methoden in dieser Instanz. Auf diese Weise können die Aktivität oder Fragmente zu kommunizieren und interagieren mit anderen Fragmenten.
 
-Dieses Handbuch enthält eine umfassende Erläuterung zur Verwendung von Fragmenten, einschließlich:
+Dieses Handbuch enthält ausführliche Informationen zur Verwendung von Fragmenten, einschließlich:
 
--   **Erstellen von Fragmenten** – zum Erstellen einer grundlegenden Fragment und wichtige Methoden, die implementiert werden müssen.
--   **Verwaltungs- und Transaktionen des Fragments** – wie Fragmente zur Laufzeit zu bearbeiten.
--   **Android Supportpaket** – wie die Bibliotheken zu verwenden, die es ermöglichen Fragmente, die unter älteren Versionen von Android verwendet werden.
+-   **Erstellen von Fragmenten** – Vorgehensweise: Erstellen Sie eine grundlegende Fragment und Schlüsselmethoden, die implementiert werden müssen.
+-   **Fragment Verwaltungs- und Transaktionen** – Gewusst wie: Bearbeiten von Fragmenten zur Laufzeit.
+-   **Android-Unterstützungspakets** : wie die Bibliotheken verwenden, mit denen Fragmente, die unter älteren Versionen von Android verwendet werden.
 
 
 ## <a name="requirements"></a>Anforderungen
 
-Fragmente sind im Android SDK, beginnend mit der API-Ebene 11 (Android 3.0) verfügbar, wie im folgenden Screenshot gezeigt:
+Fragmente sind verfügbar, in das Android SDK, API-Ebene 11 (Android 3.0) ab, wie im folgenden Screenshot gezeigt:
 
-[![Auswählen von API-Ebene im Android SDK Manager](images/02.png)](images/02.png#lightbox)
+[![Wählen die API-Ebene im Android SDK-Manager](images/02.png)](images/02.png#lightbox)
 
-Fragmente sind in Xamarin.Android 4.0 und höher verfügbar. Eine Xamarin.Android Anwendung muss mindestens erforderliche API-Ebene 11 (Android 3.0) oder höher, um Fragmente zu verwenden. Das Zielframework kann in den Projekteigenschaften wie folgt festgelegt werden:
+Fragmente sind in Xamarin.Android 4.0 und höher verfügbar. Eine Xamarin.Android-Anwendung muss als Ziel mindestens API-Ebene 11 (Android 3.0) oder höher, um Fragmente zu verwenden. Das Zielframework kann in den Projekteigenschaften wie unten dargestellt festgelegt werden:
 
-[![Festlegen der Ziel-Framework-API-Ebene in der Projektoptionen](images/03-sml.png)](images/03.png#lightbox)
+[![Festlegen der Ziel-Framework-API-Ebene in den Projektoptionen](images/03-sml.png)](images/03.png#lightbox)
 
-Es ist möglich, Fragmente in früheren Versionen von Android mithilfe des Android Supportpaket und Xamarin.Android 4.2 oder höher verwenden. Hierzu wird in den Dokumenten in diesem Abschnitt ausführlicher behandelt.
+Es ist möglich, Fragmente in älteren Versionen von Android unter Verwendung des Android-Unterstützungspakets und Xamarin.Android 4.2 oder höher verwenden. Hierzu wird in den Dokumenten in diesem Abschnitt noch ausführlicher behandelt.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Wabe Gallery (Beispiel)](https://developer.xamarin.com/samples/monodroid/HoneycombGallery)
+- [Honeycomb-Katalog (Beispiel)](https://developer.xamarin.com/samples/monodroid/HoneycombGallery)
 - [Fragmente](http://developer.android.com/guide/topics/fundamentals/fragments.html)
 - [Supportpaket](http://developer.android.com/sdk/compatibility-library.html)
-- [MOTODEV Webinar: Einführung in Fragmente](http://motodev.adobeconnect.com/p9h1aqk3ttn/)
+- [MOTODEV-Webinar: Einführung in Fragmenten](http://motodev.adobeconnect.com/p9h1aqk3ttn/)

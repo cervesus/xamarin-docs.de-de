@@ -4,15 +4,15 @@ description: In diesem Artikel wird erläutert, wie die Scherungstransformation 
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/20/2017
-ms.openlocfilehash: 951fc02dfff1721c1391c5d0c8a21452a156cfdb
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: ecb07c69b7720f77401bf9bf454ee4b0248ad238
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615352"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113819"
 ---
 # <a name="the-skew-transform"></a>Die Scherungstransformation
 
@@ -22,17 +22,17 @@ In SkiaSharp neigt die Scherungstransformation grafische Objekte, z. B. die Scha
 
 ![](skew-images/skewexample.png "Ein Beispiel für eine Zerren von aus dem Programm Schattentext neigen")
 
-Die ungleichmäßigkeit transformiert Rechtecke in Parallelograms, aber eine verfälschte Ellipse ist immer noch eine Ellipse.
+Die ungleichmäßigkeit wird ein Rechteck zu einem Parallelogramm, aber eine verfälschte Ellipse ist immer noch eine Ellipse.
 
 Obwohl Xamarin.Forms Eigenschaften für die Übersetzung, Skalierung und Drehungen definiert wird, ist keine entsprechende Eigenschaft in Xamarin.Forms für datenschiefe.
 
-Die [ `Skew` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Skew/p/System.Single/System.Single/) -Methode der `SKCanvas` akzeptiert zwei Argumente für die horizontale Neigung und vertikal Neigen:
+Die [ `Skew` ](xref:SkiaSharp.SKCanvas.Skew(System.Single,System.Single)) -Methode der `SKCanvas` akzeptiert zwei Argumente für die horizontale Neigung und vertikal Neigen:
 
 ```csharp
 public void Skew (Single xSkew, Single ySkew)
 ```
 
-Ein zweites [ `Skew` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Skew/p/SkiaSharp.SKPoint/) Methode kombiniert diese Argumente in einem einzelnen `SKPoint` Wert:
+Ein zweites [ `Skew` ](xref:SkiaSharp.SKCanvas.Skew(SkiaSharp.SKPoint)) Methode kombiniert diese Argumente in einem einzelnen `SKPoint` Wert:
 
 ```csharp
 public void Skew (SKPoint skew)
@@ -72,7 +72,7 @@ Werte von der `xSkew` Argument shift unteren Rand der Text für positive Werte r
 
 [![](skew-images/skewexperiment-small.png "Dreifacher Screenshot der Seite neigen Experiment")](skew-images/skewexperiment-large.png#lightbox "dreifachen Screenshot der Seite Experiment neigen")
 
-Wenn `xSkew` der negative Wert von `ySkew`, das Ergebnis ist die Rotation, aber auch skaliert, etwas wie die UWP-Anzeige angibt.
+Wenn die `xSkew` Wert ist der negative Wert von der `ySkew` Wert, der das Ergebnis ist die Rotation, aber ein wenig als auch für skaliert gibt an, die UWP-Anzeige.
 
 Die Transformation Formeln lauten wie folgt aus:
 
@@ -102,7 +102,7 @@ X' = X + xSkew – (j – Py)
 
 y' = ySkew – (X – px) + y
 
-Wenn `ySkew` ist 0 (null), und geben Sie nur einen Wert ungleich null der `xSkew`, klicken Sie dann `px` Wert wird nicht verwendet. Der Wert ist irrelevant, und ebenso für `ySkew` und `py`.
+Wenn `ySkew` ist 0 (null), und klicken Sie dann die `px` Wert wird nicht verwendet. Der Wert ist irrelevant, und ebenso für `ySkew` und `py`.
 
 Sie können mehr als einen Winkel von neigen, z. B. den Winkel α in diesem Diagramm datenschiefe angeben vertraut:
 
@@ -110,7 +110,7 @@ Sie können mehr als einen Winkel von neigen, z. B. den Winkel α in diesem Diag
 
 Das Verhältnis der Verlagerung der vertikalen 100 Pixel 150 Pixel ist der Tangens von diesen Winkel, in diesem Beispiel 56.3 Grad an.
 
-Der XAML-Datei, der die **neigen Winkel Experiment** Seite ähnelt der **Neigungswinkel** Seite, außer dass die `Slider` Elemente, die zwischen-90 und 90 Grad liegen. Die [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs) Code-Behind-Datei zentriert den Text auf der Seite, und verwendet `Translate` Mitte Zerren von in die Mitte der Seite festlegen. Eine kurze `SkewDegrees` Methode am unteren Rand der Code konvertiert Winkel um Werte zu neigen:
+Der XAML-Datei, der die **neigen Winkel Experiment** Seite ähnelt der **Neigungswinkel** Seite, außer dass die `Slider` Elemente, die von –90 Grad und 90 Grad liegen. Die [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs) Code-Behind-Datei zentriert den Text auf der Seite, und verwendet `Translate` Mitte Zerren von in die Mitte der Seite festlegen. Eine kurze `SkewDegrees` Methode am unteren Rand der Code konvertiert Winkel um Werte zu neigen:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -224,7 +224,7 @@ Der Schatten ist angezeigten zuerst, und klicken Sie dann den Text an:
 
 [![](skew-images/skewshadowtext1-small.png "Dreifacher Screenshot der Seite Schattentext neigen")](skew-images/skewshadowtext1-large.png#lightbox "dreifachen Screenshot der Seite Schattentext neigen")
 
-Die vertikale Koordinate, die an die `DrawText` Methode gibt die Position des Texts relativ zur Baseline. Dies ist die gleiche vertikale Koordinate für den Mittelpunkt der Verzerrung verwendet. Dieses Verfahren funktioniert nicht, wenn die Textzeichenfolge Unterlängen enthält. Ersetzen Sie das Wort "Merkwürdiges", "Schatten" und hier ist z. B. das Ergebnis:
+Die vertikale Koordinate, die an die `DrawText` Methode gibt die Position des Texts relativ zur Baseline. Dies ist die gleiche vertikale Koordinate für den Mittelpunkt der Verzerrung verwendet. Dieses Verfahren funktioniert nicht, wenn die Textzeichenfolge Unterlängen enthält. Ersetzen z. B. das Wort "Merkwürdiges", "Schatten" aus, und hier ist das Ergebnis:
 
 [![](skew-images/skewshadowtext2-small.png "Dreifacher Screenshot der Seite Schattentext neigen ein alternatives Wort mit Unterlängen")](skew-images/skewshadowtext2-large.png#lightbox "dreifachen Screenshot der Seite Schattentext neigen ein alternatives Wort mit Unterlängen")
 
@@ -251,5 +251,5 @@ Jetzt erweitert der Schatten zwischen dem unteren Rand dieser Unterlängen ein:
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

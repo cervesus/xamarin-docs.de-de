@@ -4,15 +4,15 @@ description: In diesem Artikel wird erläutert, wie Sie eine app Startbildschirm
 ms.prod: xamarin
 ms.assetid: 31A489CA-756B-4B9B-B386-4BADF18EDD33
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/02/2018
-ms.openlocfilehash: 40b8c38e89e96223bbf657ff06356d9fb2e9d9b3
-ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
+ms.openlocfilehash: 0ec1defa29a4fe85c4ae3e809d8733e68cc268ac
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40251104"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116920"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Startbildschirme für Xamarin.iOS-Apps
 
@@ -28,7 +28,7 @@ Diese kurze exemplarische Vorgehensweise beschreibt, wie erstellen Sie einen Sta
 
 In iOS 8 (und höher) kann Entwickler von speziellen Unified Storyboards Geben Sie den Startbildschirm, anstatt eine oder mehrere statische startbilder erstellen. Beim Start eines Storyboards in der iOS-Designer zu erstellen, verwenden Sie Größenklassen und automatisches Layout, um verschiedene Layouts für andere Umgebungen zu definieren. Der Entwickler kann mithilfe von Größenklassen und automatisches Layout, erstellen eine einzelne Startbildschirm, die auf allen Geräten gut aussieht und Umgebungen anzeigen.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Erstellen Sie ein neues Projekt in Visual Studio für Mac dazu **Datei > neue Projektmappe** auswählen und dann **Einzelansicht-App**: 
 
@@ -95,7 +95,7 @@ In iOS 8 (und höher) kann Entwickler von speziellen Unified Storyboards Geben S
 
 13. Speichern Sie die Änderungen auf das Storyboard an. Führen Sie die app auf ein Gerät oder Simulator, und der Startbildschirm werden angezeigt, wie die app gestartet wird.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Erstellen Sie ein neues Projekt. Wählen Sie in Visual Studio **Datei > Neu > Projekt > Visual c# > iPhone & iPad > iOS-App (Xamarin)**:
 
@@ -140,7 +140,7 @@ In iOS 8 (und höher) kann Entwickler von speziellen Unified Storyboards Geben S
 
     ![Ein leeres View Controller hinzugefügt, auf die Entwurfsoberfläche](launch-screens-images/launch08-vs.png)
 
-9. Legen Sie die **Hintergrund** Farbe der Hauptansicht der View-Controller. Wählen Sie die Ansicht, indem Sie in der Mitte des Ansichtscontrollers auf, und passen Sie die Background-Farbe mit der die **Fenster "Eigenschaften"**:
+9. Legen Sie die **Hintergrund** Farbe der Hauptansicht der View-Controller. Wählen Sie die Ansicht, indem Sie in der Mitte des Ansichtscontrollers auf, und passen Sie die Background-Farbe mit der **Fenster "Eigenschaften"**:
     
     ![Eine einzige Ansicht mit einem violetten Hintergrundfarbe](launch-screens-images/launch09-vs.png)
 
@@ -187,7 +187,7 @@ Weitere Informationen zum Erstellen eines Bildschirms starten mit einem Storyboa
 
 ## <a name="migrating-to-launch-screen-storyboards"></a>Migrieren zum Bildschirm Storyboards zu starten
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Bei der Aktualisierung einer vorhandenen app, um Storyboards zu verwenden, für die Startbildschirme mit der rechten Maustaste die **Projektname** in die **Projektmappen-Explorer** , und wählen Sie **hinzufügen**  >  **Neue Datei...** . Wählen Sie **iOS** > **Startbildschirm** , und klicken Sie auf die **neu** Schaltfläche:
 
@@ -205,7 +205,7 @@ Führen Sie folgende Schritte aus, um das neue Storyboard als einen Startbildsch
 
     ![](launch-screens-images/storyboard08.png "Im Startbildschirm festlegen auf das storyboard")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Mit der rechten Maustaste auf den Projektnamen in der **Projektmappen-Explorer** , und wählen Sie **hinzufügen** > **neue Datei...** : 
 

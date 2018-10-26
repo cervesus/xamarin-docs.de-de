@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 86de2ad6009365b3debbe1a2310651002b023219
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 13730dce5d4698085abe10cb93da5ba50b87ab01
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995564"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106428"
 ---
 # <a name="binding-from-a-xamarinforms-controltemplate"></a>Bindung von einer Xamarin.Forms-ControlTemplate
 
@@ -156,13 +156,24 @@ public class HomePageCS : ContentPage
 }
 ```
 
+Sie auch eine Bindung an die ansichtsmodelleigenschaften direkt, damit Sie nicht deklarieren müssen `BindableProperty`s für `HeaderText` und `FooterText` auf die `ContentPage`, indem Sie die Steuerelementvorlage an Parent.BindingContext binden. _PropertyName_ z. B.:
+
+```xaml
+<ControlTemplate x:Key="TealTemplate">
+  <Grid>
+    ...
+    <Label Text="{TemplateBinding Parent.BindingContext.HeaderText}" ... />
+    ...
+    <Label Text="{TemplateBinding Parent.BindingContext.FooterText}" ... />
+  </Grid>
+</ControlTemplate>
+```
+
 Weitere Informationen zur Datenbindung in ViewModels finden Sie unter [von Datenbindungen zu MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel veranschaulicht die Verwendung von vorlagenbindungen zum Ausführen von Datenbindung in einer Steuerelementvorlage. Vorlagenbindungen können binden Steuerelemente in einer Steuerelementvorlage auf Daten an öffentliche Eigenschaften, aktivieren die Eigenschaftswerte für Steuerelemente in der Steuerelementvorlage problemlos geändert werden.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

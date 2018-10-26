@@ -1,27 +1,27 @@
 ---
-title: Einführung in MacOS hohe Sierra
-description: Dieses Dokument Listet Funktionen eingeführt und in MacOS hohe Sierra und Links zu Apple allgemeine Beschreibung des Updates verbessert.
+title: Einführung in MacOS High Sierra
+description: Dieses Dokument Listet die Funktionen eingeführt und in MacOS High Sierra und Links zu Apple allgemeine Beschreibung des Updates verbessert.
 ms.prod: xamarin
 ms.assetid: CD4E4C3C-5341-4830-8ED2-6C67AFC49674
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/25/2018
-ms.openlocfilehash: 606f359bb757491b941c27f9aa85f61fca07b504
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: daa745f2cf5552c7147a77c273ed8be5956bf4b2
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37067332"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103698"
 ---
-# <a name="introduction-to-macos-high-sierra"></a>Einführung in MacOS hohe Sierra
+# <a name="introduction-to-macos-high-sierra"></a>Einführung in MacOS High Sierra
 
-MacOS hohe Sierra eingeführt MacOS, einschließlich der neuen Funktionen und Updates:
+MacOS High Sierra eingeführten neuen Features und Updates auf MacOS, dazu gehören:
 
-- HEVC (hohe Effizienz Video Coding)
+- HEVC (High Efficiency Video Coding)
 - Apple-Dateisystem
-- Metall 2
+- Metal 2
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [MacOS hohe Sierra](https://www.apple.com/macos/high-sierra/)
+- [MacOS High Sierra](https://www.apple.com/macos/high-sierra/)

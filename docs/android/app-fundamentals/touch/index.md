@@ -1,49 +1,49 @@
 ---
-title: Touch- und Gesten in Xamarin.Android
-description: Touchscreens auf viele der heutigen Geräte ermöglichen Benutzern Geräten auf eine natürliche und intuitive Weise schnell und effizient interagieren. Diese Aktivität ist nicht nur auf einfache Touch Erkennung beschränkt – es ist möglich, auch Gesten verwenden. Zwei-Finger-Zoom Bewegung ist z. B. ein sehr gängiges Beispiel dieser durch einen Teil des Bildschirms mit zwei Fingern fest, denen der Benutzer vergrößern oder verkleinern kann pinching an. Dieses Handbuch Touch untersucht und Aktionen in Android.
+title: Berührung und Gesten in Xamarin.Android
+description: Touchscreens auf viele der heutigen Geräte können Benutzer schnell und effizient mit Geräten auf eine natürliche und intuitive Weise zu interagieren. Diese Interaktion ist nicht beschränkt, nur um einfache Touch-Erkennung – Es ist möglich, Gesten und zu verwenden. Die Pinch-Finger-Zoom-Bewegung wird z. B. ein sehr gängiges Beispiel hierfür von möglichen einen Teil des Bildschirms mit zwei Fingern, die, denen der Benutzer vergrößern oder verkleinern kann. Dieses Handbuch Touch untersucht und anwendungsstiftbewegungen, die unter Android.
 ms.prod: xamarin
 ms.assetid: 61874769-978A-4562-9B2A-7FFD45F58B38
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 3700f9c73fb58fefcdba7987c9931e385cd52d38
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: 7f957c9ff5a0e7c3a0821978703860ed2f723a92
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32436289"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123315"
 ---
-# <a name="touch-and-gestures-in-xamarinandroid"></a>Touch- und Gesten in Xamarin.Android
+# <a name="touch-and-gestures-in-xamarinandroid"></a>Berührung und Gesten in Xamarin.Android
 
-_Touchscreens auf viele der heutigen Geräte ermöglichen Benutzern Geräten auf eine natürliche und intuitive Weise schnell und effizient interagieren. Diese Aktivität ist nicht nur auf einfache Touch Erkennung beschränkt – es ist möglich, auch Gesten verwenden. Zwei-Finger-Zoom Bewegung ist z. B. ein sehr gängiges Beispiel dieser durch einen Teil des Bildschirms mit zwei Fingern fest, denen der Benutzer vergrößern oder verkleinern kann pinching an. Dieses Handbuch Touch untersucht und Aktionen in Android._
+_Touchscreens auf viele der heutigen Geräte können Benutzer schnell und effizient mit Geräten auf eine natürliche und intuitive Weise zu interagieren. Diese Interaktion ist nicht beschränkt, nur um einfache Touch-Erkennung – Es ist möglich, Gesten und zu verwenden. Die Pinch-Finger-Zoom-Bewegung wird z. B. ein sehr gängiges Beispiel hierfür von möglichen einen Teil des Bildschirms mit zwei Fingern, die, denen der Benutzer vergrößern oder verkleinern kann. Dieses Handbuch Touch untersucht und anwendungsstiftbewegungen, die unter Android._
 
-## <a name="touch-overview"></a>Touch-Übersicht
+## <a name="touch-overview"></a>Übersicht über die Fingereingabe
 
-iOS und Android werden ähnlich wie die Methoden, die sie Touch behandeln. Beide können Multitouch - viele Punkte des Kontakts auf dem Bildschirm- und komplexe Gesten unterstützen. Dieser Leitfaden führt einige der ähnlichkeiten Konzepte sowie den Besonderheiten des Implementierens Touch und Aktionen auf beiden Plattformen.
+iOS und Android sind ähnlich wie, die Sie Touch behandeln. Beide können Multi-Touch - viele Datenpunkte wenden Sie sich an, auf dem Bildschirm – und komplexe Gesten unterstützen. Dieses Handbuch führt einige der die ähnlichkeiten-Konzepte sowie den Besonderheiten der Implementierung von Touch und anwendungsstiftbewegungen, die auf beiden Plattformen.
 
-Android verwendet einen `MotionEvent` Objekt zum Kapseln von Touch-Daten und Methoden für das Objekt anzeigen, um den letzten Schliff zu lauschen.
+Android verwendet einen `MotionEvent` Objekt, das Touch-Daten und Methoden für das Objekt zum Lauschen auf berührungen zu kapseln.
 
-IOS und Android bereitstellen bedeutet, dass zusätzlich zum Erfassen der Touch-Daten, für das Muster der Fingereingaben in Gesten interpretieren. Diese Bewegung Prüfer können wiederum zum Interpretieren von anwendungsspezifischen Befehle, wie z. B. eine Drehung ein Bild oder eine Deaktivieren einer Seite verwendet werden. Android bietet eine Handvoll unterstützten Gesten sowie Ressourcen zum Hinzufügen von benutzerdefinierten Gesten einfach komplexe vornehmen.
+IOS und Android bieten bedeutet, dass neben dem Erfassen von Touch-Daten, für das Interpretieren der Muster der Workflows in die Eingabeaktionen. Diese Geste Erkennungen können wiederum verwendet werden, um anwendungsspezifische-Befehle, wie eine Drehung um ein Bild oder eine Reihe von einer Seite zu interpretieren. Android bietet eine Reihe von unterstützten Gesten sowie Ressourcen für Hinzufügen von komplexen benutzerdefinierten Gesten einfach zur Verfügung.
 
-Ob Sie auf Android oder iOS ausgeführt werden, kann die Wahl zwischen Fingereingaben sowie Geste Prüfer eine verwirrend sein. Es wird empfohlen, im Allgemeinen Voreinstellung für die Geste Prüfer gewährt werden soll. Prüfer Geste werden als diskrete Klassen implementiert, die wodurch die stärkere Trennung von Anliegen und eine bessere Kapselung bereitzustellen. Dies vereinfacht die Logik zwischen verschiedenen Ansichten, minimieren die Menge an Code geschrieben freigeben.
+Ob Sie auf Android oder iOS arbeiten, kann die Wahl zwischen Workflows und Bewegung Erkennungen eine verwirrend sein. Es wird empfohlen, im Allgemeinen Präferenz zu Geste Erkennungen gewährt werden soll. Geste Erkennungen werden als diskrete Klassen implementiert, die stärkere Trennung von Belangen und eine bessere Kapselung bereitstellen. Dies erleichtert Ihnen die Logik zwischen verschiedenen Ansichten, minimieren die Menge an geschriebenen Code freigeben.
 
-Dieses Handbuch folgt ein ähnlichen Formats wie für jedes Betriebssystem: zuerst wird die Plattform-Touch-APIs sind eingeführt und erläutert, wie sie die Grundlage bilden, auf welche Touch Aktivitäten erstellt werden. Klicken Sie dann, befassen wir uns mit der Welt der Gestenhandler Prüfer – zuerst durch einige allgemeine Gesten durchsuchen und mit dem Erstellen von benutzerdefinierter Gesten für Anwendungen wird abgeschlossen. Abschließend sehen Sie, wie einzelne Finger mithilfe der Low-Level-Touch-nachverfolgung So erstellen Sie ein Programm Finger-paint nachverfolgt.
+Dieses Handbuch folgt ein ähnlichen Formats wie für jedes Betriebssystem: "First", der Plattform Touch APIs eingeführt und beschrieben, wie sie die Grundlage sind, auf welche Touch Interaktionen erstellt werden. Klicken Sie dann befassen wir uns in die Welt der Bewegung Erkennungen: zuerst durch einige allgemeine Gesten untersuchen und mit dem Erstellen von benutzerdefinierter stiftbewegungen für Anwendungen wird abgeschlossen. Zum Schluss sehen Sie einzelner Finger, die mithilfe der nachverfolgung von Low-Level-Touch, erstellen Sie ein Programm Finger-paint nachverfolgen.
 
 ## <a name="sections"></a>Abschnitte
 
 -  [Toucheingabe in Android](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
--  [Exemplarische Vorgehensweise: Verwenden von Touch in Android](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
--  [Multi-Touch-Überwachung](touch-tracking.md)
+-  [Exemplarische Vorgehensweise: Verwenden von Toucheingaben in Android](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
+-  [Multitouch-nachverfolgung](touch-tracking.md)
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Handbuch untersucht wir Touch Android. Für beide Betriebssysteme haben wir wie durch Toucheingabe zu aktivieren und So reagieren Sie auf die Berührungsereignisse. Als Nächstes kennen gelernt Gesten und einige der Gestenhandler Prüfer, Android und iOS bereitstellen, um einige der häufigen Szenarien behandelt. Untersucht das Erstellen von benutzerdefinierter Gesten und in Anwendungen zu implementieren. Eine exemplarische Vorgehensweise veranschaulicht die Konzepte und APIs für jedes Betriebssystem in Aktion, und Sie wurde auch erläutert, wie einzelne Finger nachverfolgen.
+In diesem Handbuch untersucht es von toucheingaben in Android. Für beide Betriebssysteme haben Sie erfahren, wie Toucheingabe zu aktivieren und auf die touchereignisse zu reagieren. Als Nächstes haben wir Gesten und einige der Bewegung Erkennungsprogramme, Android und iOS bereitstellen, um einige der häufigsten Szenarien behandeln. Untersuchten wir das Erstellen von benutzerdefinierter stiftbewegungen, und sie in Anwendungen implementieren. Eine exemplarische Vorgehensweise veranschaulicht die Konzepte und APIs für jedes Betriebssystem in Aktion, und Sie haben auch erfahren, wie einzelner Finger nachverfolgen.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Android berühren starten (Beispiel)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_start)
-- [Android berühren endgültigen (Beispiel)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_final)
+- [Android Touch starten (Beispiel)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_start)
+- [Android Touch endgültige (Beispiel)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_final)
 - [FingerPaint (Beispiel)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint)

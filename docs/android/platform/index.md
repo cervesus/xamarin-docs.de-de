@@ -4,15 +4,15 @@ description: Dokumente in diesem Abschnitt werden die Funktionen, die speziell f
 ms.prod: xamarin
 ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 07/27/2018
-ms.openlocfilehash: 8e2bb43f885c162eb6dca0cf4a8ed14490ff092b
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+author: conceptdev
+ms.author: crdun
+ms.date: 08/21/2018
+ms.openlocfilehash: 8ce50ab9a1bcd029a0db97e6dd66518d646d82ef
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351563"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104699"
 ---
 # <a name="platform-features"></a>Plattformfeatures
 
@@ -46,9 +46,9 @@ Fragmente, die zeigt, wie eine flexiblere Entwürfe für viele verschiedene Bild
 Dieses Handbuch wird erläutert, wie Android 6.0 unterstützt _app-Verknüpfung_, eine Technik, die mobile apps in Websites auf URLs reagieren kann. Es besprechen, wie Sie app-Verknüpfung in einer Android 6.0-Anwendung zu implementieren und konfigurieren Sie eine Website zum Gewähren von Berechtigungen für die mobile app, app-Links für die Domäne zu behandeln.
 
 
-##  <a name="android-p-previewandroidplatformandroid-pmd"></a>[Android-P-Vorschau](~/android/platform/android-p.md)
+##  <a name="android-9-pieandroidplatformpiemd"></a>[Android 9 Kreis](~/android/platform/pie.md)
 
-Dieser Artikel bietet einen Überblick über die neuen Funktionen in der Android-P-Vorschau, wird erläutert, wie Xamarin.Android für die Entwicklung von Android P vorbereiten und enthält Beispielcode, der veranschaulicht, wie Sie wichtige Android P-Features in Xamarin.Android-apps verwenden.
+In diesem Artikel bietet einen Überblick über die neuen Features in Android Kreis wird erläutert, wie zum Vorbereiten von Xamarin.Android für die Entwicklung von Android Kreis- und bietet eine Beispiel-app, die veranschaulicht, wie Sie mit der neuen Android Kreis anzeigen Ausschnitt und Benachrichtigung Funktionen in Xamarin.Android-apps.
 
 
 ##  <a name="android-8-oreoandroidplatformoreomd"></a>[Android 8 Oreo](~/android/platform/oreo.md)
@@ -98,12 +98,12 @@ Es behandelt verschiedene neue Technologien für die Benutzer-Schnittstelle und 
 
 ##  <a name="working-with-the-android-manifestandroid-manifestmd"></a>[Arbeiten mit der Android-Manifest.](android-manifest.md)
 
-Diesem Artikel Introducts wird die Datei "androidmanifest.xml", und wie es vielleicht werden verwendet, um Funktionen zu steuern und eine Beschreibung für die Anforderungen der Mono für Android-Anwendung.
+In diesem Artikel werden die Datei "AndroidManifest.xml", und wie sie vielleicht zum Steuern von Funktionen und eine Beschreibung für die Anforderungen der Mono für Android-Anwendung verwendet werden.
 
 
 ##  <a name="introduction-to-content-providersandroidplatformcontent-providersindexmd"></a>[Einführung in die Inhaltsanbieter](~/android/platform/content-providers/index.md)
 
-ContentProvider kapselt ein Datenrepository und stellt eine API, um darauf zuzugreifen. Der Anbieter, die als Teil einer Android-Anwendung, die in der Regel auch eine Benutzeroberfläche zum Anzeigen von ermöglicht/Verwalten der Daten vorhanden ist. Der Hauptvorteil der Verwendung von Content-Anbieter ermöglicht anderen Anwendungen einfach die gekapselten Daten mithilfe eines Anbieter-Client-Objekts (einer ContentResolver genannt) den Zugriff auf. Zusammen bieten einen Inhaltsanbieter und inhaltsresolvers für eine konsistente zwischen Anwendungen API für den Datenzugriff, die einfach erstellen und nutzen. Dieses Dokument veranschaulicht den Zugriff auf und ContentProviders, die mit Xamarin.Android erstellt.
+ContentProvider kapselt ein Datenrepository und stellt eine API, um darauf zuzugreifen. Der Anbieter, die als Teil einer Android-Anwendung, die auch eine Benutzeroberfläche, zum Anzeigen von bereitstellt/Verwalten der Daten vorhanden ist. Der Hauptvorteil der Verwendung von Content-Anbieter ermöglicht anderen Anwendungen einfach die gekapselten Daten mithilfe eines Anbieter-Client-Objekts (einer ContentResolver genannt) den Zugriff auf. Zusammen bieten einen Inhaltsanbieter und inhaltsresolvers für eine konsistente zwischen Anwendungen API für den Datenzugriff, die einfach erstellen und nutzen. Dieses Dokument veranschaulicht den Zugriff auf und ContentProviders, die mit Xamarin.Android erstellt.
 
 
 

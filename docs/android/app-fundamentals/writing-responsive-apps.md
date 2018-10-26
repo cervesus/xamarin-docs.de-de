@@ -1,21 +1,21 @@
 ---
-title: Schreiben von Clientanwendungen reaktionsfähig
+title: Schreiben von-reaktionsschneller Anwendungen
 ms.prod: xamarin
 ms.assetid: 452DF940-6331-55F0-D130-002822BBED55
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: b8c113b67b3fbfa57ca86c72e11ddeb0e4e1a9ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a1642c4cbb790cf09d2a31e629408afc61d5b7ab
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763500"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121775"
 ---
-# <a name="writing-responsive-applications"></a>Schreiben von Clientanwendungen reaktionsfähig
+# <a name="writing-responsive-applications"></a>Schreiben von-reaktionsschneller Anwendungen
 
-Einer der Schlüssel für die Aufrechterhaltung einer reaktionsfähigen GUI ist dazu lang andauernden Aufgaben in einem Hintergrundthread auf die Benutzeroberfläche nicht blockiert werden. Angenommen, wir möchten berechnen eines Werts für den Benutzer angezeigt, jedoch, dass der Wert 5 Sekunden berechnet wird:
+Einer der Schlüssel zur Aufrechterhaltung der Reaktionsfähigkeit einer grafischen Benutzeroberfläche ist dafür lang andauernden Aufgaben in einem Hintergrundthread die grafischen Benutzeroberfläche nicht blockiert werden. Angenommen, wir möchten einen Wert für den Benutzer angezeigt, aber der Wert 5 Sekunden berechnen dauert zu berechnen:
 
 ```csharp
 public class ThreadDemo : Activity
@@ -43,7 +43,7 @@ public class ThreadDemo : Activity
 }
 ```
 
-Dies funktioniert, aber die Anwendung "hängen" 5 Sekunden lang während der Wert berechnet wird. Während dieser Zeit werden die app nicht Antworten auf Eingreifen des Benutzers. Um dieses Problem umgehen möchten wir unsere Berechnungen in einem Hintergrundthread tun:
+Dies funktioniert, aber die Anwendung "hängen" 5 Sekunden während der Wert berechnet wird. Während dieses Zeitraums wird die app nicht auf keine Benutzerinteraktion reagieren. Um dies zu umgehen, möchten wir unsere Berechnungen in einem Hintergrundthread ausgeführt werden:
 
 ```csharp
 public class ThreadDemo : Activity
@@ -71,7 +71,7 @@ public class ThreadDemo : Activity
 }
 ```
 
-Jetzt berechnen wir den Wert in einem Hintergrundthread, damit bei der Berechnung unserer GUI reaktionsfähig bleibt. Jedoch, wenn die Berechnung abgeschlossen ist, abstürzt unserer app, verlassen diese in das Protokoll:
+Nun berechnen wir den Wert in einem Hintergrundthread, damit unsere GUI während der Berechnung weiterhin reaktionsfähig bleibt. Aber wenn die Berechnung abgeschlossen ist, stürzt ab, unsere app, verlassen diese in das Protokoll:
 
 ```shell
 E/mono    (11207): EXCEPTION handling: Android.Util.AndroidRuntimeException: Exception of type 'Android.Util.AndroidRuntimeException' was thrown.
@@ -82,7 +82,7 @@ E/mono    (11207):   at Android.Widget.TextView.set_Text (IEnumerable`1 value)
 E/mono    (11207):   at MonoDroidDebugging.Activity1.SlowMethod ()
 ```
 
-Dies liegt daran müssen Sie die GUI aus der GUI-Thread aktualisieren. Unsere Code aktualisiert die GUI aus dem ThreadPool-Threads, die app zum Absturz verursacht. Müssen wir unsere Wert im Hintergrundthread zu berechnen, aber führen Sie dann auf unserem Update im GUI-Thread, der behandelt wird, mit [Activity.RunOnUIThread](https://developer.xamarin.com/api/member/Android.App.Activity.RunOnUiThread/(System.Action)):
+Dies ist, da die grafischen Benutzeroberfläche von Thread der grafischen Benutzeroberfläche aktualisiert werden muss. Unser Code aktualisiert die GUI aus dem ThreadPool-Thread, die app zum Absturz verursachen. Wir müssen unsere Wert im Hintergrundthread zu berechnen, aber führen Sie dann auf unserem Update für den GUI-Thread, der behandelt wird, mit [Activity.RunOnUIThread](https://developer.xamarin.com/api/member/Android.App.Activity.RunOnUiThread/(System.Action)):
 
 ```csharp
 public class ThreadDemo : Activity
@@ -110,6 +110,6 @@ public class ThreadDemo : Activity
 }
 ```
 
-Dieser Code funktioniert wie erwartet. Dieses GUI reaktionsfähig bleibt und ruft ordnungsgemäß aktualisiert, sobald die Berechnung komple ist.
+Dieser Code funktioniert wie erwartet. Dieses GUI bleibt reaktionsfähig und ruft ordnungsgemäß aktualisiert, sobald die Berechnung komple ist.
 
-Beachten Sie, dass diese Technik nicht nur für die Berechnung eines teuren Wert verwendet wird. Es kann für eine lang dauernde Aufgabe verwendet werden, die im Hintergrund, z. B. einem Webdienstaufruf oder Herunterladen von Daten für das Internet ausgeführt werden können.
+Beachten Sie, dass diese Technik nicht einfach eine teure Wert zu berechnen verwendet. Sie können für eine lang ausgeführte Aufgabe verwendet werden, die im Hintergrund, wie bei einem Aufruf des Webdiensts oder heruntergeladen Daten für das Internet ausgeführt werden können.

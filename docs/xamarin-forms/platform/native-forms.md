@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: 65bb3fa070c082fa6c6c489e326a870a80fb9502
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 04d435b29f6f2f577df5025995fcc074ba5d9d9d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997511"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122750"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms in Xamarin Native-Projekten
 
@@ -33,7 +33,7 @@ Xamarin.Forms muss initialisiert werden, durch den Aufruf der `Forms.Init` -Meth
 > [!NOTE]
 > Die **NativeForms** beispiellösung für die Anwendung enthält keine Xamarin.Forms-Projekte. Stattdessen besteht sie von einem Xamarin.iOS-Projekt, eine Xamarin.Android-Projekt und ein UWP-Projekt. Jedes Projekt wird ein systemeigenes Projekt, das Native Formen verwendet wird, nutzen [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-Seiten abgeleitet. Es ist jedoch kein Grund, warum auf systemeigene Projekte nutzen konnte nicht `ContentPage`-Seiten von einer .NET Standard Library-Projekt oder ein freigegebenes Projekt abgeleitet.
 
-Wenn Sie Native Formulare verwenden zu können, Funktionen wie z. B. Xamarin.Forms [ `DependencyService` ](xref:Xamarin.Forms.DependencyService), [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter), und die Datenbindungs-Engine, alle noch arbeiten.
+Wenn Sie Native Formulare verwenden zu können, Funktionen wie z. B. Xamarin.Forms [ `DependencyService` ](xref:Xamarin.Forms.DependencyService), [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter), und die Datenbindungs-Engine, alle noch arbeiten. Allerdings muss die Seitennavigation mithilfe der systemeigenen API-Navigation ausgeführt werden.
 
 ## <a name="ios"></a>iOS
 

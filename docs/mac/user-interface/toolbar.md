@@ -4,15 +4,15 @@ description: Dieser Artikel beschreibt das Arbeiten mit Symbolleisten in einer X
 ms.prod: xamarin
 ms.assetid: C8D228CE-C860-47E1-85FD-69864BF91F20
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 06faaf16ffd0adc64063bfa5a264c1895b9ca9cb
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 6cb17ae0f60390564a8aa6bdb64ea612aae51b55
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251191"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120254"
 ---
 # <a name="toolbars-in-xamarinmac"></a>Symbolleisten in Xamarin.Mac
 
@@ -168,7 +168,7 @@ Die folgenden Eigenschaften sind verfügbar:
 - **Bezeichnung** -Text, der für das Element in der Symbolleiste angezeigt.
 - **Palette Bezeichnung** -Text für das Element in der **Symbolleistenelemente zulässig** Bereich
 - **Tag** – ein optionaler, eindeutiger Bezeichner, mit denen das Element im Code identifiziert.
-- **Bezeichner** -definiert, die den Elementtyp der Symbolleiste. Ein benutzerdefinierter Wert kann verwendet werden, um ein Symbolleistenelement im Code auszuwählen.
+- **Bezeichner** -definiert den Typ der Symbolleisten-Element. Ein benutzerdefinierter Wert kann verwendet werden, um ein Symbolleistenelement im Code auszuwählen.
 - **Auswählbare** – Wenn aktiviert, wird das Element fungiert, wie ein/aus-Schaltfläche.
 
 > [!IMPORTANT]

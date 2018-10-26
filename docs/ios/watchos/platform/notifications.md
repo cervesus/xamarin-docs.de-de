@@ -1,132 +1,132 @@
 ---
-title: WatchOS Benachrichtigungen in Xamarin
-description: Dieses Dokument beschreibt das Arbeiten mit WatchOS Benachrichtigungen in Xamarin. Es wird erläutert, Erstellen von Notification Controller Generieren von Benachrichtigungen und Testen von Benachrichtigungen.
+title: WatchOS-Benachrichtigungen in Xamarin
+description: Dieses Dokument beschreibt das Arbeiten mit WatchOS-Benachrichtigungen in Xamarin. Es wird erläutert, erstellen Notification-Controller, Generieren von Benachrichtigungen und Benachrichtigungen zu testen.
 ms.prod: xamarin
 ms.assetid: 0BC1306E-0713-4592-996E-7530CCF281E7
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 42b0354f19a9e0c31b7a859d598526fddad726cd
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 53ec1b0777827e7f4faf81110507787c65dfaf63
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791909"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103932"
 ---
-# <a name="watchos-notifications-in-xamarin"></a>WatchOS Benachrichtigungen in Xamarin
+# <a name="watchos-notifications-in-xamarin"></a>WatchOS-Benachrichtigungen in Xamarin
 
-Sehen Sie sich, dass apps Benachrichtigungen empfangen können, wenn die enthaltende iOS-app unterstützt. Besteht der integrierten Benachrichtigung zu behandeln, damit Sie nicht *müssen* der unten beschriebene jedoch zusätzliche Benachrichtigung-Unterstützung hinzuzufügen, wenn Sie Benachrichtigungsverhalten anpassen möchten, und Darstellung lesen Sie dann auf.
+Watch-apps können Benachrichtigungen empfangen, wenn diese von die enthaltenden iOS-app unterstützt. Integrierten Benachrichtigungen zu behandeln, damit Sie nicht der Fall ist *müssen* die unten beschriebene, jedoch zusätzliche Benachrichtigung-Unterstützung hinzufügen. Wenn Sie Benachrichtigungsverhalten anpassen möchten, und Darstellung dann lesen Sie weiter.
 
-Finden Sie in der [iOS Benachrichtigungen](~/ios/platform/user-notifications/deprecated/index.md) Doc für Weitere Informationen zum Hinzufügen von Unterstützung der Benachrichtigung zur iOS-app in der Projektmappe.
+Finden Sie in der [iOS-Benachrichtigungen](~/ios/platform/user-notifications/deprecated/index.md) Doc für Weitere Informationen zum Hinzufügen von Unterstützung der iOS-App in der Projektmappe.
 
-## <a name="creating-notification-controllers"></a>Erstellen von Notification-Controller
+## <a name="creating-notification-controllers"></a>Erstellen Notification-Controller
 
-Für das Storyboard verfügen Benachrichtigungen Controller eine besondere Art von segue ausgelöst werden. Beim Ziehen Sie ein neues **Benachrichtigung Schnittstellencontroller** auf ein Storyboard wird es automatisch ein Segue angefügt haben:
+Auf dem Storyboard haben Benachrichtigungen Controller eine besondere Art von segue ausgelöst werden. Wenn Sie ein neues ziehen **Benachrichtigungscontrollers-Schnittstelle** auf ein Storyboard verfügen sie automatisch über einem Segue angefügt:
 
-![](notifications-images/notification-storyboard1.png "Eine neue Benachrichtigung Schnittstelle Controller mit einem angefügten segue")
+![](notifications-images/notification-storyboard1.png "Eine neue Benachrichtigung Schnittstellencontrollers mit einem Segue angefügt")
 
 Wenn die Benachrichtigung segue ausgewählt ist können Sie seine Eigenschaften bearbeiten:
 
 ![](notifications-images/notification-storyboard2.png "Die Benachrichtigung segue ausgewählten")
 
-Sie können dieses Beispiels über die WatchKitCatalog formuliert werden, nachdem Sie den Controller angepasst haben:
+Nachdem Sie den Controller angepasst haben, kann er wie im folgenden Beispiel aus der WatchKitCatalog aussehen:
 
-![](notifications-images/notifications-segue.png "Die Benachrichtigungseigenschaften")
-
-
-Es gibt zwei Arten der Benachrichtigung:
-
-- **Kurzer Blick** -nicht scrollfähige statische Sicht, die vom System definiert.
-
-- **Long-Wert-Darstellung** - Bildläufe anpassbare anzeigen, die von Ihnen definierten! Eine einfachere, statische und eine komplexere dynamische Version können angegeben werden.
-
-### <a name="short-look-notification-controller"></a>Kurzer Blick Benachrichtigung Controller
-
-Die Benutzeroberfläche kurzer Blick besteht das app-Symbol, Anwendungsnamen und Titelzeichenfolge Benachrichtigung ab.
-
-Wenn der Benutzer die Benachrichtigung nicht ignoriert wird, schaltet das System automatisch eine Benachrichtigung Long-Wert-Darstellung, die Informationen bereitstellt.
+![](notifications-images/notifications-segue.png "Die Eigenschaften der Benachrichtigungen")
 
 
-### <a name="long-look-notification-controller"></a>Long-Wert-Darstellung Benachrichtigung Controller
+Es gibt zwei Arten von Benachrichtigungen:
 
-Das Betriebssystem entscheidet, ob die statische oder dynamische basierend auf einer Reihe von Faktoren anzuzeigen. Sie müssen eine statische Schnittstelle bereitzustellen und können optional auch eine dynamische Schnittstelle für Benachrichtigungen einbeziehen.
+- **Kurze aussehen** -nicht bildlauffähige statische Ansicht, die vom System definierte.
 
-#### <a name="static"></a>Static
+- **Lange aussehen** – ScrollBar, anpassbare Ansicht, die von Ihnen festgelegten! Eine einfachere, statischen und eine komplexere dynamische Version können angegeben werden.
 
-Die statische Sicht sollte einfach und schnell angezeigt werden.
+### <a name="short-look-notification-controller"></a>Sehen Sie kurze Benachrichtigungscontrollers aus
+
+Die kurze aussehen Benutzeroberfläche besteht aus nur das Symbol der app, app-Namen und die Benachrichtigung Titelzeichenfolge.
+
+Wenn der Benutzer die Benachrichtigung nicht ignoriert wird, wechselt das System automatisch eine Benachrichtigung lang aussehen, die Informationen bereitstellt.
+
+
+### <a name="long-look-notification-controller"></a>Sehen Sie lange Benachrichtigungscontrollers aus
+
+Das Betriebssystem entscheidet, ob die statische oder dynamische Ansicht basierend auf einer Reihe von Faktoren ab. Müssen Sie eine statische Schnittstelle bereitzustellen und können optional auch eine dynamische Schnittstelle für Benachrichtigungen enthalten.
+
+#### <a name="static"></a>Statisch
+
+Die statische Ansicht sollte einfach und schnell in angezeigt.
 
 ![](notifications-images/notification-static.png "Die statische Ansicht")
 
 #### <a name="dynamic"></a>Dynamic
 
-Die dynamische Ansicht weitere Daten anzeigen und weitere Interaktivität bereitzustellen.
+Die dynamische Ansicht kann weitere Daten anzeigen und Bereitstellen von interaktiver gestalten.
 
 ![](notifications-images/notification-dynamic.png "Die dynamische Ansicht")
 
 
 ## <a name="generating-notifications"></a>Generieren von Benachrichtigungen
 
-Benachrichtigungen können von einem Remoteserver stammen ([Apple Push Notifications Service](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html), oder APNS) oder lokal in der iOS-app generiert werden.
+Benachrichtigungen können von einem remote-Server stammen ([Apple Push Notifications Service](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html), oder APNS) oder lokal in der iOS-app generiert werden.
 
-Finden Sie in der [iOS Benachrichtigungen Exemplarische Vorgehensweise](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md) ein Beispiel zum lokale Benachrichtigungen zu generieren und die [WatchNotifications Beispiel](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/) ein funktionsfähiges Beispiel.
+Finden Sie in der [iOS Exemplarische Vorgehensweise zu Benachrichtigungen](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md) für verdeutlicht, wie Sie lokale Benachrichtigungen zu generieren und die [WatchNotifications Beispiel](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/) ein funktionsfähiges Beispiel.
 
-Lokale Benachrichtigungen benötigen die `AlertTitle` legen Sie auf der Apple Watch - angezeigt werden die `AlertTitle` Zeichenfolge wird in der Schnittstelle kurzer Blick angezeigt. Sowohl die `AlertTitle` und `AlertBody` in der Benachrichtigungsliste angezeigt werden und die `AlertBody` in der Long-suchen-Benutzeroberfläche angezeigt wird.
+Lokale Benachrichtigungen benötigen die `AlertTitle` legen Sie auf der Apple Watch - angezeigt werden die `AlertTitle` Zeichenfolge wird in der Schnittstelle aussehen kurz angezeigt. Sowohl die `AlertTitle` und `AlertBody` werden angezeigt, in der Benachrichtigungsliste enthalten; und die `AlertBody` wird angezeigt, in der Long-Wert-suchen-Schnittstelle.
 
-Diese bildschirmabbildung zeigt die `AlertTitle` in der Benachrichtigungsliste angezeigt wird und die `AlertBody` angezeigt, in der Long-suchen-Schnittstelle (mit der [Beispielcode](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/)):
+Dieser Screenshot zeigt die `AlertTitle` in der Benachrichtigungsliste angezeigt wird und die `AlertBody` angezeigt, in der Long-Wert-suchen-Schnittstelle (mithilfe der [Beispielcode](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/)):
 
-![](notifications-images/watch-notificationslist-sml.png "Diese bildschirmabbildung zeigt die AlertTitle angezeigt wird, in der Benachrichtigungsliste") ![ ] (notifications-images/watch-notificationcontroller-sml.png "der AlertBody angezeigt, in der Long-suchen-Schnittstelle")
+![](notifications-images/watch-notificationslist-sml.png "Dieser Screenshot zeigt die angezeigt wird, in der Benachrichtigungsliste enthalten %alerttitle") ![](notifications-images/watch-notificationcontroller-sml.png "der AlertBody angezeigt, in der Long-Wert-suchen-Schnittstelle")
 
 ## <a name="testing-notifications"></a>Testen von Benachrichtigungen
 
-Benachrichtigungen (lokal und remote) können nur ordnungsgemäß getestet werden auf einem Gerät, aber sie simuliert werden können, mithilfe einer **JSON** Datei im iOS-Simulator.
+Benachrichtigungen (lokal und remote) können nur ordnungsgemäß getestet werden auf einem Gerät, aber sie simuliert werden können, mit einem **JSON** -Datei in den iOS-Simulator.
 
-### <a name="testing-on-apple-watch"></a>Auf der Apple Watch-Tests
+### <a name="testing-on-apple-watch"></a>Tests auf der Apple Watch
 
-Beachten Sie beim Testen von Benachrichtigungen in einer Apple Watch die [Apple Dokumentation](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html) Folgendes:
+Wenn Sie Benachrichtigungen auf einem Apple Watch zu testen, beachten Sie, dass [Apple Dokumentation](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html) sagt dazu Folgendes:
 
-> Wenn eine der Benachrichtigungen für Ihre app lokal oder remote auf einem iPhone des Benutzers eingeht, entscheidet iOS, ob dieser Benachrichtigung auf dem iPhone oder auf der Apple Watch anzeigen.
+> Wenn eine der Benachrichtigungen für Ihre app lokal oder remote auf einem iPhone des Benutzers eingeht, entscheidet iOS angibt, ob diese Benachrichtigung auf dem iPhone oder auf der Apple Watch angezeigt.
 
-Dies ist die Tatsache alluding, iOS entscheidet, ob eine Benachrichtigung auf dem iPhone oder auf der Apple Watch angezeigt wird. Gepaarte iPhone aktiv ist, wenn eine Benachrichtigung empfangen wird, die Benachrichtigung ist wahrscheinlich auf dem iPhone angezeigt werden und *nicht* an der Apple Watch weitergeleitet.
+Dies ist die Tatsache alluding, iOS entscheidet, ob eine Benachrichtigung auf dem iPhone oder auf der Apple Watch angezeigt wird. Die Benachrichtigung ist wahrscheinlich auf dem iPhone angezeigt werden, wenn das gekoppelte iPhone aktiv ist, wenn eine Benachrichtigung empfangen wird, und *nicht* weitergeleitet, auf der Apple Watch.
 
-Um sicherzustellen, dass die Benachrichtigung auf der Apple Watch angezeigt wird, deaktivieren Sie die iPhone-Bildschirm (drücken einmal den Netzschalter), oder lassen Sie ihn in den Energiesparmodus wechseln. Wenn der gepaarten Watch liegt im Bereich, mit Strom versorgt und wird auf Ihrem Handgelenk abgenutzt wird, die Benachrichtigung wird es weitergeleitet werden und auf der Apple Watch (beiliegen eine geringfügige) angezeigt werden.
+Um sicherzustellen, dass die Benachrichtigung auf der Apple Watch angezeigt wird, deaktivieren Sie die iPhone-Bildschirm (den Netzschalter einmal drücken), oder lassen Sie ihn in den Ruhezustand versetzt. Wenn die gekoppelte Apple Watch befindet sich im Bereich, mit Strom versorgt und ist auf die Finger abgenutzt wird, die Benachrichtigung gibt es weitergeleitet werden und auf der Apple Watch (zusammen mit einem feine) angezeigt werden.
 
-### <a name="testing-on-the-ios-simulator"></a>Testen von IOS-Simulator
+### <a name="testing-on-the-ios-simulator"></a>Auf dem iOS-Simulator testen
 
-Sie *müssen* bieten eine JSON-Nutzlast ein Test beim Testen von Benachrichtigungsmodus im iOS-Simulator. Legen Sie den Pfad der **benutzerdefinierte Ausführungsargumente** Fenster in Visual Studio für Mac.
+Sie *müssen* Geben Sie eine Test-JSON-Nutzlast aus, wenn der Benachrichtigungsmodus im iOS-Simulator testen. Legen Sie den Pfad der **benutzerdefinierte Ausführungsargumente** Fenster in Visual Studio für Mac.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Visual Studio für Mac werden zusätzliche Optionen angezeigt, wenn eine Watch-Erweiterung, als festgelegt ist die **Startprojekt**.
-Mit der rechten Maustaste auf das Erweiterungsprojekt überwachen, und wählen Sie **ausführen mit > benutzerdefinierte Parameter...** :
+Visual Studio für Mac werden zusätzliche Optionen angezeigt, wenn eine Watch-Erweiterung festgelegt ist die **Startprojekt**.
+Mit der rechten Maustaste auf das Projekt der Watch-Erweiterung, und wählen Sie **ausführen mit > benutzerdefinierte Parameter...** :
     
-[![](notifications-images/runwith-customparams-sml.png "Mit der benutzerdefinierten Eigenschaften")](notifications-images/runwith-customparams.png#lightbox)
+[![](notifications-images/runwith-customparams-sml.png "Mit benutzerdefinierten Eigenschaften")](notifications-images/runwith-customparams.png#lightbox)
     
-Daraufhin wird die **Ausführungsargumente** Fenster enthält ein **WatchKit** Registerkarte. Wählen Sie **Benachrichtigung** , und geben Sie eine JSON-Nutzlast, drücken Sie dann die **Execute** Watch-app im Simulator zu starten:
+Daraufhin wird die **Ausführungsargumente** Fenster enthält einen **WatchKit** Registerkarte. Wählen Sie **Benachrichtigung** , und geben Sie eine JSON-Nutzlast, drücken Sie dann die **Execute** auf die Watch-app im Simulator zu starten:
     
-[![](notifications-images/runwith-execargs-sml.png "Wählen Sie die Nutzlast Standard Benachrichtigung")](notifications-images/runwith-execargs.png#lightbox)
+[![](notifications-images/runwith-execargs-sml.png "Wählen Sie Notification Payload-Standard")](notifications-images/runwith-execargs.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Festzulegende die benachrichtigungsnutzlast Test in Visual Studio mit der rechten Maustaste auf die Watch-Erweiterung zum Bearbeiten der **Projekteigenschaften**. Wechseln Sie zu der **Debuggen** Abschnitt, und wählen Sie eine Benachrichtigungen JSON-Datei aus der Liste (es wird automatisch Listet alle JSON-Dateien, die im Projekt enthaltenen).
+Zum Festlegen von der benachrichtigungsnutzlast Test in Visual Studio mit der rechten Maustaste auf der Watch-Erweiterung zum Bearbeiten der **Projekteigenschaften**. Wechseln Sie zu der **Debuggen** aus, und wählen Sie eine JSON-Datei von Benachrichtigungen aus der Liste (es wird automatisch Listet alle JSON-Dateien im Projekt enthalten ist).
     
 [![](notifications-images/runwith-execargs-sml-vs.png "Wählen Sie eine JSON-Datei von Benachrichtigungen")](notifications-images/runwith-execargs-vs.png#lightbox)
 
-Wenn die Watch-Erweiterung ist die **Startprojekt**, Visual Studio zeigt zusätzliche Optionen, wie unten dargestellt. Wählen Sie eines der **Benachrichtigung** Optionen so starten Sie die Watch-app in **Benachrichtigung** Modus (mit der JSON-Datei, die im Eigenschaftenfenster ausgewählt):
+Wenn die Watch-Erweiterung ist die **Startprojekt**, Visual Studio zeigt zusätzliche Optionen, wie unten dargestellt. Wählen Sie eine der der **Benachrichtigung** Optionen die Watch-app zu starten, in **Benachrichtigung** Modus (mit der JSON-Datei, die im Eigenschaftenfenster ausgewählt):
     
 ![](notifications-images/runwith-vs.png "Klicken Sie im Menü des Geräts")
 
 -----
 
-Der Standard-Benachrichtigung-Controller sieht wie folgt testen im Simulator mit der Standardeinstellung Nutzlast JSON-Datei:
+Standardcontroller Benachrichtigung sieht folgendermaßen aus, auf dem Simulator mit der Standard-Nutzlast JSON-Datei zu testen:
 
 ![](notifications-images/notification-debug-sml.png "Eine Beispiel-Benachrichtigung")
 
-Es ist auch möglich, verwenden Sie die [Befehlszeile](~/ios/watchos/troubleshooting.md#command_line) um iOS-Simulator zu starten.
+Es ist auch möglich, mit der [Befehlszeile](~/ios/watchos/troubleshooting.md#command_line) iOS-Simulator zu starten.
 
 ### <a name="example-notification-payload"></a>Beispiel-Benachrichtigungsnutzlast
 
-In der [überwachen Kit Katalog](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/) Beispiel vorhanden ist, eine Nutzlast JSON-Beispieldatei **NotificationPayload.json** (siehe unten).
+In der [Watch Kit Katalog](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/) Beispiel gibt es ist eine JSON-Beispieldatei Nutzlast **NotificationPayload.json** (siehe unten).
 
 ```csharp
 {
@@ -153,4 +153,4 @@ In der [überwachen Kit Katalog](https://developer.xamarin.com/samples/monotouch
 
 - [WatchNotifications (lokale Benachrichtigungen) (Beispiel)](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/)
 - [WatchKitCatalog (Beispiel)](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/)
-- [Apple Watch Kit Benachrichtigungen docs](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)
+- [Apple Watch-Kit-Benachrichtigungen-Dokumentation](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)

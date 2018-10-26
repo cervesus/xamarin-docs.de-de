@@ -1,100 +1,100 @@
 ---
-title: WatchOS 3 Problembehandlung
-description: Dieses Dokument enthält verschiedene Problembehandlungstipps nützlich, bei der Arbeit mit WatchOS 3 in Xamarin. Tipps beziehen sich auf die Aktivitäten, Apple Pay hintergrundaktualisierungen, NSURLConnection, Datenschutz und vieles mehr.
+title: WatchOS 3 zur Problembehandlung
+description: Dieses Dokument enthält einige nützliche Problembehandlungstipps, bei der Arbeit mit WatchOS 3 in Xamarin. Tipps beziehen sich auf die Aktivitäten, Apple Pay, Aktualisierung im Hintergrund, NSURLConnection, Datenschutz und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 5911D898-0E23-40CC-9F3C-5F61B4D50ADC
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 0aca2c96533e17e4aeb2f57d38a87d39f700fb45
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 497ce4f0ecbd5e4d49d2ff88855ff68dd9a63e43
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791026"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123216"
 ---
-# <a name="watchos-3-troubleshooting"></a>WatchOS 3 Problembehandlung
+# <a name="watchos-3-troubleshooting"></a>WatchOS 3 zur Problembehandlung
 
-_Dieser Artikel enthält einige Tipps zur Problembehandlung für die Arbeit mit WatchOS 3 in Xamarin Apple Watch-apps._
+_Dieser Artikel enthält mehrere Problembehandlungstipps für die Arbeit mit WatchOS 3 in Xamarin Apple Watch-apps._
 
-Diese Seite enthält einige bekannte Probleme, die bei Verwendung von WatchOS 3 mit Xamarin und die Lösung für diese Probleme auftreten können.
+Diese Seite listet einige bekannte Probleme, die Verwendung von WatchOS 3 mit Xamarin und die Lösung dieser Probleme auftreten können.
 
 ## <a name="activities"></a>Aktivitäten
 
-Für die Aktivität freigeben, damit er ordnungsgemäß funktioniert müssen alle gepaarten Apple Überwachungen WatchOS 3 ausgeführt werden.
+Für die Aktivität, die Freigabe der ordnungsgemäß funktioniert muss alle gekoppelte Apple Watch WatchOS 3 ausgeführt werden.
 
 Bekannte Probleme:
 
-- Antworten auf eine Aktivität Freigabe Benachrichtigung manchmal ein Fehler auftritt.
-- Antworten auf eine Aktivität Freigabe Benachrichtigung mit einer Meldung schlägt möglicherweise fehl.
-- Kontextabhängige Text über eine Aktivität Freigabe benachrichtigungsmeldung ist fehlerhaft.
+- Beim Antworten auf eine Aktivität Freigabe Benachrichtigung manchmal ein Fehler auftritt.
+- Antworten auf eine Aktivität Sharing-Benachrichtigung mit der Meldung schlägt möglicherweise fehl.
+- Kontextbezogene Text über eine Aktivität Freigabe benachrichtigungsmeldung wird falsch sein.
 
 ## <a name="apple-pay"></a>Apple Pay
 
 Bekannte Probleme:
 
-- Wenn Sie ein Ablaufdatum falsch oder CW Code für eine neue Zahlung Sorgfalt Apple Pay,, beim eingegeben wird **Weiter** der ausgeführte Prozess abstürzt.
-- In-App Apple Pay Käufe, erfordern eine PIN-Nummer stürzt möglicherweise ab.
+- Wenn eine falsche Ablaufdatum oder CW Code für eine neue Zahlungsmethode Sorgfalt Apple Pay, eingegeben wird, wenn erreicht **Weiter** der ausgeführte Prozess stürzt ab.
+- Erfordert eine PIN-Nummer innerhalb der App Apple Pay-Käufe stürzt möglicherweise ab.
 
 ## <a name="auto-mac-unlock"></a>Automatische Mac entsperren
 
-Mithilfe von WatchOS 3 Beta 2 (oder höher) und MacOS Sierra Beta 2 (oder höher), wenn zweistufige Authentifizierung für das Konto des Benutzers iCloud aktiviert ist, können sie ihre Apple Watch-automatisch entsperren Sie ihren Mac.
+Mithilfe von WatchOS 3 Beta 2 (oder höher) und MacOS Sierra Beta 2 (oder höher), wenn zweistufige Authentifizierung für die iCloud-Konto des Benutzers aktiviert ist, können sie ihre Apple Watch-automatisch entsperren Sie ihren Mac.
 
-## <a name="background-refresh"></a>Hintergrund aktualisieren
+## <a name="background-refresh"></a>Aktualisierung im Hintergrund
 
 Verletzung der Systemressourcen führt zu einem Absturz des WatchOS 3-app mit den folgenden Ausnahmecodes:
 
-- **0xc51bad01** – die app verwendet zu viel CPU-Zeit.
-- **0xc51bad02** – die app verwendet zu viel Zeit Wand.
-- **0xc51bad03** – die app verfügte nicht über genügend Common Language Runtime zum Durchführen der aktuellen Aufgabe.
+- **0xc51bad01** -die app verbraucht zu viel CPU-Zeit.
+- **0xc51bad02** -die app verbraucht zu viel Zeit für die Wand.
+- **0xc51bad03** – die app keine genügend Common Language Runtime, um die aktuelle Aufgabe abzuschließen.
 
 ## <a name="clock"></a>Uhr
 
-Komplikationen von neu installierten Apple Watch-apps möglicherweise als leer angezeigt. Starten Sie neu Apple Watch, um dieses Problem zu beheben.
+Komplikationen von neu installierten Apple Watch-apps möglicherweise leer angezeigt. Starten Sie die Apple Watch zum Beheben dieses Problems neu.
 
 ## <a name="connectivity"></a>Konnektivität
 
 Bekannte Probleme:
 
-- WatchOS fordert den Benutzer zur Zugriffsberechtigung für geschützte Benutzerdaten auf der Apple Watch nicht. Erteilen des Zugriffs auf die iPhone-app, bevor Sie Daten in die Watch-app verwenden.
-- Der Apple Watch können einen versetzt alle WatchConnectivity Übertragungen, in dem ein Fehler auftritt, Neustart der Apple Watch diesen Fehler beheben.
+- WatchOS fordert den Benutzer für die Zugriffsberechtigung für die Daten der geschützten Benutzer auf der Apple Watch nicht. Gewähren Sie Zugriff auf die iPhone-app, bevor Sie Daten in der Watch-app verwenden.
+- Der Apple Watch können einen versetzt alle WatchConnectivity Übertragungen, in denen ein Fehler auftritt, neu starten der Apple Watch-Fehler beheben.
 
 ## <a name="notifications"></a>Benachrichtigungen
 
-Wenn eine Anlage Medien zu groß ist, wird er auf iPhone des Benutzers, aber nicht auf ihrer Apple Watch angezeigt.
+Wenn eine Anlage mit Medien zu groß ist, wird es auf des Benutzers iPhone, aber nicht ihre Apple Watch angezeigt.
 
 ## <a name="nsurlconnection"></a>NSURLConnection
 
-Alle `NSURLConnection` Verbindungen mit älteren TLS-Protokolle schlägt fehl. Für alle SSL/TLS-Verbindungen wird der symmetrische RC4-Verschlüsselungsverfahren jetzt standardmäßig deaktiviert. Darüber hinaus wird der sichere Transport-API unterstützt nicht mehr SSLv3, und es wird empfohlen, dass die Verwendung von SHA-1 und 3DES Kryptografie so bald wie möglich mit der app zu beenden.
+Alle `NSURLConnection` unter Verwendung älterer TLS-Protokolle Verbindungen schlagen fehl. Für alle SSL/TLS-Verbindungen ist das symmetrische RC4-Verschlüsselungsverfahren jetzt standardmäßig deaktiviert. Darüber hinaus den sicheren Transport-API unterstützt nicht mehr SSLv3, und es wird empfohlen, dass die app mithilfe von SHA-1 und 3DES Kryptografie so bald wie möglich zu beenden.
 
-Zum Zeitpunkt der WatchOS 3 ist SSL/TLS-Verbindungen Sicherheit von Apple erzwungen wird. Betroffene Dienste und Anwendungen sollten aktualisiert Webserver in den neuesten Versionen der TLS-Protokoll verwenden.
+Seit WatchOS 3 wird SSL/TLS-verbindungssicherheit streng von Apple erzwungen wird. Betroffene Dienste und apps sollten Webserver verwenden Sie die neuesten Versionen der TLS-Protokoll aktualisiert.
 
-## <a name="nsurlsession"></a>NSURLSession
+## <a name="nsurlsession"></a>Von NSURLSession
 
-Ab WatchOS 3 die `HTTPBodyStream` Eigenschaft von der `NSMutableURLRequest` "Class" muss festgelegt werden, in eine geöffnete Stream seit `NSURLConnection` und `NSURLSession` nun ausschließlich diese Anforderung erzwingen.
+Ab WatchOS 3 die `HTTPBodyStream` Eigenschaft der `NSMutableURLRequest` Klasse muss festgelegt werden, in einer nicht geöffneten Stream seit `NSURLConnection` und `NSURLSession` jetzt genau diese Anforderung zu erzwingen.
 
 ## <a name="privacy"></a>Datenschutz
 
 Bekannte Probleme:
 
-Bei der Arbeit mit `https://` URLs beide `NSURLSession` und `NSURLConnection` unterstützt nicht mehr während des TLS-Handshake RC4-Verschlüsselungssammlungen. Einer der folgenden Fehlercodes kann folgendermaßen generiert werden:
+Bei der Arbeit mit `https://` URLs, die beide `NSURLSession` und `NSURLConnection` RC4-Verschlüsselungssammlungen nicht mehr unterstützt, während des TLS-Handshake. Eine der folgenden Fehlercodes kann generiert:
 
-- **-1200 oder-98** - `NSURLErrorSecurityConnectionFailed` und SecureTransport-Fehler.
-- **-1200 [3:-9824]** -HTTP-loadfehler.
+- **– 1200 oder-98** : `NSURLErrorSecurityConnectionFailed` und SecureTransport-Fehler.
+- **-1200 [3:-9824]** -HTTP-Fehler beim Laden des.
 - **-1200**  -  `NSURLConnection` wurde mit Fehlern abgeschlossen.
 
-Zum Zeitpunkt der WatchOS 3 ist SSL/TLS-Verbindungen Sicherheit von Apple erzwungen wird. Betroffene Dienste und Anwendungen sollten aktualisiert Webserver in den neuesten Versionen der TLS-Protokoll verwenden. Finden Sie unter [NSURLConnection](#NSURLConnection) oben Weitere Informationen.
+Seit WatchOS 3 wird SSL/TLS-verbindungssicherheit streng von Apple erzwungen wird. Betroffene Dienste und apps sollten Webserver verwenden Sie die neuesten Versionen der TLS-Protokoll aktualisiert. Finden Sie unter [NSURLConnection](#NSURLConnection) über weitere Informationen.
 
 ## <a name="snapshots"></a>Momentaufnahmen
 
-WatchKit-apps, die nicht die neue übernommen haben `HandelBackgroundTask` API regelmäßige Updates nicht mehr in WatchOS 3 empfangen. 
+WatchKit-apps, die nicht die neue übernommen haben `HandelBackgroundTask` API durch regelmäßige Updates nicht mehr in WatchOS 3 erhalten. 
 
 ## <a name="watchkit"></a>WatchKit
 
-SpriteKit und SceneKit Szenen werden angehalten, wenn eine app Hintergrund in die WatchOS Andocken eingibt.
+SpriteKit und SceneKit-Szenen werden angehalten, wenn eine Anwendung in WatchOS Dock in den Hintergrund wechselt.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [watchOS-Beispiele](https://developer.xamarin.com/samples/watchos/all/)
-- [Was ist neu in WatchOS 3](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)
+- [Neuerungen in WatchOS 3](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)

@@ -1,52 +1,52 @@
 ---
 title: Layouts
-description: Definieren die visuelle Struktur der Xamarin.Android app
+description: Definieren die visuelle Struktur Ihrer Xamarin.Android-App
 ms.prod: xamarin
 ms.assetid: 2BA72B0E-230D-4F98-B4D5-4EFB0D479789
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 08/18/2017
-ms.openlocfilehash: 01ea244c7480082f2b3b39c0bdae2bad6807aa6d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e0a9ce52d70079884e7960ccfee9eb7fcbb0f2fb
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765118"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116484"
 ---
 # <a name="layouts"></a>Layouts
 
-Layouts dienen zum Anordnen der Elemente, aus denen die Benutzeroberfläche eines Bildschirms (z. B. eine Aktivität) besteht. In den folgenden Abschnitten wird erläutert, wie die am häufigsten verwendeten Layouts in Xamarin.Android apps verwendet wird.
+Layouts werden zum Anordnen der Elemente, aus denen die Benutzeroberfläche eines Bildschirms (z. B. eine Aktivität) besteht. In den folgenden Abschnitten wird erläutert, wie die am häufigsten verwendeten Layouts in Xamarin.Android-apps verwenden.
 
--   [LinearLayout](~/android/user-interface/layouts/linear-layout.md) ist eine Gruppe "Ansicht", die untergeordnete Ansicht Elemente in einer linearen Richtung entweder vertikal oder horizontal anzeigt.
+-   [LinearLayout](~/android/user-interface/layouts/linear-layout.md) ist eine Gruppe von anzeigen, in der untergeordneten Ansicht Elemente in einer linearen Richtung, entweder vertikal oder horizontal angezeigt.
 
-    ![Beispiellayout für lineare](images/linear-layout.png)
+    ![Lineare Beispiellayout](images/linear-layout.png)
 
--   [RelativeLayout](~/android/user-interface/layouts/relative-layout.md) ist die Gruppe "Ansicht", die untergeordnete Ansicht Elemente in einen relativen Position anzeigt. Die Position einer Sicht kann relativ zum gleichgeordnete Elemente angegeben werden.
+-   [RelativeLayout](~/android/user-interface/layouts/relative-layout.md) ist Anzeigen der Gruppe, die untergeordnete Ansicht Elemente in eine relative Position anzeigt. Die Position einer Ansicht kann relativ zum gleichgeordneter Elemente angegeben werden.
 
-    ![Beispiellayout für Relative](images/relative-layout.png)
+    ![Relative Beispiellayout](images/relative-layout.png)
 
--   [TableLayout](~/android/user-interface/layouts/table-layout.md) ist eine Gruppe "Ansicht", die untergeordnete Ansicht Elemente in Zeilen und Spalten angezeigt.
+-   [TableLayout](~/android/user-interface/layouts/table-layout.md) ist eine Gruppe von anzeigen, die untergeordnete Ansicht Elemente in Zeilen und Spalten angezeigt.
 
-    ![Beispiellayout für die Tabelle](images/table-layout.png)
+    ![Beispiel-Tabellenlayout](images/table-layout.png)
 
--   [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md) ist ein Benutzeroberflächenelement, das eine Auflistung von Elementen in einer Liste oder einem Raster, damit der Benutzer einen Bildlauf durch die Auflistung anzeigt.
+-   [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md) ist ein UI-Element, das eine Auflistung von Elementen in einer Liste oder einem Raster, sodass der Benutzer einen Bildlauf durch die Auflistung anzeigt.
 
-    ![Beispiel Recycler anzeigen](images/recycler-view.png)
+    ![Beispiel-Recyclerview-Ansicht](images/recycler-view.png)
 
--   [ListView](~/android/user-interface/layouts/list-view/index.md) ist eine Gruppe "Ansicht", die eine Liste von bildlauffähigen Elementen erstellt. Die Listenelemente werden automatisch in der Liste mit einem Adapter für die Liste eingefügt. Die `ListView` ist eine wichtige Benutzeroberflächenkomponente von Android-Anwendungen, da er auch auf lange Listen mit Kontakte oder Favoriten überall Short Listen von Menüoptionen verwendet wird. Es bietet eine einfache Möglichkeit zum Präsentieren von einer bildlauffähigen Liste mit Zeilen, die kann entweder mit einer integrierten Formatvorlage formatiert oder umfassend angepasst werden. Eine ListView-Instanz erfordert einen Adapter um mit in Zeilenansichten enthaltenen Daten zu übertragen.
+-   [ListView](~/android/user-interface/layouts/list-view/index.md) ist eine Gruppe von anzeigen, die eine Liste von bildlauffähigen Elementen erstellt. Listenelemente werden automatisch in der Liste mit einem Adapter für die Liste eingefügt. Die `ListView` ist eine wichtige Benutzeroberflächenkomponente von Android-Anwendungen, da sie überall aus kurzen Listen von Menüoptionen zu lange Listen mit Kontakten oder Internet-Favoriten verwendet wird. Es bietet eine einfache Möglichkeit, eine bildlauffähigen Liste mit Zeilen vorhanden, die entweder werden mit einer integrierten Formatvorlage formatiert oder können umfassend angepasst werden. Eine ListView-Instanz erfordert einen Adapter, die sie mit in Zeilenansichten enthaltenen Daten zu füllen.
 
     ![Beispiel-Listenansicht](images/list-view.png)
 
--   [GridView](~/android/user-interface/layouts/grid-view.md) ist ein Element der Benutzeroberfläche, die Elemente in einem zweidimensionalen Raster anzeigt, die gescrollt werden kann.
+-   [GridView](~/android/user-interface/layouts/grid-view.md) ist das Benutzeroberflächenelement, das Elemente in einem zweidimensionalen Raster anzeigt, die ein Bildlauf durchgeführt werden kann.
 
-    ![Beispiel für Rasteransicht](images/grid-view.png)
+    ![Beispiel-Rasteransicht](images/grid-view.png)
 
--   [GridLayout](~/android/user-interface/layouts/grid-layout.md) ist eine Gruppe "Ansicht", das Layout von Ansichten in einer 2D-Raster, ähnlich einer HTML-Tabelle unterstützt.
+-   [GridLayout](~/android/user-interface/layouts/grid-layout.md) ist eine Gruppe von anzeigen, die unterstützt Anordnung von Ansichten in einem 2D-Raster ähnelt einer HTML-Tabelle.
 
     ![Beispiel-Rasterlayout](images/grid-layout.png)
 
--   [Im Registerkartenformat Layouts](~/android/user-interface/layouts/tab-layout/index.md) sind ein beliebter Benutzer Schnittstelle Muster in mobilen Anwendungen aufgrund ihrer Einfachheit und Verwendbarkeit. Sie bieten eine konsistente und einfache Möglichkeit zum Navigieren zwischen verschiedenen Bildschirmen in einer Anwendung.
+-   [Im Registerkartenformat Layouts](~/android/user-interface/layouts/tab-layout/index.md) sind eine beliebte User Interface-Antimuster in mobilen Anwendungen aufgrund ihrer Einfachheit und benutzerfreundlichkeit. Sie bieten eine konsistente und einfache Möglichkeit zum Navigieren zwischen verschiedenen Bildschirme in einer Anwendung.
 
     ![Beispiel-Layout im Registerkartenformat](images/tabbed-layout.png)
  

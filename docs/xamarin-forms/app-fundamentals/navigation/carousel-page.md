@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: bce3a60f3647a537906cfa11fc1dcfcc6f5cf365
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 48c009b836ac109e0d54cd2fdb036c46e17c4387
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998604"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121502"
 ---
 # <a name="xamarinforms-carousel-page"></a>Karussellsicht Xamarin.Forms-Startseite
 
@@ -22,7 +22,7 @@ _Die Xamarin.Forms-CarouselPage ist eine Seite, die Benutzer von Seite zu Seite 
 
 Die folgenden Screenshots zeigen eine [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) auf jeder Plattform:
 
-![](carousel-page-images/thirdpage.png "CarouselPage Thid-Element")
+![](carousel-page-images/thirdpage.png "CarouselPage Drittanbieter-Element")
 
 Das Layout einer [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) auf jeder Plattform identisch ist. Seiten können durch Wischen von rechts nach links, vorwärts durch die Auflistung zu navigieren, und durch Wischen nach links nach rechts, um rückwärts navigieren durch die Auflistung über navigiert werden. Die folgenden Screenshots zeigen die erste Seite in einem [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) Instanz:
 

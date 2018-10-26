@@ -3,15 +3,15 @@ title: Entwurfsprinzipien für Xamarin.Android-API
 ms.prod: xamarin
 ms.assetid: 3E52D815-D95D-5510-0D8F-77DAC7E62EDE
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8abb78f335b159223e9394b7845eccbba8d124da
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 53348e15d1ecc74f50cacdd422da5c80af802d1b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996346"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110714"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Entwurfsprinzipien für Xamarin.Android-API
 
@@ -167,7 +167,8 @@ Die *KeyEventArgs* Klasse wiederum verfügt über eine [View.KeyEventArgs.Handle
 
 Wir beabsichtigen, Hinzufügen von Überladungen für andere Methoden und Ctors, die Delegate-basierten Verbindung verfügbar zu machen. Listener mit mehreren Rückrufen erfordern auch einige zusätzliche Überprüfung, um festzustellen, ob die Implementierung der einzelnen Rückrufe sinnvoll ist, ist, damit wir diese konvertiert werden, sobald sie identifiziert werden. Ist kein entsprechendes Ereignis, Listener in c# verwendet werden müssen, aber Sie bringen, die Sie denken möglicherweise Delegaten Nutzung unsere Aufmerksamkeit. Wir haben die bei einigen Konvertierungen von Schnittstellen, ohne das Suffix "Listener" auch ausgeführt, wenn es wurde deutlich, dass sie über eine Alternative Delegaten profitieren würden.
 
-Alle Listener Schnittstellen implementieren die [ `Android.Runtime.IJavaObject` ](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/) -Schnittstelle, da die Implementierungsdetails der Bindung, damit die Listenerklassen müssen diese Schnittstelle implementieren. Dies ist möglich durch die Listener-Schnittstelle implementieren, auf eine Unterklasse von [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) oder jede andere Java-Objekt, z. B. eine Android-Aktivität umschlossen.
+Alle Listener Schnittstellen implementieren die [`Android.Runtime.IJavaObject`](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/)
+-Schnittstelle, da die Implementierungsdetails der Bindung, damit die Listenerklassen müssen diese Schnittstelle implementieren. Dies ist möglich durch die Listener-Schnittstelle implementieren, auf eine Unterklasse von [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) oder jede andere Java-Objekt, z. B. eine Android-Aktivität umschlossen.
 
 
 ### <a name="runnables"></a>Runnables
@@ -262,7 +263,7 @@ Für Schnittstellen, die Konstanten, die mit anderen Schnittstellen noch weitere
 Als Ergebnis der Java-Ausdruck *MediaStore.Video.VideoColumns.TITLE* muss auf den C#-Ausdruck gebunden werden *MediaStore.Video.MediaColumnsConsts.Title* dies nur schwer ermitteln ohne lesen Viele der Java-Dokumentation. In 1.9, werden der entsprechende C#-Ausdruck [ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/).
 
 Darüber hinaus sollten Sie die [android.os.Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/) Typ, der implementiert das Java *Parcelable* Schnittstelle. Da die Schnittstelle implementiert, alle Konstanten, die auf dieser Schnittstelle können Sie "über" der Bundle-Typ, z. B. *Bundle.CONTENTS_FILE_DESCRIPTOR* ist ein absolut gültiger Java-Ausdruck.
-Bisher mussten Sie diesen Ausdruck in c# zu portieren alle Schnittstellen betrachten, die implementiert werden, aus welchen die *CONTENTS_FILE_DESCRIPTOR* stammt. Ab Xamarin.Android 1.9 können Klassen implementieren die Java-Schnittstellen, die Konstanten enthalten, verfügen über eine geschachtelte *InterfaceConsts* Typ, der alle Konstanten geerbte Schnittstelle enthalten soll. Dadurch wird übersetzen *Bundle.CONTENTS_FILE_DESCRIPTOR* zu [ *Bundle.InterfaceConsts.ContentsFileDescriptor*](https://developer.xamarin.com/api/field/Android.OS.Bundle+InterfaceConsts.ContentsFileDescriptor/).
+Zuvor So portieren Sie diesen Ausdruck als C# müssten Sie alle Schnittstellen betrachten, die implementiert werden, aus welchen Typ die *CONTENTS_FILE_DESCRIPTOR* stammt. Ab Xamarin.Android 1.9 können Klassen implementieren die Java-Schnittstellen, die Konstanten enthalten, verfügen über eine geschachtelte *InterfaceConsts* Typ, der alle Konstanten geerbte Schnittstelle enthalten soll. Dadurch wird übersetzen *Bundle.CONTENTS_FILE_DESCRIPTOR* zu [ *Bundle.InterfaceConsts.ContentsFileDescriptor*](https://developer.xamarin.com/api/field/Android.OS.Bundle+InterfaceConsts.ContentsFileDescriptor/).
 
 Abschließend Typen mit einem *Kosten* suffix wie z. B. *Android.OS.ParcelableConsts* sind jetzt veraltet, außer den neu eingeführten InterfaceConsts Typen geschachtelt. Sie werden in Xamarin.Android 3.0 entfernt werden.
 

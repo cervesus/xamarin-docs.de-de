@@ -4,15 +4,15 @@ description: Dieses Dokument enthält Links zu Leitfäden, die zum Verständnis 
 ms.prod: xamarin
 ms.assetid: 5A36B3A7-F197-4AC3-A40D-B2C49362FF06
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 12/17/2015
-ms.openlocfilehash: e085cf33615d216e1ce9963254050ef2b623ae40
-ms.sourcegitcommit: d0da5ce4158239abd2b36f67550e9b475055766a
+ms.openlocfilehash: 376286b73c92cba40de183043b86cb4ffb5e699d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39320803"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108716"
 ---
 # <a name="xamarinmac-application-fundamentals"></a>Grundlagen der Xamarin.Mac-Anwendung
 
@@ -24,7 +24,7 @@ In der Apple-APIs über C# -Code verfügbar gemacht wird aktiviert bestimmte Aus
 
 Für einen Großteil Ihrer Zeit für die Entwicklung mit Xamarin.Mac können Sie denken, lesen und ohne viel Beachtung mit den zugrunde liegenden Objective-C-APIs in c# schreiben. Jedoch werden manchmal müssen, lesen die API-Dokumentation von Apple, eine Antwort von Stack Overflow zu einer Lösung für Ihr Problem zu übersetzen, oder vergleichen, um ein Beispiel für eine vorhandene.
 
-## <a name="console-appsmacapp-fundamentalsconsolemd"></a>[Konsolen-apps](~/mac/app-fundamentals/console.md)
+## <a name="console-appsmacapp-fundamentalsconsolemd"></a>[Konsolen-Apps](~/mac/app-fundamentals/console.md)
 
 Sie können auch "monitorlose" Konsolen-apps, die native MacOS-APIs zugreifen erstellen mit Xamarin.Mac.
 

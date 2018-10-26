@@ -1,108 +1,108 @@
 ---
-title: Einführung in die Storyboards in Xamarin.Mac
-description: Dieser Artikel bietet eine Einführung in das Arbeiten mit Storyboards in einer app Xamarin.Mac. Sie erfahren, wie Sie die UI der App mit Storyboards und Interface Builder von Xcode erstellen und verwalten.
+title: Einführung in Storyboards in Xamarin.Mac
+description: Dieser Artikel enthält eine Einführung in die Arbeit mit Storyboards in einer Xamarin.Mac-app. Sie erfahren, wie Sie die UI der App mit Storyboards und Interface Builder von Xcode erstellen und verwalten.
 ms.prod: xamarin
 ms.assetid: F37BA503-0B25-489F-80A8-58C493291A55
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 027998d6aff8aba4e5621b1cde51a24e18821ff9
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 166a50021c22aa09be3eecdb8b745a70e75c3d51
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792664"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107247"
 ---
-# <a name="introduction-to-storyboards-in-xamarinmac"></a>Einführung in die Storyboards in Xamarin.Mac
+# <a name="introduction-to-storyboards-in-xamarinmac"></a>Einführung in Storyboards in Xamarin.Mac
 
-_Dieser Artikel bietet eine Einführung in das Arbeiten mit Storyboards in einer app Xamarin.Mac. Es umfasst das Erstellen und Verwalten der Benutzeroberfläche der Anwendung mit Storyboards und Xcodes Benutzeroberflächen-Generator._
+_Dieser Artikel enthält eine Einführung in die Arbeit mit Storyboards in einer Xamarin.Mac-app. Hierin sind erstellen und verwalten die Benutzeroberfläche der app mit Storyboards und Interface Builder von Xcode._
 
-Storyboards ermöglichen es Ihnen, eine Benutzeroberfläche für Ihre app Xamarin.Mac entstehen, enthält nicht nur die Definitionen und Steuerelemente, aber enthält auch die Links zwischen verschiedenen Fenstern (über segues) und Ansichtszustände.
+Storyboards können Sie eine Benutzeroberfläche für die Xamarin.Mac-app zu entwickeln, die enthält nicht nur die Definitionen für Fenster und Steuerelemente, sondern enthält auch die Verknüpfungen zwischen verschiedenen Fenstern (über segues) und Ansichtszustand.
 
-[![](images/intro01.png "Ein Beispiel für die Benutzeroberfläche in Xcode")](images/intro01.png#lightbox)
+[![](images/intro01.png "Ein Beispiel-Benutzeroberfläche in Xcode")](images/intro01.png#lightbox)
 
-Dieser Artikel bietet eine Einführung in das Storyboards verwenden, um eine Xamarin.Mac-app-Benutzeroberfläche zu definieren.
+Dieser Artikel bietet eine Einführung zur Verwendung von Storyboards einer Xamarin.Mac-app-Benutzeroberfläche zu definieren.
 
 <a name="What-are-Storyboards" />
 
 ## <a name="what-are-storyboards"></a>Was sind Storyboards?
 
-Mithilfe von Storyboards können aller eine Xamarin.Mac-app-Benutzeroberfläche in einem zentralen Ort mit allen der Navigation zwischen den einzelnen Elementen und Benutzeroberflächen definiert werden. Storyboards für Xamarin.Mac, funktionieren auf sehr ähnliche Weise mit Storyboards für Xamarin.iOS. Sie enthalten jedoch einen anderen Satz von _Segue Typen_ aufgrund der anderen Schnittstelle Idiome.
+Mithilfe von Storyboards können alle einer Xamarin.Mac-app-Benutzeroberfläche an einem zentralen Ort mit allen die Navigation zwischen die einzelnen Elemente und Benutzeroberflächen definiert werden. Storyboards für Xamarin.Mac, funktionieren auf sehr ähnliche Weise zu Storyboards für Xamarin.iOS. Allerdings enthalten sie einen anderen Satz von _Segue Typen_ aufgrund der anderen Schnittstelle-Sprachen.
 
 <a name="Working-with-Scenes" />
 
-### <a name="working-with-scenes"></a>Arbeiten mit Szenen
+### <a name="working-with-scenes"></a>Arbeiten mit im Hintergrund
 
-Wie bereits erwähnt, ein Storyboard definiert alle für die einer bestimmten app aufgeschlüsselt nach Funktionsbereich eine Übersicht über die Benutzeroberfläche der _View Controller_. In Xcodes Benutzeroberflächen-Generator, jedes dieser Controller befindet sich in einem eigenen _Szene_.
+Wie bereits erwähnt, ein Storyboard definiert die Benutzeroberfläche für eine bestimmte app in eine Funktionsübersicht von unterteilt die _Ansichtscontroller_. In Interface Builder von Xcode, jede dieser Controller befindet sich in eine eigene _Szene_.
 
-[![](images/intro02.png "Ein Beispiel-View-controller")](images/intro02.png#lightbox)
+[![](images/intro02.png "Eine Beispiel-ansichtscontroller")](images/intro02.png#lightbox)
 
-Jede Szene stellt einer angegebenen Ansicht und Controller-Paar Ansicht mit einem Satz von Linien (so genannte Segues), die jede Szene in der Benutzeroberfläche, also mit ihren Beziehungen zu verbinden. Einige Segues definieren, wie eine View-Controller enthält eine oder mehrere untergeordnete Ansichten oder View-Controller. Andere Segues Übergänge zwischen View-Controller (z. B. das Anzeigen eines Popover oder eines Dialogfelds) definieren. 
+Jede Szene stellt eine angegebene Ansicht und die View-Controller-Paar mit einem Satz von Zeilen (Segues genannt), die jeder Szene in der Benutzeroberfläche, also mit ihren Beziehungen zu verbinden. Einige Übergänge definieren, wie ein View-Controller enthält eine oder mehrere untergeordnete Ansichten oder View Controller. Andere Übergänge, Definieren von Übergängen zwischen View-Controller (z. B. das Anzeigen eines Popover oder eines Dialogfelds). 
 
-[![](images/intro03.png "Ein Beispiel segue")](images/intro03.png#lightbox)
+[![](images/intro03.png "Eine Beispiel-segue")](images/intro03.png#lightbox)
 
-Der wichtigste zu beachten ist, dass jede Segue den Datenfluss eine Form von Daten zwischen dem angegebenen Element der Benutzeroberfläche der Anwendung darstellt.
+Sehr wichtig zu beachten ist, dass jede Segue den Fluss der Daten zwischen dem angegebenen Element von der Benutzeroberfläche der Anwendung darstellt.
 
 <a name="Working-with-View-Controllers" />
 
-### <a name="working-with-view-controllers"></a>Arbeiten mit View-Controller
+### <a name="working-with-view-controllers"></a>Arbeiten mit Ansichtscontrollern
 
-View-Controller definieren die Beziehungen zwischen einer bestimmten Ansicht der Informationen innerhalb einer app für Mac und des Datenmodells, die diese Informationen bereitstellt. Jedes oberster Ebene Szene in das Storyboard stellt eine View-Controller in der Xamarin.Mac-app-Code dar.
+Ansichtscontroller definieren die Beziehungen zwischen einer bestimmten Ansicht der Informationen in einer Mac-app und das Datenmodell, das die Informationen bereitstellt. Jede Szene auf oberster Ebene im Storyboard stellt einen Ansichtscontroller im Code der Xamarin.Mac-app dar.
 
-[![](images/intro04.png "Ein Beispiel für verzögert View-controller")](images/intro04.png#lightbox)
+[![](images/intro04.png "Ein Beispiel für schlüpft ansichtscontroller")](images/intro04.png#lightbox)
 
-Auf diese Weise ist jeder View-Controller eine unabhängige, wiederverwendbare Kopplung visuelle Darstellung von den Informationen (Ansicht) und die Logik und die Informationen zu steuern.
+Auf diese Weise wird jedes View Controller an, eine unabhängige, wiederverwendbare Kopplung von den Informationen, die visuelle Darstellung (Ansicht) und die Logik und die Informationen zu steuern.
 
-Innerhalb einer bestimmten Szene erreichen Sie, alle der Aufgaben, die normalerweise von einzelnen bearbeitet werden würde `.xib` Dateien: 
+Innerhalb einer bestimmten Szene, erreichen Sie, alle Dinge, die normalerweise von Person übernommen hätte `.xib` Dateien: 
 
- - Subviews und (z. B. Schaltflächen und Textfeldern) steuert.
- - Element Positionen und Auto-Layout-Einschränkungen zu definieren.
- - Über das Netzwerk von Aktionen und Ausgänge Benutzeroberflächenelementen für Code verfügbar machen.
+ - Subviews und (z. B. Schaltflächen und Textfelder) steuert.
+ - Definieren Sie Position von Elementen und automatisches Layout Einschränkungen.
+ - Über das Netzwerk von Aktionen und Ergebnisdaten um UI-Elemente für Code verfügbar zu machen.
 
 <a name="Working-with-Segues" />
 
 ### <a name="working-with-segues"></a>Arbeiten mit Segues
 
-Wie bereits erwähnt, Segues Geben Sie die Beziehungen zwischen allen die Szenen, die Benutzeroberfläche Ihrer Anwendung zu definieren. Wenn Sie mit der Arbeit im Storyboards in iOS vertraut sind, wissen Sie, die Segues für iOS in der Regel Übergänge zwischen den gesamten Bildschirmansichten definieren. Dies unterscheidet sich von MacOS, wenn Segues definieren in der Regel "Aufnahme" (wobei eine Szene für das untergeordnete Element eines übergeordneten Elements Szene ist).
+Wie bereits erwähnt, bieten Segues die Beziehungen zwischen allen im Hintergrund, die UIs Ihrer app zu definieren. Wenn Sie mit der Arbeiten in Storyboards unter iOS vertraut sind, beachten Sie, dass Segues für iOS die Übergänge zwischen Vollbild-Ansichten in der Regel definieren. Dies unterscheidet sich von Mac OS, wenn Übergänge werden in der Regel "Aufnahme" (wobei eine Szene für das untergeordnete Element eines übergeordneten Elements Szene ist) definieren.
 
-Die meisten apps tendenziell in MacOS ihre Ansichten in das gleiche Fenster über Benutzeroberflächenelemente, z. B. Split-Sichten und Registerkarten zu gruppieren. Zeigen Sie im Gegensatz zu iOS, in denen Ansichten ein- und ausschalten Bildschirm gewechselt werden müssen, aufgrund der begrenzten physische Speicherplatz.
+Die meisten apps tendenziell unter MacOS ihre Ansichten zusammen im gleichen Fenster mithilfe von UI-Elemente wie z. B. geteilten Ansichten und Registerkarten gruppiert. Zeigen Sie im Gegensatz zu iOS, in denen Sichten ein- und ausschalten Bildschirm umgestellt werden müssen, aufgrund der begrenzten physische Speicherplatz.
 
-Angesichts des MacOS Tendenzen für Containment, es gibt Situationen, in denen _Präsentation Segues_ verwendet werden, z. B. modale Fenster, Ansichten und Popovers.
+Angesichts des MacOS-Tendenzen zu Kapselung, es gibt Situationen, in denen _Präsentation Segues_ verwendet werden, z. B. modalen Windows, Tabellenansichten und Popovers.
 
-Wenn Segues Präsentation verwenden, können Sie überschreiben die `PrepareForSegue` Methode des übergeordneten Elements View Controller für die Präsentation zum Initialisieren und Variablen, und geben Sie alle Daten, die View-Controller angezeigt wird.
+Wenn Segues Präsentation verwenden, können Sie überschreiben die `PrepareForSegue` -Methode des übergeordneten Ansichtscontroller für Präsentationen zum Initialisieren und Variablen, und geben Sie alle Daten auf den View-Controller, der angezeigt wird.
 
 <a name="Design-and-Run-Times" />
 
-### <a name="design-and-run-times"></a>Entwerfen und Ausführen von Zeiten
+### <a name="design-and-run-times"></a>Entwerfen und Ausführungszeiten
 
-Zur Entwurfszeit (wenn Layout, die Benutzeroberfläche in Xcodes Benutzeroberflächen-Generator), wird jedes Element der Benutzeroberfläche der Anwendung in der enthaltenen Elemente unterteilt:
+Zur Entwurfszeit (wenn Layout der Benutzeroberfläche in Interface Builder von Xcode), wird jedes Element der Benutzeroberfläche der Anwendung in der enthaltenen Elemente unterteilt:
 
-- **Szenen** – welche bestehen aus:
-    - **Anzeigen von Controller** -, definieren die Beziehungen zwischen den Ansichten und die Daten, die sie unterstützen.
-    - **Sichten und Unteransichten** – die tatsächlichen Elemente, aus denen die Benutzeroberfläche besteht.
-    - **Kapselung Segues** -, die die über-/ unterordnungsbeziehungen zwischen Szenen definieren.
+- **Im Hintergrund** – welche bestehen aus:
+    - **Anzeigen von Controller** -, definieren die Beziehungen zwischen Ansichten und die Daten, die sie unterstützen.
+    - **Ansichten und Unteransichten** – die tatsächlichen Elemente, aus denen die Benutzeroberfläche besteht.
+    - **Kapselung Segues** -, definieren die über-/ unterordnungsbeziehungen zwischen Szenen.
 - **Präsentation Segues** -, die einzelne Präsentationsmodus definieren. 
 
-Jedes Element auf diese Weise definieren, können für das verzögerte Laden jedes Element nur verwendet werden, da sie während der Laufzeit erforderlich ist. Der gesamte Prozess wurde in MacOS, ermöglichen den Entwickler, komplexe, flexible Benutzeroberflächen zu erstellen, müssen ein absolutes Minimum von Code, damit Sie sie arbeiten, sichern, entwickelt und wird mit Systemressourcen so effizient wie möglich.
+Durch die Definition jedes Element auf diese Weise können ermöglicht es der Lazy jedes Elements nur verwendet werden, da sie während der Laufzeit benötigt wird. Unter MacOS, der gesamte Prozess soll ermöglichen es Entwicklern, komplexe und flexible Benutzeroberflächen zu erstellen, müssen ein absolutes Minimum von Code, um die Arbeit zu sichern, und wird mit Systemressourcen so effizient wie möglich.
 
 <a name="Storyboard-Quick-Start" />
 
 ## <a name="storyboard-quick-start"></a>Storyboard-Schnellstart
 
-In der [Storyboard Schnellstart](~/mac/platform/storyboards/quickstart.md) Handbuch, wir erstellen eine einfache Xamarin.Mac-app, die die grundlegenden Konzepte der Arbeit mit Storyboards erstellen Sie eine neue Benutzeroberfläche eingeführt werden. Die Beispiel-app besteht aus einer Sicht aufgeteilt, enthält eine _Inhaltsbereichs_ und ein _Inspektor Bereich_ und er bietet ein einfaches Fenster mit Voreinstellungen-Dialogfeld. Wir müssen Segues verwenden, um alle Elemente der Benutzeroberfläche zu verbinden.
+In der [Storyboard Schnellstart](~/mac/platform/storyboards/quickstart.md) Anleitung erstellen wir eine einfache Xamarin.Mac-app, die die wichtigsten Konzepte für die Arbeit mit Storyboards zum Erstellen einer Benutzeroberfläche eingeführt werden. Die Beispiel-app besteht aus einer Ansicht aufgeteilt, enthält eine _Inhaltsbereich_ und ein _Inspektor Bereich_ und es bietet ein einfaches Dialogfeld "Einstellungen"-Fenster. Wir müssen Übergänge verwenden, um alle Elemente der Benutzeroberfläche zu verbinden.
 
 <a name="Working-with-Storyboards" />
 
 ## <a name="working-with-storyboards"></a>Arbeiten mit Storyboards
 
-Dieser Abschnitt enthält ausführliche Details [arbeiten mit Storyboards](~/mac/platform/storyboards/indepth.md) in einer Xamarin.Mac-app. Wir nehmen eine ausführliche Betrachtung Szenen und wie sie der Ansicht Controller und Ansicht zusammengesetzt sind. Klicken Sie dann, müssen wir sehen Sie sich wie Szenen zusammen mit Segues gebunden sind. Schalten Sie schließlich einen Blick auf das Arbeiten mit benutzerdefinierten Segue-Typen. 
+In diesem Abschnitt finden Sie ausführliche Details zur [arbeiten mit Storyboards](~/mac/platform/storyboards/indepth.md) in einer Xamarin.Mac-app. Wir nehmen einen detaillierten Einblick in die Szenen, sowie die View-Controller und Ansicht bestehen. Dann werden wir sehen Sie sich wie Szenen zusammen mit Segues gebunden sind. Schließlich wird mit der Verwendung von benutzerdefinierten Segue Typen eingegangen. 
 
 <a name="Complex-Storyboard-Example" />
 
 ## <a name="complex-storyboard-example"></a>Komplexe Storyboard-Beispiel
 
-Ein Beispiel eines komplexen Beispiels mit Storyboards in einer app Xamarin.Mac zu arbeiten, finden Sie unter der [SourceWriter Beispiel-App](https://developer.xamarin.com/samples/mac/SourceWriter/). SourceWriter ist ein einfacher Quellcode-Editor, der Unterstützung für die Codevervollständigung und die einfache Syntaxhervorhebung bietet.
+Ein Beispiel eines komplexen Beispiels arbeiten mit Storyboards in einer Xamarin.Mac-app, finden Sie unter den [SourceWriter-Beispiel-App](https://developer.xamarin.com/samples/mac/SourceWriter/). SourceWriter ist ein einfacher Quellcode-Editor, der Unterstützung für die Codevervollständigung und die einfache Syntaxhervorhebung bietet.
 
 Der SourceWriter-Code wurde vollständig kommentiert und es wurden, wenn möglich, Links der Schlüsseltechnologien und -methoden zu wichtigen Informationen in den Leitfäden der Xamarin.Mac-Dokumentation bereitgestellt.
 
@@ -110,13 +110,13 @@ Der SourceWriter-Code wurde vollständig kommentiert und es wurden, wenn möglic
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel hat einen kurzen Blick auf das Arbeiten mit Storyboards in einer app Xamarin.Mac übernommen. Wir haben gesehen, Gewusst wie: Erstellen einer neue app, die mithilfe von Storyboards und wie Sie eine Benutzeroberfläche zu definieren. Auch wurde erläutert, wie zum Navigieren zwischen Fenstern und segues Ansichtszustände verwenden.
+In diesem Artikel wurde auf einen Blick auf die Arbeit mit Storyboards in einer Xamarin.Mac-app unternommen. Wir haben gesehen, wie Sie eine neue app mit Storyboards erstellen und wie Sie eine Benutzeroberfläche zu definieren. Außerdem wurde erläutert, wie zum Navigieren zwischen verschiedenen Fenstern und Ansichtszustände mit segues.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [„Hallo, Mac“-Beispiel](https://developer.xamarin.com/samples/mac/Hello_Mac/)
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
-- [Arbeiten mit Fenstern](~/mac/user-interface/window.md)
+- [Arbeiten mit Windows](~/mac/user-interface/window.md)
 - [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Einführung in Windows](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

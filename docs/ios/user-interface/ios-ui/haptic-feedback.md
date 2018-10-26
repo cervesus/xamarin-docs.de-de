@@ -1,51 +1,51 @@
 ---
-title: Übermitteln von Feedback Haptic in Xamarin.iOS
-description: Dieses Dokument beschreibt, wie in einer app Xamarin.iOS haptic Feedback bereitstellen. Es wird erläutert, UIImpactFeedbackGenerator UINotificationFeedbackGenerator und UISelectionFeedbackGenerator.
+title: Übermitteln von Haptischem Feedback in Xamarin.iOS
+description: Dieses Dokument beschreibt, wie Übermitteln von haptischem Feedback in einer Xamarin.iOS-app bereitgestellt wird. Es wird erläutert, UIImpactFeedbackGenerator UINotificationFeedbackGenerator und UISelectionFeedbackGenerator.
 ms.prod: xamarin
 ms.assetid: 888106D1-58F4-453F-BACC-91D51FA39C80
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: d0dae6d6f50423474fbfebad5d630000e2160f6a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b2c381c59ba1574e80babc2c7e68535a3deffe35
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790187"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123127"
 ---
-# <a name="providing-haptic-feedback-in-xamarinios"></a>Übermitteln von Feedback Haptic in Xamarin.iOS
+# <a name="providing-haptic-feedback-in-xamarinios"></a>Übermitteln von Haptischem Feedback in Xamarin.iOS
 
 <a name="Overview" />
 
-## <a name="overview"></a>Überblick
+## <a name="overview"></a>Übersicht
 
-Auf dem iPhone 7 und iPhone umfasst 7 Plus Apple neue haptic Antworten, die zusätzliche Möglichkeiten für den Benutzer physisch initiiert bereitstellen. Haptic Feedback (häufig als Haptics bezeichnet) verwendet den Sinn der Fingereingabe (über erzwingen, Vibrationen oder während des Verschiebens) in Benutzeroberfläche entwerfen. Verwenden Sie diese neue praktisch Feedbackoptionen Aufmerksamkeit des Benutzers abrufen und ihre Aktionen zu vertiefen.
+Auf dem iPhone 7 und das iPhone hat 7 und Apple enthalten neue Übermitteln von haptischem Antworten, die weitere Möglichkeiten, die sich physisch in Verbindung setzen den Benutzer bereitstellen. Übermitteln von haptischem Feedback (oft einfach als Haptics bezeichnet) wird die Bedeutung von Touch (über erzwingen, Vibrationen oder während der Übertragung) im Entwurf der Benutzeroberfläche verwendet. Verwenden Sie diese neuen praktisch Feedbackoptionen, um die Aufmerksamkeit des Benutzers zu erhalten, und vertiefen ihre Aktionen.
 
 Die folgenden Themen werden im Detail behandelt:
 
-- [Zu Haptic Feedback](#About-Haptic-Feedback)
+- [Zum Übermitteln von Haptischem Feedback](#About-Haptic-Feedback)
 - [UIImpactFeedbackGenerator](#UIImpactFeedbackGenerator)
 - [UINotificationFeedbackGenerator](#UINotificationFeedbackGenerator)
 - [UISelectionFeedbackGenerator](#UISelectionFeedbackGenerator)
 
 <a name="About-Haptic-Feedback" />
 
-## <a name="about-haptic-feedback"></a>Zu Haptic Feedback
+## <a name="about-haptic-feedback"></a>Zum Übermitteln von Haptischem Feedback
 
-Mehrere integrierte Benutzeroberflächenelemente Ihr Feedback bereits haptic z. B. Bildlaufbereich, Switches und Schieberegler. iOS 10 fügt nun die Möglichkeit, mithilfe einer konkreten Unterklasse von Haptics programmgesteuert Auslösen der `UIFeedbackGenerator` Klasse.
+Einige integrierte Elemente der Benutzeroberfläche bieten bereits Übermitteln von haptischem Feedback wie z. B. Dateiöffnungs-, Switches und Schieberegler. iOS 10 bietet nun die Möglichkeit, programmgesteuert mithilfe einer konkreten Unterklasse von Haptics Auslösen der `UIFeedbackGenerator` Klasse.
 
-Der Entwickler mithilfe eines der folgenden `UIFeedbackGenerator` Unterklassen programmgesteuert Trigger haptic Feedback:
+Der Entwickler mithilfe einer der folgenden `UIFeedbackGenerator` Unterklassen zu programmgesteuert Trigger Übermitteln von haptischem Feedback:
 
-- `UIImpactFeedbackGenerator` – Verwenden Sie dieses Generators Feedback um zu ergänzen, eine Aktion oder ein Task, z. B. eine "Thud" darstellen, wenn eine Sicht mit einem Folien oder wenn zwei auf dem Bildschirm Objekte in Konflikt stehen.
-- `UINotificationFeedbackGenerator` – Verwenden Sie dieses Generators Feedback für Benachrichtigungen, z. B. eine Aktion abschließen, fehlerhaften oder jede andere Art der Warnung.
-- `UISelectionFeedbackGenerator` – Verwenden Sie dieses Generators Feedback zur Auswahl aktiv ändern, z. B. ein Element aus einer Liste auswählen.
+- `UIImpactFeedbackGenerator` – Verwenden Sie dieses Feedback-Generators, um eine Aktion oder Aufgabe, z. B. eine "Thud" darstellen, wenn eine Ansicht an Stelle Folien oder beiden auf dem Bildschirm Objekte kollidieren zu ergänzen.
+- `UINotificationFeedbackGenerator` -Verwenden Sie dieses Feedback-Generators für Benachrichtigungen, wie z. B. eine Aktion abschließen, fehlerhaften oder andere die Art der Warnung.
+- `UISelectionFeedbackGenerator` – Verwenden Sie dieses Feedback-Generators für eine Auswahl aktiv ändern, z. B. ein Element aus einer Liste auswählen.
 
 <a name="UIImpactFeedbackGenerator" />
 
 ### <a name="uiimpactfeedbackgenerator"></a>UIImpactFeedbackGenerator
 
-Verwenden Sie dieses Generators Feedback um zu ergänzen, eine Aktion oder ein Task, z. B. eine "Thud" darstellen, wenn eine Sicht mit einem Folien oder wenn zwei auf dem Bildschirm Objekte in Konflikt stehen.
+Verwenden Sie dieses Feedback-Generators, um eine Aktion oder Aufgabe, z. B. eine "Thud" darstellen, wenn eine Ansicht an Stelle Folien oder beiden auf dem Bildschirm Objekte kollidieren zu ergänzen.
 
 Verwenden Sie den folgenden Code zum Trigger Auswirkungen Feedback:
 
@@ -61,23 +61,23 @@ impact.Prepare ();
 impact.ImpactOccurred ();
 ```
 
-Wenn der Entwickler erstellt eine neue Instanz der der `UIImpactFeedbackGenerator` Klasse, die sie bieten eine `UIImpactFeedbackStyle` die Stärke Feedback, das als angeben:
+Wenn der Entwickler erstellt eine neue Instanz der der `UIImpactFeedbackGenerator` Klasse, die sie bieten eine `UIImpactFeedbackStyle` die Stärke des Feedbacks als angeben:
 
 - `Heavy`
 - `Medium`
 - `Light`
 
-Die `Prepare` Methode der `UIImpactFeedbackGenerator` wird aufgerufen, um dem System zu informieren, dass haptic Feedback wird durchgeführt, sodass-Latenzzeit minimiert werden können.
+Die `Prepare` Methode der `UIImpactFeedbackGenerator` wird aufgerufen, um das System zu informieren, dass das Übermitteln von haptischem Feedback wird durchgeführt, damit sie die Latenz minimieren kann.
 
-Die `ImpactOccurred` Methode löst dann haptic Feedback.
+Die `ImpactOccurred` Methode löst dann Übermitteln von haptischem Feedback.
 
 <a name="UINotificationFeedbackGenerator" />
 
 ### <a name="uinotificationfeedbackgenerator"></a>UINotificationFeedbackGenerator
 
-Verwenden Sie dieses Generators Feedback für Benachrichtigungen, z. B. eine Aktion abschließen, fehlerhaften oder jede andere Art der Warnung an.
+Verwenden Sie dieses Feedback-Generators für Benachrichtigungen, wie z. B. eine Aktion abschließen, fehlerhaften oder andere die Art der Warnung.
 
-Verwenden Sie den folgenden Code zum Trigger Benachrichtigung Feedback:
+Verwenden Sie den folgenden Code zur Notification-Feedback Trigger:
 
 ```csharp
 using UIKit;
@@ -91,9 +91,9 @@ notification.Prepare ();
 notification.NotificationOccurred (UINotificationFeedbackType.Error);
 ```
 
-Eine neue Instanz der dem `UINotificationFeedbackGenerator` Klasse erstellt wird und die zugehörige `Prepare` Methode wird aufgerufen, um dem System zu informieren, dass haptic Feedback wird durchgeführt, sodass-Latenzzeit minimiert werden können.
+Eine neue Instanz der dem `UINotificationFeedbackGenerator` -Klasse erstellt wird und die zugehörige `Prepare` aufgerufen, um das System zu informieren, dass das Übermitteln von haptischem Feedback wird durchgeführt, damit sie die Latenz minimieren kann.
 
-Die `NotificationOccurred` wird aufgerufen, um das Auslösen von haptic Feedback mit einer angegebenen `UINotificationFeedbackType` von:
+Die `NotificationOccurred` wird aufgerufen, um das Übermitteln von haptischem Feedback mit Auslösen einer bestimmten `UINotificationFeedbackType` von:
 
 - `Success`
 - `Warning`
@@ -103,9 +103,9 @@ Die `NotificationOccurred` wird aufgerufen, um das Auslösen von haptic Feedback
 
 ### <a name="uiselectionfeedbackgenerator"></a>UISelectionFeedbackGenerator
 
-Verwenden Sie diese Feedback-Generator zur Auswahl aktiv ändern, z. B. ein Element aus einer Liste auswählen.
+Verwenden Sie dieses Feedback-Generator für eine Auswahl aktiv ändern, z. B. ein Element aus einer Liste auswählen.
 
-Verwenden Sie den folgenden Code zum Trigger Auswahl Feedback:
+Verwenden Sie den folgenden Code zur Auswahlfeedback Trigger:
 
 ```csharp
 using UIKit;
@@ -119,14 +119,14 @@ selection.Prepare ();
 selection.SelectionChanged ();
 ```
 
-Eine neue Instanz der dem `UISelectionFeedbackGenerator` Klasse erstellt wird und die zugehörige `Prepare` Methode wird aufgerufen, um dem System zu informieren, dass haptic Feedback wird durchgeführt, sodass-Latenzzeit minimiert werden können.
+Eine neue Instanz der dem `UISelectionFeedbackGenerator` -Klasse erstellt wird und die zugehörige `Prepare` aufgerufen, um das System zu informieren, dass das Übermitteln von haptischem Feedback wird durchgeführt, damit sie die Latenz minimieren kann.
 
-Die `SelectionChanged` Methode löst dann haptic Feedback.
+Die `SelectionChanged` Methode löst dann Übermitteln von haptischem Feedback.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden die neuen Typen für haptic Feedback verfügbar im iOS 10 und deren in Xamarin.iOS Implementierung behandelt.
+In diesem Artikel wurden die neuen Typen für das Übermitteln von haptischem Feedback verfügbar in iOS 10 und deren in Xamarin.iOS Implementierung behandelt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [iOS-10-Beispiele](https://developer.xamarin.com/samples/ios/iOS10/)
+- [iOS 10-Beispiele](https://developer.xamarin.com/samples/ios/iOS10/)

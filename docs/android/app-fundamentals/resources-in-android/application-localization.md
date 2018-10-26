@@ -1,27 +1,27 @@
 ---
-title: Die Anwendungslokalisierung und Zeichenfolgenressourcen
+title: Anwendungslokalisierung und Zeichenfolgenressourcen
 ms.prod: xamarin
 ms.assetid: 374A9DA6-1853-8B98-6954-7FE3F591C07C
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: cfb127500f919b61788087465700dfed213d5eb2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d9d90e371199c8587d61199240523cf0a23f5efd
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765853"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116523"
 ---
-# <a name="application-localization-and-string-resources"></a>Die Anwendungslokalisierung und Zeichenfolgenressourcen
+# <a name="application-localization-and-string-resources"></a>Anwendungslokalisierung und Zeichenfolgenressourcen
 
-Die anwendungslokalisierung dient das Bereitstellen alternativer Ressourcen, um eine bestimmte Region oder das Gebietsschema als Ziel. Angenommen, Sie lokalisierte Zeichenfolgen für verschiedene Länder bereitstellen, oder Sie möglicherweise ändern, Farben oder Layout für bestimmte Kulturen übereinstimmen. Android geladen und die Ressourcen für das Gerät Gebietsschema entsprechende zur Laufzeit ohne Änderungen auf den Quellcode zu verwenden.
+Anwendungslokalisierung umfasst das Bereitstellen alternativer Ressourcen zur Ausrichtung auf eine bestimmte Region oder ein Gebietsschema. Beispielsweise können Sie Zeichenfolgen in einer lokalisierten Sprache für verschiedene Länder angeben, oder Sie möglicherweise ändern, Farben oder Layout mit bestimmte Kulturen übereinstimmen. Android lädt und verwenden Sie die Ressourcen, die für das Gerät, Gebietsschema geeignet, zur Laufzeit ohne Änderungen an den Quellcode.
 
-Z. B. die folgende Abbildung zeigt dieselbe Anwendung in drei verschiedenen Geräten Gebietsschemas ausgeführt, aber jede Schaltfläche angezeigte Text bezieht sich auf das Gebietsschema, das auf jedem Gerät festgelegt ist:
+Z. B. die folgende Abbildung zeigt der gleichen Anwendung in drei verschiedenen Geräten Gebietsschemas, aber jede Schaltfläche angezeigte Text bezieht sich auf das Gebietsschema, das auf jedem Gerät festgelegt ist:
 
 [![Beispiele für drei verschiedene Gebietsschemas](application-localization-images/01-click-me-sml.png)](application-localization-images/01-click-me.png#lightbox)
 
-In diesem Beispiel den Inhalt einer Datei Layout **Main.axml** sieht etwa wie folgt:
+In diesem Beispiel wird der Inhalt einer Datei Layout **Main.axml** sieht etwa folgendermaßen aus:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -39,13 +39,13 @@ android:text="@string/hello"
 </LinearLayout>
 ```
 
-Im obigen Beispiel wurde die Zeichenfolge für die Schaltfläche mit den von den Ressourcen geladen, indem Sie die Ressourcen-ID für die Zeichenfolge angeben:
+Im obigen Beispiel wurde die Zeichenfolge für die Schaltfläche mit den von den Ressourcen durch die Bereitstellung der Ressourcen-ID für die Zeichenfolge geladen:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![Ressourcenzeichenfolgen für drei Sprachen](application-localization-images/02-resource-strings-vs.png)
  
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 ![Ressourcenzeichenfolgen für drei Sprachen](application-localization-images/02-resource-strings-xs.png)
  
@@ -53,13 +53,13 @@ Im obigen Beispiel wurde die Zeichenfolge für die Schaltfläche mit den von den
  
 ## <a name="localizing-android-apps"></a>Lokalisieren von Android-Apps
 
-Lesen der [Einführung zur Lokalisierung](~/cross-platform/app-fundamentals/localization.md) für Tipps und Anleitungen zum Lokalisieren von mobilen apps.
+Lesen der [Einführung in die Lokalisierung](~/cross-platform/app-fundamentals/localization.md) für Tipps und Anleitungen zum Lokalisieren von mobilen apps.
 
-Die [Lokalisieren von Android-Apps](~/android/app-fundamentals/localization.md) Anleitung enthält genauere Beispiele zum Übersetzen von Zeichenfolgen und Lokalisieren von Abbildern mithilfe von Xamarin.Android.
+Die [Lokalisieren von Android-Apps](~/android/app-fundamentals/localization.md) Anleitung enthält genauere Beispiele zum Übersetzen von Zeichenfolgen und Bilder, die mithilfe von Xamarin.Android zu lokalisieren.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Lokalisieren von Android-Apps](~/android/app-fundamentals/localization.md)
-- [Plattformübergreifende Lokalisierung (Übersicht)](~/cross-platform/app-fundamentals/localization.md)
+- [Übersicht über die plattformübergreifende Lokalisierung](~/cross-platform/app-fundamentals/localization.md)

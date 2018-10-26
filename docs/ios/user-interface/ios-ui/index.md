@@ -1,40 +1,40 @@
 ---
-title: Benutzeroberflächen in iOS
-description: Dieses enthält Dokumentenlinks zu Anleitungen, die zum Erstellen von Benutzeroberflächen in Xamarin.iOS app beschreiben. Der verknüpfte Handbücher Behandeln der Darstellung-API erstellen Benutzeroberflächenobjekte, Layoutoptionen und vieles mehr.
+title: Von Benutzeroberflächen in iOS
+description: Dieses Dokument enthält Links zu Leitfäden, die zum Erstellen von Benutzeroberflächen in xamarin IOS-app beschrieben. Die verknüpften Handbüchern behandelt die Darstellung-API erstellen, Benutzeroberflächenobjekte, Layoutoptionen und mehr.
 ms.prod: xamarin
 ms.assetid: 1BB46561-F503-491E-A27C-7878E7EBE00B
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: a51d3f57106a282ed72b45dedf356739244e247f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: efb88ada8a4b4c36dd49de137eb64acd63552968
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790366"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115678"
 ---
-# <a name="user-interfaces-in-ios"></a>Benutzeroberflächen in iOS
+# <a name="user-interfaces-in-ios"></a>Von Benutzeroberflächen in iOS
 
 ## <a name="appearance-apiintroduction-to-the-appearance-apimd"></a>[Darstellungs-API](introduction-to-the-appearance-api.md)
 
-iOS kann viele visuellen Attribute eines Designs mithilfe der UIAppearance-APIs werden die Steuerelemente der Benutzeroberfläche.
+iOS kann viele visuellen Attribute die Steuerelemente der Benutzeroberfläche zum Design mithilfe der UIAppearance-APIs.
 
 ## <a name="creating-user-interface-objectsiosuser-interfaceios-uicreating-ui-objectsmd"></a>[Erstellen von Benutzeroberflächenobjekten](~/ios/user-interface/ios-ui/creating-ui-objects.md)
 
-Apple-Gruppen im Zusammenhang mit Funktionen in "Frameworks" die Xamarin.iOS Namespaces entsprechen. `UIKit` ist der Namespace, der alle Steuerelemente der Benutzeroberfläche für iOS enthält.
+Apple-Gruppen im Zusammenhang mit Funktionen in "Frameworks" die Xamarin.iOS-Namespaces entsprechen. `UIKit` ist der Namespace, der alle Steuerelemente der Benutzeroberfläche für iOS enthält.
 
 ## <a name="layout-optionsiosuser-interfaceios-uilayout-optionsmd"></a>[Layoutoptionen](~/ios/user-interface/ios-ui/layout-options.md)
 
-Es gibt zwei unterschiedliche Mechanismen für das Layout steuern, wenn eine Sicht geändert oder gedreht wird: Automatisches Anpassen der Größe und Autolayout.
+Es gibt zwei unterschiedliche Mechanismen für die Steuerung des Layouts, wenn eine Sicht geändert oder gedreht wird: Automatisches Anpassen der Größe und automatisches Layout.
 
 ## <a name="providing-haptic-feedbackiosuser-interfaceios-uihaptic-feedbackmd"></a>[Übermitteln von haptischem Feedback](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
-Dieser Artikel behandelt die neuen Typen für haptic Feedback in iOS 10 und deren Implementierung in Xamarin.iOS verfügbar.
+Dieser Artikel behandelt die neuen Typen für das Übermitteln von haptischem Feedback in iOS 10 und implementieren Sie diese in Xamarin.iOS zur Verfügung.
 
 ## <a name="working-with-the-ui-threadiosuser-interfaceios-uiui-threadmd"></a>[Arbeiten mit dem UI-Thread](~/ios/user-interface/ios-ui/ui-thread.md)
 
-Den Code sollte nur Änderungen an den Benutzer Benutzeroberflächen-Steuerelemente aus dem Hauptknoten (oder UI)-Thread zu gestalten. Alle UI-Updates, die auf einem anderen Thread (z. B. einen Rückruf oder Hintergrund-Thread) auftreten möglicherweise nicht auf dem Bildschirm gerendert abrufen, oder Sie können auch verursacht einen Absturz.
+Ihr Code sollte nur Änderungen an den Benutzer Steuerelemente der Benutzeroberfläche aus der primären (oder UI) Thread vornehmen. Alle Aktualisierungen der Benutzeroberfläche, die auf einem anderen Thread (z. B. einen Rückruf oder Hintergrund-Thread) auftreten können nicht auf dem Bildschirm gerendert zu erhalten, oder es können auch einen Absturz verursachen.
 
 
 

@@ -5,22 +5,22 @@ ms.prod: xamarin
 ms.assetid: 20246E87-2A49-438A-9BD7-756A1B50A617
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: a894efebe4089adefeb02007bd394c13fc77974c
-ms.sourcegitcommit: 213b0315f1d6d0791e255794f87512fb253c492f
+ms.openlocfilehash: d04ce6827f6695163c7d9a8d34acc3891d854c8d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "34790099"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122672"
 ---
 # <a name="stack-views-in-xamarinios"></a>Stack-Ansichten in Xamarin.iOS
 
 _Dieser Artikel befasst sich mit dem neuen UIStackView-Steuerelement in einer Xamarin.iOS-app zum Verwalten einer Gruppe von Unteransichten entweder in einem Stapel horizontal oder vertikal angeordnet._
 
 > [!IMPORTANT]
-> Bitte beachten Sie, dass während StackView im iOS-Designer unterstützt wird, Verwendbarkeit Fehler auftreten können, wenn den stabilen Kanal zu verwenden. Wechseln von der Beta- oder Alpha-Kanäle sollte dieses Problem verringern. Wir haben uns entschieden, stellen diese exemplarische Vorgehensweise mit Xcode, bis die erforderlichen Korrekturen im stabilen Kanal implementiert werden.
+> Bitte beachten Sie, dass während StackView im iOS-Designer unterstützt wird, Verwendbarkeit Fehler auftreten können, wenn den stabilen Kanal zu verwenden. Die Beta- oder Alpha-Kanäle umschalten, sollte dieses Problem verringern. Wir haben uns entschieden, stellen diese exemplarische Vorgehensweise mit Xcode, bis die erforderlichen Korrekturen im stabilen Kanal implementiert werden.
 
 Die Stack-Steuerelement (`UIStackView`) nutzt die Leistungsfähigkeit von Automatisches Layout und Größenklassen einen Stapel von Unteransichten entweder horizontal oder vertikal zu verwalten, die dynamisch auf die Ausrichtung und der Bildschirmgröße die Größe des iOS-Geräts reagiert.
 
@@ -50,7 +50,7 @@ In der **Attributinspektor**, die folgenden Optionen festlegen:
 
 [![](uistackview-images/quick02.png "Festlegen der Optionen Stapelansicht")](uistackview-images/quick02.png#lightbox)
 
-Ort:
+Wobei:
 
 - **Achse** – bestimmt, ob die Stapelansicht die Unteransichten entweder ordnet **horizontal** oder **vertikal**.
 - **Ausrichtung** – steuert, wie die Unteransichten innerhalb der Stapelansicht ausgerichtet werden.

@@ -1,46 +1,46 @@
 ---
-title: Android Beam
+title: Android-Funktionen
 ms.prod: xamarin
 ms.assetid: 4172A798-89EC-444D-BC0C-0A7DD67EF98C
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: 89e668b8936db9a05fca2353b334b630b8363a74
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 13a0a0d9c6a9d1d5f49020b1a8096f5e054d415c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762735"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114924"
 ---
-# <a name="android-beam"></a>Android Beam
+# <a name="android-beam"></a>Android-Funktionen
 
-Android Balken ist eine Near Field Communication (NFC)-Technologie, die in Android 4.0, die Clientanwendungen ermöglicht, Freigeben von Informationen über NFC in der Nähe eingeführt.
+Android-Funktionen handelt es sich um eine Near Field Communication (NFC)-Technologie, die in Android 4.0, die Clientanwendungen ermöglicht, Freigeben von Informationen über NFC in der Nähe eingeführt.
 
-[![Diagramm zur Veranschaulichung zwei Geräte in der Nähe, Informationen gemeinsam nutzen](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
+[![Diagramm zur Veranschaulichung zwei Geräte in unmittelbarer Nähe zueinander, die Freigabe von Informationen](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 
-Android Balken funktioniert, indem Nachrichten über NFC übertragen, wenn zwei Geräte im Bereich befinden. Geräte ca. 4cm voneinander können Daten mithilfe von Android Balken freigeben. Eine Aktivität auf einem Gerät erstellt eine Nachricht und gibt an, eine Aktivität (oder Aktivitäten), können verarbeiten, legt es. Wenn die angegebene Aktivität im Vordergrund ist und die Geräte im Bereich werden, wird Android Balken die Nachricht mit dem zweiten Gerät per Push übertragen. Priorität wird aufgerufen, die die Nachrichtendaten enthält, auf dem Gerät empfangen.
+Android Balken funktioniert, indem Nachrichten über NFC übertragen werden, wenn zwei Geräte im Bereich befinden. Geräte ungefähr 4cm voneinander können Daten mithilfe von Android Balken freigeben. Eine Aktivität auf einem Gerät eine Nachricht erstellt und gibt an, eine Aktivität (oder Aktivitäten), die mithilfe von Push übertragen sie verarbeiten können. Wenn die angegebene Aktivität im Vordergrund ist, und die Geräte im Bereich sind, pushen Android Balken die Nachricht auf das zweite Gerät. Ein Intent-Objekt wird aufgerufen, die die Daten der Nachricht enthält, auf dem Gerät empfangen.
 
-Android unterstützt zwei Arten von Einstellung Nachrichten mit Android Balken:
+Android unterstützt zwei Arten von Einstellung-Nachrichten mit Android-Funktionen:
 
--   `SetNdefPushMessage` – Bevor Android Balken initiiert wird, kann eine Anwendung aufrufen, SetNdefPushMessage zum Angeben einer NdefMessage Push über NFC und die Aktivität, die sie per Push übertragen wird. Dieser Mechanismus wird am besten verwendet werden, wenn eine Nachricht nicht ändern, während eine Anwendung verwendet wird.
+-   `SetNdefPushMessage` – Bevor Android Balken initiiert wird, kann eine Anwendung aufrufen, SetNdefPushMessage zum Angeben einer NdefMessage mithilfe von Push übertragen über NFC und die Aktivität, die sie mithilfe von Push übertragen wird. Dieser Mechanismus wird am besten verwendet werden, wenn eine Nachricht nicht ändert, während eine Anwendung verwendet wird.
 
--   `SetNdefPushMessageCallback` – Wenn Sie Android Balken initiiert wird, kann eine Anwendung einen Rückruf zum Erstellen einer NdefMessage behandeln. Dieser Mechanismus erlaubt, für die Erstellung der Nachricht verzögert wird, bis Sie Geräte im Bereich befinden. Szenarien, in dem die Nachricht variieren, basierend auf in der Anwendung geschieht unterstützt.
+-   `SetNdefPushMessageCallback` – Wenn Sie Android Balken initiiert wird, kann eine Anwendung einen Rückruf zum Erstellen einer NdefMessage behandeln. Dieser Mechanismus ermöglicht es, für die Erstellung der Nachricht verzögert werden, bis der Geräte im Bereich befinden. Es unterstützt Szenarien, in dem die Nachricht variieren, basierend auf der Abläufe in der Anwendung.
 
 
-In beiden Fällen zum Senden von Daten mit Android Balken, eine Anwendung sendet eine `NdefMessage`, verpacken die Daten in mehreren `NdefRecords`. Werfen wir einen Blick auf die wichtigsten Punkte, die behoben werden müssen, bevor Android Balken ausgelöst werden kann. Erstens arbeiten wir mit dem Rückruf-Stil zum Erstellen einer `NdefMessage`.
+In beiden Fällen zum Senden von Daten mit Android Balken, eine Anwendung sendet eine `NdefMessage`, verpacken die Daten in mehreren `NdefRecords`. Werfen wir einen Blick auf die wichtigsten Punkte, die berücksichtigt werden müssen, bevor wir Android Funktionen ausgelöst werden kann. Zunächst versuchen wir in Zusammenarbeit mit dem Rückruf-Stil zum Erstellen einer `NdefMessage`.
 
 
 ## <a name="creating-a-message"></a>Erstellen einer Nachricht
 
-Wir können registrieren, Rückrufe mit einer `NfcAdapter` in der Aktivitätssymbols `OnCreate` Methode. Vorausgesetzt, z. B. ein `NfcAdapter` mit dem Namen `mNfcAdapter` wird deklariert als Klassenvariable in der Aktivität, können Sie den folgenden Code aus, um den Rückruf zu erstellen, die die Nachricht zu erstellen, wird schreiben:
+Wir können Registrieren von Rückrufen mit einer `NfcAdapter` Aktivität `OnCreate` Methode. Angenommen ein `NfcAdapter` mit dem Namen `mNfcAdapter` wird als Klassenvariable deklariert, eine in der Aktivität, Schreiben wir den folgenden Code, um den Rückruf zu erstellen, die die Nachricht erstellt wird:
 
 ```csharp
 mNfcAdapter = NfcAdapter.GetDefaultAdapter (this);
 mNfcAdapter.SetNdefPushMessageCallback (this, this);
 ```
 
-Die Aktivität mit dem implementiert `NfcAdapter.ICreateNdefMessageCallback`, übergeben wird, um die `SetNdefPushMessageCallback` oben genannten Methode. Wenn Android Balken initiiert wird, wird das System Aufrufen `CreateNdefMessage`, von dem die Aktivität der Währungsumrechnungsfunktionen erstellen kann ein `NdefMessage` wie unten dargestellt:
+Die Aktivität, die implementiert `NfcAdapter.ICreateNdefMessageCallback`, übergeben wird, um die `SetNdefPushMessageCallback` oben genannte Methode. Wenn Android Balken initiiert wird, kann das System ruft `CreateNdefMessage`, von dem die Aktivität erstellen, können eine `NdefMessage` wie unten dargestellt:
 
 ```csharp
 public NdefMessage CreateNdefMessage (NfcEvent evt)
@@ -68,21 +68,21 @@ public NdefRecord CreateMimeRecord (String mimeType, byte [] payload)
 
 ## <a name="receiving-a-message"></a>Empfangen einer Nachricht
 
-Auf der Empfängerseite Ruft das System die Priorität mit dem `ActionNdefDiscovered` Aktion, die aus der wir das NdefMessage wie folgt extrahieren:
+Auf der Empfängerseite Ruft das System einen Intent mit dem `ActionNdefDiscovered` Aktion, die aus dem können wir wie folgt die NdefMessage extrahieren:
 
 ```csharp
 IParcelable [] rawMsgs = intent.GetParcelableArrayExtra (NfcAdapter.ExtraNdefMessages);
 NdefMessage msg = (NdefMessage) rawMsgs [0];
 ```
 
-Ein vollständiges Codebeispiel, das Android Balken, ausgeführt wird, im folgenden Screenshot gezeigt verwendet finden Sie unter der [Android Balken Demo](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/) in der Beispiel-Katalog.
+Ein vollständiges Codebeispiel, das Android Funktionen, die Ausführung im nachstehenden Screenshot dargestellt verwendet finden Sie unter den [Android Balken Demo](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/) im Katalog-Beispiel.
 
-[![Beispiel-Screenshots aus der Android Balken-demo](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
+[![Beispiel-Screenshot aus der Funktionen der Android-demo](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Android Balken Demo (Beispiel)](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/)
-- [Einführung in Eis Rustikal Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 Platform](http://developer.android.com/sdk/android-4.0.html)
+- [Android-Balken-Demo (Beispiel)](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/)
+- [Einführung in die Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
+- [Android 4.0-Plattform](http://developer.android.com/sdk/android-4.0.html)

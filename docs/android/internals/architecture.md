@@ -3,15 +3,15 @@ title: Architektur
 ms.prod: xamarin
 ms.assetid: 7DC22A08-808A-DC0C-B331-2794DD1F9229
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: e6a30247c13deab871bf230aba53b9963981fd02
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 219c6bb4cd5718c969ba83a55596ad7b0bab8baf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997399"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121125"
 ---
 # <a name="architecture"></a>Architektur
 
@@ -71,7 +71,7 @@ Beim Freigeben von Aufrufwrappern verwaltet werden, ob die Instanz versehentlich
 Verwaltete Aufrufwrapper Unterklassen sind, in dem die "interessante" anwendungsspezifische Logik gespeichert sein kann. Enthalten diese benutzerdefinierte [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/) Unterklassen (z. B. die ["Activity1"](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13) Typ in der Standardvorlage für das Projekt). (Insbesondere Hierbei handelt es sich *Java.Lang.Object* Unterklassen wozu *nicht* enthalten eine [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/) benutzerdefinierten Attributs oder [ RegisterAttribute.DoNotGenerateAcw](https://developer.xamarin.com/api/property/Android.Runtime.RegisterAttribute.DoNotGenerateAcw/) ist *"false"*, dies ist die Standardeinstellung.)
 
 Wie verwaltet callable Wrapper, verwaltete Aufrufwrapper Unterklassen enthalten auch einen globalen Verweis, der über die [Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/) Eigenschaft. Ebenso wie globale Verweise mit verwalteten callable Wrapper, explizit durch Aufrufen von freigegeben werden können [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/).
-Im Gegensatz zu verwalteten callable Wrapper *mit großer Sorgfalt* entnommen werden soll, vor dem Freigeben von solchen Fällen ist als *Dispose()*-Verknüpfung der Instanz unterbricht die Zuordnung zwischen Java-Instanz (eine Instanz von einem Android Callable Wrapper) und die verwaltete Instanz.
+Im Gegensatz zu verwalteten callable Wrapper *mit großer Sorgfalt* entnommen werden soll, vor dem Freigeben von solchen Fällen ist als *Dispose()*- Wert der Instanz unterbricht die Zuordnung zwischen Java-Instanz (eine Instanz von einer Android Callable Wrapper) und die verwaltete Instanz.
 
 
 ### <a name="java-activation"></a>Java-Aktivierung
@@ -88,7 +88,7 @@ Es gibt zwei Szenarien, in denen die *(IntPtr, JniHandleOwnership)* Konstruktor 
 
 
 Beachten Sie, dass (2) ist eine Abstraktion vor lückenhaften. In Java, wie in c# invoke-Aufrufe an virtuellen Methoden von einem Konstruktor immer die am stärksten abgeleitete Implementierung der Methode. Z. B. die [TextView (Kontext AttributeSet, Int) Konstruktor](https://developer.xamarin.com/api/constructor/Android.Widget.TextView.TextView/p/Android.Content.Context/Android.Util.IAttributeSet/System.Int32/) Ruft die virtuelle Methode [TextView.getDefaultMovementMethod()](http://developer.android.com/reference/android/widget/TextView.html#getDefaultMovementMethod()), das gebunden ist, als die [ TextView.DefaultMovementMethod Eigenschaft](https://developer.xamarin.com/api/property/Android.Widget.TextView.DefaultMovementMethod/).
-Daher, wenn ein Typ [LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs) (1), würden [Unterklasse TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L26), (2) [TextView.DefaultMovementMethod überschreiben](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L45), und (3) [aktivieren Sie eine Instanz dieses Klasse per XML](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Resources/layout/log_text_box_1.xml#L29) der überschriebenen *DefaultMovementMethod* Eigenschaft würde aufgerufen werden, bevor der Konstruktor Inhaltsfehler Gelegenheit hatten, führen Sie aus, und auftreten würde, bevor der C#-Konstruktor ausführen konnten.
+Daher, wenn ein Typ [LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs) (1), würden [Unterklasse TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L26), (2) [TextView.DefaultMovementMethod überschreiben](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L45), und (3) [aktivieren Sie eine Instanz dieses Klasse per XML](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Resources/layout/log_text_box_1.xml#L29) der überschriebenen *DefaultMovementMethod* Eigenschaft würde aufgerufen, bevor der Inhaltsfehler Konstruktor Gelegenheit hatten, führen Sie aus, und es kommt es, bevor Sie die C# Konstruktor Gelegenheit hatten, ausgeführt werden.
 
 Dies wird durch das Instanziieren einer Instanz LogTextBox unterstützt über den [LogTextView (IntPtr, JniHandleOwnership)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L28) Konstruktor, wenn die Instanz Inhaltsfehler LogTextBox zuerst eintritt verwalteten Code, und klicken Sie dann Aufrufen der [ LogTextBox (Kontext IAttributeSet, Int)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L41) Konstruktor *auf derselben Instanz* Wenn Inhaltsfehler Konstruktor ausgeführt wird.
 

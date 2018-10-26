@@ -4,15 +4,15 @@ description: Dieses Dokument beschreibt die iOS-Lokalisierungsfeatures und wie S
 ms.prod: xamarin
 ms.assetid: DFD9EB4A-E536-18E4-C8FD-679BA9C836D8
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/28/2017
-ms.openlocfilehash: 2a6096efc18f40d18ea37573e77d93796e812cc2
-ms.sourcegitcommit: 4cc17681ee4164bdf2f5da52ac1f2ae99c391d1d
+ms.openlocfilehash: 0c52db61689dd640332fb1e02e2260dda08e4686
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39387439"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115925"
 ---
 # <a name="localization-in-xamarinios"></a>Lokalisierung in Xamarin.iOS
 
@@ -70,8 +70,6 @@ Der erste Wert kann durch das Betriebssystem zwischengespeichert werden und dahe
 
 iOS generiert eine `NSCurrentLocaleDidChangeNotification` Wenn der Benutzer ihrem Gebietsschema aktualisiert. Für diese Benachrichtigung können Anwendungen überwachen, während sie ausgeführt werden und können entsprechende Änderungen an der UI vornehmen.
 
-<a name="basics" />
-
 ## <a name="localization-basics-in-ios"></a>Grundlagen der Lokalisierung in iOS
 
 Die folgenden Funktionen von iOS werden in Xamarin zum Bereitstellen von lokalisierter Ressourcen für die Anzeige für den Benutzer leicht genutzt werden. Finden Sie in der [TaskyL10n Beispiel](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) zu erfahren, wie Sie diese Ideen zu implementieren.
@@ -120,13 +118,13 @@ Weitere Informationen zu diesen **"Info.plist"** Schlüssel, sehen Sie sich von 
 
 ### <a name="getlocalizedstring-method"></a>GetLocalizedString-Methode
 
-Die `NSBundle.MainBundle.GetLocalizedString` Methode sucht lokalisierter Text, der in gespeichert wurde **.strings** Dateien im Projekt. Diese Dateien sind nach Sprache im speziell benannte Verzeichnisse mit organisiert, dass ein **.lproj** Suffix.
+Die `NSBundle.MainBundle.GetLocalizedString` Methode sucht lokalisierter Text, der in gespeichert wurde **.strings** Dateien im Projekt. Diese Dateien sind nach Sprache im speziell benannte Verzeichnisse mit organisiert, dass ein **.lproj** Suffix (Beachten Sie den ersten Buchstaben der Erweiterung ist ein kleines "L").
 
 #### <a name="strings-file-locations"></a>.Strings Dateispeicherorte
 
 - **Base.lproj** ist das Verzeichnis, die Ressourcen für die Standardsprache enthält.
   Häufig befindet sich in das Stammverzeichnis des Projekts (aber auch in platziert werden die **Ressourcen** Ordner).
-- **<language>.lproj** Verzeichnisse werden erstellt für jede unterstützte Sprache, in der Regel der **Ressourcen** Ordner.
+- **&lt;Sprache&gt;.lproj** Verzeichnisse werden erstellt für jede unterstützte Sprache, in der Regel der **Ressourcen** Ordner.
 
 Es kann eine Reihe von verschiedenen sein **.strings** Dateien in jedem Sprachverzeichnis:
 
@@ -147,9 +145,9 @@ Die Syntax für die lokalisierte Zeichenfolgenwerte lautet:
 
 Sie sollten die folgenden Zeichen in Zeichenfolgen mit Escapezeichen versehen:
 
-* `\"`  Anführungszeichen
-* `\\`  umgekehrter Schrägstrich
-* `\n`  Zeilenumbruch
+* `\"` Anführungszeichen
+* `\\` umgekehrter Schrägstrich
+* `\n` Zeilenumbruch
 
 Dies ist ein Beispiel **es/Localizable.strings** (d. h. Spanisch) Datei aus dem Beispiel:
 
@@ -171,16 +169,15 @@ Um ein Bild in iOS zu lokalisieren:
 
 1. Verweisen Sie auf das Bild im Code, z.B.:
 
-  ```csharp
-  UIImage.FromBundle("flag");
-  ```
+    ```csharp
+    UIImage.FromBundle("flag");
+    ```
 
 2. Legen Sie die Standard-Image-Datei **flag.png** in **Base.lproj** (das Verzeichnis der systemeigene Entwicklung-Sprache).
 
 3. Platzieren Sie optional die lokalisierte Versionen des Bilds in **.lproj** Ordner für jede Sprache (z. b. **es.lproj**, **ja.lproj**). Verwenden Sie den gleiche Dateinamen **flag.png** in jedem Sprachverzeichnis.
 
 Wenn ein Bild nicht für eine bestimmte Sprache vorhanden ist, wird IOS-ein Fallback auf den Standardordner der systemeigenen Sprache und laden das Image von dort aus.
-
 
 #### <a name="launch-images"></a>Startbilder
 
@@ -251,10 +248,10 @@ Finden Sie in der Apple [Datum Formatierer](https://developer.apple.com/library/
 
 iOS enthält eine Reihe von Funktionen zum Erstellen von RTL-fähige apps:
 
-* Automatisches Layout verwenden `leading` und `trailing` Attribute für das Steuerelement Ausrichtung keine besondere Vorschrift (der für Englisch links und rechts entspricht, ist jedoch umgekehrt für RTL-Sprachen).
+- Automatisches Layout verwenden `leading` und `trailing` Attribute für das Steuerelement Ausrichtung keine besondere Vorschrift (der für Englisch links und rechts entspricht, ist jedoch umgekehrt für RTL-Sprachen).
   Die [ `UIStackView` ](~/ios/user-interface/controls/uistackview.md) Steuerelement ist besonders nützlich für die Anordnung von Steuerelementen RTL-fähig sein.
-* Verwendung `TextAlignment = UITextAlignment.Natural` für die textausrichtung (die für die meisten Sprachen jedoch rechts für RTL gelassen werden).
-* `UINavigationController` automatisch spiegelt die Schaltfläche "zurück", und kehrt Wischen Richtung.
+- Verwendung `TextAlignment = UITextAlignment.Natural` für die textausrichtung (die für die meisten Sprachen jedoch rechts für RTL gelassen werden).
+- `UINavigationController` automatisch spiegelt die Schaltfläche "zurück", und kehrt Wischen Richtung.
 
 Die folgenden Screenshots zeigen die [lokalisierte Tasky Beispiel](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) in Arabisch und Hebräisch (obwohl Englisch in die Felder eingegeben wurde):
 
@@ -267,7 +264,7 @@ RNL-Text ist mit dem lokalisiert **.strings** Dateien in die gleiche Weise wie L
 
 <a name="code"/>
 
-## <a name="localizing-the-ui-in-code"></a>Lokalisieren von der Benutzeroberfläche in Code
+## <a name="localizing-the-ui-in-code"></a>Lokalisieren von der Benutzeroberfläche in code
 
 Die [Tasky (im Code lokalisiert)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) Beispiel zeigt, wie eine Anwendung lokalisieren, in dem die Benutzeroberfläche in Code (statt XIBs oder Storyboards) erstellt.
 
@@ -308,7 +305,7 @@ someControl.Text = localizedString;
 
 Das Beispiel [Tasky (lokalisierte Storyboard)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10nStoryboard) zeigt, wie Text für Steuerelemente in einem Storyboard zu lokalisieren.
 
-### <a name="project-structure"></a>Struktur des Projekts
+### <a name="project-structure"></a>Projektstruktur
 
 Die **Base.lproj** Directory enthält das Storyboard und sollten auch in der Anwendung verwendeten Bilder enthalten.
 
@@ -322,8 +319,8 @@ Die Sprachverzeichnisse sollte eine Kopie der Bilder, die lokalisiert wurden, um
 
 Beim Erstellen und Bearbeiten von Steuerelementen in einem Storyboard, wählen Sie jedes Steuerelement, und überprüfen Sie die ID, für die Lokalisierung verwendet:
 
-* In Visual Studio für Mac befindet sich die **Pad "Eigenschaften"** und heißt **Lokalisierungs-ID**.
-* In Xcode, heißt es **Objekt-ID**.
+- In Visual Studio für Mac befindet sich die **Pad "Eigenschaften"** und heißt **Lokalisierungs-ID**.
+- In Xcode, heißt es **Objekt-ID**.
 
 Diesen Zeichenfolgenwert besitzt ein Format z. B. "NF3-h8-XmR" oft, wie im folgenden Screenshot gezeigt:
 

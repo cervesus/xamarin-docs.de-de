@@ -3,29 +3,29 @@ title: Spinner
 ms.prod: xamarin
 ms.assetid: 004089E9-7C1D-2285-765A-B69143091F2A
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 039c3f3a177d62a43679facba821675c6d716a91
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 90b4755cdb4b8248c2b731d070d720076d4dda40
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30774342"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102996"
 ---
 # <a name="spinner"></a>Spinner
 
-[`Spinner`](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) ist ein Widget, in dem eine Dropdownliste zum Auswählen von Elementen dargestellt. Dieses Handbuch erläutert, wie eine einfache Anwendung erstellen, die zeigt eine Liste mit Auswahlmöglichkeiten in ein Drehfeld, gefolgt von Änderungen, die andere Werte, die verknüpft sind, mit der Auswahl angezeigt wird.
+[`Spinner`](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) ist ein Widget, das eine Dropdown-Liste für das Auswählen von Elementen enthält. Dieses Handbuch wird erläutert, wie eine einfache Anwendung erstellen, in dem eine Liste von Optionen, in ein Drehfeld angezeigt, gefolgt von Änderungen, die andere Werte, mit der Auswahl anzuzeigen.
 
-## <a name="basic-spinner"></a>Grundlegende "Spinner"
+## <a name="basic-spinner"></a>Grundlegende Spinner
 
-Im ersten Teil dieses Lernprogramms erstellen Sie eine einfache "Spinner" Widget, das eine Liste der Planeten anzeigt. Wenn ein Planet aktiviert ist, zeigt eine Toast-Nachricht das ausgewählte Element aus:
+Im ersten Teil dieses Tutorials erstellen Sie ein einfaches Spinner-Widget aus, die eine Liste von Planeten anzeigt. Wenn ein Planet ausgewählt ist, zeigt eine Popup-Nachricht das ausgewählte Element:
 
-[![Beispiel Screenshots HelloSpinner-app](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
+[![Beispielscreenshots HelloSpinner-App](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
 
-Starten Sie ein neues Projekt mit dem Namen **HelloSpinner**.
+Starten Sie ein neues Projekt namens **HelloSpinner**.
 
-Open **Resources/Layout/Main.axml** , und fügen Sie die folgenden XML-Code:
+Open **Resources/Layout/Main.axml** und fügen Sie den folgenden XML-Code:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -49,7 +49,7 @@ Open **Resources/Layout/Main.axml** , und fügen Sie die folgenden XML-Code:
 </LinearLayout>
 ```
 
-Beachten Sie, dass die [ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/)des `android:text` Attribut und der [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/)des `android:prompt` Attribut beide verweisen auf die gleiche Zeichenfolgenressource. Dieser Text verhält sich wie einen Titel für das Widget. Bei Anwendung auf die [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/), der Titeltext erscheinen im Dialogfeld zum auswählen, die beim Auswählen des Widgets angezeigt wird.
+Beachten Sie, dass die [ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/)des `android:text` Attribut und die [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/)des `android:prompt` Attribut sowohl auf die gleiche Zeichenfolgenressource verweisen. Dieser Text verhält sich wie einen Titel für das Widget. Bei Anwendung auf die [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/), der Text wird angezeigt, in dem Dialogfeld "Auswahl", die nach dem Auswählen des Widgets angezeigt wird.
 
 Bearbeiten Sie **Resources/Values/Strings.xml** und ändern Sie die Datei wie folgt aussehen:
 
@@ -71,16 +71,17 @@ Bearbeiten Sie **Resources/Values/Strings.xml** und ändern Sie die Datei wie fo
 </resources>
 ```
 
-Die zweite `<string>` -Element definiert die Titelzeichenfolge verweist die [ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/) und [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) im obigen Layout.
+Die zweite `<string>` -Element definiert die Title-Zeichenfolge, die auf die [ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/) und [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) im oben genannten Layout.
 Die `<string-array>` Element definiert die Liste von Zeichenfolgen, die als der Liste angezeigt wird der [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) Widget.
 
-Öffnen Sie jetzt **MainActivity.cs** und fügen Sie die folgenden `using` Anweisung:
+Öffnen Sie nun **"mainactivity.cs"** und fügen Sie die folgenden `using` Anweisung:
 
 ```csharp
 using System;
 ```
 
-Als Nächstes fügen Sie den folgenden Code für die [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle)) Methode:
+Als Nächstes fügen Sie folgenden Code für die [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))
+Methode:
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -101,11 +102,13 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-Nach der `Main.axml` Layout festgelegt ist, als die Inhaltsansicht der [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) Widget wird erfasst, aus dem Layout mit [ `FindViewById<>(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/p/System.Int32/).
-Die [ `CreateFromResource()` ](https://developer.xamarin.com/api/member/Android.Widget.ArrayAdapter.CreateFromResource/p/Android.Content.Context/System.Int32/System.Int32/) Methode erstellt dann ein neues [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/), die jedes Element im Zeichenfolgenarray bindet, auf die erste Darstellung für die [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) (Dies ist das wie jedes Element in der "Spinner", wenn ausgewählt angezeigt wird). Die `Resource.Array.planets_array` ID Verweise der `string-array` oben definiert und die `Android.Resource.Layout.SimpleSpinnerItem` ID verweist auf ein Layout für die standardmäßige Spinner-Darstellung, von der Plattform definiert.
-[`SetDropDownViewResource`](https://developer.xamarin.com/api/member/Android.Widget.ArrayAdapter.SetDropDownViewResource/p/System.Int32/) wird aufgerufen, um die Darstellung für jedes Element zu definieren, wenn das Widget geöffnet wird. Schließlich die [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/) festgelegt ist, alle Elemente mit Zuordnen der [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) durch Festlegen der [ `Adapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter) Eigenschaft.
+Nach der `Main.axml` Layout festgelegt ist, als der Inhaltsansicht der [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) Widget wird erfasst, aus dem Layout mit [ `FindViewById<>(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/p/System.Int32/).
+Die [`CreateFromResource()`](https://developer.xamarin.com/api/member/Android.Widget.ArrayAdapter.CreateFromResource/p/Android.Content.Context/System.Int32/System.Int32/)
+-Methode erstellt dann ein neues [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/), die jedes Element in der Zeichenfolge bindet, auf die ursprüngliche Darstellung für die [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) (Dies ist wie jedes Element in das Drehfeld, wenn ausgewählt angezeigt wird) . Die `Resource.Array.planets_array` ID-verweisen die `string-array` oben definierten und `Android.Resource.Layout.SimpleSpinnerItem` ID verweist auf ein Layout für die standard-Spinner-Darstellung, die von der Plattform definiert.
+[`SetDropDownViewResource`](https://developer.xamarin.com/api/member/Android.Widget.ArrayAdapter.SetDropDownViewResource/p/System.Int32/)
+wird aufgerufen, um die Darstellung für die einzelnen Elemente zu definieren, wenn das Widget geöffnet wird. Zum Schluss die [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/) festgelegt ist, um sämtliche Elemente mit zuzuordnen der [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) durch Festlegen der [ `Adapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter) Eigenschaft.
 
-Geben Sie nun eine Rückrufmethode, die die Anwendung notifys, wenn ein Element aus ausgewählt wurden die [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/). Hier wird diese Methode sollte folgendermaßen aussehen:
+Geben Sie nun eine Rückrufmethode, die die Anwendung notifys, bei der Auswahl eines Elements aus der [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/). Hier ist diese Methode sollte folgendermaßen aussehen:
 
 ```csharp
 private void spinner_ItemSelected (object sender, AdapterView.ItemSelectedEventArgs e)
@@ -116,26 +119,26 @@ private void spinner_ItemSelected (object sender, AdapterView.ItemSelectedEventA
 }
 ```
 
-Wenn ein Element ausgewählt ist, der Absender ist eine Umwandlung in einen [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) , damit Elemente zugegriffen werden kann. Mithilfe der `Position` Eigenschaft auf der `ItemEventArgs`, können Sie ermitteln, die den Text des ausgewählten Objekts und verwenden, um die Anzeige einer [ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/).
+Wenn ein Element ausgewählt ist, der Absender der Umwandlung in einen [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) , damit Elemente zugegriffen werden kann. Mit der `Position` Eigenschaft für die `ItemEventArgs`, Sie können herausfinden, den Text des ausgewählten Objekts und verwenden sie zum Anzeigen einer [ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/).
 
-Führen Sie die Anwendung ein; Es sollte wie folgt aussehen:
+Führen Sie die Anwendung; Es sollte wie folgt aussehen:
 
-[![Bildschirmabbildung von Beispiel "Spinner" bei Mars-Funktion als Planeten ausgewählt](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png#lightbox)
+[![Beispielhafter Screenshot des Spinner bei Mars-Funktion wie der Planet ausgewählt](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png#lightbox)
 
-## <a name="spinner-using-keyvalue-pairs"></a>Mithilfe von Schlüssel-/Wertpaaren "Spinner"
+## <a name="spinner-using-keyvalue-pairs"></a>Drehfeld, die mithilfe von Schlüssel/Wert-Paaren
 
-Es ist oft notwendig, verwenden Sie `Spinner` um Schlüsselwerte anzuzeigen, die eine Art von Daten, die von Ihrer app genutzten zugeordnet sind. Da `Spinner` funktioniert nicht direkt mit Schlüssel/Wert-Paare, müssen Sie separat speichern, das Schlüssel/Wert-Paar, Auffüllen der `Spinner` mit Schlüsselwerten, klicken Sie dann mit der die Position des Schlüssels in der "Spinner" Nachschlagen des Werts der zugehörigen Daten. 
+Es ist häufig erforderlich, verwenden Sie `Spinner` Schlüsselwerte angezeigt, die eine Art von Daten, die von Ihrer app verwendeten zugeordnet sind. Da `Spinner` funktioniert nicht direkt mit Schlüssel-/Wertpaaren, müssen Sie separat Speichern von Schlüssel/Wert-Paar, Auffüllen der `Spinner` mit Schlüsselwerten, verwenden Sie Sie dann die Position des Schlüssels in das Drehfeld, um den zugeordneten Wert zu suchen. 
 
-In den folgenden Schritten die **HelloSpinner** app wurde geändert, um die mittlere Temperatur für den ausgewählten Planeten anzuzeigen:
+In den folgenden Schritten wird die **HelloSpinner** app wird geändert, um die Mean-Temperatur für den ausgewählten Planeten anzuzeigen:
 
-Fügen Sie die folgenden `using` Anweisung **MainActivity.cs**:
+Fügen Sie die folgenden `using` Anweisung **"mainactivity.cs"**:
 
 ```csharp
 using System.Collections.Generic;
 ```
 
-Die folgenden Instanzvariable zum Hinzufügen der `MainActivity` Klasse.
-Diese Liste wird Schlüssel/Wert-Paare für die Planeten und deren Mittelwert Temperaturen enthalten:
+Fügen Sie die folgende Instanzvariable, um die `MainActivity` Klasse.
+Diese Liste enthält die Schlüssel/Wert-Paare für die Planeten und die durchschnittlichen Temperaturen:
 
 ```csharp
 private List<KeyValuePair<string, string>> planets;
@@ -157,9 +160,9 @@ planets = new List<KeyValuePair<string, string>>
 };
 ```
 
-Dieser Code erstellt einen einfachen Store für Planeten und ihre zugeordneten Mean Temperaturen an. (In einer realen-app, eine Datenbank dient normalerweise zum Speichern von Schlüsseln und deren zugeordneten Daten.)
+Dieser Code erstellt einen einfachen Store Planeten und ihre zugeordneten Mean Temperaturen an. (In einer realen app wird eine Datenbank in der Regel verwendet zum Speichern von Schlüsseln und die zugehörigen Daten.)
 
-Fügen Sie unmittelbar nach der obige Code die folgenden Zeilen den Schlüssel zu extrahieren, und fügen sie in einer Liste (in entsprechender Reihenfolge):
+Unmittelbar nach dem obigen Code fügen Sie die folgenden Zeilen ein, um die Schlüssel zu extrahieren, und platzieren Sie diese in einer Liste (in Reihenfolge) hinzu:
 
 ```csharp
 List<string> planetNames = new List<string>();
@@ -174,7 +177,7 @@ var adapter = new ArrayAdapter<string>(this,
     Android.Resource.Layout.SimpleSpinnerItem, planetNames);
 ```
 
-Ändern Sie `spinner_ItemSelected` , damit die ausgewählte Position verwendet wird, um der ausgewählten Planet zugeordnete Wert (die Temperatur) zu suchen:
+Ändern Sie `spinner_ItemSelected` , damit die ausgewählte Position verwendet wird, um den ausgewählten weltweit zugeordneten Wert (die Temperatur) zu suchen:
 
 ```csharp
 private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -186,9 +189,9 @@ private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventAr
 }
 ```
 
-Führen Sie die Anwendung ein; der Toast sollte wie folgt aussehen:
+Führen Sie die Anwendung; der Toast sollte wie folgt aussehen:
 
-[![Beispiel einer Planeten Auswahl anzeigen Temperatur](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
+[![Beispiel einer weltweit-Auswahl, die Anzeige von Temperatur](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
    
   
 
@@ -198,5 +201,5 @@ Führen Sie die Anwendung ein; der Toast sollte wie folgt aussehen:
 -   [`ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/) 
 -   [`Spinner`](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) 
 
-*Teile dieser Seite werden basierend auf der Arbeit erstellt und von Android Open Source-Projekt gemeinsam genutzt und verwendet entsprechend Begriffe, die in beschriebenen Änderungen der*
-[*Creative Commons 2.5 Namensnennung Lizenz* ](http://creativecommons.org/licenses/by/2.5/).
+*Teile dieser Seite werden Änderungen, die basierend auf der Arbeit erstellt und freigegeben werden, indem Sie das Android Open Source-Projekt, und gemäß den Bedingungen, die in beschriebenen verwendet die*
+[*Creative Commons 2.5 Attribution-Lizenz* ](http://creativecommons.org/licenses/by/2.5/).

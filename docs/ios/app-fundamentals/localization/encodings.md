@@ -1,44 +1,44 @@
 ---
-title: Internationalisierung Codierungen in Xamarin.iOS
-description: Dieses Dokument beschreibt die Internationalisierung Codierungen in Xamarin.iOS, erläutern die verfügbaren Codierungen und wie sie eine app hinzugefügt.
+title: Internationalisierungscodierungen in Xamarin.iOS
+description: Dieses Dokument beschreibt internationalisierungscodierungen in Xamarin.iOS, erläutern die verfügbaren Codierungen und wie sie eine app hinzugefügt.
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: 4963b0f95ae48ee56462a82d2f82a8dcaa231a23
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.openlocfilehash: 7c59b6f1ac269c57ab720aeb6999c0f0d178bab3
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784125"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112499"
 ---
-# <a name="internationalization-encodings-in-xamarinios"></a>Internationalisierung Codierungen in Xamarin.iOS
+# <a name="internationalization-encodings-in-xamarinios"></a>Internationalisierungscodierungen in Xamarin.iOS
 
-Nicht alle Codierungen sind in der Klassenbibliothek Xamarin.iOS standardmäßig eingeschlossen.
+Nicht alle Codierungen sind standardmäßig in der Xamarin.iOS-Klassenbibliothek enthalten.
 
-Zum Reduzieren der Größe der Anwendung Xamarin.iOS umfasst jedoch nicht den speziellen Codierung, und Sie weisen Mtouch enthalten die Assemblys, die die Unterstützung für die Codierung, die Sie benötigen.
+Um die Größe der Anwendung zu reduzieren, Xamarin.iOS nicht enthalten speziellen Codierung, und Sie anweisen Mtouch sollen die Assemblys, die die Unterstützung für die Codierung, die Sie benötigen.
 
-Dies geschieht durch Auswählen von zusätzlichen Codierungen aus dem Bereich des iOS-Builds/erweiterte in Visual Studio für Mac oder Visual Studio:
+Dies erfolgt durch Auswählen von zusätzlichen Codierungen aus der iOS-Build/erweiterte-Bereich in der Visual Studio für Mac oder Visual Studio:
 
- [![](encodings-images/00.png "Die zusätzlichen Codierungen auswählen")](encodings-images/00.png#lightbox)
+ [![](encodings-images/00.png "Wählen die zusätzlichen Codierungen")](encodings-images/00.png#lightbox)
 
- [![](encodings-images/00a.png "Die zusätzlichen Codierungen auswählen")](encodings-images/00a.png#lightbox)
+ [![](encodings-images/00a.png "Wählen die zusätzlichen Codierungen")](encodings-images/00a.png#lightbox)
 
-Sie können eine der folgenden auswählen:
+Sie können einen davon auswählen:
 
--  CJK-Schriftarten: für Chineese, Japanisch und Koreanisch
--  Naher Osten: Arabisch und Hebräisch, Türkisch Latin5.
+-  CJK: für Chineese, Japanisch und Koreanisch
+-  Naher Osten: Arabisch, Hebräisch, Türkisch und Latin5.
 -  andere: Kyrillisch, Baltisch, Vietnamesisch, Ukrainisch und Thai
--  seltenen: EBCDIC-Codierungen und anderen seltenen Codepages
--  West: lateinischen Sprachen, Ostern und Westeuropäisch
--  alle
+-  selten: EBCDIC-Codierungen und anderen selten Codepages
+-  West: lateinischen Sprachen, Easter und Westeuropäisch
+-  all
 
 
  <a name="cjk" />
 
 
-## <a name="cjk"></a>CJK-Schriftarten
+## <a name="cjk"></a>CJK
 
 -  CP51932
 -  CP932
@@ -81,7 +81,7 @@ Sie können eine der folgenden auswählen:
  <a name="rare" />
 
 
-## <a name="rare"></a>seltenen
+## <a name="rare"></a>selten
 
 -  CP1026
 -  CP1047

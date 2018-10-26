@@ -1,40 +1,40 @@
 ---
 title: Erste Schritte mit .NET einbetten
-description: Dieses Dokument enthält links zu verschiedenen Handbüchern, die beschreiben, wie mit .NET Einbetten in C#, Java, Android, Objective-C, iOS und Mac OS-Projekten.
+description: In diesem Dokument verknüpft werden, in den verschiedenen Anleitungen, die beschreiben, wie Sie mit Einbetten von .NET in C, Java, Android, Objective-C-, IOS- und MacOS-Projekte.
 ms.prod: xamarin
 ms.assetid: AF8A4798-EBDD-4E73-997B-C3D4FC5E9685
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 11/14/2017
-ms.openlocfilehash: 9829881dcb374b141bdf7fc578266ec66d90315b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 96a80d76afb769dae456e7ff9bdad32b137c6fed
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793057"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106209"
 ---
 # <a name="getting-started-with-net-embedding"></a>Erste Schritte mit .NET einbetten
 
 ## <a name="ccmd"></a>[C](c.md)
 
-Betten Sie .NET Code in C#-apps.
+.NET Code in Ihre C#-apps einbetten.
 
 ## <a name="javajavaindexmd"></a>[Java](java/index.md)
 
-Wie in Java-apps auf verschiedenen Plattformen eingebettet werden sollen.
+Informationen zum Einbetten in Java-apps auf verschiedenen Plattformen.
 
 ### <a name="androidjavaandroidmd"></a>[Android](java/android.md)
 
-Android-spezifische Ratschläge für .NET Code einbetten.
+Android-spezifische Tipps zum Einbetten von Code für .NET.
 
 ## <a name="objective-cobjective-cindexmd"></a>[Objective-C](objective-c/index.md)
 
-Einbettung in Objective-C.
+Zum Einbetten in Objective-c
 
 ### <a name="iosobjective-ciosmd"></a>[iOS](objective-c/ios.md)
 
-iOS-spezifische Tipps für das Einbetten von Code für .NET.
+iOS-spezifische Tipps zum Einbetten von Code für .NET.
 
 ### <a name="macosobjective-cmacosmd"></a>[macOS](objective-c/macos.md)
 
-MacOS-spezifische Tipps für das Einbetten von Code für .NET.
+MacOS-spezifische Tipps zum Einbetten von Code für .NET.

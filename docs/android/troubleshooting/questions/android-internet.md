@@ -1,33 +1,33 @@
 ---
-title: Warum herstellen kann nicht Mein Android Releasebuild mit dem Internet?
+title: Warum herstellen kann nicht Mein Android-Releasebuild eine Verbindung mit dem Internet?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: A6FE770B-A19A-4BF8-95E9-2CF880D4AFC5
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 7f956defd0243e1927746a53e6b3b1b05d98f8d2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cd27d5c884086cd0fade4364851039fd0cd915a0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762083"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117905"
 ---
-# <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>Warum herstellen kann nicht Mein Android Releasebuild mit dem Internet?
+# <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>Warum herstellen kann nicht Mein Android-Releasebuild eine Verbindung mit dem Internet?
 
 ## <a name="cause"></a>Ursache
 
-Die häufigste Ursache für dieses Problem ist, die die **INTERNET** Berechtigung ist in einem Debugbuild automatisch enthalten, sondern muss manuell für einen Releasebuild festgelegt werden. Ursache hierfür ist die Internet-Berechtigung verwendet wird, um einen Debugger zum Anhängen an den Prozess zu ermöglichen, wie für "DebugSymbols" beschrieben [hier](~/android/deploy-test/building-apps/build-process.md).
+Die häufigste Ursache für dieses Problem ist, die die **INTERNET** Berechtigung ist in einem Debugbuild automatisch enthalten, sondern muss manuell für einen Releasebuild festgelegt werden. Dies ist, da die Internet-Berechtigung verwendet wird, um einen Debugger Anfügen an den Prozess zu ermöglichen, für "DebugSymbols" beschriebene [hier](~/android/deploy-test/building-apps/build-process.md).
 
 
-## <a name="fix"></a>Problemlösung
+## <a name="fix"></a>Korrektur
 
-Um das Problem zu beheben, können Sie die Internet-Berechtigung in der Android-Manifest benötigen. Dies kann entweder über ein manifest-Editor oder das Manifest Sourcecode erfolgen:
+Um das Problem zu beheben, können Sie die Internet-Berechtigung im Android-Manifest anfordern. Dies kann entweder über den manifest-Editor oder des Manifests Quellcode durchgeführt werden:
 
--   Beheben Sie in Editor: Wechseln Sie In Ihrer Android-Projekt zu **Eigenschaften -> AndroidManifest.xml Required Permissions ->** und überprüfen Sie **Internet**
+-   Beheben Sie in Editor: Wechseln Sie In Ihrem Android-Projekt zu **Eigenschaften -> "androidmanifest.xml" -> erforderliche Berechtigungen** und überprüfen Sie **Internet**
 
--   Korrigieren in Sourcecode: Öffnen Sie die AndroidManifest in ein Quellcode-Editor, und fügen Sie das Tag Berechtigung innerhalb der `<Manifest>` Tags:
+-   Beheben Sie im Quellcode: Öffnen Sie die AndroidManifest in ein Quellcode-Editor, und fügen Sie das Tag Berechtigung in den `<Manifest>` Tags:
 
     ```xml
     <Manifest>

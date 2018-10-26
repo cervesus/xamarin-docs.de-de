@@ -4,21 +4,24 @@ description: Verwenden von RelativeLayout in einer Xamarin.Android-Anwendung
 ms.prod: xamarin
 ms.assetid: AFD9C849-02C3-E728-BC78-77A563612BC5
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/29/2018
-ms.openlocfilehash: af8d37775a798fc6019106a66df75843a951c108
-ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
+ms.openlocfilehash: af2972ecc92435836a75013e6203ba47c2c04627
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403415"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113138"
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
-[`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) ist eine [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/) , anzeigt, dass untergeordnete [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) Elemente im relativen Positionen. Die Position des ein [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) kann relativ zum gleichgeordneten Elementen (z. B. hinsichtlich der linken Seite des oder unterhalb eines angegebenen Elements) angegeben werden, oder in positioniert relativ zu den [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) Bereich (wie z. B. Ausrichtung unten, links von der Mitte).
+[`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) ist eine [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/) , untergeordneten anzeigt [`View`](https://developer.xamarin.com/api/type/Android.Views.View/)
+Elemente in die relativen Positionen. Die Position des ein [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) kann relativ zum gleichgeordneten Elementen (z. B. hinsichtlich der linken Seite des oder unterhalb eines angegebenen Elements) angegeben werden, oder in positioniert relativ zu den [`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)
+Bereich (z. B. links unten ausgerichtet angezeigt Center).
 
-Ein [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) ist ein sehr leistungsfähiges Dienstprogramm, bei geschachtelten Entwerfen einer Benutzeroberfläche, da es entfernen kann [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)s. Wenn Sie sich mit mehreren geschachtelten [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) Gruppen möglicherweise können sie mit einem einzelnen ersetzen [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/).
+Ein [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) ist ein sehr leistungsfähiges Dienstprogramm, bei geschachtelten Entwerfen einer Benutzeroberfläche, da es entfernen kann [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)s. Wenn Sie sich über mehrere geschachtelte [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
+Gruppen, möglicherweise können sie mit einem einzelnen ersetzen [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/).
 
 Starten Sie ein neues Projekt namens **HelloRelativeLayout**.
 
@@ -62,7 +65,8 @@ Bei Verwendung einer [ `RelativeLayout` ](https://developer.xamarin.com/api/type
 
 Alle verfügbaren Attribute sind in definiert [ `RelativeLayout.LayoutParams` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout+LayoutParams/).
 
-Stellen Sie sicher, dass Sie dieses Layout im Laden der [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/) Methode:
+Stellen Sie sicher, dass Sie dieses Layout im Laden der [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)
+Methode:
 
 ```csharp
 protected override void OnCreate (Bundle savedInstanceState)
