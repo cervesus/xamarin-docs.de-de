@@ -1,61 +1,61 @@
 ---
 title: Kontakte und ContactsUI in Xamarin.iOS
-description: Dieser Artikel umfasst das Arbeiten mit dem neuen Kontakte und Kontakte UI Frameworks in einem Xamarin.iOS-app. Diese Frameworks Ersetzen der vorhandenen Adressbuch und Adresse Book-Benutzeroberfläche, die in früheren Versionen von iOS verwendet.
+description: Dieser Artikel beschreibt das Arbeiten mit dem neue Kontakte und Kontakte-UI-Frameworks in einer Xamarin.iOS-app. Diese Frameworks ersetzen vorhandenes Adressbuchs und Adresse Book-Benutzeroberfläche, die in früheren Versionen von iOS verwendet.
 ms.prod: xamarin
 ms.assetid: 7b6fb66a-5e19-4a5a-9ed2-f6b02af099af
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 60b59023e937215bc640aeb4e9858baa0533db14
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: e3f1533605d08df58d8d257714dd8135690c0e5d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786677"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105453"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Kontakte und ContactsUI in Xamarin.iOS
 
-_Dieser Artikel umfasst das Arbeiten mit dem neuen Kontakte und Kontakte UI Frameworks in einem Xamarin.iOS-app. Diese Frameworks Ersetzen der vorhandenen Adressbuch und Adresse Book-Benutzeroberfläche, die in früheren Versionen von iOS verwendet._
+_Dieser Artikel beschreibt das Arbeiten mit dem neue Kontakte und Kontakte-UI-Frameworks in einer Xamarin.iOS-app. Diese Frameworks ersetzen vorhandenes Adressbuchs und Adresse Book-Benutzeroberfläche, die in früheren Versionen von iOS verwendet._
 
-Mit der Einführung von iOS 9, Apple hat zwei neue Frameworks, veröffentlicht `Contacts` und `ContactsUI`, ersetzen die vorhandene Adressbuch und Adressbuch Benutzeroberflächen-Frameworks, die von iOS 8 und früher verwendeten.
+Apple hat mit der Einführung von iOS 9 sind zwei neue Frameworks vorgestellt, `Contacts` und `ContactsUI`, ersetzen Sie das vorhandene Adressbuch und Adressbuch Benutzeroberflächen-Frameworks von iOS 8 und frühere Versionen verwendet.
 
 Die beiden neuen Frameworks enthalten die folgende Funktionen:
 
-- [**Kontakte** ](#contacts) -ermöglicht den Zugriff auf die Daten des Benutzers Kontaktliste.
-    Da die meisten apps nur schreibgeschützten Zugriff erfordern, wurde dieses Framework für den Thread sicheren, nur-Lese Zugriff optimiert.
+- [**Kontakte** ](#contacts) -bietet Zugriff auf die Daten des Benutzers Kontaktliste.
+    Da die meisten apps nur schreibgeschützten Zugriff erfordern, wurde dieses Framework für den Thread sicher, schreibgeschützten Zugriff optimiert.
 
-- [**ContactsUI** ](#contactsui) -Xamarin.iOS Benutzeroberflächenelemente bietet anzeigen, bearbeiten, wählen und Kontakte auf iOS-Geräte erstellen.
+- [**ContactsUI** ](#contactsui) -bietet der Xamarin.iOS-UI-Elemente angezeigt werden, bearbeiten, wählen und Kontakte auf iOS-Geräten erstellen.
 
-[![](contacts-images/add01.png "Ein Beispiel für Kontakt Blatt auf einem iOS-Gerät")](contacts-images/add01.png#lightbox)
+[![](contacts-images/add01.png "Ein Beispiel für Contact-Tabelle auf einem iOS-Gerät")](contacts-images/add01.png#lightbox)
 
 > [!IMPORTANT]
-> Die vorhandene `AddressBook` und `AddressBookUI` Frameworks Verwenden von iOS 8 (vor) sind in iOS 9 veraltet und sollte ersetzt werden, mit dem neuen `Contacts` und `ContactsUI` -Frameworks für alle bisherigen Xamarin.iOS app so bald wie möglich. Neue apps sollten mit den neuen Frameworks geschrieben werden.
+> Die vorhandene `AddressBook` und `AddressBookUI` Frameworks von iOS 8 verwendet wird (und früher) sind veraltet in iOS 9 und ersetzt werden soll, mit dem neuen `Contacts` und `ContactsUI` Frameworks so schnell wie möglich für alle vorhandenen Xamarin.iOS-app. Neue apps sollten für die neue Frameworks geschrieben werden.
 
 
 
 
-In den folgenden Abschnitten führen wir einen Blick auf diese neuen Frameworks und wie diese in einer app Xamarin.iOS implementiert.
+In den folgenden Abschnitten werde wir einen Blick auf diese neue Frameworks und wie Sie diese in einer Xamarin.iOS-app zu implementieren.
 
 <a name="contacts" />
 
-## <a name="the-contacts-framework"></a>Das Framework Kontakte
+## <a name="the-contacts-framework"></a>Das Framework für Kontakte
 
-Das Kontakte-Framework bietet Xamarin.iOS Zugriff auf die Kontaktinformationen des Benutzers. Da die meisten apps nur schreibgeschützten Zugriff erfordern, wurde dieses Framework für den Thread sicheren, nur-Lese Zugriff optimiert.
+Die Contacts-Framework bietet es sich um Xamarin.iOS-Zugriff auf die Kontaktinformationen des Benutzers. Da die meisten apps nur schreibgeschützten Zugriff erfordern, wurde dieses Framework für den Thread sicher, schreibgeschützten Zugriff optimiert.
 
 <a name="Contact_Objects" />
 
 ### <a name="contact-objects"></a>Contact-Objekte
 
-Die `CNContact` Klasse bietet sicheren, nur-Lese Threadzugriffs auf die Eigenschaften eines Kontakts, z. B. Name, Adresse oder Telefonnummern. `CNContact` Funktionen wie eine `NSDictionary` und enthält mehrere, schreibgeschützten Auflistungen von Eigenschaften (z. B. Adressen oder Telefonnummern):
+Die `CNContact` Klasse bietet sicheren, nur-Lese Threadzugriffs auf die Eigenschaften eines Kontakts, z. B. Name, Adresse oder Telefonnummer. `CNContact` Funktionen, wie z.B. eine `NSDictionary` und enthält mehrere schreibgeschützten Auflistungen von Eigenschaften (z. B. Adressen oder Telefonnummern):
 
-[![](contacts-images/contactobjects.png "Wenden Sie sich an Objekt (Übersicht)")](contacts-images/contactobjects.png#lightbox)
+[![](contacts-images/contactobjects.png "Wenden Sie sich an Object-Überblick")](contacts-images/contactobjects.png#lightbox)
 
-Für jede Eigenschaft, die mehrere Werte (z. B. e-Mail-Adresse oder Telefonnummer Ziffern) enthalten kann, werden sie als Array von dargestellt werden `NSLabeledValue` Objekte. `NSLabeledValue` ist ein Tupel der Thread-sichere bestehend aus einem nur-Lese Satz von Bezeichnungen und Werte, in dem die Bezeichnung der Wert für den Benutzer (z. B. Heim- oder Arbeit e-Mail) definiert. Die Kontakte-Framework bietet eine Auswahl von vordefinierten Bezeichnungen (über die `CNLabelKey` und `CNLabelPhoneNumberKey` statische Klassen), die Sie in Ihrer app verwenden können oder Sie haben die Möglichkeit, benutzerdefinierte Etiketten für Ihre Anforderungen definieren.
+Bei jeder Eigenschaft, die mehrere Werte (z. B. e-Mail-Adresse oder Telefonnummer Zahlen) haben kann, werden sie als Bytearray dargestellt werden `NSLabeledValue` Objekte. `NSLabeledValue` ein Thread sicher Tupel bestehend aus einem nur-Lese Satz von Bezeichnungen und Werte, in dem die Bezeichnung der Wert für den Benutzer (z. B. Heimnetzwerk oder e-Mail) definiert. Die Contacts-Framework bietet eine Auswahl von vordefinierten Bezeichnungen (über die `CNLabelKey` und `CNLabelPhoneNumberKey` statische Klassen), die Sie in Ihrer app verwenden können, oder Sie haben die Möglichkeit, benutzerdefinierte Bezeichnungen für Ihre Anforderungen zu definieren.
 
-Verwenden Sie für alle Xamarin.iOS app, die die Werte eines vorhandenen Kontakts anpassen (oder neue erstellen) muss der `NSMutableContact` Version der Klasse und ihre untergeordneten Klassen (z. B. `CNMutablePostalAddress`).
+Verwenden Sie für eine Xamarin.iOS-app, die die Werte eines schon vorhandenen Kontakts anpassen (oder neue erstellen), die `NSMutableContact` Version der Klasse und ihrer untergeordneten Klassen (z. B. `CNMutablePostalAddress`).
 
-Im folgenden Code wird z. B. erstellen ein neues Kontakts und Auflistung der Benutzer, Kontakte hinzuzufügen:
+Der folgende Code wird z. B. einen neuen Kontakt erstellen und fügen Sie es dem Benutzer die Sammlung von Kontakten hinzu:
 
 ```csharp
 // Create a new Mutable Contact (read/write)
@@ -111,20 +111,20 @@ else
 }
 ```
 
-Wenn dieser Code auf einem iOS 9-Gerät ausgeführt wird, wird der User-Auflistung ein neuer Kontakt hinzugefügt werden. Zum Beispiel:
+Wenn dieser Code auf iOS 9-Geräten ausgeführt wird, wird der Benutzer-Auflistung ein neuer Kontakt hinzugefügt werden. Zum Beispiel:
 
-[![](contacts-images/add01.png "Ein neuer Kontakt hinzugefügt, der User-Auflistung")](contacts-images/add01.png#lightbox)
+[![](contacts-images/add01.png "Einen neuen Kontakt, der Benutzer der Auflistung hinzugefügt wurde")](contacts-images/add01.png#lightbox)
 
-### <a name="contact-formatting-and-localization"></a>Wenden Sie sich an Formatierung und Lokalisierung
+### <a name="contact-formatting-and-localization"></a>Wenden Sie sich an Formatierungen und Lokalisierung
 
-Das Framework Kontakte enthält verschiedene Objekte und Methoden, die Ihnen dabei helfen, formatieren und Inhalt für die Anzeige für den Benutzer zu lokalisieren. Beispielsweise würde der folgende Code einen Namen für die Kontakte und e-Mail-Adresse für die Anzeige ordnungsgemäß formatieren:
+Die Contacts-Framework enthält verschiedene Objekte und Methoden, die Ihnen helfen, formatieren und Inhalt für die Anzeige für den Benutzer zu lokalisieren. Der folgende Code würde beispielsweise einen Namen für die Kontakte und e-Mail-Adresse für die Anzeige ordnungsgemäß formatieren:
 
 ```csharp
 Console.WriteLine(CNContactFormatter.GetStringFrom(contact, CNContactFormatterStyle.FullName));
 Console.WriteLine(CNPostalAddressFormatter.GetStringFrom(workAddress, CNPostalAddressFormatterStyle.MailingAddress));
 ```
 
-Wenden Sie sich an Framework verfügt für die Eigenschaft Bezeichnungen, die Sie in Ihrer app-Benutzeroberfläche anzeigen werden Methoden zum Lokalisieren von diese Zeichenfolgen als auch. Erneut, basiert dies auf das aktuelle Gebietsschema des iOS-Gerät, die die app ausgeführt wird. Zum Beispiel:
+Für die Eigenschaft-Bezeichnern, die Sie in Ihrer app Benutzeroberfläche anzeigen lassen, hat das Framework wenden Sie sich an Methoden für diese Zeichenfolgen auch lokalisieren. In diesem Fall basiert dies auf dem aktuellen Gebietsschema des iOS-Geräts, die die app ausgeführt wird. Zum Beispiel:
 
 ```csharp
 // Localized properties
@@ -132,9 +132,9 @@ Console.WriteLine(CNContact.LocalizeProperty(CNContactOptions.Nickname));
 Console.WriteLine(CNLabeledValue<NSString>.LocalizeLabel(CNLabelKey.Home));
 ```
 
-### <a name="fetching-existing-contacts"></a>Existierenden Kontakte abrufen
+### <a name="fetching-existing-contacts"></a>Abrufen der existierenden Kontakte
 
-Mit einer Instanz von der `CNContactStore` -Klasse, können Sie Kontaktinformationen aus der Benutzerdatenbank Kontakte abzurufen. Die `CNContactStore` enthält alle Methoden für das Abrufen oder aktualisieren, Kontakte und Gruppen aus der Datenbank erforderlich sind. Da diese Methoden synchron sind, wird empfohlen, dass Sie sie in einem Hintergrundthread zum Blockieren der Benutzeroberflächenautomatisierungs ausführen.
+Mit einer Instanz von der `CNContactStore` -Klasse, können Sie Kontaktinformationen aus der Datenbank des Benutzers Kontakte abrufen. Die `CNContactStore` enthält alle Methoden zum Abrufen oder Aktualisieren von Kontakten und Gruppen aus der Datenbank erforderlich. Da diese Methoden synchron sind, wird empfohlen, dass Sie diese in einem Hintergrundthread, um zu verhindern, die Blockierung der Benutzeroberfläche ausführen.
 
 Mithilfe von Prädikaten (erstellt aus den `CNContact` Klasse), können Sie die Ergebnisse zurückgegeben, wenn das Abrufen von Kontakten aus der Datenbank filtern. Nur Kontakte abzurufen, die die Zeichenfolge enthalten `Appleseed`, verwenden Sie den folgenden Code:
 
@@ -144,16 +144,16 @@ var predicate = CNContact.GetPredicateForContacts("Appleseed");
 ```
 
 > [!IMPORTANT]
-> Generische und zusammengesetzte Prädikate werden nicht durch das Framework für Kontakte unterstützt.
+> Generische und zusammengesetzte Prädikate werden durch das Framework Kontakte nicht unterstützt.
 
-Um beispielsweise nur das Abrufen von Daten zu beschränken die **"givenName"** und **FamilyName** Eigenschaften des Kontakts, verwenden Sie den folgenden Code:
+Beispielsweise, um das Beschränken des Abruf nur der **"givenName"** und **FamilyName** Eigenschaften des Kontakts, verwenden Sie den folgenden Code:
 
 ```csharp
 // Define fields to be searched
 var fetchKeys = new NSString[] {CNContactKey.GivenName, CNContactKey.FamilyName};
 ```
 
-Um die Datenbank zu suchen, und die Ergebnisse zurückgeben, verwenden Sie schließlich den folgenden Code:
+Zum Durchsuchen der Datenbank und die Ergebnisse zurückzugeben, verwenden Sie abschließend den folgenden Code:
 
 ```csharp
 // Grab matching contacts
@@ -162,21 +162,21 @@ NSError error;
 var contacts = store.GetUnifiedContacts(predicate, fetchKeys, out error);
 ```
 
-Wenn dieser Code nach dem das Beispiel, die wir ausgeführt wurde in erstellt die **Kontakte Objekt** obigen Abschnitt zurückgibt "John Appleseed" Wenden Sie sich an, die soeben erstellt wurde.
+Wenn dieser Code nach dem Beispiel, die wir ausgeführt wurde in erstellt die **Contacts-Objekts** Abschnitt oben zurückgibt "John Appleseed" Wenden Sie sich an, die wir gerade erstellt haben.
 
-### <a name="contact-access-privacy"></a>Wenden Sie sich an den Zugriff Datenschutz
+### <a name="contact-access-privacy"></a>Wenden Sie sich an den Zugriff von Datenschutz
 
-Da Endbenutzer können gewähren oder Verweigern des Zugriffs auf ihre Kontaktinformationen für eine einzelne Anwendung, erstmalig Sie stellen einen Aufruf der `CNContactStore`, ein Dialogfeld wird angezeigt und darum gebeten, Zugriff auf Ihre app zu ermöglichen.
+Da Endbenutzer können gewähren oder Verweigern des Zugriffs auf die Kontaktinformationen auf einer Basis pro Anwendung, beim ersten Sie stellen einen Aufruf der `CNContactStore`, ein Dialogfeld wird gebeten, die Zugriff für Ihre app angezeigt werden.
 
-Die berechtigungsanforderung wird nur einmal angezeigt werden, die app, ausgeführt wurde, und nachfolgende ist, erstmalig ausgeführt wird, oder Aufrufe von der `CNContactStore` verwenden die Berechtigung, die der Benutzer zu diesem Zeitpunkt ausgewählt.
+Der berechtigungsanforderung wird nur einmal angezeigt werden, die app ausgeführt, und nachfolgende wird, erstmalig ausgeführt wird oder Aufrufe von der `CNContactStore` verwenden Sie die Berechtigung, die der Benutzer zu diesem Zeitpunkt ausgewählt werden.
 
-Entwerfen Sie Ihre app, damit es den Benutzer Verweigern des Zugriffs auf ihre Kontaktdatenbank ordnungsgemäß behandelt.
+Entwerfen Sie Ihre app, damit den Benutzer Verweigern des Zugriffs auf ihre Kontaktdatenbank ordnungsgemäß verarbeitet.
 
 #### <a name="fetching-partial-contacts"></a>Partielle Kontakte abrufen
 
-Ein _teilweise wenden Sie sich an_ wird ein Kontakt, der nur einige der verfügbaren Eigenschaften aus dem Kontakt Store für abgerufen wurden. Wenn Sie versuchen, eine Eigenschaft zuzugreifen, die nicht bereits abgerufen wurde, führt dies zu einer Ausnahme.
+Ein _teilweise wenden Sie sich an_ wird ein Kontakt, der nur einige der verfügbaren Eigenschaften aus dem Store wenden Sie sich an, für abgerufen wurden. Wenn Sie versuchen, eine Eigenschaft zuzugreifen, die nicht bereits abgerufen wurde, führt dies zu einer Ausnahme.
 
-Sie können leicht überprüfen, um festzustellen, ob Sie ein bestimmter Kontakt die gewünschte Eigenschaft verfügt, indem Sie entweder die `IsKeyAvailable` oder `AreKeysAvailable` Methoden die `CNContact` Instanz. Zum Beispiel:
+Sie können ganz einfach überprüfen, um festzustellen, ob Sie ein bestimmter Kontakt die gewünschte Eigenschaft hat, indem Sie entweder die `IsKeyAvailable` oder `AreKeysAvailable` Methoden der `CNContact` Instanz. Zum Beispiel:
 
 ```csharp
 // Does the contact contain the requested key?
@@ -190,19 +190,19 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 ```
 
 > [!IMPORTANT]
-> Die `GetUnifiedContact` und `GetUnifiedContacts` Methoden die `CNContactStore` Klasse _nur_ einen partiellen Kontakt begrenzt auf die Eigenschaften, die vom bereitgestellten Fetch-Schlüssel angefordert zurückgeben.
+> Die `GetUnifiedContact` und `GetUnifiedContacts` Methoden der `CNContactStore` Klasse _nur_ einen partiellen Kontakt beschränkt auf die Eigenschaften von die Fetch-Schlüssel bereitgestellte angefordert zurückgeben.
 
 ### <a name="unified-contacts"></a>Einheitliche Kontakte
 
-Ein Benutzer möglicherweise verschiedene Quellen von Kontaktinformationen für eine einzelne Person in ihrer Datenbank (z. B. iCloud, Facebook oder Google Mail). In iOS und OS X-apps können diese Kontaktinformationen automatisch miteinander verknüpft und angezeigt, die dem Benutzer als ein einzelnes _Unified wenden Sie sich an_:
+Ein Benutzer möglicherweise unterschiedliche Quellen von Kontaktinformationen für eine einzelne Person in ihre Kontaktdatenbank (z.B. iCloud, Facebook oder Google Mail). In iOS und OS X-apps können diese Kontaktinformationen automatisch miteinander verknüpft sind und angezeigt, die für den Benutzer als einzelne _Unified wenden Sie sich an_:
 
-[![](contacts-images/unified01.png "Übersicht über Unified Kontakte")](contacts-images/unified01.png#lightbox)
+[![](contacts-images/unified01.png "Übersicht über die einheitliche Kontakte")](contacts-images/unified01.png#lightbox)
 
-Unified Kontakt ist einen temporären, speicherresidenten Überblick über die Link-Kontaktinformationen, die seinen eigenen eindeutigen Bezeichner zugewiesen wird (die, den Kontakt erneut abzurufen, bei Bedarf verwendet werden soll). Standardmäßig wird das Framework Kontakte Unified Kontakt möglichst zurück.
+Diese einheitliche wenden Sie sich an ist eine temporäre in-Memory-Sicht der Kontaktinformationen Link, die einen eigenen eindeutigen Bezeichner zugewiesen wird (die, den Kontakt erneut abzurufen, bei Bedarf verwendet werden soll). Standardmäßig wird das Framework Kontakte einen Kontakt Unified, wann immer möglich zurückgegeben.
 
 ### <a name="creating-and-updating-contacts"></a>Erstellen und Aktualisieren von Kontakten
 
-Wie wir gesehen, in haben der [Kontaktobjekte](#Contact_Objects) Abschnitt oben, verwenden Sie eine `CNContactStore` und einer Instanz von eine `CNMutableContact` zum Erstellen neuer Kontakte, die dann an des Benutzers geschrieben werden wenden Sie sich an Datenbank mithilfe einer `CNSaveRequest`:
+Wie in beschrieben der [Objekte wenden Sie sich an](#Contact_Objects) weiter oben, Sie verwenden eine `CNContactStore` und einer Instanz von einer `CNMutableContact` zum Erstellen neuer Kontakte, die Sie dann auf das geschrieben werden wenden Sie sich an Datenbank mithilfe einer `CNSaveRequest`:
 
 ```csharp
 // Create a new Mutable Contact (read/write)
@@ -225,9 +225,9 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 }
 ```
 
-Ein `CNSaveRequest` kann auch verwendet werden, das Zwischenspeichern von mehreren Kontakt- und Gruppenobjekte Änderungen in einem einzigen Vorgang batch diese Änderungen an der `CNContactStore`.
+Ein `CNSaveRequest` kann auch verwendet werden, zum Zwischenspeichern von mehrere Kontakt- und Änderungen in einem Vorgang, und diese Änderungen für batch die `CNContactStore`.
 
-Um ein nicht änderbarer Kontakt aus einem Abrufvorgang abgerufen zu aktualisieren, müssen Sie zuerst eine änderbare Kopie anfordern, die Sie ändern und in den Kontakt Speicher speichern. Zum Beispiel:
+Um eine nicht änderbare wenden Sie sich an, die von einem Abrufvorgang abgerufen zu aktualisieren, müssen Sie zuerst eine änderbare Kopie anfordern, die Sie ändern und speichern Sie dann die Kontaktspeicher. Zum Beispiel:
 
 ```csharp
 // Get mutable copy of contact
@@ -255,33 +255,33 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 ### <a name="contact-change-notifications"></a>Wenden Sie sich an Änderungsbenachrichtigungen
 
-Bei einer Änderung ein Kontakts, der Kontakt-Speicher sendet eine `CNContactStoreDidChangeNotification` an Standardeinstellung Benachrichtigung Center. Wenn Sie zwischengespeichert haben oder Kontakte, die aktuell angezeigt werden, müssen Sie diese Objekte aus dem Store Kontakt aktualisieren (`CNContactStore`).
+Bei einer Änderung ein Kontakts, der Kontakt-Store stellt ein `CNContactStoreDidChangeNotification` auf die Standard-Mitteilungszentrale. Wenn Sie zwischengespeichert haben oder aktuell im Kontakte angezeigt werden, müssen Sie die Elemente aus der Contact-Store zu aktualisieren (`CNContactStore`).
 
 ### <a name="containers-and-groups"></a>Container und Gruppen
 
-Kontakte eines Benutzers können entweder lokal auf dem Gerät des Benutzers oder als aus einem oder mehreren Serverkonten (z. B. Facebook oder Google) auf dem Gerät synchronisierte Kontakte vorhanden sein. Jeder Pool von Kontakten verfügt über einen eigenen _Container_ ein bestimmtes Kontakts kann nur in einem Container befinden.
+Kontakte eines Benutzers können entweder lokal auf dem Gerät des Benutzers oder als Kontakte, die auf dem Gerät synchronisiert werden, von einem oder mehreren Serverkonten (z.B. Facebook oder Google) vorhanden sein. Jeder Pool von Kontakten verfügt über eine eigene _Container_ und ein bestimmter Kontakt kann nur in einem Container vorhanden sein.
 
 [![](contacts-images/containers01.png "Container und Gruppen (Übersicht)")](contacts-images/containers01.png#lightbox)
 
-Einige Container ermöglichen die Kontakte in eine oder mehrere angeordnet werden _Gruppen_ oder _Untergruppen_. Dieses Verhalten ist abhängig von der Sicherungsspeicher für einen Container. Beispielsweise kann iCloud hat nur ein Container aber viele Gruppen (jedoch keine untergeordneten Gruppen). Microsoft Exchange unterstützt keine Gruppen andererseits, jedoch können mehrere Container (eine für jeden Exchange-Ordner) haben.
+Einige Container ermöglichen Kontakte in eine oder mehrere angeordnet werden _Gruppen_ oder _Untergruppen_. Dieses Verhalten ist abhängig von der Sicherungsspeicher für einen bestimmten Container. Z. B. kann iCloud weist nur einen Container jedoch haben viele Gruppen (aber keine untergeordneten Gruppen). Microsoft Exchange auf der anderen Seite Gruppen nicht unterstützt. jedoch kann mehrere Container (eine für jeden Exchange-Ordner) haben.
 
-[![](contacts-images/containers02.png "Überschneidungen Sie Container und Gruppen")](contacts-images/containers02.png#lightbox)
+[![](contacts-images/containers02.png "In Container und Gruppen überlappen")](contacts-images/containers02.png#lightbox)
 
 <a name="contactsui" />
 
 ## <a name="the-contactsui-framework"></a>Das Framework ContactsUI
 
-Für Situationen, in denen Ihre Anwendung keine benutzerdefinierte Benutzeroberfläche anzuzeigen muss, können Sie der ContactsUI-Framework verwenden, um Benutzeroberflächenelemente anzeigen, bearbeiten, auswählen und Erstellen von Kontakten in Ihrer app Xamarin.iOS darzustellen.
+In Situationen, in denen Ihre Anwendung nicht notwendigerweise um eine benutzerdefinierte Benutzeroberfläche anzuzeigen, können Sie das ContactsUI-Framework zur Darstellung der Elemente der Benutzeroberfläche anzeigen, bearbeiten, wählen und Kontakte in Ihrer Xamarin.iOS-app erstellen.
 
-Mithilfe des Apple integrierte Steuerelemente verringern Sie nicht nur die Menge an Code, die Sie erstellen, um Kontakte in Ihrer app Xamarin.iOS unterstützen, sondern Sie stellen eine konsistente Oberfläche für Benutzer der app.
+Mithilfe von Apple integrierte Steuerelemente reduzieren Sie nicht nur die Menge des Codes, die Sie erstellen, um Kontakte zu Ihrer Xamarin.iOS-app zu unterstützen, aber Sie stellen eine konsistente Schnittstelle, die Benutzer der app.
 
-### <a name="the-contact-picker-view-controller"></a>Die Auswahl einer Kontakt-View-Controller
+### <a name="the-contact-picker-view-controller"></a>Der Kontakt-Auswahl-View-Controller
 
-Wenden Sie sich an Picker-View-Controller (`CNContactPickerViewController`) verwaltet der Kontakt Auswahl einer Standardsicht, die dem Benutzer ermöglicht, wählen Sie einen Kontakt oder ein Kontakt-Eigenschaft aus der Benutzerdatenbank wenden Sie sich an. Der Benutzer kann eine oder mehrere Kontakt (basierend auf ihrer Verwendung) auswählen, und wenden Sie sich an Datumsauswahl View-Controller fordert nicht für die Berechtigung, ehe Sie die Auswahl.
+Der Kontakt-Auswahl-View-Controller (`CNContactPickerViewController`) verwaltet der Kontakt-Auswahl-Standardansicht, die dem Benutzer ermöglicht, wählen Sie einen Kontakt oder eine Kontakt-Eigenschaft der Datenbank des Benutzers wenden Sie sich an. Der Benutzer kann eine oder mehrere Kontakt (basierend auf dessen Nutzung) auswählen, und wenden Sie sich an Auswahl View-Controller fordert nicht für die Berechtigung vor der Anzeige der Auswahl.
 
-Vor dem Aufrufen der `CNContactPickerViewController` -Klasse, Sie definieren, welche Eigenschaften kann der Benutzer auswählen und Definieren von Prädikaten übereinstimmen, zum Steuern der Anzeige und die Auswahl von Kontakteigenschaften.
+Vor dem Aufruf der `CNContactPickerViewController` -Klasse, Sie definieren die Eigenschaften, die der Benutzer auswählen kann, und Definieren von Prädikaten übereinstimmen, zum Steuern der Anzeige und die Auswahl der Eigenschaften, wenden Sie sich an.
 
-Verwenden Sie eine Instanz der Klasse, die von erben `CNContactPickerDelegate` So reagieren Sie auf die Interaktion mit der Auswahl des Benutzers. Zum Beispiel:
+Verwenden Sie eine Instanz der Klasse, die von erbt `CNContactPickerDelegate` , auf die Interaktion mit der Auswahl des Benutzers zu reagieren. Zum Beispiel:
 
 ```csharp
 using System;
@@ -326,7 +326,7 @@ namespace iOS9Contacts
 }
 ```
 
-Damit wird den Benutzer eine e-Mail-Adresse aus den Kontakten in ihre Datenbank auswählen, können Sie den folgenden Code:
+Damit wird den Benutzer eine e-Mail-Adresse aus den Kontakten in ihre Datenbank auswählen, können Sie den folgenden Code verwenden:
 
 ```csharp
 // Create a new picker
@@ -344,9 +344,9 @@ picker.Delegate = new ContactPickerDelegate();
 PresentViewController(picker,true,null);
 ```
 
-### <a name="the-contact-view-controller"></a>Die Kontakt-View-Controller
+### <a name="the-contact-view-controller"></a>Wenden Sie sich an Ansichtscontroller
 
-Die Kontakt-View-Controller (`CNContactViewController`)-Klasse stellt einen Controller aus, um eine Standardansicht für wenden Sie sich an dem Endbenutzer präsentieren. Wenden Sie sich an der Ansicht können neue neu "," Unbekannt "oder" vorhandene Kontakte angezeigt und der Typ muss angegeben werden, bevor die Ansicht angezeigt wird, durch den richtigen statischen Konstruktor aufrufen (`FromNewContact`, `FromUnknownContact`, `FromContact`). Beispiel:
+Der Kontakt-View-Controller (`CNContactViewController`)-Klasse bietet einen Controller aus, um eine Kontakt-Standardansicht für den Endbenutzer zu präsentieren. Wenden Sie sich an der Ansicht können neue, die unbekannt oder die vorhandene Kontakte angezeigt und der Typ muss angegeben werden, bevor die Ansicht angezeigt wird, durch den richtigen statischen Konstruktor aufrufen (`FromNewContact`, `FromUnknownContact`, `FromContact`). Beispiel:
 
 ```csharp
 // Create a new contact view
@@ -358,12 +358,12 @@ PresentViewController(view, true, null);
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel hat eine ausführliche Übersicht über das Arbeiten mit den Kontakt- und wenden Sie sich an UI-Frameworks in einer Anwendung Xamarin.iOS übernommen. Zuerst behandelt sie die verschiedenen Typen von Objekten, die Kontakt-Framework bietet, und wie Sie sie neu erstellen oder existierenden Kontakte zuzugreifen. Außerdem wird die wenden Sie sich an Benutzeroberflächen-Framework, um vorhandene Kontakte auswählen und Anzeigen von Kontaktinformationen untersucht.
+Dieser Artikel hat es sich um einen detaillierten Einblick in die Arbeit mit der wenden Sie sich an und wenden Sie sich an UI-Frameworks in einer Xamarin.iOS-Anwendung geführt. Erstens behandelt es die verschiedenen Typen von Objekten, die Kontakt-Framework bietet, und wie verwenden sie zum Erstellen oder existierenden Kontakte zugreifen. Er überprüft auch das Framework wenden Sie sich an der Benutzeroberfläche zum Auswählen der existierenden Kontakte und zum Anzeigen von Kontaktinformationen.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [QuickContacts-Beispiel](https://developer.xamarin.com/samples/monotouch/ios9/QuickContacts/)
-- [Was ist neu in iOS 9](https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [Neuigkeiten in iOS 9](https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [Frameworkverweis Kontakte](https://developer.apple.com/documentation/contacts?language=objc)
-- [ContactsUI Frameworkverweis](https://developer.apple.com/documentation/contactsui?language=objc)
+- [Frameworkverweis ContactsUI](https://developer.apple.com/documentation/contactsui?language=objc)

@@ -1,78 +1,78 @@
 ---
-title: Arbeiten mit tvos. außerdem wurden die Steuerelemente der Seite in Xamarin
-description: Dieses Dokument beschreibt die Arbeit mit Seitensteuerelemente in Apps mit Xamarin tvos. außerdem wurden. Es enthält eine allgemeine Beschreibung der Steuerelemente der Seite erläutert, wie diese in Storyboards einrichten und untersucht, wie auf der Seite Änderungsereignisse reagieren.
+title: Arbeiten mit TvOS Seitensteuerelemente in Xamarin
+description: Dieses Dokument beschreibt, wie Sie arbeiten mit Seitensteuerelementen für TvOS in einer app mit Xamarin erstellt wurde. Es enthält eine allgemeine Beschreibung der Steuerelemente der Seite wird erläutert, wie diese in Storyboards einrichten und untersucht, wie Sie auf der Seitenereignisse reagieren.
 ms.prod: xamarin
 ms.assetid: 19198D46-7BBE-4D04-9BFA-7D1C5C9F9FC6
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: bf020f230afc2eb2a09d863424bd4eb56ea1bde6
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 173bc7713b5b8c330d4d4c5863bef24be8bdcb52
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789157"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107468"
 ---
-# <a name="working-with-tvos-page-controls-in-xamarin"></a>Arbeiten mit tvos. außerdem wurden die Steuerelemente der Seite in Xamarin
+# <a name="working-with-tvos-page-controls-in-xamarin"></a>Arbeiten mit TvOS Seitensteuerelemente in Xamarin
 
-In einigen Fällen müssen Sie eine Reihe von Seiten oder Bilder in Ihrer app Xamarin.tvOS anzuzeigen. Ein Steuerelement wurde entwickelt, welche Seite aufzuzeigen ein Benutzer auf Out die maximale Anzahl von Seiten ist. Ein Steuerelement zeigt eine Reihe von Punkten mit einem dunklen Oval Hintergrund strukturiert. Anzeigen der aktuellen Seite einen ausgefüllten Punkt, alle anderen Seiten, die als leere Punkte anzeigen. Das Seitensteuerelement wird die äußere die meisten Punkte zugeschnitten werden soll, wenn zu viele seine Hintergrundbereich zu groß.
+Manchmal müssen Sie möglicherweise eine Reihe von Seiten oder Bilder in Ihrer Xamarin.tvOS-app anzuzeigen. Ein Seitensteuerelement wurde entwickelt, auf welche Seite übersichtlich ein Benutzer aus die maximale Anzahl der Seiten in befindet. Ein Seitensteuerelement zeigt eine Reihe von Punkten mit einem dunklen Oval Hintergrund strukturiert. Anzeigen der aktuellen Seite einen ausgefüllten Punkt, alle anderen Seiten angezeigt werden, als leere Punkte. Das Seiten-Steuerelement wird die äußere die meisten Punkte zugeschnitten, wenn zu viele im Hintergrundbereich anpassen.
 
-[![](page-controls-images/page01.png "Beispiel-Steuerelements")](page-controls-images/page01.png#lightbox)
+[![](page-controls-images/page01.png "Beispiel-Seitensteuerelement")](page-controls-images/page01.png#lightbox)
 
-Ein Steuerelement in einem nicht interaktiven Element entwickelt, um nur dem Benutzer Rückmeldung zu geben. Sie müssen zum Hinzufügen von anderen Steuerelementen um die aktuelle Seitenzahl (z. B. Gesten oder Schaltflächen) zu ändern.
+Ein Steuerelement der Seite in einem nicht interaktiven Element soll nur dem Benutzer Feedback geben. Sie müssen zum Hinzufügen von anderen Steuerelementen um die aktuelle Seitenzahl (z. B. Schaltflächen oder Bewegungen) zu ändern.
 
-Apple hat die folgenden Vorschläge, wenn ein Steuerelement zu verwenden:
+Apple hat die folgenden Vorschläge, wenn ein Seitensteuerelement zu verwenden:
 
-- **Verwendung auf voll Sammlungen nur** -Steuerelemente der Seite funktionieren am besten in einer Vollbild-Umgebung in einer einzelnen Auflistung anzuzeigende mehrere Seiten, die vorhanden sind.
-- **Beschränken der Anzahl der Seiten** -Steuerelemente der Seite funktionieren am besten für zehn (10) oder weniger Seiten und maximal 20 (20) Seiten. Erwägen Sie für mehr als zwanzig Seiten eine [Auflistungsansicht](~/ios/tvos/user-interface/collection-views.md) und die Seiten in einem Raster anzeigen.
+- **Verwendung auf voll Sammlungen nur** -Steuerelemente der Seite funktionieren am besten in einer Umgebung Vollbildmodus zum Anzeigen von mehreren Seiten, die vorhanden sind in einer einzelnen Auflistung.
+- **Beschränken der Anzahl der Seiten** -Steuerelemente der Seite funktionieren am besten für zehn (10) oder weniger Seiten und höchstens zwanzig (20) Seiten. Bei mehr als 20 Seiten, erwägen Sie die Verwendung einer [Auflistungsansicht](~/ios/tvos/user-interface/collection-views.md) und die Seiten in einem Raster anzeigen.
 
 <a name="Page-Controls-and-Storyboards" />
 
 ## <a name="page-controls-and-storyboards"></a>Steuerelemente der Seite und Storyboards
 
-Die einfachste Möglichkeit zum Arbeiten mit Steuerelemente der Seite in einer app Xamarin.tvOS werden diese Benutzeroberfläche der Anwendung, die mit der iOS-Designer hinzufügen.
+Die einfachste Möglichkeit zum Arbeiten mit Seitensteuerelementen in einer Xamarin.tvOS-app ist so fügen sie der app Benutzeroberfläche, die Verwendung des iOS Designers hinzu.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
     
-1. In der **Lösung Pad**, doppelklicken Sie auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
-1. Ziehen Sie eine **Seitensteuerelement** aus der **Toolbox** und legen Sie sie in der Sicht: 
+1. In der **Lösungspad**, doppelklicken Sie auf die `Main.storyboard` und öffnen Sie sie für die Bearbeitung.
+1. Ziehen Sie eine **Seitensteuerelement** aus der **Toolbox** und legen Sie sie in der Ansicht: 
 
-    [![](page-controls-images/page02.png "Ein Steuerelement")](page-controls-images/page02.png#lightbox)
-1. In der **Registerkarte "Widget"** von der **Eigenschaften Pad**, können Sie verschiedene Eigenschaften des Steuerelements Seite z. B. anpassen seine **aktuelle Seite** und **Seitenanzahl**: 
+    [![](page-controls-images/page02.png "Ein Seitensteuerelement")](page-controls-images/page02.png#lightbox)
+1. In der **Widget Registerkarte** von der **Pad "Eigenschaften"**, können Sie verschiedene Eigenschaften des Steuerelements wie z. B. Anpassen der **aktuelle Seite** und **Anzahl von Seiten**: 
 
     [![](page-controls-images/page03.png "Die Registerkarte \"Widget\"")](page-controls-images/page03.png#lightbox)
-1. Fügen Sie anschließend Steuerelemente oder Gesten zur Ansicht, um rückwärts und Vorwärts durch die Auflistung von Seiten.
-1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie in C#-Code auf sie reagieren können. Zum Beispiel: 
+1. Fügen Sie Steuerelemente oder Gesten zur Ansicht, um rückwärts und Vorwärts durch die Auflistung von Seiten.
+1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie auf diese Dateien im reagieren können C# Code. Zum Beispiel: 
 
-    [![](page-controls-images/page04.png "Benennen Sie das Steuerelement")](page-controls-images/page04.png#lightbox)
+    [![](page-controls-images/page04.png "Name des Steuerelements")](page-controls-images/page04.png#lightbox)
 1. Speichern Sie die Änderungen.
     
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
     
-1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` Datei und öffnet ihn zur Bearbeitung.
-1. Ziehen Sie eine **Seitensteuerelement** aus der **Toolbox** und legen Sie sie in der Sicht: 
+1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Main.storyboard` und öffnen Sie sie für die Bearbeitung.
+1. Ziehen Sie eine **Seitensteuerelement** aus der **Toolbox** und legen Sie sie in der Ansicht: 
 
-    [![](page-controls-images/page02-vs.png "Ein Steuerelement")](page-controls-images/page02-vs.png#lightbox)
-1. In der **Registerkarte "Widget"** von der **Eigenschaften-Explorer**, können Sie verschiedene Eigenschaften des Steuerelements Seite z. B. Anpassen der **aktuelle Seite** und **Seitenanzahl**: 
+    [![](page-controls-images/page02-vs.png "Ein Seitensteuerelement")](page-controls-images/page02-vs.png#lightbox)
+1. In der **Widget Registerkarte** von der **Eigenschaften-Explorer**, können Sie verschiedene Eigenschaften des Steuerelements wie z. B. Anpassen der **aktuelle Seite** und **Anzahl von Seiten**: 
 
     [![](page-controls-images/page03-vs.png "Die Registerkarte \"Widget\"")](page-controls-images/page03-vs.png#lightbox)
-1. Fügen Sie anschließend Steuerelemente oder Gesten zur Ansicht, um rückwärts und Vorwärts durch die Auflistung von Seiten.
-1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie in C#-Code auf sie reagieren können. Zum Beispiel: 
+1. Fügen Sie Steuerelemente oder Gesten zur Ansicht, um rückwärts und Vorwärts durch die Auflistung von Seiten.
+1. Weisen Sie schließlich **Namen** auf die Steuerelemente, damit Sie auf diese Dateien im reagieren können C# Code. Zum Beispiel: 
 
-    [![](page-controls-images/page04-vs.png "Benennen Sie das Steuerelement")](page-controls-images/page04-vs.png#lightbox)
+    [![](page-controls-images/page04-vs.png "Name des Steuerelements")](page-controls-images/page04-vs.png#lightbox)
 1. Speichern Sie die Änderungen.
     
 
 -----
 
 > [!IMPORTANT]
-> Während es möglich ist, z. B. Ereignisse weisen `TouchUpInside` auf ein UI-Element (z. B. eine UIButton) in der iOS-Designer nie aufgerufen wird da Apple TV hat eine Fingereingabe Bildschirm oder Berührungsereignisse unterstützen. Sie sollten immer verwenden die `Primary Action` Ereignis aus, wenn Ereignishandler für tvos. außerdem wurden die Elemente der Benutzeroberfläche erstellen.
+> Es ist zwar möglich, weisen Sie Ereignisse wie z. B. `TouchUpInside` an ein UI-Element (z. B. ein UIButton) in der iOS-Designer, niemals aufgerufen wird da Apple TV besitzt eine Fingereingabe Bildschirm oder Touch-Ereignissen zu unterstützen. Verwenden Sie immer die `Primary Action` Ereignis aus, wenn der Ereignishandler für tvos verwendet. die Elemente der Benutzeroberfläche erstellen.
 
-Bearbeiten Sie die View-Controller (Beispiel `ViewController.cs`) Datei, und fügen Sie den Code, um die geänderten Seiten zu behandeln. Zum Beispiel:
+Bearbeiten Sie Ihr View-Controller (Beispiel `ViewController.cs`)-Datei aus, und fügen Sie den Code zum Behandeln der Seiten, die geändert wird. Zum Beispiel:
 
 ```csharp
 using System;
@@ -146,27 +146,27 @@ namespace MySingleView
 }
 ```
 
-Werfen Sie genauere Betrachtung zwei Eigenschaften des Steuerelements an. Um die maximale Anzahl der Seiten anzugeben, verwenden Sie zuerst Folgendes ein:
+Werfen Sie einen genaueren Blick auf zwei Eigenschaften des Steuerelements an. Um die maximale Anzahl von Seiten anzugeben, verwenden Sie zunächst Folgendes ein:
 
 ```csharp
 PageView.Pages = 6;
 ```
 
-Um die aktuelle Seitenzahl zu ändern, verwenden Sie den folgenden Code ein:
+Um die aktuelle Seitenzahl zu ändern, verwenden Sie den folgenden Code:
 
 ```csharp
 PageView.CurrentPage = PageNumber;
 ```
 
-Die `CurrentPage` Eigenschaft ist NULL (0) basiert, damit die erste Seite 0 (null), und des letzten wird eine minus die maximale Anzahl der Seiten.
+Die `CurrentPage` -Eigenschaft ist NULL (0) basiert, damit die erste Seite wird 0 (null) und das letzte eins minus die maximale Anzahl von Seiten.
 
-Weitere Informationen zum Arbeiten mit Storyboards finden Sie unter unsere [Hello tvos. außerdem wurden Quick Start Guide](~/ios/tvos/get-started/hello-tvos.md). 
+Weitere Informationen zum Arbeiten mit Storyboards, informieren Sie sich unsere [Hello, TvOS – Kurzanleitung](~/ios/tvos/get-started/hello-tvos.md). 
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden behandelt, Entwerfen und Arbeiten mit Seitensteuerelement innerhalb einer Xamarin.tvOS-app.
+In diesem Artikel wurden behandelt, Entwerfen und Arbeiten mit Seite-Steuerelement in ein Xamarin.tvOS-app.
 
 
 
@@ -174,5 +174,5 @@ In diesem Artikel wurden behandelt, Entwerfen und Arbeiten mit Seitensteuereleme
 
 - [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvos. außerdem wurden Handbücher für interaktive Workflowdienste-Schnittstelle](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [App-Programmierhandbuch für tvos. außerdem wurden](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [TvOS Human Interface-Handbücher](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [App-Programmierhandbuch für tvos verwendet.](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

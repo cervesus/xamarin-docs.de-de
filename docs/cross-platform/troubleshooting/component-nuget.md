@@ -1,45 +1,45 @@
 ---
-title: Aktualisieren von komponentenverweisen zu NuGet
-description: Dieses Dokument beschreibt, wie die Komponente verweist mit NuGet-Pakete in Zukunft Ihrer apps ersetzt, weil der Komponentenspeicher Xamarin eingestellt wurde.
+title: Aktualisieren von komponentenverweisen auf NuGet
+description: Dieses Dokument beschreibt, wie Sie die Komponente verweist durch NuGet-Pakete in Zukunft Ihrer apps, ersetzen, da der Xamarin Component Store eingestellt wurde.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: 34f2f5149be63af6abe5aaab197472d067122069
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 70ca9a73c83bed5233b77a6f7be80a13f04f2bcb
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782033"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122152"
 ---
-# <a name="updating-component-references-to-nuget"></a>Aktualisieren von komponentenverweisen zu NuGet
+# <a name="updating-component-references-to-nuget"></a>Aktualisieren von komponentenverweisen auf NuGet
 
 > [!IMPORTANT]
-> Der Komponentenspeicher ab 15 Mai 2018 dessen Veröffentlichungsfunktionalität wurde (diese Closure wurde ursprünglich [angekündigt](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) im November 2017).
+> Die Store-Komponente wurde ab 15. Mai 2018 eingestellt (dieses Abschlusses war ursprünglich [angekündigt](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) im November 2017).
 >
-> Xamarin-Komponenten sind in Visual Studio nicht mehr unterstützt und durch NuGet-Pakete ersetzt werden sollte. Führen Sie die nachstehenden Anweisungen zum Komponentenverweise manuell aus Projekten zu entfernen.
+> Xamarin-Komponenten werden in Visual Studio nicht mehr unterstützt und sollte durch NuGet-Pakete ersetzt werden. Führen Sie die nachstehenden Anweisungen zum manuellen Entfernen von komponentenverweisen aus Projekten.
 
-Verweisen Sie mit den vorliegenden Anleitungen zum Hinzufügen von NuGet-Pakete auf [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) oder [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+Finden Sie diese Anweisungen zum Hinzufügen von NuGet-Pakete auf [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) oder [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
-Eine Liste der beliebten Xamarin [-Plug-Ins und -Bibliotheken](https://github.com/xamarin/XamarinComponents/blob/master/README.md) ist verfügbar, in denen Alternativen zu den Komponenten zu finden, was als NuGet-Pakete nicht verfügbar sind.
+Eine Liste mit beliebten Xamarin [-Plug-Ins und -Bibliotheken](https://github.com/xamarin/XamarinComponents/blob/master/README.md) ist verfügbar, um Alternativen zu den Komponenten zu finden, die als NuGet-Pakete nicht verfügbar sind.
 
-## <a name="manually-removing-component-references"></a>Manuelles Entfernen Komponentenverweise
+## <a name="manually-removing-component-references"></a>Manuelles Entfernen von komponentenverweisen
 
-Das 15.6 Release von Visual Studio und 7.4 Release von Visual Studio für Mac unterstützen Komponenten nicht mehr in Ihrem Projekt. 
+Release von Visual Studio 15.6 und Version von Visual Studio für Mac 7.4 unterstützen Komponenten nicht mehr in Ihrem Projekt. 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Wenn Sie ein Projekt in Visual Studio laden, wird das folgende Dialogfeld angezeigt, erläutert wird, dass Sie alle Komponenten aus dem Projekt manuell entfernen müssen:
+Wenn Sie ein Projekt in Visual Studio laden, wird das folgende Dialogfeld angezeigt, dass Sie alle Komponenten manuell aus Ihrem Projekt entfernen müssen:
 
-![Warnung Dialogfeld erläutert wird, dass eine Komponente in Ihr Projekt gefunden wurde und entfernt werden müssen](component-nuget-images/component-alert-vs.png)
+![Warnung Dialogfeld erläutert, dass eine Komponente in Ihr Projekt gefunden wurde und entfernt werden müssen](component-nuget-images/component-alert-vs.png)
 
-So entfernen Sie eine Komponente aus Ihrem Projekt:
+Entfernen eine Komponente aus Ihrem Projekt:
 
-1. Öffnen der **csproj** Datei. Klicken Sie hierzu mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Projekt entladen**. 
+1. Öffnen der **csproj** Datei. Zu diesem Zweck mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Projekt entladen**. 
 
-2. Mit der rechten Maustaste erneut auf das Projekt entladen, und wählen Sie **{Ihr Projekt-Name} .csproj bearbeiten**.
+2. Mit der rechten Maustaste erneut auf das Projekt entladen, und wählen Sie **{your-Project-Name} .csproj bearbeiten**.
 
 3. "Alle Verweise suchen" in der Datei `XamarinComponentReference`. Es sollte ähnlich wie im folgenden Beispiel aussehen:
 
@@ -66,15 +66,15 @@ So entfernen Sie eine Komponente aus Ihrem Projekt:
 
 6. Wiederholen Sie die oben genannten Schritte für jedes Projekt in der Projektmappe ein.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Wenn Sie ein Projekt in Visual Studio für Mac laden, wird das folgende Dialogfeld angezeigt, erläutert wird, dass Sie alle Komponenten aus dem Projekt manuell entfernen müssen:
+Wenn Sie ein Projekt in Visual Studio für Mac laden, wird das folgende Dialogfeld angezeigt, dass Sie alle Komponenten manuell aus Ihrem Projekt entfernen müssen:
 
-![Warnung Dialogfeld erläutert wird, dass eine Komponente in Ihr Projekt gefunden wurde und entfernt werden müssen](component-nuget-images/component-alert.png)
+![Warnung Dialogfeld erläutert, dass eine Komponente in Ihr Projekt gefunden wurde und entfernt werden müssen](component-nuget-images/component-alert.png)
 
-So entfernen Sie eine Komponente aus Ihrem Projekt:
+Entfernen eine Komponente aus Ihrem Projekt:
 
-1. Öffnen Sie die CSPROJ-Datei. Klicken Sie hierzu mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Tools > Datei bearbeiten**.
+1. Öffnen Sie die CSPROJ-Datei. Zu diesem Zweck mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Extras > Datei bearbeiten**.
 
 2. "Alle Verweise suchen" in der Datei `XamarinComponentReference`. Es sollte ähnlich wie im folgenden Beispiel aussehen:
 
@@ -103,41 +103,41 @@ So entfernen Sie eine Komponente aus Ihrem Projekt:
 
 > [!WARNING]
 > Die folgenden Anweisungen funktionieren nur mit älteren Versionen von Visual Studio.
-> Die **Komponenten** Knoten ist nicht mehr verfügbar ist, in den aktuellen Versionen von Visual Studio 2017 oder Visual Studio für Mac.
+> Die **Komponenten** Knoten ist nicht mehr zur Verfügung, in der aktuellen Versionen von Visual Studio 2017 oder Visual Studio für Mac.
 
-In den folgenden Abschnitten wird erläutert, wie Aktualisieren von vorhandenen Xamarin-Projektmappen, um Komponentenverweise auf NuGet-Pakete zu ändern.
+In den folgenden Abschnitten wird erläutert, wie vorhandene Xamarin-Lösungen zum Ändern von komponentenverweisen auf NuGet-Pakete zu aktualisieren.
 
 - [Komponenten, die NuGet-Pakete enthalten](#contain)
 - [Komponenten mit NuGet-Ersetzungen](#replace)
 
-Die meisten Komponenten werden in eine der oben genannten Kategorien fallen.
-Bei Verwendung eine Komponente, die nicht angezeigt wird, ein Äquivalent NuGet-Paket haben, lesen Sie die [Komponenten ohne einen Migrationspfad NuGet](#require-update) Abschnitt weiter unten.
+Die meisten Komponenten gehören zu einer der oben genannten Kategorien.
+Bei Verwendung eine Komponente, die nicht angezeigt wird, haben eine entsprechende NuGet-Paket, das Lesen der [-Komponenten ohne einen Migrationspfad NuGet](#require-update) Abschnitt weiter unten.
 
 <a name="contain" />
 
 ## <a name="components-that-contain-nuget-packages"></a>Komponenten, die NuGet-Pakete enthalten
 
-Viele Komponenten bereits NuGet-Pakete enthalten, und der Migrationspfad besteht darin, das Verweisen auf Komponenten zu löschen.
+Viele Komponenten bereits NuGet-Pakete enthalten, und der Migrationspfad ist sich einfach für den Komponentenverweis zu löschen.
 
 Sie können ermitteln, ob die Komponente bereits ein NuGet-Paket enthält, durch Doppelklicken auf die Komponente in der Projektmappe:
 
-![Komponenten Knoten erweitert](component-nuget-images/solution-sml.png)
+![Erweitert Knoten "Komponenten"](component-nuget-images/solution-sml.png)
 
-Die **Pakete** Registerkarte listet alle NuGet-Pakete, die in der Komponente enthalten:
+Die **Pakete** Registerkarte werden alle NuGet-Pakete enthalten, die in der Komponente aufgeführt:
 
 ![Registerkarte "Pakete" enthält NuGet](component-nuget-images/packages-tab-sml.png)
 
 Beachten Sie, dass die **Assemblys** Registerkarte leer sein wird:
 
-![Assemblyregisterkarte ist leer](component-nuget-images/assemblies-tab-empty-sml.png)
+![Registerkarte "Assemblys" ist leer](component-nuget-images/assemblies-tab-empty-sml.png)
 
-### <a name="updating-the-solution"></a>Aktualisieren die Projektmappe
+### <a name="updating-the-solution"></a>Aktualisierung der Lösung
 
 Um die Projektmappe zu aktualisieren, löschen Sie die **Komponente** Eintrag aus der Projektmappe:
 
-![Löschen Sie die Komponente](component-nuget-images/delete-component-sml.png)
+![Löschen der Komponente](component-nuget-images/delete-component-sml.png)
 
-Das NuGet-Paket bleibt aufgelisteten in der **Pakete** Knoten und die app kompilieren, und wie gewohnt ausgeführt. In zukünftigen Updates für dieses Paket erfolgt über die **Nuget** Updatefunktion:
+Das NuGet-Paket in aufgelistet bleiben die **Pakete** Knoten und Ihrer app kompiliert und führen Sie wie gewohnt. In Zukunft werden Updates für dieses Paket ausgeführt werden, über die **Nuget** Updatefunktion:
 
 ![Aktualisieren von NuGet-Paket](component-nuget-images/nuget-update-sml.png)
 
@@ -146,64 +146,64 @@ Das NuGet-Paket bleibt aufgelisteten in der **Pakete** Knoten und die app kompil
 
 ## <a name="components-with-nuget-replacements"></a>Komponenten mit NuGet-Ersetzungen
 
-Wenn die Seite "Komponente" **Assemblys** Registerkarte enthält Einträge, wie unten dargestellt, müssen Sie manuell das entsprechende NuGet-Paket zu suchen.
+Wenn die Seite "Komponente" **Assemblys** Registerkarte enthält Einträge, wie unten dargestellt, müssen Sie das entsprechende NuGet-Paket manuell zu suchen.
 
-![Enthält von Assemblys](component-nuget-images/assemblies-tab-sml.png)
+![Enthält Assemblys](component-nuget-images/assemblies-tab-sml.png)
 
-Beachten Sie, dass die **Pakete** Registerkarte wahrscheinlich leer sein:
+Beachten Sie, dass die **Pakete** Registerkarte wird wahrscheinlich leer sein:
 
 ![](component-nuget-images/packages-tab-empty-sml.png)
 
-_Sie kann NuGet Abhängigkeiten enthalten, aber diese Fehler können ignoriert werden._
+_Es kann NuGet-Abhängigkeiten enthalten, aber diese können ignoriert werden._
 
-Um ein Ersatz NuGet bestätigen Paket vorhanden ist, suchen Sie auf [NuGet.org](https://www.nuget.org/packages), verwenden den Namen der Komponente, oder Sie können auch vom Autor.
+Um ein Ersatz-NuGet-Paket ist vorhanden zu bestätigen, suchen Sie nach [NuGet.org](https://www.nuget.org/packages), verwenden den Namen der Komponente, oder Sie können auch vom Autor.
 
-Beispielsweise können Sie dem beliebten finden **Sqlite-Net-Pcl** Paket durch Suchen nach:
+Als Beispiel finden Sie das beliebte **Sqlite-Net-Pcl** Paket durch Suchen nach:
 
 - [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) – der Name des Produkts.
-- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) – der Autor Profil.
+- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) – der Autor des Profils.
 
-### <a name="updating-the-solution"></a>Aktualisieren die Projektmappe
+### <a name="updating-the-solution"></a>Aktualisierung der Lösung
 
-Nachdem Sie, dass die Komponente im NuGet verfügbar ist sichergestellt haben, gehen Sie folgendermaßen vor:
+Nachdem Sie, dass die Komponente ist in NuGet verfügbar ist bestätigt haben, gehen Sie wie folgt vor:
 
 #### <a name="delete-the-component"></a>Löschen Sie die Komponente
 
 Klicken Sie mit der rechten Maustaste auf die Komponente in der Projektmappe, und wählen Sie **entfernen**:
 
-![Entfernen Sie die Komponente](component-nuget-images/remove-component-sml.png)
+![Entfernen von Komponenten](component-nuget-images/remove-component-sml.png)
 
-Hierdurch wird die Komponente und alle Verweise gelöscht. Dies wird den Build unterbrochen, bis Sie das entsprechende NuGet-Paket, um ihn zu ersetzen hinzufügen.
+Dadurch wird die Komponente und alle Verweise löschen. Dadurch wird den Build, unterbrochen, bis Sie das entsprechende NuGet-Paket, um es zu ersetzen hinzufügen.
 
-#### <a name="add-the-nuget-package"></a>Fügen Sie das NuGet-Paket hinzu
+#### <a name="add-the-nuget-package"></a>Fügen Sie das NuGet-Paket hinzu.
 
 1. Mit der rechten Maustaste auf die **Pakete** Knoten, und wählen Sie **Pakete hinzufügen...** .
-2. Suchen Sie nach der NuGet-Ersatz anhand des Namens oder Autor:
+2. Suchen Sie nach der NuGet-Ersatz anhand des Namens oder der Autor:
 
   ![](component-nuget-images/nuget-search-sml.png)
 
 3. Drücken Sie **Paket hinzufügen**.
 
-Das NuGet-Paket wird dem Projekt, und alle Abhängigkeiten hinzugefügt werden.
-Den Build sollte korrigiert werden. Wenn der Build fehlschlägt weiterhin, untersuchen Sie jeden Fehler, um festzustellen, ob die API-Unterschiede zwischen der Komponente und das NuGet-Paket wurden.
+Das NuGet-Paket wird dem Projekt mit allen Abhängigkeiten hinzugefügt werden.
+Dies sollte den Build behoben werden. Wenn der Build ein Fehler auftritt weiterhin, untersuchen Sie jeden Fehler aus, um festzustellen, ob API-Unterschiede zwischen der Komponente und das NuGet-Paket.
 
 <a name="require-update" />
 
-## <a name="components-without-a-nuget-migration-path"></a>Ohne einen Migrationspfad NuGet-Komponenten
+## <a name="components-without-a-nuget-migration-path"></a>-Komponenten ohne einen Migrationspfad von NuGet
 
-Lassen Sie sich Gedanken machen, wenn Sie sofort Ersatz für Komponenten, die in der Anwendung verwendet, die nicht finden. Vorhandene Komponenten werden weiterhin in Visual Studio 15.5 arbeiten und die **Komponenten** Knoten erscheint in der Projektmappe wie gewohnt.
+Seien Sie nicht beunruhigt, wenn Sie nicht sofort einen Ersatz für Komponenten, die in Ihrer Anwendung finden. Vorhandene Komponenten in Visual Studio 15.5 funktionieren weiterhin und **Komponenten** -Knoten wird wie gewohnt in der Projektmappe angezeigt.
 
 Zukünftige Versionen von Visual Studio, jedoch werden _nicht_ wiederherstellen oder Aktualisieren von Komponenten.
-Dies bedeutet, wenn Sie die Projektmappe auf einem neuen Computer öffnen, die Komponente nicht heruntergeladen und installiert werden. und der Autor ist nicht in der Lage, um Sie mit Updates bereitzustellen. Sie sollten zu planen:
+Das heißt, wenn Sie die Lösung auf einem neuen Computer öffnen, die Komponente nicht heruntergeladen und installiert werden wird. und der Autor ist nicht in der Lage, auf die Bereitstellung von Updates. Sie sollten zu planen:
 
 * Extrahieren Sie die Assemblys von der Komponente, und verweisen sie direkt in Ihrem Projekt.
-* Wenden Sie sich an den Komponentenautor, und bitten Sie Pläne zu NuGet migrieren.
-* Untersuchen von alternativen NuGet-Pakete, oder den Quellcode seek, wenn die Komponente Open Source-ist.
+* Wenden Sie sich an den Komponentenautor, und bitten Sie Informationen zu den Tarifen zu NuGet migriert.
+* Untersuchen Sie alternative NuGet-Pakete, oder suchen Sie den Quellcode die Komponente ist Open Source.
 
-Viele Komponente Anbieter weiterhin zum Migrieren zu NuGet arbeiten, und anderen Benutzern (einschließlich erhältlicher Produkte) untersucht alternative Übermittlungsoptionen.
+Viele Komponentenhersteller noch über die Migration zu NuGet arbeiten, und andere Personen (einschließlich im Handel erhältlich Produkte) werden alternative Übermittlungsoptionen untersuchen.
 
 
 ## <a name="related-links"></a>Verwandte Links
-- [Liste der beliebten Xamarin-Plugins und Bibliotheken](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
-- [Installieren und Verwenden von NuGet-Paket (Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)
-- [Sowie ein NuGet-Paket (Mac)](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)
+- [Liste der beliebtesten Xamarin Plugins und Bibliotheken](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
+- [Installieren und Verwenden eines NuGet-Pakets (Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)
+- [Einschließen eines NuGet-Pakets (Mac)](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)

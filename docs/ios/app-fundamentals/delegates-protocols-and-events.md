@@ -1,50 +1,50 @@
 ---
 title: Ereignisse, Protokolle und Delegaten in Xamarin.iOS
-description: Dieses Dokument beschreibt das Arbeiten mit Ereignissen, Protokolle, und in Xamarin.iOS delegiert. Diese grundlegenden Konzepte sind weit verbreitete Xamarin.iOS Entwicklung.
+description: Dieses Dokument beschreibt das Arbeiten mit Ereignissen, Protokolle und Delegaten in Xamarin.iOS. Diese grundlegende Konzepte werden in der Entwicklung mit Xamarin.iOS allgegenwärtig.
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: d0e4c23bffe689c9218da2f43b97d98f348513ad
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: conceptdev
+ms.author: crdun
+ms.date: 09/17/2017
+ms.openlocfilehash: d3e5da19bacf5a6847bf6226c3fdd2b1e0e46ab2
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784009"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111063"
 ---
 # <a name="events-protocols-and-delegates-in-xamarinios"></a>Ereignisse, Protokolle und Delegaten in Xamarin.iOS
 
-Xamarin.iOS verwendet Steuerelemente, um Ereignisse für die meisten Benutzerinteraktionen verfügbar zu machen.
-Xamarin.iOS Anwendungen nutzen diese Ereignisse im großen und ganzen genauso, wie herkömmliche .NET ausgeführten Aktionen. Beispielsweise die Xamarin.iOS UIButton-Klasse verfügt über ein Ereignis namens TouchUpInside und dieses Ereignis verarbeitet, als ob diese Klasse und das Ereignis in einer .NET-App wurden.
+Xamarin.iOS verwendet Steuerelemente, um Ereignisse für die meisten Interaktionen der Benutzer verfügbar zu machen.
+Xamarin.iOS-Anwendungen nutzen diese Ereignisse in die gleiche Weise, wie herkömmliche Anwendungen für .NET. Beispielsweise wird die Xamarin.iOS-UIButton-Klasse hat ein Ereignis namens TouchUpInside und dieses Ereignis verarbeitet, als ob diese Klasse und das Ereignis in einer .NET-App wären.
 
-Neben diesen Ansatz .NET macht Xamarin.iOS ein anderes Modell, das für eine komplexere Interaktion und die Datenbindung verwendet werden kann. Bei dieser Methode wird verwendet, Apple Delegaten und Protokolle aufruft. Delegaten ähneln dem Konzept Delegaten in C# geschrieben, aber statt definieren und eine einzelne Methode aufrufen, wird ein Delegat in Objective-C eine gesamte Objektklasse, die ein Protokoll entspricht. Ein Protokoll ist eine Schnittstelle in c# ist ähnlich, mit dem Unterschied, dass seine Methoden optional sein können. Um eine UITableView mit Daten aufzufüllen, würden Sie z. B. eine Delegatklasse erstellen, die in das UITableViewDataSource-Protokoll, das Aufrufen der UITableView selbst auffüllen definierten Methoden implementiert.
+Neben diesem Ansatz .NET macht Xamarin.iOS ein anderes Modell, das für eine komplexere Interaktion und die Datenbindung verwendet werden kann. Diese Methode wird verwendet, was Apple Delegaten und Protokolle aufruft. Delegaten ähneln in Ihrem Konzept an Delegaten in C#, aber anstatt definieren und Aufrufen einer einzelnen Methode, ist ein Delegat in Objective-C eine ganze Klasse, die ein Protokoll entspricht. Ein Protokoll ähnelt eine Schnittstelle in C#, außer dass seine Methoden optional sein können. Um eine UITableView mit Daten aufzufüllen, würden Sie z. B. eine "Delegate"-Klasse erstellen, in das UITableViewDataSource-Protokoll, das zum Auffüllen der UITableView aufrief definierten Methoden implementiert, ist.
 
-In diesem Artikel Sie über alle diese Themen erfahren, und Sie haben eine solide Grundlage für die Behandlung der Rückrufszenarien in Xamarin.iOS, einschließlich:
+In diesem Artikel Sie, alle diese Themen erfahren bietet Ihnen eine solide Grundlage für die Behandlung von Rückrufszenarien in Xamarin.iOS, einschließlich:
 
--  **Ereignisse** – .NET mithilfe von Ereignissen mit UIKit Steuerelemente.
--  **Protokolle** – was Learning Protokolle sind und wie sie verwendet werden, und erstellen ein Beispiel, stellt Daten für eine Karte-Anmerkung.
--  **Delegaten** – lernen über Objective-C-Delegaten durch Erweitern des Beispiels Karte, um die Benutzerinteraktion zu verarbeiten, die eine Anmerkung enthält, und lernen den Unterschied zwischen starke und schwache Delegaten und wann diese verwendet.
+- **Ereignisse** – .NET mithilfe von Ereignissen mit UIKit-Steuerelementen.
+- **Protokolle** – was Protokolle sind und wie sie verwendet werden, und erstellen ein Beispiel, stellt Daten für eine Anmerkung für die Zuordnung bereit.
+- **Delegaten** – Learning zu Objective-C-Delegaten durch Erweitern des Beispiels Karte, um die Verarbeitung von Benutzerinteraktionen, die eine Anmerkung enthält, und lernen den Unterschied zwischen starke und schwache Delegaten und wann diese verwendet.
 
-Um Protokolle und Delegaten zu veranschaulichen, erstellen wir eine einfache Zuordnung-Anwendung, die von einer Anmerkung zu einer Zuordnung hinzugefügt wird, wie hier gezeigt:
+Um Protokolle und Delegaten zu veranschaulichen, erstellen wir eine einfache Zuordnung-Anwendung, die eine Anmerkung zu einer Zuordnung hinzugefügt wird, wie hier gezeigt:
 
- [![](delegates-protocols-and-events-images/01-map.png "Ein Beispiel für eine einfache Zuordnung-Anwendung, die eine Anmerkung zu einer Zuordnung fügt")](delegates-protocols-and-events-images/01-map.png#lightbox) [![](delegates-protocols-and-events-images/04-annotation-with-callout.png "eine Beispiel-Anmerkung zu einer Zuordnung hinzugefügt")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
+[![](delegates-protocols-and-events-images/01-map-sml.png "Ein Beispiel für eine einfache Zuordnung-Anwendung, die eine Anmerkung zu einer Zuordnung fügt")](delegates-protocols-and-events-images/01-map.png#lightbox)
+[![](delegates-protocols-and-events-images/04-annotation-with-callout-sml.png "eine Beispiel-Anmerkung zu einer Zuordnung hinzugefügt")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
-Vor dem bewältigt diese app Fortschritts, beginnen wir zunächst mit .NET Ereignisse unter der UIKit ansehen.
+Vor dem Umgang mit dieser app ein, lassen Sie uns loslegen indem Sie Ereignisse unter der UIKit ansehen
 
-<a name=".NET_Events_with_UIKit" />
+## <a name="net-events-with-uikit"></a>Ereignisse mit UIKit
 
-## <a name="net-events-with-uikit"></a>.NET Ereignisse mit UIKit
-
-Xamarin.iOS .NET Ereignisse auf UIKit Steuerelemente verfügbar gemacht werden. Beispielsweise weist UIButton ein TouchUpInside-Ereignis, das Sie behandeln wie gewohnt in .NET verwenden, wie im folgenden Code dargestellt, die einen C#-Lambda-Ausdruck verwendet:
+Xamarin.iOS macht .NET-Ereignisse auf UIKit-Steuerelementen verfügbar. UIButton hat beispielsweise ein TouchUpInside-Ereignis, das Sie behandeln wie gewohnt in .NET verwenden, wie im folgenden Code dargestellt, die verwendet eine C# Lambda-Ausdruck:
 
 ```csharp
 aButton.TouchUpInside += (o,s) => {
     Console.WriteLine("button touched");
 };
 ```
-Sie können dies auch mit einer C#-2.0-Format anonyme Methode wie die folgende implementieren:
+
+Sie könnten auch implementieren, dies mit einem C# anonyme Methode 2.0-Format, wie die folgende:
 
 ```csharp
 aButton.TouchUpInside += delegate {
@@ -52,46 +52,40 @@ aButton.TouchUpInside += delegate {
 };
 ```
 
-Der vorhergehende Code ist in der Methode ViewDidLoad der UIViewContoller oben wired. Die Variable aButton verweist auf eine Schaltfläche, die Sie in der iOS-Designer oder durch Code hinzufügen können. Die folgende Abbildung zeigt diese Schaltfläche aus, wie es im iOS-Designer aus dem Beispiel, das in diesem Artikel begleitet geschaltet hinzugefügt wird:
+Der vorangehende Code läuft der `ViewDidLoad` Methode der UIViewContoller. Die `aButton` Variable verweist auf eine Schaltfläche mit der Sie in der iOS-Designer oder mit Code hinzufügen können. Die folgende Abbildung zeigt eine Schaltfläche, die in der iOS-Designer hinzugefügt wurde:
 
- [![](delegates-protocols-and-events-images/02-interface-builder-outlet.png "Eine Schaltfläche in iOS-Designer hinzugefügt")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
+[![](delegates-protocols-and-events-images/02-interface-builder-outlet-sml.png "Eine Schaltfläche hinzugefügt, die im iOS-Designer")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
 
-Xamarin.iOS unterstützt auch das Ziel-Aktionsformat Herstellen einer Verbindung zwischen Ihren Code auf eine Aktivität, die mit einem Steuerelement auftritt. Um ein Ziel-Aktion für die Schaltfläche "Hello" erstellt haben, doppelklicken klicken sie in der iOS-Designer. Die UIViewController Code-Behind-Datei wird angezeigt, und der Entwickler wird aufgefordert, wählen Sie einen Speicherort für das Herstellen einer Verbindung Methode einfügen:
+Xamarin.iOS unterstützt auch das Ziel-Aktionsformat Herstellen einer Verbindung eine Interaktion, die mit einem Steuerelement auftritt, mit Ihrem Code. Erstellen Sie eine Ziel-Aktion für die **Hello** Schaltfläche, doppelklicken sie in der iOS-Designer. Der UIViewControllers Code-Behind-Datei wird angezeigt, und der Entwickler aufgefordert, wählen Sie einen Speicherort für die Verbindung Methode eingefügt wird:
 
- [![](delegates-protocols-and-events-images/03-interface-builder-action.png "Die UIViewControllers Code-Behind-Datei")](delegates-protocols-and-events-images/03-interface-builder-action.png#lightbox)
+[![](delegates-protocols-and-events-images/03-interface-builder-action-sml.png "UIViewControllers Code-Behind-Datei")](delegates-protocols-and-events-images/03-interface-builder-action.png#lightbox)
 
-Nachdem Sie einen Standort ausgewählt ist, eine neue Methode erstellt und wired von an das Steuerelement. Im folgenden Beispiel wird eine Nachricht in die Konsole geschrieben werden, wenn auf die Schaltfläche geklickt wird:
+Nachdem Sie ein Standort ausgewählt ist, eine neue Methode erstellt und wired oben auf das Steuerelement. Im folgenden Beispiel wird eine Nachricht an die Konsole geschrieben werden, wenn die Schaltfläche geklickt wird:
 
- [![](delegates-protocols-and-events-images/05-interface-builder-action.png "Eine Nachricht wird an die Konsole geschrieben werden, wenn die Schaltfläche geklickt wird")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
+[![](delegates-protocols-and-events-images/05-interface-builder-action-sml.png "Eine Nachricht wird an die Konsole geschrieben werden, wenn die Schaltfläche geklickt wird")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
 
-Weitere Informationen über das iOS-Ziel-Action-Muster finden Sie im Abschnitt "Ziel-Aktion" von " [Anwendung Kernkompetenzen für iOS](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)" in Apple iOS-Entwicklerbibliothek.
+Weitere Informationen über das iOS-Ziel-Action-Muster finden Sie im Abschnitt Ziel-Aktion [Anwendung Kernkompetenzen für iOS](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html) in Apple iOS-Entwicklerbibliothek.
 
-Weitere Informationen zur Verwendung von iOS-Designer mit Xamarin.iOS finden Sie unter der " [iOS Designer Overview](~/ios/user-interface/designer/index.md)" Dokumentation.
-
- <a name="Events" />
-
+Weitere Informationen zur Verwendung des iOS-Designers mit Xamarin.iOS finden Sie unter den [iOS Designer Overview](~/ios/user-interface/designer/index.md) Dokumentation.
 
 ## <a name="events"></a>Ereignisse
 
-Wenn Sie Ereignisse aus UIControl abfangen möchten, müssen Sie eine Reihe von Optionen: von C#-Lambda-Ausdrücke und Delegatfunktionen, um die Low-Level Objective-C-APIs verwenden.
+Wenn Sie Ereignisse aus UIControl abfangen möchten, müssen Sie eine Reihe von Möglichkeiten: von der Verwendung der C# Lambda-Ausdrücke und Delegatfunktionen, um unter Verwendung der Low-Level Objective-C-APIs.
 
-Der folgende Abschnitt zeigt, wie Sie das Ereignis TouchDown auf eine Schaltfläche, je nachdem wie viel Kontrolle erfassen würde, die Sie benötigen.
+Der folgende Abschnitt zeigt, wie Sie auf eine Schaltfläche, je nachdem wie viel Kontrolle des TouchDown-Ereignisses erfassen würden, die Sie benötigen.
 
- <a name="C#_Style" />
+## <a name="c-style"></a>C#Stil
 
-
-## <a name="c-style"></a>C#-Stil
-
-Verwenden die Delegaten-Syntax:
+Verwenden die Syntax für Delegaten ein:
 
 ```csharp
 UIButton button = MakeTheButton ();
-button.TouchDown += delegate {    
+button.TouchDown += delegate {
     Console.WriteLine ("Touched");
 };
 ```
 
-Wenn Sie stattdessen Lambdas zufrieden sind:
+Wenn Sie Lambdas stattdessen etwa:
 
 ```csharp
 button.TouchDown += () => {
@@ -99,7 +93,7 @@ button.TouchDown += () => {
 };
 ```
 
-Wenn Sie möchten mit der mehrere Schaltflächen den gleichen Handler denselben Code verwenden:
+Wenn Sie möchten mithilfe mehrerer Schaltflächen den gleichen Handler denselben Code verwenden:
 
 ```csharp
 void handler (object sender, EventArgs args)
@@ -114,24 +108,21 @@ button1.TouchDown += handler;
 button2.TouchDown += handler;
 ```
 
-<a name="Monitoring_more_than_one_kind_of_Event" />
+## <a name="monitoring-more-than-one-kind-of-event"></a>Überwachen von mehr als eine Art von Ereignissen
 
-
-## <a name="monitoring-more-than-one-kind-of-event"></a>Mehr als eine Art von Ereignis überwachen
-
-Die C#-Ereignisse für UIControlEvent Flags haben eine 1: 1-Zuordnung zu einzelnen Flags. Wenn Sie den gleichen Codeabschnitt haben möchten zwei oder mehr Ereignisse behandeln, verwenden Sie die `UIControl.AddTarget` Methode:
+Die C# Ereignisse für UIControlEvent Flags haben eine 1: 1-Zuordnung zu einzelnen Flags. Wenn Sie möchten den gleichen Codeabschnitt zwei oder mehr Ereignisse behandeln, verwenden Sie die `UIControl.AddTarget` Methode:
 
 ```csharp
 button.AddTarget (handler, UIControlEvent.TouchDown | UIControlEvent.TouchCancel);
 ```
 
-Mithilfe der Lambda-Syntax:
+Mithilfe der lambdasyntax:
 
 ```csharp
 button.AddTarget ((sender, event)=> Console.WriteLine ("An event happened"), UIControlEvent.TouchDown | UIControlEvent.TouchCancel);
 ```
 
-Wenn in diesem Fall müssen Sie eine Low-Level Objective-C, wie z. B. auf eine bestimmte Objektinstanz einbinden und Aufrufen einer bestimmten Auswahl-Funktionen verwenden:
+Wenn Sie die Low-Level-Funktionen von Objective-C, wie auf eine bestimmte Objektinstanz einbinden und Aufrufen einer bestimmten Auswahl verwenden möchten:
 
 ```csharp
 [Export ("MySelector")]
@@ -145,29 +136,23 @@ void MyObjectiveCHandler ()
 button.AddTarget (this, new Selector ("MySelector"), UIControlEvent.TouchDown);
 ```
 
-Bitte beachten Sie, wenn Sie die Instanzmethode in einer geerbten Klasse implementieren, muss er eine öffentliche Methode.
-
- <a name="Protocols" />
-
+Beachten Sie, wenn Sie die Instanzmethode in einer geerbten Klasse implementieren, muss er eine öffentliche Methode sein.
 
 ## <a name="protocols"></a>Protokolle
 
-Ein Protokoll ist eine Objective-C-Sprachfunktion, die eine Liste der Methodendeklarationen bereitstellt. Es dient einen ähnlichen Zweck einer Schnittstelle in c# ist der Hauptunterschied besteht darin, dass ein Protokoll die optionale Methoden aufweisen kann. Optionale Methoden werden nicht aufgerufen, wenn die Klasse, die ein Protokoll nimmt nicht implementiert wird. Darüber hinaus kann eine einzelne Klasse in Objective-C mehrere Protokolle implementieren, wie eine C#-Klasse mehrere Schnittstellen implementieren kann.
+Ein Protokoll ist ein Objective-C-Sprachfunktion, die eine Liste der Deklarationen von Instanzenmethoden bereitstellt. Es dient einen ähnlichen Zweck einer Schnittstelle in C#, der Hauptunterschied besteht darin, dass ein Protokoll die optionale Methoden haben kann. Optionale Methoden werden nicht aufgerufen, wenn die Klasse, die ein Protokoll übernimmt nicht implementiert wird. Darüber hinaus kann eine einzelne Klasse in Objective-C-mehrere Protokolle implementieren, wie eine C# Klasse kann mehrere Schnittstellen implementieren.
 
-Apple verwendet Protokolle in der gesamten iOS, um Klassen zu übernehmen, während unterwegs die implementierende Klasse vom Aufrufer, also genau wie ein C#-Schnittstelle funktioniert so abstrahiert, Verträge definieren. Protokolle verwendet werden beide Typen in nicht-Delegat Szenarien (z. B. mit der `MKAnnotation` Beispiel weiter oben), und mit Delegaten (wie weiter unten in diesem Dokument im Abschnitt Delegaten dargestellt).
-
- <a name="Protocols_with_Monotouch" />
-
+Apple verwendet Protokolle in der gesamten iOS Verträge für Klassen, übernehmen während die implementierende Klasse aus dem Aufrufer so ausgeführt wie außer acht gelassen, definieren eine C# Schnittstelle. Protokolle werden verwendet, sowohl in Szenarien mit nicht-Delegaten (z. B. mit der `MKAnnotation` Beispiel weiter), und mit Delegaten (wie weiter unten in diesem Dokument im Abschnitt Delegaten dargestellt wird).
 
 ### <a name="protocols-with-xamarinios"></a>Protokolle mit Xamarin.ios
 
-Werfen wir einen Blick auf ein Beispiel, das mithilfe von Xamarin.iOS eines Objective-C-Protokolls. In diesem Beispiel verwenden wir die `MKAnnotation` Protokoll, die Teil von der `MapKit` Framework. `MKAnnotation` ist ein Protokoll, jedes Objekt ermöglicht, die einführt, um Informationen zu einer Anmerkung bereitzustellen, die zu einer Zuordnung hinzugefügt werden können. Angenommen, ein Objekt, durch `MKAnnotation` gibt die Position der Anmerkung und der Titel zugeordnet.
+Werfen wir einen Blick auf ein Beispiel zur Verwendung von Xamarin.iOS auf ein Objective-C-Protokoll. In diesem Beispiel verwenden wir die `MKAnnotation` Protokoll, das ist Teil von der `MapKit` Framework. `MKAnnotation` ist ein Protokoll, das jedes beliebige Objekt ermöglicht, die übernimmt, um Informationen zu einer Anmerkung zu liefern, die zu einer Zuordnung hinzugefügt werden können. Z. B. ein Objekt, das `MKAnnotation` gibt die Position der Anmerkung und den Titel zugeordnet.
 
-Auf diese Weise die `MKAnnotation` Protokoll wird verwendet, um die relevante Daten bereit, die eine Anmerkung begleitet. Die aktuelle Ansicht für die Anmerkung selbst basiert aus den Daten in das Objekt, das nimmt die `MKAnnotation` Protokoll. Z. B. der Text für die Legende an, die angezeigt wird, wenn der Benutzer auf die Anmerkung tippt, (wie im folgenden Screenshot gezeigt) stammen aus den `Title` Eigenschaften der Klasse, die das Protokoll implementiert:
+Auf diese Weise die `MKAnnotation` Protokoll wird verwendet, um relevante Daten bereitstellen, die mit einer Anmerkung. Die tatsächliche Ansicht für die Anmerkung selbst basiert auf dem die Daten in das Objekt, das übernimmt die `MKAnnotation` Protokoll. Zum Beispiel der Text für die Legende, die angezeigt wird, wenn der Benutzer auf die Anmerkung tippt, (wie im folgenden Screenshot gezeigt) stammt aus dem `Title` Eigenschaft in der Klasse, die das Protokoll implementiert:
 
- [![](delegates-protocols-and-events-images/04-annotation-with-callout.png "Beispieltext für die Legende beim Tippen auf die Anmerkung")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
+ [![](delegates-protocols-and-events-images/04-annotation-with-callout-sml.png "Beispieltext für die Legende aus, wenn der Benutzer, auf die Anmerkung tippt")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
-Wie im nächsten Abschnitt werden die Protokolle Deep Dive, beschrieben bindet Xamarin.iOS Protokolle für abstrakte Klassen. Für die `MKAnnotation` -Protokoll die gebundene C#-Klasse heißt `MKAnnotation` zu imitieren, die den Namen des Protokolls verfügbar, und es ist eine Unterklasse von `NSObject`, die Stammbasisklasse für CocoaTouch. Das Protokoll erfordert einen Getter und Setter für die Koordinate implementiert werden. Titel und Untertitel sind jedoch optional. Aus diesem Grund in die `MKAnnotation` -Klasse, die `Coordinate` Eigenschaft ist *abstrakte*, implementiert werden müssen und die `Title` und `Subtitle` Eigenschaften gekennzeichnet sind *virtuellen* , wodurch optional, wie unten dargestellt:
+Im nächsten Abschnitt beschriebenen [tieferer Einblick in Protokolle](#protocols-deep-dive), Xamarin.iOS bindet die Protokolle an abstrakte Klassen. Für die `MKAnnotation` Protokoll, die Grenze C# Klasse `MKAnnotation` imitieren den Namen des Protokolls, und es ist eine Unterklasse von `NSObject`, die Stamm-Basisklasse für CocoaTouch. Das Protokoll muss ein Getter und Setter für die Koordinate implementiert werden; Titel und Untertitel sind jedoch optional. Aus diesem Grund in die `MKAnnotation` -Klasse, die `Coordinate` -Eigenschaft ist *abstrakte*, implementiert werden muss und die `Title` und `Subtitle` Eigenschaften sind markiert *virtuellen* , sodass sie optional, wie unten dargestellt:
 
 ```csharp
 [Register ("MKAnnotation"), Model ]
@@ -202,7 +187,7 @@ public abstract class MKAnnotation : NSObject
 }
 ```
 
-Jede Klasse kann Anmerkungsdaten bereitstellen, indem Sie einfach Ableiten von `MKAnnotation`, solange mindestens die `Coordinate` Eigenschaft implementiert wird. Hier ist z. B. eine Beispielklasse, die die Koordinate im Konstruktor akzeptiert und gibt eine Zeichenfolge für den Titel:
+Jede Klasse kann Anmerkungsdaten bereitstellen, indem Sie einfach eine Ableitung von `MKAnnotation`, solange mindestens die `Coordinate` Eigenschaft implementiert wird. So sieht z. B. eine Beispielklasse, die Koordinate im Konstruktor akzeptiert und gibt eine Zeichenfolge für den Titel, aus:
 
 ```csharp
 /// <summary>
@@ -211,47 +196,44 @@ Jede Klasse kann Anmerkungsdaten bereitstellen, indem Sie einfach Ableiten von `
 /// </summary>
 public class SampleMapAnnotation : MKAnnotation
 {
-    string _title;
+    string title;
 
     public SampleMapAnnotation (CLLocationCoordinate2D coordinate)
     {
         Coordinate = coordinate;
-        _title = "Sample";
+        title = "Sample";
     }
 
     public override CLLocationCoordinate2D Coordinate { get; set; }
 
     public override string Title {
         get {
-            return _title;
+            return title;
         }
     }
 }
 ```
 
-Über das Protokoll ist an eine beliebige dieser Unterklassen Klasse `MKAnnotation` können bereitstellen relevante Daten, die von der Zuordnung verwendet werden, wenn sie die Anmerkung Sicht erstellt. Zum Hinzufügen einer Anmerkung zu einer Zuordnung rufen Sie einfach die `AddAnnotation` Methode von einer `MKMapView` Instanz, wie im folgenden Code gezeigt:
+Über das Protokoll ist es an, die eine beliebige Klasse diese Unterklassen `MKAnnotation` bieten relevante Daten, die von der Zuordnung verwendet werden, wenn die Anmerkung in der Ansicht erstellt. Um eine Anmerkung zu einer Zuordnung hinzuzufügen, rufen Sie einfach die `AddAnnotation` Methode eine `MKMapView` -Instanz, wie im folgenden Code gezeigt:
 
 ```csharp
 //an arbitrary coordinate used for demonstration here
 var sampleCoordinate =
-new CLLocationCoordinate2D (42.3467512, -71.0969456);
+    new CLLocationCoordinate2D (42.3467512, -71.0969456); // Boston
 
 //create an annotation and add it to the map
 map.AddAnnotation (new SampleMapAnnotation (sampleCoordinate));
 ```
 
-Die Zuordnung Variable hier ist eine Instanz der ein `MKMapView`, also der Klasse, die die Zuordnung selbst darstellt. Die `MKMapView` verwendet die `Coordinate` Daten stammen aus den `SampleMapAnnotation` Instanz um die Anmerkung Ansicht auf der Karte zu positionieren.
+Die Map-Variable hier ist eine Instanz einer `MKMapView`, dies ist die Klasse, die die Karte selbst darstellt. Die `MKMapView` verwendet die `Coordinate` Daten stammen aus der `SampleMapAnnotation` Instanz zum Positionieren der Ansicht "Anmerkung" auf der Karte.
 
-Die `MKAnnotation` -Protokoll bietet einen bekannten Satz von Funktionen für alle Objekte, die ihn implementieren, ohne dass des Consumers (in diesem Fall die Map) müssen Implementierungsdetails kennen. Dies optimiert die eine Vielzahl von möglichen Anmerkungen zu einer Zuordnung hinzufügen.
+Die `MKAnnotation` -Protokoll bietet einen bekannten Satz von Funktionen für alle Objekte, die sie implementieren, ohne dass des Consumers (die Schritte in diesem Fall) Implementierungsdetails kennen müssen. Dies optimiert die eine Vielzahl von möglichen Anmerkungen zu einer Karte hinzufügen.
 
- <a name="Protocols_Deep_Dive" />
+### <a name="protocols-deep-dive"></a>Tieferer Einblick in Protokolle
 
+Da C# Schnittstellen unterstützen keine optionale Methoden, Xamarin.iOS Protokolle abstrakte Klassen zugeordnet. Aus diesem Grund ein Protokoll in Objective-C-Übernahme erfolgt in Xamarin.iOS durch Ableiten von der abstrakten Klasse, die für das Protokoll gebunden ist, und die erforderlichen Methoden implementiert. Diese Methoden werden als abstrakte Methoden in der Klasse verfügbar gemacht werden. Optionale Methoden vom Protokoll werden an virtuellen Methoden gebunden werden die C# Klasse.
 
-### <a name="protocols-deep-dive"></a>Deep Dive Protokolle
-
-Da C#-Schnittstellen optionale Methoden nicht unterstützen, ordnet Xamarin.iOS Protokolle abstrakte Klassen. Aus diesem Grund ein Protokoll in Objective-C Übernahme erfolgt in Xamarin.iOS durch Ableiten von der abstrakten Klasse, die an das Protokoll gebunden ist und die erforderlichen Methoden implementiert. Diese Methoden werden als abstrakte Methoden in der Klasse verfügbar gemacht werden. Optionale Methoden aus dem Protokoll werden von virtuellen Methoden der C#-Klasse gebunden werden.
-
-Hier ist z. B. ein Teil der `UITableViewDataSource` Protokoll als gebundene in Xamarin.iOS:
+Hier ist beispielsweise ein Teil der `UITableViewDataSource` gebundenen in Xamarin.iOS-Protokoll:
 
 ```csharp
 public abstract class UITableViewDataSource : NSObject
@@ -264,56 +246,44 @@ public abstract class UITableViewDataSource : NSObject
 }
 ```
 
-Beachten Sie, dass die Klasse abstrakt ist. Xamarin.iOS stellt die Klasse abstrakte Methoden optional/erforderlich in Protokolle unterstützen.
-Im Gegensatz zu Objective-C-Protokolle (oder C#-Schnittstellen) unterstützen nicht jedoch mehrfache Vererbung C#-Klassen. Dies wirkt sich auf den Entwurf der C#-Code, der Protokolle verwendet und in der Regel führt zu einer geschachtelten Klassen. Weitere Informationen zu diesem Problem weiter unten in diesem Dokument im Abschnitt Delegaten fällt.
+Beachten Sie, dass die Klasse abstrakt ist. Xamarin.iOS macht die Klasse, die abstrakte Methoden optional/erforderlich in Protokolle zu unterstützen.
+Jedoch im Gegensatz zu Objective-C-Protokolle (oder C# Schnittstellen), C# Klassen keine mehrfache Vererbung unterstützen. Dies wirkt sich auf den Entwurf der C# Code, der Protokolle verwendet und in der Regel führt zu einer geschachtelte Klassen. Weitere Informationen zu diesem Problem weiter unten in diesem Dokument im Abschnitt Delegaten fällt.
 
- `GetCell(…)` ist eine abstrakte Methode, die an die Objective-C gebunden *Selektor*, `tableView:cellForRowAtIndexPath:`, dies ist eine erforderliche Methode von der `UITableViewDataSource` Protokoll. Die Auswahl ist der Objective-C-Begriff für Methodenname. Um die Methode nach Bedarf zu erzwingen, Xamarin.iOS das es als abstrakt deklariert. Die andere Methode `NumberOfSections(…)`, gebunden ist `numberOfSectionsInTableview:`. Diese Methode ist optional in das Protokoll, sodass Xamarin.iOS als virtuell deklariert somit optional in c# überschreiben.
+ `GetCell(…)` ist eine abstrakte Methode, die an die Objective-C gebunden *Selektor*, `tableView:cellForRowAtIndexPath:`, dies ist eine erforderliche Methode von der `UITableViewDataSource` Protokoll. Die Auswahl ist die Objective-C-Laufzeit der Methodenname. Um die Methode nach Bedarf zu erzwingen, Xamarin.iOS das es als abstrakt deklariert. Die andere Methode `NumberOfSections(…)`, gebunden ist `numberOfSectionsInTableview:`. Diese Methode ist in das Protokoll, optional, sodass Xamarin.iOS als virtuell somit optional zum Überschreiben Sie deklariert in C#.
 
-Xamarin.iOS übernimmt alle iOS-Bindung für Sie. Jedoch, wenn Sie ein Protokoll manuell aus Objective-C binden müssen, Sie können dazu werden, indem eine Klasse mit dem `ExportAttribute`. Dies ist die gleiche Methode, die von Xamarin.iOS selbst verwendet.
+Xamarin.iOS ist für alle iOS-Bindung für Sie übernimmt. Jedoch wenn Sie ein Protokoll manuell von Objective-C binden müssen, Sie können dazu werden, indem eine Klasse mit dem `ExportAttribute`. Dies ist die gleiche Methode, die von Xamarin.iOS selbst verwendet.
 
-Weitere Informationen über das Binden von Objective-C-Typen in Xamarin.iOS finden Sie im Artikel [Objective-C-Typen binden](~/ios/platform/binding-objective-c/index.md).
+Weitere Informationen dazu, wie in Xamarin.iOS Objective-C-Typen zu binden, finden Sie im Artikel [Binden von Objective-C-Typen](~/ios/platform/binding-objective-c/index.md).
 
-Wir noch nicht über Protokolle, obwohl. Sie können auch verwendet in iOS als Grundlage für Objective-C-Delegaten, der das Thema des nächsten Abschnitts ist.
-
- <a name="Delegates" />
-
+Wir sind noch nicht so über mit Protokollen, aber. Sie werden auch verwendet unter iOS als Grundlage für Objective-C-Delegaten, die das Thema des nächsten Abschnitts.
 
 ## <a name="delegates"></a>Delegaten
 
-iOS verwendet Objective-C-Delegaten, um die Delegierung-Muster zu implementieren, in dem ein Objekt Arbeit zu einem anderen deaktiviert übertragen. Das Objekt, das den Aufgaben wird der Delegat, der das erste Objekt. Ein Objekt weist der Delegat, der durch das Senden Nachrichten nach bestimmten Dinge passieren funktionieren. Senden einer Nachricht wie folgt in Objective-C ist funktional äquivalent zum Aufrufen einer Methode in C# geschrieben. Ein Delegat Methoden als Antwort auf diese Aufrufe implementiert und daher stellt Funktionalität für die Anwendung bereit.
+iOS verwendet Objective-C-Delegaten, um das Muster für Delegierung zu implementieren, in dem ein einzelnes Objekt Arbeit auf eine andere übertragen aus. Das Objekt, das die Arbeit ist der Delegat, der das erste Objekt. Ein Objekt weist der Delegat, der durch das Senden sie Nachrichten nach dem Auftreten von bestimmte Dinge funktionieren. Senden eine Meldung wie diese in Objective-C ist funktionell gleichwertig mit Aufrufen einer Methode C#. Ein Delegat Methoden als Reaktion auf diese Aufrufe implementiert und daher bietet Funktionen für die Anwendung.
 
-Delegaten können Sie das Verhalten von Klassen erweitern, ohne Unterklassen erstellen zu müssen. Anwendungen in iOS verwenden häufig Delegaten auf, wenn eine Klasse zurück in einen anderen aufruft, nachdem ein wichtiger Vorgang auftritt. Z. B. die `MKMapView` Aufrufe zurück an seine Delegaten Klasse, bei der der Benutzer eine Anmerkung auf einer Karte tippt, mit dem dem Autor die Delegate-Klasse die Möglichkeit, innerhalb der Anwendung reagieren. Sie können über ein Beispiel für diese Art der Verwendung von Delegaten weiter unten in diesem Artikel im Beispiel für die Verwendung ein Delegaten mit Xamarin.iOS arbeiten.
+Delegaten bieten die Möglichkeit, um das Verhalten der Klassen zu erweitern, ohne Unterklassen erstellen zu müssen. Anwendungen in iOS verwenden häufig Delegaten auf, wenn eine Klasse zurück in einen anderen aufruft, nachdem ein wichtiger Vorgang auftritt. Z. B. die `MKMapView` Klasse Sie Aufrufe zurück an die Delegaten aus, wenn der Benutzer tippt eine Anmerkung zu einer Zuordnung auf, mit dem dem Autor der "Delegate"-Klasse die Möglichkeit, innerhalb der Anwendung zu reagieren. Sie können einen Delegaten mit Xamarin.iOS über ein Beispiel für diese Art der Verwendung von Delegaten weiter unten in diesem Artikel unter Beispiel arbeiten.
 
-An diesem Punkt Sie sich vielleicht, wie eine Klasse bestimmt, welche Methoden aufrufen, die der Delegat. Dies ist eine andere Stelle, wo Sie Protokolle verwenden. Die verfügbaren Methoden für einen Delegaten stammen in der Regel die Protokolle, die sie übernehmen.
-
- <a name="How_Protocols_are_used_with_Delegates" />
-
+An diesem Punkt möchten Sie wissen, wie eine Klasse bestimmt, welche Methoden für die Delegaten aufrufen. Dies ist eine andere Stelle, wo Sie Protokolle verwenden. Die verfügbaren Methoden für einen Delegaten stammen in der Regel die Protokolle, mit denen, die Sie übernehmen.
 
 ### <a name="how-protocols-are-used-with-delegates"></a>Wie Protokolle mit Delegaten verwendet werden.
 
-Wir gesehen haben, zuvor wie Protokolle verwendet werden, zum Hinzufügen von Anmerkungen zu einer Zuordnung zu unterstützen.
-Protokolle werden auch verwendet, um einem bekannten Satz von Methoden für Klassen, die aufgerufen wird, nachdem bestimmte Ereignisse auftreten, z. B. nach dem Benutzer tippen, eine Anmerkung auf einer Karte oder wählt eine Zelle in einer Tabelle bereitzustellen. Die Klassen, die diese Methoden implementieren bekannten als den Delegaten, der die Klassen, die sie aufrufen.
+Wir haben gesehen, wie zuvor Protokolle verwendet werden soll, Hinzufügen von Anmerkungen zu einer Zuordnung zu unterstützen.
+Protokolle werden auch verwendet, um einen bekannten Satz von Methoden für Klassen aufgerufen, wenn bestimmte Ereignisse auftreten, z. B. nach dem der Benutzer tippen einer Anmerkung auf einer Karte oder wählt eine Zelle in einer Tabelle bereitzustellen. Die Klassen, die diese Methoden implementieren werden als Delegaten der Klassen bezeichnet, die sie aufrufen.
 
-Klassen, die Unterstützung der Delegierung dafür Verfügbarmachen einer Delegaten-Eigenschaft, die eine Klasse implementiert die Delegaten zugewiesen wird. Die Methoden, die Sie für den Delegaten implementieren hängen von dem Protokoll, die der bestimmten Delegat nimmt. Für die `UITableView` -Methode, die Sie implementieren die `UITableViewDelegate` -Protokoll für die `UIAccelerometer` -Methode, implementieren Sie `UIAccelerometerDelegate`usw. für alle anderen Klassen in der gesamten iOS, die für die Sie möchten einen Delegaten verfügbar gemacht.
+Klassen, die Unterstützung der Delegierung Zweck Verfügbarmachen einer Delegat-Eigenschaft, die eine Klasse implementiert die Delegaten zugewiesen wird. Die Methoden, die Sie für den Delegaten implementieren, werden das Protokoll abhängig, die den Delegaten übernimmt. Für die `UITableView` -Methode, die Sie implementieren die `UITableViewDelegate` -Protokoll für die `UIAccelerometer` -Methode implementieren Sie `UIAccelerometerDelegate`usw. für alle anderen Klassen in iOS, die für die Sie möchten einen Delegaten verfügbar gemacht.
 
-Die `MKMapView` im früheren Beispiel veranschaulichte Filtermenü-Klasse verfügt auch über eine Eigenschaft mit dem Namen der Delegat, der es aufgerufen wird, wenn verschiedene Ereignisse auftreten. Der Delegat für `MKMapView` ist vom Typ `MKMapViewDelegate`.
-Sie verwenden diese Informationen in Kürze in ein Beispiel für die Anmerkung reagiert werden soll, nachdem diese Option ausgewählt ist, doch zunächst sehen wir erläutert den Unterschied zwischen starke und schwache Delegaten.
+Die `MKMapView` Klasse, die wir in unserem vorherigen Beispiel gesehen haben, verfügt auch über eine Eigenschaft namens-Delegaten, der es aufgerufen wird, wenn verschiedene Ereignisse auftreten. Der Delegat für `MKMapView` ist vom Typ `MKMapViewDelegate`.
+Verwenden Sie es in Kürze ein Beispiel für die Anmerkung zu reagieren, wenn diese Option ausgewählt ist, aber zunächst sehen wir besprechen Sie den Unterschied zwischen starke und schwache Delegaten.
 
- <a name="Strong_Delegates_vs._Weak_Delegates" />
+### <a name="strong-delegates-vs-weak-delegates"></a>Starke Delegaten im Vergleich zu Schwache Delegaten
 
-
-### <a name="strong-delegates-vs-weak-delegates"></a>Starke Delegaten im Vergleich zu Unsichere Delegaten
-
-Die Delegaten auf, denen wir bisher besuchten sind starken Delegaten, was bedeutet, dass sie stark typisiert sind. Im Lieferumfang von Xamarin.iOS Bindungen ist einer stark typisierten Klasse für jedes Protokoll Delegaten in iOS. IOS hat jedoch auch das Konzept eines schwachen Delegaten. Anstatt das Erstellen von Unterklassen für eine Klasse, die auf das Objective-C-Protokoll für einen bestimmten Delegaten gebunden, iOS können Sie auch die Protokollmethoden selbst in einer Klasse, die Ihnen gefällt zu binden, die von NSObject, ergänzen die Methoden mit dem ExportAttribute abgeleitet wird und dann Angeben der entsprechenden Selektoren an.
-Wenn Sie diesen Ansatz verwenden, weisen Sie eine Instanz der Klasse der WeakDelegate-Eigenschaft anstelle der Delegat-Eigenschaft. Ein schwacher Delegaten bietet Ihnen die Flexibilität, um Ihre Delegate-Klasse in eine andere Hierarchie nach unten zu nutzen. Sehen wir uns auf starke und schwache Delegaten wird ein Xamarin.iOS Beispiel.
-
- <a name="Example_using_a_Delegate_with_Xamarin.iOS" />
-
+Die Delegaten, die, denen wir uns bisher angesehen haben haben, sind starke Delegaten, was bedeutet, dass sie stark typisiert sind. Die Xamarin.iOS-Bindungen sind im Lieferumfang einer stark typisierten Klasse für jedes Protokoll Delegaten in iOS. IOS hat jedoch auch das Konzept eines schwachen Delegaten. Anstelle von Unterklassen aus einer Klasse, die an die Objective-C-Protokoll für Delegaten gebunden, iOS können Sie auch festlegen, dass die Protokollmethoden selbst in einer Klasse, die Sie z. B. binden, die von NSObject, versehen Sie Ihre Methoden mit dem ExportAttribute abgeleitet wird und dann liefern die entsprechenden Selektoren ein.
+Wenn Sie diesen Ansatz verwenden, weisen Sie eine Instanz der Klasse die WeakDelegate-Eigenschaft anstelle der Delegat-Eigenschaft. Ein schwacher Delegat bietet Ihnen die Flexibilität, Ihre Delegatklasse Sie einer anderen Vererbungshierarchie zu nutzen. Wir sehen uns ein Xamarin.iOS-Beispiel, starke und schwache Delegaten verwendet.
 
 ### <a name="example-using-a-delegate-with-xamarinios"></a>Beispiel für die Verwendung eines Delegaten mit Xamarin.iOS
 
-Zum Ausführen von Code in der Antwort an den Benutzer Tippen auf die Anmerkung in unserem Beispiel können wir die Unterklasse `MKMapViewDelegate` und weisen Sie eine Instanz der `MKMapView`des `Delegate` Eigenschaft. Die `MKMapViewDelegate` Protokoll enthält nur die optionale Methoden.
-Aus diesem Grund alle Methoden sind virtuell verbunden sind, das Protokoll in der Xamarin.iOS `MKMapViewDelegate` Klasse. Wenn der Benutzer wählt eine Anmerkung aus der `MKMapView` Instanz sendet die `mapView:didSelectAnnotationView:` Nachricht seines Delegaten. Um dies in Xamarin.iOS behandeln, müssen wir außer Kraft setzen die `DidSelectAnnotationView (MKMapView mapView, MKAnnotationView annotationView)` Methode in der Unterklasse MKMapViewDelegate wie folgt:
+Um Code in der Antwort an den Benutzer Tippen auf die Anmerkung in unserem Beispiel ausführen zu können, können wir eine Unterklasse `MKMapViewDelegate` und weisen Sie eine Instanz der `MKMapView`des `Delegate` Eigenschaft. Die `MKMapViewDelegate` Protokoll enthält nur die optionale Methoden.
+Aus diesem Grund sind alle Methoden virtuell, die an das Protokoll in die Xamarin.iOS gebunden sind `MKMapViewDelegate` Klasse. Bei der Auswahl einer Anmerkung, die `MKMapView` Instanz sendet die `mapView:didSelectAnnotationView:` Nachricht an die Delegaten. Um dies in Xamarin.iOS zu behandeln, müssen wir außer Kraft setzen der `DidSelectAnnotationView (MKMapView mapView, MKAnnotationView annotationView)` -Methode in der die Unterklasse MKMapViewDelegate wie folgt:
 
 ```csharp
 public class SampleMapDelegate : MKMapViewDelegate
@@ -338,9 +308,9 @@ public class SampleMapDelegate : MKMapViewDelegate
 }
 ```
 
-Die oben gezeigte SampleMapDelegate-Klasse wird als im Controller, die enthält eine geschachtelte Klasse implementiert die `MKMapView` Instanz. In Objective-C sehen Sie häufig den Controller mehrere Protokolle direkt innerhalb der Klasse zu verwenden. Da Klassen im Xamarin.iOS Protokolle gebunden sind, sind die Klassen, die stark typisierte Delegaten zu implementieren als geschachtelte Klassen in der Regel enthalten.
+Die oben gezeigte SampleMapDelegate-Klasse wird als im Controller, der enthält eine geschachtelte Klasse implementiert die `MKMapView` Instanz. In Objective-C sehen Sie häufig den Controller, der mehrere Protokolle direkt innerhalb der Klasse zu übernehmen. Da Protokolle an Klassen in Xamarin.iOS gebunden sind, sind die Klassen, die stark typisierte Delegaten implementieren jedoch in der Regel als geschachtelte Klassen enthalten.
 
-Mit der Implementierung der Delegat Klasse vorhanden, müssen nur instanziieren Sie eine Instanz des Delegaten im Controller, und weisen Sie ihn der `MKMapView`des `Delegate` Eigenschaft wie hier gezeigt:
+Bei der Implementierung der Delegat-Klasse vorhanden, müssen Sie nur, instanziiere eine Instanz des Delegaten im Controller, und weisen sie Sie der `MKMapView`des `Delegate` Eigenschaft wie hier gezeigt:
 
 ```csharp
 public partial class Protocols_Delegates_EventsViewController : UIViewController
@@ -363,7 +333,7 @@ public partial class Protocols_Delegates_EventsViewController : UIViewController
 }
 ```
 
-Um einen schwachen Delegaten verwenden, um dasselbe Ziel erreichen, müssen Sie die Methode selbst in einer Klasse gebunden, die abgeleitet `NSObject` und weisen Sie ihn der `WeakDelegate` Eigenschaft von der `MKMapView`. Da die `UIViewController` abgeleitet aus `NSObject` (z. B. jede Klasse Objective-C in CocoaTouch) kann einfach implementieren wir eine Methode gebunden `mapView:didSelectAnnotationView:` direkt im Controller, und weisen Sie den Controller zum `MKMapView`des `WeakDelegate`, sodass für die zusätzliche geschachtelte Klasse. Der Code unten zeigt dies:
+Um einen schwachen Delegaten verwenden, die den gleichen Zweck erfüllen, müssen Sie die Methode selbst in einer beliebigen Klasse binden, die abgeleitet `NSObject` und weisen sie Sie der `WeakDelegate` Eigenschaft der `MKMapView`. Da die `UIViewController` abgeleitet aus `NSObject` (z. B. jede Objective-C-Klasse in CocoaTouch), können wir einfach eine Methode, um gebunden implementieren `mapView:didSelectAnnotationView:` direkt in den Controller, und weisen Sie den Controller zum `MKMapView`des `WeakDelegate`, vermeiden die Notwendigkeit, die zusätzliche geschachtelte Klasse. Der folgende Code veranschaulicht diesen Ansatz:
 
 ```csharp
 public partial class Protocols_Delegates_EventsViewController : UIViewController
@@ -385,16 +355,13 @@ public partial class Protocols_Delegates_EventsViewController : UIViewController
 }
 ```
 
-Wenn dieser Code ausgeführt wird, verhält sich die Anwendung genau wie beim Ausführen der stark typisierten Delegaten-Version. Der Vorteil dieses Codes ist, dass der schwachen Delegat die Erstellung der zusätzliche Klasse erfordert, die erstellt wurde, wenn wir den stark typisierten Delegaten verwendet. Dies ist jedoch zu Lasten der typsicherheit. Würden Sie einen Fehler im Selektor zu machen, die übergeben wurde, der `ExportAttribute`, Sie wäre nicht bis zur Laufzeit herausfinden.
-
- <a name="Events_and_Delegates" />
-
+Wenn dieser Code ausgeführt wird, verhält sich die Anwendung, genauso wie bei der Ausführung der stark typisierten Delegaten-Version. Der Vorteil aus diesem Code ist, dass der schwachen Delegat die Erstellung der zusätzlichen Klasse erfordern nicht, die erstellt wurde, als wir den stark typisierten Delegaten verwendet. Dies geht jedoch auf Kosten der typsicherheit. Würden Sie einen Fehler in der Auswahl, die übergeben wurde, machen die `ExportAttribute`, Sie wäre nicht bis zur Laufzeit ermitteln.
 
 ### <a name="events-and-delegates"></a>Ereignisse und Delegaten
 
-Delegaten werden für Rückrufe in iOS auf ähnliche Weise auf die Möglichkeit, verwendet, die.NET Ereignisse verwendet. Zum Erstellen von iOS scheint-APIs und wie sie Objective-C-Delegaten mehr wie .NET, Xamarin.iOS .NET Ereignisse an vielen Stellen, wo Delegaten in iOS verwendet werden, verfügbar gemacht werden.
+Delegaten werden für Rückrufe in iOS auf ähnliche Weise wie verwendet, die.NET Ereignisse verwendet. Zum Stellen von iOS scheint-APIs und die Möglichkeit, die Verwendung von Objective-C-Delegaten mehr wie .NET, Xamarin.iOS macht .NET Ereignisse an vielen Stellen, in denen Delegaten in iOS verwendet werden.
 
-Angenommen, die frühere Implementierung, in dem die `MKMapViewDelegate` reagierte auf eine ausgewählte Anmerkung kann auch in Xamarin.iOS implementiert werden, mithilfe eines Ereignisses .NET. In diesem Fall würde das Ereignis definiert werden, `MKMapView` und dem Namen `DidSelectAnnotationView`. Es müsste eine `EventArgs` Unterklasse des Typs `MKMapViewAnnotationEventsArgs`. Die `View` Eigenschaft `MKMapViewAnnotationEventsArgs` erhalten Sie einen Verweis auf die Anmerkung-Sicht, aus dem Sie mit der gleichen Implementierung fortfahren konnte Sie hatten zuvor ausgehendem hier:
+Z. B. die frühere Implementierung, in dem die `MKMapViewDelegate` beantwortet eine ausgewählte Anmerkung kann auch in Xamarin.iOS mithilfe eines Ereignisses für die .NET implementiert werden. In diesem Fall würde das Ereignis festgelegt werden, in `MKMapView` und `DidSelectAnnotationView`. Es müsste eine `EventArgs` Unterklasse des Typs `MKMapViewAnnotationEventsArgs`. Die `View` Eigenschaft `MKMapViewAnnotationEventsArgs` würde erhalten Sie einen Verweis auf die Anmerkung-Sicht, aus dem Sie mit der gleichen Implementierung fortfahren kann mussten Sie zuvor wie dargestellt hier:
 
 ```csharp
 map.DidSelectAnnotationView += (s,e) => {
@@ -411,20 +378,16 @@ map.DidSelectAnnotationView += (s,e) => {
 };
 ```
 
- <a name="Summary" />
-
-
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel behandelt zum Verwenden von Delegaten, Ereignisse und Protokolle im Xamarin.iOS. Wir haben gesehen, wie normale .NET Stil Ereignisse für Steuerelemente von Xamarin.iOS verfügbar macht.
-Als Nächstes kennen gelernt Objective-C-Protokolle, z. B., wie sie sich von C#-Schnittstellen sind und wie Sie Xamarin.iOS verwendet. Schließlich untersuchen wir Objective-C-Delegaten im Hinblick auf Xamarin.iOS. Wir haben gesehen, wie Xamarin.iOS stark unterstützt und schwach typisierte Delegaten und Ereignisse Methoden delegieren zu binden.
-
+In diesem Artikel erläutert, wie Sie Ereignisse, Protokolle und Delegaten in Xamarin.iOS verwendet wird. Wir haben gesehen, wie normale .NET Style-Ereignisse für Steuerelemente in Xamarin.iOS verfügbar macht.
+Als Nächstes wir haben die Objective-C-Protokolle, einschließlich, wie sie sich von unterscheiden C# Schnittstellen und wie Sie Xamarin.iOS verwendet. Schließlich haben wir untersucht, Objective-C-Delegaten vom Standpunkt der Xamarin.iOS. Wir haben gesehen, wie Xamarin.iOS beide stark unterstützt und schwach typisierte Delegate, und binden Sie Ereignisse, Methoden zu delegieren.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Protokolle, Delegaten und Ereignisse (Beispiel)](https://developer.xamarin.com/samples/Protocols_Delegates_Events/)
+- [Protokolle, Delegaten und Ereignissen (Beispiel)](https://developer.xamarin.com/samples/Protocols_Delegates_Events/)
 - [Hello, iOS](~/ios/get-started/hello-ios/index.md)
 - [Binden von Objective-C-Typen](~/ios/platform/binding-objective-c/index.md)
-- [Objective-C-Programmiersprache](http://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
+- [Die Objective-C-Programmiersprache](http://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
 - [Entwerfen von Benutzeroberflächen in Xcode 4](http://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/Xcode4TransitionGuide/InterfaceBuilder/InterfaceBuilder.html)
 - [Anwendung Kernkompetenzen für iOS](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)

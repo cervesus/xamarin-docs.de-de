@@ -1,41 +1,41 @@
 ---
-title: Multitasking für iPad in Xamarin.iOS
-description: iOS 9 unterstützt zwei Web-apps auf der gleichen Zeit, Folie über oder geteilten Ansicht ausgeführt wird. Darüber hinaus wird die Wiedergabe im Bild Video unterstützt.
+title: Multitasking für iPad im Xamarin.iOS
+description: iOS 9 unterstützt zwei apps, die auf der gleichen Zeit, Folie über oder geteilte Ansicht ausgeführt wird. Darüber hinaus wird die Wiedergabe von Bild-im-Bild-Video unterstützt.
 ms.prod: xamarin
 ms.assetid: 0F2266D7-21FF-404D-A148-0CFDE76B12AA
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 7eacd9ece067d2ddf6363c0551055daa3df4433a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 78f9aa47cce2fe0059bd7f4d4ff637d14fb8c669
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787954"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112519"
 ---
-# <a name="multitasking-for-ipad-in-xamarinios"></a>Multitasking für iPad in Xamarin.iOS
+# <a name="multitasking-for-ipad-in-xamarinios"></a>Multitasking für iPad im Xamarin.iOS
 
-_iOS 9 unterstützt zwei Web-apps auf der gleichen Zeit, Folie über oder geteilten Ansicht ausgeführt wird. Darüber hinaus wird die Wiedergabe im Bild Video unterstützt._
+_iOS 9 unterstützt zwei apps, die auf der gleichen Zeit, Folie über oder geteilte Ansicht ausgeführt wird. Darüber hinaus wird die Wiedergabe von Bild-im-Bild-Video unterstützt._
 
 ![](multitasking-images/about02-sml.png "Bildschirm Beispiel teilen") ![](multitasking-images/about03-sml.png "Bild-Beispiel")
 
-iOS 9 fügt Multitasking-Unterstützung für die Ausführung von zwei Web-apps zur gleichen Zeit auf bestimmte iPad-Hardware. Multitasking für iPad wird über die folgenden Funktionen unterstützt:
+iOS 9 fügt Multitasking-Unterstützung für die Ausführung von zwei apps gleichzeitig auf bestimmte iPad-Hardware. Multitasking für iPad wird über die folgenden Funktionen unterstützt:
 
-- [**Folie über** ](#Slide-Over) -ermöglicht es dem Benutzer eine zweite iOS-app vorübergehend in eine Folie out Bereich (entweder auf der linken oder rechten Seite des Bildschirms basierend auf Sprache Richtung) ausgeführt wird, die etwa 25 % der Haupt-app derzeit ausgeführt abdeckt. Schieben Sie über steht nur auf einem iPad Pro, iPad Air, iPad Air-2, iPad Mini-2, iPad Mini-3, oder iPad Mini-4.
-- [**Geteilte Ansicht** ](#Split-View) – der Benutzer kann auf unterstützten iPad Hardware (iPad iPad Mini-4 und iPad Pro nur per Funk 2) Wählen Sie eine zweite-app und führen Sie es Seite-an-Seite mit der aktuell ausgeführten app in einem geteilten Bildschirmmodus. Der Benutzer kann den Anteil der Hauptbildschirm steuern, die jede app belegt.
-- [**Bild im Bild** ](#Picture-in-Picture) – für apps, die Wiedergabe Videoinhalten, das video kann nun in einem Fenster verschiebbares und in der Größe veränderbaren abgespielt werden, die über die andere apps, die derzeit auf dem iOS-Gerät ausgeführt: verschiebt. Der Benutzer hat die vollständige Kontrolle über die Größe und Position des Fensters. Bild im Bild sind nur ein iPhone Pro iPad Air, iPad Air-2, iPad Mini-2, iPad Mini-3 oder iPad Mini-4 verfügbar.
+- [**Folie über** ](#Slide-Over) -ermöglicht dem Benutzer, die vorübergehend eine zweite iOS-app in eine Folie, Bereich (entweder auf den rechten oder linken Seite des Bildschirms basierend auf Sprache Richtung) ausgeführt, die CA. 25 % der Haupt-app ausgeführten abdeckt. Schieben Sie über steht nur auf einem iPad Pro, iPad Air, iPad Air-2, iPad Mini-2, iPad Mini-3, oder iPad Mini-4.
+- [**Geteilte Ansicht** ](#Split-View) – der Benutzer kann auf unterstützten iPad-Hardware (iPad Air 2, iPad Mini-4 und iPad nur Pro), wählen Sie eine zweite app und Seite-an-Seite mit der aktuell ausgeführten app in einem geteilten Bildschirms-Modus ausführen. Der Benutzer kann es sich um den Prozentsatz des Hauptbildschirms steuern, die jeder app belegt.
+- [**Bild in Abbildung** ](#Picture-in-Picture) : für apps, die Wiedergabe von Videoinhalten, das video kann jetzt in einem verschiebbaren und in der Größe veränderbaren Fenster wiedergegeben werden, die über die anderen apps, die derzeit auf dem iOS-Gerät ausgeführten gleitet. Der Benutzer hat vollständige Kontrolle über die Größe und Position des Fensters. Bild in Abbildung steht nur auf einem iPad Pro, iPad Air, iPad Air-2, iPad Mini-2, iPad Mini-3, oder iPad Mini-4.
 
-Es gibt eine Anzahl von zu berücksichtigenden Aspekte [Multitasking in Ihrer app unterstützen](#Supporting-Multitasking-in-your-App), einschließlich:
+Es gibt eine Reihe von Faktoren zu berücksichtigenden Aspekte beim [Multitasking in Ihrer app Unterstützung](#Supporting-Multitasking-in-your-App), einschließlich:
 
-- [Bildschirmgröße und Ausrichtung](#Screen-Size-Considerations)
-- [Benutzerdefinierte Tastenkombinationen](#Custom-Hardware-Keyboard-Shortcuts)
+- [Bildschirmgröße und-Ausrichtung](#Screen-Size-Considerations)
+- [Benutzerdefinierte Tastenkombinationen in Visual Studio](#Custom-Hardware-Keyboard-Shortcuts)
 - [Ressourcenverwaltung](#Resource-Management-Considerations)
 
-App-Entwickler können Sie auch [Multitasking abwählen](#Opting-Out-of-Multitasking), einschließlich [deaktivieren PIP Videowiedergabe](#Disabling-PIP-Video-Playback).
+Als app-Entwickler können Sie auch [Multitasking abwählen](#Opting-Out-of-Multitasking), einschließlich [deaktivieren PIP-Videowiedergabe](#Disabling-PIP-Video-Playback).
 
-In diesem Artikel werden die erforderlichen Schritte zum sicherstellen, dass Ihre app Xamarin.iOS wird in einem Multitaskingumgebung ordnungsgemäß ausgeführt oder wie Multitasking abzuwählen, wenn es sich nicht um eine gute ist zu, für Ihre app groß behandelt.
+Dieser Artikel behandelt die erforderlichen Schritte zum sicherstellen, dass Ihre Xamarin.iOS-app wird in einem Multitaskingumgebung ordnungsgemäß ausgeführt oder wie Multitasking kündigen, ist dies nicht gut für Ihre app anpassen.
 
 > [!VIDEO https://youtube.com/embed/GctYAozoLr8]
 
@@ -46,124 +46,124 @@ In diesem Artikel werden die erforderlichen Schritte zum sicherstellen, dass Ihr
 
 ## <a name="multitasking-quickstart"></a>Multitasking-Schnellstart
 
-Zur Unterstützung **Folie über** oder **geteilten Ansicht** Ihrer app müssen folgende:
+Zur Unterstützung **Folie über** oder **geteilte Ansicht** Ihre app muss gehen Sie folgendermaßen vor:
 
  - Für iOS 9 (oder höher) erstellt werden.
- - Verwenden Sie ein Storyboard für seine Bildschirm starten (und nicht image Bestand).
- - Verwenden Sie ein Storyboard mit Autolayout und Größenklassen für die Benutzeroberfläche.
- - Alle 4 iOS-Gerät Ausrichtungen (Hochformat, nach unten zeigende Hochformat, Querformat links und Querformat rechts) zu unterstützen.
+ - Verwenden Sie ein Storyboard für seine Startbildschirm (und nicht Bildanlagen Sie).
+ - Verwenden Sie ein Storyboard mit Autolayout und Größenklassen, für die Benutzeroberfläche.
+ - Alle 4 iOS geräteausrichtungen (Hochformat, nach unten zeigende Hochformat, Querformat links und Querformat rechts) zu unterstützen.
 
 <a name="Multitasking" />
 
-## <a name="about-multitasking-for-ipad"></a>Zum Multitasking für iPad
+## <a name="about-multitasking-for-ipad"></a>Klicken Sie zum Multitasking für iPad
 
-iOS 9 bietet die neuen Funktionen von Multitasking auf dem iPad durch die Einführung des _Folie über_, _geteilten Ansicht_ (iPad Mini-4-iPad und iPhone Pro nur per Funk 2) und _Bild im Bild_. Wir führen näher auf diese Funktionen in den folgenden Abschnitten.
+iOS 9 bietet neue Funktionen von Multitasking für iPad mit der Einführung von _Folie über_, _geteilte Ansicht_ (iPad Air 2, iPad Mini-4 und nur iPad Pro) und _Picture in Picture_. Wir werfe genauer an diese Funktionen in den folgenden Abschnitten.
 
 <a name="Slide-Over" />
 
 ### <a name="slide-over"></a>Folie über
 
-Das Feature Folie über ermöglicht dem Benutzer eine zweite app auswählen und in einem kleinen gleitende Bereich auf schnelle Interaktion anzeigt. Das Panel Folie über ist temporär und wird geschlossen, wenn der Benutzer wechselt zurück zum Arbeiten mit der Haupt-app erneut aus.
+Das Feature Folie über ermöglicht den Benutzer eine zweite app auswählen und in einem kleinen gleitende Panel auf kurze Interaktion anzuzeigen. Der Bereich Folie über ist vorübergehend und wird geschlossen, wenn der Benutzer zurück zum Arbeiten mit der Haupt-app erneut wechselt.
 
-[![](multitasking-images/about01.png "Das Panel Folie über")](multitasking-images/about01.png#lightbox)
+[![](multitasking-images/about01.png "Der Bereich Folie über")](multitasking-images/about01.png#lightbox)
 
-Die wichtigste daran ist, dass der Benutzer entscheidet, welche zwei Web-apps-Seite-an-Seite und hat der Entwickler keine Kontrolle über diesen Prozess ausgeführt werden. Daher sind einige Punkte, die Sie benötigen, um sicherzustellen, dass Ihre app Xamarin.iOS in einem Bereich Folie über ordnungsgemäß ausgeführt wird:
+Das wichtigste daran ist, dass der Benutzer entscheidet, welche zwei apps ausgeführt werden Seite-an-Seite und der Entwickler keine Kontrolle über diesen Prozess verfügt. Daher sind einige Punkte, die Sie benötigen, um sicherzustellen, dass es sich bei Ihrer Xamarin.iOS-app in einem Panel Folie über ordnungsgemäß ausgeführt wird:
 
-- **Verwenden Sie Autolayout und Größenklassen** – da Xamarin.iOS app jetzt im Bereich Folie horizontaler Seiten ausgeführt werden kann, Sie können nicht mehr verwenden, auf dem Gerät, dessen Bildschirmgröße oder die Ausrichtung zu Layout die Benutzeroberfläche. Um sicherzustellen, dass die app der Schnittstelle ordnungsgemäß skaliert, müssen Sie Autolayout und Größenklassen zu verwenden. Weitere Informationen finden Sie in unserer [Einführung in Storyboards Unified](~/ios/user-interface/storyboards/unified-storyboards.md) Dokumentation.
-- **Verwenden Sie Ressourcen effizient** – da Ihre app jetzt das System mit einem anderen ausgeführten app freigeben kann, ist wichtig, dass Ihre app Systemressourcen effizient verwendet. Wenn Speicher mit geringer Dichte wird, wird das System automatisch die app beendet, die den meisten Speicherplatz in Anspruch nimmt. Finden Sie in der Apple- [Energie Effizienz Handbuch für iOS-Apps](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243) Weitere Details.
+- **Verwenden Sie Automatisches Layout und die Größenklassen** – da es sich bei Ihrer Xamarin.iOS-app jetzt in der Folie hochskalierung Seitenleiste ausgeführt werden kann, Sie können nicht mehr verlassen auf dem Gerät, die Bildschirmgröße oder die Ausrichtung auf Layout die Benutzeroberfläche. Um sicherzustellen, dass Ihre app die Schnittstelle ordnungsgemäß skaliert wird, müssen Sie Automatisches Layout und die Größenklassen verwendet. Weitere Informationen finden Sie unserem [Einführung in Storyboards Unified](~/ios/user-interface/storyboards/unified-storyboards.md) Dokumentation.
+- **Ressourcen effizient verwenden** , da Ihre app jetzt das System mit einer anderen ausgeführten app Teilen kann, ist es wichtig, dass Ihre app Ressourcen effizient verwendet. Wenn Speicher mit geringer Dichte ist, endet das System automatisch die app, die am meisten Speicher belegen wird. Finden Sie unter Apple [Energie Effizienz-Handbuch für iOS-Apps](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243) Weitere Details.
 
-Schieben Sie über steht nur auf einem iPad Pro, iPad Air, iPad Air-2, iPad Mini-2, iPad Mini-3, oder iPad Mini-4. Weitere Informationen zum Vorbereiten Ihrer app auf Folie über finden Sie unter der Apple- [einführen Multitasking Verbesserungen auf iPad](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145) Dokumentation.
+Schieben Sie über steht nur auf einem iPad Pro, iPad Air, iPad Air-2, iPad Mini-2, iPad Mini-3, oder iPad Mini-4. Weitere Informationen zum Vorbereiten Ihrer app auf der Folie über finden Sie unter Apple [Einführung Multitasking Erweiterungen auf einem iPad](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145) Dokumentation.
 
 <a name="Split-View" />
 
 ### <a name="split-view"></a>Geteilte Ansicht
 
-Der Benutzer kann auf unterstützten iPad Hardware (iPad iPad Mini-4 und iPad Pro nur per Funk 2) Wählen Sie eine zweite app und führen Sie es Seite-an-Seite mit der aktuell ausgeführten app in einem geteilten Bildschirmmodus. Der Benutzer kann den Anteil der Hauptbildschirm, die jede app durch Ziehen belegt steuern eine auf dem Bildschirm Unterteiler.
+Der Benutzer kann auf unterstützten iPad Hardware (iPad Air 2, iPad Mini-4 und iPad nur Pro) Wählen Sie eine zweite app und Seite-an-Seite mit der aktuell ausgeführten app in einem geteilten Bildschirms-Modus ausführen. Benutzer kann steuern, den Prozentsatz des Hauptbildschirms, die belegt, jede app durch Ziehen einer auf dem Bildschirm Unterteiler.
 
-[![](multitasking-images/about02.png "Die geteilte Ansicht")](multitasking-images/about02.png#lightbox)
+[![](multitasking-images/about02.png "Der geteilten Ansicht")](multitasking-images/about02.png#lightbox)
 
-Der Benutzer entscheidet, welche zwei Web-apps-Seite-an-Seite ausgeführt werden und auch der Entwickler hat keinen Einfluss auf diesen Prozess, wie Folie über. Daher stellt geteilten Ansicht ähnlich wie Anforderungen an die in einem Xamarin.iOS-app:
+Wie schieben Sie auf der Benutzer entscheidet, welche zwei apps Seite-an-Seite ausgeführt werden soll, und in diesem Fall hat des Entwicklers keine Kontrolle über diesen Prozess. Daher stellt geteilte Ansicht ähnliche Anforderungen an die auf einer Xamarin.iOS-app:
 
-- **Verwenden Sie Autolayout und Größenklassen** – da Xamarin.iOS app nun in einem geteilten Bildschirmmodus zur angegebenen Größe des Benutzers ausgeführt werden kann, Sie können nicht mehr verwenden, auf dem Gerät, dessen Bildschirmgröße oder die Ausrichtung zu Layout die Benutzeroberfläche. Um sicherzustellen, dass die app der Schnittstelle ordnungsgemäß skaliert, müssen Sie Autolayout und Größenklassen zu verwenden. Weitere Informationen finden Sie in unserer [Einführung in Storyboards Unified](~/ios/user-interface/storyboards/unified-storyboards.md) Dokumentation.
-- **Verwenden Sie Ressourcen effizient** – da Ihre app jetzt das System mit einem anderen ausgeführten app freigeben kann, ist wichtig, dass Ihre app Systemressourcen effizient verwendet. Wenn Speicher mit geringer Dichte wird, wird das System automatisch die app beendet, die den meisten Speicherplatz in Anspruch nimmt. Finden Sie in der Apple- [Energie Effizienz Handbuch für iOS-Apps](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243) Weitere Details.
+- **Verwenden Sie Automatisches Layout und die Größenklassen** – da es sich bei Ihrer Xamarin.iOS-app jetzt in einem Split-Bildschirm-Modus auf die angegebene Größe des Benutzers ausgeführt werden kann, Sie können nicht mehr verlassen auf dem Gerät, die Bildschirmgröße oder die Ausrichtung auf Layout die Benutzeroberfläche. Um sicherzustellen, dass Ihre app die Schnittstelle ordnungsgemäß skaliert wird, müssen Sie Automatisches Layout und die Größenklassen verwendet. Weitere Informationen finden Sie unserem [Einführung in Storyboards Unified](~/ios/user-interface/storyboards/unified-storyboards.md) Dokumentation.
+- **Ressourcen effizient verwenden** , da Ihre app jetzt das System mit einer anderen ausgeführten app Teilen kann, ist es wichtig, dass Ihre app Ressourcen effizient verwendet. Wenn Speicher mit geringer Dichte ist, endet das System automatisch die app, die am meisten Speicher belegen wird. Finden Sie unter Apple [Energie Effizienz-Handbuch für iOS-Apps](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243) Weitere Details.
 
-Weitere Informationen zum Vorbereiten Ihrer app für geteilte Ansicht finden Sie unter der Apple- [einführen Multitasking Verbesserungen auf iPad](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145) Dokumentation.
+Weitere Informationen zum Vorbereiten Ihrer app für geteilte Ansicht finden Sie unter Apple [Einführung Multitasking Erweiterungen auf einem iPad](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145) Dokumentation.
 
 <a name="Picture-in-Picture" />
 
-### <a name="picture-in-picture"></a>Bild im Bild
+### <a name="picture-in-picture"></a>Picture in Picture
 
-Das neue Bild im Bild-Funktion (auch bekannt als _PIP_) ermöglicht es dem Benutzer ein Video in einem kleinen schwebenden Fenster überwachen, die der Benutzer an einer beliebigen Stelle auf dem Bildschirm über andere ausgeführte apps positionieren kann.
+Das neue Bild im Bild-Funktion (auch bekannt als _PIP_) ermöglicht dem Benutzer, ein Video in einem kleinen, unverankertes Fenster, die der Benutzer an einer beliebigen Stelle auf dem Bildschirm oben andere das Ausführen von apps positioniert werden kann.
 
-[![](multitasking-images/about03.png "Ein Beispiel für Bild in unverankerte Fenster \"Bild\"")](multitasking-images/about03.png#lightbox)
+[![](multitasking-images/about03.png "Ein Beispiel für Bild in Abbildung unverankerten Fenster")](multitasking-images/about03.png#lightbox)
 
-Als hat der Benutzer mit Folie über und geteilten Ansicht volle Kontrolle über ein Video in der Abbildung im Bild Modus beobachten. Ist Ihre app Hauptfunktion Video ansehen, benötigen sie einige Änderungen im PIP-Modus ordnungsgemäß verhält. Andernfalls werden keine Änderungen erforderlich, zur Unterstützung von PIP.
+Wie hat der Benutzer mit Folie über "und" geteilte Ansicht, vollständige Kontrolle über ein Video in der Abbildung im Bild-Modus. Wenn Ihrer app "main"-Funktion ist Video ansehen, benötigen sie einige Änderungen im PIP-Modus ordnungsgemäß verhält. Andernfalls werden keine Änderungen erforderlich, um PIP zu unterstützen.
 
-Damit Ihre app PIP Video über die Anforderung des Benutzers anzuzeigen, müssen Sie entweder verwenden _AVKit_ oder _AV Foundation APIs_. Das Media Player Framework wurde in iOS 9 Abschreibung wurde und PIP nicht unterstützt.
+Für Ihre app auf den PIP-Video zur Anforderung des Benutzers anzuzeigen, benötigen Sie entweder verwenden _AVKit_ oder _AV-Foundation-APIs_. Das Media Player-Framework wurde in iOS 9 abgeschrieben wurden und PIP nicht unterstützt.
 
-Bild im Bild sind nur ein iPhone Pro iPad Air, iPad Air-2, iPad Mini-2, iPad Mini-3 oder iPad Mini-4 verfügbar. Weitere Informationen finden Sie unter unsere [PictureInPicture Beispiel-App](https://developer.xamarin.com/samples/ios/iOS9/) und Apple [Bild in Schnellstart Bild](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/QuickStartForPictureInPicture.html#//apple_ref/doc/uid/TP40015145-CH14) Dokumentation.
+Bild in Abbildung steht nur auf einem iPad Pro, iPad Air, iPad Air-2, iPad Mini-2, iPad Mini-3, oder iPad Mini-4. Weitere Informationen finden Sie unsere [PictureInPicture-Beispiel-App](https://developer.xamarin.com/samples/ios/iOS9/) und Apple [Bild im Bild Schnellstart](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/QuickStartForPictureInPicture.html#//apple_ref/doc/uid/TP40015145-CH14) Dokumentation.
 
 <a name="Supporting-Multitasking-in-your-App" />
 
-## <a name="supporting-multitasking-in-your-app"></a>Unterstützen von Multitasking in Ihrer App
+## <a name="supporting-multitasking-in-your-app"></a>Unterstützung von Multitasking in Ihrer App
 
-Für alle bisherigen Xamarin.iOS app ist die Unterstützung von Multitasking eine transparente Aufgabe, wie Ihre app bereits Apple Entwurf Anleitungen und bewährte Methoden für iOS 8 folgt. Dies bedeutet, dass die app Storyboards mit Autolayout und Größenklassen für die Benutzeroberfläche Layouts verwendet werden sollte (finden Sie unter unsere [Einführung in Storyboards Unified](~/ios/user-interface/storyboards/unified-storyboards.md) für Weitere Informationen).
+Für alle vorhandenen Xamarin.iOS-app ist die Multitasking unterstützen eine transparente Aufgabe, so lange Ihre app bereits Apple designleitfäden und bewährte Methoden für iOS 8 folgt. Dies bedeutet, dass die app Storyboards mit Autolayout und Größenklassen für seine Benutzeroberfläche Layouts verwendet werden sollte (finden Sie unter unserem [Einführung in Storyboards Unified](~/ios/user-interface/storyboards/unified-storyboards.md) Informationen).
 
-Für diese apps sind nur wenig oder keine Änderungen erforderlich, damit Multitasking unterstützt und in ihr Verhalten. Wenn Ihre app-Benutzeroberfläche erstellt wurde, mit anderen Methoden wie z. B. direkt Position und Größe der Benutzeroberflächenelemente im C#-Code oder für bestimmte Geräte Bildschirmgrößen oder Ausrichtungen basiert, benötigen ihn signifikante Änderung iOS 9-Multitasking korrekt unterstützt werden.
+Für diese apps können sind wenige oder gar keine Änderungen erforderlich, um die Multitasking unterstützen und auch darin verhält. Wenn Ihre app die Benutzeroberfläche ist, wurde erstellt mit anderen Methoden wie z. B. direkt Positionierung und größenanpassung von Elementen der Benutzeroberfläche in C# code oder basiert es auf Bildschirmgrößen bestimmten Gerät oder die Ausrichtungen, benötigen sie erhebliche Änderungen an iOS 9-Multitasking ordnungsgemäß zu unterstützen.
 
-Unterstützung von iOS 9-Multitasking auf alle neuen Xamarin.iOS app erneut verwenden Sie Storyboards mit Autolayout und Größenklassen für alle von der app-Benutzeroberfläche Layouts und implementieren Sie die Anweisungen in den folgenden Abschnitten.
+Um iOS 9-Multitasking auf alle neuen Xamarin.iOS-app zu unterstützen, verwenden Sie Storyboards mit Autolayout und Größenklassen für alle von der app-Benutzeroberfläche Layouts erneut, und implementieren Sie die Anweisungen in den folgenden Abschnitten an.
 
 <a name="Screen-Size-Considerations" />
 
 ### <a name="screen-size-and-orientation-considerations"></a>Bildschirmgröße und Ausrichtung Überlegungen
 
-Bevor Sie iOS 9 konnte Sie Ihrer app anhand der bestimmten Gerät Bildschirmgrößen und Ausrichtungen entwerfen. Da eine app nun in einem Bereich Folie Out oder in Teilen Ansichtsmodus ausgeführt werden kann, kann sich entweder in einer Klasse compact oder reguläre horizontale Größe auf iPad, unabhängig von der physischen Ausrichtung oder Bildschirm Größe des Geräts ausgeführt gefunden werden.
+Vor iOS 9 können Sie die app anhand von bestimmten Gerät Bildschirmgrößen und-Ausrichtungen entwerfen. Da eine app nun in einem Panel Folie heraus oder im Modus für geteilte Ansicht ausgeführt werden kann, kann entweder in einer Klasse compact oder regulären horizontale Größe auf dem iPad, unabhängig von der das Gerät die physische Ausrichtung oder Bildschirm Größe ausgeführt gefunden werden.
 
 [![](multitasking-images/sizeclasses01.png "Bildschirmgröße und Ausrichtung Überlegungen")](multitasking-images/sizeclasses01.png#lightbox)
 
-Auf einem iPad hat eine Vollbild-Anwendung reguläre horizontale und vertikale Größe-Klassen. Alle iPhones, aber das iPhone 6 Plus und iPhone 6 s Plus, haben Sie kompakt Klassen in beide Richtungen Ausrichtung. Das iPhone 6 Plus und iPhone 6 s Plus im Querformat haben eine reguläre horizontale Größe-Klasse und einer Compact vertikale Größe-Klasse (ähnlich wie bei einem iPad Mini).
+Auf einem iPad hat eine Vollbild-Anwendung reguläre Klassen der horizontale und vertikale Größe. Alle iPhones, aber das iPhone 6 Plus und iPhone 6 s haben Sie darüber hinaus können Compact Größenklassen in beide Richtungen Ausrichtung. Das iPhone 6 Plus und iPhone 6 s Plus im Querformatmodus ausgeführt haben, einer normalen Klasse der horizontalen Größe und eine kompakte vertikale Größe-Klasse (ähnlich wie einem iPad Mini).
 
-Auf iPads, die Folie über und geteilte Ansicht unterstützen, können Sie die folgenden Kombinationen Schluss:
+Auf iPads, die Folie über "und" geteilte Ansicht unterstützen, können Sie die folgenden Kombinationen Schluss:
 
-| **Ausrichtung** | **Primäre App** | **Sekundäre App** |
+| **Ausrichtung** | **Primären App** | **Sekundäre App** |
 |--- |--- |--- |
 | **Hochformat** |75 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|25 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|
 | **Querformat** |75 % des Bildschirms<br />Reguläre Horizontal<br />Reguläre vertikal|25 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|
 | **Querformat** |50 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|50 % des Bildschirms<br />Compact Horizontal<br />Reguläre vertikal|
 
-Im Beispiel [MuliTask](https://developer.xamarin.com/samples/monotouch/ios9/MultiTask/) app, wenn er Vollbild auf einem iPad im Querformat-Modus ausgeführt wird, wird es der Liste und die Detailansicht gleichzeitig vorhanden:
+Im Beispiel [MuliTask](https://developer.xamarin.com/samples/monotouch/ios9/MultiTask/) -app, wenn es auf einem iPad im Querformat "Vollbild" ausgeführt wird, wird er der Liste und aus der Detailansicht zur gleichen Zeit darstellen:
 
-[![](multitasking-images/sizeclasses03.png "Die Liste und der Detailansicht angezeigt, die zur gleichen Zeit")](multitasking-images/sizeclasses03.png#lightbox)
+[![](multitasking-images/sizeclasses03.png "Die Liste und der Detailansicht, die gleichzeitig angezeigt")](multitasking-images/sizeclasses03.png#lightbox)
 
-Wenn in einem Bereich schieben Sie über die gleiche app ausgeführt wird, wird als Compact horizontale Größe Klasse angeordnet und zeigt nur die Liste:
+Wenn in einem Panel schieben Sie über die gleiche app ausgeführt wird, ist als Compact horizontale Größenklasse angeordnet, und zeigt nur die Liste:
 
-[![](multitasking-images/sizeclasses04.png "Nur der Liste angezeigt, wenn das Gerät horizontale ist")](multitasking-images/sizeclasses04.png#lightbox)
+[![](multitasking-images/sizeclasses04.png "Nur die Liste angezeigt, wenn das Gerät horizontalen Position befindet.")](multitasking-images/sizeclasses04.png#lightbox)
 
-Um sicherzustellen, dass Ihre app in diesen Situationen ordnungsgemäß verhält, sollten Sie übernehmen Merkmals Sammlungen zusammen mit der Größe von Klassen und entsprechen dem `IUIContentContainer` und `IUITraitEnvironment` Schnittstellen. Finden Sie in der Apple- [UITraitCollection-Klassenreferenz](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/doc/uid/TP40014202) und unseren [Einführung in Storyboards Unified](~/ios/user-interface/storyboards/unified-storyboards.md) Weitere Informationen.
+Um sicherzustellen, dass Ihre app richtig funktioniert in diesen Situationen, sollte Sie Trait-Sammlungen sowie Größenklassen übernehmen und entsprechen den `IUIContentContainer` und `IUITraitEnvironment` Schnittstellen. Finden Sie unter Apple [UITraitCollection Class Reference](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/doc/uid/TP40014202) und unseren [Einführung in Storyboards Unified](~/ios/user-interface/storyboards/unified-storyboards.md) Anleitung finden Sie weitere Informationen.
 
-Darüber hinaus können Sie nicht mehr beruhen auf den Grenzen des Geräte-Bildschirm sichtbaren Bereich der app zu definieren, Sie müssen stattdessen Fenstergrenzen Ihrer app verwenden. Da Fenstergrenzen vollständig unter der Kontrolle des Benutzers sind, nicht programmgesteuert anzupassen oder verhindern, dass der Benutzer diese Grenzen zu ändern.
+Darüber hinaus wird Sie nicht mehr auf den Geräten Bildschirm Grenzen zum Definieren der app angezeigten Bereich verlassen können, müssen Sie Ihrer app Fenstergrenzen stattdessen zu verwenden. Da Fenstergrenzen vollständig unter der Kontrolle des Benutzers enthalten sind, nicht programmgesteuert passen Sie sie oder verhindern, dass den Benutzer diese Grenzen zu ändern.
 
-Schließlich muss Ihrer app eine Storyboarddatei verwenden, um seine Bildschirm starten, im Gegensatz zur Verwendung der eines Satzes von präsentieren **PNG** Bilddateien und unterstützt alle vier Schnittstelle Ausrichtungen (Hochformat, nach unten zeigende Hochformat, Querformat links und Querformat rechts) für die Ausführung in einem Bereich Folie über oder im Modus für geteilte Ansicht berücksichtigt werden.
+Schließlich muss Ihre app eine Storyboard-Datei verwenden, zur Darstellung des Bildschirms starten, statt eine Reihe von **PNG** Bilddateien und unterstützen alle vier schnittstellenausrichtungen (Hochformat, nach unten zeigende Hochformat, Querformat links und Querformat rechts) für die Ausführung in einem Panel Folie über oder im Modus für geteilte Ansicht berücksichtigt werden.
 
 <a name="Custom-Hardware-Keyboard-Shortcuts" />
 
-### <a name="custom-hardware-keyboard-shortcuts"></a>Benutzerdefinierte Tastenkombinationen
+### <a name="custom-hardware-keyboard-shortcuts"></a>Benutzerdefinierte Tastenkombinationen in Visual Studio
 
-In iOS 9 ausgeführt wird, auf einem iPad, Apple verfügt über erweiterte Unterstützung für Hardware Tastaturen. iPads einbezogen haben immer grundlegende externe Tastaturfunktionen über Bluetooth und einige Tastatur Hersteller erstellt Tastaturen, die drahtgebundenen iOS-spezifische Schlüssel enthalten.
+In iOS 9 ausgeführt wird, auf einem iPad, Apple hat der erweiterte Support für Hardware-Tastaturen. iPads enthalten immer grundlegende externe Bildschirmtastatur-Unterstützung über Bluetooth und einigen Tastatur Herstellern erstellte Tastaturen, die verdrahteten iOS-spezifische Schlüssel enthalten.
 
-Jetzt können apps mit iOS 9, eigene benutzerdefinierte Tastenkombinationen erstellen. Darüber hinaus sind einige grundlegende Tastenkombinationen verfügbar wie **Befehl-c** (Kopieren), **Befehl X** (cut) **Befehl V** (Einfügen) und **Befehl-Umschalt-H**  (home), ohne eine app wird auf sie ausdrücklich schriftliche reagieren.
+Nun können apps in iOS 9, eigene benutzerdefinierte Tastenkombinationen erstellen. Darüber hinaus sind einige grundlegende Tastenkombinationen verfügbar, z. B. **Befehl-C-** (Kopieren), **Befehl-X** (Ausschneiden), **Befehl-v** (Einfügen) und **Befehl-Umschalt-H**  (home), ohne eine app wird insbesondere geschriebene Reaktion darauf.
 
-**– Registerkarte "Befehl"** wird ein app-Switcher, die dem Benutzer ermöglicht, wechseln Sie schnell zwischen apps über die Tastatur, ähnlich wie die Mac OS bringen:
+**Registerkarte "von"** wird ein app-Switcher, die dem Benutzer ermöglicht, schnell wechseln zwischen apps über die Tastatur, ähnlich wie Mac OS angezeigt:
 
-[![](multitasking-images/keyboard01.png "Der Switcher app")](multitasking-images/keyboard01.png#lightbox)
+[![](multitasking-images/keyboard01.png "Der app-switcher")](multitasking-images/keyboard01.png#lightbox)
 
-Wenn eine app für iOS 9 Tastenkombinationen enthält, die Benutzer kann halten Sie auf der **Befehl**, **Option** oder **Steuerelement** Schlüssel, um sie in einem Popupfenster anzuzeigen:
+Wenn eine app für iOS 9 Tastenkombinationen in Visual Studio enthält, die Benutzer halten und auf die **Befehl**, **Option** oder **Steuerelement** Schlüssel, um sie in einem Popupfenster anzuzeigen:
 
-[![](multitasking-images/keyboard02.png "Die Tastatur Tastenkombinationen-popup")](multitasking-images/keyboard02.png#lightbox)
+[![](multitasking-images/keyboard02.png "Die Pop-up mit Tastenkombinationen")](multitasking-images/keyboard02.png#lightbox)
 
-#### <a name="defining-custom-keyboard-shortcuts"></a>Definieren von Tastenkombinationen
+#### <a name="defining-custom-keyboard-shortcuts"></a>Definieren von benutzerdefinierten Tastenkombinationen
 
-Wenn wir fügen den folgenden Code auf eine Sicht oder View Controller in dieser app ab, wenn diese Ansicht bzw. Domänencontroller angezeigt wird, wird eine benutzerdefinierte Tastenkombination verfügbar sein:
+Wenn wir fügen den folgenden Code auf eine Sicht oder View Controller in unserer app ab, wenn diese Ansicht bzw. Domänencontroller angezeigt wird, wird eine benutzerdefinierte Tastenkombination verfügbar sein:
 
 ```csharp
 #region Custom Keyboard Shortcut
@@ -189,68 +189,68 @@ public void NewEntry() {
 #endregion
 ```
 
-Zuerst, überschreiben die `CanBecomeFirstResponder` Eigenschaft und die Rückgabewerte `true` damit die Ansicht bzw. View Controller Tastatureingaben empfangen kann. 
+Zunächst überschreiben die `CanBecomeFirstResponder` Eigenschaft und die Rückgabewerte `true` damit die Ansicht oder View Controller Tastatureingaben empfangen kann. 
 
-Als Nächstes überschreiben die `KeyCommands` Eigenschaft und erstellen Sie ein neues `UIKeyCommand` für die **Befehl N** Tastatureingabe. Wenn die Tastatureingabe aktiviert ist, nennen wir die `NewEntry` Methode (, die wir mit iOS 9 verfügbar machen die `Export` Befehl), die angeforderte Aktion auszuführen.
+Als Nächstes überschreiben wir die `KeyCommands` Eigenschaft und erstellen Sie ein neues `UIKeyCommand` für die **Befehl-N** Tastatureingabe. Wenn die Tastatureingabe aktiviert ist, rufen wir die `NewEntry` Methode (, die wir mit iOS 9 verfügbar machen die `Export` Befehl), die angeforderte Aktion auszuführen.
 
-Wenn beim Ausführen dieser app auf einem iPad mit einer Hardwaretastatur angefügt und vom Benutzer eingegebenen **Befehl N**, ein neuer Eintrag wird zur Liste hinzugefügt werden. Wenn der Benutzer auf gedrückt hält die **Befehl** Schlüssel, die Liste der Verknüpfungen wird angezeigt:
+Wenn das Ausführen dieser app auf einem iPad mit einem Hardwaretastatur und der Benutzer eingibt **Befehl-n**, ein neuer Eintrag wird zur Liste hinzugefügt werden. Wenn der Benutzer auf gedrückt hält die **Befehl** Schlüssel, die Liste der Verknüpfungen werden angezeigt:
 
-[![](multitasking-images/keyboard03.png "Die Tastatur Tastenkombinationen-popup")](multitasking-images/keyboard03.png#lightbox)
+[![](multitasking-images/keyboard03.png "Die Pop-up mit Tastenkombinationen")](multitasking-images/keyboard03.png#lightbox)
 
-Sie finden Sie im Beispiel [Multitasking app](http://developer.xamarin.com/samples/monotouch/ios9/MultiTask/) eine Beispiel-Implementierung.
+Informieren Sie sich das Beispiel [Multitasking app](http://developer.xamarin.com/samples/monotouch/ios9/MultiTask/) eine beispielimplementierung.
 
 <a name="Resource-Management-Considerations" />
 
 ### <a name="resource-management-considerations"></a>Überlegungen zur Verwaltung von Ressourcen
 
-Auch für apps, die bereits iOS 8 des Entwurfs von Führungslinien und bewährte Methoden verwenden, möglicherweise effizienter ressourcenverwaltung weiterhin ein Problem. In iOS 9 müssen die apps nicht mehr ausschließliche Verwendung von Arbeitsspeicher, CPU oder andere Systemressourcen.
+Auch für apps, die bereits iOS 8 durch seine designleitfäden und bewährte Methoden verwenden, möglicherweise effizienter ressourcenverwaltung weiterhin ein Problem. In iOS 9 müssen apps nicht mehr die exklusive Verwendung des Arbeitsspeichers, CPU oder andere Systemressourcen.
 
-Daher müssen Sie Ihre app Xamarin.iOS, um die effektive Verwendung von Systemressourcen optimieren oder gewinnen Beendigung unter unzureichendem Arbeitsspeicher. Dies gilt gleichermaßen von apps, die Multitasking abzuwählen, seit ein zweites möglicherweise app weiterhin in einer Folie über Bereich oder ein Bild im Fenster des Bild, erfordern zusätzliche Ressourcen oder die Aktualisierungsrate verursacht unter 60 Frames pro Sekunde fällt ausgeführt werden.
+Daher müssen Sie Ihre Xamarin.iOS-app, um Systemressourcen effektiv verwenden optimieren, oder sie Gesichter Beendigung in Situationen mit wenig Arbeitsspeicher. Dies gilt gleichermaßen für apps, die Multitasking deaktivieren, da eine Sekunde möglicherweise app weiterhin in eine Folie über Bereich oder ein Bild im Bild-Fenster, erfordern zusätzliche Ressourcen oder die Häufigkeit der Aktualisierung verursachen, die Verfügbarkeit von weniger als 60 Bilder pro Sekunde ausgeführt werden.
 
-Betrachten Sie die folgenden Benutzeraktionen und deren Bedeutung:
+Betrachten Sie die folgenden Benutzeraktionen und deren Auswirkungen:
 
-- **Eingeben von Text in einem Bereich Folie über** – selbst wenn Ihre app keine Texteingabe enthält, die Tastatur System kann jetzt angezeigt werden über die Benutzeroberfläche. Daher müssen die app So reagieren Sie auf der Tastatur anzeigebenachrichtigungen (z. B. ein- und Ausblenden von der Tastatur).
-- **Ausführen einer zweiten App in einem Bereich Folie über** -die neue app wird jetzt im Vordergrund ausgeführt und mit der vorhandenen app für Systemressourcen wie Arbeitsspeicher und CPU-Zyklen konkurrieren.
-- **Wiedergabe eines Videos in einem Fenster PIP** – nicht nur in diesem Fenster Teil der app-Schnittstelle deckt, aber die app, die das Video gestartet ist weiterhin im Hintergrund ausgeführt und CPU-und Arbeitsspeicherressourcen consuming.
+- **Eingeben von Text in einem Panel Folie über** -selbst wenn Ihre app keine Texteingabe enthält, die Systemtastatur kann jetzt angezeigt werden über die Benutzeroberfläche. Daher müssen die app auf der Tastatur anzeigebenachrichtigungen (z. B. das Anzeigen und Ausblenden der Tastaturfokus) zu reagieren.
+- **Ausführung einer zweiten App in einem Panel Folie über** – die neue app wird jetzt im Vordergrund ausgeführt und mit der vorhandenen app für Systemressourcen wie Arbeitsspeicher und CPU-Zyklen.
+- **Wiedergeben eines Videos in einem Fenster PIP** – nicht nur dieses Fenster zu Teil Ihrer app-Schnittstelle überdecken kann, aber die app, die das Video gestartet weiterhin im Hintergrund ausgeführt und Nutzen von CPU-und Arbeitsspeicherressourcen.
 
-Um sicherzustellen, dass Ihre app Ressourcen effizient verwendet, sollten Sie Folgendes tun:
+Um sicherzustellen, dass Ihre app Ressourcen effizient verwendet, sollten Sie folgendermaßen vor:
 
-- **Profilerstellung für die App mit den Instrumenten** -prüfen auf Speicherverluste, bei einer offenkundig CPU-Auslastung und Bereiche, in denen die app den Haupt-Thread blockieren.
-- **Reagieren auf Status Übergänge Methoden** – In Ihre **AppDelegate.cs** Datei Override "und" Antwort auf Status ändern Sie Methoden wie z. B. die app eingeben oder aus Hintergrund zurückgegeben. Lassen Sie alle nicht benötigten Ressourcen wie z. B. Bilder, Daten oder Sichten und View-Controller.
-- **Testen Sie die Seite-an-Seite mit Speicher anspruchsvolle Apps** - Ausführen der app eine Arbeitsspeicher-rechenintensive app wie z. B. Zuordnungen (in Satelliten-Ansichtsmodus) Folie Out und geteilter Ansicht, die auf physischen e Hardware mit und Testen Sie, dass beide apps weiterhin auf Benutzerinteraktionen reagieren und nicht stürzt ab.
+- **Profilerstellung für die App mit Instruments** -überprüfen Sie, ob Speicherverluste, offenkundig CPU-Auslastung und Bereiche, in dem die app möglicherweise werden der Hauptthread blockiert.
+- **Auf Zustand Übergänge Methoden zu reagieren** – klicken Sie im Ihre **Datei "appdelegate.cs"** Datei außer Kraft setzen und die Antwort auf Status ändern Sie Methoden wie z. B. die app eingeben oder im Hintergrund zurückgeben. Veröffentlichen Sie alle nicht erforderlichen Ressourcen wie Bilder, Daten oder Ansichten und ansichtscontroller.
+- **Testen Sie die Seite-an-Seite mit grafikintensiven Apps Arbeitsspeicher** : Ausführen der app, die einer rechenintensiven app Speicher wie z. B. Zuordnungen (im Modus der Satelliten-Ansicht) mithilfe von Folie, und geteilte Ansicht auf physischen iOS-Hardware, und Testen Sie, dass beide apps reaktionsfähig bleiben, und führen Sie nicht abstürzt.
 
-Finden Sie in der Apple- [Energie Effizienz Handbuch für iOS-Apps](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243) für Weitere Informationen zur ressourcenverwaltung von.
+Finden Sie unter Apple [Energie Effizienz-Handbuch für iOS-Apps](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243) für Weitere Informationen zu Resource Manager.
 
 <a name="Opting-Out-of-Multitasking" />
 
-## <a name="opting-out-of-multitasking"></a>Wenn Sie keine Multitasking
+## <a name="opting-out-of-multitasking"></a>Deaktivierung der Multitasking
 
-Während Apple bereits vermuten lässt, dass alle apps für iOS 9 Multitasking unterstützen, kann es sehr besondere Gründe für eine app nicht zu z. B. Spiele oder apps, die Kamera, die den gesamten Bildschirm ordnungsgemäß funktioniert erfordern.
+Beim Apple empfiehlt, dass alle apps für iOS 9 Multitasking unterstützen, unter Umständen sehr spezifische Gründe für eine app nicht zu, wie z. B. Spiele oder Kamera-apps, die den gesamten Bildschirm ordnungsgemäße erfordern.
 
-Damit Ihre app Xamarin.iOS abwählen, entweder mit einer Folie Out Bereich als oder geteilten Ansicht Modus ausgeführt wird, bearbeiten Sie des Projekts **"Info.plist"** Datei, und überprüfen Sie **Vollbild erfordert**:
+Bearbeiten Sie für Ihre Xamarin.iOS-app zu deaktivieren, die ausgeführt wird, entweder eine Folie, im Bedienfeld "oder im Modus für geteilte Ansicht des Projekts **" Info.plist "** Datei, und überprüfen Sie **Vollbild erfordert**:
 
-[![](multitasking-images/fullscreen01.png "Wenn Sie keine Multitasking")](multitasking-images/fullscreen01.png#lightbox)
+[![](multitasking-images/fullscreen01.png "Deaktivierung der Multitasking")](multitasking-images/fullscreen01.png#lightbox)
 
 > [!IMPORTANT]
-> Während Ihre app Multitasking abwählen verhindert werden, in Folie Out "oder" geteilte Ansicht ausgeführt werden, verhindert es einer anderen app nicht bewegen, oder ein Bild im Bild video ausgeführt wird, die zusammen mit Ihrer app anzeigt.
+> Während der Deaktivierung der Multitasking Ihrer app wird verhindert, dass in schieben, oder die geteilte Ansicht ausgeführt werden, verhindert es einer anderen Anwendung nicht schieben, oder ein Bild in Abbildung video ausgeführt wird, zusammen mit Ihrer app angezeigt.
 
 <a name="Disabling-PIP-Video-Playback" />
 
 ### <a name="disabling-pip-video-playback"></a>Deaktivieren PIP-Videowiedergabe
 
-In den meisten Fällen sollte die app können Benutzer alle Videoinhalten wiedergegeben, die in einem Bild im unverankerte Fenster "Bild" angezeigt. Möglicherweise gibt es jedoch Situationen, in denen dies nicht, wie z. B. Spiel ausgeschnittene Szene Videos erwünscht sein kann.
+In den meisten Fällen sollte Ihre app können Benutzer, alle video Inhalte wiederzugeben, die in einem Bild in Abbildung unverankerten Fenster angezeigt. Möglicherweise gibt es jedoch Situationen, in denen dies nicht, wie z. B. Spiele Ausschneiden Szene Videos erwünscht sein kann.
 
-Um PIP Videowiedergabe abzuwählen, gehen Sie in Ihrer app:
+Um die Videowiedergabe PIP kündigen möchten, gehen Sie in Ihrer app:
 
- - Bei Verwendung einer `AVPlayerViewController` Video anzeigen möchten, legen Sie die `AllowsPictureInPicturePlayback` Eigenschaft, um `false`.
- - Bei Verwendung der `AVPlayerLayer` um Video anzuzeigen, nicht instanziieren einer `AVPictureInPictureController`.
- - Bei Verwendung einer `WKWebView` Video anzeigen möchten, legen Sie die `AllowsPictureInPictureMediaPlayback` Eigenschaft, um `false`.
+ - Bei Verwendung einer `AVPlayerViewController` um Video anzuzeigen, legen die `AllowsPictureInPicturePlayback` Eigenschaft `false`.
+ - Bei Verwendung der `AVPlayerLayer` zum Anzeigen von Video nicht instanziieren einer `AVPictureInPictureController`.
+ - Bei Verwendung einer `WKWebView` um Video anzuzeigen, legen die `AllowsPictureInPictureMediaPlayback` Eigenschaft `false`.
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden die erforderlichen Schritte zum sicherstellen, dass eine Xamarin.iOS app ausgeführt wird und ordnungsgemäß in iOS 9 neue Multitasking-Fähigkeit für iPads behandelt. Darüber hinaus behandelt diese Entscheidung Out-of Multitasking für apps, wenn er nicht gut geeignet ist.
+In diesem Artikel wurden die erforderlichen Schritte zum sicherstellen, dass eine Xamarin.iOS-app ausgeführt wird und in iOS 9 neue Multitasking-Fähigkeit für iPads, verhalten sich korrekt behandelt. Darüber hinaus behandelt diese Entscheidung-Out-of Multitasking für apps, wenn es nicht gut geeignet ist.
 
 
 
@@ -261,5 +261,5 @@ In diesem Artikel wurden die erforderlichen Schritte zum sicherstellen, dass ein
 - [Einführung in die einheitliche Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md)
 - [iOS 9 für Entwickler](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [Einsetzen von Erweiterungen für Multitasking auf iPad](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145)
+- [Einführung von Verbesserungen für Multitasking auf dem iPad](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145)
 - [Blogbeitrag](https://blog.xamarin.com/using-auto-layouts-for-ios-9-splitview/)

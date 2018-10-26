@@ -5,12 +5,12 @@ description: In diesem Dokument verglichen und gegenübergestellt von WPF in Xam
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 4d6585715b2fc118bb350c242abccbc68791ec0b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 43eadacebf7ed877dfa28381ad77117d5988ca4b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998517"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119827"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF im Vergleich zu. Xamarin.Forms: Ähnlichkeiten und Unterschiede
 
@@ -98,7 +98,6 @@ Die bindungsunterstützung und das Modul ähneln mehr der Silverlight-Implementi
     - ValidationRules-Auflistung
     - XPath
     - XmlNamespaceManager
-- `Binding.Mode` unterstützt keine `OneTime`, verwenden Sie stattdessen einfach `OneWay`.
 
 #### <a name="relativesource"></a>RelativeSource
 
@@ -171,7 +170,7 @@ Für Phone-Geräte, die verschiedene _Bildschirme_ sind häufig die Lösung und 
 |--- |--- |
 |Stapelbasierte (Push/Pop)|"NavigationPage"|
 |Master/Detail-|MasterDetailPage|
-|Registerkarten|"Tabbedpage"|
+|Tabstopps|"Tabbedpage"|
 |Streichen Sie nach links/rechts|CarouselView|
 
 Die `NavigationPage` der gängigste Ansatz ist, und jede Seite hat eine `Navigation` Eigenschaft, die mithilfe von Push übertragen oder pop-Seiten, die ein- und Ausschalten der Navigationsstapel verwendet werden kann. Dies ist die nächste Equivelent zu den `NavigationService` finden Sie in WPF.

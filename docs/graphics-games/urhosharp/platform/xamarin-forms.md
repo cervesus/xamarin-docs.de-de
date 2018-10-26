@@ -1,23 +1,23 @@
 ---
-title: UrhoSharp Xamarin.Forms-Unterstützung
-description: Xamarin.Forms-spezifische das Setup für UrhoSharp.
+title: Xamarin.Forms-Support von UrhoSharp
+description: Xamarin.Forms-spezifische Setup für von UrhoSharp.
 ms.prod: xamarin
 ms.assetid: B630B8BE-3D8D-4CDB-BDB0-9709052AA46C
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 4570a7a01e1b8e27f881a2e822c2f27063631215
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 1056ddf4fc600bd96665a8dc3f97df7d0d6d214a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783651"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115379"
 ---
-# <a name="urhosharp-xamarinforms-support"></a>UrhoSharp Xamarin.Forms-Unterstützung
+# <a name="urhosharp-xamarinforms-support"></a>Xamarin.Forms-Support von UrhoSharp
 
-UrhoSharp kann in Xamarin.Forms Anwendungen gehostet werden. Urho Code kann in einer PCL geschrieben und von mehreren Plattformen gemeinsam verwendet werden.
+Von UrhoSharp kann in Xamarin.Forms-Anwendungen gehostet werden. Der Urho Code kann geschrieben werden, in einer PCL und plattformübergreifend genutzt werden.
 
-Befolgen Sie diese Anweisungen für [Xamarin.Forms UrhoSharp hinzugefügt](~/xamarin-forms/user-interface/graphics/urhosharp.md), und beziehen sich auf die [UrhoSharp Dokumentation](~/graphics-games/urhosharp/using.md) Informationen zum 3D-Szenen und Aktionen zu erstellen.
+Befolgen Sie diese Anweisungen für [Hinzufügen von UrhoSharp in Xamarin.Forms](~/xamarin-forms/user-interface/graphics/urhosharp.md), und beziehen sich auf die [von UrhoSharp Dokumentation](~/graphics-games/urhosharp/using.md) Informationen 3D-Szenen und Aktionen erstellen.
 
-Die [UrhoSharp Xamarin.Forms Beispiel](https://github.com/xamarin/urho-samples/tree/master/FormsSample) zeigt eine interaktive 3D-Diagramm veranschaulicht, wie Sie mit UrhoSharp aus Xamarin.Forms freigegebenen Code interagieren.
+Die [von UrhoSharp Xamarin.Forms-Beispiel](https://github.com/xamarin/urho-samples/tree/master/FormsSample) zeigt eine interaktive 3D-Diagramm veranschaulicht, wie Sie von UrhoSharp in Xamarin.Forms shared-Code interagieren.
 

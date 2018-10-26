@@ -1,78 +1,78 @@
 ---
 title: Verwenden von SQLite.NET mit Android
-description: Die SQLite.NET PCL NuGet-Bibliothek bietet es sich um einen einfachen Zugriffsmechanismus für Xamarin.Android-apps.
+description: Die von SQLite.NET PCL-NuGet-Bibliothek stellt einen einfachen Mechanismus für Xamarin.Android-apps bereit.
 ms.prod: xamarin
 ms.assetid: 3447B7EE-A320-489E-AF02-E5721097760A
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 878b0097fc0f62e6b90d948d8a15ab39db4b2f3e
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 741e18d84c25bb4479480949a271a5845e99daa1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732254"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118460"
 ---
 # <a name="using-sqlitenet-with-android"></a>Verwenden von SQLite.NET mit Android
 
-Die SQLite.NET-Bibliothek, die empfiehlt Xamarin ist ein sehr einfaches ORM, mit dem Sie leicht zu speichern und Abrufen von Objekten in der lokalen SQLite-Datenbank auf einem Android-Gerät. ORM steht für die Zuordnung von Objekt relationalen &ndash; eine API, mit dem Sie das Speichern und Abrufen von "Objekte" aus einer Datenbank ohne das Schreiben von SQL-Anweisungen.
+Die von SQLite.NET-Bibliothek, die Xamarin empfiehlt ist ein sehr einfaches ORM, mit dem Sie ganz einfach speichern und Abrufen von Objekten in der lokalen SQLite-Datenbank auf einem Android-Gerät. ORM steht für die Zuordnung von Objekt relationalen &ndash; eine API, mit dem Sie das Speichern und Abrufen von "Objekte" aus einer Datenbank ohne SQL-Anweisungen schreiben zu müssen.
 
-Zum Einschließen der SQLite.NET-Bibliothek in einer Xamarin-app fügen Sie die folgenden NuGet-Paket zum Projekt hinzu:
+Um die Bibliothek von SQLite.NET in einer Xamarin-app zu einzuschließen, fügen Sie das folgende NuGet-Paket zu Ihrem Projekt ein:
 
-- **Paketname:** Sqlite-Net-Pcl
+- **Paketname:** Sqlite-Net-Plc
 - **Autor:** Frank A. Krueger
-- **ID:** Sqlite-Net-Pcl
+- **ID:** Sqlite-Net-Plc
 - **URL:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
-[![SQLite.NET NuGet-Paket](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet-Paket")](using-sqlite-orm-images/image1a.png#lightbox)
+[![Von SQLite.NET NuGet-Paket](using-sqlite-orm-images/image1a-sml.png "von SQLite.NET NuGet-Paket")](using-sqlite-orm-images/image1a.png#lightbox)
 
 > [!TIP]
-> Stehen eine Reihe von verschiedenen SQLite-Paketen zur Verfügung – Achten Sie darauf, dass Sie die richtige auszuwählen (es möglicherweise nicht die obersten führen zu suchen).
+> Stehen eine Anzahl von unterschiedlichen SQLite-Paketen zur Verfügung – Achten Sie darauf, dass Sie die richtige Vorlage auswählen (das oberste Suchergebnis in Search möglicherweise nicht).
 
-Nachdem Sie die Bibliothek SQLite.NET verfügbar haben, führen Sie diese drei Schritte, um es verwenden, um eine Datenbank zuzugreifen:
+Nachdem Sie die Bibliothek von SQLite.NET verfügbar haben, führen Sie diese drei Schritte aus, um es verwenden, um den Zugriff auf eine Datenbank aus:
 
-1.  **Fügen Sie eine using Anweisung** &ndash; fügen Sie die folgende Anweisung, um die C#-Dateien, für den Datenzugriff erforderlich ist:
+1.  **Hinzufügen einer using Anweisung** &ndash; fügen die folgende Anweisung aus, um die C# Dateien, für den Datenzugriff erforderlich ist:
 
     ```csharp
     using SQLite;
     ```
 
-2.  **Erstellen Sie eine leere Datenbank** &ndash; ein Datenbankverweis übergeben dem Dateipfad des Klassenkonstruktors SQLiteConnection erstellt werden. Sie müssen nicht überprüfen, ob die Datei bereits vorhanden ist &ndash; wird es automatisch erstellt werden, falls erforderlich, andernfalls wird die vorhandene Datenbankdatei geöffnet werden. Die `dbPath` Variable sollte entsprechend der weiter oben in diesem Dokument beschriebenen Regeln bestimmt werden:
+2.  **Erstellen einer leeren Datenbank** &ndash; eine datenbankverbindung ein Datenbankverweis übergeben dem Dateipfad des SQLiteConnection-Klassenkonstruktors erstellt werden. Sie müssen nicht überprüfen, ob die Datei bereits vorhanden &ndash; wird es automatisch erstellt werden, falls erforderlich, andernfalls wird die vorhandene Datenbankdatei geöffnet werden. Die `dbPath` Variablen entsprechend die weiter oben in diesem Dokument beschriebenen Regeln bestimmt werden soll:
 
     ```csharp
     var db = new SQLiteConnection (dbPath);
     ```
 
-3.  **Speichern von Daten** &ndash; nach der Erstellung eines Objekts SQLiteConnection Datenbankbefehle durch Aufrufen der Methoden, wie z. B. CreateTable und fügen Sie wie folgt ausgeführt:
+3.  **Speichern von Daten** &ndash; nach der Erstellung eines Objekts SQLiteConnection Datenbankbefehle durch Aufrufen der Methoden, z. B. CreateTable und fügen Sie wie folgt ausgeführt werden:
 
     ```csharp
     db.CreateTable<Stock> ();
     db.Insert (newStock); // after creating the newStock object
     ```
 
-4.  **Abrufen von Daten** &ndash; zum Abrufen eines Objekts (oder eine Liste von Objekten) verwenden die folgende Syntax:
+4.  **Abrufen von Daten** &ndash; verwenden Sie zum Abrufen eines Objekts (oder eine Liste von Objekten) die folgende Syntax:
 
     ```csharp
     var stock = db.Get<Stock>(5); // primary key id of 5
     var stockList = db.Table<Stock>();
     ```
 
-## <a name="basic-data-access-sample"></a>Lernprogramm zu Data Access-Beispiel
+## <a name="basic-data-access-sample"></a>Grundlegende Data Access-Beispiel
 
-Die *DataAccess_Basic* Beispielcode für dieses Dokument sieht wie folgt, wenn auf Android ausgeführt wird. Der Code wird veranschaulicht, wie einfache SQLite.NET Vorgänge ausführen und zeigt die Ergebnisse als Text im Hauptfenster der Anwendung.
+Die *DataAccess_Basic* Beispielcode für dieses Dokument sieht folgendermaßen aus, wenn unter Android ausgeführt wird. Der Code wird veranschaulicht, wie zum Ausführen von Vorgängen für einfache von SQLite.NET und zeigt die Ergebnisse als Text im Hauptfenster der Anwendung.
 
 
 **Android**
 
-![Beispiel zu Android SQLite.NET](using-sqlite-orm-images/image3.png "Android SQLite.NET-Beispiel")
+![Beispiel zu Android von SQLite.NET](using-sqlite-orm-images/image3.png "Android von SQLite.NET-Beispiel")
 
-Das folgende Codebeispiel zeigt eine ganze Datenbankinteraktion mithilfe der SQLite.NET-Bibliothek, um die auf die zugrunde liegenden Datenbank zu kapseln.
+Das folgende Codebeispiel zeigt eine ganze Datenbankinteraktion mithilfe der von SQLite.NET-Bibliothek, um die auf die zugrunde liegenden Datenbank zu kapseln.
 Sie zeigt:
 
-1.  Erstellen die Datenbankdatei
+1.  Erstellen der Datenbankdatei
 
-2.  Einfügen von Daten durch Objekte erstellen und diese dann speichern
+2.  Einfügen von Daten durch Erstellen von Objekten und diese dann speichern
 
 3.  Abfragen der Daten
 
@@ -82,7 +82,7 @@ Sie müssen diese Namespaces enthalten:
 using SQLite; // from the github SQLite.cs class
 ```
 
-Das letzte Lesezeichen erfordert, dass Sie Ihr Projekt SQLite hinzugefügt haben. Beachten Sie, dass die SQLite-Datenbanktabelle durch Hinzufügen von Attributen zu einer Klasse definiert ist (die `Stock` Klasse) anstatt einer CREATE TABLE-Befehl.
+Der letzte Suchvorgang erfordert, dass Sie SQLite zu Ihrem Projekt hinzugefügt haben. Beachten Sie, dass die SQLite-Datenbank-Tabelle durch Hinzufügen von Attributen zu einer Klasse definiert ist (die `Stock` Klasse) anstelle einer CREATE TABLE-Befehl.
 
 ```csharp
 [Table("Items")]
@@ -119,58 +119,58 @@ public static void DoSomeDataAccess () {
 }
 ```
 
-Mithilfe der `[Table]` Attribut ohne Angabe ein Tabelle Name-Parameter führt dazu, dass die zugrunde liegenden Datenbanktabelle haben den gleichen Namen wie die Klasse (in diesem Fall "Stock"). Der tatsächliche Tabellenname ist wichtig, wenn Sie SQL-Abfragen direkt gegen die Datenbank zu schreiben, anstatt die Verwendung von ORM-Datenzugriffsmethoden verwenden. Auf ähnliche Weise die `[Column("_id")]` Attribut ist optional, und wenn die Tabelle mit den gleichen Namen wie die Eigenschaften der Klasse fehlt eine Spalte hinzugefügt werden.
+Mithilfe der `[Table]` Attribut ohne Angabe ein Tabelle Name-Parameter führt dazu, dass die zugrunde liegenden Datenbanktabelle auf den gleichen Namen wie die Klasse (in diesem Fall "Stock") haben. Den Namen der tatsächlichen Tabelle ist wichtig, wenn Sie SQL-Abfragen direkt in der Datenbank zu schreiben, anstatt die ORM-Methoden für den Datenzugriff verwenden. Auf ähnliche Weise die `[Column("_id")]` Attribut ist optional, und falls nicht vorhanden, eine Spalte in der Tabelle mit dem gleichen Namen wie die Eigenschaft in der Klasse hinzugefügt werden.
 
 ## <a name="sqlite-attributes"></a>SQLite-Attribute
 
-Allgemeinen Attribute, die Sie anwenden können, in Ihren Klassen zu steuern, wie sie in der zugrunde liegenden Datenbank gespeichert werden, gehören:
+Allgemeine Attribute, die Sie anwenden können, auf Ihre Klassen zu steuern, wie sie in der zugrunde liegenden Datenbank gespeichert sind enthalten:
 
--   **[PrimaryKey]**  &ndash; Dieses Attribut kann auf eine Ganzzahleigenschaft, die als Primärschlüssel der zugrunde liegenden Tabelle erzwingen angewendet werden. Zusammengesetzte Primärschlüssel werden nicht unterstützt.
+-   **[PrimaryKey]**  &ndash; Dieses Attribut kann auf eine Ganzzahleigenschaft, die zugrunde liegende Tabelle Primärschlüssel erzwingen angewendet werden. Zusammengesetzter Primärschlüssel werden nicht unterstützt.
 
--   **[AutoIncrement]**  &ndash; Dieses Attribut führt dazu, dass eine Ganzzahleigenschaft Wert automatisch inkrementierten für jedes neue Objekt in die Datenbank eingefügt werden.
+-   **[AutoIncrement]**  &ndash; Dieses Attribut führt dazu, dass eine Integer-Eigenschaft-Wert, um automatisch inkrementierten für jedes neue Objekt, das in die Datenbank eingefügt werden
 
--   **[Column(name)]**  &ndash; Die optionale Angabe `name` Parameter wird den Standardwert der zugrunde liegende Datenbankspalte Name (identisch mit der Eigenschaft wird) außer Kraft setzen.
+-   **[Column(name)]**  &ndash; Angeben des optionalen `name` Parameter überschreibt den Standardwert des zugrunde liegenden der Name der Datenbankspalte (die die Eigenschaft identisch ist).
 
--   **[Table(name)]**  &ndash; Markiert die Klasse als nicht in einer zugrunde liegenden SQLite-Tabelle gespeichert werden können. Angeben der optionale Name-Parameter wird den Standardwert der zugrunde liegenden Datenbanktabelle namens überschrieben (identisch mit der Klassenname ist).
+-   **[Table(name)]**  &ndash; Markiert die Klasse als in einer zugrunde liegenden SQLite-Tabelle gespeichert werden können. Angeben des optionale Name-Parameters überschreibt den Standardwert des zugrunde liegenden den Namen der Datenbanktabelle (die den Namen der Klasse identisch ist).
 
--   **[MaxLength(value)]**  &ndash; Die Länge des eine Texteigenschaft zu beschränken, wenn, eine Datenbank einfügen versucht wird. Nutzung von Code sollte überprüfen Sie dies vor dem Einfügen des Objekts, wie dieses Attribut nur 'aktiviert ist' eine Datenbank INSERT- oder Updatevorgang wird ausgeführt.
+-   **[MaxLength(value)]**  &ndash; Beschränken Sie die Länge einer Text-Eigenschaft, wenn, dass Sie eine Datenbank einfügen versucht wird. Nutzen von Code sollte überprüfen Sie dies vor dem Einfügen des Objekts, wie dieses Attribut nur 'aktiviert ist' bei Einfüge- oder Updatevorgang versucht wird.
 
--   **[Ignorieren]**  &ndash; Bewirkt, dass SQLite.NET, diese Eigenschaft ignoriert werden sollen.
-    Dies ist besonders nützlich für Eigenschaften, die einen Typ aufweisen, der in der Datenbank gespeichert werden kann oder modellauflistungen bereit, die nicht automatisch aufgelöst werden können, SQLite sein.
+-   **[Ignorieren]**  &ndash; Bewirkt, dass von SQLite.NET, diese Eigenschaft ignoriert werden sollen.
+    Dies ist besonders nützlich für Eigenschaften, die einen Typ aufweisen, der nicht in der Datenbank gespeichert werden, oder Eigenschaften, die Modell-Sammlungen, die nicht automatisch aufgelöst werden können, SQLite sein.
 
--   **[Unique]**  &ndash; Wird sichergestellt, dass die Werte in der zugrunde liegenden Datenbankspalte eindeutig sind.
+-   **[Unique]**  &ndash; Wird sichergestellt, dass die Werte in der zugrunde liegenden Datenbank eindeutig sind.
 
 
-Die meisten dieser Attribute sind optional, SQLite Standardwerte für Tabellen- und Spaltennamen. Sie sollten immer einen ganze Zahl Primärschlüssel angeben, sodass Auswahl und Löschen von Abfragen für Ihre Daten effizient ausgeführt werden können.
+Die meisten dieser Attribute sind optional, SQLite Standardwerte für Tabellen- und Spaltennamen. Sie sollten immer einen Primärschlüssel für die ganze Zahl angeben, so dass die Auswahl und Löschen von Abfragen für Ihre Daten effizient ausgeführt werden können.
 
 ## <a name="more-complex-queries"></a>Komplexere Abfragen
 
-Die folgenden Methoden für `SQLiteConnection` genutzt werden, andere Data-Vorgänge auszuführen:
+Die folgenden Methoden für `SQLiteConnection` können verwendet werden, um andere Datenvorgänge ausführen:
 
--   **Fügen Sie** &ndash; Fügt ein neues Objekt mit der Datenbank.
+-   **Fügen Sie** &ndash; Fügt ein neues Objekt in der Datenbank.
 
--   **Abrufen&lt;T&gt;**  &ndash; versucht, ein Objekt mit dem primären Schlüssel abzurufen.
+-   **Erste&lt;T&gt;**  &ndash; versucht, ein Objekt, das über den primären Schlüssel abzurufen.
 
--   **Tabelle&lt;T&gt;**  &ndash; aller Objekte in der Tabelle zurück.
+-   **Tabelle&lt;T&gt;**  &ndash; alle Objekte in der Tabelle zurück.
 
 -   **Löschen Sie** &ndash; Löscht ein Objekt mit dem primären Schlüssel.
 
--   **Abfrage&lt;T&gt;**  &ndash; Ausführen eine SQL-Abfrage, die eine Anzahl von Zeilen (als Objekte) zurückgibt.
+-   **Abfrage&lt;T&gt;**  &ndash; führen Sie eine SQL-Abfrage, die eine Anzahl von Zeilen (als Objekte) zurückgibt.
 
--   **Führen Sie** &ndash; verwenden Sie diese Methode (und nicht `Query`) Wenn Sie Zeilen aus der SQL (z. B. INSERT, UPDATE und DELETE-Anweisungen) erwarten nicht.
+-   **Führen Sie** &ndash; verwenden Sie diese Methode (und nicht `Query`) Wenn Sie erwarten nicht, dass Zeilen aus der SQL (z. B. INSERT, UPDATE und DELETE-Anweisungen) zurück.
 
 
 ### <a name="getting-an-object-by-the-primary-key"></a>Ein Objekt abrufen durch den primären Schlüssel
 
-SQLite.Net stellt die Get-Methode, um ein einzelnes Objekt basierend auf den primären Schlüssel abzurufen.
+Von SQLite.Net enthält die Get-Methode, um ein einzelnes Objekt basierend auf den primären Schlüssel abzurufen.
 
 ```csharp
 var existingItem = db.Get<Stock>(3);
 ```
 
-### <a name="selecting-an-object-using-linq"></a>Ein Objekt, das mithilfe von Linq auswählen
+### <a name="selecting-an-object-using-linq"></a>Auswählen eines Objekts mithilfe von Linq
 
-Unterstützen von Methoden, die Auflistungen zurückgeben `IEnumerable<T>` damit Sie Linq verwenden können, um Abfragen oder den Inhalt einer Tabelle zu sortieren. Der folgende Code zeigt ein Beispiel für die Verwendung von Linq, alle Einträge herausfiltern, die mit dem Buchstaben "A" beginnen:
+Unterstützung für Methoden, die Auflistungen zurückgeben `IEnumerable<T>` daher können Sie verwenden Linq zum Abfragen oder den Inhalt einer Tabelle zu sortieren. Der folgende Code zeigt ein Beispiel zur Verwendung von Linq, alle Einträge herauszufiltern, die mit dem Buchstaben "A" beginnen:
 
 ```csharp
 var apple = from s in db.Table<Stock>()
@@ -179,9 +179,9 @@ var apple = from s in db.Table<Stock>()
 Console.WriteLine ("-> " + apple.FirstOrDefault ().Symbol);
 ```
 
-### <a name="selecting-an-object-using-sql"></a>Auswählen eines Objekts mit SQL
+### <a name="selecting-an-object-using-sql"></a>Auswählen eines Objekts mithilfe von SQL
 
-Obwohl SQLite.Net objektbasierten Zugriff auf Ihre Daten bereitstellen kann, müssen Sie in einigen Fällen möchten Sie eine komplexere Abfrage als Linq ermöglicht (oder möglicherweise schnellere). Sie können SQL-Befehle mit der Abfrage-Methode verwenden, wie hier gezeigt:
+Obwohl von SQLite.Net objektbasierten Zugriff auf Ihre Daten bereitstellen können, müssen Sie manchmal möchten Sie eine komplexere Abfrage als Linq ermöglicht (oder möglicherweise schnellere Leistung). Sie können SQL-Befehle mit der Query-Methode verwenden, wie hier gezeigt:
 
 ```csharp
 var stocksStartingWithA = db.Query<Stock>("SELECT * FROM Items WHERE Symbol = ?", "A");
@@ -191,11 +191,11 @@ foreach (var s in stocksStartingWithA) {
 ```
 
 > [!NOTE]
-> Wenn SQL-Anweisungen direkt schreiben erstellen Sie eine Abhängigkeit auf den Namen der Tabellen und Spalten, die in der Datenbank aus Ihrer Klassen und ihre Attribute generiert wurden. Wenn Sie diesen Namen im Code ändern müssen Sie daran denken, aktualisieren Sie jede SQL-Anweisung manuell geschrieben.
+> Beim Schreiben SQL-Anweisungen direkt erstellen Sie eine Abhängigkeit auf den Namen der Tabellen und Spalten in der Datenbank, die aus den Klassen und deren Attribute generiert wurden. Wenn Sie diese Namen in Ihrem Code ändern, müssen Sie alle manuell erstellten SQL-Anweisungen zu aktualisieren.
 
-### <a name="deleting-an-object"></a>Löschen eines Objekts
+### <a name="deleting-an-object"></a>Das Löschen eines Objekts
 
-Der Primärschlüssel ist zum Löschen der Zeile verwendet, wie hier gezeigt:
+Der primäre Schlüssel dient zum Löschen der Zeile, wie hier gezeigt:
 
 ```csharp
 var rowcount = db.Delete<Stock>(someStock.Id); // Id is the primary key
@@ -205,17 +205,17 @@ Sehen Sie sich die `rowcount` , bestätigen, wie viele Zeilen betroffen sind (in
 
 ## <a name="using-sqlitenet-with-multiple-threads"></a>Verwenden von SQLite.NET mit mehreren Threads
 
-SQLite unterstützt drei verschiedene threading-Modi: *Single-Thread*, *Multi-Thread*, und *serialisierte*. Wenn Sie die Datenbank aus mehreren Threads ohne jede Einschränkung zugreifen möchten, können Sie konfigurieren, dass SQLite verwendet die **serialisierte** threading-Modus. Es ist wichtig, legen Sie diesen Modus früh in der Anwendung (z. B. am Anfang der `OnCreate` Methode).
+SQLite unterstützt drei verschiedene threading-Modi: *Singlethread-*, *Multi-Thread*, und *serialisiert*. Wenn Sie die Datenbank von mehreren Threads ohne jegliche Einschränkungen zugreifen möchten, können Sie konfigurieren, dass SQLite verwendet die **serialisiert** threading-Modus. Es ist wichtig, die in diesem Modus einem frühen Zeitpunkt in Ihrer Anwendung einzurichten (z. B. am Anfang der `OnCreate` Methode).
 
-Rufen Sie zum Ändern des threading Modus `SqliteConnection.SetConfig`. Zum Beispiel konfiguriert diese Codezeile SQLite für **serialisierte** Modus: 
+Um den threading-Modus zu ändern, rufen `SqliteConnection.SetConfig`. Diese Codezeile konfiguriert, SQLite für **serialisiert** Modus: 
 
 ```csharp
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
 
-Die Android-Version des SQLite verfügt über eine Einschränkung, die einige zusätzliche Schritte erforderlich sind. Wenn der Aufruf von `SqliteConnection.SetConfig` erzeugt Sie z. B. eine Ausnahme SQLite `library used incorrectly`, müssen Sie die folgende problemumgehung verwenden:
+Die Android-Version von SQLite ist eine Einschränkung, die ein paar mehr Schritte erforderlich sind. Wenn der Aufruf von `SqliteConnection.SetConfig` erzeugt Sie z. B. eine SQLite-Ausnahme `library used incorrectly`, müssen Sie die folgende problemumgehung verwenden:
 
-1.  Verknüpfung mit dem systemeigenen **libsqlite.so** Bibliothek, damit die `sqlite3_shutdown` und `sqlite3_initialize` APIs sind für die app zur Verfügung gestellt:
+1.  Link zur systemeigenen **libsqlite.so** Bibliothek, damit die `sqlite3_shutdown` und `sqlite3_initialize` APIs für die app zur Verfügung gestellt:
 
     ```csharp
     [DllImport("libsqlite.so")]
@@ -226,7 +226,7 @@ Die Android-Version des SQLite verfügt über eine Einschränkung, die einige zu
     ```
 
 
-2.  Ganz am Anfang des der `OnCreate` -Methode, fügen Sie diesen Code zum Herunterfahren SQLite, konfigurieren Sie ihn für **serialisierte** Modus, und initialisieren SQLite:
+2.  Ganz am Anfang des der `OnCreate` -Methode, fügen Sie folgenden Code zum Herunterfahren SQLite, konfigurieren Sie diese für **serialisiert** Modus, und initialisieren Sie SQLite:
 
     ```csharp
     sqlite3_shutdown();
@@ -234,10 +234,10 @@ Die Android-Version des SQLite verfügt über eine Einschränkung, die einige zu
     sqlite3_initialize();
     ```
 
-Diese problemumgehung funktioniert auch für die `Mono.Data.Sqlite` Bibliothek. Weitere Informationen zu SQLite und Multithreading, finden Sie unter [SQLite und mehrere Threads](https://www.sqlite.org/threadsafe.html). 
+Diese problemumgehung funktioniert auch für die `Mono.Data.Sqlite` Bibliothek. Weitere Informationen zu SQLite und Multithreading, finden Sie unter [SQLite und mehreren Threads](https://www.sqlite.org/threadsafe.html). 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [DataAccess Basic (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [DataAccess erweiterte (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [DataAccess-erweitert (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [Xamarin.Forms-Datenzugriff](~/xamarin-forms/app-fundamentals/databases.md)

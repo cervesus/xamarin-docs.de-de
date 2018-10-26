@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2018
-ms.openlocfilehash: 9bac53f71178ac321dea162d346295556a8f7adb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 070602f05170f7d37a38b184ecd3dbb7864ac73d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998753"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118759"
 ---
 # <a name="xamarinforms-platform-features"></a>Xamarin.Forms-Plattformfeatures
 
@@ -64,7 +64,7 @@ Tizen .NET können Sie zum Erstellen von .NET-Anwendungen mit Xamarin.Forms und 
 
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
-Xamarin.Forms bietet Unterstützung für die universelle Windows-Plattform (UWP) unter Windows 10. Dieser Artikel beschreibt das Hinzufügen einer eines UWP-Projekts zu einer vorhandenen Xamarin.Forms-Projektmappe.
+Xamarin.Forms bietet Unterstützung für die universelle Windows-Plattform (UWP) unter Windows 10. Dieser Artikel beschreibt, wie einer vorhandenen Xamarin.Forms-Lösung ein UWP-Projekt hinzugefügt wird.
 
 ## <a name="wpfwpfmd"></a>[WPF](wpf.md)
 

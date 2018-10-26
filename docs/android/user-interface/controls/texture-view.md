@@ -3,26 +3,26 @@ title: TextureView
 ms.prod: xamarin
 ms.assetid: DD1F3D68-5DD8-4644-8A13-08AE7719DE30
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 05/30/2017
-ms.openlocfilehash: 1cd332894deac1e1fb076f647bb0120bda2306da
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f43147d98599d36aa136e4ddc2975205e0e69e26
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763604"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122841"
 ---
 # <a name="textureview"></a>TextureView
 
-Die `TextureView` Klasse ist eine Sicht, die Hardware accelerated 2D Rendering verwendet, um ein Video oder OpenGL-Datenstrom, der angezeigt wird, werden zu ermöglichen. Das folgende Bildschirmfoto zeigt z. B. die `TextureView` einen live Feed von der Kamera des Geräts anzeigen:
+Die `TextureView` -Klasse ist eine Ansicht, die hardwarebeschleunigtes 2D-Rendering verwendet, um ein Video oder einen OpenGL-Inhaltsdatenstrom anzuzeigende zu ermöglichen. Der folgende Screenshot zeigt beispielsweise die `TextureView` einen livefeed von der Kamera des Geräts in dessen anzeigen:
 
-[![Beispiel-Screenshot, der ein live-Abbild auf die Kamera des Geräts](texture-view-images/22-textureviewcamera.png)](texture-view-images/22-textureviewcamera.png#lightbox)
+[![Beispielscreenshot, der ein live-Image aus der Gerätekamera.](texture-view-images/22-textureviewcamera.png)](texture-view-images/22-textureviewcamera.png#lightbox)
 
-Im Gegensatz zu den `SurfaceView` -Klasse, die auch verwendet werden kann, OpenGL oder Videoinhalt anzuzeigen, die TextureView wird in einem separaten Fenster nicht gerendert.
-Aus diesem Grund `TextureView` Ansichtstransformationen wie jede andere Sicht unterstützen kann. Drehen Sie z. B. eine `TextureView` kann erreicht werden, indem Sie einfach festlegen seine `Rotation` -Eigenschaft, der Transparenz durch Festlegen seiner `Alpha` Eigenschaft usw.
+Im Gegensatz zu den `SurfaceView` -Klasse, die auch kann zum Anzeigen von OpenGL oder Videoinhalte verwendet werden, die TextureView wird in einem separaten Fenster nicht gerendert.
+Aus diesem Grund `TextureView` ist Ansichtstransformationen wie andere Ansichten zu unterstützen. Z. B. drehen eine `TextureView` möglich, indem Sie einfach die `Rotation` -Eigenschaft, die Transparenz durch Festlegen seiner `Alpha` -Eigenschaft, und So weiter.
 
-Daher wird mit der `TextureView` wir können jetzt Aktionen durchführen können, wie die Anzeige ein livestreams von der Kamera und transformieren, wie im folgenden Code gezeigt:
+Daher wird mit der `TextureView` wir können jetzt Dinge wie die Anzeige ein livestreams von der Kamera und transformieren, wie im folgenden Code gezeigt:
 
 ```csharp
 public class TextureViewActivity : Activity,
@@ -65,16 +65,16 @@ public class TextureViewActivity : Activity,
 }
 ```
 
-Der obige Code erstellt ein `TextureView` Instanz in der Aktivitätssymbols `OnCreate` Methode und legt die Aktivität als die `TextureView`des `SurfaceTextureListener`. Werden die `SurfaceTextureListener`, die Aktivität implementiert die `TextureView.ISurfaceTextureListener` Schnittstelle. Das System Ruft den `OnSurfaceTextAvailable` Methode bei der `SurfaceTexture` ist verwendungsbereit. Nehmen wir in dieser Methode die `SurfaceTexture` , übergeben und legen Sie sie auf die Kamera Preview Textur ist. Dann kann nach Belieben normalen Ansicht-basierte Vorgänge ausführen, wie z. B. Einstellung werden die `Rotation` und `Alpha`, wie im obigen Beispiel. Die resultierende Anwendung, die auf einem Gerät ausgeführt wird unten gezeigt:
+Der obige Code erstellt eine `TextureView` -Instanz in der Aktivitäts `OnCreate` Methode und legt die Aktivität als die `TextureView`des `SurfaceTextureListener`. Sollen die `SurfaceTextureListener`, implementiert die Aktivität der `TextureView.ISurfaceTextureListener` Schnittstelle. Das System Ruft die `OnSurfaceTextAvailable` Methode bei der `SurfaceTexture` ist zur Verwendung bereit. Nehmen wir in dieser Methode die `SurfaceTexture` , übergeben und legen Sie sie auf der Kamera Vorschau Textur ist. Wir können normale ansichtsbasierte Vorgänge ausführen, wie z. B. Einstellung sind die `Rotation` und `Alpha`, wie im obigen Beispiel. Die Anwendung, auf einem Gerät ausgeführt wird, wird unten gezeigt:
 
-[![Beispiel für die app, die auf einem Gerät, das Anzeigen eines Bilds](texture-view-images/17-textureviewdemo.png)](texture-view-images/17-textureviewdemo.png#lightbox)
+[![Beispiel für die app ausgeführt wird, auf einem Gerät, das Anzeigen eines Bilds](texture-view-images/17-textureviewdemo.png)](texture-view-images/17-textureviewdemo.png#lightbox)
 
-Verwenden der `TextureView`, die Hardwarebeschleunigung muss aktiviert sein, wird es standardmäßig ab API-Ebene 14 sein. Auch, da in diesem Beispiel wird die Kamera verwendet sowohl der `android.permission.CAMERA` Berechtigung und die `android.hardware.camera` Funktion muss festgelegt werden, der **AndroidManifest.xml**.
+Verwenden der `TextureView`, Hardwarebeschleunigung muss aktiviert sein, wird es standardmäßig ab API-Ebene 14 sein. Auch, da in diesem Beispiel wird die Kamera, verwendet sowohl die `android.permission.CAMERA` Berechtigung und die `android.hardware.camera` Feature muss festgelegt werden, der **"androidmanifest.xml"**.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [TextureViewDemo (Beispiel)](https://developer.xamarin.com/samples/monodroid/TextureViewDemo/)
-- [Einführung in Eis Rustikal Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 Platform](http://developer.android.com/sdk/android-4.0.html)
+- [Einführung in die Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
+- [Android 4.0-Plattform](http://developer.android.com/sdk/android-4.0.html)

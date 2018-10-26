@@ -1,46 +1,44 @@
 ---
 title: Xamarin Workbooks
-description: Xamarin-Arbeitsmappen bieten eine Mischung verschiedener Dokumentation und Code, der perfekt für Experimente, ist, lernen, und das Erstellen von Führungslinien und unterstützt die Internetsuche durcharbeiten.
+description: Xamarin Workbooks bieten eine Mischung aus Dokumentation und Code, der perfekt für experimentier-, gelernt haben, und das Erstellen von Führungslinien und unterrichten Hilfsmittel.
 ms.prod: xamarin
 ms.assetid: 04275482-0488-4F1C-8808-D03A8E21BE62
-author: topgenorth
-ms.author: toopge
-ms.date: 03/30/2017
-ms.openlocfilehash: 57ef9cb3a45dbf1c6271a1475c27fdd38d2fd96b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+author: lobrien
+ms.author: laobri
+ms.date: 10/23/2018
+ms.openlocfilehash: d0aed1b501b86a23d4008ba9618b0e459178ca24
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33922638"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121892"
 ---
 # <a name="xamarin-workbooks"></a>Xamarin Workbooks
 
-Xamarin-Arbeitsmappen bieten eine Mischung verschiedener Dokumentation und Code, der perfekt für Experimente, ist, lernen, und das Erstellen von Führungslinien und unterstützt die Internetsuche durcharbeiten.
+Xamarin Workbooks bieten eine Mischung aus Dokumentation und Code, der perfekt für experimentier-, gelernt haben, und das Erstellen von Führungslinien und unterrichten Hilfsmittel.
 
-Erstellen Sie eine umfangreiche C#-Arbeitsmappe für Android, iOS, Mac, WPF oder -Konsole, und erhalten Sie sofortige live Ergebnisse, wie Sie diese APIs erfahren.
+Erstellen Sie eine umfassende C# Arbeitsmappe für Android, iOS, Mac, WPF oder -Konsole und sofortige live Ergebnisse erzielen Sie erfahren Sie, diese APIs.
 
-Xamarin-Arbeitsmappen ist eine open-Source-Software. Entwicklung erfolgt in der geöffneten auf GitHub. Wir laden die gewünschten Benutzer und Entwickler bei der Platzierung des Projekts erhalten.
+Xamarin Workbooks ist eine open-Source-Software. Entwicklung erfolgt in der geöffneten auf GitHub. Interessierte Benutzer und Entwickler, mit dem Projekt beginnen sind herzlich eingeladen.
 
-<a class="github-button" href="https://github.com/Microsoft/workbooks" data-size="large" aria-label="View Microsoft/workbooks on GitHub">Auf GitHub, besuchen Sie uns!</a>
+[Nehmen Sie an, auf GitHub.](https://github.com/Microsoft/workbooks)
 
-Probieren Sie es, und teilen Sie uns Ihre Meinung oder, wenn Sie [Auftreten von Fehlern](~/tools/workbooks/install.md#reporting-bugs). Wir haben eine [Forum](https://forums.xamarin.com/categories/inspector) zu!
+Probieren sie es aus, und lassen Sie uns wissen, was Sie denken, oder wenn Sie [Auftreten von Fehlern](~/tools/workbooks/install.md#reporting-bugs). Wir haben auch ein [Forum](https://forums.xamarin.com/categories/inspector)!
 
-[![](images/interactive-1.0.0-urho-planet-earth-small.png "Eine Basis UrhoSharp Beispielarbeitsmappe")](images/interactive-1.0.0-urho-planet-earth.png#lightbox)
+[![](images/interactive-1.0.0-urho-planet-earth-small.png "Eine von UrhoSharp basierend Beispielarbeitsmappe")](images/interactive-1.0.0-urho-planet-earth.png#lightbox)
 
-## <a name="installation-and-requirementsinstallmd"></a>[Installation und Anforderungen](install.md)
+## <a name="installation-and-requirementsinstallmd"></a>[Installation und Voraussetzungen](install.md)
 
 Informationen zum Abrufen von Arbeitsmappen, die auf Ihrem Mac oder Windows-Computer installiert.
 
 ## <a name="interactive-workbooksworkbookmd"></a>[Interaktive Workbooks](workbook.md)
 
-Eine Einführung zu den Artikeln mit Xamarin-Arbeitsmappen verwenden.
+Eine Einführung in Xamarin Workbooks zu verwenden.
 
-## <a name="samplessamplesindexmd"></a>[Beispiele](samples/index.md)
+## <a name="samples"></a>Proben
 
-Es gibt eine Vielzahl von [Beispiel Arbeitsmappen](https://developer.xamarin.com/workbooks/) verfügbar, einschließlich hervorgehoben [hier](samples/index.md).
+Es gibt eine Vielzahl von [beispielsarbeitsmappen auf GitHub verfügbar](https://github.com/xamarin/workbooks).
 
 ## <a name="integration-sdksdkindexmd"></a>[Integrations-SDK](sdk/index.md)
 
-Es ist möglich, Xamarin-Arbeitsmappen mit benutzerdefinierten Daten Darstellungen und Renderer erweitern. Integrationen werden mit c# und TypeScript/JavaScript geschrieben.
-
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+Es ist möglich, Xamarin Workbooks mit benutzerdefinierten datendarstellungen und Renderer erweitern. Integrationen mit verfasst wurden C# und TypeScript und JavaScript.

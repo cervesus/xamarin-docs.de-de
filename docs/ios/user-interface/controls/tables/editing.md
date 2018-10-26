@@ -1,35 +1,35 @@
 ---
 title: Bearbeiten von Tabellen mit Xamarin.iOS
-description: Dieses Dokument beschreibt, wie Tabellen in Xamarin.iOS zu bearbeiten. Es wird erläutert, Streifen zu löschen, bearbeiten, Modus und Zeile einfügen.
+description: Dieses Dokument beschreibt, wie Tabellen in Xamarin.iOS bearbeitet wird. Es wird erläutert, Streifen zu löschen, bearbeiten, Modus und Zeile einfügen.
 ms.prod: xamarin
 ms.assetid: EC197F25-E865-AFA3-E5CF-B33FAB7744A0
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 28ebf1157a1bfc9f7bd910fd11365b29cecb9529
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 1267de341a88130c18254f414d2fbb1c42595a0c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789989"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104810"
 ---
 # <a name="editing-tables-with-xamarinios"></a>Bearbeiten von Tabellen mit Xamarin.iOS
 
-Features für die Bearbeitung der Tabelle sind aktiviert, durch Überschreiben der Methoden in einer `UITableViewSource` Unterklasse. Das einfachste Bearbeitungsverhalten ist Bewegung Streifen zu löschen, die mit einer einzelnen methodenüberschreibung implementiert werden kann.
-Komplexere bearbeiten (einschließlich verschieben Datenzeilen) kann mit der Tabelle im Bearbeitungsmodus erfolgen.
+Tabelle-Bearbeitungsfeatures aktiviert sind, durch das Überschreiben von Methoden in einer `UITableViewSource` Unterklasse. Das einfachste Bearbeitungsverhalten ist die wischgesten-zu-Delete-Aktion, die mit einer Außerkraftsetzung einer einzelnen Methode implementiert werden kann.
+Komplexere bearbeiten (einschließlich verschieben Zeilen) kann mit der Tabelle im Bearbeitungsmodus erfolgen.
 
 ## <a name="swipe-to-delete"></a>Wischen löschen
 
-Die Wischen So löschen Sie die Funktion ist eine natürliche Geste in iOS, die Benutzer erwarten. 
+Streifen So löschen Sie die Funktion ist eine natürliche Gesten in iOS, die Benutzer erwarten, dass an. 
 
  [![](editing-images/image10.png "Beispiel für Wischen löschen")](editing-images/image10.png#lightbox)
 
-Es gibt drei Methode überschreibt, die Bewegung Wischen anzuzeigende beeinflussen eine **löschen** Schaltfläche in einer Zelle:
+Es gibt drei Außerkraftsetzen von Methoden, die beeinflussen die wischgeste zum Anzeigen einer **löschen** Schaltfläche in einer Zelle:
 
--   **CommitEditingStyle** – Tabellenquelle erkennt, wenn diese Methode außer Kraft gesetzt, und automatisch den Gestenhandler Streifen zu löschen aktiviert. Die Implementierung der Methode sollten Aufrufen `DeleteRows` auf die `UITableView` , sodass die Zellen ausgeblendet, und entfernen die zugrunde liegenden Daten auch aus dem Modell (z. B. ein Array, Wörterbuch oder Datenbank). 
--   **CanEditRow** – Wenn CommitEditingStyle überschrieben wird, sind davon ausgegangen, dass alle Zeilen, die bearbeitet werden. Wenn diese Methode implementiert wird und "false" (für einige bestimmten Zeilen oder für alle Zeilen) zurückgegeben wird dann die Bewegung Streifen zu löschen nicht in dieser Zelle verfügbar. 
--   **TitleForDeleteConfirmation** – optional gibt den Text für die **löschen** Schaltfläche. Wenn diese Methode nicht implementiert, wird der Text der Schaltfläche "Löschen" werden. 
+-   **CommitEditingStyle** – die Tabellenquelle erkennt, wenn diese Methode außer Kraft gesetzt und wird automatisch, die wischgesten-zu-Delete-Aktion aktiviert. Sollten die Implementierung der Methode aufrufen, `DeleteRows` auf die `UITableView` , dazu führen, dass die Zellen ausgeblendet, und Entfernen auch die zugrunde liegenden Daten aus dem Modell (z. B. ein Array, Wörterbuch oder Datenbank). 
+-   **CanEditRow** – Wenn CommitEditingStyle überschrieben wird, sind davon ausgegangen, dass alle Zeilen, die bearbeitet werden. Wenn diese Methode wird implementiert, und "false" (für einige bestimmten Zeilen oder für alle Zeilen gibt) wird dann die wischgesten-zu-Delete-Aktion in dieser Zelle nicht verfügbar. 
+-   **TitleForDeleteConfirmation** – optional gibt den Text für die **löschen** Schaltfläche. Wenn diese Methode nicht implementiert, wird der Schaltflächentext wird "Löschen". 
 
 
 Diese Methoden werden implementiert, der `TableSource` -Klasse folgt:
@@ -59,25 +59,25 @@ public override string TitleForDeleteConfirmation (UITableView tableView, NSInde
 }
 ```
 
-In diesem Beispiel die `UITableViewSource` wurde aktualisiert, um die Verwendung einer `List<TableItem>` (statt ein Array von Zeichenfolgen) wie die Datenquelle, da er unterstützt hinzufügen und Löschen von Elementen aus der Auflistung.
+In diesem Beispiel die `UITableViewSource` wurde aktualisiert, um Sie verwenden eine `List<TableItem>` (statt ein Array von Zeichenfolgen) wie die Datenquelle, da es unterstützt hinzufügen und Löschen von Elementen aus der Auflistung.
 
 
 ## <a name="edit-mode"></a>Bearbeitungsmodus
 
-Wenn eine Tabelle im Bearbeitungsmodus befindet sieht der Benutzer ein rotes "stop" Widget für jede Zeile, eine Schaltfläche "löschen", wenn der verwendete festgestellt werden. Die Tabelle enthält auch ein "Handle"-Symbol, um anzugeben, dass die Zeile gezogen werden kann, um die Reihenfolge ändern.
-Die **TableEditMode** Beispiel implementiert diese Funktionen, wie dargestellt.
+Wenn eine Tabelle im Bearbeitungsmodus befindet wird der Benutzer ein Rot 'Beenden' Widget für jede Zeile, eine Schaltfläche "löschen", wenn bearbeitete angezeigt. Die Tabelle enthält auch ein "Handle"-Symbol, um anzugeben, dass die Zeile gezogen werden kann, um die Reihenfolge ändern.
+Die **TableEditMode** Beispiel implementiert diese Features wie dargestellt.
 
- [![](editing-images/image11.png "Das Beispiel TableEditMode implementiert diese Funktionen, wie dargestellt")](editing-images/image11.png#lightbox)
+ [![](editing-images/image11.png "Das Beispiel TableEditMode implementiert diese Features wie dargestellt")](editing-images/image11.png#lightbox)
 
 Es gibt eine Reihe von verschiedenen Methoden auf `UITableViewSource` , von denen beeinflusst das Verhalten einer Tabelle bearbeiten:
 
--   **CanEditRow** – ob jede Zeile bearbeitet werden kann. Geben Sie zur Vermeidung von Streifen zu löschen und löschen, klicken Sie im Bearbeitungsmodus "false" zurück. 
--   **CanMoveRow** – return true, aktivieren Sie die Move "Handle" oder "false", um zu verhindern, dass verschieben. 
--   **EditingStyleForRow** – Wenn die Tabelle im Bearbeitungsmodus befindet, ist der Rückgabewert dieser Methode bestimmt, ob die Zelle das Symbol "red löschen zeigt" oder über die grüne Symbol "hinzufügen". Zurückgeben `UITableViewCellEditingStyle.None` , wenn die Zeile nicht bearbeitet werden soll. 
--   **Gemachten MoveRow** – wird aufgerufen, wenn eine Zeile verschoben wird, sodass die Datenstruktur der zugrunde liegenden geändert werden kann, um die Daten anzuzeigen, wie er in der Tabelle angezeigt wird. 
+-   **CanEditRow** : Legt fest, ob jede Zeile bearbeitet werden kann. Zurückgeben Sie sowohl Streifen zu löschen und Löschen im Bearbeitungsmodus zu verhindern, dass "false". 
+-   **CanMoveRow** : der Wert true zurückgeben der Verschiebepunkt' "oder" false ", um zu verhindern, dass das Verschieben zu aktivieren. 
+-   **EditingStyleForRow** – Wenn die Tabelle im Bearbeitungsmodus befindet, ist der Rückgabewert dieser Methode bestimmt, ob die Zelle das Symbol Rot löschen zeigt oder das grüne Symbol "hinzufügen". Zurückgeben `UITableViewCellEditingStyle.None` , wenn die Zeile nicht bearbeitet werden soll. 
+-   **Gemachten MoveRow** : wird aufgerufen, wenn eine Zeile verschoben wird, damit die zugrunde liegende Datenstruktur geändert werden kann, um die Daten übereinstimmen, wie er in der Tabelle angezeigt wird. 
 
 
-Die Implementierung für die ersten drei Methoden ist relativ unkompliziert – es sei denn, Sie möchten die `indexPath` um das Verhalten bestimmter Zeilen zu ändern, nur hartcodieren das zurückgegebene Werte, für die gesamte Tabelle.
+Die Implementierung für die ersten drei Methoden ist relativ einfach – es sei denn, Sie verwenden möchten die `indexPath` um das Verhalten von bestimmten Zeilen zu ändern, einfach hartcodiert die Rückgabe Werte, für die gesamte Tabelle.
 
 ```csharp
 public override bool CanEditRow (UITableView tableView, NSIndexPath indexPath)
@@ -94,7 +94,7 @@ public override UITableViewCellEditingStyle EditingStyleForRow (UITableView tabl
 }
 ```
 
-Die `MoveRow` Implementierung ist etwas komplizierter, da sie neu, die zugrunde liegende Datenstruktur entsprechend die neue Reihenfolge zu ändern. Da die Daten als implementiert, werden eine `List` der folgenden Code wird das Datenelement am alten Speicherort gelöscht und fügt es am neuen Speicherort. Wenn die Daten (z. B.) in einer Datenbanktabelle SQLite mit einer Spalte "Order" gespeichert wurde, müssen stattdessen diese Methode durchführen bestimmter Vorgänge SQL, um die Zahlen in dieser Spalte zu sortieren.
+Die `MoveRow` Implementierung ist ein wenig komplizierter, da sie die zugrunde liegende Datenstruktur entsprechend die neue Reihenfolge zu ändern muss. Da die Daten als implementiert, werden eine `List` der folgende Code löscht das Datenelement am alten Speicherort, und fügt es am neuen Speicherort ein. Wenn die Daten (z. B.) in einer SQLite-Datenbanktabelle mit einer 'Order'-Spalte gespeichert wurde, müssen stattdessen diese Methode, um die Zahlen in der Spalte neu anzuordnen. einige SQL-Vorgänge auszuführen.
 
 ```csharp
 public override void MoveRow (UITableView tableView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
@@ -122,33 +122,33 @@ Schließlich zum Abrufen die Tabelle in den Bearbeitungsmodus, **bearbeiten** Sc
 table.SetEditing (true, true);
 ```
 
-und nach Abschluss der Benutzer bearbeiten, die **Fertig** Schaltfläche Bearbeitungsmodus deaktivieren sollten:
+und nach Abschluss des Benutzers bearbeiten, die **Fertig** Schaltfläche Bearbeitungsmodus deaktivieren sollten:
 
 ```csharp
 table.SetEditing (false, true);
 ```
 
 
-## <a name="row-insertion-editing-style"></a>Zeilenformat einfügen bearbeiten
+## <a name="row-insertion-editing-style"></a>Zeilenstil einfügen bearbeiten
 
-Zeile einfügen von innerhalb der Tabelle wird eine ungewöhnlich Benutzeroberfläche – ist das wichtigste Beispiel in der standard-iOS-apps die **Kontakt bearbeiten** Bildschirm. Diese Abbildung zeigt, wie die Zeile einfügen-Funktionalität funktioniert – in Bearbeitung-Modus eine zusätzliche Zeile, die ist (wenn geklickt haben), zusätzliche Zeilen in die Daten eingefügt. Wenn die Bearbeitung abgeschlossen ist, die temporäre **(neuen hinzufügen)** Zeile entfernt.
+Zeile einfügen aus, in der Tabelle ist eine ungewöhnliche Benutzeroberfläche: das wichtigste Beispiel in der standard-iOS-apps die **Kontakt bearbeiten** Bildschirm. Dieser Screenshot zeigt, wie die Zeile einfügen-Richtlinie funktioniert – in Bearbeitung-Modus eine zusätzliche Zeile, die ist (wenn es sich bei Klick-Aktion), zusätzliche Zeilen in die Daten eingefügt. Wenn die Bearbeitung abgeschlossen ist, wird die temporäre **(neu hinzufügen)** Zeile entfernt.
 
- [![](editing-images/image12.png "Nach Abschluss der Bearbeitung hinzufügen die temporäre neue Zeile wird entfernt.")](editing-images/image12.png#lightbox)
+ [![](editing-images/image12.png "Wenn Bearbeitung abgeschlossen ist, wird die temporäre neue hinzufügen Zeile wird entfernt.")](editing-images/image12.png#lightbox)
 
-Es gibt eine Reihe von verschiedenen Methoden auf `UITableViewSource` , von denen beeinflusst das Verhalten einer Tabelle bearbeiten. Diese Methoden sind im Beispielcode wie folgt implementiert wurde:
+Es gibt eine Reihe von verschiedenen Methoden auf `UITableViewSource` , von denen beeinflusst das Verhalten einer Tabelle bearbeiten. Diese Methoden wurden im Beispielcode wie folgt implementiert:
 
--   **EditingStyleForRow** – gibt `UITableViewCellEditingStyle.Delete` für die Zeilen mit Daten und gibt `UITableViewCellEditingStyle.Insert` für die letzte Zeile (die speziell für Verhalten sich wie eine Schaltfläche zum Einfügen hinzugefügt werden wird). 
--   **CustomizeMoveTarget** – während der Benutzer eine Zelle der Rückgabewert dieser Methode optional kann ihren bevorzugten Speicherort überschreiben verschoben wird. Dies bedeutet, Sie können verhindern, dass sie "verwerfen" der Zelle an bestimmten Positionen – wie das folgende Beispiel, das verhindert, dass jede Zeile nach dem Verschieben der **(neuen hinzufügen)** Zeile. 
--   **CanMoveRow** – return true, aktivieren Sie die Move "Handle" oder "false", um zu verhindern, dass verschieben. Im Beispiel wurde die letzte Zeile der verschieben "Handle" ausgeblendet werden, da sie als nur eine Schaltfläche zum Einfügen an Server vorgesehen ist. 
-
-
-Wir belaufen sich auch um zwei benutzerdefinierte Methoden zum Hinzufügen der Zeile 'Insert', und entfernen Sie ihn dann erneut, wenn nicht mehr erforderlich. Sie werden aufgerufen, aus der **bearbeiten** und **Fertig** Schaltflächen:
-
--   **WillBeginTableEditing** : bei der **bearbeiten** Schaltfläche ist es Aufrufe verwendete `SetEditing` die Tabelle in den Bearbeitungsmodus zu versetzen. Dies bewirkt, dass die WillBeginTableEditing-Methode, in dem wir anzeigen, der **(neuen hinzufügen)** Zeile am Ende der Tabelle als eine Schaltfläche"Einfügen" zu agieren. 
--   **DidFinishTableEditing** – Wenn die Schaltfläche "fertige" berührt wird `SetEditing` erneut aufgerufen, um den Bearbeitungsmodus zu deaktivieren. Der Beispielcode entfernt die **(neuen hinzufügen)** Zeile aus der Tabelle, die beim Bearbeiten ist nicht mehr erforderlich. 
+-   **EditingStyleForRow** – gibt `UITableViewCellEditingStyle.Delete` für die Zeilen mit Daten und gibt `UITableViewCellEditingStyle.Insert` für die letzte Zeile (die speziell für die wie eine Einfügeschaltfläche Verhalten hinzugefügt werden wird). 
+-   **CustomizeMoveTarget** – während der Benutzer eine Zelle der Rückgabewert dieser Methode mit optionalen kann außer Kraft setzen die Auswahl des Speicherorts für verschoben wird. Dies bedeutet, Sie können verhindern, dass sie "verwerfen" der Zelle an bestimmten Positionen beibehält – wie in diesem Beispiel, das verhindert, dass jede Zeile nach dem Verschieben der **(neu hinzufügen)** Zeile. 
+-   **CanMoveRow** : der Wert true zurückgeben der Verschiebepunkt' "oder" false ", um zu verhindern, dass das Verschieben zu aktivieren. Im Beispiel hat die letzte Zeile den "Verschiebepunkt" ausgeblendet, da dies zu Server nur eine Einfügeschaltfläche soll. 
 
 
-Diese Methode überschreibt, werden in der Beispieldatei implementiert **TableEditModeAdd/Code/TableSource.cs**:
+Wir fügen auch zwei benutzerdefinierte Methoden zum Hinzufügen der Zeile 'Insert', und entfernen sie Sie dann noch Mal, wenn nicht mehr erforderlich. Heißen sie aus der **bearbeiten** und **Fertig** Schaltflächen:
+
+-   **WillBeginTableEditing** : bei der **bearbeiten** Schaltfläche verwendete es Aufrufe `SetEditing` in der Tabelle in den Bearbeitungsmodus zu versetzen. Dies löst die WillBeginTableEditing-Methode, die angezeigt, in dem die **(neu hinzufügen)** Zeile am Ende der Tabelle, die als eine Schaltfläche"Einfügen" fungiert. 
+-   **DidFinishTableEditing** : Wenn Sie die Schaltfläche "Fertig" livekomponententests wird `SetEditing` erneut aufgerufen, um den Bearbeitungsmodus zu deaktivieren. Der Beispielcode entfernt die **(neu hinzufügen)** Zeile aus der Tabelle, die beim Bearbeiten ist nicht mehr erforderlich. 
+
+
+Diese Methode Außerkraftsetzungen werden in der Beispieldatei implementiert **TableEditModeAdd/Code/TableSource.cs**:
 
 ```csharp
 public override UITableViewCellEditingStyle EditingStyleForRow (UITableView tableView, NSIndexPath indexPath)
@@ -175,7 +175,7 @@ public override bool CanMoveRow (UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-Diese beiden benutzerdefinierten Methoden werden zum Hinzufügen und Entfernen der **(neuen hinzufügen)** Zeile die Tabelle Modus Bearbeiten der aktiviert oder deaktiviert wird:
+Diese beiden benutzerdefinierten Methoden werden verwendet, um das Hinzufügen und Entfernen der **(neu hinzufügen)** Zeile, wenn Sie in der Tabelle Modus Bearbeiten der aktiviert oder deaktiviert ist:
 
 ```csharp
 public void WillBeginTableEditing (UITableView tableView)
@@ -200,7 +200,7 @@ public void DidFinishTableEditing (UITableView tableView)
 }
 ```
 
-Schließlich dieser Code instanziiert die **bearbeiten** und **Fertig** Schaltflächen, mit Lambdas die aktivieren oder deaktivieren Bearbeitungsmodus wechseln, wenn sie berührt sind:
+Zum Schluss dieser Code instanziiert die **bearbeiten** und **Fertig** Schaltflächen mit Lambda-Ausdrücken, die aktivieren oder deaktivieren Bearbeitungsmodus wechseln, wenn sie betroffen sind:
 
 ```csharp
 done = new UIBarButtonItem(UIBarButtonSystemItem.Done, (s,e)=>{
@@ -218,7 +218,7 @@ edit = new UIBarButtonItem(UIBarButtonSystemItem.Edit, (s,e)=>{
 });
 ```
 
-Diese Zeile einfügen UI-Muster wird nicht sehr häufig verwendet, aber Sie können auch verwenden die `UITableView.BeginUpdates` und `EndUpdates` Methoden, um das Einfügen oder Entfernen von Zellen in einer beliebigen Tabelle dem animiert werden soll. Die Regel für die Verwendung dieser Methoden ist, dass der Unterschied im Wert von zurückgegeben `RowsInSection` zwischen der `BeginUpdates` und `EndUpdates` Aufrufe müssen die Anzahl der Zellen mit hinzugefügt bzw. gelöscht entsprechen den `InsertRows` und `DeleteRows` Methoden. Wenn die zugrunde liegenden Datenquelle geändert wird nicht entsprechend der Einfügevorgängen/Löschvorgängen in der Tabellenansicht tritt ein Fehler auf.
+Diese Zeile einfügen-UI-Muster wird nicht sehr oft verwendet, aber Sie können auch verwenden die `UITableView.BeginUpdates` und `EndUpdates` Methoden, um das Einfügen oder Entfernen von Zellen in einer Tabelle zu animieren. Die Regel für die Verwendung dieser Methoden ist, dass der Unterschied im Wert von zurückgegeben `RowsInSection` zwischen der `BeginUpdates` und `EndUpdates` Aufrufe müssen die Anzahl von Zellen, die hinzugefügt oder gelöscht sind, mit entsprechen den `InsertRows` und `DeleteRows` Methoden. Wenn die zugrunde liegenden Datenquelle geändert wird, entsprechend der einfügungen/löschungen in der Tabellenansicht tritt ein Fehler auf.
 
 
 ## <a name="related-links"></a>Verwandte Links

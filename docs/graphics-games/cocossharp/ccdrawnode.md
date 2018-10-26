@@ -1,130 +1,130 @@
 ---
-title: Zeichnen von Geometry mit CCDrawNode
-description: Dieses Dokument beschreibt CCDrawNode, die Methoden für die primitiven Zeichnungsobjekte, z. B. Linien, Kreise und Dreiecke bereitstellt.
+title: Zeichnen von Geometrie mit CCDrawNode
+description: Dieses Dokument beschreibt CCDrawNode, die Methoden für primitive Zeichenobjekte wie Linien, Kreise und Dreiecke bereitstellt.
 ms.prod: xamarin
 ms.assetid: 46A3C3CE-74CC-4A3A-AB05-B694AE182ADB
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 00ccf089e88d726aff09605aa88076139399a7dc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b910e136366c429de8bd2ba1ac959882b4d7201d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782884"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123183"
 ---
-# <a name="drawing-geometry-with-ccdrawnode"></a>Zeichnen von Geometry mit CCDrawNode
+# <a name="drawing-geometry-with-ccdrawnode"></a>Zeichnen von Geometrie mit CCDrawNode
 
-_`CCDrawNode` Stellt Methoden zum Zeichnen primitive Objekte, z. B. Linien, Kreise und Dreiecke bereit._
+_`CCDrawNode` Stellt Methoden zum Zeichnen primitive Objekte wie Linien, Kreise und Dreiecke._
 
-Die `CCDrawNode` Klasse in CocosSharp bietet mehrere Methoden zum Zeichnen von allgemeinen geometrischer Formen. Es erbt von der `CCNode` Klasse, und wird in der Regel hinzugefügt `CCLayer` Instanzen. Diese Anleitung enthält Informationen zum Verwenden `CCDrawNode` Instanzen, um benutzerdefiniertes Rendering auszuführen. Darüber hinaus eine umfassende Liste der verfügbaren Draw-Funktionen mit Screenshots und Codebeispiele.
+Die `CCDrawNode` Klasse in CocosSharp stellt mehrere Methoden zum Zeichnen von allgemeinen geometrischer Formen bereit. Sie erbt von der `CCNode` -Klasse und wird in der Regel hinzugefügt `CCLayer` Instanzen. Diesem Leitfaden wird beschrieben, wie Sie mit `CCDrawNode` Instanzen zum benutzerdefinierten ausgeben. Darüber hinaus eine umfassende Liste der verfügbaren Draw-Funktionen mit Screenshots und Codebeispiele.
 
 
 ## <a name="creating-a-ccdrawnode"></a>Erstellen eine CCDrawNode
 
-Die `CCDrawNode` Klasse kann verwendet werden, um geometrische Objekte, z. B. Kreise, Rechtecke und Linien zu zeichnen. Beispielsweise wird im folgenden Codebeispiel wird gezeigt, wie zum Erstellen einer `CCDrawNode` -Instanz, die einen Kreis in zeichnet einer `CCLayer` implementierende Klasse:
+Die `CCDrawNode` Klasse kann verwendet werden, um die geometrische Objekte wie Kreise, Rechtecke und Linien zu zeichnen. Das folgende Codebeispiel zeigt z. B. Vorgehensweise: Erstellen einer `CCDrawNode` -Instanz, die einen Kreis in zeichnet eine `CCLayer` implementierende Klasse:
 
 
 ```csharp
-public class GameLayer : CCLayer
+public class GameLayer : CCLayer
 {
-    public GameLayer ()
-    {
-        var drawNode = new CCDrawNode ();
-        this.AddChild (drawNode);
+    public GameLayer ()
+    {
+        var drawNode = new CCDrawNode ();
+        this.AddChild (drawNode);
         // Origin is bottom-left of the screen. This moves
         // the drawNode 100 pixels to the right and 100 pixels up
-        drawNode.PositionX = 100;
-        drawNode.PositionY = 100;
+        drawNode.PositionX = 100;
+        drawNode.PositionY = 100;
 
-        drawNode.DrawCircle (
-            center: new CCPoint (0, 0),
-            radius: 20,
-            color: CCColor4B.White);
+        drawNode.DrawCircle (
+            center: new CCPoint (0, 0),
+            radius: 20,
+            color: CCColor4B.White);
 
-    }
+    }
 } 
 ```
 
-Dieser Code erzeugt die folgenden Kreis zur Laufzeit:
+Dieser Code erzeugt die folgenden Kreis Laufzeit:
 
-![](ccdrawnode-images/image1.png "Dieser Code erzeugt diese Kreis zur Laufzeit")
+![](ccdrawnode-images/image1.png "Dieser Code führt diesen Vertrauenskreis aufgenommen, zur Laufzeit")
 
 
-## <a name="draw-method-details"></a>Zeichnen Sie Methodendetails
+## <a name="draw-method-details"></a>Details der Draw-Methode
 
 Werfen wir einen Blick auf einige Details im Zusammenhang mit der Zeichnung mit einem `CCDrawNode`:
 
 
-### <a name="draw-methods-positions-are-relative-to-the-ccdrawnode"></a>Zeichnen Methoden Positionen werden relativ zu den CCDrawNode
+### <a name="draw-methods-positions-are-relative-to-the-ccdrawnode"></a>Positionen der Draw-Methoden sind relativ zu den CCDrawNode
 
-Alle Draw-Methoden erfordern mindestens ein Positionswert zum Zeichnen. Dieser Positionswert ist relativ zum die `CCDrawNode` Instanz. Dies bedeutet, dass die `CCDrawNode` selbst hat es sich um eine Position aus, und zeichnen Sie alle Aufrufe, die auf die `CCDrawNode` akzeptieren auch ein oder mehrere Positionswerte. Um besser zu verstehen, wie diese Werte kombinieren, sehen wir uns einige Beispiele.
+Alle Draw-Methoden erfordern mindestens ein Positionswert für das Zeichnen. Der Wert für diese Position ist relativ zum die `CCDrawNode` Instanz. Dies bedeutet, dass die `CCDrawNode` selbst hat es sich um eine Position, und zeichnen Sie alle Aufrufe, die auf die `CCDrawNode` akzeptieren auch ein oder mehrere Positionswerte. Um besser zu verstehen, wie diese Werte kombinieren, wir sehen uns einige Beispiele.
 
-Zunächst betrachten wir die `DrawCircle` oben angeführten Beispiel:
-
-
-```csharp
-...
-drawNode.PositionX = 100;
-drawNode.PositionY = 100;
-
-drawNode.DrawCircle (center: new CCPoint (0, 0),
-...
-```
-
-In diesem Fall die `CCDrawNode` positioniert ist (100,100), und der gezeichnete Kreis entspricht bei (0,0) relativ zu der `CCDrawNode`, wodurch des Kreis wird zentriert 100 Pixel nach oben und rechts von der unteren linken Ecke des Spiels Bildschirms.
-
-Die `CCDrawNode` können auch positioniert werden am ursprünglichen Speicherort (unten links im Bildschirm) der vertrauenden Seite auf den Kreis für Offsets:
+Zunächst betrachten wir die `DrawCircle` obigen Beispiel:
 
 
 ```csharp
 ...
-drawNode.PositionX = 0;
-drawNode.PositionY = 0;
+drawNode.PositionX = 100;
+drawNode.PositionY = 100;
 
-drawNode.DrawCircle (center: new CCPoint (50, 60),
+drawNode.DrawCircle (center: new CCPoint (0, 0),
 ...
 ```
 
-Der Code oben führt Kreismittelpunkts um 50 Einheiten (`drawNode.PositionX` + `CCPoint.X`) rechts von der linken Seite des Bildschirms und 60 (`drawNode.PositionY` + `CCPoint.Y`) Einheiten über den unteren Rand des Bildschirms.
+In diesem Fall die `CCDrawNode` positioniert ist (100,100), und der Kreis gezeichnete bei (0,0) relativ zu den `CCDrawNode`, wodurch des Kreis wird zentriert 100 Pixel, nach oben und nach rechts neben die linke obere Ecke des Bildschirms spielen.
 
-Sobald eine Draw-Methode aufgerufen wurde, der gezeichnete-Objekt nicht geändert werden, wenn die `CCDrawNode.Clear` -Methode aufgerufen wird, werden neu positionieren muss erfolgen, auf die `CCDrawNode` selbst.
-
-Objekte, die gezeichnet `CCNodes` ebenfalls betroffen sind der `CCNode` Instanz `Rotation` und `Scale` Eigenschaften.
+Die `CCDrawNode` können auch auf den Ursprung (unten links im Bildschirm), positioniert werden der vertrauenden Seite, auf den Kreis für Offsets:
 
 
-### <a name="draw-methods-do-not-need-to-be-called-every-frame"></a>Draw-Methoden müssen nicht jeden Frame aufgerufen werden
+```csharp
+...
+drawNode.PositionX = 0;
+drawNode.PositionY = 0;
 
-Draw-Methoden müssen nur einmal aufgerufen werden, um eine permanente Visualisierung zu erstellen. In der oben gezeigten Beispiel wird der Aufruf von `DrawCircle` im Konstruktor der `GameLayer` – `DrawCircle` muss nicht alle Rahmen um den Kreis erneut zu zeichnen, wenn der Bildschirm aktualisiert wird, aufgerufen werden.
+drawNode.DrawCircle (center: new CCPoint (50, 60),
+...
+```
 
-Dies unterscheidet sich von Draw-Methoden in MonoGame, die in der Regel wird Rendern etwas, um den Bildschirm für nur einen Rahmen und dem muss jedem Frame aufgerufen werden.
+Der Code oben Ergebnisse in den Mittelpunkt auf 50 Einheiten (`drawNode.PositionX` + `CCPoint.X`) rechts von der linken Seite des Bildschirms, und 60 (`drawNode.PositionY` + `CCPoint.Y`) Einheiten über dem unteren Rand des Bildschirms.
 
-Wenn Draw-Methoden, dass jeder Frame aufgerufen werden, dann werden innerhalb der aufrufenden Objekte gesammelt `CCDrawNode` Instanz, was einen Abfall der Framerate weitere Objekte gezeichnet werden.
+Sobald eine Draw-Methode aufgerufen wurde, den gezeichnete Objekt nicht geändert werden, wenn die `CCDrawNode.Clear` -Methode aufgerufen wird, daher wird jeder neu positionieren muss auf erfolgen die `CCDrawNode` selbst.
+
+Objekte, die vom `CCNodes` hängen auch davon ab, der `CCNode` Instanz `Rotation` und `Scale` Eigenschaften.
+
+
+### <a name="draw-methods-do-not-need-to-be-called-every-frame"></a>Draw-Methoden müssen nicht jedes Bild aufgerufen werden
+
+Draw-Methoden müssen nur einmal aufgerufen werden, um eine persistente Visualisierung zu erstellen. Im obigen Beispiel ist der Aufruf von `DrawCircle` im Konstruktor der `GameLayer` – `DrawCircle` muss nicht aufgerufen werden alle Rahmen um den Kreis neu zu zeichnen, wenn der Bildschirm wird aktualisiert.
+
+Dies unterscheidet sich von Draw-Methoden in MonoGame, die in der Regel rendert etwas zum Bildschirm für die nur einen Frame aus, und der every-Frame aufgerufen werden.
+
+Wenn Draw-Methoden werden als "jedes Einzelbild" bezeichnet, und klicken Sie dann Objekte in der aufrufenden schließlich sammelt `CCDrawNode` Instanz, was einen Abfall der Framerate wie weitere Objekte gezeichnet werden.
 
 
 ### <a name="each-ccdrawnode-supports-multiple-draw-calls"></a>Jede CCDrawNode unterstützt mehrere Draw-Aufrufe
 
-`CCDrawNode` Instanzen können verwendet werden, um mehrere Formen zu zeichnen. Dadurch können komplexe visuelle Objekte in ein einzelnes Objekt eingeschlossen werden. Beispielsweise kann der folgende Code verwendet werden, zum Rendern von mehreren Kreise mit einem `CCDrawNode`:
+`CCDrawNode` Instanzen können verwendet werden, um mehrere Formen zu zeichnen. Dies ermöglicht komplexe visuelle Objekte, die in einem einzelnen Objekt enthalten sein. Beispielsweise kann der folgende Code verwendet werden, zum Rendern von mehreren Kreise mit einem `CCDrawNode`:
 
 
 ```csharp
-for (int i = 0; i < 8; i++)
+for (int i = 0; i < 8; i++)
 {
-    drawNode.DrawCircle (
-        center: new CCPoint (i*15, 0),
-        radius: 20,
-        color: CCColor4B.White);
+    drawNode.DrawCircle (
+        center: new CCPoint (i*15, 0),
+        radius: 20,
+        color: CCColor4B.White);
 } 
 ```
 
 Dadurch wird in der folgenden Abbildung:
 
-![](ccdrawnode-images/image2.png "Dadurch wird in dieser Abbildung")
+![](ccdrawnode-images/image2.png "Dadurch wird die folgende Grafik")
 
 
-## <a name="draw-call-examples"></a>Beispiele für Draw-Aufruf
+## <a name="draw-call-examples"></a>Beispiele für die Draw-Aufruf
 
-Die folgenden Zeichnen stehen im `CCDrawNode`:
+Die folgenden zeichnen-Befehlen finden Sie in `CCDrawNode`:
 
 - [`DrawCatmullRom`](#drawcatmullrom)
 - [`DrawCircle`](#drawcircle)
@@ -142,86 +142,86 @@ Die folgenden Zeichnen stehen im `CCDrawNode`:
 
 ### <a name="drawcardinalspline"></a>DrawCardinalSpline
 
-`DrawCardinalSpline` erstellt eine gekrümmte über eine Variable Anzahl von Punkten an. 
+`DrawCardinalSpline` erstellt eine gekrümmte Linie durch eine Variable Anzahl von Punkten an. 
 
-Die `config` die zeigt, die die Splinekurve-through Pass wird (differenzierungsparameter) definiert. Das folgende Beispiel zeigt eine Splinekurve über vier Punkte übergibt.
+Die `config` Parameter definiert, die die Splinekurve durchläuft verweist. Das folgende Beispiel zeigt eine Splinekurve die durchläuft vier Punkte.
 
-Die `tension` Parameter wie scharfe Kontrollen rundet die Punkte auf die Splinekurve angezeigt werden. Ein `tension` Wert 0 führt zu einem gekrümmten Spline und ein `tension` Wert 1 führt zu einem Spline gerade Linien und schwer Rahmen gezeichnet.
+Die `tension` parametersteuerung wie scharfen oder rundet die Punkte auf dem Spline angezeigt werden. Ein `tension` Wert von 0 führt zu einem gekrümmten Spline an, und ein `tension` Wert von 1 führt zu einem Spline von geraden Linien und schwer der Kanten gezeichnet.
 
-Obwohl Splines gekrümmte Linien sind, zeichnet CocosSharp Splines mit gerade Linien an. Die `segments` Parameter wird gesteuert, wie viele Segmente um verwenden, die die Splinekurve gezeichnet werden soll. Eine größere Anzahl führt zu einem reibungslosen gekrümmte Spline auf Kosten der Leistung. 
+Obwohl Splines gekrümmte Linien sind, zeichnet CocosSharp Splines mit geraden Linien an. Die `segments` Parameter wird gesteuert, wie viele Segmente, um die Splinekurve gezeichnet werden soll. Eine größere Anzahl führt zu einem reibungslosen gekrümmte Spline auf Kosten der Leistung. 
 
 Codebeispiel:
 
 
 ```csharp
-var splinePoints = new List<CCPoint> ();
-splinePoints.Add (new CCPoint (0, 0));
-splinePoints.Add (new CCPoint (50, 70));
-splinePoints.Add (new CCPoint (0, 140));
-splinePoints.Add (new CCPoint (100, 210));
+var splinePoints = new List<CCPoint> ();
+splinePoints.Add (new CCPoint (0, 0));
+splinePoints.Add (new CCPoint (50, 70));
+splinePoints.Add (new CCPoint (0, 140));
+splinePoints.Add (new CCPoint (100, 210));
 
-drawNode.DrawCardinalSpline (
-    config: splinePoints,
-    tension: 0,
-    segments: 64,
-    color:CCColor4B.Red); 
+drawNode.DrawCardinalSpline (
+    config: splinePoints,
+    tension: 0,
+    segments: 64,
+    color:CCColor4B.Red); 
 ```
 
-![](ccdrawnode-images/image3.png "Die Segmente-Parameter wird gesteuert, wie viele Segmente um gezeichnet, die die Splinekurve")
+![](ccdrawnode-images/image3.png "Die Segmente-Parameter wird gesteuert, wie viele Segmente um verwenden, um die Splinekurve zeichnen")
 
 
 ### <a name="drawcatmullrom"></a>DrawCatmullRom
 
-`DrawCatmullRom` erstellt eine gekrümmte über eine Variable Anzahl von Punkten, ähnlich wie `DrawCardinalLine`. Diese Methode schließt einen Spannungsparameter nicht.
+`DrawCatmullRom` erstellt eine gekrümmte Linie durch eine Variable Anzahl von Punkten, ähnlich wie `DrawCardinalLine`. Diese Methode schließt einen Spannungsparameter nicht.
 
 Codebeispiel:
 
 ```csharp
-var splinePoints = new List<CCPoint> ();
-splinePoints.Add (new CCPoint (0, 0));
-splinePoints.Add (new CCPoint (80, 90));
-splinePoints.Add (new CCPoint (100, 0));
-splinePoints.Add (new CCPoint (0, 130)); 
+var splinePoints = new List<CCPoint> ();
+splinePoints.Add (new CCPoint (0, 0));
+splinePoints.Add (new CCPoint (80, 90));
+splinePoints.Add (new CCPoint (100, 0));
+splinePoints.Add (new CCPoint (0, 130)); 
 
-drawNode.DrawCatmullRom (
-    points: splinePoints,
-    segments: 64); 
+drawNode.DrawCatmullRom (
+    points: splinePoints,
+    segments: 64); 
 ```
 
-![](ccdrawnode-images/image4.png "DrawCatmullRom erstellt eine gekrümmte über eine Variable Anzahl von Punkten, ähnlich wie DrawCardinalLine")
+![](ccdrawnode-images/image4.png "DrawCatmullRom erstellt eine gekrümmte Linie durch eine Variable Anzahl von Punkten ähnlich DrawCardinalLine")
 
 
 ### <a name="drawcircle"></a>DrawCircle
 
-`DrawCircle` erstellt eine Umkreis eines Kreises, der einen bestimmten `radius`.
+`DrawCircle` erstellt einen Umkreis eines Kreises, der einen bestimmten `radius`.
 
 Codebeispiel:
 
 ```csharp
-drawNode.DrawCircle (
-    center:new CCPoint (0, 0),
-    radius:20,
-    color:CCColor4B.Yellow); 
+drawNode.DrawCircle (
+    center:new CCPoint (0, 0),
+    radius:20,
+    color:CCColor4B.Yellow); 
 ```
 
-![](ccdrawnode-images/image5.png "DrawCircle erstellt einen Umkreis eines Kreises mit einem angegebenen radius")
+![](ccdrawnode-images/image5.png "DrawCircle erstellt einen Umkreis eines Kreises mit einem angegebenen RADIUS")
 
 
 ### <a name="drawcubicbezier"></a>DrawCubicBezier
 
-`DrawCubicBezier` Zeichnet eine gekrümmte zwischen zwei Punkten, die mit Steuerpunkte des Pfads zwischen den beiden Punkten festlegen.
+`DrawCubicBezier` Zeichnet eine gekrümmte Linie zwischen zwei Punkten, die mit der Control-Punkte des Pfads zwischen den beiden Punkten.
 
 Codebeispiel:
 
 ```csharp
-drawNode.DrawCubicBezier (
-    origin: new CCPoint (0, 0),
-    control1: new CCPoint (50, 150),
-    control2: new CCPoint (250, 150),
-    destination: new CCPoint (170, 0),
-    segments: 64,
-    lineWidth: 1,
-    color: CCColor4B.Green); 
+drawNode.DrawCubicBezier (
+    origin: new CCPoint (0, 0),
+    control1: new CCPoint (50, 150),
+    control2: new CCPoint (250, 150),
+    destination: new CCPoint (170, 0),
+    segments: 64,
+    lineWidth: 1,
+    color: CCColor4B.Green); 
 ```
 
  ![](ccdrawnode-images/image6.png "DrawCubicBezier zeichnet eine gekrümmte Linie zwischen zwei Punkten")
@@ -229,106 +229,106 @@ drawNode.DrawCubicBezier (
 
 ### <a name="drawellipse"></a>DrawEllipse
 
-`DrawEllipse` erstellt den Umriss einer *Ellipse*, dies wird häufig als bezeichnet eine Ellipse (obwohl die beiden nicht geometrisch identisch sind). Die Form der Ellipse kann definiert werden, indem eine `CCRect` Instanz.
+`DrawEllipse` erstellt den Umriss einer *Ellipse*, dies wird häufig als bezeichnet ein Oval (obwohl die beiden nicht geometrisch identisch sind). Die Form der Ellipse definiert werden, indem eine `CCRect` Instanz.
 
 Codebeispiel:
 
 
 ```csharp
-drawNode.DrawEllipse (
-    rect: new CCRect (0, 0, 130, 90),
-    lineWidth: 2,
-    color: CCColor4B.Gray); 
+drawNode.DrawEllipse (
+    rect: new CCRect (0, 0, 130, 90),
+    lineWidth: 2,
+    color: CCColor4B.Gray); 
 ```
 
-![](ccdrawnode-images/image8.png "DrawEllipse erstellt der Kontur einer Ellipse, die häufig als Oval bezeichnet wird")
+![](ccdrawnode-images/image8.png "\"DrawEllipse\" erstellt, die Kontur einer Ellipse, die häufig als Oval bezeichnet wird")
 
 
 ### <a name="drawline"></a>DrawLine
 
-`DrawLine` wird eine Verbindung mit einer Zeile mit einer angegebenen Breite Punkte. Diese Methode ist vergleichbar mit `DrawSegment`, abgesehen von den Flatfile-Endpunkte im Gegensatz zu runden Endpunkte erstellt.
+`DrawLine` Stellt eine Verbindung her, um Punkte mit einer Zeile mit einer angegebenen Breite. Diese Methode ähnelt `DrawSegment`, außer dass die Flatfile-Endpunkten im Gegensatz zu runden Endpunkte erstellt.
 
 Codebeispiel:
 
 
 ```csharp
-drawNode.DrawLine (
-    from: new CCPoint (0, 0),
-    to: new CCPoint (150, 30),
-    lineWidth: 5,
-    color:CCColor4B.Orange); 
+drawNode.DrawLine (
+    from: new CCPoint (0, 0),
+    to: new CCPoint (150, 30),
+    lineWidth: 5,
+    color:CCColor4B.Orange); 
 ```
 
-![](ccdrawnode-images/image9.png "DrawLine stellt eine Verbindung mit Verwaltungspunkten mit einer Zeile mit einer angegebenen Breite her.")
+![](ccdrawnode-images/image9.png "DrawLine eine Verbindung mit Punkten mit einer Codezeile bestimmter Breite her.")
 
 
 ### <a name="drawlinelist"></a>DrawLineList
 
-`DrawLineList` erstellt mehrere Zeilen durch Herstellen einer Verbindung jedes Paar von Punkten, die gemäß einer `CCV3F_C4B` Array. Die `CCV3F_C4B` Struktur enthält die Werte für die Position und Farbe. Die `verts` Parameter sollte immer eine gerade Anzahl von Punkten enthalten, wie jede Zeile mit zwei Punkten definiert ist.
+`DrawLineList` mehrere Zeilen erstellt, durch das Verbinden von jedem Standortpaar der gemäß einem `CCV3F_C4B` Array. Die `CCV3F_C4B` Struktur enthält Werte für die Position und Farbe. Die `verts` Parameter sollte immer eine gerade Anzahl von Punkten enthalten, da jede Zeile durch zwei Punkte definiert wurde.
 
 Codebeispiel:
 
 
 ```csharp
-CCV3F_C4B[] verts = new CCV3F_C4B[] {
-    // First line:
-    new CCV3F_C4B( new CCPoint(0,0), CCColor4B.White),
-    new CCV3F_C4B( new CCPoint(30,60), CCColor4B.White),
-    // second line, will blend from white to red:
-    new CCV3F_C4B( new CCPoint(60,0), CCColor4B.White),
-    new CCV3F_C4B( new CCPoint(120,120), CCColor4B.Red)
+CCV3F_C4B[] verts = new CCV3F_C4B[] {
+    // First line:
+    new CCV3F_C4B( new CCPoint(0,0), CCColor4B.White),
+    new CCV3F_C4B( new CCPoint(30,60), CCColor4B.White),
+    // second line, will blend from white to red:
+    new CCV3F_C4B( new CCPoint(60,0), CCColor4B.White),
+    new CCV3F_C4B( new CCPoint(120,120), CCColor4B.Red)
 };
 
-drawNode.DrawLineList (verts); 
+drawNode.DrawLineList (verts); 
 ```
 
- ![](ccdrawnode-images/image10.png "Der Verts-Parameter sollte immer eine gerade Anzahl von Punkten enthalten, wie jede Zeile mit zwei Punkten definiert ist")
+ ![](ccdrawnode-images/image10.png "Der Verts-Parameter sollte immer eine gerade Anzahl von Punkten enthalten, da jede Zeile durch zwei Punkte definiert wurde")
 
 
 
 
 ### <a name="drawpolygon"></a>DrawPolygon
 
-`DrawPolygon` erstellt ein Polygon ausgefüllt mit variabler Breite und Farbe Konturen.
+`DrawPolygon` erstellt eine ausgefüllte Polygon mit einem Rand von variabler Breite und Farbe.
 
 Codebeispiel:
 
 
 ```csharp
-CCPoint[] verts = new CCPoint[] {
-    new CCPoint(0,0),
-    new CCPoint(0, 100),
-    new CCPoint(50, 150),
-    new CCPoint(100, 100),
-    new CCPoint(100, 0)
+CCPoint[] verts = new CCPoint[] {
+    new CCPoint(0,0),
+    new CCPoint(0, 100),
+    new CCPoint(50, 150),
+    new CCPoint(100, 100),
+    new CCPoint(100, 0)
 };
 
-drawNode.DrawPolygon (verts,
-    count: verts.Length,
-    fillColor: CCColor4B.White,
-    borderWidth: 5,
-    borderColor: CCColor4B.Red,
-    closePolygon: true); 
+drawNode.DrawPolygon (verts,
+    count: verts.Length,
+    fillColor: CCColor4B.White,
+    borderWidth: 5,
+    borderColor: CCColor4B.Red,
+    closePolygon: true); 
 ```
 
-![](ccdrawnode-images/image11.png "DrawPolygon erstellt ein Polygon ausgefüllt mit variabler Breite und Farbe Konturen")
+![](ccdrawnode-images/image11.png "DrawPolygon erzeugt ein Polygon, ausgefüllt mit variabler Breite und Farbe im Überblick")
 
 
 ### <a name="drawquadbezier"></a>DrawQuadBezier
 
-`DrawQuadBezier` verbindet zwei Punkten Linie als Trennzeichen. Verhält sich ähnlich wie `DrawCubicBezier` unterstützt jedoch nur einen einzigen Steuerungspunkt.
+`DrawQuadBezier` verbindet zwei Punkten durch eine Linie an. Es verhält sich ähnlich wie `DrawCubicBezier` unterstützt jedoch nur einen einzigen Steuerungspunkt.
 
 Codebeispiel:
 
 
 ```csharp
-drawNode.DrawQuadBezier (
-    origin:new CCPoint (0, 0),
-    control:new CCPoint (200, 0),
-    destination:new CCPoint (0, 300),
-    segments:64,
-    lineWidth:1,
-    color:CCColor4B.White);
+drawNode.DrawQuadBezier (
+    origin:new CCPoint (0, 0),
+    control:new CCPoint (200, 0),
+    destination:new CCPoint (0, 300),
+    segments:64,
+    lineWidth:1,
+    color:CCColor4B.White);
 ```
 
 ![](ccdrawnode-images/image12.png "DrawQuadBezier verbindet zwei Punkte mit einer Linie")
@@ -336,35 +336,35 @@ drawNode.DrawQuadBezier (
 
 ### <a name="drawrect"></a>DrawRect
 
-`DrawRect` erstellt ein Rechteck ausgefüllt mit variabler Breite und Farbe Konturen.
+`DrawRect` erstellt ein Rechteck ausgefüllt mit einem Rand von variabler Breite und Farbe.
 
 Codebeispiel: 
 
 
 ```csharp
-var shape = new CCRect (
-    0, 0, 100, 200);
+var shape = new CCRect (
+    0, 0, 100, 200);
 drawNode.DrawRect(shape,
-    fillColor:CCColor4B.Blue,
-    borderWidth: 4,
-    borderColor:CCColor4B.White); 
+    fillColor:CCColor4B.Blue,
+    borderWidth: 4,
+    borderColor:CCColor4B.White); 
 ```
 
-![](ccdrawnode-images/image13.png "DrawRect erstellt ein Rechteck ausgefüllt mit variabler Breite und Farbe Konturen")
+![](ccdrawnode-images/image13.png "DrawRect erstellt ein Rechteck ausgefüllt mit variabler Breite und Farbe im Überblick")
 
 
 ### <a name="drawsegment"></a>DrawSegment
 
-`DrawSegment` verbindet zwei Punkten mit einer Zeile mit variabler Breite und Farbe. Sie ähnelt damit `DrawLine`, außer dass es round Endpunkte anstatt Flatfile Endpunkte erstellt.
+`DrawSegment` verbindet zwei Punkte mit einer Zeile mit variabler Breite und Farbe. Sie ähnelt damit `DrawLine`, es sei denn round-Endpunkte statt der Flatfile-Endpunkten erstellt.
 
 Codebeispiel:
 
 
 ```csharp
-drawNode.DrawSegment (from: new CCPoint (0, 0),
-    to: new CCPoint (100, 200),
-    radius: 5,
-    color:new CCColor4F(1,1,1,1)); 
+drawNode.DrawSegment (from: new CCPoint (0, 0),
+    to: new CCPoint (100, 200),
+    radius: 5,
+    color:new CCColor4F(1,1,1,1)); 
 ```
 
 ![](ccdrawnode-images/image14.png "DrawSegment verbindet zwei Punkte mit einer Zeile mit variabler Breite und Farbe")
@@ -372,60 +372,60 @@ drawNode.DrawSegment (from: new CCPoint (0, 0),
 
 ### <a name="drawsolidarc"></a>DrawSolidArc
 
-`DrawSolidArc` erstellt eine Keil ausgefüllt, einer angegebenen Farbe und den Radius.
+`DrawSolidArc` erstellt eine ausgefüllte Keil einer angegebenen Farbe und die RADIUS.
 
 Codebeispiel:
 
 
 ```csharp
 drawNode.DrawSolidArc(
-    pos:new CCPoint(100, 100),
-    radius:200,
-    startAngle:0,
-    sweepAngle:CCMathHelper.Pi/2, // this is in radians, clockwise
-    color:CCColor4B.White); 
+    pos:new CCPoint(100, 100),
+    radius:200,
+    startAngle:0,
+    sweepAngle:CCMathHelper.Pi/2, // this is in radians, clockwise
+    color:CCColor4B.White); 
 ```
 
-![](ccdrawnode-images/image15.png "DrawSolidArc erstellt eine Keil ausgefüllt, der angegebenen Farbe und die RADIUS-")
+![](ccdrawnode-images/image15.png "DrawSolidArc erstellt eine ausgefüllte Keil einer angegebenen Farbe und die RADIUS-")
 
 
 ### <a name="drawsolidcircle"></a>DrawSolidCircle
 
-`DrawCircle` erstellt einen Kreis ausgefüllt, der dem angegebenen Radius.
+`DrawCircle` erstellt einen ausgefüllten Kreis von einem angegebenen Radius.
 
 Codebeispiel:
 
 
 ```csharp
 drawNode.DrawSolidCircle(
-    pos: new CCPoint (100, 100),
-    radius: 50,
-    color: CCColor4B.Yellow); 
+    pos: new CCPoint (100, 100),
+    radius: 50,
+    color: CCColor4B.Yellow); 
 ```
 
-![](ccdrawnode-images/image16.png "DrawCircle erstellt einen Kreis ausgefüllt, der dem angegebenen radius")
+![](ccdrawnode-images/image16.png "DrawCircle erstellt einen ausgefüllten Kreis von einem angegebenen radius")
 
 
 ### <a name="drawtrianglelist"></a>DrawTriangleList
 
-`DrawTriangleList` erstellt eine Liste der Dreiecke ab. Jedes Dreieck wird definiert, um drei `CCV3F_C4B` Instanzen in einem Array. Die Anzahl der Scheitelpunkte im Array übergeben wird, um die `verts` -Parameter muss ein Vielfaches von 3 sein. Beachten Sie, die in die einzige Information enthalten `CCV3F_C4B` ist die Position der Verts und ihre Farbe – die `DrawTriangleList` zeichnen Dreiecke mit Texturen werden nicht unterstützt.
+`DrawTriangleList` erstellt eine Liste von Dreiecken. Jedes Dreiecks wird definiert, um drei `CCV3F_C4B` Instanzen in einem Array. Die Anzahl der Scheitelpunkte im Array übergeben wird, um die `verts` -Parameter muss ein Vielfaches von drei sein. Beachten Sie, die in die einzige Information enthalten `CCV3F_C4B` ist die Position der Verts und ihre Farbe – die `DrawTriangleList` Methode zeichnen Dreiecke mit Texturen nicht unterstützt.
 
 Codebeispiel:
 
 
 ```csharp
-CCV3F_C4B[] verts = new CCV3F_C4B[] {
-    // First triangle:
-    new CCV3F_C4B( new CCPoint(0,0), CCColor4B.White),
-    new CCV3F_C4B( new CCPoint(30,60), CCColor4B.White),
-    new CCV3F_C4B( new CCPoint(60,0), CCColor4B.White),
-    // second triangle, each point has different colors:
-    new CCV3F_C4B( new CCPoint(90,0), CCColor4B.Yellow),
-    new CCV3F_C4B( new CCPoint(120,60), CCColor4B.Red),
-    new CCV3F_C4B( new CCPoint(150,0), CCColor4B.Blue)
+CCV3F_C4B[] verts = new CCV3F_C4B[] {
+    // First triangle:
+    new CCV3F_C4B( new CCPoint(0,0), CCColor4B.White),
+    new CCV3F_C4B( new CCPoint(30,60), CCColor4B.White),
+    new CCV3F_C4B( new CCPoint(60,0), CCColor4B.White),
+    // second triangle, each point has different colors:
+    new CCV3F_C4B( new CCPoint(90,0), CCColor4B.Yellow),
+    new CCV3F_C4B( new CCPoint(120,60), CCColor4B.Red),
+    new CCV3F_C4B( new CCPoint(150,0), CCColor4B.Blue)
 };
 
-drawNode.DrawTriangleList (verts); 
+drawNode.DrawTriangleList (verts); 
 ```
 
 ![](ccdrawnode-images/image17.png "DrawTriangleList erstellt eine Liste von Dreiecken")
@@ -433,7 +433,7 @@ drawNode.DrawTriangleList (verts);
 
 ## <a name="summary"></a>Zusammenfassung
 
-Diese Anleitung wird erläutert, wie zum Erstellen einer `CCDrawNode` und Primitive basierende Renderingvorgänge ausgeführt. Es bietet ein Beispiel für jeden Draw-Aufrufe.
+Dieser Leitfaden erläutert, wie zum Erstellen einer `CCDrawNode` und Primitive-basierte Renderingvorgänge. Es bietet ein Beispiel für jede der Draw-Aufrufe.
 
 ## <a name="related-links"></a>Verwandte Links
 

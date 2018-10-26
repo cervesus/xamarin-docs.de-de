@@ -1,33 +1,33 @@
 ---
-title: Im Registerkartenformat Layouts
-description: Einen Überblick über die im Registerkartenformat Layouts in Android
+title: Layouts im Registerkartenformat
+description: Eine Übersicht über Layouts im Registerkartenformat in Android
 ms.prod: xamarin
 ms.assetid: 1CFF590A-AC86-C3B3-36CA-A70248BC7F97
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 05/08/2017
-ms.openlocfilehash: 53ed5f91583d43839e96388194aea8c0d6ac5315
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 5d88ffb44d12ee142314c74ca8e749164cbfe3b9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2018
-ms.locfileid: "34149259"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105960"
 ---
-# <a name="tabbed-layouts"></a>Im Registerkartenformat Layouts
+# <a name="tabbed-layouts"></a>Layouts im Registerkartenformat
 
 
 ## <a name="overview"></a>Übersicht
 
-Registerkarten sind ein beliebter Benutzer Schnittstelle Muster in mobilen Anwendungen aufgrund ihrer Einfachheit und Verwendbarkeit. Sie bieten eine konsistente und einfache Möglichkeit zum Navigieren zwischen verschiedenen Bildschirmen in einer Anwendung. Android bietet mehrere APIs für im Registerkartenformat Schnittstellen: 
+Registerkarten sind eine beliebte User Interface-Antimuster in mobilen Anwendungen aufgrund ihrer Einfachheit und benutzerfreundlichkeit. Sie bieten eine konsistente und einfache Möglichkeit zum Navigieren zwischen verschiedenen Bildschirme in einer Anwendung. Android hat mehrere APIs mit internetskalierung für im Registerkartenformat Schnittstellen: 
 
--   **ActionBar** &ndash; Dies ist Teil der einen neuen Satz von APIs, die in Android 3.0 (API-Ebene 11) mit Ziel bietet eine einheitliche eingeführte Navigations- und Ansicht-switching-Schnittstelle. Es wurde wieder zu Android 2.2 (API-Ebene 8) mit portiert wurde die [Android Unterstützungsbibliothek v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/). 
+-   **ActionBar** &ndash; Dies ist Teil der einen neuen Satz von APIs, die in Android 3.0 (API-Ebene 11), mit dem Ziel eingeführt wurde für die Bereitstellung eines konsistenten Navigation und Ansicht-switching-Schnittstelle. Es ist wieder auf Android 2.2 (API-Ebene 8) mit portiert wurde die [Android Support-Bibliothek v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/). 
 
--   **PagerTabStrip** &ndash; gibt die aktuelle, nächsten und vorhergehenden Seiten eine `ViewPager`. `ViewPager` steht nur über [Android Unterstützungsbibliothek v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/).
+-   **PagerTabStrip** &ndash; gibt die aktuelle, nächsten und vorherigen Seiten eine `ViewPager`. `ViewPager` steht nur über [Android Support-Bibliothek v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/).
      Weitere Informationen zu `PagerTabStrip`, finden Sie unter [ViewPager](~/android/user-interface/controls/view-pager/index.md).
 
--   **Symbolleiste** &ndash; `Toolbar` ist eine neuere und flexiblere Aktion Leiste-Komponente, die ersetzt `ActionBar`. `Toolbar` in Lollipop für Android 5.0 oder höher, verfügbar ist und es steht auch für ältere Versionen von Android, über die [Android Unterstützungsbibliothek v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) NuGet-Paket. 
-    `Toolbar` ist derzeit die empfohlene Aktion Leiste-Komponente, die in der Android-apps verwendet.
+-   **Symbolleiste** &ndash; `Toolbar` ist eine neuere und flexibler Aktion Leiste-Komponente, die ersetzt `ActionBar`. `Toolbar` ist in Android 5.0 Lollipop oder höher verfügbar, und es ist auch verfügbar für ältere Versionen von Android über den [Android Support-Bibliothek v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) NuGet-Paket. 
+    `Toolbar` befindet sich derzeit die empfohlene Aktion Leiste-Komponente, die in der Android-apps verwenden.
     Weitere Informationen finden Sie unter [Symbolleiste](~/android/user-interface/controls/tool-bar/index.md). 
 
 
@@ -35,5 +35,5 @@ Registerkarten sind ein beliebter Benutzer Schnittstelle Muster in mobilen Anwen
 ## <a name="related-links"></a>Verwandte Links
 
 - [Material Design - Registerkarten](https://material.io/guidelines/components/tabs.html)- [ActionBar](http://developer.android.com/guide/topics/ui/actionbar.html)
-- [NuGet-Paket für Android, unterstützen Bibliothek v7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
+- [NuGet-Paket für Android-Unterstützung Bibliothek v7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
 - [V7 Appcompat-Bibliothek](http://developer.android.com/tools/support-library/features.html#v7-appcompat)

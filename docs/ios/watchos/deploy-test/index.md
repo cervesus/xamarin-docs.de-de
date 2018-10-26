@@ -1,84 +1,84 @@
 ---
-title: Bereitstellen und Testen von WatchOS-Apps mit Xamarin
-description: Dieses Dokument beschreibt das Bereitstellen und Testen von WatchOS-apps mit Xamarin erstellten. Es bietet eine Checkliste für die Bereitstellung, explizite erläutert und die Platzhalter-app-IDs und untersucht, mit der app-Gruppen.
+title: Bereitstellen und testen die WatchOS-Apps mit Xamarin
+description: Dieses Dokument beschreibt das Bereitstellen und testen die WatchOS-apps mit Xamarin erstellt wurde. Es enthält eine Checkliste, explizite erläutert und die Platzhalter-app-IDs, und wirft einen Blick auf die app-Gruppen.
 ms.prod: xamarin
 ms.assetid: 98257399-E9B3-4BAB-9204-0E89117DEA6D
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 778583456e74bb7ed3a85dce96bcdbc487aef57a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a0738b03c4fa0ad975b872307bb17f387b1c5fd5
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790941"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120956"
 ---
-# <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Bereitstellen und Testen von WatchOS-Apps mit Xamarin
+# <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Bereitstellen und testen die WatchOS-Apps mit Xamarin
 
-## <a name="deployment-checklist"></a>Bereitstellungsprüfliste
+## <a name="deployment-checklist"></a>Checkliste für die Bereitstellung
 
-An, ob Sie zu einem Test Überwachungsfenster bereitstellen, oder auf den App Store hochladen, müssen Sie die Schritte auf dieser Seite:
+Wenn Sie zu einem Test Watch bereitstellen, oder in den App Store hochladen, müssen Sie die Schritte auf dieser Seite:
 
-- In der **iOS Dev Center**:
+- In der **iOS Developer Center**:
   - [App-IDs](#App_IDs) erstellt wurden.
   - [App-Gruppen](#App_Groups) konfiguriert (falls erforderlich).
   - Verteilung Provisioning Profile erstellt
 
 - In der Projektmappe:
 
-  - Überprüfen Sie die [-Paket-IDs und Projektverweise](~/ios/watchos/get-started/installation.md) festgelegt sind.
-  - Überprüfen Sie die Symbole sind [richtig konfiguriert](~/ios/watchos/app-fundamentals/icons.md).
-  - Überprüfen Sie die Paket-Version Zahlen Übereinstimmung in allen Projekten.
-  - Konfigurieren der **Entitlements.plist** für App-Gruppen (falls erforderlich).
+  - Überprüfen Sie die [Bündel-IDs und Projektverweise](~/ios/watchos/get-started/installation.md) festgelegt sind.
+  - Überprüfen Sie die Symbole sind [korrekt](~/ios/watchos/app-fundamentals/icons.md).
+  - Überprüfen Sie die Paket-versionsübereinstimmung Zahlen in allen Projekten.
+  - Konfigurieren der **"Entitlements.plist"** für App-Gruppen (falls erforderlich).
 
-* Befolgen Sie dann die Anweisungen auf:
-  - [Bereitstellen auf einem Apple Watch zu Testzwecken](~/ios/watchos/deploy-test/device.md), oder
+* Klicken Sie dann wie folgt:
+  - [Bereitstellen auf einer Apple Watch zum Testen der](~/ios/watchos/deploy-test/device.md), oder
   - [In den App Store hochladen](~/ios/watchos/deploy-test/appstore.md).
 
 <a name="App_IDs"/>
 
 ## <a name="app-ids"></a>App-IDs
 
-Entsprechend der Anleitung unter dem [setupanweisungen](~/ios/watchos/get-started/installation.md), alle drei Projekte in einer Watch-App-Bündel-IDs, wie z. B. verknüpften zulässig:
+Siehe die [Anweisungen zur Einrichtung des](~/ios/watchos/get-started/installation.md), über alle drei Projekte in eine Watch-App-Bündel-IDs, wie z. B. verwandte:
 
-- Xamarin.iOS Unified Projekt- `com.xamarin.WatchKitCatalog`
-- WatchKit Erweiterungsprojekt- `com.xamarin.WatchKitCatalog.watchkitextension`
-- Watch-App-Projekt- `com.xamarin.WatchKitCatalog.watchkitapp`
+- Vereinheitlichten Xamarin.iOS-Projekt- `com.xamarin.WatchKitCatalog`
+- WatchKit-Erweiterung-Projekt – `com.xamarin.WatchKitCatalog.watchkitextension`
+- Watch-App-Projekt: `com.xamarin.WatchKitCatalog.watchkitapp`
 
-Alle drei Projekte erfordern ein übereinstimmendes Verteilung Bereitstellungsprofil, entweder mit explizit für jede App-IDs oder einen Platzhalter-ID der App
+Alle drei Projekte erfordern, einen übereinstimmenden Verteilungsbereitstellungsprofil, entweder explizite Verwendung von App-IDs für jede oder einen Platzhalter-App-ID
 
 ### <a name="explicit-app-ids"></a>Explizite App-IDs
 
-Erstellen einer **App-ID** jedes einzelnen Projekt Paket-ID (die auf dem iOS Dev Center aussehen wird):
+Erstellen Sie eine **App-ID** jedes einzelnen Projekts-Paket-ID (die auf dem iOS Developer Center aussieht):
 
 ![Die Paket-IDs in der iOS Developer Center](images/appids-specific-sml.png)
 
-Beim Erstellen oder Konfigurieren von App-IDs, denken Sie daran, die bestimmten Funktionen zu aktivieren, die Ihre app benötigt. Dadurch kann es sich um Pushbenachrichtigungen und app-Gruppen enthalten.
+Beim Erstellen oder Konfigurieren von App-IDs, denken Sie daran, die bestimmten Funktionen aktivieren, die Ihre app benötigt. Dies kann es sich um erste Schritte mit Pushbenachrichtigungen und app-Gruppen enthalten.
 
-Sie benötigen zum Erstellen einer Bereitstellung Verteilungsprofil für jede App-ID.
+Sie benötigen zum Erstellen eines Bereitstellungsprofils für die Verteilung für jeden App-ID.
 
 ### <a name="wildcard-app-id"></a>Platzhalter-App-ID
 
-Alternativ können Sie einen Platzhalter erstellen **App-ID** entspricht, die z. B. alle drei Projekte `com.xamarin.*`.
+Alternativ können Sie einen Platzhalter erstellen **App-ID** entspricht z. B. alle drei Projekte `com.xamarin.*`.
 
-Beachten Sie, dass einige Funktionen nicht mit einem Platzhalter-App-ID (z. B. Pushbenachrichtigungen) verwendet werden können. Falls Ihre app diese Funktionen sollten Sie explizite App-IDs erstellen benötigt.
+Beachten Sie, dass einige Funktionen, die mit einem Platzhalter-App-ID (z.B. Pushbenachrichtigungen) verwendet werden können. Wenn Ihre app diese Funktionen sollten Sie explizite App-IDs erstellen benötigt.
 
-Für die Verteilung müssen Sie nur eine Bereitstellung Verteilungsprofil für den Platzhalter-ID der App zu erstellen.
+Für die Verteilung müssen Sie nur eine Verteilungsbereitstellungsprofil für den Platzhalter-App-ID erstellen
 
 <a name="App_Groups" />
 
 ## <a name="app-groups"></a>App-Gruppen
 
-Sie können ein App-Gruppe zur Freigabe von Daten zwischen Ihrer iOS-App und der Watch-Erweiterung verwenden. Sie sollten sicherstellen, dass Ihre Projektmappe enthält:
+Sie können eine App-Gruppe verwenden, zum Freigeben von Daten zwischen Ihrer iOS-App und der Watch-Erweiterung. Sie sollten sicherstellen, dass Ihre Projektmappe enthält:
 
-- Konfiguriert die **App-Gruppe** in der Apple-Entwicklerportal **Zertifikate "," Bezeichner "und" Profile** Abschnitt.
+- Konfiguriert die **App-Gruppe** im Apple Developer Portal **Zertifikate, Bezeichner & Profile** Abschnitt.
 
-- Aktiviert **App-Gruppen** (und die **App-Gruppen-ID**) in *beide* iOS-App und der Watch-Erweiterung **App-ID** und  **Entitlements.plist**.
+- Aktiviert **App-Gruppen** (und die **App-Gruppen-ID**) in *sowohl* iOS-App und der Watch-Erweiterung **App-ID** und  **"Entitlements.plist"**.
 
-### <a name="certificates-identifiers--profiles"></a>Zertifikate, Bezeichner und Profile
+### <a name="certificates-identifiers--profiles"></a>Zertifikate, Bezeichner & Profile
 
-Um eine App-Gruppe zu verwenden, erstellen Sie einen Eintrag in der **App-Gruppen** Bildschirm. Im folgenden Beispiel wird die Gruppe benannt, mit dem gleichen Reverse-DNS-Stil, die häufig verwendet wird, für die App-IDs, jedoch mit der `group.` Präfix (das ist erforderlich):
+Um eine App-Gruppe zu verwenden, erstellen Sie einen Eintrag in der **App-Gruppen** Bildschirm. Im folgenden Beispiel heißt die Gruppe mit dem gleichen Reverse-DNS-Stil, die häufig verwendet wird, für die App-IDs, jedoch mit der `group.` -Präfix (das erforderlich ist):
 
 ![Der Bezeichner](images/appgroups-new-sml.png)
 
@@ -86,24 +86,24 @@ Die app-Gruppe wird dann in der Liste angezeigt:
 
 ![Der Bezeichner-Liste](images/appgroups-setup-sml.png)
 
-Nachdem die Gruppe erstellt wurde, kann es in verwiesen werden Ihre **App-ID** Konfiguration. Denken Sie daran, die sie der iOS-App und Watch-Erweiterung enthalten **App-IDs**.
+Nachdem die Gruppe erstellt wurde, kann es in verwiesen werden Ihre **App-ID** Konfiguration. Denken Sie daran, die sie im iOS-App "und" Watch-Erweiterung enthalten **App-IDs**.
 
 ![Verfügbare consifurations](images/appgroups-sml.png)
 
-Führen Sie **nicht** Aktivieren der App-Gruppen in der Apple Watch-App-ID Es ist nicht erforderlich, um die Überwachung selbst aktiviert sein.
+Führen Sie **nicht** Aktivieren von App-Gruppen in der Apple Watch-App-ID Es ist nicht erforderlich, um auf die Überwachung selbst aktiviert werden.
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
 Einige app-Funktionen (z. b. App-Gruppen) müssen Sie Ihre Berechtigungen festlegen.
-Doppelklicken Sie zum Bearbeiten der **Entitlements.plist** Datei in diesen Projekten:
+Doppelklicken Sie zum Bearbeiten der **"Entitlements.plist"** Datei in diesen Projekten:
 
 - iOS-App-Projekt
-- Überwachen-Erweiterungsprojekt
+- Sehen Sie sich das Projekt
 
-.![Der Editor Entitlements.plist](images/entitlements-plist-sml.png)
+.![Die Entitlements.plist-editor](images/entitlements-plist-sml.png)
 
-Führen Sie **nicht** aktivieren Sie Berechtigungen in das Watch-App-Projekt. Es ist nicht erforderlich, um die Überwachung selbst aktiviert sein.
+Führen Sie **nicht** aktivieren Sie Berechtigungen in der Watch-App-Projekt. Es ist nicht erforderlich, um auf die Überwachung selbst aktiviert werden.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Apple WatchKit Übermittlung-Handbuch](https://developer.apple.com/app-store/watch/)
+- [Apple WatchKit-Übermittlung-Handbuch](https://developer.apple.com/app-store/watch/)

@@ -4,15 +4,15 @@ description: 'In diesem Dokument wird beschrieben, wie Sie eine app ARKit in Xam
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 08/01/2017
-ms.openlocfilehash: 728082eb27684c2176feb2038b7948986ce6a694
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 435ca560eee4f8f44443816c2a4ccec195ba5395
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351690"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103893"
 ---
 # <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Verwenden ARKit mit von UrhoSharp in Xamarin.iOS
 
@@ -25,7 +25,7 @@ Auf dieser Seite wird erläutert, wie die Verbindung dieser beiden Welten zusamm
 
 ## <a name="the-basics"></a>Die Grundlagen
 
-Was wir tun möchten ist vorhanden-3D-Inhalte auf der ganzen Welt, wie das iPhone zu sehen.   Die Idee besteht darin, den Inhalt des Telefons Kamera mit den 3D-Inhalt stammt in blend, und wenn der Benutzer des Telefons im Raum bewegt wird, um sicherzustellen, dass das 3D-Objekt Verhalten ist, dass sie Teil dieser Platz: Dies erfolgt durch die Objekte in dieser Welt verankern.
+Was wir tun möchten ist vorhanden-3D-Inhalte auf der ganzen Welt, wie das iPhone/iPad zu sehen.   Die Idee besteht darin, den Inhalt von Kamera des Geräts, mit der 3D-Inhalt blend, und wenn der Benutzer des Geräts im Raum bewegt wird, um sicherzustellen, dass das 3D-Objekt Verhalten ist, dass sie Teil dieser Platz: Dies erfolgt durch die Objekte in dieser Welt verankern.
 
 ![Animierte Figur in ARKit](urhosharp-images/image1.gif)
 

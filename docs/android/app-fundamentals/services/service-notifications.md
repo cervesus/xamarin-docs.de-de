@@ -1,27 +1,27 @@
 ---
 title: Dienstbenachrichtigungen
-description: Dieses Handbuch beschreibt, wie ein Android-Dienst lokale Benachrichtigungen verwenden kann, dem Versand von Informationen für einen Benutzer.
+description: Dieser Leitfaden erläutert, wie ein Android-Dienst lokale Benachrichtigungen verwenden dürfen, um Informationen zu einem Benutzer zu senden.
 ms.prod: xamarin
 ms.assetid: 6C06FDE7-6385-40EF-AC7C-8EFB54E29F45
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 65ccb94bd4fac1f3818b4f08eb34ecf73d6c52e4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d56f67254a9eae334fa8ac3f08d3ef270800c309
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762632"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103247"
 ---
 # <a name="service-notifications"></a>Dienstbenachrichtigungen
 
-_Dieses Handbuch beschreibt, wie ein Android-Dienst lokale Benachrichtigungen verwenden kann, dem Versand von Informationen für einen Benutzer._
+_Dieser Leitfaden erläutert, wie ein Android-Dienst lokale Benachrichtigungen verwenden dürfen, um Informationen zu einem Benutzer zu senden._
 
 
-## <a name="service-notifications-overview"></a>Übersicht über den Dienst Benachrichtigungen
+## <a name="service-notifications-overview"></a>Übersicht über Service-Benachrichtigungen
 
-Dienstbenachrichtigungen erlauben eine app zum Anzeigen von Informationen für den Benutzer an, auch wenn die Android-Anwendung nicht im Vordergrund ist. Es ist möglich, dass eine Benachrichtigung, um Aktionen für den Benutzer, z. B. das Anzeigen einer Aktivität aus einer Anwendung bereitgestellt werden. Im folgenden Codebeispiel wird veranschaulicht, wie ein Dienst eine Benachrichtigung an einen Benutzer verteilen kann:
+Dienstbenachrichtigungen können eine app zum Anzeigen von Informationen für den Benutzer, auch wenn die Android-Anwendung nicht im Vordergrund ist. Es ist möglich, eine Benachrichtigung-Aktionen für den Benutzer, z. B. das Anzeigen einer Aktivität aus einer Anwendung bieten. Im folgenden Codebeispiel wird veranschaulicht, wie ein Dienst eine Benachrichtigung zu einem Benutzer verteilen kann:
 
 ```csharp
 [Service]
@@ -46,18 +46,18 @@ public class MyService: Service
 }
 ```
 
-Diese Abbildung ist ein Beispiel der Benachrichtigung, die angezeigt wird:
+In diesem Screenshot ist ein Beispiel für die Benachrichtigung, die angezeigt wird:
 
-[![Benachrichtigungssymbol in der Statusleiste angezeigt](service-notifications-images/01-notification-sml.png)](service-notifications-images/01-notification.png#lightbox)
+[![Benachrichtigungssymbol angezeigt, in der Statusleiste](service-notifications-images/01-notification-sml.png)](service-notifications-images/01-notification.png#lightbox)
 
-Wenn Benutzer Folien, die Benachrichtigung-Bildschirm von oben nach unten, wird die vollständige Benachrichtigung angezeigt:
+Wenn die Benutzer-Folien, die Benachrichtigung-Bildschirm von oben nach unten, wird die vollständige Benachrichtigung angezeigt:
 
-![Notication im Benachrichtigungsbereich angezeigt](service-notifications-images/02-fullnotification.png)
+![Benachrichtigung, die im Benachrichtigungsbereich angezeigt](service-notifications-images/02-fullnotification.png)
 
 
 ## <a name="updating-a-notification"></a>Aktualisieren eine Benachrichtigung
 
-Um eine Benachrichtigung zu aktualisieren, wird der Dienst die Benachrichtigung wird über die gleiche benachrichtigungs-ID erneut veröffentlichen Android anzeigt oder die Benachrichtigung in der Statusleiste nach Bedarf aktualisieren.
+Um eine Benachrichtigung zu aktualisieren, wird der Dienst die Benachrichtigung wird über die gleiche benachrichtigungs-ID erneut veröffentlichen Android anzeigt oder die Benachrichtigung in der Statusleiste nach Bedarf zu aktualisieren.
 
 ```csharp 
 void UpdateNotification(string content)
@@ -79,9 +79,9 @@ Notification GetNotification(string content, PendingIntent intent)
 }
 ```
 
-Weitere Informationen zu Benachrichtigungen finden Sie in der [lokale Benachrichtigungen](~/android/app-fundamentals/notifications/local-notifications.md) Teil der [Android-Benachrichtigungen](~/android/app-fundamentals/notifications/index.md) Handbuch.
+Weitere Informationen zu Benachrichtigungen finden Sie in der [lokale Benachrichtigungen](~/android/app-fundamentals/notifications/local-notifications.md) Teil der [Android-Benachrichtigungen](~/android/app-fundamentals/notifications/index.md) Guide.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Lokale Benachrichtigungen in Android](~/android/app-fundamentals/notifications/local-notifications.md)
+- [Lokale Benachrichtigungen unter Android](~/android/app-fundamentals/notifications/local-notifications.md)

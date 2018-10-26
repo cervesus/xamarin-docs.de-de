@@ -4,29 +4,29 @@ description: In diesem Artikel wird erläutert, wie SkiaSharp-Pfade, die Verwend
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/24/2017
-ms.openlocfilehash: f3c06198ae9e677c667c9216b3ace8784a6056b2
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 5e059cc6ef3a127ae79bd2ed97ade7a8045958f1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615326"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116167"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SVG-Pfaddaten in SkiaSharp
 
 _Definieren Sie Pfade, die Verwendung von Zeichenfolgen im Format Scalable Vector Graphics_
 
-Die `SKPath` Klasse unterstützt die Definition der gesamte Pfad-Objekte von Textzeichenfolgen in einem Format hergestellt, indem die Scalable Vector Graphics (SVG)-Spezifikation. Sie werden später in diesem Artikel finden Sie unter wie Sie einen vollständigen Pfad, wie diese in einer Textzeichenfolge darstellen können:
+Die [ `SKPath` ](xref:SkiaSharp.SKPath) Klasse unterstützt die Definition der gesamte Pfad-Objekte von Textzeichenfolgen in einem Format hergestellt, indem die Scalable Vector Graphics (SVG)-Spezifikation. Sie werden später in diesem Artikel finden Sie unter wie Sie einen vollständigen Pfad, wie diese in einer Textzeichenfolge darstellen können:
 
 ![](path-data-images/pathdatasample.png "Ein Beispielpfad mit SVG-Pfaddaten definiert")
 
 SVG wird ein XML-basierte Grafiken, die Programmiersprache für Webseiten. Da SVG Pfade im Markup statt mit einer Reihe von Funktionsaufrufen definiert werden kann muss, enthält der SVG-standard eine äußerst präzise Möglichkeit zum Angeben einer gesamten Grafikpfad als Textzeichenfolge.
 
-Innerhalb von SkiaSharp wird dieses Format als "SVG-Pfaddaten." bezeichnet. Das Format wird auch in XAML für Windows-basierten programmierumgebungen, einschließlich der Windows Presentation Foundation und der universellen Windows-Plattform, in denen es heißt unterstützt die [Pfadmarkupsyntax](https://msdn.microsoft.com/library/ms752293%28v=vs.110%29.aspx) oder [verschieben und zeichnen-Befehle Syntax](/windows/uwp/xaml-platform/move-draw-commands-syntax/). Sie können auch als ein Exchange-Format für Vektorgrafiken, insbesondere in textbasierten Dateien wie z. B. XML dienen.
+Innerhalb von SkiaSharp wird dieses Format als "SVG-Pfaddaten." bezeichnet. Das Format wird auch in XAML für Windows-basierten programmierumgebungen, einschließlich der Windows Presentation Foundation und der universellen Windows-Plattform, in denen es heißt unterstützt die [Pfadmarkupsyntax](/dotnet/framework/wpf/graphics-multimedia/path-markup-syntax) oder [verschieben und zeichnen-Befehle Syntax](/windows/uwp/xaml-platform/move-draw-commands-syntax/). Sie können auch als ein Exchange-Format für Vektorgrafiken, insbesondere in textbasierten Dateien wie z. B. XML dienen.
 
-SkiaSharp definiert zwei Methoden mit den Wörtern `SvgPathData` im Namen:
+Die [ `SKPath` ](xref:SkiaSharp.SKPath) -Klasse definiert zwei Methoden mit den Wörtern `SvgPathData` im Namen:
 
 ```csharp
 public static SKPath ParseSvgPathData(string svgPath)
@@ -34,17 +34,17 @@ public static SKPath ParseSvgPathData(string svgPath)
 public string ToSvgPathData()
 ```
 
-Die statische [ `ParseSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ParseSvgPathData/p/System.String/) -Methode konvertiert eine Zeichenfolge, die eine `SKPath` Objekt während [ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) konvertiert eine `SKPath` -Objekt in eine Zeichenfolge.
+Die statische [ `ParseSvgPathData` ](xref:SkiaSharp.SKPath.ParseSvgPathData(System.String)) -Methode konvertiert eine Zeichenfolge, die eine `SKPath` Objekt während [ `ToSvgPathData` ](xref:SkiaSharp.SKPath.ToSvgPathData) konvertiert eine `SKPath` -Objekt in eine Zeichenfolge.
 
 Hier ist eine SVG-Zeichenfolge für einen fünf Spitzen Stern, dessen Mitte sich an den Punkt (0, 0) mit einem Radius von 100:
 
-```csharp
+```
 "M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z"
 ```
 
-Die Buchstaben sind Befehle, die erstellen eine `SKPath` Objekt. `M` Gibt an, eine `MoveTo` aufrufen, `L` ist `LineTo`, und `Z` ist `Close` zu eine Kontur zu schließen. Jedes Paar stellt eine X- und Y-Koordinate eines Punkts. Beachten Sie, dass die `L` Befehl gefolgt von mehreren Punkten, die durch Kommas getrennt. In einer Reihe von Koordinaten und Punkten, Kommas und Leerzeichen werden identisch behandelt. Einige Programmierer bevorzugen einzufügenden Kommas zwischen die X- und Y-Koordinaten und nicht zwischen den Punkten, aber durch Kommas oder Leerzeichen sind nur erforderlich, um Mehrdeutigkeiten zu vermeiden. Dies ist durchaus zulässig:
+Die Buchstaben sind Befehle, die erstellen ein `SKPath` Objekt: `M` gibt an eine `MoveTo` aufrufen, `L` ist `LineTo`, und `Z` ist `Close` zu eine Kontur zu schließen. Jedes Paar stellt eine X- und Y-Koordinate eines Punkts. Beachten Sie, dass die `L` Befehl gefolgt von mehreren Punkten, die durch Kommas getrennt. In einer Reihe von Koordinaten und Punkten, Kommas und Leerzeichen werden identisch behandelt. Einige Programmierer bevorzugen einzufügenden Kommas zwischen die X- und Y-Koordinaten und nicht zwischen den Punkten, aber durch Kommas oder Leerzeichen sind nur erforderlich, um Mehrdeutigkeiten zu vermeiden. Dies ist durchaus zulässig:
 
-```csharp
+```
 "M0-100L58.8 90.9-95.1-30.9 95.1-30.9-58.8 80.9Z"
 ```
 
@@ -52,7 +52,7 @@ Die Syntax der SVG-Pfaddaten formal finden Sie unter [Abschnitt 8.3 der SVG-Spez
 
 ## <a name="moveto"></a>**MoveTo**
 
-```csharp
+```
 M x y
 ```
 
@@ -60,7 +60,7 @@ Eine neue Kontur im Pfad wird durch Festlegen der aktuellen Position gestartet. 
 
 ## <a name="lineto"></a>**LineTo**
 
-```csharp
+```
 L x y ...
 ```
 
@@ -68,7 +68,7 @@ Dieser Befehl fügt eine gerade Linie (oder Zeilen) in den Pfad und legt die neu
 
 ## <a name="horizontal-lineto"></a>**Horizontalen LineTo**
 
-```csharp
+```
 H x ...
 ```
 
@@ -76,7 +76,7 @@ Dieser Befehl fügt eine horizontale Linie auf den Pfad und legt die neue Positi
 
 ## <a name="vertical-line"></a>**Vertikale Linie**
 
-```csharp
+```
 V y ...
 ```
 
@@ -84,7 +84,7 @@ Dieser Befehl fügt eine vertikale Linie auf den Pfad und legt die neue Position
 
 ## <a name="close"></a>**Schließen**
 
-```csharp
+```
 Z
 ```
 
@@ -94,7 +94,7 @@ Die `C` Befehl schließt die Kontur durch Hinzufügen einer geraden Linie von de
 
 Der Befehl zum Hinzufügen eines elliptischen Bogens an die Kontur ist bei weitem den komplexesten Befehl in der gesamten SVG-Pfaddaten Spezifikation. Es ist der einzige Befehl, in dem Zahlen etwas anderes als Koordinatenwerte darstellen können:
 
-```csharp
+```
 A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 ```
 
@@ -108,7 +108,7 @@ Der Bogen gezeichnet wird, zu dem Punkt (*x*, *y*), wird die neue Position.
 
 ## <a name="cubicto"></a>**CubicTo**
 
-```csharp
+```
 C x1 y1 x2 y2 x3 y3 ...
 ```
 
@@ -118,7 +118,7 @@ Mehrere Bézierkurven können angegeben werden, durch eine einzelne `C` Befehl. 
 
 Es gibt auch ein Befehl für "smooth" Bézier:
 
-```csharp
+```
 S x2 y2 x3 y3 ...
 ```
 
@@ -126,7 +126,7 @@ Mit diesem Befehl sollte einen normalen Bézier Befehl folgen, (obwohl dies nich
 
 ## <a name="quadto"></a>**QuadTo**
 
-```csharp
+```
 Q x1 y1 x2 y2 ...
 ```
 
@@ -134,7 +134,7 @@ Für quadratische Bézierkurven muss die Anzahl der Punkte ein Vielfaches von 2 
 
 Es gibt auch ein reibungslosen quadratischen Kurve-Befehl:
 
-```csharp
+```
 T x2 y2 ...
 ```
 
@@ -144,9 +144,9 @@ Alle diese Befehle sind auch in "relativer" Versionen verfügbar sind, in denen 
 
 Dies ist das Ausmaß der SVG-Pfaddaten Definition. Es gibt keine Möglichkeit, die für die wiederholte Gruppen von Befehlen oder jeder Typ, der Berechnung ausführen. Befehle für `ConicTo` oder anderen Typen von Arc-Spezifikationen sind nicht verfügbar.
 
-Die statische [ `SKPath.ParseSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ParseSvgPathData/p/System.String/) Methode erwartet eine gültige Zeichenfolge der SVG-Befehle. Wenn Syntaxfehler erkannt wird, gibt die Methode `null`. Dies ist die einzige Fehleranzeige.
+Die statische [ `SKPath.ParseSvgPathData` ](xref:SkiaSharp.SKPath.ParseSvgPathData(System.String)) Methode erwartet eine gültige Zeichenfolge der SVG-Befehle. Wenn Syntaxfehler erkannt wird, gibt die Methode `null`. Dies ist die einzige Fehleranzeige.
 
-Die [ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) Methode ist nützlich zum Abrufen von SVG-Pfaddaten aus einer vorhandenen `SKPath` Objekt in ein anderes Programm zu übertragen oder in einem Text-Datei-Format wie z. B. XML gespeichert. (Die `ToSvgPathData` Methode wird nicht im Beispielcode in diesem Artikel gezeigt.) Führen Sie *nicht* erwarten `ToSvgPathData` zum Zurückgeben einer Zeichenfolge entspricht genau der Methodenaufrufe, die den Pfad erstellt. Insbesondere erfahren Sie, dass Bögen, um mehrere konvertiert werden `QuadTo` Befehle aus, und das ist die Anzeige in den Path-Daten, die von zurückgegeben `ToSvgPathData`.
+Die [ `ToSvgPathData` ](xref:SkiaSharp.SKPath.ToSvgPathData) Methode ist nützlich zum Abrufen von SVG-Pfaddaten aus einer vorhandenen `SKPath` Objekt in ein anderes Programm zu übertragen oder in einem Text-Datei-Format wie z. B. XML gespeichert. (Die `ToSvgPathData` Methode wird nicht im Beispielcode in diesem Artikel gezeigt.) Führen Sie *nicht* erwarten `ToSvgPathData` zum Zurückgeben einer Zeichenfolge entspricht genau der Methodenaufrufe, die den Pfad erstellt. Insbesondere erfahren Sie, dass Bögen, um mehrere konvertiert werden `QuadTo` Befehle aus, und das ist die Anzeige in den Path-Daten, die von zurückgegeben `ToSvgPathData`.
 
 Die **Pfad Daten-Hello** Seite Spells sich das Wort "HELLO" Verwenden von SVG-Pfaddaten. Sowohl die `SKPath` und `SKPaint` werden Objekte als Felder in definiert die [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) Klasse:
 
@@ -330,7 +330,7 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Die Stunde und Minute Hände haben jetzt Bereiche, um die Hände voneinander stellen eingeschlossen, die sie mit einem schwarzen Rand und mit grauer Füllung gezeichnet werden die `handStrokePaint` und `handFillPaint` Objekte.
+Die Stunde und Minute Hände haben jetzt Bereiche eingeschlossen. Um diese praktische voneinander zu machen, werden sie mit einem schwarzen Rand und mit grauer Füllung gezeichnet, die `handStrokePaint` und `handFillPaint` Objekte.
 
 In den früheren **hässlichen analogen Uhr** Beispiel, das kleine Kreise, markiert die Stunden und Minuten wurden in einer Schleife gezeichnet. In diesem **ziemlich analogen Uhr** Beispiel ein ganz anderen Ansatz wird verwendet: die Markierungen Stunden und Minuten werden gepunkteten Linien gezeichnet, die mit der `minuteMarkPaint` und `hourMarkPaint` Objekte:
 
@@ -359,9 +359,9 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Die [ **Punkte und Gedankenstriche** ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) Leitfaden erläutert, wie Sie verwenden können die `SKPathEffect.CreateDash` Methode, um eine gestrichelte Linie zu erstellen. Das erste Argument ist ein `float` Array, das in der Regel zwei Elemente vorhanden sind: das erste Element ist die Länge der Bindestriche aus, und das zweite Element ist die Lücke zwischen der Bindestriche. Wenn die `StrokeCap` -Eigenschaftensatz auf `SKStrokeCap.Round`, und klicken Sie dann die abgerundeten Enden des Strichs effektiv die Dash Länge durch die Strichbreite auf beiden Seiten des Strichs verlängern. Wenn das erste Arrayelement auf 0 erstellt daher eine gestrichelte Linie.
+Die [ **Punkte und Gedankenstriche** ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) Artikel wurde erläutert, wie Sie verwenden können die [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*) Methode, um eine gestrichelte Linie zu erstellen. Das erste Argument ist ein `float` Array, das in der Regel zwei Elemente vorhanden sind: das erste Element ist die Länge der Bindestriche aus, und das zweite Element ist die Lücke zwischen der Bindestriche. Wenn die `StrokeCap` -Eigenschaftensatz auf `SKStrokeCap.Round`, und klicken Sie dann die abgerundeten Enden des Strichs effektiv die Dash Länge durch die Strichbreite auf beiden Seiten des Strichs verlängern. Wenn das erste Arrayelement auf 0 erstellt daher eine gestrichelte Linie.
 
-Die Entfernung zwischen diesen Punkten wird durch das zweite Arrayelement bestimmt. Wie Sie diese in Kürze, zwei sehen werden `SKPaint` Objekte dienen zum Zeichnen der Kreise mit einem Radius von 90 Einheiten. Der Umfang dieser Kreises ist daher 180π, was bedeutet, dass die 60-Minuten-Markierungen jeder 3π Einheiten angezeigt werden müssen, dies ist der zweite Wert in der `float` im array `minuteMarkPaint`. Der Zeitraum von 12 Uhr müssen angezeigt werden alle Einheiten 15π, dies ist der Wert in der zweiten `float` Array.
+Die Entfernung zwischen diesen Punkten wird durch das zweite Arrayelement bestimmt. Wie Sie diese in Kürze, zwei sehen werden `SKPaint` Objekte dienen zum Zeichnen der Kreise mit einem Radius von 90 Einheiten. Der Umfang dieser Kreises ist daher 180π, was bedeutet, dass die 60-Minuten-Markierungen jeder 3π Einheiten angezeigt werden müssen, dies ist der zweite Wert in der `float` im array `minuteMarkPaint`. Die 12-Stunden-Markierungen müssen angezeigt werden alle Einheiten 15π, dies ist der Wert in der zweiten `float` Array.
 
 Die `PrettyAnalogClockPage` Klasse wird ein Timer ungültig gemacht werden, die Oberfläche alle 16 Millisekunden ein, und die `PaintSurface` Handler wird aufgerufen, bei dieser Rate. Die früheren Definitionen der `SKPath` und `SKPaint` Objekte können für sehr sauberen Code Zeichnen:
 
@@ -430,5 +430,5 @@ Eine Besonderheit des zweiten Zeigers, jedoch erfolgt mit. Da die Uhr aktualisie
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

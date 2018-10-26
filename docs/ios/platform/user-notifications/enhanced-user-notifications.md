@@ -1,133 +1,133 @@
 ---
 title: Verbesserte Benutzerbenachrichtigungen in Xamarin.iOS
-description: Dieser Artikel beschreibt in iOS 10 eingeführte Benutzerbenachrichtigungen-Framework. Es wird erläutert, lokale Benachrichtigungen, remote Benachrichtigungen Benachrichtigung Management, Benachrichtigungsaktionen und mehr.
+description: Dieser Artikel beschreibt das Benutzerbenachrichtigungen-Framework, die unter iOS 10 eingeführt. Es wird erläutert, lokale Benachrichtigungen, remotebenachrichtigungen, Verwaltung von Notification, Benachrichtigung-Aktionen und mehr.
 ms.prod: xamarin
 ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 29c529d57d35b0ab2b7bf2e80f8d295a8d059c5e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: d1b1a59b432315532844f8fca3b613ff3392a7b5
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788653"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108241"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Verbesserte Benutzerbenachrichtigungen in Xamarin.iOS
 
-Neue für iOS-10, ermöglicht das Framework für die Bereitstellung und Verarbeitung von lokalen und remote-Benachrichtigungen, erhalten. Mit diesem Framework, kann eine app oder App-Erweiterung die Übermittlung von lokalen Benachrichtigungen planen durch eine Reihe von Bedingungen, z. B. Speicherort oder die Uhrzeit angeben.
+Noch nicht mit iOS 10, ermöglicht das Framework für die Bereitstellung und Verarbeitung von lokalen und remote-Benachrichtigungen, erhalten. Durch die Verwendung dieses Frameworks kann eine app oder App-Erweiterung die Übermittlung von lokalen Benachrichtigungen planen eine Reihe von Bedingungen wie z. B. Speicherort oder Uhrzeit angeben.
 
 ## <a name="about-user-notifications"></a>Informationen zu Benutzerbenachrichtigungen
 
-Wie bereits erwähnt, können das neue Benutzerbenachrichtigung-Framework für die Bereitstellung und Verarbeitung von lokalen und remote-Benachrichtigungen. Mit diesem Framework, kann eine app oder App-Erweiterung die Übermittlung von lokalen Benachrichtigungen planen durch eine Reihe von Bedingungen, z. B. Speicherort oder die Uhrzeit angeben.
+Wie bereits erwähnt, können das neue Benutzerbenachrichtigung-Framework für die Bereitstellung und Verarbeitung von lokalen und remote-Benachrichtigungen. Durch die Verwendung dieses Frameworks kann eine app oder App-Erweiterung die Übermittlung von lokalen Benachrichtigungen planen eine Reihe von Bedingungen wie z. B. Speicherort oder Uhrzeit angeben.
 
-Darüber hinaus die app oder eine Erweiterung kann empfangen (und möglicherweise ändern) sowohl lokale als auch Benachrichtigungen, wie sie iOS-Gerät des Benutzers übermittelt werden.
+Darüber hinaus die app oder die Erweiterung kann empfangen (und potenziell ändern) sowohl lokale als auch Benachrichtigungen, wie sie iOS-Gerät des Benutzers übermittelt werden.
 
-Der neue Benutzer Benachrichtigung Benutzeroberflächen-Framework ermöglicht es, eine Anwendung oder ein App-Erweiterung, um die Darstellung des sowohl lokale als auch Benachrichtigungen anpassen, wenn sie dem Benutzer angezeigt werden.
+Das neue Benachrichtigung User Interface, UI-Framework ermöglicht es, eine app oder App-Erweiterung, die Darstellung von lokalen und Remotecomputern Benachrichtigungen anpassen, wenn sie dem Benutzer angezeigt werden.
 
-Dieses Framework bietet, die eine app Benachrichtigungen an Benutzer übermitteln kann folgendermaßen:
+Dieses Framework bietet es sich um die folgenden Möglichkeiten, die eine app Benachrichtigungen für einen Benutzer bereitstellen kann:
 
 - **Visual Warnungen** –, in dem die Benachrichtigung vom oberen Rand des Bildschirms als Banner hinunter.
-- **Sound und Vibrationen** -kann eine Benachrichtigung zugeordnet werden.
-- **App-Symbol Signalisierung** – die app-Symbol angezeigt wird, in dem ein Signal, das anzeigt, dass neuer Inhalte verfügbar, z. B. die Anzahl der ungelesene e-Mail-Nachrichten ist.
+- **Sound- und Vibrationen** -kann eine Benachrichtigung zugeordnet werden.
+- **App-Symbol Badging** -, in dem das Symbol der app zeigt eines Badges, die anzeigt, dass neuer Inhalte verfügbar, z. B. die Anzahl der ungelesene e-Mail-Nachrichten ist.
 
-Darüber hinaus, abhängig vom aktuellen Kontext des Benutzers gibt es verschiedene Möglichkeiten, die eine Benachrichtigung angezeigt werden:
+Darüber hinaus je nach den aktuellen Kontext des Benutzers gibt es verschiedene Möglichkeiten, die eine Benachrichtigung angezeigt werden:
 
 - Wenn das Gerät entsperrt wird, wird die Benachrichtigung vom oberen Rand des Bildschirms als Banner Abonnentenoptionen.
 - Wenn das Gerät gesperrt ist, wird die Benachrichtigung auf dem Sperrbildschirm des Benutzers angezeigt werden.
-- Wenn der Benutzer eine Benachrichtigung verpasst hat, können die Mitteilungszentrale öffnen und alle verfügbaren wartenden Benachrichtigungen anzeigen.
+- Wenn der Benutzer eine Benachrichtigung verpasst hat, können sie die Mitteilungszentrale zu öffnen und keine verfügbar ist, warten Benachrichtigungen anzuzeigen.
 
-Eine Xamarin.iOS app verfügt über zwei Arten von Benachrichtigungen für Benutzer, die sie senden kann:
+Eine Xamarin.iOS-app verfügt über zwei Arten von Benachrichtigungen für Benutzer, die sie senden kann:
 
-- **Lokale Benachrichtigungen** – diese werden von apps, die lokal auf dem Gerät des Benutzers installiert gesendet.
-- **Remote Benachrichtigungen** -gesendet werden, von einem Remote-Server als auch dem Benutzer angezeigt, oder sie trigger ein Update im Hintergrund der app-Inhalte.
+- **Lokale Benachrichtigungen** -diese gesendet werden, indem apps, die lokal auf dem Gerät des Benutzers installiert.
+- **Remotebenachrichtigungen** -werden von einem Remotecomputer gesendet, Server und entweder dem Benutzer angezeigt, oder sie ein Update der Hintergrund der der Inhalt der app auslösen.
 
 ### <a name="about-local-notifications"></a>Informationen zu lokalen Benachrichtigungen
 
-Die lokale Benachrichtigungen, die eine iOS-app senden kann haben die folgenden Features und Attribute:
+Die lokale Benachrichtigungen, die eine iOS-app senden können haben die folgenden Features und die folgenden Attribute:
 
-- Sie werden von apps gesendet, die sich lokal auf dem Gerät des Benutzers befinden. 
-- Sie sind kann so konfiguriert werden entsprechend Trigger Zeit oder Speicherort zu verwenden. 
-- Die app plant die Benachrichtigung mit dem Gerät des Benutzers, und es wird angezeigt, wenn die auslöserbedingung erfüllt ist.
+- Sie werden von apps gesendet, die lokal auf dem Gerät des Benutzers sind. 
+- Sie sind kann konfiguriert werden, verwenden Sie entweder "Uhrzeit" oder "Speicherort entsprechend Trigger. 
+- Die app plant die Benachrichtigung mit dem Gerät des Benutzers ein, und es wird angezeigt, wenn die auslöserbedingung erfüllt ist.
 - Wenn der Benutzer mit der Benachrichtigung interagiert, wird die app einen Rückruf erhalten.
 
-Einige Beispiele für lokale Benachrichtigungen:
+Einige Beispiele für lokale Benachrichtigungen sind:
 
-- Calendar-Warnungen
-- Erinnerung Warnungen
-- Beachten Sie Trigger Speicherort
+- Kalender-Warnungen
+- Erinnerung-Warnungen
+- Beachten Sie Standort-Trigger
 
-Weitere Informationen finden Sie in der Apple- [lokal und Remote Benachrichtigung Programmierhandbuch](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) Dokumentation.
+Weitere Informationen finden Sie unter Apple [lokale und Remote Notification Programming Guide](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) Dokumentation.
 
-### <a name="about-remote-notifications"></a>Informationen zu Remote Benachrichtigungen
+### <a name="about-remote-notifications"></a>Informationen zu Remote-Benachrichtigungen
 
-Die Remote-Benachrichtigungen, die eine iOS-app senden kann haben die folgenden Features und Attribute:
+Die Remote-Benachrichtigungen, die eine iOS-app senden können haben die folgenden Features und die folgenden Attribute:
 
 - Die app verfügt über eine serverseitige Komponente, der mit dem er kommuniziert.
-- Apple Push Notification Service (APNs) Dient zum eine Best-Effort-Übermittlung von Remote-Benachrichtigungen auf dem Gerät des Benutzers von der Entwickler Cloud-basierten Servern übertragen werden können.
-- Wenn die app die Remote-Benachrichtigung erhält, wird es dem Benutzer angezeigt.
-- Wenn der Benutzer bei der Benachrichtigung interagiert, wird die app einen Rückruf erhalten.
+- Das Apple Push Notification Service (APNs) wird verwendet, einen Best-Effort-Prinzip-Übermittlung von Remotebenachrichtigungen auf dem Gerät des Benutzers von des Entwicklers cloudbasierten Servern zu übertragen.
+- Wenn die app die Remotebenachrichtigung erhält wird es dem Benutzer angezeigt.
+- Wenn der Benutzer mit der Benachrichtigung interagiert, wird die app einen Rückruf erhalten.
 
-Einige Beispiele für Remote Benachrichtigungen:
+Einige Beispiele von Remotebenachrichtigungen:
 
 - News-Warnungen
 - Sport-Updates
 - Instant Messaging-Nachrichten
 
-Es gibt zwei Arten von Remote-Benachrichtigungen an eine iOS-app verfügbar:
+Es gibt zwei Arten von Remotebenachrichtigungen eine iOS-app zur Verfügung:
 
-- **Verbundene Benutzer** -der Benutzer auf dem Gerät angezeigt werden.
-- **Automatische Updates** -diese bieten einen Mechanismus zum Aktualisieren des Inhalts einer iOS-app im Hintergrund. Wenn eine automatische Aktualisierung empfangen wird, kann die app das Pull-Server entfernen Sie die neuesten Inhalte Remoteknoten.
+- **Benutzer** – der Benutzer auf dem Gerät angezeigt werden.
+- **Automatische Updates** – diese bieten einen Mechanismus, um den Inhalt einer iOS-app im Hintergrund aktualisieren. Wenn eine automatische Aktualisierung empfangen wird, kann die app das Pull-Server entfernen Sie die neuesten Inhalte wenden Sie sich.
 
-Weitere Informationen finden Sie in der Apple- [lokal und Remote Benachrichtigung Programmierhandbuch](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) Dokumentation.
+Weitere Informationen finden Sie unter Apple [lokale und Remote Notification Programming Guide](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) Dokumentation.
 
 ### <a name="about-the-existing-notifications-api"></a>Über die vorhandenen API-Benachrichtigungen
 
-Vor dem iOS-10, eine iOS-app verwenden `UIApplication` so eine Benachrichtigung mit dem System registriert und planen, wie dieser Benachrichtigung (entweder nach Zeit oder Speicherort) ausgelöst werden soll.
+Bevor Sie iOS 10, eine iOS-app verwenden `UIApplication` eine Benachrichtigung mit dem System zu registrieren und planen, wie diese Benachrichtigung (entweder nach Zeit oder Speicherort) ausgelöst werden soll.
 
-Es gibt mehrere Problem, das ein Entwickler bei der Arbeit mit der vorhandenen Benachrichtigung API auftreten kann:
+Es gibt mehrere Problem, das ein Entwickler bei der Arbeit mit der vorhandenen API-Benachrichtigung auftreten kann:
 
-- Es wurden verschiedene Rückrufe für lokales oder Remote Benachrichtigungen zu einer Duplizierung des Codes kommen könnte erforderlich.
-- Die app hatte Kontrolle über die Benachrichtigung beschränkt, nachdem er mit dem System geplant wurde.
-- Es wurden bietet unterschiedliche Stufen der Unterstützung für alle vorhandenen Apple-Plattformen.
+- Gab es verschiedene Rückrufe erforderlich für lokales oder Remote Notifications, was zu einer Duplizierung von Code führen konnte.
+- Die app musste Kontrolle über die Benachrichtigung beschränkt, nachdem es mit dem System geplant wurde.
+- Gab es unterschiedliche Ebenen der Unterstützung für alle vorhandenen Apple-Plattformen.
 
-### <a name="about-the-new-user-notification-framework"></a>Zu den neuen Benutzer Benachrichtigungsframeworks
+### <a name="about-the-new-user-notification-framework"></a>Über das neue Benutzer-Notification-Framework
 
-Mit iOS-10, Apple wurde das neue Framework von Benachrichtigung für Benutzer, der ersetzt den vorhandenen eingeführt `UIApplication` Methode wie oben beschrieben.
+Mit iOS 10, hat Apple eingeführt, das neue Benutzerbenachrichtigung-Framework, ersetzt die vorhandene `UIApplication` Methode wie oben beschrieben.
 
 Die Benutzerbenachrichtigung-Framework bietet Folgendes:
 
-- Eine vertraut-API, die mit den vorherigen Methoden, die Dies erleichtert die Port-Code aus dem vorhandenen Framework Funktionsparität enthält.
-- Enthält einen erweiterten Satz von Inhaltsoptionen, der umfangreichere Benachrichtigungen an Benutzer gesendet werden kann.
-- Durch den Code und die Rückrufe können sowohl lokale als auch Remote Benachrichtigungen behandelt werden.
-- Vereinfacht das Behandeln von Rückrufe, die an eine Anwendung gesendet werden, wenn der Benutzer mit der Benachrichtigung interagiert.
-- Verbesserte Verwaltung von ausstehenden und übermittelten Benachrichtigungen, einschließlich der Möglichkeit zum Entfernen oder Aktualisieren von Benachrichtigungen.
-- Fügt die Möglichkeit, die in-app-Darstellung von Benachrichtigungen führen.
+- Eine vertraute API, die vollständig gleichen Funktionsumfang wie die vorherigen Methoden, sodass sie ganz leicht Code Portieren aus dem vorhandenen Framework enthält.
+- Enthält eine erweiterte Reihe von Optionen für Inhalte, die umfangreichere Benachrichtigungen an Benutzer gesendet werden kann.
+- Sowohl lokale als auch Remote Notifications können von den gleichen Code und Rückrufe behandelt werden.
+- Vereinfacht das Verarbeiten der Rückrufe, die in einer app gesendet werden, wenn der Benutzer mit der Benachrichtigung interagiert.
+- Verbesserte Verwaltung der ausstehenden und übermittelten Benachrichtigungen, einschließlich der Möglichkeit, entfernen oder Aktualisieren von Benachrichtigungen.
+- Fügt die Möglichkeit zur Präsentation von in-app-Benachrichtigungen an.
 - Bietet die Möglichkeit zum Planen und Verarbeiten von Benachrichtigungen von in-App-Erweiterungen.
-- Fügt neue Erweiterungspunkt für die Benachrichtigungen selbst. 
+- Fügt neue Erweiterungspunkt für Benachrichtigungen hinzu. 
 
-Das neue Benutzerbenachrichtigung-Framework bietet eine einheitliche Benachrichtigung API für die mehrere Plattformen, einschließlich Apple unterstützt: 
+Das neue Framework für die Benachrichtigung für Benutzer bietet eine einheitliche Benachrichtigung API für die mehrere Plattformen unterstützt, einschließlich der Apple: 
 
-- **iOS** -vollständige Unterstützung zum Verwalten und Planen von Benachrichtigungen.
-- **tvos. außerdem wurden** -Signal-app-Symbole für lokale und remote-Benachrichtigungen die Möglichkeit hinzugefügt.
-- **WatchOS** – bietet die Möglichkeit zum Weiterleiten von Benachrichtigungen von gepaarten iOS-Gerät des Benutzers auf ihrer Apple Watch und ermöglicht es Watch-apps, die lokale Benachrichtigungen direkt auf die Überwachung selbst tun.
+- **iOS** -vollständige Unterstützung zum Verwalten und Planen Sie Benachrichtigungen.
+- **TvOS** -Badge-app-Symbole für lokale und remote-Benachrichtigungen die Möglichkeit hinzugefügt.
+- **WatchOS** : Fügt die Fähigkeit zum Weiterleiten von Benachrichtigungen vom gekoppelten iOS-Gerät des Benutzers auf ihrer Apple Watch und bietet Watch-apps die Möglichkeit, lokale Benachrichtigungen direkt auf der Watch selbst vorzunehmen.
 
-Weitere Informationen finden Sie in der Apple- [UserNotifications Frameworkverweis](https://developer.apple.com/reference/usernotifications) und [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui) Dokumentation.
+Weitere Informationen finden Sie unter Apple ["usernotifications" Frameworkverweis](https://developer.apple.com/reference/usernotifications) und [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui) Dokumentation.
 
 ## <a name="preparing-for-notification-delivery"></a>Vorbereiten für die Übermittlung der Benachrichtigung
 
-Bevor Sie ein iOS app Benachrichtigungen senden kann des Benutzers, den die app im System registriert werden muss und da eine Benachrichtigung eine Unterbrechung der Benutzer ist, muss eine app explizit Berechtigung vor dem Senden anfordert.
+Bevor eine iOS app Benachrichtigungen senden kann des Benutzers, die, den die app mit dem System registriert sein muss, und da eine Benachrichtigung eine Unterbrechung der Benutzer ist, muss eine Anwendung explizit Berechtigungen vor dem Senden anfordern.
 
-Es gibt drei verschiedene Stufen der benachrichtigungsanforderungen, die der Benutzer für eine app genehmigen kann:
+Es gibt drei verschiedene Stufen der fordert der Benachrichtigung, die der Benutzer für eine app genehmigt werden kann:
 
 - Banner angezeigt.
 - Sound Warnungen.
-- Signalisierung das Symbol "app".
+- Signalisierung des Anwendungssymbols.
 
-Darüber hinaus müssen diese Genehmigung Ebenen angefordert und für sowohl lokale als auch Benachrichtigungen festgelegt werden.
+Darüber hinaus müssen diese Ebenen für die Genehmigung angefordert und für lokale und remote-Benachrichtigungen festgelegt werden.
 
-Notification-Berechtigung darf angefordert werden, sobald die app gestartet wird, durch den folgenden Code zum Hinzufügen der `FinishedLaunching` Methode der `AppDelegate` und zum Festlegen des gewünschten Benachrichtigungstyp (`UNAuthorizationOptions`):
+Notification-Berechtigung darf nur angefordert werden, sobald die app gestartet wird, indem Sie den folgenden Code Hinzufügen der `FinishedLaunching` Methode der `AppDelegate` und festlegen den gewünschten Benachrichtigungstyp (`UNAuthorizationOptions`):
 
 ```csharp
 using UserNotifications;
@@ -144,7 +144,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-Darüber hinaus kann ein Benutzer immer die Benachrichtigung über Berechtigungen für eine app aus einem beliebigen Zeitpunkt ändern die **Einstellungen** app auf dem Gerät. Die app sollte für die angeforderte Benachrichtigung Berechtigungen des Benutzers überprüfen Sie vor der Bereitstellung einer benachrichtigungs mit dem folgenden Code:
+Darüber hinaus kann Benutzer immer die Benachrichtigung über Berechtigungen für eine app jederzeit ändern der **Einstellungen** app auf dem Gerät. Die app sollte für die Berechtigungen des Benutzers angeforderte Benachrichtigung überprüfen, bevor Sie die Präsentation einer benachrichtigungs mit dem folgenden Code:
 
 ```csharp
 // Get current notification settings
@@ -153,42 +153,42 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 }); 
 ``` 
 
-### <a name="configuring-the-remote-notifications-environment"></a>Konfigurieren der Umgebung Remote Benachrichtigungen
+### <a name="configuring-the-remote-notifications-environment"></a>Konfigurieren der Umgebung Remotebenachrichtigungen
 
-Neu für iOS 10, muss der Entwickler informiert das Betriebssystem an, welche Umgebung Pushbenachrichtigung als Entwicklung oder Produktion ausgeführt werden. Geben Sie diese Informationen können in der app abgelehnt werden, bei der Übermittlung an den iTune Store-App mit der Benachrichtigung ähnlich der folgenden ansonsten:
+Neue IOS 10, der Entwickler muss das Betriebssystem an, welche Umgebung Pushbenachrichtigung ausgeführt werden, entweder als Entwicklung oder Produktion, informieren. Diese Informationen nicht bereitstellen kann in der app abgelehnt wird, bei der Übermittlung an den iTunes App Store eine Benachrichtigung ähnlich der folgenden führen:
 
-> Fehlende Push Notification-Berechtigung - Ihre app enthält eine API für Apple Push Notification Service, aber die `aps-environment` Berechtigung fehlt in der app-Signatur.
+> Fehlende Push Notification-Berechtigung - Ihrer-app enthält eine API für den Apple Push Notification Service, aber die `aps-environment` Berechtigung ist nicht vorhanden, aus der app-Signatur.
 
-Um die erforderliche Berechtigung zu ermöglichen, führen Sie folgende Schritte aus:
+Um die erforderliche Berechtigung bereitzustellen, führen Sie folgende Schritte aus:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Doppelklicken Sie auf die `Entitlements.plist` in der Datei die **Lösung Pad** um ihn zur Bearbeitung zu öffnen.
+1. Doppelklicken Sie auf die `Entitlements.plist` Datei die **Lösungspad** um ihn zur Bearbeitung zu öffnen.
 2. Wechseln Sie zu der **Quelle** anzeigen: 
 
     [![](enhanced-user-notifications-images/setup01.png "Die Datenquellensicht")](enhanced-user-notifications-images/setup01.png#lightbox)
-3. Klicken Sie auf die **+** Schaltfläche, um einen neuen Schlüssel hinzuzufügen.
+3. Klicken Sie auf die **+** , um einen neuen Schlüssel hinzuzufügen.
 4. Geben Sie `aps-environment` für die **Eigenschaft**, lassen Sie die **Typ** als `String` , und geben Sie entweder `development` oder `production` für die **Wert**: 
 
-    [![](enhanced-user-notifications-images/setup02.png "Die Eigenschaft der Aps-Umgebung")](enhanced-user-notifications-images/setup02.png#lightbox)
+    [![](enhanced-user-notifications-images/setup02.png "Der Aps-Environment-Eigenschaft")](enhanced-user-notifications-images/setup02.png#lightbox)
 5. Speichern Sie die Änderungen in der Datei.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Doppelklicken Sie auf die `Entitlements.plist` in der Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
-3. Klicken Sie auf die **+** Schaltfläche, um einen neuen Schlüssel hinzuzufügen.
+1. Doppelklicken Sie auf die `Entitlements.plist` Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
+3. Klicken Sie auf die **+** , um einen neuen Schlüssel hinzuzufügen.
 4. Geben Sie `aps-environment` für die **Eigenschaft**, lassen Sie die **Typ** als `String` , und geben Sie entweder `development` oder `production` für die **Wert**: 
 
-    [![](enhanced-user-notifications-images/setup02w.png "Die Eigenschaft der Aps-Umgebung")](enhanced-user-notifications-images/setup02.png#lightbox)
+    [![](enhanced-user-notifications-images/setup02w.png "Der Aps-Environment-Eigenschaft")](enhanced-user-notifications-images/setup02.png#lightbox)
 5. Speichern Sie die Änderungen in der Datei.
 
 -----
 
-### <a name="registering-for-remote-notifications"></a>Registrieren für Remote-Benachrichtigungen
+### <a name="registering-for-remote-notifications"></a>Registrieren von Remotebenachrichtigungen
 
-Wenn die app senden und Empfangen von Benachrichtigungen zu Remote, es müssen dennoch dazu _Token Registrierung_ mithilfe des vorhandenen `UIApplication` API. Diese Registrierung muss das Gerät eine live-Verbindung Netzwerkzugriff APNs aufweisen, die erforderliche Token generiert, das an die app gesendet werden. Die Anwendung muss dann dieses Token des Entwicklers Server Seite App registrieren für remote-Benachrichtigungen weiterleiten:
+Wenn die app wird senden und Empfangen von Remotebenachrichtigungen, sie wird immer noch ausführen muss _Token Registrierung_ mithilfe des vorhandenen `UIApplication` API. Diese Registrierung muss das Gerät eine live-Verbindung Netzwerkzugriff APNs, haben die erforderlichen Token generiert wird, das für die app gesendet werden. Die app muss dieses Token zum des Entwicklers serverseitige app zum Registrieren von remotebenachrichtigungen weiterzuleiten:
 
-[![](enhanced-user-notifications-images/token01.png "Token-Registrierung (Übersicht)")](enhanced-user-notifications-images/token01.png#lightbox)
+[![](enhanced-user-notifications-images/token01.png "Token-Geräteregistrierung – Übersicht")](enhanced-user-notifications-images/token01.png#lightbox)
 
 Verwenden Sie den folgenden Code zum Initialisieren der erforderlichen Registrierungs:
 
@@ -196,23 +196,23 @@ Verwenden Sie den folgenden Code zum Initialisieren der erforderlichen Registrie
 UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 ```
 
-Das Token, das sich der Entwickler Server Side-app gesendet werden müssen als Teil der Benachrichtigungsnutzlast, Get vom Server zum APNs gesendet wird, wenn eine Remote-Benachrichtigung senden eingeschlossen werden sollen:
+Das Token, das an der Entwickler die serverseitige app gesendet werden müssen eingeschlossen werden, da Sie Teil der Nutzlast der Benachrichtigung, Get vom Server an APNs gesendet, wenn Sie eine Remote-Benachrichtigung senden:
 
-[![](enhanced-user-notifications-images/token02.png "Das Token als Teil der Nutzlast der Benachrichtigung enthalten")](enhanced-user-notifications-images/token02.png#lightbox)
+[![](enhanced-user-notifications-images/token02.png "Das Token, die als Teil der Nutzlast der Benachrichtigung enthalten")](enhanced-user-notifications-images/token02.png#lightbox)
 
-Das Token dient als Schlüssel, der miteinander verknüpft werden, die Benachrichtigung und der app zu öffnen oder auf die Benachrichtigung reagieren, verwendet.
+Das Token dient als Schlüssel, der miteinander verknüpft werden, die Benachrichtigung und die app zum Öffnen oder reagiert auf die Benachrichtigung verwendet.
 
-Weitere Informationen finden Sie in der Apple- [lokal und Remote Benachrichtigung Programmierhandbuch](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) Dokumentation.
+Weitere Informationen finden Sie unter Apple [lokale und Remote Notification Programming Guide](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) Dokumentation.
 
 ## <a name="notification-delivery"></a>Übermittlung der Benachrichtigung
 
-Vollständig mit der app registriert und die erforderlichen Berechtigungen, die vom angefordert und erteilt durch den Benutzer die app kann jetzt zum Senden und Empfangen von Benachrichtigungen. 
+Vollständig mit der app registriert und die erforderlichen Berechtigungen, die vom angefordert und erteilt durch den Benutzer die app ist jetzt bereit zum Senden und Empfangen von Benachrichtigungen. 
 
 ### <a name="providing-notification-content"></a>Bereitstellen von Benachrichtigungsinhalt
 
-Neu für iOS 10, alle Benachrichtigungen enthalten beide eine **Titel** und **Untertitel** , erscheint immer mit der **Text** der Inhalt der Benachrichtigung. Zudem neu, ist die Möglichkeit zum Hinzufügen **Medien Anlagen** auf den Inhalt der Benachrichtigung.
+Neue alle Benachrichtigungen für iOS 10, enthalten beide eine **Titel** und **Untertitel** , immer angezeigt wird mit der **Text** der Inhalt der Benachrichtigung. Ebenfalls neu, ist die Möglichkeit zum Hinzufügen **Medienanhänge** auf den Inhalt der Benachrichtigung.
 
-Um den Inhalt einer lokalen Anmeldung zu erstellen, verwenden Sie den folgenden Code:
+Um den Inhalt der eine lokale Benachrichtigung zu erstellen, verwenden Sie den folgenden Code:
 
 ```csharp
 var content = new UNMutableNotificationContent();
@@ -222,7 +222,7 @@ content.Body = "This is the message body of the notification.";
 content.Badge = 1;
 ```
 
-Für Remote-Benachrichtigungen ist der Prozess ähnlich:
+Von Remotebenachrichtigungen ist der Prozess ähnlich:
 
 ```csharp
 {
@@ -237,18 +237,18 @@ Für Remote-Benachrichtigungen ist der Prozess ähnlich:
 }
 ```
 
-### <a name="scheduling-when-a-notification-is-sent"></a>Planen bei einer Benachrichtigung wird gesendet.
+### <a name="scheduling-when-a-notification-is-sent"></a>Planen bei der eine Benachrichtigung wird gesendet.
 
-Mit dem Inhalt der Benachrichtigung erstellt, die app planen, wann die Benachrichtigung festlegen, die dem Benutzer angezeigt werden muss eine *Trigger*. iOS 10 bietet vier verschiedene Typen von Trigger:
+Mit dem Inhalt der Benachrichtigung erstellt, die app planen, wann die Benachrichtigung durch Festlegen, der dem Benutzer präsentiert wird muss ein *Trigger*. iOS 10 bietet vier verschiedene Typen von Trigger:
 
-- **Pushbenachrichtigungen** - dient ausschließlich mit Remote-Benachrichtigungen und wird ausgelöst, wenn ein APNs-sendet eine Benachrichtigung, die auf dem Gerät ausgeführte app-Paket.
-- **Zeitintervall** -können Sie eine lokale Benachrichtigung aus einer Zeit geplant werden Intervall mit sofort aus, und Beenden einen einen zukünftigen Punkt beginnen. Beispiel: `var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);`
-- **Datum "Kalender"** -ermöglicht lokalen Benachrichtigungen für ein bestimmtes Datum und eine Uhrzeit geplant werden.
-- **Speicherort basiert** -ermöglicht lokalen Benachrichtigungen, wenn das iOS-Gerät eingeben oder Verlassen einer bestimmten geografischen Ort oder in einer bestimmten Nähe Bluetooth-Beacons geplant werden sollen.
+- **Pushbenachrichtigung** : wird ausschließlich mit Remotebenachrichtigungen verwendet und wird ausgelöst, wenn es sich bei APNs, die eine Benachrichtigung gesendet, die auf dem Gerät ausgeführten app verpacken.
+- **Zeitintervall** -können Sie eine lokale Benachrichtigung von einem Zeitpunkt geplant werden, das Intervall mit beginnen jetzt und einen einen zukünftigen Punkt endet. Beispiel: `var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);`
+- **Calendar Date** -lokale Benachrichtigungen für ein bestimmtes Datum und Uhrzeit geplant werden können.
+- **Speicherort basierend** -lokale Benachrichtigungen geplant werden, wenn das iOS-Gerät eingeben oder verlassen einen bestimmten geografischen Standort oder in einem angegebenen Abstand zur alle Bluetooth-Beacons können.
 
-Wenn eine lokale Benachrichtigung bereit ist, muss die app zum Aufrufen der `Add` Methode der `UNUserNotificationCenter` Objekt, um die Anzeige für den Benutzer zu planen. Für Remote Benachrichtigungen sendet die serverseitige app eine Benachrichtigungsnutzlast an den APNs klicken Sie dann das Paket auf dem Gerät des Benutzers gesendet.
+Wenn eine lokale Benachrichtigung bereit ist, muss die app zum Aufrufen der `Add` Methode der `UNUserNotificationCenter` Objekt, das die Anzeige für den Benutzer zu planen. Von Remotebenachrichtigungen sendet die serverseitige app einer Nutzlast der Benachrichtigung an APNs-Zertifikate, die dann das Paket auf dem Gerät des Benutzers.
 
-Zusammenführen alle Teile, könnte ein Beispiel für lokale Benachrichtigung formuliert werden:
+Bringen alle Bestandteile zusammen, kann ein Beispiel für lokale Benachrichtigung formuliert werden:
 
 ```csharp
 using UserNotifications;
@@ -272,9 +272,9 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 });
 ```
 
-## <a name="handling-foreground-app-notifications"></a>Behandeln von Vordergrund-App-Benachrichtigungen
+## <a name="handling-foreground-app-notifications"></a>Behandeln von Benachrichtigungen der Vordergrund-App
 
-Neu für iOS 10, eine app kann behandeln Benachrichtigungen anders, wenn es im Vordergrund ist und eine Benachrichtigung ausgelöst wird. Durch die Bereitstellung einer `UNUserNotificationCenterDelegate` und Implementieren der `UserNotificationCenter` -Methode, die app kann übernehmen Verantwortung für die Benachrichtigung anzeigen. Zum Beispiel:
+Neue auf iOS 10, eine app kann behandeln Benachrichtigungen anders, wenn es im Vordergrund und eine Benachrichtigung wird ausgelöst. Durch die Bereitstellung einer `UNUserNotificationCenterDelegate` und Implementieren der `UserNotificationCenter` -Methode, die app kann verwendet werden, die Verantwortung für die Anzeige der Benachrichtigungs. Zum Beispiel:
 
 ```csharp
 using System;
@@ -305,15 +305,15 @@ namespace MonkeyNotification
 }
 ```
 
-Dieser Code einfach schreiben den Inhalt der `UNNotification` der Anwendungsausgabe und fragt das System die standard-Warnung für die Benachrichtigung angezeigt. 
+Dieser Code ist einfach schreiben, den Inhalt der `UNNotification` Ausgabe der Anwendung und auffordern des Systems, um die standard-Warnung für die Benachrichtigung anzuzeigen. 
 
-Wenn die app sollte die Benachrichtigung selbst angezeigt wird, wenn es in den Vordergrund gestellt wurde und nicht die Standardeinstellungen des Systems verwenden, übergeben `None` auf den Abschlusshandler. Beispiel:
+Wenn die app beispielsweise die Benachrichtigung selbst angezeigt wird, wenn es im Vordergrund war und nicht die Standardeinstellungen des Systems, übergeben Sie `None` an den Abschlusshandler. Beispiel:
 
 ```csharp
 completionHandler (UNNotificationPresentationOptions.None);
 ```
 
-Mit diesem Code werden, öffnen die `AppDelegate.cs` zum Bearbeiten der Datei, und ändern Sie die `FinishedLaunching` Methode gesucht werden soll, wie folgt:
+Mit diesem Code werden, öffnen die `AppDelegate.cs` -Datei zur Bearbeitung, und ändern Sie die `FinishedLaunching` Methode, um das Aussehen wie folgt:
 
 ```csharp
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
@@ -330,35 +330,35 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-Mit diesem Code wird die benutzerdefinierte Anfügen `UNUserNotificationCenterDelegate` oben auf den aktuellen `UNUserNotificationCenter` , damit die Anwendung Benachrichtigung verarbeiten kann, während er aktiv ist und im Vordergrund.
+Dieser Code ist das Anfügen des benutzerdefiniertes `UNUserNotificationCenterDelegate` oben auf den aktuellen `UNUserNotificationCenter` , damit die app eine Benachrichtigung behandeln kann, während es aktiv ist und im Vordergrund.
 
 ## <a name="notification-management"></a>Benachrichtigung Management
 
-Neue iOS 10, Benachrichtigung Management bietet Zugriff auf ausstehend und übermittelten Benachrichtigungen und fügt die Möglichkeit, entfernen, aktualisieren oder höher stufen diese Benachrichtigungen.
+Neue IOS 10, Benachrichtigung Management ermöglicht den Zugriff auf die ausstehende und empfangene Benachrichtigungen, und die Möglichkeit, zu entfernen, aktualisieren oder diese Benachrichtigungen fördern.
 
-Ist ein wichtiger Bestandteil der Benachrichtigung Management der _Anforderungsbezeichner_ , wurde auf die Benachrichtigung zugewiesen, wenn es erstellt und mit dem System geplant wurde. Für Remote-Benachrichtigungen, hat dies über das neue `apps-collapse-id` -Feld in der HTTP-Anforderungsheader.
+Ein wichtiger Bestandteil der Verwaltung der Benachrichtigung ist die _Anforderungsbezeichner_ , auf die Benachrichtigung zugewiesen wurde, bei der es erstellt und mit dem System geplant wurde. Von Remotebenachrichtigungen, erhält diese über das neue `apps-collapse-id` -Feld im Header HTTP-Anforderung.
 
-Den Anforderungsbezeichner wird verwendet, um die Benachrichtigung auszuwählen, die möchte, dass die app-Benachrichtigung auf auszuführen.
+Die Request-ID wird verwendet, wählen Sie die Benachrichtigung aus, die möchte, dass die app auf Benachrichtigungen durchzuführen.
 
 ### <a name="removing-notifications"></a>Entfernen von Benachrichtigungen
 
-Um eine ausstehende Benachrichtigung aus dem System zu entfernen, verwenden Sie den folgenden Code:
+Um eine ausstehende Benachrichtigung aus dem System entfernen, verwenden Sie den folgenden Code:
 
 ```csharp
 var requests = new string [] { "sampleRequest" };
 UNUserNotificationCenter.Current.RemovePendingNotificationRequests (requests);
 ```
 
-Um eine bereits gelieferten Benachrichtigung zu entfernen, verwenden Sie den folgenden Code ein:
+Um einer bereits übermittelten Benachrichtigungen zu entfernen, verwenden Sie den folgenden Code:
 
 ```csharp
 var requests = new string [] { "sampleRequest" };
 UNUserNotificationCenter.Current.RemoveDeliveredNotifications (requests);
 ```
 
-### <a name="updating-an-existing-notification"></a>Aktualisieren eine vorhandene Benachrichtigung
+### <a name="updating-an-existing-notification"></a>Aktualisiert eine vorhandene Benachrichtigung
 
-Um eine vorhandene Benachrichtigung zu aktualisieren, erstellen Sie eine neue Benachrichtigung mit den gewünschten Parametern geändert (z. B. eine neue triggerzeit) und fügen Sie es in das System mit dem gleichen Bezeichner der Anforderung als die Benachrichtigung, die geändert werden muss. Beispiel:
+Um eine vorhandene Benachrichtigung zu aktualisieren, erstellen Sie eine neue Benachrichtigung mit den gewünschten Parametern (z. B. eine neue triggerzeit) geändert und fügen Sie es in das System mit dem gleichen Bezeichner der Anforderung als die Benachrichtigung, die geändert werden muss. Beispiel:
 
 
 ```csharp
@@ -387,21 +387,21 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 });
 ```
 
-Für bereits übermittelten Benachrichtigungen wird die vorhandene Benachrichtigung aktualisiert und an den Anfang der Liste auf der Startseite "und" Lock-Bildschirme und die mitteilungszentrale höher gestuft, wenn er vom Benutzer bereits gelesen wurde abgerufen.
+Für bereits übermittelten Benachrichtigungen die vorhandene Benachrichtigung aktualisiert und an den Anfang der Liste auf der Startseite und vom Sperrbildschirm-Bildschirmen und in der Mitteilungszentrale höher gestuft, wenn er vom Benutzer bereits gelesen wurde.
 
 ## <a name="working-with-notification-actions"></a>Arbeiten mit Benachrichtigungsaktionen
 
-In iOS-10 Benachrichtigungen, die für den Benutzer übermittelt werden sind nicht statisch, und geben Sie mehrere Möglichkeiten, die der Benutzer interagieren kann mit ihnen (über die integrierten für benutzerdefinierte Aktionen).
+In iOS 10 Benachrichtigungen, die für den Benutzer übermittelt werden sind nicht statisch, und geben Sie mehrere Möglichkeiten, die der Benutzer interagieren kann mit ihnen (über die integrierten zu benutzerdefinierten Aktionen).
 
-Es gibt drei Arten von Aktionen, die eine iOS-app auf reagieren kann:
+Es gibt drei Arten von Aktionen, die eine iOS-app reagieren kann:
 
-- **Standardaktion** -Dies ist beim Tippen auf einer Benachrichtigungs an die app zu öffnen und die Details der angegebenen Benachrichtigung angezeigt.
-- **Benutzerdefinierte Aktionen** -diesen in iOS 8 hinzugefügt wurden, und bieten eine schnelle Möglichkeit für den Benutzer, einen benutzerdefinierten Task direkt in die Benachrichtigung auszuführen, ohne die app zu starten. Sie können dargestellt werden, als eine Liste von Schaltflächen mit anpassbare Titel oder ein Texteingabefeld die ausgeführt werden kann, entweder im Hintergrund (, in dem die app eine kleine Menge Zeit zur Erfüllung der Anforderung angegeben ist) oder den Vordergrund (wobei die app in den Vordergrund Fu gestartet wird Lfill der Anforderung). Benutzerdefinierte Aktionen sind auf IOS- und WatchOS verfügbar.
-- **Schließen Sie die Aktion** -dieser Aktion wird für die app gesendet, wenn der Benutzer eine bestimmte Benachrichtigung schließt.
+- **Standardaktion** – Dies ist, wenn der Benutzer tippt auf eine Benachrichtigung an die app zu öffnen und die Details der angegebenen Benachrichtigung angezeigt.
+- **Benutzerdefinierte Aktionen** – diese wurden in iOS 8 hinzugefügt, und geben Sie eine schnelle Möglichkeit für den Benutzer direkt über die Benachrichtigung ein benutzerdefiniertes Tasks ausführen, ohne die app zu starten. Sie können dargestellt werden, entweder als eine Liste der Schaltflächen mit anpassbaren Titeln oder ein Texteingabefeld, die ausgeführt werden können, im Hintergrund (, in dem die app ein wenig Zeit zur Verarbeitung der Anforderung angegeben ist) oder den Vordergrund (, in dem die app im Vordergrund Fu gestartet wird Lfill der Anforderung). Benutzerdefinierte Aktionen sind für iOS und WatchOS verfügbar.
+- **Schließen Sie die Aktion** – diese Aktion wird für die app gesendet, wenn der Benutzer eine bestimmte Benachrichtigung schließt.
 
 ### <a name="creating-custom-actions"></a>Erstellen von benutzerdefinierten Aktionen
 
-Verwenden Sie zum Erstellen und registrieren eine benutzerdefinierte Aktion mit dem System, den folgenden Code ein:
+Verwenden Sie zum Erstellen und registrieren eine benutzerdefinierte Aktion, mit dem System, den folgenden Code ein:
 
 ```csharp
 // Create action
@@ -421,17 +421,17 @@ var categories = new UNNotificationCategory [] { category };
 UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotificationCategory>(categories)); 
 ```
 
-Beim Erstellen eines neuen `UNNotificationAction`, hat eine eindeutige ID und den Titel, der auf die Schaltfläche angezeigt wird. Standardmäßig wird die Aktion als Aktion im Hintergrund, erstellt jedoch Optionen angegeben werden können, um das Verhalten der Aktion (z. B. das Festlegen auf eine Aktion Vordergrund sein) anzupassen.
+Beim Erstellen eines neuen `UNNotificationAction`, erhält er eine eindeutige ID und den Titel, der auf die Schaltfläche angezeigt wird. Standardmäßig wird die Aktion als Aktion Hintergrund, erstellt jedoch Optionen angegeben werden können, um das Verhalten der Aktion (z. B. Festlegen einer Vordergrund-Aktion sein) anzupassen.
 
-Jede der Aktionen erstellt eine Kategorie zugeordnet werden müssen. Beim Erstellen eines neuen `UNNotificationCategory`, eine eindeutige ID zugewiesen wird, wird eine Liste von Aktionen sie ausführen kann eine Liste mit Absicht-IDs, um weitere Informationen zu den Zweck der Aktionen in der Kategorie und einige Optionen zum Steuern des Verhaltens der Kategorie zu ermöglichen.
+Jede der Aktionen erstellt eine Kategorie zugeordnet werden müssen. Beim Erstellen eines neuen `UNNotificationCategory`, eine eindeutige ID zugewiesen wird, wird eine Liste von Aktionen er ausführen kann, eine Liste der Intent-IDs, um weitere Informationen zu den Zweck der Aktionen in der Kategorie und einige Optionen zur Steuerung des Verhaltens der Kategorie zu ermöglichen.
 
 Schließlich werden alle Kategorien mit dem System registriert die `SetNotificationCategories` Methode.
 
-### <a name="presenting-custom-actions"></a>Benutzerdefinierte Aktionen darstellen
+### <a name="presenting-custom-actions"></a>Bereitstellen von benutzerdefinierten Aktionen
 
-Sobald eine Reihe von benutzerdefinierten Aktionen und Kategorien erstellt und mit dem System registriert wurden, können sie einer lokalen oder Remote-Benachrichtigungen dargestellt werden.
+Nachdem ein Satz von benutzerdefinierten Aktionen und Kategorien erstellt und im System registriert wurden, können sie entweder lokal oder Remote Notifications angezeigt.
 
-Legen Sie für die Remote-Benachrichtigung einen `category` in der Remote-Benachrichtigung-Nutzlast, die eine der oben erstellten Kategorien entspricht. Zum Beispiel:
+Legen Sie für die Remote-Benachrichtigung einen `category` in der Remote-Notification-Nutzlast, die eine der oben erstellten Kategorien entspricht. Zum Beispiel:
 
 ```csharp
 {
@@ -442,7 +442,7 @@ Legen Sie für die Remote-Benachrichtigung einen `category` in der Remote-Benach
 }
 ```
 
-Für lokale Benachrichtigungen Festlegen der `CategoryIdentifier` Eigenschaft von der `UNMutableNotificationContent` Objekt. Zum Beispiel:
+Legen Sie für lokale Benachrichtigungen, die `CategoryIdentifier` Eigenschaft der `UNMutableNotificationContent` Objekt. Zum Beispiel:
 
 ```csharp
 var content = new UNMutableNotificationContent ();
@@ -454,11 +454,11 @@ content.CategoryIdentifier = "message";
 ...
 ```
 
-Diese ID muss erneut entsprechen, eine der Kategorien, die oben erstellt wurde.
+In diesem Fall muss diese ID entspricht einer der Kategorien, die weiter oben erstellt wurde.
 
-### <a name="handling-dismiss-actions"></a>Behandlung verworfen werden, Aktionen
+### <a name="handling-dismiss-actions"></a>Behandlung von schließen Aktionen
 
-Wie oben erwähnt, kann eine Aktion verworfen werden, für die app gesendet werden, wenn der Benutzer eine Benachrichtigung schließt. Da dies nicht über eine Standardaktion ist, müssen eine Option festgelegt werden, wenn die Kategorie erstellt wird. Zum Beispiel:
+Wie bereits erwähnt, können eine Schließen-Aktion für die app gesendet werden, wenn der Benutzer eine Benachrichtigung schließt. Da dies keine standard-Aktion ist, müssen eine Option festgelegt werden, wenn die Kategorie erstellt wird. Zum Beispiel:
 
 ```csharp
 var categoryID = "message";
@@ -469,9 +469,9 @@ var category = UNNotificationCategory.FromIdentifier (categoryID, actions, inten
 
 ```
 
-### <a name="handling-action-responses"></a>Behandeln von Antworten Aktion
+### <a name="handling-action-responses"></a>Behandeln von Antworten auf Aktionen
 
-Wenn der Benutzer mit dem benutzerdefinierte Aktionen und die Kategorien, die interagiert oben erstellt wurden, muss die app die angeforderte Aufgabe zu erfüllen. Dies erfolgt durch die Bereitstellung einer `UNUserNotificationCenterDelegate` und Implementieren der `UserNotificationCenter` Methode. Zum Beispiel:
+Wenn der Benutzer mit dem benutzerdefinierte Aktionen und Kategorien, die interagiert zuvor erstellt haben, muss die app, um die angeforderte Aufgabe zu erfüllen. Dies erfolgt durch die Bereitstellung einer `UNUserNotificationCenterDelegate` und Implementieren der `UserNotificationCenter` Methode. Zum Beispiel:
 
 ```csharp
 using System;
@@ -509,56 +509,59 @@ namespace MonkeyNotification
 }
 ```
 
-Die übergebene in `UNNotificationResponse` -Klasse verfügt über eine `ActionIdentifier` -Eigenschaft, die entweder kann sein, die Default-Aktion oder die Aktion zu schließen. Verwendung `response.Notification.Request.Identifier` für benutzerdefinierten Aktionen zu testen.
+Der übergebene in `UNNotificationResponse` -Klasse verfügt über eine `ActionIdentifier` -Eigenschaft, die entweder kann sein, die Default-Aktion oder die Aktion zu schließen. Verwendung `response.Notification.Request.Identifier` für alle benutzerdefinierten Aktionen zu testen.
 
-Die `UserText` Eigenschaft enthält den Wert der Benutzertext eingeben. Die `Notification` Eigenschaft enthält die Benachrichtigung Inhalt und die ursprünglichen Benachrichtigung, die die Anforderung mit dem Trigger enthält. Die app kann entscheiden, ob es handelte es sich um eine lokale oder Remote-Benachrichtigung auf den Typ des Triggers basierend.
+Die `UserText` Eigenschaft enthält den Wert der Benutzertext eingeben. Die `Notification` Eigenschaft enthält die ursprüngliche Benachrichtigung, die die Anforderung mit dem Trigger enthält und Benachrichtigungsinhalt. Die app kann entscheiden, wenn es eine lokale war oder Remote-Benachrichtigung auf des Typs des Triggers Grundlage.
+
+> [!NOTE]
+> iOS 12 ermöglicht es einer benutzerdefinierten Benachrichtigung UI die Aktionsschaltflächen zur Laufzeit zu ändern. Weitere Informationen sehen Sie sich die [dynamische Benachrichtigung Aktionsschaltflächen](~/ios/platform/introduction-to-ios12/notifications/dynamic-actions.md) Dokumentation.
 
 ## <a name="working-with-service-extensions"></a>Arbeiten mit Service-Erweiterungen
 
-Bei der Arbeit mit Remote Benachrichtigungen _Webdiensterweiterungen_ bieten eine Möglichkeit, innerhalb der Benachrichtigungsnutzlast End-to-End-Verschlüsselung zu aktivieren. Dienst-Erweiterungen sind eine nicht - Benutzeroberfläche-Erweiterung (verfügbar im iOS 10), ausgeführt wird, im Hintergrund mit der Hauptzweck erweitern oder ersetzen den sichtbaren Inhalt einer Benachrichtigung ein, bevor es dem Benutzer angezeigt wird. 
+Beim Arbeiten mit Remote Notifications _Webdiensterweiterungen_ bieten eine Möglichkeit zum Aktivieren von End-to-End-Verschlüsselung in die Nutzlast der Benachrichtigung. Service-Erweiterungen sind eine nicht - Benutzeroberfläche-Erweiterung (verfügbar in iOS 10), die ausgeführt werden, im Hintergrund mit der Hauptzweck von erweitern oder ersetzen den sichtbaren Inhalt, der eine Benachrichtigung aus, bevor sie dem Benutzer angezeigt werden. 
 
 [![](enhanced-user-notifications-images/extension01.png "Dienst-Erweiterung (Übersicht)")](enhanced-user-notifications-images/extension01.png#lightbox)
 
-Webdiensterweiterungen schneller ausgeführt werden sollen und nur eine kurze Zeitspanne auszuführende vom System erhalten. Wenn die Webdiensterweiterung nicht seine Aufgabe in der vorgesehenen Zeit abschließen, wird eine alternative Methode aufgerufen werden. Wenn das Fallback fehlschlägt, wird die ursprüngliche Benachrichtigung Inhalte für den Benutzer angezeigt.
+Webdiensterweiterungen sollen schnell ausgeführt und erhalten nur einen Moment Zeit, die vom System auszuführen. Falls bei der die Webdiensterweiterung ein Fehler auftritt, seine Aufgabe in der vorgesehenen Zeit abgeschlossen, wird eine alternative Methode aufgerufen werden. Wenn das Fallback fehlschlägt, wird die ursprüngliche Benachrichtigungsinhalt für den Benutzer angezeigt.
 
 Einige möglichen Verwendungen von Service-Erweiterungen gehören:
 
-- Bereitstellen von End-to-End-Verschlüsselung des Inhalts Remote-Benachrichtigung.
-- Hinzufügen von Anlagen zu Remote Benachrichtigungen an diese ergänzen.
+- Bereitstellen von End-to-End-Verschlüsselung des Inhalts Remotebenachrichtigung.
+- Hinzufügen von Anhängen, um Remotebenachrichtigungen sie erweitern.
 
-### <a name="implementing-a-service-extension"></a>Implementieren eine Erweiterung
+### <a name="implementing-a-service-extension"></a>Implementieren eine Diensterweiterung
 
-Führen Sie folgende Schritte aus, um eine Erweiterung der in einem Xamarin.iOS-app zu implementieren:
+Um eine Dienst-Erweiterung in einer Xamarin.iOS-app zu implementieren, führen Sie folgende Schritte aus:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Öffnen Sie die app-Projektmappe in Visual Studio für Mac.
-2. Mit der rechten Maustaste auf den Namen der Projektmappe in der **Lösung Pad** , und wählen Sie **hinzufügen** > **neues Projekt hinzufügen**.
+1. Öffnen der Projektmappe der app in Visual Studio für Mac.
+2. Mit der rechten Maustaste auf den Namen der Projektmappe in die **Lösungspad** , und wählen Sie **hinzufügen** > **neues Projekt hinzufügen**.
 3. Wählen Sie **iOS** > **Erweiterungen** > **Notification Service-Erweiterungen** , und klicken Sie auf die **Weiter** Schaltfläche: 
 
     [![](enhanced-user-notifications-images/extension02.png "Wählen Sie Notification Service-Erweiterungen")](enhanced-user-notifications-images/extension02.png#lightbox)
-4. Geben Sie einen **Namen** für die Erweiterung, und klicken Sie auf die **Weiter** Schaltfläche: 
+4. Geben Sie einen **Namen** für die Erweiterung und auf die **Weiter** Schaltfläche: 
 
     [![](enhanced-user-notifications-images/extension03.png "Geben Sie einen Namen für die Erweiterung")](enhanced-user-notifications-images/extension03.png#lightbox)
 5. Anpassen der **Projektname** und/oder **Projektmappenname** Wenn erforderlich, und klicken Sie auf die **erstellen** Schaltfläche: 
 
-    [![](enhanced-user-notifications-images/extension04.png "Passen Sie die Projektnamen und/oder die Namen der Projektmappe")](enhanced-user-notifications-images/extension04.png#lightbox) 
+    [![](enhanced-user-notifications-images/extension04.png "Passen Sie den Projektnamen und/oder die Namen der Projektmappe")](enhanced-user-notifications-images/extension04.png#lightbox) 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Öffnen Sie die app-Projektmappe in Visual Studio.
-2. Mit der rechten Maustaste auf den Namen der Projektmappe in der **Projektmappen-Explorer** , und wählen Sie **hinzufügen > Neues Projekt...** .
-3. Wählen Sie **Visual c# > iOS Extensions > Benachrichtigung Webdiensterweiterung**:
+1. Öffnen der app-Projektmappe in Visual Studio.
+2. Mit der rechten Maustaste auf den Namen der Projektmappe in die **Projektmappen-Explorer** , und wählen Sie **hinzufügen > Neues Projekt...** .
+3. Wählen Sie **Visual C# > iOS-Erweiterungen > Erweiterung für Benachrichtigungsdienst**:
 
     [![](enhanced-user-notifications-images/extension01.w157-sml.png "Wählen Sie Notification Service-Erweiterungen")](enhanced-user-notifications-images/extension01.w157.png#lightbox)
-4. Geben Sie einen **Namen** für die Erweiterung, und klicken Sie auf die **OK** Schaltfläche.
+4. Geben Sie einen **Namen** für die Erweiterung und auf die **OK** Schaltfläche.
 
 -----
 
 > [!IMPORTANT]
-> Die Paket-ID für die Webdiensterweiterung übereinstimmen, die Paket-ID der Haupt-app mit `.appnameserviceextension` am Ende angefügt. Beispielsweise wäre die Haupt-app eine Paket-ID des `com.xamarin.monkeynotify`, die Webdiensterweiterung müsste eine Paket-ID des `com.xamarin.monkeynotify.monkeynotifyserviceextension`. Dies sollte automatisch festgelegt werden, wenn die Erweiterung der Projektmappe hinzugefügt wird. 
+> Die Bündel-ID für die Service-Erweiterung sollte der Haupt-app mit der Bündel-ID entsprechen `.appnameserviceextension` an das Ende angefügt. Beispielsweise hätte die Haupt-app eine Bündel-ID des `com.xamarin.monkeynotify`, die Service-Erweiterung müssen eine Bündel-ID des `com.xamarin.monkeynotify.monkeynotifyserviceextension`. Dies sollte automatisch festgelegt werden, wenn die Erweiterung der Projektmappe hinzugefügt wird. 
 
-Es ist eine Hauptklasse in Notification Service-Erweiterung, die geändert werden, um die erforderliche Funktionalität bereitstellen müssen. Zum Beispiel:
+Es ist eine main-Klasse in der Erweiterung für Benachrichtigungsdienst, die geändert werden, um die erforderliche Funktionalität bereitzustellen. Zum Beispiel:
 
 ```csharp
 using System;
@@ -607,13 +610,13 @@ namespace MonkeyChatServiceExtension
 }
 ```
 
-Die erste Methode `DidReceiveNotificationRequest`, wird der Bezeichner für die Benachrichtigung sowie die Benachrichtigung über Inhalte übergeben der `request` Objekt. Die übergebene in `contentHandler` müssen aufgerufen werden, um die Benachrichtigung für den Benutzer anzuzeigen.
+Die erste Methode `DidReceiveNotificationRequest`, übergeben den Benachrichtigungsbezeichner als auch dem Benachrichtigungsinhalt über die `request` Objekt. Der übergebene in `contentHandler` aufgerufen werden, um dem Benutzer die Benachrichtigung anzeigen müssen.
 
-Die zweite Methode `TimeWillExpire`, wird direkt vor dem Zeitpunkt vor der Ausführung für die Dienst-Erweiterung zum Verarbeiten der Anforderung aufgerufen werden. Wenn die Erweiterung des Diensts aufrufen, um kann die `contentHandler` in der vorgesehenen Zeit, wird der ursprüngliche Inhalt für den Benutzer angezeigt werden.
+Die zweite Methode, `TimeWillExpire`, wird direkt vor dem Zeitpunkt zu erschöpft für die Dienst-Erweiterung zum Verarbeiten der Anforderung aufgerufen werden. Wenn Sie die Webdiensterweiterung aufrufen kann, um die `contentHandler` in der vorgesehenen Zeit, wird der ursprüngliche Inhalt für den Benutzer angezeigt werden.
 
-### <a name="triggering-a-service-extension"></a>Eine Erweiterung der auslösen
+### <a name="triggering-a-service-extension"></a>Eine Diensterweiterung auslösen
 
-Mit einer Dienst-Erweiterung erstellt und mit der app übermittelt kann es durch Ändern der Remote Benachrichtigungsnutzlast an das Gerät gesendet ausgelöst werden. Zum Beispiel:
+Mit einer Dienst-Erweiterung erstellt und mit der app übermittelt kann es durch Ändern der Remote Nutzlast der Benachrichtigung an das Gerät gesendet ausgelöst werden. Zum Beispiel:
 
 ```csharp
 {
@@ -625,9 +628,9 @@ Mit einer Dienst-Erweiterung erstellt und mit der app übermittelt kann es durch
 }
 ```
 
-Die neue `mutable-content` Schlüssel gibt an, dass die Webdiensterweiterung werden, um den Inhalt der Remote-Benachrichtigung zu aktualisieren gestartet müssen. Die `encrypted-content` Schlüssel enthält, das die verschlüsselten Daten, die die Webdiensterweiterung entschlüsselt werden kann, bevor Sie dem Benutzer.
+Die neue `mutable-content` Schlüssel gibt an, dass die Webdiensterweiterung werden, um den Inhalt der Remote-Benachrichtigung zu aktualisieren gestartet müssen. Die `encrypted-content` Schlüssel enthält, die verschlüsselten Daten, die die Webdiensterweiterung entschlüsselt werden kann, bevor Sie die Präsentation für dem Benutzer.
 
-Betrachten Sie das folgende Beispiel-Erweiterung:
+Sehen Sie sich das folgende Beispiel-Erweiterung:
 
 ```csharp
 using UserNotification;
@@ -656,17 +659,17 @@ namespace myApp {
 }
 ```
 
-Dieser Code entschlüsselt den verschlüsselten Inhalt aus der `encrypted-content` Schlüssel, erstellt ein neues `UNMutableNotificationContent`, legt der `Body` -Eigenschaft auf den entschlüsselten Inhalt und verwendet die `contentHandler` auf die Benachrichtigung für den Benutzer anzuzeigen.
+Dieser Code entschlüsselt den verschlüsselten Inhalt aus der `encrypted-content` Schlüssel, erstellt ein neues `UNMutableNotificationContent`, legt diese fest der `Body` Eigenschaft in das entschlüsselter Inhalte und verwendet die `contentHandler` , die Benutzer die Benachrichtigung angezeigt.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden alle Arten behandelt, dass die Benachrichtigung der Benutzer von iOS 10 erweitert wurden. Sie präsentiert des neuen Benutzers benachrichtigungsframeworks und wie Sie es in einem Xamarin.iOS-app oder die App-Erweiterung verwenden.
+In diesem Artikel wurden alle Möglichkeiten behandelt, dass die Benachrichtigung der Benutzer von iOS 10 erweitert wurden. Sie präsentiert das neue Framework für die Benachrichtigung für Benutzer und wie Sie es in einer Xamarin.iOS-app oder App-Erweiterung verwenden.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [iOS-10-Beispiele](https://developer.xamarin.com/samples/ios/iOS10/)
-- [UserNotifications Frameworkverweis](https://developer.apple.com/reference/usernotifications)
+- [iOS 10-Beispiele](https://developer.xamarin.com/samples/ios/iOS10/)
+- ["Usernotifications"-Framework-Referenz](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
 - [Programmierhandbuch für lokale und Remote-Benachrichtigung](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)

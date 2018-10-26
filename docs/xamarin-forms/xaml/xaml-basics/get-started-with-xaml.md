@@ -1,54 +1,54 @@
 ---
 title: Teil 1. Erste Schritte mit XAML
-description: In einer Anwendung Xamarin.Forms ist XAML hauptsächlich den visuellen Inhalt einer Seite und zusammen mit einem Code-Behind-Datei definieren.
+description: In einer Xamarin.Forms-Anwendung wird XAML hauptsächlich zum Definieren des visuellen Inhalts von einer Seite und zusammen mit einem Code-Behind-Datei verwendet.
 ms.prod: xamarin
 ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2018
-ms.openlocfilehash: 5883564841a4ef0e19518dd3b12ee00fe35ed778
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: f75e49c04ded99b3f7468709926277648f9f3729
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34049726"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103165"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Teil 1. Erste Schritte mit XAML
 
-_In einer Anwendung Xamarin.Forms ist XAML hauptsächlich den visuellen Inhalt einer Seite und zusammen mit einer C#-Code-Behind-Datei definieren._
+_In einer Xamarin.Forms-Anwendung XAML wird hauptsächlich zum Definieren des visuellen Inhalts einer Seite, und kann mit einem C# Code-Behind-Datei._
 
-Die Code-Behind-Datei bietet Code-Unterstützung für das Markup. Tragen diese beiden Dateien zusammen, für die Klassendefinition einer neuen, die untergeordnete Ansichten und eigenschaftsinitialisierung enthält. In der XAML-Datei Klassen und Eigenschaften mit XML-Elementen und Attributen verwiesen, und Links zwischen Markup und Code hergestellt werden.
+Die Code-Behind-Datei bietet Unterstützung für das Markup. Tragen diese beiden Dateien zusammen, um eine neue Klassendefinition, die untergeordnete Ansichten und die Initialisierung einer Eigenschaft enthält. Klicken Sie in der XAML-Datei Klassen und Eigenschaften werden mit XML-Elementen und Attributen verwiesen, und Links zwischen Markup und Code erstellt werden.
 
 ## <a name="creating-the-solution"></a>Erstellen der Projektmappe
 
-Um zu beginnen, Ihre erste Verwendung von XAML-Datei bearbeiten, verwenden Sie Visual Studio oder Visual Studio für Mac zum Erstellen einer neuen Xamarin.Forms-Projektmappe ein. (Wählen Sie die Registerkarte unten für Ihre Umgebung ein.)
+Um zu beginnen, Ihre erste XAML-Datei bearbeiten, verwenden Sie Visual Studio oder Visual Studio für Mac, um eine neue Xamarin.Forms-Projektmappe zu erstellen. (Wählen Sie die Registerkarte unten für Ihre Umgebung ein.)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Verwenden Sie in Windows, Visual Studio, wählen Sie **Datei > Neu > Projekt** aus dem Menü. In der **neues Projekt** wählen Sie im Dialogfeld **Visual c# > plattformübergreifend** auf der linken Seite, und klicken Sie dann **Mobile App (Xamarin.Forms)** aus der Liste im mittleren Bereich. 
+Verwenden Sie in Windows, Visual Studio auswählen **Datei > Neu > Projekt** aus dem Menü. In der **neues Projekt** wählen Sie im Dialogfeld **Visual C# > plattformübergreifend** auf der linken Seite, und klicken Sie dann **Mobile App (Xamarin.Forms)** aus der Liste im mittleren Bereich. 
 
 ![](get-started-with-xaml-images/win/newprojectdialog.w157.png "Dialogfeld \"Neues Projekt\"")
 
-Wählen Sie einen Speicherort für die Projektmappe, geben sie einen Namen der **XamlSamples** (oder alle von Ihnen gewünschten gewünscht), und drücken Sie die **OK**.
+Wählen Sie einen Speicherort für die Projektmappe aus, geben sie einen Namen der **XamlSamples** (oder was auch immer Sie bevorzugen), und drücken Sie die **OK**.
 
-Wählen Sie auf dem nächsten Bildschirm die **leere App** Vorlage und der **.NET Standard** Strategie für die Freigabe von Code:
+Wählen Sie auf dem nächsten Bildschirm die **leere App** Vorlage und die **.NET Standard** Strategie für die gemeinsame Verwendung von Code:
 
 ![](get-started-with-xaml-images/win/newcrossplatformapp.png "Dialogfeld \"neue App\"")
 
-Press **OK**. 
+Drücken Sie **OK**. 
 
-Vier Projekte in der Projektmappe erstellt werden: die **XamlSamples** .NET-Standardbibliothek **XamlSamples.Android**, **XamlSamples.iOS**, und der universellen Windows-Plattform Lösung **XamlSamples.UWP**.
+Vier Projekte in der Projektmappe erstellt werden: die **XamlSamples** .NET Standard-Bibliothek, **XamlSamples.Android**, **XamlSamples.iOS**, und die universelle Windows-Plattform Lösung **XamlSamples.UWP**.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Wählen Sie in Visual Studio für Mac **Datei > Neues Projektmappen** aus dem Menü. In der **neues Projekt** wählen Sie im Dialogfeld **mehrere Plattformen > App** auf der linken Seite und **leere Forms App** (*nicht* **Forms-App** ) aus der Vorlagenliste:
+Wählen Sie in Visual Studio für Mac **Datei > neue Projektmappe** aus dem Menü. In der **neues Projekt** wählen Sie im Dialogfeld **Multi-Plattform > App** auf der linken Seite und **leere Forms-App** (*nicht* **Forms-App** ) aus der Vorlagenliste:
 
-![](get-started-with-xaml-images/mac/newprojectdialog1.png "Der Dialogfeld \"Neues Projekt\" 1")
+![](get-started-with-xaml-images/mac/newprojectdialog1.png "Neue Projektdialogfeld 1")
 
 Drücken Sie **Weiter**.
 
-Klicken Sie im Dialogfeld "Weiter" benennen Sie dem Projekt der **XamlSamples** (oder alle von Ihnen gewünschten gewünscht). Stellen Sie sicher, dass die **verwenden .NET Standard** Optionsfeld aktiviert:
+Im nächsten Dialogfeld, geben Sie dem Projekt einen Namen für **XamlSamples** (oder was auch immer Sie bevorzugen). Stellen Sie sicher, dass die **verwenden .NET Standard** Optionsfeld ist aktiviert:
 
 ![](get-started-with-xaml-images/mac/newprojectdialog2.png "Der Dialogfeld \"Neues Projekt\" 2")
 
@@ -60,29 +60,29 @@ Im folgenden Dialogfeld können Sie einen Speicherort für das Projekt auswähle
 
 Drücken Sie **erstellen**
 
-In der Lösung werden drei Projekte erstellt: die **XamlSamples** .NET-Standardbibliothek **XamlSamples.Android**, und **XamlSamples.iOS**. 
+Drei Projekte in der Projektmappe erstellt werden: die **XamlSamples** .NET Standard-Bibliothek, **XamlSamples.Android**, und **XamlSamples.iOS**. 
 
 -----
 
-Nach dem Erstellen der **XamlSamples** Lösung möglicherweise Ihre Entwicklungsumgebung zu testen, indem Sie die verschiedenen Plattformprojekte als lösungsstartprojekt auswählen möchten, und erstellen und Bereitstellen die einfache Anwendung erstellt die Projektvorlage für Phone-Emulatoren oder echten Geräten.
+Nach dem Erstellen der **XamlSamples** Lösung möglicherweise möchten Sie Ihre Entwicklungsumgebung testen, indem Sie die verschiedenen Plattformprojekte als Startprojekt der Projektmappe auswählen, und erstellen und Bereitstellen von die einfache Anwendung erstellt die Projektvorlage auf echten Geräten oder Phone-Emulatoren.
 
-Es sei denn, Sie plattformspezifischen Code, die gemeinsam verwendete schreiben müssen **XamlSamples** .NET Standard Library-Projekts ist, in denen Sie nahezu alle Arbeitszeit Programmierung zur Verfügung steht. In diesen Artikeln werden außerhalb dieses Projekt nicht textbezogene.
+Es sei denn, Sie zum Schreiben von plattformspezifischem Code, der gemeinsam verwendeten müssen **XamlSamples** .NET Standard Library-Projekt ist, in dem Sie praktisch alle der Programmierung Zeit zur Verfügung steht. In diesen Artikeln werden nicht außerhalb dieses Projekts müssten.
 
-### <a name="anatomy-of-a-xaml-file"></a>Aufbau einer XAML-Datei
+### <a name="anatomy-of-a-xaml-file"></a>Anatomie einer XAML-Datei
 
-Innerhalb der **XamlSamples** .NET Standardbibliothek sind ein Paar von Dateien mit den folgenden Namen:
+In der **XamlSamples** .NET Standard-Bibliothek sind ein Paar von Dateien mit den folgenden Namen:
 
-- **App.XAML**, XAML-Datei ein, und
-- **App.Xaml.cs**, C#- *CodeBehind* Datei die XAML-Datei zugeordnet.
+- **"App.xaml"**, die XAML-Datei und
+- **Datei "App.Xaml.cs"**, C# *CodeBehind* Datei, die der XAML-Datei zugeordnet.
 
-Sie müssen auf den Pfeil neben klicken **App.xaml** zum Code-Behind-Datei finden Sie unter. 
+Sie müssen auf den Pfeil neben klicken **"App.xaml"** zum Code-Behind-Datei finden Sie unter. 
 
-Beide **App.xaml** und **App.xaml.cs** tragen zu einer Klasse mit dem Namen `App` abgeleitet, die `Application`. Die meisten anderen Klassen mit XAML-Dateien auf eine Klasse, die abgeleitet beitragen `ContentPage`; diese Dateien, die XAML verwenden, um den visuellen Inhalt eine gesamte Seite definieren. Dies ist "true", die anderen zwei Dateien in den **XamlSamples** Projekt:
+Beide **"App.xaml"** und **"App.Xaml.cs"** tragen zu einer Klasse namens `App` abgeleitet, die `Application`. Die meisten anderen Klassen mit XAML-Dateien auf eine abgeleitete Klasse beitragen `ContentPage`; diese Dateien, die XAML verwenden, um den visuellen Inhalt, der eine ganze Seite zu definieren. Dies gilt für die anderen beiden Dateien in die **XamlSamples** Projekt:
 
-- **"MainPage.xaml"**, XAML-Datei ein, und
-- **"MainPage.Xaml.cs"**, die C#-Code-Behind-Datei.
+- **"MainPage.xaml"**, die XAML-Datei und
+- **Datei "MainPage.Xaml.cs"**, C# Code-Behind-Datei.
 
-Die **"MainPage.xaml"** Datei sieht wie folgt (obwohl die Formatierung möglicherweise etwas anders sein):
+Die **"MainPage.xaml"** Datei sieht folgendermaßen aus (obwohl die Formatierung ein wenig anders sein kann):
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -100,19 +100,19 @@ Die **"MainPage.xaml"** Datei sieht wie folgt (obwohl die Formatierung mögliche
 </ContentPage>
 ```
 
-Die beiden XML-Namespace ( `xmlns`) Deklarationen auf URIs, die erste scheinbar auf die Xamarin Website und das zweite auf Microsofts verweisen. Kümmern Sie nicht, welchem Punkt die URIs zu überprüfen. Es ist nichts vorhanden. Sie sind lediglich die URIs, die im Besitz von Xamarin und Microsoft, und im Grunde als Versionsbezeichner funktionieren.
+Die beiden XML-Namespace ( `xmlns`) Deklarationen URIs, die erste scheinbar auf Xamarins-Website und die zweite in von Microsoft finden Sie unter. Sie einfach keinen, welchem Punkt die URIs zu überprüfen. Es ist nichts vorhanden. Sie einfach die URIs, die im Besitz von Xamarin und Microsoft sind, und sie funktionieren im Wesentlichen als Versions-IDs.
 
-Die erste XML-Namespacedeklaration bedeutet, Tags, die in der XAML-Datei ohne Präfix definiert z. B. auf Klassen in Xamarin.Forms, verweisen `ContentPage`. Die zweite Namespacedeklaration definiert ein Präfix des `x`. Hiermit wird für mehrere Elemente und Attribute, die in XAML systemintern sind selbst und die von anderen Implementierungen von XAML unterstützt werden. Diese Elemente und Attribute sind jedoch geringfügig je nach Jahr im URI eingebettet. Xamarin.Forms unterstützt 2009 XAML-Spezifikation, aber nicht alle Daten.
+Die erste XML-Namespacedeklaration bedeutet, dass es sich bei Tags, die in der XAML-Datei ohne Präfix definiert z. B. Klassen, die in Xamarin.Forms finden Sie `ContentPage`. Die zweite Namespacedeklaration definiert ein Präfix des `x`. Hiermit wird für mehrere Elemente und Attribute, die für XAML systemintern sind selbst und die von anderen Implementierungen von XAML unterstützt werden. Allerdings sind diese Elemente und Attribute variieren, je nachdem das Jahr im URI eingebetteten. Xamarin.Forms wird unterstützt, die XAML 2009-Spezifikation, aber nicht für alle.
 
-Die `local` Namespacedeklaration können Sie andere Klassen aus dem standardmäßigen .NET Library-Projekt zuzugreifen.
+Die `local` Namespacedeklaration ermöglicht es Ihnen, andere Klassen von .NET Standard Library-Projekt zuzugreifen.
 
-Am Ende der ersten Tags die `x` -Präfix wird für ein Attribut mit dem Namen `Class`. Da die Verwendung dieses `x` Präfix ist praktisch universal XAML-Namespace in XAML-Attributen wie z. B. `Class` werden fast immer als bezeichnet `x:Class`.
+Am Ende des ersten Tags die `x` Präfix wird verwendet, für ein Attribut mit dem Namen `Class`. Da die Verwendung dieses `x` Präfix ist praktisch universelle für den XAML-Namespace, XAML-Attribute wie z. B. `Class` werden fast immer als bezeichnet `x:Class`.
 
-Die `x:Class` Attribut gibt an, einen vollqualifizierten Klassennamen von .NET: die `MainPage` -Klasse in der `XamlSamples` Namespace. Dies bedeutet, dass diese XAML-Datei eine neue Klasse mit dem Namen definiert `MainPage` in der `XamlSamples` Namespace, die abgeleitet `ContentPage`– das Tag in dem die `x:Class` Attribut angezeigt wird.
+Die `x:Class` Attribut gibt an, einen vollqualifizierten Namen der .NET-Klasse: die `MainPage` -Klasse in der `XamlSamples` Namespace. Dies bedeutet, dass diese XAML-Datei eine neue Klasse namens definiert `MainPage` in die `XamlSamples` Namespace, die von abgeleitet `ContentPage`– das Tag in dem die `x:Class` Attribut angezeigt wird.
 
-Die `x:Class` Attribut kann nur im Stammelement einer XAML-Datei zum Definieren einer abgeleiteten Klasse c# verwendet werden. Dies ist nur neue Klasse in der XAML-Datei definiert. Alle anderen Funktionen, die in der XAML-Datei angezeigt wird stattdessen einfach aus vorhandenen Klassen instanziiert und initialisiert.
+Die `x:Class` Attribut kann nur verwendet werden, in das Stammelement einer XAML-Datei, definieren Sie eine abgeleitete C# Klasse. Dies ist das nur neue Klasse, die in der XAML-Datei definiert. Alles andere, die in der XAML-Datei angezeigt wird. wird stattdessen einfach aus vorhandenen Klassen instanziiert und initialisiert.
 
-Die **"MainPage.Xaml.cs"** Datei sieht wie folgt (abgesehen von nicht verwendeten `using` Direktiven):
+Die **"MainPage.Xaml.cs"** Datei sieht folgendermaßen aus (abgesehen von nicht verwendeten `using` Direktiven):
 
 ```csharp
 using Xamarin.Forms;
@@ -129,41 +129,41 @@ namespace XamlSamples
 }
 ```
 
-Die `MainPage` Klasse abgeleitet `ContentPage`, aber beachten Sie die `partial` Klassendefinition. Dadurch ergibt sich, dass es eine andere partielle Klassendefinition für darf `MainPage`, aber es? Und was ist `InitializeComponent` Methode? 
+Die `MainPage` Klasse leitet sich von `ContentPage`, aber beachten Sie, dass die `partial` Definition der Klasse. Dies deutet darauf hin, dass es eine andere partielle Klassendefinition für muss `MainPage`, wobei es jedoch? Und was ist `InitializeComponent` Methode? 
 
-Wenn Visual Studio das Projekt erstellt wurde, analysiert er die XAML-Datei eine C#-Codedatei generiert. Wenn Sie, in Suchen der **XamlSamples\XamlSamples\obj\Debug** Verzeichnis finden Sie eine Datei namens **XamlSamples.MainPage.xaml.g.cs**. Das "g" steht für generiert. Dies ist die andere partielle Klassendefinition `MainPage` , enthält die Definition der `InitializeComponent` Methode mit dem Namen aus der `MainPage` Konstruktor. Diese beiden partiellen `MainPage` Klassendefinitionen können dann zusammen kompiliert werden. Je nachdem, ob der XAML-Code kompiliert wird wird die Verwendung von XAML-Datei oder eine binäre Form eines XAML-Datei in die ausführbare Datei eingebettet.
+Wenn Visual Studio das Projekt erstellt wurde, analysiert er die XAML-Datei zum Generieren einer C# Codedatei. Wenn Sie, in Suchen der **XamlSamples\XamlSamples\obj\Debug** Verzeichnis finden Sie eine Datei namens **XamlSamples.MainPage.xaml.g.cs**. Die 'g' steht für generiert. Dies ist der anderen partiellen Klassendefinition der `MainPage` , enthält die Definition der `InitializeComponent` Methode mit dem Namen aus der `MainPage` Konstruktor. Diese beiden partiellen `MainPage` Klassendefinitionen können dann zusammen kompiliert werden. Je nachdem, ob der XAML oder nicht kompiliert wird wird der XAML-Datei oder in eine binäre Form der XAML-Datei in die ausführbare Datei eingebettet.
 
-Während der Laufzeit code, in dem bestimmte Plattform Projekt aufrufen eine `LoadApplication` -Methode, eine neue Instanz der an sie übergibt die `App` Klasse in der Bibliothek für .NET. Die `App` -Klassenkonstruktor instanziiert `MainPage`. Der Konstruktor dieser Klasse ruft `InitializeComponent`, wodurch wiederum die `LoadFromXaml` -Methode, die die Verwendung von XAML-Datei (oder der kompilierten Binärdatei) aus der .NET Standardbibliothek extrahiert. `LoadFromXaml` Initialisiert die Objekte, die in der XAML-Datei definiert, verbindet diese zusammen in Parent-Child-Beziehungen, fügt der Ereignishandler im Code auf Ereignisse, die in der XAML-Datei festgelegt definiert und legt die sich ergebende Struktur von Objekten als Inhalt der Seite.
+Zur Laufzeit code, in den Aufrufen der speziellen Plattform-Projekt eine `LoadApplication` -Methode, übergibt Sie an eine neue Instanz der der `App` Klasse in der .NET Standard-Bibliothek. Die `App` Klassenkonstruktor instanziiert `MainPage`. Ruft der Konstruktor der Klasse `InitializeComponent`, wodurch wiederum die `LoadFromXaml` -Methode, die die XAML-Datei (oder die kompilierte Binärdatei) aus der .NET Standard-Bibliothek extrahiert. `LoadFromXaml` Initialisiert die Objekte, die in der XAML-Datei definiert, verbindet diese alle zusammen in einer über-/ unterordnungsbeziehung, fügt der Ereignishandler definiert, die im Code, um Ereignisse, die in der XAML-Datei festgelegt und legt die resultierende Struktur der Objekte als Inhalt der Seite.
 
-Obwohl Sie normalerweise benötigen zu viel Zeit mit generierten Codedateien, werden manchmal Runtime-Ausnahmen ausgelöst für Code in die generierten Dateien, damit Sie mit diesen vertraut sein sollten.
+Obwohl Sie normalerweise verbringen viel Zeit mit der generierten Codedateien nicht benötigen, werden manchmal Runtime-Ausnahmen ausgelöst für Code in die generierten Dateien, damit Sie mit ihnen vertraut sein sollten.
 
-Beim Kompilieren und dieses Programms ausführen die `Label` Element wird in der Mitte der Seite, wie nahe legt, der XAML-Code führt. Die drei Plattformen von links nach rechts werden iOS, Android und universelle Windows-Plattform:
+Beim Kompilieren und dieses Programms ausführen die `Label` Element in der Mitte der Seite wird angezeigt, wie die XAML bereits vermuten lässt. Die drei Plattformen von links nach rechts werden iOS-, Android- und UWP:
 
-[![](get-started-with-xaml-images/xamlsamples.png "Standard Xamarin.Forms Anzeige")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "Xamarin.Forms standardmäßig anzeigen")
+[![](get-started-with-xaml-images/xamlsamples.png "Default Xamarin.Forms Anzeige")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "Default Xamarin.Forms-Anzeige")
 
-Für weitere interessante Visualisierungen, müssen Sie, lediglich weitere interessante XAML.
+Für weitere interessante Visualisierungen, ist alles, was Sie benötigen weitere interessante XAML.
 
 ## <a name="adding-new-xaml-pages"></a>Hinzufügen von neuen XAML-Seiten
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Andere XAML-basierte hinzufügen `ContentPage` Klassen zum Projekt, wählen Sie die **XamlSamples** .NET Standardbibliothek Projekt, und rufen die **Projekt > Neues Element hinzufügen** Menüelement. Am linken Rand der **neues Element hinzufügen** wählen Sie im Dialogfeld **Visual C#-** und **Xamarin.Forms**. Wählen Sie aus der Liste **Inhaltsseite** (nicht **Inhaltsseite (c#)**, die eine Seite reinen erstellt oder **Inhaltsansicht**, eine Seite ist). Benennen Sie der Seite, z. B. **HelloXamlPage.xaml**:
+Hinzufügen von anderen XAML-basierte `ContentPage` Klassen zu Ihrem Projekt, wählen Sie die **XamlSamples** .NET Standard-Bibliothek Projekt, und rufen Sie die **Projekt > Neues Element hinzufügen** Menüelement. Am linken Rand der **neues Element hinzufügen** wählen Sie im Dialogfeld **Visual C#**  und **Xamarin.Forms**. Wählen Sie aus der Liste **Inhaltsseite** (nicht **Inhaltsseite (C#)**, eine Seite nur mit Code erstellt oder **Ansicht "Inhalt"**, dies ist keiner Seite). Geben Sie der Seite einen Namen, z. B. **HelloXamlPage.xaml**:
 
 ![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "Dialogfeld \"Neues Element\" hinzufügen")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Andere XAML-basierte hinzufügen `ContentPage` Klassen zum Projekt, wählen Sie die **XamlSamples** .NET Standardbibliothek Projekt, und rufen die **Datei > neue Datei** Menüelement. Am linken Rand der **neue Datei** wählen Sie im Dialogfeld **Forms** auf der linken Seite und **Forms ContentPage verwendet Xaml** (nicht **Forms ContentPage verwendet**, welche erstellt eine Seite reinen oder **Inhaltsansicht**, eine Seite ist). Benennen Sie der Seite, z. B. **HelloXamlPage**:
+Hinzufügen von anderen XAML-basierte `ContentPage` Klassen zu Ihrem Projekt, wählen Sie die **XamlSamples** .NET Standard-Bibliothek Projekt, und rufen Sie die **Datei > neue Datei** Menüelement. Am linken Rand der **neue Datei** wählen Sie im Dialogfeld **Forms** auf der linken Seite und **Forms-ContentPage Xaml** (nicht **Formular-ContentPage**, erstellt eine Seite nur mit Code oder **Ansicht "Inhalt"**, dies ist keiner Seite). Geben Sie der Seite einen Namen, z. B. **HelloXamlPage**:
 
 ![](get-started-with-xaml-images/mac/newfiledialog.png "Dialogfeld \"neue Datei\"")
 
 -----
 
-Zwei Dateien werden dem Projekt hinzugefügt **HelloXamlPage.xaml** und der Code-Behind-Datei **HelloXamlPage.xaml.cs**. 
+Zwei Dateien werden hinzugefügt, um dem Projekt **HelloXamlPage.xaml** und Code-Behind-Datei **HelloXamlPage.xaml.cs**. 
 
-## <a name="setting-page-content"></a>Festlegen der Seiteninhalt
+## <a name="setting-page-content"></a>Inhalt der Seite festlegen
 
-Bearbeiten der **HelloXamlPage.xaml** Datei, sodass nur Tags sind für `ContentPage` und `ContentPage.Content`:
+Bearbeiten der **HelloXamlPage.xaml** Datei, sodass nur Tags für sind `ContentPage` und `ContentPage.Content`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -175,9 +175,9 @@ Bearbeiten der **HelloXamlPage.xaml** Datei, sodass nur Tags sind für `ContentP
 </ContentPage>
 ```
 
-Die `ContentPage.Content` Tags sind Teil der eindeutig von XAML-Syntax. Zunächst erscheinen ungültige XML-Datei handeln, aber sie sind zulässig. Der Zeitraum ist nicht in XML ein Sonderzeichen.
+Die `ContentPage.Content` Tags sind Teil der eindeutigen Syntax des XAML. Auf den ersten sie ungültige XML-Daten zu sein scheinen, aber zulässig. Der Zeitraum ist keine Sonderzeichen in XML.
 
-Die `ContentPage.Content` Tags heißen *Eigenschaftselement* Tags. `Content` ist eine Eigenschaft des `ContentPage`, und in der Regel auf eine einzige Ansicht oder einem Layout mit untergeordneten Ansichten festgelegt ist. Normalerweise werden Eigenschaften, Attribute in XAML, aber wäre es schwierig, legen Sie eine `Content` -Attribut auf ein komplexes Objekt. Aus diesem Grund wird die Eigenschaft als XML-Element besteht aus den Klassennamen und den Eigenschaftennamen durch einen Punkt getrennt angegeben werden. Jetzt die `Content` Eigenschaft kann festgelegt werden, zwischen den `ContentPage.Content` Tags wie folgt:
+Die `ContentPage.Content` Tags heißen *Property-Element* Tags. `Content` ist eine Eigenschaft des `ContentPage`, und in der Regel auf eine einzelne Ansicht oder ein Layout mit untergeordneten Ansichten festgelegt ist. Eigenschaften werden normalerweise Attribute in XAML, aber es wäre schwierig, legen Sie eine `Content` -Attribut auf ein komplexes Objekt. Aus diesem Grund wird die Eigenschaft ein XML-Element, bestehend aus den Klassennamen und den Namen der Eigenschaft durch einen Punkt getrennt angegeben. Jetzt die `Content` Eigenschaft kann festgelegt werden, zwischen den `ContentPage.Content` Tags wie folgt:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -199,49 +199,49 @@ Die `ContentPage.Content` Tags heißen *Eigenschaftselement* Tags. `Content` ist
 </ContentPage>
 ```
 
-Beachten Sie auch, dass ein `Title` Attribut für Stammtag festgelegt wurde.
+Beachten Sie auch, dass eine `Title` Attribut für das Stamm-Tag festgelegt wurde.
 
-Zu diesem Zeitpunkt sollten die Beziehung zwischen Klassen, Eigenschaften und XML-offensichtlich sein: ein Xamarin.Forms-Klasse (z. B. `ContentPage` oder `Label`) wird in der XAML-Datei als XML-Element angezeigt. Die Eigenschaften dieser Klasse – einschließlich `Title` auf `ContentPage` und sieben Eigenschaften der `Label`– in der Regel als XML-Attribute angezeigt werden.
+Zu diesem Zeitpunkt sollte die Beziehung zwischen Klassen, Eigenschaften und XML-offensichtlich sein: ein Xamarin.Forms-Klasse (z. B. `ContentPage` oder `Label`) in der XAML-Datei als ein XML-Element angezeigt wird. Eigenschaften dieser Klasse – einschließlich `Title` auf `ContentPage` und sieben Eigenschaften der `Label`– in der Regel als XML-Attribute angezeigt werden.
 
-Viele Tastenkombinationen vorhanden sein, um die Werte dieser Eigenschaften festzulegen. Einige Eigenschaften sind die grundlegenden Datentypen: Z. B. die `Title` und `Text` Eigenschaften sind vom Typ `String`, `Rotation` ist vom Typ `Double`, und `IsVisible` (also `true` standardmäßig festgelegt und ist hier nur Abbildung) ist vom Typ `Boolean`.
+Viele Verknüpfungen vorhanden sein, um die Werte dieser Eigenschaften festzulegen. Einige Eigenschaften sind die grundlegenden Datentypen: Z. B. die `Title` und `Text` Eigenschaften sind vom Typ `String`, `Rotation` ist vom Typ `Double`, und `IsVisible` (d.h. `true` standardmäßig festgelegt und ist hier nur Abbildung) ist vom Typ `Boolean`.
 
-Die `HorizontalTextAlignment` -Eigenschaft ist vom Typ `TextAlignment`, eine Enumeration. Für eine Eigenschaft eines beliebigen Enumerationstyps benötigen Sie geben lediglich einen Elementnamen.
+Die `HorizontalTextAlignment` Eigenschaft ist vom Typ `TextAlignment`, eine Enumeration. Für die Eigenschaft ein Enumerationstyp Supply benötigen Sie lediglich einen Elementnamen.
 
-Für Eigenschaften komplexer Typen werden jedoch Typkonverter verwendet für die XAML-Analyse. Hierbei handelt es sich um Klassen in Xamarin.Forms, die davon Herleiten `TypeConverter`. Viele der öffentlichen Klassen sind, andere dagegen nicht. Für diese Verwendung von XAML-Datei spielen einige dieser Klassen eine Rolle im Hintergrund:
+Für Eigenschaften komplexer Typen werden jedoch Konverter verwendet für die Analyse der XAML. Hierbei handelt es sich um Klassen in Xamarin.Forms verwenden, die abgeleitet `TypeConverter`. Viele öffentliche Klassen sind, andere dagegen nicht. Für diese bestimmte XAML-Datei spielen einige dieser Klassen eine Rolle hinter den Kulissen:
 
 -  `LayoutOptionsConverter` für die `VerticalOptions` Eigenschaft
 -  `FontSizeConverter` für die `FontSize` Eigenschaft
 -  `ColorTypeConverter` für die `TextColor` Eigenschaft
 
-Dieser Konverter gesteuert, die die zulässige Syntax der eigenschaftseinstellungen.
+Diese Konverter gesteuert, die die zulässige Syntax für die Einstellungen der Eigenschaft.
 
-Die `ThicknessTypeConverter` eine, zwei oder vier Ziffern, die durch Kommas getrennt behandeln können. Wenn eine Zahl angegeben wird, gilt sie allen vier Seiten. Mit zwei Zahlen die erste ist die linken und rechten Abstand, und das zweite ist, oberen und unteren Rand. Vier Ziffern werden in der Reihenfolge von links, oben, rechts und unten.
+Die `ThicknessTypeConverter` können eine, zwei oder vier Ziffern, die durch Kommas getrennt behandeln. Wenn eine Zahl angegeben wird, gilt es alle vier Seiten. Mit zwei Zahlen die erste ist, links und rechts aufgefüllt, und die zweite oben und unten. Vier Zahlen sind in der Reihenfolge von links, oben, rechts und unten.
 
-Die `LayoutOptionsConverter` können die Namen der öffentlichen statischen Felder der konvertieren die `LayoutOptions` Struktur zu Werten vom Typ `LayoutOptions`.
+Die `LayoutOptionsConverter` können die Namen der öffentlichen statischen Felder des konvertieren die `LayoutOptions` Struktur zu Werten vom Typ `LayoutOptions`.
 
 Die `FontSizeConverter` verarbeiten kann eine `NamedSize` Member oder einen numerischen Schriftgrad.
 
-Die `ColorTypeConverter` akzeptiert den Namen der öffentlichen statischen Felder der der `Color` Struktur oder hexadezimalen RGB-Werte, mit oder ohne einen alpha-Kanal vorangestellt ein Nummernzeichen (#). So sieht die Syntax ohne einen alpha-Kanal aus:
+Die `ColorTypeConverter` akzeptiert den Namen der öffentliche statische Felder von der `Color` Struktur oder hexadezimalen RGB-Werte, mit oder ohne einen Alphakanal, vorangestellt werden, durch ein Nummernzeichen (#). Hier ist die Syntax ohne einen alpha-Kanal:
 
  `TextColor="#rrggbb"`
 
-Jede der kleinen Buchstaben ist eine hexadezimale Ziffer. So sieht wie ein alpha-Kanal enthalten ist:
+Jede der kleinen Buchstaben ist eine hexadezimale Ziffer. Hier ist, wie ein Alphakanal enthalten ist:
 
  `TextColor="#aarrggbb">`
 
-Sollten Sie für den Alphakanal bedenken, dass FF vollständig deckend und 00 vollständig transparent ist.
+Bedenken Sie für den Alphakanal, dass FF vollständig deckend ist und 00 vollständig transparent ist.
 
-Zwei andere Formate können Sie nur eine hexadezimale Ziffer für jeden Kanal angeben:
+Zwei andere Formate können Sie nur eine einzelne hexadezimale steht für jeden Kanal angeben:
 
  `TextColor="#rgb"` `TextColor="#argb"`
 
-In diesen Fällen wird die Ziffer wiederholt, um den Wert zu bilden. #CF3 ist beispielsweise der RGB-Farbe CC-FF-33.
+In diesen Fällen wird die Ziffer wiederholt, um den Wert zu bilden. #CF3 ist z. B. die RGB-Farbe CC-FF-33.
 
 ## <a name="page-navigation"></a>Seitennavigation
 
-Beim Ausführen der **XamlSamples** Programm, das `MainPage` wird angezeigt. Um die neue finden Sie unter `HelloXamlPage` können Sie festlegen, die als neue Start-Seite in der **App.xaml.cs** -Datei ein, oder navigieren Sie zu der neuen Seite aus `MainPage`.
+Beim Ausführen der **XamlSamples** -Programm die `MainPage` wird angezeigt. Um die neuen `HelloXamlPage` können Sie entweder, die als Start-neue Seite in der **"App.Xaml.cs"** aus, oder navigieren Sie zu der neuen Seite von `MainPage`.
 
-Ändern Sie zum Implementieren der Navigation zuerst Code in der **App.xaml.cs** Konstruktor, damit ein `NavigationPage` Objekt wird erstellt:
+Um die Navigation zu implementieren, ändern Sie zunächst Code in die **"App.Xaml.cs"** Konstruktor, damit eine `NavigationPage` Objekt wird erstellt:
 
 ```csharp
 public App()
@@ -251,7 +251,7 @@ public App()
 }
 ```
 
-In der **"MainPage.Xaml.cs"** Konstruktor, erstellen Sie eine einfache `Button` und verwenden Sie den Ereignishandler zu navigieren `HelloXamlPage`:
+In der **"MainPage.Xaml.cs"** -Konstruktor, erstellen Sie eine einfache `Button` und verwenden Sie den Ereignishandler zu navigieren `HelloXamlPage`:
 
 ```csharp
 public MainPage()
@@ -274,13 +274,13 @@ public MainPage()
 }
 ```
 
-Festlegen der `Content` Eigenschaft von der Seite "ersetzt die Einstellung von der `Content` Eigenschaft in der XAML-Datei. Beim Kompilieren und die neue Version dieses Programms bereitstellen, wird eine Schaltfläche auf dem Bildschirm angezeigt. Drücken sie navigiert zum `HelloXamlPage`. So sieht die resultierende Seite auf iPhone, Android und universelle Windows-Plattform aus:
+Festlegen der `Content` -Eigenschaft der Seite ersetzt die Einstellung der `Content` Eigenschaft in der XAML-Datei. Wenn Sie kompilieren und die neue Version dieses Programms bereitstellen, wird eine Schaltfläche auf dem Bildschirm angezeigt. Drücken sie navigiert zum `HelloXamlPage`. So sieht die resultierende Seite auf iPhone, Android und UWP aus:
 
 [![](get-started-with-xaml-images/helloxaml1.png "Bezeichnungstext gedreht")](get-started-with-xaml-images/helloxaml1-large.png#lightbox "Bezeichnungstext gedreht")
 
-Navigieren Sie Sie, zurück zu `MainPage` mithilfe der **< zurück** auf iOS, verwenden Sie die nach-links-Taste am oberen Rand der Seite oder am unteren Rand des Telefons auf Android oder den linken Pfeil am oberen Rand der Seite auf Windows 10 auf die Schaltfläche.
+Können Sie zurück zu navigieren `MainPage` mithilfe der **< wieder** auf iOS, verwenden den linken Pfeil am oberen Rand der Seite oder unten auf der das Telefon unter Android, oder verwenden den linken Pfeil am oberen Rand der Seite auf Windows 10 auf die Schaltfläche.
 
-Gerne zum Experimentieren mit der XAML-Code für verschiedene Möglichkeiten zum Rendern der `Label`. Wenn keine Unicode-Zeichen in den Text eingebettet werden sollen, können Sie die standard-XML-Syntax. Angenommen, um die Grußformel in typografische einzufügen, zu verwenden:
+Gerne Experimentieren mit der XAML für verschiedene Möglichkeiten zum Rendern der `Label`. Wenn Sie alle Unicode-Zeichen in den Text einbetten möchten, können Sie die standard-XML-Syntax. Z. B. um die Begrüßung in typografische Anführungszeichen zu versetzen, verwenden Sie:
 
  `<Label Text="&#x201C;Hello, XAML!&#x201D;" … />`
 
@@ -290,7 +290,7 @@ Hier ist, wie es aussieht:
 
 ## <a name="xaml-and-code-interactions"></a>XAML und Codeinteraktionen
 
-Die **HelloXamlPage** Beispiel enthält nur einen einzigen `Label` auf der Seite ", aber dies ist sehr ungewöhnlich. Die meisten `ContentPage` ableitungen Satz der `Content` Eigenschaft zu einem Layout einiger zu sortieren, z. B. eine `StackLayout`. Die `Children` Eigenschaft von der `StackLayout` Datentyp definiert ist `IList<View>` aber tatsächlich auf ein Objekt des Typs `ElementCollection<View>`, und dass die Auflistung mit mehreren Sichten oder andere Tastaturlayouts stimmen aufgefüllt werden kann. In XAML werden diese über-/ unterordnungsbeziehungen mit normalen XML-Hierarchie eingerichtet. Hier ist eine XAML-Datei für eine neue Seite mit dem Namen **XamlPlusCodePage**:
+Die **HelloXamlPage** Beispiel enthält nur eine einzige `Label` auf der Seite, aber dies ist sehr ungewöhnlich. Die meisten `ContentPage` ableitungen Satz der `Content` Eigenschaft, um ein Layout einiger zu sortieren, z. B. eine `StackLayout`. Die `Children` Eigenschaft der `StackLayout` Typ definiert ist `IList<View>` , aber es ist eigentlich ein Objekt des Typs `ElementCollection<View>`, und die Sammlung mit mehreren Ansichten oder anderer Layouts aufgefüllt werden kann. In XAML werden diese über-/ unterordnungsbeziehung mit normalen XML-Hierarchie eingerichtet. Hier ist eine XAML-Datei für eine neue Seite mit dem Namen **XamlPlusCodePage**:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -312,13 +312,13 @@ Die **HelloXamlPage** Beispiel enthält nur einen einzigen `Label` auf der Seite
 </ContentPage>
 ```
 
-Diese Verwendung von XAML-Datei ist syntaktisch abgeschlossen, und was er sieht folgendermaßen aus:
+Dieser XAML-Datei, die syntaktisch abgeschlossen ist, und was er sieht wie folgt aus:
 
 [![](get-started-with-xaml-images/xamlpluscode1.png "Mehrere Steuerelemente auf einer Seite")](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox "mehrere Steuerelemente auf einer Seite")
 
-Allerdings werden Sie wahrscheinlich Installation dieses Programms funktional ungenügend werden berücksichtigt. Vielleicht die `Slider` soll dazu führen, dass die `Label` zur Anzeige des aktuellen Werts und die `Button` richtet sich wahrscheinlich eine Aktion innerhalb des Programms.
+Allerdings werden Sie wahrscheinlich, berücksichtigen Sie dieses Programm funktional fehlerhaft sein. Vielleicht die `Slider` sollte dazu führen, dass die `Label` um den aktuellen Wert anzuzeigen und die `Button` wahrscheinlich etwas in das Programm tun soll.
 
-Wie Sie sehen werden [Teil 4. Data Binding-Grundlagen](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md), den Auftrag zum Anzeigen von einer `Slider` -Wert mit einer `Label` können mit einer Datenbindung vollständig in XAML verarbeitet werden. Es ist jedoch hilfreich, zunächst den Code-Lösung finden Sie unter. Allerdings behandeln die `Button` auf definitiv Code erfordert. Dies bedeutet, dass der Code-Behind-Datei für `XamlPlusCodePage` darf Handler für das `ValueChanged` -Ereignis für die `Slider` und die `Clicked` -Ereignis für die `Button`. Fügen Sie sie aus:
+Wie Sie sehen werden [Teil 4. Grundlagen der Datenbindung](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md), den Auftrag zum Anzeigen von einer `Slider` -Wert mithilfe einer `Label` vollständig in XAML verarbeitet werden können, um mit einer Datenbindung. Es ist jedoch hilfreich, zunächst den Code-Lösung finden Sie unter. Behandeln Sie trotzdem die `Button` klicken Sie auf jeden Fall ist Code erforderlich. Dies bedeutet, dass der Code-Behind-Datei für `XamlPlusCodePage` darf Handler für die `ValueChanged` Ereignis die `Slider` und `Clicked` Ereignis die `Button`. Fügen Sie sie aus:
 
 ```csharp
 namespace XamlSamples
@@ -345,7 +345,7 @@ namespace XamlSamples
 
 Diese Ereignishandler müssen nicht öffentlich sein.
 
-Wieder in der XAML-Datei die `Slider` und `Button` Tags müssen Attribute für die `ValueChanged` und `Clicked` Ereignisse, die diese Handler zu verweisen:
+In der XAML-Datei die `Slider` und `Button` Tags müssen Attribute für die `ValueChanged` und `Clicked` Ereignisse, die diese Handler verweisen:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -369,9 +369,9 @@ Wieder in der XAML-Datei die `Slider` und `Button` Tags müssen Attribute für d
 </ContentPage>
 ```
 
-Beachten Sie, dass ein Ereignis einen Ereignishandler zuweisen derselben Syntax wie das Zuweisen eines Werts zu einer Eigenschaft.
+Beachten Sie, dass ein Ereignis einen Ereignishandler zuweisen derselben Syntax wie eine Eigenschaft einen Wert zuweisen.
 
-Wenn der Handler für das `ValueChanged` -Ereignis für die `Slider` wird die `Label` um den aktuellen Wert anzuzeigen, muss der Handler aus Code auf das Objekt verweisen. Die `Label` benötigt einen Namen, der Standardwert ist die `x:Name` Attribut.
+Wenn der Handler für die `ValueChanged` Ereignis die `Slider` verwenden die `Label` um den aktuellen Wert anzuzeigen, muss der Handler für dieses Objekt von Code zu verweisen. Die `Label` benötigt einen Namen, der Standardwert ist die `x:Name` Attribut.
 
 ```xaml
 <Label x:Name="valueLabel"
@@ -381,11 +381,11 @@ Wenn der Handler für das `ValueChanged` -Ereignis für die `Slider` wird die `L
        VerticalOptions="CenterAndExpand" />
 ```
 
-Die `x` Präfix der `x:Name` Attribut gibt an, dass dieses Attribut in XAML intrinsischen handelt.
+Die `x` Präfix der `x:Name` Attribut gibt an, dass dieses Attribut systeminterne XAML ist.
 
-Der Name, die Sie zum Zuweisen der `x:Name` Attribut hat die gleichen Regeln wie c# Variablennamen. Er muss z. B. mit einem Buchstaben oder Unterstrich beginnen und darf keine eingebetteten Leerzeichen enthalten.
+Der Name, die Sie zuweisen, die `x:Name` Attribut hat die gleichen Regeln wie C# Variablennamen. Beispielsweise müssen sie mit einem Buchstaben oder Unterstrich beginnen und darf keine eingebetteten Leerzeichen enthalten.
 
-Jetzt die `ValueChanged` Ereignishandler festlegen, kann die `Label` Anzeigen der neuen `Slider` Wert. Der neue Wert wird über die Ereignisargumente verfügbar:
+Jetzt die `ValueChanged` Ereignishandler kann festlegen, die `Label` Anzeigen der neuen `Slider` Wert. Der neue Wert wird aus den Ereignisargumenten zur Verfügung:
 
 ```csharp
 void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
@@ -394,7 +394,7 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 }
 ```
 
-Oder der Handler konnte erhalten die `Slider` -Objekt, das generiert wird, dass Sie dieses Ereignis aus der `sender` Argument und erhalten die `Value` Eigenschaft aus, die:
+Oder der Handler konnte erhalten die `Slider` -Objekt, das generiert dieses Ereignis aus der `sender` Argument und zum Abrufen der `Value` Eigenschaft aus, die:
 
 ```csharp
 void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
@@ -403,11 +403,11 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 }
 ```
 
-Beim Ausführen des Programms die `Label` wird nicht angezeigt, die `Slider` bewertet werden, da die `ValueChanged` Ereignis wurde nicht noch ausgelöst. Aber keine Änderungen an der `Slider` bewirkt, dass den Wert, der angezeigt werden:
+Beim ersten des Programms ausführen die `Label` nicht angezeigt, die `Slider` bewertet werden, da die `ValueChanged` Ereignis noch nicht noch ausgelöst. Aber keine Änderungen an der `Slider` bewirkt, dass den Wert, der angezeigt werden:
 
-[![](get-started-with-xaml-images/xamlpluscode2.png "Schiebereglerwert angezeigt")](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox "angezeigten Schiebereglerwert")
+[![](get-started-with-xaml-images/xamlpluscode2.png "Der Wert des Schiebereglers angezeigt")](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox "Wert des Schiebereglers angezeigt")
 
-Jetzt für die `Button`. Wir simulieren Sie eine Antwort auf eine `Clicked` Ereignis über eine Warnung mit dem `Text` der Schaltfläche. Der Ereignishandler kann problemlos umgewandelt. die `sender` Argument an einen `Button` , und klicken Sie dann auf seine Eigenschaften zugreifen:
+Jetzt für die `Button`. Wir simulieren nun, eine Antwort auf eine `Clicked` Ereignis eine Warnung mit dem `Text` der Schaltfläche. Der Ereignishandler kann sichere Umwandlung der `sender` Argument für eine `Button` , und klicken Sie dann auf seine Eigenschaften zugreifen:
 
 ```csharp
 async void OnButtonClicked(object sender, EventArgs args)
@@ -419,11 +419,11 @@ async void OnButtonClicked(object sender, EventArgs args)
 }
 ```
 
-Die Methode definiert ist, als `async` da die `DisplayAlert` Methode ist asynchron und eingeleitet werden soll, mit der `await` -Operator, der zurückgegeben wird, wenn die Methode abgeschlossen hat. Da diese Methode ruft die `Button` Auslösen des Ereignisses aus der `sender` Argument der gleiche Handler kann für mehrere Schaltflächen verwendet werden.
+Die Methode definiert ist, als `async` da die `DisplayAlert` Methode ist asynchron und sollte das Präfix der `await` -Operator, der zurückgegeben wird, wenn die Methode abgeschlossen wird. Da diese Methode ruft die `Button` Auslösen des Ereignisses aus der `sender` Arguments, der gleiche Handler kann für mehrere Schaltflächen verwendet werden.
 
-Sie haben gesehen, dass ein Objekt, das in XAML definiert ein Ereignis ausgelöst werden kann, die in der Code-Behind-Datei behandelt wird, und die Code-Behind-Datei ein Objekt, das in XAML, die mit dem Namen mit zugewiesenen definierten zugreifen kann die `x:Name` Attribut. Dies sind die zwei grundlegenden Methoden, die Code und XAML zu interagieren.
+Sie haben gesehen, dass ein Objekt, das in XAML definiert ein Ereignis ausgelöst werden kann, die in der CodeBehind-Datei verarbeitet wird und die Code-Behind-Datei ein Objekt, das in XAML, die mit dem Namen zugewiesen, die mit definierten zugreifen kann die `x:Name` Attribut. Hierbei handelt es sich um die zwei grundlegenden Verfahren, die Code und XAML zu interagieren.
 
-Einige zusätzliche Erkenntnisse wie für die Verwendung von XAML-Works abgeleitet werden können, durch Untersuchen der neu generierten **XamlPlusCode.xaml.g.cs Datei**, die nun umfasst einen beliebigen Namen zugewiesen, `x:Name` Attribut als ein privates Feld. Hier ist eine vereinfachte Version der Datei ein:
+Einige zusätzliche Erkenntnisse darüber, wie XAML Works abgeleitet werden können, anhand der neu generierten **XamlPlusCode.xaml.g.cs Datei**, die nun umfasst einen beliebigen Namen, die einer `x:Name` -Attribut als ein privates Feld. Hier ist eine vereinfachte Version der Datei ein:
 
 ```csharp
 public partial class XamlPlusCodePage : ContentPage {
@@ -437,15 +437,15 @@ public partial class XamlPlusCodePage : ContentPage {
 }
 ```
 
-Die Deklaration dieses Felds kann die Variable an einer beliebigen Stelle in beliebig verwendet werden die `XamlPlusCodePage` partiellen Klassendatei in Ihre Zuständigkeit. Zur Laufzeit wird das Feld zugewiesen, nachdem der XAML-Code analysiert wurde. Dies bedeutet, dass die `valueLabel` Feld `null` bei der `XamlPlusCodePage` Konstruktor beginnt jedoch gültig, nachdem `InitializeComponent` aufgerufen wird.
+Die Deklaration dieses Felds kann die Variable an einer beliebigen Stelle in frei verwendet werden die `XamlPlusCodePage` partiellen Klassendatei in Ihren Zuständigkeitsbereich. Zur Laufzeit wird das Feld zugewiesen, nachdem das XAML analysiert wurde. Dies bedeutet, dass die `valueLabel` Feld `null` bei der `XamlPlusCodePage` Konstruktor beginnt jedoch gültig, nachdem `InitializeComponent` aufgerufen wird.
 
-Nach dem `InitializeComponent` gibt wieder an den Konstruktor zu steuern, als ob sie instanziiert und initialisiert, die im Code wurde die visuellen Elemente der Seite erstellt wurden. Die XAML-Datei spielt Rolle nicht mehr in der Klasse. Können Sie diese Objekte auf der Seite in keiner Weise, die Sie, b. z. durch Hinzufügen von Ansichten zum Ändern der `StackLayout`, oder die Einstellung der `Content` -Eigenschaft der Seite ganz vollständig. Sie können "die Struktur durchlaufen" durch Untersuchen der `Content` Eigenschaft und die Elemente in der `Children` Auflistungen von Layouts. Sie können Eigenschaften für Sichten, die auf diese Weise zugegriffen oder zuweisen Ereignishandler dynamisch.
+Nach dem `InitializeComponent` gibt wieder an den Konstruktor zu steuern, haben die visuellen Elemente der Seite erstellt wurden, als ob sie instanziiert und im Code initialisiert wurde. Die XAML-Datei spielt Rolle nicht mehr in der Klasse. Sie können diese Objekte auf der Seite in einer Weise, die Sie, b. z. durch Hinzufügen von Ansichten zu bearbeiten der `StackLayout`, oder einer Einstellung der `Content` -Eigenschaft der Seite etwas anderes vollständig. Sie können "durchlaufen die Struktur" anhand der `Content` Eigenschaft der Seite und die Elemente in der `Children` Auflistungen von Layouts. Sie können Eigenschaften festlegen, in Sichten, die auf diese Weise zugegriffen oder zuweisen Ereignishandler dynamisch.
 
-Gerne. Es wird die Seite, und XAML ist nur ein Tool, mit dessen Inhalt erstellen.
+Sie können. Es ist Ihre Seite aus, und XAML ist nur ein Tool, um seinen Inhalt zu erstellen.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Mit dieser Einführung haben Sie gesehen, wie ein XAML-Datei und die Codedatei für die Klassendefinition einer beitragen, und wie die Dateien XAML und generierter Code interagieren. XAML gibt jedoch auch einen eigenen eindeutigen syntaktischen Funktionen, mit die sie eine sehr flexible Weise verwendet werden können. Können Sie anfangen, untersuchen diese in [Teil 2. Grundlegende XAML-Syntax](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md).
+Mit dieser Einführung haben Sie gelernt, wie eine XAML-Datei und Codedatei in eine Klassendefinition beitragen, und wie die Dateien für XAML und Code interagieren. XAML gibt jedoch auch eine eigene eindeutige syntaktischen Funktionen, die sie auf eine sehr flexible Weise verwendet werden können. Sie können beginnen, untersuchen diese in [Teil 2. Essential XAML Syntax](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md).
 
 
 
@@ -455,4 +455,4 @@ Mit dieser Einführung haben Sie gesehen, wie ein XAML-Datei und die Codedatei f
 - [Teil 2. Grundlegende XAML-Syntax](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [Teil 3. XAML-Markuperweiterungen](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Teil 4. Grundlagen der Datenbindung](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-- [Teil 5. Aus dem Datenbindung an MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [Teil 5. Aus einer Datenbindung zu MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)

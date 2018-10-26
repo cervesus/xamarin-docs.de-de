@@ -1,39 +1,39 @@
 ---
 title: Arbeiten mit WatchOS Texteingabe in Xamarin
-description: Dieses Dokument beschreibt die Texteingabe in Xamarin WatchOS. Es wird erläutert, die PresentTextInputController-Methode, Schreiben von nur-Text, Emojis und diktieren.
+description: Dieses Dokument beschreibt die WatchOS-Texteingabe in Xamarin. Es erläutert die PresentTextInputController Methode schreiben, nur-Text, Emojis und Diktat.
 ms.prod: xamarin
 ms.assetid: E9CDF1DE-4233-4C39-99A9-C0AA643D314D
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: da668333b3549c92264af7d4da4941ac6b5bf865
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 2092b12254008936f2c5b6a7d9dd610ff751e802
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791383"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122360"
 ---
 # <a name="working-with-watchos-text-input-in-xamarin"></a>Arbeiten mit WatchOS Texteingabe in Xamarin
 
-Der Apple Watch bietet keine Tastatur für Benutzer zur Eingabe von Text, aber einige Alternativen Watch-freundliche unterstützt wird:
+Der Apple Watch-bietet keine Tastatur für Benutzer zur Eingabe von Text, aber einige Alternativen Watch-freundliche unterstützt:
 
-- In einer vordefinierten Liste von Optionen auszuwählen,
-- Siri diktieren
-- Bei der Auswahl einer emoji
-- Scribble Buchstaben von Buchstaben handschrifterkennung (eingeführt in WatchOS 3).
+- Wählen aus einer vordefinierten Liste von Optionen für Text,
+- Siri Diktatmodus,
+- Auswählen einer emoji
+- Scribble-zeichenweise handschrifterkennung (eingeführt in WatchOS 3).
 
-Der Simulator unterstützt derzeit keine diktieren, aber Sie können dennoch testen die Texteingabe des Controllers andere Optionen, z. B. Scribble, wie hier gezeigt:
+Der Simulator unterstützt derzeit keine Diktat, aber Sie können weiterhin testen, der Texteingabe des Controllers Weitere Optionen wie die Scribble, wie hier gezeigt:
 
 ![](text-input-images/textinput-sml.png "Testen die Scribble-option")
 
-Texteingabe in eine Watch-app zu akzeptieren:
+Um die Texteingabe in eine Watch-app zu akzeptieren:
 
 1. Erstellen Sie ein Zeichenfolgenarray der vordefinierten Optionen.
-2. Rufen Sie `PresentTextInputController` mit dem Array angibt, ob Emoji oder nicht zulassen und eine `Action` , die aufgerufen wird, wenn der Benutzer abgeschlossen ist.
-3. Klicken Sie in die Abschlussaktion für das Ergebnis der Eingabe testen Sie, und ergreifen Sie entsprechende Maßnahmen, in der app (möglicherweise Textwert eine Bezeichnung festlegen).
+2. Rufen Sie `PresentTextInputController` mit dem Array, ob Emoji oder nicht zulässig und ein `Action` , die aufgerufen wird, wenn der Benutzer abgeschlossen ist.
+3. Testen Sie in der Abschlussaktion wird ausgeführt für das Ergebnis der Eingabe, und führen Sie die entsprechende Aktion in der app (möglicherweise durch das Festlegen einer Bezeichnung Textwerts).
 
-Der folgende Codeausschnitt zeigt drei vordefinierte Optionen für den Benutzer an:
+Der folgende Codeausschnitt stellt drei vordefinierte Optionen für den Benutzer an:
 
 ```csharp
 var suggest = new string[] {"Get groceries", "Buy gas", "Post letter"};
@@ -59,11 +59,11 @@ Die `WKTextInputMode` -Enumeration besitzt drei Werte:
 
 Wenn der einfache Modus festgelegt ist, kann der Benutzer auswählen:
 
-- Diktieren
+- Diktatmodus,
 - Scribble, oder
 - aus einer vordefinierten Liste, die die Anwendung bereitstellt.
 
-[![](text-input-images/plain-scribble-sml.png "Diktieren Scribble, oder aus einer vordefinierten Liste, das die app bereitstellt.")](text-input-images/plain-scribble.png#lightbox)
+[![](text-input-images/plain-scribble-sml.png "Diktatmodus, Scribble oder aus einer vordefinierten Liste, die die app bereitstellt.")](text-input-images/plain-scribble.png#lightbox)
 
 Das Ergebnis wird immer zurückgegeben, als ein `NSObject` , die umgewandelt werden kann, um eine `string`.
 
@@ -72,18 +72,18 @@ Das Ergebnis wird immer zurückgegeben, als ein `NSObject` , die umgewandelt wer
 Es gibt zwei Arten von Emoji:
 
 - Reguläre Unicode-emoji
-- Animierten Bildern
+- Animierte Bilder
 
-Wenn der Benutzer eine Unicode-Emoji auswählt, wird sie als Zeichenfolge zurückgegeben.
+Wenn der Benutzer eine Unicode-Emoji auswählt, wird es als Zeichenfolge zurückgegeben.
 
-Wenn eine animierte Grafik Emoji ausgewählt ist die `result` bei der Durchführung Handler enthält ein `NSData` Objekt, das die Emoji enthält `UIImage`.
+Wenn ein animiertes Bild Emoji ausgewählt ist die `result` Handler enthält bei der Durchführung einer `NSData` -Objekt, das gewünschte Emoji enthält `UIImage`.
 
-## <a name="accepting-dictation-only"></a>Akzeptieren nur diktieren
+## <a name="accepting-dictation-only"></a>Akzeptieren nur Diktat
 
-Den Benutzer direkt auf dem Bildschirm diktieren ausführen und Vorschläge (oder die Scribble-Option) wird nicht angezeigt:
+Den Benutzer direkt auf den Bildschirm Diktat nutzen, ohne Sie mit der Vorschläge (oder die Scribble-Option):
 
-- ein leeres Array für die Vorschlagsliste übergeben und
-- Set `WatchKit.WKTextInputMode.Plain`.
+- übergeben Sie ein leeres Array für die Liste der Vorschläge, und
+- Legen Sie `WatchKit.WKTextInputMode.Plain`.
 
 ```csharp
 PresentTextInputController (new string[0], WatchKit.WKTextInputMode.Plain, (result) => {
@@ -96,15 +96,15 @@ PresentTextInputController (new string[0], WatchKit.WKTextInputMode.Plain, (resu
 });
 ```
 
-Wenn der Benutzer gesehen wird, zeigt der Bildschirm Überwachen der folgende Bildschirm angezeigt, die den Text enthält, wie er im Klaren sind (z. B. "Das ist ein Test"):
+Wenn der Benutzer erweitern, werden der Bildschirm sehen Sie sich der folgende Bildschirm angezeigt, die den Text enthält, wie sie verstanden werden (z. B. "Das ist ein Test") angezeigt:
 
-![](text-input-images/dictation.png "Wenn der Benutzer spricht, überwachen zeigt den Bildschirm an den Text wie er im Klaren sind")
+![](text-input-images/dictation.png "Wenn der Benutzer erweitern, sehen Sie sich zeigt den Bildschirm an den Text wie er interpretiert werden kann")
 
-Sobald sie drücken Sie die **Fertig** Schaltfläche der Text zurückgegeben werden.
+Nachdem sie drücken Sie die **Fertig** Schaltfläche der Text zurückgegeben werden.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Apple Text und Bezeichnungen Doc](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/TextandLabels.html)
+- [Apple Doc für Text und Bezeichnungen](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/TextandLabels.html)
 - [Einführung in watchOS 3](~/ios/watchos/platform/introduction-to-watchos3/index.md)

@@ -1,29 +1,29 @@
 ---
-title: Hinter den Kulissen in Xamarin.Mac
-description: Dieses enthält Dokumentenlinks zu verschiedenen Handbüchern, die der internen Funktionsweise von Xamarin.Mac beschreiben. Verknüpfte Dokumente werden vor der Kompilierung, Xamarin.Mac-Architektur und die Registrierungsstelle Xamarin.Mac erläutert.
+title: Im Hintergrund in Xamarin.Mac
+description: Dieses Dokument enthält Links zu verschiedenen Leitfäden, die die interne Funktionsweise von Xamarin.Mac zu beschreiben. Verknüpfte Dokumente werden vor der Time-Kompilierung, Xamarin.Mac-Architektur und der Registrierungsstelle Xamarin.Mac erläutert.
 ms.prod: xamarin
 ms.assetid: 84974D75-0CCE-4455-AA38-00DE68AE33B6
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 11/10/2017
-ms.openlocfilehash: c940252a675c38247d2c5bb374b9c30237222bda
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 872f26febf3abbe4d659773d2bf2d27348c64513
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792488"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118772"
 ---
-# <a name="under-the-hood-in-xamarinmac"></a>Hinter den Kulissen in Xamarin.Mac
+# <a name="under-the-hood-in-xamarinmac"></a>Im Hintergrund in Xamarin.Mac
 
-## <a name="ahead-of-time-compilation-aotaotmd"></a>[Der Time-Kompilierung (AOT) fort](aot.md)
+## <a name="ahead-of-time-compilation-aotaotmd"></a>[Jetzt der Time-Kompilierung (AOT)](aot.md)
 
-Zeit (AOT) ist im Voraus Kompilierung eine leistungsstarke Optimierungstechnik, die auch zur Verbesserung der Leistung beim Start an. Allerdings wirkt Sie sich auf auch die Buildzeit, Anwendungsgröße und Ausführung des Programms weitreichende Möglichkeiten, daher ist es sinnvoll Verständnis der Funktionsweise.
+Zeit (AOT) ist jetzt Kompilierung eine leistungsstarke Optimierungstechnik, die auch zur Verbesserung der Leistung beim Start an. Allerdings wirkt sich auf sie auch Ihre Buildzeit, Anwendungsgröße und Ausführung des Programms in fundierter Weise, daher ist es sinnvoll, ihn zu verstehen.
 
 ## <a name="mac-architecturearchitecturemd"></a>[Mac-Architektur](architecture.md)
 
-Der Xamarin.Mac-Beziehung zu Objective-C, einschließlich Konzepten wie der Kompilierung, Selektoren Registrierungsstellen, app-Start und den Generator.
+Xamarin.Mac Beziehung mit Objective-C, einschließlich Konzepten wie Kompilierung, Selektoren, Registrierungsstellen, app-Start und des Generators.
 
 ## <a name="xamarinmac-registrarregistrarmd"></a>[Xamarin.Mac registrar](registrar.md)
 
-Xamarin.Mac schließt die Lücke zwischen der verwalteten Umgebung und des Kakao-Runtime verwaltete Klassen zum Aufrufen von nicht verwalteten Objective-C-Klassen und aufgerufen werden, wenn Ereignisse auftreten. Der Arbeitsaufwand zum Durchführen dieser "magische" müssen erfolgt durch die Registrierungsstelle allerdings wissen, was "hinter den Kulissen" kann in einigen Fällen hilfreich sein.
+Xamarin.Mac schließt die Lücke zwischen der verwalteten Welt und Cocoa Laufzeit ermöglicht verwaltete Klassen zum Aufrufen von nicht verwalteter Objective-C-Klassen und aufgerufen werden, wenn Ereignisse auftreten. Der erforderlichen Aufwand zum Durchführen dieser "magischen" wird von der Registrierungsstelle verarbeitet, aber zu verstehen, was "hinter den Kulissen" kann in einigen Fällen hilfreich sein.

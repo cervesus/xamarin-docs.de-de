@@ -1,53 +1,53 @@
 ---
-title: Marshalling in Xamarin.iOS Ausnahme
-description: Dieses Dokument beschreibt die Arbeit mit systemeigenen und verwalteten Ausnahmen in einem Xamarin.iOS-app. Es werden Probleme, die auftreten können und eine Lösung für diese Probleme erläutert.
+title: Ausnahme in Xamarin.iOS-Marshalling
+description: Dieses Dokument beschreibt, wie Sie mit systemeigenen und verwalteten Ausnahmen in einer Xamarin.iOS-app arbeiten. Es beschreibt Probleme, die auftreten können und eine Lösung für diese Probleme.
 ms.prod: xamarin
 ms.assetid: BE4EE969-C075-4B9A-8465-E393556D8D90
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/05/2017
-ms.openlocfilehash: dcf1074aacb6d139d107dac01fa86f459831d5f9
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 167d6ac421bdd2652e7f8474e1ea21bd9040723f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786742"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114300"
 ---
-# <a name="exception-marshaling-in-xamarinios"></a>Marshalling in Xamarin.iOS Ausnahme
+# <a name="exception-marshaling-in-xamarinios"></a>Ausnahme in Xamarin.iOS-Marshalling
 
-_Xamarin.iOS enthält neue Ereignisse, um Hilfe zu Ausnahmen, besonders in systemeigenem Code zu reagieren._
+_Xamarin.iOS enthält neue Ereignisse, um die Hilfe auf Ausnahmen, insbesondere in nativem Code zu reagieren._
 
-Verwalteter Code und Objective-C verfügen über die Unterstützung für Common Language Runtime-Ausnahmen (Try/Catch/finally-Klauseln).
+Sowohl Objective-C-als auch verwalteten Code bieten Unterstützung für Runtime-Ausnahmen (Try/Catch/finally-Klauseln).
 
-Allerdings unterscheiden sich ihre Implementierungen, was bedeutet, dass die Common Language Runtime-Bibliotheken (Mono / Runtime und der Objective-C-Laufzeitbibliotheken) Probleme haben, um Ausnahmen zu behandeln, und führen Sie dann in anderen Sprachen geschriebenen Code.
+Allerdings unterscheiden sich ihre Implementierungen, was bedeutet, dass die Common Language Runtime-Bibliotheken (die Mono-Laufzeit und die Objective-C-Laufzeitbibliotheken) Probleme auftreten, wenn müssen sie Ausnahmen behandeln, und führen Sie dann in anderen Sprachen geschriebenen Code.
 
-Dieses Dokument erläutert die Probleme, die auftreten können, und die möglichen Lösungen.
+Dieses Dokument erläutert die Probleme, die auftreten können und die möglichen Lösungen.
 
-Es enthält auch ein Beispielprojekt [Ausnahme Marshalling](https://github.com/xamarin/mac-ios-samples/tree/master/ExceptionMarshaling), die verwendet werden können, um verschiedene Szenarien und ihre Lösungen zu testen.
+Es enthält auch ein Beispielprojekt [Ausnahme beim Marshaling](https://github.com/xamarin/mac-ios-samples/tree/master/ExceptionMarshaling), die können verwendet werden, um verschiedene Szenarien und Lösungen zu testen.
 
 ## <a name="problem"></a>Problem
 
-Das Problem tritt auf, wenn eine Ausnahme wird ausgelöst, und während der stapelentladung eines Frames aufgetreten ist, die nicht den Typ der Ausnahme übereinstimmt, die ausgelöst wurde.
+Das Problem tritt auf, wenn eine Ausnahme ausgelöst wird, und während der stapelentladung, die einen Frame aufgetreten ist, die nicht den Typ der Ausnahme übereinstimmen, die ausgelöst wurde.
 
-Ein typisches Beispiel dafür für Xamarin.iOS oder Xamarin.Mac ist, wenn eine systemeigene API löst eine Objective-C-Ausnahme aus, und klicken Sie dann diese Objective-C-Ausnahme irgendwie behandelt werden muss des Entladungsprozesses Stapel einen verwalteten Frame erreicht.
+Ein typisches Beispiel der für Xamarin.iOS oder Xamarin.Mac ist, wenn eine systemeigene API löst eine Objective-C-Ausnahme aus, und klicken Sie dann die Objective-C-Ausnahme irgendwie bearbeitet werden muss Wenn des Entladens Stack einen verwalteten Frame erreicht.
 
-Die Standardaktion ist, geschieht nichts. Für das Beispiel oben bedeutet dies, lassen die Objective-C-Laufzeit entladen verwaltet Frames. Dies ist problematisch, da die Objective-C-Laufzeit nicht weiß, wie verwaltete Rahmen entladen kann; Es wird nicht z. B. Ausführen einer `catch` oder `finally` Klauseln in diesem Frame.
+Die Standardaktion ist, nichts zu tun. Für das obige Beispiel bedeutet dies, lassen die Objective-C-Runtime Entladung verwalteten Frames. Dies ist problematisch, da die Objective-C-Laufzeit nicht verwalteten Frames entladen Informationen verfügt; z. B. es wird nicht ausgeführt `catch` oder `finally` Klauseln in diesen Frame.
 
-### <a name="broken-code"></a>Fehlerhafte code
+### <a name="broken-code"></a>Fehlerhaften code
 
-Betrachten Sie das folgende Codebeispiel:
+Beachten Sie im folgenden Codebeispiel wird ein:
 
 ``` csharp
-var dict = new NSMutableDictionary ();
-dict.LowLevelSetObject (IntPtr.Zero, IntPtr.Zero); 
+var dict = new NSMutableDictionary ();
+dict.LowLevelSetObject (IntPtr.Zero, IntPtr.Zero); 
 ```
 
 Dadurch wird ein Objective-C-NSInvalidArgumentException in systemeigenem Code ausgelöst:
 
     NSInvalidArgumentException *** setObjectForKey: key cannot be nil
 
-Und die stapelüberwachung werden etwa so aussehen:
+Und die stapelüberwachung werden etwa wie folgt:
 
     0   CoreFoundation          __exceptionPreprocess + 194
     1   libobjc.A.dylib         objc_exception_throw + 52
@@ -57,11 +57,11 @@ Und die stapelüberwachung werden etwa so aussehen:
     5   TestApp                 Foundation.NSMutableDictionary.LowlevelSetObject (intptr,intptr)
     6   TestApp                 ExceptionMarshaling.Exceptions.ThrowObjectiveCException ()
 
-0-3-Frames werden systemeigene Rahmen und die stapelentlader in Objective-C-Laufzeit _können_ die Rahmen entladen. Insbesondere führt er Objective-C `@catch` oder `@finally` Klauseln.
+0-3 werden systemeigene Rahmen und der stapelentlader in der Objective-C-Laufzeit _können_ die Rahmen entladen. Insbesondere führt alle Objective-C `@catch` oder `@finally` Klauseln.
 
-Ist Sie jedoch die Objective-C-stapelentlader _nicht_ Entladung ordnungsgemäß verwalteten Frames (Frames 4 bis 6), werden die Frames entladen werden, jedoch nicht verwaltete Ausnahme Logik ausgeführt werden kann.
+Ist Sie jedoch die Objective-C-stapelentlader _nicht_ ordnungsgemäß verwalteten Frames (Frames 4 bis 6), entladen, die Frames entladen werden, jedoch nicht verwaltete Ausnahme Logik ausgeführt werden kann.
 
-Das bedeutet, dass es in der Regel nicht möglich, diese Ausnahmen auf folgende Weise zu erfassen:
+Das bedeutet, dass es in der Regel nicht möglich, diese Ausnahmen zu erfassen, auf folgende Weise:
 
 ```csharp
 try {
@@ -74,24 +74,24 @@ try {
 }
 ```
 
-Dies ist, da die Objective-C-stapelentlader nicht zu den verwalteten kennt `catch` -Klausel, und weder wird die `finally` -Klausel ausgeführt werden.
+Dies ist, da die Objective-C-stapelentlader nicht zu den verwalteten weiß `catch` -Klausel, und weder wird der `finally` -Klausel ausgeführt werden.
 
 Wenn im obigen Beispiel _ist_ effektiv ist da Objective-C eine Methode benachrichtigt wird, der nicht behandelten Ausnahmen für Objective-C, verfügt [`NSSetUncaughtExceptionHandler`][2], welche Xamarin.iOS und Xamarin.Mac verwenden und zu diesem Zeitpunkt versucht, alle Objective-C-Ausnahmen in verwalteten Ausnahmen zu konvertieren.
 
 ## <a name="scenarios"></a>Szenarien
 
-### <a name="scenario-1---catching-objective-c-exceptions-with-a-managed-catch-handler"></a>Szenario 1: Abfangen von Ausnahmen in Objective-C mit einer verwalteten Catch-handler
+### <a name="scenario-1---catching-objective-c-exceptions-with-a-managed-catch-handler"></a>Szenario 1: Abfangen von Objective-C-Ausnahmen mit einem verwalteten Catch-handler
 
-Im folgenden Szenario, es ist möglich, Objective-C-Ausnahmen abfangen mit verwalteten `catch` Handler:
+Im folgenden Szenario, es ist möglich, Objective-C-Ausnahmen abfangen mithilfe von verwalteten `catch` Handler:
 
 1. Eine Objective-C-Ausnahme ausgelöst.
-2. Objective-C-Laufzeit den Stackwalk (jedoch ist es nicht entladen), suchen für ein systemeigenes `@catch` Handler, der die Ausnahme behandeln kann.
-3. Objective-C-Laufzeit nicht finden kann, `@catch` Handler, ruft `NSGetUncaughtExceptionHandler`, und ruft den Handler durch Xamarin.iOS/Xamarin.Mac installiert.
-4. Xamarin.iOS/Xamarin.Mac's-Handler die Objective-C-Ausnahme in eine verwaltete Ausnahme konvertieren, und wirft den Zettel. Seit der Objective-C-Laufzeit nicht entlädt die Aufrufliste (nur er vertraut gemacht), der aktuelle Frame ist dasjenige, in dem die Objective-C-Ausnahme ausgelöst wurde.
+2. Die Objective-C-Laufzeit durchläuft den Stapel (aber es wird nicht entladen), Suchen nach einem systemeigenen `@catch` Handler, der die Ausnahme behandeln kann.
+3. Die Objective-C-Laufzeit nicht finden kann, `@catch` Handler, ruft `NSGetUncaughtExceptionHandler`, und ruft den Handler für Xamarin.iOS/Xamarin.Mac installiert.
+4. Xamarin.iOS/Xamarin.Mac's-Handler setzt die Objective-C-Ausnahme in eine verwaltete Ausnahme konvertieren, und löst es. Da die Objective-C Runtime nicht entlädt die Aufrufliste (nur wurde erläutert, wie es), der aktuelle Frame ist dasjenige, in denen die Objective-C-Ausnahme ausgelöst wurde.
 
-Hier tritt ein anderes Problem auf, weil die Mono-Laufzeit nicht weiß, wie Objective-C-Frames ordnungsgemäß entladen kann.
+Hier tritt ein anderes Problem auf, da die Mono-Laufzeit wie Objective-C-Frames ordnungsgemäß entladen nicht bekannt ist.
 
-Wenn Xamarin.iOS nicht abgefangene Objective-C-Ausnahmerückruf aufgerufen wird, ist der Stapel wie folgt:
+Wenn Xamarin.iOS nicht abgefangene Objective-C-Ausnahme-Rückruf aufgerufen wird, ist im Stapel wie folgt aus:
 
      0 libxamarin-debug.dylib   exception_handler(exc=name: "NSInvalidArgumentException" - reason: "*** setObjectForKey: key cannot be nil")
      1 CoreFoundation           __handleUncaughtException + 809
@@ -105,7 +105,7 @@ Wenn Xamarin.iOS nicht abgefangene Objective-C-Ausnahmerückruf aufgerufen wird,
      9 TestApp                  Foundation.NSMutableDictionary.LowlevelSetObject (intptr,intptr) [0x00000]
     10 TestApp                  ExceptionMarshaling.Exceptions.ThrowObjectiveCException () [0x00013]
 
-Hier die einzigen verwalteten Frames werden Frames 8 bis 10, aber im Frame 0 der verwaltete Ausnahme ausgelöst wird. Dies bedeutet, dass die Mono / Common Language Runtime die systemeigenen Rahmen 0-7, entladen werden muss daraufhin ein Problem, das Problem weiter oben erläuterten entspricht: Obwohl Mono / Runtime systemeigenen Rahmen entladen wird, wird keine Objective-C ausführen `@catch` oder `@finally` Klauseln .
+Hier die einzige verwaltete Frames sind Frames 8 bis 10, aber die verwaltete Ausnahme wird ausgelöst, im Bereich 0. Dies bedeutet, dass die Mono-Laufzeit die systemeigenen Rahmen 0-7, entladen werden muss, wodurch ein Problem, das Problem weiter oben erläuterten entspricht: Obwohl die Mono-Laufzeit die systemeigenen Rahmen entladen wird, wird keine Objective-C-Ausführung `@catch` oder `@finally` Klauseln .
 
 Codebeispiel:
 
@@ -121,9 +121,9 @@ Codebeispiel:
 }
 ```
 
-Und die `@finally` -Klausel wird nicht ausgeführt werden, da die Mono-Laufzeit, die dieses Rahmens entlädt dazu nicht kennt.
+Und die `@finally` Klausel wird nicht ausgeführt werden, da die Mono-Laufzeit, die diesem Rahmen entladen sie unbekannt ist.
 
-Eine Variante dieses verwaltete Ausnahme in verwaltetem Code und anschließend über systemeigene Rahmen abzurufenden entladen wird auf den ersten verwalteten `catch` Klausel:
+Eine Variante hiervon ist, um auszulösen, eine verwaltete Ausnahme in verwaltetem Code und dann entladen über systemeigene Rahmen zum Abrufen auf den ersten verwalteten `catch` Klausel:
 
 ```csharp
 class AppDelegate : UIApplicationDelegate {
@@ -142,7 +142,7 @@ class AppDelegate : UIApplicationDelegate {
 }
 ```
 
-Die verwaltete `UIApplication:Main` -Methodenaufruf systemeigenen `UIApplicationMain` -Methode, und klicken Sie dann auf iOS erfolgt einen Großteil der Ausführung von systemeigenem Code bevor schließlich ein Aufruf der verwalteten `AppDelegate:FinishedLaunching` Methode noch zahlreiche systemeigene Rahmen im Stapel wird von die verwaltete Ausnahme ausgelöst:
+Die verwaltete `UIApplication:Main` Methodenaufruf wird das systemeigene `UIApplicationMain` -Methode, und klicken Sie dann auf iOS wird bieten die native codeausführung, bevor schließlich ein Aufruf der verwalteten `AppDelegate:FinishedLaunching` Methode immer noch eine Vielzahl von systemeigene Rahmen im Stapel, wenn die verwaltete Ausnahme ist ausgelöst:
 
      0: TestApp                 ExceptionMarshaling.IOS.AppDelegate:FinishedLaunching (UIKit.UIApplication,Foundation.NSDictionary)
      1: TestApp                 (wrapper runtime-invoke) <Module>:runtime_invoke_bool__this___object_object (object,intptr,intptr,intptr) 
@@ -176,17 +176,17 @@ Die verwaltete `UIApplication:Main` -Methodenaufruf systemeigenen `UIApplication
     29: TestApp                 UIKit.UIApplication:Main (string[],string,string)
     30: TestApp                 ExceptionMarshaling.IOS.Application:Main (string[])
 
-Frames 0-1 und 27-30 werden verwaltet, während alle dazwischen native sind. Wenn Sie über diese Frames, die keine Objective-C Mono entlädt `@catch` oder `@finally` Klauseln ausgeführt werden.
+0-1-Frames und 27. bis 30. verwaltet werden, während alle zwischen systemeigenen sind. Wenn Mono über diese Frames, keine Objective-C entlädt `@catch` oder `@finally` Klauseln ausgeführt werden.
 
-### <a name="scenario-2---not-able-to-catch-objective-c-exceptions"></a>Szenario 2 – kann nicht zum Abfangen von Ausnahmen für Objective-C
+### <a name="scenario-2---not-able-to-catch-objective-c-exceptions"></a>Szenario 2: kann nicht zum Abfangen von Objective-C-Ausnahmen
 
-Im folgenden Szenario ist es _nicht_ Objective-C-Ausnahmen abfangen können mittels für managed `catch` Handler, da die Objective-C-Ausnahme auf andere Weise behandelt wurde:
+Im folgenden Szenario ist es _nicht_ möglich, Objective-C-Ausnahmen abfangen, Verwendung von verwalteten `catch` Handler, da die Objective-C-Ausnahme auf andere Weise behandelt wurde:
 
 1. Eine Objective-C-Ausnahme ausgelöst.
-2. Objective-C-Laufzeit den Stackwalk (jedoch ist es nicht entladen), suchen für ein systemeigenes `@catch` Handler, der die Ausnahme behandeln kann.
-3. Objective-C-Laufzeit sucht nach einem `@catch` Handler, entlädt den Stapel, und startet die Ausführung der `@catch` Handler.
+2. Die Objective-C-Laufzeit durchläuft den Stapel (aber es wird nicht entladen), Suchen nach einem systemeigenen `@catch` Handler, der die Ausnahme behandeln kann.
+3. Die Objective-C-Laufzeit sucht nach einer `@catch` Handler auf, den Stapel entlädt, und startet die Ausführung der `@catch` Handler.
 
-Dieses Szenario wird häufig in Xamarin.iOS apps gefunden, da auf dem Hauptthread in der Regel Code wie folgt wird:
+Dieses Szenario wird häufig in Xamarin.iOS-apps gefunden, weil auf dem Hauptthread in der Regel solchen Code:
 
 ``` objective-c
 void UIApplicationMain ()
@@ -203,17 +203,17 @@ void UIApplicationMain ()
 
 ```
 
-Dies bedeutet, dass auf den Hauptthread nie wirklich Objective-C-Ausnahmefehler ist und unsere Rückruf, der Objective-C-Ausnahmen in verwalteten Ausnahmen konvertiert werden, wird daher nie aufgerufen.
+Dies bedeutet, dass auf dem Hauptthread nie wirklich eine nicht behandelte Ausnahme von Objective-C, und daher unsere, die Objective-C-Ausnahmen in verwalteten Ausnahmen konvertiert Rückruf nie aufgerufen.
 
-Dies ist auch üblich, das beim Debuggen Xamarin.Mac-apps auf einer früheren Version der MacOS als Xamarin.Mac unterstützt, da die meisten Benutzeroberflächenobjekte im Debugger überprüfen versucht, um auf den ausgeführten Plattform (abzurufen, Eigenschaften entsprechen, Selektoren, die nicht vorhanden Da Xamarin.Mac Unterstützung für eine höhere Version von MacOS umfasst). Aufrufen von solchen Selektoren löst ein `NSInvalidArgumentException` ("Unbekannte Selektor an gesendet..."), wodurch schließlich den Prozess abstürzen.
+Dies ist auch üblich, beim Debuggen von Xamarin.Mac-apps auf einer früheren MacOS-Version als Xamarin.Mac unterstützt, da die meisten UI-Objekte im Debugger überprüfen, rufen Sie Eigenschaften entsprechen, Selektoren, die nicht vorhanden sind, auf den ausgeführten Plattform (versucht Da Xamarin.Mac-Unterstützung für eine höhere Version von MacOS umfasst). Solche Selektoren Aufruf löst eine `NSInvalidArgumentException` ("Unbekannte Auswahl an gesendet..."), dies führt letztendlich zu den Prozess abstürzt.
 
-Zusammenfassend lässt sich sagen, dass Objective-C-Laufzeit oder die Mono-Laufzeit entladen Frames, die sie nicht auf programmiert werden Handle kann dazu führen, dass nicht definierten Verhalten, wie Abstürze, Speicherverluste und andere Arten von Verhalten unvorhersehbar (mis).
+Zusammenfassend lässt sich sagen, dass die Objective-C-Runtime oder die Mono-Laufzeit entladen Frames, die sie nicht auf programmiert werden Handles kann zu nicht definierten Verhalten, wie Abstürze, Speicherverluste und andere Arten von unvorhersehbaren (mis) Verhalten führen.
 
-## <a name="solution"></a>Projektmappe
+## <a name="solution"></a>Lösung
 
-In Xamarin.iOS 10 und Xamarin.Mac 2.10 haben wir Unterstützung zum Abfangen von Ausnahmen von sowohl verwalteter als auch Objective-C auf alle verwalteten systemeigenen Grenze und für diese Ausnahme in den anderen Typ konvertieren hinzugefügt.
+In Xamarin.iOS 10 und Xamarin.Mac 2.10 haben wir Unterstützung zum Abfangen von verwalteter und Objective-C-Ausnahmen an alle verwalteten nativen Grenze und für diese Ausnahme wird in den anderen Typ konvertieren hinzugefügt.
 
-In Pseudocode sieht es etwa wie folgt aus:
+In Pseudocode sieht etwa wie folgt:
 
 ``` csharp
 [DllImport ("libobjc.dylib")]
@@ -225,7 +225,7 @@ static void DoSomething (NSObject obj)
 }
 ```
 
-Der P/Invoke auf Objc_msgSend abgefangen wird, und wird stattdessen aufgerufen:
+Der P/Invoke auf Objc_msgSend abgefangen wird, und diese stattdessen aufgerufen wird:
 
 ``` objective-c
 void
@@ -239,43 +239,43 @@ xamarin_dyn_objc_msgSend (id obj, SEL sel)
 }
 ```
 
-Und etwas Ähnliches erfolgt für den umgekehrten Fall (Marshalling verwaltete Ausnahmen auf Objective-C-Ausnahmen).
+Und etwas Ähnliches erfolgt für den umgekehrten Fall (Marshallen von verwalteten Ausnahmen in Objective-C-Ausnahmen).
 
-Abfangen von Ausnahmen für die verwaltete systemeigene Grenze ist kein kostenlose, sodass es nicht immer standardmäßig aktiviert:
+Abfangen von Ausnahmen für die verwaltete, systemeigene Grenze ist nicht ohne Kosten, sodass es nicht immer standardmäßig aktiviert:
 
-- Xamarin.iOS/tvOS: Abfangen von Ausnahmen für Objective-C im Simulator aktiviert ist.
-- Xamarin.watchOS: Abfangen wird in allen Fällen erzwungen, da die Objective-C-Laufzeit-Entladung verwaltet verwirrt Frames der Garbage Collector und nehmen sie Hängenbleiben oder Absturz (Crash).
-- Xamarin.Mac: Abfangen von Ausnahmen für Objective-C ist aktiviert, für Debugbuilds.
+- Xamarin.iOS/tvOS: Abfangen von Objective-C-Ausnahmen im Simulator aktiviert ist.
+- Xamarin.watchOS: Abfangfunktion wird in allen Fällen erzwungen, da die Objective-C-Runtime-Entladung verwaltet lassen verwirrt Frames der Garbage Collector und machen Sie es nicht mehr reagiert oder abstürzt.
+- Xamarin.Mac: Abfangen von Objective-C-Ausnahmen ist aktiviert, für Debugbuilds.
 
-Die [zur Buildzeit Flags](#build_time_flags) Abschnitt wird erläutert, wie abfangen aktiviert, wenn es nicht standardmäßig aktiviert ist.
+Die [Buildzeit Flags](#build_time_flags) Abschnitt wird erläutert, wie Sie die Aktivierung der Abfangfunktion, wenn sie nicht standardmäßig aktiviert ist.
 
 ## <a name="events"></a>Ereignisse
 
-Es gibt zwei neue Ereignisse, die ausgelöst werden, nachdem eine Ausnahme abgefangen wird: `Runtime.MarshalManagedException` und `Runtime.MarshalObjectiveCException`.
+Es gibt zwei neue Ereignisse, die ausgelöst werden, sobald eine Ausnahme abgefangen wird: `Runtime.MarshalManagedException` und `Runtime.MarshalObjectiveCException`.
 
-Werden beide Ereignisse übergeben ein `EventArgs` Objekt, das die ursprüngliche Ausnahme enthält, die ausgelöst wurde (die `Exception` Eigenschaft), und ein `ExceptionMode` Eigenschaft definieren, wie die Ausnahme gemarshallt werden sollen.
+Werden beide Ereignisse übergeben eine `EventArgs` Objekt, das die ursprüngliche Ausnahme enthält, die ausgelöst wurde (die `Exception` Eigenschaft), und ein `ExceptionMode` Eigenschaft, die definiert, wie die Ausnahme gemarshallt werden sollen.
 
-Die `ExceptionMode` Eigenschaft kann geändert werden, in der ereignismeldung Ereignishandler, um das Verhalten entsprechend jede benutzerdefinierte Verarbeitung im Handler ausgeführt. Ein Beispiel wäre, den Prozess abzubrechen, wenn eine bestimmte Ausnahme auftritt.
+Die `ExceptionMode` Eigenschaft kann geändert werden, im Ereignishandler, um das Verhalten entsprechend jede benutzerdefinierte Verarbeitung im Ereignishandler ausgeführt. Ein Beispiel dafür ist, um den Prozess abzubrechen, wenn eine bestimmte Ausnahme auftritt.
 
-Ändern der `ExceptionMode` Eigenschaft gilt für einzelnes Ereignis, er wirkt sich keine Ausnahmen, die in der Zukunft abgefangen.
+Ändern der `ExceptionMode` Eigenschaft gilt für das einzelne Ereignis, er wirkt sich keine Ausnahmen abgefangen, in der Zukunft.
 
 Die folgenden Modi sind verfügbar:
 
-- `Default`: Der Standardwert hängt von der Plattform. Es ist `ThrowObjectiveCException` im kooperativen Modus (WatchOS), ist der globale Katalogserver und `UnwindNativeCode` andernfalls (iOS / WatchOS / MacOS). Die Standardeinstellung kann in der Zukunft ändern.
-- `UnwindNativeCode`: Dies ist das Verhalten des vorherigen (nicht definiert). Dies ist nicht verfügbar, wenn der globale Katalogserver im kooperativen Modus verwendet (Dies ist die einzige Option für WatchOS; daher Dies ist keine gültige Option für WatchOS), aber es ist die Standardoption für alle anderen Plattformen.
-- `ThrowObjectiveCException`: Die verwaltete Ausnahme in eine Objective-C-Ausnahme konvertieren und die Objective-C-Ausnahme auslösen. Dies ist die Standardeinstellung auf WatchOS.
-- `Abort`: Der Prozess abgebrochen.
-- `Disable`: Deaktiviert die Ausnahme abfangen, damit es nicht sinnvoll, diesen Wert im Ereignishandler festzulegen, nachdem das Ereignis ausgelöst wird, ist jedoch zu spät um zu deaktivieren. In jedem Fall, wenn festgelegt, es als Verhalten `UnwindNativeCode`.
+- `Default`: Der Standardwert hängt von der Plattform. Es ist `ThrowObjectiveCException` im kooperativen-Modus (WatchOS), ist der Garbage Collector und `UnwindNativeCode` andernfalls (iOS / WatchOS / MacOS). Der Standardwert kann in der Zukunft ändern.
+- `UnwindNativeCode`: Dies ist das vorherige Verhalten für die (nicht definiert). Dies ist nicht verfügbar, wenn der Garbage Collector im kooperativen Modus verwendet (Dies ist die einzige Option in WatchOS, daher Dies ist keine gültige Option für WatchOS), aber es ist die Standardoption für alle anderen Plattformen.
+- `ThrowObjectiveCException`: Die verwaltete Ausnahme in eine Objective-C-Ausnahme konvertieren, und die Objective-C-Ausnahme auslösen. Dies ist die Standardeinstellung für WatchOS.
+- `Abort`: Den Prozess abgebrochen.
+- `Disable`: Deaktiviert die Ausnahme abfangen, damit es nicht sinnvoll, diesen Wert im Ereignishandler festzulegen, aber wenn das Ereignis ausgelöst wird, zu spät wird um zu deaktivieren. In jedem Fall, wenn festgelegt, es als Verhalten `UnwindNativeCode`.
 
 Für das Marshalling von Objective-C-Ausnahmen in verwalteten Code, stehen die folgenden Modi:
 
-- `Default`: Der Standardwert hängt von der Plattform. Es ist `ThrowManagedException` im kooperativen Modus (WatchOS), ist der globale Katalogserver und `UnwindManagedCode` andernfalls (iOS / tvos. außerdem wurden / MacOS). Die Standardeinstellung kann in der Zukunft ändern.
-- `UnwindManagedCode`: Dies ist das Verhalten des vorherigen (nicht definiert). Dies ist nicht verfügbar, wenn der globale Katalogserver im kooperativen Modus verwendet (Dies ist der einzige gültige GC-Modus auf WatchOS; daher Dies ist keine gültige Option für WatchOS), aber es ist die Standardeinstellung für alle anderen Plattformen.
-- `ThrowManagedException`: Die Objective-C-Ausnahme in eine verwaltete Ausnahme konvertieren und die verwaltete Ausnahme auszulösen. Dies ist die Standardeinstellung auf WatchOS.
-- `Abort`: Der Prozess abgebrochen.
-- `Disable`: Deaktiviert die Ausnahme abfangen, damit es sinnvoll, legen Sie nicht diesen Wert werden im Ereignisprotokoll Handler jedoch einmal auf das Ereignis wird ausgelöst, ist es zu spät um zu deaktivieren. In jedem Fall, wenn festgelegt, es den Prozess abgebrochen werden.
+- `Default`: Der Standardwert hängt von der Plattform. Es ist `ThrowManagedException` im kooperativen-Modus (WatchOS), ist der Garbage Collector und `UnwindManagedCode` andernfalls (iOS / TvOS / MacOS). Der Standardwert kann in der Zukunft ändern.
+- `UnwindManagedCode`: Dies ist das vorherige Verhalten für die (nicht definiert). Dies ist nicht verfügbar, wenn der Garbage Collector im kooperativen Modus verwendet (Dies ist der einzige gültige GC-Modus auf WatchOS, daher Dies ist keine gültige Option für WatchOS), aber es ist die Standardeinstellung für alle anderen Plattformen.
+- `ThrowManagedException`: Die Objective-C-Ausnahme in eine verwaltete Ausnahme konvertieren, und der verwaltete Ausnahme ausgelöst. Dies ist die Standardeinstellung für WatchOS.
+- `Abort`: Den Prozess abgebrochen.
+- `Disable`: Deaktiviert die Ausnahme abfangen, damit es sinnvoll, legen Sie nicht diesen Wert im Ereignis-Handler, aber sobald das Ereignis ausgelöst wird, ist es zu spät um zu deaktivieren. In jedem Fall, wenn festgelegt, es den Prozess abgebrochen wird.
 
-Dabei wird jedes Mal, wenn eine Ausnahme gemarshallt wird, erhalten Sie dies tun können:
+Daher können jedes Mal, wenn eine Ausnahme gemarshallt wird, erhalten Sie so vorgehen:
 
 ``` csharp
 Runtime.MarshalManagedException += (object sender, MarshalManagedExceptionEventArgs args) =>
@@ -295,7 +295,7 @@ Runtime.MarshalObjectiveCException += (object sender, MarshalObjectiveCException
 
 <a name="build_time_flags" />
 
-## <a name="build-time-flags"></a>Flags zur Buildzeit
+## <a name="build-time-flags"></a>Buildzeit-Flags
 
 Es ist möglich, übergeben Sie die folgenden Optionen zum **Mtouch** (für Xamarin.iOS-apps) und **Mmp** (für Xamarin.Mac-apps), wird die zu bestimmen, ob die Ausnahme abfangen aktiviert ist, und legen Sie der Standardaktion, die sollte auftreten:
 
@@ -315,15 +315,15 @@ Es ist möglich, übergeben Sie die folgenden Optionen zum **Mtouch** (für Xama
 
 Mit Ausnahme von `disable`, diese Werte sind identisch mit der `ExceptionMode` Werte, die übergeben werden, die `MarshalManagedException` und `MarshalObjectiveCException` Ereignisse.
 
-Die `disable` option wird _größtenteils_ deaktivieren Sie abfangen, außer es weiterhin Ausnahmen abfangen müssen, wenn keine Ausführung Verwaltungsaufwand hinzugefügt wird. Die Marshalling Ereignisse werden weiterhin mit dem Standardmodus wird der Standardmodus für die ausgeführte Plattform für diese Ausnahmen werden ausgelöst.
+Die `disable` option wird _größtenteils_ abfangen, deaktivieren, mit der Ausnahme wir weiterhin Ausnahmen abfangen müssen, wenn keine Mehraufwand für die Ausführung hinzugefügt wird. Die Marshalling Ereignisse werden immer noch für diese Ausnahmen, mit dem Standardmodus wird der Standardmodus für das ausgeführte ausgelöst.
 
 ## <a name="limitations"></a>Einschränkungen
 
-Wir nur P/Invokes zum Abfangen der `objc_msgSend` Funktionsreihe beim Objective-C-Ausnahmen abfangen. Dies bedeutet, dass eine P/Invoke auf einem anderen C-Funktion, die dann alle Objective-C-Ausnahmen auslöst, in der alten und undefinierte Verhalten weiterhin ausgeführt wird (Dies kann in der Zukunft verbessert werden).
+Wir nur P/Invokes in Abfangen der `objc_msgSend` Funktionsreihe beim Versuch, Objective-C-Ausnahmen zu erfassen. Dies bedeutet, dass eine P/Invoke auf einen anderen C-Funktion, die dann alle Objective-C-Ausnahmen auslöst, noch das alte und nicht definierten Verhalten ausgeführt wird (Dies kann in Zukunft verbessert werden).
 
 [2]: https://developer.apple.com/reference/foundation/1409609-nssetuncaughtexceptionhandler?language=objc
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Ausnahme Marshalling (Beispiel)](https://github.com/xamarin/mac-ios-samples/tree/master/ExceptionMarshaling)
+- [Ausnahme-Marshalling (Beispiel)](https://github.com/xamarin/mac-ios-samples/tree/master/ExceptionMarshaling)

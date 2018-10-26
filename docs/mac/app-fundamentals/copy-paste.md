@@ -4,15 +4,15 @@ description: Dieser Artikel behandelt die Verwendung der Zwischenablage kopieren
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 728e0264f7da8f3adfef360dd473772dd7e28a11
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: f9e05b6d16210021257fe3958966739e526aed18
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251215"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123204"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>Kopieren und Einfügen in Xamarin.Mac
 
@@ -617,7 +617,7 @@ Deaktivieren Sie es zuerst das automatische Aktivieren und Deaktivieren von Men�
 
 Weitere Informationen finden Sie unserem [Menüs](~/mac/user-interface/menu.md) Dokumentation.
 
-### <a name="testing-the-app"></a>Testen der app
+### <a name="testing-the-app"></a>Testen der App
 
 Nach Abschluss der Vorbereitung können wir die Anwendung zu testen. Erstellen und Ausführen der app und die Hauptkomponente der Benutzeroberfläche angezeigt wird:
 

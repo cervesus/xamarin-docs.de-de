@@ -1,22 +1,22 @@
 ---
-title: Daten und Clouddienste mit Xamarin.Android
+title: Daten und Clouddienste, die mit Xamarin.Android
 description: Diese Anleitung beschreibt, wie auf Daten zugegriffen wird und Clouddienste genutzt werden.
 ms.prod: xamarin
 ms.assetid: 54D9D34B-D4FA-473B-BD11-75D3762920B0
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 216ee45df1d7d9e0d06c04b9677bc263929515c0
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: 90db887ca63abe0cd33f9c1616df1d0a496465e9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32436442"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121853"
 ---
-# <a name="data-and-cloud-services"></a>Daten und Cloud-Dienste
+# <a name="data-and-cloud-services"></a>Daten und Clouddienste
 
-## <a name="data-and-cloud-services"></a>Daten und Cloud-Dienste
+## <a name="data-and-cloud-services"></a>Daten und Clouddienste
 
 Xamarin.Android-Anwendungen benötigen häufig Zugriff auf Daten (entweder aus einer lokalen Datenbank oder aus der Cloud), und viele dieser Apps nutzen Webdienste, die unter Verwendung zahlreicher Technologien implementiert sind. Diese Anleitung beschreibt, wie auf Daten zugegriffen wird und Clouddienste genutzt werden.
 

@@ -1,38 +1,38 @@
 ---
 title: Binden von Mac-Bibliotheken für Xamarin.Mac
-description: Dieses enthält Dokumentenlinks zu Anleitungen, die zum Arbeiten mit Objective-C-Bindungen in einer Xamarin.Mac-Anwendung, einschließlich Ziel Sharpie und Beispielcode zu beschreiben.
+description: Dieses Dokument enthält Links zu Leitfäden, die zum Arbeiten mit Objective-C-Bindungen in einer Xamarin.Mac-Anwendung, einschließlich Ziel Sharpie und Beispielcode zu beschreiben.
 ms.prod: xamarin
 ms.assetid: 521707CD-79D3-488A-84CB-A37EBF93AC94
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 01/13/2017
-ms.openlocfilehash: 05602401c1408b016b371fc00b65f2d3db4c667d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: fde21b2056d56cbf1c4768b287e29f559390f500
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792216"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107299"
 ---
 # <a name="binding-mac-libraries-for-xamarinmac"></a>Binden von Mac-Bibliotheken für Xamarin.Mac
 
-Führen Sie diese Links erfahren Sie mehr über das Binden von Objective-C-Bibliotheken auf Xamarin.Mac aus:
+Führen Sie diesen Links, um zu erfahren Sie mehr über das Binden von Objective-C-Bibliotheken für Xamarin.Mac aus:
 
-- [**Übersicht über** ](~/cross-platform/macios/binding/overview.md) -
-  beschreibt die Funktionsweise der Bindung.
+- [**Übersicht über die** ](~/cross-platform/macios/binding/overview.md) -
+  beschreibt, wie die Bindung funktioniert.
 - [**Binden von Objective-C-Bibliotheken** ](~/cross-platform/macios/binding/objective-c-libraries.md) -
-  Anweisungen wie Objective-C-Bibliotheken für die Verwendung in Projekten Xamarin gebunden.
+  Anleitungen zum Binden von Objective-C-Bibliotheken für die Verwendung in Xamarin-Projekte.
 - [**Geben Sie die Definition Referenzhandbuch** ](~/cross-platform/macios/binding/binding-types-reference.md) -
-  beschreibt alle Attribute für Autoren von Bindungen in der Bindung Generierungsprozess Laufwerk verfügbar.
+  beschreibt alle Attribute für Autoren von Bindungen, die den Generierungsprozess der Bindung Laufwerk verfügbar.
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Objektive Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 
-Objektive Sharpie ist ein Befehlszeilentool helfen beim Bootstrapping für des ersten Durchlaufs einer Bindung.
-Es funktioniert, indem die Analyse der Headerdateien einer systemeigenen Bibliothek zuordnen die öffentliche API in der [Bindungsdefinition](~/cross-platform/macios/binding/binding-types-reference.md) (ein Prozess, der andernfalls manuell durchgeführt wird). Objektive Sharpie Erstellen einer Bindung nicht allein, aber es kann Ihnen beim Einstieg helfen.
+Objektive Sharpie ist ein Befehlszeilentool zum unterstützen das erste Element des eine Bindung zu starten.
+Es funktioniert, indem Sie die Analyse der Headerdateien zuordnen die öffentliche API in einer nativen Bibliothek die [Bindungsdefinition](~/cross-platform/macios/binding/binding-types-reference.md) (ein Prozess, die andernfalls manuell durchgeführt werden). Objektive Sharpie Erstellen einer Bindung nicht allein, aber sie können Ihnen beim Einstieg helfen!
 
 ## <a name="examples"></a>Beispiele
 
-Finden Sie in der [XMBindingExample Mac Beispiel](https://github.com/xamarin/mac-samples/tree/master/XMBindingExample) zu erfahren, wie Sie eine Mac-Bindung, die mit der Bindung Projekte erstellen.
+Finden Sie in der [XMBindingExample Mac Beispiel](https://github.com/xamarin/mac-samples/tree/master/XMBindingExample) erfahren, wie zum Erstellen einer Mac-Bindung, die mithilfe von bindungsprojekte.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -1,24 +1,24 @@
 ---
-title: Verwenden eine ContentProvider
+title: Verwenden von ContentProvider
 ms.prod: xamarin
 ms.assetid: 251F7557-328D-0132-F39D-595920A28B87
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: b9b6340d4aaf386c7b4be8ebf366589582771be2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d1ec628de3481820f320a5a8e6ef88fcbaab75a6
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763292"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122113"
 ---
-# <a name="using-a-contentprovider"></a>Verwenden eine ContentProvider
+# <a name="using-a-contentprovider"></a>Verwenden von ContentProvider
 
-CursorAdapters kann auch verwendet werden, um Daten aus einer ContentProvider anzuzeigen.
-ContentProviders ermöglichen es Ihnen, Daten von anderen Anwendungen verfügbar gemachten zugreifen (einschließlich Android Systemdaten wie Kontakte, Medien und Kalenderinformationen).
+Von CursorAdapters können auch verwendet werden, um Daten aus ContentProvider anzuzeigen.
+ContentProviders ermöglichen Ihnen den Zugriff auf Daten, die von anderen Anwendungen verfügbar gemacht werden (einschließlich Android Systemdaten z. B. Kontakte, Medien und Kalenderinformationen).
 
-Die bevorzugte Methode für eine ContentProvider Zugriff ist mit einem CursorLoader mithilfe der LoaderManager. LoaderManager seit Android 3.0 (API-Ebene 11, Wabe) zu blockierenden Tasks deaktiviert den Hauptthread zu verschieben, und mit einem CursorLoader kann die Daten in einem Thread geladen werden, bevor Sie die Bindung an eine Listenansicht zum Anzeigen.
+ContentProvider den Zugriff auf die bevorzugte Methode ist mit einem mithilfe der LoaderManager CursorLoader. LoaderManager in Android 3.0 (API-Ebene 11, Honeycomb) zum Verschieben des blockierenden Tasks aus der Haupt-Thread eingeführt wurde und mit einem CursorLoader kann die Daten in einem Thread geladen werden, bevor Sie an einer ListView für die Anzeige gebunden wird.
 
-Verweisen auf [Einführung in ContentProviders](~/android/platform/content-providers/index.md) für Weitere Informationen.
+Finden Sie unter [Einführung in die ContentProviders](~/android/platform/content-providers/index.md) für Weitere Informationen.
 
