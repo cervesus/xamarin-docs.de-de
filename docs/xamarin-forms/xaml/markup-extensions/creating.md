@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: d4b3d5c65ddf8be433d1f8e182774aa839f60357
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 6b61d03910d908f5fab0d946ed97c88b1e32885d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995595"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109548"
 ---
 # <a name="creating-xaml-markup-extensions"></a>Erstellen von XAML-Markuperweiterungen
 
@@ -152,7 +152,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` ist hilfreich, wenn eine XAML-Datei auf eine Bilddatei, die als eingebettete Ressource in der .NET Standard-Bibliotheksprojekts gespeichert muss. Er verwendet den `Source` Eigenschaft zum Aufrufen der statischen `ImageSource.FromResource` Methode. Diese Methode erfordert einen vollqualifizierten Ressourcennamen, besteht der Name der Assembly, den Namen des Ordners und der Dateiname, die durch Punkte getrennt sind. Die `ImageResourceExtension` nicht muss der Assemblyname, Teil da sie erhält den Namen der Assembly mit Reflektion und voran, damit die `Source` Eigenschaft. Unabhängig davon, `ImageSource.FromResource` muss die Assembly mit der Bitmap, was bedeutet, dass diese Erweiterung der XAML-Ressource Teil einer externen Bibliothek werden kann, es sei denn, die Images auch in dieser Bibliothek aufgerufen werden. (Finden Sie unter den [ **eingebettete Bilder** ](~/xamarin-forms/user-interface/images.md#embedded_images) Weitere Informationen zum Zugreifen auf die Bitmaps, die als eingebettete Ressourcen gespeichert.)
+`ImageResourceExtension` ist hilfreich, wenn eine XAML-Datei auf eine Bilddatei, die als eingebettete Ressource in der .NET Standard-Bibliotheksprojekts gespeichert muss. Er verwendet den `Source` Eigenschaft zum Aufrufen der statischen `ImageSource.FromResource` Methode. Diese Methode erfordert einen vollqualifizierten Ressourcennamen, besteht der Name der Assembly, den Namen des Ordners und der Dateiname, die durch Punkte getrennt sind. Die `ImageResourceExtension` nicht muss der Assemblyname, Teil da sie erhält den Namen der Assembly mit Reflektion und voran, damit die `Source` Eigenschaft. Unabhängig davon, `ImageSource.FromResource` muss die Assembly mit der Bitmap, was bedeutet, dass diese Erweiterung der XAML-Ressource Teil einer externen Bibliothek werden kann, es sei denn, die Images auch in dieser Bibliothek aufgerufen werden. (Finden Sie unter den [ **eingebettete Bilder** ](~/xamarin-forms/user-interface/images.md#embedded-images) Weitere Informationen zum Zugreifen auf die Bitmaps, die als eingebettete Ressourcen gespeichert.)
 
 Obwohl `ImageResourceExtension` erfordert die `Source` festzulegende Eigenschaft, die `Source` Eigenschaft wird in einem Attribut angegeben, wie die Content-Eigenschaft der Klasse. Dies bedeutet, dass die `Source=` kann Teil des Ausdrucks in geschweiften Klammern weggelassen werden. In der **Image-Resource-Demo** Seite die `Image` Elemente abgerufen werden zwei Abbilder, die mit den Namen des Ordners und der Dateiname, die durch Punkte getrennt sind:
 
@@ -196,7 +196,7 @@ Die `IProvideValueTarget` Schnittstelle definiert zwei Eigenschaften: `TargetObj
 
 Die `GetService` Aufruf mit dem Argument `typeof(IProvideValueTarget)` tatsächlich gibt ein Objekt vom Typ `SimpleValueTargetProvider`, definiert in der `Xamarin.Forms.Xaml.Internals` Namespace. Wenn Sie die Umwandlung des Rückgabewerts von `GetService` in diesen Typ können Sie auch zugreifen eine `ParentObjects` -Eigenschaft, die ein Array ist, enthält der `Image` Element der `Grid` übergeordnetes Element und die `ImageResourceDemoPage` übergeordnet der `Grid`.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Schlussfolgerung
 
 XAML-Markuperweiterungen spielen eine wichtige Rolle in XAML, durch die Erweiterung der Möglichkeit, Attribute aus einer Vielzahl von Quellen festzulegen. Darüber hinaus, wenn die vorhandenen XAML-Markuperweiterungen nicht angeben, was genau Sie benötigen, können Sie auch eigene schreiben.
 

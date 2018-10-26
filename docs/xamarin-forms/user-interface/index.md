@@ -6,13 +6,13 @@ ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/07/2017
-ms.openlocfilehash: a89bce4f35a73d0b881fd38b2ae246d2eb86ef7b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 10/17/2018
+ms.openlocfilehash: 62e170558fc908b0ec13669b60eb08495c183b09
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996820"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104948"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms-Schnittstelle Benutzeransichten
 
@@ -44,11 +44,11 @@ DataPages Geben Sie eine API, um schnell und einfach zu eine Datenquelle mit vor
 
 ## <a name="datepickerdatepickermd"></a>[DatePicker](datepicker.md)
 
-Die `DatePicker` ermöglicht es einem Benutzer ein Datum in einem angegebenen Bereich auswählen. Die Implementierung erfolgt mithilfe der Datumsauswahl unterstützt durch die spezielle Plattform, die das Programm ausgeführt wird.
+Die `DatePicker` ermöglicht es einem Benutzer ein Datum in einem angegebenen Bereich auswählen. Die Implementierung erfolgt mithilfe der Datumsauswahl unterstützt durch die spezielle Plattform, die die Anwendung ausgeführt wird.
 
-## <a name="graphicsgraphicsindexmd"></a>[Grafik](graphics/index.md)
+## <a name="graphics-with-skiasharpgraphicsskiasharpindexmd"></a>[Grafiken mit SkiaSharp](graphics/skiasharp/index.md)
 
-Wie Sie Grafiken und Spiele-Engine visuelle Elemente in einer Xamarin.Forms-Anwendung zu integrieren.
+Wie Sie Grafiken in einer Xamarin.Forms-Anwendung mithilfe von SkiaSharp zu integrieren.
 
 ## <a name="imagesimagesmd"></a>[Bilder](images.md)
 
@@ -74,6 +74,10 @@ Die [ `Picker` ](xref:Xamarin.Forms.Picker) Ansicht ist ein Steuerelement für e
 
 Die `Slider` ermöglicht es einem Benutzer, die einen numerischen Wert aus einen durchgehenden Bereich auswählen.
 
+## <a name="steppersteppermd"></a>[Zugeordnetem](stepper.md)
+
+Die `Stepper` ermöglicht es einem Benutzer einen numerischen Wert aus einem Bereich von Werten auswählen. Es besteht aus zwei Schaltflächen, die mit der Bezeichnung Minuszeichen und Pluszeichen. Bearbeiten die beiden Schaltflächen ändert den ausgewählten Wert inkrementell.
+
 ## <a name="stylesstylesindexmd"></a>[Stile](styles/index.md)
 
 Schriftart, Farbe und andere Attribute können in Stilen gruppiert werden, die für Steuerelemente, Layouts und der gesamten Anwendung mit ResourceDictionaries freigegeben sein können.
@@ -89,6 +93,10 @@ Xamarin.Forms verfügt über mehrere Ansichten darstellen von Text und empfangen
 ## <a name="themesthemesindexmd"></a>[Designs](themes/index.md)
 
 Xamarin.Forms-Designs definieren eine bestimme visuelle darstellen, für die standard-Steuerelemente. Nachdem Sie ein Design zu Ressourcenverzeichnis der Anwendung hinzugefügt haben, ändert sich die Darstellung der Standardsteuerelemente.
+
+## <a name="timepickertimepickermd"></a>[TimePicker](timepicker.md)
+
+Die `TimePicker` ermöglicht es einem Benutzer auf eine Uhrzeit auswählen. Die Implementierung erfolgt mithilfe der Zeitauswahl unterstützt werden, indem Sie die spezielle Plattform, die die Anwendung ausgeführt wird, auf.
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[Manager für den visuellen Zustand](visual-state-manager.md)
 

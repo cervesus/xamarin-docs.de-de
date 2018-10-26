@@ -1,60 +1,60 @@
 ---
 title: BouncingGame-details
-description: Dieses Dokument enthält eine exemplarische Vorgehensweise für die Erstellung von BouncingGame, ein einfaches springenden Ball Spiel CocosSharp integriert.
+description: Dieses Dokument enthält eine exemplarische Vorgehensweise für die Erstellung von BouncingGame, eine einfache hüpfenden Ball-Spiels mit CocosSharp erstellt.
 ms.prod: xamarin
 ms.assetid: AC9FD56F-6E4A-40DA-8168-45A761D869FD
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: 1a2423fcbeec0c3414b766a6c9e6f64ab53f4bf9
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 42155eb541849f365e7fab0a3d5c3ad583e760b7
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783106"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109405"
 ---
 # <a name="bouncinggame-details"></a>BouncingGame-details
 
 > [!TIP]
-> Der Code für BouncingGame finden Sie der [Xamarin Samples](https://developer.xamarin.com/samples/mobile/BouncingGame/). Um optimale dieser Anleitung folgen, herunterladen Sie und untersuchen Sie den Code aus, wie im Handbuch darauf verweist.
+> Der Code für BouncingGame finden Sie der [Xamarin-Beispiele](https://developer.xamarin.com/samples/mobile/BouncingGame/). Um am besten zusammen mit dieser Anleitung folgen, laden Sie, und untersuchen Sie den Code ein, wie im Handbuch darauf verweist.
 
-In dieser exemplarischen Vorgehensweise wird gezeigt, wie ein einfache springenden Ball-Spiel mithilfe von CocosSharp implementiert. 
+Diese exemplarische Vorgehensweise veranschaulicht das Implementieren eines einfachen hüpfenden Ball-Spiels mit CocosSharp. 
 
- - Entzippt Spiel Inhalt
- - Allgemeine CocosSharp visuelle Elemente
- - Visuelles Element, um hinzufügen `GameLayer`
- - Jeder Frame Logik implementieren
+ - Entzippen game-Inhalt
+ - Allgemeine visual CocosSharp-Elemente
+ - Hinzufügen von visuellen Elementen zu `GameLayer`
+ - Every-Frame-Logik implementieren
 
-Unsere fertig Spiel wird wie folgt aussehen:
+Unser fertigen Spiel wird wie folgt aussehen:
 
 ![BouncingGame, abgeschlossen](bouncing-game-images/image1.png "BouncingGame, abgeschlossen")
 
-## <a name="unzipping-game-content"></a>Entzippt Spiel Inhalt
+## <a name="unzipping-game-content"></a>Entzippen game-Inhalt
 
-Entwickler verwenden oft den Begriff *Inhalt* um auf Dateien ohne Code zu verweisen, die in der Regel durch visual Künstler, game-Designer oder audio-Designer erstellt werden. Allgemeine Typen von Inhalten Includedateien, die zum Anzeigen von visuellen Elementen, sound wiedergeben oder KI (AI) Verhalten steuern. Aus Sicht der ein Spiel Entwicklungsteam wird Inhalt in der Regel von nicht-Programmierern erstellt. Unsere Spiel enthält zwei Typen von Inhalten:
+Spieleentwickler verwenden oft den Begriff *Inhalt* um auf nicht-Codedateien zu verweisen, die in der Regel vom visual Künstler, game-Designer oder audio-Designer erstellt werden. Allgemeine Arten von Inhalten Includedateien, die zum Anzeigen von visuellen Elementen, sound wiedergeben oder künstliche Intelligenz (KI) Verhalten zu steuern. Aus Sicht des Teams eine Spiele-Entwicklung wird Inhalt in der Regel von nicht-Programmierern erstellt. Unser Spiel enthält zwei Arten von Inhalten:
 
- - PNG-Dateien definieren, wie die Kugel und Paddel angezeigt werden.
- - Eine einzelne Xnb-Datei definieren die Schriftart für die Bewertung Anzeige (ausführlicher beschrieben, wenn wir die Bewertung Anzeige unten hinzufügen)
+ - PNG‑Dateien, die definieren, wie die Kugel und ein Paddel angezeigt werden.
+ - Eine einzelne Xnb-Datei zum Definieren der Schriftart, die für die spielstandsanzeige (erläutert im Detail, wenn wir die folgenden Ergebnis-Anzeige hinzufügen)
 
-Dieser Inhalt hier verwendete finden Sie in [Inhalte Zip](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Content.zip?raw=true). Wir benötigen diese Dateien heruntergeladen und entzippt an einem Speicherort, den wir später in dieser exemplarischen Vorgehensweise zugreift.
+Dieser Inhalt, der hier verwendete finden Sie im [Inhalt Zip](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Content.zip?raw=true). Wir benötigen diese Dateien heruntergeladen und entzippt an einem Speicherort an, dem wir später in dieser exemplarischen Vorgehensweise zugreift.
 
-## <a name="common-cocossharp-visual-elements"></a>Allgemeine CocosSharp visuelle Elemente
+## <a name="common-cocossharp-visual-elements"></a>Allgemeine visual CocosSharp-Elemente
 
-CocosSharp bietet eine Reihe von Klassen verwendet, um Visualisierungen anzuzeigen. Einige Elemente sind direkt sichtbar, während andere für die Organisation verwendet werden. Wir verwenden die folgenden im Spiel bisher:
+CocosSharp bietet eine Reihe von Klassen verwendet, um Visualisierungen anzuzeigen. Es sind einige Elemente direkt sichtbar, während andere für die Organisation verwendet werden. Wir verwenden die folgenden im Spiel:
 
- - `CCNode` – Basisklasse für alle visuellen Objekte in CocosSharp. Die `CCNode` Klasse enthält eine `AddChild` Funktion, die zum Erstellen einer Hierarchie über-und untergeordneten Elementen verwendet werden kann auch bezeichnet als eine *visuellen Struktur* oder *Szene Graph*. Alle unten aufgeführten Klassen erben von `CCNode`.
- - `CCScene` – Stamm der visuellen Struktur für alle CocosSharp Spiele. Alle visuellen Elemente muss Teil einer visuellen Struktur mit einem `CCScene` beim Stamm an, oder sie wird nicht angezeigt werden.
- - `CCLayer` – Container für visuelle Objekte, z. B. `CCSprite`. Wie der Name schon sagt, den `CCLayer` Klasse dient zum Steuern, wie visuelle Elemente Ebene bauen aufeinander auf.
- - `CCSprite` – Zeigt ein Bild oder einen Teil eines Bildes. `CCSprite` Instanzen können positioniert werden, geändert, und eine Reihe von visuellen Effekte bereitstellen.
- - `CCLabel` – Zeigt eine Zeichenfolge auf dem Bildschirm. Die Schriftart `CCLabel` in einer Datei Xnb definiert ist. Xnbs im folgenden ausführlicher erläutert.
+ - `CCNode` – Basisklasse für alle visuellen Objekte in CocosSharp. Die `CCNode` -Klasse enthält eine `AddChild` Funktion, die verwendet werden kann, erstellen Sie eine über-/unterordnungshierarchie, auch bezeichnet als eine *visuelle Struktur* oder *szenengraph*. Alle unten aufgeführten Klassen erben von `CCNode`.
+ - `CCScene` – Stamm der visuellen Struktur für alle CocosSharp-Spiele. Alle visuellen Elemente müssen Mitglied einer visuellen Struktur mit einem `CCScene` beim Stamm an, oder sie wird nicht angezeigt werden.
+ - `CCLayer` – Container für visuelle Objekte, z. B. `CCSprite`. Wie der Name schon sagt, den `CCLayer` Klasse wird verwendet, um die steuern, wie visuelle Elemente Ebene bauen aufeinander auf.
+ - `CCSprite` – Zeigt ein Bild oder einen Teil eines Bilds. `CCSprite` Instanzen können positioniert werden, vergrößert, und eine Reihe von visuellen Effekten bereitstellen.
+ - `CCLabel` – Zeigt eine Zeichenfolge auf dem Bildschirm an. Die Schriftart für `CCLabel` in eine Datei Xnb definiert ist. Xnbs im folgenden ausführlicher ist werden gleich erörtert.
 
-Um zu verstehen, wie die verschiedenen Typen verwendet werden müssen wir gehen von einer einzelnen `CCSprite`. Visuelle Elemente hinzugefügt werden müssen eine `CCLayer`, und die visuelle Struktur muss eine `CCScene` auf der Stammebene. Aus diesem Grund die über-/unterordnungsbeziehung für eine einzelne `CCSprite` wäre `CCScene`  >  `CCLayer`  >  `CCSprite`.
+Um zu verstehen, wie die verschiedenen Typen verwendet werden betrachten wir ein einzelnes `CCSprite`. Visuelle Elemente hinzugefügt werden müssen eine `CCLayer`, und die visuelle Struktur muss eine `CCScene` im Stammverzeichnis. Aus diesem Grund die über-/unterordnungsbeziehung für ein einzelnes `CCSprite` wäre `CCScene`  >  `CCLayer`  >  `CCSprite`.
 
-## <a name="adding-visual-elements-to-gamelayer"></a>GameLayer hinzugefügt visuelle Elemente
+## <a name="adding-visual-elements-to-gamelayer"></a>Hinzufügen von visuellen Elementen auf GameLayer
 
-### <a name="adding-the-paddle-sprite"></a>Hinzufügen von Paddel sprite
+### <a name="adding-the-paddle-sprite"></a>Das Paddel Sprite hinzufügen
 
-Anfänglich setzen wir das Spiel im Hintergrund auf Schwarz und auch hinzufügen, eine einzelne `CCSprite` Rendern auf dem Bildschirm. Ändern der `GameLayer` hinzuzufügende Klasse eine `CCSprite` wie folgt:
+Zunächst legen wir das Spiel Hintergrund Schwarz, und fügen auch eine einzelne `CCSprite` auf dem Bildschirm rendern. Ändern der `GameLayer` -Klasse zum Hinzufügen einer `CCSprite` wie folgt:
 
 ```csharp
 using System;
@@ -94,48 +94,48 @@ namespace BouncingGame
 }
 ```
 
-Der obige Code erstellt ein einzelnes `CCSprite` und fügt es als untergeordnetes Element von der `GameLayer`. Die `CCSprite` Konstruktor erlaubt es uns, definieren Sie die Bilddatei, die als eine Zeichenfolge verwendet. Getesteten Codes weist CocosSharp für eine Datei namens gesucht werden soll `paddle` (die Erweiterung wird weggelassen, die weiter unten in diesem Handbuch besprechen wir). CocosSharp sieht für alle Dateinamen `paddle` im Stamm-Ordners "Content" (also **Inhalt**) sowie alle Ordner hinzugefügt der `gameView.ContentManager.SearchPaths` (im vorherigen Abschnitt erläutert).
+Der obige Code erstellt einen einzigen `CCSprite` und fügt Sie es als untergeordnetes Element der `GameLayer`. Die `CCSprite` Konstruktor ermöglicht uns die Image-Datei für die Verwendung als Zeichenfolge definieren. Unser Code weist CocosSharp, Suchen nach einer Datei mit `paddle` (die Erweiterung wird weggelassen, die später in diesem Handbuch erörtern wir). CocosSharp sucht nach Dateinamen `paddle` im Stammordner Content (d.h. **Inhalt**) sowie alle Ordner hinzugefügt der `gameView.ContentManager.SearchPaths` (im vorherigen Abschnitt erläutert).
 
-Wir fügen die Dateien direkt in das Stammverzeichnis **Content** Ordner für iOS und Android. Hierzu mit der rechten Maustaste oder Steuerelement klicken Sie auf die **Content** Ordner in der iOS-Projekt, und wählen **hinzufügen** > **Dateien hinzufügen...** Navigieren Sie zu, in denen wir zuvor den Inhalt entzippt, und wählen Sie **paddle.png**. Wenn Informationen zum Hinzufügen der das in Ordner aufgefordert werden, wählen wir die **Kopie** Option:
+Wir fügen die Dateien direkt in das Stammverzeichnis **Content** Ordner für iOS und Android. Zu diesem Zweck mit der rechten Maustaste oder Strg + Klick auf die **Content** Ordner im iOS-Projekt, und wählen **hinzufügen** > **Dateien hinzufügen...** Navigieren Sie zu, in dem wir die Inhalte zuvor entpackt, und wählen Sie **paddle.png**. Wenn Sie gefragt werden, dazu, wie Sie die Datei zu Ordner hinzufügen, wählen wir die **Kopie** Option:
 
-![Der Add File zum Dialogfeld "Ordner"](bouncing-game-images/image2.png "der Add File zum Dialogfeld \"Ordner\"")
+![Die Datei hinzufügen, Dialogfeld "Ordner"](bouncing-game-images/image2.png "der Add File, Dialogfeld \"Ordner\"")
 
-Als Nächstes fügen wir die Datei auf das Android-Projekt. Mit der rechten Maustaste oder Steuerelement mit einem Klick auf den Inhaltsordner (Dies ist der **Bestand** Ordner auf Android-Projekte), und wählen Sie **hinzufügen** > **Dateien hinzufügen...** . Diesmal, navigieren Sie zu des iOS-Projekts **Content** Ordner. Wenn Sie Informationen zum Hinzufügen der das aufgefordert werden, wählen Sie die **einen Link hinzufügen** Option:
+Als Nächstes fügen wir die Datei zum Android-Projekt. Mit der rechten Maustaste oder Strg + Klick auf den Ordner "Content" (dieser befindet sich in der **Assets** Ordner auf Android-Projekte), und wählen Sie **hinzufügen** > **Dateien hinzufügen...** . Diesmal, navigieren Sie zu den iOS-Projekt **Content** Ordner. Wenn Sie Informationen zum Hinzufügen der Datei aufgefordert wird, wählen Sie die **Hinzufügen eines Links** Option:
 
-![Der Add File zum Dialogfeld "Ordner"](bouncing-game-images/addalink.png "der Add File zum Dialogfeld \"Ordner\"")
+![Die Datei hinzufügen, Dialogfeld "Ordner"](bouncing-game-images/addalink.png "Datei das Hinzufügen, Dialogfeld \"Ordner\"")
 
-Wird besprochen, warum Dateien musste für beide Projekte unten hinzugefügt werden. Jedes Projekt **Content** Ordner enthalten jetzt die **paddle.png** Datei:
+Wir werden erläutern, warum Dateien an beide Projekte unten hinzugefügt werden musste. Jedes Projekts **Content** Ordner enthalten jetzt die **paddle.png** Datei:
 
-![Der Inhalt des Ordners "Content"](bouncing-game-images/image3.png "den Inhalt des Ordners \"Content\"")
+![Der Inhalt der Ordner "Content"](bouncing-game-images/image3.png "den Inhalt der Ordner \"Content\"")
 
-Beim Ausführen des Spiels sehen wir die `CCSprite` gezeichnet werden:
+Beim Ausführen des Spiels sehen, dass die `CCSprite` gezeichnet werden:
 
 ![Das Paddel, auf dem Bildschirm gezeichnet](bouncing-game-images/image4.png "das Paddel, auf dem Bildschirm gezeichnet")
 
 ### <a name="file-details"></a>Dateidetails
 
-Bisher haben wir eine einzelne Datei dem Projekt hinzugefügt, und der Vorgang war ziemlich selbsterklärend. Wir einfach hinzugefügt der **paddle.png** Datei wird in der **Content** Ordner, und es im Code verwiesen wird. Werfen Sie einen Moment Zeit, einige Aspekte beim Arbeiten mit Dateien im CocosSharp betrachten.
+Bisher haben wir eine einzelne Datei zum Projekt hinzugefügt, und der Prozess war ziemlich einfach. Wir einfach hinzugefügt, die **paddle.png** -Datei in die **Inhalt** Ordner und auf die sie im Code verwiesen wird. Werfen Sie einen Moment Zeit, einige Aspekte betrachten, bei der Arbeit mit Dateien in CocosSharp an.
 
 #### <a name="capitalization"></a>Großbuchstaben
 
-Beachten Sie, dass der Dateiname und die Zeichenfolge, die wir im Code verwendet, um den Zugriff auf die Datei Kleinbuchstaben sind. Dies ist, da einige Plattformen (z. B. Windows-Desktop- und iOS-Simulator) Groß-/Kleinschreibung zu beachten sind, während andere Plattformen (z. B. Android und iOS-Gerät), Groß-/Kleinschreibung beachtet werden. Wir alle Kleinbuchstabe Dateien für den Rest dieses Lernprogramms verwenden, damit die Dateien und den Code als plattformübergreifende bleiben wie möglich.
+Beachten Sie, dass der Dateiname und die Zeichenfolge, die wir im Code verwendet, um Zugriff auf die Datei, die beide Kleinbuchstaben sind. Dies ist, da einige Plattformen (z. B. Windows-Desktop und iOS-Simulator) Groß-/Kleinschreibung sind, während andere Plattformen (z. B. Android und iOS-Gerät), Groß-/Kleinschreibung beachtet werden. Wir alle lower-case-Dateien für den Rest dieses Tutorials verwenden, damit die Dateien und den Code als plattformübergreifende bleiben wie möglich.
 
 #### <a name="extensions"></a>Erweiterungen
 
-Der Konstruktor zum Erstellen der Sprite umfasst nicht die Erweiterung ".png" beim Verweis auf die Datei Paddel. Die Erweiterung für Dateien wird in der Regel ausgelassen werden, wenn zwischen den Plattformen arbeiten an CocosSharp Projekten als Dateierweiterungen für den gleichen Ressourcentyp unterscheiden kann. Audio-Dateien können z. B. .aiff, MP3 oder .wma Dateiformate, die abhängig von der Plattformaufrufs aufweisen. Wenn die Deaktivieren der Erweiterungs belassen, kann den gleichen Code funktioniert auf allen Plattformen unabhängig von der Erweiterung.
+Der Konstruktor für das Sprite erstellen schließt nicht die Erweiterung ".png", beim Verweis auf das Paddel-Datei. Die Erweiterung für Dateien wird in der Regel weggelassen, wenn das Arbeiten mit CocosSharp-Projekte als Dateierweiterungen für den gleichen Objekttyp zwischen Plattformen unterscheiden kann. Audiodateien können z. B. der .aiff,. MP3 oder .wma-Dateiformate, die auf der Plattform abhängig sein. Die Erweiterung für das Systemadministratorkonto ermöglicht es den gleichen Code funktioniert auf allen Plattformen, unabhängig von der Erweiterung aus.
 
-#### <a name="content-in-platform-specific-projects"></a>Inhalte in plattformspezifischen Projekte
+#### <a name="content-in-platform-specific-projects"></a>Inhalte in den plattformspezifischen Projekten
 
-Im Gegensatz zu den Großteil der Codedateien, eine einer PCL, Content-Dateien müssen jede plattformspezifisches Projekt hinzugefügt werden. CocosSharp erfordert dies für gibt es zwei Gründe:
+Im Gegensatz zu den meisten die Codedateien, die in einer PCL werden können, müssen jedes plattformspezifische Projekt Inhaltsdateien hinzugefügt werden. CocosSharp erfordert dies für zwei Gründe:
 
-1. Jede Plattform weist unterschiedliche **Buildvorgänge**. Inhalte hinzugefügt, die iOS-Projekten verwenden, sollten die **BundleResource** Buildvorgang. Inhalte hinzugefügt, Android-Projekte verwenden, sollten die **AndroidAsset** Buildvorgang.
-2. Einige Plattformen erfordern plattformspezifischen Dateiformate. .Xnb Schriftartdateien unterscheiden sich z. B. zwischen IOS- und Android-Geräten, wie wir später in dieser exemplarischen Vorgehensweise sehen werden.
+1. Jede Plattform gibt es verschiedene **Buildvorgänge**. Inhalte hinzugefügt, die iOS-Projekte verwenden, sollten die **BundleResource** Buildvorgang. Inhalte hinzugefügt, die Android-Projekte verwenden, sollten die **AndroidAsset** Buildvorgang.
+2. Einige Plattformen ist erforderlich, plattformspezifischen-Dateiformate. .Xnb Schriftartdateien unterscheiden sich z. B. zwischen iOS und Android, wie wir später in dieser exemplarischen Vorgehensweise sehen werden.
 
-Unterscheiden sich ein Dateiformat nicht zwischen den Plattformen (z. B. PNG), können Sie dann jede Plattform dieselbe Datei, in denen eine oder mehrere Plattformen die Datei vom gleichen Speicherort verknüpfen können.
+Wenn eine Datei im Format nicht zwischen verschiedenen Plattformen (z. B. PNG) unterscheidet, kann jede Plattform die gleiche Datei verwenden, wo eine oder mehrere Plattformen auf die Datei am selben Speicherort verknüpfen können.
 
 ## <a name="orientation"></a>Ausrichtung
 
-Genau wie jede andere app können CocosSharp apps im Hochformat oder Querformat Ausrichtungen ausführen. Es passen das Spiel im Hochformat Dateimodus ausgeführt. Ändern Sie zunächst den auflösungscode im Spiel bisher, einem Seitenverhältnis Hochformat zu behandeln. Zu diesem Zweck ändern die `width` und `height` Werte in der `LoadGame` Methode in der `ViewController` auf iOS-Klasse und `MainActivity` Klasse auf Android-Geräten:
+Genau wie jede andere app können CocosSharp-apps im Hoch- oder Querformat Ausrichtungen ausführen. Passen wir das Spiel im reinen Hochformatansicht-Modus ausgeführt. Ändern Sie zunächst die auflösungscode im Spiel, einem Seitenverhältnis von Hochformat zu behandeln. Zu diesem Zweck Ändern der `width` und `height` Werte in der `LoadGame` -Methode in der die `ViewController` Klasse, die unter iOS und `MainActivity` Klasse, die unter Android:
 
 ```csharp
 void LoadGame (object sender, EventArgs e)
@@ -152,47 +152,47 @@ void LoadGame (object sender, EventArgs e)
     // ...
 ```
 
-Als Nächstes müssen wir jedes Projekt plattformspezifischen auszuführende im Hochformat zu ändern.
+Als Nächstes müssen wir so ändern Sie jedes plattformspezifische Projekt im Hochformatmodus ausgeführt.
 
 ### <a name="ios-orientation"></a>iOS-Ausrichtung
 
-Um die iOS-Projekt Ausrichtung zu ändern, wählen die **"Info.plist"** in der Datei die **BouncingGame.iOS** Projekt, und ändern Sie **iPhone/iPod Bereitstellungsinformationen** und die **iPad Bereitstellungsinformationen** nur Hochformat Ausrichtungen einschließen:
+Um Ausrichtung für das iOS-Projekt zu ändern, wählen Sie die **"Info.plist"** Datei die **BouncingGame.iOS** Projekt, und ändern Sie **iPhone/iPod Bereitstellungsinformationen** und die **iPad-Bereitstellungsinformationen** Hochformat-Ausrichtung nur einschließen:
 
-![Ausrichtung Optionen](bouncing-game-images/image5.png "Ausrichtung-Optionen")
+![Ausrichtungsoptionen](bouncing-game-images/image5.png "Ausrichtungsoptionen")
 
 ### <a name="android-orientation"></a>Android-Ausrichtung
 
-Um das Android-Projekt Ausrichtung zu ändern, öffnen Sie die MainActivity.cs-Datei im Projekt BouncingGame.Android. Ändern Sie die Aktivitätsdefinition-Attribut, sodass nur eine Hochformat wie folgt angegeben:
+Um das Android-Projekt Ausrichtung zu ändern, öffnen Sie die "MainActivity.cs" im Projekt BouncingGame.Android aus. Ändern Sie die Definition der Aktivität-Attribut, sodass es nur eine Hochformat wie folgt angibt:
 
 ```csharp
-[Activity (
-    Label = "BouncingGame.Android",
-    AlwaysRetainTaskState = true,
-    Icon = "@drawable/icon",
-    Theme = "@android:style/Theme.NoTitleBar",
-    ScreenOrientation = ScreenOrientation.Portrait,
-    LaunchMode = LaunchMode.SingleInstance,
-    MainLauncher = true,
-    ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.Keyboard | ConfigChanges.KeyboardHidden)
+[Activity (
+    Label = "BouncingGame.Android",
+    AlwaysRetainTaskState = true,
+    Icon = "@drawable/icon",
+    Theme = "@android:style/Theme.NoTitleBar",
+    ScreenOrientation = ScreenOrientation.Portrait,
+    LaunchMode = LaunchMode.SingleInstance,
+    MainLauncher = true,
+    ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.Keyboard | ConfigChanges.KeyboardHidden)
 ]
-public class MainActivity : Activity
+public class MainActivity : Activity
 { 
 ...
 ```
 
-## <a name="default-coordinate-system"></a>Standard-Koordinatensystem
+## <a name="default-coordinate-system"></a>Standardkoordinatensystem
 
-Unsere Code instanziiert einen `CCSprite`, legt der `PositionX` und `PositionY` Werte und 100. Standardmäßig, bedeutet dies, dass die `CCSprite` Center wird auf 100 Pixel nach oben und nach rechts von der linken unteren Ecke des Bildschirms positioniert werden. Das Koordinatensystem kann geändert werden, durch das Anfügen einer `CCCamera` auf die `CCLayer`. Es wird nicht erreiche `CCCamera` in diesem Projekt, aber die Weitere Informationen zu `CCCamera` finden Sie in der [CocosSharp-API-Dokumentation](https://developer.xamarin.com/api/type/CocosSharp.CCLayer/).
+Unser Code, die instanziiert ein `CCSprite`, legt die `PositionX` und `PositionY` Werte und 100. Standardmäßig bedeutet dies, dass die `CCSprite` Center an 100 Pixel nach oben und nach rechts neben der unteren linken Ecke des Bildschirms platziert. Das Koordinatensystem kann geändert werden, durch Anfügen einer `CCCamera` auf die `CCLayer`. Unsere wird nicht mit `CCCamera` in diesem Projekt, aber die Weitere Informationen zu `CCCamera` finden Sie in der [CocosSharp-API-Dokumentation](https://developer.xamarin.com/api/type/CocosSharp.CCLayer/).
 
-Die 100 Pixel erwähnten "game" Pixel im Gegensatz zu Pixel auf der Hardware. Dies bedeutet, dass das Ausführen des gleichen Spiels auf einem Gerät mit einer anderen Auflösung (z. B. einem iPad oder iPhone) Objekte positioniert wird und ordnungsgemäß dimensioniert wird relativ zum physischen Bildschirms führt. Insbesondere das Spiel sichtbaren Bereich immer 1024 Pixel hoch und 768 Pixel breit ist, wie sieht die Auflösung haben wir zuvor im angegebenen die `LoadGame` Methode.
+Die 100 Pixel genannten "game" Pixel im Gegensatz zu Pixel auf der Hardware. Dies bedeutet, dass dasselbe Spiel auf einem Gerät von einer anderen Auflösung (z. B. einem iPad im Vergleich zu einem iPhone) ausgeführten Objekte positioniert und ordnungsgemäß dimensioniert wird relativ zum physischen Bildschirm führt. Insbesondere sichtbaren Bereich des Spiels immer 1024 Pixel Höhe und Breite von 768 Pixel, da dies die Lösung haben wir angegeben, weiter oben in der `LoadGame` Methode.
 
-## <a name="adding-the-ball-sprite"></a>Hinzufügen von Sprite Kugel
+## <a name="adding-the-ball-sprite"></a>Hinzufügen der Ball sprite
 
-Nun, da wir mit den Grundlagen der Arbeit mit vertraut `CCSprite`, fügen wir die zweite `CCSprite` – eine Kugel. Wir müssen folgende Schritte, die sind sehr ähnlich wie das Paddel erstellten `CCSprite`. 
+Nun, da wir vertraut mit den Grundlagen der Arbeit mit `CCSprite`, fügen wir die zweite `CCSprite` – einen Ball. Wir müssen folgende Schritte sind sehr ähnlich wie wir das Paddel erstellt `CCSprite`. 
 
-Zunächst, wir fügen die **ball.png** Image aus dem Ordner extrahiert, in der iOS-Projekt **Content** Ordner. Wählen Sie diese Option **Kopie** die Datei, die **Content** Verzeichnis. Führen Sie die gleichen Schritte wie oben, um einen Link zum Hinzufügen der **ball.png** -Datei in das Android-Projekt.
+Wir werden zunächst Hinzufügen der **ball.png** Image aus dem extrahierten Ordner in der iOS-Projekt **Content** Ordner. Wählen Sie diese Option **Kopie** Datei, die die **Content** Verzeichnis. Führen Sie die gleichen Schritte wie oben, um einen Link zu der **ball.png** -Datei in das Android-Projekt.
 
-Als Nächstes erstellen Sie die `CCSprite` für diese Kugel durch Hinzufügen eines Mitglieds wird aufgerufen, `ballSprite` auf der `GameScene` Klasse als auch Instanziierungscode für die `ballSprite`. Nach Abschluss der `GameLayer` Klasse wird wie folgt aussehen:
+Als Nächstes erstellen Sie die `CCSprite` für diese Balls durch Hinzufügen eines Mitglieds aufgerufen `ballSprite` auf die `GameScene` Klasse sowie die von Instanziierungscode für die `ballSprite`. Nach Abschluss der `GameLayer` Klasse sieht wie folgt:
 
 ```csharp
 public class GameLayer : CCLayer
@@ -213,11 +213,11 @@ public class GameLayer : CCLayer
     }
 ```
 
-## <a name="adding-the-score-label"></a>Die Bezeichnung Ergebnis hinzufügen
+## <a name="adding-the-score-label"></a>Die Bewertung Bezeichnung hinzufügen
 
-Diese, um das Spiel hinzugefügt wird letzten visuelle Element ist ein `CCLabel` die Anzahl der anzuzeigenden hat der Benutzer erfolgreich die Kugel abgewiesen. Die `CCLabel` verwendet eine Schriftart, die im Konstruktor angegebene Zeichenfolgen auf Bildschirm angezeigt werden sollen.
+Das letzte visuelle Element, das Spiel hinzugefügt, wird eine `CCLabel` der Benutzer hat die Anzahl der anzuzeigenden haben erfolgreich den Ball. Die `CCLabel` mithilfe eine Schriftart, die im Konstruktor angegebene Zeichenfolgen auf dem Bildschirm angezeigt.
 
-Fügen Sie den folgenden Code zum Erstellen einer `CCLabel` -Instanz im `GameLayer`. Einmal beendet der Code sollte wie folgt aussehen:
+Fügen Sie folgenden Code zum Erstellen einer `CCLabel` -Instanz im `GameLayer`. Nach Abschluss des Vorgangs der Code sollte wie folgt aussehen:
 
 ```csharp
 public class GameLayer : CCLayer
@@ -245,13 +245,13 @@ public class GameLayer : CCLayer
     // ...
 ```
 
-Beachten Sie, die die ScoreLabel verwendet ein `AnchorPoint` von `CCPoint.AnchorUpperLeft`, was bedeutet, dass die `PositionX` und `PositionY` Werte definieren die linke obere Position. Auf diese Weise Position der `scoreLabel` relativ zur linken oberen Rand des Bildschirms, ohne dass die Bezeichnung Dimensionen berücksichtigen.
+Beachten Sie, die die ScoreLabel verwendet eine `AnchorPoint` von `CCPoint.AnchorUpperLeft`, was bedeutet, dass die `PositionX` und `PositionY` Werte definieren die obere linke Position. Auf diese Weise Position der `scoreLabel` relativ zur linken oberen Rand des Bildschirms, ohne dass die Maße berücksichtigt werden müssen.
 
-## <a name="implementing-every-frame-logic"></a>Jeder Frame Logik implementieren
+## <a name="implementing-every-frame-logic"></a>Every-Frame-Logik implementieren
 
-Bisher zeigt das Spiel statische themawechsel an Wir werden hinzufügen Logik, um zu steuern, die Verschiebung von Objekten in der Szene durch Hinzufügen von Code, der die Position der Objekte in sehr häufig aktualisiert. In diesem Fall führt der Code sechzig Male pro Sekunde – auch bezeichnet als hundert *Frames* pro Sekunde (es sei denn, die Hardware nicht dies oft zu aktualisieren behandeln kann). Insbesondere werden wir hinzufügen Logik, um die Kugel liegen und für das Paddel, verschieben Sie das Paddel gemäß Eingabe und Bewertung der Spieler zu aktualisieren, jedes Mal, wenn die Kugel das Paddel eintritt bounce vornehmen.
+Bisher enthält das Spiel eine statische Szene. Wir werden hinzufügen Logik, um zu steuern, die Verschiebung der Objekte in der Szene durch Hinzufügen von Code, der die Position der Objekte häufig aktualisiert. In diesem Fall wird der Code ausgeführt, sechzig Mal pro Sekunde – auch bezeichnet als 60 *Frames* pro Sekunde (es sei denn, die Hardware nicht dies häufig zu aktualisieren verarbeiten kann). Insbesondere werden wir hinzufügen Logik, um den Ball fallen, und für das Paddel, um das Paddel gemäß Eingabe zu verschieben und das Ergebnis des Spielers zu aktualisieren, jedes Mal, wenn der Ball das Paddel eintritt springt zu machen.
 
-Die `Schedule` -Methode, die von bereitgestellte der `CCNode` Klasse, können wir das Spiel jeden Frame Logik hinzugefügt. Fügen wir den Code nach `// New code` an den Konstruktor GameLayer:
+Die `Schedule` -Methode, die von bereitgestellte der `CCNode` Klasse, die wir der every-Frame-Logik für das Spiel hinzufügen können. Wir fügen den Code nach `// New code` an den Konstruktor GameLayer:
 
 ```csharp
 public GameLayer () : base (CCColor4B.Black)
@@ -275,7 +275,7 @@ public GameLayer () : base (CCColor4B.Black)
 }
 ```
 
-Erstellen Sie jetzt eine `RunGameLogic` Methode in der `GameLayer` -Klasse, die gesamte Logik jeden Frame gespeichert werden soll:
+Erstellen Sie jetzt eine `RunGameLogic` -Methode in der die `GameLayer` -Klasse, die gesamte Logik alle Frames gespeichert werden soll:
 
 ```csharp
 void RunGameLogic(float frameTimeInSeconds)
@@ -283,13 +283,13 @@ void RunGameLogic(float frameTimeInSeconds)
 }
 ```
 
-Der Parameter "float" definiert, wie lange der Rahmen in Sekunden ist. Dieser Wert wird verwendet werden bei der Implementierung der Ball bewegt.
+Der "float"-Parameter definiert, wie lange der Frame in Sekunden ist. Wir verwenden diesen Wert, wenn die Bewegung des Balls zu implementieren.
 
-### <a name="making-the-ball-fall"></a>Machen die Kugel liegen
+### <a name="making-the-ball-fall"></a>Machen den Ball fallen
 
-Stellen wir die Kugel, die entweder manuell implementierende Schwerpunkt Code oder mithilfe der integrierten Box2D-Funktionen in CocosSharp liegen. Das Modul für Box2D physikalische Simulation steht CocosSharp Spiele. Er ist sehr leistungsfähig als auch effizient, erfordert jedoch Setupcode schreiben. Da die physikalische Simulation recht einfach ist, wird hier manuell implementiert werden.
+Wir können den Ball fallen entweder manuell implementieren Schwerkraft Code oder mithilfe der integrierten Funktionen der Box2D in CocosSharp vornehmen. Das Physikmodul Simulation Box2D steht CocosSharp-Spiele. Es ist sehr leistungsfähig und effizient, erfordert jedoch das Schreiben von Setupcode. Da die Physiksimulation recht einfach ist, wird hier manuell implementiert werden.
 
-Zum Implementieren der Schwerpunkt müssen wir zum Speichern der X- und Y-Geschwindigkeit des Balls. Wir werden zwei Elemente zum Hinzufügen der `GameLayer` Klasse:
+Zum Implementieren der Schwerkraft müssen wir zum Speichern der X- und Y-Geschwindigkeit des Balls. Wir werden zwei Elemente zum Hinzufügen der `GameLayer` Klasse:
 
 ```csharp
 float ballXVelocity;
@@ -298,7 +298,7 @@ float ballYVelocity;
 const float gravity = 140;
 ```
 
-Als Nächstes implementieren wir die Abnehmend Logik in `RunGameLogic`:
+Als Nächstes implementieren wir können die fallender Logik in `RunGameLogic`:
 
 ```csharp
 void RunGameLogic(float frameTimeInSeconds)
@@ -310,9 +310,9 @@ void RunGameLogic(float frameTimeInSeconds)
 }
 ```
 
-### <a name="moving-the-paddle-with-touch-input"></a>Verschieben Sie das Paddel mit Fingereingabe
+### <a name="moving-the-paddle-with-touch-input"></a>Verschieben Sie das Paddel mit Touch-Punkts
 
-Nun, da die Kugel zurück, wir fügen horizontale Verschiebung auf das Paddel mithilfe der `CCEventListenerTouchAllAtOnce` Objekt. Dieses Objekt stellt eine Anzahl von Eingabe-bezogene Ereignisse bereit. In diesem Fall möchten wir benachrichtigt werden, wenn alle Berührungspunkte zu verschieben, sodass wir die Position des das Paddel anpassen können. Die `GameLayer` bereits instanziiert einen `CCEventListenerTouchAllAtOnce`, sodass wir einfach zuweisen müssen die `OnTouchesMoved` delegieren. Zu diesem Zweck ändern Sie die Methode AddedToScene wie folgt:
+Nun, da der Ball fallen wird, hinzugefügt horizontale Verschiebung das Paddel mithilfe der `CCEventListenerTouchAllAtOnce` Objekt. Dieses Objekt stellt eine Anzahl von Eingabe-bezogene Ereignisse bereit. In diesem Fall möchten wir benachrichtigt werden, wenn alle Berührungspunkte zu verschieben, sodass wir die Position des das Paddel anpassen können. Die `GameLayer` bereits instanziiert ein `CCEventListenerTouchAllAtOnce`, daher wir einfach weisen müssen die `OnTouchesMoved` delegieren. Zu diesem Zweck ändern Sie die AddedToScene-Methode wie folgt:
 
 ```csharp
 protected override void AddedToScene ()
@@ -340,9 +340,9 @@ void HandleTouchesMoved (System.Collections.Generic.List<CCTouch> touches, CCEve
 }
 ```
 
-### <a name="implementing-ball-collision"></a>Implementieren von Ball Kollisionsrate
+### <a name="implementing-ball-collision"></a>Implementieren der Ball-Konflikt
 
-Beim Ausführen des Spiels jetzt sehen wir, dass die Kugel über das Paddel liegt. Implementieren wir *Kollision* (Logik zum Reagieren auf sich überschneidende Spiel Objekte) im Code für jeden-Frame. Da verschieben Objekte ändern jeder Frame positioniert, Konflikte überprüfen in der Regel wird auch jeder Frame ausgeführt. Wir werden auch hinzufügen Geschwindigkeit auf der x-Achse bei der Kugel das Paddel trifft, um das Spiel einige Herausforderung hinzuzufügen, aber dies bedeutet, dass wir verhindern, dass die Kugel hinter den Rand des Bildschirms verschieben müssen. Es geschieht dies der `RunGameLogic` Code nach dem Anwenden der Geschwindigkeit, um die `ballSprite` nach `// New Code`:
+Wenn wir das Spiel ausführen, nachdem wir sehen, dass der Ball über das Paddel liegt. Implementieren wir *Kollisionen* (Logik zum Reagieren auf überlappende Spielobjekte) in der every-Frame-Code. Da verschieben Änderung jedes Bild positioniert, Konflikt ist in der Regel auch jedes Einzelbild ausgeführt. Wir werden auch hinzufügen Geschwindigkeit auf der x-Achse der Ball trifft das Paddel, um das Spiel eine Herausforderung hinzuzufügen, aber dies bedeutet, dass wir benötigen, um zu verhindern, dass den Ball überschreiten den Rändern des Bildschirms. Machen wir dies der `RunGameLogic` Code nach dem Anwenden der Geschwindigkeit, um die `ballSprite` nach `// New Code`:
 
 ```csharp
 void RunGameLogic(float frameTimeInSeconds)
@@ -383,15 +383,15 @@ void RunGameLogic(float frameTimeInSeconds)
 }
 ```
 
-## <a name="adding-scoring"></a>Hinzufügen von Bewertung
+## <a name="adding-scoring"></a>Hinzufügen der Bewertung
 
-Nun, dass das Spiel wiedergegeben werden, ist der letzte Schritt, die Bewertungsprofile Logik hinzufügen. Diese wird Mitglied Bewertung zuerst hinzugefügt, auf die GameLayer-Klasse, die mit dem Namen `score`:
+Nun, das Spiel gespielt werden wird, ist der letzte Schritt, Bewertung Logik hinzufügen. Zuerst hinzugefügt Mitglied Bewertung der GameLayer-Klasse, die mit dem Namen `score`:
 
 ```csharp
 int score;
 ```
 
-Wir verwenden diese Variable zum Nachverfolgen der Spieler Bewertung und zum Anzeigen dieser mithilfe der `scoreLabel`. Soll dies fügen Sie folgenden Code in der If-Anweisung in `RunGameLogic` bei der Kugel und Paddel überschneiden:
+Wir verwenden diese Variable, um zu verfolgen das Ergebnis des Spielers, und klicken Sie mit angezeigt der `scoreLabel`. Sie den folgenden Code in der If-Anweisung in Hiermit `RunGameLogic` Wenn der Ball und ein Paddel überlappen:
 
 ```csharp
 // ...
@@ -410,17 +410,17 @@ if (doesBallOverlapPaddle && isMovingDownward)
 // ...
 ```
 
-Jetzt können wir führen Sie das Spiel und sehen, dass das Spiel ein Ergebnis, die erhöht werden anzeigt, wie die Kugel aus der Paddel abprallt:
+Jetzt können wir das Spiel ausführen und sehen, dass das Spiel eine Bewertung, die erhöht werden anzeigt, da auf das Paddel der Ball animiert werden soll:
 
-![Das abgeschlossene Spiel, mit einem inkrementellen Bewertung](bouncing-game-images/image1.png "das abgeschlossene Spiel, mit einem inkrementellen Bewertung")
+![Das Spiel abgeschlossen mit einer inkrementierten Bewertung](bouncing-game-images/image1.png "das Spiel abgeschlossen mit einer inkrementierten Bewertung")
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser exemplarischen Vorgehensweise wird dargestellt, Erstellen eines plattformübergreifenden Spiels mit Grafiken, physikalische und Eingabe mit CocosSharp. Es ist der erste Schritt beim Einstieg in die Entwicklung von CocosSharp. Erläutert einige der am häufigsten verwendeten Klassen im CocosSharp, wie Sie eine visuelle Struktur zu konstruieren, dass Objekte ordnungsgemäß gerendert und zum Implementieren von jedem Frame Spiellogik.
+In dieser exemplarischen Vorgehensweise wird dargestellt, erstellen ein plattformübergreifendes Spiel mit Grafiken, Physik und Verwenden von CocosSharp Eingabe. Es ist der erste Schritt in den ersten Schritten mit CocosSharp-Spiele-Entwicklung. Wir haben einige der am häufigsten verwendeten Klassen in CocosSharp, wie Sie eine visuelle Struktur zu erstellen, damit Objekte ordnungsgemäß gerendert und zum Implementieren von Spiellogik der every-Frame.
 
-In dieser exemplarischen Vorgehensweise behandelt nur einen kleinen Teil der was das Spiele CocosSharp-Modul bietet. Informationen und exemplarische Vorgehensweisen auf anderen CocosSharp Themen finden Sie unter [den Rest der CocosSharp Anleitungen](~/graphics-games/cocossharp/index.md).
+In dieser exemplarischen Vorgehensweise behandelt nur einen kleinen Teil des was die CocosSharp-game-Engine bietet. Weitere Informationen und exemplarische Vorgehensweisen zur anderen CocosSharp-Themen, finden Sie unter [den Rest der CocosSharp Anleitungen](~/graphics-games/cocossharp/index.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Abgeschlossene Spiel (Beispiel)](https://developer.xamarin.com/samples/mobile/BouncingGame/)
-- [Inhalt (Beispiel)](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Content.zip?raw=true)
+- [Abgeschlossenes Spiel (Beispiel)](https://developer.xamarin.com/samples/mobile/BouncingGame/)
+- [Spiele-Inhalt (Beispiel)](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Content.zip?raw=true)

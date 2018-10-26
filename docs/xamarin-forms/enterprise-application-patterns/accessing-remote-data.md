@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 009a4025bc9df6f657964b7e97e559635ef0a929
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 3a46b939fa87cd6535c9f86c46981c098542e7c9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996164"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105479"
 ---
 # <a name="accessing-remote-data"></a>Zugreifen auf Remotedaten
 
@@ -60,26 +60,26 @@ Abbildung 10-1 zeigt die Interaktion von Klassen, die gelesen werden der katalog
 Wenn die `CatalogView` navigiert wird, die `OnInitialize` -Methode in der die `CatalogViewModel` -Klasse aufgerufen wird. Diese Methode ruft Katalogdaten aus den katalogmicroservice ab, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
-public override async Task InitializeAsync(object navigationData)  
+public override async Task InitializeAsync(object navigationData)  
 {  
-    ...  
-    Products = await _productsService.GetCatalogAsync();  
-    ...  
+    ...  
+    Products = await _productsService.GetCatalogAsync();  
+    ...  
 }
 ```
 
 Diese Methode ruft die `GetCatalogAsync` Methode der `CatalogService` -Instanz, die in eingefügt wurde die `CatalogViewModel` von Autofac. Das folgende Codebeispiel zeigt die `GetCatalogAsync` Methode:
 
 ```csharp
-public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()  
+public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()  
 {  
-    UriBuilder builder = new UriBuilder(GlobalSetting.Instance.CatalogEndpoint);  
-    builder.Path = "api/v1/catalog/items";  
-    string uri = builder.ToString();  
+    UriBuilder builder = new UriBuilder(GlobalSetting.Instance.CatalogEndpoint);  
+    builder.Path = "api/v1/catalog/items";  
+    string uri = builder.ToString();  
 
-    CatalogRoot catalog = await _requestProvider.GetAsync<CatalogRoot>(uri);  
-    ...  
-    return catalog?.Data.ToObservableCollection();            
+    CatalogRoot catalog = await _requestProvider.GetAsync<CatalogRoot>(uri);  
+    ...  
+    return catalog?.Data.ToObservableCollection();            
 }
 ```
 
@@ -88,18 +88,18 @@ Diese Methode den URI, der die Ressource identifiziert, an die Anforderung, erst
 Das folgende Codebeispiel zeigt die `GetAsync` -Methode in der die `RequestProvider` Klasse:
 
 ```csharp
-public async Task<TResult> GetAsync<TResult>(string uri, string token = "")  
+public async Task<TResult> GetAsync<TResult>(string uri, string token = "")  
 {  
-    HttpClient httpClient = CreateHttpClient(token);  
-    HttpResponseMessage response = await httpClient.GetAsync(uri);  
+    HttpClient httpClient = CreateHttpClient(token);  
+    HttpResponseMessage response = await httpClient.GetAsync(uri);  
 
-    await HandleResponse(response);  
-    string serialized = await response.Content.ReadAsStringAsync();  
+    await HandleResponse(response);  
+    string serialized = await response.Content.ReadAsStringAsync();  
 
-    TResult result = await Task.Run(() =>   
-        JsonConvert.DeserializeObject<TResult>(serialized, _serializerSettings));  
+    TResult result = await Task.Run(() =>   
+        JsonConvert.DeserializeObject<TResult>(serialized, _serializerSettings));  
 
-    return result;  
+    return result;  
 }
 ```
 
@@ -108,18 +108,18 @@ Diese Methode ruft die `CreateHttpClient` -Methode, die eine Instanz der zurück
 Die `CreateHttpClient` Methode ist im folgenden Codebeispiel gezeigt:
 
 ```csharp
-private HttpClient CreateHttpClient(string token = "")  
+private HttpClient CreateHttpClient(string token = "")  
 {  
-    var httpClient = new HttpClient();  
-    httpClient.DefaultRequestHeaders.Accept.Add(  
-        new MediaTypeWithQualityHeaderValue("application/json"));  
+    var httpClient = new HttpClient();  
+    httpClient.DefaultRequestHeaders.Accept.Add(  
+        new MediaTypeWithQualityHeaderValue("application/json"));  
 
-    if (!string.IsNullOrEmpty(token))  
-    {  
-        httpClient.DefaultRequestHeaders.Authorization =   
-            new AuthenticationHeaderValue("Bearer", token);  
-    }  
-    return httpClient;  
+    if (!string.IsNullOrEmpty(token))  
+    {  
+        httpClient.DefaultRequestHeaders.Authorization =   
+            new AuthenticationHeaderValue("Bearer", token);  
+    }  
+    return httpClient;  
 }
 ```
 
@@ -130,23 +130,23 @@ Wenn die `GetAsync` -Methode in der die `RequestProvider` -Klasse ruft `HttpClie
 ```csharp
 [HttpGet]  
 [Route("[action]")]  
-public async Task<IActionResult> Items(  
-    [FromQuery]int pageSize = 10, [FromQuery]int pageIndex = 0)  
+public async Task<IActionResult> Items(  
+    [FromQuery]int pageSize = 10, [FromQuery]int pageIndex = 0)  
 {  
-    var totalItems = await _catalogContext.CatalogItems  
-        .LongCountAsync();  
+    var totalItems = await _catalogContext.CatalogItems  
+        .LongCountAsync();  
 
-    var itemsOnPage = await _catalogContext.CatalogItems  
-        .OrderBy(c=>c.Name)  
-        .Skip(pageSize * pageIndex)  
-        .Take(pageSize)  
-        .ToListAsync();  
+    var itemsOnPage = await _catalogContext.CatalogItems  
+        .OrderBy(c=>c.Name)  
+        .Skip(pageSize * pageIndex)  
+        .Take(pageSize)  
+        .ToListAsync();  
 
-    itemsOnPage = ComposePicUri(itemsOnPage);  
-    var model = new PaginatedItemsViewModel<CatalogItem>(  
-        pageIndex, pageSize, totalItems, itemsOnPage);             
+    itemsOnPage = ComposePicUri(itemsOnPage);  
+    var model = new PaginatedItemsViewModel<CatalogItem>(  
+        pageIndex, pageSize, totalItems, itemsOnPage);             
 
-    return Ok(model);  
+    return Ok(model);  
 }
 ```
 
@@ -165,26 +165,26 @@ Abbildung 10-2 zeigt die Interaktion von Klassen, die die Warenkorb angezeigten 
 Wenn ein Element, im Warenkorb abgelegt hinzugefügt wird, der `ReCalculateTotalAsync` -Methode in der die `BasketViewModel` -Klasse aufgerufen wird. Diese Methode aktualisiert den Gesamtwert der Artikel im Warenkorb, und sendet die Warenkorb-Daten an die Warenkorb-Microservice, wie im folgenden Codebeispiel wird veranschaulicht:
 
 ```csharp
-private async Task ReCalculateTotalAsync()  
+private async Task ReCalculateTotalAsync()  
 {  
-    ...  
-    await _basketService.UpdateBasketAsync(new CustomerBasket  
-    {  
-        BuyerId = userInfo.UserId,   
-        Items = BasketItems.ToList()  
-    }, authToken);  
+    ...  
+    await _basketService.UpdateBasketAsync(new CustomerBasket  
+    {  
+        BuyerId = userInfo.UserId,   
+        Items = BasketItems.ToList()  
+    }, authToken);  
 }
 ```
 
 Diese Methode ruft die `UpdateBasketAsync` Methode der `BasketService` -Instanz, die in eingefügt wurde die `BasketViewModel` von Autofac. Die folgende Methode zeigt die `UpdateBasketAsync` Methode:
 
 ```csharp
-public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket customerBasket, string token)  
+public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket customerBasket, string token)  
 {  
-    UriBuilder builder = new UriBuilder(GlobalSetting.Instance.BasketEndpoint);  
-    string uri = builder.ToString();  
-    var result = await _requestProvider.PostAsync(uri, customerBasket, token);  
-    return result;  
+    UriBuilder builder = new UriBuilder(GlobalSetting.Instance.BasketEndpoint);  
+    string uri = builder.ToString();  
+    var result = await _requestProvider.PostAsync(uri, customerBasket, token);  
+    return result;  
 }
 ```
 
@@ -193,22 +193,22 @@ Diese Methode den URI, der die Ressource identifiziert, an die Anforderung, erst
 Im folgenden Codebeispiel wird veranschaulicht, eines der `PostAsync` Methoden in der `RequestProvider` Klasse:
 
 ```csharp
-public async Task<TResult> PostAsync<TResult>(  
-    string uri, TResult data, string token = "", string header = "")  
+public async Task<TResult> PostAsync<TResult>(  
+    string uri, TResult data, string token = "", string header = "")  
 {  
-    HttpClient httpClient = CreateHttpClient(token);  
-    ...  
-    var content = new StringContent(JsonConvert.SerializeObject(data));  
-    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");  
-    HttpResponseMessage response = await httpClient.PostAsync(uri, content);  
+    HttpClient httpClient = CreateHttpClient(token);  
+    ...  
+    var content = new StringContent(JsonConvert.SerializeObject(data));  
+    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");  
+    HttpResponseMessage response = await httpClient.PostAsync(uri, content);  
 
-    await HandleResponse(response);  
-    string serialized = await response.Content.ReadAsStringAsync();  
+    await HandleResponse(response);  
+    string serialized = await response.Content.ReadAsStringAsync();  
 
-    TResult result = await Task.Run(() =>  
-        JsonConvert.DeserializeObject<TResult>(serialized, _serializerSettings));  
+    TResult result = await Task.Run(() =>  
+        JsonConvert.DeserializeObject<TResult>(serialized, _serializerSettings));  
 
-    return result;  
+    return result;  
 }
 ```
 
@@ -218,10 +218,10 @@ Wenn die `PostAsync` -Methode in der die `RequestProvider` -Klasse ruft `HttpCli
 
 ```csharp
 [HttpPost]  
-public async Task<IActionResult> Post([FromBody]CustomerBasket value)  
+public async Task<IActionResult> Post([FromBody]CustomerBasket value)  
 {  
-    var basket = await _repository.UpdateBasketAsync(value);  
-    return Ok(basket);  
+    var basket = await _repository.UpdateBasketAsync(value);  
+    return Ok(basket);  
 }
 ```
 
@@ -238,23 +238,23 @@ Abbildung 10-3 zeigt die Interaktionen von Klassen, die Warenkorb-Daten aus der 
 Beim Aufrufen des Auscheckvorgangs der `CheckoutAsync` -Methode in der die `CheckoutViewModel` -Klasse aufgerufen wird. Diese Methode erstellt einen neuen Auftrag vor dem Löschen der Einkaufswagen, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
-private async Task CheckoutAsync()  
+private async Task CheckoutAsync()  
 {  
-    ...  
-    await _basketService.ClearBasketAsync(_shippingAddress.Id.ToString(), authToken);  
-    ...  
+    ...  
+    await _basketService.ClearBasketAsync(_shippingAddress.Id.ToString(), authToken);  
+    ...  
 }
 ```
 
 Diese Methode ruft die `ClearBasketAsync` Methode der `BasketService` -Instanz, die in eingefügt wurde die `CheckoutViewModel` von Autofac. Die folgende Methode zeigt die `ClearBasketAsync` Methode:
 
 ```csharp
-public async Task ClearBasketAsync(string guidUser, string token)  
+public async Task ClearBasketAsync(string guidUser, string token)  
 {  
-    UriBuilder builder = new UriBuilder(GlobalSetting.Instance.BasketEndpoint);  
-    builder.Path = guidUser;  
-    string uri = builder.ToString();  
-    await _requestProvider.DeleteAsync(uri, token);  
+    UriBuilder builder = new UriBuilder(GlobalSetting.Instance.BasketEndpoint);  
+    builder.Path = guidUser;  
+    string uri = builder.ToString();  
+    await _requestProvider.DeleteAsync(uri, token);  
 }
 ```
 
@@ -263,10 +263,10 @@ Diese Methode erstellt den URI, der die Ressource identifiziert, die an die Anfo
 Das folgende Codebeispiel zeigt die `DeleteAsync` -Methode in der die `RequestProvider` Klasse:
 
 ```csharp
-public async Task DeleteAsync(string uri, string token = "")  
+public async Task DeleteAsync(string uri, string token = "")  
 {  
-    HttpClient httpClient = CreateHttpClient(token);  
-    await httpClient.DeleteAsync(uri);  
+    HttpClient httpClient = CreateHttpClient(token);  
+    await httpClient.DeleteAsync(uri);  
 }
 ```
 
@@ -276,9 +276,9 @@ Wenn die `DeleteAsync` -Methode in der die `RequestProvider` -Klasse ruft `HttpC
 
 ```csharp
 [HttpDelete("{id}")]  
-public void Delete(string id)  
+public void Delete(string id)  
 {  
-    _repository.DeleteBasketAsync(id);  
+    _repository.DeleteBasketAsync(id);  
 }
 ```
 
@@ -320,7 +320,7 @@ Es ist auch möglich, dass ein Cache ansammeln kann, wenn die Daten bleiben für
 
 Die "eshoponcontainers" mobile app nutzt remote produktabbildungen, die aus der Zwischenspeicherung profitieren. Diese Images werden angezeigt, indem die [ `Image` ](xref:Xamarin.Forms.Image) -Steuerelement, und die `CachedImage` Kontrolle durch die [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/) Bibliothek.
 
-Die Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) -Steuerelement unterstützt das Zwischenspeichern der heruntergeladenen Bilder. Caching ist standardmäßig aktiviert, und speichert das Bild lokal für 24 Stunden. Darüber hinaus kann die Ablaufzeit konfiguriert werden, mit der [ `CacheValidity` ](xref:Xamarin.Forms.UriImageSource.CacheValidity) Eigenschaft. Weitere Informationen finden Sie unter [heruntergeladene Bild zwischenspeichern](~/xamarin-forms/user-interface/images.md#Image_Caching).
+Die Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) -Steuerelement unterstützt das Zwischenspeichern der heruntergeladenen Bilder. Caching ist standardmäßig aktiviert, und speichert das Bild lokal für 24 Stunden. Darüber hinaus kann die Ablaufzeit konfiguriert werden, mit der [ `CacheValidity` ](xref:Xamarin.Forms.UriImageSource.CacheValidity) Eigenschaft. Weitere Informationen finden Sie unter [heruntergeladene Bild zwischenspeichern](~/xamarin-forms/user-interface/images.md#downloaded-image-caching).
 
 Die FFImageLoading `CachedImage` Steuerelement ist ein Ersatz für die Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) -Steuerelement zusätzliche Eigenschaften, die zusätzliche Funktionalität zu aktivieren. Für diese Funktion bietet die Steuerung, konfigurierbare zwischenspeichern, während Fehler unterstützt, und laden die Image-Platzhalter. Im folgenden Codebeispiel wird veranschaulicht, wie die mobile app "eshoponcontainers" verwendet die `CachedImage` steuern, der `ProductTemplate`, die die Datenvorlage ein, die die [ `ListView` ](xref:Xamarin.Forms.ListView) steuern, der `CatalogView`:
 

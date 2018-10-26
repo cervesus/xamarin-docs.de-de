@@ -5,13 +5,14 @@ ms.prod: xamarin
 ms.assetid: 8C30F8D3-1920-453E-9E8B-D40696736FF2
 author: conceptdev
 ms.author: crdun
+ms.custom: video
 ms.date: 07/18/2018
-ms.openlocfilehash: 65ba1915a2a968a14f0ce21bcada76e1b83531b0
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: d07b248b36feee909db9c863eb17f1a900f58e60
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270659"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105830"
 ---
 # <a name="net-standard-library-code-sharing"></a>Freigeben von Code in .NET standard-Bibliothek
 
@@ -27,7 +28,7 @@ Dieser Abschnitt zeigt die Schritte zum Erstellen und Verwenden einer .NET Stand
 
 ### <a name="creating-a-net-standard-library"></a>Erstellen einer .NET Standard-Bibliothek
 
-Der Projektmappe eine .NET Standard-Bibliothek hinzuzufügen ist ziemlich unkompliziert.
+Sie können eine .NET Standard-Bibliothek zu Ihrer Projektmappe mit den folgenden Schritten hinzufügen:
 
 1. In der **neues Projekt hinzufügen** wählen Sie im Dialogfeld die **.NET Core** Kategorie, und wählen Sie dann **.NET Standardbibliothek**:
 
@@ -77,7 +78,7 @@ Die Einstellungen für die .NET Standard-Bibliothek angezeigt und geändert werd
 
 ![Bearbeiten von .NET Standard-Zielframeworks in Projekteigenschaften](net-standard-images/vs03-w157.png "Bearbeiten Sie die Version des .NET Standard-Zielframeworks in den Projekteigenschaften")
 
-**Darüber hinaus gilt:** können Sie bearbeiten die `.csproj` direkt so bearbeiten Sie die `TargetFramework` Element, und ändern, welche Version verwendet wird, als Ziel verwendet (z. b. `<TargetFramework>netstandard2.0</TargetFramework>`) angezeigt wird.
+**Darüber hinaus gilt:** können Sie bearbeiten die `.csproj` direkt so bearbeiten Sie die `TargetFramework` Element, und ändern, welche Version verwendet wird, als Ziel verwendet (z. b. `<TargetFramework>netstandard2.0</TargetFramework>`).
 
 ### <a name="using-a-net-standard-library-project"></a>Mithilfe eines .NET Standard Library-Projekts
 
@@ -86,6 +87,10 @@ Sobald eine .NET Standard-Bibliothek erstellt wurde, können Sie aus allen kompa
 ![Verweisen auf eine .NET Standard-Bibliothek](net-standard-images/vs04.png "Klicken Sie in Visual Studio mit der rechten Maustaste auf den Knoten \"Verweise\", wählen Sie \"Verweis hinzufügen...\", und wechseln Sie dann auf die Registerkarte der Projektmappen-Projekte wie dargestellt")
 
 -----
+
+## <a name="net-standard-and-xamarinforms-for-the-net-developer-video"></a>.NET standard und Xamarin.Forms für den Entwickler für .NET (Video)
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/NET-Standard-and-XamarinForms-for-the-NET-Developer/player]
 
 ## <a name="related-links"></a>Verwandte Links
 

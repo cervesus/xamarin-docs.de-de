@@ -1,54 +1,54 @@
 ---
 title: Texteingabe in Xamarin.iOS
-description: Dieses Dokument beschreibt die Texteingabe in einem Xamarin.iOS-app. Es erläutert die Verwendung von UITextField und UITextVIew sowohl programmgesteuert als auch in der iOS-Designer.
+description: Dieses Dokument beschreibt die Texteingabe in einer Xamarin.iOS-app. Es erläutert die Verwendung von UITextField und UITextVIew sowohl programmgesteuert als auch in der iOS-Designer.
 ms.prod: xamarin
 ms.assetid: 03A7F1DC-017D-4501-91FD-82C78272CDB1
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 5d8648f5830a7adcd32d253b92fae45098f12a83
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b309cbdf37acaa71740a4d5d03e4824efd40f359
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790213"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107494"
 ---
 # <a name="text-input-in-xamarinios"></a>Texteingabe in Xamarin.iOS
 
-Benutzereingaben Text erfolgt mit der `UITextField` für einzeilige ein- und UITextView für mehrzeilige bearbeitbares Textfeld. Sie können entweder diese Steuerelemente auf einem Bildschirm ziehen und doppelklicken, um den ursprünglichen Text selbst festgelegt.
+Akzeptieren die Texteingabe des Benutzers erfolgt mithilfe der `UITextField` für einzeilige Eingaben und UITextView für mehrzeiligen bearbeitbaren Text. Können Sie diese beiden Steuerelemente auf einem Bildschirm ziehen und doppelklicken Sie auf, um den Begrüßungstext festzulegen.
 
-Die folgenden Screenshots zeigen die Symbole für diese Steuerelemente, befindet sich in der Toolbox-Block in Visual Studio für Mac:
+Die folgenden Screenshots zeigen die Symbole für diese Steuerelemente, die im Verzeichnis der Pad "Toolbox" in Visual Studio für Mac:
 
  [![](text-input-images/image11a.png "UITextField")](text-input-images/image11a.png#lightbox)
 
  [![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png#lightbox)
 
-Sobald Sie den Ausgang genannt haben und Storyboard-Datei gespeichert haben, ist Visual Studio für Mac aktualisiert die `.designer.cs` partielle Klasse, und Sie können die C#-Code, der das Steuerelement in der Klassendatei verweist auf Hinzufügen. Jedes Steuerelement verfügt über eigene eindeutige Eigenschaften und Ereignisse, die in C#-Code zugegriffen werden können.
+Nachdem Sie Outlet benannt haben und die Storyboard-Datei gespeichert haben, ist Visual Studio für Mac aktualisiert die `.designer.cs` partielle Klasse, und Sie können hinzufügen C# Code, der das Steuerelement in der Klassendatei verweist. Jedes Steuerelement verfügt über eine eigene eindeutige Eigenschaften und Ereignisse, die in zugegriffen werden können Ihre C# Code.
 
  <a name="UITextField" />
 
 
 ## <a name="uitextfield"></a>UITextField
 
-Die `UITextField` Steuerelement wird am häufigsten verwendet, um eine einzelne Zeile des Texteingabe z. B. ein Benutzername oder das Kennwort zu übernehmen. Einige der Optionen für das Anpassen des Steuerelements werden hier angezeigt:
+Die `UITextField` Steuerelement wird am häufigsten verwendet, eine einzige Codezeile Texteingabe wie z. B. ein Benutzername oder das Kennwort zu akzeptieren. Einige der verfügbaren Optionen zum Anpassen des Steuerelements werden hier angezeigt:
 
  [![](text-input-images/image15a.png "UITextField-Eigenschaften")](text-input-images/image15a.png#lightbox)
 
 Diese Steuerelemente werden im folgenden erläutert:
 
--  **Platzhalter** – Dies ist optional. Wenn festgelegt, es angezeigt wird, wenn das Textfeld "ist leer, in der Regel an, die dem Benutzer wird erläutert, welche Eingabe erwartet wird.
--  **Deaktivieren der Schaltfläche** – Dies steuert, wenn die Schaltfläche standard löschen (Grauer Kreis mit (X)) in das Textfeld "als eine Möglichkeit für den Benutzer mit schnell Klartext angezeigt wird. Es kann sein, dauerhaft ausgeblendet, dauerhaft sichtbar oder dargestellt, je nachdem, ob das Feld bearbeitet wird.
--  **Min-Font-Size** und **anpassen Anpassen** – ermöglicht die Schriftgröße automatisch angepasst, um mehr Text anpassen und zu verhindern, dass abgeschnitten werden, aber nur begrenzte keine kleiner als die angegebene Größe.
--  **Großschreibung** – an, ob Wörter, Sätze oder alle Eingaben automatisch groß geschrieben.
+-  **Platzhalter** – dieser Schritt ist optional. Wenn festgelegt, es angezeigt wird, wenn das Textfeld leer ist, in der Regel auf, die dem Benutzer wird erläutert, welche Eingabe erwartet wird.
+-  **Schaltfläche "löschen"** – Dies steuert, wenn die standardmäßige Schaltfläche "löschen" (den grauen Kreis mit (X)) in das Textfeld als eine Möglichkeit für den Benutzer mit Klartext schnell angezeigt wird. Es kann sein, dauerhaft ausgeblendeten, permanent sichtbar oder dargestellt, je nachdem, ob das Feld bearbeitet wird.
+-  **Minimaler Schriftgrad** und **anpassen Anpassen** – können den Schriftgrad automatisch angepasst, um mehr Text anpassen und zu verhindern, dass abgeschnitten werden, aber nur begrenzte keine kleiner als die angegebene Größe.
+-  **Großschreibung** – angibt, ob für die automatische Großschreibung von Wörtern, Sätzen oder alle Eingaben.
 -  **Korrektur** – ob Rechtschreibprüfung und Vorschläge aktiviert sind.
--  **Tastatur** – Steuerelemente die Tastatur-Format angezeigt, für die Eingabe, und daher welche Schlüssel auf der Tastatur verfügbar sind. Dies schließt Ziffernblock, Phone Pad, e-Mail-URL zusammen mit anderen Optionen.
--  **Darstellung** – steuert die Darstellungsart der Tastatur und werden entweder dunkle oder helle Design.
--  **Schlüssel zurückgegeben,** – ändern Sie die Bezeichnung auf die EINGABETASTE, um besser Rechnung, welche Aktion ausgeführt werden soll. Unterstützte Werte sind Go, Join, weiter, Route, Fertig, und suchen.
+-  **Tastatur** – Steuerelemente der Tastatur-Stil angezeigt, für die Eingabe, und welche Schlüssel sind daher verfügbar, auf der Tastatur. Dies schließt Pad "Anzahl" "," Phone Pad ","-e-Mail "," URL zusammen mit anderen Optionen.
+-  **Darstellung** – steuert die Darstellungsart des der Tastatur und werden entweder dunkel oder helles Design.
+-  **Schlüssel zurückgegeben,** – ändern Sie die Bezeichnung für die Return-Taste, besser widerzuspiegeln, welche Aktion durchgeführt wird. Unterstützte Werte sind Go, Join, weiter, Route, Fertig, und suchen.
 -  **Sichere** – gibt an, ob die Eingabe maskiert wird (z. B. eine Kennworteingabe).
 
 
-Wenn eine UITextField aufgerufen `textfield1` wurde um einen Bildschirm mit dem Designer können Sie festlegen oder ändern Sie dessen Eigenschaften in c# wie folgt:
+Wenn ein UITextField aufgerufen `textfield1` wurde auf einen Bildschirm mit dem Designer können Sie festlegen oder ändern seine Eigenschaften im C# wie folgt:
 
 ```csharp
 textfield1.Placeholder = "type email here...";
@@ -58,11 +58,11 @@ textfield1.MinimumFontSize = 17f;
 textfield1.AdjustsFontSizeToFitWidth = true;
 ```
 
-Xamarin.iOS bietet Enumerationen gegebenenfalls zu vereinfachen Sie die Einstellungen auswählen, z. B. soll die `UIKeyboardType` und `UIReturnKeyType` im vorherigen Codeausschnitt.
+Xamarin.iOS enthält Enumerationen, gegebenenfalls zu vereinfachen, um die Einstellungen auswählen, Sie, wie z. B. möchten, die `UIKeyboardType` und `UIReturnKeyType` im oben stehenden Codeausschnitt.
 
 ### <a name="display-text-programmatically"></a>Programmgesteuertes Anzeigen von Text
 
-Wenn Sie nicht Ihren Bildschirm-Designer entwerfen möchten oder wenn Sie etwas Text dynamisch zur Laufzeit hinzufügen möchten, Sie erstellen und Anzeigen einer UITextField programmgesteuert in die `ViewDidLoad` Methode eines Controllers anzeigen, wie folgt:
+Wenn Sie nicht auf den Bildschirm mit dem Designer entwerfen oder wenn Sie Text dynamisch zur Laufzeit hinzufügen möchten, können Sie diese erstellen und Anzeigen von ein UITextField programmgesteuert in die `ViewDidLoad` Methode einen ansichtscontroller wie folgt:
 
 ```csharp
 var frame = new CGRect(10, 10, 300, 40);
@@ -75,17 +75,17 @@ View.Add(textfield1);
 
 ## <a name="uitextview"></a>UITextView
 
-Die `UITextView` -Steuerelement kann verwendet werden, zum Anzeigen von nur-Lese Text oder mehrere Zeilen Texteingabe akzeptieren. Es weist viele der dieselben Optionen wie die `UITextField` (z. B. Großschreibung, Korrektur, usw.).
+Die `UITextView` -Steuerelement kann verwendet werden, zum Anzeigen von schreibgeschützten Text oder mehrere Zeilen Texteingaben akzeptieren. Es verfügt über zahlreiche dieselben Optionen wie die `UITextField` (z. B. Großschreibung, Korrektur, usw.).
 
  [![](text-input-images/image16a.png "UITextView-Eigenschaften")](text-input-images/image16a.png#lightbox)
 
-Die Eigenschaften umfassen:
+Bestimmte Eigenschaften enthalten:
 
--  **Verhalten** – ob der Text bearbeitbar oder schreibgeschützt ist.
--  **Erkennung** – erkennt und konvertiert die eingegebenen Daten durch Klicken aktivierbaren-Elementen wie z. B. Telefonnummern, die einen Aufruf auslösen können Adressen, werden links zu Maps, URLs an, öffnen in Safari, oder Datums- und Uhrzeitangaben, die werden Ereignisse im Kalender.
+-  **Verhalten** : Legt fest, ob der Text bearbeitbar oder schreibgeschützt ist.
+-  **Erkennung** – erkennt und konvertiert die eingegebenen Daten durch Klicken aktivierbaren Elemente wie z. B. Telefonnummern, die einen Aufruf, auslösen können behandelt werden, werden links zu Karten, URLs, die in Safari öffnen oder Datums- und Uhrzeitangaben, die Ereignisse werden, im Kalender.
 
 
-Wenn ein UITextView an einen Bildschirm mit dem Designer hinzugefügt wurde, können Sie festlegen oder ändern Sie ihre Eigenschaften wie folgt:
+Wenn eine UITextView zu einem Bildschirm mit dem Designer hinzugefügt wurde, können Sie festlegen oder ändern seine Eigenschaften wie folgt:
 
 ```csharp
 textview1.Text = "Lorem ipsum..."; // lots of text can go here

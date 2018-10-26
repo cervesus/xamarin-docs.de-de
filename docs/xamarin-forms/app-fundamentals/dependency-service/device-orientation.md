@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 620404a217b2e8a31192ae6613dcec023ac366cd
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 52b82033cbd6fe0e1a44f5729c815074852230bf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995640"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115418"
 ---
 # <a name="checking-device-orientation"></a>Überprüfen der Geräteausrichtung
 
@@ -29,7 +29,7 @@ Die Anwendung mit `DependencyService` wird die folgende Struktur aufweisen:
 ![](device-orientation-images/orientation-diagram.png "DependencyService Anwendungsstruktur")
 
 > [!NOTE]
-> Es ist möglich, erkennen, ob das Gerät im Hoch-oder Querformat in freigegebenem Code ist ein, wie in [Device Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation). Die Methode, die in diesem Artikel beschriebenen verwendet native Funktionen um weitere Informationen zu Ausrichtung, z. B., ob das Gerät, finden Sie verkehrt herum ist zu erhalten.
+> Es ist möglich, erkennen, ob das Gerät im Hoch-oder Querformat in freigegebenem Code ist ein, wie in [Geräteausrichtung](~/xamarin-forms/user-interface/layouts/device-orientation.md#Reacting_to_Changes_in_Orientation). Die Methode, die in diesem Artikel beschriebenen verwendet native Funktionen um weitere Informationen zu Ausrichtung, z. B., ob das Gerät, finden Sie verkehrt herum ist zu erhalten.
 
 <a name="Creating_the_Interface" />
 
@@ -215,7 +215,7 @@ public MainPage ()
 }
 ```
 
-Diese Anwendung unter iOS, Android oder den Windows-Plattformen ausgeführt und auf die Schaltfläche führt zu der der Text der Schaltfläche Aktualisieren mit der Ausrichtung des Geräts.
+Diese Anwendung unter iOS, Android oder den Windows-Plattformen ausgeführt und auf die Schaltfläche führt der Text der Schaltfläche Aktualisieren mit der Ausrichtung des Geräts.
 
 ![](device-orientation-images/orientation.png "Ausrichtung-Gerätebeispiel")
 

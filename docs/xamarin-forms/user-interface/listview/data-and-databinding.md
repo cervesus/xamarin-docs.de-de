@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: 71e1655b6bc05c621ee97fcf826ce8b468f0dd48
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 4f80682c5d8c4f5231fbdd2e081fdcf7962aa969
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351495"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103724"
 ---
 # <a name="listview-data-sources"></a>ListView-Datenquellen
 
@@ -89,7 +89,7 @@ Die Datenbindung funktioniert durch das Synchronisieren von Objekten wie deren g
 Weitere Informationen zur Datenbindung finden Sie unter [Grundlagen der Datenbindung](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md) die ist der vierte Teil von der [Xamarin.Forms XAML Basics-Artikelreihe](~/xamarin-forms/xaml/xaml-basics/index.md).
 
 ### <a name="binding-cells"></a>Binden von Zellen
-Eigenschaften von Zellen (und untergeordnete Elemente von Zellen) gebunden werden können, um Eigenschaften von Objekten in der `ItemsSource`. Z. B. konnte eine ListView verwendet werden, um eine Liste von Mitarbeitern mit Bildern zu präsentieren.
+Eigenschaften von Zellen (und untergeordnete Elemente von Zellen) gebunden werden können, um Eigenschaften von Objekten in der `ItemsSource`. Beispielsweise kann ein ListView verwendet werden, um eine Liste von Mitarbeitern darzustellen.
 
 Die Employee-Klasse:
 

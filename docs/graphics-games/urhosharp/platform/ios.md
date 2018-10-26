@@ -1,43 +1,43 @@
 ---
-title: UrhoSharp IOS- und tvos. außerdem wurden Unterstützung
-description: Dieses Dokument erläutert, iOS und tvos. außerdem wurden für UrhoSharp unterstützen. Es wird beschrieben, wie ein Projekt erstellen, konfigurieren und starten Urho, und führen Sie eine benutzerdefinierte Einbetten von Urho.
+title: Von UrhoSharp iOS und TvOS-Unterstützung
+description: In diesem Dokument wird erläutert, iOS und TvOS-Unterstützung für von UrhoSharp. Es beschreibt, wie ein Projekt erstellen, konfigurieren und starten Urho und führen Sie eine benutzerdefinierte Einbetten von Urho.
 ms.prod: xamarin
 ms.assetid: 7B06567E-E789-4EA1-A2A9-F3B2212EDD23
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 7e8975b6885f6c902634e05aafca0b8ee60a981c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f15ae458c6bd613b59700908ad7c121315e377ab
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783973"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108274"
 ---
-# <a name="urhosharp-ios-and-tvos-support"></a>UrhoSharp IOS- und tvos. außerdem wurden Unterstützung
+# <a name="urhosharp-ios-and-tvos-support"></a>Von UrhoSharp iOS und TvOS-Unterstützung
 
-Während Urho eine portable Klassenbibliothek ist, und ermöglicht die gleiche API über die verschiedenen Plattform verwendet werden, für die Spiellogik Sie weiterhin Urho in Ihren jeweiligen Treiber, Plattform und in einigen Fällen zu initialisieren müssen, sollten Sie bestimmte Funktionen der Plattform nutzen .
+Obwohl Urho eine portable Klassenbibliothek ist und ermöglicht die gleiche API für die verschiedenen Plattformen verwendet werden, für die Spiele-Logik, Sie dennoch Urho in Ihren jeweiligen Treiber, Plattform und in einigen Fällen zu initialisieren müssen, sollten Sie bestimmte Features der Plattform nutzen .
 
 In den nachfolgenden Seiten wird angenommen, dass `MyGame` ist eine Subclass von der `Application` Klasse.
 
-## <a name="ios-and-tvos"></a>iOS und tvos. außerdem wurden
+## <a name="ios-and-tvos"></a>iOS und tvOS
 
 **Unterstützte Architekturen:** armv7, arm64, i386
 
 ## <a name="creating-a-project"></a>Erstellen eines Projekts
 
-Erstellen Sie ein iOS-Projekt, und klicken Sie dann Ressourcenverzeichnis Daten hinzufügen und stellen Sie sicher, dass alle Dateien **BundleResource** als die **Buildvorgang**.
+Erstellen Sie ein iOS-Projekt, und klicken Sie dann Daten in das Verzeichnis "Resources" und stellen sicher, dass alle Dateien **BundleResource** als die **Buildvorgang**.
 
-![Projekt Setup](ios-images/image-4.png "Daten hinzufügen, um das Ressourcenverzeichnis")
+![Setup Project](ios-images/image-4.png "Hinzufügen von Daten zu dem Verzeichnis \"Resources\"")
 
 ## <a name="configuring-and-launching-urho"></a>Konfigurieren und starten Urho
 
-Hinzufügen von using-Anweisungen für die `Urho` und `Urho.iOS` Namespaces, und fügen Sie diesen Code für das Initialisieren von Urho sowie das Starten der Anwendungsstatus hinzu:
+Hinzufügen von using-Anweisungen für die `Urho` und `Urho.iOS` Namespaces, und fügen Sie diesen Code für Urho initialisieren, sowie Ihre Anwendung zu starten:
 
 ```csharp
 new MyGame().Run();
 ```
 
-Beachten Sie, dass seit iOS erwartet `FinishedLaunching` um abgeschlossen haben, sollten Sie den Aufruf von Warteschlange `Run()` führen Sie nach Abschluss der Methode, die dies ist eine allgemeine Vorgehensweise:
+Beachten Sie, dass da iOS erwartet `FinishedLaunching` um abzuschließen, sollten Sie den Aufruf von Warteschlange `Run()` führen Sie nach Abschluss der Methode, die dies ist eine allgemeine Vorgehensweise:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
@@ -53,13 +53,13 @@ async void LaunchGame()
 }
 ```
 
-Es ist wichtig, dass Sie PNG Optimierungen deaktiviert werden, da der standardmäßige iOS PNG-Optimierer Images generiert, die Urho ohne derzeit ordnungsgemäß verarbeiten kann
+Es ist wichtig, dass Sie PNG-Optimierungen deaktiviert werden, weil der standardmäßige iOS PNG-Optimierer Images generiert wird, die Urho derzeit ordnungsgemäß nicht nutzen können
 
 ## <a name="custom-embedding-of-urho"></a>Benutzerdefinierte Einbetten von Urho
 
-Sie können auch mit dem Fehlen eines Urho werden über den Bildschirm für die gesamte Anwendung, und um es als eine Komponente der Anwendung verwenden, erstellen Sie eine `UrhoSurface` also eine `UIView` , die Sie in einer vorhandenen Anwendung einbetten können.
+Sie können auch mit dem Urho verwendet werden, den Bildschirm für die gesamte Anwendung, und um sie als eine Komponente Ihrer Anwendung verwenden, können Sie erstellen eine `UrhoSurface` Dies ist eine `UIView` , die in einer vorhandenen Anwendung eingebettet werden können.
 
-Was benötigen würde sieht folgendermaßen aus:
+Dies ist die würde was Sie tun müssen:
 
 ```csharp
 var view = new UrhoSurface () {
@@ -69,7 +69,7 @@ var view = new UrhoSurface () {
 window.AddSubview (view);
 ```
 
-Dies also die Klasse Urho gehostet wird, dann wäre, wenn Sie:
+Dies also Ihrer Urho-Klasse gehostet wird, dann würden Sie tun:
 
 ```csharp
 new MyGame().Run ();

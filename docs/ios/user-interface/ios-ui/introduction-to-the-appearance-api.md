@@ -1,46 +1,46 @@
 ---
-title: Darstellung API in Xamarin.iOS
-description: iOS können Sie visuelle eigenschafteneinstellungen auf der Ebene einer statischen Klasse statt auf einzelne Objekte anwenden, damit die Änderung auf alle Instanzen des Steuerelements in der Anwendung gilt.
+title: Darstellungs-API in Xamarin.iOS
+description: iOS können Sie visual eigenschafteneinstellungen, die auf einer statischen Klasse-Ebene und nicht für einzelne Objekte anwenden, damit die Änderung für alle Instanzen des Steuerelements in der Anwendung gilt.
 ms.prod: xamarin
 ms.assetid: C1727F0C-82B1-D085-D46F-C6383FF04B16
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 02b33550451506ef4756f0f7d4400b4f98cef368
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 0dd9832a2e4dd0803f92d6e3923fe178252211f4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790252"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103568"
 ---
-# <a name="appearance-api-in-xamarinios"></a>Darstellung API in Xamarin.iOS
+# <a name="appearance-api-in-xamarinios"></a>Darstellungs-API in Xamarin.iOS
 
-_iOS können Sie visuelle eigenschafteneinstellungen auf der Ebene einer statischen Klasse statt auf einzelne Objekte anwenden, damit die Änderung auf alle Instanzen des Steuerelements in der Anwendung gilt._
+_iOS können Sie visual eigenschafteneinstellungen, die auf einer statischen Klasse-Ebene und nicht für einzelne Objekte anwenden, damit die Änderung für alle Instanzen des Steuerelements in der Anwendung gilt._
 
-Diese Funktionalität wird in Xamarin.iOS bereitgestellt, über einen statischen `Appearance` Eigenschaft für alle UIKit-Steuerelemente, die sie unterstützen. Visuelle Darstellung (Eigenschaften wie als Bild für Farbton Farbe und Hintergrund) kann daher problemlos angepasst werden, auf um Ihre Anwendung ein einheitliches Erscheinungsbild zu verleihen. Die Darstellung-API wurde in iOS 5 eingeführt, und zwar einige Teile davon in iOS 9 veraltet sind ist immer noch eine gute Möglichkeit, einige Erstellen von Formaten und Designumgebung Effekte in Xamarin.iOS apps zu erzielen.
+Diese Funktionalität ist in Xamarin.iOS verfügbar, über eine statische `Appearance` Eigenschaft bei allen UIKit-Steuerelementen, die dies unterstützen. Visuelle Darstellung (Eigenschaften wie als tönungsbild Farbe und Hintergrund) kann daher leicht angepasst werden, um Ihre Anwendung ein einheitliches Aussehen geben. Die Darstellung-API wurde in iOS 5 eingeführt und während einige Teile des Zertifikats in iOS 9 veraltet sind dies immer noch eine gute Möglichkeit, einige Stile und Designs Auswirkungen in Xamarin.iOS-apps zu erzielen.
 
-## <a name="overview"></a>Überblick
+## <a name="overview"></a>Übersicht
 
-iOS können Sie anpassen, die Darstellung von vielen UIKit Steuerelemente stellen die Standardsteuerelemente entsprechen, um das branding, die, das Sie für Ihre Anwendung anwenden möchten.
+iOS ermöglicht, dass Sie die Darstellung von vielen UIKit-Steuerelementen zu entsprechen, um das branding, die, das Sie für Ihre Anwendung anwenden möchten, Standardsteuerelemente anpassen.
 
-Es gibt zwei Möglichkeiten, um eine benutzerdefinierte Darstellung anzuwenden:
+Es gibt zwei Möglichkeiten, eine benutzerdefinierte Darstellung anwenden:
 
-- **Direkt auf eine Instanz eines Steuerelements** – Sie können den Farbton, Hintergrundbild Titelposition (sowie einige andere Attribute) für viele Steuerelemente, einschließlich Symbolleisten, Navigationsleisten, Schaltflächen und Schieberegler festlegen.
+- **Direkt auf eine Steuerelementinstanz** – Sie können die tönungsfarbe, Hintergrundbild Titelposition (sowie andere Attribute) für viele Steuerelemente wie Symbolleisten, Navigationsleisten, Schaltflächen und Regler festlegen.
 
-- **Festlegen der Standardeinstellungen für die Darstellung statische Eigenschaft** – anpassbare Attribute für jedes Steuerelement über verfügbar gemachte sind die `Appearance` statische Eigenschaft. Alle Anpassungen, die Sie für diese Eigenschaften gelten werden als Standard für jedes Steuerelement dieses Typs verwendet werden, die erstellt wird, nachdem die Eigenschaft festgelegt ist.
+- **Festlegen von Standardeinstellungen für die statische Eigenschaft Darstellung** – anpassbare Attribute für jedes Steuerelement werden verfügbar gemacht, über die `Appearance` statische Eigenschaft. Alle Anpassungen, die Sie auf diese Eigenschaften anwenden, werden als Standard für beliebige Steuerelemente des betreffenden Typs verwendet werden, die erstellt wird, nachdem die Eigenschaft festgelegt ist.
 
-Die beispielanwendung Darstellung zeigt alle drei Methoden, wie in den folgenden Screenshots dargestellt:
+Die beispielanwendung für die Darstellung zeigt alle drei Methoden, wie im folgenden Screenshots gezeigt:
 
- [![](introduction-to-the-appearance-api-images/appearance01.png "Die Darstellung-beispielanwendung für veranschaulicht alle drei Methoden")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
+ [![](introduction-to-the-appearance-api-images/appearance01.png "Die Darstellung-beispielanwendung zeigt alle drei Methoden")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
-Der Proxy für die Darstellung wurde ab iOS 8 um TraitCollections erweitert.
- `AppearanceForTraitCollection` kann verwendet werden, um die standarddarstellung für ein bestimmtes Merkmal Auflistung festgelegt. Erfahren Sie mehr Informationen finden Sie in der [Einführung in Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) Handbuch.
+Ab iOS 8 wurde der Proxy für die Darstellung auf TraitCollections erweitert.
+ `AppearanceForTraitCollection` kann verwendet werden, um die standarddarstellung für ein bestimmtes Merkmal Sammlung festlegen möchten. Weitere Informationen finden Sie in der [Einführung in Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) Guide.
 
 
 ## <a name="setting-appearance-properties"></a>Festlegen von Darstellungseigenschaften
 
-Im ersten Bildschirm ist die statische Darstellung-Klasse zum Formatieren von Schaltflächen und gelb/Orange Elemente wie folgt verwendet:
+Im ersten Bildschirm wird die statische Darstellung-Klasse so formatieren Sie die Schaltflächen und gelb/Orange-Elemente wie folgt verwendet:
 
 ```csharp
 // Set the default appearance values
@@ -55,7 +55,7 @@ UIProgressView.Appearance.ProgressTintColor = UIColor.Yellow;
 UIProgressView.Appearance.TrackTintColor = UIColor.Orange;
 ```
 
-Die grünen Element werden festgelegt, in der `ViewDidLoad` Methode die Standardwerte überschreibt und die *Darstellung* statische Klasse:
+Das grüne Element werden festgelegt, wie die folgende, in der `ViewDidLoad` Methode, wobei die Standardwerte außer Kraft gesetzt und die *Darstellung* statische Klasse:
 
 ```csharp
 slider2.ThumbTintColor = UIColor.FromRGB (0,127,70); // dark green
@@ -70,43 +70,43 @@ progress2.TrackTintColor = UIColor.FromRGB (197,255,132);
 
 ## <a name="using-uiappearance-in-xamarinforms"></a>Verwenden von UIAppearance in Xamarin.Forms
 
-Die API Darstellung kann nützlich sein, wenn [formatieren die iOS-app](~/xamarin-forms/platform/ios/theme.md#uiappearance) in Xamarin.Forms-Lösungen. Einige Zeilen in der `AppDelegate` Klasse kann dazu beitragen, um ein bestimmtes Farbschema zu implementieren, ohne Erstellen einer [benutzerdefinierten Renderers](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
+Die API für die Darstellung kann nützlich sein, wenn [formatieren die iOS-app](~/xamarin-forms/platform/ios/theme.md#uiappearance) in Xamarin.Forms-Projektmappen. Ein paar Zeilen in der `AppDelegate` Klasse kann dazu beitragen, um ein bestimmtes Farbschema zu implementieren, ohne Erstellen einer [benutzerdefinierter Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 
 
 ### <a name="custom-themes-and-uiappearance"></a>Benutzerdefinierte Designs und UIAppearance
 
-iOS viele visuellen Attribute des Benutzers kann Steuerelemente der Benutzeroberfläche mithilfe von "Designs" werden die *UIAppearance* APIs den Zugriff auf alle Instanzen eines bestimmten Steuerelements auf die gleiche Darstellung haben zu erzwingen. Dies wird als Darstellungseigenschaft auf viele Benutzer Schnittstelle-Steuerelementklassen und nicht auf einzelner Instanzen des Steuerelements verfügbar gemacht. Festlegen einer Display-Eigenschaft auf die statische `Appearance` Eigenschaft wirkt sich auf alle Steuerelemente des Typs in der Anwendung.
+iOS kann viele visuellen Attribute des Benutzers Steuerelemente der Benutzeroberfläche "Design" Verwendung der *UIAppearance* APIs zu erzwingen, dass alle Instanzen eines bestimmten Steuerelements auf die gleiche Darstellung haben. Dies wird als ein Appearance-Eigenschaft, die für viele Schnittstelle Benutzersteuerelement-Klassen, nicht für einzelne Instanzen des Steuerelements verfügbar gemacht. Festlegen einer Anzeigeeigenschaft auf die statische `Appearance` Eigenschaft wirkt sich auf alle Steuerelemente des Typs in Ihrer Anwendung.
 
-Betrachten Sie ein Beispiel, um besser zu verstehen das Konzept.
+Um das Konzept besser zu verstehen, betrachten Sie ein Beispiel aus.
 
-So ändern Sie einen bestimmten `UISegmentedControl` um Magenta Farbton haben, würden wir verweisen auf bestimmte Steuerelement auf unserem Bildschirm wie folgt in `ViewDidLoad`:
+So ändern Sie einen bestimmten `UISegmentedControl` um einen Magenta Farbton, würden wir verweisen, das bestimmte Steuerelement auf unserem Bildschirm wie folgt im `ViewDidLoad`:
 
 ```csharp
 sg1.TintColor = UIColor.Magenta;
 ```
 
-Legen Sie alternativ den Wert in das Auffüllzeichen Eigenschaften des Designers: 
+Alternativ legen Sie den Wert im Bereich "Eigenschaften" des Designers: 
 
-[![](introduction-to-the-appearance-api-images/propertiespadtint.png "Eigenschaften mit Leerstellen auffüllen Farbton")](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
+[![](introduction-to-the-appearance-api-images/propertiespadtint.png "Eigenschaften Pad Farbton")](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
 
-Die folgende Abbildung veranschaulicht, die dies den Farbton für nur auf das Steuerelement, mit dem Namen "sg1" festlegt.
+Die folgende Abbildung veranschaulicht, die diese den Farbton auf nur das Steuerelement, mit dem Namen "sg1" festlegt.
 
  [![](introduction-to-the-appearance-api-images/image53.png "Den Farbton einzelnes Steuerelement festlegen")](introduction-to-the-appearance-api-images/image53.png#lightbox)
 
-Viele Steuerelemente, die auf diese Weise festgelegt wäre vollständig ineffizient, daher können wir stattdessen die statische festlegen `Appearance` Eigenschaft für die Klasse selbst. Dies wird im Code unten gezeigt:
+So legen Sie viele Steuerelemente auf diese Weise wäre vollständig ineffizient, damit wir stattdessen die statische festlegen können `Appearance` Eigenschaft in der Klasse selbst. Dies wird im folgenden Code gezeigt:
 
 ```csharp
 UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 ```
 
-Die folgende Abbildung veranschaulicht beide segmentierte Steuerelemente jetzt mit der Darstellung auf Magenta festgelegt:
+Die folgende Abbildung veranschaulicht sowohl segmentierte Steuerelemente jetzt mit dem Erscheinungsbild auf Magenta festgelegt:
 
  [![](introduction-to-the-appearance-api-images/image54.png "Festlegen des Darstellung Steuerelement Farbtons")](introduction-to-the-appearance-api-images/image54.png#lightbox)
 
-`Appearance` Eigenschaften sollte festgelegt werden einem frühen Zeitpunkt im Lebenszyklus Anwendung, z. B. in der AppDelegate `FinishedLaunching` -Ereignis oder in einem ViewController, damit die betroffenen Steuerelemente angezeigt werden.
+`Appearance` Eigenschaften sollten festgelegt werden früh im Lebenszyklus von Anwendungen, z. B. in der AppDelegate `FinishedLaunching` Ereignis oder in einem ViewController, damit die betroffenen Steuerelemente angezeigt werden.
 
 
-Finden Sie in der [Einführung in die Darstellung API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) detailliertere Informationen.
+Finden Sie in der [Einführung in die API für die Darstellung](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) detailliertere Informationen.
 
 
 ## <a name="related-links"></a>Verwandte Links

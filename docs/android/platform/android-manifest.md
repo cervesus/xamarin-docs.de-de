@@ -3,15 +3,15 @@ title: Arbeiten mit dem Android-Manifest
 ms.prod: xamarin
 ms.assetid: CB7CCF60-FEF1-3B28-215F-159391E74347
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 0857b70e6e1d9104f62ec2e26f8edbab385d06f3
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 655f988cc54cf54e346e68109271775dee2918a9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242250"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111251"
 ---
 # <a name="working-with-the-android-manifest"></a>Arbeiten mit dem Android-Manifest
 
@@ -26,7 +26,7 @@ ms.locfileid: "39242250"
 
 ## <a name="the-basics"></a>Die Grundlagen
 
-Zum Zeitpunkt der Kompilierung werden die Assemblys für überprüft nicht`abstract` abgeleitete Klassen [Aktivität](https://developer.xamarin.com/api/type/Android.App.Activity/) und die [ `[Activity]` ](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) Attribut deklariert werden. Er verwendet dann diese Klassen und Attribute, um das Manifest zu erstellen. Beachten Sie z. B. folgenden Code: 
+Zum Zeitpunkt der Kompilierung werden die Assemblys für überprüft nicht`abstract` abgeleitete Klassen [Aktivität](https://developer.xamarin.com/api/type/Android.App.Activity/) und die [ `[Activity]` ](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) Attribut deklariert werden. Er verwendet dann diese Klassen und Attribute, um das Manifest zu erstellen. Beachten Sie z. B. folgenden Code: 
 
 ```csharp
 namespace Demo
@@ -37,7 +37,8 @@ namespace Demo
 }
 ```
 
-Dies führt zu "nothing" generiert werden **"androidmanifest.xml"**. Wenn Sie möchten eine `<activity/>` Element erzeugt werden kann, müssen Sie die [ `[Activity]` ](https://developer.xamarin.com/api/type/Android.App.Activity/Attribute) benutzerdefiniertes Attribut: 
+Dies führt zu "nothing" generiert werden **"androidmanifest.xml"**. Wenn Sie möchten eine `<activity/>` Element erzeugt werden kann, müssen Sie die [`[Activity]`](https://developer.xamarin.com/api/type/Android.App.Activity/Attribute) 
+benutzerdefiniertes Attribut: 
 
 ```csharp
 namespace Demo
@@ -177,7 +178,10 @@ Erstellen Sie in der Version die Version des Manifests (am **obj/Debug/android/A
 
 ### <a name="intent-actions-and-features"></a>Beabsichtigte Aktionen und Funktionen
 
-Android-Manifest enthält eine Möglichkeit zum Beschreiben der Funktionen von der Aktivität. Dies erfolgt über [Intents](http://developer.android.com/guide/topics/manifest/intent-filter-element.html) und [ `[IntentFilter]` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) benutzerdefinierten Attributs. Sie können angeben, welche Aktionen für die Aktivität mit geeignet sind der [ `IntentFilter` ](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/) Konstruktor und die Kategorien mit geeignet sind der [ `Categories` ](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/) Eigenschaft. Mindestens eine Aktivität muss bereitgestellt werden (Was ist, warum die Aktivitäten im Konstruktor bereitgestellt werden). `[IntentFilter]` kann sein, sofern mehrere Male auf, und jede Verwendung zu einer separaten führt `<intent-filter/>` Element innerhalb der `<activity/>`. Zum Beispiel:
+Android-Manifest enthält eine Möglichkeit zum Beschreiben der Funktionen von der Aktivität. Dies erfolgt über [Intents](http://developer.android.com/guide/topics/manifest/intent-filter-element.html) und [`[IntentFilter]`](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) 
+das benutzerdefinierte Attribut. Sie können angeben, welche Aktionen für die Aktivität mit entsprechenden sind die [`IntentFilter`](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/) 
+Konstruktor, und welchen Kategorien eignen, mit der [`Categories`](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/) 
+-Eigenschaft veranschaulicht. Mindestens eine Aktivität muss bereitgestellt werden (Was ist, warum die Aktivitäten im Konstruktor bereitgestellt werden). `[IntentFilter]` kann sein, sofern mehrere Male auf, und jede Verwendung zu einer separaten führt `<intent-filter/>` Element innerhalb der `<activity/>`. Zum Beispiel:
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 

@@ -4,15 +4,15 @@ description: Dieses Handbuch stellt Renderscript, und es wird erläutert, wie di
 ms.prod: xamarin
 ms.assetid: 378793C7-5E3E-40E6-ABEE-BEAEF64E6A47
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 3331eb579f0aa2d7f29508773c588455c134f56a
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 5369542552a41100443c5e91ceca9e110c5c7c3c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241187"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108729"
 ---
 # <a name="an-introduction-to-renderscript"></a>Eine Einführung in die Renderscript
 
@@ -48,11 +48,12 @@ Es gibt drei wichtige Konzepte für die Verwendung von Renderscripts in einer An
 
 3. **Zugeordneter Arbeitsspeicher** &ndash; Daten in und aus einem Kernel durch Übergeben einer  _[Zuordnung](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)_. Ein Kernel ist möglicherweise eine Eingabe und/oder ein ausgabedataset Zuordnung.
 
-Die [Android.Renderscripts](https://developer.xamarin.com/api/namespace/Android.Renderscripts/) Namespace enthält Klassen für die Interaktion mit der Laufzeit Renderscript. Insbesondere die [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/) Klasse verwaltet den Lebenszyklus und die Ressourcen der Renderscript-Engine. Die Android-app muss initialisiert werden, eine oder mehrere [ `Android.Renderscripts.Allocation` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/) Objekte. Eine Zuordnung ist eine verwaltete API, die für die Belegung und den Zugriff auf den Arbeitsspeicher, der von der Android-app und die Laufzeit Renderscript gemeinsam verantwortlich ist. Klicken Sie in der Regel nur einer Zuordnung wird erstellt, für die Eingabe, und optional eine andere Zuordnung erstellt, die die Ausgabe des Kernels enthält. Die Renderscript-Runtime-Engine und die zugehörigen verwalteten Wrapperklassen Zugriff auf den Speicher frei, die Zuordnungen verwalten, besteht keine Notwendigkeit für ein Android-app-Entwickler zusätzliche Arbeit leisten.
+Die [Android.Renderscripts](https://developer.xamarin.com/api/namespace/Android.Renderscripts/) Namespace enthält Klassen für die Interaktion mit der Laufzeit Renderscript. Insbesondere die [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/) Klasse verwaltet den Lebenszyklus und die Ressourcen der Renderscript-Engine. Die Android-app muss mindestens eine initialisiert. [`Android.Renderscripts.Allocation`](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)
+-Objekte. Eine Zuordnung ist eine verwaltete API, die für die Belegung und den Zugriff auf den Arbeitsspeicher, der von der Android-app und die Laufzeit Renderscript gemeinsam verantwortlich ist. Klicken Sie in der Regel nur einer Zuordnung wird erstellt, für die Eingabe, und optional eine andere Zuordnung erstellt, die die Ausgabe des Kernels enthält. Die Renderscript-Runtime-Engine und die zugehörigen verwalteten Wrapperklassen Zugriff auf den Speicher frei, die Zuordnungen verwalten, besteht keine Notwendigkeit für ein Android-app-Entwickler zusätzliche Arbeit leisten.
 
 Eine Zuordnung enthält eine oder mehrere [Android.Renderscripts.Elements](https://developer.xamarin.com/api/type/Android.Renderscripts.Element/).
 Elemente sind ein spezieller Typ, die Daten in jeder Zuordnung beschreiben.
-Die Elementtypen, die Ausgabe, die Zuordnung übereinstimmen muss. die die Typen des input-Elements. Bei der Ausführung eine Renderscript wird jedes Element in der Eingabe Zuordnungseinheit parallel durchlaufen, und die Ergebnisse in die Ausgabe geschrieben Zuordnung. Es gibt zwei Arten von Elementen:
+Die Elementtypen der Ausgabe Zuordnung den Typen des input-Elements entsprechen muss. Bei der Ausführung eine Renderscript wird jedes Element in der Eingabe Zuordnungseinheit parallel durchlaufen, und die Ergebnisse in die Ausgabe geschrieben Zuordnung. Es gibt zwei Arten von Elementen:
 
 - **einfacher Typ** &ndash; konzeptionell Dies entspricht der C-Datentyp, `float` oder `char`.
 
@@ -60,7 +61,8 @@ Die Elementtypen, die Ausgabe, die Zuordnung übereinstimmen muss. die die Typen
 
 Die Renderscript-Engine führt eine Überprüfung zur Laufzeit, um sicherzustellen, dass die Elemente in jeder Zuordnung sind kompatibel mit, was durch den Kernel erforderlich ist. Wenn Sie der Datentyp der Elemente in der Zuordnung, den der Kernel erwartet wird den Datentyp nicht übereinstimmen, wird eine Ausnahme ausgelöst werden.
 
-Alle Renderscript Kernel werden von einem Typ, der ein Nachfolger des umschlossen werden die [ `Android.Renderscripts.Script` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Script/) Klasse. Die `Script` Klasse dient zum Festlegen von Parametern für eine Renderscript legen Sie die entsprechende `Allocations`, und führen Sie die Renderscript. Es gibt zwei `Script` Unterklassen im Android SDK:
+Alle Renderscript Kernel werden von einem Typ, der ein Nachfolger des umschlossen werden die [`Android.Renderscripts.Script`](https://developer.xamarin.com/api/type/Android.Renderscripts.Script/)
+-Klasse. Die `Script` Klasse dient zum Festlegen von Parametern für eine Renderscript legen Sie die entsprechende `Allocations`, und führen Sie die Renderscript. Es gibt zwei `Script` Unterklassen im Android SDK:
 
 
 - **`Android.Renderscripts.ScriptIntrinsic`** &ndash; Einige der häufigeren Renderscript Aufgaben werden im Android SDK gebündelt, und durch eine Unterklasse von zugegriffen werden kann die [ScriptIntrinsic](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsic/) Klasse. Besteht keine Notwendigkeit für Entwickler zusätzliche Schritte, die diese Skripts in ihrer Anwendung verwenden, wie sie bereits bereitgestellt werden.
@@ -107,13 +109,15 @@ Details zu den einzelnen systeminterne Skripts finden Sie in der API-Dokumentati
 
 Die grundlegenden Schritte für die Verwendung von Renderscript in einer Android-Anwendung beschrieben werden.
 
-**Erstellen Sie einen Kontext Renderscript** &ndash; der [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/) -Klasse ist, einen verwalteten Wrapper für den Kontext Renderscript und steuern Sie die Initialisierung der ressourcenverwaltung, und bereinigt wird. Das Renderscript-Objekt erstellt wird, mit der `RenderScript.Create` -Factorymethode, die einem Android-Kontext (z. B. eine Aktivität) als Parameter annimmt. Die folgende Codezeile veranschaulicht, wie den Renderscript-Kontext zu initialisieren:
+**Erstellen Sie einen Kontext Renderscript** &ndash; der [`Renderscript`](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/)
+Klasse ist, einen verwalteten Wrapper für den Kontext Renderscript und steuern Sie die Initialisierung der ressourcenverwaltung, und bereinigt wird. Das Renderscript-Objekt erstellt wird, mit der `RenderScript.Create` -Factorymethode, die einem Android-Kontext (z. B. eine Aktivität) als Parameter annimmt. Die folgende Codezeile veranschaulicht, wie den Renderscript-Kontext zu initialisieren:
 
 ```csharp
 Android.Renderscripts.RenderScript renderScript = RenderScript.Create(this);
 ```
 
-**Erstellen von Zuordnungen** &ndash; abhängig von der systeminterne Skript, es kann erforderlich sein, erstellen Sie ein oder zwei `Allocation`s. Die [ `Android.Renderscripts.Allocation` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/) -Klasse verfügt über mehrere Factorymethoden beim Instanziieren einer Zuordnung für eine systeminterne Funktion. Beispielsweise veranschaulicht der folgende Codeausschnitt, wie Zuordnung für Bitmaps erstellen.
+**Erstellen von Zuordnungen** &ndash; abhängig von der systeminterne Skript, es kann erforderlich sein, erstellen Sie ein oder zwei `Allocation`s. Die [`Android.Renderscripts.Allocation`](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)
+Klasse verfügt über mehrere Factorymethoden beim Instanziieren einer Zuordnung für eine systeminterne Funktion. Beispielsweise veranschaulicht der folgende Codeausschnitt, wie Zuordnung für Bitmaps erstellen.
 
 ```csharp
 Android.Graphics.Bitmap originalBitmap;

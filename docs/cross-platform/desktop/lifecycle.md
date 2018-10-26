@@ -1,16 +1,16 @@
 ---
 ms.assetid: 7C132A7C-4973-4B2D-98DC-3661C08EA33F
 title: WPF im Vergleich zu. Xamarin.Forms-App-Lebenszyklus
-description: In diesem Dokument vergleicht die die ähnlichkeiten und Unterschiede zwischen den Lebenszyklus der Anwendung für Xamarin.Forms und WPF-Anwendungen. Er untersucht außerdem die visuelle Struktur, Grafiken, Ressourcen und Stile.
+description: In diesem Dokument werden die ähnlichkeiten und Unterschiede zwischen den Lebenszyklus der Anwendung für Xamarin.Forms und WPF-Anwendungen verglichen. Er untersucht außerdem die visuelle Struktur, Grafiken, Ressourcen und Stile.
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: a59f257d1e6285fa2d899271a1aae9778b04d985
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: cf25cf956fbf9fd566520d9067f0d98a9a7624aa
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251018"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107115"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF im Vergleich zu. Xamarin.Forms-App-Lebenszyklus
 

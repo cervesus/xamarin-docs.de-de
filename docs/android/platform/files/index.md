@@ -4,15 +4,15 @@ description: Dieses Handbuch wird erläutert, die Zugriff auf Dateien in Xamarin
 ms.prod: xamarin
 ms.assetid: FC1CFC58-B799-4DD6-8ED1-DE36B0E56856
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 5a4ddf606bb71bef10cf99660c198c5a8fdb1b69
-ms.sourcegitcommit: 9bb9e8297d3edd9a50585f4ba53c1b4f0bcd1d3e
+ms.openlocfilehash: 476f1c50a2f1a4199dfaf1996fc9c16615b40598
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39212185"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116796"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>File Storage sowie den Zugriff, die mit Xamarin.Android
 
@@ -24,7 +24,7 @@ Eine häufige Anforderung für Android-apps ist zum Bearbeiten von Dateien &ndas
 Diese Gruppierungen sind nur konzeptionellen und nicht unbedingt finden Sie in einer einzelnen Partition oder eines Verzeichnisses auf dem Gerät. Ein Android-Gerät wird immer Partition für interne und externe Speicher bereit. Es ist möglich, dass bestimmte Geräte über mehrere Partitionen verfügen können, die berücksichtigt werden, um externen Speicher zu werden. Unabhängig von der Partition die APIs zum Lesen ist das Schreiben und Erstellen von Dateien identisch. Es gibt zwei Sätze an APIs, die für den Zugriff auf eine Xamarin.Android-Anwendung verwenden können:
 
 1. **Die .NET APIs (von Mono bereitgestellt und von Xamarin.Android eingeschlossen)** &ndash; dazu gehören die [dateisystemhilfsprogramme](~/essentials/file-system-helpers.md?context=xamarin/android) gebotenen [Xamarin.Essentials](~/essentials/index.md?context=xamarin/android). Die .NET APIs bieten die beste plattformübergreifende Kompatibilität und daher der Schwerpunkt dieses Leitfadens wird auf diese APIs.
-1. **Die systemeigenen Java-Dateizugriff-APIs (bereitgestellt von Java und umschlossen von Xamarin.Android)** &ndash; Java stellt eine eigene APIs zum Lesen und Schreiben von Dateien bereit. Diese sind ein vollkommen akzeptabel Alternative zu, die .NET APIs, jedoch gelten für Android und eignen sich nicht für apps, die plattformübergreifend sein sollen.
+1. **Die systemeigenen Java-Dateizugriff-APIs (bereitgestellt von Java und umschlossen von Xamarin.Android)** &ndash; Java stellt eine eigene APIs zum Lesen und Schreiben von Dateien bereit. Diese sind eine Alternative vollkommen akzeptabel, auf die .NET APIs, jedoch gelten für Android und eignen sich nicht für apps, die plattformübergreifend sein sollen.
 
 Lesen und Schreiben in Dateien ist fast identisch in Xamarin.Android, wie an eine beliebige andere .NET-Anwendung. Die Xamarin.Android-app bestimmt den Pfad zur Datei, die bearbeitet wird, klicken Sie dann verwendet standard .NET Ausdrücke für den Dateizugriff. Da die eigentlichen Pfade in den internen und externen Speicher nach Gerät variieren und von Android-Version auf Android-Version wird nicht durch hartcodierung der Pfad zu den Dateien empfohlen. Verwenden Sie stattdessen die Xamarin.Android-APIs, um den Pfad zu Dateien zu ermitteln. Auf diese Weise stellt die .NET APIs zum Lesen und Schreiben von Dateien der systemeigenen Android-APIs, mit deren Hilfe wird, um zu bestimmen, den Pfad zu Dateien im internen und externen Speicher.
 
@@ -79,7 +79,7 @@ Zur Maximierung der Freigabe von Code Xamarin.Android-apps (oder eine Xamarin.Fo
 
 ### <a name="reading-or-writing-to-files-on-internal-storage"></a>Lesen oder Schreiben in Dateien auf den internen Speicher
 
-Eines der [c#-APIs für das Schreiben von](https://docs.microsoft.com/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file) in eine Datei sind ausreichend; erforderlich ist lediglich um den Pfad zu der Datei abzurufen, die in das Verzeichnis zugeordnet ist die Anwendung. Es wird dringend empfohlen, dass der Hauptthread blockiert den Zugriff auf Dateien der asynchronen Versionen der .NET APIs verwendet werden, um Probleme zu minimieren, die möglicherweise zugeordnet.
+Keines der [ C# APIs für das Schreiben von](https://docs.microsoft.com/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file) in eine Datei sind ausreichend; erforderlich ist lediglich um den Pfad zu der Datei abzurufen, die in das Verzeichnis der Anwendung zugeordnet ist. Es wird dringend empfohlen, dass der Hauptthread blockiert den Zugriff auf Dateien der asynchronen Versionen der .NET APIs verwendet werden, um Probleme zu minimieren, die möglicherweise zugeordnet.
 
 Dieser Codeausschnitt ist ein Beispiel für eine ganze Zahl in eine UTF-8-Textdatei in das Verzeichnis der internen Speicher einer Anwendung zu schreiben:
 
@@ -145,7 +145,7 @@ Private Dateien werden nicht als freigegebenen Medium angezeigt. Z. B. wenn eine
 
 ## <a name="related-links"></a>Verwandte Links
 
-* [Externen Speicher](~/android/platform/files/external-storage.md)
+* [Externer Speicher](~/android/platform/files/external-storage.md)
 * [Speichern von Dateien auf den Speicher des Geräts](https://developer.android.com/training/data-storage/files)
 * [System-Hilfsprogramme Xamarin.Essentials-Datei](~/essentials/file-system-helpers.md?context=xamarin/android)
 * [Sicherung von Benutzerdaten mit automatische Sicherung](https://developer.android.com/guide/topics/data/autobackup)

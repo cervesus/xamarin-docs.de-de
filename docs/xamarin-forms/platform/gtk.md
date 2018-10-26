@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 34fb58f44e3f341fa34eef512d61f20f5d035a9b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 132f31f4c9426dfceeef38f464231d1545f4db50
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998201"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115171"
 ---
 # <a name="gtk-platform-setup"></a>GTK#-Plattform-Setup
 
 ![Vorschau](~/media/shared/preview.png)
 
-Xamarin.Forms verfügt jetzt über eine vorschauunterstützung für GTK#-apps. GTK#-ist ein GUI-Schnittstelle-Toolkit, die das Toolkit GTK +, und eine Vielzahl von GNOME-Bibliotheken verknüpft und so die Entwicklung von vollständig native GNONE-Grafik-apps, die mit Mono und .NET. In diesem Artikel wird veranschaulicht, wie eine Xamarin.Forms-Projektmappe ein GTK#-Projekt hinzugefügt wird.
+Xamarin.Forms verfügt jetzt über eine vorschauunterstützung für GTK#-apps. GTK#-ist ein GUI-Schnittstelle-Toolkit, die das Toolkit GTK +, und eine Vielzahl von GNOME-Bibliotheken verknüpft und so die Entwicklung von vollständig native GNOME Grafik-apps mithilfe von Mono und .NET. In diesem Artikel wird veranschaulicht, wie eine Xamarin.Forms-Projektmappe ein GTK#-Projekt hinzugefügt wird.
 
 Bevor Sie beginnen, einer neuen Xamarin.Forms-Projektmappe erstellen, oder eine vorhandene Xamarin.Forms-Projektmappe, z. B. verwenden [ **GameOfLife**](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife/).
 
@@ -29,7 +29,7 @@ Bevor Sie beginnen, einer neuen Xamarin.Forms-Projektmappe erstellen, oder eine 
 
 GTK#-für MacOS und Linux installiert ist, als Teil des [Mono](http://www.mono-project.com/download/stable/). GTK#-für .NET installiert werden kann Windows mit der [GTK#-Installer](http://www.mono-project.com/download/stable/#download-win).
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Um eine GTK#-app hinzufügen, die auf dem Windows-Desktop ausgeführt wird, gehen Sie wie folgt vor:
 
@@ -110,7 +110,7 @@ Um eine GTK#-app hinzufügen, die auf dem Windows-Desktop ausgeführt wird, gehe
 
     ![GTK#-Spiel Leben](gtk-images/win/gtk-gameoflife.png "GTK#-Spiel Leben")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Um eine GTK#-app hinzufügen, die auf dem Mac-Desktop ausgeführt wird, gehen Sie wie folgt vor:
 

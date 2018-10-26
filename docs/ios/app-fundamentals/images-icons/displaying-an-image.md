@@ -4,15 +4,15 @@ description: Dieser Artikel behandelt, einschließlich ein Bildobjekt in einer X
 ms.prod: xamarin
 ms.assetid: 60288B12-49E3-4E87-8690-D04A5EC7A664
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 4b2bddeb6b04b5c5288f501fce0d6bb03e0b6584
-ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
+ms.openlocfilehash: b29820cb69702f7570e10a555ebe9e3e0824653f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40251152"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104153"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Anzeigen eines Bilds in Xamarin.iOS
 
@@ -22,7 +22,7 @@ _Dieser Artikel behandelt, einschließlich ein Bildobjekt in einer Xamarin.iOS-a
 
 Wenn Sie ein Image für die Verwendung in einer Xamarin.iOS-app hinzufügen, wird der Entwickler verwenden eine _Asset-Katalog_ zur Unterstützung jedes iOS-Gerät und der Auflösung, die von einer app erforderlich.
 
-Hinzugefügt in iOS 7 **Bildzusammenstellungen für Asset-Kataloge** enthalten alle Versionen oder Darstellungen eines Bilds, die zum unterstützen verschiedener Geräte und Skalierungsfaktoren für eine app erforderlich sind. Anstatt auf den Namen der Bilddatei Assets (finden Sie unter [Auflösung unabhängige Images und Image-Nomenklatur](~/ios/app-fundamentals/images-icons/displaying-an-image.md)), **Bildzusammenstellungen** eine JSON-Datei verwenden, um anzugeben, welches Image, welche Geräte und/oder Auflösung angehört . Dies ist die bevorzugte Methode zum Verwalten und unterstützen von Bildern in iOS (von iOS 9 oder höher).
+Hinzugefügt in iOS 7 **Bildzusammenstellungen für Asset-Kataloge** enthalten alle Versionen oder Darstellungen eines Bilds, die zum unterstützen verschiedener Geräte und Skalierungsfaktoren für eine app erforderlich sind. Statt die standardremotedatenbank von der Dateiname des Bilds für Ressourcen, **Bildzusammenstellungen** eine JSON-Datei verwenden, um anzugeben, welches Image, welche Geräte und/oder Auflösung angehört. Dies ist die bevorzugte Methode zum Verwalten und unterstützen von Bildern in iOS (von iOS 9 oder höher).
 
 ## <a name="adding-images-to-an-asset-catalog-image-set"></a>Legen Sie das Hinzufügen von Bildern zu einem Bild, Asset-Katalog
 
@@ -30,7 +30,7 @@ Wie bereits erwähnt, ein **Bildzusammenstellungen für Asset-Kataloge** enthalt
 
 Zum Erstellen einer neuen Gruppe von Bildern und Hinzufügen von Bildern, gehen Sie folgendermaßen vor:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. In der **Projektmappen-Explorer**, doppelklicken Sie auf die `Assets.xcassets` Datei, die sie für die Bearbeitung zu öffnen:
 
@@ -48,7 +48,7 @@ Bei Verwendung einer **Images** im iOS-Designer, wählen Sie einfach der Name de
 
 ![](displaying-an-image-images/imageset06.png "Wählen Sie ein Image der Name aus der Dropdown-Liste")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Öffnen Sie den Asset-Katalog aus der **Projektmappen-Explorer**, und klicken Sie in der oberen linken Ecke auf die **Plus** Schaltfläche:
 
@@ -82,17 +82,17 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 ```
 
 > [!IMPORTANT]
-> Wenn die Images zugewiesen, da ein Image nicht ordnungsgemäß angezeigt werden, stellen Sie sicher, dass der richtige Dateiname verwendet wird die `FromBundle` Methode (die **-Images** und nicht das übergeordnete Element **Asset-Katalog** Namen). Für PNG-Dateien die `.png` Erweiterung kann ausgelassen werden. Für andere Bildformate ist die Erweiterung erforderlich (z. b. `PurpleMonkey.jpg`) angezeigt wird.
+> Wenn die Images zugewiesen, da ein Image nicht ordnungsgemäß angezeigt werden, stellen Sie sicher, dass der richtige Dateiname verwendet wird die `FromBundle` Methode (die **-Images** und nicht das übergeordnete Element **Asset-Katalog** Namen). Für PNG-Dateien die `.png` Erweiterung kann ausgelassen werden. Für andere Bildformate ist die Erweiterung erforderlich (z. b. `PurpleMonkey.jpg`).
 
 ### <a name="using-vector-images-in-asset-catalogs"></a>Verwenden von Vektorgrafiken in ressourcenkataloge
 
 Ab iOS 8, spezielle **Vektor** Klasse hinzugefügt wurden **Bildzusammenstellungen** , ermöglicht den Entwickler, enthalten eine **PDF** Vektorbild in der stattdessen einschließlich Kassette formatiert einzelne Bitmap-Dateien in unterschiedlichen Auflösungen. Mit dieser Methode geben Sie eine einzelnen Vektor-Datei für die `@1x` Auflösung (formatiert als Vektor PDF-Datei) und die `@2x` und `@3x` Versionen der Datei zum Zeitpunkt der Kompilierung generiert und in der Anwendung Bündel enthalten.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 ![](displaying-an-image-images/imageset05.png "Vektorbilder im Editor Ressourcenkataloge")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![](displaying-an-image-images/asset8.png "Vektorbilder im Editor Ressourcenkataloge")
 
@@ -116,11 +116,11 @@ Basierend auf den Entwurf einer iOS-app, es gibt möglicherweise Zeiten, wenn de
 
 Um ganz einfach diesen Effekt zu erzielen, wechseln die _Rendermodus_ die Image-Ressource für **Vorlagenimage**:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 [![](displaying-an-image-images/templateimage01.png "Legen Sie den Modus zum Rendern auf Vorlagenimage")](displaying-an-image-images/templateimage01.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](displaying-an-image-images/templateimage01vs.png "Legen Sie den Modus zum Rendern Vorlage")](displaying-an-image-images/templateimage01vs.png#lightbox)
 
@@ -128,11 +128,11 @@ Um ganz einfach diesen Effekt zu erzielen, wechseln die _Rendermodus_ die Image-
 
 Aus dem iOS-Designer, ein UI-Steuerelement-Standardimage-Medienobjekt zuweisen und dann legen Sie die **Farbton** zum farbigen Anzeigen von der Abbildung:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 [![](displaying-an-image-images/templateimage03.png "Legen Sie den Farbton zum farbigen Anzeigen von das Bild")](displaying-an-image-images/templateimage03.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](displaying-an-image-images/templateimage03vs.png "Legen Sie den Farbton zum farbigen Anzeigen von das Bild")](displaying-an-image-images/templateimage03vs.png#lightbox)
 
@@ -169,14 +169,14 @@ Beim Arbeiten mit Images im Ressourcen-Kataloge gibt es möglicherweise vorkomme
 
 So fügen Sie einen neuen Katalog von Ressourcen zum Projekt hinzu:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Mit der rechten Maustaste auf die **Projektname** in die **Projektmappen-Explorer** , und wählen Sie **hinzufügen** > **neue Datei...**
 2. Wählen Sie **iOS** > **Asset-Katalog**, geben Sie einen **Namen** für die Sammlung und klicken Sie auf die **neu** Schaltfläche:
 
     ![](displaying-an-image-images/asset01.png "Erstellen einen neuen Ressourcenkatalog")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Im Projektmappen-Explorer mit der Maustaste auf **Ressourcenkataloge** Ordner, und wählen **hinzufügen > neue Asset-Katalog**.
 2. Geben sie einen Namen ein, und klicken Sie auf **hinzufügen**:
@@ -219,7 +219,7 @@ Weitere Informationen über Symbole und Bilder, finden Sie unter der Apple-Dokum
 
 Sobald ein Image zu einer Xamarin.iOS-Projekt mit einer Asset-Katalogs hinzugefügt wurde, kann es sein, einfach angezeigt werden, auf ein Storyboard mit einem `UIImageView` im iOS-Designer. Wenn beispielsweise die folgenden-Standardimage-Medienobjekt hinzugefügt wurde:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 ![](displaying-an-image-images/display01.png "Ein Beispiel-Standardimage-Medienobjekt wurde hinzugefügt.")
 
@@ -242,7 +242,7 @@ Führen Sie Folgendes ein, um es für ein Storyboard anzuzeigen:
 7. Ziehen Sie das "T" strukturiert Handle an jeder der **Image View** auf die entsprechende Seite des Bildschirms, um das Bild an den Seiten "anheften". Auf diese Weise die **Image View** wird verkleinert und wächst die Größe der Bildschirm geändert wird.
 8. Speichern Sie die Änderungen auf das Storyboard an.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![](displaying-an-image-images/display01vs.png "Ein Beispiel-Standardimage-Medienobjekt wurde hinzugefügt.")
 

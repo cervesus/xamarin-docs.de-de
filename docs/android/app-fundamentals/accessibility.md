@@ -3,31 +3,31 @@ title: Eingabehilfen unter Android
 ms.prod: xamarin
 ms.assetid: 157F0899-4E3E-4538-90AF-B59B8A871204
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 2a49d15651b8c6ab7417a69d934af5d20bfc13d0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4eb4a97a346f3906c925dc9e324ed9378af0b560
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763903"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116171"
 ---
 # <a name="accessibility-on-android"></a>Eingabehilfen unter Android
 
-Diese Seite beschreibt, wie Android Eingabehilfen-APIs zum Erstellen von apps, die gemäß der [Eingabehilfen Prüfliste](~/cross-platform/app-fundamentals/accessibility.md).
-Finden Sie in der [iOS Eingabehilfen](~/ios/app-fundamentals/accessibility.md) und [OS X-Eingabehilfen](~/mac/app-fundamentals/accessibility.md) Seiten für andere Plattform-APIs.
+Diese Seite beschreibt, wie die Android Eingabehilfen-APIs zum Erstellen von apps, die gemäß der [Checkliste für die Barrierefreiheit](~/cross-platform/app-fundamentals/accessibility.md).
+Finden Sie in der [iOS Barrierefreiheit](~/ios/app-fundamentals/accessibility.md) und [OS X Accessibility](~/mac/app-fundamentals/accessibility.md) Seiten für andere Plattform-APIs.
 
 
 ## <a name="describing-ui-elements"></a>Beschreibt die Elemente der Benutzeroberfläche
 
-Android bietet eine `ContentDescription` -Eigenschaft, die durch Lesen der APIs Bildschirm verwendet wird, um eine barrierefreie Beschreibung des Zwecks des Steuerelements bereitzustellen.
+Android bietet eine `ContentDescription` -Eigenschaft, die durch Screenreader-APIs verwendet wird, um eine barrierefreie Beschreibung des Zwecks der Steuerelements bereitzustellen.
 
-Die inhaltsbeschreibung kann in entweder c# oder in der Layoutdatei AXML festgelegt werden.
+Die Beschreibung der Inhalte kann festgelegt werden, entweder in C# oder in der AXML-Layoutdatei.
 
 **C#**
 
-Die Beschreibung kann im Code auf eine beliebige Zeichenfolge (oder eine Zeichenfolgenressource) festgelegt werden:
+Die Beschreibung kann im Code, um eine beliebige Zeichenfolge (oder eine Zeichenfolgenressource) festgelegt werden:
 
 ```csharp
 saveButton.ContentDescription = "Save data";
@@ -35,7 +35,7 @@ saveButton.ContentDescription = "Save data";
 
 **AXML-layout**
 
-Bei XML Layouts verwenden die `android:contentDescription` Attribut:
+Im XML-Layouts verwendet die `android:contentDescription` Attribut:
 
 ```xml
 <ImageButton
@@ -44,14 +44,14 @@ Bei XML Layouts verwenden die `android:contentDescription` Attribut:
     android:contentDescription="Save data" />
 ```
 
-### <a name="use-hint-for-textview"></a>Verwenden Sie für TextView-Hinweis
+### <a name="use-hint-for-textview"></a>Use Hint-Hinweis für TextView
 
-Für `EditText` und `TextView` Steuerelemente für die Dateneingabe, verwenden die `Hint` Eigenschaft zu beschreiben, welche Eingabe erwartet wird (anstelle von `ContentDescription`).
-Wenn Text eingegeben wurde, wird der Text selbst "anstelle der Hinweis gelesen werden".
+Für `EditText` und `TextView` Steuerelemente für die Dateneingabe, verwenden die `Hint` Eigenschaft beschrieben, welche Eingabe erwartet wird (anstelle von `ContentDescription`).
+Wenn Text eingegeben wurde, wird der Text "anstelle der Hinweis gelesen werden".
 
 **C#**
 
-Legen Sie die `Hint` -Eigenschaft im Code:
+Legen Sie die `Hint` Eigenschaft im Code:
 
 ```csharp
 someText.Hint = "Enter some text"; // displays (and is "read") when control is empty
@@ -59,7 +59,7 @@ someText.Hint = "Enter some text"; // displays (and is "read") when control is e
 
 **AXML-layout**
 
-In XML-Layout-Dateien verwenden die `android:hint` Attribut:
+Im XML-Layoutdateien verwenden die `android:hint` Attribut:
 
 ```xml
 <EditText
@@ -70,11 +70,11 @@ In XML-Layout-Dateien verwenden die `android:hint` Attribut:
 
 ### <a name="labelfor-links-input-fields-with-labels"></a>LabelFor Links Eingabefelder mit Bezeichnungen
 
-Um eine Bezeichnung eines Datensteuerelements zuzuordnen, verwenden Sie die `LabelFor` Eigenschaft
+Um eine Bezeichnung mit einem Eingabe-Steuerelement zuzuordnen, verwenden die `LabelFor` Eigenschaft
 
 **C#**
 
-Legen Sie in c# die `LabelFor` Eigenschaft, um die Ressourcen-ID des Steuerelements dieser diesem Inhalt beschreibt (in der Regel diese Eigenschaft für eine Bezeichnung festgelegt ist und einige andere Eingabesteuerelement verweist):
+In C#legen die `LabelFor` Eigenschaft, um die Ressourcen-ID des Steuerelements dieser diesem Inhalt beschreibt (in der Regel diese Eigenschaft wird auf eine Bezeichnung festgelegt und verweist auf einige andere Eingabesteuerelement):
 
 ```csharp
 EditText edit = FindViewById<EditText> (Resource.Id.editFirstName);
@@ -84,7 +84,7 @@ tv.LabelFor = Resource.Id.editFirstName;
 
 **AXML-layout**
 
-Im Layout-XML-Verwendung der `android:labelFor` Eigenschaft, um ein anderes Steuerelement Bezeichner verweisen:
+Im Layout-XML-Verwendung der `android:labelFor` -Eigenschaft zum Verweisen auf ein anderes Steuerelement-ID:
 
 ```xml
 <TextView
@@ -96,9 +96,9 @@ Im Layout-XML-Verwendung der `android:labelFor` Eigenschaft, um ein anderes Steu
     android:hint="Enter some text" />
 ```
 
-### <a name="announce-for-accessibility"></a>Ankündigen für Eingabehilfen
+### <a name="announce-for-accessibility"></a>Ankündigen zu können, für den Zugriff auf
 
-Verwenden der `AnnounceForAccessibility` Methode für ein beliebiges anzeigen Steuerelement, um ein Ereignis oder Status Änderung an Benutzer zu kommunizieren, wenn der Zugriff aktiviert ist. Diese Methode ist nicht erforderlich, für die meisten Vorgänge der integrierten Kommentar stellt ausreichende Feedback bereit, wobei sollte verwendet werden, in denen zusätzliche Informationen für den Benutzer hilfreich sein kann.
+Verwenden der `AnnounceForAccessibility` Methode auf einem anzeigen Steuerelement auf ein Ereignis oder den Status ändern, Benutzern zu kommunizieren, wenn der Zugriff aktiviert ist. Diese Methode ist nicht erforderlich, für die meisten Vorgänge, in denen die integrierten audioaufzeichnung ausreichend Feedback bereitgestellt, sollte aber verwendet werden, in dem zusätzliche Informationen für den Benutzer sinnvoll sein.
 
 Der folgende Code zeigt ein einfaches Beispiel Aufrufen `AnnounceForAccessibility`:
 
@@ -109,13 +109,13 @@ button.Click += delegate {
 };
 ```
 
-## <a name="changing-focus-settings"></a>Ändern den Fokus-Einstellungen
+## <a name="changing-focus-settings"></a>Änderung der Einstellungen für den Fokus
 
-Navigation zugegriffen werden kann, basiert auf Steuerelemente den Fokus auf den Benutzer zu unterstützen, zu verstehen, welche Vorgänge verfügbar sind. Android bietet eine `Focusable` Eigenschaft, die Steuerelemente als speziell kann den Fokus erhalten, während der Navigation kennzeichnen kann.
+Zugänglich Navigation basiert auf Steuerelemente den Fokus auf unterstützen den Benutzer zu verstehen, welche Vorgänge verfügbar sind. Android bietet eine `Focusable` Eigenschaft, die Steuerelemente z. B. insbesondere kann den Fokus erhalten, während der Navigation kennzeichnen kann.
 
 **C#**
 
-Um zu verhindern, dass ein Steuerelement erhält den Fokus mit c#, legen Sie die `Focusable` Eigenschaft `false`:
+Um zu verhindern, dass ein Steuerelement den Fokus erhalten C#legen die `Focusable` Eigenschaft `false`:
 
 ```csharp
 label.Focusable = false;
@@ -129,12 +129,12 @@ Im Layout-XML-Dateien Satz der `android:focusable` Attribut:
 <android:focusable="false" />
 ```
 
-Sie können auch steuern die Reihenfolge der Fokus mit der `nextFocusDown`, `nextFocusLeft`, `nextFocusRight`, `nextFocusUp` Attribute, die in der Regel im Layout AXML festgelegt. Verwenden Sie diese Attribute, um sicherzustellen, dass der Benutzer leicht die Steuerelemente auf dem Bildschirm navigieren kann.
+Sie können auch steuern die Reihenfolge der Fokus mit der `nextFocusDown`, `nextFocusLeft`, `nextFocusRight`, `nextFocusUp` Attribute, die in der Regel im AXML-Layout festgelegt. Verwenden Sie diese Attribute, um sicherzustellen, dass der Benutzer leicht die Steuerelemente auf dem Bildschirm navigieren kann.
 
 
-## <a name="accessibility-and-localization"></a>Eingabehilfen und Lokalisierung
+## <a name="accessibility-and-localization"></a>Barrierefreiheit und Lokalisierung
 
-In der obigen Beispiele werden die Beschreibung-Hinweis und Inhalt, die unmittelbar auf den Anzeigewert festgelegt werden. Ist es besser, verwenden Sie die Werte in einer **Strings.xml** Datei, wie diese:
+Legen in die obigen Beispielen die-Hinweis und Inhalt Beschreibung finden Sie direkt auf der Anzeigewert. Es ist empfehlenswert, verwenden Sie die Werte in einer **von "Strings.xml"** Datei, wie diese:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -144,11 +144,11 @@ In der obigen Beispiele werden die Beschreibung-Hinweis und Inhalt, die unmittel
 </resources>
 ```
 
-Mithilfe von Text aus einer Datei Zeichenfolgen wird in c# und AXML Layoutdateien unten gezeigt:
+Dabei wird Text aus einer Datei Zeichenfolgen wird unten gezeigt C# und AXML-Layoutdateien:
 
 **C#**
 
-Statt im Code mithilfe von Zeichenfolgenliteralen, suchen Sie die übersetzten Werte aus Zeichenfolgen-Dateien, deren `Resources.GetText`:
+Statt im Code mithilfe von Zeichenfolgenliteralen, suchen Sie die übersetzten Werte aus Zeichenfolgen-Dateien mit `Resources.GetText`:
 
 ```csharp
 someText.Hint = Resources.GetText (Resource.String.enter_info);
@@ -157,7 +157,7 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 
 **AXML**
 
-In der Layout-XML Eingabehilfen-Attribute wie `hint` und `contentDescription` kann auf ein Zeichenfolgenbezeichner festgelegt werden:
+Wie in der Layout-XML-Attribute als Eingabehilfe `hint` und `contentDescription` kann auf einen Zeichenfolgenbezeichner festgelegt werden:
 
 ```xml
 <TextView
@@ -169,17 +169,17 @@ In der Layout-XML Eingabehilfen-Attribute wie `hint` und `contentDescription` ka
     android:contentDescription="@string/save_info" />
 ```
 
-Der Vorteil der Text in einer separaten Datei gespeichert ist, dass mehrere sprachübersetzungen der Datei in die app bereitgestellt werden können. Finden Sie unter der [Android-lokalisierungsleitfaden](~/android/app-fundamentals/localization.md) um zu erfahren, wie lokalisierte Zeichenfolge Dateien hinzufügen, um ein Anwendungsprojekt.
+Der Vorteil von Text in einer separaten Datei gespeichert ist, dass mehrere sprachübersetzungen der Datei in Ihre app bereitgestellt werden können. Finden Sie unter den [Android Lokalisierung Handbuch](~/android/app-fundamentals/localization.md) , erfahren, wie ein Projekt für die lokalisierte Zeichenfolge-Dateien hinzuzufügen.
 
 
-## <a name="testing-accessibility"></a>Barrierefreiheit
+## <a name="testing-accessibility"></a>Testen der Barrierefreiheit
 
-Führen Sie die [Schritte](http://developer.android.com/training/accessibility/testing.html#how-to) TalkBack und Durchsuchen von Touch So testen Sie den Zugriff auf Android-Geräten zu aktivieren.
+Führen Sie [folgendermaßen](http://developer.android.com/training/accessibility/testing.html#how-to) So aktivieren Sie TalkBack und Durchsuchen von Touch, um Zugriff auf Android-Geräten zu testen.
 
-Möglicherweise müssen Sie installieren [TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback) von Google Play herunter, wenn er nicht in erscheint **Einstellungen > Eingabehilfen**.
+Müssen Sie möglicherweise installieren [TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback) aus Google Play erscheint es nicht in **Einstellungen > Barrierefreiheit**.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Plattformübergreifende Eingabehilfen](~/cross-platform/app-fundamentals/accessibility.md)
+- [Cross-Platform-Barrierefreiheit](~/cross-platform/app-fundamentals/accessibility.md)
 - [Zugriff auf Android-APIs](http://developer.android.com/guide/topics/ui/accessibility/index.html)

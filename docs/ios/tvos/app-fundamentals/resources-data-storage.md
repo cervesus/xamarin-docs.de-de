@@ -1,41 +1,41 @@
 ---
-title: tvos. außerdem wurden Ressourcen und Speicherung von Daten in Xamarin
-description: In diesem Artikel wird beschrieben, wie zum Arbeiten mit Ressourcen und persistente Speicherung von Daten in einer app für tvos. außerdem wurden mit Xamarin erstellt wird. Es wird erläutert, Speicher und bei Bedarf Datenressourcen des iCloud.
+title: TvOS-Ressourcen und die Datenspeicherung in Xamarin
+description: Dieser Artikel beschreibt das Arbeiten mit Ressourcen und die persistente Speicherung von Daten in einer TvOS-app mit Xamarin erstellt wurde. Es wird erläutert, iCloud, Data, Speicher und on-Demand-Ressourcen.
 ms.prod: xamarin
 ms.assetid: C56B5046-D2C0-4B63-9CE0-ADAA0EFD368A
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: aa14ac08763a48b5f4f9a9522e8b10c652e513c4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8f8ecc115738fb97f71b4ea6b2cdcc5c2714372d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788835"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108183"
 ---
-# <a name="tvos-resources-and-data-storage-in-xamarin"></a>tvos. außerdem wurden Ressourcen und Speicherung von Daten in Xamarin
+# <a name="tvos-resources-and-data-storage-in-xamarin"></a>TvOS-Ressourcen und die Datenspeicherung in Xamarin
 
-_In diesem Artikel wird das Arbeiten mit Ressourcen und die persistente Speicherung von Daten in einer app Xamarin.tvOS behandelt._
+_Dieser Artikel behandelt die Arbeit mit Ressourcen und die persistente Speicherung von Daten in einer Xamarin.tvOS-app._
 
 <a name="tvOS-Resource-Limitations" />
 
-## <a name="tvos-resource-limitations"></a>tvos. außerdem wurden Ressourceneinschränkungen
+## <a name="tvos-resource-limitations"></a>TvOS Ressourceneinschränkungen
 
-Im Gegensatz zu iOS-Geräten bietet der neue Apple TV sehr begrenzten persistenten und lokalen Speicher für tvos. außerdem wurden apps oder Daten an. Für sehr kleine Elemente (z. B. benutzereinstellungen) Ihrer app tvos. außerdem wurden hat weiterhin Zugriff auf `NSUserDefaults` mit einem [maximal 500 KB Daten](https://forums.developer.apple.com/message/50696#50696). Jedoch wenn Ihre app Xamarin.tvOS größere Mengen an Informationen beibehalten muss, es muss speichern und abrufen, dass Daten von [iCloud](#iCloud-Data-Storage).
+Im Gegensatz zu iOS-Geräte bietet neue Apple TV sehr begrenzten persistenten und lokalen Speicher für TvOS-apps oder Daten an. Für sehr kleine Elemente (wie benutzereinstellungen), TvOS-app immer noch Zugriff auf `NSUserDefaults` mit einem [maximal 500 KB Daten](https://forums.developer.apple.com/message/50696#50696). Aber wenn Ihrer app Xamarin.tvOS größere Mengen von Informationen beibehalten werden muss, es muss speichern und abrufen, der Daten aus [iCloud](#iCloud-Data-Storage).
 
-Darüber hinaus schränkt tvos. außerdem wurden die Größe einer Apple TV-App auf 200MB. Wenn Ihre app auf Ressourcen außerhalb dieser Größe benötigt, müssen sie als verpackt und mit geladen [On-Demand-Ressourcen](#On-Demand-Resources) (bis zu einer zusätzlichen 2 GB). Wenn diese Einschränkungen, ist es wichtig, dass Sie ordnungsgemäß viel Zeit das Herunterladen von zusätzlichen Ressourcen am besten für Benutzer der app angeben. Weitere Informationen finden Sie in der Apple- [On-Demand-Handbuch](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083).
+TvOS schränkt darüber hinaus die Größe einer Apple TV-App auf 200MB. Wenn Ihre app mit Ressourcen außerhalb dieser Größe erforderlich ist, müssen sie werden verpackt und mit geladen [On-Demand-Ressourcen](#On-Demand-Resources) (bis zu zusätzlich 2 GB). Wenn diese Einschränkungen, ist es wichtig, dass Sie ordnungsgemäß Zeit das Herunterladen von zusätzlichen Ressourcen am besten für die Benutzer Ihrer app bereitstellen. Weitere Informationen finden Sie unter Apple [On-Demand-Ressourcen-Handbuch](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083).
 
 <a name="Non-Persistent-Downloads" />
 
 ## <a name="non-persistent-downloads"></a>Nicht persistenter Downloads
 
-Jede app tvos. außerdem wurden, wird ein temporärer Cacheverzeichnis bereitgestellt, die auf zusätzliche Ressourcen und Ressourcen heruntergeladen werden. Dieses Verzeichnis wird beibehalten werden, solange die Anwendung weiterhin ausgeführt wird. Allerdings ab, die Apple TV benötigt, um Platz für andere apps oder systemnutzung freizugeben, kann diesen Cache gelöscht werden.
+Jede TvOS-app wird ein temporäres Cacheverzeichnis bereitgestellt, dem auf die zusätzlichen Ressourcen und Ressourcen heruntergeladen werden. Dieses Verzeichnis werden beibehalten, solange die app immer noch ausgeführt wird. Aber wie Apple TV benötigt, um Platz für anderen apps oder die systemnutzung freizugeben, kann diesen Cache gelöscht werden.
 
-Daher kann nicht Ihre app auf zuvor heruntergeladene Inhalt nicht verfügbar sind, das er gestartet, wird das nächste Mal basieren. Ihre app Xamarin.tvOS sollte immer das Vorhandensein der erforderlichen Ressourcen überprüfen und diese nach Bedarf heruntergeladen.
+Daher kann nicht Ihre app auf zuvor heruntergeladene Inhalt nicht verfügbar sind, beim nächsten Starten basieren. Ihre Xamarin.tvOS-app sollte immer das Vorhandensein des erforderlichen Ressourcen überprüfen und diese nach Bedarf herunterladen.
 
 > [!IMPORTANT]
-> Während Sie die Möglichkeit, andere Ressourcen und Ressourcen nach Bedarf heruntergeladen haben, warnt Apple für den gesamten Platz im Cache der Ihrer app verwenden, da es zu unvorhersehbaren Ergebnissen führen kann.
+> Während Sie die Möglichkeit, andere Objekte und die Ressourcen nach Bedarf heruntergeladen haben, warnt Apple für den gesamten Platz im Cache, der Ihrer app nutzen, da dies zu unvorhersehbaren Ergebnissen führen kann.
 
 
 
@@ -44,18 +44,18 @@ Daher kann nicht Ihre app auf zuvor heruntergeladene Inhalt nicht verfügbar sin
 
 ## <a name="managing-resources"></a>Verwalten von Ressourcen
 
-Wie oben aufgrund des begrenzten nicht persistente Speicherung von Informationen für tvos. außerdem wurden-apps verfügbar angegeben, erfordern diese Einschränkungen sorgfältiger Planung eine hervorragende Benutzeroberfläche für Ihre app Xamarin.tvOS bereitgestellt.
+Wie oben aufgrund des begrenzten, nicht permanente Speicher für TvOS-apps verfügbaren Informationen angegeben, erfordern diese Einschränkungen eine sorgfältige Planung, um ein optimales Benutzererlebnis für Ihre Xamarin.tvOS-app zu erstellen.
 
 <a name="iCloud-Data-Storage" />
 
-### <a name="icloud-data-storage"></a>iCloud Datenspeicher
+### <a name="icloud-data-storage"></a>iCloud-Datenspeicher
 
-Da Speicher auf den Apple TV beschränkt ist, nicht nur ist es nur sehr eingeschränkt persistent, lokalen Speicher Ihrer app hat keine Garantie, die alle Informationen, die sie zuvor heruntergeladen haben das nächste Mal zur Verfügung stehen diese ausgeführt wird.
+Da Speicher auf Apple TV beschränkt ist, ist Sie nicht nur es sehr eingeschränkte persistenten und lokalen Speicher, Ihre app verfügt über keine Garantie dafür, die alle Informationen, die sie zuvor heruntergeladen haben. das nächste Mal zur Verfügung stehen diese ausgeführt wird.
 
-Daher muss Ihre app Xamarin.tvOS Benutzerdaten in eine iCloud Datenspeicher speichern. Apple bietet zwei iCloud kennwortbasierten Datenschutzdienst Speicheroptionen für Ihre apps tvos. außerdem wurden:
+Daher muss Ihre app Xamarin.tvOS Benutzerdaten in einer iCloud Data Store speichern. Apple bietet zwei iCloud-basierte Datenspeicheroptionen für Ihre TvOS-apps:
 
-- **iCloud Schlüssel-Wert-Speicher (KVS)** – Geben Sie für kleine Mengen an Informationen (weniger als 1 MB), dass Ihre app möglicherweise können Sie iCloud KVS Speicher (z. B. benutzereinstellungen) erforderlich. iCloud KVS Daten werden automatisch mit der Cloud und aller Geräte des Benutzers, die die gleiche app ausgeführt synchronisiert werden. Weitere Informationen finden Sie unter der [Schlüssel-Wert-Speicher](~/ios/data-cloud/introduction-to-icloud.md) Teil unserer [Einführung in die iCloud](~/ios/data-cloud/introduction-to-icloud.md) Dokument oder APNs von Apple [Entwerfen für Schlüssel-Wert-Daten in iCloud](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/iCloudDesignGuide/Chapters/DesigningForKey-ValueDataIniCloud.html#//apple_ref/doc/uid/TP40012094-CH7) (Dokumentation).
-- **CloudKit** – für die Speicherung von größeren Angaben (größer als 1 MB), Apple CloudKit-Framework verwenden. Im Gegensatz zu iCloud KVS Speicher können CloudKit Daten für alle Benutzer Ihrer app (ebenso wie für einen einzelnen Benutzer privat wird) freigegeben werden. Weitere Informationen zu bilden, finden Sie unter unsere [Einführung in CloudKit](~/ios/data-cloud/intro-to-cloudkit.md) -Dokumentation oder APNs von Apple [CloudKit Schnellstart](https://developer.apple.com/library/prerelease/tvos/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987).
+- **iCloud-Schlüssel-Wert-Speicher (KVS)** : für einzelne Informationen (weniger als 1 MB), dass Ihre app möglicherweise (wie benutzereinstellungen), können Sie iCloud KVS Speicher. iCloud KVS Daten werden in die Cloud und alle Geräte des Benutzers, die die gleiche app ausgeführt wird automatisch synchronisiert. Weitere Informationen finden Sie unter den [Schlüssel-Wert-Speicher](~/ios/data-cloud/introduction-to-icloud.md) Teil unserer [Einführung in iCloud](~/ios/data-cloud/introduction-to-icloud.md) Dokument oder APNs von Apple [Entwerfen für Schlüssel-Wert-Daten in iCloud](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/iCloudDesignGuide/Chapters/DesigningForKey-ValueDataIniCloud.html#//apple_ref/doc/uid/TP40012094-CH7) Dokumentation.
+- **CloudKit** : für die Speicherung von größere Teile der Informationen (größer als 1 MB) von Apple-CloudKit-Framework verwenden. Im Gegensatz zu iCloud KVS Speicher können die CloudKit Daten von allen Benutzern Ihrer app (als auch für ein einzelner Benutzer privat wird) freigegeben werden. Weitere Informationen zu bilden, informieren Sie sich unsere [Einführung in CloudKit](~/ios/data-cloud/intro-to-cloudkit.md) Dokumentation oder APNs von Apple [CloudKit Schnellstart](https://developer.apple.com/library/prerelease/tvos/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987).
 
 > [!IMPORTANT]
 > Apple [stellt Tools zur Verfügung](https://developer.apple.com/support/allowing-users-to-manage-data/), die Entwickler dabei unterstützen, die Datenschutz-Grundverordnung (DSGVO) der Europäischen Union umzusetzen.
@@ -64,16 +64,16 @@ Daher muss Ihre app Xamarin.tvOS Benutzerdaten in eine iCloud Datenspeicher spei
 
 ### <a name="on-demand-resources"></a>On-Demand-Ressourcen
 
-On-Demand-Ressourcen bereitzustellen, app-Inhalte und Ressourcen (getrennt von der app-Bündel), die im App Store gehostet und ggf. von Ihrer app heruntergeladen. Bis zu 2 GB zusätzlichem Daten können bedient werden mithilfe von On-Demand-Ressourcen. Sie ermöglichen es der ersten app herunterladen, die kleiner sind (tvos. außerdem wurden apps sind beschränkt auf maximal 200MB), dabei aber nicht auf umfangreiche Ressourcen nach Bedarf.
+On-Demand-Ressourcen bereitstellen, app-Inhalte und Ressourcen (getrennt von der app-Bündel), die auf den App Store gehostet und als Ihre app erforderliche heruntergeladen werden. Bis zu zusätzlich 2 GB Daten kann bereitgestellt werden mithilfe von On-Demand-Ressourcen. Sie ermöglichen es der ersten app herunterladen, die kleiner sind (TvOS-apps sind beschränkt auf maximal 200MB), während gleichzeitig die umfangreichen Ressourcen nach Bedarf.
 
-Wenn eine app tvos. außerdem wurden die On-Demand-Ressourcen anfordert, wird das System automatisch das Herunterladen und die Speicher dieses Inhalts auf die app Cacheverzeichnis verwalten. Ihre app muss warten, für diesen Inhalt heruntergeladen und verfügbar gemacht, damit sie fortgesetzt werden kann.
+Wenn eine TvOS-app On-Demand-Ressourcen anfordert, wird das System automatisch das Herunterladen und Speichern von Inhalt der app-Cacheverzeichnis verwalten. Ihre app muss warten, für diesen Inhalt heruntergeladen und verfügbar gemacht, damit er fortfahren kann.
 
-Diese Ressourcen werden möglicherweise weiterhin auf dem Apple TV während des gesamten mehrere startet der app, daher beschleunigen starten Zyklus zwischengespeichert werden soll. Allerdings kann nicht Ihre app auf zuvor heruntergeladene Inhalt nicht verfügbar sind, das er gestartet, wird das nächste Mal basieren. Finden Sie unter der [nicht persistenter Downloads](#Non-Persistent-Downloads) im Abschnitt oben für weitere Details.
+Diese Ressourcen möglicherweise weiterhin auf Apple TV in mehrere Start Ihrer App, daher beschleunigen starten Zyklus zwischengespeichert werden. Allerdings kann nicht Ihre app basieren, für alle zuvor heruntergeladenen Inhalte nicht verfügbar sind, das nächste Mal starten. Finden Sie unter den [Non-Persistent Downloads](#Non-Persistent-Downloads) Abschnitt Weitere Details.
 
-Verwenden Sie Xcode, um Pakete mit verwandtem Inhalt (z. B. alle Ressourcen für Spiel Stufe 2) einen angegebenen Ressourcentag zugeordnet zu erstellen. Später wird Ihre app On-Demand-Ressource durch Angeben dieses Ressourcentag anfordern. Ihre app sollte eine Benutzeroberfläche vorweisen, die dem Benutzer angezeigt, die besagt, dass der Inhalt heruntergeladen wird. Weitere Informationen finden Sie in der Apple- [On-Demand-Handbuch](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083).
+Verwenden Sie Xcode, um Pakete mit verwandtem Inhalt (z. B. alle Ressourcen für Spiele Stufe 2) eine bieten Ressourcentag zugeordnet zu erstellen. Später wird Ihre app On-Demand-Ressourcen durch Angeben dieser Ressourcentag anfordern. Ihre app sollte eine Benutzeroberfläche darzustellen, für dem Benutzer, die mit dem Hinweis, dass der Inhalt heruntergeladen wird. Weitere Informationen finden Sie unter Apple [On-Demand-Ressourcen-Handbuch](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083).
 
 > [!IMPORTANT]
-> Vorsichtig sollte vorgenommen werden, das richtige Gleichgewicht zwischen oft die app erhält Ressourcen bei Bedarf heruntergeladen und die Größe der einzelnen Downloads zu erreichen. Benutzer kann mit Ihrer app frustriert werden, wenn Spielverlauf ständig unterbrochen wird, um neue Inhalte herunterladen oder ein einzigen Download zu lange dauert.
+> Das Abfragemodell das richtige Gleichgewicht zwischen der Anzahl an, wie oft die app verfügt über On-Demand-Ressourcen herunterladen und die Größe der einzelnen Downloads sollte vorsichtig vorgenommen werden. Benutzer sind möglicherweise für Ihre app enttäuscht, wenn Gameplay ständig unterbrochen wird, um neue Inhalte herunterladen oder ein einzigen Download zu lange dauert.
 
 
 
@@ -82,7 +82,7 @@ Verwenden Sie Xcode, um Pakete mit verwandtem Inhalt (z. B. alle Ressourcen für
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel hat die Größe, Ressourcen- und Daten Speicher Einschränkungen auf eine app Xamarin.tvOS platziert werden, vom System tvos. außerdem wurden behandelt. Sie verfügt über Optionen zum Umgehen dieser Einschränkungen und Vorschläge enthalten, die eine hervorragende Benutzeroberfläche für Ihre app bereitgestellt angezeigt.
+In diesem Artikel wurden die speichereinschränkungen der Größe, Ressourcen und Daten auf einer Xamarin.tvOS-app platziert wird, vom System TvOS behandelt. Es verfügt über Optionen zum Umgehen dieser Einschränkungen und Vorschläge für ein optimales Benutzererlebnis für Ihre app zu erstellen, angezeigt.
 
 
 
@@ -90,5 +90,5 @@ Dieser Artikel hat die Größe, Ressourcen- und Daten Speicher Einschränkungen 
 
 - [tvOS-Beispiele](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvos. außerdem wurden Handbücher für interaktive Workflowdienste-Schnittstelle](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [App-Programmierhandbuch für tvos. außerdem wurden](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [TvOS Human Interface-Handbücher](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [App-Programmierhandbuch für tvos verwendet.](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

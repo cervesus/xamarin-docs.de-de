@@ -1,29 +1,29 @@
 ---
-title: Multi-Touch-Finger in Xamarin.Android nachverfolgen
-description: In diesem Thema wird veranschaulicht, wie zum Nachverfolgen von touchereignissen aus mehreren Finger
+title: Multitouch-Finger in Xamarin.Android nachverfolgen
+description: In diesem Thema wird veranschaulicht, wie zum Nachverfolgen von Touch-Ereignissen aus mehreren Fingern
 ms.prod: xamarin
 ms.assetid: 048D51F9-BD6C-4B44-8C53-CCEF276FC5CC
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 97e848e74a4513c55c0bf50258621c010b347fcd
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: 34a9d2d9b8acb05a1b978a70e85038507032faaa
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32436605"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104686"
 ---
-# <a name="multi-touch-finger-tracking"></a>Multi-Touch-Finger-Überwachung
+# <a name="multi-touch-finger-tracking"></a>Multitouch-Finger-nachverfolgung
 
-_In diesem Thema wird veranschaulicht, wie zum Nachverfolgen von touchereignissen aus mehreren Finger_
+_In diesem Thema wird veranschaulicht, wie zum Nachverfolgen von Touch-Ereignissen aus mehreren Fingern_
 
-Es gibt Situationen, wenn eine Multi-Touch-Anwendung muss einzelne Finger zu verfolgen, während sie gleichzeitig auf dem Bildschirm zu verschieben. Eine typische Anwendung ist ein Finger-paint-Programm. Die Benutzer können mit einem einzelnen Finger gezeichnet werden soll, sondern auch gleichzeitig mit mehreren Fingern gezeichnet werden soll. Wie Ihre Anwendung mehrere Berührungsereignisse verarbeitet, muss er zu unterscheiden, welche Ereignisse jeden Finger entsprechen. Android liefert einen ID-Code für diesen Zweck, aber abrufen und diesen Code behandeln können ein bisschen schwierig.
+Es gibt Situationen, wenn eine Multi-Touch-Anwendung muss einzelner Finger zu verfolgen, während sie gleichzeitig auf dem Bildschirm zu verschieben. Eine typische Anwendung ist ein Programm Finger-paint. Sie möchten die Benutzer mit einem einzelnen Finger gezeichnet werden soll, sondern auch gleichzeitig mit mehreren Fingern zeichnen kann. Während das Programm mehrere touchereignisse verarbeitet, muss er zu unterscheiden, welche Ereignisse, die jeden Finger entsprechen. Android bietet einen ID-Code für diesen Zweck, aber abrufen und Verarbeiten dieser Code können etwas schwierig sein.
 
-Für alle Ereignisse im Zusammenhang mit einem bestimmten Finger bleibt die ID-Code. Die ID-Code wird zugewiesen, wenn ein Finger zuerst den Bildschirm berührt und wird ungültig, nachdem Sie den Finger vom Bildschirm hebt.
-Diese ID-Codes sind im Allgemeinen sehr klein ganze Zahlen und Android für spätere Berührungsereignisse wiederverwendet.
+Für alle Ereignisse mit einem bestimmten Finger verknüpft ist bleibt die ID-Code unverändert. Die ID-Code wird zugewiesen, wenn ein Finger zuerst den Bildschirm berührt, und wird ungültig, nachdem Sie den Finger vom Bildschirm hebt.
+Diese ID-Codes werden im Allgemeinen sehr klein Ganzzahlen und Android für späteren Berührungsereignisse wiederverwendet.
 
-Ein Programm, das die einzelnen Finger nachverfolgt verwaltet fast immer ein Wörterbuch zum Nachverfolgen von Touch. Die Wörterbuchschlüssel ist die ID-Code, der einen bestimmten Finger identifiziert. Der Wörterbuchwert hängt von der Anwendung ab. In der [FingerPaint](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint) Programm, jeden Finger Strich (von Touch freigeben) bezieht sich auf ein Objekt, alle Informationen, die erforderlich sind enthält, um mit diesem Finger gezeichnete Linie zu rendern. Das Programm definiert eine kleine `FingerPaintPolyline` Klasse für diesen Zweck:
+Ein Programm, das einzelner Finger verfolgt wird fast immer ein Wörterbuch zum Nachverfolgen von Touch verwaltet. Die Wörterbuchschlüssel ist die ID-Code, der einen bestimmten Finger identifiziert. Der Wörterbuchwert hängt von der Anwendung ab. In der [FingerPaint](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint) Programm Strichfarbe Finger (von Toucheingabe freigeben) bezieht sich auf ein Objekt, das alle Informationen, die zum Rendern mit Fingers gezeichneten Linie enthält. Das Programm definiert ein kleines `FingerPaintPolyline` -Klasse für diesen Zweck:
 
 ```csharp
 class FingerPaintPolyline
@@ -41,17 +41,17 @@ class FingerPaintPolyline
 }
 ```
 
-Jede Polylinie hat eine Farbe, Strichbreite und eine Android Grafiken [ `Path` ](https://developer.xamarin.com/api/type/Android.Graphics.Path/) Objekt ansammeln und Rendern von mehreren Punkten der Zeile, wie gezeichnet wird.
+Jeder Polylinie verfügt über eine Farbe, eine Strichbreite und eine Android-Grafiken [ `Path` ](https://developer.xamarin.com/api/type/Android.Graphics.Path/) Objekt, das Sammeln und mehrere Punkte der Linie zu rendern, wie er gerade gezeichnet wird.
 
-Im weiteren Verlauf des unten angezeigten Codes befindet sich einem `View` Ableitung, die mit dem Namen `FingerPaintCanvasView`. Dass die Klasse ein Wörterbuch von Objekten des Typs verwaltet `FingerPaintPolyline` während der Zeit, die sie aktiv von einem oder mehreren Fingern gezeichnet werden:
+Der Rest von den folgenden Code ist Bestandteil einer `View` -Ableitung namens `FingerPaintCanvasView`. Dass die Klasse ein Wörterbuch von Objekten des Typs verwaltet `FingerPaintPolyline` während des Zeitraums, der diese aktiv von einem oder mehreren Fingern gezeichnet werden:
 
 ```csharp
 Dictionary<int, FingerPaintPolyline> inProgressPolylines = new Dictionary<int, FingerPaintPolyline>();
 ```
 
-Dieses Wörterbuch kann die Ansicht, um schnell ermitteln der `FingerPaintPolyline` Informationen, die einem bestimmten Finger zugeordnet.
+Dieses Wörterbuch kann die Ansicht schnell Abrufen der `FingerPaintPolyline` Informationen, die einem bestimmten Finger zugeordnet.
 
-Die `FingerPaintCanvasView` Klasse verwaltet auch eine `List` Objekt für die Polylinien, die abgeschlossen wurden:
+Die `FingerPaintCanvasView` Klasse verwaltet auch eine `List` -Objekt für die Polylinien, die abgeschlossen wurden:
 
 ```csharp
 List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
@@ -59,10 +59,11 @@ List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 
 Die Objekte in diesem `List` befinden sich in der gleichen Reihenfolge an, dass sie gezeichnet wurden.
 
-`FingerPaintCanvasView` zwei Methoden, die durch definierten überschreibt `View`: [ `OnDraw` ](https://developer.xamarin.com/api/member/Android.Views.View.OnDraw/p/Android.Graphics.Canvas/) und [ `OnTouchEvent` ](https://developer.xamarin.com/api/member/Android.Views.View.OnTouchEvent/p/Android.Views.MotionEvent/).
-In seiner `OnDraw` "Override", "der Ansicht zeichnet die abgeschlossenen Polylinien, und klicken Sie dann zeichnet die Polylinien in Bearbeitung.
+`FingerPaintCanvasView` überschreibt zwei Methoden definiert, indem `View`: [`OnDraw`](https://developer.xamarin.com/api/member/Android.Views.View.OnDraw/p/Android.Graphics.Canvas/)
+und [ `OnTouchEvent` ](https://developer.xamarin.com/api/member/Android.Views.View.OnTouchEvent/p/Android.Views.MotionEvent/).
+In der `OnDraw` "Override", "der Ansicht die abgeschlossenen Polylinien zeichnet und zeichnet dann die Polylinien in Bearbeitung.
 
-Überschreiben von der `OnTouchEvent` Methode beginnt mit der abrufen eine `pointerIndex` Wert aus der `ActionIndex` Eigenschaft. Dies `ActionIndex` Wert unterscheidet zwischen mehreren Finger, aber es ist nicht über mehrere Ereignisse konsistent. Aus diesem Grund verwenden Sie die `pointerIndex` zum Abrufen des Zeigers `id` Wert aus der `GetPointerId` Methode. Diese ID *ist* Konsistenz im gesamten mehrere Ereignisse:
+Überschreiben der `OnTouchEvent` Methode beginnt mit dem Abrufen von einer `pointerIndex` Wert aus der `ActionIndex` Eigenschaft. Dies `ActionIndex` Wert unterscheidet sich zwischen mehreren Fingern, aber es ist nicht über mehrere Ereignisse hinweg konsistent. Aus diesem Grund verwenden Sie die `pointerIndex` zum Abrufen des Zeigers `id` Wert aus der `GetPointerId` Methode. Diese ID *ist* Konsistenz im gesamten mehrere Ereignisse:
 
 ```csharp
 public override bool OnTouchEvent(MotionEvent args)
@@ -87,17 +88,17 @@ public override bool OnTouchEvent(MotionEvent args)
 }
 ```
 
-Beachten Sie, die die Außerkraftsetzung verwendet die `ActionMasked` Eigenschaft in der `switch` Anweisung statt über das `Action` Eigenschaft. Erläuterung:
+Beachten Sie, die die Außerkraftsetzung verwendet die `ActionMasked` -Eigenschaft in der `switch` Anweisung anstelle der `Action` Eigenschaft. Erläuterung:
 
-Beim Umgang mit Multi-Touch, sind die `Action` Eigenschaft hat den Wert der `MotionEventsAction.Down` für Zeigefinger, berühren Sie den Bildschirm und Werte der `Pointer2Down` und `Pointer3Down` als das zweite und dritte Finger auch den Bildschirm berühren. Wie die vierte und fünfte Finger Stellen wenden Sie sich an, die `Action` Eigenschaft hat numerische Werte, die auch Mitglieder der entsprechen nicht den `MotionEventsAction` Enumeration! Sie müssten die Werte von Bitflags in den Werten zu interpretieren, ihre Bedeutung zu untersuchen.
+Im Zusammenhang mit Multi-Touch, sind die `Action` Eigenschaft hat den Wert `MotionEventsAction.Down` für den ersten Finger auf dem Bildschirm, und klicken Sie dann Werte der touch `Pointer2Down` und `Pointer3Down` als die zweite und dritte Finger auch den Bildschirm berühren. Die vierte und fünfte Finger Stellen wenden Sie sich an, die `Action` Eigenschaft verfügt über numerische Werte, die Mitglieder selbst entsprechen nicht, den `MotionEventsAction` Enumeration! Sie müssten die Werte von Bitflags, die Werte zum Interpretieren, zu deren Bedeutung zu untersuchen.
 
-Auf ähnliche Weise wie die Finger aufeinander Kontakt mit dem Bildschirm lassen die `Action` Eigenschaft enthält die Werte von `Pointer2Up` und `Pointer3Up` für den zweiten und dritten Finger und `Up` für Zeigefinger.
+Auf ähnliche Weise wie die Finger Kontakt mit dem Bildschirm, lassen Sie die `Action` Eigenschaft enthält die Werte von `Pointer2Up` und `Pointer3Up` für die zweite und dritte Finger und `Up` für den ersten Finger.
 
-Die `ActionMasked` -Eigenschaft übernimmt eine geringere Anzahl der Werte, da es in Verbindung mit verwendet werden soll, hat die `ActionIndex` Eigenschaft, um die Unterscheidung zwischen mehreren Fingern fest. Wenn ein Finger den Bildschirm berühren, wird die Eigenschaft kann nur gleich `MotionEventActions.Down` für Zeigefinger und `PointerDown` für nachfolgende Fingern fest. Wie lassen Sie den Finger den Bildschirm `ActionMasked` enthält die Werte von `Pointer1Up` für nachfolgende Finger und `Up` für Zeigefinger.
+Die `ActionMasked` -Eigenschaft übernimmt eine geringere Anzahl von Werten, da es dafür vorgesehen ist, die in Verbindung mit verwendet werden die `ActionIndex` Eigenschaft unterscheiden mehrerer Finger. Wenn der Finger den Bildschirm berühren, wird die Eigenschaft kann nur gleich `MotionEventActions.Down` für den ersten Finger und `PointerDown` für nachfolgende Finger. Wie lassen Sie die Finger den Bildschirm `ActionMasked` enthält die Werte von `Pointer1Up` für die nachfolgenden Finger und `Up` für den ersten Finger.
 
-Bei Verwendung `ActionMasked`, `ActionIndex` unterscheidet zwischen nachfolgende Finger Touch und lassen Sie den Bildschirm jedoch in der Regel verwenden Sie diesen Wert außer als Argument an andere Methoden im müssen nicht die `MotionEvent` Objekt. Für Multi-Touch, zu den wichtigsten dieser Methoden ist `GetPointerId` im obigen Code aufgerufen. Dass die Methode einen Wert zurückgibt können Sie für eine Wörterbuchschlüssel verwenden, um bestimmte Ereignisse zu Finger zuzuordnen.
+Bei Verwendung `ActionMasked`, `ActionIndex` unterscheidet zwischen nachfolgenden Finger Touch zu lassen, auf der Bildschirm, aber Sie in der Regel verwenden Sie diesen Wert außer als Argument an andere Methoden im müssen nicht die `MotionEvent` Objekt. Für Multi-Touch, eine der wichtigsten dieser Methoden ist `GetPointerId` im obigen Code aufgerufen. Dass die Methode einen Wert zurückgibt können für ein Dictionary-Schlüssel Sie bestimmte Ereignisse Finger zuordnen.
 
-Die `OnTouchEvent` außer Kraft setzen, der [FingerPaint](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint) Programmvorgänge der `MotionEventActions.Down` und `PointerDown` Ereignisse identisch durch Erstellen eines neuen `FingerPaintPolyline` -Objekt und dem Wörterbuch hinzugefügt:
+Die `OnTouchEvent` außer Kraft setzen, der [FingerPaint](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint) programmprozesse der `MotionEventActions.Down` und `PointerDown` Ereignisse identisch durch Erstellen eines neuen `FingerPaintPolyline` -Objekts und zum Wörterbuch hinzufügen:
 
 ```csharp
 public override bool OnTouchEvent(MotionEvent args)
@@ -132,9 +133,9 @@ public override bool OnTouchEvent(MotionEvent args)
 }
 ```
 
-Beachten Sie, dass die `pointerIndex` auch verwendet, um die Position des Fingers innerhalb der Ansicht abzurufen. Alle Touch Informationen zugeordnet ist die `pointerIndex` Wert. Die `id` Finger über mehrere Nachrichten eindeutig identifiziert, sodass verwendeten Wörterbucheintrags zu erstellen.
+Beachten Sie, dass die `pointerIndex` wird auch verwendet, um die Position des Fingers in der Ansicht zu erhalten. Alle Touch Informationen zugeordnet ist die `pointerIndex` Wert. Die `id` Finger über mehrere Nachrichten, eindeutig identifiziert, sodass verwendete des Wörterbucheintrags zu erstellen.
 
-Auf ähnliche Weise die `OnTouchEvent` überschreiben auch Handles die `MotionEventActions.Up` und `Pointer1Up` identisch, indem Sie die abgeschlossene Polylinie zum Übertragen der `completedPolylines` Sammlung, damit sie während der gezeichnet werden können die `OnDraw` außer Kraft setzen. Der Code entfernt auch den `id` Eintrag aus dem Wörterbuch:
+Auf ähnliche Weise die `OnTouchEvent` überschreiben auch die Handles der `MotionEventActions.Up` und `Pointer1Up` identisch, indem Sie das abgeschlossene Polyline-Objekt zum Übertragen der `completedPolylines` Sammlung, damit sie während der gezeichnet werden, können die `OnDraw` außer Kraft setzen. Entfernt der Code auch die `id` Eintrag aus dem Wörterbuch:
 
 ```csharp
 public override bool OnTouchEvent(MotionEvent args)
@@ -162,9 +163,9 @@ public override bool OnTouchEvent(MotionEvent args)
 }
 ```
 
-Jetzt für die schwierige Teil ist.
+Jetzt für die der schwierige Teil.
 
-Zwischen den nach unten und Ereignisse sind im Allgemeinen gibt es viele `MotionEventActions.Move` Ereignisse. Diese werden in einem einzigen Aufruf gebündelt `OnTouchEvent`, und sie müssen über anders behandelt werden die `Down` und `Up` Ereignisse. Die `pointerIndex` zuvor abgerufenen Wert der `ActionIndex` Eigenschaft muss ignoriert werden. Stattdessen Abrufen der Methode muss mehrere `pointerIndex` Werte von Schleifen zwischen 0 und der `PointerCount` -Eigenschaft, und rufen Sie dann eine `id` für jede dieser `pointerIndex` Werte:
+Zwischen den nach unten, und Ereignisse, in der Regel stehen viele `MotionEventActions.Move` Ereignisse. Diese werden in einem einzigen Aufruf gebündelt `OnTouchEvent`, und sie müssen über anders behandelt werden die `Down` und `Up` Ereignisse. Die `pointerIndex` zuvor abgerufenen Wert der `ActionIndex` Eigenschaft muss ignoriert werden. Stattdessen muss die Methode mehrere abrufen `pointerIndex` Werte von Schleifen zwischen 0 und die `PointerCount` -Eigenschaft, und rufen Sie dann eine `id` für jede dieser `pointerIndex` Werte:
 
 ```csharp
 public override bool OnTouchEvent(MotionEvent args)
@@ -190,14 +191,14 @@ public override bool OnTouchEvent(MotionEvent args)
 }
 ```
 
-Diese Art der Verarbeitung ermöglicht die [FingerPaint](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint) Programm zum Nachverfolgen von einzelnen Finger und zeichnen die Ergebnisse auf dem Bildschirm:
+Diese Art der Verarbeitung ermöglicht die [FingerPaint](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint) Programm einzelner Finger nachverfolgen und die Ergebnisse auf dem Bildschirm zeichnen:
 
-[![Beispiel-Screenshot FingerPaint-Beispiel](touch-tracking-images/image01.png)](touch-tracking-images/image01.png#lightbox)
+[![Beispielscreenshot FingerPaint-Beispiel](touch-tracking-images/image01.png)](touch-tracking-images/image01.png#lightbox)
 
 Sie haben nun gesehen, wie Sie einzelne Finger auf dem Bildschirm nachverfolgen und diese zu unterscheiden.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Entsprechende Xamarin iOS-Handbuch](~/ios/app-fundamentals/touch/touch-tracking.md)
+- [Entsprechende Xamarin iOS-Entwicklerhandbuch](~/ios/app-fundamentals/touch/touch-tracking.md)
 - [FingerPaint (Beispiel)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint)

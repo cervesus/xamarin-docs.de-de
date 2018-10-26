@@ -3,33 +3,33 @@ title: Verwenden von CursorAdapters
 ms.prod: xamarin
 ms.assetid: 60DE467E-A5DA-4420-52E5-D86AD1678FE6
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 10/25/2017
-ms.openlocfilehash: 20311cc50c87638391d8b078c405bc61baceb373
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fbdd0f2ea000f0cf46178c615e7526bf7f210a41
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30766662"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103036"
 ---
 # <a name="using-cursoradapters"></a>Verwenden von CursorAdapters
 
 
 ## <a name="overview"></a>Übersicht
 
-Android bietet Adapterklassen, insbesondere, um Daten aus einer Datenbankabfrage SQLite anzuzeigen:
+Android bietet Adapterklassen speziell zum Anzeigen von Daten aus einer Abfrage der SQLite-Datenbank:
 
- **SimpleCursorAdapter** : ähnlich wie auf ein `ArrayAdapter` , da sie ohne Erstellung von Unterklassen von verwendet werden kann. Geben Sie die erforderlichen Parameter (z. B. einen Cursor und Layout-Informationen) einfach im Konstruktor ein, und weisen Sie dann eine `ListView`.
+ **SimpleCursorAdapter** : ähnlich wie auf eine `ArrayAdapter` , da sie ohne Unterklassen verwendet werden kann. Geben Sie einfach die erforderlichen Parameter (z. B. einen Cursor und Layout) im Konstruktor, und weisen Sie einem `ListView`.
 
- **CursorAdapter** – eine Basisklasse, die Sie aus, wenn Sie mehr über die Bindung von Daten steuern müssen erben können Werte für Layoutsteuerelemente (z. B. Steuerelemente ausblenden/einblenden oder ihre Eigenschaften ändern).
+ **CursorAdapter** – eine Basisklasse, die Sie aus, wenn Sie mehr über die Bindung von Daten steuern müssen erben können Werte für Layoutsteuerelemente (z. B. Steuerelemente anzeigen/ausblenden oder Änderung ihrer Eigenschaften).
 
-Cursor-Adapter bieten eine leistungsstarke Möglichkeit, einen Bildlauf durch lange Listen mit Daten, die in SQLite gespeichert sind. Der verwendete Code muss in eine SQL-Abfrage definieren eine `Cursor` Objekt, und klicken Sie dann beschrieben, wie das Erstellen und füllen Sie die Ansichten für jede Zeile.
+Cursor-Adapter bieten eine leistungsfähige Möglichkeit, einen Bildlauf durch lange Listen mit Daten durchführen, die in SQLite gespeichert sind. Der verwendete Code muss in eine SQL-Abfrage definieren eine `Cursor` Objekt aus, und klicken Sie dann beschrieben, wie Sie erstellen und füllen Sie die Ansichten für jede Zeile.
 
 
-## <a name="creating-an-sqlite-database"></a>Erstellen eine SQLite-Datenbank
+## <a name="creating-an-sqlite-database"></a>Erstellen einer SQLite-Datenbank
 
-Müssen eine einfache Implementierung der SQLite-Datenbank, um Cursor Adapter demonstrieren. Der Code in **SimpleCursorTableAdapter/VegetableDatabase.cs** enthält den Code und SQL zu erstellen, eine Tabelle mit Daten aufzufüllen.
+Müssen eine einfache Implementierung der SQLite-Datenbank, um Cursor-Adapter demonstrieren. Der Code in **SimpleCursorTableAdapter/VegetableDatabase.cs** enthält den Code und SQL zum Erstellen einer Tabelle und füllen Sie es mit Daten.
 Die vollständige `VegetableDatabase` Klasse wird hier gezeigt:
 
 ```csharp
@@ -57,14 +57,14 @@ class VegetableDatabase  : SQLiteOpenHelper {
 }
 ```
 
-Die `VegetableDatabase` Klasse instanziiert werden der `OnCreate` Methode der `HomeScreen` Aktivität. Die `SQLiteOpenHelper` Basisklasse verwaltet die Einrichtung der Datenbankdatei und stellt sicher, dass das SQL in seiner `OnCreate` Methode wird nur einmal ausgeführt. Diese Klasse wird verwendet, in den folgenden zwei Beispielen für `SimpleCursorAdapter` und `CursorAdapter`.
+Die `VegetableDatabase` in Klasse instanziiert die `OnCreate` Methode der `HomeScreen` Aktivität. Die `SQLiteOpenHelper` Basisklasse verwaltet das Setup der Datenbank ein, und stellt sicher, dass die SQL-Code in die `OnCreate` Methode nur einmal ausgeführt wird. Diese Klasse wird verwendet, in den folgenden zwei Beispielen für `SimpleCursorAdapter` und `CursorAdapter`.
 
-Die Cursorabfrage *müssen* haben eine Spalte mit ganzen Zahlen `_id` für die `CursorAdapter` arbeiten. Wenn die zugrunde liegende Tabelle keine Integer-Spalte, die mit dem Namen `_id` verwenden Sie einen Spaltenalias für eine andere eindeutige ganze Zahl in die `RawQuery` , aus der Cursor besteht. Finden Sie in der [Android Docs](https://developer.xamarin.com/api/type/Android.Widget.CursorAdapter/) für Weitere Informationen zu erhalten.
+Die Cursorabfrage *müssen* haben Sie eine Spalte mit ganzen Zahlen `_id` für die `CursorAdapter` funktioniert. Wenn die zugrunde liegende Tabelle keine Spalte mit ganzen Zahlen mit dem Namen `_id` verwenden Sie dann einen Spaltenalias für eine andere eindeutige ganze Zahl in die `RawQuery` bildet, die den Cursor. Finden Sie in der [Android-Dokumentation](https://developer.xamarin.com/api/type/Android.Widget.CursorAdapter/) für Weitere Informationen zu erhalten.
 
 
 ### <a name="creating-the-cursor"></a>Erstellen den Cursor
 
-Die Beispiele verwenden eine `RawQuery` So aktivieren Sie eine SQL-Abfrage in eine `Cursor` Objekt. Die Liste der Spalten, die vom Cursor zurückgegeben wird definiert, die Datenspalten, die für die Anzeige im Cursor Adapter verfügbar sind. Der Code, der die Datenbank im erstellt die **SimpleCursorTableAdapter/HomeScreen.cs** `OnCreate` Methode ist im folgenden dargestellt:
+Die Beispiele verwenden eine `RawQuery` zum Aktivieren einer SQL-Abfrage in eine `Cursor` Objekt. Die Liste der Spalten, die vom Cursor zurückgegeben wird, definiert die Datenspalten, die für die Anzeige in der Cursor-Adapter verfügbar sind. Der Code, die Datenbank in erstellt, der **SimpleCursorTableAdapter/HomeScreen.cs** `OnCreate` Methode wird hier gezeigt:
 
 ```csharp
 vdb = new VegetableDatabase(this);
@@ -73,35 +73,35 @@ StartManagingCursor(cursor);
 // use either SimpleCursorAdapter or CursorAdapter subclass here!
 ```
 
-Jeglicher Code, der Aufrufe `StartManagingCursor` sollten auch aufrufen, `StopManagingCursor`. In den Beispielen `OnCreate` gestartet werden, und `OnDestroy` Schließen des Cursors. Die `OnDestroy` Methode enthält dieser Code:
+Jeglicher Code, der Aufrufe `StartManagingCursor` aufgerufen werden soll `StopManagingCursor`. In den Beispielen `OnCreate` gestartet wurde, und `OnDestroy` Schließen des Cursors. Die `OnDestroy` Methode enthält dieser Code:
 
 ```csharp
 StopManagingCursor(cursor);
 cursor.Close();
 ```
 
-Sobald eine Anwendung eine SQLite-Datenbank verfügbar hat und ein Cursorobjekt erstellt wurde, wie dargestellt, kann es verwenden, entweder eine `SimpleCursorAdapter` oder eine Unterklasse von `CusorAdapter` anzuzeigenden Zeilen in eine `ListView`.
+Sobald eine Anwendung verfügt über eine SQLite-Datenbank verfügbar und ein Cursorobjekt erstellt wurde, wie gezeigt, können sie nutzen, entweder eine `SimpleCursorAdapter` oder eine Unterklasse von `CusorAdapter` anzuzeigenden Zeilen in einer `ListView`.
 
 
 ## <a name="using-simplecursoradapter"></a>Verwenden von SimpleCursorAdapter
 
-`SimpleCursorAdapter` entspricht der `ArrayAdapter`, aber für die Verwendung mit SQLite spezialisiert. Es nicht erfordern Unterklassen – einige einfache Parameter nur festgelegt werden, beim Erstellen des Objekts und weisen Sie ihn einer `ListView`des `Adapter` Eigenschaft.
+`SimpleCursorAdapter` Wie wird die `ArrayAdapter`, jedoch spezielle für die Verwendung mit SQLite. Es nicht erfordern Unterklassen – legen Sie einfach einige einfache Parameter beim Erstellen des Objekts und weisen Sie ihn ein `ListView`des `Adapter` Eigenschaft.
 
-Die Parameter des Konstruktors SimpleCursorAdapter lauten:
+Die Parameter für den Konstruktor SimpleCursorAdapter sind:
 
  **Kontext** – einen Verweis auf die enthaltende Aktivität.
 
- **Layout** – die Ressourcen-ID der Zeilenansicht zu verwenden.
+ **Layout** – die Ressourcen-ID der Zeile an.
 
  **ICursor** – einen Cursor, die die SQLite-Abfrage für die anzuzeigenden Daten enthält.
 
- **Aus** Zeichenfolgenarray – ein Array von Zeichenfolgen, die entsprechend den Namen der Spalten im Cursor.
+ **Von** Zeichenfolgenarray – ein Array von Zeichenfolgen, die entsprechend den Namen der Spalten im Cursor.
 
- **Um** Ganzzahlarray – ein Array von Layout-IDs, die die Steuerelemente in das Zeilenlayout entsprechen. Der Wert der Spalte angegeben wird, der `from` Array wird an die in diesem Array am gleichen Index angegebenen ControlID gebunden werden.
+ **Um** Ganzzahlarray – ein Array von Layout-IDs, die die Steuerelemente in das Zeilenlayout entsprechen. Der Wert der Spalte angegeben wird, der `from` Array wird an die in diesem Array, an den gleichen Index angegebenen ControlID gebunden werden.
 
-Die `from` und `to` Arrays müssen die gleiche Anzahl von Einträgen haben, da sie eine Zuordnung aus der Datenquelle zu Layout-Steuerelemente in der Ansicht bilden.
+Die `from` und `to` Arrays müssen die gleiche Anzahl von Einträgen, da sie eine Zuordnung aus der Datenquelle an die Layoutsteuerelemente in der Ansicht bilden.
 
-Die **SimpleCursorTableAdapter/HomeScreen.cs** Beispiel Code Drähten Einrichten einer `SimpleCursorAdapter` wie folgt:
+Die **SimpleCursorTableAdapter/HomeScreen.cs** sample Code verbindet sich ein `SimpleCursorAdapter` wie folgt aus:
 
 ```csharp
 // which columns map to which layout controls
@@ -113,25 +113,25 @@ listView.Adapter = new SimpleCursorAdapter (this, Android.Resource.Layout.Simple
        toControlIDs);
 ```
 
-`SimpleCursorAdapter` ist eine schnelle und einfache Möglichkeit zum Anzeigen von SQLite-Daten in eine `ListView`. Die haupteinschränkung ist, dass es kann nur Spaltenwerte anzuzeigenden Steuerelemente binden, er lässt keine anderen Aspekte des Zeilenlayouts (z. B. Steuerelemente anzeigen/ausblenden oder Ändern von Eigenschaften) ändern.
+`SimpleCursorAdapter` ist eine schnelle und einfache Möglichkeit zum Anzeigen von SQLite-Daten in einem `ListView`. Die wesentliche Einschränkung besteht, kann nur bindet, bindet es Spaltenwerte Steuerelemente angezeigt, die es erlaubt Ihnen nicht so ändern Sie andere Aspekte des Zeilenlayouts (z. B. Steuerelemente anzeigen/ausblenden oder Ändern von Eigenschaften).
 
 
-## <a name="subclassing-cursoradapter"></a>Erstellen von Unterklassen CursorAdapter
+## <a name="subclassing-cursoradapter"></a>Erstellen von Unterklassen für CursorAdapter
 
-Ein `CursorAdapter` Unterklasse hat die gleichen Leistungsvorteile als die `SimpleCursorAdapter` Anzeigen von Daten aus SQLite, sondern auch Sie vollständige Kontrolle über die Erstellung und das Layout der einzelnen Ansichten Zeile durch zur Verfügung stehen. Die `CursorAdapter` Implementierung ist grundlegend von Unterklassen `BaseAdapter` , da es nicht überschreibt `GetView`, `GetItemId`, `Count` oder `this[]` Indexer.
+Ein `CursorAdapter` Unterklasse verfügt über die gleichen Leistungsvorteile als die `SimpleCursorAdapter` für das Anzeigen von Daten von SQLite, sondern auch Sie vollständige Kontrolle über die Erstellung und das Layout der jede Zeile anzeigen kann. Die `CursorAdapter` Implementierung unterscheidet sich sehr von Unterklassen `BaseAdapter` , da es nicht überschreibt `GetView`, `GetItemId`, `Count` oder `this[]` Indexer.
 
-Erhält eine funktionierende SQLite-Datenbank, müssen Sie nur überschreiben, zwei Methoden zum Erstellen einer `CursorAdapter` Unterklasse:
+Erhalten eine funktionierende SQLite-Datenbank, Sie brauchen nur noch Überschreiben zweier Methoden zum Erstellen einer `CursorAdapter` Unterklasse:
 
-- **BindView** – Wenn Sie eine Sicht, ein update zum Anzeigen der Daten in den angegebenen Cursor.
+- **BindView** – Wenn eine Ansicht, zum Anzeigen der Daten in den angegebenen Cursor aktualisieren.
 
-- **NewView** – wird aufgerufen, wenn die `ListView` erfordert eine neue Ansicht angezeigt. Die `CursorAdapter` übernimmt das recycling von Sichten (im Gegensatz zu den `GetView` Methode auf reguläre Adapter).
+- **NewView** : wird aufgerufen, wenn die `ListView` erfordert eine neue Ansicht angezeigt. Die `CursorAdapter` übernimmt das Wiederverwenden von Ansichten (im Gegensatz zu den `GetView` Methode für reguläre Adapter).
 
-Der Adapter Unterklassen in vorherigen Beispielen haben Methoden zum Zurückgeben der Anzahl der Zeilen sowie zum Abrufen des aktuellen Elements – der `CursorAdapter` erfordert keine dieser Methoden aus, da diese Informationen aus dem Cursor selbst abgeleitet werden kann. Durch das Erstellen und Auffüllen der einzelnen Ansichten in diesen beiden Methoden Aufteilen der `CursorAdapter` erzwingt die Sicht erneut zu verwenden. Dies ist im Gegensatz dazu eine reguläre Adapter, ist es möglich ist, ignoriert der `convertView` Parameter von der `BaseAdapter.GetView` Methode.
+Die Adapter Unterklassen in vorherigen Beispielen haben Methoden zum Zurückgeben der Anzahl von Zeilen und zum Abrufen des aktuellen Elements – der `CursorAdapter` erfordert keine dieser Methoden aus, da diese Informationen aus der Cursor selbst abgeleitet werden kann. Durch aufteilen, das Erstellen und Auffüllen von jeder Ansicht in diesen beiden Methoden, die `CursorAdapter` erzwingt die Sicht erneut zu verwenden. Dies ist im Gegensatz dazu an einer regulären Adapter, ist es möglich, ignorieren die `convertView` Parameter, der die `BaseAdapter.GetView` Methode.
 
 
 ### <a name="implementing-the-cursoradapter"></a>Implementieren der CursorAdapter
 
-Der Code in **CursorTableAdapter/HomeScreenCursorAdapter.cs** enthält eine `CursorAdapter` Unterklasse. Sie speichert einen Kontext Verweis an den Konstruktor übergeben wird, sodass darauf zugreifen können eine `LayoutInflater` in die `NewView` Methode. Die vollständige Klasse sieht wie folgt:
+Der Code in **CursorTableAdapter/HomeScreenCursorAdapter.cs** enthält eine `CursorAdapter` Unterklasse. Sie speichert einen Kontext-Verweis an den Konstruktor übergeben wird, sodass er zugreifen kann eine `LayoutInflater` in die `NewView` Methode. Die vollständige Klasse sieht folgendermaßen aus:
 
 ```csharp
 public class HomeScreenCursorAdapter : CursorAdapter {
@@ -156,9 +156,9 @@ public class HomeScreenCursorAdapter : CursorAdapter {
 
 ### <a name="assigning-the-cursoradapter"></a>Zuweisen der CursorAdapter
 
-In der `Activity` zeigt, die die `ListView`, erstellen Sie den Cursor und `CursorAdapter` weisen Sie diese der Liste angezeigt.
+In der `Activity` zeigt, die die `ListView`, erstellen Sie den Cursor und `CursorAdapter` weisen es dann der Liste angezeigt.
 
-Der Code, der führt diese Aktion in der **CursorTableAdapter/HomeScreen.cs** `OnCreate` Methode ist im folgenden dargestellt:
+Der Code, der diese Aktion in führt die **CursorTableAdapter/HomeScreen.cs** `OnCreate` Methode wird hier gezeigt:
 
 ```csharp
 // create the cursor

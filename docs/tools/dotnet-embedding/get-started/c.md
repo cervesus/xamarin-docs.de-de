@@ -1,23 +1,23 @@
 ---
 title: Erste Schritte mit C
-description: Dieses Dokument beschreibt das Einbetten von .NET verwenden, um .NET Code in einer C#-Anwendung einzubetten. Es wird erläutert, wie .NET Einbetten in Visual Studio 2017 und Visual Studio für Mac verwenden.
+description: Dieses Dokument beschreibt, wie Sie Einbetten von .NET mit .NET Code in einer C-Anwendung einzubetten. Es wird erläutert, wie zum Einbetten von .NET in Visual Studio 2017 und Visual Studio für Mac verwenden.
 ms.prod: xamarin
 ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 04/19/2018
-ms.openlocfilehash: 248d44f23495e45d9d35b34622de0f3b85ca3e8d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a16821e83dc169d7800162e1eaf45c4be661185a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794097"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106805"
 ---
 # <a name="getting-started-with-c"></a>Erste Schritte mit C
 
 ## <a name="requirements"></a>Anforderungen
 
-Um .NET Einbetten von mit C# zu verwenden, benötigen Sie einen Mac oder Windows-Computer mit:
+Zum Einbetten von .NET mit C verwenden, benötigen Sie ein Mac oder Windows-Computer ausgeführt wird:
 
 ### <a name="macos"></a>macOS
 
@@ -32,9 +32,9 @@ Um .NET Einbetten von mit C# zu verwenden, benötigen Sie einen Mac oder Windows
 
 ## <a name="installing-net-embedding-from-nuget"></a>Installieren von .NET Einbetten von NuGet
 
-Befolgen Sie diese [Anweisungen](~/tools/dotnet-embedding/get-started/install/install.md) installieren und Konfigurieren von .NET einbetten für das Projekt.
+Befolgen Sie diese [Anweisungen](~/tools/dotnet-embedding/get-started/install/install.md) installieren und konfigurieren Sie für Ihr Projekt Einbetten von .NET.
 
-Der Befehl aufrufen, die Sie konfigurieren, sollten sieht wie (möglicherweise mit anderen Versionsnummer erneut und Pfade):
+Der Befehlsaufruf, die, den Sie konfigurieren sollten, sieht so aus wie (möglicherweise mit einer anderen Versionsnummer erneut und Pfade):
 
 ### <a name="visual-studio-for-mac"></a>Visual Studio für Mac
 
@@ -52,7 +52,7 @@ $(SolutionDir)\packages\Embeddinator-4000.0.2.0.80\tools\Embeddinator-4000.exe -
 
 ### <a name="output-files"></a>Ausgabedateien
 
-Wenn alles gut geht, wird die folgende Ausgabe angezeigt:
+Wenn alles gut geht, werden Sie mit der folgenden Ausgabe angezeigt:
 
 ```shell
 Parsing assemblies...
@@ -71,12 +71,12 @@ Generating binding code...
     Generated: mono_embeddinator.h
 ```
 
-Da die `--compile` Flag an das Tool übergeben wurde, .NET einbetten sollte auch haben kompiliert die Ausgabedateien in eine freigegebene Bibliothek, die sich neben die generierten Dateien, eine **libmanaged.dylib** auf MacOS und Datei**managed.dll** unter Windows.
+Da die `--compile` Flag für das Tool übergeben wurde, Einbetten von .NET sollte auch kompiliert haben die Ausgabedateien in eine freigegebene Bibliothek, die sich neben die generierten Dateien, eine **libmanaged.dylib** Datei unter MacOS und **managed.dll** auf Windows.
 
-Um die freigegebene Bibliothek nutzen zu können, zählen die **managed.h** C-Header-Datei, die die C-Deklarationen, die für die jeweilige bereitstellt verwalteten Bibliotheks-APIs und Verknüpfung mit der oben erwähnten kompiliert freigegebene Bibliothek.
+Um die freigegebene Bibliothek nutzen zu können, zählen Sie die **managed.h** C-Headerdatei, bietet der C-Deklarationen, die auf die jeweils entsprechenden verwalteten Bibliotheks-APIs und Verknüpfung mit den oben genannten kompiliert, freigegebenen Bibliothek.
 
 ## <a name="further-reading"></a>Weiterführende Themen
 
-* [.NET Einbetten von Einschränkungen](~/tools/dotnet-embedding/limitations.md)
-* [Das open-Source-Projekt verwendet werden sollen](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
+* [Einbetten von .NET-Einschränkungen](~/tools/dotnet-embedding/limitations.md)
+* [Mitwirkung an open Source-Projekt](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
 * [Fehlercodes und Beschreibungen](~/tools/dotnet-embedding/errors.md)

@@ -1,22 +1,22 @@
 ---
-title: Wie kann ich IPA-Ausgabedateien in den TFS-Ablageordner kopieren?
+title: Wie kann ich die IPA-Ausgabedateien in den TFS-Ablageordner kopieren?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B0F1E09E-7315-45BA-B7FF-44D2063EE19C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 087a20ea3b573595e6cbd2b40d77de649676391e
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 74e2f2219dcb0908edce7f109844932639038b25
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31883708"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113039"
 ---
-# <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folder"></a>Wie kann ich IPA-Ausgabedateien in den TFS-Ablageordner kopieren?
+# <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folder"></a>Wie kann ich die IPA-Ausgabedateien in den TFS-Ablageordner kopieren?
 
-Öffnen der `.csproj` Datei für die iOS-app-Projekt in einem Text-Editor, und fügen Sie die folgenden Zeilen am Ende (unmittelbar vor der schließenden `</Project>` Tag):
+Öffnen der `.csproj` -Datei für das iOS-app-Projekt in einem Text-Editor, und klicken Sie dann die folgenden Zeilen am Ende hinzufügen (unmittelbar vor dem schließenden `</Project>` Tag):
 
 ```xml
 <PropertyGroup>
@@ -40,18 +40,16 @@ ms.locfileid: "31883708"
 
 ## <a name="notes"></a>Hinweise
 
--   Dies ist das gleiche allgemeine Verfahren erläutert, die auf [kann ich den Ausgabepfad der Datei IPA-Datei ändern?](~/ios/troubleshooting/questions/ipa-output-path.md). Zwei wichtige Punkte sind festzulegende `$(TF_BUILD_BINARIESDIRECTORY)` als Zielordner, und fügen Sie daher eine zusätzliche Bedingung hinzu `CopyIpa` wird nur ausgeführt, für die TFS-builds.
+- Dies ist das gleiche allgemeine Verfahren beschriebenen [kann ich Ändern des Ausgabepfads der IPA-Datei?](~/ios/troubleshooting/questions/ipa-output-path.md). Die zwei wichtige Punkte sind festlegen `$(TF_BUILD_BINARIESDIRECTORY)` als Zielordner, und fügen Sie daher eine zusätzliche Bedingung hinzu `CopyIpa` wird nur ausgeführt, für TFS-builds.
 
--   Eine Beschreibung der `TF_BUILD_BINARIESDIRECTORY` finden Sie unter [ https://msdn.microsoft.com/library/hh850448.aspx ](https://msdn.microsoft.com/library/hh850448.aspx).
+- Eine Beschreibung der `TF_BUILD_BINARIESDIRECTORY` finden Sie unter [vordefinierte Buildvariablen](https://docs.microsoft.com/azure/devops/pipelines/build/variables).
 
 ## <a name="additional-references"></a>Zusätzliche Referenzen
 
-- [Dokumentation zum Installieren von TFS für die Verwendung mit Xamarin](https://docs.microsoft.com/vsts/tfvc/overview)
-- [TFS-BuildTask: Xamarin.Android](https://docs.microsoft.com/vsts/build-release/tasks/build/xamarin-android)
-- [TFS-BuildTask: Xamarin.iOS](https://docs.microsoft.com/vsts/build-release/tasks/build/xamarin-ios)
+- [Dokumentation zur Installation von TFS für die Verwendung mit Xamarin](https://docs.microsoft.com/azure/devops/repos/tfvc/overview)
+- [Azure DevOps-Buildaufgabe: Xamarin.Android](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-android)
+- [Azure DevOps-Buildaufgabe: Xamarin.iOS](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-ios)
 
 ### <a name="next-steps"></a>Nächste Schritte
-Dieses Dokument beschreibt das aktuelle Verhalten ab Xamarin 3.11.666 für Visual Studio und Xamarin.iOS 8.10.3 auf dem Mac Host erstellen. Für weitere Unterstützung zu erhalten, wenden Sie sich an uns, oder bleibt dieses Problem auch nach der Nutzung der oben angegebenen Informationen finden Sie unter [welche Supportoptionen für Xamarin verfügbar sind?](~/cross-platform/troubleshooting/support-options.md) Informationen zu Kontaktoptionen Vorschläge, sowie zur die Datei eines neuen Fehlers bei Bedarf. 
 
-
-
+Dieses Dokument erläutert das aktuelle Verhalten ab Xamarin 3.11.666 für Visual Studio und Xamarin.iOS 8.10.3 auf dem Mac-buildhost. Weitere Unterstützung benötigen, kontaktieren uns, oder wenn dieses Problem bestehen bleibt, auch nach der Verwendung der oben genannten Informationen finden Sie unter [welche Supportoptionen für Xamarin verfügbar sind?](~/cross-platform/troubleshooting/support-options.md) auf Kontaktoptionen, Vorschläge, Informationen sowie zur einen neuen Bug-Datei bei Bedarf.

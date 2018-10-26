@@ -3,174 +3,175 @@ title: Garbage Collection
 ms.prod: xamarin
 ms.assetid: 298139E2-194F-4A58-BC2D-1D22231066C4
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 49bb340edcad0c5ce39a2d9db6da72d488a114b1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 327547f6a5440feb372e2197d816c44aefbd5282
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30772967"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114557"
 ---
 # <a name="garbage-collection"></a>Garbage Collection
 
-Xamarin.Android verwendet Mono [einfache Generationen-Garbage Collectors](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/). Dies ist eine Markierung Sweep Garbage collection mit zwei Generationen und ein *LOB Speicherplatz*, mit zwei Arten von Auflistungen: 
+Xamarin.Android verwendet die Mono [einfache Generationeller Garbagecollector](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/). Dies ist ein Mark-and-Sweep-Garbage Collector mit zwei Generationen und *große Objektraum*, mit zwei Arten von Sammlungen: 
 
--   Kleinere Sammlungen (sammelt Gen0 Heap) 
--   Wichtigen Auflistungen (sammelt Gen1 und LOB space Heaps). 
+-   Kleinere Sammlungen (sammelt Gen0-Heap) 
+-   Wichtige Sammlungen (gesammelt, Gen1 und LOB Leerzeichen Heaps). 
 
 > [!NOTE]
-> Bei Abwesenheit einer expliziten Auflistung über [GC. Collect()](xref:System.GC.Collect) Auflistungen sind *bedarfsgesteuert*, basierend auf Heapzuordnungen. *Dies ist keiner verweiszählung System*; Objekte *nicht gesammelt werden, sobald es keine ausstehenden Verweise sind*, oder wenn ein Bereich verlassen hat. Der globale Katalogserver wird ausgeführt, wenn nicht genügend Arbeitsspeicher für neue Zuordnungen kleinere Heap ausgeführt wurde. Wenn keine Zuordnungen vorhanden sind, wird er nicht ausgeführt.
+> Ohne eine explizite Auflistung über [GC. Collect()](xref:System.GC.Collect) Sammlungen sind *bei Bedarf*, basierend auf dem Heap-Zuordnungen. *Dies ist dabei nicht um ein System für die verweiszählung*; Objekte *nicht gesammelt werden, sobald es keine ausstehenden Verweise gibt*, oder wenn ein Bereich wurde beendet. Der Garbage Collector wird ausgeführt, wenn der kleinere Heap nicht genügend Arbeitsspeicher für neue Zuweisungen ausgeführt wurde. Wenn keine Zuordnungen vorhanden sind, wird er nicht ausgeführt.
 
 
-Kleinere Sammlungen sind billig und häufige und werden verwendet, um die zuletzt zugeordnete und inaktive Objekten zu sammeln. Kleinere Sammlungen werden nach jedem einige MB von zugeordneten Objekten ausgeführt. Kleinere Sammlungen möglicherweise manuell durchgeführt werden, durch den Aufruf [GC. Sammeln von (0)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 
+Kleinere Sammlungen sind günstig und häufige und werden verwendet, um die zuletzt zugeordnete und inaktive Objekte zu sammeln. Kleinere Sammlungen werden nach jedem Paar MB von zugeordneten Objekten ausgeführt. Kleinere Sammlungen können manuell ausgeführt werden, durch den Aufruf [GC. Sammeln von (0)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 
 
-Wichtige Sammlungen sind teuer und weniger häufig und werden verwendet, um alle inaktiven Objekten freizugeben. Wichtige Sammlungen werden ausgeführt, sobald Arbeitsspeicher für die aktuelle Heapgröße (vor dem Ändern der Größe der Heap) ausgeschöpft ist. Wichtige Sammlungen möglicherweise manuell durchgeführt werden, durch den Aufruf [GC. Sammeln von ()](xref:System.GC.Collect) oder durch Aufrufen von [GC. Sammeln von (Int)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) mit dem Argument [GC. MaxGeneration](xref:System.GC.MaxGeneration). 
+Wichtige Sammlungen teuer sind und weniger häufig und werden verwendet, um alle inaktiven Objekten freizugeben. Wichtige Sammlungen werden ausgeführt, sobald der Speicher für die aktuelle Heapgröße (vor dem Ändern der Größe des Heaps) ausgeschöpft ist. Wichtige Sammlungen können manuell ausgeführt werden, durch den Aufruf [GC. Sammeln von ()](xref:System.GC.Collect) oder durch Aufrufen von [GC. Sammeln von (Int)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) mit dem Argument [GC. MaxGeneration](xref:System.GC.MaxGeneration). 
 
 
 
-## <a name="cross-vm-object-collections"></a>Cross-VM-Auflistungen
+## <a name="cross-vm-object-collections"></a>VM-übergreifenden Auflistungen
 
-Es gibt drei Kategorien von Objekttypen.
+Es gibt drei Kategorien von Objekttypen an.
 
--   **Verwaltete Objekte**: Typen, die sind *nicht* Vererben [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) , z. B. [System.String](xref:System.String). 
-    Diese werden normalerweise durch das GC gesammelt. 
+-   **Verwaltete Objekte**: Typen, wozu *nicht* erben [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) , z. B. [System.String](xref:System.String). 
+    Diese werden normalerweise von der Garbage Collector gesammelt. 
 
--   **Java-Objekte**: Java-Typen in der Android-Runtime-VM vorhanden ist, aber nicht für den Mono-VM verfügbar gemacht. Diese sind langweilig und wird nicht weiter erläutert werden. Diese werden normalerweise von der Android-Laufzeit VM gesammelt. 
+-   **Java-Objekten**: Java-Typen, die in der Android-Runtime-VM vorhanden sind, aber nicht für die Mono-VM verfügbar gemacht. Diese sind langweilig und wird nicht weiter erläutert werden. Diese werden normalerweise von der Android-Runtime-VM gesammelt. 
 
--   **Peer-Objekte**: Typen welche implementieren [IJavaObject](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/) , z. B. alle [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) und ["java.lang.Throwable"](https://developer.xamarin.com/api/type/Java.Lang.Throwable/) Unterklassen. Instanzen dieser Typen haben zwei "Halfs" eine *verwalteter Peer* und ein *native Peer*. Der verwaltete Peer ist eine Instanz der C#-Klasse. Der systemeigene Peer ist eine Instanz einer Javaklasse innerhalb der Android-Laufzeit-VM und die C#- [IJavaObject.Handle](https://developer.xamarin.com/api/property/Android.Runtime.IJavaObject.Handle/) Eigenschaft enthält einen globalen JNI-Verweis auf den systemeigenen Peer. 
+-   **Peer-Objekte**: Typen der implementieren [IJavaObject](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/) , z. B. alle [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) und [Java.Lang.Throwable](https://developer.xamarin.com/api/type/Java.Lang.Throwable/) Unterklassen. Instanzen dieser Typen haben zwei "Halfs" eine *verwalteter Peer* und *native Peer*. Der verwaltete Peer ist eine Instanz von der C# Klasse. Der systemeigene Peer ist eine Instanz einer Java-Klasse in der Android-Runtime-VM, und die C# [IJavaObject.Handle](https://developer.xamarin.com/api/property/Android.Runtime.IJavaObject.Handle/) Eigenschaft enthält einen globalen JNI-verweisen, die dem nativen Peer. 
 
 
 Es gibt zwei Arten von systemeigenen Peers:
 
--   **Framework Peers** : "Normal" Java-Datentypen, wenn nichts Xamarin.Android, z. B. bereits wissen [android.content.Context](https://developer.xamarin.com/api/type/Android.Content.Context/).
+-   **Framework-Peers** : "Normal" Java-Typen, die nichts von Xamarin.Android, z. B. wissen [android.content.Context](https://developer.xamarin.com/api/type/Android.Content.Context/).
 
--   **Benutzer Peers** : [Android Aufrufwrappern](~/android/platform/java-integration/working-with-jni.md) das während des Buildvorgangs für jede Java.Lang.Object-Unterklasse, die in der Anwendung generiert werden.
+-   **Benutzer-Peers** : [Android Callable Wrapper](~/android/platform/java-integration/working-with-jni.md) der Buildzeit für jede Java.Lang.Object-Unterklasse, die in der Anwendung vorhanden generiert werden.
 
 
-Es sind zwei VMs innerhalb eines Prozesses Xamarin.Android, stehen zwei Arten der Garbage collection:
+Wie stehen zwei virtuelle Computer innerhalb eines Xamarin.Android-Prozesses an, gibt es zwei Arten der Garbage Collections:
 
 -   Android-Runtime-Auflistungen 
--   Mono-/ Sammlungen 
+-   Mono-Sammlungen 
 
-Sammlungen von Android-Runtime ausgeführt werden, normalerweise, aber mit einer Einschränkung: ein globale JNI-Verweis wird als Stamm-GC behandelt. Daher ist es eine JNI globale verweisen eine Android-Laufzeit VM-Objekts, das Objekt hält *kann nicht* gesammelt werden, auch wenn es andernfalls für die Auflistung geeignet ist.
+Android-Runtime-Auflistungen ausgeführt werden, normalerweise, aber mit Vorsicht zu genießen: einen globalen JNI-verweisen als GC-Stamm behandelt. Daher ist es eine JNI globale verweisen auf ein Android-Runtime-VM-Objekt, das Objekt belegt *kann nicht* gesammelt werden, auch wenn es andernfalls Garbage Collection ist.
 
-Mono-/ Auflistungen sind, in dem das Fun geschieht. Verwaltete Objekte werden normalerweise gesammelt. Objekte auf derselben Ebene werden gesammelt, indem Sie die folgende Schritte ausführen:
+Mono-Sammlungen sind, in dem der Spaß geschieht. Verwaltete Objekte werden normalerweise nicht gesammelt. Objekte auf derselben Ebene werden gesammelt, indem Sie den folgenden Prozess ausführen:
 
-1.  Alle für die Mono / Collection Objekte auf derselben Ebene haben ihre globalen JNI-Verweis durch eine globale JNI schwachen ersetzt. 
+1.  Alle Peer-Objekte, die für die Mono-Collection haben ihre globalen JNI-verweisen, die durch eine schwache globalen JNI-verweisen ersetzt. 
 
-2.  Eine Android-Laufzeit VM GC wird aufgerufen. Eine beliebige systemeigene Peerinstanz kann gesammelt werden. 
+2.  Eine Android-Runtime-VM-GC wird aufgerufen. Eine beliebige systemeigene Peerinstanz kann erfasst werden. 
 
-3.  Die JNI schwache globalen Verweise erstellt (1) werden überprüft. Wenn der schwache Verweis gesammelt wurden, ist die Peer-Objekts erfasst. Wenn der schwache Verweis verfügt über *nicht* erfasst wurden, klicken Sie dann der schwache Verweis wird mit einem globalen JNI-Verweis ersetzt und das Peer-Objekt ist nicht erfasst. Hinweis: auf API-14+, dies bedeutet, dass der Rückgabewert `IJavaObject.Handle` möglicherweise nach einem globalen Katalog zu ändern. 
+3.  Die schwachen JIN globale-verweisen in (1) erstellt werden überprüft. Wenn der schwache Verweis erfasst wurden, erfasst das Peerobjekt klicken Sie dann. Wenn der schwache Verweis ist *nicht* erfasst wurden, klicken Sie dann der schwache Verweis wird durch einen globalen JNI-verweisen ersetzt und das Peerobjekt werden nicht gesammelt. Hinweis: auf API 14 +, dies bedeutet, dass den Rückgabewert `IJavaObject.Handle` nach einer Garbage Collection kann sich ändern. 
 
-All dies ist erforderlich, eine Instanz eines Objekts Peer live wird als entweder verweist das Endergebnis zu verwaltetem Code (z. B. in gespeicherten eine `static` Variable) oder von Java-Code verwiesen wird. Darüber hinaus wird die Lebensdauer des systemeigenen Peers hinter andernfalls würde erweitert live, während der systemeigene Peer nicht entladbarer, bis Native Peer und den verwalteten Peer entladbare sind.
+Das Endergebnis aller dafür ist, dass eine Instanz eines Objekts Peer laufen, solange entweder darauf verweist, verwalteten Code (z. B. in gespeicherten eine `static` Variable) oder durch Java-Code auf die verwiesen wird. Darüber hinaus wird die Lebensdauer der systemeigenen Peers erweitert werden, nach was andernfalls würden Leben, da die systemeigene Peer entladbaren nicht bis sowohl die systemeigene Peer und dem Peer verwaltet entladbaren sind.
 
 
 ## <a name="object-cycles"></a>Objekt-Zyklen
 
-Objekte auf derselben Ebene werden logisch innerhalb der Android-Laufzeit und die Mono-VM vorhanden. Angenommen, ein [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/) verwalteter Peer-Instanz weist einen entsprechenden [android.app.Activity](http://developer.android.com/reference/android/app/Activity.html) Framework Peer Java-Instanz. Alle Objekte, die von erben [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) können beide virtuellen Computer heraus ausgetauschten erwartet werden. 
+Objekte auf derselben Ebene sind logisch in der Android-Laufzeit und des virtuellen Computers die Mono vorhanden. Z. B. eine [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/) verwalteter Peer-Instanz wird das Vorhandensein einer entsprechenden [android.app.Activity](http://developer.android.com/reference/android/app/Activity.html) Framework Peer-Java-Instanz. Alle Objekte, die von erben [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) damit Darstellungen in beiden virtuellen Computern zu erwarten. 
 
-Alle Objekte, die Darstellung in beide virtuellen Computer werden verfügen über eine Lebensdauer, die erweitert werden im Vergleich zu Objekten, die nur innerhalb einer einzelnen virtuellen Computer vorhanden sind (z. B. eine [ `System.Collections.Generic.List<int>` ](xref:System.Collections.Generic.List%601)). Aufrufen von [GC. Sammeln von](xref:System.GC.Collect) wird nicht unbedingt diese Objekte sammeln, wie der Xamarin.Android globale Katalogserver muss sicherstellen, dass das Objekt vor dem durch die Sammlung von einer virtuellen Maschine verwiesen wird nicht. 
+Alle Objekte, die Darstellung auf beiden virtuellen Computern werden verfügen über eine Lebensdauer, die erweitert werden, im Vergleich zu den Objekten, die nur in einem einzelnen virtuellen Computer vorhanden sind (z. B. eine [ `System.Collections.Generic.List<int>` ](xref:System.Collections.Generic.List%601)). Aufrufen von [GC. Sammeln von](xref:System.GC.Collect) wird nicht unbedingt diese Objekte sammeln, wie die Xamarin.Android-GC muss sicherstellen, dass die von beiden virtuellen Computer auf das Objekt verwiesen wird nicht, bevor die Sammlung. 
 
-Lebensdauer eines Objekts, zu verkürzen [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/) aufgerufen werden soll. Dies wird manuell "die Verbindung für das Objekt zwischen den zwei VMs freigegeben werden und des globale Verweis und somit ermöglicht die Objekte schneller gesammelt werden getrennt". 
+Um die Lebensdauer des Objekts, zu verkürzen [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/) aufgerufen werden soll. Dies wird manuell "die Verbindung für das Objekt zwischen den beiden VMs freigegeben werden und des globalen Verweis, sodass die Objekte schneller gesammelt werden getrennt". 
 
 
 ## <a name="automatic-collections"></a>Automatische Sammlungen
 
-Beginnend mit [Version 4.1.0](https://developer.xamarin.com/releases/android/mono_for_android_4/mono_for_android_4.1.0), Xamarin.Android wird automatisch eine vollständige GC ausführt, wenn ein Gref Schwellenwert überschritten wird. Dieser Schwellenwert ist 90 % der die bekannten maximale Grefs für die Plattform: 1800 Grefs auf dem Emulator (max. 2000) und 46800 Grefs auf Hardware (maximale 52000). *Hinweis:* Xamarin.Android zählt nur die Grefs erstellt, indem [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/), und alle anderen Grefs erstellt wurden, nicht kennen. Dies ist eine heuristische *nur*. 
+Beginnend mit [Version 4.1.0](https://developer.xamarin.com/releases/android/mono_for_android_4/mono_for_android_4.1.0), Xamarin.Android automatisch zu eine vollständige GC anfallenden ausführt, wenn ein Gref-Schwellenwert überschritten wird. Dieser Schwellenwert ist 90 Prozent der bekannten maximale Grefs für die Plattform: 1800 Grefs auf dem Emulator (max. 2000), und 46800 Grefs auf Hardware (maximale 52000). *Hinweis:* Xamarin.Android zählt nur die Grefs erstellt [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/), und alle anderen Grefs erstellt wurden, nicht kennen. Dies ist eine Heuristik *nur*. 
 
-Wenn eine automatische Auflistung ausgeführt wird, wird eine Meldung ähnlich der folgenden in das Debugprotokoll ausgegeben:
+Wenn eine automatische Sammlung ausgeführt wird, wird eine Meldung ähnlich der folgenden in das Debugprotokoll ausgegeben:
 
 ```shell
 I/monodroid-gc(PID): 46800 outstanding GREFs. Performing a full GC!
 ```
 
-Das Vorkommen dieser ist nicht deterministisch und kann zu ungünstigen Zeitpunkten (z. B. in der Mitte Grafikrendering) auftreten. Wenn Ihnen diese Meldung angezeigt, empfiehlt es sich um eine explizite Auflistung an anderer Stelle auszuführen oder Sie, wiederholen Sie den möchten [reduzieren Sie die Lebensdauer der Objekte auf derselben Ebene](#Helping_the_GC). 
+Das Vorhandensein dieses ist nicht deterministisch, und möglicherweise zu ungünstigen Zeitpunkten (z. B. in der Mitte Grafik-Rendering). Wenn diese Meldung wird angezeigt, Sie möglicherweise an anderer Stelle eine explizite Auflistung ausführen möchten oder Sie, versuchen Sie es möchten [reduzieren Sie die Lebensdauer der Objekte auf derselben Ebene](#Helping_the_GC). 
 
 ## <a name="gc-bridge-options"></a>GC-Bridge-Optionen
 
-Xamarin.Android bietet transparente Speicherverwaltung mit Android und Android-Runtime. Es wird als eine Erweiterung der Mono / Garbage Collector aufgerufen, implementiert die *GC-Bridge*. 
+Xamarin.Android bietet transparente Speicherverwaltung mit Android und Android-Runtime. Es wird als eine Erweiterung der Mono Garbage Collector aufgerufen, implementiert die *GC-Bridge*. 
 
-Der GC-Bridge funktioniert während einer Mono / Garbagecollection und Abbildungen, welche Peer Objekte benötigt ihre "Verfügbarkeit" mit dem Android Laufzeitheap überprüft werden. Der GC-Bridge trifft diese Entscheidung, indem Sie die folgenden Schritte aus (in entsprechender Reihenfolge):
+Der GC-Bridge arbeitet bei Mono Garbagecollection und Abbildungen, die Peer-Objekte benötigt ihre "Verfügbarkeitseigenschaften" mit dem Android-Runtime-Heap überprüft. Der GC-Bridge trifft diese Entscheidung auf, indem Sie die folgenden Schritte aus (in Reihenfolge):
 
-1.  Auslösen der Mono / bezugsdiagramm unreachable Peer-Objekte in der Java-Objekte, die sie darstellen. 
+1.  Auslösen von im mono bezugsdiagramm nicht erreichbar. Peer-Objekte in der Java-Objekte, die sie darstellen. 
 
 2.  Führen Sie eine Java-GC.
 
-3.  Überprüfen Sie, welche Objekte wirklich inaktiv sind. 
+3.  Überprüfen Sie, welche Objekte tatsächlich inaktiv sind. 
 
-Diese kompliziert ist, was ermöglicht, dass Unterklassen des `Java.Lang.Object` problemlos auf die Objekte; es entfernt keine Einschränkungen auf der Java-Objekte in c# gebunden werden können. Aufgrund dieser Komplexität der Bridge-Prozess kann sehr teuer sein und kann bemerkbar Pausen in einer Anwendung verursachen. Wenn die Anwendung erhebliche Pausen auftreten, lohnt es sich eine der folgenden drei GC-Bridge Implementierungen untersuchen: 
+Dieser komplizierten Prozess ist, ermöglicht es, Unterklassen von `Java.Lang.Object` Objekte auf dem frei Verweis; keine Einschränkungen, die auf der Java Objekte können, um gebunden werden entfernt C#. Aufgrund dieser Komplexität der Bridge-Prozess kann sehr teuer sein, und kann dies zu einem spürbare Pausen in Anwendungen. Wenn die Anwendung erhebliche Pausen auftreten, ist es eine der folgenden drei GC-Bridge-Implementierungen zu untersuchen: 
 
--   **Tarjan** -anhand ein vollständig neuer Entwurf von der Bridge GC [Robert Tarjans-Algorithmus und Abwärtskompatibilität verweisen Weitergabe](http://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm).
-    Kann die beste Leistung unter unsere simulierten Arbeitslasten, aber sie hat auch den größeren Anteil experimentellen Code. 
+-   **Tarjan** – ein vollständig neues Design der GC Bridge basierend auf [Robert Tarjans-Algorithmus und Abwärtskompatibilität verweisen Weitergabe](http://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm).
+    Hat die beste Leistung unter unserem simulierten Workloads, aber auch über die größeren Anteil experimentelle Code verfügt. 
 
--   **Neue** -eine größere Überarbeitung des ursprünglichen Codes, korrigieren und zwei Instanzen von quadratische Verhalten werden jedoch beibehalten der Kernalgorithmus (basierend auf [Kosarajus Algorithmus](http://en.wikipedia.org/wiki/Kosaraju's_algorithm) suchen stark von den verbundenen Komponenten). 
+-   **Neue** -überarbeitet des ursprünglichen Codes, beheben zwei Instanzen des quadratischen Verhalten der Kernalgorithmus UserID-(basierend auf [Kosarajus Algorithmus](http://en.wikipedia.org/wiki/Kosaraju's_algorithm) suchen stark von den verbundenen Komponenten). 
 
--   **Alte** – die ursprüngliche Implementierung (stabilste drei betrachtet). Dies ist die Brücke, die eine Anwendung verwenden soll, wenn die `GC_BRIDGE` Pausen sind zulässig. 
-
-
-Die einzige Möglichkeit, herauszufinden, welche GC-Bridge funktioniert am besten ist in einer Anwendung experimentieren und analysieren die Ausgabe. Es gibt zwei Möglichkeiten zum Erfassen der Daten für benchmarking: 
-
--   **Aktivieren der Protokollierung** -Protokollierung aktivieren (wie in beschrieben, die [Konfiguration](~/android/internals/garbage-collection.md) Abschnitt) dann für jede einzelne Option GC-Brücke zu erfassen und vergleichen Sie die Protokoll-Ausgaben von jeder Einstellung. Überprüfen Sie die `GC` Nachrichten für jede einzelne Option; insbesondere die `GC_BRIDGE` Nachrichten. Hält bis zu 150ms für nicht interaktive Anwendungen tolerierbar sind, aber die Pausen oben 60ms für sehr interaktive Anwendungen (z. B. Spiele) ein Problem aufgetreten sind. 
-
--   **Bridge Kontoführung aktivieren** -Bridge Kontoführung werden die durchschnittliche Kosten der Objekte, die durch jede der Bridge-Prozess Beteiligten Objekts angezeigt. Diese Informationen nach Größe sortieren, gebe Hints, was den maximalen Speicherplatz zusätzliche Objekte enthalten kann. 
+-   **Alte** – die ursprüngliche Implementierung (als das stabilste der drei). Dies ist die Brücke, die eine Anwendung verwenden soll, wenn die `GC_BRIDGE` Pausen sind zulässig. 
 
 
-Angeben, welche `GC_BRIDGE` Option eine Anwendung sollte, übergeben Sie `bridge-implementation=old`, `bridge-implementation=new` oder `bridge-implementation=tarjan` auf die `MONO_GC_PARAMS` Umgebungsvariable, beispielsweise: 
+Die einzige Möglichkeit, herauszufinden, welche GC-Bridge funktioniert am besten besteht in einer Anwendung experimentieren und Analysieren der Ausgabe. Es gibt zwei Möglichkeiten zum Erfassen der Daten für Vergleichstests: 
+
+-   **Aktivieren der Protokollierung** -Protokollierung aktivieren (wie in beschrieben, die [Konfiguration](~/android/internals/garbage-collection.md) Abschnitt) dann für jede Option GC-Brücke zu erfassen, und vergleichen Sie die Log-Ausgaben von jeder Einstellung. Überprüfen Sie die `GC` Nachrichten für jede Option, vor allem die `GC_BRIDGE` Nachrichten. Hält bis zu 150ms für nichtinteraktive Anwendungen akzeptabel sind, aber die Pausen der oben 60ms für sehr interaktive Anwendungen (z. B. Spiele) ein Problem aufgetreten sind. 
+
+-   **Bridge-Kontoführung aktivieren** -Bridge-Kontoführung zeigt die durchschnittliche Kosten der Objekte, die durch jedes Objekt, das die Brücke Prozess beteiligt. Diese Informationen nach Größe sortieren, bietet Hinweise, was die größte Menge zusätzlichen Objekte enthält. 
+
+
+Um anzugeben, welche `GC_BRIDGE` Option eine Anwendung sollte, übergeben Sie `bridge-implementation=old`, `bridge-implementation=new` oder `bridge-implementation=tarjan` auf die `MONO_GC_PARAMS` Umgebungsvariable, z. B.: 
 
 ```shell
 MONO_GC_PARAMS=bridge-implementation=tarjan
 ```
 
-Die Standardeinstellung ist **Tarjan**. Wenn Sie eine Regression finden, Umständen ist es notwendig, diese Option festgelegt **alte**. Darüber hinaus können mithilfe der stabiler **alte** option verwenden, wenn **Tarjan** erzeugt keine Verbesserung der Leistung. 
+Die Standardeinstellung ist **Tarjan**. Wenn Sie eine Regression finden, Umständen ist es erforderlich, diese Option **alte**. Darüber hinaus können Sie mit der stabiler **alte** option, wenn **Tarjan** führt nicht zu einer Verbesserung der Leistung. 
 
 <a name="Helping_the_GC" />
 
-## <a name="helping-the-gc"></a>Helfen dem globalen Katalogserver
+## <a name="helping-the-gc"></a>Unterstützung von der Garbage Collector
 
-Es gibt mehrere Möglichkeiten, mit denen dem globalen Katalogserver zu Arbeitsspeicher-Nutzung und Sammlung von Zeiten zu minimieren.
+Es gibt mehrere Möglichkeiten zum die Freispeichersammlung alles für die Nutzung und Sammlung von Zeiten von Speicher zu reduzieren.
 
 
 
 ### <a name="disposing-of-peer-instances"></a>Freigeben von Peer-Instanzen
 
-Der globale Katalogserver wurde eine unvollständige Ansicht des Prozesses und möglicherweise nicht ausgeführt werden. Wenn Arbeitsspeicher zu gering ist, da nicht, dass der Arbeitsspeicher ist der globale Katalogserver bekannt ist niedrig. 
+Der GC verfügt über eine unvollständige Sicht des Prozesses und kann möglicherweise nicht ausgeführt Arbeitsspeicher gering ist, da nicht, dass der Speicher ist die Freispeichersammlung bekannt ist niedrig. 
 
-Z. B. einer Instanz von einer [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) Typ oder abgeleiteten Typ ist mindestens einer Größe von 20 Bytes (ohne Hinweis usw. ist implementierungsspezifisch usw..). 
-[Verwaltete Callable Wrapper](~/android/internals/architecture.md) fügen Sie keine zusätzlichen Instanzmember, also wenn unbedingt notwendig ein [Android.Graphics.Bitmap](https://developer.xamarin.com/api/type/Android.Graphics.Bitmap/) -Instanz, die in ein Blob 10 MB des Arbeitsspeichers, bezieht sich Xamarin.Android des GC erfahren Sie nicht, die &ndash; dem globalen Katalogserver ein 20-Byte-Objekt wird angezeigt, und wird in der Lage, feststellen, dass sie auf Android Runtime zugeordnete Objekte, die 10 MB des Arbeitsspeichers aktiv halten verknüpft ist. 
+Z. B. eine Instanz von einer [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) oder abgeleiteten Typ ist die Größe von mindestens 20 Bytes (vorbehalten ohne vorherige Ankündigung, usw., usw..). 
+[Verwaltete Callable Wrapper](~/android/internals/architecture.md) fügen Sie keine zusätzlichen Instanzmember, also wenn eine [Android.Graphics.Bitmap](https://developer.xamarin.com/api/type/Android.Graphics.Bitmap/) -Instanz, die auf 10 MB Blob-Speicher verweist die Xamarin.Android-GC wird nicht kennen, die &ndash; der Garbage Collector sehen Sie ein 20-Byte-Objekt, und nicht feststellen, dass sie auf Android-Runtime zugeordnete Objekte, die 10 MB Speicher aktiv halten, ist verknüpft ist. 
 
-Es ist häufig erforderlich, die das GC-Hilfe. Leider *GC. AddMemoryPressure()* und *GC. RemoveMemoryPressure()* werden nicht unterstützt, wenn also Sie *wissen* , dass eine große Java zugewiesene Objektdiagramm gerade reserviert wird, Sie möglicherweise manuell aufrufen müssen [GC. Collect()](xref:System.GC.Collect) auf Aufforderung einen GC zum Freigeben von der Java-Seite Arbeitsspeicher, oder Sie können explizit freigeben, *Java.Lang.Object* Unterklassen, unterbrechen die Zuordnung zwischen den verwalteten callable Wrapper und Java-Instanz. Beispielsweise finden Sie unter [Fehler 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6). 
+Es ist häufig erforderlich, die der Garbage Collector zu unterstützen. Leider *GC. AddMemoryPressure()* und *GC. RemoveMemoryPressure()* werden nicht unterstützt, wenn also Sie *wissen* , dass ein großer Java zugeordnete Objektdiagramm gerade freigegeben wird, Sie möglicherweise manuell aufrufen müssen [GC. Collect()](xref:System.GC.Collect) an der Eingabeaufforderung eine GC freigeben die Java-Seite Arbeitsspeicher, oder Sie können explizit freigeben, *Java.Lang.Object* Unterklassen, unterbrechen die Zuordnung zwischen den verwalteten callable Wrapper und Java-Instanz. Beispielsweise finden Sie unter [Fehler 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6). 
 
 
 > [!NOTE]
-> Sie muss *extrem* Sie vorsichtig, wenn der disposing `Java.Lang.Object` Unterklasse-Instanzen.
+> Sie müssen sein *extrem* vorsichtig, wenn der disposing `Java.Lang.Object` Unterklasse-Instanzen.
 
-Um die Möglichkeit einer beschädigten Speicher zu minimieren, beachten Sie die folgenden Richtlinien beim Aufrufen von `Dispose()`.
+Um die Möglichkeit, Speicherbeschädigung zu minimieren, beachten Sie die folgenden Richtlinien beim Aufrufen von `Dispose()`.
 
 
-#### <a name="sharing-between-multiple-threads"></a>Die gemeinsame Nutzung von mehreren Threads
+#### <a name="sharing-between-multiple-threads"></a>Datenfreigabe zwischen mehreren Threads
 
-Wenn die *Java oder verwaltete* Instanz kann von mehreren Threads gemeinsam genutzt werden *sollte nicht sein `Dispose()`d*, **jemals**. Beispielsweise [ `Typeface.Create()` ](https://developer.xamarin.com/api/member/Android.Graphics.Typeface.Create/(System.String%2cAndroid.Graphics.TypefaceStyle)) gelegten eine *zwischengespeicherte Instanz*. Wenn mehrere Threads die gleichen Argumente angeben, erhalten sie die *gleichen* Instanz. Folglich `Dispose()`lauscht mithilfe von der `Typeface` Instanz von einem Thread möglicherweise werden andere Threads führen können `ArgumentException`e aus `JNIEnv.CallVoidMethod()` (neben anderen), da die Instanz von einem anderen Thread freigegeben wurde. 
+Wenn die *Java oder verwaltete* Instanz zwischen mehreren Threads gemeinsam genutzt werden kann *nicht `Dispose()`d*, **jemals**. Zum Beispiel [`Typeface.Create()`](https://developer.xamarin.com/api/member/Android.Graphics.Typeface.Create/(System.String%2cAndroid.Graphics.TypefaceStyle)) 
+möglicherweise zurück, eine *zwischengespeicherte Instanz*. Wenn mehrere Threads die gleichen Argumente angeben, erhalten sie die *gleichen* Instanz. Folglich `Dispose()`-Verknüpfung von der `Typeface` Instanz von einem Thread möglicherweise andere Threads in kann dies ungültig `ArgumentException`aus `JNIEnv.CallVoidMethod()` (unter anderem), da die Instanz von einem anderen Thread freigegeben wurde. 
 
 
 #### <a name="disposing-bound-java-types"></a>Freigeben von gebundenen Java-Typen
 
-Wenn die Instanz eine Java-Typ gebunden ist, kann die Instanz freigegeben werden, der *solange* die Instanz wird nicht wiederverwendet werden, aus verwaltetem Code *und* Java-Instanz kann nicht freigegeben werden, unter anderem Threads (Siehe vorangegangene `Typeface.Create()` Diskussion). (Dieser Feststellung kann schwierig sein.) Das nächste Mal Java-Instanz geht in verwaltetem Code, ein *neue* Wrapper dafür erstellt werden. 
+Wenn die Instanz von einer Java-Typ gebunden ist, kann die Instanz freigegeben werden, der *solange* die Instanz wird nicht von verwaltetem Code nicht wiederverwendet werden *und* Java-Instanz kann nicht für Threads (Siehe vorherige genutztwerden`Typeface.Create()` Diskussion). (Dieser Feststellung kann schwierig sein.) Das nächste Mal die Java-Instanz eingegeben verwalteter Code, eine *neue* Wrapper dafür erstellt werden. 
 
-Dies ist häufig nützlich, bei der Drawables und andere Ressourcen beansprucht Instanzen:
+Dies ist häufig nützlich, bei zeichenbarer Ressourcen und andere Ressourcen beansprucht-Instanzen:
 
 ```csharp
 using (var d = Drawable.CreateFromPath ("path/to/filename"))
     imageView.SetImageDrawable (d);
 ```
 
-Der oben genannten ruhig da Peers, [Drawable.CreateFromPath()](https://developer.xamarin.com/api/member/Android.Graphics.Drawables.Drawable.CreateFromPath/) gibt auf einem Peer Framework verweist, *nicht* Benutzer Peer. Die `Dispose()` rufen Sie am Ende der `using` Block wird die Beziehung zwischen verwalteten unterbrochen [Drawable](https://developer.xamarin.com/api/type/Android.Graphics.Drawables.Drawable/) und Framework [Drawable](http://developer.android.com/reference/android/graphics/drawable/Drawable.html) Instanzen, sodass die Java-Instanz sein gesammelt werden, sobald die Android-Laufzeit muss. Dies würde *nicht* sicher sind, wenn Peer-Instanz für einen Benutzer Peer bezeichnet werden; hier verwenden wir die "external" Informationen zu *wissen* , die die `Drawable` kann nicht auf einem Peer Benutzer verweisen und somit die `Dispose()` aufrufen ist threadsicher. 
+Das oben beschriebene sicher ist da dem Peer, [Drawable.CreateFromPath()](https://developer.xamarin.com/api/member/Android.Graphics.Drawables.Drawable.CreateFromPath/) zurückgegeben werden, die einen Peer Framework finden Sie unter *nicht* ein Peer für Benutzer. Die `Dispose()` rufen Sie am Ende der `using` Block unterbricht die Beziehung zwischen den verwalteten [Drawable](https://developer.xamarin.com/api/type/Android.Graphics.Drawables.Drawable/) und Framework [Drawable](http://developer.android.com/reference/android/graphics/drawable/Drawable.html) Instanzen, sodass die Java-Instanz sein gesammelt werden, sobald die Anforderungen der Android-Runtime an. Dies würde *nicht* sicher sind, wenn Sie Peer-Instanz, die ein Benutzer Peer bezeichnet werden; hier verwenden wir "external" Informationen zur *wissen* , die die `Drawable` kann nicht auf einem Peer Benutzer verweisen und somit die `Dispose()` aufrufen ist sicher. 
 
 
 #### <a name="disposing-other-types"></a>Andere Typen freigeben 
 
-Wenn die Instanz auf einen Typ verweist, die eine Bindung eines Java-Typs nicht (z. B. eine benutzerdefinierte `Activity`), **nicht** Aufrufen `Dispose()` es sei denn, Sie *wissen* , dass keine Java-Code auf, die überschriebene Methoden aufruft -Instanz. Zu diesem Zweck führt dies zu [ `NotSupportedException`s](~/android/internals/architecture.md#Premature_Dispose_Calls). 
+Wenn die Instanz auf einen Typ verweist, die eine Bindung eines Java-Typs nicht (wie z. B. eine benutzerdefinierte `Activity`), **nicht** Aufrufen `Dispose()` es sei denn, Sie *wissen* , dass keine Java-Code auf, die überschriebene Methoden aufruft -Instanz. Führt bei unterlassen [ `NotSupportedException`s](~/android/internals/architecture.md#Premature_Dispose_Calls). 
 
 Z. B. Wenn Sie eine benutzerdefinierte klicken Sie auf Listener:
 
@@ -180,7 +181,7 @@ partial class MyClickListener : Java.Lang.Object, View.IOnClickListener {
 }
 ```
 
-Sie *sollte nicht* dispose dieser Instanz, wie Java versucht, in der Zukunft Aufrufen von Methoden auf:
+Sie *sollte nicht* verwerfen dieser Instanz, wie Java versucht, die in der Zukunft Aufrufen von Methoden auf:
 
 ```csharp
 // BAD CODE; DO NOT USE
@@ -190,9 +191,9 @@ using (var listener = new MyClickListener ())
 ```
 
 
-#### <a name="using-explicit-checks-to-avoid-exceptions"></a>Verwenden explizite Kontrolle Vermeidung von Ausnahmen
+#### <a name="using-explicit-checks-to-avoid-exceptions"></a>Verwenden explizite Überprüfungen zum Vermeiden von Ausnahmen
 
-Wenn Sie implementiert haben eine [Java.Lang.Object.Dispose](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose(System.Boolean)/) überladen Methode sollten Sie vermeiden, berühren Objekte, die JNI einschließen. Erstellen Sie auf diese Weise kann eine *Double Dispose* Situation, mit dem Ihr Code auch (dass schwer) kann versuchen, auf ein zugrunde liegendes Java-Objekt zuzugreifen, die bereits der Garbage Collection stattgefunden hat. Auf diese Weise wird eine Ausnahme ähnlich der folgenden erzeugt: 
+Wenn Sie implementiert haben eine [Java.Lang.Object.Dispose](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose(System.Boolean)/) Überladungsmethode, vermeiden Sie die Objekte, bei denen JNI berühren. Erstellen Sie auf diese Weise kann eine *Double verwerfen* Situation, die Ihr Code (schwerwiegend) kann versuchen, auf ein zugrunde liegendes Java-Objekt zuzugreifen, die bereits der Garbage Collection stattgefunden hat. Auf diese Weise wird eine Ausnahme, die etwa wie folgt: 
 
 ```shell
 System.ArgumentException: 'jobject' must not be IntPtr.Zero.
@@ -200,9 +201,9 @@ Parameter name: jobject
 at Android.Runtime.JNIEnv.CallVoidMethod
 ```
 
-Diese Situation tritt häufig beim des ersten Dispose eines Objekts führt dazu, dass ein Element null sind und eine nachfolgende Zugriffsversuch auf null-Element löst dann eine Ausnahme ausgelöst wird. Insbesondere des Objekts `Handle` (die eine verwaltete Instanz mit der zugrunde liegenden Java-Instanz verknüpft ist) auf der ersten Dispose ungültig ist, sondern es verwalteter Code versucht weiterhin, diese zugrunde liegenden Java-Instanz zugreifen, obwohl er nicht mehr verfügbar (siehe ist[ Verwaltet Aufrufwrappern](~/android/internals/architecture.md#Managed_Callable_Wrappers) Weitere Informationen über die Zuordnung zwischen den Java-Instanzen und verwaltete Instanzen). 
+Diese Situation tritt häufig bei der des ersten Dispose eines Objekts bewirkt, dass Mitglied zu null, und klicken Sie dann eine nachfolgende Zugriffsversuch auf diesem null-Element eine Ausnahme ausgelöst werden. Insbesondere des Objekts `Handle` auf des ersten Dispose ungültig ist (die eine verwaltete Instanz mit der zugrunde liegenden Java-Instanz verknüpft ist), aber verwalteter Code weiterhin versucht, auf diese zugrunde liegenden Java-Instanz zugreifen, obwohl es nicht mehr verfügbar (siehe ist[ Verwaltete Aufrufwrappern](~/android/internals/architecture.md#Managed_Callable_Wrappers) für Weitere Informationen zu die Zuordnung zwischen Java-Instanzen und verwaltete Instanzen). 
 
-Eine gute Möglichkeit, zu verhindern, dass diese Ausnahme wird explizit in Überprüfen Ihrer `Dispose` -Methode, die die Zuordnung zwischen der verwalteten Instanz und der zugrunde liegenden Java-Instanz ist noch gültig ist, überprüfen, wenn des Objekts `Handle` ist null (`IntPtr.Zero`) vor dem Zugriff auf ihre Member. Beispielsweise die folgenden `Dispose` Methode greift auf ein `childViews` Objekt: 
+Überprüfen explizit in ist eine gute Möglichkeit, diese Ausnahme zu verhindern, dass Ihre `Dispose` -Methode, die die Zuordnung zwischen der verwalteten Instanz und der zugrunde liegenden Java-Instanz ist immer noch gültig ist, überprüfen, wenn des Objekts `Handle` ist null (`IntPtr.Zero`) vor dem Zugriff auf ihre Mitglieder. Beispielsweise die folgenden `Dispose` Methode greift auf eine `childViews` Objekt: 
 
 ```csharp
 class MyClass : Java.Lang.Object, ISomeInterface 
@@ -218,7 +219,7 @@ class MyClass : Java.Lang.Object, ISomeInterface
 }
 ```
 
-Wenn eine anfängliche Dispose Ursachen übergeben `childViews` haben einen ungültigen `Handle`, `for` Schleife Zugriff löst eine `ArgumentException`. Durch Hinzufügen einer expliziten `Handle` null, überprüfen Sie vor dem ersten `childViews` für den Zugriff auf die folgenden `Dispose` Methode verhindert, dass die Ausnahme tritt auf: 
+Wenn eine anfängliche Dispose Ursachen übergeben `childViews` haben einen ungültigen `Handle`, `for` Schleife Zugriff löst eine `ArgumentException`. Durch das Hinzufügen einer expliziten `Handle` null-Überprüfung vor dem ersten `childViews` für den Zugriff auf die folgenden `Dispose` Methode wird verhindert, dass die Ausnahme nicht mehr auftritt: 
 
 ```csharp
 class MyClass : Java.Lang.Object, ISomeInterface 
@@ -240,11 +241,11 @@ class MyClass : Java.Lang.Object, ISomeInterface
 ```
 
 
-### <a name="reduce-referenced-instances"></a>Reduzieren Sie Instanzen auf die verwiesen wird
+### <a name="reduce-referenced-instances"></a>Reduzieren Sie die Instanzen von auf die verwiesen wird
 
-Wenn eine Instanz von eine `Java.Lang.Object` Typ oder Unterklassen wird überprüft, während die Garbage Collection, die gesamte *Objektdiagramm* , dass die Instanz bezieht muss ebenfalls überprüft werden. Objektdiagramm ist der Satz von Objektinstanzen, die auf die Instanz"Root" *plus* alles verwiesen wird, durch welche die Stamminstanz verweist, rekursiv. 
+Wenn eine Instanz von eine `Java.Lang.Object` Typ oder Unterklasse wird überprüft, während die Garbage Collection, die gesamte *Objektdiagramm* , dass auf die Instanz bezieht auch überprüft werden muss. Das Objektdiagramm ist ein Satz von Objektinstanzen, die auf die Instanz"Root" *plus* alles verwiesen wird, durch welche die Stamminstanz verweist, rekursiv. 
 
-Betrachten Sie die folgende Klasse:
+Beachten Sie die folgende Klasse:
 
 ```csharp
 class BadActivity : Activity {
@@ -262,11 +263,11 @@ class BadActivity : Activity {
 }
 ```
 
-Wenn `BadActivity` wird erstellt, wird das Objektdiagramm 10004 Instanzen enthalten (1 X `BadActivity`, 1 X `strings`, 1 X `string[]` von reservierten `strings`, 10000 x Zeichenfolgeninstanzen), *alle* von dem werden müssen überprüft, wenn die `BadActivity` Instanz wird überprüft. 
+Wenn `BadActivity` wird erstellt, wird das Objektdiagramm 10004 Instanzen enthalten (1 X `BadActivity`, 1 X `strings`, 1 X `string[]` frei, die `strings`, 10000 x Zeichenfolgeninstanzen aus), *alle* von dem sein müssen überprüft jedes Mal, wenn die `BadActivity` Instanz wird überprüft. 
 
-Dies hat möglicherweise nachteilige Auswirkungen auf die Auflistung auf Zeiten, wodurch GC anhalten Zeiten erhöht. 
+Dies haben nachteilige Auswirkungen auf die Auflistung auf Zeiten, wodurch speicherbereinigungspausenzeiten erhöht. 
 
-Helfen Sie dem globalen Katalogserver von *reduzieren* die Größe von Objektdiagrammen, die von Peer-Benutzerinstanzen über einen Stamm verfügen. Im obigen Beispiel hierzu umgezogen `BadActivity.strings` in eine separate Klasse, die von Java.Lang.Object erben nicht: 
+Sie können die Freispeichersammlung von *reduzieren* die Größe von Objektdiagrammen, die von Peer-Benutzerinstanzen verankert sind. Im obigen Beispiel ist dies möglich durch das Verschieben `BadActivity.strings` in eine separate Klasse, die von Java.Lang.Object erben nicht: 
 
 ```csharp
 class HiddenReference<T> {
@@ -314,25 +315,25 @@ class BetterActivity : Activity {
 
 ## <a name="minor-collections"></a>Kleinere Sammlungen
 
-Kleinere Sammlungen möglicherweise manuell durchgeführt werden, durch den Aufruf [GC. Collect(0)](xref:System.GC.Collect). Kleinere Sammlungen sind (im Vergleich zu wichtigen Auflistungen) billig, aber eine erhebliche festen Kosten, damit nicht zu häufig ausgelöst werden sollen, und müssen eine Verzögerung von wenigen Millisekunden. 
+Kleinere Sammlungen können manuell ausgeführt werden, durch den Aufruf [GC. Collect(0)](xref:System.GC.Collect). Kleinere Sammlungen günstig (im Vergleich zu wichtigen Auflistungen) sind, aber verfügen über eine erhebliche Kosten "fixed", sodass Sie nicht diese oft auslösen möchten, und sollte eine Verzögerung von wenigen Millisekunden. 
 
-Wenn die Anwendung eine "Arbeitszyklus verfügt" in der dasselbe fortlaufend ausgeführt wird, kann es ratsam sein manuell Registrierungsvorgang eine kleinere Auflistung nach Druckvolumen beendet wurde. Beispiel-Zoll-Zyklen umfassen: 
+Wenn Ihre Anwendung eine "Auslastung hat" in der immer wieder die gleiche Aufgabe abgeschlossen ist, ist es möglicherweise empfehlenswert, eine kleine Sammlung manuell ausführen, nachdem der Arbeitszyklus beendet wurde. Beispiel-Arbeitszyklen gehören: 
 
--  Die von einem einzelnen Spiel Frame Renderingzyklus.
--  Die gesamte Interaktion mit einer bestimmten app-Dialogfeld (öffnen, füllen schließen) 
--  Eine Gruppe von Anforderungen über das Netzwerk aktualisieren/app-Daten synchronisiert werden sollen.
+-  Des Renderingzyklus ein einzelnes Spiel Frame.
+-  Die gesamte Interaktion mit einer bestimmten app-Dialogfeld ("Öffnen", "ausfüllen, schließen") 
+-  Eine Gruppe von netzwerkanforderungen, um die Aktualisierung/app-Daten synchronisieren.
 
 
 
 ## <a name="major-collections"></a>Wichtige Sammlungen
 
-Wichtige Sammlungen möglicherweise manuell durchgeführt werden, durch den Aufruf [GC. Collect()](xref:System.GC.Collect) oder `GC.Collect(GC.MaxGeneration)`. 
+Wichtige Sammlungen können manuell ausgeführt werden, durch den Aufruf [GC. Collect()](xref:System.GC.Collect) oder `GC.Collect(GC.MaxGeneration)`. 
 
-Sie sollten nur selten ausgeführt werden und möglicherweise eine Verzögerung von einer Sekunde auf einem Gerät Android-Format, wenn einen Heap 512 MB zu sammeln. 
+Sie sollten nur selten ausgeführt werden und möglicherweise eine Verzögerung von einer Sekunde auf einem Android-Stil-Gerät, wenn einen Heap 512 MB zu sammeln. 
 
-Wichtige Sammlungen sollte nur manuell, falls überhaupt aufgerufen werden: 
+Wichtige Sammlungen sollte nur manuell, wenn überhaupt aufgerufen werden: 
 
--   Am Ende der langwierige Aufgabe wird nicht Zyklen und wenn ein langer anhalten für dem Benutzer ein Problem darstellen. 
+-   Am Ende der langwierige Aufgabe wird nicht Zyklen und wenn eine lange anhalten, die dem Benutzer ein Problem darstellen. 
 
 -   Einer überschriebenen [Android.App.Activity.OnLowMemory()](https://developer.xamarin.com/api/member/Android.App.Activity.OnLowMemory/) Methode. 
 
@@ -340,28 +341,28 @@ Wichtige Sammlungen sollte nur manuell, falls überhaupt aufgerufen werden:
 
 ## <a name="diagnostics"></a>Diagnose
 
-Um nachzuverfolgen, wenn globale Verweise erstellt und zerstört werden, legen Sie die [debug.mono.log](~/android/troubleshooting/index.md) Systemeigenschaft enthalten [ *Gref* ](~/android/troubleshooting/index.md) und/oder [ *gc*](~/android/troubleshooting/index.md). 
+Um nachzuverfolgen, wenn globale Verweise erstellt und zerstört werden, Sie können festlegen, die [debug.mono.log](~/android/troubleshooting/index.md) Systemeigenschaft enthalten [ *Gref* ](~/android/troubleshooting/index.md) und/oder [ *gc*](~/android/troubleshooting/index.md). 
 
 
 
 ## <a name="configuration"></a>Konfiguration
 
-Der Xamarin.Android Garbagecollector kann konfiguriert werden, durch Festlegen der `MONO_GC_PARAMS` -Umgebungsvariablen angegeben. Umgebungsvariablen festgelegt werden können, mit dem Buildvorgang [AndroidEnvironment](~/android/deploy-test/environment.md).
+Der Xamarin.Android-Garbagecollector kann konfiguriert werden, durch Festlegen der `MONO_GC_PARAMS` -Umgebungsvariablen angegeben. Umgebungsvariablen festgelegt werden können, mit einer Buildaktion von [AndroidEnvironment](~/android/deploy-test/environment.md).
 
 Die `MONO_GC_PARAMS` Umgebungsvariable ist eine durch Trennzeichen getrennte Liste der folgenden Parameter: 
 
--   `nursery-size` = *Größe* : Legt die Größe der Baumschule fest. Die Größe in Bytes angegeben und muss eine Potenz von zwei sein. Die Suffixe `k` , `m` und `g` können verwendet werden, um kg, Megapixel und Gigabytes, anzugeben. Der Baumschule ist die erste Generation (von zwei). Eine größere Baumschule beschleunigt die Anwendung in der Regel jedoch offensichtlich beanspruchen mehr Arbeitsspeicher. Der Standard-Baumschule Größe 512 kb. 
+-   `nursery-size` = *Größe* : Legt die Größe der Nursery fest. Die Größe in Bytes angegeben ist, und es muss eine Potenz von zwei sein. Die Suffixe `k` , `m` und `g` können verwendet werden, um Kilogramm, Megapixel und Gigabyte, jeweils anzugeben. Der Nursery ist die erste Generation (zwei). Eine größere Nursery in der Regel beschleunigt das Programm aber natürlich beanspruchen mehr Arbeitsspeicher. Der Standard-Nursery Größe von 512 kb. 
 
--   `soft-heap-limit` = *Größe* : die maximale Ziel verwaltet die arbeitsspeichernutzung für die app. Wenn Speicher unter dem angegebenen Wert liegt, wird der globale Katalogserver für die Ausführungszeit (weniger Sammlungen) optimiert. 
-    Über diesen Grenzwert ist der globale Katalogserver für die speicherauslastung (mehrere Sammlungen) optimiert. 
+-   `soft-heap-limit` = *Größe* : die maximale Ziel verwaltet die arbeitsspeichernutzung für die app. Wenn der Speicher unter dem angegebenen Wert verwendet wird, ist der Garbage Collector für Ausführungszeit (weniger Sammlungen) optimiert. 
+    Über diese Einschränkung ist der Garbage Collector für die arbeitsspeicherauslastung (Weitere Sammlungen) optimiert. 
 
--   `evacuation-threshold` = *Schwellenwert* : Legt den Auslagern Schwellenwert in Prozent. Der Wert muss eine ganze Zahl im Bereich zwischen 0 und 100 sein. Der Standardwert ist 66. Wenn die Sweep-Phase der Auflistung gefunden wird, dass die Belegung der einen bestimmten Heap Blocktyp unterhalb dieses Prozentsatzes liegt, kommt es eine kopieren Sammlung für diese Blocktyp in der nächsten wichtigen Auflistung dadurch Wiederherstellung erforderlich sind, fast 100 % beträgt. Der Wert 0 deaktiviert auslagern. 
+-   `evacuation-threshold` = *Schwellenwert für* : Legt den Entfernungsvorgang-Schwellenwert in Prozent fest. Der Wert muss eine ganze Zahl im Bereich von 0 bis 100 sein. Der Standardwert ist 66. Wenn die Sweeping-Phase der Auflistung gefunden wird, dass die Belegung der eines bestimmten Heap-Typs, die kleiner als dieser Prozentsatz ist, erfolgt er eine kopieren-Auflistung für diesen Blocktyp in der nächsten wichtigen-Auflistung, wodurch wiederherstellen Belegung, fast 100 % beträgt. Der Wert 0 deaktiviert die Auslagerung. 
 
--   `bridge-implementation` = *Implementierung überbrückt* : Dadurch wird der GC-Bridge-Option aus, um die Adresse GC-Leistungsprobleme festgelegt. Es gibt drei mögliche Werte: *alte* , *neue* , *Tarjan*.
+-   `bridge-implementation` = *Überbrücken Sie die Implementierung* : Dadurch wird die GC-Bridge-Option können Sie Leistungsprobleme GC festgelegt. Es gibt drei mögliche Werte: *alte* , *neue* , *Tarjan*.
 
--   `bridge-require-precise-merge`: Die Tarjan Bridge eine Optimierung, die in seltenen Fällen ein Objekt führen kann enthält, gesammelt eine GC, nachdem er zuerst Garbage wird. Z. B. diese Option wird deaktiviert, Optimierung, wodurch globale Kataloge besser vorhersagbar, jedoch möglicherweise langsamer aus.
+-   `bridge-require-precise-merge`: Der Bridge eine Optimierung in seltenen Fällen ein Objekt enthält als verursachen, Tarjan erfasst eine GC nach wird es zunächst Garbage. Deaktiviert einschließlich diese Option, Optimierung, wodurch globale Kataloge jedoch möglicherweise langsamer, besser vorhersagbar.
 
-Z. B. zum Konfigurieren der globale Katalogserver, um einen Heap-Limit von 128 MB haben hinzufügen eine neue Datei zum Projekt mit einem **Buildvorgang** von `AndroidEnvironment` mit dem Inhalt: 
+Fügen Sie z. B. zum Konfigurieren der Garbage Collector, um eine Heap-größenbeschränkung von 128 MB haben eine neue Datei zu Ihrem Projekt mit einem **Buildvorgang** von `AndroidEnvironment` mit dem Inhalt: 
 
 ```shell
 MONO_GC_PARAMS=soft-heap-limit=128m

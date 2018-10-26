@@ -1,45 +1,45 @@
 ---
-title: Xamarin Profiler, Problembehandlung
-description: Dieses Dokument enthält Informationen zur Problembehandlung im Zusammenhang mit der Xamarin Profiler. Probleme im Zusammenhang mit Protokollierung und Diagnoseinformationen, die IDE und anderen Themen beschrieben.
+title: Xamarin Profiler-Problembehandlung
+description: Dieses Dokument enthält Informationen zur Problembehandlung im Zusammenhang mit der Xamarin Profiler. Probleme im Zusammenhang mit der Protokollierung und Diagnose, die IDE und anderen Themen beschrieben.
 ms.prod: xamarin
 ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 10/27/2017
-ms.openlocfilehash: 71faf79ef9b783480dbb6ff4674859a9148abca3
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: 34406ce8d4276ba36ab2ddd49e73681ff2fef773
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37066909"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103750"
 ---
-# <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler, Problembehandlung
+# <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler-Problembehandlung
 
-## <a name="logging-and-diagnostics"></a>Protokollierung und-Diagnose
+## <a name="logging-and-diagnostics"></a>Protokollierung und Diagnose
 
-Die Xamarin-Team helfen, Probleme zu verfolgen, wenn Sie uns Informationen bereitstellen einschließlich:
+Das Xamarin-Team können Probleme nachverfolgen, wenn Sie uns Informationen bieten einschließlich:
 
-- Ein Screencast das Problem, Absturz oder fehlerhaft war und der Workflow darauf vorausgegangen.
-- Log-Ausgaben (siehe unten).
-- Die **.mlpd** für die Profilerstellungssitzung (siehe unten) generiert wird.
+- Ein Standbild aus dem für das Problem, Absturz oder fehlerhaft war und den Workflow, führt.
+- Protokoll gibt (siehe unten).
+- Die **.mlpd** generiert wird, für die Profilerstellungssitzung (siehe unten).
 
-### <a name="getting-log-outputs"></a>Abrufen von Protokoll Ausgaben
+### <a name="getting-log-outputs"></a>Abrufen von Log-Ausgaben
 
-Auf einem Mac Protokolle gespeichert werden, um `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log`.
+Auf einem Mac Protokolle gespeichert werden sollen `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log`.
 
-Unter Windows werden diese auf gespeichert `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` Geben Sie auch das aktuelle Protokoll, wenn Sie ein Problem übermitteln.
+In Windows werden diese auf gespeichert `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` fügen Sie das aktuelle Protokoll aus, wenn Sie ein Problem zu senden.
 
-Weitere protokollieren, wie wir uns zuwenden, damit diese Ausgabe sollte Wachstum und mit der Zeit weitere nützliche werden, hinzugefügt.
+Wir fügen weitere protokollieren, wie wir gehen also diese Ausgabe sollte wachsen und im Laufe der Zeit noch nützlicher werden.
 
 <a name="gen_mlpd" />
 
 ### <a name="generating-mlpd-files"></a>Generieren von .mlpd-Dateien
 
-Ein **.mlpd** Datei ist die komprimierte Ausgabe des Profilers mono-Laufzeit. Der Xamarin Profiler GUI liest die Daten aus einer **.mlpd** und für den Benutzer angezeigt. **.mlpd** Dateien eignen sich debugging-Tools für Xamarin, da sie unsere Ingenieure, die Probleme zu diagnostizieren der Profiler mit Ihren Daten Probleme kann helfen.
+Ein **.mlpd** Datei ist die komprimierte Ausgabe des Profilers mono-Laufzeit. Der Xamarin Profiler-GUI liest die Daten aus einer **.mlpd** und für den Benutzer angezeigt. **.mlpd** -Dateien sind nützlich, die debugging-Tools für Xamarin können unsere Techniker, die diagnose von Problemen der Profiler mit Ihren Daten Probleme kann.
 
-Die **.mlpd** für die aktuelle Sitzung automatisch in Ihrem Mac gespeichert `/tmp` Verzeichnis und den Timestamp identifiziert werden können. Wenn Sie die Protokollierung aktivieren, werden die erste Ausgabe der Pfad zu der **.mlpd** Datei. Die **.mlpd** Datei wird normalerweise in das Verzeichnis ab ~/var/Ordner gespeichert werden...
+Die **.mlpd** für die aktuelle Sitzung werden automatisch im Ihres MACS gespeichert `/tmp` Verzeichnis, und nach dem Zeitstempel identifiziert werden können. Wenn Sie Protokollierung aktivieren, werden die erste Ausgabe der Pfad zu der **.mlpd** Datei. Die **.mlpd** Datei wird normalerweise im Verzeichnis starten ~/var bzw. Ordner gespeichert...
 
-Die **.mlpd** für eine aktuelle Sitzung auch kann, können Sie durch Auswahl gespeichert werden **Datei > Speichern unter...** der Profiler im Menü:
+Die **.mlpd** für eine aktuelle Sitzung auch kann, können Sie durch Auswahl gespeichert werden **Datei > Speichern unter...** der Profiler Menü:
 
 **Visual Studio für Mac**:
 
@@ -53,33 +53,33 @@ Es ist wichtig zu beachten, dass **.mlpd** enthalten eine Vielzahl von Informati
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
-Die folgende Liste zeigt allgemeine Einschränkungen, problemumgehungen, sowie Tipps und Tricks für die Verwendung des Profilers.
+Die folgende Liste zeigt die allgemeine Probleme, problemumgehungen und Tipps und Tricks für die Verwendung von den Profiler.
 
 > [!NOTE]
-> **Hinweis**: Sie müssen eine Visual Studio **Enterprise** Abonnenten zum Entsperren von dieser Funktion in dem entweder Visual Studio Enterprise unter Windows oder im Visual Studio für Mac.
+> **Beachten Sie**: Sie müssen Visual Studio **Enterprise** Abonnenten dieses Feature in entweder Visual Studio Enterprise auf Windows oder Visual Studio für Mac entsperren
 
-#### <a name="i-cant-see-the-ios-profiler-option-or-it-is-greyed-out-visual-studio-and-visual-studio-for-mac"></a>Die iOS-Profiler-Option wird nicht angezeigt, oder es ist abgeblendet, [Visual Studio und Visual Studio für Mac]
+#### <a name="i-cant-see-the-ios-profiler-option-or-it-is-greyed-out-visual-studio-and-visual-studio-for-mac"></a>Die Option "iOS-Profiler" wird nicht angezeigt oder wird Sie abgeblendet [Visual Studio und Visual Studio für Mac]
 
-Überprüfen Sie die folgenden Einstellungen aus, um dieses Problem zu beheben:
+Überprüfen Sie die folgenden Einstellungen zum Beheben dieses Problems:
 
 - Stellen Sie sicher, dass Sie die Debugkonfiguration verwenden
-- Stellen Sie sicher, dass Sie den SGen-Garbage Collector verwenden.
-- Sicherstellen, dass die Plattform ist [unterstützt](~/tools/profiler/index.md#Profiler_Support).
-- Stellen Sie sicher, dass Sie über die richtige Lizenz verfügen.
-- Stellen Sie sicher, dass Sie angemeldet sind in und ordnungsgemäß authentifiziert.
-- [Visual Studio] Sie müssen unter Verwendung [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/enterprise/) und eine gültige Enterprise-Lizenz verfügen.
+- Stellen Sie sicher, dass Sie den SGen Garbage Collector verwenden.
+- Stellen Sie sicher, die Plattform ist [unterstützt](~/tools/profiler/index.md#Profiler_Support).
+- Stellen Sie sicher, dass Sie die richtige Lizenz verfügen.
+- Sicherstellen Sie, dass Sie angemeldet sind, im und ordnungsgemäß authentifiziert.
+- [Visual Studio] Sie müssen verwenden [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/enterprise/) und über eine gültige Enterprise-Lizenz verfügen.
 
-#### <a name="i-get-an-error-when-i-try-to-launch-the-profiler"></a>Ich erhalte eine Fehlermeldung, wenn ich versuche, den Profiler zu starten.
+#### <a name="i-get-an-error-when-i-try-to-launch-the-profiler"></a>Ich erhalte einen Fehler, wenn ich versuche, den Profiler zu starten
 
 Wenn Sie in diesem Fehlerdialogfeld ausführen, wenn den Profiler in Visual Studio verwenden:
 
-![](troubleshooting-images/error.png "Fehlerdialogfeld, wenn den Profiler in Visual Studio verwenden")
+![](troubleshooting-images/error.png "Im Fehler, wenn den Profiler in Visual Studio verwenden")
 
-Wird normalerweise aufgrund eines konnte nicht gestartet werden, den Simulator / Emulator. Versuchen Sie es und führen Sie die Anwendung wie gewohnt, beheben Sie die Probleme, die es ermöglicht, und wiederholen Sie den Profiler erneut verwenden.
+Es handelt sich normalerweise aufgrund eines kann nicht zum Simulator gestartet / Emulator. Versuchen Sie es und führen Sie die app wie gewohnt, beheben Sie die Probleme, die es ermöglicht, und klicken Sie dann erneut versuchen, den Profiler.
 
-#### <a name="to-watch-a-specific-thread"></a>Um einen bestimmten Thread zu beobachten.
+#### <a name="to-watch-a-specific-thread"></a>Überwacht einen bestimmten thread
 
-Wenn Sie einen Thread, die speziell überwacht werden sollen verfügen, wäre es ideal zum Benennen von Threads an, die sehr ab seiner Erstellung, sodass Get abrufen `ThreadName` anstelle von `0x0`. Beispielsweise Threadname als UI festlegen können Sie den folgenden Code:
+Wenn Sie einen Thread, die Sie speziell ansehen möchten verfügen, wäre es ideal, benennen Sie den Thread der sehr ab ihrer Erstellung, sodass Get `ThreadName` anstelle von `0x0`. Z. B. den Threadnamen als Benutzeroberfläche festlegen können Sie den folgenden Code verwenden:
 
 ```csharp
 RunOnUiThread (() => {
@@ -89,6 +89,6 @@ RunOnUiThread (() => {
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Exemplarische Vorgehensweise – mit dem Xamarin-Profiler](~/tools/profiler/index.md)
+- [Exemplarische Vorgehensweise: verwenden den Xamarin Profiler](~/tools/profiler/index.md)
 - [Arbeitsspeicher- und Leistungsproblemen bewährte Methoden](~/cross-platform/deploy-test/memory-perf-best-practices.md)
 - [Anmerkungen zu dieser Version](https://developer.xamarin.com/releases/profiler/preview/)

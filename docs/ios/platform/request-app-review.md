@@ -1,34 +1,34 @@
 ---
-title: App-Überprüfung im Xamarin.iOS anfordern
-description: Dieser Artikel beschreibt die RequestReview-Methode, Apple iOS 10 hinzugefügt, und erläutert, wie er in Xamarin.iOS implementieren.
+title: Anfordern von App-Prüfung in Xamarin.iOS
+description: In diesem Artikel wird beschrieben, der RequestReview-Methode, die Apple iOS 10 hinzugefügt, und es wird erläutert, wie sie in Xamarin.iOS implementieren.
 ms.prod: xamarin
 ms.assetid: 6408e707-b7dc-4557-b931-16a4d79b8930
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 2b329ebad5faaa635d9a791f8760bd5f521de591
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f72aaa781b0712e206cf02725cfc434594287f41
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788156"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109782"
 ---
-# <a name="request-app-review-in-xamarinios"></a>App-Überprüfung im Xamarin.iOS anfordern
+# <a name="request-app-review-in-xamarinios"></a>Anfordern von App-Prüfung in Xamarin.iOS
 
-_Dieser Artikel behandelt der RequestReview-Methode, Apple iOS 10 und wie er in Xamarin.iOS implementiert hinzugefügt._
+_Dieser Artikel behandelt der RequestReview-Methode, die Apple iOS 10 und wie Sie es in Xamarin.iOS implementieren hinzugefügt._
 
-Neu bei iOS 10.3, die `RequestReview()` -Methode ermöglicht es eine iOS-app an den Benutzer bitten, bewerten, oder Überprüfen sie. Beim Aufrufen dieser Methode in einer Protokollversand-app ist, die der Benutzer aus dem App Store installiert wurde, werden iOS 10 behandeln die gesamte Bewertung und einen Prüfvorgang für den Entwickler. Da dieser Vorgang von der Richtlinie für die App Store gesteuert wird, wird eine Warnung kann oder möglicherweise nicht angezeigt.
+Noch nicht mit iOS 10.3, die `RequestReview()` Methode ermöglicht eine iOS-app, um den Benutzer zu bewerten, oder Überprüfen sie. Wenn diese Methode in einer Protokollversand-app aufgerufen wird, die der Benutzer aus dem App Store installiert wurde, wird mit iOS 10 behandelt die gesamte Bewertung und Überprüfungsprozess für den Entwickler. Da dieser Prozess mit App-Store-Richtlinie gesteuert wird, wird eine Warnung kann oder möglicherweise nicht angezeigt.
 
-![](request-app-review-images/review01.png "Eine Warnung für die Beispiel-Review-Anforderung")
+![](request-app-review-images/review01.png "Eine beispielwarnung Überprüfung anfordern")
 
-## <a name="requesting-a-rating-or-review"></a>Eine Bewertung oder Review anfordern
+## <a name="requesting-a-rating-or-review"></a>Anfordern, eine Bewertung oder Kritik
 
-Während der `RequestReview()` statische Methode der `SKStoreReviewController` Klasse aufgerufen werden kann zu jedem Zeitpunkt, in denen es in die Benutzeroberfläche sinnvoll, der Prüfvorgang gesteuert werden, und vom App Store Richtlinien behandelt. Daher diese Methode möglicherweise eine Warnung u. u. nicht angezeigt und sollte nie in Reaktion auf eine Benutzeraktion, z. B. Tippen auf eine Schaltfläche aufgerufen werden.
+Während der `RequestReview()` statische Methode der `SKStoreReviewController` -Klasse kann aufgerufen werden zu jedem Zeitpunkt, wo es sinnvoll, auf der Benutzeroberfläche ist, des Überprüfungsprozesses gesteuert werden, und vom App Store-Richtlinie verarbeitet. Daher diese Methode kann eine Warnung kann nicht angezeigt und sollte nie aufgerufen werden, als Reaktion auf eine Benutzeraktion, z. B. auf eine Schaltfläche tippen.
 
-Beispielsweise kann eine app anfordern, eine Überprüfung, nachdem sie wurde gestartet, eine bestimmte Anzahl von Malen oder ein Spiel möglicherweise einen Review anfordern, nachdem der Spieler eine Ebene abgeschlossen ist.
+Beispielsweise kann eine Anwendung anfordern, eine Überprüfung aus, nachdem sie wurde gestartet, eine angegebene Anzahl von Malen oder ein Spiel könnte eine Überprüfung anfordern, nachdem der Spieler eine Ebene abgeschlossen ist.
 
-Anforderungen eine Überprüfung, sobald eine app Xamarin.iOS beendet wurde, wird gestartet, stellen die folgenden Änderungen an der `AppDelegate.cs` Datei:
+Für Anforderungen stellen eine Überprüfung, sobald Xamarin.iOS-app abgeschlossen ist, starten, die folgenden Änderungen an der `AppDelegate.cs` Datei:
 
 ```csharp
 using Foundation;
@@ -57,17 +57,17 @@ namespace iOSTenThree
 ```
 
 > [!NOTE]
-> Aufrufen von `RequestReview()` in eine unzureichende Entwicklung app wird immer die Bewertung anzeigen und überprüfen Sie Dialogfeld damit getestet werden können. Dies gilt nicht für apps, die über TestFlight, verteilt wurden, in dem Aufruf der Methode werden ignoriert.
+> Aufrufen von `RequestReview()` in eine unterdimensionierte Entwicklung app wird immer die Bewertung anzeigen und überprüfen Sie Dialogfeld so, dass sie getestet werden kann. Dies gilt nicht für apps, die über TestFlight, verteilt wurden, in dem Aufruf der Methode ignoriert werden.
 
-Wenn die `RequestReview()` Methode wird aufgerufen, in einer Protokollversand-app, die der Benutzer aus dem App Store installiert wurde, iOS 10 wird den gesamten Prozess für die Bewertung und überprüfen Sie für den Entwickler zu behandeln. Erneut aus, da dieser Vorgang von der Richtlinie für die App Store gesteuert wird, eine Warnung kann oder möglicherweise nicht angezeigt.
+Wenn die `RequestReview()` Methode wird aufgerufen, in einer Protokollversand-app, die der Benutzer aus dem App Store installiert wurde, wird iOS 10 des gesamten Prozess der Bewertung und überprüfen Sie für den Entwickler. In diesem Fall, da dieser Vorgang von der App-Store-Richtlinie unterliegt, eine Warnung kann oder möglicherweise nicht angezeigt.
 
 ## <a name="linking-to-an-app-store-product-page"></a>Verknüpfen mit einem App Store-Produktseite 
 
-Zusätzlich zu den neuen `RequestReview` -Methode der Entwickler kann weiterhin einen deep-Link der app-Produktseite im App Store innerhalb einer app bereitstellen. Durch Anhängen `action=write-review` bis zum Ende der Seite "-URL des Produkts, eine Seite geöffnet wird, in denen der Benutzer eine Überprüfung der app automatisch schreiben kann. 
+Zusätzlich zu den neuen `RequestReview` -Methode, die der Entwickler kann einen deep-Link zu der app-Produktseite in den App Store aus einer App weiterhin bereitstellen. Durch Anhängen `action=write-review` an das Ende der Product-Seiten-URL, eine Seite wird geöffnet, in denen der Benutzer eine Übersicht über die app automatisch schreiben kann. 
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden der RequestReview-Methode, Apple iOS 10 und wie er in Xamarin.iOS implementiert hinzugefügt behandelt.
+In diesem Artikel wurden der RequestReview-Methode, die Apple iOS 10 und wie Sie es in Xamarin.iOS implementieren hinzugefügt behandelt.
 
 
 

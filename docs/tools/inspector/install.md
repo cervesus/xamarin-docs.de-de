@@ -1,17 +1,17 @@
 ---
 title: 'Inspector: Installation und Vorraussetzungen'
-description: Dieses Dokument enthält Anweisungen zur Installation der Xamarin-Inspektor und erläutert die unterstützten Betriebssysteme, IDEs und app-Plattformen.
+description: In diesem Dokument wird beschrieben, wie zum Installieren der Xamarin Inspector und erläutert die unterstützten Betriebssystem, IDEs und app-Plattformen.
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 690329aa1577c66b3aa2794342a8e367477d3a74
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: 2357003e3a855981f053c48a596b932d9ba36d90
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37066922"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104952"
 ---
 # <a name="inspector-installation-and-requirements"></a>Inspector: Installation und Vorraussetzungen
 
@@ -35,10 +35,10 @@ ms.locfileid: "37066922"
 
 ### <a name="supported-operating-systems"></a>Unterstützte Betriebssysteme
 
-- **Mac** -OS X 10.11 oder größer
+- **Mac** -OS X 10.11 oder höher
 - **Windows** – Windows 7 oder höher (mit InternetExplorer 11 oder höher und .NET 4.6.1 oder höher)
 
-### <a name="supported-ides"></a>Unterstützte IDEs
+### <a name="supported-ides"></a>IDEs unterstützt
 
 - Visual Studio für Mac
 - Visual Studio 2017 mit der Workload **Mobile-Entwicklung mit .NET**
@@ -54,7 +54,7 @@ Die Überprüfung von Live-Apps steht für Enterprise-Kunden zur Verfügung.
 |Mac|Nur unterstützt in Visual Studio für Mac|
 |iOS|Unterstützt in Visual Studio 2017 und Visual Studio für Mac| |
 |Android|Unterstützt in Visual Studio 2017 und Visual Studio für Mac|Muss Android mit Version 4.0.3 oder höher anzielen, für die **Fastdev** aktiviert ist.<br />Google-, Visual Studio- oder Xamarin Android-Emulatoren müssen verwendet werden. In Android 7-Emulatoren sind Überprüfungen derzeit womöglich nicht zulässig.|
-|WPF|Nur unterstützt in Visual Studio 2017|
+|WPF|Nur unterstützt in Visual Studio 2017.|
 
 <a name="reporting-bugs" />
 
@@ -62,11 +62,11 @@ Die Überprüfung von Live-Apps steht für Enterprise-Kunden zur Verfügung.
 
 Fehler müssen direkt über Visual Studio gemeldet werden:
 
-- **Hilfe > Senden Sie Feedback > ein Problem melden**
+- **Hilfe > Feedback senden > ein Problem melden**
 
 Geben Sie auch alle der folgenden Informationen an:
 
-### <a name="platform-version-information"></a>Informationen zur Version der Plattform
+### <a name="platform-version-information"></a>Informationen zur Version
 
 Geben Sie die folgenden Informationen unbedingt an:
 
@@ -117,6 +117,6 @@ Für Android und iOS ist es wichtig, dass wir wissen, welches Gerät Sie zum Deb
 - Android: Stellen Sie sicher, dass Sie den x86-Emulator verwenden.
 - Android: Welche Emulatorplattform verwenden Sie? Google-Emulatoren? Visual Studio-Emulator für Android? Xamarin Android Player?
 - Funktioniert die App, die Sie debuggen wollen, ordnungsgemäßauf dem Gerät?
-- Verfügt das Gerät über eine Netzwerkverbindung (Überprüfen über Webbrowser)?
+- Besitzt das Gerät über eine Netzwerkverbindung (Überprüfen über Webbrowser)?
 
 [client-bugs]: https://github.com/Microsoft/workbooks/issues/new

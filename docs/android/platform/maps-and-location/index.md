@@ -1,28 +1,28 @@
 ---
-title: Karten und Speicherort
-description: Verwenden von Zuordnungen mit Xamarin.Android
+title: Karten und Position
+description: Verwenden von Zuordnungen, die mit Xamarin.Android
 ms.prod: xamarin
 ms.assetid: B45211C5-D377-4A55-8C8E-95D4BF470AE3
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 08/03/2016
-ms.openlocfilehash: f58d40999c6350b1b610afc7c8c9088497473be3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4ddf884f9980de61a27bc636be7c848881a13139
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762547"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108053"
 ---
-# <a name="maps-and-location"></a>Karten und Speicherort
+# <a name="maps-and-location"></a>Karten und Position
 
 
-##  <a name="location-servicesandroidplatformmaps-and-locationlocationmd"></a>[Ortsbezogene Dienste](~/android/platform/maps-and-location/location.md)
+##  <a name="location-servicesandroidplatformmaps-and-locationlocationmd"></a>[Ortungsdienste](~/android/platform/maps-and-location/location.md)
 
-Dieses Handbuch stellt Netzwerkadressinformationen in Android-Anwendungen, und veranschaulicht, wie der Standort des Benutzers verwenden die Android-API der Speicherort als auch die Fused Speicherort verfügbaren Anbieter mit der Google-Speicherort-Dienste-API zu erhalten.
+Dieses Handbuch führt Netzwerkadressinformationen in Android-Anwendungen und veranschaulicht, wie zum Abrufen des Benutzerstandorts Speicherort die Google-API mit der Android-API Speicherort als auch die Fused-Location-Anbieters verfügbar.
 
 
 ##  <a name="mapsandroidplatformmaps-and-locationmapsindexmd"></a>[Karten](~/android/platform/maps-and-location/maps/index.md)
 
-In diesem Artikel erläutert, wie Zuordnungen und den Speicherort mit Xamarin.Android verwendet wird. Alles von der Nutzung der integrierten Karten-Anwendung direkt mit der Google ordnet Android-API V2 behandelt. Darüber hinaus wird erklärt, wie eine einzige API zum Arbeiten mit Diensten, das Verwenden der eine Anwendung Speicherort Korrekturen über Zelle Tower Speicherort Wi-Fi oder GPS abrufen kann.
+In diesem Artikel wird erläutert, wie Karten und Position, die mit Xamarin.Android verwendet wird. Inhalt die integrierte Karten-Anwendung mit der Google ordnet Android-API V2 direkt nutzen. Darüber hinaus wird erklärt, wie auf eine einzige API zu verwenden, um die Arbeit mit Diensten, das die Speicherort-Updates über Tower Zellposition, WLAN oder GPS-erhalten einer Anwendung ermöglicht werden kann.
 

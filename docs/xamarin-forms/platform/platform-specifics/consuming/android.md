@@ -6,13 +6,13 @@ ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/03/2018
-ms.openlocfilehash: c422b9ac5af9417523f349537fda1bb0c01aa7bc
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.date: 10/01/2018
+ms.openlocfilehash: 50c7b05261cf3f07ea37373cdcdcc8f250243647
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39175176"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108976"
 ---
 # <a name="android-platform-specifics"></a>Android Plattformeigenschaften
 
@@ -310,6 +310,7 @@ Das Ergebnis ist, die einem angegebenen [ `MixedContentHandling` ](xref:Xamarin.
 Unter Android werden die folgende plattformspezifische Funktionalität für Xamarin.Forms-Seiten bereitgestellt:
 
 - Festlegen der Höhe der Navigationsleiste auf einen [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage). Weitere Informationen finden Sie unter [Festlegen der Höhe der Leiste Navigation auf einer "NavigationPage"](#navigationpage-barheight).
+- Deaktivieren Übergangsanimationen, bei der Navigation durch Seiten in einem [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Weitere Informationen finden Sie unter [deaktivieren Seite Übergangsanimationen in einer "tabbedpage"](#tabbedpage-transition-animations).
 - Aktivieren, Wischen zwischen den Seiten einer [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Weitere Informationen finden Sie unter [aktivieren Streifen zwischen Seiten in einer "tabbedpage"](#enable_swipe_paging).
 - Festlegen der Platzierung der Symbolleiste und die Farbe für eine [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Weitere Informationen finden Sie unter [Einstellung "tabbedpage" Symbolleiste Platzierung und die Farbe](#tabbedpage-toolbar).
 
@@ -348,6 +349,36 @@ Die `NavigationPage.On<Android>` Methode angibt, dass diese plattformspezifische
 Das Ergebnis ist, die die Höhe der Navigationsleiste auf einen [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) kann festgelegt werden:
 
 ![](android-images/navigationpage-barheight.png "\"NavigationPage\" Navigation Balkenhöhe")
+
+<a name="tabbedpage-transition-animations" />
+
+### <a name="disabling-page-transition-animations-in-a-tabbedpage"></a>Deaktivieren die Seite Übergangsanimationen in einer "tabbedpage"
+
+Diese plattformspezifischen wird verwendet, um Übergangsanimationen zu deaktivieren, wenn Sie über Seiten entweder programmgesteuert navigieren oder bei Verwendung der Registerkartenleiste in einem [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Es ist in XAML verwendet, durch Festlegen der `TabbedPage.IsSmoothScrollEnabled` bindbare Eigenschaft `false`:
+
+```xaml
+<TabbedPage ...
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.IsSmoothScrollEnabled="false">
+    ...
+</TabbedPage>
+```
+
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+On<Android>().SetIsSmoothScrollEnabled(false);
+```
+
+Die `TabbedPage.On<Android>` Methode gibt an, dass diese plattformspezifischen nur unter Android ausgeführt wird. Die `TabbedPage.SetIsSmoothScrollEnabled` Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace wird verwendet, um Kontrolle, ob Übergangsanimationen angezeigt werden, wenn die Seiten im Navigieren zwischen einem [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Darüber hinaus die `TabbedPage` -Klasse in der `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` Namespace verfügt auch über die folgenden Methoden:
+
+- `IsSmoothScrollEnabled`, womit abrufen können, ob Übergangsanimationen angezeigt werden, wenn die Seiten im Navigieren zwischen einem `TabbedPage`.
+- `EnableSmoothScroll`, womit Übergangsanimationen aktivieren Sie beim Navigieren zwischen Seiten in einem `TabbedPage`.
+- `DisableSmoothScroll`, womit Übergangsanimationen deaktivieren Sie beim Navigieren zwischen Seiten in einem `TabbedPage`.
 
 <a name="enable_swipe_paging" />
 
@@ -424,7 +455,7 @@ Das Ergebnis ist, dass die Platzierung der Symbolleiste, die Farbe der Elemente 
 
 ![](android-images/tabbedpage-toolbar-placement.png)
 
-## <a name="application"></a>Application
+## <a name="application"></a>Anwendung
 
 Unter Android wird die folgende plattformspezifische Funktionalität bereitgestellt, für die Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application) Klasse:
 

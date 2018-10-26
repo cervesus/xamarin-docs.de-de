@@ -1,32 +1,32 @@
 ---
-title: Touch-Ereignisse und Aktionen in Xamarin.iOS
-description: Dieses Dokument beschreibt das Arbeiten mit Berührungsereignisse, Multitouch-Gesten, mehrere Gesten und benutzerdefinierten Gesten in Xamarin.iOS Anwendungen.
+title: Berührungsereignisse und Gesten in Xamarin.iOS
+description: Dieses Dokument beschreibt, wie Sie mit Touch-Ereignissen, die Multi-Touch, Gesten, mehrere Gesten und benutzerdefinierten stiftbewegungen in Xamarin.iOS-Anwendungen arbeiten.
 ms.prod: xamarin
 ms.assetid: DA666DC9-446E-4CD1-B5A0-C6FFBC7E53AD
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 34073474ef3ef74f2fddbf487b3377224dc1aa3e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f7160c48e1b1ac85f4aa0173c0eb9f42b8fefca2
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784588"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114768"
 ---
-# <a name="touch-events-and-gestures-in-xamarinios"></a>Touch-Ereignisse und Aktionen in Xamarin.iOS
+# <a name="touch-events-and-gestures-in-xamarinios"></a>Berührungsereignisse und Gesten in Xamarin.iOS
 
-Es ist wichtig, zu verstehen, die Berührungsereignisse touch-APIs in einer iOS-Anwendung, wie sie alle physischen Interaktionen mit dem Gerät von zentraler Bedeutung sind. Alle Touch Interaktionen umfassen eine `UITouch` Objekt. In diesem Artikel erfahren wir, wie Sie die `UITouch` Klasse und den APIs Touch unterstützen. Es wird später auf unser wissen, wie Sie Gesten unterstützen erweitert.
+Es ist wichtig, zu verstehen, die touchereignisse und touch-APIs in einer iOS-Anwendung, wie sie für alle physischen Interaktionen mit dem Gerät von zentraler Bedeutung sind. Alle Touch-Interaktionen umfassen eine `UITouch` Objekt. In diesem Artikel erfahren wir, wie Sie mit der `UITouch` -Klasse und den zugehörigen APIs Touch unterstützen. Später werden wir für unser Wissen zu erfahren, wie Sie die Unterstützung für Bewegungen erweitern.
 
-## <a name="enabling-touch"></a>Aktivieren Touch
+## <a name="enabling-touch"></a>Aktivieren die Fingereingabe
 
-Steuerelemente in `UIKit` – diese Unterklassen aus UIControl – sind dies der Fall ist abhängig von Eingreifen des Benutzers, die sie Gesten in UIKit integriert haben und daher ist es nicht notwendig, die durch Toucheingabe zu aktivieren. Es ist bereits aktiviert.
+Steuerelemente in `UIKit` – diese Unterklassen von UIControl – sind dies der Fall ist abhängig von Benutzerinteraktionen, die sie Bewegungen in UIKit integriert haben, und aus diesem Grund ist es nicht notwendig, die Toucheingabe zu aktivieren. Es ist bereits aktiviert.
 
-Jedoch viele Ansichten in `UIKit` verfügen nicht über die Fingereingabe, die standardmäßig aktiviert. Es gibt zwei Methoden, Fingereingabe auf ein Steuerelement zu aktivieren. Die erste Möglichkeit besteht darin das Kontrollkästchen Benutzer Interaktion aktiviert Pad-Eigenschaft des iOS-Designer zu prüfen, wie im folgenden Screenshot gezeigt:
+Allerdings viele Ansichten im `UIKit` müssen sich nicht auf die Fingereingabe, die standardmäßig aktiviert. Es gibt zwei Möglichkeiten, Fingereingabe auf einem Steuerelement zu aktivieren. Die erste Möglichkeit besteht, überprüfen Sie die Benutzer die Interaktion aktiviert Kontrollkästchen im Bereich "Eigenschaft" des iOS-Designer, wie im folgenden Screenshot gezeigt:
 
- [![](touch-in-ios-images/image1.png "Aktivieren Sie das Kontrollkästchen Benutzer Interaktion aktiviert Pad-Eigenschaft des iOS-Designer")](touch-in-ios-images/image1.png#lightbox)
+ [![](touch-in-ios-images/image1.png "Aktivieren Sie das Benutzer Interaktion aktiviert Kontrollkästchen im Bereich \"Eigenschaft\" der iOS-Designer")](touch-in-ios-images/image1.png#lightbox)
 
-Wir können auch einen Controller legen Sie die `UserInteractionEnabled` Eigenschaft auf "true", auf eine `UIView` Klasse. Dies ist erforderlich, wenn die Benutzeroberfläche im Code erstellt wird.
+Wir können auch einen Controller zum Festlegen der `UserInteractionEnabled` Eigenschaft auf "true", auf eine `UIView` Klasse. Dies ist erforderlich, wenn die Benutzeroberfläche in Code erstellt wird.
 
 Die folgende Codezeile ist ein Beispiel:
 
@@ -36,18 +36,18 @@ imgTouchMe.UserInteractionEnabled = true;
 
 ## <a name="touch-events"></a>Berührungsereignisse
 
-Es gibt drei Phasen der Fingereingabe, die auftreten, wenn der Benutzer den Bildschirm berührt, deren Finger verschiebt oder ihre Finger entfernt. Diese Methoden werden in definiert `UIResponder`, dies ist die Basisklasse für UIView. iOS wird auf die zugeordneten Methoden überschreiben die `UIView` und `UIViewController` Touch behandelt:
+Es gibt drei Phasen der Fingereingabe, die auftreten, wenn der Benutzer den Bildschirm berührt, den Finger bewegt oder den Finger entfernt. Diese Methoden werden in definiert `UIResponder`, dies ist die Basisklasse für UIView. iOS wird auf die zugeordneten Methoden überschreiben die `UIView` und `UIViewController` Fingereingabe behandelt:
 
--  `TouchesBegan` – Dies wird aufgerufen, wenn der Bildschirm zuerst verwendet wird.
--  `TouchesMoved` – Dies wird aufgerufen, wenn der Speicherort der Touch Änderungen als der Benutzer ihre Finger auf dem Bildschirm gleitende ist.
--  `TouchesEnded` oder `TouchesCancelled` – `TouchesEnded` wird aufgerufen, wenn der Benutzer Finger außerhalb des Bildschirms aufgehoben werden.  `TouchesCancelled` Ruft aufgerufen, wenn iOS Touch – z. B. abbricht, wenn ein Benutzer sein eigenes Finger Weg von der eine Schaltfläche zum Abbrechen Drücken einer Folien.
+-  `TouchesBegan` – Dies wird aufgerufen, wenn der Bildschirm zuerst berührt wird.
+-  `TouchesMoved` – Dies wird aufgerufen, wenn der Standort die Touch-Änderungen wie der Benutzer ihren Finger auf dem Bildschirm gleitend ist.
+-  `TouchesEnded` oder `TouchesCancelled` – `TouchesEnded` wird aufgerufen, wenn außerhalb des Bildschirms die Finger des Benutzers aufgehoben werden.  `TouchesCancelled` Ruft aufgerufen, wenn iOS die Berührung – z. B. abbricht, wenn ein Benutzer seine Finger Weg von einer Schaltfläche zum abzubrechen. eine Folien.
 
 
-Touch-Ereignisse Reisen rekursiv nach unten über den Stapel von UIViews, zum Überprüfen, ob das Touch-Ereignis innerhalb der Grenzen eines Objekts Sicht ist. Dies wird häufig aufgerufen _Treffertests_. Sie zuerst auf den obersten aufgerufen `UIView` oder `UIViewController` wird dann aufgerufen werden, auf die `UIView` und `UIViewControllers` weiter unten in der Hierarchie anzeigen.
+Touch-Ereignisse Travel rekursiv nach unten durch den Stapel der UIViews, zu überprüfen, ob das touchereignis innerhalb der Grenzen von ein-Objekt ist. Dies wird häufig als _Treffertests_. Sie werden zunächst auf den obersten aufgerufen werden `UIView` oder `UIViewController` und wird dann aufgerufen werden, auf die `UIView` und `UIViewControllers` unten in der Hierarchie von Inhaltsansichten.
 
-Ein `UITouch` -Objekt wird erstellt, wenn Sie jedes Mal, die der Benutzer den Bildschirm berührt. Die `UITouch` -Objekt enthält Daten über die Fingereingabe, z. B. die Fingereingabe wo es aufgetreten ist, Auftretens war die Fingereingabe Wischen usw.,. Die Berührungsereignisse abrufen eine Eigenschaft Fingereingaben – übergeben ein `NSSet` , enthält eine oder mehrere berührt. Wir können mit dieser Eigenschaft können Sie einen Verweis auf eine Fingereingabe erhalten und die Anwendung Antwort bestimmen.
+Ein `UITouch` erstellt jedes Mal, die der Benutzer den Bildschirm berührt. Die `UITouch` Objekt enthält Daten über die Fingereingabe, z. B. die Berührung des Auftretens wo es aufgetreten ist, war die Berührung einer streifbewegung usw.,. Die touchereignisse abrufen eine Eigenschaft des Workflows – übergeben eine `NSSet` , die eine oder mehrere Workflows enthält. Wir können mit dieser Eigenschaft können Sie einen Verweis auf eine Fingereingabe erhalten und die Anwendung die Antwort bestimmen.
 
-Klassen, die eine der Berührungsereignisse überschreiben soll zuerst die basisimplementierung aufrufen und rufen dann die `UITouch` mit dem Ereignis verknüpften Objekt. Um einen Verweis auf die erste Fingereingabe zu erhalten, rufen Sie die `AnyObject` Eigenschaft umgewandelt werden muss als eine `UITouch` wie im folgenden Beispiel angezeigt:
+Klassen, die eine von der Fingereingabe-Ereignissen zu überschreiben sollte zuerst die basisimplementierung aufrufen und dann die `UITouch` Objekt, mit dem Ereignis verknüpft ist. Rufen Sie zum Abrufen eines Verweises auf die erste Berührung der `AnyObject` Eigenschaft und wandeln Sie sie als eine `UITouch` wie im folgenden Beispiel gezeigt:
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -61,7 +61,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 }
 ```
 
-iOS erkennt automatisch die aufeinander folgenden schnell auf dem Bildschirm berührt und werden als einer einzelnen tippbewegung in einer einzelnen gesammelt `UITouch` Objekt. Dadurch wird die Überprüfung auf einem Doppeltippen genauso einfach wie das Überprüfen der `TapCount` -Eigenschaft verwenden, wie im folgenden Code dargestellt:
+iOS erkennt automatisch, aufeinander folgende schnell auf dem Bildschirm berührt und erfasst sie als in einem einzigen fingertipp `UITouch` Objekt. Dadurch wird die Überprüfung für eine Doppeltippen so einfach wie das Überprüfen der `TapCount` -Eigenschaft, wie im folgenden Code dargestellt:
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -78,19 +78,19 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 }
 ```
 
-## <a name="multi-touch"></a>Multi-Touch
+## <a name="multi-touch"></a>Multitouch
 
-Multi-Touch ist standardmäßig auf die Steuerelemente nicht aktiviert. Multi-Touch kann in der iOS-Designer aktiviert werden, wie der folgende Screenshot veranschaulicht:
+Multitouch ist standardmäßig auf Steuerelemente nicht aktiviert. Multitouch kann in der iOS-Designer aktiviert werden, wie im folgenden Screenshot dargestellt:
 
- [![](touch-in-ios-images/image2.png "Multi-Touch in der iOS-Designer aktiviert")](touch-in-ios-images/image2.png#lightbox)
+ [![](touch-in-ios-images/image2.png "Mehrfingereingabe in der iOS-Designer aktiviert")](touch-in-ios-images/image2.png#lightbox)
 
-Es ist auch möglich, legen Sie Multi-Touch programmgesteuert durch Festlegen der `MultipleTouchEnabled` Eigenschaft wie in der folgenden Zeile des Codes dargestellt:
+Es ist auch möglich, festzulegende Multitouch programmgesteuert durch Festlegen der `MultipleTouchEnabled` Eigenschaft wie in der folgenden Zeile des Codes dargestellt:
 
 ```csharp
 imgTouchMe.MultipleTouchEnabled = true;
 ```
 
-Um zu bestimmen, wie viele Finger den Bildschirm berührt, verwenden die `Count` Eigenschaft auf die `UITouch` Eigenschaft:
+Um zu bestimmen, wie viele Finger den Bildschirm berührt, verwenden die `Count` Eigenschaft für die `UITouch` Eigenschaft:
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -100,9 +100,9 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 }
 ```
 
-## <a name="determining-touch-location"></a>Festlegen des Pfads Touch
+## <a name="determining-touch-location"></a>Bestimmen die Touch-Position
 
-Die Methode `UITouch.LocationInView` gibt ein CGPoint-Objekt, das die Koordinaten für die Fingereingabe innerhalb einer bestimmten Ansicht enthält. Wir können darüber hinaus testen, um festzustellen, ob dieser Position innerhalb eines Steuerelements durch Aufrufen der Methode `Frame.Contains`. Der folgende Codeausschnitt zeigt ein Beispiel dafür:
+Die Methode `UITouch.LocationInView` gibt eine CGPoint-Objekt, das die Koordinaten der die Fingereingabe innerhalb einer bestimmten Ansicht enthält. Wir können außerdem testen, um festzustellen, ob dieser Position in einem Steuerelement durch Aufrufen der Methode `Frame.Contains`. Der folgende Codeausschnitt zeigt ein Beispiel hierfür:
 
 ```csharp
 if (this.imgTouchMe.Frame.Contains (touch.LocationInView (this.View)))
@@ -111,94 +111,94 @@ if (this.imgTouchMe.Frame.Contains (touch.LocationInView (this.View)))
 }
 ```
 
-Nun, da wir einen Überblick über die Berührungsereignisse in iOS haben, erfahren wir Geste Merkmale aus.
+Nun, da wir einen Überblick über die touchereignisse in iOS haben, betrachten wir Geste Erkennungen.
 
-## <a name="gesture-recognizers"></a>Geste Prüfer
+## <a name="gesture-recognizers"></a>Geste Erkennungen
 
-Geste Prüfer können erheblich vereinfachen und reduzieren den Programmierung Aufwand für die Toucheingabe in einer Anwendung zu unterstützen. iOS Geste Prüfer aggregiert werden eine Reihe von touchereignissen in ein einzelnes Touch-Ereignis.
+Geste Erkennungen können erheblich vereinfachen und reduzieren den Programmieraufwand zur Unterstützung der Fingereingabe in einer Anwendung. iOS-Geste Erkennungen aggregieren eine Reihe von Touch-Ereignissen in einem einzelnen Touch-Ereignis.
 
 Xamarin.iOS enthält die Klasse `UIGestureRecognizer` als Basisklasse für die folgenden integrierten Geste Merkmale:
 
 -  *UITapGestureRecognizer* – Dies ist für eine oder mehrere Taps.
--  *UIPinchGestureRecognizer* – Pinching und auseinander Finger verbreiten.
--  *UIPanGestureRecognizer* – Balance oder ziehen.
--  *UISwipeGestureRecognizer* – ein Lesegerät in beliebiger Richtung.
--  *UIRotationGestureRecognizer* – zwei Finger während des Verschiebens gegen den Uhrzeigersinn oder gegen den Uhrzeigersinn zu drehen.
--  *UILongPressGestureRecognizer* – drücken und halten, auch bezeichnet als lang drücken oder auf lang.
+-  *UIPinchGestureRecognizer* – Pinching und auseinander Finger verteilen.
+-  *UIPanGestureRecognizer* : Schwenkansicht oder ziehen.
+-  *UISwipeGestureRecognizer* – Wischen in eine beliebige Richtung.
+-  *UIRotationGestureRecognizer* – zwei Fingern in eine Bewegung im Uhrzeigersinn oder gegen den Uhrzeigersinn zu drehen.
+-  *UILongPressGestureRecognizer* – drücken und halten, auch bezeichnet als drücken Sie Long- oder Long-Wert auf.
 
 
-Das grundlegende Muster mit einer Geste Erkennung lautet wie folgt:
+Das grundlegende Muster mit einer stiftbewegungs-Erkennung ist wie folgt aus:
 
-1.  **Instanziieren Sie das Gestenhandler-Erkennungsmodul** – instanziieren Sie zunächst eine `UIGestureRecognizer` Unterklasse. Das Objekt, das instanziiert wird durch eine Sicht verknüpft wird, und wird Garbage Collection verschoben werden, wenn die Sicht verworfen wird. Es ist nicht erforderlich, diese Sicht als eine Variable einer Klasse zu erstellen.
-1.  **Konfigurieren Sie Clienteinstellungen Geste** – der nächste Schritt besteht darin die Erkennung Geste zu konfigurieren. Die Xamarin Dokumentation auf `UIGestureRecognizer` und seiner Unterklassen eine Liste der Eigenschaften, die festgelegt werden können, zum Steuern des Verhaltens von einem `UIGestureRecognizer` Instanz.
-1.  **Konfigurieren des Ziels** – aufgrund seiner Heritage Objective-C Xamarin.iOS keine Ereignisse auslösen, wenn eine Geste Erkennung einer Aktion entspricht.  `UIGestureRecognizer` verfügt über eine Methode – `AddTarget` – eines anonymen Delegaten oder einen Objective-C-Selektor durch den Code ausführen, wenn die Gestenhandler-Erkennung eine Übereinstimmung stellt akzeptieren können.
-1.  **Geste Erkennung aktivieren** – genau wie mit Berührungsereignisse, Gesten nur erkannt werden, wenn Touch Interaktionen aktiviert sind.
-1.  **Das Erkennungsmodul Geste der Ansicht hinzufügen** – der letzte Schritt besteht darin Bewegung durch Aufrufen einer Ansicht hinzufügen `View.AddGestureRecognizer` , und eine Geste Erkennungsmodul-Objekt übergeben.
+1.  **Instanziieren der stiftbewegungs-Erkennung** : Instanziieren Sie zunächst eine `UIGestureRecognizer` Unterklasse. Das Objekt, das Instanziieren von einer Ansicht verknüpft wird, und wird Garbage Collection verschoben werden, wenn die Ansicht verworfen wird. Es ist nicht erforderlich, diese Ansicht als eine Klassenvariable zu erstellen.
+1.  **Konfigurieren Sie alle Einstellungen für die Bewegung** – im nächste Schritt wird die stiftbewegungs-Erkennung zu konfigurieren. Xamarin Dokumentation auf `UIGestureRecognizer` und deren Unterklassen eine Liste der Eigenschaften, die festgelegt werden, um die Steuerung des Verhaltens einer `UIGestureRecognizer` Instanz.
+1.  **Konfigurieren des Ziels** – aufgrund der Objective-C-Erbes Xamarin.iOS keine Ereignisse auslösen, wenn eine stiftbewegungs-Erkennung einer Aktion entspricht.  `UIGestureRecognizer` verfügt über eine Methode – `AddTarget` –, kann ein anonymer Delegat oder ein Objective-C-Auswahl durch den Code ausgeführt werden, wenn die stiftbewegungs-Erkennung eine Übereinstimmung wird akzeptieren.
+1.  **Aktivieren Sie stiftbewegungs-Erkennung** – genau wie mit Touch-Ereignissen, Gesten nur erkannt werden, wenn die touchinteraktion aktiviert sind.
+1.  **Fügen Sie zur Ansicht der stiftbewegungs-Erkennung** – der letzte Schritt ist die Bewegung durch Aufrufen einer Ansicht hinzufügen `View.AddGestureRecognizer` , und übergeben sie eine Geste erkennerobjekt.
 
-Finden Sie in der [Gestenhandler Erkennungsmodul Beispiele](~/ios/app-fundamentals/touch/ios-touch-walkthrough.md#Gesture_Recognizer_Samples) für Weitere Informationen zum in Code zu implementieren.
+Finden Sie in der [Geste Erkennung Beispiele](~/ios/app-fundamentals/touch/ios-touch-walkthrough.md#Gesture_Recognizer_Samples) für Weitere Informationen dazu, wie sie in Code implementiert.
 
-Wenn die Bewegung Ziel aufgerufen wird, wird es einen Verweis auf die Aktion übergeben werden, die aufgetreten sind. Dadurch wird das Ziel der Aktion zum Abrufen von Informationen zur Bewegung, die aufgetreten sind. Das Ausmaß der verfügbaren Informationen hängt vom Typ der Gestenhandler-Erkennung, die verwendet wurde. Finden Sie in die Xamarin Dokumentation Informationen zu den verfügbaren Daten für jeden `UIGestureRecognizer` Unterklasse.
+Wenn die Bewegung des Ziel aufgerufen wird, wird es einen Verweis auf die Aktion übergeben werden, die aufgetreten sind. Dadurch wird das Ziel der Aktion zum Abrufen von Informationen über die Eingabeaktion, die aufgetreten sind. Der Umfang der Informationen verfügbar sind, hängt von der Art der stiftbewegungs-Erkennung, die verwendet wurde. Finden Sie in Xamarin Dokumentation Informationen zu den verfügbaren Daten für die einzelnen `UIGestureRecognizer` Unterklasse.
 
-Es ist wichtig zu beachten, dass nach eine Bewegung Erkennung einer Ansicht hinzugefügt wurde, die Sicht (und alle Ansichten, darunter) keine Touch Ereignisse empfangen werden. Um Berührungsereignisse gleichzeitig mit Gesten, ermöglichen die `CancelsTouchesInView` Eigenschaft muss auf "false" festgelegt werden, wie im folgenden Code veranschaulicht:
+Es ist wichtig zu beachten, dass nach eine stiftbewegungs-Erkennung zu einer Ansicht hinzugefügt wurde, die Sicht (und alle Ansichten, darunter) keine Berührungsereignisse empfangen werden. Berührungsereignisse gleichzeitig mit Bewegungen können die `CancelsTouchesInView` Eigenschaft muss auf "False" festgelegt werden, wie der folgende Code veranschaulicht:
 
 ```csharp
 _tapGesture.Recognizer.CancelsTouchesInView = false;
 ```
 
-Jede `UIGestureRecognizer` verfügt über eine Statuseigenschaft, die wichtige Informationen über den Status der Erkennung Geste bereitstellt. Jedes Mal, wenn der Wert dieser Eigenschaft ändert, werden iOS die abonnierende Methode, die Übergabe eines Updates aufrufen. Falls eine benutzerdefinierte Aktion Erkennung nie die State-Eigenschaft aktualisiert werden, wird der Abonnenten Rendern die Erkennung Geste nutzlos nie aufgerufen.
+Jede `UIGestureRecognizer` verfügt über eine Statuseigenschaft, die wichtige Informationen über den Status von stiftbewegungs-Erkennung bereitstellt. Jedes Mal, wenn der Wert dieser Eigenschaft ändert, wird iOS die abonnierende Methode legen sie ein Update aufrufen. Wenn eine benutzerdefinierte stiftbewegungs-Erkennung nie die State-Eigenschaft aktualisiert wird, wird der Abonnenten Rendern die stiftbewegungserkennung nutzlos nie aufgerufen.
 
-Gesten können als eine oder zwei Arten zusammengefasst werden:
+Bewegungen können als eine der beiden Typen zusammengefasst werden:
 
-1.  *Diskrete* – diese Gesten Auslösen der ersten einmalig sie erkannt werden.
-1.  *Fortlaufende* – diese Gesten weiterhin ausgelöst werden, solange sie erkannt werden.
+1.  *Diskrete* – diese Gesten nur ausgelöst, der erste Zeitpunkt werden erkannt.
+1.  *Fortlaufende* – für diese Gesten weiterhin ausgelöst werden, solange sie erkannt werden.
 
 
-Geste Prüfer ist in einem der folgenden Zustände vorhanden:
+Geste Erkennungen vorhanden ist, in einem der folgenden Zustände:
 
--  *Mögliche* – Dies ist der Anfangszustand aller Geste Prüfer sind. Dies ist der Standardwert der State-Eigenschaft.
--  *Began* – Wenn eine fortlaufende Geste zuerst erkannt wird, wird der Status auf Began festgelegt. Dadurch können abonniert werden, um die Unterscheidung zwischen Geste Recognition beim Starten und wenn er geändert wird.
--  *Geänderte* – nachdem eine kontinuierliche Geste begonnen hat, aber noch nicht abgeschlossen ist, der Status wird festgelegt auf geänderte jedes Mal, wenn eine Fingereingabe verschoben oder geändert wird, solange er immer noch innerhalb der erwarteten Parameter der Bewegung ist.
--  *Abgebrochen* – dieser Status wird festgelegt, wenn die Erkennung von Began Changed anonymousMethod, und klicken Sie dann die Fingereingaben so im Vergleich zu nicht mehr geändert das Muster der Bewegung passen.
--  *Erkannt* – der Status wird festgelegt werden, wenn die Gestenhandler-Erkennung eine Sammlung von Fingereingaben vergleicht und informiert dem Abonnenten, dass die Aktion abgeschlossen wurde.
--  *Beendet* – Dies ist ein Alias für den Status der erkannt.
--  *Fehler bei* – Wenn die Gestenhandler-Erkennung nicht mehr die Fingereingaben übereinstimmen kann für der Status wird geändert, um Fehler handelt, an.
+-  *Mögliche* – Dies ist der ursprüngliche Zustand der Erkennungen für alle Bewegung. Dies ist der Standardwert der State-Eigenschaft.
+-  *Began* – Wenn eine fortlaufende Geste zuerst erkannt wird, der Zustand auf Began festgelegt ist. Dadurch können abonniert werden, um die Unterschiede zwischen dem Beginn der gestenerkennung und wenn dieses geändert wird.
+-  *Changed* – nach eine kontinuierliche Geste begonnen hat, jedoch noch nicht abgeschlossen ist, der Zustand auf festgelegt geändert jedes Mal, wenn eine Fingereingabe verschoben oder geändert wird, solange sie weiterhin in den erwarteten Parametern der Bewegung ist.
+-  *Abgebrochen* – dieser Status wird festgelegt, wenn die Erkennung von Began geändert wurde, und klicken Sie dann die Workflows, die nicht mehr so, als geändert das Muster der Bewegung passen.
+-  *Erkannt* – der Zustand festgelegt, wenn die stiftbewegungserkennung eine Sammlung von Workflows vergleicht und dem Abonnenten informiert, dass die Bewegung beendet wurde.
+-  *Beendet* – Dies ist ein Alias für den Recognized-Zustand.
+-  *Fehler bei* – Wenn die stiftbewegungs-Erkennung nicht mehr die Fingereingaben übereinstimmen kann gelauscht wird für der Status wird zu Fehler geändert.
 
 
 Xamarin.iOS stellt diese Werte in der `UIGestureRecognizerState` Enumeration.
 
-## <a name="working-with-multiple-gestures"></a>Arbeiten mit mehreren Gesten
+## <a name="working-with-multiple-gestures"></a>Arbeiten mit mehreren Bewegungen
 
-Standardmäßig lässt iOS keine Standard-Gesten zum gleichzeitig ausgeführt werden. Stattdessen erhält jede Geste Erkennungsmodul Berührungsereignisse in einer nicht-deterministischen Reihenfolge. Der folgende Codeausschnitt veranschaulicht, wie Sie eine Geste-Erkennung, die gleichzeitig ausgeführt werden:
+Standardmäßig lässt iOS nicht standardmäßige Gesten gleichzeitig ausgeführt werden. Stattdessen wird jede stiftbewegungs-Erkennung Berührungsereignisse in einer nicht-deterministischen Reihenfolge empfangen. Der folgende Codeausschnitt veranschaulicht, wie Sie eine stiftbewegungs-Erkennung, die gleichzeitig ausgeführt werden:
 
 ```csharp
 gesture.ShouldRecognizeSimultaneously += (UIGestureRecognizer r) => { return true; };
 ```
 
-Es ist auch möglich, eine Geste in iOS deaktivieren. Es gibt zwei delegateigenschaften, mit denen eine Geste Erkennung untersuchen Sie den Status der Anwendung und die aktuelle Berührungsereignisse Entscheidungen zum und wenn eine Geste erkannt werden sollen. Sind die zwei Ereignisse:
+Es ist auch möglich, eine Geste in iOS zu deaktivieren. Es gibt zwei delegateigenschaften, mit denen eine stiftbewegungs-Erkennung zur statusbestimmung von einer Anwendung und die aktuellen touchereignisse, Entscheidungen dazu, wie und wenn eine Geste erkannt werden sollen. Die zwei Ereignisse sind:
 
-1.  *ShouldReceiveTouch* – dieser Delegat wird aufgerufen, unmittelbar bevor die Bewegung Erkennung wird ein Touch-Ereignis übergeben, und bietet die Möglichkeit, die Fingereingaben überprüfen und entscheiden, welche Fingereingaben durch die Erkennung Geste verarbeitet werden.
-1.  *ShouldBegin* – Dies wird aufgerufen, wenn versucht wird, dass eine Erkennung Status von möglich zu einem anderen Status zu ändern. "False" zurückgeben, wird den Status der Erkennung Geste in konnte nicht geändert werden erzwungen.
+1.  *ShouldReceiveTouch* : Dieser Delegat wird aufgerufen, unmittelbar bevor die stiftbewegungs-Erkennung ein touchereignis übergeben wird, und bietet die Möglichkeit, die Fingereingaben überprüfen und entscheiden, welche Workflows von stiftbewegungs-Erkennung verarbeitet werden.
+1.  *ShouldBegin* – Dies wird aufgerufen, wenn versucht wird, dass eine Erkennung Zustand von möglich in einem anderen Zustand ändern. False zurückgibt, wird den Status der stiftbewegungs-Erkennung zu Fehler geändert werden erzwungen.
 
 
-Sie können diese Methoden mit einem stark typisierten überschreiben `UIGestureRecognizerDelegate`, einen schwachen Delegaten oder Bindung über die Ereignis-Handler-Syntax, wie der folgende Codeausschnitt veranschaulicht:
+Sie können diese Methoden mit einem stark typisierten überschreiben `UIGestureRecognizerDelegate`, eine schwache Delegaten oder Bindung über die Ereignis-Handler-Syntax, wie der folgende Codeausschnitt veranschaulicht:
 
 ```csharp
 gesture.ShouldReceiveTouch += (UIGestureRecognizer r, UITouch t) => { return true; };
 ```
 
-Schließlich ist es möglich, eine Geste Erkennung in die Warteschlange so, dass er nur erfolgreich ist, schlägt eine andere Erkennung der Bewegung. Beispielsweise sollte eine einfachen tippen Geste Erkennung nur erfolgreich, bei eine Doppeltippen Geste Erkennung ein Fehler auftritt. Der folgende Codeausschnitt enthält ein Beispiel dafür:
+Abschließend ist es möglich, eine stiftbewegungs-Erkennung in die Warteschlange, damit es nur erfolgreich ist, wenn eine andere stiftbewegungs-Erkennung ein Fehler auftritt. Beispielsweise sollten eine einzigen fingertipp stiftbewegungs-Erkennung nur erfolgreich, wenn keine Doppeltippen stiftbewegungs-Erkennung. Der folgende Codeausschnitt enthält ein Beispiel hierfür:
 
 ```csharp
 singleTapGesture.RequireGestureRecognizerToFail(doubleTapGesture);
 ```
 
-## <a name="creating-a-custom-gesture"></a>Erstellen eine benutzerdefinierte Geste
+## <a name="creating-a-custom-gesture"></a>Erstellen eine benutzerdefinierte Aktion
 
-Obwohl iOS einige Standardeinstellungen Gestenhandler-Merkmale enthält, zum Erstellen von benutzerdefinierten Geste Prüfer in bestimmten Fällen möglicherweise erforderlich. Erstellen eine benutzerdefinierte Aktion Erkennung umfasst die folgenden Schritte aus:
+Obwohl iOS einen Standard-Geste Erkennungen bereitstellt, kann es zum Erstellen von benutzerdefinierten Gesten Erkennungen in bestimmten Fällen erforderlich sein. Erstellen eine benutzerdefinierte stiftbewegungs-Erkennung umfasst die folgenden Schritte aus:
 
 1.  Unterklasse `UIGestureRecognizer` .
-1.  Überschreiben Sie die entsprechenden Touch Ereignismethoden.
-1.  Blase Recognition Status über die Basisklasse State-Eigenschaft.
+1.  Überschreiben Sie die entsprechenden Touch-Event-Methoden.
+1.  Status der Erkennung über die Basisklasse State-Eigenschaft übergeben.
 
 
-Dieses ein praktischen Beispiels werden ausführlicher den [berühren Sie mit der Verwendung in iOS](ios-touch-walkthrough.md) Exemplarische Vorgehensweise.
+Ein praktisches Beispiel davon wird in behandelt die [mithilfe von Toucheingabe in iOS](ios-touch-walkthrough.md) Exemplarische Vorgehensweise.

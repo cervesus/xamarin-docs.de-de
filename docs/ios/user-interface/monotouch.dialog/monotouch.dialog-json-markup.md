@@ -1,23 +1,23 @@
 ---
-title: MonoTouch.Dialog Json-Markup
-description: Dieses Dokument beschreibt die JSON-Syntax, die zum Erstellen von einer Xamarin.iOS-Benutzeroberfläche mit MonoTouch.Dialog verwendet werden kann.
+title: MonoTouch.Dialog-JSON-Markup
+description: Dieses Dokument beschreibt die JSON-Syntax, die zum Erstellen einer Xamarin.iOS-Benutzeroberfläche mit MonoTouch.Dialog verwendet werden kann.
 ms.prod: xamarin
 ms.assetid: 59F3E18C-3A73-69B8-DA5E-21B19B9DFB98
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: dc3f4ea87bbd381a4a1767fb9179fb1bcf0c56d8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.openlocfilehash: d084094ab52e317fbb42f6b8c8c553d9d6158251
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790756"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106870"
 ---
-# <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json-Markup
+# <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog-JSON-Markup
 
-Diese Seite beschreibt die Json-Markup, das vom des MonoTouch.Dialog akzeptiert [JsonElement](https://developer.xamarin.com/api/type/MonoTouch.Dialog.JsonElement/)
+Diese Seite beschreibt das Json-Markup, das von der MonoTouch.Dialog akzeptiert [JsonElement](https://developer.xamarin.com/api/type/MonoTouch.Dialog.JsonElement/)
 
-Beginnen Sie wir mit einem Beispiel. Im folgenden finden eine vollständige Json-Datei, die an JsonElement übergeben werden kann.
+Lassen Sie uns mit einem Beispiel starten. Im folgenden finden eine vollständige Json-Datei, die an JsonElement übergeben werden kann.
 
 ```csharp
 {     
@@ -74,11 +74,11 @@ Beginnen Sie wir mit einem Beispiel. Im folgenden finden eine vollständige Json
 }
 ```
 
-Die oben genannten Markup erzeugt die folgende Benutzeroberfläche:
+Das obenstehende Markup erzeugt die folgende Benutzeroberfläche:
 
- [![](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png "Die Benutzeroberfläche erstellt, indem das markup")](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
+ [![](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png "Die Benutzeroberfläche, die durch das Markup erstellt")](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
 
-Jedes Element in der Struktur darf die Eigenschaft `"id"`. Es ist möglich, zur Laufzeit, um einzelne Abschnitte oder Elemente mit dem Indexer JsonElement zu verweisen. Und zwar so:
+Jedes Element in der Struktur kann die Eigenschaft enthalten `"id"`. Es kann zur Laufzeit zum Verweisen auf einzelne Abschnitte oder Elemente, die unter Verwendung des Indexers JsonElement zur Verfügung. Und zwar so:
 
 ```csharp
 var jsonElement = JsonElement.FromFile ("demo.json");
@@ -99,49 +99,49 @@ Das Stammelement enthält die folgenden Werte:
 -  `sections` (optional)
 
 
-Das Stammelement kann innerhalb eines Abschnitts als ein Element zum Erstellen eines geschachtelten Controllers verwendet werden. In diesem Fall wird die zusätzliche Eigenschaft `"type"` muss festgelegt werden `"root"`
+Das Stammelement darf in einem Abschnitt als ein Element aus, um einen geschachtelten Controller zu erstellen. In diesem Fall die zusätzliche Eigenschaft `"type"` muss festgelegt werden `"root"`
 
  <a name="url" />
 
 
 ### <a name="url"></a>url
 
-Wenn die `"url"` Eigenschaft wird festgelegt, wenn der Benutzer auf diese RootElement tippt, wird der Code fordert eine Datei aus der angegebenen Url und stellen den Inhalt der neue Informationen angezeigt. Sie können Hiermit können Sie erstellen die Benutzeroberfläche der abhängig davon, was der Benutzer tippt erweitern.
+Wenn die `"url"` Eigenschaft wird festgelegt, wenn der Benutzer auf diese RootElement tippt, wird der Code wird eine Datei aus der angegebenen Url angefordert und veranlasst den Inhalt der neue Informationen angezeigt. Hiermit können Sie zum Erstellen die Benutzeroberfläche aus abhängig davon, was der Benutzer tippt erweitern.
 
  <a name="group" />
 
 
 ### <a name="group"></a>Gruppe
 
-Wenn festgelegt, damit die Groupname für das Stammelement wird. Gruppennamen werden verwendet, um eine Zusammenfassung zu berücksichtigen, die als Wert für das Stammelement eines geschachtelten Elemente in das Element angezeigt wird. Dies ist der Wert, der ein Kontrollkästchen oder den Wert des ein Optionsfeld.
+Wenn festgelegt, dadurch Groupname für das Stammelement wird. Gruppennamen werden verwendet, um eine Zusammenfassung auszuwählen, die als Wert für das Stammelement aus einem der geschachtelte Elemente im Element angezeigt wird. Dies ist entweder der Wert eines Kontrollkästchens oder den Wert eines Optionsfelds.
 
  <a name="radioselected" />
 
 
 ### <a name="radioselected"></a>radioselected
 
-Identifiziert das Optionsfeld-Element, das geschachtelte Elemente ausgewählt ist
+Identifiziert das Radio-Element, das in geschachtelte Elemente ausgewählt ist
 
  <a name="title" />
 
 
 ### <a name="title"></a>Titel
 
-Wenn vorhanden ist, kann er den Titel für die RootElement verwendet werden.
+Wenn vorhanden, kann er den Titel für die RootElement verwendet werden.
 
  <a name="type" />
 
 
 ### <a name="type"></a>Typ
 
-Muss festgelegt werden, um `"root"` Wenn dies in einem Abschnitt angezeigt wird (Dies wird zum Schachteln von Domänencontrollern verwendet).
+Muss festgelegt werden, um `"root"` Wenn dies in einem Abschnitt angezeigt wird (Dies wird verwendet, Controller zu schachteln).
 
  <a name="sections" />
 
 
 ### <a name="sections"></a>Abschnitte
 
-Dies ist ein Json-Array mit den einzelnen Abschnitten
+Dies ist ein JSON-Array mit den einzelnen Abschnitten
 
  <a name="Section_Syntax" />
 
@@ -160,36 +160,36 @@ Der Abschnitt enthält:
 
 ### <a name="header"></a>header
 
-Falls vorhanden, wird der HeaderText als Beschriftung des Abschnitts angezeigt.
+Falls vorhanden, wird der Text der Überschrift als Beschriftung des Abschnitts angezeigt.
 
  <a name="footer" />
 
 
 ### <a name="footer"></a>Fußzeile
 
-Falls vorhanden, wird die Fußzeile am unteren Rand der Abschnitt angezeigt.
+Falls vorhanden, wird die Fußzeile am unteren Rand im Abschnitt angezeigt.
 
  <a name="elements" />
 
 
 ### <a name="elements"></a>Elemente
 
-Dies ist ein Array von Elementen. Jedes Element muss mindestens einen Schlüssel enthalten die `"type"` Schlüssel, der verwendet wird, um die Art der zu erstellenden Elements zu identifizieren.
-Einige Elemente gemeinsam einige gemeinsamen Eigenschaften wie `"caption"` und `"value"`. Dies sind die Liste der unterstützten Elemente:
+Dies ist ein Array von Elementen. Jedes Element muss mindestens ein Schlüssel, enthalten die `"type"` Schlüssel, um die Art des zu erstellenden Elements verwendet wird.
+Einige Elemente Teilen gemeinsamen Eigenschaften wie `"caption"` und `"value"`. Hierbei handelt es sich um die Liste der unterstützten Elemente:
 
 -  `string` Elemente (beide mit und ohne Formatierung)
--  `entry` Linien ("Regular" oder "Kennwort")
--  `boolean` Werte (mit Switches oder Bilder)
+-  `entry` Zeilen ("Regular" oder "Kennwort")
+-  `boolean` Werte, die (mithilfe der Switches oder Bilder)
 
 
-Zeichenfolgenelementen dient als Schaltflächen durch die Bereitstellung einer Methode zum Aufrufen, wenn der Benutzer auf die Zelle oder die Zugriffsmethode tippt,
+Zeichenfolgenelementen können verwendet werden als Schaltflächen durch die Bereitstellung einer Methode aufrufen, wenn der Benutzer auf die Zelle oder die Zugriffsmethode tippt,
 
  <a name="Rendering_Elements" />
 
 
 ## <a name="rendering-elements"></a>Rendern von Elementen
 
-Das Rendern von Elementen basieren auf der C#-StringElement und StyledStringElement, können sie Informationen auf verschiedene Weise gerendert, und es ist möglich, Berichte auf verschiedene Weise zu rendern. Die einfachste Elemente können wie folgt erstellt werden:
+Die Rendern von Elementen basieren auf der C# StringElement und StyledStringElement und sie können Informationen auf verschiedene Weise zu rendern, und es ist möglich, Berichte auf verschiedene Weise zu rendern. Die einfachste Elemente können wie folgt erstellt werden:
 
 ```csharp
 {
@@ -198,7 +198,7 @@ Das Rendern von Elementen basieren auf der C#-StringElement und StyledStringElem
 }
 ```
 
-Es wird eine einfache Zeichenfolge mit allen Standardeinstellungen angezeigt: Schriftart, Hintergrund, Textfarbe und Ergänzungen. Es ist möglich, Einbinden von Aktionen an, die diese Elemente, und stellen sie verhalten sich wie Schaltflächen durch Festlegen der `"ontap"` Eigenschaft oder die `"onaccessorytap"` Eigenschaften:
+Dadurch sehen Sie eine einfache Zeichenfolge mit allen Standardeinstellungen: Schriftart, Hintergrund, Textfarbe und Ergänzungen. Es ist möglich, Aktionen, die diese Elemente einbinden und machen sie das Verhalten wie Schaltflächen durch Festlegen der `"ontap"` Eigenschaft oder das `"onaccessorytap"` Eigenschaften:
 
 ```csharp
 {
@@ -208,7 +208,7 @@ Es wird eine einfache Zeichenfolge mit allen Standardeinstellungen angezeigt: Sc
 }
 ```
 
-Die oben genannten wird die Methode "ShowPhotos" in der Klasse "Acme.PhotoLibrary" aufgerufen. Die `"onaccessorytap"` ist ähnlich, aber es wird nur aufgerufen werden, wenn der Benutzer auf den Accessor statt Tippen auf die Zelle tippt. Um dies zu ermöglichen, müssen Sie auch die Zugriffsmethode festlegen:
+Die oben genannten wird die Methode "ShowPhotos" in der Klasse "Acme.PhotoLibrary" aufgerufen. Die `"onaccessorytap"` ist ähnlich, aber es werden nur aufgerufen, wenn der Benutzer auf die Zugriffsmethode anstatt zu tippen auf die Zelle tippt. Um dies zu ermöglichen, müssen Sie auch die Zugriffsmethode festlegen:
 
 ```csharp
 {
@@ -220,7 +220,7 @@ Die oben genannten wird die Methode "ShowPhotos" in der Klasse "Acme.PhotoLibrar
 }
 ```
 
-Rendern von Elementen kann zwei Zeichenfolgen gleichzeitig angezeigt, ist die Beschriftung und ein weiterer Vorteil ist der Wert. Diese Zeichenfolgen gerendert werden richten sich nach den Stil, können Sie festlegen, mit der `"style"` Eigenschaft. Die Standardeinstellung wird die Beschriftung auf der linken Seite und den Wert auf der rechten Seite angezeigt. Stil für Weitere Informationen finden Sie im Abschnitt. Die Codierung von Farben werden mit dem '#'-Symbol, gefolgt von hexadezimalen Zahlen, die die Werte für die Werte Rot, Grün, Blau und vielleicht alpha darstellen. Der Inhalt können in Kurzform (3 oder 4 hexadezimalen Ziffern) codiert werden RGB- oder RGBA-Werte dar. Oder die Langform (6 oder 8 Ziffern) die RGB- oder RGBA-Werte darstellen. Die Kurzversion ist eine Kurzschreibweise, um das gleiche hexadezimale Ziffer zweimal zu schreiben. Daher ist die Konstante "#1bc" oder als Rot = 0x11 Grün = 0xbb und Blau = 0xcc. Wenn der alpha-Wert nicht vorhanden ist, ist die Farbe nicht transparent. Einige Beispiele:
+Rendern von Elementen kann zwei Zeichenfolgen gleichzeitig angezeigt, eine ist die Beschriftung und einem anderen ist der Wert. Wie diese Zeichenfolgen gerendert werden abhängig von den Stil, können Sie dies mithilfe der `"style"` Eigenschaft. Standardmäßig wird die Beschriftung auf der linken Seite, und der Wert auf der rechten Seite angezeigt. Stil für Weitere Informationen finden Sie im Abschnitt. Farben werden codiert mit dem '#'-Symbol, gefolgt von Hexadezimalzahlen, die die Werte für die roten, grünen, blauen und vielleicht alpha-Werte darstellen. Die Inhalte können in Kurzform (3 oder 4 hexadeximale Zahlen) codiert werden, die RGB oder RGBA-Werte darstellt. Oder die Langform (6 oder 8 Ziffern) die RGB oder RGBA-Werte darstellen. Die Kurzversion ist eine Kurzform, auf das gleiche hexadezimale Zeichen doppelt schreiben. Daher ist die Konstante "#1bc"-Markierungen Rot = 0x11, Grün = 0xbb und Blau = 0xcc. Wenn der alpha-Wert nicht vorhanden ist, ist die Farbe nicht transparent. Einige Beispiele:
 
 ```csharp
 "background": "#f00"
@@ -232,7 +232,7 @@ Rendern von Elementen kann zwei Zeichenfolgen gleichzeitig angezeigt, ist die Be
 
 ### <a name="accessory"></a>Zubehör
 
-Bestimmt die Art der Zubehör werden angezeigt im Renderingelement, die möglichen Werte sind:
+Bestimmt die Art der Zubehör, angezeigt in Ihrer Renderingelement, die möglichen Werte sind:
 
 -  `checkmark`
 -  `detail-disclosure`
@@ -246,29 +246,29 @@ Wenn der Wert nicht vorhanden ist, wird keine Zubehör angezeigt.
 
 ### <a name="background"></a>Hintergrund
 
-Die Hintergrundeigenschaft legt die Hintergrundfarbe für die Zelle fest. Dieser Wert ist entweder eine URL zu einem Bild (in diesem Fall das Async-Image-Downloadprogramm wird aufgerufen und der Hintergrund wird aktualisiert, sobald das Abbild heruntergeladen wird) oder eine Farbe, mit der Farbe Syntax definiert sein.
+Die Background-Eigenschaft legt die Hintergrundfarbe der Zelle fest. Der Wert ist entweder eine URL zu einem Bild (in diesem Fall das Async-Image-Downloadprogramm wird aufgerufen, und der Hintergrund wird aktualisiert, sobald das Image heruntergeladen wurde) oder eine Farbe, die mit der Farbe-Syntax angegeben sein.
 
  <a name="caption" />
 
 
 ### <a name="caption"></a>Beschriftung
 
-Die wichtigsten Zeichenfolge an das Renderingelement angezeigt werden sollen. Schriftart und Farbe angepasst werden durch Festlegen der `"textcolor"` und `"font"` Eigenschaften. Das Rendering-Format richtet sich nach der `"style"` Eigenschaft.
+Die wichtigsten Zeichenfolge auf das Renderingelement angezeigt werden sollen. Die Schriftart und Farbe können durch Festlegen von angepasst werden die `"textcolor"` und `"font"` Eigenschaften. Das Darstellungsformat richtet sich nach der `"style"` Eigenschaft.
 
  <a name="color_and_detailcolor" />
 
 
 ### <a name="color-and-detailcolor"></a>Farbe und detailcolor
 
-Die Farbe für den Haupttext oder ausführliche Fehlertext verwendet werden soll.
+Die Farbe, die für den Haupttext oder der ausführliche Fehlertext verwendet werden.
 
  <a name="detailfont_and_font" />
 
 
-### <a name="detailfont-and-font"></a>DetailFont und Schriftart
+### <a name="detailfont-and-font"></a>DetailFont- und Schriftart
 
-Die Schriftart für die Beschriftung oder den Details Text verwendet werden soll. Das Format einer Schriftart-Spezifikation ist den Schriftartnamen, optional gefolgt von einem Bindestrich und den Schriftgrad.
-Im folgenden sind gültige Schriftart-Spezifikationen:
+Die Schriftart für die Beschriftung oder den Text Details verwenden. Das Format einer Schriftart-Spezifikation ist der Schriftartname, optional gefolgt von einem Bindestrich und den Schriftgrad.
+Im folgenden finden gültige Schriftart-Spezifikationen:
 
 -  "Helvetica"
 -  "Helvetica-14"
@@ -289,14 +289,14 @@ Bestimmt, wie Zeilen unterteilt sind. Mögliche Werte sind:
 -  `word-wrap`
 
 
-Beide `character-wrap` und `word-wrap` verwendet werden können, zusammen mit der `"lines"` -Eigenschaft auf 0 (null), das Renderingelement in ein Element mehrzeilige aktivieren festgelegt.
+Beide `character-wrap` und `word-wrap` kann verwendet werden, zusammen mit den `"lines"` Eigenschaft auf NULL setzen, der Renderingelement in ein Element mit mehreren Zeilen zu aktivieren.
 
  <a name="ontap_and_onaccessorytap" />
 
 
 ### <a name="ontap-and-onaccessorytap"></a>ONTAP und onaccessorytap
 
-Diese Eigenschaften müssen auf den Namen einer statischen Methode in Ihrer Anwendung verweisen, die ein Objekt als Parameter akzeptiert. Bei der Erstellung Ihrer Hierarchie mithilfe der Methoden JsonDialog.FromFile oder JsonDialog.FromJson können Sie einen optionalen Objektwert übergeben. Dieser Objektwert wird dann an die Methoden übergeben. Sie können diese verwenden, einige Kontext auf die statische Methode übergibt. Zum Beispiel:
+Diese Eigenschaften müssen auf den Namen einer statischen Methode, in Ihrer Anwendung verweisen, die ein Objekt als Parameter akzeptiert. Bei der Erstellung Ihrer Hierarchie, die mit den Methoden JsonDialog.FromFile oder JsonDialog.FromJson können Sie einen Objekt mit optionalen Wert übergeben. Dieser Objektwert wird dann an Ihre Methoden übergeben. Sie können dies verwenden, einen Kontext an die statische Methode zu übergeben. Zum Beispiel:
 
 ```csharp
 class Foo {
@@ -318,20 +318,20 @@ class Foo {
 
 ### <a name="lines"></a>Linien
 
-Wenn dies auf NULL gesetzt wird, wird das Element automatisch-Größe sich je nach den Inhalt der Zeichenfolgen enthalten erleichtern. Damit dies funktioniert, müssen Sie auch Festlegen der `"linebreak"` Eigenschaft `"character-wrap"` oder `"word-wrap"`.
+Wenn dies 0 (null) festgelegt ist, wird sie die Auto-Elementgröße je nach Inhalt der Zeichenfolgen enthalten sein. Damit dies funktioniert, müssen Sie auch Festlegen der `"linebreak"` Eigenschaft `"character-wrap"` oder `"word-wrap"`.
 
  <a name="style" />
 
 
 ### <a name="style"></a>style
 
-Das Format bestimmt die Art der Zellenstil, die zum Rendern des Inhalts verwendet werden und sie entsprechen den Werten der UITableViewCellStyle-Enumeration.
+Das Format bestimmt die Art der Zellenstil entspricht, die beim Rendern des Inhalts verwendet werden und entsprechen der UITableViewCellStyle-Enumerationswerte.
 Mögliche Werte sind:
 
 -  `"default"`
 -  `"value1"`
 -  `"value2"`
--  `"subtitle"` : Text mit einen Untertitel hinzu.
+-  `"subtitle"` : Text mit einem Untertitel.
 
 
  <a name="subtitle" />
@@ -339,7 +339,7 @@ Mögliche Werte sind:
 
 ### <a name="subtitle"></a>Untertitel
 
-Der Wert für den Untertitel verwenden. Dies ist eine Verknüpfung festzulegende den Stil zu `"subtitle"` und legen Sie die `"value"` -Eigenschaft in eine Zeichenfolge.
+Der Wert, der für den Untertitel verwendet. Dies ist eine Verknüpfung zum Festlegen des Stils zu `"subtitle"` und legen Sie die `"value"` Eigenschaft in eine Zeichenfolge.
 Dies wird sowohl mit einem einzelnen Eintrag.
 
  <a name="textcolor" />
@@ -347,21 +347,21 @@ Dies wird sowohl mit einem einzelnen Eintrag.
 
 ### <a name="textcolor"></a>TextColor
 
-Die Farbe für den Text verwendet werden soll.
+Die Farbe für den Text zu verwenden.
 
  <a name="value" />
 
 
 ### <a name="value"></a>Wert
 
-Der sekundäre Wert an das Renderingelement angezeigt werden sollen. Das Layout dieses betroffen ist die `"style"` Einstellung. Schriftart und Farbe angepasst werden durch Festlegen der `"detailfont"` und `"detailcolor"`.
+Der sekundäre Wert, der Rendering-Element angezeigt werden soll. Das Layout der betroffen ist die `"style"` festlegen. Die Schriftart und Farbe können durch Festlegen von angepasst werden die `"detailfont"` und `"detailcolor"`.
 
  <a name="Boolean_Elements" />
 
 
-## <a name="boolean-elements"></a>Boolean-Elemente
+## <a name="boolean-elements"></a>Booleschen Elementen
 
-Boolesche Elemente sollte auf den Typ festgelegt `"bool"`, darf eine `"caption"` angezeigt und die `"value"` auf "true" oder "false" festgelegt ist. Wenn die `"on"` und `"off"` Eigenschaften werden festgelegt, sie werden als Bilder sein. Die Images sind relativ zum aktuellen Arbeitsverzeichnis der Anwendung behoben. Wenn Sie Relative Bundle-Dateien verweisen möchten, können Sie mithilfe der `"~"` als Verknüpfung zur Bundle Anwendungsverzeichnis darstellen. Z. B. `"~/favorite.png"` werden die favorite.png, die in der Paketdatei enthalten ist. Zum Beispiel:
+Boolesche Elementen sollten legen Sie den Typ auf `"bool"`, darf eine `"caption"` zum Anzeigen und die `"value"` auf "true" oder "false" festgelegt ist. Wenn die `"on"` und `"off"` Eigenschaften festgelegt werden, sie wird angenommen, dass Images. Die Images sind relativ zum aktuellen Arbeitsverzeichnis in der Anwendung aufgelöst. Wenn Sie Relative Paket-Dateien verweisen möchten, können Sie mithilfe der `"~"` als Verknüpfung zu das Verzeichnis für Anwendungspaket darstellen. Z. B. `"~/favorite.png"` werden die favorite.png, die in der Paketdatei enthalten ist. Zum Beispiel:
 
 ```csharp
 { 
@@ -384,14 +384,14 @@ Boolesche Elemente sollte auf den Typ festgelegt `"bool"`, darf eine `"caption"`
 
 ### <a name="type"></a>Typ
 
-Type kann festgelegt werden, entweder `"boolean"` oder `"checkbox"`. Wenn festgelegt, in einen booleschen Wert einer UISlider oder Bildern verwendet werden (wenn beide `"on"` und `"off"` festgelegt sind). Wenn auf das Kontrollkästchen festgelegt ist, ein Kontrollkästchen verwendet werden. Die `"group"` Eigenschaft kann verwendet werden, um ein boolesches Element der Zugehörigkeit zu einer bestimmten Gruppe zu kennzeichnen. Dies ist hilfreich, wenn die enthaltende Stamm verfügt auch über eine `"group"` Eigenschaft als Stamm werden die Ergebnisse mit einer Anzahl aller die boolesche Werte (Kontrollkästchen), die zur selben Gruppe gehören zusammengefasst.
+Typ kann festgelegt werden entweder `"boolean"` oder `"checkbox"`. Wenn festgelegt, in einen booleschen Wert ihn eine UISlider oder Images verwenden möchten (wenn beide `"on"` und `"off"` festgelegt sind). Wenn auf das Kontrollkästchen festgelegt ist, ein Kontrollkästchen verwendet werden. Die `"group"` Eigenschaft kann verwendet werden, um ein boolesches Element der Zugehörigkeit zu einer bestimmten Gruppe zu markieren. Dies ist hilfreich, wenn der enthaltende Stamm verfügt auch über eine `"group"` Eigenschaft als Stamm werden die Ergebnisse mit der Anzahl aller boolesche Werte (oder Kontrollkästchen), die zur selben Gruppe gehören zusammengefasst.
 
  <a name="Entry_Elements" />
 
 
-## <a name="entry-elements"></a>Eintragselemente
+## <a name="entry-elements"></a>Elemente
 
-Verwenden Sie Eintragselemente, damit der Benutzer Daten eingeben kann. Der Typ für die Eintragselemente ist entweder `"entry"` oder `"password"`. Die `"caption"` Eigenschaft wird festgelegt, auf den Text auf der rechten Seite angezeigt und die `"value"` auf den ursprünglichen Wert festgelegt ist, auf den Eintrag festgelegt werden soll. Die `"placeholder"` wird verwendet, um einen Hinweis für dem Benutzer für leere Einträge anzeigen (es wird gezeigt abgeblendeter). Hier einige Beispiele:
+Sie verwenden die Elemente, damit der Benutzer Daten eingeben kann. Ist der Typ Eintragselemente `"entry"` oder `"password"`. Die `"caption"` -Eigenschaftensatz auf den Text auf der rechten Seite angezeigt und die `"value"` auf den ursprünglichen Wert festgelegt ist, auf den Eintrag festgelegt werden soll. Die `"placeholder"` wird verwendet, um einen Hinweis für dem Benutzer für leere Einträge anzuzeigen (es wird dargestellt ausgegraut). Hier einige Beispiele:
 
 ```csharp
 {
@@ -425,7 +425,7 @@ Verwenden Sie Eintragselemente, damit der Benutzer Daten eingeben kann. Der Typ 
 
 ### <a name="autocorrect"></a>AutoKorrektur
 
-Bestimmt den Stil automatische Korrektur für den Eintrag zu verwenden. Die möglichen Werte sind "true" oder "false" (oder die Zeichenfolgen `"yes"` und `"no"`).
+Bestimmt den AutoKorrektur-Stil für den Eintrag zu verwenden. Die möglichen Werte sind "true" oder "false" (oder die Zeichenfolgen `"yes"` und `"no"`).
 
  <a name="capitalization" />
 
@@ -470,14 +470,14 @@ Der Tastaturtyp für die Dateneingabe zu verwenden. Mögliche Werte sind:
 
 ### <a name="placeholder"></a>Platzhalter
 
-Der Hinweistext, der angezeigt wird, wenn der Eintrag für einen leeren Wert verfügt.
+Der Hinweistext, der angezeigt wird, wenn der Eintrag für einen leeren Wert aufweist.
 
  <a name="return-key" />
 
 
 ### <a name="return-key"></a>Return-Taste
 
-Die Bezeichnung für die EINGABETASTE. Mögliche Werte sind:
+Die Bezeichnung für die return-Taste. Mögliche Werte sind:
 
 -  `default`
 -  `done`
@@ -502,17 +502,17 @@ Der Anfangswert für den Eintrag
  <a name="Radio_Elements" />
 
 
-## <a name="radio-elements"></a>Sender-Elemente
+## <a name="radio-elements"></a>Radio-Elemente
 
-Radio Elemente aufweisen `"radio"`. Das Element, das ausgewählt ist, wird durch entnommen die `radioselected` Eigenschaft für das enthaltende Root-Element.
-Darüber hinaus, wenn ein Wert, für festgelegt wird die `"group"` Eigenschaft dieses Optionsfeld zu dieser Gruppe gehört.
+Radio-Elemente aufweisen `"radio"`. Die ausgewählten Elements wird ausgewählt, durch die `radioselected` Eigenschaft für das enthaltende Root-Element.
+Darüber hinaus, wenn ein Wert, für festgelegt ist die `"group"` -Eigenschaft dieses Optionsfeld, gehört zu dieser Gruppe.
 
  <a name="Date_and_Time_Elements" />
 
 
-## <a name="date-and-time-elements"></a>Datum und Uhrzeitelemente
+## <a name="date-and-time-elements"></a>Datum und der Zeitelemente
 
-Die Elementtypen `"datetime"`, `"date"` und `"time"` zum Rendern von Datumsangaben mit Uhrzeiten, Datumsangaben oder Uhrzeiten verwendet werden. Diese Elemente nehmen als Parameter an eine Beschriftung und einen Wert. Der Wert kann in einem beliebigen Format, die von der .NET DateTime.Parse-Funktion unterstützt geschrieben werden. Beispiel:
+Die Elementtypen `"datetime"`, `"date"` und `"time"` zum Rendern von Datumsangaben mit Uhrzeiten, Datumsangaben oder Uhrzeiten verwendet werden. Diese Elemente werden als Parameter eine Beschriftung und einem Wert. Der Wert kann in einem beliebigen von der Funktion DateTime.Parse von .NET unterstützten Format geschrieben werden. Beispiel:
 
 ```csharp
 "header": "Dates and Times",
@@ -538,7 +538,7 @@ Die Elementtypen `"datetime"`, `"date"` und `"time"` zum Rendern von Datumsangab
 
 ## <a name="htmlweb-element"></a>HTML/Web-Element
 
-Sie können eine Zelle, die beim Erstellen getippt bettet eine UIWebView, das den Inhalt einer angegebenen URL rendert lokal oder remote mithilfe der `"html"` Typ. Die nur zwei Eigenschaften für dieses Element sind `"caption"` und `"url"`:
+Sie können eine Zelle erstellen, die beim Tippen auf ein, das den Inhalt der angegebenen URL, rendert UIWebView einbetten entweder lokal oder remote mithilfe der `"html"` Typ. Nur zwei Eigenschaften für dieses Element `"caption"` und `"url"`:
 
 ```csharp
 {

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: ce48c4d271167b657505c52518e79c955e53b02e
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: f05b79e58a9fa87e13aeb45af2dbb46139051005
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38860666"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109990"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin Live neu laden
 
@@ -22,11 +22,10 @@ Xamarin Live Reload ermöglicht es Ihnen, **nehmen Sie Änderungen an Ihrer XAML
 
 Da Ihre app bei Verwendung von Live Reload kompiliert wird, funktioniert mit allen Bibliotheken und Drittanbieter-Steuerelementen. Live neu laden funktioniert auf allen Plattformen, die xamarin.Forms unterstützt, einschließlich Android, iOS und UWP, und alle gültigen Bereitstellungsziele, einschließlich Simulatoren, Emulatoren und physische Geräte funktioniert.
 
-> [!Video https://www.youtube.com/embed/-5WJZpeXlC8]
-
-Live neu laden ist derzeit nur in Visual Studio 2017 verfügbar.
-
-[![Nehmen Sie an der Chat an https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+> [!NOTE]
+> [Die Vorschauversion von Live Reload wurde beendet.](https://github.com/xamarin/Xamarin.Forms/issues/4155#issuecomment-431596130)
+>
+> Eine Erläuterung dazu besteht, auf [ ![beteiligen Sie sich den Chat an https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## <a name="requirements"></a>Anforderungen
 

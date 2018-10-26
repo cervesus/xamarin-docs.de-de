@@ -1,30 +1,30 @@
 ---
-title: 'Android.Support.v7.AppCompat - keine Ressource gefunden, die mit dem angegebenen Namen übereinstimmt: Attr "Android: ActionModeShareDrawable"'
+title: "Android.Support.v7.AppCompat: keine Ressource gefunden, die mit dem angegebenen Namen übereinstimmt: Attr 'Android: ActionModeShareDrawable'"
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5814069C-FC43-41DE-B5A5-024D05E59929
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 07655587642c3e1aa94d035e76f6f6758340546d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fea681ac3b99abed09d3d3e745bd4bf6015970df
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30774895"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112415"
 ---
-# <a name="androidsupportv7appcompat---no-resource-found-that-matches-the-given-name-attr-androidactionmodesharedrawable"></a>Android.Support.v7.AppCompat - keine Ressource gefunden, die mit dem angegebenen Namen übereinstimmt: Attr "Android: ActionModeShareDrawable"
+# <a name="androidsupportv7appcompat---no-resource-found-that-matches-the-given-name-attr-androidactionmodesharedrawable"></a>Android.Support.v7.AppCompat: keine Ressource gefunden, die mit dem angegebenen Namen übereinstimmt: Attr 'Android: ActionModeShareDrawable'
 
-1. Stellen Sie sicher, dass Sie die neuesten Extras als auch für die Android 5.0.x (API 21) über den Android SDK Manager-SDK herunterladen.
+1. Stellen Sie sicher, dass Sie die neuesten Extras als auch für die Android 5.0 (API 21) über den Android SDK-Manager-SDK herunterladen.
 
-2. Stellen Sie sicher, dass Sie beim Kompilieren der Anwendungsstatus mit CompileSdkVersion auf 21 festgelegt. Sie können optional die TargetSdkVersion auf 21 ebenfalls festgelegt.
+2. Stellen Sie sicher, dass Sie die Anwendung mit CompileSdkVersion auf 21 festgelegt kompilieren. Sie können optional die TargetSdkVersion auf 21 ebenfalls festlegen.
 
-3. Wenn Sie eine frühere Version, z. B. API-19 benötigen, laden Sie die jeweilige Version finden Sie auf der Seite "Nuget" herunter:
+3. Wenn Sie eine frühere Version, z. B. API-19 benötigen, laden Sie die entsprechende Version finden Sie auf der Seite "Nuget":
 
 [https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
 
-*Hinweis*: Wenn Sie manuell dies über die Paket-Manager-Konsole installieren, stellen Sie sicher, dass Sie auch die gleiche Version von Xamarin.Android.Support.v4 installieren
+*Beachten Sie*: Wenn Sie manuell dies über die Paket-Manager-Konsole installieren, stellen Sie sicher, dass Sie auch die gleiche Version von Xamarin.Android.Support.v4 installieren
 
 [https://www.nuget.org/packages/Xamarin.Android.Support.v4/](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)
 

@@ -4,15 +4,15 @@ description: Dieses Dokument enthält Links zu verschiedenen Leitfäden, die Xam
 ms.prod: xamarin
 ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/21/2017
-ms.openlocfilehash: de337291554e81a2434dcc30c163f4789fc832eb
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: a40227454b597578ff1c1c247b326e523c23493b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111211"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110471"
 ---
 # <a name="xamarinios-application-fundamentals"></a>Grundlagen der Xamarin.iOS-Anwendung
 
@@ -60,7 +60,7 @@ Apple hat verschiedene Verbesserungen sowohl Sicherheit und Datenschutz in iOS 1
 
 ## <a name="threadingiosapp-fundamentalsthreadingmd"></a>[Threading](~/ios/app-fundamentals/threading.md)
 
-In diesem Artikel wird das Threading behandeln, in einer Xamarin.iOS-Anwendung und spricht ein wenig über die .NET Threadpool, reaktionsfähiger Anwendungen und Garbagecollection.
+In diesem Artikel wird das Threading behandeln, in einer Xamarin.iOS-Anwendung und befasst sich mit ein wenig .NET Threadpool, reaktionsfähiger Anwendungen und Garbagecollection.
 
 ## <a name="touchiosapp-fundamentalstouchindexmd"></a>[Toucheingabe](~/ios/app-fundamentals/touch/index.md)
 

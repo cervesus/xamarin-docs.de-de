@@ -1,17 +1,17 @@
 ---
 title: Überprüfen von Live-Anwendungen
-description: Dieses Dokument beschreibt, wie der Xamarin-Inspektor zu verwenden, um Anwendungen zu überprüfen. Darüber hinaus werden die Einschränkungen des Xamarin-Inspektor Tools erläutert.
+description: Dieses Dokument beschreibt, wie Sie die Xamarin Inspector zu verwenden, um Anwendungen zu überprüfen. Darüber hinaus werden die Einschränkungen des Xamarin Inspector Tools erläutert.
 ms.prod: xamarin
 ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 67cc6b42901521226322d964514f19b4b639148b
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 2bd68def0a29d4bb94f8cc66c8cbfa00add1700d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268822"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103639"
 ---
 # <a name="inspecting-live-applications"></a>Überprüfen von Live-Anwendungen
 
@@ -23,31 +23,31 @@ Die Überprüfung der Live-App steht für Enterprise-Kundne zur Verfügung.
 
 [![](inspect-images/mac-heres-the-button.png "Klicken Sie auf die Schaltfläche \"prüfen\", in der IDE-Symbolleiste")](inspect-images/mac-heres-the-button.png#lightbox)
 
-Ein neue Xamarin-Inspektor-Client-Fenster wird mit einer neuen REPL-Eingabeaufforderung geöffnet.
+Ein neues Xamarin Inspector-Client-Fenster wird geöffnet, mit einer neuen REPL-Eingabeaufforderung.
 
-[![](inspect-images/inspector-0.7.0-map-inspect-small.png "Ein neue Xamarin-Inspektor-Client-Fenster wird geöffnet, mit einer neuen REPL-Eingabeaufforderung")](inspect-images/inspector-0.7.0-map-inspect.png#lightbox)
+[![](inspect-images/inspector-0.7.0-map-inspect-small.png "Ein neues Xamarin Inspector-Client-Fenster wird geöffnet, mit einer neuen REPL-Eingabeaufforderung")](inspect-images/inspector-0.7.0-map-inspect.png#lightbox)
 
 Sobald dieses Fenster angezeigt wird, können Sie eine interaktive C#-Eingabeaufforderung verwenden, um C#-Anweisungen und Ausdrücke auszuwerten. Das Besondere dabei ist, dass der Code im Kontext des Zielprozesses ausgewertet wird. In diesem Fall zeigen wir den Code, der für die angezeigte iOS-Anwendung ausgeführt wird.
 
 Änderungen am Zustand der Anwendung werden tatsächlich im Zielprozess durchgeführt, Sie können also C# verwenden, um die Anwendung in Echtzeit zu ändern oder zu überprüfen.
 
-Beispielsweise IOS möchten wir unsere UIApplication Delegate-Klasse zu ermitteln, die unsere Haupt-Treiber ist (, in dem wir einen Großteil der Anwendungsstatus gespeichert):
+Beispielsweise unter iOS möchten wir unsere UIApplication-Delegatklasse, zu erhalten, das unsere Haupttreiber ist (wo wir viele Anwendungszustand speichern):
 
     var del = (MyApp.AppDelegate) UIApplication.SharedApplication.Delegate
     del.Database.GetAllCustomers ()
     ...
     del.Database.AddCustomer (...)
 
-(Beachten Sie, dass jede Übermittlung in einem mehrzeiligen-Editor auftritt. `Shift + Enter` erstellt eine neue Zeile und `Cmd + Enter` (`Ctrl + Enter` unter Windows), sendet den Code für die Evaluierung. `Enter` automatisch übermittelt, sobald es sicher ist.)
+(Beachten Sie, dass bei jeder Übermittlung eines mehrzeiligen-Editors wird. `Shift + Enter` erstellt eine neue Zeile und `Cmd + Enter` (`Ctrl + Enter` für Windows) wird den Code für die Evaluierung absenden. `Enter` automatisch sendet, wenn es sicher ist.)
 
-Ein Bequemerer Weg, um die visuellen Elemente der Anwendung zu erhalten, wird mithilfe der Schaltfläche "Prüfen". Nachdem Sie diese gedrückt haben, können Sie ein Element der Benutzeroberfläche durch Klicken auf die Anwendung auswählen. Die Variable `selectedView` zugewiesen wird, zeigen Sie auf das aktuelle Element auf dem Bildschirm. In der oben dargestellten Screenshot können Sie sehen, wie wir zugegriffen, und klicken Sie dann bearbeitet `selectedView.BarTintColor` auf die `UISearchBar` wir ausgewählt wurde.
+Angenehmer, um die visuellen Elemente der Anwendung zu erhalten, ist mithilfe der Schaltfläche "Prüfen". Wenn Sie auf diese klicken, können Sie ein Element der Benutzeroberfläche auswählen, durch Klicken auf die Anwendung. Die Variable `selectedView` zugewiesen wird, zeigen Sie auf das aktuelle Element auf dem Bildschirm. In diesem Screenshot können Sie sehen, wie wir zugegriffen, und klicken Sie dann bearbeitet `selectedView.BarTintColor` auf die `UISearchBar` wir ausgewählt haben.
 
-Visuelle echtzeitstruktur ist ebenfalls sehr nützlich. Es stellt die aktuelle Momentaufnahme Ihrer Hierarchie anzeigen. Sie können Zeilen festzulegende auswählen `selectedView` in die Textgröße für Replikation und Eigenschaftswerte für die Ansicht angezeigt. Auf einem Mac können Sie mit einer 3D explodierten Visualisierung der geschichteten Sichten interagieren. Unter Windows können Sie Eigenschaftswerte für eine Sicht visuell bearbeiten.
+Die aktive visuelle Struktur ist auch sehr nützlich. Es stellt die aktuelle Momentaufnahme für Ihre Hierarchie von Inhaltsansichten dar. Sie können auswählen, dass Zeilen festlegen `selectedView` in der REPL und Eigenschaftswerte der Ansicht anzuzeigen. Unter Mac können Sie mit einer 3D explodierten Visualisierung der überlappenden Ansichten interagieren. Auf Windows können Sie Eigenschaftswerte für eine Sicht visuell bearbeiten.
 
 ## <a name="known-limitations"></a>Bekannte Einschränkungen
 
- - Auswahl anzeigen, wird nur auf Ihre wichtigsten Anzeige unterstützt.
- - Raster eigenschaftenbearbeitung ist nicht verfügbar für Mac und unter Windows ist auf einige Datentypen beschränkt. Verwenden Sie die Textgröße für Replikation für eine leistungsfähigere Bearbeitung.
- - Solange die Inspektor-Add-In/Erweiterung installiert und in die IDE aktiviert ist, werden wir Code in Ihrer app Räumen, jedes Mal, wenn sie im Debugmodus gestartet wird. Wenn Sie in Ihrer app jede ungewöhnliches Verhalten bemerken, bitte versuchen Sie es deaktivieren oder Deinstallieren der Inspektor-Add-In/Erweiterung, neu zu starten der IDE und erneute. Und Sie [Problemen](~/tools/inspector/install.md#reporting-bugs) an uns das mitzuteilen.
- - Wenn ein Benutzeroberflächenelement überprüfen jedoch trotzdem in ändern ein auftritt, wenden [informieren Sie uns](~/tools/inspector/install.md#reporting-bugs), wie dies einen Fehler hinweisen.
+ - Auswahl der Ansicht wird nur auf Ihre wichtigsten Anzeige unterstützt.
+ - Eigenschaftenbearbeitung Raster ist nicht verfügbar für Mac, und für Windows ist auf einige Datentypen beschränkt. Verwenden Sie die Repl-Umgebung für eine leistungsfähigere Bearbeitung.
+ - Solange die Inspector-Add-In-/-Erweiterung installiert und in der IDE aktiviert, werden wir injizieren von Code in Ihrer app jedes Mal, wenn es im Debugmodus gestartet. Wenn Sie auf ungewöhnliche Verhaltensweisen in Ihrer app feststellen, wenden Sie Sie deaktivieren oder deinstallieren die Inspector-Add-In/Erweiterung, Neustart der IDE und anderen. Und Sie [senden Sie Fehlerinformationen](~/tools/inspector/install.md#reporting-bugs) auf uns zu informieren!
+ - Wenn ein Element der Benutzeroberfläche überprüft in trotzdem ändern wird, nehmen Sie [Teilen Sie uns](~/tools/inspector/install.md#reporting-bugs), da dies einen Fehler hinweisen.
 

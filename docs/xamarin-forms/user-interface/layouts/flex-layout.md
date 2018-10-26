@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: a6c1b0a4e0df1c25f595ca4eb53079c74b84972e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 49a0d1dd67959c5949ebe500036b849180795660
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998582"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108742"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Die Xamarin.Forms-FlexLayout
 
@@ -606,7 +606,7 @@ Die **verkleinern Experiment** -Seite erstellt eine `FlexLayout` mit einer einze
 
 [![Die verkleinern experimentieren Seite](flex-layout-images/ShrinkExperiment.png "die verkleinern experimentieren Seite")](flex-layout-images/ShrinkExperiment-Large.png#lightbox)
 
-In der Android-Screenshot der `Shrink` Wert für die zweite `Label` nastaven NA hodnotu in 0 und diese `Label` in der Breite angezeigt wird. Darüber hinaus die vierte `Label` erhält eine `Shrink` -Wert größer als eins, und hat während der Verkleinerung. Der UWP-Screenshot zeigt beide `Label` Elemente angegeben wird ein `Shrink` -Wert von 0 bis sie ihre vollständige Größe angezeigt werden Wenn können möglich ist.
+In der Android-Screenshot der `Shrink` Wert für die zweite `Label` ist auf 0 festgelegt, sowie, `Label` in der Breite angezeigt wird. Darüber hinaus die vierte `Label` erhält eine `Shrink` -Wert größer als eins, und hat während der Verkleinerung. Der UWP-Screenshot zeigt beide `Label` Elemente angegeben wird ein `Shrink` -Wert von 0 bis sie ihre vollständige Größe angezeigt werden Wenn können möglich ist.
 
 Sie können festlegen, sowohl die `Grow` und `Shrink` Werte, um Situationen zu berücksichtigen, in denen die Größe der aggregierten untergeordneten kleiner als oder sogar mehr als die Größe des eventuell, der `FlexLayout`.
 

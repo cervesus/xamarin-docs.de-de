@@ -1,31 +1,31 @@
 ---
-title: Erste Schritte mit Android Abnutzung
-description: Die Anleitungen in diesem Abschnitt Android Dach einführen, beschrieben, wie zum Installieren und konfigurieren Sie den Computer für die Entwicklung von Abnutzung und enthalten die Schritte zum Erstellen und Ausführen der ersten app für Android Dach.
+title: Erste Schritte mit Android Wear
+description: Die Anleitungen in diesem Abschnitt stellen Sie vor Android Wear, beschrieben, wie zum Installieren und konfigurieren Sie den Computer für die Entwicklung von Abnutzung und enthalten Schritte zum Erstellen und Ausführen Ihrer erste Android Wear-app.
 ms.prod: xamarin
 ms.assetid: 8B9DC98A-773F-4E06-84A7-BA8208C4E864
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 12/18/2017
-ms.openlocfilehash: a0b022225dd670ca6da09abbca6b3db75a55f38b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 88259afe72715a0c369472b1a5c0609b56db8143
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763838"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102229"
 ---
-# <a name="getting-started-with-android-wear"></a>Erste Schritte mit Android Abnutzung
+# <a name="get-started-with-android-wear"></a>Erste Schritte mit Android Wear
 
-_Die Anleitungen in diesem Abschnitt Android Dach einführen, beschrieben, wie zum Installieren und konfigurieren Sie den Computer für die Entwicklung von Abnutzung und enthalten die Schritte zum Erstellen und Ausführen der ersten app für Android Dach._
+_Die Anleitungen in diesem Abschnitt stellen Sie vor Android Wear, beschrieben, wie zum Installieren und konfigurieren Sie den Computer für die Entwicklung von Abnutzung und enthalten Schritte zum Erstellen und Ausführen Ihrer erste Android Wear-app._
 
-## <a name="introduction-to-wearandroidwearget-startedintro-to-wearmd"></a>[Einführung in die Abnutzung](~/android/wear/get-started/intro-to-wear.md)
+## <a name="introduction-to-wearandroidwearget-startedintro-to-wearmd"></a>[Einführung in die Wear](~/android/wear/get-started/intro-to-wear.md)
 
-Bietet eine grundlegende Übersicht über Android Dach, beschreibt ihre wichtigsten Funktionen enthält einige der gängigeren Dach Android-Geräte und Links zu den wesentlichen Google Android Dach Dokumentation weitere Informationen.
+Bietet eine grundlegende Übersicht über Android Wear, beschreibt ihre wichtigsten Funktionen, werden einige der gängigeren Geräte mit Android Wear aufgeführt und enthält Links zu wesentlichen Google Android Wear Dokumentationen für Weitere Informationen.
 
 ## <a name="setup--installationandroidwearget-startedinstallationmd"></a>[Setup und Installation](~/android/wear/get-started/installation.md)
 
-Führt Sie durch die Installationsschritte und Konfigurationsdetails zum Vorbereiten der Computer und Geräte für Android Dach Entwicklung erforderlich.
+Führt durch die Schritte zur Installation und Konfigurationsdetails, die zum Vorbereiten der Computer und Geräte für Android Wear-Entwicklung erforderlich.
 
 ## <a name="hello-wearandroidwearget-startedhello-wearmd"></a>[Hello, Wear](~/android/wear/get-started/hello-wear.md)
 
-Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen eines kleinen Dach Android-Projekts, das auf eine Schaltfläche behandelt und zeigt einen Leistungsindikator klicken Sie auf dem Gerät Abnutzung.
+Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Erstellen von eines kleinen Projekts Android Wear, das auf eine Schaltfläche verarbeitet und zeigt einen Indikator klicken Sie auf dem Wear-Gerät.

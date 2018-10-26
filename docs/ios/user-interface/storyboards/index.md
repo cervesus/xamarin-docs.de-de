@@ -4,15 +4,15 @@ description: Dieses Dokument enthält eine Einführung in Storyboards in Xamarin
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: bd8fee1b8f1941203bb0e6f00e261cbfbbccc9a7
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: e1e5ec5d064ad7610c5b7be8d18284d3610352c9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242341"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106883"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Einführung in Storyboards in Xamarin.iOS
 
@@ -129,7 +129,7 @@ Sobald der Übergang abgeschlossen ist, sieht der Benutzer die `CallHistoryContr
 
 Gelegentlich müssen Sie ein Storyboard zu einer zuvor nicht-Storyboard-Datei hinzufügen. Sobald dies in Visual Studio für Mac kann optimiert werden, durch die folgenden Schritte aus:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Erstellen Sie eine neue Storyboarddatei, indem Sie zu **Datei > neue Datei > iOS > Storyboard**, wie unten gezeigt: 
     
@@ -148,7 +148,7 @@ Gelegentlich müssen Sie ein Storyboard zu einer zuvor nicht-Storyboard-Datei hi
             set;
             }
             
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Erstellen Sie eine neue Storyboarddatei mit der rechten Maustaste auf das Projekt, um **hinzufügen > neue Datei > iOS > leeres Storyboard**, wie unten gezeigt: 
     

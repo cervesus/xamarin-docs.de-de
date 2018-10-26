@@ -1,54 +1,54 @@
 ---
-title: Registrierung von Xamarin.iOS Anwendungen im Hintergrund ausgeführt.
-description: Dieses Dokument beschreibt, wie zum Registrieren einer Anwendung Xamarin.iOS im Hintergrund ausgeführt wird. Es wird erläutert, Audio-apps, VoIP-apps, externe Zubehör und Bluetooth und vieles mehr.
+title: Registrieren von Xamarin.iOS-Apps im Hintergrund ausführen
+description: In diesem Dokument wird beschrieben, wie zum Registrieren einer Xamarin.iOS-Anwendung im Hintergrund ausgeführt wird. Es wird erläutert, Audio-apps, VoIP-apps, externes Zubehör und Bluetooth und mehr.
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: f4774f6b4f5412c44dc985bd40129a178b1e813c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a0a66571d0249ef6fd65ff382f14c38f48a8af37
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783674"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105167"
 ---
-# <a name="registering-xamarinios-apps-to-run-in-the-background"></a>Registrierung von Xamarin.iOS Anwendungen im Hintergrund ausgeführt.
+# <a name="registering-xamarinios-apps-to-run-in-the-background"></a>Registrieren von Xamarin.iOS-Apps im Hintergrund ausführen
 
-Registrieren Sie einzelne Aufgaben für den Hintergrund Berechtigungen funktioniert für einige Anwendungen, aber was geschieht, wenn eine Anwendung ständig aufgerufen wird, um wichtige, lang andauernde, Aufgaben wie das Abrufen von Anweisungen für den Benutzer über GPS? Solche Anwendungen sollte stattdessen als bekannte Hintergrund erforderlichen Anwendungen registriert werden.
+Registrieren Sie einzelne Aufgaben für Hintergrund Berechtigungen funktioniert für einige Anwendungen, aber was geschieht, wenn eine Anwendung ständig aufgerufen wird, um wichtige, langer Aufgaben wie das Anfordern einer Wegbeschreibung für den Benutzer über GPS ausführen? Solchen Anwendungen sollte stattdessen als bekannte Hintergrund-erforderlichen Anwendungen registriert werden.
 
-Registrieren einer app für iOS-signalisiert, dass die Anwendung spezielle Berechtigungen zum Ausführen von Tasks im Hintergrund notwendig gewährt werden soll.
+Registrieren einer app für iOS-signalisiert, dass die Anwendung spezielle Berechtigungen zum Durchführen der Aufgaben im Hintergrund zugewiesen werden soll.
 
-## <a name="application-registration-categories"></a>Registrierung Anwendungskategorien
+## <a name="application-registration-categories"></a>Anwendungskategorien-Registrierung
 
-Registrierten apps können in verschiedene Kategorien fallen:
+Registrierte apps können in verschiedene Kategorien fallen:
 
--  **Audio** -Musik-Player und anderen Anwendungen, die mit Audioinhalte arbeiten möglicherweise registriert werden, um den Vorgang fortsetzen Audiowiedergabe auch wenn die app nicht mehr im Vordergrund ist. Wenn eine Anwendung in dieser Kategorie versucht, die als Play Audio- oder Download im Hintergrund keine Wirkung, wird es iOS beendet werden.
--  **VoIP** -Stimme über Internet Protocol (VoIP) Anwendungen abrufen, der den gleichen Berechtigungen für Audio / Anwendungen für die Verarbeitung von Audio im Hintergrund zu halten. Sie dürfen außerdem nach Ihren Anforderungen an die VoIP-Dienste zu reagieren, die sie, um ihre Verbindungen aufrechtzuerhalten power.
--  **Externe Zubehör und Bluetooth** -Registrierung unter dieser Kategorien für Anwendungen, die für die Kommunikation mit Bluetooth-Geräte und andere externe Hardwarezubehör reserviert, ermöglicht es der app auf Hardware verbunden bleiben.
--  **Newsstand** -Anwendung ein Newsstand kann weiterhin Inhalte im Hintergrund synchronisiert.
--  **Speicherort** - Anwendungen, die Stellen verwenden GPS oder Netzwerk-Standortdaten können senden und Empfangen von Updates Speicherort im Hintergrund.
--  **Abrufen von Daten (iOS 7 und höher)** – eine Anwendung, die registriert wird, für die Fetch-Berechtigungen im Hintergrund einen Anbieter für den neuen Inhalt überprüfen können, in regelmäßigen Abständen, die den Benutzer mit aktualisiertem Inhalt darstellen, wenn sie an die Anwendung zurückgegeben.
--  **Remote-Benachrichtigungen (iOS 7 und höher)** -Anwendungen können zum Empfangen von Benachrichtigungen von einem Anbieter registrieren und verwenden Sie die Benachrichtigung, um ein Update starten, bevor der Benutzer die Anwendung öffnet. Benachrichtigungen können in Form von Pushbenachrichtigungen stammen, oder abonnieren, um die Anwendung automatisch zu reaktivieren.
+-  **Audio** -Musik-Player und andere Anwendungen, die mit Audioinhalte funktionieren möglicherweise registriert werden, um weiterhin die Wiedergabe von Audiodaten auch wenn die app nicht mehr im Vordergrund ist. Wenn eine app in dieser Kategorie versucht, die nichts weiter tun, als die Wiedergabe einer Audiodatei oder Download im Hintergrund, wird es iOS beendet werden.
+-  **VoIP** -Sprache über Internet Protocol (VoIP)-Anwendungen zu erhalten, der den gleichen Berechtigungen, die audio-Anwendungen, die Audio im Hintergrund weiterverarbeiten gewährt. Sie dürfen auch nach Bedarf auf die VoIP-Dienste zu reagieren, die power, um ihre Verbindungen aufrechtzuerhalten.
+-  **Externes Zubehör und Bluetooth-** -Registrierung unter dieser Kategorien für Anwendungen, die für die Kommunikation mit Bluetooth-Geräten und anderen externen Hardwarezubehör reserviert, ermöglicht es der app in Verbindung mit der Hardware zu bleiben.
+-  **Zeitungskiosk** -ein aus dem Zeitungskiosk-Anwendung kann weiterhin Inhalte im Hintergrund zu synchronisieren.
+-  **Speicherort** - Anwendungen nutzen von GPS oder Netzwerkdaten senden und Empfangen von speicherortaktualisierungen im Hintergrund werden können.
+-  **FETCH (iOS 7 und höher)** – eine Anwendung, die registriert wird, für die Fetch-Berechtigungen Hintergrund einen Anbieter für den neuen Inhalt überprüfen können, in regelmäßigen Abständen, die den Benutzer mit aktualisiertem Inhalt darstellen, wenn sie an die Anwendung zurückgegeben.
+-  **Remotebenachrichtigungen (iOS 7 und höher)** -Anwendungen können für die Benachrichtigungen von einem Anbieter registrieren und verwenden Sie die Benachrichtigung, um die ein Update zu starten, bevor der Benutzer die Anwendung wird geöffnet. Benachrichtigungen können kommt in Form von Pushbenachrichtigungen, oder Sie angeben, dass um die Anwendung im Hintergrund zu aktivieren.
 
 
-Anwendungen können registriert werden, durch Festlegen der **Hintergrundmodi erforderlich** Eigenschaft in der Anwendungsverzeichnis *"Info.plist"*. Zum Registrieren einer Anwendung kann so viele Kategorien benötigt wird:
+Anwendungen können registriert werden, durch Festlegen der **erforderliche Hintergrundmodi** -Eigenschaft in der Anwendung *"Info.plist"*. In so viele Kategorien, da es erfordert, kann eine Anwendung registrieren:
 
  [![](registering-applications-to-run-in-background-images/bgmodes.png "Festlegen der hintergrundmodi")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
-Eine schrittweise Anleitung zum Registrieren einer Anwendung für Updates der Hintergrund-Speicherort, finden Sie unter der [Hintergrund Speicherort Exemplarische Vorgehensweise](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md).
+Eine schrittweise Anleitung zum Registrieren einer Anwendung für die Aktualisierung im Hintergrund Speicherort, finden Sie unter den [Background-Position Exemplarische Vorgehensweise](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md).
 
-## <a name="application-does-not-run-in-background-property"></a>Anwendung wird im Hintergrundeigenschaft nicht ausgeführt.
+## <a name="application-does-not-run-in-background-property"></a>Anwendung wird nicht in der Background-Eigenschaft ausgeführt werden.
 
-Eine andere Eigenschaft, die festgelegt werden kann, in *"Info.plist"* ist die *Anwendung wird nicht ausgeführt, im Hintergrund*, oder `UIApplicationExitsOnSuspend` Eigenschaft:
+Eine andere Eigenschaft, die festgelegt werden kann, in *"Info.plist"* ist die *Anwendung kann nicht ausgeführt, im Hintergrund*, oder `UIApplicationExitsOnSuspend` Eigenschaft:
 
- [![](registering-applications-to-run-in-background-images/plist.png "Deaktivieren im Hintergrund ausgeführt wird")](registering-applications-to-run-in-background-images/plist.png#lightbox)
+ [![](registering-applications-to-run-in-background-images/plist.png "Deaktivieren von Hintergrund ausführen")](registering-applications-to-run-in-background-images/plist.png#lightbox)
 
-Dies ist genaue die gleiche Wirkung wie das Festlegen der App zu aktualisieren, im Hintergrund Einstellung Off in iOS 7 und höher, außer es kann nur auf der Seite Entwickler geändert werden und ist für iOS 4 und höher verfügbar. Die Anwendung sofort nach der Eingabe Hintergrund angehalten und wird nicht in der Lage, Verarbeitungsvorgänge ausführen.
+Dies ist genaue die gleiche Wirkung wie das Festlegen der Aktualisierung im Hintergrund-App-Einstellung Off in iOS 7 und höher, außer es nur auf der Seite für die Entwickler geändert werden kann, und ist für iOS 4 und höher verfügbar. Die Anwendung sofort nach der Eingabe von Hintergrund angehalten, und wird nicht in der Lage, Verarbeitungsvorgänge ausführen.
 
-Verwenden Sie diese Eigenschaft, wenn Ihre Anwendung nicht zur Unterstützung ist im Hintergrund zu verarbeiten konzipiert, wie sie die hilft, unerwartetes Verhalten zu vermeiden.
+Verwenden Sie diese Eigenschaft aus, wenn Ihre Anwendung nicht, helfen Ihnen, vermeiden von unerwartetem Verhalten behandelt hintergrundverarbeitung, konzipiert ist.
 
-## <a name="background-fetch-and-remote-notifications"></a>Abrufen im Hintergrund und Remote-Benachrichtigungen
+## <a name="background-fetch-and-remote-notifications"></a>Abrufen im Hintergrund und Remotebenachrichtigungen
 
-Abrufen im Hintergrund und remote-Benachrichtigungen sind besondere Registrierung Kategorien in iOS 7 eingeführt wurden. Diese Kategorien können Anwendungen zum neuen Inhalt von einem Anbieter empfangen und im Hintergrund aktualisieren. Im nächste Abschnitt wird erklärt, Fetch und remote Benachrichtigungen ausführlicher und führt auch Netzwerkadressinformationen als Mittel zum Aktualisieren einer Anwendung im Hintergrund auf iOS 6.
+Abrufen im Hintergrund und remotebenachrichtigungen sind besondere Registrierung-Kategorien, die in iOS 7 eingeführt wurden. Diese Kategorien können Anwendungen zum neuen Inhalt von einem Anbieter empfangen und im Hintergrund aktualisieren. Im nächste Abschnitt untersucht FETCH- und remotebenachrichtigungen ausführlicher und führt außerdem Netzwerkadressinformationen als Mittel zum Aktualisieren einer Anwendung im Hintergrund unter iOS 6.

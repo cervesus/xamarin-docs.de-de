@@ -1,105 +1,105 @@
 ---
-title: App Store Änderungen in iOS 11
-description: Dieses Dokument untersucht Änderungen auf den App Store in iOS-11. Eine Anwendung Symbol "Store", höher gestuften in-app-Einkäufe, Seite neu entworfenes Produkt, Kommunikation mit Ihren Kunden und in mehreren Phasen Versionen werden erörtert.
+title: App-Store Änderungen in iOS 11
+description: In diesem Dokument werden Änderungen an den Store-App unter iOS 11. Es beschreibt Store-Symbol der Anwendung, höher gestuften in-app-Käufe, neu entworfenes Produkt-Seite, Kundenkommunikation und in mehreren Phasen Releases.
 ms.prod: xamarin
 ms.assetid: 4A7A03FD-B4F2-4969-8676-A17260730FD6
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: 59f5d2c0c05ec2950ae7cc74e4f5aaa2565020f0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 022d6b5c3f85863352dd1343752e934240b357aa
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787389"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113689"
 ---
-# <a name="app-store-changes-in-ios-11"></a>App Store Änderungen in iOS 11
+# <a name="app-store-changes-in-ios-11"></a>App-Store Änderungen in iOS 11
 
-IOS App Store wurde völlig neu entworfen, die nicht nur Benutzer den Store effizient zu navigieren können, sondern auch, die Sie als Entwickler, um die app Benutzern höher zu stufen. Diese Erweiterungen umfassen mit app-Käufen und Updates auf der Seite "Product". iOS 11 fügt auch Updates hinsichtlich kommunizieren mit Benutzern, das Symbol für Ihre app hinzufügen und Freigeben von Ihrer app für die Öffentlichkeit.
+Der iOS App Store hatte völlig neu entworfen, die nicht nur Benutzer den Store effizient zu navigieren können, jedoch Sie auch als Entwickler, um die app Benutzern höher zu stufen können. Diese heraufstufungen umfassen Updates für in-app-Käufe und Updates für die Seite "Product". iOS 11 bietet außerdem die laufenden mit Benutzern kommunizieren, wie Sie Ihr app-Symbol hinzufügen und wie Sie Ihre app öffentlich freigeben.
 
-![Das neue Layout für app-store](app-store-changes-images/image3.jpg)
+![Neue app-Store-layout](app-store-changes-images/image3.jpg)
 
-Neu gestaltete app Store enthält die folgenden Abschnitte:
+Neu gestaltete appstore enthält die folgenden Abschnitte:
 
-- **Heute** – auf dieser Registerkarte enthält apps, die ein "des Editors Pick" sind oder die gewählte app. Heraufstufen die app Hier geben Sie Informationen auf der [heraufstufen](https://developer.apple.com//contact/app-store/promote/) Seite.
+- **Heute** – auf dieser Registerkarte enthält apps, die einer Pick"Anmerkung der Redaktion" oder app vorgestellt. Förderung Ihrer app Hier geben Sie Informationen auf der [höher stufen](https://developer.apple.com//contact/app-store/promote/) Seite.
 - **Spiele** – alle apps, die festgelegt wird, um die **Spiel** Kategorie in iTunes Connect finden Sie unter dieser Registerkarte.
-- **Apps** – auf dieser Registerkarte verfügt über alle anderen apps. Benutzer können empfohlene apps "," Kategorien "," Top bezahlt/frei durchsuchen.
-- **Updates** – diese app zeigt die Updates für Ihre apps. Auch wenn Sie eine app über freigeben [Phasen von Version](#Phased_Release), Benutzer können weiterhin auf dieser Registerkarte aufrufen und die neueste Version herunter.
-- **Suche** – auf dieser Registerkarte können Sie Benutzern, für die app zu suchen.
+- **Apps** – auf dieser Registerkarte verfügt über alle anderen apps. Benutzer können empfohlene apps "," Kategorien "," Top bezahlt/free durchsuchen.
+- **Updates** : Diese app zeigt die Updates für Ihre apps. Auch wenn Sie eine app über freigeben [stufenweise Veröffentlichung](#Phased_Release), Benutzer können weiterhin auf dieser Registerkarte finden Sie unter und die neueste Version herunterladen.
+- **Suche** – auf dieser Registerkarte können Sie Benutzern, für Ihre app zu suchen.
 
-## <a name="store-icon"></a>Symbol "Speicher"
+## <a name="store-icon"></a>Store-Symbol
 
-Speichersymbole (oder marketing Symbole) nicht mehr in iTunes Connect verwaltet werden und muss stattdessen enthalten sein, als ein [Asset-Katalog](~/ios/app-fundamentals/images-icons/app-icons.md) in Ihrer app Binärdatei, app-Symbole ähnelt. Ein Symbol "1024 x 1024-Speicher" im PNG-Format muss in eine Asset-Katalog für die erfolgreiche Übermittlung von apps für iOS 11 enthalten sein.
+Store-Symbole (oder marketing-Symbole) werden nicht mehr in iTunes Connect verwaltet und müssen stattdessen enthalten sein, als ein [Asset-Katalog](~/ios/app-fundamentals/images-icons/app-icons.md) in Ihre app Binärdaten, wie app-Symbole. Ein 1024 x 1024-Store-Symbol im PNG-Format muss in einen Ressourcenkatalog für die erfolgreiche Übermittlung von apps für iOS 11 enthalten sein.
 
-App Ausdünnung wird sichergestellt, dass es sich bei diesen zusätzlichen Asset-Katalog app vergrößern nicht.
+Einhaltung der Regeln für App stellt sicher, dass es sich bei diesen zusätzlichen Asset-Katalog app vergrößert nicht.
 
 
-## <a name="in-app-purchases-promoted-in-the-app-store"></a>In App-Käufen, die im App Store höher gestuft
+## <a name="in-app-purchases-promoted-in-the-app-store"></a>In-App-Käufen, die höher gestuft, in dem App Store
 
-Apple hat in app-Einkäufe im App Store mehr erkennbar gemacht. Sie können jetzt bis zu 20 hinzufügen _App Store höher gestuft_ in-app-Käufen, die jetzt auf der Seite Apps auf Ihre app-Produktseite oder durch Suchen befinden.
+Apple hat in-app-Käufen in den App Store leichter auffindbar vorgenommen. Sie können nun bis zu 20 hinzufügen _App Store, die höher gestuft_ in-app-Käufen, die auf der Seite "Apps", auf der Produktseite von Ihrer app, oder indem Sie suchen jetzt befinden.
 
-Um Ihre app-Käufe im App Store angezeigt haben, müssen Sie die folgenden Daten einschließen:
+Um Ihre Einkäufe in der app, die in den App Store angezeigt haben, müssen Sie die folgenden Daten einschließen:
 
-- **Bild** – müssen Sie ein spezielles Image für das Symbol angeben, die beschreibt, was bewirkt, dass die in-app-Käufe. Dieses Bild muss nicht mit dem Symbol "app" identisch sein und einen Screenshot ist nicht möglich.
-- **Namen** – der Name darf nur maximal 30 Zeichen sein.
+- **Image** – Sie müssen ein spezielles Image für das Symbol angeben, die beschreibt, was bewirkt, dass die in-app-Käufe. Dieses Image muss sich von dem app-Symbol, und es nicht möglich, einen Screenshot.
+- **Namen** – der Name kann nur maximal 30 Zeichen lang sein.
 - **Beschreibung** – die Beschreibung kann nur maximal 45 Zeichen sein.
 
-Gewährten Rabatten in app-Käufe unterliegen einem app Store Review aus, bevor sie veröffentlicht werden kann.
+Alle Erweiterungen in app-Käufe werden ein app-Store-Review, bevor er veröffentlicht werden kann.
 
-Um in-app-Käufe höher stufen verfügbar machen möchten, öffnen Sie die app, und navigieren Sie zu **Features > In App-Käufe**. Wechseln Sie zu der **App Store Promotion (Optional)** Abschnitt, und fügen Sie ein Bild 1024 x 1024 und **speichern**, wie in der folgenden Abbildung dargestellt:
+Um Ihre Einkäufe in der app zur Förderung der verfügbar zu machen, öffnen Sie die app aus, und navigieren Sie zu **Features > In App-Käufe**. Wechseln Sie zu der **App Store Promotion (Optional)** Abschnitt, und fügen Sie ein Image von 1024 x 1024 und **speichern**, wie in der folgenden Abbildung dargestellt:
 
-![App Store Promotion Abschnitt iTune verbinden](app-store-changes-images/image4.png)
+![App-Store-heraufstufung-Abschnitt in iTunes Connect](app-store-changes-images/image4.png)
 
-Müssen Sie auch hinzufügen der `ShouldAddStorePayment` Methode, um die `SKPaymentTransactionObserver` Protokoll in Ihrer app.
+Sie müssen auch hinzufügen der `ShouldAddStorePayment` Methode, um die `SKPaymentTransactionObserver` -Protokolls in Ihrer app.
 
-Weitere Informationen zu in-app-Käufe Werbeaktionen, finden Sie in der Apple [Heraufstufen des In-App-Käufe](https://developer.apple.com/app-store/promoting-in-app-purchases/) Seite.
+Weitere Informationen zu in-app-Käufe Werbeaktionen, finden Sie unter Apple [Förderung Ihrer In-App-Käufe](https://developer.apple.com/app-store/promoting-in-app-purchases/) Seite.
 
 ## <a name="redesigned-product-page"></a>Neu gestaltete-Produktseite
 
-Auf der Seite "Product" wurden die folgenden Änderungen vorgenommen:
+Klicken Sie auf der Produktseite von haben die folgenden Änderungen vorgenommen wurden:
 
 - Titel werden jetzt auf maximal 30 Zeichen festgelegt.
-- Untertitel wurde hinzugefügt.
+- Ein Subtitle wurde hinzugefügt.
     - Es sollte eine kurze Zusammenfassung, die den Titel ergänzt.
     - Untertitel sollte maximal 30 Zeichen haben.
 - App-Vorschau
     - Sie haben jetzt drei Videos oder Screenshots.
-    - Videos Autoplay, wenn ein Benutzer auf die Seite besucht wird.
+    - Videos-Wiedergabe, wenn ein Benutzer die Seite besucht.
     - Weitere Informationen finden Sie auf der Apple [App-Vorschau](https://developer.apple.com/app-store/app-previews/) Seite.
 - Werbe-text
-    - Diese neue Funktion bietet 170 Zeichen des Texts, weil Sie damit häufig ändernden Informationen über die app beschreiben.
-    - Es kann jederzeit aktualisiert werden, ohne eine neue Version der app zu senden.
+    - Dieses neue Feature enthält 170 Zeichen des Texts, sodass Sie häufig ändernden Informationen zu Ihrer app zu beschreiben.
+    - Sie können jederzeit aktualisiert werden, ohne eine neue Version der app zu senden.
 
 ## <a name="customer-communication"></a>Kommunikation mit Ihren Kunden
 
-Im 10.3 gestartet, Apple eine neue Möglichkeit für Entwickler, kommunizieren direkt mit dem Benutzer der app durch die Möglichkeit, auf Testberichte zu reagieren. Sie können auf diese neue Funktion in iTunes zugreifen durch Navigieren zum Verbinden **App > Aktivität > Bewertungen und Kritiken**, wie in der folgenden Abbildung dargestellt:
+Apple gestartet 10.3 eine neue Möglichkeit für Entwickler kommunizieren direkt mit app-Benutzer durch die Möglichkeit, auf Testberichte zu reagieren. Sie können auf zugreifen, diese neue Funktion in iTunes eine Verbindung herstellen, indem Sie zu **App > Aktivität > Bewertungen und Rezensionen**, wie in der folgenden Abbildung dargestellt:
 
-![Dialogfeld zeigt Bereich Antwort Kommentar eingeben.](app-store-changes-images/image5.png)
+![Dialogfeld mit der Bereich, um die Antwort, um einen Kommentar zu geben.](app-store-changes-images/image5.png)
 
-Es gibt einige Punkte, die beim Antworten auf Benutzer geachtet werden:
+Es gibt einige Dinge zu beachten beim Antworten auf Benutzer aus:
 
-- Sie können nur einmal Antworten, aber beide Parteien können ihre Kommentare bearbeiten, wie sie möchten.
-- Benutzer erhalten eine Benachrichtigung, wenn Sie in einen Kommentar antworten.
-- Verbinden Sie einen neuen Kundensupport, die App im iTunes Rolle erstellt wurde. Kommentare können Benutzer mit dieser Rolle oder eine Rolle "Admin" beantworten.
+- Sie können nur nach Antworten, aber beide Parteien können ihre Kommentare bearbeiten, wie sie möchten.
+- Benutzer erhalten eine Benachrichtigung, wenn Sie auf einen Kommentar antworten.
+- Verbinden Sie ein neues Supportangebot zu Kunden, die Rolle in iTunes erstellt wurde. Benutzer mit dieser Rolle oder eine Administratorrolle können auf Kommentare reagieren.
 
-Weitere Informationen finden Sie auf der Apple [reagieren auf Testberichte](https://developer.apple.com/app-store/responding-to-reviews/) Seite.
+Weitere Informationen finden Sie auf der Apple [reagieren auf Überprüfungen](https://developer.apple.com/app-store/responding-to-reviews/) Seite.
 
 <a name="Phased_Release"/>
 
 ## <a name="phased-release"></a>Stufenweise Bereitstellung
 
-Mit iOS 11 implementiert Apple hat die Möglichkeit, in Phasen Versionen nach Updates für Ihre app. Sie können in mehreren Phasen Versionen zum ermöglichen der app-Updates allmählich für Kunden, die sicherstellen, dass die Anforderung nicht mit die produktionsumgebung überlädt veröffentlicht werden soll.
+In iOS 11 hat Apple die Möglichkeit, in Phasen Releases für Updates für Ihre app implementiert. Sie können in mehreren Phasen Versionen können Sie Ihre app ein Update auf die nach und nach freigegeben werden, um Kunden, um sicherzustellen, dass die Nachfrage Ihrer produktionsumgebung nicht überlädt.
 
-Stufenweise Versionen sind in iTunes Connect aktiviert. Klicken Sie auf Ihre app in der Randleiste, einen Bildlauf zu der **in Phasen Release für automatische Updates** im Abschnitt unten, und wählen Sie **Release von Update 7-Tage-Zeitraum mit Phasen Release**:
+In mehreren Phasen Versionen sind in iTunes Connect aktiviert. Klicken Sie auf Ihre app in der Randleiste, scrollen Sie zu der **stufenweise Release für automatische Updates** im Abschnitt unten, und wählen Sie **Sprachrelease-Updates über 7 Tage mithilfe stufenweise Veröffentlichung**:
 
-![Mit der Option in Phasen Release für automatische updates](app-store-changes-images/image6.png)
+![Mit der Option stufenweise Veröffentlichung für automatische updates](app-store-changes-images/image6.png)
 
-Der Updates ist sofort zum Download in der Registerkarte "Updates" im App Store verfügbar. Stufenweise Versionen sind nur verfügbar für Benutzer, die automatische Downloads ausgewählt haben.
+Das Update ist sofort zum Download in der Registerkarte "Updates" der App-Store verfügbar. In mehreren Phasen Versionen sind nur verfügbar für Benutzer, die automatische Downloads ausgewählt haben.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Was ist neu in iOS 11 (Apple)](https://developer.apple.com/ios/)
-- [Aktualisierte App Store-Produktseite (Apple)](https://developer.apple.com/app-store/product-page/)
-- [Aktualisieren Ihre App für iOS 11 (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/204/)
+- [Aktualisierte App-Store-Produktseite (Apple)](https://developer.apple.com/app-store/product-page/)
+- [Aktualisieren Ihrer App für iOS 11 (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/204/)

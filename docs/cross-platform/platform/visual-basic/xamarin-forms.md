@@ -6,12 +6,12 @@ ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 256d5c81475be095c8fa0ab0408cbcf673c6b301
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f397cf595a9ae151c5f105341733b2c57023fe99
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997083"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109717"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Xamarin.Forms mithilfe von Visual Basic.NET
 
@@ -27,7 +27,7 @@ Xamarin unterstützt keine Visual Basic direkt – befolgen Sie die Anweisungen 
 Um eine einfache Xamarin.Forms-Projekt zu erstellen, das Visual Basic verwendet, gehen Sie wie folgt vor:
 
 1. Erstellen Sie ein neues *Xamarin.Forms c#* Lösung, Portable Class Libraries (PCL) verwendet.
-Wechseln Sie zu **Datei > Neues Projekt** und klicken Sie in der **neues Projekt** Fenster Navigieren Sie zu **installiert > Vorlagen > Visual c# > plattformübergreifend** wählen Sie dann  **Plattformübergreifende App (Xamarin.Forms oder nativ) > Xamarin.Forms**.
+Wechseln Sie zu **Datei > Neues Projekt** und klicken Sie in der **neues Projekt** Fenster Navigieren Sie zu **installiert > Vorlagen > Visual C# > plattformübergreifend** wählen Sie dann auf **Cross Platform App (Xamarin.Forms oder nativ) > Xamarin.Forms**.
 
 2. Mit der rechten Maustaste auf die Projektmappe und **hinzufügen > Neues Projekt**.
 
@@ -79,7 +79,7 @@ Wechseln Sie zu **Datei > Neues Projekt** und klicken Sie in der **neues Projekt
     ```
 
 9. Nun müssen wir die IOS- und Android-Projekte auf das neue Visual Basic-Projekt zu verweisen.
-Mit der rechten Maustaste auf die **Verweise** Knoten in den IOS- und Android-Projekte zum Öffnen der **Verweis-Manager**. Un-Tick der der portablen Bibliothek C#- und -Tick der portablen VB--Bibliothek (durch nicht vergessen, dies gilt für IOS- und Android-Projekte).
+Mit der rechten Maustaste auf die **Verweise** Knoten in den IOS- und Android-Projekte zum Öffnen der **Verweis-Manager**. Un-Tick der C# portable Bibliotheken und -Tick der portablen VB--Bibliothek (durch nicht vergessen, dies gilt für IOS- und Android-Projekte).
 
    [![](xamarin-forms-images/add-vb-8-sml.png "Entfernen der alten Projektverweis, Hinzufügen von Visual Basic-Referenz")](xamarin-forms-images/add-vb-8.png#lightbox)
 

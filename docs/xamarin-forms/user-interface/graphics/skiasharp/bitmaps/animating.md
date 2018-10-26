@@ -4,15 +4,15 @@ description: Erfahren Sie, wie Sie die Bitmap-Animation ausgeführt wird, indem 
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/12/2018
-ms.openlocfilehash: 45a009757d84aa98acc41f6cd2bf672c8472c5bb
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 78fcbae8db70a83d7d0a643e0b27f575152e9515
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615576"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112551"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>Animieren von SkiaSharp-bitmaps
 
@@ -498,15 +498,15 @@ Die Code-Behind-Datei ist nicht generalisiert, um alle animierte GIF-Datei wiede
 
 Die Verwendung von SkisSharp, um die Frames, der eine animierte GIF-Datei zu extrahieren scheint nicht überall und zu dokumentieren, also die Beschreibung des Codes, der folgende ausführlichere als üblich:
 
-Tritt auf, in den Konstruktor der Seite die Decodierung der animierten GIF-Datei, und erfordert, dass die `Stream` Objekt, das auf die Bitmap, die zum Erstellen verwendet werden eine `SKManagedStream` Objekt und klicken Sie dann eine [ `SKCodec` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCodec/) Objekt. Die [ `FrameCount` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCodec.FrameCount/) Eigenschaft gibt die Anzahl der Frames, aus denen die Animation an. 
+Tritt auf, in den Konstruktor der Seite die Decodierung der animierten GIF-Datei, und erfordert, dass die `Stream` Objekt, das auf die Bitmap, die zum Erstellen verwendet werden eine `SKManagedStream` Objekt und klicken Sie dann eine [ `SKCodec` ](xref:SkiaSharp.SKCodec) Objekt. Die [ `FrameCount` ](xref:SkiaSharp.SKCodec.FrameCount) Eigenschaft gibt die Anzahl der Frames, aus denen die Animation an. 
 
 Diese Frames werden schließlich als einzelne Bitmaps gespeichert, damit der Konstruktor verwendet `FrameCount` ein Array vom Typ zuordnen `SKBitmap` sowie zwei `int` arrays für die Dauer der einzelnen Videoframes und (die Animationslogik zu verbessern) die kumulierte Dauer.
 
-Die [ `FrameInfo` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCodec.FrameInfo/) Eigenschaft `SKCodec` Klasse ist ein Array von [ `SKCodecFrameInfo` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCodecFrameInfo/) Werte, jeweils eines für jeden Frame, aber das einzige, der dieses Programm wird aus dieser Struktur ist die [ `Duration` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCodecFrameInfo.Duration/) des Frames, in Millisekunden.
+Die [ `FrameInfo` ](xref:SkiaSharp.SKCodec.FrameInfo) Eigenschaft `SKCodec` Klasse ist ein Array von [ `SKCodecFrameInfo` ](xref:SkiaSharp.SKCodecFrameInfo) Werte, jeweils eines für jeden Frame, aber das einzige, der dieses Programm wird aus dieser Struktur ist die [ `Duration` ](xref:SkiaSharp.SKCodecFrameInfo.Duration) des Frames, in Millisekunden.
 
-`SKCodec` definiert eine Eigenschaft namens [ `Info` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCodec.Info/) des Typs [ `SKImageInfo` ](https://developer.xamarin.com/api/type/SkiaSharp.SKImageInfo/), aber dieser `SKImageInfo` Wert gibt an (mindestens für dieses Bild), dass die Farbe ist `SKColorType.Index8`, was bedeutet, dass jedes Pixel ist ein Index in einen Typ für die Farbe an. Um zu vermeiden, mit Farbtabellen einzubeziehen, das Programm verwendet die [ `Width` ](https://developer.xamarin.com/api/property/SkiaSharp.SKImageInfo.Width/) und [ `Height` ](https://developer.xamarin.com/api/property/SkiaSharp.SKImageInfo.Height/) Informationen aus dieser Struktur zu ihrer Erstellung ist farbig besitzen `ImageInfo` Wert. Jede `SKBitmap` aus, die erstellt wird.
+`SKCodec` definiert eine Eigenschaft namens [ `Info` ](xref:SkiaSharp.SKCodec.Info) des Typs [ `SKImageInfo` ](xref:SkiaSharp.SKImageInfo), aber dieser `SKImageInfo` Wert gibt an (mindestens für dieses Bild), dass die Farbe ist `SKColorType.Index8`, was bedeutet, dass jedes Pixel ist ein Index in einen Typ für die Farbe an. Um zu vermeiden, mit Farbtabellen einzubeziehen, das Programm verwendet die [ `Width` ](xref:SkiaSharp.SKImageInfo.Width) und [ `Height` ](xref:SkiaSharp.SKImageInfo.Height) Informationen aus dieser Struktur zu ihrer Erstellung ist farbig besitzen `ImageInfo` Wert. Jede `SKBitmap` aus, die erstellt wird.
 
-Die `GetPixels` -Methode der `SKBitmap` gibt ein `IntPtr` Pixelbits dieser Bitmap verweisen. Diese Pixelbits wurden noch nicht festgelegt. Dass `IntPtr` übergeben wird, eines der [ `GetPixels` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCodec.GetPixels/p/SkiaSharp.SKImageInfo/System.IntPtr/SkiaSharp.SKCodecOptions/) Methoden `SKCodec`. Diese Methode kopiert den Frame aus der GIF-Datei in den Speicherbereich verweist die `IntPtr`. Die [ `SKCodecOptions` ](https://developer.xamarin.com/api/constructor/SkiaSharp.SKCodecOptions.SKCodecOptions/p/System.Int32/System.Boolean/) Konstruktor gibt an, die Framenummer:
+Die `GetPixels` -Methode der `SKBitmap` gibt ein `IntPtr` Pixelbits dieser Bitmap verweisen. Diese Pixelbits wurden noch nicht festgelegt. Dass `IntPtr` übergeben wird, eines der [ `GetPixels` ](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions)) Methoden `SKCodec`. Diese Methode kopiert den Frame aus der GIF-Datei in den Speicherbereich verweist die `IntPtr`. Die [ `SKCodecOptions` ](xref:SkiaSharp.SKCodecOptions.%23ctor(System.Int32,System.Boolean)) Konstruktor gibt an, die Framenummer:
 
 ```csharp
 public partial class AnimatedGifPage : ContentPage
@@ -657,6 +657,6 @@ Natürlich möchten Sie das Programm ausführen selbst zum Anzeigen der Animatio
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [Mandelbrot-Animation (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/MandelAnima/)

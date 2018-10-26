@@ -1,33 +1,37 @@
 ---
 title: Xamarin.Forms-Gesten
-description: Dieser Leitfaden erläutert, wie Xamarin.Forms Geste Erkennungen verwendet werden können, um Benutzerinteraktionen mit viele Bestandteile einer Xamarin.Forms-Anwendung zu erkennen.
+description: Dieser Leitfaden erläutert, wie Xamarin.Forms Geste Erkennungen verwendet werden können, um Benutzerinteraktionen mit Ansichten in einer Xamarin.Forms-Anwendung zu erkennen.
 ms.prod: xamarin
 ms.assetid: 0E197A51-2304-4C09-A710-C7FF24A89F15
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/21/2016
-ms.openlocfilehash: e7ae1e427dfd480b1f279c50ac5e301181912ee7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/25/2018
+ms.openlocfilehash: 33968fb935e8b69736ac338bfa0479e4f278e64a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994688"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106181"
 ---
 # <a name="xamarinforms-gestures"></a>Xamarin.Forms-Gesten
 
-_Geste Erkennungen können verwendet werden, um Benutzerinteraktionen mit viele Bestandteile einer Xamarin.Forms-Anwendung zu erkennen._
+_Geste Erkennungen können verwendet werden, um Benutzerinteraktionen mit Ansichten in einer Xamarin.Forms-Anwendung zu erkennen._
 
-Die Xamarin.Forms [ `GestureRecognizer` ](xref:Xamarin.Forms.GestureRecognizer) Klasse unterstützt Tap, verkleinern und Schwenken Gesten auf Benutzeroberflächen-Steuerelementen.
+Die Xamarin.Forms [ `GestureRecognizer` ](xref:Xamarin.Forms.GestureRecognizer) Klasse unterstützt tippen, verkleinern, schwenken und wischbewegungen auf [ `View` ](xref:Xamarin.Forms.View) Instanzen.
 
-## <a name="adding-a-tap-gesture-recognizertapmd"></a>[Hinzufügen einer Tap-Stiftbewegungs-Erkennung](tap.md)
+## <a name="adding-a-tap-gesture-recognizertapmd"></a>[Hinzufügen einer Tap-stiftbewegungs-Erkennung](tap.md)
 
-Die tippbewegung für Tap-Erkennung verwendet wird, und wird implementiert, mit der [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Klasse.
+Eine tippbewegung, die für die Tap-Erkennung verwendet wird, und wird erkannt, mit der [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Klasse.
 
-## <a name="adding-a-pinch-gesture-recognizerpinchmd"></a>[Hinzufügen einer Pinch-Stiftbewegungs-Erkennung](pinch.md)
+## <a name="adding-a-pinch-gesture-recognizerpinchmd"></a>[Hinzufügen einer Pinch-stiftbewegungs-Erkennung](pinch.md)
 
-Die Pinch-Geste wird zum Ausführen von interaktiven Zoom verwendet und wird implementiert, mit der [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) Klasse.
+Eine zusammendrückbewegung wird zum Ausführen von interaktiven Zoom verwendet und wird erkannt, mit der [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) Klasse.
 
-## <a name="adding-a-pan-gesture-recognizerpanmd"></a>[Hinzufügen einer Pan Stiftbewegungs-Erkennung](pan.md)
+## <a name="adding-a-pan-gesture-recognizerpanmd"></a>[Hinzufügen einer Pan stiftbewegungs-Erkennung](pan.md)
 
-Die Geste Pan dient zum Erkennen von ziehen und wird implementiert, mit der [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) Klasse.
+Eine Geste für ein Schwenken wird zum Erkennen der Bewegung der Finger auf dem Bildschirm, und diese Verschiebung auf Inhalt angewendet, und wird erkannt, mit der [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) Klasse.
+
+## <a name="adding-a-swipe-gesture-recognizerswipemd"></a>[Hinzufügen einer streifbewegung stiftbewegungs-Erkennung](swipe.md)
+
+Eine streifbewegung tritt auf, wenn ein Finger auf dem Bildschirm in eine Richtung horizontal oder vertikal verschoben wird, und häufig verwendet, um die Navigation durch Inhalte zu initiieren. Wischbewegungen werden erkannt, mit der [ `SwipeGestureRecognizer` ](xref:Xamarin.Forms.SwipeGestureRecognizer) Klasse.
