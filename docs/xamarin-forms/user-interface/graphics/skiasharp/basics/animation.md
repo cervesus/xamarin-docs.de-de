@@ -4,28 +4,25 @@ description: In diesem Artikel wird erläutert, wie zum Animieren von Grafiken S
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 0ba3d86f52d2e6907f32450d87f30280ade95d3f
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 1357f0be1ba4c15c4046e92f8556c957b9c4bd46
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615638"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122243"
 ---
 # <a name="basic-animation-in-skiasharp"></a>Grundlegende Animation in SkiaSharp
 
 _Erfahren Sie, wie zum Animieren von SkiaSharp-Grafiken_
 
-Sie können Grafiken von SkiaSharp in Xamarin.Forms animieren, verliert, indem die `PaintSurface` Methode, die sehr häufig aufgerufen werden jedes Mal, wenn die Grafik ein wenig anders zu zeichnen. Hier ist eine Animation, die weiter unten in diesem Artikel mit konzentrischen Kreise, die scheinbar aus dem Center erweitert:
+Sie können Grafiken von SkiaSharp in Xamarin.Forms animieren, verliert, indem die `PaintSurface` in regelmäßigen Abständen aufzurufende Methode jedes Mal, wenn die Grafik ein wenig anders zu zeichnen. Hier ist eine Animation, die weiter unten in diesem Artikel mit konzentrischen Kreise, die scheinbar aus dem Center erweitert:
 
 ![](animation-images/animationexample.png "Mehrere konzentrische Kreise scheinbar aus dem Center erweitern")
 
-Die **Pulsating Ellipse** auf der Seite die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm erstellt eine Animation der beiden Achsen einer Ellipse, damit er angezeigt wird, um pulsating werden, und Sie können auch steuern, die Rate der dieser Pulsation:
-
-
-Die [ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml) Datei instanziiert ein Xamarin.Forms `Slider` und `Label` den aktuellen Wert des Schiebereglers angezeigt. Dies ist eine allgemeine Möglichkeit zum Integrieren einer `SKCanvasView` mit anderen Xamarin.Forms-Ansichten:
+Die **Pulsating Ellipse** auf der Seite die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Programm erstellt eine Animation der beiden Achsen einer Ellipse, damit er angezeigt wird, um pulsating werden, und Sie können auch steuern, die Rate der dieser Pulsation. Die [ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml) Datei instanziiert ein Xamarin.Forms `Slider` und `Label` den aktuellen Wert des Schiebereglers angezeigt. Dies ist eine allgemeine Möglichkeit zum Integrieren einer `SKCanvasView` mit anderen Xamarin.Forms-Ansichten:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -107,7 +104,7 @@ async Task AnimationLoop()
 
 ```
 
-Die `while` Schleife beginnt, mit dem Abrufen einer Zykluszeit aus der `Slider`. Dies ist eine Zeit in Sekunden, z. B. 5. Die zweite Anweisung berechnet einen Wert von `t` für *Zeit*. Für eine `cycleTime` 5 `t` erhöht, von 0 auf 1 alle 5 Sekunden. Das Argument für die `Math.Sin` -Funktion in der zweiten Anweisung liegt zwischen 0 und 2π alle 5 Sekunden. Die `Math.Sin` Funktion gibt einen Wert zwischen 0 und 1 zurück, die auf 0, und klicken Sie dann auf &ndash;1 und 0 5 Sekunden, aber mit Werten, die langsamer ändern, wenn der Wert in der Nähe von 1 oder – 1 ist. Der Wert 1 wird hinzugefügt, damit die Werte immer positive sind aus, und klicken Sie dann diese durch 2 geteilt wird, damit die Werte liegt zwischen ½, können Sie ½ auf ½, aber langsamer, wenn der Wert, etwa 1 und 0 ist 0 1. Dies befindet sich in der `scale` Feld, und die `SKCanvasView` für ungültig erklärt.
+Die `while` Schleife beginnt, mit dem Abrufen einer Zykluszeit aus der `Slider`. Dies ist eine Zeit in Sekunden, z. B. 5. Die zweite Anweisung berechnet einen Wert von `t` für *Zeit*. Für eine `cycleTime` 5 `t` erhöht, von 0 auf 1 alle 5 Sekunden. Das Argument für die `Math.Sin` -Funktion in der zweiten Anweisung liegt zwischen 0 und 2π alle 5 Sekunden. Die `Math.Sin` Funktion gibt einen Wert zwischen 0 und 1 zurück, die auf 0, und klicken Sie dann auf &ndash;1 und 0 5 Sekunden, aber mit Werten, die langsamer ändern, wenn der Wert in der Nähe von 1 oder – 1 ist. Der Wert 1 wird hinzugefügt, damit die Werte immer positive sind aus, und klicken Sie dann diese durch 2 geteilt wird, damit die Werte von ½, können Sie ½ auf ½, aber langsamer reichen, wenn der Wert, etwa 1 und 0 ist 0 1. Dies befindet sich in der `scale` Feld, und die `SKCanvasView` für ungültig erklärt.
 
 Die `PaintSurface` Methode verwendet diesen `scale` Wert, der Berechnung der beiden Achsen der Ellipse:
 
@@ -146,7 +143,7 @@ Die Methode berechnet eine maximale basierend auf der Größe des Anzeigebereich
 
 Beachten Sie, dass die `SKPaint` -Objekt wird erstellt, einem `using` Block. Wie viele Klassen von SkiaSharp `SKPaint` leitet sich von `SKObject`, die sich daraus ableitet `SKNativeObject`, implementiert die [ `IDisposable` ](xref:System.IDisposable) Schnittstelle. `SKPaint` überschreibt die `Dispose` Methode, um nicht verwaltete Ressourcen freizugeben.
 
- Einfügen von `SKPaint` in einem `using` Block stellt sicher, dass `Dispose` aufgerufen wird, am Ende des Blocks auf diesen nicht verwalteten Ressourcen frei. Dies geschieht bei Verwendung von Arbeitsspeicher durch trotzdem die `SKPaint` Objekt wird freigegeben, vom .NET Garbage Collector, aber im Code der Animation, es empfiehlt sich, bei der Freigabe von Arbeitsspeicher transaktionsbesitzers so etwas proaktiv zu sein.
+ Einfügen von `SKPaint` in einem `using` Block stellt sicher, dass `Dispose` aufgerufen wird, am Ende des Blocks auf diesen nicht verwalteten Ressourcen frei. Dies geschieht bei Verwendung von Arbeitsspeicher durch trotzdem die `SKPaint` Objekt wird freigegeben, vom .NET Garbage Collector, aber im Code der Animation, es empfiehlt sich, bei der Freigabe von Arbeitsspeicher auf eine Weise transaktionsbesitzers proaktiv zu sein.
 
  In diesem Fall eine bessere Lösung wäre zwei `SKPaint` Objekte einmal, und speichern sie als Felder.
 
@@ -178,7 +175,7 @@ public class ExpandingCirclesPage : ContentPage
 }
 ```
 
-Dieses Programm verwendet einen anderen Ansatz für die Animation basierend auf der Xamarin.Forms `Device.StartTimer`. Die `t` Feld wird von 0 auf 1 animiert jeder `cycleTime` Millisekunden:
+Dieses Programm verwendet einen anderen Ansatz für die Animation basierend auf der Xamarin.Forms `Device.StartTimer` Methode. Die `t` Feld wird von 0 auf 1 animiert jeder `cycleTime` Millisekunden:
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -212,7 +209,7 @@ public class ExpandingCirclesPage : ContentPage
 }
 ```
 
-Die `PaintSurface` Handler zeichnet 5 konzentrische Kreise mit animierte Radien. Wenn die `baseRadius` Variable wird berechnet als 100 ist, klicken Sie dann als `t` wird von 0 auf 1 fest, die Radien der fünf Kreise Erhöhung von 0, 100, 100 und 200, 200, 300, 300, 400 und zwischen 400 und 500 animiert. Für die meisten der Kreise die `strokeWidth` ist 50, aber für die erste Kreis, der `strokeWidth` von 0 bis 50 animiert. Für die meisten der Kreise die Farbe Blau ist, aber für den letzten Kreis, die Farbe von Blau transparent animiert ist:
+Die `PaintSurface` Handler zeichnet fünf konzentrische Kreise mit animierte Radien. Wenn die `baseRadius` Variable wird berechnet als 100 ist, klicken Sie dann als `t` wird von 0 auf 1 fest, die Radien der fünf Kreise Erhöhung von 0, 100, 100 und 200, 200, 300, 300, 400 und zwischen 400 und 500 animiert. Für die meisten der Kreise die `strokeWidth` ist 50, aber für die erste Kreis, der `strokeWidth` von 0 bis 50 animiert. Für die meisten der Kreise die Farbe Blau ist, aber für den letzten Kreis, die Farbe von Blau transparent animiert wird. Beachten Sie, dass das vierte Argument der `SKColor` Konstruktor, der angibt, die Deckkraft:
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -250,5 +247,5 @@ Das Ergebnis ist, dass das Bild bei Verwendung sieht `t` gleich 0, als wenn `t` 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

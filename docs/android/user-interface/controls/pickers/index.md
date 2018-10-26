@@ -1,28 +1,28 @@
 ---
 title: Datumsauswahl
-description: Mithilfe der integrierten Android Dialogfelder zum Abfragen des Benutzers für Datum und Uhrzeit
+description: Verwenden von integrierten Android Dialogfelder zum Abfragen von des Benutzers für Datum und Uhrzeit
 ms.prod: xamarin
 ms.assetid: 57C86933-3F04-47DD-9839-72D522D73330
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: de9c77cd1ea96727f5fbf10d11ff99c0aec5fe74
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: af6e71e83f90be720db75887553e24a99966720c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762737"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119831"
 ---
 # <a name="pickers"></a>Datumsauswahl
 
 
-*Bildlaufbereich* sind Elemente der Benutzeroberfläche, mit denen den Benutzer ein Datum oder eine Uhrzeit auswählen, mithilfe der Dialogfelder, die von Android bereitgestellt werden können:
+*Datumsauswahl* sind Elemente der Benutzeroberfläche, mit denen den Benutzer ein Datum oder eine Uhrzeit auswählen, durch die Verwendung von Dialogen an, die von Android bereitgestellt werden können:
 
--   [Datumsauswahl](~/android/user-interface/controls/pickers/date-picker.md) wird verwendet, um ein Datum (Jahr, Monat und Tag) auswählen.
+-   [Date Picker](~/android/user-interface/controls/pickers/date-picker.md) wird verwendet, um ein Datum (Jahr, Monat und Tag) auswählen.
 
     ![Beispiel-Datumsauswahl](images/date-picker.png)
 
 -   [/ Zeitauswahl](~/android/user-interface/controls/pickers/time-picker.md) wird verwendet, um eine Uhrzeit (Stunde, Minute und AM/PM) auswählen.
 
-    ![Beispiel / Zeitauswahl](images/time-picker.png)
+    ![Beispiel-Zeitauswahl](images/time-picker.png)

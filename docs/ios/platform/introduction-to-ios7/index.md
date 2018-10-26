@@ -1,38 +1,38 @@
 ---
-title: Einführung in die iOS 7
-description: Dieser Artikel behandelt die wichtigsten neuen APIs in iOS 7, einschließlich View Controller-Übergänge, Verbesserungen an UIView Animationen, UIKit Dynamics und Text-Kit eingeführt. Es werden auch einige der Änderungen an der Benutzeroberfläche und die neuen Funktionen der standardpunktdiagramm Multitasking behandelt.
+title: Einführung in iOS 7
+description: Dieser Artikel behandelt die wichtigsten neuen APIs in iOS 7, einschließlich der Ansichtscontroller Übergänge, Verbesserungen an UIView-Animationen, UIKit Dynamics und Text-Kit. Es werden auch einige der Änderungen an der Benutzeroberfläche und die neuen Funktionen der erweitertes Multitasking behandelt.
 ms.prod: xamarin
 ms.assetid: 2C33018F-D64A-4BAA-A34E-082EF311D162
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 9ae82eba78f099f675d21bf53a250923630a0ff6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: db2ce779962947e2121ff03280544a080e193e2e
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30780012"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118044"
 ---
-# <a name="introduction-to-ios-7"></a>Einführung in die iOS 7
+# <a name="introduction-to-ios-7"></a>Einführung in iOS 7
 
-_Dieser Artikel behandelt die wichtigsten neuen APIs in iOS 7, einschließlich View Controller-Übergänge, Verbesserungen an UIView Animationen, UIKit Dynamics und Text-Kit eingeführt. Es werden auch einige der Änderungen an der Benutzeroberfläche und die neuen Funktionen der standardpunktdiagramm Multitasking behandelt._
+_Dieser Artikel behandelt die wichtigsten neuen APIs in iOS 7, einschließlich der Ansichtscontroller Übergänge, Verbesserungen an UIView-Animationen, UIKit Dynamics und Text-Kit. Es werden auch einige der Änderungen an der Benutzeroberfläche und die neuen Funktionen der erweitertes Multitasking behandelt._
 
-iOS 7 ist ein wichtiges Update für iOS an. Es führt eine vollkommen neue Benutzeroberflächendesign, die Fokus auf den Inhalt und nicht als Anwendung Chrome versetzt. Neben die Visualisierung ändert sich fügt iOS 7 eine Fülle von neuen APIs zum Erstellen von Aktivitäten, die umfangreichere und Erfahrungen. Dieses Dokument Umfragen neuen Technologien eingeführt mit iOS 7 und dient als Ausgangspunkt für die weitere Untersuchung.
+iOS 7 ist ein wichtiges Update für iOS. Er führt einen völlig neue Entwurf der Benutzeroberfläche, mit dem Fokus auf den Inhalt und nicht als Anwendung Chrome versetzt. Zusammen mit die Visualisierung ändert fügt die iOS 7 eine Fülle von neuen APIs, um umfangreichere Interaktionen und Erfahrungen zu erstellen. Dieses Dokument "Surveys" die neuen Technologien mit iOS 7 eingeführt und dient als Ausgangspunkt für die weitere Untersuchung.
 
-## <a name="uiview-animation-enhancements"></a>UIView Animation Erweiterungen
+## <a name="uiview-animation-enhancements"></a>UIView-Animation-Verbesserungen
 
-iOS 7 ergänzt die Animation-Unterstützung in UIKit, ermöglicht Anwendungen zu erledigen, die zuvor löschen direkt in das Framework Core-Animation erforderlich. Z. B. `UIView` können jetzt ausführen, für die Steifheit Animationen sowie Keyframe-Animationen, die zuvor eine `CAKeyframeAnimation` angewendet, um eine `CALayer`.
+iOS 7 erweitert die Unterstützung für Animationen in UIKit, ermöglicht es Anwendungen, die Aktionen, die zuvor gelöscht, die direkt in das Framework Core Animation erforderlich. Z. B. `UIView` kann nun ausführen,-Animationen als auch auf Keyframe-Animationen, dem zuvor ein `CAKeyframeAnimation` angewendet werden, um eine `CALayer`.
 
-### <a name="spring-animations"></a>Spring-Animationen
+### <a name="spring-animations"></a>-Animationen
 
- `UIView` unterstützt jetzt Animieren von eigenschaftenänderungen mit einem für die Steifheit Effekt. Um diese hinzuzufügen, rufen Sie entweder die `AnimateNotify` oder `AnimateNotifyAsync` Methode, die Werte für das Dämpfung Spring-Verhältnis und die Geschwindigkeit des ursprünglichen Spring übergeben wird, wie unten beschrieben:
+ `UIView` unterstützt jetzt die Animation von eigenschaftenänderungen mit einem Spring-Effekt. Um diese hinzuzufügen, rufen Sie entweder die `AnimateNotify` oder `AnimateNotifyAsync` -Methode, übergeben Sie Werte für das diese Spring-Verhältnis und die anfängliche Spring-Geschwindigkeit, wie im folgenden beschrieben:
 
--  `springWithDampingRatio` – Ein Wert zwischen 0 und 1, in dem die und angegebenem schwingungsbereich für kleinere Wert erhöht.
+-  `springWithDampingRatio` – Ein Wert zwischen 0 und 1, in denen die Oszillation für kleinere Wert erhöht.
 -  `initialSpringVelocity` – Die ersten Spring Geschwindigkeit als Prozentsatz der gesamten Animation Entfernung pro Sekunde.
 
 
-Der folgende Code erzeugt einen Effekt für die Steifheit aus, wenn das Bild ansichtmittelpunkt ändert:
+Der folgende Code erzeugt einen Spring-Effekt, wenn sich die Image-Kartenansicht-Mittelpunkt ändert:
 
 ```csharp
 void AnimateWithSpring ()
@@ -48,15 +48,15 @@ void AnimateWithSpring ()
 }
 ```
 
-Dieser Effekt für die Steifheit bewirkt, dass das Image Ansicht angezeigt werden, springen die Animation an einem neuen Speicherort für die Center abgeschlossen wurde, wie unten gezeigt:
+Dieser Effekt Spring bewirkt, dass der Bildansicht zu hüpfen führt die Animation an eine neue Mittelpunktposition, wie unten dargestellt angezeigt:
 
- ![](images/spring-animation.png "Dieser Effekt für die Steifheit bewirkt, dass das Image Ansicht angezeigt werden, zu springen, sobald sie die Animation an einem neuen Speicherort der Center abgeschlossen hat")
+ ![](images/spring-animation.png "Dieser Effekt Spring bewirkt, dass der Bildansicht zu springen, sobald sie die Animation auf eine neue Position der Mitte abgeschlossen scheint")
 
 ### <a name="keyframe-animations"></a>Keyframe-Animationen
 
-Die `UIView` -Klasse enthält nun die `AnimateWithKeyframes` Methode zum Erstellen von Animationen Keyframe auf eine `UIView`. Diese Methode ist ähnlich wie andere `UIView` Animation-Methoden, mit Ausnahme, die eine zusätzliche `NSAction` als Parameter an die Keyframes enthalten übergeben wird. Innerhalb der `NSAction`, Keyframes hinzugefügt werden, indem `UIView.AddKeyframeWithRelativeStartTime`.
+Die `UIView` -Klasse enthält nun die `AnimateWithKeyframes` Methode zum Erstellen von Keyframe-Animationen auf eine `UIView`. Diese Methode ist ähnlich wie andere `UIView` Animation-Methoden, mit Ausnahme, die eine zusätzliche `NSAction` übergeben wird, als Parameter an die Keyframes enthalten. In der `NSAction`, Keyframes hinzugefügt werden, indem `UIView.AddKeyframeWithRelativeStartTime`.
 
-Der folgende Codeausschnitt erstellt z. B. eine Keyframe-Animation sowie den Mittelpunkt einer Ansicht animieren, um die Ansicht zu drehen:
+Der folgende Codeausschnitt erstellt z. B. eine Keyframe-Animation aus, um eine Ansicht des Center sowie zu animieren, um die Ansicht zu drehen:
 
 ```csharp
 void AnimateViewWithKeyframes ()
@@ -83,42 +83,42 @@ void AnimateViewWithKeyframes ()
 }
 ```
 
-Die ersten beiden Parameter für die `AddKeyframeWithRelativeStartTime` Methode geben Sie die Startzeit und Dauer des Keyframes, jeweils als Prozentsatz der gesamten Länge der Animation. Im Beispiel oben führt das Image Ansicht animieren an seiner neuen Rechenzentrum über die ersten zweite gefolgt von 90 Grad drehen, über der nächsten Sekunde. Da gibt an, die Animation `UIViewKeyframeAnimationOptions.Autoreverse` als Option animieren beide Keyframes in umgekehrter Reihenfolge als auch. Schließlich werden die endgültigen Werte auf den ursprünglichen Zustand in den Abschlusshandler festgelegt.
+Die ersten beiden Parameter, um die `AddKeyframeWithRelativeStartTime` Methode geben Sie die Startzeit und Dauer des Keyframes, jeweils als Prozentsatz der gesamten Animationslänge. Im Beispiel oben führt die Images Ansicht animieren um seinen neuen Mittelpunkt über der ersten Sekunde gefolgt werden, indem Sie um 90 Grad drehen, auf der nächsten Sekunde. Da die Animation gibt `UIViewKeyframeAnimationOptions.Autoreverse` als Option, beide Keyframes animieren, in umgekehrter Reihenfolge auch. Schließlich werden die endgültigen Werte auf den ursprünglichen Zustand in den Abschlusshandler festgelegt.
 
-Die in den folgenden Screenshots werden die kombinierte Animation über die Keyframes veranschaulicht:
+Die folgenden Screenshots veranschaulicht die kombinierte Animation mit Keyframes:
 
- ![](images/keyframes.png "Diese Screenshots veranschaulicht die kombinierte Animation über die keyframes")
+ ![](images/keyframes.png "Diese Screenshots veranschaulicht die kombinierte Animation mit keyframes")
 
 ## <a name="uikit-dynamics"></a>UIKit Dynamics
 
-UIKit Dynamics ist, einen neuen Satz von APIs in UIKit, die Clientanwendungen animierte basierte auf physikalische Aktivitäten erstellen können. UIKit Dynamics kapselt ein 2D physikalische-Modul, um dies zu ermöglichen.
+UIKit Dynamics ist es sich um einen neuen Satz von APIs in UIKit, mit denen Anwendungen, um animierte Aktivitäten basierend auf physikalische Eigenschaften zu erstellen. UIKit Dynamics kapselt eine 2D-Physik-Engine, um dies zu ermöglichen.
 
-Die API ist deklarative Natur. Sie deklarieren, wie die physikalische Interaktionen durch Erstellen von Objekten - wird aufgerufen, verhalten sich *Verhalten* – express physikalische Konzepten wie Schwerpunkt, Konflikte, Springs. Sie anhängen, die Behavior(s) in ein anderes Objekt, das aufgerufen eine *dynamische Animator*, das eine Ansicht kapselt. Der dynamische Animator akzeptiert wird, dass die deklarierte physikalische Verhalten anwenden *dynamische Elemente* -Elemente implementiert, `IUIDynamicItem`, z. B. eine `UIView`.
+Die API ist die deklarative Natur. Sie deklarieren die Physik-Interaktionen wie Verhalten, durch das Erstellen von Objekten - wird aufgerufen, *Verhaltensweisen* – express Physik Konzepte wie z. B. Schwerkraft, Kollisionen, Springs. Sie anhängen, die ein eigenes Verhalten auf auf einem anderen Objekt, mit dem Namen einer *dynamische Animator*, die kapselt einer Ansicht. Die dynamische Animator akzeptiert, stellt der Anwendung der deklarierten physikalische Verhalten zu *dynamische Elemente* -Elemente, die implementieren `IUIDynamicItem`, z. B. eine `UIView`.
 
-Es gibt mehrere unterschiedliche primitiven Verhaltensweisen zum Auslösen von komplexer Interaktionen, einschließlich verfügbar:
+Es gibt mehrere unterschiedliche primitiven Verhalten komplexe Interaktionen empfohlen, einschließlich trigger zur Verfügung:
 
--  `UIAttachmentBehavior` – Fügt zwei dynamische Elemente so, dass sie zusammen verschoben oder ein Ansatzpunkt Fügt ein dynamischen Elements.
+-  `UIAttachmentBehavior` – Fügt zwei dynamische Elemente so, dass sie zusammen verschoben, oder fügt eine dynamische Element zu einem Zeitpunkt für die Anlage.
 -  `UICollisionBehavior` – Ermöglicht die dynamische Elemente zur Teilnahme an Konflikte.
--  `UIDynamicItemBehavior` – Gibt einen allgemeinen Satz von Eigenschaften, die auf dynamische Elemente, z. B. Elastizität und Dichte Unstimmigkeiten angewendet.
--  `UIGravityBehavior` -Ein dynamischen Element, verursacht der Elemente, die in Richtung der Schwerpunkte beschleunigen Schwerpunkt gilt.
--  `UIPushBehavior` – Ein dynamisches Element Force gilt.
--  `UISnapBehavior` – Ermöglicht ein dynamisches Element an eine Position mit einem für die Steifheit Effekt ausgerichtet werden soll.
+-  `UIDynamicItemBehavior` – Gibt einen allgemeinen Satz von Eigenschaften, die dynamischen Elemente, z. B. Elastizität, Dichte und Reibung anwenden.
+-  `UIGravityBehavior` -Ein dynamischen Element, sodass Elemente in der Schwerpunkte Richtung beschleunigen Schwerkraft gilt.
+-  `UIPushBehavior` – Ein dynamisches Element erzwingen gilt.
+-  `UISnapBehavior` – Ermöglicht ein dynamisches Element docken Sie an eine Position mit einem Spring-Effekt.
 
 
-Obwohl viele primitive Typen sind, ist der allgemeine Prozess zum Hinzufügen von physikalische-basierte Interaktionen zu einer Sicht mithilfe des UIKit Dynamics über Verhalten konsistent:
+Es gibt, zwar viele primitive entspricht das allgemeine Verfahren zum Hinzufügen einer Ansicht mithilfe von UIKit Dynamics Physik-basierte Interaktionen für Verhalten:
 
 1.  Erstellen Sie eine dynamische Animator.
-1.  Erstellen Sie Behavior(s).
-1.  Der dynamische Animator Verhalten hinzufügen.
+1.  Erstellen Sie ein eigenes Verhalten auf.
+1.  Die dynamische Animator Verhaltensweisen hinzufügen.
 
 
 ### <a name="dynamics-example"></a>Dynamics-Beispiel
 
-Sehen wir uns ein Beispiel, das Dichte und ein Konflikt Grenze an, fügt eine `UIView`.
+Sehen wir uns ein Beispiel, das Schwerkraft- und eine Kollision Grenze an, fügt einen `UIView`.
 
 #### <a name="uigravitybehavior"></a>UIGravityBehavior
 
-Schwerpunkt anzuzeigende ein Bild hinzufügen, folgt die 3 oben beschriebenen Schritte.
+Schwerkraft einer Bildansicht hinzufügen, folgt die 3 oben beschriebenen Schritte.
 
 Wir arbeiten der `ViewDidLoad` Methode für dieses Beispiel. Fügen Sie zunächst eine `UIImageView` Instanz wie folgt:
 
@@ -132,38 +132,38 @@ imageView = new UIImageView (new CGRect (new CGPoint (View.Center.X - image.Size
 View.AddSubview (imageView);
 ```
 
-Dadurch wird eine Image-Sicht, die auf den oberen Rand des Bildschirms zentriert erstellt. Um das Image "Herbst" mit Schwerpunkt zu machen, erstellen Sie eine Instanz von einem `UIDynamicAnimator`:
+Dadurch wird eine Image-Ansicht zentriert am oberen Rand des Bildschirms erstellt. Damit das Image "Fall" mit der Schwerkraft, erstellen Sie eine Instanz von einem `UIDynamicAnimator`:
 
 ```csharp
 dynAnimator = new UIDynamicAnimator (this.View);
 ```
 
-Die `UIDynamicAnimator` akzeptiert eine Instanz eines Verweises `UIView` oder ein `UICollectionViewLayout`, enthält die Elemente, die pro angefügten Behavior(s) animiert werden soll.
+Die `UIDynamicAnimator` akzeptiert eine Instanz eines Verweises `UIView` oder `UICollectionViewLayout`, enthält die Elemente, die pro die angefügten ein eigenes Verhalten auf animiert werden soll.
 
-Als Nächstes erstellen Sie eine `UIGravityBehavior` Instanz. Sie können ein oder mehrere Objekte implementieren übergeben der `IUIDynamicItem`, z. B. eine `UIView`:
+Als Nächstes erstellen Sie eine `UIGravityBehavior` Instanz. Sie können ein oder mehrere Objekte, die Implementierung übergeben die `IUIDynamicItem`, z. B. eine `UIView`:
 
 ```csharp
 var gravity = new UIGravityBehavior (dynItems);
 ```
 
-Das Verhalten wird ein Array von übergeben `IUIDynamicItem`, die in diesem Fall enthält der einzelnen `UIImageView` Instanz, die wir animieren.
+Das Verhalten wird ein Array von übergeben `IUIDynamicItem`, die in diesem Fall enthält des einzelnen `UIImageView` Instanz, die wir sind animieren.
 
-Fügen Sie abschließend das Verhalten der dynamischen Animator hinzu:
+Schließlich wird das Verhalten der dynamischen Animator hinzufügen:
 
 ```csharp
 dynAnimator.AddBehavior (gravity);
 ```
 
-Dadurch wird in der Abbildung unten animieren mit Schwerpunkt, wie unten dargestellt:
+Dadurch wird das Bild nach unten das Animieren mit Schwerpunkt, wie unten dargestellt:
 
 ![](images/gravity2.png "Die Anfangsposition des Image") 
-![](images/gravity3.png "Endwert Bildspeicherort")
+![](images/gravity3.png "die Endposition des Image")
 
-Da es keine Einschränken der Grenzen des Bildschirms, fällt die Image-Ansicht einfach im unteren Bereich. Um die Ansicht zu beschränken, damit das Abbild mit den Rändern des Bildschirms verursacht einen Konflikt, fügen wir eine `UICollisionBehavior`. Dies wird im nächsten Abschnitt beschrieben.
+Da es keine Einschränkung der Grenzen des Bildschirms, fällt der Bildansicht einfach unten aus dem. Um die Ansicht zu beschränken, damit das Abbild mit den Rändern des Bildschirms kollidiert, fügen wir eine `UICollisionBehavior`. Wir werden dies im nächsten Abschnitt behandelt.
 
 #### <a name="uicollisionbehavior"></a>UICollisionBehavior
 
-Wir beginnen, indem Sie erstellen eine `UICollisionBehavior` und der dynamische Animator hinzufügen, genau wie wir für haben die `UIGravityBehavior`.
+Wir erstellen zunächst ein `UICollisionBehavior` und das Hinzufügen zu den dynamischen Animator, wie wir für die `UIGravityBehavior`.
 
 Ändern Sie den Code zum Einschließen der `UICollisionBehavior`:
 
@@ -190,9 +190,9 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 }
 ```
 
-Die `UICollisionBehavior` enthält eine Eigenschaft namens `TranslatesReferenceBoundsIntoBoundry`. Wenn dieser `true` bewirkt, dass der Verweis der Sicht Grenzen als Konflikt Grenze verwendet werden.
+Die `UICollisionBehavior` verfügt über eine Eigenschaft namens `TranslatesReferenceBoundsIntoBoundry`. Wenn dies auf `true` bewirkt, dass der Verweis der Ansicht Grenzen als eine Kollision Grenze verwendet werden soll.
 
-Jetzt, wenn das Bild unten mit Schwerpunkt eine Animation, abprallt es etwas vom unteren Rand des Bildschirms vor ausgeglichen werden, um es zu bewegen.
+Nun, wenn das Bild nach unten mit der Schwerkraft animiert, springt es etwas vom unteren Rand des Bildschirms, ehe Sie zur rest-vorhanden.
 
 <!--, as shown below:
 
@@ -200,9 +200,9 @@ Jetzt, wenn das Bild unten mit Schwerpunkt eine Animation, abprallt es etwas vom
 
 #### <a name="uidynamicitembehavior"></a>UIDynamicItemBehavior
 
-Wir können das Verhalten der Abnehmend Image Ansicht mit zusätzliche Verhalten weiter steuern. Es könnte z. B. Hinzufügen einer `UIDynamicItemBehavior` zum Erhöhen der Flexibilität, die Image-Ansicht, um weitere zurückspringt, wenn sie am unteren Rand des Bildschirms verursacht einen Konflikt verursacht.
+Wir können das Verhalten der fallender Bildansicht mit zusätzlichen Verhaltensweisen steuern. Wir könnten z. B. Hinzufügen einer `UIDynamicItemBehavior` erhöhen die Flexibilität, die Image-Ansicht, um weitere springt, wenn sie am unteren Rand des Bildschirms verursacht einen Konflikt verursachen.
 
-Hinzufügen einer `UIDynamicItemBehavior` folgt den gleichen Schritten wie bei anderen Verhalten. Erstellen Sie zunächst das Verhalten an:
+Hinzufügen einer `UIDynamicItemBehavior` folgt den gleichen Schritten wie bei anderen Verhalten. Erstellen Sie zuerst das Verhalten aus:
 
 ```csharp
 var dynBehavior = new UIDynamicItemBehavior (dynItems) {
@@ -210,39 +210,39 @@ var dynBehavior = new UIDynamicItemBehavior (dynItems) {
 };
 ```
 
-Fügen Sie dann das Verhalten, um dynamische Animator:
+Klicken Sie dann das Verhalten der dynamischen Animator hinzufügen:
 
  `dynAnimator.AddBehavior (dynBehavior);`
 
-Mit diesem Verhalten festliegen abprallt die Image-Ansicht mehr, wenn es die Grenze verursacht einen Konflikt.
+Mit diesem Verhalten vorhanden ist springt der Bildansicht mehr, wenn sie mit der Grenze zusammenstößt.
 
 ## <a name="general-user-interface-changes"></a>Benutzeroberfläche für allgemeine Änderungen
 
-Zusätzlich zu der neuen UIKit-APIs wie z. B. UIKit Dynamics Controller Übergänge und verbesserte UIView-Animationen, die oben beschriebenen führt iOS 7 eine Vielzahl von visuelle Änderungen an der Benutzeroberfläche und die entsprechenden API-Änderungen für verschiedene Ansichten und Steuerelemente. Weitere Informationen finden Sie unter der [Ios7 Übersicht über die Benutzeroberfläche](~/ios/platform/introduction-to-ios7/ios7-ui.md).
+Zusätzlich zu den neuen UIKit-APIs wie UIKit Dynamics, Übergänge von Ansichtscontrollern und verbesserte UIView-Animationen, die oben beschriebenen führt die iOS 7 eine Vielzahl von visuellen Änderungen an der Benutzeroberfläche und die zugehörigen API-Änderungen für die verschiedenen Ansichten und Steuerelementen. Weitere Informationen finden Sie unter den [iOS 7 Übersicht über die Benutzeroberfläche](~/ios/platform/introduction-to-ios7/ios7-ui.md).
 
 ## <a name="text-kit"></a>Text-Kit
 
-Text-Kit ist eine neue API, die leistungsstarke Text Layout und Rendering Funktionen bietet. Basiert auf niedriger Ebene Framework Core-Text, aber ist sehr viel einfacher zu verwenden als Core Text.
+Text-Kit ist eine neue API, die leistungsstarke Text Layout- und Renderingaufgaben Features bietet. Es basiert auf niedriger Ebene Text des Core-Framework und ist viel einfacher zu verwenden als Core Text.
 
-Weitere Informationen finden Sie unter unsere [TextKit](~/ios/platform/textkit.md)
+Weitere Informationen finden Sie unserem [TextKit](~/ios/platform/textkit.md)
 
 ## <a name="multitasking"></a>Multitasking
 
-iOS 7 geändert wird, wann und wie die Verarbeitung im Hintergrund ausgeführt wird. Abschluss der Aufgabe in iOS 7 mehr behält Anwendungen als aktiv, wenn Aufgaben im Hintergrund ausgeführt werden, und Anwendungen für die hintergrundverarbeitung in einem nicht zusammenhängenden Bereich reaktiviert werden. iOS 7 fügt auch drei neue APIs für das Aktualisieren von Anwendungen mit neuem Inhalt im Hintergrund hinzu:
+iOS 7 ändert, wann und wie die Verarbeitung im Hintergrund ausgeführt wird. Abschluss der Aufgabe in iOS 7 nicht mehr werden Anwendungen aktiv beibehalten, wenn die Aufgaben im Hintergrund ausgeführt werden, und Anwendungen für die hintergrundverarbeitung, die in einem nicht zusammenhängenden Bereich aktiviert werden. iOS 7 fügt außerdem drei neue APIs zum Aktualisieren von Anwendungen mit neuem Inhalt im Hintergrund hinzu:
 
--  Abrufen im Hintergrund – ermöglicht es Anwendungen, Inhalte im Hintergrund in regelmäßigen Abständen zu aktualisieren.
--  Remote-Benachrichtigungen - ermöglicht es Anwendungen, die Inhalt zu aktualisieren, wenn Sie eine Pushbenachrichtigung zu empfangen. Die Benachrichtigungen kann eine automatische oder ein Banner auf dem Sperrbildschirm anzeigen.
--  Hintergrundübertragungsdienst – ermöglicht das Hochladen und Herunterladen von Daten, z. B. große Dateien, eine feste Zeit unbegrenzt.
+-  Abrufen im Hintergrund – ermöglicht es Anwendungen, um Inhalt im Hintergrund in regelmäßigen Abständen zu aktualisieren.
+-  Remotebenachrichtigungen - ermöglicht es Anwendungen, um Inhalt zu aktualisieren, wenn Sie eine Pushbenachrichtigung empfangen. Die Benachrichtigungen können es sich entweder automatische oder ein Banner auf dem Sperrbildschirm anzeigen.
+-  Hintergrundübertragungsdienst – ermöglicht das Hochladen und Herunterladen von Daten, z. B. große Dateien, ohne eines festen Zeitraums.
 
 
-Weitere Informationen zu den neuen Funktionen für Multitasking finden Sie unter den iOS-Abschnitten von der Xamarin [Backgrounding Handbuch](~/ios/app-fundamentals/backgrounding/index.md).
+Weitere Informationen zu den neuen Multitasking-Funktionen finden Sie unter den iOS-Abschnitten der Xamarin [Hintergrundverarbeitung Handbuch](~/ios/app-fundamentals/backgrounding/index.md).
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel behandelt einige wichtige neue Mitglieder für iOS an. Zuerst wird gezeigt, wie benutzerdefinierte Übergänge View-Controller hinzugefügt werden. Anschließend wird gezeigt, wie Übergänge in Auflistungsansichten, sowohl von innerhalb eines Controllers Navigation sowie zwischen Auflistungsansichten interaktiv verwendet werden. Als Nächstes stellt mehrere Erweiterungen UIView Animationen anzeigen, wie Anwendungen UIKit Dinge verwenden, die zuvor direkten Programmierens mit Core Animation erforderlich. Schließlich wird die neue UIKit Dynamics-API, die ein Modul physikalische UIKit Skriptentwicklern bereitstellt, zusammen mit der rich-Text-Unterstützung jetzt verfügbar in Text Kit Framework eingeführt.
+Dieser Artikel behandelt einige wichtige neue iOS-Erweiterungen. Zuerst wird gezeigt, wie View Controller benutzerdefinierte Übergänge hinzugefügt werden. Anschließend wird gezeigt, wie Übergänge in der Auflistung, sowohl aus, die Sie in einen navigationscontroller sowie interaktiv zwischen Auflistungsansichten verwendet werden kann. Als Nächstes wird es verschiedene Verbesserungen UIView-Animationen, die zeigt, wie Anwendungen UIKit für Dinge verwenden, die zuvor direkten Programmierens mit Core Animation erforderlich. Schließlich wird die neue UIKit Dynamics-API, die eine Physik-Engine in UIKit zu einführt, zusammen mit der rich-Text-Unterstützung, die jetzt in das Text-Kit-Framework verfügbar eingeführt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Einführung in die iOS 7 (Beispiel)](https://developer.xamarin.com/samples/monotouch/IntroToiOS7)
+- [Einführung in iOS 7 (Beispiel)](https://developer.xamarin.com/samples/monotouch/IntroToiOS7)
 - [Übersicht über die iOS 7-Benutzeroberfläche](~/ios/platform/introduction-to-ios7/ios7-ui.md)
 - [Hintergrundverarbeitung](~/ios/app-fundamentals/backgrounding/index.md)

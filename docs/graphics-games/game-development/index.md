@@ -1,149 +1,149 @@
 ---
-title: Einführung in die 3D-Spielentwicklung mit Xamarin
-description: Dieses Dokument enthält einen allgemeinen Überblick 3D-Spielentwicklung mit Xamarin, die beschreiben, wie Spiele vorgenommen werden und eine Stichprobe von Technologien für die Verwendung mit Xamarin.iOS und Xamarin.Android.
+title: Einführung in die Entwicklung von Spielen mit Xamarin
+description: Dieses Dokument enthält einen allgemeinen Überblick über die Entwicklung von Spielen mithilfe von Xamarin, beschreibt, wie Spiele vorgenommen werden und eine Stichprobe der Technologien für die Verwendung mit Xamarin.iOS und Xamarin.Android zur Verfügung stehen.
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: b1bd6d011cdc10352ce3b9258da7e16c2899d2d8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: d6e9fd03025e00da5cff5ed284bdc5f0f268a22b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783915"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122607"
 ---
-# <a name="introduction-to-game-development-with-xamarin"></a>Einführung in die 3D-Spielentwicklung mit Xamarin
+# <a name="introduction-to-game-development-with-xamarin"></a>Einführung in die Entwicklung von Spielen mit Xamarin
 
-Entwickeln von Spielen kann sehr spannend insbesondere angegeben, wie einfach es sein kann, um Ihre Arbeit auf mobilen Plattformen zu veröffentlichen. Dieser Artikel erläutert die Konzepte, und Technologien, die im Zusammenhang mit der Entwicklung, die Ihnen helfen erstellen Spiele, Ihr Ziel ist, um ein qualitativ hochwertiges AAA Spiel oder auf eine Anwendung für Fun zu erstellen.
+Entwickeln von Spielen kann sehr aufregend insbesondere in Anbetracht wie einfach es sein kann, um Ihre Arbeit auf mobilen Plattformen zu veröffentlichen. In diesem Artikel erläutert die Begriffe aus, und Technologien, die im Zusammenhang mit der Entwicklung von Spielen, mit denen Sie erstellen Spiele, ob das Ziel ist es, um eine qualitativ hochwertige AAA Spiel oder eine so zum Spaß-Programm zu erstellen.
 
 In diesem Artikel werden die folgenden Themen behandelt:
 
-- **Im Vergleich zu nicht-Spiel Programmierkonzepte Spiel** – Artikelserie einige Konzepte, die entweder für 3D-Spielentwicklung, eindeutig oder gemeinsam mit anderen Typen von Entwicklung jedoch verdienen Schwerpunkt hier aufgrund ihrer Wichtigkeit.
-- **Spiel Entwicklungsteam** – in diesem Abschnitt untersucht die verschiedenen Rollen in einem Team von Entwicklern Spiel.
-- **Erstellen eine Spiele Idee** – in diesem Abschnitt können Sie eine neue game Idee Erstellen – der erste Schritt darin, ein neues Spiel.
-- **Game Development Technologie** – wir müssen hier sind einige der plattformübergreifenden Technologien zur Verfügung, die Ihre Produktivität als Spiel Entwickler verbessert werden können.
+- **Spiel im Vergleich zu nicht-Game-Programmierkonzepte** – lernen wir einige Konzepte, die entweder nur für die Entwicklung von Spielen, oder Sie freigegeben wurden andere Entwicklungsszenarien einsetzen, aber verdienen Schwerpunkt hier aufgrund ihrer Wichtigkeit.
+- **Entwicklung von Spielen Team** – dieser Abschnitt befasst sich mit den verschiedenen Rollen in einem Team von Spielentwickler dar.
+- **Erstellen eine spielidee in Angriff** – in diesem Abschnitt können Sie eine neue spielidee in Angriff zu erstellen – der erste Schritt bei der Erstellung eines neuen Spiels.
+- **Spielen entwicklungstechnologie** – hier führen wir einige der plattformübergreifenden Technologien zur Verfügung, die Ihre Produktivität als Entwickler von Spielen verbessern können.
 
 
-# <a name="game-vs-non-game-programming-concepts"></a>Spiel im Vergleich zu Programmierkonzepte für die nicht-Spiel
+# <a name="game-vs-non-game-programming-concepts"></a>Spiel im Vergleich zu Nicht-Game-Programmierkonzepte
 
-Programmierer in 3D-Spielentwicklung verschoben werden häufig mit neuen Konzepte und Entwicklungsmustern konfrontiert. In diesem Abschnitt werden eine allgemeine Ansicht der einige dieser Konzepte.
+Programmierer, die in der Entwicklung von Spielen verschoben werden häufig mit neuen Konzepte und den Entwicklungsmustern konfrontiert. In diesem Abschnitt werden eine allgemeine Ansicht der einige dieser Konzepte.
 
 
-## <a name="the-game-loop"></a>Das Spiel Schleife
+## <a name="the-game-loop"></a>Die Spielschleife
 
-Ein typisches Spiel erfordert Konstante verschieben oder ändern Sie auf dem Bildschirm als Antwort auf eine Benutzerinteraktion und automatische Spiellogik Fall zu sein. Dies erfolgt über die in der Regel als "" bezeichnet wird eine *Spiel Schleife*. Eine Spiele Schleife ist eine Art von Schleifen-Anweisung (z. B. einer While-Schleife) die mit einer sehr hohe Frequenz, z. B. 30 oder 60 *Frames pro Sekunde*.
+Ein normales Spiel erfordert Konstante verschieben oder ändern, sodass Sie auf dem Bildschirm als Reaktion auf Benutzerinteraktion und automatische Spiellogik sowohl passiert. Hierzu wird in der Regel als bezeichnet ein *spielschleife*. Eine Spiele-Schleife ist eine Art von Schleife Anweisung (z. B. eine While-Schleife), die sehr häufig, z. B. 30 oder 60 ausgeführt wird *Frames pro Sekunde*.
 
-Im folgenden finden ein Diagramm einer einfachen Spiel Schleife:
+Im folgenden finden ein Diagramm einer einfachen Spiel-Schleife:
 
-![](images/image1.png "Dies ist ein Diagramm einer einfachen game-Schleife")
+![](images/image1.png "Dies ist ein Diagramm einer einfachen Spiel-Schleife")
 
-Die Technologien, die im folgenden erörtert werden der tatsächliche While-Schleife Abstraktion, jedoch trotz diese Abstraktion wird das Konzept von jedem Frame Updates vorhanden sein.
+Die Technologien, die im folgenden erläutert werden der tatsächliche While-Schleife abstrahieren, aber trotz dieser Abstraktion wird das Konzept der every-Frame-Updates vorhanden sein.
 
-Codeleistung kann sogar ganz einfach gesagt Spiele Vorrang. Zum Beispiel: eine Funktion, die auszuführende 10 Millisekunden dauert möglicherweise einen erheblichen Einfluss auf die Leistung eines Spiels – insbesondere dann, wenn sie mehr als einmal pro Frame aufgerufen wird. Wenn ein Spiel mit 30 Frames pro ausgeführt wird also Zweitens klicken Sie dann, dass jeder Rahmen in unter 33 Millisekunden ausgeführt werden muss. Im Gegensatz dazu, eine solche Funktion selbst möglicherweise nicht erkennbar, wenn sie nur als Reaktion auf eine Schaltfläche klicken Sie in einer nicht-Game-Anwendung ausgeführt wird.
+Leistung von Code kann auch ganz einfach Spiele Vorrang. Zum Beispiel: eine Funktion, die dauert 10 Millisekunden zum ausführen kann einen erheblichen Einfluss auf die Leistung für ein Spiel – haben, insbesondere dann, wenn sie mehr als einmal pro Frame aufgerufen wird. Wenn Ihr Spiel mit 30 Frames pro läuft bedeutet dies Zweitens klicken Sie dann, dass jeder Frame in unter 33 Millisekunden ausgeführt werden muss. Im Gegensatz dazu kann eine solche Funktion nicht einmal bemerkt werden, wenn sie nur als Reaktion auf einen Klick auf die in einer nicht-Game-Anwendung ausführt.
 
-Häufig verwendete Typen von Logik, die möglicherweise ausgeführten jeden-Frame gehören:
+Allgemeine Logik, die möglicherweise ausgeführten every-Frame gehören:
 
-- **Eingabe lesen** – das Spiel möglicherweise überprüfen, ob der Benutzer mit dem Spiel durch Überprüfen der Eingabe Hardware, z. B. die Touchscreen, Tastatur, Maus oder Gamecontroller interagiert hat.
-- **Verschieben von** – welche Verschieben von einem zentralen Ort zu einem anderen wird in der Regel eine sehr kleine verschieben Objekte Betrag jeder Frame, um den Eindruck flüssigen Bewegung zu gewähren.
-- **Kollisionen** – viele Spiele erfordern häufig testen gibt an, ob verschiedene Objekte sich überschneidenden oder werden überlappende. Kollisionen in einem späteren Abschnitt in diesem Artikel ausführlicher beschrieben. Verschieben und Konflikte möglicherweise von einem dedizierten physikalische Simulation System behandelt werden.
-- **Prüfung von Game spezifische Bedingungen** – der Status eines Spiels kann gesteuert werden, indem bestimmte Bedingungen wie z. B., ob der Spieler erworben hat, ausreichende Anzahl von Punkten oder gibt an, ob der vorgesehenen Zeit ausgeführt wurde, aus.
+- **Lesen von Eingabe** – das Spiel zu überprüfen, ob der Benutzer das Spiel interagiert hat, durch Eingabe Hardware, wie z. B. den Touchscreen, Tastatur, Maus oder Gamecontroller aktivieren müssen.
+- **Datenverschiebung** – Objekte, die die Verschiebung von einem zentralen Ort zu einem anderen in der Regel eine sehr kleine wechselt Betrag jedes Bild, um die Illusion von fließend während der Übertragung zu vermitteln.
+- **Konflikt** – viele Spiele erfordern häufig testen, ob verschiedene Objekte sich überschneidenden überlappende oder werden. Kollisionen in einem späteren Abschnitt in diesem Artikel ausführlicher erläutern. Verschieben und Konflikte können von einem dedizierten Physik Simulation System behandelt werden.
+- **Prüfung von spezifischen Bedingungen** – der Status für ein Spiel kann gesteuert werden, indem bestimmten Bedingungen wie z. B., ob der Spieler erhalten hat, ausreichende Anzahl von Punkten oder, ob der vorgesehenen Zeit ausgeführt wurde, sich.
 - **AI-Verhalten** – jeder Frame-Logik, die verwendet werden kann, das Verhalten von Objekten zu steuern, die nicht von den Player verwenden, z. B. die patrolling ein Gegner oder die Übertragung der protokollsicherungsdaten Gegner Treiber um eine Oval kontrolliert werden.
-- **Rendern von** – die meisten Spiele aktualisiert die Anzeige auf Bildschirm jeder Frame. Dies kann in Reaktion auf Änderungen, die Auswirkungen auf Spiels (z. B. ein Zeichen, die über eine Ebene verschieben) oder einfach um visual Polnisch (z. B. Abnehmend Schneefall oder animierte Symbole) bereitzustellen.
+- **Rendern von** – die meisten Spiele aktualisiert die Anzeige Bildschirm auf jedem Frame. Dies kann erfolgen, als Reaktion auf Änderungen, die Auswirkungen auf Spiels (z. B. ein Zeichen, die eine Ebene durchsuchen) oder einfach bereitzustellenden visuellen Ausgereiftheit (z. B. fallender Schnee oder animierter Symbole).
 
-Sollten Sie bedenken, dass viele der oben aufgeführten Aktivitäten den Status der gesamten Anwendung ändern können, während viele nicht-Game-apps sind tendenziell Statuswechsel als Antwort auf Ereignisse, die ausgelöst wird.
+Sollten Sie bedenken, dass viele der oben aufgeführten Aktivitäten den Status der in der gesamten Anwendung ändern können, während viele nicht-Game-apps weisen tendenziell statusänderung als Reaktion auf Ereignisse, die ausgelöst wird.
 
 
 ## <a name="content-loading-and-unloading"></a>Inhalt laden und entladen
 
-Manuell laden und Entladen (oder disposing) Inhalt kann erforderlich sein, je nachdem welche Technologie Sie bei der Entwicklung verwenden. Manuell laden und Entladen von Ressourcen können eine Reihe von Gründen erforderlich sein:
+Manuell laden und Entladen (oder freigegeben) Inhalt kann erforderlich sein, je nachdem welche Technologie Sie bei der Entwicklung verwenden. Manuell laden und Entladen von Ressourcen können eine Reihe von Gründen erforderlich sein:
 
- - Bestand können viel Zeit in Bezug auf die Länge eines einzelnen Frames laden dauern. Einige Objekte dauert sogar Sekunden zu laden, die eine schwerwiegende Beschädigung die Erfahrung stören würde, wenn mid Spielverlauf geladen. Wenn die Ladezeit besonders lange (z. B. mehr als ein oder zwei Sekunden) ist Sie möglicherweise eine animierte anzeigen möchten Bildschirm oder die Bearbeitung zu laden.
- - Medienobjekte können viel RAM erfordern active Verwaltung von was geladen wird, entsprechend innerhalb von Zielplattformen für das Spiel bereitgestellt werden.
- - Spiele müssen möglicherweise mehr Ressourcen als im Arbeitsspeicher passen anzuzeigen. "Öffnen Sie World" Spiele gehören häufig große Umgebungen, die der Spieler nahtlos navigieren können – also keine laden Bildschirme mit. In diesem Fall müssen Sie zum Erstellen einer benutzerdefinierten System für Streaminginhalte im und Verwalten von speicherauslastung.
+ - Ressourcen dauert sehr viel Zeit in Bezug auf die Länge eines einzelnen Frames zu laden. Einige Ressourcen dauert sogar Sekunden zum Laden, die die Oberfläche erheblich stören würde, wenn mid Gameplay geladen. Wenn die Ladezeit sehr lange (z. B. mehr als ein oder zwei Sekunden) ist Sie möglicherweise einen animierten anzeigen möchten Bildschirm oder die Bearbeitung geladen.
+ - Assets können viel Arbeitsspeicher, die eine aktive Verwaltung von was geladen wird, entsprechend der in die vom des Spiels Zielplattformen bereitgestellten erfordern nutzen.
+ - Spiele müssen möglicherweise mehr Ressourcen als in den Arbeitsspeicher passen anzuzeigen. "Open World" Spiele enthalten häufig große Umgebungen, die der Spieler können nahtlos durch Navigieren –, die keine Bildschirme geladen ist. In diesem Fall müssen Sie zum Erstellen eines benutzerdefinierten System für die streaming-Inhalten in und zum Verwalten von speicherauslastung.
 
-Benutzerdefinierte Dateiformate möglicherweise Verarbeitung zur Ladezeit, jeglichen Code benutzerdefiniert zu laden.
+Benutzerdefinierte Dateiformate möglicherweise Verarbeitung zur Ladezeit benutzerdefinierte Laden Code erfordern.
 
 
 ## <a name="math"></a>Mathematik
 
-Viele Spiele erfordern erweiterte Mathematik als nicht-Game-Anwendungen. Die Komplexität des Spiels natürlich abhängig das Maß an mathematische. Im Allgemeinen erfordern 3D-Spielen Weitere mathematische als 2D. Glücklicherweise können immer Einstieg einfache Spiele und erfahren Sie, wie Sie fortfahren. 3D-Spielentwicklung Anzeigename kann eine hervorragende Möglichkeit, um zu erfahren, Mathematik sein.
+Viele Spiele erfordern mehr Mathematik als nicht-Game-Anwendungen. Die Ebene der mathematischen hängt natürlich die Komplexität des Spiels. Im Allgemeinen benötigt 3D-Spiele Weitere mathematische als 2D. Zum Glück Sie immer Einstieg in einfache Spiele und erfahren Sie, wie Sie fortfahren. Entwicklung von Spielen kann es sich um eine hervorragende Möglichkeit, erfahren, Mathematik sein!
 
-Wenn Sie mit der kartesischen Ebene – vertraut sind, die verwendet X und Y-Koordinaten um Objekte zu positionieren, und Sie genug Informationen zum Einstieg in die Entwicklung von. Das folgende Beispiel zeigt eine kartesischen Ebene mit steigender positive Y-verweist:
+Wenn Sie mit der kartesischen Ebene – vertraut sind, die verwendet X und Y-Koordinaten um Objekte zu positionieren, dann wissen Sie genug, um den ersten Schritten mit der Entwicklung von Spielen. Das folgende Beispiel zeigt eine kartesischen Ebene mit nach oben positive Y-verweisen:
 
-![](images/image2.png "Dies zeigt eine kartesischen Ebene mit steigender positive Y-verweist")
+![](images/image2.png "Dadurch wird eine kartesischen Ebene mit nach oben positive Y-verweisen")
 
 > [!IMPORTANT]
-> Einige Datenbankmodule-APIs verwenden ein Koordinatensystems, in denen wird ein Objekt Y-Wert erhöhen es nach unten, verschieben, während andere Systeme einem Koordinatensystem, wobei positive Y verwenden einrichten. Beachten Sie dies, wenn Sie zwischen Systemen verschoben werden.
-Trigonometrische Funktionen (z. B. Sinus- und Kosinuswert) werden häufig in 2D Spiele verwendet, die keiner Form eines Drehung implementieren.
+> Einige Engines/APIs verwenden ein Koordinatensystem, in dem Y-Werts eines Objekts zu erhöhen sie nach unten, wechselt während andere Systeme auf einem Koordinatensystem verwenden, in denen positive Y aktiv ist. Beachten Sie, dass wenn Sie zwischen Systemen.
+Trigonometrische Funktionen (z. B. Sinus und Kosinus) werden häufig in 2D-Spiele verwendet, die jede Art von Rotation zu implementieren.
 
 
 
-Wenn Sie beabsichtigen, zu der ein 3D Spiel vornehmen, müssen Sie wahrscheinlich von lineare Algebra (zur Bandrotation und die Verschiebung im 3D-Bereich) als auch einige Analysis (für die Implementierung Acceleration) mit Konzepten vertraut sein.
+Wenn Sie beabsichtigen, für das Erstellen eines 3D-Spiels wahrscheinlich müssen Sie mit den Konzepten von lineare Algebra (für Rotation und Verschieben von Daten in 3D-Bereich) sowie einige berechnen (für die Implementierung von Acceleration) vertraut sein.
 
 
-## <a name="content-pipelines"></a>Content-Pipelines
+## <a name="content-pipelines"></a>Inhaltspipelines
 
-Der Begriff *Content Pipeline* bezieht sich auf den Prozess, der eine Datei verwendet wird, aus dem Format (z. B. eine PNG-Bilddatei) beim Abrufen in das endgültige Format bei Verwendung in ein Spiel. Das letzte Format hängt ab, auf dem Typ des Inhalts verwendet wird sowie die Technologie verwendet wird, um den Inhalt darstellen.
+Der Begriff *Pipeline für Bildinhalte* bezieht sich auf den Prozess, der eine Datei verwendet, um aus dem Format, die beim Erstellen von (z. B. eine PNG-Bilddatei) zu erhalten, in das endgültige Format, wenn in einem Spiel verwendet. Das abschließende Format hängt ab, auf dem Typ des Inhalts verwendet wird sowie die Technologie verwendet wird, um den Inhalt darstellen.
 
-Einige Inhalte Pipelines sind sehr schnell und erfordern keine manuellen Aufwand. Beispielsweise können die meisten Spiel Module und APIs das PNG-Dateiformat in seiner unverarbeiteten Format geladen werden. Andererseits, müssen möglicherweise etwas komplizierteren Formate (z. B. 3D-Modelle) in ein anderes Format verarbeitet werden, bevor Sie geladen wird, und diese Verarbeitung kann je nach Größe und Komplexität des Medienobjekts einige Zeit dauern.
-
-
-# <a name="game-development-teams"></a>Spiel Entwicklungsteams
-
-3D-Spielentwicklung führt neue Rollen und Titel für Einzelpersonen, die in den Prozess einbezogen. Die meisten Entwickler können nicht zum Erfüllen der Breite Palette an maßgeblichen Qualifikationen für eine vollständige Spiel freigeben, damit eine Anzahl von Disziplinen vorhanden. Bedenken Sie, dass dies eine vollständige Liste der Bereiche der Entwicklung – nur einige der häufigeren nicht ist.
-
-- **Programmierer** – die meisten Personen, die in diesem Artikel wird fallen in diese Kategorie zu lesen. Die Rolle der Programmierer in 3D-Spielentwicklung ähnelt ein Programmierer-Rolle in einer Anwendung nicht Spiel. Aufgaben zählen das Schreiben von Logik, um den Ablauf eines Spiels, Entwickeln von Systemen für allgemeine Aufgaben im Kontext eines bestimmten Projekts, hinzufügen und Anzeigen des Inhalts und des Kurses Beheben von Fehlern zu steuern.
-- **2D Interpreten** – 2D Künstler sind verantwortlich für das Erstellen von *2D Bestand*. Dazu gehören Bilddateien, für des Spiels GUI, Partikel, Umgebungen und Zeichen. Wenn das Spiel, das Sie entwickeln 3D ist, können 2D Künstler nicht verantwortlich für Umgebungen und Zeichen sein. Finden Sie kostenlose ClipArt für das Spiel am [ http://opengameart.org/ ](http://opengameart.org/) .
-- **3D Künstler** – 3D Künstler sind verantwortlich für das Erstellen von *3D Bestand*. Dazu gehören 3D-Modelle für Umgebungen, die Zeichen und Eigenschaftendateien enthalten (Möbel Pflanzen und andere unbelebte Objekte). Einige Teams unterscheiden zwischen 3D Künstler und 3D-Animatoren abhängig von der Größe des Teams. Sie finden die kostenlose 3D Grafiken für das Spiel am [ http://opengameart.org/ ](http://opengameart.org/) .
-- **Spiel Designer** – Spiel Designer sind dafür verantwortlich zu definieren, wie das Spiel wiedergegeben wird. Dies kann auf hoher Ebene Entscheidungen wie z. B. die Einstellung für das Spiel, das Ziel des Spiels und Fortschritt von ein Player über das Spiel einschließen. Spiel-Designer können auch Koeffizienten für Bewegung oder Ebene USV definieren und Entwerfen Ebene Layouts sehr detaillierte Entscheidungen dienen, z. B. Zuordnung Eingabe für Aktionen, beteiligt sein. Beachten Sie, dass der Begriff *Designer* bezieht sich möglicherweise auf ein Spiel oder eine visual-Designer, je nach Kontext.
-- **Sound Designer** – Sound Designer sind verantwortlich für ein Spiel-audio-Objekte. Einige Teams möglicherweise zwischen Personen, die verantwortlich für das Erstellen von Soundeffekten und Komponisten, während kleinere Teams eine Einzelperson verantwortlich für alle Audio möglicherweise unterscheiden.
+Einige inhaltspipelines können sehr schnell sein und keinen manuellen Aufwand erfordern. Beispielsweise können die meisten Spiele-Engines und APIs das PNG-Dateiformat in das nicht verarbeitete Format geladen werden. Auf der anderen Seite möglicherweise mehr komplizierte Formate (z. B.-3D-Modelle) in ein anderes Format verarbeitet werden, bevor Sie geladen wird, und diese Verarbeitung kann je nach Größe und Komplexität des Medienobjekts einige Zeit dauern.
 
 
-# <a name="creating-a-game-idea"></a>Erstellen eine Spiele Idee
+# <a name="game-development-teams"></a>Entwicklung von Spielen-Teams
 
-Entwerfen ein Spiel möglicherweise erleichtert, – nachdem alle die einzige Anforderung ist "etwas Arbeitserleichterung stellen." Leider finden Sie viele Entwickler selbst zu einem Verlust bei der Erstellung eine Vorstellung von der Entwicklung zu starten.
+Entwicklung von Spielen führt neue Rollen und Titel für Einzelpersonen, die der Prozess an. Die meisten Spiele-Entwickler sind nicht erfüllen die Vielzahl von Fähigkeiten erforderlich, um eine vollständige Spiel, freigeben, sodass der eine Anzahl von Disziplinen vorhanden. Bedenken Sie, dass es sich nicht um eine vollständige Liste der Bereiche der Entwicklung – nur einige der häufigeren handelt.
 
-Die Disziplin des Spiels Entwurf nicht problemlos erläutert und erfordert bewährt, ebenso wie die Art zu verbessern oder Programmierung ist, aber in diesem Abschnitt können Sie die nach-unten den Pfad zu starten.
-
-Neue Entwickler sollte klein gestartet werden. Es kann schwierig sein, die Versuchung, Neuerstellen ein großes, modernes Video-Spiels widerstehen können jedoch kleinere Spiele eine bessere Learning-Umgebung und schneller ausgeführt wird, mehr lohnende zu vereinfachen.
-
-Viele Spiele, die beide zum Lernen als auch für gewerbliche Spiele als Verbesserung oder Änderung einer vorhandenen Spiel beginnen. Eine Möglichkeit zum Generieren von Ideen ist am anderen Spielen für Inspiration gesucht werden soll. Beispielsweise können Sie erwägen, ein Spiel, die Sie persönlich gefällt, und versuchen Sie, welche Eigenschaften über das Spiel identifizieren Arbeitserleichterung stellen. Untersuchung von, beherrschen Mechanismen für das Spiel oder über eine Story hängen möglicherweise. Vergessen Sie nicht "retro" Spiele sowie bei der Suche nach neuen Ideen zu berücksichtigen.
-
-Ein weiteres Verfahren zum Generieren von neue Ideen wird zu einem bestimmten "Genre" z. B. Puzzlespiele, Strategiespiele oder Platformers berücksichtigen. "Genre" und vertraut dem Entwickler möglicherweise einen guten Ausgangspunkt bereit.
-
-Vorhandene Spiele erneut zu erstellen ist auch eine Bildungseinrichtung Erfahrung, obwohl dies das fertige Produkt kommerziellen Durchführbarkeit eingeschränkt werden kann. Das Verfahren zum Erstellen eines Spiels, sogar eines, das ein genau Klon ist bietet wertvolle Lernzwecken.
+- **Programmierer** – die meisten Personen, die in diesem Artikel wird fallen in diese Kategorie zu lesen. Die Rolle der Programmierer bei der Spielentwicklung ähnelt der Programmierer-Rolle in einer nicht-Game-Anwendung. Verantwortlich für das Schreiben von Logik zum Steuern des Datenflusses ein Spiel, das Entwickeln von Systemen für allgemeine Aufgaben im Kontext eines bestimmten Projekts, hinzufügen und Anzeigen von Inhalt und – natürlich – Beheben von Fehlern.
+- **2D Interpreten** – 2D Künstler sind verantwortlich für das Erstellen von *2D-Assets*. Dazu gehören die Bilddateien, für des Spiels GUI, Partikel, Umgebungen und Zeichen. Wenn das Spiel, das Sie entwickeln 3D ist, können 2D Künstler nicht für Umgebungen und Zeichen verantwortlich sein. Finden Sie kostenlose Art für Ihr Spiel auf [ http://opengameart.org/ ](http://opengameart.org/) .
+- **3D Künstler** – 3D Künstler sind verantwortlich für das Erstellen von *3D-Objekten*. Dazu gehören 3D-Modelle für Umgebungen, Zeichen und Eigenschaftendateien (Möbel, Pflanzen und andere Objekte einem Informationstechnologie-(IT-)Unternehmen). Einige Teams unterscheiden zwischen 3D Interpreten und 3D-Animatoren abhängig von der Größe des Teams. Finden Sie kostenlose 3D Art für Ihr Spiel auf [ http://opengameart.org/ ](http://opengameart.org/) .
+- **Spielen Sie Designer** – Spiele Designer sind dafür verantwortlich zu definieren, wie das Spiel gespielt wird. Dazu gehören allgemeine Entscheidungen wie z. B. die Einstellung des Spiels, das Gesamtziel des Spiels, und wie sich ein Spieler das Spiel durch, wechselt. Spiele-Designern können auch sehr detaillierte Entscheidungen wie z. B. die Zuordnung von Eingabe auf Aktionen, beteiligt sein, definieren die Koeffizienten für das Verschieben oder auf Sicherungen und den Entwurf von Level-Layout. Beachten Sie, dass der Begriff *Designer* bezieht sich möglicherweise auf eine Spiele-Designer oder einem visuellen Designer je nach Kontext.
+- **Klingt Designer** – Sound Designer für eine audio spielobjekt verantwortlich sind. Einige Teams möglicherweise unterscheiden zwischen Personen, die verantwortlich für das Erstellen von Soundeffekte und Komponisten, während kleinere Teams eine einzelne Person, die für alle Audio verantwortlich sein können.
 
 
-# <a name="game-development-technology"></a>3D-Spielentwicklung-Technologie
+# <a name="creating-a-game-idea"></a>Erstellen eine Spielidee in Angriff
 
-Entwickler, die mit Xamarin.Android und Xamarin.iOS haben eine Vielzahl von Technologien, die Ihnen bei der Entwicklung zu unterstützen. In diesem Abschnitt werden einige der am häufigsten verwendeten plattformübergreifende Lösungen erläutert.
+Entwerfen eines Spiels scheint sich ganz einfach – schließlich die einzige Anforderung ist "etwas lustiges stellen". Leider viele Entwickler finden sich selbst mit Verlust bei Zeit, erstellen eine Vorstellung von der Entwicklung zu starten.
+
+Die Disziplin der game-Entwurf ist einfach nicht erklärt, und muss es sich, wie die Kunst zu verbessern oder Programmierung ist, aber in diesem Abschnitt können Sie den Pfad beginnen.
+
+Neue Entwickler sollte klein gestartet werden. Es kann schwierig sein, widerstehen die Versuchung, ein Videospiel große, moderne, Neuerstellen können jedoch kleinere spielen eine bessere Learning-Umgebung und das schneller durchgeführt wird, für eine weitere lohnende Erfahrung.
+
+Viele Spiele sowohl für learning als auch kommerzieller Spiele, als Verbesserung oder Änderung ein existierendes Spiel beginnen. Eine Möglichkeit, Ideen zu generieren ist anderen Spiele für Inspiration ansehen. Beispielsweise können Sie erwägen, dass ein Spiel, das Sie persönlich gefällt und versuchen Sie, welche Eigenschaften über die Ausführung des Spiels identifizieren Spaß machen. Es kann die Untersuchung, beherrschen des Spiels Mechanismen oder bis zu einer Story sein. Vergessen Sie nicht "retro" spielen auch bei der Suche nach neuen Ideen zu berücksichtigen.
+
+Ein weiteres Verfahren zum Generieren von neuen Ideen ist zu einem bestimmten Genre, wie z. B. Rätsel Spiele, Strategiespiele und sprungbewegungen zu berücksichtigen. Ein Genre vertraut sind, für den Entwickler möglicherweise einen guten Ausgangspunkt bereit.
+
+Die Neugestaltung der vorhandene Spiele ist auch eine Bildungseinrichtung-Erfahrung, obwohl dies dem Endprodukt kommerziellen Lebensfähigkeit eingeschränkt werden kann. Das Verfahren zum Erstellen eines Spiels, selbst eine wird eine genaue klonen, bietet es sich um eine wertvolle Bildungseinrichtungen Erfahrung.
+
+
+# <a name="game-development-technology"></a>Entwicklung von Spielen-Technologie
+
+Entwickler, die mit Xamarin.Android und Xamarin.iOS haben eine Vielzahl von Technologien, die ihnen bei der Entwicklung von Spielen zur Verfügung. In diesem Abschnitt werden einige der am häufigsten verwendeten plattformübergreifende Lösungen erläutert.
 
 
 ## <a name="cocossharp"></a>CocosSharp
 
-CocosSharp ist ein Open Source- und plattformübergreifender Version der Cocos 2D Spiel-Engine. Das Modul bietet Zugriff auf Android-, iOS-, Mac OS X, Windows-Desktop, Windows RT und Windows Phone.
+CocosSharp ist ein Open Source- und plattformübergreifende Version die Cocos-2D-Spiele-Engine. Die Engine bietet Zugriff auf Android-, iOS-, Mac OS X, Windows-Desktop, Windows RT und Windows Phone.
 
-CocosSharp konzentriert sich auf einfachen Programmierer API für die Entwicklung von 2D. Die Vergrößerung in mehrere Spieler auf mobilen Geräten hat dazu beigetragen, um die Beliebtheit der Entwicklung von 2D ausführenden CocosSharp geeignete Technologie für Hobbys und kommerziellen Projekten gleichermaßen reignite. Es wird als Quelle Code oder DLL-Dateien (die über NuGet abgerufen werden können) bereitgestellt, aber er bietet einen visuellen Editor nicht; Daher erfordert Interaktion mit dem Modul CocosSharp Kenntnisse in der Programmierung.
+CocosSharp konzentriert sich auf einfachen Programmierer API für die Entwicklung von 2D spielen. Das Wachstum der Spiele auf Mobilgeräten hat dazu beigetragen, um die Beliebtheit der Entwicklung von 2D spielen CocosSharp geeignete Technologie für Hobby und für kommerzielle Projekte, die gleichermaßen reignite. Es wird als Quelle Code oder DLL-Dateien (die über NuGet abgerufen werden können) bereitgestellt, aber es bietet einen visuellen Editor keine; aus diesem Grund erfordert Interaktion mit der CocosSharp-Engine Kenntnisse in der Programmierung.
 
-Um mit CocosSharp beginnen, sehen Sie sich unsere [CocosSharp Handbücher](~/graphics-games/cocossharp/index.md).
+Um den ersten Schritten mit CocosSharp sehen Sie sich unsere [CocosSharp-Handbücher](~/graphics-games/cocossharp/index.md).
 
-Das Spiel verärgerten Ninjas mit CocosSharp erstellt, und es kann ein guter Ausgangspunkt, wenn Sie für eine bereits ausgeführte Spiel für mehrere Plattformen suchen:
+Das Spiel verärgerter Ninjas mit CocosSharp erstellt, und es kann ein guter Ausgangspunkt sein, wenn Sie ein bereits ausgeführten-Spiel für mehrere Plattformen suchen:
 
-![](images/image3.png "Das Spiel verärgerten Ninjas wurde mit CocosSharp erstellt werden.")
+![](images/image3.png "Das Spiel erstellten verärgerter Ninjas mit CocosSharp")
 
-Sie können die Software hier herunterladen und erhalten Sie weitere Informationen zur den [AngryNinjas Github-Seite](https://github.com/xamarin/AngryNinjas).
+Sie können es herunterladen und erhalten Sie weitere Informationen unter den [AngryNinjas-Github-Seite](https://github.com/xamarin/AngryNinjas).
 
 
 ## <a name="monogame"></a>MonoGame
 
-MonoGame ist eine Open-Source cross-Platform-Version des Microsoft XNA-API. MonoGame kann verwendet werden, um Spiele für iOS, Android, Mac OS X, Linux, Windows, Windows RT und Windows Phone zu erstellen.
+MonoGame ist ein Open-Source, cross-Platform-Version von Microsoft XNA-API. MonoGame kann verwendet werden, um Spiele für iOS, Android, Mac OS X, Linux, Windows, Windows RT, PS4, PSVita, Xbox One und Switch zu erstellen.
 
-Im Gegensatz zu CocosSharp ist MonoGame, technisch keine Spiel-Engine, sondern vielmehr eine 3D-Spielentwicklung API. Dies bedeutet, dass die Arbeit mit MonoGame erfordert direkt Verwalten von game-Objekten, manuell Zeichnen von Objekten und gemeinsame Objekte wie z. B. Kameras implementieren und *Szene Diagramme* (die über-/ unterordnungshierarchie zwischen Spiel Objekten). Um den Unterschied zu verstehen, berücksichtigen Sie, dass CocosSharp auf MonoGame aufsetzt. MonoGame generalisiert Clientplattform-spezifische Technologie, wie z. B. Grafiken, Rendering und Audiodateien während CocosSharp Code zu organisieren und Implementieren von Spiellogik bereitstellt.
+Im Gegensatz zu CocosSharp ist MonoGame, technisch keine Spiele-Engine, sondern vielmehr eine Spieleentwicklung API. Dies bedeutet, dass die Arbeit mit MonoGame erfordert direkt Spielobjekte zu verwalten, manuell Zeichnen von Objekten und implementieren die allgemeine Objekte wie Kameras und *Szene Diagramme* (der über-/ unterordnungshierarchie zwischen Spielobjekte). Um den Unterschied zu verstehen, sollten erwägen Sie, dass CocosSharp zusätzlich MonoGame erstellt wird. MonoGame generalisiert einiger der Clientplattform-spezifische Technologie, wie Grafiken, Rendering und Audio, während CocosSharp Code zum Organisieren und Implementieren von Spiellogik bereitstellt.
 
-MonoGame bietet keine standard-visuelle Entwicklungsumgebung, damit die Arbeit mit MonoGame erfordert programmieren.
+MonoGame bietet keine standard-visuelle Entwicklungsumgebung, arbeiten mit MonoGame erforderlich, dass eine mit programmieren.
 
-Wichtige Beispiele für Spiele, die mit MonoGame:
+Wichtige Beispiele für Spiele mithilfe von MonoGame sind:
 
 FEZ:
 
@@ -153,32 +153,32 @@ Geschützte:
 
 ![](images/image8.jpg "Geschützte")
 
-Informationen zur unmittelbaren Verwendung mit MonoGame, rufen Sie über unsere [MonoGame Handbücher](~/graphics-games/monogame/index.md).
+Zum Arbeiten mit MonoGame, navigieren Sie zum unsere [MonoGame Handbücher](~/graphics-games/monogame/index.md).
 
 
 ## <a name="urhosharp"></a>UrhoSharp
 
-UrhoSharp ist eine plattformübergreifende auf hoher Ebene 3D und 2D Engine, die zum Erstellen der animierter 3D und 2D Szenen für Ihre Anwendungen mithilfe von Geometrien, Materialien, Leuchten und Kameras verwendet werden kann.
+Von UrhoSharp ist eine plattformübergreifende auf hoher Ebene 3D- und 2D-spielen-Engine, die zum Erstellen von animierten im Hintergrund, 2D und 3D für Ihre Anwendungen mit Geometrien, Materialien, Lichter und Kameras verwendet werden kann.
 
-![](images/urhosharp.gif "UrhoSharp ist eine plattformübergreifende auf hoher Ebene 3D und 2D, die mit der animierte 3D und 2D Szenen erstellt werden können")
+![](images/urhosharp.gif "Von UrhoSharp ist eine plattformübergreifende auf hoher Ebene 3D- und 2D-spielen-Engine, die verwendet werden kann, um animierte 3D- und 2D-spielen Szenen erstellen")
 
-Sehen Sie sich die [UrhoSharp Handbücher](~/graphics-games/urhosharp/index.md) um zu beginnen.
+Sehen Sie sich die [von UrhoSharp Handbücher](~/graphics-games/urhosharp/index.md) für den Einstieg.
 
 ## <a name="additional-technology"></a>Zusätzliche Technologie
 
-Die markierten Technologien ist nur ein Beispiel für den verfügbaren Technologien. Andere wichtigen Technologien zählen:
+Die oben hervorgehobenen Technologien ist nur ein Beispiel für die Technologien zur Verfügung stehen. Andere wichtigen Technologien gehören:
 
-- **Sprite Kit** – Xamarin bietet Unterstützung für Apple Sprite Kit Spiel Framework, die Sie Zugriff auf alle Funktionen der systemeigenen API gewährt. Da Sprite Kit Technologie, die von Apple erstellt ist, wird die enge Integration mit dem Rest des iOS-Ökosystem. Sprite Kit ist natürlich nicht plattformübergreifende auf Android-Geräten kann deshalb nicht verwendet werden. Weitere Informationen finden Sie unter Sprite Kit finden Sie in diesen Beitrag:  [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
-- **Szene Kit** – Xamarin bietet auch Unterstützung für Apple Szene Kit Framework implementieren 3D-Grafiken in iOS-apps zu vereinfachen. Szene Kit ist auch Technologie, die von Apple, bereitgestellt werden, sodass er die Integration und plattformspezifischen Hinweise für Sprite Kit oben genannten verfügt. Weitere Informationen zu Szene Kit finden Sie in diesen Beitrag: [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
-- **OpenTK –** OpenTK (die für das Öffnen Tool Kit steht) bietet auf niedriger Ebene OpenGL-Zugriff auf iOS und Apple Macintosh Hardware. Weitere Informationen zu OpenTK finden Sie unter der Hauptseite auf:  [http://www.opentk.com/](http://www.opentk.com/)
+- **Spritekit** : Xamarin bietet Unterstützung für Apple Spritekit game-Framework, das Sie Zugriff auf alle Funktionen der systemeigenen API erhalten. Spritekit-Technologie von Apple erstellt ist, bietet umfassende Integration in den Rest des iOS-Ökosystems. Spritekit ist natürlich nicht plattformübergreifende, damit es unter Android verwendet werden kann. Weitere Informationen zur Verwendung von Spritekit Siehe diesen Beitrag:  [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
+- **Szene Kit** : Xamarin bietet auch Unterstützung für Apple Szene Kit Framework vereinfacht die Implementierung von 3D-Grafiken in iOS-apps. Szene Kit ist auch die Technologie, die von Apple bereitgestellt werden, es gelten somit die Integration und plattformspezifischen Überlegungen für Spritekit erwähnt. Weitere Informationen zu Szene Kit Siehe diesen Beitrag: [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
+- **OpenTK –** OpenTK (die für das Öffnen Tool Kit steht) stellt Low-Level OpenGL-Zugriff auf iOS, Mac und Apple Hardware. Weitere Informationen zu OpenTK finden Sie unter der Hauptseite auf:  [http://www.opentk.com/](http://www.opentk.com/)
 
 
 # <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel behandelt die wichtigsten Konzepte der Entwicklung und enthält Informationen zu den ersten Schritten machen Ihr erste Spiel. Sobald Sie in diesem Artikel abgeschlossen haben, sind in den nächsten Schritten wählen Sie die Technologie und Einstieg durch unsere Reihe von Lernprogrammen, die in den entsprechenden Abschnitten oben genannten verknüpft.
+Dieser Artikel behandelt die wichtigsten Konzepte der Entwicklung von Spielen und erläutert, wie Sie beginnen, sodass Ihr erste Spiel. Nachdem Sie in diesem Artikel abgeschlossen haben, sind in den nächsten Schritten Ihre Technologie wählen und das Starten über unsere Reihe von Tutorials, die in den entsprechenden Abschnitten oben genannten verknüpft.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [CocosSharp-Handbücher](~/graphics-games/cocossharp/index.md)
 - [MonoGame-Handbücher](~/graphics-games/monogame/index.md)
-- [UrhoSharp-Handbücher](~/graphics-games/urhosharp/index.md)
+- [Von UrhoSharp-Handbücher](~/graphics-games/urhosharp/index.md)

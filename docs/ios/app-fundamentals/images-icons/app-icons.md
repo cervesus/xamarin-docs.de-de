@@ -4,15 +4,15 @@ description: 'Dieses Dokument beschreibt das Arbeiten mit verschiedenen Anwendun
 ms.prod: xamarin
 ms.assetid: B7791574-4A0F-4CB6-8C18-36D40B5C91EB
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/22/2017
-ms.openlocfilehash: cd67c564461721ade6f3eb269b461ddea5e2d2c4
-ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
+ms.openlocfilehash: ef8e694bc3c617774035ad5cf7902ca3f5b06813
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39276001"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118512"
 ---
 # <a name="application-icons-in-xamarinios"></a>Anwendungssymbole in Xamarin.iOS
 
@@ -109,7 +109,7 @@ Für Symbole, einem speziellen `AppIcon` Gruppe von Bildern hinzugefügt werden 
 
 Um einen Ressourcenkatalog verwenden zu können, führen Sie folgende Schritte aus:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Doppelklicken Sie auf die `Info.plist` Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
 2. Führen Sie einen Bildlauf nach unten, um die **-App-Symbole** Abschnitt.
@@ -126,7 +126,7 @@ Um einen Ressourcenkatalog verwenden zu können, führen Sie folgende Schritte a
 7. Klicken Sie auf die **öffnen** Schaltfläche, um das Bild in das Projekt einfügen, und legen Sie es in der Xcasset.
 8. Wiederholen Sie für alle Images, die erforderlich sind.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Doppelklicken Sie auf die **"Info.plist"** Datei die **Projektmappen-Explorer**:
 
@@ -155,7 +155,7 @@ Für eine vorhandene Xamarin.iOS-app, mit der `Info.plist` -Datei, um dessen Sym
 
 Führen Sie folgende Schritte aus:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Doppelklicken Sie auf die `Info.plist` Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
 2. Führen Sie einen Bildlauf nach unten, um die **-App-Symbole** Abschnitt.
@@ -166,7 +166,7 @@ Führen Sie folgende Schritte aus:
 
      ![](app-icons-images/migrate03.png "Legen Sie das Image AppIcons in die Assets.xcassets")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Doppelklicken Sie auf die `Info.plist` Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
 2. Klicken Sie auf dem iPhone Symbole-Abschnitt: 
@@ -187,7 +187,7 @@ Wenn Sie die Ad-hoc-Methode der Bereitstellung der app (entweder für Unternehme
 
 Um die iTunes-Grafik festzulegen, führen Sie Folgendes aus:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Doppelklicken Sie auf die `Info.plist` Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
 2. Scrollen Sie zu der **iTunes-Grafik** im Editor: 
@@ -196,7 +196,7 @@ Um die iTunes-Grafik festzulegen, führen Sie Folgendes aus:
 3. Bild fehlt, klicken Sie auf die Miniaturansicht im Editor, wählen Sie die Bilddatei für die gewünschte iTunes-Grafik aus das Dialogfeld "Datei öffnen" aus, und klicken Sie auf die **OK** Schaltfläche.
 4. Wiederholen Sie diesen Schritt, bis alle Images für die app erforderlichen angegeben wurden.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Doppelklicken Sie auf die `Info.plist` Datei die **Projektmappen-Explorer** um ihn zur Bearbeitung zu öffnen.
 

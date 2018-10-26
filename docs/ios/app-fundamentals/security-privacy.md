@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, Sicherheits- und Datenschutzfe
 ms.prod: xamarin
 ms.assetid: 718C8721-C359-4650-878A-D68E159A3F53
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 1a28bf394d29c09bfd264f03e0eea6c8b582f271
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 1c88a5c16dbe5559f0b551a97a27ebb893991187
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854752"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120501"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS-Features für Sicherheit und Datenschutz
 
@@ -72,7 +72,7 @@ Im folgenden Beispiel für den Zugriff auf HomeKit unter iOS 10 (und höher), di
 
 ![Ein Beispiel für Warnung NSHomeKitUsageDescription](security-privacy-images/info01.png "NSHomeKitUsageDescription ein Beispiel für Warnung")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Xamarin.iOS für Visual Studio derzeit nicht unterstützen die Bearbeitung der **"Info.plist"** datenschutzschlüssel über den Standard-iOS-manifest-Editor. Stattdessen müssen Sie mit dem generischen PList-Editor, also gehen Sie folgendermaßen vor:
 
@@ -90,7 +90,7 @@ Xamarin.iOS für Visual Studio derzeit nicht unterstützen die Bearbeitung der *
     ![Geben Sie eine Beschreibung](security-privacy-images/InfoPListSetValue.png "Geben Sie eine Beschreibung")
 7. Speichern Sie die Änderungen in der Datei.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Um die Datenschutz-Schlüssel festlegen, führen Sie folgende Schritte aus:
 

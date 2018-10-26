@@ -1,73 +1,73 @@
 ---
-title: Xamarin.Mac architecture
-description: Dieses Handbuch untersucht Xamarin.Mac und seine Beziehung zu Objective-C auf niedriger Ebene. Es wird erläutert, Konzepten wie der Kompilierung, Selektoren Registrierungsstellen, app-Start und den Generator.
+title: Xamarin.Mac-Architektur
+description: Dieses Handbuch beschreibt Xamarin.Mac und dessen Beziehung mit Objective-C auf niedriger Ebene. Es wird erläutert Konzepte, z. B. der Kompilierung, Selektoren, Registrierungsstellen, app-Start und des Generators.
 ms.prod: xamarin
 ms.assetid: 74D1FF57-4F2A-4646-8669-003DE99671D4
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/12/2017
-ms.openlocfilehash: d6d7557fed5ea0ca0719dcbddbda316340645320
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b51dd4f2a6bf0e3e5ec206953e60c264c70107a5
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30785555"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122282"
 ---
-# <a name="xamarinmac-architecture"></a>Xamarin.Mac architecture
+# <a name="xamarinmac-architecture"></a>Xamarin.Mac-Architektur
 
-_Dieses Handbuch untersucht Xamarin.Mac und seine Beziehung zu Objective-C auf niedriger Ebene. Es wird erläutert, Konzepten wie der Kompilierung, Selektoren Registrierungsstellen, app-Start und den Generator._
+_Dieses Handbuch beschreibt Xamarin.Mac und dessen Beziehung mit Objective-C auf niedriger Ebene. Es wird erläutert Konzepte, z. B. der Kompilierung, Selektoren, Registrierungsstellen, app-Start und des Generators._
 
 ## <a name="overview"></a>Übersicht
 
-Xamarin.Mac Anwendungen innerhalb der Mono-ausführungsumgebung ausgeführt, und verwenden die Xamarin Compiler auf Intermediate Language (IL) kompiliert, dies ist dann Just-in-Time (JIT) in nativen Code zur Laufzeit kompiliert. Dadurch wird Seite-an-Seite ausgeführt, mit der Objective-C-Laufzeit. Beide Laufzeitumgebungen auf einem UNIX-ähnlichen-Kernel, insbesondere XNU, ausführen und Verfügbarmachen von verschiedenen APIs für die es Entwicklern ermöglicht, den Zugriff auf die zugrunde liegenden systemeigenen oder verwalteten System Benutzercode.
+Xamarin.Mac-Anwendungen in die Mono-ausführungsumgebung ausgeführt, und der Compiler von Xamarin auf Intermediate Language (IL) kompiliert, dies ist dann Just-in-Time (JIT) kompiliert, die in systemeigenen Code zur Laufzeit verwenden. Dadurch wird Seite-an-Seite ausgeführt, mit der Objective-C-Laufzeit. Beide Umgebungen von Common Language Runtime auf einem UNIX-ähnlichen-Kernel, insbesondere XNU, ausgeführt und verfügbar machen verschiedene APIs für den Benutzercode und ermöglichen es Entwicklern den Zugriff auf die zugrunde liegenden systemeigenen oder verwalteten System.
 
 Das folgende Diagramm zeigt eine grundlegende Übersicht über diese Architektur:
 
-[![Eine grundlegende Übersicht über die Architektur für Diagramm](architecture-images/mac-arch.png "Diagramm eine grundlegende Übersicht über die Architektur")](architecture-images/mac-arch-large.png#lightbox)
+[![Das Diagramm zeigt eine grundlegende Übersicht über die Architektur](architecture-images/mac-arch.png "das Diagramm zeigt eine grundlegende Übersicht über die Architektur")](architecture-images/mac-arch-large.png#lightbox)
 
-### <a name="native-and-managed-code"></a>Systemeigenem und verwaltetem code
+### <a name="native-and-managed-code"></a>Nativem und verwaltetem code
 
-Bei der Entwicklung für Xamarin, die Begriffe *native* und *verwaltet* Code häufig verwendet werden. Verwalteter Code ist Code, der die Ausführung von .NET Framework Common Language Runtime oder in die Xamarin Groß-/Kleinschreibung verwaltet aufweist: die Mono-Laufzeit.
+Bei der Entwicklung für Xamarin, die Begriffe *native* und *verwaltet* Code werden häufig verwendet. Verwalteter Code ist Code, die die Ausführung von .NET Framework Common Language Runtime oder im Fall von Xamarin verwaltet: der Mono-Laufzeit.
 
-Systemeigener Code ist Code, der direkt auf die jeweilige Plattform (z. B. Objective-C oder sogar AOT kompilierten Code auf einem ARM-Chip) ausgeführt wird. Dieses Handbuch wird erklärt, wie verwaltete Code in systemeigenen Code kompiliert wird, und erläutert, wie eine Xamarin.Mac Anwendung funktioniert ausführenden Apple Macintosh-APIs durch die Verwendung von Bindungen, während Sie auch den Zugriff auf eine optimal nutzen. NET BCL und eine anspruchsvolle Sprache wie z. B. c#.
+Systemeigene Code ist Code, der auf die jeweilige Plattform (z. B. Objective-C oder sogar per AOT kompiliert Code auf einem ARM-Chip) nativ ausgeführt wird. Dieses Handbuch beschreibt wie der verwaltete Code in systemeigenen Code kompiliert wird, und erläutert, wie ein Xamarin.Mac-Anwendung funktioniert, voll ausgelastet Apple Mac-APIs durch die Verwendung von Bindungen, und gleichzeitig den Zugriff auf. NET BCL und eine ausgereifte Sprache wie z. B. C#.
 
 ## <a name="requirements"></a>Anforderungen
 
 Sie benötigen Folgendes, um eine macOS-Anwendung mit Xamarin.Mac zu erstellen:
 
-- Ein Mac ausgeführten MacOS Sierra (10.12) oder größer.
+- Ein Mac mit MacOS Sierra (10.12) oder höher.
 - Die neueste Version von Xcode (aus installiert die [App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12))
 - Die neueste Version von Xamarin.Mac und Visual Studio für Mac
 
 Für das Ausführen von mit Xamarin.Mac erstellten Mac-Anwendungen müssen die folgenden Systemanforderungen erfüllt werden:
 
-- Einem Mac, Mac OS X 10,7 oder höher ausgeführt.
+- Einen Mac, Mac OS X 10.7 oder höher ausführen.
 
 ## <a name="compilation"></a>Kompilierung
 
-Wenn Sie eine Xamarin-Plattform-Anwendung kompilieren, wird der Compiler Mono c# (oder f#) wird ausgeführt, und Ihrer c# und f#-Code in Microsoft Intermediate Language (MSIL oder IL) kompiliert. Xamarin.Mac verwendet dann eine *Just-in-Time (JIT)* Compiler zur Laufzeit zum Kompilieren von systemeigenem Code, ermöglicht die Ausführung auf die richtige Architektur nach Bedarf.
+Beim Kompilieren von alle Xamarin-Plattform-Anwendung, die Mono C# (oder F#) Compiler laufen und kompiliert Ihre C# und F# Code in Microsoft Intermediate Language (MSIL oder IL). Xamarin.Mac verwendet dann ein *Just-in-Time (JIT)* Compiler zur Laufzeit zum Kompilieren von nativem Code können die Ausführung auf die richtige Architektur, je nach Bedarf.
 
-Dies ist im Gegensatz zu Xamarin.iOS der AOT Kompilierung verwendet. Wenn den Compiler AOT verwenden zu können, werden alle Assemblys und alle Methoden in ihnen während des Buildvorgangs kompiliert. Mit JIT geschieht, Kompilierung bei Bedarf nur für die Methoden, die ausgeführt werden.
+Dies steht im Gegensatz zu Xamarin.iOS der AOT-Kompilierung verwendet. Wenn den AOT-Compiler zu verwenden, werden alle Assemblys und alle darin enthaltenen-Methoden zum Zeitpunkt der Erstellung kompiliert. Kompilierung wird mit JIT-Kompilierung bei Bedarf nur für die Methoden, die ausgeführt werden.
 
-Mit Xamarin.Mac-Anwendungen ist normalerweise Mono in der app-Bündel eingebettet (vorgelegt **eingebettete Mono**). Wenn Sie die klassische Xamarin.Mac-API verwenden, wird die Anwendung konnte stattdessen verwenden **System Mono**, jedoch wird dies nicht unterstützt, in der Unified-API. System Mono bezieht sich auf Mono, die im Betriebssystem installiert wurde. Beim Anwendungsstart verwenden die app Xamarin.Mac dies.
+Mit Xamarin.Mac-Anwendungen, Mono in der Regel in das app-Bündel eingebettet ist (bezeichnet als **eingebettete Mono**). Wenn Sie die klassische Xamarin.Mac-API zu verwenden, wird die Anwendung könnte stattdessen verwenden **System Mono**, jedoch wird dies nicht unterstützt, in der Unified API. System Mono bezieht sich auf Mono, die im Betriebssystem installiert wurde. Anwendung starten werden die Xamarin.Mac-app verwenden.
 
 ## <a name="selectors"></a>Selektoren
 
-Xamarin, haben wir zwei separate Ökosysteme .NET und Apple, die wir benötigen zusammen, um scheint als optimierte wie möglich sein, um sicherzustellen, dass das Ziel eine reibungslose benutzererfahrung. Wir haben gesehen, im Abschnitt über die zwei Laufzeiten wie kommunizieren, und Sie möglicherweise sehr gut kenne des Begriffs "Bindungen" aus der systemeigenen Mac-APIs in Xamarin verwendet werden kann. Bindungen werden ausführlich im erläutert die [Objective-C-Bindung Dokumentation](~/mac/platform/binding.md), sodass jetzt untersuchen wir die Funktionsweise von Xamarin.Mac hinter den Kulissen.
+Mit Xamarin, haben wir zwei separate Ökosysteme, .NET und Apple, die wir benötigen Sie zusammen, um wie möglich sein, um sicherzustellen, dass das Endziel ein nahtloses Benutzererlebnis ist als optimierte erscheinen. Wir haben gesehen, im Abschnitt über die zwei Laufzeiten wie kommunizieren, und Sie sehr gut haben gehört des Begriffs "Bindungen", wodurch die native Mac-APIs, die in Xamarin verwendet werden. Bindungen werden ausführlich im erläutert die [Objective-C-Bindung Dokumentation](~/mac/platform/binding.md), sodass Sie jetzt sehen Sie die Funktionsweise von Xamarin.Mac im Hintergrund.
 
-Es muss zuerst eine Herangehensweise an Objective-C zu C#-, verfügbar macht, die über Selektoren vorgenommen wird. Ein Selektor ist eine Nachricht, die auf ein Objekt oder eine Klasse gesendet wird. Mit Objective-C erfolgt dies über die [Objc_msgSend](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html) Funktionen. Weitere Informationen zur Verwendung von Selektoren, finden Sie in der iOS [Objective-C-Selektoren](~/ios/internals/objective-c-selectors.md) Handbuch. Es muss außerdem eine Herangehensweise an das Verfügbarmachen von verwalteten Codes für Objective-C, die ist komplizierter, Objective-C nichts über den verwalteten Code nicht bekannt ist. Um dies zu umgehen, verwenden wir eine [Registrierungsstelle](~/mac/internals/registrar.md). Dadurch werden ausführlicher im nächsten Abschnitt.
+Zuerst, es muss eine Möglichkeit zum Bereitstellen von Objective-C nach C#, das erfolgt über Selektoren. Auswahl wird eine Meldung, die an ein Objekt oder eine Klasse gesendet wird. Mit Objective-C erfolgt dies über die [Objc_msgSend](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html) Funktionen. Weitere Informationen zur Verwendung von Selektoren finden Sie in der iOS [Objective-C-Selektoren](~/ios/internals/objective-c-selectors.md) Guide. Es verfügt außerdem über eine Möglichkeit, verfügbar zu machen verwalteten Code mit Objective-C, die ist komplizierter, aufgrund der Tatsache, dass Objective-C nichts über den verwalteten Code nicht bekannt ist. Um dies zu umgehen, verwenden wir eine [Registrierungsstelle](~/mac/internals/registrar.md). Dies ausführlicher im nächsten Abschnitt.
 
 ## <a name="registrar"></a>Registrierung
 
-Wie bereits erwähnt, ist die Registrierungsstelle, verwalteter Code macht Objective-c-code Dies geschieht durch Erstellen einer Liste von jeder verwalteten Klasse, die von NSObject abgeleitet wird:
+Wie bereits erwähnt, ist die Registrierungsstelle, verwalteter Code macht Objective-c-code Hierzu erstellen eine Liste von jeder verwaltete Klasse, die von NSObject abgeleitet wird:
 
-- Für alle Klassen, die keine vorhandene Objective-C-Klasse umschlossen werden, erstellt er eine neue Objective-C-Klasse mit Objective-C-Elemente, die alle verwalteten Member mit Spiegelung ein `[Export]` Attribut.
-- In den Implementierungen für jedes Objective-C-Element wird automatisch Code hinzugefügt, den gespiegelten verwalteten Member aufrufen.
+- Für alle Klassen, die keine vorhandene Objective-C-Klasse umschlossen werden, erstellt er eine neue Objective-C-Klasse mit Objective-C-Elemente, spiegeln alle verwalteten Elemente, die eine `[Export]` Attribut.
+- In den Implementierungen für jedes Objective-C-Element wird automatisch Code hinzugefügt, das gespiegelte verwaltete Element aufrufen.
 
-Der folgende Pseudocode zeigt ein Beispiel, wie dies funktioniert:
+Der folgende Pseudocode zeigt ein Beispiel ist dies:
 
-**C# (verwalteter Code):**
+**C#(verwalteter Code):**
 
 ```csharp
 class MyViewController : UIViewController{
@@ -78,7 +78,7 @@ class MyViewController : UIViewController{
  }
  ```
 
-**Objective-C (systemeigener Code):**
+**Objective-C (nativer Code):**
 
 ```objc
 @interface MyViewController : UIViewController
@@ -92,20 +92,20 @@ class MyViewController : UIViewController{
 @end
 ```
 
-Der verwaltete Code kann die Attribute enthalten `[Register]` und `[Export]`, die die Registrierungsstelle verwendet wird, zu wissen, dass das Objekt für Objective-c verfügbar gemacht werden muss Das Attribut [registrieren] wird verwendet, um den Namen der generierten Klasse Objective-C anzugeben, für den Fall, dass Sie der Standardnamen generiert nicht geeignet ist. Alle von NSObject abgeleitete Klassen werden automatisch mit Objective-c registriert. Das erforderliche [Export]-Attribut enthält eine Zeichenfolge, die die Auswahl in der generierten Objective-C-Klasse verwendet wird.
+Der verwaltete Code kann die Attribute enthalten `[Register]` und `[Export]`, die die Registrierungsstelle verwendet wird, zu wissen, dass das Objekt für Objective-c verfügbar gemacht werden muss Das [registrieren]-Attribut wird verwendet, um den Namen der generierten Objective-C-Klasse angeben, für den Fall, dass Sie der generierten Standardnamen nicht geeignet ist. Alle von NSObject abgeleitete Klassen werden automatisch mit Objective-c registriert. Das erforderliche [Export]-Attribut enthält eine Zeichenfolge, die die Auswahl in der generierten Objective-C-Klasse verwendet wird.
 
-Es gibt zwei Arten von Registrierungsstellen in Xamarin.Mac – dynamische und statische verwendet:
+Es gibt zwei Arten von Registrierungsstellen xamarin.Mac – dynamische und statische verwendet:
 
-- Dynamische Registrierungsstellen – Dies ist die Standard-Registrierungsstelle für alle Xamarin.Mac-Builds. Die dynamische Registrierungsstelle wird die Registrierung aller Typen in der Assembly zur Laufzeit. Dies geschieht mithilfe von Objective-C-Laufzeit-API bereitgestellten Funktionen. Die dynamische Registrierungsstelle weist daher einen langsameren Start, aber eine schnellere Time erstellen. Aufrufen systemeigene Funktionen (normalerweise in C), Trampolines, werden als Implementierungen der Dienstmethode verwendet, bei Verwendung der dynamischen Registrierungsstellen. Sie variieren in verschiedenen Architekturen.
-- Statische Registrierungsstellen – generiert die statische Registrierungsstelle Objective-C-Code während des Builds, die dann in einer statischen Bibliothek kompiliert und in die ausführbare Datei verknüpft. Dies ermöglicht einen schnelleren Start, jedoch während des Buildvorgangs länger dauert.
+- Dynamische Registrierungsstellen – Dies ist der Standard-Registrierungsstelle für alle Xamarin.Mac-Builds. Die dynamische Registrierung wird die Registrierung aller Typen in der Assembly zur Laufzeit. Hierzu werden mithilfe von Objective-C-Laufzeit-API bereitgestellte Funktionen. Die dynamische Registrierung enthält daher einen langsameren Start, aber eine schnellere Erstellung. Aufrufen systemeigene Funktionen (normalerweise in C), Trampolines, werden als Methoden verwendet, bei Verwendung der dynamischen Registrierungsstellen. Sie haben verschiedene Architekturen variieren.
+- Statische Registrierungsstellen – wird die statische Registrierungsstelle Objective-C-Code während des Builds, die dann in einer statischen Bibliothek kompiliert und verknüpft, die in die ausführbare Datei generiert. Dies ermöglicht einen schnelleren Start, aber es dauert länger, bei der Erstellung.
 
-## <a name="application-launch"></a>Anwendung starten
+## <a name="application-launch"></a>Starten von Anwendungen
 
-Startlogik für Xamarin.Mac variieren je nach, ob eingebettet oder System Mono verwendet wird. Um den Code und die Schritte für den Anwendungsstart Xamarin.Mac anzuzeigen, finden Sie in der [starten Header](https://github.com/xamarin/xamarin-macios/blob/master/runtime/xamarin/launch.h) -Datei im Xamarin-Macios öffentliche Repository.
+Die Startlogik für Xamarin.Mac variieren abhängig, ob eingebettet oder System Mono verwendet wird. Um den Code und die Schritte zum Starten von Xamarin.Mac-Anwendungen anzuzeigen, finden Sie in der [starten Header](https://github.com/xamarin/xamarin-macios/blob/master/runtime/xamarin/launch.h) -Datei in die Xamarin-Macios öffentliches Repository.
 
 ## <a name="generator"></a>Generator
 
-Xamarin.Mac enthält Definitionen für jede Mac-API. Durchsuchen Sie diese auf die [MaciOS Github-Repository](https://github.com/xamarin/xamarin-macios/tree/master/src). Diese Definitionen enthalten, Schnittstellen, Attribute, als auch alle erforderlichen Methoden und Eigenschaften. Der folgende Code ist z. B. dient zum Definieren einer NSBox in der [AppKit Namespace](https://github.com/xamarin/xamarin-macios/blob/master/src/appkit.cs#L1465-L1526). Beachten Sie, dass es sich um eine Schnittstelle mit einer Reihe von Methoden und Eigenschaften ist:
+Xamarin.Mac enthält Definitionen für alle Mac-APIs. Durchsuchen Sie diese auf die [MaciOS Github-Repository](https://github.com/xamarin/xamarin-macios/tree/master/src). Diese Definitionen enthalten Schnittstellen mit Attributen, als auch alle erforderlichen Methoden und Eigenschaften. Der folgende Code ist z. B. dient zum Definieren einer NSBox in die [AppKit Namespace](https://github.com/xamarin/xamarin-macios/blob/master/src/appkit.cs#L1465-L1526). Beachten Sie, dass es sich um eine Schnittstelle mit einer Reihe von Methoden und Eigenschaften ist:
 
 ```csharp
 [BaseType (typeof (NSView))]
@@ -136,21 +136,21 @@ public interface NSBox {
 }
 ```
 
-Der Generator aufgerufen `bmac` in Xamarin.Mac, diesen Definitionsdateien und benötigt .NET Tools diese in eine temporäre Assembly zu kompilieren. Dieser temporäre Assembly ist jedoch nicht für nutzbare Objective-C-Code aufrufen. Der Generator klicken Sie dann die temporäre Assembly liest und generiert C#-Code, der zur Laufzeit verwendet werden kann. Dies ist die Warum, z. B. Wenn Sie Ihre Definition cs-Datei einen zufälligen Attribut hinzugefügt haben, es in der ausgegebene Code angezeigt wird nicht. Der Generator ist nicht bekannt, und daher `bmac` weiß nicht, dafür gesucht werden soll, in der temporären Assembly, die mit ihm ausgegeben werden.
+Der Generator, dem Namen `bmac` xamarin.Mac, nimmt diese Definitionsdateien und Tools für .NET verwendet, in eine temporäre Assembly kompiliert. Diese temporäre Assembly ist jedoch nicht zum Aufrufen von Objective-C-Code verwendet. Der Generator klicken Sie dann die temporäre Assembly liest und generiert C# Code, der zur Laufzeit verwendet werden kann. Dies ist die Gründe, z. B. Wenn Sie ein random-Attribut der Definition cs-Datei hinzufügen, sie in der ausgegebene Code nicht angezeigt. Der Generator nicht erkennbar, und daher `bmac` weiß nicht, in der temporären Assembly, die sie ausgeben sucht.
 
-Sobald die Xamarin.Mac.dll den Packager erstellt wurde, `mmp`, werden alle Komponenten zusammen bündeln.
+Sobald die "xamarin.Mac.dll" die Objekt-Manager erstellt wurde, `mmp`, werden alle Komponenten zusammen bündeln.
 
-Auf hoher Ebene erreicht er dies durch die folgenden Aufgaben ausführen:
+Im Allgemeinen erreicht sie dies durch die folgenden Aufgaben ausführen:
 
 - Erstellen einer app-Bundle-Struktur.
-- Kopieren Sie die verwalteten Assemblys.
-- Wenn Verknüpfen aktiviert ist, führen Sie die verwalteten Linker aus, um die Assemblys zu optimieren, indem Sie nicht verwendete Komponenten entfernen.
-- Erstellen Sie eine Startprogramm-Anwendung, in den Startprogramm Code erläutert, die zusammen mit dem Registar Code befindet sich im Netzwerkmodus mit statischer verknüpfen.
+- Kopieren Sie in Ihrer verwalteten Assemblys.
+- Wenn linking aktiviert ist, führen Sie die verwaltete Linker aus, um Ihre Assemblys zu optimieren, indem Sie das Entfernen von nicht genutzten Bereichen.
+- Erstellen Sie eine Startprogramm-Anwendung, die im Code Startprogramm gesprochen, die zusammen mit der Registrierungsstelle Code im statischen Modus verknüpfen.
 
-Dies ist und als Teil des Benutzers ausführen erstellen Prozess, der Benutzercode in einer Assembly kompiliert wird, diesen Verweis Xamarin.Mac.dll und führt dann `mmp` machen ein Paket
+Dies ist, und führen Sie als Teil des Benutzers erstellen Prozess, der Benutzercode in einer Assembly kompiliert wird, des Verweises "xamarin.Mac.dll" und führt dann `mmp` zum Vereinfachen eines Pakets
 
-Für ausführlichere Informationen zu den Linker und wie diese verwendet werden, finden Sie in der iOS [Linker](~/ios/deploy-test/linker.md) Handbuch.
+Ausführlichere Informationen zu den Linker und wie diese verwendet werden, finden Sie in der iOS [Linker](~/ios/deploy-test/linker.md) Guide.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieses Handbuch erläutert, die Kompilierung von Xamarin.Mac-apps und untersucht Xamarin.Mac und seine Beziehung zu Objective-c
+Dieses Handbuch gesucht, bei der Kompilierung von Xamarin.Mac-apps, und untersucht Xamarin.Mac und die Beziehung zu Objective-c

@@ -1,34 +1,34 @@
 ---
 title: Dateibehandlung in Xamarin.Forms
-description: Dateibearbeitung mit Xamarin.Forms kann mithilfe von Code in eine .NET Standardbibliothek oder mithilfe von eingebetteten Ressourcen erreicht werden.
+description: Dateiverarbeitung mit Xamarin.Forms kann mithilfe von Code in einer .NET Standard-Bibliothek oder mithilfe von eingebetteten Ressourcen erreicht werden.
 ms.prod: xamarin
 ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 0be441a7be9777698212e690aca95fdd75e5050f
-ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
+ms.openlocfilehash: ddffb45b8cd8d47371e4ab57f30a467cea45b27d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36310152"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117771"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Dateibehandlung in Xamarin.Forms
 
-_Dateibearbeitung mit Xamarin.Forms kann mithilfe von Code in eine .NET Standardbibliothek oder mithilfe von eingebetteten Ressourcen erreicht werden._
+_Dateiverarbeitung mit Xamarin.Forms kann mithilfe von Code in einer .NET Standard-Bibliothek oder mithilfe von eingebetteten Ressourcen erreicht werden._
 
 ## <a name="overview"></a>Übersicht
 
-Xamarin.Forms-Code wird auf mehreren Plattformen ausgeführt, von denen jede ihr eigenes Dateisystem besitzt. Zuvor musste dies, dass beim Lesen und Schreiben von Dateien am einfachsten wurde mithilfe von systemeigene APIs-Datei auf jeder Plattform ausgeführt. Alternativ sind eingebettete Ressourcen eine einfachere Lösung für Datendateien zu einer app zu verteilen. Mit .NET Standard 2.0 ist es jedoch möglich, die Datei Zugangscode in .NET Standardbibliotheken freigeben.
+Xamarin.Forms-Code wird auf mehreren Plattformen ausgeführt, von denen jede ihr eigenes Dateisystem besitzt. Früher bedeutete dies, dass, lesen und Schreiben von Dateien am einfachsten wurde ausgeführt, mit der nativen Datei-APIs auf jeder Plattform. Eingebettete Ressourcen sind hingegen eine einfachere Lösung Datendateien mit einer app zu verteilen. Mit .NET Standard 2.0 ist es jedoch möglich, die Datei Zugriffscode in .NET Standard-Bibliotheken gemeinsam nutzen.
 
-Informationen zur Behandlung von Bilddateien finden Sie unter der [arbeiten mit Bildern](~/xamarin-forms/user-interface/images.md) Seite.
+Informationen zur Behandlung von Bilddateien, finden Sie in der [arbeiten mit Bildern](~/xamarin-forms/user-interface/images.md) Seite.
 
 <a name="Loading_and_Saving_Files" />
 
 ## <a name="saving-and-loading-files"></a>Speichern und Laden von Dateien
 
-Die `System.IO` Klassen können verwendet werden, um Zugriff auf das Dateisystem auf jeder Plattform. Die `File` -Klasse können Sie erstellen, löschen und Lesen von Dateien, und die `Directory` -Klasse können Sie zum Erstellen, löschen oder aufführen des Inhalts von Verzeichnissen. Sie können auch die `Stream` Unterklassen, die ein höheres Maß an Kontrolle über Dateioperationen (z. B. Komprimierung oder Position Suche innerhalb einer Datei) bereitstellen können.
+Die `System.IO` Klassen können verwendet werden, um Zugriff auf das Dateisystem auf jeder Plattform. Die `File` Klasse können Sie die zu erstellen, löschen und Lesen von Dateien, und die `Directory` Klasse können Sie erstellen, löschen oder den Inhalt der Verzeichnisse auflisten. Sie können auch die `Stream` Unterklassen, die ein höheres Maß an Kontrolle über Dateioperationen (z. B. Komprimierung oder Position Suchen innerhalb einer Datei) bereitstellen können.
 
 Eine Textdatei mit geschrieben werden die `File.WriteAllText` Methode:
 
@@ -48,33 +48,33 @@ Darüber hinaus die `File.Exists` Methode bestimmt, ob die angegebene Datei vorh
 bool doesExist = File.Exists(fileName);
 ```
 
-Der Pfad der Datei auf jeder Plattform kann über eine .NET Standardbibliothek bestimmt werden, mit einem Wert, der die [ `Environment.SpecialFolder` ](xref:System.Environment.SpecialFolder) -Enumeration als erstes Argument für die `Environment.GetFolderPath` Methode. Dies kann dann zusammen mit Dateinamen mit der `Path.Combine` Methode:
+Der Pfad der Datei auf jeder Plattform lassen sich aus einer .NET Standard-Bibliothek mit dem Wert der [ `Environment.SpecialFolder` ](xref:System.Environment.SpecialFolder) Enumeration als das erste Argument für die `Environment.GetFolderPath` Methode. Dies kann dann mit der ein Dateiname mit kombiniert werden die `Path.Combine` Methode:
 
 ```csharp
 string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "temp.txt");
 ```
 
-Diese Vorgänge werden in der Beispiel-app veranschaulicht, die eine Seite einschließt, die speichert und lädt Text:
+In der Beispiel-app enthält eine Seite, die speichert und lädt Text, werden diese Vorgänge veranschaulicht:
 
-[![Speichern und Laden von Text](files-images/saveandload-sml.png "speichern und Laden von Dateien in der App")](files-images/saveandload.png#lightbox "speichern und Laden von Dateien in der App")
+[![Speichern und Laden von Text](files-images/saveandload-sml.png "speichern und Laden von Dateien in-App")](files-images/saveandload.png#lightbox "speichern und Laden von Dateien in-App")
 
 <a name="Loading_Files_Embedded_as_Resources" />
 
-## <a name="loading-files-embedded-as-resources"></a>Laden von Dateien eingebettet als Ressourcen
+## <a name="loading-files-embedded-as-resources"></a>Laden von Dateien, die als Ressourcen eingebettet
 
-Einbetten eine Datei in eine **.NET Standard** Assembly erstellen, oder fügen Sie eine Datei, und sicherstellen, dass **Buildvorgang: EmbeddedResource**.
+Einbetten eine Datei in eine **.NET Standard** Assembly erstellen, oder fügen Sie eine Datei, und stellen sicher, dass **Buildvorgang: EmbeddedResource**.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Konfigurieren von eingebettete Ressourcenbuildvorgang](files-images/vs-embeddedresource-sml.png "Einstellung EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png#lightbox "Einstellung EmbeddedResource BuildAction")
+[![Konfigurieren der eingebetteten Ressource-Buildvorgang](files-images/vs-embeddedresource-sml.png "Einstellung EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png#lightbox "Einstellung EmbeddedResource BuildAction")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Textdatei eingebettet, in der PCL, konfigurieren eingebettete Ressourcenbuildvorgang](files-images/xs-embeddedresource-sml.png "Einstellung EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "Einstellung EmbeddedResource BuildAction")
+[![Text-Datei eingebettet, in der PCL, konfigurieren die eingebettete Ressource-Buildvorgang](files-images/xs-embeddedresource-sml.png "Einstellung EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "Einstellung EmbeddedResource BuildAction")
 
 -----
 
-`GetManifestResourceStream` wird verwendet, um Zugriff auf die eingebettete Datei mithilfe der **Ressourcen-ID**. Standardmäßig die Ressourcen-ID der Dateiname, der den Standardnamespace für das eingebettet ist in - Projekt mit dem Präfix in diesem Fall die Assembly wird **WorkingWithFiles** und der Dateiname ist **PCLTextResource.txt**, Daher ist die Ressourcen-ID `WorkingWithFiles.PCLTextResource.txt`.
+`GetManifestResourceStream` wird verwendet, um den Zugriff auf die eingebettete Datei mithilfe der **Ressourcen-ID**. Die Ressourcen-ID ist der Dateiname, der den Standardnamespace für den es eingebettet - Projekt mit dem Präfix in diesem Fall die Assembly wird standardmäßig **WorkingWithFiles** und der Dateiname ist **PCLTextResource.txt**, Daher ist die Ressourcen-ID `WorkingWithFiles.PCLTextResource.txt`.
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
@@ -87,9 +87,9 @@ using (var reader = new System.IO.StreamReader (stream)) {
 
 Die `text` Variable kann dann verwendet werden, um den Text anzuzeigen, oder verwenden sie andernfalls im Code. Diesen Screenshot mit der [Beispiel-app](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/) wird der Text gerendert wird, einem `Label` Steuerelement.
 
- [![Textdatei eingebettet, in der PCL](files-images/pcltext-sml.png "eingebettete Textdatei in PCL angezeigt, in der App")](files-images/pcltext.png#lightbox "eingebettete Textdatei in PCL in-App angezeigt")
+ [![Text-Datei eingebettet, in der PCL](files-images/pcltext-sml.png "eingebettete Text-Datei in die PCL, die in-App angezeigt")](files-images/pcltext.png#lightbox "eingebettete Text-Datei in die PCL in-App angezeigt.")
 
-Laden und Deserialisieren von XML ist gleichermaßen einfach. Der folgende Code zeigt eine XML-Datei wird geladen und deserialisiert aus einer Ressource gebunden ein `ListView` für die Anzeige. Die XML-Datei enthält ein Array von `Monkey` Objekte (die Klasse wird im Beispielcode definiert).
+Laden und Deserialisieren eines XML-ist genauso einfach. Der folgende Code zeigt eine XML-Datei wird, geladen und deserialisiert von einer Ressource, und an gebunden eine `ListView` für die Anzeige. Die XML-Datei enthält ein Array von `Monkey` Objekte (die Klasse wird im Beispielcode definiert).
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
@@ -103,21 +103,21 @@ var listView = new ListView ();
 listView.ItemsSource = monkeys;
 ```
 
- [![XML-Datei eingebettet, in der PCL, in der Listenansicht angezeigt](files-images/pclxml-sml.png "eingebettete XML-Datei in der PCL angezeigt, in der Listenansicht")](files-images/pclxml.png#lightbox "eingebettete XML-Datei in der PCL, die in der Listenansicht angezeigt")
+ [![XML-Datei eingebettet, in der PCL, in der ListView angezeigten](files-images/pclxml-sml.png "eingebetteten XML-Datei in die PCL in ListView angezeigten")](files-images/pclxml.png#lightbox "eingebetteten XML-Datei in die PCL in ListView angezeigt")
 
 <a name="Embedding_in_Shared_Projects" />
 
-### <a name="embedding-in-shared-projects"></a>Einbetten in gemeinsam genutzte Projekte
+### <a name="embedding-in-shared-projects"></a>Einbetten in freigegebene Projekte
 
-Shared-Projekte können auch Dateien als eingebettete Ressourcen enthalten, aber, da der Inhalt eines freigegebenen Projekts in der verweisenden Projekte kompiliert werden, das Präfix für Ressource "File" eingebetteten IDs nicht geändert werden können. Dies bedeutet, dass die Ressourcen-ID für jede eingebettete Datei für jede Plattform unterschiedlich sein kann.
+Freigegebene Projekte können außerdem Dateien als eingebettete Ressourcen enthalten, aber da der Inhalt eines freigegebenen Projekts in die verweisende Projekte kompiliert werden, mit das Präfix für Ressource "File" eingebettet wird, die IDs ändern können. Dies bedeutet, dass die Ressourcen-ID für jede eingebettete Datei je nach Plattform unterschiedlich sein kann.
 
 Es gibt zwei Lösungen für dieses Problem mit freigegebenen Projekten:
 
--  **Synchronisieren Sie die Projekte** -bearbeiten Sie die Projekteigenschaften für jede Plattform, die **gleichen** Namen und Standardwerten Assembly-Namespace. Dieser Wert kann dann "hartcodiert" als Präfix für eingebettete Ressourcen-IDs im freigegebenen Projekt sein.
--  **Compiler-Direktiven #if** -Compiler-Direktiven verwenden, legen Sie das richtige Ressourcen-ID-Präfix und diesen Wert verwenden, um die richtige Ressourcen-ID dynamisch zu erstellen
+-  **Synchronisieren Sie die Projekte** -bearbeiten Sie die Projekteigenschaften für jede Plattform mit der **gleichen** Assembly-Namen und Namespace. Dieser Wert kann "hartcodiert" als Präfix für embedded-Ressourcen-IDs im freigegebenen Projekt sein.
+-  **#if-Compiler-Direktiven** -Compiler-Direktiven verwenden, legen Sie die richtigen Ressourcen-ID-Präfix, und verwenden diesen Wert auf dynamische Weise erstellen, die richtigen Ressourcen-ID.
 
 
-Code, der mit einem Beispiel für die zweite Option wird unten gezeigt. Compiler-Direktiven werden verwendet, um das Präfix des hartcodiert Ressource auswählen (die normalerweise den Standardnamespace für das verweisende Projekt identisch ist). Die `resourcePrefix` Variable wird dann verwendet, um eine gültige Ressourcen-ID zu erstellen, indem Sie verketten es mit dem Dateinamen der eingebetteten Ressource.
+Code zur Veranschaulichung der zweiten Option ist unten dargestellt. Compiler-Direktiven werden verwendet, um das ressourcenpräfix hartcodiert auszuwählen (die normalerweise den Standardnamespace für das verweisende Projekt identisch ist). Die `resourcePrefix` Variable wird dann verwendet, um eine gültige Ressourcen-ID durch Verketten es mit dem Dateinamen der eingebetteten Ressource zu erstellen.
 
 ```csharp
 #if __IOS__
@@ -138,15 +138,15 @@ Stream stream = assembly.GetManifestResourceStream
 
 ### <a name="organizing-resources"></a>Organisieren von Ressourcen
 
-In den Beispielen oben wird davon ausgegangen, dass die Datei im Stammverzeichnis des standardmäßigen .NET Library-Projekts eingebettet ist, in dem die Ressourcen-ID im Format wird **Namespace.Dateiname.Erweiterung**, wie z. B. `WorkingWithFiles.PCLTextResource.txt` und `WorkingWithFiles.iOS.SharedTextResource.txt`.
+Die oben genannten Beispielen wird davon ausgegangen, dass die Datei im Stammverzeichnis des Projekts für .NET Standard-Bibliothek eingebettet ist, in dem Fall die Ressourcen-ID das Format weist **Namespace.Dateiname.Erweiterung**, z. B. `WorkingWithFiles.PCLTextResource.txt` und `WorkingWithFiles.iOS.SharedTextResource.txt`.
 
-Es ist möglich, eingebettete Ressourcen in Ordnern zu organisieren. Wenn eine eingebettete Ressource in einem Ordner abgelegt wird, wird der Name des Ordners Teil der Ressourcen-ID (durch Punkte getrennt), so, dass die Ressourcen-ID-Format wird **Namespace.Folder.Filename.Extension**. Platzieren die Dateien in der Beispiel-app verwendet wird, in einen Ordner **MyFolder** würde die entsprechenden Ressourcen-IDs machen `WorkingWithFiles.MyFolder.PCLTextResource.txt` und `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`.
+Es ist möglich, eingebettete Ressourcen in Ordnern zu organisieren. Wenn eine eingebettete Ressource in einem Ordner gespeichert ist, den Namen des Ordners wird die Ressourcen-ID (die durch Punkte getrennt werden), damit die Ressourcen-ID-Format wird **Namespace.Folder.Filename.Extension**. Platzieren die Dateien in der Beispiel-app in einem Ordner **MyFolder** würde die entsprechenden Ressourcen-IDs machen `WorkingWithFiles.MyFolder.PCLTextResource.txt` und `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`.
 
 <a name="Debugging_Embedded_Resources" />
 
 ### <a name="debugging-embedded-resources"></a>Debuggen von eingebetteten Ressourcen
 
-Da in einigen Fällen es schwierig ist zu verstehen, warum eine bestimmte Ressource beansprucht wird nicht, kann die folgenden Debugcode vorübergehend hinzugefügt werden, zu einer Anwendung, um zu bestätigen, dass Ressourcen ordnungsgemäß konfiguriert sind. Es gibt alle bekannte Ressourcen, die in der angegebenen Assembly eingebettet der **Fehler** Pad-Ressource laden Probleme Debuggen.
+Da es in einigen Fällen schwer ist zu verstehen, warum eine bestimmte Ressource nicht geladen werden ist, kann die folgenden Debuggen von Code vorübergehend hinzugefügt werden, zu einer Anwendung, um zu bestätigen, dass die Ressourcen korrekt konfiguriert sind. Alle bekannte Ressourcen, die in der angegebenen Assembly eingebettet erfolgt die Ausgabe der **Fehler** Pad zum Debuggen von Problemen Laden der Ressource.
 
 ```csharp
 using System.Reflection;
@@ -160,11 +160,11 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel hat einige einfache Dateivorgänge speichern und Laden von Text auf dem Gerät und zum Laden von eingebetteten Ressourcen angezeigt. Mit .NET Standard 2.0 ist es möglich, Zugangscode in .NET Standardbibliotheken Datei freigeben.
+Dieser Artikel hat einige einfache Vorgänge für das Speichern und Laden von Text auf dem Gerät und zum Laden von eingebetteten Ressourcen angezeigt. Mit .NET Standard 2.0 ist es möglich, die Zugriff den Code in .NET Standard-Bibliotheken gemeinsam nutzen.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [FilesSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
 - [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://github.com/xamarin/xamarin-forms-samples)
 - [Arbeiten mit dem Dateisystem in Xamarin.iOS](~/ios/app-fundamentals/file-system.md)
-- [Dateien Arbeitsmappe](https://developer.xamarin.com/workbooks/xamarin-forms/application-fundamentals/files/files.workbook)
+

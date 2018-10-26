@@ -4,15 +4,15 @@ description: Dieses Dokument beschreibt, wie Sie Aufgaben im Hintergrund zu verw
 ms.prod: xamarin
 ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 9d304ee64e7716413febc475e721f5eb39043109
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 48859afe2c988c1afe67d5c4350cef734f879fdf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351537"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120995"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS Hintergrundverarbeitung mit Aufgaben
 
@@ -20,7 +20,7 @@ Die einfachste Möglichkeit zum Ausführen der hintergrundverarbeitung in iOS is
 
 Hintergrundaufgaben können in drei Kategorien unterteilt werden:
 
-1.  **Aufgaben von Hintergrund-sichere** - wird aufgerufen, an einer beliebigen Stelle in der die Anwendung, in dem Sie eine Aufgabe haben, Sie möchten nicht unterbrochenen sollten die Anwendung eingeben, der den Hintergrund.
+1.  **Aufgaben von Hintergrund-sichere** - wird aufgerufen an einer beliebigen Stelle in der Anwendung, in dem Sie eine Aufgabe haben, Sie nicht möchten unterbrochenen sollten die Anwendung eingeben, der den Hintergrund.
 1.  **DidEnterBackground Aufgaben** - wird aufgerufen, während die `DidEnterBackground` Application Lifecycle-Methode zur Unterstützung der Bereinigung und den Status speichern.
 1.  **(IOS 7 und höher)-Übertragungen im Hintergrund** – ein spezieller Typ von Hintergrundtasks verwendet wird, um die netzwerkübertragungen unter iOS 7 ausführen. Im Gegensatz zu regulären Aufgaben-Übertragungen im Hintergrund ein vorher festgelegten Zeitraums keine.
 

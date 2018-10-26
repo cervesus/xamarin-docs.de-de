@@ -1,33 +1,33 @@
 ---
-title: Verwendung von Google Maps und Speicherort mit Xamarin.Android
-description: In diesem Artikel erläutert, wie Zuordnungen und den Speicherort mit Xamarin.Android verwendet wird. Alles von der Nutzung der integrierten Karten-Anwendung direkt mit der Google ordnet Android-API V2 behandelt.
+title: 'Gewusst wie: Verwenden von Google Maps und den Speicherort, die mit Xamarin.Android'
+description: In diesem Artikel wird erläutert, wie Karten und Position, die mit Xamarin.Android verwendet wird. Inhalt die integrierte Karten-Anwendung mit der Google ordnet Android-API V2 direkt nutzen.
 ms.prod: xamarin
 ms.assetid: 425E0ED2-5380-6EBE-7059-256B6E9128B8
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: a861e43152870933ba684bf693a1bd3d3ac5bd0b
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: fa7fff86e9a7e23bf332f2d62c3ec1a6ed3c54e1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935372"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117129"
 ---
-# <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>Verwendung von Google Maps und Speicherort mit Xamarin.Android
+# <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>Gewusst wie: Verwenden von Google Maps und den Speicherort, die mit Xamarin.Android
 
-_In diesem Artikel erläutert, wie Zuordnungen und den Speicherort mit Xamarin.Android verwendet wird. Alles von der Nutzung der integrierten Karten-Anwendung direkt mit der Google ordnet Android-API V2 behandelt._
+_In diesem Artikel wird erläutert, wie Karten und Position, die mit Xamarin.Android verwendet wird. Inhalt die integrierte Karten-Anwendung mit der Google ordnet Android-API V2 direkt nutzen._
 
 ## <a name="maps-overview"></a>Übersicht über die Zuordnungen
 
-Eine weit verbreitete Ergänzung für mobile Geräte sind Technologien, die Zuordnung. Desktopcomputer und Laptops tendenziell nicht Netzwerkadressinformationen integrierte haben. Andererseits, verwenden mobile Geräte solche Anwendungen, um Geräte zu finden und veränderlichen Speicherortinformationen anzuzeigen. Android bietet leistungsstarke, integrierte Technologie, die Standortdaten für Maps mithilfe der Speicherort-Hardware, die möglicherweise auf dem Gerät verfügbar angezeigt. Dieser Artikel behandelt ein Spektrum an, was die Maps-Anwendungen unter Xamarin.Android zu bieten, haben, einschließlich: 
+Mapping-Technologien sind eine weit verbreitete Ergänzung für mobile Geräte. Desktop-PCs und Laptops tendenziell nicht Netzwerkadressinformationen integrierte haben. Mobile Geräte verwenden dagegen auf solche Anwendungen, Geräte suchen und Anzeigen von Informationen zum Speicherort ändern. Android bietet leistungsstarke, integrierte Technologie, die Standortdaten auf Karten, die mithilfe von Standort-Hardware, die auf dem Gerät möglicherweise anzeigt. Dieser Artikel behandelt ein Spektrum an wie die Maps-Anwendungen unter Xamarin.Android zu bieten, haben, einschließlich: 
 
--  Unter Verwendung der integrierten ordnet die Anwendung schnell Zuordnungsvorgang hinzuzufügen.
--  Arbeiten mit der Maps-API zum Steuern der Anzeige einer Karte.
--  Verwenden eine Vielzahl von Verfahren zum Hinzufügen von grafischen überlagert.
+-  Mithilfe der integrierten, wird die Anwendung schnell hinzufügen der Zuordnungsfunktionalität zugeordnet.
+-  Arbeiten mit der Maps-API, um eine Zuordnung für die Anzeige zu steuern.
+-  Verwenden einer Vielzahl von Verfahren zum Hinzufügen von grafischer Überlagerungen
 
-In den Themen in diesem Abschnitt wird die einer breiten Palette von Zuordnungsfunktionen.
-Erklären Sie sie zuerst, wie Android integrierte Karten Anwendung genutzt und wie eine Straße Gesamtansicht eines Speicherorts angezeigt. Klicken Sie dann diskutiert werden wie die Maps-API zu verwenden, um die Zuordnung Funktionen direkt in einer Anwendung, die beide Verwendung zum Steuern der Position und die Anzeige einer Karte sowie zum Hinzufügen von grafischen überlagert.
+Die Themen in diesem Abschnitt decken ein breites Spektrum an Zuordnungsfunktionen.
+Erklären Sie sie zuerst, wie Sie integrierte Karten von Android-Anwendung nutzen können und wie eine Panoramaansicht Straße und eines Speicherorts angezeigt. Anschließend werden wie die Maps-API zu verwenden, um die von Zuordnungsfunktionen direkt in einer Anwendung, die beide erläutert Steuerelement die Position und der Anzeige einer Karte zu integrieren sowie wie grafische Überlagerungen hinzugefügt.
 
 
 ## <a name="related-links"></a>Verwandte Links
@@ -35,5 +35,5 @@ Erklären Sie sie zuerst, wie Android integrierte Karten Anwendung genutzt und w
 - [MapsAndLocationDemo_v3 (Beispiel)](https://developer.xamarin.com/samples/monodroid/MapsAndLocationDemo_v3/)
 - [Aktivitätslebenszyklus](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [Abrufen eines API-Schlüssels für Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [Liste von Intents: Aufrufen von Google-Anwendungen auf Android-Geräte](http://developer.android.com/guide/appendix/g-app-intents.html)
-- [Speicherort und Karten](http://developer.android.com/guide/topics/location/index.html)
+- [Intents-Liste: Aufrufen von Google-Anwendungen auf Android-Geräten](http://developer.android.com/guide/appendix/g-app-intents.html)
+- [Position und Karten](http://developer.android.com/guide/topics/location/index.html)

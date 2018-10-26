@@ -1,46 +1,46 @@
 ---
-title: Xamarin.Mac vor der Kompilierung
-description: Dieses Dokument beschreibt vor der Kompilierung in Xamarin.Mac. Es vergleicht AOT Kompilierung auf JIT-Kompilierung wird erläutert, wie AOT aktivieren und untersucht, mit Hybrid AOT.
+title: Xamarin.Mac vor der Time-Kompilierung
+description: Dieses Dokument beschreibt einen Schritt voraus Time-Kompilierung in Xamarin.Mac. Vergleicht die AOT-Kompilierung JIT-Kompilierung, erläutert das Aktivieren der AOT und wirft einen Blick auf hybrides AOT.
 ms.prod: xamarin
 ms.assetid: 38B8A017-5A58-429C-A6E9-9860A1DCEF63
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 11/10/2017
-ms.openlocfilehash: ec8474293fbb7372529e0f850e2d16db7ebf17be
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: e155a394afd68d9970ee32785f6d0aeda6e2d129
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792238"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117255"
 ---
-# <a name="xamarinmac-ahead-of-time-compilation"></a>Xamarin.Mac vor der Kompilierung
+# <a name="xamarinmac-ahead-of-time-compilation"></a>Xamarin.Mac vor der Time-Kompilierung
 
-## <a name="overview"></a>Überblick
+## <a name="overview"></a>Übersicht
 
-Zeit (AOT) ist im Voraus Kompilierung eine leistungsstarke Optimierungstechnik, die auch zur Verbesserung der Leistung beim Start an. Allerdings wirkt Sie sich auf auch die Buildzeit, Anwendungsgröße und Ausführung des Programms weitreichende Möglichkeiten. Um die Kompromisse zu verstehen, erzwingt, werden wir ein wenig mit der Kompilierung und Ausführung einer Anwendung beschäftigen.
+Zeit (AOT) ist jetzt Kompilierung eine leistungsstarke Optimierungstechnik, die auch zur Verbesserung der Leistung beim Start an. Allerdings wirkt sich auf sie auch Ihre Buildzeit, Anwendungsgröße und Ausführung des Programms in fundierter Weise. Um die vor-und Nachteile zu verstehen, die erzwingt, werden wir ein bisschen tiefer in die Kompilierung und Ausführung einer Anwendung.
 
-Geschrieben in anderen verwalteten Sprachen, z. B. c# und F#-Code wird in einen intermediate Darstellung aufgerufen IL kompiliert. Diese IL, in der Bibliothek und Programm Assemblys gespeichert, ist relativ kompakt und portable zwischen Prozessorarchitekturen. IL, ist jedoch nur eine mittlere Festlegen von Anweisungen und irgendwann, die IL in Computercode, die spezifisch für den Prozessor übersetzt werden muss.
+Code in der verwalteten Sprachen, wie z. B. C# und F#, um eine zwischendarstellung namens IL kompiliert wird. Diese IL, gespeichert in Ihre Assemblys-Bibliothek und das Programm ist relativ compact und zwischen Prozessorarchitekturen übertragbar. IL, ist jedoch nur eine mittlere festgelegt wird, Anweisungen und an einem bestimmten Punkt, die IL in Computercode, die spezifisch für den Prozessor übersetzt werden muss.
 
-Es gibt zwei Punkten, die in denen diese Verarbeitung ausgeführt werden kann:
+Es gibt zwei Punkten, die in denen diese Verarbeitung erfolgen kann:
 
-- **Just-in-Time (JIT)** – beim Starten und die Ausführung der Anwendung die IL im Arbeitsspeicher in Computercode kompiliert wird.
-- **Zeit (AOT) Ahead** – während des Buildvorgangs die IL kompiliert und in systemeigene Bibliotheken geschrieben und in Ihrer Anwendungspaket gespeichert.
+- **Just-in-Time (JIT)** : beim Starten und die Ausführung Ihrer Anwendung, die der IL-Code im Arbeitsspeicher in Computercode kompiliert wird.
+- **Zeit (AOT) Ahead** – während des Buildvorgangs der IL-Code wird kompiliert und in systemeigene Bibliotheken geschrieben und in Ihr Anwendungspaket gespeichert.
 
-Jede Option hat eine Anzahl von vor- und Nachteile:
+Jede Option verfügt über eine Anzahl von vor- und Nachteile:
 
 - **JIT**
-  - **Startzeit** – JIT-Kompilierung muss beim Start ausgeführt werden. Für die meisten Anwendungen ist dies der Größenordnung von 100 ms, aber für große Anwendungen kann diese Zeit erheblich mehr sein.
-  - **Ausführung** – wie der JIT-Code kann optimiert werden, für den bestimmten Prozessor verwendet wird, kann geringfügig besseren Code generiert werden. In den meisten Anwendungen ist dies wenige Prozentpunkte schneller höchstens.
+  - **Dauer des verbindungsstarts** – JIT-Kompilierung muss beim Start ausgeführt werden. Für die meisten Anwendungen ist dies der Größenordnung von 100 ms, aber für große Anwendungen kann diese Zeit deutlich mehr sein.
+  - **Ausführung** – wie der JIT-Code kann optimiert werden, für den bestimmten Prozessor verwendet wird, kann etwas besserer Code generiert werden. In den meisten Fällen ist dies schneller wenigen Prozentpunkten höchstens.
 - **AOT**
-  - **Startzeit** – laden vorkompilierter Dylibs ist bedeutend schneller als JIT-Assemblys.
-  - **Speicherplatz** – diese Dylibs kann jedoch sehr viel Speicherplatz dauern. Doppelklicken sie je nachdem welche Assemblys AOTed befinden, oder mehr der Größe des Anteils Code Ihrer Anwendung.
-  - **Zeit der Erstellung** – AOT Kompilierung ist erheblich langsamer, JIT und Builds verwenden, beeinträchtigt wird. Diese Verlangsamung reichen von Sekunden bis zu einer Minute oder mehr, abhängig von der Größe und Anzahl der Assemblys kompiliert.
-  - **Verbergen** – als den IL-Code, der wesentlich einfacher als Computercode zurückentwickeln, ist nicht unbedingt erforderlich, können entfernt werden, um Hilfe sicherheitsrelevanten Code zu verbergen. Dies erfordert "Hybrider"-Option werden unten beschrieben.
+  - **Dauer des verbindungsstarts** : Laden von vorkompilierten Dylibs ist bedeutend schneller als JIT-Assemblys.
+  - **Speicherplatz** – diese Dylibs kann jedoch eine erhebliche Menge an Speicherplatz dauern. Je nachdem welche Assemblys AOTed befinden, können sie doppelklicken oder mehr die Größe des Teils Code Ihrer Anwendung.
+  - **Buildzeit** – AOT-Kompilierung ist erheblich langsamer, JIT-Kompilierung und wird beeinträchtigt, Builds, die es verwenden. Diese Verlangsamung reichen von Sekunden bis zu eine Minute oder mehr, je nach Größe und Anzahl der Assemblys kompiliert.
+  - **Obfuskation** – als den IL-Code, der ist wesentlich einfacher, als Computercode zurückentwickeln, ist nicht unbedingt erforderlich, sie entfernt werden kann, um Hilfe von vertraulichem Code zu verbergen. Dies erfordert die "Hybrid" die Option unten beschrieben.
 
-## <a name="enabling-aot"></a>Aktivieren der AOT
+## <a name="enabling-aot"></a>AOT aktivieren
 
-AOT Optionen werden die Mac-Buildbereich in einem zukünftigen Update hinzugefügt werden. Bis dahin müssen Sie zur Aktivierung AOT Befehlszeilenargument über das Feld "zusätzliche Mmp Argumente" in Build Mac übergeben. Dies sind die Optionen:
+AOT-Optionen werden in den Mac-Build-Bereich in einem späteren Update hinzugefügt. Bis dahin erfordert die Aktivierung von AOT, übergeben ein Befehlszeilenargument über das Feld "zusätzlichen Mmp-Argumenten" in der Mac-Build. Dies sind die Optionen:
 
 
       --aot[=VALUE]          Specify assemblies that should be AOT compiled
@@ -60,14 +60,14 @@ AOT Optionen werden die Mac-Buildbereich in einem zukünftigen Update hinzugefü
 
 
 
-## <a name="hybrid-aot"></a>Hybride AOT
+## <a name="hybrid-aot"></a>Hybrides AOT
 
-Laden während der Ausführung einer Anwendung MacOS die Laufzeit standardmäßig Computercode von den systemeigenen Bibliotheken von AOT Kompilierung erzeugt. Es gibt jedoch einige Bereiche des Codes z. B. Trampolines, wobei JIT-Kompilierung erheblich mehr optimierte Ergebnissen führen kann. Dies erfordert die IL verwaltete Assemblys verfügbar sein. Bei iOS kann sind Anwendungen von der Verwendung der JIT-Kompilierung ausgeschlossen; Dieser Abschnitt des Codes sind AOT ebenfalls kompiliert.
+Aus der erzeugten AOT-Kompilierung nativen Bibliotheken geladen verwendet standardmäßig Computercode, während der Ausführung einer MacOS-Anwendung die Common Language Runtime. Es gibt jedoch einige Bereiche des Codes, wie z. B. Trampolines, in dem JIT-Kompilierung auf deutlich optimierte Ergebnissen führen können. Dies erfordert die IL verwaltete Assemblys verfügbar sein. Unter iOS sind die Anwendungen von der Verwendung der JIT-Kompilierung ausgeschlossen; Dieser Abschnitt des Codes sind per AOT kompiliert auch.
 
-Die Hybrid-Option weist den Compiler an beide kompilieren diese Abschnitt (z. B. iOS) auf, jedoch darüber hinaus, vorausgesetzt, dass die IL nicht zur Laufzeit zur Verfügung stehen. Diese IL kann dann entfernt Build bereitstellen. Wie oben bereits erwähnt, wird die Common Language Runtime erzwungen werden, verwenden Sie weniger optimierte Routinen an einigen stellen.
+Die Hybrid-Option weist den Compiler an beide kompilieren diesen Abschnitt (wie iOS) auf, aber darüber hinaus, vorausgesetzt, dass die IL nicht zur Laufzeit zur Verfügung stehen. Diese IL dann entfernt werden kann nach dem Build. Wie oben erwähnt, wird die Laufzeit erzwungen werden, um weniger optimierte Routinen an einigen Stellen verwenden.
 
 ## <a name="further-considerations"></a>Weitere Überlegungen
 
-Die negativen Auswirkungen einer unbestimmten AOT skalieren die Größe und Anzahl der verarbeiteten Assemblys. Die vollständige [Zielframework](~/mac/platform/target-framework.md) Beispiel enthält eine erheblich größere Basisklassenbibliothek (BCL) als Modern und daher AOT erheblich länger dauern und größere Pakete erzeugen. Dies wird verschärft, durch das vollständige Zielframework Inkompatibilität mit verknüpfen, die nicht verwendeten Code entfernt. Erwägen Sie Ihre Anwendung in modernen und aktivieren verknüpfen, für die besten Ergebnisse.
+Die negativen Konsequenzen der AOT-Skalierungsgruppe mit der Größe und Anzahl der Assemblys, die verarbeitet werden soll. Die vollständige [Zielframework](~/mac/platform/target-framework.md) für Beispiel eine erheblich größere Basisklassenbibliothek (BCL) als Modern enthält, und daher AOT erheblich länger dauern wird, und erzeugen größere Pakete. Dies wird verschärft, durch das vollständige Zielframework Inkompatibilität mit verknüpfen, die nicht verwendeter Code entfernt. Sollten Sie Ihre Anwendung zum Verknüpfen von modernen und aktivieren die besten Ergebnisse zu verschieben.
 
-Ein weiterer Vorteil beim AOT bietet verbesserte Interaktionen mit systemeigenen Debuggen und profilerstellung Toolchains. Da ein Großteil der Codebasis voraus kompiliert wird, müssen diese Funktionsnamen und Symbole, die einfacher zu lesen in systemeigenen Absturzberichte, profilerstellung und debugging. Generiert JIT-Funktionen haben diese Namen nicht und häufig als unbenannte hex Offsets, die sehr schwer zu beheben sind angezeigt.
+Ein weiterer Vorteil der AOT enthält verbesserte Interaktionen mit native Debuggen und profilerstellung toolketten. Da ein Großteil der Codebasis vorab kompiliert wird, müssen sie Funktions-als auch Symbole, die einfacher zu lesen in systemeigenen Absturzberichte, profilerstellung und Debuggen sind. JIT-Kompilierung generierten Funktionen nicht diese Namen haben, und zeigen sich oft als unbenannte hex Offsets, die sehr schwer zu beheben sind.

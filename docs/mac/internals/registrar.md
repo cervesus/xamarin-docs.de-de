@@ -1,47 +1,47 @@
 ---
-title: Xamarin.Mac Registrierungsstelle
-description: Dieses Dokument beschreibt den Zweck der Xamarin.Mac-Registrierungsstelle und die statische dynamischer, statischer und teilweise (Hybrid) Nutzung Konfigurationen.
+title: Xamarin.Mac-Registrierungsstelle
+description: Dieses Dokument beschreibt den Zweck von der Registrierungsstelle Xamarin.Mac und die dynamische, static und partielle statische (Hybrid) Nutzung Konfigurationen.
 ms.prod: xamarin
 ms.assetid: 7CAAA6B7-D654-4AD3-BAEC-9DD01210978A
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 11/10/2017
-ms.openlocfilehash: b6e971e608c8b9228523222cebc4d6dac9395def
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 21e1a2c6ae5a9ad8b6acf520851ea92a340da887
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792418"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119406"
 ---
-# <a name="xamarinmac-registrar"></a>Xamarin.Mac Registrierungsstelle
+# <a name="xamarinmac-registrar"></a>Xamarin.Mac-Registrierungsstelle
 
-_Dieses Dokument beschreibt den Zweck des Xamarin.Mac-Registrierungsstelle und seiner Verwendung der verschiedenen Konfigurationen._
+_Dieses Dokument beschreibt den Zweck der Xamarin.Mac-Registrierungsstelle und seiner verschiedene Konfigurationen._
 
-## <a name="overview"></a>Überblick
+## <a name="overview"></a>Übersicht
 
-Xamarin.Mac schließt die Lücke zwischen verwalteten weltweit (.NET) und des Kakao-Runtime verwaltete Klassen zum Aufrufen von nicht verwalteten Objective-C-Klassen und aufgerufen werden, wenn Ereignisse auftreten. Der Arbeitsaufwand zum Durchführen dieser "magische" müssen erfolgt durch die Registrierungsstelle und wird im Allgemeinen aus der Ansicht ausgeblendet.
+Xamarin.Mac schließt die Lücke zwischen der verwalteten Welt (.NET) und Cocoa Laufzeit ermöglicht verwaltete Klassen zum Aufrufen von nicht verwalteter Objective-C-Klassen und aufgerufen werden, wenn Ereignisse auftreten. Der erforderlichen Aufwand zum Durchführen dieser "magischen" wird von der Registrierungsstelle verarbeitet und wird im Allgemeinen verborgen.
 
-Leistungseinbußen bei der diese Registrierung, insbesondere beim Anwendungsstart Betriebszeit, vorhanden sind und Grundlegendes zu einem gewissen Grad was "hinter den Kulissen" kann in einigen Fällen hilfreich sein.
+Es gibt Leistungseinbußen bei der dieser Erfassung, insbesondere beim Start der Anwendung Zeit, und was "hinter den Kulissen" geht ein wenig verstehen kann manchmal hilfreich sein.
 
 ## <a name="configurations"></a>Konfigurationen
 
-Grundsätzlich kann die Registrierungsstelle Auftrag beim Start in zwei Kategorien unterteilt werden:
+Die Registrierungsstelle Auftrag beim Start kann grundsätzlich in zwei Kategorien unterteilt werden:
 
-- Scannen Sie alle verwalteten Klasse für die Ableitung von NSObject und Sammeln Sie eine Liste von Elementen, die die Objective-C-Laufzeit zur Verfügung gestellt werden.
+- Überprüfen Sie alle verwalteten Klasse für die Ableitung von NSObject und Sammeln Sie eine Liste von Elementen, die für die Objective-C-Laufzeit verfügbar gemacht werden.
 - Registrieren Sie diese Informationen, mit der Objective-C-Laufzeit.
 
-Im Laufe der Zeit wurden drei andere Registrierungsstelle Konfigurationen erstellt, um verschiedene Anwendungsfälle abzudecken. Jeder anderen Build hat, und führen Zeit folgen im Klaren sein:
+Im Laufe der Zeit wurden drei Konfigurationen von anderen Registrierungsstelle erstellt, um verschiedene Fälle abdecken. Jedes anderen Build hat, und führen die Zeit folgen:
 
-- **Dynamische Registrierungsstelle** – während des Starts mithilfe von Reflektion .NET jedem geladenen Überprüfungstyp, bestimmen die Liste der relevanten Elemente und die native Common Language Runtime zu informieren. Diese Option des Builds NULL Zeit hinzugefügt, aber es ist sehr aufwendig, um beim Start (bis zu mehrere Sekunden) zu berechnen.
-- **Statische Registrierungsstelle** – während des Buildvorgangs des Satzes von Elementen registriert werden, und generieren Sie Objective-C-Code für die Registrierung zu berechnen. Dieser Code wird aufgerufen, während des Startvorgangs, um alle Elemente schnell zu registrieren. Fügt eine erhebliche Pause Build, kann jedoch sehr viel Zeit vom Start der Anwendung ausgeschnitten werden.
-- **"Partiell" statischen** – eine neuere "Hybrider" Ansatz der Großteil der Vorteile beider geschaltet wird. Da die Exporte aus **Xamarin.Mac.dll** sind Konstanten, speichern Sie eine vorausberechnete Bibliothek aus, die Registrierung zu behandeln und zu verknüpfen, die in. Mithilfe der Reflektion benutzerbibliotheken behandeln, jedoch deutlich weniger Typen, dass die Bindungen für die Plattform dies oft vielmehr schnelle als benutzerbibliotheken zu exportieren. Eine neglectable erstellen zeitlichen Auswirkungen und einen Großteil der "Cost" dynamischen reduziert.
+- **Dynamische Registrierungsstelle** – verwenden Sie während des Starts .NET Reflection zum Überprüfen von jedem geladenen Typ bestimmen die Liste der relevanten Elemente aus, und die native-Runtime zu informieren. Diese Option wird keine Zeit mit dem Build hinzugefügt, aber es ist sehr aufwändig zu berechnen sind beim Start (bis zu mehrere Sekunden).
+- **Statische Registrierungsstelle** – während des Buildvorgangs, berechnen Sie den Satz von Elementen, die registriert werden und Objective-C-Code für die Registrierung zu generieren. Dieser Code wird während des Startvorgangs schnell registrieren alle Elemente aufgerufen. Fügt eine signifikante Pause zu erstellen, kann jedoch eine viel Zeit vom Start der Anwendung Ausschneiden hinzu.
+- **"Partielle" statische** – ein neuer "Hybrid"-Ansatz der Großteil der Vorteile bringt. Da die Exporte aus **"xamarin.Mac.dll"** sind konstant, Speichern einer vorausberechnete-Bibliothek in ihre Registrierung verarbeiten und zu verknüpfen, in. Mithilfe von Reflektion benutzerbibliotheken behandeln, aber als benutzerbibliotheken exportieren deutlich weniger Typen an, die die Bindungen für die Plattform dies oft recht schnell ist. Eine neglectable Auswirkungen erstellen, und reduziert die große Mehrzahl der dynamischen "Kosten".
 
-Partielle statische ist die Standardeinstellung für die Debugkonfiguration und statische ist die Standardeinstellung für Releasekonfigurationen.
+Heute teilweise statisch ist die Standardeinstellung für die Debugkonfiguration und statische ist die Standardeinstellung für Releasekonfigurationen.
 
-Es gibt einige Szenarios:
+Es gibt einige Szenarien:
 
-- Nach dem Start mit Klassen ableiten von NSObject geladen-Plug-Ins
-- Ableiten von NSObject Klasseninstanzen dynamisch erstellt.
+- Laden nach dem Start mit Klassen, die von NSObject-Plug-Ins
+- Dynamisch erstellte Klasseninstanzen, die von NSObject
 
-wobei die Registrierungsstelle ist nicht erkennbar, dass er einen Typ beim Start zu registrieren muss. Die `ObjCRuntime.Runtime.RegisterAssembly` Methode wird bereitgestellt, um der Registrierungsstelle zu informieren, dass zusätzliche Typen zu berücksichtigen ist.
+in denen die Registrierungsstelle ist nicht erkennbar, dass er eine Art beim Start zu registrieren muss. Die `ObjCRuntime.Runtime.RegisterAssembly` Methode wird bereitgestellt, um der Registrierungsstelle zu informieren, dass zusätzliche Typen zu berücksichtigen sind.

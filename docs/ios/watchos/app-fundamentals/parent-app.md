@@ -1,50 +1,50 @@
 ---
-title: Arbeiten mit der WatchOS übergeordnete Anwendung in Xamarin
-description: Dieses Dokument beschreibt das Arbeiten mit einem WatchOS übergeordnete Anwendung in Xamarin. Es wird erläutert, WatchKit app-Erweiterungen, iOS-apps und freigegebenem Speicher.
+title: Arbeiten mit dem WatchOS übergeordnete Anwendung in Xamarin
+description: Dieses Dokument beschreibt das Arbeiten mit einer WatchOS übergeordnete Anwendung in Xamarin. Es wird erläutert, WatchKit-app-Erweiterungen, iOS-apps, freigegebenen Speicher und mehr.
 ms.prod: xamarin
 ms.assetid: 9AD29833-E9CC-41A3-95D2-8A655FF0B511
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 3af2cce0d84e3934eeb89917990f111d29aadef1
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 745c10b381ef2bd578278cb8d141a944ef1087e0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790691"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121983"
 ---
-# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Arbeiten mit der WatchOS übergeordnete Anwendung in Xamarin
+# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Arbeiten mit dem WatchOS übergeordnete Anwendung in Xamarin
 
 > [!IMPORTANT]
-> Zugriff auf die übergeordnete Anwendung ausschließlich über den folgenden Beispielen, funktioniert auf WatchOS 1 Watch-apps.
+> Zugreifen auf die übergeordnete Anwendung nur mit den folgenden Beispielen funktioniert auf Watch-apps für WatchOS 1.
 
 
-Es gibt verschiedene Möglichkeiten für die Kommunikation zwischen dem Watch-app und die iOS-app, der im Paket mit:
+Es gibt verschiedene Möglichkeiten für die Kommunikation zwischen der Watch-app und dem iOS-app, der sie mit gebündelt wird:
 
-- Überwachen-Erweiterungen können [Aufrufen einer Methode](#code) für die übergeordnete-app, die im Hintergrund ausgeführt, auf dem iPhone wird.
+- Sehen Sie sich Erweiterungen können [Aufrufen einer Methode](#code) für die übergeordnete-app, die im Hintergrund ausgeführt, auf dem iPhone wird.
 
-- Überwachen-Erweiterungen können [Freigeben von einem Speicherort](#storage) mit der übergeordneten iPhone-app.
+- Sehen Sie sich Erweiterungen können [freigeben einen Speicherort](#storage) mit der übergeordneten iPhone-app.
 
-- Verwenden Übergabe übergeben von Daten aus einem Blick oder eine Benachrichtigung an die Watch-app, die Benutzer an eine bestimmte Schnittstelle Controller in der app zu senden.
+- Verwenden Übergabe, um Daten aus einem Blick oder eine Benachrichtigung an die Watch-app, die Benutzer an eine bestimmte Schnittstelle Controller in der app senden zu übergeben.
 
-Die übergeordnete App wird manchmal auch als die App-Container bezeichnet.
+Die übergeordnete-App wird manchmal auch als der Container-App bezeichnet.
 
 
 <a name="code" />
 
 ## <a name="run-code"></a>Ausführen von Code
 
-Kommunikation zwischen einem Watch-Erweiterung, und die übergeordnete iPhone-app wird veranschaulicht, der [GpsWatch Beispiel](https://developer.xamarin.com/samples/GpsWatch).
-Watch-Erweiterung kann anfordern, dass die übergeordnete iOS-app möchten eine Verarbeitung auf seinen Namen mithilfe der `OpenParentApplication` Methode.
+Kommunikation zwischen eine Watch-Erweiterung und der übergeordneten iPhone-app wird veranschaulicht, der [GpsWatch Beispiel](https://developer.xamarin.com/samples/GpsWatch).
+Die Watch-Erweiterung kann anfordern, dass die übergeordnete iOS-app können Sie einige Verarbeitungsschritte auf seinen Namen mithilfe der `OpenParentApplication` Methode.
 
-Dies ist besonders nützlich für lang ausgeführter Vorgänge (einschließlich Anforderungen über das Netzwerk) - nur das übergeordnete Element für iOS-app nutzen kann im Hintergrund zu verarbeiten, um diese Aufgaben abgeschlossen, und speichern die abgerufenen Daten an einem Ort zugegriffen werden kann, um die Watch-Erweiterung.
+Dies ist besonders nützlich für lang andauernde Aufgaben (einschließlich netzwerkanforderungen): nur das übergeordnete iOS-app nutzen kann, der hintergrundverarbeitung um führen diese Aufgaben aus, und speichern die abgerufenen Daten an einem Speicherort auf der Watch-Erweiterung zugreifen kann.
 
 
 
-### <a name="watch-kit-app-extension"></a>Überwachen-Kit-App-Erweiterung
+### <a name="watch-kit-app-extension"></a>Sehen Sie sich App-Erweiterung für Kit
 
-Rufen Sie die `WKInterfaceController.OpenParentApplication` in Ihre Watch-app-Erweiterung. Es gibt eine `bool` , der angibt, ob die GET-Anforderung erfolgreich gesendet wurde. Überprüfen Sie die `error` Parameter in der Antwort `Action` bestimmen, ob alle ist aufgetreten, während der Ausführung der Methode, die in der iPhone-app ausgeführt wird.
+Rufen Sie die `WKInterfaceController.OpenParentApplication` in Ihrer Watch-app-Erweiterung. Gibt eine `bool` , der angibt, ob es sich bei den GET-Anforderung gesendet wurde, erfolgreich oder nicht. Überprüfen Sie die `error` Parameter in der Antwort `Action` bestimmen, ob alle ist aufgetreten, während der Ausführung der Methode, die in der iPhone-app ausgeführt wird.
 
 ```csharp
 WKInterfaceController.OpenParentApplication (new NSDictionary (), (replyInfo, error) => {
@@ -60,8 +60,8 @@ WKInterfaceController.OpenParentApplication (new NSDictionary (), (replyInfo, er
 
 ### <a name="ios-app"></a>iOS-App
 
-Alle Aufrufe von einer Watch-app-Erweiterung über die iPhone-app weitergeleitet `HandleWatchKitExtensionRequest` Methode.
-Wenn Sie, die unterschiedliche Anforderungen in die Watch-app, und klicken Sie dann diese Methode zum Abfragen müssen die `userInfo` Wörterbuch bestimmen, wie die Anforderung zu verarbeiten.
+Alle Aufrufe eine Watch-app-Erweiterung über der iPhone-app weitergeleitet `HandleWatchKitExtensionRequest` Methode.
+Wenn diese Methode müssen Abfragen nutzen Sie unterschiedliche Anforderungen in der Watch-app die `userInfo` Wörterbuch, um zu bestimmen, wie die Anforderung zu verarbeiten.
 
 
 ```csharp
@@ -87,13 +87,13 @@ public partial class AppDelegate : UIApplicationDelegate
 
 ## <a name="shared-storage"></a>Freigegebener Speicher
 
-Wenn Sie konfigurieren eine [app-Gruppe](~/ios/watchos/app-fundamentals/app-groups.md) und iOS 8-Erweiterungen (einschließlich Watch-Erweiterungen) Daten für die übergeordnete app freigeben können.
+Wenn Sie konfigurieren eine [app-Gruppe](~/ios/watchos/app-fundamentals/app-groups.md) und iOS 8-Erweiterungen (einschließlich der Watch-Erweiterungen) Daten mit der übergeordneten Anwendung gemeinsam nutzen können.
 
 <a name="nsuserdefaults" />
 
 ### <a name="nsuserdefaults"></a>NSUserDefaults
 
-Der folgende Code kann in Watch-app-Erweiterung und die übergeordnete iPhone-app geschrieben werden, sodass sie einen gemeinsamen Satz von verweisen können `NSUserDefaults`:
+Der folgende Code kann in der Watch-app-Erweiterung und der übergeordneten iPhone-app geschrieben werden, sodass sie einen gemeinsamen Satz von verweisen können `NSUserDefaults`:
 
 ```csharp
 NSUserDefaults shared = new NSUserDefaults(
@@ -113,7 +113,7 @@ var count = shared.IntForKey ("count");
 
 ### <a name="files"></a>Dateien
 
-Die iOS-app "und" Überwachen der Erweiterung kann auch Dateien, die über einen gemeinsamen Dateipfad freigeben.
+Die iOS-app "und" Überwachen-Erweiterung kann auch Dateien mit einem gemeinsamen Dateipfad freigeben.
 
 ```csharp
 var FileManager = new NSFileManager ();
@@ -124,15 +124,15 @@ Console.WriteLine ("agcpath: " + appGroupContainerPath);
 // use the path to create and update files
 ```
 
-Hinweis: Wenn der Pfad ist `null` überprüfen Sie dann die [app-Gruppenkonfiguration](~/ios/watchos/app-fundamentals/app-groups.md) sicherstellen, dass die provisioning Profile ordnungsgemäß konfiguriert wurden und auf dem Entwicklungscomputer heruntergeladen und installiert wurden.
+Hinweis: Wenn der Pfad ist `null` überprüfen Sie dann die [app-Gruppenkonfiguration](~/ios/watchos/app-fundamentals/app-groups.md) sicherstellen, dass die bereitstellungsprofile richtig konfiguriert wurden und auf dem Entwicklungscomputer heruntergeladen und installiert wurden.
 
-Weitere Informationen finden Sie unter der [App Gruppenverwaltungsfunktionen](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) Dokumentation.
+Weitere Informationen finden Sie unter den [App-Gruppen-Funktionen](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) Dokumentation.
 
 ## <a name="wormholesharp"></a>WormHoleSharp
 
-Eine beliebte Open-Source-Mechanismus für WatchOS 1 (basierend auf [MMWormHole](https://github.com/mutualmobile/MMWormhole)), Daten oder Befehle zwischen der übergeordneten Anwendung und die Watch-app übergeben.
+Eine beliebte Open-Source-Mechanismus für WatchOS 1 (basierend auf [MMWormHole](https://github.com/mutualmobile/MMWormhole)), Daten- oder befehlsbindungen zwischen der übergeordneten-app und der Watch-app übergeben.
 
-Sie können eine app-Gruppe wie folgt in der iOS-app Wurmloch konfigurieren und beobachten die Erweiterung:
+Sie können "wormhole", die über eine app-Gruppe wie folgt in Ihre iOS-app konfigurieren und überwachen die Erweiterung:
 
 ```csharp
 // AppDelegate (iOS) or InterfaceController (watch extension)
@@ -141,7 +141,7 @@ Wormhole wormHole;
 wormHole = new Wormhole ("group.com.your-company.watchstuff", "messageDir");
 ```
 
-Die C#-Version herunterladen [WormHoleSharp](https://github.com/Clancey/WormHoleSharp).
+Herunterladen der C# Version [WormHoleSharp](https://github.com/Clancey/WormHoleSharp).
 
 
 
@@ -150,4 +150,4 @@ Die C#-Version herunterladen [WormHoleSharp](https://github.com/Clancey/WormHole
 - [GpsWatch (Beispiel)](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/)
 - [WormHoleSharp (Beispiel)](https://github.com/Clancey/WormHoleSharp)
 - [Apple WKInterfaceController Verweis](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
-- [Apple Freigeben von Daten mit der enthaltenden App](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)
+- [Apple Freigeben von Daten mit Ihrer App mit](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)

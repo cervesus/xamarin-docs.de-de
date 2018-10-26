@@ -6,13 +6,13 @@ ms.assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 47cd79611cfeaf48c0422772d8f3e75eb57ba771
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 10/04/2018
+ms.openlocfilehash: b8e851e735fa39d015e22ce511c39ad825bc97c9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996052"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119989"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms TableView
 
@@ -216,7 +216,67 @@ Die C# -Code über macht viel. Wir unterteilen:
 
 Beachten Sie, dass eine Klasse für die benutzerdefinierte Zelle nicht definiert ist. Stattdessen die `ViewCell`des View-Eigenschaft festgelegt ist, für eine bestimmte Instanz des `ViewCell`.
 
+## <a name="row-height"></a>Zeilenhöhe
 
+Die [ `TableView` ](xref:Xamarin.Forms.TableView) -Klasse verfügt über zwei Eigenschaften, die verwendet werden können, um die Höhe der Zellen ändern:
+
+- [`RowHeight`](xref:Xamarin.Forms.TableView.RowHeight) – Legt die Höhe der einzelnen Zeilen einer `int`.
+- [`HasUnevenRows`](xref:Xamarin.Forms.TableView.HasUnevenRows) – Zeilen über unterschiedliche Höhen verfügen, wenn auf festgelegt `true`. Beachten Sie, dass beim Festlegen dieser Eigenschaft auf `true`, Zeilenhöhe automatisch berechnet und xamarin.Forms angewendet werden.
+
+Wenn die Höhe des Inhalts in einer Zelle in einer [ `TableView` ](xref:Xamarin.Forms.TableView) geändert wird, wird die Zeile Höhe implizit unter Android und die universelle Windows-Plattform (UWP) aktualisiert. Allerdings unter iOS er gezwungen werden muss, aktualisieren, indem Sie die Einstellung der [ `HasUnevenRows` ](xref:Xamarin.Forms.TableView.HasUnevenRows) Eigenschaft `true` und durch das Aufrufen der [ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize) Methode.
+
+Das folgende XAML-Beispiel zeigt eine [ `TableView` ](xref:Xamarin.Forms.TableView) , enthält eine [ `ViewCell` ](xref:Xamarin.Forms.ViewCell):
+
+```xaml
+<ContentPage ...>
+    <TableView ...
+               HasUnevenRows="true">
+        <TableRoot>
+            ...
+            <TableSection ...>
+                ...
+                <ViewCell x:Name="_viewCell"
+                          Tapped="OnViewCellTapped">
+                    <Grid Margin="15,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Tap this cell." />
+                        <Label x:Name="_target"
+                               Grid.Row="1"
+                               Text="The cell has changed size."
+                               IsVisible="false" />
+                    </Grid>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
+```
+
+Wenn die [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) getippt wird, die `OnViewCellTapped` -Ereignishandler ausgeführt wird:
+
+```csharp
+void OnViewCellTapped(object sender, EventArgs e)
+{
+    _target.IsVisible = !_target.IsVisible;
+    _viewCell.ForceUpdateSize();
+}
+```
+
+Die `OnViewCellTapped` Ereignishandler zeigt, oder blendet Sie aus der zweiten [ `Label` ](xref:Xamarin.Forms.Label) in die [ `ViewCell` ](xref:Xamarin.Forms.ViewCell), und aktualisiert Sie der Zelle Größe explizit durch Aufrufen der [ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize) Methode.
+
+Die folgenden Screenshots zeigen die Zelle vor der wird beim Tippen:
+
+![](tableview-images/cell-beforeresize.png "ViewCell vor dem Ändern der Größe")
+
+Die folgenden Screenshots zeigen die Zelle nach wird beim Tippen:
+
+![](tableview-images/cell-afterresize.png "ViewCell nach dem Ändern der Größe")
+
+> [!IMPORTANT]
+> Es gibt sehr wahrscheinlich, dass eine Verringerung der Leistung auf, wenn dieses Feature übermäßig beansprucht wird.
 
 ## <a name="related-links"></a>Verwandte Links
 
