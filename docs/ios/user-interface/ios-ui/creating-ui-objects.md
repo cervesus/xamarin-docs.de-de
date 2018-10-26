@@ -1,105 +1,105 @@
 ---
 title: Erstellen von Benutzeroberflächenobjekten in Xamarin.iOS
-description: Dieses Dokument enthält einen Überblick über die zum Erstellen einer Benutzeroberfläche in Xamarin.iOS. Es wird erläutert, die iOS-Designer, Xcode Schnittstelle-Generator, C#- und Storyboards.
+description: Dieses Dokument enthält eine Übersicht über eine Benutzeroberfläche in Xamarin.iOS zu erstellen. Es wird erläutert, die iOS-Designer, Xcode Interface Builder, C#, und Storyboards.
 ms.prod: xamarin
 ms.assetid: 4D6B136C-744A-4936-8655-A77E62BA7A60
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: c688dcdf7498b0a2860d1878d893beae4f5cf8fc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a4cf63b84d0686bc28b02b18a6266908251bdf6f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790151"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121918"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Erstellen von Benutzeroberflächenobjekten in Xamarin.iOS
 
-Apple-Gruppen im Zusammenhang mit Funktionen in "Frameworks" die Xamarin.iOS Namespaces entsprechen. `UIKit` ist der Namespace, der alle Steuerelemente der Benutzeroberfläche für iOS enthält.
+Apple-Gruppen im Zusammenhang mit Funktionen in "Frameworks" die Xamarin.iOS-Namespaces entsprechen. `UIKit` ist der Namespace, der alle Steuerelemente der Benutzeroberfläche für iOS enthält.
 
-Wenn Code ein Steuerelement der Benutzeroberfläche, z. B. eine Bezeichnung oder eine Schaltfläche verweisen muss Denken Sie daran, und schließen Sie folgende Anweisung:
+Wenn Ihr Code auf ein Steuerelement der Benutzeroberfläche, z. B. eine Bezeichnung oder eine Schaltfläche muss, denken Sie daran, die folgenden using-Anweisung:
 
 ```csharp
 using UIKit;
 ```
 
-Alle Steuerelemente, die in diesem Kapitel beschriebenen sind im UIKit-Namespace und Namen der Steuerelementklasse jeder Benutzer hat die `UI` Präfix.
+Alle Steuerelemente, die in diesem Kapitel erläutert im UIKit-Namespace sind und jede Benutzer-steuerelementklassenname der `UI` Präfix.
 
-Sie können Steuerelemente der Benutzeroberfläche und Layouts auf drei Arten bearbeiten:
+Sie können die UI-Steuerelemente und Layouts auf drei Arten bearbeiten:
 
--  **[Xamarin iOS Designer](~/ios/user-interface/designer/index.md)**  – verwenden die Xamarin integrierten Layout-Designers können Sie Bildschirme entwerfen. Doppelklicken Sie auf Storyboard oder XIB-Dateien mit der integrierten Designer bearbeitet werden.
--  **Xcode-Schnittstelle-Generator** – ziehen Sie Steuerelemente auf Ihre Bildschirmlayouts mit Schnittstelle-Generator. Die Storyboard oder XIB-Datei in Xcode geöffnet, mit der rechten Maustaste in die Datei in die **Lösung Pad** auswählen und **Öffnen mit > Xcode Schnittstelle-Generator**.
--  **Mithilfe von c#** – Steuerelemente auch programmgesteuert mit Code erstellt und hinzugefügt werden können, die Hierarchie anzeigen.
+-  **[Xamarin.IOS-Designer](~/ios/user-interface/designer/index.md)**  – Verwendung Xamarins integrierten Layout-Designer Entwerfen von Bildschirmen. Doppelklicken Sie auf Storyboard oder XIB-Dateien mit der integrierten Designer bearbeiten.
+-  **Xcode Interface Builder** – ziehen Sie Steuerelemente auf Ihre Bildschirmlayouts mit Interface Builder. Öffnen Sie die Storyboard oder XIB-Datei in Xcode, mit der rechten Maustaste in die Datei in die **Lösungspad** und **Öffnen mit > Interface Builder von Xcode**.
+-  **Mithilfe von C#**  – Steuerelemente können auch programmgesteuert mit Code erstellt und hinzugefügt werden, die Hierarchie von Inhaltsansichten.
 
-Neue Storyboard und XIB Dateien können hinzugefügt werden, indem Sie mit der rechten Maustaste auf ein iOS-Projekt und **hinzufügen > neuen Datei...** .
+Neue Storyboard und XIB-Dateien können hinzugefügt werden, indem mit der rechten Maustaste auf ein iOS-Projekt und **hinzufügen > neue Datei...** .
 
-Steuerelementeigenschaften, unabhängig davon, welche Methode Sie verwenden, und Ereignisse können immer noch mit c# bearbeitet werden, in Ihrer Anwendungslogik.
+Welche Methode Sie verwenden, Eigenschaften und Ereignisse können jedoch geändert werden mit C# in Ihrer Anwendungslogik.
 
-## <a name="using-xamarin-ios-designer"></a>Mithilfe von Xamarin iOS-Designer
+## <a name="using-xamarin-ios-designer"></a>Mithilfe von Xamarin.IOS-Designer
 
-Um eine Benutzeroberfläche erstellen, in der iOS-Designer zu starten, doppelklicken Sie auf eine Storyboarddatei. Steuerelemente auf der Entwurfsoberfläche aus gezogen werden können die **Toolbox** wie unten gezeigt:
+Um Ihre Benutzeroberfläche erstellen, in der iOS-Designer zu starten, doppelklicken Sie auf eine Storyboard-Datei. Steuerelemente gezogen werden können, auf die Entwurfsoberfläche, aus der **Toolbox** wie unten gezeigt:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
- [![](creating-ui-objects-images/image2b.png "Toolbox mit Leerstellen auffüllen")](creating-ui-objects-images/image2b.png#lightbox)
+ [![](creating-ui-objects-images/image2b.png "Pad \"Toolbox\"")](creating-ui-objects-images/image2b.png#lightbox)
  
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
- [![](creating-ui-objects-images/image2b-vs.png "Toolbox Pad - Visual Studio")](creating-ui-objects-images/image2b.png#lightbox)
+ [![](creating-ui-objects-images/image2b-vs.png "Pad \"Toolbox\" – Visual Studio")](creating-ui-objects-images/image2b.png#lightbox)
  
 -----
 
-Wenn ein Steuerelement aktiviert ist, auf der Entwurfsoberfläche der **Eigenschaften Pad** zeigt die Attribute für dieses Steuerelement. Die **Widget > Identität > Name** Feld, das im folgenden Screenshot aufgefüllt wird, dient als die *Steckdose* Name. Wie Sie das Steuerelement in C#-verweisen können sieht folgendermaßen aus:
+Wenn ein Steuerelement ausgewählt ist, auf der Entwurfsoberfläche der **Pad "Eigenschaften"** zeigt die Attribute für dieses Steuerelement. Die **Widget > Identität > Namen** Feld, das im folgenden Screenshot ausgefüllt wird, wird verwendet, als die *Outlet* Name. Dies ist, wie Sie das Steuerelement in verweisen können C#:
 
- [![](creating-ui-objects-images/image3b.png "Eigenschaften-Widget mit Leerstellen auffüllen")](creating-ui-objects-images/image3b.png#lightbox)
+ [![](creating-ui-objects-images/image3b.png "Widget-Pad \"Eigenschaften\"")](creating-ui-objects-images/image3b.png#lightbox)
 
-Eine Vertiefung in der iOS-Designer verwenden, finden Sie in der [Einführung in die iOS-Designer](~/ios/user-interface/designer/introduction.md) Handbuch.
+Ein tieferer Einblick in die Verwendung des iOS Designers werden soll, finden Sie in der [Einführung in iOS-Designer](~/ios/user-interface/designer/introduction.md) Guide.
 
-## <a name="using-xcode-interface-builder"></a>Mithilfe von Xcode-Schnittstelle-Generator
+## <a name="using-xcode-interface-builder"></a>Mithilfe von Xcode Interface Builder
 
-Wenn Sie mit der Verwendung von Benutzeroberflächen-Generator nicht vertraut sind, finden Sie in der Apple- [Schnittstelle-Generator](https://developer.apple.com/xcode/interface-builder/) Dokumente.
+Wenn Sie mit der Verwendung von Interface Builder nicht vertraut sind, finden Sie im Apple- [Interface Builder](https://developer.apple.com/xcode/interface-builder/) Dokumente.
 
-Um ein Storyboard in Xcode zu öffnen, mit der rechten Maustaste das Kontextmenü für die Storyboarddatei zugreifen, und wählen zum Öffnen der **Xcode Schnittstelle-Generator**:
+Um ein Storyboard in Xcode öffnen, mit der rechten Maustaste das Kontextmenü für die Storyboard-Datei zugreifen, und wählen Sie öffnen die **Xcode Interface Builder**:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
  [![](creating-ui-objects-images/imagexcode.png "Kontextmenü für die Storyboard - Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
  
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](creating-ui-objects-images/imagexcode-vs.png "Kontextmenü für die Storyboard - Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
 
 -----
 
-Steuerelemente auf der Entwurfsoberfläche aus gezogen werden können die **Objektbibliothek** unten dargestellt:
+Steuerelemente gezogen werden können, auf die Entwurfsoberfläche, aus der **Objektbibliothek** unten dargestellt:
 
  [![](creating-ui-objects-images/image5a.png "Xcode-Objektbibliothek")](creating-ui-objects-images/image5a.png#lightbox)
 
-Beim Entwerfen der Benutzeroberflächenautomatisierungs mit dem Benutzeroberflächen-Generator müssen Sie erstellen eine **Nachrichtenplattform** für jedes Steuerelement, das Sie in c# verweisen möchten. Dies erfolgt durch das Einschalten der **Assistant Editor** über das Center **Editor** Schaltfläche auf der Xcode-Symbolleisten-Schaltfläche:
+Beim Entwerfen der Benutzeroberflächenautomatisierungs mit Interface Builder müssen Sie erstellen eine **Outlet** für jedes Steuerelement, das Sie verweisen in möchten C#. Dies erfolgt durch das Aktivieren der **Assistant Editor** über das Center **Editor** Schaltfläche auf der Xcode-Symbolleisten-Schaltfläche:
 
  [![](creating-ui-objects-images/image6a.png "Assistenten-Editor-Schaltfläche")](creating-ui-objects-images/image6a.png#lightbox)
 
-Klicken Sie auf ein Benutzerobjekt-Schnittstelle. Klicken Sie dann **Steuerelement Drag &** in die .h-Datei. Um ** Steuerelement ziehen **, halten Sie die STRG-Taste und halten Sie über die Benutzer-Schnittstellenobjekt, das Sie für den Ausgang (oder die Aktion) erstellen. Halten Sie STRG gedrückt und Sie in der Headerdatei ziehen. Fertig stellen unten ziehen die `@interface` Definition. Mit einer Beschriftung Steckdose einfügen oder Steckdose-Auflistung, sollte eine blaue Linie angezeigt werden, wie im folgenden Screenshot dargestellt.
+Klicken Sie auf ein Benutzerobjekt-Schnittstelle. Klicken Sie dann **Steuerelement Drag &** in der h-Datei. Um ** Steuerelement ziehen Sie **, halten Sie die STRG-Taste und halten Sie über das User Interface-Objekt, das Sie für den Ausgang (oder die Aktion) erstellen. Halten Sie gedrückt halten Sie die STRG-Taste und Sie in der Headerdatei ziehen. "Fertig stellen" unten ziehen die `@interface` Definition. Mit einer Beschriftung einfügen Outlet oder Outlet-Auflistung, sollte eine blaue Linie angezeigt werden, wie im folgenden Screenshot dargestellt.
 
-Beim Freigeben des auf werden Sie aufgefordert, einen Namen für den Ausgang anzugeben, die verwendet werden soll, erstellen Sie eine C#-Eigenschaft, die auf die verwiesen werden kann, im Code:
+Wenn Sie die auf freigeben, Sie aufgefordert werden, einen Namen für die Outlet angeben, die verwendet werden wird, zum Erstellen, einer C# -Eigenschaft, die im Code verwiesen werden kann:
 
- [![](creating-ui-objects-images/image8a.png "Erstellen eine Steckdose")](creating-ui-objects-images/image8a.png#lightbox)
+ [![](creating-ui-objects-images/image8a.png "Erstellen eines outlets")](creating-ui-objects-images/image8a.png#lightbox)
 
-Weitere Informationen wie Xcodes Benutzeroberflächen-Generator in Visual Studio für Mac integriert, finden Sie in der [Xib Codegenerierung](~/ios/internals/xib-code-generation.md#generated) Dokument.
+Weitere Informationen dazu, wie Interface Builder von Xcode in Visual Studio für Mac integriert ist, finden Sie in der [Xib-Codegenerierung](~/ios/internals/xib-code-generation.md#generated) Dokument.
 
-##  <a name="using-c"></a>Mithilfe von c#
+##  <a name="using-c"></a>Mithilfe vonC#
 
-Wenn Sie programmgesteuert ein Benutzerobjekt-Schnittstelle mithilfe von c# (in einer Sicht oder die View-Controller, z. B.) erstellen möchten, gehen Sie folgendermaßen vor:
+Wenn Sie programmgesteuert erstellen ein Objekt mit User Interface C# (in einer Sicht oder der View-Controller, z. B.), gehen Sie folgendermaßen vor:
 
--  Deklarieren Sie eine Ebene Klassenfeld für das Benutzerobjekt-Schnittstelle. Erstellen des Steuerelements selbst einmal in `ViewDidLoad` beispielsweise. Das Objekt kann dann in der gesamten Lebenszyklusmethoden des Controllers anzeigen (z. b. verwiesen werden
+-  Deklarieren Sie ein Klassenfeld-Ebene für das Benutzerobjekt-Schnittstelle. Erstellen Sie das Steuerelement selbst einmal im `ViewDidLoad` z. B. Das Objekt kann dann in der gesamten die Lebenszyklusmethoden der View-Controller (z.B.) verwiesen werden
 `ViewWillAppear`).
--  Erstellen einer `CGRect` , die den Frame des Steuerelements (seine X- und Y-Koordinaten auf dem Bildschirm "" sowie die Breite und Höhe) definiert. Sie müssen sicherstellen, dass eine `using CoreGraphics` für diese Richtlinie.
+-  Erstellen Sie eine `CGRect` , die den Rahmen des Steuerelements (der X- und Y-Koordinaten auf dem Bildschirm "" sowie die Breite und Höhe) definiert. Sie müssen sicherstellen, dass eine `using CoreGraphics` für diese Direktive.
 -  Rufen Sie den Konstruktor zum Erstellen, und weisen Sie das Steuerelement.
 -  Legen Sie Eigenschaften oder Ereignishandler.
--  Rufen Sie `Add()` der Hierarchie anzeigen des Steuerelements hinzu.
+-  Rufen Sie `Add()` das Steuerelement auf die Hierarchie von Inhaltsansichten hinzugefügt.
 
-Hier ist ein einfaches Beispiel zum Erstellen einer `UILabel` in einem Controller Sicht mithilfe von c#:
+Hier ist ein einfaches Beispiel zum Erstellen einer `UILabel` in einer View Controller mit C#:
 
 ```csharp
 UILabel label1;
@@ -114,17 +114,17 @@ public override void ViewDidLoad () {
 
 <a name="partial_classes" />
 
-## <a name="using-c-and-storyboards"></a>Verwenden von C#- und Storyboards
+## <a name="using-c-and-storyboards"></a>Mithilfe von C# und Storyboards
 
-Wenn auf die Entwurfsoberfläche View-Controller hinzugefügt werden, werden zwei entsprechende C#-Dateien im Projekt erstellt. In diesem Beispiel `ControlsViewController.cs` und `ControlsViewController.designer.cs` automatisch erstellt wurden:
+Wenn View Controller hinzugefügt werden, auf die Entwurfsoberfläche, in zwei entsprechenden C# Dateien im Projekt erstellt werden. In diesem Beispiel `ControlsViewController.cs` und `ControlsViewController.designer.cs` automatisch erstellt wurden:
 
  [![](creating-ui-objects-images/image9b.png "Partielle ViewController-Klasse")](creating-ui-objects-images/image9b.png#lightbox)
 
-Die `MainViewController.cs` Datei soll *Codes*. Dies ist, wenn die `View` Lebenszyklusmethoden wie z. B. `ViewDidLoad` und `ViewWillAppear` werden implementiert und in dem Sie Ihre eigenen Eigenschaften, Felder und Methoden hinzufügen können.
+Die `MainViewController.cs` Datei soll *Code*. Hier kommt die `View` Lebenszyklusmethoden, z. B. `ViewDidLoad` und `ViewWillAppear` werden implementiert und in dem Sie Ihre eigenen Eigenschaften, Felder und Methoden hinzufügen können.
 
-Die `ControlsViewController.designer.cs` ist generierter Code enthält eine partielle Klasse. Name eines Steuerelements auf der Entwurfsoberfläche Entwurfsoberfläche in Visual Studio für Mac, oder eine Steckdose oder die Aktion in Xcode, eine entsprechende Eigenschaft oder die partielle Methode erstellen, werden der Designer (designer.cs)-Datei hinzugefügt. Der folgende Code zeigt ein Beispiel für zwei Schaltflächen und ein Textansicht generiert Code, in denen eine der Schaltflächen verfügt auch über eine `TouchUpInside` Ereignis.
+Die `ControlsViewController.designer.cs` ist generierter Code enthält eine partielle Klasse. Wenn der Name eines Steuerelements auf der Entwurfsoberfläche in Visual Studio für Mac oder ein Outlet oder eine Aktion in Xcode, eine entsprechende Eigenschaft oder partielle Methode erstellen, werden der Designer ("Designer.cs")-Datei hinzugefügt. Der folgende Code zeigt ein Beispiel für zwei Schaltflächen und einer Textansicht generiert Code, in denen eine der Schaltflächen verfügt auch über eine `TouchUpInside` Ereignis.
 
-Aktivieren Sie diese Elemente der partiellen Klasse Code zum Verweisen auf die Steuerelemente und reagieren auf die Aktionen, die auf der Entwurfsoberfläche deklariert werden:
+Diese Elemente der partiellen Klasse aktivieren Sie Ihren Code zum Verweisen auf die Steuerelemente, und reagieren auf die Aktionen, die auf der Entwurfsoberfläche deklariert werden:
 
 ```csharp
 [Register ("ControlsViewController")]
@@ -165,9 +165,9 @@ Aktivieren Sie diese Elemente der partiellen Klasse Code zum Verweisen auf die S
 }
 ```
 
-Die `designer.cs` Datei sollte nicht manuell bearbeitet werden – die IDE (Visual Studio für Mac oder Visual Studio) dient, halten sie mit dem Storyboard synchronisiert.
+Die `designer.cs` Datei sollte nicht manuell bearbeitet werden: die IDE (Visual Studio für Mac oder Visual Studio) ist verantwortlich dafür, die mit dem Storyboard synchronisiert.
 
-Wenn der Benutzeroberflächenobjekte programmgesteuert hinzugefügt werden eine `View` oder `ViewController`, instanziieren und Objektverweise zu verwalten, und daher keine-Designer-Datei erforderlich ist.
+Wenn der Benutzeroberflächenobjekte programmgesteuert hinzugefügt werden eine `View` oder `ViewController`Sie instanziieren und die Objektverweise zu verwalten und daher keine Designer-Datei erforderlich ist.
 
 
 

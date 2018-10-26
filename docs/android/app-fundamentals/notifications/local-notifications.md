@@ -4,15 +4,15 @@ description: In diesem Abschnitt zeigt, wie lokale Benachrichtigungen in Xamarin
 ms.prod: xamarin
 ms.assetid: 03E19D14-7C81-4D5C-88FC-C3A3A927DB46
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 221fa9b70eeba2c4ca08433c627e5648470a7fac
-ms.sourcegitcommit: 7ffbecf4a44c204a3fce2a7fb6a3f815ac6ffa21
+ms.openlocfilehash: a4ffae0bde39450778b340b4a4c4da8fe90d0bec
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "39514530"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117680"
 ---
 <a name="compatibility"></a>
 
@@ -64,11 +64,11 @@ Benachrichtigungen können optional ein großes Symbol angezeigt, das die Anwend
 
 ![Foto von einfachen Benachrichtigung](local-notifications-images/04-simple-notification-photo.png)
 
-Ab Android 5.0, können Benachrichtigungen auch auf die für den sperrbildschirmhintergrund angezeigt werden:
+Ab Android 5.0, können Benachrichtigungen auch auf dem Sperrbildschirm angezeigt werden:
 
-[![Beispiel für den sperrbildschirmhintergrund Benachrichtigung](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png#lightbox)
+[![Beispiel für Benachrichtigung bei gesperrtem Bildschirm](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png#lightbox)
 
-Der Benutzer kann Doppeltippen Sie auf die Benachrichtigung für den sperrbildschirmhintergrund Entsperren des Geräts, und fahren Sie mit der app, die diese Benachrichtigung stammt oder Wischen, um diese zu schließen. Apps können die Sichtbarkeitsebene für eine Benachrichtigung zu steuern, was das für den sperrbildschirmhintergrund angezeigt werden, und Benutzer können wählen, ob vertraulichen Inhalt für den sperrbildschirmhintergrund Benachrichtigungen angezeigt werden können.
+Der Benutzer kann Doppeltippen Sie auf die Benachrichtigung bei gesperrtem Bildschirm zum Entsperren des Geräts, und fahren Sie mit der app, die diese Benachrichtigung stammt oder Wischen, um diese zu schließen. Apps können die Sichtbarkeitsebene für eine Benachrichtigung zu steuern, was auf dem Sperrbildschirm angezeigt wird, und Benutzer können wählen, ob vertraulichen Inhalt Benachrichtigungen bei gesperrtem Bildschirm angezeigt werden können.
 
 Android 5.0 eingeführt, ein wichtiges Präsentation benachrichtigungsformat namens *Heads-Up*. Heads-Up-Benachrichtigungen schieben Sie ein paar Sekunden nach unten aus dem oberen Rand des Bildschirms, und klicken Sie dann auf die Infobereich sichern zurückzukehren:
 
@@ -76,11 +76,11 @@ Android 5.0 eingeführt, ein wichtiges Präsentation benachrichtigungsformat nam
 
 Heads-Up-Benachrichtigungen können für das System UI wichtige Informationen vor dem Benutzer ohne Unterbrechung des Status der derzeit ausgeführten Aktivität einfügen.
 
-Android bietet Unterstützung für Metadaten von abfragebenachrichtigungen auf, sodass Benachrichtigungen sortiert und auf intelligente Weise angezeigt werden können. Metadaten von abfragebenachrichtigungen steuert auch, wie Benachrichtigungen auf die für den sperrbildschirmhintergrund und Heads-Up-Format dargestellt werden. Anwendungen können die folgenden Arten von Metadaten von abfragebenachrichtigungen festlegen:
+Android bietet Unterstützung für Metadaten von abfragebenachrichtigungen auf, sodass Benachrichtigungen sortiert und auf intelligente Weise angezeigt werden können. Metadaten von abfragebenachrichtigungen steuert auch, wie Benachrichtigungen auf dem Sperrbildschirm angezeigt und im Heads-Up-Format dargestellt werden. Anwendungen können die folgenden Arten von Metadaten von abfragebenachrichtigungen festlegen:
 
 -   **Priorität** &ndash; die Prioritätsstufe bestimmt, wie und wann die Benachrichtigungen angezeigt werden. Benachrichtigungen mit hoher Priorität werden als Heads-Up-Benachrichtigungen angezeigt, z. B. In Android 5.0.
 
--   **Sichtbarkeit** &ndash; gibt an, wie viel Benachrichtigungsinhalt angezeigt werden, wenn die Benachrichtigung auf die für den sperrbildschirmhintergrund angezeigt wird.
+-   **Sichtbarkeit** &ndash; gibt an, wie viel Benachrichtigungsinhalt angezeigt werden, wenn die Benachrichtigung auf dem Sperrbildschirm angezeigt wird.
 
 -   **Kategorie** &ndash; informiert das System wie verarbeitet die Benachrichtigung in verschiedenen Situationen, z. B. wenn das Gerät wird *nicht stören* Modus.
 
@@ -152,7 +152,7 @@ Um eine Benachrichtigung in Android zu erstellen, verwenden Sie die [Notificatio
 
 -   Die Priorität der Benachrichtigung: Minimum, Niedrig, Standard, hohe oder das maximum. Unter Android 8.0 und höher, wird die Priorität festlegen, über eine [ _Benachrichtigungskanal_](#notification-channels).
 
--   Die Sichtbarkeit der Benachrichtigung auf die für den sperrbildschirmhintergrund: öffentliche, Private oder geheimen Schlüssel.
+-   Die Sichtbarkeit der Benachrichtigung auf dem Sperrbildschirm: öffentliche, Private oder geheimen Schlüssel.
 
 -   Kategorie-Metadaten, mit Android klassifizieren und die Benachrichtigung zu filtern.
 
@@ -657,14 +657,14 @@ Da die Benachrichtigung "Überlegungen für den Tag" eine Benachrichtigung mit n
 
 ### <a name="visibility-settings"></a>Einstellungen zur Sichtbarkeit
 
-Ab Android 5.0: der *Sichtbarkeit* Einstellung ist verfügbar, die steuern, wie viel Inhalt der Benachrichtigung auf dem sicheren für den sperrbildschirmhintergrund angezeigt wird.
+Ab Android 5.0: der *Sichtbarkeit* Einstellung kann steuern, wie viel Inhalt der Benachrichtigung auf dem sicheren Sperrbildschirm angezeigt wird.
 Xamarin.Android definiert die folgenden Enumerationen für das Einstellen der Sichtbarkeit von Benachrichtigungen:
 
--   `NotificationVisibility.Public` &ndash; Der vollständige Inhalt der Benachrichtigung wird auf dem sicheren für den sperrbildschirmhintergrund angezeigt.
+-   `NotificationVisibility.Public` &ndash; Der vollständige Inhalt der Benachrichtigung wird auf dem sicheren Sperrbildschirm angezeigt.
 
--   `NotificationVisibility.Private` &ndash; Nur wichtige Informationen für die sichere für den sperrbildschirmhintergrund (z. B. das Benachrichtigungssymbol und den Namen der app, die es bereitgestellt) angezeigt, aber die restlichen die benachrichtigungs Details werden ausgeblendet. Alle Benachrichtigungen standardmäßig `NotificationVisibility.Private`.
+-   `NotificationVisibility.Private` &ndash; Nur wichtige Informationen auf dem sicheren Sperrbildschirm (z. B. das Benachrichtigungssymbol und den Namen der app, die es bereitgestellt) angezeigt wird, aber die restlichen die benachrichtigungs Details werden ausgeblendet. Alle Benachrichtigungen standardmäßig `NotificationVisibility.Private`.
 
--   `NotificationVisibility.Secret` &ndash; Klicken Sie auf der sicheren für den sperrbildschirmhintergrund, auch nicht auf das Benachrichtigungssymbol wird nichts angezeigt. Inhalt der Benachrichtigung ist verfügbar, nur, nachdem der Benutzer das Gerät entsperrt wird.
+-   `NotificationVisibility.Secret` &ndash; Auf dem sicheren Sperrbildschirm, auch nicht auf das Benachrichtigungssymbol wird nichts angezeigt. Inhalt der Benachrichtigung ist verfügbar, nur, nachdem der Benutzer das Gerät entsperrt wird.
 
 Festlegen die Sichtbarkeit einer Benachrichtigung in der apps-Aufruf die `SetVisibility` Methode der `NotificationCompat.Builder` Objekts und übergibt dabei die sichtbarkeitseinstellung. Angenommen, dieser Aufruf `SetVisibility` stellt die Benachrichtigung `Private`:
 
@@ -672,11 +672,11 @@ Festlegen die Sichtbarkeit einer Benachrichtigung in der apps-Aufruf die `SetVis
 builder.SetVisibility (NotificationVisibility.Private);
 ```
 
-Wenn eine `Private` Benachrichtigung gesendet wird, wird nur der Name und das Symbol der app auf dem sicheren für den sperrbildschirmhintergrund angezeigt. Anstatt die benachrichtigungsmeldung erhält der Benutzer "Entsperren Ihres Geräts zu dieser Benachrichtigung finden Sie unter":
+Wenn eine `Private` Benachrichtigung gesendet wird, wird nur der Name und das Symbol der app auf dem sicheren Sperrbildschirm angezeigt. Anstatt die benachrichtigungsmeldung erhält der Benutzer "Entsperren Ihres Geräts zu dieser Benachrichtigung finden Sie unter":
 
 ![Entsperren Sie Ihr Gerät-Benachrichtigung](local-notifications-images/25-lockscreen-private.png)
 
-In diesem Beispiel **NotificationsLab** ist der Name der ursprünglichen app. Diese bearbeitete Version der Benachrichtigung angezeigt wird, nur wenn die für den sperrbildschirmhintergrund sicher ist (d. h. per PIN, Muster und das Kennwort geschützt) &ndash; der für den sperrbildschirmhintergrund nicht sicher ist, der vollständige Inhalt der Benachrichtigung auf die für den sperrbildschirmhintergrund verfügbar ist.
+In diesem Beispiel **NotificationsLab** ist der Name der ursprünglichen app. Diese bearbeitete Version der Benachrichtigung angezeigt wird, nur wenn der Sperrbildschirm sicher ist (d. h. per PIN, Muster und das Kennwort geschützt) &ndash; der Sperrbildschirm nicht sicher ist, der vollständige Inhalt der Benachrichtigung zur Verfügung, auf dem Sperrbildschirm angezeigt wird.
 
 
 ### <a name="category-settings"></a>Kategorieeinstellungen
@@ -755,9 +755,9 @@ if ((int) Android.OS.Build.Version.SdkInt >= BuildVersionCodes.Lollipop) {
 In diesem Beispiel ist die app die **Zielframework** auf Android 5.0 festgelegt ist und die **Android-Mindestversion** nastaven NA hodnotu **Android 4.1 (API Level 16)**. Da `SetCategory` ist in der API-Ebene 21 und höher verfügbar – dieser Beispielcode ruft `SetCategory` nur, wenn es verfügbar ist &ndash; nicht aufrufen `SetCategory` bei API-Ebene ist weniger als 21.
 
 
-### <a name="lockscreen-visibility"></a>Für den Sperrbildschirmhintergrund Sichtbarkeit
+### <a name="lock-screen-visibility"></a>Sichtbarkeit der Sperre-Bildschirm
 
-Da Android keine für den sperrbildschirmhintergrund Benachrichtigungen vor Android 5.0 (API Level 21), unterstützen `NotificationCompat.Builder` unterstützt nicht die `SetVisibility` Methode. Wie bereits dargelegt für `SetCategory`, Ihren Code sehen die API-Ebene auf die Common Language Runtime, und rufen `SetVisiblity` nur, wenn es verfügbar ist:
+Da Android keine Benachrichtigungen bei gesperrtem Bildschirm vor Android 5.0 (API Level 21), unterstützen `NotificationCompat.Builder` unterstützt nicht die `SetVisibility` Methode. Wie bereits dargelegt für `SetCategory`, Ihren Code sehen die API-Ebene auf die Common Language Runtime, und rufen `SetVisiblity` nur, wenn es verfügbar ist:
 
 ```csharp
 if ((int) Android.OS.Build.Version.SdkInt >= 21) {
@@ -768,7 +768,7 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde erläutert, wie lokale Benachrichtigungen unter Android zu erstellen. Es wurde beschrieben, den Aufbau einer Benachrichtigung gesendet wird, es wurde erklärt, wie mit `NotificationCompat.Builder` zum Erstellen von Benachrichtigungen, wie Style-Benachrichtigungen in große Symbole *Big Text*, *Image* und *Posteingang*  Formate, Benachrichtigung über Metadateneinstellungen wie z. B. Sichtbarkeit, Priorität und Kategorie festlegen und wie Sie eine Aktivität aus einer Benachrichtigung zu starten. Außerdem wird in diesem Artikel beschrieben, wie diese Benachrichtigungseinstellungen mit der neuen Heads-Up, für den sperrbildschirmhintergrund, funktionieren und *nicht stören* Features, die in Android 5.0 eingeführt wurde. Schließlich haben Sie gelernt, verwenden Sie `NotificationCompat.Builder` Notification-Kompatibilität mit früheren Versionen von Android zu verwalten.
+In diesem Artikel wurde erläutert, wie lokale Benachrichtigungen unter Android zu erstellen. Es wurde beschrieben, den Aufbau einer Benachrichtigung gesendet wird, es wurde erklärt, wie mit `NotificationCompat.Builder` zum Erstellen von Benachrichtigungen, wie Style-Benachrichtigungen in große Symbole *Big Text*, *Image* und *Posteingang*  Formate, Benachrichtigung über Metadateneinstellungen wie z. B. Sichtbarkeit, Priorität und Kategorie festlegen und wie Sie eine Aktivität aus einer Benachrichtigung zu starten. Außerdem wird in diesem Artikel beschrieben, wie diese Benachrichtigungseinstellungen mit der neuen Heads-Up, Sperrbildschirm, funktionieren und *nicht stören* Features, die in Android 5.0 eingeführt wurde. Schließlich haben Sie gelernt, verwenden Sie `NotificationCompat.Builder` Notification-Kompatibilität mit früheren Versionen von Android zu verwalten.
 
 Richtlinien zum Entwerfen von Benachrichtigungen für Android, finden Sie unter [Benachrichtigungen](http://developer.android.com/guide/topics/ui/notifiers/notifications.html).
 

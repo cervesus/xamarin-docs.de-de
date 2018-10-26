@@ -1,171 +1,171 @@
 ---
-title: Grundlagen der App-Erweiterung Nachricht in Xamarin.iOS
-description: Dieser Artikel zeigt enthalten wie eine Nachrichten-App-Erweiterung in einem Xamarin.iOS-Lösung, die Nachrichten-app integriert und stellt neue Funktionen für den Benutzer.
+title: Grundlagen der Nachrichten-App-Erweiterung in Xamarin.iOS
+description: In diesem Artikel zeigt wie eine Nachrichten-App-Erweiterung in einer Xamarin.iOS-Projektmappe, die Nachrichten-app integriert und stellt neue Funktionen für den Benutzer hinzufügen.
 ms.prod: xamarin
 ms.assetid: 0CFB494C-376C-449D-B714-9E82644F9DA3
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: bc06d73543b9e0bd1e8715fc722b0a95af7d9f07
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 7bd4a87843852e940da96f688371ddbecbf7e0b4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787909"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105778"
 ---
-# <a name="message-app-extension-basics-in-xamarinios"></a>Grundlagen der App-Erweiterung Nachricht in Xamarin.iOS
+# <a name="message-app-extension-basics-in-xamarinios"></a>Grundlagen der Nachrichten-App-Erweiterung in Xamarin.iOS
 
-_Dieser Artikel zeigt enthalten wie eine Nachrichten-App-Erweiterung in einem Xamarin.iOS-Lösung, die Nachrichten-app integriert und stellt neue Funktionen für den Benutzer._
+_In diesem Artikel zeigt wie eine Nachrichten-App-Erweiterung in einer Xamarin.iOS-Projektmappe, die Nachrichten-app integriert und stellt neue Funktionen für den Benutzer hinzufügen._
 
-Neu für iOS-10-App-Erweiterung einer Nachricht integriert die **Nachrichten** app und stellt neue Funktionen für den Benutzer. Die Erweiterung kann Text, Aufkleber, Mediendateien und interaktive Nachrichten senden.
+Neue IOS 10, integriert eine Nachrichten-App-Erweiterung der **Nachrichten** -app und stellt neue Funktionen für den Benutzer. Die Erweiterung kann Text, Aufkleber, Mediendateien und interaktive Nachrichten senden.
 
 ## <a name="about-message-app-extensions"></a>Informationen zu Nachrichten-App-Erweiterungen
 
-Wie bereits erwähnt, eine Nachrichten-App-Erweiterung integriert die **Nachrichten** app und stellt neue Funktionen für den Benutzer. Die Erweiterung kann Text, Aufkleber, Mediendateien und interaktive Nachrichten senden. Zwei Arten von App-Erweiterung der Nachricht sind verfügbar:
+Wie bereits erwähnt, ist eine Nachrichten-App-Erweiterung in integriert die **Nachrichten** -app und stellt neue Funktionen für den Benutzer. Die Erweiterung kann Text, Aufkleber, Mediendateien und interaktive Nachrichten senden. Es stehen zwei Arten von Nachrichten-App-Erweiterung:
 
-- **Der Aufkleber mit Packs** -enthält eine Auflistung von Aufkleber, die der Benutzer eine Nachricht hinzufügen kann. Der Aufkleber mit Packs können erstellt werden, ohne Code schreiben zu müssen.
-- **iMessage App** -kann eine benutzerdefinierte Benutzeroberfläche innerhalb der Nachrichten-app für Aufkleber auswählen, Text eingeben, einschließlich Mediendateien (mit optionalen typkonvertierungen) und erstellen, bearbeiten und Senden von Nachrichten der Aktivität darstellen.
+- **Aufkleber Packs** -enthält eine Auflistung von Aufkleber, die der Benutzer eine Nachricht hinzugefügt werden kann. Aufkleber Packs erstellt werden, ohne Code schreiben zu müssen.
+- **iMessage App** -kann eine benutzerdefinierte Benutzeroberfläche innerhalb der Nachrichten-app für Aufkleber auswählen, Text eingeben, einschließlich Media-Dateien (mit optionalen typkonvertierungen) und erstellen, bearbeiten und Senden von Nachrichten von Interaktion darstellen.
 
-Nachrichtenerweiterungen für Apps bieten drei Haupttypen Inhalt:
+Nachrichtenerweiterungen für die Apps bieten drei Haupttypen Inhalt:
 
-- **Interaktive Nachrichten** -sind eine Art von Inhalt von benutzerdefinierten Nachrichten, die eine app generiert, wenn der Benutzer die Meldung, die app tippt wird im Vordergrund gestartet werden.
+- **Interaktive Nachrichten** -sind eine Art von Inhalt für die benutzerdefinierte Nachricht, die eine app generiert werden, wenn sich der Benutzer tippt in der Nachricht, die app auf wird im Vordergrund gestartet werden.
 - **Aufkleber** -Images generiert, die von der app, die in die Nachrichten zwischen den Benutzern aufgenommen werden kann.
-- **Andere Inhalte unterstützte** – die app bereitstellen Inhalte wie Fotos, Videos, Text oder Links zu anderen Inhalten eingibt, die immer von der Nachrichten-app unterstützt.
+- **Andere unterstützte Inhalte** : Geben Sie die app kann Inhalte wie Fotos, Videos, Text oder Links zu allen anderen Inhalten zu Typen, haben immer von der Nachrichten-app unterstützt.
 
-Neu für iOS 10, die Nachrichten-app enthält jetzt einen eigenen dedizierten, integrierte App Store. Alle apps, die Apps Nachrichtenerweiterungen enthalten werden angezeigt, und in diesem Speicher höher gestuft werden. Öffnen Sie die neue Nachrichten-App zeigt alle apps, die aus dem App Store Nachrichten, schnellen Zugriff auf die Benutzer bereitstellen heruntergeladen wurden.
+Neue IOS 10, die Nachrichten-app enthält nun eine eigene dedizierte, integrierten App-Store. Alle apps, die Nachrichten-Apps-Erweiterungen enthalten werden angezeigt und in diesem Speicher höher gestuft werden. Die neue Nachrichten-App-Drawer werden alle apps angezeigt, die von der Nachrichten-App Store, um schnellen Zugriff an die Benutzer bereitzustellen heruntergeladen wurden.
 
-Auch neue in iOS 10, Apple fügte Inline App Attribution die dem Benutzer ermöglicht, eine app einfach zu ermitteln. Z. B. wenn ein Benutzer aus einer Anwendung, der der 2. Benutzer aufweist, Inhalt in einen anderen gesendet (z. B. Aufkleber z. B.) installiert, der Namen der sendenden Anwendung unter den Inhalt im Verlauf Nachricht enthält. Wenn der Benutzer der app tippt Benennen der App-Nachrichtenspeicher, die wir geöffnet werden und die app im Store ausgewählt.
+Ebenfalls neu in iOS 10, Apple wurde hinzugefügt Inline App Attribution dem der Benutzer eine app leicht ermitteln kann. Wenn ein Benutzer Inhalte in eine andere aus einer app sendet, die der 2. Benutzer keinen ist das installiert (z. B. einem Aufkleber z. B.), z. B. zu der Namen der senden-app unter den Inhalt im Verlauf Nachricht aufgeführt. Wenn der Benutzer der app tippt auf Namen Sie, die Nachrichten-App-Store wir geöffnet werden und die app im Store ausgewählt.
 
-Apps Nachrichtenerweiterungen ähneln vorhandenen iOS-apps, dass der Entwickler vertraut, mit dem Erstellen ist und zum Zugriff auf die standard-Frameworks und Funktionen von einer standardmäßigen iOS-app. Zum Beispiel:
+Nachrichtenerweiterungen für Apps sind vergleichbar mit vorhandenen iOS-apps, dass der Entwickler vertraut sind, mit dem Erstellen und sie Zugriff auf die standard-Frameworks und Funktionen von einer standard-iOS-app haben. Zum Beispiel:
 
 - Sie haben Zugriff auf In-App-Käufe.
-- Sie verfügen über Zugriff auf die Apple Pay.
-- Sie haben Zugriff auf Gerätehardware wie z. B. die Verwendung der Kamera.
+- Sie haben Zugriff auf die Apple Pay.
+- Sie haben Zugriff auf die Hardware der Geräte wie z. B. die Kamera.
 
-Nachrichtenerweiterungen-Apps werden nur für iOS 10 unterstützt, der Inhalt, den diese Erweiterungen zu senden ist allerdings auf Geräten mit WatchOS und MacOS angezeigt werden kann. Die neue _Recents Page_ WatchOS 3 hinzugefügt wurde, wird Anzeigen der neuesten Aufkleber, die aus dem Mobiltelefon, einschließlich der von Nachrichtenerweiterungen für Apps, gesendet wurden und ermöglicht dem Benutzer diese Aufkleber von der Apple Watch senden.
+Nachrichtenerweiterungen für Apps werden nur unter iOS 10 unterstützt, die der Inhalt, den diese Erweiterungen zu senden ist jedoch auf WatchOS und MacOS-Geräte. Die neue _Recents Page_ WatchOS 3 hinzugefügt wurde, angezeigt aktuelle Aufkleber, die vom Telefon, einschließlich der von Nachrichtenerweiterungen für Apps, gesendet wurden, und Sie ermöglicht dem Benutzer, die Aufkleber von der Apple Watch zu senden.
 
-## <a name="about-the-messages-framework"></a>Informationen über die Nachrichten-Framework
+## <a name="about-the-messages-framework"></a>Informationen zu den Nachrichten-Framework
 
-Neu für iOS 10, die Nachrichten-Framework bietet, die Schnittstelle zwischen der Nachricht Apps-Erweiterung und die Nachrichten-app auf iOS-Gerät des Benutzers. Wenn der Benutzer eine App aus, in der Nachrichten-app gestartet wird, wird dieses Framework ermöglicht der app, die ermittelt werden und enthält die Daten und den Kontext, um das Layout der Benutzeroberflächenautomatisierungs erforderlich.
+Neue auf iOS 10, stellt das Framework Nachrichten die Schnittstelle zwischen der Nachrichten-Apps-Erweiterung und die Nachrichten-app auf iOS-Gerät des Benutzers bereit. Wenn der Benutzer eine App aus, in der Nachrichten-app gestartet wird, wird dieses Framework ermöglicht der app, die ermittelt werden und enthält die Daten und Layout der Benutzeroberfläche erforderlich.
 
-Sobald die app gestartet wird, interagiert der Benutzer zum Erstellen von neuen Inhalts über eine Nachricht freigeben. Die app verwendet das Framework Nachrichten klicken Sie dann auf um die neu erstellten Inhalt an die Nachrichten-app für die Verarbeitung zu übertragen.
+Sobald die app gestartet wird, interagiert der Benutzer neue Inhalte über eine Nachricht Teilen zu erstellen. Die app verwendet das Framework Nachrichten klicken Sie dann auf um den neu erstellten Inhalt für die Verarbeitung der Nachrichten-App zu übertragen.
 
-Die Nachrichten-Framework und Nachrichtenerweiterungen für Apps sind zusätzlich zu bereits vorhandenen iOS-App-Erweiterungen Technologien erstellt. Weitere Informationen zu App-Erweiterungen, finden Sie in der Apple- [Programmierhandbuch für App-Erweiterung](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214).
+Die Nachrichten-Framework und die Nachrichtenerweiterungen für Apps basieren auf vorhandenen iOS-App-Erweiterungen-Technologien. Weitere Informationen zu App-Erweiterungen finden Sie unter Apple [Programmierhandbuch für App-Erweiterung](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214).
 
-Im Gegensatz zu anderen Erweiterungspunkten, die von Apple im gesamten System zur Verfügung gestellt hat, muss der Entwickler nicht auf eine Host-app für ihre Apps Nachrichtenerweiterungen bereitstellen, da die Nachrichten-app selbst als Container fungiert. Allerdings muss der Entwickler die Möglichkeit, z. B. die Erweiterung für die Apps von Nachrichten innerhalb einer neuen oder vorhandenen iOS-app und versenden sie zusammen mit dem Paket.
+Im Gegensatz zu anderen Erweiterungspunkten, die im gesamten System Apple bereitgestellt wurde, muss der Entwickler nicht um eine Host-app für ihre Apps Nachrichtenerweiterungen bereitzustellen, da die Nachrichten-app selbst als Container fungiert. Allerdings muss der Entwickler die Möglichkeit, einschließlich der Nachrichten-Apps-Erweiterung in einer neuen oder vorhandenen iOS-app und das Senden und das Paket.
 
-Wenn die Nachrichtenerweiterungen für Apps in einer iOS-app-Paket enthalten ist, wird das Symbol für die app sowohl auf der Startseite des Geräts als auch in der Nachricht App Pushfunktion aus innerhalb der Nachrichten-app angezeigt. Wenn es nicht in einem app-Paket enthalten ist, wird die Erweiterung für die Nachricht Apps nur in-App öffnen Sie die Meldung angezeigt.
+Wenn die Nachrichtenerweiterungen für Apps in einer iOS-app-Paket enthalten ist, wird das Symbol der app sowohl auf der Startseite des Geräts als auch in der Nachricht App-Drawer von innerhalb der Nachrichten-app angezeigt werden. Wenn es nicht in einem app-Paket enthalten ist, wird die Erweiterung der Nachrichten-Apps nur im App-Drawer Nachricht angezeigt.
 
-Auch wenn die Nachrichtenerweiterungen für die Apps nicht in einem Host-app-Paket enthalten ist, müssen der Entwickler ein app-Symbol in der Nachricht Apps Erweiterung-Paket angeben wie sieht das Symbol ", das in anderen Teilen des Systems wie die Nachrichten-App-Bereich oder die Einstellungen angezeigt werden sollen , für die Erweiterung.
+Auch wenn die Nachrichtenerweiterungen für die Apps nicht in einem Host-app-Paket enthalten ist, muss der Entwickler zu app-Symbol in die Nachrichten-Apps-Erweiterung des Pakets, da es sich um das Symbol handelt, das in anderen Teilen des Systems wie die App-Drawer-Nachricht oder die Einstellungen angezeigt werden , für die Erweiterung.
 
 ## <a name="about-stickers"></a>Informationen zu Aufkleber
 
-Apple Aufkleber als eine neue Methode iMessage Benutzern kommunizieren, indem Sie Aufkleber Inline als an alle anderen Nachrichteninhalt entwickelt oder können vorherige Nachrichtenblasen innerhalb der Konversation zugeordnet werden.
+Apple Aufkleber entwickelt, als neue visualisierungsmöglichkeit für iMessage-Benutzer für die Kommunikation ermöglicht Aufkleber Inline als alle anderen Inhalt der Nachricht gesendet werden, oder sie können vorherigen Sprechblasen innerhalb der Konversation zugeordnet werden.
 
 Was sind Aufkleber?
 
-- Sie sind Bilder, die die Erweiterung für die Nachricht Apps bereitstellt.
-- Sie können entweder animierte oder statische Bilder sein.
-- Sie bieten eine neue Methode zum Freigeben von Inhalten von Images von innerhalb einer app.
+- Sie sind Images, die die Nachrichten-Apps-Erweiterung bietet.
+- Sie können Bilder für animierten oder statischen sein.
+- Sie bieten eine neue Möglichkeit zur Freigabe von Inhalten von Images von innerhalb einer app.
 
-Es gibt zwei Möglichkeiten, Aufkleber erstellen:
+Es gibt zwei Möglichkeiten zum Erstellen von Stickern:
 
-1. Ein Aufkleber Pack Nachrichtenerweiterungen Apps können innerhalb von Xcode aus erstellt werden, ohne Code. Erforderlich ist lediglich die Ressourcen für die Aufkleber und die app-Symbole.
-2. Durch das Erstellen einer Nachricht Apps dem standard entsprechende Erweiterung bereitstellt, Aufkleber aus Code über die Nachrichten-Framework.
+1. Eine Aufkleber Pack Nachrichtenerweiterungen Apps können von in Xcode erstellt werden, ohne Code. Erforderlich ist lediglich die Objekte für die Aufkleber und die app-Symbole.
+2. Durch das Erstellen einer Nachricht Standarderweiterung für Apps, die Aufkleber von Code über die Nachrichten-Framework bereitstellt.
 
-### <a name="creating-sticker-packs"></a>Der Aufkleber mit Packs erstellen
+### <a name="creating-sticker-packs"></a>Aufkleber Inhaltspakete erstellen
 
-Aufkleber Packs aus einer speziellen Vorlage in Xcode erstellt, und geben Sie einfach einen statischen Satz von Bildanlagen, die als Aufkleber verwendet werden kann. Wie bereits erwähnt, erfordern keinen Code, der Entwickler zieht Bilddateien einfach auf den Aufkleber-Pack-Ordner, in dem Aufkleber Asset-Katalog.
+Aufkleber Packs aus einer speziellen Vorlage in Xcode erstellt, und geben Sie einfach einen statischen Satz von Image-Ressourcen, die als Aufkleber verwendet werden kann. Wie bereits erwähnt, sie erfordern keine Code, der Entwickler einfach zieht der Bilddateien in den Aufkleber-Pack-Ordner, in dem Aufkleber Asset-Katalog.
 
-Für ein Bild, in einem Aufkleber Pack eingeschlossen werden sollen müssen sie die folgenden Anforderungen erfüllen:
+Um ein Bild in einem Aufkleber Pack einbezogen werden müssen sie die folgenden Anforderungen erfüllen:
 
-- Bilder müssen in einem PNG, APNG, GIF- oder JPEG-Format sein. Apple empfiehlt, nur die PNG und APNG Formate bei der Bereitstellung von Aufkleber Bestand.
-- Animierte Aufkleber unterstützen nur die APNG und GIF-Formaten.
-- Der Aufkleber mit Bildern sollten ein transparentes Hintergrunds bereitstellen, da sie über Blasen der Meldung in der Konversation vom Benutzer hinzugefügt werden können.
-- Die einzelnen Bilddateien müssen weniger als 500 kb sein.
-- Bilder, darf nicht kleiner als 100 x 100 Punkt oder größer, 206 x 206 zeigt sein.
+- Images müssen in einem PNG, APNG, GIF- oder JPEG-Format sein. Apple empfiehlt, nur die Formaten PNG und APNG beim Aufkleber Ressourcen bereitstellen.
+- Animierte Aufkleber unterstützen nur das APNG und GIF-Format.
+- Aufkleber-Images sollte einen transparenten Hintergrund enthalten, da sie über Sprechblasen in der Konversation durch den Benutzer platziert werden können.
+- Die einzelnen Bild-Dateien müssen weniger als 500 kb sein.
+- Bilder, darf nicht kleiner als 100 x 100 Punkte oder größer, 206 x 206 zeigt sein.
 
 > [!IMPORTANT]
-> Aufkleber Bilder sollte immer angegeben werden, auf die `@3x` Auflösung im Bereich von 300 x 300, 618 x 618 Pixel. Das System generiert automatisch die `@2x` und `@1x` Versionen zur Laufzeit nach Bedarf.
+> Aufkleber-Images sollte immer angegeben werden, auf die `@3x` Auflösung im Bereich von 300 x 300, 618 x 618 Pixel. Das System generiert automatisch die `@2x` und `@1x` Versionen zur Laufzeit nach Bedarf.
 
-Apple wird vorgeschlagen, Bildanlagen Aufkleber für verschiedene andere farbige Hintergründe (z. B. Whitepaper, Schwarz, Rot, Gelb und mit mehreren farbig) und über Fotos, um sicherzustellen, dass sie die am besten in allen möglichen Situationen testen.
+Apple empfiehlt Bildanlagen Aufkleber mit verschiedenen anderen farbigen Hintergrund (z. B. weiß, Schwarz, Rot, Gelb und mit mehreren farbig) und über Fotos, um sicherzustellen, dass sie die am besten suchen Sie in allen möglichen Situationen zu testen.
 
-Der Aufkleber mit Packs können Aufkleber in einem der drei verfügbaren Größen bereitstellen:
+Aufkleber Packs können es sich um Aufkleber in einem der drei verfügbaren Größen bereitstellen:
 
-- **Kleine** - 100 x 100 Punkte.
-- **Mittel** - 136 x 136 Punkte. Dies ist die Standardgröße.
+- **Kleine** : 100 x 100 Punkte.
+- **Mittel** – 136 x 136 Punkte. Dies ist die Standardgröße.
 - **Große** - 206 x 206 Punkte.
 
-Verwenden Xcodes Attribute Inspektor, legen Sie die Größe für das gesamte Aufkleber Pack, und erteilen Sie nur Bildanlagen, die die angeforderte Größe, die optimale Ergebnisse erzielen Sie im Browser Aufkleber innerhalb der Nachrichten-app entsprechen.
+Verwenden Xcodes Attributes Inspector zu Festlegen der Größe für das gesamte Aufkleber Pack nur Bildanlagen, die die angeforderte Größe für die besten Ergebnisse im Browser Aufkleber innerhalb der Nachrichten-app zu entsprechen.
 
-Weitere Informationen finden Sie unter unsere [Eis rustikal-Generator](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/) app und Apple [Nachrichten Verweis](https://developer.apple.com/reference/messages).
+Weitere Informationen finden Sie unsere [Eiskrem-Generator](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/) -app und Apple [Nachrichten Verweis](https://developer.apple.com/reference/messages).
 
 ## <a name="creating-a-custom-sticker-experience"></a>Erstellen eine benutzerdefinierte Aufkleber-Erfahrung
 
-Falls die app mehr Steuerelement oder Flexibilität als von einem Aufkleber Pack bereitgestellt wird benötigt, es umfassen eine Nachrichten-App-Erweiterung und die Aufkleber über das Framework Nachrichten für eine benutzerdefinierte Aufkleber Erfahrung bereitzustellen.
+Wenn die app mehr Steuerelement oder Flexibilität als die von einem Aufkleber Pack bereitgestellt wird erfordert, kann enthalten eine Nachrichten-App-Erweiterung und Sticker über das Framework Nachrichten für eine benutzerdefinierte Aufkleber-Erfahrung bereitzustellen.
 
-Was sind die Vorteile der eine benutzerdefinierte Aufkleber Erfahrung?
+Was sind die Vorteile von einer benutzerdefinierten Aufkleber Erfahrung zu bieten?
 
-1. Ermöglicht der app anpassen, wie Aufkleber für die Benutzer der app angezeigt werden. Um z. B. auf vorhanden Aufkleber in einem Format, die als standard Rasterlayout oder auf einem anderen farbigen Hintergrund.
-2. Ermöglicht das Aufkleber aus Code statt als statisches Bild Elemente eingeschlossen werden dynamisch erstellt werden.
-3. Ermöglicht das Aufkleber Bildanlagen dynamisch von der Entwickler Webserver heruntergeladen werden, ohne eine neue Version auf den App Store freigeben.
-4. Ermöglicht den Zugriff des Geräts Kamera Aufkleber auf dynamisch zu erstellen.
-5. Können für In-App-Einkäufe, sodass der Benutzer weitere Aufkleber aus innerhalb der app zu erwerben kann.
+1. Ermöglicht der app anpassen, wie die Aufkleber für die Benutzer der app angezeigt werden. Z. B. zum vorhanden Aufkleber in einem Format, die als standard-Grid-Layouts oder auf einem anderen farbigen Hintergrund.
+2. Ermöglicht die Aufkleber von Code anstelle von insgesamt als statisches Bild Objekte dynamisch erstellt werden.
+3. Ermöglicht die Aufkleber Bildanlagen dynamisch vom Webserver des Entwicklers heruntergeladen werden, ohne dass eine neue Version auf dem App Store veröffentlichen.
+4. Können für den Zugriff, die der Kamera des Geräts, um Aufkleber auf dynamisch zu erstellen.
+5. Können für In-App-Käufe, sodass der Benutzer weitere Aufkleber von innerhalb der app erwerben kann.
 
 Erstellen Sie eine benutzerdefinierte Aufkleber Erfahrung, führen Sie folgende Schritte aus:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Starten Sie Visual Studio für Mac.
-2. Öffnen Sie die Projektmappe, um eine Nachricht App-Erweiterung hinzufügen. 
-3. Wählen Sie **iOS** > **Erweiterungen** > **iMessage Erweiterung** , und klicken Sie auf die **Weiter** Schaltfläche: 
+2. Öffnen Sie die Projektmappe, um eine Nachrichten-App-Erweiterung hinzufügen. 
+3. Wählen Sie **iOS** > **Erweiterungen** > **iMessage-Erweiterung** , und klicken Sie auf die **Weiter** Schaltfläche: 
 
-    [![](intro-to-message-app-extensions-images/message01.png "Wählen Sie iMessage Erweiterung")](intro-to-message-app-extensions-images/message01.png#lightbox)
+    [![](intro-to-message-app-extensions-images/message01.png "Wählen Sie iMessage-Erweiterung")](intro-to-message-app-extensions-images/message01.png#lightbox)
 4. Geben Sie eine **Erweiterungsnamen** , und klicken Sie auf die **Weiter** Schaltfläche: 
 
     [![](intro-to-message-app-extensions-images/message02.png "Geben Sie einen Erweiterungsnamen")](intro-to-message-app-extensions-images/message02.png#lightbox)
-5. Klicken Sie auf die **erstellen** Schaltfläche, um die Erweiterung zu erstellen: 
+5. Klicken Sie auf die **erstellen** um die Erweiterung zu erstellen: 
 
     [![](intro-to-message-app-extensions-images/message03.png "Klicken Sie auf die Schaltfläche \"erstellen\"")](intro-to-message-app-extensions-images/message03.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Starten Sie Visual Studio.
 2. Öffnen Sie die Projektmappe, um eine Nachrichten-App-Erweiterung hinzufügen.
-3. Wählen Sie ** iOS Extensions > iMessage Erweiterung (iOS) **, und klicken Sie auf die **Weiter** Schaltfläche:
+3. Wählen Sie ** iOS-Erweiterungen > iMessage-Erweiterung (iOS) **, und klicken Sie auf die **Weiter** Schaltfläche:
 
-    [![Wählen Sie iMessage Erweiterung (iOS)](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
+    [![Wählen Sie iMessage-Erweiterung (iOS)](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
 
 4. Geben Sie einen **Namen** , und klicken Sie auf die **OK** Schaltfläche
 
 -----
 
-Wird standardmäßig die `MessagesViewController.cs` Datei wird der Projektmappe hinzugefügt werden. Dies ist der Haupteinstiegspunkt in die Erweiterung und erbt von der `MSMessageAppViewController` Klasse.
+In der Standardeinstellung die `MessagesViewController.cs` Datei wird zur Projektmappe hinzugefügt werden. Dies ist der Haupteinstiegspunkt bei der Erweiterung und erbt von der `MSMessageAppViewController` Klasse.
 
-Die Nachrichten-Framework stellt Klassen bereit, für die verfügbaren Aufkleber für den Benutzer verfügbar machen:
+Das Nachrichten-Framework stellt Klassen zum Darstellen von verfügbaren Aufkleber auf den Benutzer:
 
-- `MSStickerBrowserViewController` -Steuert die Sicht, der in der Aufkleber angezeigt werden. Es entspricht auch der `IMSStickerBrowserViewDataSource` Schnittstelle, um die Anzahl der Aufkleber und dem Aufkleber für einen bestimmten Browser Index zurück.
-- `MSStickerBrowserView` -Dies ist die Ansicht, der in den verfügbaren Aufkleber angezeigt werden.
-- `MSStickerSize` -Entscheidet sich die Größe der einzelnen Zelle für das Raster der Aufkleber in der Browseransicht angezeigt.
+- `MSStickerBrowserViewController` -Steuert die Ansicht, der im Sticker angezeigt werden. Es entspricht auch der `IMSStickerBrowserViewDataSource` Schnittstelle, um die Anzahl der Aufkleber und dem Aufkleber für einen bestimmten Browser Index zurückzugeben.
+- `MSStickerBrowserView` : Dies ist die Ansicht, der in verfügbaren Sticker angezeigt werden.
+- `MSStickerSize` -Entscheidet sich der Größe der einzelnen Zelle für das Raster der Aufkleber, die in der Browseransicht angezeigt.
 
 ### <a name="creating-a-custom-sticker-browser"></a>Erstellen einen benutzerdefinierten Aufkleber-Browser
 
-Entwickler kann die Aufkleber praktisches Beispiel für den Benutzer durch Bereitstellen einer benutzerdefinierten Aufkleber Browser weiter anpassen (`MSMessageAppBrowserViewController`) in der Nachrichten-App-Erweiterung. Der benutzerdefinierte Aufkleber Browser ändert wie Aufkleber für den Benutzer angezeigt werden, wenn sie Aufkleber den Nachrichtenstream einschließt auswählen.
+Entwickler kann die Aufkleber-Erfahrung für den Benutzer durch die Bereitstellung von einem benutzerdefinierten Aufkleber Browser weiter anpassen (`MSMessageAppBrowserViewController`) in der Nachrichten-App-Erweiterung. Die benutzerdefinierte Aufkleber browseränderungen wie Aufkleber auf den Benutzer dargestellt werden, wenn sie den Aufkleber der Nachrichtendatenstrom einschließt auswählen.
 
 Führen Sie folgende Schritte aus:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. In der **Lösung Pad**mit der rechten Maustaste auf die Erweiterung Projektnamen, und wählen Sie **hinzufügen** > **neue Datei...**   >  **iOS | Apple Watch** > **Schnittstelle Controller**.
+1. In der **Lösungspad**mit der rechten Maustaste auf den Projektnamen für die Erweiterung, und wählen Sie **hinzufügen** > **neue Datei...**   >  **iOS | Apple Watch** > **Schnittstellencontroller**.
 2. Geben Sie `StickerBrowserViewController` für die **Namen** , und klicken Sie auf die **neu** Schaltfläche: 
 
     [![](intro-to-message-app-extensions-images/browser01.png "Geben Sie ein StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.png#lightbox)
 3. Öffnen der `StickerBrowserViewController.cs` Datei zur Bearbeitung.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. In der **Projektmappen-Explorer**mit der rechten Maustaste auf die Erweiterung Projektnamen, und wählen Sie **hinzufügen** > **neue Datei...**   >  **iOS | Apple Watch** > **Schnittstelle Controller**.
+1. In der **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen für die Erweiterung, und wählen Sie **hinzufügen** > **neue Datei...**   >  **iOS | Apple Watch** > **Schnittstellencontroller**.
 2. Geben Sie `StickerBrowserViewController` für die **Namen** , und klicken Sie auf die **neu** Schaltfläche: 
 
     [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "Geben Sie ein StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
@@ -262,13 +262,13 @@ namespace MonkeyStickers
 }
 ```
 
-Sehen Sie sich den Code oben im Detail an. Speicher erstellt für die Aufkleber, die die Erweiterung:
+Sehen Sie sich den Code oben im Detail an. Es wird Speicher für die Aufkleber, die die Erweiterung bietet erstellt:
 
 ```csharp
 public List<MSSticker> Stickers { get; set; } = new List<MSSticker> ();
 ```
 
-Und zwei Möglichkeiten, überschreibt die `MSStickerBrowserViewController` Klasse, um Daten für den Browser aus diesen Datenspeicher bereitstellen:
+Und zwei Methoden überschreibt die `MSStickerBrowserViewController` Klasse, um Daten für diesen Datenspeicher durch den Browser bereitzustellen:
 
 ```csharp
 public override nint GetNumberOfStickers (MSStickerBrowserView stickerBrowserView)
@@ -282,7 +282,7 @@ public override MSSticker GetSticker (MSStickerBrowserView stickerBrowserView, n
 }
 ```
 
-Die `CreateSticker` -Methode den Pfad der Standardimage-Medienobjekt aus Paket mit der Erweiterung ab und verwendet, um eine neue Instanz der Erstellen einer `MSSticker` aus diesem Medienobjekt, wodurch es der Auflistung hinzugefügt:
+Die `CreateSticker` Methode ruft den Pfad ein Bildobjekt aus Paket mit der Erweiterung ab und verwendet, um eine neue Instanz der Erstellen einer `MSSticker` aus diesem Objekt, der der Auflistung hinzugefügt:
 
 ```csharp
 private void CreateSticker (string assetName, string localizedDescription)
@@ -309,9 +309,9 @@ private void CreateSticker (string assetName, string localizedDescription)
 }
 ```
 
-Die `LoadSticker` Methode wird aufgerufen, von `ViewDidLoad` Aufkleber aus der benannten imagemedienobjekt (enthalten in der app-Bündel) erstellen und die Auflistung der Aufkleber hinzuzufügen.
+Die `LoadSticker` Methode wird aufgerufen, von `ViewDidLoad` Aufkleber aus dem benannten Image Asset (enthalten in der app Bundle) erstellen und auf die Auflistung von stickern hinzufügen.
 
-Bearbeiten Sie zum Implementieren von benutzerdefinierten Aufkleber Browser die `MessagesViewController.cs` Datei, und stellen sie wie folgt aussehen:
+Um den benutzerdefinierten Aufkleber Browser implementieren möchten, bearbeiten Sie die `MessagesViewController.cs` Datei, und stellen sie wie folgt aussehen:
 
 ```csharp
 using System;
@@ -354,13 +354,13 @@ namespace MonkeyStickers
 }
 ```
 
-Betrachten diesen Code im Detail, erstellt es Speicher für den benutzerdefinierten Browser:
+Ein Blick auf diesen Code im Detail, wird der Speicher für den benutzerdefinierten Browser erstellt:
 
 ```csharp
 public StickerBrowserViewController BrowserViewController { get; set;}
 ```
 
-Und klicken Sie in der `ViewDidLoad` -Methode wird instanziiert und konfiguriert ein neues Browserfenster:
+Und klicken Sie in der `ViewDidLoad` -Methode, es wird instanziiert und konfiguriert einen neuen Browser:
 
 ```csharp
 // Create new browser and configure it
@@ -369,7 +369,7 @@ BrowserViewController.View.Frame = View.Frame;
 BrowserViewController.ChangeBackgroundColor (UIColor.Gray);
 ```
 
-Klicken Sie dann fügt der Browser auf die Ansicht zum Anzeigen dieser hinzu:
+Klicken Sie dann wird den Browser an die Ansicht angezeigt:
 
 ```csharp
 // Add to view
@@ -380,19 +380,19 @@ View.AddSubview (BrowserViewController.View);
 
 ### <a name="further-sticker-customization"></a>Weitere Aufkleber-Anpassung
 
-Weitere Aufkleber Anpassung ist möglich, nur zwei Klassen in der Nachrichten-App-Erweiterung einschließen:
+Weitere Aufkleber Anpassung ist dazu nur zwei Klassen in der App-Erweiterung für Nachricht möglich:
 
 - `MSStickerView`
 - `MSSticker`
 
-Verwenden die oben genannten Methoden ein, kann die Erweiterung Aufkleber Auswahl unterstützen, die nicht auf die Standardmethode Aufkleber Browser angewiesen ist. Darüber hinaus kann die Anzeige Aufkleber zwischen zwei unterschiedliche Ansichtsmodi umgeschaltet werden:
+Verwenden die oben genannten Methoden ein, kann die Erweiterung Aufkleber Auswahl unterstützen, die nicht die standard-Aufkleber browsermethode abhängig ist. Darüber hinaus kann die Anzeige Aufkleber zwischen zwei unterschiedliche Ansichtsmodi umgeschaltet werden:
 
-- **Compact** -Dies ist der Standardmodus, in dem die unteren 25 % der Nachricht an die Ansicht der Aufkleber mit beanspruchen.
-- **Erweitert** -Aufkleber Ansicht füllt die gesamte Nachricht anzeigen.
+- **Compact** – Dies ist der Standardmodus, in denen die unteren 25 %, der die Ansicht "Nachricht" beansprucht die Aufkleber-Ansicht.
+- **Erweitert** -Ansicht für die Aufkleber füllt die gesamte Nachrichtenansicht.
 
 In dieser Ansicht Aufkleber kann zwischen diesen Modi entweder programmgesteuert oder manuell vom Benutzer umgeschaltet werden.
 
-Betrachten Sie das folgende Beispiel der Wechsel zwischen den zwei unterschiedliche Ansichtsmodi verarbeiten. Zwei unterschiedliche View-Controller werden für jeden Status erforderlich. Die `StickerBrowserViewController` behandelt die **Compact** anzeigen und sieht wie folgt aus:
+Sehen Sie sich im folgenden Beispiel der Wechsel zwischen den zwei unterschiedliche Ansichtsmodi zu verarbeiten. Zwei andere Ansichtscontroller werden für die einzelnen Zustände nachgewiesen. Die `StickerBrowserViewController` Handles der **Compact** anzeigen und sieht wie folgt aus:
 
 ```csharp
 using System;
@@ -493,7 +493,7 @@ namespace MessageExtension
 }
 ```
 
-Die `AddStickerViewController` verarbeitet die **erweitert** Aufkleber anzeigen und überprüfen Sie wie folgt:
+Die `AddStickerViewController` übernimmt die **erweitert** Aufkleber anzeigen und sehen Sie wie folgt:
 
 ```csharp
 using System;
@@ -545,7 +545,7 @@ namespace MessageExtension
 }
 ```
 
-Die `MessageViewController` implementiert diese View-Controller, um die angeforderten Status Laufwerk:
+Die `MessageViewController` implementiert diese View-Controller, um den angeforderten Zustand zu steuern:
 
 ```csharp
 using System;
@@ -665,14 +665,14 @@ namespace MessageExtension
 }
 ```
 
-Wenn der Benutzer fordert so ihre verfügbaren Auflistung einen neuen Aufkleber hinzu ein neues `AddStickerViewController` erfolgt die sichtbaren Controller und Ansicht Aufkleber eingibt der **erweitert** anzeigen:
+Wenn der Benutzer anfordert, um ihre verfügbar Auflistung einen neuen Aufkleber hinzuzufügen ein neues `AddStickerViewController` wird versucht, die sichtbar Controller und Ansicht-Aufkleber wechselt die **erweitert** anzeigen:
 
 ```csharp
 // Switch to expanded view mode
 Request (MSMessagesAppPresentationStyle.Expanded);
 ```
 
-Wenn der Benutzer wählt Aufkleber hinzufügen, wird er zu ihrer verfügbar Auflistung hinzugefügt und die **Compact** Ansicht angefordert wird:
+Wenn der Benutzer wählt einen Aufkleber hinzuzufügen, wird es ihre verfügbaren Auflistung hinzugefügt und die **Compact** Ansicht angefordert wird:
 
 ```csharp
 public void AddStickerToCollection (MSSticker sticker)
@@ -685,7 +685,7 @@ public void AddStickerToCollection (MSSticker sticker)
 }
 ```
 
-Die `DidTransition` Methode wird überschrieben, um den Wechsel zwischen den beiden Modi zu behandeln:
+Die `DidTransition` Methode wird überschrieben, um zwischen den beiden Modi wechseln zu behandeln:
 
 ```csharp
 public override void DidTransition (MSMessagesAppPresentationStyle presentationStyle)
@@ -706,12 +706,12 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel behandelt hat enthalten eine Nachrichten-App-Erweiterung in einem Xamarin.iOS-Lösung, mit den der **Nachrichten** app und vorhanden neue Funktionen für den Benutzer. Er behandelt die Erweiterung verwenden, um Text, Aufkleber, Mediendateien und interaktive Nachrichten zu senden.
+In diesem Artikel wurden behandelt enthalten eine Nachrichten-App-Erweiterung in einer Xamarin.iOS-Projektmappe, die integriert werden, die **Nachrichten** app "und" vorhanden, neue Funktionen für den Benutzer. Es wird beschrieben, mit der Erweiterung, um Text, Aufkleber, Mediendateien und interaktive Nachrichten zu senden.
 
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Eis rustikal-Generator (Beispiel)](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/)
+- [Eiskrem-Generator (Beispiel)](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/)
 - [Nachrichten-Referenz](https://developer.apple.com/reference/messages)
 - [Programmierhandbuch für App-Erweiterung](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)

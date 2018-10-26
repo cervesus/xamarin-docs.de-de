@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: dd0afe03adbd021717a88cd4409e3e1351ba9b50
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: 3f74144f85cc045b4ea9807d3d818677e33539f2
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111185"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123465"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Manuelle Bereitstellung für Xamarin.iOS
 
@@ -73,11 +73,11 @@ Führen Sie folgende Schritte aus, um eine Signieridentität zu generieren:
 
 ### <a name="understanding-certificate-key-pairs"></a>Grundlegendes zu Zertifikatschlüsselpaaren
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Das Entwicklerprofil enthält Zertifikate, die zugeordneten Schlüssel und beliebige Bereitstellungsprofile, die dem Konto zugeordnet sind. Es gibt tatsächlich zwei Versionen des Entwicklerprofils – eine im Entwicklerportal, und die andere befindet sich auf einem lokalen Mac. Der Unterschied zwischen den beiden ist der Schlüsseltyp, den sie enthalten: _Das Portalprofil enthält alle öffentlichen Schlüssel, die Ihren Zertifikaten zugeordnet ist, während die Kopie auf Ihrem lokalen Mac alle privaten Schlüssel enthält_. Damit die Zertifikate gültig sind, müssen die Schlüsselpaare übereinstimmen. Behalten Sie eine Sicherung des Entwicklerprofils auf dem lokalen Mac. Sollte der private Schlüssel verloren gehen, müssen alle Zertifikate und Bereitstellungsprofile erneut generiert werden.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Das Entwicklerprofil enthält Zertifikate, die zugeordneten Schlüssel und beliebige Bereitstellungsprofile, die dem Konto zugeordnet sind. Es gibt tatsächlich zwei Versionen eines Entwicklerprofils – eine im Entwicklerportal, und die andere befindet sich auf einem Macintosh-Computer. Der Unterschied zwischen den beiden ist der Schlüsseltyp, den sie enthalten: _Das Portalprofil enthält alle öffentlichen Schlüssel, die Ihren Zertifikaten zugeordnet ist, während die Kopie auf Ihrem Mac alle privaten Schlüssel enthält_. Damit die Zertifikate gültig sind, müssen die Schlüsselpaare übereinstimmen. Behalten Sie eine Sicherung des Entwicklerprofils auf dem Mac des Buildhosts von Xamarin. Sollte der private Schlüssel verloren gehen, müssen alle Zertifikate und Bereitstellungsprofile erneut generiert werden.
 
@@ -204,12 +204,12 @@ Zertifikate und Bereitstellungsprofile, die im Apple-Entwicklerportal erstellt w
 
 Die neuen Zertifikate oder Bereitstellungsprofile sind in Visual Studio für Mac oder Visual Studio verfügbar und einsatzbereit.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 > [!IMPORTANT]
 > Möglicherweise müssen Sie Visual Studio für Mac beenden und neu starten, bevor neue oder geänderte Zertifikate oder von Xcode aktualisierte Profile angezeigt werden.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 > [!IMPORTANT]
 > Möglicherweise müssen Sie Visual Studio beenden und neu starten, bevor neue oder geänderte Zertifikate oder von Xcode aktualisierte Profile angezeigt werden.
@@ -230,7 +230,7 @@ Apple stellt eine Auswahl an speziellen Anwendungsdiensten, auch Funktionen gena
 
 An dieser Stelle sollte die Bereitstellung abgeschlossen sein, und die App kann nun auf dem Gerät bereitgestellt werden. Führen Sie dazu folgende Schritte aus:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 > [!IMPORTANT]
 > Bevor Sie beginnen, stellen Sie sicher, dass Sie in der **Info.plist** die Option **Manuelle Bereitstellung** ausgewählt haben.
@@ -249,7 +249,7 @@ Wenn die Einstellung auf **Automatisch** festgelegt ist, wählt Visual Studio f�
 4. Stellen Sie sicher, dass die Buildkonfiguration auf **iPhone** / **iPad** anstatt auf Simulator festgelegt wurde.
 5. Klicken Sie in Visual Studio für Mac auf **Ausführen**, und beobachten Sie die Ausführung der App auf dem Gerät.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 > [!IMPORTANT]
 > Bevor Sie beginnen, stellen Sie sicher, dass Sie in der unter **Projekt > Bereitstellungseigenschaften…** die Option **Manuelle Bereitstellung** ausgewählt haben.

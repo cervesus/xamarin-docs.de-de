@@ -1,46 +1,46 @@
 ---
 title: Benennen von Parametern mit Javadoc
-description: Dieser Artikel beschreibt die Vorgehensweise beim Wiederherstellen von Parameternamen in einem Projekt für die Java-Bindung mithilfe von Javadoc aus dem Java-Projekt generiert.
+description: In diesem Artikel wird erläutert, wie beim Parameternamen in einem Projekt für die Java-Bindung Wiederherstellen von Javadoc aus dem Java-Projekt generiert wird.
 ms.prod: xamarin
 ms.assetid: 59E8EF16-1322-486A-BB16-353804B77356
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/20/2017
-ms.openlocfilehash: 7517e46c5b66123dc4e12fb5562c59f569f249aa
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e394377043953a297afed36a3ce0747a3e6d1512
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30766893"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104413"
 ---
 # <a name="naming-parameters-with-javadoc"></a>Benennen von Parametern mit Javadoc
 
-_Dieser Artikel beschreibt die Vorgehensweise beim Wiederherstellen von Parameternamen in einem Projekt für die Java-Bindung mithilfe von Javadoc aus dem Java-Projekt generiert._
+_In diesem Artikel wird erläutert, wie beim Parameternamen in einem Projekt für die Java-Bindung Wiederherstellen von Javadoc aus dem Java-Projekt generiert wird._
 
 
 ## <a name="overview"></a>Übersicht
 
-Einige Metadaten über die gebundenen-API geht verloren, wenn Sie eine vorhandene Java-Bibliothek zu binden. Insbesondere die Namen der Parameter für Methoden. Parameternamen hostnamensadresse `p0`, `p1`usw. Grund hierfür ist das Java `.class` Dateien die Parameternamen, die in der Java-Quellcode verwendet wurden nicht beibehalten. 
+Einige Metadaten über die gebundenen-API geht verloren, wenn Sie eine vorhandene Java-Bibliothek zu binden. Insbesondere die Namen der Parameter für Methoden. Parameternamen werden `p0`, `p1`usw. Grund hierfür ist das Java `.class` Dateien behalten keine die Parameternamen, die in der Java-Quellcode verwendet wurden. 
 
-Eine Bindung Xamarin.Android Java-Projekt kann die Parameternamen bereitstellen, wenn sie Zugriff auf den Javadoc-HTML-Code aus der ursprünglichen Bibliothek hat. 
+Ein Xamarin.Android-Java-bindungsprojekt kann die Parameternamen bereitstellen, wenn sie Zugriff auf den Javadoc-HTML-Code aus der ursprünglichen Bibliothek hat. 
 
-## <a name="integrating-javadoc-html-into-a-java-binding-project"></a>Integrieren von Javadoc HTML in einer Java Project binden
+## <a name="integrating-javadoc-html-into-a-java-binding-project"></a>Integrieren von Javadoc HTML in einer Java Projekt wird gebunden
 
-Integrieren von Javadoc HTML in einem Binden von Java-Projekt ist ein manueller Prozess, der die folgenden Schritte aus: 
+Die Integration von den Javadoc-HTML-Code in ein Binden von Java-Projekt ist ein manueller Prozess, der die folgenden Schritte aus: 
 
 1.  Die Javadoc für die Bibliothek herunterladen
-2.  Bearbeiten der `.csproj` und fügen eine `<JavaDocPaths>` Eigenschaft:
+2.  Bearbeiten der `.csproj` -Datei und fügen eine `<JavaDocPaths>` Eigenschaft:
 3.  Bereinigen und das Projekt neu erstellen
 
-Sobald dies geschehen ist, sollte die Namen der ursprünglichen Java-Parameter in den APIs, die von einem Projekt für die Java-Bindung gebunden vorhanden sein. 
+Sobald dies geschehen ist, sollte die Namen der ursprünglichen Java-Parameter vorhanden ist, in den APIs, die von einem Projekt für die Java-Bindung gebunden sein. 
 
 
 > [!NOTE]
-> Es ist sehr viel systemverarbeitungszeit in die Varianz bei der die JavaDoc-Ausgabe. Die. Jeder einzelnen möglichen Permutation JAR Bindung toolkette nicht unterstützt und daher einige Parameter möglicherweise nicht ordnungsgemäß benannt.
+> Es gibt eine große Menge von Varianz in der JavaDoc-Ausgabe. Die. JAR-Bindung-toolkette unterstützt nicht jede einzelne möglich Permutation und daher einige Parameter möglicherweise nicht ordnungsgemäß benannt.
 
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel behandelt wie verwenden Javadoc in einem Projekt für die Java-Bindung Bedeutung Parameternamen für das gebundene-APIs bereitstellen. 
+In diesem Artikel erläutert, wie Javadoc in einem Projekt für die Java-Bindung verwenden, um die Bedeutung von Parameternamen für das gebundene-APIs bieten verwendet wird. 
 

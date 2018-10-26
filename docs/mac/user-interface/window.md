@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Arbeiten mit Fenstern und Bereichen in e
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: b60b8a6a7c56347d6abf71f8c5149ddd556d3da8
-ms.sourcegitcommit: ee66db647ae9d94b54b1c5d9093075a620d0c6b4
+ms.openlocfilehash: 2d129c72366224cedca26df6fa1499f65d04e92d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "40251249"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106974"
 ---
 # <a name="windows-in-xamarinmac"></a>Windows in Xamarin.Mac
 
@@ -347,14 +347,14 @@ using Foundation;
 
 namespace SourceWriter
 {
-    public class EditorWidowDelegate : NSWindowDelegate
+    public class EditorWindowDelegate : NSWindowDelegate
     {
         #region Computed Properties
         public NSWindow Window { get; set;}
         #endregion
 
         #region constructors
-        public EditorWidowDelegate (NSWindow window)
+        public EditorWindowDelegate (NSWindow window)
         {
             // Initialize
             this.Window = window;
@@ -427,7 +427,7 @@ Verwenden Sie den folgenden Code, um eine Instanz dieses Delegaten an das Fenste
 
 ```csharp
 // Set delegate
-Window.Delegate = new EditorWidowDelegate(Window);
+Window.Delegate = new EditorWindowDelegate(Window);
 ```
 
 ### <a name="saving-changes-before-closing-the-app"></a>Speichern von Änderungen vor dem Schließen der App
@@ -759,7 +759,7 @@ Um einen neuen Bereich hinzuzufügen, führen Sie folgende Schritte aus:
 4. Doppelklicken Sie auf die `DocumentPanel.xib` Datei, die sie zur Bearbeitung in Interface Builder zu öffnen: 
 
     [![](window-images/new02.png "Bearbeiten die pannel")](window-images/new02.png#lightbox)
-5. Löschen Sie das vorhandene Fenster, und ziehen Sie ein Panel aus dem **Bibliotheksinspektor** in der die **Schnittstellen-Editor**: 
+5. Löschen Sie das vorhandene Fenster, und ziehen Sie ein Panel aus dem **Bibliotheksinspektor** in die **Schnittstellen-Editor**: 
 
     [![](window-images/panels01.png "Löschen von vorhandenen Fenster")](window-images/panels01.png#lightbox)
 6. Verknüpfen Sie den Bereich bis zu der **Besitzer der Datei** - **Fenster** - **Outlet**: 

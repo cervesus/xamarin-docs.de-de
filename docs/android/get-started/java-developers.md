@@ -4,15 +4,15 @@ description: Wenn Sie ein Java-Entwickler sind, sind Sie auf dem besten Weg, Ihr
 ms.prod: xamarin
 ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 92bcfc888c52f9f74c8484295666da8f5ef7a14c
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: eb1d08c5dee6c7944fa42e7446b34a5dbbb45ad3
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209335"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120410"
 ---
 # <a name="xamarin-for-java-developers"></a>Xamarin für Java-Entwickler
 
@@ -433,7 +433,7 @@ Weitere Informationen zur Xamarin-Unterstützung von asynchronen Programmierfeat
 
 Viele Sprachschlüsselwörter, die in Java verwendet werden, werden auch in C# verwendet. Es gibt auch eine Reihe von Java-Schlüsselwörtern, die ein äquivalentes, aber anders benanntes Gegenstück in C# haben, wie in der folgenden Tabelle aufgeführt:
 
-|Java|C#|description|
+|Java|C#|Beschreibung |
 |---|---|---|
 |`boolean`|[bool](https://msdn.microsoft.com/en-us/library/c8f5xwh7.aspx)|Wird zum Deklarieren der booleschen Werte „true“ und „false“ verwendet.|
 |`extends`|`:`|Wird der Klasse und den Schnittstellen, von denen geerbt werden soll, vorangestellt.|
@@ -450,7 +450,7 @@ Viele Sprachschlüsselwörter, die in Java verwendet werden, werden auch in C# v
 
 Außerdem gibt es viele Schlüsselwörter, die einzigartig in C# sind und kein Gegenstück in Java besitzen. Xamarin.Android-Code verwendet häufig die folgenden C#-Schlüsselwörter (diese Tabelle ist nützlich, um sich auf sie zu beziehen, wenn Sie Xamarin.Android-[Beispielcode](https://developer.xamarin.com/samples/android/all/) lesen):
 
-|C#|description|
+|C#|Beschreibung |
 |---|---|
 |[as](https://msdn.microsoft.com/en-us/library/cscsdfbt.aspx)|Führt Konvertierungen zwischen kompatiblen Verweistypen oder Nullwerte zulassenden Typen aus.|
 |[async](https://msdn.microsoft.com/en-us/library/hh156513.aspx)|Gibt an, dass eine Methode oder ein Lambdaausdruck asynchron ist.|
@@ -473,7 +473,7 @@ Außerdem gibt es viele Schlüsselwörter, die einzigartig in C# sind und kein G
 |[struct](https://msdn.microsoft.com/en-us/library/ah19swz4.aspx)|Ein Werttyp, der eine Gruppe in Beziehung stehender Variablen kapselt.|
 |[typeof](https://msdn.microsoft.com/en-us/library/58918ffs.aspx)|Ruft den Typ eines Objekts ab.|
 |[var](https://msdn.microsoft.com/en-us/library/bb383973.aspx)|Deklariert eine implizit typisierte lokale Variable.|
-|[value](https://msdn.microsoft.com/en-us/library/a1khb4f8.aspx)|Verweist auf den Wert, den der Clientcode einer Eigenschaft zuweisen möchte.|
+|[Wert](https://msdn.microsoft.com/en-us/library/a1khb4f8.aspx)|Verweist auf den Wert, den der Clientcode einer Eigenschaft zuweisen möchte.|
 |[virtual](https://msdn.microsoft.com/en-us/library/9fkccyh4.aspx)|Ermöglicht das Überschreiben einer Methode in einer abgeleiteten Klasse.|
 
 

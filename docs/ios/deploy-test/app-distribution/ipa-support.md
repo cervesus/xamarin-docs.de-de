@@ -4,15 +4,15 @@ description: In diesem Artikel erfahren Sie, wie Sie eine IPA-Datei erstellen k�
 ms.prod: xamarin
 ms.assetid: D253C2DB-852E-6FC6-C9FD-574730B8DB19
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 4fd64a1ebf05dd149304f49d8282ee1b38bfcf03
-ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
+ms.openlocfilehash: 70d6b908beb0d04788365b104b5e4a2679b0ebe1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36321362"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113247"
 ---
 # <a name="ipa-support-in-xamarinios"></a>IPA-Unterstützung in Xamarin.iOS
 
@@ -54,7 +54,7 @@ Sehen Sie sich die Dokumentation zu [iTunes-Grafik](~/ios/app-fundamentals/image
 
 ## <a name="creating-an-ipa"></a>Erstellen einer IPA-Datei
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Das Erstellen einer IPA-Datei ist nun in den neuen Veröffentlichungsworkflow integriert. Folgen Sie dazu den unten stehenden Anweisungen, um Ihre App zu archivieren, sie zu signieren und Ihre IPA-Datei zu speichern.
 
@@ -138,7 +138,7 @@ In einigen Fällen, wie z.B. in einer CI-Umgebung, ist es möglicherweise notwen
     /Library/Frameworks/Mono.framework/Commands/msbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
     ```
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Sobald das Bereitstellungsprofil erstellt und ausgewählt und die optionale **iTunesMetadata.plist**-Datei erstellt und die iTunes-Grafik in Visual Studio festgelegt wurde, können Sie eine IPA-Datei für die Verteilung erstellen. Als Nächstes müssen Sie Ihr Projekt konfigurieren. Führen Sie folgende Schritte aus:
 
@@ -233,11 +233,11 @@ Das entstehende IPA-Paket kann Ihren Testbenutzern zur Installation auf deren iO
 
 Die neue iOS-Anwendung wird im Bereich **Meine Apps** angezeigt. Dort können Sie auf sie rechtsklicken und so weitere Informationen enthalten.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
  ![](ipa-support-images/installxs01.png "Die neue iOS-Anwendung im Abschnitt Bereich „Meine Apps“")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  ![](ipa-support-images/installvs01.png "Die neue iOS-Anwendung im Abschnitt Bereich „Meine Apps“")
 

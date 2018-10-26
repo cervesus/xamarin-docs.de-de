@@ -4,15 +4,15 @@ description: Dieses Dokument enthält eine Übersicht über das Durchführen von
 ms.prod: xamarin
 ms.assetid: BD959779-3239-79B6-5289-3A9ECDFBD973
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: ce2b452d50222ac3561dab5b76915b7ae634934b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: dd590b65fdf1f83ade3453fa1266d1f6724bb8de
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785462"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121827"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>Komponententests bei Xamarin.iOS-Apps
 
@@ -21,13 +21,13 @@ Komponententests mit Xamarin.iOS werden mithilfe des Touch.Unit-Frameworks durch
 
 ## <a name="setting-up-a-test-project"></a>Einrichten eines Testprojekts
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Sie müssen Ihrer Projektmappe ein Projekt des Typs **iOS-Komponententestprojekt** hinzufügen, um ein Komponententestframework für Ihr Projekt einzurichten. Klicken Sie dafür mit der rechten Maustaste auf Ihre Projektmappe, und wählen Sie **Hinzufügen > Neues Projekt hinzufügen** aus. Wählen Sie aus der Liste **iOS > Tests > Unified API > iOS-Komponententestprojekt** aus. Sie können entweder C# oder F# auswählen.
 
 ![](touch.unit-images/00.png "Auswählen von C# oder F#")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Sie müssen Ihrer Projektmappe ein Projekt des Typs **iOS-Komponententestprojekt** hinzufügen, um ein Komponententestframework für Ihr Projekt einzurichten. Klicken Sie dafür mit der rechten Maustaste auf Ihre Projektmappe, und wählen Sie **Hinzufügen > Neues Projekt...** aus. Wählen Sie aus der Liste **Visual C# > iOS > Komponententest-App (iOS)** aus.
 
@@ -37,11 +37,11 @@ Sie müssen Ihrer Projektmappe ein Projekt des Typs **iOS-Komponententestprojekt
 
 Dadurch wird ein einfaches Projekt erstellt, dass ein grundlegendes Runnerprogramm enthält und das auf die neue Assembly „MonoTouch.NUnitLite“ verweist. Es wird folgendermaßen aussehen:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 ![](touch.unit-images/01.png "Das Projekt im Projektmappen-Explorer")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![](touch.unit-images/01a.png "Das Projekt im Projektmappen-Explorer")
 

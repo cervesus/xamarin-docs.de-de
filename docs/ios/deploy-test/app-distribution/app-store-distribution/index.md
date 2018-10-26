@@ -4,15 +4,15 @@ description: In diesem Artikel wird beschrieben, wie Sie eine Xamarin.iOS-Anwend
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: b763407797cf635908cf34cce4f1a6a06325000d
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: de3af76b8479562ba048c5b62167df0f2b2a51f9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209258"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115132"
 ---
 # <a name="app-store-distribution"></a>App Store-Verteilung
 
@@ -121,11 +121,11 @@ Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils h
 7. Klicken Sie auf die Schaltfläche **Generieren**, um das neue Profil zu erstellen und den Prozess abzuschließen.
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
  Möglicherweise müssen Sie Visual Studio für Mac beenden und die Liste der verfügbaren Signierungsidentitäten und Bereitstellungsprofile in Xcode aktualisieren (anhand der Anweisungen im Abschnitt [Anfordern von Signierungsidentitäten](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)), bevor ein neues Verteilungsprofil in Visual Studio für Mac verfügbar ist.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  Möglicherweise müssen Sie Visual Studio beenden und durch Xcode (auf dem Mac des Buildhosts) die Liste der verfügbaren Signierungsidentitäten und Bereitstellungsprofile aktualisieren (anhand der Anweisungen im Abschnitt [Anfordern von Signierungsidentitäten](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)), bevor ein neues Verteilungsprofil in Visual Studio verfügbar ist.
 
@@ -137,7 +137,7 @@ Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils h
 
 Wenn Sie bereit sind, den endgültigen Build einer Xamarin.iOS-Anwendung für den Verkauf im iTunes App Store bereitzustellen, wählen Sie das zuvor erstellte Verteilungsprofil aus.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
  Gehen Sie in Visual Studio für Mac folgendermaßen vor:
 
@@ -153,7 +153,7 @@ Wenn Sie bereit sind, den endgültigen Build einer Xamarin.iOS-Anwendung für de
     ![](images/releasexs03.png "Wählen Sie Signieridentität und Verteilungsprofil aus")
 5. Klicken Sie auf die Schaltfläche **OK**, um die Änderungen zu speichern.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  Führen Sie in Visual Studio folgende Schritte aus:
 

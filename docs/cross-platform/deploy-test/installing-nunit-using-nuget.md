@@ -6,12 +6,12 @@ ms.assetid: 7683F2B8-7FDF-48C4-8E7D-649D4D4E79F0
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: fb0ffd87a61f20744e68eafdd7eb8de691df6f75
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c43b3f3204cba890cb2fa9c4cfc33a23250e0550
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781519"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112051"
 ---
 # <a name="installing-nunit-264-using-nuget"></a>Installieren von NUnit 2.6.4 mithilfe von NuGet
 
@@ -19,11 +19,11 @@ _In diesem Leitfaden wird beschrieben, wie NUnit 3.0 mithilfe von NuGet auf NUni
 
 Entwickler, die Tests in Visual Studio für Mac oder mit Xamarin.UITest schreiben, sollten [NUnit 2.6.4](http://nunit.org/index.php?p=docHome&r=2.6.4) verwenden, da NUnit 3.0 und höhere Versionen nicht mit Visual Studio für Mac oder Xamarin.UITest kompatibel sind. Beim Versuch, Komponententests mit NUnit 3.0 in Visual Studio für Mac oder Xamarin.UITests auszuführen, tritt ein Fehler auf.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 In diesem Leitfaden wird beschrieben, wie NUnit 2.6.4 mithilfe von NuGet für Visual Studio für Mac installiert wird. Falls nötig wird NUnit 3.0 auch deinstalliert.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 In dieser Anleitung wird beschrieben, wie NUnit 3.0 mithilfe von NuGet in Visual Studio 2015 auf NUnit 2.6.4 herabgestuft wird.
 
@@ -33,7 +33,7 @@ In dieser Anleitung wird beschrieben, wie NUnit 3.0 mithilfe von NuGet in Visual
 
 Für diese Anleitung wird vorausgesetzt, dass Sie eine vorhandene Projektmappe mit einer mobilen Anwendung und einem Testprojekt haben.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 ## <a name="installing-nunit-264-in-visual-studio-for-mac"></a>Installieren von NUnit 2.6.4 in Visual Studio für Mac
 
@@ -58,7 +58,7 @@ Sie können die Versionsnummer des NUnit-Pakets im Lösungspad überprüfen und 
 Dieser Leitfaden erläutert, wie NUnit 3.0 in Visual Studio für Mac mithilfe der Paket-Manager-Konsole auf NUnit 2.6.4 herabgestuft wird.
 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="installing-nunit-264-in-visual-studio"></a>Installieren von NUnit 2.6.4 in Visual Studio
 

@@ -4,15 +4,15 @@ description: Dieses Dokument bietet einen kurzen Überblick über die interne Ve
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 1dff0e614943805930cf7d838110c4a42eee6f48
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.openlocfilehash: c1e1b2d7bfb43c256c71abb62e7d85a05b096419
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353203"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103581"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Interne Verteilung für Xamarin.iOS-Apps
 
@@ -125,11 +125,11 @@ Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils h
 
 7. Klicken Sie auf die Schaltfläche **Generieren**, um das neue Profil zu erstellen und den Prozess abzuschließen.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
  Möglicherweise müssen Sie Visual Studio für Mac beenden und die Liste der verfügbaren Signierungsidentitäten und Bereitstellungsprofile in Xcode aktualisieren (anhand der Anweisungen im Abschnitt [Anfordern von Signierungsidentitäten](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)), bevor ein neues Verteilungsprofil in Visual Studio für Mac verfügbar ist.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Möglicherweise müssen Sie Visual Studio beenden und durch Xcode (auf dem Mac des Buildhosts) die Listen der verfügbaren Signierungsidentitäten und Bereitstellungsprofile aktualisieren (anhand der Anweisungen im Abschnitt [Anfordern von Signierungsidentitäten](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)), bevor ein neues Verteilungsprofil in Visual Studio verfügbar wird.
 

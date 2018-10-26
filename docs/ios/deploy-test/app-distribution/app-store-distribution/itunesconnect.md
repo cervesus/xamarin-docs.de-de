@@ -4,20 +4,20 @@ description: Dieser Artikel beschreibt die Einrichtung und Verwaltung einer Xama
 ms.prod: xamarin
 ms.assetid: 74587317-4b15-4904-9582-dcd914827cbc
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 05492f866bb083326ef1eccb8db3d624d8dc4806
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: 97b3e5323329d2df024e05f1829b12b239b37299
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209309"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103048"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Konfigurieren einer App in iTunes Connect
 
 > [!IMPORTANT]
-> Apple [hat mitgeteilt](https://developer.apple.com/news/?id=05072018a), dass ab Juli 2018 alle Apps und Updates, die an den App Store gesendet werden, mit dem iOS 11 SDK erstellt worden sein und das[ iPhone X-Display unterstützen](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md) müssen.
+> Apple [hat mitgeteilt](https://developer.apple.com/news/?id=05072018a), dass ab Juli 2018 alle Apps und Updates, die an den App Store gesendet werden, mit dem iOS 11 SDK erstellt worden sein und das [iPhone X-Display unterstützen](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md) müssen.
 
 iTunes Connect ist eine Suite von webbasierten Tools, mit denen Sie u.a. Ihre iOS-Anwendungen im App Store verwalten können. Eine Xamarin.iOS-Anwendung muss ordnungsgemäß in iTunes Connect eingerichtet und konfiguriert werden, bevor sie zur Überprüfung an Apple gesendet und schließlich für den Verkauf oder als kostenlose App im App Store veröffentlicht werden kann.
 
@@ -135,7 +135,7 @@ Apple empfiehlt Folgendes bei der Auswahl eines App-Namens:
 - Er soll der Funktionalität der Anwendung entsprechen.
 - Geben Sie für ausländische Märkte gegebenenfalls einen lokalisierten Namen an.
 
-### <a name="description"></a>description
+### <a name="description"></a>Beschreibung 
 
 Schreiben Sie eine klare, präzise und informative Beschreibung zur Anwendung und ihren Funktionen. Die ersten Zeilen sind die wichtigsten und bieten Ihnen die Möglichkeit, einen guten ersten Eindruck zu hinterlassen und das Interesse des Benutzers zu wecken. Beschrieben Sie also das Besondere an Ihrer Anwendung gegenüber ähnlichen Apps.
 

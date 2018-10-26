@@ -1,54 +1,54 @@
 ---
 title: EventKit in Xamarin.iOS
-description: Dieses Dokument beschreibt EventKit und zu dessen Verwendung in Xamarin.iOS. Es wird erläutert, Kalender und Kalenderereignisse Erinnerungen, sucht Klassen, die häufig verwendet, wenn das Programmieren mit EventKit und vieles mehr.
+description: Dieses Dokument beschreibt EventKit und für die Verwendung in Xamarin.iOS. Es wird erläutert, Kalender, Termine im Kalender und Erinnerungen, sucht Klassen, die häufig verwendet, wenn es sich bei der Programmierung mit EventKit und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 00E88629-357D-1FCD-4FCE-1330D5D9D32C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 3522870d3e063d1e12660094a311e9850bcefa13
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: ea03c8b382e2de29bd20ab1d696d7abb7733e182
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786713"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120228"
 ---
 # <a name="eventkit-in-xamarinios"></a>EventKit in Xamarin.iOS
 
-iOS verfügt über zwei kalenderbezogener Anwendungen integrierte: der Kalender-Anwendung, und die Erinnerungen-Anwendung. Es ist einfach genug, um zu verstehen, wie die Anwendung Kalender Kalenderdaten verwaltet, aber die Anwendung Erinnerungen ist weniger offensichtlich. Erinnerungen können tatsächlich haben die Daten, wenn sie fällig, wenn sie abgeschlossen sind, sind sie in Form eines zugeordnet usw. Daher speichert iOS alle Kalenderdaten, ob es Kalenderereignisse oder Erinnerungen, in einer einzigen Stelle aufgerufen werden der *Kalenderdatenbank*.
+iOS enthält zwei kalenderbezogenen Anwendungen integrierten: die Kalender-Anwendung, und die Erinnerungen-Anwendung. Es ist einfach genug, um zu verstehen, wie der Kalenderanwendung Kalenderdaten verwaltet, aber die Erinnerungen-Anwendung ist weniger offensichtlich. Erinnerungen Datumsangaben fällig, wenn sie abgeschlossen sind, werden diese in Form von zugeordnet haben usw. Daher iOS alle Kalenderdaten, speichert, ob sie Termine im Kalender oder Erinnerungen an einem Ort, dem Namen der *Kalenderdatenbank*.
 
-Das EventKit-Framework bietet eine Möglichkeit zum Zugriff auf die *Kalender*, *Kalenderereignisse*, und *Erinnerungen* Daten, die Kalender-Datenbank speichert. Zugriff auf die Kalender und Kalender Ereignisse wurde verfügbar seit iOS 4, jedoch Zugriff auf Erinnerungen ist neu in iOS 6.
+Das EventKit-Framework bietet eine Möglichkeit zum Zugriff auf die *Kalender*, *Termine im Kalender*, und *Erinnerungen* Daten, die Kalender-Datenbank speichert. Zugriff auf den Kalender und Kalender Ereignisse ist seit verfügbaren iOS 4, jedoch Zugriff auf Erinnerungen ist neu in iOS 6.
 
-In diesem Handbuch werden wir abdecken:
+In diesem Handbuch werden wir behandeln:
 
--   **Grundlagen der EventKit** – Dies bedeutet, dass die fundamentale Teile der EventKit über die wichtigsten Berechtigungsklassen und bietet einen Überblick über ihre Verwendung. Dieser Abschnitt ist erforderlich, Lesen vor dem bewältigt Fortschritts im nächsten Teil des Dokuments. 
--   **Allgemeine Aufgaben** – die allgemeine Aufgaben Abschnitt dient eine Kurzübersicht zu allgemeinen Aufgaben wie z. B. Vorgehensweise werden; beim Aufzählen der Kalender, erstellen, speichern und Abrufen von "Kalender" Ereignisse und Erinnerungen, als auch die integrierte Controller für Erstellen und Bearbeiten von Kalenderereignissen. In diesem Abschnitt muss nicht vorne nach hinten gelesen werden, da es als Referenz für bestimmte Aufgaben vorgesehen ist. 
+-   **Grundlagen der EventKit** – Dadurch werden die grundlegenden Teile der EventKit über die wichtigsten Klassen vorgestellt, und bietet einen Überblick über ihre Verwendung. Dieser Abschnitt ist erforderlich, Lesen vor dem Umgang mit dem nächsten Teil dieses Dokuments. 
+-   **Allgemeine Aufgaben** – richtet sich an den Bereich für allgemeine Aufgaben eine Kurzübersicht über das allgemeine Aktionen wie z. B. sein; Kalender auflisten, erstellen, speichern und Abrufen von "Kalender" Ereignisse und Erinnerungen, als auch mithilfe der integrierten Controller für Erstellen und Termine im Kalender zu ändern. In diesem Abschnitt muss nicht von vorne, hinten, gelesen werden, da es als Referenz für bestimmte Aufgaben vorgesehen ist. 
 
 
-Alle Aufgaben in diesem Handbuch sind in der beispielanwendung Companion verfügbar:
+Alle Aufgaben in dieser Anleitung sind in der beispielanwendung Companion verfügbar:
 
- [![](eventkit-images/01.png "Die Begleithandbuch zum Beispiel Anwendung Bildschirme")](eventkit-images/01.png#lightbox)
+ [![](eventkit-images/01.png "Die begleitende Beispiel Anwendung Bildschirme")](eventkit-images/01.png#lightbox)
 
 ## <a name="requirements"></a>Anforderungen
 
-EventKit iOS 4.0 eingeführt wurde, jedoch Zugriff auf Daten von Erinnerungen iOS 6.0 eingeführt wurde. Daher müssen Sie hierfür allgemeine EventKit Entwicklung Ziel mindestens Version 4.0 und 6.0 für Erinnerungen.
+EventKit in iOS 4.0 eingeführt wurde, aber Zugriff auf Daten von Erinnerungen in iOS 6.0 eingeführt wurde. Um allgemeine EventKit Entwicklung zu tun, Sie müssen mindestens als Ziel Version 4.0 und 6.0 Erinnerungen einrichten.
 
-Darüber hinaus ist die Erinnerungen Anwendung nicht verfügbar ist, im Simulator, was bedeutet, dass Erinnerungen Daten auch nicht verfügbar sein soll, wenn Sie diese zuerst hinzufügen. Darüber hinaus werden die zugriffsanforderungen nur für den Benutzer auf das eigentliche Gerät angezeigt. EventKit Entwicklung wird daher am besten auf dem Gerät getestet.
+Darüber hinaus ist die Erinnerungen-Anwendung nicht verfügbar, auf dem Simulator, was bedeutet, dass Erinnerungen Daten auch nicht verfügbar sein soll, wenn Sie diese zuerst hinzufügen. Darüber hinaus werden Anforderungen nur an den Benutzer auf dem Gerät selbst angezeigt. Daher wird EventKit Entwicklung am besten auf dem Gerät getestet.
 
 ## <a name="event-kit-basics"></a>Ereignis-Kit-Grundlagen
 
-Bei der Arbeit mit EventKit ist es wichtig, den ein verstehen der allgemeine Klassen und deren Verwendung. Alle diese Klassen finden Sie in der `EventKit` und `EventKitUI` (für die `EKEventEditController`).
+Bei der Arbeit mit EventKit ist es wichtig, dass die allgemeine Klassen und ihre Verwendung verstanden haben. Alle diese Klassen befinden sich die `EventKit` und `EventKitUI` (für die `EKEventEditController`).
 
-### <a name="eventstore"></a>EventStore
+### <a name="eventstore"></a>Eventstore-Komponente
 
-Die *EventStore* Klasse ist die wichtigste Klasse in EventKit, da er erforderlich ist, keine Vorgänge im EventKit möglich. Sie können als die permanente Speicherung oder das Datenbankmodul für alle Daten, EventKit betrachtet werden. Aus `EventStore` haben Sie Zugriff auf die sowohl die Kalender und Kalenderereignisse in der Calendar-Anwendung sowie in der Anwendung Erinnerungen Erinnerungen.
+Die *EventStore* Klasse ist die wichtigste Klasse in EventKit, da dies für alle Operationen in EventKit erforderlich ist. Sie kann als beständigen Speicher benötigen oder für alle EventKit-Datenbank-Engine betrachtet werden. Von `EventStore` haben Zugriff auf die Kalender und die Ereignisse im Kalender in der Kalenderanwendung sowie Erinnerungen in der Anwendung Erinnerungen.
 
-Da `EventStore` ist wie ein Datenbankmodul werden er langlebige, was bedeutet, dass es erstellt und während der Lebensdauer einer Instanz einer Anwendung so wenig wie möglich zerstört. In der Tat es wird empfohlen, die nach dem Erstellen einer Instanz von einem `EventStore` in einer Anwendung, Sie behalten, um die auf während der gesamten Lebensdauer der Anwendung, es sei denn, Sie sind Sie sicher, dass es nicht erneut erforderlich. Darüber hinaus sollten alle Aufrufe an einen einzelnen go `EventStore` Instanz. Aus diesem Grund empfiehlt sich die Singleton-Muster für die Beibehaltung von einer einzelnen Instanz verfügbar.
+Da `EventStore` ist wie eine Datenbank-Engine wird langlebig, was bedeutet, dass es erstellt und zerstört während der Lebensdauer einer Anwendungsinstanz so wenig wie möglich wird. In der Tat, es wird empfohlen, nach dem Erstellen einer Instanz von einem `EventStore` in einer Anwendung, Sie behalten Sie diesen Verweis auf für die gesamte Lebensdauer der Anwendung, es sei denn, Sie sind Sie sicher, dass es nicht erneut erforderlich. Darüber hinaus funktionieren alle Aufrufe an eine einzelne `EventStore` Instanz. Aus diesem Grund empfiehlt das Singleton-Muster für die Beibehaltung von einer einzelnen Instanz zur Verfügung.
 
-#### <a name="creating-an-event-store"></a>Erstellen eine Ereignisspeicher
+#### <a name="creating-an-event-store"></a>Erstellen eine Store-Ereignis
 
-Das folgende Codebeispiel veranschaulicht eine effiziente Möglichkeit, erstellen Sie eine einzelne Instanz der `EventStore` -Klasse und die statisch innerhalb einer Anwendung zur Verfügung stellen:
+Der folgende Code veranschaulicht eine effiziente Möglichkeit zum Erstellen einer einzelnen Instanz von der `EventStore` Klasse und statisch in einer Anwendung zur Verfügung stellen:
 
 ```csharp
 public class App
@@ -74,17 +74,17 @@ public class App
 }
 ```
 
-Der obige Code verwendet die Singleton-Muster instantiieren eine Instanz von der `EventStore` Wenn die Anwendung geladen wird. Die `EventStore` kann dann von zugegriffen werden global innerhalb der Anwendung wie folgt:
+Der obige Code verwendet das Singleton-Muster zum Instanziieren einer Instanz von der `EventStore` Wenn die Anwendung geladen wurde. Die `EventStore` möglich und erfolgt global von innerhalb der Anwendung wie folgt:
 
 ```csharp
 App.Current.EventStore;
 ```
 
-Beachten Sie, dass hier alle Beispiele dieses Muster verwenden, sodass die Ereignisse verweisen auf die `EventStore` über `App.Current.EventStore`.
+Beachten Sie, dass alle Beispiele hier dieses Muster verwenden, damit die Ereignisse verweisen auf die `EventStore` über `App.Current.EventStore`.
 
-#### <a name="requesting-access-to-calendar-and-reminder-data"></a>Anfordern des Zugriffs auf die Kalender und Erinnerung Daten
+#### <a name="requesting-access-to-calendar-and-reminder-data"></a>Anfordern des Zugriffs auf den Kalender und Erinnerungsdaten
 
-Bevor Sie Berechtigung Zugriff auf alle Daten über die EventStore, muss eine Anwendung zunächst anfordern Zugriff auf die Ereignisse von Kalenderdaten oder die Erinnerungen Daten, je nachdem, die was Sie benötigen. Zu diesem Zweck die `EventStore` macht eine Methode namens `RequestAccess` die – bei Aufruf – zeigt eine Warnungsansicht für dem Benutzer informiert wird, dass die Anwendung Zugriff auf die Kalenderdaten oder einem Erinnerung Daten, je nachdem welche anfordert`EKEntityType`übergeben wird. Da es sich um eine Warnungsansicht ausgelöst, der Aufruf asynchron aufrufen, und eine Abschlusshandler als übergeben ein `NSAction` (oder Lambda), der zwei empfängt Parameter ist ein boolescher Wert, der davon, ob der Zugriff erteilt wurde, und ein `NSError`, das ungleich Null in diesem Fall enthalten Sie die Fehlerinformationen in der Anforderung. Die folgenden codiert werden z. B. Zugriff auf Kalender Ereignisdaten und zeigt eine Warnung angezeigt, wenn die Anforderung nicht gewährt wurde angefordert.
+Bevor er den Zugriff auf alle Daten über die eventstore-Komponente, muss eine Anwendung zunächst anfordern Zugriff auf die Ereignisse Kalenderdaten oder Erinnerungen, je nachdem, welche benötigten Daten. Zu diesem Zweck die `EventStore` macht eine Methode namens `RequestAccess` die – bei Aufruf – zeigt eine Warnungsansicht für dem Benutzer, der angibt, dass die Anwendung Zugriff auf die Kalenderdaten oder Erinnerungsdaten, je nachdem welche anfordert`EKEntityType`übergeben wird. Da es sich um eine Warnungsansicht auslöst, der Aufruf asynchron aufrufen, und einen Abschlusshandler übergeben als ein `NSAction` (oder Lambda), der zwei empfängt Parameter; ein boolescher Wert, der davon, ob der Zugriff gewährt wurde, und ein `NSError`, das Wenn ungleich Null wird enthalten Sie die Fehlerinformationen in der Anforderung. Beispielsweise wird die folgende codiert anfordern des Zugriffs auf kalenderereignisdaten und anzeigen, die eine Warnung angezeigt, wenn die Anforderung nicht gewährt wurde.
 
 ```csharp
 App.Current.EventStore.RequestAccess (EKEntityType.Event, 
@@ -98,28 +98,28 @@ App.Current.EventStore.RequestAccess (EKEntityType.Event,
             } );
 ```
 
-Nachdem die Anforderung erteilt wurde, wird es gespeichert haben, solange die Anwendung auf dem Gerät installiert ist und eine Warnung für den Benutzer wird nicht angezeigt.
-Zugriff ist jedoch nur auf den Typ der Ressource, Kalenderereignisse oder Erinnerungen gewährt gewährt. Wenn eine Anwendung Zugriff auf beide benötigt, sollten sie beide anfordern.
+Sobald die Anforderung gewährt wurde, wird es so lange die Anwendung auf dem Gerät installiert ist und eine Warnung für den Benutzer nicht eingeblendet wird gespeichert.
+Allerdings erhält Zugriff nur auf den Typ der Ressource, die entweder Termine im Kalender oder Erinnerungen gewährt. Wenn eine Anwendung Zugriff auf beide benötigt, sollten sie beide anfordern.
 
-Da Berechtigung gespeichert ist, ist es relativ billig, führen Sie die Anforderung in jedem Fall, daher ist es ratsam, stets Zugriff fordern Sie vor dem Ausführen eines Vorgangs.
+Da sich Berechtigung gespeichert wird, ist es relativ günstig zu stellen die Anforderung jedes Mal, daher ist es eine gute Idee, immer den Zugriff anfordern, vor dem Ausführen eines Vorgangs.
 
-Darüber hinaus der Abschlusshandler in einem separaten (nicht-UI)-Thread aufgerufen wird, alle Updates für die Benutzeroberfläche in den Abschlusshandler sollte aufgerufen werden, über `InvokeOnMainThread`, andernfalls wird eine Ausnahme ausgelöst werden und wenn nicht abgefangen wird, stürzt die Anwendung.
+Darüber hinaus der Abschlusshandler in einem separaten (nicht-UI) Thread aufgerufen wird, alle Aktualisierungen der Benutzeroberfläche in den Abschlusshandler aufgerufen werden soll, über `InvokeOnMainThread`, andernfalls wird eine Ausnahme ausgelöst werden und wenn nicht abgefangen wird, stürzt die Anwendung ab.
 
 ### <a name="ekentitytype"></a>EKEntityType
 
-`EKEntityType` ist eine Enumeration, die den Typ des beschreibt `EventKit` Element oder die. Er verfügt über zwei Werte: `Event` und Erinnerung. Es wird verwendet, in einer Reihe von Methoden, einschließlich `EventStore.RequestAccess` informieren `EventKit` welche Art von Daten erhalten Zugriff auf oder abrufen.
+`EKEntityType` ist eine Enumeration, die den Typ des beschreibt `EventKit` Element oder Daten. Es verfügt über zwei Werte: `Event` und Erinnerung. Hiermit wird in einer Reihe von Methoden, einschließlich `EventStore.RequestAccess` mitteilen `EventKit` welche Art von Daten erhalten Sie Zugriff auf oder abzurufen.
 
 ### <a name="ekcalendar"></a>EKCalendar
 
- *EKCalendar* stellt einen Kalender dar, die eine Gruppe von Kalenderereignisse enthält. Kalender können z. B. in vielen verschiedenen Orten gespeichert werden lokal in *iCloud*in a 3rd party Anbieterstandort wie z. B. ein *Exchange Server* oder *Google*usw. Oft `EKCalendar` wird verwendet, um mitzuteilen `EventKit` , wo Sie nach Ereignissen zu suchen, oder wo zu speichern.
+ *EKCalendar* stellt einen Kalender dar, die eine Gruppe von Termine im Kalender enthält. Kalender können z. B. in vielen verschiedenen Speicherorten gespeichert werden lokal in *iCloud*in a 3rd party Anbieterstandort wie z. B. eine *Exchange Server* oder *Google*usw. Oft `EKCalendar` mitteilt `EventKit` , wo Sie nach Ereignissen suchen oder deren Speicherort.
 
 ### <a name="ekeventeditcontroller"></a>EKEventEditController
 
- *EKEventEditController* finden Sie in der `EventKitUI` Namespace und ein integrierten Controller, der zum Bearbeiten oder erstellen Kalenderereignisse verwendet werden kann. Ähnlich wie bei der Kamera-Controller, der integrierten `EKEventEditController` Sitzungsstatusanbieter im Anzeigen der Benutzeroberfläche und Behandlung von Speichern für Sie übernimmt.
+ *EKEventEditController* finden Sie in der `EventKitUI` Namespace und ist ein integrierte Controller, der zum Bearbeiten oder erstellen Termine im Kalender verwendet werden kann. Ähnlich wie bei der Kamera-Controller, den integrierten `EKEventEditController` leistet die Schwerarbeit für Sie in der Benutzeroberfläche angezeigt, und Behandeln von speichern.
 
 ### <a name="ekevent"></a>EKEvent
 
- *EKEvent* Kalenderereignisse darstellt. Beide `EKEvent` und `EKReminder` Vererben `EKCalendarItem` und Felder wie z. B. `Title`, `Notes`und so weiter.
+ *EKEvent* stellt ein Kalenderereignis dar. Beide `EKEvent` und `EKReminder` erben `EKCalendarItem` und verfügen über Felder wie z. B. `Title`, `Notes`und so weiter.
 
 ### <a name="ekreminder"></a>EKReminder
 
@@ -127,28 +127,28 @@ Darüber hinaus der Abschlusshandler in einem separaten (nicht-UI)-Thread aufger
 
 ### <a name="ekspan"></a>EKSpan
 
-*EKSpan* ist eine Enumeration, beschreibt die Spanne der Ereignisse aus, wenn Ereignisse, die wiederholt werden können, und verfügt über zwei Werte zu ändern: *ThisEvent* und *FutureEvents*. `ThisEvent` bedeutet, die Änderungen nur auf das bestimmte Ereignis in der Reihe, die auf Sie verwiesen wird, auftreten, wohingegen `FutureEvents` wirkt sich dieses Ereignisses und alle zukünftigen Wiederholungen.
+*EKSpan* ist eine Enumeration, der die Spanne der Ereignisse aus, wenn Ereignisse zu ändern, die wiederholt werden kann, und verfügt über zwei Werte beschreibt: *ThisEvent* und *FutureEvents*. `ThisEvent` bedeutet, dass Änderungen nur auf das bestimmte Ereignis in der Reihe, die verwiesen wird, Vorkommen werden, während `FutureEvents` wirkt sich dieses Ereignisses und alle zukünftigen Wiederholungen.
 
 ## <a name="tasks"></a>Aufgaben
 
-Zur Vereinfachung der verwenden hat EventKit Nutzung in allgemeine Aufgaben, die in den folgenden Abschnitten beschriebenen aufgeteilt wurde.
+Für die der Einfachheit halber wurde EventKit Nutzung in allgemeine Aufgaben, die in den folgenden Abschnitten beschriebenen unterteilt wurde.
 
-### <a name="enumerate-calendars"></a>Auflisten von Kalendern
+### <a name="enumerate-calendars"></a>Kalender auflisten
 
-Um die Kalender aufzulisten, die der Benutzer auf dem Gerät konfiguriert wurde, rufen `GetCalendars` auf die `EventStore` und übergeben Sie den Typ der Kalender (Erinnerungen oder Ereignisse), die Sie empfangen möchten:
+Rufen Sie zum Aufzählen der Kalender, die der Benutzer auf dem Gerät konfiguriert hat `GetCalendars` auf die `EventStore` und übergeben Sie den Typ der Kalender (Erinnerungen oder Ereignisse), die Sie erhalten möchten:
 
 ```csharp
 EKCalendar[] calendars = 
 App.Current.EventStore.GetCalendars ( EKEntityType.Event );
 ```
 
-### <a name="add-or-modify-an-event-using-the-built-in-controller"></a>Hinzufügen oder Ändern eines Ereignisses mit der integrierten-Controller
+### <a name="add-or-modify-an-event-using-the-built-in-controller"></a>Fügen Sie hinzu oder ändern Sie ein Ereignis mithilfe des integrierten Controller
 
-Die *EKEventEditViewController* übernimmt einen Großteil der Arbeit für Sie, wenn Sie erstellen oder bearbeiten ein Ereignis mit der gleichen Benutzeroberfläche, die dem Benutzer angezeigt wird, wenn die Kalender-Anwendung verwenden möchten:
+Die *EKEventEditViewController* übernimmt einen Großteil der Schwerstarbeit für Sie, wenn zum Erstellen oder bearbeiten ein Ereignis mit der die gleiche Benutzeroberfläche, die bei Verwendung der Kalender-Anwendung, die dem Benutzer angezeigt werden sollen:
 
- [![](eventkit-images/02.png "Die Benutzeroberfläche, die dem Benutzer angezeigt wird, wenn die Kalender-Anwendung verwenden")](eventkit-images/02.png#lightbox)
+ [![](eventkit-images/02.png "Die Benutzeroberfläche, die für den Benutzer angezeigt wird, bei Verwendung der Kalender-Anwendung")](eventkit-images/02.png#lightbox)
 
-Um es verwenden zu können, benötigen Sie als einer Variablen auf Klassenebene deklarieren, damit es Garbage collection erhalten nicht, wenn sie innerhalb einer Methode deklariert wird:
+Um es zu verwenden, sollten Sie als eine Variable auf Klassenebene deklarieren, damit es Garbage collection erhalten nicht, wenn er innerhalb einer Methode deklariert wird:
 
 ```csharp
 public class HomeController : DialogViewController
@@ -158,7 +158,7 @@ public class HomeController : DialogViewController
 }
 ```
 
-Klicken Sie dann, ihn zu starten: instanziiert, weisen Sie ihm einen Verweis auf die `EventStore`, Verknüpfen einer *EKEventEditViewDelegate* zu delegieren, und zeigen Sie ihn mit `PresentViewController`:
+Klicken Sie dann, ihn zu starten: instanziieren, weisen Sie ihm einen Verweis auf die `EventStore`, Verknüpfen einer *EKEventEditViewDelegate* , delegieren, und klicken Sie dann mithilfe `PresentViewController`:
 
 ```csharp
 EventKitUI.EKEventEditViewController eventController = 
@@ -175,7 +175,7 @@ eventController.EditViewDelegate = eventControllerDelegate;
 PresentViewController ( eventController, true, null );
 ```
 
-Optional, wenn Sie das Ereignis vorab auffüllen möchten, können Sie entweder ein völlig neues Ereignis (wie unten dargestellt) erstellen oder Sie können ein gespeichertes Ereignis abrufen:
+Optional, wenn das Ereignis vorab aufgefüllt werden soll, können Sie entweder ein völlig neues Ereignis (wie unten dargestellt) erstellen oder Sie können eine gespeicherte Ereignis abrufen:
 
 ```csharp
 EKEvent newEvent = EKEvent.FromStore ( App.Current.EventStore );
@@ -188,15 +188,15 @@ newEvent.Title = "Get outside and exercise!";
 newEvent.Notes = "This is your reminder to go and exercise for 30 minutes.”;
 ```
 
-Wenn Sie möchten, dass die Benutzeroberfläche vorab aufzufüllen, stellen Sie sicher, dass die Ereigniseigenschaft auf dem Controller:
+Wenn Sie die Benutzeroberfläche vorab auffüllen möchten, stellen Sie sicher, dass die Ereignis-Eigenschaft auf dem Controller festgelegt:
 
 ```csharp
 eventController.Event = newEvent;
 ```
 
-Um ein vorhandenes Ereignis zu verwenden, finden Sie unter der *Abrufen eines Ereignisses nach ID* im Abschnitt weiter unten auf.
+Um ein vorhandenes Ereignis zu verwenden, finden Sie unter den *Abrufen eines Ereignisses nach ID* im Abschnitt weiter unten auf.
 
-Der Delegat sollte außer Kraft setzen die `Completed` -Methode, die vom Controller aufgerufen wird, wenn der Benutzer das Dialogfeld abgeschlossen ist:
+Der Delegat sollte überschreiben die `Completed` -Methode, die vom Controller aufgerufen wird, wenn der Benutzer das Dialogfeld abgeschlossen ist:
 
 ```csharp
 protected class CreateEventEditViewDelegate : EventKitUI.EKEventEditViewDelegate
@@ -219,7 +219,7 @@ protected class CreateEventEditViewDelegate : EventKitUI.EKEventEditViewDelegate
 }
 ```
 
-Optional im Delegaten, sehen Sie sich die *Aktion* in die `Completed` Methode ändern, die Ereignis- und erneut speichern oder andere Aktionen durchführen können, wenn sie abgebrochen wird, welche:
+Optional in den Delegaten, sehen Sie sich die *Aktion* in die `Completed` Methode, um das Ereignis und erneut speichern zu ändern oder andere Dinge tun, wenn der Abbruch, usw.:
 
 ```csharp
 public override void Completed (EventKitUI.EKEventEditViewController controller, EKEventEditViewAction action)
@@ -243,7 +243,7 @@ public override void Completed (EventKitUI.EKEventEditViewController controller,
 
 ### <a name="creating-an-event-programmatically"></a>Programmgesteuertes Erstellen eines Ereignisses
 
-Verwenden Sie zum Erstellen eines Ereignisses im Code die *FromStore* Factorymethode auf die `EKEvent` Klasse, und legen Sie alle Daten darauf:
+Verwenden Sie zum Erstellen eines Ereignisses im Code die *FromStore* Factorymethode für die `EKEvent` Klasse, und legen Sie alle Daten darauf:
 
 ```csharp
 EKEvent newEvent = EKEvent.FromStore ( App.Current.EventStore );
@@ -256,7 +256,7 @@ newEvent.Title = "Get outside and do some exercise!";
 newEvent.Notes = "This is your motivational event to go and do 30 minutes of exercise. Super important. Do this.";
 ```
 
-Sie müssen festlegen, dass des Kalenders, den das Ereignis in gespeichert werden soll, aber wenn Sie keine Einstellung haben, können Sie die Standardeinstellung:
+Sie müssen festlegen, dass des Kalenders, den das Ereignis in gespeichert werden sollen, aber wenn Sie keine Einstellung haben, können Sie die Standardeinstellung verwenden:
 
 ```csharp
 newEvent.Calendar = App.Current.EventStore.DefaultCalendarForNewEvents;
@@ -269,17 +269,17 @@ NSError e;
 App.Current.EventStore.SaveEvent ( newEvent, EKSpan.ThisEvent, out e );
 ```
 
-Nachdem es gespeichert ist, die *EventIdentifier* Eigenschaft wird mit einem eindeutigen Bezeichner, die später verwendet werden kann, um das Ereignis abzurufen aktualisiert werden:
+Nach dem Speichern der *EventIdentifier* Eigenschaft mit einem eindeutigen Bezeichner, die später verwendet werden kann, um das Ereignis abzurufen, aktualisiert werden:
 
 ```csharp
 Console.WriteLine ("Event Saved, ID: " + newEvent.CalendarItemIdentifier);
 ```
 
- `EventIdentifier` eine Zeichenfolge GUID formatiert ist.
+ `EventIdentifier` ist eine GUID formatierte Zeichenfolge.
 
-### <a name="create-a-reminder-programmatically"></a>Erstellen Sie eine Erinnerung programmgesteuert
+### <a name="create-a-reminder-programmatically"></a>Erstellen Sie programmgesteuert eine Erinnerung.
 
-Erstellen eine Erinnerung im Code ist ähnlich wie ein Ereignis erstellen:
+Erstellen eine Erinnerung in Code ist ähnlich wie ein Kalenderereignis erstellen:
 
 ```csharp
 EKReminder reminder = EKReminder.Create ( App.Current.EventStore );
@@ -296,29 +296,29 @@ App.Current.EventStore.SaveReminder ( reminder, true, out e );
 
 ### <a name="retrieving-an-event-by-id"></a>Ein Ereignis nach ID abrufen
 
-Zum Abrufen eines Ereignisses durch diese ID ist, verwenden Sie die *EventFromIdentifier* Methode für die `EventStore` und übergibt ihn dann der `EventIdentifier` aus dem Ereignis per Pull abgerufen wurde:
+Zum Abrufen eines Ereignisses durch diese ID ist, verwenden die *EventFromIdentifier* Methode für die `EventStore` , und übergeben sie die `EventIdentifier` , stammt aus dem Ereignis:
 
 ```csharp
 EKEvent mySavedEvent = App.Current.EventStore.EventFromIdentifier ( newEvent.EventIdentifier );
 ```
 
-Bei Ereignissen, es ist zwei Bezeichnereigenschaften sind jedoch `EventIdentifier` ist die einzige Person, die für diesen funktioniert.
+Für Ereignisse ist sind zwei weitere Eigenschaften der objektkennung, aber `EventIdentifier` ist der einzige, das für dieses funktioniert.
 
 ### <a name="retrieving-a-reminder-by-id"></a>Eine Erinnerung nach ID abrufen
 
-Um eine Erinnerung abzurufen, verwenden Sie die *GetCalendarItem* Methode für die `EventStore` und übergibt ihn dann der *CalendarItemIdentifier*:
+Verwenden Sie zum Abrufen einer erinnerungs der *GetCalendarItem* Methode für die `EventStore` , und übergeben sie die *CalendarItemIdentifier*:
 
 ```csharp
 EKCalendarItem myReminder = App.Current.EventStore.GetCalendarItem ( reminder.CalendarItemIdentifier );
 ```
 
-Da `GetCalendarItem` gibt eine `EKCalendarItem`, müssen umgewandelt werden, um `EKReminder` ggf. Erinnerung Datenzugriff oder verwenden Sie die Instanz als ein `EKReminder` später.
+Da `GetCalendarItem` gibt ein `EKCalendarItem`, müssen Sie in umgewandelt werden `EKReminder` bei Bedarf auf Erinnerungsdaten zuzugreifen, oder verwenden Sie die Instanz als ein `EKReminder` später noch mal.
 
-Verwenden Sie keine `GetCalendarItem` für Kalenderereignisse, wie zum Zeitpunkt der Verfassung, funktioniert dies nicht.
+Verwenden Sie keine `GetCalendarItem` für Kalenderereignisse, wie zum Zeitpunkt der Verfassung, es funktioniert nicht.
 
 ### <a name="deleting-an-event"></a>Löschen eines Ereignisses
 
-Um ein Kalenderereignis löschen, rufen *RemoveEvent* auf Ihre `EventStore` und übergeben Sie einen Verweis auf das Ereignis und die entsprechenden `EKSpan`:
+Um ein Kalenderereignis löschen, rufen *RemoveEvent* auf Ihre `EventStore` und übergeben einen Verweis auf das Ereignis und die entsprechenden `EKSpan`:
 
 ```csharp
 NSError e;
@@ -327,20 +327,20 @@ App.Current.EventStore.RemoveEvent ( mySavedEvent, EKSpan.ThisEvent, true, out e
 
 Beachten Sie jedoch, nachdem ein Ereignis gelöscht wurde, der Ereignisverweis werden `null`.
 
-### <a name="deleting-a-reminder"></a>Löschen eine Erinnerung
+### <a name="deleting-a-reminder"></a>Erinnerung löschen
 
-Um eine Erinnerung zu löschen, rufen *RemoveReminder* auf die `EventStore` und übergeben Sie einen Verweis auf die Erinnerung:
+Um eine Erinnerung löschen, rufen *RemoveReminder* auf die `EventStore` und übergeben einen Verweis auf die Erinnerung:
 
 ```csharp
 NSError e;
 App.Current.EventStore.RemoveReminder ( myReminder as EKReminder, true, out e);
 ```
 
-Beachten Sie, dass im obigen Code eine Umwandlung in den besteht `EKReminder`, da `GetCalendarItem` wurde verwendet, um sie abzurufen
+Beachten Sie, dass im Code oben gibt es eine Umwandlung in `EKReminder`, da `GetCalendarItem` wurde verwendet, um ihn abrufen
 
-### <a name="searching-for-events"></a>Suchen nach Ereignissen
+### <a name="searching-for-events"></a>Suche nach Ereignissen
 
-Um Kalenderereignisse zu suchen, müssen Sie erstellen eine *NSPredicate* Objekt über die *PredicateForEvents* Methode für die `EventStore`. Ein `NSPredicate` ist eine Abfrage Datenobjekt, iOS verwendet wird, um Übereinstimmungen zu suchen:
+Um Termine im Kalender suchen, müssen Sie erstellen eine *NSPredicate* -Objekt über die *PredicateForEvents* Methode für die `EventStore`. Ein `NSPredicate` ist eine Abfrage Datenobjekt, iOS verwendet, um Übereinstimmungen zu suchen:
 
 ```csharp
 DateTime startDate = DateTime.Now.AddDays ( -7 );
@@ -349,18 +349,18 @@ DateTime endDate = DateTime.Now;
 NSPredicate query = App.Current.EventStore.PredicateForEvents ( startDate, endDate, null );
 ```
 
-Nachdem Sie erstellt haben die `NSPredicate`, verwenden die *EventsMatching* Methode für die `EventStore`:
+Nach der Erstellung der `NSPredicate`, verwenden Sie die *EventsMatching* Methode für die `EventStore`:
 
 ```csharp
 // execute the query
 EKCalendarItem[] events = App.Current.EventStore.EventsMatching ( query );
 ```
 
-Beachten Sie, dass Abfragen sind synchrone (blockierende) und je nach der Abfrage sehr lange dauern können, daher Sie einen neuen Thread oder eine Aufgabe sollten zu diesem Zweck zu starten.
+Beachten Sie, dass Abfragen werden synchrone (blockierende) und sehr lange, je nach Abfrage, dauern können daher Sie einen neuen Thread oder eine Aufgabe sollten, dafür zu erstellen.
 
 ### <a name="searching-for-reminders"></a>Erinnerungen werden gesucht
 
-Suchen nach Erinnerungen entspricht Ereignisse ist. erfordert ein Prädikat, aber der Aufruf ist bereits asynchron, sodass Sie needn't Blockieren des Threads Gedanken:
+Suchen nach Erinnerungen ist ähnlich wie Ereignisse. Es muss ein Prädikat, aber der Aufruf ist bereits asynchron, sodass Sie die Blockierung des Threads kümmern müssen nicht:
 
 ```csharp
 // create our NSPredicate which we'll use for the query
@@ -375,11 +375,11 @@ App.Current.EventStore.FetchReminders (
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieses Dokument hat einen Überblick über die beiden wichtigen Teile von EventKit Framework und eine Anzahl der am häufigsten auszuführenden Aufgaben. Allerdings EventKit Framework ist sehr groß und leistungsstarke und verfügt über Funktionen, die hier, wie z. B. eingeführt wurden noch nicht: Batchaktualisierungen, Alarme, die Wiederholung auf Ereignisse, registrieren und überwacht Änderungen an der Kalenderdatenbank konfigurieren Konfigurieren Festlegen von GeoFences und vieles mehr.  Weitere Informationen finden Sie in der Apple [Kalender und Erinnerungen Programmierhandbuch](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html).
+In diesem Dokument haben einen Überblick über die beiden wichtigen Teile von Framework EventKit und eine Anzahl der am häufigsten auszuführenden Aufgaben. Das Framework EventKit ist jedoch sehr umfangreiche und leistungsstarke, und umfasst Features, die hier, wie z. B. eingeführt wurden noch nicht: Batchaktualisierungen, Alarme, Konfigurieren der Wiederholung für Ereignis-, registrieren und das Lauschen auf Änderungen auf der Kalenderdatenbank konfigurieren Festlegen von GeoFences und vieles mehr.  Weitere Informationen finden Sie in der Apple [Kalender und Erinnerungen Programming Guide](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html).
 
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Kalender (Beispiel)](https://developer.xamarin.com/samples/monotouch/Calendars/)
 - [Einführung in iOS 6](~/ios/platform/introduction-to-ios6/index.md)
-- [Einführung in die Kalender die Erinnerung und Bewertung](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html)
+- [Einführung in die Kalender und Erinnerungen](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html)

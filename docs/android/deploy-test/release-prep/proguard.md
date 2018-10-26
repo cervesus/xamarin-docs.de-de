@@ -4,15 +4,15 @@ description: Xamarin.Android ProGuard ist ein Tool zur Verkleinerung, Optimierun
 ms.prod: xamarin
 ms.assetid: 29C0E850-3A49-4618-9078-D59BE0284D5A
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: efb9c73eb9bddb2b22b84fb6f3388281f32a82ab
-ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
+ms.openlocfilehash: 998232119159c5dc3a284dd51d55dc381271a4e0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36321375"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117394"
 ---
 # <a name="proguard"></a>ProGuard
 
@@ -323,11 +323,11 @@ Die folgende Fehlermeldung kann angezeigt werden, wenn ProGuard die Konfiguratio
 
 Dieses Problem tritt in der Regel unter Windows auf, da die `.cfg`-Datei über die falsche Codierung verfügt. ProGuard kann die _Bytereihenfolge-Marke_ (BOM) nicht verarbeiten, die möglicherweise in Textdateien vorhanden ist. Wenn eine BOM vorhanden ist, wird ProGuard mit dem oben angegebenen Fehler beendet. 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Um dieses Problem zu verhindern, bearbeiten Sie die benutzerdefinierte Konfigurationsdatei aus einem Text-Editor, der Ihnen das Speichern der Datei ohne die BOM ermöglicht. Um dieses Problem zu beheben, stellen Sie sicher, dass Ihr Text-Editor die Codierung auf `UTF-8` festgelegt hat. Der Text-Editor [Notepad++](https://notepad-plus-plus.org/) kann beispielsweise Dateien ohne BOM speichern, indem Sie **Codierung &gt; In UTF-8 ohne BOM codieren** beim Speichern der Datei auswählen. 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Um dieses Problem zu verhindern, speichern Sie die benutzerdefinierte Konfigurationsdatei aus einem Text-Editor, der Ihnen ermöglicht, die BOM wegzulassen. 
 
