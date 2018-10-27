@@ -1,31 +1,26 @@
 ---
-title: Live neu laden
+title: Xamarin Live neu laden (Vorschau)
 description: Finden Sie Änderungen an Ihrer XAML Live-, wiedergegeben werden, ohne dass eine andere kompilieren und bereitstellen.
 ms.prod: xamarin
 ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
 ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
-ms.date: 05/11/2018
-ms.openlocfilehash: f05b79e58a9fa87e13aeb45af2dbb46139051005
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+robots: noindex
+ms.date: 10/26/2018
+ms.openlocfilehash: bb30f9264cb5f3b762088e3523223b2bff8416b9
+ms.sourcegitcommit: ebc0b3838836ee5cf9e54d58866d23916664a43d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109990"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50142335"
 ---
-# <a name="xamarin-live-reload"></a>Xamarin Live neu laden
-
-![Vorschau](~/media/shared/preview.png)
-
-Xamarin Live Reload ermöglicht es Ihnen, **nehmen Sie Änderungen an Ihrer XAML und finden Sie diese sofort live, ohne dass eine andere kompilieren und Bereitstellen von**. Alle Änderungen an Ihre XAML werden erneut bereitgestellt werden zu speichern und wiedergegeben werden, auf dem Zielcomputer bereitstellen.
-
-Da Ihre app bei Verwendung von Live Reload kompiliert wird, funktioniert mit allen Bibliotheken und Drittanbieter-Steuerelementen. Live neu laden funktioniert auf allen Plattformen, die xamarin.Forms unterstützt, einschließlich Android, iOS und UWP, und alle gültigen Bereitstellungsziele, einschließlich Simulatoren, Emulatoren und physische Geräte funktioniert.
+# <a name="xamarin-live-reload-preview"></a>Xamarin Live neu laden (Vorschau)
 
 > [!NOTE]
-> [Die Vorschauversion von Live Reload wurde beendet.](https://github.com/xamarin/Xamarin.Forms/issues/4155#issuecomment-431596130)
->
-> Eine Erläuterung dazu besteht, auf [ ![beteiligen Sie sich den Chat an https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+> Die Vorschau von Xamarin Live Reload wurde beendet, und vielen Dank, dass alle für Ihr Feedback und Kommentare werden soll. Lesen Sie unsere [Roadmap](https://docs.microsoft.com/en-us/visualstudio/productinfo/vs-roadmap) für Visual Studio-2019 Weitere Informationen zum neuen Produktivitätsfeatures, die für Xamarin.Forms gearbeitet wird. Diese Erweiterung für Visual Studio 2017 bleibt verfügbar, aber es wird keine zukünftige Updates empfangen werden.
+
+Xamarin Live Reload ermöglicht es Ihnen, **nehmen Sie Änderungen an Ihrer XAML und finden Sie diese sofort live, ohne dass eine andere kompilieren und Bereitstellen von**. Alle Änderungen an Ihre XAML werden erneut bereitgestellt werden zu speichern und wiedergegeben werden, auf dem Zielcomputer bereitstellen.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -86,7 +81,7 @@ Live neu laden, die mit Änderungen auf alle XAML-Dateien funktioniert. Änderun
 ## <a name="frequently-asked-questions"></a>Häufig gestellte Fragen (FAQs) 
 ### <a name="is-xamarin-live-reload-available-on-visual-studio-for-mac"></a>Ist Xamarin Live Reload für Mac in Visual Studio verfügbar? 
 
-Die erste Vorschauversion von Xamarin Live Reload ist nur für Visual Studio 2017 verfügbar. Unterstützung für Visual Studio für Mac ist für eine künftige Version geplant.
+Preview-Version von Xamarin Live Reload ist Nein, nur für Visual Studio 2017 verfügbar.
 
 ### <a name="does-this-work-with-all-libraries-such-as-prism"></a>Funktioniert dies mit der alle Bibliotheken verwenden, z. B. Prism? 
 
@@ -94,7 +89,7 @@ Da es sich bei Ihrer app kompiliert wird, funktioniert Live Reload mit alle Bibl
 
 ### <a name="what-changes-does-live-reload-redeploy"></a>Welche Änderungen bereitstellen Live Reload erneut? 
 
-Live neu laden gilt nur Änderungen an XAML oder CSS-Code. Wenn Sie eine C#-Datei ändern, wird eine Neukompilierung erforderlich sein. Unterstützung für das erneute Laden C# -Code ist für eine zukünftige Version geplant.
+Live neu laden gilt nur Änderungen an XAML oder CSS-Code. Wenn Sie eine C#-Datei ändern, wird eine Neukompilierung erforderlich sein. 
 
 ### <a name="what-platforms-are-supported"></a>Welche Plattformen werden unterstützt? 
 
@@ -121,8 +116,8 @@ Nein. In der Tat können sogar starten Sie alle Ihre unterstützten Anwendungszi
 
 * Nur unterstützt in Visual Studio.
 * Verknüpfen von muss festgelegt werden, um **nicht verknüpfen** oder **Link nur Framework-SDKs** 
-* Erneutes Laden der gesamten app-Ressourcen (z. B. **"App.xaml"** oder freigegebenen Ressourcenverzeichnisse), app-Navigation wird zurückgesetzt. Dies wird in der nächsten Vorabversion behoben werden.
-* Erneutes Laden der ContentView derzeit erfordert die enthaltende Seite erneut zu laden. Dies wird in der nächsten Vorabversion behoben werden.
+* Erneutes Laden der gesamten app-Ressourcen (z. B. **"App.xaml"** oder freigegebenen Ressourcenverzeichnisse), app-Navigation wird zurückgesetzt. 
+* Erneutes Laden der ContentView derzeit erfordert die enthaltende Seite erneut zu laden.
 * Elemente, die AutomationId möglicherweise einen Fehler erneut laden.
 * Bearbeiten von XAML beim Debuggen von UWP einen Absturz zur Laufzeit verursachen. Problemumgehung: Verwenden Sie **Starten ohne Debuggen (STRG + F5)** anstelle von **starten (F5) Debuggen**.
 
