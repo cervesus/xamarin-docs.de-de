@@ -5,45 +5,45 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 37D0E9E6-979B-7069-B3BE-C5F0AF99BA72
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 03/23/2017
-ms.openlocfilehash: 81a15f85c3b3b10525e2eb4966900edc95224fe0
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+author: lobrien
+ms.author: laobri
+ms.date: 09/02/2018
+ms.openlocfilehash: f79a509e3122cbccbe6bf10040f8143432c9d66c
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "43780515"
 ---
 # <a name="hello-mac--walkthrough"></a>Hallo, Mac: Exemplarische Vorgehensweise
 
-Mit Xamarin.Mac können Sie vollständig native Mac-Apps in C# und .NET mit den gleichen OS X-Bibliotheken und -Schnittstellensteuerelementen entwickeln, die auch bei der Entwicklung von *Objective-C* und *Xcode* verwendet werden. Da Xamarin.Mac direkt in Xcode integriert wird, können Entwickler mit _Interface Builder_ von Xcode Benutzeroberflächen von Anwendungen erstellen (optional geht dies auch direkt in C#-Code).
+Mit Xamarin.Mac können Sie vollständig native Mac-Apps in C# und .NET mit den gleichen macOS-APIs entwickeln, die auch bei der Entwicklung von *Objective-C* und *Swift* verwendet werden. Da Xamarin.Mac direkt in Xcode integriert wird, können Entwickler mit _Interface Builder_ von Xcode Benutzeroberflächen von Anwendungen erstellen (optional geht dies auch direkt in C#-Code).
 
-Zusätzlich kann gängiger Back-End-Code für mobile Xamarin.iOS- und Xamarin.Android-Apps freigegeben werden, während auf jeder Plattform eine native Benutzeroberfläche bereitgestellt wird. Dies liegt daran, dass Xamarin.Mac-Anwendungen in C# und .NET geschrieben sind.
+Zusätzlich kann Code für mobile Xamarin.iOS- und Xamarin.Android-Apps freigegeben werden, während auf jeder Plattform eine native Benutzeroberfläche bereitgestellt wird. Dies liegt daran, dass Xamarin.Mac-Anwendungen in C# und .NET geschrieben sind.
 
 In diesem Artikel werden die Hauptkonzepte vorgestellt, die zum Erstellen einer Mac-App mit Xamarin.Mac, Visual Studio für Mac und Interface Builder von Xcode wichtig sind. Zu diesem Zweck führt der Artikel Sie durch die Erstellung einer einfachen **Hallo, Mac**-App, die zählt, wie häufig auf eine Schaltfläche geklickt wird:
 
-[![](hello-mac-images/run02.png "Beispiel für eine ausführbare „Hallo, Mac“-Anwendung")](hello-mac-images/run02.png#lightbox)
+[![](hello-mac-images/run02-sml.png "Beispiel für eine ausführbare „Hallo, Mac“-Anwendung")](hello-mac-images/run02.png#lightbox)
 
 Die folgenden Konzepte werden besprochen:
 
--  **Visual Studio für Mac**: Einführung in Visual Studio für Mac und die Erstellung von Xamarin.Mac-Anwendungen mit diesem Tool.
--  **Die Anatomie einer Xamarin.Mac-Anwendung**: Aufbau einer Xamarin.Mac-Anwendung
--  **Interface Builder von Xcode:** Verwendung von Interface Builder von Xcode zum Definieren der App-Benutzeroberfläche
--  **Outlets und Aktionen:** Verwendung von Outlets und Aktionen zum Verbinden von Steuerelementen auf der Benutzeroberfläche
--  **Bereitstellung/Tests**: So führen Sie eine Xamarin.Mac-App aus und testen diese.
+- **Visual Studio für Mac**: Einführung in Visual Studio für Mac und die Erstellung von Xamarin.Mac-Anwendungen mit diesem Tool.
+- **Die Anatomie einer Xamarin.Mac-Anwendung**: Aufbau einer Xamarin.Mac-Anwendung
+- **Interface Builder von Xcode:** Verwendung von Interface Builder von Xcode zum Definieren der App-Benutzeroberfläche
+- **Outlets und Aktionen:** Verwendung von Outlets und Aktionen zum Verbinden von Steuerelementen auf der Benutzeroberfläche
+- **Bereitstellung/Tests**: So führen Sie eine Xamarin.Mac-App aus und testen diese.
 
 ## <a name="requirements"></a>Anforderungen
 
-Zum Entwickeln von Xamarin.Mac-Apps mithilfe der neuesten macOS-APIs benötigen Sie Folgendes:
+Zum Entwickeln von Xamarin.Mac-Anwendungen benötigen Sie Folgendes:
 
 - Mac-Computer unter macOS High Sierra (10.13) oder höher.
 - [Xcode 9 oder höher](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
-- Die neueste Version von [Xamarin.Mac und Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/installation).
+- Die neueste Version von [Xamarin.Mac und Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/installation/).
 
 Zum Ausführen einer mit Xamarin.Mac erstellten Anwendung benötigen Sie Folgendes:
 
-- ein Mac-Computer mit Mac OS X 10.7 oder höher
+- Einen Mac-Computer mit macOS 10.7 oder höher
 
 > [!WARNING]
 > Die anstehende Version Xamarin.Mac 4.8 unterstützt nur macOS 10.9 oder höher.
@@ -53,51 +53,45 @@ Zum Ausführen einer mit Xamarin.Mac erstellten Anwendung benötigen Sie Folgend
 
 Wie oben erwähnt führt dieser Leitfaden Sie durch die Schritte zum Erstellen einer Mac-App mit dem Namen `Hello_Mac`, durch die eine einzelne Schaltfläche und eine Beschriftung im Hauptfenster hinzugefügt wird. Wenn Sie auf die Schaltfläche klicken, zeigt die Beschriftung an, wie oft sie bereits geklickt wurde.
 
-Um zu beginnen, machen Sie Folgendes:
+So beginnen Sie
 
 1. Starten Sie Visual Studio für Mac:
 
-    [![](hello-mac-images/setup01.png "Die Hauptschnittstelle für Visual Studio für Mac")](hello-mac-images/setup01.png#lightbox)
+    [![](hello-mac-images/setup01-sml.png "Die Hauptoberfläche für Visual Studio für Mac")](hello-mac-images/setup01.png#lightbox)
 
-2. Klicken Sie auf den Link **Neue Projektmappe...** in der oberen linken Ecke des Bildschirms, um das Dialogfeld **Neues Projekt** zu öffnen:
+2. Klicken Sie auf die Schaltfläche **Neues Projekt...**, um das Dialogfeld **Neues Projekt** zu öffnen, wählen Sie dann **Mac** > **App** > **Cocoa-App** aus, und klicken Sie auf die Schaltfläche **Weiter**:
 
-    [![](hello-mac-images/setup03.png "Erstellen einer neuen Projektmappe in Visual Studio für Mac")](hello-mac-images/setup02.png#lightbox)
+    [![](hello-mac-images/setup02-sml.png "Eine Cocoa-App auswählen")](hello-mac-images/setup02.png#lightbox)
 
-3. Klicken Sie auf **Mac** > **App** > **Cocoa-App** und dann auf **Weiter**:
+3. Geben Sie als **App-Namen** `Hello_Mac` ein, und behalten Sie für alles andere die Standardwerte bei. Klicken Sie auf **Weiter**:
 
-    [![](hello-mac-images/setup03.png "Eine Cocoa-App auswählen")](hello-mac-images/setup03.png#lightbox)
+    [![](hello-mac-images/setup03-sml.png "Den Namen der App festlegen")](hello-mac-images/setup03.png#lightbox)
 
-4. Geben Sie als **App-Namen** `Hello_Mac` ein, und behalten Sie für alles andere die Standardwerte bei. Klicken Sie auf **Weiter**:
+4. Bestätigen Sie den Speicherort des neuen Projekts auf Ihrem Computer:
 
-    [![](hello-mac-images/setup05.png "Den Namen der App festlegen")](hello-mac-images/setup05.png#lightbox)
-
-4. Beim Erstellen einer Projektmappe, die mehrere unterschiedliche Projekte enthalten kann, sollte der Entwickler hier einen anderen **Projektmappen-Namen** eingeben. Belassen Sie Ihn jedoch für dieses Beispiel beim Standard, nämlich dem **Projektnamen**:
-
-    [![](hello-mac-images/setup04.png "Überprüfen der Details der neuen Projektmappe")](hello-mac-images/setup04.png#lightbox)
+    [![](hello-mac-images/setup04-sml.png "Bestätigen der Details der neuen Projektmappe")](hello-mac-images/setup04.png#lightbox)
 
 5. Klicken Sie auf die Schaltfläche **Erstellen**.
 
 Visual Studio für Mac erstellt die neue Xamarin.Mac-App und zeigt die Standarddateien an, die der Projektmappe der App hinzugefügt werden:
 
- [![](hello-mac-images/project01.png "Die Standardansicht der neuen Projektmappe")](hello-mac-images/project01.png#lightbox)
+[![](hello-mac-images/project01-sml.png "Standardansicht der neuen Projektmappe")](hello-mac-images/project01.png#lightbox)
 
-Visual Studio für Mac verwendet **Projektmappen** und **Projekte** auf die gleiche Weise wie Visual Studio. Eine Projektmappe ist ein Container, der mindestens ein Projekt enthalten kann. Projekte sind z.B. Anwendungen, unterstützende Bibliotheken, Testanwendungen usw. In diesem Fall hat Visual Studio für Mac automatisch sowohl eine Projektmappe als auch ein Anwendungsprojekt erstellt.
-
-Bei Bedarf kann der Entwickler ein oder mehrere Codebibliotheksprojekte erstellen, die gängigen freigegebenen Code enthalten. Diese Bibliotheksprojekte können von den Projekten der App genutzt oder für andere Xamarin.Mac-App-Projekte freigegeben werden (bzw. Xamarin.iOS- oder Xamarin.Android-Projekte, abhängig von der Art des Codes), und zwar genauso wie auch eine Standard-.NET-Anwendung.
+Visual Studio für Mac verwendet die gleiche Struktur für **Projektmappen** und **Projekte** wie Visual Studio 2017. Eine Projektmappe ist ein Container, der mindestens ein Projekt enthalten kann. Projekte sind z.B. Anwendungen, unterstützende Bibliotheken, Testanwendungen usw. Die Vorlage **Datei > Neues Projekt** erstellt automatisch eine Projektmappe und ein Anwendungsprojekt.
 
 ## <a name="anatomy-of-a-xamarinmac-application"></a>Aufbau einer Xamarin.Mac-Anwendung
 
-Wenn Sie sich bereits mit der iOS-Programmierung auskennen, wird Ihnen vieles bekannt vorkommen. iOS verwendet das CocoaTouch-Framework, bei dem es sich um eine reduzierte Version von Cocoa handelt und das von Mac verwendet wird. Daher gibt es viele sich überschneidende Konzepte.
+Die Programmierung von Xamarin.Mac-Anwendungen ähnelt der von Xamarin.iOS. iOS verwendet das CocoaTouch-Framework, eine reduzierte Version von Cocoa, die von Mac verwendet wird.
 
 Schauen Sie sich die Dateien im Projekt an:
 
--   `Main.cs`: Diese Datei enthält den Haupteinstiegspunkt für die Anwendung. Wenn die App gestartet wird, enthält diese Datei die erste Klasse und Methode, die ausgeführt werden.
--   `AppDelegate.cs`: Diese Datei enthält die Hauptanwendungsklasse, die auf Ereignisse des Betriebssystems lauscht.
--   `Info.plist`: Diese Datei enthält App-Eigenschaften wie z.B. den Namen und das Symbol der Anwendung usw.
--   `Entitlements.plist`: Diese Datei enthält die Berechtigungen der Anwendung und ermöglicht den Zugriff auf z.B. Sandboxing- und iCloud-Support.
--  `Main.storyboard`: In dieser Datei wird die Benutzeroberfläche (Fenster und Menüs) einer Anwendung definiert, und es werden die Verbindungen zwischen Fenstern mit Segues beschrieben. Storyboards sind XML-Dateien, die eine Definition der Ansichten enthalten (Benutzeroberflächenelemente). Diese Datei kann von Interface Builder in Xcode erstellt und verwaltet werden.
--   `ViewController.cs`: Dies ist der Controller des Hauptfensters. Controller werden in einem anderen Artikel ausführlicher besprochen. Für den Moment reicht es, sich den Controller als Haupt-Engine einer jeden Ansicht vorzustellen.
--   `ViewController.designer.cs`: Diese Datei enthält Grundlagencode, der bei der Integration in die Benutzeroberfläche des Hauptbildschirms hilft.
+- **Main.cs** enthält den Haupteinstiegspunkt für die Anwendung. Wenn die App gestartet wird, enthält die `Main`-Klasse die erste Methode, die ausgeführt wird.
+- **AppDelegate.cs** enthält die `AppDelegate`-Klasse, die auf Ereignisse des Betriebssystems lauscht.
+- **Info.plist** enthält App-Eigenschaften wie den Anwendungsnamen, ihr Symbol usw.
+- **Entitlements.plist** enthält die Berechtigungen der Anwendung und ermöglicht den Zugriff auf z.B. Sandboxing- und iCloud-Support.
+- **Main.storyboard** definiert die Benutzeroberfläche (Fenster und Menüs) einer App und beschreibt die Verbindungen zwischen Fenstern mit Segues. Storyboards sind XML-Dateien, die eine Definition der Ansichten enthalten (Benutzeroberflächenelemente). Diese Datei kann von Interface Builder in Xcode erstellt und verwaltet werden.
+- **ViewController.cs** ist der Controller des Hauptfensters. Controller werden in einem anderen Artikel ausführlicher besprochen. Für den Moment reicht es, sich den Controller als Haupt-Engine einer jeden Ansicht vorzustellen.
+- **ViewController.designer.cs** enthält Grundlagencode, der bei der Integration in die Benutzeroberfläche des Hauptbildschirms hilft.
 
 In den folgenden Abschnitten werden diese Dateien kurz behandelt. Sie werden später ausführlicher besprochen. Allerdings wird empfohlen, sich jetzt schon grundlegend mit ihnen vertraut zu machen.
 
@@ -114,14 +108,14 @@ using ObjCRuntime;
 
 namespace Hello_Mac
 {
-        class MainClass
+    class MainClass
+    {
+        static void Main (string[] args)
         {
-                static void Main (string[] args)
-                {
-                        NSApplication.Init ();
-                        NSApplication.Main (args);
-                }
+            NSApplication.Init ();
+            NSApplication.Main (args);
         }
+    }
 }
 ```
 
@@ -165,7 +159,7 @@ Die `WillTerminate`-Methode wird aufgerufen, wenn der Benutzer oder das System d
 
 Cocoa (und das davon abgeleitete CocoaTouch) verwendet das sogenannte *MVC*-Muster (Model View Controller). Die `ViewController`-Deklaration stellt das Objekt dar, das das App-Fenster steuert. Für jedes erstellte Fenster (und für viele der Elemente in Fenstern) gibt es einen Controller, der für den Lebenszyklus eines Fensters verantwortlich ist, z.B. für das Anzeigen oder das Hinzufügen von neuen Ansichten (Steuerelementen).
 
-Die `ViewController`-Klasse ist der Controller des Hauptfenster. Dies bedeutet, dass es für den Lebenszyklus des Hauptfensters verantwortlich ist. Dies wird später ausführlicher diskutiert. Schauen Sie sich nun aber zunächst dies an:
+Die `ViewController`-Klasse ist der Controller des Hauptfenster. Der Controller ist für den Lebenszyklus des Hauptfensters verantwortlich. Dies wird später ausführlicher diskutiert. Schauen Sie sich nun aber zunächst dies an:
 
 ```csharp
 using System;
@@ -203,7 +197,7 @@ namespace Hello_Mac
 
 ### <a name="viewcontrollerdesignercs"></a>ViewController.Designer.cs
 
-Die Designerdatei für die Hauptfensterklasse ist im Moment leer, wird aber automatisch von Visual Studio für Mac aufgefüllt, wenn die Benutzeroberfläche mit Interface Builder in Xcode erstellt wird:
+Die Designerdatei für die Hauptfensterklasse ist anfangs leer, wird aber automatisch von Visual Studio für Mac aufgefüllt, wenn die Benutzeroberfläche mit Xcode Interface Builder erstellt wird:
 
 ```csharp
 // WARNING
@@ -226,7 +220,7 @@ namespace Hello_Mac
 }
 ```
 
-Normalerweise muss sich der Entwickler nicht um Designerdateien kümmern, da diese automatisch von Visual Studio für Mac verwaltet werden und den erforderlichen Grundlagencode bereitstellen, durch den der Zugriff auf Steuerelemente möglich ist, die in einem Fenster oder einer Ansicht der App hinzugefügt wurden.
+Designerdateien sollten nicht direkt bearbeitet werden, da sie automatisch von Visual Studio für Mac verwaltet werden, um den Grundlagencode bereitzustellen, der den Zugriff auf Steuerelemente ermöglicht, die Fenstern oder Ansichten in der App hinzugefügt wurden.
 
 Wenn das Xamarin.Mac-App-Projekt erstellt wurde und Sie ein grundlegendes Verständnis seiner Komponenten haben, wechseln Sie zu Xcode, um die Benutzeroberfläche mit Interface Builder zu erstellen.
 
@@ -236,7 +230,7 @@ Die `Info.plist`-Datei enthält Informationen zur Xamarin.Mac-App wie z.B. deren
 
 [![](hello-mac-images/infoplist01.png "Der PLIST-Editor für Visual Studio für Mac")](hello-mac-images/infoplist01.png#lightbox)
 
-Zudem definiert sie das _Storyboard_, mit dem die Benutzeroberfläche für die Xamarin.Mac-App im Dropdownmenü **Main Interface** (Hauptschnittstelle) angezeigt wird. Im oben stehenden Beispiel bezieht sich `Main` im Dropdownmenü auf das `Main.storyboard` in der Quellstruktur des Projekts im **Projektmappen-Explorer**. Zudem definiert sie das Symbol der App, indem Sie den *Asset-Katalog* angibt, der diese enthält (in diesem Fall **AppIcon**).
+Zudem definiert sie das _Storyboard_, mit dem die Benutzeroberfläche für die Xamarin.Mac-App im Dropdownmenü **Main Interface** (Hauptschnittstelle) angezeigt wird. Im obigen Beispiel bezieht sich `Main` im Dropdownmenü auf `Main.storyboard` in der Quellstruktur des Projekts im **Projektmappen-Explorer**. Außerdem definiert die Datei das Symbol der App, indem sie den *Ressourcenkatalog* angibt, der diese enthält (in diesem Fall **AppIcon**).
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
@@ -244,7 +238,7 @@ Die Berechtigungen der `Entitlements.plist`-Dateisteuerelemente der App, über d
 
 [![](hello-mac-images/entitlements01.png "Der Berechtigungs-Editor für Visual Studio für Mac")](hello-mac-images/entitlements01.png#lightbox)
 
-Für das Hallo Welt-Beispiel benötigen Sie keine Berechtigungen. Im nächsten Abschnitt erfahren Sie, wie Sie Interface Builder von Xcode verwenden, um die `Main.storyboard`-Datei zu bearbeiten und die Benutzeroberfläche der Xamarin.Mac-App zu definieren.
+Für das Hallo Welt-Beispiel benötigen Sie keine Berechtigungen. Im nächsten Abschnitt erfahren Sie, wie Sie Interface Builder von Xcode verwenden, um die **Main.storyboard**-Datei zu bearbeiten und die Benutzeroberfläche der Xamarin.Mac-App zu definieren.
 
 ## <a name="introduction-to-xcode-and-interface-builder"></a>Einführung in Xcode und Interface Builder
 
@@ -254,7 +248,7 @@ Doppelklicken Sie im **Projektmappen-Explorer** auf die `Main.storyboard`-Datei,
 
 [![](hello-mac-images/xcode01.png "Die Datei „Main.storyboard“ in Projektmappen-Explorer")](hello-mac-images/xcode01.png#lightbox)
 
-Dadurch sollte Xcode gestartet werden und in etwa so aussehen:
+Daraufhin sollte Xcode gestartet werden, wie in diesem Screenshot angezeigt:
 
 [![](hello-mac-images/xcode02.png "Die Xcode-Standardansicht für Interface Builder")](hello-mac-images/xcode02.png#lightbox)
 
@@ -263,10 +257,9 @@ Bevor Sie mit dem Entwerfen der Oberfläche beginnen, machen Sie sich mit Xcode 
 > [!NOTE]
 > Entwickler müssen nicht auf Xcode und Interface Builder zurückgreifen, um die Benutzeroberfläche einer Xamarin.Mac-App zu erstellen. Sie können dies auch direkt in C#-Code tun. Dies übersteigt jedoch den Umfang dieses Artikels. Der Einfachheit halber wird im Rest dieses Tutorials Interface Builder zum Erstellen der UI verwendet.
 
-
 ### <a name="components-of-xcode"></a>Komponenten von Xcode
 
-Wenn Sie eine `.storyboard`-Datei aus Visual Studio für Mac in Xcode öffnen, wird Folgendes angezeigt: ein **Projektnavigator** auf der linken Seite, die **Schnittstellenhierarchie** und der **Schnittstellen-Editor** in der Mitte sowie der Bereich **Eigenschaften und Hilfsprogramme** auf der rechten Seite:
+Wenn Sie eine **.storyboard**-Datei aus Visual Studio für Mac in Xcode öffnen, wird Folgendes angezeigt: ein **Projektnavigator** auf der linken Seite, die **Schnittstellenhierarchie** und der **Schnittstellen-Editor** in der Mitte sowie der Bereich **Eigenschaften und Hilfsprogramme** auf der rechten Seite:
 
 [![](hello-mac-images/xcode03.png "Die verschiedenen Abschnitte von Interface Builder in Xcode")](hello-mac-images/xcode03.png#lightbox)
 
@@ -274,7 +267,7 @@ In den folgenden Abschnitten wird diskutiert, wie diese Xcode-Funktionen funktio
 
 ### <a name="project-navigation"></a>Projektnavigation
 
-Wenn Sie eine `.storyboard`-Datei zur Bearbeitung in Xcode öffnen, erstellt Visual Studio für Mac im Hintergrund eine *Xcode-Projektdatei*, um mit Xcode Änderungen auszutauschen. Wenn der Entwickler später von Xcode zurück zu Visual Studio für Mac wechselt, werden alle an diesem Projekt vorgenommenen Änderungen von Visual Studio für Mac mit dem Xamarin.Mac-Projekt synchronisiert.
+Wenn Sie eine **.storyboard**-Datei zur Bearbeitung in Xcode öffnen, erstellt Visual Studio für Mac im Hintergrund eine *Xcode-Projektdatei*, um mit Xcode Änderungen auszutauschen. Wenn der Entwickler später von Xcode zurück zu Visual Studio für Mac wechselt, werden alle an diesem Projekt vorgenommenen Änderungen von Visual Studio für Mac mit dem Xamarin.Mac-Projekt synchronisiert.
 
 Im Abschnitt **Projektnavigation** kann der Entwickler durch alle Dateien navigieren, aus denen dieses _Shim_-Xcode-Projekt besteht. Normalerweise haben Sie nur Interesse an den `.storyboard`-Dateien in dieser Liste wie z.B. `Main.storyboard`.
 
@@ -302,14 +295,14 @@ Im Abschnitt **Eigenschaften** gibt es wie in der folgenden Abbildung dargestell
 
 Es gibt die folgenden Registerkarten (von links nach rechts):
 
--   **Dateiinspektor**: Der Dateiinspektor zeigt Dateiinformationen an, wie z.B. den Dateinamen der XIB-Datei, die bearbeitet wird.
--   **Schnellhilfe**: Die Registerkarte „Schnellhilfe“ bietet Kontexthilfe, je nachdem, was in Xcode ausgewählt ist.
--   **Identitätsinspektor**: Der Identitätsinspektor bietet Informationen zu dem ausgewählten Steuerelement bzw. der ausgewählten Ansicht.
--   **Attributinspektor**: Mit dem Attributinspektor kann der Entwickler verschiedene Attribute des ausgewählten Steuerelements bzw. der ausgewählten Ansicht anpassen.
--   **Größeninspektor**: Mit dem Größeninspektor kann der Entwickler die Größe und das Größenänderungsverhalten des ausgewählten Steuerelements bzw. der ausgewählten Ansicht steuern.
--   **Verbindungsinspektor**: Der Verbindungsinspektor zeigt die **Outlet**- und **Aktionsverbindungen** des ausgewählten Steuerelements an. Outlets und Aktionen werden weiter unten ausführlich vorgestellt.
--   **Bindungsinspektor**: Mit dem Bindungsinspektor können Entwickler Steuerelemente so konfigurieren, dass deren Werte automatisch an Datenmodelle gebunden werden.
--   **Ansichteffektinspektor**: Mit dem Ansichteffektinspektor können Entwickler Effekte für die Steuerelemente angeben, wie z.B. Animationen.
+- **Dateiinspektor**: Der Dateiinspektor zeigt Dateiinformationen an, wie z.B. den Dateinamen der XIB-Datei, die bearbeitet wird.
+- **Schnellhilfe**: Die Registerkarte „Schnellhilfe“ bietet Kontexthilfe, je nachdem, was in Xcode ausgewählt ist.
+- **Identitätsinspektor**: Der Identitätsinspektor bietet Informationen zu dem ausgewählten Steuerelement bzw. der ausgewählten Ansicht.
+- **Attributinspektor**: Mit dem Attributinspektor kann der Entwickler verschiedene Attribute des ausgewählten Steuerelements bzw. der ausgewählten Ansicht anpassen.
+- **Größeninspektor**: Mit dem Größeninspektor kann der Entwickler die Größe und das Größenänderungsverhalten des ausgewählten Steuerelements bzw. der ausgewählten Ansicht steuern.
+- **Verbindungsinspektor**: Der Verbindungsinspektor zeigt die **Outlet**- und **Aktionsverbindungen** des ausgewählten Steuerelements an. Outlets und Aktionen werden weiter unten ausführlich vorgestellt.
+- **Bindungsinspektor**: Mit dem Bindungsinspektor können Entwickler Steuerelemente so konfigurieren, dass deren Werte automatisch an Datenmodelle gebunden werden.
+- **Ansichteffektinspektor**: Mit dem Ansichteffektinspektor können Entwickler Effekte für die Steuerelemente angeben, wie z.B. Animationen.
 
 Verwenden Sie den Abschnitt **Bibliothek**, um Steuerelemente und Objekte zu finden, die Sie im Designer einfügen können, um die Benutzeroberfläche graphisch zu erstellen:
 
@@ -319,7 +312,7 @@ Verwenden Sie den Abschnitt **Bibliothek**, um Steuerelemente und Objekte zu fin
 
 Jetzt wo die Grundlagen der Xcode-IDE und von Interface Builder geklärt wurden, kann der Entwickler die Benutzeroberfläche für das Hauptfenster erstellen.
 
-Führen Sie folgende Schritte aus:
+So verwenden Sie Interface Builder
 
 1. Ziehen Sie in Xcode eine **Befehlsschaltfläche** aus dem **Bibliotheksbereich**:
 
@@ -329,7 +322,7 @@ Führen Sie folgende Schritte aus:
 
     [![](hello-mac-images/xcode08.png "Eine Schaltfläche zum Schnittstellendesign hinzufügen")](hello-mac-images/xcode08.png#lightbox)
 
-3. Klicken Sie auf die Eigenschaft **Titel** im **Attributinspektor**, und ändern Sie den Titel der Schaltfläche in `Click Me`:
+3. Klicken Sie auf die Eigenschaft **Titel** im **Attributinspektor**, und ändern Sie den Titel der Schaltfläche in **Click Me**:
 
     [![](hello-mac-images/xcode09.png "Die Eigenschaften der Schaltfläche festlegen")](hello-mac-images/xcode09.png#lightbox)
 
@@ -349,7 +342,7 @@ Führen Sie folgende Schritte aus:
 
     [![](hello-mac-images/xcode13.png "Einschränkungen zur Schaltfläche hinzufügen")](hello-mac-images/xcode13.png#lightbox)
 
-8. Klicken Sie oben im Editor auf den oberen und den linken **roten Balken**. Wenn Sie die Größe des Fensters anpassen, bleibt die Schaltfläche so an der gleichen Stelle in der oberen linken Ecke des Bildschirms.
+8. Klicken Sie oben im Editor auf den oberen und den linken **roten Balken**. Wenn Sie die Größe des Fensters anpassen, bleibt die Schaltfläche an der gleichen Stelle oben links im Bildschirm.
 
 9. Aktivieren Sie als Nächstes die Kontrollkästchen für die **Höhe** und **Breite**, und verwenden Sie die Standardwerte. Dadurch bleibt die Größe der Schaltfläche unverändert, wenn die Größe des Fensters geändert wird.
 
@@ -365,7 +358,7 @@ Führen Sie folgende Schritte aus:
 
 14. Speichern Sie die Änderungen an der Benutzeroberfläche.
 
-Beachten Sie, dass Interface Builder beim Ändern der Größe und beim Bewegen von Steuerelementen hilfreiche Hinweise gibt, die auf [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) basieren. Diese Richtlinien helfen dem Entwickler dabei, qualitativ hochwertige Apps zu erstellen, die Mac-Benutzern sowohl optisch als auch bei der Verwendung vertraut sind.
+Beachten Sie, dass Interface Builder beim Ändern der Größe und beim Bewegen von Steuerelementen hilfreiche Hinweise gibt, die auf [Eingaberichtlinien für macOS](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/) basieren. Diese Richtlinien helfen dem Entwickler dabei, qualitativ hochwertige Apps zu erstellen, die Mac-Benutzern sowohl optisch als auch bei der Verwendung vertraut sind.
 
 Sehen Sie sich den Bereich **Interface Hierarchy** (Schnittstellenhierarchie) an, um zu sehen, wie das Layout und die Hierarchie von den Elementen dargestellt werden, aus denen die Benutzeroberfläche besteht:
 
@@ -379,14 +372,14 @@ Wenn die Benutzeroberfläche erstellt wurde, muss der Entwickler die UI-Elemente
 
 Was sind **Outlets** und **Aktionen**? Bei der traditionellen .NET-Programmierung wird ein Steuerelement auf der Benutzeroberfläche automatisch als Eigenschaft verfügbar gemacht, wenn es hinzugefügt wird. Unter Mac ist dies anders. Wenn Sie ein Steuerelement zu einer Ansicht hinzufügen, wird es dadurch nicht automatisch für Code zugänglich. Der Entwickler muss die UI-Elemente explizit für Code verfügbar machen. Dafür bietet Apple zwei Optionen:
 
--   **Outlets**: Outlets sind vergleichbar mit Eigenschaften. Wenn ein Entwickler ein Steuerelement mit einem Outlet verbindet, wird es für den Code über eine Eigenschaft verfügbar gemacht, sodass z.B. Ereignishandler und Aufrufmethoden usw. hinzugefügt werden können.
--   **Aktionen**: Aktionen sind vergleichbar mit dem Befehlsmuster in WPF. Wenn z.B. eine Aktion für ein Steuerelement ausgeführt wird, wie etwa das Klicken auf eine Schaltfläche, ruft das Steuerelement automatisch eine Methode im Code auf. Aktionen sind leistungsstark und praktisch, da der Entwickler viele Steuerelemente mit der gleichen Aktion verbinden kann.
+- **Outlets**: Outlets sind vergleichbar mit Eigenschaften. Wenn ein Entwickler ein Steuerelement mit einem Outlet verbindet, wird es für den Code über eine Eigenschaft verfügbar gemacht, sodass z.B. Ereignishandler und Aufrufmethoden usw. hinzugefügt werden können.
+- **Aktionen**: Aktionen sind vergleichbar mit dem Befehlsmuster in WPF. Wenn z.B. eine Aktion für ein Steuerelement ausgeführt wird, wie etwa das Klicken auf eine Schaltfläche, ruft das Steuerelement automatisch eine Methode im Code auf. Aktionen sind leistungsstark und praktisch, da der Entwickler viele Steuerelemente mit der gleichen Aktion verbinden kann.
 
 In Xcode werden **Outlets** und **Aktionen** direkt über das *Ziehen von Steuerelementen* in den Code eingefügt. Genauer gesagt bedeutet dies, dass der Entwickler zum Erstellen eines **Outlets** oder einer **Aktion** ein Steuerelement auswählen muss, dem ein **Outlet** oder eine **Aktion** hinzugefügt werden soll. Dann muss er die **STRG-TASTE** gedrückt halten und das Steuerelement direkt in den Code ziehen.
 
 Dies bedeutet für Xamarin.Mac-Entwickler, dass die Entwickler in die Objective-C-Stub-Dateien ziehen, die den C#-Dateien entsprechen, in denen Sie das **Outlet** oder die **Aktion** erstellen möchten. Visual Studio für Mac hat eine Datei namens `ViewController.h` als Teil des Shim-Xcode-Projekts erstellt, das zur Verwendung von Interface Builder generiert wurde:
 
-[![](hello-mac-images/xcode16.png "Datenquelle in Xcode anzeigen")](hello-mac-images/xcode16.png#lightbox)
+[![](hello-mac-images/xcode16-sml.png "Datenquelle in Xcode anzeigen")](hello-mac-images/xcode16.png#lightbox)
 
 Diese Stub-`.h`-Datei spiegelt die `ViewController.designer.cs`-Datei wider, die automatisch dem Xamarin.Mac-Projekt hinzugefügt wird, wenn ein neues `NSWindow` erstellt wird. Diese Datei wird verwendet, um die von Interface Builder vorgenommenen Änderungen zu synchronisieren. In ihr werden auch die **Outlets** und **Aktionen** erstellt, damit UI-Elemente für den C#-Code verfügbar gemacht werden können.
 
@@ -412,7 +405,7 @@ Führen Sie folgende Schritte aus:
 
     [![](hello-mac-images/outlet03.png "Die Datei „ViewController.h“ anzeigen")](hello-mac-images/outlet03.png#lightbox)
 
-6. **Der letzte Schritt war sehr wichtig!** Wenn der Entwickler hier nicht die richtige Datei auswählt, kann er keine **Outlets** und **Aktionen** erstellen, oder diese werden für die falsche Klasse in C# verfügbar gemacht.
+6. **Der letzte Schritt war sehr wichtig.** Wenn Sie hier nicht die richtige Datei auswählen, können Sie keine **Outlets** und **Aktionen** erstellen, oder diese werden für die falsche Klasse in C# verfügbar gemacht.
 
 7. Halten Sie im **Schnittstellen-Editor** die **STRG-TASTE** gedrückt, und ziehen Sie die oben erstellte Bezeichnung im Code-Editor unter den `@interface ViewController : NSViewController {}`-Code:
 
@@ -435,6 +428,7 @@ Machen Sie als Nächstes die Schaltfläche für C#-Code verfügbar. Der Entwickl
 Führen Sie folgende Schritte aus:
 
 1. Stellen Sie sicher, dass sich Xcode immer noch im **Assistenten-Editor** befindet und dass die Datei **ViewController.h** im **Code-Editor** zu sehen ist.
+
 2. Halten Sie im **Schnittstellen-Editor** die **STRG-TASTE** gedrückt, und ziehen Sie die oben erstellte Schaltfläche im Code-Editor unter den `@property (assign) IBOutlet NSTextField *ClickedLabel;`-Code:
 
     [![](hello-mac-images/action01.png "Ziehen zum Erstellen einer Aktion")](hello-mac-images/action01.png#lightbox)
@@ -464,7 +458,7 @@ Wenn der Entwickler von Xcode zurück zu Visual Studio für Mac wechselt, werden
 
 Wählen Sie die Datei **ViewController.designer.cs** im **Projektmappen-Explorer** aus, um zu sehen, wie das **Outlet** und die **Aktion** in C#-Code verbunden wurden:
 
-[![](hello-mac-images/sync01.png "Änderungen mit Xcode synchronisieren")](hello-mac-images/sync01.png#lightbox)
+[![](hello-mac-images/sync01-sml.png "Änderungen mit Xcode synchronisieren")](hello-mac-images/sync01.png#lightbox)
 
 Beachten Sie die zwei Definitionen in **ViewController.designer.cs**:
 
@@ -478,7 +472,7 @@ partial void ClickedButton (Foundation.NSObject sender);
 
 Vergleich mit den Definitionen in der `ViewController.h`-Datei in Xcode:
 
-```csharp
+```objc
 @property (assign) IBOutlet NSTextField *ClickedLabel;
 - (IBAction)ClickedButton:(id)sender;
 ```
@@ -496,7 +490,7 @@ Wenn die Benutzeroberfläche erstellt und ihre UI-Elemente im Code über **Outle
 
 Für diese App wird die Bezeichnung jedes Mal aktualisiert, wenn auf die erste Schaltfläche geklickt wird, sodass sie immer die Zahl an bereits durchgeführten Klicks anzeigt. Öffnen Sie dazu die `ViewController.cs`-Datei zur Bearbeitung, indem Sie auf diese in **Projektmappen-Explorer** doppelklicken:
 
-[![](hello-mac-images/code01.png "Die Datei „ViewController.cs“ in Visual Studio für Mac anzeigen")](hello-mac-images/code01.png#lightbox)
+[![](hello-mac-images/code01-sml.png "Die Datei „ViewController.cs“ in Visual Studio für Mac anzeigen")](hello-mac-images/code01.png#lightbox)
 
 Erstellen Sie zunächst eine Variable auf Klassenebene in der `ViewController`-Klasse, um die Zahl an ausgeführten Klicks zu erfassen. Bearbeiten Sie die Klassendefinition, sodass sie danach folgendermaßen aussieht:
 
@@ -514,7 +508,7 @@ namespace Hello_Mac
 ```csharp
 public override void ViewDidLoad ()
 {
-    base.AwakeFromNib ();
+    base.ViewDidLoad ();
 
     // Set the initial value for the label
     ClickedLabel.StringValue = "Button has not been clicked yet.";
@@ -527,7 +521,6 @@ Fügen Sie als nächstes den Code hinzu, der auf das Klicken der Schaltfläche r
 
 ```csharp
 partial void ClickedButton (Foundation.NSObject sender) {
-
     // Update counter and label
     ClickedLabel.StringValue = string.Format("The button has been clicked {0} time{1}.",++numberOfTimesClicked, (numberOfTimesClicked < 2) ? "" : "s");
 }
@@ -541,12 +534,12 @@ Erstellen Sie nun die App und führen Sie diese aus, um zu testen, ob sie wie er
 
 Wenn eine App erstellt wird, kann sich der Entwickler für die Buildart entscheiden:
 
--   **Debug**: Ein Debugbuild wird in eine **APP**-Datei (Anwendung) mit einigen zusätzlichen Metadaten kompiliert, durch die der Entwickler ein Debugging durchführen kann, während die App ausgeführt wird.
--   **Release**: Ein Releasebuild erstellt auch eine **APP**-Datei, aber diese enthält keine Debugginginformationen, weshalb sie kleiner ist und schneller ausgeführt werden kann.
+- **Debug**: Ein Debugbuild wird in eine **APP**-Datei (Anwendung) mit einigen zusätzlichen Metadaten kompiliert, durch die der Entwickler ein Debugging durchführen kann, während die App ausgeführt wird.
+- **Release**: Ein Releasebuild erstellt auch eine **APP**-Datei, aber diese enthält keine Debugginginformationen, weshalb sie kleiner ist und schneller ausgeführt werden kann.
 
-Der Entwickler kann den Buildtyp unter **Konfigurationsauswahl** in der oberen linken Ecke des Visual Studio für Mac-Bildschirms auswählen:
+Der Entwickler kann den Buildtyp unter **Konfigurationsauswahl** oben links im Visual Studio für Mac-Bildschirm auswählen:
 
-[![](hello-mac-images/run01.png "Einen Debugbuild auswählen")](hello-mac-images/run01.png#lightbox)
+[![](hello-mac-images/run01-sml.png "Einen Debugbuild auswählen")](hello-mac-images/run01.png#lightbox)
 
 ## <a name="building-the-application"></a>Erstellen der Anwendung
 
@@ -558,17 +551,17 @@ Wenn keine Fehler auftreten, wird in der Statusleiste von Visual Studio für Mac
 
 Es gibt drei Möglichkeiten, die App auszuführen:
 
--  Drücken Sie **⌘+EINGABE**.
--  Klicken Sie im Menü **Ausführen** auf **Debug**.
--  Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche **Wiedergabe** (über dem **Projektmappen-Explorer**).
+- Drücken Sie **⌘+EINGABE**.
+- Klicken Sie im Menü **Ausführen** auf **Debug**.
+- Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche **Wiedergabe** (über dem **Projektmappen-Explorer**).
 
 Die App wird erstellt (wenn dies noch nicht geschehen ist), im Debugmodus gestartet und zeigt das Hauptfenster der Benutzeroberfläche an:
 
-[![](hello-mac-images/run02.png "Die Anwendung ausführen")](hello-mac-images/run02.png#lightbox)
+[![](hello-mac-images/run02-sml.png "Die Anwendung ausführen")](hello-mac-images/run02.png#lightbox)
 
 Wenn Sie mehrmals auf die Schaltfläche klicken, sollte die Zahl der Bezeichnung aktualisiert werden:
 
-[![](hello-mac-images/run03.png "Die Ergebnisse anzeigen, nachdem auf die Schaltfläche geklickt wurde")](hello-mac-images/run03.png#lightbox)
+[![](hello-mac-images/run03-sml.png "Die Ergebnisse anzeigen, nachdem auf die Schaltfläche geklickt wurde")](hello-mac-images/run03.png#lightbox)
 
 ## <a name="where-to-next"></a>Weitere Themen
 
@@ -578,19 +571,19 @@ Jetzt wo Sie die Grundlagen einer Xamarin.Mac-App kennen, sehen Sie sich die fol
 - [Fenster](~/mac/user-interface/window.md): In diesem Artikel erhalten Sie eine Einführung in die Arbeit mit Fenstern und Bereichen in einer Xamarin.Mac-Anwendung. Sie erfahren, wie Sie Fenster und Bereiche in Xcode und Interface Builder erstellen und verwalten, Fenster und Bereiche aus XIB-Dateien laden, Fenster benutzen und in C#-Code auf Fenster reagieren.
 - [Dialogfelder](~/mac/user-interface/dialog.md): In diesem Artikel erhalten Sie eine Einführung in die Arbeit mit Dialogfeldern und modalen Fenstern in einer Xamarin.Mac-Anwendung. Sie erfahren, wie Sie modale Fenster in Xcode und Interface Builder erstellen und verwalten, mit Standarddialogfeldern arbeiten und Fenster anzeigen und auf diese in C#-Code reagieren.
 - [Warnungen](~/mac/user-interface/alert.md): In diesem Artikel erhalten Sie eine Einführung in die Arbeit mit Warnungen in Xamarin.Mac-Anwendungen. Sie erfahren, wie Sie Warnungen aus C#-Code erstellen und anzeigen, und wie Sie auf Warnungen reagieren können.
-- [Menüs](~/mac/user-interface/menu.md): Menüs werden in verschiedenen Teilen der Benutzeroberfläche einer Mac-Anwendung verwendet: vom Hauptmenü der Anwendung am oberen Rand des Bildschirms bis hin zu Popup- und Kontextmenüs, die überall in einem Fenster angezeigt werden können. Menüs sind ein integraler Teil der Servicequalität einer Mac-Anwendung. Sie erfahren, wie Sie mit Cocoa-Menüs in einer Xamarin.Mac-Anwendung arbeiten können.
-- [Symbolleiste](~/mac/user-interface/toolbar.md): In diesem Artikel wird beschrieben, wie Sie mit Symbolleisten in einer Xamarin.Mac-Anwendung arbeiten können. Sie erfahren, wie Sie Symbolleisten in Xcode und Interface Builder erstellen und verwalten können, wie Sie die Symbolleistenelemente für Code mit Outlets und Aktionen verfügbar machen können, wie Sie Symbolleistenelemente aktivieren und deaktivieren können und wie Sie in C#-Code auf Symbolleistenelemente reagieren können.
+- [Menüs](~/mac/user-interface/menu.md): Menüs werden in verschiedenen Teilen der Benutzeroberfläche einer Mac-Anwendung verwendet – vom Hauptmenü der Anwendung am oberen Rand des Bildschirms bis hin zu Popup- und Kontextmenüs, die überall in einem Fenster angezeigt werden können. Menüs sind ein integraler Bestandteil einer Mac-Anwendungsumgebung. Sie erfahren, wie Sie mit Cocoa-Menüs in einer Xamarin.Mac-Anwendung arbeiten können.
+- [Symbolleiste](~/mac/user-interface/toolbar.md): In diesem Artikel wird beschrieben, wie Sie mit Symbolleisten in einer Xamarin.Mac-Anwendung arbeiten können. Sie erfahren, wie Sie Symbolleisten in Xcode und Interface Builder erstellen und verwalten , Symbolleistenelemente für Code mit Outlets und Aktionen verfügbar machen und aktivieren bzw. deaktivieren. Außerdem lernen Sie, wie Sie in C#-Code auf Symbolleistenelemente reagieren.
 - [Tabellenansichten](~/mac/user-interface/table-view.md): In diesem Artikel wird beschrieben, wie Sie mit Tabellenansichten in einer Xamarin.Mac-Anwendung arbeiten können. Sie erfahren, wie Sie Tabellenansichten in Xcode und Interface Builder erstellen und verwalten, wie Sie die Tabellenansichtenelemente für Code mit Outlets und Aktionen verfügbar machen, Tabellenelemente auffüllen und in C#-Code auf Tabellenansichtenelemente reagieren.
 - [Gliederungsansichten](~/mac/user-interface/outline-view.md): In diesem Artikel wird beschrieben, wie Sie mit Gliederungsansichten in einer Xamarin.Mac-Anwendung arbeiten. Sie erfahren, wie Sie Gliederungsansichten in Xcode und Interface Builder erstellen und verwalten, wie Sie die Gliederungsansichtelemente für Code mit Outlets und Aktionen verfügbar machen, Gliederungselemente auffüllen und in C#-Code auf Gliederungsansichtelemente reagieren.
 - [Quelllisten](~/mac/user-interface/source-list.md): In diesem Artikel wird beschrieben, wie Sie mit Quelllisten in einer Xamarin.Mac-Anwendung arbeiten. Sie erfahren, wie Sie Quelllisten in Xcode und Interface Builder erstellen und verwalten, wie Sie die Quelllistenelemente für Code mit Outlets und Aktionen verfügbar machen, Quelllistenelemente auffüllen und in C#-Code auf Quelllistenelemente reagieren.
 - [Auflistungsansichten](~/mac/user-interface/collection-view.md): In diesem Artikel wird beschrieben, wie Sie mit Auflistungsansichten in einer Xamarin.Mac-Anwendung arbeiten. Sie erfahren, wie Sie Auflistungsansichten in Xcode und Interface Builder erstellen und verwalten, wie Sie die Auflistungsansichtelemente für Code mit Outlets und Aktionen verfügbar machen, Auflistungselemente auffüllen und in C#-Code auf Auflistungsansichtelemente reagieren.
 - [Arbeiten mit Bildern](~/mac/app-fundamentals/image.md): In diesem Artikel wird beschrieben, wie Sie mit Bildern und Symbolen in einer Xamarin.Mac-Anwendung arbeiten. Sie erfahren, wie Sie die erforderlichen Bilder erstellen und verwalten, die Sie für das App-Symbol benötigen, und wie Sie Bilder sowohl in C#-Code als auch in Interface Builder von Xcode verwenden.
 
-Es wird zudem empfohlen, dass Sie sich den [Mac-Beispielkatalog](https://developer.xamarin.com/samples/mac/all/) ansehen. Dieser enthält viele gebrauchsfertige Codebeispiele, mit denen Entwickler ein Xamarin.Mac-Projekt schnell vorantreiben können.
+Der [Mac-Beispielkatalog](https://developer.xamarin.com/samples/mac/all/) enthält fertige Codebeispiele zum Erlernen von Xamarin.Mac.
 
-Ein Beispiel für eine vollständige Xamarin.Mac-App, die viele Funktionen enthält, die ein Benutzer in einer typischen Mac-Anwendung erwarten würde, finden Sie unter [SourceWriter-Beispiel-App](https://developer.xamarin.com/samples/mac/SourceWriter/). SourceWriter ist ein einfacher Quellcode-Editor, der Unterstützung für die Codevervollständigung und die einfache Syntaxhervorhebung bietet.
+Eine vollständige Xamarin.Mac-App, die viele Funktionen enthält, die ein Benutzer in einer typischen Mac-Anwendung erwarten würde, finden Sie unter [SourceWriter-Beispiel-App](https://developer.xamarin.com/samples/mac/SourceWriter/). SourceWriter ist ein einfacher Quellcode-Editor, der Unterstützung für die Codevervollständigung und die einfache Syntaxhervorhebung bietet.
 
-Der SourceWriter-Code wurde vollständig kommentiert und es wurden, wenn möglich, Links der Schlüsseltechnologien und -methoden zu wichtigen Informationen in den Leitfäden der Xamarin.Mac-Dokumentation bereitgestellt.
+Der SourceWriter-Code wurde vollständig kommentiert und es wurden, wenn möglich, Links der Schlüsseltechnologien und -methoden zu wichtigen Informationen in der Xamarin.Mac-Dokumentation bereitgestellt.
 
 ## <a name="summary"></a>Zusammenfassung
 
@@ -599,4 +592,4 @@ In diesem Artikel wurden die Grundlagen einer Standard-Xamarin.Mac-App beschrieb
 ## <a name="related-links"></a>Verwandte Links
 
 - [„Hallo, Mac“-Beispiel](https://developer.xamarin.com/samples/mac/Hello_Mac/)
-- [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [macOS-Eingaberichtlinien](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)

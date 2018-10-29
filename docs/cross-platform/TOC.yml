@@ -1,0 +1,198 @@
+items:
+- name: Plattformübergreifend
+  href: index.yml
+  items:
+  - name: Erste Schritte
+    href: get-started/index.md
+    items:
+    - name: Anforderungen
+      displayName: System requirements
+      href: get-started/requirements.md
+    - name: Installation
+      href: get-started/installation/index.md
+      items:
+      - name: Installieren von Xamarin unter Windows
+        href: get-started/installation/windows.md
+        items:
+        - name: Installieren von Xamarin-Vorschauversionen (Windows)
+          href: get-started/installation/windows-preview.md
+      - name: Installieren von Visual Studio für Mac
+        href: /visualstudio/mac/installation/
+        items:
+        - name: Installieren von Xamarin-Vorschauversionen (Mac)
+          href: /visualstudio/mac/update/
+      - name: Xamarin-Firewall-Konfigurationsanleitung
+        href: get-started/installation/firewall.md
+      - name: Deinstallieren von Xamarin
+        href: get-started/installation/uninstalling-xamarin.md
+    - name: Einführung in die Entwicklung mobiler Anwendungen
+      href: get-started/introduction-to-mobile-development.md
+    - name: Einführung in den mobilen SDLC
+      href: get-started/introduction-to-mobile-sdlc.md
+    - name: Erstellen von plattformübergreifenden Anwendungen
+      href: app-fundamentals/building-cross-platform-applications/index.md
+      items:
+      - name: Übersicht
+        href: app-fundamentals/building-cross-platform-applications/overview.md
+      - name: 'Teil 1: Grundlegendes zur mobilen Xamarin-Plattform'
+        href: app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md
+      - name: 'Teil 2: Architektur'
+        href: app-fundamentals/building-cross-platform-applications/architecture.md
+      - name: 'Teil 3: Einrichten einer plattformübergreifenden Xamarin-Lösung'
+        href: app-fundamentals/building-cross-platform-applications/setting-up-a-xamarin-cross-platform-solution.md
+      - name: 'Teil 4: Umgang mit mehreren Plattformen'
+        href: app-fundamentals/building-cross-platform-applications/platform-divergence-abstraction-divergent-implementation.md
+      - name: 'Teil 5: Praktische Strategien für die Codefreigabe'
+        href: app-fundamentals/building-cross-platform-applications/practical-code-sharing-strategies.md
+      - name: 'Teil 6: Testen und App Store-Genehmigungen'
+        href: app-fundamentals/building-cross-platform-applications/testing-and-app-store-approvals.md
+      - name: 'Fallstudie: Tasky'
+        href: app-fundamentals/building-cross-platform-applications/case-study-tasky.md
+    expanded: true
+  - name: Freigeben von Code
+    href: app-fundamentals/index.md
+    items:
+    - name: Übersicht
+      href: app-fundamentals/code-sharing.md
+    - name: .NET-Standard
+      href: app-fundamentals/net-standard.md
+    - name: Freigegebene Projekte
+      href: app-fundamentals/shared-projects.md
+    - name: Portable Klassenbibliotheken
+      href: app-fundamentals/pcl.md
+    - name: NuGet-Projekte mit Bibliotheken für mehrere Plattformen
+      displayName: Nugetizer 3000
+      href: app-fundamentals/nuget-multiplatform-libraries/index.md
+      items:
+      - name: Vorhandene Bibliotheksprojekte
+        href: app-fundamentals/nuget-multiplatform-libraries/existing-library.md
+      - name: Neue Bibliothek für mehrere Plattformen
+        href: app-fundamentals/nuget-multiplatform-libraries/single-codebase.md
+      - name: Neue plattformspezifische Bibliotheken
+        href: app-fundamentals/nuget-multiplatform-libraries/platform-specific.md
+      - name: Leitfaden zu Metadaten
+        href: app-fundamentals/nuget-multiplatform-libraries/metadata.md
+    - name: NuGet-Pakete (Leitfaden)
+      href: app-fundamentals/nuget-manual.md
+  - name: Sprachenunterstützung
+    href: platform/index.md
+    items:
+    - name: C#
+      items:
+      - name: Async Support Overview (Übersicht über die asynchrone Unterstützung)
+        href: platform/async.md
+      - name: C# 6-Sprachfunktionen
+        href: platform/csharp-six.md
+    - name: F#
+      href: platform/fsharp/index.md
+      items:
+      - name: Erste Schritte
+        href: platform/fsharp/overview.md
+      - name: F#-Beispiele
+        href: platform/fsharp/samples.md
+    - name: Visual Basic.NET
+      href: platform/visual-basic/index.md
+      items:
+      - name: Xamarin iOS und Android
+        href: platform/visual-basic/native-apps.md
+      - name: Xamarin.Forms
+        href: platform/visual-basic/xamarin-forms.md
+    - name: Razor-HTML-Vorlagen
+      href: platform/razor-html-templates/index.md
+  - name: Leistung und Sicherheit
+    href: deploy-test/performance.md
+    items:
+    - name: Leistung
+      href: deploy-test/memory-perf-best-practices.md
+      items:
+      - name: Android-Leistung
+        href: ~/android/deploy-test/performance.md?context=xamarin/cross-platform
+      - name: iOS-Leistung
+        href: ~/ios/deploy-test/performance.md?context=xamarin/cross-platform
+      - name: Mac-Leistung
+        href: ~/mac/deploy-test/performance.md?context=xamarin/cross-platform
+    - name: Transport Layer Security (TLS)
+      href: app-fundamentals/transport-layer-security.md
+      items:
+      - name: Android
+        href: ~/android/app-fundamentals/http-stack.md?context=xamarin/cross-platform
+      - name: iOS und Mac
+        href: ~/cross-platform/macios/http-stack.md?context=xamarin/cross-platform
+  - name: Bereitstellung und Debuggen
+    href: deploy-test/index.md
+    items:
+    - name: Benutzerdefinierte Linkerkonfiguration
+      href: deploy-test/linker.md
+    - name: Installieren von NUnit 2.6.4 mithilfe von NuGet
+      href: deploy-test/installing-nunit-using-nuget.md
+    - name: Debuggen mehrerer Prozesse
+      href: deploy-test/multi-process-debugging.md
+  - name: Desktopentwickler
+    displayName: Windows Forms (WinForms), Windows Presentation Foundation (WPF), and UWP Developers
+    href: desktop/index.md
+    items:
+    - name: App-Lebenszyklusvergleich
+      href: desktop/lifecycle.md
+    - name: Vergleich der Steuerelemente der Benutzeroberfläche
+      href: desktop/controls/index.md
+      items:
+      - name: WPF im Vergleich zu Xamarin.Forms
+        href: desktop/controls/wpf.md
+    - name: Portierungsanleitung
+      href: desktop/porting.md
+    - name: Proben
+      href: desktop/samples.md
+  - name: Problembehandlung
+    href: troubleshooting/index.md
+    items:
+    - name: Häufig gestellte Fragen (FAQs)
+      displayName: FAQ
+      href: troubleshooting/questions/index.md
+      items:
+      - name: Wie kann ich anzeigen, welche Bibliotheken in PCL unterstützt werden?
+        href: troubleshooting/questions/pcl-support-libraries.md
+      - name: PCL-Reflektions-API
+        href: troubleshooting/questions/pcl-reflection.md
+      - name: 'PCL-Fallstudie: Wie kann ich Probleme im Zusammenhang mit System.Diagnostics.Tracing für das NuGet-Paket für den Microsoft-TPL-Datenfluss lösen?'
+        href: troubleshooting/questions/pcl-case-study.md
+      - name: Wie kann ich NuGet aktualisieren?
+        href: troubleshooting/questions/nuget-update.md
+      - name: Wie stufe ich ein NuGet-Paket herab?
+        href: troubleshooting/questions/nuget-package-downgrade.md
+      - name: Fehler wegen fehlender Pakete nach dem Aktualisieren von NuGet-Paketen
+        href: troubleshooting/questions/nuget-packages-missing.md
+      - name: Vereinheitlichen von Google Play-Dienstkomponenten und NuGet
+        href: troubleshooting/questions/gps-components-nuget.md
+      - name: Wo werden die Komponenten auf meinem Computer gespeichert?
+        href: troubleshooting/questions/component-storage.md
+      - name: Wo finde ich meine Versionsinformationen und Protokolle?
+        href: troubleshooting/questions/version-logs.md
+      - name: Wann und wie sollte ich einen Fehlerbericht speichern?
+        href: troubleshooting/questions/howto-file-bug.md
+      - name: Warum wird Jenkins nicht von Xamarin unterstützt?
+        href: troubleshooting/questions/xamarin-jenkins.md
+      - name: Welche Projekteinstellungen sind für den Debugger erforderlich?
+        href: troubleshooting/questions/debugger-settings.md
+    - name: Fragen zu Visual Studio
+      items:
+      - name: Kontrollkästchen für die Bereitstellung in Configuration Manager deaktiviert
+        href: troubleshooting/questions/deploy-checkboxes.md
+      - name: Fehlende Visual Studio-Erweiterungen nach der Installation
+        href: troubleshooting/questions/missing-vs-extensions.md
+      - name: Wie führe ich eine gründliche Deinstallation von Xamarin für Visual Studio aus?
+        href: troubleshooting/questions/uninstall-xamarin-vs.md
+      - name: Wie erfasse ich die aktuellen Aufruflisten des Visual Studio-Prozesses?
+        href: troubleshooting/questions/vs-callstack.md
+      - name: Warum integriert Visual Studio mein referenziertes Bibliotheksprojekt nicht in meinen Build?
+        href: troubleshooting/questions/vs-config-manager.md
+    - name: Aktualisieren von Komponentenverweisen auf NuGet
+      href: troubleshooting/component-nuget.md
+  - name: Proben
+    href: samples/index.yml
+  expanded: true
+ms.openlocfilehash: 6de69aacc37d17086e49ae1a7571879686168a42
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50130240"

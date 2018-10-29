@@ -1,0 +1,124 @@
+items:
+- name: Tools
+  href: index.yml
+  items:
+  - name: Live Player
+    href: live-player/index.md
+    items:
+    - name: Setup
+      href: live-player/install.md
+    - name: Xamarin Live Player-App
+      href: live-player/player.md
+    - name: Proben
+      href: live-player/samples.md
+    - name: Einschränkungen
+      href: live-player/limitations.md
+    - name: Problembehandlung
+      href: live-player/troubleshooting.md
+  - name: iOS-Simulator
+    href: ios-simulator/index.md
+    items:
+    - name: Bereitstellen im iOS-Simulator
+      href: ios-simulator/deploy.md
+  - name: Inspector
+    href: inspector/index.md
+    items:
+    - name: Installation und Anforderungen
+      href: inspector/install.md
+    - name: Überprüfen von Live-Anwendungen
+      href: inspector/inspect.md
+  - name: Profiler
+    href: profiler/index.md
+    items:
+    - name: Problembehandlung
+      href: profiler/troubleshooting.md
+  - name: Arbeitsmappen
+    href: workbooks/index.md
+    items:
+    - name: Installation und Anforderungen
+      href: workbooks/install.md
+    - name: Interaktive Arbeitsmappen
+      href: workbooks/workbook.md
+    - name: Editor-Tastenkombinationen
+      href: workbooks/keybindings.md
+    - name: Beispielarbeitsmappen
+      href: workbooks/samples/index.md
+      items:
+      - name: TinyRenderer
+        href: workbooks/samples/tinyrenderer.md
+    - name: Problembehandlung
+      href: workbooks/troubleshooting/index.md
+      items:
+      - name: Allgemein bekannte Probleme und Problemumgehungen
+        href: workbooks/troubleshooting/general.md
+      - name: Probleme mit Android-Arbeitsmappen
+        href: workbooks/troubleshooting/android.md
+    - name: Integrations-SDK
+      href: workbooks/sdk/index.md
+      items:
+      - name: Architekturübersicht
+        href: workbooks/sdk/architecture.md
+      - name: Erweiterte Integrationsthemen
+        href: workbooks/sdk/integrations.md
+      - name: Darstellungen in Xamarin Workbooks
+        href: workbooks/sdk/representations.md
+      - name: Debuggen von Integrationen
+        href: workbooks/sdk/debugging.md
+      - name: Beispielintegrationen
+        href: workbooks/sdk/samples.md
+  - name: Einbetten von .NET
+    href: dotnet-embedding/index.md
+    items:
+    - name: Erste Schritte
+      href: dotnet-embedding/get-started/index.md
+      items:
+      - name: Installation
+        href: dotnet-embedding/get-started/install/install.md
+      - name: C
+        href: dotnet-embedding/get-started/c.md
+      - name: Java
+        href: dotnet-embedding/get-started/java/index.md
+        items:
+        - name: Android
+          href: dotnet-embedding/get-started/java/android.md
+      - name: Objective-C
+        href: dotnet-embedding/get-started/objective-c/index.md
+        items:
+        - name: iOS
+          href: dotnet-embedding/get-started/objective-c/ios.md
+        - name: macOS
+          href: dotnet-embedding/get-started/objective-c/macos.md
+    - name: Android
+      href: dotnet-embedding/android/index.md
+      items:
+      - name: Android-Rückrufe
+        href: dotnet-embedding/android/callbacks.md
+    - name: Objective-C
+      href: dotnet-embedding/objective-c/index.md
+      items:
+      - name: Bewährte Methoden
+        href: dotnet-embedding/objective-c/best-practices.md
+      - name: Plattformen
+        href: dotnet-embedding/objective-c/platforms.md
+    - name: Einschränkungen
+      href: dotnet-embedding/limitations.md
+  - name: Continuous Integration
+    href: ci/index.md
+    items:
+    - name: Einführung in die fortlaufende Integration
+      href: ci/intro-to-ci.md
+    - name: DevOps mit Xamarin
+      href: ci/devops.md
+    - name: Verwenden von App Center Build mit Xamarin
+      href: /appcenter/build/xamarin/
+    - name: Verwenden von TeamCity mit Xamarin
+      href: ci/teamcity.md
+    - name: Verwenden von Jenkins mit Xamarin
+      href: ci/jenkins-walkthrough.md
+  expanded: true
+ms.openlocfilehash: 207b6d84cfcde2a3d771bb5095cdc5f9dfcb991a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50130216"
