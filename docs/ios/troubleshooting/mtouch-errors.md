@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: 01359d8b5fc402c83006c1c227375557fd2d7149
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a9d7f1eb0051035d6bfcc47e18fb0bdd00b60f5d
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122451"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235115"
 ---
 # <a name="xamarinios-errors"></a>Xamarin.iOS-Fehler
 
@@ -28,9 +28,9 @@ Beispiel: Parameter, Umgebung, Tools fehlt.
 
 <a name="MT0000" />
 
-### <a name="mt0000-unexpected-error---please-fill-a-bug-report-at-httpbugzillaxamarincom"></a>MT0000: Unerwarteter Fehler: Geben Sie bitte einen Fehlerbericht an http://bugzilla.xamarin.com
+### <a name="mt0000-unexpected-error---please-fill-a-bug-report-at-httpsgithubcomxamarinxamarin-maciosissuesnew"></a>MT0000: Unerwarteter Fehler: Geben Sie bitte einen Fehlerbericht an https://github.com/xamarin/xamarin-macios/issues/new
 
-Ein unerwarteter Fehler ist aufgetreten. Bitte [einen Fehlerbericht](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) so viele Informationen wie möglich, einschließlich:
+Ein unerwarteter Fehler ist aufgetreten. Bitte [einen Fehlerbericht](https://github.com/xamarin/xamarin-macios/issues/new) so viele Informationen wie möglich, einschließlich:
 
 * Vollständiger Build erstellt Protokolle mit maximaler Ausführlichkeit (z. B. `-v -v -v -v` in die **Weitere Mtouch-Argumente**);
 * Eine minimale Testfall, der den Fehler reproduzieren; und

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: cd25e5c78885f53902c577a900958b842a70219c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 56f9cbdae565f0d89463742377ec2311d8e375ac
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116952"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235050"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS-API-Design
 
@@ -107,7 +107,7 @@ Weitere Informationen zu APIs binden, finden Sie unter den [Xamarin.iOS-Bindung 
 
 ##### <a name="nsobject"></a>NSObject
 
-Die [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) Typ bildet die Grundlage für alle Objective-C-Bindungen. Xamarin.iOS-Typen zu spiegeln zwei Klassen von Typen aus dem iOS-CocoaTouch-APIs: die C-Typen (in der Regel bezeichneten als CoreFoundation Typen) und die Objective-C-Typen (diese alle von der NSObject-Klasse abgeleitet sind).
+Die [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) Typ bildet die Grundlage für alle Objective-C-Bindungen. Xamarin.iOS-Typen zu spiegeln zwei Klassen von Typen aus dem iOS-CocoaTouch-APIs: die C-Typen (in der Regel als CoreFoundation Typen bezeichnet) und die Objective-C-Typen (diese alle von der NSObject-Klasse abgeleitet sind).
 
 Für jeden Typ, der einen nicht verwalteten Typ entspricht, ist es möglich, das systemeigene Objekt durch Abrufen der [behandeln](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/) Eigenschaft.
 

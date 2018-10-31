@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/19/2018
-ms.openlocfilehash: cf85f8d64026b436c7552033525b9d0f381fd687
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: c7a84a8bd00c5685feef84bfc4aacf02e5891c55
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156976"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234985"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>Erstellen Mobile Apps mit Xamarin.Forms-Buch
 
-<p><img src="Images/Cover-sml.png" title="Erstellen von mobilen Apps mit Xamarin.Forms-Buch" align="left" />Das Buch <i>Erstellen mobiler Apps mit Xamarin.Forms</i> von Charles Petzold ist Sie eine Anleitung für das lernen, wie Sie das Xamarin.Forms-Anwendungen zu schreiben. Die einzige Voraussetzung ist Kenntnisse der Programmiersprache c#. Das Buch bietet eine umfassende Untersuchung in der Benutzeroberfläche Xamarin.Forms und deckt auch Animation, MVVM, Trigger, Verhalten, benutzerdefinierte Layouts, benutzerdefinierten Renderern und vieles mehr. 
+<p><img src="images/cover-sml.png" title="Erstellen von mobilen Apps mit Xamarin.Forms-Buch" align="left" />Das Buch <i>Erstellen mobiler Apps mit Xamarin.Forms</i> von Charles Petzold ist Sie eine Anleitung für das lernen, wie Sie das Xamarin.Forms-Anwendungen zu schreiben. Die einzige Voraussetzung ist die Kenntnis der C# Programmiersprache. Das Buch bietet eine umfassende Untersuchung in der Benutzeroberfläche Xamarin.Forms und deckt auch Animation, MVVM, Trigger, Verhalten, benutzerdefinierte Layouts, benutzerdefinierten Renderern und vieles mehr. 
 
 Das Buch im Frühjahr 2016 veröffentlicht wurde, und seitdem nicht aktualisiert wurde. Ist viel im Buch, wertvollen bleibt, aber einige der [Material werden veraltete](#ways-in-which-the-book-is-outdated), und einige Themen sind nicht mehr vollständig ordnungsgemäß noch abgeschlossen. 
 
