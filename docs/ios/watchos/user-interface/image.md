@@ -19,7 +19,7 @@ ms.locfileid: "50108085"
 WatchOS bietet eine [`WKInterfaceImage`](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/) -Steuerelement zum Anzeigen von Bildern und einfache Animationen. Einige Steuerelemente können auch ein Bild als Hintergrund (z. B. Schaltflächen, Gruppen und Schnittstellencontroller) verfügen.
 
 ![](image-images/image-walkway.png "Apple Watch Anzeigen eines Bildes") ![](image-images/image-animation.png "Apple Watch mit einfachen Animation")
-<!-- watch image courtesy of http://infinitapps.com/bezel/ -->
+ <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 Verwenden Sie Asset-Katalog-Images, um Bilder Watch-Kit-apps hinzufügen.
 Nur **@2x** Versionen sind erforderlich, da alle Geräte Retina wird ansehen.
