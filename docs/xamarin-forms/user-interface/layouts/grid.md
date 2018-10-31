@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 01dd59d5e94b473316b03f9035d38305fad42880
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 392a0e6c76357ce106477ec4d5037673e5702b43
+ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994501"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50301239"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms-Raster
 
@@ -22,12 +22,12 @@ ms.locfileid: "38994501"
 
 Dieser Artikel behandelt:
 
-- **[Zweck](#Purpose)**  &ndash; Allgemeine Verwendungsmöglichkeiten für `Grid`.
-- **[Nutzung](#Usage)**  &ndash; mit `Grid` Erreichen des gewünschten Entwurfs.
-  - **[Zeilen und Spalten](#Rows_and_Columns)**  &ndash; geben Zeilen und Spalten für die `Grid`.
-  - **[Platzieren Ansichten](#Placing_Views)**  &ndash; Ansichten in das Raster an bestimmten Zeilen und Spalten hinzufügen.
-  - **[Der Abstand](#Spacing)**  &ndash; die Leerzeichen zwischen den Zeilen und Spalten konfigurieren.
-  - **[Spannen](#Spans)**  &ndash; Konfigurieren von Elementen, die über mehrere Zeilen oder Spalten erstrecken.
+- **[Zweck](#purpose)**  &ndash; Allgemeine Verwendungsmöglichkeiten für `Grid`.
+- **[Nutzung](#usage)**  &ndash; mit `Grid` Erreichen des gewünschten Entwurfs.
+  - **[Zeilen und Spalten](#rows-and-columns)**  &ndash; geben Zeilen und Spalten für die `Grid`.
+  - **[Platzieren Ansichten](#placing-views-in-a-grid)**  &ndash; Ansichten in das Raster an bestimmten Zeilen und Spalten hinzufügen.
+  - **[Der Abstand](#spacing)**  &ndash; die Leerzeichen zwischen den Zeilen und Spalten konfigurieren.
+  - **[Spannen](#spans)**  &ndash; Konfigurieren von Elementen, die über mehrere Zeilen oder Spalten erstrecken.
 
 ![](grid-images/grid.png "Durchsuchen von Raster")
 
@@ -42,8 +42,6 @@ Dieser Artikel behandelt:
 ## <a name="usage"></a>Verwendung
 
 Im Gegensatz zu herkömmlichen Tabellen `Grid` leitet nicht die Anzahl und Größe der Zeilen und Spalten aus dem Inhalt. Stattdessen `Grid` hat `RowDefinitions` und `ColumnDefinitions` Sammlungen. Diese enthalten Definitionen für wie viele Zeilen und Spalten angeordnet werden werden. Ansichten werden hinzugefügt, um `Grid` mit den angegebenen Zeilen- und Spaltenindizes, die zu identifizieren, welchen Zeilen und Spalten in eine Ansicht platziert werden soll.
-
-<a name="Rows_and_Columns" />
 
 ### <a name="rows-and-columns"></a>Zeilen und Spalten
 
@@ -83,8 +81,6 @@ grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (1, GridUni
 grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength(200)});
 grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (200) });
 ```
-
-<a name="Placing_Views" />
 
 ### <a name="placing-views-in-a-grid"></a>Platzieren von Ansichten in einem Raster
 
