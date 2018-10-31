@@ -16,7 +16,7 @@ ms.locfileid: "50108085"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>WatchOS-Image-Steuerelemente in Xamarin
 
-WatchOS bietet eine [ `WKInterfaceImage` ](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/) -Steuerelement zum Anzeigen von Bildern und einfache Animationen. Einige Steuerelemente können auch ein Bild als Hintergrund (z. B. Schaltflächen, Gruppen und Schnittstellencontroller) verfügen.
+WatchOS bietet eine [`WKInterfaceImage`](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/) -Steuerelement zum Anzeigen von Bildern und einfache Animationen. Einige Steuerelemente können auch ein Bild als Hintergrund (z. B. Schaltflächen, Gruppen und Schnittstellencontroller) verfügen.
 
 ![](image-images/image-walkway.png "Apple Watch Anzeigen eines Bildes") ![](image-images/image-animation.png "Apple Watch mit einfachen Animation")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
