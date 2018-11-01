@@ -1,38 +1,38 @@
 ---
 title: 'Xamarin.Essentials: MainThread'
-description: Die MainThread-Klasse kann Anwendungen zur Ausführung von Code in den Hauptausführungsthread.
+description: Mit der MainThread-Klasse können Anwendungen Code im Hauptausführungsthread ausführen.
 ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
-author: charlespetzold
-ms.author: chape
+author: jamesmontemagno
+ms.author: jamont
 ms.date: 06/26/2018
-ms.openlocfilehash: e07d36d3e9a5492e6e170b62dbacb36be44dbfa9
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
-ms.translationtype: MT
+ms.openlocfilehash: 608cd00a2134e6e3fee89c7ae25bf4627d8b23be
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831424"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112311"
 ---
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials: MainThread
 
-![Vorabversionen von NuGet](~/media/shared/pre-release.png)
+![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
-Die **MainThread** -Klasse erlaubt Anwendungen das Ausführen von Code im primären Thread der Ausführung wird und an einen bestimmten Codeblock zu bestimmen, ob derzeit im Hauptthread ausgeführt.
+Mit der **MainThread**-Klasse können Anwendungen Code im Hauptausführungsthread ausführen und bestimmen, ob ein bestimmter Codeblock aktuell im Hauptthread ausgeführt wird.
 
 ## <a name="background"></a>Hintergrund
 
-Die meisten Betriebssysteme, einschließlich iOS, Android und die universelle Windows-Plattform – verwenden Sie eine Single-threading-Modell für Code, die im Zusammenhang mit der Benutzeroberfläche. Dieses Modell ist notwendig, ordnungsgemäß Benutzeroberflächen-Ereignisse, einschließlich des Tastatureingaben zu serialisieren und touch-Eingabe. Dieser Thread wird häufig aufgerufen, die _Hauptthread_ oder _Benutzeroberflächen-Thread_ oder _UI-Thread_. Der Nachteil dieses Modells ist, dass sämtlicher Code, der Elemente der Benutzeroberfläche greift auf Hauptthread der Anwendung ausgeführt werden muss. 
+Die meisten Betriebssysteme – einschließlich iOS, Android und der universellen Windows-Plattform (UWP) – verwenden ein Single-Threading-Modell für Code, der die Benutzeroberfläche betrifft. Dieses Modell ist notwendig, um Ereignisse der Benutzeroberfläche, einschließlich Tastaturanschläge und Toucheingabe, ordnungsgemäß zu serialisieren. Dieser Thread wird oft als _Hauptthread_, _Benutzeroberflächenthread_ oder _UI-Thread_ bezeichnet. Der Nachteil dieses Modells ist, dass Code, der auf Elemente der Benutzeroberfläche zugreift, im Hauptthread der Anwendung ausgeführt werden muss. 
 
-Anwendungen müssen manchmal Ereignisse verwenden, die in einem zweiten Thread der Ausführung der-Ereignishandler aufrufen. (Die Klassen Xamarin.Essentials [ `Accelerometer` ](accelerometer.md), [ `Compass` ](compass.md), [ `Gyroscope` ](gyroscope.md), [ `Magnetometer` ](magnetometer.md), und [ `OrientationSensor` ](orientation-sensor.md) möglicherweise alle Informationen in einem zweiten Thread bei der Verwendung mit höherer Geschwindigkeit zurück.) Wenn der Ereignishandler auf Benutzeroberflächenelemente zugreifen muss, müssen sie diesen Code im Hauptthread ausführen. Die **MainThread** Klasse ermöglicht der Anwendung, den Code im Hauptthread auszuführen.
+Anwendungen müssen manchmal Ereignisse verwenden, die den Ereignishandler in einem sekundären Ausführungsthread aufrufen. Die Xamarin.Essentials-Klassen [`Accelerometer`](accelerometer.md), [`Compass`](compass.md), [`Gyroscope`](gyroscope.md), [`Magnetometer`](magnetometer.md) und [`OrientationSensor`](orientation-sensor.md) geben bei Verwendung mit höheren Geschwindigkeiten ggf. Informationen zu einem Sekundärthread zurück. Wenn der Ereignishandler auf Elemente der Benutzeroberfläche zugreifen muss, muss er diesen Code im Hauptthread ausführen. Mit der **MainThread**-Klasse können Anwendungen diesen Code im Hauptthread ausführen.
 
-## <a name="running-code-on-the-main-thread"></a>Ausführen von Code auf dem Hauptthread
+## <a name="running-code-on-the-main-thread"></a>Ausführen von Code im Hauptthread
 
-Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
+Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Um Code im Hauptthread auszuführen, rufen Sie die statische `MainThread.BeginInvokeOnMainThread` Methode. Das Argument ist ein [ `Action` ](xref:System.Action) Objekt, das ist einfach eine Methode ohne Argumente und keinen Wert zurückgibt:
+Um Code im Hauptthread auszuführen, rufen Sie die statische `MainThread.BeginInvokeOnMainThread`-Methode auf. Das Argument ist ein [`Action`](xref:System.Action)-Objekt, das einfach eine Methode ohne Argumente und ohne Rückgabewert ist:
 
 ```csharp
 MainThread.BeginInvokeOnMainThread(() =>
@@ -41,7 +41,7 @@ MainThread.BeginInvokeOnMainThread(() =>
 });
 ```
 
-Es ist auch möglich, eine separate Methode für den Code zu definieren, die im Hauptthread ausgeführt werden muss:
+Es ist auch möglich, eine separate Methode für den Code zu definieren, der im Hauptthread ausgeführt werden muss:
 
 ```csharp
 void MyMainThreadCode()
@@ -50,18 +50,19 @@ void MyMainThreadCode()
 }
 ```
 
-Anschließend können Sie diese Methode auf dem Hauptthread ausführen, durch Verweisen auf in die `BeginInvokeOnMainThread` Methode:
+Sie können diese Methode dann im Hauptthread ausführen, indem Sie sie in der `BeginInvokeOnMainThread`-Methode referenzieren:
 
 ```csharp
 MainThread.BeginInvokeOnMainThread(MyMainThreadCode);
 ```
 
 > [!NOTE]
-> Xamarin.Forms verfügt über eine Methode namens [ `Device.BeginInvokeOnMainThread(Action)` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.device.begininvokeonmainthread) , das ist dasselbe wie `MainThread.BeginInvokeOnMainThread(Action)`. Während Sie die beiden Methoden in einer Xamarin.Forms-app verwenden können, erwägen Sie, ob der aufrufende Code andere Bedarf für eine Abhängigkeit auf Xamarin.Forms verfügt. Wenn dies nicht der Fall ist, `MainThread.BeginInvokeOnMainThread(Action)` ist wahrscheinlich eine bessere Option.
+> Xamarin.Forms weist die Methode [`Device.BeginInvokeOnMainThread(Action)`](https://docs.microsoft.com/dotnet/api/xamarin.forms.device.begininvokeonmainthread) auf,
+> die sich wie `MainThread.BeginInvokeOnMainThread(Action)` verhält. Sie können beide Methoden in einer Xamarin.Forms-App verwenden. Erwägen Sie jedoch, ob der aufrufende Code andere Abhängigkeiten von Xamarin.Forms benötigt. Wenn das nicht der Fall ist, ist `MainThread.BeginInvokeOnMainThread(Action)` besser geeignet.
 
-## <a name="determining-if-code-is-running-on-the-main-thread"></a>Bestimmen, ob Code auf dem Hauptthread ausgeführt wird
+## <a name="determining-if-code-is-running-on-the-main-thread"></a>Festlegen, ob Code im Hauptthread ausgeführt wird
 
-Die `MainThread` Klasse kann auch eine Anwendung zu bestimmen, ob Sie ein bestimmter Codeblock im Hauptthread ausgeführt wird. Die `IsMainThread` -Eigenschaft gibt `true` , wenn der Code, das Aufrufen der Eigenschaft im Hauptthread ausgeführt wird. Ein Programm kann diese Eigenschaft verwenden, um unterschiedlichen Code für den Hauptthread oder einem sekundären Thread auszuführen zu können:
+Mit der `MainThread`-Klasse kann eine Anwendung außerdem bestimmen, ob ein bestimmter Codeblock im Hauptthread ausgeführt wird. Die `IsMainThread`-Eigenschaft gibt `true` zurück, wenn der Code, der die Eigenschaft aufruft, im Hauptthread ausgeführt wird. Ein Programm kann diese Eigenschaft verwenden, um anderen Code für den Hauptthread oder einen Sekundärthread auszuführen:
 
 ```csharp
 if (MainThread.IsMainThread)
@@ -74,7 +75,7 @@ else
 }
 ```
 
-Vielleicht fragen Sie sich, wenn Sie überprüfen sollten, wenn Code in einem zweiten Thread vor dem Aufruf ausgeführt wird `BeginInvokeOnMainThread`, z. B. wie folgt aus:
+Vielleicht möchten Sie überprüfen, ob Code auf einem sekundären Thread ausgeführt wird, bevor Sie `BeginInvokeOnMainThread` aufrufen:
 
 ```csharp
 if (MainThread.IsMainThread)
@@ -87,9 +88,9 @@ else
 }
 ```
 
-Sie vermuten, dass diese Überprüfung Leistung verbessert werden kann, wenn der Codeblock bereits im Hauptthread ausgeführt wird.
+Möglicherweise vermuten Sie, dass diese Überprüfung die Leistung verbessert, wenn der Codeblock bereits auf dem Hauptthread läuft.
 
-_Diese Überprüfung ist jedoch nicht erforderlich._ Die plattformimplementierungen der `BeginInvokeOnMainThread` selbst zu überprüfen, ob der Aufruf im Hauptthread ausgeführt wird. Es gibt nur sehr wenig Leistungseinbußen, wenn es sich bei rufen Sie `BeginInvokeOnMainThread` Wenn es nicht notwendig ist.
+_Diese Überprüfung ist jedoch nicht erforderlich._ Die Plattformimplementierungen von `BeginInvokeOnMainThread` überprüfen selbst, ob der Aufruf im Hauptthread erfolgt. Es gibt nur sehr geringe Leistungseinbußen, wenn Sie `BeginInvokeOnMainThread` aufrufen, ohne dass es wirklich notwendig ist.
 
 ## <a name="api"></a>API
 

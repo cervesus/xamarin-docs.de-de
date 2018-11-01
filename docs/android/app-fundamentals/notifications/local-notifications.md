@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: a4ffae0bde39450778b340b4a4c4da8fe90d0bec
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 63f0d4d7ce5f056d8e1db6bc297258c6bc070086
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117680"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675548"
 ---
 <a name="compatibility"></a>
 
@@ -747,7 +747,7 @@ Auf ähnliche Weise können Ihre app `NotificationCompat.InboxStyle` und `Notifi
 Zur Unterstützung von älterer Versionen von Android, wo `SetCategory` ist nicht verfügbar ist, Ihren Code sehen die API-Ebene zur Laufzeit bedingt Aufrufen `SetCategory` bei API-Ebene ist, gleich oder größer als Android 5.0 (API Level 21):
 
 ```csharp
-if ((int) Android.OS.Build.Version.SdkInt >= BuildVersionCodes.Lollipop) {
+if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
     builder.SetCategory (Notification.CategoryEmail);
 }
 ```
@@ -760,7 +760,7 @@ In diesem Beispiel ist die app die **Zielframework** auf Android 5.0 festgelegt 
 Da Android keine Benachrichtigungen bei gesperrtem Bildschirm vor Android 5.0 (API Level 21), unterstützen `NotificationCompat.Builder` unterstützt nicht die `SetVisibility` Methode. Wie bereits dargelegt für `SetCategory`, Ihren Code sehen die API-Ebene auf die Common Language Runtime, und rufen `SetVisiblity` nur, wenn es verfügbar ist:
 
 ```csharp
-if ((int) Android.OS.Build.Version.SdkInt >= 21) {
+if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
     builder.SetVisibility (Notification.Public);
 }
 ```

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b18d042e34146a72b488da9017648a430c9cd353
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 68c7869254ae861cef8307431d925368082be921
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996372"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675254"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Die Xamarin.Forms-Befehlsschnittstelle
 
@@ -22,7 +22,7 @@ Die Eingabeereignisse-Schnittstelle bietet eine alternative Methode zum Implemen
 
 Um eine Datenbindung zwischen ermöglichen eine `Button` und ein "ViewModel", die `Button` definiert zwei Eigenschaften:
 
-- [`Command`](xref:Xamarin.Forms.Button.Command) Der Typ <xref:System.Windows.Input.ICommand>
+- [`Command`](xref:Xamarin.Forms.Button.Command) Der Typ [`System.Windows.Input.ICommand`](xref:System.Windows.Input.ICommand)
 - [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) Der Typ `Object`
 
 Um die Befehlsschnittstelle verwenden zu können, definieren Sie eine Datenbindung, dessen Ziel die `Command` Eigenschaft der `Button` , in dem die Quelle ist eine Eigenschaft in "ViewModel" vom Typ `ICommand`. Das ViewModel-Code zugeordnet sind, enthält `ICommand` -Eigenschaft, die ausgeführt wird, wenn die Schaltfläche geklickt wird. Sie können festlegen, `CommandParameter` an beliebige Daten mehrere Schaltflächen unterscheiden, wenn sie alle sind gebunden werden soll, auf die gleiche `ICommand` -Eigenschaft in "ViewModel".
@@ -39,7 +39,7 @@ All diese Befehle können innerhalb eines "ViewModels" in einer Weise behandelt 
 
 ## <a name="the-icommand-interface"></a>Die ICommand-Schnittstelle
 
-Die <xref:System.Windows.Input.ICommand> Schnittstelle ist nicht Teil von Xamarin.Forms. Es wird stattdessen definiert, der [System.Windows.Input](xref:System.Windows.Input) -Namespace und besteht aus zwei Methoden und ein Ereignis:
+Die [ `System.Windows.Input.ICommand` ](xref:System.Windows.Input.ICommand) Schnittstelle ist nicht Teil von Xamarin.Forms. Es wird stattdessen definiert, der [System.Windows.Input](xref:System.Windows.Input) -Namespace und besteht aus zwei Methoden und ein Ereignis:
 
 ```csharp
 public interface ICommand
@@ -378,7 +378,7 @@ Die `canExecute` für Funktion `SubmitCommand` heißt, jedes Mal, wenn eine Eige
 
 Die `execute` für Funktion **senden** entfernt den Handler für eigenschaftenänderungen aus der `PersonViewModel`, fügt das Objekt, das die `Persons` Auflistung und gibt alle anfänglichen Bedingung zurück.
 
-Die `execute` Funktion für die **Abbrechen** Schaltfläche trifft, die die **senden** Execept für Schaltfläche wird das Objekt der Auflistung hinzufügen:
+Die `execute` Funktion für die **Abbrechen** Schaltfläche trifft, die die **senden** Schaltfläche ausführen kann, außer das Objekt der Auflistung hinzufügen:
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -693,7 +693,6 @@ Wenn Sie die Eingabeereignisse-Schnittstelle mit Ansichten verwenden, die sie ni
 
 Befehle eignet sich für die Implementierung von Navigationsmenüs, wie z. B. in der [ **Data Binding Demos** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) Programm selbst. Er ist Teil der **"MainPage.xaml"**:
 
-
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -763,8 +762,6 @@ Die Reihenfolge der der Code in diesem Konstruktor Unterschied macht sich bemerk
 Einstellung `NavigateCommand` und `BindingContext` (in beliebiger Reihenfolge) vor dem Aufruf von `InitializeComponent` funktionieren, da beide Komponenten der Bindung festgelegt werden, wenn der XAML-Parser die Bindungsdefinition feststellt.
 
 Datenbindungen können manchmal schwierig sein, aber wie Sie in dieser Artikelreihe gesehen haben, sie sind leistungsstark und vielseitig und helfen, die zum Organisieren von Code durch die Trennung der zugrunde liegende Logik, über die Benutzeroberfläche.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

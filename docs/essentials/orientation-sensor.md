@@ -1,35 +1,35 @@
 ---
 title: 'Xamarin.Essentials: OrientationSensor'
-description: Die OrientationSensor-Klasse können Sie die Ausrichtung eines Geräts im dreidimensionalen Raum zu überwachen.
+description: Mit der Klasse OrientationSensor können Sie die Ausrichtung eines Gerätes im dreidimensionalen Raum überwachen.
 ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
-author: charlespetzold
-ms.author: chape
+author: jamesmontemagno
+ms.author: jamont
 ms.date: 05/21/2018
-ms.openlocfilehash: a15338795424885882ed9c86288342d196f6fda2
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 4ea6ebbb85510b5d7262cde73248af9df975b867
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353814"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112064"
 ---
 # <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials: OrientationSensor
 
-![Vorabversionen von NuGet](~/media/shared/pre-release.png)
+![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
-Die **OrientationSensor** Klasse können Sie die Ausrichtung eines Geräts in drei dimensionalen Raum zu überwachen.
+Mit der Klasse **OrientationSensor** können Sie die Ausrichtung eines Gerätes im dreidimensionalen Raum überwachen.
 
 > [!NOTE]
-> Diese Klasse ist für die Ausrichtung eines Geräts im 3D-Raum zu bestimmen. Bei Bedarf, um festzustellen, ob das Gerät Bild des hoch-oder Querformat angezeigt wird, verwenden Sie die `Orientation` Eigenschaft der `ScreenMetrics` Objekt verfügbar der [ `DeviceDisplay` ](device-display.md) Klasse.
+> Diese Klasse dient zum Bestimmen der Ausrichtung eines Gerätes im 3D-Raum. Wenn Sie feststellen müssen, ob sich die Videoanzeige des Geräts im Hoch- oder Querformat befindet, verwenden Sie die Eigenschaft `Orientation` des Objekts `ScreenMetrics`, das in der Klasse [`DeviceDisplay`](device-display.md) verfügbar ist.
 
 ## <a name="using-orientationsensor"></a>Verwenden von OrientationSensor
 
-Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
+Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Die `OrientationSensor` erfolgt durch Aufrufen der `Start` Methode zum Überwachen von Änderungen an des Geräts die Ausrichtung und deaktiviert durch Aufrufen der `Stop` Methode. Alle Änderungen gesendet werden, durch die `ReadingChanged` Ereignis. Hier ist eine Beispiel für die Verwendung:
+`OrientationSensor` wird durch Aufrufen der Methode `Start` aktiviert, um Änderungen an der Ausrichtung des Geräts zu überwachen, und durch Aufrufen der Methode `Stop` deaktiviert. Änderungen werden über das `ReadingChanged`-Ereignis zurück gesendet. Eine Beispielanwendung:
 
 ```csharp
 
@@ -72,37 +72,37 @@ public class OrientationSensorTest
 }
 ```
 
-`OrientationSensor` Messwerte werden in Form von zurückgemeldet eine [ `Quaternion` ](xref:System.Numerics.Quaternion) , beschreibt die Ausrichtung des Geräts basierend auf zwei 3D Koordinatensysteme:
+`OrientationSensor`-Messwerte werden im [`Quaternion`](xref:System.Numerics.Quaternion)-Format zurückgegeben, das die Ausrichtung des Geräts basierend auf zwei 3D-Koordinatensystemen beschreibt:
 
-Das Gerät (in der Regel auf einem Smartphone oder Tablet) besteht aus einem 3D-Koordinatensystem, mit dem folgenden Achsen:
+Das Gerät (in der Regel ein Smartphone oder Tablet) verfügt über ein 3D-Koordinatensystem mit den folgenden Achsen:
 
-- Die Positive X Achsenpunkte rechts neben der Anzeige im Hochformatmodus ausgeführt werden soll.
-- Die positive y-Achse verweist auf den Anfang das Gerät im Hochformat.
+- Die positive X-Achse zeigt im Hochformat nach rechts auf der Anzeige.
+- Die positive Y-Achse zeigt im Hochformat auf dem Gerät nach oben.
 - Die positive Z-Achse zeigt aus dem Bildschirm heraus.
 
-Die 3D-Koordinatensystem der Erde hat die folgenden Achsen:
+Das 3D-Koordinatensystem der Erde hat die folgenden Achsen:
 
-- Der positiven x-Achse Tangens auf die Oberfläche der Erde dar und zeigt "Osten".
-- Es ist auch die positive y-Achse Tangens auf die Oberfläche der Erde und Norden zeigt.
-- Die positive Z-Achse ist senkrecht zur Oberfläche der Erde und zeigt nach oben.
+- Die positive X-Achse ist eine Tangente zur Erdoberfläche und zeigt nach Osten.
+- Die positive Y-Achse ist eine Tangente zur Erdoberfläche und zeigt nach Norden.
+- Die positive Z-Achse verläuft senkrecht zur Erdoberfläche und zeigt nach oben.
 
-Die `Quaternion` wird beschrieben, die Drehung des Koordinatensystems des Geräts, relativ zur Erde-Koordinatensystem.
+Die `Quaternion` beschreibt die Drehung des Koordinatensystems des Geräts relativ zum Erdkoordinatensystem.
 
-Ein `Quaternion` Wert ist sehr eng in die Rotation um eine Achse. Wenn eine Achse der Drehung der normalisierte Vektor ist (eine<sub>x</sub>,<sub>y</sub>, eine<sub>z</sub>), und der Winkel der Drehung Θ, und klicken Sie dann die (X, Y, Z, W) sind Komponenten der Quaternion:
+Ein `Quaternion`-Wert ist sehr eng mit der Drehung um eine Achse verbunden. Wenn eine Drehachse der normierte Vektor (a<sub>x</sub>, a<sub>y</sub>, a<sub>z</sub>) ist und der Drehwinkel Θ entspricht, dann lauten die Komponenten (X, Y, Z, W) der Quaternion:
 
-(eine<sub>x</sub>·sin(Θ/2), eine<sub>y</sub>·sin(Θ/2), eine<sub>z</sub>·sin(Θ/2), cos(Θ/2))
+(a<sub>x</sub>·sin(Θ/2), a<sub>y</sub>·sin(Θ/2), a<sub>z</sub>·sin(Θ/2), cos(Θ/2))
 
-Hierbei handelt es sich um rechten Koordinatensysteme, sodass das Thumb-Steuerelement von der rechten Seite in positiver Richtung der Achse der Drehung gezeigt wird, die Kurve der Finger anzugeben, dass mit die Richtung der Drehung für positiven Winkel.
+Dies sind rechtshändige Koordinatensysteme: Zeigt der Daumen der rechten Hand in die positive Richtung der Drehachse, zeigen die anderen Finger den positiven Drehsinn an.
 
 Beispiele:
 
-* Wenn das Gerät flach auf eine Tabelle befindet, mit dem Bildschirm nach oben, am Rand des Geräts (im Hochformat) verweist (Norden), werden die zwei Koordinatensysteme ausgerichtet. Die `Quaternion` Wert darstellt, die Einheitsquaternion (0, 0, 0, 1). Alle Drehungen können relativ zu dieser Position analysiert werden.
+* Wenn das Gerät flach auf einem Tisch mit dem Bildschirm nach oben liegt und die Oberseite des Geräts (im Hochformat) nach Norden zeigt, werden die beiden Koordinatensysteme ausgerichtet. Der `Quaternion`-Wert stellt die Identitätsquaternion (0, 0, 0, 1) dar. Alle Rotationen lassen sich relativ zu dieser Position analysieren.
 
-* Wenn das Gerät flach auf eine Tabelle mit dem Bildschirm nach oben und am Anfang des Geräts (in-Hochformat) verweist, Westen, liegt die `Quaternion` Wert (0, 0, dem Wert 0,707 entspricht, dem Wert 0,707 entspricht). Das Gerät wurde um rund um die Z-Achse der Erde 90 Grad gedreht.
+* Wenn das Gerät flach auf einem Tisch mit dem Bildschirm nach oben liegt und die Oberseite des Geräts (im Hochformat) nach Westen zeigt, entspricht der `Quaternion`-Wert (0, 0, 0,707, 0,707). Das Gerät wurde um 90 Grad um die Z-Achse der Erde gedreht.
 
-* Wenn das Gerät aufrecht befindet, damit im oberen Bereich (im Hochformat) auf den Himmel verweist und der Rückseite des Geräts nach Norden zeigt, wurde das Gerät um 90 Grad gedreht, um die x-Achse. Die `Quaternion` Wert (dem Wert 0,707 entspricht, 0, 0, dem Wert 0,707 entspricht).
+* Wenn das Gerät aufrecht gehalten wird, sodass seine Oberseite (im Hochformat) zum Himmel und die Rückseite nach Norden zeigt, wurde das Gerät um 90 Grad um die X-Achse gedreht. Der `Quaternion`-Wert lautet 0,707, 0, 0, 0,707.
 
-* Wenn das Gerät befindet, am linke Rand für eine Tabelle, und im oberen Bereich zeigt (Norden), hat das Gerät gedreht wurden &ndash;um 90 Grad, um die y-Achse (oder um 90 Grad um die y-Achse negativ). Die `Quaternion` Wert ("0", "-0.707", "0", "dem Wert 0,707 entspricht").
+* Wenn das Gerät so positioniert ist, dass sein linker Rand auf einem Tisch liegt und die Oberseite nach Norden zeigt, wurde das Gerät um &ndash;90 Grad um die Y-Achse (bzw. 90 Grad um die negative Y-Achse) gedreht. Der `Quaternion`-Wert ist (0, –0,707, 0, 0,707).
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 

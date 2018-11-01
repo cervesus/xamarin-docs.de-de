@@ -1,47 +1,47 @@
 ---
-title: 'Xamarin.Essentials: Energiestatus Energie sparen'
-description: Die Power-Klasse ermöglicht es sich um ein Programm zum Abrufen des Status energiesparend, um festzustellen, ob das Gerät in einen Energiesparmodus-Modus ausgeführt wird.
+title: 'Xamarin.Essentials: Energiesparstatus'
+description: Mithilfe der Power-Klasse erhält ein Programm den Energiesparstatus, um festzustellen, ob sich das Gerät im Energiesparmodus befindet.
 ms.assetid: C176D177-8B77-4A9C-9F3B-27852A8DCD5F
-author: charlespetzold
-ms.author: chape
+author: jamesmontemagno
+ms.author: jamont
 ms.date: 06/27/2018
-ms.openlocfilehash: 760a305280269734034a817182a8c2a07894ca2b
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 5a89dba16a93b007c5d7312221d8d33e00c7404a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353489"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110003"
 ---
-# <a name="xamarinessentials-power-energy-saver-status"></a>Xamarin.Essentials: Energiestatus Energie sparen
+# <a name="xamarinessentials-power-energy-saver-status"></a>Xamarin.Essentials: Energiesparstatus
 
-![Vorabversionen von NuGet](~/media/shared/pre-release.png)
+![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
-Die **Power** Klasse enthält Informationen zu der der energiesparend Gerätestatus, das angibt, ob das Gerät in einen energiesparenden-Modus ausgeführt wird. Anwendungen sollten die Verarbeitung im Hintergrund, wenn das Gerät die energiesparend Status auf.
+Die Klasse **Power** stellt Informationen zum Energiesparstatus des Geräts bereit, der angibt, ob sich das Gerät im Energiesparmodus befindet. Anwendungen sollten Hintergrundverarbeitung vermeiden, wenn der Energiesparmodus des Geräts aktiviert ist.
 
 ## <a name="background"></a>Hintergrund
 
-Geräte, die Akkus betrieben werden, können in einen energiesparenden energiesparend Modus platziert werden. Manchmal werden Geräte in diesem Modus automatisch, z. B. gewechselt, wenn der Akku unter 20 % Kapazität sinkt. Das Betriebssystem antwortet auf Energiesparmodus durch Reduzierung von Aktivitäten, die tendenziell die Batterie erschöpft sind. Anwendungen können durch die Verarbeitung im Hintergrund oder andere Stromstärke Aktivitäten zu vermeiden, wenn Energiesparmodus aktiviert ist.
+Für Geräte, die mit Akku betrieben werden, lässt sich der Energiesparmodus aktivieren. Manchmal werden Geräte automatisch in diesen Modus umgeschaltet, z.B. wenn der Akku unter 20 % fällt. Das Betriebssystem reagiert auf den Energiesparmodus, indem Aktivitäten reduziert werden, die den Akku stark beanspruchen. Anwendungen können unterstützend wirken, indem sie Hintergrundverarbeitung oder andere Hochleistungsaktivitäten im Energiesparmodus vermeiden.
 
-Für Android-Geräte die **Power** Klasse gibt sinnvolle Informationen, die nur für Android-Version 5.0 (Lollipop) oder höher zurück.
+Für Android-Geräte gibt die Klasse **Power** nützliche Informationen nur für Android-Version 5.0 (Lollipop) und höher zurück.
 
 ## <a name="using-the-power-class"></a>Verwenden der Power-Klasse
 
-Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
+Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Abrufen des aktuellen energiesparend Status des Geräts mit der statischen `Power.EnergySaverStatus` Eigenschaft:
+Ermitteln Sie den aktuellen Energiesparstatus des Geräts über die statische Eigenschaft `Power.EnergySaverStatus`:
 
 ```csharp
 // Get energy saver status
 var status = Power.EnergySaverStatus;
 ```
 
-Diese Eigenschaft gibt ein Mitglied der `EnergySaverStatus` -Enumeration, die entweder `On`, `Off`, oder `Unknown`. Wenn die Eigenschaft zurückgibt `On`, die Anwendung sollte kein Verarbeitung im Hintergrund oder andere Aktivitäten, die viel Leistung beanspruchen können.
+Diese Eigenschaft gibt ein Mitglied der `EnergySaverStatus`-Enumeration zurück: `On`, `Off` oder `Unknown`. Wenn die Eigenschaft `On` zurückgibt, sollte die Anwendung Hintergrundverarbeitung oder andere Aktivitäten vermeiden, die ggf. viel Energie verbrauchen.
 
-Außerdem sollten die Anwendung einen Ereignishandler installieren. Die **Power** -Klasse macht ein Ereignis aus, die ausgelöst wird, wenn der energiesparend Status wechselt:
+Außerdem sollte die Anwendung einen Ereignishandler installieren. Die Klasse **Power** zeigt ein Ereignis an, das ausgelöst wird, wenn sich der Energiesparstatus ändert:
 
 ```csharp
 public class EnergySaverTest
@@ -60,7 +60,7 @@ public class EnergySaverTest
 }
 ```
 
-Ändert die energiesparend Status auf `On`, Beenden der Anwendung sollten die hintergrundverarbeitung durchführen. Wenn Sie den Status `Unknown` oder `Off`, die Anwendung kann die Verarbeitung im Hintergrund fortgesetzt.
+Wenn sich der Energiesparstatus auf `On` ändert, sollte die Anwendung die Hintergrundverarbeitung deaktivieren. Wenn der Status auf `Unknown` oder `Off` wechselt, kann die Anwendung die Hintergrundverarbeitung wieder aufnehmen.
 
 ## <a name="api"></a>API
 

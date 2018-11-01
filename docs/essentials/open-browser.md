@@ -1,32 +1,32 @@
 ---
-title: Öffnen Sie Xamarin.Essentials Browser
-description: Die Browser-Klasse in Xamarin.Essentials ermöglicht eine Anwendung auf einen Weblink im bevorzugten Browser optimierten System oder der externen Browser öffnen.
+title: 'Xamarin.Essentials: „Browser öffnen“'
+description: Mit der Browser-Klasse in Xamarin.Essentials kann eine Anwendung einen Weblink im optimierten und vom System bevorzugten Browser oder im externen Browser öffnen.
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 7e58d439f5a6eaafe9b1b5e7ca874a986e468cb9
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 68bf7f51e9331c1296f26ad7083cf17ab8e480a0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353281"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102282"
 ---
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials: Browser
 
-![Vorabversionen von NuGet](~/media/shared/pre-release.png)
+![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
-Die **Browser** Klasse ermöglicht einer Anwendung auf einen Weblink im bevorzugten Browser optimierten System oder der externen Browser öffnen.
+Mit der Klasse **Browser** kann eine Anwendung einen Weblink im optimierten und vom System bevorzugten Browser oder im externen Browser öffnen.
 
-## <a name="using-browser"></a>Browser verwenden
+## <a name="using-browser"></a>Verwenden des Browsers
 
-Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
+Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Die Funktionalität des Eigenschaftenbrowsers erfolgt durch Aufrufen der `OpenAsync` -Methode mit dem `Uri` und `BrowserLaunchMode`.
+Die Browser-Funktionalität ruft die `OpenAsync` -Methode mit `Uri` und `BrowserLaunchMode` auf.
 
 ```csharp
 
@@ -39,37 +39,37 @@ public class BrowserTest
 }
 ```
 
-## <a name="platform-implementation-specifics"></a>Implementierung von Plattformeigenschaften
+## <a name="platform-implementation-specifics"></a>Besonderheiten bei der Plattformimplementierung
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Der Modus starten wird bestimmt, wie der Browser gestartet wird:
+Der Startmodus bestimmt, wie der Browser gestartet wird:
 
-## <a name="system-preferred"></a>Bevorzugte System
+## <a name="system-preferred"></a>Systempräferenz
 
-[Benutzerdefinierte Registerkarten in Chrome](https://developer.chrome.com/multidevice/android/customtabs) wird versucht, die verwendet werden, laden Sie den Uri, und halten Sie die Unterstützung der Navigation.
+Mit den [benutzerdefinierten Chrome-Registerkarten](https://developer.chrome.com/multidevice/android/customtabs) wird versucht, den URI zu laden und Navigationsinformationen abzurufen.
 
 ## <a name="external"></a>Extern
 
-Ein `Intent` wird verwendet, um die Anforderung der Uri über den normalen Systeme-Browser geöffnet werden.
+Mit `Intent` wird angefordert, dass der URI über den normalen Systembrowser geöffnet wird.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-## <a name="system-preferred"></a>Bevorzugte System
+## <a name="system-preferred"></a>Systempräferenz
 
-[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) ist, der zum Laden des Uri, und halten die Navigation Awareness verwendet.
+Mit [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) werden der URI geladen und Navigationsinformationen abgerufen.
 
 ## <a name="external"></a>Extern
 
-Der Standard `OpenUrl` für die hauptanwendung verwendet, um den Standardbrowser außerhalb der Anwendung zu starten.
+Mit dem Standardcode `OpenUrl` in der Hauptanwendung wird der Standardbrowser außerhalb der Anwendung gestartet.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Standardbrowser des Benutzers werden immer gestartet werden, unabhängig von der `BrowserLaunchMode`.
+Der Standardbrowser des Benutzers wird immer gestartet, unabhängig von `BrowserLaunchMode`.
 
 --------------
 
 ## <a name="api"></a>API
 
 - [Browser-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
-- [API-Browser-Dokumentation](xref:Xamarin.Essentials.Browser)
+- [Browser-API-Dokumentation](xref:Xamarin.Essentials.Browser)

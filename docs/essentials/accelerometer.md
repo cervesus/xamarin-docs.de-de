@@ -5,12 +5,12 @@ ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 53e7ca70184270662d27043387da836ad44432fe
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 98793d82e553ffe45bf3cd37314a6fe70d856f2f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40184427"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102671"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: Beschleunigungsmesser
 
@@ -77,11 +77,11 @@ Die X-Achse ist horizontal und zeigt nach rechts. Die Y-Achse ist vertikal und z
 
 Beispiele:
 
-* Wenn das Gerät flach auf einem Tisch liegt und auf seiner linken Seite nach rechts geschoben wird, ist der X-Beschleunigungswert positiv.
+- Wenn das Gerät flach auf einem Tisch liegt und auf seiner linken Seite nach rechts geschoben wird, ist der X-Beschleunigungswert positiv.
 
-* Wenn das Gerät flach auf einem Tisch liegt, ist der Beschleunigungswert +1,00 G oder (+9,81 m/s^2), was der Beschleunigung des Geräts (0 m/s^2) abzüglich der Gravitationskraft (–9,81 m/s^2) entspricht, was in G normiert wird.
+- Wenn das Gerät flach auf einem Tisch liegt, ist der Beschleunigungswert +1,00 G oder (+9,81 m/s^2), was der Beschleunigung des Geräts (0 m/s^2) abzüglich der Gravitationskraft (–9,81 m/s^2) entspricht, was in G normiert wird.
 
-* Wenn das Gerät flach auf einem Tisch liegt und nach oben mit einer Beschleunigung von A m/s^2 bewegt wird, entspricht der Beschleunigungswert A+9,81, was der Beschleunigung des Geräts (+A m/s^2) minus der Gravitationskraft (–9,81 m/s^2) entspricht, was in G normiert wird.
+- Wenn das Gerät flach auf einem Tisch liegt und nach oben mit einer Beschleunigung von A m/s^2 bewegt wird, entspricht der Beschleunigungswert A+9,81, was der Beschleunigung des Geräts (+A m/s^2) minus der Gravitationskraft (–9,81 m/s^2) entspricht, was in G normiert wird.
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 
