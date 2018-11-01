@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/15/2018
-ms.openlocfilehash: 28c6daa361b7de09a0d9332b21f1b6f75e035850
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 3c8cc31c21f354b60001cefb919b51bf4d42da9f
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38995413"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675015"
 ---
 # <a name="introduction-to-dependencyservice"></a>Einführung in die DependencyService
 
@@ -42,7 +42,7 @@ Die Struktur der Anwendung wird mithilfe des folgenden Diagramms erläutert:
 
 ### <a name="interface"></a>Interface
 
-Die Schnittstelle, die Sie entwerfen, wird die Interaktion mit plattformspezifischen Features definiert. Seien Sie vorsichtig, wenn Sie entwickeln eine Komponente als eine Komponente oder ein Nuget-Paket gemeinsam genutzt werden. API-Entwurf kann stellen oder ein Paket unterbrechen. Das folgende Beispiel gibt an, eine einfache Schnittstelle für sprechen-Text, der zu sprechende Flexibilität bei der Angabe der Wörter ermöglicht, sondern bleibt die Implementierung, die für die einzelnen Plattformen angepasst werden:
+Die Schnittstelle, die Sie entwerfen, wird die Interaktion mit plattformspezifischen Features definiert. Seien Sie vorsichtig, wenn Sie entwickeln eine Komponente als eine Komponente oder ein NuGet-Paket gemeinsam genutzt werden. API-Entwurf kann stellen oder ein Paket unterbrechen. Das folgende Beispiel gibt an, eine einfache Schnittstelle für sprechen-Text, der zu sprechende Flexibilität bei der Angabe der Wörter ermöglicht, sondern bleibt die Implementierung, die für die einzelnen Plattformen angepasst werden:
 
 ```csharp
 public interface ITextToSpeech {

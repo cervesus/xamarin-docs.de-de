@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 3a11fe56da6076ba53e97643e6890f0fa14b8036
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8514d3b2c423e524d03a800f5f56359f3aee4b75
+ms.sourcegitcommit: 650fd5813e243d67eea13c4bc76683c0f8134123
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113936"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50737192"
 ---
 # <a name="running-android-services-in-remote-processes"></a>Ausgeführten Android-Dienste in Remote-Prozesse
 
@@ -56,7 +56,7 @@ Unidirektionale Kommunikation tritt auf, wenn ein Client erstellt eine `Message`
 Dieses Handbuch werden die Details der Implementierung einer Out-of-Process-Diensts erläutert. Es wird erläutert, wie Sie einen Dienst implementieren, die in einem eigenen Prozess ausgeführt und wie ein Client mit diesem Dienst kommunizieren kann die `Messenger` Framework. Bidirektionalen Kommunikation wird auch kurz angesprochen: der Client eine Nachricht an einen Dienst und den Dienst Senden einer Nachricht an den Client gesendet. Da Dienste zwischen den verschiedenen Anwendungen genutzt werden können, erläutert dieses Handbuch außerdem ein Verfahren zum Einschränken des Clientzugriffs auf den Dienst mithilfe von Android-Berechtigungen.
 
 > [!IMPORTANT]
-> [Bugzilla 51940 - Dienste mit isolierten Prozesse und benutzerdefinierte Anwendungsklasse nicht korrekt aufzulösen, Überladungen](https://bugzilla.xamarin.com/show_bug.cgi?id=51940) Berichte, die ein Xamarin.Android-Dienst nicht ordnungsgemäß gestartet wird bei der `IsolatedProcess` nastaven NA hodnotu `true`. In dieser Anleitung wird eine Referenz bereitgestellt. Eine Xamarin.Android-Anwendung muss immer noch mit einem Out-of-Process-Dienst zu kommunizieren, die in Java geschrieben wird.
+> [Bugzilla 51940/GitHub 1950 - Dienste mit isolierten Prozesse und benutzerdefinierte Anwendungsklasse nicht korrekt aufzulösen, Überladungen](https://github.com/xamarin/xamarin-android/issues/1950) Berichte, die ein Xamarin.Android-Dienst nicht ordnungsgemäß gestartet wird bei der `IsolatedProcess` nastaven NA hodnotu `true`. In dieser Anleitung wird eine Referenz bereitgestellt. Eine Xamarin.Android-Anwendung muss immer noch mit einem Out-of-Process-Dienst zu kommunizieren, die in Java geschrieben wird.
 
 ## <a name="requirements"></a>Anforderungen
 

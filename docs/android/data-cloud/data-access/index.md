@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 19a2842fa7d29ed40052166b880bf4b26dc09e9c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 08720734de73af12d8a7383fa7d523dc350c4462
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120696"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674767"
 ---
 # <a name="xamarinandroid-data-access"></a>Xamarin.Android-Datenzugriff
 
@@ -20,18 +20,18 @@ _Die meisten Anwendungen müssen einige Anforderungen, um Daten auf dem Gerät l
 
 ## <a name="data-access-overview"></a>Data Access (Übersicht)
 
-Die meisten Anwendungen müssen einige Anforderungen, um Daten auf dem Gerät lokal zu speichern. Wenn die Menge der Daten unbedeutend klein ist, erfordert dies in der Regel eine Datenbank und eine Datenschicht in der Anwendung Zugriff auf die Datenbank zu verwalten. Android sowohl hat die Sqlite-Datenbank-Engine, die "integriert" und Zugriff auf die Daten durch Xamarin Plattform mit SQLite-Anbieter Daten vereinfacht.
+Die meisten Anwendungen müssen einige Anforderungen, um Daten auf dem Gerät lokal zu speichern. Wenn die Menge der Daten unbedeutend klein ist, erfordert dies in der Regel eine Datenbank und eine Datenschicht in der Anwendung Zugriff auf die Datenbank zu verwalten. Android sowohl hat die SQLite-Datenbank-Engine, die "integriert" und Zugriff auf die Daten durch Xamarin Plattform mit SQLite-Anbieter Daten vereinfacht.
 
 Xamarin.Android unterstützt die Datenbank Datenzugriffs-APIs wie z. B.:
 
--  ADO.NET-Framework.
--  SQLite-NET-3rd party Bibliothek.
+- ADO.NET-Framework.
+- SQLite-NET-3rd party Bibliothek.
 
 Der Großteil des Codes in diesem Abschnitt ist plattformübergreifend und ohne Änderungen unter iOS oder Android ausgeführt wird. Es gibt zwei Beispiel-apps erläutert:
 
--  [**DataAccess_Basic** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) &ndash; einfache Datenvorgänge schreibt Anzeigen der Ergebnisse in einem Text-Steuerelement
+- [**DataAccess_Basic** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) &ndash; einfache Datenvorgänge schreibt Anzeigen der Ergebnisse in einem Text-Steuerelement
 
--  [**DataAccess_Advanced** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) &ndash; Datenvorgänge in eine kleine Anwendung, die aufgelistet und eine einfache Datenstruktur bearbeitet integriert.
+- [**DataAccess_Advanced** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) &ndash; Datenvorgänge in eine kleine Anwendung, die aufgelistet und eine einfache Datenstruktur bearbeitet integriert.
 
 Sowohl vollständige, gepackte Anwendungen enthalten, iOS und Android-Beispiel-Anwendungsprojekte.
 

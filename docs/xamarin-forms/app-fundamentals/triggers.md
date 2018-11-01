@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 954a0967e034e0321964e12ca0725ae2a85e3bc6
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: e9ec9288e2b8ea991ef8d41f9b601d0897631b9d
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995536"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675210"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms-Trigger
 
@@ -85,7 +85,8 @@ Trigger können auch hinzugefügt werden, um eine `Style` Deklaration für ein S
 
 Datentrigger verwenden die Datenbindung zum Überwachen von einem anderen Steuerelement, das dazu führen, dass die `Setter`s aufgerufen. Statt die `Property` -Attribut in einem Eigenschaftentrigger, legen die `Binding` Attribut für den angegebenen Wert zu überwachen.
 
-Im folgenden Beispiel wird die Datenbindungssyntax `{Binding Source={x:Reference entry}, Path=Text.Length}` wie verweisen wir auf Eigenschaften des Steuerelements ist. Wenn die Länge des der `entry` 0 (null), wird der Trigger wird aktiviert. In diesem Beispiel wird der Trigger die Schaltfläche deaktiviert, wenn die Eingabe leer ist.
+Im folgenden Beispiel wird die Syntax zum Binden von Daten `{Binding Source={x:Reference entry}, Path=Text.Length}`
+Das ist wie wir auf ein anderes Steuerelement verweisen. Wenn die Länge des der `entry` 0 (null), wird der Trigger wird aktiviert. In diesem Beispiel wird der Trigger die Schaltfläche deaktiviert, wenn die Eingabe leer ist.
 
 ```xaml
 <!-- the x:Name is referenced below in DataTrigger-->
@@ -164,7 +165,7 @@ Die Eigenschaften, die von der Triggeraktion verfügbar gemacht werden können w
 
 Seien Sie vorsichtig bei der Freigabe von Triggern in einer `ResourceDictionary`, eine Instanz wird zwischen Steuerelementen genutzt werden, wendet auf alle an einem beliebigen Zustand, der einmal konfiguriert ist.
 
-Beachten Sie, dass nicht Ereignistrigger unterstützen `EnterActions` und `ExitActions` [unten beschriebenen](#enterexit).    
+Beachten Sie, dass nicht Ereignistrigger unterstützen `EnterActions` und `ExitActions` [unten beschriebenen](#enterexit).
 
 <a name="multi" />
 
@@ -202,7 +203,6 @@ Der Multi-Trigger aktualisiert das Steuerelement nur, wenn alle Bedingungen erf�
 
 Dies erreichen Sie mit einem `IValueConverter`. Die folgenden Transformationen Konvertercode der `Text.Length` Bindung in eine `bool` , der angibt, ob ein Feld leer oder nicht ist:
 
-
 ```csharp
 public class MultiTriggerConverter : IValueConverter
 {
@@ -234,7 +234,7 @@ Für die Verwendung dieser Konverter in einem Trigger mit mehreren zuerst hinzuf
 Die XAML ist unten dargestellt. Beachten Sie die folgenden Unterschiede gegenüber den im ersten Beispiel mit mehreren-Trigger wird:
 
 * Die Schaltfläche `IsEnabled="false"` standardmäßig festgelegt.
-* Die Multi-Auslösebedingungen verwenden Sie den Konverter zum Aktivieren der `Text.Length` Wert in einen booleschen Wert.
+* Die Multi-Auslösebedingungen verwenden Sie den Konverter zum Aktivieren der `Text.Length` -Wert in eine `boolean`.
 * Wenn alle Bedingungen sind `true`, der Setter ist der Schaltfläche " `IsEnabled` Eigenschaft `true`.
 
 ```xaml
@@ -266,7 +266,6 @@ Die XAML ist unten dargestellt. Beachten Sie die folgenden Unterschiede gegenüb
 
 Diese Screenshots ist den Unterschied zwischen den beiden mehrere Trigger Beispielen oben dargestellt. Im oberen Teil der Bildschirme, geben Sie Text in nur einem `Entry` reicht aus, aktivieren die **speichern** Schaltfläche.
 Im unteren Bereich der Bildschirme die **Anmeldung** Schaltfläche inaktiv bleibt, bis beide Felder Daten enthalten.
-
 
 ![](triggers-images/multi-requireall.png "MultiTrigger-Beispiele")
 

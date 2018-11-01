@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 92d0f393ff8d96ac9c0040ab7c46a364418cf956
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3cc568298ba3710f7d4f092acbb2139bebe5976b
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109613"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675288"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>Wiederverwendbare EventToCommandBehavior
 
@@ -25,7 +25,7 @@ Die `EventToCommandBehavior` Klasse ist ein wiederverwendbarer benutzerdefiniert
 Das Verhalten verwendet, müssen die folgenden Verhaltenseigenschaften festgelegt werden:
 
 - **EventName** – der Name des Ereignisses auf das Verhalten lauscht.
-- **Befehl** – die **ICommand** ausgeführt werden. Das Verhalten erwartet die `ICommand` Instanz in der [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) von das angefügte Steuerelement, das von einem übergeordneten Element geerbt werden kann.
+- **Befehl** – die `ICommand` ausgeführt werden. Das Verhalten erwartet die `ICommand` Instanz in der [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) von das angefügte Steuerelement, das von einem übergeordneten Element geerbt werden kann.
 
 Die folgenden Eigenschaften für die optionales Verhalten können auch festgelegt werden:
 
