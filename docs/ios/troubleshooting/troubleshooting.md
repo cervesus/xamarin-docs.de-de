@@ -47,7 +47,7 @@ Möglicherweise verwenden Sie eine Codierung, die nicht standardmäßig hinzugef
 Das Element wurde wahrscheinlich durch den Linker entfernt, und daher nicht in der Assembly zur Laufzeit vorhanden.  Es gibt mehrere Lösungsansätze:
 
 -  Hinzufügen der [[Preserve]](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) -Attribut auf den Member.  Dadurch wird verhindert, dass den Linker entfernt.
--  Beim Aufrufen [Mtouch](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29) , verwenden Sie die **- Nolink** oder **- Linksdkonly** Optionen. -    **-Nolink** deaktiviert alle Verknüpfungen.
+-  Beim Aufrufen [Mtouch](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29) , verwenden Sie die **-Nolink**  oder  **-Linksdkonly**  Optionen. -    **-Nolink**   deaktiviert alle Verknüpfungen.
 -    **-Linksdkonly** wird nur an link Xamarin.iOS bereitgestellte Assemblys, wie z. B. *monotouch.dll* oder xamarin.ios.dll.
 
 Beachten Sie, dass die Assemblys verknüpft sind, sodass die resultierende ausführbare Datei kleiner ist. Daher kann das Deaktivieren von Verknüpfungen zu einer größeren ausführbaren Datei als erwünscht ist, führen.
