@@ -7,45 +7,27 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: dd590b65fdf1f83ade3453fa1266d1f6724bb8de
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b995ed5cf8d8735e87fb18c3a69d43b5a079b82f
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121827"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674982"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>Komponententests bei Xamarin.iOS-Apps
 
 Dieses Dokument beschreibt, wie Sie Komponententests für Ihre Xamarin.iOS-Projekte erstellen.
 Komponententests mit Xamarin.iOS werden mithilfe des Touch.Unit-Frameworks durchgeführt, das sowohl einen iOS Test Runner als auch eine geänderte Version von NUnit mit dem Namen [Touch.Unit](https://github.com/xamarin/Touch.Unit) enthält, die eine Reihe vertrauter APIs zum Schreiben von Komponententests bietet.
 
-## <a name="setting-up-a-test-project"></a>Einrichten eines Testprojekts
-
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+## <a name="setting-up-a-test-project-in-visual-studio-for-mac"></a>Einrichten eines Testprojekts in Visual Studio für Mac
 
 Sie müssen Ihrer Projektmappe ein Projekt des Typs **iOS-Komponententestprojekt** hinzufügen, um ein Komponententestframework für Ihr Projekt einzurichten. Klicken Sie dafür mit der rechten Maustaste auf Ihre Projektmappe, und wählen Sie **Hinzufügen > Neues Projekt hinzufügen** aus. Wählen Sie aus der Liste **iOS > Tests > Unified API > iOS-Komponententestprojekt** aus. Sie können entweder C# oder F# auswählen.
 
 ![](touch.unit-images/00.png "Auswählen von C# oder F#")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
-Sie müssen Ihrer Projektmappe ein Projekt des Typs **iOS-Komponententestprojekt** hinzufügen, um ein Komponententestframework für Ihr Projekt einzurichten. Klicken Sie dafür mit der rechten Maustaste auf Ihre Projektmappe, und wählen Sie **Hinzufügen > Neues Projekt...** aus. Wählen Sie aus der Liste **Visual C# > iOS > Komponententest-App (iOS)** aus.
-
-![](touch.unit-images/00a.png "iOS-Komponententest-App")
-
------
-
 Dadurch wird ein einfaches Projekt erstellt, dass ein grundlegendes Runnerprogramm enthält und das auf die neue Assembly „MonoTouch.NUnitLite“ verweist. Es wird folgendermaßen aussehen:
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
-
 ![](touch.unit-images/01.png "Das Projekt im Projektmappen-Explorer")
-
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
-![](touch.unit-images/01a.png "Das Projekt im Projektmappen-Explorer")
-
------
 
 Die Klasse `AppDelegate.cs` enthält den Test Runner und sieht folgendermaßen aus:
 
@@ -53,27 +35,30 @@ Die Klasse `AppDelegate.cs` enthält den Test Runner und sieht folgendermaßen a
 [Register ("AppDelegate")]
 public partial class AppDelegate : UIApplicationDelegate
 {
-        UIWindow window;
-        TouchRunner runner;
+    UIWindow window;
+    TouchRunner runner;
 
-        public override bool FinishedLaunching (UIApplication app, NSDictionary options)
-        {
-                // create a new window instance based on the screen size
-                window = new UIWindow (UIScreen.MainScreen.Bounds);
-                runner = new TouchRunner (window);
+    public override bool FinishedLaunching (UIApplication app, NSDictionary options)
+    {
+        // create a new window instance based on the screen size
+        window = new UIWindow (UIScreen.MainScreen.Bounds);
+        runner = new TouchRunner (window);
 
-                // register every tests included in the main application/assembly
-                runner.Add (System.Reflection.Assembly.GetExecutingAssembly ());
+        // register every tests included in the main application/assembly
+        runner.Add (System.Reflection.Assembly.GetExecutingAssembly ());
 
-                window.RootViewController = new UINavigationController (runner.GetViewController ());
+        window.RootViewController = new UINavigationController (runner.GetViewController ());
 
-                // make the window visible
-                window.MakeKeyAndVisible ();
+        // make the window visible
+        window.MakeKeyAndVisible ();
 
-                return true;
-        }
+        return true;
+    }
 }
 ```
+
+> [!NOTE]
+> Der iOS-Projekttyp „Komponententest“ ist in Visual Studio 2017 unter Windows nicht verfügbar.
 
 ## <a name="writing-some-tests"></a>Schreiben einiger Tests
 
@@ -89,28 +74,28 @@ using NUnit.Framework;
 
 namespace Fixtures {
 
-        [TestFixture]
-        public class Tests {
+    [TestFixture]
+    public class Tests {
 
-                [Test]
-                public void Pass ()
-                {
-                        Assert.True (true);
-                }
-
-                [Test]
-                public void Fail ()
-                {
-                        Assert.False (true);
-                }
-
-                [Test]
-                [Ignore ("another time")]
-                public void Ignore ()
-                {
-                        Assert.True (false);
-                }
+        [Test]
+        public void Pass ()
+        {
+                Assert.True (true);
         }
+
+        [Test]
+        public void Fail ()
+        {
+                Assert.False (true);
+        }
+
+        [Test]
+        [Ignore ("another time")]
+        public void Ignore ()
+        {
+                Assert.True (false);
+        }
+    }
 }
 ```
 
@@ -120,15 +105,14 @@ Klicken Sie in Ihrer Projektmappe mit der rechten Maustaste auf das Projekt, um 
 
 Mit dem Test Runner können Sie sehen, welche Tests registriert sind, und Sie können einzeln auswählen, welche Tests ausgeführt werden können.
 
-[![](touch.unit-images/02.png "Die Liste der registrierten Tests")](touch.unit-images/02.png#lightbox) 
+[![](touch.unit-images/02-sml.png "Die Liste der registrierten Tests")](touch.unit-images/02.png#lightbox) 
+[![](touch.unit-images/03-sml.png "Individueller Text")](touch.unit-images/03.png#lightbox) 
 
-[![](touch.unit-images/03.png "Ein einzelner Test")](touch.unit-images/03.png#lightbox) 
-
-[![](touch.unit-images/04.png "Ergebnisse des Testlaufs")](touch.unit-images/04.png#lightbox)
+[![](touch.unit-images/04-sml.png "Ergebnisse des Testlaufs")](touch.unit-images/04.png#lightbox)
 
 Sie können einzelne Prüfvorrichtungen ausführen, indem Sie sie aus den geschachtelten Ansichten auswählen, oder Sie können mit „Alles ausführen“ alle Ihre Tests ausführen. Wenn Sie den Standardtest ausführen, sollte dieser je einen Test enthalten, der je einen Test mit den Kriterien "bestanden", "fehlgeschlagen" und "ignoriert" enthalten soll. Die Berichte sehen folgendermaßen aus, und Sie können direkt einen Drilldown zu den fehlgeschlagenen Tests ausführen und mehr über den Fehler herausfinden:
 
-[![](touch.unit-images/05.png "Ein Beispielbericht")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/05.png "A sample report")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/05.png "A sample report")](touch.unit-images/05.png#lightbox)
+[![](touch.unit-images/05-sml.png "Ein Beispielbericht")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/06-sml.png "A sample report")](touch.unit-images/06.png#lightbox) [![](touch.unit-images/07-sml.png "A sample report")](touch.unit-images/07.png#lightbox)
 
 Im Anwendungsausgabefenster in Ihrer IDE können Sie auch die aktuell ausgeführten Tests und deren gegenwärtigen Status sehen.
 
@@ -139,12 +123,7 @@ Es zeichnet sich durch minimalen Ressourcenverbrauch aus und kann so auch auf Pl
 
 Zusätzlich zu den Methoden der Assert-Klasse sind die Funktionen der Komponententests in die folgenden Namespaces aufgeteilt, die Teil von NUnitLite sind:
 
--   [NUnit.Framework](https://developer.xamarin.com/api/namespace/NUnit.Framework/)
--   [NUnit.Constraints](https://developer.xamarin.com/api/namespace/NUnit.Framework.Constraints/)
--   [NUnitLite](https://developer.xamarin.com/api/namespace/NUnitLite/)
--   [NUniteLite.Runner](https://developer.xamarin.com/api/namespace/NUnitLite.Runner/)
-
-
-Der für Xamarin.iOS spezifische Komponententestrunner ist hier dokumentiert:
-
--   [NUnit.UI.TouchRunner](https://developer.xamarin.com/api/type/NUnit.UI.TouchRunner/)
+- [NUnit.Framework](https://developer.xamarin.com/api/namespace/NUnit.Framework/)
+- [NUnit.Constraints](https://developer.xamarin.com/api/namespace/NUnit.Framework.Constraints/)
+- [NUnitLite](https://developer.xamarin.com/api/namespace/NUnitLite/)
+- [NUniteLite.Runner](https://developer.xamarin.com/api/namespace/NUnitLite.Runner/)

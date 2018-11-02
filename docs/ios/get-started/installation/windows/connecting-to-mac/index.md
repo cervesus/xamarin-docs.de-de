@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/29/2018
-ms.openlocfilehash: d55760f1fdd6912b973cc1e7a65415a0f2c6eb47
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: befeb92529aa066f6106e855ed1fbdfe49c51e66
+ms.sourcegitcommit: c59e1882aa4af3ce36fba5c6eaeb5cf73a9cb289
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104088"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50919041"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung
 
@@ -22,7 +22,7 @@ _In diesem Leitfaden wird beschrieben, wie Sie die Option „Mit Mac koppeln“ 
 
 Zum Erstellen nativer iOS-Anwendungen sind die Apple-Buildtools erforderlich, die nur auf einem Mac ausgeführt werden können. Aus diesem Grund muss Visual Studio 2017 eine Verbindung zu einem Mac herstellen, der über ein Netzwerk zugänglich ist, da andernfalls keine Xamarin.iOS-Anwendungen erstellt werden können.
 
-Durch das Visual Studio 2017-Feature „Mit Mac koppeln“ werden zuerst Mac-Buildhosts ermittelt. Anschließend wird eine Verbindung mit diesen hergestellt, die Authentifizierung wird vorgenommen, und die Buildhosts werden gespeichert. Hierdurch können iOS-Entwickler unter Windows produktiv arbeiten. 
+Durch das Visual Studio 2017-Feature „Mit Mac koppeln“ werden zuerst Mac-Buildhosts ermittelt. Anschließend wird eine Verbindung mit diesen hergestellt, die Authentifizierung wird vorgenommen, und die Buildhosts werden gespeichert. Hierdurch können iOS-Entwickler unter Windows produktiv arbeiten.
 
 Das Feature „Mit Mac koppeln“ ermöglicht den folgenden Entwicklungsworkflow:
 
@@ -40,12 +40,14 @@ Das Feature „Mit Mac koppeln“ ermöglicht den folgenden Entwicklungsworkflow
 
 > [!NOTE]
 > 
-> Führen Sie zunächst die folgenden Schritte aus, bevor Sie die Anweisungen in diesem Leitfaden beachten: 
+> Führen Sie zunächst die folgenden Schritte aus, bevor Sie die Anweisungen in diesem Leitfaden beachten:
 > 
 > - Installieren Sie auf einem Windows-Computer [Visual Studio 2017](~/cross-platform/get-started/installation/windows.md).
 > - Installieren Sie auf einem Mac [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) und [Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/installation).
+>    - _Nach der Installation müssen Sie Xcode manuell öffnen_, damit sie weitere Komponenten hinzufügen können.
 >
 > Wenn Sie Visual Studio für Mac nicht installieren möchten, kann Visual Studio 2017 automatisch den Mac-Buildhost mit Xamarin.iOS und Mono konfigurieren.
+> Sie müssen noch Xcode installieren und ausführen.
 > Weitere Informationen finden Sie unter [Automatische Bereitstellung eines Macs](#automatic-mac-provisioning).
 
 ## <a name="enable-remote-login-on-the-mac"></a>Aktivieren der Remoteanmeldung auf dem Mac
@@ -87,7 +89,7 @@ Nachdem Sie die Remoteanmeldung aktiviert haben, können Sie Visual Studio 2017 
 3. Wählen Sie einen Mac aus der Liste aus. Klicken Sie auf **Verbinden**. 
 
 4. Geben Sie Ihren Benutzernamen und Ihr Kennwort ein.
-    
+
     - Beim erstmaligen Herstellen einer Verbindung mit einem Mac werden Sie aufgefordert, Ihren Benutzernamen und Ihr Kennwort für diesen Computer einzugeben:
 
         ![Eingeben eines Benutzernamens und eines Kennworts für den Mac](images/auth.png "Entering a username and password for the Mac")
@@ -102,7 +104,7 @@ Nachdem Sie die Remoteanmeldung aktiviert haben, können Sie Visual Studio 2017 
     Ab der [Version 15.6 von Visual Studio 2017](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) werden Mono und Xamarin.iOS auf einem verbundenen Mac-Buildhost bei Bedarf installiert oder aktualisiert. Beachten Sie, dass Xcode nach wie vor manuell installiert werden muss. Weitere Informationen finden Sie unter [Automatische Bereitstellung eines Macs](#automatic-mac-provisioning).
 
 6. Suchen Sie nach dem Symbol für den Verbindungsstatus.
-    
+
     - Wenn Visual Studio 2017 mit einem Mac verbunden wird, wird für das Mac-Element im Dialogfeld **Mit Mac koppeln** ein Symbol angezeigt, das darauf hinweist, dass aktuell eine Verbindung besteht.
 
         ![Ein verbundener Mac](images/connected.png "A connected Mac")
@@ -112,7 +114,7 @@ Nachdem Sie die Remoteanmeldung aktiviert haben, können Sie Visual Studio 2017 
       > [!TIP]
       > Wenn Sie mit der rechten Maustaste auf einen Mac in der Liste **Mit Mac koppeln** klicken, wird ein Kontextmenü angezeigt, in dem Sie die Aktion **Verbinden...**, **Diesen Mac vergessen** oder **Verbindung trennen** ausführen können.
       >
-      > ![Kontextmenüelemente des Features „Mit Mac koppeln“](images/contextmenu.png "The Pair to Mac context menus") 
+      > ![Kontextmenüelemente des Features „Mit Mac koppeln“](images/contextmenu.png "The Pair to Mac context menus")
       >
       > Falls Sie auf **Diesen Mac vergessen** klicken, werden die Anmeldeinformationen für den ausgewählten Mac verworfen. Wenn Sie erneut eine Verbindung mit diesem Mac herstellen möchten, müssen Sie Ihren Benutzernamen und Ihr Kennwort erneut eingeben.
 
@@ -131,7 +133,7 @@ Wenn ein bestimmter Mac nicht im Dialogfeld **Mit Mac koppeln** aufgeführt wird
         [![Die IP-Adresse des Macs unter „Systemeinstellungen“ > „Freigaben“](images/sharing-ipaddress.png "The Mac's IP address in System Preferences > Sharing")](images/sharing.png#lightbox)
 
     - Alternativ können Sie auch die Befehlszeile verwenden. Führen Sie im Terminal den folgenden Befehl aus: 
-   
+
         ```bash
         $ ipconfig getifaddr en0
         196.168.1.8
@@ -177,7 +179,7 @@ In mehreren Eingabeaufforderungen wird der Status angezeigt. Dies ist auf den fo
 |---|---|---|---|
 |Mono|[![Mono-Installation nicht vorhanden](images/mono-missing.png "Missing Mono installation")](images/mono-missing-large.png#lightbox)|[![Herunterladen von Mono](images/mono-downloading.png "Downloading Mono")](images/mono-downloading-large.png#lightbox)|[![Installieren von Mono](images/mono-installing.png "Installing Mono")](images/mono-installing-large.png#lightbox)|
 
-### <a name="xamarinios"></a>Xamarin.iOS 
+### <a name="xamarinios"></a>Xamarin.iOS
 
 Das Feature „Mit Mac koppeln“ führt auf dem Mac für Xamarin.iOS ein Upgrade auf die Version durch, die auf dem Windows-Computer installiert ist.
 
@@ -216,22 +218,23 @@ Die Installation dieser Pakete erfolgt schnell, und es wird keine Eingabeaufford
 
 Wenn bei der automatischen Bereitstellung eines Macs Probleme auftreten, können Sie sich die Protokolle der Visual Studio 2017-IDE ansehen, die unter **%LOCALAPPDATA%\Xamarin\Logs\15.0** gespeichert werden. Diese Protokolle enthalten möglicherweise Fehlermeldungen, die Sie zur effizienteren Diagnose des Fehlers oder für Supportanfragen verwenden können.
 
-## <a name="build-ios-apps-from-the-windows-command-line"></a>Erstellen von iOS-Apps über die Windows-Befehlszeile 
+## <a name="build-ios-apps-from-the-windows-command-line"></a>Erstellen von iOS-Apps über die Windows-Befehlszeile
 
 Das Feature „Mit Mac koppeln“ unterstützt die Erstellung von Xamarin.iOS-Anwendungen über die Befehlszeile. Zum Beispiel:
 
 ```bash
 C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamUser /p:Platform=iPhoneSimulator /p:ServerPassword=mypassword
 ```
+
 Die im obigen Beispiel an `msbuild` übergebenen Parameter sind:
 
 - `ServerAddress`: die IP-Adresse des Mac-Buildhosts.
 - `ServerUser`: der Benutzername, der zur Anmeldung bei dem Mac-Buildhost verwendet wird.
   Verwenden Sie Ihren Systembenutzernamen anstelle des vollständigen Namens.
 - `ServerPassword`: das Kennwort, das zur Anmeldung bei dem Mac-Buildhost verwendet wird.
- 
+
 > [!NOTE]
-> Visual Studio 2017 speichert `msbuild` im Verzeichnis **C:\Programme (x86)\Microsoft Visual Studio\2017\<Version>\MSBuild\15.0\Bin**.
+> Visual Studio 2017 speichert `msbuild` im Verzeichnis **C:\Programme (x86)\Microsoft Visual Studio\2017\\&lt;Version&gt;\MSBuild\15.0\Bin**.
 
 Wenn sich das Feature „Mit Mac koppeln“ zum ersten Mal über Visual Studio 2017 oder über die Befehlszeile bei einem Mac-Buildhost anmeldet, werden SSH-Schlüssel eingerichtet. Durch die Verwendung dieser Schlüssel entfällt bei weiteren Anmeldungen die Angabe des Benutzernamens oder des Kennworts. Neu erstellte Schlüssel werden unter **%LOCALAPPDATA%\Xamarin\MonoTouch** gespeichert.
 
@@ -248,4 +251,3 @@ In diesem Artikel wurde beschrieben, wie mit dem Feature „Mit Mac koppeln“ V
 - [Einführung in Xamarin.iOS für Visual Studio](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
 - [iOS-Remotesimulator für Windows](~/tools/ios-simulator/index.md)
 - [Drahtlose Bereitstellung](~/ios/deploy-test/wireless-deployment.md)
-

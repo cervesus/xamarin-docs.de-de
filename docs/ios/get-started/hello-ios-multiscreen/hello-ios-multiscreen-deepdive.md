@@ -1,6 +1,6 @@
 ---
 title: 'Ausführliche Erläuterungen: Hallo, iOS Multiscreen'
-description: In diesem Artikel wird ein tieferer Einblick in die erweiterte Phoneword-Anwendung gewährt, mit weiterer Berücksichtigung des Model-View-Controllers, der iOS-Navigation und anderen Konzepten der iOS-Entwicklung.
+description: In diesem Dokument wird ein tieferer Einblick in die erweiterte Phoneword-Anwendung gewährt, mit weiterer Berücksichtigung des Model-View-Controllers, der iOS-Navigation und anderen Konzepten der iOS-Entwicklung.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: c866e5f4-8154-4342-876e-efa0693d66f5
@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: d698cd1511e82116180a8af46891973f5f90343b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 61a90632849787e28526f83d53247a0491148148
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118967"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235089"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Ausführliche Erläuterungen: Hallo, iOS Multiscreen
 
