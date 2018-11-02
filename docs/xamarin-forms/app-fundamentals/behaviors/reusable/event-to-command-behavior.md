@@ -1,22 +1,22 @@
 ---
 title: Wiederverwendbare EventToCommandBehavior
-description: Verhaltensweisen können Befehle mit Steuerelementen zuordnen, die nicht entwickelt wurden, für die Interaktion mit Befehlen verwendet werden. Dieser Artikel veranschaulicht mithilfe eines Xamarin.Forms-Verhaltens zum Aufrufen eines Befehls, wenn ein Ereignis ausgelöst wird.
+description: Verhaltensweisen können Befehle mit Steuerelementen zuordnen, die nicht entwickelt wurden, für die Interaktion mit Befehlen verwendet werden. Dieser Artikel veranschaulicht das Erstellen und nutzen ein Xamarin.Forms-Verhalten, um einen Befehl aufzurufen, wenn ein Ereignis ausgelöst wird.
 ms.prod: xamarin
 ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 3cc568298ba3710f7d4f092acbb2139bebe5976b
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 2609ce4ea677c6b03021a919599c250abff663a3
+ms.sourcegitcommit: 06a52ac36031d0d303ac7fc8163a59c178799c80
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675288"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50911553"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>Wiederverwendbare EventToCommandBehavior
 
-_Verhaltensweisen können Befehle mit Steuerelementen zuordnen, die nicht entwickelt wurden, für die Interaktion mit Befehlen verwendet werden. Dieser Artikel veranschaulicht mithilfe eines Xamarin.Forms-Verhaltens zum Aufrufen eines Befehls, wenn ein Ereignis ausgelöst wird._
+_Verhaltensweisen können Befehle mit Steuerelementen zuordnen, die nicht entwickelt wurden, für die Interaktion mit Befehlen verwendet werden. Dieser Artikel veranschaulicht das Erstellen und nutzen ein Xamarin.Forms-Verhalten, um einen Befehl aufzurufen, wenn ein Ereignis ausgelöst wird._
 
 ## <a name="overview"></a>Übersicht
 
@@ -31,6 +31,9 @@ Die folgenden Eigenschaften für die optionales Verhalten können auch festgeleg
 
 - **CommandParameter** – ein `object` , wird an den Befehl übergeben werden.
 - **Konverter** – ein [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) Implementierung, die das Format der Ereignisdaten Argument geändert wird, wie die Übergabe zwischen *Quelle* und *Ziel*durch die Bindungs-Engine.
+
+> [!NOTE]
+> Die `EventToCommandBehavior` ist eine benutzerdefinierte Klasse, die gefunden werden kann die [EventToCommand Verhalten Beispiel](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/), und sind nicht Teil von Xamarin.Forms.
 
 ## <a name="creating-the-behavior"></a>Erstellen das Verhalten
 

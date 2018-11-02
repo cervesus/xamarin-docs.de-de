@@ -1,22 +1,22 @@
 ---
 title: Wiederverwendbare EffectBehavior
-description: Verhalten sind eine nützliche Methode für einen Effekt auf ein Steuerelement, entfernen die Verarbeitung von Code aus dem Code-Behind-Dateien mit Codebausteinen-Effekt hinzufügen. In diesem Artikel veranschaulicht, wie mit einer Xamarin.Forms-Verhalten einen Effekt auf ein Steuerelement hinzufügen.
+description: Verhalten sind eine nützliche Methode für einen Effekt auf ein Steuerelement, entfernen die Verarbeitung von Code aus dem Code-Behind-Dateien mit Codebausteinen-Effekt hinzufügen. Dieser Artikel veranschaulicht das Erstellen und nutzen ein Xamarin.Forms-Verhalten, um einen Effekt auf ein Steuerelement hinzufügen.
 ms.prod: xamarin
 ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 1ce7eda6f556041cbffc3793b00e8e2cba44d3d0
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 2696f0103ce1aa969039c982fb9b82f89b37811e
+ms.sourcegitcommit: 06a52ac36031d0d303ac7fc8163a59c178799c80
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995780"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50911592"
 ---
 # <a name="reusable-effectbehavior"></a>Wiederverwendbare EffectBehavior
 
-_Verhalten sind eine nützliche Methode für einen Effekt auf ein Steuerelement, entfernen die Verarbeitung von Code aus dem Code-Behind-Dateien mit Codebausteinen-Effekt hinzufügen. In diesem Artikel veranschaulicht, wie mit einer Xamarin.Forms-Verhalten einen Effekt auf ein Steuerelement hinzufügen._
+_Verhalten sind eine nützliche Methode für einen Effekt auf ein Steuerelement, entfernen die Verarbeitung von Code aus dem Code-Behind-Dateien mit Codebausteinen-Effekt hinzufügen. Dieser Artikel veranschaulicht das Erstellen und nutzen ein Xamarin.Forms-Verhalten, um einen Effekt auf ein Steuerelement hinzufügen._
 
 ## <a name="overview"></a>Übersicht
 
@@ -28,6 +28,9 @@ Das Verhalten verwendet, müssen die folgenden Verhaltenseigenschaften festgeleg
 - **Namen** – der Wert des der [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) Attribut für die Klasse wirksam.
 
 Weitere Informationen zu den Auswirkungen, finden Sie unter [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md).
+
+> [!NOTE]
+> Die `EffectBehavior` ist eine benutzerdefinierte Klasse, die gefunden werden kann die [Auswirkung Verhalten Beispiel](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/), und sind nicht Teil von Xamarin.Forms.
 
 ## <a name="creating-the-behavior"></a>Erstellen das Verhalten
 

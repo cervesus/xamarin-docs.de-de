@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 392a0e6c76357ce106477ec4d5037673e5702b43
-ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
+ms.openlocfilehash: 0a1aa16aca1507153d691d5ec801a75e49e5d3ad
+ms.sourcegitcommit: 06a52ac36031d0d303ac7fc8163a59c178799c80
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50301239"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50911579"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms-Raster
 
@@ -152,10 +152,10 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2);
 
 ### <a name="spacing"></a>Abstand
 
-`Grid` verfügt über Eigenschaften zum Steuern der Abstand zwischen den Zeilen und Spalten.  Die folgenden Eigenschaften stehen für die Anpassung der `Grid`:
+`Grid` verfügt über Eigenschaften zum Steuern der Abstand zwischen den Zeilen und Spalten. Die folgenden Eigenschaften stehen für die Anpassung der `Grid`:
 
-- **ColumnSpacing** &ndash; den Abstand zwischen Spalten.
-- **"RowSpacing"** &ndash; den Abstand zwischen Zeilen.
+- **ColumnSpacing** &ndash; den Abstand zwischen Spalten. Der Standardwert dieser Eigenschaft ist 6.
+- **"RowSpacing"** &ndash; den Abstand zwischen Zeilen. Der Standardwert dieser Eigenschaft ist 6.
 
 Gibt an, der folgende XAML ein `Grid` mit zwei Spalten und eine Zeile 5 Pixel der Abstand zwischen Spalten:
 
