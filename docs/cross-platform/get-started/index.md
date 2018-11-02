@@ -7,14 +7,14 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 35c7605f9682bef9e93fb4f25404659662126a9d
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 3b1769dec78f65544e8996e21cb8ae003e4af198
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242026"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111329"
 ---
-# <a name="getting-started-with-xamarin"></a>Erste Schritte mit Xamarin
+# <a name="get-started-with-xamarin"></a>Erste Schritte mit Xamarin
 
 Sehen Sie sich vor Beginn die [Systemanforderungen](requirements.md) sowie die [Installationsanweisungen](installation/index.md) an, um sicherzustellen, dass alles bereit ist.
 
@@ -27,7 +27,6 @@ Wenn Sie eine App erstellen möchten, die native Technologien für die Benutzero
 
 - [Android Quick Start (Schnellstartanleitung für Android)](~/android/get-started/hello-android/hello-android-quickstart.md)
 - [iOS Quick Start (Schnellstartanleitung für iOS)](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
-- [Erste Schritte mit Mac](~/mac/get-started/hello-mac.md)
 
 ## <a name="getting-started-with-mobile-development"></a>Erste Schritte in der Entwicklung mobiler Anwendungen
 
@@ -53,7 +52,7 @@ Erfahren Sie mehr zu Visual Studio für Mac, der integrierten Entwicklungsumgebu
 
 > [!VIDEO https://youtube.com/embed/NGvn-pGZFPA]
 
-**Erstellen Ihrer ersten Xamarin.Forms-App mit Xamarin für Visual Studio durch [Xamarin University](https://university.xamarin.com)**
+**Erstellen Sie Ihre erste Xamarin.Forms-App mit Xamarin für Visual Studio mit der Hilfe von [Xamarin University](https://university.xamarin.com)**
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -4,15 +4,15 @@ description: In diesem Leitfaden wird beschrieben, wie Sie das Feature „Mit Ma
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/29/2018
-ms.openlocfilehash: c4e28c1f3e058977d6f9072b70f17717a2b27585
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: d55760f1fdd6912b973cc1e7a65415a0f2c6eb47
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786076"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104088"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung
 
@@ -246,6 +246,6 @@ In diesem Artikel wurde beschrieben, wie mit dem Feature „Mit Mac koppeln“ V
 - [Problembehandlung bei der Verbindung](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)
 - [Xamarin Mac Build Agent - Xamarin University Lightning Lecture (Xamarin Mac-Build-Agent: Xamarin University-Kurzvorstellung)](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
 - [Einführung in Xamarin.iOS für Visual Studio](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
-- [iOS-Remotesimulator für Windows](~/tools/ios-simulator.md)
+- [iOS-Remotesimulator für Windows](~/tools/ios-simulator/index.md)
 - [Drahtlose Bereitstellung](~/ios/deploy-test/wireless-deployment.md)
 

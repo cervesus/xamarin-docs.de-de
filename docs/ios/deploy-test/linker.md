@@ -4,15 +4,15 @@ description: In diesem Dokument wird der Xamarin.iOS-Linker beschrieben, der zum
 ms.prod: xamarin
 ms.assetid: 3A4B2178-F264-0E93-16D1-8C63C940B2F9
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/24/2017
-ms.openlocfilehash: 4bcfc821359e74b34dc2ee11419e8ee86f8cccee
-ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
+ms.openlocfilehash: 7f45ea53429b30e634c99403b4159606fc616a4a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36321456"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120111"
 ---
 # <a name="linking-xamarinios-apps"></a>Verknüpfen von Xamarin.iOS-Apps
 
@@ -26,13 +26,13 @@ Da der Linker ein statisches Tool ist, kann er nicht für Inklusionstypen und -m
 
 ## <a name="linker-behavior"></a>Linkerverhalten
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Der Verknüpfungsprozess kann in **Projektoptionen** über das Dropdownmenü „Linkerverhalten“ angepasst werden. Um auf dieses iOS-Projekt zuzugreifen, doppelklicken Sie darauf, und navigieren Sie zu **iOS-Build > Linkeroptionen**, wie unten dargestellt:
 
 [![](linker-images/image1.png "Linkeroptionen")](linker-images/image1.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Der Verknüpfungsprozess kann in Visual Studio in **Projektoptionen** über das Dropdownmenü „Linkerverhalten“ angepasst werden.
 

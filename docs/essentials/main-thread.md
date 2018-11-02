@@ -5,12 +5,12 @@ ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 06/26/2018
-ms.openlocfilehash: 608cd00a2134e6e3fee89c7ae25bf4627d8b23be
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: db2e79ed5c471c11e2d3dc1afe360843e5dfea6a
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112311"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675444"
 ---
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials: MainThread
 
@@ -23,6 +23,10 @@ Mit der **MainThread**-Klasse können Anwendungen Code im Hauptausführungsthrea
 Die meisten Betriebssysteme – einschließlich iOS, Android und der universellen Windows-Plattform (UWP) – verwenden ein Single-Threading-Modell für Code, der die Benutzeroberfläche betrifft. Dieses Modell ist notwendig, um Ereignisse der Benutzeroberfläche, einschließlich Tastaturanschläge und Toucheingabe, ordnungsgemäß zu serialisieren. Dieser Thread wird oft als _Hauptthread_, _Benutzeroberflächenthread_ oder _UI-Thread_ bezeichnet. Der Nachteil dieses Modells ist, dass Code, der auf Elemente der Benutzeroberfläche zugreift, im Hauptthread der Anwendung ausgeführt werden muss. 
 
 Anwendungen müssen manchmal Ereignisse verwenden, die den Ereignishandler in einem sekundären Ausführungsthread aufrufen. Die Xamarin.Essentials-Klassen [`Accelerometer`](accelerometer.md), [`Compass`](compass.md), [`Gyroscope`](gyroscope.md), [`Magnetometer`](magnetometer.md) und [`OrientationSensor`](orientation-sensor.md) geben bei Verwendung mit höheren Geschwindigkeiten ggf. Informationen zu einem Sekundärthread zurück. Wenn der Ereignishandler auf Elemente der Benutzeroberfläche zugreifen muss, muss er diesen Code im Hauptthread ausführen. Mit der **MainThread**-Klasse können Anwendungen diesen Code im Hauptthread ausführen.
+
+## <a name="get-started"></a>Erste Schritte
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="running-code-on-the-main-thread"></a>Ausführen von Code im Hauptthread
 
@@ -57,8 +61,8 @@ MainThread.BeginInvokeOnMainThread(MyMainThreadCode);
 ```
 
 > [!NOTE]
-> Xamarin.Forms weist die Methode [`Device.BeginInvokeOnMainThread(Action)`](https://docs.microsoft.com/dotnet/api/xamarin.forms.device.begininvokeonmainthread) auf,
-> die sich wie `MainThread.BeginInvokeOnMainThread(Action)` verhält. Sie können beide Methoden in einer Xamarin.Forms-App verwenden. Erwägen Sie jedoch, ob der aufrufende Code andere Abhängigkeiten von Xamarin.Forms benötigt. Wenn das nicht der Fall ist, ist `MainThread.BeginInvokeOnMainThread(Action)` besser geeignet.
+> Xamarin.Forms verfügt über eine Methode namens [`Device.BeginInvokeOnMainThread(Action)`](https://docs.microsoft.com/dotnet/api/xamarin.forms.device.begininvokeonmainthread),
+> mit der Sie dieselbe Aufgabe wie mit `MainThread.BeginInvokeOnMainThread(Action)` ausführen können. Sie können beide Methoden in einer Xamarin.Forms-App verwenden. Erwägen Sie jedoch, ob der aufrufende Code andere Abhängigkeiten von Xamarin.Forms benötigt. Wenn das nicht der Fall ist, ist `MainThread.BeginInvokeOnMainThread(Action)` besser geeignet.
 
 ## <a name="determining-if-code-is-running-on-the-main-thread"></a>Festlegen, ob Code im Hauptthread ausgeführt wird
 

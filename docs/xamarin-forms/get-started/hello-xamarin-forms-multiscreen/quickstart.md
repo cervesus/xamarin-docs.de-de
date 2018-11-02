@@ -1,18 +1,19 @@
 ---
 title: Xamarin.Forms Multiscreen-Schnellstart
 description: In diesem Artikel wird erläutert, wie Sie die Phoneword-Anwendung durch Hinzufügen eines zweiten Bildschirms erweitern, um die Anrufliste für die Anwendung nachzuverfolgen.
+zone_pivot_groups: platform
 ms.prod: quickstart
 ms.assetid: 255d93b9-518c-4e5d-a9cd-4dd8a7945a7f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: a4e27f1810a16b5d13838d2e2c1067950586fab3
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 957c3e0d3b0637c8b536d920a05397bc711dfb7d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996180"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123478"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Xamarin.Forms Multiscreen-Schnellstart
 
@@ -20,9 +21,9 @@ Dieser Schnellstart stellt dar, wie Sie die Phoneword-Anwendung durch Hinzufüge
 
 [![](quickstart-images/intro-app-examples-sml.png "Phoneword-Anwendung")](quickstart-images/intro-app-examples.png#lightbox "Phoneword Application")
 
-Erweitern Sie die Phoneword-Anwendung wie folgt:
+::: zone pivot="windows"
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+## <a name="update-the-app-with-visual-studio"></a>Aktualisieren der App mit Visual Studio
 
 1. Starten Sie Visual Studio. Klicken Sie auf der Startseite auf **Projekt öffnen...**, und wählen Sie im Dialogfeld **Projekt öffnen** die Projektmappendatei für das Phoneword-Projekt aus:
 
@@ -160,11 +161,15 @@ Erweitern Sie die Phoneword-Anwendung wie folgt:
 
 13. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **Phoneword.Droid**, und wählen Sie **Als Startprojekt festlegen** aus.
 14. Klicken Sie in der Symbolleiste von Visual Studio auf **Starten** (die dreieckige Wiedergabetaste), um die Anwendung in einem Android-Emulator zu starten.
-15. Wenn Sie ein iOS-Gerät haben und die Systemanforderungen für Mac für die Xamarin.Forms-Entwicklung erfüllt werden, verwenden Sie ein ähnliches Verfahren, um die App für das iOS-Gerät bereitzustellen. Alternativ können Sie die App dem [iOS-Remotesimulator](~/tools/ios-simulator.md) bereitstellen.
+15. Wenn Sie ein iOS-Gerät haben und die Systemanforderungen für Mac für die Xamarin.Forms-Entwicklung erfüllt werden, verwenden Sie ein ähnliches Verfahren, um die App für das iOS-Gerät bereitzustellen. Alternativ können Sie die App dem [iOS-Remotesimulator](~/tools/ios-simulator/index.md) bereitstellen.
 
-    Hinweis: Anrufe werden in keinem Simulator unterstützt.
+    > [!NOTE]
+    > Anrufe werden in Geräteemulatoren nicht unterstützt.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
+
+## <a name="update-the-app-with-visual-studio-for-mac"></a>Aktualisieren der App mit Visual Studio für Mac
 
 1. Starten Sie Visual Studio für Mac. Klicken Sie auf der Startseite auf **Öffnen...**, und wählen Sie im Dialogfeld die Projektmappendatei für das Phoneword-Projekt aus:
 
@@ -314,12 +319,12 @@ Erweitern Sie die Phoneword-Anwendung wie folgt:
 
     ![](quickstart-images/xs/phone-result-android.png "Android-Emulator")
 
-    Hinweis: Anrufe werden im Android-Emulator nicht unterstützt.
+    > [!NOTE]
+    > Anrufe werden in Geräteemulatoren nicht unterstützt.
 
------
+::: zone-end
 
 Herzlichen Glückwunsch zum Fertigstellen einer Multiscreen-Xamarin.Forms-Anwendung. Im [nächsten Abschnitt](~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/deepdive.md) in diesem Handbuch werden die Schritte aus dieser exemplarischen Vorgehensweise wiederholt, um ein Verständnis für die Seitennavigation sowie die Datenbindung mithilfe von Xamarin.Forms zu erarbeiten.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

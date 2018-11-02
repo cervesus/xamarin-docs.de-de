@@ -5,43 +5,37 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: E4150036-7760-4023-BD33-B7BDE7B7AF5B
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: f1c19d43aa1f9010307df3fb954ac1029221ccd4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: conceptdev
+ms.author: crdun
+ms.date: 10/05/2018
+ms.openlocfilehash: 3eee66032a33e66d3a6a22ca43cb931fbd59888f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30767738"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122984"
 ---
 # <a name="hello-android-multiscreen-deep-dive"></a>Hallo, Android-Multiscreen: Ausführliche Erläuterungen
 
 _In diesem zweiteiligen Leitfaden wird die grundlegende Phoneword-Anwendung erweitert, die Sie im Leitfaden „Hallo, Android“ erstellt haben, um einen zweiten Bildschirm behandeln zu können. Dabei werden die grundlegenden Bausteine für die Android-Anwendung eingeführt. Es ist ein tieferer Einblick in die Android-Architektur enthalten, damit Sie sich ein besseres Bild der Android-Anwendungsstruktur und -Funktionen machen können._
 
-## <a name="hello-android-multiscreen-deep-dive"></a>Hallo, Android-Multiscreen: Ausführliche Erläuterungen
-
 Im [Schnellstart des Hallo, Android-Multiscreens](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md) haben Sie Ihre erste Xamarin.Android-Multiscreen-Anwendung erstellt und ausgeführt.
-Nun ist es an der Zeit, ein tieferes Verständnis für die Navigation und Architektur von Android-Anwendungen zu entwickeln, sodass Sie komplexere Anwendungen erstellen können.
 
-In diesem Handbuch werden Sie mit der Einführung der *Anwendungsbausteine* von Android die erweiterte Android-Architektur kennenlernen. Die Android-Navigation mit *Intents* wird erläutert und Android-Hardware-Navigationsoptionen werden untersucht. Neue Erweiterungen der Phoneword-Anwendung werden zerlegt, wenn Sie eine ganzheitliche Sicht der Anwendungsbeziehung mit dem Betriebssystem und anderen Anwendungen entwickeln.
-
+In dieser Anleitung lernen Sie die erweiterte Android-Architektur kennen. Die Android-Navigation mit *Intents* wird erläutert und Android-Hardware-Navigationsoptionen werden untersucht. Neue Erweiterungen der Phoneword-Anwendung werden zerlegt, wenn Sie eine ganzheitliche Sicht der Anwendungsbeziehung mit dem Betriebssystem und anderen Anwendungen entwickeln.
 
 ## <a name="android-architecture-basics"></a>Grundlagen der Android-Architektur
 
 In [Hallo, Android: Ausführliche Erläuterungen](~/android/get-started/hello-android/hello-android-deepdive.md) haben Sie gelernt, dass Android-Anwendungen eindeutige Programme sind, weil sie nicht über einen einzigen Einstiegspunkt verfügen. Stattdessen startet das Betriebssystem (oder eine andere Anwendung) eine der registrierten Aktivitäten für die Anwendung, wodurch wiederum der Prozess für die Anwendung gestartet wird. Diese ausführlichen Erläuterungen der Android-Architektur erweitert Ihr Verständnis der Bauweise von Android-Anwendungen durch die Einführung der Android-Anwendungsbausteine und deren Funktionen.
 
-
-### <a name="android-application-blocks"></a>Android-Anwendungsbausteine
+### <a name="android-application-building-blocks"></a>Android-Anwendungsbausteine
 
 Eine Android-Anwendung besteht aus einer Auflistung von speziellen Android-Klassen namens *Anwendungsblöcke*, die mit einer beliebigen Anzahl von App-Ressourcen – Bilder, Themen, Hilfsklassen usw. &ndash; gebündelt werden. Diese werden von einer XML-Datei namens *Android-Manifest* koordiniert.
 
 Anwendungsblöcke bilden das Rückgrat von Android-Anwendungen, da mit ihnen Aktionen ausgeführt werden können, die Sie normalerweise mit einer normalen Klasse nicht bewältigen könnten. Die beiden wichtigsten sind _Aktivitäten_ und _Dienste_:
 
--   **Aktivität** &ndash; Eine Aktivität entspricht einem Bildschirm mit einer Benutzeroberfläche und gleicht konzeptionell einer Webseite in einer Webanwendung. Beispielsweise wäre der Anmeldebildschirm in einer Newsfeedanwendung die erste Aktivität, die scrollbare Liste der Nachrichtenelemente wäre eine andere Aktivität und die Detailseite für jedes Element wäre eine dritte. Weitere Informationen zu Aktivitäten finden Sie im Handbuch [Activity Lifecycle (Aktivitätslebenszyklus)](~/android/app-fundamentals/activity-lifecycle/index.md).
+- **Aktivität** &ndash; Eine Aktivität entspricht einem Bildschirm mit einer Benutzeroberfläche und gleicht konzeptionell einer Webseite in einer Webanwendung. Beispielsweise wäre der Anmeldebildschirm in einer Newsfeedanwendung die erste Aktivität, die scrollbare Liste der Nachrichtenelemente wäre eine andere Aktivität und die Detailseite für jedes Element wäre eine dritte. Weitere Informationen zu Aktivitäten finden Sie im Handbuch [Activity Lifecycle (Aktivitätslebenszyklus)](~/android/app-fundamentals/activity-lifecycle/index.md).
 
--   **Dienst** &ndash; Android-Dienste unterstützen die Aktivitäten, indem sie Aufgaben mit langer Laufzeit übernehmen und diese im Hintergrund ausführen. Dienste verfügen nicht über eine Benutzeroberfläche und werden verwendet, um Aufgaben zu behandeln, die nicht an Bildschirme gekoppelt sind &ndash; z.B. die Wiedergabe eines Musiktitels im Hintergrund oder das Hochladen von Fotos auf einen Server. Weitere Informationen zu Diensten finden Sie in den Handbüchern [Creating Services (Erstellen von Diensten)](~/android/app-fundamentals/services/index.md) und [Android Services (Android-Dienste)](~/android/app-fundamentals/services/index.md).
-
+- **Dienst** &ndash; Android-Dienste unterstützen die Aktivitäten, indem sie Aufgaben mit langer Laufzeit übernehmen und diese im Hintergrund ausführen. Dienste verfügen nicht über eine Benutzeroberfläche und werden verwendet, um Aufgaben zu behandeln, die nicht an Bildschirme gekoppelt sind &ndash; z.B. die Wiedergabe eines Musiktitels im Hintergrund oder das Hochladen von Fotos auf einen Server. Weitere Informationen zu Diensten finden Sie in den Handbüchern [Creating Services (Erstellen von Diensten)](~/android/app-fundamentals/services/index.md) und [Android Services (Android-Dienste)](~/android/app-fundamentals/services/index.md).
 
 Eine Android-Anwendung verwendet möglicherweise nicht alle Typen von Bausteinen und verfügt oft über mehrere Bausteine eines bestimmten Typs. Die Phoneword-Anwendung aus dem [Hallo, Android-Schnellstart](~/android/get-started/hello-android/hello-android-quickstart.md) besteht beispielsweise aus nur einer Aktivität (Bildschirm) und einigen Ressourcendateien. Eine einfache Musik-Player-App verfügt möglicherweise über mehrere Aktivitäten und einen Dienst für die Wiedergabe von Musik, wenn die App im Hintergrund ausgeführt wird.
 
@@ -51,7 +45,6 @@ Ein anderes grundlegendes Konzept in Android-Anwendungen nennt sich *Intent*.
 Android basiert auf dem *Prinzip der minimalen Rechtegewährung* &ndash; Anwendungen haben nur Zugriff auf die Bausteine, die sie zur Arbeit benötigen, und beschränkten Zugriff auf die Blöcke, die Teil des Betriebssystems oder anderer Anwendungen sind. Bausteine sind auf ähnliche Weise *lose verbunden* &ndash; sie sind dafür entwickelt, nur wenig über andere Bausteine zu wissen und eingeschränkten Zugriff auf sie zu haben (auch Bausteine, die Teil derselben Anwendung sind).
 
 Anwendungsbausteine senden zur Kommunikation asynchrone Nachrichten, so genannte *Intents*, hin und her. Intents enthalten Informationen zum empfangenden Block und manchmal einige Daten. Ein Intent, der von einer App-Komponente gesendet wird, führt dazu, das etwas in einer anderen App-Komponente geschieht, wodurch die beiden Komponenten der App verbunden werden, und es ihnen ermöglicht wird, zu kommunizieren. Durch das Hin-und-her-Senden von Intents können Bausteine komplexe Aktionen koordinieren. Dazu gehören beispielsweise der Start der Kamera-App zum Erstellen und Speichern, die Erfassung von Speicherortinformationen oder die Navigation von einem Bildschirm zum nächsten.
-
 
 ### <a name="androidmanifestxml"></a>AndroidManifest.XML
 
@@ -63,8 +56,7 @@ In der Version für einen Bildschirm der Phoneword-Anwendung wurden nur eine Akt
 
 Intents wurden für die Navigation zwischen den Bildschirmen verwendet. Es ist Zeit, sich diesen Code anzusehen, um herauszufinden, wie Intents arbeiten und ihrer Rolle in der Android-Navigation zu verstehen.
 
-
-### <a name="launching-a-second-activity-with-an-intent"></a>Starten einer zweiten Aktivität mit Intent
+### <a name="launching-a-second-activity-with-an-intent"></a>Starten einer zweiten Aktivität mit einer Absicht
 
 In der Phoneword-Anwendung wurde ein Intent verwendet, um einen zweiten Bildschirm (Aktivität) zu starten. Starten Sie mit dem Erstellen eines Intents, übergeben Sie den aktuellen *Kontext* (`this`, bezieht sich auf den aktuellen **Kontext**) und den Typ der Anwendungsbausteine, den Sie suchen (`TranslationHistoryActivity`):
 
@@ -84,7 +76,6 @@ translationHistoryButton.Click += (sender, e) =>
     StartActivity(intent);
 };
 ```
-
 
 ## <a name="additional-concepts-introduced-in-phoneword"></a>Zusätzliche in Phoneword eingeführte Konzepte
 
@@ -109,7 +100,6 @@ this.ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.Simple
 
 Listenansichten und Adapter sind nicht Gegenstand dieses Dokuments, aber sie werden sehr umfassend im Handbuch [ListViews and Adapters (ListViews und Adapter)](~/android/user-interface/layouts/list-view/index.md) behandelt.
 [Auffüllen von ListView mit Daten](~/android/user-interface/layouts/list-view/populating.md) behandelt insbesondere die integrierten `ListActivity`- und `ArrayAdapter`-Klassen zum Erstellen und Auffüllen einer `ListView` ohne die Definition eines benutzerdefinierten Layouts, wie im Beispiel Phoneword erfolgt.
-
 
 ## <a name="summary"></a>Zusammenfassung
 

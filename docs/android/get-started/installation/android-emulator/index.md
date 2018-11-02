@@ -4,15 +4,15 @@ description: Der Android-Emulator kann mit verschiedenen Konfigurationen ausgef�
 ms.prod: xamarin
 ms.assetid: 889963B7-F4DA-41D9-9B8D-B733BB71A329
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 06/22/2018
-ms.openlocfilehash: f281227ae6ee17548e9c4653d52c7ae6d2bfff2d
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+author: conceptdev
+ms.author: crdun
+ms.date: 08/27/2018
+ms.openlocfilehash: 6ce8f633cdc0fd4616673eb047d640a8703b3a30
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935034"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102528"
 ---
 # <a name="android-emulator-setup"></a>Setup von Android-Emulator
 
@@ -29,8 +29,7 @@ In den folgenden Abschnitten wird beschrieben, wie sich der Android-Emulator fü
 
 ### <a name="hardware-acceleration-for-emulator-performanceandroidget-startedinstallationandroid-emulatorhardware-accelerationmd"></a>[Hardwarebeschleunigung für verbesserte Leistung des Emulators](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
 
-In diesem Artikel wird beschrieben, wie Sie Ihren Computer auf die optimale Leistung des Android Emulators vorbereiten.
-Da der Android-Emulator ohne Hardwarebeschleunigung sehr langsam sein kann, wird empfohlen, dass Sie die Hardwarebeschleunigung auf Ihrem Computer aktivieren, bevor Sie den Emulator verwenden.
+In diesem Artikel wird beschrieben, wie Sie Ihren Computer für höchstmögliche Leistung des Android-Emulators mithilfe von entweder Hyper-V- oder HAXM-Virtualisierungstechnologie vorbereiten. Da der Android-Emulator ohne Hardwarebeschleunigung sehr langsam sein kann, wird empfohlen, dass Sie die Hardwarebeschleunigung auf Ihrem Computer aktivieren, bevor Sie den Emulator verwenden.
 
 ### <a name="managing-virtual-devices-with-the-android-device-managerandroidget-startedinstallationandroid-emulatordevice-managermd"></a>[Verwalten virtueller Geräte mit Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)
 

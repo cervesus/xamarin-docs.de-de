@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: c897b1f5fbdf950e6858d7b73ebed60049f60e8e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f051becad7b6ef329d57417214eb976589386970
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785556"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120943"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Arbeiten mit Funktionen in Xamarin.iOS
 
@@ -73,7 +73,7 @@ In diesem Abschnitt wird erläutert, wie Sie die automatische Bereitstellung von
 
 ## <a name="using-the-ide"></a>Verwenden von IDE
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Funktionen werden der Datei **Entitlements.plist** in Visual Studio für Mac hinzugefügt. Um Funktionen hinzuzufügen, führen Sie die folgenden Schritte aus:
 
@@ -93,7 +93,7 @@ Funktionen werden der Datei **Entitlements.plist** in Visual Studio für Mac hin
 
     ![Hinzufügen von Funktionen zur Datei „entitlements.plist“](images/image18.png)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Funktionen werden der Datei **Entitlements.plist** hinzugefügt. Um Funktionen in Visual Studio 2017 hinzuzufügen, führen Sie die folgenden Schritte aus:
 
@@ -206,12 +206,12 @@ Wenn eine Funktion auf der Serverseite aktiviert wurde, sind weitere Schritte er
 
 In der folgenden Liste werden einige der häufigsten Probleme aufgeführt, die zu Hindernissen bei der Entwicklung einer App mit einem aktivierten App-Dienst führen können:
 
--   Stellen Sie sicher, dass die richtige ID ordnungsgemäß erstellt und im Abschnitt **Zertifikate, Bezeichner und Profile** des Apple Developer Portal registriert wurde.
--   Stellen Sie sicher, dass der Dienst der App-ID (oder der Erweiterungs-ID) hinzugefügt wurde und dass er für die Verwendung der zuvor erstellten App-Gruppe/Händler-ID/Container unter **Zertifikate, Bezeichner und Profile** des Apple Developer Portal konfiguriert wurde.
--   Stellen Sie sicher, dass die Bereitstellungsprofile und App-IDs installiert wurden und dass die Datei **Info.plist** der App (im Xamarin-Projekt) eine der zuvor konfigurierten App-IDs verwendet.
--   Stellen Sie sicher, dass für die Datei **Entitlements.plist** der App (im Xamarin-Projekt) der richtige Dienst aktiviert wurde.
+-   Stellen Sie sicher, dass die richtige ID ordnungsgemäß erstellt und im Abschnitt  **Certificates, IDs & Profiles** (Zertifikate, Bezeichner und Profile) im Apple Developer Portal registriert wurde.
+-   Stellen Sie sicher, dass der Dienst der App-ID (oder der Erweiterungs-ID) hinzugefügt wurde und dass er für die Verwendung der zuvor erstellten App-Gruppe/Händler-ID/Container unter  **Certificates, IDs & Profiles**  (Zertifikate, Bezeichner und Profile) im Apple Developer Portal konfiguriert wurde.
+-   Stellen Sie sicher, dass die Bereitstellungsprofile und App-IDs installiert wurden und dass die Datei  **Info.plist**  der App (im Xamarin-Projekt) eine der zuvor konfigurierten App-IDs verwendet.
+-   Stellen Sie sicher, dass für die Datei  **Entitlements.plist**  der App (im Xamarin-Projekt) der richtige Dienst aktiviert wurde.
 -   Stellen Sie sicher, dass die Datenschutzschlüssel in der Datei „Info.plist“ entsprechend festgelegt sind.
--   Stellen Sie im Bereich **iOS-Bündelsignierung** der App sicher, dass **Benutzerdefinierte Berechtigungen** auf **Entitlements.plist** festgelegt ist. Hierbei handelt es sich _nicht_ um die Standardeinstellung für Debug- und iOS-Simulatorbuilds.
+-   Stellen Sie im Bereich  **iOS-Bundle-Signierung** der App sicher, dass  **Benutzerdefinierte Berechtigungen** auf **Entitlements.plist** festgelegt ist. Hierbei handelt es sich  _nicht_  um die Standardeinstellung für Debug- und iOS-Simulatorbuilds.
 
 <a name="summary" />
 

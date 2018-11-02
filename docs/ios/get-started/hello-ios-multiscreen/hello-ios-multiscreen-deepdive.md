@@ -5,24 +5,22 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: c866e5f4-8154-4342-876e-efa0693d66f5
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 12/02/2016
-ms.openlocfilehash: eaf77dd68895a3fbf677e1d0aa68125d81d709c1
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: d698cd1511e82116180a8af46891973f5f90343b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111224"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118967"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Ausführliche Erläuterungen: Hallo, iOS Multiscreen
 
 In der exemplarischen Vorgehensweise zum Schnellstart von Hallo, iOS Multiscreen haben Sie eine Xamarin.iOS-Multiscreen-Anwendung erstellt und ausgeführt. In dieser Anleitung erhalten Sie nun tiefere Einblicke in die Navigation und Architektur von iOS.
 
 In diesem Leitfaden wird das Muster *Modell – Ansicht – Controller* (Model, View, Controller; MVC) eingeführt und seine Rolle in der iOS-Architektur und -Navigation veranschaulicht.
-Außerdem wird der Navigationscontroller ausführlich beschrieben und seine Verwendung für ein vertrautes Navigationserlebnis in iOS erläutert.
-
-<a name="Model_View_Controller" />
+Außerdem wird der Navigationscontroller ausführlich beschrieben und seine Verwendung für eine unkomplizierte Navigation in iOS erläutert.
 
 ## <a name="model-view-controller-mvc"></a>Model View Controller-Muster (MVC)
 
@@ -70,34 +68,34 @@ In der Phoneword-Anwendung wurde ein Navigationscontroller zur Verwaltung der Na
 
 Der Navigationscontroller wird häufig in iOS-Anwendungen verwendet und stellt die Navigation für wesentliche iOS-Anwendungen bereit, wie z.B. für die App **Einstellungen**. Dies wird im folgenden Screenshot veranschaulicht:
 
- [![](hello-ios-multiscreen-deepdive-images/01.png "Der Navigationscontroller stellt die Navigation für iOS-Anwendungen wie die hier angezeigte App „Einstellungen“ bereit")](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
+ [![](hello-ios-multiscreen-deepdive-images/01.png "Der Navigationscontroller stellt die Navigation für iOS-Anwendungen wie die hier angezeigte App „Einstellungen“ bereit.")](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
 
 Der Navigationscontroller erfüllt drei Hauptaufgaben:
 
--  **Bereitstellen von Hooks für die Vorwärtsnavigation**: Der Navigationscontroller verwendet eine hierarchische Navigationsmetapher, bei der die Hierarchien der Inhaltsansicht auf einem *Navigationsstapel* *abgelegt* werden. Ein Navigationsstapel ähnelt einem Kartenstapel, von dem nur die oberste Karte, wie im folgenden Diagramm veranschaulicht, sichtbar ist:  
+-  **Bereitstellen von Hooks für die Vorwärtsnavigation**: Der Navigationscontroller verwendet eine hierarchische Navigationsmetapher, bei der die Hierarchien der Inhaltsansicht auf einen *Navigationsstapel* *gepusht* werden. Ein Navigationsstapel ähnelt einem Kartenstapel, von dem nur die oberste Karte, wie im folgenden Diagramm veranschaulicht, sichtbar ist:  
 
     [![](hello-ios-multiscreen-deepdive-images/02.png "Dieses Diagramm veranschaulicht die Navigation als Kartenstapel")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
 
--  **Bereitstellen einer optionalen Zurück-Schaltfläche**: Wird ein neues Element auf dem Navigationsstapel abgelegt, wird in der Titelleiste automatisch eine *Zurück-Schaltfläche* angezeigt, mit der der Benutzer rückwärts navigieren kann. Durch Drücken der Schaltfläche „Zurück“ wird der aktuelle Ansichtscontroller vom Navigationsstapel *zurückgeholt*, und es wird die vorherige Hierarchie der Inhaltsansicht im Fenster geladen:  
+-  **Bereitstellen einer optionalen Zurück-Schaltfläche**: Wird ein neues Element auf dem Navigationsstapel abgelegt, wird in der Titelleiste automatisch eine *Zurück-Schaltfläche* angezeigt, mit der der Benutzer rückwärts navigieren kann. Durch Drücken der Schaltfläche „Zurück“ wird der aktuelle Ansichtscontroller vom Navigationsstapel *per Pop entfernt*, und es wird die vorherige Hierarchie der Inhaltsansicht im Fenster geladen:  
 
     [![](hello-ios-multiscreen-deepdive-images/03.png "Dieses Diagramm veranschaulicht das „Herunternehmen“ einer Karte vom Stapel")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 
--  **Bereitstellen einer Titelleiste:** Der obere Teil des Navigationscontrollers wird *Titelleiste* genannt. Sie ist, wie im folgenden Diagramm dargestellt, für das Anzeigen des Titels des Ansichtscontrollers zuständig:  
+-  **Bereitstellen einer Titelleiste**: Der obere Teil des Navigationscontrollers wird *Titelleiste* genannt. Sie zeigt, wie im folgenden Diagramm dargestellt, den Titel des Ansichtscontroller an:  
 
-    [![](hello-ios-multiscreen-deepdive-images/04.png "Die Titelleiste ist für die Anzeige des Titels des Ansichtscontrollers zuständig")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
+    [![](hello-ios-multiscreen-deepdive-images/04.png "In der Titelleiste wird der Titel des Ansichtscontrollers angezeigt.")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
 ### <a name="root-view-controller"></a>Stammansichtscontroller
 
 Da ein Navigationscontroller keine Hierarchien der Inhaltsansicht verwaltet, kann er keine eigenen Inhalte anzeigen.
 Stattdessen wird ein Navigationscontroller einem *Stammansichtscontroller* zugeordnet:
 
- [![](hello-ios-multiscreen-deepdive-images/05.png "Ein Navigationscontroller ist einem Stammansichtscontroller zugeordnet")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
+ [![](hello-ios-multiscreen-deepdive-images/05.png "Ein Navigationscontroller ist einem Stammansichtscontroller zugeordnet.")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
 
 Der Stammansichtscontroller stellt den ersten Ansichtscontroller im Stapel des Navigationscontrollers dar. Die Hierarchie der Inhaltsansicht des Stammansichtscontrollers ist die erste Hierarchie der Inhaltsansicht, die im Fenster geladen wird. Wenn die vollständige Anwendung auf dem Stapel des Navigationscontrollers abgelegt werden soll, können Sie, wie schon zuvor in der Phoneword-Anwendung, den Sourceless Segue zum Navigationscontroller verschieben und den Ansichtscontroller des ersten Bildschirms als Stammansichtscontroller festlegen:
 
- [![](hello-ios-multiscreen-deepdive-images/06.png "„Sourceless Segue“ legt die ersten Ansichtscontrolleranzeigen als Stammansichtscontroller fest")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
+ [![](hello-ios-multiscreen-deepdive-images/06.png "„Sourceless Segue“ legt den Ansichtscontroller des ersten Bildschirms als Stammansichtscontroller fest")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
 
 ### <a name="additional-navigation-options"></a>Zusätzliche Navigationsoptionen
 
@@ -109,11 +107,11 @@ In der exemplarischen Vorgehensweise zu Phoneword wurde der Übergang zwischen z
 
 ### <a name="prepareforsegue"></a>PrepareForSegue
 
-Durch das Hinzufügen eines Segues mit einer **Anzeigen**-Aktion zum Storyboard wird iOS angewiesen, den zweiten Ansichtscontroller auf dem Stapel des Navigationscontrollers abzulegen:
+Durch das Hinzufügen eines Segues mit einer **Anzeigen**-Aktion zum Storyboard wird iOS angewiesen, den zweiten Ansichtscontroller auf den Stapel des Navigationscontrollers zu pushen:
 
  [![](hello-ios-multiscreen-deepdive-images/09.png "Segue-Typ aus einer Dropdownliste auswählen")](hello-ios-multiscreen-deepdive-images/09.png#lightbox)
 
-Für einen einfachen Übergang zwischen zwei Bildschirmen ist das Hinzufügen eines Segues zum Storyboard ausreichend. Wenn Daten zwischen Ansichtscontrollern übergeben werden sollen, müssen Sie die `PrepareForSegue`-Methode überschreiben und die Daten selbst verarbeiten:
+Für einen einfachen Übergang zwischen zwei Bildschirmen ist das Hinzufügen eines Segues zum Storyboard ausreichend. Wenn Daten zwischen Ansichtscontrollern übergeben werden sollen, müssen Sie die `PrepareForSegue`-Methode außer Kraft setzen und die Daten selbst verarbeiten:
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
@@ -124,7 +122,7 @@ public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
 ```
 
 Direkt vor dem Übergang wird `PrepareForSegue` von iOS aufgerufen und der im Storyboard erstellte Segue an die Methode übergeben.
-An dieser Stelle müssen Sie den Zielansichtscontroller des Segues manuell festlegen. Der folgende Code ruft ein Handle für den Zielansichtscontroller auf und wandelt ihn in die richtige Klasse um, in diesem Fall CallHistoryController:
+An dieser Stelle müssen Sie den Zielansichtscontroller des Segues manuell festlegen. Der folgende Code ruft ein Handle für den Zielansichtscontroller auf und wandelt ihn in die richtige Klasse um, in diesem Fall „CallHistoryController“:
 
 ```csharp
 CallHistoryController callHistoryContoller = segue.DestinationViewController as CallHistoryController;
@@ -154,7 +152,7 @@ public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
 ### <a name="navigation-without-segues"></a>Navigation ohne Segues
 
 Der Übergang vom ersten Ansichtscontroller zum zweiten funktioniert im Code genauso wie mit einem Segue, jedoch müssen verschiedene Schritte manuell durchgeführt werden.
-Verwenden Sie als Erstes den `this.NavigationController`, um einen Verweis auf den Navigationscontroller abzurufen, dessen Stapel aktuell ist. Verwenden Sie anschließend die `PushViewController`-Methode des Navigationscontrollers, um den nächsten Ansichtscontroller manuell auf dem Stapel abzulegen. Dabei werden der Ansichtscontroller und eine Option zur Animation des Übergangs (auf `true` festgelegt) übergeben.
+Verwenden Sie als Erstes `this.NavigationController`, um einen Verweis auf den Navigationscontroller abzurufen, dessen Stapel aktuell ist. Verwenden Sie anschließend die `PushViewController`-Methode des Navigationscontrollers, um den nächsten Ansichtscontroller manuell auf dem Stapel zu pushen. Dabei werden der Ansichtscontroller und eine Option zur Animation des Übergangs (auf `true` festgelegt) übergeben.
 
 Der folgende Code behandelt den Übergang zwischen Phoneword-Bildschirm und Anrufliste-Bildschirm:
 
@@ -191,10 +189,10 @@ CallHistoryButton.TouchUpInside += (object sender, EventArgs e) => {
 
 ## <a name="additional-concepts-introduced-in-phoneword"></a>Zusätzliche in Phoneword eingeführte Konzepte
 
-Die Phoneword-Anwendung enthält weitere Konzepte, die jedoch nicht in diesem Leitfaden behandelt werden. Diese Konzepte umfassen:
+Die Phoneword-Anwendung enthält weitere Konzepte, die jedoch nicht in diesem Leitfaden behandelt werden. Dies sind z.B. folgende Konzepte:
 
 -  **Automatisches Erstellen des Ansichtscontrollers**: Wenn Sie im **Eigenschaftenpad** einen Klassennamen für den Ansichtscontroller eingeben, wird vom iOS-Designer überprüft, ob diese Klasse vorhanden ist, und anschließend die Sicherungsklasse des Ansichtscontrollers generiert. Weitere Informationen zu dieser und anderen iOS-Designer-Funktionen finden Sie im Leitfaden [Introduction to the iOS Designer](~/ios/user-interface/designer/introduction.md) (Einführung in den iOS-Designer).
--  **Tabellenansichtscontroller**: Der `CallHistoryController` ist ein Tabellenansichtscontroller. Ein Tabellenansichtscontroller enthält eine Tabellenansicht, das häufigste Tool zum Anzeigen von Layout und Daten in iOS. Tabellen sind jedoch nicht Teil dieses Leitfadens. Weitere Informationen zu Tabellenansichtscontrollern finden Sie im Leitfaden [Working with Tables and Cells](~/ios/user-interface/controls/tables/index.md) (Arbeiten mit Tabellen und Zellen).
+-  **Tabellenansichtscontroller**: Der `CallHistoryController` ist ein Tabellenansichtscontroller. Ein Tabellenansichtscontroller enthält eine Tabellenansicht, das häufigste Tool zum Anzeigen von Layout und Daten in iOS. Tabellen sind jedoch nicht Teil dieses Leitfadens. Weitere Informationen zu Tabellenansichtscontrollern finden Sie im Leitfaden [Arbeiten mit Tabellen und Zellen](~/ios/user-interface/controls/tables/index.md).
 -   **Storyboard-ID**: Durch das Festlegen der Storyboard-ID wird eine Ansichtscontroller-Klasse in Objective-C erstellt, die den CodeBehind für den Ansichtscontroller im Storyboard enthält. Suchen Sie mit der Storyboard-ID die Objective-C-Klasse, und instanziieren Sie den Ansichtscontroller im Storyboard. Weitere Informationen zu Storyboard-IDs finden Sie im Leitfaden [Introduction to Storyboards](~/ios/user-interface/storyboards/index.md) (Einführung in Storyboards).
 
 ## <a name="summary"></a>Zusammenfassung

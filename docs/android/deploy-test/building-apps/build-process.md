@@ -3,15 +3,15 @@ title: Buildprozess
 ms.prod: xamarin
 ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2018
-ms.openlocfilehash: bf8dfb43115806f28935c6dec0ebd2d6d7bd2cdc
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 63e86ef89c8d736640e7677fee6147feacc87bdc
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998240"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108924"
 ---
 # <a name="build-process"></a>Buildprozess
 
@@ -327,7 +327,8 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
     Einige Beispiele: Wenn `abi` `armeabi` ist und `versionCode` im Manifest `123` ist, generiert `{abi}{versionCode}` einen versionCode von `1123`, wenn `$(AndroidCreatePackagePerAbi)` TRUE ist, andernfalls wird ein Wert von 123 generiert.
     Wenn `abi` `x86_64` ist und `versionCode` im Manifest `44` ist: Dies generiert `544`, wenn `$(AndroidCreatePackagePerAbi)` TRUE ist, andernfalls wird ein Wert von `44` generiert.
 
-    Wenn wir eine Formatzeichenfolge für Auffüllung links `{abi}{versionCode:0000}` einschließen, wird `50044` generiert, weil wir `versionCode` links mit `0` auffüllen. Alternativ können Sie z.B. die Dezimalauffüllung wie `{abi}{versionCode:D4}` verwenden, bei der das gleiche wie im vorherigen Beispiel geschieht.
+    Wenn wir eine Formatzeichenfolge für Auffüllung links `{abi}{versionCode:0000}` einschließen, wird `50044` generiert, weil wir `versionCode` links mit `0` auffüllen. Alternativ können Sie die Dezimalauffüllung verwenden, wie z.B. `{abi}{versionCode:D4}`,
+    die das gleiche wie im vorherigen Beispiel ausführt.
 
     Nur die Formatzeichenfolgen „0“ und „Dx“ für Auffüllung werden unterstützt, da der Wert eine ganze Zahl sein MUSS.
     

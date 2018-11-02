@@ -4,15 +4,15 @@ description: In diesem Leitfaden werden die Unterschiede zwischen einer System-A
 ms.prod: xamarin
 ms.assetid: 0113143B-7D8D-4C4C-B2F5-B966A2E7CE1F
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 94f2108a55cea520782aa5eac959195be09929b5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5a6f950ec7c9af0422beeb2d1af2be602fcaf947
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30767205"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113806"
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>Installieren von Xamarin.Android als System-App
 
@@ -52,7 +52,7 @@ Die folgenden Schritte beschreiben, wie eine Xamarin.Android-App als System-App 
 
 3. **Kopieren der SO-Dateien nach /system/lib**: Kopieren Sie **SO**-Dateien, die aus dem Android-Anwendungspaket im vorherigen Schritt kopiert wurden, in den **/system/lib/**-Ordner auf dem benutzerdefinierten ROM.
 
-4. **Kopieren der APK-Datei nach /system/app**: Der letzte Schritt ist, die APK-Datei in den **/system/app**-Ordner auf dem ROM zu kopieren.
+4. **Kopieren der APK-Datei nach /system/app** &ndash; Der letzte Schritt ist, die APK-Datei in den **/system/app**-Ordner auf dem ROM zu kopieren.
 
 
 ## <a name="summary"></a>Zusammenfassung

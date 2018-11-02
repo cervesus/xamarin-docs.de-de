@@ -4,15 +4,15 @@ description: In Visual Studio ist der SDK-Manager enthalten, mit dem Sie Tools, 
 ms.prod: xamarin
 ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: 55b6c10a9014b89534c37faeac2faf84f02339cd
-ms.sourcegitcommit: b6f3e55d4f3dcdc505abc8dc9241cff0bb5bd154
+ms.openlocfilehash: 6023bb4ebcc9d4adcd3408ca09bf9118d14351d4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43780536"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120813"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Einrichten des Android SDK für Xamarin.Android
 
@@ -28,7 +28,7 @@ In diesem Handbuch wird erklärt, wie Sie den Xamarin Android SDK-Manager in Vis
 
 Der Xamarin Android SDK-Manager (der als Teil der Workload **Mobile-Entwicklung mit.NET** installiert wird) unterstützt Sie beim Herunterladen der aktuellsten Komponenten, die Sie für die Entwicklung Ihrer Xamarin.Android-App benötigen. Er ersetzt den eigenständigen SDK-Manager von Google, der als veraltet markiert wurde.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -46,7 +46,7 @@ Der Xamarin Android SDK Manager benötigt auch das Java Development Kit (das aut
 
 -   Sie können weiterhin [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) verwenden, wenn Sie spezifisch für API-Ebene 23 oder früher entwickeln.
 
--   Wenn Sie Visual Studio 15.8, Vorschauversion 5 oder höher verwenden, können Sie auch die [Microsoft OpenJDK-Verteilung](openjdk.md) (derzeit in der Vorschauversion) anstelle von JDK 8 testen.
+-   Wenn Sie Visual Studio 15.8, Vorschauversion 5 oder höher, verwenden, können Sie auch die [Mobile OpenJDK-Distribution von Microsoft ](openjdk.md) (derzeit in der Vorschauversion) anstelle von JDK 8 testen.
 
 > [!IMPORTANT]
 > Xamarin.Android unterstützt JDK 9 nicht.
@@ -129,7 +129,7 @@ Wenn das Google-Repository ausgewählt wird, werden möglicherweise weitere Pake
 Wenn Sie wieder das unterstützte Repository der Plattformen und Tools aktivieren möchten, klicken Sie auf **Microsoft (empfohlen)**. Dadurch wird die Standardliste mit den Paketen und Tools wiederhergestellt.
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -143,7 +143,7 @@ Der Xamarin Android SDK Manager benötigt auch das Java Development Kit (das aut
 
 -   Sie können weiterhin [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) verwenden, wenn Sie spezifisch für API-Ebene 23 oder früher entwickeln.
 
--   Wenn Sie Visual Studio für Mac 7.7 oder höher verwenden, können Sie auch die [Microsoft OpenJDK-Verteilung](openjdk.md) (derzeit in der Vorschauversion) anstelle von JDK 8 testen.
+-   Wenn Sie Visual Studio für Mac 7.7 oder höher verwenden, können Sie auch die [Mobile OpenJDK-Distribution von Microsoft ](openjdk.md) (derzeit in der Vorschauversion) anstelle von JDK 8 testen.
 
 > [!IMPORTANT]
 > Xamarin.Android unterstützt JDK 9 nicht.

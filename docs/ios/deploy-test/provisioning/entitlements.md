@@ -4,15 +4,15 @@ description: Berechtigungen sind besondere App-Funktionen und Sicherheitsberecht
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 03/15/2017
-ms.openlocfilehash: 7e5ace306b580ba76986e89367de84e5bfd9cc40
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.date: 08/13/2018
+ms.openlocfilehash: 6e45f87b3c64abb9de22e09150935e3e5065fea4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785303"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103412"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Arbeiten mit Berechtigungen in Xamarin.iOS
 
@@ -20,25 +20,24 @@ _Berechtigungen sind besondere App-Funktionen und Sicherheitsberechtigungen, die
 
 In iOS werden Apps in einer _Sandbox_ ausgeführt, die einige Regeln bereitstellt, die den Zugriff zwischen Anwendungen und bestimmten Systemressourcen oder Benutzerdaten einschränken. _Berechtigungen_ werden verwendet, um eine Erweiterung der Sandbox vom System anzufordern, um Ihrer App zusätzliche Funktionen zu geben.
 
-Um die Funktionen Ihrer App zu erweitern, muss eine Berechtigung in der entitlements.plist-Datei Ihrer App gewährt werden. Nur bestimmte Funktionen können erweitert werden. Sie sind im Leitfaden [Working with Capabilities (Arbeit mit Funktionen)](~/ios/deploy-test/provisioning/capabilities/index.md) aufgelistet und werden [unten](#keyreference) beschrieben. Berechtigungen werden als Schlüssel-Wert-Paare an das System übergeben. Für gewöhnlich ist ein Paar pro Funktion erforderlich. Die spezifischen Schlüssel und Werte werden im Abschnitt [Referenz für Berechtigungsschlüssel](#keyreference) weiter unten in diesem Artikel beschrieben.
+Um die Funktionen Ihrer App zu erweitern, muss eine Berechtigung in der entitlements.plist-Datei Ihrer App gewährt werden. Nur bestimmte Funktionen können erweitert werden. Sie sind im Leitfaden [Working with Capabilities (Arbeit mit Funktionen)](~/ios/deploy-test/provisioning/capabilities/index.md) aufgelistet und werden [unten](#entitlement-key-reference) beschrieben. Berechtigungen werden als Schlüssel-Wert-Paare an das System übergeben. Für gewöhnlich ist ein Paar pro Funktion erforderlich. Die spezifischen Schlüssel und Werte werden im Abschnitt [Referenz für Berechtigungsschlüssel](#entitlement-key-reference) weiter unten in diesem Artikel beschrieben.
 Visual Studio für Mac und Visual Studio stellen über den Entitlements.plist-Editor eine unkomplizierte Benutzeroberfläche zum Hinzufügen von Berechtigungen zu einer Xamarin.iOS-App zur Verfügung.
 In diesem Artikel wird der entitlements.plist-Editor vorgestellt und beschrieben, wie Sie diesen verwenden können. Zudem wird eine Referenz für alle Berechtigungen zur Verfügung gestellt, die einem iOS-Projekt für jede Funktion hinzugefügt werden können.
 
 ## <a name="entitlements-and-provisioning"></a>Berechtigungen und Bereitstellung
 
-
-Die entitlements.plist-Datei wird verwendet, um Berechtigungen anzugeben und das Anwendungsbündel zu signieren.
+Die Entitlements.plist-Datei wird verwendet, um Berechtigungen anzugeben und das Anwendungsbündel zu signieren.
 
 Allerdings müssen einige zusätzliche Bereitstellungen getätigt werden, um sicherzustellen, dass die App ordnungsgemäß codesigniert wird. Das verwendete Bereitstellungsprofil muss eine App-ID enthalten, für die die erforderlichen Funktionen aktiviert sind. Informationen, wie Sie dies erreichen, finden Sie unter [Working with Capabilities (Arbeit mit Funktionen)](~/ios/deploy-test/provisioning/capabilities/index.md).
 
 > [!IMPORTANT]
 > Die Entitlements.plist-Datei hilft beim Ausfüllen der korrekten Eigenschaften für eine Anwendung mit Funktionen. Allerdings kann Sie kein Bereitstellungsprofil erstellen, da Sie nicht mit einem Apple-Entwicklerkonto verknüpft ist. Sie müssen trotzdem ein Bereitstellungsprofil im Entwicklerportal erstellen, um die Anwendung bereitzustellen und zu verteilen.
 
-## <a name="set-entitlements-in-a-xamarinios-project"></a>Festlegen von Berechtigungen im Xamarin.iOS-Projekt
+## <a name="set-entitlements-in-a-xamarinios-project"></a>Festlegen von Berechtigungen in einem Xamarin.iOS-Projekt
 
 Beim Definieren Ihrer App-ID müssen Sie zusätzlich zur Auswahl und Konfiguration der erforderlichen Anwendungsdienste die Berechtigungen im Xamarin.iOS-Projekt konfigurieren, indem Sie sowohl die **info.plist**- als auch die **entitlements.plist**-Datei konfigurieren.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Um die Berechtigungen in Visual Studio für Mac zu konfigurieren, gehen Sie folgendermaßen vor:
 
@@ -55,7 +54,7 @@ Um die Berechtigungen in Visual Studio für Mac zu konfigurieren, gehen Sie folg
 5. Die Berechtigungen für Ihre Xamarin.iOS-Anwendung müssen so ausgewählt und konfiguriert werden, dass sie mit den Einstellungen übereinstimmen, die Sie beim Erstellen der App-ID festgelegt haben.
 6. Speichern Sie die Änderungen an der **entitlements.plist**-Datei.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Um die Berechtigung in Visual Studio zu konfigurieren, führen Sie Folgendes aus:
 
@@ -74,10 +73,7 @@ Um die Berechtigung in Visual Studio zu konfigurieren, führen Sie Folgendes aus
 5. Die Berechtigungen für Ihre Xamarin.iOS-Anwendung müssen so ausgewählt und konfiguriert werden, dass sie mit den Einstellungen übereinstimmen, die Sie beim Erstellen der App-ID festgelegt haben.
 6. Speichern Sie die Änderungen an der **entitlements.plist**-Datei.
 
-
 -----
-
-<a name="add-new" />
 
 ## <a name="adding-a-new-entitlementsplist-file"></a>Hinzufügen einer neuen „entitlements.plist“-Datei
 
@@ -91,8 +87,6 @@ Um eine „entitlements.plist“-Datei in Ihrer Xamarin.iOS-Anwendung einzufüge
 2.  Klicken Sie im Dialogfeld „Neue Datei“ auf **iOS > Eigenschaftenliste**, und benennen Sie sie „Berechtigungen“:
 
     ![Dialogfeld „Neue Datei“](entitlements-images/image2.png)
-
-<a name="keyreference" />
 
 ## <a name="entitlement-key-reference"></a>Referenz zu Berechtigungsschlüsseln
 
@@ -150,7 +144,7 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
 ### <a name="push-notifications"></a>Pushbenachrichtigungen
 
 - **Schlüssel**: aps-environment
-- **Zeichenfolge**: `production` ODER `development`
+- **Zeichenfolge**: `development` oder `production`
 
 ### <a name="siri"></a>Siri
 
@@ -203,6 +197,12 @@ Berechtigungsschlüssel können über den Bereich „Quelle“ im „entitlement
 - **Beschreibung**: Konfiguration für drahtloses Zubehör ermöglicht Ihrer Anwendung die Konfiguration von MFi-WLAN-Zubehör.
     - **Schlüssel**: com.apple.external-accessory.wireless-configuration
     - **Boolescher Wert**: YES
+
+### <a name="classkit"></a>ClassKit
+
+- **Beschreibung**: ClassKit ermöglicht es Lehrkräften, den Fortschritt der Schüler und Studenten bei den zugewiesenen Aktivitäten in der App anzuzeigen.
+    - **Schlüssel**: com.apple.developer.ClassKit-environment
+    - **Zeichenfolge**: `development` oder `production`
 
 ## <a name="summary"></a>Zusammenfassung
 

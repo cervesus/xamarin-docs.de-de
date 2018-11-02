@@ -3,15 +3,15 @@ title: Ermitteln Ihrer Keystoresignatur
 ms.prod: xamarin
 ms.assetid: 1b511fec-e6f6-453e-89c8-810aafb02b77
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 46b43e6689f751c4fac1e8668234fce7f953521e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d32b2a20fee6b2bb007ee620e0ae4203e950bb98
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30764637"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112458"
 ---
 # <a name="finding-your-keystores-signature"></a>Ermitteln Ihrer Keystoresignatur
 
@@ -21,7 +21,7 @@ Die MD5- oder SHA1-Signatur einer Xamarin.Android-Anwendung hängt von der **KEY
 
 Xamarin.Android signiert alle Debugbuilds mit derselben **debug.keystore**-Datei. Diese Datei wird generiert, wenn Xamarin.Android zum ersten Mal installiert wird. Die unten aufgeführten Schritte beschreiben genauer, wie Sie die MD5- oder SHA1-Signatur der Standard-Xamarin.Android-Datei **debug.keystore** finden.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Machen Sie die Xamarin-Datei **debug.keystore** ausfindig, die zum Signieren der App verwendet wir. Standardmäßig befindet sich der Keystore, der zum Signieren von Debugversionen einer Xamarin.Android-Anwendung verwendet wird, an folgendem Speicherort:
 
@@ -60,7 +60,7 @@ Certificate fingerprints:
 ```
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Machen Sie die Xamarin-Datei **debug.keystore** ausfindig, die zum Signieren der App verwendet wir. Standardmäßig befindet sich der Keystore, der zum Signieren von Debugversionen einer Xamarin.Android-Anwendung verwendet wird, an folgendem Speicherort:
 
@@ -114,20 +114,20 @@ KeyIdentifier [
 
 Der Vorgang für Releasebuilds, die mit einer benutzerdefinierten **KEYSTORE**-Datei signiert werden, ist der gleiche wie oben. Dabei ersetzt die **KEYSTORE**-Releasedatei die Datei **debug.keystore**, die von Xamarin.Android verwendet wird. Für das Keystorekennwort und den Aliasnamen von der Erstellung der KEYSTORE-Releasedatei können Sie Ihre eigenen Werte eingeben.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Wenn Sie den Visual Studio-Assistenten **Verteilen** verwenden, um eine Xamarin.Android-Anwendung zu signieren, befindet sich der entstandene Keystore an folgendem Speicherort:
 
-**C:\\Benutzer\\*BENUTZERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\alias\\alias.keystore**
+**C:\\Benutzer\\*BENUTZERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\*alias*\\*alias*.keystore**
 
 Wenn Sie beispielsweise die Schritte in [Erstellen eines neuen Zertifikats](~/android/deploy-test/signing/index.md#newcertvs) durchgeführt haben, um einen neuen signierten Schlüssel zu erstellen, befindet sich der erstellte Keystore an folgendem Speicherort:
 
-**C:\\Benutzer\\*BENUTZERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\chimp\\chimp.keystore**
+**C:\\Benutzer\\*BENUTZERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\\chimp.keystore**
 
 Weitere Informationen zum Signieren einer Xamarin.Android-Anwendung finden Sie unter [Signing the Android Application Package (Signieren des Android-Anwendungspakets)](~/android/deploy-test/signing/index.md).
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Wenn der Visual Studio für Mac-Assistent **Signieren und Verteilen...** zum Signieren Ihrer App verwendet wird, befindet sich der entstandene Keystore an folgendem Speicherort:
 

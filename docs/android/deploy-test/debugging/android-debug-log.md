@@ -4,15 +4,15 @@ description: Erfahren Sie, wie Sie mit dem Debugprotokoll Xamarin.Android-Anwend
 ms.prod: xamarin
 ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 442606f456e6f42ee178cd93253883a1d9de52c4
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 8cf6c11675f0f3ddca0d5aea69e5e07160ef8454
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935216"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114781"
 ---
 # <a name="android-debug-log"></a>Android-Debugprotokoll
 
@@ -33,7 +33,7 @@ Das **Debugprotokoll** zeigt keine Protokollmeldungen an, die generiert werden, 
 
 ## <a name="accessing-the-debug-log-from-visual-studio"></a>Zugreifen auf das Debugprotokoll von Visual Studio
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Klicken Sie auf das **Geräteprotokollsymbol (Logcat)**, um das **Debugprotokolltool** zu öffnen:
 
@@ -68,7 +68,7 @@ Wenn das **Debugprotokoll**-Toolfenster angezeigt wird, verwenden Sie das Pulldo
 Nachdem Sie das Gerät ausgewählt haben, fügt das **Geräteprotokoll** automatisch Protokolleinträge aus einer ausgeführten App hinzu. Diese Protokolleinträge werden in der Tabelle für Protokolleinträge angezeigt. Wenn Sie zwischen Geräten wechseln, wird die Geräteprotokollierung abgebrochen und erneut gestartet. Beachten Sie, dass ein Android-Projekt geladen werden muss, bevor Geräte in der Geräteauswahl angezeigt werden. Wenn das Gerät nicht in der Geräteauswahl angezeigt wird, sollten Sie überprüfen, ob es im Geräte-Dropdownmenü von Visual Studio neben der Schaltfläche **Start** verfügbar ist.
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Klicken Sie auf **Ansicht > Bereiche > Geräteprotokoll**, um das **Geräteprotokoll** zu öffnen.
 
@@ -107,7 +107,7 @@ Nachdem Sie das Gerät ausgewählt haben, fügt das **Geräteprotokoll** automat
 
 ## <a name="accessing-from-the-command-line"></a>Zugreifen über die Befehlszeile
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Eine weitere Möglichkeit für den Zugriff auf das Debugprotokoll stellt der Zugriff über die Befehlszeile dar. Öffnen Sie ein Eingabeaufforderungsfenster, und navigieren Sie zum Android SDK-Ordner „platform-tools“ (dieser befindet sich normalerweise unter **C:\\Programme (x86)\\Android\\android-sdk\\platform-tools**).
 
@@ -117,7 +117,7 @@ Wenn nur ein Gerät (physisches Gerät oder Emulator) angefügt ist, kann der Be
 $ adb logcat
 ```
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Eine weitere Möglichkeit für den Zugriff auf das Debugprotokoll stellt der Zugriff über die Befehlszeile dar. Öffnen Sie ein Terminalfenster, und navigieren Sie zum Android SDK-Ordner „platform-tools“ (dieser befindet sich normalerweise unter **/Benutzer/Benutzername/Library/Developer/Xamarin/android-sdk-macosx/platform-tools**).
 

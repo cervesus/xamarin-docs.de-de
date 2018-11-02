@@ -4,15 +4,15 @@ description: In diesem Leitfaden erfahren Sie, wie Sie Ihre Anwendungen zeitlich
 ms.prod: xamarin
 ms.assetid: 06FD3940-D666-4C9E-BC3E-BBE481EF8012
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 4145368281c2967bd1311389e5e1b1432af2c9b8
-ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
+ms.openlocfilehash: 602a530e1c185ffeda2c6ac80a96f7795cec4cae
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43780499"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104842"
 ---
 # <a name="ios-build-mechanics"></a>Abläufe beim Erstellen von iOS-Builds
 
@@ -27,7 +27,7 @@ Das Tempo von Xamarin-Builds kann auch durch verschiedene Kapazitäten und Fähi
 
 ## <a name="timing-apps"></a>Zeitsteuerung-Apps
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 So aktivieren Sie die Diagnoseausgabe von MSBuild in Visual Studio für Mac
 
@@ -40,7 +40,7 @@ So aktivieren Sie die Diagnoseausgabe von MSBuild in Visual Studio für Mac
 7. Zeigen Sie die Diagnoseausgabe im Bereich „Fehler“ (Ansicht > Bereiche > Fehler) an, indem Sie auf die Schaltfläche „Buildausgabe“ klicken.
 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 So aktivieren Sie die Diagnoseausgabe von MSBuild in Visual Studio
 
@@ -69,7 +69,7 @@ Total time: 1554 ms
 
 Die Xamarin-Tools funktionieren technisch auf jedem Mac, auf dem OS X 10.10 Yosemite oder höher ausgeführt werden kann. Allerdings können Entwicklererfahrungen und Buildzeiten durch die Leistung des Mac beeinträchtigt werden.
 
-Im getrennten Zustand führt Visual Studio unter Windows nur die C#-Kompilierungsphase durch und versucht nicht, eine Verknüpfung oder AOT-Kompilierung auszuführen, die Anwendung in ein _.app_-Bundle zu packen oder das App Bundle zu signieren. (Die C#-Kompilierungsphase ist selten ein Leistungsengpass.) Versuchen Sie herauszufinden, wo in der Pipeline der Build verlangsamt wird, indem Sie direkt auf dem Mac-Buildhost in Visual Studio für Mac einen Build erstellen.
+Im getrennten Zustand führt Visual Studio unter Windows nur die C#-Kompilierungsphase durch und versucht nicht, eine Verknüpfung oder AOT-Kompilierung auszuführen, die Anwendung in ein  _.app_ Bundle zu packen oder das App Bundle zu signieren. (Die C#-Kompilierungsphase ist selten ein Leistungsengpass.) Versuchen Sie herauszufinden, wo in der Pipeline der Build verlangsamt wird, indem Sie direkt auf dem Mac-Buildhost in Visual Studio für Mac einen Build erstellen.
 
 
 Darüber hinaus ist einer der häufigsten Gründe für Langsamkeit die Netzwerkverbindung zwischen dem Windows-Computer und dem Mac-Buildhost. Dies kann durch eine physische Einschränkung im Netzwerk, eine drahtlose Verbindung oder einen überlasteten Computer (z. B. einen Mac-in-the-Cloud-Dienst) verursacht werden.
@@ -131,7 +131,7 @@ Durch Minimieren der App-Größe verkürzt sich auch die Buildzeit. Das liegt da
   - Das Erstellen einer einzelnen Architektur (z. B. ARM64) erfolgt schneller als das einer FAT-Binärdatei (z. B. ARMv7 + ARM64).
   - Vermeiden Sie die Optimierung von PNG-Dateien beim Debuggen.
   - Erwägen Sie, alle Assemblys zu verknüpfen. Optimieren Sie jede Assembly. 
-  - Deaktivieren Sie die Erstellung von Debugsymbolen mit `--dsym=false`. Sie sollten sich jedoch im Klaren sein, dass das Deaktivieren dieser Option bedeutet, dass Absturzberichte nur auf dem Computer, auf dem die Anwendung erstellt wurde, durch Symbole dargestellt werden können, und nur dann, wenn aus der Anwendung kein nicht verwendeter Code entfernt wurde.
+  - Deaktivieren Sie die Erstellung von Debugsymbolen mit  `--dsym=false`. Sie sollten sich jedoch im Klaren sein, dass das Deaktivieren dieser Option bedeutet, dass Absturzberichte nur auf dem Computer, auf dem die Anwendung erstellt wurde, durch Symbole dargestellt werden können, und nur dann, wenn aus der Anwendung kein nicht verwendeter Code entfernt wurde.
 
  
 Die folgenden Dinge sollten vermieden werden:

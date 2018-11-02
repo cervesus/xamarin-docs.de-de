@@ -4,15 +4,15 @@ description: Um Funktionen zu einer Anwendung hinzuzufügen, ist oft eine zusät
 ms.prod: xamarin
 ms.assetid: 735CC916-16A4-471B-87F7-0535E24288D7
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: a3d2e6179dde1583e0fd4d175c46582bed9a2e07
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c7a2d347970d4edfe713edab264647fb644ff74a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785069"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112343"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Apple Pay-Funktionen in Xamarin.iOS
 
@@ -40,11 +40,11 @@ Eine Händler-ID wird verwendet, um Apple Pay wissen zu lassen, dass Sie Zahlung
 
 2.  Wählen Sie unter **Bezeichner** die **Händler-IDs** aus, und wählen Sie dann **+** aus, um eine neue Händler-ID zu erstellen:  
 
-3.  Füllen Sie das Formular, wie unten angegeben, mit einer neuen Beschreibung und einem Bezeichner aus. Durch die Beschreibung kann die ID von Ihnen identifiziert und später geändert werden. Der Bezeichner muss für Sie eindeutig sein, und er muss mit der Zeichenfolge `merchant` beginnen. Apple empfiehlt, dass der Bezeichner im folgenden Format dargestellt wird: `merchant.com.[Your-App-Name]`:
+3.  Füllen Sie das Formular, wie unten angegeben, mit einer neuen Beschreibung und einem Bezeichner aus. Durch die Beschreibung kann die ID von Ihnen identifiziert und später geändert werden. Der Bezeichner muss für Sie eindeutig sein, und er muss mit der Zeichenfolge  `merchant` beginnen. Apple empfiehlt, dass der Bezeichner im folgenden Format dargestellt wird: `merchant.com.[Your-App-Name]`:
    
     ![Details der neuen Händler-ID](apple-pay-capabilities-images/image58.png)
 
-4.  Bestätigen Sie die Details, und **Registrieren** Sie Ihre ID: 
+4.  Bestätigen Sie die Details, und  **Registrieren**  Sie Ihre ID: 
     
     ![Bestätigung der Händler-ID](apple-pay-capabilities-images/image59.png)
 
@@ -154,6 +154,6 @@ In der folgenden Liste werden mögliche weitere Schritte aufgeführt:
 
 * Verwenden des Framework-Namespaces in Ihrer App
 * Hinzufügen der erforderlichen Berechtigungen zu Ihrer App Informationen zu den erforderlichen Berechtigungen und wie sie hinzugefügt werden finden Sie im Leitfaden [Arbeiten mit Berechtigungen](~/ios/deploy-test/provisioning/entitlements.md).
-* Stellen Sie im Bereich **iOS-Bündelsignierung** der App sicher, dass **Benutzerdefinierte Berechtigungen** auf **Entitlements.plist** festgelegt ist. Hierbei handelt es sich _nicht_ um die Standardeinstellung für Debug- und iOS-Simulatorbuilds.
+* Stellen Sie im Bereich  **iOS-Bundle-Signierung** der App sicher, dass  **Benutzerdefinierte Berechtigungen** auf **Entitlements.plist** festgelegt ist. Hierbei handelt es sich  _nicht_  um die Standardeinstellung für Debug- und iOS-Simulatorbuilds.
 
 Wenn Probleme mit App-Diensten auftreten, konsultieren Sie den Abschnitt [Problembehandlung](~/ios/deploy-test/provisioning/capabilities/index.md) in der Hauptanleitung.

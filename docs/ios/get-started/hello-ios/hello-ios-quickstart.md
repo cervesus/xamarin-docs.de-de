@@ -1,19 +1,20 @@
 ---
 title: 'Schnellstart: Hallo, iOS'
 description: In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie eine einfache Xamarin.iOS-Anwendung namens „Hallo, iOS“ erstellen. Im Rahmen dessen werden die grundlegenden Tools und Konzepte eingeführt, die zum Erstellen von Xamarin.iOS-Anwendungen verstanden werden müssen.
+zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: D3868F3A-4EED-BDDF-45AA-665102C39634
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 05/02/2017
-ms.openlocfilehash: d9f5894f03bbfaa2145aec462dbd0ede7774354a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: 092b67ba13a3c8e5405b894929f6e00fb8b21240
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785985"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122659"
 ---
 # <a name="hello-ios--quickstart"></a>Schnellstart: Hallo, iOS
 
@@ -21,126 +22,116 @@ Dieses Handbuch beschreibt, wie Sie eine Anwendung erstellen, die eine vom Benut
 
  [![](hello-ios-quickstart-images/image1.png "Die Schnellstart-App „Hello.iOS“")](hello-ios-quickstart-images/image1.png#lightbox)
 
-<a name="Requirements" />
-
 ## <a name="requirements"></a>Anforderungen
 
 Die iOS-Entwicklung mit Xamarin erfordert:
 
--  Ein Mac mit macOS Sierra (10.12) oder höher
--  Die Installation der neuesten Version von Xcode und iOS SDK aus dem [App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
+- Ein Mac mit macOS High Sierra (10.13) oder höher
+- Die Installation der neuesten Version von Xcode und iOS SDK aus dem [App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+::: zone pivot="macos"
 
-Xamarin.iOS funktioniert mit den folgenden Setups:
+Xamarin.iOS funktioniert mit dem folgenden Setup:
 
--  Neueste Version von Visual Studio für Mac, die den oben aufgeführten Spezifikationen entspricht.
+- Neueste Version von Visual Studio für Mac, die den oben aufgeführten Spezifikationen entspricht.
 
 Im [Xamarin.iOS Mac Installation guide (Xamarin.iOS Mac-Installationsleitfaden)](~/ios/get-started/installation/mac.md) finden Sie ausführliche Installationsanweisungen.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone-end
+::: zone pivot="windows"
 
-Xamarin.iOS funktioniert mit den folgenden Setups:
+Xamarin.iOS funktioniert mit dem folgenden Setup:
 
--  Neueste Version von Visual Studio 2017 Community, Professional oder Enterprise unter Windows 7 oder höher, gekoppelt mit einem Mac-Buildhost, der den oben aufgeführten Spezifikationen entspricht.
+- Neueste Version von Visual Studio 2017 Community, Professional oder Enterprise unter Windows 10, gekoppelt mit einem Mac-Buildhost, der den oben aufgeführten Spezifikationen entspricht.
 
 Im [Xamarin.iOS Windows Installation guide (Xamarin.iOS Windows-Installationshandbuch)](~/ios/get-started/installation/windows/index.md) finden Sie ausführliche Installationsanweisungen.
 
------
+::: zone-end
 
 Bevor Sie starten, laden Sie den [Xamarin App-Symbolsatz](https://github.com/xamarin/ios-samples/blob/master/Hello_iOS/Resources/XamarinAppIconsandLaunchImages.zip?raw=true) herunter.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+::: zone pivot="macos"
 
 ## <a name="visual-studio-for-mac-walkthrough"></a>Exemplarische Vorgehensweise für Visual Studio für Mac
 
 In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung namens Phoneword erstellen, die eine alphanumerische Telefonnummer in eine numerische Telefonnummer übersetzt.
 
-1. Starten Sie Visual Studio für Mac aus dem Ordner **Anwendungen** oder aus **Spotlight**, um den Startbildschirm zu öffnen:
+1. Starten Sie Visual Studio für Mac im Ordner **Anwendungen** oder aus **Spotlight**:
 
-  ![](hello-ios-quickstart-images/image2new.png "Der Startbildschirm")
+    ![](hello-ios-quickstart-images/image2new.png "Der Startbildschirm")
 
-Klicken Sie auf dem Startbildschirm auf **Neues Projekt...**, um eine neue Xamarin.iOS-Projektmappe zu erstellen:
+    Klicken Sie auf dem Startbildschirm auf **Neues Projekt...**, um eine neue Xamarin.iOS-Projektmappe zu erstellen:
 
-![](hello-ios-quickstart-images/image3new.png "iOS-Lösung")
+    ![](hello-ios-quickstart-images/image3new.png "iOS-Lösung")
 
 2. Im **Dialogfeld „Neue Projektmappe“**, wählen Sie die Vorlage **iOS > App > Single View Application** (iOS > App > Einzelansicht) aus, um sicherzustellen, dass C# ausgewählt ist. Klicken Sie auf **Weiter**:
 
-  ![](hello-ios-quickstart-images/image4new.png "Einzelansicht-App wählen")
+    ![](hello-ios-quickstart-images/image4new.png "Einzelansicht-App wählen")
 
 3. Konfigurieren Sie die App. Geben Sie ihr den **Namen** `Phoneword_iOS`, und lassen Sie alles andere in der Standardeinstellung. Klicken Sie auf **Weiter**:
 
-  ![](hello-ios-quickstart-images/image5new.png "Geben Sie den Namen der App ein")
+    ![](hello-ios-quickstart-images/image5new.png "Geben Sie den Namen der App ein")
 
 4. Behalten Sie den Projekt- und den Projektmappennamen bei. Wählen Sie hier den Speicherort des Projekts, oder behalten sie ihn standardmäßig:
 
-  ![](hello-ios-quickstart-images/image6new.png "Wählen Sie den Speicherort des Projekts")
+    ![](hello-ios-quickstart-images/image6new.png "Wählen Sie den Speicherort des Projekts")
 
 5. Klicken Sie auf **Erstellen**, um die **Projektmappe** zu erstellen.
 
 6. Öffnen Sie die **Main.storyboard**-Datei durch Doppelklicken auf diese im **Projektmappenpad**. Dies bietet Ihnen die Möglichkeit, eine Benutzeroberfläche visuell zu erstellen:
 
-  ![](hello-ios-quickstart-images/image7new.png "Der iOS-Designer")
+    ![](hello-ios-quickstart-images/image7new.png "Der iOS-Designer")
 
-  Beachten Sie, dass die _Größenklassen_ standardmäßig aktiviert sind. Weitere Informationen zu diesen Größenklassen finden Sie im [Unified Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md)-Handbuch.
+    Beachten Sie, dass die _Größenklassen_ standardmäßig aktiviert sind. Weitere Informationen zu diesen Größenklassen finden Sie im [Unified Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md)-Handbuch.
 
 8. Geben Sie im **Pad „Toolbox“** „Bezeichnung“ in die Suchleiste ein, und ziehen Sie eine **Bezeichnung** auf die Entwurfsoberfläche (der Bereich in der Mitte):
 
-  ![](hello-ios-quickstart-images/image8new.png "Ziehen Sie eine Bezeichnung auf die Entwurfsoberfläche, den Bereich in der Mitte")
+    ![](hello-ios-quickstart-images/image8new.png "Ziehen Sie eine Bezeichnung auf die Entwurfsoberfläche, den Bereich in der Mitte")
 
-  > [!NOTE]
-  > Sie können das **Eigenschaftenpad** oder die **Toolbox** jederzeit durch Navigieren zu **Ansicht > Bereiche** öffnen.
+    > [!NOTE]
+    > Sie können das **Eigenschaftenpad** oder die **Toolbox** jederzeit durch Navigieren zu **Ansicht > Bereiche** öffnen.
 
 9. Ziehen Sie die Ziehpunkte der *Dragging Controls* (Ziehsteuerelemente) (die Kreise, um das Steuerelement herum), und verbreitern Sie die Bezeichnung:
 
-  ![](hello-ios-quickstart-images/image9.png "Verbreitern Sie die Bezeichnung")
-
+    ![](hello-ios-quickstart-images/image9.png "Verbreitern Sie die Bezeichnung")
 
 10. Nachdem Sie die **Bezeichnung** auf der Entwurfsoberfläche ausgewählt haben, verwenden Sie das **Eigenschaftenpad**, um die **Text**-Eigenschaft von der **Bezeichnung** in „Enter a Phoneword:“ (Phoneword eingeben) zu ändern.
 
-  ![](hello-ios-quickstart-images/image10.png "Legen Sie die Bezeichnung auf „Phoneword eingeben“ fest")
+    ![](hello-ios-quickstart-images/image10.png "Legen Sie die Bezeichnung auf „Phoneword eingeben“ fest")
 
 11. Suchen Sie nach „Textfeld“ in der Toolbox, und ziehen Sie ein **Textfeld** aus der **Toolbox** auf die Entwurfsoberfläche, und platzieren Sie es unter der **Bezeichnung**. Passen Sie die Breite so an, bis die Breite des **Textfelds** mit jener der **Bezeichnung** identisch ist:
 
-  ![](hello-ios-quickstart-images/image12new.png "Legen Sie für das Textfeld und die Bezeichnung die gleiche Breite fest")
-
+    ![](hello-ios-quickstart-images/image12new.png "Legen Sie für das Textfeld und die Bezeichnung die gleiche Breite fest")
 
 12. Nachdem Sie das **Textfeld** auf der Entwurfsoberfläche ausgewählt haben, ändern Sie die **Name**-Eigenschaft des **Textfelds** im Identitätsabschnitt des **Eigenschaftenpads** in `PhoneNumberText`, und ändern Sie die **Text**-Eigenschaft in „1-855-XAMARIN“:
 
-  ![](hello-ios-quickstart-images/image13new.png "Ändern Sie die Eigenschaft „Titel“ in 1-855-XAMARIN")
-
+    ![](hello-ios-quickstart-images/image13new.png "Ändern Sie die Eigenschaft „Titel“ in 1-855-XAMARIN")
 
 13. Ziehen Sie aus der **Toolbox** eine **Schaltfläche** auf die Entwurfsoberfläche, und platzieren Sie diese unterhalb des **Textfelds**: Passen Sie die Breite so an, bis die Breite der **Schaltfläche** mit dem **Textfeld** und der **Bezeichnung** identisch ist:
 
-  ![](hello-ios-quickstart-images/image14new.png "Passen Sie die Breite so an, dass die Schaltfläche, das Textfeld und die Bezeichnung gleich breit sind")
-
+    ![](hello-ios-quickstart-images/image14new.png "Passen Sie die Breite so an, dass die Schaltfläche, das Textfeld und die Bezeichnung gleich breit sind")
 
 14. Nachdem Sie die **Schaltfläche** auf der Entwurfsoberfläche ausgewählt haben, ändern Sie die **Name**-Eigenschaft im **Identitäts**-Teil des **Eigenschaftenpad** in `TranslateButton`. Ändern Sie die **Titel**-Eigenschaft in „Übersetzen“:
 
-  ![](hello-ios-quickstart-images/image15new.png "Ändern Sie die Eigenschaft „Titel“ in „Übersetzen“")
-
+    ![](hello-ios-quickstart-images/image15new.png "Ändern Sie die Eigenschaft „Titel“ in „Übersetzen“")
 
 15. Wiederholen Sie die beiden obigen Schritte, und ziehen Sie eine **Schaltfläche** aus der **Toolbox** auf die Entwurfsoberfläche, und platzieren Sie diese unterhalb der ersten **Schaltfläche**. Passen Sie die Breite solange an, bis die Breite der **Schaltfläche** jener der ersten **Schaltfläche** entspricht:
 
-  ![](hello-ios-quickstart-images/image16new.png "Passen Sie die Breite so an, dass die Schaltfläche genauso breit wie die erste Schaltfläche ist")
-
+    ![](hello-ios-quickstart-images/image16new.png "Passen Sie die Breite so an, dass die Schaltfläche genauso breit wie die erste Schaltfläche ist")
 
 16. Nachdem Sie die zweite **Schaltfläche** auf der Entwurfsoberfläche ausgewählt haben, ändern Sie die **Name**-Eigenschaft im **Identitäts**-Teil des **Eigenschaftenpad** in `CallButton`. Ändern Sie die **Titel**-Eigenschaft in „Aufruf“:
 
-  ![](hello-ios-quickstart-images/image17new.png "Ändern Sie die Eigenschaft „Titel“ in „Anrufen“")
+    ![](hello-ios-quickstart-images/image17new.png "Ändern Sie die Eigenschaft „Titel“ in „Anrufen“")
 
-  Speichern Sie die Änderungen durch Navigieren zu **Datei > Speichern** oder durch Drücken von **⌘+S**.
-
+    Speichern Sie die Änderungen durch Navigieren zu **Datei > Speichern** oder durch Drücken von **⌘+S**.
 
 17. Der App muss für die Übersetzung von Telefonnummern von alphanumerisch in numerisch eine Logik hinzugefügt werden. Fügen Sie dem Projekt eine neue Datei hinzu, indem Sie mit der rechten Maustaste auf das **Phoneword_iOS**-Projekt im **Projektmappenpad** klicken und **Hinzufügen > Neue Datei...** auswählen oder **⌘+N** drücken:
 
-  ![](hello-ios-quickstart-images/image18.png "Fügen Sie dem Projekt eine neue Datei hinzu")
-
+    ![](hello-ios-quickstart-images/image18.png "Fügen Sie dem Projekt eine neue Datei hinzu")
 
 18. Wählen Sie im **Neue Datei**-Dialogfeld **Allgemein > Leere Klasse** aus, und geben Sie der neuen Datei den Namen `PhoneTranslator`:
 
-  ![](hello-ios-quickstart-images/image19.png "Wählen Sie „Leere Klasse“, und geben Sie der neuen Datei den Namen „PhoneTranslator“")
-
+    ![](hello-ios-quickstart-images/image19.png "Wählen Sie „Leere Klasse“, und geben Sie der neuen Datei den Namen „PhoneTranslator“")
 
 19. Dadurch wird eine neue, leere C#-Klasse für uns erstellt. Entfernen Sie den gesamten Vorlagencode, und ersetzen Sie Ihn durch den Folgenden:
 
@@ -210,8 +201,7 @@ Klicken Sie auf dem Startbildschirm auf **Neues Projekt...**, um eine neue Xamar
 
 20. Fügen Sie Code hinzu, um die Benutzeroberfläche zu verknüpfen. Doppelklicken Sie dazu auf **ViewController.cs** im **Projektmappenpad**, um ihn zu öffnen:
 
-  ![](hello-ios-quickstart-images/image20new.png "Fügen Sie Code hinzu, um die Benutzeroberfläche zu verknüpfen")
-
+    ![](hello-ios-quickstart-images/image20new.png "Fügen Sie Code hinzu, um die Benutzeroberfläche zu verknüpfen")
 
 21. Verknüpfen Sie zunächst die `TranslateButton`. Wählen Sie in der **Ansichtskontrolle**-Klasse die `ViewDidLoad`-Methode aus, und fügen Sie den folgenden Code unter dem `base.ViewDidLoad()`-Aufruf hinzu:
 
@@ -256,29 +246,29 @@ Klicken Sie auf dem Startbildschirm auf **Neues Projekt...**, um eine neue Xamar
         };
     ```
 
-
 23. Speichern Sie die Änderungen, und erstellen Sie anschließend die Anwendung, indem Sie **Erstellen > Alle erstellen** auswählen oder **⌘+B** drücken.  Wenn die Anwendung kompiliert wird, wird eine Erfolgsmeldung oberhalb der IDE angezeigt:
 
-  ![](hello-ios-quickstart-images/image21.png "Eine Erfolgsmeldung wird oberhalb der IDE angezeigt")
+    ![](hello-ios-quickstart-images/image21.png "Eine Erfolgsmeldung wird oberhalb der IDE angezeigt")
 
-  Wenn Fehler auftreten, wiederholen Sie die vorherigen Schritte, und beheben Sie alle Fehler, bis die Anwendung erfolgreich erstellt wird.
+    Wenn Fehler auftreten, wiederholen Sie die vorherigen Schritte, und beheben Sie alle Fehler, bis die Anwendung erfolgreich erstellt wird.
 
-27. Testen Sie schließlich die Anwendung im **iOS-Simulator**. Wählen Sie oben links in der IDE **Debuggen** aus der ersten Dropdownliste und **iPhone 8 Plus iOS x.x** aus der zweiten Dropdownliste aus, und drücken Sie **Starten** (die dreieckige Schaltfläche, die einer Wiedergabeschaltfläche ähnelt):
+27. Testen Sie schließlich die Anwendung im **iOS-Simulator**. Wählen Sie oben links in der IDE **Debuggen** aus der ersten Dropdownliste und **iPhone XR iOS 12.0** (oder einen anderen verfügbaren Simulator) aus der zweiten Dropdownliste aus, und drücken Sie **Starten** (die dreieckige Schaltfläche, die einer Wiedergabeschaltfläche ähnelt):
 
-  ![](hello-ios-quickstart-images/image27new.png "Klicken Sie auf „Start“")
+    ![](hello-ios-quickstart-images/image27.png "Auswählen eines Simulators und Drücken auf „Starten“")
 
-  > [!NOTE]
-  > Aktuell kann es aufgrund einer Anforderung von Apple erforderlich sein, ein Entwicklungszertifikat oder eine *Signierungsidentität* zu besitzen, um Code für ein Gerät oder den Simulator zu erstellen. Führen Sie dazu die Schritte im Handbuch [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) aus.
+    > [!NOTE]
+    > Aktuell kann es aufgrund einer Anforderung von Apple erforderlich sein, ein Entwicklungszertifikat oder eine *Signierungsidentität* zu besitzen, um Code für ein Gerät oder den Simulator zu erstellen. Führen Sie dazu die Schritte im Handbuch [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) aus.
 
 28. Damit wird die Anwendung im iOS-Simulator gestartet.
 
-  ![](hello-ios-quickstart-images/image28.png "Die im iOS-Simulator ausgeführte Anwendung")
+    ![](hello-ios-quickstart-images/image28.png "Die im iOS-Simulator ausgeführte Anwendung")
 
-  Telefonanrufe werden im iOS-Simulator nicht unterstützt. Stattdessen wird beim Versuch, einen Anruf zu tätigen, ein Warnhinweis angezeigt:
+    Telefonanrufe werden im iOS-Simulator nicht unterstützt. Stattdessen wird beim Versuch, einen Anruf zu tätigen, ein Warnhinweis angezeigt:
 
-  ![](hello-ios-quickstart-images/image29.png "Das Dialogfeld „Warnung“ beim Versuch, einen Anruf zu tätigen")
+    ![](hello-ios-quickstart-images/image29.png "Das Dialogfeld „Warnung“ beim Versuch, einen Anruf zu tätigen")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone-end
+::: zone pivot="windows"
 
 ## <a name="visual-studio-walkthrough"></a>Visual Studio: Exemplarische Vorgehensweise
 
@@ -291,15 +281,15 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung 
 
 1. Starten Sie Visual Studio im **Start**-Menü:
 
-  ![](hello-ios-quickstart-images/image001-.png "Der Startbildschirm")
+    ![](hello-ios-quickstart-images/image001-.png "Der Startbildschirm")
 
-  Erstellen Sie eine neue Xamarin.iOS-Projektmappe, indem Sie **Datei > Neu > Projekt... > Visual C# > iPhone & iPad > iOS-App (Xamari)** auswählen:
+    Erstellen Sie eine neue Xamarin.iOS-Projektmappe, indem Sie **Datei > Neu > Projekt... > Visual C# > iPhone & iPad > iOS-App (Xamari)** auswählen:
 
-  ![Wählen Sie den iOS-App (Xamarin)-Projekttyp aus](hello-ios-quickstart-images/image002.w157.png "Wählen Sie den iOS-App (Xamarin)-Projekttyp aus")
+    ![Wählen Sie den iOS-App (Xamarin)-Projekttyp aus](hello-ios-quickstart-images/image002.w157.png "Wählen Sie den iOS-App (Xamarin)-Projekttyp aus")
 
-  Wählen Sie im nächsten Dialogfeld die Vorlage **Einzelansicht-App** aus, und drücken Sie **OK**, um das Projekt zu erstellen:
+    Wählen Sie im nächsten Dialogfeld die Vorlage **Einzelansicht-App** aus, und drücken Sie **OK**, um das Projekt zu erstellen:
 
-  ![Wählen Sie die Einzelansicht-Projektvorlage aus](hello-ios-quickstart-images/image002-2.w157.png "Wählen Sie die Einzelansicht-Projektvorlage aus")
+    ![Wählen Sie die Einzelansicht-Projektvorlage aus](hello-ios-quickstart-images/image002-2.w157.png "Wählen Sie die Einzelansicht-Projektvorlage aus")
 
 1. Vergewissern Sie sich, dass das Xamarin Mac Agent-Symbol auf der Symbolleiste grün ist.
 
@@ -309,65 +299,60 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung 
 
 1. Öffnen Sie die **Main.storyboard**-Datei im iOS Designer durch Doppelklicken auf diese im **Projektmappen-Explorer**:
 
-  ![](hello-ios-quickstart-images/vs-image7.png "Der iOS-Designer")
+    ![](hello-ios-quickstart-images/vs-image7.png "Der iOS-Designer")
 
 1. Öffnen Sie die **Toolbox**-Registerkarte, geben Sie „Bezeichnung“ in die Suchleiste ein, und ziehen Sie eine **Bezeichnung** auf die Entwurfsoberfläche (der Bereich in der Mitte):
 
-  ![](hello-ios-quickstart-images/vs-image8.png "Ziehen Sie eine Bezeichnung auf die Entwurfsoberfläche, den Bereich in der Mitte")
+    ![](hello-ios-quickstart-images/vs-image8.png "Ziehen Sie eine Bezeichnung auf die Entwurfsoberfläche, den Bereich in der Mitte")
 
 1. Ziehen Sie dann die Ziehpunkte der *Dragging Controls* (Ziehsteuerelemente), und verbreitern Sie die Bezeichnung:
 
-  ![](hello-ios-quickstart-images/vs-image9.png "Verbreitern Sie die Bezeichnung")
+    ![](hello-ios-quickstart-images/vs-image9.png "Verbreitern Sie die Bezeichnung")
 
 1. Nachdem Sie die **Bezeichnung** auf der Entwurfsoberfläche ausgewählt haben, verwenden Sie das **Eigenschaftenfenster**, um die **Text**-Eigenschaft von der **Bezeichnung** in „Enter a Phoneword:“ (Phoneword eingeben) zu ändern.
 
-  ![](hello-ios-quickstart-images/vs-image10.png "Ändern Sie die Eigenschaft „Text“ der Bezeichnung in „Phoneword eingeben“")
+    ![](hello-ios-quickstart-images/vs-image10.png "Ändern Sie die Eigenschaft „Text“ der Bezeichnung in „Phoneword eingeben“")
 
-  > [!NOTE]
-  > Sie können die **Eigenschaften** oder die **Toolbox** jederzeit durch Navigieren zum Menü **Ansicht** nutzen.
+    > [!NOTE]
+    > Sie können die **Eigenschaften** oder die **Toolbox** jederzeit durch Navigieren zum Menü **Ansicht** nutzen.
 
 1. Suchen Sie nach „Textfeld“ in der Toolbox, und ziehen Sie ein **Textfeld** aus der **Toolbox** auf die Entwurfsoberfläche, und platzieren Sie es unter der **Bezeichnung**. Passen Sie die Breite so an, bis die Breite des **Textfelds** mit jener der **Bezeichnung** identisch ist:
 
-  ![](hello-ios-quickstart-images/vs-image12.png "Passen Sie die Breite so an, dass Textfeld und Bezeichnung gleich breit sind")
+    ![](hello-ios-quickstart-images/vs-image12.png "Passen Sie die Breite so an, dass Textfeld und Bezeichnung gleich breit sind")
 
 10. Nachdem Sie das **Textfeld** auf der Entwurfsoberfläche ausgewählt haben, ändern Sie die **Name**-Eigenschaft des **Textfelds** im Identitätsabschnitt der **Eigenschaften** in `PhoneNumberText`, und ändern Sie die **Text**-Eigenschaft in „1-855-XAMARIN“:
 
-  ![](hello-ios-quickstart-images/vs-image13.png "Ändern Sie die Eigenschaft „Text“ in „1-855-XAMARIN“")
-
+    ![](hello-ios-quickstart-images/vs-image13.png "Ändern Sie die Eigenschaft „Text“ in „1-855-XAMARIN“")
 
 11. Ziehen Sie aus der **Toolbox** eine **Schaltfläche** auf die Entwurfsoberfläche, und platzieren Sie diese unterhalb des **Textfelds**: Passen Sie die Breite so an, bis die Breite der **Schaltfläche** mit dem **Textfeld** und der **Bezeichnung** identisch ist:
 
-  ![](hello-ios-quickstart-images/vs-image14.png "Passen Sie die Breite so an, dass die Schaltfläche, das Textfeld und die Bezeichnung gleich breit sind")
+    ![](hello-ios-quickstart-images/vs-image14.png "Passen Sie die Breite so an, dass die Schaltfläche, das Textfeld und die Bezeichnung gleich breit sind")
 
 
 12. Nachdem Sie die **Schaltfläche** auf der Entwurfsoberfläche ausgewählt haben, ändern Sie die **Name**-Eigenschaft im **Identitäts**-Teil der **Eigenschaften** in `TranslateButton`. Ändern Sie die **Titel**-Eigenschaft in „Übersetzen“:
 
-  ![](hello-ios-quickstart-images/vs-image15.png "Ändern Sie die Eigenschaft „Titel“ in „Übersetzen“")
-
+    ![](hello-ios-quickstart-images/vs-image15.png "Ändern Sie die Eigenschaft „Titel“ in „Übersetzen“")
 
 13. Wiederholen Sie die beiden obigen Schritte, und ziehen Sie eine **Schaltfläche** aus der **Toolbox** auf die Entwurfsoberfläche, und platzieren Sie diese unterhalb der ersten **Schaltfläche**. Passen Sie die Breite solange an, bis die Breite der **Schaltfläche** jener der ersten **Schaltfläche** entspricht:
 
-  ![](hello-ios-quickstart-images/vs-image16.png "Passen Sie die Breite so an, dass die Schaltfläche genauso breit wie die erste Schaltfläche ist")
-
+    ![](hello-ios-quickstart-images/vs-image16.png "Passen Sie die Breite so an, dass die Schaltfläche genauso breit wie die erste Schaltfläche ist")
 
 14. Nachdem Sie die zweite **Schaltfläche** auf der Entwurfsoberfläche ausgewählt haben, ändern Sie die **Name**-Eigenschaft im **Identitäts**-Teil der **Eigenschaften** in `CallButton`. Ändern Sie die **Titel**-Eigenschaft in „Aufruf“:
 
-  ![](hello-ios-quickstart-images/vs-image17.png "Ändern Sie die Eigenschaft „Titel“ in „Anrufen“")
+    ![](hello-ios-quickstart-images/vs-image17.png "Ändern Sie die Eigenschaft „Titel“ in „Anrufen“")
 
-  Speichern Sie die Änderungen durch Navigieren zu **Datei > Alle speichern** oder durch Drücken von **STRG+S**.
+    Speichern Sie die Änderungen durch Navigieren zu **Datei > Alle speichern** oder durch Drücken von **STRG+S**.
 
 15. Fügen Sie Code hinzu, um alphanumerische Telefonnummern in numerische Telefonnummern zu übersetzen. Dazu fügen Sie dem Projekt eine neue Datei hinzu, indem Sie mit der rechten Maustaste auf das **Phoneword**-Projekt im **Projektmappen-Explorer** klicken und **Hinzufügen > Neue Datei...** auswählen oder **Ctrl + Shift + A** drücken:
 
-  ![](hello-ios-quickstart-images/vs-image18.png "Fügen Sie Code hinzu, um alphanumerische Telefonnummern in numerische Telefonnummern zu übersetzen")
-
+    ![](hello-ios-quickstart-images/vs-image18.png "Fügen Sie Code hinzu, um alphanumerische Telefonnummern in numerische Telefonnummern zu übersetzen")
 
 16. Wählen Sie im Dialogfeld **Neues Element hinzufügen** (mit der rechten Maustaste auf das Projekt klicken und „Hinzufügen > Neues Element...“ auswählen) die Option **Apple > Klasse** aus, und nennen Sie die neue Datei `PhoneTranslator`:
 
-  ![](hello-ios-quickstart-images/vs-image19.w157.png "Fügen Sie eine neue Klasse mit dem Namen „PhoneTranslator“ hinzu")
+    ![](hello-ios-quickstart-images/vs-image19.w157.png "Fügen Sie eine neue Klasse mit dem Namen „PhoneTranslator“ hinzu")
 
-  > [!IMPORTANT]
-  > Stellen Sie sicher, dass Sie die Vorlage „Klasse“ auswählen, die ein C# im Symbol enthält. Andernfalls können Sie nicht auf diese neue Klasse verweisen.
-
+    > [!IMPORTANT]
+    > Stellen Sie sicher, dass Sie die Vorlage „Klasse“ auswählen, die ein C# im Symbol enthält. Andernfalls können Sie nicht auf diese neue Klasse verweisen.
 
 17. Dadurch wird eine neue C#-Klasse erstellt. Entfernen Sie den gesamten Vorlagencode, und ersetzen Sie Ihn durch den Folgenden:
 
@@ -433,11 +418,11 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung 
     }
     ```
 
-  Speichern Sie die **PhoneTranslator.cs**-Datei, und schließen Sie sie.
+    Speichern Sie die **PhoneTranslator.cs**-Datei, und schließen Sie sie.
 
 18. Doppelklicken Sie auf **ViewController.cs** im **Projektmappen-Explorer**, um ihn zu öffnen, damit den Handles-Interaktionen mit den Schaltflächen eine Logik hinzugefügt werden kann:
 
-  ![](hello-ios-quickstart-images/vs-image20.png "Logik zum Behandeln von Interaktionen mit den Schaltflächen hinzugefügt")
+    ![](hello-ios-quickstart-images/vs-image20.png "Logik zum Behandeln von Interaktionen mit den Schaltflächen hinzugefügt")
 
 
 19. Verknüpfen Sie zunächst die `TranslateButton`. Wählen Sie in der **ViewController**-Klasse die `ViewDidLoad`-Methode aus. Fügen Sie den folgenden Schaltflächencode in `ViewDidLoad` unter dem `base.ViewDidLoad()`-Aufruf hinzu:
@@ -483,31 +468,29 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung 
     };
     ```
 
-
 21. Speichern Sie die Änderungen, und erstellen Sie anschließend die Anwendung, indem Sie **Erstellen > Projektmappe erstellen** auswählen oder **STRG+Shift+B** drücken.  Wenn die Anwendung kompiliert wird, wird eine Erfolgsmeldung unterhalb der IDE angezeigt:
 
-  ![](hello-ios-quickstart-images/vs-image21.png "Eine Erfolgsmeldung wird unterhalb der IDE angezeigt")
+    ![](hello-ios-quickstart-images/vs-image21.png "Eine Erfolgsmeldung wird unterhalb der IDE angezeigt")
 
-  Wenn Fehler auftreten, wiederholen Sie die vorherigen Schritte, und beheben Sie alle Fehler, bis die Anwendung erfolgreich erstellt wird.
+    Wenn Fehler auftreten, wiederholen Sie die vorherigen Schritte, und beheben Sie alle Fehler, bis die Anwendung erfolgreich erstellt wird.
 
 22. Testen Sie schließlich die Anwendung im **remoten iOS-Simulator**. Klicken Sie im Dropdownmenü in der IDE-Symbolleiste auf **Debuggen** und **iPhone 8 iOS x.x**, und drücken Sie **Starten** (das grüne Dreieck, das einer Wiedergabe-Schaltfläche ähnelt):
 
-  ![](hello-ios-quickstart-images/vs-image27.png "Klicken Sie auf „Start“")
+    ![](hello-ios-quickstart-images/vs-image27.png "Klicken Sie auf „Start“")
 
 23. Damit wird die Anwendung im iOS-Simulator gestartet.
 
-  ![](hello-ios-quickstart-images/vs-image28.png "Die im iOS-Simulator ausgeführte Anwendung")
+    ![](hello-ios-quickstart-images/vs-image28.png "Die im iOS-Simulator ausgeführte Anwendung")
 
-  Telefonanrufe werden im iOS-Simulator nicht unterstützt. Stattdessen wird beim Versuch, einen Anruf zu tätigen, ein Warnhinweis angezeigt:
+    Telefonanrufe werden im iOS-Simulator nicht unterstützt. Stattdessen wird beim Versuch, einen Anruf zu tätigen, ein Warnhinweis angezeigt:
 
-  ![](hello-ios-quickstart-images/vs-image29.png "Das Dialogfeld „Warnung“ beim Versuch, einen Anruf zu tätigen")
+    ![](hello-ios-quickstart-images/vs-image29.png "Das Dialogfeld „Warnung“ beim Versuch, einen Anruf zu tätigen")
 
------
+::: zone-end
 
 Herzlichen Glückwunsch, Sie haben Ihre erste Xamarin.iOS-Anwendung fertiggestellt!
 
 Erfahren Sie jetzt mehr über die Tools und Fähigkeiten, die Sie in diesem Handbuch kennengelernt haben, im [Hello, iOS Deep Dive (Ausführliche Erläuterungen zu Hallo, iOS)](~/ios/get-started/hello-ios/hello-ios-deepdive.md).
-
 
 ## <a name="related-links"></a>Verwandte Links
 

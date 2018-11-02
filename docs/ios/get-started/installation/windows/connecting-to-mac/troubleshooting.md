@@ -4,15 +4,15 @@ description: Dieses Handbuch enthält die Schritte zur Problembehandlung für Pr
 ms.prod: xamarin
 ms.assetid: A1508A15-1997-4562-B537-E4A9F3DD1F06
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 575e6705679539af6d3e5fae3ffc5721d9f79ba6
-ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
+ms.openlocfilehash: cfc4ecc5bf7ebc5e4c4dae8094fe3eb4ece34068
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291047"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112498"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Behebung von Verbindungsproblemen für einen Xamarin.iOS-Buildhost
 
@@ -305,7 +305,7 @@ Bekannte Ursachen:
 
 - **Xamarin 4.1-Sicherheitsfunktion**: Dieser Fehler _wird_ auftreten, wenn Sie auf Xamarin 4.0 herabstufen, nachdem Sie Xamarin 4.1 oder höher verwendet haben. In diesem Fall wird der Fehler von der zusätzlichen Warnung „Privater Schlüssel ist verschlüsselt, aber die Passphrase ist leer“ begleitet. Diese Veränderung ist aufgrund der neuen Sicherheitsfunktion in Xamarin 4.1 _beabsichtigt_. **Empfohlene Lösung**: Löschen Sie **id\_rsa** und **id\_rsa.pub** aus **%LOCALAPPDATA%\Xamarin\MonoTouch**, und stellen Sie dann eine Verbindung mit dem Mac-Buildhost her.
 
-- **SSH-Sicherheitseinschränkung** – Wenn diese Meldung von der zusätzlichen Warnung „Konnte den Benutzer mithilfe des vorhandenen SSH-Schlüssels nicht authentifizieren" begleitet wird, bedeutet dies meistens, dass eine der Dateien oder Verzeichnisse im vollständig qualifizierten Pfad von **$HOME/.ssh/authorized\_keys** auf dem Mac über aktivierte Schreibberechtigungen für die Elemente _Andere_ oder _Gruppe_ verfügt. **Allgemeine Problemlösung**: Führen Sie `chmod og-w "$HOME"` in einer Eingabeaufforderung des Terminals auf dem Mac aus. Für weitere Informationen dazu, welche bestimmte Datei oder welches Verzeichnis das Problem auslöst, führen Sie `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"` im Terminalfenster aus, und öffnen Sie dann die **sshd.log**-Datei von Ihrem Desktop aus, und suchen Sie nach „Authentifizierung abgelehnt: Ungültiger Besitz oder ungültige Modi“.
+- **SSH-Sicherheitseinschränkung** – Wenn diese Meldung von der zusätzlichen Warnung „Konnte den Benutzer mithilfe des vorhandenen SSH-Schlüssels nicht authentifizieren“ begleitet wird, bedeutet dies meistens, dass eine der Dateien oder Verzeichnisse im vollständig qualifizierten Pfad von **$HOME/.ssh/authorized\_keys** auf dem Mac über aktivierte Schreibberechtigungen für die Elemente _Andere_ oder _Gruppe_ verfügt. **Allgemeine Problemlösung**: Führen Sie `chmod og-w "$HOME"` in einer Eingabeaufforderung des Terminals auf dem Mac aus. Für weitere Informationen dazu, welche bestimmte Datei oder welches Verzeichnis das Problem auslöst, führen Sie `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"` im Terminalfenster aus, und öffnen Sie dann die **sshd.log**-Datei von Ihrem Desktop aus, und suchen Sie nach „Authentifizierung abgelehnt: Ungültiger Besitz oder ungültige Modi“.
 
 ### <a name="solutions-cannot-be-loaded-from-a-network-share"></a>Projektmappen können nicht von einer Netzwerkfreigabe aus geladen werden
 

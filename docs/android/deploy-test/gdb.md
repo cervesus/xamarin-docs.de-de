@@ -3,21 +3,21 @@ title: GDB
 ms.prod: xamarin
 ms.assetid: CD0BE462-FA38-4881-B481-82AD05B3B8FE
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 886cc1de87bd8225bd0389d2e7b84b546ffb39d7
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 84e99849e3b3d925747df59ffcde242c145dbe74
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241496"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111381"
 ---
 # <a name="gdb"></a>GDB
 
 ## <a name="overview"></a>Übersicht
 
-Xamarin.Android 4.10 hat Teilunterstützung für das Verwenden von `gdb` durch das Verwenden des `_Gdb`-MSBuild-Ziels eingeführt. 
+Xamarin.Android 4.10 hat Teilunterstützung für das Verwenden von `gdb` mithilfe des `_Gdb`-MSBuild-Ziels eingeführt. 
 
 > [!NOTE]
 > `gdb`-Unterstützung erfordert die Installation des Android NDK.

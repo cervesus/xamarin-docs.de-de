@@ -4,15 +4,15 @@ description: Dieses Dokument beschreibt die Techniken, die zum Verbessern der Le
 ms.prod: xamarin
 ms.assetid: 02b1f628-52d9-49de-8479-f2696546ca3f
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 40a2acf28819279b2a0d5c1d50c651a79b455465
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.openlocfilehash: caf35ab601d20e1cb235ab9ebb131e6dffc614fc
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514462"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108876"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS-Leistung
 
@@ -101,7 +101,9 @@ container.AddSubview (new MyView (container));
 
 Hier halt das darin enthaltene Objekt das übergeordnete Element nicht aktiv. Allerdings hält das übergeordnete Element das untergeordnete Element während des erfolgten `container.AddSubView` Aufrufs aktiv.
 
-Dies kommt auch in den iOS-APIs vor, die den Delegaten oder das Datenquellenmuster verwenden. Dabei enthält eine Peerklasse die Implementierung, z.B. beim Festlegen der Eigenschaften [`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) oder [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) in der [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/)-Klasse.
+Dies kommt auch in den iOS-APIs vor, die den Delegaten oder das Datenquellenmuster verwenden. Dabei enthält eine Peerklasse die Implementierung, z.B. beim Festlegen der Eigenschaften [`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/)
+oder [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/)
+in der [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/)-Klasse.
 
 Bei Klassen, die ausschließlich zum Zweck der Implementierung eines Protokolls erstellt werden, z.B. die [`IUITableViewDataSource`](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/)-Klasse, können Sie, anstatt eine Unterklasse zu erstellen, nur die Schnittstelle in der Klasse implementieren, die Methode überschreiben und `this` die `DataSource`-Eigenschaft zuweisen.
 

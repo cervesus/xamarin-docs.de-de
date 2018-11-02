@@ -1,25 +1,27 @@
 ---
 title: Bearbeiten der Eigenschaften von virtuellen Android-Geräten
 description: In diesem Artikel wird erklärt, wie Sie den Android Device Manager zum Bearbeiten der Profileigenschaften eines virtuellen Android-Geräts verwenden.
+zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: 3E33C136-8042-4184-A40C-3200D8CD99CB
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 05/30/2018
-ms.openlocfilehash: 75ac85c67825e5db1b663d00f10eee6d093bfc1f
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 9007157cfd96b82a5781b3bdc3ffb4fe63f4e422
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733630"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119617"
 ---
 # <a name="editing-android-virtual-device-properties"></a>Bearbeiten der Eigenschaften von virtuellen Android-Geräten
 
 _In diesem Artikel wird erklärt, wie Sie den Android Device Manager zum Bearbeiten der Profileigenschaften eines virtuellen Android-Geräts verwenden._
 
+::: zone pivot="windows"
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+## <a name="android-device-manager-on-windows"></a>Android Device Manager unter Windows
 
 Der **Android Device Manager** unterstützt das Bearbeiten von individuellen virtuellen Android-Geräteprofileigenschaften. Die Bildschirme **Neues Gerät** und **Device Edit** (Gerät bearbeiten) führen in der ersten Spalte die Eigenschaften des virtuellen Geräts auf. In der zweiten Spalte sind die entsprechenden Werte für jede Eigenschaft enthalten. Dies wird im folgenden Beispiel veranschaulicht: 
 
@@ -41,8 +43,10 @@ Sie können Eigenschaften mithilfe der folgenden Anleitung ändern:
 
     ![Ändern einer ganzzahligen Eigenschaft](device-properties-images/win/03-integer-value.png)
 
+::: zone-end
+::: zone pivot="macos"
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+## <a name="android-device-manager-on-macos"></a>Android Device Manager unter macOS
 
 Der **Android Device Manager** unterstützt das Bearbeiten von individuellen virtuellen Android-Geräteprofileigenschaften. Die Bildschirme **Neues Gerät** und **Device Edit** (Gerät bearbeiten) führen in der ersten Spalte die Eigenschaften des virtuellen Geräts auf. In der zweiten Spalte sind die entsprechenden Werte für jede Eigenschaft enthalten. Dies wird im folgenden Beispiel veranschaulicht: 
 
@@ -64,7 +68,7 @@ Sie können Eigenschaften mithilfe der folgenden Anleitung ändern:
 
     ![Ändern einer ganzzahligen Eigenschaft](device-properties-images/mac/03-integer-value.png)
 
------
+::: zone-end
 
 In der folgenden Tabellen werden die Eigenschaften näher erläutert, die in den Bildschirmen **Neues Gerät** und **Device Editor** (Geräte-Editor) aufgeführt sind:
 
