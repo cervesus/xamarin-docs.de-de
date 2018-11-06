@@ -6,12 +6,12 @@ ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: fdc57e7028d3a16f9a9d2504caf1f2414d0ac94f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 84f825c19aa1ac08fbcf3e732077304218768bcc
+ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102983"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50983600"
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>Mithilfe des Tools MonoGame-Pipeline
 
@@ -84,7 +84,7 @@ Betrachten wir nun einige der wichtigsten Optionen für das Content-Projekt.
 
 ### <a name="output-folder"></a>Ordner "Output"
 
-Dies ist der Ordner (in Bezug auf das Content-Projekt selbst), in dem die Ausgabe **.xnb** Dateien gespeichert werden. Um Sie der Einfachheit halber verwenden wir den gleichen Ordner unsere Eingabe und Ausgabe von Dateien. Anders ausgedrückt: wir ändern die **Ausgabeordner** sollen **.\**  :
+Dies ist der Ordner (in Bezug auf das Content-Projekt selbst), in dem die Ausgabe **.xnb** Dateien gespeichert werden. Um Sie der Einfachheit halber verwenden wir den gleichen Ordner unsere Eingabe und Ausgabe von Dateien. Anders ausgedrückt: wir ändern die **Ausgabeordner** sein **.\\**  :
 
 ![](walkthrough-images/image10.png "")
 

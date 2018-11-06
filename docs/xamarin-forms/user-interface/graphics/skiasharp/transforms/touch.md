@@ -1,5 +1,5 @@
 ---
-title: Manipulationen durch toucheingaben
+title: Manipulationen durch Toucheingaben
 description: In diesem Artikel wird erläutert, wie mit Matrixtransformationen Touch ziehen, berührpunkte und Drehung implementiert, und dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
@@ -8,13 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/14/2018
 ms.openlocfilehash: 6f7236a3650c04098edbef92f3d6ed620be501c3
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.sourcegitcommit: a635312ffec816ba357a92b66c8c5221c8d9044c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2018
+ms.lasthandoff: 11/05/2018
 ms.locfileid: "39615391"
 ---
-# <a name="touch-manipulations"></a>Manipulationen durch toucheingaben
+# <a name="touch-manipulations"></a>Manipulationen durch Toucheingaben
 
 _Verwenden von Matrixtransformationen zum Implementieren der Touch ziehen, berührpunkte und Drehung_
 

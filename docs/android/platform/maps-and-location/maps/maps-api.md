@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: a89211e4576b8d22b45bb4f675241d47c49270e6
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: fb7d18e6434e32941531d2c37cd8b938ec21ba90
+ms.sourcegitcommit: 28dbb5fa2fbcc7e66cd09c1d0077496fcdefac56
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235037"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51027326"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>Verwenden die Google Maps-API in Ihrer Anwendung
 
@@ -40,7 +40,7 @@ Mehrere Schritte müssen ausgeführt werden, bevor Sie die Maps-API verwenden, k
 
 ### <a name="a-nameobtain-maps-key-obtain-a-google-maps-api-key"></a><a name="obtain-maps-key" />Erhalten Sie einen Google Maps-API-Schlüssel
 
-Der letzte Schritt ist, rufen Sie einen Google Maps-API-Schlüssel (Beachten Sie, dass Sie einen API-Schlüssel von den älteren Google Maps-v1-API wiederverwenden können nicht). Weitere Informationen zum Herunterladen und verwenden den API-Schlüssel, die mit Xamarin.Android, finden Sie unter [ein Google Maps-API-Schlüssel abrufen](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
+Der erste Schritt ist, rufen Sie einen Google Maps-API-Schlüssel (Beachten Sie, dass Sie einen API-Schlüssel von den älteren Google Maps-v1-API wiederverwenden können nicht). Weitere Informationen zum Herunterladen und verwenden den API-Schlüssel, die mit Xamarin.Android, finden Sie unter [ein Google Maps-API-Schlüssel abrufen](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
  
 
 ### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> Die Google Play-Dienste SDK installieren
@@ -183,7 +183,7 @@ Im folgende Screenshot ist ein Beispiel für eine einfache `MapFragment`:
               class="com.google.android.gms.maps.MapFragment" />
     ```
 
--   **Programmaatically** : die `MapFragment` instanziiert werden kann programmgesteuert mithilfe der [ `MapFragment.NewInstance` ](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance()) Methode, und klicken Sie dann auf eine Aktivität hinzugefügt. Dieser Codeausschnitt zeigt die einfachste Möglichkeit zum Instanziieren einer `MapFragment` -Objekt und fügen eine Aktivität hinzu:
+-   **Programmgesteuertes** : die `MapFragment` instanziiert werden kann programmgesteuert mithilfe der [ `MapFragment.NewInstance` ](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance()) Methode, und klicken Sie dann auf eine Aktivität hinzugefügt. Dieser Codeausschnitt zeigt die einfachste Möglichkeit zum Instanziieren einer `MapFragment` -Objekt und fügen eine Aktivität hinzu:
     
     ```csharp
         var mapFrag = MapFragment.NewInstance();

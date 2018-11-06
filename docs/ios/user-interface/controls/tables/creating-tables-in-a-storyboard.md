@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: d161a267c8ffa5040327db8e6e4f867a324b04f2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 303c96ae6cdbc9f5b327c971f962d6eac75a6fa1
+ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105805"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50983613"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Arbeiten mit Tabellen in der iOS-Designer
 
@@ -73,7 +73,7 @@ Die erste Änderung an das Storyboard ist das Löschen der vorhandenen Detailans
 
 1.  Wählen Sie die Leiste am unteren Rand der Ansichtscontroller und gelöscht werden.
 2.  Ziehen Sie eine **Navigationscontroller** und **Tabellenansichtscontroller** auf das Storyboard aus der Toolbox. 
-3.  Erstellen Sie eines segues aus der Root View Controller, auf der zweiten Tabelle-View-Controller, das soeben hinzugefügt wurde. Erstellen den Segue, Control + ziehen *aus der Detailzelle* auf die neu hinzugefügte UITableViewController. Wählen Sie die Option **anzeigen*** unter **Segue Auswahl**. 
+3.  Erstellen Sie eines segues aus der Root View Controller, auf der zweiten Tabelle-View-Controller, das soeben hinzugefügt wurde. Erstellen den Segue, Control + ziehen *aus der Detailzelle* auf die neu hinzugefügte UITableViewController. Wählen Sie die Option **anzeigen** unter **Segue Auswahl**. 
 4.  Wählen Sie das neue erstellte segue und weisen ihm eine ID zu verweisen, die dieser segue im Code. Klicken Sie auf der Segue, und geben Sie `TaskSegue` für die **Bezeichner** in die **Pad "Eigenschaften"**, wie folgt aus:    
   [![Im Eigenschaftenbereich segue benennen](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
