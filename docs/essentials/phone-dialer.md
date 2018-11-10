@@ -1,32 +1,36 @@
 ---
 title: 'Xamarin.Essentials: Wählhilfe'
-description: Die PhoneDialer-Klasse in Xamarin.Essentials ermöglicht einer Anwendung, eine Telefonnummer in das Einwählprogramm öffnen
+description: Mit der Klasse „PhoneDialer“ in Xamarin.Essentials kann eine Anwendung eine Telefonnummer im Wählprogramm öffnen.
 ms.assetid: E7457942-4D7B-4195-A2FF-417919B9537F
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 34a6c80836d8cb42b1f8fd95718fe248d4701c0f
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
-ms.translationtype: MT
+ms.openlocfilehash: bccc76e1602c475a5e4cc9a95d498d11f9a379b1
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130792"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675418"
 ---
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials: Wählhilfe
 
-![Vorabversionen von NuGet](~/media/shared/pre-release.png)
+![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
-Die **PhoneDialer** Klasse ermöglicht einer Anwendung, eine Telefonnummer in das Einwählprogramm zu öffnen.
+Mit der Klasse **PhoneDialer** in Xamarin.Essentials kann eine Anwendung eine Telefonnummer im Wählprogramm öffnen.
+
+## <a name="get-started"></a>Erste Schritte
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="using-phone-dialer"></a>Verwenden der Wählhilfe
 
-Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
+Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Die Funktionalität der Wählhilfe erfolgt durch Aufrufen der `Open` Methode mit einer Telefonnummer, um das Einwählprogramm mit zu öffnen. Wenn `Open` angefordert wird, die API versucht automatisch, zum Formatieren der Zahl, die basierend auf den Ländercode, falls angegeben.
+Die Wählhilfe-Funktion ruft die Methode `Open` mit einer Telefonnummer auf, mit der das Wählprogramm geöffnet werden soll. Bei Anforderung von `Open` versucht die API automatisch, die Nummer anhand des angegebenen Ländercodes zu formatieren.
 
 ```csharp
 public class PhoneDialerTest
@@ -55,5 +59,5 @@ public class PhoneDialerTest
 
 ## <a name="api"></a>API
 
-- [Wählhilfe Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/PhoneDialer)
-- [Phone Einwählprogramm-API-Dokumentation](xref:Xamarin.Essentials.PhoneDialer)
+- [PhoneDialer-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/PhoneDialer)
+- [PhoneDialer-API-Dokumentation](xref:Xamarin.Essentials.PhoneDialer)

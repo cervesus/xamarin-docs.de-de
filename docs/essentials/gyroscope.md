@@ -1,32 +1,36 @@
 ---
 title: 'Xamarin.Essentials: Gyroskop'
-description: Die Gyroscope-Klasse in Xamarin.Essentials können Sie der Sensor Gyroskop des Geräts zu überwachen, die Drehung um das Gerät die drei primären Achsen misst.
+description: Mit der Klasse „Gyroscope“ in Xamarin.Essentials können Sie den Gyroskopsensor des Geräts überwachen, der die Drehung um die drei Hauptachsen des Geräts misst.
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: f1e1199ae32158889ec569eb5f7e9742f37d45d4
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 1d42658160855e260e0d159c58a1f95e7a8c7d4c
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353625"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674727"
 ---
 # <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials: Gyroskop
 
-![Vorabversionen von NuGet](~/media/shared/pre-release.png)
+![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
-Die **Gyroskop** Klasse können Sie das Gerät die Gyroskop Sensor Überwachung die Drehung um das Gerät die drei primären Achsen ist.
+Mit der Klasse **Gyroscope** können Sie den Gyroskopsensor des Geräts überwachen, der die Drehung um die drei Hauptachsen des Geräts verfolgt.
 
-## <a name="using-gyroscope"></a>Verwenden von Gyroskop
+## <a name="get-started"></a>Erste Schritte
 
-Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-gyroscope"></a>Verwenden des Gyroskops
+
+Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Die Funktionalität Gyroskop erfolgt durch Aufrufen der `Start` und `Stop` Methoden zum Lauschen auf Änderungen an der Gyroskop. Alle Änderungen gesendet werden, durch die `ReadingChanged` Ereignis. Hier ist Beispiel für die Verwendung:
+Die Gyroskopfunktion ruft die Methoden `Start` und `Stop` auf, um das Gyroskop auf Veränderungen zu überwachen. Änderungen werden über das `ReadingChanged`-Ereignis zurück gesendet. Sie können sie z.B. wie folgt verwenden:
 
 ```csharp
 
@@ -73,5 +77,5 @@ public class GyroscopeTest
 
 ## <a name="api"></a>API
 
-- [Gyroskop-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Gyroscope)
-- [Gyroskop-API-Dokumentation](xref:Xamarin.Essentials.Gyroscope)
+- [Gyroscope-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Gyroscope)
+- [Gyroscope-API-Dokumentation](xref:Xamarin.Essentials.Gyroscope)

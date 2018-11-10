@@ -1,44 +1,48 @@
 ---
-title: 'Xamarin.Essentials: Datei System-Hilfsprogramme'
-description: Die dateisystemklasse in Xamarin.Essentials enthält eine Reihe von Hilfsfunktionen zum Suchen, die Anwendung den Cache und die Datenverzeichnisse und öffnen Dateien in das app-Paket.
+title: 'Xamarin.Essentials: Dateisystemhilfsprogramme'
+description: Die Klasse „FileSystem“ in Xamarin.Essentials enthält eine Reihe von Hilfsprogrammen, um den Cache und die Datenverzeichnisse der Anwendung zu finden und Dateien im App-Paket zu öffnen.
 ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 13293ec05261cbdc1e70fd278002d1af18654851
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
-ms.translationtype: MT
+ms.openlocfilehash: 74c2066f673d27cf23af139380b45cd4223b1f30
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38815617"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675483"
 ---
-# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: Datei System-Hilfsprogramme
+# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: Dateisystemhilfsprogramme
 
-![Vorabversionen von NuGet](~/media/shared/pre-release.png)
+![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
-Die **FileSystem** Klasse enthält eine Reihe von Hilfsfunktionen zum Suchen von der Anwendung Cache und Datenverzeichnisse und Öffnen von Dateien in das app-Paket.
+Die Klasse **FileSystem** enthält eine Reihe von Hilfsprogrammen, um den Cache und die Datenverzeichnisse der Anwendung zu finden und Dateien im App-Paket zu öffnen.
 
-## <a name="using-file-system-helpers"></a>Verwenden von Datei-System-Hilfsprogrammen
+## <a name="get-started"></a>Erste Schritte
 
-Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-file-system-helpers"></a>Verwenden der Dateisystemhilfsprogramme
+
+Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Verzeichnis zum Speichern der Anwendung abzurufende **Zwischenspeichern von Daten**. Zwischenspeichern von Daten können für alle Daten verwendet werden, die länger als temporäre Daten beibehalten werden muss, jedoch sollte sich nicht auf die Daten, die erforderlich ist, um ordnungsgemäß zu arbeiten.
+So rufen Sie das Anwendungsverzeichnis zum Speichern von **Cachedaten** ab. Cachedaten können für alle Daten verwendet werden, die länger als temporäre Daten aufbewahrt werden müssen. Dabei sollte es sich aber nicht um Daten handeln, die für den ordnungsgemäßen Betrieb erforderlich sind.
 
 ```csharp
 var cacheDir = FileSystem.CacheDirectory;
 ```
 
-Zum Abrufen von der obersten Ebene im Verzeichnis der Anwendung für alle Dateien, die Benutzerdatendateien nicht sind. Diese Dateien werden mit dem Betriebssystem synchronisieren Framework gesichert. Finden Sie unter folgenden Implementierung-Plattformeigenschaften.
+So rufen Sie das oberste Anwendungsverzeichnis für alle Dateien ab, die keine Benutzerdatendateien sind. Diese Dateien werden über das Synchronisierungsframework des Betriebssystems gesichert. Die Besonderheiten bei der plattformspezifischen Implementierung sind weiter unten beschrieben.
 
 ```csharp
 var mainDir = FileSystem.AppDataDirectory;
 ```
 
-Zum Öffnen einer Datei, die in das Anwendungspaket im Paket enthalten ist:
+So öffnen Sie eine Datei, die im Anwendungspaket gebündelt ist:
 
 ```csharp
  using (var stream = await FileSystem.OpenAppPackageFileAsync(templateFileName))
@@ -50,32 +54,32 @@ Zum Öffnen einer Datei, die in das Anwendungspaket im Paket enthalten ist:
  }
 ```
 
-## <a name="platform-implementation-specifics"></a>Implementierung von Plattformeigenschaften
+## <a name="platform-implementation-specifics"></a>Besonderheiten bei der plattformspezifischen Implementierung
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-- **CacheDirectory** – gibt die [CacheDir](https://developer.android.com/reference/android/content/Context.html#getCacheDir) des aktuellen Kontexts.
-- **AppDataDirectory** – gibt die [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir) den aktuellen Kontext und sind mit gesichert [automatische Sicherung](https://developer.android.com/guide/topics/data/autobackup.html) ab, auf die API-23 und höher.
+- **CacheDirectory**: Gibt das Verzeichnis [CacheDir](https://developer.android.com/reference/android/content/Context.html#getCacheDir) des aktuellen Kontexts zurück.
+- **AppDataDirectory**: Gibt das Verzeichnis [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir) des aktuellen Kontexts zurück. Die Sicherung erfolgt mit der [automatischen Sicherung](https://developer.android.com/guide/topics/data/autobackup.html) ab API-Ebene 23 und höher.
 
-Fügen Sie eine beliebige Datei in die **Assets** Ordner im Android Projekt, und markieren Sie die Buildaktion als **AndroidAsset** , sie mit `OpenAppPackageFileAsync`.
+Fügen Sie eine beliebige Datei zum Ordner **Assets** im Android Projekt hinzu, und markieren Sie den Buildvorgang als **AndroidAsset**, um ihn mit `OpenAppPackageFileAsync` zu verwenden.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-- **CacheDirectory** – gibt die [Library/Caches](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) Verzeichnis.
-- **AppDataDirectory** – gibt die [Bibliothek](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) Verzeichnis, das von iTunes- und iCloud werden gesichert.
+- **CacheDirectory**: Gibt das Verzeichnis [Library/Caches](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) zurück.
+- **AppDataDirectory**: Gibt das Verzeichnis [Library](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) zurück, das von iTunes und iCloud gesichert wird.
 
-Fügen Sie eine beliebige Datei in die **Ressourcen** Ordner in der iOS-Projekt, und markieren Sie die Buildaktion als **BundledResource** , sie mit `OpenAppPackageFileAsync`.
+Fügen Sie eine beliebige Datei zum Ordner **Resources** im iOS-Projekt hinzu, und markieren Sie den Buildvorgang als **BundledResource**, um ihn mit `OpenAppPackageFileAsync` zu verwenden.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-- **CacheDirectory** – gibt die [LocalCacheFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder) Directory...
-- **AppDataDirectory** – gibt die [LocalFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) Verzeichnis, das in der Cloud wurden gesichert.
+- **CacheDirectory**: Gibt das Verzeichnis [LocalCacheFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder) zurück.
+- **AppDataDirectory**: Gibt das Verzeichnis [LocalFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) zurück, das in der Cloud gesichert wird.
 
-Fügen Sie eine beliebige Datei in das Stammverzeichnis in der UWP-Projekt hinzu, und markieren Sie die Buildaktion als **Content** , sie mit `OpenAppPackageFileAsync`.
+Fügen Sie eine beliebige Datei zum Stammverzeichnis des UWP-Projekts hinzu, und markieren Sie den Buildvorgang als **Content**, um ihn mit `OpenAppPackageFileAsync` zu verwenden.
 
 --------------
 
 ## <a name="api"></a>API
 
-- [Quellcode für Datei-System-Hilfsprogramme](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/FileSystem)
-- [Datei-System-API-Dokumentation](xref:Xamarin.Essentials.FileSystem)
+- [FileSystem-Hilfsprogramme – Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/FileSystem)
+- [FileSystem-API-Dokumentation](xref:Xamarin.Essentials.FileSystem)

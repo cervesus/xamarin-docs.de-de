@@ -1,32 +1,36 @@
 ---
 title: 'Xamarin.Essentials: Datenübertragung'
-description: Die DataTransfer-Klasse in Xamarin.Essentials ermöglicht eine Anwendung zum Freigeben von Daten, z. B. Text und Web Links zu anderen Anwendungen auf dem Gerät.
+description: Die Klasse „DataTransfer“ in Xamarin.Essentials ermöglicht einer Anwendung die Freigabe von Daten wie Text und Weblinks zu anderen Anwendungen auf dem Gerät.
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 31e27556a6681b144084d2177cf3fde8fe8e5459
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 179d4327aa768e7aa2c81dbbffd694d078327400
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353518"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674833"
 ---
 # <a name="xamarinessentials-data-transfer"></a>Xamarin.Essentials: Datenübertragung
 
-![Vorabversionen von NuGet](~/media/shared/pre-release.png)
+![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
-Die **DataTransfer** -Klasse kann eine Anwendung zum Freigeben von Daten, z. B. Text und Web Links zu anderen Anwendungen auf dem Gerät.
+Die Klasse **DataTransfer** ermöglicht einer Anwendung die Freigabe von Daten wie Text und Weblinks zu anderen Anwendungen auf dem Gerät.
 
-## <a name="using-data-transfer"></a>Verwenden die Datenübertragung
+## <a name="get-started"></a>Erste Schritte
 
-Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-data-transfer"></a>Verwenden der Datenübertragung
+
+Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Die Funktionalität zum Übertragen von Daten erfolgt durch Aufrufen der `RequestAsync` -Methode mit einer Anforderungsnutzlast für Daten, die Informationen zum Freigeben für andere Anwendungen enthält. Text und Uri können kombiniert werden, und jede Plattform Filterung basierend auf den Inhalt behandelt.
+Die Datenübertragungsfunktion ruft die `RequestAsync`-Methode mit einer Datenanforderungsnutzlast auf, die Informationen zur Freigabe für andere Anwendungen enthält. Text und URI können kombiniert werden, und bei jeder Plattform erfolgt die Filterung anhand des Inhalts.
 
 ```csharp
 
@@ -52,7 +56,7 @@ public class DataTransferTest
 }
 ```
 
-Die Benutzeroberfläche an externe Anwendung freigeben, die angezeigt wird, wenn die Anforderung gesendet wird:
+Benutzeroberfläche zur Freigabe für eine externe Anwendung, die beim Senden der Anforderung angezeigt wird:
 
 ![Datenübertragung](data-transfer-images/data-transfer.png)
 
@@ -60,21 +64,21 @@ Die Benutzeroberfläche an externe Anwendung freigeben, die angezeigt wird, wenn
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-* `Subject` Eigenschaft wird für die gewünschte Betreff einer Nachricht verwendet.
+* Die Eigenschaft `Subject` wird für den gewünschten Betreff einer Nachricht verwendet.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* `Subject` Nicht verwendet.
-* `Title` Nicht verwendet.
+* `Subject` nicht verwendet.
+* `Title` nicht verwendet.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-* `Title` wird standardmäßig die Anwendungsname Wenn nicht festgelegt.
-* `Subject` Nicht verwendet.
+* Als `Title` wird standardmäßig der Anwendungsname verwendet, wenn kein Titel festgelegt wurde.
+* `Subject` nicht verwendet.
 
 -----
 
 ## <a name="api"></a>API
 
-- [Data Transfer-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DataTransfer)
-- [Data Transfer API-Dokumentation](xref:Xamarin.Essentials.DataTransfer)
+- [DataTransfer-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DataTransfer)
+- [DataTransfer-API-Dokumentation](xref:Xamarin.Essentials.DataTransfer)

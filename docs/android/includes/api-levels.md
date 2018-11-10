@@ -1,5 +1,5 @@
 
-|Name|Version|API-Ebene|Freigegeben|Erstellen Sie Code von Version|
+|name|Version|API-Ebene|Freigegeben|Erstellen Sie Code von Version|
 |--- |--- |--- |--- |--- |
 |Segment|9.0|28|August 2018|`BuildVersionCodes.P`|
 |Oreo|8.1|27|Dezember 2017|`BuildVersionCodes.OMr1`|

@@ -1,44 +1,48 @@
 ---
 title: 'Xamarin.Essentials: Einstellungen'
-description: Dieses Dokument beschreibt die Einstellungen-Klasse in Xamarin.Essentials, die Anwendungsvoreinstellungen in einem Schlüssel-Wert-Speicher speichert. Er erläutert, wie die Klasse und die Arten von Daten, die gespeichert werden können.
+description: In diesem Dokument wird die Klasse „Preferences“ in Xamarin.Essentials beschrieben, die Anwendungseinstellungen in einem Schlüsselwertspeicher speichert. Behandelt werden die Verwendung der Klasse und die Datentypen, die gespeichert werden können.
 ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 4a45587c79cfbbcd1198f100915e698289f74950
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 3562ec840f824f6a8aeed1a61c7b27985a5ddf72
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353749"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675470"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: Einstellungen
 
-![Vorabversionen von NuGet](~/media/shared/pre-release.png)
+![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
-Die **Voreinstellungen** Klasse ermöglicht es Ihnen, Voreinstellungen für Anwendung in einem Schlüssel-Wert-Speicher speichert.
+Die Klasse **Preferences** unterstützt das Speichern von Anwendungseinstellungen in einem Schlüsselwertspeicher.
 
-## <a name="using-preferences"></a>Einstellungen
+## <a name="get-started"></a>Erste Schritte
 
-Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-preferences"></a>Verwenden von Einstellungen
+
+Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Speichern Sie einen Wert für eine bestimmte _Schlüssel_ in den Voreinstellungen:
+So speichern Sie in den Einstellungen einen Wert für einen bestimmten _Schlüssel_:
 
 ```csharp
 Preferences.Set("my_key", "my_value");
 ```
 
-Zum Abrufen eines Werts aus den Einstellungen oder einen Standardwert, wenn nicht festgelegt:
+So rufen Sie einen Wert aus den Einstellungen oder, sofern kein Wert festgelegt ist, einen Standardwert ab:
 
 ```csharp
 var myValue = Preferences.Get("my_key", "default_value");
 ```
 
-So entfernen Sie die _Schlüssel_ aus den Einstellungen:
+So entfernen Sie den _Schlüssel_ aus den Einstellungen:
 
 ```csharp
 Preferences.Remove("my_key");
@@ -50,11 +54,11 @@ So entfernen Sie alle Einstellungen:
 Preferences.Clear();
 ```
 
-Neben diesen Methoden akzeptieren jeweils in einem optionalen `sharedName` , die zum Erstellen zusätzlicher Container für die Einstellung verwendet werden kann. Lesen Sie die folgenden Besonderheiten der Plattform-Implementierung.
+Neben diesen Methoden wird jeweils ein optionaler `sharedName` aufgenommen, der zum Erstellen zusätzlicher Container für die Einstellung verwendet werden kann. Die Besonderheiten bei der plattformspezifischen Implementierung sind weiter unten beschrieben.
 
 ## <a name="supported-data-types"></a>Unterstützte Datentypen
 
-Die folgenden Datentypen werden in unterstützt **Voreinstellungen**:
+Die folgenden Datentypen werden in der Klasse **Preferences** unterstützt:
 
 - **bool**
 - **double**
@@ -64,35 +68,35 @@ Die folgenden Datentypen werden in unterstützt **Voreinstellungen**:
 - **string**
 - **DateTime**
 
-## <a name="implementation-details"></a>Details zur Implementierung
+## <a name="implementation-details"></a>Implementierungsdetails
 
-Werte von `DateTime` befinden sich in einem 64-Bit-Binärdatei (lange ganze Zahl)-Format mit zwei Methoden definiert, durch die `DateTime` Klasse: die [ `ToBinary` ](xref:System.DateTime.ToBinary) Methode dient zum Codieren der `DateTime` Wert und die [ `FromBinary` ](xref:System.DateTime.FromBinary(System.Int64)) -Methode decodiert den Wert. Finden Sie unter die Dokumentation zu diesen Methoden für die Anpassungen, die zu decodierte vorgenommen werden, wenn Werte eine `DateTime` wird gespeichert, nicht auf einen Wert (Coordinated Universal Time, UTC).
+`DateTime`-Werte werden im 64-Bit-Binärformat (lange ganze Zahl) mithilfe von zwei durch die Klasse `DateTime` definierten Methoden gespeichert: Die Methode [`ToBinary`](xref:System.DateTime.ToBinary) dient zum Codieren des `DateTime`-Werts, und die Methode [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) decodiert den Wert. In der Dokumentation zu diesen Methoden finden Sie eventuell notwendige Anpassungen, die an decodierten Werten vorgenommen werden müssen, wenn ein `DateTime`-Wert gespeichert wird, der kein UTC-Wert (Coordinated Universal Time) ist.
 
-## <a name="platform-implementation-specifics"></a>Implementierung von Plattformeigenschaften
+## <a name="platform-implementation-specifics"></a>Besonderheiten bei der plattformspezifischen Implementierung
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Alle Daten werden gespeichert, in [freigegebene Einstellungen](https://developer.android.com/training/data-storage/shared-preferences.html). Wenn kein `sharedName` angegeben ist, die standardmäßig freigegebenen-Einstellungen werden verwendet, andernfalls der Name wird zum Abrufen einer **private** freigegebene Einstellungen mit dem angegebenen Namen.
+Alle Daten werden in [freigegebenen Einstellungen](https://developer.android.com/training/data-storage/shared-preferences.html) gespeichert. Wenn kein `sharedName` angegeben ist, werden die standardmäßigen freigegebenen-Einstellungen verwendet. Andernfalls wird der Name zum Abrufen einer **privaten** freigegebenen Einstellung mit dem angegebenen Namen verwendet.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-[NSUserDefaults](https://docs.microsoft.com/en-us/xamarin/ios/app-fundamentals/user-defaults) wird verwendet, um die Werte auf iOS-Geräten zu speichern. Wenn kein `sharedName` angegeben ist die `StandardUserDefaults` werden verwendet, andernfalls der Name dient zum Erstellen eines neuen `NSUserDefaults` mit dem angegebenen Namen, die zum die `NSUserDefaultsType.SuiteName`.
+[NSUserDefaults](https://docs.microsoft.com/en-us/xamarin/ios/app-fundamentals/user-defaults) wird zum Speichern von Werten auf iOS-Geräten verwendet. Wenn kein `sharedName` angegeben ist, werden die `StandardUserDefaults` verwendet. Andernfalls wird der Name zum Erstellen eines neuen `NSUserDefaults` mit dem angegebenen Namen verwendet, der als `NSUserDefaultsType.SuiteName` verwendet wird.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-["Applicationdatacontainer"](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdatacontainer) wird verwendet, um die Werte auf dem Gerät zu speichern. Wenn kein `sharedName` entspricht der `LocalSettings` werden verwendet, andernfalls der Name wird verwendet, um einen neuen Container innerhalb des erstellen `LocalSettings`.
+[ApplicationDataContainer](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdatacontainer) wird zum Speichern von Werten auf dem Gerät verwendet. Wenn kein `sharedName` angegeben ist, werden die `LocalSettings` verwendet. Andernfalls wird der Name zum Erstellen eines neuen Containers innerhalb von `LocalSettings` verwendet.
 
 --------------
 
 ## <a name="persistence"></a>Persistenz
 
-Deinstallieren der Anwendung führt dazu, dass alle _Voreinstellungen_ entfernt werden soll. Es wird eine Ausnahme, die für apps, die als Ziel aus, und führen Sie auf Android 6.0 (API-Ebene 23) oder höher verwenden, die [ __automatische Sicherung__](https://developer.android.com/guide/topics/data/autobackup). Dieses Feature ist standardmäßig aktiviert und behält die app Daten, z.B. __freigegebene Einstellungen__, d. h. die **Voreinstellungen** APIs nutzt. Sie können dies deaktivieren, indem die folgenden Google [Dokumentation](https://developer.android.com/guide/topics/data/autobackup).
+Das Deinstallieren der Anwendung führt dazu, dass alle _Einstellungen_ entfernt werden. Hierbei gibt es eine Ausnahme für Apps, die unter Android 6.0 (API-Ebene 23) oder höher ausgeführt werden (bzw. auf dieses Betriebssystem abzielen) und die [__automatische Sicherung__](https://developer.android.com/guide/topics/data/autobackup) verwenden. Dieses Feature ist standardmäßig aktiviert und sichert App-Daten einschließlich der __freigegebenen Einstellungen__, die von der **Preferences**-API genutzt werden. Sie können dieses Feature deaktivieren, indem Sie die in der Google-[Dokumentation](https://developer.android.com/guide/topics/data/autobackup) beschriebenen Schritte ausführen.
 
 ## <a name="limitations"></a>Einschränkungen
 
-Wenn Sie eine Zeichenfolge zu speichern, dient diese API, um kleine Mengen an Text zu speichern.  Leistung ist möglicherweise subpar, wenn Sie versuchen, die sie verwenden, um große Mengen an Text zu speichern.
+Beachten Sie beim Speichern einer Zeichenfolge, dass diese API zum Speichern kleiner Textmengen konzipiert wurde.  Die Leistung nimmt ggf. ab, wenn Sie versuchen, große Textmengen zu speichern.
 
 ## <a name="api"></a>API
 
-- [Einstellungen von Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Preferences)
-- [Einstellungen-API-Dokumentation](xref:Xamarin.Essentials.Preferences)
+- [Preferences-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Preferences)
+- [Preferences-API-Dokumentation](xref:Xamarin.Essentials.Preferences)

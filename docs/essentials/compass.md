@@ -1,32 +1,36 @@
 ---
 title: 'Xamarin.Essentials: Kompass'
-description: Dieses Dokument beschreibt die Compass-Klasse in Xamarin.Essentials, der Sie die Überschrift für das Gerät die elektromagnetischen Norden überwachen können.
+description: In diesem Dokument wird die Klasse „Compass“ in Xamarin.Essentials beschrieben, mit der Sie die Ausrichtung des Geräts auf den magnetischen Norden überwachen können.
 ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: c3fe98c384a87bdc08ce94e7537d1a6343767561
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 51812f9b4f88d77bf553a26ef3a6802239e338e0
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353882"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675496"
 ---
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials: Kompass
 
-![Vorabversionen von NuGet](~/media/shared/pre-release.png)
+![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
-Die **Compass** Klasse können Sie das Gerät die elektromagnetischen Norden Überschrift zu überwachen.
+Mit der Klasse **Compass** können Sie die Ausrichtung des Geräts auf den magnetischen Norden überwachen.
 
-## <a name="using-compass"></a>Mithilfe der Kompass
+## <a name="get-started"></a>Erste Schritte
 
-Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-compass"></a>Verwenden des Kompasses
+
+Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Die Compass-Funktionalität kann durch Aufrufen der `Start` und `Stop` Methoden zum Lauschen auf Änderungen an der Kompass. Alle Änderungen gesendet werden, durch die `ReadingChanged` Ereignis. Im Folgenden ein Beispiel:
+Die Kompassfunktion ruft die Methoden `Start` und `Stop` auf, um den Kompass auf Veränderungen zu überwachen. Änderungen werden über das `ReadingChanged`-Ereignis zurück gesendet. Im Folgenden ein Beispiel:
 
 ```csharp
 public class CompassTest
@@ -70,29 +74,29 @@ public class CompassTest
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 
-## <a name="platform-implementation-specifics"></a>Implementierung von Plattformeigenschaften
+## <a name="platform-implementation-specifics"></a>Besonderheiten bei der Plattformimplementierung
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Android bietet keine API zum Abrufen von die Compass-Überschrift. Wir verwenden den Beschleunigungsmesser und Magnetometer zum Berechnen der der elektromagnetischen Norden Überschrift, das Empfehlung von Google ist.
+Android bietet keine API zum Abrufen der Kompassausrichtung. Zum Berechnen der magnetischen Nordrichtung werden der Beschleunigungsmesser und der Magnetometer verwendet, was von Google empfohlen wird.
 
-In seltenen Fällen sehen Sie möglicherweise inkonsistente Ergebnisse, weil die Sensoren kalibriert werden, müssen die umfasst das Verschieben von Ihrem Geräts in einer Abbildung 8 Bewegung. Die beste Möglichkeit dafür Dies ist, öffnen Sie Google Maps, tippen auf den Punkt für Ihren Standort aus, und wählen Sie **Calibrate Compass**.
+In seltenen Fällen werden möglicherweise inkonsistente Ergebnisse angezeigt, weil die Sensoren kalibriert werden müssen. Dafür müssen Sie u.a. mit Ihrem Gerät eine Acht formen. Am besten öffnen Sie dazu Google Maps, tippen Sie auf den Punkt für Ihren Standort, und wählen Sie **Kompass kalibrieren** aus.
 
-Denken Sie daran, das Ausführen von mehreren Sensoren aus Ihrer app zur gleichen Zeit die Geschwindigkeit der Sensor anpassen kann.
+Denken Sie daran, dass sich das gleichzeitige Ausführen mehrerer Sensoren von Ihrer App auf die Geschwindigkeit des Sensors auswirken kann.
 
 ## <a name="low-pass-filter"></a>Tiefpassfilter
 
-Aufgrund der Verwendung der Android Kompass Werte werden aktualisiert und berechnet wird, gibt es möglicherweise zum Glätten der Werte. Ein _niedrig übergeben Filter_ angewendet werden können, wird der Durchschnittswert Sinus und Kosinus der Winkel und können durch Festlegen von eingeschaltet werden die `ApplyLowPassFilter` Eigenschaft für die `Compass` Klasse:
+Je nachdem, wie die Android-Kompasswerte aktualisiert und berechnet werden, müssen die Werte möglicherweise geglättet werden. Hier kann ein _Tiefpassfilter_ angewendet werden, der aus den Sinus- und Kosinuswerten der Winkel einen Mittelwert bildet. Er wird durch Festlegen der Eigenschaft `ApplyLowPassFilter` in der Klasse `Compass` aktiviert:
 
 ```csharp
 Compass.ApplyLowPassFilter = true;
 ```
 
-Dies wird nur auf die Android-Plattform angewendet. Weitere Informationen erhalten [hier](https://github.com/xamarin/Essentials/pull/354#issuecomment-405316860).
+Dies gilt nur für die Android-Plattform. Weitere Informationen erhalten Sie [hier](https://github.com/xamarin/Essentials/pull/354#issuecomment-405316860).
 
 --------------
 
 ## <a name="api"></a>API
 
-- [Die Compass-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
+- [Compass-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
 - [Compass-API-Dokumentation](xref:Xamarin.Essentials.Compass)

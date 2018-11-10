@@ -1,38 +1,42 @@
 ---
-title: 'Xamarin.Essentials: Die Version nachverfolgung'
-description: Die VersionTracking-Klasse in Xamarin.Essentials können Sie die Anwendungen-Version zu überprüfen und Buildnummern zusammen mit solchen zusätzliche Informationen angezeigt, als ob es sich um die erste ist Zeit die Anwendung, die jemals gestartet oder für die aktuelle Version erhalten Sie den vorherigen build Informationen und mehr.
+title: 'Xamarin.Essentials: Versionsnachverfolgung'
+description: Mit der Klasse „VersionTracking“ in Xamarin.Essentials können Sie die Anwendungsversion und Buildnummern überprüfen und weitere Informationen anzeigen. So können Sie z. B. feststellen, ob es sich um den allerersten Start der Anwendung oder der aktuellen Version handelt, die Nummer des vorherigen Builds abrufen usw.
 ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 81dc67fa5a4975f31d0fbf9f7219637596a827ce
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 1eae0bf7c21dd7efa7655633896bdb2897f9d782
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353658"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674859"
 ---
-# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: Die Version nachverfolgung
+# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: Versionsnachverfolgung
 
-![Vorabversionen von NuGet](~/media/shared/pre-release.png)
+![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
-Die **VersionTracking** Klasse können Sie die Anwendungen-Version zu überprüfen und Buildnummern zusammen mit solchen zusätzliche Informationen angezeigt, als ob es sich um die erste ist Zeit die Anwendung, die jemals gestartet oder für die aktuelle Version erhalten Sie die vorherige Erstellen Sie die Informationen und mehr.
+Mit der Klasse **VersionTracking** können Sie die Anwendungsversion und Buildnummern überprüfen und weitere Informationen anzeigen. So können Sie z. B. feststellen, ob es sich um den allerersten Start der Anwendung oder der aktuellen Version handelt, die Nummer des vorherigen Builds abrufen usw.
 
-## <a name="using-version-tracking"></a>Mithilfe der nachverfolgung der Version
+## <a name="get-started"></a>Erste Schritte
 
-Fügen Sie einen Verweis auf Xamarin.Essentials in Ihrer Klasse hinzu:
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-version-tracking"></a>Verwenden der Versionsnachverfolgung
+
+Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Bei der ersten Verwendung der **VersionTracking** Klasse, die nachverfolgung der aktuellen Version wird gestartet. Rufen Sie `Track` früher nur in Ihrer Anwendung jedes Mal, es geladen wird, um sicherzustellen, dass die Informationen zur aktuellen Version wird nachverfolgt:
+Bei der ersten Verwendung der Klasse **VersionTracking** wird die Nachverfolgung der aktuellen Version gestartet. Sie müssen früh und nur in Ihrer Anwendung bei jedem Laden `Track` aufrufen, um sicherzustellen, dass die Informationen zur aktuellen Version nachverfolgt werden:
 
 ```csharp
 VersionTracking.Track();
 ```
 
-Nach der Erstkonfiguration `Track` heißt Versionsinformationen gelesen werden kann:
+Nach dem ersten Aufrufen von `Track` können Versionsinformationen gelesen werden:
 
 ```csharp
 
@@ -70,11 +74,11 @@ var versionHistory = VersionTracking.VersionHistory;
 var buildHistory = VersionTracking.BuildHistory;
 ```
 
-## <a name="platform-implementation-specifics"></a>Implementierung von Plattformeigenschaften
+## <a name="platform-implementation-specifics"></a>Besonderheiten bei der plattformspezifischen Implementierung
 
-Alle Versionsinformationen wird gespeichert, mit der [Voreinstellungen](preferences.md) -API in Xamarin.Essentials und wird mit einem Dateinamen gespeichert **[YOUR-APP-Paket-ID].xamarinessentials.versiontracking** und folgt den gleichen Datenpersistenz beschrieben, die in der [Voreinstellungen](preferences.md#persistence) Dokumentation.
+Alle Versionsinformationen werden mithilfe der [Preferences](preferences.md)-API in Xamarin.Essentials mit einem Dateinamen in Form von **[IHRE-APP-PAKET-ID].xamarinessentials.versiontracking** gespeichert und unterliegen der gleichen Datenpersistenz, wie sie in der Dokumentation zu den [Einstellungen](preferences.md#persistence) beschrieben wird.
 
 ## <a name="api"></a>API
 
-- [Version-nachverfolgung-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
-- [Version Arbeitselementverfolgungs-API-Dokumentation](xref:Xamarin.Essentials.VersionTracking)
+- [VersionTracking-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
+- [VersionTracking-API-Dokumentation](xref:Xamarin.Essentials.VersionTracking)
