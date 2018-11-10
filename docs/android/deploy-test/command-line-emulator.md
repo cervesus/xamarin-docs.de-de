@@ -5,16 +5,15 @@ ms.assetid: E592AA32-5E83-B7E5-1753-12416551B23C
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 03/09/2018
-ms.openlocfilehash: 513b06749d1616e9fd10f04d22259810c0b4d265
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 11/05/2018
+ms.openlocfilehash: 995b0783604f752915daaa77a8362899ac61e174
+ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120722"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50983587"
 ---
 # <a name="command-line-emulator"></a>Befehlszeilenemulator
-
 
 ## <a name="running-the-android-emulator-from-the-command-line"></a>Ausführen des Android-Emulators über die Befehlszeile
 
@@ -36,4 +35,4 @@ Und so unter macOS:
 
 Damit der Emulator genügend Speicher für die Installation der Xamarin.Android-Plattform zur Verfügung stellen kann, ist die Partitionsgröße notwendig, da die Größe des Emulators in der Regel recht klein ausfällt.
 
-Weitere Informationen zu zusätzlichen Parametern finden Sie auf dieser Android-Website: [http://developer.android.com/guide/developing/tools/emulator.html](http://developer.android.com/guide/developing/tools/emulator.html)
+Weitere Informationen zu zusätzlichen Parametern finden Sie auf dieser Android-Website: [https://developer.android.com/studio/run/emulator-commandline](https://developer.android.com/studio/run/emulator-commandline)

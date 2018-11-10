@@ -9,10 +9,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
 ms.openlocfilehash: 80f37e1753362ec0503b70e49a2206684c0fedb5
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
+ms.lasthandoff: 11/08/2018
 ms.locfileid: "50675327"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Tipps zur Problembehandlung für Xamarin.iOS 
@@ -47,7 +47,7 @@ Möglicherweise verwenden Sie eine Codierung, die nicht standardmäßig hinzugef
 Das Element wurde wahrscheinlich durch den Linker entfernt, und daher nicht in der Assembly zur Laufzeit vorhanden.  Es gibt mehrere Lösungsansätze:
 
 -  Hinzufügen der [[Preserve]](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) -Attribut auf den Member.  Dadurch wird verhindert, dass den Linker entfernt.
--  Beim Aufrufen [Mtouch](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29) , verwenden Sie die **-Nolink**  oder  **-Linksdkonly**  Optionen. -     **-Nolink**   deaktiviert alle Verknüpfungen.
+-  Beim Aufrufen [Mtouch](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29) , verwenden Sie die **-Nolink**  oder  **-Linksdkonly**  Optionen.** -    -Nolink**   deaktiviert alle Verknüpfungen.
 -    **-Linksdkonly** wird nur an link Xamarin.iOS bereitgestellte Assemblys, wie z. B. *monotouch.dll* oder xamarin.ios.dll.
 
 Beachten Sie, dass die Assemblys verknüpft sind, sodass die resultierende ausführbare Datei kleiner ist. Daher kann das Deaktivieren von Verknüpfungen zu einer größeren ausführbaren Datei als erwünscht ist, führen.
