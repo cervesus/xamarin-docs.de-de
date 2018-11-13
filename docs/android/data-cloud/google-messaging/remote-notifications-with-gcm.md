@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/12/2018
-ms.openlocfilehash: e361444f2c717ff44e0771710836f156f90cfcb8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: be96683a2e63ed802169543dcee55a3431e42130
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118889"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528805"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Remotebenachrichtigungen mit Google Cloud Messaging
 
@@ -91,7 +91,7 @@ Eine Android-Anwendung müssen die folgenden Berechtigungen, die konfiguriert we
 -   `com.google.android.c2dm.permission.RECEIVE` &ndash; Gewährt die Berechtigung zum Registrieren und Empfangen von Nachrichten aus Google Cloud Messaging für die app. (Funktionsweise `c2dm` bedeuten? Dies steht für _Cloud-zu-Gerät-Messaging_, der jetzt veralteten Vorgänger GCM ist. 
     GCM verwendet weiterhin `c2dm` in vielen der Zeichenfolgen Berechtigung.) 
 
--   `android.permission.WAKE_LOCK` &ndash; (Optional) Verhindert, dass das Gerät CPU beim Empfang einer Nachricht in den Ruhezustand versetzt. 
+-   `android.permission.WAKE_LOCK` &ndash; (Optional) Verhindert, dass das Gerät CPU in den Standbymodus wechseln beim Empfang einer Nachricht. 
 
 -   `android.permission.INTERNET` &ndash; Gewährt Zugriff auf das Internet, damit die Client-app bei GCM kommunizieren kann. 
 
@@ -649,7 +649,7 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 Darüber hinaus sollten Sie feststellen, dass ein neues Benachrichtigungssymbol im Benachrichtigungsbereich angezeigt wurde: 
 
-[![Notiication-Symbol wird auf Gerät angezeigt.](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
+[![Symbol "Benachrichtigung" wird auf Gerät angezeigt.](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
 
 Beim Öffnen der Komponentenleiste Benachrichtigung, um Benachrichtigungen anzuzeigen, sehen Sie unsere remote-Benachrichtigung:
 
@@ -657,7 +657,7 @@ Beim Öffnen der Komponentenleiste Benachrichtigung, um Benachrichtigungen anzuz
 
 Herzlichen Glückwunsch! Ihre app hat seine erste remote-Benachrichtigung erhalten.
 
-Beachten Sie, dass es sich bei GCM nicht mehr empfangen werden sollen, wenn die app-Force-beendet wird. Um Benachrichtigungen nach der ein Force Hand fortzusetzen, muss die app Manuelles neu gestartet werden. Weitere Informationen zu dieser Android-Richtlinie finden Sie unter [Steuerelemente auf die beendete Anwendungen starten](https://developer.android.com/about/versions/android-3.1.html#launchcontrols) und [stack Overflow-Beitrag](http://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267). 
+Beachten Sie, dass es sich bei GCM nicht mehr empfangen werden sollen, wenn die app-Force-beendet wird. Um Benachrichtigungen nach der ein Force Hand fortzusetzen, muss die app manuell neu gestartet werden. Weitere Informationen zu dieser Android-Richtlinie finden Sie unter [Steuerelemente auf die beendete Anwendungen starten](https://developer.android.com/about/versions/android-3.1.html#launchcontrols) und [stack Overflow-Beitrag](http://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267). 
 
  
 ## <a name="summary"></a>Zusammenfassung

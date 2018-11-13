@@ -47,7 +47,7 @@ Untergeordnete Genres für Spiele (6014):
 |7018|Trivia|
 |7019|Word|
 
-Newstand (6021) untergeordnete Genres:
+Untergeordnete Genres für Neuigkeiten (6021):
 
 |Genre-ID|Name des Genres|
 |---|---|

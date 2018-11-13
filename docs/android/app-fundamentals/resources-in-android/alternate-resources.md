@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 0384d96ddc96f8d0b16a42f691305f26ea25881d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 16ef0d5a309281767f0fff27436dd5bec322169d
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108755"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527390"
 ---
 # <a name="alternate-resources"></a>Alternative Ressourcen
 
@@ -54,10 +54,10 @@ Die möglichen Qualifizierer sind zu Referenzzwecken im folgenden aufgeführt:
 
 - **Verfügbare Breite** &ndash; die minimale Breite des Bildschirms in der Format-w*N*dp, wobei *N* ist die Breite Dichte in geräteunabhängigen Pixeln.
   Dieser Wert kann sich ändern, wie der Benutzer das Gerät dreht. Ausführlicher behandelt [Erstellen von Ressourcen für unterschiedliche Bildschirme](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md). 
-  In in-API-Ebene 13 (Android 3.2) und höher verfügbar. Beispiel: die Qualifizierer w720dp dient, Geräte zu verwenden, die eine Breite von mindestens 720dp aufweisen.
+  In API-Ebene 13 (Android 3.2) und höher verfügbar. Beispiel: die Qualifizierer w720dp dient, Geräte zu verwenden, die eine Breite von mindestens 720dp aufweisen.
 
 - **Verfügbare Höhe** &ndash; die minimale Höhe des Bildschirms in der Format-h*N*dp, wobei *N* ist die Höhe in dp. Dieser Wert kann sich ändern, wie der Benutzer das Gerät dreht. Ausführlicher behandelt [Erstellen von Ressourcen für unterschiedliche Bildschirme](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md). 
-  In in-API-Ebene 13 (Android 3.2) und höher verfügbar. Beispielsweise wird der Qualifizierer h720dp verwendet, um Geräte zu verwenden, die eine von mindestens 720dp Höhe
+  In API-Ebene 13 (Android 3.2) und höher verfügbar. Beispielsweise wird der Qualifizierer h720dp verwendet, um Geräte zu verwenden, die eine von mindestens 720dp Höhe
 
 - **Bildschirmgröße** &ndash; dieser Qualifizierer ist eine Generalisierung der Größe des Bildschirms, die für diese Ressourcen sind. Es wird ausführlicher behandelt [Erstellen von Ressourcen für unterschiedliche Bildschirme](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md). 
   Mögliche Werte sind `small`, `normal`, `large` und `xlarge`. In API-Ebene 9 (Android 2.3 oder Android 2.3.1/Android 2.3.2) hinzugefügt

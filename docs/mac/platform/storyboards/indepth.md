@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 469ae19021ae524c302b8a9920aaa64bb4a681f4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 61d598f90747cf47b613012328f77b4bd8953a41
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117290"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528457"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>Arbeiten mit Storyboards in Xamarin.Mac
 
@@ -68,7 +68,7 @@ Mehrere neue Methoden hinzugefügt wurden die `NSViewController` Klasse, um Stor
 - `ViewDidDisappear` – Diese Methode wird direkt aufgerufen, nachdem die Ansicht vom Bildschirm entfernt wurde.
 - `UpdateViewConstraints` – Diese Methode wird aufgerufen, wenn die Einschränkungen, die eine Sicht definiert Layout Position und Größe müssen aktualisiert werden, automatisch.
 - `ViewWillLayout` – Diese Methode wird aufgerufen, kurz bevor die Unteransichten dieser Ansicht auf dem Bildschirm angeordnet werden.
-- `ViewDidLayout` – Diese Methode wird direkt aufgerufen, nachdem die Unteransichten der Ansicht "Ansicht" auf dem Bildschirm angeordnet werden.
+- `ViewDidLayout` – Diese Methode wird direkt aufgerufen, nachdem die Unteransichten der Ansicht auf dem Bildschirm angeordnet werden.
 
 <a name="The-Responder-Chain" />
 
@@ -150,7 +150,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 }
 ```
 
-Optional können Sie überschreiben die `ShouldPerfromSegue` -Methode und -Steuerelement, und zwar unabhängig davon, ob der Segue tatsächlich über ausgeführt C# Code. Rufen Sie für die manuell angegebene View-Controller, deren `DismissController` Methode, die sie aus der Anzeige zu entfernen, wenn sie nicht mehr benötigt werden.
+Optional können Sie überschreiben die `ShouldPerformSegue` -Methode und -Steuerelement, und zwar unabhängig davon, ob der Segue tatsächlich über ausgeführt C# Code. Rufen Sie für die manuell angegebene View-Controller, deren `DismissController` Methode, die sie aus der Anzeige zu entfernen, wenn sie nicht mehr benötigt werden.
 
 <a name="Creating-Custom-Segues" />
 
@@ -227,7 +227,7 @@ Fenster Controller enthalten und steuern die verschiedenen Fenster-Typen, die Ih
 2. Die `Storyboard` Eigenschaft enthält das Storyboard, das dem Controller im Fenster, andernfalls geladen wurde `null` Wenn nicht von einem Storyboard geladen.
 3. Rufen Sie die `DismissController` Methode, um das angegebene Fenster zu schließen und aus Ansicht entfernen.
 
-Wie die View-Controller, Fenster-Controller implementieren die `PerformSegue`, `PrepareForSegue` und `ShouldPerfromSegue` Methoden und kann als Quelle eines Segues-Vorgangs verwendet werden.
+Wie die View-Controller, Fenster-Controller implementieren die `PerformSegue`, `PrepareForSegue` und `ShouldPerformSegue` Methoden und kann als Quelle eines Segues-Vorgangs verwendet werden.
 
 Fenstercontroller sind verantwortlich für die folgenden Funktionen von einem MacOS-app:
 
@@ -259,7 +259,7 @@ Die folgenden Gesten Erkennungen sind in MacOS verfügbar:
 
 ## <a name="using-storyboard-references"></a>Verwenden von Storyboard-verweisen
 
-Ein Storyboard-Verweis können Sie einen großen, komplexen Storyboard-Entwurf und teilen sie in kleinere Storyboards, die von der ursprünglichen verwiesen zu erhalten, daher entfernen Entfernen von Komplexität und machen das resultierende einzelnen Storyboards einfacher Entwurf und verwalten.
+Ein Storyboard-Verweis können Sie einen großen, komplexen Storyboard-Entwurf und teilen sie in kleinere Storyboards, die aus der ursprünglichen referenziert erhalten daher entfernen die Komplexität und erleichtert die sich ergebende einzelne Storyboards zum Entwerfen und verwalten.
 
 Darüber hinaus bieten ein Storyboard-Verweis ein _Anker_ zu einem anderen Szene innerhalb des gleichen Storyboards oder eine bestimmte Szene auf einem anderen.
 

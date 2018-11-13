@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8514d3b2c423e524d03a800f5f56359f3aee4b75
-ms.sourcegitcommit: 650fd5813e243d67eea13c4bc76683c0f8134123
+ms.openlocfilehash: db312c4c102feb98791109af19185762bb25856e
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737192"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528844"
 ---
 # <a name="running-android-services-in-remote-processes"></a>Ausgeführten Android-Dienste in Remote-Prozesse
 
@@ -76,7 +76,7 @@ Ein Dienst, der in einem eigenen Prozess ausgeführt ist, im Grunde immer noch e
 
 1. `Exported` &ndash; Diese Eigenschaft muss festgelegt werden, um `true` auf andere Anwendungen mit dem Dienst interagieren können. Der Standardwert dieser Eigenschaft ist `false`.
 2. `Process` &ndash; Diese Eigenschaft muss festgelegt werden. Es wird verwendet, den Namen des Prozesses an, die der Dienst ausgeführt wird.
-3. `IsolatedProcess` &ndash; Diese Eigenschaft ermöglicht zusätzliche Sicherheit zu gewährleisten, dass Android zum Ausführen des Diensts in einen isolierten Sandkasten mit minimalen Berechtigungen für Iteract mit dem Rest des Systems. Finden Sie unter [Bugzilla 51940 - Diensten mit isolierten Prozesse und benutzerdefinierte Anwendungsklasse nicht korrekt aufzulösen, Überladungen](https://bugzilla.xamarin.com/show_bug.cgi?id=51940).
+3. `IsolatedProcess` &ndash; Diese Eigenschaft ermöglicht zusätzliche Sicherheit zu gewährleisten, dass Android zum Ausführen des Diensts in einen isolierten Sandkasten mit minimalen Berechtigungen für die Interaktion mit der Rest des Systems. Finden Sie unter [Bugzilla 51940 - Diensten mit isolierten Prozesse und benutzerdefinierte Anwendungsklasse nicht korrekt aufzulösen, Überladungen](https://bugzilla.xamarin.com/show_bug.cgi?id=51940).
 4. `Permission` &ndash; Es ist möglich, die Clientzugriff auf den Dienst zu steuern, indem Sie eine Berechtigung, die Clients müssen anfordern (und erteilt werden) angeben.
 
 Ausführung eines Diensts einem eigenen Prozess und die `Process` Eigenschaft für die `ServiceAttribute` muss auf den Namen des Diensts festgelegt werden. Für die Interaktion mit externen Anwendungen, die `Exported` Eigenschaft sollte festgelegt werden, um `true`. Wenn `Exported` ist `false`, und klicken Sie dann nur Clients in der gleichen APK (d. h. die gleiche Anwendung) und die Ausführung in demselben Prozess mit dem Dienst interagieren können.
@@ -129,7 +129,7 @@ Sobald die `ServiceAttribute` festgelegt wurde, muss der Dienst implementiert ei
 
 ### <a name="implementing-a-handler"></a>Implementieren eines Handlers
 
-Um Clientanforderungen zu verarbeiten, muss der Dienst implementieren eine `Handler` und überschreiben die `HandleMessage` MethodThis ist die Methode akzeptiert eine `Message` Instanz, die den Methodenaufruf vom Client kapselt, und übersetzt diesen Aufruf in eine Aktion oder Aufgabe, die vom Dienst durchgeführt werden. Die `Message` Objekt macht eine Eigenschaft namens `What` Dies ist ein ganzzahliger Wert, deren Bedeutung wird zwischen dem Client und der Dienst gemeinsam genutzt und bezieht sich auf eine Aufgabe, der Dienst für den Client ausführen.
+Um Clientanforderungen zu verarbeiten, muss der Dienst implementieren eine `Handler` und überschreiben die `HandleMessage` MethodThis ist die Methode akzeptiert eine `Message` -Instanz, die den Methodenaufruf vom Client kapselt und übersetzt diesen Aufruf in eine Aktion oder Aufgabe der Dienst ausgeführt. Die `Message` Objekt macht eine Eigenschaft namens `What` Dies ist ein ganzzahliger Wert, deren Bedeutung wird zwischen dem Client und der Dienst gemeinsam genutzt und bezieht sich auf eine Aufgabe, der Dienst für den Client ausführen.
 
 Der folgende Codeausschnitt aus der beispielanwendung zeigt ein Beispiel `HandleMessage`. In diesem Beispiel sind zwei Aktionen, die ein Client anfordern kann, von dem Dienst:
 
@@ -153,7 +153,7 @@ public class TimestampRequestHandler : Android.OS.Handler
                 break;
 
             case Constants.GET_UTC_TIMESTAMP:
-                // Call methods on the service to retrive a timestamp message.
+                // Call methods on the service to retrieve a timestamp message.
                 break;
             default:
                 Log.Warn(TAG, $"Unknown messageType, ignoring the value {messageType}.");
@@ -168,7 +168,7 @@ Es ist auch möglich, Paketparameter für den Dienst in der `Message`. Dies wird
 
 ### <a name="instantiating-the-messenger"></a>Instanziieren den Messenger
 
-Wie bereits erläutert wurde, deserialisiert der `Message` Objekt und das Aufrufen von `Handler.HandleMessage` ist die Möglichkeit, die Verantwortung des der `Messenger` Objekt. Die `Messenger` Klasse bietet auch eine `IBinder` Objekt, das vom Client zum Senden von Nachrichten an den Dienst verwendet wird.  
+Wie bereits erläutert wurde, deserialisiert der `Message` Objekt und das Aufrufen von `Handler.HandleMessage` ist dafür verantwortlich, die `Messenger` Objekt. Die `Messenger` Klasse bietet auch eine `IBinder` Objekt, das vom Client zum Senden von Nachrichten an den Dienst verwendet wird.  
 
 Wenn der Dienst gestartet wird, instanziiert er die `Messenger` , und fügen Sie der `Handler`. Ein guter Ausgangspunkt, diese Initialisierung auszuführen ist, auf die `OnCreate` -Methode des Diensts. Dieser Codeausschnitt ist ein Beispiel für einen Dienst, der eine eigene initialisiert `Handler` und `Messenger`:
 
@@ -296,7 +296,7 @@ catch (RemoteException ex)
 
 Es gibt mehrere verschiedene Formen von der `Message.Obtain` Methode. Im vorherigen Beispiel verwendet die [ `Message.Obtain(Handler h, Int32 what)` ](https://developer.xamarin.com/api/member/Android.OS.Message.Obtain/p/Android.OS.Handler/System.Int32/). Da dies eine asynchrone Anforderung an einen Out-of-Process-Dienst ist. Es werden keine Antwort vom Dienst, also die `Handler` nastaven NA hodnotu `null`. Der zweite Parameter, `Int32 what`, gespeichert werden soll die `.What` Eigenschaft der `Message` Objekt. Die `.What` Eigenschaft wird vom Code in der Dienstprozess zum Aufrufen von Methoden für den Dienst verwendet.
 
-Die `Message` Klasse stellt außerdem zwei zusätzliche Eigenschaften, die von verwenden, um die Recipient möglicherweise zur Verfügung: `Arg1` und `Arg2`. Diese beiden Eigenschaften sind ganzzahlige Werte, die einige spezielle möglicherweise vereinbarten Werte, die Bedeutung zwischen dem Client und dem Dienst haben. Z. B. `Arg1` kann eine Kunden-ID enthalten und `Arg2` möglicherweise eine Bestellnummer für diesen Kunden enthalten. Die [ `Method.Obtain(Handler h, Int32 what, Int32 arg1, Int32 arg2)` ](https://developer.xamarin.com/api/member/Android.OS.Message.Obtain/p/Android.OS.Handler/System.Int32/System.Int32/System.Int32/) können verwendet werden, um die beiden Eigenschaften festgelegt bei der `Message` erstellt wird. Eine weitere Möglichkeit zum Auffüllen dieser beiden Werte festgelegt ist die `.Arg` und `.Arg2` Eigenschaften, die direkt auf die `Message` Objekt, nachdem es erstellt wurde.
+Die `Message` Klasse stellt außerdem zwei zusätzliche Eigenschaften, die an den Empfänger sein können: `Arg1` und `Arg2`. Diese beiden Eigenschaften sind ganzzahlige Werte, die einige spezielle möglicherweise vereinbarten Werte, die Bedeutung zwischen dem Client und dem Dienst haben. Z. B. `Arg1` kann eine Kunden-ID enthalten und `Arg2` möglicherweise eine Bestellnummer für diesen Kunden enthalten. Die [ `Method.Obtain(Handler h, Int32 what, Int32 arg1, Int32 arg2)` ](https://developer.xamarin.com/api/member/Android.OS.Message.Obtain/p/Android.OS.Handler/System.Int32/System.Int32/System.Int32/) können verwendet werden, um die beiden Eigenschaften festgelegt bei der `Message` erstellt wird. Eine weitere Möglichkeit zum Auffüllen dieser beiden Werte festgelegt ist die `.Arg` und `.Arg2` Eigenschaften, die direkt auf die `Message` Objekt, nachdem es erstellt wurde.
 
 ### <a name="passing-additional-values-to-the-service"></a>Zusätzliche Werte übergeben, mit dem Dienst
 

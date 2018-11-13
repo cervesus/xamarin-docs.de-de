@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 80f37e1753362ec0503b70e49a2206684c0fedb5
-ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
+ms.openlocfilehash: 4d887d5a57aa3a632bd2f6795052c5b38f66a75a
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "50675327"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527169"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Tipps zur Problembehandlung für Xamarin.iOS 
 
@@ -187,7 +187,7 @@ Es bedeutet, dass Sie eine statische Bibliothek mit Thumb-Code kompiliert werden
 
 ## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1getcount-"></a>System.ExecutionEngineException: Versuch der JIT-Kompilierung kompilieren (Wrapper verwaltet zu verwaltet)-Methode Foo[]:System.Collections.Generic.ICollection'1.get_Count)
 
-Das []-Suffix gibt an, dass Sie oder der Klassenbibliothek sind Aufrufen einer Methode für ein Array über eine generische Auflistung, z. B. "IEnumerable" <>, ICollection <> oder IList <>. Dieses Problem zu umgehen können Sie explizit erzwingen des AOT-Compilers, um eine solche Methode durch Aufrufen der Methode selbst enthalten, und sicherstellen, dass dieser Code ausgeführt wird, bevor der Aufruf, der die Ausnahme ausgelöst hat. In diesem Fall könnten Sie Folgendes schreiben:
+Das []-Suffix gibt an, dass Sie oder der Klassenbibliothek sind Aufrufen einer Methode für ein Array über eine generische Auflistung, z. B. "IEnumerable" <>, ICollection <> oder IList <>. Dieses Problem zu umgehen können Sie explizit erzwingen, dass des AOT-Compilers eine solche Methode durch Aufrufen der Methode selbst einschließen, und sicherstellen, dass dieser Code ausgeführt wird, bevor der Aufruf, der die Ausnahme ausgelöst hat. In diesem Fall könnten Sie Folgendes schreiben:
 
 ```csharp
 Foo [] array = null;
@@ -354,11 +354,11 @@ Um dieses Problem zu beheben, müssen Sie einen Verweis auf "ActionSheet" außer
 
 ## <a name="project-always-runs-in-the-ipad-simulator"></a>Projekt immer wird in der iPad-Simulator
 
-Der iPhone SDK 4.0 Installer installiert 2 SDKs – das 3.2 SDK zum Erstellen von nur-iPad-apps, und das 4.0-SDK zum Einrichten iPhone und Universal-apps. Außerdem werden ein 3.2-Simulator, der nur auf einem iPad simuliert, und ein 4.0 Simulator, der simuliert, iPhone oder iPhone 4 installiert. Alle älteren SDKs und-Simulatoren werden entfernt.
+Das iPhone SDK 4.0-Installationsprogramm installiert, 2 SDKs – das 3.2 SDK zum Erstellen von nur-iPad-apps, und das 4.0-SDK zum Erstellen von iPhone und universelle apps verwendet wird. Außerdem werden ein 3.2-Simulator, der nur auf einem iPad simuliert, und ein 4.0 Simulator, der simuliert, iPhone oder iPhone 4 installiert. Alle älteren SDKs und-Simulatoren werden entfernt.
 
 Visual Studio für Mac Build iPhone Projektoptionen enthalten eine Einstellung für die SDK-Version, die verwendet werden, bei der Erstellung Ihrer app. Mit dieser Einstellung finden Sie in **Build-Projektoptionen > -> iPhone Build**.
 
-Neue Projekte in Visual Studio für Mac das älteste installierte SDK als die Standardeinstellung für das SDK verwenden, und wenn das angegebene SDK nicht vorhanden ist, Visual Studio für Mac verwendet am ehesten zum Erstellen der app gefunden werden kann. Dies wurde erreicht, sodass Projekte nicht immer das neueste SDK-Requre würde. Dies führt jedoch zu derzeit die 3.2 SDK wird verwendet: was dazu führt, in der iPad-Simulator verwendet wird.
+Neue Projekte in Visual Studio für Mac das älteste installierte SDK als die Standardeinstellung für das SDK verwenden, und wenn das angegebene SDK nicht vorhanden ist, Visual Studio für Mac verwendet am ehesten zum Erstellen der app gefunden werden kann. Dies wurde erreicht, sodass Projekte nicht immer das neueste SDK erfordern würde. Dies führt jedoch zu derzeit die 3.2 SDK wird verwendet: was dazu führt, in der iPad-Simulator verwendet wird.
 
 Zum Beheben dieses Problems mithilfe des SDK 4.0, wechseln Sie zu **Build-Projektoptionen > -> iPhone Build**>, und ändern Sie den SDK-Wert, den Wert "4.0" im Dropdownfeld. Sie müssen dies für jede Konfiguration und plattformkombination, die mithilfe der Dropdownlisten am Anfang des Bereichs zugegriffen.
 

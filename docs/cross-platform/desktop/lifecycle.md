@@ -5,12 +5,12 @@ description: In diesem Dokument werden die ähnlichkeiten und Unterschiede zwisc
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: cf25cf956fbf9fd566520d9067f0d98a9a7624aa
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 653e2f849a74948d3636f594eae91cdeabfae138
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107115"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526792"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF im Vergleich zu. Xamarin.Forms-App-Lebenszyklus
 
@@ -53,7 +53,7 @@ Es ist technisch möglich, die in zwei separaten Plattform Ansichten gerendert w
 
 ### <a name="views"></a>Ansichten
 
-Die visuelle Hierarchie für beide Frameworks ist ähnlich. WPF ist ein wenig vertieft, aufgrund dessen-Unterstützung für die WYSIWYG-Dokumente.
+Der visuelle Hierarchie für beide Frameworks ist ähnlich. WPF ist ein wenig vertieft aufgrund der Unterstützung für die WYSIWYG-Dokumente.
 
 **WPF**
 
@@ -83,7 +83,7 @@ Xamarin.Forms ist in erster Linie für mobile Szenarien ausgerichtet. Anwendunge
 |--- |--- |--- |
 |Erste Aktivierung|"ctor" + Window.OnLoaded|"ctor" + Page.OnStart|
 |Angezeigt|Window.IsVisibleChanged|Page.Appearing|
-|Hidden|Window.IsVisibleChanged|Page.Disapearing|
+|Hidden|Window.IsVisibleChanged|Page.Disappearing|
 |Anhalten/Verlust-Fokus|Window.OnDeactivated|Page.OnSleep|
 |Aktiviert/erhalten konzentrieren|Window.OnActivated|Page.OnResume|
 |Geschlossen|Window.OnClosing + Window.OnClosed|n/v|
@@ -179,11 +179,11 @@ Wenn Sie keine definieren die `ResourceDictionary`, wird ein Laufzeitfehler gene
 
 ## <a name="styles"></a>Stile
 
-Stile werden in Xamarin.Forms auch vollständig unterstützt und kann zum Design der Xamarin.Forms-Elemente, aus denen die Benutzeroberfläche besteht. Sie unterstützen die Vererbung (Eigenschaft, Ereignis und Daten), Trigger, über `BasedOn`, und Suchvorgänge für Werte. Stile auf Elemente angewendet werden entweder explizit durch die `Style` Eigenschaft oder implizit durch ein Ressourcenschlüssel – genau wie WPF keine Angabe.
+Stile werden in Xamarin.Forms auch vollständig unterstützt und kann zum Design der Xamarin.Forms-Elemente, aus denen die Benutzeroberfläche besteht. Sie unterstützen die Vererbung (Eigenschaft, Ereignis und Daten), Trigger, über `BasedOn`, und Suchvorgänge für Werte. Stile werden auf Elemente angewendet, entweder explizit durch die `Style` -Eigenschaft oder implizit über keine Angabe einen Ressourcenschlüssel – genau wie WPF.
 
 ### <a name="device-styles"></a>Gerätestile
 
-WPF enthält eine Reihe von vordefinierten Eigenschaften (gespeichert als statische Werte, die auf einem Satz von statischen Klassen wie z. B. `SystemColors`) das Diktieren ordnen Farben, Schriftarten und Metriken in Form von Werten und Ressourcenschlüssel. Xamarin.Forms ist ähnlich, aber definiert einen Satz von [Gerätestile](~/xamarin-forms/user-interface/styles/device.md) dieselben Dinge darstellen. Diese Formatvorlagen sind durch das Framework bereitgestellt und auf Werte, die basierend auf der Common Language Runtime-Umgebung (z. B. "Eingabehilfen") festgelegt sind.
+WPF enthält eine Reihe von vordefinierten Eigenschaften (gespeichert als statische Werte, die auf einem Satz von statischen Klassen wie z. B. `SystemColors`) das Diktieren Systemfarben, Schriftarten und Metriken in Form von Werten und Ressourcenschlüssel. Xamarin.Forms ist ähnlich, aber definiert einen Satz von [Gerätestile](~/xamarin-forms/user-interface/styles/device.md) dieselben Dinge darstellen. Diese Formatvorlagen sind vom Framework bereitgestellt und auf Werte, die basierend auf der Common Language Runtime-Umgebung (z. B. "Eingabehilfen") festgelegt sind.
 
 **WPF**
 

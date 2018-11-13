@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 2d129c72366224cedca26df6fa1499f65d04e92d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ec907e71074a97bd5d1714e79dd504013f5c8a4b
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106974"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526974"
 ---
 # <a name="windows-in-xamarinmac"></a>Windows in Xamarin.Mac
 
 _In diesem Artikel wird das Arbeiten mit Fenstern und Bereichen in einer Xamarin.Mac-Anwendung behandelt. Erstellen von Windows und Bereiche in Xcode und Interface Builder, die sie von Storyboards und XIB-Dateien geladen und Programmgesteuertes Arbeiten mit ihnen beschrieben._
 
-Bei der Arbeit mit c# und .NET in einer Xamarin.Mac-Anwendung, Sie haben Zugriff auf die gleiche Windows und Panel-Elemente, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und Verwaltung Ihrer Windows und Bereiche (oder erstellen sie optional direkt in c#-Code).
+Bei der Arbeit mit C# und .NET in einer Xamarin.Mac-Anwendung, Sie haben Zugriff auf die gleiche Windows, und die Panel-Elemente, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und Verwaltung Ihrer Windows und Bereiche (oder erstellen sie optional direkt in c#-Code).
 
 Basierend auf ihren Zweck, kann eine Xamarin.Mac-Anwendung stellen ein oder mehrere Windows auf dem Bildschirm zum Verwalten und koordinieren die Informationen wird angezeigt, und arbeitet mit. Die Hauptfunktionen eines Fensters sind:
 
@@ -284,7 +284,7 @@ Zum Beispiel:
 MyWindow.PerformClose(this);
 ```
 
-Würde versuchen, schließen Sie die `MyWindow` `NSWindow` Instanz. Wenn der Vorgang erfolgreich abgeschlossen wurde, wird das Fenster geschlossen werden, andernfalls akustisches Signal ausgegeben, und wird bleibt geöffnet.
+Würde versuchen, schließen Sie die `MyWindow` `NSWindow` Instanz. Wenn der Vorgang erfolgreich abgeschlossen wurde, wird das Fenster geschlossen werden, andernfalls wird die akustisches Signal ausgegeben werden, sodass die geöffnet bleibt.
 
 <a name="Close" />
 
@@ -377,7 +377,7 @@ namespace SourceWriter
                 alert.AddButton ("Cancel");
                 var result = alert.RunSheetModal (Window);
 
-                // Take action based on resu;t
+                // Take action based on result
                 switch (result) {
                 case 1000:
                     // Grab controller
@@ -751,14 +751,14 @@ In der **Attributinspektor**, Sie haben die folgenden Optionen, die bestimmten B
 
 Um einen neuen Bereich hinzuzufügen, führen Sie folgende Schritte aus:
 
-1. In der **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen** > **neue Datei...** .
+1. In der **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen** > **neue Datei..** .
 2. Wählen Sie in das Dialogfeld "neue Datei" **Xamarin.Mac** > **Cocoa-Fenster mit Controller**:
 
     [![](window-images/panels00.png "Hinzufügen eines neuen Fensters-Controllers")](window-images/panels00.png#lightbox)
 3. Geben Sie für den **Namen** `DocumentPanel` ein, und klicken Sie auf **Neu**.
 4. Doppelklicken Sie auf die `DocumentPanel.xib` Datei, die sie zur Bearbeitung in Interface Builder zu öffnen: 
 
-    [![](window-images/new02.png "Bearbeiten die pannel")](window-images/new02.png#lightbox)
+    [![](window-images/new02.png "Bearbeiten den Zugriffsbereich")](window-images/new02.png#lightbox)
 5. Löschen Sie das vorhandene Fenster, und ziehen Sie ein Panel aus dem **Bibliotheksinspektor** in die **Schnittstellen-Editor**: 
 
     [![](window-images/panels01.png "Löschen von vorhandenen Fenster")](window-images/panels01.png#lightbox)

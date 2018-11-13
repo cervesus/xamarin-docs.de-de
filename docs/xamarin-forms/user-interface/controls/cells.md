@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 3b69aaf0a10468a5950e0ccf5a61ab6ecbbc110f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 34e28d8532c232549c6f45e549787885a9155684
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995919"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526857"
 ---
 # <a name="xamarinforms-cells"></a>Xamarin.Forms-Zellen
 
@@ -46,7 +46,7 @@ Xamarin.Forms unterstützt die folgenden Zellentypen:
 
 |     |     |
 | --- | --- |
-| Die [ `SwitchCell` ](xref:Xamarin.Forms.SwitchCell) enthält Text, legen Sie mit der [ `Text`"](xref:Xamarin.Forms.SwitchCell.Text) Eigenschaft und und in/aus-Schalter, die anfänglich mit dem booleschen festgelegt [ `On` ](xref:Xamarin.Forms.SwitchCell.On) Eigenschaft. Behandeln der [ `OnChanged` ](xref:Xamarin.Forms.SwitchCell.OnChanged) Ereignis, wann die `On` eigenschaftenänderungen.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.SwitchCell) / [Handbuch](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![Beispiel für SwitchCell](cells-images/SwitchCell.png "SwitchCell Beispiel")](cells-images/SwitchCell-Large.png#lightbox "SwitchCell-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
+| Die [ `SwitchCell` ](xref:Xamarin.Forms.SwitchCell) enthält Text, legen Sie mit der [ `Text`"](xref:Xamarin.Forms.SwitchCell.Text) Eigenschaft und ein/aus-Schalter, die anfänglich mit dem booleschen festgelegt [ `On` ](xref:Xamarin.Forms.SwitchCell.On) Eigenschaft. Behandeln der [ `OnChanged` ](xref:Xamarin.Forms.SwitchCell.OnChanged) Ereignis, wann die `On` eigenschaftenänderungen.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.SwitchCell) / [Handbuch](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![Beispiel für SwitchCell](cells-images/SwitchCell.png "SwitchCell Beispiel")](cells-images/SwitchCell-Large.png#lightbox "SwitchCell-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
 |     |     |
 
 ### <a name="entrycell"></a>EntryCell

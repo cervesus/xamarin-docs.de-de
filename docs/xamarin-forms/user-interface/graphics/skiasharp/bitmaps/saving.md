@@ -7,12 +7,12 @@ ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 7f34bd5bbab4accaa30c22266dacd30692bf9ccc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 876594440c28fb0f30e0438f2ef02ae7fe89040c
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107572"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526506"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>Speichern von SkiaSharp-Bitmaps in Dateien
 
@@ -54,13 +54,13 @@ public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality
 
 Diese Methode wird in Kürze ausführlicher beschrieben. Die codierten Bitmaps wird in einen nicht schreibgeschützten Stream geschrieben. (In der 'W' `SKWStream` steht für "beschreibbar".) Das zweite und dritte Argument angeben, das Dateiformat und (für verlustbehafteten Formaten) die gewünschte Qualität, die im Bereich von 0 bis 100.
 
-Darüber hinaus die [ `SKImage` ](xref:SkiaSharp.SKImage) und [ `SKPixmap` ](xref:SkiaSharp.SKPixmap) Klassen auch definieren `Encode` Methoden, die etwas flexibler sind, und die durch das Verlagen. Können Sie problemlos erstellen eine `SKImage` -Objekt aus einer `SKBitmap` mithilfe der statischen [ `SKImage.FromBitmap` ](xref:SkiaSharp.SKImage.FromBitmap(SkiaSharp.SKBitmap)) Methode. Sie erhalten eine `SKPixmap` -Objekt aus einer `SKBitmp` -Objekt unter Verwendung der [ `PeekPixels` ](xref:SkiaSharp.SKBitmap.PeekPixels) Methode.
+Darüber hinaus die [ `SKImage` ](xref:SkiaSharp.SKImage) und [ `SKPixmap` ](xref:SkiaSharp.SKPixmap) Klassen auch definieren `Encode` Methoden, die etwas flexibler sind, und die durch das Verlagen. Können Sie problemlos erstellen eine `SKImage` -Objekt aus einer `SKBitmap` mithilfe der statischen [ `SKImage.FromBitmap` ](xref:SkiaSharp.SKImage.FromBitmap(SkiaSharp.SKBitmap)) Methode. Sie erhalten eine `SKPixmap` -Objekt aus einer `SKBitmap` -Objekt unter Verwendung der [ `PeekPixels` ](xref:SkiaSharp.SKBitmap.PeekPixels) Methode.
 
 Eines der [ `Encode` ](xref:SkiaSharp.SKImage.Encode) definierten Methoden `SKImage` weist keine Parameter auf und speichert automatisch in ein PNG-Format. Diese parameterlosen Methode ist sehr einfach zu verwenden.
 
 ## <a name="platform-specific-code-for-saving-bitmap-files"></a>Plattformspezifischen Code zum Speichern von Bitmap-Dateien
 
-Sie codieren, wenn ein `SKBitmap` -Objekt in eine bestimmte Datei zu formatieren, in der Regel mit einem Stream-Objekt irgendeiner Art oder ein Array von Daten bleiben. Einige der `Encode` Methoden (einschließlich der App, die keine Parameter definiert, indem `SKImage`) zurückgeben eine [ `SKData` ](xref:SkiaSharp.SKData) -Objekt, das in ein Array von Bytes, die mit konvertiert werden kann die [ `ToArray` ](xref:SkiaSharp.SKData.ToArray) Methode. Diese Daten müssen dann in einer Datei gespeichert werden. 
+Wenn Sie Codieren einer `SKBitmap` -Objekt in eine bestimmte Datei zu formatieren, in der Regel werden Sie mit irgend einem Stream-Objekt oder ein Array von Daten ausgelassen werden. Einige der `Encode` Methoden (einschließlich der App, die keine Parameter definiert, indem `SKImage`) zurückgeben eine [ `SKData` ](xref:SkiaSharp.SKData) -Objekt, das in ein Array von Bytes, die mit konvertiert werden kann die [ `ToArray` ](xref:SkiaSharp.SKData.ToArray) Methode. Diese Daten müssen dann in einer Datei gespeichert werden. 
 
 Speichern in einer Datei im lokalen Anwendungsspeicher ist recht einfach, da es sich bei Verwendung von Standard `System.IO` Klassen und Methoden für diese Aufgabe. Dieses Verfahren wird veranschaulicht, in diesem Artikel [ **Animieren von SkiaSharp-Bitmaps** ](animating.md#bitmap-animation) in Verbindung mit einer Reihe von Bitmaps aus der Mandelbrot-Menge animieren.
 
@@ -453,7 +453,7 @@ Die Bitmap, die die **Dateiformate speichern** Seite speichert ist 600-Pixel im 
 
 |Format|Qualität|Größe|
 |------|------:|---:|
-| PNG | N/V | 492K |
+| PNG | Nicht zutreffend | 492K |
 | JPEG | 0 | 2,95 K |
 |      | 50 | 22.1 K |
 |      | 100 | 206K |

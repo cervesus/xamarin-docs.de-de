@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
 ms.technology: xamarin-forms
 ms.custom: xamu-video
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 49a0d1dd67959c5949ebe500036b849180795660
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 44d75322f151850b11e4da90486168c04496eca7
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108742"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51564017"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Die Xamarin.Forms-FlexLayout
 
@@ -385,7 +385,7 @@ In jedem der drei `FlexLayout` anzeigt, ein Leerzeichen `Label` vorangestellt is
 ## <a name="the-bindable-properties-in-detail"></a>Die bindbare Eigenschaften im detail
 
 Nun, da Sie einige allgemeine Anwendungen gesehen haben `FlexLayout`, die Eigenschaften des `FlexLayout` ausführlicher besprochen werden können. 
-`FlexLayout` definiert die sechs bindbare Eigenschaften, die Sie festlegen, auf die `FlexLayout` selbst im Code oder XAML, Steuerelement Orientatin und Ausrichtung. (Eine dieser Eigenschaften, [ `Position` ](xref:Xamarin.Forms.FlexLayout.Position), wird in diesem Artikel nicht behandelt.)
+`FlexLayout` definiert die sechs bindbare Eigenschaften, die Sie festlegen, auf die `FlexLayout` selbst im Code oder XAML, steuerelementausrichtung und Ausrichtung. (Eine dieser Eigenschaften, [ `Position` ](xref:Xamarin.Forms.FlexLayout.Position), wird in diesem Artikel nicht behandelt.)
 
 Sie können experimentieren mit den fünf verbleibenden bindbare Eigenschaften, die mit der **experimentieren** auf der Seite die **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** Beispiel. Auf dieser Seite können Sie zum Hinzufügen oder entfernen die untergeordneten Elemente von einem `FlexLayout` und Kombinationen aus den fünf bindbaren Eigenschaften festlegen. Alle untergeordneten Elemente der `FlexLayout` sind `Label` Ansichten verschiedener Farben und Größen, mit der `Text` -Eigenschaft auf eine Zahl entsprechend seiner Position in der `Children` Auflistung.
 
@@ -584,7 +584,7 @@ Der iOS-Screenshot auf der linken Seite zeigt die beiden `Label` Elemente wird H
 
 Die [ `Grow` ](xref:Xamarin.Forms.FlexLayout.GrowProperty) angefügte bindbare Eigenschaft weist den Typ `int`. Der Standardwert ist 0, und der Wert muss größer als oder gleich 0 sein.
 
-Die `Grow` Eigenschaft spielt eine Rolle aus, wenn die `Wrap` -Eigenschaftensatz auf `NoWrap` und die Zeile der untergeordneten Elemente verfügt über eine gesamte Breite kleiner als die Breite des der `FlexLayout`, oder die Spalte der untergeordneten Elemente hat eine kürzere Höhe als die `FlexLayout`. Die `Grow` Eigenschaft gibt an, wie die übrig gebliebenen Platz auf die die untergeordneten Elemente verteilen.
+Die `Grow` Eigenschaft spielt eine Rolle bei der `Wrap` -Eigenschaftensatz auf `NoWrap` und die Zeile der untergeordneten Elemente verfügt über eine gesamte Breite kleiner als die Breite des der `FlexLayout`, oder die Spalte der untergeordneten Elemente hat eine kürzere Höhe als die `FlexLayout`. Die `Grow` Eigenschaft gibt an, wie die übrig gebliebenen Platz auf die die untergeordneten Elemente verteilen.
 
 In der **wachsen Experiment** Seite fünf `Label` Elemente unterschiedlichen Farben werden in einer Spalte, und zwei angeordnet `Slider` Elemente können Sie anpassen, die `Grow` Eigenschaft des zweiten und vierten `Label`. Der iOS-Screenshot ganz links zeigt die standardmäßige `Grow` Eigenschaften von 0:
 

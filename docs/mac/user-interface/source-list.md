@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 7fa6b128572490ce1fe330b722181e33bbad1ffd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 82e4dfb9add7002fd7d3568d0ec946ea38dfd530
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122048"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526396"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Quelllisten in Xamarin.Mac
 
 _Dieser Artikel behandelt die Arbeit mit Quelllisten in einer Xamarin.Mac-Anwendung. Es wird beschrieben, erstellen und verwalten Quelllisten in Xcode und Interface Builder in C#-Code mit ihnen interagieren._
 
-Bei der Arbeit mit c# und .NET in einer Xamarin.Mac-Anwendung haben Sie Zugriff auf die gleiche Datenquelle aufgeführt sind, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und Verwalten Ihrer Quelllisten (oder erstellen sie optional direkt in c#-Code).
+Bei der Arbeit mit C# und .NET in einer Xamarin.Mac-Anwendung, Sie haben Zugriff auf die gleiche Quelle aufgeführt werden, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und Verwalten Ihrer Quelllisten (oder erstellen sie optional direkt in c#-Code).
 
 Eine Liste der Quelle ist eine besondere Art von Gliederungsansicht verwendet, um die Quelle der Aktion, wie die Seitenleiste in Finder oder iTunes anzuzeigen.
 

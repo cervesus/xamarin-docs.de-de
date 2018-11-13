@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 4eb4a97a346f3906c925dc9e324ed9378af0b560
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3cce3270b9df2aad0037b1ab96f169cc4b564766
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116171"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528129"
 ---
 # <a name="accessibility-on-android"></a>Eingabehilfen unter Android
 
@@ -74,7 +74,7 @@ Um eine Bezeichnung mit einem Eingabe-Steuerelement zuzuordnen, verwenden die `L
 
 **C#**
 
-In C#legen die `LabelFor` Eigenschaft, um die Ressourcen-ID des Steuerelements dieser diesem Inhalt beschreibt (in der Regel diese Eigenschaft wird auf eine Bezeichnung festgelegt und verweist auf einige andere Eingabesteuerelement):
+In C#legen die `LabelFor` Eigenschaft, um die Ressourcen-ID des Steuerelements, das diesen Inhalt beschreibt (in der Regel diese Eigenschaft wird auf eine Bezeichnung festgelegt und verweist auf einige andere Eingabesteuerelement):
 
 ```csharp
 EditText edit = FindViewById<EditText> (Resource.Id.editFirstName);

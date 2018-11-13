@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 9f5bdc9a79c514f0310d29b3d054fb7e9659d669
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.openlocfilehash: 150d5a35a2ccae63a1ff9969f5751b0e93c12454
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123790"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527000"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Standardsteuerelemente in Xamarin.Mac
 
 _In diesem Artikel wird beschrieben, wie mit den standardmäßigen AppKit-Steuerelementen wie Schaltflächen, Bezeichnungen, Textfelder, Kontrollkästchen und segmentierte Steuerelemente in einer Xamarin.Mac-Anwendung. Hinzufügen zu einer Benutzeroberfläche mit Interface Builder und mit ihnen interagieren, im Code beschrieben._
 
-Bei der Arbeit mit c# und .NET in einer Xamarin.Mac-Anwendung haben Sie Zugriff auf die gleichen AppKit steuert, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und verwalten Ihre Appkit-Steuerelementen (oder erstellen sie optional direkt in c#-Code).
+Bei der Arbeit mit C# und .NET in einer Xamarin.Mac-Anwendung, Sie haben Zugriff auf die gleiche AppKit steuert, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und verwalten Ihre Appkit-Steuerelementen (oder erstellen sie optional direkt in c#-Code).
 
 AppKit-Steuerelementen, sind die Elemente der Benutzeroberfläche, die verwendet werden, um die Benutzeroberfläche der Xamarin.Mac-Anwendung zu erstellen. Sie bestehen aus Elementen, z. B. Schaltflächen, Bezeichnungen, Textfelder, Kontrollkästchen und segmentierte Steuerelemente und sofortige Aktionen oder direkten Ergebnisse verursachen, wenn ein Benutzer, die sie bearbeitet haben.
 

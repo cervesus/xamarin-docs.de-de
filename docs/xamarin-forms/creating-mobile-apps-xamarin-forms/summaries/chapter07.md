@@ -4,15 +4,15 @@ description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung der 
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: d04012d5d2ea6a7617d5c7559aa3e1532dad15d1
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 1dc4fe12d3ca23a9ca87c3be7819c970683db469
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156911"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563497"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>Zusammenfassung der Kapitel 7. XAML und code
 
@@ -82,5 +82,5 @@ Die [ **TextVariations** ](https://github.com/xamarin/xamarin-forms-book-samples
 
 - [Kapitel 7 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf)
 - [Kapitel 7-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
-- [Kapitel 7 F#-Beispiel](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
+- [Kapitel 7 F# Beispiel](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
 - [XAML-Grundlagen](~/xamarin-forms/xaml/xaml-basics/index.md)

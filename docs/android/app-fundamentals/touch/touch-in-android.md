@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 9a6f7f5c82808b6430ba1aa6178a543945ae2634
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a25a1c3be8c952536c0ef40b7f7c4a64f5748516
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104907"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527234"
 ---
 # <a name="touch-in-android"></a>Toucheingabe in Android
 
@@ -80,7 +80,7 @@ Diese Schnittstelle bietet sechs Methoden für die verschiedenen Gesten:
 -  *OnSingleTapUp* -wird aufgerufen, wenn es sich bei einem einzigen fingertipp auftritt.
 
 
-In vielen Fällen können Anwendungen nur eine Teilmenge der Bewegungen interessiert sein. In diesem Fall sollten Anwendungen erweitern Sie die Klasse GestureDetector.SimpleOnGestureListener und überschreiben Sie die Methoden, die die Ereignisse entsprechen, die sie interessiert sind.
+In vielen Fällen können Anwendungen nur eine Teilmenge der Bewegungen interessiert sein. In diesem Fall sollten Anwendungen erweitern Sie die Klasse GestureDetector.SimpleOnGestureListener und überschreiben Sie die Methoden, die die Ereignisse zu entsprechen, denen sie interessiert sind.
 
 ## <a name="custom-gestures"></a>Benutzerdefinierten Stiftbewegungen
 
@@ -134,7 +134,7 @@ Der folgende XML-Ausschnitt zeigt, wie eine GestureOverlayView deklarativ hinzug
     android:layout_height="match_parent" />
 ```
 
-Die `GestureOverlayView` verfügt über mehrere Ereignisse, die im Rahmen des Zeichnen einer Geste ausgelöst wird. Das Ereignis am interessantesten ist `GesturePeformed`. Dieses Ereignis wird ausgelöst, wenn der Benutzer zeichnen ihre Aktion abgeschlossen wurde.
+Die `GestureOverlayView` verfügt über mehrere Ereignisse, die im Rahmen des Zeichnen einer Geste ausgelöst wird. Das Ereignis am interessantesten ist `GesturePerformed`. Dieses Ereignis wird ausgelöst, wenn der Benutzer zeichnen ihre Aktion abgeschlossen wurde.
 
 Wenn dieses Ereignis ausgelöst wird, fordert die Aktivität ein `GestureLibrary` testen und die Aktion, die der Benutzer mit einem Gesten erstellt durch Bewegung Tool entsprechen. `GestureLibrary` Gibt eine Liste von Vorhersage-Objekten zurück.
 

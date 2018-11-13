@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: a008b270d4ff670a03f18318186ca038c5c0348d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 881b465643b576f5d3f4fc8121c5a873087a876c
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118876"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527331"
 ---
 # <a name="device-orientation"></a>Geräteausrichtung
 
@@ -96,7 +96,7 @@ Xamarin.Forms bietet keine native Ereignisse für die Benachrichtigung von Ihrer
 > [!NOTE]
 > Es ist ein vorhandener, kostenlose NuGet-Paket für den Empfang von Benachrichtigungen über Änderungen der bildschirmausrichtung in freigegebenem Code. Finden Sie unter den [GitHub-Repository](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) für Weitere Informationen.
 
-Alternativ ist es möglich, überschreiben die [ `OnSizeAllocated` ](xref:Xamarin.Forms.Page.OnSizeAllocated*) Methode für eine `Page`, Einfügen von Layouts ändern Logik vorhanden. Die `OnSizeAllocated` Methode wird aufgerufen, wenn eine `Page` wird eine neue Größe der Whenver eintritt, wird das Gerät gedreht, zugeordnet. Beachten Sie, dass die basisimplementierung für `OnSizeAllocated` führt wichtige Layout-Funktionen, daher ist es wichtig, überschreiben die basisimplementierung aufrufen:
+Alternativ ist es möglich, überschreiben die [ `OnSizeAllocated` ](xref:Xamarin.Forms.Page.OnSizeAllocated*) Methode für eine `Page`, Einfügen von Layouts ändern Logik vorhanden. Die `OnSizeAllocated` Methode wird aufgerufen, wenn eine `Page` wird zugeordnet, eine neue Größe, was geschieht, wenn das Gerät gedreht wird. Beachten Sie, dass die basisimplementierung für `OnSizeAllocated` führt wichtige Layout-Funktionen, daher ist es wichtig, überschreiben die basisimplementierung aufrufen:
 
 ```csharp
 protected override void OnSizeAllocated(double width, double height)

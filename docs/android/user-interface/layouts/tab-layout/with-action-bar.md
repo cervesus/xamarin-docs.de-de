@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: af5554d08ac6c45fc0c392bd17cef5d91251bb1a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 01ff4426dfb4764b7d9ca22703aa2b1667a90454
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106506"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528545"
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>Layouts im Registerkartenformat mit ActionBar
 
@@ -23,7 +23,7 @@ _Dieses Handbuch stellt, und es wird erläutert, wie die ActionBar-APIs verwende
 
 Die Aktionsleiste ist ein Android-Benutzeroberflächen-Muster, das verwendet wird, um eine einheitliche Benutzeroberfläche für wichtige Features wie z. B. Registerkarten, Anwendungsidentität, Menüs und Suche bereitzustellen. In Android 3.0 (API-Ebene 11), eingeführt Google die ActionBar-APIs für die Android-Plattform. Die ActionBar-APIs führen Benutzeroberflächendesigns Bereitstellen eines konsistenten Aussehens und Verhaltens und Klassen, die im Registerkartenformat Benutzeroberflächen zu ermöglichen. Dieser Leitfaden erläutert, wie eine Xamarin.Android-Anwendung Aktionsleiste Registerkarten hinzugefügt. Es wird erläutert, wie der Android-Unterstützungsbibliothek v7 Backport ActionBar Registerkarten für Xamarin.Android-Anwendungen für Android 2.1 auf Android 2.3 verwenden. 
 
-Beachten Sie, dass `Toolbar` ist eine neuere und allgemeineres Aktion Leiste-Komponente, die Sie nicht verwenden, sollten `ActionBar` (`Toolbar` wurde entworfen, um ersetzen `ActionBar`). Weitere Informationen finden Sie unter [Symbolleiste](~/android/user-interface/controls/tool-bar/index.md). 
+Beachten Sie, dass `Toolbar` ist eine neuere und allgemeineres Aktion Leiste-Komponente, die Sie nicht verwenden sollten `ActionBar` (`Toolbar` wurde entworfen, um ersetzen `ActionBar`). Weitere Informationen finden Sie unter [Symbolleiste](~/android/user-interface/controls/tool-bar/index.md). 
 
 
 

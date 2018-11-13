@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 9a8c55c8b4ff3fbd515aad8bf45c52a0b549af9f
-ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
-ms.translationtype: MT
+ms.openlocfilehash: 0d89fff81d1d13baa578068bcaef11dd5af00e14
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51285598"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527052"
 ---
 # <a name="table-views-in-xamarinmac"></a>Tabellensichten in Xamarin.Mac
 
 _Dieser Artikel behandelt die Arbeit mit Tabellenansichten in einer Xamarin.Mac-Anwendung. Erstellen von Tabellenansichten in Xcode und Interface Builder und mit ihnen interagieren, im Code beschrieben._
 
-Bei der Arbeit mit c# und .NET in einer Xamarin.Mac-Anwendung haben Sie Zugriff auf die gleiche Tabelle, die ein Entwickler Ansichten *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und verwalten Ihre Ansichten für die Tabelle (oder erstellen sie optional direkt in c#-Code).
+Bei der Arbeit mit C# und .NET in einer Xamarin.Mac-Anwendung, Sie haben Zugriff auf die gleiche Tabelle anzeigt, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und verwalten Ihre Ansichten für die Tabelle (oder erstellen sie optional direkt in c#-Code).
 
 Eine Tabellenansicht zeigt Daten in einem Tabellenformat mit einer oder mehreren Spalten der Informationen in mehreren Zeilen. Basierend auf den Typ der Tabelle anzeigen, die erstellt wird, der Benutzer kann nach Spalte sortieren, reorganize Spalten, Spalten hinzufügen, Entfernen von Spalten oder zum Bearbeiten der Daten in der Tabelle enthalten sind.
 

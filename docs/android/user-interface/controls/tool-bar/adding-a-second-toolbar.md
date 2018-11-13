@@ -6,19 +6,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: b8da13afb7fd8d7198e8bfe7476b40a5cd09769a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fc95c05c1945464cd9cac8565d8a11ff1b4c7e1d
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112549"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527286"
 ---
 # <a name="adding-a-second-toolbar"></a>Hinzufügen einer zweiten Symbolleiste
 
 
 ## <a name="overview"></a>Übersicht 
 
-Die `Toolbar` erreichen mehr als ersetzen die Aktionsleiste &ndash; mehrmals innerhalb einer Aktivität verwendet werden, es kann sein, werden für die Platzierung an einer beliebigen Stelle auf dem Bildschirm angepasst, und es kann nur eine partielle Breite des Bildschirms erstreckt konfiguriert werden. Die folgenden Beispiele veranschaulichen, wie Sie ein zweites `Toolbar` und platzieren Sie sie am unteren Rand des Bildschirms. Dies `Toolbar` implementiert **Kopie**, **Ausschneiden**, und **einfügen** Menüelemente. 
+Die `Toolbar` erreichen mehr als ersetzen die Aktionsleiste &ndash; mehrmals innerhalb einer Aktivität verwendet werden, kann er für die Platzierung an einer beliebigen Stelle auf dem Bildschirm angepasst werden und sie können nur eine partielle Breite des Bildschirms erstreckt konfiguriert werden. Die folgenden Beispiele veranschaulichen, wie Sie ein zweites `Toolbar` und platzieren Sie sie am unteren Rand des Bildschirms. Dies `Toolbar` implementiert **Kopie**, **Ausschneiden**, und **einfügen** Menüelemente. 
 
 
 ## <a name="define-the-second-toolbar"></a>Definieren Sie die zweite Symbolleiste 

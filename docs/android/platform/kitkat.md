@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: b62943fce8a1137c3bde1c629cc4cee9b2b44f3f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b1ea26afff1477d762d106db004be82010a2d557
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103308"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527330"
 ---
 # <a name="kitkat-features"></a>KitKat-Funktionen
 
@@ -75,7 +75,7 @@ alarmManager.SetExact (AlarmType.Rtc, AlarmManager.IntervalDay, pendingIntent);
 KitKat kann nicht mehr einen genauen wiederholten Alarm einzurichten. Anwendungen, die verwenden [`SetRepeating`](https://developer.xamarin.com/api/member/Android.App.AlarmManager.SetRepeating/p/Android.App.AlarmType/System.Int64/System.Int64/Android.App.PendingIntent/)
 und genau Alarme werden jetzt muss jede Alarm ausgelöst wird, manuell zu arbeiten.
 
-### <a name="external-storage"></a>Externen Speicher
+### <a name="external-storage"></a>Externer Speicher
 
 Externer Speicher ist jetzt in zwei Arten - Speicher, die nur in der Anwendung und die von mehreren Anwendungen gemeinsam verwendet werden, unterteilt. Lesen und Schreiben in Ihrer app bestimmten Speicherort auf externen speichern, benötigt keine besonderen Berechtigungen. Interagieren nun mit den Daten auf freigegebenen Speicher erfordert die `READ_EXTERNAL_STORAGE` oder `WRITE_EXTERNAL_STORAGE` Berechtigung. Die beiden Typen können als standardänderungen klassifiziert werden:
 
@@ -215,7 +215,7 @@ Die unten stehenden Code definiert ein Layout mit dem Namen *Scene1* mit zwei Te
 </merge>
 ```
 
-Im Beispiel oben wird `merge` kürzeren Code in der Ansicht und vereinfachen die Hierarchie anzeigen. Erfahren Sie mehr über `merge` Layouts [hier](http://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-by.html).
+Im Beispiel oben wird `merge` kürzeren Code in der Ansicht und die Hierarchie von Inhaltsansichten zu vereinfachen. Erfahren Sie mehr über `merge` Layouts [hier](http://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-by.html).
 
 Durch Aufrufen eine Szene erstellt [ `Scene.GetSceneForLayout` ](https://developer.xamarin.com/api/member/Android.Transitions.Scene.GetSceneForLayout/p/Android.Views.ViewGroup/System.Int32/Android.Content.Context/), und übergeben Sie die Container-Objekt, das Ressourcen-ID der Layoutdatei der Szene, und das aktuelle `Context`, wie im folgenden Codebeispiel dargestellt:
 
@@ -282,7 +282,7 @@ TransitionManager.Go (scene1, transition);
 
 ### <a name="translucent-ui"></a>Lichtdurchlässiger UI
 
-KitKat steuern Sie mehr über das Design Ihrer app mit optionalen Transclucent Status und die Navigation Balken. Sie können die Transparenz des System-UI-Elemente in der gleichen XML-Datei ändern, die Sie verwenden, um Ihr Android-Design zu definieren. KitKat führt die folgenden Eigenschaften:
+KitKat steuern Sie mehr über das Design Ihrer app mit optionalen lichtdurchlässiger Balken für Status und die Navigation. Sie können die Transparenz des System-UI-Elemente in der gleichen XML-Datei ändern, die Sie verwenden, um Ihr Android-Design zu definieren. KitKat führt die folgenden Eigenschaften:
 
 -  `windowTranslucentStatus` – Wenn festgelegt auf "true" werden die obersten Statusleiste lichtdurchlässiger.
 
@@ -322,7 +322,7 @@ Der folgende Screenshot zeigt das Design über lichtdurchlässiger Status und Na
 
 Der Speicher-Access-Framework (SAF) ist eine neue Möglichkeit für Benutzer, für die Interaktion mit gespeicherten Inhalte wie Bilder, Videos und Dokumente. Statt einzelner Benutzer ein Dialogfeld zum Auswählen einer Anwendung zur Handhabung von Inhalt, öffnet KitKat eine neue Benutzeroberfläche, die Benutzern den Zugriff auf ihre Daten in einem Aggregat Ort ermöglicht. Sobald Inhalt ausgewählt wurde, der Benutzer wird zurückgegeben, um die Anwendung, die der Inhalt angefordert, und die app-Funktionalität wird ganz normal fortgesetzt.
 
-Diese Änderung erfordert zwei Aktionen auf der Seite für Entwickler: apps, die Inhalte von Anbietern erfordern zunächst eine neue Art der Reqesting Inhalt aktualisiert werden. Zweite, Anwendungen, die Daten zum Schreiben einer `ContentProvider` müssen geändert werden, um das neue Framework zu verwenden. Beide Szenarien hängen von der neuen [`DocumentsProvider`](https://developer.xamarin.com/api/type/Android.Provider.DocumentsProvider/)
+Diese Änderung erfordert zwei Aktionen auf der Seite für Entwickler: apps, die Inhalte von Anbietern erfordern zunächst eine neue Möglichkeit des anfordernden Inhalts aktualisiert werden. Zweite, Anwendungen, die Daten zum Schreiben einer `ContentProvider` müssen geändert werden, um das neue Framework zu verwenden. Beide Szenarien hängen von der neuen [`DocumentsProvider`](https://developer.xamarin.com/api/type/Android.Provider.DocumentsProvider/)
 DIE API.
 
 #### <a name="documentsprovider"></a>DocumentsProvider
@@ -344,7 +344,7 @@ StartActivityForResult (intent, save_request_code);
 
 Aufrufen von `StartActivityForResult` startet die SAF UI, die der Benutzer dann navigieren kann, um ein Bild auszuwählen:
 
-[![Beispielscreenshot, der eine app mit dem Storage-Access-Framework für die Navigation zu einem Bild](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
+[![Beispielscreenshot, der eine app mit dem Storage-Zugriff-Framework für das Durchsuchen von zu einem Bild](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
 
 Nachdem der Benutzer ein Bild ausgewählt hat `OnActivityResult` gibt die `Android.Net.Uri` der ausgewählten Datei. Das folgende Codebeispiel zeigt die Bildauswahl des Benutzers:
 
@@ -424,7 +424,7 @@ Beachten Sie, dass die Internet-Berechtigung erforderlich, laden und Drucken von
 Die print-Option wird in der Regel angezeigt, in der Aktivitäts [Menü "Optionen"](http://developer.android.com/guide/topics/ui/menus.html#options-menu).
 Das Menü "Optionen" ermöglicht Benutzern das Ausführen von Aktionen für eine Aktivität. Dabei handelt es sich in der oberen rechten Ecke des Bildschirms, sieht wie folgt aus:
 
-[![Beispielhafter Screenshot der drucken Menü Element fest, in der oberen rechten Ecke des Bildschirms](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
+[![Beispielhafter Screenshot der Menüelement ' Drucken ' in der oberen rechten Ecke des Bildschirms angezeigt](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
 
 
 Zusätzliche Menüelemente können definiert werden, der *Menü*Verzeichnis unter *Ressourcen*. Der folgende Code definiert ein Menüelement mit dem Namen Sample [Drucken](https://developer.xamarin.com/api/type/Android.Print.PrintManager/):
@@ -505,7 +505,7 @@ void PrintPage ()
 
 `Print` als Argumente akzeptiert: einen Namen für den Auftrag ("MyWebPage" in diesem Beispiel), ein [`PrintDocumentAdapter`](https://developer.xamarin.com/api/type/Android.Print.PrintDocumentAdapter/)
 aus dem Inhalt, der zu druckenden Dokuments generiert und [`PrintAttributes`](https://developer.xamarin.com/api/type/Android.Print.PrintAttributes/)
-(`null` im obigen Beispiel). Sie können angeben, `PrintAttributes` können setzen von Inhaltselementen auf der Seite gedruckt, obwohl die meisten Scenarions die Standardattribute behandelt werden sollen.
+(`null` im obigen Beispiel). Sie können angeben, `PrintAttributes` können setzen von Inhaltselementen auf der Seite gedruckt, obwohl die meisten Szenarien die Standardattribute behandelt werden sollen.
 
 Aufrufen von `Print` lädt die print-Benutzeroberfläche, die Optionen für den Druckauftrag aufgelistet sind. Die Benutzeroberfläche ermöglicht Benutzern die Möglichkeit, Drucken und speichern den HTML-Inhalt einer PDF-Format, wie die folgenden Screenshots veranschaulicht:
 
@@ -542,12 +542,12 @@ Um zu arbeiten, HCE im Hintergrund ausgeführt werden muss, und es muss zu start
 -  *OnDeactivated* : die `HostAdpuService` wird deaktiviert, wenn der Dienst HCE nicht mehr mit der NFC-Reader kommuniziert.
 
 
-Ein Dienst HCE muss auch das Manifest der Anwendung registriert werden, und mit den richtigen Berechtigungen, Zielfilter und Metadaten versehen. Der folgende Code ist ein Beispiel für eine `HostApduService` registriert, mit dem Android-Manifest unter Verwendung der `Service` Attribut (Weitere Informationen zu Attributen finden Sie in der Xamarin [arbeiten mit Android-Manifest](~/android/platform/android-manifest.md) Guide):
+Ein Dienst HCE muss auch das Manifest der Anwendung registriert werden, und mit den erforderlichen Berechtigungen, Zielfilter und Metadaten versehen. Der folgende Code ist ein Beispiel für eine `HostApduService` registriert, mit dem Android-Manifest unter Verwendung der `Service` Attribut (Weitere Informationen zu Attributen finden Sie in der Xamarin [arbeiten mit Android-Manifest](~/android/platform/android-manifest.md) Guide):
 
 ```csharp
 [Service(Exported=true, Permission="android.permissions.BIND_NFC_SERVICE"),
     IntentFilter(new[] {"android.nfc.cardemulation.HOST_APDU_SERVICE"}),
-    MetaData("andorid.nfc.cardemulation.host.apdu_service",
+    MetaData("android.nfc.cardemulation.host.apdu_service",
     Resource="@xml/hceservice")]
 
 class HceService : HostApduService
@@ -599,7 +599,7 @@ Der folgende Screenshot zeigt den Schritt Leistungsindikator in Aktion:
 
 [![Screenshot der app SensorsActivity einen Schritt Indikator anzeigen](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png#lightbox)
 
-Sie erstellen eine `SensorManager` durch Aufrufen von `GetSystemService(SensorService)` und wandelt das Ergebnis als eine `SensorManager`. Rufen Sie zum Verwenden des Zähler Schritt `GetDeafultSensor` auf die `SensorManager`. Sie registrieren den Sensor und Lauschen auf Änderungen in der Anzahl der Schritte mithilfe der [`ISensorEventListener`](https://developer.xamarin.com/api/type/Android.Hardware.ISensorEventListener/)
+Sie erstellen eine `SensorManager` durch Aufrufen von `GetSystemService(SensorService)` und wandelt das Ergebnis als eine `SensorManager`. Rufen Sie zum Verwenden des Zähler Schritt `GetDefaultSensor` auf die `SensorManager`. Sie registrieren den Sensor und Lauschen auf Änderungen in der Anzahl der Schritte mithilfe der [`ISensorEventListener`](https://developer.xamarin.com/api/type/Android.Hardware.ISensorEventListener/)
 Schnittstelle, wie das folgende Codebeispiel veranschaulicht:
 
 ```csharp
@@ -681,7 +681,7 @@ Zusätzlich zu den oben beschriebenen Änderungen ermöglicht KitKat:
 -  *Verwenden Sie den gesamten Bildschirm* -KitKat wird ein neuer [immersiven Modus](http://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int)) zum Durchsuchen des Inhalts, spielen und Ausführen von anderen Anwendungen, die aus einer Vollbild-Erfahrung profitieren können.
 
 -  *Anpassen der Benachrichtigungen* -erhalten Sie weitere Informationen über die Benachrichtigungen des Systems mit dem [`NotificationListenerService`](https://developer.xamarin.com/api/type/Android.Service.Notification.NotificationListenerService/)
-   . Dadurch können Sie die Informationen in eine andere Weise in Ihrer app vorhanden.
+   sein. Dadurch können Sie die Informationen in eine andere Weise in Ihrer app vorhanden.
 
 -  *Spiegeln zeichenbare Ressourcen* -zeichenbare Ressourcen haben einen neuen [`autoMirrored`](http://developer.android.com/reference/android/R.attr.html#autoMirrored)
    Attribut, das dem System mitgeteilt erstellen Sie eine gespiegelte Version für Bilder, die für Links-nach-rechts-Layouts erfordern ein umlegen.
@@ -689,7 +689,7 @@ Zusätzlich zu den oben beschriebenen Änderungen ermöglicht KitKat:
 -  *Anhalten von Animationen* -anhalten und fortsetzen Animationen erstellt, mit der [`Animator`](https://developer.xamarin.com/api/type/Android.Animation.Animator/)
    -Klasse.
 
--  *Dynamisch ändern von Text zu lesen* -Teile der Benutzeroberfläche, die dynamisch durch neuen Text als "live Regionen" mit dem neuen update zu kennzeichnen [ `accesibilityLiveRegion`](http://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
+-  *Dynamisch ändern von Text zu lesen* -Teile der Benutzeroberfläche, die dynamisch durch neuen Text als "live Regionen" mit dem neuen update zu kennzeichnen [ `accessibilityLiveRegion`](http://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
    Attribut, damit der neue Text automatisch im Zugriffsmodus gelesen werden.
 
 -  *Audio-Erfahrung verbessern* -stellen lauter verfolgt, mit der [`LoudnessEnhancer`](https://developer.xamarin.com/api/type/Android.Media.Audiofx.LoudnessEnhancer/)
@@ -703,7 +703,7 @@ Zusätzlich zu den oben beschriebenen Änderungen ermöglicht KitKat:
 -  *Remotesteuerung* -KitKat mit einigen Änderungen auf die Hardware und Software-Seite, können Sie ein Gerät mit einem IR-Sender in eine Remotesteuerung mit ausgestattet aktivieren die `ConsumerIrService`, und interagieren mit Peripheriegeräten, bei denen mit dem neuen [`RemoteController`](https://developer.xamarin.com/api/type/Android.Media.RemoteController/)
    APIs.
 
-Weitere Informationen zu den oben genannten API-Änderungen finden Sie in der Google [Android 4.4-APIs](http://developer.android.com/about/versions/android-4.4.html) Übersicht.
+Weitere Informationen zu den oben genannten API-Änderungen, finden Sie auf der Google [Android 4.4-APIs](http://developer.android.com/about/versions/android-4.4.html) Übersicht.
 
 
 ## <a name="summary"></a>Zusammenfassung

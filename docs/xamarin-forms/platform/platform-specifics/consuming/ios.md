@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
-ms.openlocfilehash: 69f754db0fd9661fb317f43c7cda546b0b510265
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: afecf5c173e919bd20015aadd8a874f492dc4e34
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119408"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527078"
 ---
 # <a name="ios-platform-specifics"></a>iOS Plattformeigenschaften
 
@@ -332,7 +332,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 Das Ergebnis ist, die einem angegebenen `UpdateMode` gilt, an die [ `Picker` ](xref:Xamarin.Forms.Picker), die steuert, wann Elementauswahl auftritt:
 
-[![](ios-images/picker-updatemode.png "Auswahl UpdateMode plattformspezifische")](ios-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Plaform-Specific")
+[![](ios-images/picker-updatemode.png "Auswahl UpdateMode plattformspezifische")](ios-images/picker-updatemode-large.png#lightbox "Auswahl UpdateMode plattformspezifische")
 
 <a name="slider-updateontap" />
 
@@ -777,9 +777,9 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 Das Ergebnis ist, eine [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) können deaktivieren verzögern Content berührungen, also zu empfangen, die in diesem Szenario die [ `Slider` ](xref:Xamarin.Forms.Slider) empfängt die Bewegung anstelle der [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) auf der Seite die [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage):
 
-[![](ios-images/scrollview-delay-content-touches.png "ScrollView-Verzögerung Inhalt betrifft plattformspezifische")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
+[![](ios-images/scrollview-delay-content-touches.png "ScrollView-Verzögerung Inhalt betrifft plattformspezifische")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView-Verzögerung Inhalt betrifft plattformspezifische")
 
-## <a name="application"></a>Anwendung
+## <a name="application"></a>Application
 
 Unter iOS, wird die folgende plattformspezifische Funktionalität bereitgestellt, für die Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application) Klasse:
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: d24d62bf190a2cb078bf82d7a8676f302e740762
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0401c2c05677c719bbe4914cc7e008b650fdd198
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115587"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526240"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>Verwenden benutzerdefinierter Steuerelemente im IOS-Designer
 
@@ -25,7 +25,7 @@ Dieses Handbuch setzt voraus, Vertrautheit mit dem Inhalt in behandelt die [Eins
 ## <a name="walkthrough"></a>Exemplarische Vorgehensweise
 
 > [!IMPORTANT]
-> Beginnen in xamarin.Studio die Datei Exchange 5.5, ist die Möglichkeit, die in der benutzerdefinierten Steuerelemente erstellt werden Unterschied zu früheren Versionen. Um ein benutzerdefiniertes Steuerelement erstellen die `IComponent` Schnittstelle (mit den zugehörigen Implementierungsmethoden) erforderlich ist oder die Klasse kann als Anmerkung `[DesignTimeVisible(true)]`. Die zweite Methode wird im folgenden Beispiel für die exemplarische Vorgehensweise verwendet.
+> Beginnen in xamarin.Studio die Datei Exchange 5.5, ist die Möglichkeit, die in der benutzerdefinierten Steuerelemente erstellt werden Unterschied zu früheren Versionen. Um ein benutzerdefiniertes Steuerelement erstellen die `IComponent` Schnittstelle ist erforderlich (mit den zugehörigen Implementierungsmethoden) oder die Klasse kann angemerkt werden, mit `[DesignTimeVisible(true)]`. Die zweite Methode wird im folgenden Beispiel für die exemplarische Vorgehensweise verwendet.
 
 
 1. Erstellen einer neuen Projektmappe aus der **iOS > App > Single View Application > c#** Vorlage, nennen Sie sie `ScratchTicket`, und durchlaufen Sie den Assistenten für neue Projekte:

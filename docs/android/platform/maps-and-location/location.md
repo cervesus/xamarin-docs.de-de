@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: e3cfc9a345c8ab92b35ad428b550ec42de6312e5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bc7da76084075b03ca346949b7bb764ae1313c2a
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120293"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563510"
 ---
 # <a name="location-services"></a>Ortungsdienste
 
@@ -190,7 +190,7 @@ Diese Methode akzeptiert zwei Parameter:
 
 Um eine Xamarin.Android-Anwendung eines Updates Speicherort zu benachrichtigen, die fused-Location-Anbieters wird aufgerufen, die `LocationCallBack.OnLocationResult(LocationResult result)`. Die `Android.Gms.Location.LocationResult` Parameter enthält die Informationen zum Update Speicherort.
 
-Wenn die fused-Location-Anbieters eine Änderung in die Verfügbarkeit von Daten erkennt, ruft sie die `LocationProvider.OnLocationAvaibility(LocationAvailability
+Wenn die fused-Location-Anbieters eine Änderung in die Verfügbarkeit von Daten erkennt, ruft sie die `LocationProvider.OnLocationAvailability(LocationAvailability
 locationAvailability)` Methode. Wenn die `LocationAvailability.IsLocationAvailable` -Eigenschaft gibt `true`, wird davon ausgegangen werden kann, dass durch die speicherortergebnissen Gerät gemeldet `OnLocationResult` sind so genau, und wie auf dem neuesten Stand gemäß der `LocationRequest`. Wenn `IsLocationAvailable` ist "false" werden keine Ergebnisse zurück, indem `OnLocationResult`.
 
 Dieser Codeausschnitt ist eine beispielimplementierung der `LocationCallback` Objekt:
@@ -253,9 +253,9 @@ Es ist eine gute Idee, behalten Sie die `LocationManager` als eine Klassenvariab
 
 ### <a name="request-location-updates-from-the-locationmanager"></a>Speicherortaktualisierungen von der LocationManager anfordern
 
-Sobald die Anwendung einen Verweis auf verfügt die `LocationManager`, teilen muss die `LocationManager` welche Art von Informationen zum Speicherort, die erforderlich sind, und wie oft diese Informationen aktualisiert werden. Dies erfolgt durch Aufrufen `RequestionLocationUpdates` auf die `LocationManager` -Objekt, und übergeben den Kriterien für die Updates und einen Rückruf, der die Speicherort-Updates erhält. Dieser Rückruf ist ein Typ, der implementieren muss, die `ILocationListener` Schnittstelle (weiter unten in diesem Handbuch ausführlicher beschrieben).
+Sobald die Anwendung einen Verweis auf verfügt die `LocationManager`, teilen muss die `LocationManager` welche Art von Informationen zum Speicherort, die erforderlich sind, und wie oft diese Informationen aktualisiert werden. Dies erfolgt durch Aufrufen `RequestLocationUpdates` auf die `LocationManager` -Objekt, und übergeben den Kriterien für die Updates und einen Rückruf, der die Speicherort-Updates erhält. Dieser Rückruf ist ein Typ, der implementieren muss, die `ILocationListener` Schnittstelle (weiter unten in diesem Handbuch ausführlicher beschrieben).
 
-Die `RequestionLocationUpdates` Methode teilt dem Speicherort im Dateisystem Dienst, dass Ihre Anwendung den Empfang von speicherortaktualisierungen starten möchten. Dieser Methode können Sie den Anbieter als auch Zeit und Entfernung Schwellenwerte zum Steuern der aktualisierungshäufigkeit angeben. Beispielsweise aktualisiert die Methode unten unterhalb Anforderungen vom GPS-Ortungsanbieter alle 2000 Millisekunden, und nur, wenn der Standort mehr als 1 Meter ändert:
+Die `RequestLocationUpdates` Methode teilt dem Speicherort im Dateisystem Dienst, dass Ihre Anwendung den Empfang von speicherortaktualisierungen starten möchten. Dieser Methode können Sie den Anbieter als auch Zeit und Entfernung Schwellenwerte zum Steuern der aktualisierungshäufigkeit angeben. Zum Beispiel die Methode unten fordert Speicherort, der vom GPS-Standort-Anbieter alle 2000 Millisekunden und aktualisiert, und nur, wenn der Standort mehr als 1 Meter ändert:
 
 ```csharp
 // For this example, this method is part of a class that implements ILocationListener, described below

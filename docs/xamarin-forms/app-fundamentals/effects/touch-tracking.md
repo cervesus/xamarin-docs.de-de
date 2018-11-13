@@ -1,56 +1,56 @@
 ---
-title: Aufrufen von Ereignissen von Effekten
-description: Ein Effekt definieren und ein Ereignis, die gewartet werden Änderungen in der zugrunde liegenden systemeigenen Ansicht aufrufen. In diesem Artikel zeigt, wie auf niedriger Ebene Multitouch Finger nachverfolgen implementiert und wie Ereignisse generiert werden, die Touch-Aktivität zu signalisieren.
+title: Aufrufen von Ereignissen von Auswirkungen
+description: Auswirkungen definieren und ein Ereignis signalisiert Änderungen in der zugrunde liegenden systemeigenen Ansicht aufrufen. In diesem Artikel wird gezeigt, wie Low-Level Multitouch Finger, die nachverfolgung zu implementieren, und zum Generieren von Ereignissen, die Touch-Aktivitäten hinweisen.
 ms.prod: xamarin
 ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: e363cae4dd72a25e4768395410d4e56a8db30eba
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 0a5e2c1a7a7807da91fd98e617467ea251a25bc0
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34050155"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527403"
 ---
-# <a name="invoking-events-from-effects"></a>Aufrufen von Ereignissen von Effekten
+# <a name="invoking-events-from-effects"></a>Aufrufen von Ereignissen von Auswirkungen
 
-_Ein Effekt definieren und ein Ereignis, die gewartet werden Änderungen in der zugrunde liegenden systemeigenen Ansicht aufrufen. In diesem Artikel zeigt, wie auf niedriger Ebene Multitouch Finger nachverfolgen implementiert und wie Ereignisse generiert werden, die Touch-Aktivität zu signalisieren._
+_Auswirkungen definieren und ein Ereignis signalisiert Änderungen in der zugrunde liegenden systemeigenen Ansicht aufrufen. In diesem Artikel wird gezeigt, wie Low-Level Multitouch Finger, die nachverfolgung zu implementieren, und zum Generieren von Ereignissen, die Touch-Aktivitäten hinweisen._
 
-Die Auswirkungen, die in diesem Artikel beschriebenen ermöglicht den Zugriff auf Low-Level Berührungsereignisse. Diese Ereignisse auf niedriger Ebene sind nicht verfügbar, durch die vorhandenen `GestureRecognizer` Klassen, doch diese sind entscheidend für einige Arten von Anwendungen. Z. B. eine Anwendung benötigt, um die einzelnen Finger verfolgen, während sie auf dem Bildschirm finger-paint. Musik Tastatur muss Taps erkennen und auf einzelne Schlüssel als auch von einem Schlüssel in eine andere in einer Glissando gleitend sorgen frei.
+Die Auswirkungen, die in diesem Artikel beschriebenen ermöglicht den Zugriff auf Low-Level-Touch-Ereignissen. Diese Ereignisse auf niedriger Ebene sind nicht verfügbar, durch die vorhandene `GestureRecognizer` Klassen, sind aber wichtig, einige Arten von Anwendungen. Z. B. eine finger-paint anwendungsanforderungen einzelner Finger nachverfolgen, wie sie auf dem Bildschirm wechseln. Musik Tastatur Taps erkennen muss, und es auf die einzelnen Schlüssel sowie einen Finger, die von einem Schlüssel in eine andere in einem Glissando gleitend frei.
 
-Ein Effekt ist ideal für Multi-Touch-Finger nachverfolgen, da er auf jedes Element Xamarin.Forms angefügt werden kann.
+Ein Effekt ist ideal für Multitouch Finger nachverfolgen, da es zu einem Xamarin.Forms-Element zugeordnet werden kann.
 
 ## <a name="platform-touch-events"></a>Touch-Plattformereignisse
 
-Touch-Aktivität iOS-, Android und universelle Windows-Plattform, die alle eine Low-Level-API, die Clientanwendungen ermöglicht enthalten, zu erkennen. Diese Plattformen, mit denen, die alle drei grundlegende Arten von unterscheiden, touch-Ereignisse:
+Tippen Sie Aktivität auf iOS-, Android- und universelle Windows-Plattform, die alle eine Low-Level-API enthalten, die Anwendungen erkennen können. Berührungsereignisse für diese Plattformen, die alle drei grundlegende Arten von unterscheiden:
 
 - *Gedrückt*, wenn ein Finger den Bildschirm berührt.
-- *Verschoben*, wenn ein Finger den Bildschirm berühren bewegt wird.
-- *Freigegeben*, wenn sich der Finger vom Bildschirm freigegeben wird
+- *Verschoben*, wenn ein Finger berührt den Bildschirm bewegt wird.
+- *Veröffentlicht*, wenn der Finger vom Bildschirm veröffentlicht wird
 
-In einer Multi-Touch-Umgebung können mehrere Finger den Bildschirm zur gleichen Zeit berühren. Die verschiedenen Plattformen enthalten eine Identifikationsnummer (ID), die Anwendungen verwenden können, um zwischen mehreren Finger zu unterscheiden.
+In einer Umgebung mit Mehrfingereingabe können mehrere Finger den Bildschirm zur gleichen Zeit berühren. Die verschiedenen Plattformen gehören eine ID (ID), mit denen Anwendungen unterscheiden mehrerer Finger.
 
-In iOS die `UIView` Klasse definiert drei überschreibbare Methoden, `TouchesBegan`, `TouchesMoved`, und `TouchesEnded` , diese drei grundlegende Ereignisse entspricht. Der Artikel [Multitouch Finger nachverfolgen](~/ios/app-fundamentals/touch/touch-tracking.md) wird beschrieben, wie diese Methoden verwenden. Allerdings ein iOS-Programm muss nicht von einer Klasse überschrieben, die abgeleitet `UIView` dieser Methoden verwenden. IOS `UIGestureRecognizer` definiert auch dieselben drei Methoden, und Sie können eine Instanz einer Klasse, die abgeleitet Anfügen `UIGestureRecognizer` an ein beliebiges `UIView` Objekt.
+Bei iOS der `UIView` -Klasse definiert drei überschreibbare Methoden, `TouchesBegan`, `TouchesMoved`, und `TouchesEnded` für diese drei grundlegende Ereignisse. Der Artikel [Nachverfolgen von Multi-Touch Finger](~/ios/app-fundamentals/touch/touch-tracking.md) beschreibt, wie Sie diese Methoden verwenden. Allerdings ein iOS-Programm muss nicht von einer Klasse überschrieben, die von abgeleitet `UIView` dieser Methoden. IOS `UIGestureRecognizer` definiert auch dieselben drei Methoden, und Sie können eine Instanz einer Klasse, die von abgeleitet Anfügen `UIGestureRecognizer` auf `UIView` Objekt.
 
-In der Android-Geräten die `View` Klasse definiert eine überschreibbare Methode mit dem Namen `OnTouchEvent` zum Verarbeiten der Touch-Aktivität. Der Typ der Aktivität Touch wird definiert, von Enumerationsmembern `Down`, `PointerDown`, `Move`, `Up`, und `PointerUp` im Artikel beschriebenen [Multitouch Finger nachverfolgen](~/android/app-fundamentals/touch/touch-tracking.md). Die Android `View` definiert auch ein Ereignis namens `Touch` , mit dessen Hilfe eines ereignishandlers eine anzufügenden `View` Objekt.
+In Android die `View` -Klasse definiert eine überschreibbare Methode, die mit dem Namen `OnTouchEvent` alle Touch-Aktivitäten verarbeitet. Der Typ der Aktivität Touch wird definiert, von Enumerationsmembern `Down`, `PointerDown`, `Move`, `Up`, und `PointerUp` in diesem Artikel beschriebenen [Nachverfolgen von Multi-Touch Finger](~/android/app-fundamentals/touch/touch-tracking.md). Die Android `View` definiert auch ein Ereignis namens `Touch` , die einen Ereignishandler an einem beliebigen angefügt werden können `View` Objekt.
 
-In der universelle Windows-Plattform (UWP), die `UIElement` Klasse definiert die Ereignisse, die mit dem Namen `PointerPressed`, `PointerMoved`, und `PointerReleased`. Diese werden im Artikel beschrieben [behandeln Zeiger Eingabe Artikel auf MSDN](/windows/uwp/input-and-devices/handle-pointer-input/) und der API-Dokumentation für die [ `UIElement` ](/uwp/api/windows.ui.xaml.uielement/) Klasse.
+In der universellen Windows-Plattform (UWP), die `UIElement` Klasse definiert die Ereignisse, die mit dem Namen `PointerPressed`, `PointerMoved`, und `PointerReleased`. Diese werden in diesem Artikel beschrieben [MSDN-Artikel behandeln Zeiger Eingabe](/windows/uwp/input-and-devices/handle-pointer-input/) und der API-Dokumentation für die [ `UIElement` ](/uwp/api/windows.ui.xaml.uielement/) Klasse.
 
-Die `Pointer` -API in universellen Windows-Plattform zu vereinheitlichen der Maus, Fingereingabe und Stifteingabe dient. Aus diesem Grund die `PointerMoved` Ereignis wird aufgerufen, wenn die Maus über ein Element bewegt wird, selbst wenn eine Maustaste nicht gedrückt wird. Die `PointerRoutedEventArgs` -Objekt, das diesen Ereignissen begleitet verfügt über eine Eigenschaft namens `Pointer` , die eine Eigenschaft namens hat `IsInContact` gibt an, wenn eine Maustaste gedrückt wird oder ein Finger mit dem Bildschirm verbunden ist.
+Die `Pointer` -API in die universelle Windows-Plattform dient zur Vereinheitlichung der Maus, Touch und Stifteingabe. Aus diesem Grund die `PointerMoved` Ereignis wird immer dann aufgerufen, wenn die Maus über ein Element bewegt wird, selbst wenn eine Maustaste nicht gedrückt wird. Die `PointerRoutedEventArgs` -Objekt, das diesen Ereignissen begleitet, besitzt eine Eigenschaft namens `Pointer` , die besitzt eine Eigenschaft namens `IsInContact` der gibt an, wenn eine Maustaste gedrückt wird oder ein Finger den Bildschirm berühren.
 
-Die universelle Windows-Plattform definiert außerdem zwei weitere Ereignisse, die mit dem Namen `PointerEntered` und `PointerExited`. Diese Werte zeigen, wenn eine Maus oder ein Finger von einem Element in eine andere verschoben wird. Angenommen, haben Sie zwei benachbarte Elemente, die mit dem Namen als auch b Beide Elemente, die Handler für die Ereignisse Zeiger installiert haben. Wenn ein Finger auf A drückt die `PointerPressed` Ereignis aufgerufen wird. Bewegen Sie der Finger, ruft ein `PointerMoved` Ereignisse. Ein wird aufgerufen, wenn sich der Finger von A zu B verschoben werden, eine `PointerExited` Ereignis und B ruft eine `PointerEntered` Ereignis. Klicken Sie dann der Finger freigegeben, B ruft eine `PointerReleased` Ereignis.
+Die UWP definiert darüber hinaus zwei weitere Ereignisse, die mit dem Namen `PointerEntered` und `PointerExited`. Diese Fehlermeldungen geben an, wenn ein Maus- oder fingerbewegung von einem Element in einen anderen verschoben wird. Betrachten Sie beispielsweise zwei benachbarte Elemente, die mit dem Namen A und b. Beide Elemente, die Handler für die zeigerereignisse installiert haben. Wenn ein Finger auf ein, drückt die `PointerPressed` -Ereignis aufgerufen wird. Wenn der Finger bewegt, ruft ein `PointerMoved` Ereignisse. Wenn der Finger von A nach B verschoben wird, ruft ein eine `PointerExited` Ereignis und B ruft eine `PointerEntered` Ereignis. Wenn der Finger dann aufgehoben wird, ruft B eine `PointerReleased` Ereignis.
 
-Die IOS- und Android-Plattformen unterscheiden sich von UWP: die Ansicht, die den Aufruf von zuerst abruft `TouchesBegan` oder `OnTouchEvent` , wenn ein Finger berührt weiterhin die Sicht alle die Touch-Aktivität, selbst wenn erhalten, wenn den Finger mit anderen Ansichten bewegt. UWP kann auf ähnliche Weise Verhalten, wenn die Anwendung die Zeiger aufzeichnet: In der `PointerEntered` -Ereignishandler, die Element-Aufrufe `CapturePointer` und ruft anschließend alle Touch-Aktivität aus, den Finger wieder an.
+Die IOS- und Android-Plattformen unterscheiden sich von der UWP: die Ansicht, die den Aufruf zuerst ruft `TouchesBegan` oder `OnTouchEvent` Wenn ein Finger berührt die Ansicht wird fortgesetzt, um die Touch-Aktivität zu erhalten, selbst wenn der fingerbewegung mit anderen Ansichten. Die UWP kann sich ähnlich Verhalten, wenn die Anwendung die Zeiger aufzeichnet: In der `PointerEntered` Ereignishandler, die die Element-Aufrufe `CapturePointer` und ruft anschließend alle Touch-Aktivitäten aus dieser Finger.
 
-Die uwp-Ansatz wird bewiesen, dass für einige Arten von Anwendungen, z. B. auf einer Tastatur Musik sehr nützlich sein. Jeder Schlüssel kann die Berührungsereignisse für diesen Schlüssel zu behandeln und erkennen, wenn ein Finger in eine andere mithilfe von einem Schlüssel verschoben wurde die `PointerEntered` und `PointerExited` Ereignisse.
+Die UWP-Vorgehensweise als sehr nützlich für einige Arten von Anwendungen, z. B. eine Musik-Tastatur. Jeder Schlüssel kann für diesen Schlüssel die touchereignisse behandeln, und erkennen, wenn ein Finger in eine andere mithilfe von einem Schlüssel geschoben hat die `PointerEntered` und `PointerExited` Ereignisse.
 
-Aus diesem Grund implementiert der in diesem Artikel beschriebenen Touch-Tracking-Effekt den uwp-Ansatz.
+Aus diesem Grund implementiert die in diesem Artikel beschriebenen Nachverfolgen von Touch-Auswirkungen den UWP-Ansatz.
 
-## <a name="the-touch-tracking-effect-api"></a>Die Touch-Tracking Effekt-API
+## <a name="the-touch-tracking-effect-api"></a>Die Nachverfolgen von Touch-Wirkung-API
 
-Die [ **berühren nachverfolgen Auswirkungen Demos** ](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) Beispiel enthält die Klassen (und einer Enumeration), die die Low-Level Touch-Tracking zu implementieren. Diese Typen gehören zum Namespace `TouchTracking` und beginnen mit dem Wort `Touch`. Die **TouchTrackingEffectDemos** .NET Standard-Bibliotheksprojekt enthält die `TouchActionType` Enumeration für den Typ der Berührungsereignisse:
+Die [ **Touch nachverfolgung Auswirkungen Demos** ](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) Beispiel enthält die Klassen (sowie eine Enumeration), die die Low-Level-Touch-nachverfolgung zu implementieren. Diese Typen gehören zum Namespace `TouchTracking` und beginnen Sie mit dem Wort `Touch`. Die **TouchTrackingEffectDemos** .NET Standard Library-Projekt enthält die `TouchActionType` Enumeration für den Typ des Touch-Ereignissen:
 
 ```csharp
 public enum TouchActionType
@@ -64,9 +64,9 @@ public enum TouchActionType
 }
 ```
 
-Alle Plattformen umfassen auch ein Ereignis, das zeigt an, dass das Touch-Ereignis abgebrochen wurde.
+Alle Plattformen umfassen auch ein Ereignis, das zeigt an, dass das touchereignis abgebrochen wurde.
 
-Die `TouchEffect` Klasse in der Standardbibliothek .NET leitet sich von `RoutingEffect` und definiert ein Ereignis mit dem Namen `TouchAction` und eine Methode namens `OnTouchAction` aufruft, die die `TouchAction` Ereignis:
+Die `TouchEffect` Klasse in der .NET Standardbibliothek leitet sich von `RoutingEffect` und definiert ein Ereignis namens `TouchAction` und eine Methode namens `OnTouchAction` aufruft, die die `TouchAction` Ereignis:
 
 ```csharp
 public class TouchEffect : RoutingEffect
@@ -86,9 +86,9 @@ public class TouchEffect : RoutingEffect
 }
 ```
 
-Beachten Sie außerdem die `Capture` Eigenschaft. Um Touch-Ereignisse zu erfassen, muss eine Anwendung diese Eigenschaft festlegen, um `true` vor einem `Pressed` Ereignis. Ansonsten Verhalten sich die Berührungsereignisse, wie die in universellen Windows-Plattform zu erhalten.
+Beachten Sie auch die `Capture` Eigenschaft. Um touchereignisse zu erfassen, muss eine Anwendung diese Eigenschaft festlegen, um `true` vor einem `Pressed` Ereignis. Andernfalls Verhalten sich die touchereignisse, wie in der universellen Windows-Plattform zu erhalten.
 
-Die `TouchActionEventArgs` Klasse in der Standardbibliothek .NET enthält alle Informationen, die zu jedem Ereignis gehören:
+Die `TouchActionEventArgs` Klasse in der .NET Standard-Bibliothek enthält alle Informationen, die mit jedem Ereignis:
 
 ```csharp
 public class TouchActionEventArgs : EventArgs
@@ -111,19 +111,19 @@ public class TouchActionEventArgs : EventArgs
 }
 ```
 
-Eine Anwendung kann mithilfe der `Id` Eigenschaft zum Nachverfolgen von einzelnen Fingern fest. Beachten Sie, dass die `IsInContact` Eigenschaft. Diese Eigenschaft ist immer `true` für `Pressed` Ereignisse und `false` für `Released` Ereignisse. Es ist auch immer `true` für `Moved` Ereignisse auf IOS- und Android. Die `IsInContact` Eigenschaft möglicherweise `false` für `Moved` Ereignisse auf die universelle Windows-Plattform, wenn das Programm auf dem Desktop ausgeführt wird und der Mauszeiger bewegt, ohne eine Schaltfläche wird gedrückt.
+Eine Anwendung kann mithilfe der `Id` -Eigenschaft für einzelner Finger verfolgt. Beachten Sie, dass die `IsInContact` Eigenschaft. Diese Eigenschaft ist immer `true` für `Pressed` Ereignisse und `false` für `Released` Ereignisse. Es ist auch immer `true` für `Moved` Ereignisse unter iOS und Android. Die `IsInContact` Eigenschaft möglicherweise `false` für `Moved` Ereignisse für die universelle Windows Plattform aus, wenn das Programm auf dem Desktop ausgeführt wird und der Mauszeiger bewegt, ohne eine Schaltfläche wird geklickt.
 
-Können Sie die `TouchEffect` Klasse in Ihren eigenen Anwendungen dazu die Datei in der Projektmappe .NET Standard-Bibliotheksprojekt, und durch Hinzufügen einer Instanz, um die `Effects` Auflistung eines beliebigen Elements Xamarin.Forms. Fügen Sie einen Handler, der `TouchAction` Ereignis, um die Berührungsereignisse zu erhalten.
+Können Sie die `TouchEffect` Klasse in Ihren eigenen Anwendungen, einschließlich der Datei im .NET Standard Library-Projekt der Projektmappe, und durch das Hinzufügen einer Instanz der `Effects` Auflistung eines beliebigen Elements von Xamarin.Forms. Fügen Sie einen Handler, der die `TouchAction` Ereignis, um die Touch-Ereignissen zu erhalten.
 
-Mit `TouchEffect` in Ihrer eigenen Anwendung, Sie benötigen auch das Plattform-Implementierungen in enthalten **TouchTrackingEffectDemos** Lösung.
+Verwendung von `TouchEffect` in Ihrer eigenen Anwendung können außerdem benötigen Sie die plattformimplementierungen, die in enthaltenen **TouchTrackingEffectDemos** Lösung.
 
-## <a name="the-touch-tracking-effect-implementations"></a>Die Implementierungen der Effekt Touch-Überwachung
+## <a name="the-touch-tracking-effect-implementations"></a>Die Auswirkungen der Nachverfolgen von Touch-Implementierungen
 
-Die iOS-, Android- und uwp-Implementierungen von der `TouchEffect` werden unten mit der einfachsten Implementierung (UWP) beginnt und endet mit der iOS-Implementierung mehr strukturell komplex als die anderen Optionen beschrieben.
+IOS-, Android- und UWP Implementierungen der `TouchEffect` werden unten mit die einfachste Implementierung (UWP) und endet mit der iOS-Implementierung, da es mehr strukturell komplexer als das andere ist.
 
-### <a name="the-uwp-implementation"></a>Die uwp-Implementierung
+### <a name="the-uwp-implementation"></a>Die UWP-Implementierung
 
-Die uwp-Implementierung von `TouchEffect` ist die am einfachsten. Wie üblich die Klasse abgeleitet `PlatformEffect` und enthält zwei Attribute der Assembly:
+Die UWP-Implementierung von `TouchEffect` ist die einfachste. Wie üblich, die Klasse abgeleitet `PlatformEffect` und enthält zwei Attribute der Assembly:
 
 ```csharp
 [assembly: ResolutionGroupName("XamarinDocs")]
@@ -138,7 +138,7 @@ namespace TouchTracking.UWP
 }
 ```
 
-Die `OnAttached` Außerkraftsetzung speichert einige Informationen als Felder und fügt einen Handler für alle Zeiger-Ereignisse:
+Die `OnAttached` Außerkraftsetzung speichert einige Informationen als Felder und fügt einen Handler für alle zeigerereignisse:
 
 ```csharp
 public class TouchEffect : PlatformEffect
@@ -174,7 +174,7 @@ public class TouchEffect : PlatformEffect
 }    
 ```
 
-Die `OnPointerPressed` Ereignishandler ruft die Auswirkungen Ereignis durch Aufrufen der `onTouchAction` -Feld in der `CommonHandler` Methode:
+Die `OnPointerPressed` Handler Ruft den Effekt-Ereignis durch Aufrufen der `onTouchAction` -Feld in der `CommonHandler` Methode:
 
 ```csharp
 public class TouchEffect : PlatformEffect
@@ -204,9 +204,9 @@ public class TouchEffect : PlatformEffect
 }
 ```
 
-`OnPointerPressed` überprüft auch den Wert der `Capture` Eigenschaften der Klasse Effekt in der Standardbibliothek .NET und Aufrufe `CapturePointer` wird jedoch `true`.
+`OnPointerPressed` Außerdem überprüft den Wert des der `Capture` Eigenschaft in der Klasse "Auswirkung" in der .NET Standard-Bibliothek und ruft `CapturePointer` ist dies `true`.
 
- Die UWP-Ereignishandler werden jetzt noch einfacher:
+ Die UWP-Ereignishandler sind sogar noch einfacher:
 
 ```csharp
 public class TouchEffect : PlatformEffect
@@ -222,9 +222,9 @@ public class TouchEffect : PlatformEffect
 
 ### <a name="the-android-implementation"></a>Die Android-Implementierung
 
-Android und iOS-Implementierungen sind zwangsläufig komplexer, da sie implementieren müssen die `Exited` und `Entered` Ereignisse aus, wenn ein Finger von einem Element in eine andere verschoben. Beide Implementierungen sind ähnlich strukturiert.
+Die Android- und iOS-Implementierungen sind unbedingt komplexer, da sie implementieren, müssen die `Exited` und `Entered` Ereignisse aus, wenn ein Finger von einem Element in einen anderen verschiebt. Beide Implementierungen sind ähnlich strukturiert.
 
-Die Android `TouchEffect` Klasse installiert wird, einen Handler für das `Touch` Ereignis:
+Die Android `TouchEffect` Klasse installiert einen Handler für die `Touch` Ereignis:
 
 ```csharp
 view = Control == null ? Container : Control;
@@ -246,15 +246,15 @@ public class TouchEffect : PlatformEffect
     ...
 ```
 
-Die `viewDictionary` Ruft einen neuen Eintrag jedes Mal die `OnAttached` Außerkraftsetzung aufgerufen wird:
+Die `viewDictionary` ruft Sie einen neuen Eintrag jedes Mal die `OnAttached` Außerkraftsetzung aufgerufen wird:
 
 ```csharp
 viewDictionary.Add(view, this);
 ```
 
-Der Eintrag wird entfernt, aus dem Wörterbuch in `OnDetached`. Jede Instanz des `TouchEffect` bezieht sich auf eine bestimmte Ansicht, die der Effekt angefügt ist. Das statische Wörterbuch kann jede `TouchEffect` Instanz zu durchlaufen, bis die andere Sichten und die entsprechenden `TouchEffect` Instanzen. Dies ist erforderlich, damit für die Ereignisse von einer Sicht in eine andere übertragen kann.
+Der Eintrag entfernt wird, aus dem Wörterbuch in `OnDetached`. Jede Instanz des `TouchEffect` bezieht sich auf eine bestimmte Ansicht, die die Auswirkungen zugeordnet ist. Das statische Wörterbuch kann jede `TouchEffect` Instanz durchlaufen, bis alle anderen Ansichten und die entsprechenden `TouchEffect` Instanzen. Dies ist erforderlich, um zu ermöglichen, übertragen die Ereignisse von einer Sicht in eine andere.
 
-Android weist einen ID-Code um touch-Ereignisse, der eine Anwendung zum Nachverfolgen von einzelnen Finger ermöglicht. Die `idToEffectDictionary` ordnet diese ID-Code mit einem `TouchEffect` Instanz. Dieses Wörterbuch ein Element hinzugefügt wird bei der `Touch` Handler für das Drücken einer Finger aufgerufen wird:
+Android weist einen ID-Code auf Fingereingabeereignisse, der eine Anwendung zum Nachverfolgen von einzelner Finger kann. Die `idToEffectDictionary` ordnet diesen ID-Code mit einem `TouchEffect` Instanz. Dieses Wörterbuch ein Element hinzugefügt wird bei der `Touch` Handler für das Drücken einer Finger aufgerufen wird:
 
 ```csharp
 void OnTouch(object sender, Android.Views.View.TouchEventArgs args)
@@ -273,7 +273,7 @@ void OnTouch(object sender, Android.Views.View.TouchEventArgs args)
 
 ```
 
-Entfernt das Element aus der `idToEffectDictionary` wann der Finger vom Bildschirm freigegeben wird. Die `FireEvent` Methode sammelt einfach alle Informationen, die erforderlich sind, rufen Sie die `OnTouchAction` Methode:
+Das Element wird entfernt, von der `idToEffectDictionary` wann der Finger vom Bildschirm veröffentlicht wird. Die `FireEvent` Methode sammelt einfach alle Informationen, die zum Aufrufen der `OnTouchAction` Methode:
 
 ```csharp
 void FireEvent(TouchEffect touchEffect, int id, TouchActionType actionType, Point pointerLocation, bool isInContact)
@@ -293,7 +293,7 @@ void FireEvent(TouchEffect touchEffect, int id, TouchActionType actionType, Poin
 }
 ```
 
-Alle anderen Touch-Typen werden auf zwei unterschiedliche Arten verarbeitet: Wenn die `Capture` Eigenschaft `true`, das Touch-Ereignis ist eine relativ einfache Übersetzung in die `TouchEffect` Informationen. Er ruft komplizierter, wenn `Capture` ist `false` , da die Berührungsereignisse möglicherweise von einer Sicht in eine andere verschoben werden müssen. Dies ist die Zuständigkeit für die `CheckForBoundaryHop` Methode, die während der Verschiebung Ereignisse aufgerufen wird. Diese Methode verwendet beide statischen Wörterbüchern. Es durchläuft die `viewDictionary` ermitteln Sie die Ansicht, die der Finger ist derzeit berühren und verwendet `idToEffectDictionary` zum Speichern von aktuellen `TouchEffect` Instanz (und daher die aktuelle Ansicht) einer bestimmten ID zugeordnet:
+Alle anderen Touch-Typen werden auf zwei unterschiedliche Arten verarbeitet: Wenn die `Capture` Eigenschaft `true`, das touchereignis ist eine ziemlich einfache Übersetzung in die `TouchEffect` Informationen. Es ruft komplizierter, wenn `Capture` ist `false` da Berührungsereignissen möglicherweise von einer Sicht in eine andere verschoben werden müssen. Dies ist die Verantwortung für die `CheckForBoundaryHop` -Methode, die während eines Move-Ereignisse aufgerufen wird. Diese Methode verwendet beide statischen Wörterbüchern. Es durchläuft die `viewDictionary` ermitteln Sie die Ansicht, die derzeit der Finger berührt, und es verwendet `idToEffectDictionary` zum Speichern der aktuellen `TouchEffect` -Instanz (und daher die aktuelle Ansicht) mit einer bestimmten ID verknüpft ist:
 
 ```csharp
 void CheckForBoundaryHop(int id, Point pointerLocation)
@@ -334,13 +334,13 @@ void CheckForBoundaryHop(int id, Point pointerLocation)
 }
 ```
 
-Wenn eine Änderung stattgefunden hat die `idToEffectionDictionary`, potenziell Methodenaufrufe `FireEvent` für `Exited` und `Entered` -Übertragung von einer Sicht in eine andere. Allerdings der Finger möglicherweise wurden verschoben zu einem Bereich von einer Sicht ohne eine angefügte belegt `TouchEffect`, oder aus diesem Bereich einer Ansicht mit dem Effekt angefügt.
+Wenn eine in Änderung der `idToEffectDictionary`, potenziell Ruft die Methode `FireEvent` für `Exited` und `Entered` Übertragung von einer Sicht in eine andere. Allerdings der Finger möglicherweise wurden verschoben zu einem Bereich belegt wird, indem Sie eine Ansicht ohne eine angefügte `TouchEffect`, oder aus diesem Bereich an eine Ansicht mit dem Effekt angefügt.
 
-Beachten Sie, dass die `try` und `catch` blockieren, wenn die Sicht zugegriffen wird. Auf einer Seite, die navigiert wird, und dann zurück zur Startseite, navigiert die `OnDetached` -Methode nicht aufgerufen wird und Elemente verbleiben im die `viewDictionary` aber Android betrachtet werden verworfen.
+Beachten Sie, dass die `try` und `catch` blockieren, wenn die Sicht zugegriffen wird. Auf einer Seite, die mit dem navigiert wird, und klicken Sie dann zurück zur Startseite, navigiert die `OnDetached` Methode nicht aufgerufen, und Elemente verbleiben im der `viewDictionary` aber Android betrachtet werden verworfen.
 
-### <a name="the-ios-implementation"></a>Die iOS-Implementierung
+### <a name="the-ios-implementation"></a>Der iOS-Implementierung
 
-Die iOS-Implementierung ist die Android-Implementierung mit der Ausnahme, die mit dem iOS `TouchEffect` Instanziieren der Klasse muss eine Ableitung von `UIGestureRecognizer`. Dies ist eine Klasse in der iOS-Projekt mit dem Namen `TouchRecognizer`. Diese Klasse verwaltet zwei statische Wörterbücher, in denen gespeichert `TouchRecognizer` Instanzen:
+Die iOS-Implementierung ist ähnlich, außer dass die Android-Implementierung der iOS `TouchEffect` Instanziieren der Klasse muss eine Ableitung von `UIGestureRecognizer`. Dies ist eine Klasse im iOS-Projekt mit dem Namen `TouchRecognizer`. Diese Klasse verwaltet zwei statische Wörterbücher, die speichern `TouchRecognizer` Instanzen:
 
 ```csharp
 static Dictionary<UIView, TouchRecognizer> viewDictionary =
@@ -350,15 +350,15 @@ static Dictionary<long, TouchRecognizer> idToTouchDictionary =
     new Dictionary<long, TouchRecognizer>();
 ```
 
-Die Struktur dieser Anteil `TouchRecognizer` -Klasse ähnelt der Android `TouchEffect` Klasse.
+Die Struktur dieser Anteil `TouchRecognizer` Klasse ist vergleichbar mit dem Android `TouchEffect` Klasse.
 
-## <a name="putting-the-touch-effect-to-work"></a>Wenn Sie die Fingereingabe Auswirkungen auf Arbeit
+## <a name="putting-the-touch-effect-to-work"></a>Platzieren den Touch-Effekt für die Arbeit
 
-Die [ **TouchTrackingEffectDemos** ](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) Programm enthält fünf Seiten, die den Touch-Tracking-Effekt für allgemeine Aufgaben zu testen.
+Die [ **TouchTrackingEffectDemos** ](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) Programm enthält fünf Seiten, die den Nachverfolgen von Touch-Effekt für allgemeine Aufgaben zu testen.
 
-Die **BoxView ziehen** Seite ermöglicht Ihnen das Hinzufügen `BoxView` Elemente, die eine `AbsoluteLayout` und ziehen Sie sie auf dem Bildschirm. Die [XAML-Datei](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BoxViewDraggingPage.xaml) instanziiert zwei `Button` Ansichten für das Hinzufügen von `BoxView` Elemente, die die `AbsoluteLayout` und das Löschen der `AbsoluteLayout`.
+Die **BoxView ziehen** Seite können Sie die hinzuzufügenden `BoxView` Elementen, die eine `AbsoluteLayout` und ziehen sie dann auf dem Bildschirm. Die [XAML-Datei](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BoxViewDraggingPage.xaml) instanziiert zwei `Button` Ansichten für das Hinzufügen von `BoxView` Elementen, die die `AbsoluteLayout` und das Löschen der `AbsoluteLayout`.
 
-Die Methode in der [Code-Behind-Datei](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BoxViewDraggingPage.xaml.cs) , addiert ein neues `BoxView` auf die `AbsoluteLayout` fügt auch eine `TouchEffect` -Objekt an die `BoxView` und fügt einen Ereignishandler für den Effekt:
+Die Methode in der [Code-Behind-Datei](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BoxViewDraggingPage.xaml.cs) , die Fügt ein neues `BoxView` auf die `AbsoluteLayout` fügt auch eine `TouchEffect` -Objekt die `BoxView` und fügt einen Ereignishandler für den Effekt:
 
 ```csharp
 void AddBoxViewToLayout()
@@ -379,7 +379,7 @@ void AddBoxViewToLayout()
 }
 ```
 
-Die `TouchAction` Ereignishandler verarbeitet die Berührungsereignisse für alle der `BoxView` Elemente, aber sie muss einige Vorsicht walten lassen: Es darf keine zwei Fingern auf einem einzelnen zulassen `BoxView` daran, dass das Programm nur implementiert ziehen und würden zwei Finger behindern Sie einander. Aus diesem Grund definiert die Seite eine eingebettete Klasse für jeden Finger derzeit nachverfolgt wird:
+Die `TouchAction` Ereignishandler verarbeitet alle Touch-Ereignisse für alle der `BoxView` Elemente, sondern soll einige Vorsicht walten lassen,: Es sind keine zwei Finger auf einem einzelnen zugelassen `BoxView` daran, dass das Programm nur implementiert ziehen, und würden zwei Finger dass sich gegenseitig beeinträchtigen. Aus diesem Grund definiert die Seite eine eingebettete Klasse für jeden Finger, die derzeit nachverfolgten:
 
 ```csharp
 class DragInfo
@@ -400,7 +400,7 @@ Dictionary<BoxView, DragInfo> dragDictionary = new Dictionary<BoxView, DragInfo>
 
 Die `dragDictionary` enthält einen Eintrag für jede `BoxView` gerade gezogen werden.
 
-Die `Pressed` Touch Aktion dieses Wörterbuch ein Element hinzufügt und die `Released` Aktion entfernt. Die `Pressed` Logik muss überprüfen, ob es bereits ein Element im Wörterbuch für diese ist `BoxView`. Wenn dies der Fall ist, die `BoxView` ist bereits gezogen werden und das neue Ereignis ist eine zweite finger auf, die gleiche `BoxView`. Für die `Moved` und `Released` Aktionen der Ereignishandler muss überprüfen, ob das Wörterbuch einen Eintrag für diesen hat `BoxView` und einem `Id` -Eigenschaft für, das gezogen `BoxView` in Wörterbucheintrags entspricht:
+Die `Pressed` Touch-Aktion Fügt ein Element dieses Wörterbuch und die `Released` Aktion entfernt. Die `Pressed` Logik muss überprüfen, wenn es bereits ein Element im Wörterbuch für diese ist `BoxView`. Wenn dies der Fall ist, die `BoxView` ist bereits gezogen wird, und das neue Ereignis ist eine zweite finger auf, die gleiche `BoxView`. Für die `Moved` und `Released` Aktionen der Ereignishandler muss überprüfen, ob das Wörterbuch einen Eintrag für diesen hat `BoxView` und die Berührung `Id` Eigenschaft, die gezogen `BoxView` entspricht, der im Wörterbucheintrag:
 
 ```csharp
 void OnTouchEffectAction(object sender, TouchActionEventArgs args)
@@ -442,17 +442,17 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 }
 ```
 
-Die `Pressed` Logik legt die `Capture` Eigenschaft von der `TouchEffect` -Objekt `true`. Dies entspricht der alle nachfolgenden Ereignisse für diese Finger an denselben Ereignishandler übermittelt.
+Die `Pressed` Logik legt die `Capture` Eigenschaft der `TouchEffect` -Objekt `true`. Dies wirkt sich das Übermitteln von allen nachfolgenden Ereignissen für diese Finger an denselben Ereignishandler aus.
 
-Die `Moved` Logik wechselt die `BoxView` durch Ändern der `LayoutBounds` -Eigenschaft. Die `Location` -Eigenschaft der Ereignisargumente ist immer relativ zum der `BoxView` gezogen wird, und, wenn die `BoxView` mit einer Konstante Rate gezogen wird die `Location` Eigenschaften der aufeinander folgenden Ereignisse werden ungefähr gleich. Z. B. wenn ein Finger drückt die `BoxView` in der Mitte der `Pressed` Aktion speichert eine `PressPoint` Eigenschaft (50, 50), die unverändert auf nachfolgende Ereignisse. Wenn die `BoxView` diagonal mit einer Konstante, die nachfolgenden Rate gezogen wird `Location` Eigenschaften während der `Moved` Werte handeln (55, 55), in diesem Fall die `Moved` Logik die horizontale und vertikale Position des der 5hinzugefügt`BoxView`. Auf diese Weise verschoben der `BoxView` , damit ihren Mittelpunkt wieder ist direkt unter dem Finger.
+Die `Moved` Logik wechselt die `BoxView` durch Ändern der `LayoutBounds` angefügte Eigenschaft. Die `Location` Eigenschaft der Ereignisargumente ist immer relativ zum die `BoxView` , das gezogen wird, und, wenn die `BoxView` mit konstanter Geschwindigkeit, gezogen wird die `Location` Eigenschaften der aufeinander folgende Ereignisse werden ungefähr gleich sein. Wenn ein Finger drückt z. B. die `BoxView` in die Mitte zu der `Pressed` Aktion speichert eine `PressPoint` Eigenschaft (50, 50), für nachfolgende Ereignisse gleich bleibt. Wenn die `BoxView` diagonal gezogen wird, mit konstanter Geschwindigkeit, die nachfolgenden `Location` Eigenschaften während des der `Moved` Werte handeln (55, 55) in diesem Fall die `Moved` Logik die horizontale und vertikale Position von der 5hinzugefügt`BoxView`. Auf diese Weise verschoben der `BoxView` , damit seine Mitte wieder ist direkt unter dem Finger.
 
-Sie können mehrere verschieben `BoxView` Elemente, die gleichzeitig mit anderen Fingern fest.
+Sie können mehrere verschieben `BoxView` Elemente gleichzeitig mit anderen Finger.
 
-[![](touch-tracking-images/boxviewdragging-small.png "Dreifacher Screenshot der Seite BoxView ziehen")](touch-tracking-images/boxviewdragging-large.png#lightbox "dreifacher Screenshot der Seite BoxView ziehen")
+[![](touch-tracking-images/boxviewdragging-small.png "Dreifacher Screenshot der Seite BoxView ziehen")](touch-tracking-images/boxviewdragging-large.png#lightbox "dreifachen Screenshot der Seite BoxView ziehen.")
 
-### <a name="subclassing-the-view"></a>Erstellen von Unterklassen für die Sicht
+### <a name="subclassing-the-view"></a>Erstellen von Unterklassen für die Ansicht
 
-Häufig ist es einfacher, für ein Element Xamarin.Forms, um eine eigene Touch-Ereignisse zu behandeln. Die **Draggable BoxView ziehen** Seite funktioniert genauso wie die **BoxView ziehen** Seite, jedoch die Elemente, die der Benutzer zieht Instanzen sind eine [ `DraggableBoxView` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/DraggableBoxView.cs) von abgeleitete Klasse `BoxView`:
+Häufig ist es einfacher für ein Xamarin.Forms-Element, um eine eigene touchereignisse zu behandeln. Die **ziehbare BoxView ziehen** Seite funktioniert genauso wie die **BoxView ziehen** Seite, jedoch die Elemente, die der Benutzer zieht Instanzen sind eine [ `DraggableBoxView` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/DraggableBoxView.cs) abgeleitete Klasse `BoxView`:
 
 ```csharp
 class DraggableBoxView : BoxView
@@ -503,19 +503,19 @@ class DraggableBoxView : BoxView
 }
 ```
 
-Der Konstruktor erstellt und fügt die `TouchEffect`, und legt die `Capture` Eigenschaft, wenn dieses Objekt zuerst instanziiert wird. Kein Wörterbuch ist erforderlich, da die Klasse selbst speichert `isBeingDragged`, `pressPoint`, und `touchId` jeden Finger zugeordnete Werte. Die `Moved` Behandlung ändert die `TranslationX` und `TranslationY` Eigenschaften, sodass die Logik ausgeführt wird auch dann, wenn das übergeordnete Element des der `DraggableBoxView` kein `AbsoluteLayout`.
+Der Konstruktor erstellt und fügt die `TouchEffect`, und legt die `Capture` Eigenschaft, wenn das Objekt zuerst instanziiert wird. Kein Wörterbuch ist erforderlich, da die Klasse selbst speichert `isBeingDragged`, `pressPoint`, und `touchId` Werte jeder Finger zugeordnet. Die `Moved` Behandlung ändert die `TranslationX` und `TranslationY` Eigenschaften so die Logik funktioniert auch wenn das übergeordnete Element des der `DraggableBoxView` ist keiner `AbsoluteLayout`.
 
 ### <a name="integrating-with-skiasharp"></a>Integrieren von SkiaSharp
 
-Die nächsten beiden Demos erfordern, Grafiken und können die SkiaSharp für diesen Zweck. Möglicherweise möchten Sie weitere Informationen zu [verwenden SkiaSharp in Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) , bevor Sie diese Beispiele zu untersuchen. Die ersten beiden Artikel ("SkiaSharp Zeichnung Grundlagen zu" und "SkiaSharp Linien und Pfade") werden alle Elemente, die Sie hier müssen behandelt.
+Die nächsten beiden Demos erfordern, Grafiken und SkiaSharp für diesen Zweck verwendet. Möglicherweise möchten Sie Informationen zu [mithilfe von SkiaSharp in Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) , bevor Sie diese Beispiele studieren. Die ersten beiden Artikel ("SkiaSharp-Zeichnungen Basics" und "SkiaSharp Zeilen und Paths") behandelt alle Elemente, die Sie hier benötigen.
 
-Die **Ellipse Zeichnung** Seite können Sie eine Ellipse, die durch ein Lesegerät Finger auf dem Bildschirm gezeichnet werden soll. Je nachdem, wie Sie den Finger verschieben, können Sie die Ellipse, die von der linken oberen Ecke auf der unteren rechten Ecke oder von einer beliebigen anderen Ecke in die entgegengesetzte Ecke zeichnen. Die Ellipse wird mit einem zufälligen Farbe und Deckkraft gezeichnet.
+Die **Ellipse zeichnen** Seite können Sie eine Ellipse zeichnen sich durch Wischen Ihren Finger auf dem Bildschirm. Abhängig davon, wie Sie Ihren Finger verschieben, können Sie die Ellipse aus der linken oberen Ecke auf der rechten unteren Ecke oder aus einer beliebigen anderen Ecke zur gegenüberliegenden Ecke zeichnen. Die Ellipse, die mit einem zufällig ausgewählten Farbe und Deckkraft gezeichnet wird.
 
-[![](touch-tracking-images/ellipsedrawing-small.png "Dreifacher Screenshot der Seite Ellipse Zeichnung")](touch-tracking-images/ellipsedrawing-large.png#lightbox "dreifacher Screenshot der Seite Ellipse Zeichnung")
+[![](touch-tracking-images/ellipsedrawing-small.png "Dreifacher Screenshot der Seite Ellipse zeichnen")](touch-tracking-images/ellipsedrawing-large.png#lightbox "dreifachen Screenshot der Seite Ellipse zeichnen")
 
-Wenn Sie eine Schaltfläche mit den Auslassungszeichen klicken Sie dann berühren können Sie es an eine andere Position ziehen. Dies erfordert eine Technik, bekannt als "Treffertests," der auch für das Objekt zu einem bestimmten Zeitpunkt zu suchen. Schaltfläche mit die Auslassungszeichen SkiaSharp sind nicht Xamarin.Forms-Elemente, deshalb können sie ihre eigenen ausführen `TouchEffect` verarbeiten. Die `TouchEffect` müssen gelten für die gesamte `SKCanvasView` Objekt.
+Wenn Sie dann eine Ellipse der Fingereingabe, können Sie es an eine andere Position ziehen. Dies erfordert ein Verfahren, bekannt als "Treffertests," Suche nach dem grafischen Objekt zu einem bestimmten Zeitpunkt dazu. Die Auslassungspunkte SkiaSharp sind nicht Xamarin.Forms-Elemente, damit sie ihre eigenen ausführen können nicht `TouchEffect` verarbeiten. Die `TouchEffect` müssen gelten für die gesamte `SKCanvasView` Objekt.
 
-Die [EllipseDrawPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/EllipseDrawingPage.xaml) Datei instanziiert den `SKCanvasView` in einer einzelnen Zelle `Grid`. Die `TouchEffect` -Objekt an, die angefügt wird `Grid`:
+Die [EllipseDrawPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/EllipseDrawingPage.xaml) Datei instanziiert den `SKCanvasView` in einer einzelnen Zelle `Grid`. Die `TouchEffect` Objekt angefügt ist, die `Grid`:
 
 ```xaml
 <Grid x:Name="canvasViewGrid"
@@ -531,7 +531,7 @@ Die [EllipseDrawPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob
 </Grid>
 ```
 
-In Android und universellen Windows-Plattform die `TouchEffect` können direkt angefügt werden, die `SKCanvasView`, jedoch unter iOS, das nicht funktioniert. Beachten Sie, dass die `Capture` -Eigenschaftensatz auf `true`.
+Unter Android und der universellen Windows-Plattform die `TouchEffect` kann direkt angefügt werden, die `SKCanvasView`, aber unter iOS, das nicht funktioniert. Beachten Sie, dass die `Capture` -Eigenschaftensatz auf `true`.
 
 Jede Ellipse, die SkiaSharp rendert, wird durch ein Objekt des Typs dargestellt `EllipseDrawingFigure`:
 
@@ -585,7 +585,7 @@ class EllipseDrawingFigure
 }
 ```
 
-Die `StartPoint` und `EndPoint` Eigenschaften werden verwendet, wenn das Programm Fingereingabe; verarbeitet der `Rectangle` Eigenschaft wird zum Zeichnen der Ellipse. Die `LastFingerLocation` Eigenschaft kommt es bei die Ellipse gezogen wird, und die `IsInEllipse` Methode unterstützt die Internetsuche Treffertests. Die Methode gibt `true` ist der Punkt innerhalb der Ellipse.
+Die `StartPoint` und `EndPoint` Eigenschaften werden verwendet, wenn das Programm Fingereingaben; verarbeitet die `Rectangle` Eigenschaft wird verwendet, das die Ellipse gezeichnet. Die `LastFingerLocation` Eigenschaft ins Spiel, wenn die Ellipse gezogen wird, und die `IsInEllipse` Methode unterstützt die Internetsuche Treffertests. Gibt die Methode zurück `true` ist der Punkt innerhalb der Ellipse.
 
 Die [Code-Behind-Datei](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/EllipseDrawingPage.xaml.cs) drei Auflistungen verwaltet:
 
@@ -595,7 +595,7 @@ List<EllipseDrawingFigure> completedFigures = new List<EllipseDrawingFigure>();
 Dictionary<long, EllipseDrawingFigure> draggingFigures = new Dictionary<long, EllipseDrawingFigure>();
 ```
 
-Die `draggingFigure` Wörterbuch enthält eine Teilmenge der `completedFigures` Auflistung. Die SkiaSharp `PaintSurface` Ereignishandler einfach die Objekte in diesen rendert die `completedFigures` und `inProgressFigures` Sammlungen:
+Die `draggingFigure` Wörterbuch enthält eine Teilmenge der `completedFigures` Auflistung. Die SkiaSharp `PaintSurface` -Ereignishandler wird einfach die Objekte in diesen rendert die `completedFigures` und `inProgressFigures` Sammlungen:
 
 ```csharp
 SKPaint paint = new SKPaint
@@ -621,7 +621,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Der schwierigste Teil der Touch-Verarbeitung ist der `Pressed` behandeln. Dies ist, wenn der Treffertest ausgeführt wird, aber wenn der Code eine Ellipse, die unter den Finger wieder an den Benutzer erkennt, diese Ellipse nur gezogen werden kann, wenn es derzeit nicht von einem anderen Finger gezogen wird. Ist keine Ellipse unter den Finger wieder an den Benutzer, beginnt der Code den Prozess der Zeichnen einer neue Ellipse:
+Der schwierigste Teil der Touch-Verarbeitung ist der `Pressed` behandeln. Hier kommt der Treffertest ausgeführt wird, aber wenn der Code unter dem Finger des Benutzers eine Ellipse erkennt, diese Ellipse nur gezogen werden kann, wenn es derzeit nicht von einem anderen Finger gezogen wird. Liegt keine Ellipse unter dem Finger des Benutzers, beginnt der Code den Prozess der eine neue Ellipse Zeichnen:
 
 ```csharp
 case TouchActionType.Pressed:
@@ -681,11 +681,11 @@ case TouchActionType.Pressed:
     break;
 ```
 
-Das andere SkiaSharp-Beispiel ist die **Finger Paint** Seite. Sie können eine Konturfarbe und Strichbreite auswählen, aus zwei `Picker` anzeigt, und zeichnen Sie dann mit einem oder mehreren Fingern:
+Das andere SkiaSharp-Beispiel ist die **Fingerpaint** Seite. Sie können eine Strichfarbe und die Strichbreite auswählen, aus zwei `Picker` anzeigt, und klicken Sie dann mit einem oder mehreren Fingern zeichnen:
 
-[![](touch-tracking-images/fingerpaint-small.png "Dreifacher Screenshot der Seite Finger Paint")](touch-tracking-images/fingerpaint-large.png#lightbox "dreifacher Screenshot der Seite Finger Paint")
+[![](touch-tracking-images/fingerpaint-small.png "Dreifacher Screenshot der Seite Fingerpaint")](touch-tracking-images/fingerpaint-large.png#lightbox "dreifachen Screenshot der Seite Fingerpaint")
 
-Dieses Beispiel benötigen Sie auch eine separate Klasse zum Darstellen von jeder Zeile auf dem Bildschirm gezeichnet:
+Dieses Beispiel erfordert auch eine separate Klasse für jede Zeile, die auf dem Bildschirm gezeichnet darstellen:
 
 ```csharp
 class FingerPaintPolyline
@@ -703,14 +703,14 @@ class FingerPaintPolyline
 }
 ```
 
-Ein `SKPath` Objekt wird verwendet, um jede Zeile zu rendern. Die [FingerPaint.xaml.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/FingerPaintPage.xaml.cs) Datei verwaltet zwei Sammlungen dieser Objekte, für die aktuell gezeichnete Polylinien und ein anderes für die abgeschlossenen Polylinien:
+Ein `SKPath` Objekt wird verwendet, um jede Zeile zu rendern. Die [FingerPaint.xaml.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/FingerPaintPage.xaml.cs) Datei verwaltet zwei Sammlungen dieser Objekte, für die Polylinien, die gerade gezeichnet wird und eine für die abgeschlossenen Polylinien:
 
 ```csharp
 Dictionary<long, FingerPaintPolyline> inProgressPolylines = new Dictionary<long, FingerPaintPolyline>();
 List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 ```
 
-Die `Pressed` Verarbeitung erstellt ein neues `FingerPaintPolyline`, Aufrufe `MoveTo` auf die Pfadobjekt, das den ersten Punkt gespeichert und fügt dieses Objekt an die `inProgressPolylines` Wörterbuch. Die `Moved` Verarbeitung Aufrufe `LineTo` auf das Pfadobjekt mit der neuen Finger Position und die `Released` Verarbeitung überträgt die abgeschlossene Polylinie aus `inProgressPolylines` auf `completedPolylines`. Wiederum ist die tatsächliche SkiaSharp Zeichencode relativ einfach:
+Die `Pressed` Verarbeitung erstellt ein neues `FingerPaintPolyline`, Aufrufe `MoveTo` für das Pfadobjekt zum Speichern von des ersten Punkt, und fügt das Objekt mit der `inProgressPolylines` Wörterbuch. Die `Moved` Aufrufe verarbeiten `LineTo` für das Pfadobjekt, mit der neuen Position der Finger, und die `Released` Verarbeitung überträgt die abgeschlossene Polylinie aus `inProgressPolylines` zu `completedPolylines`. Die tatsächliche SkiaSharp Zeichencode ist wieder recht einfach:
 
 ```csharp
 SKPaint paint = new SKPaint
@@ -741,23 +741,23 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-### <a name="tracking-view-to-view-touch"></a>Nachverfolgen von Touch Ansicht
+### <a name="tracking-view-to-view-touch"></a>Nachverfolgen von Touch des Ansicht-zu-Ansicht
 
-Die vorherigen Beispielen festgelegt haben die `Capture` Eigenschaft von der `TouchEffect` auf `true`, entweder bei der `TouchEffect` erstellt wurde oder wenn die `Pressed` Ereignis aufgetreten ist. Dadurch wird sichergestellt, dass das gleiche Element empfängt alle Ereignisse im Zusammenhang mit den Finger wieder an, der die Sicht zuerst gedrückt. Das letzte Beispiel ruft *nicht* festgelegt `Capture` auf `true`. Dies bewirkt, dass anderes Verhalten, wenn ein Finger mit dem Bildschirm verbunden von einem Element in einen anderen bewegt wird. Das Element, das der Finger verliert empfängt ein Ereignis mit einer `Type` -Eigenschaftensatz auf `TouchActionType.Exited` und das zweite Element empfängt ein Ereignis mit einer `Type` Festlegen von `TouchActionType.Entered`.
+Alle in die vorherigen Beispielen festgelegt haben die `Capture` Eigenschaft der `TouchEffect` zu `true`, wenn entweder die `TouchEffect` erstellt wurde oder wenn die `Pressed` Ereignis aufgetreten ist. Dadurch wird sichergestellt, dass das gleiche Element empfängt alle Ereignissen im Zusammenhang mit dem Finger, der zunächst die Sicht gedrückt. Im letzten Beispiel *nicht* festgelegt `Capture` zu `true`. Dies bewirkt, dass unterschiedliche Verhalten, wenn ein Finger den Bildschirm berühren von einem Element in einen anderen verschoben wird. Das Element, das aus der fingerbewegung empfängt ein Ereignis mit einer `Type` -Eigenschaft auf festgelegt `TouchActionType.Exited` und das zweite Element empfängt ein Ereignis mit einer `Type` -Einstellung `TouchActionType.Entered`.
 
-Diese Art der Verarbeitung von Touch ist sehr nützlich für Musik Tastatur. Ein Schlüssel sollten erkennen, wenn er, sondern auch gedrückt wird, wenn ein Finger von einem Schlüssel zu einem anderen Folien sein.
+Diese Art der Touch-Verarbeitung ist sehr nützlich für eine Musik-Tastatur. Ein Schlüssel sollten in der Lage zu erkennen, wann es, sondern auch gedrückt wird, wenn ein Finger von einem Schlüssel zu einem anderen verschoben.
 
 Die **automatische Tastatur** Seite definiert kleine [ `WhiteKey` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/WhiteKey.cs) und [ `BlackKey` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BlackKey.cs) abgeleitete Klassen [ `Key` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/Key.cs), die sich daraus ableitet `BoxView`.
 
-Die `Key` Klasse ist jetzt in einem tatsächlichen Musikprogramm verwendet werden. Öffentliche Eigenschaften namens definiert `IsPressed` und `KeyNumber`, die auf den Tastencode, durch die der MIDI-Standard festgelegt werden soll. Die `Key` -Klasse definiert außerdem ein Ereignis namens `StatusChanged`, welche wird aufgerufen, wenn die `IsPressed` -Eigenschaft ändert.
+Die `Key` Klasse ist in einem tatsächlichen Musikprogramm verwendet werden. Es definiert, dass öffentliche Eigenschaften namens `IsPressed` und `KeyNumber`, die auf den Tastencode hergestellt, indem der MIDI-Standard festgelegt werden soll. Die `Key` Klasse definiert auch ein Ereignis namens `StatusChanged`, wird aufgerufen, wenn die `IsPressed` eigenschaftenänderungen.
 
-Mehrere Finger sind für jeden Schlüssel zulässig. Aus diesem Grund die `Key` -Klasse verwaltet eine `List` von Touch ID-Nummern aller derzeit berühren diesen Schlüssel Finger:
+Mehrere Finger sind für jeden Schlüssel zulässig. Aus diesem Grund die `Key` -Klasse verwaltet eine `List` von Touch-ID-Nummern der alle Finger berühren derzeit auf diesem Schlüssel:
 
 ```csharp
 List<long> ids = new List<long>();
 ```
 
-Der `TouchAction` -Ereignishandler fügt eine ID, die `ids` Liste für beide eine `Pressed` -Ereignis des Typs und ein `Entered` aufweisen, aber nur, wenn der `IsInContact` Eigenschaft ist `true` für die `Entered` Ereignis. Die ID wird daraus der `List` für eine `Released` oder `Exited` Ereignis:
+Die `TouchAction` Ereignishandler fügt eine ID für die die `ids` Liste für beide eine `Pressed` -Ereignis des Typs und ein `Entered` -Typ, sondern nur, wenn die `IsInContact` -Eigenschaft ist `true` für die `Entered` Ereignis. Die ID wird entfernt, von der `List` für eine `Released` oder `Exited` Ereignis:
 
 ```csharp
 void OnTouchEffectAction(object sender, TouchActionEventArgs args)
@@ -787,21 +787,21 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 ```
 
-Die `AddToList` und `RemoveFromList` beide Methoden überprüft, ob die `List` zwischen leer und nicht leer ist, geändert wurde und wenn dies der Fall ist, ruft der `StatusChanged` Ereignis.
+Die `AddToList` und `RemoveFromList` als auch überprüfen, ob die `List` zwischen leer und nicht leer ist, geändert hat und wenn dies der Fall ist, ruft der `StatusChanged` Ereignis.
 
-Die verschiedenen `WhiteKey` und `BlackKey` Elemente werden auf der Seite angeordnet [XAML-Datei](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/SilentKeyboardPage.xaml), dem sieht am besten des Telefons in einer im Querformat aktiviert wird:
+Die verschiedenen `WhiteKey` und `BlackKey` Elemente werden in der Seite angeordnet [XAML-Datei](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/SilentKeyboardPage.xaml), sieht die am besten, wenn das Telefon in einer im Querformat gehalten wird:
 
-[![](touch-tracking-images/silentkeyboard-small.png "Dreifacher Screenshot der Seite Automatische Tastatur")](touch-tracking-images/silentkeyboard-large.png#lightbox "dreifacher Screenshot der Seite Automatische Tastatur")
+[![](touch-tracking-images/silentkeyboard-small.png "Dreifacher Screenshot der Seite Automatische Tastatur")](touch-tracking-images/silentkeyboard-large.png#lightbox "dreifachen Screenshot der Seite Automatische Tastatur")
 
-Wenn Sie über die Schlüssel den Finger sweep, wird durch die geringfügigen Änderungen in Farbe angezeigt, dass die Touch-Ereignisse von einem Schlüssel zu einem anderen übertragen werden.
+Wenn Sie Ihren Finger über die Tasten sweeps, sehen Sie durch die geringfügigen Änderungen in Farbe, dass die touchereignisse von einem Schlüssel zu einem anderen übertragen werden.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde gezeigt, wie Ereignisse in einen Effekt aufgerufen und zum Schreiben und verwenden einen Effekt, der auf niedriger Ebene Multitouch-Verarbeitung implementiert.
+Dieser Artikel hat veranschaulicht, wie zum Aufrufen von Ereignissen eines Effekts, und Schreiben und verwenden Sie einen Effekt, der auf niedriger Ebene Multitouch-Verarbeitung implementiert.
 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Nachverfolgen von Multi-Touch Finger in iOS](~/ios/app-fundamentals/touch/touch-tracking.md)
-- [Multi-Touch-Finger in Android nachverfolgen](~/android/app-fundamentals/touch/touch-tracking.md)
-- [Touch-Tracking wirksam (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)
+- [Nachverfolgen von Multitouch Finger in iOS](~/ios/app-fundamentals/touch/touch-tracking.md)
+- [Multitouch-Finger, die Nachrichtennachverfolgung in Android](~/android/app-fundamentals/touch/touch-tracking.md)
+- [Nachverfolgen von Touch-Auswirkungen (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)

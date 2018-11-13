@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/17/2017
-ms.openlocfilehash: d3e5da19bacf5a6847bf6226c3fdd2b1e0e46ab2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 83f9651fa7fd20709c620258833ae4a152ffd0eb
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111063"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563666"
 ---
 # <a name="events-protocols-and-delegates-in-xamarinios"></a>Ereignisse, Protokolle und Delegaten in Xamarin.iOS
 
@@ -52,7 +52,7 @@ aButton.TouchUpInside += delegate {
 };
 ```
 
-Der vorangehende Code läuft der `ViewDidLoad` Methode der UIViewContoller. Die `aButton` Variable verweist auf eine Schaltfläche mit der Sie in der iOS-Designer oder mit Code hinzufügen können. Die folgende Abbildung zeigt eine Schaltfläche, die in der iOS-Designer hinzugefügt wurde:
+Der vorangehende Code läuft der `ViewDidLoad` Methode der UIViewController. Die `aButton` Variable verweist auf eine Schaltfläche mit der Sie in der iOS-Designer oder mit Code hinzufügen können. Die folgende Abbildung zeigt eine Schaltfläche, die in der iOS-Designer hinzugefügt wurde:
 
 [![](delegates-protocols-and-events-images/02-interface-builder-outlet-sml.png "Eine Schaltfläche hinzugefügt, die im iOS-Designer")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
 

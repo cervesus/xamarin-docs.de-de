@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: 51bd3dd4c27dce19344f7660c31a0d4e741e1ad4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a411d4d85877c9868ec49f92b53ca8d7a81f9959
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121138"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528532"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Broadcast Receiver in Xamarin.Android
 
@@ -97,7 +97,7 @@ public class MySampleBroadcastReceiver : BroadcastReceiver
 }
 ```
 
-Apps für Android 8.0 (API-Ebene 26) oder höher kann nicht statisch registrieren für eine implizite Übertragung. Apps können für eine explizite Broadcastnachricht weiter statisch registrieren. Es ist eine kleine Liste implizite Broadcasts, die von dieser Einschränkung ausgenommen sind. Diese Ausnahmen werden weiter in die [implizite Broadcast Ausnahmen](https://developer.android.com/guide/components/broadcast-exceptions.html) Leitfaden in der Android-Dokumentation. Apps, die implizite Broadcasts interessieren müssen dynamisch mithilfe der `RegisterReceiver` Methode. Dies wird nachfolgend beschrieben.
+Apps für Android 8.0 (API-Ebene 26) oder höher kann nicht statisch registrieren für eine implizite Übertragung. Apps können für eine explizite Broadcastnachricht weiter statisch registrieren. Es gibt eine kleine Liste implizite Broadcasts, die von dieser Einschränkung ausgenommen sind. Diese Ausnahmen werden weiter in die [implizite Broadcast Ausnahmen](https://developer.android.com/guide/components/broadcast-exceptions.html) Leitfaden in der Android-Dokumentation. Apps, die implizite Broadcasts interessieren müssen dynamisch mithilfe der `RegisterReceiver` Methode. Dies wird nachfolgend beschrieben.
 
 ### <a name="context-registering-a-broadcast-receiver"></a>Kontext Registrierung-einen Broadcast Receiver
 

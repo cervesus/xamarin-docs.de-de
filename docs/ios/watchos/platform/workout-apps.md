@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: d755160043191f93247fd09e99f23eb85831fa8b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fd677aa802adf32ac81396f81c67264d88639967
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113897"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528779"
 ---
 # <a name="watchos-workout-apps-in-xamarin"></a>WatchOS-Trainings-Apps in Xamarin
 
@@ -469,7 +469,7 @@ public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkou
 
 Auch neue watchos 3, werden die während der Übertragung angehalten (`HKWorkoutEventType.MotionPaused`) und während der Übertragung fortgesetzt (`HKWorkoutEventType.MotionResumed`) Ereignisse. Diese Ereignisse werden automatisch von HealthKit während einer laufenden Herausforderung ausgelöst, wenn der Benutzer beginnt, und nicht mehr bewegt.
 
-Wenn die app ein Ereignis während der Übertragung angehalten empfängt, sollte sie anhalten, das Sammeln von Daten, bis der Benutzer wird, während der Übertragung fortgesetzt und die Bewegung fortgesetzt-Ereignis empfangen wird. App-app anhalten soll nicht die Trainings-Sitzung in Reaktion auf ein Ereignis während der Übertragung angehalten.
+Wenn die app ein Ereignis während der Übertragung angehalten empfängt, sollte sie anhalten, das Sammeln von Daten, bis der Benutzer wird, während der Übertragung fortgesetzt und die Bewegung fortgesetzt-Ereignis empfangen wird. App anhalten soll nicht über die Trainings-Sitzung in Reaktion auf ein Ereignis während der Übertragung angehalten.
 
 > [!IMPORTANT]
 > Die Bewegung angehalten und während der Übertragung Resume-Ereignisse werden nur unterstützt, für Aktivitätstyps RunningWorkout (`HKWorkoutActivityType.Running`).

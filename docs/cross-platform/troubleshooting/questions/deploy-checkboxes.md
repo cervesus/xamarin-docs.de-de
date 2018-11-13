@@ -1,26 +1,26 @@
 ---
-title: Bereitstellen von Kontrollkästchen in Configuration Manager deaktiviert
+title: Kontrollkästchen für die Bereitstellung in Configuration Manager deaktiviert
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: aaf675cd-d885-4dac-9754-77dbcaea3be9
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: ab825ba4d28ca8768e5c633fc3779828638a498d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 35efb00a721062ad3217300f7e3a5430b1bd1560
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33919513"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528142"
 ---
-# <a name="deploy-checkboxes-disabled-in-configuration-manager"></a>Bereitstellen von Kontrollkästchen in Configuration Manager deaktiviert
+# <a name="deploy-checkboxes-disabled-in-configuration-manager"></a>Kontrollkästchen für die Bereitstellung in Configuration Manager deaktiviert
 
-Seit Xamarin 3.5 Xamarin.iOS Projekte automatisch bereitgestellt, wenn Sie durch Drücken der **starten** Symbolleisten-Schaltfläche oder Auswählen der **Debuggen > Debuggen starten** Menüelement. Müssen Sie dennoch legen Sie das gewünschte Xamarin.iOS-app-Projekt als dem **Startprojekt** vor ihrer Ausführung Befehle einen der beiden vor.
+Da Xamarin 3.5, Xamarin.iOS-Projekte automatisch bereitgestellt, wenn Sie drücken die **starten** Symbolleisten-Schaltfläche, oder wählen Sie die **Debuggen > Debuggen starten** Menüelement. Sie müssen weiterhin das gewünschte Xamarin.iOS-app-Projekt als Festlegen der **Startprojekt** vor dem Ausführen dieser Befehle.
 
-Aus diesem Grund die **bereitstellen** Kontrollkästchen sind in der Visual Studio Configuration Manager für Projekte Xamarin.iOS absichtlich deaktiviert:
+Aus diesem Grund die **bereitstellen** Kontrollkästchen sind absichtlich im Visual Studio Konfigurations-Manager für Xamarin.iOS-Projekte deaktiviert:
 
-![](deploy-checkboxes-images/configuration.png "Visual Studio Configuration Manager mit der \"Bereitstellung\" das Kontrollkästchen für ein Xamarin.iOS-Projekt in Xamarin 3.5 deaktiviert")
+![](deploy-checkboxes-images/configuration.png "Configuration Manager in Visual Studio mit der \"Bereitstellen\" das Kontrollkästchen für eine Xamarin.iOS-Projekt in Xamarin 3.5 deaktiviert")
 
-Diese Änderung schließt einen Fehler, der bei der Xamarin.iOS-app-Projekt nicht, zum Bereitstellen festgelegt wurde in früheren Versionen von Xamarin (Version 3.3 und früher) angezeigt werden konnte:
+Diese Änderung schließt einen Fehler, der in früheren Versionen von Xamarin (Version 3.3 und früher) angezeigt werden kann, wenn das Xamarin.iOS-app-Projekt nicht, zum Bereitstellen festgelegt wurde:
 
-![](deploy-checkboxes-images/error.png "Dialogfeld zu Fehler: das Projekt iPhoneApp1 muss bereitgestellt werden, bevor er gestartet werden kann. Stellen Sie sicher, dass das Projekt ausgewählt ist, in der Projektmappe Configuration Manager bereitgestellt werden.")
+![](deploy-checkboxes-images/error.png "Dialogfeld \"Fehler\": die Projekt-iPhoneApp1 muss bereitgestellt werden, bevor es gestartet werden kann. Stellen Sie sicher, dass das Projekt im Projektmappenkonfigurations-Manager bereitgestellt werden, ausgewählt ist.")

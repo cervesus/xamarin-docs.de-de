@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: ecfe99f66e16eafabc3117036ff065e3a35259c3
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f972a32f8daf920f2121e5aa56923c0f3a7f808a
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994347"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528441"
 ---
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Xamarin.Forms-e-Book mit Mustern von Unternehmensanwendungen
 
@@ -54,7 +54,7 @@ In diesem Kapitel wird eine `NavigationService` -Klasse, die zum Ausführen der 
 
 Jede app, die Eingaben von Benutzern akzeptiert sorgen dafür, dass die Eingabe gültig ist. Ohne Validierung kann ein Benutzer Daten bereitstellen, die bewirkt, dass die app fehl. Überprüfung von Geschäftsregeln erzwingt und verhindert, dass einen Angreifer schädliche Daten einfügt.
 
-Klicken Sie im Kontext des Modell-ViewModel-Modell (MVVM) Muster, ein Ansichtsmodell oder Modell ist häufig erforderlich, um eine datenüberprüfung durchführen und Validierungsfehler an die Ansicht zu signalisieren, sodass der Benutzer, die sie korrigieren kann.
+Klicken Sie im Kontext der Model-View-ViewModel (MVVM) Muster, ein Ansichtsmodell oder Modell ist häufig erforderlich, um eine datenüberprüfung durchführen und Validierungsfehler an die Ansicht zu signalisieren, sodass der Benutzer, die sie korrigieren kann.
 
 ## <a name="configuration-managementconfiguration-managementmd"></a>[Konfigurationsverwaltung](configuration-management.md)
 

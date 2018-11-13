@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 9954a27b0cc857efa158e8cbc0281737c822f0c7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f9034799355d01a3ade20a78540d6ecac43d9cc8
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131529"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526896"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Siri-Verknüpfungen in Xamarin.iOS
 
@@ -292,7 +292,7 @@ In der [mehr Licht bei Chef-Repository](https://github.com/xamarin/ios-samples/t
 Achten Sie insbesondere, dass dieses Projekt enthält:
 
 - **ApiDefinitions.cs** – eine Datei, die vom Ziel Sharpie oben generiert, und diesem Projekt hinzugefügt. Diese Datei **Buildvorgang** nastaven NA hodnotu **ObjcBindingApiDefinition**.
-- **StructsAndEnums.cs** – eine andere Datei Genrated oben vom Ziel Sharpie und diesem Projekt hinzugefügt. Diese Datei **Buildvorgang** nastaven NA hodnotu **ObjcBindingCoreSource**.
+- **StructsAndEnums.cs** – eine andere Datei, die vom Ziel Sharpie oben generiert und an diesem Projekt hinzugefügt. Diese Datei **Buildvorgang** nastaven NA hodnotu **ObjcBindingCoreSource**.
 - Ein **nativen Verweis** zu **libOrderSoupIntentStaticLib.a**, die statische Bibliothek, die weiter oben erstellt.
 
 > [!NOTE]
@@ -336,7 +336,7 @@ Nach dem Abrufen der Intent, es ist innerhalb einer [ `INInteraction` ](https://
 Die `INInteraction` erhält ein [`Identifier`](https://developer.xamarin.com/api/property/Intents.INInteraction.Identifier/)
 Die eindeutige ID des Auftrags (Dies wird später bei hilfreich sein beabsichtigte Spenden zu löschen, die nicht mehr gültig sind) entspricht. Anschließend wird die Interaktion siri gespendet.
 
-Der Aufruf von der `order.Intent` Get-Methode ruft eine `OrderSoupIntent` , das die Reihenfolge darstellt, durch Festlegen der `Quantity`, `Soup`, `Options`, und das angegebene Bild und und einem Ausdruck aufrufen, die als einen Vorschlag verwendet werden soll, wenn der Benutzer einen Ausdruck für Siri zeichnet Ordnen Sie mit der Absicht:
+Der Aufruf von der `order.Intent` Get-Methode ruft eine `OrderSoupIntent` , das die Reihenfolge darstellt, durch Festlegen der `Quantity`, `Soup`, `Options`, und Bild und einem Ausdruck aufrufen, die als einen Vorschlag verwendet werden soll, wenn der Benutzer einen Ausdruck für Siri zuordnen aufgezeichnet mit der Absicht:
 
 ```csharp
 public OrderSoupIntent Intent

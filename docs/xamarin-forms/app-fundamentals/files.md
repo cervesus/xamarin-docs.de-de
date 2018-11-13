@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: e31bb46569ed96d514ec87eacaf9f3912dcf3237
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 87084a0ccc2970f56e7ef7a6d2f4c59c49032aa0
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675158"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527364"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Dateibehandlung in Xamarin.Forms
 
@@ -20,7 +20,7 @@ _Dateiverarbeitung mit Xamarin.Forms kann mithilfe von Code in einer .NET Standa
 
 ## <a name="overview"></a>Übersicht
 
-Xamarin.Forms-Code wird auf mehreren Plattformen ausgeführt, von denen jede ihr eigenes Dateisystem besitzt. Früher bedeutete dies, dass, lesen und Schreiben von Dateien am einfachsten wurde ausgeführt, mit der nativen Datei-APIs auf jeder Plattform. Eingebettete Ressourcen sind hingegen eine einfachere Lösung Datendateien mit einer app zu verteilen. Mit .NET Standard 2.0 ist es jedoch möglich, die Datei Zugriffscode in .NET Standard-Bibliotheken gemeinsam nutzen.
+Xamarin.Forms-Code wird auf mehreren Plattformen ausgeführt, von denen jede ihr eigenes Dateisystem besitzt. Früher bedeutete dies, dass mit der nativen Datei-APIs auf jeder Plattform lesen und Schreiben von Dateien am einfachsten durchgeführt wurde. Eingebettete Ressourcen sind hingegen eine einfachere Lösung Datendateien mit einer app zu verteilen. Mit .NET Standard 2.0 ist es jedoch möglich, die Datei Zugriffscode in .NET Standard-Bibliotheken gemeinsam nutzen.
 
 Informationen zur Behandlung von Bilddateien, finden Sie in der [arbeiten mit Bildern](~/xamarin-forms/user-interface/images.md) Seite.
 

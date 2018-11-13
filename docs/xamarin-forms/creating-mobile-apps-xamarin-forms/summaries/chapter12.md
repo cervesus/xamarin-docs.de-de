@@ -7,18 +7,18 @@ ms.assetid: 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/19/2018
-ms.openlocfilehash: 8ee169d15c4b5060f2a7696bfebd314ed7029570
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
-ms.translationtype: MT
+ms.openlocfilehash: 55168f8f401cca711422dc49027b2b055fba5f1f
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156940"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526753"
 ---
 # <a name="summary-of-chapter-12-styles"></a>Zusammenfassung der Kapitel 12. Stile
 
 In Xamarin.Forms können Stile mehrere Ansichten für eine Sammlung von Einstellungen der Eigenschaften gemeinsam nutzen. Dies reduziert die Markup und konsistente visuelle Designs zu verwalten.
 
-Stile werden fast immer definiert und im Markup verarbeitet. Ein Objekt des Typs [ `Style` ](xref:Xamarin.Forms.Style) in einem Ressourcenverzeichnis instanziiert ist, und legen Sie dann auf die [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaft eines visuellen Elements mit einem `StaticResource` oder `DyanamicResource` Markup die Erweiterung.
+Stile werden fast immer definiert und im Markup verarbeitet. Ein Objekt des Typs [ `Style` ](xref:Xamarin.Forms.Style) in einem Ressourcenverzeichnis instanziiert ist, und legen Sie dann auf die [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Eigenschaft eines visuellen Elements mit einem `StaticResource` oder `DynamicResource` Markup die Erweiterung.
 
 ## <a name="the-basic-style"></a>Das grundlegende Format
 
@@ -40,7 +40,7 @@ Die `Style` -Objekt und ein Objekt erstellt, der `Style` als Objekt ein `Value` 
 
 ## <a name="styles-in-code"></a>Formatvorlagen in code
 
-Obwohl es keine allgemeine ist, können instanziiert und initialisiert `Style` -Objekte im Code. Dies wird veranschaulicht, durch die [ **BasicStyleCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyleCode) Beispiel.
+Obwohl es keine allgemeine ist, können Sie instanziiert und initialisiert `Style` -Objekte im Code. Dies wird veranschaulicht, durch die [ **BasicStyleCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyleCode) Beispiel.
 
 ## <a name="style-inheritance"></a>Stilvererbung
 

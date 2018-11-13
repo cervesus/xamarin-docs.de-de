@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: feaa0c3547c01490a8ada82b17b4c7a824e03b0b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7bfb0cad8bbc025bc5dba39abe3699ae77ee83ba
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114644"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526480"
 ---
 # <a name="watchos-troubleshooting"></a>WatchOS Problembehandlung
 
@@ -35,7 +35,7 @@ Diese Seite enthält zusätzliche Informationen und problemumgehungen für Featu
 
 <a name="deploy" />
 
-- Frühere Versionen von Visual Studio für Mac nicht ordnungsgemäß angezeigt der der **AppleCompanionSettings** Symbole als 88 x 88 Pixel; Dies führt in eine **fehlt das Symbol Fehler** Wenn Sie versuchen, auf die App übermitteln Store.
+- Frühere Versionen von Visual Studio für Mac nicht ordnungsgemäß angezeigt der **AppleCompanionSettings** Symbole als 88 x 88 Pixel; Dies führt in eine **fehlt das Symbol Fehler** Wenn Sie versuchen, die an den App Store zu übermitteln.
     Dieses Symbol muss 87 x 87-Pixeln (29 Einheiten für **@3x** Retina-Bildschirme). Sie beheben dies in Visual Studio für Mac – entweder Bearbeiten der Bildobjekt im Xcode oder manuell bearbeiten, können nicht die **Contents.json** Datei (entsprechend [in diesem Beispiel](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
 
 - Wenn der Watch-Erweiterung des Projekts **"Info.plist" > WKApp-Bundle-ID** nicht [richtig festgelegt](~/ios/watchos/get-started/project-references.md) entsprechend der Watch-App **Bündel-ID**, der Debugger wird keine Verbindung herstellen und Visual Studio für Mac mit der Meldung wartet *"Debugger eine Verbindung herstellt wird gewartet"*.

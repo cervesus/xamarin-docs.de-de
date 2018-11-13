@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: a0738b03c4fa0ad975b872307bb17f387b1c5fd5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7d626b8a968835813d87c93e3cead57a00c14000
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120956"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528597"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Bereitstellen und testen die WatchOS-Apps mit Xamarin
 
@@ -50,7 +50,7 @@ Alle drei Projekte erfordern, einen übereinstimmenden Verteilungsbereitstellung
 
 ### <a name="explicit-app-ids"></a>Explizite App-IDs
 
-Erstellen Sie eine **App-ID** jedes einzelnen Projekts-Paket-ID (die auf dem iOS Developer Center aussieht):
+Erstellen Sie eine **App-ID** eines jeden Projekts-Paket-ID (die auf dem iOS Developer Center aussieht):
 
 ![Die Paket-IDs in der iOS Developer Center](images/appids-specific-sml.png)
 
@@ -88,7 +88,7 @@ Die app-Gruppe wird dann in der Liste angezeigt:
 
 Nachdem die Gruppe erstellt wurde, kann es in verwiesen werden Ihre **App-ID** Konfiguration. Denken Sie daran, die sie im iOS-App "und" Watch-Erweiterung enthalten **App-IDs**.
 
-![Verfügbare consifurations](images/appgroups-sml.png)
+![Konfigurationen für Verfügbarkeit](images/appgroups-sml.png)
 
 Führen Sie **nicht** Aktivieren von App-Gruppen in der Apple Watch-App-ID Es ist nicht erforderlich, um auf die Überwachung selbst aktiviert werden.
 
@@ -100,7 +100,7 @@ Doppelklicken Sie zum Bearbeiten der **"Entitlements.plist"** Datei in diesen Pr
 - iOS-App-Projekt
 - Sehen Sie sich das Projekt
 
-.![Die Entitlements.plist-editor](images/entitlements-plist-sml.png)
+sein.![Die Entitlements.plist-editor](images/entitlements-plist-sml.png)
 
 Führen Sie **nicht** aktivieren Sie Berechtigungen in der Watch-App-Projekt. Es ist nicht erforderlich, um auf die Überwachung selbst aktiviert werden.
 

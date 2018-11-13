@@ -7,12 +7,12 @@ ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/14/2018
-ms.openlocfilehash: 6f7236a3650c04098edbef92f3d6ed620be501c3
-ms.sourcegitcommit: a635312ffec816ba357a92b66c8c5221c8d9044c
+ms.openlocfilehash: 747c04d028b4c4ee142de04abd118572c5bea781
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "39615391"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527104"
 ---
 # <a name="touch-manipulations"></a>Manipulationen durch Toucheingaben
 
@@ -229,7 +229,7 @@ public partial class BitmapScalingPage : ContentPage
                         if (!float.IsNaN(scaleX) && !float.IsInfinity(scaleX) &&
                             !float.IsNaN(scaleY) && !float.IsInfinity(scaleY))
                         {
-                            // If smething bad hasn't happened, calculate a scale and translation matrix
+                            // If something bad hasn't happened, calculate a scale and translation matrix
                             SKMatrix scaleMatrix = 
                                 SKMatrix.MakeScale(scaleX, scaleY, pivotPoint.X, pivotPoint.Y);
 
@@ -1060,7 +1060,7 @@ Der Code durchläuft die Auflistung und zeigt eine Ansammlung von Bitmaps vom An
 
 Eine Skalierung erfordert im Allgemeinen eine zusammendrückbewegung mit zwei Fingern. Allerdings ist es möglich, mit einem einzelnen Finger skalieren, indem Sie den Finger verschieben Sie die Ecken einer Bitmap zu implementieren.
 
-Dies wird veranschaulicht, der **Finger Ecke Skala** Seite. Da in diesem Beispiel eine etwas andere Art der Skalierung verwendet wird, dass, die es in implementiert die `TouchManipulationManager` -Klasse, wird diese Klasse nicht verwendet oder die `TouchManipulationBitmap` Klasse. Stattdessen wird die gesamte Touch Logik in der CodeBehind-Datei. Dies ist etwas einfacher Logik als üblich, weil es nur mit einem Finger gleichzeitig verfolgt und ignoriert einfach alle sekundären Finger den Bildschirm berührt werden können.
+Dies wird veranschaulicht, der **Finger Ecke Skala** Seite. Da in diesem Beispiel, eine etwas andere Art verwendet von als Skalierung implementiert, die der `TouchManipulationManager` -Klasse, wird diese Klasse nicht verwendet oder die `TouchManipulationBitmap` Klasse. Stattdessen wird die gesamte Touch Logik in der CodeBehind-Datei. Dies ist etwas einfacher Logik als üblich, weil es nur mit einem Finger gleichzeitig verfolgt und ignoriert einfach alle sekundären Finger den Bildschirm berührt werden können.
 
 Die [ **SingleFingerCornerScale.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml) Seite instanziiert die `SKCanvasView` -Klasse und erstellt eine `TouchEffect` Objekt zum Nachverfolgen von Touch-Ereignissen:
 

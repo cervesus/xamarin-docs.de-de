@@ -1,29 +1,29 @@
 ---
-title: Visual Basic.NET in Xamarin iOS und Android
-description: In dieser exemplarischen Vorgehensweise veranschaulicht, wie systemeigene Xamarin.iOS und Xamarin.Android-apps erstellen, die in Visual Basic geschriebene Geschäftslogik verwendet wird.
+title: Visual Basic.NET in Xamarin.IOS und Android
+description: Diese exemplarische Vorgehensweise veranschaulicht, wie Sie native apps für Xamarin.iOS und Xamarin.Android zu erstellen, die in Visual Basic.NET geschriebene Geschäftslogik zu verwenden.
 ms.prod: xamarin
 ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: a3e63f6c8d9b35a8158e2db6a48734b2205fe54c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: affebab9bb6b07f204beef24cce2b57444d45e49
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782280"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527299"
 ---
-# <a name="visual-basicnet-in-xamarin-ios-and-android"></a>Visual Basic.NET in Xamarin iOS und Android
+# <a name="visual-basicnet-in-xamarin-ios-and-android"></a>Visual Basic.NET in Xamarin.IOS und Android
 
-Die [TaskyPortable](/samples/mobile/VisualBasic/TaskyPortableVB/) beispielanwendung für veranschaulicht, wie Visual Basic-Code in eine Portable Klassenbibliothek kompiliert mit Xamarin verwendet werden kann. Hier sind einige Screenshots der resultierenden apps unter iOS, Android und Windows Phone:
+Die [TaskyPortable](/samples/mobile/VisualBasic/TaskyPortableVB/) beispielanwendung für veranschaulicht, wie Visual Basic-Code in eine Portable Klassenbibliothek kompiliert mit Xamarin verwendet werden kann. Hier sind einige Screenshots der resultierenden unter iOS, Android und Windows Phone-apps:
 
- [![](native-apps-images/image5.png "iOS, Android und Windows-Telefone Ausführen von Apps mit Visual Basic")](native-apps-images/image5.png#lightbox)
+ [![](native-apps-images/image5.png "IOS-, Android- und Windows phones Ausführen von Apps mit Visual Basic")](native-apps-images/image5.png#lightbox)
 
-IOS, Android und Windows Phone-Projekte im Beispiel in c# geschrieben sind. Die Benutzeroberfläche für jede Anwendung mit systemeigenen Technologien integriert ist (Storyboards, Xml und Verwendung von XAML-bzw.), während die `TodoItem` Verwaltung wird bereitgestellt, von der portablen Klassenbibliothek in Visual Basic mithilfe einer `IXmlStorage` Implementierung, die das systemeigene Projekt.
+IOS, Android und Windows Phone-Projekte im Beispiel werden alle in C#. Die Benutzeroberfläche für jede Anwendung verfügt über native Technologien (Storyboards, Xml und XAML-bzw.), während die `TodoItem` Management wird von der portablen Klassenbibliothek mit Visual Basic bereitgestellt mithilfe einer `IXmlStorage` -Implementierung von das systemeigene Projekt.
 
 ## <a name="sample-walkthrough"></a>Exemplarische Vorgehensweise
 
-Dieses Handbuch erläutert, wie in Visual Basic implementiert wurde die [TaskyPortableVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB) Xamarin-Beispiel für iOS und Android.
+Dieser Anleitung wird erläutert, wie in Visual Basic implementiert wurde die [TaskyPortableVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB) Xamarin-Beispiel für iOS und Android.
 
 > [!NOTE]
 > Überprüfen Sie die Anweisungen auf [Visual Basic.NET PCLs](/guides/cross-platform/application_fundamentals/pcl/portable_visual_basic_net/) bevor Sie mit dieser Anleitung fortfahren.
@@ -41,9 +41,9 @@ Die Beispielbibliothek enthält die Grundlagen der Anwendung in vier Visual Basi
 
 ### <a name="ixmlstoragevb"></a>IXmlStorage.vb
 
-Da so deutlich Datei Zugriff Verhalten zwischen den Plattformen unterschiedlich sind, portablen Klassenbibliotheken bieten keine `System.IO` Dateispeicher APIs in jedem beliebigen Profil. Dies bedeutet, dass wenn wir uns direkt interagieren mit dem Dateisystem in unserer portablen Code möchten, wir unsere systemeigene Projekte auf jeder Plattform Rückruf müssen.  Durch das Schreiben von unseren Visual Basic-Code für eine einfache Oberfläche, die in c# auf jeder Plattform implementiert werden kann, können wir freigegeben Visual Basic-Code haben, weiterhin Zugriff auf das Dateisystem verfügt.
+Da Datei Zugriff Verhalten sich so deutlich zwischen Plattformen variieren, Portable Class Libraries bieten keine `System.IO` file Storage-APIs in einem Profil. Dies bedeutet, dass wenn Sie direkt mit dem Dateisystem in unserem portablen Code interagieren möchten, wir unsere systemeigene Projekte auf jeder Plattform Rückruf müssen.  Durch das Schreiben von unseren Visual Basic-Code für eine einfache Schnittstelle, die in implementiert werden kann C# auf jeder Plattform haben wir gemeinsam nutzbaren Visual Basic-Code, der immer Zugriff auf das Dateisystem noch.
 
-Im Beispielcode wird diese sehr einfache Schnittstelle, die nur über zwei Methoden enthält: zum Lesen und Schreiben einer serialisierten XML-Datei.
+Der Beispielcode verwendet diese sehr einfache Schnittstelle, die nur zwei Methoden enthält: Lesen und schreiben eine serialisierte XML-Datei.
 
 ```vb
 Public Interface IXmlStorage
@@ -56,9 +56,9 @@ iOS, Android und Windows Phone-Implementierungen für diese Schnittstelle werden
 
 ### <a name="todoitemvb"></a>TodoItem.vb
 
-Diese Klasse enthält das Geschäftsobjekt, das in der Anwendung verwendet werden soll. Es wird in Visual Basic definiert werden und gemeinsam mit dem iOS, Android und Windows Phone-Projekte, die in c# geschrieben sind.
+Diese Klasse enthält das Geschäftsobjekt, das in der gesamten Anwendung verwendet werden. Es wird in Visual Basic definiert werden, und freigegebene mit dem iOS, Android und Windows Phone-Projekte, die geschrieben werden, in C#.
 
-Die Definition der Klasse wird hier gezeigt:
+Die Definition der Klasse ist hier dargestellt:
 
 ```vb
 Public Class TodoItem
@@ -69,11 +69,11 @@ Public Class TodoItem
 End Class
 ```
 
-Das Beispiel verwendet die XML-Serialisierung und Deserialisierung zu laden und speichern Sie die TodoItem-Objekte.
+Das Beispiel verwendet XML-Serialisierung und Deserialisierung zu laden und speichern Sie die TodoItem-Objekte.
 
 ### <a name="todoitemmanagervb"></a>TodoItemManager.vb
 
-Die Manager-Klasse stellt die API für portablen Code. Es bietet grundlegende CRUD-Vorgänge für die `TodoItem` Klasse, aber keine Implementierung dieser Vorgänge.
+Die Manager-Klasse stellt die API für portablen Code. Es bietet grundlegende CRUD-Vorgänge für die `TodoItem` -Klasse, aber keine Implementierung dieser Vorgänge.
 
 ```vb
 Public Class TodoItemManager
@@ -96,11 +96,11 @@ Public Class TodoItemManager
 End Class
 ```
 
-Der Konstruktor akzeptiert eine Instanz von IXmlStorage als Parameter an. Dadurch wird jeder Plattform eine eigene Implementierung arbeiten und weiterhin ermöglichen die portablen Code andere Funktionen zu beschreiben, die gemeinsam genutzt werden können gleichzeitig bereitstellen.
+Der Konstruktor akzeptiert eine Instanz von IXmlStorage als Parameter an. Dadurch wird jeder Plattform eine eigene Implementierung arbeiten und ermöglichen es immer noch die übertragbaren Code andere Funktionen zu beschreiben, die gemeinsam genutzt werden können gleichzeitig bereitstellen.
 
 ### <a name="todoitemrepositoryvb"></a>TodoItemRepository.vb
 
-Die Repository-Klasse enthält die Logik zum Verwalten der Liste der TodoItem-Objekte. Der vollständige Code wird unten – die Logik, die hauptsächlich, dass um einen eindeutige ID-Wert über die TodoItems zu verwalten, hinzugefügt und entfernt aus der Auflistung vorhanden ist.
+Die "Repository"-Klasse enthält die Logik zum Verwalten der Liste der TodoItem-Objekte. Der vollständige Code wird unten – die Logik, die in erster Linie um einen eindeutigen ID-Wert für die TodoItems zu verwalten, wie diese hinzugefügt und aus der Auflistung entfernt vorhanden ist.
 
 ```vb
 Public Class TodoItemRepositoryXML
@@ -159,16 +159,16 @@ End Class
 ```
 
 > [!NOTE]
-> Dieser Code ist ein Beispiel für ein sehr einfaches Daten-Speichermechanismus.
-> Er wird bereitgestellt, um zu veranschaulichen, wie eine Portable Klassenbibliothek für eine Schnittstelle den Zugriff auf plattformspezifische Funktionen (in diesem Fall laden und speichern eine XML-Datei) code können. Sie sollte es keine Alternative professionell Datenbank sein.
+> Dieser Code ist ein Beispiel für einen sehr einfachen Datenspeicher-Mechanismus.
+> Er wird bereitgestellt, um zu veranschaulichen, wie eine Portable Klassenbibliothek für eine Schnittstelle für den Zugriff auf plattformspezifische Funktionen (in diesem Fall laden und speichern eine XML-Datei) programmieren können. Es sollte sie keine Alternative mit Produktionsqualität Datenbank sein.
 
 ## <a name="ios-android-and-windows-phone-application-projects"></a>iOS, Android und Windows Phone-Anwendungsprojekten
 
-Dieser Abschnitt enthält die Clientplattform-spezifische Implementierungen für die IXmlStorage-Schnittstelle und zeigt, wie sie in jeder Anwendung verwendet wird. Die Anwendungsprojekte werden alle in c# geschrieben.
+Dieser Abschnitt enthält die plattformspezifischen Implementierungen für die Schnittstelle IXmlStorage und zeigt, wie es in jeder Anwendung verwendet wird. Die Anwendungsprojekte sind in geschrieben C#.
 
-### <a name="ios-and-android-ixmlstorage"></a>IOS- und Android IXmlStorage
+### <a name="ios-and-android-ixmlstorage"></a>iOS und Android IXmlStorage
 
-Xamarin.iOS und Xamarin.Android bieten vollständige `System.IO` Funktionalität, sodass Sie problemlos laden und speichern Sie die XML-Datei mithilfe der folgenden Klasse:
+Xamarin.iOS und Xamarin.Android bieten vollständige `System.IO` Funktionalität, sodass Sie problemlos laden und speichern Sie die XML-Datei mithilfe der folgenden Klasse können:
 
 ```csharp
 public class XmlStorageImplementation : IXmlStorage
@@ -197,7 +197,7 @@ public class XmlStorageImplementation : IXmlStorage
 }
 ```
 
-In der iOS-Anwendung die `TodoItemManager` und `XmlStorageImplementation` werden erstellt, der **AppDelegate.cs** Datei wie in diesem Codeausschnitt gezeigt. Die ersten vier Zeilen sind nur den Pfad zur Datei erstellen, wo Daten gespeichert werden sollen; die letzten beiden Zeilen zeigen die beiden Klassen instanziiert wird.
+In der iOS-Anwendung die `TodoItemManager` und `XmlStorageImplementation` werden erstellt, der **Datei "appdelegate.cs"** Datei wie im folgenden Codeausschnitt gezeigt. Die ersten vier Zeilen sind nur den Pfad zu der Datei erstellen, in dem Daten gespeichert werden; die letzten beiden Zeilen zeigen die beiden Klassen instanziiert wird.
 
 ```csharp
 var xmlFilename = "TodoList.xml";
@@ -208,7 +208,7 @@ var xmlStorage = new XmlStorageImplementation();
 TaskMgr = new TodoItemManager(path, xmlStorage);
 ```
 
-In der Android-Anwendung die `TodoItemManager` und `XmlStorageImplementation` werden erstellt, der **Application.cs** Datei wie in diesem Codeausschnitt gezeigt. Die ersten drei Zeilen sind nur den Pfad zur Datei erstellen, wo Daten gespeichert werden sollen; die letzten beiden Zeilen zeigen die beiden Klassen instanziiert wird.
+In der Android-Anwendung die `TodoItemManager` und `XmlStorageImplementation` werden erstellt, der **Application.cs** Datei wie im folgenden Codeausschnitt gezeigt. Die ersten drei Zeilen werden nur den Pfad zu der Datei erstellen, in dem Daten gespeichert werden; die letzten beiden Zeilen zeigen die beiden Klassen instanziiert wird.
 
 ```csharp
 var xmlFilename = "TodoList.xml";
@@ -218,11 +218,11 @@ var xmlStorage = new AndroidTodo.XmlStorageImplementation();
 TaskMgr = new TodoItemManager(path, xmlStorage);
 ```
 
-Der Rest des Anwendungscodes ist in erster Linie mit der Benutzeroberfläche und mit der `TaskMgr` Klasse zum Laden und speichern `TodoItem` Klassen.
+Der Rest des Anwendungscodes ist in erster Linie mit der Benutzeroberfläche befassen und Verwenden der `TaskMgr` -Klasse zum Laden und speichern Sie `TodoItem` Klassen.
 
 ### <a name="windows-phone-ixmlstorage"></a>Windows Phone IXmlStorage
 
-Windows Phone bietet keine vollständige Zugang zum Dateisystem des Geräts, stattdessen die IsolatedStorage-API bereitstellen. Die `IXmlStorage` für Windows Phone-Implementierung sieht wie folgt aus:
+Windows Phone bietet keine vollständigen Zugriff auf das Dateisystem des Geräts, stattdessen der IsolatedStorage-API verfügbar zu machen. Die `IXmlStorage` Implementierung für Windows Phone sieht wie folgt aus:
 
 ```csharp
 public class XmlStorageImplementation : IXmlStorage
@@ -253,7 +253,7 @@ public class XmlStorageImplementation : IXmlStorage
 }
 ```
 
-Die `TodoItemManager` und `XmlStorageImplementation` werden erstellt, der **App.xaml.cs** Datei wie in diesem Codeausschnitt gezeigt.
+Die `TodoItemManager` und `XmlStorageImplementation` werden erstellt, der **"App.Xaml.cs"** Datei wie im folgenden Codeausschnitt gezeigt.
 
 ```csharp
 var filename = "TodoList.xml";
@@ -261,76 +261,76 @@ var xmlStorage = new XmlStorageImplementation();
 TodoMgr = new TodoItemManager(filename, xmlStorage);
 ```
 
-Der Rest der Windows Phone-Anwendung besteht aus Xaml und c# zum Erstellen der Benutzeroberfläche und Verwenden der `TodoMgr` Klasse zum Laden und speichern `TodoItem` Objekte.
+Der Rest der Windows Phone-Anwendung besteht aus Xaml und C# die Benutzeroberfläche zu erstellen und Verwenden der `TodoMgr` -Klasse zum Laden und speichern Sie `TodoItem` Objekte.
 
-## <a name="visual-basic-pcl-in-visual-studio-for-mac"></a>Visual Basic PCL in Visual Studio für Mac
+## <a name="visual-basic-pcl-in-visual-studio-for-mac"></a>Visual Basic Plc in Visual Studio für Mac
 
-Visual Studio für Mac unterstützt nicht die Sprache Visual Basic – Sie können nicht erstellt oder Kompilieren der Visual Basic-Projekte mit Visual Studio für Mac.
+Visual Studio für Mac unterstützt nicht die Visual Basic-Sprache – Sie können nicht erstellt oder Kompilieren von Visual Basic-Projekten mit Visual Studio für Mac.
 
-Visual Studio für Mac Unterstützung für Portable Klassenbibliotheken bedeutet, dass es PCL-Assemblys verweisen kann, die von Visual Basic erstellt wurden.
+Visual Studio für Mac – Unterstützung für Portable Klassenbibliotheken bedeutet, dass es PCL-Assemblys verweisen kann, die von Visual Basic erstellt wurden.
 
-In diesem Abschnitt erläutert, wie eine PCL-Assembly in Visual Studio zu kompilieren, und stellen Sie sicher, dass es in ein Versionskontrollsystem gespeichert und auf andere Projekte verweist.
+In diesem Abschnitt wird erläutert, wie zum Kompilieren einer PCL-Assembly in Visual Studio, und stellen Sie sicher, dass es in einem Versionskontrollsystem gespeichert und von anderen Projekten verwiesen wird.
 
-### <a name="keeping-the-pcl-output-from-visual-studio"></a>Halten die PCL-Ausgabe von Visual Studio
+### <a name="keeping-the-pcl-output-from-visual-studio"></a>Halten die PCL-Ausgabe in Visual Studio
 
-Standardmäßig werden die meisten Versionskontrollsysteme (einschließlich TFS- und Git) zum ignorieren konfiguriert die **/bin/** Verzeichnis, d. die kompilierte PCL-Assembly h. wird nicht gespeichert werden. Dies bedeutet, dass Sie müssten manuell auf dem Computer mit Visual Studio für Mac einen Verweis darauf hinzufügen zu kopieren.
+In der Standardeinstellung die meisten Versionskontrollsysteme (einschließlich TFS und Git) werden so konfiguriert, ignoriert der **/bin /** Verzeichnis, das bedeutet, die kompilierte Assembly der PCL dass werden nicht gespeichert werden. Dies bedeutet, dass Sie sie manuell auf Computer mit Visual Studio für Mac, um einen Verweis darauf hinzuzufügen kopieren müssen.
 
-Um sicherzustellen, dass die Ausgabe der PCL-Assembly mit das Versionskontrollsystem gespeichert werden kann, können Sie ein Skript nach der Erstellung erstellen, die sie in den Projektstamm kopiert. Dieser Schritt nach der Erstellung kann sichergestellt werden, die Assembly einfach zur quellcodeverwaltung hinzugefügt und mit anderen Projekten gemeinsam genutzt.
+Um sicherzustellen, dass Ihr Versionskontrollsystem die PCL-Assemblyausgabe speichern kann, können Sie ein Skript nach der Erstellung erstellen, die sie in das Stammverzeichnis des Projekts kopiert. Dieser Schritt nach der Erstellung trägt dazu bei die Assembly kann ganz einfach zur quellcodeverwaltung hinzugefügt und für andere Projekte freigegeben.
 
 #### <a name="visual-studio-2017"></a>Visual Studio 2017
 
 1. Mit der rechten Maustaste auf das Projekt, und wählen Sie die **Eigenschaften > Buildereignisse** Abschnitt.
 
-2. Hinzufügen einer _Postbuild_ Skript, das die Ausgabe-DLL in diesem Projekt in das Projektstammverzeichnis kopiert (außerhalb der **/bin/**). Abhängig von Ihrer Version Control-Konfiguration sollte die DLL jetzt Datenquellen-Steuerelement hinzugefügt werden können.
+2. Hinzufügen einer _Postbuild_ -Skript, das die Ausgabe-DLL aus dem Projekt in das Stammverzeichnis des Projekts kopiert (die befindet sich außerhalb der **/bin /**). Je nach Konfiguration der Zugriffssteuerung für Ihre Version sollte die DLL nun zur quellcodeverwaltung hinzugefügt werden können.
 
-  [![](native-apps-images/image6-vs-sml.png "Buildereignisse Post Buildskript zum Kopieren von VB-DLL")](native-apps-images/image6-vs.png#lightbox)
+  [![](native-apps-images/image6-vs-sml.png "Buildereignisse Post-Build-Skript zum Kopieren von VB-DLL")](native-apps-images/image6-vs.png#lightbox)
 
 #### <a name="visual-studio-2015"></a>Visual Studio 2015
 
-1.  Mit der rechten Maustaste auf das Projekt, und wählen Sie **Eigenschaften > Kompilieren** , vergewissern Sie sich dann mit dem alle Konfigurationen in der oberen linken Kamm ausgewählt ist. Klicken Sie auf die **Buildereignisse...**  Schaltfläche in der unteren rechten Ecke.
+1.  Mit der rechten Maustaste auf das Projekt, und wählen Sie **Eigenschaften > Kompilieren** , stellen Sie sicher, alle Konfigurationen in der oberen linken Kamm-Feld ausgewählt ist. Klicken Sie auf die **Buildereignisse...**  -Schaltfläche in der unteren rechten Ecke.
 
     [![](native-apps-images/image6.png "Kompilieren Sie die Projekteigenschaften im Abschnitt")](native-apps-images/image6.png#lightbox)
 
-1.  Fügen Sie ein Postbuild-Skript, das die Ausgabe-DLL in diesem Projekt in das Stammverzeichnis des Projekts kopiert (Dies ist außerhalb des **/bin/** ). Abhängig von Ihrer Version Control-Konfiguration sollte die DLL jetzt Datenquellen-Steuerelement hinzugefügt werden können.
+1.  Hinzufügen eines Postbuild-Skripts, die die Ausgabe-DLL aus dem Projekt in das Stammverzeichnis des Projekts kopiert (Dies ist außerhalb des **/bin /** ). Je nach Konfiguration der Zugriffssteuerung für Ihre Version sollte die DLL nun zur quellcodeverwaltung hinzugefügt werden können.
 
-    [![](native-apps-images/image7.png "Fenster Protokollereignisse erstellen")](native-apps-images/image7.png#lightbox)
+    [![](native-apps-images/image7.png "Erstellen von Ereignisfenster")](native-apps-images/image7.png#lightbox)
 
 #### <a name="all-versions"></a>Alle Versionen
 
-Beim nächsten Erstellen Sie das Projekt, das Portable Class Library-Assembly kopiert werden, in das Projektstammverzeichnis, und wenn Sie Check-in/Commit/Push sind die Änderungen der DLL gespeichert wird (sodass sie auf einem Mac mit Visual Studio für Mac heruntergeladen werden kann).
+Beim nächsten Erstellen Sie das Projekt, die Portable Class Library-Assembly kopiert werden, um das Stammverzeichnis des Projekts, und wann Sie Check-in/Commits/pushes Ihre Änderungen die DLL können gespeichert wird (sodass sie auf einem Mac mit Visual Studio für Mac heruntergeladen werden kann).
 
   [![](native-apps-images/image8-sml.png "Speicherort der Ausgabeassembly Visual Basic")](native-apps-images/image8.png#lightbox)
 
 
-Diese Assembly kann dann Xamarin-Projekte in Visual Studio für Mac, hinzugefügt werden, obwohl die Sprache Visual Basic selbst nicht in Xamarin iOS oder Android-Projekte unterstützt wird.
+Diese Assembly kann dann Xamarin-Projekte in Visual Studio für Mac, hinzugefügt werden, obwohl die Visual Basic-Sprache in Xamarin.IOS oder Android-Projekte nicht unterstützt wird.
 
-### <a name="referencing-the-pcl-in-visual-studio-for-mac"></a>Verweisen auf die PCL, in Visual Studio für Mac
+### <a name="referencing-the-pcl-in-visual-studio-for-mac"></a>Verweisen auf die PCL in Visual Studio für Mac
 
-Da Xamarin Visual Basic nicht unterstützt kann nicht es PCL-Projekt (noch die Windows Phone-app) geladen, wie in diesem Screenshot gezeigt:
+Da Xamarin nicht mit Visual Basic unterstützt kann nicht es dem PCL-Projekt (noch mit der Windows Phone-app) geladen, wie im folgenden Screenshot gezeigt:
 
  [![](native-apps-images/image9.png "Visual Studio für Mac-Lösung")](native-apps-images/image9.png#lightbox)
 
-Wir können die Visual Basic-PCL-Assembly-DLL immer noch in den Projekten Xamarin.iOS und Xamarin.Android einschließen:
+Wir können die Visual Basic-PCL-Assembly-DLL immer noch in die Xamarin.iOS und Xamarin.Android-Projekte einschließen:
 
 1.  Mit der rechten Maustaste auf die **Verweise** Knoten, und wählen **Verweise bearbeiten...**
 
-    [![](native-apps-images/image10.png "Projektmenü für Verweise bearbeiten")](native-apps-images/image10.png#lightbox)
+    [![](native-apps-images/image10.png "Projekt-Menü \"Verweise bearbeiten\"")](native-apps-images/image10.png#lightbox)
 
-1.  Wählen Sie die **.Net Assembly** Registerkarte, und navigieren Sie zu der Ausgabe-DLL in das Verzeichnis der Visual Basic-Projekt. Obwohl Visual Studio für Mac das Projekt nicht öffnen können, sollten alle Dateien aus der quellcodeverwaltung vorhanden sein. Klicken Sie auf **hinzufügen** dann **OK** Hinzufügen dieser Assembly auf IOS- und Android-Anwendungen.
+1.  Wählen Sie die **.Net Assembly** Registerkarte aus, und navigieren Sie zu die Ausgabe-DLL im Verzeichnis Visual Basic-Projekts. Obwohl Visual Studio für Mac das Projekt nicht öffnen können, sollten alle Dateien aus der quellcodeverwaltung vorhanden sein. Klicken Sie auf **hinzufügen** dann **OK** dieser Assembly für die IOS- und Android-Apps hinzufügen.
 
-    [![](native-apps-images/image11-sml.png "Klicken Sie auf Hinzufügen und dann auf OK, um diese Assembly IOS- und Android-Anwendungen hinzuzufügen")](native-apps-images/image11.png#lightbox)
+    [![](native-apps-images/image11-sml.png "Klicken Sie auf Hinzufügen und dann auf OK, um diese Assembly für die IOS- und Android-Anwendungen hinzuzufügen.")](native-apps-images/image11.png#lightbox)
 
-1.  IOS- und Android-Anwendungen enthalten können nun die Anwendungslogik, die von der portablen Klassenbibliothek in Visual Basic bereitgestellt. Diese bildschirmabbildung zeigt eine iOS-Anwendung, die verweist auf die Visual Basic-PCL und Code, der die Funktionalität aus dieser Bibliothek verwendet wurde.
+1.  Die IOS- und Android-Anwendungen können jetzt die Anwendungslogik, die von der portablen Klassenbibliothek mit Visual Basic bereitgestellten enthalten. Dieser Screenshot zeigt eine iOS-Anwendung, die verweist auf die Visual Basic-PCL und enthält Code, der die Funktionen aus dieser Bibliothek verwendet.
 
     [![](native-apps-images/image12-sml.png "Bearbeiten Sie Verweise hinzufügen .NET Assembly-Fenster")](native-apps-images/image12.png#lightbox)
 
 
-Wenn Änderungen vorgenommen werden, auf die Visual Basic-Projekt in Visual Studio Denken Sie daran, das Projekt erstellen, speichern die resultierende DLL-Assembly in der quellcodeverwaltung, und ziehen Sie dann diese neue DLL aus der quellcodeverwaltung auf Ihrem Mac, damit Visual Studio für Mac erstellt enthalten Sie die neuesten die Funktionalität.
+Wenn Änderungen vorgenommen werden, auf Visual Basic-Projekt in Visual Studio Denken Sie daran, das Projekt erstellen, speichern die resultierende Assembly-DLL, in der quellcodeverwaltung, und klicken Sie dann abrufen, neue DLL aus der quellcodeverwaltung auf Ihrem Mac, damit Visual Studio für Mac erstellt, enthält die neueste Version die Funktionalität.
 
 
 ## <a name="summary"></a>Zusammenfassung
 
-Dieser Artikel wurde beschrieben, wie Visual Basic-Code in die Xamarin-Anwendungen, die mithilfe von Visual Studio und portablen Klassenbibliotheken genutzt. Obwohl Xamarin Visual Basic nicht direkt unterstützt wird, ermöglicht das Kompilieren von Visual Basic in einer PCL Code mit Visual Basic in iOS und Android-apps aufgenommen werden.
+In diesem Artikel wurde veranschaulicht, wie Visual Basic-Code in Xamarin-Anwendungen mit Visual Studio und Portable Class Libraries genutzt. Obwohl Xamarin Visual Basic nicht direkt unterstützt, ermöglicht das Kompilieren von Visual Basic in einer PCL Code mit Visual Basic, um in iOS und Android-apps enthalten sein.
 
 ## <a name="related-links"></a>Verwandte Links
 

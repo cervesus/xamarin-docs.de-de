@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 7fde60d48c23bc48ce1602a0643a3af8ad492ec6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 015c1e315b6070777542a8f8c5871c00cf336b5c
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104010"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527065"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>Erstellen von benutzerdefinierten Steuerelementen in Xamarin.Mac
 
-Bei der Arbeit mit c# und .NET in einer Xamarin.Mac-Anwendung haben Sie Zugriff auf die gleichen Benutzersteuerelemente, die ein Entwickler *Objective-C-*, *Swift* und *Xcode* ist . Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und Verwalten Ihrer Benutzer-Steuerelemente (oder erstellen sie optional direkt in c#-Code).
+Bei der Arbeit mit C# und .NET in einer Xamarin.Mac-Anwendung, Sie haben Zugriff auf der gleiche Benutzer steuert, die ein Entwickler *Objective-C-*, *Swift* und *Xcode*ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und Verwalten Ihrer Benutzer-Steuerelemente (oder erstellen sie optional direkt in c#-Code).
 
 Während MacOS eine Fülle von integrierten Steuerelementen bereitstellt, gibt es möglicherweise vorkommen, die Sie benötigen, erstellen Sie ein benutzerdefiniertes Steuerelement angeben, dass Funktionen nicht mit Out-of-the-Box bereitgestellt oder ein benutzerdefiniertes Design der Benutzeroberfläche (z. B. eine Spiele-Schnittstelle) entsprechend vor.
 
@@ -221,7 +221,7 @@ Es gibt zwei einfache Möglichkeit, dass wir die Benutzereingaben an das benutze
 
 #### <a name="handling-user-input-with-override-methods"></a>Behandeln von Benutzereingaben mit Methoden zum Überschreiben
 
-Objekte, die von erben `NSControl` (oder `NSView`) verfügen über mehrere überschreiben Sie Methoden für die Behandlung von Maus- oder Tastatureingaben. Für unser Beispielsteuerelement, um den Status der Wechsel zwischen kippen sollten **auf** und **aus** klickt der Benutzer auf das Steuerelement mit der linken Maustaste. Wir können die folgenden überschreiben Sie Methoden zum Hinzufügen der `NSFliwSwitch` Klasse, um dies zu verarbeiten:
+Objekte, die von erben `NSControl` (oder `NSView`) verfügen über mehrere überschreiben Sie Methoden für die Behandlung von Maus- oder Tastatureingaben. Für unser Beispielsteuerelement, um den Status der Wechsel zwischen kippen sollten **auf** und **aus** klickt der Benutzer auf das Steuerelement mit der linken Maustaste. Wir können die folgenden überschreiben Sie Methoden zum Hinzufügen der `NSFlipSwitch` Klasse, um dies zu verarbeiten:
 
 ```csharp
 #region Mouse Handling Methods
@@ -344,7 +344,7 @@ Die benutzerdefinierte Sicht noch ausgewählt ist, wechseln Sie zu der **Identit
 
 [![](custom-controls-images/custom04.png "Festlegen der Ansicht-Klasse")](custom-controls-images/custom04.png#lightbox)
 
-Wechseln Sie zu der **Assistant Editor** , und erstellen Sie eine **Outlet** für das benutzerdefinierte Steuerelement (dabei bindet, bindet es in der `ViewControler.h` Datei und nicht die `.m` Datei):
+Wechseln Sie zu der **Assistant Editor** , und erstellen Sie eine **Outlet** für das benutzerdefinierte Steuerelement (dabei bindet, bindet es in der `ViewController.h` Datei und nicht die `.m` Datei):
 
 [![](custom-controls-images/custom05.png "Konfigurieren einen neuen Outlets")](custom-controls-images/custom05.png#lightbox)
 

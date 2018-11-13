@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 4f50efb7b78db67b310ccddec3eb94bfe4d2e521
-ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
-ms.translationtype: MT
+ms.openlocfilehash: 833bdc0fd087fcf8dbb8cce3b8b23f427302f5e7
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50301252"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526870"
 ---
 # <a name="android-localization"></a>Android-Lokalisierung
 
@@ -81,7 +81,7 @@ Die meisten Entwickler sind bereits vertraut sind, mit der Verwendung von **dpi*
 ![Bildschirmabbildung von Ressourcen/Werte und Ressourcen/drawable-Ordner für mehrere kulturellen Bezeichner](localization-images/resources.png)
 
 > [!NOTE]
-> Beim Angeben einer Sprache auf oberster Ebene, wie `es` nur zwei Zeichen erforderlich; jedoch wenn Sie ein vollständiges Gebietsschema angeben, das Format des Verzeichnisses einen Bindestrich und dem Kleinbuchstaben erfordert **r** trennen die beiden Teile, z. B. **pt-rBR** oder **Zh-rCN**. Vergleichen Sie dies mit den Rückgabewert in Code mit einem Unterstrich (z. b. `pt_BR`). Beide unterscheiden sich auf den Wert .NET `CultureInfo` Klasse verwendet, der hat eines Bindestrich nur (z. b. `pt-BR`). Behalten Sie unter Berücksichtigung dieser Unterschiede bei der Arbeit auf Xamarin-Plattformen.
+> Beim Angeben einer Sprache auf oberster Ebene, wie `es` nur zwei Zeichen erforderlich; jedoch wenn Sie ein vollständiges Gebietsschema angeben, das Format des Verzeichnisses einen Bindestrich und dem Kleinbuchstaben erfordert **r** trennen die beiden Teile, z. B. **pt-rBR** oder **Zh-rCN**. Vergleichen Sie dies mit den Rückgabewert in Code mit einem Unterstrich (z. b. `pt_BR`) angezeigt wird. Beide unterscheiden sich auf den Wert .NET `CultureInfo` Klasse verwendet, der hat eines Bindestrich nur (z. b. `pt-BR`) angezeigt wird. Behalten Sie unter Berücksichtigung dieser Unterschiede bei der Arbeit auf Xamarin-Plattformen.
 
 #### <a name="stringsxml-file-format"></a>Dateiformat von "Strings.xml"
 
@@ -188,7 +188,7 @@ Gültige `quantity` Switches sind:
 * Zwei
 * Einige
 * many
-* Andere
+* andere
 
 Ausführlicher beschrieben die [Android-Dokumentation](http://developer.android.com/guide/topics/resources/string-resource.html#Plurals). Wenn eine bestimmte Sprache keine benötigt "spezielle" behandeln, bei denen `quantity` Zeichenfolgen ignoriert werden (z. B. Englisch verwendet nur `one` und `other`; die Angabe einer `zero` Zeichenfolge hat keine Auswirkungen, es wird nicht verwendet werden).
 
@@ -207,7 +207,7 @@ In diesem Screenshot vier Bilder gespeichert sind, der **drawable** Directory, a
 
 Sie können auch andere Arten von Alternativ sprachspezifische Ressourcen, einschließlich Layouts, Animationen und raw-Dateien bereitstellen. Dies bedeutet, Sie einem bestimmten Bildschirmlayout für eine oder mehrere der Ihre Zielsprache bereitstellen konnte, könnte z. B. Sie ein Layout speziell für Deutsch erstellen, die sehr lange Beschriftungen ermöglicht.
 
-Android 4.2 führte die Unterstützung für [von rechts nach links (RTL) Sprachen](http://android-developers.blogspot.fr/2013/03/native-rtl-support-in-android-42.html) setzen Sie die anwendungseinstellung `android:supportsRtl="true"`. Die ressourcenqualifizierer `"ldrtl"` in einem Namen mandantenverzeichnisses benutzerdefinierte Layouts enthalten, die entwickelt wurden, für die Anzeige von RNL enthalten sein können.
+Android 4.2 führte die Unterstützung für [von rechts nach links (RTL) Sprachen](http://android-developers.blogspot.fr/2013/03/native-rtl-support-in-android-42.html) setzen Sie die anwendungseinstellung `android:supportsRtl="true"`. Die ressourcenqualifizierer `"ldrtl"` kann in den Namen eines Verzeichnisses, um benutzerdefinierte Layouts enthalten, die entwickelt wurden, für die Anzeige von RNL eingeschlossen werden.
 
 Weitere Informationen zu Resource Directory-Namen und Fallback, finden Sie in der Android-Dokumentation [Bereitstellen alternativer Ressourcen](http://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources).
 
@@ -225,7 +225,7 @@ Der Anwendungsname ist einfach, mit dem Lokalisieren einer `@string/id` im für 
 
 Android 4.2 und höher bietet vollständige Unterstützung für RTL-Layouts, ausführlich beschrieben die [Native Unterstützung von RTL Blog](http://android-developers.blogspot.dk/2013/03/native-rtl-support-in-android-42.html).
 
-Bei Verwendung von Android 4.2 (API-Ebene 17) und höher, Ausrichtung keine besondere Vorschrift Werte können angegeben werden, mit `start` und `end` anstelle von `left` und `right` (z. B. `android:paddingStart`). Es gibt auch neue APIs wie `LayoutDirection`, `TextDirection`, und `TextAlignment` zum Erstellen von Bildschirmen, die sich anpassen für RTL-Reader.
+Bei Verwendung von Android 4.2 (API-Ebene 17) und höher, Ausrichtung, die Werte angegeben werden können, mit `start` und `end` anstelle von `left` und `right` (z. B. `android:paddingStart`). Es gibt auch neue APIs wie `LayoutDirection`, `TextDirection`, und `TextAlignment` zum Erstellen von Bildschirmen, die sich anpassen für RTL-Reader.
 
 Der folgende Screenshot zeigt die [lokalisierte **Tasky** Beispiel](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) in Arabisch:
 

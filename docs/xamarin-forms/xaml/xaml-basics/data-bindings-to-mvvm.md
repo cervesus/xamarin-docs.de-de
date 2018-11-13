@@ -1,41 +1,41 @@
 ---
-title: Teil 5. Aus Datenbindungen zu MVVM
-description: Das Muster MVVM erzwingt eine Trennung zwischen den drei Softwareebenen – der Verwendung von XAML-Benutzeroberfläche wird aufgerufen, die Ansicht befindet die zugrunde liegenden Daten des Modells aufgerufen; und ein Vermittler zwischen der Ansicht und das Modell als ViewModel bezeichnet.
+title: Teil 5. Von Datenbindungen zu MVVM
+description: Das MVVM-Muster erzwingt eine Trennung zwischen den drei Softwareebenen, die XAML-Benutzeroberfläche, die Namen der Ansicht befindet die zugrunde liegenden Daten, das als Modell bezeichnet; und ein Vermittler zwischen der Ansicht und das Modell als das "ViewModel" bezeichnet.
 ms.prod: xamarin
 ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: e83f8a585c4badc31bffaea53bb2f183e7b11fc9
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 2376ff986db985c3764c90c3af76ea74c2936a29
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268861"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563146"
 ---
-# <a name="part-5-from-data-bindings-to-mvvm"></a>Teil 5. Aus Datenbindungen zu MVVM
+# <a name="part-5-from-data-bindings-to-mvvm"></a>Teil 5. Von Datenbindungen zu MVVM
 
-_Das Model-View-ViewModel (MVVM)-Architekturschema wurde durch XAML Bedenken erfunden. Das Muster erzwingt eine Trennung zwischen den drei Softwareebenen – der Verwendung von XAML-Benutzeroberfläche wird aufgerufen, die Ansicht befindet die zugrunde liegenden Daten des Modells aufgerufen; und ein Vermittler zwischen der Ansicht und das Modell als ViewModel bezeichnet. Die Ansicht und das ViewModel sind häufig über datenbindungen, die in der XAML-Datei definierten verbunden. BindingContext für die Sicht ist in der Regel eine Instanz des ViewModel._
+_Beachten Sie das Architekturmuster Model-View-ViewModel (MVVM) mit XAML sollte. Das Muster erzwingt eine Trennung zwischen den drei Softwareebenen, die XAML-Benutzeroberfläche, die Namen der Ansicht befindet die zugrunde liegenden Daten, das als Modell bezeichnet; und ein Vermittler zwischen der Ansicht und das Modell als das "ViewModel" bezeichnet. Die Ansicht und ViewModel sind häufig über datenbindungen, die in der XAML-Datei definierten verbunden. BindingContext für die Ansicht ist normalerweise eine Instanz von "ViewModel"._
 
 ## <a name="a-simple-viewmodel"></a>Ein einfaches ViewModel
 
 Als Einführung in ViewModels sehen wir uns zunächst an ein Programm ohne eine.
-Zuvor wurde gezeigt, wie eine neue XML-Namespacedeklaration zum Zulassen einer XAML-Datei zu Verweisklassen in anderen Assemblys zu definieren. Hier ist ein Programm, das eine XML-Namespacedeklaration für definiert die `System` Namespace:
+Zuvor wurde erläutert, wie Sie eine neue XML-Namespacedeklaration zum ermöglichen einer XAML-Datei, die als Verweisklassen in anderen Assemblys zu definieren. Hier ist ein Programm, das eine XML-Namespacedeklaration für definiert die `System` Namespace:
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
 ```
 
-Das Programm verwenden kann `x:Static` das aktuelle Datum und die Uhrzeit der statischen abrufen `DateTime.Now` Eigenschaft Menge an und `DateTime` -Wert an die `BindingContext` auf eine `StackLayout`:
+Das Programm verwenden kann `x:Static` zum aktuellen Datum und Uhrzeit aus der statischen abrufen `DateTime.Now` Eigenschaft fest, und legen `DateTime` Wert der `BindingContext` auf eine `StackLayout`:
 
 ```xaml
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext` ist eine sehr spezielle Eigenschaft: beim Festlegen der `BindingContext` auf ein Element, wird es von den untergeordneten Elementen dieses Elements geerbt. Dies bedeutet, dass alle untergeordneten Elemente der `StackLayout` diese gleiche `BindingContext`, und sie können einfache Bindungen für Eigenschaften des betreffenden Objekts enthalten.
+`BindingContext` ist eine sehr spezielle Eigenschaft: beim Festlegen der `BindingContext` auf ein Element, wird es von den untergeordneten Elementen dieses Elements geerbt. Dies bedeutet, dass alle untergeordneten Elemente der `StackLayout` haben diese gleiche `BindingContext`, und sie können einfache Bindung an Eigenschaften dieses Objekts enthalten.
 
-In der **One-Shot "DateTime"** Programm, zwei untergeordnete Knoten enthalten, Bindungen, die Eigenschaften `DateTime` Wert jedoch zwei weiteren untergeordneten Elementen enthalten Bindungen, die zusammengehören ein Bindungspfad fehlen. Dies bedeutet, dass die `DateTime` Wert selbst wird verwendet, für die `StringFormat`:
+In der **One-Shot "DateTime"** Programm zwei untergeordnete Knoten enthalten die Bindung an Eigenschaften, `DateTime` Wert, aber zwei andere untergeordnete Elemente enthalten Bindungen, die fehlen ein Bindungspfad erscheinen. Dies bedeutet, dass die `DateTime` Wert selbst wird verwendet, für die `StringFormat`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -57,17 +57,17 @@ In der **One-Shot "DateTime"** Programm, zwei untergeordnete Knoten enthalten, B
 </ContentPage>
 ```
 
-Natürlich ist die wirkliches Problem, dass das Datum und die Uhrzeit festlegen, sobald bei die Seite zuerst erstellt wird, und nie ändern:
+Natürlich ist das große Problem, dass das Datum und Uhrzeit sind Satz, sobald bei die Seite zuerst erstellt wird, und nie ändern:
 
-[![](data-bindings-to-mvvm-images/oneshotdatetime.png "Ansicht zum Anzeigen von Datum und Uhrzeit")](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "Ansicht zum Anzeigen von Datum und Uhrzeit")
+[![](data-bindings-to-mvvm-images/oneshotdatetime.png "Ansicht zum Anzeigen von Datums- /")](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "Ansicht zum Anzeigen von Datum und Uhrzeit")
 
-Eine XAML-Datei kann eine Uhr, die immer die aktuelle Uhrzeit anzeigt angezeigt, jedoch notwendig Teil des Codes zu helfen. Wenn Denkweise MVVM, das Modell und die ViewModel-Klassen, die vollständig in Code geschrieben sind. Die Ansicht ist häufig eine XAML-Datei, die im ViewModel über datenbindungen definierte Eigenschaften verweist.
+Eine XAML-Datei kann eine Uhr, die die aktuelle Uhrzeit immer zeigt anzeigen, jedoch benötigt etwas Code zu helfen. Wenn Denkweise von MVVM, das Modell und ViewModel Klassen, die vollständig in Code geschrieben sind. Die Ansicht ist häufig eine XAML-Datei, die Eigenschaften, die in "ViewModel" definiert ist, über datenbindungen verweist.
 
-Ein richtige Modell für das ViewModel persistenzignoranten ist, und eine ordnungsgemäße ViewModel persistenzignoranten der Sicht ist. Sehr häufig schneidet ein Programmierer jedoch die Datentypen von ViewModel der bestimmten Benutzeroberflächen zugeordneten Datentypen verfügbar gemacht werden. Angenommen, würde ein Modell eine Datenbank zugreift, die 8-Bit-ASCII-Zeichenfolgen enthält, das ViewModel müssen zum Konvertieren zwischen diesen Zeichenfolgen in Unicode-Zeichenfolgen, die exklusive Verwendung von Unicode in der Benutzeroberfläche zu berücksichtigen.
+Ein entsprechendes Modells kennen muss, das "ViewModel" ist, und eine ordnungsgemäße "ViewModel" ist der Ansicht ignorierende. Allerdings schneidet eingeschränkt werden sehr häufig ein Programmierer die Datentypen, die von "ViewModel" in die Datentypen, die bestimmte Benutzeroberflächen zugeordneten verfügbar gemacht werden. Wenn ein Modell auf eine Datenbank, die 8-Bit-ASCII-Zeichenfolgen enthält zugreift, würde z. B. "ViewModel" müssen, für die Konvertierung zwischen diesen Zeichenfolgen, Unicode-Zeichenfolgen, um die exklusive Verwendung von Unicode in der Benutzeroberfläche zu berücksichtigen.
 
-In einfachen Beispielen von MVVM (z. B. die hier dargestellten) häufig gibt es kein Modell überhaupt und das Muster umfasst neben der Anzeige und ViewModel mit datenbindungen verknüpft.
+In einfachen Beispielen von MVVM (z. B. die hier gezeigte) häufig besteht kein Modell, und das Muster umfasst nur eine Ansicht aus, und "ViewModel" mit datenbindungen verknüpft.
 
-Hier ist ein ViewModel für eine Uhr mit nur einer einzelnen Eigenschaft mit dem Namen `DateTime`, aber die updates, die `DateTime` Eigenschaft pro Sekunde:
+Hier ist ein "ViewModel" für eine Uhr mit nur einer einzelnen Eigenschaft mit dem Namen `DateTime`, aber die aktualisiert werden, die `DateTime` Eigenschaft pro Sekunde:
 
 ```csharp
 using System;
@@ -116,9 +116,9 @@ namespace XamlSamples
 }
 ```
 
-ViewModels in der Regel implementiert die `INotifyPropertyChanged` -Schnittstelle, was bedeutet, dass die Klasse auslöst ein `PropertyChanged` Ereignis aus, wenn eine seiner Eigenschaften ändert. Der Datenbindungsmechanismus in Xamarin.Forms Fügt einen Handler an das `PropertyChanged` Ereignis, damit Sie benachrichtigt werden, wenn eine Eigenschaft geändert und lassen das Ziel mit dem neuen Wert aktualisiert.
+ViewModels in der Regel implementiert die `INotifyPropertyChanged` Schnittstelle, was bedeutet, dass die Klasse ausgelöst werden, eine `PropertyChanged` Ereignis, wenn sich eine seiner Eigenschaften ändert. Der Datenbindungsmechanismus in Xamarin.Forms Fügt einen Handler an diese `PropertyChanged` Ereignis, sodass es bei Änderung einer Eigenschaft benachrichtigt werden kann, und lassen das Ziel mit dem neuen Wert aktualisiert.
 
-Eine Uhr basierend auf diesem ViewModel kann so einfach wie das sein:
+Eine Uhr basierend auf "ViewModel" kann so einfach wie folgt sein:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -138,13 +138,13 @@ Eine Uhr basierend auf diesem ViewModel kann so einfach wie das sein:
 </ContentPage>
 ```
 
-Beachten Sie, dass wie die `ClockViewModel` auf festgelegt ist die `BindingContext` von der `Label` Eigenschaftselementtags verwenden. Instanziieren Sie alternativ die `ClockViewModel` in eine `Resources` Auflistung und legen Sie dafür die `BindingContext` über eine `StaticResource` Markuperweiterung. Oder die Code-Behind-Datei das ViewModel instanziiert werden kann.
+Beachten Sie, dass wie die `ClockViewModel` nastaven NA hodnotu der `BindingContext` von der `Label` mithilfe von Eigenschaftenelement-Tags. Alternativ können Sie instanziieren die `ClockViewModel` in eine `Resources` Auflistung und legen Sie dafür die `BindingContext` über eine `StaticResource` Markuperweiterung. Alternativ dazu können Sie die CodeBehind Datei kann "ViewModel" instanziieren.
 
-Die `Binding` Markuperweiterung auf die `Text` Eigenschaft von der `Label` Formate der `DateTime` Eigenschaft. So sieht die Anzeige aus:
+Die `Binding` Markuperweiterung für die `Text` Eigenschaft der `Label` Formate die `DateTime` Eigenschaft. So sieht die Anzeige aus:
 
-[![](data-bindings-to-mvvm-images/clock.png "Anzeigen von Datums- und Uhrzeitangabe über ViewModel Ansicht")](data-bindings-to-mvvm-images/clock-large.png#lightbox "Ansicht zum Anzeigen von Datum und Zeit über ViewModel")
+[![](data-bindings-to-mvvm-images/clock.png "Ansicht zum Anzeigen von Datums- / über \"ViewModel\"")](data-bindings-to-mvvm-images/clock-large.png#lightbox "Ansicht zum Anzeigen von Datums- / über \"ViewModel\"")
 
-Es ist auch möglich, einzelne Eigenschaften für den Zugriff auf die `DateTime` Eigenschaft für das ViewModel, indem Sie die Eigenschaften durch Punkte trennen:
+Es ist auch möglich, den Zugriff auf einzelne Eigenschaften von den `DateTime` Eigenschaft von "ViewModel", indem Sie die Eigenschaften durch Punkte trennen:
 
 ```xaml
 <Label Text="{Binding DateTime.Second, StringFormat='{0}'}" … >
@@ -152,9 +152,9 @@ Es ist auch möglich, einzelne Eigenschaften für den Zugriff auf die `DateTime`
 
 ## <a name="interactive-mvvm"></a>Interaktive MVVM
 
-MVVM wird häufig mit zwei-Wege-datenbindungen für eine interaktive Ansicht basierend auf einem zugrunde liegenden Datenmodell verwendet.
+MVVM ist recht häufig mit bidirektionale datenbindungen für eine interaktive Ansicht basierend auf einem zugrunde liegenden Datenmodell verwendet.
 
-Hier ist eine Klasse namens `HslViewModel` , konvertiert ein `Color` -Wert in `Hue`, `Saturation`, und `Luminosity` Werte, und umgekehrt:
+Hier ist eine Klasse namens `HslViewModel` , konvertiert ein `Color` -Wert in `Hue`, `Saturation`, und `Luminosity` Werte und umgekehrt:
 
 ```csharp
 using System;
@@ -254,9 +254,9 @@ namespace XamlSamples
 }
 ```
 
-Änderungen an der `Hue`, `Saturation`, und `Luminosity` Eigenschaften Ursache der `Color` ändern, und Änderungen an `Color` bewirkt, dass die anderen drei Eigenschaften zu ändern. Dies scheint eine unendliche Schleife mit dem Unterschied, dass die Klasse aufzurufen, nicht die `PropertyChanged` Ereignis, wenn die Eigenschaft tatsächlich geändert wurde. Mit dieser Option wird ein Ende der Schleife andernfalls nicht steuerbaren Feedback.
+Änderungen an der `Hue`, `Saturation`, und `Luminosity` Eigenschaften Ursache der `Color` ändern, und Änderungen an `Color` bewirkt, dass die anderen drei Eigenschaften ändern. Dies mag wie eine unendliche Schleife, außer dass die Klasse aufrufen, nicht die `PropertyChanged` Ereignis, wenn die Eigenschaft tatsächlich geändert hat. Dies hilft dabei, die andernfalls durch unkontrollierbare Rückmeldungsschleife.
 
-Die folgende XAML-Datei enthält eine `BoxView` , deren `Color` Eigenschaft gebunden ist die `Color` Eigenschaft ViewModel und drei `Slider` und drei `Label` Ansichten gebunden werden, um die `Hue`, `Saturation`, und `Luminosity` Eigenschaften:
+Der folgende XAML-Datei enthält eine `BoxView` , deren `Color` Eigenschaft gebunden ist die `Color` Eigenschaft von "ViewModel" und drei `Slider` und drei `Label` Ansichten gebunden werden, um die `Hue`, `Saturation`, und `Luminosity` Eigenschaften:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -290,46 +290,46 @@ Die folgende XAML-Datei enthält eine `BoxView` , deren `Color` Eigenschaft gebu
 </ContentPage>
 ```
 
-Die Bindung auf jedem `Label` ist die Standardeinstellung `OneWay`. Es muss nur der Wert angezeigt. Aber die Bindung auf jedem `Slider` ist `TwoWay`. Dies ermöglicht die `Slider` von ViewModel initialisiert werden. Beachten Sie, dass die `Color` -Eigenschaftensatz auf `Aqua` Wenn ViewModel instanziiert wird. Nur eine Änderung in der `Slider` muss auch einen neuen Wert für die Eigenschaft in das ViewModel festgelegt, das dann eine neue Farbe berechnet.
+Die Bindung auf den einzelnen `Label` ist die Standardeinstellung `OneWay`. Es muss nur den Wert anzuzeigen. Aber die Bindung auf den einzelnen `Slider` ist `TwoWay`. Dadurch wird die `Slider` aus dem ViewModel initialisiert werden. Beachten Sie, dass die `Color` -Eigenschaftensatz auf `Aqua` Wenn "ViewModel" instanziiert wird. Nur eine Änderung in der `Slider` muss auch einen neuen Wert für die Eigenschaft im ViewModel festgelegt, die dann eine neue Farbe berechnet.
 
-[![](data-bindings-to-mvvm-images/hslcolorscroll.png "Mithilfe von bidirektionalen Datenbindungen MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "bidirektionaler Datenbindungen mit MVVM")
+[![](data-bindings-to-mvvm-images/hslcolorscroll.png "Bidirektionale Datenbindungen mit MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "bidirektionale Datenbindungen mit MVVM")
 
 ## <a name="commanding-with-viewmodels"></a>Befehle mit ViewModels
 
-In vielen Fällen ist das Muster MVVM auf die Manipulation von Datenelementen beschränkt: Benutzeroberflächenobjekten in der Ansicht parallele Datenobjekte in das ViewModel.
+In vielen Fällen ist das MVVM-Muster an der Bearbeitung von Datenelementen beschränkt: Objekte der Benutzeroberfläche in der Ansicht parallele Datenobjekte in "ViewModel".
 
-Allerdings muss manchmal die Sicht Schaltflächen enthalten, die verschiedene Aktionen im ViewModel auslösen. Aber das ViewModel darf keinen `Clicked` Ereignishandler für die Schaltflächen da, die das ViewModel zu einem bestimmten Benutzeroberflächen-Paradigma tie würde.
+Allerdings muss manchmal die Ansicht Schaltflächen enthalten, die verschiedene Aktionen in "ViewModel" auslösen. Aber das "ViewModel" darf keinen `Clicked` Ereignishandler für die Schaltflächen da, die das "ViewModel" ein Paradigmenwechsel zu bestimmten Benutzeroberfläche gebunden würde.
 
-Ermöglichen Sie ViewModels mehr unabhängig von bestimmten Benutzeroberflächenobjekte werden jedoch weiterhin ermöglichen es, Methoden, die in das ViewModel aufgerufen werden eine *Befehl* Schnittstelle vorhanden ist. Dieser Befehlsschnittstelle wird durch die folgenden Elemente in Xamarin.Forms unterstützt:
+Können Sie die ViewModels, die mehr unabhängig von bestimmten Benutzeroberflächenobjekte jedoch weiterhin Methoden in "ViewModel", aufgerufen werden eine *Befehl* Schnittstelle vorhanden ist. Dieser Befehlsschnittstelle wird durch die folgenden Elemente in Xamarin.Forms unterstützt:
 
 -  `Button`
 -  `MenuItem`
 -  `ToolbarItem`
 -  `SearchBar`
--  `TextCell` (und daher auch `ImageCell`)
+-  `TextCell` (und somit auch `ImageCell`)
 -  `ListView`
 -  `TapGestureRecognizer`
 
-Mit Ausnahme von der `SearchBar` und `ListView` -Element, diese Elemente definieren Sie zwei Eigenschaften:
+Mit Ausnahme von der `SearchBar` und `ListView` Elements definieren dieser Elemente zwei Eigenschaften:
 
--  `Command` vom Typ  `System.Windows.Input.ICommand`
--  `CommandParameter` vom Typ  `Object`
+-  `Command` Der Typ  `System.Windows.Input.ICommand`
+-  `CommandParameter` Der Typ  `Object`
 
-Die `SearchBar` definiert `SearchCommand` und `SearchCommandParameter` Eigenschaften, während die `ListView` definiert eine `RefreshCommand` Eigenschaft vom Typ `ICommand`.
+Die `SearchBar` definiert `SearchCommand` und `SearchCommandParameter` Eigenschaften während der `ListView` definiert eine `RefreshCommand` Eigenschaft vom Typ `ICommand`.
 
-Die `ICommand` Schnittstelle definiert zwei Methoden und ein Ereignis:
+Die `ICommand` Schnittstelle definiert Methoden und ein Ereignis:
 
 -  `void Execute(object arg)`
 -  `bool CanExecute(object arg)`
 -  `event EventHandler CanExecuteChanged`
 
-Das ViewModel kann Eigenschaften vom Typ definieren `ICommand`. Anschließend können Sie diese Eigenschaften zum Binden der `Command` -Eigenschaft des jeweiligen `Button` oder andere Elemente oder vielleicht eine benutzerdefinierte Ansicht, die diese Schnittstelle implementiert. Optional können Sie festlegen der `CommandParameter` Eigenschaft zum Identifizieren einzelner `Button` Objekte (oder andere Elemente), die an dieser Eigenschaft ViewModel gebunden sind. Intern die `Button` Aufrufe der `Execute` -Methode auf, wenn der Benutzer tippt der `Button`, und übergeben Sie an der `Execute` Methode seine `CommandParameter`.
+Das "ViewModel" kann die Eigenschaften des Typs definieren `ICommand`. Anschließend können Sie diese Eigenschaften zu binden der `Command` Eigenschaft der einzelnen `Button` oder andere Elemente oder vielleicht eine benutzerdefinierte Ansicht, die diese Schnittstelle implementiert. Sie können optional festlegen, die `CommandParameter` Eigenschaft, um einzelne identifizieren `Button` Objekte (oder andere Elemente), die an diese Eigenschaft "ViewModel" gebunden werden. Intern die `Button` Aufrufe der `Execute` -Methode auf, wenn der Benutzer tippt der `Button`, und übergeben Sie zum die `Execute` Methode seine `CommandParameter`.
 
-Die `CanExecute` Methode und `CanExecuteChanged` Ereignis für Fälle verwendet werden, in denen ein `Button` Tap möglicherweise zurzeit ungültig, in diesem Fall die `Button` sollten sich selbst deaktivieren. Die `Button` Aufrufe `CanExecute` bei der `Command` -Eigenschaft festgelegt ist und bei jedem der `CanExecuteChanged` Ereignis ausgelöst wird. Wenn `CanExecute` gibt `false`, `Button` deaktiviert und generiert nicht `Execute` Aufrufe.
+Die `CanExecute` Methode und `CanExecuteChanged` Ereignis werden Fälle verwendet, in denen eine `Button` Tap möglicherweise derzeit ungültig ist, in diesem Fall die `Button` sollten sich selbst deaktivieren. Die `Button` Aufrufe `CanExecute` bei der `Command` -Eigenschaft festgelegt ist und jedes Mal, wenn die `CanExecuteChanged` Ereignis wird ausgelöst. Wenn `CanExecute` gibt `false`, `Button` deaktiviert und nicht generieren `Execute` aufrufen.
 
-Um Hilfe zu Ihrem ViewModels Befehle hinzufügen, Xamarin.Forms definiert zwei Klassen, die implementieren `ICommand`: `Command` und `Command<T>` , in denen `T` ist der Typ der Argumente für `Execute` und `CanExecute`. Diese beiden Klassen definieren mehrere Konstruktoren zuzüglich einer `ChangeCanExecute` -Methode, die das ViewModel aufrufen kann, um zu erzwingen der `Command` Objekt für das Auslösen der `CanExecuteChanged` Ereignis.
+Um Hilfe beim Hinzufügen der Befehle, um Ihre ViewModels, Xamarin.Forms definiert zwei Klassen, implementieren `ICommand`: `Command` und `Command<T>` , in denen `T` ist der Typ der Argumente für `Execute` und `CanExecute`. Diese beiden Klassen definieren mehrere Konstruktoren zuzüglich einer `ChangeCanExecute` -Methode, die das "ViewModel" aufrufen kann, um zu erzwingen die `Command` Objekt ausgelöst werden die `CanExecuteChanged` Ereignis.
 
-Hier ist ein ViewModel für eine einfache Zehnertastatur, die für die Eingabe von Telefonnummern vorgesehen ist. Beachten Sie, dass die `Execute` und `CanExecute` Methode als Lambda-Funktionen direkt in den Konstruktor definiert sind:
+Hier ist ein "ViewModel" für eine einfache Zehnertastatur, die für die Eingabe von Telefonnummern vorgesehen ist. Beachten Sie, dass die `Execute` und `CanExecute` Methode als Lambda-Funktionen direkt in den Konstruktor definiert sind:
 
 ```csharp
 using System;
@@ -437,11 +437,11 @@ namespace XamlSamples
 }
 ```
 
-Diesem ViewModel setzt voraus, dass die `AddCharCommand` Eigenschaft gebunden ist die `Command` -Eigenschaft der Reihe von Schaltflächen (oder etwas anderes, das eine Befehlsschnittstelle verfügt), von denen jeder durch identifiziert die `CommandParameter`. Diese Schaltflächen hinzufügen zu Zeichen ein `InputString` -Eigenschaft, die dann als eine Telefonnummer für formatiert ist die `DisplayText` Eigenschaft.
+Dieses "ViewModel" setzt voraus, dass die `AddCharCommand` Eigenschaft gebunden ist die `Command` Eigenschaft mehrere Schaltflächen (oder etwas anderes, das eine Befehlsschnittstelle verfügt), von denen jeder durch identifiziert die `CommandParameter`. Diese Schaltflächen hinzufügen, eine `InputString` -Eigenschaft, die dann als eine Telefonnummer für formatiert ist die `DisplayText` Eigenschaft.
 
-Es gibt auch eine zweite Eigenschaft vom Typ `ICommand` mit dem Namen `DeleteCharCommand`. Dies ist ein Zwischenraum zurück-Schaltfläche gebunden, aber die Schaltfläche "" sollte deaktiviert werden, wenn es keine sind zu löschenden Zeichen.
+Es gibt auch eine zweite Eigenschaft des Typs `ICommand` mit dem Namen `DeleteCharCommand`. Dies ist ein Zwischenraum zurück-Schaltfläche gebunden, aber die Schaltfläche mit der sollte deaktiviert werden, wenn es keine sind zu löschenden Zeichen.
 
-Die folgenden Zehnertastatur ist nicht als visuell komplexe sie sein könnte. Stattdessen wurde das Markup auf ein Minimum, genauer die Verwendung der Befehlsschnittstelle gezeigt reduziert:
+Die folgende Zehnertastatur ist nicht als visuell anspruchsvolle, wie sie sein könnte. Stattdessen wurde das Markup auf ein Minimum, genauer auf die Verwendung der Befehlsschnittstelle gezeigt verringert:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -551,19 +551,19 @@ Die folgenden Zehnertastatur ist nicht als visuell komplexe sie sein könnte. St
 </ContentPage>
 ```
 
-Die `Command` Eigenschaft des ersten `Button` , angezeigt wird, in diesem Markup gebunden ist die `DeleteCharCommand`; an die übrigen gebunden sind die `AddCharCommand` mit einer `CommandParameter` d. h. identisch mit dem Zeichen, das auf angezeigt wird der `Button` Gesicht. Hier wird die Anwendung in Aktion:
+Der `Command` Eigenschaft des ersten `Button` , angezeigt wird, in diesem Markup gebunden ist der `DeleteCharCommand`; an der Rest gebunden sind die `AddCharCommand` mit eine `CommandParameter` , identisch mit dem Zeichen, die auf die `Button` Gesicht. So sieht die Anwendung in Aktion:
 
 [![](data-bindings-to-mvvm-images/keypad.png "Rechner mit Befehlen und MVVM")](data-bindings-to-mvvm-images/keypad-large.png#lightbox "Rechner mit Befehlen und MVVM")
 
 ### <a name="invoking-asynchronous-methods"></a>Aufrufen von asynchronen Methoden
 
-Befehle können auch asynchrone Methoden aufrufen. Dies erfolgt mithilfe der `async` und `await` Schlüsselwörter, die bei der Angabe der `Execute` Methode:
+Befehle können auch asynchrone Methoden aufrufen. Dies erfolgt mithilfe der `async` und `await` Schlüsselwörter, die beim Angeben der `Execute` Methode:
 
 ```csharp
-DownloadCommand = new Command (async () => await DownloadAsync ());
+DownloadCommand = new Command (async () => await DownloadAsync ());
 ```
 
-Dies bedeutet, dass die `DownloadAsync` Methode ist ein `Task` und abgewartet werden soll:
+Dies bedeutet, dass die `DownloadAsync` Methode ist eine `Task` und gewartet werden soll:
 
 ```csharp
 async Task DownloadAsync ()
@@ -579,7 +579,7 @@ void Download ()
 
 ## <a name="implementing-a-navigation-menu"></a>Implementieren ein Navigationsmenü
 
-Die [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/) Programm, das den Quellcode in dieser Reihe von Artikeln enthält ein ViewModel für die Startseite verwendet. Diesem ViewModel ist eine Definition einer kurzen Klasse mit drei Eigenschaften, die mit der Bezeichnung `Type`, `Title`, und `Description` , die den Typ der einzelnen der Beispielseiten, einen Titel und eine kurze Beschreibung enthalten. Darüber hinaus definiert das ViewModel eine statische Eigenschaft namens `All` , d. h. eine Sammlung aller Seiten in der Anwendung:
+Die [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/) Programm, das den Quellcode in dieser Artikelreihe enthält ein "ViewModel" für die Startseite verwendet. Dieses "ViewModel" ist eine Definition einer kurzen Klasse mit drei Eigenschaften, die mit dem Namen `Type`, `Title`, und `Description` , die den Typ der einzelnen die Beispielseiten, einen Titel und eine kurze Beschreibung enthalten. Darüber hinaus definiert das "ViewModel" eine statische Eigenschaft namens `All` , d. h. eine Sammlung aller Seiten im Programm:
 
 ```csharp
 public class PageDataViewModel
@@ -654,7 +654,7 @@ public class PageDataViewModel
 }
 ```
 
-Der XAML-Datei für `MainPage` definiert eine `ListBox` , deren `ItemsSource` Eigenschaftensatz, `All` -Eigenschaft und die enthält eine `TextCell` für die Anzeige der `Title` und `Description` Eigenschaften Rand jeder Seite:
+Die XAML-Datei für `MainPage` definiert eine `ListBox` , deren `ItemsSource` -Eigenschaftensatz auf, die `All` -Eigenschaft und die enthält eine `TextCell` für die Anzeige der `Title` und `Description` Eigenschaften jeder Seite:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -678,9 +678,9 @@ Der XAML-Datei für `MainPage` definiert eine `ListBox` , deren `ItemsSource` Ei
 
 Die Seiten werden in einer bildlauffähigen Liste angezeigt:
 
-[![](data-bindings-to-mvvm-images/mainpage.png "Bildlauffähigen Liste mit Seiten")](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "bildlauffähigen Liste von Seiten")
+[![](data-bindings-to-mvvm-images/mainpage.png "Scrollbare Liste der Seiten")](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "bildlauffähige Liste von Seiten")
 
-Der Handler im Code-Behind-Datei wird ausgelöst, wenn der Benutzer ein Element auswählt. Der Handler legt die `SelectedItem` Eigenschaft der `ListBox` an `null` widergespiegelt instanziiert und navigiert zu:
+Der Handler im Code-Behind-Datei wird ausgelöst, wenn der Benutzer ein Element auswählt. Der Handler legt die `SelectedItem` Eigenschaft der `ListBox` an `null` , und klicken Sie dann die ausgewählte Seite instanziiert und navigiert zu ihr:
 
 ```csharp
 private async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -700,11 +700,11 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 > [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
 
-**Xamarin entwickeln 2016: MVVM mit Xamarin.Forms und Prisma einfach gemacht**
+**Xamarin Evolve 2016: MVVM, der mit Xamarin.Forms und Prism**
 
 ## <a name="summary"></a>Zusammenfassung
 
-XAML ist ein leistungsstarkes Tool zum Definieren von Benutzeroberflächen in Xamarin.Forms Anwendungen, insbesondere dann, wenn die Datenbindung und MVVM verwendet werden. Das Ergebnis ist eine saubere, elegante und potenziell toolfähig Darstellung einer Benutzeroberfläche mit der Hintergrund-Unterstützung im Code.
+XAML ist ein leistungsstarkes Tool zum Definieren von Benutzeroberflächen in Xamarin.Forms-Anwendungen, insbesondere dann, wenn die Datenbindung und MVVM verwendet werden. Das Ergebnis ist eine saubere, elegante und potenziell lässt Darstellung einer Benutzeroberfläche mit der Hintergrund-Unterstützung im Code.
 
 
 ## <a name="related-links"></a>Verwandte Links

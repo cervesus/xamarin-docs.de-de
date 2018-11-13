@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: b29820cb69702f7570e10a555ebe9e3e0824653f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 325f4e99e70f88ccf642253720f4229142a169ec
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104153"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526559"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Anzeigen eines Bilds in Xamarin.iOS
 
@@ -41,7 +41,7 @@ Zum Erstellen einer neuen Gruppe von Bildern und Hinzufügen von Bildern, gehen 
 3. Wählen Sie die neue Gruppe von Bildern, und der Editor wird angezeigt:
 
     ![](displaying-an-image-images/imageset03.png "Der Set-Image-editor")
-4. Von hier aus ziehen in Bildern für jedes der anderen Geräte und und Lösungen, die erforderlich sind. 
+4. Ziehen Sie von hier aus für jede der verschiedenen Geräten und Lösungen, die erforderlichen Bilder auf. 
 5. Doppelklicken Sie auf die neue bildzusammenstellung **Namen** in die **Assetliste** zu bearbeiten: ![](displaying-an-image-images/imageset04.png "Bearbeiten des Namens für die neue bildzusammenstellung")
 
 Bei Verwendung einer **Images** im iOS-Designer, wählen Sie einfach der Name der aus der Dropdown-Liste in den Eigenschaften-Editor:
@@ -54,7 +54,7 @@ Bei Verwendung einer **Images** im iOS-Designer, wählen Sie einfach der Name de
 
     ![](displaying-an-image-images/asset5.png "Klicken Sie auf das Pluszeichen Schaltfläche")
 
-2. Wählen Sie **Bild hinzufügen, legen Sie** und der Set-Image-Editor für die neue Gruppe von Bildern angezeigt. Von hier aus ziehen in Bildern für jedes der anderen Geräte und und Lösungen, die erforderlich sind. 
+2. Wählen Sie **Bild hinzufügen, legen Sie** und der Set-Image-Editor für die neue Gruppe von Bildern angezeigt. Ziehen Sie von hier aus für jede der verschiedenen Geräten und Lösungen, die erforderlichen Bilder auf. 
 
     ![](displaying-an-image-images/asset7.png "Legen Sie die Bild-editor")
 
@@ -82,7 +82,7 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 ```
 
 > [!IMPORTANT]
-> Wenn die Images zugewiesen, da ein Image nicht ordnungsgemäß angezeigt werden, stellen Sie sicher, dass der richtige Dateiname verwendet wird die `FromBundle` Methode (die **-Images** und nicht das übergeordnete Element **Asset-Katalog** Namen). Für PNG-Dateien die `.png` Erweiterung kann ausgelassen werden. Für andere Bildformate ist die Erweiterung erforderlich (z. b. `PurpleMonkey.jpg`).
+> Wenn die Images zugewiesen, da ein Image nicht ordnungsgemäß angezeigt werden, stellen Sie sicher, dass der richtige Dateiname verwendet wird die `FromBundle` Methode (die **-Images** und nicht das übergeordnete Element **Asset-Katalog** Namen). Für PNG-Dateien die `.png` Erweiterung kann ausgelassen werden. Für andere Bildformate ist die Erweiterung erforderlich (z. b. `PurpleMonkey.jpg`) angezeigt wird.
 
 ### <a name="using-vector-images-in-asset-catalogs"></a>Verwenden von Vektorgrafiken in ressourcenkataloge
 

@@ -6,12 +6,12 @@ ms.assetid: C3810A74-539C-4FFB-B47F-68CA5F7BCDAD
 author: conceptdev
 ms.author: crdun
 ms.date: 02/22/2018
-ms.openlocfilehash: 3667f129cb566f71e9afd2969af13fe5b9682882
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9bd70fec5d6d3bbbc4855980e1542bd4e486acaa
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109379"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528519"
 ---
 # <a name="updating-xamarinmac-unified-applications-to-64-bit"></a>Aktualisieren von Xamarin.Mac Unified-Anwendungen auf 64-bit
 
@@ -21,7 +21,7 @@ Die **Datei** > **neu** Xamarin.Mac-Projektvorlage 64-Bit-Anwendungen in der Sta
 
 ## <a name="targeting-64-bit"></a>64-Bit-Zielplattformen
 
-1. Öffnen der **Projektoptionen** Fenster für Sie sind einer Xamarin.Mac-app:
+1. Öffnen der **Projektoptionen** Fenster für die Xamarin.Mac-app:
 
    ![Das Kontextmenü für das Projekt](mac-64-bit-images/1-contextual_menu-vsmac.png "im Kontextmenü für das Projekt")
 
@@ -36,7 +36,7 @@ Die **Datei** > **neu** Xamarin.Mac-Projektvorlage 64-Bit-Anwendungen in der Sta
 Beim ersten Erstellen oder Ausführen Ihrer Anwendung mit 64-Bit-Unterstützung, können Sie Link-Fehler Clang oder Common Language Runtime-Probleme auftreten. Diese Fehler können auftreten, wenn die Drittanbieter-Abhängigkeiten, z. B. native Verweise Ihrer Xamarin.Mac Bindungen Projekte oder eine systemweite Frameworks manuell geladen – nicht auf 64-Bit aktualisiert wurden.
 
 > [!TIP]
-> Konvertieren das Projekt in 64-Bit ist eine wesentliche Änderung, und es möglicherweise indirekt verschiedener Programmierfehler entdecken. Insbesondere können sie ändern die Größe und Ausrichtung der Datenstrukturen, die p/invoke-Signaturen und systemeigenem Code in Ihrem Projekt verknüpft auswirken würde. Lesen Sie eventuelle Buildwarnungen angegeben und Testen der Anwendung throughly anschließend um potenzielle Probleme zu erfassen.
+> Konvertieren das Projekt in 64-Bit ist eine wesentliche Änderung, und es möglicherweise indirekt verschiedener Programmierfehler entdecken. Insbesondere können sie ändern die Größe und Ausrichtung der Datenstrukturen, die p/invoke-Signaturen und systemeigenem Code in Ihrem Projekt verknüpft auswirken würde. Lesen Sie bei einem-Warnungen erhalten Build, und die Anwendung gründlich testen anschließend, um potenzielle Probleme zu erfassen.
 
 #### <a name="example-error-resulting-from-a-dynamically-linked-third-party-dependency-that-does-not-target-64-bit"></a>Beispiel-Fehler durch eine dynamisch verknüpften Drittanbieter-Abhängigkeit, die nicht als 64-Bit-Ziel:
 

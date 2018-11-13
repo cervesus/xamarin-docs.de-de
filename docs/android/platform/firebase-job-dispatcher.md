@@ -1,5 +1,5 @@
 ---
-title: Firebase-Auftrag-Verteiler
+title: Firebase Job Dispatcher
 description: Dieser Leitfaden erläutert die Vorgehensweise beim Planen der Verarbeitung im Hintergrund mithilfe der Firebase-Auftrag-Dispatcher-Bibliothek von Google.
 ms.prod: xamarin
 ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: 4ae1fb71209f8116b17ee7e2cb44318ef790d831
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 91bafbbdaee805ad128766bf0a770cb711597a85
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116166"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526922"
 ---
-# <a name="firebase-job-dispatcher"></a>Firebase-Auftrag-Verteiler
+# <a name="firebase-job-dispatcher"></a>Firebase Job Dispatcher
 
 _Dieser Leitfaden erläutert die Vorgehensweise beim Planen der Verarbeitung im Hintergrund mithilfe der Firebase-Auftrag-Dispatcher-Bibliothek von Google._
 
@@ -44,9 +44,9 @@ Der Firebase-Dispatcher ist eine Bibliothek von Google, das eine fluent-API zur 
 * Ein `Firebase.JobDispatcher.RetryStrategy` enthält Informationen, was geschehen soll, wenn ein Auftrag nicht korrekt ausgeführt. Die wiederholungsstrategie gibt an, wie lange warten, bevor Sie versuchen, den Auftrag erneut ausführen. 
 * Ein `Firebase.JobDispatcher.Constraint` Akkuladestufe oder ist ein optionaler Wert, der eine Bedingung, die erfüllt sein müssen beschreibt, bevor der Auftrag ausgeführt werden kann, wie z. B., wenn das Gerät in einem unmetered Netzwerk befindet.
 * Die `Firebase.JobDispatcher.Job` ist eine API, das die vorherigen APIs in einer Arbeitseinheit vereint, die vom geplant werden, können die `JobDispatcher`. Die `Job.Builder` Klasse wird zum Instanziieren einer `Job`.
-* Ein `Firebasee.JobDispatcher.JobDispatcher` die vorherigen drei APIs verwendet, um die Arbeit mit dem Betriebssystem zu planen und eine Möglichkeit zum Abbrechen von Aufträgen, bei Bedarf bereitzustellen.
+* Ein `Firebase.JobDispatcher.JobDispatcher` die vorherigen drei APIs verwendet, um die Arbeit mit dem Betriebssystem zu planen und eine Möglichkeit zum Abbrechen von Aufträgen, bei Bedarf bereitzustellen.
 
-Um mit der Firebase-Dispatcher zu planen, muss eine Xamarin.Android-Anwendung den Code in einem Typ, der erweitert kapseln die `JobService` Klasse. `JobService` verfügt über drei Methoden, die während der Lebensdauer des Auftrags aufgerufen werden kann:
+Um mit der Firebase-Dispatcher zu planen, muss eine Xamarin.Android-Anwendung den Code in einem Typ, der erweitert kapseln die `JobService` Klasse. `JobService` verfügt über drei Methoden, die während der Lebensdauer des Auftrags aufgerufen werden können:
 
 * **`bool OnStartJob(IJobParameters parameters)`** &ndash; Diese Methode ist, in denen die Arbeit erfolgt und sollte immer implementiert werden. Er wird im Hauptthread ausgeführt. Diese Methode gibt `true` liegt arbeiten verbleibenden, oder `false` , wenn die Arbeit erfolgt. 
 * **`bool OnStopJob(IJobParameters parameters)`** &ndash; Wird aufgerufen, wenn der Auftrag aus irgendeinem Grund beendet wird. Es sollte zurückgeben `true` , wenn der Auftrag für die spätere Verwendung neu geplant werden soll.
@@ -177,7 +177,7 @@ Jeder der folgenden Themen werden mehr in den folgenden Abschnitten erläutert w
 
 <a name="Passing_Parameters_to_a_Job" />
 
-#### <a name="passing-jarameters-to-a-job"></a>Übergeben von Jarameters an einen Auftrag
+#### <a name="passing-parameters-to-a-job"></a>Übergeben von Parametern zu einem Auftrag
 
 Parameter werden an einen Auftrag übergeben, durch das Erstellen einer `Bundle` , übergeben wird, zusammen mit den `Job.Builder.SetExtras` Methode:
 
@@ -252,7 +252,7 @@ Die beiden Arten von wiederholungsrichtlinien werden durch diese Int-Werte besti
 Es ist möglich, ein benutzerdefiniertes `RetryStrategy` mit der `FirebaseJobDispatcher.NewRetryStrategy` Methode. Es verwendet drei Parameter:
 
 1. `int policy` &ndash; Die _Richtlinie_ ist einer der vorherigen `RetryStrategy` Werte `RetryStrategy.RetryPolicyLinear`, oder `RetryStrategy.RetryPolicyExponential`.
-2. `int intialBackoffSeconds` &ndash; Die _anfängliche Backoff_ eine Verzögerung, in Sekunden, die erforderlich sind, bevor Sie versuchen, den Auftrag erneut ausführen. Der Standardwert für diese ist 30 Sekunden. 
+2. `int initialBackoffSeconds` &ndash; Die _anfängliche Backoff_ eine Verzögerung, in Sekunden, die erforderlich sind, bevor Sie versuchen, den Auftrag erneut ausführen. Der Standardwert für diese ist 30 Sekunden. 
 3. `int maximumBackoffSeconds` &ndash; Die _für maximale Wartezeit_ Wert gibt die maximale Anzahl von Sekunden verzögert werden, bevor Sie versuchen, den Auftrag erneut ausführen. Der Standardwert beträgt 3600 Sekunden. 
 
 ```csharp

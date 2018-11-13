@@ -4,15 +4,15 @@ description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung der 
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: d606432174807498fd458470647109de4fa0b6b4
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 527ecfa03adb78d8b97e95d0b6b81ceb12f0a107
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156729"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563770"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Zusammenfassung der Kapitel 20. Asynchrone Verarbeitung und Datei-e/a
 
@@ -28,7 +28,7 @@ Mehrere Beispielprogramme in diesem Buch verwendet die [ `WebRequest` ](xref:Sys
 > [!NOTE]
 > Xamarin.Forms-Programme verwenden sollten [ `HttpClient` ](xref:System.Net.Http.HttpClient) statt [ `WebRequest` ](xref:System.Net.WebRequest) für den Zugriff auf Dateien über das Internet. `HttpClient` asynchrone Vorgänge unterstützt.
 
-Ein moderner Ansatz für die asynchrone Verarbeitung ist in .NET und c# verfügbar. Dies umfasst die [ `Task` ](xref:System.Threading.Tasks.Task) und [ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1) Klassen und anderen Typen in der [ `System.Threading` ](xref:System.Threading) und [ `System.Threading.Tasks` ](xref:System.Threading.Tasks) Namespaces sowie die c# 5.0 `async` und `await` Schlüsselwörter. Das ist was Schwerpunkt in diesem Kapitel.
+Ein moderner Ansatz für die asynchrone Verarbeitung ist in .NET und c# verfügbar. Dies umfasst die [ `Task` ](xref:System.Threading.Tasks.Task) und [ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1) Klassen und anderen Typen in der [ `System.Threading` ](xref:System.Threading) und [ `System.Threading.Tasks` ](xref:System.Threading.Tasks) Namespaces als auch die C# 5.0 `async` und `await` Schlüsselwörter. Das ist was Schwerpunkt in diesem Kapitel.
 
 ## <a name="from-callbacks-to-await"></a>Von Rückrufe zu "await"
 

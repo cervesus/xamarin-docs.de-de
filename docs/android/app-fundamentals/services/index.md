@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: b9aa29507ebb37e3912b1027419e47c82832dfa9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dfc0e1cb7239381ef2f495b0f9774d390b0dc82e
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116510"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527195"
 ---
 # <a name="creating-android-services"></a>Erstellen von Android-Dienste
 
@@ -59,7 +59,7 @@ Es ist auch möglich, einen Dienst in seinem eigenen Prozess auf demselben Gerä
 
 ### <a name="background-execution-limits-in-android-80"></a>Hintergrund Ausführung Grenzwerte für Android 8.0
 
-Ab Android 8.0 (API-Ebene 26), einer Android-Anwendung nicht mehr haben die Möglichkeit, die kostenlos im Hintergrund ausgeführt werden. Wenn im Vordergrund kann eine app starten und Dienste ohne Einschränkungen ausgeführt. Wenn eine Anwendung in den Hintergrund verschoben wird, wird Android app gewährt eine gewisse Zeit zum Starten und Verwenden von Webdiensten. Sobald diese Zeitspanne verstrichen ist, die app kann nicht mehr alle Dienste gestartet und beendet alle Dienste, die gestartet wurden. Es ist nicht möglich, für die app aus, um Aufgaben zu erledigen, an diesem Punkt ist. Android berücksichtigt es sich um eine Anwendung im Vordergrund werden, wenn eine der folgenden Bedingungen erfüllt sind:
+Ab Android 8.0 (API-Ebene 26), einer Android-Anwendung nicht mehr haben die Möglichkeit, die kostenlos im Hintergrund ausgeführt werden. Wenn im Vordergrund kann eine app starten und Dienste ohne Einschränkungen ausgeführt. Wenn eine Anwendung in den Hintergrund verschoben wird, wird Android app gewährt eine gewisse Zeit zum Starten und Verwenden von Webdiensten. Sobald diese Zeitspanne verstrichen ist, die app kann nicht mehr alle Dienste gestartet und beendet alle Dienste, die gestartet wurden. An diesem Punkt ist es nicht möglich, für die app aus, um Aufgaben zu erledigen. Android berücksichtigt es sich um eine Anwendung im Vordergrund werden, wenn eine der folgenden Bedingungen erfüllt sind:
 
 * Ist eine sichtbare Aktivität (gestartet oder angehalten) vorhanden.
 * Die app wurde einen Foreground-Dienst gestartet.
@@ -70,7 +70,7 @@ Es gibt einige Situationen, auch wenn eine app im Hintergrund ist, Android wird 
 * Die app empfängt eine Übertragung an. 
 * Die Anwendung empfängt eine führt eine `PendingIntent` als Reaktion auf eine Benachrichtigung.
 
-Vorhandene Xamarin.Android-Anwendungen möglicherweise ändern, ihre Leistung Hintergrundaufgaben, um Probleme zu vermeiden, die unter Android 8.0 auftreten können. Es folgen einige praktische Alterantives mit einem Android-Dienst:
+Vorhandene Xamarin.Android-Anwendungen möglicherweise ändern, ihre Leistung Hintergrundaufgaben, um Probleme zu vermeiden, die unter Android 8.0 auftreten können. Hier sind einige praktischen Alternativen zu einer Android-Dienst:
 
 * **Planen der Verarbeitung zur Ausführung im Hintergrund in der Android-Auftragsplaner oder [Firebase Auftrag Dispatcher](~/android/platform/firebase-job-dispatcher.md)**  &ndash; diese beiden Bibliotheken bieten ein Framework für Anwendungen, um Hintergrundaufgaben in Trennen_Aufträge_, eine einzelne Arbeitseinheit. Apps können klicken Sie dann den Auftrag mit dem Betriebssystem sowie zu den Kriterien zu planen, wenn der Auftrag ausgeführt werden kann.
 * **Starten Sie den Dienst im Vordergrund** &ndash; ein Foreground-Dienst eignet sich für die bei die app im Hintergrund einige Aufgaben durchführen muss, und der Benutzer kann diese Aufgabe in regelmäßigen Abständen zu interagieren muss. Der Vordergrund-Dienst wird eine dauerhafte Benachrichtigung angezeigt, damit, dass der Benutzer bewusst, dass die app eine Hintergrundaufgabe ausgeführt wird, und bietet auch eine Möglichkeit zum Überwachen oder interagieren mit der Aufgabe. Ein Beispiel hierfür wäre eine Podcasts-app, die einen Podcast an, die dem Benutzer wiedergeben oder vielleicht ein Podcast Episode herunterladen, damit es später noch Mal gefallen werden kann. 

@@ -6,12 +6,12 @@ ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: lobrien
 ms.author: laobri
 ms.date: 10/27/2017
-ms.openlocfilehash: 34406ce8d4276ba36ab2ddd49e73681ff2fef773
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f9b4da5b6dfe3f0254340d9175b08198bd52a45a
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103750"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563341"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler-Problembehandlung
 
@@ -79,7 +79,7 @@ Es handelt sich normalerweise aufgrund eines kann nicht zum Simulator gestartet 
 
 #### <a name="to-watch-a-specific-thread"></a>Überwacht einen bestimmten thread
 
-Wenn Sie einen Thread, die Sie speziell ansehen möchten verfügen, wäre es ideal, benennen Sie den Thread der sehr ab ihrer Erstellung, sodass Get `ThreadName` anstelle von `0x0`. Z. B. den Threadnamen als Benutzeroberfläche festlegen können Sie den folgenden Code verwenden:
+Wenn Sie einen Thread, die Sie speziell ansehen möchten verfügen, wäre es ideal, benennen Sie den Thread ganz am Anfang seiner Erstellung abzurufenden `ThreadName` anstelle von `0x0`. Z. B. den Threadnamen als festlegen `UI`, können Sie den folgenden Code verwenden:
 
 ```csharp
 RunOnUiThread (() => {

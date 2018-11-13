@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 8f7094cebf284f301e08faae8d94c99a73964d55
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4ca9856251d35a741d496b6e8b45b07e851e0e89
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114287"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528610"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>Zusätzliche TvOS 10 Frameworks Änderungen
 
@@ -85,7 +85,7 @@ Der Foundation-Framework für TvOS 10 wurden die folgenden Verbesserungen vorgen
 
  - Verwenden Sie die neue [NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval) Klasse um Datum und Uhrzeit-Intervall Berechnungen wie Dauer, für den Vergleich von Abständen, und für die Interval-Schnittpunkte zu testen.
  - Mehrere neue Eigenschaften hinzugefügt wurden die [NSLocal](https://developer.apple.com/reference/foundation/nslocale) Klasse, um lokale Informationen und die verfügbaren Anzeigeformate abzurufen.
- - Verwenden Sie die neue [NSMeasuerment](https://developer.apple.com/reference/foundation/nsmeasurement) -Klasse zum Konvertieren zwischen verschiedenen Einheiten von Measures (Maßeinheit), oder führen Berechnungen auf den Werten in verschiedenen UOMs.
+ - Verwenden Sie die neue [NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement) -Klasse zum Konvertieren zwischen verschiedenen Einheiten von Measures (Maßeinheit), oder führen Berechnungen auf den Werten in verschiedenen UOMs.
  - Verwenden Sie die neue [NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter) Klasse, um lokalisierte Messungen für die Anzeige für den Endbenutzer zu formatieren.
  - Verwenden Sie die neue [NSUnit](https://developer.apple.com/reference/foundation/nsunit) und [NSDimension](https://developer.apple.com/reference/foundation/nsdimension) Klassen zum Darstellen von bestimmten UOMs.
 
@@ -182,7 +182,7 @@ Das UIKit-Framework in TvOS 10 wurden die folgenden Verbesserungen vorgenommen:
  - Die neue `UIGraphicsRender` -Klasse stellt eine objektorientierte Methode zum Erstellen von Bitmaps oder PDF-Dokumente aus UIKit-Rendering oder Core-Grafiken und ersetzt die veraltete `UIGraphicsBeginImageContext` Methode.
  - Die `UIUserInterfaceStyle` -Klasse wurde hinzugefügt, um zu bestimmen, welche Design der Benutzeroberfläche (dunkle oder helle) derzeit aktiv ist.
  - Neue Unterstützung für hochgradig interaktive, objektbasierten, unterbrechbar Animation hinzugefügt wurde und auf Gesten van verknüpft werden. Pleas finden Sie unter Apple die [UIViewAnimating-Protokollreferenz](https://developer.apple.com/reference/uikit/uiviewanimating), [UIViewPropertyAnimator Class Reference](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), [UITimingCurveProvider-Protokollreferenz](https://developer.apple.com/reference/uikit/uitimingcurveprovider), [UICubicTimingParameters Class Reference](https://developer.apple.com/reference/uikit/uicubictimingparameters) und [UISpringTimingParameter Class Reference](https://developer.apple.com/reference/uikit/uispringtimingparameters) für Weitere Informationen.
- - Die neue `UIPreviewInteraction` und `UIPreviewInteractionDelegate` können Sie die app eine benutzerdefinierte Schnittstelle für Peek "und" Pop-Vorgänge bereitstellen.
+ - Die neue `UIPreviewInteraction` und `UIPreviewInteractionDelegate` ermöglichen es der Anwendung eine benutzerdefinierte Schnittstelle für Peek "und" Pop-Vorgänge bereitstellen.
  - Die neue `UIAccessibilityCustomRotor` Klasse ermöglicht der app, benutzerdefinierte, Kontext-spezifische Funktionalität für hilfstechnologien wie etwa Voice Over bereitzustellen.
  - Verwenden der `UIAccessibilityIsAssistiveTouchRunning` und `UIAccessibilityAssistiveTouchStatusDidChangeNotification` Symbole verwenden, um zu bestimmen, ob AssistiveTouch aktiviert ist.
  - Verwenden der `UIAccessibilityHearingDevicePairedEar` und `UIAccessibilityHearingDevicePairedEarDidChangeNotification` Symbole zum Abrufen des Status aller gekoppelten MFi hören Hilfsmittel.

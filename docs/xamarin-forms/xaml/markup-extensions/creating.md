@@ -4,15 +4,15 @@ description: In diesem Artikel wird erläutert, wie Sie Ihre eigenen benutzerdef
 ms.prod: xamarin
 ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 6b61d03910d908f5fab0d946ed97c88b1e32885d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b928c55f447d68b8adfedaa031fd85750ee71267
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109548"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563705"
 ---
 # <a name="creating-xaml-markup-extensions"></a>Erstellen von XAML-Markuperweiterungen
 
@@ -196,7 +196,7 @@ Die `IProvideValueTarget` Schnittstelle definiert zwei Eigenschaften: `TargetObj
 
 Die `GetService` Aufruf mit dem Argument `typeof(IProvideValueTarget)` tatsächlich gibt ein Objekt vom Typ `SimpleValueTargetProvider`, definiert in der `Xamarin.Forms.Xaml.Internals` Namespace. Wenn Sie die Umwandlung des Rückgabewerts von `GetService` in diesen Typ können Sie auch zugreifen eine `ParentObjects` -Eigenschaft, die ein Array ist, enthält der `Image` Element der `Grid` übergeordnetes Element und die `ImageResourceDemoPage` übergeordnet der `Grid`.
 
-## <a name="conclusion"></a>Schlussfolgerung
+## <a name="conclusion"></a>Schlussbemerkung
 
 XAML-Markuperweiterungen spielen eine wichtige Rolle in XAML, durch die Erweiterung der Möglichkeit, Attribute aus einer Vielzahl von Quellen festzulegen. Darüber hinaus, wenn die vorhandenen XAML-Markuperweiterungen nicht angeben, was genau Sie benötigen, können Sie auch eigene schreiben.
 

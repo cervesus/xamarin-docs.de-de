@@ -6,13 +6,13 @@ ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/11/2018
-ms.openlocfilehash: 04d435b29f6f2f577df5025995fcc074ba5d9d9d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 11/09/2018
+ms.openlocfilehash: 6232c6b561a791f170ebedd4d441f7be2a8ef92e
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122750"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563731"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms in Xamarin Native-Projekten
 
@@ -25,7 +25,7 @@ Der Prozess für die Nutzung einer Xamarin.Forms [ `ContentPage` ](xref:Xamarin.
 1. Fügen Sie am systemeigenen Projekt das Xamarin.Forms-NuGet-Paket hinzu.
 1. Hinzufügen der [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite und alle Abhängigkeiten, um das systemeigene Projekt.
 1. Rufen Sie die `Forms.Init`-Methode auf.
-1. Erstellt eine Instanz von der [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-Seite abgeleitet, und konvertieren Sie ihn in den entsprechenden nativen Typ, der mit einem der folgenden Erweiterungsmethoden: `CreateViewController` für iOS, `CreateFragment` oder `CreateSupportFragment` für Android, oder `CreateFrameworkElement` für UWP.
+1. Erstellt eine Instanz von der [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-Seite abgeleitet, und konvertieren Sie ihn in den entsprechenden nativen Typ, der mit einem der folgenden Erweiterungsmethoden: `CreateViewController` für iOS, `CreateSupportFragment` für Android oder `CreateFrameworkElement` für UWP.
 1. Navigieren Sie mit Ihrer Darstellung in den systemeigenen Typ der [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-Seite mit der systemeigenen API-Navigation abgeleitet.
 
 Xamarin.Forms muss initialisiert werden, durch den Aufruf der `Forms.Init` -Methode auf, bevor Sie ein systemeigenen Projekt erstellen, kann ein [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-Seite abgeleitet. Entscheidung, wann in erster Linie dazu hängt, wenn es am einfachsten in den Anwendungsablauf wird – kann ausgeführt werden, beim Start der Anwendung, oder direkt vor der `ContentPage`-abgeleitete Seite erstellt wird. In diesem Artikel, und die zugehörigen Beispielanwendungen die `Forms.Init` Methode wird beim Start der Anwendung aufgerufen.
@@ -134,8 +134,8 @@ public class MainActivity : AppCompatActivity
         SetSupportActionBar(toolbar);
         SupportActionBar.Title = "Phoneword";
 
-        var mainPage = new PhonewordPage().CreateFragment(this);
-        FragmentManager
+        var mainPage = new PhonewordPage().CreateSupportFragment(this);
+        SupportFragmentManager
             .BeginTransaction()
             .Replace(Resource.Id.fragment_frame_layout, mainPage)
             .Commit();
@@ -151,13 +151,10 @@ Die `OnCreate` Methode führt die folgenden Aufgaben:
 - Ein Verweis auf die `MainActivity` Klasse befindet sich in der `static` `Instance` Feld. Dies ist einen Mechanismus für andere Klassen in definierte Methoden aufrufen, bieten die `MainActivity` Klasse.
 - Die `Activity` Inhalt aus einer layoutressource festgelegt ist. In diesem Beispiel, das Layout besteht aus einem `LinearLayout` , enthält eine `Toolbar`, und ein `FrameLayout` fungieren als Fragmentcontainer.
 - Die `Toolbar` abgerufen wird, und legen Sie als der Aktionsleiste für die `Activity`, und der Titel der Aktion Leiste festgelegt ist.
-- Die `PhonewordPage` -Klasse, die eine Xamarin.Forms ist [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite, die in XAML definiert, wird erstellt und in eine `Fragment` mithilfe der `CreateFragment` -Erweiterungsmethode.
-- Die `FragmentManager` Klasse erstellt und führt einen Commit für eine Transaktion, die ersetzt die `FrameLayout` -Instanz mit der `Fragment` für die `PhonewordPage` Klasse.
+- Die `PhonewordPage` -Klasse, die eine Xamarin.Forms ist [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-abgeleitete Seite, die in XAML definiert, wird erstellt und in eine `Fragment` mithilfe der `CreateSupportFragment` -Erweiterungsmethode.
+- Die `SupportFragmentManager` Klasse erstellt und führt einen Commit für eine Transaktion, die ersetzt die `FrameLayout` -Instanz mit der `Fragment` für die `PhonewordPage` Klasse.
 
 Weitere Informationen zu Fragmenten finden Sie unter [Fragmente](~/android/platform/fragments/index.md).
-
-> [!NOTE]
-> Zusätzlich zu den `CreateFragment` -Erweiterungsmethode, Xamarin.Forms enthält auch eine `CreateSupportFragment` Methode. Die `CreateFragment` -Methode erstellt eine `Android.App.Fragment` , die in Anwendungen, die API-11 als Ziel verwendet und größer sein kann. Die `CreateSupportFragment` -Methode erstellt eine `Android.Support.V4.App.Fragment` , die in Anwendungen, die API-Versionen vor 11 als Ziel verwendet werden kann.
 
 Sobald die `OnCreate` Methode ausgeführt wurde, die Benutzeroberfläche definiert, in der Xamarin.Forms `PhonewordPage` -Klasse angezeigt, wie im folgenden Screenshot gezeigt:
 
@@ -177,8 +174,8 @@ Die `static` `MainActivity.Instance` Feld ermöglicht es dem `MainActivity.Navig
 ```csharp
 public void NavigateToCallHistoryPage()
 {
-    var callHistoryPage = new CallHistoryPage().CreateFragment(this);
-    FragmentManager
+    var callHistoryPage = new CallHistoryPage().CreateSupportFragment(this);
+    SupportFragmentManager
         .BeginTransaction()
         .AddToBackStack(null)
         .Replace(Resource.Id.fragment_frame_layout, callHistoryPage)
@@ -186,7 +183,7 @@ public void NavigateToCallHistoryPage()
 }
 ```
 
-Der `NavigateToCallHistoryPage` -Methode konvertiert die Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-Seite, um abgeleitete eine `Fragment` mit der `CreateFragment` -Erweiterungsmethode, und fügt die `Fragment` dem Fragment Rückwärtsstapel. Aus diesem Grund die Benutzeroberfläche definiert, in der Xamarin.Forms `CallHistoryPage` wird angezeigt, wie im folgenden Screenshot gezeigt:
+Der `NavigateToCallHistoryPage` -Methode konvertiert die Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-Seite, um abgeleitete eine `Fragment` mit der `CreateSupportFragment` -Erweiterungsmethode, und fügt die `Fragment` dem Fragment Rückwärtsstapel. Aus diesem Grund die Benutzeroberfläche definiert, in der Xamarin.Forms `CallHistoryPage` wird angezeigt, wie im folgenden Screenshot gezeigt:
 
 [![](native-forms-images/android-callhistorypage.png "Android CallHistoryPage")](native-forms-images/android-callhistorypage-large.png#lightbox "Android CallHistoryPage")
 
@@ -194,12 +191,12 @@ Bei der `CallHistoryPage` angezeigt wird, tippen Sie auf der Rückseite Pfeil an
 
 ### <a name="enabling-back-navigation-support"></a>Aktivieren der Unterstützung für die Rückwärtsnavigation
 
-Die `FragmentManager` -Klasse verfügt über eine `BackStackChanged` -Ereignis, das ausgelöst wird, wenn der Inhalt des Fragments BackStack geändert. Die `OnCreate` -Methode in der die `MainActivity` -Klasse enthält einen anonymes Ereignis-Handler für dieses Ereignis:
+Die `SupportFragmentManager` -Klasse verfügt über eine `BackStackChanged` -Ereignis, das ausgelöst wird, wenn der Inhalt des Fragments BackStack geändert. Die `OnCreate` -Methode in der die `MainActivity` -Klasse enthält einen anonymes Ereignis-Handler für dieses Ereignis:
 
 ```csharp
-FragmentManager.BackStackChanged += (sender, e) =>
+SupportFragmentManager.BackStackChanged += (sender, e) =>
 {
-    bool hasBack = FragmentManager.BackStackEntryCount > 0;
+    bool hasBack = SupportFragmentManager.BackStackEntryCount > 0;
     SupportActionBar.SetHomeButtonEnabled(hasBack);
     SupportActionBar.SetDisplayHomeAsUpEnabled(hasBack);
     SupportActionBar.Title = hasBack ? "Call History" : "Phoneword";
@@ -211,9 +208,9 @@ Dieser Ereignishandler zeigt eine Schaltfläche "zurück" in der Aktionsleiste, 
 ```csharp
 public override bool OnOptionsItemSelected(Android.Views.IMenuItem item)
 {
-    if (item.ItemId == global::Android.Resource.Id.Home && FragmentManager.BackStackEntryCount > 0)
+    if (item.ItemId == global::Android.Resource.Id.Home && SupportFragmentManager.BackStackEntryCount > 0)
     {
-        FragmentManager.PopBackStack();
+        SupportFragmentManager.PopBackStack();
         return true;
     }
     return base.OnOptionsItemSelected(item);

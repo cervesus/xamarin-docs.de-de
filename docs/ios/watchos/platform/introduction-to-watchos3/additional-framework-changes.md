@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 745c39dab1f73870ce036791434ed9a0b05d681b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e3eb4e3454aeab08d1333c5dbc3d4808fa4d676c
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122620"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528402"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>Weitere WatchOS 3 Frameworks Änderungen
 
@@ -38,7 +38,7 @@ Weitere Informationen finden Sie unter Apple [Core Daten Frameworkverweis](https
 
 Die folgenden Verbesserungen wurden für das Motion-Core-Framework für watchos 3 vorgenommen werden:
 
-- Das neue Gerät Motion-Ereignis werden der Beschleunigungsmesser und das Gyroskop verwendet, um während der Übertragung und die Ausrichtung Updates bereitzustellen. die app kann für diesen aktualisiert (mit Raten von bis zu 100 Hz) registrieren.
+- Das neue Gerät Motion-Ereignis werden der Beschleunigungsmesser und das Gyroskop verwendet, um während der Übertragung und die Ausrichtung Updates bereitzustellen. Die app kann für dieses Update (mit Raten von bis zu 100 Hz) registrieren.
 - Das neue Schrittzähler Ereignis ermöglicht einen schnellen und in Echtzeit Benachrichtigungen, wenn der Benutzer hält und wieder gestartet. Verwenden der [CMPedometer](https://developer.apple.com/reference/coremotion/cmpedometer) für Vorder- oder Hintergrund Schrittzähler Ereignisse registrieren.
 
 
@@ -48,7 +48,7 @@ Die folgenden Verbesserungen wurden der Foundation-Frameworks für Watch OS-3 vo
 
 - Verwenden Sie die neue [NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval) Klasse um Datum und Uhrzeit-Intervall Berechnungen wie Dauer, für den Vergleich von Abständen, und für die Interval-Schnittpunkte zu testen.
 - Mehrere neue Eigenschaften hinzugefügt wurden die [NSLocal](https://developer.apple.com/reference/foundation/nslocale) Klasse, um lokale Informationen und die verfügbaren Anzeigeformate abzurufen.
-- Verwenden Sie die neue [NSMeasuerment](https://developer.apple.com/reference/foundation/nsmeasurement) -Klasse zum Konvertieren zwischen verschiedenen Einheiten von Measures (Maßeinheit), oder führen Berechnungen auf den Werten in verschiedenen UOMs.
+- Verwenden Sie die neue [NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement) -Klasse zum Konvertieren zwischen verschiedenen Einheiten von Measures (Maßeinheit), oder führen Berechnungen auf den Werten in verschiedenen UOMs.
 - Verwenden Sie die neue [NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter) Klasse, um lokalisierte Messungen für die Anzeige für den Endbenutzer zu formatieren.
 - Verwenden Sie die neue [NSUnit](https://developer.apple.com/reference/foundation/nsunit) und [NSDimension](https://developer.apple.com/reference/foundation/nsdimension) Klassen zum Darstellen von bestimmten UOMs.
 

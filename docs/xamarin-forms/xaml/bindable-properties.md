@@ -4,15 +4,15 @@ description: Dieser Artikel bietet eine Einführung in bindbare Eigenschaften un
 ms.prod: xamarin
 ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: 241579d51d1f0af84655f439bad3adb879404e91
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 8dc53c37894af70d5183fe5c44b018fdf25af616
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995387"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563848"
 ---
 # <a name="bindable-properties"></a>Bindbare Eigenschaften
 
@@ -67,7 +67,7 @@ Dies erstellt eine [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) I
 
 Optional beim Erstellen einer [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) -Instanz, die folgenden Parameter können angegeben werden:
 
-- Den Bindungsmodus. Dies wird verwendet, um die Richtung anzugeben, in der Änderungen von Eigenschaftswerten weitergegeben. In der Standardmodus für die Bindung, werden Änderungen von übertragen die *Quelle* auf die *Ziel*.
+- Der Bindungsmodus. Dies wird verwendet, um die Richtung anzugeben, in der Änderungen von Eigenschaftswerten weitergegeben. In der Standardmodus für die Bindung, werden Änderungen von übertragen die *Quelle* auf die *Ziel*.
 - Eine Überprüfung-Delegat, der aufgerufen wird, wenn der Eigenschaftswert festgelegt ist. Weitere Informationen finden Sie unter [Überprüfungsrückrufe](#validation).
 - Eine Eigenschaft geändert, Delegat, der aufgerufen wird, wenn der Eigenschaftswert geändert wurde. Weitere Informationen finden Sie unter [Erkennen von Eigenschaftenänderungen](#propertychanges).
 - Eine Eigenschaft ändern der Delegat, der aufgerufen wird, wenn der Eigenschaftswert ändert. Dieser Delegat hat die gleiche Signatur wie der Delegat für die Eigenschaft geändert wurde.

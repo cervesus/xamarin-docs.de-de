@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: a202dd32bcde5cf91cce3f597c9ea7c17f4adbcd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fd97dbbe102c5a755c4a8974cf1a952c0050ac7c
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113568"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527182"
 ---
 # <a name="outline-views-in-xamarinmac"></a>Gliederungsansichten in Xamarin.Mac
 
 _Dieser Artikel behandelt die Arbeit mit Gliederungsansichten in einer Xamarin.Mac-Anwendung. Es wird beschrieben, erstellen und verwalten Gliederungsansichten in Xcode und Interface Builder und Programmgesteuertes Arbeiten mit ihnen._
 
-Bei der Arbeit mit c# und .NET in einer Xamarin.Mac-Anwendung haben Sie Zugriff auf die gleichen Gliederung anzeigt, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und verwalten Ihre Gliederungsansichten (oder erstellen sie optional direkt in c#-Code).
+Bei der Arbeit mit C# und .NET in einer Xamarin.Mac-Anwendung, Sie haben Zugriff auf die gleiche Gliederung anzeigt, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, können Sie von Xcode _Interface Builder_ erstellen und verwalten Ihre Gliederungsansichten (oder erstellen sie optional direkt in c#-Code).
 
 Eine Gliederungsansicht wird einer Tabelle, die dem Benutzer ermöglicht erweitern oder Reduzieren von Zeilen von hierarchischen Daten. Wie eine Tabellenansicht zeigt eine Gliederung-Ansicht Daten für einen Satz verwandter Elemente, Zeilen stellen dabei einzelne Elemente und Spalten, die die Attribute dieser Elemente darstellt. Im Gegensatz zu einer Tabellenansicht Elemente in einer Gliederungsansicht nicht in einer flachen Liste, deren Organisation in einer Hierarchie, wie Dateien und Ordner auf einer Festplatte.
 

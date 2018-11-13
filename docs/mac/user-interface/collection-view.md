@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 05/24/2017
-ms.openlocfilehash: 904db0b97a8b21fd51722b70a63386a53e3f5347
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 82dd175222289676c3dacd80522c55e71ba12180
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104036"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526832"
 ---
 # <a name="collection-views-in-xamarinmac"></a>Auflistungsansichten in Xamarin.Mac
 
 _Dieser Artikel beschreibt das Arbeiten mit Auflistungsansichten in einer Xamarin.Mac-app. Hierin sind erstellen und verwalten Auflistungsansichten in Xcode und Interface Builder und Programmgesteuertes Arbeiten mit ihnen._
 
-Wenn die Arbeit mit c# und .NET in einer Xamarin.Mac-app muss der Entwickler Zugriff auf die gleichen hat AppKit Auflistungsansicht steuert, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, verwendet der Entwickler von Xcode _Interface Builder_ erstellen und verwalten Auflistungsansichten.
+Bei der Arbeit mit C# und .NET in einer Xamarin.Mac-app, die der Entwickler hat Zugriff auf die gleiche AppKit Auflistungsansicht steuert, die ein Entwickler *Objective-C-* und *Xcode* ist. Da Xamarin.Mac direkt in Xcode integriert ist, verwendet der Entwickler von Xcode _Interface Builder_ erstellen und verwalten Auflistungsansichten.
 
 Ein `NSCollectionView` zeigt ein Raster mit Unteransichten Organisation mit einem `NSCollectionViewLayout`. Durch jede Unteransicht im Raster dargestellt wird ein `NSCollectionViewItem` verwaltet das Laden der Ansicht Inhalt aus einem `.xib` Datei.
 

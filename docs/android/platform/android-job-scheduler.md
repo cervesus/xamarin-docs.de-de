@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: 4bbb217fa8a3192905d016763b961e182224aa67
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c0f638afbf044a2e3e6f309839cb22137cf95912
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108768"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527013"
 ---
 # <a name="android-job-scheduler"></a>Android-Auftragsplaner
 
@@ -42,7 +42,7 @@ Die Android-Auftragsplaner ist ein Framework, die direkt in der Android-Betriebs
 * Ein `Android.App.Job.JobService` ist eine abstrakte Klasse, die mit der Logik, die der Auftrag auf dem Hauptthread der Anwendung ausgeführt wird, erweitert werden muss. Dies bedeutet, dass die `JobService` muss dafür, wie die Arbeit wird asynchron ausgeführt werden.
 * Ein `Android.App.Job.JobInfo` -Objekt enthält die Kriterien für die Android-Anleitung, wenn der Auftrag ausgeführt werden soll.
 
-Um mit der Android-Auftragsplaner zu planen, eine Xamarin.Android-Anwendung muss den Code in einer Klasse, die erweitert kapseln die `JobService` Klasse. `JobService` verfügt über drei Methoden, die während der Lebensdauer des Auftrags aufgerufen werden kann:
+Um mit der Android-Auftragsplaner zu planen, eine Xamarin.Android-Anwendung muss den Code in einer Klasse, die erweitert kapseln die `JobService` Klasse. `JobService` verfügt über drei Methoden, die während der Lebensdauer des Auftrags aufgerufen werden können:
 
 * **"bool" OnStartJob (JobParameters-Parameter)** &ndash; diese Methode wird aufgerufen, indem die `JobScheduler` auszuführende Arbeit, und klicken Sie auf den Hauptthread der Anwendung ausgeführt wird. Es ist Aufgabe von der `JobService` um die Arbeit asynchron auszuführen und `true` liegt arbeiten verbleibenden, oder `false` , wenn die Arbeit erfolgt.
     
@@ -130,10 +130,10 @@ public static class JobSchedulerHelpers
     }
 }
 
-// Sample usage - creates a JobBuilder for a DownloadJob andsets the Job ID to 1.
+// Sample usage - creates a JobBuilder for a DownloadJob and sets the Job ID to 1.
 var jobBuilder = this.CreateJobBuilderUsingJobId<DownloadJob>(1);
 
-var jobInfo = jobBuilder.Build();  // creats a JobInfo object.
+var jobInfo = jobBuilder.Build();  // creates a JobInfo object.
 ```
 
 Eine leistungsstarke Funktion von der Android-Auftragsplaner ist die Möglichkeit, die steuern, wann ein Auftrag ausgeführt wird, oder die Bedingungen, eines Auftrags ausführen kann. Die folgende Tabelle beschreibt einige der Methoden auf `JobInfo.Builder` , mit denen eine app, die beeinflussen, wenn ein Auftrag ausgeführt werden kann:  
@@ -211,7 +211,7 @@ Es ist möglich, um alle Aufträge abzubrechen, die geplant wurden, oder nur ein
 
 ```csharp
 // Cancel all jobs
-jobSchduler.CancelAll(); 
+jobScheduler.CancelAll(); 
 
 // to cancel a job with jobID = 1
 jobScheduler.Cancel(1)

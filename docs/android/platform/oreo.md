@@ -8,18 +8,18 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: e4f0138c0177c046c1e967a3d3625604f73327d6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0c5e048dd3f3496691b83eb10d377d012efedc72
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103191"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528766"
 ---
 # <a name="oreo-features"></a>Oreo-Features
 
 _Informationen zum Einstieg in Xamarin.Android zum Entwickeln von apps für die neueste Version von Android._
 
-[Android 8.0 Oreo](https://developer.android.com/index.html) die neueste Version von Android von Google verfügbar wird. Android Oreo bietet viele neue Funktionen für Xamarin.Android-Entwickler. Beispiele hierfür sind benachrichtigungskanäle, Benachrichtigung Badges, benutzerdefinierte Schriftarten in XML, herunterladbaren Schriftarten, AutoAusfüllen und Bild in Abbildung (PIP). Android Oreo enthält neue APIs für diese neuen Funktion, und diese APIs sind für Xamarin.Android-apps, die bei der Verwendung von Xamarin.Android 8.0 und höher.
+[Android 8.0 Oreo](https://developer.android.com/index.html) die neueste Version von Android von Google verfügbar wird. Android Oreo bietet viele neue Funktionen für Xamarin.Android-Entwickler. Beispiele hierfür sind benachrichtigungskanäle, Benachrichtigung Badges, benutzerdefinierte Schriftarten in XML, herunterladbaren Schriftarten, AutoAusfüllen und Bild in Abbildung (PIP). Android Oreo enthält neue APIs für diese neuen Funktionen, und diese APIs sind für Xamarin.Android-apps, die bei der Verwendung von Xamarin.Android 8.0 und höher.
 
 [![Android Oreo Hero-Bild](oreo-images/01-android-o-logo-sml.png)](oreo-images/01-android-o-logo.png#lightbox)
 
@@ -66,7 +66,7 @@ Um Visual Studio Android Oreo-Unterstützung hinzuzufügen, führen Sie folgende
 
     2. Verwenden der [SDK-Manager](~/android/get-started/installation/android-sdk.md) , API-Ebene 26.0 oder höher zu installieren.
 
--   Wenn Sie Visual Studio 2015, die wir es wird empfohlen verwenden, ein Downgrade von SDK Tools auf 25, und verwenden die alte Google Emulator Manager GUI. SDK-Tools 25 können zusammen mit der API 26, 27 und neuere, weiterhin verwendet werden und keine Auswirkungen auf in die Entwicklung für neue Plattformen. Diese erhalten Schnittstelle Sie für die Verwaltung Ihres Android-SDK für ältere Versionen von Visual Studio.
+-   Wenn Sie Visual Studio 2015 verwenden, empfehlen wir die Herabstufung SDK Tools auf 25 und die Verwendung des alten Google Emulator Managers GUI. SDK-Tools 25 können zusammen mit der API 26, 27 und neuere, weiterhin verwendet werden und keine Auswirkungen auf in die Entwicklung für neue Plattformen. Diese erhalten Schnittstelle Sie für die Verwaltung Ihres Android-SDK für ältere Versionen von Visual Studio.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 

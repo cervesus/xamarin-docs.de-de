@@ -1,31 +1,31 @@
 ---
 title: Grafiken in Xamarin.Forms
-description: Dieses Handbuch erläutert, wie Grafiken und Spiel-Engine visuellen Elementen in einer Anwendung Xamarin.Forms integriert mit CocosSharp, SkiaShap und UrhoSharp.
+description: Dieser Leitfaden erläutert, wie für die Integration von Grafiken und Spiele-Engine-Visuals in einer Xamarin.Forms-Anwendung mit CocosSharp, SkiaShap und von UrhoSharp.
 ms.prod: xamarin
 ms.assetid: 167ec01a-fb9e-431e-a44d-a10eaf62bf39
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 02/01/2018
-ms.openlocfilehash: 7a632cdab5cd67f8e0c94d5b200fe78bf1bf5310
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 38b06c26208613baed45f40a8f0933f10496c467
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243105"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51562990"
 ---
 # <a name="graphics-in-xamarinforms"></a>Grafiken in Xamarin.Forms
 
-_Wie Grafiken und Spiel-Engine visuellen Elementen in einer Xamarin.Forms-Anwendung integriert._
+_Wie Sie Grafiken und Spiele-Engine visuelle Elemente in einer Xamarin.Forms-Anwendung zu integrieren._
 
 ## <a name="using-cocossharp-in-xamarinformscocossharpmd"></a>[Verwenden von CocosSharp in Xamarin.Forms](cocossharp.md)
 
-So fügen Sie CocosSharp um präzise Form, Bild und Textrendering in einer Xamarin.Forms-Anwendung aufzunehmen.
+Informationen zum Hinzufügen von CocosSharp um präzise Form, Bild und Rendern von Text in einer Xamarin.Forms-Anwendung einzubeziehen.
 
 ## <a name="using-skiasharp-in-xamarinformsskiasharpindexmd"></a>[Verwenden von SkiaSharp in Xamarin.Forms](skiasharp/index.md)
 
-Wie Sie eine Xamarin.Forms-Anwendung SkiaSharp hinzu, und verwenden sie zum Zeichnen von 2D Vektorgrafiken, Bilder und Text.
+Informationen zum Hinzufügen von SkiaSharp zu einer Xamarin.Forms-Anwendung, und verwenden, um 2D-Vektorgrafiken, Bilder und Text zu zeichnen.
 
 ## <a name="using-urhosharp-in-xamarinformsurhosharpmd"></a>[Verwenden von UrhoSharp in Xamarin.Forms](urhosharp.md)
 
-So fügen Sie UrhoSharp um 3D Visualisierungen in einer Xamarin.Forms-Anwendung aufzunehmen.
+Informationen zum Hinzufügen von UrhoSharp 3D Visualisierungen in einer Xamarin.Forms-Anwendung enthält.

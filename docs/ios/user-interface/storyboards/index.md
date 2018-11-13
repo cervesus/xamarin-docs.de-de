@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: e1e5ec5d064ad7610c5b7be8d18284d3610352c9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 554c96cdb46041b75a48523cc2952f05d2a7b1db
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106883"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51564004"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Einführung in Storyboards in Xamarin.iOS
 
@@ -100,11 +100,11 @@ NSObject sender)
 {
     base.PrepareForSegue (segue, sender);
 
-    var callHistoryContoller = segue.DestinationViewController 
+    var callHistoryController = segue.DestinationViewController 
                                   as CallHistoryController;
 
-    if (callHistoryContoller != null) {
-        callHistoryContoller.PhoneNumbers = PhoneNumbers;
+    if (callHistoryController != null) {
+        callHistoryController.PhoneNumbers = PhoneNumbers;
     }
 }
 ```
@@ -112,14 +112,14 @@ NSObject sender)
 In diesem Beispiel die `PrepareForSegue` Methode wird aufgerufen, wenn der Segue durch den Benutzer ausgelöst wird. Wir müssen zunächst erstellen Sie eine Instanz des ansichtscontrollers "empfangen" und als Ziel für die Segue des View Controller festlegen. Dies erfolgt durch die folgende Codezeile:
 
 ```csharp
-var callHistoryContoller = segue.DestinationViewController as CallHistoryController;
+var callHistoryController = segue.DestinationViewController as CallHistoryController;
 ```
 
 Die Methode verfügt jetzt über die Möglichkeit zum Festlegen von Eigenschaften auf der `DestinationViewController`. In diesem Beispiel habe ich diesen Vorteil durch Übergabe einer Liste namens `PhoneNumbers` auf die `CallHistoryController` und auf ein Objekt mit dem gleichen Namen zuweisen:
 
 ```csharp
-if (callHistoryContoller != null) {
-        callHistoryContoller.PhoneNumbers = PhoneNumbers;
+if (callHistoryController != null) {
+        callHistoryController.PhoneNumbers = PhoneNumbers;
     }
 ```
 
@@ -368,7 +368,7 @@ Finden Sie in der Storyboards.Conditional-Lösung in die [manuelle Storyboards B
 
 ## <a name="using-storyboard-references"></a>Verwenden von Storyboard-verweisen
 
-Ein Storyboard-Verweis können Sie einen großen, komplexen Storyboard-Entwurf und teilen sie in kleinere Storyboards, die von der ursprünglichen verwiesen zu erhalten, daher entfernen Entfernen von Komplexität und machen das resultierende einzelnen Storyboards einfacher Entwurf und verwalten.
+Ein Storyboard-Verweis können Sie einen großen, komplexen Storyboard-Entwurf und teilen sie in kleinere Storyboards, die aus der ursprünglichen referenziert erhalten daher entfernen die Komplexität und erleichtert die sich ergebende einzelne Storyboards zum Entwerfen und verwalten.
 
 Darüber hinaus bieten ein Storyboard-Verweis ein _Anker_ zu einem anderen Szene innerhalb des gleichen Storyboards oder eine bestimmte Szene auf einem anderen.
 

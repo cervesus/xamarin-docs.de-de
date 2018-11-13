@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
-ms.openlocfilehash: 50c7b05261cf3f07ea37373cdcdcc8f250243647
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3249a9706ba96ec3690a3a3a6b80a5eb261625e4
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108976"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527273"
 ---
 # <a name="android-platform-specifics"></a>Android Plattformeigenschaften
 
@@ -270,7 +270,7 @@ listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScro
 
 Das Ergebnis ist, schnell einen Bildlauf durch die Daten in einem [ `ListView` ](xref:Xamarin.Forms.ListView) kann aktiviert werden, welche Änderungen es sich um die Größe des bildlaufziehpunkts:
 
-[![](android-images/fastscroll.png "ListView FastScroll plattformspezifische")](android-images/fastscroll-large.png#lightbox "ListView FastScroll Plaform-Specific")
+[![](android-images/fastscroll.png "ListView FastScroll plattformspezifische")](android-images/fastscroll-large.png#lightbox "ListView FastScroll plattformspezifische")
 
 <a name="webview-mixed-content" />
 
@@ -455,7 +455,7 @@ Das Ergebnis ist, dass die Platzierung der Symbolleiste, die Farbe der Elemente 
 
 ![](android-images/tabbedpage-toolbar-placement.png)
 
-## <a name="application"></a>Anwendung
+## <a name="application"></a>Application
 
 Unter Android wird die folgende plattformspezifische Funktionalität bereitgestellt, für die Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application) Klasse:
 
@@ -490,7 +490,7 @@ Die `Application.On<Android>` Methode gibt an, dass diese plattformspezifischen 
 
 Das Ergebnis ist, dass die Bildschirmtastatur Bereich Betriebsmodus kann festgelegt werden Eingabe, wenn ein Steuerelement den Fokus besitzt:
 
-[![](android-images/pan-resize.png "Bildschirmtastatur-Betrieb-Modus plattformspezifische")](android-images/pan-resize-large.png#lightbox "Soft Keyboard Operating Mode Plaform-Specific")
+[![](android-images/pan-resize.png "Vorläufig Tastatur Betriebssystem Modus plattformspezifische")](android-images/pan-resize-large.png#lightbox "Betrieb-Modus plattformspezifische Bildschirmtastatur")
 
 <a name="disable_lifecycle_events" />
 
