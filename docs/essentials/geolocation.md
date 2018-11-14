@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 533620fbfca9f2a7a235fe65e038b6dd89aa95a9
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 55d33181b2a0de1f939ebd28b83a67a9af64716e
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674899"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528493"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Geolocation
 
@@ -79,7 +79,7 @@ Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 using Xamarin.Essentials;
 ```
 
-Die Geoloation-API fordert außerdem den Benutzer bei Bedarf zur Eingabe von Berechtigungen auf.
+Wenn erforderlich, verlangt die Geolocation-API vom Benutzer außerdem Berechtigungen.
 
 Durch Aufrufen der `GetLastKnownLocationAsync`-Methode können Sie den letzten bekannten [Standort](xref:Xamarin.Essentials.Location) des Geräts abrufen. Dies ist häufig schneller als eine vollständige Abfrage, kann aber auch ungenauer sein.
 
@@ -107,7 +107,7 @@ catch (Exception ex)
 }
 ```
 
-Die Höhe ist nicht immer verfügbar. Wenn sie nicht verfügbar ist, ist die Eigenschaft `Altitude` möglicherweise `null`, oder der Wert ist 0 (null). Wenn die Höhe verfügbar ist, entspricht der Wert der Höhe über dem Meeresspiegel in Metern. 
+Die Höhe ist nicht immer verfügbar. Wenn sie nicht verfügbar ist, ist die Eigenschaft `Altitude` möglicherweise `null`, oder der Wert ist 0 (null). Ist die Höhe verfügbar, ist der Wert in Metern über Normalhöhennull angegeben. 
 
 Mit `GetLocationAsync` können Sie die Koordinaten des aktuellen [Standorts](xref:Xamarin.Essentials.Location) des Geräts abrufen. Es wird empfohlen, `GeolocationRequest` und `CancellationToken` vollständig zu übergeben, da es möglicherweise einige Zeit dauert, den Standort des Geräts abzurufen.
 
@@ -140,7 +140,7 @@ catch (Exception ex)
 
 In der folgenden Tabelle ist die Genauigkeit bei den einzelnen Plattformen aufgeführt:
 
-### <a name="lowest"></a>Sehr niedrig
+### <a name="lowest"></a>Niedrigste
 
 | Plattform | Abstand (in Metern) |
 | --- | --- |
