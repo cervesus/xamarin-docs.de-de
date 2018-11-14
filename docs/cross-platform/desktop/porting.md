@@ -1,74 +1,74 @@
 ---
 ms.assetid: 814857C5-D54E-469F-97ED-EE1CAA0156BB
-title: Portierung von Desktop-app-Leitfaden
-description: Eine einfache Erklärung der Vorgehensweise zum Entkoppeln von vorhandenen Windows Forms oder WPF-apps zum Erstellen von plattformübergreifenden apps für Mac OS, iOS, Android sowie universelle Windows-Plattform/Windows 10 ausgeführt werden soll.
+title: Portierungsleitfadens Desktop-app
+description: Eine einfache Erklärung der Vorgehensweise zum Entkoppeln von vorhandenen Windows Forms oder WPF-apps zum Erstellen von plattformübergreifenden apps auf MacOS, iOS, Android, sowie UWP/Windows 10 ausgeführt werden soll.
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: b9cfad9c046d4f2ad89506f7172a0418e90478f5
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 3d3af9c78b7486e7ebfb063a3cb00fabdbd0f5b7
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781045"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617539"
 ---
-# <a name="desktop-app-porting-guidance"></a>Portierung von Desktop-app-Leitfaden
+# <a name="desktop-app-porting-guidance"></a>Portierungsleitfadens Desktop-app
 
-Großteil des Anwendungscodes kann in einem der folgenden Bereiche eingeteilt werden:
+Großteil des Anwendungscodes kann in einer der folgenden Bereiche eingeteilt werden:
 
-* Code für die Benutzeroberfläche (z. b. Windows und Schaltflächen)
+* Der Code der Benutzeroberfläche (z. b. Fenster und Schaltflächen)
 * 3rd Party-Steuerelemente (z. b. Diagramme)
 * Geschäftslogik (z. b. Validierungsregeln)
-* Lokalen datenspeicherung und-Zugriff
-* Webdienste und Remotedatenzugriff
+* Lokale datenspeicherung und-Zugriff
+* Web Services "und" Remotedatenzugriff
 
-Für Windows Forms und WPF-Anwendungen, die große Mengen an die Geschäftslogik mit c# (oder Visual Basic.NET) geschrieben wurden, um lokale Daten zuzugreifen und Web-Services-Code kann über Plattformen hinweg gemeinsam verwendet werden.
+Für Windows Forms und WPF-Anwendungen mit C# (oder Visual Basic.NET) überraschend viel von der Geschäftslogik, die Zugriffe auf lokale Daten und die Web Services-Code plattformübergreifend gemeinsam genutzt werden kann.
 
 ## <a name="net-portability-analyzer"></a>.NET Portability Analyzer
 
-Unterstützung von Visual Studio 2015 und 2017 die [.NET Portability Analyzer](https://docs.microsoft.com/en-us/dotnet/articles/standard/portability-analyzer) ([für Windows herunterladen](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)) überprüfen Sie Ihre vorhandenen Anwendungen und Aufschluss darüber, wie viel Code portiert werden kann "wie besehen" für andere Plattformen können . Weitere Informationen finden sie aus diesem [Channel 9-Video](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer).
+Visual Studio 2015 und 2017 – Unterstützung der [.NET Portability Analyzer](https://docs.microsoft.com/dotnet/articles/standard/portability-analyzer) ([für Windows herunterladen](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)) die untersuchen Sie Ihre vorhandenen Anwendungen und informiert Sie, wie viel Code portiert werden kann "wie besehen" für andere Plattformen . Mehr darüber erfahren Sie aus diesem [Channel 9-Video](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer).
 
 Es gibt auch ein Befehlszeilentool kann heruntergeladen werden [Portability Analyzer auf GitHub](https://github.com/Microsoft/dotnet-apiport) und verwendet, um die gleichen Berichte bereitzustellen.
 
-## <a name="x-of-my-code-is-portable-what-next"></a>"X % meines Codes ist übertragbar. Was tue ich jetzt?"
+## <a name="x-of-my-code-is-portable-what-next"></a>"X % meines Codes ist übertragbar. Was geschieht nun?"
 
-Hoffentlich treten bei der Analyzer wird gezeigt, eine große ist übertragbar, die Teil des Codes muss aber es ist sicherlich werden einige Teile der alle Apps, die _kann nicht_ verschoben werden, für andere Plattformen.
+Hoffentlich wird der Analyzer eine große, Teil des Codes ist übertragbar, aber sicherlich also einige Teile der einzelnen Apps, die _kann nicht_ auf anderen Plattformen verschoben werden.
 
-Andere Abschnitte des Codes fallen wahrscheinlich in einer von diesen Buckets, die im folgenden ausführlicher erläutert:
+Verschiedene Blöcke von Code greift wahrscheinlich in einer von diesen Buckets, die im folgenden ausführlicher erläutert:
 
 * Aktionsentwicklung portablen code
 * Code, der geändert werden kann
-* Code, der nicht tragbaren und erfordert ein erneutes Schreiben
+* Code, der nicht portabel ist, und erfordert ein erneutes Schreiben
 
 ### <a name="re-useable-portable-code"></a>Aktionsentwicklung portablen code
 
-.NET Code, die auf APIs verfügbar, die auf allen Plattformen geschrieben werden kann, plattformübergreifende unverändert übernommen werden. Im Idealfall müssen Sie möglicherweise mit diesem Code in eine Portable Class Library, gemeinsam genutzte Bibliothek oder Standardbibliothek des .NET verschieben, und klicken Sie dann in Ihre vorhandene app zu testen.
+.NET Code, der auf allen Plattformen verfügbaren APIs erstellt wurde, kann plattformübergreifende unverändert übernommen werden. Im Idealfall werden der gesamte Code in eine Portable Class Library, freigegebene Bibliothek oder .NET Standard-Bibliothek verschieben und anschließend in Ihre vorhandene app testen können.
 
-Diese freigegebene Bibliothek kann Anwendungsprojekte für andere Plattformen (z. B. Android, iOS, Mac OS) dann hinzugefügt werden.
+Diese freigegebenen Bibliothek kann Anwendungsprojekte für andere Plattformen (z. B. Android, iOS, MacOS) klicken Sie dann hinzugefügt werden.
 
 ### <a name="code-that-requires-changes"></a>Code, der geändert werden kann
 
-Einige .NET APIs möglicherweise nicht auf allen Plattformen verfügbar. Wenn diese APIs in Ihrem Code vorhanden sind, müssen Sie diese Abschnitte für die plattformübergreifende-APIs verwenden, neu zu schreiben.
+Einige .NET APIs möglicherweise nicht auf allen Plattformen verfügbar. Wenn diese APIs in Ihrem Code vorhanden ist, müssen Sie diese Abschnitte für die plattformübergreifende APIs verwenden, neu zu schreiben.
 
 Beispiele hierfür sind für die Verwendung von Reflektions-APIs, die in .NET 4.6 verfügbar sind, jedoch sind nicht auf allen Plattformen verfügbar.
 
-Nachdem Sie den Code mithilfe von portablen APIs neu geschrieben haben, sollten Sie möglicherweise den Code in einer freigegebenen Bibliothek-Paket, und Testen Sie es in Ihre vorhandene app.
+Nachdem Sie den Code mithilfe von portablen APIs erneut geschrieben haben, sollten Sie in der Lage, diesen Code in einer freigegebenen Bibliothek und Testen Sie es in Ihrer vorhandenen app.
 
-### <a name="code-that-isnt-portable-and-requires-a-re-write"></a>Code, der nicht tragbaren und erfordert ein erneutes Schreiben
+### <a name="code-that-isnt-portable-and-requires-a-re-write"></a>Code, der nicht portabel ist, und erfordert ein erneutes Schreiben
 
-Beispiele für Code, die wahrscheinlich über Plattformen hinweg nicht:
+Beispiele für Code, der es sich wahrscheinlich um plattformübergreifende nicht enthalten:
 
-- **Benutzeroberfläche** – Windows Forms- oder WPF Bildschirme können nicht in Projekten für Android oder iOS, z. B. verwendet werden. Die Benutzeroberfläche müssen neu geschrieben werden, verwenden Sie diese Funktion [Steuerelemente Vergleich](~/cross-platform/desktop/controls/index.md) als Referenz.
+- **Benutzeroberfläche** – Windows Forms- oder WPF-Bildschirmen können nicht in Projekten auf Android oder iOS, z. B. verwendet werden. Ihre Benutzeroberfläche müssen neu geschrieben werden, mithilfe dieser [Vergleich der Steuerelemente](~/cross-platform/desktop/controls/index.md) als Verweis.
 
-- **Clientplattform-spezifische Speicher** -Code, der auf eine plattformspezifische-Technologie (z. B. eine lokale SQL Server Express-Datenbank) basiert. Sie müssen dies neu schreiben, verwenden eine plattformübergreifende Alternative (z. B. SQLite für Database Engine).
-Einige Vorgänge mit dem Dateisystem möglicherweise ebenfalls angepasst werden, da universelle Windows-Plattform etwas andere APIs für Android und iOS (z. b. hat, Einige Dateisysteme Groß-/Kleinschreibung beachtet, und andere nicht).
+- **Clientplattform-spezifische Storage** -Code, der auf eine bestimmte Technologie (z. B. eine lokale SQL Server Express-Datenbank) basiert. Sie müssen diese neu schreiben, verwenden eine plattformübergreifende Alternative (z. B. SQLite für die Datenbank-Engine).
+Einige Dateisystemvorgänge müssen möglicherweise auch angepasst werden, da UWP etwas andere APIs für Android und iOS (z.B.) verfügt, Einige Dateisysteme Groß-/Kleinschreibung beachtet werden, und andere nicht).
 
-- **3. Komponenten von Drittanbietern** – überprüfen Sie, ob 3rd Party-Komponenten in Ihren Anwendungen auf anderen Plattformen verfügbar sind. Einige, z. B. nicht sichtbare Gesamtwerte NuGet-Pakete können jedoch andere (insbesondere visual steuert, wie Diagramme oder Media Player) verfügbar sein.
+- **3. Komponenten von Drittanbietern** – überprüfen, ob 3. Komponenten von Drittanbietern in Ihren Anwendungen auf anderen Plattformen verfügbar sind. Einige, wie z. B. nicht visuelle NuGet-Pakete, möglicherweise jedoch andere (insbesondere visuelle Steuerelemente wie Diagrammen oder Media Player) verfügbar sein.
 
-## <a name="tips-for-making-code-portable"></a>Tipps zur optimalen Code portabel
+## <a name="tips-for-making-code-portable"></a>Tipps zum machen Code portabel
 
-- **Abhängigkeitsinjektion** – bieten verschiedene Implementierungen für jede Plattform und
+- **Abhängigkeitsinjektion** – Geben Sie unterschiedliche Implementierungen für jede Plattform und
 
-- **In den Ebenen Ansatz** – ob MVVM, MVC, MVP oder einige andere Muster, das Ihnen hilft, trennen die portablen Code aus der plattformspezifischen Code.
+- **Ebenenansatz** – ob es sich bei MVVM, MVC, MVP oder einige andere Muster, das Ihnen hilft, trennen übertragbaren Code im plattformspezifischen Code.
 
-- **Messaging** – können Sie Meldungsübergabe in Ihrem Code um deserialisiert Interaktionen zwischen verschiedenen Teilen der Anwendung zu verknüpfen.
+- **Messaging** – können Sie Meldungsübergabe in Ihrem Code um Interaktionen zwischen verschiedenen Teilen der Anwendung aufheben zu koppeln.

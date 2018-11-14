@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/22/2018
-ms.openlocfilehash: 008fc22d654478df3151706101ef07bc0a23acb8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4d5319005b28c5afa0906c44cfa59f0cad40de76
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111504"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617617"
 ---
 # <a name="arkit-2-in-xamarinios"></a>ARKit 2 in Xamarin.iOS
 
@@ -373,7 +373,7 @@ Die letzte Überschrift-Funktion von ARKit 2 ist Apple Einführung des Pixar [Un
 
 In ARKit ist es entscheidend, um Ressourcen manuell verwalten. Nicht nur lässt dies zu hohe Frameraten, sondern tatsächlich _erforderlichen_ vermeiden eine verwirrende "Einfrieren des Bildschirms." ARKit Framework wird lazy über einen neuen Frame mit Kamera angeben ([`ARSession.CurrentFrame`](https://developer.xamarin.com/api/property/ARKit.ARSession.CurrentFrame/)). Bis das aktuelle [ `ARFrame` ](https://developer.xamarin.com/api/type/ARKit.ARFrame/) hatte `Dispose()` aufgerufen, ARKit wird nicht Geben Sie einen neuen Frame! Dies bewirkt, dass das Video "eingefroren", obwohl der Rest der app reaktionsfähig ist. Die Lösung besteht darin, immer Zugriff auf `ARSession.CurrentFrame` mit einem `using` blockieren oder manuell aufrufen `Dispose()` darauf.
 
-Alle Objekte, die von abgeleiteten `NSObject` sind `IDisposable` und `NSObject` implementiert die [Dispose-Muster](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/dispose-pattern), sodass Sie, in der Regel befolgen sollten [dieses Muster für die Implementierung `Dispose` auf eine abgeleitete Klasse](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose).
+Alle Objekte, die von abgeleiteten `NSObject` sind `IDisposable` und `NSObject` implementiert die [Dispose-Muster](https://docs.microsoft.com/dotnet/standard/design-guidelines/dispose-pattern), sodass Sie, in der Regel befolgen sollten [dieses Muster für die Implementierung `Dispose` auf eine abgeleitete Klasse](https://docs.microsoft.com/dotnet/standard/garbage-collection/implementing-dispose).
 
 ### <a name="manipulating-transform-matrices"></a>Bearbeiten von Transformation Matrizen
 

@@ -8,17 +8,17 @@ author: pierceboggan
 ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
-ms.openlocfilehash: bb30f9264cb5f3b762088e3523223b2bff8416b9
-ms.sourcegitcommit: ebc0b3838836ee5cf9e54d58866d23916664a43d
+ms.openlocfilehash: 21ff09f2af93ee46578b959111bf744ba05a74d7
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50142335"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617656"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live neu laden (Vorschau)
 
 > [!NOTE]
-> Die Vorschau von Xamarin Live Reload wurde beendet, und vielen Dank, dass alle für Ihr Feedback und Kommentare werden soll. Lesen Sie unsere [Roadmap](https://docs.microsoft.com/en-us/visualstudio/productinfo/vs-roadmap) für Visual Studio-2019 Weitere Informationen zum neuen Produktivitätsfeatures, die für Xamarin.Forms gearbeitet wird. Diese Erweiterung für Visual Studio 2017 bleibt verfügbar, aber es wird keine zukünftige Updates empfangen werden.
+> Die Vorschau von Xamarin Live Reload wurde beendet, und vielen Dank, dass alle für Ihr Feedback und Kommentare werden soll. Lesen Sie unsere [Roadmap](https://docs.microsoft.com/visualstudio/productinfo/vs-roadmap) für Visual Studio-2019 Weitere Informationen zum neuen Produktivitätsfeatures, die für Xamarin.Forms gearbeitet wird. Diese Erweiterung für Visual Studio 2017 bleibt verfügbar, aber es wird keine zukünftige Updates empfangen werden.
 
 Xamarin Live Reload ermöglicht es Ihnen, **nehmen Sie Änderungen an Ihrer XAML und finden Sie diese sofort live, ohne dass eine andere kompilieren und Bereitstellen von**. Alle Änderungen an Ihre XAML werden erneut bereitgestellt werden zu speichern und wiedergegeben werden, auf dem Zielcomputer bereitstellen.
 

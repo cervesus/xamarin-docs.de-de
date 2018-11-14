@@ -5,12 +5,12 @@ description: In diesem Dokument verglichen und gegenübergestellt von WPF in Xam
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 43eadacebf7ed877dfa28381ad77117d5988ca4b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d3e772c270f6003d01e3e7b487f69f682fec2d61
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119827"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617591"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF im Vergleich zu. Xamarin.Forms: Ähnlichkeiten und Unterschiede
 
@@ -60,7 +60,7 @@ Genau wie WPF, die einzelne erforderliche Methode ist eine `ProvideValue` Method
 
 ## <a name="binding-infrastructure"></a>Bindungsinfrastruktur
 
-Einer der wichtigsten Konzepte für übernommen wird zur Verbindung mit .NET Dateneigenschaften Eigenschaften visueller Elemente einer Bindung-Infrastruktur. Dies ermöglicht eine architektonische Muster wie MVVM. Das grundlegende Design ist identisch: Sie haben eine bindbare Basisklasse [BindableObject](xref:Xamarin.Forms.BindableObject), in WPF, dies ist, die [DependencyObject](https://msdn.microsoft.com/en-us/library/system.windows.dependencyobject(v=vs.110).aspx) Klasse. Diese Basisklasse dient als den Vorgänger Stamm für alle Objekte, die als Ziele bei der Datenbindung einbezogen werden. Die abgeleiteten Klassen Sie verfügbar machen [BindableProperty](xref:Xamarin.Forms.BindableProperty) Objekte, die als Hintergrundspeicher für Eigenschaftswerte fungieren (diese sind definiert als [DependencyProperty](https://msdn.microsoft.com/library/system.windows.dependencyproperty(v=vs.110).aspx) Objekte in WPF).
+Einer der wichtigsten Konzepte für übernommen wird zur Verbindung mit .NET Dateneigenschaften Eigenschaften visueller Elemente einer Bindung-Infrastruktur. Dies ermöglicht eine architektonische Muster wie MVVM. Das grundlegende Design ist identisch: Sie haben eine bindbare Basisklasse [BindableObject](xref:Xamarin.Forms.BindableObject), in WPF, dies ist, die [DependencyObject](xref:System.Windows.DependencyObject) Klasse. Diese Basisklasse dient als den Vorgänger Stamm für alle Objekte, die als Ziele bei der Datenbindung einbezogen werden. Die abgeleiteten Klassen Sie verfügbar machen [BindableProperty](xref:Xamarin.Forms.BindableProperty) Objekte, die als Hintergrundspeicher für Eigenschaftswerte fungieren (diese sind definiert als [DependencyProperty](xref:System.Windows.DependencyProperty) Objekte in WPF).
 
 ### <a name="defining-bindable-properties"></a>Definieren von bindbare Eigenschaften
 
@@ -170,7 +170,7 @@ Für Phone-Geräte, die verschiedene _Bildschirme_ sind häufig die Lösung und 
 |--- |--- |
 |Stapelbasierte (Push/Pop)|"NavigationPage"|
 |Master/Detail-|MasterDetailPage|
-|Tabstopps|"Tabbedpage"|
+|Registerkarten|"Tabbedpage"|
 |Streichen Sie nach links/rechts|CarouselView|
 
 Die `NavigationPage` der gängigste Ansatz ist, und jede Seite hat eine `Navigation` Eigenschaft, die mithilfe von Push übertragen oder pop-Seiten, die ein- und Ausschalten der Navigationsstapel verwendet werden kann. Dies ist die nächste Equivelent zu den `NavigationService` finden Sie in WPF.

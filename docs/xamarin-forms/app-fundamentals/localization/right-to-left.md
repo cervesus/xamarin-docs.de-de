@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 6c0de68f974c704b5f43232a1fc98065c90ee4f7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 67b0d90290b18c7a5b55c5e3496b54970a8cfc38
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995721"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617604"
 ---
 # <a name="right-to-left-localization"></a>Rechts-nach-links-Lokalisierung
 
@@ -72,7 +72,7 @@ Das erforderliche rechts-nach-links-Gebietsschema sollten als einer unterstützt
 
 ![Datei "Info.plist" unterstützt Sprachen](rtl-images/ios-locales.png "\"Info.plist\" unterstützte Sprachen")
 
-Weitere Informationen finden Sie unter [Lokalisierung-Grundlagen in iOS](https://docs.microsoft.com/en-gb/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios).
+Weitere Informationen finden Sie unter [Lokalisierung-Grundlagen in iOS](https://docs.microsoft.com/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios).
 
 Rechts-nach-links-Lokalisierung kann dann getestet werden, durch ändern die Sprache und Region auf der Gerätesimulator in eine rechts-nach-links-Gebietsschema, das im angegebenen **"Info.plist"**.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 04/12/2017
-ms.openlocfilehash: 7b9b3b648f6ac66859714052e916407026da10d4
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
-ms.translationtype: HT
+ms.openlocfilehash: 1ea38b527acaa89b9f25690de4e55664a7afd9e8
+ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526935"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51579829"
 ---
 # <a name="xamarinmac-architecture"></a>Xamarin.Mac-Architektur
 
@@ -145,7 +145,7 @@ Im Allgemeinen erreicht sie dies durch die folgenden Aufgaben ausführen:
 - Erstellen einer app-Bundle-Struktur.
 - Kopieren Sie in Ihrer verwalteten Assemblys.
 - Wenn linking aktiviert ist, führen Sie die verwaltete Linker aus, um Ihre Assemblys zu optimieren, indem Sie das Entfernen von nicht genutzten Bereichen.
-- Erstellen Sie eine Startprogramm-Anwendung, die im Code Startprogramm gesprochen, die zusammen mit der Registrierungsstelle Code im statischen Modus verknüpfen.
+- Erstellen Sie eine Startprogramm-Anwendung, die im Code Startprogramm gesprochen, die zusammen mit dem Registrierungscode im statischen Modus verknüpfen.
 
 Dies ist, und führen Sie als Teil des Benutzers erstellen Prozess, der Benutzercode in einer Assembly kompiliert wird, des Verweises "xamarin.Mac.dll" und führt dann `mmp` zum Vereinfachen eines Pakets
 

@@ -1,5 +1,5 @@
 ---
-title: Anpassen der Java-Speicherparameter für Android designer
+title: Anpassen der Java-Speicherparameter für Android Designer
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 62FAF21C-8090-4AF3-9D88-05A4CFCAFFDC
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: cf0df42ba398944a99cc4179b94f0d3cb8ba503e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9c564789f704180e9acc9f96dcba5e7d6eb20634
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118057"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617240"
 ---
-# <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Anpassen der Java-Speicherparameter für Android designer
+# <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Anpassen der Java-Speicherparameter für Android Designer
 
 Die Standardparameter für den Arbeitsspeicher, die verwendet werden, beim Starten der `java` für Android Designer möglicherweise nicht kompatibel mit einigen Systemkonfigurationen zu verarbeiten.
 
@@ -35,7 +35,7 @@ Die folgenden Eigenschaftennamen entsprechen, zu dem angegebenen Java [Befehlsze
 
 1.  Öffnen Sie Ihre Projektmappe in Visual Studio.
 
-2.  Wählen Sie einzeln nacheinander jede Android-Projekt im Projektmappen-Explorer aus, und klicken Sie auf [alle Dateien anzeigen](https://msdn.microsoft.com/en-us/library/4afxey9h.aspx) zweimal auf jedes Projekt. Sie können Projekte, die keine enthalten überspringen `.axml` Layout-Dateien. Dieser Schritt wird sichergestellt, dass jede Projektverzeichnis enthält eine `.csproj.user` Datei.
+2.  Wählen Sie einzeln nacheinander jede Android-Projekt im Projektmappen-Explorer aus, und klicken Sie auf [alle Dateien anzeigen](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90)) zweimal auf jedes Projekt. Sie können Projekte, die keine enthalten überspringen `.axml` Layout-Dateien. Dieser Schritt wird sichergestellt, dass jede Projektverzeichnis enthält eine `.csproj.user` Datei.
 
 3.  Verlassen Sie Visual Studio.
 

@@ -5,12 +5,12 @@ ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 74c2066f673d27cf23af139380b45cd4223b1f30
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 37a4fdbdc3f7e1ee309ee9d49c7ad67374035ab4
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675483"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617526"
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: Dateisystemhilfsprogramme
 
@@ -72,8 +72,8 @@ Fügen Sie eine beliebige Datei zum Ordner **Resources** im iOS-Projekt hinzu, u
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-- **CacheDirectory**: Gibt das Verzeichnis [LocalCacheFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder) zurück.
-- **AppDataDirectory**: Gibt das Verzeichnis [LocalFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) zurück, das in der Cloud gesichert wird.
+- **CacheDirectory**: Gibt das Verzeichnis [LocalCacheFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder) zurück.
+- **AppDataDirectory**: Gibt das Verzeichnis [LocalFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) zurück, das in der Cloud gesichert wird.
 
 Fügen Sie eine beliebige Datei zum Stammverzeichnis des UWP-Projekts hinzu, und markieren Sie den Buildvorgang als **Content**, um ihn mit `OpenAppPackageFileAsync` zu verwenden.
 

@@ -5,12 +5,12 @@ ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 3562ec840f824f6a8aeed1a61c7b27985a5ddf72
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: d50fe3853ab87d5bc14ac15a442140218a1b0fe0
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675470"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617552"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: Einstellungen
 
@@ -80,11 +80,11 @@ Alle Daten werden in [freigegebenen Einstellungen](https://developer.android.com
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-[NSUserDefaults](https://docs.microsoft.com/en-us/xamarin/ios/app-fundamentals/user-defaults) wird zum Speichern von Werten auf iOS-Geräten verwendet. Wenn kein `sharedName` angegeben ist, werden die `StandardUserDefaults` verwendet. Andernfalls wird der Name zum Erstellen eines neuen `NSUserDefaults` mit dem angegebenen Namen verwendet, der als `NSUserDefaultsType.SuiteName` verwendet wird.
+[NSUserDefaults](https://docs.microsoft.com/xamarin/ios/app-fundamentals/user-defaults) wird zum Speichern von Werten auf iOS-Geräten verwendet. Wenn kein `sharedName` angegeben ist, werden die `StandardUserDefaults` verwendet. Andernfalls wird der Name zum Erstellen eines neuen `NSUserDefaults` mit dem angegebenen Namen verwendet, der als `NSUserDefaultsType.SuiteName` verwendet wird.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[ApplicationDataContainer](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdatacontainer) wird zum Speichern von Werten auf dem Gerät verwendet. Wenn kein `sharedName` angegeben ist, werden die `LocalSettings` verwendet. Andernfalls wird der Name zum Erstellen eines neuen Containers innerhalb von `LocalSettings` verwendet.
+[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) wird zum Speichern von Werten auf dem Gerät verwendet. Wenn kein `sharedName` angegeben ist, werden die `LocalSettings` verwendet. Andernfalls wird der Name zum Erstellen eines neuen Containers innerhalb von `LocalSettings` verwendet.
 
 --------------
 
