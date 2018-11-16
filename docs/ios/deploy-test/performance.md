@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: caf35ab601d20e1cb235ab9ebb131e6dffc614fc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f01074823f865b1717920d8364c67828453b6437
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108876"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617739"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS-Leistung
 
@@ -109,7 +109,7 @@ Bei Klassen, die ausschließlich zum Zweck der Implementierung eines Protokolls 
 
 #### <a name="weak-attribute"></a>Weak-Attribut
 
-In [Xamarin.iOS 11.10](https://developer.xamarin.com/releases/ios/xamarin.ios_11/xamarin.ios_11.10/#WeakAttribute) wurde das `[Weak]`-Attribut eingeführt. Genau wie `WeakReference <T>` kann auch `[Weak]` verwendet werden, um [starke Zirkelverweise](https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/performance#avoid-strong-circular-references), zu unterbrechen, jedoch mit noch weniger Code.
+In [Xamarin.iOS 11.10](https://developer.xamarin.com/releases/ios/xamarin.ios_11/xamarin.ios_11.10/#WeakAttribute) wurde das `[Weak]`-Attribut eingeführt. Genau wie `WeakReference <T>` kann auch `[Weak]` verwendet werden, um [starke Zirkelverweise](https://docs.microsoft.com/xamarin/ios/deploy-test/performance#avoid-strong-circular-references), zu unterbrechen, jedoch mit noch weniger Code.
 
 Betrachten Sie den folgenden Code, der `WeakReference <T>` verwendet:
 

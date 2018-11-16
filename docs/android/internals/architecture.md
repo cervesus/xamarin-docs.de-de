@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 219c6bb4cd5718c969ba83a55596ad7b0bab8baf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 815e3ddf44ae94b6b26a325599de1f4c1f6714a8
+ms.sourcegitcommit: ae34d048aeb23a99678ae768cdeef0c92ca36b51
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121125"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51681539"
 ---
 # <a name="architecture"></a>Architektur
 
@@ -33,7 +33,8 @@ Weitere Informationen zu den Android-Klassen wie mit der Android-Runtime-Klassen
 
 Android-Anwendungspakete sind ZIP-Container mit einem *.apk* Dateierweiterung. Xamarin.Android-Anwendungspakete haben die gleiche Struktur und das Layout als normale Android-Pakete mit den folgenden Ergänzungen:
 
--   Werden die Assemblys der Anwendung (mit IL) *gespeicherten* unkomprimierten innerhalb der *Assemblys* Ordner. Während der Prozess erstellt beim Start in der Version der *.apk* ist *mmap()* Ed in den Prozess und die Assemblys aus dem Arbeitsspeicher geladen werden. Dies ermöglicht schnellere app-Starts, wie Assemblys nicht vor der Ausführung extrahiert werden müssen. - *Hinweis:* Assembly Standortinformationen wie z. B. [Assembly.Location](xref:System.Reflection.Assembly.Location) und [Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
+-   Werden die Assemblys der Anwendung (mit IL) *gespeicherten* unkomprimierten innerhalb der *Assemblys* Ordner. Während der Prozess erstellt beim Start in der Version der *.apk* ist *mmap()* Ed in den Prozess und die Assemblys aus dem Arbeitsspeicher geladen werden. Dies ermöglicht schnellere app-Starts, wie Assemblys nicht vor der Ausführung extrahiert werden müssen.  
+-   *Hinweis:* Assembly Standortinformationen wie z. B. [Assembly.Location](xref:System.Reflection.Assembly.Location) und [Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
     *kann nicht als zuverlässig betrachtet werden, werden* in Version erstellt. Diese sind nicht als distinct Filesystem-Einträge vorhanden, und sie haben kein Speicherort verwendet werden.
 
 

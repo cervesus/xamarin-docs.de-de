@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 4d887d5a57aa3a632bd2f6795052c5b38f66a75a
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 4ab6b217190ea633611a9c869ec7e93befcc3c56
+ms.sourcegitcommit: ae34d048aeb23a99678ae768cdeef0c92ca36b51
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527169"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51681565"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Tipps zur Problembehandlung für Xamarin.iOS 
 
@@ -46,9 +46,10 @@ Möglicherweise verwenden Sie eine Codierung, die nicht standardmäßig hinzugef
 
 Das Element wurde wahrscheinlich durch den Linker entfernt, und daher nicht in der Assembly zur Laufzeit vorhanden.  Es gibt mehrere Lösungsansätze:
 
--  Hinzufügen der [[Preserve]](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) -Attribut auf den Member.  Dadurch wird verhindert, dass den Linker entfernt.
--  Beim Aufrufen [Mtouch](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29) , verwenden Sie die **-Nolink**  oder  **-Linksdkonly**  Optionen.** -    -Nolink**   deaktiviert alle Verknüpfungen.
--    **-Linksdkonly** wird nur an link Xamarin.iOS bereitgestellte Assemblys, wie z. B. *monotouch.dll* oder xamarin.ios.dll.
+- Hinzufügen der [ `[Preserve]` ](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) -Attribut auf den Member.  Dadurch wird verhindert, dass den Linker entfernt.
+- Beim Aufrufen [ **Mtouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29), verwenden Sie die **- Nolink** oder **- Linksdkonly** Optionen:
+  - **-Nolink** deaktiviert alle Verknüpfungen.
+  - **-Linksdkonly** wird nur an link Xamarin.iOS bereitgestellte Assemblys, wie z. B. **xamarin.ios.dll**, und gleichzeitig alle Typen in Assemblys benutzererstellte (ie. Ihre app-Projekte).
 
 Beachten Sie, dass die Assemblys verknüpft sind, sodass die resultierende ausführbare Datei kleiner ist. Daher kann das Deaktivieren von Verknüpfungen zu einer größeren ausführbaren Datei als erwünscht ist, führen.
 
