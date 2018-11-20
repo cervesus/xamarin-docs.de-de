@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/31/2016
-ms.openlocfilehash: cd46aac653d6477f3fc8240e4f193ec1c4a7bb4c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 215aa88b7e97a67242bd991dde0e66c445b47b0a
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122438"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526406"
 ---
 # <a name="automate-xamarinforms-testing-with-app-center"></a>Automatisieren von Xamarin.Forms-Tests mit App Center
 
@@ -28,7 +28,7 @@ In diesem Leitfaden werden Kenntnisse im Umgang mit Xamarin.UITest vorausgesetzt
 - [Einführung in App Center Test](/appcenter/test-cloud/)
 - [Introduction to UITest (Einführung in UITest)](/appcenter/test-cloud/preparing-for-upload/uitest/)
 
-Sobald Sie ein UI-Testprojekt zu einer Xamarin.Forms-Projektmappe hinzugefügt haben, sind sowohl für Xamarin.Android- als auch für Xamarin.iOS-Anwendungen dieselben Schritte zu befolgen, um einen Test schreiben und ausführen zu können.
+Sobald Sie ein UI-Testprojekt zu einer Xamarin.Forms-Projektmappe hinzugefügt haben, sind sowohl für Xamarin.Android- als auch für Xamarin.iOS-Anwendungen die gleichen Schritte zu befolgen, um einen Test schreiben und ausführen zu können.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -200,7 +200,7 @@ Nachdem Sie Xamarin.UITest zu der Xamarin.Forms-Projektmappe hinzugefügt haben,
 
 ## <a name="summary"></a>Zusammenfassung
 
-Xamarin.Forms-Anwendungen können einfach mit **Xamarin.UITest** getestet werden, indem einfache Mechanismen verwendet werden, sodass die `AutomationId` als eindeutiger Ansichtsbezeichner für die Testautomatisierung verfügbar gemacht wird. Sobald Sie ein UI-Testprojekt zu einer Xamarin.Forms-Projektmappe hinzugefügt haben, sind sowohl für Xamarin.Android- als auch für Xamarin.iOS-Anwendungen dieselben Schritte zu befolgen, um einen Test schreiben und ausführen zu können.
+Xamarin.Forms-Anwendungen können einfach mit **Xamarin.UITest** getestet werden, indem einfache Mechanismen verwendet werden, sodass die `AutomationId` als eindeutiger Ansichtsbezeichner für die Testautomatisierung verfügbar gemacht wird. Sobald Sie ein UI-Testprojekt zu einer Xamarin.Forms-Projektmappe hinzugefügt haben, sind sowohl für Xamarin.Android- als auch für Xamarin.iOS-Anwendungen die gleichen Schritte zu befolgen, um einen Test schreiben und ausführen zu können.
 
 Weitere Informationen zum Senden von Tests an App Center Test finden Sie unter [Submitting UITests](/appcenter/test-cloud/preparing-for-upload/uitest/) (Senden von UITests). Weitere Informationen zu UITest finden Sie in der [App Center Test-Dokumentation](/appcenter/test-cloud/).
 
