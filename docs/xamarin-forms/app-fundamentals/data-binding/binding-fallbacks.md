@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/16/2018
-ms.openlocfilehash: fa375720730630065609e328b343e16578c6f1df
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2a4b29df9148ce695f8f3ca5377e5848af1b775a
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131595"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171598"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>Fallbacks für Xamarin.Forms-Bindung
 
@@ -44,7 +44,7 @@ Anstatt definieren [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackVa
 > [!NOTE]
 > Es ist nicht möglich, Sie legen die `FallbackValue` Eigenschaft mit einem Bindungsausdruck.
 
-Hier wird das Programm auf allen drei Plattformen ausgeführt wird:
+Hier wird das Programm ausgeführt wird:
 
 ![FallbackValue Bindung](binding-fallbacks-images/bindingunavailable-detail-cropped.png "FallbackValue-Bindung")
 
@@ -93,7 +93,7 @@ Anstatt definieren [ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNu
 > [!NOTE]
 > Es ist nicht möglich, Sie legen die `TargetNullValue` Eigenschaft mit einem Bindungsausdruck.
 
-Hier wird das Programm auf allen drei Plattformen ausgeführt wird:
+Hier wird das Programm ausgeführt wird:
 
 [![TargetNullValue Bindung](binding-fallbacks-images/bindingunavailable-small.png "TargetNullValue Bindung")](binding-fallbacks-images/bindingunavailable-large.png#lightbox "TargetNullValue-Bindung")
 

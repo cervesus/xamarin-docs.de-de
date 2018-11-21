@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 814e975f57023424618c5ea403126f36f87467a7
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: 347793934b01d26d22455189c12b0f1d5213a40b
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235011"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52170974"
 ---
 # <a name="garbage-collection"></a>Garbage Collection
 
@@ -219,7 +219,7 @@ class MyClass : Java.Lang.Object, ISomeInterface
 }
 ```
 
-Wenn eine anfängliche Dispose Ursachen übergeben `childViews` haben einen ungültigen `Handle`, `for` Schleife Zugriff löst eine `ArgumentException`. Durch das Hinzufügen einer expliziten `Handle` null-Überprüfung vor dem ersten `childViews` für den Zugriff auf die folgenden `Dispose` Methode wird verhindert, dass die Ausnahme nicht mehr auftritt: 
+Wenn eine anfängliche Dispose Ursachen übergeben `childViews` haben einen ungültigen `Handle`, `for` Schleife Zugriff löst eine `ArgumentException`. Durch das Hinzufügen einer expliziten `Handle` null-Überprüfung vor dem ersten `childViews` für den Zugriff auf die folgenden `Dispose` Methode verhindert, dass die Ausnahme, die auftreten: 
 
 ```csharp
 class MyClass : Java.Lang.Object, ISomeInterface 

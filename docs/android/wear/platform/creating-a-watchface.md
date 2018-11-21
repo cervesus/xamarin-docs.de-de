@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2018
-ms.openlocfilehash: f46e0d27a39c7734e63bf5603ef2e47cd5fa7aa9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 067a39838fbfe3f1b33ac0d30b5069366b11e407
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105531"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172001"
 ---
 # <a name="creating-a-watch-face"></a>Erstellen eines Zifferblatts
 
@@ -302,7 +302,7 @@ Dieser XML-Code führt Folgendes aus:
 
 3.  Deklariert eine drawable Image mit dem Namen `preview` , von dem Auswahlbildschirm des Watch-Auswahl angezeigt wird.
 
-4.  Enthält eine `intent-filter` können Sie wissen, dass Android `MyWatchFaceSevice` wird eine Zifferblatt Ihrer Apple Watch angezeigt werden.
+4.  Enthält eine `intent-filter` können Sie wissen, dass Android `MyWatchFaceService` wird eine Zifferblatt Ihrer Apple Watch angezeigt werden.
 
 Ist den Code für die grundlegende abgeschlossen `WatchFace` Beispiel. Im nächste Schritt werden die erforderlichen Ressourcen hinzufügen.
 

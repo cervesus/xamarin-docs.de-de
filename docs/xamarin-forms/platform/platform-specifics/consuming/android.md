@@ -6,13 +6,13 @@ ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/01/2018
-ms.openlocfilehash: 3249a9706ba96ec3690a3a3a6b80a5eb261625e4
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.date: 11/19/2018
+ms.openlocfilehash: 5de5899b01965a33025c8af0c1ae6c09ac60dc9b
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527273"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171286"
 ---
 # <a name="android-platform-specifics"></a>Android Plattformeigenschaften
 
@@ -143,6 +143,7 @@ Unter Android werden die folgende plattformspezifische Funktionalität für Xama
 
 - Verwenden die standardauffüllung und den Volumeschattenkopie-Werte, der Android-Schaltflächen. Weitere Informationen finden Sie unter [Using Android Buttons](#button-padding-shadow).
 - Festlegen der Eingabemethoden-Editor-Optionen für die Bildschirmtastatur für eine [ `Entry` ](xref:Xamarin.Forms.Entry). Weitere Informationen finden Sie unter [Einstellung Eintrag Eingabemethoden-Editor-Optionen](#entry-imeoptions).
+- Aktivieren einen Schlagschatten für eine `ImageButton`. Weitere Informationen finden Sie unter [aktivieren eine DropShadow-Eigenschaft auf einen ImageButton](#imagebutton-drop-shadow).
 - Aktivieren schnelle Bildläufe eine [ `ListView` ](xref:Xamarin.Forms.ListView) Weitere Informationen finden Sie unter [ermöglichen schnelle Bildlauf in einer ListView](#fastscroll).
 - Steuern, ob eine [ `WebView` ](xref:Xamarin.Forms.WebView) gemischte Inhalte anzeigen können. Weitere Informationen finden Sie unter [aktivieren gemischter Inhalt in einer WebView](#webview-mixed-content).
 
@@ -227,6 +228,67 @@ Die `Entry.On<Android>` Methode gibt an, dass diese plattformspezifischen nur un
 Das Ergebnis ist, die einem angegebenen [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) Wert angewendet wird, um die Bildschirmtastatur für die [ `Entry` ](xref:Xamarin.Forms.Entry), die den Eingabemethoden-Editor-Optionen festlegt:
 
 [![Eintrag input Methode Editor plattformspezifische](android-images/entry-imeoptions.png "Eintrag input Methode Editor plattformspezifische")](android-images/entry-imeoptions-large.png#lightbox "Eintrag input Methode Editor plattformspezifische")
+
+<a name="imagebutton-drop-shadow" />
+
+### <a name="enabling-a-drop-shadow-on-a-imagebutton"></a>Aktivieren einen Schlagschatten in einem ImageButton
+
+Diese plattformspezifischen wird verwendet, um auf einen Schlagschatten Aktivieren einer `ImageButton`. Es ist in XAML verwendet, durch Festlegen der `ImageButton.IsShadowEnabled` bindbare Eigenschaft `true`, sowie eine Reihe von zusätzlichen optional bindbare Eigenschaften, die das Rendern des Schlagschattens steuern:
+
+```xaml
+<ContentPage ...
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout Margin="20">
+       <ImageButton ...
+                    Source="XamarinLogo.png"
+                    BackgroundColor="GhostWhite"
+                    android:ImageButton.IsShadowEnabled="true"
+                    android:ImageButton.ShadowColor="Gray"
+                    android:ImageButton.ShadowRadius="12">
+            <android:ImageButton.ShadowOffset>
+                <Size>
+                    <x:Arguments>
+                        <x:Double>10</x:Double>
+                        <x:Double>10</x:Double>
+                    </x:Arguments>
+                </Size>
+            </android:ImageButton.ShadowOffset>
+        </ImageButton>
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+var imageButton = new Xamarin.Forms.ImageButton { Source = "XamarinLogo.png", BackgroundColor = Color.GhostWhite, ... };
+imageButton.On<Android>()
+           .SetIsShadowEnabled(true)
+           .SetShadowColor(Color.Gray)
+           .SetShadowOffset(new Size(10, 10))
+           .SetShadowRadius(12);
+```
+
+> [!IMPORTANT]
+> Ein Drop-Schatten wird gezeichnet, als Teil der `ImageButton` Hintergrund, und der Hintergrund wird nur gezeichnet, wenn die `BackgroundColor` festgelegt wird. Aus diesem Grund werden ein Schlagschatten wird nicht gezeichnet, wenn die `ImageButton.BackgroundColor` Eigenschaft nicht festgelegt.
+
+Die `ImageButton.On<Android>` Methode gibt an, dass diese plattformspezifischen nur unter Android ausgeführt wird. Die `ImageButton.SetIsShadowEnabled` Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace wird verwendet, um Kontrolle, ob ein Schlagschatten aktiviert ist, auf die `ImageButton`. Darüber hinaus können die folgenden Methoden aufgerufen werden, zum Rendern des Schlagschattens steuern:
+
+- `SetShadowColor` – Legt die Farbe des Schlagschattens fest. Die Standardfarbe ist [ `Color.Default` ](xref:Xamarin.Forms.Color.Default*).
+- `SetShadowOffset` – Legt den Offset des Schlagschattens fest. Der Offset ändert die Richtung der Schattenkopie umgewandelt wird und angegeben wird, als eine [ `Size` ](xref:Xamarin.Forms.Size) Wert. Die `Size` Strukturwerte werden in geräteunabhängigen Einheiten ausgedrückt, mit der erste Wert wird die Entfernung nach links (negativer Wert) oder rechts (positiver Wert) und der zweite Wert wird der Abstand (negativer Wert) oder unterhalb (positiver Wert) . Der Standardwert dieser Eigenschaft ist (0,0, 0,0), was dazu führt, wird der Schatten auf jeder Seite um Umwandeln der `ImageButton`.
+- `SetShadowRadius`– Festlegen des Weichzeichnerradius zum Rendern des Schlagschattens verwendet. Der Radius-Standardwert ist 10,0.
+
+> [!NOTE]
+> Der Status der einen Schlagschatten abgefragt werden kann, durch den Aufruf der `GetIsShadowEnabled`, `GetShadowColor`, `GetShadowOffset`, und `GetShadowRadius` Methoden.
+
+Das Ergebnis ist, die ein Schlagschatten aktiviert werden kann, auf eine `ImageButton`:
+
+![](android-images/imagebutton-drop-shadow.png "ImageButton mit Schlagschatten")
 
 <a name="fastscroll" />
 

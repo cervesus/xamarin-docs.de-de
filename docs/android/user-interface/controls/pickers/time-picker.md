@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 08fa9000a1fd9c97f7881a4a13c15fabfa6dda47
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: faf2c35b49b0b02b9f3b16e19494d2e447361d84
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617669"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171650"
 ---
 # <a name="time-picker"></a>Zeitauswahl
 
@@ -45,7 +45,7 @@ Beim Klicken auf die **PICK Zeit** Schaltfläche, die Beispiel-app-Startvorgäng
 In der `TimePickerDialog`, eine Uhrzeit auswählen und auf die **OK** Schaltfläche bewirkt, dass die `TimePickerDialog` zum Aufrufen der Methode [IOnTimeSetListener.OnTimeSet](https://developer.xamarin.com/api/member/Android.App.TimePickerDialog+IOnTimeSetListener.OnTimeSet/p/Android.Widget.TimePicker/System.Int32/System.Int32/System.Int32/).
 Diese Schnittstelle wird implementiert, indem Sie das Hosten `DialogFragment` (`TimePickerFragment`im folgenden beschriebenen). Klicken auf die **Abbrechen** -Schaltfläche bewirkt, dass die Fragment und das Dialogfeld geschlossen werden.
 
-`DialogFragment` Gibt den ausgewählten Zeitraum an das hosting Actvity in einer von drei Methoden zurück:
+`DialogFragment` Gibt den ausgewählten Zeitraum an die hosting-Aktivität in einer von drei Methoden zurück:
 
 1. **Aufrufen einer Methode oder Festlegen einer Eigenschaft** &ndash; bieten die Aktivität, einer Eigenschaft oder Methode speziell für das Festlegen dieses Werts.
 

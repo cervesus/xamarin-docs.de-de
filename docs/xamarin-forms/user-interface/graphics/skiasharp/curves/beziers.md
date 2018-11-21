@@ -1,5 +1,5 @@
 ---
-title: Drei Arten von Bézierkurven
+title: Drei Typen von Bézier-Kurven
 description: In diesem Artikel wird erläutert, wie SkiaSharp, die zum Rendern von kubische, quadratischen und konischen Bézierkurven in Xamarin.Forms-Anwendungen verwenden, und dies mit Beispielcode veranschaulicht.
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
@@ -7,14 +7,14 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 1da0ee6155548a38057e4c7bf49ae5b90d445d79
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 60024be0c39bd215a828acfd8a4ac6294eeac9d8
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615339"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172352"
 ---
-# <a name="three-types-of-bzier-curves"></a>Drei Arten von Bézierkurven
+# <a name="three-types-of-bzier-curves"></a>Drei Typen von Bézier-Kurven
 
 _Erfahren Sie, wie SkiaSharp, die zum Rendern von kubische, quadratischen und konischen Bézierkurven verwenden_
 
@@ -89,7 +89,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Hier wird die Anwendung auf allen drei Plattformen ausgeführt:
+Hier wird ausgeführt:
 
 [![](beziers-images/beziercurve-small.png "Dreifacher Screenshot der Seite Bezier-Kurve")](beziers-images/beziercurve-large.png#lightbox "dreifachen Screenshot der Seite Bezier-Kurve")
 
@@ -207,7 +207,7 @@ float Magnitude(SKPoint v)
 
 Die Start- und Endpunkt (`point0` und `point3`) werden basierend auf den normalen parametrischen Formeln für den Kreis berechnet. Da auf der Kreis zentriert ist (0, 0), diese Punkte können auch als behandelt werden radiale Vektoren aus der Mitte des Kreises auf den Umfang. Die Control-Punkte sind in den Zeilen, die Tangente auf den Kreis, sodass sie auf diese radialen Vektoren rechtwinklig sind. Im rechten Winkel in eine andere besteht einfach dem ursprünglichen Vektor mit den X- und Y-Koordinaten, die ausgetauscht und das andere von ihnen vorgenommenen negativ.
 
-So sieht das Programm ausgeführt wird, auf die drei Plattformen mit drei verschiedenen Blickwinkeln aus:
+So sieht das Programm ausgeführt wird, mit verschiedenen Blickwinkeln aus:
 
 [![](beziers-images/beziercirculararc-small.png "Dreifacher Screenshot der Seite Bezier-Kreisbogen")](beziers-images/beziercirculararc-large.png#lightbox "dreifachen Screenshot der Kreisbogen Bezier-Seite")
 
@@ -289,7 +289,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Die Punkte werden basierend auf den Sinusförmig oszillierenden Wert interpoliert `t`. Die interpolierte Punkte werden dann verwendet, um eine Reihe von vier verbundenen Bézierkurven zu erstellen. Hier ist die Animation, die auf den Status von einem Kreis, um ein Quadrat mit drei Plattformen ausgeführt werden:
+Die Punkte werden basierend auf den Sinusförmig oszillierenden Wert interpoliert `t`. Die interpolierte Punkte werden dann verwendet, um eine Reihe von vier verbundenen Bézierkurven zu erstellen. Hier ist die Animation ausgeführt wird:
 
 [![](beziers-images/squaringthecircle-small.png "Dreifacher Screenshot, der die Squaring der Seite \"Kreis\"")](beziers-images/squaringthecircle-large.png#lightbox "dreifachen Screenshot, der die Squaring der Seite \"Kreis\"")
 
@@ -338,7 +338,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Es kann sein, dass eine gute Übung zum Zeichnen diese Koordinaten auf Graph Papier, um anzuzeigen, wie diese miteinander verknüpft sind. Die Vorzeichen unendlich ist zentriert, um den Punkt (0, 0) und die zwei Schleifen haben, wird von (–150, 0) und (150, 0) und die Radien der 100. In den `CubicTo` Befehle sehen Sie X-Koordinaten des Steuerelements auf den Werten der –95 und –205 dauert (diese Werte sind –150 Plus- und Minuszeichen 55), 205 und 95 (150 Plus- und Minuszeichen 55) als auch 250 und –250 für die Rechte und linke Seite. Die einzige Ausnahme ist, wenn die Infinity-Zeichen in der Mitte überschreitet. In diesem Fall haben Steuerungspunkte Koordinaten mit einer Kombination von 50 und –50 Biegen Sie sich die Kurve in der Mitte.
 
-Hier ist der Infinity-Anmeldung auf allen drei Plattformen ein:
+Hier ist der Infinity-Zeichen:
 
 [![](beziers-images/bezierinfinity-small.png "Dreifacher Screenshot der Seite Bézier unendlich")](beziers-images/bezierinfinity-large.png#lightbox "dreifachen Screenshot der Seite Bézier unendlich")
 
@@ -401,7 +401,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Und hier ist er auf allen drei Plattformen ausgeführt werden:
+Und hier er ausgeführt wird:
 
 [![](beziers-images/quadraticcurve-small.png "Dreifacher Screenshot der Seite quadratischen Kurve")](beziers-images/quadraticcurve-large.png#lightbox "dreifachen Screenshot der Seite quadratischen Kurve")
 
@@ -479,7 +479,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Hier wird die Anwendung auf allen drei Plattformen ausgeführt:
+Hier wird ausgeführt:
 
 [![](beziers-images/coniccurve-small.png "Dreifacher Screenshot der Seite konischen Kurve")](beziers-images/coniccurve-large.png#lightbox "dreifachen Screenshot der Seite konischen Kurve")
 

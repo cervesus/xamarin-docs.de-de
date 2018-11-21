@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/01/2018
-ms.openlocfilehash: ecb0adb09c7d6b8bca2f1ee228b8cbdaad1d0314
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 2ab7381baefc6ca013b6c8a5c9f7bf7b5cae8b10
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563952"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171715"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Verwenden von XAML-Markuperweiterungen
 
@@ -137,7 +137,7 @@ Im letzte Beispiel zeigt die `Device.RuntimePlatform` Wert. Die `Environment.New
 </Label>
 ```
 
-So sieht das Beispiel ausgeführt wird, auf allen drei Plattformen aus:
+So sieht das Beispiel ausgeführt:
 
 [![X: Static-Demo](consuming-images/staticdemo-small.png "X: Static-Demo")](consuming-images/staticdemo-large.png#lightbox "X: Static-Demo")
 
@@ -181,7 +181,7 @@ Die **X: Reference-Demo** Seite zeigt zwei Verwendungen von `x:Reference` mit da
 </ContentPage>
 ```
 
-Beide `x:Reference` Ausdrücke verwenden, die gekürzte Version des der `ReferenceExtension` Klassennamen, und Entfernen der `Name=` Teil des Ausdrucks. Im ersten Beispiel das `x:Reference` Markuperweiterung eingebettet ist, der `Binding` Markuperweiterung. Beachten Sie, dass die `Source` und `StringFormat` Einstellungen werden durch Kommas getrennt. Hier wird das Programm auf allen drei Plattformen ausgeführt wird:
+Beide `x:Reference` Ausdrücke verwenden, die gekürzte Version des der `ReferenceExtension` Klassennamen, und Entfernen der `Name=` Teil des Ausdrucks. Im ersten Beispiel das `x:Reference` Markuperweiterung eingebettet ist, der `Binding` Markuperweiterung. Beachten Sie, dass die `Source` und `StringFormat` Einstellungen werden durch Kommas getrennt. Hier wird das Programm ausgeführt wird:
 
 [![X: Reference-Demo](consuming-images/referencedemo-small.png "X: Reference-Demo")](consuming-images/referencedemo-large.png#lightbox "X: Reference-Demo")
 
@@ -449,7 +449,7 @@ Die **X: Null-Demo** Seite veranschaulicht ein Szenario bei `x:Null` kann zweckm
 
 Und Sie, die für eine der ermittelt der `Label` Elemente sollen alle Einstellungen der Eigenschaften in den impliziten `Style` mit Ausnahme von der `FontFamily`, die als Standardwert verwendet werden sollen. Sie definieren eine andere `Style` für diesen Zweck jedoch ein einfacherer Ansatz besteht darin, legen Sie die `FontFamily` Eigenschaft des entsprechenden `Label` zu `x:Null`, wie in der Mitte `Label`.
 
-So sieht das Programm ausgeführt wird, auf die drei Plattformen aus:
+Hier wird das Programm ausgeführt wird:
 
 [![X: Null-Demo](consuming-images/nulldemo-small.png "X: Null-Demo")](consuming-images/nulldemo-large.png#lightbox "X: Null-Demo")
 
@@ -493,7 +493,7 @@ Die **OnPlatform-Demo** Seite zeigt, wie die `OnPlatform` Markuperweiterung:
 
 In diesem Beispiel alle drei `OnPlatform` Ausdrücke verwenden, die Kurzform der `OnPlatformExtension` Klassenname. Die drei `OnPlatform` Markup Extensions Satz der [ `Color` ](xref:Xamarin.Forms.BoxView.Color), [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest), und [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) Eigenschaften der [ `BoxView` ](xref:Xamarin.Forms.BoxView) auf iOS-, Android- und UWP unterschiedliche Werte. Markuperweiterungen geben auch Standardwerte für diese Eigenschaften auf den Plattformen, die angegeben sind, sodass die `Default=` Teil des Ausdrucks. Beachten Sie, dass die Markup-Erweiterungseigenschaften, die festgelegt werden, die durch Kommas getrennt werden.
 
-Hier wird das Programm auf allen drei Plattformen ausgeführt wird:
+Hier wird das Programm ausgeführt wird:
 
 [![OnPlatform-Demo](consuming-images/onplatformdemo-small.png "OnPlatform-Demo")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform-Demo")
 
@@ -531,7 +531,7 @@ Die **OnIdiom Demo** Seite zeigt, wie die `OnIdiom` Markuperweiterung:
 
 In diesem Beispiel alle drei `OnIdiom` Ausdrücke verwenden, die Kurzform der `OnIdiomExtension` Klassenname. Die drei `OnIdiom` Markup Extensions Satz der [ `Color` ](xref:Xamarin.Forms.BoxView.Color), [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest), und [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) Eigenschaften der [ `BoxView` ](xref:Xamarin.Forms.BoxView) auf unterschiedliche Werte auf das Telefon, Tablet und desktop-Ausdrücke. Markuperweiterungen geben auch Standardwerte für diese Eigenschaften für die Ausdrücke, die angegeben sind, sodass die `Default=` Teil des Ausdrucks. Beachten Sie, dass die Markup-Erweiterungseigenschaften, die festgelegt werden, die durch Kommas getrennt werden.
 
-Hier wird das Programm auf allen drei Plattformen ausgeführt wird:
+Hier wird das Programm ausgeführt wird:
 
 [![OnIdiom Demo](consuming-images/onidiomdemo-small.png "OnIdiom Demo")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom-Demo")
 

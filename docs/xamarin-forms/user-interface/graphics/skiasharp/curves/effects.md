@@ -7,12 +7,12 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: bd865471e3efe42c44a8996a8e364b1c478b69e7
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 8354539288613353dcb7a792ace335daa5dc8f27
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615677"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171143"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp-Effekten Pfad
 
@@ -35,7 +35,7 @@ Darüber hinaus können Sie zwei oder mehr pfadeffekte kombinieren.
 
 In diesem Artikel auch veranschaulicht, wie die [ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath*) -Methode der `SKPaint` auf einen Pfad in einen anderen Pfad zu konvertieren, indem Sie die Anwendung von Eigenschaften des `SKPaint`, einschließlich `StrokeWidth` und `PathEffect`. Dies führt dazu, dass einige interessante Techniken, wie das Abrufen von einem Pfad, der einen Überblick über einen anderen Pfad ist. `GetFillPath` ist auch im Zusammenhang mit pfadeffekte hilfreich.
 
-## <a name="dots-and-dashes"></a>Punkte und Bindestriche enthalten
+## <a name="dots-and-dashes"></a>Punkte und Striche
 
 Die Verwendung der [ `PathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single)) Methode wurde in diesem Artikel beschriebenen [ **Punkte und Gedankenstriche**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md). Das erste Argument der Methode ist ein Array, das eine gerade Anzahl von zwei oder mehr Werte, die abwechselnd Längen der Striche und Längen der Lücken zwischen der Bindestriche enthält:
 
@@ -923,7 +923,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Verwenden Sie diesen Effekt mit Kontur zuweisen oder füllen, die basierend auf der `Style` Eigenschaft der `SKPaint` Objekt. Hier ist es auf allen drei Plattformen:
+Verwenden Sie diesen Effekt mit Kontur zuweisen oder füllen, die basierend auf der `Style` Eigenschaft der `SKPaint` Objekt. Hier wird ausgeführt:
 
 [![](effects-images/anotherroundedheptagon-small.png "Dreifacher Screenshot der Seite eine andere gerundet Siebeneck")](effects-images/anotherroundedheptagon-large.png#lightbox "dreifachen Screenshot der Seite eine andere gerundet Siebeneck")
 
@@ -1068,7 +1068,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Hier wird es im Querformat auf allen drei Plattformen ausgeführt:
+Hier wird es im Querformatmodus ausgeführt:
 
 [![](effects-images/jittertext-small.png "Screenshot der Seite Text Jitter dreifach")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
 

@@ -7,16 +7,16 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 1e42fdfdf7f90a4efb639ce8ca94f45a49f59c35
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: eaee5d7921b99ea5e14cca9f03e33699a74b06f3
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563978"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172248"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Zusammenfassung der Kapitel 28. Position und Karten
 
-> [!NOTE] 
+> [!NOTE]
 > Anmerkungen zu dieser Version auf dieser Seite Geben Sie Bereiche, in denen Xamarin.Forms aus den Informationen im Buch abweichend hat, an.
 
 Xamarin.Forms unterstützt eine [ `Map` ](xref:Xamarin.Forms.Maps.Map) -Element, das von abgeleitet ist `View`. Aufgrund der speziellen Anforderungen an die Plattform beteiligt, die anhand von Karten, werden sie in einer separaten Assembly, implementiert **Xamarin.Forms.Maps**, und einen anderen Namespace umfassen: `Xamarin.Forms.Maps`.
@@ -194,7 +194,7 @@ Die [LongitudeZoomPage.xaml](https://github.com/xamarin/xamarin-forms-book-sampl
 
 ### <a name="the-phones-location"></a>Die des Standorts des Telefons
 
-Die [ `IsShowingUser` ](xref:Xamarin.Forms.Maps.Map.IsShowingUser) Eigenschaft `Map` funktioniert etwas anders als auf drei Plattformen wie die [ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml) Datei veranschaulicht:
+Die [ `IsShowingUser` ](xref:Xamarin.Forms.Maps.Map.IsShowingUser) Eigenschaft `Map` funktioniert etwas anders als auf jeder Plattform als der [ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml) Datei veranschaulicht:
 
 - Unter iOS ein blauer Punkt gibt an, die des Standorts des Telefons, aber Sie müssen manuell es navigieren
 - Unter Android, ein Symbol angezeigt wird, die bei mithilfe von Push übertragen wechselt die Karte, um die des Standorts des Telefons

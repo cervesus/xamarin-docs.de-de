@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: f79ee7af9106eea8a4792c0e4bb10c5ad5a367a9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 53179170afa1381a562699a39baaa716ecc6a5a6
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111076"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171195"
 ---
 # <a name="images-in-xamarinforms"></a>Bilder in Xamarin.Forms
 
@@ -40,7 +40,7 @@ Die [ `Aspect` ](xref:Xamarin.Forms.Image.Aspect) Eigenschaft bestimmt, wie das 
 
 - [`Fill`](xref:Xamarin.Forms.Aspect.Fill) -Gestreckt wird, das Bild, um vollständig und genau den Anzeigebereich ausfüllen. Dies kann in das Bild verzerrt wird führen.
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -Schneidet das Bild ab, so dass es sich um den Anzeigebereich ausfüllt, und gleichzeitig den Aspekt (d. h. ohne Verzerrung).
-- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -Letterbox das Bild (falls erforderlich), damit das gesamte Bild in den Anzeigebereich passt, mit Leerzeichen hinzugefügt, die erste/letzte oder die Seiten abhängig davon, ob das Bild ist breit oder hoch.
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -Letterbox das Bild (falls erforderlich), damit das gesamte Bild in den Anzeigebereich passt, mit Leerzeichen hinzugefügt, die oben/unten oder den Seiten, je nachdem, ob das Bild ist breit oder hoch.
 
 Bilder können aus geladen werden, eine [lokale Datei](#Local_Images), [eingebettete Ressource](#embedded-images), oder [heruntergeladen](#Downloading_Images).
 

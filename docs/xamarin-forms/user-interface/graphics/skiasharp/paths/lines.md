@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 6dc7737290bf7eacb3ba0e0bca0ddcfcd4aacba3
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 6e0377b71badfae0d0e6a1a6ffdaf1d67a7f3ad9
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39615261"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171416"
 ---
 # <a name="lines-and-stroke-caps"></a>Linien und Strichenden
 
@@ -224,7 +224,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Der Screenshot zeigt eine Vielzahl von `Picker` Auswahl auf die drei Plattformen:
+Die Screenshots zeigen eine Vielzahl von `Picker` Auswahl:
 
 [![](lines-images/multiplelines-small.png "Dreifacher Screenshot der Seite mehrere Zeilen")](lines-images/multiplelines-large.png#lightbox "dreifachen Screenshot der Seite mehrere Zeilen")
 

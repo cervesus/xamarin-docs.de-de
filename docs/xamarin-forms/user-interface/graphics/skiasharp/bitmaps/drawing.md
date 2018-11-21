@@ -7,12 +7,12 @@ ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: a4fbf2bc38726ad50a07744ed4c2512efbb615bc
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 02ee84560b29fa95d0a16259d5bbbd6bc0144063
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527247"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171208"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>Erstellen und Zeichnen auf SkiaSharp-bitmaps
 
@@ -169,7 +169,7 @@ Formate, in dem jedes Pixel x 32 Pixel besitzen (4 Bytes) ist, werden oft als _f
 
 Heutzutage Programmierer fast immer Farbe Bitmaps verwenden und benötigen Sie keine anderen Formaten. Die Ausnahme ist die `RgbaF16` -Format, das größer farbauflösung als auch die Farbe Formate ermöglicht. Allerdings wird dieses Format wird für spezielle Zwecke, z. B. medizinische Bilddaten verwendet und nicht viel Sinn bei Verwendung mit standard farbig angezeigt.
 
-Diese Artikelreihe verhindert, dass sich selbst, um die `SKBitmap` Farbe, die nicht standardmäßig verwendeten Formate `SKColorType` Member angegeben wird. Diese Standard-Format basiert auf der zugrunde liegenden Plattform. Für die Plattformen, die von Xamarin.Forms unterstützt wird ist der Standardtyp für die Farbe:
+Diese Artikelreihe verhindert, dass sich selbst, um die `SKBitmap` Farbe, die nicht standardmäßig verwendeten Formate `SKColorType` Element angegeben ist. Diese Standard-Format basiert auf der zugrunde liegenden Plattform. Für die Plattformen, die von Xamarin.Forms unterstützt wird ist der Standardtyp für die Farbe:
 
 - `Rgba8888` für iOS und Android
 - `Bgra8888` für die UWP

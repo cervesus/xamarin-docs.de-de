@@ -7,12 +7,12 @@ ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 876594440c28fb0f30e0438f2ef02ae7fe89040c
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: cd91f145d41d5e3bbb2f8061e04d87fdc495f1aa
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526506"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171052"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>Speichern von SkiaSharp-Bitmaps in Dateien
 
@@ -44,7 +44,7 @@ Die [ `SKBitmap` ](xref:SkiaSharp.SKBitmap) -Klasse enthält mehrere Methoden, d
 
 Darüber hinaus die [ `SKCodec` ](xref:SkiaSharp.SKCodec) -Klasse verfügt über zwei Methoden namens `Create` erstellen kann ein `SKCodec` -Objekt aus einer komprimierten Quelldateien und damit eine Anwendung in die Decodierung komplizierter zu erhalten. (Die `SKCodec` ist in diesem Artikel dargestellt [ **Animieren von SkiaSharp-Bitmaps** ](animating.md#gif-animation) im Zusammenhang mit der Decodierung einer animierten GIF-Datei.)
 
-Weitere Informationen sind erforderlich, wenn Sie eine Bitmap zu codieren,: der Encoder muss wissen, das bestimmte Dateiformat der Anwendung (JPEG oder PNG oder etwas anderes) verwenden sollen. Wenn ein verlustreiches Format gewünscht ist, muss die Codierung auch das gewünschte Maß an Qualität kennen. 
+Weitere Informationen sind erforderlich, wenn Sie eine Bitmap zu codieren,: der Encoder muss wissen, das bestimmte Dateiformat der Anwendung (JPEG oder PNG oder etwas anderes) verwenden sollen. Wenn ein verlustreiches Format gewünscht ist, muss die Codierung auch das gewünschte Maß an Qualität kennen.
 
 Die `SKBitmap` Klasse definiert eine [ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32)) Methode mit der folgenden Syntax:
 
@@ -60,7 +60,7 @@ Eines der [ `Encode` ](xref:SkiaSharp.SKImage.Encode) definierten Methoden `SKIm
 
 ## <a name="platform-specific-code-for-saving-bitmap-files"></a>Plattformspezifischen Code zum Speichern von Bitmap-Dateien
 
-Wenn Sie Codieren einer `SKBitmap` -Objekt in eine bestimmte Datei zu formatieren, in der Regel werden Sie mit irgend einem Stream-Objekt oder ein Array von Daten ausgelassen werden. Einige der `Encode` Methoden (einschließlich der App, die keine Parameter definiert, indem `SKImage`) zurückgeben eine [ `SKData` ](xref:SkiaSharp.SKData) -Objekt, das in ein Array von Bytes, die mit konvertiert werden kann die [ `ToArray` ](xref:SkiaSharp.SKData.ToArray) Methode. Diese Daten müssen dann in einer Datei gespeichert werden. 
+Wenn Sie Codieren einer `SKBitmap` -Objekt in eine bestimmte Datei zu formatieren, in der Regel werden Sie mit irgend einem Stream-Objekt oder ein Array von Daten ausgelassen werden. Einige der `Encode` Methoden (einschließlich der App, die keine Parameter definiert, indem `SKImage`) zurückgeben eine [ `SKData` ](xref:SkiaSharp.SKData) -Objekt, das in ein Array von Bytes, die mit konvertiert werden kann die [ `ToArray` ](xref:SkiaSharp.SKData.ToArray) Methode. Diese Daten müssen dann in einer Datei gespeichert werden.
 
 Speichern in einer Datei im lokalen Anwendungsspeicher ist recht einfach, da es sich bei Verwendung von Standard `System.IO` Klassen und Methoden für diese Aufgabe. Dieses Verfahren wird veranschaulicht, in diesem Artikel [ **Animieren von SkiaSharp-Bitmaps** ](animating.md#bitmap-animation) in Verbindung mit einer Reihe von Bitmaps aus der Mandelbrot-Menge animieren.
 
@@ -81,7 +81,7 @@ Diese Schnittstelle definiert auch die `PickPhotoAsync` -Methode, die zum Öffne
 
 Für `SavePhotoAsync`, das erste Argument ist ein Array von Bytes, die enthält das Bitmuster, die bereits in einem bestimmten Dateiformat, z. B. JPEG oder PNG-Datei codiert. Es ist möglich, dass eine Anwendung sollen alle Bitmaps zu isolieren, die sie in einem bestimmten Ordner erstellt, der in der nächste Parameter, gefolgt vom Namen Datei angegeben ist. Die Methode gibt einen booleschen Wert, der angibt, Erfolg, oder nicht.
 
-So sieht wie `SavePhotoAsync` wird auf drei Plattformen implementiert:
+Den folgenden Abschnitten wird erläutert, wie `SavePhotoAsync` auf jeder Plattform implementiert wird.
 
 ### <a name="the-ios-implementation"></a>Die iOS-Implementierung
 
@@ -107,7 +107,7 @@ public class PhotoLibrary : IPhotoLibrary
 }
 ```
 
-Leider besteht keine Möglichkeit, einen Dateinamen oder einen Ordner für das Image angeben. 
+Leider besteht keine Möglichkeit, einen Dateinamen oder einen Ordner für das Image angeben.
 
 Die **"Info.plist"** -Datei in das iOS-Projekt erfordert einen Schlüssel, der angibt, dass der Fotobibliothek Bilder hinzugefügt:
 
@@ -276,7 +276,7 @@ using (SKManagedWStream wstream = new SKManagedWStream(memStream))
 }
 ```
 
-Die `SKManagedWStream` Klasse leitet sich von `SKWStream` (das steht für "ein schreibbarer Stream"). Die `Encode` Methode schreibt die codierten Bitmaps-Datei in den Stream. Die Kommentare im Code finden Sie eine fehlerprüfung auf, dass Sie möglicherweise durchführen müssen. 
+Die `SKManagedWStream` Klasse leitet sich von `SKWStream` (das steht für "ein schreibbarer Stream"). Die `Encode` Methode schreibt die codierten Bitmaps-Datei in den Stream. Die Kommentare im Code finden Sie eine fehlerprüfung auf, dass Sie möglicherweise durchführen müssen.
 
 Die **-Dateiformate speichern** auf der Seite die [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Anwendung ähnlichen Code verwendet, um Ihnen das Experimentieren mit eine Bitmap in verschiedenen Formaten speichern zu ermöglichen.
 
@@ -341,7 +341,7 @@ Die XAML-Datei enthält eine `SKCanvasView` , die eine Bitmap anzeigt, während 
                    HorizontalOptions="FillAndExpand" />
         </StackLayout>
 
-        <Button Text="Save" 
+        <Button Text="Save"
                 Clicked="OnButtonClicked">
             <Button.Triggers>
                 <DataTrigger TargetType="Button"
@@ -435,9 +435,9 @@ public partial class SaveFileFormatsPage : ContentPage
 
 Die `Clicked` Handler für die `Button` alle die tatsächlichen funktioniert. Er erhält zwei Argumente auf `Encode` aus der `Picker` und `Slider`, und verwendet dann den bereits gezeigten Codeabschnitt zum Erstellen einer `SKManagedWStream` für die `Encode` Methode. Die beiden `Entry` Ansichten Dokumentationselement Ordner und Dateinamen für die `SavePhotoAsync` Methode.
 
-Die meisten dieser Methode geht es um die Behandlung von Problemen oder Fehlern. Wenn `Encode` erstellt ein leeres Array, dies bedeutet, dass das bestimmten Dateiformat nicht unterstützt wird. Wenn `SavePhotoAsync` gibt `false`, und klicken Sie dann die Datei erfolgreich gespeichert wurde nicht. 
+Die meisten dieser Methode geht es um die Behandlung von Problemen oder Fehlern. Wenn `Encode` erstellt ein leeres Array, dies bedeutet, dass das bestimmten Dateiformat nicht unterstützt wird. Wenn `SavePhotoAsync` gibt `false`, und klicken Sie dann die Datei erfolgreich gespeichert wurde nicht.
 
-So sieht das Programm ausgeführt wird, auf die drei Plattformen aus:
+Hier wird das Programm ausgeführt wird:
 
 [![Speichern von Dateiformaten](saving-images/SaveFileFormats.png "-Dateiformate speichern")](saving-images/SaveFileFormats-Large.png#lightbox)
 
@@ -688,7 +688,7 @@ public partial class FingerPaintSavePage : ContentPage
 }
 ```
 
-Die **speichern** Schaltflächenhandler verwendet die vereinfachte [ `Encode` ](xref:SkiaSharp.SKImage.Encode) aus `SKImage`. Diese Methode codiert das PNG-Format verwenden. Die `SKImage` Objekt wird basierend auf erstellt `saveBitmap`, und die `SKData` Objekt enthält die codierte PNG-Datei. 
+Die **speichern** Schaltflächenhandler verwendet die vereinfachte [ `Encode` ](xref:SkiaSharp.SKImage.Encode) aus `SKImage`. Diese Methode codiert das PNG-Format verwenden. Die `SKImage` Objekt wird basierend auf erstellt `saveBitmap`, und die `SKData` Objekt enthält die codierte PNG-Datei.
 
 Die `ToArray` -Methode der `SKData` Ruft ein Array von Bytes. Dies ist das übergeben wird die `SavePhotoAsync` -Methode, zusammen mit einer festen Ordnernamen und einen eindeutigen Dateinamen aus dem aktuellen Datum und Uhrzeit erstellt.
 

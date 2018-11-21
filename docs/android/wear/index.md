@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2018
-ms.openlocfilehash: bd8973b59853a4898336ba153de4835bad46e232
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 75b78f27fd6b3a726de9075ce36364168401ec60
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113052"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171471"
 ---
 # <a name="android-wear"></a>Android Wear
 
@@ -51,7 +51,7 @@ Sie finden eine Anzahl von [Beispiele](https://developer.xamarin.com/samples/and
 |Beispiel|Beschreibung|Bildschirmabbildung|
 |--- |--- |--- |
 |[SkeletonWear](https://developer.xamarin.com/samples/SkeletonWear/)|Ein einfaches Beispiel über die Grundlagen der tragbare Projekte einschließlich GridViewPager und interaktive Benachrichtigungen.|![Screenshot der Skeletonwear](images/skeleton.png)|
-|[WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/)|Um eine einfache Demo des WatchViewStub-Steuerelements, die Form "Bildschirm" erkennt und lädt automatisch das richtige Layout.  Funktionsweise WatchViewStub in die **Resources/layout/main_actvity.xml** Layout.|![Screenshot der WatchViewStub](images/watchview.png)|
+|[WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/)|Um eine einfache Demo des WatchViewStub-Steuerelements, die Form "Bildschirm" erkennt und lädt automatisch das richtige Layout.  Funktionsweise WatchViewStub in die **Resources/layout/main_activity.xml** Layout.|![Screenshot der WatchViewStub](images/watchview.png)|
 |[RecipeAssistant](https://developer.xamarin.com/samples/RecipeAssistant/)|Demonstration von Wear-Notification-Seiten, in Form von Rezept Schritte. Benachrichtigungen werden in RecipeService.cs erstellt.|![Screenshot der RecipeAssistant](images/recipeassist.png)|
 |[ElizaChat](https://developer.xamarin.com/samples/ElizaChat/)|Spaß Beispiel für die Interaktion mit einem "persönlichen Assistenten" wird aufgerufen, Eliza, erstellen eine Konversation mit der erstellten Antworten mithilfe Wear interaktive Benachrichtigungen.|![Screenshot der ElizaChat](images/eliza.png)|
 |[GridViewPager](https://developer.xamarin.com/samples/GridViewPager/)|GridViewPager implementiert das Direct2D-navigationsmuster, in denen der Benutzer mit einer vertikal wischbewegung und horizontal Navigieren durch Optionen und Inhalt.|![Screenshot der GridViewPager](images/gridviewpager.png)|

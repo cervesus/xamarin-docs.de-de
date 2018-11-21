@@ -6,13 +6,13 @@ ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/17/2018
-ms.openlocfilehash: 62e170558fc908b0ec13669b60eb08495c183b09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 11/14/2018
+ms.openlocfilehash: 452596d3eda9daae4b985490929c1e920a9d936e
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104948"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52170909"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms-Schnittstelle Benutzeransichten
 
@@ -54,6 +54,10 @@ Wie Sie Grafiken in einer Xamarin.Forms-Anwendung mithilfe von SkiaSharp zu inte
 
 Bilder können auf Plattformen mit Xamarin.Forms freigegeben werden, sie können speziell für jede Plattform geladen werden, oder für die Anzeige heruntergeladen werden.
 
+## <a name="imagebutonimagebuttonmd"></a>[ImageButon](imagebutton.md)
+
+Die `ImageButton` ein Bild anzeigt und reagiert auf ein tippen oder klicken Sie auf, die eine Anwendung, um eine bestimmte Aufgabe durchzuführen weiterleitet.
+
 ## <a name="layoutslayoutsindexmd"></a>[Layouts](layouts/index.md)
 
 Xamarin.Forms verfügt über mehrere Layouts für die Organisation von auf dem Bildschirm Inhalt. `StackLayout`, `Grid`, `FlexLayout`, `AbsoluteLayout`, `ScrollView`, und `RelativeLayout` kann jeweils verwendet werden, um ansprechende, reaktionsfähige Benutzeroberflächen zu erstellen.
@@ -74,7 +78,7 @@ Die [ `Picker` ](xref:Xamarin.Forms.Picker) Ansicht ist ein Steuerelement für e
 
 Die `Slider` ermöglicht es einem Benutzer, die einen numerischen Wert aus einen durchgehenden Bereich auswählen.
 
-## <a name="steppersteppermd"></a>[Zugeordnetem](stepper.md)
+## <a name="steppersteppermd"></a>[Stepper](stepper.md)
 
 Die `Stepper` ermöglicht es einem Benutzer einen numerischen Wert aus einem Bereich von Werten auswählen. Es besteht aus zwei Schaltflächen, die mit der Bezeichnung Minuszeichen und Pluszeichen. Bearbeiten die beiden Schaltflächen ändert den ausgewählten Wert inkrementell.
 

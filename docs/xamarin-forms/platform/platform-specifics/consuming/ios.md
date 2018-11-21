@@ -6,13 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/01/2018
-ms.openlocfilehash: afecf5c173e919bd20015aadd8a874f492dc4e34
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.date: 10/24/2018
+ms.openlocfilehash: 12fd9e477e24058d36128e52b7b5dd9074598be8
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527078"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171793"
 ---
 # <a name="ios-platform-specifics"></a>iOS Plattformeigenschaften
 
@@ -783,7 +783,34 @@ Das Ergebnis ist, eine [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) können d
 
 Unter iOS, wird die folgende plattformspezifische Funktionalität bereitgestellt, für die Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application) Klasse:
 
+- Aktivieren der Steuerung des Layouts und Rendern von Updates auf dem Hauptthread ausgeführt werden. Weitere Informationen finden Sie unter [behandeln Steuern von Updates auf den Hauptthread](#update-on-main-thread).
 - Aktivieren einer [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) in einer fortlaufenden zu erfassen und freigeben die Bewegung Schwenken mit der Bildlauf angezeigt. Weitere Informationen finden Sie unter [Schwenken gleichzeitige Gestenerkennung aktivieren](#simultaneous-pan-gesture).
+
+<a name="update-on-main-thread" />
+
+### <a name="handling-control-updates-on-the-main-thread"></a>Steuern von Updates auf dem Hauptthread Behandlung
+
+Diese plattformspezifischen ermöglicht die Steuerung des Layouts und Rendern von Updates auf dem Hauptthread statt in einem Hintergrundthread ausgeführt wird, ausgeführt werden. Es sollten nur selten erforderlich sein, aber in einigen Fällen kann verhindern, dass abstürzen. Die verwendeten in XAML durch Festlegen der `Application.HandleControlUpdatesOnMainThread` bindbare Eigenschaft `true`:
+
+```xaml
+<Application ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Application.HandleControlUpdatesOnMainThread="true">
+    ...
+</Application>
+```
+
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+Xamarin.Forms.Application.Current.On<iOS>().SetHandleControlUpdatesOnMainThread(true);
+```
+
+Die `Application.On<iOS>` Methode gibt an, dass diese plattformspezifischen nur unter iOS ausgeführt wird. Die `Application.SetHandleControlUpdatesOnMainThread` Methode in der [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace wird verwendet um zu steuern, ob das Steuerelementlayout und Rendern von Updates ausgeführt werden, auf dem Hauptthread statt in einem Hintergrundthread ausgeführt wird. Darüber hinaus die `Application.GetHandleControlUpdatesOnMainThread` Methode kann verwendet werden, um zurück, ob das Steuerelementlayout und Rendern von Updates für den Hauptthread ausgeführt werden.
 
 <a name="simultaneous-pan-gesture" />
 

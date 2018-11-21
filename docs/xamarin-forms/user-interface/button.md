@@ -6,13 +6,13 @@ ms.assetid: 62CAEB63-0800-44F4-9B8C-EE632138C2F5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/26/2018
-ms.openlocfilehash: cdff3e721aa91733e995e95ead533a3ad7b41a77
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.date: 11/19/2018
+ms.openlocfilehash: fbdb611df558c547a2470a8c8a9d7848ef7aa31f
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563926"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171390"
 ---
 # <a name="xamarinforms-button"></a>Schaltfläche "Xamarin.Forms"
 
@@ -422,7 +422,7 @@ Die `Button` erbt oder definiert mehrere Eigenschaften, die die Darstellung ausw
 - [`FontSize`](xref:Xamarin.Forms.Button.FontSize) ist die Größe des Texts
 - [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes) Gibt an, ob der Text kursiv und fett ist.
 - [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) ist die Breite des Rahmens
-- [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) Runden der Ecken
+- [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) ist der Eckradius eines der `Button`
 
 > [!NOTE]
 > Die `Button` -Klasse verfügt auch über [ `Margin` ](xref:Xamarin.Forms.View.Margin) und [ `Padding` ](xref:Xamarin.Forms.Button.Padding) Eigenschaften zum Steuern der Layoutverhalten der `Button`. Weitere Informationen finden Sie unter [Ränder und Abstände](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
@@ -543,6 +543,40 @@ Um finden Sie unter der `Button` Rahmen, Sie müssen eine `BorderColor` auf eine
 Unter iOS, sehen Sie, dass große Rahmenbreiten in das Innere des Eindringen der `Button` und die Anzeige von Text in Konflikt geraten. Wenn Sie einen Rahmen mit einem iOS-verwenden `Button`, Sie sollten beginnen und enden die `Text` Eigenschaft Leerzeichen beibehalten die Sichtbarkeit.
 
 Auf UWP Auswählen einer `CornerRadius` , die Hälfte die Höhe des überschreitet die `Button` löst eine Ausnahme aus.
+
+## <a name="button-visual-states"></a>Visuelle Zustände der Schaltfläche
+
+[`Button`](xref:Xamarin.Forms.Button) verfügt über eine `Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState) , die verwendet werden kann, initiieren Sie eine visuelle Änderung an der `Button` beim Klicken auf vom Benutzer aufgerufen werden, vorausgesetzt, dass es aktiviert ist.
+
+Im folgende XAML-Beispiel zeigt, wie definieren Sie einen visuellen Zustand für die `Pressed` Zustand:
+
+```xaml
+<Button Text="Click me!"
+        ...>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+            <VisualState x:Name="Normal">
+                <VisualState.Setters>
+                    <Setter Property="Scale"
+                            Value="1" />
+                </VisualState.Setters>
+            </VisualState>
+
+            <VisualState x:Name="Pressed">
+                <VisualState.Setters>
+                    <Setter Property="Scale"
+                            Value="0.8" />
+                </VisualState.Setters>
+            </VisualState>
+
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+</ImageButton>
+```
+
+Die `Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState) gibt an, dass die [ `Button` ](xref:Xamarin.Forms.Button) befindet, gedrückt wird seine [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) eigenschaftsänderungen werden von der Der Standardwert von 1 auf 0,8. Die `Normal` `VisualState` gibt an, dass die `Button` befindet sich in einem normalen Status, seine `Scale` Eigenschaft wird auf 1 festgelegt werden. Aus diesem Grund der Gesamteffekt besteht, die bei der `Button` ist gedrückt, sie entsprechend neu skaliert etwas kleiner, und wenn die `Button` wird veröffentlicht, wird es auf der Standardgröße angepasst.
+
+Weitere Informationen zu visuellen Status finden Sie unter [die Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
 
 ## <a name="creating-a-toggle-button"></a>Erstellen eine Umschaltfläche
 
@@ -774,7 +808,7 @@ In XAML müssen Sie nur den Enumerationsmember oder den Abstand angeben, oder be
         ContentLayout="Right, 20" />
 ```
 
-Die **Image Schaltflächendemo** verwendet `OnPlatform` einen anderen Dateinamen an, für die iOS-, Android- und UWP-Dateien Bitmap. Wenn Sie verwenden möchten, verwenden den gleichen Dateinamen für alle drei Plattformen und vermeiden Sie die Verwendung von `OnPlatform`, Sie müssen die Bitmaps für UWP im Stammverzeichnis des Projekts zu speichern.
+Die **Image Schaltflächendemo** verwendet `OnPlatform` einen anderen Dateinamen an, für die iOS-, Android- und UWP-Dateien Bitmap. Wenn Sie verwenden möchten, verwenden den gleichen Dateinamen für jede Plattform und vermeiden Sie die Verwendung von `OnPlatform`, Sie müssen die Bitmaps für UWP im Stammverzeichnis des Projekts zu speichern.
 
 Die erste `Button` auf die **Image Schaltflächendemo** Seite legt die `Image` Eigenschaft jedoch nicht die `Text` Eigenschaft:
 

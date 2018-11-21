@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 84870de28ffd30b2d29fb5d8fbea815e1fd0d9c4
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 3397c931dcb23a29b0682699512a5b4c9018de38
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996437"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171065"
 ---
 # <a name="custom-video-transport-controls"></a>Benutzerdefinierte videotransport-Steuerelemente
 
@@ -212,7 +212,7 @@ namespace FormsVideoLibrary.UWP
 
 Implementieren der **spielen**, **anhalten**, und **beenden** Funktionen ist nicht ausreichend für die Transport-Steuerelemente unterstützen. Häufig die **spielen** und **anhalten** Befehle werden implementiert, mit der Schaltfläche mit den gleichen seine Darstellung ändert, um anzugeben, ob das Video derzeit während der Wiedergabe oder angehalten ist. Darüber hinaus darf nicht die Schaltfläche auch aktiviert werden, wenn das Video wurde noch nicht geladen.
 
-Diese Anforderungen impliziert, dass der Videoplayer muss einem aktuellen Status, der angibt, zur Verfügung, wenn sie angehalten oder wird von Spielen oder noch nicht bereit für die Wiedergabe eines Videos ist. (Drei Plattformen unterstützen auch die Eigenschaften, die angibt, ob das Video angehalten werden kann, oder an eine neue Position verschoben werden kann, aber diese Eigenschaften gelten für Streamingvideo anstelle von Videodateien wiedergeben, werden, damit sie nicht in unterstützt werden die `VideoPlayer` hier beschrieben.)
+Diese Anforderungen impliziert, dass der Videoplayer muss einem aktuellen Status, der angibt, zur Verfügung, wenn sie angehalten oder wird von Spielen oder noch nicht bereit für die Wiedergabe eines Videos ist. (Jede Plattform unterstützt auch die Eigenschaften, die angibt, ob das Video angehalten werden kann, oder an eine neue Position verschoben werden kann, aber diese Eigenschaften gelten für Streamingvideo anstelle von Videodateien wiedergeben, werden, damit sie nicht in unterstützt werden die `VideoPlayer` hier beschrieben.)
 
 Die **VideoPlayerDemos** -Projekt enthält eine `VideoStatus` Enumeration mit drei Elementen:
 
@@ -532,7 +532,7 @@ Aus diesem Grund nicht für den Codepunkt 0x23F5 verwendet werden **spielen**. E
 
 - 0x25B6 (schwarze nach rechts zeigendes Dreieck) oder &#x25B6; für **wiedergeben**
 
-Dies wird von allen drei Plattformen unterstützt, außer dass es sich um eine einfache schwarze Dreieck handelt, die nicht die 3D-Darstellung der ähnelt **anhalten** und **beenden**. Eine Möglichkeit besteht darin, folgen den 0x25B6 Codepoint mit einem variant-Code:
+Dies wird von jeder Plattform unterstützt, außer dass es sich um eine einfache schwarze Dreieck handelt, die nicht die 3D-Darstellung der ähnelt **anhalten** und **beenden**. Eine Möglichkeit besteht darin, folgen den 0x25B6 Codepoint mit einem variant-Code:
 
 - 0x25B6 gefolgt von 0xFE0F (16-Variante) oder &#x25B6; &#xFE0F; für **wiedergeben**
 

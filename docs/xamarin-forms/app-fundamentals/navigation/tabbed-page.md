@@ -6,13 +6,13 @@ ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/10/2017
-ms.openlocfilehash: 3eb978780222da2050fc91dfa41c68ef4bd3b6f4
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 10/24/2018
+ms.openlocfilehash: 85a6bce8a1021c75064ba06f3a5daf69b7fe3e57
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996294"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171377"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms-Seite im Registerformat
 
@@ -32,13 +32,13 @@ Das Layout einer [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), und die zugeh�
 
 - Unter iOS die Liste der Registerkarten am unteren Rand des Bildschirms angezeigt, und Detailbereich höher ist. Jede Registerkarte enthält auch ein Symbol-Image der eine 30 x 30 PNG mit Transparenz für die Auflösung von normalen, 60 x 60 für hohe Auflösung und 90 x 90, für das iPhone 6 sein soll und Auflösung. Wenn mehr als fünf Registerkarten, es gibt eine *weitere* Registerkarte wird angezeigt, die können verwendet werden, um zusätzlichen Registerkarten zugreifen. Weitere Informationen zum Laden von Bildern in einer Xamarin.Forms-Anwendung finden Sie unter [arbeiten mit Bildern](~/xamarin-forms/user-interface/images.md). Weitere Informationen zu den Symbol-Anforderungen finden Sie unter [erstellen im Registerkartenformat Anwendungen](~/ios/user-interface/controls/creating-tabbed-applications.md).
 
-    > [!NOTE]
+  > [!NOTE]
   > Beachten Sie, dass die `TabbedRenderer` für iOS eine überschreibbare hat `GetIcon` -Methode, die mit der Registerkarte Symbole aus einer angegebenen Quelle geladen werden kann. Diese Außerkraftsetzung ist es möglich, SVG-Bildern als Symbole auf einem `TabbedPage`. Darüber hinaus können die ausgewählte und nicht ausgewählte Versionen eines Symbols bereitgestellt werden.
 
 - Unter Android werden die Liste der Registerkarten am oberen Rand des Bildschirms wird standardmäßig angezeigt und Detailbereich unterschreitet. Allerdings kann die Registerkartenliste am unteren Rand der Bildschirm mit einer plattformspezifischen verschoben werden. Weitere Informationen finden Sie unter [Einstellung "tabbedpage" Symbolleiste Platzierung und die Farbe](~/xamarin-forms/platform/platform-specifics/consuming/android.md#tabbedpage-toolbar).
 
-    > [!NOTE]
-  > Beachten Sie, dass bei Verwendung von AppCompat auf Android jede Registerkarte auch ein Symbol angezeigt wird. Darüber hinaus die `TabbedPageRenderer` für Android AppCompat eine überschreibbare hat `SetTabIcon` -Methode, die verwendet werden kann, zum Laden von Registerkarte Symbole aus einem benutzerdefinierten `Drawable`. Diese Außerkraftsetzung ist es möglich, SVG-Bildern als Symbole auf einem `TabbedPage`.
+  > [!NOTE]
+  > Beachten Sie, dass bei Verwendung von AppCompat auf Android jede Registerkarte auch ein Symbol angezeigt wird. Darüber hinaus die `TabbedPageRenderer` für Android AppCompat eine überschreibbare hat `GetIconDrawable` -Methode, die verwendet werden kann, zum Laden von Registerkarte Symbole aus einem benutzerdefinierten `Drawable`. Diese Außerkraftsetzung ist es möglich, SVG-Bildern als Symbole auf einem `TabbedPage`, und funktioniert mit den beiden oben und unten Registerkartenleisten. Sie können auch die überschreibbare `SetTabIcon` Methode kann verwendet werden, um die Registerkarte Symbole aus einem benutzerdefinierten laden `Drawable` für die obersten Registerkarte Balken.
 
 - Auf Windows-Tablet-Formfaktoren arbeiten, die Registerkarten werden nicht immer angezeigt, und Benutzer müssen Wischen Sie (oder mit der rechten Maustaste, wenn sie eine Maus angefügt haben), zeigen Sie die Registerkarten in einem `TabbedPage` (wie unten gezeigt).
 
