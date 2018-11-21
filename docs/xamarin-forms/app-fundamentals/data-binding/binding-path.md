@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 8340e952d30e21a5249edd0fa3319462bbd5ff8b
-ms.sourcegitcommit: 913763498b5d23fa4a92e877760c51164bf1aa41
+ms.openlocfilehash: 5ffc167b1e5695663dff6005f3d7e0ba0ea958db
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50150235"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172105"
 ---
 # <a name="xamarinforms-binding-path"></a>Bindungspfad für Xamarin.Forms
 
@@ -134,7 +134,7 @@ Schließlich wird im letzte Beispiel ähnlich wie der zweite, mit dem Unterschie
 
 Dieses untergeordnete Element ist ein `Label`, die eine `Text` Eigenschaft vom Typ `String`, die eine `Length` Eigenschaft. Die erste `Label` Berichte die `TimeSpan` legen Sie in der `TimePicker`, wenn Sie diesen Text ändern, also die endgültige `Label` auch Änderungen.
 
-Hier wird das Programm auf allen drei Plattformen ausgeführt wird:
+Hier wird das Programm ausgeführt wird:
 
 [![Pfad-Varianten](binding-path-images/pathvariations-small.png "Pfad Variationen")](binding-path-images/pathvariations-large.png#lightbox "Pfad-Varianten")
 

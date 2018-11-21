@@ -7,12 +7,12 @@ ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 6d223dd051dccf7af84e4e6c35238f4ad026b00a
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: eebfe40bca6db92bae1f2fdcc9cbff3173dc4e51
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615625"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172014"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>Zugreifen auf SkiaSharp Bitmap Pixelbits
 
@@ -35,7 +35,7 @@ SkiaSharp bietet verschiedene Methoden für den Zugriff auf eine Bitmap des Pixe
 
 Sie können den ersten beiden Verfahren als "high-Level" und die zweiten beiden als "niedrige Ebene auf." vorstellen. Es gibt einige andere Methoden und Eigenschaften, die Sie verwenden können, aber dies sind die wichtigsten.
 
-Können Sie sehen, die Leistungsunterschiede zwischen diesen Funktionen und Techniken der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Anwendung enthält eine Seite namens **Farbverlauf Bitmap** , erstellt eine Bitmap mit Pixeln, die rote und blaue grauschattierungen zum Erstellen eines Verlaufs zu kombinieren. Das Programm erstellt acht verschiedene Kopien der Bitmap, verwenden alle verschiedene Verfahren zum Festlegen der Bitmap in Pixel. Jede dieser acht Bitmaps wird in einer separaten Methode erstellt, die auch eine kurze textbeschreibung des Verfahrens legt sie fest, und berechnet den Zeitaufwand für alle Pixel festgelegt. Jede Methode durchläuft die Pixel-Setting-Logik 100-Mal um eine bessere Schätzung für die Leistung zu erhalten. 
+Können Sie sehen, die Leistungsunterschiede zwischen diesen Funktionen und Techniken der [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) Anwendung enthält eine Seite namens **Farbverlauf Bitmap** , erstellt eine Bitmap mit Pixeln, die rote und blaue grauschattierungen zum Erstellen eines Verlaufs zu kombinieren. Das Programm erstellt acht verschiedene Kopien der Bitmap, verwenden alle verschiedene Verfahren zum Festlegen der Bitmap in Pixel. Jede dieser acht Bitmaps wird in einer separaten Methode erstellt, die auch eine kurze textbeschreibung des Verfahrens legt sie fest, und berechnet den Zeitaufwand für alle Pixel festgelegt. Jede Methode durchläuft die Pixel-Setting-Logik 100-Mal um eine bessere Schätzung für die Leistung zu erhalten.
 
 ### <a name="the-setpixel-method"></a>Die SetPixel-Methode
 
@@ -55,7 +55,7 @@ Hier ist die Methode **Farbverlauf Bitmap** , festlegt, dass der Inhalt eines Bi
 public class GradientBitmapPage : ContentPage
 {
     const int REPS = 100;
-        
+
     Stopwatch stopwatch = new Stopwatch();
     ···
     SKBitmap FillBitmapSetPixel(out string description, out int milliseconds)
@@ -107,7 +107,7 @@ SKBitmap FillBitmapPixelsProp(out string description, out int milliseconds)
 
     stopwatch.Restart();
 
-    SKColor[] pixels = new SKColor[256 * 256]; 
+    SKColor[] pixels = new SKColor[256 * 256];
 
     for (int rep = 0; rep < REPS; rep++)
         for (int row = 0; row < 256; row++)
@@ -135,7 +135,7 @@ Potenziell die leistungsfähigste Methode die Pixel auf besteht [ `GetPixels` ](
 IntPtr pixelsAddr = bitmap.GetPixels();
 ```
 
-.NET [ `IntPtr` ](xref:System.IntPtr) Typ stellt einen Zeiger dar. Es heißt `IntPtr` , da es die Länge einer ganzen Zahl für den systemeigenen Prozessor des Computers, auf dem das Programm ausgeführt wird, in der Regel entweder 32-Bit oder 64 Bit lang, ist. Die `IntPtr` , `GetPixels` gibt ist die Adresse des tatsächlichen Speicherblocks, der das Bitmapobjekt verwendet wird, um seine Pixel zu speichern. 
+.NET [ `IntPtr` ](xref:System.IntPtr) Typ stellt einen Zeiger dar. Es heißt `IntPtr` , da es die Länge einer ganzen Zahl für den systemeigenen Prozessor des Computers, auf dem das Programm ausgeführt wird, in der Regel entweder 32-Bit oder 64 Bit lang, ist. Die `IntPtr` , `GetPixels` gibt ist die Adresse des tatsächlichen Speicherblocks, der das Bitmapobjekt verwendet wird, um seine Pixel zu speichern.
 
 Sie konvertieren die `IntPtr` in einer C#-Zeiger mit dem [ `ToPointer` ](xref:System.IntPtr.ToPointer) Methode. Die C#-Zeiger-Syntax ist identisch mit C- und C++:
 
@@ -313,7 +313,7 @@ SKBitmap FillBitmapByteBuffer(out string description, out int milliseconds)
                 buffer[row, col, 2] = (byte)row;   // blue
                 buffer[row, col, 3] = 0xFF;        // alpha
             }
-    
+
     unsafe
     {
         fixed (byte* ptr = buffer)
@@ -459,7 +459,7 @@ public class GradientBitmapPage : ContentPage
 
     void Display(SKCanvas canvas, int index, SKRect rect)
     {
-        string text = String.Format("{0}: {1:F1} msec", descriptions[index], 
+        string text = String.Format("{0}: {1:F1} msec", descriptions[index],
                                     (double)elapsedTimes[index] / REPS);
 
         SKRect bounds = new SKRect();
@@ -497,7 +497,7 @@ Hier ist eine Tabelle, die die Ausführung der Zeitüberschreitung in Millisekun
 
 Aufrufen von erwartungsgemäß funktioniert, `SetPixel` 65.536 Zeiten lässt am geringsten Effeicient der Bitmap Pixel festgelegt. Ausfüllen einer `SKColor` Array und die Einstellung der `Pixels` Eigenschaft ist viel besser, und vergleicht auch zeigt, mit einigen der `GetPixels` und `SetPixels` Techniken. Arbeiten mit `uint` Pixelwerte ist im Allgemeinen schneller als separate Einstellung `byte` Komponenten und zum Konvertieren der `SKColor` Ganzzahl ohne Vorzeichen Mehrwert Mehraufwand an den Prozess.
 
-Es ist auch interessant, die verschiedene Farbverläufe verglichen werden soll: die obersten Zeilen aller drei Plattformen identisch sind, und der Gradient zeigen, wie gewünscht. Dies bedeutet, dass die `SetPixel` Methode und die `Pixels` Eigenschaft ordnungsgemäß Pixel von Farben, unabhängig vom zugrunde liegenden Pixelformat erstellen.
+Es ist auch interessant, die verschiedene Farbverläufe verglichen werden soll: die obersten Zeilen für jede Plattform entsprechen, und der Gradient zeigen, wie gewünscht. Dies bedeutet, dass die `SetPixel` Methode und die `Pixels` Eigenschaft ordnungsgemäß Pixel von Farben, unabhängig vom zugrunde liegenden Pixelformat erstellen.
 
 Die nächsten beiden Zeilen der IOS- und Android Screenshots sind identisch, die Bestätigung, die das kleine `MakePixel` Methode ordnungsgemäß definiert ist, für den standardmäßigen `Rgba8888` Pixelformat für diese Plattformen.
 
@@ -511,13 +511,13 @@ BB GG RR AA
 
 Dies ist die `Bgra8888` Reihenfolge statt der `Rgba8888` Sortierung. Die `Brga8888` Format ist das Standardformat für die universelle Windows-Plattform, weshalb die Farbverläufe in diesem Screenshot der letzten Zeile die erste Zeile identisch. Aber die beiden mittleren Spalten sind falsch, da davon ausgegangen, der Code, der diese Bitmaps erstellen dass eine `Rgba8888` Sortierung.
 
-Wenn Sie den gleichen Code für den Zugriff auf Pixelbits auf allen drei Plattformen verwenden möchten, können Sie explizit erstellen eine `SKBitmap` entweder die `Rgba8888` oder `Bgra8888` Format. Wenn Sie umwandeln möchten `SKColor` verwenden Sie die Werte in Pixel der Bitmap, `Bgra8888`.
+Wenn Sie den gleichen Code für den Zugriff auf Pixelbits auf jeder Plattform verwenden möchten, können Sie explizit erstellen eine `SKBitmap` entweder die `Rgba8888` oder `Bgra8888` Format. Wenn Sie umwandeln möchten `SKColor` verwenden Sie die Werte in Pixel der Bitmap, `Bgra8888`.
 
 ## <a name="random-access-of-pixels"></a>Wahlfreien Zugriff von Pixeln
 
-Die `FillBitmapBytePtr` und `FillBitmapUintPtr` Methoden in der **Farbverlauf Bitmap** Seite Profil `for` Schleifen entworfen, um die Bitmap nacheinander von der obersten Zeile, die auf der untersten Zeile, und klicken Sie in den einzelnen Zeilen von links nach rechts zu füllen. Das Pixel konnte mit der gleichen Anweisung festgelegt werden, die den Zeiger erhöht. 
+Die `FillBitmapBytePtr` und `FillBitmapUintPtr` Methoden in der **Farbverlauf Bitmap** Seite Profil `for` Schleifen entworfen, um die Bitmap nacheinander von der obersten Zeile, die auf der untersten Zeile, und klicken Sie in den einzelnen Zeilen von links nach rechts zu füllen. Das Pixel konnte mit der gleichen Anweisung festgelegt werden, die den Zeiger erhöht.
 
-Manchmal ist es erforderlich, die die Pixel nacheinander, sondern nach dem Zufallsprinzip zugreifen. Bei Verwendung der `GetPixels` Ansatz müssen Sie Zeiger basierend auf der Zeile und Spalte zu berechnen. Dies wird veranschaulicht, der **Rainbow Sinus** Seite erstellt eine Bitmap mit einem Rainbow in Form eines Zyklus einer Sinus-Kurve. 
+Manchmal ist es erforderlich, die die Pixel nacheinander, sondern nach dem Zufallsprinzip zugreifen. Bei Verwendung der `GetPixels` Ansatz müssen Sie Zeiger basierend auf der Zeile und Spalte zu berechnen. Dies wird veranschaulicht, der **Rainbow Sinus** Seite erstellt eine Bitmap mit einem Rainbow in Form eines Zyklus einer Sinus-Kurve.
 
 Die Farben des Regenbogens sind am einfachsten, erstellen mit dem Modell der HSL (Farbton, Sättigung, Helligkeit)-Farbe. Die `SKColor.FromHsl` -Methode erstellt eine `SKColor` Wert mit Hue-Werten, die zwischen 0 und 360 (z. B. den Winkeln einen Kreis, aber für den Wechsel von Rot über Grün und Blau und zurück in Rot) liegen und Sättigung und Helligkeit-Werte, die im Bereich von 0 bis 100. Für die Farben des Regenbogens sollte die Sättigung auf ein Maximum von 100 und die Helligkeit zu einem Mittelpunkt von 50 festgelegt werden.
 
@@ -617,7 +617,7 @@ Sehr viele bildverarbeitung Aufgaben zur grundlegenden netzwerkprotokollverwaltu
 
 Für jede Pixelfarbe der ersten `Slider` Fügt einen Wert zwischen 0 und 360 liegen in den Farbton, aber dann verwendet der modulo-Operator, um das Ergebnis zwischen 0 und 360 zu halten, effektiv Verschiebung die Farben entlang des Spektrums (wie der UWP-Screenshot veranschaulicht). Die zweite `Slider` können Sie, einen Multiplikationsfaktor zwischen 0,5 und 2 auswählen, um für die Sättigung und das dritte gelten `Slider` führt für die Helligkeit, wie in der Android-Screenshot veranschaulicht.
 
-Das Programm verwaltet zwei Bitmaps, die ursprüngliche Quell-Bitmap, die mit dem Namen `srcBitmap` und die angepasste Zielbitmap mit dem Namen `dstBitmap`. Jedes Mal eine `Slider` verschoben wird, wird die Anwendung berechnet alle neuen Pixel im `dstBitmap`. Natürlich werden Benutzer experimentieren, indem Sie das Verschieben der `Slider` Ansichten sehr schnell, daher sollten Sie die beste Leistung können Sie verwalten. Dies umfasst die `GetPixels` -Methode für den Quell- und Ziel-Bitmaps. 
+Das Programm verwaltet zwei Bitmaps, die ursprüngliche Quell-Bitmap, die mit dem Namen `srcBitmap` und die angepasste Zielbitmap mit dem Namen `dstBitmap`. Jedes Mal eine `Slider` verschoben wird, wird die Anwendung berechnet alle neuen Pixel im `dstBitmap`. Natürlich werden Benutzer experimentieren, indem Sie das Verschieben der `Slider` Ansichten sehr schnell, daher sollten Sie die beste Leistung können Sie verwalten. Dies umfasst die `GetPixels` -Methode für den Quell- und Ziel-Bitmaps.
 
 Die **Anpassung** Seite keine Kontrolle über das Farbformat der Bitmaps, Quelle und Ziel. Stattdessen enthält er leicht abweichender Logik für `SKColorType.Rgba8888` und `SKColorType.Bgra8888` Formate. Die Quelle und Ziel können verschiedene Formate werden, und das Programm weiterhin funktionieren.
 
@@ -764,7 +764,7 @@ public class PosterizePage : ContentPage
 
             for (int i = 0; i < pixelCount; i++)
             {
-                *ptr++ &= 0xE0E0E0FF; 
+                *ptr++ &= 0xE0E0E0FF;
             }
         }
 

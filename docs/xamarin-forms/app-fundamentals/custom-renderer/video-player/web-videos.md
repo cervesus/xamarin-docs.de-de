@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 566f056bd616c918ce274b9c7406d94fdc265ea2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7f40d0d11fc932121b4ff7789969bbb1e354024c
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994558"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172209"
 ---
 # <a name="playing-a-web-video"></a>Wiedergeben eines Webvideos
 
@@ -465,7 +465,7 @@ Die `VideoSourceConverter` Klasse konvertiert die Zeichenfolge in eine `UriVideo
 
 [![Web-Video wiedergeben](web-videos-images/playwebvideo-small.png "Web-Video wiedergeben")](web-videos-images/playwebvideo-large.png#lightbox "Web-Video wiedergeben")
 
-Auf allen drei Plattformen Ausblenden der Transport-Steuerelemente, wenn sie nicht verwendet werden, jedoch wiederhergestellt werden können, um durch Tippen auf das Video anzuzeigen.
+Auf allen Plattformen Ausblenden der Transport-Steuerelemente, wenn sie nicht verwendet werden, jedoch wiederhergestellt werden können, um durch Tippen auf das Video anzuzeigen.
 
 Sie können verhindern, dass das Video automatisch gestartet, durch Festlegen der `AutoPlay` Eigenschaft `false`:
 

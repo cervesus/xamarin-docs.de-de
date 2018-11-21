@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: 2bb5729ff369abb6e432bfd72ab240c0ce07f28a
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 49b2ee9cf9c8fbdb2f850461241459126750b123
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615404"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172222"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Drei Möglichkeiten, einen Bogen zu zeichnen
 
@@ -412,7 +412,7 @@ public partial class TangentArcPage : InteractivePage
 }
 ```
 
-Hier ist die **Tangens Bogen** Seite, die auf allen drei Plattformen ausgeführt wird:
+Hier ist die **Tangens Bogen** Seite ausgeführt wird:
 
 [![](arcs-images/tangentarc-small.png "Dreifacher Screenshot der Seite Tangens Bogen")](arcs-images/tangentarc-large.png#lightbox "dreifachen Screenshot der Seite Tangens einen Bogen konvertiert.")
 
@@ -487,7 +487,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-So sieht das Programm ausgeführt wird, auf die drei Plattformen aus:
+Hier wird das Programm ausgeführt wird:
 
 [![](arcs-images/roundedheptagon-small.png "Dreifacher Screenshot der Seite gerundet Siebeneck")](arcs-images/roundedheptagon-large.png#lightbox "dreifachen Screenshot der Seite Siebeneck gerundet")
 
@@ -582,7 +582,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-Hier wird es auf die drei Plattformen ausgeführt:
+Hier wird ausgeführt:
 
 [![](arcs-images/ellipticalarc-small.png "Dreifacher Screenshot der Seite für elliptischen Bogens")](arcs-images/ellipticalarc-large.png#lightbox "dreifachen Screenshot der Seite für elliptischen Bogens")
 
