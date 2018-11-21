@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: e0ad67db0671996e594f9c5d48b329a5d676fc1d
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: aa576e4af5d804eb5b8d78643ffa762b8a15c6dc
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563432"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171767"
 ---
 # <a name="part-4-data-binding-basics"></a>Teil 4. Grundlagen der Datenbindung
 
@@ -327,7 +327,7 @@ Viel besser. Jetzt ist alles, was erforderlich ist, um die Elementvorlage mit In
 </ContentPage>
 ```
 
-Beachten Sie, dass die Verwendung von `OnPlatform` definieren Sie die Größe des eine `BoxView` und die Höhe der der `ListView` Zeilen. Obwohl die Werte für alle drei Plattformen identisch sind, kann auf das Markup problemlos für andere Werte zur Optimierung der Anzeige angepasst werden können.
+Beachten Sie, dass die Verwendung von `OnPlatform` definieren Sie die Größe des eine `BoxView` und die Höhe der der `ListView` Zeilen. Obwohl die Werte für alle Plattformen gleich sind, kann auf das Markup problemlos für andere Werte zur Optimierung der Anzeige angepasst werden können.
 
 ## <a name="binding-value-converters"></a>Binden von Wertkonvertern
 

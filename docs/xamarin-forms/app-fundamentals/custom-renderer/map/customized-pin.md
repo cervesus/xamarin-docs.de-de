@@ -6,13 +6,13 @@ ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: 351119a8b0089f78d4ce98729a1516c3cd7bae7b
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.date: 10/24/2018
+ms.openlocfilehash: ab5315d169615430f5f5a733c0fa8c2ca9caa4b0
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203084"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172300"
 ---
 # <a name="customizing-a-map-pin"></a>Anpassen einer Kartennadel
 
@@ -422,9 +422,10 @@ protected override MarkerOptions CreateMarker(Pin pin)
 }
 ```
 
-Diese Methode erstellt ein neues `MarkerOption` Instanz für jedes `Pin` Instanz. Nach dem Festlegen der Position, die Bezeichnung und die Adresse des Markers an, das entsprechende Symbol festgelegt ist, mit der `SetIcon` Methode. Diese Methode verwendet eine `BitmapDescriptor` Objekt mit den Daten, die zum Rendern des Symbols mit der `BitmapDescriptorFactory` Klasse Hilfsmethoden zur Vereinfachung der Erstellung der Bereitstellung der `BitmapDescriptor`.
+Diese Methode erstellt ein neues `MarkerOption` Instanz für jedes `Pin` Instanz. Nach dem Festlegen der Position, die Bezeichnung und die Adresse des Markers an, das entsprechende Symbol festgelegt ist, mit der `SetIcon` Methode. Diese Methode verwendet eine `BitmapDescriptor` Objekt mit den Daten, die zum Rendern des Symbols mit der `BitmapDescriptorFactory` Klasse Hilfsmethoden zur Vereinfachung der Erstellung der Bereitstellung der `BitmapDescriptor`. Weitere Informationen zur Verwendung der `BitmapDescriptorFactory` Klasse, um eine Markierung anpassen, finden Sie unter [Anpassen einen Marker](~/android/platform/maps-and-location/maps/maps-api.md).
 
-Weitere Informationen zur Verwendung der `BitmapDescriptorFactory` Klasse, um eine Markierung anpassen, finden Sie unter [Anpassen einen Marker](~/android/platform/maps-and-location/maps/maps-api.md).
+> [!NOTE]
+> Falls erforderlich, die `GetMarkerForPin` Methode kann aufgerufen werden, in Ihrem Renderer Zuordnung zum Abrufen einer `Marker` aus einer `Pin`.
 
 <a name="Customizing_the_Info_Window" />
 
