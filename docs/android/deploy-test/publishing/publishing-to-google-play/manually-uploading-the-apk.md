@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: df6ef208957d8dae229ebb8aee2304444b7d18fe
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4f0378f7e2fe29a5d11c2cbc02fc736adf12577c
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111279"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171728"
 ---
 # <a name="manually-uploading-the-apk"></a>Manuelles Hochladen des APKs
 
@@ -169,7 +169,7 @@ Sie können Elemente zum Anwendungsmanifest hinzufügen, um einzustellen, nach w
 
 -   [uses-feature](http://developer.android.com/guide/topics/manifest/uses-feature-element.html): In diesem Manifestelement werden Hardwareeigenschaften oder Softwarefunktionen deklariert, über die ein Gerät zur ordnungsgemäßen Ausführung der Anwendung verfügen muss. Dieses Attribut dient nur zu Informationszwecken. Google Play zeigt zwar die Anwendung nicht auf Geräten an, die diesem Filterkriterium nicht entsprechen. Die Anwendung kann aber dennoch auf andere Weise installiert werden (z.B. manuell oder durch Herunterladen). Dieses Element muss manuell zur Datei **AndroidManifest.xml** hinzugefügt werden. 
 
--   [uses-library](http://developer.android.com/guide/topics/manifest/uses-library-element.html): In diesem Element werden bestimmte freigegebene Bibliotheken (beispielsweise die von Google Maps) angegeben, die auf einem Gerät vorhanden sein müssen. Dieses Element kann auch mit `Android.App.UsesLibaryAttribute` angegeben werden. Zum Beispiel: 
+-   [uses-library](http://developer.android.com/guide/topics/manifest/uses-library-element.html): In diesem Element werden bestimmte freigegebene Bibliotheken (beispielsweise die von Google Maps) angegeben, die auf einem Gerät vorhanden sein müssen. Dieses Element kann auch mit `Android.App.UsesLibraryAttribute` angegeben werden. Zum Beispiel: 
 
     ```csharp
     [assembly: UsesLibrary("com.google.android.maps", true)]
