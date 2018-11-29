@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: d1b1a59b432315532844f8fca3b613ff3392a7b5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bfbb8c2b189defeb6efb07388ea34425c239c061
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108241"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459888"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Verbesserte Benutzerbenachrichtigungen in Xamarin.iOS
 
@@ -58,7 +58,7 @@ Einige Beispiele für lokale Benachrichtigungen sind:
 - Erinnerung-Warnungen
 - Beachten Sie Standort-Trigger
 
-Weitere Informationen finden Sie unter Apple [lokale und Remote Notification Programming Guide](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) Dokumentation.
+Weitere Informationen finden Sie unter Apple [lokale und Remote Notification Programming Guide](https://developer.apple.com/documentation/usernotifications) Dokumentation.
 
 ### <a name="about-remote-notifications"></a>Informationen zu Remote-Benachrichtigungen
 
@@ -80,7 +80,7 @@ Es gibt zwei Arten von Remotebenachrichtigungen eine iOS-app zur Verfügung:
 - **Benutzer** – der Benutzer auf dem Gerät angezeigt werden.
 - **Automatische Updates** – diese bieten einen Mechanismus, um den Inhalt einer iOS-app im Hintergrund aktualisieren. Wenn eine automatische Aktualisierung empfangen wird, kann die app das Pull-Server entfernen Sie die neuesten Inhalte wenden Sie sich.
 
-Weitere Informationen finden Sie unter Apple [lokale und Remote Notification Programming Guide](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) Dokumentation.
+Weitere Informationen finden Sie unter Apple [lokale und Remote Notification Programming Guide](https://developer.apple.com/documentation/usernotifications) Dokumentation.
 
 ### <a name="about-the-existing-notifications-api"></a>Über die vorhandenen API-Benachrichtigungen
 
@@ -202,7 +202,7 @@ Das Token, das an der Entwickler die serverseitige app gesendet werden müssen e
 
 Das Token dient als Schlüssel, der miteinander verknüpft werden, die Benachrichtigung und die app zum Öffnen oder reagiert auf die Benachrichtigung verwendet.
 
-Weitere Informationen finden Sie unter Apple [lokale und Remote Notification Programming Guide](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) Dokumentation.
+Weitere Informationen finden Sie unter Apple [lokale und Remote Notification Programming Guide](https://developer.apple.com/documentation/usernotifications) Dokumentation.
 
 ## <a name="notification-delivery"></a>Übermittlung der Benachrichtigung
 
@@ -672,4 +672,4 @@ In diesem Artikel wurden alle Möglichkeiten behandelt, dass die Benachrichtigun
 - [iOS 10-Beispiele](https://developer.xamarin.com/samples/ios/iOS10/)
 - ["Usernotifications"-Framework-Referenz](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
-- [Programmierhandbuch für lokale und Remote-Benachrichtigung](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
+- [Programmierhandbuch für lokale und Remote-Benachrichtigung](https://developer.apple.com/documentation/usernotifications)

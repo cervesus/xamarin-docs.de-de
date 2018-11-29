@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 09/17/2018
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: 5165d8f61973b82105c1b2e39d8bf316d0c2b42b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c61ed731f22122637963c28c42f44b84ec7fa9f4
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121424"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459953"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>Consultingpartner stehen für mobile Lösungen zertifiziert
 
@@ -290,7 +290,7 @@ _Aufgelistet nach dem primären Standort, Bereitstellen viele Partner Dienste, �
 
 | Partner | Speicherorte | Beschreibung |
 | --- | --- | --- |
-|[Hohe Anzeigen von Software](http://www.highviewsoft.com)|Peking (Beijing), China|Visionsoft Software konzentriert sich auf die Bereitstellung, plattformübergreifende APP und Cloud-basierten Dienst Programmentwurf, Entwicklung, Implementierung, technische Schulungen und weitere Beratungsdienste|
+|[Hohe Anzeigen von Software](http://www.highviewsoft.com)|Peking (Beijing), China|Anzeigen von Software hoher konzentriert sich auf die Bereitstellung, plattformübergreifende APP und Cloud-basierten Dienst Programmentwurf, Entwicklung, Implementierung, technische Schulungen und weitere Beratungsdienste|
 
 
 ## <a name="colombia"></a>Kolumbien

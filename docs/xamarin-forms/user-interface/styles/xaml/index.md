@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 5145572b30302e58c36250fff40e8b637fcd221f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 2607298bdc0842f60a1d1a3299bed61bbea925a1
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995074"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459862"
 ---
 # <a name="styling-xamarinforms-apps-using-xaml-styles"></a>Formatieren von Xamarin.Forms-Apps, die mithilfe von XAML-Stile
 
 ## <a name="introductionintroductionmd"></a>[Introduction (Einführung)](introduction.md)
 
-Xamarin.Forms-Anwendungen enthalten häufig mehrere Steuerelemente, die eine identische Darstellung. Die Darstellung der einzelnen Steuerelemente festlegen kann sein, sich wiederholende und fehleranfällig. Stattdessen können Stile erstellt werden, die steuerelementdarstellung anpassen, Gruppierung und legt die Eigenschaften für den Steuerelementtyp verfügbar.
+Xamarin.Forms-Anwendungen enthalten häufig mehrere Steuerelemente, die eine identische Darstellung. Die Darstellung der einzelnen Steuerelemente festlegen kann sein, sich wiederholende und fehleranfällig. Stattdessen können Stile erstellt werden, die steuerelementdarstellung anpassen, indem gruppieren und Festlegen von Eigenschaften zur Verfügung stehen für den Steuerelementtyp ".
 
 ## <a name="explicit-stylesexplicitmd"></a>[Explizite Stile](explicit.md)
 
