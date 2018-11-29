@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: e41f19c1a2d02537f300ae82b7f3d45bc6571e1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 076c6464359a58c2b36d157d9620673b0644cd4a
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112457"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459836"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>Entwurf der Benutzeroberfläche in Xamarin.Mac.Storyboard/.XIB-less
 
@@ -34,7 +34,7 @@ Wenn Sie eine neue Xamarin.Mac-Cocoa-Anwendung erstellen, erhalten Sie ein Stand
 
 Führen Sie folgende Schritte aus, um in einem Fenster Xibless für eine Anwendung zu wechseln:
 
-1. Öffnen Sie die Anwendung, die Sie nicht mehr verwenden möchten `.stroyboard` oder XIB-Dateien zum Definieren der Benutzeroberfläche in Visual Studio für Mac.
+1. Öffnen Sie die Anwendung, die Sie nicht mehr verwenden möchten `.storyboard` oder XIB-Dateien zum Definieren der Benutzeroberfläche in Visual Studio für Mac.
 2. In der **Lösungspad**, mit der rechten Maustaste auf die **"Main.Storyboard"** oder **MainWindow.xib** und wählen Sie **entfernen**: 
 
     ![Entfernen die Haupt-Storyboard oder das Fenster](xibless-ui-images/switch01.png "Entfernen der Haupt-Storyboard oder das Fenster")
@@ -371,5 +371,5 @@ In diesem Artikel wird eine ausführliche Übersicht über das Erstellen der Ben
 - [MacXibless (Beispiel)](https://developer.xamarin.com/samples/mac/MacXibless/)
 - [Windows](~/mac/user-interface/window.md)
 - [Menüs](~/mac/user-interface/menu.md)
-- [MacOS Human Interface Guidelines](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
+- [macOS-Eingaberichtlinien](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
 - [Einführung in Windows](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/WinPanel/Introduction.html)

@@ -6,13 +6,13 @@ ms.assetid: 7B5DD10D-0411-424F-88D8-8A474DF16D8D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: 30326b8d52f39268015bdcbee1b84b9d9e5516b9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 11/26/2018
+ms.openlocfilehash: 7fea736b0a04a69fd64100ae1d6bcd42c244359f
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998959"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459849"
 ---
 # <a name="customizing-an-entry"></a>Anpassen eines Eintrags
 
@@ -31,6 +31,9 @@ Das Rendern zu kann nutzen erstellt werden, um plattformspezifische Anpassungen 
 1. [Erstellen Sie](#Creating_the_Custom_Renderer_on_each_Platform) der benutzerdefinierten Renderers für das Steuerelement auf jeder Plattform.
 
 Jedes Element jetzt erläutert wiederum zum Implementieren einer [ `Entry` ](xref:Xamarin.Forms.Entry) -Steuerelement mit einer anderen Hintergrundfarbe auf jeder Plattform.
+
+> [!IMPORTANT]
+> In diesem Artikel wird erläutert, wie Sie einen einfachen benutzerdefinierten Renderer erstellen. Es ist jedoch nicht erforderlich, erstellen einen benutzerdefinierten Renderer zum Implementieren einer `Entry` , die eine andere Hintergrundfarbe auf jeder Plattform verfügt. Dies kann leichter mit erreicht werden die [ `Device` ](xref:Xamarin.Forms.Device) -Klasse, oder die `OnPlatform` Markuperweiterung Clientplattform-spezifische Werte bereitstellen. Weitere Informationen finden Sie unter [Clientplattform-spezifische Werte bereitstellen](~/xamarin-forms/platform/device.md#providing-platform-specific-values) und [OnPlatform-Markuperweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension).
 
 <a name="Creating_the_Custom_Entry_Control" />
 
