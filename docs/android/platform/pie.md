@@ -1,5 +1,5 @@
 ---
-title: Android 9 Kreis
+title: Android 9 Pie
 description: Informationen zum Entwickeln von apps für Android mithilfe von Xamarin.Android 9-Kreis.
 ms.prod: xamarin
 ms.assetid: 6575DD32-9DC8-44E6-85EF-1F8BD07D3780
@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: c353341af8899960b12437d55602415a02953cbc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: cd1c374fa68420e1923ef4dee0bb37a4665f3535
+ms.sourcegitcommit: 215cad17324ba3fbc23487ce66cd4e1cc74eb879
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111679"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52710022"
 ---
 # <a name="android-pie-features"></a>Android Kreis-Funktionen
 
@@ -24,9 +24,7 @@ _Informationen zum Entwickeln von apps für Android mithilfe von Xamarin.Android
 
 In diesem Artikel ist strukturiert, um Ihnen bei der Entwicklung von Xamarin.Android-apps für Android Kreis beim Einstieg helfen. Es wird erläutert, wie die erforderlichen Updates zu installieren, konfigurieren Sie das SDK und bereiten Sie vor einem Emulator oder Gerät zu Testzwecken. Außerdem bietet einen Überblick über die neuen Features in Android Kreis- und enthält Beispiel-Quellcode, das veranschaulicht, wie Sie einige der wichtigsten Features Android Kreis verwenden.
 
-![Vorschau](~/media/shared/preview.png)
-
-Xamarin.Android 9.0 bietet Unterstützung für Android Kreis Preview. Weitere Informationen zu Xamarin.Android-Unterstützung für Android Kreis-, finden Sie unter den [Android P Developer Preview 3](https://developer.xamarin.com/releases/android/xamarin.android_9/xamarin.android_9.0/#android-p-dp1) Anmerkungen zu dieser Version.
+Xamarin.Android 9.0 bietet Unterstützung für Android Kreis. Weitere Informationen zu Xamarin.Android-Unterstützung für Android Kreis-, finden Sie unter den [Android P Developer Preview 3](https://developer.xamarin.com/releases/android/xamarin.android_9/xamarin.android_9.0/#android-p-dp1) Anmerkungen zu dieser Version.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -142,7 +140,7 @@ Beachten Sie, dass der app weißer Hintergrund darf nicht auf den Anzeigebereich
 
 Wenn Sie ausführlichere Informationen zu den Ausschnitt-Bereich auf dem Gerät benötigen, können Sie die neue [DisplayCutout](https://developer.android.com/reference/android/view/DisplayCutout.html) Klasse. `DisplayCutout` Stellt den Bereich der Anzeige, die verwendet werden kann, um Inhalt anzuzeigen. Sie können diese Informationen verwenden, um die Position und Form der Ausschnitt abzurufen, damit Ihre app nicht versucht, Inhalt in diesem Bereich nicht funktionsbezogenen angezeigt.
 
-Weitere Informationen zu den neuen Ausschnitt-Features in Android P, finden Sie unter [Ausschnitt Anzeigeunterstützung](https://developer.android.com/preview/features#cutout).
+Weitere Informationen zu den neuen Ausschnitt-Features in Android P, finden Sie unter [Ausschnitt Anzeigeunterstützung](https://developer.android.com/about/versions/pie/android-9.0#cutout).
 
 
 
@@ -223,12 +221,12 @@ Die neue [WifiRttManager](https://developer.android.com/reference/android/net/wi
 
 ### <a name="multi-camera-support"></a>Multi-Kamera-Unterstützung
 
-Viele neuere Android-Geräte haben Dual-Front "und/oder" Dual-Back-Kameras, die nützlich für Features wie Stereo Bildanalyse, verbesserte visuelle Effekte und verbesserte Zoom-Funktion sind. Android P wird ein neuer [Multi-Kamera](https://developer.android.com/preview/features#camera) -API, die Ihre app ermöglicht ein *logische Kamera* (oder *logische Multi-Kamera*), basiert auf zwei oder mehr physische Kameras.
+Viele neuere Android-Geräte haben Dual-Front "und/oder" Dual-Back-Kameras, die nützlich für Features wie Stereo Bildanalyse, verbesserte visuelle Effekte und verbesserte Zoom-Funktion sind. Android P wird ein neuer [Multi-Kamera](https://developer.android.com/about/versions/pie/android-9.0#camera) -API, die Ihre app ermöglicht ein *logische Kamera* (oder *logische Multi-Kamera*), basiert auf zwei oder mehr physische Kameras.
 Um zu bestimmen, ob das Gerät eine logische Multi-Kamera unterstützt, sehen Sie sich die Funktionen von jede Kamera auf dem Gerät, um festzustellen, ob es unterstützt [RequestAvailableCapabilitiesLogicalMultiCamera](https://developer.android.com/reference/android/hardware/camera2/CameraMetadata#REQUEST_AVAILABLE_CAPABILITIES_LOGICAL_MULTI_CAMERA).
 
 Android Kreis enthält auch eine neue [SessionConfiguration](https://developer.android.com/reference/android/hardware/camera2/params/SessionConfiguration.html) -Klasse, die zum Reduzieren Verzögerungen bei der ersten Erfassung und ist somit überflüssig zu starten, und starten die Kamera-Datenstrom verwendet werden kann.
 
-Weitere Informationen zu Multi-Kamera-Unterstützung in Android P, finden Sie unter [Multi-Kamera-Unterstützung und Kamera Updates](https://developer.android.com/preview/features#camera).
+Weitere Informationen zu Multi-Kamera-Unterstützung in Android P, finden Sie unter [Multi-Kamera-Unterstützung und Kamera Updates](https://developer.android.com/about/versions/pie/android-9.0#camera).
 
 
 ### <a name="other-features"></a>Weitere Funktionen
@@ -256,7 +254,7 @@ Wenn die Android-Zielversion auf API-Ebene 28 festgelegt ist, sind mehrere platt
 
 -  Direkten Zugriff auf eine andere app-Datenverzeichnis anhand des Pfads ist nicht mehr zulässig.
 
-Weitere Informationen zu verhaltensänderungen für apps für Android-P, finden Sie unter [Verhaltensänderungen](https://developer.android.com/preview/behavior-changes.html#p-apps).
+Weitere Informationen zu verhaltensänderungen für apps für Android-P, finden Sie unter [Verhaltensänderungen](https://developer.android.com/about/versions/pie/android-9.0-changes-all#p-apps).
 
 
 ## <a name="sample-code"></a>Beispielcode
