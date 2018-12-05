@@ -118,7 +118,7 @@ public class MapsTest
 
 --------------
 
-## <a name="platform-implementation-specifics"></a>Besonderheiten bei der Plattformimplementierung
+## <a name="platform-implementation-specifics"></a>Besonderheiten bei der plattformspezifischen Implementierung
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
