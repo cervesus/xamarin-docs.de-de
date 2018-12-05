@@ -15,7 +15,7 @@ ms.locfileid: "50110133"
 ---
 # <a name="android-resource-basics"></a>Grundlagen der Android-Ressourcen
 
-Fast alle Android-Anwendungen werden eine Art von Ressourcen enthalten; zumindest haben sie oft die Layouts der Benutzeroberfläche in Form von XML-Dateien. Beim Erstellen einer Xamarin.Android-Anwendung werden Standardressourcen durch die Xamarin.Android-Projektvorlage eingestellt:
+Fast alle Android-Anwendungen enthalten eine Art von Ressource, zumindest besitzen sie oft die Layouts der Benutzeroberfläche in Form von XML-Dateien. Beim Erstellen einer Xamarin.Android-Anwendung werden Standardressourcen durch die Xamarin.Android-Projektvorlage eingerichtet:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -27,7 +27,7 @@ Fast alle Android-Anwendungen werden eine Art von Ressourcen enthalten; zumindes
  
 -----
 
-Die fünf Dateien, die die Standardressourcen ausmachen, wurden in den Ordner "Resources" erstellt:
+Die fünf Dateien, die die Standardressourcen ausmachen, wurden im Ordner "Resources" (Ressourcen) erstellt:
 
 -  **Icon.PNG** &ndash; das Standardsymbol für die Anwendung
 
@@ -55,9 +55,9 @@ Erstellen von Ressourcen ist so einfach wie das Hinzufügen von Dateien in das V
 -----
  
 
-Dies ermöglicht den Xamarin.Android-Tools, um ordnungsgemäß zu kompilieren und Einbetten von Ressourcen in der APK-Datei. Falls aus irgendeinem Grund der **Buildvorgang** nicht auf **Android-Ressourcen** festgelegt ist, dann werden die Dateien aus dem APK ausgeschlossen, und jeder Versuch des Ladens oder Zugriffs auf die Ressourcen führt zu einem Fehler zur Laufzeit und die Anwendung stürzt ab.
+So können die Ressourcen von den Xamarin.Android-Tools ordnungsgemäß kompiliert und in die APK-Datei eingebettet werden. Falls aus irgendeinem Grund der **Buildvorgang** nicht auf **Android-Ressourcen** festgelegt ist, dann werden die Dateien aus dem APK ausgeschlossen, und jeder Versuch, die Ressource zu laden oder auf diese zuzugreifen, führt zu einem Laufzeitfehler oder zum Absturz der Anwendung.
 
-Darüber hinaus ist es wichtig zu beachten, dass Android für Ressourcenelemente nur Kleinbuchstabe Dateinamen unterstützt, Xamarin.Android ist ein wenig fehlertoleranter; es wird die Groß- und Kleinbuchstabe Dateinamen unterstützen. Die Konvention für Bildernamen ist die Verwendung von Kleinbuchstaben mit Unterstrichen als Trennzeichen (z. B. **meine\_Image\_name.png**). Beachten Sie, dass Ressourcennamen nicht verarbeitet werden können, wenn Striche oder Leerzeichen als Trennzeichen verwendet werden.
+Auch wenn Android für Ressourcenelemente nur Kleinbuchstaben für Dateinamen unterstützt, ist Xamarin.Android etwas nachsichtiger. Xamarin.Android unterstützt Dateinamen, die jeweils in Groß- und Kleinbuchstaben geschrieben sind. Für Bildnamen gilt die Verwendung von Kleinbuchstaben mit Unterstrichen als Trennzeichen (z. B. my_image_name.png). Beachten Sie, dass Ressourcennamen nicht verarbeitet werden können, wenn Bindestriche oder Leerzeichen als Trennzeichen verwendet werden.
 
 Sobald Ressourcen zu einem Projekt hinzugefügt wurden, gibt es zwei Möglichkeiten, diese in einer Anwendung zu verwenden &ndash; programmgesteuert (im Code) oder aus XML-Dateien.
 
