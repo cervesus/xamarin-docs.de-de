@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: 5de5899b01965a33025c8af0c1ae6c09ac60dc9b
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: c505b12a745017664e56e8c84d0cf847a262208d
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171286"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060212"
 ---
 # <a name="android-platform-specifics"></a>Android Plattformeigenschaften
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 _Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel veranschaulicht, wie die Android-Plattform-Einzelheiten zu nutzen, die in Xamarin.Forms integriert sind._
 

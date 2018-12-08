@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: cfa450c977ac9f1d6370f40d27f5d704cc774767
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 3d031489fe71c580b309bedba30c524dfe6666db
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526675"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057943"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms-Karte
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/WorkingWithMaps/)
 
 _Xamarin.Forms nutzt die native APIs-Zuordnung auf jeder Plattform._
 

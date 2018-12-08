@@ -7,14 +7,16 @@ ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: d90bef4da589215247f412450905a5db541b0444
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 764a148ffffc2c69dbab5aeca872e2d10ce9f159
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563159"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052740"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>Zusammenfassung der Kapitel 24. Seitennavigation
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
 
 Viele Anwendungen bestehen aus mehreren Seiten, die für die der Benutzer navigiert. Die Anwendung immer eine *main* Seite oder *home* Seite, und von dort aus der Benutzer navigiert zu anderen Seiten, die in einem Stapel für die Navigation zurück verwaltet werden. Zusätzliche Navigationsoptionen finden Sie im [ **Kapitel 25. Seite Varianten**](chapter25.md).
 

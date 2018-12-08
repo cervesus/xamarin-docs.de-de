@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: 9226e1d26dcc49b6ec82b71f7757eb0e22cd66ec
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 56e50f0c3dffd54fe3d95f4cd140883613c9206f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171975"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052714"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Auflösung von Abhängigkeiten in Xamarin.Forms
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
 
 _In diesem Artikel wird erläutert, wie beim Einfügen von einer Abhängigkeit Auflösungsmethode in Xamarin.Forms, damit eine Anwendung Dependency Injection-Container Kontrolle über die Erstellung und Lebensdauer von benutzerdefinierten Renderern, Auswirkungen und DependencyService-Implementierungen kann. Die Codebeispiele in diesem Artikel stammen aus der [Abhängigkeitsauflösung mithilfe von Containern](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/) Beispiel._
 
@@ -301,6 +303,6 @@ Bei der [ `DependencyService.Resolve<T>` ](xref:Xamarin.Forms.DependencyService.
 
 - [Abhängigkeitsauflösung mit Containern (Beispiel)](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
 - [Dependency Injection](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
-- [Implementieren einen Videoplayer](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
+- [Implementieren eines Videoplayers](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
 - [Aufrufen von Ereignissen von Auswirkungen](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
 - [Wählen ein Foto aus der Bildbibliothek](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

@@ -7,16 +7,18 @@ ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 1dc4fe12d3ca23a9ca87c3be7819c970683db469
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: ce4dde3716176daf826678809339afb84c25d84a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563497"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052568"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>Zusammenfassung der Kapitel 7. XAML und code
 
-> [!NOTE] 
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
+
+> [!NOTE]
 > Anmerkungen zu dieser Version auf dieser Seite Geben Sie Bereiche, in denen Xamarin.Forms aus den Informationen im Buch abweichend hat, an.
 
 Xamarin.Forms unterstützt eine XML-basierte Markupsprache Namens der Extensible Application Markup Language oder XAML ("xsämmel"). XAML bietet eine Alternative zur C#-definieren Sie das Layout der Benutzeroberfläche einer Xamarin.Forms-Anwendung, und klicken Sie im Definieren der Bindungen zwischen Elementen der Benutzeroberfläche und dem zugrunde liegenden Daten.
@@ -39,7 +41,7 @@ Manchmal muss eine Eigenschaft auf ein Objekt festgelegt werden, die als einfach
 
 Eine Xamarin.Forms Portable Class Library kann eine XAML-Seite enthalten, bei seiner ersten Erstellung, oder Sie können eine XAML-Seite zu einem vorhandenen Projekt hinzufügen. Wählen Sie im Dialogfeld zum Hinzufügen eines neuen Elements das Element, das auf einer XAML-Seite verweist oder `ContentPage` und XAML. (Keinen `ContentView`.)
 
-> [!NOTE] 
+> [!NOTE]
 > Visual Studio-Optionen wurden geändert, da in diesem Kapitel geschrieben wurde.
 
 Es werden zwei Dateien erstellt: eine XAML-Datei mit dem Dateinamen Erweiterung .xaml und einer C#-Datei mit der Erweiterung. "XAML.cs" ausgedrückt. Die C#-Datei wird häufig als bezeichnet die *CodeBehind* der XAML-Datei. Die Code-Behind-Datei ist eine partielle Klassendefinition, die von abgeleitet `ContentPage`. Zur Buildzeit das XAML analysiert wird, und einer anderen partiellen Klassendefinition für die gleiche Klasse generiert. Die generierte Klasse enthält eine Methode namens `InitializeComponent` , die aus dem Konstruktor der CodeBehind-Datei aufgerufen wird.

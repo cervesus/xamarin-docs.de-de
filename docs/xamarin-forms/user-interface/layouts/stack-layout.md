@@ -1,34 +1,36 @@
 ---
 title: Xamarin.Forms StackLayout
-description: In diesem Artikel erläutert, wie die Xamarin.Forms StackLayout-Klasse verwenden, um Auflistungen von Sichten über eine Dimension darzustellen.
+description: In diesem Artikel erläutert die Xamarin.Forms-StackLayout-Klasse zu verwenden, um Auflistungen von Ansichten für eine Dimension darzustellen.
 ms.prod: xamarin
 ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 6e278c466c352ad19575cd3a84d6e38e14ec2587
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: bdc03721569682cd5b4f72908fcab1e4a567b83c
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244596"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53055801"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
-`StackLayout` Ansichten in einer eindimensionalen Linie ("Stapel"), organisiert, horizontal oder vertikal. Ansichten in einer `StackLayout` basierend auf den Speicherplatz im Layout mit Layoutoptionen vergrößert werden kann. Positionieren wird durch die Reihenfolge bestimmt, die das Layout und die gruppenbezogenen Layoutoptionen Ansichten Sichten hinzugefügt wurden.
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 
-[![](stack-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms Layouts")
+`StackLayout` Sichten in einer eindimensionalen Linie ("Stapel"), organisiert, entweder horizontal oder vertikal. Ansichten in einer `StackLayout` basierend auf den Speicherplatz im Layout mit Layoutoptionen vergrößert werden kann. Positionierung wird durch die Reihenfolge bestimmt, die das Layout und die Layoutoptionen Ansichten Ansichten hinzugefügt wurden.
+
+[![](stack-layout-images/layouts-sml.png "Xamarin.Forms-Layouts")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms-Layouts")
 
 ## <a name="purpose"></a>Zweck
 
-`StackLayout` ist kleiner als andere Sichten komplex. Einfache lineare Schnittstellen können durch Hinzufügen zu Sichten erstellt werden ein `StackLayout`, und eine komplexere Schnittstellen erstellt, indem sie schachteln.
+`StackLayout` ist weniger komplex als anderen Ansichten. Einfache lineare Schnittstellen können erstellt werden, durch das Hinzufügen nur Ansichten, um eine `StackLayout`, und komplexere Schnittstellen, die durch das Schachteln von ihnen erstellt.
 
-## <a name="usage--behavior"></a>Verwendung und Verhalten
+## <a name="usage--behavior"></a>Nutzung und Verhalten
 
 ### <a name="spacing"></a>Abstand
 
-Standardmäßig `StackLayout` einen 6px Rand zwischen den Ansichten werden hinzugefügt. Dies kann gesteuert oder festgelegt werden, haben keine Rand durch Festlegen der `Spacing` Eigenschaft StackLayout. Das folgende Beispiel zeigt, wie Abstand und die Wirkung der unterschiedliche Abstände Optionen festgelegt:
+In der Standardeinstellung `StackLayout` wird einen 6px Rand zwischen den Ansichten hinzugefügt. Dies kann gesteuert oder festgelegt werden, damit kein Rand durch Festlegen der `Spacing` StackLayout Eigenschaft. Das folgende Beispiel veranschaulicht, wie Abstände und die Auswirkungen der verschiedenen Abstandsoptionen festlegen:
 
 In XAML:
 
@@ -78,35 +80,35 @@ public class StackLayoutCode : ContentPage
 }
 ```
 
-Abstand = 0:
+Der Abstand = 0:
 
 ![](stack-layout-images/spacing-zero.png "StackLayout mit Abstand = 0")
 
-Abstand von zehn:
+Der Abstand von zehn:
 
 ![](stack-layout-images/spacing-ten.png "StackLayout mit Abstand = 10")
 
-### <a name="sizing"></a>Anpassen der Größe
+### <a name="sizing"></a>Größenanpassung
 
-Die Größe einer Sicht in einer StackLayout hängt davon ab, die Höhe und Breite Anforderungen und die gruppenbezogenen Layoutoptionen. `StackLayout` Erzwingt die Auffüllung. Die folgenden `LayoutOption`s führt dazu, dass Ansichten nimmt so viel Speicherplatz wie aus dem Layout verfügbar ist:
+Die Größe einer Ansicht in einem StackLayout hängt davon ab, sowohl die Höhe und Breite Anforderungen als auch die Layoutoptionen. `StackLayout` Erzwingt die Auffüllung. Die folgenden `LayoutOption`s führt dazu, dass Ansichten nimmt so viel Speicherplatz wie das Layout verfügbar ist:
 
-- **CenterAndExpand** &ndash; zentriert die Ansicht innerhalb des Layouts und wird erweitert, um dauern, bis so viel Speicherplatz wie das Layout es bereitgestellt wird.
-- **EndAndExpand** &ndash; platziert die Ansicht am Ende des Layouts (oder Begrenzung ganz rechts unten) und wird erweitert, um dauern, bis so viel Speicherplatz wie das Layout es bereitgestellt wird.
-- **FillAndExpand** &ndash; platziert die Sicht, damit sie keine Auffüllung hat und wie viel Platz einnehmen, wie das Layout es bereitgestellt wird.
-- **StartAndExpand** &ndash; platziert die Ansicht zu Beginn des Layouts und wie viel Platz einnehmen, wie das übergeordnete Element bereitgestellt wird.
+- **CenterAndExpand** &ndash; konzentriert sich die Sicht innerhalb des Layouts und wird erweitert, um so viel Speicherplatz wie das Layout sie erhalten dauern.
+- **EndAndExpand** &ndash; positioniert die Ansicht am Ende des Layouts (untere oder rechte Begrenzung) und wird erweitert, um so viel Speicherplatz wie das Layout sie erhalten dauern.
+- **FillAndExpand** &ndash; die Ansicht so anordnet, dass er verfügt über keine Auffüllung, und so viel Speicherplatz wie das Layout es erhalten hat.
+- **StartAndExpand** &ndash; platziert die Ansicht zu Beginn des Layouts und nimmt so viel Speicherplatz wie das übergeordnete Element bereitgestellt wird.
 
 Weitere Informationen finden Sie unter [Erweiterung](~/xamarin-forms/user-interface/layouts/layout-options.md#expansion).
 
 ### <a name="positioning"></a>Positionierung
 
-Ansichten in einer StackLayout positioniert werden kann und Größe mit `LayoutOptions`. Jede Sicht kann angegeben werden `VerticalOptions` und `HorizontalOptions`, definieren, wie die Ansichten selbst relativ zu das Layout positioniert werden. Die folgenden vordefinierten `LayoutOptions` sind verfügbar:
+Ansichten in einem StackLayout positioniert werden können und die Größe mit `LayoutOptions`. Jede Sicht kann angegeben werden `VerticalOptions` und `HorizontalOptions`, definieren, wie die Ansichten selbst relativ zu das Layout positioniert werden. Die folgenden vordefinierten `LayoutOptions` sind verfügbar:
 
-- **Center** &ndash; zentriert die Ansicht innerhalb des Layouts.
-- **End** &ndash; platziert die Ansicht am Ende des Layouts (oder Begrenzung ganz rechts unten).
-- **Füllen Sie** &ndash; platziert die Sicht so, dass sie über keine Auffüllung verfügt.
+- **Center** &ndash; die Ansicht innerhalb des Layouts zentriert wird.
+- **End** &ndash; positioniert die Ansicht am Ende des Layouts (untere oder rechte Begrenzung).
+- **Geben Sie** &ndash; die Ansicht so anordnet, dass sie keine Auffüllung verfügt.
 - **Starten Sie** &ndash; platziert die Ansicht zu Beginn des Layouts.
 
-Der folgende Code zeigt Layout Festlegen von Optionen an:
+Der folgende Code veranschaulicht Layout Festlegen von Optionen an:
 
 In XAML:
 
@@ -156,11 +158,11 @@ public class StackLayoutCode : ContentPage
 
 Weitere Informationen finden Sie unter [Ausrichtung](~/xamarin-forms/user-interface/layouts/layout-options.md#alignment).
 
-## <a name="exploring-a-complex-layout"></a>Untersuchen ein komplexes Layout
+## <a name="exploring-a-complex-layout"></a>Erkunden ein komplexes Layout
 
-Jedes der Layouts aufweisen Stärken und Schwächen für bestimmte Layouts erstellen. In der gesamten diese Artikelreihe Layout wurde eine Beispiel-app mit dem gleichen Seitenlayout mithilfe von drei verschiedenen Layouts implementiert erstellt.
+Jede der Layouts hat Stärken und Schwächen für bestimmte Layouts erstellen. In dieser Artikelreihe Layout eine Beispiel-app mit der gleichen Layout mit drei verschiedenen Layouts implementiert wurde.
 
-Betrachten Sie das folgende XAML-Code ein:
+Betrachten Sie das folgende XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -213,11 +215,11 @@ Title="StackLayouts">
 
 ```
 
-Der obige Code erhalten Sie im folgenden dargestellt:
+Der obige Code führt das folgende Layout:
 
 ![](stack-layout-images/stack.png "Komplexe StackLayout")
 
-Beachten Sie, dass `StackLayouts`s geschachtelt werden, da in einigen Fällen Schachteln von Layouts einfacher, als vertrauenswürdig sind alle Elemente innerhalb des gleichen Layouts sein kann. Beachten Sie, dass auch, da `StackLayout` unterstützt keine überlappenden Elemente der Seite "ist nicht Teil der Layout-Sicherungsfunktionalität gefunden auf den Seiten für die andere Tastaturlayouts stimmen.
+Beachten Sie, dass `StackLayouts`s geschachtelt sind, da in einigen Fällen Schachteln von Layouts einfacher als die Darstellung aller Elemente innerhalb des gleichen Layouts sein kann. Beachten Sie, dass da `StackLayout` unterstützt keine überlappenden Elemente, die Seite nicht haben einige der Layout-Sicherungsfunktionalität finden Sie auf den Seiten für die anderen Layouts.
 
 
 

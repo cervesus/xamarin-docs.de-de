@@ -7,14 +7,16 @@ ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 6393794a20a80fae43e31a96efd4941f4b633c28
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: a67a2e12a12039755970a78739ea2ca3d2ffae08
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563718"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053489"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>Zusammenfassung der Kapitel 14. Absolutes layout
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
 
 Wie `StackLayout`, [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout) leitet sich von `Layout<View>` und erbt einen `Children` Eigenschaft. `AbsoluteLayout` implementiert eine Layoutsystem, das den Programmierer, geben Sie die Positionen der untergeordneten Elemente und optional ihre Größe erfordert. Die Position wird angegeben, indem die linke obere Ecke des untergeordneten Elements relativ zur oberen linken Ecke des der `AbsoluteLayout` in geräteunabhängigen Einheiten. `AbsoluteLayout` implementiert außerdem eine proportionale Positionierung und größenanpassung-Funktion aus.
 

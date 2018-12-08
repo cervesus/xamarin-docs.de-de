@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: e11f7c95ccc65371ec5d844505682103025cd8af
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 531fb9500bdbf9d07ac3f781113768395465bd50
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172235"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050555"
 ---
 # <a name="creating-xaml-markup-extensions"></a>Erstellen von XAML-Markuperweiterungen
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
 
 Auf der Ebene des programmgesteuerten eine XAML-Markuperweiterung ist eine Klasse, die implementiert die [ `IMarkupExtension` ](xref:Xamarin.Forms.Xaml.IMarkupExtension) oder [ `IMarkupExtension<T>` ](xref:Xamarin.Forms.Xaml.IMarkupExtension`1) Schnittstelle. Sie können den Quellcode der standardmäßigen Markuperweiterungen im unten beschriebenen Untersuchen der [ **MarkupExtensions** Directory](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) des Xamarin.Forms-GitHub-Repositorys.
 

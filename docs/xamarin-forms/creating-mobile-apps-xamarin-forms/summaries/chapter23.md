@@ -7,14 +7,16 @@ ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 4bfa2bed7061e031c55ccbdb7f576aa02c17581a
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: ddbb96836fa1aa9611701bd7d645d9e85ad28027
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563991"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058635"
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>Zusammenfassung der Kapitel 23. Trigger und Verhaltensweisen
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23)
 
 Trigger und Verhaltensweisen ähneln, insofern, dass sie sowohl in XAML-Dateien zur Vereinfachung der Element-Interaktionen über die Verwendung von datenbindungen und zum Erweitern der Funktionalität von XAML-Elementen verwendet werden sollen. Sowohl Trigger und Verhaltensweisen werden fast immer mit visual Benutzeroberflächenobjekten verwendet.
 

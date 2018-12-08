@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: cafc1e78779dc393fa0409daa08b3daa8948a1ee
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 135977329e2a190dd4c611937f6b8a664f135f5c
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38815676"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051943"
 ---
 # <a name="integrating-azure-active-directory-b2c-with-azure-mobile-apps"></a>Die Integration von Azure Active Directory B2C mit Azure Mobile Apps
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzureAuthADB2CClientFlow/)
 
 _Azure Active Directory B2C ist eine Cloudlösung für die Verwaltung von Identitäten für kundenorientierte Web- und mobile Anwendungen. In diesem Artikel wird veranschaulicht, wie Sie Azure Active Directory B2C zum Bereitstellen von Authentifizierung und Autorisierung mit einer Instanz von Azure Mobile Apps mit Xamarin.Forms zu verwenden._
 

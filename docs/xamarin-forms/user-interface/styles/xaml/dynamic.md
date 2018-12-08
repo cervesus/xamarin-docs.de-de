@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 2f336bff19302228b9c8c3a1aa87930414c44ac2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f1c491bd2e19f44151e2efb317fe40d2d122ecae
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108404"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058521"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>Dynamische Stile in Xamarin.Forms
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
 
 _Stile nicht reagieren auf Änderungen der Eigenschaften, und für die Dauer einer Anwendung unverändert bleiben. Beispielsweise wird nicht nach dem Zuweisen einer Formatvorlage auf ein visuelles Element, wenn eine der Setter-Instanzen entfernt, geändert wird, oder eine neue Setter-Instanz hinzugefügt, die Änderungen nicht auf das visuelle Element angewendet werden. Allerdings können Anwendungen mithilfe von dynamischen Ressourcen auf Änderungen an Formatvorlagen dynamisch zur Laufzeit reagieren._
 

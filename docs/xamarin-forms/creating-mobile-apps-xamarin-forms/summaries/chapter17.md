@@ -7,14 +7,16 @@ ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: db16ee34ed353379ea23899da0d3d16fc8428c62
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: dc9d57c0edf50f7fe5a7241e64cc727413004252
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563354"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050896"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>Zusammenfassung der Kapitel 17. Optimieren des Rasters
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
 
 Die [ `Grid` ](xref:Xamarin.Forms.Grid) ist ein leistungsstarke Layout-Mechanismus, der ordnet seine untergeordneten Elemente in Zeilen und Spalten von Zellen. Im Gegensatz zu HTML-Code ähnlich `table` -Element, das `Grid` ist ausschließlich für Zwecke der Präsentation, anstatt Layout.
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 0c16fd3930926a05ed7796391962d0fc8996dc96
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a1027b1fd738c80cf5917effc66957f77a337ecf
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995374"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054566"
 ---
 # <a name="creating-a-custom-layout"></a>Erstellen eines benutzerdefinierten Layouts
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/CustomLayout/WrapLayout/)
 
 _Xamarin.Forms definiert vier Klassen für Layout – StackLayout, die von "AbsoluteLayout", RelativeLayout und Raster, und jedes seiner untergeordneten Elemente auf andere Weise angeordnet. Allerdings ist es manchmal notwendig, mit einem Layout, die nicht von Xamarin.Forms bereitgestelltes Seiteninhalt zu organisieren. In diesem Artikel wird erläutert, wie eine benutzerdefinierte Layout-Klasse schreiben, und veranschaulicht eine Ausrichtung keine Unterscheidung nach Kanatyp WrapLayout-Klasse, die ordnet seine untergeordneten Elemente horizontal über die Seite, und klicken Sie dann dient als Wrapper für die Anzeige von nachfolgenden untergeordneten Elemente auf zusätzliche Zeilen._
 

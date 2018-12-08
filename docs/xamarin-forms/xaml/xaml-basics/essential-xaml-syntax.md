@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 0c7e0d01a75d72204ca086fc1b0639d584220651
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 75d3c628a513b81af9dea7308ca49c2b490c4aff
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171572"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059742"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Teil 2. Essential XAML Syntax
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
 _XAML ist hauptsächlich für das Instanziieren und Initialisieren von Objekten ausgelegt. Aber häufig Eigenschaften müssen festgelegt werden, bis zu komplexen Objekten, die einfach als XML-Zeichenfolgen dargestellt werden können, und manchmal auf eine untergeordnete Klasse von einer Klasse definierte Eigenschaften festgelegt werden müssen. Diese beiden Anforderungen erfordern die wesentlichen Funktionen der XAML-Syntax von Eigenschaftenelementen und angefügte Eigenschaften._
 

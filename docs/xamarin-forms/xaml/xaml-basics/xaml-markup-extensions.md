@@ -7,14 +7,16 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 3/27/2018
-ms.openlocfilehash: bffddfdb67238287b868b01edad88bc8d43e5bb1
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: a93503762528885dfc7d3b5400bf4ec716ea9fab
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563835"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056213"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Teil 3. XAML-Markuperweiterungen
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
 _XAML-Markuperweiterungen bilden eine wichtige Funktion in XAML, mit denen Eigenschaften festgelegt werden, um Objekte oder Werte, die aus anderen Quellen indirekt verwiesen werden. XAML-Markuperweiterungen sind besonders wichtig für das Freigeben von Objekten und verweisen auf Konstanten, die in der gesamten Anwendung verwendet, aber sie finden ihre größten Dienstprogramm datenbindungen._
 

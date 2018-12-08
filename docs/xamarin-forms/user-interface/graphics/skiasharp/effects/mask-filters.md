@@ -7,14 +7,16 @@ ms.assetid: 940422A1-8BC0-4039-8AD7-26C61320F858
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: 524ca31b6687709245507bce0baeb82e12a1b726
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d68153cdaad67b407def3ed5bfaddf928ef98bb4
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111689"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060406"
 ---
 # <a name="skiasharp-mask-filters"></a>SkiaSharp-Maske-Filter
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 Maske Filter sind die Auswirkungen, die die Geometrie und die alpha-Kanal von grafischen Objekten ändern. Legen Sie zum Verwenden eines Filters für die Maske der [ `MaskFilter` ](xref:SkiaSharp.SKPaint.MaskFilter) Eigenschaft `SKPaint` auf ein Objekt des Typs [ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter) Sie erstellt haben, durch Aufrufen einer der der `SKMaskFilter` statische Methoden.
 

@@ -7,14 +7,16 @@ ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 2c9493706930bd3c2ffd54835d963d9847e82e76
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: f326d0434fd2565c30890dea0838168c9d8b4287
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563796"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054740"
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Zusammenfassung der Kapitel 10. XAML-Markuperweiterungen
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)
 
 In der Regel der XAML-Parser eine beliebige Zeichenfolge als Attributwert festgelegt, um den Typ der Eigenschaft, die basierend auf standardkonvertierungen für die grundlegende .NET Datentypen konvertiert oder [ `TypeConverter` ](xref:Xamarin.Forms.TypeConverter) Ableitung angefügt, um die Eigenschaft oder den Typ mit einer [`TypeConverterAttribute`](xref:Xamarin.Forms.TypeConverterAttribute).
 

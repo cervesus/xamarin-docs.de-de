@@ -7,14 +7,16 @@ ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 71997acde4545fec801dfdc8147ab1a9ace7ab24
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: be2d998916c81cb2216251e2112ff8ca2af5d87a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119227"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061367"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>Segmentierte Anzeige der SkiaSharp-bitmaps
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 Die SkiaSharp `SKCanvas` Objekt definiert eine Methode namens `DrawBitmapNinePatch` und zwei Methoden, die mit dem Namen `DrawBitmapLattice` , sind sehr ähnlich. Sowohl diese Methoden Rendern einer Bitmap auf die Größe eines Rechtecks Ziel, aber statt Dehnen die Bitmap gleichmäßig, Teile der Bitmap in die Pixeldimensionen anzeigen und andere Teile der Bitmap gestreckt, so, dass sie das Rechteck passt:
 

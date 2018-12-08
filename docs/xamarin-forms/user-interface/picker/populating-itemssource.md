@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 3f82e4b7d52988bfef9736ace8c476a9cd2da02b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 102ff15ea0e0002b783f993c59eb50d03a5ece63
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994743"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051068"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>Festlegen der ItemsSource-Eigenschaft einer Auswahl
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/MonkeyAppPicker/)
 
 _Die Auswahl-Ansicht ist, ein Steuerelement für ein Element mit Text aus einer Liste von Daten ausgewählt wird. In diesem Artikel wird erläutert, wie eine Auswahl mit Daten aufgefüllt wird, durch Festlegen der ItemsSource-Eigenschaft, und zum Reagieren auf Auswahl durch den Benutzer._
 

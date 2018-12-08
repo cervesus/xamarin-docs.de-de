@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: ff485774b8e9ee47aae4808701e8b9d20c308e03
-ms.sourcegitcommit: 676c5a6795ab4896ccd1b288424bf2040b1208aa
+ms.openlocfilehash: 25c5077b3637c54370fa1a42a9b652ef211c0ed9
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52280477"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059339"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms-Raster
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 
 [`Grid`](xref:Xamarin.Forms.Grid) unterstützt das Anordnen von Ansichten in Zeilen und Spalten. Zeilen und Spalten können festgelegt werden, um proportionale Größe bzw. absolute Größen zu erhalten. Die `Grid` Layout sollten nicht mit herkömmlichen Tabellen verwechselt werden und dient nicht zur Darstellung von Tabellendaten. `Grid` Es muss nicht das Konzept der Zeile, Spalte oder Zelle, die Formatierung. Im Gegensatz zu HTML-Tabellen `Grid` dient ausschließlich für das Inhaltslayout.
 

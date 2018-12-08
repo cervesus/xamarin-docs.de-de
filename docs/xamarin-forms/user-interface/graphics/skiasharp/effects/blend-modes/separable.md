@@ -7,14 +7,16 @@ ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: c064b7fd5e436092593a194aee5d7498aef6c057
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 594e98230d4f4bd8aca27f92f4544f8c59b5f0a2
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131767"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061454"
 ---
 # <a name="the-separable-blend-modes"></a>Die trennbare Füllmethoden einheitlich
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 In diesem Artikel haben Sie gesehen [ **SkiaSharp Porter-Duff Füllmethoden**](porter-duff.md), die Porter-Duff Blend-Modi werden in der Regel Clipping-Vorgänge ausführen. Die trennbare Füllmethoden einheitlich unterscheiden. Die trennbare Modi geändert werden, die einzelne roten, grünen und blauen Farbkomponenten eines Bilds. Trennbare Füllmethoden einheitlich können mischen Sie Farbe zu zeigen, dass die Kombination von Rot, Grün und Blau in der Tat weiß ist:
 

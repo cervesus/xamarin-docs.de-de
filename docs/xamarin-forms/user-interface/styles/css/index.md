@@ -8,14 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: 98eb37d27a20bac4ad2efab831552140496af2e3
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: d56cf660fb5aa73b300a36c5abd8ff9338791747
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172170"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054854"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Formatieren von Xamarin.Forms-apps, die mithilfe von Cascading Stylesheets (CSS)
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)
 
 _Xamarin.Forms unterstützt visuelle Stile-Elemente mithilfe von Cascading Stylesheets (CSS)._
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 881b465643b576f5d3f4fc8121c5a873087a876c
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 762d4752eb3882398f212e634c66305f74d5a459
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527331"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052662"
 ---
 # <a name="device-orientation"></a>Geräteausrichtung
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
 
 Es ist wichtig zu berücksichtigen, wie Ihre Anwendung verwendet wird und wie Querformat integriert werden kann, um die benutzerfreundlichkeit zu verbessern. Einzelne Layouts können entworfen werden, um mehrere Ausrichtungen zu berücksichtigen und am besten verwenden Sie den verfügbaren Speicherplatz. Auf der Anwendungsebene kann Drehung deaktiviert oder aktiviert werden.
 

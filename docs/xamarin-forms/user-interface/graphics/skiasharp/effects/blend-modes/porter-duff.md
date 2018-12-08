@@ -7,14 +7,16 @@ ms.assetid: 57F172F8-BA03-43EC-A215-ED6B78696BB5
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: ebd4db28b2c20bd2b9e1d93e03dd101ebc5da663
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f988c16e933214b3ce737febb89d05a451eb2f14
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131680"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53055036"
 ---
 # <a name="porter-duff-blend-modes"></a>Porter-Duff Füllmethoden einheitlich
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 Die Blend-Modi Porter-Duff heißen nach Thomas Porter und Tom Duff, der eine Algebra der Zusammensetzung bei der Arbeit für Lucasfilm entwickelt hat. Die Artikel [ _Zusammensetzung Digitalbilder_ ](https://graphics.pixar.com/library/Compositing/paper.pdf) veröffentlicht wurde, in der Ausgabe vom Juli 1984 _Computergrafiken_, Seiten von 253 auf 259. Diese Füllmethoden für das zusammensetzen, die verschiedenen Bilder in einer zusammengesetzten Szene zusammenstellen, ist von entscheidender Bedeutung sind:
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/01/2018
-ms.openlocfilehash: 2ab7381baefc6ca013b6c8a5c9f7bf7b5cae8b10
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 53c5f17672cc46ef097e979154a8911f8cdaef63
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171715"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054125"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Verwenden von XAML-Markuperweiterungen
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
 
 XAML-Markuperweiterungen können die Leistungsfähigkeit und Flexibilität von XAML zu verbessern, indem Sie Attribute des Elements aus einer Vielzahl von Datenquellen festgelegt werden können. Einige XAML-Markuperweiterungen sind Teil der Spezifikation für die XAML 2009. Diese werden in XAML-Dateien mit der üblichen `x` Namespace-Präfix, und Sie werden häufig bezeichnet mit diesem Präfix. In diesem Artikel werden die folgenden Markuperweiterungen erläutert:
 

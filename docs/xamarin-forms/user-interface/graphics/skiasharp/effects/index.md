@@ -7,14 +7,16 @@ ms.assetid: B3E06572-8E2A-49FA-90D1-444C394CD516
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/22/2018
-ms.openlocfilehash: 768fd0e1cd5ed08f42310d9aaf5993de7ec32e6b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 121d505d578aa20e86977c0da5d69626bbad1f53
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131456"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53049219"
 ---
 # <a name="skiasharp-effects"></a>SkiaSharp-Auswirkungen
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 Die SkiaSharp [ `SKPaint` ](xref:SkiaSharp.SKPaint) -Klasse definiert sechs Eigenschaften, die unter der allgemeine Begriff der klassifiziert werden können _Effekte_. Dies sind Eigenschaften, die die normale Anzeige von Grafiken in irgendeiner Weise zu ändern. Die Auswirkungen von SkiaSharp fallen in sechs Kategorien:
 

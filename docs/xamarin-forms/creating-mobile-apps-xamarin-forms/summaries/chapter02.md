@@ -7,16 +7,18 @@ ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: fcb832e851d7467679d979841dad60d117240b59
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 948d25ce379944691053a5ff76ba3b2284385251
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563873"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052636"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Zusammenfassung der Kapitel 2. Aufbau einer app
 
-> [!NOTE] 
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
+
+> [!NOTE]
 > Anmerkungen zu dieser Version auf dieser Seite Geben Sie Bereiche, in denen Xamarin.Forms aus den Informationen im Buch abweichend hat, an.
 
 In einer Xamarin.Forms-Anwendung werden als Objekte, die Platz auf dem Bildschirm bezeichnet *visuelle Elemente*, die durch gekapselte der [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) Klasse. Visuelle Elemente können in drei Kategorien, die für diese Klassen aufgeteilt werden:
@@ -31,9 +33,9 @@ In diesem Kapitel wird veranschaulicht, wie Sie eine Anwendung erstellen, durch 
 
 ## <a name="say-hello"></a>Grüßen
 
-Mit der Xamarin-Plattform installiert wird können Sie eine neue Xamarin.Forms-Projektmappe in Visual Studio oder Visual Studio für Mac erstellen. Die [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) Lösung verwendet eine Portable Klassenbibliothek für die gemeinsamen Code. 
+Mit der Xamarin-Plattform installiert wird können Sie eine neue Xamarin.Forms-Projektmappe in Visual Studio oder Visual Studio für Mac erstellen. Die [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) Lösung verwendet eine Portable Klassenbibliothek für die gemeinsamen Code.
 
-> [!NOTE] 
+> [!NOTE]
 > Portable Klassenbibliotheken wurden von .NET Standard-Bibliotheken ersetzt. Der Beispielcode aus dem Buch wurde zur Verwendung von .NET standard-Bibliotheken konvertiert.
 
 Dieses Beispiel zeigt eine Xamarin.Forms-Projektmappe in Visual Studio erstellt werden, ohne Änderungen. Die Lösung besteht aus sechs Projekte:
@@ -45,8 +47,8 @@ Dieses Beispiel zeigt eine Xamarin.Forms-Projektmappe in Visual Studio erstellt 
 - [**Hello.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Windows), ein Projekt für Windows 8.1
 - [**Hello.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.WinPhone), ein Projekt für Windows Phone 8.1
 
-> [!NOTE] 
-> Xamarin.Forms nicht mehr unterstützt wird, Windows 8.1, Windows Phone 8.1 oder Windows 10 Mobile Xamarin.Forms-Anwendungen werden auf dem Windows 10-Desktop ausgeführt. 
+> [!NOTE]
+> Xamarin.Forms nicht mehr unterstützt wird, Windows 8.1, Windows Phone 8.1 oder Windows 10 Mobile Xamarin.Forms-Anwendungen werden auf dem Windows 10-Desktop ausgeführt.
 
 Sie können stellen diese Projekte für die Anwendung die Startup-Projekt, und klicken Sie dann erstellen und führen Sie das Programm auf einem Gerät oder Simulator.
 
@@ -56,7 +58,7 @@ In vielen Ihrer Xamarin.Forms-Programme wird nicht die Anwendungsprojekte änder
 
 Die visuellen Elemente angezeigt, indem die **Hello** Programm werden im Konstruktor des definiert die [ `App` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) Klasse. `App` die Xamarin.Forms-Klasse abgeleitet [ `Application` ](xref:Xamarin.Forms.Application).
 
-> [!NOTE] 
+> [!NOTE]
 > Die Visual Studio-Lösungsvorlagen für Xamarin.Forms wird eine Seite mit einer XAML-Datei erstellen. XAML wird nicht behandelt, in diesem Buch bis [Kapitel 7](chapter07.md).
 
 Die **Verweise** Teil der **Hello** PCL-Projekt enthält die folgenden Xamarin.Forms-Assemblys:
@@ -74,8 +76,8 @@ Die **Verweise** Abschnitte der fünf Anwendungsprojekte enthalten zusätzliche 
 - **Xamarin.Forms.Platform.WinRT.Tablet**
 - **Xamarin.Forms.Platform.WinRT.Phone**
 
-> [!NOTE] 
-> Die **Verweise** dieser Projekte nicht mehr Abschnitten werden die Assemblys. Die Projektdatei enthält dagegen eine **"packagereference"** Tags verweisen auf das Xamarin.Forms-NuGet-Paket. Die **Verweise** Abschnitt in Visual Studio-Listen der **Xamarin.Forms** Verpacken, anstatt die Xamarin.Forms-Assemblys. 
+> [!NOTE]
+> Die **Verweise** dieser Projekte nicht mehr Abschnitten werden die Assemblys. Die Projektdatei enthält dagegen eine **"packagereference"** Tags verweisen auf das Xamarin.Forms-NuGet-Paket. Die **Verweise** Abschnitt in Visual Studio-Listen der **Xamarin.Forms** Verpacken, anstatt die Xamarin.Forms-Assemblys.
 
 Jedes der Anwendungsprojekte enthält einen Aufruf der statischen `Forms.Init` -Methode in der die `Xamarin.Forms` Namespace. Initialisiert die Xamarin.Forms-Bibliothek. Eine andere Version von `Forms.Init` für jede Plattform definiert ist. Die Aufrufe dieser Methode finden Sie in folgenden Klassen:
 
@@ -95,7 +97,7 @@ Andernfalls sind diese Anwendungsprojekte Programme für den normalen "nichts".
 
 Es ist möglich, eine Xamarin.Forms-Projektmappe mit der allgemeine Code in eine Portable Klassenbibliothek (PCL) oder eine freigegebene Asset-Projekt (SAP) zu erstellen. Um eine SAP-Lösung zu erstellen, wählen Sie die Shared-Option in Visual Studio. Die [ **HelloSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap) Lösung wird veranschaulicht, die SAP-Vorlage ohne Änderungen.
 
-> [!NOTE] 
+> [!NOTE]
 > Portable Klassenbibliotheken wurde von .NET Standard-Bibliotheken ersetzt. Der Beispielcode aus dem Buch wurde zur Verwendung von .NET standard-Bibliotheken konvertiert. Andernfalls sind die PCL und .NET Standard-Bibliotheken vom Konzept her ähnlich.
 
 Die Bibliothek Ansatz Bündel alle der allgemeinen code in einem Klassenbibliotheksprojekt, das auf die Anwendung Plattformprojekte verweist. Mit dem SAP-Ansatz wird der allgemeine Code effektiv in allen Projekten die Platform-Anwendung vorhanden ist, und von ihnen gemeinsam genutzt wird.

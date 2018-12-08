@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 0d49b8c50db08ad07952425492591ee246de4f8b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: e2abb37a69fc059cea499814eb48453f3bbbed72
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998347"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051055"
 ---
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.Forms von "AbsoluteLayout"
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 
 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) passt Position und Größe der untergeordneten Elemente, die proportional zu seiner eigenen Größe und Position oder Absolute Werte. Untergeordnete Ansichten können und Größe mit proportional oder statische Werte, und ein proportional und statische Werte können kombiniert werden.
 

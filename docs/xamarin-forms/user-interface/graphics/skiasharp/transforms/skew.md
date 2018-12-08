@@ -7,14 +7,16 @@ ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/20/2017
-ms.openlocfilehash: ecb07c69b7720f77401bf9bf454ee4b0248ad238
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a0c65ab2d319e39b236799cd453874142206b467
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113819"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058885"
 ---
 # <a name="the-skew-transform"></a>Die Scherungstransformation
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _Erfahren Sie, wie die Scherungstransformation Geneigter Grafikobjekte in SkiaSharp erstellen können_
 

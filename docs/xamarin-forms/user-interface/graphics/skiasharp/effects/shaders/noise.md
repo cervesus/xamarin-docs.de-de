@@ -7,14 +7,16 @@ ms.assetid: 90C2D00A-2876-43EA-A836-538C3318CF93
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 3c0ee238e0fc72aaea2f73e11317fea7b7a63fb7
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 4801aa12acf8eca2384cc5b41d677f7cb0bdd90d
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171494"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052050"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp-Rauschen und zusammenstellen
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 Einfache Vektorgrafiken tendenziell unnatürlichen suchen. Die geraden, geglättete Kurven und Volltonfarben entsprechen nicht den Fehlern von realen Objekten. Bei der Arbeit an den Computer generierte Grafiken für den Film 1982 _Tron_, Computerwissenschaftler Ken Perlin zu Beginn der Entwicklung von Algorithmen, die zufällige Prozesse verwendet wird, um diese Images realistischere Texturen geben. Im Jahre 1997 gewonnen Ken Perlin Academy Auszeichnung für den technischen Kompetenz. Verfügt über seine Arbeit Perlin-Noise genannt, stammen, und wird in die SkiaSharp unterstützt. Im Folgenden ein Beispiel:
 

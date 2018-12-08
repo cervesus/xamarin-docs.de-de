@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: c6a6ed38ec64c681075ffa3e42f3ffaf58c576ec
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 98212483481b2ce60c73a40c014816ee3c3f110c
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997216"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059245"
 ---
 # <a name="listview-performance"></a>ListView-Leistung
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
 
 Beim Schreiben von mobilen Anwendungen ist die Leistung wichtig. Benutzer stammen, ebenso der geglättete Bildlauf und schnelle Ladezeiten zu erwarten. Nicht den Erwartungen der Benutzer erfüllt wird, kostet Sie Bewertungen in den App Store oder im Falle einer Line-of-Business-Anwendung, die Ihr Unternehmen Zeit und Geld Kosten.
 
