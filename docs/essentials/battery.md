@@ -4,19 +4,17 @@ description: In diesem Dokument wird die Klasse „Battery“ in Xamarin.Essenti
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 6a14c939064538a405a1fe64061e0bb2e903fedd
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 3d69d082495f11c48273e9329bd2a4a61451b33f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675431"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058687"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: Akku
 
-![NuGet-Vorabrelease](~/media/shared/pre-release.png)
-
-Mit der Klasse **Battery** können Sie die Akkuinformationen des Geräts überprüfen und auf Änderungen überwachen.
+Mit der **Battery**-Klasse können Sie Informationen über den Akkustand und über Änderungen des Geräts sowie den Energiesparstatus des Geräts überwachen. Dieser gibt an, ob sich das Gerät im Energiesparmodus befindet. Anwendungen sollten Hintergrundverarbeitung vermeiden, wenn der Energiesparmodus des Geräts aktiviert ist.
 
 ## <a name="get-started"></a>Erste Schritte
 
@@ -65,7 +63,7 @@ using Xamarin.Essentials;
 Überprüfen der aktuellen Akkuinformationen:
 
 ```csharp
-var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or -1.0 if unable to determine.
+var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or 1.0 when on AC or no battery.
 
 var state = Battery.State;
 
@@ -121,7 +119,7 @@ public class BatteryTest
         Battery.BatteryChanged += Battery_BatteryChanged;
     }
 
-    void Battery_BatteryChanged(object sender, BatteryChangedEventArgs   e)
+    void Battery_BatteryChanged(object sender, BatteryInfoChangedEventArgs   e)
     {
         var level = e.ChargeLevel;
         var state = e.State;
@@ -130,6 +128,39 @@ public class BatteryTest
     }
 }
 ```
+
+Für Geräte, die mit Akku betrieben werden, lässt sich der Energiesparmodus aktivieren. Manchmal werden Geräte automatisch in diesen Modus umgeschaltet, z.B. wenn der Akku unter 20 % fällt. Das Betriebssystem reagiert auf den Energiesparmodus, indem Aktivitäten reduziert werden, die den Akku stark beanspruchen. Anwendungen können unterstützend wirken, indem sie Hintergrundverarbeitung oder andere Hochleistungsaktivitäten im Energiesparmodus vermeiden.
+
+Sie können auch den aktuellen Energiesparstatus des Geräts über die statische Eigenschaft `Battery.EnergySaverStatus` ermitteln:
+
+```csharp
+// Get energy saver status
+var status = Battery.EnergySaverStatus;
+```
+
+Diese Eigenschaft gibt ein Mitglied der `EnergySaverStatus`-Enumeration zurück: `On`, `Off` oder `Unknown`. Wenn die Eigenschaft `On` zurückgibt, sollte die Anwendung Hintergrundverarbeitung oder andere Aktivitäten vermeiden, die ggf. viel Energie verbrauchen.
+
+Außerdem sollte die Anwendung einen Ereignishandler installieren. Die **Battery**-Klasse zeigt ein Ereignis an, das ausgelöst wird, wenn sich der Energiesparstatus ändert:
+
+```csharp
+public class EnergySaverTest
+{
+    public EnergySaverTest()
+    {
+        // Subscribe to changes of energy-saver status
+        Batter.EnergySaverStatusChanged += OnEnergySaverStatusChanged;
+    }
+
+    private void OnEnergySaverStatusChanged(EnergySaverStatusChangedEventArgs e)
+    {
+        // Process change
+        var status = e.EnergySaverStatus;
+    }
+}
+```
+
+Wenn sich der Energiesparstatus auf `On` ändert, sollte die Anwendung die Hintergrundverarbeitung deaktivieren. Wenn der Status auf `Unknown` oder `Off` wechselt, kann die Anwendung die Hintergrundverarbeitung wieder aufnehmen.
+
 
 ## <a name="platform-differences"></a>Plattformunterschiede
 
@@ -141,7 +172,6 @@ Keine Plattformunterschiede.
 
 * Gerät muss zum Testen von APIs verwendet werden. 
 * Gibt nur `AC` oder `Battery` für `PowerSource` zurück.
-* Es ist nicht möglich, die Vibration abzubrechen.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
