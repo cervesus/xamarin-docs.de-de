@@ -6,12 +6,12 @@ ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: lobrien
 ms.author: laobri
 ms.date: 11/14/2018
-ms.openlocfilehash: 21229bc9d56865d6365f8ddfe4dd2046fbabc03d
-ms.sourcegitcommit: ae34d048aeb23a99678ae768cdeef0c92ca36b51
+ms.openlocfilehash: 4a45d4fb7aaad504c7bb5628f1e521a39463b06f
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51681526"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899069"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>iOS-Remotesimulator für Windows
 
@@ -34,7 +34,7 @@ Auf die Symbolleiste am oberen Rand des Simulators überein Fensters enthält ei
 
 - **Home** – Schaltfläche "Start" auf einem iOS-Gerät simuliert.
 - **Sperre** – Sperren Sie den Simulator (Wischen zum Entsperren erforderlich).
-- **Bildschirmabbildung von** – speichert einen Screenshot des Simulators (gespeichert **Pictures\Xamarin\iOS Simulator\**).
+- **Bildschirmabbildung von** – speichert einen Screenshot des Simulators (gespeichert **Pictures\Xamarin\iOS Simulator\\**).
 - [**Einstellungen** ](#settings) – zeigt an, Tastatur, Speicherort und andere Einstellungen.
 - [**Andere Optionen** ](#other-options) – bringt verschiedene Simulator-Optionen wie Drehung, Schütteln Gesten und Touch ID.
 
