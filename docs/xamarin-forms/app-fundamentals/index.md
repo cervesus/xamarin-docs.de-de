@@ -6,13 +6,13 @@ ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/28/2017
-ms.openlocfilehash: 515dbd2683619cfcfb7a6c8ecac6bc147265ef7d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 12/03/2018
+ms.openlocfilehash: 015a7dfa3d55b411e6626ae2ac70fd2930661e65
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995611"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898991"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Xamarin.Forms-Anwendungsgrundlagen
 
@@ -71,6 +71,10 @@ Das Xamarin.Forms-`MessagingCenter` ermöglicht, dass Anzeigemodelle und andere 
 ## <a name="navigationnavigationindexmd"></a>[Navigation](navigation/index.md)
 
 Xamarin.Forms stellt abhängig von dem verwendeten `Page`-Typ eine Reihe unterschiedlicher Seitennavigationen bereit.
+
+## <a name="shellshellmd"></a>[Shell](shell.md)
+
+Xamarin.Forms-Shell ist ein Container für Anwendungen, der grundlegende UI-Funktionen bereitstellt, die die meisten Anwendungen benötigen, sodass Sie sich auf die Kernaufgaben der Anwendung konzentrieren können.
 
 ## <a name="templatestemplatesindexmd"></a>[Vorlagen](templates/index.md)
 

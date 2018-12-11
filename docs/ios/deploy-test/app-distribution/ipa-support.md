@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 70d6b908beb0d04788365b104b5e4a2679b0ebe1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 100b98d12d45713b0d5f6dfb435f3aa879e7da9f
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113247"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899121"
 ---
 # <a name="ipa-support-in-xamarinios"></a>IPA-Unterstützung in Xamarin.iOS
 
@@ -262,4 +262,5 @@ In diesem Artikel werden die Vorbereitungen besprochen, die nötig sind, um eine
 - [Die Datei „iTunesMetadata.plist“](~/ios/deploy-test/app-distribution/itunesmetadata.md)
 - [Problembehandlung](~/ios/deploy-test/troubleshooting.md)
 - [iTunes-Grafik](~/ios/app-fundamentals/images-icons/app-icons.md#itunes)
-- [Verteilen von Unternehmens-Apps für iOS-Geräte](http://developer.apple.com/library/ios/#featuredarticles/FA_Wireless_Enterprise_App_Distribution/Introduction/Introduction.html)
+- [Entwickeln und Verteilen von Unternehmens-Apps (Apple)](https://help.apple.com/xcode/mac/current/#/devba5e7054d)
+- [Verteilen von Unternehmens-Apps (WWDC-Video)](https://developer.apple.com/videos/play/wwdc2014/705/)
