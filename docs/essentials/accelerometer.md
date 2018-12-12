@@ -4,17 +4,15 @@ description: Mit der Accelerometer-Klasse in Xamarin.Essentials können Sie den 
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 70f41e6242b62577b6aa42cc207802ead020499e
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: f443cc094c7d7be6ec782df27332bafe5d51dda3
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674761"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898796"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: Beschleunigungsmesser
-
-![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
 Mit der **Accelerometer**-Klasse können Sie den Sensor für die Beschleunigungsmessung des Geräts überwachen, der die Beschleunigung des Geräts im dreidimensionalen Raum angibt.
 

@@ -4,17 +4,15 @@ description: Mit der Launcher-Klasse in Xamarin.Essentials kann eine Anwendung e
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 07/25/2018
-ms.openlocfilehash: b9dc211a8b8b007e6975448a6c6c35f870021cc6
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 502ccaf8ef4fbeadb4b46f47668ac11f2747b89d
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674794"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898269"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Startprogramm
-
-![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
 Mit der **Launcher**-Klasse kann eine Anwendung einen URI durch das System öffnen. Das wird häufig für Deep Linking für benutzerdefinierte URI-Schemas einer andere Anwendung verwendet. Wenn Sie im Browser eine Website öffnen möchten, verweisen Sie auf die **[Browser](open-browser.md)** API.
 

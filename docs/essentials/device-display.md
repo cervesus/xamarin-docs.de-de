@@ -4,19 +4,17 @@ description: In diesem Dokument wird die Klasse „DeviceDisplay“ in Xamarin.E
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: ebe97cf7fbb78bff17196110e835bd35ff76b826
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: d3102f0a4ed5f16c77c4a4768feb4a1565f2dd1a
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674885"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898890"
 ---
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials: Geräteanzeigeinformationen
 
-![NuGet-Vorabrelease](~/media/shared/pre-release.png)
-
-Die Klasse **DeviceDisplay** stellt Informationen zu Bildschirmmetriken des Geräts bereit, auf dem die Anwendung ausgeführt wird.
+Die **DeviceDisplay**-Klasse enthält Informationen über die Bildschirmmetriken des Geräts, auf dem die Anwendung ausgeführt wird, und kann anfordern, dass der Bildschirm daran gehindert wird, in den Standbymodus zu schalten.
 
 ## <a name="get-started"></a>Erste Schritte
 
@@ -30,45 +28,57 @@ Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 using Xamarin.Essentials;
 ```
 
-## <a name="screen-metrics"></a>Bildschirmmetriken
+## <a name="main-display-info"></a>Informationen zum Hauptbildschirm
 
 Neben den grundlegenden Geräteinformationen enthält die Klasse **DeviceDisplay** Informationen zum Bildschirm des Geräts und dessen Ausrichtung.
 
 ```csharp
 // Get Metrics
-var metrics = DeviceDisplay.ScreenMetrics;
+var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
 
 // Orientation (Landscape, Portrait, Square, Unknown)
-var orientation = metrics.Orientation;
+var orientation = mainDisplayInfo.Orientation;
 
 // Rotation (0, 90, 180, 270)
-var rotation = metrics.Rotation;
+var rotation = mainDisplayInfo.Rotation;
 
 // Width (in pixels)
-var width = metrics.Width;
+var width = mainDisplayInfo.Width;
 
 // Height (in pixels)
-var height = metrics.Height;
+var height = mainDisplayInfo.Height;
 
 // Screen density
-var density = metrics.Density;
+var density = mainDisplayInfo.Density;
 ```
 
 Die Klasse **DeviceDisplay** macht auch ein Ereignis verfügbar, das abonniert werden kann und ausgelöst wird, wenn sich eine Bildschirmmetrik ändert:
 
 ```csharp
-public class ScreenMetricsTest
+public class DisplayInfoTest
 {
-    public ScreenMetricsTest()
+    public DisplayInfoTest()
     {
         // Subscribe to changes of screen metrics
-        DeviceDisplay.ScreenMetricsChanged += OnScreenMetricsChanged;
+        DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
     }
 
-    void OnScreenMetricsChanged(ScreenMetricsChangedEventArgs  e)
+    void OnMainDisplayInfoChanged(DisplayInfoChangedEventArgs  e)
     {
         // Process changes
-        var metrics = e.Metrics;
+        var displayInfo = e.DisplayInfo;
+    }
+}
+```
+
+Die **DeviceDisplay**-Klasse macht eine `bool`-Eigenschaft verfügbar, die `KeepScreenOn` heißt, und festgelegt werden kann, um den Gerätebildschirm daran zu hindern, sich auszuschalten oder zu sperren.
+
+```csharp
+public class KeepScreenOnTest
+{
+    public void ToggleScreenLock()
+    {
+        DeviceDisplay.KeepScreenOn = !DeviceDisplay.KeepScreenOn;
     }
 }
 ```
@@ -81,7 +91,7 @@ Keine Unterschiede.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* Der Zugriff auf `ScreenMetrics` muss im UI-Thread erfolgen. Sonst wird eine Ausnahme ausgelöst. Sie können die Methode [`MainThread.BeginInvokeOnMainThread`](~/essentials/main-thread.md) verwenden, um diesen Code im UI-Thread auszuführen.
+* Der Zugriff auf `DeviceDisplay` muss im UI-Thread erfolgen. Sonst wird eine Ausnahme ausgelöst. Sie können die Methode [`MainThread.BeginInvokeOnMainThread`](~/essentials/main-thread.md) verwenden, um diesen Code im UI-Thread auszuführen.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 

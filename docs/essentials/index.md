@@ -4,17 +4,15 @@ description: Dieses Dokument verweist auf verschiedene Anleitungen für Xamarin.
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 07/30/2018
-ms.openlocfilehash: b81102c6c0e0d65aaa46b2d32e34db536ab58e03
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.date: 11/04/2018
+ms.openlocfilehash: 0f4271e5c0c9de53a83a840f7fe0a83b594a06fa
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "39361001"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898640"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
-
-![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
 Xamarin.Essentials stellt Entwicklern plattformübergreifende APIs für ihre mobilen Anwendungen bereit.
 
@@ -35,7 +33,6 @@ Befolgen Sie die Anleitungen, um diese Xamarin.Essentials-Funktionen in Ihre Anw
 * [Zwischenablage](clipboard.md?context=xamarin/xamarin-forms): Schnelles und einfaches Festlegen oder Lesen von Text in der Zwischenablage
 * [Kompass](compass.md?context=xamarin/xamarin-forms): Überwachungskompass für Änderungen
 * [Konnektivität](connectivity.md?context=xamarin/xamarin-forms): Überprüfung des Konnektivitätsstatus und Erkennung von Änderungen
-* [Datenübertragung](data-transfer.md?context=xamarin/xamarin-forms): Senden von Text und Website-URIs an andere Apps
 * [Informationen zur Gerätanzeige](device-display.md?context=xamarin/xamarin-forms): Informationen zur Metrik und Ausrichtung des Gerätebildschirms
 * [Geräteinformationen](device-information.md?context=xamarin/xamarin-forms): Schneller Überblick über das Gerät
 * [E-Mail](email.md?context=xamarin/xamarin-forms): Einfaches Versenden von E-Mails
@@ -51,10 +48,9 @@ Befolgen Sie die Anleitungen, um diese Xamarin.Essentials-Funktionen in Ihre Anw
 * [Browser öffnen](open-browser.md?context=xamarin/xamarin-forms): Schnelles Öffnen des Browsers für eine bestimmte Website
 * [Ausrichtungssensor](orientation-sensor.md?context=xamarin/xamarin-forms): Abrufen der Geräteausrichtung im dreidimensionalen Raum
 * [Wählhilfe](phone-dialer.md?context=xamarin/xamarin-forms): Öffnen der Wählhilfe
-* [Leistung](power.md?context=xamarin/xamarin-forms): Informationen zum Energiesparstatus des Geräts
 * [Einstellungen](preferences.md?context=xamarin/xamarin-forms): Schnelles Hinzufügen persistenter Einstellungen
-* [Sperrbildschirm](screen-lock.md?context=xamarin/xamarin-forms): Gerätebildschirm bleibt aktiv
 * [Sicherer Speicher](secure-storage.md?context=xamarin/xamarin-forms): Sichere Speicherung von Daten
+* [Datenübertragung](share.md?context=xamarin/xamarin-forms): Senden von Text und Website-URIs an andere Apps
 * [SMS](sms.md?context=xamarin/xamarin-forms): Erstellen von SMS zum Versenden
 * [Text-to-Speech](text-to-speech.md?context=xamarin/xamarin-forms): Sprechen von Text auf dem Gerät
 * [Versionsnachverfolgung](version-tracking.md?context=xamarin/xamarin-forms): Nachverfolgung der Anwendungs- Buildnummerversion

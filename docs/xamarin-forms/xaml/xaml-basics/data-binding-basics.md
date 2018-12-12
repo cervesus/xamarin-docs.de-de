@@ -7,14 +7,16 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: aa576e4af5d804eb5b8d78643ffa762b8a15c6dc
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: bd13163b513ea1f6b0381e99e65d0bd727f97735
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171767"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53055727"
 ---
 # <a name="part-4-data-binding-basics"></a>Teil 4. Grundlagen der Datenbindung
+
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
 _Datenbindungen können Sie Eigenschaften von zwei Objekten, die verknüpft werden, damit eine Änderung in einer bewirkt, dass eine Änderung in der anderen. Dies ist ein sehr wertvolles Tool, und während der datenbindungen, die vollständig in Code definiert werden können, Verknüpfungen und der Einfachheit halber XAML enthält. Daher ist eine der wichtigsten Markuperweiterungen in Xamarin.Forms binden._
 

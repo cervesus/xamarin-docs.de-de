@@ -4,17 +4,15 @@ description: Mit der Barometer-Klasse in Xamarin.Essentials können Sie den Baro
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 08/16/2018
-ms.openlocfilehash: 9172d816fe9a15993ba8f015310d0e79874c2d84
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 342ae1b64fefebaa4b3fa82e9f48c6e9a58d4751
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675028"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899043"
 ---
 # <a name="xamarinessentials-barometer"></a>Xamarin.Essentials: Barometer
-
-![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
 Mit der Klasse **Barometer** können Sie den Barometersensor des Geräts überwachen, der den Druck misst.
 
@@ -30,7 +28,7 @@ Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 using Xamarin.Essentials;
 ```
 
-Die Barometer-Funktionalität ruft die Methoden `Start` und `Stop` auf, um auf die Änderungen der Barometerdruck-Messwerte in Kilopascal zu lauschen. Änderungen werden über das `ReadingChanged`-Ereignis zurück gesendet. Sie können sie z.B. wie folgt verwenden:
+Die Barometerfunktionalität ruft die Methoden `Start` und `Stop` auf, um auf die Änderungen der Druckmesswerte des Barometers in Hektopascal zu lauschen. Änderungen werden über das `ReadingChanged`-Ereignis zurück gesendet. Sie können sie z.B. wie folgt verwenden:
 
 ```csharp
 
@@ -49,7 +47,7 @@ public class BarometerTest
     {
         var data = e.Reading;
         // Process Pressure
-        Console.WriteLine($"Reading: Pressure: {data.Pressure} kilopascals");
+        Console.WriteLine($"Reading: Pressure: {data.PressureInHectopascals} hectopascals");
     }
 
     public void ToggleBarometer()
@@ -75,7 +73,7 @@ public class BarometerTest
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 
-## <a name="platform-implementation-specifics"></a>Besonderheiten bei der Plattformimplementierung
+## <a name="platform-implementation-specifics"></a>Besonderheiten bei der plattformspezifischen Implementierung
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 

@@ -4,17 +4,15 @@ description: In diesem Dokument wird die Klasse „DeviceInfo“ in Xamarin.Esse
 ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 530b04446703d78452357b2c9f9089e59ebf6e6c
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: b78c04d30871552f9b1e18a42c871e24464c4802
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674812"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898952"
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials: Geräteinformationen
-
-![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
 Die Klasse **DeviceInfo** stellt Informationen zu dem Gerät bereit, auf dem die Anwendung ausgeführt wird.
 
@@ -57,22 +55,23 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="platformsxrefxamarinessentialsdeviceinfoplatforms"></a>[Plattformen](xref:Xamarin.Essentials.DeviceInfo.Platforms)
 
-`DeviceInfo.Platform` entspricht einer konstanten Zeichenfolge, die dem Betriebssystem zugeordnet ist. Die Werte können mit der Klasse `Platforms` überprüft werden:
+`DeviceInfo.Platform` entspricht einer konstanten Zeichenfolge, die dem Betriebssystem zugeordnet ist. Die Werte können mit der `DevicePlatform`-Struktur überprüft werden:
 
-- **DeviceInfo.Platforms.iOS** – iOS
-- **DeviceInfo.Platforms.Android** – Android
-- **DeviceInfo.Platforms.UWP** – UWP
-- **DeviceInfo.Platforms.Unsupported** – Nicht unterstützt
+- **DevicePlatform.iOS**: iOS
+- **DevicePlatform.Android**: Android
+- **DevicePlatform.UWP**: UWP
+- **DevicePlatform.Unknown**: Unbekannt
 
 ## <a name="idiomsxrefxamarinessentialsdeviceinfoidioms"></a>[Idioms](xref:Xamarin.Essentials.DeviceInfo.Idioms)
 
-`DeviceInfo.Idiom` entspricht einer konstanten Zeichenfolge, die dem Typ des Geräts zugeordnet ist, auf dem die Anwendung ausgeführt wird. Die Werte können mit der Klasse `Idioms` überprüft werden:
+`DeviceInfo.Idiom` entspricht einer konstanten Zeichenfolge, die dem Typ des Geräts zugeordnet ist, auf dem die Anwendung ausgeführt wird. Die Werte können mit der `DeviceIdiom`-Struktur überprüft werden:
 
-- **DeviceInfo.Idioms.Phone** – Telefon
-- **DeviceInfo.Idioms.Tablet** – Tablet
-- **DeviceInfo.Idioms.Desktop** – Desktop
-- **DeviceInfo.Idioms.TV** – TV
-- **DeviceInfo.Platforms.Unsupported** – Nicht unterstützt
+- **DeviceIdiom.Phone**: Mobiltelefon
+- **DeviceIdiom.Tablet**: Tablet
+- **DeviceIdiom.Desktop**: Desktop
+- **DeviceIdiom.TV**: TV
+- **DeviceIdiom.Watch**: Überwachungselement
+- **DeviceIdiom.Unknown**: Unbekannt
 
 ## <a name="device-type"></a>Gerätetyp
 

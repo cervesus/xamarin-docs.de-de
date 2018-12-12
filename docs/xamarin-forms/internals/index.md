@@ -6,15 +6,19 @@ ms.assetid: 2273a31c-4022-42ba-befe-0d23ce2ff3b5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 8ed643619e5a22e9a1febe419eb42d45901dec63
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.date: 03/12/2018
+ms.openlocfilehash: 77b32d823e1fd89f6b45dca73e89322e57ddc199
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350744"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898882"
 ---
 # <a name="advanced-concepts--internals"></a>Weiterführende Konzepte und Interna
+
+## <a name="dependency-resolutiondependency-resolutionmd"></a>[Abhängigkeitsauflösung](dependency-resolution.md)
+
+In diesem Artikel wird erläutert, wie eine Abhängigkeit Auflösung-Methode in Xamarin.Forms eingefügt werden, so, dass Dependency Injection-Container einer Anwendung Kontrolle über die Erstellung und Lebensdauer von benutzerdefinierten Renderern, Effekte, hat und `DependencyService` Implementierungen.
 
 ## <a name="fast-renderersfast-renderersmd"></a>[Schnelle Renderer](fast-renderers.md)
 
@@ -23,7 +27,3 @@ In diesem Artikel werden schnelle Renderer vorgestellt, welche die Inflations- u
 ## <a name="net-standardnet-standardmd"></a>[.NET-Standard](net-standard.md)
 
 In diesem Artikel wird erläutert, wie eine Xamarin.Forms-Anwendung zur Verwendung von .NET Standard 2.0 konvertiert wird.
-
-## <a name="dependency-resolutiondependency-resolutionmd"></a>[Abhängigkeitsauflösung](dependency-resolution.md)
-
-In diesem Artikel wird erläutert, wie eine Abhängigkeit Auflösung-Methode in Xamarin.Forms eingefügt werden, so, dass Dependency Injection-Container einer Anwendung Kontrolle über die Erstellung und Lebensdauer von benutzerdefinierten Renderern, Effekte, hat und `DependencyService` Implementierungen.

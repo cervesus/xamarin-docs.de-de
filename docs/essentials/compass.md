@@ -4,17 +4,15 @@ description: In diesem Dokument wird die Klasse „Compass“ in Xamarin.Essenti
 ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 51812f9b4f88d77bf553a26ef3a6802239e338e0
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 55dd10bff21b7d082b225277d0100232d5efd4f3
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675496"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898783"
 ---
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials: Kompass
-
-![NuGet-Vorabrelease](~/media/shared/pre-release.png)
 
 Mit der Klasse **Compass** können Sie die Ausrichtung des Geräts auf den magnetischen Norden überwachen.
 
@@ -74,7 +72,7 @@ public class CompassTest
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 
-## <a name="platform-implementation-specifics"></a>Besonderheiten bei der Plattformimplementierung
+## <a name="platform-implementation-specifics"></a>Besonderheiten bei der plattformspezifischen Implementierung
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
@@ -86,13 +84,13 @@ Denken Sie daran, dass sich das gleichzeitige Ausführen mehrerer Sensoren von I
 
 ## <a name="low-pass-filter"></a>Tiefpassfilter
 
-Je nachdem, wie die Android-Kompasswerte aktualisiert und berechnet werden, müssen die Werte möglicherweise geglättet werden. Hier kann ein _Tiefpassfilter_ angewendet werden, der aus den Sinus- und Kosinuswerten der Winkel einen Mittelwert bildet. Er wird durch Festlegen der Eigenschaft `ApplyLowPassFilter` in der Klasse `Compass` aktiviert:
+Je nachdem, wie die Android-Kompasswerte aktualisiert und berechnet werden, müssen die Werte möglicherweise geglättet werden. Hier kann ein _Tiefpassfilter_ angewendet werden, der aus den Sinus- und Kosinuswerten der Winkel einen Mittelwert bildet. Er wird mithilfe der `Start`-Methodenüberladung aktiviert, die den `bool applyLowPassFilter`-Parameter akzeptiert:
 
 ```csharp
-Compass.ApplyLowPassFilter = true;
+Compass.Start(SensorSpeed.UI, applyLowPassFilter: true);
 ```
 
-Dies gilt nur für die Android-Plattform. Weitere Informationen erhalten Sie [hier](https://github.com/xamarin/Essentials/pull/354#issuecomment-405316860).
+Dies wird nur auf der Android-Plattform angewendet, und der Parameter wird auf iOS und UWP ignoriert.  Weitere Informationen erhalten Sie [hier](https://github.com/xamarin/Essentials/pull/354#issuecomment-405316860).
 
 --------------
 
