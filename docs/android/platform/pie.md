@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: cd1c374fa68420e1923ef4dee0bb37a4665f3535
-ms.sourcegitcommit: 215cad17324ba3fbc23487ce66cd4e1cc74eb879
+ms.openlocfilehash: 49e3a0189d0887343f2636d6931a00cc819800c0
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52710022"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267637"
 ---
 # <a name="android-pie-features"></a>Android Kreis-Funktionen
 
@@ -24,7 +24,7 @@ _Informationen zum Entwickeln von apps für Android mithilfe von Xamarin.Android
 
 In diesem Artikel ist strukturiert, um Ihnen bei der Entwicklung von Xamarin.Android-apps für Android Kreis beim Einstieg helfen. Es wird erläutert, wie die erforderlichen Updates zu installieren, konfigurieren Sie das SDK und bereiten Sie vor einem Emulator oder Gerät zu Testzwecken. Außerdem bietet einen Überblick über die neuen Features in Android Kreis- und enthält Beispiel-Quellcode, das veranschaulicht, wie Sie einige der wichtigsten Features Android Kreis verwenden.
 
-Xamarin.Android 9.0 bietet Unterstützung für Android Kreis. Weitere Informationen zu Xamarin.Android-Unterstützung für Android Kreis-, finden Sie unter den [Android P Developer Preview 3](https://developer.xamarin.com/releases/android/xamarin.android_9/xamarin.android_9.0/#android-p-dp1) Anmerkungen zu dieser Version.
+Xamarin.Android 9.0 bietet Unterstützung für Android Kreis. Weitere Informationen zu Xamarin.Android-Unterstützung für Android Kreis-, finden Sie unter den [Android P Developer Preview 3](https://docs.microsoft.com/xamarin/android/release-notes/9/9.0/#android-p-dp1) Anmerkungen zu dieser Version.
 
 ## <a name="requirements"></a>Anforderungen
 

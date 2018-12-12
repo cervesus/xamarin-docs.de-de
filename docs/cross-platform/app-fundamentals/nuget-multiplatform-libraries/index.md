@@ -6,12 +6,12 @@ ms.assetid: F0A5A9BB-86CD-44C9-8EE8-74D1E5E74A30
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 1d48bc28aa4477361ca8057fda91ee3258f36a73
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: 6d3f7b316e397705ecb9bd404007dcd9ef5aa183
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270427"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267260"
 ---
 # <a name="nuget-multiplatform-library-projects-nugetizer-3000"></a>NuGet-Bibliothek für mehrere Plattformen Projekte (Nugetizer 3000)
 
@@ -64,4 +64,3 @@ Die Informationen für NuGet-Paket-Projekte (auch als) NuGetizer 3000) steht auf
 - [NuGetizer 3000 Anwendungsfälle](https://github.com/NuGet/Home/wiki/NuGetizer-Core-Scenarios)
 - [Manuelles Erstellen von NuGet-Paketen für Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md)
 - [NuGet-Dokumentation](https://docs.microsoft.com/nuget/)
-- [Anmerkungen zu dieser Version](https://developer.xamarin.com/releases/studio/xamarin.studio_6.2/xamarin.studio_6.2/#NuGetizer_3000)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 1d219808acaab3c6db089d341d1d91f34398a622
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 6acf79d158869a09f93ff9cd129650304c209a35
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39615365"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267338"
 ---
 # <a name="get-started-with-macos-mojave"></a>Erste Schritte mit MacOS Mojave
 
@@ -38,4 +38,4 @@ In diesem Dokument wird beschrieben, wie abzurufenden Build MacOS Mojave-apps mi
 ## <a name="related-links"></a>Verwandte Links
 
 - [Xcode 10 herunterladen](https://developer.apple.com/download/)
-- [Anmerkungen zur Version von Xamarin.Mac 5.0](https://developer.xamarin.com/releases/mac/xamarin.mac_5/xamarin.mac_5.0/)
+- [Anmerkungen zur Version von Xamarin.Mac 5.0](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)
